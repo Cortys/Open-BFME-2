@@ -36562,3 +36562,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva0010F7EE@@UAEPAXI@Z,,0x0010F7D2,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x10F7EE plus delete 0x2FD60
 ??_GRva0010F83E@@UAEPAXI@Z,,0x0010F822,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x10F83E plus delete 0x2FD60
 ?clear@Rva004CBF9A@@QAEXXZ,,0x004CBF9A,45,Code/GameEngine/Source/Common/Rva004CBF9AClear.cpp,matched,audio remove slot 0x6c plus holder clear tail
+??_GStructureBodyModuleData@@UAEPAXI@Z,,0x0025706B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-2768.cpp,matched,slot0 vtable 0x7F4028 calls rowed 0x57087
