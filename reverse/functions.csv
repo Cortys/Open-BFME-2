@@ -36744,3 +36744,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?update@Rva0035FF76@@UAEXH@Z,,0x0036044A,42,Code/GameEngine/Source/GameClient/GUI/Rva0035FF76Update.cpp,matched,vtable 0x0081670C slot 2 plus FadeColor init sibling plus range check
 ?rva001EDFE9@Mouse@@QBEPAXXZ,,0x001EDFE9,14,Code/GameEngine/Source/GameClient/MouseRva001EDFE9.cpp,matched,Mouse cursorinfo array at +0x4c stride 0x54 with index at +0x4fa4; sole caller at 0x0042F4E7
 ?rva001EDFF7@Mouse@@QBEXPAM@Z,,0x001EDFF7,62,Code/GameEngine/Source/GameClient/MouseRva001EDFF7.cpp,matched,Mouse four-int to float copy at +0x4f84 with out indices 0-2-1-3; sole caller at 0x0042EDD5
+?init@Rva0035FF76@@UAEXPAVGameWindow@@@Z,,0x0035FF85,234,Code/GameEngine/Source/Common/Rva0035FF76Init.cpp,matched,vtable 0x0081670C slot 1 FadeColor donor Rva0059F720FadeColorInit
