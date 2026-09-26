@@ -36821,3 +36821,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?loadPostProcess@SpawnBehavior@@MAEXXZ,,0x0045F382,17,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorLoadPostProcess.cpp,matched,slot 1 of C426AC plus base 58B03E plus validate B3FD0
 ??1FiringTracker@@UAE@XZ,,0x004DEA0C,86,Code/GameEngine/Source/GameLogic/Object/FiringTrackerDtor.cpp,matched,FiringTracker dtor via UpdateModule base plus audio remove
 ??1ObjectSMCHelper@@UAE@XZ,,0x004DE767,91,Code/GameEngine/Source/GameLogic/Object/Helper/ObjectSMCHelperDtor.cpp,matched,ObjectSMCHelper dtor via Rva004DF7C2 base plus list clear
+??1WeaponFireSpecialAbilityUpdateModuleData@@UAE@XZ,,0x00492806,56,Code/GameEngine/Source/GameLogic/Object/SpecialPower/WeaponFireSpecialAbilityUpdateModuleDataDtor.cpp,matched,EH dtor via vtable 0x00C4E108 and caller 0x004927EA plus base 0x0044ECCE plus ctor 0x004926CA layout
