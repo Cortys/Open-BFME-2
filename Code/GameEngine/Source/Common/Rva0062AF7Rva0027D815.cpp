@@ -10,6 +10,16 @@
 // Secondary MI vptrs plus 0x04 plus 0x10 plus 0x14 omitted as body touches
 // primary only. Flags per section 4.1: /O1 for EBP frame plus /arch:SSE for
 // xorps and movss float zeroing.
+#include <math.h>
+struct Rva0027D5E0Box
+{
+	float loX;
+	float loY;
+	float loZ;
+	float hiX;
+	float hiY;
+	float hiZ;
+};
 class Rva0062AF7
 {
 public:
@@ -21,12 +31,12 @@ public:
 	virtual void slot05();
 	virtual float slot06(float x, float y, int z);
 	virtual void slot07();
-	virtual void slot08();
+	virtual void slot08(Rva0027D5E0Box *box);
 	virtual void slot09();
 	virtual void slot10();
 	virtual void slot11();
 	virtual void slot12();
-	virtual void slot13();
+	virtual void Rva0027D5E0(float *out, const float *in);
 	virtual void slot14();
 	virtual void slot15();
 	virtual void slot16();
@@ -170,4 +180,47 @@ bool Rva0062AF7::Rva0027D77D(float x, float y, float *a, float *b, bool *c)
 	if (c != 0)
 		*c = ((Rva0027D77DWaterView *)water)->slot01();
 	return h > ground;
+}
+
+//
+// ?Rva0027D5E0@Rva0062AF7@@UAEXPAMPBM@Z retail 0x0027D5E0 255 bytes.
+// Vslot 13 (offset 0x34) of vtable 0x007C5890 primary of ??1Rva0062AF7@@UAE@XZ.
+// Donor: BFME1 TerrainLogic::findClosestEdgePoint in
+// reference/open-bfme-1/Code/GameEngine/Source/GameLogic/Map/TerrainLogic.cpp
+// (fabs of y-loY x-hiX y-hiY x-loX then min-index picks loY hiX hiY loX then
+// slot06 grounds the pair plus out triple). Box at ebp-0x28 is Region3D loHi
+// six floats; distances at ebp-0x10..-0x4 give 0x28 frame. Identity class plus
+// slot honest address name. Flags /O1 /arch:SSE /G7 same TU as neighbours.
+void Rva0062AF7::Rva0027D5E0(float *out, const float *in)
+{
+	Rva0027D5E0Box box;
+	slot08(&box);
+	float distances[4];
+	distances[0] = (float)fabs(in[1] - box.loY);
+	distances[1] = (float)fabs(in[0] - box.hiX);
+	distances[2] = (float)fabs(in[1] - box.hiY);
+	distances[3] = (float)fabs(in[0] - box.loX);
+	float best = distances[0];
+	int bestIndex = 0;
+	for (int i = 1; i < 4; ++i)
+	{
+		if (distances[i] < best)
+		{
+			best = distances[i];
+			bestIndex = i;
+		}
+	}
+	distances[1] = in[0];
+	distances[2] = in[1];
+	if (bestIndex == 0)
+		distances[2] = box.loY;
+	else if (bestIndex == 1)
+		distances[1] = box.hiX;
+	else if (bestIndex == 2)
+		distances[2] = box.hiY;
+	else
+		distances[1] = box.loX;
+	out[2] = slot06(distances[1], distances[2], 0);
+	out[0] = distances[1];
+	out[1] = distances[2];
 }
