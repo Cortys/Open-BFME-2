@@ -36507,3 +36507,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GTextureMapperClass@@UAEPAXI@Z,,0x00184150,30,Code/Libraries/Source/WWVegas/WW3D2/mapper.cpp,matched,slot1 of mapper vtables; calls trivial base dtor at 0x724510; inline dtor from mapper.h donor
 ?Rva00118990@@YAXXZ,,0x00118990,48,Code/Libraries/Source/WWVegas/WW3D2/Rva00118990Init.cpp,matched,global init triple-zero plus 7-2-5; render2d neighbours; O1 xor-first exact
 ?xfer@Rva0048D742@@MAEXPAVXfer@@@Z,,0x0048DBC4,42,Code/GameEngine/Source/Common/Rva0048D742Xfer.cpp,matched,slot 3 of vtable 0x84C770 Version1 plus base 0x44DF9F plus bool at 0x20 via slot 0x90
+??8Xfer@@UAEAAV0@AAVPooledString@@@Z,0x0060C0A0,0x0060C0A0,288,Code/GameEngine/Source/Common/System/XferPooledStringTransfer.cpp,matched,vtable slot 25 of 0x007BB910 with astr tag 0x61737472 and strlen 0x629170 via Ascii donor
