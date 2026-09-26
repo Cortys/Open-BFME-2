@@ -36511,3 +36511,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1MonsterDockUpdate@@MAE@XZ,,0x004A13F4,32,Code/GameEngine/Source/GameLogic/Object/Update/MonsterDockUpdateDtor.cpp,matched,protected dtor restores 4 vptrs then tail-jmps opaque base 0x58A0F4 via RvaDerived pattern
 ??_GMonsterDockUpdate@@MAEPAXI@Z,,0x004A1459,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-0a57.cpp,matched,slot 0 of 0x00851D74 calls rowed MAE dtor 0x4A13F4 then delete 0x2FD60
 ?Rva00118A90@@YAXXZ,,0x00118A90,36,Code/Libraries/Source/WWVegas/WW3D2/Rva00118A90Stencil.cpp,matched,conditional stencil 0x100 reset; neighbours are own Rva landings; O1 cmp-byte exact
+?xfer@FlammableUpdate@@MAEXPAVXfer@@@Z,,0x0048C582,205,Code/GameEngine/Source/GameLogic/Object/Update/FlammableUpdateXfer.cpp,matched,slot3 of vtable 0x00C4C3D4 plus base rowed 0x44DF9F plus Version 1 3 plus helpers 0x305E72 0x3060B2 plus audio 0x00DFE6E8
