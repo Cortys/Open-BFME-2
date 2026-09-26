@@ -36778,3 +36778,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??8_STL@@YA_NABU_Bit_iterator_base@0@0@Z,,0x0060B869,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_empty.cpp,matched,STLport 4.5.3 Bit_iterator_base opeq via empty instantiation
 ?empty@?$vector@_NV?$allocator@_N@_STL@@@_STL@@QBE_NXZ,,0x0060BDD5,46,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_empty.cpp,matched,STLport 4.5.3 bit-vector empty via explicit instantiation
 ??0Rva00360F55@@QAE@XZ,,0x00360F55,134,Code/GameEngine/Source/GameLogic/Object/Rva00360F55Ctor.cpp,matched,record ctor with six E16 bases plus two Rva members unblocks 0x362192
+?rva007B7050@@YAXXZ,,0x007B7050,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global Free_String thunk
+?rva007B7070@@YAXXZ,,0x007B7070,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global Free_String thunk second global
+?rva007B6AA0@@YAXXZ,,0x007B6AA0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global AsciiString dtor thunk
