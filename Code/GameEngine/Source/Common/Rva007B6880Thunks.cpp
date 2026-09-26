@@ -95,3 +95,19 @@ void __cdecl rva007B6FD0()
 	SortingRenderStateStruct *p = (SortingRenderStateStruct *)&g_Va00DEE5D8;
 	return p->~SortingRenderStateStruct();
 }
+
+// ??1SegLineRendererClass@@QAE@XZ rowed target for next thunk (0x001911C0).
+class SegLineRendererClass
+{
+public:
+	~SegLineRendererClass();
+};
+
+extern unsigned g_Va009F6F30;
+
+// ?rva007B71C0@@YAXXZ @ 0x007B71C0 (10B). Global SegLineRenderer dtor thunk: ecx=&g_Va009F6F30 then tail-jmp to rowed ??1SegLineRendererClass@@QAE@XZ (0x001911C0). No callers. Prev is our 0x007B6FD0 row in this TU (same page). Honest address name.
+void __cdecl rva007B71C0()
+{
+	SegLineRendererClass *p = (SegLineRendererClass *)&g_Va009F6F30;
+	return p->~SegLineRendererClass();
+}
