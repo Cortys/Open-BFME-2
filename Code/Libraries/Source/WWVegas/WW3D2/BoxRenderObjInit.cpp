@@ -27,3 +27,10 @@ void BoxRenderObjClass::Init(void)
 
 	IsInitted = true;
 }
+
+// ?Shutdown@BoxRenderObjClass@@SAXXZ @ 0x00174EF0 (38B). Donor reference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2/boxrobj.cpp Shutdown; caller Do_Onetime_Device_Dependent_Shutdowns @0x001215F0; prev Init @0x00174E20 same TU.
+void BoxRenderObjClass::Shutdown(void)
+{
+	REF_PTR_RELEASE(_BoxMaterial);
+	IsInitted = false;
+}
