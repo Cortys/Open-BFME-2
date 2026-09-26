@@ -119,6 +119,11 @@ public:
 	virtual void slot7( void );
 	virtual void slot8( void );
 	virtual void slot9( void );
+	virtual void slot10( void );
+	virtual void slot11( void );
+	virtual void slot12( void );
+	virtual void slot13( void );
+	virtual void slot14( void );
 	virtual void freeDisplayString( DisplayString *string );
 };
 
