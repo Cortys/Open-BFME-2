@@ -34190,7 +34190,6 @@ _WinMain@16,,0x00002C39,1382,Code/GameEngine/Source/Main/WinMain.cpp,matched,BFM
 ??_GRva0048B95F@@QAEPAXI@Z,,0x0048B9B4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
 ??_GFireWeaponUpdate@@UAEPAXI@Z,,0x0048C135,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
 ??_GLargeGroupBonusUpdateModuleData@@UAEPAXI@Z,,0x00490472,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
-??_GTransitionDamageFX@@UAEPAXI@Z,,0x00490E5F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
 ??_GDamageFieldUpdate@@UAEPAXI@Z,,0x004912FA,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
 ??_GRousingSpeechUpdate@@UAEPAXI@Z,,0x004ACFFD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee
 ??_GGloriousChargeUpdate@@UAEPAXI@Z,,0x004AD6F4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors.cpp,matched,scalar deleting dtor; same-shape sibling of ??_GVersion (0x21C7) selected by its dtor callee

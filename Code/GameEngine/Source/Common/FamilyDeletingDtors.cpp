@@ -198,11 +198,6 @@ class LargeGroupBonusUpdateModuleData { public: __declspec(noinline) virtual ~La
 LargeGroupBonusUpdateModuleData::~LargeGroupBonusUpdateModuleData() { m_famgen = 0; }
 void famgenDelete(LargeGroupBonusUpdateModuleData *p) { delete p; }
 
-// ??_GTransitionDamageFX@@UAEPAXI@Z @0x490e5f
-class TransitionDamageFX { public: __declspec(noinline) virtual ~TransitionDamageFX(); private: int m_famgen; };
-TransitionDamageFX::~TransitionDamageFX() { m_famgen = 0; }
-void famgenDelete(TransitionDamageFX *p) { delete p; }
-
 // ??_GDamageFieldUpdate@@UAEPAXI@Z @0x4912fa
 class DamageFieldUpdate { public: __declspec(noinline) virtual ~DamageFieldUpdate(); private: int m_famgen; };
 DamageFieldUpdate::~DamageFieldUpdate() { m_famgen = 0; }
