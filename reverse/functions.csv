@@ -36739,3 +36739,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva001EE3DE@@UAEPAXI@Z,,0x001EEFB6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-167e.cpp,matched,Deleting dtor slot 0 of vtable 0x00BE0358; calls pinned ??1 at 0x001EE3DE then rowed operator delete at 0x0002FD60
 ?Rva00605365@@YAPADPAD@Z,,0x00605365,72,Code/GameEngine/Source/Common/System/Rva00605365.cpp,matched,honest normalize parent between 0x605324 and 0x6053AD
 ?top@Shell@@QAEPAVWindowLayout@@XZ,,0x0035BD7E,13,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor Shell top caller Shell push hidden runShutdown
+?Rva006053D7@@YA_NPBD0@Z,,0x006053D7,141,Code/GameEngine/Source/Common/System/Rva006053D7.cpp,matched,wildcard donor ArchiveFile SearchStringMatches char form
