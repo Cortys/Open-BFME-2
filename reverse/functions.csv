@@ -36748,3 +36748,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva001EDE26@Mouse@@QBE_NXZ,,0x001EDE26,20,Code/GameEngine/Source/GameClient/MouseRva001EDE26.cpp,matched,Mouse cursor bytes at +0x4f9d and +0x4f9e both nonzero; 5 callers
 ?rva001EDE4C@Mouse@@QAEXHH@Z,,0x001EDE4C,23,Code/GameEngine/Source/GameClient/MouseRva001EDE26.cpp,matched,Mouse dword setter at +0x4f0c and +0x4f10; sole caller at 0x0041AE3
 ??$copy_backward@PAW4ObjectID@@PAW41@@_STL@@YAPAW4ObjectID@@PAW41@00@Z,,0x005E42D3,27,Code/GameEngine/Source/Common/VectorObjectIDFillInsert.cpp,matched,callee rowed at 0x00583709 callers at 0x0040AE5E and 0x005E4862 explicit instantiation exact mod reloc
+?setMouseLimits@Mouse@@UAEXXZ,,0x001EDE63,57,Code/GameEngine/Source/GameClient/Input/Mouse.cpp,matched,BFME1 Mouse setMouseLimits with BFME2 offsets +0x1FC and Display slots +0x40 +0x44; TheDisplay global

@@ -1042,22 +1042,23 @@ public:
 	virtual void slot00() = 0; virtual void slot04() = 0; virtual void slot08() = 0;
 	virtual void slot0c() = 0; virtual void slot10() = 0; virtual void slot14() = 0;
 	virtual void slot18() = 0; virtual void slot1c() = 0; virtual void slot20() = 0;
-	virtual void slot24() = 0; virtual void slot28() = 0;
+	virtual void slot24() = 0; virtual void slot28() = 0; virtual void slot2c() = 0;
+	virtual void slot30() = 0; virtual void slot34() = 0; virtual void slot38() = 0;
+	virtual void slot3c() = 0;
 	virtual Int getWidth() = 0;
 	virtual Int getHeight() = 0;
 };
 
-// ?setMouseLimits@Mouse@@UAEXXZ present-unmatched
 void Mouse::setMouseLimits( void )
 {
 	char *mouse = reinterpret_cast<char *>(this);
-	*reinterpret_cast<Int *>(mouse + 0x4d88) = 0;
-	*reinterpret_cast<Int *>(mouse + 0x4d90) = 0;
+	*reinterpret_cast<Int *>(mouse + 0x4f84) = 0;
+	*reinterpret_cast<Int *>(mouse + 0x4f8c) = 0;
 	if( TheDisplay )
 	{
-		*reinterpret_cast<Int *>(mouse + 0x4d8c) =
+		*reinterpret_cast<Int *>(mouse + 0x4f88) =
 			reinterpret_cast<BfmeMouseLimitDisplay *>(TheDisplay)->getWidth();
-		*reinterpret_cast<Int *>(mouse + 0x4d94) =
+		*reinterpret_cast<Int *>(mouse + 0x4f90) =
 			reinterpret_cast<BfmeMouseLimitDisplay *>(TheDisplay)->getHeight();
 	}  // end if
 
