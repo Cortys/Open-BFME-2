@@ -36729,3 +36729,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??$__copy_ptrs@PAUBfmeStringRecord00204A30@@PAU1@@_STL@@YAPAUBfmeStringRecord00204A30@@PAU1@00U__false_type@0@@Z,,0x00204A13,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_00204a30_allocate_copy.cpp,matched,generic ptrs wrapper via rowed copy 00204170 exact 29B
 ?get@Rva0040CB3AIndexedField@@QBEHH@Z,,0x0040CBB8,31,Code/GameEngine/Source/Common/Rva0040CB3ABinarySearch.cpp,matched,keyed value getter via binary search; 18 callers; 0 on miss
 ?Shutdown@BoxRenderObjClass@@SAXXZ,,0x00174EF0,38,Code/Libraries/Source/WWVegas/WW3D2/BoxRenderObjInit.cpp,matched,donor boxrobj.cpp caller Do_Onetime Shutdowns prev Init same TU
+?Rva006053AD@@YAXPAD@Z,,0x006053AD,42,Code/GameEngine/Source/Common/System/Rva006053AD.cpp,matched,honest parent trim caller 0x600AE5 no callees
