@@ -36760,3 +36760,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva003FB640@Rva003FB640@@QAEXXZ,,0x003FB640,28,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,null-checked global handle plus and-zero at +0xC with pinned callee
 ??0DefaultModuleHeadBase@@QAE@ABVRvaSmartPtr12@@H@Z,,0x003A57C5,34,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultModuleHeadBaseDtor.cpp,matched,Head base ctor via smart copy plus int with vptr C1B590 and callers 0x3AA233 0x55BEF4
 ?Rva003319C9Copy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x003319C9,50,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,forward 12-byte copy loop via rowed copy ctor 0x331759 caller 0x331BA2
+?Rva00072480@W3DVideoBuffer@@UAEXXZ,,0x00072480,32,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DVideoBufferRva00072480.cpp,matched,vtable 0x007C64D8 slot12 plus retail 0x72760 3-arg call plus W3DVideoBuffer layout
