@@ -36766,3 +36766,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0027D5E0@Rva0062AF7@@UAEXPAMPBM@Z,,0x0027D5E0,255,Code/GameEngine/Source/Common/Rva0062AF7Rva0027D815.cpp,matched,vslot 13 of 0x007C5890 via BFME1 findClosestEdgePoint donor plus slot08 plus slot06
 ?DoXfer@Rva003A57A9@@UAEXAAVXfer@@@Z,,0x003A57A9,28,Code/GameEngine/Source/Common/Rva003A578ADoXfer.cpp,matched,Outer DoXfer via Version1 plus subobject at plus12 through rowed 0x3A578A
 ?rva007B6880@@YAXXZ,,0x007B6880,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global setter thunk to rowed apply
+?Rva00360CB0Release@@YAXPAH@Z,,0x00360CB0,61,Code/GameEngine/Source/GameLogic/Object/ObjectFilterRelease.cpp,matched,pool release for 0x94 table via 0x360D26 forwarder with 40 callers unblocks 0x362192
