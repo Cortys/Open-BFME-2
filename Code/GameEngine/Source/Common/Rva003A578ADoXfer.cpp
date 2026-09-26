@@ -84,8 +84,24 @@ private:
     float m_float04;
 };
 
+class Rva003A57A9
+{
+public:
+    virtual void DoXfer(Xfer &xfer);
+    virtual ~Rva003A57A9();
+private:
+    char m_pad04[8];
+    Rva003A578A m_sub0C;
+};
+
 void Rva003A578A::DoXfer(Xfer &xfer)
 {
     xfer.Version1();
     xfer == m_float04;
+}
+
+void Rva003A57A9::DoXfer(Xfer &xfer)
+{
+    xfer.Version1();
+    m_sub0C.Rva003A578A::DoXfer(xfer);
 }
