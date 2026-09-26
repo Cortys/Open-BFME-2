@@ -1775,7 +1775,6 @@ Int Condition::getUiStrings(AsciiString strings[MAX_PARMS])
 }
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/Condition_getUiText_Thunk.cpp
-// ?getUiText@Condition@@QAE?AVAsciiString@@XZ present-unmatched
 AsciiString Condition::getUiText(void)
 {
 	AsciiString uiText;
