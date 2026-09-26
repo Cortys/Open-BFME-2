@@ -36519,3 +36519,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva00462CF8@@QAE@XZ,,0x00462CF8,16,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00462CF8Ctor.cpp,matched,gap ctor over rowed Rva0024C7B3Member plus and-zero at 0x1C
 ??1CastleMemberBehavior@@MAE@XZ,,0x00395759,103,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleMemberBehaviorDtor.cpp,matched,BFME1 donor audio dtor; PrimaryP inline gives base stores plus Rva0049B47C call
 ??_GCastleMemberBehavior@@MAEPAXI@Z,,0x00395BAF,28,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleMemberBehaviorDtor.cpp,matched,slot0 deleting dtor calls rowed dtor 0x395759 plus delete
+?clear@Rva000A8C9B@@QAEXXZ,,0x000A8C9B,19,Code/GameEngine/Source/Common/Rva000A8C9BClear.cpp,matched,opaque holder clear via rowed Release_Ref 0x50ED3
