@@ -36737,3 +36737,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00605324@@YAXPAD@Z,,0x00605324,65,Code/GameEngine/Source/Common/System/Rva00605324.cpp,matched,honest normalize caller 0x600AE5 sibling 0x6053AD
 ?getVelocity@OrthoEmissionVelocityModule@FXParticleSystem@@UAE?AUCoord3D@2@HH@Z,,0x0055E81F,61,Code/GameEngine/Source/GameClient/System/FXParticleSystem/OrthoEmissionVelocityModuleGetVelocity.cpp,matched,vslot 4 of vtable 0x0081C860 via BFME1 Ortho sample plus sibling Outward 0x55ECF9 plus same O1 flags
 ??_GRva001EE3DE@@UAEPAXI@Z,,0x001EEFB6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-167e.cpp,matched,Deleting dtor slot 0 of vtable 0x00BE0358; calls pinned ??1 at 0x001EE3DE then rowed operator delete at 0x0002FD60
+?Rva00605365@@YAPADPAD@Z,,0x00605365,72,Code/GameEngine/Source/Common/System/Rva00605365.cpp,matched,honest normalize parent between 0x605324 and 0x6053AD
