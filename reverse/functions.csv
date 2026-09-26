@@ -36503,3 +36503,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GOilSpillUpdateModuleData@@UAEPAXI@Z,,0x0048C1DB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-w8m-e59e.cpp,matched,slot0 of vtable 0x00C4C2F8 plus calls rowed 0x0048C191 plus delete 0x0002FD60
 ??_GFloodUpdateModuleData@@UAEPAXI@Z,,0x0048E13F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-f27a.cpp,matched,slot 0 of vtable 0x84C8C0 calls rowed 0x48DFB1 plus delete 0x2FD60
 ?winSetFocus@GameWindowManager@@UAEHPAVGameWindow@@@Z,,0x002C0ED5,147,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_winSetFocus.cpp,matched,vtable 0x7C7C90 slot 49 BFME1 donor winSetFocus m_keyboardFocus plus 0x20
+?Rva001188A0@@YAXXZ,,0x001188A0,22,Code/Libraries/Source/WWVegas/WW3D2/Rva001188A0Reset.cpp,matched,conditional DX8 state 0x34 reset; TextureStatistics neighbours; G7 cmp-plus-add exact
