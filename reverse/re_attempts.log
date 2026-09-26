@@ -1947,3 +1947,6 @@ FUN_00996BB7	0x00596BB7	32	blocked	vslot13 of 00870A98 zeros 12B at [ebp+8] via 
 ?Do_Onetime_Device_Dependent_Shutdowns@DX8Wrapper@@SAXXZ	0x001215F0	381	blocked	ZH direct reuse 294B vs retail 381B no EH frame plus layout delta DEE5D8 needs CurrentCaps EH work t=10 model=muse-v8t-6082
 ??0Weapon@@IAE@PBVWeaponTemplate@@W4WeaponSlotType@@@Z	0x002CC23D	185	partial	top 5B reg alloc wall lea ebp+b vs f and wslot edx vs eax t=30 model=muse-4f9a score=0.97 stash=reverse/attempts/0x002cc23d.cpp
 ??1Rva003AEEB3@@UAE@XZ	0x003A5817	39	partial	two null-guarded stores plus tail-jmp match structurally in 38B probe but registers swap eax-edx with esi spill via push-pop and imm reuse vs direct t=25 model=muse-spark score=0.92 stash=reverse/attempts/0x003a5817.cpp
+?_Init_Filters@TextureFilterClass@@SAXW4TextureFilterMode@1@@Z	0x0013EB60	420	blocked	register wall ebx-ebp-esi vs eax-ebx-edi and loop base 0x14 vs 0 plus inc vs add t=25 model=muse-49e6
+?MultiplyInternalFPF@@YAXPAUInternalFPF@@00@Z	0x006B9510	672	blocked	direct donor reuse gives same size 725B with 4 real diffs eax-ecx swap plus esp+0xA-0xC swap plus trailing noise t=15 model=muse-49e6
+?DivideInternalFPF@@YAXPAUInternalFPF@@00@Z	0x006B97F0	736	blocked	direct donor reuse same size 801B with 2 stack swaps esp+0x2A-0x2C plus trailing noise t=10 model=muse-49e6

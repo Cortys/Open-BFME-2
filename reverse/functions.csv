@@ -36765,3 +36765,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0033177ECopy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x0033177E,50,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,backward 12-byte copy loop via rowed copy ctor 0x331759 caller 0x331B18
 ?Rva0027D5E0@Rva0062AF7@@UAEXPAMPBM@Z,,0x0027D5E0,255,Code/GameEngine/Source/Common/Rva0062AF7Rva0027D815.cpp,matched,vslot 13 of 0x007C5890 via BFME1 findClosestEdgePoint donor plus slot08 plus slot06
 ?DoXfer@Rva003A57A9@@UAEXAAVXfer@@@Z,,0x003A57A9,28,Code/GameEngine/Source/Common/Rva003A578ADoXfer.cpp,matched,Outer DoXfer via Version1 plus subobject at plus12 through rowed 0x3A578A
+?rva007B6880@@YAXXZ,,0x007B6880,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global setter thunk to rowed apply
