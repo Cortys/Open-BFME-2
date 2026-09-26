@@ -19,7 +19,7 @@ public:
 	virtual void slot03();
 	virtual void slot04();
 	virtual void slot05();
-	virtual void slot06();
+	virtual float slot06(float x, float y, int z);
 	virtual void slot07();
 	virtual void slot08();
 	virtual void slot09();
@@ -39,7 +39,7 @@ public:
 	virtual void slot23();
 	virtual void slot24();
 	virtual float Rva0027D815(float x, float y);
-	virtual void slot26();
+	virtual void *slot26(float x, float y, float z);
 	virtual void slot27();
 	virtual void slot28();
 	virtual void slot29();
@@ -141,4 +141,33 @@ void Rva0062AF7::Rva0027D88E(void *water, float finalHeight, float transitionTim
 	m_entries[m_count].damageAmount = damageAmount;
 	m_entries[m_count].currentHeight = currentHeight;
 	++m_count;
+}
+
+//
+// ?Rva0027D77D@Rva0062AF7@@UAE_NMMPAM0PA_N@Z retail 0x0027D77D 152 bytes.
+// Vslot 19 (offset 0x4C) of vtable 0x007C5890 primary of ??1Rva0062AF7@@UAE@XZ.
+// Ground height via slot 6 (offset 0x18) with x y and 0, water via slot 26
+// (offset 0x68) with x y and ground, null water returns false, else height
+// via slot 30 Rva0027D85B into *a, ground into *b, water slot 1 into *c,
+// returns height above ground. Identity class plus slot, honest address name.
+// Flags: /O1 plus /arch:SSE plus /G7 (same TU as neighbours).
+struct Rva0027D77DWaterView
+{
+	virtual void slot00();
+	virtual bool slot01();
+};
+bool Rva0062AF7::Rva0027D77D(float x, float y, float *a, float *b, bool *c)
+{
+	float ground = slot06(x, y, 0);
+	void *water = slot26(x, y, ground);
+	if (water == 0)
+		return false;
+	float h = Rva0027D85B(water);
+	if (a != 0)
+		*a = h;
+	if (b != 0)
+		*b = ground;
+	if (c != 0)
+		*c = ((Rva0027D77DWaterView *)water)->slot01();
+	return h > ground;
 }
