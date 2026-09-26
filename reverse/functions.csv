@@ -36509,3 +36509,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@Rva0048D742@@MAEXPAVXfer@@@Z,,0x0048DBC4,42,Code/GameEngine/Source/Common/Rva0048D742Xfer.cpp,matched,slot 3 of vtable 0x84C770 Version1 plus base 0x44DF9F plus bool at 0x20 via slot 0x90
 ??8Xfer@@UAEAAV0@AAVPooledString@@@Z,0x0060C0A0,0x0060C0A0,288,Code/GameEngine/Source/Common/System/XferPooledStringTransfer.cpp,matched,vtable slot 25 of 0x007BB910 with astr tag 0x61737472 and strlen 0x629170 via Ascii donor
 ??1MonsterDockUpdate@@MAE@XZ,,0x004A13F4,32,Code/GameEngine/Source/GameLogic/Object/Update/MonsterDockUpdateDtor.cpp,matched,protected dtor restores 4 vptrs then tail-jmps opaque base 0x58A0F4 via RvaDerived pattern
+??_GMonsterDockUpdate@@MAEPAXI@Z,,0x004A1459,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-0a57.cpp,matched,slot 0 of 0x00851D74 calls rowed MAE dtor 0x4A13F4 then delete 0x2FD60
