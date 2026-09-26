@@ -1,5 +1,7 @@
 // ?changeObjectPanelFlagForSingleObject@ScriptActions@@IAEXPAVObject@@ABVAsciiString@@_N@Z
 // partial score=0.9 date=2026-09-26
+// ?changeObjectPanelFlagForSingleObject@ScriptActions@@IAEXPAVObject@@ABVAsciiString@@_N@Z
+// partial score=0.9 date=2026-09-26
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?changeObjectPanelFlagForSingleObject@ScriptActions@@IAEXPAVObject@@ABVAsciiString@@_N@Z,
