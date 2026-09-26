@@ -1923,17 +1923,6 @@ Bool Condition::ParseConditionDataChunk(DataChunkInput &file, DataChunkInfo *inf
 
 // The exact retail constructor is emitted by Template.cpp.
 
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_getUiText_Thunk.cpp
-// ?getUiStrings@Template@@QBEHQAVAsciiString@@@Z present-unmatched
-Int Template::getUiStrings(AsciiString strings[MAX_PARMS]) const
-{
-	Int i;
-	for (i=0; i<m_numUiStrings; i++) {
-		strings[i] = m_uiStrings[i];
-	}
-	return m_numUiStrings;
-}
-
 //-------------------------------------------------------------------------------------------------
 // ******************************** class Parameter ***********************************************
 //-------------------------------------------------------------------------------------------------
