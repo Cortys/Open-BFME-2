@@ -36502,3 +36502,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva005DAAC1@Rva005DAAB6@@UAEXPAVXfer@@PAX@Z,,0x005DAAC1,83,Code/GameEngine/Source/Common/Rva0055AED6Xfer.cpp,matched,gap slot12 of 008765A8 via base 0055AED6 plus bool Coord float
 ??_GOilSpillUpdateModuleData@@UAEPAXI@Z,,0x0048C1DB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-w8m-e59e.cpp,matched,slot0 of vtable 0x00C4C2F8 plus calls rowed 0x0048C191 plus delete 0x0002FD60
 ??_GFloodUpdateModuleData@@UAEPAXI@Z,,0x0048E13F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-f27a.cpp,matched,slot 0 of vtable 0x84C8C0 calls rowed 0x48DFB1 plus delete 0x2FD60
+?winSetFocus@GameWindowManager@@UAEHPAVGameWindow@@@Z,,0x002C0ED5,147,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_winSetFocus.cpp,matched,vtable 0x7C7C90 slot 49 BFME1 donor winSetFocus m_keyboardFocus plus 0x20
