@@ -1,11 +1,11 @@
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE /D_STLP_USE_STATIC_LIB
 // stlport
 //
-// ?internalSetGoalPosition@StateMachine@@QAEXPBVCoord3D@@M@Z,
+// ?internalSetGoalPosition@StateMachine@@QAEXPBUCoord3D@@M@Z,
 // retail 0x004D73C4, 32 bytes, plus
 // ?setGoalObject@StateMachine@@QAEXPAVObject@@@Z,
 // retail 0x004D7435, 39 bytes, plus
-// ?setGoalPosition@StateMachine@@QAEXPBVCoord3D@@M@Z,
+// ?setGoalPosition@StateMachine@@QAEXPBUCoord3D@@M@Z,
 // retail 0x004D745C, 26 bytes, plus
 // ?setGoalPosition@TurretStateMachine@@QAEXPBUCoord3D@@@Z,
 // retail 0x00262224, 22 bytes, plus
@@ -129,6 +129,7 @@ public:
 	Bool hasState(StateID id);
 	StateReturnType internalSetState(StateID newStateID);
 	StateReturnType initDefaultState();
+	StateReturnType setState(StateID newStateID);
 };
 
 class TurretStateMachine : public StateMachine
@@ -137,7 +138,7 @@ public:
 	void setGoalPosition(const Coord3D *pos);
 };
 
-// ?internalSetGoalPosition@StateMachine@@QAEXPBVCoord3D@@M@Z
+// ?internalSetGoalPosition@StateMachine@@QAEXPBUCoord3D@@M@Z
 void StateMachine::internalSetGoalPosition(const Coord3D *pos, float goalRange)
 {
 	if (pos) {
@@ -147,7 +148,7 @@ void StateMachine::internalSetGoalPosition(const Coord3D *pos, float goalRange)
 	m_goalRange = goalRange;
 }
 
-// ?setGoalPosition@StateMachine@@QAEXPBVCoord3D@@M@Z
+// ?setGoalPosition@StateMachine@@QAEXPBUCoord3D@@M@Z
 void StateMachine::setGoalPosition(const Coord3D *pos, float goalRange)
 {
 	if (m_locked)
@@ -278,4 +279,18 @@ StateReturnType StateMachine::initDefaultState()
 Bool StateMachine::hasState(StateID id)
 {
 	return m_stateMap.find(id) != m_stateMap.end();
+}
+
+// ?setState@StateMachine@@QAE?AW4StateReturnType@@H@Z @0x004D7ACD 16B
+// Retail lock-gated setter tail-jmps to internalSetState when unlocked.
+// Donor BFME1 StateMachine.cpp setState verbatim minus debug.
+// Vtable slot 8 of 19 Rva004D759C-derived classes; callers at 0x350403 and 0x4D8593.
+StateReturnType StateMachine::setState(StateID newStateID)
+{
+	if (m_locked)
+	{
+		return STATE_CONTINUE;
+	}
+
+	return internalSetState(newStateID);
 }
