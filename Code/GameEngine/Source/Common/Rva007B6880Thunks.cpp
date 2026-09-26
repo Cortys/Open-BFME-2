@@ -71,3 +71,27 @@ void __cdecl rva007B6AA0()
 	AsciiString *p = (AsciiString *)&g_Va00DE0878;
 	return p->~AsciiString();
 }
+
+// ??1SortingRenderStateStruct@@QAE@XZ rowed target for next thunks (184B @0x0011C5C0).
+class SortingRenderStateStruct
+{
+public:
+	~SortingRenderStateStruct();
+};
+
+extern unsigned g_Va00DEDC80;
+extern unsigned g_Va00DEE5D8;
+
+// ?rva007B6FC0@@YAXXZ @ 0x007B6FC0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&g_Va00DEDC80 then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same page. Honest address name.
+void __cdecl rva007B6FC0()
+{
+	SortingRenderStateStruct *p = (SortingRenderStateStruct *)&g_Va00DEDC80;
+	return p->~SortingRenderStateStruct();
+}
+
+// ?rva007B6FD0@@YAXXZ @ 0x007B6FD0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&g_Va00DEE5D8 then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same target as 0x007B6FC0, different global. Honest address name.
+void __cdecl rva007B6FD0()
+{
+	SortingRenderStateStruct *p = (SortingRenderStateStruct *)&g_Va00DEE5D8;
+	return p->~SortingRenderStateStruct();
+}
