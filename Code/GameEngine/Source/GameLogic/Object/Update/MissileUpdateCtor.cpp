@@ -85,10 +85,24 @@ private:
 
 extern GameLogic *TheGameLogic;
 
+enum ParticleSystemID
+{
+	INVALID_PARTICLE_SYSTEM_ID = 0
+};
+
+class ParticleSystemManager
+{
+public:
+	void destroyParticleSystemByID(ParticleSystemID id);
+};
+
+extern ParticleSystemManager *TheParticleSystemManager;
+
 class MissileUpdate : public BezierProjectileBehavior
 {
 public:
 	MissileUpdate(Thing *thing, const ModuleData *moduleData);
+	void Rva004A7512Clear();
 
 private:
 	int m_88; // +0x88
@@ -131,4 +145,13 @@ MissileUpdate::MissileUpdate(Thing *thing, const ModuleData *moduleData) :
 	m_velA.zero();
 	m_CE = 0;
 	m_velB.zero();
+}
+void MissileUpdate::Rva004A7512Clear()
+{
+	int id = m_C8;
+	if (id != 0)
+	{
+		TheParticleSystemManager->destroyParticleSystemByID((ParticleSystemID)id);
+		m_C8 = 0;
+	}
 }
