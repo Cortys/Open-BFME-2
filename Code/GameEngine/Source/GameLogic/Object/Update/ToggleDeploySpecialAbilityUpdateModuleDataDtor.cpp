@@ -1,4 +1,5 @@
 // cl: /O1 /GX /arch:SSE /MD /DNDEBUG
+// Rva0044ECCE is an address-derived base stand-in; its target class name is unproven.
 //
 // ??1ToggleDeploySpecialAbilityUpdateModuleData@@UAE@XZ, retail 0x004AE685,
 // 82 bytes. ToggleDeploySpecialAbilityUpdate ModuleData dtor over the ctor TU
@@ -6,15 +7,15 @@
 // Rva0044EB54 base 0xC8 plus cleared words at +0xC8/+0xCC, factory news 0xD0,
 // vtable 0x00C553D8 with slot 0 deleting dtor at 0x004AE669 calling here).
 // Destroys +0xCC then +0xC8 through the rowed Release_Ref at 0x00050ED3 when
-// non-null (states 1/0), then the DamageModuleBase base through the pinned
+// non-null (states 1/0), then the Rva0044ECCE base through the pinned
 // 0x0044ECCE body (state -1). Shape follows GiveOrRestoreUpgradeSpecialPower
 // ModuleDataDtor 0x004CD2E8 (novtable derived plus virtual base, no entry or
 // exit vtable store) with the Bloodthirsty holder inline pattern.
 
-class DamageModuleBase
+class Rva0044ECCE
 {
 public:
-	virtual ~DamageModuleBase();
+	virtual ~Rva0044ECCE();
 
 private:
 	unsigned char m_pad[0xC8 - 4];
@@ -37,7 +38,7 @@ struct DeployRefHolder
 	OpaqueRefCounted *m_ptr;
 };
 
-class __declspec(novtable) ToggleDeploySpecialAbilityUpdateModuleData : public DamageModuleBase
+class __declspec(novtable) ToggleDeploySpecialAbilityUpdateModuleData : public Rva0044ECCE
 {
 public:
 	virtual ~ToggleDeploySpecialAbilityUpdateModuleData();

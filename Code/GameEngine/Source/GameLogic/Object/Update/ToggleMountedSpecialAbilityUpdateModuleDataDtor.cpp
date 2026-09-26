@@ -1,4 +1,5 @@
 // cl: /O1 /GX /arch:SSE /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// Rva0044ECCE is an address-derived base stand-in; its target class name is unproven.
 // stlport
 //
 // ??1ToggleMountedSpecialAbilityUpdateModuleData@@UAE@XZ, retail 0x004AE10B, 74 bytes.
@@ -7,9 +8,9 @@
 // SynchronizeTimer@D4; factory 0x24F6C5 news 0xE0 table 0x00BEF770). Destroys
 // vector<AsciiString> at +0xD4 via rowed 0x0002CC70 (state 1) then
 // StringBase<char> at +0xD0 via pinned 0x00036410 (state 0) then base
-// DamageModuleBase via pinned 0x0044ECCE (state -1). Shape follows
+// Rva0044ECCE via pinned 0x0044ECCE (state -1). Shape follows
 // GiveOrRestoreUpgradeSpecialPowerModuleDataDtor (74B strings plus
-// DamageModuleBase) with StealthUpdateModuleDataDtor vector precedent
+// Rva0044ECCE) with StealthUpdateModuleDataDtor vector precedent
 // (novtable derived plus virtual base, empty body, no entry store).
 // Caller is slot-0 ??_G at 0x004AE0EF (vtable 0x00855220).
 #include <vector>
@@ -23,10 +24,10 @@ private:
 	void *m_data;
 };
 
-class DamageModuleBase
+class Rva0044ECCE
 {
 public:
-	virtual ~DamageModuleBase();
+	virtual ~Rva0044ECCE();
 
 private:
 	unsigned char m_pad[0xC8 - 4];
@@ -41,7 +42,7 @@ private:
 	void *m_data;
 };
 
-class __declspec(novtable) ToggleMountedSpecialAbilityUpdateModuleData : public DamageModuleBase
+class __declspec(novtable) ToggleMountedSpecialAbilityUpdateModuleData : public Rva0044ECCE
 {
 public:
 	virtual ~ToggleMountedSpecialAbilityUpdateModuleData();

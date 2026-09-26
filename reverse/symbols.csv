@@ -4532,7 +4532,7 @@ _fmod,0x0062996A,MSVCR71 fmod import thunk; raw jmp through IAT00BBA554 independ
 ??0PrereqUnitRec@ProductionPrerequisite@@QAE@ABU01@@Z,0x004EE1A9,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ??1?$_List_base@UEvacuationRecord@@V?$allocator@UEvacuationRecord@@@_STL@@@_STL@@QAE@XZ,0x0002CC38,address read from the REL32 displacement at a placed body
 ??1?$_Vector_base@HV?$allocator@H@_STL@@@_STL@@QAE@XZ,0x00360D26,address read from the REL32 displacement at a placed body
-??1DamageModuleBase@@UAE@XZ,0x0044ECCE,address read from the REL32 displacement at a placed body
+??1Rva0044ECCE@@UAE@XZ,0x0044ECCE,opaque module-data base dtor; target call and 0xC8 prefix verified in callers; former DamageModuleBase was a TU-local stand-in and supplied no class identity
 ??1GeometryShape@@QAE@XZ,0x002AF1EC,address read from the REL32 displacement at a placed body
 ??1PB_DeepBase@@UAE@XZ,0x0002CCC3,address read from the REL32 displacement at a placed body
 ?winGetStyle@GameWindow@@QAEIXZ,0x005C4AF1,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
