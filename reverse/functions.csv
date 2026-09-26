@@ -36751,3 +36751,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?setMouseLimits@Mouse@@UAEXXZ,,0x001EDE63,57,Code/GameEngine/Source/GameClient/Input/Mouse.cpp,matched,BFME1 Mouse setMouseLimits with BFME2 offsets +0x1FC and Display slots +0x40 +0x44; TheDisplay global
 ?xfer@TerrainResourceBehavior@@MAEXPAVXfer@@@Z,,0x004821CB,114,Code/GameEngine/Source/GameLogic/Object/Behavior/TerrainResourceBehaviorXfer.cpp,matched,slot 3 of vtable 0x00849408 via ctor 0x48209B plus members plus version 1-2
 ??1DefaultModuleHeadBase@@UAE@XZ,,0x003A57E7,20,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultModuleHeadBaseDtor.cpp,matched,Head base dtor via conditional unlink through rowed 0x4CBC0 with vptr C1B590 and callers 0x3A5817 0x3A984D
+??_GDefaultModuleHeadBase@@UAEPAXI@Z,,0x003A57FB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-4ae4.cpp,matched,Deleting dtor for rowed head base dtor at 0x3A57E7 with vtable 0x81B590
