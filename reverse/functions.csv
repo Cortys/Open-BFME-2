@@ -36754,3 +36754,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GDefaultModuleHeadBase@@UAEPAXI@Z,,0x003A57FB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-4ae4.cpp,matched,Deleting dtor for rowed head base dtor at 0x3A57E7 with vtable 0x81B590
 ?loadPostProcess@TerrainResourceBehavior@@MAEXXZ,,0x0048223D,28,Code/GameEngine/Source/GameLogic/Object/Behavior/TerrainResourceBehaviorLoadPostProcess.cpp,matched,slot 1 of vtable 0x00849408 via ctor 0x48209B plus xfer 0x4821CB
 ??1Rva0045EF90Object@@UAE@XZ,,0x00410421,110,Code/GameEngine/Source/Common/Rva0045EF90Dtor.cpp,matched,dtor lane class of copy-ctor row vtable 0x00839630 3x StringBase dtor
+??_GRva0045EF90Object@@UAEPAXI@Z,,0x0041048F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-98d1.cpp,matched,scalar deleting dtor public dtor same-shape sibling
