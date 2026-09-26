@@ -11,7 +11,7 @@ Audited the 120 named wrappers and 30 remaining opaque B01 wrappers from the twe
 - Retracted the `AABTreeLinkClass` wrapper at RVA `0x0026EF34` and the older 29-byte constructor claim at RVA `0x0026EDDC` on which it depended.
 - Consolidated six duplicate symbols introduced by the rebase: Watchdog, InvisibilitySpecialPowerModuleData, CashHackSpecialPowerModuleData, ProductionSpeedBonusModuleData, CloudBreakSpecialPowerModuleData, and TaintSpecialPowerModuleData. Their family sources remain; four redundant Common sources were removed.
 - Replaced the unsupported DamageModuleBase destructor pin with `Rva0044ECCE` in ten module-data destructor sources. The target address and verified bodies are unchanged.
-- Net unique-byte gain against origin/master at `1cd072c6b`: **2,743 bytes (+0.03 percentage points of non-padding code)**. The reduction from the original reported +3,080 bytes consists of 168 bytes independently landed upstream, 84 bytes of wrapper retractions, the 29-byte constructor retraction, and the 56-byte incidental destructor retraction.
+- Net unique-byte gain against origin/master at `b1bc2072a`: **2,743 bytes (+0.03 percentage points of non-padding code)**. The reduction from the original reported +3,080 bytes consists of 168 bytes independently landed upstream, 84 bytes of wrapper retractions, the 29-byte constructor retraction, and the 56-byte incidental destructor retraction.
 
 ## Evidence standard and limits
 
@@ -203,4 +203,6 @@ The full gate regenerated three additional entries in `reverse/reloc_names.csv`:
 - Ten renamed module-data base consumers: 10/10 exact; `tools/place_bodies.py` rescan found zero new bodies or pins.
 - `python tools/check_module_registry.py --check`: all 329 registrations pass, with the two existing documented exceptions.
 - Ledger, pin consistency, and normal pre-commit hooks pass for the completed correction commits.
-- Final full gate: **all checks green**, including 36,683/36,683 function matches, string/float/import references, DIR32 and pin consistency, 329 module registrations, source claims, and the byte-identical no-op patch.
+- Final full gate: **all checks green**, including 36,696/36,696 function matches, string/float/import references, DIR32 and pin consistency, 329 module registrations, source claims, and the byte-identical no-op patch.
+
+Publication rebase to `503f43679` restored obsolete versions of 119 function rows and 117 pin notes through the union merge driver. Those duplicate versions were removed, preserving all 118 audited function and pin records and the 12 new upstream function claims. A subsequent rebase to `b1bc2072a` restored 118 obsolete function notes again; the same audited records were retained. The complete gate was rerun after each merge repair.
