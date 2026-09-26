@@ -6044,6 +6044,7 @@ _lua_setlocal,0x0074CC40,address read from the REL32 displacement at a placed bo
 ?bfmeUnlink@MixFileInfoBuffer@@AAEXXZ,0x002E6BE2,MixFileInfoBuffer intrusive-list detach (33B body in MixFileInfoBufferUnlink.cpp); sole shape via releaseInto and linkInto call sites
 ?bfmeLinkInto@MixFileInfoBuffer@@AAEXPAPAV1@@Z,0x0052DBA4,MixFileInfoBuffer intrusive-list attach (39B body rowed from this TU); called once by releaseInto 0x52DD41
 ??1W3DModelDrawModuleData@@UAE@XZ,0x000C8BE0,dtor called by audited wrapper RVA 0x000C8DC3; retail W3DScriptedModelDraw registration -> shared data factory RVA 0x000648D6 -> ctor RVA 0x000C8EEF; primary vptr store RVA 0x000C8F13; field parser RVA 0x000C9240 agrees with donor W3DModelDraw data
+??1W3DModelDrawModuleData@@UAE@XZ,0x000C8BE0
 ?erase@?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@QAEPAW4ScienceType@@PAW43@0@Z,0x00532803,ICF alias of the rowed ParticleSystemID erase at this address; same 38B trivial-element shape; my TU emission byte-identical
 ??$__copy_ptrs@PAW4ScienceType@@PAW41@@_STL@@YAPAW4ScienceType@@PAW41@00ABU__false_type@0@@Z,0x0025BF40,ICF alias of the rowed PBW4ScienceType copy_ptrs at this address; same 29B 4B-pointer memmove; my TU emission byte-identical
 ?lookupScience@ScienceStore@@QBE?AW4ScienceType@@PBD@Z,0x001FF65D,const-member spelling of the rowed friend_lookupScience worker; called from the INI scanScience forwarder
@@ -6708,6 +6709,7 @@ _fmod,0x0062996A,MSVCR71 fmod import thunk; raw jmp through IAT00BBA554 independ
 ??1?$_List_base@UEvacuationRecord@@V?$allocator@UEvacuationRecord@@@_STL@@@_STL@@QAE@XZ,0x0002CC38,address read from the REL32 displacement at a placed body
 ??1?$_Vector_base@HV?$allocator@H@_STL@@@_STL@@QAE@XZ,0x00360D26,address read from the REL32 displacement at a placed body
 ??1Rva0044ECCE@@UAE@XZ,0x0044ECCE,opaque module-data base dtor; target call and 0xC8 prefix verified in callers; former DamageModuleBase was a TU-local stand-in and supplied no class identity
+??1DamageModuleBase@@UAE@XZ,0x0044ECCE,address read from the REL32 displacement at a placed body
 ??1GeometryShape@@QAE@XZ,0x002AF1EC,address read from the REL32 displacement at a placed body
 ??1PB_DeepBase@@UAE@XZ,0x0002CCC3,address read from the REL32 displacement at a placed body
 ?winGetStyle@GameWindow@@QAEIXZ,0x005C4AF1,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
@@ -7965,3 +7967,8 @@ _ConvertBoolTrees,0x001BBD60
 ?didPartialEnter@Team@@QAE_NPAVPolygonTrigger@@I@Z,0x0039E20D,target direct call from 0x3E6E0C with Team ECX and trigger/type args; helper returns true when a Team member has entered the trigger
 ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z,0x0039E303,target direct call from 0x3E6E6E; helper scans Team members with didExit and didEnter and requires no partial/current inside members
 ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z,0x0039E288,target direct call from 0x3E704A and helper uses Object::didExit to detect exited members
+?Rva004495A2@LANAPI@@QAEXPAULANMessage@@I@Z,0x004495A2,opaque LANAPI helper reached by RequestLobbyLeave 0x4498A4 with ECX=this and stack args message and zero; target boundary overlaps its Ghidra split at +0x0D
+?Rva004D54C1@Transport@@QAE_N_N@Z,0x004D54C1,opaque transport helper reached by RequestLobbyLeave 0x4498A4 with ECX=m_transport and Bool false; target body consumes that argument and returns Bool
+?g_Rva00E02EEC@@3PAULANGameInfo@@A,0x00E02EEC,address-derived global pointer compared with LANAPI::removeGame argument at 0x449913 and cleared on equality
+?Rva00248CBF@LANGameSlot@@QBE_NPBUBfmeNetAddress@@@Z,0x00248CBF,target helper at LANGameSlot call site in RequestGameOptions 0x44A89C; compares slot IPv4 and port with BfmeNetAddress and returns Bool
+?Rva00248CBF@BfmeNetAddress@@QBE_NPBU1@@Z,0x00248CBF,address-pair comparison helper reused by LANPlayer::LookupPlayer at 0x4499A2; compares IP and port fields at +0/+4
