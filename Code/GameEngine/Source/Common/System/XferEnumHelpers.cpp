@@ -396,6 +396,49 @@ void XferDeployStateTypes(Xfer *xfer, int *value)
 	xfer->XferEnum("DeployStateTypes", value, 4);
 }
 
+// Retail 0x00305EA2 (24B): labelled-enum helper with the
+// "DeployStyleAIUpdate::CommandResultTypes" label (string at 0x00807B60).
+// Callers in unclaimed DeployStyleAIUpdate xfer at 0x0048E746/0x0048E770.
+void XferCommandResultTypes(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DeployStyleAIUpdate::CommandResultTypes", value, 4);
+}
+
+// Retail 0x00305EBA (24B): labelled-enum helper with the "DamageFXType"
+// label (string at 0x008015AC).
+void XferDamageFXType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DamageFXType", value, 4);
+}
+
+// Retail 0x00305ED2 (24B): labelled-enum helper with the "DamageType"
+// label (string at 0x008015C8).
+void XferDamageType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DamageType", value, 4);
+}
+
+// Retail 0x00305EEA (24B): labelled-enum helper with the "DamageSubType"
+// label (string at 0x0080159C).
+void XferDamageSubType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DamageSubType", value, 4);
+}
+
+// Retail 0x00305F02 (24B): labelled-enum helper with the "DeathType"
+// label (string at 0x008015BC).
+void XferDeathType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DeathType", value, 4);
+}
+
+// Retail 0x00305F1A (24B): labelled-enum helper with the "StealthLookType"
+// label (string at 0x00807B88).
+void XferStealthLookType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("StealthLookType", value, 4);
+}
+
 // Retail 0x0030609A (24B): labelled-enum helper moving a 4-byte bridge tower
 // type through XferEnum with the "BridgeTowerType" label (string at
 // 0x00807CB8 between RotationType and ObjectID). Sole caller is
