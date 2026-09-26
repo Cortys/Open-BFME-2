@@ -93,7 +93,6 @@ public:
 		return append(first, last, tag);
 	}
 
-	// ??$rva001EF83A@PBG@?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@QAEAAV01@PBG0@Z present-unmatched
 	template <class ForwardIter>
 	basic_string<CharT, Traits, Alloc> &rva001EF83A(ForwardIter first, ForwardIter last)
 	{
