@@ -31,3 +31,23 @@ void Rva00360CB0Release(int *indexHolder)
     table[index].m_refCount--;
     *indexHolder = -1;
 }
+
+// ??1Rva00360D26Member@@QAE@XZ @0x00360D26 8B
+// Pool-aware member dtor forwarding this to the release above. Identity is
+// triple-proven: the pin at 0x00360D26, 40+ callers including the rowed
+// TransportContainModuleData dtor (two calls for +0x08/+0x0C), and the
+// FamilyDeletingDtors2 ??_G at 0x00421728 calling here. Same TU and flags
+// as the release (/O1 for pop-ecx cleanup).
+class Rva00360D26Member
+{
+public:
+    ~Rva00360D26Member();
+
+private:
+    unsigned m_unknown;
+};
+
+Rva00360D26Member::~Rva00360D26Member()
+{
+    Rva00360CB0Release((int *)this);
+}
