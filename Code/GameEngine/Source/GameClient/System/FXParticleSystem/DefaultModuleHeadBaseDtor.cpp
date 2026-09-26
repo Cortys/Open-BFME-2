@@ -19,8 +19,10 @@ struct BfmeParticleSystemHandle
 	void *m_next;
 };
 
-struct RvaSmartPtr12
+class RvaSmartPtr12
 {
+public:
+	RvaSmartPtr12(const RvaSmartPtr12 &other);
 	void *m_ptr;
 	int m_pad04;
 	int m_pad08;
@@ -29,11 +31,18 @@ struct RvaSmartPtr12
 class DefaultModuleHeadBase
 {
 public:
+	DefaultModuleHeadBase(const RvaSmartPtr12 &smart, int i);
 	virtual ~DefaultModuleHeadBase();
 private:
 	RvaSmartPtr12 m_smart;
 	int m_int10;
 };
+
+DefaultModuleHeadBase::DefaultModuleHeadBase(const RvaSmartPtr12 &smart, int i)
+	: m_smart(smart)
+	, m_int10(i)
+{
+}
 
 DefaultModuleHeadBase::~DefaultModuleHeadBase()
 {

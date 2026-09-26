@@ -36758,3 +36758,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva003FB7C7@Rva003FB7C7@@QAEXXZ,,0x003FB7C7,20,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,same-page vslot adjacency plus this+8 slot113 shape with unclaimed callers
 ??1Rva003AE13C@@UAE@XZ,,0x003A583E,24,Code/GameEngine/Source/GameClient/System/FXParticleSystem/V3InlineTemplateDtor.cpp,matched,V3-inline dtor via two manual vptrs plus8 null-guarded plus0 plain with vtable 0x81D2C0 and caller 0x3AE16E
 ?rva003FB640@Rva003FB640@@QAEXXZ,,0x003FB640,28,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,null-checked global handle plus and-zero at +0xC with pinned callee
+??0DefaultModuleHeadBase@@QAE@ABVRvaSmartPtr12@@H@Z,,0x003A57C5,34,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultModuleHeadBaseDtor.cpp,matched,Head base ctor via smart copy plus int with vptr C1B590 and callers 0x3AA233 0x55BEF4
