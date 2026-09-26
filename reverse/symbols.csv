@@ -5751,3 +5751,5 @@ _ConvertBoolTrees,0x001BBD60
 ?rva00620090@EAStringC@@QBEPBDXZ,0x00620090,Target date toString callback passes live EAStringC to six-byte data-plus-eight accessor before SetString; address name retained because donor GetBuffer/c_str/ConstRawPtr aliases do not distinguish original spelling; evidence=godfather_disk_evidence.json apt_date_string_callback
 ??0GadgetCreateView@@QAE@XZ,0x0022239C,0x34-byte create-view zeroer called before snapshotCreateView by 0x003174CB/0x0031C9DF/0x0031CAD2; folds with the matched _ArcInfoStruct ctor body
 ?createGadget@@YAPAVGameWindow@@PADPAXPAVGadgetCreateView@@PAV1@@Z,0x00316518,BFME2 createGadget (type data view source) called by the gadget rebuild wrapper 0x003174CB; named in the getDataTemplate and copyGadgetDrawData TU notes
+?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z,0x003584E9,BFME2 retail body resolves named teams; dispatcher caller passes team name; BFME1 donor identifies getTeamNamed
+?getUnitNamed@ScriptEngine@@QAEPAVObject@@ABVAsciiString@@@Z,0x003588E7,BFME2 retail named-object lookup called by NAMED_SET_REPULSOR; BFME1 donor signature is const AsciiString ref
