@@ -103,6 +103,7 @@ class MissileUpdate : public BezierProjectileBehavior
 public:
 	MissileUpdate(Thing *thing, const ModuleData *moduleData);
 	void Rva004A7512Clear();
+	void Rva004A7530Set(int val);
 
 private:
 	int m_88; // +0x88
@@ -153,5 +154,13 @@ void MissileUpdate::Rva004A7512Clear()
 	{
 		TheParticleSystemManager->destroyParticleSystemByID((ParticleSystemID)id);
 		m_C8 = 0;
+	}
+}
+void MissileUpdate::Rva004A7530Set(int val)
+{
+	if (m_88 != val)
+	{
+		m_88 = val;
+		m_frame = TheGameLogic->getFrame();
 	}
 }
