@@ -36819,3 +36819,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1OneRingPenaltyUpdateModuleData@@UAE@XZ,,0x00499A16,73,Code/GameEngine/Source/GameLogic/Object/Update/OneRingPenaltyUpdateModuleDataDtor.cpp,matched,EH dtor via vtable 0x00C50298 and caller 0x00499C19 plus base 0x00BBB554 plus ctor 0x004999F1 layout
 ??1PlayerList@@UAE@XZ,,0x002A79A9,122,Code/GameEngine/Source/Common/RTS/PlayerListDtor.cpp,matched,vtable 0xBFD618 slot0 0x2A7ED5 20 Players at 0x18 via deleteInstance 0 plus delete 0x2FD60 ThePlayerList 0xDFEEE8 base 0x1B4E74
 ?loadPostProcess@SpawnBehavior@@MAEXXZ,,0x0045F382,17,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorLoadPostProcess.cpp,matched,slot 1 of C426AC plus base 58B03E plus validate B3FD0
+??1FiringTracker@@UAE@XZ,,0x004DEA0C,86,Code/GameEngine/Source/GameLogic/Object/FiringTrackerDtor.cpp,matched,FiringTracker dtor via UpdateModule base plus audio remove
