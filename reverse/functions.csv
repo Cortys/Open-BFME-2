@@ -36596,3 +36596,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@BeaconClientUpdate@@MAEXPAVXfer@@@Z,,0x004C95C9,62,Code/GameEngine/Source/GameLogic/Object/Update/BeaconClientUpdateXfer.cpp,matched,slot 3 of vtable 0x0085EB30 via ctor 0x004C9598 plus base 0x00560AE1 plus Version1 plus helper 0x0030600A
 ?writeStatInfo@StatsCollector@@AAEXXZ,,0x00437921,556,Code/GameEngine/Source/Common/StatsCollector.cpp,matched,pinned name same TU donor BFME1 StatsCollector.cpp:419 caller writeFileEnd
 ??H@YA?AURva002226E5TextPlusString@@PBDABVAsciiString@@@Z,,0x002226E5,52,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,mirror of rowed string-plus-text at 0xB49C5 with swapped operands; builds _nrm plus ext in 0x317D89 plus 24 callers
+??0Rva00222719Temp@@QAE@ABVUnicodeString@@@Z,,0x00222719,49,Code/GameEngine/Source/Common/System/Rva00222719TempCtor.cpp,matched,EH temp copy via wide set for Apt setters 0x225299 plus 0x225301
