@@ -62,11 +62,11 @@ import build
 
 ROOT = build.ROOT
 BFME1 = ROOT / "reference" / "open-bfme-1"
-BFME1_EXE = BFME1 / "inputs" / "baselines" / "bfme1" / "workshop-vanilla-1.03" / "files" / "lotrbfme.exe"
-BFME1_LEDGER = BFME1 / "targets" / "game" / "reverse" / "functions.csv"
+BFME1_EXE = build.bfme1_path("baselines", "bfme1", "workshop-vanilla-1.03", "files", "lotrbfme.exe")
+BFME1_LEDGER = build.bfme1_path("ledger", "functions.csv")
 BFME2_LEDGER = ROOT / "reverse" / "functions.csv"
 BFME2_SYMBOLS = ROOT / "reverse" / "symbols.csv"
-BFME1_SYMBOLS = BFME1 / "targets" / "game" / "reverse" / "symbols.csv"
+BFME1_SYMBOLS = build.bfme1_path("ledger", "symbols.csv")
 OUT_DIR = ROOT / "build" / "bfme1_sweep"
 MATCH_JSON = OUT_DIR / "match.json"
 # Scratch, not tracked. A packet is derived from match.json and the live

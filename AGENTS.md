@@ -93,6 +93,12 @@ to `game/` is not a free rename either: it would re-point them at headers carryi
 1785 commits of drift, changing codegen for 626 already-matched TUs. Land a
 verified path-migration plan for those `// cl:` lines before moving the pointer.
 
+**Current state:** upstream reorganized its tree in `904cff1` (`Code/` ->
+`game/`, `reference/` and `vendor/` -> `inputs/`) to add WorldBuilder as a
+second target. Our sources still use the old paths, so the pointer is held at
+`79ae05a`, the last old-layout commit. Until the migration lands, don't bump
+it and skip the 24-hour freshness check. `bfme1_sweep.py` reads either layout.
+
 ## Work the file, not the row
 
 `next_work.py` lists every other queued candidate in the same source file.
