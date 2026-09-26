@@ -36735,3 +36735,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00174F20Set@@YAXH@Z,,0x00174F20,10,Code/GameEngine/Source/Common/ColdGlobalDwordSetters.cpp,matched,pairs with getter Rva00174F30Get same global prev Shutdown
 ?Rva004BE67E@DetachableRiderBody@@UBE?AVAsciiString@@XZ,,0x004BE67E,30,Code/GameEngine/Source/GameLogic/Object/Body/DetachableRiderBodyRva004BE67E.cpp,matched,slot28 of 0x85BF48 via ctor 0x4C1C82 and ActiveBodyModuleData 0x2C and RVO precedent
 ?Rva00605324@@YAXPAD@Z,,0x00605324,65,Code/GameEngine/Source/Common/System/Rva00605324.cpp,matched,honest normalize caller 0x600AE5 sibling 0x6053AD
+?getVelocity@OrthoEmissionVelocityModule@FXParticleSystem@@UAE?AUCoord3D@2@HH@Z,,0x0055E81F,61,Code/GameEngine/Source/GameClient/System/FXParticleSystem/OrthoEmissionVelocityModuleGetVelocity.cpp,matched,vslot 4 of vtable 0x0081C860 via BFME1 Ortho sample plus sibling Outward 0x55ECF9 plus same O1 flags
