@@ -54,3 +54,30 @@ void Rva003FB7C7::rva003FB7C7()
 	if (m_ptr)
 		m_ptr->slot113(1);
 }
+
+class Gen0003AC38
+{
+public:
+	void handle(void *object);
+};
+
+extern Gen0003AC38 *g_Rva003FB640Mgr;
+
+class Rva003FB640
+{
+public:
+	void rva003FB640();
+private:
+	char m_pad00[0xC];
+	void *m_ptr0C; // +0xC
+};
+
+void Rva003FB640::rva003FB640()
+{
+	void *p = m_ptr0C;
+	if (p)
+	{
+		g_Rva003FB640Mgr->handle(p);
+		m_ptr0C = 0;
+	}
+}
