@@ -7976,3 +7976,4 @@ _ConvertBoolTrees,0x001BBD60
 ?trim@?$StringBase@G@@QAEXXZ,0x00037F70,RequestSetName 0x44B7C6 calls this target thiscall on its by-value UnicodeString parameter; BFME1 donor calls wide StringBase trim
 ?translate@UnicodeString@@QAEXABVAsciiString@@@Z,0x006CB6A0,RequestSetName 0x44B8B9 and 0x44B8C8 pass UnicodeString destinations and AsciiString sources; target thunk adjusts the source data pointer then tails to wide translation
 ?Rva0044B40C@LANAPI@@QAEXPAVLANPlayer@@@Z,0x0044B40C,RequestSetName 0x44B8D9 calls target helper with this and the completed LANPlayer; address-derived pending target body identity
+??1LANAPI@@UAE@XZ,0x0044B992,Target LANAPI scalar-deleting destructor 0x44BA0E calls this complete destructor; body restores LANAPI vtable and destroys transport and the name/login/host members
