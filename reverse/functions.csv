@@ -36723,3 +36723,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?XferAttributeModifierCategoryType@@YAXPAVXfer@@PAH@Z,,0x00305FDA,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper AttributeModifierCategoryType string via XferEnum
 ?XferInvisibilityType@@YAXPAVXfer@@PAH@Z,,0x00305FF2,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper INVISIBILITYTYPE string via XferEnum
 ?find@Rva0040CB3AIndexedField@@QBEHH@Z,,0x0040CB3A,63,Code/GameEngine/Source/Common/Rva0040CB3ABinarySearch.cpp,matched,binary search index by first dword; 3 callers; shares layout with twin getters
+?findBySecond@Rva0040CC1BIndexedField@@QBEHH@Z,,0x0040CC1B,33,Code/GameEngine/Source/Common/Rva0040CB3ABinarySearch.cpp,matched,linear reverse lookup by second dword; 1 caller at 0x00503B5A; shares layout

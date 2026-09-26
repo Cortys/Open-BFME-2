@@ -1,7 +1,9 @@
 // cl: /O1
-// ?find@Rva0040CB3AIndexedField@@QBEHH@Z @0x0040CB3A 63B
+// ?find@Rva0040CB3AIndexedField@@QBEHH@Z @0x0040CB3A 63B and ?findBySecond@Rva0040CC1BIndexedField@@QBEHH@Z @0x0040CC1B 33B
 // Binary search over sorted 8-byte entries at +0x40/+0x44 keyed by first dword; returns index or -1.
-// Evidence: 3 callers incl 0x0040CBBF and 0x0040CBE5; shared +0x40/+0x44 vector layout with twin getters 0x0040CC0E/0x0040CB2C.
+// Linear reverse lookup by second dword; returns first or 0.
+// Evidence: 3 callers of 0x40CB3A incl 0x0040CBBF and 0x0040CBE5; 1 caller of 0x40CC1B at 0x00503B5A;
+// shared +0x40/+0x44 vector layout with twin getters 0x0040CC0E/0x0040CB2C.
 struct Rva0040CB3AEntry
 {
 	int first;
@@ -32,4 +34,26 @@ int Rva0040CB3AIndexedField::find(int key) const
 			high = mid;
 	}
 	return -1;
+}
+
+class Rva0040CC1BIndexedField
+{
+public:
+	int findBySecond(int val) const;
+private:
+	char m_pad[0x40];
+	Rva0040CB3AEntry *m_begin;
+	Rva0040CB3AEntry *m_end;
+};
+
+int Rva0040CC1BIndexedField::findBySecond(int val) const
+{
+	Rva0040CB3AEntry *end = m_end;
+	Rva0040CB3AEntry *cur = m_begin;
+	while (cur != end) {
+		if (cur->second == val)
+			return cur->first;
+		++cur;
+	}
+	return 0;
 }
