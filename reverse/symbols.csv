@@ -5772,3 +5772,5 @@ _ConvertBoolTrees,0x001BBD60
 ?invoke@Rva00352F2FOpaque@@QAEXPBVWaypoint@@HW4CommandSourceType@@@Z,0x00352F2F,BFME2 NAMED_FOLLOW_WAYPOINTS_EXACT body at 0x3C8773 calls target helper with Waypoint* 0x7FFFFFFF and command source 1; opaque helper identity is limited to its target RVA and call ABI
 ?clearWaypointQueue@AIUpdateInterface@@QAEXXZ,0x0026295E,BFME2 NAMED_FACE_NAMED body at 0x3C99C1 calls this on the target unit AIUpdateInterface before leaveGroup and aiFaceObject; BFME1 donor identifies clearWaypointQueue
 ?aiFaceObject@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,0x003C771D,BFME2 NAMED_FACE_NAMED body at 0x3C99C1 calls this through AIUpdateInterface+0x20 with the second named Object and source 1; BFME1 donor identifies aiFaceObject
+
+?aiFacePosition@AICommandInterface@@QAEXPBUCoord3D@@H@Z,0x003C7782,BFME2 NAMED_FACE_WAYPOINT body at 0x3C9A24 calls this through AIUpdateInterface+0x20 with Waypoint location at +0x0C and source 1; BFME1 donor identifies aiFacePosition
