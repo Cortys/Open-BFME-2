@@ -36,6 +36,12 @@ inline unsigned short *uninitialized_copy(const unsigned short *first,
 
 struct forward_iterator_tag {};
 
+template <class _Tp1, class _Tp2>
+struct __char_traits_base
+{
+	static _Tp1 *copy(_Tp1 *dst, const _Tp2 *src, unsigned int n);
+};
+
 template <class T>
 class char_traits {};
 
@@ -86,6 +92,8 @@ public:
 	}
 	iterator end() { return _M_finish; }
 
+	iterator erase(iterator first, iterator last);
+
 	template <class ForwardIter>
 	basic_string<CharT, Traits, Alloc> &append(ForwardIter first, ForwardIter last)
 	{
@@ -99,6 +107,8 @@ public:
 		forward_iterator_tag tag;
 		return rva001EF83A(first, last, tag);
 	}
+
+	basic_string<CharT, Traits, Alloc> &assign(const CharT *first, const CharT *last);
 
 private:
 	template <class ForwardIter>
@@ -156,10 +166,33 @@ basic_string<CharT, Traits, Alloc>::rva001EF83A(ForwardIter __first, ForwardIter
 	return *this;
 }
 
+template <class CharT, class Traits, class Alloc>
+basic_string<CharT, Traits, Alloc> &
+basic_string<CharT, Traits, Alloc>::assign(const CharT *__f, const CharT *__l)
+{
+	int __n = (int)(__l - __f);
+	if ((size_type)__n <= size()) {
+		__char_traits_base<CharT, CharT>::copy(_M_start, __f, (size_type)__n);
+		erase(_M_start + __n, _M_finish);
+	}
+	else {
+		__char_traits_base<CharT, CharT>::copy(_M_start, __f, size());
+		forward_iterator_tag tag;
+		rva001EF83A(__f + size(), __l, tag);
+	}
+	return *this;
+}
+
 template basic_string<unsigned short, char_traits<unsigned short>,
 		allocator<unsigned short> > &
 basic_string<unsigned short, char_traits<unsigned short>,
 		allocator<unsigned short> >::rva001EF83A<const unsigned short *>(
+		const unsigned short *, const unsigned short *);
+
+template basic_string<unsigned short, char_traits<unsigned short>,
+		allocator<unsigned short> > &
+basic_string<unsigned short, char_traits<unsigned short>,
+		allocator<unsigned short> >::assign(
 		const unsigned short *, const unsigned short *);
 
 }
