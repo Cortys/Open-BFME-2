@@ -4443,6 +4443,7 @@ name,address,notes
 ?g_00DDEEFCStaticEmpty@@3V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@B,0x00DDEEFC,static empty narrow-string copy source for init at 0x00017AA0; start at +0 finish at +4; 16 zero bytes in .data
 ?g_00DDEF08StaticEmpty@@3V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@B,0x00DDEF08,static empty narrow-string copy source for init at 0x00017A40; start at +0 finish at +4; 16 zero bytes in .data
 ?g_00DDEF38StaticEmpty@@3V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@B,0x00DDEF38,static empty narrow-string copy source for init at 0x00019D30; start at +0 finish at +4; 16 zero bytes in .data
+?g_Rva00E02EEC@@3PAULANGameInfo@@A,0x00E02EEC,address-derived global pointer compared with LANAPI::removeGame argument at 0x449913 and cleared on equality
 ?g_bfmeEmptyF9@@3PADA,0x00BBAC1C
 ?g_bfmeIidTSA@@3U_GUID@@A,0x00BD4E3C
 ?g_bfmeS1082_0@@3PAVBfmeS1082@@A,0x00E1821C
