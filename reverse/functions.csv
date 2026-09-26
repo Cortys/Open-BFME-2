@@ -36811,3 +36811,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1GarrisonContain@@UAE@XZ,,0x00478067,128,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainDtor.cpp,matched,GarrisonContain dtor via OpenContain base plus Coord3D array
 ??1RiderChangeContainModuleData@@UAE@XZ,,0x0047EB36,66,Code/GameEngine/Source/GameLogic/Object/Contain/RiderChangeContainModuleDataDtor.cpp,matched,EH dtor via vtable 0x00C47B00 and caller 0x0047EB1A plus base 0x0047C9CB plus ctor 0x0047EABC layout
 ??1SpawnBehavior@@UAE@XZ,,0x0045F6D3,138,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorDtor.cpp,matched,vtable C426AC plus deleting dtor 4602D8 plus poolkey 45F688 plus ctor 45F581
+?clear@Rva0073EECA@@QAEXXZ,,0x0073EECA,22,Code/Libraries/Source/WWVegas/WWLib/stlport_target_list_73eee0.cpp,matched,null-checked TreeHint release plus zero via rowed fastcall; sole caller 0x73EF84
+?set@Rva0073EECA@@QAEXPAUTargetNestedHandleData@@@Z,,0x0073EF84,31,Code/Libraries/Source/WWVegas/WWLib/stlport_target_list_73eee0.cpp,matched,self-guarded attach clears old stores new AddRefs; sole caller 0x73F3ED

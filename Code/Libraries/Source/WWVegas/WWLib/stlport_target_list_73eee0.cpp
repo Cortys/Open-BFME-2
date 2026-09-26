@@ -57,3 +57,23 @@ Rva0073EEE0ListValue::~Rva0073EEE0ListValue() {
         ReleaseTreeHintRef00217D4C((TargetRef00217D4C *)(handle_08.item->Unknown + 8));
 }
 void Rva0073EEE0ListValue_Delete(Rva0073EEE0ListValue *p) { delete p; }
+
+// ?clear@Rva0073EECA@@QAEXXZ @0x0073EECA 22B: null-checked release of the +0
+// TreeHint handle via the rowed fastcall, then zero. Sole caller 0x0073EF84.
+struct Rva0073EECA { TargetNestedHandleData *m_handle; void clear(); void set(TargetNestedHandleData *other); };
+void Rva0073EECA::clear() {
+    if (m_handle) {
+        ReleaseTreeHintRef00217D4C((TargetRef00217D4C *)(m_handle->Unknown + 8));
+        m_handle = 0;
+    }
+}
+// ?set@Rva0073EECA@@QAEXPAUTargetNestedHandleData@@@Z @0x0073EF84 31B:
+// self-guarded attach: clear old, store new, AddRef. Sole caller 0x0073F3ED.
+void Rva0073EECA::set(TargetNestedHandleData *other) {
+    if (other != m_handle) {
+        clear();
+        m_handle = other;
+        if (other)
+            ++other->RefCount;
+    }
+}
