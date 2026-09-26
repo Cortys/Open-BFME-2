@@ -36775,3 +36775,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva004A7512Clear@MissileUpdate@@QAEXXZ,,0x004A7512,30,Code/GameEngine/Source/GameLogic/Object/Update/MissileUpdateCtor.cpp,matched,MissileUpdate +0xC8 particle destroy via pinned 0x1F5B79 callers 0x4A7715
 ??$rva001EF83A@PBG@?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@QAEAAV01@PBG0@Z,,0x001EFC58,22,Code/Libraries/Source/WWVegas/WWLib/stlport_wide_string_append_O1.cpp,matched,O1 2-arg wrapper for Rva 3-arg append
 ?assign@?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@QAEAAV12@PBG0@Z,,0x001EFC6E,105,Code/Libraries/Source/WWVegas/WWLib/stlport_wide_string_append_O1.cpp,matched,O1 assign via Rva append for PeerThread
+??8_STL@@YA_NABU_Bit_iterator_base@0@0@Z,,0x0060B869,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_empty.cpp,matched,STLport 4.5.3 Bit_iterator_base opeq via empty instantiation
+?empty@?$vector@_NV?$allocator@_N@_STL@@@_STL@@QBE_NXZ,,0x0060BDD5,46,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_empty.cpp,matched,STLport 4.5.3 bit-vector empty via explicit instantiation
