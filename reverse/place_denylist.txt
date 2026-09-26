@@ -89,3 +89,9 @@ _io_writeto
 # calls _Vector_base at 0x000B63B2, which allocates n * 0x18 (imul edi, edi,
 # 0x18): a 24-byte element, not the 872-byte BfmeObject872.
 ??0?$vector@UBfmeObject872@@V?$allocator@UBfmeObject872@@@_STL@@@_STL@@QAE@IABUBfmeObject872@@ABV?$allocator@UBfmeObject872@@@1@@Z
+
+# Audit 2026-09-26: false incidental placement at 0x00490E7B. Its
+# DamageModuleBase callee pin was a stand-in, not identity evidence; removing
+# that pin makes the full gate refuse it. Actual protected destructor at
+# 0x004BA47C is reached by vtable-linked deleting wrapper 0x004BA7C4.
+??1TransitionDamageFX@@UAE@XZ
