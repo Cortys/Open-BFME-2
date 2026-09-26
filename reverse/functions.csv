@@ -36515,3 +36515,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00118B50@@YAXXZ,,0x00118B50,68,Code/Libraries/Source/WWVegas/WW3D2/Rva00118B50State.cpp,matched,conditional float plus triple stores; own Rva neighbours; G7-SSE exact
 ??0Rva0048E16C@@QAE@XZ,,0x0048E16C,29,Code/GameEngine/Source/GameLogic/Object/Update/Rva0048E16CCtor.cpp,matched,vector at 0x04 via 0x211E58 plus ints at 0x00 and 0x10 callers 0x48E189 and 0x48E4E2
 ?rva00462516@SlaughterHordeContain@@QAEXPAX0PAUDamageInfoInput00462516@@@Z,,0x00462516,72,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainRva00462516.cpp,matched,gap TU plus DamageInfoInput layout plus slot-41 virtual plus caller 0x479C22
+?rva00462CE1@SlaughterHordeContain@@UAEPAVBfmeObject872Header@@PAV2@H@Z,,0x00462CE1,23,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainRva00462CE1.cpp,matched,vslot 82 of 0x00848AA0 plus rowed copy 0x2CF108 plus caller 0x47CB32
