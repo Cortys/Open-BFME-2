@@ -36786,3 +36786,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva007B71C0@@YAXXZ,,0x007B71C0,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global SegLineRenderer dtor thunk
 ?getUiStrings@Condition@@QAEHQAVAsciiString@@@Z,,0x003B39B2,21,Code/GameEngine/Source/GameLogic/ScriptEngine/ConditionGetUiStrings.cpp,matched,Condition wrapper via BFME1 donor tail-jumps rowed Template getUiStrings
 ?getUiStrings@ScriptAction@@QAEHQAVAsciiString@@@Z,,0x003B2843,21,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionGetUiStrings.cpp,matched,ScriptAction wrapper via BFME1 donor tail-jumps rowed Template getUiStrings
+??1MissileUpdate@@MAE@XZ,,0x004A76DE,84,Code/GameEngine/Source/GameLogic/Object/Update/MissileUpdateDtor.cpp,matched,MissileUpdate dtor via clear 0x4A7512 and pinned base 0x45BF6E caller 0x4A789C
