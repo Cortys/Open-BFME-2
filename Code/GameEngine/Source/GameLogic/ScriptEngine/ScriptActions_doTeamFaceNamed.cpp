@@ -1,5 +1,4 @@
 // ?doTeamFaceNamed@ScriptActions@@IAEXABVAsciiString@@0@Z
-// partial score=0.8 date=2026-09-26
 // cl: /O1 /DNDEBUG /MD /EHsc
 // Target identity: action-template index 0x135 is TEAM_FACE_NAMED and
 // executeAction case 0x135 calls VA 0x007C9A80 (RVA 0x003C9A80), 153 bytes.
@@ -98,8 +97,8 @@ void ScriptActions::doTeamFaceNamed(const AsciiString &teamName,
     if (!faceObject) return;
     DLINK_ITERATOR<Object> iter;
     iter = team->iterate_TeamMemberList();
-    register Object *object = iter.cur();
-    while (object) {
+    while (!iter.done()) {
+        Object *object = iter.cur();
         AIUpdateInterface *ai = object->getAIUpdateInterface();
         if (ai) {
             ai->clearWaypointQueue();
@@ -107,6 +106,5 @@ void ScriptActions::doTeamFaceNamed(const AsciiString &teamName,
             ai->command.aiFaceObject(faceObject, 1);
         }
         iter.advance();
-        object = iter.cur();
     }
 }
