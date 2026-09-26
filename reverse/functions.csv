@@ -36740,3 +36740,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00605365@@YAPADPAD@Z,,0x00605365,72,Code/GameEngine/Source/Common/System/Rva00605365.cpp,matched,honest normalize parent between 0x605324 and 0x6053AD
 ?top@Shell@@QAEPAVWindowLayout@@XZ,,0x0035BD7E,13,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor Shell top caller Shell push hidden runShutdown
 ?Rva006053D7@@YA_NPBD0@Z,,0x006053D7,141,Code/GameEngine/Source/Common/System/Rva006053D7.cpp,matched,wildcard donor ArchiveFile SearchStringMatches char form
+??0Rva0040CB11Entry@@QAE@HABVRva004F6093Holder@@@Z,,0x0040CB11,27,Code/GameEngine/Source/Common/Rva0040CB11EntryCtor.cpp,matched,entry ctor int plus Holder; 1 caller at 0x0040ED06; uses rowed copy ctor
