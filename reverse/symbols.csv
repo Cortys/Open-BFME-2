@@ -7972,3 +7972,7 @@ _ConvertBoolTrees,0x001BBD60
 ?g_Rva00E02EEC@@3PAULANGameInfo@@A,0x00E02EEC,address-derived global pointer compared with LANAPI::removeGame argument at 0x449913 and cleared on equality
 ?Rva00248CBF@LANGameSlot@@QBE_NPBUBfmeNetAddress@@@Z,0x00248CBF,target helper at LANGameSlot call site in RequestGameOptions 0x44A89C; compares slot IPv4 and port with BfmeNetAddress and returns Bool
 ?Rva00248CBF@BfmeNetAddress@@QBE_NPBU1@@Z,0x00248CBF,address-pair comparison helper reused by LANPlayer::LookupPlayer at 0x4499A2; compares IP and port fields at +0/+4
+?releaseBuffer@?$StringBase@G@@IAEXXZ,0x00036E70,private wide StringBase release helper used by target LANAPI game-name temporaries
+?trim@?$StringBase@G@@QAEXXZ,0x00037F70,RequestSetName 0x44B7C6 calls this target thiscall on its by-value UnicodeString parameter; BFME1 donor calls wide StringBase trim
+?translate@UnicodeString@@QAEXABVAsciiString@@@Z,0x006CB6A0,RequestSetName 0x44B8B9 and 0x44B8C8 pass UnicodeString destinations and AsciiString sources; target thunk adjusts the source data pointer then tails to wide translation
+?Rva0044B40C@LANAPI@@QAEXPAVLANPlayer@@@Z,0x0044B40C,RequestSetName 0x44B8D9 calls target helper with this and the completed LANPlayer; address-derived pending target body identity
