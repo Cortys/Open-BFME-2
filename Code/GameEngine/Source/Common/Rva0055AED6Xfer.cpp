@@ -19,7 +19,7 @@ class AsciiString;
 class UnicodeString;
 class PooledString;
 struct XferUnknown11;
-class Coord3DBase;
+struct Coord3DBase;
 class ICoord3D;
 class Region3D;
 class IRegion3D;
@@ -111,6 +111,13 @@ public:
 	void *m_data;
 };
 
+struct Coord3DBase
+{
+	float x;
+	float y;
+	float z;
+};
+
 class Rva0055B0CC
 {
 public:
@@ -164,4 +171,37 @@ void Rva0055B0CC::Rva0055AED6(Xfer *xfer, void *arg2)
 	if (xfer->IsLoading() && m_10 == 1 && arg2 != 0) {
 		Slot6(arg2, true);
 	}
+}
+
+class Rva005DAAB6 : public Rva0055B0CC
+{
+public:
+	virtual void dslot0();
+	virtual void dslot1();
+	virtual void dslot2();
+	virtual void dslot3();
+	virtual void dslot4();
+	virtual void dslot5();
+	virtual void dslot6();
+	virtual void dslot7();
+	virtual void dslot8();
+	virtual void dslot9();
+	virtual void dslot10();
+	virtual void dslot11();
+	virtual void Rva005DAAC1(Xfer *xfer, void *arg2);
+
+private:
+	bool m_2C;
+	Coord3DBase m_30;
+	float m_3C;
+};
+
+void Rva005DAAB6::Rva005DAAC1(Xfer *xfer, void *arg2)
+{
+	Xfer::Version version(1, 1);
+	*xfer == version;
+	((Rva0055B0CC *)this)->Rva0055B0CC::Rva0055AED6(xfer, arg2);
+	*xfer == m_2C;
+	*xfer == m_30;
+	*xfer == m_3C;
 }
