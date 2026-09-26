@@ -277,6 +277,24 @@ AsciiStringPlusText operator+(const AsciiString &left, const char *right)
 	return result;
 }
 
+// ??H@YA?AURva002226E5TextPlusString@@PBDABVAsciiString@@@Z, retail 0x002226E5, 52 bytes.
+// Char-text plus string node mirroring string-plus-text at 0xB49C5: pair from the left literal plus the right string ref. Builds "_nrm" plus extension in makeNrmTextureName 0x317D89 plus 24 other callers. No donor; honest address struct; shape mirrors the rowed sibling with swapped operands.
+struct Rva002226E5TextPlusString
+{
+	Rva000B3F84Pair m_left;
+	const AsciiString *m_right;
+};
+
+Rva002226E5TextPlusString operator+(const char *left, const AsciiString &right)
+{
+	Rva000B3F84Pair text;
+	text.init(left);
+	Rva002226E5TextPlusString result;
+	result.m_left = text;
+	result.m_right = &right;
+	return result;
+}
+
 // ??H@YA?AUAsciiStringCharPlusText@@ABUAsciiStringRefWithChar@@PBD@Z @0x109CFD
 AsciiStringCharPlusText operator+(const AsciiStringRefWithChar &left, const char *right)
 {
