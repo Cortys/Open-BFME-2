@@ -36827,3 +36827,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1AutoAbilityBehavior@@UAE@XZ,,0x0045A37F,73,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorDtor.cpp,matched,MI dtor via vtable 0x00C4175C and caller 0x0045A560 plus base 0x0024A797 plus ctor 0x0045A78F layout
 ?onDelete@SpawnBehavior@@UAEXXZ,,0x0045F75D,88,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_onDelete.cpp,matched,slot 8 of C426AC plus base 58B03E plus find 49DC5 plus setProducer 28AFD2 plus destroy 242C09
 ??1PlayerUpgradeSpecialPowerModuleData@@UAE@XZ,,0x004C7DD4,53,Code/GameEngine/Source/GameLogic/Object/SpecialPower/PlayerUpgradeSpecialPowerModuleDataDtor.cpp,matched,EH dtor via vtable 0x00C5E1C0 and caller 0x004C7DB8 plus base 0x0049334F plus ctor 0x004C7D68 layout
+?xfer@Rva004A1855@@MAEXPAVXfer@@@Z,,0x004A1B54,169,Code/GameEngine/Source/Common/Rva004A1855Xfer.cpp,matched,slot 3 of 0x00851F1C plus UpdateModule base call
