@@ -36731,3 +36731,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Shutdown@BoxRenderObjClass@@SAXXZ,,0x00174EF0,38,Code/Libraries/Source/WWVegas/WW3D2/BoxRenderObjInit.cpp,matched,donor boxrobj.cpp caller Do_Onetime Shutdowns prev Init same TU
 ?Rva006053AD@@YAXPAD@Z,,0x006053AD,42,Code/GameEngine/Source/Common/System/Rva006053AD.cpp,matched,honest parent trim caller 0x600AE5 no callees
 ?getVelocity@OutwardEmissionVelocityModule@FXParticleSystem@@UAE?AUCoord3D@2@PBU32@PAVEmissionVolumeModuleInterface@2@@Z,,0x0055ECF9,59,Code/GameEngine/Source/GameClient/System/FXParticleSystem/OutwardEmissionVelocityModuleGetVelocity.cpp,matched,vslot 4 of vtable 0x0081C8DC via donor Cylindrical-Ortho samples plus Zero Hour outward speeds plus shared DoXfer 0x55ED34 plus volume slot 0
+??0Rva004F6093Holder@@QAE@ABV0@@Z,,0x004F6093,23,Code/GameEngine/Source/Common/Rva004F6093CopyCtor.cpp,matched,copy ctor for ref holder; 12 callers; pointee refcount at 0xB0
