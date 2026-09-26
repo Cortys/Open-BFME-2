@@ -14,7 +14,15 @@
 // an otherwise unknown dword at +4, and a handle at +8 whose pointee count
 // is incremented at +0xC when non-null. Donor BridgeFXInfo semantics remain
 // a provenance hypothesis, not a target identity claim.
-class Rva0036CA00Str { public: __declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &); void *m_item; };
+class OpaqueRefCounted { public: void Release_Ref(); };
+struct TargetRef00217D4C;
+void __fastcall ReleaseTreeHintRef00217D4C(TargetRef00217D4C *p);
+class Rva0036CA00Str {
+public:
+    __declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &);
+    ~Rva0036CA00Str() { if (m_item) ((OpaqueRefCounted *)m_item)->Release_Ref(); }
+    void *m_item;
+};
 struct TargetNestedHandleData { unsigned char Unknown[12]; unsigned int RefCount; };
 struct TargetNestedHandle { TargetNestedHandleData *item; };
 struct Rva0073EEE0ListValue {
@@ -22,6 +30,7 @@ struct Rva0073EEE0ListValue {
     unsigned int unknown_04;
     TargetNestedHandle handle_08;
     Rva0073EEE0ListValue(const Rva0073EEE0ListValue &other);
+    __declspec(noinline) ~Rva0073EEE0ListValue();
 };
 Rva0073EEE0ListValue::Rva0073EEE0ListValue(const Rva0073EEE0ListValue &other)
     : helperManagedPointer(other.helperManagedPointer),
@@ -37,3 +46,14 @@ __declspec(noinline) void ForceTargetListAt0073EEE0(
 }
 
 typedef char TargetListValueSize12[(sizeof(Rva0073EEE0ListValue) == 12) ? 1 : -1];
+
+// ??1Rva0073EEE0ListValue@@QAE@XZ @0x0073EF44 64B: releases the +8 handle via
+// the rowed fastcall ReleaseTreeHintRef00217D4C, then the +0 helper pointer
+// via the inlined Release_Ref. Callers: scalar-deleting ??_G at 0x0073EFB5,
+// _M_create_node unwind at 0x0073EFD1, list erase at 0x0073F061, list clear at
+// 0x0073F37F, EH funclet Unwind@00bab390.
+Rva0073EEE0ListValue::~Rva0073EEE0ListValue() {
+    if (handle_08.item)
+        ReleaseTreeHintRef00217D4C((TargetRef00217D4C *)(handle_08.item->Unknown + 8));
+}
+void Rva0073EEE0ListValue_Delete(Rva0073EEE0ListValue *p) { delete p; }
