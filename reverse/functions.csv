@@ -36742,3 +36742,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva006053D7@@YA_NPBD0@Z,,0x006053D7,141,Code/GameEngine/Source/Common/System/Rva006053D7.cpp,matched,wildcard donor ArchiveFile SearchStringMatches char form
 ??0Rva0040CB11Entry@@QAE@HABVRva004F6093Holder@@@Z,,0x0040CB11,27,Code/GameEngine/Source/Common/Rva0040CB11EntryCtor.cpp,matched,entry ctor int plus Holder; 1 caller at 0x0040ED06; uses rowed copy ctor
 ?update@Rva0035FF76@@UAEXH@Z,,0x0036044A,42,Code/GameEngine/Source/GameClient/GUI/Rva0035FF76Update.cpp,matched,vtable 0x0081670C slot 2 plus FadeColor init sibling plus range check
+?rva001EDFE9@Mouse@@QBEPAXXZ,,0x001EDFE9,14,Code/GameEngine/Source/GameClient/MouseRva001EDFE9.cpp,matched,Mouse cursorinfo array at +0x4c stride 0x54 with index at +0x4fa4; sole caller at 0x0042F4E7
