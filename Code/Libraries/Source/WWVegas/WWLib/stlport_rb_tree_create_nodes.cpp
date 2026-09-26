@@ -24,6 +24,7 @@ struct BfmeStringRecord002049D6 { public: unsigned char m_data[12]; };
 struct BfmeStringRecord004071F7 { public: unsigned char m_data[12]; };
 struct BfmeE16 { float x, y, z, w; };
 struct BfmePod16 { int a[4]; };
+struct BfmePod20 { int a[5]; };
 struct BfmePod24 { int a[6]; };
 struct BfmePod52 { int a[13]; };
 struct BfmeStringRecord00448113 { public: unsigned char m_data[8]; };
@@ -211,3 +212,23 @@ VRva00064640RecordSetTree::_Link_type VRva00064640RecordSetTree::_M_create_node(
 	return node;
 }
 template VRva00064640RecordSetTree::_Link_type VRva00064640RecordSetTree::_M_create_node(const VRva00064640RecordSetTree::value_type &);
+
+// ?_M_create_node@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@IAEPAU?$_Rb_tree_node@UBfmePod20@@@2@ABUBfmePod20@@@Z
+// retail 0x004AF2BC, 34 bytes. _Rb_tree::_M_create_node for a 20-byte set value:
+// allocates a 0x24 node (16-byte links plus 20-byte BfmePod20) through the rowed
+// byte allocator at 0x307F0, then constructs the value through the rowed
+// BfmePod20 _Construct at 0x4FDAEE. Node size fixes the 20-byte value; the
+// _Construct call displacement proves the BfmePod20 spelling. Called twice by
+// the RespawnRule tree _M_insert at 0x4AF3E6.
+typedef _STL::_Rb_tree<BfmePod20, BfmePod20, _STL::_Identity<BfmePod20>, _STL::less<BfmePod20>, _STL::allocator<BfmePod20> > UBfmePod20SetTree;
+namespace _STL {
+template <> void _Construct<BfmePod20>(BfmePod20 *, const BfmePod20 &);
+}
+template <>
+UBfmePod20SetTree::_Link_type UBfmePod20SetTree::_M_create_node(const UBfmePod20SetTree::value_type &value)
+{
+	_Link_type node = (_Link_type)_STL::allocator<char>::allocate(sizeof(_STL::_Rb_tree_node<UBfmePod20SetTree::value_type>), 0);
+	_STL::_Construct(&node->_M_value_field, value);
+	return node;
+}
+template UBfmePod20SetTree::_Link_type UBfmePod20SetTree::_M_create_node(const UBfmePod20SetTree::value_type &);
