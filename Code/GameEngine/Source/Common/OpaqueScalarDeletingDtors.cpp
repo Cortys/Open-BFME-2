@@ -3000,6 +3000,27 @@ void Rva004D7B93_Anchor(Rva004D7B93 *p)
 	p->Rva004D7B93::~Rva004D7B93();
 }
 
+class Rva004D759C_B2
+{
+public:
+	virtual void f2();
+};
+
+class Rva004D759C : public Rva0049B47C, public MiBase1, public Rva004D759C_B2
+{
+public:
+	virtual ~Rva004D759C()
+	{
+	}
+};
+
+// Anchor: forces out-of-line emission of the in-class destructor COMDAT,
+// including the scalar deleting destructor.
+void Rva004D759C_Anchor(Rva004D759C *p)
+{
+	p->Rva004D759C::~Rva004D759C();
+}
+
 // Guarded-delete clear() batch: each owner below holds a heap element at
 // +0. The retail body loads the element, nulls the slot, and on non-null
 // runs the element destructor followed by the shared scalar operator

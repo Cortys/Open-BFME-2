@@ -36587,3 +36587,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0054703E@Rva00546F61@@UAE_NH@Z,,0x0054703E,50,Code/GameEngine/Source/Common/Rva00546F61Slot8.cpp,matched,vslot5 of 0x86A420 via slot8 TU plus findObjectByID rowed plus Object 0x438 bit0
 ?Rva0018037B@Gen_dtor_00970f60@@UAEPAXXZ,,0x0018037B,38,Code/Libraries/Source/WWVegas/WW3D2/Gen_dtor_00970f60Rva0018037B.cpp,matched,vslot15 of 0x7D4F90 via honest name plus MESH tag plus Mesh ram-size
 ?resolveBoneLocations@BoneFXUpdate@@MAEXXZ,,0x00487634,355,Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdate_resolveBoneLocations.cpp,matched,vtable slot13 donor BFME1 resolveBoneLocations callers none
+??_GRva004D759C@@UAEPAXI@Z,,0x004D7A59,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x4D759C; flag plus pinned operator delete
