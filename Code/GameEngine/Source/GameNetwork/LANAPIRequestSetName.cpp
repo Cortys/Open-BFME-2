@@ -137,9 +137,9 @@ public:
 	virtual BfmeNetAddress *getLocalAddress(void);	// slot 64
 
 	void Rva004495A2(LANMessage *message, UnsignedInt address);
-	void Rva0044B40C(LANPlayer *player);
 
 protected:
+	void addPlayer(LANPlayer *player);
 	void removePlayer(LANPlayer *player);
 	UnsignedByte m_beforeName[0x14 - 4];
 	UnicodeString m_name;		// +0x14
@@ -192,7 +192,7 @@ void LANAPI::RequestSetName(UnicodeString newName)
 		player->m_login.translate(m_userName);
 		player->m_lastHeard = timeGetTime();
 
-		Rva0044B40C(player);
+		addPlayer(player);
 		OnNameChange(&player->m_address, player->m_name);
 	}
 }
