@@ -60,6 +60,7 @@ public:
     BfmePoolRef10(const BfmePoolRef10 &other);
     BfmePoolRef10 &operator=(const BfmePoolRef10 &other);
     void rva000519BD();
+    void rva00053D26(BfmePoolHolder88 *p);
 };
 struct BfmeStringTailRecord144
 {
@@ -110,5 +111,15 @@ void BfmePoolRef10::rva000519BD()
     if (m_target) {
         m_target->m_ref.Rva0050ED3();
         m_target = 0;
+    }
+}
+// ?rva00053D26@BfmePoolRef10@@QAEXPAUBfmePoolHolder88@@@Z 0x00053D26 41B assign from raw holder via clear at 0x519BD then InterlockedIncrement on holder+0x8c; 10 callers incl 0x59943/0x5B2E9; same family as ctors above
+void BfmePoolRef10::rva00053D26(BfmePoolHolder88 *p)
+{
+    if (p != m_target) {
+        rva000519BD();
+        m_target = p;
+        if (p)
+            InterlockedIncrement((Long *)((char *)p + 0x8c));
     }
 }
