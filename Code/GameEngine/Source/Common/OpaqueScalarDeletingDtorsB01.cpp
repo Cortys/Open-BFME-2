@@ -13,6 +13,11 @@
 // of line so the ??_G calls it through the pin, and its empty body here is a
 // placeholder, not a claim (present-unmatched). Names are address-derived
 // (Rva<dtor rva>) and disclaim identity.
+// Audit 2026-09-26: all 30 wrapper/callee boundaries and both calls verified.
+// Virtual declarations are emission scaffolds, not recovered class layouts.
+// Nine wrappers have no pointer occurrence in retail .rdata/.data; virtual
+// ownership is unproven for those, as documented in the audit table.
+// See docs/reconstruction/deleting-destructor-identity-audit.md.
 
 // ??_GRva000C2980@@UAEPAXI@Z @0x000C3808 28B; calls pinned ??1 at 0x000C2980
 class Rva000C2980 { public: __declspec(noinline) virtual ~Rva000C2980(); };
