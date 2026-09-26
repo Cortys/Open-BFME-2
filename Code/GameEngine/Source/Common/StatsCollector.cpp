@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 
 // ??0StatsCollector@@QAE@XZ, retail 0x004376FA (91 bytes).
 // BFME1 StatsCollector.cpp donor, trimmed to the constructor; the remaining
@@ -76,6 +76,7 @@ public:
 #define LogicFramesPerSecond (*(const UnsignedInt *)0x00DBA4E4)
 
 // Only the vtable slot writeFileEnd reads: getFramesPerSecondLimit at +0x4C.
+// writeStatInfo also reads the inline instant FPS at +0x58.
 class GameEngine
 {
 public:
@@ -85,12 +86,62 @@ public:
 	virtual void slot12(); virtual void slot13(); virtual void slot14(); virtual void slot15();
 	virtual void slot16(); virtual void slot17(); virtual void slot18();
 	virtual Int getFramesPerSecondLimit();
+	float getInstantFPS() const { return m_instantFPS; }
+
+private:
+	unsigned char m_pad04[ 0x58 - 4 ];
+	float m_instantFPS;               // +0x58
 };
 
 extern GameEngine *TheGameEngine;
 
+// Display getAverageFPS is slot 92 (offset 0x170); BFME2 grew ten slots
+// past the BFME1 donor's 82.
+class Display
+{
+public:
+	virtual void dslot00(); virtual void dslot01(); virtual void dslot02(); virtual void dslot03();
+	virtual void dslot04(); virtual void dslot05(); virtual void dslot06(); virtual void dslot07();
+	virtual void dslot08(); virtual void dslot09(); virtual void dslot10(); virtual void dslot11();
+	virtual void dslot12(); virtual void dslot13(); virtual void dslot14(); virtual void dslot15();
+	virtual void dslot16(); virtual void dslot17(); virtual void dslot18(); virtual void dslot19();
+	virtual void dslot20(); virtual void dslot21(); virtual void dslot22(); virtual void dslot23();
+	virtual void dslot24(); virtual void dslot25(); virtual void dslot26(); virtual void dslot27();
+	virtual void dslot28(); virtual void dslot29(); virtual void dslot30(); virtual void dslot31();
+	virtual void dslot32(); virtual void dslot33(); virtual void dslot34(); virtual void dslot35();
+	virtual void dslot36(); virtual void dslot37(); virtual void dslot38(); virtual void dslot39();
+	virtual void dslot40(); virtual void dslot41(); virtual void dslot42(); virtual void dslot43();
+	virtual void dslot44(); virtual void dslot45(); virtual void dslot46(); virtual void dslot47();
+	virtual void dslot48(); virtual void dslot49(); virtual void dslot50(); virtual void dslot51();
+	virtual void dslot52(); virtual void dslot53(); virtual void dslot54(); virtual void dslot55();
+	virtual void dslot56(); virtual void dslot57(); virtual void dslot58(); virtual void dslot59();
+	virtual void dslot60(); virtual void dslot61(); virtual void dslot62(); virtual void dslot63();
+	virtual void dslot64(); virtual void dslot65(); virtual void dslot66(); virtual void dslot67();
+	virtual void dslot68(); virtual void dslot69(); virtual void dslot70(); virtual void dslot71();
+	virtual void dslot72(); virtual void dslot73(); virtual void dslot74(); virtual void dslot75();
+	virtual void dslot76(); virtual void dslot77(); virtual void dslot78(); virtual void dslot79();
+	virtual void dslot80(); virtual void dslot81(); virtual void dslot82(); virtual void dslot83();
+	virtual void dslot84(); virtual void dslot85(); virtual void dslot86(); virtual void dslot87();
+	virtual void dslot88(); virtual void dslot89(); virtual void dslot90(); virtual void dslot91();
+	virtual float getAverageFPS();
+};
+
+extern Display *TheDisplay;
+
 class Object;
 class Player;
+
+// Money at +0x90 here (count at +0x94); BFME1 donor has it at +0x48.
+class Money
+{
+public:
+	UnsignedInt countMoney() const { return m_money; }
+
+private:
+	void *m_vtable;                   // +0x90
+	UnsignedInt m_money;              // +0x94
+	Int m_playerIndex;                // +0x98
+};
 
 // ScoreKeeper totals mostly read inline; the two faction-slot sums stay
 // out of line (retail calls 0x0039B769 and 0x0039B73F), matching the Zero
@@ -147,6 +198,7 @@ class Player
 public:
 	bool isLocalPlayer() const;
 	Int getPlayerIndex() const { return m_playerIndex; }
+	Money *getMoney() { return &m_money; }
 	ScoreKeeper *getScoreKeeper() { return &m_scoreKeeper; }
 	const AsciiString &getSide() const { return m_side; }
 
@@ -155,7 +207,9 @@ private:
 	unsigned char m_pad04[ 0x54 - 4 ];
 	Int m_playerIndex;                  // +0x54
 	AsciiString m_side;                 // +0x58
-	unsigned char m_pad5C[ 0x3BC - 0x5C ];
+	unsigned char m_pad5C[ 0x90 - 0x5C ];
+	Money m_money;                      // +0x90
+	unsigned char m_pad9C[ 0x3BC - 0x9C ];
 	ScoreKeeper m_scoreKeeper;          // +0x3BC
 };
 
@@ -403,5 +457,62 @@ void StatsCollector::writeFileEnd()
 	fprintf( f, "* Times are in Game Seconds which are based on logic FPS: current logic FPS is %d, max update FPS (game speed) is %d\n",
 		LogicFramesPerSecond, TheGameEngine->getFramesPerSecondLimit() );
 
+	fclose( f );
+}
+
+// ?writeStatInfo@StatsCollector@@AAEXXZ, retail 0x00437921 (556 bytes).
+// Identity: pinned name; prev/next are the same TU (StatsCollector.cpp /O1);
+// callers are writeFileEnd (rowed in this TU) plus two unclaimed; donor is
+// BFME1 StatsCollector.cpp:419 void StatsCollector::writeStatInfo().
+// Body: BFME1 donor with BFME2 repairs read from retail:
+// - UnicodeString + _wfopen L"a" with EH frame (not fopen);
+// - scrollTime divides by LogicFramesPerSecond at 0x00DBA4E4 (not 5);
+// - Money at +0x90 (count at +0x94) inline;
+// - Display averageFPS virtual slot 92 (+0x170), GameEngine instantFPS inline at +0x58;
+// - ScoreKeeper diffs keep the two out-of-line totals at 0x0039B769/0x0039B73F.
+void StatsCollector::writeStatInfo()
+{
+	UnicodeString fileName( m_statsFileName );
+	FILE *f = _wfopen( fileName.str(), L"a" );
+	if( !f )
+		return;
+
+	Player *player = ThePlayerList->getLocalPlayer();
+	fprintf( f, "%d\t", m_timeCount );
+	fprintf( f, "%.1f\t", TheDisplay ? TheDisplay->getAverageFPS() : 0.0f );
+	fprintf( f, "%.1f\t", TheGameEngine ? TheGameEngine->getInstantFPS() : 0.0f );
+	fprintf( f, "%d\t", m_buildCommands );
+	fprintf( f, "%d\t", m_moveCommands );
+	fprintf( f, "%d\t", m_attackCommands );
+	fprintf( f, "%d\t", m_scrollMapCommands );
+	fprintf( f, "%d\t", m_scrollTime / LogicFramesPerSecond );
+	fprintf( f, "%d\t", 0 );
+	fprintf( f, "%d\t", player->getMoney()->countMoney() );
+	fprintf( f, "%d\t", m_moneyWithdrawn );
+	fprintf( f, "%d\t", m_moneyDeposited );
+	fprintf( f, "%d\t", m_playerUnits );
+	fprintf( f, "%d\t", m_aiUnits );
+	fprintf( f, "%d\t", m_alliesKilled );
+	fprintf( f, "%d\t", m_enemiesKilled );
+	fprintf( f, "%d\t", m_neutralsKilled );
+
+	player = ThePlayerList->getLocalPlayer();
+	if( player )
+	{
+		ScoreKeeper *scoreKeeper = player->getScoreKeeper();
+		if( scoreKeeper )
+		{
+			fprintf( f, "%d\t", scoreKeeper->getTotalMoneySpent() - m_scoreKeeperMoneySpent );
+			fprintf( f, "%d\t", scoreKeeper->getTotalMoneyEarned() - m_scoreKeeperMoneyEarned );
+			fprintf( f, "%d\t", scoreKeeper->getTotalUnitsDestroyed() - m_scoreKeeperUnitsDestroyed );
+			fprintf( f, "%d\t", scoreKeeper->getTotalUnitsBuilt() - m_scoreKeeperUnitsBuilt );
+			fprintf( f, "%d\t", scoreKeeper->getTotalUnitsLost() - m_scoreKeeperUnitsLost );
+			fprintf( f, "%d\t", scoreKeeper->getTotalBuildingsDestroyed() - m_scoreKeeperBuildingsDestroyed );
+			fprintf( f, "%d\t", scoreKeeper->getTotalBuildingsBuilt() - m_scoreKeeperBuildingsBuilt );
+			fprintf( f, "%d\t", scoreKeeper->getTotalBuildingsLost() - m_scoreKeeperBuildingsLost );
+		}
+	}
+
+	fprintf( f, "\n" );
 	fclose( f );
 }
