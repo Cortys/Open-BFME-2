@@ -36715,3 +36715,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?get@Rva0040CC0EIndexedField@@QBEHH@Z,,0x0040CC0E,13,Code/GameEngine/Source/Common/Rva0040CC0EIndexedGetters.cpp,matched,twin indexed getter first dword; 10 callers incl StateMachine getGoalObject
 ?get@Rva0040CB2CIndexedField@@QBEHH@Z,,0x0040CB2C,14,Code/GameEngine/Source/Common/Rva0040CC0EIndexedGetters.cpp,matched,twin indexed getter second dword; 38 callers; sibling of 0x0040CC0E
 ?rva0035D3B4@Rva0035D352@@UAEXH@Z,,0x0035D3B4,19,Code/GameEngine/Source/Common/Rva0035D352Slot1.cpp,matched,slot1 of vtable 00816478 via slot2 call with m_10
+??1BfmeStringRecord00204A30@@QAE@XZ,,0x00204848,54,Code/GameEngine/Source/Common/StringRecord00204A30Dtor.cpp,matched,same layout as 00204A30 copy destroys via 00036410 same EH scope
