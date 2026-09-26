@@ -36709,3 +36709,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?XferDamageSubType@@YAXPAVXfer@@PAH@Z,,0x00305EEA,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper DamageSubType string via XferEnum
 ?XferDeathType@@YAXPAVXfer@@PAH@Z,,0x00305F02,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper DeathType string via XferEnum
 ?XferStealthLookType@@YAXPAVXfer@@PAH@Z,,0x00305F1A,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper StealthLookType string via XferEnum
+??4BfmeStringRecord00204A30@@QAEAAU0@ABU0@@Z,,0x00203DDA,55,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,same layout as 00204A30 copy caller 00204170 assigns via 000366F0

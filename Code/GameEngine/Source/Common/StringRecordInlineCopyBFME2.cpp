@@ -19,6 +19,7 @@ class AsciiString : private StringBase<char> {
 public:
     __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
     __forceinline ~AsciiString() {}
+    AsciiString &operator=(const AsciiString &other);
 };
 class UnicodeString : private StringBase<unsigned short> {
 public:
@@ -38,9 +39,25 @@ template void _STL::_Construct<BfmeStringRecord00054F57,BfmeStringRecord00054F57
 struct BfmeStringRecord00204A30 {
     unsigned int word0; AsciiString text0; unsigned int word1; AsciiString text1; unsigned int word2;
     BfmeStringRecord00204A30(const BfmeStringRecord00204A30 &o);
+    BfmeStringRecord00204A30 &operator=(const BfmeStringRecord00204A30 &o);
 };
 BfmeStringRecord00204A30::BfmeStringRecord00204A30(const BfmeStringRecord00204A30 &o) : word0(o.word0), text0(o.text0), word1(o.word1), text1(o.text1), word2(o.word2) {}
 template void _STL::_Construct<BfmeStringRecord00204A30,BfmeStringRecord00204A30>(BfmeStringRecord00204A30*,const BfmeStringRecord00204A30&);
+
+// ??4BfmeStringRecord00204A30@@QAEAAU0@ABU0@@Z retail 0x00203DDA 55B.
+// Same layout as the 0x00204A30 copy ctor above (word AsciiString word AsciiString word = 0x14).
+// Callees are the AsciiString copy-assign fold at 0x000366F0 (existing pins).
+// Sole placed caller 0x00204170 is the 0x14-stride array copy loop.
+// ?Rva00203DDA assignment via memberwise copy in declaration order.
+BfmeStringRecord00204A30 &BfmeStringRecord00204A30::operator=(const BfmeStringRecord00204A30 &o)
+{
+    word0 = o.word0;
+    text0 = o.text0;
+    word1 = o.word1;
+    text1 = o.text1;
+    word2 = o.word2;
+    return *this;
+}
 
 // Complete retail record copy at0x002199C8.
 struct BfmeStringRecord002199C8 {
