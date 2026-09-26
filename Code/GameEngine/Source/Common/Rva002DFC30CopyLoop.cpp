@@ -31,3 +31,18 @@ Rva002DFC30 *Rva003319C9Copy(Rva002DFC30 *first, Rva002DFC30 *last, Rva002DFC30 
 	}
 	return result;
 }
+Rva002DFC30 *Rva0033177ECopy(Rva002DFC30 *first, Rva002DFC30 *last, Rva002DFC30 *result) throw()
+{
+	int n = last - first;
+	if (n <= 0)
+		return result;
+	__assume(result != 0);
+	for (int i = 0; i < n; ++i)
+	{
+		--last;
+		--result;
+		__assume(result != 0);
+		new (result) Rva002DFC30(*last);
+	}
+	return result;
+}

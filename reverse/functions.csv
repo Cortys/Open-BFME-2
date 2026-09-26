@@ -36762,3 +36762,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva003319C9Copy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x003319C9,50,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,forward 12-byte copy loop via rowed copy ctor 0x331759 caller 0x331BA2
 ?Rva00072480@W3DVideoBuffer@@UAEXXZ,,0x00072480,32,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DVideoBufferRva00072480.cpp,matched,vtable 0x007C64D8 slot12 plus retail 0x72760 3-arg call plus W3DVideoBuffer layout
 ?DoXfer@Rva003A578A@@UAEXAAVXfer@@@Z,,0x003A578A,31,Code/GameEngine/Source/Common/Rva003A578ADoXfer.cpp,matched,Single-float DoXfer via Version1 plus float slot 0x70 with caller 0x3A57BC
+?Rva0033177ECopy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x0033177E,50,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,backward 12-byte copy loop via rowed copy ctor 0x331759 caller 0x331B18
