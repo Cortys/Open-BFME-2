@@ -36590,3 +36590,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva004D759C@@UAEPAXI@Z,,0x004D7A59,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,emitted scalar deleting dtor; dtor call via opaque pin at 0x4D759C; flag plus pinned operator delete
 ?xfer@WallHubBehavior@@MAEXPAVXfer@@@Z,,0x00452F25,44,Code/GameEngine/Source/GameLogic/Object/Behavior/WallHubBehaviorXfer.cpp,matched,slot 3 of vtable 0x0083FDBC via name WallHubBehavior plus base 0x0044DF9F plus Version 1 1
 ?XferParticleSystemID@@YAXPAVXfer@@PAH@Z,,0x0030600A,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper ParticleSystemID string via XferEnum
+?xfer@W3DTerrainVisualBase@@MAEXPAVXfer@@@Z,,0x00758CF0,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DTerrainVisualBase_xfer.cpp,matched,BFME1 byte-identical donor; b1 0x00602C40; ICF-folded in BFME1 so the name is this sweep pick among its twins
