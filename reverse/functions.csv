@@ -36828,3 +36828,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?onDelete@SpawnBehavior@@UAEXXZ,,0x0045F75D,88,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_onDelete.cpp,matched,slot 8 of C426AC plus base 58B03E plus find 49DC5 plus setProducer 28AFD2 plus destroy 242C09
 ??1PlayerUpgradeSpecialPowerModuleData@@UAE@XZ,,0x004C7DD4,53,Code/GameEngine/Source/GameLogic/Object/SpecialPower/PlayerUpgradeSpecialPowerModuleDataDtor.cpp,matched,EH dtor via vtable 0x00C5E1C0 and caller 0x004C7DB8 plus base 0x0049334F plus ctor 0x004C7D68 layout
 ?xfer@Rva004A1855@@MAEXPAVXfer@@@Z,,0x004A1B54,169,Code/GameEngine/Source/Common/Rva004A1855Xfer.cpp,matched,slot 3 of 0x00851F1C plus UpdateModule base call
+??1SmudgeManager@@UAE@XZ,,0x002D29F7,140,Code/GameEngine/Source/GameClient/System/SmudgeManagerDtor.cpp,matched,vtable 0xC02A60 slot0 0x2D2A83 reset 0x2D27CC free sets at 0x14 via deleteInstance 0 plus delete 0x2FD60 static pool 0x9BCBF8
