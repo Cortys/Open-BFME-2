@@ -1,5 +1,7 @@
 // ?doDisplayText@ScriptActions@@IAEXABVAsciiString@@@Z
 // partial score=0.94 date=2026-09-26
+// ?doDisplayText@ScriptActions@@IAEXABVAsciiString@@@Z
+// partial score=0.94 date=2026-09-26
 // cl: /O1 /Oy- /DNDEBUG /MD /EHsc /ICode/Libraries/Source/WWVegas/WWLib
 // readable body of ?doDisplayText@ScriptActions@@IAEXABVAsciiString@@@Z: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions.cpp
 //
@@ -37,7 +39,6 @@ public:
 	virtual void message(AsciiString, ...) = 0;
 };
 
-extern InGameUI *TheInGameUI;
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameLogic/ScriptActions.h
 class ScriptActions
@@ -49,5 +50,5 @@ protected:
 // ?doDisplayText@ScriptActions@@IAEXABVAsciiString@@@Z
 void ScriptActions::doDisplayText(const AsciiString &displayText)
 {
-	TheInGameUI->message(displayText);
+	(*(InGameUI **)0x00DFEDF0)->message(displayText);
 }
