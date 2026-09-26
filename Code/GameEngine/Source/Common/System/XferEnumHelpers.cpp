@@ -439,6 +439,48 @@ void XferStealthLookType(Xfer *xfer, int *value)
 	xfer->XferEnum("StealthLookType", value, 4);
 }
 
+// Retail 0x00305F4A (24B): labelled-enum helper with the "FXTrigger"
+// label (string at 0x007C9E60).
+void XferFXTrigger(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("FXTrigger", value, 4);
+}
+
+// Retail 0x00305F7A (24B): labelled-enum helper with the "ShadowType"
+// label (string at 0x00807BB0).
+void XferShadowType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ShadowType", value, 4);
+}
+
+// Retail 0x00305FAA (24B): labelled-enum helper with the "GlobalWeatherType"
+// label (string at 0x00807BE8).
+void XferGlobalWeatherType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("GlobalWeatherType", value, 4);
+}
+
+// Retail 0x00305FC2 (24B): labelled-enum helper with the
+// "GlobalWeatherAffectsType" label (string at 0x00807BFC).
+void XferGlobalWeatherAffectsType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("GlobalWeatherAffectsType", value, 4);
+}
+
+// Retail 0x00305FDA (24B): labelled-enum helper with the
+// "AttributeModifierCategoryType" label (string at 0x00807C18).
+void XferAttributeModifierCategoryType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("AttributeModifierCategoryType", value, 4);
+}
+
+// Retail 0x00305FF2 (24B): labelled-enum helper with the "INVISIBILITYTYPE"
+// label (string at 0x00807C38).
+void XferInvisibilityType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("INVISIBILITYTYPE", value, 4);
+}
+
 // Retail 0x0030609A (24B): labelled-enum helper moving a 4-byte bridge tower
 // type through XferEnum with the "BridgeTowerType" label (string at
 // 0x00807CB8 between RotationType and ObjectID). Sole caller is
