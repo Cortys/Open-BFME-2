@@ -1946,3 +1946,4 @@ FUN_00996BB7	0x00596BB7	32	blocked	vslot13 of 00870A98 zeros 12B at [ebp+8] via 
 ?init@Rva0035FF76@@UAEXPAVGameWindow@@@Z	0x0035FF85	234	partial	m_red/m_green byte stores after float spill not before; else exact 234B 65insns t=25 model=muse-v8t-6082 score=0.93 stash=reverse/attempts/0x0035ff85.cpp
 ?Do_Onetime_Device_Dependent_Shutdowns@DX8Wrapper@@SAXXZ	0x001215F0	381	blocked	ZH direct reuse 294B vs retail 381B no EH frame plus layout delta DEE5D8 needs CurrentCaps EH work t=10 model=muse-v8t-6082
 ??0Weapon@@IAE@PBVWeaponTemplate@@W4WeaponSlotType@@@Z	0x002CC23D	185	partial	top 5B reg alloc wall lea ebp+b vs f and wslot edx vs eax t=30 model=muse-4f9a score=0.97 stash=reverse/attempts/0x002cc23d.cpp
+??1Rva003AEEB3@@UAE@XZ	0x003A5817	39	partial	two null-guarded stores plus tail-jmp match structurally in 38B probe but registers swap eax-edx with esi spill via push-pop and imm reuse vs direct t=25 model=muse-spark score=0.92 stash=reverse/attempts/0x003a5817.cpp

@@ -36756,3 +36756,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Rva0045EF90Object@@UAE@XZ,,0x00410421,110,Code/GameEngine/Source/Common/Rva0045EF90Dtor.cpp,matched,dtor lane class of copy-ctor row vtable 0x00839630 3x StringBase dtor
 ??_GRva0045EF90Object@@UAEPAXI@Z,,0x0041048F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-98d1.cpp,matched,scalar deleting dtor public dtor same-shape sibling
 ?rva003FB7C7@Rva003FB7C7@@QAEXXZ,,0x003FB7C7,20,Code/GameEngine/Source/Common/Rva003FB7C7.cpp,matched,same-page vslot adjacency plus this+8 slot113 shape with unclaimed callers
+??1Rva003AE13C@@UAE@XZ,,0x003A583E,24,Code/GameEngine/Source/GameClient/System/FXParticleSystem/V3InlineTemplateDtor.cpp,matched,V3-inline dtor via two manual vptrs plus8 null-guarded plus0 plain with vtable 0x81D2C0 and caller 0x3AE16E
