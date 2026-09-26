@@ -36795,3 +36795,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva003B3204@@QAE@ABV0@@Z,,0x003B3277,86,Code/GameEngine/Source/Common/Rva003BCopyLeaves.cpp,matched,leaf copy via recursive new mirrors clear at 0x003B3204
 ?xfer@PoisonedBehavior@@MAEXPAVXfer@@@Z,,0x004830A9,82,Code/GameEngine/Source/GameLogic/Object/Behavior/PoisonedBehaviorXfer.cpp,matched,slot 3 of vtable 0x008498BC via rowed ctor plus base 0x0044DF9F plus Version1 plus DeathType
 ?Rva004A75A3Init@MissileUpdate@@QAEXXZ,,0x004A75A3,22,Code/GameEngine/Source/GameLogic/Object/Update/MissileUpdateCtor.cpp,matched,MissileUpdate init m98 frame plus setter 7 callers 2
+??0?$deque@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x0058508F,107,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_e12_new_elements.cpp,matched,STLport4.5.3 deque BfmeE12 copy ctor; 107B same shape as WordValue4 version; ICF get_allocator pin; callers in deque paths
