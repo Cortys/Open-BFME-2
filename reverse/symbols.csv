@@ -5579,3 +5579,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ??1Rva0010F0C4@@UAE@XZ,0x0010F0C4,opaque dtor; call target of retail scalar-deleting-dtor at 0x10F6EE (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva0010F7EE@@UAE@XZ,0x0010F7EE,opaque dtor; call target of retail scalar-deleting-dtor at 0x10F7D2 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva0010F83E@@UAE@XZ,0x0010F83E,opaque dtor; call target of retail scalar-deleting-dtor at 0x10F822 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
+??$_Destroy@PAURvaPair004C3D4C@@@_STL@@YAXPAURvaPair004C3D4C@@0@Z,0x0032C0CA,TU _Destroy resolves the vector-dtor call at 0x4C3D4C; retail 25B 8-byte-pair loop via key dtor 0x48BA39 (rowed Rva0032C0CADestroyPairs stride-identical fold)
