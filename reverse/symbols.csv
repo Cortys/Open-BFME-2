@@ -5753,7 +5753,6 @@ _ConvertBoolTrees,0x001BBD60
 ?createGadget@@YAPAVGameWindow@@PADPAXPAVGadgetCreateView@@PAV1@@Z,0x00316518,BFME2 createGadget (type data view source) called by the gadget rebuild wrapper 0x003174CB; named in the getDataTemplate and copyGadgetDrawData TU notes
 ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z,0x003584E9,BFME2 retail body resolves named teams; dispatcher caller passes team name; BFME1 donor identifies getTeamNamed
 ?getUnitNamed@ScriptEngine@@QAEPAVObject@@ABVAsciiString@@@Z,0x003588E7,BFME2 retail named-object lookup called by NAMED_SET_REPULSOR; BFME1 donor signature is const AsciiString ref
-?iterate_TeamMemberList@Team@@QBE?AV?$Rva001705A0DlinkIterator@VObject@@@@XZ,0x00263864,BFME2 TEAM_SET_REPULSOR target calls this function with Team* and hidden iterator result; BFME1 donor's Team::iterate_TeamMemberList returns the matching Object DLINK_ITERATOR
 ?createGroup@AI@@QAEPAVAIGroup@@XZ,0x002FEC4B,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E loads TheAI then calls this; BFME1 updateTeamSetAttitude donor identifies AI::createGroup
 ?getTeamAsAIGroup@Team@@QAEXPAVAIGroup@@@Z,0x003A0F62,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E passes its team as this and new AIGroup as argument; BFME1 updateTeamSetAttitude donor identifies Team::getTeamAsAIGroup
 ?setAttitude@AIGroup@@QAEXW4AttitudeType@@@Z,0x0036DD16,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E passes AIGroup as this and action attitude as argument; BFME1 updateTeamSetAttitude donor identifies AIGroup::setAttitude
@@ -5774,3 +5773,6 @@ _ConvertBoolTrees,0x001BBD60
 ?aiFaceObject@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,0x003C771D,BFME2 NAMED_FACE_NAMED body at 0x3C99C1 calls this through AIUpdateInterface+0x20 with the second named Object and source 1; BFME1 donor identifies aiFaceObject
 
 ?aiFacePosition@AICommandInterface@@QAEXPBUCoord3D@@H@Z,0x003C7782,BFME2 NAMED_FACE_WAYPOINT body at 0x3C9A24 calls this through AIUpdateInterface+0x20 with Waypoint location at +0x0C and source 1; BFME1 donor identifies aiFacePosition
+?aiFaceObject@AICommandInterface@@QAEXPAVObject@@H@Z,0x003C771D,BFME2 TEAM_FACE_NAMED body at 0x3C9A80 calls this through AIUpdateInterface+0x20 with face Object and source 1; donor semantic API is aiFaceObject
+?iterate_TeamMemberList@Team@@QBE?AV?$DLINK_ITERATOR@VObject@@@@XZ,0x00263864,BFME2 TEAM_FACE_NAMED body at 0x3C9A80 calls this with a caller-owned 24-byte iterator output; target 0x263864 initializes current member and the inherited-DLINK member pointer layout
+?advance@?$DLINK_ITERATOR@VObject@@@@QAEXXZ,0x00263526,BFME2 TEAM_FACE_NAMED body at 0x3C9A80 calls this on the local iterator to advance to the next member; target body uses its virtual-inheritance member-pointer fields
