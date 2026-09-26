@@ -36518,3 +36518,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva00462CE1@SlaughterHordeContain@@UAEPAVBfmeObject872Header@@PAV2@H@Z,,0x00462CE1,23,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainRva00462CE1.cpp,matched,vslot 82 of 0x00848AA0 plus rowed copy 0x2CF108 plus caller 0x47CB32
 ??0Rva00462CF8@@QAE@XZ,,0x00462CF8,16,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00462CF8Ctor.cpp,matched,gap ctor over rowed Rva0024C7B3Member plus and-zero at 0x1C
 ??1CastleMemberBehavior@@MAE@XZ,,0x00395759,103,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleMemberBehaviorDtor.cpp,matched,BFME1 donor audio dtor; PrimaryP inline gives base stores plus Rva0049B47C call
+??_GCastleMemberBehavior@@MAEPAXI@Z,,0x00395BAF,28,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleMemberBehaviorDtor.cpp,matched,slot0 deleting dtor calls rowed dtor 0x395759 plus delete
