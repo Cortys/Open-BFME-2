@@ -36712,3 +36712,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??4BfmeStringRecord00204A30@@QAEAAU0@ABU0@@Z,,0x00203DDA,55,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,same layout as 00204A30 copy caller 00204170 assigns via 000366F0
 ?rva004D80D4@TurretAI@@QAEXXZ,,0x004D80D4,26,Code/GameEngine/Source/GameLogic/Object/Update/TurretAI_rva004D80D4.cpp,matched,gap TurretAI layout via machine plus0x14 team plus0x28 plus getGoalObject row
 ?Get_Channel_Memory_Usage@BFME2CompressedMotionChannels@@QAEHXZ,,0x0018F8C0,60,Code/Libraries/Source/WWVegas/WW3D2/HCompressedAnimFree.cpp,matched,BFME2 VectorMotion 24B node sum via rowed bitchannel and virtual slot 0x18
+?get@Rva0040CC0EIndexedField@@QBEHH@Z,,0x0040CC0E,13,Code/GameEngine/Source/Common/Rva0040CC0EIndexedGetters.cpp,matched,twin indexed getter first dword; 10 callers incl StateMachine getGoalObject
+?get@Rva0040CB2CIndexedField@@QBEHH@Z,,0x0040CB2C,14,Code/GameEngine/Source/Common/Rva0040CC0EIndexedGetters.cpp,matched,twin indexed getter second dword; 38 callers; sibling of 0x0040CC0E
