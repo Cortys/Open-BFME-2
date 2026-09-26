@@ -221,6 +221,14 @@ void XferDistributionType(Xfer *xfer, int *value)
 	xfer->XferEnum("GameClientRandomVariable::DistributionType", value, 4);
 }
 
+// Retail 0x0030600A (24B): labelled-enum helper moving a 4-byte particle
+// system ID through XferEnum with the "ParticleSystemID" label (string at
+// 0x00807C4C). Callers include BoneFXUpdate::xfer at 0x00487CD4/0x00487D1A.
+void XferParticleSystemID(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ParticleSystemID", value, 4);
+}
+
 // Retail 0x00306082 (24B): labelled-enum helper moving a 4-byte rotation type
 // through XferEnum with the "RotationType" label (string at 0x00807CA8).
 // Callers include DoXfer bodies at 0x0055F6DB 0x0055F7D1 0x00562226 0x0056233E.
