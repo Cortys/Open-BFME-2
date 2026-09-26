@@ -36522,15 +36522,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?clear@Rva000A8C9B@@QAEXXZ,,0x000A8C9B,19,Code/GameEngine/Source/Common/Rva000A8C9BClear.cpp,matched,opaque holder clear via rowed Release_Ref 0x50ED3
 ??1StructureBodyModuleData@@UAE@XZ,,0x00257087,5,Code/GameEngine/Source/GameLogic/Object/Body/StructureBodyModuleDataDtor.cpp,matched,vtable 0x7F4028 slot0 0x5706B calls this; base dtor 0x256CB0; ctor 0x57006
 ??_GRva000C2980@@UAEPAXI@Z,,0x000C3808,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xC2980 plus delete 0x2FD60
-??_GRva000CA8BC@@UAEPAXI@Z,,0x000CA9D5,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xCA8BC plus delete 0x2FD60
-??_GRva000CDE73@@UAEPAXI@Z,,0x000CDF34,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xCDE73 plus delete 0x2FD60
-??_GRva000CE960@@UAEPAXI@Z,,0x000CEB2C,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xCE960 plus delete 0x2FD60
-??_GRva000CF1A6@@UAEPAXI@Z,,0x000CF492,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xCF1A6 plus delete 0x2FD60
-??_GRva000CFA42@@UAEPAXI@Z,,0x000CFBF0,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xCFA42 plus delete 0x2FD60
-??_GRva000D0B69@@UAEPAXI@Z,,0x000D0D08,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD0B69 plus delete 0x2FD60
-??_GRva000D146B@@UAEPAXI@Z,,0x000D144F,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD146B plus delete 0x2FD60
-??_GRva000D1713@@UAEPAXI@Z,,0x000D16F7,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD1713 plus delete 0x2FD60
-??_GRva000D18AB@@UAEPAXI@Z,,0x000D19DD,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD18AB plus delete 0x2FD60
 ??_GRva000D1E88@@UAEPAXI@Z,,0x000D1E6C,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD1E88 plus delete 0x2FD60
 ??_GRva000D1BA6@@UAEPAXI@Z,,0x000D208D,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0xD1BA6 plus delete 0x2FD60
 ??_GRva00142FE0@@UAEPAXI@Z,,0x000E00A4,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x142FE0 plus delete 0x2FD60
@@ -36552,7 +36543,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva001041D8@@UAEPAXI@Z,,0x00104723,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x1041D8 plus delete 0x2FD60
 ??_GRva00104DB0@@UAEPAXI@Z,,0x00104F16,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x104DB0 plus delete 0x2FD60
 ??_GRva00104E03@@UAEPAXI@Z,,0x00104F73,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x104E03 plus delete 0x2FD60
-??_GRva00106162@@UAEPAXI@Z,,0x0010625B,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x106162 plus delete 0x2FD60
 ??_GRva00109C7F@@UAEPAXI@Z,,0x00109C63,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x109C7F plus delete 0x2FD60
 ??_GRva00109BEB@@UAEPAXI@Z,,0x00109DB3,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x109BEB plus delete 0x2FD60
 ??_GRva001095B2@@UAEPAXI@Z,,0x0010B9C9,28,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,emitted scalar deleting dtor; calls opaque pinned dtor 0x1095B2 plus delete 0x2FD60

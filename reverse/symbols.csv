@@ -5540,15 +5540,6 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?Do_Onetime_Device_Dependent_Shutdowns@DX8Wrapper@@SAXXZ,0x001215F0,called by Release_Device at 0x00121770+0xCF; direct target REL32 and Ghidra boundary 0x001215F0/381B
 ??1TextureMapperClass@@UAE@XZ,0x00724510,trivial base-store dtor called by mapper deleting dtor 0x00184150 slot1 of mapper vtables; retail 7B mov ecx-base-0xBC650C ret
 ??1Rva000C2980@@UAE@XZ,0x000C2980,opaque dtor; call target of retail scalar-deleting-dtor at 0xC3808 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000CA8BC@@UAE@XZ,0x000CA8BC,opaque dtor; call target of retail scalar-deleting-dtor at 0xCA9D5 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000CDE73@@UAE@XZ,0x000CDE73,opaque dtor; call target of retail scalar-deleting-dtor at 0xCDF34 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000CE960@@UAE@XZ,0x000CE960,opaque dtor; call target of retail scalar-deleting-dtor at 0xCEB2C (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000CF1A6@@UAE@XZ,0x000CF1A6,opaque dtor; call target of retail scalar-deleting-dtor at 0xCF492 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000CFA42@@UAE@XZ,0x000CFA42,opaque dtor; call target of retail scalar-deleting-dtor at 0xCFBF0 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000D0B69@@UAE@XZ,0x000D0B69,opaque dtor; call target of retail scalar-deleting-dtor at 0xD0D08 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000D146B@@UAE@XZ,0x000D146B,opaque dtor; call target of retail scalar-deleting-dtor at 0xD144F (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000D1713@@UAE@XZ,0x000D1713,opaque dtor; call target of retail scalar-deleting-dtor at 0xD16F7 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva000D18AB@@UAE@XZ,0x000D18AB,opaque dtor; call target of retail scalar-deleting-dtor at 0xD19DD (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva000D1E88@@UAE@XZ,0x000D1E88,opaque dtor; call target of retail scalar-deleting-dtor at 0xD1E6C (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva000D1BA6@@UAE@XZ,0x000D1BA6,opaque dtor; call target of retail scalar-deleting-dtor at 0xD208D (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva00142FE0@@UAE@XZ,0x00142FE0,opaque dtor; call target of retail scalar-deleting-dtor at 0xE00A4 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
@@ -5570,7 +5561,6 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ??1Rva001041D8@@UAE@XZ,0x001041D8,opaque dtor; call target of retail scalar-deleting-dtor at 0x104723 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva00104DB0@@UAE@XZ,0x00104DB0,opaque dtor; call target of retail scalar-deleting-dtor at 0x104F16 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva00104E03@@UAE@XZ,0x00104E03,opaque dtor; call target of retail scalar-deleting-dtor at 0x104F73 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
-??1Rva00106162@@UAE@XZ,0x00106162,opaque dtor; call target of retail scalar-deleting-dtor at 0x10625B (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva00109C7F@@UAE@XZ,0x00109C7F,opaque dtor; call target of retail scalar-deleting-dtor at 0x109C63 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva00109BEB@@UAE@XZ,0x00109BEB,opaque dtor; call target of retail scalar-deleting-dtor at 0x109DB3 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
 ??1Rva001095B2@@UAE@XZ,0x001095B2,opaque dtor; call target of retail scalar-deleting-dtor at 0x10B9C9 (28B flag-test shape); Ghidra function start; identity unproven; address-derived name
