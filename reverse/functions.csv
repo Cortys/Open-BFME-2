@@ -36825,3 +36825,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1TunnelContain@@UAE@XZ,,0x0047DB00,67,Code/GameEngine/Source/GameLogic/Object/Contain/TunnelContainDtor.cpp,matched,TunnelContain dtor via GarrisonContain base tail jmp
 ??1SlaughterHordeContain@@UAE@XZ,,0x004803FB,118,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainDtor.cpp,matched,vtable 0xC48AA0 slot0 0x480645 string at 0x9E8 via pin 0x36410 base Garrison 0x478067
 ??1AutoAbilityBehavior@@UAE@XZ,,0x0045A37F,73,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorDtor.cpp,matched,MI dtor via vtable 0x00C4175C and caller 0x0045A560 plus base 0x0024A797 plus ctor 0x0045A78F layout
+?onDelete@SpawnBehavior@@UAEXXZ,,0x0045F75D,88,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_onDelete.cpp,matched,slot 8 of C426AC plus base 58B03E plus find 49DC5 plus setProducer 28AFD2 plus destroy 242C09
