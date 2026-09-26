@@ -13,3 +13,19 @@ void __cdecl rva007B6880()
 	Rva00019EC0DwordImmSetter *p = (Rva00019EC0DwordImmSetter *)&g_Va00DDEB24;
 	return p->apply();
 }
+
+// ?clear@Rva0009990D@@QAEXXZ pin-only target for next thunk (26B @0x0009990D).
+class Rva0009990D
+{
+public:
+	void clear();
+};
+
+extern unsigned g_Va009E5DF8;
+
+// ?rva007B6C9B@@YAXXZ @ 0x007B6C9B (10B). Global clear thunk: ecx=&g_Va009E5DF8 then tail-jmp to pinned ?clear@Rva0009990D@@QAEXXZ (0x0009990D). No callers. Prev is our 0x007B6880 row in this TU. Honest address name.
+void __cdecl rva007B6C9B()
+{
+	Rva0009990D *p = (Rva0009990D *)&g_Va009E5DF8;
+	return p->clear();
+}
