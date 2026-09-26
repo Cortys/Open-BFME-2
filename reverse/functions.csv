@@ -36769,3 +36769,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00360CB0Release@@YAXPAH@Z,,0x00360CB0,61,Code/GameEngine/Source/GameLogic/Object/ObjectFilterRelease.cpp,matched,pool release for 0x94 table via 0x360D26 forwarder with 40 callers unblocks 0x362192
 ?Rva00331B05Copy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x00331B05,29,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,backward forwarder to rowed 0x33177E caller 0x331E1E
 ?Rva00331B8FCopy@@YAPAVRva002DFC30@@PAV1@00@Z,,0x00331B8F,29,Code/GameEngine/Source/Common/Rva002DFC30CopyLoop.cpp,matched,forward forwarder to rowed 0x3319C9 callers 0x33228E
+??$rva001EF83A@PBG@?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@AAEAAV01@PBG0ABUforward_iterator_tag@1@@Z,,0x001EF83A,212,Code/Libraries/Source/WWVegas/WWLib/stlport_wide_string_append_O1.cpp,matched,O1 wide append via direct wide allocator for assign family
