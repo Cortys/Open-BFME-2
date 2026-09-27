@@ -37243,3 +37243,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva004523F5@@QAE@XZ,,0x004523F5,12,Code/GameEngine/Source/GameLogic/Object/Update/Rva004523F5Ctor.cpp,matched,gap ctor over rowed 0x24C7B3 helper honest name
 ??0Rva0022CD65@@QAE@XZ,,0x0022CD65,19,Code/GameEngine/Source/Common/System/SaveGame/Rva0022CD65Ctor.cpp,matched,opaque map-holder with int flag via Rva004E35A3 pattern
 ?rva004523CC@AutoHealBehavior@@QAEXXZ,,0x004523CC,29,Code/GameEngine/Source/GameLogic/Object/Update/AutoHealBehaviorRva004523CC.cpp,matched,AutoHeal activation opposite stopHealing honest name
+?getNthKey@Dict@@QBE?AW4NameKeyType@@H@Z,,0x00306BA9,36,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,Dict nth key via ZH donor and writeDict caller at 0x00307DD4
+?getNthType@Dict@@QBE?AW4DataType@1@H@Z,,0x00306BCD,39,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,Dict nth type via ZH donor and writeDict dispatch caller at 0x00307E08
+?getNthUnicodeString@Dict@@QBE?AVUnicodeString@@H@Z,,0x00313665,56,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,Dict nth unicode via Ascii twin and writeDict caller at 0x00307E3F

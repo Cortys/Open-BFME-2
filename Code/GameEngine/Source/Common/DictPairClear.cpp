@@ -36,6 +36,11 @@ namespace _STL { template <class _Tp> class allocator; template <> class allocat
 
 __declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
 
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0
+};
+
 class UnicodeString
 {
 public:
@@ -93,6 +98,9 @@ public:
  int getNthInt(int n) const;
  float getNthReal(int n) const;
  AsciiString getNthAsciiString(int n) const;
+ NameKeyType getNthKey(int n) const;
+ DataType getNthType(int n) const;
+ UnicodeString getNthUnicodeString(int n) const;
  AsciiString getAsciiString(int key, bool *exists) const;
  UnicodeString getUnicodeString(int key, bool *exists) const;
 
@@ -366,6 +374,44 @@ AsciiString Dict::getNthAsciiString(int n) const
 			return *(AsciiString *)&pair->m_value;
 	}
 	return AsciiString::TheEmptyString;
+}
+
+// ?getNthKey@Dict@@QBE?AW4NameKeyType@@H@Z @0x00306BA9 36B
+// Dict indexed key getter from ZH Dict.h donor inline getNthKey. Range-checked
+// via m_data plus n against m_numPairsUsed then returns peek name m_key>>8
+// or NAMEKEY_INVALID. Caller at 0x00307DD4 via keyToName. Prev/next disp getters.
+NameKeyType Dict::getNthKey(int n) const
+{
+	if (m_data && n >= 0 && n < m_data->m_numPairsUsed)
+		return (NameKeyType)((unsigned int)((DictPair *)(m_data + 1) + n)->m_key >> 8);
+	return NAMEKEY_INVALID;
+}
+
+// ?getNthType@Dict@@QBE?AW4DataType@1@H@Z @0x00306BCD 39B
+// Dict indexed type getter from ZH Dict.h donor inline getNthType. Range-checked
+// via m_data plus n against m_numPairsUsed then returns peek type m_key&0xFF
+// or DICT_NONE. Caller at 0x00307E08 for writeDict dispatch. Prev/next disp getters.
+Dict::DataType Dict::getNthType(int n) const
+{
+	if (m_data && n >= 0 && n < m_data->m_numPairsUsed)
+		return (DataType)(((DictPair *)(m_data + 1) + n)->m_key & 0xFF);
+	return DICT_NONE;
+}
+
+// ?getNthUnicodeString@Dict@@QBE?AVUnicodeString@@H@Z @0x00313665 56B
+// Dict indexed Unicode getter twin of rowed getNthAsciiString at 0x0031362D.
+// Checks pair type DICT_UNICODESTRING via m_data peek plus n then copies through
+// pinned StringBase wide copy at 0x00037050 or returns TheEmptyString. Caller at
+// 0x00307E3F. Prev getNthAsciiString next SidesList getter.
+UnicodeString Dict::getNthUnicodeString(int n) const
+{
+	if (m_data)
+	{
+		DictPair *pair = (DictPair *)(m_data + 1) + n;
+		if (pair && (pair->m_key & 0xFF) == DICT_UNICODESTRING)
+			return *(UnicodeString *)&pair->m_value;
+	}
+	return UnicodeString::TheEmptyString;
 }
 
 // ?sortPairs@Dict@@AAEXXZ @0x00313299
