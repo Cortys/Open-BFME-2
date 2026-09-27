@@ -37098,3 +37098,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006FBB90@Rva8D0D80Result@@QAEXPAVRva8D0D80String@@PAVRva8D0D80Value@@@Z,,0x006FBB90,8,Code/GameEngine/Source/Common/Rva8D0D80ResultAdd.cpp,matched,12 callers in FUN00ade8e0 plus Table pin at 0x70B410 plus Result Table at plus8 via donor
 ?rva00262ACE@AIUpdateInterface@@QAEXXZ,,0x00262ACE,28,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262ACE.cpp,matched,AIUpdateInterface 0x3B6 cluster setter via siblings
 ?rva00262AEA@AIUpdateInterface@@QAEXXZ,,0x00262AEA,15,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262AEA.cpp,matched,AIUpdateInterface 0x3B6 pair via sibling
+?rva0026304D@AIUpdateInterface@@QAEXH@Z,,0x0026304D,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026304D.cpp,matched,AIUpdateInterface tail 0x21C 0x3BC sibling rva00262804 callers 369755 36FD10 3729DE
