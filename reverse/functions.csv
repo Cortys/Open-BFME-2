@@ -37454,3 +37454,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?aiBfmeObjectCommand3D@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x00470447,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiBfmeObjectCommand3D plus HordeContain placement plus caller 0x00472BB3
 ?rva006D3750@EAStringC@@QBEIXZ,,0x006D3750,7,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA size accessor via movzx plus 40 callers plus sibling refcount
 ?set@Rva002A738F@@QAEXHH@Z,,0x002A738F,21,Code/GameEngine/Source/GameLogic/Object/Rva002A7389Get.cpp,matched,two-dword setter plus flag byte sole caller 0x003BD18D on plus0x60 view
+?rva006D3BA0@EAStringC@@QBEXXZ,,0x006D3BA0,21,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA hash store via hashLower plus caller 70DC7F plus Find SetSize neighbours

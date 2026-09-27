@@ -94,6 +94,7 @@ public:
 	void rva006D3CA0(const EAStringC *other);
 	unsigned int GetInternalRefCount() const;
 	unsigned int rva006D3750() const;
+	void rva006D3BA0() const;
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -550,4 +551,15 @@ unsigned short EAStringC::rva006D3D10() const
 unsigned int EAStringC::rva006D3750() const
 {
 	return m_pData->m_uSize;
+}
+
+// ?rva006D3BA0@EAStringC@@QBEXXZ, retail 0x006D3BA0 (21B). EAStringC
+// hash store: recomputes m_uHash via rowed hashLower 0x006D3800 over
+// the text (+8) and stores it unconditionally. Caller at 0x0070DC7F;
+// neighbours Find 0x006D38E0 and SetSize 0x006D3BC0 share /O2 /DNDEBUG
+// /MD. Honest address name; const since only pointee is modified.
+void EAStringC::rva006D3BA0() const
+{
+	StringDataC *data = m_pData;
+	data->m_uHash = hashLower((const char *)data + 8);
 }
