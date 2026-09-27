@@ -37793,3 +37793,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?didPartialEnter@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E20D,123,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,BFME1 TeamTriggerAreaTests donor plus Team 0x5c Object 0x258 AI 0x1dc dead 0x438 kind 0x113
 ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E288,123,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,sibling of didPartialEnter same filter with didExit
 ?isSelectable@Object@@QBE_NXZ,,0x0028D7FD,114,Code/GameEngine/Source/GameLogic/Object/ObjectIsSelectable.cpp,matched,donor BFME1 Object isSelectable with InGameUI slot48 override
+?didEnterOrExit@Object@@IBE_NXZ,,0x0028D6EB,45,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,donor BFME1 didEnterOrExit with INERT kind byte
