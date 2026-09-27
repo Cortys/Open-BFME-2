@@ -6127,3 +6127,4 @@ _ConvertBoolTrees,0x001BBD60
 ??1QueuedDownload@@QAE@XZ,0x005BC5F9,address read from the REL32 displacement at a placed body
 ?push_back@?$list@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAEXABVQueuedDownload@@@Z,0x005BD060,address read from the REL32 displacement at a placed body
 ?getVetUpgradeName@@YA?AVAsciiString@@W4VeterancyLevel@@@Z,0x0026F08B,address read from the REL32 displacement at a placed body
+?concat@AsciiString@@QAEXPBD@Z,0x00005629,TU spelling alias of the matched StringBase<char>::concat(const char *) row at 0x00005629; call site read from the getVetUpgradeName body at 0x0026F08B
