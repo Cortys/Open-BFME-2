@@ -18,14 +18,32 @@ public:
 
 extern "C" void free(void *);
 
+namespace _STL
+{
+void __cdecl free(void *block);
+}
+
+class AnimationSoundTreeHeaderHandle
+{
+public:
+	~AnimationSoundTreeHeaderHandle()
+	{
+		if (m_header)
+			_STL::free(m_header);
+	}
+
+	void *m_header;
+};
+
 class AnimationSoundTree
 {
 public:
+	~AnimationSoundTree();
 	void rva004CA167(void *node);
 	void rva004CA26A();
 
 private:
-	void *m_header;
+	AnimationSoundTreeHeaderHandle m_handle;
 	unsigned int m_count;
 };
 
@@ -57,10 +75,18 @@ void AnimationSoundTree::rva004CA26A()
 {
 	if (m_count == 0)
 		return;
-	void *first = *(void **)((char *)m_header + 4);
+	void *first = *(void **)((char *)m_handle.m_header + 4);
 	rva004CA167(first);
-	*(void **)((char *)m_header + 8) = m_header;
-	*(unsigned int *)((char *)m_header + 4) = 0;
-	*(void **)((char *)m_header + 0x0C) = m_header;
+	*(void **)((char *)m_handle.m_header + 8) = m_handle.m_header;
+	*(unsigned int *)((char *)m_handle.m_header + 4) = 0;
+	*(void **)((char *)m_handle.m_header + 0x0C) = m_handle.m_header;
 	m_count = 0;
+}
+
+// ??1AnimationSoundTree@@QAE@XZ, retail 0x004CA653, 56 bytes.
+// AnimationSoundTree dtor: clears via rowed rva004CA26A then frees header.
+// Evidence: caller at 0x004CA780 in pinned ??1AnimationSoundClientBehaviorModuleData 0x004CA768 with ECX=this+8; layout header+0 count+4 from ctor 0x004CA6DA.
+AnimationSoundTree::~AnimationSoundTree()
+{
+	rva004CA26A();
 }
