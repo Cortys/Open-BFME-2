@@ -37133,3 +37133,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?getName@DataChunkTableOfContents@@QAE?AVAsciiString@@I@Z,,0x003070F1,53,Code/GameEngine/Source/Common/System/DataChunkTableOfContentsGetName.cpp,matched,ZH DataChunk getName; callers 0x3074C9 0x3074FE; AsciiString copy pin 0x365F0
 ?getChunkLabel@DataChunkInput@@QAE?AVAsciiString@@XZ,,0x003074D7,51,Code/GameEngine/Source/Common/System/DataChunkInputGetChunkLabel.cpp,matched,ZH DataChunk getChunkLabel; chunkStack 0x1C id 0x08; getName row 0x3070F1
 ??0Rva004E35A3@@QAE@XZ,,0x004E35A3,12,Code/GameEngine/Source/Common/Rva004E35A3Ctor.cpp,matched,opaque map-holder ctor via rowed map ctor 0x33C432
+?lock@Rva00041004@@QAE_NH@Z,,0x00041004,32,Code/GameEngine/Source/Common/Rva00041004Lock.cpp,matched,honest address name via caller at 0x411E7 and IAT lock
