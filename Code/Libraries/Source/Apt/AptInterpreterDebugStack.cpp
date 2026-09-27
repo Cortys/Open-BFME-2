@@ -27,6 +27,7 @@ public:
     ~AptDebugStack();
     void Shutdown();
     void Rva006FE1D0(int nCapacity);
+    void Rva006FE2F0(void *elem);
 };
 #define CHECK_AT(cond,text,line) if (!(cond)) { g_bfmeAptAssertAtE17734(text,"c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptDebugStack.h",line); if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak(); }
 template<class T> AptDebugStack<T>::~AptDebugStack()
@@ -55,5 +56,11 @@ template<class T> void AptDebugStack<T>::Rva006FE1D0(int nCapacity)
     CHECK_AT(g_bfmeAptAllocAtE17728,"gAptFuncs.pfnMemAlloc",0x48);
     m_aElements=(T **)g_bfmeAptAllocAtE17728(m_nCapacity*sizeof(T *));
     CHECK_AT(m_aElements!=0,"m_aElements != NULL",0x4E);
+}
+template<class T> void AptDebugStack<T>::Rva006FE2F0(void *elem)
+{
+    CHECK_AT(m_nElements<m_nCapacity,"m_nElements < m_nCapacity",0x6A);
+    m_aElements[m_nElements]=(T *)elem;
+    ++m_nElements;
 }
 template class AptDebugStack<AptActionInterpreter::DebugCallStackInfo_t>;
