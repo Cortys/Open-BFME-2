@@ -37,18 +37,28 @@ public:
 	virtual void g18();
 };
 
+class Rva00222A8BTarget
+{
+public:
+	void invoke(void *owner, const char *name, int flag, const char *value, void *a4, void *a5, void *a6, void *a7);
+};
+
 #define TheGlobal004443E7958 (*(Global004443E7958View **)0x00DFE958)
 #define TheGameEngine004443E7 (*(class GameEngine **)0x00DFE710)
+#define TheInvoke00444E8ATarget (*(Rva00222A8BTarget **)0x00DFE4CC)
 
 class GameEngine
 {
 public:
 	void rva004443E7();
 	void rva00444E69(int unused);
+	void rva00444E8A();
 
 private:
 	void _bfme_terminateChildProcesses();
-	char m_pad[0x288];
+	char m_pad274[0x274];
+	void *m_274Owner; // +0x274
+	char m_pad278[0x288 - 0x278];
 	Member004443E7 m_mem288; // +0x288
 	char m_pad28C[0x54B - 0x28C];
 	unsigned char m_54B; // +0x54B
@@ -75,4 +85,16 @@ void GameEngine::rva00444E69(int unused)
 		rva004443E7();
 		m_6A4 = 0;
 	}
+}
+
+void GameEngine::rva00444E8A()
+{
+	if (TheInvoke00444E8ATarget == 0)
+		return;
+	if (m_6A4 == 0)
+		return;
+	m_6A4 = 0;
+	rva004443E7();
+	Rva00222A8BTarget *t = TheInvoke00444E8ATarget;
+	t->invoke(m_274Owner, "CancelGame", 0, 0, 0, 0, 0, 0);
 }
