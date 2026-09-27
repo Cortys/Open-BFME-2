@@ -9,6 +9,22 @@
 struct ListNode
 {
 	ListNode *m_next; // +0x00
+	char m_pad4[4]; // +0x04
+	class Object *m_obj; // +0x08
+};
+
+class AIHolder
+{
+public:
+	char m_pad[0x3DA];
+	unsigned char m_flag3DA; // +0x3DA
+};
+
+class Object
+{
+public:
+	char m_pad[0x258];
+	AIHolder *m_ai; // +0x258
 };
 
 class Rva0036E346
@@ -32,4 +48,29 @@ int Rva0036E346::rva0036E346()
 		++count;
 	}
 	return count;
+}
+
+class Rva0036E2E2
+{
+public:
+	void rva0036E2E2(bool flag);
+
+private:
+	char m_pad0[4]; // +0x00
+	ListNode *m_head; // +0x04
+};
+
+void Rva0036E2E2::rva0036E2E2(bool flag)
+{
+	ListNode *cur = m_head->m_next;
+	if (cur == m_head)
+		return;
+	do
+	{
+		Object *obj = cur->m_obj;
+		AIHolder *ai = obj->m_ai;
+		if (ai)
+			ai->m_flag3DA = flag;
+		cur = cur->m_next;
+	} while (cur != m_head);
 }
