@@ -5884,3 +5884,4 @@ _ConvertBoolTrees,0x001BBD60
 ?get_allocator@?$_List_base@UBfmePod32@@V?$allocator@UBfmePod32@@@_STL@@@_STL@@QBE?AV?$allocator@UBfmePod32@@@2@XZ,0x0021983A,address read from the REL32 displacement at a byte-verified placed body (0xBDA52)
 ??$insert@U?$_List_iterator@UBfmePod32@@U?$_Const_traits@UBfmePod32@@@_STL@@@_STL@@@?$list@UBfmePod32@@V?$allocator@UBfmePod32@@@_STL@@@_STL@@QAEXU?$_List_iterator@UBfmePod32@@U?$_Nonconst_traits@UBfmePod32@@@_STL@@@1@U?$_List_iterator@UBfmePod32@@U?$_Const_traits@UBfmePod32@@@_STL@@@1@1@Z,0x000BD24A,address read from the REL32 displacement at a byte-verified placed body (0xBDA52)
 ??$_Destroy@PAVRva002A73B8@@@_STL@@YAXPAVRva002A73B8@@0@Z,0x002A752F,ICF twin of rowed Rva002A752FDestroy same 25B stride 0xC same dtor
+?append@?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAEAAV12@ID@Z,0x00029380,address read from the REL32 displacement at a byte-verified placed body (0x1F978F)
