@@ -38019,3 +38019,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva00203D6AChain@@YAXPAVRva00203D6AA@@PAX@Z,,0x00203D6A,28,Code/GameEngine/Source/Common/Rva00203D6AChain.cpp,matched,slot27 then slot30 chain same slots as Xfer helpers
 ?Rva00203D86Chain@@YAXPAVRva00203D86A@@PAX@Z,,0x00203D86,28,Code/GameEngine/Source/Common/Rva00203D86Chain.cpp,matched,slot30 twice chain sibling of 0x00203D6A
 ??0Rva00270025@@QAE@XZ,,0x00270025,28,Code/GameEngine/Source/Common/Rva00270025Ctor.cpp,matched,new 0x74 at 0x00270BB4 calls it; dtor at 0x00270041; honest Rva name
+?rva00270BA8@Rva00270BA8@@QAEPAVRva00270025@@XZ,,0x00270BA8,49,Code/GameEngine/Source/Common/Rva00270BA8.cpp,matched,calls ctor 0x00270025; new 0x74; honest Rva names
