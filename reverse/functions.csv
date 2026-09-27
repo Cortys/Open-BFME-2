@@ -37917,3 +37917,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006DCFE0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DCFE0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,calls rowed isSound asserts isSound inl 891
 ?rva006DC300@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC300,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,type 11 predicate same shape as siblings callers 0x00703BD1
 ?rva006DCC60@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006DCC60,90,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,type 14 AptCIH.h 181 same shape as isCIH
+?isEquivalentTo@ThingTemplate@@QBE_NPBV1@@Z,,0x0033BB04,335,Code/GameEngine/Source/Common/Thing/ThingTemplateIsEquivalentTo.cpp,matched,BFME2 EquivalentTo plus BuildVariations via INI table and rowed callees
