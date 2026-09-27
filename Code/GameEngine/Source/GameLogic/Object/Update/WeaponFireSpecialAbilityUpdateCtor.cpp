@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??0WeaponFireSpecialAbilityUpdate@@QAE@PAVThing@@PBVModuleData@@@Z,
-// retail 0x00492708, 170 bytes. Behavior-side ctor completing the
+// retail 0x00492708, 172 bytes. Behavior-side ctor completing the
 // WeaponFireSpecialAbilityUpdate file-unit (behavior instance factory
 // rowed at 0x24DB1B news 0x8C with this pinned 2-arg ctor as its sole
 // caller; poolkey rowed at 0x492685; name getter rowed at 0x4925D5;
