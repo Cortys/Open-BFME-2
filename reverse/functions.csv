@@ -38741,3 +38741,7 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rotate_Z@Matrix3D@@QAEXM@Z,,0x00098CC0,202,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DRotateO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Fast_Sin@WWMath@@SAMM@Z,,0x000933AD,170,Code/Libraries/Source/WWVegas/WWMath/WWMathO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Float_To_Int_Floor@WWMath@@SAHABM@Z,,0x000930E0,106,Code/Libraries/Source/WWVegas/WWMath/WWMathO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Init_Min_Max@AABoxClass@@QAEXABVVector3@@0@Z,,0x0007E561,128,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Init@AABoxClass@@QAEXABVMinMaxAABoxClass@@@Z,,0x00068F68,126,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Overlap_Test@CollisionMath@@SA?AW4OverlapType@1@ABVPlaneClass@@ABVVector3@@@Z,,0x0007B638,86,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0AABTreeLinkClass@@QAE@PAVAABTreeCullSystemClass@@@Z,,0x005EA038,26,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
