@@ -31,6 +31,7 @@ public:
     int isMovieClip() const;
     int isStage() const;
     int rva006DC300() const;
+    int rva006DC490() const;
     int rva006DCC60(bool bUndefOK) const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
@@ -169,6 +170,16 @@ int BfmeAptValue006DCD20::isKey() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 24 && !isUndefined()) return 1;
+    return 0;
+}
+
+int BfmeAptValue006DCD20::rva006DC490() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1789);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 31 && !isUndefined()) return 1;
     return 0;
 }
 
