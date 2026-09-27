@@ -38152,3 +38152,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1?$vector@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAE@XZ,,0x001536EA,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva005F8F96_dtor.cpp,matched,vector dtor EH via rowed Destroy 0x153470 and free
 ??_GRva005F8F96@@QAEPAXI@Z,,0x005CCCB4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-6937.cpp,matched,deleting dtor calls rowed dtor 0x5F8F96 chain
 ?rva00342572@Rva00342572@@QAEHXZ,,0x00342572,46,Code/GameEngine/Source/Common/Rva00342572Get.cpp,matched,chain F8D4 predicate copy 1A0 to 20 or -1
+??0Rva00342FCD@@QAE@PAVStateMachine@@H@Z,,0x00342FCD,37,Code/GameEngine/Source/Common/Rva00342FCDCtor.cpp,matched,chain FE65 base 0 vtable 0x812FA0 store 0x28
