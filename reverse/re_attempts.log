@@ -2175,3 +2175,5 @@ FUN_00947263	0x00547263	52	blocked	free armor range check tail merge prevents se
 ??0Rva0039EA9C@@QAE@XZ	0x0039EA9C	27	partial	or for -1 hoisted first vs retail last t=12 model=muse-b7e4 score=0.95 stash=reverse/attempts/0x0039ea9c.cpp
 ?didEnter@Object@@QAE_NPAVPolygonTrigger@@@Z	0x0028D718	63	partial	retail edx-for-this with late push vs ours esi-for-this with early push t=20 model=muse score=0.93 stash=reverse/attempts/0x0028d718.cpp
 ?didExit@Object@@QAE_NPAVPolygonTrigger@@@Z	0x0028D757	63	partial	twin of didEnter retail edx-for-this vs ours esi-for-this t=20 model=muse score=0.93 stash=reverse/attempts/0x0028d757.cpp
+?rva005C65F1@Rva005C65F1@@QAEXXZ	0x005C65F1	75	partial	add edi eax vs add eax edi and cmp edi 2 vs cmp eax 2; only register allocation differs t=25 model=muse-109a score=0.93 stash=reverse/attempts/0x005c65f1.cpp
+??1Rva00524A4C@@UAE@XZ	0x00524BB4	75	blocked	EH states 1 plus byte0 vs single and0; vptr reloc ok t=15 model=muse-361d

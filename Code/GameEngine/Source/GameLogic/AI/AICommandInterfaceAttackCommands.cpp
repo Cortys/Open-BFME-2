@@ -43,6 +43,7 @@ enum AICommandType
 	AICMD_FACE_POSITION = 0x27,
 	AICMD_WANDER_IN_PLACE = 0x2C,
 	AICMD_FOLLOW_WAYPOINT_PATH_EXACT = 0x32,
+	AICMD_BFME_33 = 0x33,
 	AICMD_BFME_3D = 0x3D
 };
 
@@ -93,6 +94,7 @@ public:
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiFollowWaypointPathExact(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiFollowWaypointPathAsTeam(const Waypoint *waypoint, CommandSourceType cmdSource);
+	void aiBfmeCommand33(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
 	void aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 };
@@ -234,6 +236,18 @@ void AICommandInterface::aiFollowWaypointPathExact(const Waypoint *waypoint, Com
 void AICommandInterface::aiFollowWaypointPathAsTeam(const Waypoint *waypoint, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_FOLLOW_WAYPOINT_PATH_AS_TEAM, cmdSource);
+	parms.m_waypoint = waypoint;
+	aiDoCommand(&parms);
+}
+
+// retail 0x0036EDB1, 101 bytes. Gap between aiFollowWaypointPathAsTeam and aiForceAttackObject in this TU.
+// BFME1 donor AICommandInterfaceFollowPathCommands.cpp aiBfmeCommand33 at AICMD 0x33
+// plus m_waypoint at +0x2C plus slot-0 aiDoCommand. Class proven by caller at 0x0036FBF1
+// via lea ecx,[eax+0x20] with waypoint plus source.
+// Caller at 0x0036FBF1.
+void AICommandInterface::aiBfmeCommand33(const Waypoint *waypoint, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_BFME_33, cmdSource);
 	parms.m_waypoint = waypoint;
 	aiDoCommand(&parms);
 }
