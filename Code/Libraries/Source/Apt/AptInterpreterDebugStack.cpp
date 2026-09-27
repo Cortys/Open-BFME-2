@@ -8,9 +8,14 @@
 // Target establishes count0/capacity4/pointer8 and pointer-array size4 per slot.
 // The nested info type is intentionally incomplete: its internal layout is unused.
 // Full target spans6FE160+108 and6FE270+128 are checked against final returns.
+// Gap 6FE1D0+146 inits capacity and allocs the pointer array with the same
+// _AptDebugStack.h asserts (capacity==0 line 0x46, alloc fn line 0x48,
+// elements non-null line 0x4E); caller 6FEB34 passes this+0x34 plus the
+// capacity from AptInitParms+0x24, matching the debugCallStack member.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *,const char *,int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 extern void (__cdecl *g_bfmeAptFreeSizeAtE17730)(void *,unsigned int);
+extern void *(__cdecl *g_bfmeAptAllocAtE17728)(unsigned int);
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 struct AptActionInterpreter { struct DebugCallStackInfo_t; };
@@ -21,6 +26,7 @@ template<class T> class AptDebugStack {
 public:
     ~AptDebugStack();
     void Shutdown();
+    void Rva006FE1D0(int nCapacity);
 };
 #define CHECK_AT(cond,text,line) if (!(cond)) { g_bfmeAptAssertAtE17734(text,"c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptDebugStack.h",line); if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak(); }
 template<class T> AptDebugStack<T>::~AptDebugStack()
@@ -41,5 +47,13 @@ template<class T> void AptDebugStack<T>::Shutdown()
     m_nCapacity=0;
     m_nElements=0;
     m_aElements=0;
+}
+template<class T> void AptDebugStack<T>::Rva006FE1D0(int nCapacity)
+{
+    CHECK_AT(m_nCapacity==0,"m_nCapacity == 0",0x46);
+    m_nCapacity=nCapacity;
+    CHECK_AT(g_bfmeAptAllocAtE17728,"gAptFuncs.pfnMemAlloc",0x48);
+    m_aElements=(T **)g_bfmeAptAllocAtE17728(m_nCapacity*sizeof(T *));
+    CHECK_AT(m_aElements!=0,"m_aElements != NULL",0x4E);
 }
 template class AptDebugStack<AptActionInterpreter::DebugCallStackInfo_t>;
