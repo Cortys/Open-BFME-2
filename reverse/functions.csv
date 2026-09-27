@@ -37846,3 +37846,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?q4Notify002CCB04@@YAXPAXPAVMade002CCB04@@HH@Z,,0x0050B42C,77,Code/GameEngine/Source/GameLogic/Object/Made002CCB04Parse.cpp,matched,Emotion parser same two-add shape
 ?write@Rva0050F23E@@QAEHPAD@Z,,0x0050F23E,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,two-ref plus char plus text write base PlusStringChar
 ??BRva0050F23E@@QAE?AVAsciiString@@XZ,,0x0050F7B4,107,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat to AsciiString sized write base fold plus text plus char
+?rva002BECCD@Rva002BECCD@@QAEXMMM@Z,,0x002BECCD,67,Code/GameEngine/Source/Common/Rva002BECCDCalls.cpp,matched,three-float dual-virtual local zero third callers 0x002B2A0A 0x003FD584 singleton DFEF18
