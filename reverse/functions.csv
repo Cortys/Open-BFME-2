@@ -37120,3 +37120,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?isLocallyControlled@Object@@QBE_NXZ,,0x0028B07A,23,Code/GameEngine/Source/GameLogic/Object/ObjectIsNeutralControlled.cpp,matched,BFME1 donor Object.cpp local twin of neutral 40 callers
 ?rva002630F5@AIUpdateInterface@@QAEPAVRadarObject@@XZ,,0x002630F5,8,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002630F5.cpp,matched,tail m_object radar rowed 313EAF callers 34EE32 34F082 3500C4
 ?rva006D3CA0@EAStringC@@QAEXPBV1@@Z,,0x006D3CA0,107,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC null-expecting share plus refcount plus 3 callers
+?Rva00055864Free@@YGXPAURva00055864Node@@@Z,,0x00055864,28,Code/Libraries/Source/WWVegas/WWLib/Rva00055864Free.cpp,matched,sole caller deque clear 0x56DA2 same flags as neighbours
