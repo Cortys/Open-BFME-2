@@ -63,8 +63,10 @@ static MutexClass threadMutex;
 static Bool isThread;
 static TextureClass *cursorTextures[Mouse::NUM_MOUSE_CURSORS][MAX_2D_CURSOR_ANIM_FRAMES];	///<Textures for each cursor type
 static const Image *cursorImages[Mouse::NUM_MOUSE_CURSORS];			///<Images for use with the RM_POLYGON method.
-static RenderObjClass *cursorModels[Mouse::NUM_MOUSE_CURSORS];	///< W3D models for each cursor type
-static HAnimClass			*cursorAnims[Mouse::NUM_MOUSE_CURSORS];		///< W3D animations for each cursor type
+// Retail freeW3DAssets traverses 0xE0 bytes in each of these tables.
+enum { RETAIL_WORLD_CURSOR_COUNT = 56 };
+static RenderObjClass *cursorModels[RETAIL_WORLD_CURSOR_COUNT];	///< W3D models for each cursor type
+static HAnimClass			*cursorAnims[RETAIL_WORLD_CURSOR_COUNT];		///< W3D animations for each cursor type
 
 ///Mouse polling/update thread function
 // Retail reaches Mouse::draw through [eax+0x30]; the reference Mouse header
@@ -376,7 +378,7 @@ void W3DMouse::freeW3DAssets(void)
 {
 	// The retail model and animation tables span 56 entries (0xE0 bytes),
 	// independent of the shorter reference enum bound.
-	for (Int i=0; i<56; i++)
+	for (Int i=0; i<RETAIL_WORLD_CURSOR_COUNT; i++)
 	{
 		if (W3DDisplay::m_3DInterfaceScene && cursorModels[i])
 		{
