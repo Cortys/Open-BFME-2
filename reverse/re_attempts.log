@@ -2261,3 +2261,4 @@ FUN_008e0d4e	0x004E0D4E	25	blocked	STL hashtable begin wrapper needs exact Windo
 FUN_00668B79	0x00268B79	92	blocked	push0 to findObjectByID always null makes loop dead; donor unclear t=12 model=muse-ce2f
 ?rva00056DA2@Rva00056DA2@@QAEXXZ	0x00056DA2	73	partial	test-vs-sar plus missing dead mov ecx esi before free t=25 model=muse-f961 score=0.93 stash=reverse/attempts/0x00056da2.cpp
 FUN_008c71d3	0x004C71D3	68	blocked	__unguarded_partition bit_iter with fn-ptr pred plus Bit_iter swap; needs predicate identity and bit-proxy modeling t=12 model=muse-dac7
+FUN_00612858	0x00212858	199	blocked	hashtable resize with AsciiString hash and shared _M_next_size needs type-specific hash functor reconstruction t=12 model=muse-6665
