@@ -18,3 +18,13 @@ class Rva0033FF2B { public: __declspec(noinline) virtual ~Rva0033FF2B(); private
   friend void famgenDelete(Rva0033FF2B *p); };
 Rva0033FF2B::~Rva0033FF2B() { m_famgen = 0; }
 void famgenDelete(Rva0033FF2B *p) { delete p; }
+
+// ??_GRva00340BDC@@UAEPAXI@Z @0x00342B6B, 28B.
+// Scalar deleting dtor slot 0 of vtable 0x00812150; calls rowed ??1 at
+// 0x00340BDC plus rowed delete at 0x0002FD60.
+
+// ??_GRva00340BDC@@UAEPAXI@Z @0x00342B6B
+class Rva00340BDC { public: __declspec(noinline) virtual ~Rva00340BDC(); private: int m_famgen;
+  friend void famgenDelete(Rva00340BDC *p); };
+Rva00340BDC::~Rva00340BDC() { m_famgen = 0; }
+void famgenDelete(Rva00340BDC *p) { delete p; }
