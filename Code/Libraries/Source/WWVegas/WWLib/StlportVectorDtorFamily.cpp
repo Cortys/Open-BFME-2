@@ -57,3 +57,8 @@ template _STL::vector<RvaPair004C3D4C>::~vector();
 struct RvaPair00257544 { AsciiString m_key; int m_value; public: ~RvaPair00257544(); };
 template _STL::vector<RvaPair00257544>::~vector();
 
+// ??1?$vector@UBfmeStringHeadRecord160@@V?$allocator@UBfmeStringHeadRecord160@@@_STL@@@_STL@@QAE@XZ @0x00257583 63B.
+// Neighbor vector dtor in same 00257 page: retail destroys the range through pinned _Destroy at 0x00257469 (24B wrapper delegating to matched 0x00256FEA loop stepping 0xA0 via releaseBuffer 0x48BA39) then frees via 0x30830; called at 0x00257CA0 in UNCLAIMED 0x00257C88. Same 63B Destroy+free shape as rowed family members under /O1 /GX flags (EHsc gives 59B missing the or-state). Element is the 160-byte AsciiString-head view already modelled in stlport_asciistring_record_bodies.cpp.
+struct BfmeStringHeadRecord160 { AsciiString m_head; int m_tail[39]; public: ~BfmeStringHeadRecord160(); };
+template _STL::vector<BfmeStringHeadRecord160>::~vector();
+
