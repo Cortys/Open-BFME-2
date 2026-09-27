@@ -38791,3 +38791,7 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0OBBoxClass@@QAE@ABVVector3@@0@Z,,0x000B29D3,121,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Matrix3D@@QAE@ABVVector3@@@Z,,0x0004563C,112,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Matrix3x3@@QAE@_N@Z,,0x0008E436,86,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set_Ambient@LightClass@@QAEXABVVector3@@@Z,,0x00042EBD,29,Code/GameEngineDevice/Source/W3DDevice/GameClient/LightSceneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set_Diffuse@LightClass@@QAEXABVVector3@@@Z,,0x00042EDA,29,Code/GameEngineDevice/Source/W3DDevice/GameClient/LightSceneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set_Specular@LightClass@@QAEXABVVector3@@@Z,,0x00042EF7,29,Code/GameEngineDevice/Source/W3DDevice/GameClient/LightSceneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Get_Fog_Range@SceneClass@@UAEXPAM0@Z,,0x0006EE06,21,Code/GameEngineDevice/Source/W3DDevice/GameClient/LightSceneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
