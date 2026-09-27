@@ -37161,3 +37161,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004CA13D@AnimationSoundTree@@QAEPAV1@PBX0@Z,,0x004CA13D,42,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,header init via rowed 0x004CA018 with caller 0x004CA6DA
 ?xfer@W3DPropDraw@@MAEXPAVXfer@@@Z,,0x000B221A,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DPropDrawXfer.cpp,matched,slot 3 of vtable 0xBCD328 via donor no-data xfer plus base
 ??1BfmeRecordOwner900@@QAE@XZ,,0x004CB6C9,103,Code/Libraries/Source/WWVegas/WWLib/OwnedRecord900Copy.cpp,matched,copy 4CB7EE layout with reverse-order cleanup and 900-byte stride callers and deleting-dtor caller
+?getUiText@ScriptAction@@QAE?AVAsciiString@@XZ,,0x003B54DC,285,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionGetUiText.cpp,matched,ScriptAction getUiText via ZH donor with BFME2 empty set and disabled tail and rowed getUiStrings and pinned param getUiText
