@@ -31,6 +31,7 @@ class ScriptActions
 {
 protected:
     void doNamedEnableStealth( const AsciiString &, Bool );
+    void rva003BBD61( const AsciiString &, Bool );
 };
 
 extern ScriptEngine *TheScriptEngine;
@@ -42,4 +43,13 @@ void ScriptActions::doNamedEnableStealth( const AsciiString &unitName, Bool enab
     if( !self )
         return;
     self->setScriptStatus( OBJECT_STATUS_SCRIPT_UNSTEALTHED, !enabled );
+}
+
+// ?rva003BBD61@ScriptActions@@IAEXABVAsciiString@@_N@Z
+void ScriptActions::rva003BBD61( const AsciiString &unitName, Bool enabled )
+{
+    Object *self = TheScriptEngine->getUnitNamed( unitName );
+    if( !self )
+        return;
+    self->setScriptStatus( (ObjectScriptStatusBit)0x20, enabled );
 }

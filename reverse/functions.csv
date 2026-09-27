@@ -37842,3 +37842,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?q4Notify002CCAA1@@YAXPAXPAVMade002CCAA1@@HH@Z,,0x0050B23B,77,Code/GameEngine/Source/GameLogic/Object/Made002CCAA1Parse.cpp,matched,OpenGate parser with two add tables
 ??BAsciiStringPlusStringText@@QAE?AVAsciiString@@XZ,,0x0050F74B,105,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat to AsciiString sized write base fold plus text len
 ?doNamedEnableStealth@ScriptActions@@IAEXABVAsciiString@@_N@Z,,0x003BBD39,40,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doNamedEnableStealth.cpp,matched,BFME1 donor doNamedEnableStealth with UNSTEALTHED bit 8
+?rva003BBD61@ScriptActions@@IAEXABVAsciiString@@_N@Z,,0x003BBD61,35,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doNamedEnableStealth.cpp,matched,Chain sibling of doNamedEnableStealth with bit 0x20 direct
