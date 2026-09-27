@@ -29,17 +29,30 @@ struct RetailPlayerRelationMap
 	PlayerRelationMapType m_map;
 };
 
+class Team;
 class Player
 {
 public:
 	int getPlayerIndex() const { return m_playerIndex; }
 	Relationship getRelationship(const Player *that) const;
+	Relationship getRelationship(const Team *that) const;
 
 private:
 	char m_pad00[0x54];
 	int m_playerIndex; // +0x54
 	char m_pad58[0x330 - 0x58];
 	RetailPlayerRelationMap *m_playerRelations; // +0x330
+	RetailPlayerRelationMap *m_teamRelations; // +0x334
+};
+
+class Team
+{
+public:
+	Player *getControllingPlayer() const;
+	int getTeamKey() const { return m_key34; }
+private:
+	char m_pad00[0x34];
+	int m_key34; // +0x34
 };
 
 Relationship Player::getRelationship(const Player *that) const
@@ -54,5 +67,21 @@ Relationship Player::getRelationship(const Player *that) const
 	PlayerRelationMapType::const_iterator it = rel->m_map.find(that->getPlayerIndex());
 	if (it != rel->m_map.end())
 		return (*it).second;
+	return NEUTRAL;
+}
+
+Relationship Player::getRelationship(const Team *that) const
+{
+	if (that)
+	{
+		RetailPlayerRelationMap *rel = m_teamRelations;
+		if (!rel->m_map.empty())
+		{
+			PlayerRelationMapType::const_iterator it = rel->m_map.find(that->getTeamKey());
+			if (it != rel->m_map.end())
+				return (*it).second;
+		}
+		return getRelationship(that->getControllingPlayer());
+	}
 	return NEUTRAL;
 }

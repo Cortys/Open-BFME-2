@@ -2266,3 +2266,5 @@ FUN_00612858	0x00212858	199	blocked	hashtable resize with AsciiString hash and s
 ?Rva002C1777Median@@YAPAHPAH00P6A_NHH@Z	0x002C1777	95	blocked	STL median comparator shape 5 calls but esi edi swapped and plus2 size t=12 model=muse-5f01
 ?rva0056EC54@Rva0056EC54@@QAE_NABVUnicodeString@@_N@Z	0x0056EC54	90	partial	xor-eax cmp-reg vs cmp-imm and test-vs-cmp pop order t=18 model=muse-5f01 score=0.92 stash=reverse/attempts/0x0056ec54.cpp
 FUN_0091c07d	0x0051C07D	39	blocked	unguarded-linear-insert shape for 12B shifts via 3x movsd with cmp-ecx-mem jl; callers are linear-insert fast paths with comiss vs cmp mismatch; comparator and val ABI unproven t=15 model=muse-aa0b
+?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DXT white pattern plus shared memset tail merge needs flag and layout work t=25 model=muse-c2f6
+?rva00264688@Rva00264688@@QAEEXZ	0x00264688	97	partial	loop peeled with entry jmp plus extra je jmp and final je vs jne scheduling left 102B vs 97B t=20 model=muse-c2f6 score=0.93 stash=reverse/attempts/0x00264688.cpp
