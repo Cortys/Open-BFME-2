@@ -60,6 +60,7 @@ public:
 	StringBase() : m_data(0) {}
 	~StringBase() { releaseBuffer(); }
 	bool isEmpty() const;
+	int compareNoCase(const StringBase &other) const throw();
 	void set(const StringBase &other);
 	void trim(void);
 	Bool nextToken(StringBase *token, const unsigned short *seps);
@@ -185,6 +186,7 @@ public:
 	void Rva0043BFDB(const UnicodeString &user, int profileIndex);
 	UnicodeString Rva0043BB88(void);
 	void Rva0043BE36(const AsciiString &mapName);
+	int Rva0043BBB6(UnicodeString user);
 
 private:
 	void rebuildUserNamesEntry(void);
@@ -305,4 +307,14 @@ UnicodeString SkirmishPreferences::Rva0043BB88(void)
 void SkirmishPreferences::Rva0043BE36(const AsciiString &mapName)
 {
 	setAsciiString(buildProfileKey("Map"), mapName);
+}
+
+int SkirmishPreferences::Rva0043BBB6(UnicodeString user)
+{
+	int index = 0;
+	for (_STL::list<UnicodeString>::iterator it = m_userNames.begin(); it != m_userNames.end(); ++it, ++index) {
+		if (user.compareNoCase(*it) == 0)
+			return index;
+	}
+	return -1;
 }
