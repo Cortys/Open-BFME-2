@@ -1975,3 +1975,4 @@ FUN_0085ED4B	0x0045ED4B	27	blocked	branchy push-pop vs O1 setle-lea wall; 6 vari
 FUN_004c0a76	0x004C0A76	54	blocked	1 callee unclaimed 0x004BF1E8 551B; ghidra 10 vs true 54 XferVersion+XferObjectID+virtual slot3; t=8 model=muse-df99
 ??0HordeGarrisonContain@@QAE@PAVThing@@PBVModuleData@@@Z	0x0047A040	160	blocked	1 callee unclaimed 0x0028AE6D wall needs 0x2791E7 plus 0x262871 per memory; t=5 model=muse-df99
 FUN_0056af4b	0x0056AF4B	45	blocked	1 callee unclaimed 0x0056AD80 85B needs 0x003F855D; t=4 model=muse-df99
+??1StructureCollapseUpdateModuleData@@UAE@XZ	0x00257B7A	109	blocked	duplicate name already rowed at 0x00256B94 86B; body matches StructureTopple ctor layout +0x64 +0x70x3 +0xA0 +0xAC with vtable 0x7F43A8 Topple not Collapse; pin likely wrong needs referee t=20 model=muse-9ca7
