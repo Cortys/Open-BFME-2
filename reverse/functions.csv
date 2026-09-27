@@ -37389,3 +37389,7 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva00586D8E@@QAE@PAX0@Z,,0x00586D8E,49,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8ECtor.cpp,matched,base Rva005D6FCC at +0 via rowed 0x005D6FCC and Vector_base BfmeE16 0x00211E58 and bool at +0x14 and ptr at +0x18; caller 0x00586E21 news 0x1C; vtable 0x00C6FD90 slot0 0x00586E35
 ?test@Rva000CF0D6@@QBE_NPBV1@@Z,,0x000CF0D6,41,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DFloorDrawBitCheck.cpp,matched,honest Rva bitmask 19dwords callers CF38F and weapon logic no callees
 ?Rva000A870EGet@@YA?AVAsciiString@@H@Z,,0x000A870E,174,Code/GameEngineDevice/Source/MilesAudioDevice/AudioRequestTypeName.cpp,matched,AudioRequest type strings via jump table; Unknown format fallback
+?isXmlNode@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBDE0,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,XmlNode type 32 plus checked-cast caller
+?isXml@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBE50,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,Xml type 33 plus checked-cast caller
+?isXmlAttributes@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBEC0,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,XmlAttributes type 34 plus checked-cast caller
+?isLoadVars@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBF30,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,LoadVars type 35 plus checked-cast caller
