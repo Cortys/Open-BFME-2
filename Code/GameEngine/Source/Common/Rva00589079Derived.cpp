@@ -136,6 +136,13 @@ public:
 	virtual ~Rva00482E96()
 	{
 	}
+	virtual void rva00482C39();
+};
+
+template <typename T> class StringBase
+{
+	friend class Rva00482E96;
+	void validate() const;
 };
 
 // Anchor: forces out-of-line emission of the in-class destructor COMDAT,
@@ -143,4 +150,15 @@ public:
 void Rva00482E96_Anchor(Rva00482E96 *p)
 {
 	p->Rva00482E96::~Rva00482E96();
+}
+
+// ?rva00482C39@Rva00482E96@@UAEXXZ retail 0x00482C39 17 bytes.
+// Slot 1 (offset 0x4) of vtable 0x008497B4 (class of ??1Rva00482E96@@UAE@XZ).
+// Validates wide strings at +0 and +0x20, second as tail-jmp to rowed
+// ?validate@?$StringBase@G@@ABEXXZ at 0x000B3FD0. No other callees.
+// Honest address name: identity is class+slot only (opaque Rva).
+void Rva00482E96::rva00482C39()
+{
+	((StringBase<unsigned short>*)this)->validate();
+	((StringBase<unsigned short>*)((char*)this + 0x20))->validate();
 }
