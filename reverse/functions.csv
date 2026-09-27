@@ -37441,3 +37441,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva001EB0B1@Rva001EB0B1Holder@@QAEXXZ,,0x001EB0B1,8,Code/GameEngine/Source/Common/Rva001EB0B1Thunk.cpp,matched,tail-jmp thunk via return member clear; callers 0x23D131 0x3777A4; pin 0xAD6F4
 ?rva001EB0CA@Rva001EB0CAHolder@@QAEXXZ,,0x001EB0CA,15,Code/GameEngine/Source/Common/Rva001EB0CAFlag.cpp,matched,null-checked byte set at pointee 0xC1; callers 0x3BE6F5 0x3BE7C6 0x3BE8C0
 ??0Rva0048896B@@QAE@PAVStateMachine@@@Z,,0x0048896B,29,Code/GameEngine/Source/Common/StateDerivedCtors_muse-4f8a.cpp,matched,State derived ctor hash 0x69EAAB49 vtable 0x0084B620 via I base pin
+??0?$StringBase@G@@AAE@ABV0@@Z,0x00037050,0x00037050,66,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideCopyCtor.cpp,matched,BFME1 private copy friend UnicodeString lock getter /O2
