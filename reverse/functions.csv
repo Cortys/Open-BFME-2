@@ -38774,3 +38774,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?buildRegion@@YAXPBUICoord2D@@0PAUIRegion2D@@@Z,,0x0030F8A2,65,Code/GameEngine/Source/Common/MessageStream.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?getArgumentDataType@GameMessage@@QAE?AW4GameMessageArgumentDataType@@H@Z,,0x0030F50C,48,Code/GameEngine/Source/Common/MessageStream.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?setFullyObscuredByShroud@W3DTankTruckDraw@@UAEX_N@Z,,0x000CDF0A,42,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTankTruckDraw.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?notifyShroudChanged@W3DPropBuffer@@QAEXXZ,,0x000EE132,41,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DPropBuffer.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

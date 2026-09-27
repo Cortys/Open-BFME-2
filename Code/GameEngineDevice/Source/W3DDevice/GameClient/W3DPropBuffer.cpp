@@ -87,6 +87,7 @@
 /** Culls the props, marking the visible flag.  If a prop becomes visible, it sets
 it's sortKey */
 //=============================================================================
+// ?cull@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::cull(CameraClass * camera)
 {
 	Int curProp;
@@ -108,6 +109,7 @@ void W3DPropBuffer::cull(CameraClass * camera)
 //=============================================================================
 /** Destructor. Releases w3d assets. */
 //=============================================================================
+// ??1W3DPropBuffer@@ present-unmatched
 W3DPropBuffer::~W3DPropBuffer(void)
 {
 	Int i;
@@ -124,6 +126,7 @@ W3DPropBuffer::~W3DPropBuffer(void)
 /** Constructor. Sets m_initialized to true if it finds the w3d models it needs
 for the props. */
 //=============================================================================
+// ??0W3DPropBuffer@@ present-unmatched
 W3DPropBuffer::W3DPropBuffer(void)
 {
 	memset(this, sizeof(W3DPropBuffer), 0);
@@ -143,6 +146,7 @@ W3DPropBuffer::W3DPropBuffer(void)
 //=============================================================================
 /** Removes all props. */
 //=============================================================================
+// ?clearAllProps@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::clearAllProps(void)
 {
 	m_numProps=0;
@@ -159,6 +163,7 @@ void W3DPropBuffer::clearAllProps(void)
 //=============================================================================
 /** Adds a type of prop (model & texture). */
 //=============================================================================
+// ?addPropType@W3DPropBuffer@@ present-unmatched
 Int W3DPropBuffer::addPropType(const AsciiString &modelName)
 {
 	if (m_numPropTypes>=MAX_TYPES) {
@@ -185,6 +190,7 @@ Int W3DPropBuffer::addPropType(const AsciiString &modelName)
 /** Adds a prop.  Name is the W3D model name, supported models are
 ALPINE, DECIDUOUS and SHRUB. */
 //=============================================================================
+// ?addProp@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::addProp(Int id, Coord3D location, Real angle,Real scale, const AsciiString &modelName)
 {
 	if (m_numProps >= MAX_PROPS) {
@@ -234,6 +240,7 @@ void W3DPropBuffer::addProp(Int id, Coord3D location, Real angle,Real scale, con
 //=============================================================================
 /** Updates a prop's position */
 //=============================================================================
+// ?updatePropPosition@W3DPropBuffer@@ present-unmatched
 Bool W3DPropBuffer::updatePropPosition(Int id, const Coord3D &location, Real angle, Real scale)
 {
 	Int i;
@@ -261,6 +268,7 @@ Bool W3DPropBuffer::updatePropPosition(Int id, const Coord3D &location, Real ang
 //=============================================================================
 /** Removes a prop.  */
 //=============================================================================
+// ?removeProp@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::removeProp(Int id)
 {
 	Int i;
@@ -282,6 +290,7 @@ void W3DPropBuffer::removeProp(Int id)
 //=============================================================================
 /** Removes any props that would be under a building.  */
 //=============================================================================
+// ?removePropsForConstruction@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::removePropsForConstruction(const Coord3D* pos, const GeometryInfo& geom, Real angle )
 {
 	// Just iterate all trees, as even non-collidable ones get removed. jba. [7/11/2003]
@@ -312,6 +321,7 @@ void W3DPropBuffer::removePropsForConstruction(const Coord3D* pos, const Geometr
 //=============================================================================
 /** Sets the shroud to status, so it is recomputed.  */
 //=============================================================================
+#pragma optimize("s", on)
 void W3DPropBuffer::notifyShroudChanged()
 {
 	Int i;
@@ -319,6 +329,7 @@ void W3DPropBuffer::notifyShroudChanged()
 		m_props[i].ss = ThePartitionManager?OBJECTSHROUD_INVALID:OBJECTSHROUD_CLEAR;
 	}
 }
+#pragma optimize("", on)
 
 
 DECLARE_PERF_TIMER(Prop_Render)
@@ -328,6 +339,7 @@ DECLARE_PERF_TIMER(Prop_Render)
 //=============================================================================
 /** Draws the props.  Uses camera to cull. */
 //=============================================================================
+// ?drawProps@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::drawProps(RenderInfoClass &rinfo)
 {
 	USE_PERF_TIMER(Prop_Render)
@@ -398,6 +410,7 @@ void W3DPropBuffer::drawProps(RenderInfoClass &rinfo)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::crc( Xfer *xfer )
 {
 	// empty. jba [8/11/2003]	
@@ -408,6 +421,7 @@ void W3DPropBuffer::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::xfer( Xfer *xfer )
 {
 
@@ -422,6 +436,7 @@ void W3DPropBuffer::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@W3DPropBuffer@@ present-unmatched
 void W3DPropBuffer::loadPostProcess( void )
 {
 	// empty. jba [8/11/2003]	
