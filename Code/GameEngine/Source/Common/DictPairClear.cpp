@@ -109,6 +109,8 @@ public:
  void setReal(int key, float value);
  void setAsciiString(int key, const AsciiString &value);
  void setUnicodeString(int key, const UnicodeString &value);
+ bool remove(int key);
+ void copyPairFrom(const Dict &that, int key);
 
 private:
 	void releaseData();
@@ -540,4 +542,22 @@ void Dict::setUnicodeString(int key, const UnicodeString &value)
 	StringBase<unsigned short> *slot = (StringBase<unsigned short> *)&pair->m_value;
 	slot->set(*(const StringBase<unsigned short> *)&value);
 	sortPairs();
+}
+
+// ?remove@Dict@@QAE_NH@Z @0x003137A8 70B
+// Dict::remove from ZH Dict.cpp donor. Rowed findPairByKey at 0x0031313B,
+// rowed ensureUnique at 0x0031346B, rowed setNameAndType at 0x00313376,
+// rowed sortPairs at 0x00313299, then dec used. Caller at 0x00313835.
+bool Dict::remove(int key)
+{
+	DictPair *pair = findPairByKey(key);
+	if (pair)
+	{
+		pair = ensureUnique(m_data->m_numPairsUsed, true, pair);
+		pair->setNameAndType(0x7fffffff, DICT_BOOL);
+		sortPairs();
+		--m_data->m_numPairsUsed;
+		return true;
+	}
+	return false;
 }
