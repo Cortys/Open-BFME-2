@@ -167,6 +167,7 @@ struct AsciiStringPlusStringChar : AsciiStringPlusString
 struct AsciiStringPlusStringText : AsciiStringPlusString
 {
 	int write(char *dst);
+	operator AsciiString();
 
 	Rva000B3F84Pair m_text;
 };
@@ -264,6 +265,15 @@ int AsciiStringPlusStringText::write(char *dst)
 {
 	int n = AsciiStringPlusString::write(dst);
 	return n + m_text.write(dst + n);
+}
+
+// ??BAsciiStringPlusStringText@@QAE?AVAsciiString@@XZ @0x0050F74B 105B narrow concat node to AsciiString: sized getBufferForRead then write; length is base PlusString fold 0x002198C8 plus trailing text len; callers include 0x00510443.
+AsciiStringPlusStringText::operator AsciiString()
+{
+	AsciiString tmp;
+	int extra = m_text.m_len;
+	write(tmp.getBufferForRead(extra + AsciiStringPlusString::length()));
+	return tmp;
 }
 
 // ??H@YA?AUAsciiStringPlusText@@ABVAsciiString@@PBD@Z @0xB49C5
