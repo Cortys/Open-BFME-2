@@ -37278,3 +37278,9 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z,,0x006D50A0,191,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC PBD append via temp plus ChangeBuffer
 ??1?$_Rb_tree@IU?$pair@$$CBIPAX@_STL@@U?$_Select1st@U?$pair@$$CBIPAX@_STL@@@2@U?$less@I@2@V?$allocator@U?$pair@$$CBIPAX@_STL@@@2@@_STL@@QAE@XZ,,0x00357C6A,56,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_dtor_00357C6A.cpp,matched,Unsigned tree dtor calls clear 0x00357416 frees header via free
 ?rva006D3D10@EAStringC@@QBEGXZ,,0x006D3D10,152,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC hash refresh via hashLower
+??_GW3DBufferManager@@QAEPAXI@Z,,0x000F0956,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed QAE dtor at 0x1163E7
+??_GBfmeStringRecord00204A30@@QAEPAXI@Z,,0x00204B4E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed QAE dtor at 0x204848
+??_GGpuDrawModuleInfo@FXParticleSystem@@UAEPAXI@Z,,0x003A9DC2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed UAE dtor at 0x3A9D43
+??_GRva004DC9EDEntry@@QAEPAXI@Z,,0x00426313,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed QAE dtor at 0x4DC9ED
+??_GRva00465124Base@@UAEPAXI@Z,,0x00465221,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor slot0 vtable 0xC43658 via rowed UAE dtor
+??_GRva004930A0@@UAEPAXI@Z,,0x00493333,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed UAE dtor at 0x49334F
