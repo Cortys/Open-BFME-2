@@ -29,6 +29,7 @@ public:
 };
 template <class T> class RefCountPtr {
 public:
+    RefCountPtr() : Referent(0) {}
     RefCountPtr &operator=(const RefCountPtr &that) {
         if (that.Referent) that.Referent->Add_Ref();
         if (Referent) Referent->Release_Ref();
@@ -41,6 +42,7 @@ private:
 };
 class MeshMatDescRendererState {
 public:
+    MeshMatDescRendererState();
     ~MeshMatDescRendererState();
     MeshMatDescRendererState &operator=(const MeshMatDescRendererState &that);
 private:
@@ -48,6 +50,9 @@ private:
     unsigned Unknown08;
     RefCountClass *OwnedRef0C;
 };
+MeshMatDescRendererState::MeshMatDescRendererState() : Unknown08(0x10441b), OwnedRef0C(0)
+{
+}
 MeshMatDescRendererState::~MeshMatDescRendererState()
 {
     if (OwnedRef0C) {
