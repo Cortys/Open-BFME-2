@@ -37708,3 +37708,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0046247D@Rva0046247D@@QAEXAAURva0046247DPair@@@Z,,0x0046247D,26,Code/GameEngine/Source/Common/Rva0046247DCondPair.cpp,matched,Conditional pair out-copy callers 0x4631FA 0x46333B 0x464286 frameless defaults
 ??0Rva0046267A@@QAE@ABV0@@Z,,0x0046267A,29,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046267ACopyCtor.cpp,matched,Copy ctor int plus head via rowed 0x45455 caller 0x462D83
 ?rva0023C420@Rva0023C420@@QAEXXZ,,0x0023C420,20,Code/GameEngine/Source/Common/Rva0023C420Delete.cpp,matched,Null-checked slot7 plus delete via Object caller 0x241507
+?rva006E6D50@AptValueVector@@QAEXXZ,,0x006E6D50,64,Code/Libraries/Source/Apt/AptValue/AptValueVectorReleaseBFME2.cpp,matched,AptValueVector free via GetNumValues assert and pool freeBlock; cpp line 0x4F; layout from PopValue sibling; callee freeBlock at 0x006DB270; 3 callers

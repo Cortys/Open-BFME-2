@@ -12,6 +12,12 @@ extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *,const char *,int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
+class Rva006DB270
+{
+public:
+    void freeBlock(void *block, int blockSize);
+};
+extern Rva006DB270 *g_pChainBlockAllocator; // 0x00E176E8
 class AptValue {
 public:
     virtual void AddRef();
@@ -30,6 +36,7 @@ public:
     AptValue *PopValue();
     void ReleaseValues();
     void rva006E6C00(AptValue *pValue);
+    void rva006E6D50();
 };
 AptValue *AptValueVector::PopValue()
 {
@@ -76,4 +83,17 @@ void AptValueVector::rva006E6C00(AptValue *pValue)
     ++mCurrentNum;
     if (mCurrentNum > mHighWaterNum)
         mHighWaterNum = mCurrentNum;
+}
+// ?rva006E6D50@AptValueVector@@QAEXXZ, retail 0x006E6D50 (64B).
+// AptValueVector free: asserts empty via GetNumValues then frees array
+// through pool freeBlock. Evidence: AptValueVector.cpp:79 cond
+// GetNumValues()==0; layout capacity+0 count+4 pointer+8 from siblings;
+// callee freeBlock at 0x006DB270 via pool at 0x00E176E8; 3 callers.
+void AptValueVector::rva006E6D50()
+{
+    if (!(mCurrentNum == 0)) {
+        g_bfmeAptAssertAtE17734("GetNumValues() == 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValue\\AptValueVector.cpp", 0x4F);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    g_pChainBlockAllocator->freeBlock(mpValues, mCapacity * 4);
 }
