@@ -37929,3 +37929,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva001FBAB2Init@@YAXPAX@Z,,0x001FBAB2,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,free init GetKey 7 token at 70 parse F8751 calls FB912
 ?Rva001FBC69Init@@YAXPAX@Z,,0x001FBC69,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,free init GetKey 6 token at 60 parse F86E3 calls FBAB2
 ??0Rva001FC0A0@@QAE@XZ,,0x001FC0A0,22,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 and 4 wraps Rva001FBAD8 at 8
+?Rva001FC010Init@@YAXPAX@Z,,0x001FC010,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,free init GetKey 5 token at 50 parse F8675 calls FBC69
