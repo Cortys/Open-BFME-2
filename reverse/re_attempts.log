@@ -2138,3 +2138,6 @@ FUN_006c124c	0x002C124C	46	blocked	needs callee 0x002C08EF unrowed t=5 model=mus
 FUN_005a4820	0x001A4820	111	blocked	needs callees 0x00163A80 0x00162BB0 unrowed t=3 model=muse-d404
 ?rva00596BB7@Rva00596B05@@UAEXAAUVector3@@@Z	0x00596BB7	32	blocked	EBP frame plus dead 4B local and-zero wall t=25 model=muse-d404
 ?isSpriteInstBase@Rva006CFCD0@@QBEHXZ	0x006CFCD0	91	partial	merged isUndefined-false with type-fail false; retail keeps separate xor al-al vs xor eax-eax; OR-int gives shared true mov eax-1 and xor eax-eax exact but jne-to-shared vs je-plus-separate t=25 model=muse score=0.95 stash=reverse/attempts/0x006cfcd0.cpp
+FUN_00487973	0x00087973	54	blocked	needs data global 0xA00950 plus vtable slot 0x48 plus msg 0x452 identity t=15 model=muse-v8k-22f9
+?Rva004ACDACCheck@Rva004ACDAC@@QBE_NPAX@Z	0x004ACDAC	101	blocked	SSE range check vs radius; 5 variants O1/O2 subss-mem vs subss-reg wall plus push-esi scheduling t=25 model=muse-3298
+??0AnimationSoundTree@@QAE@XZ	0x004CA6DA	25	partial	ctor via rowed rva004CA13D throw; missing second lea eax ebp-1 t=20 model=muse-3298 score=0.93 stash=reverse/attempts/0x004ca6da.cpp
