@@ -37319,3 +37319,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1SlaughterHordeContainModuleData@@UAE@XZ,,0x004810D5,62,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainModuleDataDtor.cpp,matched,vtable 0x00C48DC0 plus ctor 0x0048104D plus base 0x00257507 plus member 0x00360D26
 ??0Rva005D9CD5@@QAE@XZ,,0x005D9CC3,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D9CD5
 ??_GSlaughterHordeContainModuleData@@UAEPAXI@Z,,0x00481113,28,Code/GameEngine/Source/GameLogic/Object/Contain/ContainModuleDeletingDtors.cpp,matched,slot0 vtable 0x00C48DC0 calls rowed dtor 0x004810D5
+??1CitadelSlaughterHordeContainModuleData@@UAE@XZ,,0x004811E6,74,Code/GameEngine/Source/GameLogic/Object/Contain/CitadelSlaughterHordeContainModuleDataDtor.cpp,matched,novtable dtor vector 0x002CC70 plus filter 0x00360D26 plus base 0x004810D5
