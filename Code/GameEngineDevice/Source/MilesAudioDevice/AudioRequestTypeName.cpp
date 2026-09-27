@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
-// ?Rva000A870EGet@@YA?AVAsciiString@@H@Z, retail 0x000A870E, 174 bytes.
+// ?Rva000A870EGet@@YA?AVAsciiString@@H@Z, retail 0x000A870E, 206 bytes.
 // AudioRequest type to AsciiString: 8 dense cases (AR_Play 0, AR_StopHandle 1,
 // AR_StopMusic 2, AR_PushMusic 3, AR_PopMusic 4, AR_ActivateMusicSystem 5,
 // AR_DeactivateMusicSystem 6, AR_ClearOutMusicSystem 7) via jump table at

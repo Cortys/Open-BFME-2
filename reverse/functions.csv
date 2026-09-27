@@ -37691,7 +37691,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006DD320@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD320,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isStage plus type 39
 ??0Rva00586D8E@@QAE@PAX0@Z,,0x00586D8E,49,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8ECtor.cpp,matched,base Rva005D6FCC at +0 via rowed 0x005D6FCC and Vector_base BfmeE16 0x00211E58 and bool at +0x14 and ptr at +0x18; caller 0x00586E21 news 0x1C; vtable 0x00C6FD90 slot0 0x00586E35
 ?test@Rva000CF0D6@@QBE_NPBV1@@Z,,0x000CF0D6,41,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DFloorDrawBitCheck.cpp,matched,honest Rva bitmask 19dwords callers CF38F and weapon logic no callees
-?Rva000A870EGet@@YA?AVAsciiString@@H@Z,,0x000A870E,174,Code/GameEngineDevice/Source/MilesAudioDevice/AudioRequestTypeName.cpp,matched,AudioRequest type strings via jump table; Unknown format fallback
 ?isXmlNode@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBDE0,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,XmlNode type 32 plus checked-cast caller
 ?isXml@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBE50,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,Xml type 33 plus checked-cast caller
 ?isXmlAttributes@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBEC0,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,XmlAttributes type 34 plus checked-cast caller
@@ -38626,3 +38625,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?clone@?$ConcreteModuleTemplate@V?$ModuleTag@$07$E?TERRAIN_COLLISION_MODULE_KEY@FXParticleSystem@@3QBDB$E?TERRAIN_COLLISION_MODULE_NAME@2@3QBDBVTerrainCollisionModule@2@VTerrainCollisionModuleTemplate@2@VParticleTerrainCollisionModule@2@@FXParticleSystem@@@FXParticleSystem@@UBEPAVTerrainCollisionModuleTemplate@2@XZ,0x003AB9C8,0x003AB9C8,55,Code/GameEngine/Source/GameClient/FXParticleSystemFactories.cpp,matched,obj_sweep emitted-object tail verified; Ghidra boundary 0x003AB9C8/55 agrees
 ??0Rva003AEEB3@@QAE@ABV0@@Z,,0x003AEEB3,73,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultModuleBaseCopyCtors.cpp,matched,
 ?setUiCallbackOwner@@YAXPAX@Z,,0x003FE881,10,Code/GameEngine/Source/GameClient/UiCallbackFirers.cpp,matched,
+?Rva000A870EGet@@YA?AVAsciiString@@H@Z,,0x000A870E,206,Code/GameEngineDevice/Source/MilesAudioDevice/AudioRequestTypeName.cpp,matched,
