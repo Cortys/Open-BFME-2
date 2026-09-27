@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// ?get@Rva002A7389@@QAEHH@Z,
-// retail 0x002A7389, 6 bytes. Dedicated TU.
+// Getter ?get@Rva002A7389@@QAEHH@Z at retail 0x002A7389 (6 bytes).
+// Dedicated TU.
 //
 // Trivial thiscall dword reader: mov eax,[ecx+8]; ret 4. The single int
 // parameter is ignored by the body (every caller pushes one dword; e.g.
@@ -27,4 +27,34 @@ private:
 int Rva002A7389::get(int)
 {
 	return m_value;
+}
+
+// Setter ?set@Rva002A738F@@QAEXHH@Z at retail 0x002A738F (21 bytes).
+// Same page, same flags, appended here.
+//
+// Two-dword setter with a flag store: mov [ecx+4],a; mov [ecx+0x10],b;
+// mov byte [ecx+0x2c],1; ret 8. Sole caller 0x003BD18D invokes it on a +0x60
+// subobject view (lea ecx,[eax+0x60], forwarding its own stack args), the
+// same +0x60 usage seen at the ?get@Rva002A7389@@QAEHH@Z call sites, but the
+// owning class is still unproven so this stays a separate opaque holder.
+
+class Rva002A738F
+{
+public:
+	void set(int, int);
+
+private:
+	char m_lead[4];
+	int m_4; // +0x04
+	char m_pad8[8];
+	int m_10; // +0x10
+	char m_pad14[0x18];
+	unsigned char m_2c; // +0x2c
+};
+
+void Rva002A738F::set(int a, int b)
+{
+	m_4 = a;
+	m_10 = b;
+	m_2c = 1;
 }
