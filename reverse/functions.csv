@@ -37049,3 +37049,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Rva0010F0C4@@UAE@XZ,,0x0010F0C4,76,Code/GameEngine/Source/Common/Rva0010F0C4Dtor.cpp,matched,derived 0x00BCFAAC base 0x00BC5128 stream 0x08 via AIL_close_stream member 0x14 via 0x40EDB caller 0x10F6EE
 ?linkScreen@Shell@@IAEXPAVWindowLayout@@@Z,,0x0035BD8B,26,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp linkScreen and ZH Shell.h protected
 ?unlinkScreen@Shell@@IAEXPAVWindowLayout@@@Z,,0x0035BDA5,29,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp unlinkScreen and ZH Shell.h protected
+?rva004AEFAD@RespawnUpdate@@UAEMPAH@Z,,0x004AEFAD,94,Code/GameEngine/Source/GameLogic/Object/Update/RespawnUpdateRva004AEFAD.cpp,matched,vslot 13 of 0x008556B0 via RespawnUpdateCtor layout and TheGameLogic frame
