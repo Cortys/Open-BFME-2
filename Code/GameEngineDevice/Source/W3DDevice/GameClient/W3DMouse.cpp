@@ -183,22 +183,6 @@ void W3DMouse::freePolygonAssets(void)
 	}
 }
 
-/**Release the textures required to display the selected cursor*/
-// ?releaseD3DCursorTextures@W3DMouse@@ present-unmatched
-Bool W3DMouse::releaseD3DCursorTextures(MouseCursor cursor)
-{
-	if (cursor == NONE || !cursorTextures[cursor][0])
-		return TRUE;	//no texture for this cursor or texture never loaded
-
-	for (Int i=0; i<MAX_2D_CURSOR_ANIM_FRAMES; i++)
-	{
-		REF_PTR_RELEASE(m_currentD3DSurface[i]);
-		REF_PTR_RELEASE(cursorTextures[cursor][i]);
-	}
-
-	return TRUE;
-}
-
 /**Load the textures required to display the selected cursor*/
 // byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DMouseLoadD3DCursorTexturesThunk.cpp
 // ?loadD3DCursorTextures@W3DMouse@@ present-unmatched
