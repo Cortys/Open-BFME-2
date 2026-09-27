@@ -1,0 +1,51 @@
+// cl: /O2 /MD
+// APT0.19.03 Xbox release donor supplies method names and the 16-byte vector.
+// Target assertions name AptValueVector.inl/.cpp and mCurrentNum. Target
+// independently establishes count+4 and pointer+8; unused capacity/high-water
+// names are donor facts. No shared vector declaration is changed.
+// Boundaries6E6C90+56 and6E6D90+134 include their final returns. Target calls
+// the matched getRefCount at6DBB20 and ClearReleaseAtEnd at6DBDC0. The latter
+// has the already-ledgered 5-byte body836104FBC3; a clean bitfield assignment
+// compiled exactly to that body before adding the donor-name callee pin.
+// ForceDelete is target virtual slot8, also identified by the donor vtable.
+extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *,const char *,int);
+extern int g_bfmeAptBreakOnAssertAtDDC01C;
+void __debugbreak();
+#pragma intrinsic(__debugbreak)
+class AptValue {
+public:
+    virtual void AddRef();
+    virtual void Release();
+    virtual void ForceDelete();
+    unsigned int getRefCount() const;
+    void ClearReleaseAtEnd();
+};
+class AptValueVector {
+    int mCapacity;
+    int mCurrentNum;
+    AptValue **mpValues;
+    int mHighWaterNum;
+public:
+    AptValue *PopValue();
+    void ReleaseValues();
+};
+AptValue *AptValueVector::PopValue()
+{
+    if (!(mCurrentNum>0)) {
+        g_bfmeAptAssertAtE17734("mCurrentNum > 0", ".\\AptValue/AptValueVector.inl",95);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    return mpValues[--mCurrentNum];
+}
+void AptValueVector::ReleaseValues()
+{
+    while (mCurrentNum) {
+        AptValue *value=PopValue();
+        if (value->getRefCount()>0) value->ClearReleaseAtEnd();
+        else value->ForceDelete();
+    }
+    if (!(mCurrentNum==0)) {
+        g_bfmeAptAssertAtE17734("mCurrentNum == 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValue\\AptValueVector.cpp",120);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+}
