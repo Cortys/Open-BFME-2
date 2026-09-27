@@ -1427,5 +1427,1450 @@
       "Clock field Day at0C is not copied."
     ],
     "status": "C++ byte-verified recovery"
+  },
+  "apt_date_setters": {
+    "compiler": "MSVC7.1 /O2 /MD",
+    "target_identity_basis": "All15 addresses are exact callback operands of their individually checked target date dispatch cases (see apt_date_cleanup.cache_dispatch_audit). Target stores into the fields already established by corresponding named getters, then calls recovered setDates with the corresponding local/UTC source and destination views. FullYear variants separately handle arguments1/2 as month/date.",
+    "provenance": "C++ reconstructed from target operations and established project declarations; original method spellings and two-argument static ABI supplied by original donor procedure/TPI records. No donor source exists in this disk bundle.",
+    "global_provenance": {
+      "0x00E18078": "gpUndefinedValue name independently established by target AptScriptFunction.cpp assertions; reuse existing AptValue* declaration.",
+      "0x00E182E0": "Target interpreter startup7B67A0 constructs this global using matched AptActionInterpreter constructor6FE980; first12-byte AptBasePtrStack already established. TU global is named g_aptDateInterpreter only as an access view; no complete interpreter ABI claimed."
+    },
+    "existing_callees": {
+      "0xadd160": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+      "0xadd360": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+      "0xafe580": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+      "0xaf41b0": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+      "0xad8520": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+      "0xe182e0": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+      "0xe18078": "?gpUndefinedValue@@3PAVAptValue@@A"
+    },
+    "per_body_verification": "Patched every compiled COFF relocation with the independently established addresses above, comparing each whole raw symbol to its target; all15 pass. Normal repository byte gate also required. No relocation operand copied from target to force a result.",
+    "boundary_note": "All end in RET. Most followed by CC padding; setUTCDate ends directly before next independently dispatched setter at6F4D20.",
+    "retail_behavior_preserved": [
+      "Arguments fewer than1 return gpUndefinedValue without inspecting self.",
+      "Only FullYear variants consume optional month/date arguments; remaining setters consume argument0.",
+      "setYear stores supplied integer unchanged; no1900 adjustment introduced.",
+      "Local setters convert local to UTC with positive timezone offset; UTC setters convert UTC to local with negated offset.",
+      "setTime aliases existing getTime stub and is not claimed again."
+    ],
+    "functions": [
+      {
+        "name": "?sMethod_setDate@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4950",
+        "size": 110,
+        "target_sha256": "1fd9abae763c149046439771a8ec34b356babe765376d1a0cc95e771ba739d02",
+        "last_ret_rva": "0x6f49bd",
+        "following_bytes": "cccc578b7c240c83",
+        "dispatch_key": "setDate",
+        "dispatch_case_va": "0xaf5981",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setDate",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 3640,
+          "record": "3e00101100000000a00e000000000000440000000000000043000000f5e4000020bb3e00010000417074446174653a3a734d6574686f645f7365744461746500",
+          "donor_offset": "0x3ebb20"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setFullYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f49c0",
+        "size": 187,
+        "target_sha256": "4cd9160c937dd0dd25343f75fff1132b60a645d28cd08b77ef67f5a51daba5f8",
+        "last_ret_rva": "0x6f4a7a",
+        "following_bytes": "cccccccccc837c24",
+        "dispatch_key": "setFullYear",
+        "dispatch_case_va": "0xaf59ee",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setFullYear",
+          "size": 134,
+          "type": "0xe4f5",
+          "record_offset": 3748,
+          "record": "4200101100000000100f000000000000860000000100000085000000f5e4000070bb3e00010000417074446174653a3a734d6574686f645f73657446756c6c5965617200",
+          "donor_offset": "0x3ebb70"
+        },
+        "relocations": [
+          {
+            "offset": 11,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 22,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 27,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 34,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 47,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 62,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 67,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 74,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 83,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 98,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 103,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 110,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 119,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 129,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 140,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 151,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 162,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 169,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 176,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setHours@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4a80",
+        "size": 110,
+        "target_sha256": "4032e49ef4482108dcbc0d466b9903baa2745fab77447ea07fcfd197f097c6b8",
+        "last_ret_rva": "0x6f4aed",
+        "following_bytes": "cccc837c2408017d",
+        "dispatch_key": "setHours",
+        "dispatch_case_va": "0xaf5a5b",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setHours",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 3860,
+          "record": "4200101100000000800f000000000000440000000000000043000000f5e4000000bc3e00010000417074446174653a3a734d6574686f645f736574486f75727300000000",
+          "donor_offset": "0x3ebc00"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setMilliseconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4af0",
+        "size": 110,
+        "target_sha256": "0f8e49dae306357e0ada7c9855a5c03dce269636d1cf434d0eff947c5df1b894",
+        "last_ret_rva": "0x6f4b5d",
+        "following_bytes": "cccc837c2408017d",
+        "dispatch_key": "setMilliseconds",
+        "dispatch_case_va": "0xaf5ac8",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setMilliseconds",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 3972,
+          "record": "4600101100000000f40f000000000000440000000000000043000000f5e4000050bc3e00010000417074446174653a3a734d6574686f645f7365744d696c6c697365636f6e647300",
+          "donor_offset": "0x3ebc50"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setMinutes@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4b60",
+        "size": 110,
+        "target_sha256": "41191c2103e827e0abe4e0ea98e137014c9ffa4678ead20e8d4cdd3a7eb4cf06",
+        "last_ret_rva": "0x6f4bcd",
+        "following_bytes": "cccc837c2408017d",
+        "dispatch_key": "setMinutes",
+        "dispatch_case_va": "0xaf5b35",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setMinutes",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 4088,
+          "record": "42001011000000006410000000000000440000000000000043000000f5e40000a0bc3e00010000417074446174653a3a734d6574686f645f7365744d696e757465730000",
+          "donor_offset": "0x3ebca0"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setMonth@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4bd0",
+        "size": 110,
+        "target_sha256": "9758f85ac15fcb77adbdcf3b74111d628a3cd9b6ce195c98af76197440b7152e",
+        "last_ret_rva": "0x6f4c3d",
+        "following_bytes": "cccc837c2408017d",
+        "dispatch_key": "setMonth",
+        "dispatch_case_va": "0xaf5ba2",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setMonth",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 4200,
+          "record": "4200101100000000d410000000000000440000000000000043000000f5e40000f0bc3e00010000417074446174653a3a734d6574686f645f7365744d6f6e746800000000",
+          "donor_offset": "0x3ebcf0"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setSeconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4c40",
+        "size": 110,
+        "target_sha256": "9a939c3d03c98c159a93c4ca2496382c3fc52054613ec134eb4254865f21bc14",
+        "last_ret_rva": "0x6f4cad",
+        "following_bytes": "cccc837c2408017d",
+        "dispatch_key": "setSeconds",
+        "dispatch_case_va": "0xaf5c0f",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setSeconds",
+          "size": 73,
+          "type": "0xe4f5",
+          "record_offset": 4312,
+          "record": "42001011000000004411000000000000490000000000000048000000f5e4000040bd3e00010000417074446174653a3a734d6574686f645f7365745365636f6e64730000",
+          "donor_offset": "0x3ebd40"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCDate@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4cb0",
+        "size": 112,
+        "target_sha256": "70ea1fd78d4a864bda9209ccb7eff8b225ff85764e2b257ba3f253d1693ce386",
+        "last_ret_rva": "0x6f4d1f",
+        "following_bytes": "578b7c240c83ff01",
+        "dispatch_key": "setUTCDate",
+        "dispatch_case_va": "0xaf5ce9",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCDate",
+          "size": 70,
+          "type": "0xe4f5",
+          "record_offset": 4532,
+          "record": "42001011000000002012000000000000460000000000000045000000f5e40000a0bd3e00010000417074446174653a3a734d6574686f645f736574555443446174650000",
+          "donor_offset": "0x3ebda0"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCFullYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4d20",
+        "size": 189,
+        "target_sha256": "3163f669f507f2399148dbe00fc25655a66b69f1b4d5f75b3d636fb8fef01e3d",
+        "last_ret_rva": "0x6f4ddc",
+        "following_bytes": "cccccc837c240801",
+        "dispatch_key": "setUTCFullYear",
+        "dispatch_case_va": "0xaf5d56",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCFullYear",
+          "size": 136,
+          "type": "0xe4f5",
+          "record_offset": 4644,
+          "record": "46001011000000009412000000000000880000000100000087000000f5e40000f0bd3e00010000417074446174653a3a734d6574686f645f73657455544346756c6c596561720000",
+          "donor_offset": "0x3ebdf0"
+        },
+        "relocations": [
+          {
+            "offset": 11,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 22,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 27,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 34,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 47,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 62,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 67,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 74,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 83,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 98,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 103,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 110,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 119,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 129,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 142,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 153,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 164,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 171,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 178,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCHours@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4de0",
+        "size": 112,
+        "target_sha256": "f33cad9fd24421610335f918541a42cbb8f542f7d396e8947465a8e622ae8c61",
+        "last_ret_rva": "0x6f4e4f",
+        "following_bytes": "837c2408017d06a1",
+        "dispatch_key": "setUTCHours",
+        "dispatch_case_va": "0xaf5dc3",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCHours",
+          "size": 70,
+          "type": "0xe4f5",
+          "record_offset": 4760,
+          "record": "42001011000000000413000000000000460000000000000045000000f5e4000080be3e00010000417074446174653a3a734d6574686f645f736574555443486f75727300",
+          "donor_offset": "0x3ebe80"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCMilliseconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4e50",
+        "size": 112,
+        "target_sha256": "7577ebde65b0d99d35a77ec76c68deed700b8e2f3bba68d7ae0c8c7399cf2395",
+        "last_ret_rva": "0x6f4ebf",
+        "following_bytes": "837c2408017d06a1",
+        "dispatch_key": "setUTCMilliseconds",
+        "dispatch_case_va": "0xaf5e30",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCMilliseconds",
+          "size": 70,
+          "type": "0xe4f5",
+          "record_offset": 4872,
+          "record": "4a001011000000007c13000000000000460000000000000045000000f5e40000d0be3e00010000417074446174653a3a734d6574686f645f7365745554434d696c6c697365636f6e64730000",
+          "donor_offset": "0x3ebed0"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCMinutes@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4ec0",
+        "size": 112,
+        "target_sha256": "5e49662be8fd69e1e690ee974373b5a58854b7646356ed18d95e29926fcca099",
+        "last_ret_rva": "0x6f4f2f",
+        "following_bytes": "837c2408017d06a1",
+        "dispatch_key": "setUTCMinutes",
+        "dispatch_case_va": "0xaf5e9d",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCMinutes",
+          "size": 70,
+          "type": "0xe4f5",
+          "record_offset": 4992,
+          "record": "4600101100000000f013000000000000460000000000000045000000f5e4000020bf3e00010000417074446174653a3a734d6574686f645f7365745554434d696e75746573000000",
+          "donor_offset": "0x3ebf20"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCMonth@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4f30",
+        "size": 112,
+        "target_sha256": "b11087a9b14f5cf69dafb327f6f9e362da0bfdf7fbf8b49152ba4bc3f526c90a",
+        "last_ret_rva": "0x6f4f9f",
+        "following_bytes": "837c2408017d06a1",
+        "dispatch_key": "setUTCMonth",
+        "dispatch_case_va": "0xaf5f0a",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCMonth",
+          "size": 70,
+          "type": "0xe4f5",
+          "record_offset": 5108,
+          "record": "42001011000000006014000000000000460000000000000045000000f5e4000070bf3e00010000417074446174653a3a734d6574686f645f7365745554434d6f6e746800",
+          "donor_offset": "0x3ebf70"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setUTCSeconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4fa0",
+        "size": 112,
+        "target_sha256": "510bf06be6ead15c70b4e0feb53e07b8e79b33899dce41ed19e64d98e24b8f35",
+        "last_ret_rva": "0x6f500f",
+        "following_bytes": "837c2408017d06a1",
+        "dispatch_key": "setUTCSeconds",
+        "dispatch_case_va": "0xaf5f77",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setUTCSeconds",
+          "size": 75,
+          "type": "0xe4f5",
+          "record_offset": 5220,
+          "record": "4600101100000000d4140000000000004b000000000000004a000000f5e40000c0bf3e00010000417074446174653a3a734d6574686f645f7365745554435365636f6e6473000000",
+          "donor_offset": "0x3ebfc0"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 66,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 77,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 88,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 95,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 102,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_setYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f5010",
+        "size": 110,
+        "target_sha256": "ad19daa37129af5f0b591ad05458569ee28155def31218aa1edcf98de5420327",
+        "last_ret_rva": "0x6f507d",
+        "following_bytes": "cccc6aff68c89dba",
+        "dispatch_key": "setYear",
+        "dispatch_case_va": "0xaf5fe4",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_setYear",
+          "size": 68,
+          "type": "0xe4f5",
+          "record_offset": 5336,
+          "record": "3e001011000000004015000000000000440000000000000043000000f5e4000010c03e00010000417074446174653a3a734d6574686f645f7365745965617200",
+          "donor_offset": "0x3ec010"
+        },
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "?gpUndefinedValue@@3PAVAptValue@@A",
+            "target_va": "0xe18078"
+          },
+          {
+            "offset": 18,
+            "kind": 6,
+            "symbol": "?g_aptDateInterpreter@@3UAptActionInterpreter@@A",
+            "target_va": "0xe182e0"
+          },
+          {
+            "offset": 23,
+            "kind": 20,
+            "symbol": "?At@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z",
+            "target_va": "0xafe580"
+          },
+          {
+            "offset": 30,
+            "kind": 20,
+            "symbol": "?toInteger@BfmeAptValue006DCD20@@QBEHXZ",
+            "target_va": "0xadd360"
+          },
+          {
+            "offset": 43,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 53,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 75,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+            "target_va": "0xadd160"
+          },
+          {
+            "offset": 93,
+            "kind": 20,
+            "symbol": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+            "target_va": "0xaf41b0"
+          },
+          {
+            "offset": 100,
+            "kind": 20,
+            "symbol": "?Create@AptInteger@@SAPAVAptValue@@H@Z",
+            "target_va": "0xad8520"
+          }
+        ],
+        "source": "Code/Libraries/Source/Apt/AptDateSetters.cpp",
+        "status": "C++ byte-verified recovery"
+      }
+    ]
   }
 }
