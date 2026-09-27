@@ -14,6 +14,8 @@ class AsciiString;
 AsciiString GetSoloINIFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetAssetUsageFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetReadmeFromMap(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -106,5 +108,13 @@ AsciiString GetAssetUsageFromMap(AsciiString path)
 	AsciiString base = GetBasePathFromPath(path);
 	AsciiString out;
 	out.format("%s\\assetusage.txt", base.str());
+	return out;
+}
+
+AsciiString GetReadmeFromMap(AsciiString path)
+{
+	AsciiString base = GetBasePathFromPath(path);
+	AsciiString out;
+	out.format("%s\\readme.txt", base.str());
 	return out;
 }
