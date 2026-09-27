@@ -484,7 +484,6 @@ W3DFileSystem::W3DFileSystem(void)
 /** Destructor.  This removes the W3D file factory, so shouldn't be done until
 after W3D is shutdown.  */
 //-------------------------------------------------------------------------------------------------
-// ??1W3DFileSystem@@UAE@XZ present-unmatched
 W3DFileSystem::~W3DFileSystem(void)
 {
 	_TheFileFactory = NULL; // remove the w3d file factory.
