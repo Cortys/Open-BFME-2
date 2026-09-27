@@ -27,7 +27,7 @@ public:
 	virtual void _pad01() = 0;
 	virtual void _pad02() = 0;
 	virtual void _pad03() = 0;
-	virtual void _pad04() = 0;
+	virtual int method10();
 	virtual void _pad05() = 0;
 	virtual void _pad06() = 0;
 	virtual void _pad07() = 0;
@@ -41,13 +41,22 @@ public:
 	virtual void method3C();
 };
 
+struct Holder0033FC9D
+{
+	char m_pad00[0x38];
+	bool m_38;
+};
+
 class Rva0033FC42 : public Rva0049B47C
 {
 public:
 	virtual ~Rva0033FC42();
+	int rva0033FC9D();
 
 private:
-	char m_pad0C[0x20 - 0x0C];
+	char m_pad0C[0x18 - 0x0C];
+	Holder0033FC9D *m_ptr18;
+	char m_pad1C[0x20 - 0x1C];
 	Rva0033FC42Member *m_ptr20;
 };
 
@@ -58,4 +67,18 @@ Rva0033FC42::~Rva0033FC42()
 		::operator delete(m_ptr20 != 0 ? m_ptr20->scalarDeletingDestructor(0) : 0);
 		m_ptr20 = 0;
 	}
+}
+
+int Rva0033FC42::rva0033FC9D()
+{
+	if (m_ptr20 == 0) {
+		return 0;
+	}
+	m_ptr18->m_38 = true;
+	int ret = m_ptr20->method10();
+	if (ret > 0) {
+		ret = 0;
+	}
+	m_ptr18->m_38 = false;
+	return ret;
 }
