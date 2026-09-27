@@ -5951,3 +5951,4 @@ _ConvertBoolTrees,0x001BBD60
 ?getPosition@BFMERopeDrawable@@QBEPBUCoord3D@@XZ,0x002763E6,address read from the REL32 displacement at a placed body
 ?getRGBDataForWidth@TileData@@QAEPAEH@Z,0x000ABC71,address read from the REL32 displacement at a placed body
 ?parse@HemisphericalEmissionVelocityModuleTemplate@FXParticleSystem@@QAEXPAVINI@@@Z,0x0055EA7C,candidate alias from Hemispherical factory 0x3AB1D4 call at +0x39 to existing Spherical parse 0x55EA7C; shared parser identity is structural inference
+?Set_Name@GameFileClass@@UAEPBDPBD@Z,0x0007846F,target call from the matching GameFileClass filename constructor; Ghidra function boundary and size 712
