@@ -2256,3 +2256,4 @@ FUN_00693486	0x00293486	34	blocked	STL create_node 34B calls dup_002927CB vs pin
 FUN_00626156	0x00226156	379	blocked	push-eax plus 5x-mov-eax-imm plus pop-eax sleds header and footer 27B each impossible via MSVC71 C++ and asm reproduction forbidden by anti-lift; 72 sled hits cluster in 4 bands; real hash core not separable from wrappers t=12 model=muse-spark
 ?Rva002AAD52Find@@YAXPAPAXPAX1PAG@Z	0x002AAD52	37	partial	eax-ecx swap throughout same size structure exact t=15 model=muse-8c35 score=0.93 stash=reverse/attempts/0x002aad52.cpp
 ?rva005A9693@Rva005A9693Holder@@QAEXXZ	0x005A9693	102	blocked	106B 4 regions ebx-esi swap plus al-eax plus prologue t=20 model=muse-8c35
+FUN_008e0d4e	0x004E0D4E	25	blocked	STL hashtable begin wrapper needs exact WindowVideoMap STLport types plus monster mangling t=8 model=muse-9a64
