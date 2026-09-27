@@ -232,7 +232,6 @@ void RoadType::loadTestTexture(void)
 //=============================================================================
 /** Nulls index & vertex data. */
 //=============================================================================
-// ??0RoadSegment@@ present-unmatched
 RoadSegment::RoadSegment(void) :
 m_curveRadius(0.0f),
 m_type(SEGMENT),
