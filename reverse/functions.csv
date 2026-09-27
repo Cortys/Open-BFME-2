@@ -36972,3 +36972,7 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GTransportContainModuleData@@UAEPAXI@Z,,0x004684D5,28,Code/GameEngine/Source/GameLogic/Object/Contain/ContainModuleDeletingDtors.cpp,matched,slot 0 vtable 0x00C442F8 calls rowed dtor 0x004684F1 and delete 0x0002FD60; ctor 0x00468301 installs vtable; factory 0x0024B89C pairs TransportContain
 ??1ReplaceObjectUpdateModuleData@@UAE@XZ,,0x004B2C9A,142,Code/GameEngine/Source/GameLogic/Object/Update/ReplaceObjectUpdateModuleDataDtor.cpp,matched,vtable 0x00C56C78 plus ctor 0x004B2AC4 plus entry 0x004B2B2F plus erase 0x0031BD55 plus base 0x0044ECCE
 ??1AnimationSoundTree@@QAE@XZ,,0x004CA653,56,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,caller 0x004CA780 in pinned dtor 0x004CA768 with ECX this+8 layout header+0 count+4
+??1SoundFXNugget@@UAE@XZ,,0x001E0E07,60,Code/GameEngine/Source/GameClient/SoundFXNuggetDtor.cpp,matched,audited ??_G 0x001E0DEB calls here; base 0x001DFA48
+??1AttackNugget@@UAE@XZ,,0x001F0622,48,Code/GameEngine/Source/GameLogic/Object/AttackNuggetDtor.cpp,matched,audited ??_G 0x001F0606 calls here; record +0x04 via 0x000B6CF1
+??1ArrowStormUpdateModuleData@@UAE@XZ,,0x00490695,56,Code/GameEngine/Source/GameLogic/Object/Update/ArrowStormUpdateModuleDataDtor.cpp,matched,audited ??_G 0x00490679 calls here; base 0x0044ECCE
+??1WeaponChangeSpecialPowerModuleData@@UAE@XZ,,0x004C42EE,74,Code/GameEngine/Source/GameLogic/Object/SpecialPower/WeaponChangeSpecialPowerModuleDataDtor.cpp,matched,audited ??_G 0x004C42D2 calls here; base 0x0049334F
