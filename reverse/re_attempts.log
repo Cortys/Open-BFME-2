@@ -2271,3 +2271,5 @@ FUN_0091c07d	0x0051C07D	39	blocked	unguarded-linear-insert shape for 12B shifts 
 ?setString@PooledString@@AAEXPBD@Z	0x006CB7C0	489	blocked	EH static-lock plus pooled 256KB bump and hash-div with inline strcmp plus _strcmpi alias needs exact frame and spill; 3 variants best 501B 164ins same-count but frame 8 vs C and ebx vs eax plus missing second strlen; t=25 model=muse-dbe5
 FUN_00430e20	0x00030E20	104	blocked	guard-fill dword+byte loop needs exact shr-lea and stepwise pattern; 1 variant 103B vs 104B 8 structural regions t=12 model=muse-dc0a
 ?rva006C1F60@Rva006C1F60@@QAEHI@Z	0x006C1F60	113	partial	113B-40ins exact size-count only this-result reg swap esi-edi and push scheduling left t=18 model=muse-dc0a score=0.9 stash=reverse/attempts/0x006c1f60.cpp
+?rva00222A33@Rva00222A33@@QAEXH@Z	0x00222A33	32	blocked	O2 closest with edx-vs-eax plus hoisted add and mov-vs-add t=12 model=muse-22c6
+?Rva00216496Get@@YAPAXPAVReproTarget@@PAXPBDPAIPAVAsciiString@@4@Z	0x00216496	129	blocked	chain 3-string invoke wrapper uses xor-esi plus push-edi plus add-vs-lea t=18 model=muse-22c6
