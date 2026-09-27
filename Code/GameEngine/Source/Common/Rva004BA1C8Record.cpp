@@ -55,3 +55,19 @@ void Rva004BA341DestroyRange(Rva004BA1C8 *first, Rva004BA1C8 *last)
 	for (; first != last; ++first)
 		first->~Rva004BA1C8();
 }
+
+extern "C" void __cdecl free(void *block);
+
+class Rva004BA3CC {
+	Rva004BA1C8 *m_first;
+	Rva004BA1C8 *m_last;
+public:
+	void clear();
+};
+
+void Rva004BA3CC::clear()
+{
+	Rva004BA341DestroyRange(m_first, m_last);
+	if (m_first)
+		free(m_first);
+}
