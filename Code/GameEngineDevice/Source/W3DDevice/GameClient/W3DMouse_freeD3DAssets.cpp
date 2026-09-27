@@ -1,11 +1,9 @@
 // cl: /O1 /Oy- /MD /EHsc /DNDEBUG /arch:SSE
 //
-// ?releaseD3DCursorTextures@W3DMouse@@AAE_NW4MouseCursor@@@Z, retail
-// 0x00098F52, 111 bytes. Ghidra boundary 0x98F52/111. The neighboring
-// target-side cursor loader establishes the 0x54-byte cursor-info records,
-// the global CursorTextureSlot table, and current-surface array at +0x6028.
-// This release path clears the current surface and its corresponding texture
-// holder for each of the 21 animation frames.
+// ?freeD3DAssets@W3DMouse@@AAEXXZ, retail 0x00098FF1, 102 bytes.
+// Ghidra boundary 0x98FF1/102. Target loops over the current 21 surface
+// holders at this+0x6028, then clears the contiguous cursor texture holder
+// table from 0xDE4B40 to 0xDE5DA0 in 21-slot groups.
 
 struct TextureBaseClass
 {
@@ -18,15 +16,10 @@ struct CursorTextureSlot
 	void operator=(const CursorTextureSlot &rhs);
 };
 
-enum MouseCursor
-{
-	MOUSECURSOR_NONE = 0
-};
-
 enum
 {
 	MAX_2D_CURSOR_ANIM_FRAMES = 21,
-	MAX_CURSORS = 56
+	NUM_MOUSE_CURSORS = 56
 };
 
 extern CursorTextureSlot cursorTextures[][MAX_2D_CURSOR_ANIM_FRAMES];
@@ -42,7 +35,7 @@ class W3DRadarResetSurface
 {
 	IDirect3DSurface8 *m_surface;
 
-	public:
+public:
 	W3DRadarResetSurface(IDirect3DSurface8 *surface) : m_surface(surface) {}
 	~W3DRadarResetSurface();
 	W3DRadarResetSurface &operator=(const W3DRadarResetSurface &rhs);
@@ -66,24 +59,25 @@ struct BfmeResetTextureRef
 class W3DMouse
 {
 	void *m_vftable;
-	MouseCursorInfo m_cursorInfo[MAX_CURSORS];
-	char m_pad[0x6028 - 4 - MAX_CURSORS * sizeof(MouseCursorInfo)];
+	MouseCursorInfo m_cursorInfo[NUM_MOUSE_CURSORS];
+	char m_pad[0x6028 - 4 - NUM_MOUSE_CURSORS * sizeof(MouseCursorInfo)];
 	W3DRadarResetSurface m_currentD3DSurface[MAX_2D_CURSOR_ANIM_FRAMES];
 
-	bool releaseD3DCursorTextures(MouseCursor cursor);
+	void freeD3DAssets(void);
 };
 
-bool W3DMouse::releaseD3DCursorTextures(MouseCursor cursor)
+void W3DMouse::freeD3DAssets(void)
 {
-	if (cursor == MOUSECURSOR_NONE || !cursorTextures[cursor][0].Ptr)
-		return true;
-
 	for (int i = 0; i < MAX_2D_CURSOR_ANIM_FRAMES; ++i) {
 		{
 			W3DRadarResetSurface emptySurface(0);
 			m_currentD3DSurface[i] = emptySurface;
 		}
-		reinterpret_cast<BfmeResetTextureRef &>(cursorTextures[cursor][i]).clear();
 	}
-	return true;
+
+	for (int cursor = 0; cursor < NUM_MOUSE_CURSORS; ++cursor) {
+		for (int frame = 0; frame < MAX_2D_CURSOR_ANIM_FRAMES; ++frame) {
+			reinterpret_cast<BfmeResetTextureRef &>(cursorTextures[cursor][frame]).clear();
+		}
+	}
 }
