@@ -37037,3 +37037,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004C8DE2@HordeDispatchSpecialPower@@MAEHXZ,,0x004C8DE2,96,Code/GameEngine/Source/GameLogic/Object/Update/HordeDispatchSpecialPowerVslot.cpp,matched,vtable 0x0085E88C slot20 HordeDispatch ThunkCalls rowed
 ??1NetCommandWrapperList@@MAE@XZ,,0x0058C0BB,53,Code/GameEngine/Source/GameNetwork/NetCommandWrapperList.cpp,matched,dtor loop slot0 flag0 plus global delete
 ?reset@NetCommandWrapperList@@QAEXXZ,,0x0058C0F0,47,Code/GameEngine/Source/GameNetwork/NetCommandWrapperList.cpp,matched,reset loop slot0 flag0 plus global delete
+??$__linear_insert@PAHHU?$less@H@_STL@@@_STL@@YAXPAH0HU?$less@H@0@@Z,,0x0040AE5E,52,Code/Libraries/Source/WWVegas/WWLib/stlport_int_linear_insert.cpp,matched,pin REL32 at 0x0040B247 caller 0x0040B260 callees rowed ObjectID and unguarded
