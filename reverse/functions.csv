@@ -37661,3 +37661,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??_GRva00087A93@@QAEPAXI@Z,,0x00087A93,38,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00087A93DeletingDtor.cpp,matched,honest 4B owning-ref deleting dtor with dec plus slot0 via O1
 ?get@Rva002722AA@@QBEPAXXZ,,0x002722AA,19,Code/GameEngine/Source/Common/Rva002722AABranchedGetters.cpp,matched,branched LEA getter flag 0x1A4 selects 0x158 vs 8
 ?get@Rva002722BD@@QBEPAXXZ,,0x002722BD,19,Code/GameEngine/Source/Common/Rva002722AABranchedGetters.cpp,matched,branched LEA getter flag 0x1A5 selects 0x18C vs 0x38
+?Rva006CC110Log@@YAXHPBDZZ,,0x006CC110,59,Code/GameEngine/Source/Common/Rva006CC110Log.cpp,matched,Apt variadic log via vsprintf and hookable slot E1773C
