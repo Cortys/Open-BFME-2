@@ -37116,3 +37116,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva002631A6@AIUpdateInterface@@MAEXMH@Z,,0x002631A6,103,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002631A6.cpp,matched,vslot87 float check clear goal store 0x48 setState 0x48
 ?rva006D3C20@EAStringC@@QAEXXZ,,0x006D3C20,61,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC release-to-null plus IsValid assert plus FreeData
 ?rva006D3C60@EAStringC@@QAEXXZ,,0x006D3C60,57,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC null-expecting re-root plus IsValid assert plus empty
+?Rva004ABEAE@Rva00E03CE0@@QAEXPAURva001408C0Target@@@Z,,0x004ABEAE,42,Code/Libraries/Source/WWVegas/WWLib/Rva00E03CE0RegistryInsert.cpp,matched,registry 0x00E03CE0 set insert via rowed 0x0020DFFB and 0x00080691 with 2 callers 0x004ABED8 and 0x004ABF47
