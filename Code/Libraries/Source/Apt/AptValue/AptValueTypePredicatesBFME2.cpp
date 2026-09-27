@@ -30,6 +30,7 @@ public:
     int isTextFormat() const;
     int isMovieClip() const;
     int isStage() const;
+    int rva006DC300() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -283,5 +284,17 @@ int BfmeAptValue006DCD20::isStage() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 39 && !isUndefined()) return 1;
+    return 0;
+}
+// ?rva006DC300@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC300, 78 bytes.
+// Predicate for type 11 (0x16000000), "this" assert at AptValue.inl:1661.
+// Evidence: same /O2 shape as siblings; callers at 0x00703BD1/0x00703DE9.
+int BfmeAptValue006DCD20::rva006DC300() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",0x67D);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 11 && !isUndefined()) return 1;
     return 0;
 }
