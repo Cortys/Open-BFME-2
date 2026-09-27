@@ -37326,3 +37326,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva005D9DC1@@QAE@XZ,,0x005D9DCC,26,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005EED92 plus member 0024C7B3 at 20 vtable 00876464
 ?clear@Rva003ECA69Element@@QAEXXZ,,0x003ECA69,24,Code/GameEngine/Source/GameLogic/Object/Update/Rva003ECA69ElementClear.cpp,matched,shared 0x44 element clear via memset thunk 0x6291AE called by array clear 0x003ECB13
 ??_GRva0022DDF4@@QAEPAXI@Z,,0x0022DF53,28,Code/GameEngine/Source/GameClient/Rva0022DDF4Dtor.cpp,matched,scalar deleting dtor via TU vtable emission
+?Apply@EdgeMapperClass@@UAEXH@Z,,0x00184FD0,1288,Code/Libraries/Source/WWVegas/WW3D2/EdgeMapperApply.cpp,matched,GeneralsMD mapper reference; Edge constructors install vtable 0x7D5738 slot+0x14; target Stage+8 UseReflect+0x18 matrix-slot+0x24; projection double-cache adaptation; /G7 /arch:SSE; boundary batch5
