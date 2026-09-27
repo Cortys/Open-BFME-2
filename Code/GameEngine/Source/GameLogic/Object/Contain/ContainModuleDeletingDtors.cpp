@@ -33,6 +33,13 @@ class TransportContain { public: __declspec(noinline) virtual ~TransportContain(
 TransportContain::~TransportContain() {}
 void TransportContain_Delete(TransportContain *p) { delete p; }
 
+// ??_GTransportContainModuleData@@UAEPAXI@Z @0x004684D5 28B: slot 0 of vtable 0x00C442F8; calls ??1 at 0x004684F1.
+// Owner evidence (audited 2026-09-26): vtable 0x00C442F8 installed by ctor 0x00468301; ModuleFactory pairs TransportContain with data factory 0x0024B89C; HordeTransport dtor 0x00477D8F jmps to ??1 here.
+class TransportContainModuleData { public: __declspec(noinline) virtual ~TransportContainModuleData(); };
+// ??1TransportContainModuleData@@UAE@XZ present-unmatched
+TransportContainModuleData::~TransportContainModuleData() {}
+void TransportContainModuleData_Delete(TransportContainModuleData *p) { delete p; }
+
 // ??_GHordeContain@@UAEPAXI@Z @0x004704C8 28B: slot 0 of vtable 0x00C45050; calls ??1 at 0x0046F901.
 // Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x0046F860 uses class-name string "HordeContain".
 class HordeContain { public: __declspec(noinline) virtual ~HordeContain(); };
