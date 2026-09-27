@@ -37372,3 +37372,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GGarrisonContainModuleData@@UAEPAXI@Z,,0x0047981E,28,Code/GameEngine/Source/GameLogic/Object/Contain/ContainModuleDeletingDtors.cpp,matched,slot0 wrapper calls rowed dtor 0x00257507 plus delete 0x0002FD60 vtable 0x00C462D8 from ctor 0x0047978F
 ?rva0040C985@Rva0040C985@@QAEXH@Z,,0x0040C985,31,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,leaf init touches 0x2C to 0x38 with 3 callers no vtable O1
 ?rva0040C598@Rva0040C598@@QAEXPBH@Z,,0x0040C598,25,Code/GameEngine/Source/Common/Rva0040C598BitAnd.cpp,matched,leaf 32-dword AND loop 1 caller no vtable O1
+?isCIH@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006DC580,91,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,wrapper 0x006DCF60 asserts isCIH plus 12 callers push 0

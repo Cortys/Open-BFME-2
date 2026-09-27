@@ -22,6 +22,7 @@ public:
     int isKey() const;
     int isMath() const;
     int isScriptColour() const;
+    int isCIH(bool bUndefOK) const;
     int isObject() const;
     int isPrototype() const;
     int isTextFormat() const;
@@ -163,6 +164,24 @@ int BfmeAptValue006DCD20::isScriptColour() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 26 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isCIH@BfmeAptValue006DCD20@@QBEH_N@Z, retail 0x006DC580, 91 bytes.
+// Predicate for types 12..19 with bUndefOK flag, "this" assert at AptValue.inl:1868.
+// Evidence: wrapper at 0x006DCF60 asserts "isCIH(bUndefOK)" after calling it;
+// callers at 0x006DFAF2/0x006DFB0B/0x006DFB47/0x006DFC05/0x006DFC9D/0x006DFD1F push 0;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isCIH(bool bUndefOK) const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1868);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type >= 12 && flags.type <= 19) {
+        if (bUndefOK) return 1;
+        if (!isUndefined()) return 1;
+    }
     return 0;
 }
 
