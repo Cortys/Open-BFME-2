@@ -258,6 +258,7 @@ static Bool isNearlyZero(const Coord3D* vel)
 }
 
 // ------------------------------------------------------------------------------------------------
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DDebrisDrawReactToTransformChange.cpp
 // ?reactToTransformChange@W3DDebrisDraw@@UAEXPBVMatrix3D@@PBUCoord3D@@M@Z present-unmatched
 void W3DDebrisDraw::reactToTransformChange( const Matrix3D *oldMtx, 
 																						const Coord3D *oldPos, 

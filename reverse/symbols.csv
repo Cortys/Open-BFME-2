@@ -5928,3 +5928,4 @@ _ConvertBoolTrees,0x001BBD60
 ?performUpgradeFX@UpgradeMuxData@@QBEXPAVObject@@@Z,0x0047A69C,address read from the REL32 displacement at a byte-verified placed body (0x452487)
 ?Capture_Bone@HTreeClass@@QAEXH@Z,0x00166980,address read from the REL32 displacement at a byte-verified placed body (0x1A4EC0)
 ?Release_Bone@HTreeClass@@QAEXH@Z,0x001661F0,address read from the REL32 displacement at a byte-verified placed body (0x1A4EE0)
+?getTransformMatrix@Drawable@@QBEPBVMatrix3D@@XZ,0x0027628E,address read from the REL32 displacement at a byte-verified placed body (0xB1A14)
