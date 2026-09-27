@@ -38017,3 +38017,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva00203E2CXfer@@YAXPAVRva00203E2CA@@PAVRva00203E2CB@@@Z,,0x00203E2C,27,Code/GameEngine/Source/Common/Rva00203E2CXfer.cpp,matched,slot30 Xfer then XferObjectID sibling of 0x00203E11
 ?rva00203B2B@Rva00203B2BHost@@QAEXXZ,,0x00203B2B,28,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_notifyCamera.cpp,matched,AppModule NotifyCameraChange tail-jump sibling of appGate
 ?Rva00203D6AChain@@YAXPAVRva00203D6AA@@PAX@Z,,0x00203D6A,28,Code/GameEngine/Source/Common/Rva00203D6AChain.cpp,matched,slot27 then slot30 chain same slots as Xfer helpers
+?Rva00203D86Chain@@YAXPAVRva00203D86A@@PAX@Z,,0x00203D86,28,Code/GameEngine/Source/Common/Rva00203D86Chain.cpp,matched,slot30 twice chain sibling of 0x00203D6A
