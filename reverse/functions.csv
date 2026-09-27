@@ -38890,3 +38890,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006DC490@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC490,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,gap type31 line1789 between isKey isMath same O2 shape
 ?xfer@Rva003424B1@@MAEXPAVXfer@@@Z,,0x003424B1,81,Code/GameEngine/Source/Common/Rva003424B1Xfer.cpp,matched,chain FF76 base last Version1 bools int
 ??1Rva00342157@@UAE@XZ,,0x00342157,91,Code/GameEngine/Source/Common/Rva00342157Dtor.cpp,matched,vtable 0x8118B0 member slot3C delete base 49B47C twin FC42
+?clear@?$_List_base@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEXXZ,,0x005CCEFA,49,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva005F8F96_clear.cpp,matched,listbase clear via rowed dtor 0x5F8F96 unblocks 0x5CD032
