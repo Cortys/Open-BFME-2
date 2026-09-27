@@ -37092,3 +37092,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1W3DRopeDraw@@UAE@XZ,,0x000CA8BC,90,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/W3DRopeDrawDtor.cpp,matched,BFME1 donor dtor via EHs malloc pattern with DrawableModule pin
 ?xfer@DrawModule@@MAEXPAVXfer@@@Z,,0x004CBF58,21,Code/GameEngine/Source/GameLogic/Object/Behavior/DrawModuleXfer.cpp,matched,slot 3 of DrawModule vtable 0x007C9690 via ctor pin plus base ObjectModule plus Version1
 ?rva00262804@AIUpdateInterface@@QAEXE@Z,,0x00262804,38,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262804.cpp,matched,AIUpdateInterface sibling via 0x3B9 plus 0x1F4 plus slot142
+?rva0026295E@AIUpdateInterface@@QAEXXZ,,0x0026295E,15,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026295E.cpp,matched,AIUpdateInterface clearer via 0x134 plus 0x3BF
+?rva0026293E@AIUpdateInterface@@QAEXXZ,,0x0026293E,32,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026293E.cpp,matched,AIUpdateInterface conditional via 0x3BD plus 0x134
