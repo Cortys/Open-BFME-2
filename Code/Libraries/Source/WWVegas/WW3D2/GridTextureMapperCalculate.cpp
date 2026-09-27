@@ -7,6 +7,11 @@
 // its slot +0x24 points to retail RVA 0x1849A0, 267 bytes (boundary batch12).
 // Constructor identity comes from existing donor matches. Retail separately
 // establishes the frame timing arithmetic, UV offsets and identity matrix.
+// GridClassicEnvironmentMapperClass matrix: RVA 0x183740, 260 bytes.
+// Matched constructor 0x13D2F0 installs table 0x7D32A8; slot+0x24 reaches
+// this body. The Environment variant shares it and is not counted twice.
+// The local initMatrix preserves the donor scalar-argument evaluation order;
+// expanding its call into direct assignments prematurely rounds UV products.
 // The bfmemapper shim supplies the constructor-verified +4 grid layout shift.
 
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
@@ -60,4 +65,25 @@ void GridTextureMapperClass::Calculate_Texture_Matrix(Matrix4x4 &tex_matrix)
 	// otherwise change to translate
 	tex_matrix[0].Z = u_offset;
 	tex_matrix[1].Z = v_offset;
+}
+static __forceinline void initMatrix(Matrix4 &m, float m0, float m1, float m2, float m3, float m4, float m5, float m6, float m7, float m8, float m9, float m10, float m11, float m12, float m13, float m14, float m15) {
+    m[0].Set(m0, m1, m2, m3);
+    m[1].Set(m4, m5, m6, m7);
+    m[2].Set(m8, m9, m10, m11);
+    m[3].Set(m12, m13, m14, m15);
+}
+
+void GridClassicEnvironmentMapperClass::Calculate_Texture_Matrix(Matrix4x4 &tex_matrix)
+{
+	update_temporal_state();
+
+	float u_offset, v_offset;
+	calculate_uv_offset(&u_offset, &v_offset);
+
+	float del = 0.5f * OOGridWidth;	
+	// Set up the offset matrix		
+	initMatrix(tex_matrix, 	del,	0.0f,	0.0f,	u_offset + del,
+							0.0f,	del,	0.0f,	v_offset + del,
+							0.0f,	0.0f,	1.0f,	0.0f,
+							0.0f, 0.0f, 0.0f, 1.0f );		
 }

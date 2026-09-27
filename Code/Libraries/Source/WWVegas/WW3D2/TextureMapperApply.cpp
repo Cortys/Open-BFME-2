@@ -1,4 +1,4 @@
-// cl: /G7 /Ireference/shims/bfmerendobj /Ireference/shims/bfmemapper /arch:SSE /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
+// cl: /Ireference/shims/bfmestages /G7 /Ireference/shims/bfmerendobj /Ireference/shims/bfmemapper /arch:SSE /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
 
 // Reference: EA GeneralsMD WW3D2/mapper.cpp, EdgeMapperClass::Apply;
 // DX8Wrapper::Set_Transform(Matrix4x4) from the BFME1 reference header.
@@ -11,7 +11,11 @@
 // Other unused members/virtual declarations below follow donor ABI context;
 // the unknown +0x20 virtual is reserved without asserting its signature.
 // The transform projection branch writes the same transpose into two globals
-// (VA 0xDEDC30 then 0xDEDBF0). Only ProjectionMatrix carries a donor name;
+// (VA 0xDEDC30 then 0xDEDBF0). Existing cross-TU references bind
+// ProjectionMatrix to 0xDEDC30; the upload copy at 0xDEDBF0 is unnamed.
+// The established bfmestages shim supplies the 16-texture render-state layout;
+// its base is 0xDEE5D8, world +0x1EC and view +0x22C.
+// Only ProjectionMatrix carries a donor name;
 // the second global is address-labelled, not assigned an invented EA identity.
 // GridWSClassicEnvironmentMapperClass::Apply: RVA 0x184AD0, 1266 bytes.
 // Matched constructor 0x187410 installs table 0x7D5888; slot+0x14 points here.
@@ -73,7 +77,7 @@ class LinearOffsetTextureMapperClass : public ScaleTextureMapperClass {};
 class ScreenMapperClass : public LinearOffsetTextureMapperClass {
 public: virtual void Apply(int uv_array_index);
 };
-extern Matrix4x4 g_mapperProjectionCopy_009EDC30;
+extern Matrix4x4 g_mapperProjectionUpload_009EDBF0;
 // Access shim only: no runtime instances or claim of a retail derived class.
 struct MapperTransformAccess : DX8Wrapper {
     enum { WORLD_CHANGED=1, VIEW_CHANGED=2, WORLD_IDENTITY=1<<18, VIEW_IDENTITY=1<<19 };
@@ -88,10 +92,10 @@ struct MapperTransformAccess : DX8Wrapper {
             render_state_changed=(render_state_changed & ~(unsigned)VIEW_IDENTITY) | (unsigned)VIEW_CHANGED;
             break;
         case D3DTS_PROJECTION:
-            ProjectionMatrix=g_mapperProjectionCopy_009EDC30=m.Transpose();
+            g_mapperProjectionUpload_009EDBF0=ProjectionMatrix=m.Transpose();
             ZFar=0.0f;
             ZNear=0.0f;
-            DX8CALL(SetTransform(D3DTS_PROJECTION,(D3DMATRIX*)&ProjectionMatrix));
+            DX8CALL(SetTransform(D3DTS_PROJECTION,(D3DMATRIX*)&g_mapperProjectionUpload_009EDBF0));
             break;
         default:
             DX8_RECORD_MATRIX_CHANGE();
