@@ -39412,3 +39412,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva005C95ECGet@@YA?AVUnicodeString@@PAVRva0020E89C@@@Z,,0x005C95EC,24,Code/Libraries/Source/WWVegas/WWLib/Rva0020E89CFetch.cpp,matched,chain wrapper forwards hidden to rva0020E89C callers 0x005D1806
 ?Rva005C95CAGet@@YA?AVUnicodeString@@XZ,,0x005C95CA,34,Code/Libraries/Source/WWVegas/WWLib/Rva0020E89CFetch.cpp,matched,free fetch BuildPlotName via TheGameText slot 0x3C
 ??0Rva005C9B76@@QAE@PAX@Z,,0x005C9B76,38,Code/GameEngine/Source/GameLogic/Object/Rva005C9B76Ctor.cpp,matched,honest ctor vtable 0x874B9C member 0x330757 arg at 0x14
+?Rva00226146Less@@YG_NHH@Z,,0x00226146,16,Code/GameEngine/Source/Common/Rva00226146Less.cpp,matched,signed less predicate ret8 2 callers no callees
