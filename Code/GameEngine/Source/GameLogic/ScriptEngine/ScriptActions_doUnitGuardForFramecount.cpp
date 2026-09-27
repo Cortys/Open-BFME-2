@@ -54,6 +54,7 @@ public:
 	{
 		return *(AIUpdateInterface **)((char *)this + 0x258);
 	}
+	void leaveGroup();
 private:
 	char m_pad00[0x38];
 public:
@@ -89,6 +90,7 @@ class ScriptActions
 protected:
 	void doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds);
 	void doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName);
+	void doNamedGuard(const AsciiString &unitName);
 };
 
 void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds)
@@ -130,5 +132,26 @@ void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const Ascii
 	position.x = way->location()->x;
 	position.y = way->location()->y;
 	position.z = way->location()->z;
+	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
+}
+
+// ?doNamedGuard@ScriptActions@@IAEXABVAsciiString@@@Z, retail 0x003C886A, 97 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsNamedUnitProperties.cpp
+// doNamedGuard at AICMD 0x1E via rowed aiGuardPosition 0x0036F46A plus pinned leaveGroup 0x0028C01F.
+// BFME2 deltas: float Coord3D with SSE movss order x y z from Object+0x38 (no Int barrier).
+// Caller at 0x003CB585. Prev doNamedFollowWaypointsExact / next doUnitGuardPosition.
+void ScriptActions::doNamedGuard(const AsciiString &unitName)
+{
+	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	if (!object)
+		return;
+	AIUpdateInterface *ai = object->getAIUpdateInterface();
+	if (!ai)
+		return;
+	object->leaveGroup();
+	Coord3D position;
+	position.x = object->m_position.x;
+	position.y = object->m_position.y;
+	position.z = object->m_position.z;
 	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
 }
