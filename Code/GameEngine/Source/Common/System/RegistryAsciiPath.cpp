@@ -267,6 +267,20 @@ int AsciiStringPlusStringText::write(char *dst)
 	return n + m_text.write(dst + n);
 }
 
+// ?write@Rva0050F23E@@QAEHPAD@Z @0x0050F23E 37B narrow concat node two-ref plus char plus trailing text: base PlusStringChar write 0x0050EE58 then Rva pair write 0x000B44F0; caller is materializer 0x0050F7B4.
+struct Rva0050F23E : AsciiStringPlusStringChar
+{
+	int write(char *dst);
+
+	Rva000B3F84Pair m_text;
+};
+
+int Rva0050F23E::write(char *dst)
+{
+	int n = AsciiStringPlusStringChar::write(dst);
+	return n + m_text.write(dst + n);
+}
+
 // ??BAsciiStringPlusStringText@@QAE?AVAsciiString@@XZ @0x0050F74B 105B narrow concat node to AsciiString: sized getBufferForRead then write; length is base PlusString fold 0x002198C8 plus trailing text len; callers include 0x00510443.
 AsciiStringPlusStringText::operator AsciiString()
 {

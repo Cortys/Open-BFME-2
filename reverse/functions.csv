@@ -37844,3 +37844,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?doNamedEnableStealth@ScriptActions@@IAEXABVAsciiString@@_N@Z,,0x003BBD39,40,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doNamedEnableStealth.cpp,matched,BFME1 donor doNamedEnableStealth with UNSTEALTHED bit 8
 ?rva003BBD61@ScriptActions@@IAEXABVAsciiString@@_N@Z,,0x003BBD61,35,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doNamedEnableStealth.cpp,matched,Chain sibling of doNamedEnableStealth with bit 0x20 direct
 ?q4Notify002CCB04@@YAXPAXPAVMade002CCB04@@HH@Z,,0x0050B42C,77,Code/GameEngine/Source/GameLogic/Object/Made002CCB04Parse.cpp,matched,Emotion parser same two-add shape
+?write@Rva0050F23E@@QAEHPAD@Z,,0x0050F23E,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,two-ref plus char plus text write base PlusStringChar
