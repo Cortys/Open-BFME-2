@@ -75,6 +75,7 @@ public:
 	void aiFacePosition(const Coord3D *pos, Int cmdSource);
 	void aiFaceObject(Object *target, CommandSourceType cmdSource);
 	void aiWanderInPlace(CommandSourceType cmdSource);
+	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 };
 
@@ -135,6 +136,17 @@ void AICommandInterface::aiFaceObject(Object *target, CommandSourceType cmdSourc
 void AICommandInterface::aiWanderInPlace(CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_WANDER_IN_PLACE, cmdSource);
+	aiDoCommand(&parms);
+}
+
+// ?rva003C7653@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x003C7653, 101 bytes.
+// Same 101B object shape as aiFaceObject in this TU: AICMD 0x49 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// BFME1 has no 0x49 command; class proven by callers through AIUpdateInterface+0x20 with source 1.
+// Callers at 0x003C7982 0x003C9666 0x003C999C 0x004BB658 0x005AD79B plus 3 more.
+void AICommandInterface::rva003C7653(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x49, cmdSource);
+	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
 
