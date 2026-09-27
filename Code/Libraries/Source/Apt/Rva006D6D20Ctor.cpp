@@ -7,6 +7,7 @@ class EAStringC
 {
 public:
     EAStringC() { clear(); }
+    EAStringC(const char *text);
     EAStringC &clear();
     ~EAStringC();
 };
@@ -24,8 +25,12 @@ struct Rva006D6D20 : public BfmeAptValue006DCD20
     EAStringC m_str;
     int m_0C;
     Rva006D6D20();
+    Rva006D6D20(const char *s);
     virtual ~Rva006D6D20();
 };
 Rva006D6D20::Rva006D6D20() : BfmeAptValue006DCD20(1), m_0C(0)
+{
+}
+Rva006D6D20::Rva006D6D20(const char *s) : BfmeAptValue006DCD20(1), m_str(s), m_0C(0)
 {
 }
