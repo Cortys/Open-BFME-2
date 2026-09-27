@@ -37756,3 +37756,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004269F7@Rva004266A1@@QAEEH@Z,,0x004269F7,30,Code/GameEngine/Source/Common/Rva004269F7Getter.cpp,matched,flag0 getter via rowed bounds check at 0x004266A1
 ?test@?$BitFlags@$0L@@@QBE_NPBX@Z,,0x0023C59F,37,Code/GameEngine/Source/Common/System/BitFlags11Test.cpp,matched,DisabledMask overlap via 1-word test sibling of 69 test
 ?rva0039D40F@Rva0039D40F@@QBE_NPAPAV1@@Z,,0x0039D40F,26,Code/GameEngine/Source/Common/Rva0039D40FIsInList.cpp,matched,head plus 3C-40 OR chain like Object isInList
+?setBuildableStatusOverride@GameLogic@@QAEXPBVThingTemplate@@W4BuildableStatus@@@Z,,0x00246F71,29,Code/GameEngine/Source/GameLogic/System/GameLogicSetBuildableStatusOverride.cpp,matched,Target null-checks; ThingTemplate plus 0x64 key; GameLogic plus 0x10 map; 0x246F71/29 Ghidra boundary
