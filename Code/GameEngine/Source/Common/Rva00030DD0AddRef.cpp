@@ -14,6 +14,7 @@ struct Rva00030DD0Lock
 
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(void *cs);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(void *cs);
+extern "C" __declspec(dllimport) void __stdcall InitializeCriticalSection(void *cs);
 
 int Rva00030DD0AddRef(Rva00030DD0Lock *lock)
 {
@@ -32,4 +33,20 @@ int Rva00030DF0Release(Rva00030DD0Lock *lock)
 	lock->m_ref = old - 1;
 	LeaveCriticalSection(lock);
 	return old - 1;
+}
+
+// ?Rva00030D90Init@@YAPAURva00030DD0Lock@@PAU1@@Z @ 0x00030D90 25B
+// Null-safe critical-section init: zeroes the +0x18 refcount and inits the
+// +0x00 section returning the lock or 0. Evidence: IAT
+// InitializeCriticalSection at 0x00BBA15C same Rva00030DD0Lock layout as AddRef
+// at 0x00030DD0 callers at 0x0003183B 0x00033725. Honest address-derived name.
+Rva00030DD0Lock *Rva00030D90Init(Rva00030DD0Lock *lock)
+{
+	Rva00030DD0Lock *result = 0;
+	if (lock != 0) {
+		lock->m_ref = 0;
+		InitializeCriticalSection(lock);
+		result = lock;
+	}
+	return result;
 }
