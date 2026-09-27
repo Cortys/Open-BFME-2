@@ -37,3 +37,4 @@ struct TreeHintOpaque0043671B {
 inline bool operator<(const AsciiString &, const AsciiString &);
 typedef _STL::pair<const AsciiString, TreeHintOpaque0043671B> TreeHintPair0043671B;
 template void _STL::_Destroy<TreeHintPair0043671B>(TreeHintPair0043671B *);
+template TreeHintPair0043671B::pair(const AsciiString &, const TreeHintOpaque0043671B &);
