@@ -1,0 +1,25 @@
+// cl: /O1
+// ?rva0040C985@Rva0040C985@@QAEXH@Z, retail 0x0040C985, 31 bytes.
+// Target evidence: leaf with 3 callers at 0x002B7A97 0x0040D3AE 0x0040F860; no vtable slot;
+// touches +0x2C +0x30 +0x34 +0x38; prev ringobj.cpp next Disp8SubDwordFieldGetters.cpp.
+class Rva0040C985
+{
+public:
+	void rva0040C985(int x);
+
+private:
+	char m_pad[0x2C];
+	int m_2C;
+	int m_30;
+	int m_34;
+	int m_38;
+};
+
+void Rva0040C985::rva0040C985(int x)
+{
+	if (m_2C == 0) {
+		m_2C = 2;
+		m_38 = x;
+		m_34 = m_30 + x;
+	}
+}

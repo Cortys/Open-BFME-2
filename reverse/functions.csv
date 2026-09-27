@@ -37370,3 +37370,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva004A699C@@QAE@PAVStateMachine@@@Z,,0x004A699C,29,Code/GameEngine/Source/Common/StateDerivedCtors_muse-a7a4.cpp,matched,State derived ctor hash 0xE6B21889 vtable 0x00852E90 via I base pin
 ?releaseBuffer@?$StringBase@D@@AAEXXZ,0x00036410,0x00036410,133,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideReleaseBuffer.cpp,matched,BFME2 export narrow releaseBuffer via ZH donor and rowed lock singleton and free
 ??_GGarrisonContainModuleData@@UAEPAXI@Z,,0x0047981E,28,Code/GameEngine/Source/GameLogic/Object/Contain/ContainModuleDeletingDtors.cpp,matched,slot0 wrapper calls rowed dtor 0x00257507 plus delete 0x0002FD60 vtable 0x00C462D8 from ctor 0x0047978F
+?rva0040C985@Rva0040C985@@QAEXH@Z,,0x0040C985,31,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,leaf init touches 0x2C to 0x38 with 3 callers no vtable O1
