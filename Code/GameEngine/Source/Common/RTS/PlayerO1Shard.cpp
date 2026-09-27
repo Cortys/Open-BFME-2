@@ -214,3 +214,8 @@ Object* Player::findNaturalCommandCenter()
 	iterateObjects(doFindCommandCenter, &info);
 	return info.obj;
 }
+
+// BuildListInfo::setTemplateName is a header inline the size-optimised Player
+// unit leaves out of line (retail 0x001DBC2D, called from 0x001DC54A).
+extern void (BuildListInfo::*const g_bfmeBuildListSetTemplateNameAnchor)(AsciiString);
+void (BuildListInfo::*const g_bfmeBuildListSetTemplateNameAnchor)(AsciiString) = &BuildListInfo::setTemplateName;
