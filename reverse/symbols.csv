@@ -5723,3 +5723,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?set@Rva0035EEA7Holder@@QAEXPAVRva0035EE66@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035EEE6 in factory 0x0035EEA7 matches retail
 ??1?$_List_base@UBfmePod20@@V?$allocator@UBfmePod20@@@_STL@@@_STL@@QAE@XZ,0x004EC395,ICF twin of int list-base dtor per GettingBuiltBehavior dtor 0x0045448F call site
 ??1?$DynamicVectorClass@PAVRender2DClass@@@@UAE@XZ,0x001A3AB0,called by deleting dtor 0x1A3EB0 object-symbol of dup row
+??$__copy@PAUBfmeAssignRecord28@@PAU1@H@_STL@@YAPAUBfmeAssignRecord28@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x003F6477,object-symbol alias in dup_003f6477 row plus call site 0x003F662C in 29B wrapper exact except reloc

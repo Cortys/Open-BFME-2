@@ -37296,3 +37296,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0031455ELink@Rva0031455E@@QAEXPAV1@@Z,,0x0031455E,35,Code/GameEngine/Source/GameClient/GUI/Rva0031455EList.cpp,matched,neighbors 0x0031450A plus 0x003145F0 plus twin unlink 0x00314581
 ?isMath@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC4E0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD060 asserts isMath plus type 23
 ?isScriptColour@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC530,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD0A0 asserts isScriptColour plus type 26
+??$__copy_ptrs@PAUBfmeAssignRecord28@@PAU1@@_STL@@YAPAUBfmeAssignRecord28@@PAU1@00U__false_type@0@@Z,,0x003F6619,29,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_record_bodies.cpp,matched,stlport copy_ptrs wrapper via rowed copy 0x3F6477
