@@ -38972,3 +38972,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva006D6D20@@UAE@XZ,,0x006D6D20,82,Code/Libraries/Source/Apt/Rva006D6D20Dtor.cpp,matched,vtable 0x008EA358; EAStringC at +8 plus base 0x006DE350; ctor twin 0x006D6CC0; size 0x10
 ??0Rva006D6D20@@QAE@XZ,,0x006D6CC0,83,Code/Libraries/Source/Apt/Rva006D6D20Ctor.cpp,matched,vtable 0x008EA358; base type 1 plus clear at +8 plus +0xC=0; dtor twin 0x006D6D20
 ??0Rva006D6D20@@QAE@PBD@Z,,0x006D6D80,90,Code/Libraries/Source/Apt/Rva006D6D20Ctor.cpp,matched,vtable 0x008EA358; base type 1 plus EAStringC PBD at +8 plus +0xC=0
+?getObjectTypes@ScriptEngine@@QAEPAVObjectTypes@@ABVAsciiString@@@Z,,0x00357651,60,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineGetObjectTypes.cpp,matched,ZH getObjectTypes donor plus ScriptEngine layout and callers
