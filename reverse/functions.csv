@@ -39474,3 +39474,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0028B7C8@Object@@QBEHXZ,,0x0028B7C8,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B7C8.cpp,matched,Object int gate calls rva0028AC7D compares to 0.1f at 0xBC2424
 ?rva0028B85B@Object@@QBE?AW4ObjectID@@XZ,,0x0028B85B,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B85B.cpp,matched,Object body slot 0x3C ObjectID at plus8 else INVALID_ID
 ?setShroudClearingRange@Object@@QAEXM@Z,,0x0028BB65,33,Code/GameEngine/Source/GameLogic/Object/ObjectSetShroudClearingRange.cpp,matched,BFME1 donor setShroudClearingRange plus getShroudClearingRange pin shares plus0x1B4
+?rva0028BCF4@Object@@QBEPAXXZ,,0x0028BCF4,35,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BCF4.cpp,matched,Object plus0x244 behavior scan slot 0x98 same shape as getSpawn slot 30
