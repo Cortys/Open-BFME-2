@@ -65,7 +65,6 @@ private:
 	_STL::list<int, _STL::allocator<int> > m_list28; // +0x28
 };
 
-// ??0Rva0031763A@@QAE@XZ present-unmatched
 Rva0031763A::Rva0031763A() :
 	m_unk00(0),
 	m_unk04(0),
