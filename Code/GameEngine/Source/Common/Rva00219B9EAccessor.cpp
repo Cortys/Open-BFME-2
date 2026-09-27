@@ -18,7 +18,9 @@ struct Elem216 {
     int m_14;
     int m_18;
     int m_1C;
-    char m_20[0xD8 - 0x20];
+    char m_20[0x64 - 0x20];
+    int m_64;
+    char m_68[0xD8 - 0x68];
 };
 struct Vec216 {
     Elem216 *m_start;
@@ -36,6 +38,7 @@ public:
     int rva00219CF6(unsigned int index);
     int rva00219D0D(unsigned int index);
     int rva00219D24(unsigned int index);
+    int rva00219C93(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -80,4 +83,13 @@ int Rva00219B9E::rva00219D24(unsigned int index)
     if (p)
         return ((Elem216 *)p)->m_1C;
     return 0;
+}
+// ?rva00219C93@Rva00219B9E@@QAEHI@Z @0x00219C93 24B: returns element+0x64 or -1.
+// Chain of 0x00219B9E; caller 0x00219FE3 needs it. Null path uses or eax,-1.
+int Rva00219B9E::rva00219C93(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (!p)
+        return -1;
+    return ((Elem216 *)p)->m_64;
 }
