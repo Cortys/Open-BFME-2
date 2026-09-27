@@ -38899,3 +38899,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva00314BC9@@YGXHMHHHH@Z,,0x00314BC9,74,Code/GameEngine/Source/GameClient/GUI/GameWindowRva00314AE0.cpp,matched,Chain of 0x0004D664 reordered int float wrapper via TheDisplay
 ??1Rva0031455E@@QAE@XZ,,0x003148E6,11,Code/GameEngine/Source/GameClient/GUI/Rva0031455EList.cpp,matched,Dtor restores vtable then tail-jmps to Unlink same class
 ?rva0031404A@Rva0031404A@@QAEHH@Z,,0x0031404A,12,Code/GameEngine/Source/Common/Rva0031404ASetter.cpp,matched,Honest plus34 int setter returning zero with two callers
+?rva003140CF@Rva003140CF@@QAEHH@Z,,0x003140CF,21,Code/GameEngine/Source/Common/Rva0031404ASetter.cpp,matched,Null guarded self or arg setter at plus44 returning zero unlocking nine
