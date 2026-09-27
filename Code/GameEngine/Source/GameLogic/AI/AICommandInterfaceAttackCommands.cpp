@@ -32,6 +32,7 @@ enum AICommandType
 	AICMD_IDLE = 5,
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
 	AICMD_ATTACK_POSITION = 0x0E,
+	AICMD_FACE_POSITION = 0x27,
 	AICMD_BFME_3D = 0x3D
 };
 
@@ -69,6 +70,7 @@ public:
 	void aiIdle(CommandSourceType cmdSource);
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
+	void aiFacePosition(const Coord3D *pos, Int cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 };
 
@@ -94,6 +96,18 @@ void AICommandInterface::aiAttackPosition(const Coord3D *pos, Int maxShotsToFire
 	AICommandParms parms(AICMD_ATTACK_POSITION, cmdSource);
 	parms.m_pos = *pos;
 	parms.m_intValue = maxShotsToFire;
+	aiDoCommand(&parms);
+}
+
+// ?aiFacePosition@AICommandInterface@@QAEXPBUCoord3D@@H@Z, retail 0x003C7782, 108 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceFaceCommands.cpp
+// aiFacePosition at AICMD 0x47 plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// BFME2 delta is AICMD 0x27 plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x003C9A75 and 0x003C9B92 pass Waypoint location plus source 1.
+void AICommandInterface::aiFacePosition(const Coord3D *pos, Int cmdSource)
+{
+	AICommandParms parms(AICMD_FACE_POSITION, (CommandSourceType)cmdSource);
+	parms.m_pos = *pos;
 	aiDoCommand(&parms);
 }
 
