@@ -92,7 +92,7 @@ void HLodClass::Update_Sub_Object_Transforms(void)
 	** Put the computed transforms into our sub objects.
 	*/
 	int lod,model;
-	
+
 	for (lod = 0; lod < LodCount; lod++) {
 		for (model = 0; model < Lod[lod].Count(); model++) {
 
@@ -101,7 +101,7 @@ void HLodClass::Update_Sub_Object_Transforms(void)
 
 			Matrix3D transform;
 			treeMatrix(HTree,bone,transform);
-			robj->Set_Transform(transform); 
+			robj->Set_Transform(transform);
 			robj->Set_Animation_Hidden(!reinterpret_cast<const HlodTreeView *>(HTree)->Pivot[bone].IsVisible);
 			robj->_bfme_set_indexed_factor(0,reinterpret_cast<const HlodTreeView *>(HTree)->Pivot[bone].IndexedFactor);
 			robj->Update_Sub_Object_Transforms();
@@ -118,12 +118,10 @@ void HLodClass::Update_Sub_Object_Transforms(void)
 			treeMatrix(HTree,bone,transform);
 			if (offset != Vector3(0.0f,0.0f,0.0f)) transform.Translate(offset);
         robj->Set_Transform(transform);
-        robj->_bfme_set_indexed_factor(0,reinterpret_cast<const HlodTreeView *>(HTree)->Pivot[bone].IndexedFactor); 
+        robj->_bfme_set_indexed_factor(0,reinterpret_cast<const HlodTreeView *>(HTree)->Pivot[bone].IndexedFactor);
 		robj->Set_Animation_Hidden(!reinterpret_cast<const HlodTreeView *>(HTree)->Pivot[bone].IsVisible);
 		robj->Update_Sub_Object_Transforms();
 	}
 
 	Set_Sub_Object_Transforms_Dirty(false);
 }
-
-

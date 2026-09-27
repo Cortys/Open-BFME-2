@@ -97,7 +97,7 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
 	int index = high_lod.Count ();
 	while (index -- && BoundingBoxIndex == -1) {
 		RenderObjClass *model = high_lod[index].Model;
-		
+
 		//
 		//	Is this an OBBox mesh?
 		//
@@ -112,7 +112,7 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
 			//
 			//	Does the name match the designator we are looking for?
 			//
-			if (::stricmp (name, "BOUNDINGBOX") == 0) {				
+			if (::stricmp (name, "BOUNDINGBOX") == 0) {
 				BoundingBoxIndex = index;
 			}
 		}
@@ -137,16 +137,16 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
 	MinMaxAABoxClass box;
 
 	HTree->Base_Update(Matrix3D(1));
-	
+
 	robj = Get_Sub_Object(0);
 	WWASSERT(robj);
-	
+
 	Matrix3D bonetm;
 	treeMatrix(HTree, Get_Sub_Object_Bone_Index(robj), bonetm);
 	robj->Get_Obj_Space_Bounding_Sphere(sphere);
 	sphere.Transform(bonetm);
 	robj->Get_Obj_Space_Bounding_Box(obj_aabox);
-	
+
 	box.Init(obj_aabox);
 	box.Transform(bonetm);
 
@@ -155,16 +155,16 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
 	for (i=1; i<Get_Num_Sub_Objects(); i++) {
 		robj = Get_Sub_Object(i);
 		WWASSERT(robj);
-		
+
 		Matrix3D bonetm;
 	treeMatrix(HTree, Get_Sub_Object_Bone_Index(robj), bonetm);
-		
+
 		SphereClass tmpsphere;
 		robj->Get_Obj_Space_Bounding_Sphere(tmpsphere);
 		tmpsphere.Transform(bonetm);
 		sphere.Add_Sphere(tmpsphere);
 
-		AABoxClass tmpbox; 
+		AABoxClass tmpbox;
 		robj->Get_Obj_Space_Bounding_Box(tmpbox);
 		tmpbox.Transform(bonetm);
 		box.Add_Box(tmpbox);
@@ -182,5 +182,3 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
    RenderObjClass *container = Get_Container();
    if (container) container->Update_Obj_Space_Bounding_Volumes();
 }
-
-

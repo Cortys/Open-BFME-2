@@ -77,7 +77,7 @@ static __forceinline Matrix3D &pivotMatrix(const HlodTransformView &q, Matrix3D 
 }
 
 void HLodClass::Add_Lod_Model(int lod, RenderObjClass * robj, int boneindex)
-{		
+{
 	WWASSERT(robj != NULL);
 
 	// (gth) survive the case where the skeleton for this object no longer has
@@ -87,7 +87,7 @@ void HLodClass::Add_Lod_Model(int lod, RenderObjClass * robj, int boneindex)
 		WWDEBUG_SAY(("ERROR: Model %s tried to use bone %d in skeleton %s.  Please re-export!\n",Get_Name(),boneindex,HTree->Get_Name()));
 		boneindex = 0;
 	}
-	
+
 	ModelNodeClass newnode;
 	newnode.Model = robj;
 	newnode.Model->Add_Ref();
@@ -102,5 +102,3 @@ void HLodClass::Add_Lod_Model(int lod, RenderObjClass * robj, int boneindex)
 	}
 	Lod[lod].Add(newnode);
 }
-
-
