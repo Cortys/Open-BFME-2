@@ -37291,3 +37291,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Rva000B9AAA@@QAE@XZ,,0x000B9AAA,8,Code/GameEngine/Source/Common/StringBaseTailDtors_muse-8fbc.cpp,matched,tail dtor add ecx 0x10 jmp StringBase D dtor
 ??1Rva00255D17@@QAE@XZ,,0x00255D17,8,Code/GameEngine/Source/Common/StringBaseTailDtors_muse-8fbc.cpp,matched,tail dtor add ecx 0x1C jmp StringBase D dtor
 ??1Rva004D9A3C@@QAE@XZ,,0x004D9A3C,8,Code/GameEngine/Source/Common/StringBaseTailDtors_muse-8fbc.cpp,matched,tail dtor add ecx 0x14 jmp StringBase D dtor
+?rva003B4826@Rva003B483DHolder@@QBEHPBX@Z,,0x003B4826,23,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptGroupLeafCheck.cpp,matched,holder +0x18 table 20B entries index arg+4 returns field10+4
+?rva003B4885@Rva003B489CHolder@@QBEHPBX@Z,,0x003B4885,23,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptLeafCheck.cpp,matched,holder +0x38 table 20B entries index arg+4 returns field10+4
