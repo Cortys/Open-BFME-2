@@ -31,6 +31,7 @@ public:
     int isMovieClip() const;
     int isStage() const;
     int rva006DC300() const;
+    int rva006DCC60(bool bUndefOK) const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -296,5 +297,21 @@ int BfmeAptValue006DCD20::rva006DC300() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 11 && !isUndefined()) return 1;
+    return 0;
+}
+// ?rva006DCC60@BfmeAptValue006DCD20@@QBEH_N@Z, retail 0x006DCC60, 90 bytes.
+// Predicate for type 14 (0x1C000000) with bUndefOK, "this" assert at AptCIH.h:181.
+// Evidence: same /O2 shape as isCIH sibling; callers at 0x006DFD33/0x006E2545;
+// path AptCIH.h measured from retail string at 0x008E8C60.
+int BfmeAptValue006DCD20::rva006DCC60(bool bUndefOK) const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xB5);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 14) {
+        if (bUndefOK) return 1;
+        if (!isUndefined()) return 1;
+    }
     return 0;
 }
