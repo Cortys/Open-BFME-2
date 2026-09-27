@@ -38779,3 +38779,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getNumPlayers@ConnectionManager@@QAEHXZ,,0x004CF926,26,Code/GameEngine/Source/GameNetwork/ConnectionManager.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Peek_Anim@HAnimManagerClass@@QAEPAVHAnimClass@@PBD@Z,,0x000F0B81,23,Code/Libraries/Source/WWVegas/WW3D2/hanimmgr.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Is_Missing@HAnimManagerClass@@QAE_NPBD@Z,,0x000F0BC2,21,Code/Libraries/Source/WWVegas/WW3D2/hanimmgr.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?getRelativeAngle2D@PartitionManager@@QAEMPBVObject@@0@Z,,0x002C9BE4,20,Code/GameEngine/Source/GameLogic/Object/PartitionManager.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

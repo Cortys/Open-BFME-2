@@ -995,6 +995,7 @@ public:
 	Int														m_hashValue;///< index into hash table 
 };
 
+// ??1PartitionContactListNode@@ present-unmatched
 inline PartitionContactListNode::~PartitionContactListNode() { }
 
 //-----------------------------------------------------------------------------
@@ -1065,6 +1066,7 @@ public:
 // nothing
 #else
 //-----------------------------------------------------------------------------
+// ??0CellOutwardIterator@@ present-unmatched
 CellOutwardIterator::CellOutwardIterator(PartitionManager *mgr, Int x, Int y)
 {
 	m_mgr = mgr;
@@ -1081,11 +1083,13 @@ CellOutwardIterator::CellOutwardIterator(PartitionManager *mgr, Int x, Int y)
 }
 
 //-----------------------------------------------------------------------------
+// ??1CellOutwardIterator@@ present-unmatched
 CellOutwardIterator::~CellOutwardIterator()
 {
 }
 
 //-----------------------------------------------------------------------------
+// ?nextCell@CellOutwardIterator@@ present-unmatched
 PartitionCell *CellOutwardIterator::nextCell(Bool skipEmpties)
 {
 
@@ -1128,6 +1132,7 @@ try_again:
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0CellAndObjectIntersection@@ present-unmatched
 CellAndObjectIntersection::CellAndObjectIntersection()
 {
 	m_cell = NULL;
@@ -1137,6 +1142,7 @@ CellAndObjectIntersection::CellAndObjectIntersection()
 }
 
 //-----------------------------------------------------------------------------
+// ??1CellAndObjectIntersection@@ present-unmatched
 CellAndObjectIntersection::~CellAndObjectIntersection()
 {
 	DEBUG_ASSERTCRASH(m_prevCoi == NULL && m_nextCoi == NULL, ("destroying a linked COI"));
@@ -1144,6 +1150,7 @@ CellAndObjectIntersection::~CellAndObjectIntersection()
 }
 
 //-----------------------------------------------------------------------------
+// ?friend_addToCellList@CellAndObjectIntersection@@ present-unmatched
 void CellAndObjectIntersection::friend_addToCellList(CellAndObjectIntersection **pListHead)
 {
 	DEBUG_ASSERTCRASH(m_prevCoi == NULL && m_nextCoi == NULL && *pListHead != this, ("trying to add a cell to list, but it appears to already be in a list"));
@@ -1155,6 +1162,7 @@ void CellAndObjectIntersection::friend_addToCellList(CellAndObjectIntersection *
 }
 
 //-----------------------------------------------------------------------------
+// ?friend_removeFromCellList@CellAndObjectIntersection@@ present-unmatched
 void CellAndObjectIntersection::friend_removeFromCellList(CellAndObjectIntersection **pListHead)
 {
 #define DEBUG_ASSERTINLIST(c) \
@@ -1187,6 +1195,7 @@ void CellAndObjectIntersection::friend_removeFromCellList(CellAndObjectIntersect
 }
 
 //-----------------------------------------------------------------------------
+// ?addCoverage@CellAndObjectIntersection@@ present-unmatched
 void CellAndObjectIntersection::addCoverage(PartitionCell *cell, PartitionData *module)
 {
 	DEBUG_ASSERTCRASH(m_cell == NULL || m_cell == cell, ("mismatch"));
@@ -1206,6 +1215,7 @@ void CellAndObjectIntersection::addCoverage(PartitionCell *cell, PartitionData *
 }
 
 //-----------------------------------------------------------------------------
+// ?removeAllCoverage@CellAndObjectIntersection@@ present-unmatched
 void CellAndObjectIntersection::removeAllCoverage()
 {
 	if (m_module == NULL)
@@ -1224,6 +1234,7 @@ void CellAndObjectIntersection::removeAllCoverage()
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionCell@@ present-unmatched
 PartitionCell::PartitionCell()
 {
 	//Added By Sadullah Nader
@@ -1257,6 +1268,7 @@ PartitionCell::PartitionCell()
 }
 
 //-----------------------------------------------------------------------------
+// ??1PartitionCell@@ present-unmatched
 PartitionCell::~PartitionCell()
 {
 	DEBUG_ASSERTCRASH(m_firstCoiInCell == NULL && m_coiCount == 0, ("destroying a nonempty PartitionCell"));
@@ -1264,6 +1276,7 @@ PartitionCell::~PartitionCell()
 }
 
 //-----------------------------------------------------------------------------
+// ?invalidateShroudedStatusForAllCois@PartitionCell@@ present-unmatched
 void PartitionCell::invalidateShroudedStatusForAllCois(Int playerIndex)
 {
 	for (CellAndObjectIntersection* coi = m_firstCoiInCell; coi; coi = coi->getNextCoi())
@@ -1273,6 +1286,7 @@ void PartitionCell::invalidateShroudedStatusForAllCois(Int playerIndex)
 }
 
 //-----------------------------------------------------------------------------
+// ?addLooker@PartitionCell@@ present-unmatched
 void PartitionCell::addLooker(Int playerIndex)
 {
 	CellShroudStatus oldShroud = getShroudStatusForPlayer( playerIndex );
@@ -1304,6 +1318,7 @@ void PartitionCell::addLooker(Int playerIndex)
 }
 
 //-----------------------------------------------------------------------------
+// ?removeLooker@PartitionCell@@ present-unmatched
 void PartitionCell::removeLooker(Int playerIndex)
 {
 	CellShroudStatus oldShroud = getShroudStatusForPlayer( playerIndex );
@@ -1340,6 +1355,7 @@ void PartitionCell::removeLooker(Int playerIndex)
 }
 
 //-----------------------------------------------------------------------------
+// ?addShrouder@PartitionCell@@ present-unmatched
 void PartitionCell::addShrouder( Int playerIndex )
 {
 	CellShroudStatus oldShroud = getShroudStatusForPlayer( playerIndex );
@@ -1367,6 +1383,7 @@ void PartitionCell::addShrouder( Int playerIndex )
 }
 
 //-----------------------------------------------------------------------------
+// ?removeShrouder@PartitionCell@@ present-unmatched
 void PartitionCell::removeShrouder( Int playerIndex )
 {
 	// Decreasing active shroud: just decrement activeLevel.  This will never result in a client change.
@@ -1383,6 +1400,7 @@ void PartitionCell::removeShrouder( Int playerIndex )
 //}
 
 //-----------------------------------------------------------------------------
+// ?getShroudStatusForPlayer@PartitionCell@@ present-unmatched
 CellShroudStatus PartitionCell::getShroudStatusForPlayer( Int playerIndex ) const
 {
 	// There are now three answers, but the question still requires "to whom"
@@ -1396,6 +1414,7 @@ CellShroudStatus PartitionCell::getShroudStatusForPlayer( Int playerIndex ) cons
 }
 
 //-----------------------------------------------------------------------------
+// ?getThreatValue@PartitionCell@@ present-unmatched
 UnsignedInt PartitionCell::getThreatValue( Int playerIndex )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1405,6 +1424,7 @@ UnsignedInt PartitionCell::getThreatValue( Int playerIndex )
 }
 
 //-----------------------------------------------------------------------------
+// ?addThreatValue@PartitionCell@@ present-unmatched
 void PartitionCell::addThreatValue( Int playerIndex, UnsignedInt threatValue )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1417,6 +1437,7 @@ void PartitionCell::addThreatValue( Int playerIndex, UnsignedInt threatValue )
 }
 
 //-----------------------------------------------------------------------------
+// ?removeThreatValue@PartitionCell@@ present-unmatched
 void PartitionCell::removeThreatValue( Int playerIndex, UnsignedInt threatValue )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1429,6 +1450,7 @@ void PartitionCell::removeThreatValue( Int playerIndex, UnsignedInt threatValue 
 }
 
 //-----------------------------------------------------------------------------
+// ?getCashValue@PartitionCell@@ present-unmatched
 UnsignedInt PartitionCell::getCashValue( Int playerIndex )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1438,6 +1460,7 @@ UnsignedInt PartitionCell::getCashValue( Int playerIndex )
 }
 
 //-----------------------------------------------------------------------------
+// ?addCashValue@PartitionCell@@ present-unmatched
 void PartitionCell::addCashValue( Int playerIndex, UnsignedInt cashValue )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1450,6 +1473,7 @@ void PartitionCell::addCashValue( Int playerIndex, UnsignedInt cashValue )
 }
 
 //-----------------------------------------------------------------------------
+// ?removeCashValue@PartitionCell@@ present-unmatched
 void PartitionCell::removeCashValue( Int playerIndex, UnsignedInt cashValue )
 {
 	if (playerIndex >= 0 && playerIndex < MAX_PLAYER_COUNT) {
@@ -1462,6 +1486,7 @@ void PartitionCell::removeCashValue( Int playerIndex, UnsignedInt cashValue )
 }
 
 //-----------------------------------------------------------------------------
+// ?friend_addToCellList@PartitionCell@@ present-unmatched
 void PartitionCell::friend_addToCellList(CellAndObjectIntersection *coi)
 {
 	if (coi)
@@ -1472,6 +1497,7 @@ void PartitionCell::friend_addToCellList(CellAndObjectIntersection *coi)
 }
 
 //-----------------------------------------------------------------------------
+// ?friend_removeFromCellList@PartitionCell@@ present-unmatched
 void PartitionCell::friend_removeFromCellList(CellAndObjectIntersection *coi)
 {
 	if (coi)
@@ -1482,6 +1508,7 @@ void PartitionCell::friend_removeFromCellList(CellAndObjectIntersection *coi)
 }
 
 //-----------------------------------------------------------------------------
+// ?getCellCenterPos@PartitionCell@@ present-unmatched
 void PartitionCell::getCellCenterPos(Real& x, Real& y)
 {
 	ThePartitionManager->getCellCenterPos(m_cellX, m_cellY, x, y);
@@ -1489,6 +1516,7 @@ void PartitionCell::getCellCenterPos(Real& x, Real& y)
 
 //-----------------------------------------------------------------------------
 #ifdef _DEBUG
+// ?validateCoiList@PartitionCell@@ present-unmatched
 void PartitionCell::validateCoiList()
 {
 	CellAndObjectIntersection *nextCoi = 0, *prevCoi = 0;
@@ -1506,6 +1534,7 @@ void PartitionCell::validateCoiList()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@PartitionCell@@ present-unmatched
 void PartitionCell::crc( Xfer *xfer )
 {
 
@@ -1518,6 +1547,7 @@ void PartitionCell::crc( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Xfer Method */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@PartitionCell@@ present-unmatched
 void PartitionCell::xfer( Xfer *xfer )
 {
 
@@ -1534,6 +1564,7 @@ void PartitionCell::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@PartitionCell@@ present-unmatched
 void PartitionCell::loadPostProcess( void )
 {
 
@@ -1544,6 +1575,7 @@ void PartitionCell::loadPostProcess( void )
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionData@@ present-unmatched
 PartitionData::PartitionData()
 {
 	//DEBUG_LOG(("create pd %08lx\n",this));
@@ -1568,6 +1600,7 @@ PartitionData::PartitionData()
 }
 
 //-----------------------------------------------------------------------------
+// ??1PartitionData@@ present-unmatched
 PartitionData::~PartitionData()
 {
 	//DEBUG_LOG(("toss pd for pd %08lx obj %08lx\n",this,m_object));
@@ -1583,6 +1616,7 @@ PartitionData::~PartitionData()
 } 
 
 //-----------------------------------------------------------------------------
+// ?getControllingPlayerIndex@PartitionData@@ present-unmatched
 Int PartitionData::getControllingPlayerIndex() const
 {
 	const Player* p = getObject()->getControllingPlayer();
@@ -1600,6 +1634,7 @@ Int PartitionData::getControllingPlayerIndex() const
 
 //-----------------------------------------------------------------------------
 // only used to restore state after map border resizing and/or xfer!
+// ?friend_setShroudednessPrevious@PartitionData@@ present-unmatched
 void PartitionData::friend_setShroudednessPrevious(Int playerIndex, ObjectShroudStatus status) 
 {
 	m_shroudednessPrevious[playerIndex] = status;
@@ -1615,6 +1650,7 @@ void PartitionData::friend_setShroudednessPrevious(Int playerIndex, ObjectShroud
 } 
 
 //-----------------------------------------------------------------------------
+// ?getShroudedStatus@PartitionData@@ present-unmatched
 ObjectShroudStatus PartitionData::getShroudedStatus(Int playerIndex)
 {
 	// sanity
@@ -1725,6 +1761,7 @@ ObjectShroudStatus PartitionData::getShroudedStatus(Int playerIndex)
 }
 
 //-----------------------------------------------------------------------------
+// ?removeAllTouchedCells@PartitionData@@ present-unmatched
 void PartitionData::removeAllTouchedCells()
 {
 	CellAndObjectIntersection *coi = m_coiArray;
@@ -1742,6 +1779,7 @@ void PartitionData::removeAllTouchedCells()
 }
 
 // -----------------------------------------------------------------------------
+// ?addSubPixToCoverage@PartitionData@@ present-unmatched
 void PartitionData::addSubPixToCoverage(PartitionCell *cell)
 {
 	DEBUG_ASSERTCRASH(m_coiInUseCount < m_coiArrayCount, ("not enough cois allocated for this object"));
@@ -1772,6 +1810,7 @@ void PartitionData::addSubPixToCoverage(PartitionCell *cell)
 }
 
 // -----------------------------------------------------------------------------
+// ?doRectFill@PartitionData@@ present-unmatched
 void PartitionData::doRectFill(
 	Real centerX,
 	Real centerY,
@@ -1830,6 +1869,7 @@ void PartitionData::doRectFill(
 }
 
 // -----------------------------------------------------------------------------
+// ?hLineCircle@PartitionData@@ present-unmatched
 void PartitionData::hLineCircle(Int x1, Int x2, Int y)
 {
 	for (Int x = x1; x <= x2; ++x)
@@ -1843,6 +1883,7 @@ void PartitionData::hLineCircle(Int x1, Int x2, Int y)
 }
 
 // -----------------------------------------------------------------------------
+// ?doCircleFill@PartitionData@@ present-unmatched
 void PartitionData::doCircleFill(
 	Real centerX,
 	Real centerY,
@@ -1877,6 +1918,7 @@ void PartitionData::doCircleFill(
 }
 
 // -----------------------------------------------------------------------------
+// ?doSmallFill@PartitionData@@ present-unmatched
 void PartitionData::doSmallFill(
 	Real centerX,
 	Real centerY,
@@ -1923,6 +1965,7 @@ void PartitionData::doSmallFill(
 }
 
 //-----------------------------------------------------------------------------
+// ?addPossibleCollisions@PartitionData@@ present-unmatched
 void PartitionData::addPossibleCollisions(PartitionContactList *ctList)
 {
 // actually, we do occasionally want to detect collisions of dead AIs.
@@ -1960,6 +2003,7 @@ void PartitionData::addPossibleCollisions(PartitionContactList *ctList)
 }
 
 //-----------------------------------------------------------------------------
+// ?collidesWith@PartitionData@@ present-unmatched
 Bool PartitionData::collidesWith(const PartitionData *that, CollideLocAndNormal *cinfo) const
 {
 	const Object *thisObj = this->getObject();
@@ -1997,6 +2041,7 @@ Bool PartitionData::collidesWith(const PartitionData *that, CollideLocAndNormal 
 
 //-----------------------------------------------------------------------------
 /* See if thisObj collides with geom at pos & angle. */
+// ?geomCollidesWithGeom@PartitionManager@@ present-unmatched
 Bool PartitionManager::geomCollidesWithGeom(const Coord3D* pos1, 
 		const GeometryInfo& geom1,
 		Real angle1,
@@ -2030,6 +2075,7 @@ Bool PartitionManager::geomCollidesWithGeom(const Coord3D* pos1,
 }
 
 //-----------------------------------------------------------------------------
+// ?updateCellsTouched@PartitionData@@ present-unmatched
 void PartitionData::updateCellsTouched()
 {
 	GeometryType geom;
@@ -2117,6 +2163,7 @@ void PartitionData::updateCellsTouched()
 }
 
 //-----------------------------------------------------------------------------
+// ?invalidateShroudedStatusForPlayer@PartitionData@@ present-unmatched
 void PartitionData::invalidateShroudedStatusForPlayer(Int playerIndex) 
 { 
 #ifndef DISABLE_INVALID_PREVENTION
@@ -2126,6 +2173,7 @@ void PartitionData::invalidateShroudedStatusForPlayer(Int playerIndex)
 }
 
 //-----------------------------------------------------------------------------
+// ?invalidateShroudedStatusForAllPlayers@PartitionData@@ present-unmatched
 void PartitionData::invalidateShroudedStatusForAllPlayers() 
 { 
 	for (Int i = 0; i < MAX_PLAYER_COUNT; i++) 
@@ -2139,6 +2187,7 @@ static AsciiString theObjName;
 #endif
 
 //-----------------------------------------------------------------------------
+// ?calcMaxCoiForShape@PartitionData@@ present-unmatched
 Int PartitionData::calcMaxCoiForShape(GeometryType geom, Real majorRadius, Real minorRadius, Bool isSmall)
 {
 	Int result;
@@ -2180,6 +2229,7 @@ Int PartitionData::calcMaxCoiForShape(GeometryType geom, Real majorRadius, Real 
 }
 
 //-----------------------------------------------------------------------------
+// ?calcMaxCoiForObject@PartitionData@@ present-unmatched
 Int PartitionData::calcMaxCoiForObject()
 {
 	Object *obj = getObject();
@@ -2216,6 +2266,7 @@ void PartitionData::makeDirty(Bool needToUpdateCells)
 }
 
 //-----------------------------------------------------------------------------
+// ?allocCoiArray@PartitionData@@ present-unmatched
 void PartitionData::allocCoiArray()
 {
 	DEBUG_ASSERTCRASH(m_coiArrayCount == 0 && m_coiArray == NULL, ("hmm, coi should probably be null here"));
@@ -2227,6 +2278,7 @@ void PartitionData::allocCoiArray()
 }
 
 //-----------------------------------------------------------------------------
+// ?freeCoiArray@PartitionData@@ present-unmatched
 void PartitionData::freeCoiArray()
 {
 	delete [] m_coiArray;	// yes, it's OK to call this on null...
@@ -2237,6 +2289,7 @@ void PartitionData::freeCoiArray()
 }
 
 //-----------------------------------------------------------------------------
+// ?attachToObject@PartitionData@@ present-unmatched
 void PartitionData::attachToObject(Object* object)
 {
 
@@ -2274,6 +2327,7 @@ void PartitionData::attachToObject(Object* object)
 }
 
 //-----------------------------------------------------------------------------
+// ?detachFromObject@PartitionData@@ present-unmatched
 void PartitionData::detachFromObject()
 {
 	// this is a little hokey... if we are in the midst of processing the contact
@@ -2300,6 +2354,7 @@ void PartitionData::detachFromObject()
 }
 
 //-----------------------------------------------------------------------------
+// ?attachToGhostObject@PartitionData@@ present-unmatched
 void PartitionData::attachToGhostObject(GhostObject* object)
 {
 
@@ -2322,6 +2377,7 @@ void PartitionData::attachToGhostObject(GhostObject* object)
 }
 
 //-----------------------------------------------------------------------------
+// ?detachFromGhostObject@PartitionData@@ present-unmatched
 void PartitionData::detachFromGhostObject(void)
 {
 	// this is a little hokey... if we are in the midst of processing the contact
@@ -2366,6 +2422,7 @@ inline UnsignedInt hash2ints(Int a, Int b)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?addToContactList@PartitionContactList@@ present-unmatched
 void PartitionContactList::addToContactList( PartitionData *obj, PartitionData *other )
 {
 	if (obj == other || obj == NULL || other == NULL)
@@ -2455,6 +2512,7 @@ aggcount,aggtotal/(aggcount*PartitionContactList_SOCKET_COUNT),(aggfull*100)/(ag
 }
 
 //-----------------------------------------------------------------------------
+// ?removeSpecificPartitionData@PartitionContactList@@ present-unmatched
 void PartitionContactList::removeSpecificPartitionData(PartitionData* data)
 {
 	for (PartitionContactListNode* cd = m_contactList; cd; cd = cd->m_next)
@@ -2468,6 +2526,7 @@ void PartitionContactList::removeSpecificPartitionData(PartitionData* data)
 }
 
 //-----------------------------------------------------------------------------
+// ?resetContactList@PartitionContactList@@ present-unmatched
 void PartitionContactList::resetContactList()
 {
 	// remove items from hash table 
@@ -2483,6 +2542,7 @@ void PartitionContactList::resetContactList()
 }
 
 //-----------------------------------------------------------------------------
+// ?processContactList@PartitionContactList@@ present-unmatched
 void PartitionContactList::processContactList()
 {
 	for (PartitionContactListNode* cd = m_contactList; cd; cd = cd->m_next) 
@@ -2548,6 +2608,7 @@ void PartitionContactList::processContactList()
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionManager@@ present-unmatched
 PartitionManager::PartitionManager()
 {
 	m_moduleList = NULL;
@@ -2566,6 +2627,7 @@ PartitionManager::PartitionManager()
 } 
 
 //-----------------------------------------------------------------------------
+// ??1PartitionManager@@ present-unmatched
 PartitionManager::~PartitionManager()
 {
 
@@ -2598,6 +2660,7 @@ static void calcHeights(const Region3D& world, Real cellSize, Int x, Int y, Real
 #endif
 
 //-----------------------------------------------------------------------------
+// ?init@PartitionManager@@ present-unmatched
 void PartitionManager::init()
 {
 	m_cellSize = TheGlobalData->m_partitionCellSize;
@@ -2656,6 +2719,7 @@ void PartitionManager::init()
 
 //-----------------------------------------------------------------------------
 #ifdef DUMP_PERF_STATS
+// ?getPMStats@PartitionManager@@ present-unmatched
 void PartitionManager::getPMStats(double& gcoTimeThisFrameTotal, double& gcoTimeThisFrameAvg)
 {
 	Int64 freq64;
@@ -2669,6 +2733,7 @@ void PartitionManager::getPMStats(double& gcoTimeThisFrameTotal, double& gcoTime
 #endif
 
 //-----------------------------------------------------------------------------
+// ?reset@PartitionManager@@ present-unmatched
 void PartitionManager::reset()
 {
 #ifdef DUMP_PERF_STATS
@@ -2686,6 +2751,7 @@ void PartitionManager::reset()
 }
 
 //-----------------------------------------------------------------------------
+// ?shutdown@PartitionManager@@ present-unmatched
 void PartitionManager::shutdown()
 {
 	m_updatedSinceLastReset = false;
@@ -2722,6 +2788,7 @@ void PartitionManager::shutdown()
 
 //-----------------------------------------------------------------------------
 //DECLARE_PERF_TIMER(PartitionManager_update)
+// ?update@PartitionManager@@ present-unmatched
 void PartitionManager::update()
 {
 	//USE_PERF_TIMER(PartitionManager_update)
@@ -2839,6 +2906,7 @@ void PartitionManager::update()
 }  // end update
 
 //------------------------------------------------------------------------------
+// ?registerObject@PartitionManager@@ present-unmatched
 void PartitionManager::registerObject( Object* object )
 {
 	// sanity
@@ -2869,6 +2937,7 @@ void PartitionManager::registerObject( Object* object )
 }
 
 //------------------------------------------------------------------------------
+// ?unRegisterObject@PartitionManager@@ present-unmatched
 void PartitionManager::unRegisterObject( Object* object )
 {
 	// sanity
@@ -2914,6 +2983,7 @@ void PartitionManager::unRegisterObject( Object* object )
 }
 
 //------------------------------------------------------------------------------
+// ?registerGhostObject@PartitionManager@@ present-unmatched
 void PartitionManager::registerGhostObject( GhostObject* object)
 {
 	// sanity
@@ -2942,6 +3012,7 @@ void PartitionManager::registerGhostObject( GhostObject* object)
 }
 
 //------------------------------------------------------------------------------
+// ?unRegisterGhostObject@PartitionManager@@ present-unmatched
 void PartitionManager::unRegisterGhostObject( GhostObject* object )
 {
 	// sanity
@@ -2973,6 +3044,7 @@ void PartitionManager::unRegisterGhostObject( GhostObject* object )
 /** 
 	Reveals the map for the given player, but does not override Shroud generation.  (Script)
 */
+// ?revealMapForPlayer@PartitionManager@@ present-unmatched
 void PartitionManager::revealMapForPlayer( Int playerIndex )
 {
 	// By looking and then stopping on every cell, I clear all Passive Shroud
@@ -3017,6 +3089,7 @@ void PartitionManager::undoRevealMapForPlayerPermanently( Int playerIndex )
 /** 
 	Resets the shroud for the given player with passive shroud (can re-explore).
 	*/
+// ?shroudMapForPlayer@PartitionManager@@ present-unmatched
 void PartitionManager::shroudMapForPlayer( Int playerIndex )
 {
 	//First make sure no lingering looks will leave holes when they aren't wanted.
@@ -3031,6 +3104,7 @@ void PartitionManager::shroudMapForPlayer( Int playerIndex )
 }
 
 //-----------------------------------------------------------------------------
+// ?refreshShroudForLocalPlayer@PartitionManager@@ present-unmatched
 void PartitionManager::refreshShroudForLocalPlayer()
 {
 	// This is a drawing refresh only, and so is allowed to use the Local Player.
@@ -3071,6 +3145,7 @@ CellShroudStatus PartitionManager::getShroudStatusForPlayer(Int playerIndex, con
 
 
 //-----------------------------------------------------------------------------
+// ?getPropShroudStatusForPlayer@PartitionManager@@ present-unmatched
 ObjectShroudStatus PartitionManager::getPropShroudStatusForPlayer(Int playerIndex, const Coord3D *loc ) const
 {
 	Int x, y;
@@ -3100,6 +3175,7 @@ ObjectShroudStatus PartitionManager::getPropShroudStatusForPlayer(Int playerInde
 
 #ifdef FASTER_GCO
 //-----------------------------------------------------------------------------
+// ?calcMinRadius@PartitionManager@@ present-unmatched
 Int PartitionManager::calcMinRadius(const ICoord2D& cur)
 {
 	/*
@@ -3158,6 +3234,7 @@ Int PartitionManager::calcMinRadius(const ICoord2D& cur)
 
 #ifdef FASTER_GCO
 //-----------------------------------------------------------------------------
+// ?calcRadiusVec@PartitionManager@@ present-unmatched
 void PartitionManager::calcRadiusVec()
 {
 	Real cellSize = getCellSize();
@@ -3205,6 +3282,7 @@ void PartitionManager::calcRadiusVec()
 
 //-----------------------------------------------------------------------------
 //DECLARE_PERF_TIMER(getClosestObjects)
+// ?getClosestObjects@PartitionManager@@ present-unmatched
 Object *PartitionManager::getClosestObjects(
 	const Object *obj, 
 	const Coord3D *pos, 
@@ -3451,6 +3529,7 @@ Object *PartitionManager::getClosestObjects(
 
 
 //-----------------------------------------------------------------------------
+// ?getClosestObject@PartitionManager@@ present-unmatched
 Object *PartitionManager::getClosestObject(
 	const Object *obj, 
 	Real maxDist, 
@@ -3464,6 +3543,7 @@ Object *PartitionManager::getClosestObject(
 }
 
 //-----------------------------------------------------------------------------
+// ?getClosestObject@PartitionManager@@ present-unmatched
 Object *PartitionManager::getClosestObject(
 	const Coord3D *pos, 
 	Real maxDist, 
@@ -3477,6 +3557,7 @@ Object *PartitionManager::getClosestObject(
 }
 
 //-----------------------------------------------------------------------------
+// ?getVectorTo@PartitionManager@@ present-unmatched
 void PartitionManager::getVectorTo(const Object *obj, const Object *otherObj, DistanceCalculationType dc, Coord3D& vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3485,6 +3566,7 @@ void PartitionManager::getVectorTo(const Object *obj, const Object *otherObj, Di
 }
 
 //-----------------------------------------------------------------------------
+// ?getVectorTo@PartitionManager@@ present-unmatched
 void PartitionManager::getVectorTo(const Object *obj, const Coord3D *pos, DistanceCalculationType dc, Coord3D& vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3493,6 +3575,7 @@ void PartitionManager::getVectorTo(const Object *obj, const Coord3D *pos, Distan
 }
 
 //-----------------------------------------------------------------------------
+// ?getDistanceSquared@PartitionManager@@ present-unmatched
 Real PartitionManager::getDistanceSquared(const Object *obj, const Object *otherObj, DistanceCalculationType dc, Coord3D *vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3505,6 +3588,7 @@ Real PartitionManager::getDistanceSquared(const Object *obj, const Object *other
 }
 
 //-----------------------------------------------------------------------------
+// ?getDistanceSquared@PartitionManager@@ present-unmatched
 Real PartitionManager::getDistanceSquared(const Object *obj, const Coord3D *pos, DistanceCalculationType dc, Coord3D *vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3518,6 +3602,7 @@ Real PartitionManager::getDistanceSquared(const Object *obj, const Coord3D *pos,
 
 //-----------------------------------------------------------------------------
 // Gets the distance if obj were at goalPos.  Used to calculate attack position paths.
+// ?getGoalDistanceSquared@PartitionManager@@ present-unmatched
 Real PartitionManager::getGoalDistanceSquared(const Object *obj, const Coord3D *goalPos, const Object *otherObj, DistanceCalculationType dc, Coord3D *vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3531,6 +3616,7 @@ Real PartitionManager::getGoalDistanceSquared(const Object *obj, const Coord3D *
 
 //-----------------------------------------------------------------------------
 // Gets the distance if obj were at goalPos.  Used to calculate attack position paths.
+// ?getGoalDistanceSquared@PartitionManager@@ present-unmatched
 Real PartitionManager::getGoalDistanceSquared(const Object *obj, const Coord3D *goalPos, const Coord3D *otherPos, DistanceCalculationType dc, Coord3D *vec)
 {
 	DistCalcProc distProc = theDistCalcProcs[dc];
@@ -3543,12 +3629,15 @@ Real PartitionManager::getGoalDistanceSquared(const Object *obj, const Coord3D *
 }
 
 //-----------------------------------------------------------------------------
+#pragma optimize("s", on)
 Real PartitionManager::getRelativeAngle2D( const Object *obj, const Object *otherObj )
 {
 	return getRelativeAngle2D(obj, otherObj->getPosition());
 }
+#pragma optimize("", on)
 
 //-----------------------------------------------------------------------------
+#pragma optimize("s", on)
 Real PartitionManager::getRelativeAngle2D( const Object *obj, const Coord3D *pos )
 {
 	Coord3D v;
@@ -3596,8 +3685,10 @@ Real PartitionManager::getRelativeAngle2D( const Object *obj, const Coord3D *pos
 
 	return value;
 }
+#pragma optimize("", on)
 
 //-----------------------------------------------------------------------------
+// ?iterateObjectsInRange@PartitionManager@@ present-unmatched
 SimpleObjectIterator *PartitionManager::iterateObjectsInRange(
 	const Object *obj, 
 	Real maxDist, 
@@ -3618,6 +3709,7 @@ SimpleObjectIterator *PartitionManager::iterateObjectsInRange(
 }
 
 //-----------------------------------------------------------------------------
+// ?iterateObjectsInRange@PartitionManager@@ present-unmatched
 SimpleObjectIterator *PartitionManager::iterateObjectsInRange(
 	const Coord3D *pos, 
 	Real maxDist, 
@@ -3638,6 +3730,7 @@ SimpleObjectIterator *PartitionManager::iterateObjectsInRange(
 }
 
 //-----------------------------------------------------------------------------
+// ?iteratePotentialCollisions@PartitionManager@@ present-unmatched
 SimpleObjectIterator* PartitionManager::iteratePotentialCollisions(
 	const Coord3D* pos, 
 	const GeometryInfo& geom,
@@ -3662,6 +3755,7 @@ SimpleObjectIterator* PartitionManager::iteratePotentialCollisions(
 }
 
 //-----------------------------------------------------------------------------
+// ?isColliding@PartitionManager@@ present-unmatched
 Bool PartitionManager::isColliding( const Object *a, const Object *b ) const
 {
 	//Make sure we have objects
@@ -3685,6 +3779,7 @@ Bool PartitionManager::isColliding( const Object *a, const Object *b ) const
 }
 
 //-----------------------------------------------------------------------------
+// ?iterateAllObjects@PartitionManager@@ present-unmatched
 SimpleObjectIterator *PartitionManager::iterateAllObjects(PartitionFilter **filters)
 {
 	MemoryPoolObjectHolder iterHolder;
@@ -3710,6 +3805,7 @@ SimpleObjectIterator *PartitionManager::iterateAllObjects(PartitionFilter **filt
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?tryPosition@PartitionManager@@ present-unmatched
 Bool PartitionManager::tryPosition( const Coord3D *center,
 																		Real dist,
 																		Real angle,
@@ -3888,6 +3984,7 @@ static Real ringSpacing = 5.0f;
 	* return FALSE no legal position exists or invalid params 
 	*/
 //-------------------------------------------------------------------------------------------------
+// ?findPositionAround@PartitionManager@@ present-unmatched
 Bool PartitionManager::findPositionAround( const Coord3D *center, 
 																					 const FindPositionOptions *options, 
 																					 Coord3D *result )
@@ -3970,6 +4067,7 @@ Bool PartitionManager::findPositionAround( const Coord3D *center,
 // is in Object where Allies make sense.  AddLooker literally just adds a looker for the player you specify.
 // This way, Full map reveals and Observer mode active look will not carry over to all 
 // allies.  They'll use the RevealWholeDamnMap series, which call addLooker directly.
+// ?doShroudReveal@PartitionManager@@ present-unmatched
 void PartitionManager::doShroudReveal(Real centerX, Real centerY, Real radius, PlayerMaskType playerMask) 
 {
 	Int cellCenterX, cellCenterY;
@@ -3994,6 +4092,7 @@ void PartitionManager::doShroudReveal(Real centerX, Real centerY, Real radius, P
 }
 	
 //-----------------------------------------------------------------------------
+// ?processPendingUndoShroudRevealQueue@PartitionManager@@ present-unmatched
 void PartitionManager::processPendingUndoShroudRevealQueue( Bool considerTimestamp )
 {
 	//Keep going until the front one is in the future.  UndoShroudReveal on each one you process.
@@ -4016,6 +4115,7 @@ void PartitionManager::processPendingUndoShroudRevealQueue( Bool considerTimesta
 }
 
 //-----------------------------------------------------------------------------
+// ?processEntirePendingUndoShroudRevealQueue@PartitionManager@@ present-unmatched
 void PartitionManager::processEntirePendingUndoShroudRevealQueue()
 {
 	// Something major is about to happen, so we need to rush through our queue and get everything in order.
@@ -4026,6 +4126,7 @@ void PartitionManager::processEntirePendingUndoShroudRevealQueue()
 }
 
 //-----------------------------------------------------------------------------
+// ?resetPendingUndoShroudRevealQueue@PartitionManager@@ present-unmatched
 void PartitionManager::resetPendingUndoShroudRevealQueue()
 {
 	while( !m_pendingUndoShroudReveals.empty() )
@@ -4037,6 +4138,7 @@ void PartitionManager::resetPendingUndoShroudRevealQueue()
 }
 
 //-----------------------------------------------------------------------------
+// ?undoShroudReveal@PartitionManager@@ present-unmatched
 void PartitionManager::undoShroudReveal(Real centerX, Real centerY, Real radius, PlayerMaskType playerMask) 
 {
 	Int cellCenterX, cellCenterY;
@@ -4059,6 +4161,7 @@ void PartitionManager::undoShroudReveal(Real centerX, Real centerY, Real radius,
 }
 	
 //-----------------------------------------------------------------------------
+// ?queueUndoShroudReveal@PartitionManager@@ present-unmatched
 void PartitionManager::queueUndoShroudReveal(Real centerX, Real centerY, Real radius, PlayerMaskType playerMask) 
 {
 	UnsignedInt now = TheGameLogic->getFrame();
@@ -4074,6 +4177,7 @@ void PartitionManager::queueUndoShroudReveal(Real centerX, Real centerY, Real ra
 }
 	
 //-----------------------------------------------------------------------------
+// ?doShroudCover@PartitionManager@@ present-unmatched
 void PartitionManager::doShroudCover(Real centerX, Real centerY, Real radius, PlayerMaskType playerMask) 
 {
 	Int cellCenterX, cellCenterY;
@@ -4098,6 +4202,7 @@ void PartitionManager::doShroudCover(Real centerX, Real centerY, Real radius, Pl
 }
 
 //-----------------------------------------------------------------------------
+// ?undoShroudCover@PartitionManager@@ present-unmatched
 void PartitionManager::undoShroudCover(Real centerX, Real centerY, Real radius, PlayerMaskType playerMask) 
 {
 	Int cellCenterX, cellCenterY;
@@ -4120,6 +4225,7 @@ void PartitionManager::undoShroudCover(Real centerX, Real centerY, Real radius, 
 }
 
 //-----------------------------------------------------------------------------
+// ?doThreatAffect@PartitionManager@@ present-unmatched
 void PartitionManager::doThreatAffect( Real centerX, Real centerY, Real radius, UnsignedInt threatVal, PlayerMaskType playerMask)
 {
 	Int cellCenterX, cellCenterY;
@@ -4153,6 +4259,7 @@ void PartitionManager::doThreatAffect( Real centerX, Real centerY, Real radius, 
 }
 
 //-----------------------------------------------------------------------------
+// ?undoThreatAffect@PartitionManager@@ present-unmatched
 void PartitionManager::undoThreatAffect( Real centerX, Real centerY, Real radius, UnsignedInt threatVal, PlayerMaskType playerMask)
 {
 	Int cellCenterX, cellCenterY;
@@ -4186,6 +4293,7 @@ void PartitionManager::undoThreatAffect( Real centerX, Real centerY, Real radius
 }
 
 //-----------------------------------------------------------------------------
+// ?doValueAffect@PartitionManager@@ present-unmatched
 void PartitionManager::doValueAffect( Real centerX, Real centerY, Real radius, UnsignedInt valueVal, PlayerMaskType playerMask)
 {
 	Int cellCenterX, cellCenterY;
@@ -4219,6 +4327,7 @@ void PartitionManager::doValueAffect( Real centerX, Real centerY, Real radius, U
 }
 
 //-----------------------------------------------------------------------------
+// ?undoValueAffect@PartitionManager@@ present-unmatched
 void PartitionManager::undoValueAffect( Real centerX, Real centerY, Real radius, UnsignedInt valueVal, PlayerMaskType playerMask)
 {
 	Int cellCenterX, cellCenterY;
@@ -4252,6 +4361,7 @@ void PartitionManager::undoValueAffect( Real centerX, Real centerY, Real radius,
 }
 
 //-----------------------------------------------------------------------------
+// ?getCellCenterPos@PartitionManager@@ present-unmatched
 void PartitionManager::getCellCenterPos(Int x, Int y, Real& xx, Real& yy)
 {
 	DEBUG_ASSERTCRASH(x >= 0 && y >= 0, ("hmm, invalid cell"));
@@ -4312,6 +4422,7 @@ static Int checkTerrainExtreme(PartitionCell* cell, void* userData)
 
 //-----------------------------------------------------------------------------
 #ifdef PM_CACHE_TERRAIN_HEIGHT
+// ?estimateTerrainExtremesAlongLine@PartitionManager@@ present-unmatched
 Bool PartitionManager::estimateTerrainExtremesAlongLine(const Coord3D& pos, const Coord3D& posOther, Real* minZ, Real* maxZ, Coord2D* minZPos, Coord2D* maxZPos)
 {
 	TerrainExtremeData data;
@@ -4329,6 +4440,7 @@ Bool PartitionManager::estimateTerrainExtremesAlongLine(const Coord3D& pos, cons
 
 //-----------------------------------------------------------------------------
 // Uses Bresenham line algorithm from www.gamedev.net.
+// ?iterateCellsAlongLine@PartitionManager@@ present-unmatched
 Int PartitionManager::iterateCellsAlongLine(const Coord3D& pos, const Coord3D& posOther, CellAlongLineProc proc, void* userData)
 {
 	ICoord2D start, end, delta;
@@ -4414,6 +4526,7 @@ Int PartitionManager::iterateCellsAlongLine(const Coord3D& pos, const Coord3D& p
 }
 
 //-----------------------------------------------------------------------------
+// ?iterateCellsBreadthFirst@PartitionManager@@ present-unmatched
 Int PartitionManager::iterateCellsBreadthFirst(const Coord3D *pos, CellBreadthFirstProc proc, void *userData)
 {
 	// starting at pos, iterate the cells in the following manner:
@@ -4497,6 +4610,7 @@ static Real calcDist2D(Real x1, Real y1, Real x2, Real y2)
 }
 
 //-----------------------------------------------------------------------------
+// ?isClearLineOfSightTerrain@PartitionManager@@ present-unmatched
 Bool PartitionManager::isClearLineOfSightTerrain(const Object* obj, const Coord3D& objPos, const Object* other, const Coord3D& otherPos)
 {
 	Coord3D pos, posOther;
@@ -4574,6 +4688,7 @@ Bool PartitionManager::isClearLineOfSightTerrain(const Object* obj, const Coord3
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@PartitionManager@@ present-unmatched
 void PartitionManager::crc( Xfer *xfer )
 {
 
@@ -4591,6 +4706,7 @@ void PartitionManager::crc( Xfer *xfer )
 	* 2: m_pendingUndoShroudReveals stores Unlooks waiting to happen.
 	*/
 // ------------------------------------------------------------------------------------------------
+// ?xfer@PartitionManager@@ present-unmatched
 void PartitionManager::xfer( Xfer *xfer )
 {
 
@@ -4701,12 +4817,14 @@ void PartitionManager::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@PartitionManager@@ present-unmatched
 void PartitionManager::loadPostProcess( void )
 {
 
 }  // end loadPostProcess
 
 //-----------------------------------------------------------------------------
+// ?getGroundOrStructureHeight@PartitionManager@@ present-unmatched
 Real PartitionManager::getGroundOrStructureHeight(Real posx, Real posy)
 {
 	// get the terrain height
@@ -4738,6 +4856,7 @@ Real PartitionManager::getGroundOrStructureHeight(Real posx, Real posy)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getMostValuableLocation@PartitionManager@@ present-unmatched
 void PartitionManager::getMostValuableLocation( Int playerIndex, UnsignedInt whichPlayerTypes, ValueOrThreat valType, Coord3D *outLocation )
 {
 	if (!outLocation)
@@ -4795,6 +4914,7 @@ void PartitionManager::getMostValuableLocation( Int playerIndex, UnsignedInt whi
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getNearestGroupWithValue@PartitionManager@@ present-unmatched
 void PartitionManager::getNearestGroupWithValue( Int playerIndex, UnsignedInt whichPlayerTypes, ValueOrThreat valType,
 															 const Coord3D *sourceLocation, Int valueRequired, Bool greaterThan, Coord3D *outLocation )
 {
@@ -4837,6 +4957,7 @@ void PartitionManager::getNearestGroupWithValue( Int playerIndex, UnsignedInt wh
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?storeFoggedCells@PartitionManager@@ present-unmatched
 void PartitionManager::storeFoggedCells(ShroudStatusStoreRestore &outPartitionStore, Bool storeToFog) const
 {
 	Int i, j, p;
@@ -4877,6 +4998,7 @@ void PartitionManager::storeFoggedCells(ShroudStatusStoreRestore &outPartitionSt
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?restoreFoggedCells@PartitionManager@@ present-unmatched
 void PartitionManager::restoreFoggedCells(const ShroudStatusStoreRestore &inPartitionStore, Bool restoreToFog)
 {
 	Int i, j, p;
@@ -4923,6 +5045,7 @@ void PartitionManager::restoreFoggedCells(const ShroudStatusStoreRestore &inPart
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterRejectBuildings@@ present-unmatched
 PartitionFilterRejectBuildings::PartitionFilterRejectBuildings(const Object *o) : 
 	m_self(o),
 	m_acquireEnemies(false)
@@ -4935,6 +5058,7 @@ PartitionFilterRejectBuildings::PartitionFilterRejectBuildings(const Object *o) 
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterRejectBuildings@@ present-unmatched
 Bool PartitionFilterRejectBuildings::allow( Object *other )
 {
 	// this filter allows all non-buildings
@@ -4982,6 +5106,7 @@ Bool PartitionFilterRejectBuildings::allow( Object *other )
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterFreeOfFog@@ present-unmatched
 Bool PartitionFilterFreeOfFog::allow( Object *other )
 {
 	return other->getShroudedStatus(m_comparisonIndex) == OBJECTSHROUD_CLEAR;
@@ -4989,6 +5114,7 @@ Bool PartitionFilterFreeOfFog::allow( Object *other )
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterInsignificantBuildings@@ present-unmatched
 Bool PartitionFilterInsignificantBuildings::allow( Object *other )
 {
 	if (other->isStructure()) {
@@ -5018,6 +5144,7 @@ Bool PartitionFilterInsignificantBuildings::allow( Object *other )
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterRepulsor@@ present-unmatched
 Bool PartitionFilterRepulsor::allow( Object *other )
 {
 	if (other == m_self) 
@@ -5067,6 +5194,7 @@ Bool PartitionFilterRepulsor::allow( Object *other )
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterIrregularArea@@ present-unmatched
 Bool PartitionFilterIrregularArea::allow( Object *other )
 {
 
@@ -5074,6 +5202,7 @@ Bool PartitionFilterIrregularArea::allow( Object *other )
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterPolygonTrigger@@ present-unmatched
 Bool PartitionFilterPolygonTrigger::allow( Object *other )
 {
 	ICoord3D iPos;
@@ -5085,12 +5214,14 @@ Bool PartitionFilterPolygonTrigger::allow( Object *other )
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterPlayer@@ present-unmatched
 Bool PartitionFilterPlayer::allow( Object *other )
 {
 	return ((m_player == other->getControllingPlayer()) == m_match);
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterPlayerAffiliation@@ present-unmatched
 Bool PartitionFilterPlayerAffiliation::allow( Object *other )
 {
 	Relationship rel = m_player->getRelationship(other->getTeam());
@@ -5123,12 +5254,14 @@ Bool PartitionFilterPlayerAffiliation::allow( Object *other )
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterThing@@ present-unmatched
 Bool PartitionFilterThing::allow( Object *other )
 {
 	return (m_tThing->isEquivalentTo(other->getTemplate()) == m_match);
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterGarrisonable@@ present-unmatched
 Bool PartitionFilterGarrisonable::allow( Object *other )
 {
 	ContainModuleInterface *cmi = other->getContain();
@@ -5140,18 +5273,21 @@ Bool PartitionFilterGarrisonable::allow( Object *other )
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterGarrisonableByPlayer@@ present-unmatched
 Bool PartitionFilterGarrisonableByPlayer::allow( Object *other )
 {
 	return TheActionManager->canPlayerGarrison(m_player, other, m_commandSource) == m_match;
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterUnmannedObject@@ present-unmatched
 Bool PartitionFilterUnmannedObject::allow( Object *other )
 {
 	return (other->isDisabledByType( DISABLED_UNMANNED ) == m_match);
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterValidCommandButtonTarget@@ present-unmatched
 Bool PartitionFilterValidCommandButtonTarget::allow( Object *other )
 {
 	return (m_commandButton->isValidToUseOn(m_source, other, NULL, m_commandSource) == m_match);
@@ -5162,6 +5298,7 @@ Bool PartitionFilterValidCommandButtonTarget::allow( Object *other )
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterIsFlying@@ present-unmatched
 Bool PartitionFilterIsFlying::allow(Object *objOther)
 {
 	return objOther->isUsingAirborneLocomotor();
@@ -5172,6 +5309,7 @@ Bool PartitionFilterIsFlying::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterWouldCollide@@ present-unmatched
 PartitionFilterWouldCollide::PartitionFilterWouldCollide(const Coord3D& pos, const GeometryInfo& geom, Real angle, Bool desired) :
   m_position(pos),
 	m_geom(geom),
@@ -5182,6 +5320,7 @@ PartitionFilterWouldCollide::PartitionFilterWouldCollide(const Coord3D& pos, con
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterWouldCollide@@ present-unmatched
 Bool PartitionFilterWouldCollide::allow(Object *objOther)
 {
 	CollideInfo thisInfo(&m_position, m_geom, m_angle);
@@ -5218,6 +5357,7 @@ Bool PartitionFilterWouldCollide::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterSamePlayer@@ present-unmatched
 Bool PartitionFilterSamePlayer::allow(Object *objOther)
 {
 	if (m_player == objOther->getControllingPlayer())
@@ -5231,6 +5371,7 @@ Bool PartitionFilterSamePlayer::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterRelationship@@ present-unmatched
 Bool PartitionFilterRelationship::allow(Object *objOther)
 {
 	Relationship r = m_obj->getRelationship(objOther);
@@ -5245,11 +5386,13 @@ Bool PartitionFilterRelationship::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterAcceptOnTeam@@ present-unmatched
 PartitionFilterAcceptOnTeam::PartitionFilterAcceptOnTeam(const Team *team) : m_team(team)
 {
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterAcceptOnTeam@@ present-unmatched
 Bool PartitionFilterAcceptOnTeam::allow(Object *objOther) 
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5260,12 +5403,14 @@ Bool PartitionFilterAcceptOnTeam::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterAcceptOnSquad@@ present-unmatched
 PartitionFilterAcceptOnSquad::PartitionFilterAcceptOnSquad(const Squad *squad) : m_squad(squad)
 {
 }
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterAcceptOnSquad@@ present-unmatched
 Bool PartitionFilterAcceptOnSquad::allow(Object *objOther)
 {
 	return (m_squad && m_squad->isOnSquad(objOther) && !objOther->isEffectivelyDead());
@@ -5275,6 +5420,7 @@ Bool PartitionFilterAcceptOnSquad::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterSameMapStatus@@ present-unmatched
 Bool PartitionFilterSameMapStatus::allow(Object* objOther)
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5285,6 +5431,7 @@ Bool PartitionFilterSameMapStatus::allow(Object* objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterOnMap@@ present-unmatched
 Bool PartitionFilterOnMap::allow(Object* objOther)
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5295,6 +5442,7 @@ Bool PartitionFilterOnMap::allow(Object* objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterAlive@@ present-unmatched
 Bool PartitionFilterAlive::allow( Object *objOther )
 {
 	return !objOther->isEffectivelyDead();
@@ -5304,6 +5452,7 @@ Bool PartitionFilterAlive::allow( Object *objOther )
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterRejectBehind@@ present-unmatched
 PartitionFilterRejectBehind::PartitionFilterRejectBehind( Object *obj )
 {
 	m_obj = obj;
@@ -5311,6 +5460,7 @@ PartitionFilterRejectBehind::PartitionFilterRejectBehind( Object *obj )
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterRejectBehind@@ present-unmatched
 Bool PartitionFilterRejectBehind::allow( Object *other )
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5335,12 +5485,14 @@ Bool PartitionFilterRejectBehind::allow( Object *other )
 
 
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterLineOfSight@@ present-unmatched
 PartitionFilterLineOfSight::PartitionFilterLineOfSight(const Object *obj)
 {
 	m_obj = obj;
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterLineOfSight@@ present-unmatched
 Bool PartitionFilterLineOfSight::allow(Object *objOther)
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5359,6 +5511,7 @@ Bool PartitionFilterLineOfSight::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterPossibleToAttack@@ present-unmatched
 PartitionFilterPossibleToAttack::PartitionFilterPossibleToAttack(AbleToAttackType t, const Object *obj, CommandSourceType commandSource) :
 	m_attackType(t),
 	m_obj(obj),
@@ -5367,6 +5520,7 @@ PartitionFilterPossibleToAttack::PartitionFilterPossibleToAttack(AbleToAttackTyp
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterPossibleToAttack@@ present-unmatched
 Bool PartitionFilterPossibleToAttack::allow(Object *objOther)
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5386,6 +5540,7 @@ Bool PartitionFilterPossibleToAttack::allow(Object *objOther)
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterPossibleToEnter@@ present-unmatched
 PartitionFilterPossibleToEnter::PartitionFilterPossibleToEnter(const Object *obj, CommandSourceType commandSource) :
 	m_obj(obj),
 	m_commandSource(commandSource)
@@ -5393,6 +5548,7 @@ PartitionFilterPossibleToEnter::PartitionFilterPossibleToEnter(const Object *obj
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterPossibleToEnter@@ present-unmatched
 Bool PartitionFilterPossibleToEnter::allow(Object *objOther)
 {
 	if (!objOther || !m_obj) 
@@ -5407,6 +5563,7 @@ Bool PartitionFilterPossibleToEnter::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterPossibleToHijack@@ present-unmatched
 PartitionFilterPossibleToHijack::PartitionFilterPossibleToHijack(const Object *obj, CommandSourceType commandSource) :
 	m_obj(obj),
 	m_commandSource(commandSource)
@@ -5414,6 +5571,7 @@ PartitionFilterPossibleToHijack::PartitionFilterPossibleToHijack(const Object *o
 }
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterPossibleToHijack@@ present-unmatched
 Bool PartitionFilterPossibleToHijack::allow(Object *objOther)
 {
 	if (!objOther || !m_obj) 
@@ -5429,6 +5587,7 @@ Bool PartitionFilterPossibleToHijack::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ??0PartitionFilterLastAttackedBy@@ present-unmatched
 PartitionFilterLastAttackedBy::PartitionFilterLastAttackedBy(Object *obj) 
 {
 	if (obj && obj->getBodyModule()) {
@@ -5441,6 +5600,7 @@ PartitionFilterLastAttackedBy::PartitionFilterLastAttackedBy(Object *obj)
 
 //-----------------------------------------------------------------------------
 
+// ?allow@PartitionFilterLastAttackedBy@@ present-unmatched
 Bool PartitionFilterLastAttackedBy::allow(Object *other)
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5455,6 +5615,7 @@ Bool PartitionFilterLastAttackedBy::allow(Object *other)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterAcceptByObjectStatus@@ present-unmatched
 Bool PartitionFilterAcceptByObjectStatus::allow(Object *objOther)
 { 
 	ObjectStatusMaskType status = objOther->getStatusBits();
@@ -5467,6 +5628,7 @@ Bool PartitionFilterAcceptByObjectStatus::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterRejectByObjectStatus@@ present-unmatched
 Bool PartitionFilterRejectByObjectStatus::allow(Object *objOther)
 { 
 	ObjectStatusMaskType status = objOther->getStatusBits();
@@ -5480,6 +5642,7 @@ Bool PartitionFilterRejectByObjectStatus::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterAcceptByKindOf@@ present-unmatched
 Bool PartitionFilterAcceptByKindOf::allow(Object *objOther)
 {
 	return objOther->isKindOfMulti(m_mustBeSet, m_mustBeClear);
@@ -5502,6 +5665,7 @@ Bool PartitionFilterRejectByKindOf::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
+// ?allow@PartitionFilterStealthedAndUndetected@@ present-unmatched
 Bool PartitionFilterStealthedAndUndetected::allow( Object *objOther )
 {
 	// objOther is guaranteed to be non-null, so we don't need to check (srj)
@@ -5783,6 +5947,7 @@ static void hLineRemoveValue(Int x1, Int x2, Int y, void *threatValueParms)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??0SightingInfo@@ present-unmatched
 SightingInfo::SightingInfo() 
 {
 	reset();
@@ -5791,6 +5956,7 @@ SightingInfo::SightingInfo()
 // ------------------------------------------------------------------------------------------------
 /** Resetting sighting info */
 // ------------------------------------------------------------------------------------------------
+// ?reset@SightingInfo@@ present-unmatched
 void SightingInfo::reset()
 {
 	m_where.zero();
@@ -5801,6 +5967,7 @@ void SightingInfo::reset()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?isInvalid@SightingInfo@@ present-unmatched
 Bool SightingInfo::isInvalid() const
 {
 	return m_howFar == 0.0f;
@@ -5809,6 +5976,7 @@ Bool SightingInfo::isInvalid() const
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@SightingInfo@@ present-unmatched
 void SightingInfo::crc( Xfer *xfer )
 {
 
@@ -5819,6 +5987,7 @@ void SightingInfo::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@SightingInfo@@ present-unmatched
 void SightingInfo::xfer( Xfer *xfer )
 {
 
@@ -5844,12 +6013,14 @@ void SightingInfo::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@SightingInfo@@ present-unmatched
 void SightingInfo::loadPostProcess()
 {
 
 }  // end loadPostProcess
 
 // ------------------------------------------------------------------------------------------------
+// ??1SightingInfo@@ present-unmatched
 SightingInfo::~SightingInfo()
 {
 
