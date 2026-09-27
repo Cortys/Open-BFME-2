@@ -38086,3 +38086,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0028C197@Object@@QBEPAXXZ,,0x0028C197,18,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C197.cpp,matched,Object plus250 iface slot7C tail 40 callers including 28C4B6
 ?init@Rva001EB984Member@@QAEPAXPAX@Z,,0x001EB984,40,Code/Libraries/Source/WWVegas/WWLib/Rva001EB984Init.cpp,matched,Freelist list-base init via rowed pop 0x2393E2 plus pool 0xDB8FEC and proxy 0x14F3C4
 ??0?$list@PAVObject@@V?$allocator@PAVObject@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVObject@@@1@@Z,,0x001EBCC6,18,Code/Libraries/Source/WWVegas/WWLib/stlport_list_objectptr_insert.cpp,matched,list Object allocator ctor via rowed base 0x1EB984 plus same TU insert
+?rva001EB0D9@Rva001EB0CAHolder@@QAEEXZ,,0x001EB0D9,17,Code/GameEngine/Source/Common/Rva001EB0CAFlag.cpp,matched,sibling null-checked byte get via same holder plus pointee C0
