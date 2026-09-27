@@ -37069,3 +37069,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?clear@TurretStateMachine@@QAEXXZ,,0x004D853F,28,Code/GameEngine/Source/Common/TurretStateMachineSetState.cpp,matched,vtable slot5 plus BFME1 donor clear plus rowed base clear
 ?rva005F2767@Rva005F2767@@QBE_NXZ,,0x005F2767,12,Code/GameEngine/Source/Common/Rva005F2278MapContains.cpp,matched,Bit-4 getter via bitfield honest address name
 ?rva005F2577@Rva005F2577Holder@@QAEXXZ,,0x005F2577,23,Code/GameEngine/Source/Common/Rva005F2278MapContains.cpp,matched,Ref-release dec plus virt0 honest address name
+?updateStateMachine@StateMachine@@QAE?AW4StateReturnType@@XZ,,0x004D7321,98,Code/GameEngine/Source/GameLogic/AI/StateMachineGoal.cpp,matched,vtable slot4 plus BFME1 donor update plus friend pins

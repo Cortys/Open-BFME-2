@@ -83,14 +83,15 @@ public:
 struct State
 {
 	// Retail reaches onEnter through vtable slot 4 and onExit through
-	// slot 5; the lower slots belong to the Snapshot and MemoryPoolObject
-	// bases plus the State virtuals this TU never calls.
+	// slot 5 and update through slot 6; the lower slots belong to the
+	// Snapshot and MemoryPoolObject bases plus the State virtuals this TU never calls.
 	virtual void vslot00();
 	virtual void vslot04();
 	virtual void vslot08();
 	virtual void vslot0c();
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
 	StateReturnType friend_checkForTransitions(StateReturnType status);
 	StateReturnType friend_checkForSleepTransitions(StateReturnType status);
 };
@@ -132,6 +133,7 @@ public:
 	StateReturnType resetToDefaultState();
 	StateReturnType setState(StateID newStateID);
 	void clear();
+	StateReturnType updateStateMachine();
 };
 
 class TurretStateMachine : public StateMachine
@@ -348,4 +350,51 @@ void StateMachine::clear()
 	m_goalPosition.y = 0.0f;
 	m_goalPosition.z = 0.0f;
 	m_goalRange = FLT_MAX;
+}
+
+// ?updateStateMachine@StateMachine@@QAE?AW4StateReturnType@@XZ @0x004D7321 98B
+// Retail vtable slot 4 (offset 0x10) of 19 Rva004D759C-derived vtables; donor BFME1
+// StateMachine.cpp updateStateMachine verbatim minus debug (sleep gate plus update
+// plus transition friends). BFME2 layout deltas: sleepTill +0x18 current +0x04.
+// Callees update slot6 plus friend pins 0x004D722A 0x004D7148 already pinned.
+StateReturnType StateMachine::updateStateMachine()
+{
+	UnsignedInt now = TheGameLogic->getFrame();
+	if (m_sleepTill != 0 && now < m_sleepTill)
+	{
+		if (m_currentState == NULL)
+		{
+			return STATE_FAILURE;
+		}
+		return ((State *)m_currentState)->friend_checkForSleepTransitions(STATE_SLEEP(m_sleepTill - now));
+	}
+
+	m_sleepTill = 0;
+
+	if (m_currentState)
+	{
+		State *stateBeforeUpdate = (State *)m_currentState;
+		StateReturnType status = ((State *)m_currentState)->update();
+		if (m_currentState == NULL)
+		{
+			return STATE_FAILURE;
+		}
+		if (stateBeforeUpdate != m_currentState)
+		{
+			status = STATE_CONTINUE;
+		}
+		if (IS_STATE_SLEEP(status))
+		{
+			m_sleepTill = now + GET_STATE_SLEEP_FRAMES(status);
+			return ((State *)m_currentState)->friend_checkForSleepTransitions(STATE_SLEEP(m_sleepTill - now));
+		}
+		else
+		{
+			return ((State *)m_currentState)->friend_checkForTransitions(status);
+		}
+	}
+	else
+	{
+		return STATE_FAILURE;
+	}
 }
