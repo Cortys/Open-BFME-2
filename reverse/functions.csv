@@ -38119,3 +38119,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?GetExtensionFromFile@@YA?AVAsciiString@@V1@@Z,,0x0044C98C,88,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetExtensionFromFile reverseFind dot suffix
 ??1Rva0033FBB7@@UAE@XZ,,0x0033FBB7,77,Code/GameEngine/Source/Common/Rva0033FBB7Dtor.cpp,matched,vtable 0x811CF0 Object rva28C197 slot250 base 0x4D759C twin FB20
 ?xfer@Rva0033FE65@@MAEXPAVXfer@@@Z,,0x0033FEA3,98,Code/GameEngine/Source/Common/Rva0033FE65Ctor.cpp,matched,slot3 vtable 0x811E08 Version12 words bools
+?Rva000308E0AddHeap@@YAXII@Z,,0x000308E0,16,Code/GameEngine/Source/Common/Rva000308E0AddHeap.cpp,matched,guard flag 0xDE0821 tail-jump to AddHeap at 0xDE03E8 callers 0x22542E
