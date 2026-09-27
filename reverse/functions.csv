@@ -37018,3 +37018,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0043BBB6@SkirmishPreferences@@QAEHVUnicodeString@@@Z,,0x0043BBB6,84,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish username index via compareNoCase; honest Rva name; callers at 0x521BE0 plus 0x52337D
 ??1?$pair@$$CBHUSBServer@@@_STL@@QAE@XZ,,0x005E3B96,8,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair dtor add ecx 4 jmp rowed SBServer dtor at 0x005E3B83
 ??_G?$pair@$$CBHUSBServer@@@_STL@@QAEPAXI@Z,,0x005E3D4B,28,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair deleting dtor calls rowed pair dtor and rowed delete 0x0002FD60
+??0Rva001DBAA4@@QAE@XZ,,0x001DBAA4,31,Code/GameEngine/Source/Common/Rva001DBAA4Ctor.cpp,matched,vtable 0x007DBC10 shared with base dtor 0x001DBAC3 and 12 family callers
