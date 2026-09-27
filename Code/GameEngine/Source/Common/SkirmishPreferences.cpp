@@ -60,6 +60,7 @@ public:
 	StringBase() : m_data(0) {}
 	~StringBase() { releaseBuffer(); }
 	bool isEmpty() const;
+	int compare(const StringBase &other) const;
 	int compareNoCase(const StringBase &other) const throw();
 	void set(const StringBase &other);
 	void trim(void);
@@ -95,6 +96,10 @@ public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
 	UnicodeString &operator=(const UnicodeString &other) { set(other); return *this; }
+	int compare(const UnicodeString &other) const
+	{
+		return StringBase<unsigned short>::compare(other);
+	}
 	void translate(const char *text);
 	void trim(void) { StringBase<unsigned short>::trim(); }
 	Bool nextToken(UnicodeString *token, const unsigned short *seps)
@@ -103,6 +108,11 @@ public:
 	}
 	const unsigned short *str() const { return m_data ? &m_data->text[0] : L""; }
 };
+
+inline bool operator==(const UnicodeString &a, const UnicodeString &b)
+{
+	return a.compare(b) == 0;
+}
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 
@@ -172,6 +182,18 @@ private:
 	unsigned char m_unreconstructed[8];
 };
 
+class RealTimeStatsPreferences
+{
+public:
+	static Bool deleteStatsFile(const UnicodeString &profilePath);
+};
+
+class StrategicStatsPreferences
+{
+public:
+	static Bool deleteStatsFile(const UnicodeString &profilePath);
+};
+
 class SkirmishPreferences : public UserPreferences
 {
 public:
@@ -187,6 +209,7 @@ public:
 	UnicodeString Rva0043BB88(void);
 	void Rva0043BE36(const AsciiString &mapName);
 	int Rva0043BBB6(UnicodeString user);
+	void Rva0043C2EB(const UnicodeString &user);
 
 private:
 	void rebuildUserNamesEntry(void);
@@ -317,4 +340,14 @@ int SkirmishPreferences::Rva0043BBB6(UnicodeString user)
 			return index;
 	}
 	return -1;
+}
+
+void SkirmishPreferences::Rva0043C2EB(const UnicodeString &user)
+{
+	m_userNames.remove(user);
+	write();
+	Rva0043BFDB(user, 0);
+	RealTimeStatsPreferences::deleteStatsFile(user);
+	Rva0043BFDB(user, 1);
+	StrategicStatsPreferences::deleteStatsFile(user);
 }
