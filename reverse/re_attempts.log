@@ -2180,3 +2180,5 @@ FUN_00947263	0x00547263	52	blocked	free armor range check tail merge prevents se
 FUN_00924e95	0x00524E95	10	blocked	prolog-only 10B with no ret plus EH_prolog and codeaddr operand t=5 model=muse
 FUN_00925e55	0x00525E55	435	blocked	435B two-loop GameMessage plus InGameUI builder exceeds 30min box t=5 model=muse
 FUN_0076f710	0x0036F710	71	blocked	mixed MSVC list plus STLport Science vector plus unknown owner needs manual modeling t=15 model=muse-956d
+?rva00292FAC@Object@@QBE_NXZ	0x00292FAC	87	partial	tail branchless vs branches; first part matches incl producer and isSelectable; TheGameLogic reloc ok; ours 84B vs retail 87B t=25 model=muse-d395 score=0.93 stash=reverse/attempts/0x00292fac.cpp
+?doTeamEnableStealth@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C058A	84	partial	one-step for avoids rep movsd but still push ebx for sete bl vs al and cmp-je top vs jmp and extra mov ecx; ours 92B vs retail 84B t=20 model=muse-d395 score=0.91 stash=reverse/attempts/0x003c058a.cpp
