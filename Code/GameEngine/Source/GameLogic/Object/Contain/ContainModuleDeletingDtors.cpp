@@ -159,6 +159,13 @@ class CitadelSlaughterHordeContain { public: __declspec(noinline) virtual ~Citad
 CitadelSlaughterHordeContain::~CitadelSlaughterHordeContain() {}
 void CitadelSlaughterHordeContain_Delete(CitadelSlaughterHordeContain *p) { delete p; }
 
+// ??_GSlaughterHordeContainModuleData@@UAEPAXI@Z @0x00481113 28B: slot 0 of vtable 0x00C48DC0; calls ??1 at 0x004810D5.
+// Owner evidence: vtable 0x00C48DC0 installed by ctor 0x0048104D (store at 0x0048107A); ctor factory 0x0024C071 news 0xEC; dtor 0x004810D5 rowed in SlaughterHordeContainModuleDataDtor.cpp.
+class SlaughterHordeContainModuleData { public: __declspec(noinline) virtual ~SlaughterHordeContainModuleData(); };
+// ??1SlaughterHordeContainModuleData@@UAE@XZ present-unmatched
+SlaughterHordeContainModuleData::~SlaughterHordeContainModuleData() {}
+void SlaughterHordeContainModuleData_Delete(SlaughterHordeContainModuleData *p) { delete p; }
+
 // ??_GCitadelSlaughterHordeContainModuleData@@UAEPAXI@Z @0x004811CA 28B: slot 0 of vtable 0x00C48E40; calls ??1 at 0x004811E6.
 // Owner evidence (audited 2026-09-26): retail registration CitadelSlaughterHordeContain -> data factory RVA 0x0024C100 -> ctor RVA 0x0048112F; primary vptr store RVA 0x00481155.
 class CitadelSlaughterHordeContainModuleData { public: __declspec(noinline) virtual ~CitadelSlaughterHordeContainModuleData(); };
