@@ -302,3 +302,16 @@ Int GadgetListBoxAddEntryImage(GameWindow *listbox, const Image *image, Int row,
 {
 	return GadgetListBoxAddEntryImage(listbox, image, row, column, -1, -1, overwrite, color);
 }
+
+// ?GadgetComboBoxGetSelectedPos@@YAXPAVGameWindow@@PAH@Z, retail 0x003228EB (37B).
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBox.cpp
+// GadgetComboBoxGetSelectedPos (BFME1 same name). Null-checks the combobox then
+// GCM_GET_SELECTION (0x402c in BFME2, +3 from ZH 0x4029) through TheWindowManager
+// at 0x9FEF1C slot 58 0xE8 with mData1=0 and mData2=selectedIndex. Caller
+// 0x00322910 passes a stack slot address and returns it, proving Int* out-param.
+void GadgetComboBoxGetSelectedPos(GameWindow *comboBox, Int *selectedIndex)
+{
+	if (comboBox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(comboBox, 0x402c, 0, (int)selectedIndex);
+}

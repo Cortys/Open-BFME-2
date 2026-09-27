@@ -39865,3 +39865,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??1Rva00395D77@@QAE@XZ,,0x00395D77,53,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,same 53B string-pair dtor shape as 0x001EA443 with EH prolog
 ??4Rva0021915B@@QAEAAV0@ABV0@@Z,,0x0021915B,31,Code/GameEngine/Source/Common/Rva0021915BAssign.cpp,matched,self-check AsciiString plus byte assign proven by copy_backward stride 8 and pair swap callers
 ?Rva002195B7CopyBackward@@YAPAVRva0021915B@@PAV1@00PAXH@Z,,0x002195B7,47,Code/GameEngine/Source/Common/Rva002195B7CopyBackward.cpp,matched,copy_backward stride 8 via rowed Rva0021915B assign with dummy tag args
+?GadgetComboBoxGetSelectedPos@@YAXPAVGameWindow@@PAH@Z,,0x003228EB,37,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor GadgetComboBoxGetSelectedPos GCM_GET_SELECTION 0x402c caller 0x322910 proves Int out-param
