@@ -2380,3 +2380,5 @@ FUN_00612858	0x00212858	199	blocked	STL hashtable resize with EvaAscii hash give
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DX surface LockRect DXT no donor needs full D3D RE t=5 model=muse-a530
 ?Rva006038EFBswap@@YAKK@Z	0x006038EF	35	partial	34B vs 35B movzx plus add vs xor mov dh plus add t=15 model=muse-a530 score=0.94 stash=reverse/attempts/0x006038ef.cpp
 FUN_008d7cb9	0x004D7CB9	45	blocked	eax-plus-3-stack min-chain like frameToSleepTime 0x0044DF28 but free with custom eax first arg not standard cdecl-fastcall-thiscall t=15 model=muse-9f6c
+?rva002120A4@Rva002120A4@@QAEHW4NameKeyType@@@Z	0x002120A4	30	partial	align_diff exact 30B 10insns 0struct; gate unresolved public twin QBE pin staged but build.sh misses it t=20 model=muse score=0.97 stash=reverse/attempts/0x002120a4.cpp
+FUN_00612858	0x00212858	199	blocked	STL hash_map probe with Eva hash gives 184B vs 199B; missing this count spills and outer prologue and ebx edi swap persists across O1 G7 Ob2 throw variants t=25 model=muse
