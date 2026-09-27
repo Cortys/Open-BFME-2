@@ -37249,3 +37249,8 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva000D1C10@Rva000D1C10@@QAEXXZ,,0x000D1C10,115,Code/GameEngine/Source/Common/Rva000D1C10.cpp,matched,leaf fade-step helper via float constants plus caller
 ?allocateNewWeapon@WeaponStore@@QBEPAVWeapon@@PBVWeaponTemplate@@W4WeaponSlotType@@@Z,,0x0028AA81,58,Code/GameEngine/Source/GameLogic/Object/WeaponStoreAllocateNewWeapon.cpp,matched,BFME1 allocate thunk plus ZH friendship; size 0x60 via 0x0002FDA0 and pinned ctor 0x002CC23D
 ?rva00452354@UpgradeMux@@QAEX_N@Z,,0x00452354,10,Code/GameEngine/Source/GameLogic/Object/Update/Rva00452354Setter.cpp,matched,shared UpgradeMux slot9 bool setter honest name
+?Rva00271619Broadcast@Rva002716Holder@@QAEXHHH@Z,,0x00271619,53,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x1C via virtual 0xA8
+?Rva0027164EBroadcast@Rva002716Holder@@QAEXHH@Z,,0x0027164E,49,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x20 via virtual 0xA8
+?Rva0027167FBroadcast@Rva002716Holder@@QAEXH@Z,,0x0027167F,45,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x40 via virtual 0xA8
+?Rva002716ACBroadcast@Rva002716Holder@@QAEXXZ,,0x002716AC,39,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x48 via virtual 0xA8
+?Rva002716D3Broadcast@Rva002716Holder@@QAEXH@Z,,0x002716D3,45,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x4C via virtual 0xA8
