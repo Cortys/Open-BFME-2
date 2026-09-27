@@ -3235,5 +3235,188 @@
       }
     ],
     "boundary": "RET4 at6F46BB followed by two CC bytes; next independently dispatched getter at6F46C0."
+  },
+  "apt_date_string_callback": {
+    "source": "Code/Libraries/Source/Apt/AptDateStringCallback.cpp",
+    "compiler": "MSVC7.1 /O2 /MD /EHsc",
+    "target_identity": "Exact callback operand in individually audited target date toString dispatch case; checked isDate cast feeds the byte-verified formatter. Result passes live EAStringC text through data-plus-eight accessor and already matched AptValue::SetString.",
+    "donor_provenance": "Original callback spelling and static AptValue*(AptValue*,int) ABI from original QA PDB. Donor callback calls original MAP-named AptString::Create() at segment1 offset3d1150; relocated XBE VA3e2150. Target factory independently asserts AptString.inl and AptVFT_StringValue. These jointly support the new factory pin; target and donor factories are not asserted byte-identical.",
+    "accessor_provenance": "All six target bytes prove thiscall data pointer plus eight. Donor exposes GetBuffer/c_str/ConstRawPtr alternatives; original spelling is unresolved, so retain address name. No duplicate recovery credit for this helper.",
+    "factory_map_record": "0001:003d1150       ?Create@AptString@@SAPAV1@XZ 007d1570 f   apt_q:AptString.obj",
+    "donor_callback_calls": [
+      {
+        "va": "0x3fd077",
+        "operand": "0x3e2150"
+      },
+      {
+        "va": "0x3fd09e",
+        "operand": "0x3fc740"
+      },
+      {
+        "va": "0x3fd0ae",
+        "operand": "0x3dfb30"
+      },
+      {
+        "va": "0x3fd0bf",
+        "operand": "0x3df640"
+      }
+    ],
+    "donor_procedure": {
+      "name": "AptDate::sMethod_toString",
+      "size": 118,
+      "type": "0xe4f5",
+      "record_offset": 5540,
+      "record": "42001011000000002016000000000000760000001700000064000000f5e4000060c03e00010000417074446174653a3a734d6574686f645f746f537472696e6700000000",
+      "donor_offset": "0x3ec060"
+    },
+    "dispatch_case": {
+      "name": "toString",
+      "id": 36,
+      "dispatch_case_va": "0xaf6051",
+      "cache_slot_va": "0xe182d4",
+      "callback_candidates": [
+        "0xaf5080"
+      ]
+    },
+    "verification": "Independently patched every compiled relocation with established addresses; all120 bytes equal target. EH handler, unwind action and both metadata records independently byte-compared. Factory/accessor pins checked before addition and full pin consistency checked after.",
+    "body": {
+      "symbol": "?sMethod_toString@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+      "va": "0xaf5080",
+      "size": 120,
+      "sha256": "e41c8563585e1724f4bd06811de532015a937d140632ba53ce088cd0566891f4",
+      "relocations": [
+        {
+          "offset": 3,
+          "kind": 6,
+          "symbol": "__ehhandler$?sMethod_toString@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+          "target_va": "0xba9dc8"
+        },
+        {
+          "offset": 9,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        },
+        {
+          "offset": 17,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        },
+        {
+          "offset": 24,
+          "kind": 20,
+          "symbol": "?Create@AptString@@SAPAV1@XZ",
+          "target_va": "0xad7210"
+        },
+        {
+          "offset": 35,
+          "kind": 20,
+          "symbol": "?clear@EAStringC@@QAEAAV1@XZ",
+          "target_va": "0xad2f90"
+        },
+        {
+          "offset": 57,
+          "kind": 20,
+          "symbol": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ",
+          "target_va": "0xadd160"
+        },
+        {
+          "offset": 64,
+          "kind": 20,
+          "symbol": "?toString@AptDate@@QAEXAAVEAStringC@@@Z",
+          "target_va": "0xaf4460"
+        },
+        {
+          "offset": 73,
+          "kind": 20,
+          "symbol": "?rva00620090@EAStringC@@QBEPBDXZ",
+          "target_va": "0xa20090"
+        },
+        {
+          "offset": 81,
+          "kind": 20,
+          "symbol": "?SetString@AptValue@@QAEXPBD@Z",
+          "target_va": "0xacbf70"
+        },
+        {
+          "offset": 98,
+          "kind": 20,
+          "symbol": "??1EAStringC@@QAE@XZ",
+          "target_va": "0xad3010"
+        },
+        {
+          "offset": 112,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        }
+      ]
+    },
+    "exception_support": [
+      {
+        "symbol": "__ehhandler$?sMethod_toString@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "va": "0xba9dc8",
+        "size": 10,
+        "sha256": "9a5f341b4e52f4eb1231a363591d73956c5d431c009fedbe99c03361eed3e4ec",
+        "relocations": [
+          {
+            "offset": 1,
+            "kind": 6,
+            "symbol": "$T351",
+            "target_va": "0xd6364c"
+          },
+          {
+            "offset": 6,
+            "kind": 20,
+            "symbol": "___CxxFrameHandler",
+            "target_va": "0xa29182"
+          }
+        ]
+      },
+      {
+        "symbol": "$L344",
+        "va": "0xba9dc0",
+        "size": 8,
+        "sha256": "27eabcb47b09f3a3a8f612c99437dd0b5e72ab01e82fc536bd656b2c46bdec32",
+        "relocations": [
+          {
+            "offset": 4,
+            "kind": 20,
+            "symbol": "??1EAStringC@@QAE@XZ",
+            "target_va": "0xad3010"
+          }
+        ]
+      },
+      {
+        "symbol": "$T351",
+        "va": "0xd6364c",
+        "size": 28,
+        "sha256": "285a43553a6c1d0de774c8f4efcb72aaf714c6f94ed79fb7676f6ac1e07eb33c",
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "$T354",
+            "target_va": "0xd63644"
+          }
+        ]
+      },
+      {
+        "symbol": "$T354",
+        "va": "0xd63644",
+        "size": 8,
+        "sha256": "3f444ba322ec3f28f132159589d29e1c4433d81e14ed25e64d6fd6dccd3fe1db",
+        "relocations": [
+          {
+            "offset": 4,
+            "kind": 6,
+            "symbol": "$L344",
+            "target_va": "0xba9dc0"
+          }
+        ]
+      }
+    ],
+    "boundary": "RET at6F50F7 followed by eight CC bytes; separate UTC callback6F5100 already claimed and not counted again."
   }
 }
