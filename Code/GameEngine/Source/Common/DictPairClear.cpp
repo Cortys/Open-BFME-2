@@ -561,3 +561,23 @@ bool Dict::remove(int key)
 	}
 	return false;
 }
+
+// ?copyPairFrom@Dict@@QAEXABV1@H@Z @0x003137EE 82B
+// Dict::copyPairFrom from ZH Dict.cpp donor. Rowed findPairByKey at
+// 0x0031313B, rowed setPrep at 0x0031369D, rowed copyFrom at 0x00313404,
+// rowed sortPairs at 0x00313299, rowed remove at 0x003137A8.
+void Dict::copyPairFrom(const Dict &that, int key)
+{
+	DictPair *thatPair = that.findPairByKey(key);
+	if (thatPair)
+	{
+		DictPair *thisPair = setPrep(key, (DataType)(thatPair->m_key & 0xFF));
+		thisPair->copyFrom(thatPair);
+		sortPairs();
+	}
+	else
+	{
+		if (findPairByKey(key))
+			remove(key);
+	}
+}
