@@ -27,6 +27,7 @@ private:
 class Rva00360D26Member
 {
 public:
+	Rva00360D26Member();
 	~Rva00360D26Member();
 private:
 	unsigned m_unknown;
@@ -35,11 +36,16 @@ private:
 class Rva004B2B2F
 {
 public:
+	Rva004B2B2F();
 	~Rva004B2B2F();
 private:
 	Rva00360D26Member m_filter; // +0
 	_STL::vector<AsciiString> m_vec; // +4
 };
+
+Rva004B2B2F::Rva004B2B2F()
+{
+}
 
 Rva004B2B2F::~Rva004B2B2F()
 {

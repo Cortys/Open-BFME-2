@@ -5706,3 +5706,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?onExit@SpecialAbilityUpdate@@AAEX_N0@Z,0x004502CE,thiscall (1 1) in the SpecialAbilityUpdate dtor 0x00451F45; name donor-carried from BFME1 SpecialAbilityUpdateDestructor.cpp
 ??1BFME2MotionChannel@@UAE@XZ,0x001A466C,ICF twin of apply 7B at same address plus stream dtor tail-jmp at 0x001B2163
 ??$_Destroy@PAURvaPair00257544@@@_STL@@YAXPAURvaPair00257544@@0@Z,0x0032C0CA,TU _Destroy resolves the vector-dtor call at 0x257544; retail 25B 8-byte-pair loop via key dtor 0x48BA39 (rowed Rva0032C0CADestroyPairs stride-identical fold)
+??0Rva00360D26Member@@QAE@XZ,0x003623E5,ICF twin of filter ctor for ReplaceObjectUpdate entry 0x004B2B14 with this-only call plus Vector_base 0x00211E58

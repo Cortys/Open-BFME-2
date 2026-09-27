@@ -36989,3 +36989,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1DamageFilteredCreateObjectDie@@UAE@XZ,,0x00485EC3,32,Code/GameEngine/Source/GameLogic/Object/Die/DamageFilteredCreateObjectDieDtor.cpp,matched,audited ??_G 0x00485FC7 calls here; four vptrs then jmp DieModule dtor
 ??1LargeGroupAudioUpdate@@UAE@XZ,,0x004AB8DC,46,Code/GameEngine/Source/GameLogic/Object/Update/LargeGroupAudioUpdateDtor.cpp,matched,audited ??_G 0x004ABB1B calls here; five vptrs plus +0x24 base restore then jmp 0x0024A797
 ??1FloodUpdate@@UAE@XZ,,0x0048E454,142,Code/GameEngine/Source/GameLogic/Object/Update/FloodUpdateDtor.cpp,matched,audited ??_G 0x0048E603 calls here; deletes +0x20 list records then clear
+??0Rva004B2B2F@@QAE@XZ,,0x004B2B14,27,Code/GameEngine/Source/GameLogic/Object/Update/ReplaceObjectUpdateEntryDtor.cpp,matched,entry ctor via pinned 0x003623E5 plus Vector_base 0x00211E58
