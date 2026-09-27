@@ -37107,3 +37107,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006D4190@EAStringC@@QAEXH@Z,,0x006D4190,225,Code/Libraries/Source/EA/Apt/AptString/EAStringCUtf8Encode.cpp,matched,EAStringC encode worker plus SetSize hash-zero plus caller 6D6223
 ?Rva0020DFFBRegister@@YAXPBVModuleData@@@Z,,0x0020DFFB,44,Code/GameEngine/Source/Common/Rva0020DFFBRegister.cpp,matched,unique-register over global vector 0x00DFE1AC via rowed push_back 0x004DFCB0 with 3 callers including 0x004ABEAE
 ?rva0028AC34@Object@@QAEX_N@Z,,0x0028AC34,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AC34Setter.cpp,matched,Object+0x438 private status bit1 setter 11 callers
+?rva0028AE9B@Object@@QAEXH@Z,,0x0028AE9B,23,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AE9BSetter.cpp,matched,Object+0x84 chase setter to +0x360 3 callers
