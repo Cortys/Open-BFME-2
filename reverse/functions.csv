@@ -37988,3 +37988,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00270FEE@Rva00270FEE@@QAEPADXZ,,0x00270FEE,26,Code/GameEngine/Source/Common/Rva00270FEE.cpp,matched,caller uses return plus 0x14 as float; no donor; honest Rva name
 ?rva00203693@Rva00203693Host@@QAEHXZ,,0x00203693,22,Code/GameEngine/Source/Common/Rva00203693Host.cpp,matched,ternary 2/1 over TheGameLogic rva001DCD1C callers test int
 ??1TreeHintOpaque0043671B@@QAE@XZ,,0x00229840,53,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_hint_00436e3b.cpp,matched,TreeHintOpaque0043671B dtor matches copy 0x22D106 layout with UnicodeString plus subobject plus words and callers 0x2DDE27 0x434EC9
+??_GRva0027EA49@@QAEPAXI@Z,,0x005C66F0,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-p3k-dae2.cpp,matched,scalar deleting dtor calls rowed dtor plus delete
