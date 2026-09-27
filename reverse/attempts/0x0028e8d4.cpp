@@ -1,0 +1,41 @@
+// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z
+// partial score=0.9 date=2026-09-27
+// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z
+// partial score=0.90 date=2026-09-27
+// cl: /O2 /arch:SSE /MD /G7
+//
+// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z, retail 0x0028E8D4, 41 bytes.
+// Chain from just-landed ?get@Rva002722AA@@QBEPAXXZ: calls the branched
+// matrix getter then copies its translation floats at +0xC/+0x1C/+0x2C to
+// the 3-float out pointer. Evidence: caller 0x0028E8FD passes a 12-byte
+// local and reads it with SSE; callee 0x002722AA now rowed.
+
+class Rva002722AA
+{
+public:
+	void *get() const;
+};
+
+struct Rva0028E8D4Matrix
+{
+	float m[12];
+};
+
+class Rva0028E8D4
+{
+public:
+	void rva0028E8D4(float *out) const;
+};
+
+// ?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z present-unmatched
+void Rva0028E8D4::rva0028E8D4(float *out) const
+{
+	const Rva0028E8D4Matrix *m =
+		(const Rva0028E8D4Matrix *)((const Rva002722AA *)this)->get();
+	float x = m->m[3];
+	float y = m->m[7];
+	float z = m->m[11];
+	out[0] = x;
+	out[1] = y;
+	out[2] = z;
+}

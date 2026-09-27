@@ -2149,3 +2149,7 @@ FUN_004BDCAC	0x004BDCAC	54	blocked	vslot slot8 of 10 Body vtables needs slots20/
 ?GadgetTextEntrySetFont@@YAXPAVGameWindow@@PAVGameFont@@@Z	0x00320641	99	blocked	register ecx vs eax plus 2 extra mov ecx-eax t=25 model=muse-9863
 ?rva0043DF22@Rva0043DF22@@QAEHXZ	0x0043DF22	79	blocked	chain counter via 0x43DA65 getter plus getSlot isHuman isObserver m_isAccepted; exact 79B 39insns but edi-ebx swapped for info-index plus push-pop order; unsigned fixes jb; t=18 model=muse-9fea
 ?rva0051274F@Rva0051274F@@QAEHIII@Z	0x0051274F	136	blocked	unlock base system CREATE DESTROY INPUT_FOCUS 0x1D+0x7D0 with global+0x314 and wide string; switch dec-sub chain reproduced but EH_prolog absent in full body while probe switch+string alone gets EH; global 0x009FE4CC unidentified and 0x1D meaning unknown; t=25 model=muse-9fea
+?setTerrainDecalSize@Drawable@@QAEXMM@Z	0x0027292F	22	partial	register ecx vs eax plus missing mov ecx eax t=25 model=muse-e748 score=0.91 stash=reverse/attempts/0x0027292f.cpp
+?rva0028E8D4@Rva0028E8D4@@QBEXPAM@Z	0x0028E8D4	41	partial	sse order plus one int vs movss t=30 model=muse-e748 score=0.9 stash=reverse/attempts/0x0028e8d4.cpp
+FUN_0044aa28	0x0004AA28	34	blocked	stlport string dtor plus refcount layout needs donor t=10 model=muse-e748
+FUN_0043DB23	0x0043DB23	26	blocked	pin invoke mangling H10000 undecodable needs donor t=10 model=muse-e748

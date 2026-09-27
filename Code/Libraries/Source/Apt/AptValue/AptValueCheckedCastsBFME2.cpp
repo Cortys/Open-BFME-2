@@ -1,5 +1,6 @@
 // cl: /O2 /DNDEBUG /MD
-// 13 Apt checked casts returning this after asserting isX().
+// 14 Apt checked casts returning this after asserting isX().
+// Retail 0x006DCF60/57B isCIH(bUndefOK) line 840,
 // Retail 0x006DD020/50B isKey line 917, 0x006DD060/50B isMath line 995,
 // 0x006DD0A0/50B isScriptColour line 1022, 0x006DD0E0/50B isObject line 1048,
 // 0x006DD120/50B isPrototype line 1073, 0x006DD160/50B isDate line 1098,
@@ -33,6 +34,8 @@ public:
     int isXmlAttributes() const;
     int isLoadVars() const;
     int isStage() const;
+    int isCIH(bool bUndefOK) const;
+    BfmeAptValue006DCD20 *rva006DCF60(bool bUndefOK);
     BfmeAptValue006DCD20 *rva006DD020();
     BfmeAptValue006DCD20 *rva006DD060();
     BfmeAptValue006DCD20 *rva006DD0A0();
@@ -185,6 +188,15 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD2E0()
 {
     if (!static_cast<unsigned char>(isLoadVars())) {
         g_bfmeAptAssertAtE17734("isLoadVars()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4E1);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCF60(bool bUndefOK)
+{
+    if (!static_cast<unsigned char>(isCIH(bUndefOK))) {
+        g_bfmeAptAssertAtE17734("isCIH(bUndefOK)", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x348);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __asm int 3
     }
