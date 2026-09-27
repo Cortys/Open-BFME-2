@@ -37668,3 +37668,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002B5C5E@Rva002B5C5E@@QAEPAURva002B5C5EVal@@H@Z,,0x002B5C5E,53,Code/GameEngine/Source/Common/Rva002B5C5EMapFind.cpp,matched,Rb_tree map at plus130 linear id search via Mincrement
 ?rva002B5073@Rva002B5073@@QAE_NH@Z,,0x002B5073,74,Code/GameEngine/Source/Common/Rva002B5073Check.cpp,matched,Vector plusCC virtual slot18 mask overlap check
 ?rva003023B8@PlayerPosition@@QAEXABVAsciiString@@@Z,,0x003023B8,114,Code/GameEngine/Source/GameClient/PlayerPositionRva003023B8.cpp,matched,PlayerPosition faction insert with Faction prefix via set
+?rva00087AC9@Rva00087AC9@@QAEXPAURva00087AC9Pair@@0@Z,,0x00087AC9,43,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00087AC9Copy.cpp,matched,honest thiscall pair copy via refs for x87 shape
