@@ -4,14 +4,14 @@
 // ??0Rva005D817D@@QAE@XZ @0x005D816B 18B, ??0Rva005D8223@@QAE@XZ @0x005D8211 18B,
 // ??0Rva005D86E6@@QAE@XZ @0x005D86D4 18B, ??0Rva005D8AE4@@QAE@XZ @0x005D8AD2 18B,
 // ??0Rva005D8C25@@QAE@XZ @0x005D8C13 18B, ??0Rva005D8EE8@@QAE@XZ @0x005D8ED6 18B,
-// ??0Rva005D9CD5@@QAE@XZ @0x005D9CC3 18B.
-// Eleven opaque single-inheritance ctors deriving from Rva005EE30C (rowed ctor
+// ??0Rva005D91AB@@QAE@XZ @0x005D9199 18B, ??0Rva005D9CD5@@QAE@XZ @0x005D9CC3 18B.
+// Twelve opaque single-inheritance ctors deriving from Rva005EE30C (rowed ctor
 // at 0x005EE2E6 in Rva005EE30CCtor.cpp). Each body is push esi / mov esi ecx /
 // call base / mov [esi] vtable / mov eax esi / pop esi / ret (18B). Each ctor
 // immediately precedes its rowed dtor in Rva005EE30CDerived.cpp
 // (005D76F4->7706, 005D7843->7855, 005D7B2C->7B3E, 005D7D76->7D88,
 // 005D816B->817D, 005D8211->8223, 005D86D4->86E6, 005D8AD2->8AE4,
-// 005D8C13->8C25, 005D8ED6->8EE8, 005D9CC3->9CD5), proving the class identity. Vtable
+// 005D8C13->8C25, 005D8ED6->8EE8, 005D9199->91AB, 005D9CC3->9CD5), proving the class identity. Vtable
 // immediates are DIR32 filled by the gate. Base declared only here.
 
 class Rva005EE30C
@@ -139,5 +139,16 @@ public:
 };
 
 Rva005D9CD5::Rva005D9CD5()
+{
+}
+
+class Rva005D91AB : public Rva005EE30C
+{
+public:
+	Rva005D91AB();
+	virtual ~Rva005D91AB();
+};
+
+Rva005D91AB::Rva005D91AB()
 {
 }
