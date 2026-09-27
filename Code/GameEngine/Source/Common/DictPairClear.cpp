@@ -103,6 +103,11 @@ public:
  UnicodeString getNthUnicodeString(int n) const;
  AsciiString getAsciiString(int key, bool *exists) const;
  UnicodeString getUnicodeString(int key, bool *exists) const;
+ void setBool(int key, bool value);
+ void setInt(int key, int value);
+ void setReal(int key, float value);
+ void setAsciiString(int key, const AsciiString &value);
+ void setUnicodeString(int key, const UnicodeString &value);
 
 private:
 	void releaseData();
@@ -492,4 +497,14 @@ Dict::DictPair *Dict::setPrep(int key, DataType type)
 		pair = (DictPair *)(m_data + 1) + m_data->m_numPairsUsed++;
 	pair->setNameAndType(key, type);
 	return pair;
+}
+
+// ?setBool@Dict@@QAEXH_N@Z @0x003136F6 32B
+// Dict::setBool from ZH Dict.cpp donor. Rowed setPrep at 0x0031369D plus
+// bool store plus rowed sortPairs at 0x00313299. Callers in INI parse.
+void Dict::setBool(int key, bool value)
+{
+	DictPair *pair = setPrep(key, DICT_BOOL);
+	*(bool *)&pair->m_value = value;
+	sortPairs();
 }
