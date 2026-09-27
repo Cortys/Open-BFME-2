@@ -37696,3 +37696,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1CaveContainModuleData@@UAE@XZ,,0x0025770F,5,Code/GameEngine/Source/Common/Thing/ModuleFactory.cpp,matched,unclaimed_scan exact; emitted by this unit modulo relocations; Ghidra boundary 0x25770F/5 agrees; address from existing symbols.csv pin; callee pinned from its retail call site
 ?rva006DCF60@BfmeAptValue006DCD20@@QAEPAV1@_N@Z,,0x006DCF60,57,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,Apt isCIH checked cast line 840 bUndefOK
 ?rva005F05E6@Rva005F05E6@@QAEPAXH@Z,,0x005F05E6,16,Code/GameEngine/Source/Common/Rva005F05E6Indexer.cpp,matched,Indexed load via plus4 plus34
+?rva005F0647@Rva005F0647@@QAEPAXI@Z,,0x005F0647,37,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,Deleting shape release holder then conditional delete
