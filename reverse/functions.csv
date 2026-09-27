@@ -36918,3 +36918,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0046274C@SlaughterHordeContain@@UAEXPAXH0@Z,,0x0046274C,57,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainRva0046274C.cpp,matched,vslot 81 of 0x00848AA0 plus clamp plus 0x74 reads plus O1 sibling flags
 ??1SiegeDockingBehavior@@UAE@XZ,,0x00459DAA,91,Code/GameEngine/Source/GameLogic/Object/Behavior/SiegeDockingBehaviorDtor.cpp,matched,vtable 0x00C414DC slot0 caller plus donor dtor plus ctor vptrs
 ??1BfmeOwnVVD@@QAE@XZ,,0x0042E85C,79,Code/GameEngine/Source/Common/BfmeOwnVVDCtor.cpp,matched,BFME1 donor BfmeConv1663 vtable 0x0083C938 base 0x007DBA74 caller 0x0042E9D3 singleton 0x00A03214
+?Rva004ADBF2@Rva004AD9B0@@MAEX_N0@Z,,0x004ADBF2,70,Code/GameEngine/Source/GameLogic/Object/Update/Rva004AD9B0Slot13.cpp,matched,slot13 vtable 0x008551C0 plus onExit forward plus rowed callees

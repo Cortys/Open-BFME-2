@@ -1966,3 +1966,4 @@ FUN_007957C6	0x003957C6	148	blocked	vslot slot3 CastleMemberBehavior xfer-like V
 FUN_00256AA4	0x00256AA4	40	blocked	slot12 GateProxyBehavior float getter; memory reports 6-variant wall xorps-movss-fld vs flds-global t=5 model=muse-78c9
 ?rva0046274C@SlaughterHordeContain@@UAEXPAUArg740046274C@@H0@Z	0x0046274C	57	partial	eax-vs-edx one-temp register only; 57B 0 structural t=25 model=muse-3117 score=0.95 stash=reverse/attempts/0x0046274c.cpp
 ?bfmeGoDSN@BfmeThingDSK@@QAEMXZ	0x00256AA4	40	blocked	vslot slot12 DSN twin of blocked DSM; donor BFME1 BfmeConv773 RunDSN slot0x30 plus AskDSK pin; 6 variants all 29B flds-global tail-jmp vs retail 40B ebp-frame xorps-movss-fld call shape; SSE2 Oy- local value-init all pool to global t=22 model=muse-b4e9
+FUN_0085ED4B	0x0045ED4B	27	blocked	branchy push-pop vs O1 setle-lea wall; 6 variants all 30B branchless plus Og- 55B frame; redundant mov elimination prevents exact t=20 model=muse-48bc
