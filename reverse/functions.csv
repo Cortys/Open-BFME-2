@@ -37460,3 +37460,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006D36F0@EAStringC@@QBE_NPBV1@@Z,,0x006D36F0,82,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA case-insensitive equality via hash plus strcmpi plus 6 callers
 ?rva002A7DD0@Rva002A7DD0@@QAEHXZ,,0x002A7DD0,14,Code/GameEngine/Source/Common/BfmeThreeHundredTwentyFour.cpp,matched,negated bfmeAskRV on plus0x10 pointer 12 callers plus tail-jmp
 ?Rva006D37F0Clear@@YAXXZ,,0x006D37F0,11,Code/GameEngine/Source/Common/ColdGlobalDwordSetters.cpp,matched,global clearer pairs setter 6D37E0 plus caller 6CFCA2
+?Find@EAStringC@@QAEHPBDH@Z,,0x006D3870,102,Code/Libraries/Source/EA/Apt/AptString/EAStringCFind.cpp,matched,EA string-find via strstr plus null assert plus 2 callers
