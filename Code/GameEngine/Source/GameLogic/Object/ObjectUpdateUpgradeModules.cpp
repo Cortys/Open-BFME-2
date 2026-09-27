@@ -109,12 +109,32 @@ class Object
 public:
 	Player *getControllingPlayer() const;
 	void updateUpgradeModules();
+	void rva00293003(const void *arg);
 
 private:
 	char m_pad00[0x244];
 	BehaviorModule **m_modules;
 	char m_pad248[0x284 - 0x248];
 	_STL::_Base_bitset<32> m_mask284;
+};
+
+class UpgradeTemplate
+{
+public:
+	unsigned int getMaskIndex() const { return m_maskIndex; }
+
+private:
+	char m_pad00[0x38];
+	unsigned int m_maskIndex;
+};
+
+struct UpgradeBatch
+{
+	char m_pad00[0x1c];
+	UpgradeTemplate **m_begin;
+	UpgradeTemplate **m_end;
+	char m_pad24[0x38 - 0x24];
+	unsigned int m_singleMask;
 };
 
 void Object::updateUpgradeModules()
@@ -143,4 +163,26 @@ void Object::updateUpgradeModules()
 		}
 		up->postUpgradeCheck();
 	}
+}
+
+void Object::rva00293003(const void *arg)
+{
+	const UpgradeBatch *batch = (const UpgradeBatch *)arg;
+	if (batch->m_begin != batch->m_end)
+	{
+		for (unsigned i = 0; i < (unsigned)(batch->m_end - batch->m_begin); ++i)
+		{
+			UpgradeTemplate *templ = batch->m_begin[i];
+			if (!templ)
+				continue;
+			unsigned int idx = templ->getMaskIndex();
+			m_mask284._M_w[idx >> 5] |= (unsigned long)1 << (idx & 31);
+		}
+	}
+	else
+	{
+		unsigned int idx = batch->m_singleMask;
+		m_mask284._M_w[idx >> 5] |= (unsigned long)1 << (idx & 31);
+	}
+	updateUpgradeModules();
 }
