@@ -7,6 +7,10 @@
 // float drawImage ABI (const Image*, Real*4, Int, Int) with (-1,2) defaults;
 // pre/middle/post virtuals at +0xD4/+0xF8/+0x100 (begin/draw/end) shared with
 // sibling wrappers 0x0004263F/0x0004D664.
+// ?rva0004D664@W3DDisplay@@QAEXMMMMMH@Z, retail 0x0004D664, 79 bytes.
+// Same W3DDisplay pre/post (+0xD4/+0x100) with 6-arg float core at +0xDC
+// (5 Reals + Int color, e.g. drawLine float overload with width 1.0f via fld1
+// in callers 0x000506F4/0x000507D4/0x0005080A).
 
 class Image;
 
@@ -68,7 +72,7 @@ public:
 	virtual void unused52();
 	virtual void beginImageDraw();
 	virtual void unused54();
-	virtual void unused55();
+	virtual void slotDC(float x0, float y0, float x1, float y1, float w, int color);
 	virtual void unused56();
 	virtual void unused57();
 	virtual void unused58();
@@ -80,11 +84,19 @@ public:
 	virtual void endImageDraw();
 
 	void rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
+	void rva0004D664(float x0, float y0, float x1, float y1, float w, int color);
 };
 
 void W3DDisplay::rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode)
 {
 	beginImageDraw();
 	drawImageCore(image, x0, y0, x1, y1, color, mode);
+	endImageDraw();
+}
+
+void W3DDisplay::rva0004D664(float x0, float y0, float x1, float y1, float w, int color)
+{
+	beginImageDraw();
+	slotDC(x0, y0, x1, y1, w, color);
 	endImageDraw();
 }
