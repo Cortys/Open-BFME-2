@@ -1147,7 +1147,13 @@ HLodClass::HLodClass(const char * name,RenderObjClass ** lods,int count) :
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::HLodClass present-unmatched
+// BFME2 factory used by both this constructor and Include_NULL_Lod.
+extern RenderObjClass *Create_Render_Obj(const char *name);
+// EA/BFME1 donor identity; retail 0x0019FC80 installs the same HLod vtable
+// as the matched constructors and consumes the donor definition's LOD arrays.
+// Its three newly resolved direct callees also occupy that table's slots
+// +0x234 (Add_Lod_Model), +0x98 (Add_Sub_Object_To_Bone), and +0x114
+// (Update_Obj_Space_Bounding_Volumes); their target behavior supports the names.
 HLodClass::HLodClass(const HLodDefClass & def) :
 	Animatable3DObjClass(def.HierarchyTreeName),
 	LodCount(0),
@@ -1184,7 +1190,7 @@ HLodClass::HLodClass(const HLodDefClass & def) :
 
 		for (int imodel=0; imodel < def.Lod[ilod].ModelCount; imodel++) {
 
-			RenderObjClass * robj = WW3DAssetManager::Get_Instance()->Create_Render_Obj(def.Lod[ilod].ModelName[imodel]);
+			RenderObjClass * robj = ::Create_Render_Obj(def.Lod[ilod].ModelName[imodel]);
 			int boneindex = def.Lod[ilod].BoneIndex[imodel];
 			if (robj != NULL) {
 				Add_Lod_Model(ilod,robj,boneindex);
@@ -1197,7 +1203,7 @@ HLodClass::HLodClass(const HLodDefClass & def) :
 	
 	// Add aggregates to this model
 	for (int iagg=0; iagg<def.Aggregates.ModelCount; iagg++) {
-		RenderObjClass * robj = WW3DAssetManager::Get_Instance()->Create_Render_Obj(def.Aggregates.ModelName[iagg]);
+		RenderObjClass * robj = ::Create_Render_Obj(def.Aggregates.ModelName[iagg]);
 		int boneindex = def.Aggregates.BoneIndex[iagg];
 		if (robj != NULL) {
 			Add_Sub_Object_To_Bone(robj,boneindex);
@@ -2047,7 +2053,6 @@ bool HLodClass::Is_NULL_Lod_Included(void) const
 // Retail uses the global factory and global array deletion, as in Free above.
 // Boundary batch 6 spans [0x001A0560,0x001A09E4): 1156 bytes including the
 // three alignment bytes at 0x001A085D excluded from its reachable-byte count.
-extern RenderObjClass *Create_Render_Obj(const char *name);
 void HLodClass::Include_NULL_Lod(bool include)
 {
 	if ((include == false) && Is_NULL_Lod_Included ()) {
