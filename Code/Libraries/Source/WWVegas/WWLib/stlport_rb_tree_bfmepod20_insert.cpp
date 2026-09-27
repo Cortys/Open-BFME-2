@@ -3,7 +3,8 @@
 // ?_M_insert@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@AAE?AU?$_Rb_tree_iterator@UBfmePod20@@U?$_Nonconst_traits@UBfmePod20@@@_STL@@@2@PAU_Rb_tree_node_base@2@0ABUBfmePod20@@0@Z
 // retail 0x004AF3E6 136 bytes plus ?insert_unique@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@UBfmePod20@@U?$_Nonconst_traits@UBfmePod20@@@_STL@@@_STL@@_N@2@ABUBfmePod20@@@Z
 // retail 0x004AF4A6 134 bytes plus ?_M_erase@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@AAEXPAU?$_Rb_tree_node@UBfmePod20@@@2@@Z
-// retail 0x004AF28F 45 bytes. _Rb_tree set _M_insert plus insert_unique plus _M_erase for the 20-byte
+// retail 0x004AF28F 45 bytes plus ?clear@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAEXXZ
+// retail 0x004AF3BD 41 bytes. _Rb_tree set _M_insert plus insert_unique plus _M_erase plus clear for the 20-byte
 // RespawnRule value (BfmePod20 size view). Called once by the unique-insert
 // worker 0x004AF4A6. Calls the rowed BfmePod20 _M_create_node 0x004AF2BC
 // twice and the rowed _Rebalance 0x00025490. Unsigned first-dword level key
@@ -22,3 +23,4 @@ public:
 }
 template _STL::pair<UBfmePod20SetTree::iterator, bool> UBfmePod20SetTree::insert_unique(const UBfmePod20SetTree::value_type &);
 template void UBfmePod20SetTree::_M_erase(UBfmePod20SetTree::_Link_type);
+template void UBfmePod20SetTree::clear();
