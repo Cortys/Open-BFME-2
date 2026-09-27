@@ -38892,3 +38892,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva00342157@@UAE@XZ,,0x00342157,91,Code/GameEngine/Source/Common/Rva00342157Dtor.cpp,matched,vtable 0x8118B0 member slot3C delete base 49B47C twin FC42
 ?clear@?$_List_base@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAEXXZ,,0x005CCEFA,49,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva005F8F96_clear.cpp,matched,listbase clear via rowed dtor 0x5F8F96 unblocks 0x5CD032
 ??1?$_List_base@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAE@XZ,,0x005CD032,23,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva005F8F96_clear.cpp,matched,listbase dtor via rowed clear 0x5CCEFA and free
+??RRva00422CA8@@QBE_NHH@Z,,0x00422CA8,65,Code/Libraries/Source/WWVegas/WWLib/Rva00422CA8Cmp.cpp,matched,int sort predicate via TheGameLogic lookup and template order
