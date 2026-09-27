@@ -1265,10 +1265,9 @@ void W3DRadar::buildTerrainTexture( TerrainLogic *terrain )
 
 // ------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ?clearShroud@W3DRadar@@UAEXXZ present-unmatched
 void W3DRadar::clearShroud()
 {
-	reinterpret_cast<W3DRadarResetTexture *>(reinterpret_cast<char *>(this) + 0x14a0)
+	reinterpret_cast<W3DRadarResetTexture *>(reinterpret_cast<char *>(this) + 0x1498)
 		->getSurfaceLevel().clear(0);
 }
 
