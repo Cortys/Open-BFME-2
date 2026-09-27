@@ -37055,3 +37055,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0045A413@AutoAbilityBehavior@@QAEXXZ,,0x0045A413,14,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorRva0045A413.cpp,matched,AutoAbility string clear via rowed set plus 4 callers plus dtor layout
 ?xfer@PartTheHeavensUpdate@@MAEXPAVXfer@@@Z,,0x004ACAAA,48,Code/GameEngine/Source/GameLogic/Object/Update/PartTheHeavensUpdateXfer.cpp,matched,vtable slot 3 of 0x00854DA4 plus ICF twin 0x0084F55C via Destroy xfer pattern
 ?rva005F2278@Rva005F2278@@QBE_NH@Z,,0x005F2278,29,Code/GameEngine/Source/Common/Rva005F2278MapContains.cpp,matched,Map int-int contains-check via rowed M-find 0x388F63 honest address name
+?set@Rva001F3C20Slot@@QAEXPBVRva0055A88BDwordField@@@Z,,0x001F3C20,35,Code/GameEngine/Source/Common/Rva001F3C20Slots.cpp,matched,consecutive nullable setter plus0xb0 via rowed getter 0x0055A88B
+?set@Rva001F3C43Slot@@QAEXPBURva001F3C43Arg@@@Z,,0x001F3C43,29,Code/GameEngine/Source/Common/Rva001F3C20Slots.cpp,matched,consecutive nullable setter plus0xb4 from arg plus0x74 unblocks W3DTruckDraw
+?set@Rva001F3C60Slot@@QAEAAVAsciiString@@ABV2@@Z,,0x001F3C60,11,Code/GameEngine/Source/Common/Rva001F3C20Slots.cpp,matched,consecutive AsciiString setter plus0xb8 tail-jmp pinned operator assign
