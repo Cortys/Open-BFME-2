@@ -1216,7 +1216,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccccccccccc8b",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored target C++ in Code/Libraries/Source/VP6/quantize.cpp; byte verified; source body not imported",
         "ghidra_entry": null
       },
       {
@@ -1670,5 +1670,46 @@
         "status": "Banked C++ partial:129 bytes versus125, redundant loop-entry length reload; same tree fields and matched encode/cost callees"
       }
     ]
+  },
+  "quantization_error": {
+    "name": "_GetQuantizedCoeffsMSE_RD",
+    "rva": "0x1b79e0",
+    "size": 185,
+    "target_sha256": "f497ef82564cd6e726ebe22185f23c301e0e89a46c4e00755b32ac414d0662ba",
+    "boundary": {
+      "last_instruction": {
+        "rva": "0x1b7a98",
+        "text": "ret "
+      },
+      "following_bytes": "cccccccccccccc8b"
+    },
+    "source": "Code/Libraries/Source/VP6/quantize.cpp",
+    "donor": {
+      "name": "GetQuantizedCoeffsMSE_RD",
+      "size": 82,
+      "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\quantize.c.obj",
+      "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+      "donor_va": "0x45ef32",
+      "donor_offset": 4513586,
+      "record": "3e0010110000000088050000000000005200000011000000500000002288010032df44000100014765745175616e74697a6564436f656666734d53455f524400"
+    },
+    "donor_type_record": "0e000810030000000000040021880100",
+    "donor_args_record": "160001120400000011040000110400001104000075040000",
+    "abi": "cdecl void(short*,short*,short*,unsigned int*) from PDB; target four stack args, sign-extended 16-bit inputs, 32-bit output",
+    "target_identity_basis": "Target computes 64 squared differences between quantized[i]*dequantizer[i] and original[zigzag[i]], stores total*4. Full 256-byte standard zigzag table agrees with donor/source record; target directly references VA BD8460+4 and BD8460+260. Original spelling from PDB quantize.c record.",
+    "table": {
+      "target_va": "0x00bd8460",
+      "size": 256,
+      "sha256": "477a41fa6d9fd843864600082cefe2f3ccc83da572a45c14efe90b579d2cec0f",
+      "data_hex": "000000000100000008000000100000000900000002000000030000000a00000011000000180000002000000019000000120000000b00000004000000050000000c000000130000001a00000021000000280000003000000029000000220000001b000000140000000d00000006000000070000000e000000150000001c000000230000002a000000310000003800000039000000320000002b000000240000001d000000160000000f000000170000001e000000250000002c000000330000003a0000003b000000340000002d000000260000001f000000270000002e000000350000003c0000003d000000360000002f000000370000003e0000003f000000",
+      "source_record_path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/quantize.c",
+      "donor_candidate_vas": [
+        "0x55cad0",
+        "0x5c90b0"
+      ],
+      "uniqueness_limit": "Same table bytes occur elsewhere; target instruction relocations select this particular copy."
+    },
+    "provenance": "Authored from target disassembly; private source-handoff compile supplied candidate. Original source body not imported; no clean-room claim.",
+    "status": "C++ byte-verified recovery"
   }
 }
