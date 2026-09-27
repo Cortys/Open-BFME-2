@@ -41,6 +41,9 @@ class Rva0035DA01 : public Rva001DBAC3Base { public: virtual ~Rva0035DA01(); int
 Rva0035DA01::~Rva0035DA01() { m_field = 0; }
 void famgenDelete(Rva0035DA01 *p) { delete p; }
 
+class Rva0035D74A : public Rva001DBAC3Base { public: virtual ~Rva0035D74A(); int m_pad[2]; int m_field0C; int m_pad10[9]; int m_field34; };
+Rva0035D74A::~Rva0035D74A() { m_field0C = 0; m_field34 = 0; }
+
 class Rva0035DCF9 : public Rva001DBAC3Base
 {
 public:
