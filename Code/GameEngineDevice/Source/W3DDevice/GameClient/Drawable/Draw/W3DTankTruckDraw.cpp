@@ -53,6 +53,7 @@
 
 //#define SHOW_TANK_DEBRIS
 //-------------------------------------------------------------------------------------------------
+// ??0W3DTankTruckDrawModuleData@@ present-unmatched
 W3DTankTruckDrawModuleData::W3DTankTruckDrawModuleData():
 	m_treadDebrisNameLeft("TrackDebrisDirtLeft"),
 	m_treadDebrisNameRight("TrackDebrisDirtRight"),
@@ -63,11 +64,13 @@ W3DTankTruckDrawModuleData::W3DTankTruckDrawModuleData():
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??1W3DTankTruckDrawModuleData@@ present-unmatched
 W3DTankTruckDrawModuleData::~W3DTankTruckDrawModuleData()
 {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?buildFieldParse@W3DTankTruckDrawModuleData@@ present-unmatched
 void W3DTankTruckDrawModuleData::buildFieldParse(MultiIniFieldParse& p) 
 {
   W3DModelDrawModuleData::buildFieldParse(p);
@@ -99,6 +102,7 @@ void W3DTankTruckDrawModuleData::buildFieldParse(MultiIniFieldParse& p)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0W3DTankTruckDraw@@ present-unmatched
 W3DTankTruckDraw::W3DTankTruckDraw( Thing *thing, const ModuleData* moduleData ) : W3DModelDraw( thing, moduleData ),
 m_dirtEffect(NULL), m_dustEffect(NULL), m_powerslideEffect(NULL), m_effectsInitialized(false),
 m_wasAirborne(false), m_isPowersliding(false), m_frontWheelRotation(0), m_rearWheelRotation(0),
@@ -148,6 +152,7 @@ DEBUG_CRASH(("test me, may not work (srj)"));
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1W3DTankTruckDraw@@ present-unmatched
 W3DTankTruckDraw::~W3DTankTruckDraw()
 {
 	tossEmitters();
@@ -163,6 +168,7 @@ W3DTankTruckDraw::~W3DTankTruckDraw()
 
  * Start creating debris from the tank treads
  */
+// ?startMoveDebris@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::startMoveDebris( void )
 {
 	if (getDrawable()->isDrawableEffectivelyHidden())
@@ -178,6 +184,7 @@ void W3DTankTruckDraw::startMoveDebris( void )
 /**
  * Stop creating debris from the tank treads
  */
+// ?stopMoveDebris@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::stopMoveDebris( void )
 {
   if (m_treadDebrisLeft)
@@ -188,6 +195,7 @@ void W3DTankTruckDraw::stopMoveDebris( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?tossEmitters@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::tossEmitters()
 {
 	if (m_dustEffect)
@@ -211,6 +219,7 @@ void W3DTankTruckDraw::tossEmitters()
 }
 
 //-------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 void W3DTankTruckDraw::setFullyObscuredByShroud(Bool fullyObscured)
 {
 	if (fullyObscured != getFullyObscuredByShroud())
@@ -222,6 +231,7 @@ void W3DTankTruckDraw::setFullyObscuredByShroud(Bool fullyObscured)
 	}
 	W3DModelDraw::setFullyObscuredByShroud(fullyObscured);
 }
+#pragma optimize("", on)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -229,6 +239,7 @@ void W3DTankTruckDraw::setFullyObscuredByShroud(Bool fullyObscured)
 
  * Start creating debris from the tank treads
  */
+// ?createEmitters@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::createEmitters( void )
 {
 	if (getDrawable()->isDrawableEffectivelyHidden())
@@ -293,6 +304,7 @@ void W3DTankTruckDraw::createEmitters( void )
 /**
  * Stop creating debris from the tank treads
  */
+// ?enableEmitters@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::enableEmitters( Bool enable  )
 {
 	// don't check... if we are hidden the first time thru, then we'll never create the emitters.
@@ -323,6 +335,7 @@ void W3DTankTruckDraw::enableEmitters( Bool enable  )
 	}
 }
 //-------------------------------------------------------------------------------------------------
+// ?updateBones@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::updateBones( void ) {
 	if( getW3DTankTruckDrawModuleData() ) 
 	{
@@ -390,6 +403,7 @@ void W3DTankTruckDraw::updateBones( void ) {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setHidden@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::setHidden(Bool h)
 {
 	W3DModelDraw::setHidden(h);
@@ -427,6 +441,7 @@ void W3DTankTruckDraw::updateTreadPositions(Real uvDelta)
 }
 
 /**Grab pointers to the sub-meshes for each tread*/ 
+// ?updateTreadObjects@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::updateTreadObjects(void)
 {
 	RenderObjClass *robj=getRenderObject();
@@ -485,6 +500,7 @@ void W3DTankTruckDraw::updateTreadObjects(void)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?onRenderObjRecreated@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::onRenderObjRecreated(void)
 {
 	//DEBUG_LOG(("Old obj %x, newObj %x, new bones %d, old bones %d\n",
@@ -506,6 +522,7 @@ void W3DTankTruckDraw::onRenderObjRecreated(void)
 //-------------------------------------------------------------------------------------------------
 /** Map behavior states into W3D animations. */
 //-------------------------------------------------------------------------------------------------
+// ?doDrawModule@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::doDrawModule(const Matrix3D* transformMtx)
 {
 
@@ -748,6 +765,7 @@ void W3DTankTruckDraw::doDrawModule(const Matrix3D* transformMtx)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::crc( Xfer *xfer )
 {
 
@@ -761,6 +779,7 @@ void W3DTankTruckDraw::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::xfer( Xfer *xfer )
 {
 
@@ -779,6 +798,7 @@ void W3DTankTruckDraw::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::loadPostProcess( void )
 {
 
