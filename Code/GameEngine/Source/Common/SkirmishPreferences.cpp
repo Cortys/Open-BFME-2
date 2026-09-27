@@ -41,6 +41,7 @@ public:
 	~StringBase();
 	Int compare(const char *other) const;
 	Int compareNoCase(const char *other) const;
+	Bool startsWith(const StringBase &other) const throw();
 	void set(const T *text);
 	void trim(void);
 	Bool nextToken(StringBase *token, const char *seps);
@@ -181,6 +182,7 @@ public:
 	AsciiString formatProfileKey(const AsciiString *keySource, const char *name);
 	AsciiString buildProfileKey(const char *name);
 	AsciiString encodeUserKey(const UnicodeString &user, const char *name);
+	void Rva0043BFDB(const UnicodeString &user, int profileIndex);
 
 private:
 	void rebuildUserNamesEntry(void);
@@ -269,4 +271,22 @@ AsciiString SkirmishPreferences::buildProfileKey(const char *name)
 AsciiString SkirmishPreferences::encodeUserKey(const UnicodeString &user, const char *name)
 {
 	return formatProfileKey(&UnicodeStringToQuotedPrintable(user), name);
+}
+
+void SkirmishPreferences::Rva0043BFDB(const UnicodeString &user, int profileIndex)
+{
+	int saved = m_profileIndex;
+	m_profileIndex = profileIndex;
+	AsciiString prefix = encodeUserKey(user, "");
+	for (PreferenceMap::iterator it = begin(); it != end(); ) {
+		const AsciiString &key = it->first;
+		if (key.startsWith(prefix)) {
+			PreferenceMap::iterator cur = it;
+			++it;
+			erase(cur);
+		} else {
+			++it;
+		}
+	}
+	m_profileIndex = saved;
 }

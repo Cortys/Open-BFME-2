@@ -37006,3 +37006,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Rva00358946@@QAE@XZ,,0x00358946,17,Code/GameEngine/Source/Common/Rva00358946Dtor.cpp,matched,Frameless WideString helper via 0x36E70 plus zero 0x08 called by 0x358994 and W3D path
 ??4Rva004C9B8F@@QAEAAV0@ABV0@@Z,,0x004C9B8F,45,Code/GameEngine/Source/GameClient/Drawable/Update/Rva004C9B8FAssign.cpp,matched,honest smart-ptr assign via rowed inc plus8 and release plus8 slot1; caller 0x004C9D43
 ??1RadarMarkerClientUpdate@@UAE@XZ,,0x004C9C38,69,Code/GameEngine/Source/GameClient/Drawable/Update/RadarMarkerClientUpdateDtor.cpp,matched,dtor via rowed release plus8 and pinned DrawableModule base; vtable 0xC5EDB8 slot4 poolkey
+?Rva0043BFDB@SkirmishPreferences@@QAEXABVUnicodeString@@H@Z,,0x0043BFDB,151,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish remove-user-keys via encodeUserKey plus startsWith erase; honest Rva name; callers at 0x43C308 plus 0x43C319
