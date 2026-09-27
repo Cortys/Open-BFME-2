@@ -37096,3 +37096,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0026293E@AIUpdateInterface@@QAEXXZ,,0x0026293E,32,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026293E.cpp,matched,AIUpdateInterface conditional via 0x3BD plus 0x134
 ?xfer@W3DBoatWakeModelDraw@@MAEXPAVXfer@@@Z,,0x000D0BC3,58,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DBoatWakeModelDrawXfer.cpp,matched,slot 3 of vtable 0x007CDD70 via rowed ctor plus base DrawModule plus Version 1 2 plus float
 ?rva006FBB90@Rva8D0D80Result@@QAEXPAVRva8D0D80String@@PAVRva8D0D80Value@@@Z,,0x006FBB90,8,Code/GameEngine/Source/Common/Rva8D0D80ResultAdd.cpp,matched,12 callers in FUN00ade8e0 plus Table pin at 0x70B410 plus Result Table at plus8 via donor
+?rva00262ACE@AIUpdateInterface@@QAEXXZ,,0x00262ACE,28,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262ACE.cpp,matched,AIUpdateInterface 0x3B6 cluster setter via siblings
+?rva00262AEA@AIUpdateInterface@@QAEXXZ,,0x00262AEA,15,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262AEA.cpp,matched,AIUpdateInterface 0x3B6 pair via sibling
