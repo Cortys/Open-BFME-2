@@ -39469,3 +39469,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva004E366E@Rva004E366E@@QAEXXZ,,0x004E366E,28,Code/GameEngine/Source/Common/Rva004E366EClear.cpp,matched,Vector erase plus free clear
 ??0Rva004E364F@@QAE@XZ,,0x004E364F,31,Code/GameEngine/Source/Common/Rva004E364FCtor.cpp,matched,Vector ctor plus erase clear
 ?isInside@Object@@QAE_NPAVPolygonTrigger@@@Z,,0x0028B411,52,Code/GameEngine/Source/GameLogic/Object/ObjectIsInside.cpp,matched,BFME1 donor Object isInside plus Team didAllExit caller plus sibling didEnter didExit offsets
+?rva0028B842@Object@@QBEMXZ,,0x0028B842,25,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B842.cpp,matched,Object plus0x250 provider float wrapper returns 1.0f else slot 0xD4
