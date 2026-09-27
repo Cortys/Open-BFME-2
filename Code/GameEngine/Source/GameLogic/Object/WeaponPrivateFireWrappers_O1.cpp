@@ -15,6 +15,7 @@ public:
     bool fireWeapon(const Object *source, const Coord3D *pos, int *projectileID);
     bool rva002CE6C5(const Object *source, int targetID, const Object *target, int *projectileID);
     Object *forceFireWeapon(const Object *source, const Coord3D *pos);
+    bool rva002CE72B(const Object *a1, const Coord3D *a2, const Coord3D *a3, int a4);
 };
 bool Weapon::fireWeapon(const Object *source, const Coord3D *pos, int *projectileID)
 {
@@ -31,4 +32,9 @@ Object *Weapon::forceFireWeapon(const Object *source, const Coord3D *pos)
 	int id = 0;
 	privateFireWeapon(source, &source->m_position, 0, 0, pos, 1, 0, 0, &id);
 	return TheGameLogic->findObjectByID((ObjectID)id);
+}
+
+bool Weapon::rva002CE72B(const Object *a1, const Coord3D *a2, const Coord3D *a3, int a4)
+{
+	return privateFireWeapon(a1, a2, 0, 0, a3, 1, 0, a4, 0);
 }
