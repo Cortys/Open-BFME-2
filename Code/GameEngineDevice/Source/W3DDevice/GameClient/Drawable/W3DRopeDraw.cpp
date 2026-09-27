@@ -173,6 +173,7 @@ W3DRopeDraw::~W3DRopeDraw()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 void W3DRopeDraw::doDrawModule(const Matrix3D* transformMtx)
 {
 	if (m_segments.empty())
@@ -208,6 +209,7 @@ void W3DRopeDraw::doDrawModule(const Matrix3D* transformMtx)
 	else if (m_curSpeed < -m_maxSpeed)
 		m_curSpeed = -m_maxSpeed;
 }
+#pragma optimize("", on)
 
 // ------------------------------------------------------------------------------------------------
 /** CRC */
