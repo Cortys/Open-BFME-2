@@ -8,10 +8,84 @@
 
 extern "C" void *memset(void *dst, int value, unsigned int size);
 
+class AsciiString;
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class Coord3DBase;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	void Version1();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
 class Rva003ECA69Element
 {
 public:
 	void clear();
+	void rva003ECAE0(Xfer *xfer);
 
 private:
 	float m_0;
@@ -22,6 +96,21 @@ void Rva003ECA69Element::clear()
 {
 	m_0 = 0.0f;
 	memset(m_rest, 0, 0x40);
+}
+
+// ?rva003ECAE0@Rva003ECA69Element@@QAEXPAVXfer@@@Z, retail 0x003ECAE0 (43B).
+// Xfers the 0x44-byte element as 17 floats through Xfer slot 0x70
+// (operator==(float&)): the float at +0 then the 16 floats covering +4..+0x43.
+// Evidence: caller 0x003ECBF8 loops 20 times with stride 0x44 over this exact
+// element type then xfers neighbouring fields via slots 0x6c/0x60/0x70/0x78;
+// the push-0x10/add/pop-ebx loop shape matches /O1 size saving. Xfer decl
+// copied verbatim from PoisonedBehaviorXfer.cpp so float sits at 0x70.
+void Rva003ECA69Element::rva003ECAE0(Xfer *xfer)
+{
+	*xfer == m_0;
+	float *p = reinterpret_cast<float *>(m_rest);
+	for (int i = 16; i != 0; --i, ++p)
+		*xfer == *p;
 }
 
 class Rva003ECA4BElement
