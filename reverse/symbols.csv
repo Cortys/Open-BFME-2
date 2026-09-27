@@ -6088,3 +6088,7 @@ _ConvertBoolTrees,0x001BBD60
 ?isPlayerConnected@ConnectionManager@@QAE_NH@Z,0x004CF083,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?setFullyObscuredByShroud@W3DModelDraw@@UAEX_N@Z,0x000B6FFE,address read from the REL32 displacement at a placed body
 ?tossEmitters@W3DTankTruckDraw@@IAEXXZ,0x000CB5C3,address read from the REL32 displacement at a placed body
+??$fill_n@PAPAVDrawable@@IPAV1@@_STL@@YAPAPAVDrawable@@PAPAV1@IABQAV1@@Z,0x0007E48F,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?_M_insert_overflow@?$vector@PAVDrawable@@V?$allocator@PAVDrawable@@@_STL@@@_STL@@IAEXPAPAVDrawable@@ABQAV3@ABU__true_type@2@I_N@Z,0x002DFCF6,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?_M_lower_bound@?$_Rb_tree@GU?$pair@$$CBGE@_STL@@U?$_Select1st@U?$pair@$$CBGE@_STL@@@2@U?$less@G@2@V?$allocator@U?$pair@$$CBGE@_STL@@@2@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBGE@_STL@@@2@ABG@Z,0x0046A9AB,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?insert@?$map@GEU?$less@G@_STL@@V?$allocator@U?$pair@$$CBGE@_STL@@@2@@_STL@@QAE?AU?$_Rb_tree_iterator@U?$pair@$$CBGE@_STL@@U?$_Nonconst_traits@U?$pair@$$CBGE@_STL@@@2@@2@U32@ABU?$pair@$$CBGE@2@@Z,0x004D21EC,address read from the REL32 displacement at a placed body
