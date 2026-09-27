@@ -37137,3 +37137,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1UserParser@@UAE@XZ,,0x0030739E,60,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,UserParser dtor; vtable 0x807EB0; labels at 0x10 0x14
 ?Rva004BA324CopyRange@@YAPAVRva004BA1C8@@PAV1@00H@Z,,0x004BA324,29,Code/GameEngine/Source/Common/Rva004BA324CopyRange.cpp,matched,Rva range-copy forwarder with tag temp plus null distance calling pinned __copy 0x004BA2E9; called by erase-shape 0x004BA399
 ?EraseRange@Rva004BA399Vector@@QAEPAVRva004BA1C8@@PAV2@0@Z,,0x004BA399,51,Code/GameEngine/Source/Common/Rva004BA399EraseRange.cpp,matched,Range-erase over Rva004BA1C8 vector via rowed CopyRange 0x004BA324 plus rowed DestroyRange 0x004BA341
+??0Rva00041004@@QAE@H@Z,,0x000411C1,49,Code/GameEngine/Source/Common/Rva00041004Lock.cpp,matched,honest ctor via vtable and IAT init plus lock call
