@@ -270,11 +270,14 @@ W3DBibBuffer::W3DBibBuffer(void)
 //=============================================================================
 /** Frees the index and vertex buffers. */
 //=============================================================================
-// ?freeBibBuffers@W3DBibBuffer@@IAEXXZ present-unmatched
 void W3DBibBuffer::freeBibBuffers(void)
 {
-	REF_PTR_RELEASE(m_vertexBib);
-	REF_PTR_RELEASE(m_indexBib);
+	if (m_vertexBib) {
+		REF_PTR_RELEASE(m_vertexBib);
+	}
+	if (m_indexBib) {
+		REF_PTR_RELEASE(m_indexBib);
+	}
 }
 
 //=============================================================================
