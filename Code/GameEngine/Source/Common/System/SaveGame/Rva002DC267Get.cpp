@@ -27,6 +27,7 @@ class StringBase
 public:
 	StringBase() : m_data(0) {}
 	void concat(const T *text);
+	bool startsWithNoCase(const StringBase<T> &other) const;
 protected:
 	struct Header
 	{
@@ -69,9 +70,22 @@ public:
 	UnicodeString rva002DC267() const;
 };
 
+class Rva002DC7C1
+{
+public:
+	bool rva002DC7C1(const UnicodeString &path) const;
+};
+
 UnicodeString Rva002DC267::rva002DC267() const
 {
 	UnicodeString wtmp(TheGlobalData->rva002360DE());
 	wtmp.concat(L"Save\\");
 	return wtmp;
+}
+
+// Unicode isInSaveDirectory: save dir from 0x002DC267 then
+// StringBase startsWithNoCase at 0x000362B0. Callers pass a stack temp.
+bool Rva002DC7C1::rva002DC7C1(const UnicodeString &path) const
+{
+	return ((const StringBase<WideChar> *)&path)->startsWithNoCase((const StringBase<WideChar> &)((const Rva002DC267 *)this)->rva002DC267());
 }
