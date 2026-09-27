@@ -38997,3 +38997,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0043F103@Rva0043F103@@QAEPAUTargetRef00217D4C@@H@Z,,0x0043F103,33,Code/GameEngine/Source/GameClient/GUI/Rva0043F103Holder.cpp,matched,lazy Rva002BED91 holder via virtual slot 0x50 and rowed set
 ?rva001531E6@Rva001531E6@@QAEXXZ,,0x001531E6,12,Code/Libraries/Source/WWVegas/WWLib/Rva001531E6Dec.cpp,matched,dec4 holder at +0x10 via named local callers 5
 ??1Rva00153729@@QAE@XZ,,0x00153729,19,Code/Libraries/Source/WWVegas/WWLib/Rva00153729Dtor.cpp,matched,ehvec array6 vectors at +4 via Destroy loop stride 0x4C
+??$_Destroy@PAURva00153729@@@_STL@@YAXPAURva00153729@@0@Z,,0x00153BB6,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00153729_destroy.cpp,matched,range destroy stride 0x4C over rowed dtor 0x153729
