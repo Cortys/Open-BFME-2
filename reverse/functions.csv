@@ -37316,3 +37316,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva00432F7D@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432F7D,42,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,prepend to head1 tail1 with count callers at 0x004CA10F and 0x004CA20C
 ?rva00106874@Rva00106874Host@@QAE_NXZ,,0x00106874,27,Code/GameEngine/Source/Common/Rva00106874Host.cpp,matched,frameless release slot2 plus bool ret callers 0x106A3F 0x106B68
 ??1Rva00106874Host@@QAE@XZ,,0x00106A2D,47,Code/GameEngine/Source/Common/Rva00106874Host.cpp,matched,dtor calls release then AsciiString dtor same TU
+??1SlaughterHordeContainModuleData@@UAE@XZ,,0x004810D5,62,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainModuleDataDtor.cpp,matched,vtable 0x00C48DC0 plus ctor 0x0048104D plus base 0x00257507 plus member 0x00360D26
