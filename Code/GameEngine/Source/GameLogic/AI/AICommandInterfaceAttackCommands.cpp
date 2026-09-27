@@ -32,6 +32,7 @@ enum AICommandType
 	AICMD_IDLE = 5,
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
 	AICMD_ATTACK_POSITION = 0x0E,
+	AICMD_FACE_OBJECT = 0x26,
 	AICMD_FACE_POSITION = 0x27,
 	AICMD_BFME_3D = 0x3D
 };
@@ -71,6 +72,7 @@ public:
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiFacePosition(const Coord3D *pos, Int cmdSource);
+	void aiFaceObject(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 };
 
@@ -108,6 +110,18 @@ void AICommandInterface::aiFacePosition(const Coord3D *pos, Int cmdSource)
 {
 	AICommandParms parms(AICMD_FACE_POSITION, (CommandSourceType)cmdSource);
 	parms.m_pos = *pos;
+	aiDoCommand(&parms);
+}
+
+// ?aiFaceObject@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x003C771D, 101 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceFaceCommands.cpp
+// aiFaceObject at AICMD 0x26 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// BFME2 same id 0x26 plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x003C9A18 and 0x003C9AFE pass named Object plus source 1.
+void AICommandInterface::aiFaceObject(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_FACE_OBJECT, cmdSource);
+	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
 
