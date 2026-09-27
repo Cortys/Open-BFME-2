@@ -37226,3 +37226,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@Rva003AF22E@@MAEXPAVXfer@@@Z,,0x0055EA8E,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF22EXfer.cpp,matched,slot3 of vtable 0x0081C884 via Version1 plus rowed xferRandomVariable at plus 0x1C
 ?rva0028D491@Object@@QBE_NXZ,,0x0028D491,51,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D491.cpp,matched,Object KindOf mask gate via Thing isAnyKindOf callers 0x28D4D0 0x293874 0x40601A
 ?rva00151FA8@Rva00151FA8@@QBEHXZ,,0x00151FA8,34,Code/Libraries/Source/WWVegas/WWLib/Rva00151FA8RamSize.cpp,matched,called from MeshMatDesc Compute_Ram_Size at 0x0015CC4D with two vectors plus base 0x2834
+??1Weapon@@MAE@XZ,,0x002CC39E,97,Code/GameEngine/Source/GameLogic/Object/WeaponDtor.cpp,matched,vtable 0x0080214C Snapshot base 0xBBB554 donor BFME1 WeaponDestructorThunk plus ZH MI
