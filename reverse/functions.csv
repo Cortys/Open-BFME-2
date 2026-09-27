@@ -38055,3 +38055,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0028B78A@Object@@QAEXH@Z,,0x0028B78A,18,Code/GameEngine/Source/GameLogic/Object/ObjectFindModule.cpp,matched,Object body forwarder via 0x254 slot 0x30 callers 6 and 9
 ?rva0028B79C@Object@@QAEXH@Z,,0x0028B79C,18,Code/GameEngine/Source/GameLogic/Object/ObjectFindModule.cpp,matched,Object body forwarder via 0x254 slot 0x34 callers 6 and 9
 ?rva0028B95F@Object@@QAEXXZ,,0x0028B95F,22,Code/GameEngine/Source/GameLogic/Object/ObjectRvaSmallGetters.cpp,matched,Object flag and frame setter via TheGameLogic
+?rva0028B38D@Object@@QBEHXZ,,0x0028B38D,25,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B38D.cpp,matched,Object AI query via 0x258 slot 0x168 callers test al
