@@ -1,0 +1,70 @@
+// cl: /O1 /MD
+// ?tossEmitters@W3DTankTruckDraw@@IAEXXZ, retail 0x000CB5C3, 191 bytes.
+// Ported from Open-BFME-1 Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTankTruckDraw.cpp:201
+// (ZH GeneralsMD second: W3DTankTruckDraw.cpp tossEmitter); BFME2 deltas are the 12-byte smart handles.
+// Handles at +0x2ec/+0x2f8/+0x304 are BfmeParticleSystemHandle/RvaSmartPtr12 (cf. SmartPtrCopyCtor.cpp,
+// ParticleSystemHandle_dtor.cpp); treads at +0x310 (caller 0xCE6A1) count at +0x354. Callees: pinned
+// Make001FCBD7 empty fallback (BFME1 emptyParticleSystem role), rowed set 0x1F3C43 (attachToObject: arg+0x74
+// Object ID or zero +0xb4), rowed destroy 0x1F462C, rowed handle dtor 0x4CBC0. Callers at 0xCDE9F/0xCDE52 and
+// rowed setFullyObscuredByShroud 0xCDF1B; donor dtor/loadPostProcess call it. /O1 frameless xor-edi idiom;
+// volatile m_system preserves retail's redundant null-or-Make chases that /O1 otherwise folds (158B wall).
+struct Rva001F3C43Arg {
+    char m_pad[0x74];
+    int m_value;
+};
+class Rva001F3C43Slot {
+public:
+    void set(const Rva001F3C43Arg *arg);
+};
+class ParticleSystem : public Rva001F3C43Slot {
+public:
+    void destroy();
+};
+ParticleSystem *Make001FCBD7();
+struct BfmeParticleSystemHandle {
+    ~BfmeParticleSystemHandle();
+    ParticleSystem *volatile m_system;
+    void *m_prev;
+    void *m_next;
+    ParticleSystem *get() const {
+        ParticleSystem *p = m_system;
+        if (!p)
+            p = Make001FCBD7();
+        return p;
+    }
+};
+class W3DTankTruckDraw {
+protected:
+    void tossEmitters();
+    char m_pad[0x2ec];
+    BfmeParticleSystemHandle m_dust;
+    BfmeParticleSystemHandle m_dirt;
+    BfmeParticleSystemHandle m_power;
+};
+void W3DTankTruckDraw::tossEmitters()
+{
+    if (m_dust.m_system) {
+        m_dust.get()->set(0);
+        m_dust.get()->destroy();
+        if (m_dust.m_system) {
+            m_dust.~BfmeParticleSystemHandle();
+            m_dust.m_system = 0;
+        }
+    }
+    if (m_dirt.m_system) {
+        m_dirt.get()->set(0);
+        m_dirt.get()->destroy();
+        if (m_dirt.m_system) {
+            m_dirt.~BfmeParticleSystemHandle();
+            m_dirt.m_system = 0;
+        }
+    }
+    if (m_power.m_system) {
+        m_power.get()->set(0);
+        m_power.get()->destroy();
+        if (m_power.m_system) {
+            m_power.~BfmeParticleSystemHandle();
+            m_power.m_system = 0;
+        }
+    }
+}
