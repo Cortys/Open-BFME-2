@@ -37500,3 +37500,6 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva00AAD26@@UAE@XZ,,0x000AAD26,54,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000AB09C calls here; vector +0x08; base vtable 0x00BC93DC
 ??1Rva00AB15D@@UAE@XZ,,0x000AB15D,54,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000AB141 calls here; vector +0x0C; base vtable 0x00BC93DC
 ??1Rva00B6971@@UAE@XZ,,0x000B6971,48,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000B9866 calls here; string +0x10; Snapshot base
+??1Rva0098477@@UAE@XZ,,0x00098477,59,Code/GameEngine/Source/Common/SubsystemDerivedDtors.cpp,matched,??_G 0x000984B2; string +0x0C; base ~SubsystemInterface 0x001B4E74
+??1Rva00985E4@@UAE@XZ,,0x000985E4,74,Code/GameEngine/Source/Common/SubsystemDerivedDtors.cpp,matched,??_G 0x0009864B; strings +0x10 +0x0C; base 0x001B4E74
+??1Rva009519B@@UAE@XZ,,0x0009519B,113,Code/GameEngine/Source/Common/SubsystemDerivedDtors.cpp,matched,??_G 0x00095242; five strings; base 0x001B4E74
