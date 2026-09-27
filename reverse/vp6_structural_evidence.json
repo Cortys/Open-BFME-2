@@ -467,7 +467,8 @@
       "compiled_size": 556,
       "score": 0.9280575539568345,
       "stash": "reverse/attempts/0x001bbf70.cpp",
-      "remaining": "byte-result register allocation"
+      "remaining": "byte-result register allocation",
+      "new_reference_experiment": "Unchanged named source function with target-layout shim reproduces full bytes in private scratch; see source_handoff.target_view_compilation. The banked reconstruction itself remains partial."
     },
     {
       "name": "_VP6_ConfigureMvEntropyDecoder",
@@ -477,7 +478,1065 @@
       "compiled_size": 293,
       "score": 0.8301282051282052,
       "stash": "reverse/attempts/0x001c6ef0.cpp",
-      "remaining": "independent table iterator versus combined indexed addressing"
+      "remaining": "independent table iterator versus combined indexed addressing",
+      "new_reference_experiment": "Unchanged named source function with target-layout shim reproduces full bytes in private scratch; see source_handoff.target_view_compilation. The banked reconstruction itself remains partial."
     }
-  ]
+  ],
+  "source_handoff": {
+    "bundle": "vp6-source-handoff.zip",
+    "bundle_sha256": "ac11552be064e42248ea9962663705f9d171087e7d86884e5d2dfbe5ac3cc798",
+    "repository": "alexfreud/winamp",
+    "commit": "0954e03b3acbc11b6c90298598db6b6469568d72",
+    "package_verification": "PASS verify_handoff.py: 361 file hashes and Git blob hashes; 207 PDB procedure records; 201 same-name source definitions; 35 VP60 tables spanning8392 distinct target data bytes plus inherited structural and IDCT byte evidence.",
+    "license_handling": {
+      "bundled_license": "Winamp Collaborative License1.0",
+      "source_notice": "The handoff does not establish third-party redistribution rights. The bundled root text restricts distribution of modified versions and forks.",
+      "disposition": "Downloaded source, extracted function bodies, layout shims and compiled objects remain in ignored build/ scratch. No source copied from this handoff, ledger rows or pins added from its experiments. Preserve this restriction when resuming; a byte match is not redistribution permission."
+    },
+    "selected_source_provenance": [
+      {
+        "path": "LICENSE.md",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/LICENSE.md",
+        "size": 7799,
+        "git_blob": "1cefaf92ffc5e8e621d6ff0d0076ef2848388f2f",
+        "sha256": "0077374a72023c96e25f5492d0c8a16ce9dcbf5d6d32efcbf61ebe7ed929da33"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/Huffman.h",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/Huffman.h",
+        "size": 2403,
+        "git_blob": "d598c5e262325a064f05cf86cc487b8ca9dcffe7",
+        "sha256": "d51223615f1a6b7f5e0f3dc63a54b7459d6c9eefa8e0ba130b1425ee6a004b2c"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/boolhuff.h",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/boolhuff.h",
+        "size": 1638,
+        "git_blob": "9818284e6c85d51a31b84887a8a451e4f1d75d88",
+        "sha256": "9b3aa4e316177610db00ec3df754d240358eebc7ef2d98cfa88f2dba5d4b00de"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/pbdll.h",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/Include/pbdll.h",
+        "size": 16090,
+        "git_blob": "530ba62f83adf9e8d7056af77323c21ec124c1e3",
+        "sha256": "dce74a2db39f9a9cbb4ad402e9bd13a3a4687d8714b426adc705da615ebfed09"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/DFrameR.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/DFrameR.c",
+        "size": 15388,
+        "git_blob": "a2e7f774c82bf2121c6650740b5d3a0836c70ee4",
+        "sha256": "d5768e2f6f223efb412df1e8ec5dd8940878c4199a9b75aec8f664eecd0c35d9"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/DSystemDependant.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/DSystemDependant.c",
+        "size": 4337,
+        "git_blob": "311cb78ad5028a7d1aa709ab01e436a1bf2c6a42",
+        "sha256": "b6202b0dcb7105749eb8229572a1692785ce8368e523b3b0617868e1354cd88a"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/Huffman.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/Huffman.c",
+        "size": 10650,
+        "git_blob": "c6dcffdd323074f3f72e73cfcbf78253bddcdfbf",
+        "sha256": "ef37177a727b2e07fcd2ddf3dee35b654de072d07ef880cd746087d38f2a18ee"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/TokenEntropy.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/TokenEntropy.c",
+        "size": 8131,
+        "git_blob": "4c952d04fc62101ab52e7e558f4f20e228dcecee",
+        "sha256": "fc8dc62ddfc860c49efaaf01fa71c3d515922c3138bce002cde99781c6242df2"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/boolhuff.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/boolhuff.c",
+        "size": 18596,
+        "git_blob": "901241f125b4867b58fa42d9822b6470ccfcb4e0",
+        "sha256": "1bba847aa2fd4ab964a455aa3dbf3c1a81c68828008c36b66a7b6c2d084c9d03"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/debug.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/debug.c",
+        "size": 5811,
+        "git_blob": "c88878a7554a1ce88605375f2175f1bf1bee6172",
+        "sha256": "11777dc4a308f71f54a1ce2ba21f3b1da58c8ad9cbefacf509202c650a115456"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodembs.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodembs.c",
+        "size": 63769,
+        "git_blob": "168e5a8029484a6c4bd3545e886211954e7a403b",
+        "sha256": "9f837177009600d66bc02172445dc10a31b19b8df15992feece78b11f2c63b36"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodemode.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodemode.c",
+        "size": 21562,
+        "git_blob": "4d47f4da55e7cbea554a9b00ae764262a29d8afc",
+        "sha256": "aef2d93159389e374f78f76f32cd5e223c8a648921539f0ecc42566142e7926f"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodemv.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodemv.c",
+        "size": 9457,
+        "git_blob": "ff11687175347a93c3da9ff6980d404356510c9f",
+        "sha256": "62566fb190e8fdaa827b2e6c6bc8835e3d713368ca42efde4fb812be4f00195b"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/modestats.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/modestats.c",
+        "size": 24506,
+        "git_blob": "12f4bd01ae75ba298d338732eed4a431618873cf",
+        "sha256": "530f5d3f03ed7dd330fdee55078224b3c93071b9fe19a68d83a3e7617c8b5d8d"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/pb_globals.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/pb_globals.c",
+        "size": 7627,
+        "git_blob": "95b0a6509000e92b198ac4d11e409d04c9f1e21a",
+        "sha256": "195e57bbd512c0b07a95437f86939235b514a7549fd413c1cf920558f5a922f8"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/quantize.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/quantize.c",
+        "size": 23701,
+        "git_blob": "1916c69fd57ba184d1ba71fd8388baa8e107efbb",
+        "sha256": "b4514dfe16b8ad2553968706aa026bf91934ebc343cb078605b567bcf5097e72"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/recon.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/recon.c",
+        "size": 17956,
+        "git_blob": "99f0318f1300eb801f0009f1076696b97fa7780f",
+        "sha256": "c60072555cef1cadd8c940821752026cc4bf83408f12327d7d36f1e70da9820d"
+      },
+      {
+        "path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/vfwpbdll_if.c",
+        "url": "https://raw.githubusercontent.com/alexfreud/winamp/0954e03b3acbc11b6c90298598db6b6469568d72/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/vfwpbdll_if.c",
+        "size": 20435,
+        "git_blob": "b0aa83f32965ca9cf5b4c604817ff97d6cbd8658",
+        "sha256": "706e08888520cc406669648c553257285cf181c483efce6751b48d8f762af136"
+      }
+    ],
+    "whole_unit_compile": {
+      "compiler": "repository MSVC7.1",
+      "flags": "/O2 /Ob0 /Gy /MD /DNDEBUG /DWIN32 /D_WINDOWS /DPREDICT_2D /DPBDLL /DVFW_PB /DUSE_DRAWDIB /DPOSTPROCESS /DNORMALIZED /Ibuild/vp6-source-handoff/source/Src/libvpShared/corelibs/cdxv/VP60/vp60/Include /Ibuild/vp6-source-handoff/source/Src/libvpShared/corelibs/cdxv/VP60/Include /Ibuild/vp6-source-handoff/source/Src/libvpShared/corelibs/cdxv/include /Ibuild/vp6-source-handoff/source/Src/libvp6/corelibs/include /Ibuild/vp6-source-handoff/source/Src/libvp6/include /Ibuild/vp6-source-handoff/source/Src/libvp6/include/vp60",
+      "source_handling": "Scratch C wrappers include pristine source files without modifying them.",
+      "successful_units": [
+        "boolhuff",
+        "debug",
+        "decodembs",
+        "decodemode",
+        "decodemv",
+        "DFrameR",
+        "DSystemDependant",
+        "Huffman",
+        "modestats",
+        "pb_globals",
+        "quantize",
+        "recon",
+        "TokenEntropy",
+        "vfwpbdll_if"
+      ],
+      "success_count": 14,
+      "failed_units": [
+        {
+          "unit": "FrameIni.c",
+          "reason": "requires intsafe.h absent from the MSVC7.1 environment; not shimmed"
+        },
+        {
+          "unit": "vp60dxv.c",
+          "reason": "uinptr_t undefined at source line449; argument-count mismatch also observed; not repaired"
+        }
+      ]
+    },
+    "layout_audit": {
+      "source_size": 19196,
+      "donor_size": 18772,
+      "warning": "Source-versus-donor comparison only; source fields must still be reconciled with target accesses individually. Several distinct deltas exist.",
+      "fields": [
+        {
+          "name": "mbi",
+          "source_offset": "0x0",
+          "donor_offset": "0x0",
+          "delta": 0
+        },
+        {
+          "name": "fc",
+          "source_offset": "0x264",
+          "donor_offset": "0xcc",
+          "delta": 408
+        },
+        {
+          "name": "quantizer",
+          "source_offset": "0x2c8",
+          "donor_offset": "0x13c",
+          "delta": 396
+        },
+        {
+          "name": "br",
+          "source_offset": "0x2d8",
+          "donor_offset": "0x150",
+          "delta": 392
+        },
+        {
+          "name": "FrameType",
+          "source_offset": "0x334",
+          "donor_offset": "0x1ac",
+          "delta": 392
+        },
+        {
+          "name": "Configuration",
+          "source_offset": "0x338",
+          "donor_offset": "0x1b0",
+          "delta": 392
+        },
+        {
+          "name": "MacroBlocks",
+          "source_offset": "0x3b0",
+          "donor_offset": "0x228",
+          "delta": 392
+        },
+        {
+          "name": "MBRows",
+          "source_offset": "0x3b4",
+          "donor_offset": "0x22c",
+          "delta": 392
+        },
+        {
+          "name": "MBCols",
+          "source_offset": "0x3b8",
+          "donor_offset": "0x230",
+          "delta": 392
+        },
+        {
+          "name": "LastMode",
+          "source_offset": "0x510",
+          "donor_offset": "0x39c",
+          "delta": 372
+        },
+        {
+          "name": "DcProbs",
+          "source_offset": "0x514",
+          "donor_offset": "0x3a0",
+          "delta": 372
+        },
+        {
+          "name": "AcProbs",
+          "source_offset": "0x52a",
+          "donor_offset": "0x3b6",
+          "delta": 372
+        },
+        {
+          "name": "ZeroRunProbs",
+          "source_offset": "0x6d4",
+          "donor_offset": "0x560",
+          "delta": 372
+        },
+        {
+          "name": "MergedScanOrder",
+          "source_offset": "0x6f0",
+          "donor_offset": "0x57c",
+          "delta": 372
+        },
+        {
+          "name": "ModifiedScanOrder",
+          "source_offset": "0x771",
+          "donor_offset": "0x5bc",
+          "delta": 437
+        },
+        {
+          "name": "ScanBands",
+          "source_offset": "0x7f1",
+          "donor_offset": "0x63c",
+          "delta": 437
+        },
+        {
+          "name": "MvSignProbs",
+          "source_offset": "0x8b4",
+          "donor_offset": "0x704",
+          "delta": 432
+        },
+        {
+          "name": "IsMvShortProb",
+          "source_offset": "0x8b6",
+          "donor_offset": "0x706",
+          "delta": 432
+        },
+        {
+          "name": "MvShortProbs",
+          "source_offset": "0x8b8",
+          "donor_offset": "0x708",
+          "delta": 432
+        },
+        {
+          "name": "MvSizeProbs",
+          "source_offset": "0x8cc",
+          "donor_offset": "0x71c",
+          "delta": 432
+        },
+        {
+          "name": "probXmitted",
+          "source_offset": "0x8dc",
+          "donor_offset": "0x72c",
+          "delta": 432
+        },
+        {
+          "name": "DcHuffCode",
+          "source_offset": "0xaf8",
+          "donor_offset": "0x948",
+          "delta": 432
+        },
+        {
+          "name": "DcHuffLength",
+          "source_offset": "0xb58",
+          "donor_offset": "0x9a8",
+          "delta": 432
+        },
+        {
+          "name": "DcHuffProbs",
+          "source_offset": "0xb70",
+          "donor_offset": "0x9c0",
+          "delta": 432
+        },
+        {
+          "name": "DcHuffTree",
+          "source_offset": "0xbd0",
+          "donor_offset": "0xa20",
+          "delta": 432
+        },
+        {
+          "name": "AcHuffCode",
+          "source_offset": "0xcf0",
+          "donor_offset": "0xb40",
+          "delta": 432
+        },
+        {
+          "name": "AcHuffLength",
+          "source_offset": "0x13b0",
+          "donor_offset": "0x1200",
+          "delta": 432
+        },
+        {
+          "name": "AcHuffProbs",
+          "source_offset": "0x1560",
+          "donor_offset": "0x13b0",
+          "delta": 432
+        },
+        {
+          "name": "AcHuffTree",
+          "source_offset": "0x1c20",
+          "donor_offset": "0x1a70",
+          "delta": 432
+        },
+        {
+          "name": "ZeroHuffCode",
+          "source_offset": "0x3060",
+          "donor_offset": "0x2eb0",
+          "delta": 432
+        },
+        {
+          "name": "ZeroHuffLength",
+          "source_offset": "0x30d0",
+          "donor_offset": "0x2f20",
+          "delta": 432
+        },
+        {
+          "name": "ZeroHuffProbs",
+          "source_offset": "0x30ec",
+          "donor_offset": "0x2f3c",
+          "delta": 432
+        },
+        {
+          "name": "ZeroHuffTree",
+          "source_offset": "0x315c",
+          "donor_offset": "0x2fac",
+          "delta": 432
+        },
+        {
+          "name": "DcHuffLUT",
+          "source_offset": "0x32ac",
+          "donor_offset": "0x30fc",
+          "delta": 432
+        },
+        {
+          "name": "AcHuffLUT",
+          "source_offset": "0x33ac",
+          "donor_offset": "0x31fc",
+          "delta": 432
+        },
+        {
+          "name": "ZeroHuffLUT",
+          "source_offset": "0x45ac",
+          "donor_offset": "0x43fc",
+          "delta": 432
+        },
+        {
+          "name": "UseHuffman",
+          "source_offset": "0x46d0",
+          "donor_offset": "0x4520",
+          "delta": 432
+        },
+        {
+          "name": "CurrentDcRunLen",
+          "source_offset": "0x46d4",
+          "donor_offset": "0x4524",
+          "delta": 432
+        },
+        {
+          "name": "CurrentAc1RunLen",
+          "source_offset": "0x46dc",
+          "donor_offset": "0x452c",
+          "delta": 432
+        }
+      ]
+    },
+    "target_view_compilation": {
+      "flags": "/O2 /Ob0 /Gy /MD plus repository standard flags",
+      "layout_adaptation": "Only the three unchanged source function bodies compiled against a minimal target-offset PB_INSTANCE view derived from checked target accesses and donor PDB. No full source-header layout equivalence assumed.",
+      "shim_sha256": "602c7d35e712c773db76af61fa07aa0144b6776137ab200ff1f6909cf7f043fb",
+      "callee_mapping_rvas": {
+        "_nDecodeBool": "0x1c5100",
+        "_VP6_DecodeBool": "0x1c4f00",
+        "_VP6_bitread": "0x1bcf40",
+        "_BuildScanOrder": "0x1bba20",
+        "_VP6_ConfigureContexts": "0x1c6da0",
+        "_BoolTreeToHuffCodes": "0x1bbaf0",
+        "_ZerosBoolTreeToHuffCodes": "0x1bbc40",
+        "_VP6_BuildHuffTree": "0x1c69e0",
+        "_VP6_BuildHuffLookupTable": "0x1c6ba0",
+        "_VP6_CreateCodeArray": "0x1c6c20"
+      },
+      "global_mapping_vas": {
+        "_VP6_DcUpdateProbs": "0xbd9210",
+        "_ZeroRunProbDefaults": "0xbd9284",
+        "_ScanBandUpdateProbs": "0xbd9228",
+        "_ZrlUpdateProbs": "0xbd9268",
+        "_VP6_AcUpdateProbs": "0xbd92a0",
+        "_VP6_MvUpdateProbs": "0xbd94a8"
+      },
+      "checks": [
+        {
+          "name": "VP6_ConfigureEntropyDecoder",
+          "rva": "0x1bbf70",
+          "target_size": 556,
+          "compiled_size": 556,
+          "exact": true,
+          "score": 1.0,
+          "source_path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodembs.c",
+          "source_sha256": "9f837177009600d66bc02172445dc10a31b19b8df15992feece78b11f2c63b36",
+          "scratch_wrapper": "build/vp6-source-handoff/trials/VP6_ConfigureEntropyDecoder_target.c",
+          "wrapper_sha256": "3db9a34b9cf4e80e5e8195a0d128a620aaf7ff672583fdc9d5d63465b9d4a3cc",
+          "compiled_patched_sha256": "1732d79b2264025dd45db18b90318ed7505dc74b8704c488313d54775192ac5f",
+          "target_sha256": "1732d79b2264025dd45db18b90318ed7505dc74b8704c488313d54775192ac5f",
+          "relocations": [
+            [
+              54,
+              6,
+              "_VP6_DcUpdateProbs"
+            ],
+            [
+              61,
+              20,
+              "_nDecodeBool"
+            ],
+            [
+              76,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              164,
+              6,
+              "_ZeroRunProbDefaults"
+            ],
+            [
+              177,
+              20,
+              "_nDecodeBool"
+            ],
+            [
+              196,
+              6,
+              "_ScanBandUpdateProbs"
+            ],
+            [
+              203,
+              20,
+              "_nDecodeBool"
+            ],
+            [
+              218,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              247,
+              20,
+              "_BuildScanOrder"
+            ],
+            [
+              262,
+              6,
+              "_ZrlUpdateProbs"
+            ],
+            [
+              269,
+              20,
+              "_nDecodeBool"
+            ],
+            [
+              284,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              333,
+              6,
+              "_VP6_AcUpdateProbs"
+            ],
+            [
+              385,
+              20,
+              "_nDecodeBool"
+            ],
+            [
+              406,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              525,
+              6,
+              "_VP6_AcUpdateProbs"
+            ],
+            [
+              541,
+              20,
+              "_VP6_ConfigureContexts"
+            ]
+          ],
+          "status": "private reference experiment, no source or matched claim landed"
+        },
+        {
+          "name": "VP6_ConfigureMvEntropyDecoder",
+          "rva": "0x1c6ef0",
+          "target_size": 331,
+          "compiled_size": 331,
+          "exact": true,
+          "score": 1.0,
+          "source_path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodemv.c",
+          "source_sha256": "62566fb190e8fdaa827b2e6c6bc8835e3d713368ca42efde4fb812be4f00195b",
+          "scratch_wrapper": "build/vp6-source-handoff/trials/VP6_ConfigureMvEntropyDecoder_target.c",
+          "wrapper_sha256": "64be454d804e450b2958ad3005685d6964dd859258bd6af678eb11a4cf64868e",
+          "compiled_patched_sha256": "910479a33fbefe9dfe12bf4a6c0fb37e959d603c4f222c7dc71bd90ee841c539",
+          "target_sha256": "910479a33fbefe9dfe12bf4a6c0fb37e959d603c4f222c7dc71bd90ee841c539",
+          "relocations": [
+            [
+              18,
+              6,
+              "_VP6_MvUpdateProbs"
+            ],
+            [
+              29,
+              20,
+              "_VP6_DecodeBool"
+            ],
+            [
+              44,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              78,
+              20,
+              "_VP6_DecodeBool"
+            ],
+            [
+              93,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              127,
+              6,
+              "_VP6_MvUpdateProbs"
+            ],
+            [
+              143,
+              6,
+              "_VP6_MvUpdateProbs"
+            ],
+            [
+              166,
+              20,
+              "_VP6_DecodeBool"
+            ],
+            [
+              181,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              219,
+              6,
+              "_VP6_MvUpdateProbs"
+            ],
+            [
+              243,
+              6,
+              "_VP6_MvUpdateProbs"
+            ],
+            [
+              262,
+              20,
+              "_VP6_DecodeBool"
+            ],
+            [
+              277,
+              20,
+              "_VP6_bitread"
+            ],
+            [
+              315,
+              6,
+              "_VP6_MvUpdateProbs"
+            ]
+          ],
+          "status": "private reference experiment, no source or matched claim landed"
+        },
+        {
+          "name": "ConvertBoolTrees",
+          "rva": "0x1bbd60",
+          "target_size": 521,
+          "compiled_size": 521,
+          "exact": true,
+          "score": 1.0,
+          "source_path": "Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/decodembs.c",
+          "source_sha256": "9f837177009600d66bc02172445dc10a31b19b8df15992feece78b11f2c63b36",
+          "scratch_wrapper": "build/vp6-source-handoff/trials/ConvertBoolTrees_target.c",
+          "wrapper_sha256": "ce1fc613685bf366d0dd144c41593de0e9126453cf8c19876b438323edd618c3",
+          "compiled_patched_sha256": "6d3320dbfe6ee6f90e3250a26d1951a7898f6bc73e92d95f52393411786aeba0",
+          "target_sha256": "6d3320dbfe6ee6f90e3250a26d1951a7898f6bc73e92d95f52393411786aeba0",
+          "relocations": [
+            [
+              71,
+              20,
+              "_BoolTreeToHuffCodes"
+            ],
+            [
+              80,
+              20,
+              "_VP6_BuildHuffTree"
+            ],
+            [
+              91,
+              20,
+              "_VP6_BuildHuffLookupTable"
+            ],
+            [
+              108,
+              20,
+              "_VP6_CreateCodeArray"
+            ],
+            [
+              208,
+              20,
+              "_ZerosBoolTreeToHuffCodes"
+            ],
+            [
+              217,
+              20,
+              "_VP6_BuildHuffTree"
+            ],
+            [
+              228,
+              20,
+              "_VP6_BuildHuffLookupTable"
+            ],
+            [
+              248,
+              20,
+              "_VP6_CreateCodeArray"
+            ],
+            [
+              375,
+              20,
+              "_BoolTreeToHuffCodes"
+            ],
+            [
+              384,
+              20,
+              "_VP6_BuildHuffTree"
+            ],
+            [
+              391,
+              20,
+              "_VP6_BuildHuffLookupTable"
+            ],
+            [
+              411,
+              20,
+              "_VP6_CreateCodeArray"
+            ]
+          ],
+          "status": "private reference experiment, no source or matched claim landed"
+        }
+      ]
+    },
+    "placement_candidates": [
+      {
+        "name_candidate": "_GetQuantizedCoeffsMSE_RD",
+        "rva": "0x1b79e0",
+        "size": 185,
+        "source_unit": "quantize.c",
+        "target_sha256": "f497ef82564cd6e726ebe22185f23c301e0e89a46c4e00755b32ac414d0662ba",
+        "compiled_unrelocated_sha256": "28471a35055d3eba8b53c87ec82cf17033087cf1e3c7a6def07fa41f47ee4259",
+        "relocations": [
+          {
+            "offset": 21,
+            "kind": 6,
+            "symbol": "_dequant_index",
+            "target_address": "0xbd8464",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 156,
+            "kind": 6,
+            "symbol": "_dequant_index",
+            "target_address": "0xbd8564",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1b7a98",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccc8b",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_vp6_drawb",
+        "rva": "0x1bb4e0",
+        "size": 160,
+        "source_unit": "debug.c",
+        "target_sha256": "192a6290e0333ce06f27506f6cbc6dc1af4069eacac7f592eeee23e26408f1de",
+        "compiled_unrelocated_sha256": "44e916b25fd35f158b59d9ee122138ca30296232dd77278888f91975c1f280a6",
+        "relocations": [
+          {
+            "offset": 27,
+            "kind": 6,
+            "symbol": "??_C@_0L@GKIDLMNF@?$CFs?$CF04d?4raw?$AA@",
+            "target_address": "0xbd87ec",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 34,
+            "kind": 6,
+            "symbol": "__imp__sprintf",
+            "target_address": "0xbba6bc",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 43,
+            "kind": 6,
+            "symbol": "??_C@_02GMLFBBN@wb?$AA@",
+            "target_address": "0xbcf51c",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 50,
+            "kind": 6,
+            "symbol": "__imp__fopen",
+            "target_address": "0xbba5d4",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 83,
+            "kind": 6,
+            "symbol": "__imp__fwrite",
+            "target_address": "0xbba534",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 149,
+            "kind": 6,
+            "symbol": "__imp__fclose",
+            "target_address": "0xbba5dc",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1bb57f",
+          "text": "ret "
+        },
+        "following_bytes": "518b44240868f887",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_VP6_EncodeBool",
+        "rva": "0x1bccf0",
+        "size": 145,
+        "source_unit": "boolhuff.c",
+        "target_sha256": "47599d26ac56549c8f7369d163eed74509254a16ee04ab1e92231a677cca60eb",
+        "compiled_unrelocated_sha256": "47599d26ac56549c8f7369d163eed74509254a16ee04ab1e92231a677cca60eb",
+        "relocations": [],
+        "last_instruction": {
+          "rva": "0x1bcd80",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": {
+          "rva": "0x1BCCF0",
+          "size": "145",
+          "name": "FUN_005bccf0"
+        }
+      },
+      {
+        "name_candidate": "_VP6_EncodeBoolOne",
+        "rva": "0x1bcd90",
+        "size": 133,
+        "source_unit": "boolhuff.c",
+        "target_sha256": "d360b2735fdc3719cd71d9a5169a23f621d58a46886068a1627b655bd1a805d3",
+        "compiled_unrelocated_sha256": "d360b2735fdc3719cd71d9a5169a23f621d58a46886068a1627b655bd1a805d3",
+        "relocations": [],
+        "last_instruction": {
+          "rva": "0x1bce14",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_VP6_EncodeBoolZero",
+        "rva": "0x1bce20",
+        "size": 129,
+        "source_unit": "boolhuff.c",
+        "target_sha256": "3e2b5b10c7c9c5ebedf127a004dc306d0a76dd39e4c20412e2c595236fdc0aa5",
+        "compiled_unrelocated_sha256": "3e2b5b10c7c9c5ebedf127a004dc306d0a76dd39e4c20412e2c595236fdc0aa5",
+        "relocations": [],
+        "last_instruction": {
+          "rva": "0x1bcea0",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_VP6_EncodeValue",
+        "rva": "0x1c6d20",
+        "size": 125,
+        "source_unit": "Huffman.c",
+        "target_sha256": "09cf8fa1e0e881f43701bf910fb24340a5777a5568e3988b892a107910dc2abd",
+        "compiled_unrelocated_sha256": "b478cf7d599307d98e8a1b075bc5e13e3fafe653b570d14ad3952b78b3f25d62",
+        "relocations": [
+          {
+            "offset": 64,
+            "kind": 20,
+            "symbol": "_VP6_EncodeBool2",
+            "target_address": "0x1bceb0",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 86,
+            "kind": 20,
+            "symbol": "_VP6_EncodeBool",
+            "target_address": "0x1bccf0",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1c6d9c",
+          "text": "ret "
+        },
+        "following_bytes": "cccccc535657ff15",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_vp6_drawc",
+        "rva": "0x1bb580",
+        "size": 109,
+        "source_unit": "debug.c",
+        "target_sha256": "fc6732583f094074647363eddcd3c641dcd9541352b0ea1034ca3bb9680443a2",
+        "compiled_unrelocated_sha256": "b72f8d5c73a4f4ebaf0c03760ce066a8a6cefc2c4438742fa81193dd04e63faa",
+        "relocations": [
+          {
+            "offset": 6,
+            "kind": 6,
+            "symbol": "??_C@_02BOGAIONP@ab?$AA@",
+            "target_address": "0xbd87f8",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 13,
+            "kind": 6,
+            "symbol": "__imp__fopen",
+            "target_address": "0xbba5d4",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 40,
+            "kind": 6,
+            "symbol": "__imp__fwrite",
+            "target_address": "0xbba534",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 101,
+            "kind": 6,
+            "symbol": "__imp__fclose",
+            "target_address": "0xbba5dc",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1bb5ec",
+          "text": "ret "
+        },
+        "following_bytes": "cccccc8b4424048b",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_vp6_draw",
+        "rva": "0x1bb480",
+        "size": 94,
+        "source_unit": "debug.c",
+        "target_sha256": "e960583d8a978908014a382c0867dab774962ad4f80a99b81aa1e253d92726e1",
+        "compiled_unrelocated_sha256": "72e54c67927f19a2ad46917362a27992253af663d2499a14466905a75adfd7c4",
+        "relocations": [
+          {
+            "offset": 22,
+            "kind": 6,
+            "symbol": "??_C@_0L@GKIDLMNF@?$CFs?$CF04d?4raw?$AA@",
+            "target_address": "0xbd87ec",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 29,
+            "kind": 6,
+            "symbol": "__imp__sprintf",
+            "target_address": "0xbba6bc",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 38,
+            "kind": 6,
+            "symbol": "??_C@_02GMLFBBN@wb?$AA@",
+            "target_address": "0xbcf51c",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 45,
+            "kind": 6,
+            "symbol": "__imp__fopen",
+            "target_address": "0xbba5d4",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 72,
+            "kind": 6,
+            "symbol": "__imp__fwrite",
+            "target_address": "0xbba534",
+            "identity_status": "candidate address read from target; no pin added"
+          },
+          {
+            "offset": 79,
+            "kind": 6,
+            "symbol": "__imp__fclose",
+            "target_address": "0xbba5dc",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1bb4dd",
+          "text": "ret "
+        },
+        "following_bytes": "cccc81ec08010000",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_InsertSorted",
+        "rva": "0x1c6980",
+        "size": 88,
+        "source_unit": "Huffman.c",
+        "target_sha256": "9235916de9df8cdf9a7bca9c1f5ea85b68e370d5acccb042c2b1c61f0b8b4f5f",
+        "compiled_unrelocated_sha256": "9235916de9df8cdf9a7bca9c1f5ea85b68e370d5acccb042c2b1c61f0b8b4f5f",
+        "relocations": [],
+        "last_instruction": {
+          "rva": "0x1c69d7",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_VP6_DecodeValue",
+        "rva": "0x1c6cd0",
+        "size": 70,
+        "source_unit": "Huffman.c",
+        "target_sha256": "5b17ef693981e33e005a0caa0374a22408f4955e690e996d2fdb50827910f6b2",
+        "compiled_unrelocated_sha256": "90437df0bfe39008f23ea321020b82d76d8251b3517b11b30379dd8397df6ab8",
+        "relocations": [
+          {
+            "offset": 39,
+            "kind": 20,
+            "symbol": "_VP6_DecodeBool",
+            "target_address": "0x1c4f00",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1c6d15",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": null
+      },
+      {
+        "name_candidate": "_VP6_LoadFrame",
+        "rva": "0x1bd550",
+        "size": 28,
+        "source_unit": "DFrameR.c",
+        "target_sha256": "6d68c216d102a9cf946d8cc1c95881aef5950d0bbf0d99ae9b0fffe91d357d13",
+        "compiled_unrelocated_sha256": "53f4041538b8a8482ef6d3f6fe5cb7b06a77250e059df09b40b69e48d0b2b123",
+        "relocations": [
+          {
+            "offset": 12,
+            "kind": 20,
+            "symbol": "_LoadFrameHeader",
+            "target_address": "0x1bd050",
+            "identity_status": "candidate address read from target; no pin added"
+          }
+        ],
+        "last_instruction": {
+          "rva": "0x1bd56b",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccc8a442408",
+        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "ghidra_entry": {
+          "rva": "0x1BD550",
+          "size": "28",
+          "name": "FUN_005bd550"
+        }
+      }
+    ],
+    "placement_count": 11,
+    "placement_bytes": 1266,
+    "new_matched_bytes_from_this_handoff": 0,
+    "follow_up": "Study context-free generic candidates first. Target-view experiments prove three source bodies can compile exactly after layout adaptation, but remain private reference experiments. Retain banked independent C++ attempts; do not replace them with restricted source. Full-unit layout reconciliation needs individually verified fields, not a uniform offset delta."
+  }
 }
