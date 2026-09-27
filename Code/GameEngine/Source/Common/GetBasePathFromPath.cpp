@@ -18,6 +18,8 @@ class AsciiString;
 AsciiString GetReadmeFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetFileFromPath(AsciiString path);
+class AsciiString;
+AsciiString GetBaseFileFromFile(AsciiString fname);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -128,4 +130,18 @@ AsciiString GetFileFromPath(AsciiString path)
 		return separator + 1;
 	}
 	return path;
+}
+
+AsciiString GetBaseFileFromFile(AsciiString fname)
+{
+	const char *separator = fname.reverseFind('.');
+	if (separator) {
+		int prefixLength = (int)(separator - fname.str());
+		AsciiString base;
+		char *buffer = base.getBufferForRead(prefixLength);
+		memcpy(buffer, fname.str(), prefixLength);
+		buffer[prefixLength] = 0;
+		return buffer;
+	}
+	return AsciiString::TheEmptyString;
 }

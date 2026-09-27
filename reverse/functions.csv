@@ -38105,3 +38105,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?GetAssetUsageFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CF2F,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetAssetUsageFromMap via GetBasePath assetusage
 ?GetReadmeFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CFCE,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetReadmeFromMap via GetBasePath readme
 ?GetFileFromPath@@YA?AVAsciiString@@V1@@Z,,0x0044C934,88,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetFileFromPath reverseFind backslash suffix
+?GetBaseFileFromFile@@YA?AVAsciiString@@V1@@Z,,0x0044C9E4,194,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetBaseFileFromFile reverseFind dot prefix
