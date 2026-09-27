@@ -1,0 +1,131 @@
+// cl: /O1 /MD
+// ??0Rva005D7706@@QAE@XZ @0x005D76F4 18B, ??0Rva005D7855@@QAE@XZ @0x005D7843 18B,
+// ??0Rva005D7B3E@@QAE@XZ @0x005D7B2C 18B, ??0Rva005D7D88@@QAE@XZ @0x005D7D76 18B,
+// ??0Rva005D817D@@QAE@XZ @0x005D816B 18B, ??0Rva005D8223@@QAE@XZ @0x005D8211 18B,
+// ??0Rva005D86E6@@QAE@XZ @0x005D86D4 18B, ??0Rva005D8AE4@@QAE@XZ @0x005D8AD2 18B,
+// ??0Rva005D8C25@@QAE@XZ @0x005D8C13 18B, ??0Rva005D8EE8@@QAE@XZ @0x005D8ED6 18B.
+// Ten opaque single-inheritance ctors deriving from Rva005EE30C (rowed ctor
+// at 0x005EE2E6 in Rva005EE30CCtor.cpp). Each body is push esi / mov esi ecx /
+// call base / mov [esi] vtable / mov eax esi / pop esi / ret (18B). Each ctor
+// immediately precedes its rowed dtor in Rva005EE30CDerived.cpp
+// (005D76F4->7706, 005D7843->7855, 005D7B2C->7B3E, 005D7D76->7D88,
+// 005D816B->817D, 005D8211->8223, 005D86D4->86E6, 005D8AD2->8AE4,
+// 005D8C13->8C25, 005D8ED6->8EE8), proving the class identity. Vtable
+// immediates are DIR32 filled by the gate. Base declared only here.
+
+class Rva005EE30C
+{
+public:
+	Rva005EE30C();
+	virtual ~Rva005EE30C();
+};
+
+class Rva005D7706 : public Rva005EE30C
+{
+public:
+	Rva005D7706();
+	virtual ~Rva005D7706();
+};
+
+Rva005D7706::Rva005D7706()
+{
+}
+
+class Rva005D7855 : public Rva005EE30C
+{
+public:
+	Rva005D7855();
+	virtual ~Rva005D7855();
+};
+
+Rva005D7855::Rva005D7855()
+{
+}
+
+class Rva005D7B3E : public Rva005EE30C
+{
+public:
+	Rva005D7B3E();
+	virtual ~Rva005D7B3E();
+};
+
+Rva005D7B3E::Rva005D7B3E()
+{
+}
+
+class Rva005D7D88 : public Rva005EE30C
+{
+public:
+	Rva005D7D88();
+	virtual ~Rva005D7D88();
+};
+
+Rva005D7D88::Rva005D7D88()
+{
+}
+
+class Rva005D817D : public Rva005EE30C
+{
+public:
+	Rva005D817D();
+	virtual ~Rva005D817D();
+};
+
+Rva005D817D::Rva005D817D()
+{
+}
+
+class Rva005D8223 : public Rva005EE30C
+{
+public:
+	Rva005D8223();
+	virtual ~Rva005D8223();
+};
+
+Rva005D8223::Rva005D8223()
+{
+}
+
+class Rva005D86E6 : public Rva005EE30C
+{
+public:
+	Rva005D86E6();
+	virtual ~Rva005D86E6();
+};
+
+Rva005D86E6::Rva005D86E6()
+{
+}
+
+class Rva005D8AE4 : public Rva005EE30C
+{
+public:
+	Rva005D8AE4();
+	virtual ~Rva005D8AE4();
+};
+
+Rva005D8AE4::Rva005D8AE4()
+{
+}
+
+class Rva005D8C25 : public Rva005EE30C
+{
+public:
+	Rva005D8C25();
+	virtual ~Rva005D8C25();
+};
+
+Rva005D8C25::Rva005D8C25()
+{
+}
+
+class Rva005D8EE8 : public Rva005EE30C
+{
+public:
+	Rva005D8EE8();
+	virtual ~Rva005D8EE8();
+};
+
+Rva005D8EE8::Rva005D8EE8()
+{
+}

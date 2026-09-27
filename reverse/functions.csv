@@ -37199,3 +37199,13 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?dup_004ABCFE@@YAXXZ,,0x004ABCFE,56,Code/GameEngine/Source/GameLogic/Object/Contain/OpenContainCtor.cpp,matched,Opaque identity because the specific STLport tree destructor mangling is already claimed at 0x00286852; this body independently calls matched same-type clear 0x4ABC5C and free 0x30830; tree-destructor semantics and int-to-pointer layout are supported by carried STLport source plus target call structure but name identity is unresolved;object-symbol=??1?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QAE@XZ
 ??0MouseThreadClass@@QAE@XZ,,0x00098D8A,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/MouseThreadCtor.cpp,matched,calls rowed ThreadClass ctor with null installs vtable 0x007C86CC next is dtor donor W3DMouse
 ?attach@RvaSmartPtr12@@QAEXXZ,,0x0004CB9A,38,Code/GameEngine/Source/Common/System/SmartPtrAttach.cpp,matched,intrusive attach via last-first chain at plus9C-A0
+??0Rva005D7706@@QAE@XZ,,0x005D76F4,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D7706
+??0Rva005D7855@@QAE@XZ,,0x005D7843,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D7855
+??0Rva005D7B3E@@QAE@XZ,,0x005D7B2C,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D7B3E
+??0Rva005D7D88@@QAE@XZ,,0x005D7D76,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D7D88
+??0Rva005D817D@@QAE@XZ,,0x005D816B,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D817D
+??0Rva005D8223@@QAE@XZ,,0x005D8211,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D8223
+??0Rva005D86E6@@QAE@XZ,,0x005D86D4,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D86E6
+??0Rva005D8AE4@@QAE@XZ,,0x005D8AD2,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D8AE4
+??0Rva005D8C25@@QAE@XZ,,0x005D8C13,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D8C25
+??0Rva005D8EE8@@QAE@XZ,,0x005D8ED6,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D8EE8
