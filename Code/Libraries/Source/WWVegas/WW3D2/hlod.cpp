@@ -3001,7 +3001,9 @@ bool HLodClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Prepare_LOD present-unmatched
+// EA/BFME1 donor; retail19D0A0..19D146 in HLod table7D6780 slot120.
+// Target keeps screen-size/clamping and visible additional-model recursion;
+// the donor optimizer registration and single-LOD cost accumulation are absent.
 void HLodClass::Prepare_LOD(CameraClass &camera)
 {
 	if (Is_Not_Hidden_At_All() == false) {
@@ -3025,16 +3027,6 @@ void HLodClass::Prepare_LOD(CameraClass &camera)
 		int minlod = Calculate_Cost_Value_Arrays(norm_area, Value, Cost);
 		if (CurLod < minlod) Set_LOD_Level(minlod);
 
-
-		/*
-		** Add myself to the LOD optimizer:
-		*/
-		PredictiveLODOptimizerClass::Add_Object(this);
-
-	} else {
-
-		// Not added to optimizer, need to add cost
-		PredictiveLODOptimizerClass::Add_Cost(Get_Cost());
 
 	}
 
