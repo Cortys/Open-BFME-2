@@ -71,3 +71,32 @@ bool Rva005F2767::rva005F2767() const
 {
 	return m_ptr->m_flag;
 }
+
+// ?rva005F2577@Rva005F2577Holder@@QAEXXZ, retail 0x005F2577, 23 bytes.
+// Ref-release: if m_ptr non-null, dec ref at +4, virt slot0 on zero, null m_ptr.
+// Retail push esi / mov esi,ecx / mov ecx,[esi] / test / dec [ecx+4] / jne /
+// mov eax,[ecx] / call [eax] / and [esi],0 / pop / ret. Callees none
+// (indirect call). Callers 7 unclaimed. Honest address name.
+struct Rva005F2577Inner
+{
+	virtual void virt0();
+	int m_ref;
+};
+
+class Rva005F2577Holder
+{
+public:
+	void rva005F2577();
+private:
+	Rva005F2577Inner *m_ptr;
+};
+
+void Rva005F2577Holder::rva005F2577()
+{
+	Rva005F2577Inner *p = m_ptr;
+	if (!p)
+		return;
+	if (--p->m_ref == 0)
+		p->virt0();
+	m_ptr = 0;
+}
