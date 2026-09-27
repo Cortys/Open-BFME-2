@@ -38021,3 +38021,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Rva00270025@@QAE@XZ,,0x00270025,28,Code/GameEngine/Source/Common/Rva00270025Ctor.cpp,matched,new 0x74 at 0x00270BB4 calls it; dtor at 0x00270041; honest Rva name
 ?rva00270BA8@Rva00270BA8@@QAEPAVRva00270025@@XZ,,0x00270BA8,49,Code/GameEngine/Source/Common/Rva00270BA8.cpp,matched,calls ctor 0x00270025; new 0x74; honest Rva names
 ?rva00270041@Rva00270025@@QAEXXZ,,0x00270041,43,Code/GameEngine/Source/Common/Rva00270025Ctor.cpp,matched,same class as ctor 0x00270025; deletes get(0); honest Rva name
+?rva0027006C@Rva00270025@@QAEXH@Z,,0x0027006C,44,Code/GameEngine/Source/Common/Rva00270025Ctor.cpp,matched,same class as ctor; indexed cleanup; honest Rva name
