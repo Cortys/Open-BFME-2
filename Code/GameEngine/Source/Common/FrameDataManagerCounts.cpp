@@ -10,6 +10,7 @@ class FrameData {
 public:
  __declspec(noinline) unsigned int getFrameCommandCount();
  unsigned int getCommandCount();
+ NetCommandList *getCommandList();
  __declspec(noinline) void setFrameCommandCount(unsigned int count);
  __declspec(noinline) void zeroFrame();
  __declspec(noinline) void destroyGameMessages();
@@ -42,6 +43,7 @@ class FrameDataManager {
 public:
  void destroyGameMessages();
  unsigned int getCommandCount(unsigned int frame);
+ NetCommandList *getFrameCommandList(unsigned int frame);
  unsigned int getFrameCommandCount(unsigned int frame);
  void setFrameCommandCount(unsigned int frame, unsigned int count);
  void setQuitFrame(unsigned int frame);
@@ -67,6 +69,10 @@ void FrameDataManager::destroyGameMessages() {
 unsigned int FrameDataManager::getCommandCount(unsigned int frame) {
  unsigned int frameindex = frame % FRAME_DATA_LENGTH;
  return m_frameData[frameindex].getCommandCount();
+}
+NetCommandList *FrameDataManager::getFrameCommandList(unsigned int frame) {
+ unsigned int frameindex = frame % FRAME_DATA_LENGTH;
+ return m_frameData[frameindex].getCommandList();
 }
 unsigned int FrameDataManager::getFrameCommandCount(unsigned int frame) {
  unsigned int frameindex = frame % FRAME_DATA_LENGTH;
