@@ -36871,3 +36871,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@FireWeaponCollide@@MAEXPAVXfer@@@Z,,0x004BB85C,94,Code/GameEngine/Source/GameLogic/Object/Collide/FireWeaponCollideXfer.cpp,matched,slot 3 of vtable 0x0085A0FC via rowed dtor 0x004BB6A7 plus base xfer 0x004CE56D plus Version1 0x000053EE plus BFME1 donor xfer
 ??1Rva003AF50D@@UAE@XZ,,0x003A983C,22,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoDtor.cpp,matched,vtable 0081D420 slot0 caller AE492 and base 3A57E7
 ?xfer@CrateCollide@@MAEXPAVXfer@@@Z,,0x004BC617,64,Code/GameEngine/Source/GameLogic/Object/Collide/CrateCollide/CrateCollideXfer.cpp,matched,slot3 of vtable 0x0085A618 via rowed ctor plus Version1-2 plus CollideModule base pin plus bool at 0x14
+??0Rva003ADFDB@@QAE@ABV0@@Z,,0x003ADFDB,31,Code/GameEngine/Source/Common/Rva003ADFDBCopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3ADDEC plus two vftables plus caller 0x3AE1D7
+??0Rva003ADEBF@@QAE@ABV0@@Z,,0x003ADEBF,31,Code/GameEngine/Source/Common/Rva003ADFDBCopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3ADDEC plus two vftables plus callers 0x3ADE62 0x3AE047
