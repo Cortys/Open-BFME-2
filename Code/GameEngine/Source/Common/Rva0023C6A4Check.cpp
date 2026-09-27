@@ -1,0 +1,33 @@
+// cl: /O1 /DNDEBUG /MD
+//
+// ?rva0023C6A4@Rva0023C6A4@@QAE_NXZ @0x0023C6A4, 33B.
+// Mode-plus-singleton predicate: true when m_unk114==3, the 0xDFEF10
+// singleton is present, and its byte at +0xB4 is non-zero.
+// Retail: cmp [ecx+0x114],3 jne false; mov eax,[0xDFEF10]; test; je false;
+// cmp [eax+0xB4],0 je false; mov al,1 ret; false xor al,al ret.
+// Evidence: six callers pass the same this (e.g. 0x002034E9 re-checks
+// [ecx+0x114]==3 before calling); +0x114==3 matches GameLogic m_unk114
+// (GameLogicModeGateChecks.cpp) but owner unproven so Rva class; global
+// proven by Rva002BA8F1Logic find callers using 0xDFEF10. &&-chain shares
+// the single false block (separate early returns give setne shape).
+
+typedef bool Bool;
+
+extern void *Rva00DFEF10;
+
+class Rva0023C6A4
+{
+public:
+	Bool rva0023C6A4();
+
+private:
+	char m_pad[0x114];
+	int m_unk114; // +0x114
+};
+
+Bool Rva0023C6A4::rva0023C6A4()
+{
+	if (m_unk114 == 3 && Rva00DFEF10 != 0 && *(unsigned char *)((char *)Rva00DFEF10 + 0xB4) != 0)
+		return true;
+	return false;
+}

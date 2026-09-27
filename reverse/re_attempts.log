@@ -2163,3 +2163,5 @@ FUN_0043DB23	0x0043DB23	26	blocked	pin invoke mangling H10000 undecodable needs 
 ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z	0x0024297F	323	void	The previous partial bank was superseded by this verified landing; remove its now-missing stash reference.
 FUN_0068f940	0x0028F940	28	blocked	contested StringBase pin plus unclear stdcall shape with ignored ecx t=8 model=muse-e606
 ?rva00483B3D@RebuildHoleBehavior@@QAEHXZ	0x00483B3D	102	blocked	vslot 17 mapping plus secondary offsets plus body slot4 slot6 float compare t=12 model=muse-e606
+?rva006DE2C0@BfmeAptValue006DCD20@@QAE@XZ	0x006DE2C0	96	blocked	EH ctor with dual vtable stores and flag ops plus global release-vector Push; needs base-derived EH model and donor bitfields; t=15 model=muse-v4q-77f0
+?rva006DE390@BfmeAptValue006DCD20@@QAE@XZ	0x006DE390	99	blocked	same wall as 0x006DE2C0 sibling EH ctor dual vtable plus flags plus Push; t=5 model=muse-v4q-77f0
