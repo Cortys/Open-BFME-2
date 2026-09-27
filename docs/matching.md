@@ -115,10 +115,10 @@ so `float`, `unsigned int`, `int`, and `const char *` land at the target vtable 
 BFME 2 is the SAGE engine — two ancestor trees ride in via the `reference/open-bfme-1`
 submodule (GPLv3, same license as this repo):
 
-1. **Open-BFME-1's converted `Code/`** (`reference/open-bfme-1/Code/`) — the nearest ancestor,
+1. **Open-BFME-1's converted game** (`reference/open-bfme-1/game/`) — the nearest ancestor,
    already ZH→BFME-reconciled, and still growing. Prefer it for anything BFME 1 has landed;
    calibration measured 756 of its bodies transferring to game.dat verbatim.
-2. **Zero Hour** (`reference/open-bfme-1/reference/CnC_Generals_Zero_Hour/`). **Always port
+2. **Zero Hour** (`reference/open-bfme-1/inputs/reference/CnC_Generals_Zero_Hour/`). **Always port
    from `GeneralsMD/` (= ZH), never `Generals/`.**
 
 Many functions match verbatim. Reconcile against the binary (the source of truth). game.dat's
