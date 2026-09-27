@@ -37959,3 +37959,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?stopMovie@WindowVideoManager@@QAEXPAVGameWindow@@@Z,,0x0053F331,36,Code/GameEngine/Source/GameClient/GUI/window_video_manager.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?init@WindowVideoManager@@UAEXXZ,,0x0053F2A4,21,Code/GameEngine/Source/GameClient/GUI/window_video_manager.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?rva0002BFE5@INI@@QBE?AVAsciiString@@XZ,,0x0002BFE5,32,Code/GameEngine/Source/GameClient/INILineAccessors.cpp,matched,INI plus0C filename getter sibling of getFilename
+?Rva005EF4C0Copy@@YAPAVRva005EEFD2@@PAV1@00@Z,,0x005EF4C0,47,Code/GameEngine/Source/Common/Rva005EF4C0Copy.cpp,matched,forward copy via rowed assign caller 0x005EF54D

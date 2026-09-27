@@ -2192,3 +2192,4 @@ FUN_006bea10	0x002BEA10	83	blocked	101-slot vtable loop with 4 virtuals needs la
 ?rva003892DF@Rva0038901D@@QAE_NVAsciiString@@@Z	0x003892DF	112	blocked	sscanf parse plus memset clear t=25 model=muse-7b81
 ?Rva002E7964@Pathfinder@@QAEXPAUICoord2D@@_NPBUCoord3D@@@Z	0x002E7964	68	partial	register ecx vs eax for tmp.x and out t=12 model=muse-aa06 score=0.93 stash=reverse/attempts/0x002e7964.cpp
 ?dispatch@SidesListNotifier@@QAEXPBUPost@1@@Z	0x0032AE25	109	blocked	guard m_pos save restore with vector loop; wall is LEA-vs-INC for m_pos+1 plus sub-esp-vs-push frame plus esi edi ptr swap t=30 model=muse-9abb
+?rva005EE26F@Rva005EE26F@@QAEPAHPAHHH@Z	0x005EE26F	29	blocked	vtable slot2 forward returns first arg; volatile dummy gives mov [ebp-4],0 vs retail and [ebp-4],0 (+3B); non-volatile dummy optimized away (frameless 24B); need non-volatile kept dummy with and idiom t=15 model=muse-9ecc
