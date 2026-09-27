@@ -37735,3 +37735,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?hasScience@Player@@QBE_NW4ScienceType@@@Z,,0x002AB7D5,40,Code/GameEngine/Source/Common/RTS/PlayerHasScience.cpp,matched,Player hasScience via addScience push_back vector at 0x2F0 and isCapable check
 ??0Rva0006EE7A@@QAE@HHH@Z,,0x0006EE7A,66,Code/Libraries/Source/WWVegas/WW3D2/Rva0006EE7ABitSet.cpp,matched,28-byte two-bit ctor memset plus two ors KindOf mask
 ?rva0006ED29@Rva0006ED29@@QAEXPAX@Z,,0x0006ED29,13,Code/GameEngine/Source/Common/Rva0006ED29Delete.cpp,matched,frameless thiscall delete wrapper pop ecx ret4
+?rva004266A1@Rva004266A1@@QAE_NH@Z,,0x004266A1,27,Code/GameEngine/Source/Common/Rva004266A1Check.cpp,matched,bounds check on 8-byte record vector at +4 via six callers
