@@ -36875,3 +36875,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva003ADEBF@@QAE@ABV0@@Z,,0x003ADEBF,31,Code/GameEngine/Source/Common/Rva003ADFDBCopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3ADDEC plus two vftables plus callers 0x3ADE62 0x3AE047
 ?xfer@DamageFilteredCreateObjectDie@@MAEXPAVXfer@@@Z,,0x00485FE3,50,Code/GameEngine/Source/GameLogic/Object/Die/DamageFilteredCreateObjectDieXfer.cpp,matched,slot 3 of vtable 0x0084AB54 via rowed ctor plus Version1 plus base 0x004CE56D plus uint int
 ??0Rva003AE1CD@@QAE@ABV0@@Z,,0x003AE1CD,64,Code/GameEngine/Source/Common/Rva003AE1CDCopyCtor.cpp,matched,derived V3-inline copy via rowed bases 0x3ADFDB 0x3AE20D plus null-guarded plus0x0C plus three vftables
+??0Rva003AE1A7@@QAE@ABV0@@Z,,0x003AE1A7,38,Code/GameEngine/Source/Common/Rva003AE1A7CopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3AE1CD plus three vftables plus caller 0x3AE19C
