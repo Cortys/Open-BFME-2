@@ -5,18 +5,24 @@
 // snRegBlockCurrentFrameCount (E18354) and gpUndefinedValue (E18078).
 // Signed loop bound E18358 is named snRegisterBlockSize by donor PDB only.
 // Target Shutdown calls the already matched scalar operator delete at 2FD60.
+// Initialize709610+91 uses the same globals and matched operator new2FDA0.
+// AptInitParmsT::iRegArraySize name comes from final donor TPI2DEF; target
+// independently loads a signed dword at+30. Only that parameter prefix is modeled.
 // Target full spans709670+190 /709730+117 agree with donor records and returns.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *,const char *,int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 class AptValue;
+struct AptInitParmsT { unsigned char unaccessed[48]; int iRegArraySize; };
+void *__cdecl operator new(unsigned int);
 extern AptValue *gpUndefinedValue;
 void __cdecl operator delete(void *);
 class AptScriptFunctionBase {
     static AptValue **spRegBlockBase, **spRegBlockCurrentFrameBase;
     static int snRegBlockCurrentFrameCount, snRegisterBlockSize;
 public:
+    static void InitializeStaticData(const AptInitParmsT &);
     static void ShutdownStaticData();
     static void *PushStaticData();
 };
@@ -40,4 +46,13 @@ void *AptScriptFunctionBase::PushStaticData()
     spRegBlockCurrentFrameBase+=snRegBlockCurrentFrameCount;
     snRegBlockCurrentFrameCount=0;
     return saved;
+}
+
+void AptScriptFunctionBase::InitializeStaticData(const AptInitParmsT &parms)
+{
+    snRegisterBlockSize=parms.iRegArraySize;
+    spRegBlockBase=(AptValue **)operator new(snRegisterBlockSize*sizeof(AptValue *));
+    spRegBlockCurrentFrameBase=spRegBlockBase;
+    for(int i=0;i<snRegisterBlockSize;++i) spRegBlockBase[i]=gpUndefinedValue;
+    snRegBlockCurrentFrameCount=0;
 }
