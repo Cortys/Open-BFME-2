@@ -356,3 +356,15 @@ void GadgetComboBoxSetItemData(GameWindow *comboBox, Int index, void *data)
 		return;
 	TheWindowManager->winSendSystemMsg(comboBox, 0x402b, index, (int)data);
 }
+
+// ?GadgetComboBoxSetSelectedPos@@YAXPAVGameWindow@@H_N@Z, retail 0x00322931 (41B).
+// Ported from Open-BFME-1 GadgetComboBox.cpp GadgetComboBoxSetSelectedPos.
+// Null-checks the combobox then GCM_SET_SELECTION (0x402d in BFME2, +3 from
+// ZH 0x402a) through TheWindowManager at 0x9FEF1C slot 58 0xE8 with
+// mData1=selectedIndex and mData2=dontHide (movzx bool). 37 callers.
+void GadgetComboBoxSetSelectedPos(GameWindow *comboBox, Int selectedIndex, Bool dontHide)
+{
+	if (comboBox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(comboBox, 0x402d, selectedIndex, (int)dontHide);
+}
