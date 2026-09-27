@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2renderobj /Ireference/shims /Ireference/shims/bfmerendobj /G7 /arch:SSE /DNDEBUG /MD /Ireference/shims/bfmevector /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
+// cl: /Ireference/shims/bfme2htree /Ireference/shims/bfme2renderobj /Ireference/shims /Ireference/shims/bfmerendobj /G7 /arch:SSE /DNDEBUG /MD /Ireference/shims/bfmevector /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
 #define Matrix4x4 Matrix4
 
 // Retail reaches operator delete[] with a direct call: HLodDefClass::Free at
@@ -165,6 +165,7 @@ void __cdecl operator delete[](void *block);
 
 
 
+#include <htree.h>
 #include "hlod.h"
 #include "assetmgr.h"
 #include "hmdldef.h"
@@ -1044,7 +1045,10 @@ HLodClass::HLodClass(const HLodClass & src) :
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::HLodClass present-unmatched
+// EA/BFME1 array-of-LODs constructor; target 0x0019F9B0..0x0019FC7E.
+// Retail installs the already identified HLod table7D6780 and allocates a
+// 0x34-byte HTree (the existing bfme2htree declaration). Its class test is
+// HLOD/0x19 or more than one child; the donor HMODEL/1 arm is absent.
 HLodClass::HLodClass(const char * name,RenderObjClass ** lods,int count) :
 	Animatable3DObjClass(NULL),
 	LodCount(0),
@@ -1092,8 +1096,7 @@ HLodClass::HLodClass(const char * name,RenderObjClass ** lods,int count) :
 		RenderObjClass * lod_obj = lods[lod_index];
 		WWASSERT(lod_obj);
 
-		if (	(lod_obj->Class_ID() == RenderObjClass::CLASSID_HMODEL) || 
-				(lod_obj->Class_ID() == RenderObjClass::CLASSID_HLOD) ||
+		if (	(lod_obj->Class_ID() == RenderObjClass::CLASSID_HLOD) ||
 				(lod_obj->Get_Num_Sub_Objects() > 1) ) {
 			
 			// here we insert all sub-objects of this render object into the current LOD array
