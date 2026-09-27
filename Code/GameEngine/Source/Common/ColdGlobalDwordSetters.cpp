@@ -65,6 +65,14 @@ void Rva006D37E0Set(int value)
 {
 	g_Va00E177EC = value;
 }
+
+// ?Rva006D37F0Clear@@YAXXZ @ 0x006d37f0 (11B) over 0x00E177EC.
+// Pairs with setter 0x006d37e0 over same global; caller at 0x006cfca2.
+// Prev setter 0x006d37e0 next hashLower 0x006d3800. Opaque address-derived.
+void Rva006D37F0Clear()
+{
+	g_Va00E177EC = 0;
+}
 extern int g_Va00DF6FD0;
 
 // ?Rva00174F20Set@@YAXH@Z @ 0x00174f20 (10B) over 0x00DF6FD0.
