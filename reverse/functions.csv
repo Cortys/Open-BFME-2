@@ -37079,3 +37079,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?get@Rva001F45DFSlot@@QBEHXZ,,0x001F45DF,16,Code/GameEngine/Source/Common/Rva001F45DFGet.cpp,matched,nullable ptr plus0x3c via Make then dword plus0x7c
 ?rva0045A6FE@AutoAbilityBehavior@@QAEXPAX@Z,,0x0045A6FE,74,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorRva0045A6FE.cpp,matched,AutoAbility select copy or clear via rowed compare plus leaves
 ?isInBusyState@StateMachine@@QBE_NXZ,,0x004D7309,24,Code/GameEngine/Source/GameLogic/AI/StateMachineGoal.cpp,matched,gap plus donor isInBusyState plus isBusy slot10
+??1HordeSiegeEngineContain@@UAE@XZ,,0x0047CFB2,207,Code/GameEngine/Source/GameLogic/Object/Contain/HordeSiegeEngineContainDtor.cpp,matched,HordeSiegeContain dtor with contained-Object loop via destroyObject plus list-map-list
