@@ -5,7 +5,7 @@
 // The36-byte layout and memberwise copy are read directly from the complete
 // retail body. Its string member calls the established copy at0x365F0.
 // The placement-copy caller at0x63C8F independently links the same value.
-class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
 struct BfmeStringRecord00063BE4 {
     unsigned int word0, word1, word2, word3, word4, word5, word6;
     AsciiString text;
@@ -118,7 +118,15 @@ template void _STL::_Construct<BfmeStringRecord001EA478,BfmeStringRecord001EA478
 struct BfmeStringRecord00426A5B {
     AsciiString text; unsigned char flag0, flag1, flag2;
     BfmeStringRecord00426A5B(const BfmeStringRecord00426A5B &o) : text(o.text), flag0(o.flag0), flag1(o.flag1), flag2(o.flag2) {}
+    BfmeStringRecord00426A5B &operator=(const BfmeStringRecord00426A5B &o);
 };
+BfmeStringRecord00426A5B &BfmeStringRecord00426A5B::operator=(const BfmeStringRecord00426A5B &o) {
+    text = o.text;
+    flag0 = o.flag0;
+    flag1 = o.flag1;
+    flag2 = o.flag2;
+    return *this;
+}
 template void _STL::_Construct<BfmeStringRecord00426A5B,BfmeStringRecord00426A5B>(BfmeStringRecord00426A5B*,const BfmeStringRecord00426A5B&);
 
 // Retail copy 0x004071F7: observed scalar fields and string member.
