@@ -2204,3 +2204,4 @@ FUN_006632EE	0x002632EE	46	blocked	virtual lazy-cache plus tail-jmp delegate nee
 FUN_006A1CC9	0x002A1CC9	57	blocked	pair ctor AsciiString plus list-int needs donor disambiguation t=10 model=muse-eb5b
 ?Rva002299F1@Rva002299F1@@QAE	0x002299F1	39	blocked	not List_base Pod268: probe List_base268 is 44B with 3 stores vs retail 39B single store t=12 model=muse-p7k
 ?rva002DE311@Outer002DE311@@QAEXXZ	0x002DE311	58	blocked	intrusive TreeHintOpaque free-list clear via 0x229840 plus delete: 3 probe variants closest 55B volatile vs 58B retail with dead test-mov-je and esi-this vs edi-this t=18 model=muse-p7k
+?Rva00434097Add@@YGHHH@Z	0x00434097	13	partial	load order swapped: retail mov eax first-arg vs ours second-first t=10 model=muse-p7k score=0.92 stash=reverse/attempts/0x00434097.cpp
