@@ -30,6 +30,7 @@ import re
 import struct
 import subprocess
 import sys
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -204,12 +205,17 @@ def _disasm_objdump(data):
     return instrs
 
 
+_CAPSTONE_DECODER = None
+
+
 def _disasm_capstone(data):
+    global _CAPSTONE_DECODER
     import capstone
 
-    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+    if _CAPSTONE_DECODER is None:
+        _CAPSTONE_DECODER = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
     instrs = []
-    for insn in md.disasm(data, 0):
+    for insn in _CAPSTONE_DECODER.disasm(data, 0):
         ops = insn.op_str.strip()
         instrs.append((insn.mnemonic, _normalize(ops), ops))
     return instrs
@@ -218,22 +224,18 @@ def _disasm_capstone(data):
 def disasm(data):
     """Disassemble a raw i386 blob -> [(mnemonic, normalized-operands, raw-operands)].
 
-    objdump is the reference backend; capstone is the fallback for a host with no
-    compatible binutils (Apple's objdump rejects GNU's raw-binary flags), or a
-    plain Windows checkout -- without it every tier of
-    next_work.py that reads this report dies on FileNotFoundError. The two are
-    only ever used to compare two blobs disassembled in the SAME run, so the
-    backends never have to agree with each other on spelling, only with
-    themselves.
+    Prefer Capstone's in-process decoder: classification compares many bodies,
+    and spawning objdump twice per candidate dominated runtime. Keep objdump as
+    the fallback for hosts without Capstone. A run uses one backend throughout,
+    so the backends only need consistent spelling within that run.
     """
-    try:
-        return _disasm_objdump(data)
-    except (OSError, subprocess.CalledProcessError):
-        pass
     try:
         return _disasm_capstone(data)
     except ImportError:
-        return []
+        try:
+            return _disasm_objdump(data)
+        except (OSError, subprocess.CalledProcessError):
+            return []
 
 
 def mask(data, holes, size):
@@ -302,7 +304,11 @@ def main():
     ap.add_argument("--src", default="Code")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--min-size", type=int, default=24)
+    ap.add_argument("--progress-every", type=int, default=1000,
+                    help="print progress after this many object symbols (0 disables; default: 1000)")
     args = ap.parse_args()
+    if args.progress_every < 0:
+        ap.error("--progress-every must be >= 0")
 
     SCRATCH.mkdir(parents=True, exist_ok=True)
     exe, pe, text, ghidra, matched_names, matched_rvas, matched_spans, symbol_map = load_world()
@@ -312,12 +318,19 @@ def main():
     rows = []
     seen = {}   # name -> row index (inline COMDATs appear in every TU; report once)
     sources = sorted(p for p in (ROOT / args.src).rglob("*.cpp") if p.is_file())
+    started = time.monotonic()
+    scanned = 0
     for src in sources:
         obj = build.obj_path(src)
         if not obj.exists():
             rows.append((src.name, "?", 0, "", 0, "no-obj", -1, "run build.py first", 0))
             continue
         for name, span, relocs in object_functions(obj):
+            scanned += 1
+            if args.progress_every and scanned % args.progress_every == 0:
+                elapsed = time.monotonic() - started
+                print(f"scanned {scanned:,} object symbols; classified {len(rows):,} drifted "
+                      f"in {elapsed:.1f}s", flush=True)
             if name in matched_names:
                 continue
             if name in seen:
