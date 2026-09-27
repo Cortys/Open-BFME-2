@@ -37798,3 +37798,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?hasAnyObjects@Team@@QAE_N_N@Z,,0x0039E042,142,Code/GameEngine/Source/Common/RTS/TeamHasAnyObjects.cpp,matched,BFME1 TeamMemberQueries donor plus 0x438 0x94 0x108 0x110 0x114 0x11a layout
 ?rva0039E8EB@Team@@QAEPAVObject@@XZ,,0x0039E8EB,20,Code/GameEngine/Source/Common/RTS/TeamRva0039E8EB.cpp,matched,Team first-member getter via iterate cur
 ?rva0036E346@Rva0036E346@@QAEHXZ,,0x0036E346,17,Code/GameEngine/Source/Common/Rva0036E346Count.cpp,matched,Circular list count via sentinel at plus-4 with callers at 0x3540D7 and 0x548A7D
+?setScriptStatus@Object@@QAEXW4ObjectScriptStatusBit@@_N@Z,,0x00292969,144,Code/GameEngine/Source/GameLogic/Object/ObjectScriptStatus.cpp,matched,BFME1 ObjectFields donor with wrapper makeDirty and retail offsets

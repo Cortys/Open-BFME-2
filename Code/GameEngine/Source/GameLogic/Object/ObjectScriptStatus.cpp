@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /O1 /G7
 // Object script-status and disabled-state helpers at retail 0x00291C9B+.
 // Decoded from retail bytes (all verified):
 // - setDisabledUntil pin (0x00290114) carries (DisabledType, frame); the
@@ -130,4 +130,47 @@ void Object::setStatus( ObjectStatusTypes bit, Bool flag )
 {
 	ObjectStatusMask mask;
 	Rva0028CDEB( mask.Rva0023DA79( 0, bit, flag ) );
+}
+
+// ?setScriptStatus@Object@@QAEXW4ObjectScriptStatusBit@@_N@Z
+void Object::setScriptStatus( ObjectScriptStatusBit bit, Bool set )
+{
+	UnsignedInt oldScriptStatus = m_scriptStatus;
+
+	if( set )
+	{
+		m_scriptStatus |= bit;
+	}
+	else
+	{
+		m_scriptStatus &= ~bit;
+	}
+
+	if( m_scriptStatus != oldScriptStatus )
+	{
+		if( (m_scriptStatus & OBJECT_STATUS_SCRIPT_DISABLED) != (oldScriptStatus & OBJECT_STATUS_SCRIPT_DISABLED) )
+		{
+			makeDirty();
+			if( m_scriptStatus & OBJECT_STATUS_SCRIPT_DISABLED )
+			{
+				setDisabled( DISABLED_SCRIPT_DISABLED );
+			}
+			else
+			{
+				clearDisabled( DISABLED_SCRIPT_DISABLED );
+			}
+		}
+		if( (m_scriptStatus & OBJECT_STATUS_SCRIPT_UNPOWERED) != (oldScriptStatus & OBJECT_STATUS_SCRIPT_UNPOWERED) )
+		{
+			makeDirty();
+			if( m_scriptStatus & OBJECT_STATUS_SCRIPT_UNPOWERED )
+			{
+				setDisabled( DISABLED_SCRIPT_UNDERPOWERED );
+			}
+			else
+			{
+				clearDisabled( DISABLED_SCRIPT_UNDERPOWERED );
+			}
+		}
+	}
 }
