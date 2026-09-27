@@ -23,12 +23,15 @@ class UpgradeTemplate
 {
 public:
 	NameKeyType getUpgradeNameKey() const { return m_nameKey; }
+	int getMaskIndex() const { return m_maskIndex; }
 	const UpgradeTemplate *friend_getNext() const { return m_next; }
 
 private:
 	unsigned char m_unreconstructed_000[0x0C];
 	NameKeyType m_nameKey; // +0x0C
-	unsigned char m_unreconstructed_010[0x64 - 0x10];
+	unsigned char m_pad010[0x38 - 0x10];
+	int m_maskIndex; // +0x38 mask bit index retail-measured
+	unsigned char m_pad03C[0x64 - 0x3C];
 	UpgradeTemplate *m_next; // +0x64
 };
 
@@ -36,6 +39,7 @@ class UpgradeCenter
 {
 public:
 	const UpgradeTemplate *findUpgradeByKey(NameKeyType key) const;
+	const UpgradeTemplate *rva0026EEA0(int key) const;
 
 private:
 	unsigned char m_unreconstructed_000[0x0C];
@@ -50,6 +54,26 @@ const UpgradeTemplate *UpgradeCenter::findUpgradeByKey(NameKeyType key) const
 	// search list
 	for (upgrade = m_upgradeList; upgrade; upgrade = upgrade->friend_getNext())
 		if (upgrade->getUpgradeNameKey() == key)
+			return upgrade;
+
+	// item not found
+	return 0;
+}
+
+//
+// rva0026EEA0 at UpgradeCenter (mangled ?rva0026EEA0@UpgradeCenter@@QBEPBVUpgradeTemplate@@H@Z rowed),
+// retail 0x0026EEA0, 24 bytes. Adjacent to findUpgradeByKey (ends at 0x0026EEB8).
+// Same list walk but comparing mask bit index at +0x38 (UpgradeMuxData TU
+// measures it as plain int). Callers pass TheUpgradeCenter (0x009FEB60) with a
+// 0..0x400 index and use template+8 (m_name) or +0x28 fields on hit.
+//
+const UpgradeTemplate *UpgradeCenter::rva0026EEA0(int key) const
+{
+	const UpgradeTemplate *upgrade;
+
+	// search list
+	for (upgrade = m_upgradeList; upgrade; upgrade = upgrade->friend_getNext())
+		if (key == upgrade->getMaskIndex())
 			return upgrade;
 
 	// item not found
