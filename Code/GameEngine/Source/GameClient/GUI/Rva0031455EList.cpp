@@ -9,6 +9,7 @@ public:
     virtual void v1();
     virtual void v2();
     void Rva0031455ELink(Rva0031455E *arg);
+    void Rva00314581Unlink();
 private:
     void *m_04;
     void *m_08;
@@ -22,5 +23,16 @@ void Rva0031455E::Rva0031455ELink(Rva0031455E *arg)
         m_08 = arg;
         m_04 = arg->m_1DC;
         arg->m_1DC = this;
+    }
+}
+// ?Rva00314581Unlink@Rva0031455E@@QAEXXZ @ 0x00314581 (21B).
+// Honest address-derived list unlink: if owner at plus 0x08 then move next at plus 0x04 into owner plus 0x1DC and clear plus 0x08.
+// Evidence: twin link 0x0031455E sharing plus 0x04 plus 0x08 plus 0x1DC layout.
+void Rva0031455E::Rva00314581Unlink()
+{
+    Rva0031455E *owner = (Rva0031455E *)m_08;
+    if (owner) {
+        owner->m_1DC = m_04;
+        m_08 = 0;
     }
 }
