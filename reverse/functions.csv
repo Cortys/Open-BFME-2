@@ -39453,3 +39453,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva00226829@Rva00226829@@QAEXPAX@Z,,0x00226829,45,Code/GameEngine/Source/Common/Rva00226829TreeFree.cpp,matched,tree free child 0x0C sibling 0x08 via free row
 ?rva00226856@Rva00226856@@QAEXPAX@Z,,0x00226856,45,Code/GameEngine/Source/Common/Rva00226856TreeFree.cpp,matched,tree free twin child 0x0C sibling 0x08 via free row
 ?rva00226883@Rva00226883@@QAEXPAX@Z,,0x00226883,45,Code/GameEngine/Source/Common/Rva00226883TreeFree.cpp,matched,tree free twin child 0x0C sibling 0x08 via free row
+?rva002268B0@Rva002268B0@@QAEXPAX@Z,,0x002268B0,45,Code/GameEngine/Source/Common/Rva002268B0TreeFree.cpp,matched,tree free twin child 0x0C sibling 0x08 via free row
