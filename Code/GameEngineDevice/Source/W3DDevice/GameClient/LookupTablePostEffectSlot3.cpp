@@ -27,10 +27,52 @@ private:
 	void *m_ptr;
 };
 
+class AsciiString;
+
+template <typename T>
+class StringBase
+{
+private:
+	friend class AsciiString;
+
+	StringBase(const T *text);
+	StringBase(const StringBase<T> &that);
+
+	struct Header
+	{
+		int ref_count;
+		unsigned short length;
+		unsigned short capacity;
+		T data[1];
+	};
+
+	Header *m_data;
+};
+
+class AsciiString
+{
+public:
+	AsciiString(const char *text)
+	{
+		((StringBase<char> *)this)->StringBase<char>::StringBase(text);
+	}
+
+	AsciiString(const AsciiString &that)
+	{
+		((StringBase<char> *)this)->StringBase<char>::StringBase(
+			(const StringBase<char> &)that);
+	}
+
+	~AsciiString();
+
+private:
+	char *m_text;
+};
+
 class LookupTablePostEffect
 {
 public:
-	virtual void s0();
+	virtual AsciiString rva00111BE9() const;
 	virtual void s1();
 	virtual void s2();
 	virtual void rva00111D65();
@@ -39,6 +81,16 @@ private:
 	int m_04;
 	Rva005F2577Holder m_08;
 };
+
+// ?rva00111BE9@LookupTablePostEffect@@UBE?AVAsciiString@@XZ, retail 0x00111BE9, 28 bytes.
+// Virtual slot 0 (offset 0x0) of vtable 0x007CFAC8. Returns the AsciiString
+// literal "LookupTablePostEffect" (0x00BCFADC) by value through the rowed
+// StringBase<char> const-char ctor 0x00037BA0. No callers. Honest address
+// name: class plus slot are proven, method identity is not.
+AsciiString LookupTablePostEffect::rva00111BE9() const
+{
+	return AsciiString("LookupTablePostEffect");
+}
 
 void LookupTablePostEffect::rva00111D65()
 {
