@@ -10513,7 +10513,6 @@ _luaT_init,,0x0074FB40,122,Code/Libraries/Source/Lua/ltm.c,matched,unclaimed_sca
 _setnodevector,,0x007506E0,135,Code/Libraries/Source/Lua/ltable.c,matched,unclaimed_scan exact modulo relocs; lua_error and luaM_realloc pins resolve both calls; emitted by ltable.c object; vendored=lua-4.0.1
 ?get@Rva0009AAA4DwordField@@QBEHXZ,,0x0009AAA4,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva002004A1DwordField@@QBEHXZ,,0x002004A1,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
-?get@Rva00091A56DwordField@@QBEHXZ,,0x00091A56,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 _luaH_mainposition,,0x00750400,88,Code/Libraries/Source/Lua/ltable.c,matched,hash dispatcher with RVA jump table; ftol row serves the NUMBER case; emitted by ltable.c object; vendored=lua-4.0.1
 ?get@Rva003F3FCEDwordField@@QBEHXZ,,0x003F3FCE,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 _luaK_testgo,,0x00752FC0,251,Code/Libraries/Source/Lua/lcode.c,matched,BFME1 byte-identical donor; b1 0x0099F5C0
@@ -10547,7 +10546,6 @@ _luaK_jump,,0x00752690,166,Code/Libraries/Source/Lua/lcode.c,matched,BFME1 byte-
 ??0Rva0040C1F0@@QAE@XZ,,0x005B72BE,41,Code/GameEngine/Source/Common/R3ScalarFieldConstructors3.cpp,matched,BFME1 byte-identical donor; b1 0x0040C1F0
 ??0Rva00704980@@QAE@XZ,,0x000B6D26,37,Code/GameEngine/Source/Common/R3ScalarFieldConstructors3.cpp,matched,BFME1 byte-identical donor; b1 0x00704980
 ??0Rva0013A8B0@@QAE@XZ,,0x0050C4C6,34,Code/GameEngine/Source/Common/R3ScalarFieldConstructors3.cpp,matched,BFME1 byte-identical donor; b1 0x0013A8B0
-?get@Rva003F3FE8DwordField@@QBEHXZ,,0x003F3FE8,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva005C4AEDDwordField@@QBEHXZ,,0x005C4AED,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva005C4AF1DwordField@@QBEHXZ,,0x005C4AF1,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva005C4AF5DwordField@@QBEHXZ,,0x005C4AF5,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
@@ -10555,8 +10553,6 @@ _luaK_jump,,0x00752690,166,Code/Libraries/Source/Lua/lcode.c,matched,BFME1 byte-
 ?get@Rva002A98A7DwordField@@QBEHXZ,,0x002A98A7,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva002A98ABDwordField@@QBEHXZ,,0x002A98AB,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?bfmeSetNameAT@@YAXPAUBfmeTableAT@@HPBD@Z,,0x006A4A10,99,Code/GameEngine/Source/Common/BfmeOneHundredSeventyOne.cpp,matched,BFME1 byte-identical donor; b1 0x00863B40
-?get@Rva0030D377DwordField@@QBEHXZ,,0x0030D377,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
-?get@Rva0030F2C7DwordField@@QBEHXZ,,0x0030F2C7,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?get@Rva0008BB81DwordField@@QBEHXZ,,0x0008BB81,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ??0Gen_0081E480@@QAE@HH@Z,,0x0068A0E0,33,Code/GameEngine/Source/Common/Bfme5ThirtyTwo.cpp,matched,BFME1 byte-identical donor; b1 0x0081E480
 ?get@Rva0030BCAEDwordField@@QBEHXZ,,0x0030BCAE,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter at negative displacement (D4 = -44); address-derived opaque holder
@@ -10565,7 +10561,6 @@ _luaK_jump,,0x00752690,166,Code/Libraries/Source/Lua/lcode.c,matched,BFME1 byte-
 ?bfmeAt@@YGPAHPAVBfmeVecCZ@@H@Z,,0x00663DC0,30,Code/GameEngine/Source/Common/Bfme5ThirtyTwo.cpp,matched,BFME1 byte-identical donor; b1 0x007F76D0
 ?get@Rva0044467CDwordField@@QBEHXZ,,0x0044467C,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter at negative displacement (F8 = -8); address-derived opaque holder
 ?get@Rva0049CB8ADwordField@@QBEHXZ,,0x0049CB8A,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
-?get@Rva005C4AE1DwordField@@QBEHXZ,,0x005C4AE1,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?bfmeGoDSK@BfmeThingDSK@@QAE_NXZ,,0x00256A4A,25,Code/GameEngine/Source/Common/BfmeConv773.cpp,matched,BFME1 byte-identical donor; b1 0x001288A0
 ?get@Rva005C4AFDDwordField@@QBEHXZ,,0x005C4AFD,4,Code/GameEngine/Source/Common/Disp8DwordFieldGetters.cpp,matched,Disp8 dword getter; address-derived opaque holder
 ?bfmeGoDSL@BfmeThingDSK@@QAE_NXZ,,0x00256A63,25,Code/GameEngine/Source/Common/BfmeConv773.cpp,matched,BFME1 byte-identical donor; b1 0x001288C0
@@ -38728,3 +38723,8 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?dup_0032b4b2@@YAXXZ,,0x0032B4B2,59,Code/Libraries/Source/WWVegas/WWLib/stlport_string_pair_cleanup.cpp,matched,gen-alias;object-symbol=?erase@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@V1@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@@_STL@@QAEXU?$_Rb_tree_iterator@U?$pair@$$CBVAsciiString@@V1@@_STL@@U?$_Nonconst_traits@U?$pair@$$CBVAsciiString@@V1@@_STL@@@2@@2@@Z;C++ alias; Target single-node erase calls tree rebalance 0x25620 and string-pair destructor thunk 0x2046BB to rowed 0x2C0C0; same typed cleanup chain as rowed erase 0x2E4482.
 ?Rva000A870EGet@@YA?AVAsciiString@@H@Z,,0x000A870E,206,Code/GameEngineDevice/Source/MilesAudioDevice/AudioRequestTypeName.cpp,matched,
 ?dup_00155940@@YAXXZ,,0x00155940,71,Code/Libraries/Source/WWVegas/WWLib/Rva00155940Vector.cpp,matched,object-symbol=??_G?$VectorClass@PAVRva00155940Element@@@@UAEPAXI@Z; target vtable VA 0x00BD3B98 slot 0 points to this body and slot 2 to 4-byte-element Resize at 0x1A3720; array at +4 and ownership byte +0xD; WWLib vector template semantics with opaque element identity; not an HLOD ModelNode claim
+?getDataLength@NetWrapperCommandMsg@@QAEIXZ,,0x0030D377,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Typed target callers at 0x58C047 and 0x58D387; exact 4B body and NetWrapperCommandMsg field semantics
+?getData@NetWrapperCommandMsg@@QAEPAEXZ,,0x0030F2C7,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched copyChunkData at 0x58C047
+?getDataOffset@NetWrapperCommandMsg@@QAEIXZ,,0x00091A56,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched copyChunkData at 0x58C047
+?getNumChunks@NetWrapperCommandMsg@@QAEIXZ,,0x003F3FE8,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8
+?getTotalDataLength@NetWrapperCommandMsg@@QAEIXZ,,0x005C4AE1,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8

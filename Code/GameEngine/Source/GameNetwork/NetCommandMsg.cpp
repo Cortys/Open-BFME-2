@@ -66,19 +66,16 @@ void NetWrapperCommandMsg::setData(UnsignedByte *data, UnsignedInt dataLength)
 	m_dataLength = dataLength;
 }
 
-// ?getData@NetWrapperCommandMsg@@QAEPAEXZ present-unmatched
 UnsignedByte * NetWrapperCommandMsg::getData()
 {
 	return m_data;
 }
 
-// ?getDataLength@NetWrapperCommandMsg@@QAEIXZ present-unmatched
 UnsignedInt NetWrapperCommandMsg::getDataLength()
 {
 	return m_dataLength;
 }
 
-// ?getDataOffset@NetWrapperCommandMsg@@QAEIXZ present-unmatched
 UnsignedInt NetWrapperCommandMsg::getDataOffset()
 {
 	return m_dataOffset;
@@ -90,7 +87,6 @@ void NetWrapperCommandMsg::setDataOffset(UnsignedInt offset)
 	m_dataOffset = offset;
 }
 
-// ?getTotalDataLength@NetWrapperCommandMsg@@QAEIXZ present-unmatched
 UnsignedInt NetWrapperCommandMsg::getTotalDataLength()
 {
 	return m_totalDataLength;
@@ -114,7 +110,6 @@ void NetWrapperCommandMsg::setChunkNumber(UnsignedInt chunkNumber)
 	m_chunkNumber = chunkNumber;
 }
 
-// ?getNumChunks@NetWrapperCommandMsg@@QAEIXZ present-unmatched
 UnsignedInt NetWrapperCommandMsg::getNumChunks()
 {
 	return m_numChunks;
