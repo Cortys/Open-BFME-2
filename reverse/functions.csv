@@ -39390,3 +39390,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002D94E4@Rva002D94E4@@QBEMXZ,,0x002D94E4,7,Code/GameEngine/Source/Common/Rva002D94E4MulGetter.cpp,matched,honest address name const float product getter fld fmul
 ?rva002D9AD4@Rva002D9AD4@@QAEAAVBfmePoolRef10@@ABV2@@Z,,0x002D9AD4,8,Code/Libraries/Source/WWVegas/WWLib/Rva002D9AD4Assign.cpp,matched,honest address name tail jmp assign forwarder to BfmePoolRef10
 ?rva002D9C2F@Rva002D9C2F@@QAEAAUOpaqueRefElement4@@ABU2@@Z,,0x002D9C2F,8,Code/Libraries/Source/WWVegas/WWLib/Rva002D9C2FAssign.cpp,matched,honest address name tail jmp assign forwarder to OpaqueRefElement4
+?rva002D9576@Rva002D9576@@QAEHXZ,,0x002D9576,13,Code/GameEngine/Source/Common/Rva002D9576GuardedGetter.cpp,matched,honest address name guarded getter state 1 returns value else 0
