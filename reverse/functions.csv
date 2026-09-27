@@ -37377,3 +37377,12 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0FontLibrary@@QAE@XZ,,0x00218942,103,Code/GameEngine/Source/GameClient/GUI/FontLibraryCtor.cpp,matched,FontLibrary ctor via BFME1 donor plus rowed map workers
 ?isArray@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC3A0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DCFA0 asserts isArray plus 12 callers
 ?isSound@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC3F0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DCFE0 asserts isSound plus 4 callers
+?rva006DD020@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD020,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isKey plus type 24
+?rva006DD060@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD060,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isMath plus type 23
+?rva006DD0A0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD0A0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isScriptColour plus type 26
+?rva006DD0E0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD0E0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isObject plus type 27
+?rva006DD120@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD120,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isPrototype plus type 28
+?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD160,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isDate plus type 29
+?rva006DD1A0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD1A0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isTextFormat plus type 36
+?rva006DD1E0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD1E0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isMovieClip plus type 30
+?rva006DD320@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD320,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isStage plus type 39

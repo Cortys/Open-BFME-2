@@ -1,0 +1,137 @@
+// cl: /O2 /DNDEBUG /MD
+// 9 Apt checked casts returning this after asserting isX().
+// Retail 0x006DD020/50B isKey line 917, 0x006DD060/50B isMath line 995,
+// 0x006DD0A0/50B isScriptColour line 1022, 0x006DD0E0/50B isObject line 1048,
+// 0x006DD120/50B isPrototype line 1073, 0x006DD160/50B isDate line 1098,
+// 0x006DD1A0/50B isTextFormat line 1123, 0x006DD1E0/50B isMovieClip line 1148,
+// 0x006DD320/50B isStage line 1277. Each calls its rowed predicate in
+// AptValueTypePredicatesBFME2.cpp, asserts "<isX()>" with AptValue.inl path
+// at the retail line, then checks g_bfmeAptBreakOnAssertAtDDC01C.
+// __asm int 3 is a proven blocker: the __debugbreak() intrinsic makes /O2
+// hoist "mov eax,esi" above the break test and duplicate the return (54B);
+// the asm barrier keeps the single shared return and the retail
+// mov-eax-then-test shape (50B exact). Names are honest address names;
+// original method names unknown.
+extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
+extern int g_bfmeAptBreakOnAssertAtDDC01C;
+class BfmeAptValue006DCD20 {
+    virtual void vtableSlot0();
+public:
+    int isKey() const;
+    int isMath() const;
+    int isScriptColour() const;
+    int isObject() const;
+    int isPrototype() const;
+    int isDate() const;
+    int isTextFormat() const;
+    int isMovieClip() const;
+    int isStage() const;
+    BfmeAptValue006DCD20 *rva006DD020();
+    BfmeAptValue006DCD20 *rva006DD060();
+    BfmeAptValue006DCD20 *rva006DD0A0();
+    BfmeAptValue006DCD20 *rva006DD0E0();
+    BfmeAptValue006DCD20 *rva006DD120();
+    BfmeAptValue006DCD20 *rva006DD160();
+    BfmeAptValue006DCD20 *rva006DD1A0();
+    BfmeAptValue006DCD20 *rva006DD1E0();
+    BfmeAptValue006DCD20 *rva006DD320();
+};
+// ?rva006DD020@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD020 50B. Checked cast for isKey type 24.
+// Evidence: calls rowed ?isKey@BfmeAptValue006DCD20@@QBEHXZ; asserts "isKey()" at AptValue.inl:917.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD020()
+{
+    if (!static_cast<unsigned char>(isKey())) {
+        g_bfmeAptAssertAtE17734("isKey()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x395);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD060@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD060 50B. Checked cast for isMath type 23.
+// Evidence: calls rowed ?isMath@BfmeAptValue006DCD20@@QBEHXZ; asserts "isMath()" at AptValue.inl:995.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD060()
+{
+    if (!static_cast<unsigned char>(isMath())) {
+        g_bfmeAptAssertAtE17734("isMath()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x3E3);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD0A0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD0A0 50B. Checked cast for isScriptColour type 26.
+// Evidence: calls rowed ?isScriptColour@BfmeAptValue006DCD20@@QBEHXZ; asserts "isScriptColour()" at AptValue.inl:1022; callers at 0x006F2655/0x006F2705.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD0A0()
+{
+    if (!static_cast<unsigned char>(isScriptColour())) {
+        g_bfmeAptAssertAtE17734("isScriptColour()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x3FE);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD0E0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD0E0 50B. Checked cast for isObject type 27.
+// Evidence: calls rowed ?isObject@BfmeAptValue006DCD20@@QBEHXZ; asserts "isObject()" at AptValue.inl:1048; callers at 0x006D9F97.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD0E0()
+{
+    if (!static_cast<unsigned char>(isObject())) {
+        g_bfmeAptAssertAtE17734("isObject()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x418);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD120@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD120 50B. Checked cast for isPrototype type 28.
+// Evidence: calls rowed ?isPrototype@BfmeAptValue006DCD20@@QBEHXZ; asserts "isPrototype()" at AptValue.inl:1073; callers at 0x006DFC67.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD120()
+{
+    if (!static_cast<unsigned char>(isPrototype())) {
+        g_bfmeAptAssertAtE17734("isPrototype()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x431);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD160 50B. Checked cast for isDate type 29.
+// Evidence: calls rowed ?isDate@BfmeAptValue006DCD20@@QBEHXZ; asserts "isDate()" at AptValue.inl:1098; many callers from 0x006DDA02.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD160()
+{
+    if (!static_cast<unsigned char>(isDate())) {
+        g_bfmeAptAssertAtE17734("isDate()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x44A);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD1A0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD1A0 50B. Checked cast for isTextFormat type 36.
+// Evidence: calls rowed ?isTextFormat@BfmeAptValue006DCD20@@QBEHXZ; asserts "isTextFormat()" at AptValue.inl:1123; caller at 0x006EF5D5.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD1A0()
+{
+    if (!static_cast<unsigned char>(isTextFormat())) {
+        g_bfmeAptAssertAtE17734("isTextFormat()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x463);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD1E0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD1E0 50B. Checked cast for isMovieClip type 30.
+// Evidence: calls rowed ?isMovieClip@BfmeAptValue006DCD20@@QBEHXZ; asserts "isMovieClip()" at AptValue.inl:1148.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD1E0()
+{
+    if (!static_cast<unsigned char>(isMovieClip())) {
+        g_bfmeAptAssertAtE17734("isMovieClip()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x47C);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD320@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD320 50B. Checked cast for isStage type 39.
+// Evidence: calls rowed ?isStage@BfmeAptValue006DCD20@@QBEHXZ; asserts "isStage()" at AptValue.inl:1277.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD320()
+{
+    if (!static_cast<unsigned char>(isStage())) {
+        g_bfmeAptAssertAtE17734("isStage()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4FD);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
