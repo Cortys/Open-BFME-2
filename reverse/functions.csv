@@ -38143,3 +38143,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006CD650@Rva006CD650@@QAEPAXXZ,,0x006CD650,103,Code/Libraries/Source/Apt/AptValue/AptValueAnimationInstBFME2.cpp,matched,AptCIH.h asserts type 0x12 plus isUndefined return +0x4c via checked-cast precedent
 ?rva0004D6B3@W3DDisplay@@QAEXPAVImage@@MMMMHH@Z,,0x0004D6B3,78,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayDrawImageMode.cpp,matched,W3DDisplay TheDisplay wrapper float Image draw with mode via W3DMouse ABI and direct callers
 ?Rva002253C2Init@@YAXXZ,,0x002253C2,158,Code/GameEngine/Source/Common/Rva002253C2Init.cpp,matched,chain from 0x308E0 cmdline zerofill heaps callers thunk 0x179A
+??$_Destroy@PAURva005F8F96@@@_STL@@YAXPAURva005F8F96@@0@Z,,0x00153470,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva005F8F96_destroy.cpp,matched,range destroy stride 8 over rowed dtor 0x5F8F96 callers 0x153704 0x153744 0x153843
