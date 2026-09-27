@@ -84,6 +84,7 @@ static const Int MAX_SAVE_FILE_NUMBER  =  99999999;
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??0SaveGameInfo@@ present-unmatched
 SaveGameInfo::SaveGameInfo( void )
 {
 
@@ -102,6 +103,7 @@ SaveGameInfo::SaveGameInfo( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??1SaveGameInfo@@ present-unmatched
 SaveGameInfo::~SaveGameInfo( void )
 {
 
@@ -110,6 +112,7 @@ SaveGameInfo::~SaveGameInfo( void )
 // ------------------------------------------------------------------------------------------------
 /** Is this date newer than the other one passed in? */
 // ------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 Bool SaveDate::isNewerThan( SaveDate *other )
 {
 
@@ -180,10 +183,12 @@ Bool SaveDate::isNewerThan( SaveDate *other )
 	}  // end else
 
 }  // end isNewerThan
+#pragma optimize("", on)
 
 // ------------------------------------------------------------------------------------------------
 /** Find a snapshot block info that matches the token passed in */
 // ------------------------------------------------------------------------------------------------
+// ?findBlockInfoByToken@GameState@@ present-unmatched
 GameState::SnapshotBlock *GameState::findBlockInfoByToken( AsciiString token, SnapshotType which )
 {
 
@@ -282,6 +287,7 @@ UnicodeString getUnicodeTimeBuffer(SYSTEMTIME timeVal)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??0GameState@@ present-unmatched
 GameState::GameState( void )
 {
 
@@ -292,6 +298,7 @@ GameState::GameState( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??1GameState@@ present-unmatched
 GameState::~GameState( void )
 {
 
@@ -310,6 +317,7 @@ GameState::~GameState( void )
 // ------------------------------------------------------------------------------------------------
 /** Init the game state subsystem */
 // ------------------------------------------------------------------------------------------------
+// ?init@GameState@@ present-unmatched
 void GameState::init( void )
 {
 
@@ -347,6 +355,7 @@ void GameState::init( void )
 // ------------------------------------------------------------------------------------------------
 /** Reset */
 // ------------------------------------------------------------------------------------------------a
+// ?reset@GameState@@ present-unmatched
 void GameState::reset( void )
 {
 
@@ -363,6 +372,7 @@ void GameState::reset( void )
 // ------------------------------------------------------------------------------------------------
 /** Clear any available games entries */
 // ------------------------------------------------------------------------------------------------
+// ?clearAvailableGames@GameState@@ present-unmatched
 void GameState::clearAvailableGames( void )
 {
 	AvailableGameInfo *gameInfo;
@@ -381,6 +391,7 @@ void GameState::clearAvailableGames( void )
 // ------------------------------------------------------------------------------------------------
 /** Add a snapshot and block name pair to the systems used to load and save */
 // ------------------------------------------------------------------------------------------------
+// ?addSnapshotBlock@GameState@@ present-unmatched
 void GameState::addSnapshotBlock( AsciiString blockName, Snapshot *snapshot, SnapshotType which )
 {
 
@@ -441,6 +452,7 @@ static void findHighFileNumber( AsciiString filename, void *userData )
 // ------------------------------------------------------------------------------------------------
 /** Given the save files on disk, find the "next" filename to use when saving a game */
 // ------------------------------------------------------------------------------------------------
+// ?findNextSaveFilename@GameState@@ present-unmatched
 AsciiString GameState::findNextSaveFilename( UnicodeString desc )
 {
 // works, but needs approval from mgmt (srj)
@@ -543,6 +555,7 @@ AsciiString GameState::findNextSaveFilename( UnicodeString desc )
 /** Save the current state of the engine in a save file
 	* NOTE: filename is a *filename only* */
 // ------------------------------------------------------------------------------------------------
+// ?saveGame@GameState@@ present-unmatched
 SaveCode GameState::saveGame( AsciiString filename, UnicodeString desc, 
 															SaveFileType saveType, SnapshotType which )
 {
@@ -631,6 +644,7 @@ SaveCode GameState::saveGame( AsciiString filename, UnicodeString desc,
 // ------------------------------------------------------------------------------------------------
 /** A mission save */
 // ------------------------------------------------------------------------------------------------
+// ?missionSave@GameState@@ present-unmatched
 SaveCode GameState::missionSave( void )
 {
 
@@ -653,6 +667,7 @@ SaveCode GameState::missionSave( void )
 // ------------------------------------------------------------------------------------------------
 /** Load the save game pointed to by filename */
 // ------------------------------------------------------------------------------------------------
+// ?loadGame@GameState@@ present-unmatched
 SaveCode GameState::loadGame( AvailableGameInfo gameInfo )
 {
 
@@ -769,6 +784,7 @@ SaveCode GameState::loadGame( AvailableGameInfo gameInfo )
 }  // end loadGame
 
 //-------------------------------------------------------------------------------------------------
+// ?getSaveDirectory@GameState@@ present-unmatched
 AsciiString GameState::getSaveDirectory() const
 {
 	AsciiString tmp = TheGlobalData->getPath_UserData();
@@ -777,6 +793,7 @@ AsciiString GameState::getSaveDirectory() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getFilePathInSaveDirectory@GameState@@ present-unmatched
 AsciiString GameState::getFilePathInSaveDirectory(const AsciiString& leaf) const
 {
 	AsciiString tmp = getSaveDirectory();
@@ -785,12 +802,14 @@ AsciiString GameState::getFilePathInSaveDirectory(const AsciiString& leaf) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isInSaveDirectory@GameState@@ present-unmatched
 Bool GameState::isInSaveDirectory(const AsciiString& path) const
 {
 	return path.startsWithNoCase(getSaveDirectory());
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?getMapLeafName@GameState@@ present-unmatched
 AsciiString GameState::getMapLeafName(const AsciiString& in) const
 {
 	char* p = strrchr(in.str(), '\\');
@@ -873,6 +892,7 @@ const char* PORTABLE_MAPS				= "Maps\\";
 const char* PORTABLE_USER_MAPS	= "UserData\\Maps\\";
 
 // ------------------------------------------------------------------------------------------------
+// ?realMapPathToPortableMapPath@GameState@@ present-unmatched
 AsciiString GameState::realMapPathToPortableMapPath(const AsciiString& in) const
 {
 	AsciiString prefix;
@@ -903,6 +923,7 @@ AsciiString GameState::realMapPathToPortableMapPath(const AsciiString& in) const
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?portableMapPathToRealMapPath@GameState@@ present-unmatched
 AsciiString GameState::portableMapPathToRealMapPath(const AsciiString& in) const
 {
 	AsciiString prefix;
@@ -940,6 +961,7 @@ AsciiString GameState::portableMapPathToRealMapPath(const AsciiString& in) const
 // ------------------------------------------------------------------------------------------------
 /** Does the save game file exist */
 // ------------------------------------------------------------------------------------------------
+// ?doesSaveGameExist@GameState@@ present-unmatched
 Bool GameState::doesSaveGameExist( AsciiString filename ) 
 {
 
@@ -973,6 +995,7 @@ Bool GameState::doesSaveGameExist( AsciiString filename )
 // ------------------------------------------------------------------------------------------------
 /** Get save game info from the filename specified */
 // ------------------------------------------------------------------------------------------------
+// ?getSaveGameInfoFromFile@GameState@@ present-unmatched
 void GameState::getSaveGameInfoFromFile( AsciiString filename, SaveGameInfo *saveGameInfo )
 {
 	AsciiString token;
@@ -1152,6 +1175,7 @@ static void addGameToAvailableList( AsciiString filename, void *userData )
 // ------------------------------------------------------------------------------------------------
 /** Populate the listbox passed in with a list of the save games present on the hard drive */
 // ------------------------------------------------------------------------------------------------
+// ?populateSaveGameListbox@GameState@@ present-unmatched
 void GameState::populateSaveGameListbox( GameWindow *listbox, SaveLoadLayoutType layoutType )
 {
 	Int index;
@@ -1250,6 +1274,7 @@ void GameState::populateSaveGameListbox( GameWindow *listbox, SaveLoadLayoutType
 // ------------------------------------------------------------------------------------------------
 /** Iterate the save game files */
 // ------------------------------------------------------------------------------------------------
+// ?iterateSaveFiles@GameState@@ present-unmatched
 void GameState::iterateSaveFiles( IterateSaveFileCallback callback, void *userData )
 {
 
@@ -1323,6 +1348,7 @@ void GameState::iterateSaveFiles( IterateSaveFileCallback callback, void *userDa
 // ------------------------------------------------------------------------------------------------
 /** Save game to xfer or load game using xfer */
 // ------------------------------------------------------------------------------------------------
+// ?friend_xferSaveDataForCRC@GameState@@ present-unmatched
 void GameState::friend_xferSaveDataForCRC( Xfer *xfer, SnapshotType which )
 {
 	DEBUG_LOG(("GameState::friend_xferSaveDataForCRC() - SnapshotType %d\n", which));
@@ -1338,6 +1364,7 @@ void GameState::friend_xferSaveDataForCRC( Xfer *xfer, SnapshotType which )
 // ------------------------------------------------------------------------------------------------
 /** Save game to xfer or load game using xfer */
 // ------------------------------------------------------------------------------------------------
+// ?xferSaveData@GameState@@ present-unmatched
 void GameState::xferSaveData( Xfer *xfer, SnapshotType which )
 {
 
@@ -1488,6 +1515,7 @@ void GameState::xferSaveData( Xfer *xfer, SnapshotType which )
 // ------------------------------------------------------------------------------------------------
 /** Add a snapshot to the post process list for later */
 // ------------------------------------------------------------------------------------------------
+// ?addPostProcessSnapshot@GameState@@ present-unmatched
 void GameState::addPostProcessSnapshot( Snapshot *snapshot )
 {
 
@@ -1530,6 +1558,7 @@ void GameState::addPostProcessSnapshot( Snapshot *snapshot )
 // ------------------------------------------------------------------------------------------------
 /** Post process entry point after all game data has been xferd from disk */
 // ------------------------------------------------------------------------------------------------
+// ?gameStatePostProcessLoad@GameState@@ present-unmatched
 void GameState::gameStatePostProcessLoad( void )
 {
 
@@ -1564,6 +1593,7 @@ void GameState::gameStatePostProcessLoad( void )
 	* 1: Initial version 
 	* 2: Added save file type and mission map name (regular save vs automatic mission save) */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@GameState@@ present-unmatched
 void GameState::xfer( Xfer *xfer )
 {
 
