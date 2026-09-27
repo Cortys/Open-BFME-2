@@ -900,5 +900,418 @@
       }
     ],
     "status": "C++ byte-verified recovery"
+  },
+  "apt_date_getters": {
+    "compiler": "MSVC7.1 /O2 /MD",
+    "target_identity_basis": "Each target named date-method dispatch case pushes the exact callback address into the native-function constructor. Except for the integer-zero getTime stub, each getter then calls the matched cast that asserts isDate in AptValue.inl, reads its own field or computes its own date result, and passes the result to existing pinned AptInteger::Create. Names therefore rest on independently decoded target string/ID/jump-table relationships plus original donor procedure names, not merely bytes.",
+    "donor_type_records": {
+      "0xe4f5": "1a00091080380000944100000000000000000200b940000000000000",
+      "0x3880": "0a0002107f3800000a000000",
+      "0x387f": "1e00041500008000000000000000000000000000000041707456616c756500f1",
+      "0x4194": "1e0004150000800000000000000000000000000000004170744461746500f2f1",
+      "0x40b9": "0e000112020000008038000074000000",
+      "0xe4f1": "1a0009107400000094410000e4e400000b0003005735000000000000"
+    },
+    "callback_abi": "PDB static cdecl AptValue*(AptValue*,int); target reads first stack argument and returns pointer; unused second parameter retained.",
+    "target_layout": {
+      "local": "seconds20 minutes24 hours28 day30 month34 year38 milliseconds3C",
+      "utc": "seconds40 minutes44 hours48 day50 month54 year58 milliseconds5C",
+      "timezone": "signed field60; getter returns abs(field)*60",
+      "unclaimed": "prefix00..1F; words2C/4C remain opaque; no complete-class layout claimed"
+    },
+    "existing_callees": {
+      "0x006DD160": "?rva006DD160@BfmeAptValue006DCD20@@QAEPAV1@XZ; matched checked cast; target assertion isDate",
+      "0x006D8520": "?Create@AptInteger@@SAPAVAptValue@@H@Z; existing pin reused"
+    },
+    "added_pin": {
+      "name": "?getDayOfWeek@AptDate@@QAEHHHH@Z",
+      "rva": "0x006F4290",
+      "basis": "450-byte Ghidra boundary equals Godfather QA procedure size and normalized body. Existing banked partial records its calendar arithmetic, leap-year helper and floor call. Newly audited target getDay/getUTCDay dispatch callbacks pass year/month/day from independently identified fields in that order, then box its integer result. Pin is separate from a recovery; 450-byte helper remains partial.",
+      "pin_consistency": "No pre-existing symbol pin; --check passed after addition"
+    },
+    "alias_policy": "getTime and setTime both dispatch to6F47E0; only one11-byte body is claimed as getTime. No duplicate range and no second alias claim.",
+    "codegen": "Direct checked-cast expressions in weekday calls preserve original call/argument evaluation sequence; a small inline wrapper reordered calls and emitted75B instead of63B.",
+    "functions": [
+      {
+        "name": "?sMethod_getDate@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f46c0",
+        "size": 22,
+        "target_sha256": "d7779b569b8b6a4a5c9c341be28c040f5825ed9308b22f6af8fe60e885bd6e67",
+        "last_ret_rva": "0x6f46d5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getDate",
+        "dispatch_case_va": "0xaf516a",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getDate",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 1496,
+          "record": "3e001011000000004006000000000000110000000000000010000000f5e40000d0b83e00010000417074446174653a3a734d6574686f645f6765744461746500",
+          "donor_offset": "0x3eb8d0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getDay@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f46e0",
+        "size": 63,
+        "target_sha256": "01343c31f753bf454f6ad3756cbbc6a60f8fcb75b05a833a260dc441e173a031",
+        "last_ret_rva": "0x6f471e",
+        "following_bytes": "cc8b4c2404e8378a",
+        "target_dispatch_key": "getDay",
+        "dispatch_case_va": "0xaf51d7",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getDay",
+          "size": 31,
+          "type": "0xe4f5",
+          "record_offset": 1604,
+          "record": "3e00101100000000ac060000000000001f000000000000001e000000f5e40000f0b83e00010000417074446174653a3a734d6574686f645f6765744461790000",
+          "donor_offset": "0x3eb8f0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getFullYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4720",
+        "size": 22,
+        "target_sha256": "08b5714ebddd145a2c9c4577e1d2a75a1c54def5baf3bfcd6dd5d66ef47f1c9d",
+        "last_ret_rva": "0x6f4735",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getFullYear",
+        "dispatch_case_va": "0xaf5244",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getFullYear",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 1712,
+          "record": "42001011000000001c07000000000000110000000000000010000000f5e4000010b93e00010000417074446174653a3a734d6574686f645f67657446756c6c5965617200",
+          "donor_offset": "0x3eb910"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getHours@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4740",
+        "size": 22,
+        "target_sha256": "d1b122a75a62d14c8640e6b106afba5ecf9eb545e58bc3bfc056c4b1c7a092be",
+        "last_ret_rva": "0x6f4755",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getHours",
+        "dispatch_case_va": "0xaf52b1",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getHours",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 1824,
+          "record": "42001011000000008c07000000000000110000000000000010000000f5e4000030b93e00010000417074446174653a3a734d6574686f645f676574486f75727300000000",
+          "donor_offset": "0x3eb930"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getMilliseconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4760",
+        "size": 22,
+        "target_sha256": "660f3d2909ba495a169037048b818f0e0f43a5d72849cd9631dff39f516173e4",
+        "last_ret_rva": "0x6f4775",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getMilliseconds",
+        "dispatch_case_va": "0xaf531e",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getMilliseconds",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 1936,
+          "record": "46001011000000000008000000000000110000000000000010000000f5e4000050b93e00010000417074446174653a3a734d6574686f645f6765744d696c6c697365636f6e647300",
+          "donor_offset": "0x3eb950"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getMinutes@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4780",
+        "size": 22,
+        "target_sha256": "193be175dc3c093471db71625517d8ca8a3d035ea3edc0ff2069e82f96c5ff6c",
+        "last_ret_rva": "0x6f4795",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getMinutes",
+        "dispatch_case_va": "0xaf538b",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getMinutes",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2052,
+          "record": "42001011000000007008000000000000110000000000000010000000f5e4000070b93e00010000417074446174653a3a734d6574686f645f6765744d696e757465730000",
+          "donor_offset": "0x3eb970"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getMonth@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f47a0",
+        "size": 22,
+        "target_sha256": "db3723c6185e9b9e69099425276587f33bb9a86c9304d6ffcd71616d922c01d0",
+        "last_ret_rva": "0x6f47b5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getMonth",
+        "dispatch_case_va": "0xaf53f8",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getMonth",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2164,
+          "record": "4200101100000000e008000000000000110000000000000010000000f5e4000090b93e00010000417074446174653a3a734d6574686f645f6765744d6f6e746800000000",
+          "donor_offset": "0x3eb990"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getSeconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f47c0",
+        "size": 22,
+        "target_sha256": "106f2fbd41b4cc7839e9e78202b6b532bba3765a1bc592af89926db42f3a9464",
+        "last_ret_rva": "0x6f47d5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getSeconds",
+        "dispatch_case_va": "0xaf5465",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getSeconds",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2276,
+          "record": "42001011000000005009000000000000110000000000000010000000f5e40000b0b93e00010000417074446174653a3a734d6574686f645f6765745365636f6e64730000",
+          "donor_offset": "0x3eb9b0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getTime@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f47e0",
+        "size": 11,
+        "target_sha256": "c9a69181cd08b9c9280b070403fd2cb7cb5dc93ce56857dfb90f2639b7f14706",
+        "last_ret_rva": "0x6f47ea",
+        "following_bytes": "cccccccccc8b4c24",
+        "target_dispatch_key": "getTime",
+        "dispatch_case_va": "0xaf54d2",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getTime",
+          "size": 11,
+          "type": "0xe4f5",
+          "record_offset": 2388,
+          "record": "3e00101100000000bc090000000000000b000000000000000a000000f5e40000d0b93e00010000417074446174653a3a734d6574686f645f67657454696d6500",
+          "donor_offset": "0x3eb9d0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getTimezoneOffset@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f47f0",
+        "size": 30,
+        "target_sha256": "76ea11dff51780520ff5c67e551a5dc60367ca06e08fc417aaaa944f029c58ed",
+        "last_ret_rva": "0x6f480d",
+        "following_bytes": "cccc8b4c2404e847",
+        "target_dispatch_key": "getTimezoneOffset",
+        "dispatch_case_va": "0xaf553f",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getTimezoneOffset",
+          "size": 25,
+          "type": "0xe4f5",
+          "record_offset": 2496,
+          "record": "4a00101100000000340a000000000000190000000000000018000000f5e40000e0b93e00010000417074446174653a3a734d6574686f645f67657454696d657a6f6e654f6666736574000000",
+          "donor_offset": "0x3eb9e0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCDate@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4810",
+        "size": 22,
+        "target_sha256": "5b0c98ba78db7378726c997e3aed38f0f5c7287bfaa9986c6b86035e5a2d1b72",
+        "last_ret_rva": "0x6f4825",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCDate",
+        "dispatch_case_va": "0xaf55ac",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCDate",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2616,
+          "record": "4200101100000000a40a000000000000110000000000000010000000f5e4000000ba3e00010000417074446174653a3a734d6574686f645f676574555443446174650000",
+          "donor_offset": "0x3eba00"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCDay@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4830",
+        "size": 63,
+        "target_sha256": "8320a074e09220fe10aa5b58a91d42efdb27065c0f3b2015091927129067f9c4",
+        "last_ret_rva": "0x6f486e",
+        "following_bytes": "cc8b4c2404e8e788",
+        "target_dispatch_key": "getUTCDay",
+        "dispatch_case_va": "0xaf5619",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCDay",
+          "size": 31,
+          "type": "0xe4f5",
+          "record_offset": 2728,
+          "record": "4200101100000000140b0000000000001f000000000000001e000000f5e4000020ba3e00010000417074446174653a3a734d6574686f645f676574555443446179000000",
+          "donor_offset": "0x3eba20"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCFullYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4870",
+        "size": 22,
+        "target_sha256": "b23954124dff57a9e215b1b2af4c4330a53b1fb5609e6482c73819c2461f93fb",
+        "last_ret_rva": "0x6f4885",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCFullYear",
+        "dispatch_case_va": "0xaf5686",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCFullYear",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2840,
+          "record": "4600101100000000880b000000000000110000000000000010000000f5e4000040ba3e00010000417074446174653a3a734d6574686f645f67657455544346756c6c596561720000",
+          "donor_offset": "0x3eba40"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCHours@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4890",
+        "size": 22,
+        "target_sha256": "d9997cb25c8be9908d11c7fd69557743e60b85990684b84761dd085527aeca0b",
+        "last_ret_rva": "0x6f48a5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCHours",
+        "dispatch_case_va": "0xaf56f3",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCHours",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 2956,
+          "record": "4200101100000000f80b000000000000110000000000000010000000f5e4000060ba3e00010000417074446174653a3a734d6574686f645f676574555443486f75727300",
+          "donor_offset": "0x3eba60"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCMilliseconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f48b0",
+        "size": 22,
+        "target_sha256": "2514891811447cca5eb73f85516946e720b83c4915b782beaf7e76f0a7c44edf",
+        "last_ret_rva": "0x6f48c5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCMilliseconds",
+        "dispatch_case_va": "0xaf5760",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCMilliseconds",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 3068,
+          "record": "4a00101100000000700c000000000000110000000000000010000000f5e4000080ba3e00010000417074446174653a3a734d6574686f645f6765745554434d696c6c697365636f6e64730000",
+          "donor_offset": "0x3eba80"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCMinutes@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f48d0",
+        "size": 22,
+        "target_sha256": "da9bb4c9433ca4b6eccc72741dd464cc12a582717c750a8e157fcfdb69d71c27",
+        "last_ret_rva": "0x6f48e5",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCMinutes",
+        "dispatch_case_va": "0xaf57cd",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCMinutes",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 3188,
+          "record": "4600101100000000e40c000000000000110000000000000010000000f5e40000a0ba3e00010000417074446174653a3a734d6574686f645f6765745554434d696e75746573000000",
+          "donor_offset": "0x3ebaa0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCMonth@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f48f0",
+        "size": 22,
+        "target_sha256": "5724621ea5db83d1f96f2d97ed455214a10d9972390e07d82dfd85e2cec04596",
+        "last_ret_rva": "0x6f4905",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCMonth",
+        "dispatch_case_va": "0xaf583a",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCMonth",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 3304,
+          "record": "4200101100000000540d000000000000110000000000000010000000f5e40000c0ba3e00010000417074446174653a3a734d6574686f645f6765745554434d6f6e746800",
+          "donor_offset": "0x3ebac0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getUTCSeconds@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4910",
+        "size": 22,
+        "target_sha256": "05c60d05412903e39f2719c38ba049e4bf19853d2fcdbd3f87c20bd706a3224a",
+        "last_ret_rva": "0x6f4925",
+        "following_bytes": "cccccccccccccccc",
+        "target_dispatch_key": "getUTCSeconds",
+        "dispatch_case_va": "0xaf58a7",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getUTCSeconds",
+          "size": 17,
+          "type": "0xe4f5",
+          "record_offset": 3416,
+          "record": "4600101100000000c80d000000000000110000000000000010000000f5e40000e0ba3e00010000417074446174653a3a734d6574686f645f6765745554435365636f6e6473000000",
+          "donor_offset": "0x3ebae0"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?sMethod_getYear@AptDate@@SAPAVAptValue@@PAV2@H@Z",
+        "rva": "0x6f4930",
+        "size": 27,
+        "target_sha256": "a565386ef7d6d7d62317783ded12f8f5f12a180ed67b88a2a69ff3862f70d0dd",
+        "last_ret_rva": "0x6f494a",
+        "following_bytes": "cccccccccc837c24",
+        "target_dispatch_key": "getYear",
+        "dispatch_case_va": "0xaf5914",
+        "donor_procedure": {
+          "name": "AptDate::sMethod_getYear",
+          "size": 23,
+          "type": "0xe4f5",
+          "record_offset": 3532,
+          "record": "3e00101100000000340e000000000000170000000000000016000000f5e4000000bb3e00010000417074446174653a3a734d6574686f645f6765745965617200",
+          "donor_offset": "0x3ebb00"
+        },
+        "source": "Code/Libraries/Source/Apt/AptDateGetters.cpp",
+        "status": "C++ byte-verified recovery"
+      }
+    ]
   }
 }
