@@ -37646,3 +37646,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?friend_setPath@AIUpdateInterface@@QAEXPAVPath@@@Z,,0x00262AF9,22,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_friendSetPath.cpp,matched,ZH AIUpdate friend_setPath via destroyPath plus 0x140
 ?setLocomotorGoalPositionExplicit@AIUpdateInterface@@UAEXABUCoord3D@@@Z,,0x00262C35,30,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp,matched,ZH AIUpdate POSITION_EXPLICIT plus Coord3D
 ?rva001EB130@Rva001EB130Holder@@QAEXXZ,,0x001EB130,42,Code/GameEngine/Source/Common/Rva001EB130Clear.cpp,matched,circular list clear same shape as reset 0x26549E; freelist 0x9B8FF4; callers 0x1EB76C 0x241520
+?rva001EB769@Rva001EB769@@QAEXXZ,,0x001EB769,29,Code/GameEngine/Source/Common/Rva001EB130Clear.cpp,matched,chain of 0x001EB130 on same holder; pushes head to freelist 0x9B8FF4; 16 unclaimed callers
