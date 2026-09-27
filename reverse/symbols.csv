@@ -5819,3 +5819,8 @@ _ConvertBoolTrees,0x001BBD60
 ?isPlayerActive@Player@@QBE_NXZ,0x002AA231,"callee at 0x9EDA5 in callback-table-named W3DCommandBarGenExpDraw; target 20B body tests two Player active-state bytes"
 ??0GadgetCreateView@@QAE@XZ,0x0022239C,0x34-byte create-view zeroer called before snapshotCreateView by 0x003174CB/0x0031C9DF/0x0031CAD2; folds with the matched _ArcInfoStruct ctor body
 ?createGadget@@YAPAVGameWindow@@PADPAXPAVGadgetCreateView@@PAV1@@Z,0x00316518,BFME2 createGadget (type data view source) called by the gadget rebuild wrapper 0x003174CB; named in the getDataTemplate and copyGadgetDrawData TU notes
+?compare@AsciiString@@QBEHPBD@Z,0x000069B1,AsciiString spelling of the matched StringBase<char>::compare body; flag-name compares in changeObjectPanelFlagForSingleObject 0x003C4C07
+?setScriptStatus@Object@@QAEXW4ObjectScriptStatusBit@@_N@Z,0x00292969,(bit set) thiscall toggling byte Object+0x437; called with bits 1/2/4/0x10 at the donor setScriptStatus sites of changeObjectPanelFlagForSingleObject 0x003C4C07
+?isSelectable@Object@@QBE_NXZ,0x0028D7FD,called at the donor isSelectable site of changeObjectPanelFlagForSingleObject 0x003C4C07; reads template status bits
+?setSelectable@Object@@QAEX_N@Z,0x0028B76D,stores byte Object+0x434 then forwards to the drawable; called at the donor setSelectable site of changeObjectPanelFlagForSingleObject 0x003C4C07
+?TheObjectFlagsNames@@3PAPBDA,0x00DC10FC,retail flag-name table read by changeObjectPanelFlagForSingleObject 0x003C4C07 (Enabled..Player Targetable)
