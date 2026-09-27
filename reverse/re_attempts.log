@@ -2161,3 +2161,5 @@ FUN_0043DB23	0x0043DB23	26	blocked	pin invoke mangling H10000 undecodable needs 
 ?rva006D3560@EAStringC@@QBE_NPBV1@@Z	0x006D3560	57	void	The prior partial bank at this address was superseded by the verified landed body; remove its now-missing stash reference.
 ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z	0x0024297F	323	landed	BFME1 scheduler wake semantics adapted to target offsets; Ghidra boundary and caller pin establish identity. /arch:SSE emits both retail cmova clamps; REL32 push_back pin resolves to 0x004DFCB0 from target callsite. Exact 323-byte build. t=8 model=GPT-6
 ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z	0x0024297F	323	void	The previous partial bank was superseded by this verified landing; remove its now-missing stash reference.
+FUN_0068f940	0x0028F940	28	blocked	contested StringBase pin plus unclear stdcall shape with ignored ecx t=8 model=muse-e606
+?rva00483B3D@RebuildHoleBehavior@@QAEHXZ	0x00483B3D	102	blocked	vslot 17 mapping plus secondary offsets plus body slot4 slot6 float compare t=12 model=muse-e606
