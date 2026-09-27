@@ -67,4 +67,6 @@ typedef char Record840PayloadStart[offsetof(BfmeOpaqueOwnedRecord840, payload_wo
 template void _STL::_Construct<BfmeOpaqueOwnedRecord840, BfmeOpaqueOwnedRecord840>(
     BfmeOpaqueOwnedRecord840 *, const BfmeOpaqueOwnedRecord840 &);
 
+BfmeOpaqueOwnedRecord840::BfmeOpaqueOwnedRecord840() {}
+
 BfmeOpaqueOwnedRecord840::~BfmeOpaqueOwnedRecord840() {}
