@@ -46,6 +46,14 @@ public:
 	char m_body[8];
 };
 
+struct Rva0048130E
+{
+public:
+	Rva0048130E();
+	Rva0048130E(const Rva0048130E &other);
+	char m_body[8];
+};
+
 class Rva002390CB
 {
 public:
@@ -108,6 +116,7 @@ template<> void _Construct<TreeKey00242F5E, TreeKey00242F5E>(TreeKey00242F5E *, 
 template<> void _Construct<CopyNoCasePair, CopyNoCasePair>(CopyNoCasePair *, const CopyNoCasePair &);
 template<> void _Construct<CopyPairC, CopyPairC>(CopyPairC *, const CopyPairC &);
 template<> void _Construct<BfmeStringRecord005DDD40, BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40 *, const BfmeStringRecord005DDD40 &);
+template<> void _Construct<Rva0048130E, Rva0048130E>(Rva0048130E *, const Rva0048130E &);
 template<> void _Construct<Rva002390CB, Rva002390CB>(Rva002390CB *, const Rva002390CB &);
 template<> void _Construct<BfmeStringRecord0022074B, BfmeStringRecord0022074B>(BfmeStringRecord0022074B *, const BfmeStringRecord0022074B &);
 template<> void _Construct<BfmeStringRecord00395E75, BfmeStringRecord00395E75>(BfmeStringRecord00395E75 *, const BfmeStringRecord00395E75 &);
@@ -120,6 +129,7 @@ template _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> >::vecto
 template _STL::vector<CopyNoCasePair, _STL::allocator<CopyNoCasePair> >::vector(const _STL::vector<CopyNoCasePair, _STL::allocator<CopyNoCasePair> > &);
 template _STL::vector<CopyPairC, _STL::allocator<CopyPairC> >::vector(const _STL::vector<CopyPairC, _STL::allocator<CopyPairC> > &);
 template _STL::vector<BfmeStringRecord005DDD40, _STL::allocator<BfmeStringRecord005DDD40> >::vector(const _STL::vector<BfmeStringRecord005DDD40, _STL::allocator<BfmeStringRecord005DDD40> > &);
+template _STL::vector<Rva0048130E, _STL::allocator<Rva0048130E> >::vector(const _STL::vector<Rva0048130E, _STL::allocator<Rva0048130E> > &);
 template _STL::vector<Rva002390CB, _STL::allocator<Rva002390CB> >::vector(const _STL::vector<Rva002390CB, _STL::allocator<Rva002390CB> > &);
 template _STL::vector<BfmeStringRecord0022074B, _STL::allocator<BfmeStringRecord0022074B> >::vector(const _STL::vector<BfmeStringRecord0022074B, _STL::allocator<BfmeStringRecord0022074B> > &);
 template _STL::vector<BfmeStringRecord00395E75, _STL::allocator<BfmeStringRecord00395E75> >::vector(const _STL::vector<BfmeStringRecord00395E75, _STL::allocator<BfmeStringRecord00395E75> > &);
