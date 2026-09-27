@@ -44,20 +44,56 @@ extern IMEManager *TheIMEManager;
 
 typedef bool Bool;
 
+class GameWindow;
+enum AnimTypes
+{
+	WIN_ANIMATION_NONE = 0,
+	WIN_ANIMATION_SLIDE_LEFT = 1
+};
+
+class AnimateWindowManager
+{
+public:
+	void registerGameWindow(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int ms, unsigned int delayMs);
+};
+
+struct GlobalData
+{
+	unsigned char _pad[0xB00];
+	Bool m_animateWindows;
+};
+
+extern GlobalData *TheGlobalData;
+
+class AsciiString
+{
+private:
+	char *m_text;
+};
+
 class Shell
 {
 private:
 	unsigned char _pad[12];
 	WindowLayout *m_screenStack[16];
 	int m_screenCount;
-	WindowLayout *m_background;
+	Bool m_pendingPush;
+	Bool m_pendingPop;
+	unsigned char _pad5253[2];
 	Bool m_clearBackground;
+	unsigned char _pad5557[3];
+	AsciiString m_pendingPushName;
+	Bool m_isShellActive;
+	Bool m_shellMapOn;
+	unsigned char _pad5E5F[2];
+	AnimateWindowManager *m_animateWindowManager;
 protected:
 	void linkScreen(WindowLayout *screen);
 	void unlinkScreen(WindowLayout *screen);
 	void doPop(Bool impendingPush);
 public:
 	WindowLayout *top();
+	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
 };
 
 WindowLayout *Shell::top()
@@ -100,4 +136,14 @@ void Shell::doPop(Bool impendingPush)
 		m_clearBackground = false;
 	if (TheIMEManager)
 		TheIMEManager->m3C();
+}
+
+// ?registerWithAnimateManager@Shell@@QAEXPAVGameWindow@@W4AnimTypes@@_NI@Z @ 0x0035BE23 (50B). Donor BFME1 Shell.cpp registerWithAnimateManager plus ZH Shell.h public; GlobalData animateWindows at +0xB00 and animateManager at +0x60; callee AnimateWindowManager registerGameWindow.
+void Shell::registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS)
+{
+	if (!m_animateWindowManager)
+		return;
+	if (!TheGlobalData->m_animateWindows)
+		return;
+	m_animateWindowManager->registerGameWindow(win, animType, needsToFinish, 500, delayMS);
 }

@@ -37051,3 +37051,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?unlinkScreen@Shell@@IAEXPAVWindowLayout@@@Z,,0x0035BDA5,29,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp unlinkScreen and ZH Shell.h protected
 ?rva004AEFAD@RespawnUpdate@@UAEMPAH@Z,,0x004AEFAD,94,Code/GameEngine/Source/GameLogic/Object/Update/RespawnUpdateRva004AEFAD.cpp,matched,vslot 13 of 0x008556B0 via RespawnUpdateCtor layout and TheGameLogic frame
 ?doPop@Shell@@IAEX_N@Z,,0x0035BDC2,97,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp doPop and ZH Shell.h protected
+?registerWithAnimateManager@Shell@@QAEXPAVGameWindow@@W4AnimTypes@@_NI@Z,,0x0035BE23,50,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp registerWithAnimateManager and ZH Shell.h public
