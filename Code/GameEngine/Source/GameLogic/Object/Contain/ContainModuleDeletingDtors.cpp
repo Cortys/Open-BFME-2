@@ -186,3 +186,10 @@ class ProductionQueueHordeContainModuleData { public: __declspec(noinline) virtu
 // ??1ProductionQueueHordeContainModuleData@@UAE@XZ present-unmatched
 ProductionQueueHordeContainModuleData::~ProductionQueueHordeContainModuleData() {}
 void ProductionQueueHordeContainModuleData_Delete(ProductionQueueHordeContainModuleData *p) { delete p; }
+
+// ??_GGarrisonContainModuleData@@UAEPAXI@Z @0x0047981E 28B: calls ??1 at 0x00257507.
+// Owner evidence: retail ctor 0x0047978F installs vtable 0x00C462D8; rowed dtor 0x00257507 is ??1GarrisonContainModuleData@@UAE@XZ; 28B flag-test wrapper calls dtor plus delete 0x0002FD60.
+class GarrisonContainModuleData { public: __declspec(noinline) virtual ~GarrisonContainModuleData(); };
+// ??1GarrisonContainModuleData@@UAE@XZ present-unmatched
+GarrisonContainModuleData::~GarrisonContainModuleData() {}
+void GarrisonContainModuleData_Delete(GarrisonContainModuleData *p) { delete p; }
