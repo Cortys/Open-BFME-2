@@ -75,13 +75,14 @@
 //=============================================================================
 /** Destructor. Releases w3d assets. */
 //=============================================================================
-// ??1TerrainTracksRenderObjClass@@UAE@XZ present-unmatched
 // The former 0x190F10 placement destroys compressed animation channels and calls
 // HAnimClass::~HAnimClass at 0x196150. It is not this TerrainTracks destructor.
+#pragma optimize("s", on)
 TerrainTracksRenderObjClass::~TerrainTracksRenderObjClass(void)
 {
 	freeTerrainTracksResources();
 }
+#pragma optimize("", on)
 
 //=============================================================================
 // TerrainTracksRenderObjClass::TerrainTracksRenderObjClass
