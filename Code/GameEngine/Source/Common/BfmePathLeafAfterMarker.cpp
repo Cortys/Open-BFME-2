@@ -1,6 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 
 extern "C" __declspec(dllimport) char * __cdecl strrchr(const char *text, int character);
+extern "C" __declspec(dllimport) int __cdecl strncmp(const char *a, const char *b, unsigned int n);
 
 // ?bfmePathLeafAfterMarker@@YAPBDPBD@Z
 const char *__cdecl bfmePathLeafAfterMarker(const char *path)
@@ -16,5 +17,30 @@ const char *__cdecl bfmePathLeafAfterMarker(const char *path)
 	if (marker != 0)
 		return marker + 1;
 
+	return path;
+}
+
+const char *__cdecl Rva00412845AfterLevel(const char *path)
+{
+	if (path == 0)
+		return 0;
+	if (strncmp(path, "_level", 6) != 0)
+		goto ret_path;
+	path += 6;
+	char c = *path;
+	if (c == 0)
+		goto ret_path;
+loop:
+	if (c == '/' || c == '.')
+		goto found;
+	path++;
+	c = *path;
+	if (c != 0)
+		goto loop;
+found:
+	if (*path == 0)
+		goto ret_path;
+	path++;
+ret_path:
 	return path;
 }
