@@ -37626,3 +37626,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?set@Rva0040F9D@@QAE_NXZ,,0x00040F9D,24,Code/GameEngine/Source/Common/Rva0040F9DEvent.cpp,matched,IAT SetEvent plus 8 callers plus base-dtor handle layout
 ?XferParticleShaderType@@YAXPAVXfer@@PAH@Z,,0x00306052,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper ParticleShaderType string via XferEnum slot 37
 ?rva003748BD@StealthUpdate@@QAEXXZ,,0x003748BD,133,Code/GameEngine/Source/GameLogic/Object/Update/StealthUpdateUpgradeMasks.cpp,matched,StealthUpdate upgrade masks via ModuleData vectors
+?apply@Rva002036B4GlobalCopier@@QAEXXZ,,0x002036B4,12,Code/GameEngine/Source/Common/Rva002036B4GlobalCopiers.cpp,matched,global Va00DFE18C to plus1A104 via defaults no donor
+?apply@Rva002036C0GlobalCopier@@QAEXXZ,,0x002036C0,12,Code/GameEngine/Source/Common/Rva002036B4GlobalCopiers.cpp,matched,global Va00DFE18C to plus1A108 via defaults no donor
