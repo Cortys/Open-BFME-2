@@ -1,0 +1,25 @@
+// cl: /arch:SSE /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /O1 /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+/*
+** Copyright 2025 Electronic Arts Inc.
+** SPDX-License-Identifier: GPL-3.0-or-later
+*/
+// ??1?$SimpleVecClass@VVector3@@@@UAE@XZ, retail 0x0007E1AE, 33 bytes.
+// Target evidence: the body stores vtable 0x00BC6F44, which the matched
+// SegmentedLine/StreakLine bodies encode as ??_7SimpleVecClass<Vector3>;
+// the shape (vptr store, delete[] of Vector via 0x0002FD80, zero Vector and
+// VectorMax) is the vendor simplevec.h dtor. Recipe from the matched
+// SimpleVecClass<float> dtor in simplevec_float_cleanup.cpp. The scalar
+// deleting dtor at 0x0007E320 calls this body.
+#include "always.h"
+void __cdecl operator delete[](void *) throw();
+#include "simplevec.h"
+
+class Vector3
+{
+public:
+	float X;
+	float Y;
+	float Z;
+};
+
+template class SimpleVecClass<Vector3>;
