@@ -372,11 +372,11 @@ public:
 	virtual void Set_Animation( HAnimClass *anim, float frame, int mode ) = 0;
 };
 
-// ?freeW3DAssets@W3DMouse@@AAEXXZ present-unmatched
 void W3DMouse::freeW3DAssets(void)
 {
-
-	for (Int i=0; i<NUM_MOUSE_CURSORS; i++)
+	// The retail model and animation tables span 56 entries (0xE0 bytes),
+	// independent of the shorter reference enum bound.
+	for (Int i=0; i<56; i++)
 	{
 		if (W3DDisplay::m_3DInterfaceScene && cursorModels[i])
 		{
@@ -388,7 +388,8 @@ void W3DMouse::freeW3DAssets(void)
 		if (cursorAnims[i]) { cursorAnims[i]->Release_Ref(); cursorAnims[i] = NULL; }
 	}
 
-	if (m_camera) { m_camera->Release_Ref(); m_camera = NULL; }
+	CameraClass *&retailCamera = *reinterpret_cast<CameraClass **>(reinterpret_cast<char *>(this) + 0x609C);
+	if (retailCamera) { retailCamera->Release_Ref(); retailCamera = NULL; }
 }
 
 //-------------------------------------------------------------------------------------------------
