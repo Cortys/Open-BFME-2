@@ -37697,3 +37697,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006DCF60@BfmeAptValue006DCD20@@QAEPAV1@_N@Z,,0x006DCF60,57,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,Apt isCIH checked cast line 840 bUndefOK
 ?rva005F05E6@Rva005F05E6@@QAEPAXH@Z,,0x005F05E6,16,Code/GameEngine/Source/Common/Rva005F05E6Indexer.cpp,matched,Indexed load via plus4 plus34
 ?rva005F0647@Rva005F0647@@QAEPAXI@Z,,0x005F0647,37,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,Deleting shape release holder then conditional delete
+?rva004D6119@Rva004D6119@@QBE?AVUnicodeString@@XZ,,0x004D6119,27,Code/GameEngine/Source/Common/Rva004D6119Get.cpp,matched,honest-address getter twin of PlayerTemplate getDisplayName
