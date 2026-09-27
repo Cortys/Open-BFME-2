@@ -23,3 +23,19 @@ void Rva003ECA69Element::clear()
 	m_0 = 0.0f;
 	memset(m_rest, 0, 0x40);
 }
+
+class Rva003ECA4BElement
+{
+public:
+	Rva003ECA4BElement();
+
+private:
+	float m_0;
+	char m_rest[0x40];
+};
+
+Rva003ECA4BElement::Rva003ECA4BElement()
+{
+	m_0 = 0.0f;
+	memset(m_rest, 0, 0x40);
+}
