@@ -11,7 +11,7 @@ public:
 	void *m_head;
 	void rva001EB130();
 };
-extern void *g_freeList;
+extern void *g_freeList001EB130;
 // ?rva001EB769@Rva001EB769@@QAEXXZ @0x001EB769 29B: dispose of the same
 // circular-list holder cleared by 0x001EB130 above (calls it on ecx, then
 // pushes the head node at this+0 onto freelist 0x009B8FF4 when non-null).
@@ -28,9 +28,9 @@ void Rva001EB769::rva001EB769()
 	((Rva001EB130Holder *)this)->rva001EB130();
 	void *head = m_head;
 	if (head != 0) {
-		void *freeHead = g_freeList;
+		void *freeHead = g_freeList001EB130;
 		((void **)head)[0] = freeHead;
-		g_freeList = head;
+		g_freeList001EB130 = head;
 	}
 }
 void Rva001EB130Holder::rva001EB130()
@@ -38,11 +38,11 @@ void Rva001EB130Holder::rva001EB130()
 	void *node = ((void **)m_head)[0];
 	if (node != m_head) {
 		do {
-			void *freeHead = g_freeList;
+			void *freeHead = g_freeList001EB130;
 			void *current = node;
 			node = ((void **)current)[0];
 			((void **)current)[0] = freeHead;
-			g_freeList = current;
+			g_freeList001EB130 = current;
 		} while (node != m_head);
 	}
 	((void **)m_head)[0] = m_head;
