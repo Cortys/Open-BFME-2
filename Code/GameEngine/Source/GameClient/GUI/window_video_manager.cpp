@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Source/GameClient /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/shims/bfme_windowvideo /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Source/GameClient /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // stlport
 #include <map>
 #include <hash_map>
@@ -178,7 +178,6 @@ WindowVideoManager::~WindowVideoManager( void )
 }
 
 	
-// ?init@WindowVideoManager@@UAEXXZ present-unmatched
 void WindowVideoManager::init( void )
 {
 	m_playingVideos.clear();
@@ -187,7 +186,6 @@ void WindowVideoManager::init( void )
 	m_pauseAllMovies = FALSE;
 }
 
-// ?reset@WindowVideoManager@@UAEXXZ present-unmatched
 void WindowVideoManager::reset( void )
 {
 	WindowVideoMap::iterator it = m_playingVideos.begin();
@@ -365,7 +363,6 @@ void WindowVideoManager::stopMovie( GameWindow *win )
 	}
 }
 
-// ?stopAndRemoveMovie@WindowVideoManager@@QAEXPAVGameWindow@@@Z present-unmatched
 void WindowVideoManager::stopAndRemoveMovie( GameWindow *win )
 {
 	WindowVideoMap::iterator it = m_playingVideos.find(win);
