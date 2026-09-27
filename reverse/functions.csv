@@ -37789,3 +37789,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?aiWanderInPlace@AICommandInterface@@QAEXW4CommandSourceType@@@Z,,0x003C7853,92,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiWanderInPlace plus AICMD 0x2C plus slot-0 aiDoCommand plus caller 0x3C8BB3
 ?rva003C7653@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x003C7653,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,Same 101B object shape as aiFaceObject plus AICMD 0x49 plus caller 0x3C7982
 ??0Rva0057551C@@QAE@PAX00@Z,,0x0057551C,36,Code/GameEngine/Source/Common/Rva0057551CCtor.cpp,matched,honest-address ctor with manual vtable
+??0Rva00575540@@QAE@PAX00@Z,,0x00575540,36,Code/GameEngine/Source/Common/Rva00575540Ctor.cpp,matched,honest-address sibling ctor swapped tail
