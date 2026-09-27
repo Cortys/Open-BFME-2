@@ -37125,3 +37125,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva002632B3@AIUpdateInterface@@QBEHXZ,,0x002632B3,17,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002632B3.cpp,matched,leaf machine 0x30 nullsafe field 0x50 shares zero getter
 ?rva002632C7@AIUpdateInterface@@QBEHXZ,,0x002632C7,23,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002632C7.cpp,matched,leaf machine 50 54 minus1 shares zero
 ??0Rva005CD1A9@@QAE@XZ,,0x005CD167,66,Code/GameEngine/Source/Common/Rva005CD1A9Ctor.cpp,matched,outer ctor new inner via rowed 0x5CD0DC; vtable 0x874F60; callers 0x57624E 0x576E13 0x5776C9
+??1Rva002A73B8@@QAE@XZ,,0x002A73B8,8,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,forwarder to rowed Rva00360D26Member dtor at plus 8
