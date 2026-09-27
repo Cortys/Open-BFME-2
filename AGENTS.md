@@ -152,26 +152,13 @@ otherwise reassess the batch.
 5. `git pull --rebase origin master`, `git push`, then pull --rebase again. On
    rejection, follow the batching and retry rules in #6 before another attempt.
 
-6. This step governs when to run #5 and limits its retries. Normally, publish after 1 verified commit. Keep substantive changes in separate atomic, verified commits; the publication batching below changes push frequency only.
+6. This step governs when to run #5. Keep each change verified; batch publication under these rules:
 
-If a verified commit recovers under 100 retail bytes and you expect to make another commit, hold publication. Continue accumulating verified commits under 100 retail bytes, then publish them together with the next verified commit of 100 retail bytes or more. Keep each change as a separate verified commit. If you do not expect another commit, follow the normal publication limits below. Existing time, session-ending, and unpublished-commit limits still apply.
-
-After a non-fast-forward push rejection caused by `origin/master` advancing, rebase, recheck the ledger, and complete any required verification. If more verified work is expected, accumulate 3–5 verified unpublished commits before the next publication attempt; do not retry immediately. Rebase, recheck, and verify again before that attempt. If only one verified unpublished commit remains and no further commit is expected, keep rebasing, rechecking, and retrying it until published instead of waiting for another commit.
-
-Once there are 5 verified unpublished commits, do not increase the batch size further solely as a result of `origin/master` advancing. Keep the existing batch, rebase, recheck, verify as required, and attempt publication again until published.
-
-Attempt publication sooner if 10 minutes have elapsed since the last publication attempt, the assigned work is exhausted, or the session is ending. Finish any in-progress verification first.
-
-Before each publication attempt, rebase onto current `origin/master`, recheck the ledger, and complete any required verification. 
-
-After 3 consecutive publication attempts succeed without rejection, reduce the batch size one level: 3–5 → 2 → 1.
+ Prefer accumulating verified commits until the unpublished batch recovers **300 retail bytes total or more**, then push them together. Keep substantive changes as separate verified commits. This is a preference, not a requirement to invent more work: publish a smaller final batch when the work or session ends, after the cooldown.
 
 Header, vendored-reference and shared-shim edits — and a resolved merge — trigger the full gate in the hook; poll it, don't relaunch, and never filter a gate through a pipeline that hides its exit code.
 
-Before pushing, `python3 tools/progress.py origin/master` prints what your
-session added. `+0.00 pp` is the common outcome — do not stop there; take
-another body from the file you were served, and if it is exhausted say so with
-the figure and reason.
+Additionally, internally note the time of your last successful push and allow at least a 3-minute cooldown until the next push by the same GitHub account to this repository. Share that clock across workers using the account and continue useful work during the cooldown.
 
 ## Anti-lift policy
 
