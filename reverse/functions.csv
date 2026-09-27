@@ -37733,3 +37733,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0039D747@TeamPrototype@@QAEXH@Z,,0x0039D747,13,Code/GameEngine/Source/Common/RTS/TeamPrototypeRva0039D73A.cpp,matched,caller 0x3BFBC5 proves TeamPrototype plus priority log
 ?rva0039D754@TeamPrototype@@QAEXH@Z,,0x0039D754,13,Code/GameEngine/Source/Common/RTS/TeamPrototypeRva0039D73A.cpp,matched,caller 0x3BFCF8 proves TeamPrototype plus priority log
 ?hasScience@Player@@QBE_NW4ScienceType@@@Z,,0x002AB7D5,40,Code/GameEngine/Source/Common/RTS/PlayerHasScience.cpp,matched,Player hasScience via addScience push_back vector at 0x2F0 and isCapable check
+??0Rva0006EE7A@@QAE@HHH@Z,,0x0006EE7A,66,Code/Libraries/Source/WWVegas/WW3D2/Rva0006EE7ABitSet.cpp,matched,28-byte two-bit ctor memset plus two ors KindOf mask
