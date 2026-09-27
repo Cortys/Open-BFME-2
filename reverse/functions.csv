@@ -6949,10 +6949,10 @@ _Rva0080F180,,0x0067B080,123,Code/Libraries/Source/DirtySock/Y4CommAlloc.c,match
 _Rva00810020,,0x0067BF20,54,Code/Libraries/Source/DirtySock/Y4CommDigest.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva00810060,,0x0067BF60,179,Code/Libraries/Source/DirtySock/Y4CommDigest.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned from byte-true call site
 _Rva00810FF0,,0x0067CEF0,399,Code/Libraries/Source/DirtySock/Y4CommDigest.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
-_Rva0080FE70,,0x0067BD70,94,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
-_Rva0080FFB0,,0x0067BEB0,101,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
-_Rva0080FDD0,,0x0067BCD0,149,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
-_Rva0080FED0,,0x0067BDD0,211,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
+__BitTest,,0x0067BD70,94,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
+__FromWords,,0x0067BEB0,101,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
+__Subtract,,0x0067BCD0,149,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
+__ToWords,,0x0067BDD0,211,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
 _Rva0080F200,,0x0067B100,244,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva0080F300,,0x0067B200,207,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva0080F430,,0x0067B330,255,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned from byte-true call site
@@ -6961,7 +6961,7 @@ _Rva0080E1C0,,0x0067A0C0,53,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,mat
 _Rva0080DFC0,,0x00679EC0,103,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee now a matched row
 _NetGameUtilControl,,0x0067A4E0,219,Code/Libraries/Source/DirtySock/netgameutil.cpp,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned from byte-true call sites
 _Rva0080E440,,0x0067A340,129,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callees now rows
-_Rva0080F550,,0x0067B450,68,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned from byte-true call site
+_Rva0080F550,,0x0067B450,68,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,Existing target-derived RSA entry; opaque layout preserved; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
 _Rva0080E500,,0x0067A400,218,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned from byte-true call sites
 _Rva008119A0,,0x0067D8A0,827,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callees pinned from byte-true call sites
 _Rva0080E6C0,,0x0067A5C0,872,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callees pinned from byte-true call sites
@@ -7018,11 +7018,11 @@ _Rva00819590,,0x00685490,147,Code/Libraries/Source/DirtySock/Y4CommTransportLife
 _Rva008186C0,,0x006845C0,280,Code/Libraries/Source/DirtySock/Y4CommTransportLife.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva00818FF0,,0x00684EF0,160,Code/Libraries/Source/DirtySock/Y4CommTransportLife.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva008187E0,,0x006846E0,567,Code/Libraries/Source/DirtySock/Y4CommTransportLife.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned
-_Rva00811180,,0x0067D080,74,Code/Libraries/Source/DirtySock/Y4CommSha1.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
-_Rva008111D0,,0x0067D0D0,317,Code/Libraries/Source/DirtySock/Y4CommSha1.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned
-_Rva00811310,,0x0067D210,913,Code/Libraries/Source/DirtySock/Y4CommSha1.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; upgrades pin to row
-_Rva008116B0,,0x0067D5B0,388,Code/Libraries/Source/DirtySock/Y4CommSha1.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callee pinned
-_Rva00811840,,0x0067D740,120,Code/Libraries/Source/DirtySock/Y4CommSha1.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; upgrades pin to row
+_CryptSha1Init,,0x0067D080,74,Code/Libraries/Source/DirtySock/cryptsha1.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original C body; target bytes and five internal calls corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing coverage
+_CryptSha1Update,,0x0067D0D0,317,Code/Libraries/Source/DirtySock/cryptsha1.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original C body; target bytes and five internal calls corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing coverage
+__CryptSha1ProcessBlock,,0x0067D210,913,Code/Libraries/Source/DirtySock/cryptsha1.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original C body; target bytes and five internal calls corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing coverage
+_CryptSha1Final,,0x0067D5B0,388,Code/Libraries/Source/DirtySock/cryptsha1.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original C body; target bytes and five internal calls corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing coverage
+__CryptSha1CopyHash,,0x0067D740,120,Code/Libraries/Source/DirtySock/cryptsha1.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original C body; target bytes and five internal calls corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing coverage
 _Rva007EC3F0,,0x00659320,220,Code/Libraries/Source/DirtySock/Y4TextToValue.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva007EC4D0,,0x00659400,238,Code/Libraries/Source/DirtySock/Y4TextToValue.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit
 _Rva007EC780,,0x006596B0,879,Code/Libraries/Source/DirtySock/Y4TextToValue.c,matched,bfme1 DirtySock small-unit exact placement; unique masked hit; callees pinned
@@ -7167,8 +7167,8 @@ _Rva0080EA30,,0x0067A930,1055,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,m
 _Rva0080EEF0,,0x0067ADF0,81,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit
 _Rva0080EF50,,0x0067AE50,356,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit
 _Rva0080F0D0,,0x0067AFD0,46,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit
-_Rva0080F5A0,,0x0067B4A0,1359,Code/Libraries/Source/DirtySock/Y5SmallHelpers.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit; upgrades pin to row
-_Rva0080FB40,,0x0067BA40,437,Code/Libraries/Source/DirtySock/Y4MultiPrecision.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit; upgrades pin to row
+__Exponentiate,,0x0067B4A0,1359,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
+__Multiply,,0x0067BA40,437,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
 _Rva00810120,,0x0067C020,3791,Code/Libraries/Source/DirtySock/Y4CommDigest.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit; upgrades pin to row
 _Rva008136C0,,0x0067F5C0,143,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit; callees pinned
 _Rva008137C0,,0x0067F6C0,177,Code/Libraries/Source/DirtySock/Y4CommTickIdle.c,matched,bfme1 DirtySock small-unit exact placement; ret-truncated unique hit; callee pinned
@@ -7340,8 +7340,8 @@ _Rva007FE780,,0x0066AC50,242,Code/Libraries/Source/DirtySock/Y4DirtySockDebug.c,
 ?rva007FF250Decode@@YAHHPBDPAE@Z,,0x0066B720,402,Code/GameEngine/Source/GameNetwork/Rva007FF250Base64Decode.cpp,matched,bfme1 FESL Base64 exact source; four-char packet decoder via reverse table
 ?rva007FF100Encode@@YAXIPBDPAX@Z,,0x0066B5D0,327,Code/GameEngine/Source/GameNetwork/Rva007FF100Base64Encode.cpp,matched,bfme1 FESL Base64 exact source; three-arg encoder via forward table
 _Rva0080D590,,0x00679490,144,Code/GameEngine/Source/GameNetwork/Y4DirtySockHashWrap.c,matched,bfme1 Y4DirtySockHashWrap exact source; one-shot MD5 via Y4CommDigest trio
-_Rva0080D620,,0x00679520,145,Code/GameEngine/Source/GameNetwork/Y4DirtySockHashWrap.c,matched,bfme1 Y4DirtySockHashWrap exact source; one-shot SHA-1 via Y4CommSha1 trio
-_Rva0080D6C0,,0x006795C0,224,Code/GameEngine/Source/GameNetwork/Y4DirtySockHashWrap.c,matched,bfme1 Y4DirtySockHashWrap exact source; RSA one-shot wrap via Y5SmallHelpers trio
+_Rva0080D620,,0x00679520,145,Code/GameEngine/Source/GameNetwork/Y4DirtySockHashWrap.c,matched,bfme1 Y4DirtySockHashWrap exact source; one-shot SHA-1 via CryptSha1Init/Update/Final; see docs/reconstruction/dirtysdk-crypto.md
+_Rva0080D6C0,,0x006795C0,224,Code/GameEngine/Source/GameNetwork/Y4DirtySockHashWrap.c,matched,bfme1 Y4DirtySockHashWrap exact source; RSA one-shot via existing setup/copy and cryptrsa entry; see docs/reconstruction/dirtysdk-crypto.md
 _Rva007FFCB0,,0x0066C180,282,Code/Libraries/Source/DirtySock/Y4DirtySockAddrText.c,matched,bfme1 Y4DirtySockAddrText exact source; socket-address builder via host-port parser
 _Rva0080C960,,0x00678860,3040,Code/Libraries/Source/DirtySock/ProtoSSLParseCertificate.c,matched,bfme1 ProtoSSLParseCertificate exact source; X509 parser via HashWrap trio
 _Rva0081B010,,0x00686F10,1692,Code/Libraries/Source/DirtySock/Rva0081B010CommWorker.cpp,matched,bfme1 Rva0081B010CommWorker source; serial worker with retail stale default pointer
@@ -35073,7 +35073,7 @@ _Rva001CA000Vp6WideAccum,,0x001CA000,4240,Code/GameEngine/Source/Common/Rva001CA
 ?GadgetListBoxGetEnabledSelectedItemColor@@YAHPAVGameWindow@@@Z,,0x00698A20,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/GUI/Gadget/W3DListBox.cpp,matched,donor=Open-BFME-1 GadgetListBox.h inline; target-byte-evidence=retail load [window+0x54]; donor layout differs
 ?get@Rva00262117NullOrZero@@QBEHXZ,,0x00262117,15,Code/GameEngine/Source/Common/PtrChaseNullOrZeroGetters.cpp,matched,Ret-delimited ptr-chase null-or-zero; shares true-tail OneGetter at 0x262126; trial-exact first try under /O1
 ?get@Rva0030C890IntGetter@@QBEHXZ,,0x0030C890,6,Code/GameEngine/Source/Common/Disp32CvtFloatIntGetters.cpp,matched,Disp8 float-to-int getter; disp8 encoding of the Disp32 family; pairs with setter 0x30C882 at +0xE; Ghidra bounds agree
-_Rva0080FD30,,0x0067BC30,146,Code/Libraries/Source/DirtySock/Rva0080FD30MultiPrecisionAdd.c,matched,BFME1 byte-identical donor; b1 0x0080FD30
+__Addition,,0x0067BC30,146,Code/Libraries/Source/DirtySock/cryptrsa.c,matched,EA DirtySDK donor 03db25634fe8696ee060e1c01bff8fa0911fcba8; original private C body; target bytes and internal call cluster corroborate identity; see docs/reconstruction/dirtysdk-crypto.md; existing span unchanged
 ?get@Rva0008BBDDZeroGetter@@QBEHXZ,,0x0008BBDD,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva00094BEFZeroGetter@@QBEHXZ,,0x00094BEF,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva0009FD8AZeroGetter@@QBEHXZ,,0x0009FD8A,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited

@@ -3195,15 +3195,10 @@ _Rva0080C390,0x00678290,address read from the REL32 displacement in DirtySock Y4
 _Rva0080C6F0,0x006785F0,address read from the REL32 displacement in DirtySock Y5SmallHelpers Rva0080DA50 at 0x00679950; same-TU forward reference pending conversion; body not yet converted
 _Rva0080C960,0x00678860,address read from the REL32 displacement in DirtySock Y2Rva00806580Module Rva0080B4B0 at 0x006773B0; call order matches BFME1 source; body not yet converted
 _Rva0080D590,0x00679490,address read from the REL32 displacement in DirtySock ProtoSSLParseCertificate Rva0080C960 at 0x00679380; retail call reaches the 120B MD5 wrapper calling Y4CommDigest trio; Ghidra 120B matches BFME1 120B
-_Rva0080D620,0x00679520,address read from the REL32 displacement in DirtySock ProtoSSLParseCertificate Rva0080C960 at 0x0067939D; retail call reaches the 120B SHA-1 wrapper calling Y4CommSha1 trio; Ghidra 120B matches BFME1 120B
+_Rva0080D620,0x00679520,address read from the REL32 displacement in DirtySock ProtoSSLParseCertificate Rva0080C960 at 0x0067939D; retail call reaches the 120B SHA-1 wrapper calling CryptSha1Init/Update/Final; see docs/reconstruction/dirtysdk-crypto.md; Ghidra 120B matches BFME1 120B
 _Rva0080D6C0,0x006795C0,address read from the REL32 displacement in DirtySock ProtoSSLParseCertificate Rva0080C960 at 0x006793E2; retail call reaches the 200B RSA wrapper calling Y5SmallHelpers trio; Ghidra 200B matches BFME1 200B
 _Rva0080E200,0x0067A100,address read from the REL32 displacement in DirtySock Y2Rva00806580Module Rva00806B10 at 0x00672B40; call order matches BFME1 source; body not yet converted
-_Rva0080F5A0,0x0067B4A0,address read from the REL32 displacement in DirtySock Y5SmallHelpers Rva0080F550 at 0x0067B450; same-TU forward reference pending conversion; body not yet converted
-_Rva0080FB40,0x0067BA40,address read from the REL32 displacements in DirtySock Y5SmallHelpers Rva0080F5A0 at 0x0067B4A0; call order matches BFME1 source; body not yet converted
-_Rva0080FD30,0x0067BC30,address read from the REL32 displacements in DirtySock Y4MultiPrecision Rva0080FB40 at 0x0067BA40; call order matches BFME1 source; body not yet converted
 _Rva00810120,0x0067C020,address read from the REL32 displacement in DirtySock Y4CommDigest Rva00810060 at 0x0067BF60; same-TU forward reference pending conversion; body not yet converted
-_Rva00811310,0x0067D210,address from masked placement of the same-TU body; forward reference pending conversion; body not yet converted
-_Rva00811840,0x0067D740,address from masked placement of the same-TU body; forward reference pending conversion; body not yet converted
 _Rva008118C0,0x0067D7C0,address read from the REL32 displacement in DirtySock Y5SmallHelpers Rva0080E6C0 at 0x0067A5C0; call order matches BFME1 source; body not yet converted
 _Rva00811CE0,0x0067DBE0,address read from the REL32 displacements in DirtySock Y5SmallHelpers Rva008119A0 at 0x0067D8A0; BFME1 Y5SmallHelpers names this callee; body not yet converted
 _Rva00811E20,0x0067DD20,address read from the REL32 displacement in DirtySock Y4CommAlloc Rva0080F180 at 0x0067B080; call order matches BFME1 source; body not yet converted
