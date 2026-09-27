@@ -271,6 +271,7 @@ int AsciiStringPlusStringText::write(char *dst)
 struct Rva0050F23E : AsciiStringPlusStringChar
 {
 	int write(char *dst);
+	operator AsciiString();
 
 	Rva000B3F84Pair m_text;
 };
@@ -279,6 +280,15 @@ int Rva0050F23E::write(char *dst)
 {
 	int n = AsciiStringPlusStringChar::write(dst);
 	return n + m_text.write(dst + n);
+}
+
+// ??BRva0050F23E@@QAE?AVAsciiString@@XZ @0x0050F7B4 107B narrow concat to AsciiString: sized getBufferForRead then Rva0050F23E write; length is base PlusString fold plus text len plus 1 for char.
+Rva0050F23E::operator AsciiString()
+{
+	AsciiString tmp;
+	int extra = m_text.m_len;
+	write(tmp.getBufferForRead(extra + AsciiStringPlusString::length() + 1));
+	return tmp;
 }
 
 // ??BAsciiStringPlusStringText@@QAE?AVAsciiString@@XZ @0x0050F74B 105B narrow concat node to AsciiString: sized getBufferForRead then write; length is base PlusString fold 0x002198C8 plus trailing text len; callers include 0x00510443.
