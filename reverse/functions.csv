@@ -37923,3 +37923,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00389081@Rva00389081@@QAE?AVAsciiString@@XZ,,0x00389081,29,Code/GameEngine/Source/Common/Rva0038901DFormat.cpp,matched,RVO forward to inner at plus130 proven by chain
 ??0Rva005EE2A0@@QAE@XZ,,0x005EE28C,20,Code/GameEngine/Source/Common/Rva005EE2A0Ctor.cpp,matched,vtable 0x008786CC same as rowed dtor base ctor 2
 ??0Rva005EEE33@@QAE@XZ,,0x005EEE1F,20,Code/GameEngine/Source/Common/Rva005EEE33Ctor.cpp,matched,vtable 0x008787A4 same as rowed dtor base ctor 1
+?rva005EE9CE@Rva005EE9CE@@QAEPAV1@XZ,,0x005EE9CE,23,Code/GameEngine/Source/Common/Rva005EE9CEClear.cpp,matched,zeroes 16B struct returns this callers 0x005D81CF etc
