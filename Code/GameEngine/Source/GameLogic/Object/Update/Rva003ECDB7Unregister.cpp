@@ -20,12 +20,14 @@ class Rva003ED2A3Manager
 {
 public:
 	void remove(const AsciiString &name, void *obj);
+	void add(const AsciiString &name, void *obj);
 };
 
 class Rva003ECDB7Object
 {
 public:
 	~Rva003ECDB7Object();
+	void registerName();
 
 private:
 	char m_pad[0x550];
@@ -39,4 +41,10 @@ Rva003ECDB7Object::~Rva003ECDB7Object()
 {
 	if (m_name.compare(g_emptyName) != 0)
 		g_manager->remove(m_name, this);
+}
+
+void Rva003ECDB7Object::registerName()
+{
+	if (m_name.compare(g_emptyName) != 0)
+		g_manager->add(m_name, this);
 }
