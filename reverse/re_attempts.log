@@ -2137,3 +2137,4 @@ FUN_004ab0f5	0x000AB0F5	76	blocked	hashtable-plus-findSlot wrapper needs shared-
 FUN_006c124c	0x002C124C	46	blocked	needs callee 0x002C08EF unrowed t=5 model=muse-d404
 FUN_005a4820	0x001A4820	111	blocked	needs callees 0x00163A80 0x00162BB0 unrowed t=3 model=muse-d404
 ?rva00596BB7@Rva00596B05@@UAEXAAUVector3@@@Z	0x00596BB7	32	blocked	EBP frame plus dead 4B local and-zero wall t=25 model=muse-d404
+?isSpriteInstBase@Rva006CFCD0@@QBEHXZ	0x006CFCD0	91	partial	merged isUndefined-false with type-fail false; retail keeps separate xor al-al vs xor eax-eax; OR-int gives shared true mov eax-1 and xor eax-eax exact but jne-to-shared vs je-plus-separate t=25 model=muse score=0.95 stash=reverse/attempts/0x006cfcd0.cpp
