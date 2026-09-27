@@ -26,6 +26,7 @@ struct Coord3D
 };
 
 class Object;
+class Team;
 class Waypoint;
 class PolygonTrigger;
 
@@ -34,6 +35,7 @@ enum AICommandType
 	AICMD_IDLE = 5,
 	AICMD_FOLLOW_WAYPOINT_PATH = 0x06,
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
+	AICMD_ATTACK_TEAM = 0x0D,
 	AICMD_ATTACK_POSITION = 0x0E,
 	AICMD_ATTACK_AREA = 0x23,
 	AICMD_FACE_OBJECT = 0x26,
@@ -86,6 +88,7 @@ public:
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
+	void aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -192,5 +195,18 @@ void AICommandInterface::aiAttackArea(const PolygonTrigger *areaToGuard, Command
 {
 	AICommandParms parms(AICMD_ATTACK_AREA, cmdSource);
 	parms.m_polygon = areaToGuard;
+	aiDoCommand(&parms);
+}
+
+// ?aiAttackTeam@AICommandInterface@@QAEXPBVTeam@@HW4CommandSourceType@@@Z, retail 0x0036F0C8, 110 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp
+// aiAttackTeam at AICMD 0x0D plus m_team at +0x1C plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// BFME2 same id 0x0D plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x0036FF63 plus ScriptActions doNamedAttackTeam at 0x003C8476.
+void AICommandInterface::aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_ATTACK_TEAM, cmdSource);
+	parms.m_team = team;
+	parms.m_intValue = maxShotsToFire;
 	aiDoCommand(&parms);
 }
