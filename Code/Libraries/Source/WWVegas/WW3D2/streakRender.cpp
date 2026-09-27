@@ -30,7 +30,7 @@ void operator delete[](void*) throw();
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-#include "../../../../../reference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2/texture.h"
+#include "../../../../../reference/open-bfme-1/game/Libraries/Source/WWVegas/WW3D2/texture.h"
 #include "../../../../../reference/shims/bfmestreak/streakrender.h"
 #include "ww3d.h"
 #include "rinfo.h"

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /O1 /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 
 // Open-BFME5: FlightDeckBehavior::RunwayInfo's destructor, retail 0x002BC7A0,
 // 90 bytes. The body carried only a machine byte-dump row; the symbols.csv pin
