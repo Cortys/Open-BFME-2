@@ -1,7 +1,7 @@
 // cl: /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
-// ??0CreateCrateDieModuleData@@QAE@XZ, retail 0x002572EE, 74 bytes.
+// ??0CreateCrateDieModuleData@@QAE@XZ, retail 0x002572EE, 75 bytes.
 // CreateCrateDie ModuleData default ctor over the pinned SEH intermediate
 // base (??0Rva00253510@@QAE@XZ at 0x253510, shared with the Die family).
 // The base and the derived both declare virtual dtors (KeepObjectDie/

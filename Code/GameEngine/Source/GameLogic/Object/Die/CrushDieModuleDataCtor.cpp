@@ -1,6 +1,6 @@
 // cl: /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
 //
-// ??0CrushDieModuleData@@QAE@XZ, retail 0x002539B3, 81 bytes.
+// ??0CrushDieModuleData@@QAE@XZ, retail 0x002539B3, 82 bytes.
 // CrushDie ModuleData default ctor over the pinned SEH intermediate base
 // (??0Rva00253510@@QAE@XZ at 0x253510, shared with the Die family). The
 // virtual base (KeepObjectDie/CreateObjectDieModuleDataCtor precedent)
