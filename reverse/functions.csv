@@ -38100,3 +38100,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva00030DD0AddRef@@YAHPAURva00030DD0Lock@@@Z,,0x00030DD0,21,Code/GameEngine/Source/Common/Rva00030DD0AddRef.cpp,matched,IAT EnterCriticalSection at 0xBBA200 callers 0x3186B 0x6C1AAF counterpart release at 0x30DF0
 ?rva0033F8D4@AIUpdateInterface@@QBE_NXZ,,0x0033F8D4,28,Code/GameEngine/Source/Common/Rva0033F8D4Pred.cpp,matched,m1A0 not FLT_MAX pool 0xBBB8E0 caller 0x342572
 ??0Rva0033FE65@@QAE@PAVStateMachine@@H@Z,,0x0033FE65,56,Code/GameEngine/Source/Common/Rva0033FE65Ctor.cpp,matched,State hash 0x8821F22E vtable 0x811E08 tail words bools
+??1Rva0033FC42@@UAE@XZ,,0x0033FC42,91,Code/GameEngine/Source/Common/Rva0033FC42Dtor.cpp,matched,vtable 0x811DB0 member 0x20 slot3C delete base 0x49B47C
