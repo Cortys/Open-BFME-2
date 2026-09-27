@@ -61,6 +61,7 @@ CommandList *TheCommandList = NULL;
 /**
  * Constructor
  */
+// ??0GameMessage@@ present-unmatched
 GameMessage::GameMessage( GameMessage::Type type ) 
 { 
 	m_playerIndex = ThePlayerList->getLocalPlayer()->getPlayerIndex();
@@ -75,6 +76,7 @@ GameMessage::GameMessage( GameMessage::Type type )
 /**
  * Destructor
  */
+// ??1GameMessage@@ present-unmatched
 GameMessage::~GameMessage( ) 
 { 
 	// free all arguments
@@ -111,6 +113,7 @@ const GameMessageArgumentType *GameMessage::getArgument( Int argIndex ) const
 /**
  * Return the given argument data type
  */
+#pragma optimize("s", on)
 GameMessageArgumentDataType GameMessage::getArgumentDataType( Int argIndex )
 {
 	if (argIndex >= m_argCount) {
@@ -125,6 +128,7 @@ GameMessageArgumentDataType GameMessage::getArgumentDataType( Int argIndex )
 	}
 	return ARGUMENTDATATYPE_UNKNOWN;
 }
+#pragma optimize("", on)
 
 /**
  * Allocate a new argument, add it to the argument list, and increment the total arg count
@@ -231,11 +235,13 @@ void GameMessage::appendWideCharArgument( const WideChar& arg )
 	a->m_type = ARGUMENTDATATYPE_WIDECHAR;
 }
 
+// ?getCommandAsAsciiString@GameMessage@@ present-unmatched
 AsciiString GameMessage::getCommandAsAsciiString( void )
 {
 	return getCommandTypeAsAsciiString(m_type);
 }
 
+// ?getCommandTypeAsAsciiString@GameMessage@@ present-unmatched
 AsciiString GameMessage::getCommandTypeAsAsciiString(GameMessage::Type t)
 {
 #define CHECK_IF(x) if (t == x) { return #x; }
@@ -721,6 +727,7 @@ GameMessageList::~GameMessageList()
 /**
  * Append message to end of message list
  */
+// ?appendMessage@GameMessageList@@ present-unmatched
 void GameMessageList::appendMessage( GameMessage *msg )
 {
 	msg->friend_setNext(NULL);
@@ -746,6 +753,7 @@ void GameMessageList::appendMessage( GameMessage *msg )
 /**
  * Inserts the msg after messageToInsertAfter.
  */
+// ?insertMessage@GameMessageList@@ present-unmatched
 void GameMessageList::insertMessage( GameMessage *msg, GameMessage *messageToInsertAfter )
 {
 	// First, set msg's next to be messageToInsertAfter's next.
@@ -770,6 +778,7 @@ void GameMessageList::insertMessage( GameMessage *msg, GameMessage *messageToIns
 /**
  * Remove given message from the list.
  */
+// ?removeMessage@GameMessageList@@ present-unmatched
 void GameMessageList::removeMessage( GameMessage *msg )
 {
 	if (msg->next())
@@ -788,6 +797,7 @@ void GameMessageList::removeMessage( GameMessage *msg )
 /**
  * Return whether or not a message of the given type is in the message list
  */
+// ?containsMessageOfType@GameMessageList@@ present-unmatched
 Bool GameMessageList::containsMessageOfType( GameMessage::Type type )
 {
 	GameMessage *msg = getFirstMessage();
@@ -831,6 +841,7 @@ MessageStream::~MessageStream()
 /**
 	* Init
 	*/
+// ?init@MessageStream@@ present-unmatched
 void MessageStream::init( void )
 {
 	// extend
@@ -840,6 +851,7 @@ void MessageStream::init( void )
 /**
 	* Reset
 	*/
+// ?reset@MessageStream@@ present-unmatched
 void MessageStream::reset( void )
 {
 
@@ -853,6 +865,7 @@ void MessageStream::reset( void )
 /**
 	* Update
 	*/
+// ?update@MessageStream@@ present-unmatched
 void MessageStream::update( void )
 {
 	// extend
@@ -865,6 +878,7 @@ void MessageStream::update( void )
  * to this message stream.  Return the message such that any data
  * associated with this message can be attached to it.
  */
+// ?appendMessage@MessageStream@@ present-unmatched
 GameMessage *MessageStream::appendMessage( GameMessage::Type type )
 {
 	GameMessage *msg = newInstance(GameMessage)( type );
@@ -879,6 +893,7 @@ GameMessage *MessageStream::appendMessage( GameMessage::Type type )
  * Create a new message of the given message type and insert it
  * in the stream after messageToInsertAfter, which must not be NULL.
  */
+// ?insertMessage@MessageStream@@ present-unmatched
 GameMessage *MessageStream::insertMessage( GameMessage::Type type, GameMessage *messageToInsertAfter )
 {
 	GameMessage *msg = newInstance(GameMessage)(type);
@@ -895,6 +910,7 @@ GameMessage *MessageStream::insertMessage( GameMessage::Type type, GameMessage *
  * Translators share a priority, they are kept in the same order they
  * were attached.
  */
+// ?attachTranslator@MessageStream@@ present-unmatched
 TranslatorID MessageStream::attachTranslator( GameMessageTranslator *translator, 
 																							UnsignedInt priority)
 {
@@ -974,6 +990,7 @@ GameMessageTranslator* MessageStream::findTranslator( TranslatorID id )
 /**
  * Remove a previously attached translator.
  */
+// ?removeTranslator@MessageStream@@ present-unmatched
 void MessageStream::removeTranslator( TranslatorID id )
 {
 	MessageStream::TranslatorData *ss;
@@ -1142,6 +1159,7 @@ CommandList::~CommandList()
 /**
 	* Init
 	*/
+// ?init@CommandList@@ present-unmatched
 void CommandList::init( void )
 {
 
@@ -1153,6 +1171,7 @@ void CommandList::init( void )
 /**
 	* Destroy all messages on the list, and reset list to empty
 	*/
+// ?reset@CommandList@@ present-unmatched
 void CommandList::reset( void )
 {
 
@@ -1167,6 +1186,7 @@ void CommandList::reset( void )
 /**
 	* Update
 	*/
+// ?update@CommandList@@ present-unmatched
 void CommandList::update( void )
 {
 
@@ -1216,6 +1236,7 @@ void CommandList::appendMessageList( GameMessage *list )
  * Given an "anchor" point and the current mouse position (dest),
  * construct a valid 2D bounding region.
  */
+#pragma optimize("s", on)
 void buildRegion( const ICoord2D *anchor, const ICoord2D *dest, IRegion2D *region )
 {
 	// build rectangular region defined by the drag selection
@@ -1241,3 +1262,4 @@ void buildRegion( const ICoord2D *anchor, const ICoord2D *dest, IRegion2D *regio
 		region->hi.y = anchor->y;
 	}
 }
+#pragma optimize("", on)

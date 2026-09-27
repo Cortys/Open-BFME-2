@@ -38771,3 +38771,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?isNewerThan@SaveDate@@QAE_NPAU1@@Z,,0x002DBB9A,116,Code/GameEngine/Source/Common/System/SaveGame/GameState.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?clipToTerrainExtent@@YAXAAUCoord3D@@@Z,,0x002C950B,115,Code/GameEngine/Source/GameLogic/Object/Weapon.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?privateGoProne@AIUpdateInterface@@MAEXPBVDamageInfo@@W4CommandSourceType@@@Z,,0x00262F5E,101,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?buildRegion@@YAXPBUICoord2D@@0PAUIRegion2D@@@Z,,0x0030F8A2,65,Code/GameEngine/Source/Common/MessageStream.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?getArgumentDataType@GameMessage@@QAE?AW4GameMessageArgumentDataType@@H@Z,,0x0030F50C,48,Code/GameEngine/Source/Common/MessageStream.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

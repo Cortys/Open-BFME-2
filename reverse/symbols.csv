@@ -6083,3 +6083,8 @@ _ConvertBoolTrees,0x001BBD60
 ?clear@?$_List_base@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@QAEXXZ,0x0023DAA5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?goProne@ProneUpdate@@QAEXPBVDamageInfo@@@Z,0x0049FFB9,address read from the REL32 displacement at a placed body
 ?readDict@DataChunkInput@@QAE?AVDict@@XZ,0x00307833,address read from the REL32 displacement at a placed body
+?createEmitters@W3DTankTruckDraw@@IAEXXZ,0x000CB682,address read from the REL32 displacement at a placed body
+?getRelativeAngle2D@PartitionManager@@QAEMPBVObject@@PBUCoord3D@@@Z,0x002C9BC3,address read from the REL32 displacement at a placed body
+?isPlayerConnected@ConnectionManager@@QAE_NH@Z,0x004CF083,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?setFullyObscuredByShroud@W3DModelDraw@@UAEX_N@Z,0x000B6FFE,address read from the REL32 displacement at a placed body
+?tossEmitters@W3DTankTruckDraw@@IAEXXZ,0x000CB5C3,address read from the REL32 displacement at a placed body
