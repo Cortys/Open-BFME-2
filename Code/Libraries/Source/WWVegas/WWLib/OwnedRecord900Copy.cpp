@@ -15,3 +15,4 @@ BfmeRecordOwner900::BfmeRecordOwner900(const BfmeRecordOwner900 &other)
       records_1B0(other.records_1B0), tree_370(other.tree_370),
       unknown_37C(other.unknown_37C), unknown_380(other.unknown_380),
       unknown_381(other.unknown_381), unknown_382(other.unknown_382) {}
+BfmeRecordOwner900::~BfmeRecordOwner900() {}
