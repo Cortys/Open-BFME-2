@@ -37045,3 +37045,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1DefectorSpecialPowerModuleData@@UAE@XZ,,0x004C8AB0,5,Code/GameEngine/Source/GameLogic/Object/SpecialPower/DefectorSpecialPowerModuleDataDtor.cpp,matched,vtable 0x0085E7A8 slot0 Defector novtable tail-jmp base
 ??_GDefectorSpecialPowerModuleData@@UAEPAXI@Z,,0x004C2A84,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-fd8f.cpp,matched,vtable 0x0085E7A8 slot0 Defector calls rowed dtor
 ??0Rva0035F4A6@@QAE@XZ,,0x0035F4A6,37,Code/GameEngine/Source/Common/Rva0035F4A6Ctor.cpp,matched,derived ctor base 0x001DBAA4 vtable 0x0081665C factory 0x0035F4E7 news 0x24
+??$__copy_ptrs@PAUBfmeStringRecord00426A5B@@PAU1@@_STL@@YAPAUBfmeStringRecord00426A5B@@PAU1@00U__false_type@0@@Z,,0x00426B29,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_426a5b_allocate_copy.cpp,matched,ptrs wrapper via rowed __copy 0x426A82; same shape as 29B wrapper 0x204A13; caller 0x426BB2
