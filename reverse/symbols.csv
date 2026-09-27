@@ -5700,3 +5700,5 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?xfer@Locomotor@@MAEXPAVXfer@@@Z,0x00341E2D,ICF twin of Rva00341E22 xfer 27B at same address plus Rva000647D4 base call at 0x000647F8
 ??1?$_List_base@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@XZ,0x002FECBC,list teardown at +0xA4 in TransportContainModuleData dtor 0x004684F1; folds with the _List_base<AsciiString> dtor body
 ??1?$_Vector_base@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QAE@XZ,0x00467FCC,vector teardown at +0x180 in TransportContainModuleData dtor 0x004684F1; 16-byte-element vector base dtor freeing via 0x00430830
+??1Rva002572D7Member@@QAE@XZ,0x002572D7,opaque member dtor at +0x48 in Rva00465124Base dtor 0x00257481; 23B body freeing its buffer via 0x00430830
+??1Rva00256461Member@@QAE@XZ,0x00256461,opaque member dtor at +0x4C in Rva00465124Base dtor 0x00257481; EH body freeing its buffer
