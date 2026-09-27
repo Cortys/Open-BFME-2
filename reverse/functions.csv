@@ -38218,3 +38218,6 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?setBridgeRenderObject@MapObject@@QAEXW4BridgeTowerType@@PAVRenderObjClass@@@Z,,0x0030D3D4,52,Code/GameEngineDevice/Source/W3DDevice/GameClient/WorldHeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?getBridgeRenderObject@MapObject@@QAEPAVRenderObjClass@@W4BridgeTowerType@@@Z,,0x0030D408,24,Code/GameEngineDevice/Source/W3DDevice/GameClient/WorldHeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??1TerrainTracksRenderObjClass@@UAE@XZ,,0x0008E4EC,63,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DTerrainTracks.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Open2Rec4F1120@@QAE@ABV0@@Z,,0x001EF485,137,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Open2Rec3A4420@@QAE@ABV0@@Z,,0x0059F1B8,83,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Open2Rec74A060@@QAE@ABV0@@Z,,0x000AEBFF,79,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
