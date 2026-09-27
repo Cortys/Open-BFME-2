@@ -37833,3 +37833,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?doTeamAttackTeam@ScriptActions@@IAEXABVAsciiString@@0@Z,,0x003BED59,120,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doTeamAttackTeam.cpp,matched,TEAM_ATTACK_TEAM two getTeamNamed plus createGroup plus groupAttackTeam 0x36FF33
 ?rva002BE7DB@Rva002BE7DB@@QBEAAURva002BE7DBValue@@AAU2@@Z,,0x002BE7DB,23,Code/GameEngine/Source/Common/Rva002BE7DBCopy.cpp,matched,12B copy float plus 2 dwords to out-param returning out callers 0x002BE8F9 0x003FD584
 ??0Made002CCCF3@@QAE@XZ,,0x0050BF8F,48,Code/GameEngine/Source/GameLogic/Object/Made002CCCF3Ctor.cpp,matched,FireLogicNugget ctor with 10000 default
+?q4Notify002CCA37@@YAXPAXPAVMade002CCA37@@HH@Z,,0x0050B13A,53,Code/GameEngine/Source/GameLogic/Object/Made002CCA37Parse.cpp,matched,DOTNugget field parser via MultiIni table
