@@ -39003,3 +39003,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1?$vector@URva00153729@@V?$allocator@URva00153729@@@_STL@@@_STL@@QAE@XZ,,0x00153BED,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00153729_dtor.cpp,matched,vector dtor EH via rowed Destroy 0x153BB6 and free
 ?rva004E0625@Rva004E0625@@QBEHXZ,,0x004E0625,13,Code/GameEngine/Source/Common/Rva004E0625Getters.cpp,matched,conditional dword getter plus 0x20 equals minus 1 else plus 0x40
 ?rva004E0632@Rva004E0632@@QBEHXZ,,0x004E0632,13,Code/GameEngine/Source/Common/Rva004E0625Getters.cpp,matched,conditional dword getter plus 0x20 equals minus 1 else plus 0x44
+?rva004E06A7@Rva004E06A7@@QBEXXZ,,0x004E06A7,17,Code/GameEngine/Source/Common/Rva004E06A7Call.cpp,matched,conditional void tail-call via 0x004E0632 to slot 5
