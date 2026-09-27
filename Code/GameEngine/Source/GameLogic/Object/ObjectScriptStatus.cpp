@@ -103,6 +103,7 @@ public:
 	void setScriptStatus( ObjectScriptStatusBit bit, Bool set );
 	void setStatus( ObjectStatusTypes bit, Bool flag );
 	Bool rva00292ED0( DisabledType type );
+	void rva00292EB3( DisabledType type );
 	void Rva0028CDEB( ObjectStatusMask *mask );
 
 private:
@@ -184,4 +185,11 @@ Bool Object::rva00292ED0( DisabledType type )
 	if( --m_unk1F8[ type ] == 0 )
 		return clearDisabled( type );
 	return false;
+}
+
+void Object::rva00292EB3( DisabledType type )
+{
+	if( m_unk1F8[ type ] == 0 )
+		setDisabled( type );
+	++m_unk1F8[ type ];
 }
