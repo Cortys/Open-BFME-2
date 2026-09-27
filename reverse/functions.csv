@@ -37473,3 +37473,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??4Rva00B6CF1@@QAEAAU0@ABU0@@Z,,0x000B433E,33,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_destroy.cpp,matched,Rva00B6CF1 assign via two AsciiString assigns
 ?Rva002E36D5Find@@YAPAXH@Z,,0x002E36D5,26,Code/GameEngine/Source/Common/Rva002E36D5Find.cpp,matched,find by ID over 0xDBD0F4 callers 0x58880 0x4B082F
 ?Rva002E373CClear@@YAXXZ,,0x002E373C,42,Code/GameEngine/Source/Common/Rva002E373CClear.cpp,matched,clear list D0F4 plus counter D0F0 to 1 callers 0x283589 0x2E3E13 0x328DCE
+?call@Rva002E3A80Holder@@QAEXXZ,,0x002E3A80,13,Code/GameEngine/Source/Common/Rva002E3A80Call.cpp,matched,null guarded virtual slot0 with 1 callers unwind jmps
