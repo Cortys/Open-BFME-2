@@ -2145,3 +2145,6 @@ FUN_00487973	0x00087973	54	blocked	needs data global 0xA00950 plus vtable slot 0
 ?Rva0030E51FGet@@YAXXZ	0x0030E51F	178	blocked	SSE clamp 178B complex double-store plus NaN-aware branches; probe 133B with simple if-else t=10 model=muse-8c87
 ?rva002B5023@Rva002B5023@@QAEXPAVCreateAHeroData@@@Z	0x002B5023	80	blocked	find-delete-erase CreateAHeroData vector plusCC needs 6B arg spill vs donor ScriptEngine 74B vs 80B t=15 model=muse-015d
 FUN_004BDCAC	0x004BDCAC	54	blocked	vslot slot8 of 10 Body vtables needs slots20/22 plus Object flags 0x438/0x108/0x110; no donor; skip for trivial siblings t=5 model=muse
+?rva004FAC80@Rva004FAC80@@QAEXXZ	0x004FAC80	25	blocked	neg sbb and this-plus4 free needs branchless null-safe member address t=12 model=muse-015d
+?GadgetTextEntrySetFont@@YAXPAVGameWindow@@PAVGameFont@@@Z	0x00320641	99	blocked	register ecx vs eax plus 2 extra mov ecx-eax t=25 model=muse-9863
+?rva0043DF22@Rva0043DF22@@QAEHXZ	0x0043DF22	79	blocked	chain counter via 0x43DA65 getter plus getSlot isHuman isObserver m_isAccepted; exact 79B 39insns but edi-ebx swapped for info-index plus push-pop order; unsigned fixes jb; t=18 model=muse-9fea
