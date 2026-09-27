@@ -37926,3 +37926,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva005EE9CE@Rva005EE9CE@@QAEPAV1@XZ,,0x005EE9CE,23,Code/GameEngine/Source/Common/Rva005EE9CEClear.cpp,matched,zeroes 16B struct returns this callers 0x005D81CF etc
 ?Rva005EEFA9Copy@@YAPAURva005EEFA9Dst@@PAU1@PBURva005EEFA9Src@@H@Z,,0x005EEFA9,41,Code/GameEngine/Source/Common/Rva005EEFA9Copy.cpp,matched,16B src plus int to 20B dst callers use return
 ?Rva001FB912Init@@YAXPAX@Z,,0x001FB912,43,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,free init GetKey 8 token at 80 parse FA8DD
+?Rva001FBAB2Init@@YAXPAX@Z,,0x001FBAB2,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,free init GetKey 7 token at 70 parse F8751 calls FB912
