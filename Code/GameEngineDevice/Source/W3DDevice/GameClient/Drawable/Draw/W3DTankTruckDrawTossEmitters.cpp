@@ -8,6 +8,17 @@
 // Object ID or zero +0xb4), rowed destroy 0x1F462C, rowed handle dtor 0x4CBC0. Callers at 0xCDE9F/0xCDE52 and
 // rowed setFullyObscuredByShroud 0xCDF1B; donor dtor/loadPostProcess call it. /O1 frameless xor-edi idiom;
 // volatile m_system preserves retail's redundant null-or-Make chases that /O1 otherwise folds (158B wall).
+// ?enableEmitters@W3DTankTruckDraw@@IAEX_N@Z, retail 0x000CB826, 165 bytes: donor enableEmitters(Bool)
+// createEmitters + m_effectsInitialized=+0x2e8 + start/stop via rowed byte setters 0x1F384A(start=0)/0x1F3852(stop=1)
+// at ParticleSystem+0x1a3; power only stops when !enable. Callers 0xCC798/0xCDE2D.
+class Rva001F384AByteZeroSetter {
+public:
+    void disable();
+};
+class Rva001F3852ByteOneSetter {
+public:
+    void enable();
+};
 struct Rva001F3C43Arg {
     char m_pad[0x74];
     int m_value;
@@ -36,7 +47,11 @@ struct BfmeParticleSystemHandle {
 class W3DTankTruckDraw {
 protected:
     void tossEmitters();
-    char m_pad[0x2ec];
+    void createEmitters();
+    void enableEmitters(bool enable);
+    char m_pad0[0x2e8];
+    unsigned char m_effectsInitialized;
+    char m_pad1[0x2ec - 0x2e9];
     BfmeParticleSystemHandle m_dust;
     BfmeParticleSystemHandle m_dirt;
     BfmeParticleSystemHandle m_power;
@@ -66,5 +81,26 @@ void W3DTankTruckDraw::tossEmitters()
             m_power.~BfmeParticleSystemHandle();
             m_power.m_system = 0;
         }
+    }
+}
+void W3DTankTruckDraw::enableEmitters(bool enable)
+{
+    createEmitters();
+    m_effectsInitialized = 1;
+    if (m_dust.m_system) {
+        if (enable)
+            ((Rva001F384AByteZeroSetter *)m_dust.get())->disable();
+        else
+            ((Rva001F3852ByteOneSetter *)m_dust.get())->enable();
+    }
+    if (m_dirt.m_system) {
+        if (enable)
+            ((Rva001F384AByteZeroSetter *)m_dirt.get())->disable();
+        else
+            ((Rva001F3852ByteOneSetter *)m_dirt.get())->enable();
+    }
+    if (m_power.m_system) {
+        if (!enable)
+            ((Rva001F3852ByteOneSetter *)m_power.get())->enable();
     }
 }
