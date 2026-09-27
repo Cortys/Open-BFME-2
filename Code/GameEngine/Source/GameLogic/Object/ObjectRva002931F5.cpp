@@ -17,6 +17,11 @@ enum ObjectID
 	INVALID_ID = 0
 };
 
+enum KindOfType
+{
+	KINDOF_DUMMY = 0
+};
+
 struct ThingTemplate
 {
 	unsigned char m_pad[0x114];
@@ -37,6 +42,8 @@ class Object
 {
 public:
 	Object *rva002931F5(Bool checkProducer);
+	Bool rva00293926(KindOfType kind);
+	Bool isKindOf(KindOfType kind) const;
 
 private:
 	unsigned char m_pad00[4];
@@ -61,4 +68,14 @@ Object *Object::rva002931F5(Bool checkProducer)
 			return producer;
 	}
 	return 0;
+}
+
+Bool Object::rva00293926(KindOfType kind)
+{
+	if (isKindOf(kind))
+		return true;
+	Object *related = rva002931F5(false);
+	if (related != 0)
+		return related->isKindOf(kind);
+	return false;
 }
