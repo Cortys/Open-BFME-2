@@ -2189,3 +2189,4 @@ FUN_006bea10	0x002BEA10	83	blocked	101-slot vtable loop with 4 virtuals needs la
 ?rva00045837@Rva00045837@@QBEHXZ	0x00045837	22	blocked	int vec-size check with sar3 vs test-mask wall t=18 model=muse-2bd4
 ??0Rva001164D3@@QAE@ABVRva0036CA00Str@@@Z	0x001164D3	34	partial	lea-mov order swapped; retail lea then mov then vtable; body mov then lea then vtable; volatile base gives mov under /O1 with correct 34B push prolog vtable-last call; flat volatile gives vtable-middle; float gives right order but x87; t=25 model=muse-spark score=0.9 stash=reverse/attempts/0x001164d3.cpp
 ??0Rva0030F42E@@QAE@H@Z	0x0030F404	42	partial	vtable scheduling wall; retail lea call mov-14 vtable; body lea vtable call mov-14; exact 42B SSE push prolog; base-inline costs edi 46B; t=15 model=muse-spark score=0.9 stash=reverse/attempts/0x0030f404.cpp
+?rva003892DF@Rva0038901D@@QAE_NVAsciiString@@@Z	0x003892DF	112	blocked	sscanf parse plus memset clear t=25 model=muse-7b81
