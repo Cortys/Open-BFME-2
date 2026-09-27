@@ -109,6 +109,7 @@ protected:
 	FILE *m_fp;
 };
 
+// ??0LogClass@@ present-unmatched
 LogClass::LogClass(const char *fname)
 {
 	char buffer[ _MAX_PATH ];
@@ -128,6 +129,7 @@ LogClass::LogClass(const char *fname)
 	m_fp = fopen(fullPath.str(), "wt");
 }
 
+// ??1LogClass@@ present-unmatched
 LogClass::~LogClass()
 {
 	if (m_fp)
@@ -136,6 +138,7 @@ LogClass::~LogClass()
 	}
 }
 
+// ?log@LogClass@@ present-unmatched
 void LogClass::log(const char *fmt, ...)
 {
 	DEBUG_ASSERTCRASH(isValidTimeToCalcLogicStuff(), ("Calc'ing logic bone pos in client!!!"));
@@ -170,6 +173,7 @@ void LogClass::log(const char *fmt, ...)
 	fflush(m_fp);
 }
 
+// ?dumpMatrix3D@LogClass@@ present-unmatched
 void LogClass::dumpMatrix3D(const Matrix3D *m, AsciiString name, AsciiString fname, Int line)
 {
 	fname.toLower();
@@ -182,6 +186,7 @@ void LogClass::dumpMatrix3D(const Matrix3D *m, AsciiString name, AsciiString fna
 			AS_INT(matrix[(i<<2)+0]), AS_INT(matrix[(i<<2)+1]), AS_INT(matrix[(i<<2)+2]), AS_INT(matrix[(i<<2)+3]));
 }
 
+// ?dumpReal@LogClass@@ present-unmatched
 void LogClass::dumpReal(Real r, AsciiString name, AsciiString fname, Int line)
 {
 	if (!m_fp || !isValidTimeToCalcLogicStuff())
@@ -302,6 +307,7 @@ static char *TerrainDecalTextureName[TERRAIN_DECAL_MAX]=
 const UnsignedInt NO_NEXT_DURATION = 0xffffffff;
 
 //-------------------------------------------------------------------------------------------------
+// ??0W3DAnimationInfo@@ present-unmatched
 W3DAnimationInfo::W3DAnimationInfo(const AsciiString& name, Bool isIdle, Real distanceCovered) : 
 #ifdef RETAIN_ANIM_HANDLES
 	m_handle(NULL), 
@@ -316,6 +322,7 @@ W3DAnimationInfo::W3DAnimationInfo(const AsciiString& name, Bool isIdle, Real di
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??0W3DAnimationInfo@@ present-unmatched
 W3DAnimationInfo::W3DAnimationInfo( const W3DAnimationInfo &r ) : 
 	m_name(r.m_name),
 #ifdef RETAIN_ANIM_HANDLES
@@ -332,6 +339,8 @@ W3DAnimationInfo::W3DAnimationInfo( const W3DAnimationInfo &r ) :
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??4W3DAnimationInfo@@QAEAAV0@ABV0@@Z present-unmatched
+// ??4W3DAnimationInfo@@QAEAAV0@ABV0@@Z present-unmatched
 W3DAnimationInfo& W3DAnimationInfo::operator=(const W3DAnimationInfo &r)
 {
 	m_name = r.m_name;
@@ -352,6 +361,7 @@ W3DAnimationInfo& W3DAnimationInfo::operator=(const W3DAnimationInfo &r)
 
 //-------------------------------------------------------------------------------------------------
 // note that this now returns an ADDREFED handle, which must be released by the caller!
+// ?getAnimHandle@W3DAnimationInfo@@ present-unmatched
 HAnimClass* W3DAnimationInfo::getAnimHandle() const
 { 
 #ifdef RETAIN_ANIM_HANDLES
@@ -384,6 +394,7 @@ HAnimClass* W3DAnimationInfo::getAnimHandle() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??1W3DAnimationInfo@@ present-unmatched
 W3DAnimationInfo::~W3DAnimationInfo() 
 { 
 #ifdef RETAIN_ANIM_HANDLES
@@ -393,6 +404,7 @@ W3DAnimationInfo::~W3DAnimationInfo()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?preloadAssets@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::preloadAssets( TimeOfDay timeOfDay, Real scale )
 {
 	// load this asset
@@ -409,6 +421,7 @@ void ModelConditionInfo::preloadAssets( TimeOfDay timeOfDay, Real scale )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?addPublicBone@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::addPublicBone(const AsciiString& boneName) const
 {
 	if (boneName.isEmpty() || boneName.isNone())
@@ -423,6 +436,7 @@ void ModelConditionInfo::addPublicBone(const AsciiString& boneName) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?matchesMode@ModelConditionInfo@@ present-unmatched
 Bool ModelConditionInfo::matchesMode(Bool night, Bool snowy) const
 {
 	for (std::vector<ModelConditionFlags>::const_iterator it = m_conditionsYesVec.begin(); 
@@ -439,10 +453,12 @@ Bool ModelConditionInfo::matchesMode(Bool night, Bool snowy) const
 }
 
 //-------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 inline Bool testFlagBit(Int flags, Int bit)
 {
 	return (flags & (1<<bit)) != 0;
 }
+#pragma optimize("", on)
 
 //-------------------------------------------------------------------------------------------------
 static Bool findSingleBone(RenderObjClass* robj, const AsciiString& boneName, Matrix3D& mtx, Int& boneIndex)
@@ -575,6 +591,7 @@ static Bool doSingleBoneName(RenderObjClass* robj, const AsciiString& boneName, 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?validateStuff@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::validateStuff(RenderObjClass* robj, Real scale, const std::vector<AsciiString>& extraPublicBones) const
 {
 // srj sez: hm, this doesn't make sense; I think we really do need to validate transition states.
@@ -596,6 +613,7 @@ void ModelConditionInfo::validateStuff(RenderObjClass* robj, Real scale, const s
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?validateCachedBones@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::validateCachedBones(RenderObjClass* robj, Real scale) const
 {
 	//DEBUG_ASSERTCRASH(isValidTimeToCalcLogicStuff(), ("calling validateCachedBones() from in GameClient!"));
@@ -722,6 +740,7 @@ void ModelConditionInfo::validateCachedBones(RenderObjClass* robj, Real scale) c
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?validateWeaponBarrelInfo@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::validateWeaponBarrelInfo() const
 {
 	//DEBUG_ASSERTCRASH(isValidTimeToCalcLogicStuff(), ("calling validateWeaponBarrelInfo() from in GameClient!"));
@@ -865,6 +884,7 @@ void ModelConditionInfo::validateWeaponBarrelInfo() const
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?validateTurretInfo@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::validateTurretInfo() const
 {
 	//DEBUG_ASSERTCRASH(isValidTimeToCalcLogicStuff(), ("calling validateTurretInfo() from in GameClient!"));
@@ -917,6 +937,7 @@ void ModelConditionInfo::validateTurretInfo() const
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?findPristineBone@ModelConditionInfo@@ present-unmatched
 const Matrix3D* ModelConditionInfo::findPristineBone(NameKeyType boneName, Int* boneIndex) const
 {
 	DEBUG_ASSERTCRASH((m_validStuff & PRISTINE_BONES_VALID), ("*** ASSET ERROR: bones are not valid"));
@@ -953,6 +974,7 @@ const Matrix3D* ModelConditionInfo::findPristineBone(NameKeyType boneName, Int* 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?findPristineBonePos@ModelConditionInfo@@ present-unmatched
 Bool ModelConditionInfo::findPristineBonePos(NameKeyType boneName, Coord3D& pos) const
 {
 	const Matrix3D* mtx = findPristineBone(boneName, NULL);
@@ -972,6 +994,7 @@ Bool ModelConditionInfo::findPristineBonePos(NameKeyType boneName, Coord3D& pos)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?loadAnimations@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::loadAnimations() const
 { 
 #ifdef RETAIN_ANIM_HANDLES
@@ -989,6 +1012,7 @@ void ModelConditionInfo::loadAnimations() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?clear@ModelConditionInfo@@ present-unmatched
 void ModelConditionInfo::clear()
 { 
 	int i;
@@ -1026,6 +1050,7 @@ void ModelConditionInfo::clear()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??0W3DModelDrawModuleData@@ present-unmatched
 W3DModelDrawModuleData::W3DModelDrawModuleData() : 
 	m_validated(0),
 	m_okToChangeModelColor(false),
@@ -1055,6 +1080,7 @@ W3DModelDrawModuleData::W3DModelDrawModuleData() :
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?validateStuffForTimeAndWeather@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::validateStuffForTimeAndWeather(const Drawable* draw, Bool night, Bool snowy) const
 {
 	if (!isValidTimeToCalcLogicStuff())
@@ -1123,12 +1149,14 @@ void W3DModelDrawModuleData::validateStuffForTimeAndWeather(const Drawable* draw
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??1W3DModelDrawModuleData@@ present-unmatched
 W3DModelDrawModuleData::~W3DModelDrawModuleData()
 {
 	m_conditionStateMap.clear();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?preloadAssets@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::preloadAssets( TimeOfDay timeOfDay, Real scale ) const
 {
 
@@ -1144,6 +1172,7 @@ void W3DModelDrawModuleData::preloadAssets( TimeOfDay timeOfDay, Real scale ) co
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getBestModelNameForWB@W3DModelDrawModuleData@@ present-unmatched
 AsciiString W3DModelDrawModuleData::getBestModelNameForWB(const ModelConditionFlags& c) const
 {
 	const ModelConditionInfo* info = findBestInfo(c);
@@ -1154,6 +1183,7 @@ AsciiString W3DModelDrawModuleData::getBestModelNameForWB(const ModelConditionFl
 
 #ifdef CACHE_ATTACH_BONE
 //-------------------------------------------------------------------------------------------------
+// ?getAttachToDrawableBoneOffset@W3DModelDrawModuleData@@ present-unmatched
 const Vector3* W3DModelDrawModuleData::getAttachToDrawableBoneOffset(const Drawable* draw) const
 {
 	if (m_attachToDrawableBone.isEmpty())
@@ -1314,6 +1344,7 @@ static void parseShowHideSubObject(INI* ini, void *instance, void *store, const 
 }	
 
 //-------------------------------------------------------------------------------------------------
+// ?showSubObject@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::showSubObject( const AsciiString& name, Bool show )
 {
 	if( name.isNotEmpty() )
@@ -1422,6 +1453,7 @@ static Bool doesStateExist(const ModelConditionVector& v, const ModelConditionFl
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?parseConditionState@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::parseConditionState(INI* ini, void *instance, void * /*store*/, const void* userData)
 {
 	static const FieldParse myFieldParse[] = 
@@ -1714,6 +1746,7 @@ static Int countOnBits(UnsignedInt val)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?findBestInfo@W3DModelDrawModuleData@@ present-unmatched
 const ModelConditionInfo* W3DModelDrawModuleData::findBestInfo(const ModelConditionFlags& c) const
 {
 	ModelConditionFlags bits = c;
@@ -1726,6 +1759,7 @@ const ModelConditionInfo* W3DModelDrawModuleData::findBestInfo(const ModelCondit
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0W3DModelDraw@@ present-unmatched
 W3DModelDraw::W3DModelDraw(Thing *thing, const ModuleData* moduleData) : DrawModule(thing, moduleData)
 {
 	int i;
@@ -1788,6 +1822,7 @@ W3DModelDraw::W3DModelDraw(Thing *thing, const ModuleData* moduleData) : DrawMod
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?onDrawableBoundToObject@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::onDrawableBoundToObject(void)
 {
 	getW3DModelDrawModuleData()->validateStuffForTimeAndWeather(getDrawable(), 
@@ -1797,6 +1832,7 @@ void W3DModelDraw::onDrawableBoundToObject(void)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1W3DModelDraw@@ present-unmatched
 W3DModelDraw::~W3DModelDraw(void)
 {
 	if (m_trackRenderObject && TheTerrainTracksRenderObjClassSystem)
@@ -1809,6 +1845,7 @@ W3DModelDraw::~W3DModelDraw(void)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?doStartOrStopParticleSys@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::doStartOrStopParticleSys()
 {
 	Bool hidden = getDrawable()->isDrawableEffectivelyHidden() || m_fullyObscuredByShroud;
@@ -1829,6 +1866,7 @@ void W3DModelDraw::doStartOrStopParticleSys()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setHidden@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setHidden(Bool hidden)
 {
 	if (m_renderObject)
@@ -1851,6 +1889,7 @@ void W3DModelDraw::setHidden(Bool hidden)
 }
 
 /**Free all data used by this model's shadow.  This is used to dynamically enable/disable shadows by the options screen*/
+// ?releaseShadows@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::releaseShadows(void)	///< frees all shadow resources used by this module - used by Options screen.
 {
 	if (m_shadow)
@@ -1859,6 +1898,7 @@ void W3DModelDraw::releaseShadows(void)	///< frees all shadow resources used by 
 }
 
 /** Create shadow resources if not already present. This is used to dynamically enable/disable shadows by the options screen*/
+// ?allocateShadows@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::allocateShadows(void)
 {
 	const ThingTemplate *tmplate=getDrawable()->getTemplate();
@@ -1886,6 +1926,7 @@ void W3DModelDraw::allocateShadows(void)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setShadowsEnabled@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setShadowsEnabled(Bool enable)
 {
 	if (m_shadow)
@@ -1895,6 +1936,7 @@ void W3DModelDraw::setShadowsEnabled(Bool enable)
 
 /**collect some stats about the rendering cost of this draw module */
 #if defined(_DEBUG) || defined(_INTERNAL)	
+// ?getRenderCost@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::getRenderCost(RenderCost & rc) const
 {
 	getRenderCostRecursive(rc,m_renderObject);
@@ -1906,6 +1948,7 @@ void W3DModelDraw::getRenderCost(RenderCost & rc) const
 
 /**recurse through sub-objs to collect stats about the rendering cost of this draw module */
 #if defined(_DEBUG) || defined(_INTERNAL)	
+// ?getRenderCostRecursive@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::getRenderCostRecursive(RenderCost & rc,RenderObjClass * robj) const 
 {
 	if (robj == NULL) return;
@@ -1945,6 +1988,7 @@ void W3DModelDraw::getRenderCostRecursive(RenderCost & rc,RenderObjClass * robj)
 #endif //_DEBUG || _INTERNAL
 
 //-------------------------------------------------------------------------------------------------
+// ?setFullyObscuredByShroud@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setFullyObscuredByShroud(Bool fullyObscured)
 {
 	if (m_fullyObscuredByShroud != fullyObscured)
@@ -1973,6 +2017,7 @@ static Bool isAnimationComplete(RenderObjClass* r)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?adjustAnimSpeedToMovementSpeed@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::adjustAnimSpeedToMovementSpeed()
 {
 	// if the cur animation has a "distance covered" number, try to throttle
@@ -2000,6 +2045,7 @@ void W3DModelDraw::adjustAnimSpeedToMovementSpeed()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?adjustTransformMtx@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::adjustTransformMtx(Matrix3D& mtx) const
 {
 	const W3DModelDrawModuleData* d = getW3DModelDrawModuleData();
@@ -2046,6 +2092,7 @@ void W3DModelDraw::adjustTransformMtx(Matrix3D& mtx) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?doDrawModule@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::doDrawModule(const Matrix3D* transformMtx)
 {
 	// update whether or not we should be animating.
@@ -2121,6 +2168,7 @@ void W3DModelDraw::doDrawModule(const Matrix3D* transformMtx)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?findTransitionForSig@W3DModelDraw@@ present-unmatched
 const ModelConditionInfo* W3DModelDraw::findTransitionForSig(TransitionSig sig) const
 {
 	const TransitionMap& transitionMap = getW3DModelDrawModuleData()->m_transitionMap;
@@ -2133,6 +2181,7 @@ const ModelConditionInfo* W3DModelDraw::findTransitionForSig(TransitionSig sig) 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getCurrentAnimFraction@W3DModelDraw@@ present-unmatched
 Real W3DModelDraw::getCurrentAnimFraction() const
 {
 	if (m_curState != NULL
@@ -2159,6 +2208,7 @@ Real W3DModelDraw::getCurrentAnimFraction() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?adjustAnimation@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::adjustAnimation(const ModelConditionInfo* prevState, Real prevAnimFraction)
 {
 	if (!m_curState)
@@ -2240,6 +2290,7 @@ void W3DModelDraw::adjustAnimation(const ModelConditionInfo* prevState, Real pre
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setCurAnimDurationInMsec@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::setCurAnimDurationInMsec(Real desiredDurationInMsec)
 {
 	if (m_renderObject && m_renderObject->Class_ID() == RenderObjClass::CLASSID_HLOD)
@@ -2262,6 +2313,7 @@ Bool W3DModelDraw::setCurAnimDurationInMsec(Real desiredDurationInMsec)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getCurAnimDistanceCovered@W3DModelDraw@@ present-unmatched
 Real W3DModelDraw::getCurAnimDistanceCovered() const
 {
 	if (m_curState != NULL && m_whichAnimInCurState >= 0)
@@ -2330,6 +2382,7 @@ static void doHideShowBoneSubObjs(Bool state, Int numSubObjects, Int boneIdx, Re
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setMuzzleFlashHidden@WeaponBarrelInfo@@ present-unmatched
 void ModelConditionInfo::WeaponBarrelInfo::setMuzzleFlashHidden(RenderObjClass *fullObject, Bool hide) const
 {
 	if (fullObject)
@@ -2348,6 +2401,7 @@ void ModelConditionInfo::WeaponBarrelInfo::setMuzzleFlashHidden(RenderObjClass *
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?doHideShowSubObjs@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::doHideShowSubObjs(const std::vector<ModelConditionInfo::HideShowSubObjInfo>* vec)
 {
 	if (!m_renderObject)
@@ -2391,6 +2445,7 @@ void W3DModelDraw::doHideShowSubObjs(const std::vector<ModelConditionInfo::HideS
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?stopClientParticleSystems@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::stopClientParticleSystems() 
 {
 	for (std::vector<ParticleSysTrackerType>::const_iterator it = m_particleSystemIDs.begin(); it != m_particleSystemIDs.end(); ++it)
@@ -2421,6 +2476,7 @@ void W3DModelDraw::stopClientParticleSystems()
 	DANGER WARNING READ ME
 	DANGER WARNING READ ME
 */
+// ?handleClientTurretPositioning@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::handleClientTurretPositioning()
 {
 	if (!m_curState || !(m_curState->m_validStuff & ModelConditionInfo::TURRETS_VALID))
@@ -2497,6 +2553,7 @@ void W3DModelDraw::handleClientTurretPositioning()
 
 	@todo fix me someday (srj)
 */
+// ?handleClientRecoil@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::handleClientRecoil()
 {
 	const W3DModelDrawModuleData* d = getW3DModelDrawModuleData();
@@ -2595,6 +2652,7 @@ void W3DModelDraw::handleClientRecoil()
 	DANGER WARNING READ ME
 	DANGER WARNING READ ME
 */
+// ?recalcBonesForClientParticleSystems@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::recalcBonesForClientParticleSystems()
 {
 	if (m_needRecalcBoneParticleSystems)
@@ -2683,6 +2741,7 @@ void W3DModelDraw::recalcBonesForClientParticleSystems()
 	DANGER WARNING READ ME
 	DANGER WARNING READ ME
 */
+// ?updateBonesForClientParticleSystems@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::updateBonesForClientParticleSystems()
 {
 	const Drawable* drawable = getDrawable();
@@ -2737,6 +2796,7 @@ Bool W3DModelDraw::updateBonesForClientParticleSystems()
 
 
 //-------------------------------------------------------------------------------------------------
+// ?setTerrainDecal@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setTerrainDecal(TerrainDecalType type)
 {
 	if (m_terrainDecal)
@@ -2775,6 +2835,7 @@ void W3DModelDraw::setTerrainDecal(TerrainDecalType type)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setTerrainDecalSize@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setTerrainDecalSize(Real x, Real y)
 {
 	if (m_terrainDecal)
@@ -2783,6 +2844,7 @@ void W3DModelDraw::setTerrainDecalSize(Real x, Real y)
 	}
 }
 //-------------------------------------------------------------------------------------------------
+// ?setTerrainDecalOpacity@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setTerrainDecalOpacity(Real o)
 {
 	if (m_terrainDecal)
@@ -2793,6 +2855,7 @@ void W3DModelDraw::setTerrainDecalOpacity(Real o)
 
 
 //-------------------------------------------------------------------------------------------------
+// ?nukeCurrentRender@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::nukeCurrentRender(Matrix3D* xform)
 {
 	// this needs to be "dirtied" so that the new pausing of the animation will be triggered.
@@ -2828,6 +2891,7 @@ void W3DModelDraw::nukeCurrentRender(Matrix3D* xform)
 
 //-------------------------------------------------------------------------------------------------
 #if defined(_DEBUG) || defined(_INTERNAL)	//art wants to see buildings without flags as a test.
+// ?hideGarrisonFlags@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::hideGarrisonFlags(Bool hide)
 {
 	if (!m_renderObject)
@@ -2855,6 +2919,7 @@ void W3DModelDraw::hideGarrisonFlags(Bool hide)
 
 //-------------------------------------------------------------------------------------------------
 /** Hides all subobjects which are headlights.  Used to disable lights on models during the day.*/
+// ?hideAllHeadlights@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::hideAllHeadlights(Bool hide)
 {
 	if (m_renderObject)
@@ -2872,6 +2937,7 @@ void W3DModelDraw::hideAllHeadlights(Bool hide)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?hideAllMuzzleFlashes@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::hideAllMuzzleFlashes(const ModelConditionInfo* state, RenderObjClass* renderObject)
 {
 	if (!state || !renderObject)
@@ -2917,6 +2983,7 @@ static Bool turretNamesDiffer(const ModelConditionInfo* a, const ModelConditionI
 /** Change the model for this drawable. If color is non-zero, it will also apply team color to the
 	model */
 //-------------------------------------------------------------------------------------------------
+// ?setModelState@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setModelState(const ModelConditionInfo* newState)
 {
 	DEBUG_ASSERTCRASH(newState, ("invalid state in W3DModelDraw::setModelState\n")); 
@@ -3190,6 +3257,7 @@ void W3DModelDraw::setModelState(const ModelConditionInfo* newState)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?replaceModelConditionState@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::replaceModelConditionState(const ModelConditionFlags& c)
 {
 	m_hideHeadlights = c.test(MODELCONDITION_NIGHT) ? false : true;
@@ -3202,6 +3270,7 @@ void W3DModelDraw::replaceModelConditionState(const ModelConditionFlags& c)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setSelectable@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setSelectable(Bool selectable)
 {
 	// set collision type for render object.  Used by WW3D2 collision code.
@@ -3218,6 +3287,7 @@ void W3DModelDraw::setSelectable(Bool selectable)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?replaceIndicatorColor@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::replaceIndicatorColor(Color color)
 {
 	if (!getW3DModelDrawModuleData()->m_okToChangeModelColor)
@@ -3242,6 +3312,7 @@ void W3DModelDraw::replaceIndicatorColor(Color color)
 
 //-------------------------------------------------------------------------------------------------
 // this method must ONLY be called from the client, NEVER From the logic, not even indirectly.
+// ?clientOnly_getRenderObjInfo@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::clientOnly_getRenderObjInfo(Coord3D* pos, Real* boundingSphereRadius, Matrix3D* transform) const
 {
 	if (!m_renderObject)
@@ -3259,6 +3330,7 @@ Bool W3DModelDraw::clientOnly_getRenderObjInfo(Coord3D* pos, Real* boundingSpher
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getProjectileLaunchOffset@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::getProjectileLaunchOffset(
 	const ModelConditionFlags& condition, 
 	WeaponSlotType wslot, 
@@ -3409,6 +3481,7 @@ Bool W3DModelDraw::getProjectileLaunchOffset(
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPristineBonePositionsForConditionState@W3DModelDraw@@ present-unmatched
 Int W3DModelDraw::getPristineBonePositionsForConditionState(
 	const ModelConditionFlags& condition,
 	const char* boneNamePrefix, 
@@ -3522,6 +3595,7 @@ Int W3DModelDraw::getPristineBonePositionsForConditionState(
 //-------------------------------------------------------------------------------------------------
 // (gth) C&C3 Added this accessor for the bounding box of a render object in a W3DModelDraw module
 // this method must ONLY be called from the client, NEVER From the logic, not even indirectly.
+// ?clientOnly_getRenderObjBoundBox@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::clientOnly_getRenderObjBoundBox(OBBoxClass * boundbox) const
 {
 	if (!m_renderObject)
@@ -3543,6 +3617,7 @@ Bool W3DModelDraw::clientOnly_getRenderObjBoundBox(OBBoxClass * boundbox) const
 //-------------------------------------------------------------------------------------------------
 // (gth) C&C3 Added this accessor for a bone transform in the render object
 // this method must ONLY be called from the client, NEVER From the logic, not even indirectly.
+// ?clientOnly_getRenderObjBoneTransform@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::clientOnly_getRenderObjBoneTransform(const AsciiString & boneName,Matrix3D * set_tm) const
 {
 	if (!m_renderObject) {
@@ -3561,6 +3636,7 @@ Bool W3DModelDraw::clientOnly_getRenderObjBoneTransform(const AsciiString & bone
 
 
 //-------------------------------------------------------------------------------------------------
+// ?getCurrentWorldspaceClientBonePositions@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::getCurrentWorldspaceClientBonePositions(const char* boneName, Matrix3D& transform) const
 {
 	if (!m_renderObject)
@@ -3575,6 +3651,7 @@ Bool W3DModelDraw::getCurrentWorldspaceClientBonePositions(const char* boneName,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getCurrentBonePositions@W3DModelDraw@@ present-unmatched
 Int W3DModelDraw::getCurrentBonePositions(
 	const char* boneNamePrefix, 
 	Int startIndex, 
@@ -3655,6 +3732,7 @@ Int W3DModelDraw::getCurrentBonePositions(
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?reactToTransformChange@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::reactToTransformChange( const Matrix3D* oldMtx, 
 																					 const Coord3D* oldPos, 
 																					 Real oldAngle )
@@ -3689,12 +3767,14 @@ void W3DModelDraw::reactToTransformChange( const Matrix3D* oldMtx,
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?findBestInfo@W3DModelDraw@@ present-unmatched
 const ModelConditionInfo* W3DModelDraw::findBestInfo(const ModelConditionFlags& c) const
 {
 	return getW3DModelDrawModuleData()->findBestInfo(c);
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getBarrelCount@W3DModelDraw@@ present-unmatched
 Int W3DModelDraw::getBarrelCount(WeaponSlotType wslot) const
 {
 	return (m_curState && (m_curState->m_validStuff & ModelConditionInfo::BARRELS_VALID)) ?
@@ -3702,6 +3782,7 @@ Int W3DModelDraw::getBarrelCount(WeaponSlotType wslot) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?handleWeaponFireFX@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::handleWeaponFireFX(WeaponSlotType wslot, Int specificBarrelToUse, const FXList* fxl, Real weaponSpeed, const Coord3D* victimPos, Real damageRadius)
 {
 	DEBUG_ASSERTCRASH(specificBarrelToUse >= 0, ("specificBarrelToUse should now always be explicit"));
@@ -3778,6 +3859,7 @@ Bool W3DModelDraw::handleWeaponFireFX(WeaponSlotType wslot, Int specificBarrelTo
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?setAnimationLoopDuration@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setAnimationLoopDuration(UnsignedInt numFrames)
 {
 // this is never defined -- srj
@@ -3805,6 +3887,7 @@ void W3DModelDraw::setAnimationLoopDuration(UnsignedInt numFrames)
 	and is smart about transition states... if there is a transition state 
 	"inbetween", it is included in the completion time.
 */
+// ?setAnimationCompletionTime@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setAnimationCompletionTime(UnsignedInt numFrames)
 {
 	if (m_curState != NULL && m_curState->m_transitionSig != NO_TRANSITION && m_curState->m_animations.size() > 0 &&
@@ -3827,6 +3910,7 @@ void W3DModelDraw::setAnimationCompletionTime(UnsignedInt numFrames)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setAnimationFrame@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setAnimationFrame( int frame )
 {
 	if( m_renderObject && m_whichAnimInCurState >= 0 )
@@ -3839,6 +3923,7 @@ void W3DModelDraw::setAnimationFrame( int frame )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setPauseAnimation@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::setPauseAnimation(Bool pauseAnim)
 {
 	if (m_pauseAnimation == pauseAnim) 
@@ -3873,6 +3958,7 @@ void W3DModelDraw::setPauseAnimation(Bool pauseAnim)
 //-------------------------------------------------------------------------------------------------
 #ifdef ALLOW_ANIM_INQUIRIES
 // srj sez: not sure if this is a good idea, for net sync reasons...
+// ?getAnimationScrubScalar@W3DModelDraw@@ present-unmatched
 Real W3DModelDraw::getAnimationScrubScalar( void ) const
 {
 	return getCurAnimDistanceCovered();
@@ -3880,6 +3966,7 @@ Real W3DModelDraw::getAnimationScrubScalar( void ) const
 #endif
 
 //-------------------------------------------------------------------------------------------------
+// ?rebuildWeaponRecoilInfo@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::rebuildWeaponRecoilInfo(const ModelConditionInfo* state) 
 {
 	Int wslot;
@@ -3913,6 +4000,7 @@ void W3DModelDraw::rebuildWeaponRecoilInfo(const ModelConditionInfo* state)
 //-------------------------------------------------------------------------------------------------
 /** Preload any assets for the time of day requested */
 //-------------------------------------------------------------------------------------------------
+// ?preloadAssets@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::preloadAssets( TimeOfDay timeOfDay )
 {
 	const W3DModelDrawModuleData *modData = getW3DModelDrawModuleData();
@@ -3922,12 +4010,14 @@ void W3DModelDraw::preloadAssets( TimeOfDay timeOfDay )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isVisible@W3DModelDraw@@ present-unmatched
 Bool W3DModelDraw::isVisible() const
 {
 	return (m_renderObject && m_renderObject->Is_Really_Visible());
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?updateProjectileClipStatus@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::updateProjectileClipStatus( UnsignedInt shotsRemaining, UnsignedInt maxShots, WeaponSlotType slot )
 {
 	if ((getW3DModelDrawModuleData()->m_projectileBoneFeedbackEnabledSlots & (1 << slot)) == 0)
@@ -3937,6 +4027,7 @@ void W3DModelDraw::updateProjectileClipStatus( UnsignedInt shotsRemaining, Unsig
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?updateDrawModuleSupplyStatus@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::updateDrawModuleSupplyStatus( Int , Int currentSupply )
 {
 	// This level only cares if you have anything or not
@@ -3951,6 +4042,7 @@ void W3DModelDraw::updateDrawModuleSupplyStatus( Int , Int currentSupply )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?doHideShowProjectileObjects@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::doHideShowProjectileObjects( UnsignedInt showCount, UnsignedInt maxCount, WeaponSlotType slot )
 {
 	// Loop through the projectile bones, and start hiding off the front.  That is, 8,9 means to hide the first only.
@@ -3984,6 +4076,7 @@ void W3DModelDraw::doHideShowProjectileObjects( UnsignedInt showCount, UnsignedI
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?updateSubObjects@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::updateSubObjects()
 {
 	if (!m_renderObject)
@@ -4021,6 +4114,7 @@ void W3DModelDraw::updateSubObjects()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::crc( Xfer *xfer )
 {
 
@@ -4036,6 +4130,7 @@ void W3DModelDraw::crc( Xfer *xfer )
 	* 2: Added animation frame (CBD)
 	*/
 // ------------------------------------------------------------------------------------------------
+// ?xfer@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::xfer( Xfer *xfer )
 {
 
@@ -4271,6 +4366,7 @@ void W3DModelDraw::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@W3DModelDraw@@ present-unmatched
 void W3DModelDraw::loadPostProcess( void )
 {
 
@@ -4283,12 +4379,14 @@ void W3DModelDraw::loadPostProcess( void )
 // ------------------------------------------------------------------------------------------------
 
 // ------------------------------------------------------------------------------------------------
+// ?crc@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::crc( Xfer *x )
 {
 	xfer(x);
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?xfer@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::xfer( Xfer *x )
 {
 
@@ -4329,6 +4427,7 @@ void W3DModelDrawModuleData::xfer( Xfer *x )
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@W3DModelDrawModuleData@@ present-unmatched
 void W3DModelDrawModuleData::loadPostProcess( void )
 {
 }
