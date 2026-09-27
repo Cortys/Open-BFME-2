@@ -37323,3 +37323,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva0022DE6B@@QAE@XZ,,0x0022DE6B,33,Code/GameEngine/Source/GameClient/Rva0022DE6BCtor.cpp,matched,opaque ctor base 0x1B4E63 plus vector BfmeE16 plus vtable 0x7E7698
 ??0Rva005EEDAA@@QAE@XZ,,0x005EED92,24,Code/GameEngine/Source/Common/Rva005EEDAACtor.cpp,matched,ctor calls base 0058AD4D with 3 zeroes 1C vtable 00878788
 ??1Rva0022DDF4@@QAE@XZ,,0x0022DDF4,53,Code/GameEngine/Source/GameClient/Rva0022DDF4Dtor.cpp,matched,opaque dtor MapMetaData plus StringBase
+??0Rva005D9DC1@@QAE@XZ,,0x005D9DCC,26,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005EED92 plus member 0024C7B3 at 20 vtable 00876464
