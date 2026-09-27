@@ -38801,3 +38801,9 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??A?$map@GEU?$less@G@_STL@@V?$allocator@U?$pair@$$CBGE@_STL@@@2@@_STL@@QAEAAEABG@Z,,0x004D26E6,72,Code/GameEngine/Source/GameLogic/Object/StlO1Instantiations.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??$fill@U?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@_STL@@_N@_STL@@YAXU?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@0@0AB_N@Z,,0x00069FF9,67,Code/GameEngine/Source/GameLogic/Object/StlO1Instantiations.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0?$pair@$$CBGE@_STL@@QAE@ABGABE@Z,,0x004CFAFC,24,Code/GameEngine/Source/GameLogic/Object/StlO1Instantiations.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?ClipLine2D@@YA_NPAUICoord2D@@000PAUIRegion2D@@@Z,,0x0025F406,589,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?ShortestDistancePointToSegment2D@@YAXPBUCoord2D@@00PAMPAU1@1@Z,,0x0025F916,347,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?IntersectLine2D@@YA_NPBUCoord2D@@000PAU1@@Z,,0x0025F653,274,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?PointInsideRect2D@@YA_NPBUCoord2D@@0000@Z,,0x0025FA71,141,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?PointInsideRect3D@@YA_NPBUCoord3D@@0000@Z,,0x0025FAFE,124,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?PointInsideArea2D@@YA_NPBUCoord2D@@0H@Z,,0x0025F765,89,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
