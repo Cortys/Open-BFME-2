@@ -475,7 +475,6 @@ bool EAStringC::rva006D3510(const char *text) const
 // Callers at 0x006DDE93/0x006DDEA9/0x0070024D/0x00700263/0x00704606;
 // neighbours rva006D3490 and rva006D3510 share /O2 /DNDEBUG /MD.
 // Honest address name; PBV1 proves string-pointer overload.
-// ?rva006D3560@EAStringC@@QBE_NPBV1@@Z present-unmatched
 bool EAStringC::rva006D3560(const EAStringC *other) const
 {
 	StringDataC *otherData = other->m_pData;
@@ -484,7 +483,9 @@ bool EAStringC::rva006D3560(const EAStringC *other) const
 		return false;
 	if (ownData == otherData)
 		return true;
-	return _strcmpi((const char *)ownData + 8, (const char *)otherData + 8) == 0;
+	// Preserve the byte-sized result used by retail's AL boolean tail.
+	unsigned char same = _strcmpi((const char *)ownData + 8, (const char *)otherData + 8) == 0;
+	return same;
 }
 
 // ?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z, retail 0x006D50A0 (191B).

@@ -2157,3 +2157,5 @@ FUN_0043DB23	0x0043DB23	26	blocked	pin invoke mangling H10000 undecodable needs 
 ?rva0031452F@Rva0031455E@@QAEHXZ	0x0031452F	30	blocked	EBP frame wall t=25 model=muse-5574: same 0-arg leaf as 0x00314511; /O1 25B no frame vs 30B retail
 ?rva00314596@Rva003145B1@@QAEHXZ	0x00314596	27	blocked	EBP frame wall t=10 model=muse-5574: 0-arg plus4 plus8 slots 3/1 twin of 0x00314511 wall
 ?Rva005C65F1Update@Rva005C65F1Class@@QAEXXZ	0x005C65F1	75	partial	add edi,eax vs add eax,edi and cmp edi,2 vs cmp eax,2; sum stays in edi retail vs eax ours; t=20 model=muse-c8e6 score=0.97 stash=reverse/attempts/0x005c65f1.cpp
+?rva006D3560@EAStringC@@QBE_NPBV1@@Z	0x006D3560	57	landed	Address-named EAStringC pointer equality; Ghidra boundary and internal caller references support identity. Unsigned-char normalized result emits target neg eax/sbb al/inc al tail; full EAStringC TU verified. t=3 model=GPT-6
+?rva006D3560@EAStringC@@QBE_NPBV1@@Z	0x006D3560	57	void	The prior partial bank at this address was superseded by the verified landed body; remove its now-missing stash reference.

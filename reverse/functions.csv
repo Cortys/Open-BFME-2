@@ -37712,3 +37712,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006E6CF0@AptValueVector@@QAEPAV1@H@Z,,0x006E6CF0,82,Code/Libraries/Source/Apt/AptValue/AptValueVectorReleaseBFME2.cpp,matched,AptValueVector init via capacity alloc and mpValues assert; cpp line 0x3E; layout from PopValue sibling; callee allocBlock at 0x006DB160; 2 callers
 ?attemptHealing@Object@@QAEXMPBV1@@Z,,0x0028FE55,82,Code/GameEngine/Source/GameLogic/Object/Object_attemptHealing.cpp,matched,BFME1 donor Object.cpp attemptHealing via body slot 1 and callers
 ?healCompletely@Object@@QAEXXZ,,0x0028FF9E,18,Code/GameEngine/Source/GameLogic/Object/Object_healCompletely.cpp,matched,BFME1 donor Object.cpp healCompletely via attemptHealing
+?rva006D3560@EAStringC@@QBE_NPBV1@@Z,,0x006D3560,57,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,Address-named case-insensitive EAStringC equality with target size check shared-data short circuit and _strcmpi evidence.
