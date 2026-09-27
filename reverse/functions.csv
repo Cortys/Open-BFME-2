@@ -39450,3 +39450,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?_M_insert_aux@?$vector@_NV?$allocator@_N@_STL@@@_STL@@IAEXU?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@2@_N@Z,,0x0051CA0E,392,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_insert_aux.cpp,matched,STLport 4.5.3 bvector donor caller push_back 0x0051CD86 size-opt O1 G7 with CRTIMP for E8 free
 ??$copy_backward@PAUBfmeE12@@PAU1@@_STL@@YAPAUBfmeE12@@PAU1@00@Z,,0x0051C94D,27,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_backward_e12.cpp,matched,STLport copy_backward E12 via stock headers caller insert fast path
 ?_bfme_terminateChildProcesses@GameEngine@@AAEXXZ,,0x002260F7,42,Code/GameEngine/Source/Common/GameEngineTerminateChildProcesses.cpp,matched,BFME1 donor TerminateProcess loop with BFME2 plus4 shift at 0x14
+?rva00226829@Rva00226829@@QAEXPAX@Z,,0x00226829,45,Code/GameEngine/Source/Common/Rva00226829TreeFree.cpp,matched,tree free child 0x0C sibling 0x08 via free row
