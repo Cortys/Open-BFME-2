@@ -128,6 +128,9 @@ BfmeStringRecord00426A5B &BfmeStringRecord00426A5B::operator=(const BfmeStringRe
     return *this;
 }
 template void _STL::_Construct<BfmeStringRecord00426A5B,BfmeStringRecord00426A5B>(BfmeStringRecord00426A5B*,const BfmeStringRecord00426A5B&);
+#include <vector>
+// Retail __copy 0x00426A82 47B: forward copy of 8-byte BfmeStringRecord00426A5B via operator= at 0x004267A5; sar 3 stride 8; caller at 0x00426B29; same shape as 47B __copy at 0x00215696 and 0x001737C0.
+template BfmeStringRecord00426A5B* _STL::__copy<BfmeStringRecord00426A5B*, BfmeStringRecord00426A5B*, int>(BfmeStringRecord00426A5B*, BfmeStringRecord00426A5B*, BfmeStringRecord00426A5B*, const _STL::random_access_iterator_tag&, int*);
 
 // Retail copy 0x004071F7: observed scalar fields and string member.
 // Original application type and scalar meanings are unknown.
