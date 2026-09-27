@@ -5926,3 +5926,5 @@ _ConvertBoolTrees,0x001BBD60
 ??0?$_Vector_base@VRva004BA1C8@@V?$allocator@VRva004BA1C8@@@_STL@@@_STL@@QAE@ABV?$allocator@VRva004BA1C8@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as rowed BfmeE16 row; TransitionDamageFXModuleDataCtor TU vector Rva member
 ?erase@?$list@UEvacuationRecord@@V?$allocator@UEvacuationRecord@@@_STL@@@_STL@@QAE?AU?$_List_iterator@UEvacuationRecord@@U?$_Nonconst_traits@UEvacuationRecord@@@_STL@@@2@U32@@Z,0x00438539,folded onto rowed list-int erase at this address; EvacuateDamage sum typed alias
 ?performUpgradeFX@UpgradeMuxData@@QBEXPAVObject@@@Z,0x0047A69C,address read from the REL32 displacement at a byte-verified placed body (0x452487)
+?Capture_Bone@HTreeClass@@QAEXH@Z,0x00166980,address read from the REL32 displacement at a byte-verified placed body (0x1A4EC0)
+?Release_Bone@HTreeClass@@QAEXH@Z,0x001661F0,address read from the REL32 displacement at a byte-verified placed body (0x1A4EE0)
