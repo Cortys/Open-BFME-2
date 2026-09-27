@@ -94,6 +94,7 @@ public:
 	void aiFaceObject(Object *target, CommandSourceType cmdSource);
 	void rva0026C3AC(Object *target, CommandSourceType cmdSource);
 	void rva0026C486(Object *target, CommandSourceType cmdSource);
+	void rva0026C411(Object *victim, const Coord3D *pos, CommandSourceType cmdSource);
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
@@ -199,6 +200,18 @@ void AICommandInterface::rva0026C486(Object *target, CommandSourceType cmdSource
 {
 	AICommandParms parms((AICommandType)0x4F, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0026C411@AICommandInterface@@QAEXPAVObject@@PBUCoord3D@@W4CommandSourceType@@@Z, retail 0x0026C411, 117 bytes.
+// Same TU object-plus-position shape: AICMD 0x34 plus m_obj at +0x14 plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x0026D837 via add ecx,0x20 to AIUpdate+0x258 (AICommandInterface subobject).
+// Callers at 0x0026D837 0x002F3F0F 0x002F40D9 0x00498E24; landing unblocks 4.
+void AICommandInterface::rva0026C411(Object *victim, const Coord3D *pos, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x34, cmdSource);
+	parms.m_obj = victim;
+	parms.m_pos = *pos;
 	aiDoCommand(&parms);
 }
 
