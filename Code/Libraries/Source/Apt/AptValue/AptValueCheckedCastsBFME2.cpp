@@ -21,6 +21,7 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 class BfmeAptValue006DCD20 {
     virtual void vtableSlot0();
 public:
+    int isBoolean() const;
     int isKey() const;
     int isMath() const;
     int isScriptColour() const;
@@ -35,6 +36,7 @@ public:
     int isLoadVars() const;
     int isStage() const;
     int isCIH(bool bUndefOK) const;
+    BfmeAptValue006DCD20 *rva006DCEA0();
     BfmeAptValue006DCD20 *rva006DCF60(bool bUndefOK);
     BfmeAptValue006DCD20 *rva006DD020();
     BfmeAptValue006DCD20 *rva006DD060();
@@ -197,6 +199,17 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCF60(bool bUndefOK)
 {
     if (!static_cast<unsigned char>(isCIH(bUndefOK))) {
         g_bfmeAptAssertAtE17734("isCIH(bUndefOK)", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x348);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DCEA0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DCEA0 50B. Checked cast for isBoolean type 5.
+// Evidence: calls rowed ?isBoolean@BfmeAptValue006DCD20@@QBEHXZ; asserts "isBoolean()" at AptValue.inl:766.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCEA0()
+{
+    if (!static_cast<unsigned char>(isBoolean())) {
+        g_bfmeAptAssertAtE17734("isBoolean()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x2FE);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __asm int 3
     }
