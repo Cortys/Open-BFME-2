@@ -84,6 +84,7 @@ public:
 	unsigned short rva006D2F40() const;
 	void rva006D3C20();
 	void rva006D3C60();
+	void rva006D3CA0(const EAStringC *other);
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -398,4 +399,32 @@ void EAStringC::rva006D3C60()
 	}
 	m_pData = &g_eaEmptyStringData;
 	++g_eaEmptyStringData.m_uRefCount;
+}
+
+// ?rva006D3CA0@EAStringC@@QAEXPBV1@@Z, retail 0x006D3CA0 (107B). EAStringC
+// null-expecting share: asserts IsValid()==false when this is non-null
+// (EAString.inl 0x545), takes the source data, validates its refcount
+// (EAString.inl 0xE1, empty singleton skips) and AddRefs. Callers at
+// 0x0070AE98/0x0070AEED/0x0070AF2F in one Apt string worker; neighbours
+// rva006D3C60 and utf8EncodedLength share /O2 /DNDEBUG /MD. Honest
+// address name; void plus const-string-pointer from ret-4 plus data flow.
+void EAStringC::rva006D3CA0(const EAStringC *other)
+{
+	if (m_pData != 0) {
+		g_bfmeAptAssertAtE17734("IsValid() == false", ".\\string\\EAString.inl", 0x545);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) {
+			__asm int 3
+		}
+	}
+	StringDataC *src = other->m_pData;
+	m_pData = src;
+	if (src != &g_eaEmptyStringData) {
+		if (!(src->m_uRefCount <= 0xFFFE)) {
+			g_bfmeAptAssertAtE17734("m_pData->m_uRefCount <= 0xfffe", ".\\string\\EAString.inl", 0xE1);
+			if (g_bfmeAptBreakOnAssertAtDDC01C) {
+				__asm int 3
+			}
+		}
+	}
+	++m_pData->m_uRefCount;
 }
