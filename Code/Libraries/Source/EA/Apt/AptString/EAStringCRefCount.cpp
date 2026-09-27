@@ -312,7 +312,10 @@ EAStringC &EAStringC::Rva006D4F00Append(const EAStringC &other)
 	return *this;
 }
 
-// ?rva006D2F40@EAStringC@@QBEGXZ, retail 0x006D2F40, 62 bytes.
+// ?rva006D2F40@EAStringC@@QBEGXZ, retail 0x006D2F40, 70 bytes. Ghidra's
+// 62-byte range stops exactly at the target's short-branch landing at +0x3E;
+// that landing contains the remaining hash-read return path through +0x45.
+// The next Ghidra function starts at +0x50.
 // EAStringC hash accessor: returns the cached m_uHash word at +6, asserting
 // it is non-zero via the EAString.inl 0x184 "m_pData->m_uHash != 0" check.
 // Donor BFME1 EAStringCAssign.cpp proves StringDataC carries unsigned short
