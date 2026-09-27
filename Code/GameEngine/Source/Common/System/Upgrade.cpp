@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /DZH_EMIT_POOL_GLUE /Ireference/shims/bfmerendobj /Ireference/shims/debugvtable /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/bfmeanimobj /Ireference/shims/indexbuffercount /Ireference/shims/bfmecaps /Ireference/shims/bfmehcanim /Ireference/shims/bfmevector /Ireference/shims/bfmemapper /Ireference/shims/meshmatdesclayout /Ireference/shims/bfmeshader /Ireference/shims/bfmecpudetect /Ireference/shims/bfmepool /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWAudio /Ireference/shims/bfmealloc /Ireference/shims/bfmehashtable /Ireference/shims/bfmelist /Ireference/shims/asciistring_downloadmanager /Ireference/shims/stlp_nodealloc /Ireference/shims/asciistring_thin /ICode/GameEngine/Source/Common /Ireference/shims/w3droadbuffer /Ireference/shims/bfmeterraintracks /ICode/Libraries/Include/Lib
+// cl: /O1 /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /DZH_EMIT_POOL_GLUE /Ireference/shims/bfmerendobj /Ireference/shims/debugvtable /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/bfmeanimobj /Ireference/shims/indexbuffercount /Ireference/shims/bfmecaps /Ireference/shims/bfmehcanim /Ireference/shims/bfmevector /Ireference/shims/bfmemapper /Ireference/shims/meshmatdesclayout /Ireference/shims/bfmeshader /Ireference/shims/bfmecpudetect /Ireference/shims/bfmepool /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWAudio /Ireference/shims/bfmealloc /Ireference/shims/bfmehashtable /Ireference/shims/bfmelist /Ireference/shims/asciistring_downloadmanager /Ireference/shims/stlp_nodealloc /Ireference/shims/asciistring_thin /ICode/GameEngine/Source/Common /Ireference/shims/w3droadbuffer /Ireference/shims/bfmeterraintracks /ICode/Libraries/Include/Lib
 // stlport
 // Ported verbatim from the Generals Zero Hour reference
 // (GameEngine/Source/Common/System/Upgrade.cpp); this unit had no counterpart under Code/.
@@ -58,6 +58,7 @@ class UpgradeCenter *TheUpgradeCenter = NULL;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0Upgrade@@ present-unmatched
 Upgrade::Upgrade( const UpgradeTemplate *upgradeTemplate )
 {
 
@@ -70,6 +71,7 @@ Upgrade::Upgrade( const UpgradeTemplate *upgradeTemplate )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1Upgrade@@ present-unmatched
 Upgrade::~Upgrade( void )
 {
 
@@ -78,6 +80,7 @@ Upgrade::~Upgrade( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@Upgrade@@ present-unmatched
 void Upgrade::crc( Xfer *xfer )
 {
 
@@ -88,6 +91,7 @@ void Upgrade::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@Upgrade@@ present-unmatched
 void Upgrade::xfer( Xfer *xfer )
 {
 
@@ -104,6 +108,7 @@ void Upgrade::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@Upgrade@@ present-unmatched
 void Upgrade::loadPostProcess( void )
 {
 
@@ -132,6 +137,7 @@ const FieldParse UpgradeTemplate::m_upgradeFieldParseTable[] =
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0UpgradeTemplate@@ present-unmatched
 UpgradeTemplate::UpgradeTemplate( void )
 {
 	//Added By Sadullah Nader
@@ -150,6 +156,7 @@ UpgradeTemplate::UpgradeTemplate( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1UpgradeTemplate@@ present-unmatched
 UpgradeTemplate::~UpgradeTemplate( void )
 {
 
@@ -158,6 +165,7 @@ UpgradeTemplate::~UpgradeTemplate( void )
 //-------------------------------------------------------------------------------------------------
 /** Calculate the time it takes (in logic frames) for a player to build this UpgradeTemplate */
 //-------------------------------------------------------------------------------------------------
+// ?calcTimeToBuild@UpgradeTemplate@@ present-unmatched
 Int UpgradeTemplate::calcTimeToBuild( Player *player ) const
 {
 #if defined(_DEBUG) || defined(_INTERNAL) || defined(_ALLOW_DEBUG_CHEATS_IN_RELEASE)
@@ -175,6 +183,7 @@ Int UpgradeTemplate::calcTimeToBuild( Player *player ) const
 //-------------------------------------------------------------------------------------------------
 /** Calculate the cost takes this player to build this upgrade */
 //-------------------------------------------------------------------------------------------------
+// ?calcCostToBuild@UpgradeTemplate@@ present-unmatched
 Int UpgradeTemplate::calcCostToBuild( Player *player ) const
 {
 
@@ -195,6 +204,7 @@ static AsciiString getVetUpgradeName(VeterancyLevel v)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?friend_makeVeterancyUpgrade@UpgradeTemplate@@ present-unmatched
 void UpgradeTemplate::friend_makeVeterancyUpgrade(VeterancyLevel v)
 {
 	m_type = UPGRADE_TYPE_OBJECT;	// veterancy "upgrades" are always per-object, not per-player
@@ -209,6 +219,7 @@ void UpgradeTemplate::friend_makeVeterancyUpgrade(VeterancyLevel v)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?cacheButtonImage@UpgradeTemplate@@ present-unmatched
 void UpgradeTemplate::cacheButtonImage()
 {
 	if( m_buttonImageName.isNotEmpty() )
@@ -226,6 +237,7 @@ void UpgradeTemplate::cacheButtonImage()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0UpgradeCenter@@ present-unmatched
 UpgradeCenter::UpgradeCenter( void )
 {
 
@@ -237,6 +249,7 @@ UpgradeCenter::UpgradeCenter( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1UpgradeCenter@@ present-unmatched
 UpgradeCenter::~UpgradeCenter( void )
 {
 	
@@ -261,6 +274,7 @@ UpgradeCenter::~UpgradeCenter( void )
 //-------------------------------------------------------------------------------------------------
 /** Upgrade center initialization */
 //-------------------------------------------------------------------------------------------------
+// ?init@UpgradeCenter@@ present-unmatched
 void UpgradeCenter::init( void )
 {
 	UpgradeTemplate* up;
@@ -285,6 +299,7 @@ void UpgradeCenter::init( void )
 //-------------------------------------------------------------------------------------------------
 /** Upgrade center system reset */
 //-------------------------------------------------------------------------------------------------
+// ?reset@UpgradeCenter@@ present-unmatched
 void UpgradeCenter::reset( void )
 {
 	if( TheMappedImageCollection && !buttonImagesCached )
@@ -310,6 +325,7 @@ const UpgradeTemplate *UpgradeCenter::findVeterancyUpgrade( VeterancyLevel level
 //-------------------------------------------------------------------------------------------------
 /** Find upgrade matching name key */
 //-------------------------------------------------------------------------------------------------
+// ?findNonConstUpgradeByKey@UpgradeCenter@@ present-unmatched
 UpgradeTemplate *UpgradeCenter::findNonConstUpgradeByKey( NameKeyType key )
 {
 	UpgradeTemplate *upgrade;
@@ -327,6 +343,7 @@ UpgradeTemplate *UpgradeCenter::findNonConstUpgradeByKey( NameKeyType key )
 // ------------------------------------------------------------------------------------------------
 /** Return the first upgrade template */
 // ------------------------------------------------------------------------------------------------
+// ?firstUpgradeTemplate@UpgradeCenter@@ present-unmatched
 UpgradeTemplate *UpgradeCenter::firstUpgradeTemplate( void )
 {
 	
@@ -363,6 +380,7 @@ const UpgradeTemplate *UpgradeCenter::findUpgrade( const AsciiString& name ) con
 //-------------------------------------------------------------------------------------------------
 /** Allocate a new upgrade template */
 //-------------------------------------------------------------------------------------------------
+// ?newUpgrade@UpgradeCenter@@ present-unmatched
 UpgradeTemplate *UpgradeCenter::newUpgrade( const AsciiString& name )
 {
 	UpgradeTemplate *newUpgrade = newInstance(UpgradeTemplate);
@@ -396,6 +414,7 @@ UpgradeTemplate *UpgradeCenter::newUpgrade( const AsciiString& name )
 //-------------------------------------------------------------------------------------------------
 /** Link an upgrade to our list */
 //-------------------------------------------------------------------------------------------------
+// ?linkUpgrade@UpgradeCenter@@ present-unmatched
 void UpgradeCenter::linkUpgrade( UpgradeTemplate *upgrade )
 {
 
@@ -434,6 +453,7 @@ void UpgradeCenter::unlinkUpgrade( UpgradeTemplate *upgrade )
 //-------------------------------------------------------------------------------------------------
 /** does this player have all the necessary things to make this upgrade */
 //-------------------------------------------------------------------------------------------------
+// ?canAffordUpgrade@UpgradeCenter@@ present-unmatched
 Bool UpgradeCenter::canAffordUpgrade( Player *player, const UpgradeTemplate *upgradeTemplate, Bool displayReason ) const
 {
  
@@ -476,6 +496,7 @@ std::vector<AsciiString> UpgradeCenter::getUpgradeNames( void ) const
 //-------------------------------------------------------------------------------------------------
 /** Parse an upgrade definition */
 //-------------------------------------------------------------------------------------------------
+// ?parseUpgradeDefinition@UpgradeCenter@@ present-unmatched
 void UpgradeCenter::parseUpgradeDefinition( INI *ini )
 {
 	// read the name

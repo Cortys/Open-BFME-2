@@ -6126,3 +6126,4 @@ _ConvertBoolTrees,0x001BBD60
 ??1?$_List_base@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAE@XZ,0x005BD090,read from the REL32 at 0x005E09DF in ~DownloadManager built at /O1 where the list dtor inlines to its base; same address as the list<QueuedDownload> dtor pin
 ??1QueuedDownload@@QAE@XZ,0x005BC5F9,address read from the REL32 displacement at a placed body
 ?push_back@?$list@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAEXABVQueuedDownload@@@Z,0x005BD060,address read from the REL32 displacement at a placed body
+?getVetUpgradeName@@YA?AVAsciiString@@W4VeterancyLevel@@@Z,0x0026F08B,address read from the REL32 displacement at a placed body
