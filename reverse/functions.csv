@@ -37004,3 +37004,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1HordeGarrisonContain@@UAE@XZ,,0x0047A147,5,Code/GameEngine/Source/GameLogic/Object/Contain/HordeGarrisonContainDtor.cpp,matched,5B jmp thunk to rowed GarrisonContain base 0x00478067 via novtable; wrapper 0x0047A12B vtable 0x00C46570 and pool key 0x0047A0E6
 ?release@Rva002D76BB@@QAEXXZ,,0x002D76BB,11,Code/GameEngine/Source/Common/Rva002D76BBRelease.cpp,matched,honest ref-release plus8 slot1; callers 0x004C9BAC 0x004C9C5A 0x004C9D53 0x0004E4E1
 ??1Rva00358946@@QAE@XZ,,0x00358946,17,Code/GameEngine/Source/Common/Rva00358946Dtor.cpp,matched,Frameless WideString helper via 0x36E70 plus zero 0x08 called by 0x358994 and W3D path
+??4Rva004C9B8F@@QAEAAV0@ABV0@@Z,,0x004C9B8F,45,Code/GameEngine/Source/GameClient/Drawable/Update/Rva004C9B8FAssign.cpp,matched,honest smart-ptr assign via rowed inc plus8 and release plus8 slot1; caller 0x004C9D43
