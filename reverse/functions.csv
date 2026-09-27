@@ -37257,3 +37257,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Compute_Ram_Size@MeshMatDescClass@@QAEHXZ,,0x0015CAE0,427,Code/Libraries/Source/WWVegas/WW3D2/MeshMatDescComputeRamSize.cpp,matched,BFME1 donor MeshMatDescClass ComputeRamSize plus MeshModel callers
 ??1Rva0022C9F6@@UAE@XZ,,0x0022C9F6,59,Code/GameEngine/Source/Common/System/SaveGame/Rva0022C9F6Dtor.cpp,matched,opaque virtual dtor with list base via replica pattern
 ??_GRva0022C9F6@@UAEPAXI@Z,,0x0022C9DA,28,Code/GameEngine/Source/Common/System/SaveGame/Rva0022C9F6Dtor.cpp,matched,scalar deleting dtor via TU vtable emission
+?rva004A7E43@Rva004A7D55@@UAEXXZ,,0x004A7E43,36,Code/GameEngine/Source/Common/Rva004A7E43Slot.cpp,matched,vtable 0x00853790 slot5 broadcast via rowed 0x27164E
