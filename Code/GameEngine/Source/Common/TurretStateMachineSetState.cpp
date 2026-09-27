@@ -47,6 +47,7 @@ class StateMachine
 {
 public:
 	StateReturnType setState(StateID newStateID);
+	StateReturnType resetToDefaultState();
 	char m_pad00[4];
 	TurretState *m_currentState;
 	char m_pad08[0x3C - 0x08];
@@ -56,6 +57,7 @@ class TurretStateMachine : public StateMachine
 {
 public:
 	StateReturnType setState(StateID newStateID);
+	StateReturnType resetToDefaultState();
 	TurretAI *m_turretAI;
 };
 
@@ -66,6 +68,19 @@ StateReturnType TurretStateMachine::setState(StateID newStateID)
 	StateReturnType tmp = StateMachine::setState(newStateID);
 	TurretAI *turret = m_turretAI;
 	if (turret && oldID != newStateID)
+		turret->friend_notifyStateMachineChanged();
+	return tmp;
+}
+
+// ?resetToDefaultState@TurretStateMachine@@QAE?AW4StateReturnType@@XZ @0x004D855B 29B
+// Retail vtable slot 6 (offset 0x18) of vtable 0x008609C8, class TurretStateMachine.
+// BFME1 donor TurretAI.cpp resetToDefaultState verbatim plus BFME2 deltas (owner at
+// +0x3C, notify inlined as m_sleepUntil (+0x34) = frame). Single callee reset 0x004D7A75.
+StateReturnType TurretStateMachine::resetToDefaultState()
+{
+	StateReturnType tmp = StateMachine::resetToDefaultState();
+	TurretAI *turret = m_turretAI;
+	if (turret)
 		turret->friend_notifyStateMachineChanged();
 	return tmp;
 }
