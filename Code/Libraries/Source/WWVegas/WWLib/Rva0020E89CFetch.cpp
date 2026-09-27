@@ -91,3 +91,12 @@ UnicodeString Rva0020E89C::rva0020E89C()
 		return UnicodeString::TheEmptyString;
 	return TheGameText->fetch(m_label);
 }
+
+// ?Rva005C95ECGet@@YA?AVUnicodeString@@PAVRva0020E89C@@@Z @0x005C95EC 24B
+// Chain wrapper forwarding hidden return to Rva0020E89C::rva0020E89C.
+// Callers at 0x005D1806/0x005D1C18/0x005D220F pass out temp and obj.
+
+UnicodeString Rva005C95ECGet(Rva0020E89C *obj)
+{
+	return obj->rva0020E89C();
+}

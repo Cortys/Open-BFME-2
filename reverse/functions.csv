@@ -39409,3 +39409,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0026185B@Rva0026185B@@QAE_NPAVObject@@@Z,,0x0026185B,71,Code/GameEngine/Source/Common/Rva0026185B.cpp,matched,Chain via rva002931BA template 108 AI slot110 vs this 08
 ?rva00261723@Rva00261723@@QAE_NPAVArg00261723@@@Z,,0x00261723,45,Code/GameEngine/Source/Common/Rva00261723.cpp,matched,Float to ICoord z0 then PolygonTrigger pin via neighbours
 ?rva0020E89C@Rva0020E89C@@QAE?AVUnicodeString@@XZ,,0x0020E89C,63,Code/Libraries/Source/WWVegas/WWLib/Rva0020E89CFetch.cpp,matched,honest Rva method empty returns TheEmptyString else TheGameText fetch slot 0x38 caller 0x002BA235
+?Rva005C95ECGet@@YA?AVUnicodeString@@PAVRva0020E89C@@@Z,,0x005C95EC,24,Code/Libraries/Source/WWVegas/WWLib/Rva0020E89CFetch.cpp,matched,chain wrapper forwards hidden to rva0020E89C callers 0x005D1806
