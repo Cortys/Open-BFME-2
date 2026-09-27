@@ -37179,3 +37179,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??$_Destroy@PAURva0048130E@@@_STL@@YAXPAURva0048130E@@0@Z,,0x00481595,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0048130e_destroy.cpp,matched,8B element range destroy via rowed 0x48130E dtor
 ?GetInternalRefCount@EAStringC@@QBEIXZ,,0x006D2E10,6,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,caller 0x0070DB62 assert GetInternalRefCount plus sibling MaxSize pattern
 ??1?$vector@URva0048130E@@V?$allocator@URva0048130E@@@_STL@@@_STL@@QAE@XZ,,0x004815AE,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,ProductionQueue vector dtor via rowed 0x481595 plus free 0x30830
+??0Rva0058AD7A@@QAE@H@Z,,0x0058AD4D,45,Code/GameEngine/Source/Common/Rva0058AD7ACtor.cpp,matched,vtable 0087091C plus caller 005EE2E6 arg 5
