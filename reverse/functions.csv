@@ -36986,3 +36986,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1LocomotorSetUpgrade@@MAE@XZ,,0x004B3EA0,32,Code/GameEngine/Source/GameLogic/Object/Upgrade/UpgradeModuleTailDtors.cpp,matched,audited ??_G 0x004B3F3C calls here; StealthUpgrade shape
 ??1AllowBannerSpawnUpgrade@@MAE@XZ,,0x004B84EA,32,Code/GameEngine/Source/GameLogic/Object/Upgrade/UpgradeModuleTailDtors.cpp,matched,audited ??_G 0x004B85B8 calls here; StealthUpgrade shape
 ??1AnimationSoundClientBehaviorModuleData@@UAE@XZ,,0x004CA768,48,Code/GameEngine/Source/GameLogic/Object/Behavior/AnimationSoundClientBehaviorModuleDataDtor.cpp,matched,audited ??_G 0x004CA74C calls here; tree +0x08 via 0x004CA653
+??1DamageFilteredCreateObjectDie@@UAE@XZ,,0x00485EC3,32,Code/GameEngine/Source/GameLogic/Object/Die/DamageFilteredCreateObjectDieDtor.cpp,matched,audited ??_G 0x00485FC7 calls here; four vptrs then jmp DieModule dtor
+??1LargeGroupAudioUpdate@@UAE@XZ,,0x004AB8DC,46,Code/GameEngine/Source/GameLogic/Object/Update/LargeGroupAudioUpdateDtor.cpp,matched,audited ??_G 0x004ABB1B calls here; five vptrs plus +0x24 base restore then jmp 0x0024A797
