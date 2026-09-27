@@ -37921,3 +37921,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva002E7875WorldToCell@@YAPAUICoord2D@@PAU1@_NPBUCoord3D@@@Z,,0x002E7875,162,Code/GameEngine/Source/GameLogic/Object/PathfindShimWorldToCell.cpp,matched,free converter floor vs floor+0.5 callers 7917 7964 donor REAL_TO_INT_FLOOR
 ?rva0038901D@Rva0038901D@@QAE?AVAsciiString@@XZ,,0x0038901D,100,Code/GameEngine/Source/Common/Rva0038901DFormat.cpp,matched,dotted-quad format via rowed AsciiString format; RVO copy proven by callers
 ?rva00389081@Rva00389081@@QAE?AVAsciiString@@XZ,,0x00389081,29,Code/GameEngine/Source/Common/Rva0038901DFormat.cpp,matched,RVO forward to inner at plus130 proven by chain
+??0Rva005EE2A0@@QAE@XZ,,0x005EE28C,20,Code/GameEngine/Source/Common/Rva005EE2A0Ctor.cpp,matched,vtable 0x008786CC same as rowed dtor base ctor 2
