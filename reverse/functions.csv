@@ -36923,3 +36923,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GBfmeOwnVVD@@QAEPAXI@Z,,0x0042E9D0,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-x7q-f4c9.cpp,matched,scalar deleting dtor calls rowed dtor 0x0042E85C plus rowed delete 0x0002FD60 vtable slot1 0x0083C938
 ?setLifetimeRange@LifetimeUpdate@@QAEXII@Z,,0x003A4AB3,31,Code/GameEngine/Source/GameLogic/Object/Update/LifetimeUpdateSetLifetimeRange.cpp,matched,DeletionUpdate 31B precedent and rowed calc and rowed setWakeFrame and xfer layout
 ?rva00462785@Rva00462785@@QAEHXZ,,0x00462785,23,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00462785.cpp,matched,leaf after slot81 plus E1 plus 83 reads plus O1
+??1UVBufferClass@@UAE@XZ,,0x000D2118,5,Code/Libraries/Source/WWVegas/WW3D2/UVBufferClassDtor.cpp,matched,vtable 0x007CE338 plus caller 0x000D20FC plus base 0x000D1DC8
