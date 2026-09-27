@@ -2106,3 +2106,4 @@ FUN_007FB6C5	0x003FB6C5	206	blocked	vslot slot7 of Rva005C4B1B vtable 0x8747B8; 
 ?Get@Rva00404C26@@QAEPAXH@Z	0x00404C26	58	blocked	gap helper layout proven 0 mem diffs but scheduler wall caching plus lea-vs-imul plus branch inversion t=25 model=muse-f9e-3d9e
 ?rva006FBBA0@Rva8D0D80Result@@QAE_NPAVRva8D0D80String@@PAVRva8D0D80Value@@@Z	0x006FBBA0	64	blocked	edi-plus-nop wall plus null-this prologue plus stack-reload vs edi-save t=15 model=muse-k7q-d09c
 ??_GFireWeaponWhenDamagedBehavior@@UAEPAXI@Z	0x00482A4D	28	blocked	duplicate name rowed at 0x004A4D54 one-name-one-address t=5 model=muse-x7k-9927
+?End_Scene@DX8Wrapper@@SAX_N@Z	0x00122BE0	518	blocked	D3D9 EndScene offset plus bfme helper plus div mystery t=35 model=muse-8ce9
