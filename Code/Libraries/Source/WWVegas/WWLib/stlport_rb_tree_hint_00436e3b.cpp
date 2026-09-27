@@ -1,6 +1,7 @@
 // cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // BFME2 STLport tree: AsciiString key and opaque 0xDF4-byte mapped object.
+// ??1TreeHintOpaque0043671B@@QAE@XZ @0x00229840 53B destroys UnicodeString +0 and 0xDE8 subobject +4; deleting dtor 0x002DDE27 and list clear 0x00434EC9 prove identity; layout from copy 0x0022D106.
 // hint 0x436E3B -> insert 0x4367AF -> _M_insert 0x43671B -> node 0x436234.
 // The node allocates 0xE08 bytes and constructs its 0xDF8-byte value at node+16.
 // _Construct 0x43616A calls pair copy 0x435DAA: AsciiString copy 0x365F0,
@@ -28,10 +29,9 @@ public:
 // copies string/scalar members and nested subobjects. Keep its ownership
 // operations out of line; its application class and virtual slots are unknown.
 struct BfmeSubobject0022CE19 {
-    void *m_vtable;
+    virtual ~BfmeSubobject0022CE19();
     unsigned char m_opaque[0xDE4];
     BfmeSubobject0022CE19(const BfmeSubobject0022CE19 &);
-    ~BfmeSubobject0022CE19();
 };
 struct TreeHintOpaque0043671B {
     UnicodeString m_text;
@@ -43,6 +43,8 @@ struct TreeHintOpaque0043671B {
 TreeHintOpaque0043671B::TreeHintOpaque0043671B(const TreeHintOpaque0043671B &other)
     : m_text(other.m_text), m_subobject(other.m_subobject),
       m_wordDEC(other.m_wordDEC), m_wordDF0(other.m_wordDF0) {}
+
+TreeHintOpaque0043671B::~TreeHintOpaque0043671B() {}
 
 typedef _STL::pair<const AsciiString, TreeHintOpaque0043671B> TreeHintPair0043671B;
 typedef _STL::_Rb_tree<AsciiString, TreeHintPair0043671B, _STL::_Select1st<TreeHintPair0043671B>, _STL::less<AsciiString>, _STL::allocator<TreeHintPair0043671B> > TreeHint0043671B;
