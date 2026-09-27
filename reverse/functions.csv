@@ -38782,3 +38782,12 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getRelativeAngle2D@PartitionManager@@QAEMPBVObject@@0@Z,,0x002C9BE4,20,Code/GameEngine/Source/GameLogic/Object/PartitionManager.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?testFlagBit@@YA_NHH@Z,,0x00050C4D,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DModelDraw.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?alignToTerrain@@YAXMABUCoord3D@@0AAVMatrix3D@@@Z,,0x0027CEDE,337,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/RailroadGuideAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Pre_Rotate_Z@Matrix3D@@QAEXM@Z,,0x000B2564,252,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?In_Place_Pre_Rotate_X@Matrix3D@@QAEXM@Z,,0x000E9E27,204,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?In_Place_Pre_Rotate_Y@Matrix3D@@QAEXM@Z,,0x000E9EF3,202,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?In_Place_Pre_Rotate_Z@Matrix3D@@QAEXM@Z,,0x001E3717,202,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Translate@Matrix3D@@QAEXMMM@Z,,0x000D0BFD,150,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set@Matrix3D@@QAEXMMMMMMMMMMMM@Z,,0x001E3699,126,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0OBBoxClass@@QAE@ABVVector3@@0@Z,,0x000B29D3,121,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Matrix3D@@QAE@ABVVector3@@@Z,,0x0004563C,112,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Matrix3x3@@QAE@_N@Z,,0x0008E436,86,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
