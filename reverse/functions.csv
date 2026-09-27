@@ -37667,3 +37667,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva003200A2@Rva003200A2@@QAEXH@Z,,0x003200A2,26,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarList003200A2.cpp,matched,list at plus 0x170 push_back nonzero caller 0x3201A9
 ?rva002B5C5E@Rva002B5C5E@@QAEPAURva002B5C5EVal@@H@Z,,0x002B5C5E,53,Code/GameEngine/Source/Common/Rva002B5C5EMapFind.cpp,matched,Rb_tree map at plus130 linear id search via Mincrement
 ?rva002B5073@Rva002B5073@@QAE_NH@Z,,0x002B5073,74,Code/GameEngine/Source/Common/Rva002B5073Check.cpp,matched,Vector plusCC virtual slot18 mask overlap check
+?rva003023B8@PlayerPosition@@QAEXABVAsciiString@@@Z,,0x003023B8,114,Code/GameEngine/Source/GameClient/PlayerPositionRva003023B8.cpp,matched,PlayerPosition faction insert with Faction prefix via set
