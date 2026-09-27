@@ -465,3 +465,7 @@ UserParser *DataChunkInput::registerParser(const AsciiString &label,
 	*head = p;
 	return p;
 }
+
+UserParser::~UserParser()
+{
+}
