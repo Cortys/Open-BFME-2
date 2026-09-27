@@ -173,6 +173,7 @@ class DataChunkInput;
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/DataChunk.h
 struct DataChunkInfo
 {
+	~DataChunkInfo();
 	AsciiString label;
 	AsciiString parentLabel;
 	DataChunkVersionType version;
@@ -467,5 +468,9 @@ UserParser *DataChunkInput::registerParser(const AsciiString &label,
 }
 
 UserParser::~UserParser()
+{
+}
+
+DataChunkInfo::~DataChunkInfo()
 {
 }
