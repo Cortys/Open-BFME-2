@@ -37268,3 +37268,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?removeLastChar@?$StringBase@G@@QAEXXZ,0x000376E0,0x000376E0,241,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideRemoveLastChar.cpp,matched,wide twin of narrow 0x36C50 via unsigned capacity trim caller 0x37FE2
 ?Rva0035EEA7Parse@@YAXPAVINI@@PAVRva0035EEA7Holder@@@Z,,0x0035EEA7,81,Code/GameEngine/Source/Common/Rva0035EEA7Parse.cpp,matched,gap factory news 0x24 ctor 0x35EE66 empty table 0xC6BB18 setter 0x5F69CE
 ??_GPartTheHeavensUpdateModuleData@@UAEPAXI@Z,,0x004ACCB1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-3298.cpp,matched,slot 0 of vtable 0x00854E38 calls rowed dtor 0x004ACCCD plus rowed delete 0x0002FD60
+??4TreeHintRef00217D4C@@QAEAAU0@ABU0@@Z,,0x002174A4,43,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_hint_00218022.cpp,matched,refcounted handle assign via rowed release 0x7DEEF and 40 plus callers

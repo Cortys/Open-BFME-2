@@ -29,9 +29,27 @@ struct TreeHintRef00217D4C {
     TreeHintRef00217D4C(const TreeHintRef00217D4C &other) : m_ptr(other.m_ptr) {
         if (m_ptr) ++m_ptr->references;
     }
+    TreeHintRef00217D4C &operator=(const TreeHintRef00217D4C &other);
     __forceinline ~TreeHintRef00217D4C() {
         if (m_ptr) ReleaseTreeHintRef00217D4C(m_ptr);
     }
+};
+
+// ??4TreeHintRef00217D4C@@QAEAAU0@ABU0@@Z, retail 0x002174A4, 43 bytes.
+// Honest refcounted-handle assignment over the map mapped value: self-check,
+// AddRef the incoming referent at +4, Release the held referent through the
+// rowed fastcall 0x0007DEEF, then copy the pointer. 40+ callers; sole callee
+// rowed. Probed exact via build/probe before landing here.
+TreeHintRef00217D4C &TreeHintRef00217D4C::operator=(const TreeHintRef00217D4C &other)
+{
+    if (this != &other) {
+        if (other.m_ptr)
+            ++other.m_ptr->references;
+        if (m_ptr)
+            ReleaseTreeHintRef00217D4C(m_ptr);
+        m_ptr = other.m_ptr;
+    }
+    return *this;
 };
 
 typedef _STL::pair<const AsciiString, TreeHintRef00217D4C> TreeHintPair00217D4C;
