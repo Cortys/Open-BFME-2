@@ -107,3 +107,10 @@ BfmeOwnVVD::BfmeOwnVVD()
 
 	g_bfmeSingletonVVD = this;
 }
+
+// ??1BfmeOwnVVD@@QAE@XZ 0x0042E85C 79B: BFME1 donor BfmeConv1663.cpp; vtable 0x0083C938 base 0x007DBA74; caller 0x0042E9D3; singleton 0x00A03214
+BfmeOwnVVD::~BfmeOwnVVD()
+{
+	if (g_bfmeSingletonVVD == this)
+		g_bfmeSingletonVVD = 0;
+}
