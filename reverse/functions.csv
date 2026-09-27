@@ -38012,3 +38012,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??$_Destroy@PAURva0027EA49@@@_STL@@YAXPAURva0027EA49@@0@Z,,0x00281AD4,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0027EA49_destroy.cpp,matched,8B range destroy stride8 via rowed dtor
 ??1Rva00281A06@@QAE@XZ,,0x00281A06,15,Code/GameEngine/Source/GameClient/Rva00281A06Dtor.cpp,matched,holder dtor frees plus1C via rowed free
 ?getParameter@ScriptAction@@QAEPAVParameter@@H@Z,,0x00203553,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_getParameter.cpp,matched,donor ZH Scripts.h ScriptAction getParameter ctor 0x3B5413 path
+?rva002034E9@Rva002034E9Host@@QAE_NXZ,,0x002034E9,25,Code/GameEngine/Source/Common/Rva002034E9Host.cpp,matched,m114 neq 3 or rowed rva0023C6A4 caller passes TheGameLogic
