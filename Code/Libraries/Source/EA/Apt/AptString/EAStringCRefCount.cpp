@@ -95,6 +95,7 @@ public:
 	unsigned int GetInternalRefCount() const;
 	unsigned int rva006D3750() const;
 	void rva006D3BA0() const;
+	bool rva006D36F0(const EAStringC *other) const;
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -562,4 +563,20 @@ void EAStringC::rva006D3BA0() const
 {
 	StringDataC *data = m_pData;
 	data->m_uHash = hashLower((const char *)data + 8);
+}
+
+// ?rva006D36F0@EAStringC@@QBE_NPBV1@@Z, retail 0x006D36F0 (82B). EAStringC
+// case-insensitive equality with hash short-circuit: shared data is true
+// then rowed hash accessor 0x006D2F40 on both sides must match then
+// _strcmpi over the text (+8) plus ==0 bool tail. Callers at 0x0070AD14
+// /0x0070ADFF/0x0070AE64/0x0070AFFF/0x0070B0EF/0x0070B143; neighbours
+// compare 0x006D36C0 and Reserve 0x006D3760 share /O2 /DNDEBUG /MD.
+// Honest address name; PBV1 proves string-pointer overload.
+bool EAStringC::rva006D36F0(const EAStringC *other) const
+{
+	if (m_pData == other->m_pData)
+		return true;
+	if (rva006D2F40() != other->rva006D2F40())
+		return false;
+	return _strcmpi((const char *)m_pData + 8, (const char *)other->m_pData + 8) == 0;
 }
