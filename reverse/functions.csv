@@ -37438,3 +37438,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004D7ADD@TurretStateMachine@@QAE_NXZ,,0x004D7ADD,30,Code/GameEngine/Source/GameLogic/AI/TurretStateMachineRva004D7ADD.cpp,matched,goalID zero plus Turret getGoalObject plus dead bit0
 ?get@Rva002E6ECA@@QBEHXZ,,0x002E6ECA,46,Code/GameEngine/Source/Common/Rva002E6ECAGet.cpp,matched,honest Rva name 14 UNCLAIMED callers no callees Disp siblings /O1
 ??0Rva004D7B70@@QAE@PAVStateMachine@@VAsciiString@@@Z,,0x004D7B70,28,Code/GameEngine/Source/Common/StateDerivedCtorRva004D7B70.cpp,matched,State derived ctor AsciiString passthrough plus vtable 0x00860790
+?rva001EB0B1@Rva001EB0B1Holder@@QAEXXZ,,0x001EB0B1,8,Code/GameEngine/Source/Common/Rva001EB0B1Thunk.cpp,matched,tail-jmp thunk via return member clear; callers 0x23D131 0x3777A4; pin 0xAD6F4
