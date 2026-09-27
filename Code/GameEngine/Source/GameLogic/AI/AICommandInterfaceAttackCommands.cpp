@@ -86,6 +86,7 @@ public:
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
+	void rva0036EC1D(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
@@ -170,6 +171,17 @@ void AICommandInterface::rva003C7653(Object *target, CommandSourceType cmdSource
 void AICommandInterface::rva0036EBB8(Object *target, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x42, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// retail 0x0036EC1D, 101 bytes. Gap between rva0036EBB8 and aiFollowWaypointPath in this TU.
+// Same 101B object shape: AICMD 0x45 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x003705B7 via lea ecx,[esi+0x20] (AICommandInterface subobject).
+// Callers at 0x003705B7 and 0x004C89A9.
+void AICommandInterface::rva0036EC1D(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x45, cmdSource);
 	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
