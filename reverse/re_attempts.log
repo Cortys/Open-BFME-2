@@ -1964,3 +1964,4 @@ FUN_007957C6	0x003957C6	148	blocked	vslot slot3 CastleMemberBehavior xfer-like V
 ?Rva004BA219Construct@@YAXPAVRva004BA1D0@@PBV1@@Z	0x004BA219	45	partial	EH stores before test vs after; same 45B 14insns t=20 model=muse-6293 score=0.93 stash=reverse/attempts/0x004ba219.cpp
 ??1NetCommandWrapperList@@MAE@XZ	0x0058C0BB	53	blocked	deleteInstance inlines flag-1 virtual plus no separate delete vs retail flag-0 virtual plus global delete at 0x2FD60; protected dtor blocks delete spelling; probe p4-p5 show split needs explicit dtor plus delete t=20 model=muse-q4z8
 FUN_00256AA4	0x00256AA4	40	blocked	slot12 GateProxyBehavior float getter; memory reports 6-variant wall xorps-movss-fld vs flds-global t=5 model=muse-78c9
+?rva0046274C@SlaughterHordeContain@@UAEXPAUArg740046274C@@H0@Z	0x0046274C	57	partial	eax-vs-edx one-temp register only; 57B 0 structural t=25 model=muse-3117 score=0.95 stash=reverse/attempts/0x0046274c.cpp
