@@ -213,6 +213,7 @@ template class SubsystemSlot<UpgradeCenter>;
 template class SubsystemSlot<MultiplayerSettings>;
 template class SubsystemSlot<TerrainTypeCollection>;
 template class SubsystemSlot<TerrainRoadCollection>;
+template class SubsystemSlot<GlobalWeatherSystem>;
 template class SubsystemSlot<FunctionLexicon>;
 template class SubsystemSlot<ModuleFactory>;
 template class SubsystemSlot<MessageStream>;
