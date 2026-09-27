@@ -37099,3 +37099,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva00262ACE@AIUpdateInterface@@QAEXXZ,,0x00262ACE,28,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262ACE.cpp,matched,AIUpdateInterface 0x3B6 cluster setter via siblings
 ?rva00262AEA@AIUpdateInterface@@QAEXXZ,,0x00262AEA,15,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262AEA.cpp,matched,AIUpdateInterface 0x3B6 pair via sibling
 ?rva0026304D@AIUpdateInterface@@QAEXH@Z,,0x0026304D,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026304D.cpp,matched,AIUpdateInterface tail 0x21C 0x3BC sibling rva00262804 callers 369755 36FD10 3729DE
+?rva00263025@AIUpdateInterface@@QAEXXZ,,0x00263025,40,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00263025.cpp,matched,AIUpdateInterface tail max 0x21C flag 0x3BC sibling 26304D callers 346FEA 4D83E7
