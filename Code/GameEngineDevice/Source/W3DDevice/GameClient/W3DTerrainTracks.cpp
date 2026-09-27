@@ -148,26 +148,6 @@ RenderObjClass *	 TerrainTracksRenderObjClass::Clone(void) const
 }
 
 //=============================================================================
-// TerrainTracksRenderObjClass::freeTerrainTracksResources
-//=============================================================================
-/** Free any W3D resources associated with this object */
-//=============================================================================
-// ?freeTerrainTracksResources@TerrainTracksRenderObjClass@@QAEHXZ present-unmatched
-Int TerrainTracksRenderObjClass::freeTerrainTracksResources(void)
-{
-	REF_PTR_RELEASE(m_stageZeroTexture);
-	m_haveAnchor=false;
-	m_haveCap=true;
-	m_topIndex=0;
-	m_bottomIndex=0;
-	m_activeEdgeCount=0;
-	m_totalEdgesAdded=0;
-	m_ownerDrawable = NULL;
-
-	return 0;
-}
-
-//=============================================================================
 // TerrainTracksRenderObjClass::init
 //=============================================================================
 /** Setup size settings and allocate W3D texture */
