@@ -38125,3 +38125,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0026EEA0@UpgradeCenter@@QBEPBVUpgradeTemplate@@H@Z,,0x0026EEA0,24,Code/GameEngine/Source/Common/System/UpgradeCenterFindUpgradeByKey.cpp,matched,UpgradeCenter list walk mask index at +0x38 next at +0x64 callers use TheUpgradeCenter 0x009FEB60 adjacent to findUpgradeByKey
 ??4Rva0033F16E@@QAEAAV0@ABV0@@Z,,0x0033F16E,151,Code/GameEngine/Source/Common/Rva0033F16ECopy.cpp,matched,assign copy 0x04 to 0x64 with 12B blocks caller 0x3427EC
 ?rva0033FC9D@Rva0033FC42@@QAEHXZ,,0x0033FC9D,43,Code/GameEngine/Source/Common/Rva0033FC42Dtor.cpp,matched,slot6 vtable 0x811DB0 guard 0x38 method10
+?Rva0033FA79Do@@YAXPBVObject0033FA79@@@Z,,0x0033FA79,21,Code/GameEngine/Source/Common/Rva0033FA79Do.cpp,matched,Object 0x258 AIUpdate slot142 with 0 twin FA64
