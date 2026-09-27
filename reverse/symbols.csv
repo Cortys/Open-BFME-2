@@ -6123,3 +6123,6 @@ _ConvertBoolTrees,0x001BBD60
 ??$uninitialized_fill_n@PAUCoord3D@@IU1@@_STL@@YAPAUCoord3D@@PAU1@IABU1@@Z,0x004E1ABA,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?_M_insert_overflow@?$vector@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@IAEXPAUCoord3D@@ABU3@ABU__false_type@2@I_N@Z,0x002A1C02,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?adjustStacking@W3DRoadBuffer@@IAEXHH@Z,0x000D4941,insertCrossTypeJoins at 0xDB0EE directly calls this with the road type IDs; target body scans RoadType records and updates their stacking values at this Ghidra boundary
+??1?$_List_base@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAE@XZ,0x005BD090,read from the REL32 at 0x005E09DF in ~DownloadManager built at /O1 where the list dtor inlines to its base; same address as the list<QueuedDownload> dtor pin
+??1QueuedDownload@@QAE@XZ,0x005BC5F9,address read from the REL32 displacement at a placed body
+?push_back@?$list@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAEXABVQueuedDownload@@@Z,0x005BD060,address read from the REL32 displacement at a placed body
