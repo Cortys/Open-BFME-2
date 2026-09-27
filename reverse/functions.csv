@@ -37862,3 +37862,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006DCA60@BfmeAptValue006DCD20@@QBE_NXZ,,0x006DCA60,32,Code/Libraries/Source/Apt/AptValue/AptValueSwitchPredicateBFME2.cpp,matched,same this as isUndefined via caller 0x00706A94 signed type switch tables match
 ??1Rva00507823@@UAE@XZ,,0x00507823,84,Code/GameEngine/Source/Common/Rva00507823Dtor.cpp,matched,vtable 00864010 same as ctor 0050775B deleting 00507807 calls here derived 0050B6ED jmps here
 ??_GRva00507823@@UAEPAXI@Z,,0x00507807,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-p7k-0128.cpp,matched,slot 0 of vtable 00864010 calls rowed 00507823 then delete 002FD60
+??0Rva001FA584@@QAE@XZ,,0x001FA584,19,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,honest Rva ctor zeroes 4 constructs OCL at 8
