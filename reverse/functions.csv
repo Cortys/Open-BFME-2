@@ -37212,3 +37212,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva004FAC6B@@QAE@XZ,,0x004FAC6B,21,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004FAC6BCtor.cpp,matched,calls rowed Rva00330757Member ctor at plus4 installs vtable 0x008633C0 called by derived ctor
 ?get@Rva0004CABDSevenEight@@QBEHXZ,,0x0004CABD,16,Code/GameEngine/Source/Common/Rva0004CABDBoolGetter.cpp,matched,seven-or-eight int getter sharing next one-getter tail
 ??0Rva005D7531@@QAE@XZ,,0x005D751F,18,Code/GameEngine/Source/Common/Rva005D7D88Derived.cpp,matched,ctor calls base 005D7D76 precedes dtor 005D7531
+?Rva0004CCCDCopyRange@@YAPAVRvaSmartPtr12@@PAV1@00@Z,,0x0004CCCD,50,Code/GameEngine/Source/Common/System/SmartPtrCopyRange.cpp,matched,copy range via rowed assignment with stride12 idiv
