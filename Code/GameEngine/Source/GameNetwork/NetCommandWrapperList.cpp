@@ -166,17 +166,26 @@ UnsignedByte * NetCommandWrapperListNode::getRawData() {
 ////// NetCommandWrapperList ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Retail frees nodes through the slot0 virtual with flags=0 plus the global
+// operator delete, not the inlined flag-1 `delete this` that deleteInstance()
+// lowers to. Model slot0 as a virtual taking int and returning the instance
+// pointer (cf. NetCommandMsg::detach precedent); the explicit ternary keeps
+// retail's null-check shape under /O1.
+struct NetWrapperListNodeDeleterSlot {
+	virtual void *slot0(int flags);
+};
+
 // ??0NetCommandWrapperList@@QAE@XZ present-unmatched
 NetCommandWrapperList::NetCommandWrapperList() {
 	m_list = NULL;
 }
 
-// ??1NetCommandWrapperList@@MAE@XZ present-unmatched
 NetCommandWrapperList::~NetCommandWrapperList() {
 	NetCommandWrapperListNode *temp;
 	while (m_list != NULL) {
 		temp = m_list->m_next;
-		m_list->deleteInstance();
+		void *p = m_list ? ((NetWrapperListNodeDeleterSlot *)m_list)->slot0(0) : 0;
+		::operator delete(p);
 		m_list = temp;
 	}
 }
@@ -186,12 +195,12 @@ void NetCommandWrapperList::init() {
 	m_list = NULL;
 }
 
-// ?reset@NetCommandWrapperList@@QAEXXZ present-unmatched
 void NetCommandWrapperList::reset() {
 	NetCommandWrapperListNode *temp;
 	while (m_list != NULL) {
 		temp = m_list->m_next;
-		m_list->deleteInstance();
+		void *p = m_list ? ((NetWrapperListNodeDeleterSlot *)m_list)->slot0(0) : 0;
+		::operator delete(p);
 		m_list = temp;
 	}
 }
