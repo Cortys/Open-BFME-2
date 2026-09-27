@@ -87,6 +87,7 @@ class Rva005F2577Holder
 {
 public:
 	void rva005F2577();
+	void rva005F2773(Rva005F2577Inner *p);
 private:
 	Rva005F2577Inner *m_ptr;
 };
@@ -99,4 +100,19 @@ void Rva005F2577Holder::rva005F2577()
 	if (--p->m_ref == 0)
 		p->virt0();
 	m_ptr = 0;
+}
+
+// ?rva005F2773@Rva005F2577Holder@@QAEXPAURva005F2577Inner@@@Z, retail 0x005F2773, 31 bytes.
+// Smart-ptr assign via rowed release 0x005F2577. If new != m_ptr, release old,
+// store new, inc ref on non-null. Callees all rowed. Caller 0x005F37DC.
+// Honest address name.
+
+void Rva005F2577Holder::rva005F2773(Rva005F2577Inner *p)
+{
+	if (p != m_ptr) {
+		rva005F2577();
+		m_ptr = p;
+		if (p)
+			++p->m_ref;
+	}
 }
