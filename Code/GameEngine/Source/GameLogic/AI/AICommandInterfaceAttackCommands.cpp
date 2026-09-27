@@ -34,6 +34,7 @@ enum AICommandType
 	AICMD_ATTACK_POSITION = 0x0E,
 	AICMD_FACE_OBJECT = 0x26,
 	AICMD_FACE_POSITION = 0x27,
+	AICMD_WANDER_IN_PLACE = 0x2C,
 	AICMD_BFME_3D = 0x3D
 };
 
@@ -73,6 +74,7 @@ public:
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiFacePosition(const Coord3D *pos, Int cmdSource);
 	void aiFaceObject(Object *target, CommandSourceType cmdSource);
+	void aiWanderInPlace(CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 };
 
@@ -122,6 +124,17 @@ void AICommandInterface::aiFaceObject(Object *target, CommandSourceType cmdSourc
 {
 	AICommandParms parms(AICMD_FACE_OBJECT, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?aiWanderInPlace@AICommandInterface@@QAEXW4CommandSourceType@@@Z, retail 0x003C7853, 92 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceStandingOrders.cpp
+// aiWanderInPlace at AICMD 0x2C with no field store plus slot-0 aiDoCommand.
+// BFME2 same id 0x2C plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Caller at 0x003C8BB3 passes source 1 through AIUpdateInterface+0x20.
+void AICommandInterface::aiWanderInPlace(CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_WANDER_IN_PLACE, cmdSource);
 	aiDoCommand(&parms);
 }
 
