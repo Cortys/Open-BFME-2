@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/reference/shims/objectdlink /Ireference/open-bfme-1/Code/GameEngine/Source/Common
+// cl: /O1 /G7 /arch:SSE /Ireference/shims/bfmecamera /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/reference/shims/objectdlink /Ireference/open-bfme-1/Code/GameEngine/Source/Common
 // stlport
 #include <vector>
 #include "ObjectDlinkPmf.h"
