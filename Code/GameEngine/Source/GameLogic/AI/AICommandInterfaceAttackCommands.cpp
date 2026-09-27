@@ -39,6 +39,7 @@ enum AICommandType
 	AICMD_ATTACK_TEAM = 0x0D,
 	AICMD_ATTACK_POSITION = 0x0E,
 	AICMD_HUNT = 0x12,
+	AICMD_EXIT = 0x1A,
 	AICMD_EVACUATE = 0x1B,
 	AICMD_ATTACK_AREA = 0x23,
 	AICMD_FACE_OBJECT = 0x26,
@@ -95,6 +96,7 @@ public:
 	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
 	void rva0036EC1D(Object *target, CommandSourceType cmdSource);
 	void rva0036EFF5(Object *target, CommandSourceType cmdSource);
+	void aiExit(Object *objectToExit, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiFollowWaypointPathExact(const Waypoint *waypoint, CommandSourceType cmdSource);
@@ -216,6 +218,19 @@ void AICommandInterface::rva0036EFF5(Object *target, CommandSourceType cmdSource
 {
 	AICommandParms parms((AICommandType)0x39, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?aiExit@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0036F39B, 101 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceObjectCommands.cpp
+// aiExit at AICMD 0x1A plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// BFME2 same id 0x1A plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Class proven by caller at 0x003702A8 via lea ecx,[eax+0x20] (AICommandInterface subobject).
+// Callers at 0x003702A8 0x00373C54 0x003787A9 0x003C8E72 0x003C90D5 plus 9 more.
+void AICommandInterface::aiExit(Object *objectToExit, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_EXIT, cmdSource);
+	parms.m_obj = objectToExit;
 	aiDoCommand(&parms);
 }
 
