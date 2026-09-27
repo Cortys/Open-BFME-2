@@ -2251,3 +2251,4 @@ FUN_005ead69	0x001EAD69	107	blocked	EH INI token push_front with 0 callers ident
 ??0FrameDataManager@@QAE@_N@Z	0x0058B567	113	partial	push edi scheduling plus eax edi swap for FRAME_DATA_LENGTH load t=20 model=muse-58be score=0.96 stash=reverse/attempts/0x0058b567.cpp
 ?bfmeUpdateVRC@BfmeShroudVRC@@QAEDHHH@Z	0x0073A650	115	blocked	list-insertion loop regalloc wall upfront-vs-lazy pushes t=25 model=muse-x7q-ee21
 FUN_006d9bc1	0x002D9BC1	27	blocked	AsciiString getter with contested StringBase pin 0x365F0 and EBP frame t=12 model=muse-631f
+FUN_00693486	0x00293486	34	blocked	STL create_node 34B calls dup_002927CB vs pin at dup_0029FB9C for same TreeKey Construct; needs dupe-pin investigation t=15 model=muse-b7d0
