@@ -15,7 +15,8 @@ typedef unsigned int size_t;
 
 class AsciiString
 {
-	unsigned int m_handle;
+	unsigned int m_first;
+	unsigned int m_second;
 };
 
 enum BuildableStatus
