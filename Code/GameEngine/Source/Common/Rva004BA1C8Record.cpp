@@ -71,3 +71,16 @@ void Rva004BA3CC::clear()
 	if (m_first)
 		free(m_first);
 }
+
+Rva004BA1C8 *Rva004BA2E9Copy(Rva004BA1C8 *first, Rva004BA1C8 *last, Rva004BA1C8 *out)
+{
+	int n = last - first;
+	if (n <= 0)
+		return out;
+	for (int i = n; i != 0; --i) {
+		*out = *first;
+		++first;
+		++out;
+	}
+	return out;
+}
