@@ -38197,3 +38197,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0?$Rva001705A0DlinkIterator@VObject@@@@QAE@PAVObject@@P81@BEPAV1@XZ@Z,,0x0026350D,25,Code/GameEngine/Source/Common/Rva001705A0LazyObject.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?advance@T4Host0060C2E0@@QAEXXZ,,0x003F93AD,29,Code/GameEngine/Source/Common/T4LeafPredicatesAndMath.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?t4IsZero005F4180@@YAHPBM@Z,,0x0055D3D9,28,Code/GameEngine/Source/Common/T4LeafPredicatesAndMath.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Matrix3D@@QAE@_N@Z,,0x0004C91A,101,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/JetAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
