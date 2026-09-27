@@ -37114,3 +37114,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0028AFBB@Object@@QBE_NXZ,,0x0028AFBB,23,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AFBBGetter.cpp,matched,Wraps rowed getControllingPlayer tests Player+0x5C zero 40 callers
 ?rva0026316B@AIUpdateInterface@@MAEXPAXH@Z,,0x0026316B,59,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026316B.cpp,matched,vslot86 turret goal store 0x48 setState 0x46
 ?rva002631A6@AIUpdateInterface@@MAEXMH@Z,,0x002631A6,103,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002631A6.cpp,matched,vslot87 float check clear goal store 0x48 setState 0x48
+?rva006D3C20@EAStringC@@QAEXXZ,,0x006D3C20,61,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC release-to-null plus IsValid assert plus FreeData
+?rva006D3C60@EAStringC@@QAEXXZ,,0x006D3C60,57,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC null-expecting re-root plus IsValid assert plus empty

@@ -82,6 +82,8 @@ public:
 	void rva006D3470();
 	bool rva006D3490(const char *text) const;
 	unsigned short rva006D2F40() const;
+	void rva006D3C20();
+	void rva006D3C60();
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -362,4 +364,38 @@ bool EAStringC::rva006D3490(const char *text) const
 	}
 	const char *a = (const char *)m_pData + 8;
 	return strcmp(a, text) == 0;
+}
+
+// ?rva006D3C20@EAStringC@@QAEXXZ, retail 0x006D3C20 (61B). EAStringC
+// release-to-null: asserts IsValid() when null (EAString.inl 0x517) via the
+// shared Apt triple, then frees through rowed FreeData and nulls m_pData.
+// Callers at 0x0070A883/0x0070A978/0x0070AA18; neighbours SetSize and
+// utf8EncodedLength share /O2 /DNDEBUG /MD. Honest address name.
+void EAStringC::rva006D3C20()
+{
+	if (m_pData == 0) {
+		g_bfmeAptAssertAtE17734("IsValid()", ".\\string\\EAString.inl", 0x517);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) {
+			__asm int 3
+		}
+	}
+	FreeData(m_pData);
+	m_pData = 0;
+}
+
+// ?rva006D3C60@EAStringC@@QAEXXZ, retail 0x006D3C60 (57B). EAStringC
+// null-expecting re-root to empty: asserts IsValid()==false when non-null
+// (EAString.inl 0x52E), then installs the immortal singleton with its own
+// reference. Callers at 0x006CF2CB/0x0070B69D; same flags and TU.
+// Honest address name.
+void EAStringC::rva006D3C60()
+{
+	if (m_pData != 0) {
+		g_bfmeAptAssertAtE17734("IsValid() == false", ".\\string\\EAString.inl", 0x52E);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) {
+			__asm int 3
+		}
+	}
+	m_pData = &g_eaEmptyStringData;
+	++g_eaEmptyStringData.m_uRefCount;
 }
