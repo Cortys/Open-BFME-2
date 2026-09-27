@@ -14,3 +14,7 @@ template _STL::vector<Rva004DA181Element>::~vector();
 // ??1?$vector@URva00520211Element@@V?$allocator@URva00520211Element@@@_STL@@@_STL@@QAE@XZ @0x52012b
 struct Rva00520211Element { public: ~Rva00520211Element(); };
 template _STL::vector<Rva00520211Element>::~vector();
+
+// ??1?$vector@UBfmeAssignRecord32@@V?$allocator@UBfmeAssignRecord32@@@_STL@@@_STL@@QAE@XZ @0x173eba
+struct BfmeAssignRecord32 { public: ~BfmeAssignRecord32(); };
+template _STL::vector<BfmeAssignRecord32>::~vector();
