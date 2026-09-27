@@ -38,6 +38,7 @@ enum AICommandType
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
 	AICMD_ATTACK_TEAM = 0x0D,
 	AICMD_ATTACK_POSITION = 0x0E,
+	AICMD_HUNT = 0x12,
 	AICMD_EVACUATE = 0x1B,
 	AICMD_ATTACK_AREA = 0x23,
 	AICMD_FACE_OBJECT = 0x26,
@@ -83,6 +84,7 @@ public:
 	virtual void aiDoCommand(const AICommandParms *parms) = 0;
 
 	void aiIdle(CommandSourceType cmdSource);
+	void aiHunt(CommandSourceType cmdSource);
 	void aiEvacuate(bool exposeStealthUnits, CommandSourceType cmdSource);
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
@@ -106,6 +108,17 @@ public:
 void AICommandInterface::aiIdle(CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_IDLE, cmdSource);
+	aiDoCommand(&parms);
+}
+
+// ?aiHunt@AICommandInterface@@QAEXW4CommandSourceType@@@Z, retail 0x002AE657, 92 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceMovementOrders.cpp
+// aiHunt at AICMD 0x12 with no field store plus slot-0 aiDoCommand.
+// BFME2 same id 0x12 plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x002AEA5C 0x00353968 0x003700AF 0x003C8AB7 plus 4 more.
+void AICommandInterface::aiHunt(CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_HUNT, cmdSource);
 	aiDoCommand(&parms);
 }
 
