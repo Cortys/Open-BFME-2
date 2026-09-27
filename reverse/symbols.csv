@@ -5695,3 +5695,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?get_allocator@?$deque@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QBE?AV?$allocator@UBfmeE12@@@2@XZ,0x0021983A,ICF twin of vector AsciiString get_allocator 7B body at same address; call site in BfmeE12 deque copy ctor 0x0058508F; precedent WordValue4 deque get_allocator pinned here
 ??1CrateCollideModuleData@@UAE@XZ,0x00255A42,ICF twin of UpgradeModuleData dtor at same address; Salvage dtor 0x2563EF calls it as Crate base; both destroy string at +0x4C and restore BBB554
 ?xfer@CollideModule@@QAEXPAVXfer@@@Z,0x004CE56D,slot3 of CollideModule vtable 0x0085A130 via rowed ctor plus ZH donor identical body plus base call from CrateCollide 0x004BC617
+?xfer@Locomotor@@MAEXPAVXfer@@@Z,0x00341E2D,ICF twin of Rva00341E22 xfer 27B at same address plus Rva000647D4 base call at 0x000647F8
