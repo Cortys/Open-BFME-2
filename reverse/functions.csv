@@ -37725,3 +37725,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getObjectCount@GameLogic@@QAEIXZ,,0x0023CFCE,22,Code/GameEngine/Source/GameLogic/System/GameLogicGetObjectCount.cpp,matched,Object list count via +0xAC head and +0x8C next BFME1 donor
 ?rva0023CFE4@GameLogic@@QAEXPAVXfer@@@Z,,0x0023CFE4,24,Code/GameEngine/Source/GameLogic/System/GameLogicRva0023CFE4.cpp,matched,GameLogic Version1 plus tail to +0x184 xfer via TheGameLogic caller
 ?Rva0023C85EDisable@@YAXXZ,,0x0023C85E,29,Code/GameEngine/Source/Common/Rva0023C85EDisable.cpp,matched,Main window close disable via 0xDDE024 and user32 imports
+?isTooClose@Weapon@@QBE_NPBVObject@@PBUCoord3D@@@Z,,0x002C9B3D,67,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon isTooClose coord overload minRange zero check shrunken distance via rva002C97E8
