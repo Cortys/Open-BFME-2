@@ -12,13 +12,16 @@
 // at 0x009FE344. Landing unblocks 24 functions (14 fully ready). No donor;
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
+class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static AsciiString TheEmptyString; };
 struct Elem216 {
-    char m_00[0x10];
+    char m_00[0x0C];
+    AsciiString m_0C;
     int m_10;
     int m_14;
     int m_18;
     int m_1C;
-    char m_20[0x64 - 0x20];
+    AsciiString m_20;
+    char m_24[0x64 - 0x24];
     int m_64;
     char m_68[0xD8 - 0x68];
 };
@@ -39,6 +42,8 @@ public:
     int rva00219D0D(unsigned int index);
     int rva00219D24(unsigned int index);
     int rva00219C93(unsigned int index);
+    void *rva00219CAB(unsigned int index);
+    void *rva00219CC5(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -92,4 +97,22 @@ int Rva00219B9E::rva00219C93(unsigned int index)
     if (!p)
         return -1;
     return ((Elem216 *)p)->m_64;
+}
+// ?rva00219CAB@Rva00219B9E@@QAEPAXI@Z @0x00219CAB 26B: returns element+0x0C or empty.
+// Chain of 0x00219B9E; caller 0x0021B22E needs it. Fallback is TheEmptyString.
+void *Rva00219B9E::rva00219CAB(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return &((Elem216 *)p)->m_0C;
+    return &AsciiString::TheEmptyString;
+}
+// ?rva00219CC5@Rva00219B9E@@QAEPAXI@Z @0x00219CC5 26B: returns element+0x20 or empty.
+// Chain of 0x00219B9E; caller 0x0021A15D needs it. Fallback is TheEmptyString.
+void *Rva00219B9E::rva00219CC5(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return &((Elem216 *)p)->m_20;
+    return &AsciiString::TheEmptyString;
 }
