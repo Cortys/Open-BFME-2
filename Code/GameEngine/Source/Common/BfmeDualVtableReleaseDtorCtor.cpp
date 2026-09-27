@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // BfmeDualVtableReleaseDtor::BfmeDualVtableReleaseDtor(int), retail
-// 0x0020429D (88 bytes). The FX particle-editor loader built in
+// 0x0020429D (120 bytes). The FX particle-editor loader built in
 // ScriptEngine::init: base-constructs the rowed DllHandle with
 // "FXParticleEditorI.dll", installs the loader vtable 0x00BE3994, then
 // resolves GetFXParticleEditor via GetProcAddress, builds the release

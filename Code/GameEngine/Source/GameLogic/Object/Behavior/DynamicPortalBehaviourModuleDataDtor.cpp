@@ -1,7 +1,7 @@
 // cl: /O1 /arch:SSE /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??1DynamicPortalBehaviourModuleData@@UAE@XZ, retail 0x00461602 (120 bytes).
-// ??_GDynamicPortalBehaviourModuleData@@UAEPAXI@Z, retail 0x004615E6 (26 bytes).
+// ??_GDynamicPortalBehaviourModuleData@@UAEPAXI@Z, retail 0x004615E6 (28 bytes).
 // Destruction shard for the DynamicPortal wall-portal data (ctor lives in
 // DynamicPortalBehaviourModuleDataCtor.cpp, which keeps its own decls; this
 // shard declares the destruction view with stlport-free member views so the

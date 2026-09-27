@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??0DefaultProductionExitUpdate@@QAE@PAVThing@@PBVModuleData@@@Z retail
-// 0x00487FC7 117 bytes. Behavior-side ctor completing the
+// 0x00487FC7 120 bytes. Behavior-side ctor completing the
 // DefaultProductionExitUpdate file-unit (behavior instance factory rowed
 // at 0x24CC84 news 0x34 with this 2-arg ctor as its sole caller; poolkey
 // rowed at 0x487F82; rally-point methods rowed at 0x487F60 and 0x487F75).

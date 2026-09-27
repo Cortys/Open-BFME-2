@@ -1,6 +1,6 @@
 // cl: /O1 /MD /GX /DNDEBUG
 //
-// ??0ArmorUpgradeModuleData@@QAE@XZ, retail 0x00254556, 26 bytes.
+// ??0ArmorUpgradeModuleData@@QAE@XZ, retail 0x00254556, 42 bytes.
 // Frameless store-only ctor over the rowed OpenContainModuleData base
 // (0x253487): folded vtable 0x00BF2558 (shared with RadarUpgrade, Defector
 // precedent for ICF-folded vtables), KillArmorUpgrade false at +0x118,

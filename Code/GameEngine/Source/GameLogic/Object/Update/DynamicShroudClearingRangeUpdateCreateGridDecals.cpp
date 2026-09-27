@@ -2,7 +2,7 @@
 // stlport
 //
 // ?createGridDecals@DynamicShroudClearingRangeUpdate@@QAEXABVRadiusDecalTemplate@@MABUCoord3D@@@Z retail 0x0048B20E
-// 70 bytes. Behavior-side grid-decal builder completing the
+// 72 bytes. Behavior-side grid-decal builder completing the
 // DynamicShroudClearingRangeUpdate file-unit (all behavior sides rowed).
 //
 // Transcribed from the Zero Hour donor

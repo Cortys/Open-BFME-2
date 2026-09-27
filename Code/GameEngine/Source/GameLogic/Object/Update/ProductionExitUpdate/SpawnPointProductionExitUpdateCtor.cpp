@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??0SpawnPointProductionExitUpdate@@QAE@PAVThing@@PBVModuleData@@@Z,
-// retail 0x004A3C1B, 177 bytes. Behavior-side ctor completing the
+// retail 0x004A3C1B, 179 bytes. Behavior-side ctor completing the
 // SpawnPointProductionExitUpdate file-unit (behavior instance factory
 // rowed at 0x24ECEC news 0xF4 with this pinned 2-arg ctor as its sole
 // caller; poolkey rowed at 0x4A3BD6; bone methods rowed at 0x4A3CEA,

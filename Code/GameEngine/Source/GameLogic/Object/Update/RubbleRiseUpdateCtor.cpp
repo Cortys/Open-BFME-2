@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??0RubbleRiseUpdate@@QAE@PAVThing@@PBVModuleData@@@Z retail 0x004A4CC7
-// 139 bytes. Behavior-side ctor completing the RubbleRiseUpdate file-unit
+// 141 bytes. Behavior-side ctor completing the RubbleRiseUpdate file-unit
 // (behavior instance factory rowed at 0x24EDCF news 0x48 with this 2-arg
 // ctor as its sole caller; poolkey rowed at 0x4A4C82; ModuleData proc
 // 0x4A5486 plus ModuleData factory 0x2566F6 plus ModuleData ctor 0x256653

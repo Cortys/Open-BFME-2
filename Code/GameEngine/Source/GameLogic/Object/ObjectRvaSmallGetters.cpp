@@ -1,6 +1,6 @@
 // cl: /O1
 //
-// Three small Object readers (retail 0x0028AD6C/16 + 0x0028ADE0/11 +
+// Three small Object readers (retail 0x0028AD6C/16 + 0x0028ADE0/12 +
 // 0x0028ADF7/28). /O1 selects the retail size idioms throughout: jne plus
 // inc-from-known-zero for the null-or-one reader, xor-first cmp-mem-reg for
 // the flag test, and hoisted xor plus inc for the bit-test's 1<<slot.
