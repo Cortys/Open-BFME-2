@@ -38930,3 +38930,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002E6F8B@Rva002E6F8B@@QAEPAV1@XZ,,0x002E6F8B,7,Code/GameEngine/Source/Common/Rva002E6F8BClear.cpp,matched,honest Rva clearer 1 caller flags O1 returns this
 ?get@Rva002E6AF3@@QBEHXZ,,0x002E6AF3,19,Code/GameEngine/Source/Common/Rva002E6AF3Get.cpp,matched,honest Rva getter 22 callers flags O1 ptr chase shr3
 ??1BfmeAssignRecord32@@QAE@XZ,,0x0017330A,71,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_dtor.cpp,matched,BfmeAssignRecord32 EH dtor via 0x173499 layout plus Destroy 0x173AE0 and deleting 0x173500
+??$_Destroy@PAUBfmeAssignRecord32@@@_STL@@YAXPAUBfmeAssignRecord32@@0@Z,,0x00173AE0,25,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_destroy.cpp,matched,BfmeAssignRecord32 range Destroy via rowed dtor 0x17330A stride 0x20
+??_GBfmeAssignRecord32@@QAEPAXI@Z,,0x00173500,28,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_destroy.cpp,matched,BfmeAssignRecord32 deleting dtor via rowed dtor plus delete 0x2FD60
