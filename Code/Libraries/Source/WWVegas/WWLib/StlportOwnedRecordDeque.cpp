@@ -30,14 +30,21 @@ struct BfmeOpaqueOwnedRecord840 {
 
 // A separate deque node at RVA 0x0055315a advances by 0x580 bytes.
 // Its owning type and member meanings are not yet known.
-struct BfmeOpaqueOwnedRecord1408 {
+// Its destructor is implicit: the target's out-of-line copy at 0x00555ADF
+// is `add ecx, 8; jmp 0x00385371`, so the only nontrivial member sits at +8.
+struct BfmeOpaqueOwnedRecord1408Member {
 	union {
 		unsigned int alignmentWitness;
-		unsigned char bytes[1408];
+		unsigned char bytes[1400];
 	};
+	~BfmeOpaqueOwnedRecord1408Member();
+};
+
+struct BfmeOpaqueOwnedRecord1408 {
+	unsigned int head[2];
+	BfmeOpaqueOwnedRecord1408Member member;
 	BfmeOpaqueOwnedRecord1408();
 	BfmeOpaqueOwnedRecord1408(const BfmeOpaqueOwnedRecord1408 &);
-	~BfmeOpaqueOwnedRecord1408();
 };
 
 // A sibling deque at RVA 0x005530d7 advances its node pointer by 0x598.
