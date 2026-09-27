@@ -18,6 +18,7 @@ class Rva00432F23
 {
 public:
     void remove(Rva00432F23Node *node);
+    void rva00432F7D(Rva00432F23Node *node);
 
 private:
     char m_pad[0xC];
@@ -45,4 +46,17 @@ void Rva00432F23::remove(Rva00432F23Node *node)
     node->m_next = 0;
     node->m_prev = 0;
     --m_count;
+}
+
+void Rva00432F23::rva00432F7D(Rva00432F23Node *node)
+{
+    if (m_head1)
+        m_head1->m_prev = node;
+    Rva00432F23Node *head = m_head1;
+    node->m_prev = 0;
+    node->m_next = head;
+    m_head1 = node;
+    if (!m_tail1)
+        m_tail1 = node;
+    ++m_count;
 }
