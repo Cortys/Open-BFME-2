@@ -38221,3 +38221,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Open2Rec4F1120@@QAE@ABV0@@Z,,0x001EF485,137,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Open2Rec3A4420@@QAE@ABV0@@Z,,0x0059F1B8,83,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Open2Rec74A060@@QAE@ABV0@@Z,,0x000AEBFF,79,Code/GameEngine/Source/Common/Open2Records.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??4Rva0031763A@@QAEAAV0@ABV0@@Z,,0x00317779,115,Code/GameEngine/Source/GameClient/GUI/Rva0031763ACtorDtorAssign.cpp,matched,
