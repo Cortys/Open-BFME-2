@@ -37730,3 +37730,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva0033FF2B@@UAE@XZ,,0x0033FF2B,75,Code/GameEngine/Source/Common/Rva0033FF2BDtor.cpp,matched,vtable 0x00810DE8 TheAudio 0x009FE6E8 slot 0x6c base 0x49B47C pin callers 0x340BDC 0x340D1F 0x34280A 0x345CAB 0x345F21
 ??1Rva00345F21@@UAE@XZ,,0x00345F21,79,Code/GameEngine/Source/Common/Rva00345F21Dtor.cpp,matched,vtable 0x00813638 vf0free plus68 base 0x33FF2B caller 0x34A186
 ?rva0039D73A@TeamPrototype@@QAEXXZ,,0x0039D73A,13,Code/GameEngine/Source/Common/RTS/TeamPrototypeRva0039D73A.cpp,matched,caller 0x3BFC5D proves TeamPrototype plus priority log
+?rva0039D747@TeamPrototype@@QAEXH@Z,,0x0039D747,13,Code/GameEngine/Source/Common/RTS/TeamPrototypeRva0039D73A.cpp,matched,caller 0x3BFBC5 proves TeamPrototype plus priority log

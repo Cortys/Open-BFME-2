@@ -11,6 +11,7 @@ class TeamPrototype
 {
 public:
 	void rva0039D73A();
+	void rva0039D747(int delta);
 
 private:
 	char m_pad00[0x21C];
@@ -22,4 +23,9 @@ private:
 void TeamPrototype::rva0039D73A()
 {
 	m_priority21C -= m_delta224;
+}
+
+void TeamPrototype::rva0039D747(int delta)
+{
+	m_priority21C += delta;
 }
