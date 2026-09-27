@@ -37657,3 +37657,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?findMap@MapCache@@QAEPBVMapMetaData@@VAsciiString@@@Z,,0x003024BC,76,Code/GameEngine/Source/GameClient/MapCacheFindMap.cpp,matched,MapCache findMap via BFME1 donor plus global 0x9FF12C callers plus inline twin
 ?GadgetTextEntryGetText@@YA?AVUnicodeString@@PAVGameWindow@@@Z,,0x00320AAB,145,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetTextEntryGetText.cpp,matched,BFME1 GadgetTextEntry donor null ENTRY_FIELD check winSendSystemMsg 0x402F
 ??0PlayerPosition@@QAE@XZ,,0x00302805,30,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,PlayerPosition default ctor three ones minus-one plus set
+?Rva0032060D@@YAXPAVGameWindow@@H@Z,,0x0032060D,25,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetUserDataOr0032060D.cpp,matched,OR mask into userData plus 0xC null guards
