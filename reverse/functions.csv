@@ -37560,3 +37560,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva004E16D9Record@@QAE@XZ,,0x004E1682,87,Code/GameEngine/Source/GameLogic/LivingWorld/Rva004E16D9RecordDtor.cpp,matched,ParseForceBattle 0x004E16D9 stack record dtor; vptr 0x00C61A70 plus four strings
 ??1Rva0090034@@UAE@XZ,,0x00090034,33,Code/Libraries/Source/WWVegas/WWLib/Rva00090034SimpleVecDtors.cpp,matched,SimpleVec-shaped dtor vtable 0x00BC7DF4; element type unrecovered
 ??1Rva0090088@@UAE@XZ,,0x00090088,35,Code/Libraries/Source/WWVegas/WWLib/Rva00090034SimpleVecDtors.cpp,matched,SimpleDynVec-shaped dtor vtable 0x00BC7E00; tail jmp 0x00090034
+?rva003174CB@GameWindowManager@@QAEPAVGameWindow@@PAV2@H@Z,,0x003174CB,262,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_rva003174CB.cpp,matched,sole caller 0x00411755 via window-manager global; style-bit gadget name then getDataTemplate/memcpy/createGadget

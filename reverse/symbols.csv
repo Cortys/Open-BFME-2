@@ -5749,3 +5749,5 @@ _ConvertBoolTrees,0x001BBD60
 ?dateIsYearLeap@AptDate@@QAE_NH@Z,0x006F4080
 ?Create@AptString@@SAPAV1@XZ,0x006D7210,Target date toString callback calls pooled string factory; assertions name AptString.inl and pNewString; Godfather QA MAP and corresponding donor callback supply original Create spelling and ABI; evidence=godfather_disk_evidence.json apt_date_string_callback
 ?rva00620090@EAStringC@@QBEPBDXZ,0x00620090,Target date toString callback passes live EAStringC to six-byte data-plus-eight accessor before SetString; address name retained because donor GetBuffer/c_str/ConstRawPtr aliases do not distinguish original spelling; evidence=godfather_disk_evidence.json apt_date_string_callback
+??0GadgetCreateView@@QAE@XZ,0x0022239C,0x34-byte create-view zeroer called before snapshotCreateView by 0x003174CB/0x0031C9DF/0x0031CAD2; folds with the matched _ArcInfoStruct ctor body
+?createGadget@@YAPAVGameWindow@@PADPAXPAVGadgetCreateView@@PAV1@@Z,0x00316518,BFME2 createGadget (type data view source) called by the gadget rebuild wrapper 0x003174CB; named in the getDataTemplate and copyGadgetDrawData TU notes
