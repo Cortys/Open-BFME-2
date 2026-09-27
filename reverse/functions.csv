@@ -37466,3 +37466,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva002A75C9@Rva002A75C9@@QAEHPAURva002A7588In@@@Z,,0x002A75C9,17,Code/GameEngine/Source/GameLogic/Object/Rva002A7588Query.cpp,matched,sub wrapper over rowed query sole caller 0x002A9B73
 ?set@Rva002E3766Holder@@QAEXHH@Z,,0x002E3766,17,Code/GameEngine/Source/Common/Rva002E3766Setter.cpp,matched,leaf setter plus 0x54 plus 0x58 callers 0x39867C 0x4B0BC3 0x4EBD7D
 ?get@Rva00148F5ECache@@QAE?AW4NameKeyType@@XZ,,0x00148F5E,32,Code/GameEngine/Source/Common/NameKeyCacheGet.cpp,matched,lazy NameKey cache via rowed nameToKey 0x148E1A
+?Rva002E3777Invoke@Rva002E3766Holder@@QAEXH@Z,,0x002E3777,29,Code/GameEngine/Source/Common/Rva002E3766Setter.cpp,matched,callback invoker push 1 caller 0x29223B shares holder layout
+?Rva002E3794Invoke@Rva002E3766Holder@@QAEXH@Z,,0x002E3794,29,Code/GameEngine/Source/Common/Rva002E3766Setter.cpp,matched,callback invoker push 0 caller 0x292118 shares holder layout
