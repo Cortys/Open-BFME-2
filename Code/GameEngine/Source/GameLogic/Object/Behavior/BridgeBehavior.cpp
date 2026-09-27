@@ -273,6 +273,7 @@ BridgeBehavior::BridgeBehavior( Thing *thing, const ModuleData *moduleData )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??1BridgeBehavior@@ present-unmatched
 BridgeBehavior::~BridgeBehavior( void )
 {
 
@@ -334,6 +335,7 @@ void BridgeBehavior::onDelete( void )
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 // ?resolveFX@BridgeBehavior@@IAEXXZ
+// ?resolveFX@BridgeBehavior@@ present-unmatched
 void BridgeBehavior::resolveFX( void )
 {
 	Object *us = getObject();
@@ -401,6 +403,7 @@ void BridgeBehavior::resolveFX( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 void BridgeBehavior::setTower( BridgeTowerType towerType, Object *tower )
 {
 
@@ -420,9 +423,11 @@ void BridgeBehavior::setTower( BridgeTowerType towerType, Object *tower )
 		m_towerID[ towerType ] = INVALID_ID;
 
 }  // end setTower
+#pragma optimize("", on)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 ObjectID BridgeBehavior::getTowerID( BridgeTowerType towerType )
 {
 
@@ -439,6 +444,7 @@ ObjectID BridgeBehavior::getTowerID( BridgeTowerType towerType )
 	return m_towerID[ towerType ];
 
 }  // end getTowerID
+#pragma optimize("", on)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -529,6 +535,7 @@ void BridgeBehavior::onHealing( DamageInfo *damageInfo )
 // ------------------------------------------------------------------------------------------------
 /** Pick a random surface spot on the bridge surface */
 // ------------------------------------------------------------------------------------------------
+// ?getRandomSurfacePosition@BridgeBehavior@@ present-unmatched
 void BridgeBehavior::getRandomSurfacePosition( TerrainRoadType *bridgeTemplate, 
 																							 const BridgeInfo *bridgeInfo, 
 																							 Coord3D *pos )
@@ -598,6 +605,7 @@ public:
 						const Coord3D *secondary, Bool createOwner ) const;
 };
 
+// ?doAreaEffects@BridgeBehavior@@ present-unmatched
 void BridgeBehavior::doAreaEffects( TerrainRoadType *bridgeTemplate,
 																		Bridge *bridge, 
 																		const ObjectCreationList *ocl, 
@@ -1059,6 +1067,7 @@ void BridgeBehavior::setScaffoldData( Object *obj,
 /** Start the bridge repair scaffolding.  If we already have scaffolding this call
 	* is ignored */
 // ------------------------------------------------------------------------------------------------
+// ?createScaffolding@BridgeBehavior@@ present-unmatched
 void BridgeBehavior::createScaffolding( void )
 {
 
