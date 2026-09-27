@@ -37254,3 +37254,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0027167FBroadcast@Rva002716Holder@@QAEXH@Z,,0x0027167F,45,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x40 via virtual 0xA8
 ?Rva002716ACBroadcast@Rva002716Holder@@QAEXXZ,,0x002716AC,39,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x48 via virtual 0xA8
 ?Rva002716D3Broadcast@Rva002716Holder@@QAEXH@Z,,0x002716D3,45,Code/GameEngine/Source/Common/Rva002716Broadcast.cpp,matched,honest Rva holder broadcast slot 0x4C via virtual 0xA8
+?Compute_Ram_Size@MeshMatDescClass@@QAEHXZ,,0x0015CAE0,427,Code/Libraries/Source/WWVegas/WW3D2/MeshMatDescComputeRamSize.cpp,matched,BFME1 donor MeshMatDescClass ComputeRamSize plus MeshModel callers
