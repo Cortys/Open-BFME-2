@@ -256,6 +256,7 @@ const FieldParse WeaponTemplate::TheWeaponTemplateFieldParseTable[] =
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-------------------------------------------------------------------------------------------------
+// ??0WeaponTemplate@@ present-unmatched
 WeaponTemplate::WeaponTemplate() : m_nextTemplate(NULL)
 {
 
@@ -334,6 +335,7 @@ WeaponTemplate::WeaponTemplate() : m_nextTemplate(NULL)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??1WeaponTemplate@@ present-unmatched
 WeaponTemplate::~WeaponTemplate()
 {
 	if (m_nextTemplate) {
@@ -346,6 +348,7 @@ WeaponTemplate::~WeaponTemplate()
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?reset@WeaponTemplate@@ present-unmatched
 void WeaponTemplate::reset( void )
 {
 	m_historicDamage.clear();
@@ -414,6 +417,7 @@ void WeaponTemplate::reset( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?postProcessLoad@WeaponTemplate@@ present-unmatched
 void WeaponTemplate::postProcessLoad()
 {
 	if (!TheThingFactory)
@@ -462,6 +466,7 @@ void WeaponTemplate::postProcessLoad()
 }  // end postProcessLoad
 
 //-------------------------------------------------------------------------------------------------
+// ?getAttackRange@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getAttackRange(const WeaponBonus& bonus) const 
 {
 #ifdef RATIONALIZE_ATTACK_RANGE
@@ -494,12 +499,14 @@ Real WeaponTemplate::getMinimumAttackRange() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getUnmodifiedAttackRange@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getUnmodifiedAttackRange() const
 {
 	return m_attackRange;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getDelayBetweenShots@WeaponTemplate@@ present-unmatched
 Int WeaponTemplate::getDelayBetweenShots(const WeaponBonus& bonus) const 
 {
 	// yes, divide, not multiply; the larger the rate-of-fire bonus, the shorter
@@ -526,36 +533,42 @@ Int WeaponTemplate::getClipReloadTime(const WeaponBonus& bonus) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPreAttackDelay@WeaponTemplate@@ present-unmatched
 Int WeaponTemplate::getPreAttackDelay( const WeaponBonus& bonus ) const
 {
 	return m_preAttackDelay * bonus.getField( WeaponBonus::PRE_ATTACK ); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPrimaryDamage@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getPrimaryDamage(const WeaponBonus& bonus) const 
 {
 	return m_primaryDamage * bonus.getField(WeaponBonus::DAMAGE); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPrimaryDamageRadius@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getPrimaryDamageRadius(const WeaponBonus& bonus) const 
 {
 	return m_primaryDamageRadius * bonus.getField(WeaponBonus::RADIUS); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getSecondaryDamage@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getSecondaryDamage(const WeaponBonus& bonus) const 
 {
 	return m_secondaryDamage * bonus.getField(WeaponBonus::DAMAGE); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getSecondaryDamageRadius@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::getSecondaryDamageRadius(const WeaponBonus& bonus) const 
 {
 	return m_secondaryDamageRadius * bonus.getField(WeaponBonus::RADIUS); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isContactWeapon@WeaponTemplate@@ present-unmatched
 Bool WeaponTemplate::isContactWeapon() const
 {
 #ifdef RATIONALIZE_ATTACK_RANGE
@@ -571,6 +584,7 @@ Bool WeaponTemplate::isContactWeapon() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?estimateWeaponTemplateDamage@WeaponTemplate@@ present-unmatched
 Real WeaponTemplate::estimateWeaponTemplateDamage(
 	const Object *sourceObj, 
 	const Object *victimObj, 
@@ -667,6 +681,7 @@ Real WeaponTemplate::estimateWeaponTemplateDamage(
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?shouldProjectileCollideWith@WeaponTemplate@@ present-unmatched
 Bool WeaponTemplate::shouldProjectileCollideWith(
 	const Object* projectileLauncher, 
 	const Object* projectile, 
@@ -1194,6 +1209,7 @@ UnsignedInt WeaponTemplate::fireWeaponTemplate
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?trimOldHistoricDamage@WeaponTemplate@@ present-unmatched
 void WeaponTemplate::trimOldHistoricDamage() const
 {
 	UnsignedInt expirationDate = TheGameLogic->getFrame() - TheGlobalData->m_historicDamageLimit;
@@ -1222,6 +1238,7 @@ static Bool is2DDistSquaredLessThan(const Coord3D& a, const Coord3D& b, Real dis
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?dealDamageInternal@WeaponTemplate@@ present-unmatched
 void WeaponTemplate::dealDamageInternal(ObjectID sourceID, ObjectID victimID, const Coord3D *pos, const WeaponBonus& bonus, Bool isProjectileDetonation) const
 {
 	if (sourceID == 0)	// must have a source
@@ -1510,11 +1527,13 @@ void WeaponTemplate::dealDamageInternal(ObjectID sourceID, ObjectID victimID, co
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0WeaponStore@@ present-unmatched
 WeaponStore::WeaponStore()
 {
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ??1WeaponStore@@ present-unmatched
 WeaponStore::~WeaponStore()
 {
 	deleteAllDelayedDamage();
@@ -1529,6 +1548,7 @@ WeaponStore::~WeaponStore()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?handleProjectileDetonation@WeaponStore@@ present-unmatched
 void WeaponStore::handleProjectileDetonation(const WeaponTemplate* wt, const Object *source, const Coord3D* pos, WeaponBonusConditionFlags extraBonusFlags, Bool inflictDamage )
 {
 	Weapon* w = TheWeaponStore->allocateNewWeapon(wt, PRIMARY_WEAPON);
@@ -1571,6 +1591,7 @@ const WeaponTemplate *WeaponStore::findWeaponTemplate( AsciiString name ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?findWeaponTemplatePrivate@WeaponStore@@ present-unmatched
 WeaponTemplate *WeaponStore::findWeaponTemplatePrivate( NameKeyType key ) const
 {
 	// search weapon list for name
@@ -1583,6 +1604,7 @@ WeaponTemplate *WeaponStore::findWeaponTemplatePrivate( NameKeyType key ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?newWeaponTemplate@WeaponStore@@ present-unmatched
 WeaponTemplate *WeaponStore::newWeaponTemplate(AsciiString name)
 {
 
@@ -1600,6 +1622,7 @@ WeaponTemplate *WeaponStore::newWeaponTemplate(AsciiString name)
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?newOverride@WeaponStore@@ present-unmatched
 WeaponTemplate *WeaponStore::newOverride(WeaponTemplate *weaponTemplate)
 {
 	if (!weaponTemplate)
@@ -1614,6 +1637,7 @@ WeaponTemplate *WeaponStore::newOverride(WeaponTemplate *weaponTemplate)
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?update@WeaponStore@@ present-unmatched
 void WeaponStore::update()
 {
 	for (std::list<WeaponDelayedDamageInfo>::iterator ddi = m_weaponDDI.begin(); ddi != m_weaponDDI.end(); )
@@ -1634,12 +1658,14 @@ void WeaponStore::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?deleteAllDelayedDamage@WeaponStore@@ present-unmatched
 void WeaponStore::deleteAllDelayedDamage()
 {
 	m_weaponDDI.clear();
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?resetWeaponTemplates@WeaponStore@@ present-unmatched
 void WeaponStore::resetWeaponTemplates( void )
 {
 
@@ -1652,6 +1678,7 @@ void WeaponStore::resetWeaponTemplates( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?reset@WeaponStore@@ present-unmatched
 void WeaponStore::reset()
 {
 	// clean up any overriddes.
@@ -1671,6 +1698,7 @@ void WeaponStore::reset()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setDelayedDamage@WeaponStore@@ present-unmatched
 void WeaponStore::setDelayedDamage(const WeaponTemplate *weapon, const Coord3D* pos, UnsignedInt whichFrame, ObjectID sourceID, ObjectID victimID, const WeaponBonus& bonus)
 {
 	WeaponDelayedDamageInfo wi;
@@ -1684,6 +1712,7 @@ void WeaponStore::setDelayedDamage(const WeaponTemplate *weapon, const Coord3D* 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?postProcessLoad@WeaponStore@@ present-unmatched
 void WeaponStore::postProcessLoad()
 {
 	if (!TheThingFactory)
@@ -1792,6 +1821,7 @@ Weapon::Weapon(const Weapon& that)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??4Weapon@@QAEAAV0@ABV0@@Z present-unmatched
 Weapon& Weapon::operator=(const Weapon& that)
 {
 	if (this != &that)
@@ -1862,6 +1892,7 @@ void Weapon::reloadAmmo(const Object *sourceObj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getClipReloadTime@Weapon@@ present-unmatched
 Int Weapon::getClipReloadTime(const Object *source) const
 {
 	WeaponBonus bonus;
@@ -1870,6 +1901,7 @@ Int Weapon::getClipReloadTime(const Object *source) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setClipPercentFull@Weapon@@ present-unmatched
 void Weapon::setClipPercentFull(Real percent, Bool allowReduction)
 {
 	if (m_template->getClipSize() == 0)
@@ -1941,6 +1973,7 @@ void Weapon::reloadWithBonus(const Object *sourceObj, const WeaponBonus& bonus, 
 }
 
 //-------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 static void clipToTerrainExtent(Coord3D& approachTargetPos)
 {
 	Region3D bounds;
@@ -1958,8 +1991,10 @@ static void clipToTerrainExtent(Coord3D& approachTargetPos)
 		approachTargetPos.y = bounds.hi.y-PATHFIND_CELL_SIZE_F;
 	}
 }
+#pragma optimize("", on)
 
 //-------------------------------------------------------------------------------------------------
+// ?onWeaponBonusChange@Weapon@@ present-unmatched
 void Weapon::onWeaponBonusChange(const Object *source)
 {
 	// We are concerned with our reload times being off if our ROF just changed.
@@ -2002,6 +2037,7 @@ void Weapon::onWeaponBonusChange(const Object *source)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?computeApproachTarget@Weapon@@ present-unmatched
 Bool Weapon::computeApproachTarget(const Object *source, const Object *target, const Coord3D *pos, Real angleOffset, Coord3D& approachTargetPos) const
 {
 	// compute unit direction vector from us to our victim
@@ -2135,6 +2171,7 @@ Bool Weapon::computeApproachTarget(const Object *source, const Object *target, c
 //actually moving the object. This is used to help determine if a garrisoned unit not yet 
 //positioned can attack someone.
 //-------------------------------------------------------------------------------------------------
+// ?isSourceObjectWithGoalPositionWithinAttackRange@Weapon@@ present-unmatched
 Bool Weapon::isSourceObjectWithGoalPositionWithinAttackRange( const Object *source, const Coord3D *goalPos, const Object *target, const Coord3D *targetPos ) const
 {
 	
@@ -2160,6 +2197,7 @@ Bool Weapon::isSourceObjectWithGoalPositionWithinAttackRange( const Object *sour
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isWithinAttackRange@Weapon@@ present-unmatched
 Bool Weapon::isWithinAttackRange(const Object *source, const Coord3D* pos) const
 {
 	Real distSqr = ThePartitionManager->getDistanceSquared( source, pos, ATTACK_RANGE_CALC_TYPE );
@@ -2177,6 +2215,7 @@ Bool Weapon::isWithinAttackRange(const Object *source, const Coord3D* pos) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isWithinAttackRange@Weapon@@ present-unmatched
 Bool Weapon::isWithinAttackRange(const Object *source, const Object *target) const
 {
 	Real distSqr;
@@ -2266,6 +2305,7 @@ Bool Weapon::isTooClose( const Object *source, const Coord3D *pos ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isGoalPosWithinAttackRange@Weapon@@ present-unmatched
 Bool Weapon::isGoalPosWithinAttackRange(const Object *source, const Coord3D* goalPos, const Object *target, const Coord3D* targetPos)	const
 {
 	Real distSqr;
@@ -2316,6 +2356,7 @@ Bool Weapon::isGoalPosWithinAttackRange(const Object *source, const Coord3D* goa
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPercentReadyToFire@Weapon@@ present-unmatched
 Real Weapon::getPercentReadyToFire() const
 {
 	switch (getStatus())
@@ -2361,6 +2402,7 @@ Real Weapon::getPercentReadyToFire() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getAttackRange@Weapon@@ present-unmatched
 Real Weapon::getAttackRange(const Object *source) const
 { 
 	WeaponBonus bonus;
@@ -2377,6 +2419,7 @@ Real Weapon::getAttackRange(const Object *source) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getAttackDistance@Weapon@@ present-unmatched
 Real Weapon::getAttackDistance(const Object *source, const Object *victimObj, const Coord3D* victimPos) const
 { 
 	Real range = getAttackRange(source);
@@ -2396,6 +2439,7 @@ Real Weapon::getAttackDistance(const Object *source, const Object *victimObj, co
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?estimateWeaponDamage@Weapon@@ present-unmatched
 Real Weapon::estimateWeaponDamage(const Object *sourceObj, const Object *victimObj, const Coord3D* victimPos)
 {
 	if (!m_template)
@@ -2413,6 +2457,7 @@ Real Weapon::estimateWeaponDamage(const Object *sourceObj, const Object *victimO
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?newProjectileFired@Weapon@@ present-unmatched
 void Weapon::newProjectileFired(const Object *sourceObj, const Object *projectile, const Object *victimObj, const Coord3D *victimPos )
 {
 	// If I have a stream, I need to tell it about this new guy
@@ -2443,6 +2488,7 @@ void Weapon::newProjectileFired(const Object *sourceObj, const Object *projectil
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?createLaser@Weapon@@ present-unmatched
 void Weapon::createLaser( const Object *sourceObj, const Object *victimObj, const Coord3D *victimPos )
 {
 	const ThingTemplate* pst = TheThingFactory->findTemplate(m_template->getLaserName());
@@ -2482,6 +2528,7 @@ void Weapon::createLaser( const Object *sourceObj, const Object *victimObj, cons
 //-------------------------------------------------------------------------------------------------
 // return true if we auto-reloaded our clip after firing.
 //DECLARE_PERF_TIMER(fireWeapon)
+// ?privateFireWeapon@Weapon@@ present-unmatched
 Bool Weapon::privateFireWeapon(
 	const Object *sourceObj, 
 	Object *victimObj, 
@@ -2702,6 +2749,7 @@ Bool Weapon::privateFireWeapon(
 
 
 //-------------------------------------------------------------------------------------------------
+// ?preFireWeapon@Weapon@@ present-unmatched
 void Weapon::preFireWeapon( const Object *source, const Object *victim )
 {
 	Int delay = getPreAttackDelay( source, victim );
@@ -2732,6 +2780,7 @@ Bool Weapon::fireWeapon(const Object *source, const Coord3D* pos, ObjectID* proj
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?fireProjectileDetonationWeapon@Weapon@@ present-unmatched
 void Weapon::fireProjectileDetonationWeapon(const Object *source, Object *target, WeaponBonusConditionFlags extraBonusFlags, Bool inflictDamage )
 {
 	//CRCDEBUG_LOG(("Weapon::fireProjectileDetonationWeapon() for %sat %s\n", DescribeObject(source).str(), DescribeObject(target).str()));
@@ -2739,6 +2788,7 @@ void Weapon::fireProjectileDetonationWeapon(const Object *source, Object *target
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?fireProjectileDetonationWeapon@Weapon@@ present-unmatched
 void Weapon::fireProjectileDetonationWeapon(const Object *source, const Coord3D* pos, WeaponBonusConditionFlags extraBonusFlags, Bool inflictDamage )
 {
 	//CRCDEBUG_LOG(("Weapon::fireProjectileDetonationWeapon() for %s\n", DescribeObject(source).str()));
@@ -2806,6 +2856,7 @@ Bool Weapon::isWithinTargetPitch(const Object *source, const Object *victim) con
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPrimaryDamageRadius@Weapon@@ present-unmatched
 Real Weapon::getPrimaryDamageRadius(const Object *source) const
 {
 	WeaponBonus bonus;
@@ -2814,6 +2865,7 @@ Real Weapon::getPrimaryDamageRadius(const Object *source) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isDamageWeapon@Weapon@@ present-unmatched
 Bool Weapon::isDamageWeapon() const
 {
 	//These damage types are special attacks that don't do damage directly, even
@@ -2845,6 +2897,7 @@ Bool Weapon::isDamageWeapon() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getPreAttackDelay@Weapon@@ present-unmatched
 Int Weapon::getPreAttackDelay( const Object *source, const Object *victim ) const
 {
 	// Look for a reason to return zero and have no delay.
@@ -2882,6 +2935,7 @@ public:
 };
 
 //-------------------------------------------------------------------------------------------------
+// ??0AssistanceRequestData@@ present-unmatched
 AssistanceRequestData::AssistanceRequestData()
 {
 	m_requestingObject = NULL;
@@ -2921,6 +2975,7 @@ static void makeAssistanceRequest( Object *requestOf, void *userData )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?processRequestAssistance@Weapon@@ present-unmatched
 void Weapon::processRequestAssistance( const Object *requestingObject, Object *victimObject )
 {
 	// Iterate through our player's objects, and tell everyone like us within our assistance range 
@@ -3091,6 +3146,7 @@ void Weapon::getFiringLineOfSightOrigin(const Object* source, Coord3D& origin) c
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?isClearFiringLineOfSightTerrain@Weapon@@ present-unmatched
 Bool Weapon::isClearFiringLineOfSightTerrain(const Object* source, const Object* victim) const
 {
 	Coord3D origin;
@@ -3108,6 +3164,7 @@ Bool Weapon::isClearFiringLineOfSightTerrain(const Object* source, const Object*
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?isClearFiringLineOfSightTerrain@Weapon@@ present-unmatched
 Bool Weapon::isClearFiringLineOfSightTerrain(const Object* source, const Coord3D& victimPos) const
 {
 	Coord3D origin;
@@ -3121,6 +3178,7 @@ Bool Weapon::isClearFiringLineOfSightTerrain(const Object* source, const Coord3D
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 /** Determine whether if source was at goalPos whether it would have clear line of sight. */
+// ?isClearGoalFiringLineOfSightTerrain@Weapon@@ present-unmatched
 Bool Weapon::isClearGoalFiringLineOfSightTerrain(const Object* source, const Coord3D& goalPos, const Object* victim) const
 {
 	Coord3D origin=goalPos;
@@ -3135,6 +3193,7 @@ Bool Weapon::isClearGoalFiringLineOfSightTerrain(const Object* source, const Coo
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 /** Determine whether if source was at goalPos whether it would have clear line of sight. */
+// ?isClearGoalFiringLineOfSightTerrain@Weapon@@ present-unmatched
 Bool Weapon::isClearGoalFiringLineOfSightTerrain(const Object* source, const Coord3D& goalPos, const Coord3D& victimPos) const
 {
 	Coord3D origin=goalPos;
@@ -3152,6 +3211,7 @@ Bool Weapon::isClearGoalFiringLineOfSightTerrain(const Object* source, const Coo
 //This function was added to transfer key weapon stats for Jarmen Kell to and from the bike for
 //the sniper attack, so he can share the stats.
 //-------------------------------------------------------------------------------------------------
+// ?transferNextShotStatsFrom@Weapon@@ present-unmatched
 void Weapon::transferNextShotStatsFrom( const Weapon &weapon ) 
 { 
 	m_whenWeCanFireAgain = weapon.getPossibleNextShotFrame();
@@ -3162,6 +3222,7 @@ void Weapon::transferNextShotStatsFrom( const Weapon &weapon )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?crc@Weapon@@ present-unmatched
 void Weapon::crc( Xfer *xfer )
 {
 #ifdef DEBUG_CRC
@@ -3366,6 +3427,7 @@ void Weapon::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@Weapon@@ present-unmatched
 void Weapon::xfer( Xfer *xfer )
 {
 	// version
@@ -3472,6 +3534,7 @@ void Weapon::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@Weapon@@ present-unmatched
 void Weapon::loadPostProcess( void )
 {
 	if( m_projectileStreamID != INVALID_ID )
