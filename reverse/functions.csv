@@ -37475,3 +37475,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva002E373CClear@@YAXXZ,,0x002E373C,42,Code/GameEngine/Source/Common/Rva002E373CClear.cpp,matched,clear list D0F4 plus counter D0F0 to 1 callers 0x283589 0x2E3E13 0x328DCE
 ?call@Rva002E3A80Holder@@QAEXXZ,,0x002E3A80,13,Code/GameEngine/Source/Common/Rva002E3A80Call.cpp,matched,null guarded virtual slot0 with 1 callers unwind jmps
 ?Rva0058619F@Rva00586D8E@@UAEXPAXH@Z,,0x0058619F,101,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot12 of vtable 0x0086FD90 via rowed ctor TU and vec84 plus Held188 plus AI slot110 plus aiIdle
+??1StatusBitsUpgradeIfEldestKindof@@UAE@XZ,,0x004B4AFA,5,Code/GameEngine/Source/GameLogic/Object/Upgrade/StatusBitsUpgradeIfEldestKindofDtor.cpp,matched,novtable jmp to StatusBitsUpgrade base 0x004B48D3 plus vtable 0x00C57ADC plus caller 0x004B4ADE plus poolkey 0x004B4A99
