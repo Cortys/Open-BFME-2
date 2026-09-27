@@ -38952,3 +38952,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva001EB435@Rva001EB435@@QAE_NXZ,,0x001EB435,33,Code/GameEngine/Source/Common/Rva001EB435Check.cpp,matched,null check wrapper over bounds checked accessor
 ?atEndOfChunk@DataChunkInput@@QAE_NXZ,,0x00306E2E,18,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,ZH donor atEndOfChunk verbatim caller 0x000AD07F
 ?rva0029439D@Object@@QAEPAXXZ,,0x0029439D,21,Code/GameEngine/Source/GameLogic/Object/ObjectRva002931F5.cpp,matched,Object thiscall via 2946AB 2957FC plus rowed callees 2931F5 28C197
+??4Rva004F6352@@QAEAAU0@ABU0@@Z,,0x004F6352,35,Code/GameEngine/Source/Common/Rva004F6352Assign.cpp,matched,12B struct assign via stride 0xC callers plus rowed TreeHintRef assign
