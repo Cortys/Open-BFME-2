@@ -37299,3 +37299,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??$__copy_ptrs@PAUBfmeAssignRecord28@@PAU1@@_STL@@YAPAUBfmeAssignRecord28@@PAU1@00U__false_type@0@@Z,,0x003F6619,29,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_record_bodies.cpp,matched,stlport copy_ptrs wrapper via rowed copy 0x3F6477
 ?rva004B554F@Rva004B554FHolder@@QBEHXZ,,0x004B554F,16,Code/GameEngine/Source/GameLogic/Object/Behavior/FireWeaponWhenDeadBehaviorDerived.cpp,matched,ptr-chase this+4 null-checked returns field 0x118
 ?Rva00314581Unlink@Rva0031455E@@QAEXXZ,,0x00314581,21,Code/GameEngine/Source/GameClient/GUI/Rva0031455EList.cpp,matched,twin link 0x0031455E sharing plus 0x04 plus 0x08 plus 0x1DC
+?rva004B0DA0@Rva004B0DA0Holder@@QAEXH@Z,,0x004B0DA0,12,Code/GameEngine/Source/Common/Rva004B0DA0Setter.cpp,matched,indexed byte clear this+index+0x24 caller jmp 0x0028ECA0
