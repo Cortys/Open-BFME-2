@@ -95,6 +95,7 @@ public:
 	void rva0026C3AC(Object *target, CommandSourceType cmdSource);
 	void rva0026C486(Object *target, CommandSourceType cmdSource);
 	void rva0026C411(Object *victim, const Coord3D *pos, CommandSourceType cmdSource);
+	void rva0026C347(Object *target, CommandSourceType cmdSource);
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
@@ -212,6 +213,17 @@ void AICommandInterface::rva0026C411(Object *victim, const Coord3D *pos, Command
 	AICommandParms parms((AICommandType)0x34, cmdSource);
 	parms.m_obj = victim;
 	parms.m_pos = *pos;
+	aiDoCommand(&parms);
+}
+
+// ?rva0026C347@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0026C347, 101 bytes.
+// Same 101B object shape as aiFaceObject in this TU: AICMD 0x17 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// Class proven by same-page siblings plus caller at 0x003C8607 via AIUpdate+0x258 plus 0x20 (see pin 3884 for 14 sites).
+// Pinned as ?Rva0026C347Command@Rva0026C347Commands@@QAEXPAXH@Z (void plus int) for 2 matched callers; this row records the proven AICommandInterface owner.
+void AICommandInterface::rva0026C347(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x17, cmdSource);
+	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
 
