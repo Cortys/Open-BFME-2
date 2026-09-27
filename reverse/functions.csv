@@ -37848,3 +37848,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??BRva0050F23E@@QAE?AVAsciiString@@XZ,,0x0050F7B4,107,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat to AsciiString sized write base fold plus text plus char
 ?rva002BECCD@Rva002BECCD@@QAEXMMM@Z,,0x002BECCD,67,Code/GameEngine/Source/Common/Rva002BECCDCalls.cpp,matched,three-float dual-virtual local zero third callers 0x002B2A0A 0x003FD584 singleton DFEF18
 ?Rva00412845AfterLevel@@YAPBDPBD@Z,,0x00412845,68,Code/GameEngine/Source/Common/BfmePathLeafAfterMarker.cpp,matched,honest address name via level string and abutting leaf marker TU
+?Rva004128BBGetLevel@@YAHPBD@Z,,0x004128BB,45,Code/GameEngine/Source/Common/BfmePathLeafAfterMarker.cpp,matched,honest address name via leveld format and abutting leaf TU

@@ -2,6 +2,7 @@
 
 extern "C" __declspec(dllimport) char * __cdecl strrchr(const char *text, int character);
 extern "C" __declspec(dllimport) int __cdecl strncmp(const char *a, const char *b, unsigned int n);
+extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
 
 // ?bfmePathLeafAfterMarker@@YAPBDPBD@Z
 const char *__cdecl bfmePathLeafAfterMarker(const char *path)
@@ -43,4 +44,14 @@ found:
 	path++;
 ret_path:
 	return path;
+}
+
+int __cdecl Rva004128BBGetLevel(const char *path)
+{
+	if (path == 0)
+		return -1;
+	int level;
+	if (sscanf(path, "_level%d", &level) == 1)
+		return level;
+	return -1;
 }
