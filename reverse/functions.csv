@@ -37447,3 +37447,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@Rva004894CA@@MAEXPAVXfer@@@Z,,0x004894CA,43,Code/GameEngine/Source/Common/Rva004894CAXfer_muse-4f8a.cpp,matched,Honest xfer Version1 raw 4B at 0x20 plus Snapshot at 0x24
 ?xfer@Rva004892B5@@MAEXPAVXfer@@@Z,,0x004892B5,44,Code/GameEngine/Source/Common/Rva004892B5Xfer_muse-4f8a.cpp,matched,Honest xfer Version1 raw 4B at 0x20 plus int at 0x24
 ?get@Rva002A7389@@QAEHH@Z,,0x002A7389,6,Code/GameEngine/Source/GameLogic/Object/Rva002A7389Get.cpp,matched,trivial disp8 dword reader ignoring int param 7 callers incl 0x005D787A
+?init@FontLibrary@@UAEXXZ,,0x00217561,89,Code/GameEngine/Source/GameClient/GUI/FontLibraryInit.cpp,matched,vtable slot1 of 0x007E5AD0 ZH GameFont init plus fontsubstitution load
