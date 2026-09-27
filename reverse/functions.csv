@@ -36884,3 +36884,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva003AE03D@@QAE@ABV0@@Z,,0x003AE03D,64,Code/GameEngine/Source/Common/Rva003AE03DCopyCtor.cpp,matched,derived V3-inline copy via rowed bases 0x3ADEBF 0x3AE07D plus null-guarded plus0x0C plus three vftables
 ??0Rva003AE017@@QAE@ABV0@@Z,,0x003AE017,38,Code/GameEngine/Source/Common/Rva003AE017CopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3AE03D plus three vftables plus caller 0x3AE00C
 ?xfer@UpgradeModule@@MAEXPAVXfer@@@Z,,0x004CE3F9,37,Code/GameEngine/Source/GameLogic/Object/Upgrade/UpgradeModuleXfer.cpp,matched,UpgradeModule slot 3 plus UpgradeMux member plus ZH donor plus 6 callers
+?clone@Rva003AE017@@QBEPAV1@XZ,,0x003ADFFA,29,Code/GameEngine/Source/Common/Rva003ADFFAClone.cpp,matched,vslot 2 of vtable 0x81CED8 via new 0x14 plus rowed copy 0x3AE017 plus throw to drop EH
