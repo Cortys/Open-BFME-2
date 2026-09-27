@@ -37397,3 +37397,7 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006DD260@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD260,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isXml plus type 33
 ?rva006DD2A0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD2A0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isXmlAttributes plus type 34
 ?rva006DD2E0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD2E0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isLoadVars plus type 35
+?Rva00584F03@Rva00586D8E@@UAE_NH@Z,,0x00584F03,52,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot7 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 compare to 1
+?Rva00584F37@Rva00586D8E@@UAE_NH@Z,,0x00584F37,52,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot8 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 compare to 2
+?Rva00584FBF@Rva00586D8E@@UAEXH@Z,,0x00584FBF,44,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot10 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 store 2
+?Rva00584FEB@Rva00586D8E@@UAEXH@Z,,0x00584FEB,44,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot11 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 store 3
