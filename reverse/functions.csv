@@ -36943,3 +36943,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva00256AA4@GateProxyBehavior@@UBEMXZ,,0x00256AA4,40,Code/GameEngine/Source/GameLogic/Object/Behavior/GateProxyBehaviorFloatGetters.cpp,matched,vslot 12 GateProxy float proxy via if-else temp
 ??1?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE@XZ,,0x004AF46E,56,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfmepod20_insert.cpp,matched,gap dtor EHs explicit instantiation
 ?test@Rva00331682Holder@@QBE_NPBX@Z,,0x00331682,37,Code/GameEngine/Source/Common/Rva00331682Test.cpp,matched,overlap test over 4 dwords unblocks 17 callers honest name
+?rva004AB1F5@WallUpgradeUpdate@@SAPAVModule@@PAVObject@@@Z,,0x004AB1F5,81,Code/GameEngine/Source/GameLogic/Object/Update/WallUpgradeUpdateFind.cpp,matched,static WallUpgradeUpdate lookup via CastleMemberBehaviorFind precedent
