@@ -16,3 +16,5 @@ bool operator<(const Rva0027EA49 &a, const Rva0027EA49 &b);
 typedef _STL::_Rb_tree<Rva0027EA49, Rva0027EA49, _STL::_Identity<Rva0027EA49>, _STL::less<Rva0027EA49>, _STL::allocator<Rva0027EA49> > Rva0027EA49Tree;
 
 template void Rva0027EA49Tree::_M_erase(Rva0027EA49Tree::_Link_type);
+
+template void Rva0027EA49Tree::clear();
