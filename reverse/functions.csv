@@ -39392,3 +39392,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002D9C2F@Rva002D9C2F@@QAEAAUOpaqueRefElement4@@ABU2@@Z,,0x002D9C2F,8,Code/Libraries/Source/WWVegas/WWLib/Rva002D9C2FAssign.cpp,matched,honest address name tail jmp assign forwarder to OpaqueRefElement4
 ?rva002D9576@Rva002D9576@@QAEHXZ,,0x002D9576,13,Code/GameEngine/Source/Common/Rva002D9576GuardedGetter.cpp,matched,honest address name guarded getter state 1 returns value else 0
 ?rva002D94CE@Rva002D94CE@@QAEXH@Z,,0x002D94CE,15,Code/GameEngine/Source/Common/Rva002D94CECondSetter.cpp,matched,honest address name conditional setter skip redundant store
+?rva002D94EB@Rva002D94EB@@QAEXM@Z,,0x002D94EB,19,Code/GameEngine/Source/Common/Rva002D94EBFloatSub.cpp,matched,honest address name float subtract setter SSE movss subss
