@@ -259,3 +259,14 @@ BFME_DISP8_PTR_TERNARY_BOOL_GETTER(Rva0036CC7ECmpBoolField, 0x04, 0x1C)
 BFME_DISP8_CMP_IMM_BOOL_GETTER(Rva0008E112CmpBoolField, 0x110, 9, !=)
 BFME_DISP8_CMP_ZERO_BOOL_GETTER(Rva000EFA05CmpBoolField, 0x0C, ==)
 BFME_DISP8_CMP_ZERO_BOOL_GETTER(Rva0018C092CmpBoolField, 0x30, !=)
+class Rva00210C66CmpBoolField
+{
+public:
+	bool get() const;
+	char m_lead[0x114];
+	int m_value;
+};
+bool Rva00210C66CmpBoolField::get() const
+{
+	return m_value == 1 || m_value == 2;
+}
