@@ -8,6 +8,8 @@ class AsciiString;
 AsciiString GetBasePathFromPath(AsciiString path);
 class AsciiString;
 AsciiString GetINIFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetStrFileFromMap(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -76,5 +78,13 @@ AsciiString GetINIFromMap(AsciiString path)
 	AsciiString base = GetBasePathFromPath(path);
 	AsciiString out;
 	out.format("%s\\map.ini", base.str());
+	return out;
+}
+
+AsciiString GetStrFileFromMap(AsciiString path)
+{
+	AsciiString base = GetBasePathFromPath(path);
+	AsciiString out;
+	out.format("%s\\map.str", base.str());
 	return out;
 }
