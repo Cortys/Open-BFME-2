@@ -2143,3 +2143,5 @@ FUN_00487973	0x00087973	54	blocked	needs data global 0xA00950 plus vtable slot 0
 ??0AnimationSoundTree@@QAE@XZ	0x004CA6DA	25	partial	ctor via rowed rva004CA13D throw; missing second lea eax ebp-1 t=20 model=muse-3298 score=0.93 stash=reverse/attempts/0x004ca6da.cpp
 ?rva002B7250@Rva002B7250@@QAEXPAVCreateAHeroData@@@Z	0x002B7250	121	partial	prologue redundant mov eax ebp+8 and mov ebp+8 eax 6B missing tail+erase+jae match t=25 model=muse-8c87 score=0.95 stash=reverse/attempts/0x002b7250.cpp
 ?Rva0030E51FGet@@YAXXZ	0x0030E51F	178	blocked	SSE clamp 178B complex double-store plus NaN-aware branches; probe 133B with simple if-else t=10 model=muse-8c87
+?rva002B5023@Rva002B5023@@QAEXPAVCreateAHeroData@@@Z	0x002B5023	80	blocked	find-delete-erase CreateAHeroData vector plusCC needs 6B arg spill vs donor ScriptEngine 74B vs 80B t=15 model=muse-015d
+FUN_004BDCAC	0x004BDCAC	54	blocked	vslot slot8 of 10 Body vtables needs slots20/22 plus Object flags 0x438/0x108/0x110; no donor; skip for trivial siblings t=5 model=muse
