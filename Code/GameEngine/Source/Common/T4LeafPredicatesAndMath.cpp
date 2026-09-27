@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /EHs-c- /Ireference/open-bfme-1/Code/GameEngine/Source/Common
+// cl: /O1 /G7 /arch:SSE /Ireference/shims/bfmecamera /EHs-c- /Ireference/open-bfme-1/Code/GameEngine/Source/Common
 //
 // Seven leaf bodies from the 0x005E97B0..0x0060D680 slice: no calls, no unwind
 // frame, no globals except two floating-point literals.  Each is decided
@@ -193,7 +193,6 @@ private:
 	float m_field70;
 };
 
-// ?advance@T4Host0060C2E0@@ present-unmatched
 void T4Host0060C2E0::advance( void )
 {
 	m_field70 = m_field6C + m_field70;
