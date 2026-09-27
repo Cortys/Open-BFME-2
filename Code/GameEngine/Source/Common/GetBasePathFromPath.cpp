@@ -1,0 +1,69 @@
+// cl: /O1 /MD
+// ?GetBasePathFromPath@@YA?AVAsciiString@@V1@@Z @0x0044C872 (194B):
+// GetBasePathFromPath, BFME1 donor FileTransfer_GetBasePathFromPath.cpp
+// (reverseFind '\\' then prefix copy via getBufferForRead plus memcpy,
+// empty returns AsciiString::TheEmptyString at 0x9E0878). Callers at
+// 0x44CAFE 0x44CBE2 0x44CCC6 0x44CD7D 0x44CE1C 0x44CEBB 0x44CF5A 0x44CFF9.
+class AsciiString;
+AsciiString GetBasePathFromPath(AsciiString path);
+
+extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
+
+template <typename T>
+class StringBase
+{
+	friend class AsciiString;
+	friend AsciiString GetBasePathFromPath(AsciiString path);
+
+	StringBase() { m_data = 0; }
+	StringBase(const StringBase<T> &other);
+	StringBase(const T *str);
+	~StringBase() { releaseBuffer(); }
+
+public:
+	const T *reverseFind(T c) const;
+	T *getBufferForRead(int length);
+	const T *str() const { return m_data ? &m_data->data[0] : (const T *)0x00BBAC1C; }
+
+private:
+	void releaseBuffer();
+
+	struct Header
+	{
+		int ref_count;
+		unsigned short length;
+		unsigned short capacity;
+		T data[1];
+	};
+
+	Header *m_data;
+};
+
+class AsciiString : private StringBase<char>
+{
+public:
+	AsciiString() : StringBase<char>() {}
+	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	AsciiString(const char *text) : StringBase<char>(text) {}
+	~AsciiString() {}
+	const char *str() const { return StringBase<char>::str(); }
+	const char *reverseFind(char match) const { return StringBase<char>::reverseFind(match); }
+	char *getBufferForRead(int length) { return StringBase<char>::getBufferForRead(length); }
+
+	static const AsciiString TheEmptyString;
+	friend AsciiString GetBasePathFromPath(AsciiString path);
+};
+
+AsciiString GetBasePathFromPath(AsciiString path)
+{
+	const char *separator = path.reverseFind('\\');
+	if (separator) {
+		int prefixLength = (int)(separator - path.str());
+		AsciiString base;
+		char *buffer = base.getBufferForRead(prefixLength);
+		memcpy(buffer, path.str(), prefixLength);
+		buffer[prefixLength] = 0;
+		return buffer;
+	}
+	return AsciiString::TheEmptyString;
+}
