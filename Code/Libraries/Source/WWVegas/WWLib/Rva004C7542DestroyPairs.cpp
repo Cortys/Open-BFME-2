@@ -30,3 +30,25 @@ void Rva004C7542Destroy(LocoPair *first, LocoPair *last)
 	for (; first != last; ++first)
 		first->~LocoPair();
 }
+
+// ?rva004C77A6@Rva004C77A6@@QAEXXZ RVA 0x004C77A6 size 30
+// Evidence: calls Rva004C7542Destroy rowed at 0x004C7542 plus _free rowed at 0x00030830; caller at 0x004C785A; chain lane unblocks 0x004C77C4; exact mod reloc.
+extern "C" void __cdecl free(void *p);
+
+class Rva004C77A6
+{
+public:
+	void rva004C77A6();
+
+private:
+	LocoPair *m_start;
+	LocoPair *m_finish;
+};
+
+void Rva004C77A6::rva004C77A6()
+{
+	Rva004C7542Destroy(m_start, m_finish);
+	LocoPair *tmp = m_start;
+	if (tmp)
+		free(tmp);
+}
