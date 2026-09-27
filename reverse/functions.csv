@@ -37346,3 +37346,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1ModelConditionAudioLoopClientBehaviorModuleData@@UAE@XZ,,0x004CC226,54,Code/GameEngine/Source/GameLogic/Object/Update/RepairDockUpdateCtor.cpp,matched,ModuleData dtor vtable plus StringTail156 vector plus Snapshot base
 ??1ThreatFinderUpdate@@UAE@XZ,,0x003ECF64,88,Code/GameEngine/Source/GameLogic/Object/Update/ThreatFinderUpdateDtor.cpp,matched,virtual dtor deletes heap object via rowed Rva003ECDB7 plus base Rva0024A797 called by deleting dtor 0x003ED0A8
 ?add@Rva003ED2A3Manager@@QAEXABVAsciiString@@PAX@Z,,0x003ED265,62,Code/GameEngine/Source/GameLogic/Object/Rva003ED2A3ManagerRemove.cpp,matched,manager add inserts via findSlot when find misses called by register 0x003ECE09
+?Rva00524A65@Rva00524A4C@@QAEXH@Z,,0x00524A65,31,Code/GameEngine/Source/Common/Rva00524A4CClear.cpp,matched,timestamp setter; caller 0x2D3603; shares Rva00524A4C offsets
