@@ -5824,3 +5824,15 @@ _ConvertBoolTrees,0x001BBD60
 ?isSelectable@Object@@QBE_NXZ,0x0028D7FD,called at the donor isSelectable site of changeObjectPanelFlagForSingleObject 0x003C4C07; reads template status bits
 ?setSelectable@Object@@QAEX_N@Z,0x0028B76D,stores byte Object+0x434 then forwards to the drawable; called at the donor setSelectable site of changeObjectPanelFlagForSingleObject 0x003C4C07
 ?TheObjectFlagsNames@@3PAPBDA,0x00DC10FC,retail flag-name table read by changeObjectPanelFlagForSingleObject 0x003C4C07 (Enabled..Player Targetable)
+??0Rva002E2903Player@@QAE@PAURva002BA8F1Input@@PAX@Z,0x002E2903,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?get@Rva002000D7Store@@QAEPAURva002000D7Config@@H@Z,0x002000D7,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?setAt1C4@Rva002E2903Player@@QAEXH@Z,0x002E062E,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?setColor@Rva002E2903Player@@QAEXH@Z,0x002E0F91,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?push_back@?$vector@PAVRva002E2903Player@@V?$allocator@PAVRva002E2903Player@@@_STL@@@_STL@@QAEXABQAVRva002E2903Player@@@Z,0x004DFCB0,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?setLocal@Rva002BA8F1Logic@@QAEXPAVRva002E2903Player@@@Z,0x002B38F7,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?state2@Rva002E2903Player@@QAEXXZ,0x002E0675,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?state0@Rva002E2903Player@@QAEXXZ,0x002E0668,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?state1@Rva002E2903Player@@QAEXXZ,0x002E066D,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?attach@Rva002E2903Player@@QAEXPAX@Z,0x002E0648,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?initialize@Rva002E2903Player@@QAEXXZ,0x002E3518,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
+?append@Rva005A0B4CList@@QAEXPAURva002BA8F1Listener@@@Z,0x005A0B4C,Target REL32 from verified-shape RVA 002BA8F1; address-qualified TU view; Ghidra boundary and direct call target checked; semantics provisional
