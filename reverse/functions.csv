@@ -37189,3 +37189,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1ProductionQueueHordeContainModuleData@@UAE@XZ,,0x004817B6,62,Code/GameEngine/Source/GameLogic/Object/Contain/ProductionQueueHordeContainModuleDataDtor.cpp,matched,ModuleData dtor vtable 0xC490F8 plus vector 0x4815AE plus base 0x257507
 ?Set_Ext_Swap_Interval@WW3D@@SAXJ@Z,,0x001174B0,5,Code/Libraries/Source/WWVegas/WW3D2/ww3d.cpp,matched,donor ww3d plus jmp to rowed DX8Wrapper setter
 ?Rva00568D95CreateNode@@YGPAXPBX@Z,,0x00568D95,34,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_10byte_key_helpers.cpp,matched,node creator via rowed allocate and copy
+??$_Construct@URva0048130E@@U1@@_STL@@YAXPAURva0048130E@@ABU1@@Z,,0x00481514,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0048130e_construct.cpp,matched,true Construct via rowed 0x48147C copy
