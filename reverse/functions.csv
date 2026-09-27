@@ -38748,3 +38748,6 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?HSV_To_RGB@@YAXAAVVector3@@ABV1@@Z,,0x0006E3D7,321,Code/Libraries/Source/WWVegas/WW3D2/ColorSpaceO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?RGB_To_HSV@@YAXAAVVector3@@ABV1@@Z,,0x0006E2C2,277,Code/Libraries/Source/WWVegas/WW3D2/ColorSpaceO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Transform@OBBoxClass@@SAXABVMatrix3D@@ABV1@PAV1@@Z,,0x000B2A4C,231,Code/Libraries/Source/WWVegas/WW3D2/OBBoxTransformO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Rotate_Vector@Matrix3D@@SAXABV1@ABVVector3@@PAV2@@Z,,0x000DD765,177,Code/Libraries/Source/WWVegas/WW3D2/PlaneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Compute_Intersection@PlaneClass@@QBE_NABVVector3@@0PAM@Z,,0x00069168,165,Code/Libraries/Source/WWVegas/WW3D2/PlaneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?In_Front@PlaneClass@@QBE_NABVVector3@@@Z,,0x00100291,52,Code/Libraries/Source/WWVegas/WW3D2/PlaneO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
