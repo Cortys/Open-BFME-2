@@ -8,6 +8,8 @@
 class GameWindow
 {
 public:
+	char _pad1C[0x1C];
+	int m_unk1C;
 	void *winGetUserData();
 };
 
@@ -26,6 +28,7 @@ class Rva002A9BF2
 	GameWindow *m_window;
 public:
 	void *rva002A9BF2();
+	void rva002A9CCA(int val);
 };
 
 void *Rva002A9BF2::rva002A9BF2()
@@ -34,4 +37,11 @@ void *Rva002A9BF2::rva002A9BF2()
 	if (w != 0)
 		return w->winGetUserData();
 	return TheScriptEngine->m_difficulty;
+}
+
+void Rva002A9BF2::rva002A9CCA(int val)
+{
+	GameWindow *w = m_window;
+	if (w != 0)
+		w->m_unk1C = val;
 }
