@@ -280,3 +280,29 @@ public:
 CommandPointsUpgrade::~CommandPointsUpgrade()
 {
 }
+
+class Rva004B554FTarget
+{
+public:
+	unsigned char m_pad[0x118];
+	int m_val; // +0x118
+};
+
+class Rva004B554FHolder
+{
+public:
+	int rva004B554F() const;
+
+private:
+	unsigned char m_pad[4];
+	Rva004B554FTarget *m_ptr; // +4
+};
+
+int Rva004B554FHolder::rva004B554F() const
+{
+	int ret = 0;
+	Rva004B554FTarget *p = m_ptr;
+	if (p != 0)
+		ret = p->m_val;
+	return ret;
+}
