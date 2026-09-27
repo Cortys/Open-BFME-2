@@ -37941,3 +37941,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?buildFieldParse@Rva005088CE@@SAXAAVMultiIniFieldParse@@@Z,,0x005088CE,34,Code/GameEngine/Source/Common/Rva005088CEBuildFieldParse.cpp,matched,two-add buildFieldParse via 00507552 plus direct 00864180 same as FXListDie first two
 ?Rva002E7917@Pathfinder@@QAEXPAUICoord2D@@_NPBUCoord3D@@@Z,,0x002E7917,77,Code/GameEngine/Source/GameLogic/Object/PathfindShimClampCell.cpp,matched,clamp to m_extent via 7875 needs arch SSE for cmov
 ??4Rva005EEFD2@@QAEAAV0@ABV0@@Z,,0x005EEFD2,46,Code/GameEngine/Source/Common/Rva005EEFD2Assign.cpp,matched,refcounted holder assign callers copy arrays
+?Rva0070B4F0GetString@@YAPAVEAStringC@@H@Z,,0x0070B4F0,58,Code/Libraries/Source/EA/Apt/Rva0070B4F0GetString.cpp,matched,StringPool constant accessor via IsEmpty assert at StringPool.inl 42
