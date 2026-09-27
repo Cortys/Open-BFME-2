@@ -38027,3 +38027,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?iterate_TeamMemberList@Team@@QBE?AV?$DLINK_ITERATOR@VObject@@@@XZ,,0x00263864,49,Code/GameEngine/Source/Common/RTS/TeamIterateTeamMemberList.cpp,matched,BFME1 GameCommon MAKE_DLINK_HEAD donor plus Team head at 0x38 and Object vbptr delta
 ?Rva002634E0Equal@@YA_NPBX0@Z,,0x002634E0,24,Code/GameEngine/Source/Common/Rva002634E0Equal.cpp,matched,memcmp 16-byte equality predicate same shape as equalTag
 ?Rva002634F8NotEqual@@YA_NPBX0@Z,,0x002634F8,21,Code/GameEngine/Source/Common/Rva002634F8NotEqual.cpp,matched,logical negation of rowed 16-byte Equal
+?rva00263546@Rva00263546@@QBE_NPBV1@@Z,,0x00263546,35,Code/GameEngine/Source/Common/Rva00263546Overlap.cpp,matched,19-dword overlap test via test loop callers pass masks
