@@ -37238,3 +37238,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@W3DLaserDraw@@MAEXPAVXfer@@@Z,,0x000C92A0,72,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DLaserDrawXfer.cpp,matched,slot 3 of vtable 0x007CB9E0 via rowed dtor plus base DrawModule plus Version1
 ?rva006DE150@Rva006DE150@@QAEXXZ,,0x006DE150,12,Code/GameEngine/Source/Common/Rva006DE150Clear.cpp,matched,or flag plus tail jmp to rowed handle
 ?rva000D1743@W3DTornadoDraw@@AAEXXZ,,0x000D1743,51,Code/GameEngine/Source/GameClient/Drawable/Update/AnimatedParticleSysBoneClientUpdateCtor.cpp,matched,W3DTornadoDraw list helper via dtor caller plus list-int clear
+?rva006DE160@AptValuePtrStack@@QAEPAVBfmeAptValue006DCD20@@XZ,,0x006DE160,53,Code/Libraries/Source/Apt/AptValuePtrStackTop.cpp,matched,Apt stack top via shared assert triple
