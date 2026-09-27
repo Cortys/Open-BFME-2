@@ -37739,3 +37739,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0023C6A4@Rva0023C6A4@@QAE_NXZ,,0x0023C6A4,33,Code/GameEngine/Source/Common/Rva0023C6A4Check.cpp,matched,Mode 3 plus 0xDFEF10 singleton flag via shared caller checks
 ?rva0023C83B@Rva0023C83B@@QAEPAV1@XZ,,0x0023C83B,35,Code/GameEngine/Source/Common/Rva0023C83BEnable.cpp,matched,Window close enable returning this via 0xDDE024
 ?rva0039D429@Rva0039D429@@QAEXPAPAV1@@Z,,0x0039D429,23,Code/GameEngine/Source/Common/Rva0039D429Prepend.cpp,matched,caller 0x39D4CF passes plus0x334 head with 3C-40 link
+?rva0039D5A9@Rva0039D5A9@@QAEHXZ,,0x0039D5A9,24,Code/GameEngine/Source/Common/Rva0039D5A9Sum.cpp,matched,strided sum callers prove count plus0xAC stride 0x18
