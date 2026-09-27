@@ -1226,7 +1226,6 @@ void WW3D::Sync(unsigned int sync_time)
  * HISTORY:                                                                                    *
  *   5/07/98    NH : Created.                                                                  *
  *=============================================================================================*/
-// ?Set_Ext_Swap_Interval@WW3D@@ present-unmatched
 void WW3D::Set_Ext_Swap_Interval(long swap)
 {
 	DX8Wrapper::Set_Swap_Interval(swap);
