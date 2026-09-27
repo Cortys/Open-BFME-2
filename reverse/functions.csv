@@ -39427,3 +39427,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??1Rva0030A120@@UAE@XZ,,0x0030A120,13,Code/GameEngine/Source/Common/Rva0030A120Dtor.cpp,matched,vtable 008086E0 plus dec 009FF4A8 called from deleting dtor 0030A243
 ??_GRva0030A120@@UAEPAXI@Z,,0x0030A243,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-22f6.cpp,matched,slot 0 of 008086E0 calls rowed 0030A120 then delete
 ?setCurrentVictim@AIUpdateInterface@@QAEXPBVObject@@@Z,,0x00268D1F,82,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_setCurrentVictim.cpp,matched,ZH donor AIUpdate.cpp:4193 sibling getCurrentVictim 0x00268D71 proves class and plus0x40
+?rva00341557@Rva00341557@@QAEXH@Z,,0x00341557,67,Code/GameEngine/Source/Common/Rva00341557.cpp,matched,chain-of-setCurrentVictim-clears-victim-plus488-then-deleteInstance
