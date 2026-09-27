@@ -1394,5 +1394,38 @@
       "result": "Independently relocated all labels from original COFF symbol values and compared the complete136B span; no target-copy patching of switch data"
     },
     "status": "C++ with one proven assertion-barrier instruction; byte-verified recovery"
+  },
+  "apt_date_clock": {
+    "name": "?setDates@AptDate@@QAEXPAUAptSysClock@@0H@Z",
+    "rva": "0x006f41b0",
+    "size": 216,
+    "source": "Code/Libraries/Source/Apt/AptDateClock.cpp",
+    "target_sha256": "91c1cc2bfccd8b3810fae7c0f0b4ba22fcd1839949fbb78f6b6f681404abc05f",
+    "boundary": "Ghidra216B; final RET12 at6F4285 then CC padding",
+    "target_identity_basis": "Target named local date setters call6F41B0 with source=date+20 destination=date+40 timezone=date+60. UTC setters reverse the clock pointers and negate the same offset. Function reads/writes per-clock Year18 Month14 Date10 Hour08, then Minute04 Second00 and sub-second1C. Calls newly matched dateGetNumDaysInMonth at6F4120 when rolling across a month boundary. PDB supplies setDates name and AptSysClock pointer ABI.",
+    "donor_procedure": {
+      "name": "AptDate::setDates",
+      "size": 207,
+      "type": "0xe4f0",
+      "record_offset": 1004,
+      "record": "3a001011000000007804000000000000cf00000008000000cc000000f0e40000a0b43e00010000417074446174653a3a736574446174657300000000",
+      "donor_offset": "0x3eb4a0"
+    },
+    "type_records": {
+      "0xe4f0": "1a0009100300000094410000e4e400000b000300efe4000000000000",
+      "0xe4ef": "12000112030000008e4400008e44000074000000",
+      "0x448e": "0a0002108d4400000a000000",
+      "0x448d": "22000515000080000000000000000000000000000000417074537973436c6f636b00f2f1",
+      "0x3f6e": "22000515080000006d3f000000000000000000002000417074537973436c6f636b00f2f1",
+      "0x3f6d": "920003120d1503007400000000005365636f6e6400f3f2f10d1503007400000004004d696e75746500f3f2f10d150300740000000800486f757200f10d150300740000000c0044617900f2f10d1503007400000010004461746500f10d1503007400000014004d6f6e7468000d1503007400000018005965617200f10d150300740000001c0048756e6472656474687300f3f2f1"
+    },
+    "layout_provenance": "Every accessed offset supported by target setter/getter/clock-conversion instructions. The unused Day field name at0C and the Hundredths label at1C are donor facts. No target sub-second unit inferred.",
+    "codegen": "Evaluate month-length call before incrementing destination Date; increment-on-left comparison moved the increment before the call and mismatched. Both pointers remain potentially aliasing, as in target.",
+    "retail_behavior_preserved": [
+      "For negative hours target stores24-offset, not sourceHour+24-offset.",
+      "Only one day adjustment is made even for offsets exceeding24 hours.",
+      "Clock field Day at0C is not copied."
+    ],
+    "status": "C++ byte-verified recovery"
   }
 }
