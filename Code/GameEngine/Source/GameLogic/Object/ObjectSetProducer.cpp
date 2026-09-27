@@ -13,15 +13,22 @@ class Object
 {
 public:
 	void setProducer(Object *producer);
+	void rva0028AFE7(Object *producer);
 
 private:
 	unsigned char m_pad00[0x74];
-	ObjectID m_id;
-	ObjectID m_producerID;
+	ObjectID m_id; // +0x74
+	ObjectID m_producerID; // +0x78
+	ObjectID m_7C; // +0x7C (sibling target at 0x0028AFE7)
 };
 
 // ?setProducer@Object@@QAEXPAV1@@Z
 void Object::setProducer(Object *producer)
 {
 	m_producerID = producer ? producer->m_id : 0;
+}
+
+void Object::rva0028AFE7(Object *producer)
+{
+	m_7C = producer ? producer->m_id : 0;
 }
