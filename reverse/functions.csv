@@ -33094,6 +33094,7 @@ _DXTraceA@20,,0x0065459C,476,vendor/dxerr9-aug2005/dxerr9.lib,matched,vendored=d
 ?destroyAllMessages@CommandList@@QAEXXZ,,0x0030F854,44,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,ZH MessageStream donor shape over Subsystem base
 ??0CommandList@@QAE@XZ,,0x0030F842,18,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,ZH MessageStream donor shape over Subsystem base
 ??1CommandList@@UAE@XZ,,0x0031105A,56,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,ZH MessageStream donor shape over Subsystem base
+??_GGameMessageList@@UAEPAXI@Z,,0x00310F85,26,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,Scalar deleting dtor over pinned virtual dtor plus operator delete
 ??0MessageStream@@QAE@XZ,,0x0030F697,33,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,GameMessageList base plus translator nulls plus next-ID one over BFME1 donor layout
 ??0ToggleMountedSpecialAbilityUpdateModuleData@@QAE@XZ,,0x004AE0AC,67,Code/GameEngine/Source/GameLogic/Object/Update/ToggleMountedSpecialAbilityUpdateModuleDataCtor.cpp,matched,ModuleData ctor over pinned Rva0044EB54 base; table 0xBEF770 plus rowed factory 0x24F6C5 prove class; row supersedes pin
 ??1TranslatorData@MessageStream@@QAE@XZ,,0x0030F463,23,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,ZH MessageStream donor shape with BFME2 deleteInstance slot1 plus operator delete; retail calls slot1 then operator delete
@@ -38734,3 +38735,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?copyPayloadTo@BFME2WideStringRef@@QBEHPAG@Z,,0x0021AC32,56,Code/GameEngine/Source/Common/System/WideConcatPair.cpp,matched,Direct helper from matched pair copier at 0x21B8A0; 56B Ghidra extent; reads target header length and payload with null fallback
 ?rva006D2F40@EAStringC@@QBEGXZ,,0x006D2F40,70,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA hash accessor; target branch at +0xA lands on live return path at +0x3E through +0x45; next Ghidra start +0x50; exact 70B body
 ??0BfmeDualVtableReleaseDtor@@QAE@H@Z,,0x0020429D,120,Code/GameEngine/Source/Common/BfmeDualVtableReleaseDtorCtor.cpp,matched,FX particle-editor loader ctor; full 120B Ghidra extent exact; cold throw pad at 0x2042F7; rowed DllHandle and import calls
+??_GCommandList@@UAEPAXI@Z,,0x00311415,28,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,Ghidra exact 28B boundary; scalar deleting dtor over rowed virtual dtor plus operator delete
