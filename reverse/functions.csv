@@ -37216,3 +37216,7 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva005D896FGet@@YGHPAVObject@@@Z,,0x005D896F,27,Code/GameEngine/Source/Common/Rva005D896FGet_muse-1b6d.cpp,matched,stdcall helper over rowed getCurrentWeapon and byte getter
 ?destroyDelete@Rva0004CCFF@@QAEPAXI@Z,,0x0004CCFF,33,Code/GameEngine/Source/Common/System/SmartPtrDestroyDelete.cpp,matched,conditional Bfme dtor plus conditional delete returning this
 ??0Weapon@@IAE@ABV0@@Z,,0x002CC2FC,162,Code/GameEngine/Source/GameLogic/Object/WeaponCtor.cpp,matched,vtable 0x0080214C copy ctor donor BFME1 WeaponCopyConstructor plus ZH protected copy
+?call@Rva001F425C@@QAEXXZ,,0x001F425C,26,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slot4 via O1 flags
+?call@Rva001F4276@@QAEXHH@Z,,0x001F4276,36,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slotC two args via O1 flags
+?call@Rva001F429A@@QAEXXZ,,0x001F429A,32,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slot4 guarded by byte1C via O1 flags
+?call@Rva001F42BA@@QAEXH@Z,,0x001F42BA,32,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slotC one arg via O1 flags

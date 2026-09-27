@@ -1940,3 +1940,79 @@ typedef StreakDrawModuleTemplate &(StreakDrawModuleTemplate::*StreakDrawModuleTe
 StreakDrawModuleTemplateAssignPtr g_streakDrawModuleTemplateAssign8 = &StreakDrawModuleTemplate::operator=;
 
 }
+
+// Four container loops at 0x001F425C/76/9A/BA (26/36/32/32B) share the same
+// begin/end at +0/+4 shape and /O1 codegen as the CategoryModuleTemplateBase
+// neighbours in this TU. Each iterates an array of pointers and forwards to a
+// virtual slot: slot +4 with no args (425C) or guarded by byte +0x1C (429A)
+// and slot +0x0C with two args (4276 ret 8) or one arg (42BA ret 4). Callers
+// are tail jmps from 0x001F48DF/0x001F5CF7 family (425C) and siblings. Honest
+// address names; item vtables declared only so no extra emission.
+struct LoopItemA {
+    virtual ~LoopItemA();
+    virtual void tick();
+};
+struct Rva001F425C {
+    LoopItemA **m_begin;
+    LoopItemA **m_end;
+    void call();
+};
+void Rva001F425C::call()
+{
+    for (LoopItemA **p = m_begin; p != m_end; ++p)
+        (*p)->tick();
+}
+
+struct LoopItemC {
+    virtual ~LoopItemC();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3(int a, int b);
+};
+struct Rva001F4276 {
+    LoopItemC **m_begin;
+    LoopItemC **m_end;
+    void call(int a, int b);
+};
+void Rva001F4276::call(int a, int b)
+{
+    for (LoopItemC **p = m_begin; p != m_end; ++p)
+        (*p)->m3(a, b);
+}
+
+struct CondItemA {
+    virtual ~CondItemA();
+    virtual void tick();
+    char m_pad[0x18];
+    unsigned char m_flag1C;
+};
+struct Rva001F429A {
+    CondItemA **m_begin;
+    CondItemA **m_end;
+    void call();
+};
+void Rva001F429A::call()
+{
+    for (CondItemA **p = m_begin; p != m_end; ++p) {
+        CondItemA *it = *p;
+        if (it->m_flag1C == 0)
+            it->tick();
+    }
+}
+
+struct LoopItemB {
+    virtual ~LoopItemB();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3(int a);
+};
+struct Rva001F42BA {
+    LoopItemB **m_begin;
+    LoopItemB **m_end;
+    void call(int a);
+};
+void Rva001F42BA::call(int a)
+{
+    for (LoopItemB **p = m_begin; p != m_end; ++p)
+        (*p)->m3(a);
+}
