@@ -2254,3 +2254,5 @@ FUN_006d9bc1	0x002D9BC1	27	blocked	AsciiString getter with contested StringBase 
 FUN_00693486	0x00293486	34	blocked	STL create_node 34B calls dup_002927CB vs pin at dup_0029FB9C for same TreeKey Construct; needs dupe-pin investigation t=15 model=muse-b7d0
 ?rva0020E47C@Rva0020E47C@@QAE?AURva0020E47CVal@@XZ	0x0020E47C	23	blocked	fld-vs-mov float copy at +0x80 tried 6 variants ctors and flags t=15 model=muse-88ee
 FUN_00626156	0x00226156	379	blocked	push-eax plus 5x-mov-eax-imm plus pop-eax sleds header and footer 27B each impossible via MSVC71 C++ and asm reproduction forbidden by anti-lift; 72 sled hits cluster in 4 bands; real hash core not separable from wrappers t=12 model=muse-spark
+?Rva002AAD52Find@@YAXPAPAXPAX1PAG@Z	0x002AAD52	37	partial	eax-ecx swap throughout same size structure exact t=15 model=muse-8c35 score=0.93 stash=reverse/attempts/0x002aad52.cpp
+?rva005A9693@Rva005A9693Holder@@QAEXXZ	0x005A9693	102	blocked	106B 4 regions ebx-esi swap plus al-eax plus prologue t=20 model=muse-8c35
