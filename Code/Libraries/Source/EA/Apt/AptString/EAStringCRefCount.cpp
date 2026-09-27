@@ -21,6 +21,8 @@ extern "C" int __cdecl _strcmpi(const char *left, const char *right);
 #pragma intrinsic(strlen)
 #pragma intrinsic(strcmp)
 
+unsigned short __cdecl hashLower(const char *text);
+
 class Rva006DB270
 {
 public:
@@ -86,6 +88,7 @@ public:
 	bool rva006D3510(const char *text) const;
 	bool rva006D3560(const EAStringC *other) const;
 	unsigned short rva006D2F40() const;
+	unsigned short rva006D3D10() const;
 	void rva006D3C20();
 	void rva006D3C60();
 	void rva006D3CA0(const EAStringC *other);
@@ -504,4 +507,36 @@ EAStringC &EAStringC::Rva006D50A0Append(const char *text)
 	ChangeBuffer(newSize, 0, oldSize, CB_NO_PUSH_ZERO, newSize);
 	memcpy((char *)m_pData + sizeof(StringDataC) + oldSize, text, len + 1);
 	return *this;
+}
+
+// ?rva006D3D10@EAStringC@@QBEGXZ, retail 0x006D3D10 (152B).
+// EAStringC hash refresh: recomputes m_uHash via rowed hashLower 0x006D3800
+// over the text (+8) and stores it; empty hash asserts non-zero on return
+// (EAString.inl 0x59D), non-empty asserts stability against the entry old
+// hash (EAString.inl 0x5A4). Callers at 0x0070A7CC/0x0070A802/0x0070B2DB
+// /0x0070B38B/0x0070B43D; neighbours rva006D3CA0 0x006D3CA0 and
+// utf8EncodedLength 0x006D3DB0 share /O2 /DNDEBUG /MD. Honest address name;
+// const ushort return plus hashLower call prove hash accessor.
+unsigned short EAStringC::rva006D3D10() const
+{
+	StringDataC *data = m_pData;
+	unsigned short oldHash = data->m_uHash;
+	if (oldHash == 0) {
+		data->m_uHash = hashLower((const char *)data + 8);
+		if (!(m_pData->m_uHash != 0)) {
+			g_bfmeAptAssertAtE17734("m_pData->m_uHash != 0", ".\\string\\EAString.inl", 0x59D);
+			if (g_bfmeAptBreakOnAssertAtDDC01C) {
+				__asm int 3
+			}
+		}
+	} else {
+		data->m_uHash = hashLower((const char *)data + 8);
+		if (!(m_pData->m_uHash == oldHash)) {
+			g_bfmeAptAssertAtE17734("m_pData->m_uHash == uOldHash", ".\\string\\EAString.inl", 0x5A4);
+			if (g_bfmeAptBreakOnAssertAtDDC01C) {
+				__asm int 3
+			}
+		}
+	}
+	return m_pData->m_uHash;
 }
