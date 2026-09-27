@@ -114,3 +114,30 @@ void Rva002ADF9C::rva002ADF9C(const Player *p, Object *o)
 	Object **slot = m_holder->m_map.findSlot(&key);
 	*slot = o;
 }
+
+class Team
+{
+public:
+	int getTeamKey() const { return m_key34; }
+private:
+	char m_pad00[0x34];
+	int m_key34; // +0x34
+};
+
+class Rva002ADFC7
+{
+public:
+	void rva002ADFC7(const Team *t, Object *o);
+private:
+	char m_pad00[0x334];
+	MapHolder *m_holder; // +0x334
+};
+
+void Rva002ADFC7::rva002ADFC7(const Team *t, Object *o)
+{
+	if (!t)
+		return;
+	int key = t->getTeamKey();
+	Object **slot = m_holder->m_map.findSlot(&key);
+	*slot = o;
+}
