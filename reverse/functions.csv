@@ -36842,3 +36842,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva00482C39@Rva00482E96@@UAEXXZ,,0x00482C39,17,Code/GameEngine/Source/Common/Rva00589079Derived.cpp,matched,slot1 vtable 008497B4 validates wide strings at +0 and +0x20 via rowed StringBase validate
 ??1Rva004BA1C8@@QAE@XZ,,0x004BA1C8,8,Code/GameEngine/Source/Common/Rva004BA1C8Record.cpp,matched,tail-jmp to rowed vector dtor 0x0002CC70 via callers 0x004BA2D0 0x004BA34A
 ??1ProductionQueueHordeContain@@UAE@XZ,,0x00481230,67,Code/GameEngine/Source/GameLogic/Object/Contain/ProductionQueueHordeContainDtor.cpp,matched,ProductionQueueHordeContain dtor via TunnelContainDtor 67B precedent
+??4Rva004BA1C8@@QAEAAV0@ABV0@@Z,,0x004BA291,60,Code/GameEngine/Source/Common/Rva004BA1C8Record.cpp,matched,assign via rowed vector assign shares 0x2C triple layout with dtor 0x004BA1C8

@@ -17,21 +17,35 @@ public:
 	~AsciiString() {}
 };
 
+class Rva004BA1C8Triple {
+public:
+	unsigned int a;
+	unsigned int b;
+	unsigned int c;
+};
+
 class Rva004BA1C8 {
 public:
 	~Rva004BA1C8();
+	Rva004BA1C8 &operator=(const Rva004BA1C8 &other);
 private:
 	int m_00;
 	_STL::vector<AsciiString> m_04;
 	unsigned int m_10;
-	unsigned int m_14;
-	unsigned int m_18;
-	unsigned int m_1C;
-	unsigned int m_20;
-	unsigned int m_24;
-	unsigned int m_28;
+	Rva004BA1C8Triple m_14;
+	Rva004BA1C8Triple m_20;
 };
 
 Rva004BA1C8::~Rva004BA1C8()
 {
+}
+
+Rva004BA1C8 &Rva004BA1C8::operator=(const Rva004BA1C8 &other)
+{
+	m_00 = other.m_00;
+	m_04 = other.m_04;
+	m_10 = other.m_10;
+	m_14 = other.m_14;
+	m_20 = other.m_20;
+	return *this;
 }
