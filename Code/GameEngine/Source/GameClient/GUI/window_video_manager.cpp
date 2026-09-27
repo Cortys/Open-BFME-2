@@ -250,20 +250,21 @@ void WindowVideoManager::update( void )
 		
 		if ( videoStream && videoBuffer )
 		{
-			if ( videoStream->isFrameReady())
+			// BFME2: the stream advances itself (vtable +0x18); looping streams pass the loop flag,
+			// the others report a finished frame in bit 0 and are paused or stopped at frame 0.
+			switch(winVid->getPlayType())
 			{
-				videoStream->frameDecompress();
-				videoStream->frameRender( videoBuffer );
-				videoStream->frameNext();
-				
-				// If we reach frame Index of 0, we might have to pause, or loop.
-				if ( videoStream->frameIndex() == 0 )
-				{
-					if(winVid->getPlayType() == WINDOW_PLAY_MOVIE_ONCE)
-						stopMovie(win);
-					else if (winVid->getPlayType() == WINDOW_PLAY_MOVIE_SHOW_LAST_FRAME)
+				case WINDOW_PLAY_MOVIE_LOOP:
+					videoStream->frameUpdate( 4 );
+					break;
+				case WINDOW_PLAY_MOVIE_SHOW_LAST_FRAME:
+					if ( (videoStream->frameUpdate( 0 ) & 1) && videoStream->frameIndex() == 0 )
 						pauseMovie(win);
-				}
+					break;
+				default:
+					if ( (videoStream->frameUpdate( 0 ) & 1) && videoStream->frameIndex() == 0 )
+						stopMovie(win);
+					break;
 			}
 		}
 		
@@ -278,14 +279,14 @@ void WindowVideoManager::playMovie( GameWindow *win, AsciiString movieName, Wind
 	stopAndRemoveMovie( win );
 	
 	// create the new stream
-	VideoStreamInterface *videoStream = TheVideoPlayer->open( movieName );
+	VideoStreamInterface *videoStream = TheVideoPlayer->open( movieName, 0 );
 	if ( videoStream == NULL )
 	{
 		return;
 	}
 
 	// BFME2: the stream takes ownership of a display-created buffer (vtable +0x38)
-	if ( !videoStream->attach( TheDisplay->createVideoBuffer() ) )
+	if ( !videoStream->attach( TheDisplay->createVideoBuffer( false ) ) )
 	{
 		videoStream->close();
 		return;

@@ -21,7 +21,7 @@ public:
 	virtual void frameDecompress( void ) = 0;
 	virtual void frameRender( VideoBuffer *buffer ) = 0;
 	virtual void frameNext( void ) = 0;
-	virtual int frameStep( int mode ) = 0;
+	virtual int frameUpdate( int flags ) = 0;
 	virtual void close( void ) = 0;
 	virtual int frameIndex( void ) = 0;
 	virtual unsigned int width( void ) = 0;
@@ -32,5 +32,26 @@ public:
 	virtual bool attach( VideoBuffer *buffer ) = 0;
 	virtual VideoBuffer *getVideoBuffer( void ) = 0;
 };
-class VideoPlayerInterface { public: VideoStreamInterface* open(AsciiString); VideoStreamInterface* load(AsciiString); };
+// BFME2 retail: WindowVideoManager::playMovie (0x53F63D) opens through vtable +0x44 with (AsciiString, 0)
+class VideoPlayerInterface {
+public:
+	virtual void playerSlot00( void ) = 0;
+	virtual void playerSlot01( void ) = 0;
+	virtual void playerSlot02( void ) = 0;
+	virtual void playerSlot03( void ) = 0;
+	virtual void playerSlot04( void ) = 0;
+	virtual void playerSlot05( void ) = 0;
+	virtual void playerSlot06( void ) = 0;
+	virtual void playerSlot07( void ) = 0;
+	virtual void playerSlot08( void ) = 0;
+	virtual void playerSlot09( void ) = 0;
+	virtual void playerSlot10( void ) = 0;
+	virtual void playerSlot11( void ) = 0;
+	virtual void playerSlot12( void ) = 0;
+	virtual void playerSlot13( void ) = 0;
+	virtual void playerSlot14( void ) = 0;
+	virtual void playerSlot15( void ) = 0;
+	virtual void playerSlot16( void ) = 0;
+	virtual VideoStreamInterface* open( AsciiString movieTitle, int flags ) = 0;
+};
 extern VideoPlayerInterface* TheVideoPlayer;
