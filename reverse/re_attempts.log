@@ -2269,3 +2269,5 @@ FUN_0091c07d	0x0051C07D	39	blocked	unguarded-linear-insert shape for 12B shifts 
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DXT white pattern plus shared memset tail merge needs flag and layout work t=25 model=muse-c2f6
 ?rva00264688@Rva00264688@@QAEEXZ	0x00264688	97	partial	loop peeled with entry jmp plus extra je jmp and final je vs jne scheduling left 102B vs 97B t=20 model=muse-c2f6 score=0.93 stash=reverse/attempts/0x00264688.cpp
 ?setString@PooledString@@AAEXPBD@Z	0x006CB7C0	489	blocked	EH static-lock plus pooled 256KB bump and hash-div with inline strcmp plus _strcmpi alias needs exact frame and spill; 3 variants best 501B 164ins same-count but frame 8 vs C and ebx vs eax plus missing second strlen; t=25 model=muse-dbe5
+FUN_00430e20	0x00030E20	104	blocked	guard-fill dword+byte loop needs exact shr-lea and stepwise pattern; 1 variant 103B vs 104B 8 structural regions t=12 model=muse-dc0a
+?rva006C1F60@Rva006C1F60@@QAEHI@Z	0x006C1F60	113	partial	113B-40ins exact size-count only this-result reg swap esi-edi and push scheduling left t=18 model=muse-dc0a score=0.9 stash=reverse/attempts/0x006c1f60.cpp
