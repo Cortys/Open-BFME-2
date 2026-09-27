@@ -37906,3 +37906,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?do_scan_is@?$ctype@G@_STL@@MBEPBGW4mask@ctype_base@2@PBG1@Z,,0x000172D0,37,Code/Libraries/Source/WWVegas/WWLib/stlport_ctype_wchar_scan_not.cpp,matched,masked body byte-equal; its find_if callee agrees with the ledger; referenced from ctype<wchar_t> vtable slot before do_scan_not (DIR32 at file 0x7BAEDC)
 ?rva00389F4A@Rva00389F4A@@QAEHH@Z,,0x00389F4A,45,Code/GameEngine/Source/Common/Rva00389F4AMapAssign.cpp,matched,post-inc id plus map assign via rowed operator[]; caller keeps id
 ??0Rva001FBC8F@@QAE@XZ,,0x001FBC8F,18,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 wraps Rva001FBAD8 at 4
+??0Rva001FB93D@@QAE@XZ,,0x001FB93D,18,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 wraps Rva001FA584 at 8
