@@ -2263,3 +2263,5 @@ FUN_00668B79	0x00268B79	92	blocked	push0 to findObjectByID always null makes loo
 FUN_008c71d3	0x004C71D3	68	blocked	__unguarded_partition bit_iter with fn-ptr pred plus Bit_iter swap; needs predicate identity and bit-proxy modeling t=12 model=muse-dac7
 FUN_00612858	0x00212858	199	blocked	hashtable resize with AsciiString hash and shared _M_next_size needs type-specific hash functor reconstruction t=12 model=muse-6665
 ?rva00625790@Rva00625790@@QAEXPAV1@@Z	0x00625790	46	blocked	append via +4 tail walk needs esi+push+leaebx alignment and mov eax ecx for this. O1 O2 G7 with self and next vars give eax-ecx cmp-mem loop without esi. t=12 model=muse-d648
+?Rva002C1777Median@@YAPAHPAH00P6A_NHH@Z	0x002C1777	95	blocked	STL median comparator shape 5 calls but esi edi swapped and plus2 size t=12 model=muse-5f01
+?rva0056EC54@Rva0056EC54@@QAE_NABVUnicodeString@@_N@Z	0x0056EC54	90	partial	xor-eax cmp-reg vs cmp-imm and test-vs-cmp pop order t=18 model=muse-5f01 score=0.92 stash=reverse/attempts/0x0056ec54.cpp
