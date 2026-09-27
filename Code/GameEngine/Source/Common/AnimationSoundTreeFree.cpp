@@ -60,6 +60,7 @@ public:
 	void rva004CA167(void *node);
 	void rva004CA26A();
 	AnimationSoundTree *rva004CA018(void const *dummy);
+	AnimationSoundTree *rva004CA13D(void const *d1, void const *d2);
 
 private:
 	AnimationSoundTreeHeaderHandle m_handle;
@@ -125,5 +126,22 @@ AnimationSoundTree *AnimationSoundTree::rva004CA018(void const *dummy)
 	__assume(proxy != 0);
 	new (proxy) _STL::_STLP_alloc_proxy<ProxyUInt *, ProxyUInt, _STL::allocator<ProxyUInt> >(tmp, (ProxyUInt *)0);
 	*(char **)this = _STL::allocator<char>::allocate(0xb8, 0);
+	return this;
+}
+
+// ?rva004CA13D@AnimationSoundTree@@QAEPAV1@PBX0@Z, retail 0x004CA13D, 42 bytes.
+// Header init: runs the rowed rva004CA018 alloc with the second dummy, then
+// zeroes count at +4 and repairs the 0xB8 header sentinel (zero at +0/+4,
+// self at +8/+0xC), returning this. Called once from the pinned ctor 0x004CA6DA.
+// Evidence: callee rowed 0x004CA018; caller at 0x004CA6E9; prev/next same // cl:.
+AnimationSoundTree *AnimationSoundTree::rva004CA13D(void const *d1, void const *d2)
+{
+	(void)d1;
+	rva004CA018(d2);
+	m_count = 0;
+	*(char *)m_handle.m_header = 0;
+	*(unsigned int *)((char *)m_handle.m_header + 4) = 0;
+	*(void **)((char *)m_handle.m_header + 8) = m_handle.m_header;
+	*(void **)((char *)m_handle.m_header + 0x0C) = m_handle.m_header;
 	return this;
 }
