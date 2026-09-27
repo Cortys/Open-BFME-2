@@ -37039,3 +37039,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?reset@NetCommandWrapperList@@QAEXXZ,,0x0058C0F0,47,Code/GameEngine/Source/GameNetwork/NetCommandWrapperList.cpp,matched,reset loop slot0 flag0 plus global delete
 ??$__linear_insert@PAHHU?$less@H@_STL@@@_STL@@YAXPAH0HU?$less@H@0@@Z,,0x0040AE5E,52,Code/Libraries/Source/WWVegas/WWLib/stlport_int_linear_insert.cpp,matched,pin REL32 at 0x0040B247 caller 0x0040B260 callees rowed ObjectID and unguarded
 ??$__copy@PAUBfmeStringRecord00426A5B@@PAU1@H@_STL@@YAPAUBfmeStringRecord00426A5B@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00426A82,47,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,forward copy via operator= at 0x4267A5; sar3 stride8; caller 0x426B29; same shape as 47B copies at 0x215696 and 0x1737C0
+??_GNetCommandWrapperList@@MAEPAXI@Z,,0x0058C268,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-daf3.cpp,matched,slot0 calls rowed dtor plus delete
