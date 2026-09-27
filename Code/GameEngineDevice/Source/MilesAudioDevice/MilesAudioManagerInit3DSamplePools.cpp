@@ -49,7 +49,7 @@ public:
 	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
 	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
 	virtual void v44(); virtual void v45();
-	virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); 
+	virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
 	virtual Bool isOn(int which) const;
 
 	void init3DSamplePools();
