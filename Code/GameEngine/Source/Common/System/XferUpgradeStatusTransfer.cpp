@@ -47,9 +47,27 @@ public:
 	virtual void slot35(void);
 	virtual void slot36(void);
 	virtual void xferStatus(const char *name, void *data, int size);
+	void Version1();
 };
 
 void __cdecl Rva0026EDC4Xfer(Xfer *xfer, void *data)
 {
 	xfer->xferStatus("UpgradeStatusType", data, 4);
+}
+
+class Rva0026EE11
+{
+public:
+	void rva0026EE11(Xfer *xfer);
+private:
+	unsigned char m_pad[8];
+	int m_status;
+};
+
+// Rva0026EE11 chain at retail 0x0026EE11 31 bytes: Version1 via rowed Xfer
+// then the helper above with status field at +8. Callees both rowed.
+void Rva0026EE11::rva0026EE11(Xfer *xfer)
+{
+	xfer->Version1();
+	Rva0026EDC4Xfer(xfer, &m_status);
 }
