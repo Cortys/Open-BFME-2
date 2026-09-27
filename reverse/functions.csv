@@ -37393,3 +37393,7 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?isXml@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBE50,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,Xml type 33 plus checked-cast caller
 ?isXmlAttributes@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBEC0,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,XmlAttributes type 34 plus checked-cast caller
 ?isLoadVars@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBF30,110,Code/Libraries/Source/Apt/AptValue/AptValueXmlPredicatesBFME2.cpp,matched,LoadVars type 35 plus checked-cast caller
+?rva006DD220@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD220,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isXmlNode plus type 32
+?rva006DD260@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD260,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isXml plus type 33
+?rva006DD2A0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD2A0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isXmlAttributes plus type 34
+?rva006DD2E0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DD2E0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,checked cast asserting isLoadVars plus type 35

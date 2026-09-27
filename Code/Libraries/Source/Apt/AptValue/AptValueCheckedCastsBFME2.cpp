@@ -1,12 +1,15 @@
 // cl: /O2 /DNDEBUG /MD
-// 9 Apt checked casts returning this after asserting isX().
+// 13 Apt checked casts returning this after asserting isX().
 // Retail 0x006DD020/50B isKey line 917, 0x006DD060/50B isMath line 995,
 // 0x006DD0A0/50B isScriptColour line 1022, 0x006DD0E0/50B isObject line 1048,
 // 0x006DD120/50B isPrototype line 1073, 0x006DD160/50B isDate line 1098,
 // 0x006DD1A0/50B isTextFormat line 1123, 0x006DD1E0/50B isMovieClip line 1148,
+// 0x006DD220/50B isXmlNode line 1173, 0x006DD260/50B isXml line 1198,
+// 0x006DD2A0/50B isXmlAttributes line 1223, 0x006DD2E0/50B isLoadVars line 1249,
 // 0x006DD320/50B isStage line 1277. Each calls its rowed predicate in
-// AptValueTypePredicatesBFME2.cpp, asserts "<isX()>" with AptValue.inl path
-// at the retail line, then checks g_bfmeAptBreakOnAssertAtDDC01C.
+// AptValueTypePredicatesBFME2.cpp or AptValueXmlPredicatesBFME2.cpp,
+// asserts "<isX()>" with AptValue.inl path at the retail line,
+// then checks g_bfmeAptBreakOnAssertAtDDC01C.
 // __asm int 3 is a proven blocker: the __debugbreak() intrinsic makes /O2
 // hoist "mov eax,esi" above the break test and duplicate the return (54B);
 // the asm barrier keeps the single shared return and the retail
@@ -25,6 +28,10 @@ public:
     int isDate() const;
     int isTextFormat() const;
     int isMovieClip() const;
+    int isXmlNode() const;
+    int isXml() const;
+    int isXmlAttributes() const;
+    int isLoadVars() const;
     int isStage() const;
     BfmeAptValue006DCD20 *rva006DD020();
     BfmeAptValue006DCD20 *rva006DD060();
@@ -34,6 +41,10 @@ public:
     BfmeAptValue006DCD20 *rva006DD160();
     BfmeAptValue006DCD20 *rva006DD1A0();
     BfmeAptValue006DCD20 *rva006DD1E0();
+    BfmeAptValue006DCD20 *rva006DD220();
+    BfmeAptValue006DCD20 *rva006DD260();
+    BfmeAptValue006DCD20 *rva006DD2A0();
+    BfmeAptValue006DCD20 *rva006DD2E0();
     BfmeAptValue006DCD20 *rva006DD320();
 };
 // ?rva006DD020@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD020 50B. Checked cast for isKey type 24.
@@ -130,6 +141,50 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD320()
 {
     if (!static_cast<unsigned char>(isStage())) {
         g_bfmeAptAssertAtE17734("isStage()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4FD);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD220@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD220 50B. Checked cast for isXmlNode type 32.
+// Evidence: calls rowed ?isXmlNode@BfmeAptValue006DCD20@@QBEHXZ; asserts "isXmlNode()" at AptValue.inl:1173.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD220()
+{
+    if (!static_cast<unsigned char>(isXmlNode())) {
+        g_bfmeAptAssertAtE17734("isXmlNode()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x495);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD260@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD260 50B. Checked cast for isXml type 33.
+// Evidence: calls rowed ?isXml@BfmeAptValue006DCD20@@QBEHXZ; asserts "isXml()" at AptValue.inl:1198.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD260()
+{
+    if (!static_cast<unsigned char>(isXml())) {
+        g_bfmeAptAssertAtE17734("isXml()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4AE);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD2A0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD2A0 50B. Checked cast for isXmlAttributes type 34.
+// Evidence: calls rowed ?isXmlAttributes@BfmeAptValue006DCD20@@QBEHXZ; asserts "isXmlAttributes()" at AptValue.inl:1223.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD2A0()
+{
+    if (!static_cast<unsigned char>(isXmlAttributes())) {
+        g_bfmeAptAssertAtE17734("isXmlAttributes()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4C7);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DD2E0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DD2E0 50B. Checked cast for isLoadVars type 35.
+// Evidence: calls rowed ?isLoadVars@BfmeAptValue006DCD20@@QBEHXZ; asserts "isLoadVars()" at AptValue.inl:1249.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DD2E0()
+{
+    if (!static_cast<unsigned char>(isLoadVars())) {
+        g_bfmeAptAssertAtE17734("isLoadVars()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x4E1);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __asm int 3
     }
