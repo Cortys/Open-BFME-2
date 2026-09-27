@@ -52,3 +52,8 @@ class AsciiString { public: ~AsciiString(); private: char *m_data; };
 struct RvaPair004C3D4C { AsciiString m_key; int m_value; public: ~RvaPair004C3D4C(); };
 template _STL::vector<RvaPair004C3D4C>::~vector();
 
+// ??1?$vector@URvaPair00257544@@V?$allocator@URvaPair00257544@@@_STL@@@_STL@@QAE@XZ @0x00257544 63B.
+// StructureCollapseUpdateModuleData +0xA0 member vector: retail destroys the range through the rowed 8-byte AsciiString-keyed DestroyPairs at 0x32C0CA then frees storage via 0x30830 (EH states 0/-1); called by the StructureCollapse dtor at 0x00257B7A plus Unwind funclets at 0xB720EF/0xB7213E. ICF-twin of rowed 0x004C3D4C and 0x0049E274 (same 63B Destroy+free shape). True element name unproven so honest RvaPair address name stands in for the 8-byte AsciiString-plus-int layout the retail destroy proves.
+struct RvaPair00257544 { AsciiString m_key; int m_value; public: ~RvaPair00257544(); };
+template _STL::vector<RvaPair00257544>::~vector();
+

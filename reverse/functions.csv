@@ -36976,3 +36976,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1AttackNugget@@UAE@XZ,,0x001F0622,48,Code/GameEngine/Source/GameLogic/Object/AttackNuggetDtor.cpp,matched,audited ??_G 0x001F0606 calls here; record +0x04 via 0x000B6CF1
 ??1ArrowStormUpdateModuleData@@UAE@XZ,,0x00490695,56,Code/GameEngine/Source/GameLogic/Object/Update/ArrowStormUpdateModuleDataDtor.cpp,matched,audited ??_G 0x00490679 calls here; base 0x0044ECCE
 ??1WeaponChangeSpecialPowerModuleData@@UAE@XZ,,0x004C42EE,74,Code/GameEngine/Source/GameLogic/Object/SpecialPower/WeaponChangeSpecialPowerModuleDataDtor.cpp,matched,audited ??_G 0x004C42D2 calls here; base 0x0049334F
+??1?$vector@URvaPair00257544@@V?$allocator@URvaPair00257544@@@_STL@@@_STL@@QAE@XZ,,0x00257544,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,STLport vector dtor family via pinned 0x32C0CA fold plus game free 0x30830 for StructureCollapse +0xA0 member ICF-twin of 0x4C3D4C
