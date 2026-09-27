@@ -183,6 +183,7 @@ public:
 	AsciiString buildProfileKey(const char *name);
 	AsciiString encodeUserKey(const UnicodeString &user, const char *name);
 	void Rva0043BFDB(const UnicodeString &user, int profileIndex);
+	UnicodeString Rva0043BB88(void);
 
 private:
 	void rebuildUserNamesEntry(void);
@@ -289,4 +290,13 @@ void SkirmishPreferences::Rva0043BFDB(const UnicodeString &user, int profileInde
 		}
 	}
 	m_profileIndex = saved;
+}
+
+static UnicodeString g_emptyUserName;
+
+UnicodeString SkirmishPreferences::Rva0043BB88(void)
+{
+	if (m_userNames.empty())
+		return g_emptyUserName;
+	return m_userNames.front();
 }

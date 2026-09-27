@@ -37012,3 +37012,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1CitadelSlaughterHordeContain@@UAE@XZ,,0x00480718,5,Code/GameEngine/Source/GameLogic/Object/Contain/CitadelSlaughterHordeContainDtor.cpp,matched,5B jmp thunk to rowed SlaughterHordeContain base 0x004803FB via novtable; wrapper 0x004806FC vtable 0x00C48CC0
 ??1Rva004C9B8F@@QAE@XZ,,0x0004E4E1,12,Code/GameEngine/Source/GameClient/Drawable/Update/Rva004C9B8FAssign.cpp,matched,honest smart-ptr dtor via rowed release plus8 slot1; same TU as assign
 ?write@Rva0002C9C2@@QAEHPAD@Z,,0x0002C9C2,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat string-char-string via rowed writes 0x2C7A7 0x2C5B1 caller 0x2CB02
+?Rva0043BB88@SkirmishPreferences@@QAE?AVUnicodeString@@XZ,,0x0043BB88,46,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish first-username-or-empty via list front; honest Rva name; callers at 0x52289D plus 0x52338C
