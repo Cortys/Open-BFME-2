@@ -6077,3 +6077,4 @@ _ConvertBoolTrees,0x001BBD60
 ?Execute@ThreadClass@@QAEXXZ,0x006104B0,target call from W3DMouse::reset at 0x990CF+0x29; same 54B target body is byte-matched as ?Execute@ThreadClass@@UAEXXZ
 ??1Rva0060D031Member@@QAE@XZ,0x0060D031,Target direct call from XferSave field at +0x18; opaque helper identity
 ??1Rva0060CC99Member@@QAE@XZ,0x0060CC99,Target direct call from XferSave field at +0x2C; opaque helper identity
+?invoke@Rva0038BDEEReceiver@@QAEXPAX@Z,0x0038BDEE,Target direct call from stopHostingAlready at 0x0038D53B; receiver identity opaque

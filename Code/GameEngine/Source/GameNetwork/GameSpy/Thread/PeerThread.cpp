@@ -1116,14 +1116,15 @@ static int QRCountCallback
 	return 0;
 }
 
-// byte-exact reconstruction: Code/GameEngine/Source/GameNetwork/GameSpy/Thread/PeerThread_stopHostingAlready.cpp
-// ?stopHostingAlready@PeerThreadClass@@ present-unmatched
+// Target call at 0x38DE7B enters this body at 0x38D526. The internal
+// receiver method at 0x38BDEE has no established name or class identity.
+class Rva0038BDEEReceiver { public: void invoke(PEER peer); };
 void PeerThreadClass::stopHostingAlready(PEER peer)
 {
 	isThreadHosting = 0; // debugging
 	s_lastStateChangedHeartbeat = 0;
 	s_wantStateChangedHeartbeat = FALSE;
-	peerStopGame(peer);
+	reinterpret_cast<Rva0038BDEEReceiver *>(this)->invoke(peer);
 	if (qr2Sock != INVALID_SOCKET)
 	{
 		closesocket(qr2Sock);
