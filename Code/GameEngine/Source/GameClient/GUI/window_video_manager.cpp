@@ -90,9 +90,10 @@ WindowVideo::WindowVideo( void )
 	
 	m_playType = WINDOW_PLAY_MOVIE_ONCE;
 	m_win = NULL;
-	m_videoBuffer = NULL;
 	m_videoStream = NULL;
-	m_movieName.clear();
+	// BFME2 retail (0x53F0F3) calls releaseBuffer 0x36410 directly (clear() inlined), which is the
+	// address the AsciiString teardown folds to; the StringBase::clear thunk (0x48BA39) is not used here.
+	m_movieName.~AsciiString();
 	m_state = WINDOW_VIDEO_STATE_STOP;
 
 }
@@ -104,9 +105,6 @@ WindowVideo::~WindowVideo( void )
 	if(m_win)
 		m_win->winGetInstanceData()->setVideoBuffer( NULL );
 	m_win = NULL;
-	
-	delete m_videoBuffer;
-	m_videoBuffer = NULL;
 
 	if ( m_videoStream )
 		m_videoStream->close();
@@ -117,16 +115,23 @@ WindowVideo::~WindowVideo( void )
 // ?WindowVideo::init present-unmatched
 void WindowVideo::init( GameWindow *win, AsciiString movieName, 
 												WindowVideoPlayType playType,
-												VideoBuffer *videoBuffer, VideoStreamInterface *videoStream)
+												VideoStreamInterface *videoStream)
 {
 	m_win = win;
 	m_movieName = movieName;
 	m_playType = playType;
-	m_videoBuffer = videoBuffer;
 	m_videoStream = videoStream;
 	m_state = WINDOW_VIDEO_STATE_PLAY;
 	if(m_win)
-		m_win->winGetInstanceData()->setVideoBuffer( m_videoBuffer );
+		m_win->winGetInstanceData()->setVideoBuffer( m_videoStream->getVideoBuffer() );
+}
+
+// BFME2: the stream owns its buffer (vtable +0x3C); out-of-line at 0x53F0BF
+VideoBuffer *WindowVideo::getVideoBuffer( void )
+{
+	if ( m_videoStream )
+		return m_videoStream->getVideoBuffer();
+	return NULL;
 }
 	
 // ?WindowVideo::setWindowState present-unmatched
@@ -138,7 +143,7 @@ void WindowVideo::setWindowState( WindowVideoStates state )
 		m_win->winGetInstanceData()->setVideoBuffer( NULL );
 
 	if((m_state == WINDOW_VIDEO_STATE_PLAY || m_state == WINDOW_VIDEO_STATE_PAUSE )&& m_win)
-		m_win->winGetInstanceData()->setVideoBuffer( m_videoBuffer );
+		m_win->winGetInstanceData()->setVideoBuffer( m_videoStream->getVideoBuffer() );
 }	
 
 //-----------------------------------------------------------------------------
@@ -279,21 +284,10 @@ void WindowVideoManager::playMovie( GameWindow *win, AsciiString movieName, Wind
 		return;
 	}
 
-	// Create the new buffer
-	VideoBuffer *videoBuffer = TheDisplay->createVideoBuffer();
-	if (	videoBuffer == NULL || 
-				!videoBuffer->allocate(	videoStream->width(), 
-													videoStream->height())
-		)
+	// BFME2: the stream takes ownership of a display-created buffer (vtable +0x38)
+	if ( !videoStream->attach( TheDisplay->createVideoBuffer() ) )
 	{
-		// If we failed to create the buffer...
-		delete videoBuffer;
-		videoBuffer = NULL;
-
-		if ( videoStream )
-			videoStream->close();
-		videoStream = NULL;
-
+		videoStream->close();
 		return;
 	}
 
@@ -301,7 +295,7 @@ void WindowVideoManager::playMovie( GameWindow *win, AsciiString movieName, Wind
 	WindowVideo *winVid = NEW WindowVideo;
 	
 	// init it.
-	winVid->init( win, movieName,playType,videoBuffer,videoStream);
+	winVid->init( win, movieName,playType,videoStream);
 
 	// add it to our map.
 	m_playingVideos[win] = winVid;
@@ -325,7 +319,6 @@ void WindowVideoManager::pauseMovie( GameWindow *win )
 }
 // ?hideMovie@WindowVideoManager@@QAEXPAVGameWindow@@@Z
 // Open-BFME5: map lookup + direct state store at +0x10 (BFME WindowVideo layout).
-// ?hideMovie@WindowVideoManager@@QAEXPAVGameWindow@@@Z present-unmatched
 void WindowVideoManager::hideMovie( GameWindow *win )
 {
 	WindowVideoMap::iterator it = m_playingVideos.find(win);
@@ -333,7 +326,7 @@ void WindowVideoManager::hideMovie( GameWindow *win )
 	{
 		WindowVideo *winVid = it->second;
 		if(winVid)
-			*reinterpret_cast<int *>(reinterpret_cast<char *>(winVid) + 0x10) = WINDOW_VIDEO_STATE_HIDDEN;
+			winVid->setWindowState(WINDOW_VIDEO_STATE_HIDDEN);
 	}
 }
 

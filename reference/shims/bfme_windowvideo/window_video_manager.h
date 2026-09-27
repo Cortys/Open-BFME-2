@@ -108,13 +108,14 @@ public:
 	void setPlayType(WindowVideoPlayType playType);
 	void setWindowState( WindowVideoStates state );
 
-	void init( GameWindow *win, AsciiString movieName, WindowVideoPlayType playType,VideoBuffer *videoBuffer, 
+	// BFME2 retail (0x53F165, ret 0x10): no separate VideoBuffer argument; the stream owns the buffer
+	void init( GameWindow *win, AsciiString movieName, WindowVideoPlayType playType,
 	VideoStreamInterface *videoStream);
 	
 private:
 	WindowVideoPlayType m_playType;
 	GameWindow *m_win;
-	VideoBuffer *m_videoBuffer;
+	// BFME2 retail: no m_videoBuffer member (ctor 0x53F0D0 zeroes +0/+4/+8, m_state at +0x10, new(0x14))
 	VideoStreamInterface *m_videoStream;
 	AsciiString m_movieName;
 	WindowVideoStates m_state;
@@ -175,7 +176,7 @@ private:
 // INLINING ///////////////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
 inline VideoStreamInterface *WindowVideo::getVideoStream( void ){ return m_videoStream; };
-inline VideoBuffer *WindowVideo::getVideoBuffer( void ){ return m_videoBuffer; };
+
 inline GameWindow *WindowVideo::getWin( void ){ return m_win; };
 inline AsciiString WindowVideo::getMovieName( void ){ return m_movieName; };
 inline WindowVideoPlayType WindowVideo::getPlayType ( void ){ return m_playType; };
