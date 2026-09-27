@@ -6075,3 +6075,5 @@ _ConvertBoolTrees,0x001BBD60
 ?Set_Name@GameFileClass@@UAEPBDPBD@Z,0x0007846F,target call from the matching GameFileClass filename constructor; Ghidra function boundary and size 712
 ?reset@Win32Mouse@@UAEXXZ,0x000419F5,target call from W3DMouse::reset at 0x990CF; Ghidra boundary 17B; body invokes Mouse reset then sets Win32Mouse byte +0x4F9C to 1
 ?Execute@ThreadClass@@QAEXXZ,0x006104B0,target call from W3DMouse::reset at 0x990CF+0x29; same 54B target body is byte-matched as ?Execute@ThreadClass@@UAEXXZ
+??1Rva0060D031Member@@QAE@XZ,0x0060D031,Target direct call from XferSave field at +0x18; opaque helper identity
+??1Rva0060CC99Member@@QAE@XZ,0x0060CC99,Target direct call from XferSave field at +0x2C; opaque helper identity
