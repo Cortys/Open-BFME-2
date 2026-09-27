@@ -38117,3 +38117,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006E3230@Rva006E3230@@QAEXPAURva006E3230Action@@@Z,,0x006E3230,102,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,_Apt.h asserts at 0x4e0 0x4e1 callers AptAnimation queue honest-address
 ?rva006E3DB0@Rva006E3230@@QAEPAURva006E3230Action@@XZ,,0x006E3DB0,17,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,chain of 0x006E3230 same this validates and returns plus4
 ?GetExtensionFromFile@@YA?AVAsciiString@@V1@@Z,,0x0044C98C,88,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetExtensionFromFile reverseFind dot suffix
+??1Rva0033FBB7@@UAE@XZ,,0x0033FBB7,77,Code/GameEngine/Source/Common/Rva0033FBB7Dtor.cpp,matched,vtable 0x811CF0 Object rva28C197 slot250 base 0x4D759C twin FB20
