@@ -37229,3 +37229,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Weapon@@MAE@XZ,,0x002CC39E,97,Code/GameEngine/Source/GameLogic/Object/WeaponDtor.cpp,matched,vtable 0x0080214C Snapshot base 0xBBB554 donor BFME1 WeaponDestructorThunk plus ZH MI
 ??_GWeapon@@MAEPAXI@Z,,0x002CCE37,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-k9p-644b.cpp,matched,slot0 deleting dtor via rowed dtor 0x002CC39E
 ?rva0028D2C5@Object@@QBEMPAX@Z,,0x0028D2C5,54,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D2C5.cpp,matched,Object float gate template 0x113 helper 0x254 shared 1.0f 0.0f caller 0x508784
+?xfer@W3DProjectileStreamDraw@@MAEXPAVXfer@@@Z,,0x000D11A6,44,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DProjectileStreamDrawXfer.cpp,matched,slot 3 of 0x007CE010 via ZH donor xfer Version 1 1 plus base
