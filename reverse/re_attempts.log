@@ -2207,3 +2207,5 @@ FUN_006A1CC9	0x002A1CC9	57	blocked	pair ctor AsciiString plus list-int needs don
 ?Rva00434097Add@@YGHHH@Z	0x00434097	13	partial	load order swapped: retail mov eax first-arg vs ours second-first t=10 model=muse-p7k score=0.92 stash=reverse/attempts/0x00434097.cpp
 ?Rva002DD021@Rva002DD021@@YA	0x002DD021	34	blocked	calls dup_002DCD64 YAXXZ with 2 args plus allocate 0x10: dup is Construct placeholder with spent true name needs signature audit t=8 model=muse-p7k
 ??1Rva00400A7F@@UAE@XZ	0x00400A7F	121	partial	and-pop order swapped vs retail plus vtable relocs t=25 model=muse-p7k score=0.95 stash=reverse/attempts/0x00400a7f.cpp
+FUN_005f6e1b	0x001F6E1B	156	blocked	free function with virtual slot 0x68 and no callers to prove signature plus Manager SmartPtr context unclear t=15 model=muse-5a81
+FUN_005f7888	0x001F7888	262	blocked	same family as 0x1F6E1B free function virtual slot 0x88 plus no callers plus Manager SmartPtr unclear t=5 model=muse-5a81
