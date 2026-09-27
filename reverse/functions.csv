@@ -38765,3 +38765,6 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Set_Translucent@RenderObjClass@@UAEXH@Z,,0x0006CF52,20,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Is_Really_Visible@RenderObjClass@@UAEHXZ,,0x0006CECD,33,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Get_Pixel_Center@WW3D@@SAXAAM0@Z,,0x0014D220,33,Code/Libraries/Source/WWVegas/WW3D2/ww3d.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?findDrawPositions@@YAXHHHHURegion3D@@PAUICoord2D@@1@Z,,0x0030010D,192,Code/GameEngine/Source/GameClient/MapUtil.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?resetMap@@YAXXZ,,0x00303187,76,Code/GameEngine/Source/GameClient/MapUtil.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?ParseWorldDictDataChunk@@YA_NAAVDataChunkInput@@PAUDataChunkInfo@@PAX@Z,,0x00300075,64,Code/GameEngine/Source/GameClient/MapUtil.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

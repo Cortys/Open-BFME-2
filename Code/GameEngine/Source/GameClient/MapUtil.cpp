@@ -186,11 +186,13 @@ static Bool ParseObjectsDataChunk(DataChunkInput &file, DataChunkInfo *info, voi
 	return (file.parse(userData));
 }
 
+#pragma optimize("s", on)
 static Bool ParseWorldDictDataChunk(DataChunkInput &file, DataChunkInfo *info, void *userData)
 {
 	worldDict = file.readDict();
 	return true;
 }
+#pragma optimize("", on)
 
 static Bool ParseSizeOnly(DataChunkInput &file, DataChunkInfo *info, void *userData)
 {
@@ -282,6 +284,7 @@ static Bool loadMap( AsciiString filename )
 	return TRUE;
 }
 
+#pragma optimize("s", on)
 static void resetMap( void )
 {
 	if (m_data)
@@ -298,6 +301,7 @@ static void resetMap( void )
 	m_techPositions.clear();
 	m_supplyPositions.clear();
 }
+#pragma optimize("", on)
 
 static void getExtent( Region3D *extent )
 {
@@ -316,6 +320,7 @@ static void getExtent( Region3D *extent )
 
 //-------------------------------------------------------------------------------
 
+// ?update@WaypointMap@@ present-unmatched
 void WaypointMap::update( void )
 {
 	if (!m_waypoints)
@@ -356,11 +361,13 @@ void WaypointMap::update( void )
 
 const char * MapCache::m_mapCacheName = "MapCache.ini";
 
+// ?getMapDir@MapCache@@ present-unmatched
 AsciiString MapCache::getMapDir() const 
 { 
 	return AsciiString("Maps"); 
 }
 
+// ?getUserMapDir@MapCache@@ present-unmatched
 AsciiString MapCache::getUserMapDir() const
 {
 	AsciiString tmp = TheGlobalData->getPath_UserData();
@@ -368,11 +375,13 @@ AsciiString MapCache::getUserMapDir() const
 	return tmp;
 }
 
+// ?getMapExtension@MapCache@@ present-unmatched
 AsciiString MapCache::getMapExtension() const
 {
 	return AsciiString("map");
 }
 
+// ?writeCacheINI@MapCache@@ present-unmatched
 void MapCache::writeCacheINI( Bool userDir )
 {
 	AsciiString mapDir;
@@ -460,6 +469,7 @@ void MapCache::writeCacheINI( Bool userDir )
 	fclose(fp);
 }
 
+// ?updateCache@MapCache@@ present-unmatched
 void MapCache::updateCache( void )
 {
 	setFPMode();
@@ -484,6 +494,7 @@ void MapCache::updateCache( void )
 #endif
 }
 
+// ?clearUnseenMaps@MapCache@@ present-unmatched
 Bool MapCache::clearUnseenMaps( AsciiString dirName )
 {
 	dirName.toLower();
@@ -505,6 +516,7 @@ Bool MapCache::clearUnseenMaps( AsciiString dirName )
 	return erasedSomething;
 }
 
+// ?loadStandardMaps@MapCache@@ present-unmatched
 void MapCache::loadStandardMaps(void)
 {
 	INI ini;
@@ -523,6 +535,7 @@ void MapCache::loadStandardMaps(void)
 #endif
 }
 
+// ?loadUserMaps@MapCache@@ present-unmatched
 Bool MapCache::loadUserMaps()
 {
 	// Read in map list from disk
@@ -642,6 +655,7 @@ Bool MapCache::loadUserMaps()
 }
 
 //Bool MapCache::addMap( AsciiString dirName, AsciiString fname, WinTimeStamp timestamp, UnsignedInt filesize, Bool isOfficial )
+// ?addMap@MapCache@@ present-unmatched
 Bool MapCache::addMap( AsciiString dirName, AsciiString fname, FileInfo *fileInfo, Bool isOfficial)
 {
 	if (fileInfo == NULL) {
@@ -1323,6 +1337,7 @@ Bool parseMapPreviewChunk(DataChunkInput &file, DataChunkInfo *info, void *userD
 	return FALSE;
 }
 
+#pragma optimize("s", on)
 void findDrawPositions( Int startX, Int startY, Int width, Int height, Region3D extent,
 															 ICoord2D *ul, ICoord2D *lr )
 {
@@ -1359,4 +1374,5 @@ void findDrawPositions( Int startX, Int startY, Int width, Int height, Region3D 
 	lr->y += startY;
 
 }  // end findDrawPositions
+#pragma optimize("", on)
 

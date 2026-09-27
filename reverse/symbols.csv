@@ -6079,3 +6079,7 @@ _ConvertBoolTrees,0x001BBD60
 ?invoke@Rva0038BDEEReceiver@@QAEXPAX@Z,0x0038BDEE,Target direct call from stopHostingAlready at 0x0038D53B; receiver identity opaque
 ?get@Rva00091A56DwordField@@QBEHXZ,0x00091A56,Opaque alias for Object::rva0028AF65 target call at 0x28AF6B; +0x24 getter body is independently shared with rowed NetWrapperCommandMsg::getDataOffset; does not imply shared class identity
 ?Shrink@?$SimpleDynVecClass@VVector3@@@@IAE_NXZ,0x00100210,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??1WaypointMap@@QAE@XZ,0x0022D9EE,address read from the REL32 displacement at a placed body
+?clear@?$_List_base@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@QAEXXZ,0x0023DAA5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?goProne@ProneUpdate@@QAEXPBVDamageInfo@@@Z,0x0049FFB9,address read from the REL32 displacement at a placed body
+?readDict@DataChunkInput@@QAE?AVDict@@XZ,0x00307833,address read from the REL32 displacement at a placed body
