@@ -36876,3 +36876,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@DamageFilteredCreateObjectDie@@MAEXPAVXfer@@@Z,,0x00485FE3,50,Code/GameEngine/Source/GameLogic/Object/Die/DamageFilteredCreateObjectDieXfer.cpp,matched,slot 3 of vtable 0x0084AB54 via rowed ctor plus Version1 plus base 0x004CE56D plus uint int
 ??0Rva003AE1CD@@QAE@ABV0@@Z,,0x003AE1CD,64,Code/GameEngine/Source/Common/Rva003AE1CDCopyCtor.cpp,matched,derived V3-inline copy via rowed bases 0x3ADFDB 0x3AE20D plus null-guarded plus0x0C plus three vftables
 ??0Rva003AE1A7@@QAE@ABV0@@Z,,0x003AE1A7,38,Code/GameEngine/Source/Common/Rva003AE1A7CopyCtor.cpp,matched,derived V3-inline copy via rowed base 0x3AE1CD plus three vftables plus caller 0x3AE19C
+??1Rva003A97E0@@UAE@XZ,,0x003A97E0,5,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoDtor.cpp,matched,thunk jmp to rowed 3A983C called by AE73C and Unwinds

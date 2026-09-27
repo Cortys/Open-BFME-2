@@ -40,3 +40,21 @@ Rva003AF50D::~Rva003AF50D()
 	unsigned char *b14 = this ? (unsigned char *)this + 0x14 : 0;
 	*(volatile unsigned int *)b14 = 0x00C1C780;
 }
+
+// ??1Rva003A97E0@@UAE@XZ, retail 0x003A97E0, 5 bytes.
+// Trivial derived dtor thunk: tail-jmps to the rowed base ??1Rva003AF50D@@UAE@XZ
+// at 0x003A983C. novtable suppresses any derived vptr store so only the jmp
+// remains. Called by the deleting dtor at 0x003AE73C and by Unwind funclets
+// for the particle module-info copy cluster. Honest address name: no donor,
+// vtable, or string proves a real class name. Precedent: ??1Rva006166B0List
+// 5B tail-jmp to rowed GenericList dtor in WWLib/ini.cpp.
+
+class __declspec(novtable) Rva003A97E0 : public Rva003AF50D
+{
+public:
+	virtual ~Rva003A97E0();
+};
+
+Rva003A97E0::~Rva003A97E0()
+{
+}
