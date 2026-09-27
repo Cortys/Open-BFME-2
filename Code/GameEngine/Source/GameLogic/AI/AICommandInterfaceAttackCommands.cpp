@@ -31,7 +31,8 @@ enum AICommandType
 {
 	AICMD_IDLE = 5,
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
-	AICMD_ATTACK_POSITION = 0x0E
+	AICMD_ATTACK_POSITION = 0x0E,
+	AICMD_BFME_3D = 0x3D
 };
 
 enum CommandSourceType
@@ -68,6 +69,7 @@ public:
 	void aiIdle(CommandSourceType cmdSource);
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
+	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -92,5 +94,17 @@ void AICommandInterface::aiAttackPosition(const Coord3D *pos, Int maxShotsToFire
 	AICommandParms parms(AICMD_ATTACK_POSITION, cmdSource);
 	parms.m_pos = *pos;
 	parms.m_intValue = maxShotsToFire;
+	aiDoCommand(&parms);
+}
+
+// ?aiBfmeObjectCommand3D@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x00470447, 101 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceBfmeObjectCommands.cpp
+// aiBfmeObjectCommand3D at 0x00240680 with AICMD 0x3D plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// BFME2 delta is the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Placement is the HordeContain page with caller at 0x00472BB3.
+void AICommandInterface::aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_BFME_3D, cmdSource);
+	parms.m_obj = obj;
 	aiDoCommand(&parms);
 }
