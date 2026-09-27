@@ -37066,3 +37066,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1PartTheHeavensUpdateModuleData@@UAE@XZ,,0x004ACCCD,105,Code/GameEngine/Source/GameLogic/Object/Update/PartTheHeavensUpdateModuleDataDtor.cpp,matched,Snapshot base BBB554 plus 44B members plus AsciiString via CritterEmitter shape
 ?clear@StateMachine@@QAEXXZ,,0x004D72C5,68,Code/GameEngine/Source/GameLogic/AI/StateMachineGoal.cpp,matched,vtable slot5 plus BFME1 donor clear plus FLT_MAX unk34
 ?set@Rva001F3D03Slot@@QAEXMM@Z,,0x001F3D03,30,Code/GameEngine/Source/Common/Rva001F3D03Set.cpp,matched,forward two floats to plus0x14 var via rowed setRange UNIFORM
+?clear@TurretStateMachine@@QAEXXZ,,0x004D853F,28,Code/GameEngine/Source/Common/TurretStateMachineSetState.cpp,matched,vtable slot5 plus BFME1 donor clear plus rowed base clear

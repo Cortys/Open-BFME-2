@@ -48,6 +48,7 @@ class StateMachine
 public:
 	StateReturnType setState(StateID newStateID);
 	StateReturnType resetToDefaultState();
+	void clear();
 	char m_pad00[4];
 	TurretState *m_currentState;
 	char m_pad08[0x3C - 0x08];
@@ -58,6 +59,7 @@ class TurretStateMachine : public StateMachine
 public:
 	StateReturnType setState(StateID newStateID);
 	StateReturnType resetToDefaultState();
+	void clear();
 	TurretAI *m_turretAI;
 };
 
@@ -83,4 +85,16 @@ StateReturnType TurretStateMachine::resetToDefaultState()
 	if (turret)
 		turret->friend_notifyStateMachineChanged();
 	return tmp;
+}
+
+// ?clear@TurretStateMachine@@QAEXXZ @0x004D853F 28B
+// Retail vtable slot 5 (offset 0x14) of vtable 0x008609C8, class TurretStateMachine.
+// BFME1 donor TurretAI.cpp clear verbatim plus BFME2 deltas (owner +0x3C, notify).
+// Single callee clear 0x004D72C5 rowed in StateMachineGoal.cpp.
+void TurretStateMachine::clear()
+{
+	StateMachine::clear();
+	TurretAI *turret = m_turretAI;
+	if (turret)
+		turret->friend_notifyStateMachineChanged();
 }
