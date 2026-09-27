@@ -500,6 +500,55 @@ void XferBridgeTowerType(Xfer *xfer, int *value)
 	xfer->XferEnum("BridgeTowerType", value, 4);
 }
 
+// Retail 0x00306022 (24B): labelled-enum helper with the "ParticleType"
+// label (string at 0x00807C60). Caller is DoXfer at 0x001F4FA3.
+void XferParticleType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ParticleType", value, 4);
+}
+
+// Retail 0x0030603A (24B): labelled-enum helper with the "ParticlePriorityType"
+// label (string at 0x00807C70).
+void XferParticlePriorityType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ParticlePriorityType", value, 4);
+}
+
+// Retail 0x0030606A (24B): labelled-enum helper with the "WindMotion"
+// label (string at 0x00807C9C).
+void XferWindMotion(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("WindMotion", value, 4);
+}
+
+// Retail 0x003060CA (24B): labelled-enum helper with the "DrawableID"
+// label (string at 0x00807CD4 next to ObjectID at 0x00807CC8).
+void XferDrawableID(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("DrawableID", value, 4);
+}
+
+// Retail 0x003060E2 (24B): labelled-enum helper with the "LivingWorldUniqueID"
+// label (string at 0x00807CE0). Caller is FUN_006D9D7C at 0x002D9E50.
+void XferLivingWorldUniqueID(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("LivingWorldUniqueID", value, 4);
+}
+
+// Retail 0x003060FA (24B): labelled-enum helper with the "RespawnModeType"
+// label (string at 0x00807CF4).
+void XferRespawnModeType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("RespawnModeType", value, 4);
+}
+
+// Retail 0x00306112 (24B): labelled-enum helper with the "SiegeTypeEnum"
+// label (string at 0x00807D04).
+void XferSiegeTypeEnum(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("SiegeTypeEnum", value, 4);
+}
+
 // Two version bytes, stored back to back: the retail Version1 body writes 1 to
 // both of them in a four-byte stack slot before handing their address to the
 // slot-10 transfer operator. Xfer.cpp's model verbatim.
