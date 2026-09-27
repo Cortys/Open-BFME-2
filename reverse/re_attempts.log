@@ -2227,3 +2227,4 @@ FUN_00ae3810	0x006E3810	191	blocked	pool enqueue with 2 virtuals needs bool gett
 ?ignoreObstacle@AIUpdateInterface@@QAEXPBVObject@@@Z	0x00268D88	304	partial	sink-in-ebx with oldName-to-stack vs ours cmp-plus-oldName-in-ebx; 300B vs 304B; t=30 model=muse-5db7 score=0.93 stash=reverse/attempts/0x00268d88.cpp
 ?rva002A9B7B@Rva002A9BF2@@QAE_NXZ	0x002A9B7B	23	blocked	virtual slot 0x2C plus lea-cmp needs real GameWindow vtable t=10 model=muse-c5a0
 ?Rva0058AF47Check@@YG_NPAVRva002A9BF2@@@Z	0x0058AF47	108	partial	comiss order plus jbe layout only t=15 model=muse-c5a0 score=0.95 stash=reverse/attempts/0x0058af47.cpp
+?setClipRegion@W3DDisplayString@@UAEXPAUIRegion2D@@@Z	0x105E9C	210	blocked	Ghidra boundary 0x105E9C/210 and target helper calls support method identity; /O1 /arch:SSE plus target-offset TU views still produces 179 B vs 210 B, with unresolved prolog/temporary shape. t=9 minutes, GPT-6 Luna.
