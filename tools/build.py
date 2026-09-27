@@ -607,32 +607,48 @@ def compiler_environment(root, source=None):
     return env
 
 
-def _current_bfme1_include_flag(flag):
-    """Translate legacy Open-BFME-1 include paths after its tree migration.
+def _current_bfme1_include_flag(flag, source=None):
+    """Resolve Open-BFME-1 ``// cl: /I...`` paths from either checkout layout.
 
-    Hundreds of BFME2 TUs keep their original ``// cl: /I...`` directives.
-    Resolve those paths through the same logical subtrees as the toolchain and
-    reference roots so old and new submodule layouts compile identically.
+    BFME2 sources already name the submodule explicitly. A BFME1 donor compiled
+    in BFME2 carries paths relative to the donor checkout (``/Igame/...`` or
+    ``/Iinputs/reference/...``), so prefix those only when the source itself is
+    inside the submodule. Never reinterpret a BFME2-local ``/Igame/...`` path.
     """
     prefix = "-I" if flag.startswith("-I") else "/I" if flag.startswith("/I") else None
     if prefix is None:
         return flag
     include = flag[len(prefix):]
     root = "reference/open-bfme-1/"
-    if not include.startswith(root):
+    in_donor = False
+    if source is not None:
+        try:
+            resolved(source).relative_to(resolved(BFME1_ROOT))
+            in_donor = True
+        except ValueError:
+            pass
+
+    relative = include[len(root):] if include.startswith(root) else include
+    if not include.startswith(root) and not in_donor:
         return flag
-    relative = include[len(root):]
+
     layouts = (
-        ("Code/", "game"),
-        ("reference/", "reference"),
-        ("build/toolchains/", "toolchains"),
-        ("baselines/", "baselines"),
-        ("vendor/", "vendor"),
+        ("game/", "game"), ("Code/", "game"),
+        ("inputs/reference/", "reference"), ("reference/", "reference"),
+        ("inputs/toolchains/", "toolchains"), ("build/toolchains/", "toolchains"),
+        ("inputs/baselines/", "baselines"), ("baselines/", "baselines"),
+        ("inputs/vendor/", "vendor"), ("vendor/", "vendor"),
     )
-    for old, kind in layouts:
-        if relative.startswith(old):
-            mapped = bfme1_subtree(kind) + "/" + relative[len(old):]
+    for spelling, kind in layouts:
+        if relative.startswith(spelling):
+            mapped = bfme1_subtree(kind) + "/" + relative[len(spelling):]
             return prefix + root + mapped
+    if in_donor:
+        if ":" in relative or relative.startswith(("/", "\\")):
+            return flag
+        # These directives are relative to the BFME1 checkout root. Preserve
+        # their subpath under the submodule so the compiler resolves that tree.
+        return prefix + root + relative
     return flag
 
 
@@ -666,7 +682,7 @@ def source_extra_flags(source):
                 # leading '/' arguments as Windows paths.
                 flags = [f.replace("/", "-", 1) if f.startswith("/") else f
                          for f in line[len("// cl:") :].split()]
-                return [_current_bfme1_include_flag(flag) for flag in flags]
+                return [_current_bfme1_include_flag(flag, source) for flag in flags]
     return []
 
 

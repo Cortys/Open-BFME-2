@@ -17,22 +17,28 @@ An explicit request or assigned lane overrides the queue:
 
    a. Run `python3 tools/bfme1_sweep.py scan` when its image, BFME 1 pointer or
       BFME 2 ledger changed (otherwise reuse the scan), followed by
-      `python3 tools/bfme1_sweep.py ranked` and `near`. The ranked queue is for
-      byte-identical BFME 1 sources; `near` supplies source leads for repair.
+      `python3 tools/bfme1_sweep.py ranked` and
+      `python3 tools/bfme1_sweep.py near`. The ranked queue is for byte-identical
+      BFME 1 sources; `near` supplies source leads for repair.
 
-   b. After the BFME 1 pointer includes it, run
+   b. Ensure the committed BFME 1 pointer includes `tools/lift_lane.py`, then run
       `python3 reference/open-bfme-1/tools/lift_lane.py --limit 1000` at the
       start of the reference pass. This surfaces BFME 1's named lifted bodies
       with proven boundaries and puts same-name ZH definitions first. Use each
       ZH-marked name and readable-body path to prioritize the corresponding
-      `GeneralsMD/` source; the lifted bytes themselves are not C++ recovery.
+      `GeneralsMD/` source as a lead; a same-name hit does not prove identity,
+      and the lifted bytes themselves are not C++ recovery. If the tool is
+      missing at the committed pointer, treat the BFME 1 freshness check as due
+      regardless of its timestamp and complete the verified pointer update below;
+      never silently skip or mark this lane exhausted.
 
    c. Run `python3 tools/zh_sweep.py compile` when the object cache is missing
       or its source, headers, toolchain or flags changed; add `--force` when
       those inputs changed. Then run `python3 tools/zh_sweep.py match` and
       `python3 tools/zh_sweep.py packets`. `match` serves exact ZH body
       placements; `packets` refreshes near misses in the queue consumed by
-      `tools/next_work.py` (whose packet tier is first). Re-run `match` and
+      `tools/next_work.py`. Inspect `python3 tools/next_work.py --tier packet`
+      and work viable ZH packets before moving to step 4. Re-run `match` and
       `packets` after material ledger or dependency changes. Land only through
       the existing identity and full-byte verification gates.
 
