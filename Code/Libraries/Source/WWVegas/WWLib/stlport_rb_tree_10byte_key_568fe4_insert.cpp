@@ -33,3 +33,4 @@ Rva00568FE4Tree::_Link_type Rva00568FE4Tree::_M_create_node(const Rva00568FE4Tre
   return (Rva00568FE4Tree::_Link_type)node;
 }
 template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_unique(Rva00568FE4Tree::iterator, const Rva00568FE4Tree::value_type &);
+template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_equal(const Rva00568FE4Tree::value_type &);
