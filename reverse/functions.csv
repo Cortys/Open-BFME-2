@@ -39502,3 +39502,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??_GCDownload@@QAEPAXI@Z,,0x005E046F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-357b.cpp,matched,chain from CDownload dtor 0x006C9730; calls rowed scalar and delete
 ??_GDownloadManager@@UAEPAXI@Z,,0x005E0AF3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-357b.cpp,matched,slot 5 of 0x00877944; calls rowed scalar 0x005E0994 and delete
 ??RParabolicEase@@QBEMM@Z,,0x0030E5D1,171,Code/GameEngine/Source/GameClient/ParabolicEase.cpp,matched,ParabolicEase operator from BFME1 donor with 7 lerp callers and 1.0f at BBB8D8
+?rva0030E8DF@Rva0030E8DF@@QAEXXZ,,0x0030E8DF,44,Code/Libraries/Source/WWVegas/WWLib/Rva0030E8DFClear.cpp,matched,Clear helper with vector erase and 1.0f default at BBB8D8

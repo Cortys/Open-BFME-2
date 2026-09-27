@@ -6159,3 +6159,4 @@ rva009C7380WeightPairs,0x009B84E0
 ??$__copy_backward_ptrs@PAU?$pair@W4ObjectID@@I@_STL@@PAU12@@_STL@@YAPAU?$pair@W4ObjectID@@I@0@PAU10@00ABU__false_type@0@@Z,0x0030B378,address read from REL32 at 0x004C730F in copy_backward pair 0x004C72FE; folded with BfmeE8 row
 ??$_Destroy@PAU?$pair@$$CBW4LocomotorSetType@@V?$vector@PBVLocomotorTemplate@@V?$allocator@PBVLocomotorTemplate@@@_STL@@@_STL@@@_STL@@@_STL@@YAXPAU?$pair@$$CBW4LocomotorSetType@@V?$vector@PBVLocomotorTemplate@@V?$allocator@PBVLocomotorTemplate@@@_STL@@@_STL@@@0@0@Z,0x004C7542,address read from REL32 at 0x004C7781 in vector dtor 0x004C7767; folded with RvaDestroy row
 ??0?$_Vector_base@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod8@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as matched BfmeE16 row; Rva004E364F TU vector<BfmePod8> member
+?erase@RvaVector@@QAEPAPAXPAPAX0@Z,0x0031BD55,ICF twin of rowed voidptr erase at same address 4-byte elements fold
