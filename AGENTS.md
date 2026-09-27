@@ -11,18 +11,38 @@ An explicit request or assigned lane overrides the queue:
 
 1. `git pull --rebase origin master`
 2. `python3 tools/check_csv.py` — repair ledger errors before other work
-3. `python3 tools/list_naked_candidates.py Code` serves a byte-true dump from
-   `Code/gen_asm/`, boundary already proven. **Prefer the coverage-first reference sweep below when compatible reference units are available; otherwise converting dumps to real C++ is the default work.**
-      
-3b. `python3 tools/bfme1_sweep.py ranked` serves BFME 1 source files whose
-   bodies are byte-identical in game.dat — the conversion is `cp`. `scan`
-   refreshes it in ~3 minutes; `show <file>` prints a packet with the pins and
-   `add_match.py` lines already written out. Byte-exact transfers only; see
-   `docs/matching.md`.
+3. **Run the reference lanes before dump or structural reconstruction.** These
+   queues are separate from the default picker; a zero result in one is not a
+   reason to skip the others.
 
-4. `python3 tools/next_work.py` for identity/structural work; it explains its
+   a. Run `python3 tools/bfme1_sweep.py scan` when its image, BFME 1 pointer or
+      BFME 2 ledger changed (otherwise reuse the scan), followed by
+      `python3 tools/bfme1_sweep.py ranked` and `near`. The ranked queue is for
+      byte-identical BFME 1 sources; `near` supplies source leads for repair.
+
+   b. After the BFME 1 pointer includes it, run
+      `python3 reference/open-bfme-1/tools/lift_lane.py --limit 1000` at the
+      start of the reference pass. This surfaces BFME 1's named lifted bodies
+      with proven boundaries and puts same-name ZH definitions first. Use each
+      ZH-marked name and readable-body path to prioritize the corresponding
+      `GeneralsMD/` source; the lifted bytes themselves are not C++ recovery.
+
+   c. Run `python3 tools/zh_sweep.py compile` when the object cache is missing
+      or its source, headers, toolchain or flags changed; add `--force` when
+      those inputs changed. Then run `python3 tools/zh_sweep.py match` and
+      `python3 tools/zh_sweep.py packets`. `match` serves exact ZH body
+      placements; `packets` refreshes near misses in the queue consumed by
+      `tools/next_work.py` (whose packet tier is first). Re-run `match` and
+      `packets` after material ledger or dependency changes. Land only through
+      the existing identity and full-byte verification gates.
+
+4. `python3 tools/list_naked_candidates.py Code` serves a byte-true dump from
+   `Code/gen_asm/`, boundary already proven. Prefer it after the reference
+   lanes above have no worthwhile lead.
+
+5. `python3 tools/next_work.py` for identity/structural work; it explains its
    own tiers.
-5. `python3 tools/place_bodies.py <sources>` mines the units the ledger already
+6. `python3 tools/place_bodies.py <sources>` mines the units the ledger already
    compiles. A TU emits far more than the one function it was written to land,
    and the rest was invisible only because the export table had no address for
    it; the tool finds those addresses by masked byte search and reads each
@@ -66,12 +86,13 @@ even when the original BFME 1 bytes have no match. Prioritize supported identiti
 and siblings of successful transfers; exclude dumps and retired or refuted
 candidates unless new evidence addresses the earlier finding.
 
-Use isolated scratch trials and existing compilation/placement tools, starting
-with settings from matched BFME 2 siblings. Keep useful near matches with their
-donor revision, flags, dependencies and failure evidence. Cache trials against
-those inputs and retry affected units when they change. A placement remains a
-candidate until target identity, boundaries, relocations and full body bytes
-are verified through the normal matching pipeline.
+For a clean BFME 1 C++ donor that `bfme1_sweep.py` cannot match, compile the
+specific TU using BFME 2's toolchain and settings, then search emitted bodies in
+`game.dat` with `tools/place_bodies.py <donor-TU>`. Use matched siblings to choose
+compiler flags. This is a read-only lead search: never claim the external donor
+path as BFME 2 source. Port supported bodies into an allowed `Code/` TU, preserve
+the donor revision, flags and dependencies, and pass the normal byte and identity
+gates. A placement alone proves neither identity nor recovery.
 
 ## Investigate shared deltas first
 
