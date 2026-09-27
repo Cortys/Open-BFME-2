@@ -36926,3 +36926,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1UVBufferClass@@UAE@XZ,,0x000D2118,5,Code/Libraries/Source/WWVegas/WW3D2/UVBufferClassDtor.cpp,matched,vtable 0x007CE338 plus caller 0x000D20FC plus base 0x000D1DC8
 ??_GUVBufferClass@@UAEPAXI@Z,,0x000D20FC,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-4b3e.cpp,matched,slot 1 of vtable 0x007CE338 calls rowed dtor 0x000D2118 plus delete 0x0002FD60
 ?Rva0042E8C1@BfmeOwnVVD@@QAEEXZ,,0x0042E8C1,44,Code/GameEngine/Source/Common/BfmeOwnVVDCtor.cpp,matched,uses m_150 plus globals 0x009FE78C 0x009BA4E4 callers 0x0029F2CF 0x0037A90C
+??1BFME2StreamMotionChannel@@UAE@XZ,,0x001B214E,26,Code/Libraries/Source/WWVegas/WW3D2/BFME2StreamMotionChannelCtor.cpp,matched,stream dtor deletes Data via array plus twin base pin
+??_GBFME2StreamMotionChannel@@UAEPAXI@Z,,0x001B28DE,28,Code/Libraries/Source/WWVegas/WW3D2/BFME2StreamMotionChannelCtor.cpp,matched,scalar deleting dtor calls dtor plus delete
