@@ -65,6 +65,7 @@ public:
 	int getLineNum( void ) const;
 	AsciiString getFilename( void ) const;
 	int rva0002BBDE( void ) const;
+	AsciiString rva0002BFE5( void ) const;
 
 private:
 	int m_head[ 4 ];
@@ -90,4 +91,9 @@ AsciiString INI::getFilename( void ) const
 int INI::rva0002BBDE( void ) const
 {
 	return m_fileTable.getLine( m_head[ 3 ] );
+}
+
+AsciiString INI::rva0002BFE5( void ) const
+{
+	return m_fileTable.getName( m_head[ 3 ] );
 }
