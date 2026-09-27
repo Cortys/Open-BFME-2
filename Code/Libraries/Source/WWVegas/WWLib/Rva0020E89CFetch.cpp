@@ -100,3 +100,12 @@ UnicodeString Rva005C95ECGet(Rva0020E89C *obj)
 {
 	return obj->rva0020E89C();
 }
+
+// ?Rva005C95CAGet@@YA?AVUnicodeString@@XZ @0x005C95CA 34B
+// Free fetch of STRATEGICHUD:BuildPlotName via TheGameText slot 0x3C.
+// Callers at 0x0056BC86 and 0x005E24A9 pass hidden temp.
+
+UnicodeString Rva005C95CAGet()
+{
+	return TheGameText->fetch("STRATEGICHUD:BuildPlotName");
+}
