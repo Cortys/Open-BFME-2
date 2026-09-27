@@ -37214,3 +37214,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva005D7531@@QAE@XZ,,0x005D751F,18,Code/GameEngine/Source/Common/Rva005D7D88Derived.cpp,matched,ctor calls base 005D7D76 precedes dtor 005D7531
 ?Rva0004CCCDCopyRange@@YAPAVRvaSmartPtr12@@PAV1@00@Z,,0x0004CCCD,50,Code/GameEngine/Source/Common/System/SmartPtrCopyRange.cpp,matched,copy range via rowed assignment with stride12 idiv
 ?Rva005D896FGet@@YGHPAVObject@@@Z,,0x005D896F,27,Code/GameEngine/Source/Common/Rva005D896FGet_muse-1b6d.cpp,matched,stdcall helper over rowed getCurrentWeapon and byte getter
+?destroyDelete@Rva0004CCFF@@QAEPAXI@Z,,0x0004CCFF,33,Code/GameEngine/Source/Common/System/SmartPtrDestroyDelete.cpp,matched,conditional Bfme dtor plus conditional delete returning this
