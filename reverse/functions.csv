@@ -37849,3 +37849,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002BECCD@Rva002BECCD@@QAEXMMM@Z,,0x002BECCD,67,Code/GameEngine/Source/Common/Rva002BECCDCalls.cpp,matched,three-float dual-virtual local zero third callers 0x002B2A0A 0x003FD584 singleton DFEF18
 ?Rva00412845AfterLevel@@YAPBDPBD@Z,,0x00412845,68,Code/GameEngine/Source/Common/BfmePathLeafAfterMarker.cpp,matched,honest address name via level string and abutting leaf marker TU
 ?Rva004128BBGetLevel@@YAHPBD@Z,,0x004128BB,45,Code/GameEngine/Source/Common/BfmePathLeafAfterMarker.cpp,matched,honest address name via leveld format and abutting leaf TU
+??0Rva0004584D@@QAE@ABVBfmeFixedStorage0004543D@@0@Z,,0x0004584D,43,Code/GameEngine/Source/Common/Rva0004584DCtor.cpp,matched,vtable 0x00BC2908 at +0 int zero at +4 two FixedStorage at +8/+0x24 via 0x4543D callers 0x4AFC6/0x10CE97 share DFEFA4 slot
