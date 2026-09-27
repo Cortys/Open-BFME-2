@@ -25,6 +25,8 @@ class Object
 public:
 	char m_pad[0x258];
 	AIHolder *m_ai; // +0x258
+	char m_mid[0x438 - 0x25C]; // +0x25C..+0x437
+	unsigned char m_flag438; // +0x438
 };
 
 class Rva0036E346
@@ -73,4 +75,32 @@ void Rva0036E2E2::rva0036E2E2(bool flag)
 			ai->m_flag3DA = flag;
 		cur = cur->m_next;
 	} while (cur != m_head);
+}
+
+class Rva0036E0E3
+{
+public:
+	bool rva0036E0E3();
+
+private:
+	char m_pad0[4]; // +0x00
+	ListNode *m_head; // +0x04
+};
+
+bool Rva0036E0E3::rva0036E0E3()
+{
+	ListNode *head = m_head;
+	ListNode *cur = head->m_next;
+	bool ok = true;
+	if (cur != head)
+	{
+		do
+		{
+			Object *obj = cur->m_obj;
+			if (obj)
+				ok = ok && ((obj->m_flag438 & 1) != 0);
+			cur = cur->m_next;
+		} while (cur != head);
+	}
+	return ok;
 }
