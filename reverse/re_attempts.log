@@ -2257,3 +2257,4 @@ FUN_00626156	0x00226156	379	blocked	push-eax plus 5x-mov-eax-imm plus pop-eax sl
 ?Rva002AAD52Find@@YAXPAPAXPAX1PAG@Z	0x002AAD52	37	partial	eax-ecx swap throughout same size structure exact t=15 model=muse-8c35 score=0.93 stash=reverse/attempts/0x002aad52.cpp
 ?rva005A9693@Rva005A9693Holder@@QAEXXZ	0x005A9693	102	blocked	106B 4 regions ebx-esi swap plus al-eax plus prologue t=20 model=muse-8c35
 FUN_008e0d4e	0x004E0D4E	25	blocked	STL hashtable begin wrapper needs exact WindowVideoMap STLport types plus monster mangling t=8 model=muse-9a64
+??0Rva0053FAB7@@QAE@XZ	0x0053FAB7	39	blocked	ctor installs vtable 0x008694DC calls member 0x00330757 zeroes +0x14/+0x18/+0x20 and 1 at +0x1C ret-no-args; MI novtable+Member16 gives same 39B/13insns but vtable after 3 zeros vs retail after 1; flags /O1 /O2 /G7 /Os identical; needs vtable-placement lever t=18 model=muse-q8k-17f6

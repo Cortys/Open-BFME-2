@@ -41,6 +41,7 @@ enum AICommandType
 	AICMD_HUNT = 0x12,
 	AICMD_EXIT = 0x1A,
 	AICMD_EVACUATE = 0x1B,
+	AICMD_GUARD_POSITION = 0x1E,
 	AICMD_ATTACK_AREA = 0x23,
 	AICMD_FACE_OBJECT = 0x26,
 	AICMD_FACE_POSITION = 0x27,
@@ -55,6 +56,11 @@ enum CommandSourceType
 	CMD_FROM_PLAYER = 0,
 	CMD_FROM_SCRIPT = 1,
 	CMD_FROM_AI = 2
+};
+
+enum GuardMode
+{
+	GUARDMODE_NORMAL = 0
 };
 
 void free(void *block);
@@ -110,6 +116,7 @@ public:
 	void aiBfmeCommand33(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
 	void aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
+	void aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -405,5 +412,18 @@ void AICommandInterface::aiEvacuate(bool exposeStealthUnits, CommandSourceType c
 		parms.m_intValue = 1;
 	else
 		parms.m_intValue = 0;
+	aiDoCommand(&parms);
+}
+
+// ?aiGuardPosition@AICommandInterface@@QAEXPBUCoord3D@@W4GuardMode@@W4CommandSourceType@@@Z, retail 0x0036F46A, 117 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceGuardCommands.cpp
+// aiGuardPosition at AICMD 0x1E plus m_pos at +0x08 plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// BFME2 same id 0x1E plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x003703FF 0x003C88C0 0x003C894B 0x003C89C7 0x003C92E6 0x003C93CB.
+void AICommandInterface::aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_GUARD_POSITION, cmdSource);
+	parms.m_pos = *position;
+	parms.m_intValue = guardMode;
 	aiDoCommand(&parms);
 }
