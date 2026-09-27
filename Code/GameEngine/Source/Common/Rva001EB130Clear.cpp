@@ -12,6 +12,27 @@ public:
 	void rva001EB130();
 };
 extern void *g_freeList;
+// ?rva001EB769@Rva001EB769@@QAEXXZ @0x001EB769 29B: dispose of the same
+// circular-list holder cleared by 0x001EB130 above (calls it on ecx, then
+// pushes the head node at this+0 onto freelist 0x009B8FF4 when non-null).
+// Callers at 0x001EC845 0x00243DCC 0x002A57A1 0x00372811 etc. are all
+// unclaimed so the owner class is unproven; honest address names.
+class Rva001EB769
+{
+public:
+	void *m_head;
+	void rva001EB769();
+};
+void Rva001EB769::rva001EB769()
+{
+	((Rva001EB130Holder *)this)->rva001EB130();
+	void *head = m_head;
+	if (head != 0) {
+		void *freeHead = g_freeList;
+		((void **)head)[0] = freeHead;
+		g_freeList = head;
+	}
+}
 void Rva001EB130Holder::rva001EB130()
 {
 	void *node = ((void **)m_head)[0];
