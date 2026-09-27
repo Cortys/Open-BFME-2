@@ -37109,3 +37109,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0028AC34@Object@@QAEX_N@Z,,0x0028AC34,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AC34Setter.cpp,matched,Object+0x438 private status bit1 setter 11 callers
 ?rva0028AE9B@Object@@QAEXH@Z,,0x0028AE9B,23,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AE9BSetter.cpp,matched,Object+0x84 chase setter to +0x360 3 callers
 ?rva0028AFE7@Object@@QAEXPAV1@@Z,,0x0028AFE7,21,Code/GameEngine/Source/GameLogic/Object/ObjectSetProducer.cpp,matched,Sibling of setProducer writes same ID to +0x7C 14 callers
+??0EAStringC@@QAE@I@Z,,0x006D45F0,71,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,donor ReserveCtor plus rowed Reserve SetSize plus 5 callers

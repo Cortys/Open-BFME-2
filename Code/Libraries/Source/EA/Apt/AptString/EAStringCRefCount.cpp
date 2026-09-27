@@ -67,6 +67,7 @@ private:
 public:
 	EAStringC(const EAStringC &other);
 	EAStringC(const char *text);
+	EAStringC(unsigned int nSize);
 	EAStringC &operator=(const EAStringC &other);
 	~EAStringC();
 	EAStringC &clear();
@@ -194,6 +195,28 @@ EAStringC::EAStringC(const char *text)
 {
 	m_pData = 0;
 	Assign(text);
+}
+
+// ??0EAStringC@@QAE@I@Z, retail 0x006D45F0 (71B). Reserve constructor:
+// roots null, empty size re-roots the immortal singleton, otherwise
+// Reserve plus SetSize(0) plus hash-zero plus terminator. Donor is
+// open-bfme-1 Code/Libraries/Source/EA/Apt/AptString/EAStringCReserveCtor.cpp
+// (EAStringC(unsigned int), same empty-vs-reserve split); retail routes the
+// allocate path through rowed Reserve 0x006D3760 and SetSize 0x006D3BC0.
+// Callers at 0x006D4744/0x006D48F7/0x006D4FFA/0x006D51F8/0x006D75C5;
+// neighbours rva006D4190 and ChangeBuffer share /O2 /DNDEBUG /MD.
+EAStringC::EAStringC(unsigned int nSize)
+{
+	m_pData = 0;
+	if (nSize) {
+		Reserve(nSize);
+		SetSize(0);
+		m_pData->m_uHash = 0;
+		reinterpret_cast<char *>(m_pData)[sizeof(StringDataC)] = 0;
+	} else {
+		m_pData = &g_eaEmptyStringData;
+		++g_eaEmptyStringData.m_uRefCount;
+	}
 }
 
 // ?GetAt@EAStringC@@QBEHH@Z, retail 0x006D3020 (13B). Sign-extending
