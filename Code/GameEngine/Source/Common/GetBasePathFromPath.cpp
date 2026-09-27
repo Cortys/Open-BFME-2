@@ -10,6 +10,8 @@ class AsciiString;
 AsciiString GetINIFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetStrFileFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetSoloINIFromMap(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -86,5 +88,13 @@ AsciiString GetStrFileFromMap(AsciiString path)
 	AsciiString base = GetBasePathFromPath(path);
 	AsciiString out;
 	out.format("%s\\map.str", base.str());
+	return out;
+}
+
+AsciiString GetSoloINIFromMap(AsciiString path)
+{
+	AsciiString base = GetBasePathFromPath(path);
+	AsciiString out;
+	out.format("%s\\solo.ini", base.str());
 	return out;
 }

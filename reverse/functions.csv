@@ -38081,3 +38081,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?GetBasePathFromPath@@YA?AVAsciiString@@V1@@Z,,0x0044C872,194,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor FileTransfer_GetBasePathFromPath reverseFind backslash prefixCallers 8
 ?GetINIFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CD52,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetINIFromMap via GetBasePath map.ini
 ?GetStrFileFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CDF1,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetStrFileFromMap via GetBasePath map.str
+?GetSoloINIFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CE90,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetSoloINIFromMap via GetBasePath solo.ini
