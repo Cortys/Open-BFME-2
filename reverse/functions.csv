@@ -38808,3 +38808,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?PointInsideRect3D@@YA_NPBUCoord3D@@0000@Z,,0x0025FAFE,124,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?PointInsideArea2D@@YA_NPBUCoord2D@@0H@Z,,0x0025F765,89,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?onDie@SpecialPowerCompletionDie@@UAEXPBVDamageInfo@@@Z,,0x00486B38,30,Code/GameEngine/Source/GameLogic/Object/Die/SpecialPowerCompletionDie.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?setBridge@BridgeTowerBehavior@@UAEXPAVObject@@@Z,,0x004586EE,22,Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeTowerBehavior.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
