@@ -13,7 +13,13 @@
 // The transform projection branch writes the same transpose into two globals
 // (VA 0xDEDC30 then 0xDEDBF0). Only ProjectionMatrix carries a donor name;
 // the second global is address-labelled, not assigned an invented EA identity.
-// /G7 and /arch:SSE reproduce all 1288 bytes. No shared headers are changed.
+// GridWSClassicEnvironmentMapperClass::Apply: RVA 0x184AD0, 1266 bytes.
+// Matched constructor 0x187410 installs table 0x7D5888; slot+0x14 points here.
+// GridWSEnvironmentMapperClass::Apply: RVA 0x185980, 1266 bytes.
+// Matched constructor 0x1874E0 installs table 0x7D58B0; slot+0x14 points here.
+// Both slots are shared by other mapper tables: these rows claim one body
+// per address, not a distinct recovery for each folded source identity.
+// Each body is verified individually with /G7 /arch:SSE. No shared headers change.
 
 #include "refcount.h"
 #include "matrix4.h"
@@ -47,6 +53,18 @@ protected:
 #include "rendobj.h"
 #include "ww3d.h"
 #include "dx8wrapper.h"
+
+// Only the inherited interface accessed by Apply is declared here; unused
+// derived object fields are intentionally not modelled.
+class GridTextureMapperClass : public TextureMapperClass {};
+class GridWSEnvMapperClass : public GridTextureMapperClass {};
+class GridWSClassicEnvironmentMapperClass : public GridWSEnvMapperClass {
+public: virtual void Apply(int uv_array_index);
+};
+class GridWSEnvironmentMapperClass : public GridWSEnvMapperClass {
+public: virtual void Apply(int uv_array_index);
+};
+
 extern Matrix4x4 g_mapperProjectionCopy_009EDC30;
 // Access shim only: no runtime instances or claim of a retail derived class.
 struct MapperTransformAccess : DX8Wrapper {
@@ -92,4 +110,32 @@ void EdgeMapperClass::Apply(int uv_array_index)
 	// Tell rasterizer to expect 2D matrices
 	DX8Wrapper::Set_DX8_Texture_Stage_State(Stage,D3DTSS_TEXTURETRANSFORMFLAGS,D3DTTFF_COUNT2);
 	
+}
+
+void GridWSClassicEnvironmentMapperClass::Apply(int uv_array_index)
+{
+	// Set up the texture matrix
+	Matrix4x4 m;
+	Calculate_Texture_Matrix(m);
+	MapperTransformAccess::SetTransform((D3DTRANSFORMSTATETYPE) (D3DTS_TEXTURE0+Stage),m);
+
+	// Get camera normals
+	DX8Wrapper::Set_DX8_Texture_Stage_State(Stage,D3DTSS_TEXCOORDINDEX,D3DTSS_TCI_CAMERASPACENORMAL);
+
+	// Tell rasterizer to expect 2D matrices
+	DX8Wrapper::Set_DX8_Texture_Stage_State(Stage,D3DTSS_TEXTURETRANSFORMFLAGS,D3DTTFF_COUNT2);
+}
+
+void GridWSEnvironmentMapperClass::Apply(int uv_array_index)
+{
+	// Set up the texture matrix
+	Matrix4x4 m;
+	Calculate_Texture_Matrix(m);
+	MapperTransformAccess::SetTransform((D3DTRANSFORMSTATETYPE) (D3DTS_TEXTURE0+Stage),m);
+
+	// Get camera space reflection
+	DX8Wrapper::Set_DX8_Texture_Stage_State(Stage,D3DTSS_TEXCOORDINDEX,D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR);
+
+	// Tell rasterizer to expect 2D matrices
+	DX8Wrapper::Set_DX8_Texture_Stage_State(Stage,D3DTSS_TEXTURETRANSFORMFLAGS,D3DTTFF_COUNT2);
 }
