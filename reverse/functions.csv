@@ -39442,3 +39442,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva00411112Get@@YAPAXPBVAsciiString@@@Z,,0x00411112,25,Code/GameEngine/Source/GameClient/Rva00411112Get.cpp,matched,chain over rowed find via global table returning node plus 8 or null
 ?Rva004110DCGet@@YAPAXPBD@Z,,0x004110DC,54,Code/GameEngine/Source/GameClient/Rva004110DCGet.cpp,matched,chain over rowed find with temp string via global table returning node plus 8 or null
 ?rva00411523@Rva00411523@@QAEXXZ,,0x00411523,44,Code/GameEngine/Source/GameClient/Rva00411523Walk.cpp,matched,Eva table walk via pinned first and rowed next clearing node plus 2C
+?rva004114EF@Rva004114EF@@QAEXXZ,,0x004114EF,52,Code/GameEngine/Source/GameClient/Rva004114EFWalk.cpp,matched,Eva table walk via pinned first and rowed next virtual-calling node plus 18
