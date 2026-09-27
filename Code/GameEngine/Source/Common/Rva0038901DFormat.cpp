@@ -44,3 +44,17 @@ AsciiString Rva0038901D::rva0038901D()
 	tmp.format("%d.%d.%d.%d", m_a, m_b, m_c, m_d);
 	return tmp;
 }
+
+class Rva00389081
+{
+public:
+	AsciiString rva00389081();
+private:
+	char m_pad[0x130];
+	Rva0038901D m_inner;
+};
+
+AsciiString Rva00389081::rva00389081()
+{
+	return m_inner.rva0038901D();
+}
