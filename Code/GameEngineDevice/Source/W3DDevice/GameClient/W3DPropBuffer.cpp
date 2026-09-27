@@ -321,12 +321,17 @@ void W3DPropBuffer::removePropsForConstruction(const Coord3D* pos, const Geometr
 //=============================================================================
 /** Sets the shroud to status, so it is recomputed.  */
 //=============================================================================
+// Retail reads the manager slot at 0xDFE74C here. TerrainLogic's target body
+// calls TheShroudManager through that same slot; ThePartitionManager is at
+// 0xDFE748.
+extern PartitionManager *TheShroudManager;
+
 #pragma optimize("s", on)
 void W3DPropBuffer::notifyShroudChanged()
 {
 	Int i;
 	for (i=0; i<m_numProps; i++) {
-		m_props[i].ss = ThePartitionManager?OBJECTSHROUD_INVALID:OBJECTSHROUD_CLEAR;
+		m_props[i].ss = TheShroudManager?OBJECTSHROUD_INVALID:OBJECTSHROUD_CLEAR;
 	}
 }
 #pragma optimize("", on)
