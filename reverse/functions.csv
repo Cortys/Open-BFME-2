@@ -37019,3 +37019,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1?$pair@$$CBHUSBServer@@@_STL@@QAE@XZ,,0x005E3B96,8,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair dtor add ecx 4 jmp rowed SBServer dtor at 0x005E3B83
 ??_G?$pair@$$CBHUSBServer@@@_STL@@QAEPAXI@Z,,0x005E3D4B,28,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair deleting dtor calls rowed pair dtor and rowed delete 0x0002FD60
 ??0Rva001DBAA4@@QAE@XZ,,0x001DBAA4,31,Code/GameEngine/Source/Common/Rva001DBAA4Ctor.cpp,matched,vtable 0x007DBC10 shared with base dtor 0x001DBAC3 and 12 family callers
+?Rva005E3B9E@SBServer@@QAEXXZ,,0x005E3B9E,26,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,SBServer release and clear via rowed 0x0007DEEF called by 0x005E3E8A
