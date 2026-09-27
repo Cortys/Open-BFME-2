@@ -36891,3 +36891,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@RadiateFearUpdate@@MAEXPAVXfer@@@Z,,0x0049C195,61,Code/GameEngine/Source/GameLogic/Object/Update/RadiateFearUpdateXfer.cpp,matched,slot3 of vtable 0xC50FBC via rowed ctor 0x49C106 plus UpdateModule base plus UpgradeMux member
 ?xfer@Rva0045CE8C@@QAEXPAVXfer@@@Z,,0x0045CE8C,27,Code/GameEngine/Source/Common/Rva0045CE8CXfer.cpp,matched,slot 3 DieModuleDerived vtables via Version1 plus base 0x004CE56D
 ?xfer@Rva00485BB8@@QAEXPAVXfer@@@Z,,0x00485BB8,28,Code/GameEngine/Source/Common/Rva00485BB8Xfer.cpp,matched,Version1 plus uint at 0x00 via slot 0x78 caller 0x00485BD4
+?xfer@Rva00485BD4@@MAEXPAVXfer@@@Z,,0x00485BD4,69,Code/GameEngine/Source/Common/Rva00485BD4Xfer.cpp,matched,slot 3 vtable 0x0084A8D4 Version12 plus base 0x45CE8C plus uint plus helper
