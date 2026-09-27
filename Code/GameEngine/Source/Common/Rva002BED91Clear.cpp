@@ -8,13 +8,18 @@
 // storing new pointer and AddRef at +4; loop at 0x00528309 calls this on
 // [esi+4] element member; tail-jmp target of 0x003F7F30 (lea +0x1c; jmp).
 
-struct TargetRef00217D4C;
+struct TargetRef00217D4C
+{
+    void *m_vtbl;
+    int references;
+};
 void __fastcall ReleaseTreeHintRef00217D4C(TargetRef00217D4C *p);
 
 struct Rva002BED91
 {
     TargetRef00217D4C *m_ptr;
     void clear();
+    void set(TargetRef00217D4C *p);
 };
 
 void Rva002BED91::clear()
@@ -23,5 +28,16 @@ void Rva002BED91::clear()
     {
         ReleaseTreeHintRef00217D4C(m_ptr);
         m_ptr = 0;
+    }
+}
+
+void Rva002BED91::set(TargetRef00217D4C *p)
+{
+    if (p != m_ptr)
+    {
+        clear();
+        m_ptr = p;
+        if (p)
+            ++p->references;
     }
 }
