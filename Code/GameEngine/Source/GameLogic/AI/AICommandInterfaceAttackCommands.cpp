@@ -85,6 +85,7 @@ public:
 	void aiFaceObject(Object *target, CommandSourceType cmdSource);
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
+	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
@@ -158,6 +159,17 @@ void AICommandInterface::aiWanderInPlace(CommandSourceType cmdSource)
 void AICommandInterface::rva003C7653(Object *target, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x49, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// retail 0x0036EBB8, 101 bytes.
+// Same 101B object shape as rva003C7653 in this TU: AICMD 0x42 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// BFME1 has no 0x42 command; class proven by caller at 0x00372A05 via lea ecx,[esi+0x20] (AICommandInterface subobject).
+// Callers at 0x00372A05 0x00480E21 0x004A0655 0x004CDCF9 0x00546E1C 0x00546EB8.
+void AICommandInterface::rva0036EBB8(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x42, cmdSource);
 	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
