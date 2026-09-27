@@ -13,6 +13,7 @@
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
 class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static AsciiString TheEmptyString; };
+struct IntVec { int *m_start; int *m_finish; int *m_end; };
 struct Elem216 {
     char m_00[0x0C];
     AsciiString m_0C;
@@ -21,7 +22,10 @@ struct Elem216 {
     int m_18;
     int m_1C;
     AsciiString m_20;
-    char m_24[0x64 - 0x24];
+    char m_24[0x30 - 0x24];
+    IntVec m_30;
+    IntVec m_3C;
+    char m_48[0x64 - 0x48];
     int m_64;
     char m_68[0xD8 - 0x68];
 };
@@ -44,6 +48,8 @@ public:
     int rva00219C93(unsigned int index);
     void *rva00219CAB(unsigned int index);
     void *rva00219CC5(unsigned int index);
+    int rva00219BE1(unsigned int index);
+    int rva00219C1F(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -115,4 +121,22 @@ void *Rva00219B9E::rva00219CC5(unsigned int index)
     if (p)
         return &((Elem216 *)p)->m_20;
     return &AsciiString::TheEmptyString;
+}
+// ?rva00219BE1@Rva00219B9E@@QAEHI@Z @0x00219BE1 31B: inner int-vector count at +0x3C.
+// Chain of 0x00219B9E; caller 0x00219E74 needs it. Pointer diff gives sar 2.
+int Rva00219B9E::rva00219BE1(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_3C.m_finish - ((Elem216 *)p)->m_3C.m_start;
+    return 0;
+}
+// ?rva00219C1F@Rva00219B9E@@QAEHI@Z @0x00219C1F 31B: inner int-vector count at +0x30.
+// Chain of 0x00219B9E; callers 0x00219EF4/0x0022027F need it via 0x00219ED5.
+int Rva00219B9E::rva00219C1F(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_30.m_finish - ((Elem216 *)p)->m_30.m_start;
+    return 0;
 }
