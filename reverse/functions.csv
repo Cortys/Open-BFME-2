@@ -37794,3 +37794,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E288,123,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,sibling of didPartialEnter same filter with didExit
 ?isSelectable@Object@@QBE_NXZ,,0x0028D7FD,114,Code/GameEngine/Source/GameLogic/Object/ObjectIsSelectable.cpp,matched,donor BFME1 Object isSelectable with InGameUI slot48 override
 ?didEnterOrExit@Object@@IBE_NXZ,,0x0028D6EB,45,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,donor BFME1 didEnterOrExit with INERT kind byte
+?aiFollowWaypointPath@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x0036EC82,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiFollowWaypointPath plus slot-0 aiDoCommand plus callers at 0x36FA44 and 0x3C8767

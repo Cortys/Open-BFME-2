@@ -26,10 +26,12 @@ struct Coord3D
 };
 
 class Object;
+class Waypoint;
 
 enum AICommandType
 {
 	AICMD_IDLE = 5,
+	AICMD_FOLLOW_WAYPOINT_PATH = 0x06,
 	AICMD_FORCE_ATTACK_OBJECT = 0x0C,
 	AICMD_ATTACK_POSITION = 0x0E,
 	AICMD_FACE_OBJECT = 0x26,
@@ -59,7 +61,10 @@ struct AICommandParms
 	Object *m_otherObj; // +0x18
 	const void *m_team; // +0x1C
 	void *m_coordsStart; // +0x20, coordinate vector buffer
-	char m_midPad[0x34 - 0x24]; // +0x24..+0x33
+	void *m_coordsFinish; // +0x24
+	void *m_coordsEnd; // +0x28
+	const Waypoint *m_waypoint; // +0x2C
+	const void *m_polygon; // +0x30
 	Int m_intValue; // +0x34
 	char m_tailPad[0xC0 - 0x38]; // +0x38..+0xBF, retail block size
 };
@@ -77,6 +82,7 @@ public:
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
+	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -159,5 +165,17 @@ void AICommandInterface::aiBfmeObjectCommand3D(Object *obj, CommandSourceType cm
 {
 	AICommandParms parms(AICMD_BFME_3D, cmdSource);
 	parms.m_obj = obj;
+	aiDoCommand(&parms);
+}
+
+// retail 0x0036EC82, 101 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceFollowPathCommands.cpp
+// aiFollowWaypointPath at AICMD 0x06 plus m_waypoint at +0x2C plus slot-0 aiDoCommand.
+// BFME2 delta is the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x0036FA44 and 0x003C8767 plus 0x003C928D.
+void AICommandInterface::aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_FOLLOW_WAYPOINT_PATH, cmdSource);
+	parms.m_waypoint = waypoint;
 	aiDoCommand(&parms);
 }
