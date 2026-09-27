@@ -1,3 +1,7 @@
+// ?rva006D2E70@EAStringC@@QAEXXZ
+// partial score=0.97 date=2026-09-27
+// ?rva006D2E70@EAStringC@@QAEXXZ
+// partial score=0.97 date=2026-09-27
 // cl: /O2 /DNDEBUG /MD
 // ?FreeData@EAStringC@@SAXPAVStringDataC@1@@Z, retail 0x006D2EB0 (118B).
 // EA refcounted-string release worker: asserts the data refcount is live,
@@ -75,7 +79,7 @@ public:
 	int GetAt(int index) const;
 	bool IsEmpty() const;
 	bool IsEqualTo(const EAStringC *other) const;
-	unsigned short rva006D2F40() const;
+	void rva006D2E70();
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -270,23 +274,24 @@ EAStringC &EAStringC::Rva006D4F00Append(const EAStringC &other)
 	return *this;
 }
 
-// ?rva006D2F40@EAStringC@@QBEGXZ, retail 0x006D2F40, 62 bytes.
-// EAStringC hash accessor: returns the cached m_uHash word at +6, asserting
-// it is non-zero via the EAString.inl 0x184 "m_pData->m_uHash != 0" check.
-// Donor BFME1 EAStringCAssign.cpp proves StringDataC carries unsigned short
-// m_uHash; callers at 0x0070ACD4/0x0070AFC5/0x0070DC1A/0x0070DC86/0x0070DDCC
-// /0x0070DE8C plus 0x006D3708/0x006D3712 consume the hash; neighbours
-// IsEmpty 0x006D2F30 and clear 0x006D2F90 live in this TU.
-// Uses __asm int 3 barrier (not __debugbreak intrinsic) to keep the reload
-// after the breakpoint like retail; intrinsic hoists the load above int3
-// (SetSize 0x006D3BC0 precedent, proven blocker).
-unsigned short EAStringC::rva006D2F40() const
+// ?rva006D2E70@EAStringC@@QAEXXZ, retail 0x006D2E70, 60 bytes.
+// EAStringC refcount retain worker: validates the shared data refcount
+// against the 0xFFFE cap unless it is the immortal empty singleton at
+// 0x00DDC020, then takes one reference. Assertion triple is the EAString.inl
+// 0xE1 "m_pData->m_uRefCount <= 0xfffe" check shared with the copy ctor.
+// Evidence: assert file ".\\string\\EAString.inl" plus cond string plus
+// empty-singleton compare; next row FreeData 0x006D2EB0 lives in this TU.
+// ?rva006D2E70@EAStringC@@QAEXXZ present-unmatched
+void EAStringC::rva006D2E70()
 {
-	if (!(m_pData->m_uHash != 0)) {
-		g_bfmeAptAssertAtE17734("m_pData->m_uHash != 0", ".\\string\\EAString.inl", 0x184);
-		if (g_bfmeAptBreakOnAssertAtDDC01C) {
-			__asm int 3
-		}
+	StringDataC *data = m_pData;
+	if (data == &g_eaEmptyStringData) {
+		data->m_uRefCount++;
+		return;
 	}
-	return m_pData->m_uHash;
+	if (data->m_uRefCount > 0xFFFE) {
+		g_bfmeAptAssertAtE17734("m_pData->m_uRefCount <= 0xfffe", ".\\string\\EAString.inl", 0xE1);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	m_pData->m_uRefCount++;
 }

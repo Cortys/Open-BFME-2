@@ -37041,3 +37041,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??$__copy@PAUBfmeStringRecord00426A5B@@PAU1@H@_STL@@YAPAUBfmeStringRecord00426A5B@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00426A82,47,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,forward copy via operator= at 0x4267A5; sar3 stride8; caller 0x426B29; same shape as 47B copies at 0x215696 and 0x1737C0
 ??_GNetCommandWrapperList@@MAEPAXI@Z,,0x0058C268,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-daf3.cpp,matched,slot0 calls rowed dtor plus delete
 ??1Rva0010F7EE@@UAE@XZ,,0x0010F7EE,52,Code/GameEngine/Source/Common/Rva0010F7EEDtor.cpp,matched,vtable 0x00BC5128 holder 0x08 via Release_Ref 0x50ED3 caller 0x10F7D2 gap B01
+?rva006D2F40@EAStringC@@QBEGXZ,,0x006D2F40,62,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA hash accessor via EAString.inl 0x184 plus m_uHash plus 8 callers plus IsEmpty-clear neighbours
