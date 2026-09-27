@@ -583,12 +583,44 @@ void W3DMouse::init( void )
 //-------------------------------------------------------------------------------------------------
 /** Reset */
 //-------------------------------------------------------------------------------------------------
-// ?reset@W3DMouse@@ present-unmatched
+// The reset body uses setCursor at vtable slot 0x4C, five slots after the
+// cursor-only facade above.  The retail redraw-mode field is at this+0x12DC;
+// the reference class view puts it at +0x10E0.
+class BfmeW3DMouseResetVtable
+{
+public:
+	virtual void slot00() = 0;
+	virtual void slot04() = 0;
+	virtual void slot08() = 0;
+	virtual void slot0C() = 0;
+	virtual void slot10() = 0;
+	virtual void slot14() = 0;
+	virtual void slot18() = 0;
+	virtual void slot1C() = 0;
+	virtual void slot20() = 0;
+	virtual void slot24() = 0;
+	virtual void slot28() = 0;
+	virtual void slot2C() = 0;
+	virtual void slot30() = 0;
+	virtual void slot34() = 0;
+	virtual void slot38() = 0;
+	virtual void slot3C() = 0;
+	virtual void slot40() = 0;
+	virtual void slot44() = 0;
+	virtual void slot48() = 0;
+	virtual void setCursor(Int cursor) = 0;
+};
 void W3DMouse::reset( void )
 {
 
 	// extend
 	Win32Mouse::reset();
+	((BfmeW3DMouseResetVtable *)this)->setCursor(ARROW);
+
+	isThread=FALSE;
+	if (*reinterpret_cast<RedrawMode *>(reinterpret_cast<char *>(this)+0x12DC) == RM_DX8)
+		thread.Execute();
+	thread.Set_Priority(0);
 
 }  // end reset
 
