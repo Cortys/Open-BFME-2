@@ -36844,3 +36844,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1ProductionQueueHordeContain@@UAE@XZ,,0x00481230,67,Code/GameEngine/Source/GameLogic/Object/Contain/ProductionQueueHordeContainDtor.cpp,matched,ProductionQueueHordeContain dtor via TunnelContainDtor 67B precedent
 ??4Rva004BA1C8@@QAEAAV0@ABV0@@Z,,0x004BA291,60,Code/GameEngine/Source/Common/Rva004BA1C8Record.cpp,matched,assign via rowed vector assign shares 0x2C triple layout with dtor 0x004BA1C8
 ??0Rva004BA1D0@@QAE@ABV0@@Z,,0x004BA1D0,73,Code/GameEngine/Source/Common/Rva004BA1D0Record.cpp,matched,copy ctor via rowed vector copy shares 0x2C layout with 0x004BA1C8
+??1PropagandaTowerBehaviorModuleData@@UAE@XZ,,0x00481BCE,48,Code/GameEngine/Source/GameLogic/Object/Behavior/PropagandaTowerBehaviorModuleDataDtor.cpp,matched,PropagandaTowerBehaviorModuleData dtor via RunOffMap 48B precedent
