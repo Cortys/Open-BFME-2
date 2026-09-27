@@ -37084,3 +37084,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006D30D0@EAStringC@@QBE_NPBV1@@Z,,0x006D30D0,83,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC inequality via inlined IsEqualTo plus 6 callers plus IsEqualTo neighbour
 ?rva006D3470@EAStringC@@QAEXXZ,,0x006D3470,29,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC release to empty via FreeData plus empty singleton plus 9 callers
 ?rva006D3490@EAStringC@@QBE_NPBD@Z,,0x006D3490,125,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC C-string equality via strcmp plus null assert plus 8 callers
+??1Rva0031763A@@QAE@XZ,,0x003175D1,105,Code/GameEngine/Source/GameClient/GUI/Rva0031763ACtorDtorAssign.cpp,matched,honest Rva ctor trio dtor via StringBase forwarder and listint
