@@ -38051,3 +38051,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0022252D@Rva0022252D@@QAEPAXH@Z,,0x0022252D,26,Code/GameEngine/Source/Common/System/Rva0022252DGet.cpp,matched,bounds-checked slot lookup stride 0x28 via global 0x009FE4CC
 ?Rva003ECA13Get@@YAKABVAsciiString@@@Z,,0x003ECA13,28,Code/Libraries/Source/WWVegas/WWLib/realcrc_one_arg.cpp,matched,free AsciiString CRC wrapper over rowed CRC_String via inlined str with empty at 0xBBAC1C proven by 26 callers
 ?rva003ECAE0@Rva003ECA69Element@@QAEXPAVXfer@@@Z,,0x003ECAE0,43,Code/GameEngine/Source/GameLogic/Object/Update/Rva003ECA69ElementClear.cpp,matched,element 17-float xfer via float slot 0x70 proven by 20x0x44 caller 0x3ECBF8
+?rva0028BB9E@BfmeSubBEC@@QAEPAXPAX@Z,,0x0028BB9E,67,Code/GameEngine/Source/Common/BfmeSubBECFilteredFind.cpp,matched,BfmeSubBEC filtered find via sibling layout and callers
