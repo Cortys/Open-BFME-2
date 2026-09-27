@@ -38011,3 +38011,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?clear@?$_Rb_tree@URva0027EA49@@U1@U?$_Identity@URva0027EA49@@@_STL@@U?$less@URva0027EA49@@@3@V?$allocator@URva0027EA49@@@3@@_STL@@QAEXXZ,,0x005C6B83,41,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_rva0027EA49_erase.cpp,matched,tree clear via erase plus header reset
 ??$_Destroy@PAURva0027EA49@@@_STL@@YAXPAURva0027EA49@@0@Z,,0x00281AD4,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0027EA49_destroy.cpp,matched,8B range destroy stride8 via rowed dtor
 ??1Rva00281A06@@QAE@XZ,,0x00281A06,15,Code/GameEngine/Source/GameClient/Rva00281A06Dtor.cpp,matched,holder dtor frees plus1C via rowed free
+?getParameter@ScriptAction@@QAEPAVParameter@@H@Z,,0x00203553,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_getParameter.cpp,matched,donor ZH Scripts.h ScriptAction getParameter ctor 0x3B5413 path
