@@ -36937,3 +36937,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0028A704@Rva28A6E7Node@@QAEXPAPAV1@@Z,,0x0028A704,75,Code/GameEngine/Source/Common/Rva0028A704ListRemove.cpp,matched,list remove prev 0x328 next 0x32C caller 0x0028A796 siblings 0x0028A6C7 0x0028A6E7
 ??0Rva0046262D@@QAE@PAXABVWeaponTemplateSetHead@@@Z,,0x0046262D,29,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046262DCtor.cpp,matched,ctor after slot129 plus vptr plus rowed head copy
 ??0LifetimeUpdate@@QAE@PAVThing@@PBVModuleData@@@Z,,0x003A4B58,165,Code/GameEngine/Source/GameLogic/Object/Update/LifetimeUpdateCtor.cpp,matched,ZH and BFME1 donor plus DeletionUpdate and SlowDeath HULK precedent and rowed xfer layout and rowed calc
+?rva003A4AD2@LifetimeUpdate@@QAEXXZ,,0x003A4AD2,15,Code/GameEngine/Source/GameLogic/Object/Update/LifetimeUpdateSetLifetimeRange.cpp,matched,honest wrapper reapplying moduleData min max through rowed setLifetimeRange

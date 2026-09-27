@@ -1970,3 +1970,4 @@ FUN_0085ED4B	0x0045ED4B	27	blocked	branchy push-pop vs O1 setle-lea wall; 6 vari
 ?xfer@DynamicPortalBehaviour@@MAEXPAVXfer@@@Z	0x004609BC	201	partial	global double-load vs single mov ecx [dfec50]; xor-shared store fixed via ternary; t=30 model=muse-4b3e score=0.95 stash=reverse/attempts/0x004609bc.cpp
 ?Rva0028A6C7@Rva28A6E7Node@@QAEHPAPAV1@@Z	0x0028A6C7	32	blocked	branch layout wall xor-first vs cmp-imm plus setne vs branch t=15 model=muse-x7q-f4c9
 ?rva00462DE0@SlaughterHordeContain@@UAEHPAX@Z	0x00462DE0	90	blocked	list-iterate plus slot70 plus 2 callees needs raw-pointer reschedule t=15 model=muse-q4x8
+??1?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE@XZ	0x004AF46E	56	blocked	explicit dtor instantiation gives 52B missing or-ebp-4-minus-1 t=15 model=muse-8fa1
