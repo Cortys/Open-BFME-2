@@ -83,8 +83,9 @@ public:
 struct State
 {
 	// Retail reaches onEnter through vtable slot 4 and onExit through
-	// slot 5 and update through slot 6; the lower slots belong to the
-	// Snapshot and MemoryPoolObject bases plus the State virtuals this TU never calls.
+	// slot 5 and update through slot 6 and isBusy through slot 10; the lower
+	// slots belong to the Snapshot and MemoryPoolObject bases plus the State
+	// virtuals this TU never calls.
 	virtual void vslot00();
 	virtual void vslot04();
 	virtual void vslot08();
@@ -92,6 +93,10 @@ struct State
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
+	virtual Bool isIdle() const;
+	virtual Bool isAttack() const;
+	virtual Bool isGuardIdle() const;
+	virtual Bool isBusy() const;
 	StateReturnType friend_checkForTransitions(StateReturnType status);
 	StateReturnType friend_checkForSleepTransitions(StateReturnType status);
 };
@@ -134,6 +139,7 @@ public:
 	StateReturnType setState(StateID newStateID);
 	void clear();
 	StateReturnType updateStateMachine();
+	Bool isInBusyState() const;
 };
 
 class TurretStateMachine : public StateMachine
@@ -397,4 +403,18 @@ StateReturnType StateMachine::updateStateMachine()
 	{
 		return STATE_FAILURE;
 	}
+}
+
+// ?isInBusyState@StateMachine@@QBE_NXZ @0x004D7309 24B
+// Retail gap between clear 0x004D72C5 and update 0x004D7321 in same TU; donor
+// StateMachine.h isInBusyState verbatim (current null false else isBusy slot 0x28).
+// No direct callees; indirect isBusy slot10.
+Bool StateMachine::isInBusyState() const
+{
+	if (m_currentState != NULL)
+	{
+		if (((State *)m_currentState)->isBusy())
+			return true;
+	}
+	return false;
 }
