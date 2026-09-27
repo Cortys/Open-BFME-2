@@ -193,5 +193,712 @@
         "status": "C++ byte-verified recovery"
       }
     ]
+  },
+  "apt_date_cleanup": {
+    "name": "?CleanNativeFunctions@AptDate@@SAXXZ",
+    "rva": "0x006f64d0",
+    "size": 782,
+    "source": "Code/Libraries/Source/Apt/AptDate.cpp",
+    "compiler": "MSVC7.1 /O2 /MD",
+    "target_sha256": "49134251b4211a31431cb03e566712f6f3e9a693845e6bfcc7e9f26bd53ccd4c",
+    "boundary": "Ghidra0x6F64D0+782; complete RET at0x6F67DD followed byCC",
+    "target_identity_basis": "Target perfect-hash lookup6F3F60 returns entries from named date-method table VA DDC730. Dispatcher loads those entries at6F5156 and selects one of37 cases from jump table VA AF643C. Each case constructs a native-function value with the matching callback, stores it into one cache slot and invokes virtual AddRef. Cleanup reads the exact same37 slots, invokes virtual slot4 Release when non-null and clears each. Every case separately audited for slot, callback and call sequence.",
+    "layout_provenance": "Target proves37 contiguous cache pointers at VA E18248..E182D8 and named correspondence from string table IDs1..37. TU struct grouping is an access view, not a recovered original aggregate declaration. AptValue virtual interface is reused from existing matched AptNativeHash/AptValue source.",
+    "donor_type_record": "1a000910030000009441000000000000000000002913000000000000",
+    "donor_type_interpretation": "LF_MFUNCTION return void3; zero this type; cdecl0; zero arguments; class AptDate reference0x4194. Static source spelling is donor-derived; actual caller reachability not yet asserted.",
+    "donors": [
+      {
+        "tag": "root_ears_godfather_q",
+        "pdb_identity": {
+          "guid": "3159565c-8035-4ae3-b909-2f87bc175c3a",
+          "age": 26,
+          "streams": 2106,
+          "bytes": 33811456
+        },
+        "va": "0x3fd4e0",
+        "module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\AptDate.obj",
+        "stream": 1229,
+        "record_offset": 6660,
+        "original_proc_record": "46001011000000004c1a0000000000000e030000070000000d030000f6e40000e0c43e00010000417074446174653a3a436c65616e4e617469766546756e6374696f6e7300000000",
+        "comparison": "equal782-byte instruction body after masking74 absolute cache-slot operands; not raw-byte identity"
+      },
+      {
+        "tag": "root_ears_godfather_r",
+        "pdb_identity": {
+          "guid": "bf200aae-fcc9-4811-bbea-796b40b7fc3e",
+          "age": 44,
+          "streams": 2342,
+          "bytes": 45510656
+        },
+        "va": "0x57c360",
+        "module": "\\packages\\Apt\\0.19.03\\obj\\Xbox Release\\AptDate.obj",
+        "stream": 1348,
+        "record_offset": 6684,
+        "original_proc_record": "4600101100000000641a0000000000000e030000070000000d030000e9af010060b35600010000417074446174653a3a436c65616e4e617469766546756e6374696f6e7300000000",
+        "comparison": "equal782-byte instruction body after masking74 absolute cache-slot operands; not raw-byte identity"
+      },
+      {
+        "tag": "ntsc_ears_godfather_q",
+        "pdb_identity": {
+          "guid": "cb6fd0a7-b69e-419e-aa66-84694fb64b72",
+          "age": 24,
+          "streams": 1986,
+          "bytes": 34476032
+        },
+        "va": "0x390200",
+        "module": "\\packages\\Apt\\0.19.03\\obj\\Xbox QA\\AptDate.obj",
+        "stream": 1228,
+        "record_offset": 6680,
+        "original_proc_record": "4600101100000000601a0000000000000e030000070000000d0300005f6a010000f23700010000417074446174653a3a436c65616e4e617469766546756e6374696f6e7300000000",
+        "comparison": "equal782-byte instruction body after masking74 absolute cache-slot operands; not raw-byte identity"
+      },
+      {
+        "tag": "ntsc_ears_godfather_r",
+        "pdb_identity": {
+          "guid": "8bdcd1cf-41a0-4a50-a15f-6cf6e139284b",
+          "age": 269,
+          "streams": 2396,
+          "bytes": 55529472
+        },
+        "va": "0x5e4790",
+        "module": "\\packages\\Apt\\0.19.03\\obj\\Xbox Release\\AptDate.obj",
+        "stream": 1390,
+        "record_offset": 6684,
+        "original_proc_record": "4600101100000000641a0000000000000e030000070000000d03000083aa010090375d00010000417074446174653a3a436c65616e4e617469766546756e6374696f6e7300000000",
+        "comparison": "equal782-byte instruction body after masking74 absolute cache-slot operands; not raw-byte identity"
+      }
+    ],
+    "cache_dispatch_audit": [
+      {
+        "name": "getDate",
+        "id": 1,
+        "dispatch_case_va": "0xaf516a",
+        "cache_slot_va": "0xe18248",
+        "callback_candidates": [
+          "0xaf46c0"
+        ],
+        "case_sha256": "2736ce828f8f70a86651ed1bf377e91189778555bd07a6d51216cd9ecab6ea38",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getDay",
+        "id": 2,
+        "dispatch_case_va": "0xaf51d7",
+        "cache_slot_va": "0xe1824c",
+        "callback_candidates": [
+          "0xaf46e0"
+        ],
+        "case_sha256": "ff297144e7e511941460b5e51750717546e26ce178f2d72da0bc836da6d815c4",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getFullYear",
+        "id": 3,
+        "dispatch_case_va": "0xaf5244",
+        "cache_slot_va": "0xe18250",
+        "callback_candidates": [
+          "0xaf4720"
+        ],
+        "case_sha256": "f2156c5c3bc8b9d85dfbcaf22cdf0db31b2964dfce2b3c1ad0700fca289b06d9",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getHours",
+        "id": 4,
+        "dispatch_case_va": "0xaf52b1",
+        "cache_slot_va": "0xe18254",
+        "callback_candidates": [
+          "0xaf4740"
+        ],
+        "case_sha256": "f0b0a0ab5e139404c8dfb44ac0c0365d756fcf1ef2e4cb8b7cc291cebe54a6f1",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getMilliseconds",
+        "id": 5,
+        "dispatch_case_va": "0xaf531e",
+        "cache_slot_va": "0xe18258",
+        "callback_candidates": [
+          "0xaf4760"
+        ],
+        "case_sha256": "6962120a3d1c63c0871a384e9229e6185ee346ca92f8d99958a7e62a9b4e9e3c",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getMinutes",
+        "id": 6,
+        "dispatch_case_va": "0xaf538b",
+        "cache_slot_va": "0xe1825c",
+        "callback_candidates": [
+          "0xaf4780"
+        ],
+        "case_sha256": "17ba64702bb2419dfc986669953604622e580c0736e362909d0a865256769907",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getMonth",
+        "id": 7,
+        "dispatch_case_va": "0xaf53f8",
+        "cache_slot_va": "0xe18260",
+        "callback_candidates": [
+          "0xaf47a0"
+        ],
+        "case_sha256": "205854bf19bb29883491f016185a2a22eabb83cf5e527fd4e2fe286abc91eb44",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getSeconds",
+        "id": 8,
+        "dispatch_case_va": "0xaf5465",
+        "cache_slot_va": "0xe18264",
+        "callback_candidates": [
+          "0xaf47c0"
+        ],
+        "case_sha256": "def021fb6003902fb749dcaff45f0109a128c1e190f62931f6e40819b8b1d7a0",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getTime",
+        "id": 9,
+        "dispatch_case_va": "0xaf54d2",
+        "cache_slot_va": "0xe18268",
+        "callback_candidates": [
+          "0xaf47e0"
+        ],
+        "case_sha256": "d33e9088048a1dd147d2fc90b13a4bb66524bb7bdf10a97b0020a1f4a39fcded",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getTimezoneOffset",
+        "id": 10,
+        "dispatch_case_va": "0xaf553f",
+        "cache_slot_va": "0xe1826c",
+        "callback_candidates": [
+          "0xaf47f0"
+        ],
+        "case_sha256": "699179faa33844e8c84d9767d716e8406f913d0f91a0b8c08821f182f9148f7f",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCDate",
+        "id": 11,
+        "dispatch_case_va": "0xaf55ac",
+        "cache_slot_va": "0xe18270",
+        "callback_candidates": [
+          "0xaf4810"
+        ],
+        "case_sha256": "21f28b27db9a54caac222b3bff48bd5ac9e2d4a068ee718801c28693d4553f7c",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCDay",
+        "id": 12,
+        "dispatch_case_va": "0xaf5619",
+        "cache_slot_va": "0xe18274",
+        "callback_candidates": [
+          "0xaf4830"
+        ],
+        "case_sha256": "a82ffb25b03461e91edb39af0b62632d884a41f2c203609b1d6c29e793a84a80",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCFullYear",
+        "id": 13,
+        "dispatch_case_va": "0xaf5686",
+        "cache_slot_va": "0xe18278",
+        "callback_candidates": [
+          "0xaf4870"
+        ],
+        "case_sha256": "fc1c20068901944e921b982f2f1a06a8c65fbdbac68db50a02cee6d6cfd95070",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCHours",
+        "id": 14,
+        "dispatch_case_va": "0xaf56f3",
+        "cache_slot_va": "0xe1827c",
+        "callback_candidates": [
+          "0xaf4890"
+        ],
+        "case_sha256": "8f2c570a7307e076562c705bd03ff710e490393fbb591b50acf70f33fc6942ec",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCMilliseconds",
+        "id": 15,
+        "dispatch_case_va": "0xaf5760",
+        "cache_slot_va": "0xe18280",
+        "callback_candidates": [
+          "0xaf48b0"
+        ],
+        "case_sha256": "691546a94f4fd75ea72ab53e698f3e7b2d14ad5d1b630b78e925bb2deb3a870a",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCMinutes",
+        "id": 16,
+        "dispatch_case_va": "0xaf57cd",
+        "cache_slot_va": "0xe18284",
+        "callback_candidates": [
+          "0xaf48d0"
+        ],
+        "case_sha256": "eeb206520dfb537f4fec0600b24cb8c738d45a4d38be8d863ee26611e2e94fa3",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCMonth",
+        "id": 17,
+        "dispatch_case_va": "0xaf583a",
+        "cache_slot_va": "0xe18288",
+        "callback_candidates": [
+          "0xaf48f0"
+        ],
+        "case_sha256": "cd6a14518ad6063610f072eb3d4f1c2c8698e38e899ae33e97aca02da0639ac0",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getUTCSeconds",
+        "id": 18,
+        "dispatch_case_va": "0xaf58a7",
+        "cache_slot_va": "0xe1828c",
+        "callback_candidates": [
+          "0xaf4910"
+        ],
+        "case_sha256": "b93c3bafd2650e9b52071557c45cdcfe94bc2f20c4716f55faf801f4c804f092",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "getYear",
+        "id": 19,
+        "dispatch_case_va": "0xaf5914",
+        "cache_slot_va": "0xe18290",
+        "callback_candidates": [
+          "0xaf4930"
+        ],
+        "case_sha256": "94527059c1c6a2a88b7357f1ea8739bfceae43040f1371a3fa534d51a175c906",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setDate",
+        "id": 20,
+        "dispatch_case_va": "0xaf5981",
+        "cache_slot_va": "0xe18294",
+        "callback_candidates": [
+          "0xaf4950"
+        ],
+        "case_sha256": "59f673c56db080779363840624d4f24861bb3f0d84eec0e4bb1e56a25a6301a4",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setFullYear",
+        "id": 21,
+        "dispatch_case_va": "0xaf59ee",
+        "cache_slot_va": "0xe18298",
+        "callback_candidates": [
+          "0xaf49c0"
+        ],
+        "case_sha256": "09e59738a08cdfd35db55b094159de336cb4f6ec0df2130d3b04d3c50d4881e9",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setHours",
+        "id": 22,
+        "dispatch_case_va": "0xaf5a5b",
+        "cache_slot_va": "0xe1829c",
+        "callback_candidates": [
+          "0xaf4a80"
+        ],
+        "case_sha256": "1c5bff009ae0517dd673f5700dfb1337220728e1595a3e959a87a74fba4cfc33",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setMilliseconds",
+        "id": 23,
+        "dispatch_case_va": "0xaf5ac8",
+        "cache_slot_va": "0xe182a0",
+        "callback_candidates": [
+          "0xaf4af0"
+        ],
+        "case_sha256": "f258819646875ee7630d50de79bbc5fbcafcdf3354b0d70ec788afc0ac6ad163",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setMinutes",
+        "id": 24,
+        "dispatch_case_va": "0xaf5b35",
+        "cache_slot_va": "0xe182a4",
+        "callback_candidates": [
+          "0xaf4b60"
+        ],
+        "case_sha256": "d9f95708b26463c8d331a15a39ef3bd92c1a25a0c046403dad2fcde959dca601",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setMonth",
+        "id": 25,
+        "dispatch_case_va": "0xaf5ba2",
+        "cache_slot_va": "0xe182a8",
+        "callback_candidates": [
+          "0xaf4bd0"
+        ],
+        "case_sha256": "b173d1a97c0bd2d1d37505bc68eff5d796bf84501823e61c497751517f3288ae",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setSeconds",
+        "id": 26,
+        "dispatch_case_va": "0xaf5c0f",
+        "cache_slot_va": "0xe182ac",
+        "callback_candidates": [
+          "0xaf4c40"
+        ],
+        "case_sha256": "aa7b2af171bb443820b8ba0ce13234fb486f3639b3f7247134461a49e3c34320",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setTime",
+        "id": 27,
+        "dispatch_case_va": "0xaf5c7c",
+        "cache_slot_va": "0xe182b0",
+        "callback_candidates": [
+          "0xaf47e0"
+        ],
+        "case_sha256": "0178a2daae6c4dfe8fa7f531e890185fd039ef2f69e51c79eb1223ab171805e2",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCDate",
+        "id": 28,
+        "dispatch_case_va": "0xaf5ce9",
+        "cache_slot_va": "0xe182b4",
+        "callback_candidates": [
+          "0xaf4cb0"
+        ],
+        "case_sha256": "3ba38a0b4ad8b090eef146a21277d1c8ed59da8dce0acc8e31f11fec033d375d",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCFullYear",
+        "id": 29,
+        "dispatch_case_va": "0xaf5d56",
+        "cache_slot_va": "0xe182b8",
+        "callback_candidates": [
+          "0xaf4d20"
+        ],
+        "case_sha256": "c8d95c63e7a3de52372eac12adf695c4af72b5da9fc8211a3228dd67c9558d79",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCHours",
+        "id": 30,
+        "dispatch_case_va": "0xaf5dc3",
+        "cache_slot_va": "0xe182bc",
+        "callback_candidates": [
+          "0xaf4de0"
+        ],
+        "case_sha256": "555383a4f87f4c94a35eb370106a3515d7634a9957a2462a9ce1dc4d50d40f4b",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCMilliseconds",
+        "id": 31,
+        "dispatch_case_va": "0xaf5e30",
+        "cache_slot_va": "0xe182c0",
+        "callback_candidates": [
+          "0xaf4e50"
+        ],
+        "case_sha256": "18b3a8cf231cccb1b580659b02f59e96050aa38c594842a52afa80ba2714323e",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCMinutes",
+        "id": 32,
+        "dispatch_case_va": "0xaf5e9d",
+        "cache_slot_va": "0xe182c4",
+        "callback_candidates": [
+          "0xaf4ec0"
+        ],
+        "case_sha256": "f5525fe231534895f1b5f621eefaf863269547a13f619514867b02651274a78b",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCMonth",
+        "id": 33,
+        "dispatch_case_va": "0xaf5f0a",
+        "cache_slot_va": "0xe182c8",
+        "callback_candidates": [
+          "0xaf4f30"
+        ],
+        "case_sha256": "6da9b69fe2cd4132d9161460af8f856795f7a7f707ac3bb479840421b4b78539",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setUTCSeconds",
+        "id": 34,
+        "dispatch_case_va": "0xaf5f77",
+        "cache_slot_va": "0xe182cc",
+        "callback_candidates": [
+          "0xaf4fa0"
+        ],
+        "case_sha256": "99f5f9a0852c9de6613116b2a382e94ab9b2af345ca87c862c13b626a66e58ed",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "setYear",
+        "id": 35,
+        "dispatch_case_va": "0xaf5fe4",
+        "cache_slot_va": "0xe182d0",
+        "callback_candidates": [
+          "0xaf5010"
+        ],
+        "case_sha256": "0c6e5fe0f423de5de622b66113ac233316d055a64ecf2fc3098297f63a7cb34a",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "toString",
+        "id": 36,
+        "dispatch_case_va": "0xaf6051",
+        "cache_slot_va": "0xe182d4",
+        "callback_candidates": [
+          "0xaf5080"
+        ],
+        "case_sha256": "04487fd0192c109c3dafeeb71fda21dc154c0b8801f949f72ed664ccdf1ea4a0",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      },
+      {
+        "name": "UTC",
+        "id": 37,
+        "dispatch_case_va": "0xaf60be",
+        "cache_slot_va": "0xe182d8",
+        "callback_candidates": [
+          "0xaf5100"
+        ],
+        "case_sha256": "41ff12874d833bbadd0e5a14c62ee3df204a65a8ba57c54d8bbe39122e9bafce",
+        "case_size": 109,
+        "checked_calls": {
+          "allocate": "0x006d29e0",
+          "native_function_constructor": "0x006d6500",
+          "set_flag": "0x006dbc70",
+          "add_ref": "virtual slot0"
+        }
+      }
+    ],
+    "status": "C++ byte-verified recovery"
   }
 }
