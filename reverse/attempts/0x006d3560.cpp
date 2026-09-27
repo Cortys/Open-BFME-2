@@ -1,3 +1,7 @@
+// ?rva006D3560@EAStringC@@QBE_NPBV1@@Z
+// partial score=0.98 date=2026-09-27
+// ?rva006D3560@EAStringC@@QBE_NPBV1@@Z
+// partial score=0.98 date=2026-09-27
 // cl: /O2 /DNDEBUG /MD
 // ?FreeData@EAStringC@@SAXPAVStringDataC@1@@Z, retail 0x006D2EB0 (118B).
 // EA refcounted-string release worker: asserts the data refcount is live,
@@ -452,6 +456,7 @@ unsigned int EAStringC::GetInternalRefCount() const
 // in one Apt string worker; neighbours rva006D3490 (strcmp 125B) and
 // rva006D3560 share /O2 /DNDEBUG /MD. Honest address name; PBD proves
 // C-string overload and _strcmpi proves case-insensitive.
+// ?rva006D3510@EAStringC@@QBE_NPBD@Z present-unmatched
 bool EAStringC::rva006D3510(const char *text) const
 {
 	if (!(text != 0)) {
