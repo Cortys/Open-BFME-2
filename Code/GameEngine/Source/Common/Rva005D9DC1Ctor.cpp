@@ -1,5 +1,6 @@
 // cl: /O1 /MD
 // ??0Rva005D9DC1@@QAE@XZ, retail 0x005D9DCC, 26 bytes.
+// ??0Rva005D9D5A@@QAE@XZ, retail 0x005D9D48, 18 bytes.
 // Derived ctor for Rva005D9DC1 (vtable 0x00876464 same as rowed dtor 0x005D9DC1
 // in Rva005EEDAADerived.cpp). Calls base Rva005EEDAA ctor 0x005EED92 then
 // constructs member Rva0024C7B3Member at +0x20 via rowed ctor 0x0024C7B3.
@@ -53,5 +54,16 @@ private:
 
 Rva005D9DC1::Rva005D9DC1()
 	: Rva005EEDAA()
+{
+}
+
+class Rva005D9D5A : public Rva005D9DC1
+{
+public:
+	Rva005D9D5A();
+	virtual ~Rva005D9D5A();
+};
+
+Rva005D9D5A::Rva005D9D5A()
 {
 }

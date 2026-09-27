@@ -37619,3 +37619,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva003F610FElement@@QAE@XZ,,0x003F535B,60,Code/Libraries/Source/WWVegas/WWLib/VectorMemberRecordDtors.cpp,matched,pinned 0x30 element dtor; vector +0x10 then POD buffer +0x04
 ??1RvaVecAnimSet@@QAE@XZ,,0x001F0D04,63,Code/Libraries/Source/WWVegas/WWLib/VectorMemberRecordDtors.cpp,matched,vector<AnimSet> body via pinned _Destroy 0x001F0801
 ??1TensileFormationUpdateMember@@QAE@XZ,,0x004BA35A,63,Code/Libraries/Source/WWVegas/WWLib/VectorMemberRecordDtors.cpp,matched,vector body via rowed Rva004BA341DestroyRange
+??0Rva005D9D5A@@QAE@XZ,,0x005D9D48,18,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005D9DCC precedes dtor 005D9D5A
