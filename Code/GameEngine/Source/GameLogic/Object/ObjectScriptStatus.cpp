@@ -102,10 +102,13 @@ public:
 	void makeDirty( void );
 	void setScriptStatus( ObjectScriptStatusBit bit, Bool set );
 	void setStatus( ObjectStatusTypes bit, Bool flag );
+	Bool rva00292ED0( DisabledType type );
 	void Rva0028CDEB( ObjectStatusMask *mask );
 
 private:
-	unsigned char m_pad00[ 0x437 ];
+	unsigned char m_pad00[ 0x1F8 ];
+	int m_unk1F8[ 11 ]; // +0x1F8 dec-indexed by DisabledType; 11*4 ends at 0x224 upgrades
+	unsigned char m_pad224[ 0x437 - 0x224 ];
 	unsigned char m_scriptStatus;
 	unsigned char m_pad438[ 0x4C4 - 0x438 ];
 	PartitionData *m_partitionData;
@@ -173,4 +176,12 @@ void Object::setScriptStatus( ObjectScriptStatusBit bit, Bool set )
 			}
 		}
 	}
+}
+
+// ?rva00292ED0@Object@@QAE_NW4DisabledType@@@Z
+Bool Object::rva00292ED0( DisabledType type )
+{
+	if( --m_unk1F8[ type ] == 0 )
+		return clearDisabled( type );
+	return false;
 }
