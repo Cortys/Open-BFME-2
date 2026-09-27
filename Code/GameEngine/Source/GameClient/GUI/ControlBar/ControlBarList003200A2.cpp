@@ -20,3 +20,29 @@ void Rva003200A2::rva003200A2(int value)
 		return;
 	m_list.push_back(value);
 }
+
+class Rva003200BC
+{
+public:
+	void rva003200BC(int value);
+private:
+	char m_pad[0x158];
+	std::list<int> m_lists[7];
+};
+
+struct Rva003200BCEntry
+{
+	char m_pad[0x18];
+	int m_index;
+};
+
+void Rva003200BC::rva003200BC(int value)
+{
+	Rva003200BCEntry *entry = (Rva003200BCEntry *)value;
+	if (entry == 0)
+		return;
+	if (entry->m_index < 0 || entry->m_index >= 6)
+		entry->m_index = 0;
+	int index = entry->m_index;
+	m_lists[index].push_back(value);
+}
