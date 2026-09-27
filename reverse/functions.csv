@@ -37856,3 +37856,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?aiEvacuate@AICommandInterface@@QAEX_NW4CommandSourceType@@@Z,,0x002AE6B3,106,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiEvacuate plus AICMD 0x1B plus slot-0 plus caller 0x003C86F1
 ??0Rva002AE5EB@@QAE@XZ,,0x002AE5EB,54,Code/GameEngine/Source/Common/Rva002AE5EBCtor.cpp,matched,honest Rva ctor plus vtable 0x7FDDB4 plus vector 0x211E58 plus caller 0x002B0F3C
 ?getArgument@GameMessage@@QBEPBTGameMessageArgumentType@@H@Z,,0x0030F4EA,34,Code/GameEngine/Source/Common/GameMessageGetArgument.cpp,matched,ZH donor verbatim; m_argList 0x1C via m_next plus junk 0x86BB18
+?findTranslator@MessageStream@@QAEPAVGameMessageTranslator@@I@Z,,0x0030F7D7,28,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,ZH donor findTranslator; firstTranslator 0x14 via next plus id 0x08 plus translator 0x0C

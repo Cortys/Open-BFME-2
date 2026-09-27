@@ -79,6 +79,8 @@ public:
 		~TranslatorData();
 	};
 
+	class GameMessageTranslator *findTranslator(unsigned int id);
+
 private:
 	void *m_firstTranslator; // +0x14
 	void *m_lastTranslator; // +0x18
@@ -168,4 +170,21 @@ MessageStream::TranslatorData::~TranslatorData()
 void deleteTranslatorData(MessageStream::TranslatorData *p)
 {
 	delete p;
+}
+
+// ?findTranslator@MessageStream@@QAEPAVGameMessageTranslator@@I@Z @0x0030F7D7
+// MessageStream::findTranslator from ZH MessageStream.cpp donor: walks
+// m_firstTranslator at +0x14 via m_next at +0x00 matching m_id at +0x08
+// returning m_translator at +0x0C. Retail 28B loop with xor-first /O1 shape.
+GameMessageTranslator *MessageStream::findTranslator(unsigned int id)
+{
+	TranslatorData *translatorData;
+
+	for (translatorData = (TranslatorData *)m_firstTranslator; translatorData; translatorData = translatorData->m_next)
+	{
+		if (translatorData->m_id == id)
+			return translatorData->m_translator;
+	}
+
+	return 0;
 }
