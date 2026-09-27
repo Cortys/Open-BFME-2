@@ -1313,5 +1313,86 @@
         "status": "C++ byte-verified recovery"
       }
     ]
+  },
+  "apt_date_calendar": {
+    "name": "?dateGetNumDaysInMonth@AptDate@@QAEHHH@Z",
+    "rva": "0x006f4120",
+    "size": 110,
+    "source": "Code/Libraries/Source/Apt/AptDateCalendar.cpp",
+    "target_sha256": "db29306a756f014eb3107c9bc56e89714f21203a34e588305e5c0e8f995752f9",
+    "boundary": "Ghidra110B ending RET8 at6F418B; padding6F418E..6F418F; switch data6F4190..6F41A7 is excluded from code-byte claim",
+    "target_identity_basis": "Assert literal0 and original target path Code/Libraries/Source/Apt/AptDate.cpp line166 establish source family. Month switch implements31/30/February leap-day results. Both setDates date-rollover branches call this helper with month/year. PDB supplies original method spelling and thiscall signature.",
+    "donor_procedure": {
+      "name": "AptDate::dateGetNumDaysInMonth",
+      "size": 92,
+      "type": "0xe4ee",
+      "record_offset": 780,
+      "record": "4600101100000000e8030000000000005c000000000000003f000000eee4000040b43e00010000417074446174653a3a646174654765744e756d44617973496e4d6f6e7468000000",
+      "donor_offset": "0x3eb440"
+    },
+    "type_records": {
+      "0xe4ee": "1a0009107400000094410000e4e400000b0002002733000000000000",
+      "0xe4ec": "1a0009103000000094410000e4e400000b000100b818000000000000",
+      "0x3327": "0e000112020000007400000074000000"
+    },
+    "added_pin": {
+      "name": "?dateIsYearLeap@AptDate@@QAE_NH@Z",
+      "rva": "0x006f4080",
+      "basis": "Already matched65B leap-year helper under isLeapYear; target month helper calls it for February; Godfather procedure/type record identifies thiscall AptDate::dateIsYearLeap(int). Target unused ECX and RET4 support ABI. Alias pin only; no duplicate function claim.",
+      "donor_procedure": {
+        "name": "AptDate::dateIsYearLeap",
+        "size": 65,
+        "type": "0xe4ec",
+        "record_offset": 564,
+        "record": "3e00101100000000980200000000000041000000000000003e000000ece40000a0b33e00010000417074446174653a3a646174654973596561724c6561700000",
+        "donor_offset": "0x3eb3a0"
+      },
+      "consistency": "No existing name pin; --check passed after addition"
+    },
+    "compiler_barrier": {
+      "retail": "conditional int3 then mov eax,esi then epilogue",
+      "intrinsic_result": "Same110-byte code span but __debugbreak hoists mov eax,esi before je/int3, mismatching offsets101..105",
+      "other_cpp_trials": "Explicit return after intrinsic duplicates return paths (144-byte emitted section); assigning default31 after intrinsic changes branch/return shape",
+      "repair": "Only the one-byte debug trap uses __asm int3; switch, assertion call and calendar arithmetic remain C++. Existing checked-cast sources document the same MSVC7.1 barrier limitation."
+    },
+    "switch_data_verification": {
+      "full_code_and_data_size": 136,
+      "full_target_sha256": "4f642a89a0f7f2327c2bbbc08808ce0b13bafae8287eae5b29b4998058971e86",
+      "lookup_hex": "000100020002000002000200",
+      "compiled_label_relocations": [
+        {
+          "offset": 18,
+          "label": "$L314",
+          "label_offset": 124,
+          "target_va": "0xaf419c"
+        },
+        {
+          "offset": 25,
+          "label": "$L316",
+          "label_offset": 112,
+          "target_va": "0xaf4190"
+        },
+        {
+          "offset": 112,
+          "label": "$L296",
+          "label_offset": 29,
+          "target_va": "0xaf413d"
+        },
+        {
+          "offset": 116,
+          "label": "$L297",
+          "label_offset": 38,
+          "target_va": "0xaf4146"
+        },
+        {
+          "offset": 120,
+          "label": "$L298",
+          "label_offset": 61,
+          "target_va": "0xaf415d"
+        }
+      ],
+      "result": "Independently relocated all labels from original COFF symbol values and compared the complete136B span; no target-copy patching of switch data"
+    },
+    "status": "C++ with one proven assertion-barrier instruction; byte-verified recovery"
   }
 }
