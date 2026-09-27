@@ -37121,3 +37121,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva002630F5@AIUpdateInterface@@QAEPAVRadarObject@@XZ,,0x002630F5,8,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002630F5.cpp,matched,tail m_object radar rowed 313EAF callers 34EE32 34F082 3500C4
 ?rva006D3CA0@EAStringC@@QAEXPBV1@@Z,,0x006D3CA0,107,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC null-expecting share plus refcount plus 3 callers
 ?Rva00055864Free@@YGXPAURva00055864Node@@@Z,,0x00055864,28,Code/Libraries/Source/WWVegas/WWLib/Rva00055864Free.cpp,matched,sole caller deque clear 0x56DA2 same flags as neighbours
+??0Rva005CD0FEElem@@QAE@PAVRva005CD1A9@@@Z,,0x005CD0DC,34,Code/GameEngine/Source/Common/Rva005CD0FEElemCtor.cpp,matched,inner ctor parent plus list via rowed List_base 0x35C9A6; caller 0x5CD192; vtable 0x874F60
