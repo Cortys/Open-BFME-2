@@ -38207,3 +38207,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?_bfme_ro_flag116@RenderObjClass@@UAEXH@Z,,0x0006D000,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Build_Matrix3D@@YAAAVMatrix3D@@ABVQuaternion@@AAV1@@Z,,0x0053FCF8,238,Code/Libraries/Source/WWVegas/WW3D2/htree.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Get_Translation@Matrix3D@@QBE?AVVector3@@XZ,,0x00083BD4,32,Code/Libraries/Source/WWVegas/WW3D2/htree.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?getMostRecentCommand@DozerAIUpdate@@UAE?AW4DozerTask@@XZ,,0x00488BBD,61,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
