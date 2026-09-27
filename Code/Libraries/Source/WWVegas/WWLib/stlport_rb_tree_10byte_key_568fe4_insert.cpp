@@ -34,3 +34,5 @@ Rva00568FE4Tree::_Link_type Rva00568FE4Tree::_M_create_node(const Rva00568FE4Tre
 }
 template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_unique(Rva00568FE4Tree::iterator, const Rva00568FE4Tree::value_type &);
 template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_equal(const Rva00568FE4Tree::value_type &);
+typedef _STL::multiset<Rva00568FE4Key, Rva00568FE4Less, _STL::allocator<Rva00568FE4Key> > Rva00568FE4Multi;
+template Rva00568FE4Multi::iterator Rva00568FE4Multi::insert(const Rva00568FE4Multi::value_type &);
