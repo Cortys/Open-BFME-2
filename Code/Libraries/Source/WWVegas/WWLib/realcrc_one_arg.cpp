@@ -43,3 +43,32 @@ unsigned long CRC_Stringi(char *string)
   }
   return crc;
 }
+
+// ?Rva003ECA13Get@@YAKABVAsciiString@@@Z, retail 0x003ECA13 (28B). Free-function
+// wrapper over the rowed one-arg CRC_String at 0x003EC922: inlines
+// AsciiString::str() (m_data ? m_data->text : the "" literal at VA 0x00BBAC1C)
+// then tail-calls CRC_String. Evidence: 26 callers (e.g. 0x00206255 0x00207DF4
+// 0x003571B8) push their AsciiString arg and pop ecx after the call (__cdecl
+// one-arg shape) and use the result as an unsigned map key; byte shape matches
+// the rowed NameKeyGenerator AsciiString wrappers at 0x002D91AF and 0x0009FA65
+// modulo the callee and the cdecl ret shape.
+template <typename T> struct BfmeStringData
+{
+  int refCount;
+  unsigned short length;
+  unsigned short capacity;
+  T text[1];
+};
+
+class AsciiString
+{
+  BfmeStringData<char> *m_data;
+
+public:
+  const char *str() const { return m_data ? &m_data->text[0] : (const char *)""; }
+};
+
+unsigned long Rva003ECA13Get(const AsciiString &s)
+{
+  return CRC_String(s.str());
+}

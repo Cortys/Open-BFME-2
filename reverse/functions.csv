@@ -38049,3 +38049,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@QAE@ABVAsciiString@@ABUTreeHintOpaque0043671B@@@Z,,0x00435D16,57,Code/Libraries/Source/WWVegas/WWLib/stlport_pair_treehintopaque_00436e3b.cpp,matched,Pair two-arg ctor via StringBase copy pin and mapped copy 0x22D106 with 00218022 precedent
 ?Rva00222834Get@@YA?AVAsciiString@@H@Z,,0x00222834,90,Code/GameEngine/Source/Common/System/Rva00222834Get.cpp,matched,twin of intAsStr format pct-d RVO via rowed format and pinned copy
 ?rva0022252D@Rva0022252D@@QAEPAXH@Z,,0x0022252D,26,Code/GameEngine/Source/Common/System/Rva0022252DGet.cpp,matched,bounds-checked slot lookup stride 0x28 via global 0x009FE4CC
+?Rva003ECA13Get@@YAKABVAsciiString@@@Z,,0x003ECA13,28,Code/Libraries/Source/WWVegas/WWLib/realcrc_one_arg.cpp,matched,free AsciiString CRC wrapper over rowed CRC_String via inlined str with empty at 0xBBAC1C proven by 26 callers
