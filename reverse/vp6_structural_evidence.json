@@ -1502,7 +1502,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccccccccccccc",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored target C++ in Code/Libraries/Source/VP6/Huffman.cpp; byte verified; source body not imported",
         "ghidra_entry": null
       },
       {
@@ -1613,6 +1613,61 @@
         "target_identity_basis": "Same checked BOOL_CODER field accesses as matched decoder1C4F00; multiply/shift interval split and carry-propagating byte output establish encoder role. General routine branches on its second argument; One and Zero implement the distinct fixed outcomes while retaining the three-argument ABI. PDB provides original spellings. General routine called at1C6D75 by the target prefix-code encoder.",
         "source": "Code/Libraries/Source/VP6/boolhuff.cpp",
         "status": "C++ byte-verified recovery"
+      }
+    ]
+  },
+  "huffman_scalar": {
+    "reconstruction_basis": "Retail disassembly and existing matched prefix lookup/boolean decoder; donor PDB supplies names and module. Private source-handoff compile supplied initial placement. Handoff source bodies were not copied into this reconstruction; no clean-room claim.",
+    "node_layout": {
+      "stride": 12,
+      "left": "packed u32 at +0",
+      "right": "packed u32 at +4",
+      "probability": "u8 at +8",
+      "edge": "leaf bit0; child/token index bits1..7"
+    },
+    "layout_evidence": "Target1C6CD0 computes index*12, loads +8 probability, calls matched bool decoder1C4F00, selects +0/+4, loops until bit0 leaf, returns bits1..7. Independently agrees with matched lookup expansion1C6BA0 and prefix code generator1C6C20.",
+    "functions": [
+      {
+        "name": "_VP6_DecodeValue",
+        "rva": "0x1c6cd0",
+        "size": 70,
+        "target_sha256": "5b17ef693981e33e005a0caa0374a22408f4955e690e996d2fdb50827910f6b2",
+        "last_instruction": {
+          "rva": "0x1c6d15",
+          "text": "ret "
+        },
+        "following_bytes": "cccccccccccccccc",
+        "donor": {
+          "name": "VP6_DecodeValue",
+          "size": 64,
+          "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\Huffman.c.obj",
+          "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+          "donor_va": "0x467d82",
+          "donor_offset": 4550018,
+          "record": "3600101100000000880300000000000040000000030000003e000000b9870100826d45000100015650365f4465636f646556616c75650000"
+        },
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "_VP6_EncodeValue",
+        "rva": "0x1c6d20",
+        "size": 125,
+        "target_sha256": "09cf8fa1e0e881f43701bf910fb24340a5777a5568e3988b892a107910dc2abd",
+        "last_instruction": {
+          "rva": "0x1c6d9c",
+          "text": "ret "
+        },
+        "following_bytes": "cccccc535657ff15",
+        "donor": {
+          "name": "VP6_EncodeValue",
+          "size": 94,
+          "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\Huffman.c.obj",
+          "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+          "donor_va": "0x467dc2",
+          "donor_offset": 4550082,
+          "record": "36001011000000001c040000000000005e000000030000005c000000bb870100c26d45000100015650365f456e636f646556616c75650000"
+        },
+        "status": "Banked C++ partial:129 bytes versus125, redundant loop-entry length reload; same tree fields and matched encode/cost callees"
       }
     ]
   }
