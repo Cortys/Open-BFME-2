@@ -187,3 +187,15 @@ int __fastcall Rva0032378(ListboxData *list)
 
 	return 0;
 }
+
+// ?GadgetListBoxGetSelected@@YAXPAVGameWindow@@PAH@Z, retail 0x00324773, 37 bytes.
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp
+// GadgetListBoxGetSelected (BFME1 0x004B7xxx): null-guards the listbox then
+// winSendSystemMsg 0x4018 with mData1 0 and the select list pointer through
+// vtable slot +0xE8. Callers at 0x00323694 and 0x005B5C11 pass a stack Int slot.
+void GadgetListBoxGetSelected(GameWindow *listbox, Int *selectList)
+{
+	if (listbox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(listbox, 0x4018, 0, (int)selectList);
+}
