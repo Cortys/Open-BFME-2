@@ -38102,3 +38102,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Rva0033FE65@@QAE@PAVStateMachine@@H@Z,,0x0033FE65,56,Code/GameEngine/Source/Common/Rva0033FE65Ctor.cpp,matched,State hash 0x8821F22E vtable 0x811E08 tail words bools
 ??1Rva0033FC42@@UAE@XZ,,0x0033FC42,91,Code/GameEngine/Source/Common/Rva0033FC42Dtor.cpp,matched,vtable 0x811DB0 member 0x20 slot3C delete base 0x49B47C
 ??1Rva0033FB20@@UAE@XZ,,0x0033FB20,77,Code/GameEngine/Source/Common/Rva0033FB20Dtor.cpp,matched,vtable 0x811B18 Object rva28C197 slot250 base 0x4D759C
+?GetAssetUsageFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CF2F,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetAssetUsageFromMap via GetBasePath assetusage
