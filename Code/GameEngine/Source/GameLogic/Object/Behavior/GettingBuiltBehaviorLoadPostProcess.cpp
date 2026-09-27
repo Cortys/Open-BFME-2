@@ -6,6 +6,9 @@
 // pinned 0x0058B03E first then secondary +0x20 slot 2 then work-list at +0x40 walked
 // for pathfind re-add via rowed 0x002E718A with TheGameLogic findObjectByID row
 // 0x00049DC5 and TheAI pathfinder at +0x10; Object status bit at +0x438.
+// ?rva0045427E@GettingBuiltBehavior@@QAEXXZ @0x0045427E 47B: dtor helper using
+// m_object +0x7c ID via findObjectByID row plus m_b3C gate plus bfmeDoBGB pin
+// 0x002984D4 with 8 0x16; sole caller is dtor 0x0045448F.
 
 #include <list>
 
@@ -80,8 +83,16 @@ extern GameLogic *TheGameLogic;
 class Object
 {
 public:
-	char m_pad00[0x438];
+	char m_pad00[0x7c];
+	int m_7c;
+	char m_pad80[0x438 - 0x80];
 	unsigned char m_438;
+};
+
+class BfmeSubBGB
+{
+public:
+	void bfmeDoBGB(int one, int two);
 };
 
 class Pathfinder
@@ -111,6 +122,7 @@ class GettingBuiltBehavior : public UpdateModule, public GettingBuiltBehaviorSec
 {
 public:
 	GettingBuiltBehavior(Thing *thing, const ModuleData *moduleData);
+	void rva0045427E();
 protected:
 	virtual void loadPostProcess();
 private:
@@ -145,4 +157,17 @@ void GettingBuiltBehavior::loadPostProcess()
 			shim->rva002E718A(obj);
 		}
 	}
+}
+
+void GettingBuiltBehavior::rva0045427E()
+{
+	Object *obj = m_object;
+	if (!obj)
+		return;
+	Object *found = TheGameLogic->findObjectByID((ObjectID)obj->m_7c);
+	if (!found)
+		return;
+	if (!m_b3C)
+		return;
+	reinterpret_cast<BfmeSubBGB*>(found)->bfmeDoBGB(8, 0x16);
 }
