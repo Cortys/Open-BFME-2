@@ -22,3 +22,5 @@ __declspec(noinline) void _Destroy<BfmeAssignRecord32*>(BfmeAssignRecord32* __fi
 		__first->~BfmeAssignRecord32();
 }
 }
+
+template void _STL::vector<BfmeAssignRecord32>::_M_clear();
