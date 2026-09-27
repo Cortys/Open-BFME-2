@@ -1997,3 +1997,4 @@ FUN_0056af4b	0x0056AF4B	45	blocked	1 callee unclaimed 0x0056AD80 85B needs 0x003
 ??1Rva0034C5E0@@UAE@XZ	0x0035822E	88	partial	pop-ecx vs and scheduling wall only t=45 model=muse-6318 score=0.94 stash=reverse/attempts/0x0035822e.cpp
 ?erase@?$vector@UBfmeStringRecord00111ACF@@V?$allocator@UBfmeStringRecord00111ACF@@@_STL@@@_STL@@QAEPAUBfmeStringRecord00111ACF@@PAU3@0@Z	0x003F6975	51	blocked	stlport erase 54B vs 51B retail calls copy_ptrs wrapper ours inlines copy plus push0 reg diff G7 Os O2 Ob0 tried t=25 model=muse-77ef
 ?rva003FB793@Rva003FB7C7@@QAEXPAUVector3@@@Z	0x003FB793	52	blocked	x87 fld plus int mov vs 6 movss under O1-SSE t=15 model=muse-4f9a
+FUN_007eca81	0x003ECA81	50	blocked	register wall 3 variants best 49of50B t=12 model=muse-c8b3

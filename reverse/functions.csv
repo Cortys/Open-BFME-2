@@ -37338,3 +37338,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1?$vector@UBfmeStringTailRecord156@@V?$allocator@UBfmeStringTailRecord156@@@_STL@@@_STL@@QAE@XZ,,0x004CC1AD,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtor004CC1AD.cpp,matched,vector dtor via pinned Destroy 0x4CC195 plus free
 ?Rva00035C90Get@@YAPAVRva00041004@@XZ,,0x00035C90,93,Code/Libraries/Source/WWVegas/WWLib/StringBaseLockGetters.cpp,matched,narrow StringBase lock singleton via rowed ctor 0x411C1 and atexit cleanup 0x7B6A90
 ?Rva00035DF0Get@@YAPAVRva00041004@@XZ,,0x00035DF0,93,Code/Libraries/Source/WWVegas/WWLib/StringBaseLockGetters.cpp,matched,wide StringBase lock singleton via rowed ctor 0x411C1 and atexit cleanup 0x7B6A80
+?remove@Rva003ED2A3Manager@@QAEXABVAsciiString@@PAX@Z,,0x003ED2A3,62,Code/GameEngine/Source/GameLogic/Object/Rva003ED2A3ManagerRemove.cpp,matched,manager remove erases on find hit called by unregister 0x003ECDB7
