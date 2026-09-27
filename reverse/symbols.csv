@@ -5842,3 +5842,4 @@ _ConvertBoolTrees,0x001BBD60
 ??0BfmeOpaqueOwnedRecord1408@@QAE@ABU0@@Z,0x00556450,address read from the REL32 displacement at 0x557C7F in the _Construct wrapper 0x557C63 whose other bytes this unit reproduces; Ghidra boundary 0x556450/155; opaque emitter view of the copied record
 ??0BfmeStringHeadRecord148@@QAE@ABU0@@Z,0x0036105B,address read from the REL32 displacement at 0x36148C in the pinned _Construct wrapper 0x361470; the body there is held under ??0Rva0036105B@@QAE@ABV0@@Z and this emitter view folds onto it
 ??$__copy_ptrs@PAUBfmePod44@@PAU1@@_STL@@YAPAUBfmePod44@@PAU1@00ABU__false_type@0@@Z,0x0007EA02,address read from the REL32 displacement at 0x81A62 in the pinned vector<BfmePod44>::erase 0x81A4F; Ghidra boundary 0x7EA02/29
+??$_Destroy@PAURva00414BDBElement@@@_STL@@YAXPAURva00414BDBElement@@0@Z,0x00414508,address read from the REL32 displacement at 0x4147B9 in the pinned _M_clear 0x4147B1; Ghidra boundary 0x414508/24
