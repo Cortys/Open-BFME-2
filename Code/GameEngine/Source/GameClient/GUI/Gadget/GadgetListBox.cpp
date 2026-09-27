@@ -344,3 +344,15 @@ void GadgetComboBoxHideList(GameWindow *comboBox)
 		return;
 	TheWindowManager->winSendSystemMsg(comboBox, 0x4005, 0, 0);
 }
+
+// ?GadgetComboBoxSetItemData@@YAXPAVGameWindow@@HPAX@Z, retail 0x0032295A (39B).
+// Ported from Open-BFME-1 GadgetComboBox.cpp GadgetComboBoxSetItemData.
+// Null-checks the combobox then GCM_SET_ITEM_DATA (0x402b in BFME2, +3 from
+// ZH 0x4028) through TheWindowManager at 0x9FEF1C slot 58 0xE8 with
+// mData1=index and mData2=data. 37 callers.
+void GadgetComboBoxSetItemData(GameWindow *comboBox, Int index, void *data)
+{
+	if (comboBox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(comboBox, 0x402b, index, (int)data);
+}
