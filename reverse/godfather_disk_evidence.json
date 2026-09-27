@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "bundle": "godfather-disk-handoff.zip",
+  "bundle_sha256": "db5fabf943580c6aa04cb983504a192313734fe3d4e427ec21a74f88a0a1b821",
+  "target": {
+    "path": "D:\\LAN\\openbfme2-beta\\baselines\\bfme2\\workshop-vanilla-1.06\\files\\game.dat",
+    "sha256": "f008b587570bad693981dc7218588c81d192a1e064b0f7f861539c51156a7640",
+    "text_rva": "0x1000",
+    "imagebase": 4194304
+  },
+  "donor": "root_ears_godfather_q",
+  "pdb_identity": {
+    "guid": "3159565c-8035-4ae3-b909-2f87bc175c3a",
+    "age": 26,
+    "streams": 2106,
+    "bytes": 33811456
+  },
+  "verification": "Bundled verifier passed six PDB/XBE pairings and section hashes; original PDB procedure/type records checked against included PDB. Independent local Capstone decode and internal branch-boundary audit passed. Original disk completeness not independently audited from this subset.",
+  "eastring_comparisons": {
+    "compiler": "MSVC7.1 /O2 /DNDEBUG /MD; strcmp intrinsic",
+    "reference_basis": "Existing Code/Libraries/Source/EA/Apt/AptString/EAStringCFind.cpp establishes representation/header view and target original source path. Body control flow reconstructed from retail comparison operations; no Godfather source available in the bundle.",
+    "target_identity_basis": "Seven neighboring, complete thiscall bodies compare null-terminated character buffers. Object overloads dereference each object at+0; equality of representation pointers short-circuits; characters begin at representation+8. C-string overloads use their stack pointer directly. This agrees with independently matched EAStringC Find/SetSize/refcount operations and target EAString.cpp assertion paths. Each comparison predicate and return ABI checked separately; PDB supplies original spellings and const/reference qualifiers.",
+    "field_provenance": "Target comparison bodies establish object+0 representation pointer and rep+8 character start. Four u16 header members are reused from existing EAStringCFind/RefCount target reconstructions; comparisons do not independently establish their names.",
+    "boundary_and_reachability": "All seven start after padding and decode fully through terminal RET4 with internally aligned branches; unique complete PDB procedure-byte matches. No current Ghidra entries or confirmed callers; these facts do not establish runtime reachability. No names pinned.",
+    "donor_type_records": {
+      "0x41fd": "1a000910300000005d410000b54100000b000100f041000000000000",
+      "0x41fc": "1a000910300000005d410000b54100000b000100f241000000000000",
+      "0x420e": "1a000910740000005d410000b54100000b000100f041000000000000",
+      "0x415d": "1e0004150000800000000000000000000000000000004541537472696e674300",
+      "0x41b5": "0a000210b14100000a040000",
+      "0x41b1": "0a0001105d4100000100f2f1",
+      "0x41f0": "0a00011201000000ef410000",
+      "0x41ef": "0a000210b14100002a000000",
+      "0x41f2": "0a00011201000000d23f0000",
+      "0x3fd2": "0a000210c31200000a040000",
+      "0x12c3": "0a000110700000000100f2f1"
+    },
+    "type_interpretation": "LF_MFUNCTION thiscall (0x0b); return bool0x30 or int0x74; const EAStringC this; one const EAStringC& or const char* argument. Donor type facts corroborated by target ECX/RET4 and argument dereferences.",
+    "codegen_finding": "Object relational overloads require explicit true/false return branches; direct relational return adds eight bytes. C-string overloads require direct relational return.",
+    "functions": [
+      {
+        "name": "??MEAStringC@@QBE_NABV0@@Z",
+        "donor_name": "EAStringC::operator<",
+        "rva": "0x6d3130",
+        "size": 95,
+        "target_sha256": "7681ac46f53144bfee9f4a6bb30eaf242c72c6d11714160042d83a8b734fd105",
+        "end_instruction": {
+          "rva": "0x6d318c",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "c20400cccccccccccccccccccccccccc",
+        "following_16_bytes": "cc8b018b4c24048b093bc17505b001c2",
+        "donor_va": "0x3d6dc0",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 23784,
+        "original_proc_record": "3a00101100000000485d0000000000005f000000000000005c000000fd410000c05d3c000100004541537472696e67433a3a6f70657261746f723c00",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "??NEAStringC@@QBE_NABV0@@Z",
+        "donor_name": "EAStringC::operator<=",
+        "rva": "0x6d3190",
+        "size": 95,
+        "target_sha256": "a909b7958cf701d974cdc382de7b9de0726a44c23ca9060dea785fb055550f09",
+        "end_instruction": {
+          "rva": "0x6d31ec",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "1bc083d8ff85c05e0f9cc05bc20400cc",
+        "following_16_bytes": "cc8b44240450e896fffffff6d81bc040",
+        "donor_va": "0x3d6e20",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 23884,
+        "original_proc_record": "3e00101100000000b05d0000000000005f000000000000005c000000fd410000205e3c000100004541537472696e67433a3a6f70657261746f723c3d00000000",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "??MEAStringC@@QBE_NPBD@Z",
+        "donor_name": "EAStringC::operator<",
+        "rva": "0x6d32f0",
+        "size": 87,
+        "target_sha256": "a9b68d6a384004c45bad24f32ada14646eee12d3eb8e3a6453caa1b0aec1dd1e",
+        "end_instruction": {
+          "rva": "0x6d3344",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "5e8ac15bc20400cccccccccccccccccc",
+        "following_16_bytes": "cccccccccccccccccc8b0153568b7424",
+        "donor_va": "0x3d7040",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 24408,
+        "original_proc_record": "3a00101100000000bc5f000000000000570000000400000054000000fc41000040603c000100004541537472696e67433a3a6f70657261746f723c00",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "??NEAStringC@@QBE_NPBD@Z",
+        "donor_name": "EAStringC::operator<=",
+        "rva": "0x6d3350",
+        "size": 87,
+        "target_sha256": "586234542d2c57cf195bba2becf4bdfac5cfc578ce4a5c778bb8601c1f703ed9",
+        "end_instruction": {
+          "rva": "0x6d33a4",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "5e8ac15bc20400cccccccccccccccccc",
+        "following_16_bytes": "cccccccccccccccccc8b0153568b7424",
+        "donor_va": "0x3d70a0",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 24512,
+        "original_proc_record": "3e001011000000002860000000000000570000000400000054000000fc410000a0603c000100004541537472696e67433a3a6f70657261746f723c3d00000000",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "??OEAStringC@@QBE_NPBD@Z",
+        "donor_name": "EAStringC::operator>",
+        "rva": "0x6d33b0",
+        "size": 87,
+        "target_sha256": "a576b7ac931be24c1582adf7f37db2d79e426099fbc0cc22b7e13970aeaeb206",
+        "end_instruction": {
+          "rva": "0x6d3404",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "5e8ac15bc20400cccccccccccccccccc",
+        "following_16_bytes": "cccccccccccccccccc8b0153568b7424",
+        "donor_va": "0x3d7100",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 24620,
+        "original_proc_record": "3a001011000000009060000000000000570000000400000054000000fc41000000613c000100004541537472696e67433a3a6f70657261746f723e00",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "??PEAStringC@@QBE_NPBD@Z",
+        "donor_name": "EAStringC::operator>=",
+        "rva": "0x6d3410",
+        "size": 87,
+        "target_sha256": "14770c316a6a9aa8cab37a1ebef689eb4074a3897e4f8bda2f9b6a4feb8dc4e1",
+        "end_instruction": {
+          "rva": "0x6d3464",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "5e8ac15bc20400cccccccccccccccccc",
+        "following_16_bytes": "cccccccccccccccccc568bf18b0650e8",
+        "donor_va": "0x3d7160",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 24724,
+        "original_proc_record": "3e00101100000000fc60000000000000570000000400000054000000fc41000060613c000100004541537472696e67433a3a6f70657261746f723e3d00000000",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "?Compare@EAStringC@@QBEHABV1@@Z",
+        "donor_name": "EAStringC::Compare",
+        "rva": "0x6d3610",
+        "size": 85,
+        "target_sha256": "ad40da5fb151b5d8488da4d4296aac68e62e553753f03038d621e1232d6b8968",
+        "end_instruction": {
+          "rva": "0x6d3662",
+          "bytes": "c20400",
+          "mnemonic": "ret",
+          "operands": "4"
+        },
+        "preceding_16_bytes": "5f1bc05e83d8ff5bc20400cccccccccc",
+        "following_16_bytes": "cccccccccccccccccccccc56578b7c24",
+        "donor_va": "0x3d72a0",
+        "donor_module": "\\packages\\apt\\0.19.03\\obj\\xbox qa\\Apt.obj",
+        "record_stream": 1222,
+        "record_offset": 25240,
+        "original_proc_record": "3a00101100000000f8620000000000005500000000000000520000000e420000a0623c000100004541537472696e67433a3a436f6d70617265000000",
+        "source": "Code/Libraries/Source/Apt/string/EAStringCompare.cpp",
+        "status": "C++ byte-verified recovery"
+      }
+    ]
+  }
+}
