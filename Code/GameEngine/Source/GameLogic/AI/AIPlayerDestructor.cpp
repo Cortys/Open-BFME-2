@@ -70,10 +70,11 @@ public:
 class AIPlayer : public GameEngineDeletingBase
 {
 public:
-	AIPlayer();
+ AIPlayer();
+ bool rva00232683();
 
 protected:
-	virtual ~AIPlayer();
+ virtual ~AIPlayer();
 
 private:
 	unsigned short m_flags0C;
@@ -98,6 +99,14 @@ AIPlayer::AIPlayer()
 // ??1AIPlayer@@MAE@XZ
 AIPlayer::~AIPlayer()
 {
-	if (m_items10._M_start)
-		free(m_items10._M_start);
+ if (m_items10._M_start)
+  free(m_items10._M_start);
+}
+
+bool AIPlayer::rva00232683()
+{
+ unsigned short flags = m_flags0C;
+ if (((flags & 0x30) != 0) || ((flags & 0x0400) != 0))
+  return true;
+ return false;
 }
