@@ -37305,3 +37305,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?isTextFormat@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC6D0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD1A0 asserts isTextFormat plus type 36
 ?isMovieClip@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC720,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD1E0 asserts isMovieClip plus type 30
 ?isStage@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC770,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD320 asserts isStage plus type 39
+?erase@?$vector@UBfmeStringRecord00204A30@@V?$allocator@UBfmeStringRecord00204A30@@@_STL@@@_STL@@QAEPAUBfmeStringRecord00204A30@@PAU3@@Z,,0x00357CA2,55,Code/GameEngine/Source/Common/BfmeStringRecordErase00357CA2.cpp,matched,Single erase via copy 0x00204A13 and dtor 0x00204848 shape like Nugget erase 0x0033C3BC
