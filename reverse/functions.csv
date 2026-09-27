@@ -37300,3 +37300,8 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004B554F@Rva004B554FHolder@@QBEHXZ,,0x004B554F,16,Code/GameEngine/Source/GameLogic/Object/Behavior/FireWeaponWhenDeadBehaviorDerived.cpp,matched,ptr-chase this+4 null-checked returns field 0x118
 ?Rva00314581Unlink@Rva0031455E@@QAEXXZ,,0x00314581,21,Code/GameEngine/Source/GameClient/GUI/Rva0031455EList.cpp,matched,twin link 0x0031455E sharing plus 0x04 plus 0x08 plus 0x1DC
 ?rva004B0DA0@Rva004B0DA0Holder@@QAEXH@Z,,0x004B0DA0,12,Code/GameEngine/Source/Common/Rva004B0DA0Setter.cpp,matched,indexed byte clear this+index+0x24 caller jmp 0x0028ECA0
+?isObject@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC5E0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD0E0 asserts isObject plus type 27
+?isPrototype@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC630,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD120 asserts isPrototype plus type 28
+?isTextFormat@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC6D0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD1A0 asserts isTextFormat plus type 36
+?isMovieClip@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC720,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD1E0 asserts isMovieClip plus type 30
+?isStage@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC770,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD320 asserts isStage plus type 39

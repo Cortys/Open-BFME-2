@@ -22,6 +22,11 @@ public:
     int isKey() const;
     int isMath() const;
     int isScriptColour() const;
+    int isObject() const;
+    int isPrototype() const;
+    int isTextFormat() const;
+    int isMovieClip() const;
+    int isStage() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -158,5 +163,75 @@ int BfmeAptValue006DCD20::isScriptColour() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 26 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isObject@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC5E0, 78 bytes.
+// Predicate for type 27 (0x36000000), "this" assert at AptValue.inl:1894.
+// Evidence: caller 0x006DD0E0 asserts "isObject()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isObject() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1894);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 27 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isPrototype@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC630, 78 bytes.
+// Predicate for type 28 (0x38000000), "this" assert at AptValue.inl:1919.
+// Evidence: caller 0x006DD120 asserts "isPrototype()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isPrototype() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1919);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 28 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isTextFormat@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC6D0, 78 bytes.
+// Predicate for type 36 (0x48000000), "this" assert at AptValue.inl:1969.
+// Evidence: caller 0x006DD1A0 asserts "isTextFormat()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isTextFormat() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1969);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 36 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isMovieClip@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC720, 78 bytes.
+// Predicate for type 30 (0x3C000000), "this" assert at AptValue.inl:1994.
+// Evidence: caller 0x006DD1E0 asserts "isMovieClip()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isMovieClip() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1994);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 30 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isStage@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC770, 78 bytes.
+// Predicate for type 39 (0x4E000000), "this" assert at AptValue.inl:2021.
+// Evidence: caller 0x006DD320 asserts "isStage()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isStage() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",2021);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 39 && !isUndefined()) return 1;
     return 0;
 }
