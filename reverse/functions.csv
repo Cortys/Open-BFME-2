@@ -37016,3 +37016,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva0043BE36@SkirmishPreferences@@QAEXABVAsciiString@@@Z,,0x0043BE36,70,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish set Map key via buildProfileKey plus setAsciiString slot 0x30; honest Rva name; caller at 0x43BEA4
 ?setFrameFade@W3DDynamicLight@@QAEXII@Z,,0x0006DF81,105,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDynamicLightSetFrameFade.cpp,matched,ZeroHour W3DDynamicLight donor with BFME2 offsets callers 0x4423C 0xCF91D
 ?Rva0043BBB6@SkirmishPreferences@@QAEHVUnicodeString@@@Z,,0x0043BBB6,84,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish username index via compareNoCase; honest Rva name; callers at 0x521BE0 plus 0x52337D
+??1?$pair@$$CBHUSBServer@@@_STL@@QAE@XZ,,0x005E3B96,8,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair dtor add ecx 4 jmp rowed SBServer dtor at 0x005E3B83
+??_G?$pair@$$CBHUSBServer@@@_STL@@QAEPAXI@Z,,0x005E3D4B,28,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,pair deleting dtor calls rowed pair dtor and rowed delete 0x0002FD60
