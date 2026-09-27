@@ -46,12 +46,19 @@
 typedef std::pair<const ModelConditionFlags, const ModelConditionInfo *> BfmeModelConditionPair;
 #pragma inline_depth(0)
 // ?_bfmeModelDrawO1Anchor@@ absent-from-retail
-const ModelConditionInfo *_bfmeModelDrawO1Anchor(PristineBoneInfo *p, const PristineBoneInfo &q, ModelConditionInfo::WeaponBarrelInfo *w, const W3DModelDrawModuleData *d, const ModelConditionFlags &c, PristineBoneInfoMap *m, BfmeModelConditionPair *mp, const ModelConditionInfo *const &info)
+const ModelConditionInfo *_bfmeModelDrawO1Anchor(ModelConditionInfo::WeaponBarrelInfo *w, const W3DModelDrawModuleData *d, const ModelConditionFlags &c, PristineBoneInfoMap *m, BfmeModelConditionPair *mp, const ModelConditionInfo *const &info)
 {
-	p->PristineBoneInfo::PristineBoneInfo(q);
 	w->ModelConditionInfo::WeaponBarrelInfo::WeaponBarrelInfo();
 	m->PristineBoneInfoMap::map();
 	mp->BfmeModelConditionPair::pair(c, info);
 	return d->m_conditionStateMap.findBestInfo(d->m_conditionStates, c);
 }
 #pragma inline_depth()
+
+// PristineBoneInfo's implicit copy constructor only comes out of line through
+// the map element assignment path.
+// ?_bfmePristineBoneAnchor@@ absent-from-retail
+void _bfmePristineBoneAnchor(PristineBoneInfoMap *m, NameKeyType k, const PristineBoneInfo &q)
+{
+	(*m)[k] = q;
+}
