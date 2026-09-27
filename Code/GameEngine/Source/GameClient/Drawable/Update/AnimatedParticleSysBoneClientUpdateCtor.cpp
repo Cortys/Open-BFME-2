@@ -31,11 +31,20 @@ Rva000B19A1::~Rva000B19A1()
 {
 }
 
+class RadiusDecal
+{
+public:
+	~RadiusDecal();
+};
+
 class W3DTornadoDraw : public Rva000B19A1
 {
 public:
 	W3DTornadoDraw(Thing *thing, const ModuleData *moduleData);
 	virtual ~W3DTornadoDraw();
+
+private:
+	void rva000D1743();
 
 private:
 	_STL::list<int> m_boneIndices;
@@ -49,4 +58,14 @@ W3DTornadoDraw::W3DTornadoDraw(Thing *thing, const ModuleData *moduleData)
 // ??1W3DTornadoDraw@@ present-unmatched
 W3DTornadoDraw::~W3DTornadoDraw()
 {
+}
+
+void W3DTornadoDraw::rva000D1743()
+{
+	for (_STL::list<int>::iterator it = m_boneIndices.begin(); it != m_boneIndices.end(); ++it) {
+		RadiusDecal *decal = reinterpret_cast<RadiusDecal *>(*it);
+		if (decal)
+			delete decal;
+	}
+	m_boneIndices.clear();
 }
