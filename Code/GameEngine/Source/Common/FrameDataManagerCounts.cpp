@@ -11,6 +11,7 @@ public:
  __declspec(noinline) unsigned int getFrameCommandCount();
  unsigned int getCommandCount();
  NetCommandList *getCommandList();
+ void init();
  __declspec(noinline) void setFrameCommandCount(unsigned int count);
  __declspec(noinline) void zeroFrame();
  __declspec(noinline) void destroyGameMessages();
@@ -46,6 +47,7 @@ public:
  NetCommandList *getFrameCommandList(unsigned int frame);
  unsigned int getFrameCommandCount(unsigned int frame);
  void setFrameCommandCount(unsigned int frame, unsigned int count);
+ void resetFrame(unsigned int frame, bool isAdvancing);
  void setQuitFrame(unsigned int frame);
  bool getIsQuitting();
 private:
@@ -81,6 +83,13 @@ unsigned int FrameDataManager::getFrameCommandCount(unsigned int frame) {
 void FrameDataManager::setFrameCommandCount(unsigned int frame, unsigned int count) {
  unsigned int frameindex = frame % FRAME_DATA_LENGTH;
  m_frameData[frameindex].setFrameCommandCount(count);
+}
+void FrameDataManager::resetFrame(unsigned int frame, bool isAdvancing) {
+ unsigned int frameindex = frame % FRAME_DATA_LENGTH;
+ m_frameData[frameindex].init();
+ if (m_isLocal) {
+  m_frameData[frameindex].setFrameCommandCount((unsigned int)-1);
+ }
 }
 void FrameDataManager::setQuitFrame(unsigned int frame) {
  m_isQuitting = true;
