@@ -18,6 +18,7 @@ public:
     int isBoolean() const;
     int isNativeFunction() const;
     int isScriptFunction() const;
+    int isDate() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -102,5 +103,15 @@ int BfmeAptValue006DCD20::isScriptFunction() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type >= 43 && flags.type <= 45 && !isUndefined()) return 1;
+    return 0;
+}
+
+int BfmeAptValue006DCD20::isDate() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1944);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 29 && !isUndefined()) return 1;
     return 0;
 }
