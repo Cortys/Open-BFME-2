@@ -26,6 +26,8 @@ class AsciiString;
 AsciiString GetArtPreviewFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetPicPreviewFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetExtensionFromFile(AsciiString fname);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -177,4 +179,13 @@ AsciiString GetPicPreviewFromMap(AsciiString path)
 	AsciiString out;
 	out.format("%s\\%s_pic.tga", base.str(), fname.str());
 	return out;
+}
+
+AsciiString GetExtensionFromFile(AsciiString fname)
+{
+	const char *separator = fname.reverseFind('.');
+	if (separator) {
+		return separator + 1;
+	}
+	return fname;
 }

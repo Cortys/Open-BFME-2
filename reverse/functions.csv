@@ -38116,3 +38116,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Close@GameFileClass@@UAEXXZ,,0x00078375,21,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DFileSystem.cpp,matched,identity: GameFileClass vtable VA 0xBC6788 slot 14; /O1 and-zero idiom (and [esi+4] 0); unique exact hit
 ?rva006E3230@Rva006E3230@@QAEXPAURva006E3230Action@@@Z,,0x006E3230,102,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,_Apt.h asserts at 0x4e0 0x4e1 callers AptAnimation queue honest-address
 ?rva006E3DB0@Rva006E3230@@QAEPAURva006E3230Action@@XZ,,0x006E3DB0,17,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,chain of 0x006E3230 same this validates and returns plus4
+?GetExtensionFromFile@@YA?AVAsciiString@@V1@@Z,,0x0044C98C,88,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetExtensionFromFile reverseFind dot suffix
