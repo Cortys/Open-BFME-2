@@ -37803,3 +37803,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?aiAttackArea@AICommandInterface@@QAEXPBVPolygonTrigger@@W4CommandSourceType@@@Z,,0x0036F136,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiAttackArea AICMD 0x23 m_polygon plus callers 0x370543 0x3C83A1 0x3C83FD
 ?rva0036E2E2@Rva0036E2E2@@QAEX_N@Z,,0x0036E2E2,44,Code/GameEngine/Source/Common/Rva0036E346Count.cpp,matched,List member flag set at AI plus-0x3DA via Object plus-0x258 with callers in 0x20C83F
 ?rva0036E0E3@Rva0036E0E3@@QAE_NXZ,,0x0036E0E3,46,Code/GameEngine/Source/Common/Rva0036E346Count.cpp,matched,List all-members flag check at Object plus-0x438 with caller in 0x20C83F
+?GadgetTextEntrySetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,,0x002C17EB,66,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetTextEntrySetText.cpp,matched,ZH inline GEM_SET_TEXT 0x4030 slot 58 UnicodeString by-value callers
