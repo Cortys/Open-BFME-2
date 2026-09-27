@@ -5721,3 +5721,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?set@Rva0035E650Holder@@QAEXPAVRva0035E60B@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035E68F in factory 0x0035E650 matches retail
 ?set@Rva0035F4E7Holder@@QAEXPAVRva0035F4A6@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035F526 in factory 0x0035F4E7 matches retail
 ?set@Rva0035EEA7Holder@@QAEXPAVRva0035EE66@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035EEE6 in factory 0x0035EEA7 matches retail
+??1?$_List_base@UBfmePod20@@V?$allocator@UBfmePod20@@@_STL@@@_STL@@QAE@XZ,0x004EC395,ICF twin of int list-base dtor per GettingBuiltBehavior dtor 0x0045448F call site
