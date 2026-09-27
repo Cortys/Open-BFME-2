@@ -36998,3 +36998,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva005FC70A@Rva005FC70A@@QAEXE@Z,,0x005FC70A,8,Code/GameEngine/Source/Common/Rva005FCBitThunks.cpp,matched,chase +0x18 to rowed bit1 setter 0x005FC66B
 ?rva005FC71E@Rva005FC71E@@QAEXE@Z,,0x005FC71E,8,Code/GameEngine/Source/Common/Rva005FCBitThunks.cpp,matched,chase +0x18 to rowed bit2 setter 0x005FC690
 ??1GarrisonContainModuleData@@UAE@XZ,,0x00257507,56,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainModuleDataDtor.cpp,matched,Garrison ModuleData dtor via base 0x257481 plus 0xA4 string 0x36410 HordeGarrison chain
+?set@Rva005F3F41Outer@@QAEXE@Z,,0x005F3F41,35,Code/GameEngine/Source/Common/Rva005F3F41Setter.cpp,matched,gap setter stores +0x14 plus thunk 0x005FC6F7
