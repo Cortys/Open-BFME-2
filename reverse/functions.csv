@@ -37720,3 +37720,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva006CC350@AptValueVector@@QAEPAV1@I@Z,,0x006CC350,35,Code/Libraries/Source/Apt/AptValue/AptValueVectorRva006CC350.cpp,matched,AptValueVector deleting shape via rva006E6D50 and sized pool free; size 0x10; chain from 0x006E6D50; no callers
 ?healAllObjects@Team@@QAEXXZ,,0x0039DCE9,41,Code/GameEngine/Source/Common/RTS/TeamHealAllObjects.cpp,matched,BFME1 donor Team.cpp healAllObjects via healCompletely
 ?rva004D6C7C@Rva004D6C7C@@QAEXPBVObject@@@Z,,0x004D6C7C,32,Code/GameEngine/Source/Common/Rva004D6C7CAdd.cpp,matched,honest-address conditional ScienceType push_back via getter
+?rva004D632D@Rva004D632D@@QBE?AVAsciiString@@XZ,,0x004D632D,33,Code/GameEngine/Source/Common/Rva004D632DGet.cpp,matched,honest-address AsciiString forwarder via TheGameState
