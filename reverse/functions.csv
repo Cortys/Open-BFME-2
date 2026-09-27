@@ -37435,3 +37435,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva000A77B3@Rva000A77B3@@QAEXXZ,,0x000A77B3,38,Code/GameEngine/Source/Common/Rva000A77B3Close.cpp,matched,Wait plus CloseHandle thread teardown; byte flag at plus4C
 ?rva004D7127@State@@QAEXPBUStateConditionInfo@@@Z,,0x004D7127,33,Code/GameEngine/Source/Common/StateRva004D7127.cpp,matched,caller defineState 0x004D7B0F plus State offsets plus count loop
 ?rva004D750F@StateMachine@@QAEXPAVObject@@@Z,,0x004D750F,14,Code/GameEngine/Source/GameLogic/AI/StateMachineRva004D750F.cpp,matched,locked guard at 0x38 plus tailjmp to setGoalObject plus slot14
+?rva004D7ADD@TurretStateMachine@@QAE_NXZ,,0x004D7ADD,30,Code/GameEngine/Source/GameLogic/AI/TurretStateMachineRva004D7ADD.cpp,matched,goalID zero plus Turret getGoalObject plus dead bit0
