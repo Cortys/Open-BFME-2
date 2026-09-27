@@ -38919,3 +38919,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002A8F24@Rva002A8F24@@QAEPAXPAVPlayer@@@Z,,0x002A8F24,50,Code/GameEngine/Source/Common/RTS/Rva002A8F24.cpp,matched,map at +0x908 key Player+0x54 via rowed _M_find twin 0x4E95D4
 ?Rva002A8D2DFree@@YGXPAURva002A8D2DNode@@@Z,,0x002A8D2D,28,Code/Libraries/Source/WWVegas/WWLib/Rva002A8D2DFree.cpp,matched,node deleter via rowed CameraMarker dtor then free same as Rva00055864Free
 ??4Rva002B2F97@@QAEAAV0@ABV0@@Z,,0x002B2F97,52,Code/GameEngine/Source/Common/Rva002B2F97Assign.cpp,matched,refcounted holder assign inc B0 release AC same shape as 005EEFD2
+??4Rva0040D0A4Entry@@QAEAAV0@ABV0@@Z,,0x0040D0A4,29,Code/GameEngine/Source/Common/Rva0040D0A4Assign.cpp,matched,8byte entry assign int plus holder via 002B2F97
