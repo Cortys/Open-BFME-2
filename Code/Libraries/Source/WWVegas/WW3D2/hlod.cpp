@@ -3944,18 +3944,17 @@ void HLodClass::Create_Decal(DecalGeneratorClass * generator, bool unk)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Delete_Decal present-unmatched
+// BFME2: matched HLod constructors install RVA 0x007D6780; slot 0x1F4
+// selects this body at 0x0019BA20. Retail enumerates virtual children and
+// releases each acquired reference instead of walking the donor arrays.
 void HLodClass::Delete_Decal(uint32 decal_id)
 {
-	for (int lod=0; lod<LodCount; lod++) {
-		for (int model=0; model<Lod[lod].Count(); model++) {
-			Lod[lod][model].Model->Delete_Decal(decal_id);
-		}
-	}
-
-	for (int model=0; model<AdditionalModels.Count(); model++) {
-		AdditionalModels[model].Model->Delete_Decal(decal_id);
-	}
+    const int count = Get_Num_Sub_Objects();
+    for (int i = 0; i < count; ++i) {
+        RenderObjClass *object = Get_Sub_Object(i);
+        object->Delete_Decal(decal_id);
+        object->Release_Ref();
+    }
 }
 
 
