@@ -37151,3 +37151,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00286116Free@@YAXPAX@Z,,0x00286116,22,Code/GameEngine/Source/Common/Rva00286116PoolFrees.cpp,matched,null-checked pool free via rowed FreeObject; pool 0x009FEC94; callers 0x00286CF0 and 0x00286DEA
 ?Rva00286136Free@@YAXPAX@Z,,0x00286136,22,Code/GameEngine/Source/Common/Rva00286116PoolFrees.cpp,matched,null-checked pool free via rowed FreeObject; pool 0x009FECA8; callers 0x002864BB and 0x00286D07
 ?Rva002861B0Copy@@YAXPAXPBX@Z,,0x002861B0,25,Code/GameEngine/Source/Common/Rva002861B0Copy6.cpp,matched,null-checked 6-byte dword-plus-word copy; callers 0x002861C9 0x002861EF 0x00287BA0 0x00287F88
+?Rva0002C63CAsciiNocaseLess@@YG_NABVAsciiString@@0@Z,,0x0002C63C,25,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_nocase_less.cpp,matched,INI macro map nocase less via rowed compareNoCase 0x6A00 callers 0x2C908 0x2C71B
