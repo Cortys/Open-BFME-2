@@ -5718,3 +5718,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ??$_Destroy@PAUBfmeStringTailRecord156@@@_STL@@YAXPAUBfmeStringTailRecord156@@0@Z,0x004CC195,address read from the REL32 displacement at a placed body
 ??0Weapon@@IAE@PBVWeaponTemplate@@W4WeaponSlotType@@@Z,0x002CC23D,vtable 0x0080214C at +0; size 0x60 new at caller 0x0028AAA8; BFME1 WeaponConstructor donor protected ctor
 ?set@Rva0035E327Holder@@QAEXPAVRva0035E2E6@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035E366 in factory 0x0035E327 matches retail
+?set@Rva0035E650Holder@@QAEXPAVRva0035E60B@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0035E68F in factory 0x0035E650 matches retail
