@@ -30,7 +30,8 @@ public:
 	void *init(void *context);
 };
 
-extern FreelistPool g_freelistPool;
+// Distinct from the behavior pool at VA 0x00DA60E8.
+extern FreelistPool g_freelistPool00DB8FEC;
 
 // ?init@Rva001EB984Member@@QAEPAXPAX@Z @0x001EB984
 void *Rva001EB984Member::init(void *context)
@@ -38,7 +39,7 @@ void *Rva001EB984Member::init(void *context)
 	(void)context;
 	char dummyAlloc;
 	((FreelistProxyHead *)this)->setup(&dummyAlloc, 0);
-	void *node = g_freelistPool.pop();
+	void *node = g_freelistPool00DB8FEC.pop();
 	((void **)node)[0] = node;
 	((void **)node)[1] = node;
 	m_head = node;
