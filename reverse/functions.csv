@@ -37336,3 +37336,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?clear@Rva00524A4C@@QAEXXZ,,0x00524A4C,25,Code/GameEngine/Source/Common/Rva00524A4CClear.cpp,matched,slot7 virtual plus flag clear; callers 0x524BB4 0x524D01 0x524A84; vtable 0x867DFC family
 ?clear@Rva003ECB13Array@@QAEXXZ,,0x003ECB13,23,Code/GameEngine/Source/GameLogic/Object/Update/Rva003ECA69ElementClear.cpp,matched,20 element array clear looping element clear 0x003ECA69 called by 0x003ECFCE
 ??1?$vector@UBfmeStringTailRecord156@@V?$allocator@UBfmeStringTailRecord156@@@_STL@@@_STL@@QAE@XZ,,0x004CC1AD,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtor004CC1AD.cpp,matched,vector dtor via pinned Destroy 0x4CC195 plus free
+?Rva00035C90Get@@YAPAVRva00041004@@XZ,,0x00035C90,93,Code/Libraries/Source/WWVegas/WWLib/StringBaseLockGetters.cpp,matched,narrow StringBase lock singleton via rowed ctor 0x411C1 and atexit cleanup 0x7B6A90
+?Rva00035DF0Get@@YAPAVRva00041004@@XZ,,0x00035DF0,93,Code/Libraries/Source/WWVegas/WWLib/StringBaseLockGetters.cpp,matched,wide StringBase lock singleton via rowed ctor 0x411C1 and atexit cleanup 0x7B6A80
