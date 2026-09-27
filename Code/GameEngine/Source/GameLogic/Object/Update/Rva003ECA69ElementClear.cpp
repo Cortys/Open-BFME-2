@@ -39,3 +39,19 @@ Rva003ECA4BElement::Rva003ECA4BElement()
 	m_0 = 0.0f;
 	memset(m_rest, 0, 0x40);
 }
+
+class Rva003ECB13Array
+{
+public:
+	void clear();
+
+private:
+	Rva003ECA69Element m_elems[20];
+};
+
+void Rva003ECB13Array::clear()
+{
+	Rva003ECA69Element *p = m_elems;
+	for (int i = 20; i != 0; --i, ++p)
+		p->clear();
+}
