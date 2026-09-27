@@ -38901,3 +38901,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0031404A@Rva0031404A@@QAEHH@Z,,0x0031404A,12,Code/GameEngine/Source/Common/Rva0031404ASetter.cpp,matched,Honest plus34 int setter returning zero with two callers
 ?rva003140CF@Rva003140CF@@QAEHH@Z,,0x003140CF,21,Code/GameEngine/Source/Common/Rva0031404ASetter.cpp,matched,Null guarded self or arg setter at plus44 returning zero unlocking nine
 ?reserve@?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@QAEXI@Z,,0x002B712E,110,Code/GameEngine/Source/Common/Thing/ModuleFactoryVectorReserve.cpp,matched,ModuleDataList reserve via rowed ModuleData pushback callers and BfmeE8 Science precedent
+??0Rva002B72C9@@QAE@ABU0@@Z,,0x002B72C9,35,Code/GameEngine/Source/Common/Rva002B72C9Copy.cpp,matched,Rva copy via rowed unsigned vector copy and 20-byte stride callers
