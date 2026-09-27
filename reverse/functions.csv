@@ -38757,3 +38757,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Delete@?$SimpleDynVecClass@VVector3@@@@QAE_NH_N@Z,,0x00100306,73,Code/Libraries/Source/WWVegas/WW3D2/SimpleDynVecDeleteO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Set_Vertex_Shader_Constant@DX8Wrapper@@SAXHPBXH@Z,,0x00075343,86,Code/Libraries/Source/WWVegas/WW3D2/DX8WrapperO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??$Bound@M@@YAMMMM@Z,,0x0006599E,39,Code/Libraries/Source/WWVegas/WW3D2/DX8WrapperO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0UVBufferClass@@QAE@HPBD@Z,,0x000D1EF8,34,Code/Libraries/Source/WWVegas/WW3D2/MatInfoUVBufferO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Get_Vertex_Material@MaterialInfoClass@@QAEPAVVertexMaterialClass@@H@Z,,0x000B49A8,29,Code/Libraries/Source/WWVegas/WW3D2/MatInfoUVBufferO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
