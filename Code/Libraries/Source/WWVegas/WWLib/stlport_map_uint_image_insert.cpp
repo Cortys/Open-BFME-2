@@ -20,3 +20,26 @@
 class Image;
 
 template class _STL::map<unsigned, Image *, _STL::less<unsigned>, _STL::allocator<_STL::pair<const unsigned, Image *> > >;
+
+typedef _STL::map<unsigned, Image *, _STL::less<unsigned>, _STL::allocator<_STL::pair<const unsigned, Image *> > > ImageNameMap;
+
+// ImageSubscriptMap shared worker (retail 0x002077D6 69B). Declaration-only
+// view over ImageNameMap per ImageCollectionFindImage.cpp; retail folds every
+// unsigned-key pointer-map operator[] into this worker which drives the rowed
+// PAX lower_bound at 0x4FF3B6 (ICF twin of the PAVImage spelling pinned here)
+// and the rowed PAVImage hint insert at 0x00358211.
+class ImageSubscriptMap
+{
+public:
+	Image *&operator[](const unsigned int &key);
+private:
+	ImageNameMap m_map;
+};
+
+Image *&ImageSubscriptMap::operator[](const unsigned int &key)
+{
+	ImageNameMap::iterator i = m_map.lower_bound(key);
+	if (i == m_map.end() || m_map.key_comp()(key, (*i).first))
+		i = m_map.insert(i, ImageNameMap::value_type(key, (Image *)0));
+	return (*i).second;
+}
