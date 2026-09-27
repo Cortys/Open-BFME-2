@@ -37761,3 +37761,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0?$pair@$$CBVAsciiString@@W4BuildableStatus@@@_STL@@QAE@ABVAsciiString@@ABW4BuildableStatus@@@Z,,0x00513B0B,28,Code/GameEngine/Source/GameLogic/System/GameLogicSetBuildableStatusOverride.cpp,matched,Unique placement; 12-byte pair copy follows prior ret at 0x513B08 and ends at next Ghidra boundary 0x513B27
 ??_GRva00340D1F@@UAEPAXI@Z,,0x00345BB3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x008121E8 base 0x340D1F delete 0x2FD60
 ??_GRva00345F21@@UAEPAXI@Z,,0x0034A183,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x00813638 base 0x345F21 delete 0x2FD60
+?rva0039D4B5@Rva0039D4B5@@QAEXPAVRva0039D40F@@@Z,,0x0039D4B5,35,Code/GameEngine/Source/Common/Rva0039D4B5MaybePrepend.cpp,matched,conditional prepend via 39D40F plus 39D429
