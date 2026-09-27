@@ -2872,5 +2872,368 @@
         "status": "C++ byte-verified recovery"
       }
     ]
+  },
+  "apt_date_string_formatter": {
+    "source": "Code/Libraries/Source/Apt/AptDateString.cpp",
+    "compiler": "MSVC7.1 /O2 /MD /EHsc",
+    "target_identity": "Target dispatch key toString selects callback6F5080; its checked date cast6DD160 feeds this formatter6F4460. All date field reads agree with recovered named getters; output uses verified EAStringC construction/assignment/append/destruction plus imported sprintf.",
+    "donor_provenance": "Original member name and nonconst EAStringC reference parameter from root_ears_godfather_q PDB stream1229 procedure and TPI e4f2; no donor source used. Donor body385 bytes differs from target606 and is not a byte-copy claim.",
+    "donor_procedure": {
+      "name": "AptDate::toString",
+      "size": 385,
+      "type": "0xe4f2",
+      "record_offset": 1336,
+      "record": "3a00101100000000d40500000000000081010000050000007d010000f2e4000040b73e00010000417074446174653a3a746f537472696e6700000000",
+      "donor_offset": "0x3eb740"
+    },
+    "type_records": {
+      "0xe4f2": "1a0009100300000094410000e4e400000b0001005f41000000000000",
+      "0x415f": "0a000112010000005e410000",
+      "0x415e": "0a0002105d4100002a000000"
+    },
+    "layout_limits": "Target access view only. Buffer begins esp+8 and scoped EAStringC occupies esp+C; four-byte buffer reproduces frame54; five-byte trial requires frame58. Preserve original writes including year overflow rather than claim safe buffer bounds. Full AptDate layout and unused words not inferred.",
+    "retail_quirks": [
+      "Jly month spelling",
+      "unbounded sprintf into four-byte numeric slot",
+      "GMT suffix sign from timezoneHours then absolute hours and literal00"
+    ],
+    "verification": "Every code relocation independently resolved from established callees, literal bytes, fs:0 and checked EH ownership. Compiler EH handler, unwind action and both metadata records also byte-compared; supporting code/data are evidence only and not separately credited.",
+    "body": {
+      "symbol": "?toString@AptDate@@QAEXAAVEAStringC@@@Z",
+      "va": "0xaf4460",
+      "size": 606,
+      "sha256": "5fb6f9c30a17a6acf5268efb2c95a9d1e98bb604720086628b467f5ba972f379",
+      "relocations": [
+        {
+          "offset": 3,
+          "kind": 6,
+          "symbol": "__ehhandler$?toString@AptDate@@QAEXAAVEAStringC@@@Z",
+          "target_va": "0xba9da8"
+        },
+        {
+          "offset": 9,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        },
+        {
+          "offset": 17,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        },
+        {
+          "offset": 195,
+          "kind": 20,
+          "symbol": "?getDayOfWeek@AptDate@@QAEHHHH@Z",
+          "target_va": "0xaf4290"
+        },
+        {
+          "offset": 209,
+          "kind": 20,
+          "symbol": "??0EAStringC@@QAE@PBD@Z",
+          "target_va": "0xad4c80"
+        },
+        {
+          "offset": 233,
+          "kind": 20,
+          "symbol": "??4EAStringC@@QAEAAV0@ABV0@@Z",
+          "target_va": "0xad3030"
+        },
+        {
+          "offset": 250,
+          "kind": 20,
+          "symbol": "??1EAStringC@@QAE@XZ",
+          "target_va": "0xad3010"
+        },
+        {
+          "offset": 255,
+          "kind": 6,
+          "symbol": "??_C@_01CLKCMJKC@?5?$AA@",
+          "target_va": "0xbbd40c"
+        },
+        {
+          "offset": 262,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 277,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 282,
+          "kind": 6,
+          "symbol": "??_C@_01CLKCMJKC@?5?$AA@",
+          "target_va": "0xbbd40c"
+        },
+        {
+          "offset": 289,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 302,
+          "kind": 6,
+          "symbol": "??_C@_02DPKJAMEF@?$CFd?$AA@",
+          "target_va": "0xbbe164"
+        },
+        {
+          "offset": 308,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 323,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 328,
+          "kind": 6,
+          "symbol": "??_C@_01CLKCMJKC@?5?$AA@",
+          "target_va": "0xbbd40c"
+        },
+        {
+          "offset": 335,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 348,
+          "kind": 6,
+          "symbol": "??_C@_04OGKJMPGK@?$CF02d?$AA@",
+          "target_va": "0xc6c9e0"
+        },
+        {
+          "offset": 354,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 369,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 374,
+          "kind": 6,
+          "symbol": "??_C@_01JLIPDDHJ@?3?$AA@",
+          "target_va": "0xbbfb1c"
+        },
+        {
+          "offset": 381,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 394,
+          "kind": 6,
+          "symbol": "??_C@_04OGKJMPGK@?$CF02d?$AA@",
+          "target_va": "0xc6c9e0"
+        },
+        {
+          "offset": 400,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 415,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 420,
+          "kind": 6,
+          "symbol": "??_C@_01JLIPDDHJ@?3?$AA@",
+          "target_va": "0xbbfb1c"
+        },
+        {
+          "offset": 427,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 440,
+          "kind": 6,
+          "symbol": "??_C@_04OGKJMPGK@?$CF02d?$AA@",
+          "target_va": "0xc6c9e0"
+        },
+        {
+          "offset": 446,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 461,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 466,
+          "kind": 6,
+          "symbol": "??_C@_04FIEKMBKB@?5GMT?$AA@",
+          "target_va": "0xced164"
+        },
+        {
+          "offset": 473,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 483,
+          "kind": 6,
+          "symbol": "??_C@_01JOAMLHOP@?9?$AA@",
+          "target_va": "0xc3dd78"
+        },
+        {
+          "offset": 490,
+          "kind": 6,
+          "symbol": "??_C@_01MIFGBAGJ@?$CL?$AA@",
+          "target_va": "0xbbee64"
+        },
+        {
+          "offset": 498,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 516,
+          "kind": 6,
+          "symbol": "??_C@_04OGKJMPGK@?$CF02d?$AA@",
+          "target_va": "0xc6c9e0"
+        },
+        {
+          "offset": 522,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 537,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 542,
+          "kind": 6,
+          "symbol": "??_C@_03JPHPBJHA@00?5?$AA@",
+          "target_va": "0xced160"
+        },
+        {
+          "offset": 549,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 562,
+          "kind": 6,
+          "symbol": "??_C@_02DPKJAMEF@?$CFd?$AA@",
+          "target_va": "0xbbe164"
+        },
+        {
+          "offset": 568,
+          "kind": 20,
+          "symbol": "_sprintf",
+          "target_va": "0xa291b4"
+        },
+        {
+          "offset": 583,
+          "kind": 20,
+          "symbol": "?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z",
+          "target_va": "0xad50a0"
+        },
+        {
+          "offset": 596,
+          "kind": 6,
+          "symbol": "__except_list",
+          "target_va": "0x0"
+        }
+      ]
+    },
+    "exception_support": [
+      {
+        "symbol": "__ehhandler$?toString@AptDate@@QAEXAAVEAStringC@@@Z",
+        "va": "0xba9da8",
+        "size": 10,
+        "sha256": "16f56d162885a93743d577575a17cc717b72b3afe1934daeaeaa9abb7b69fc93",
+        "relocations": [
+          {
+            "offset": 1,
+            "kind": 6,
+            "symbol": "$T387",
+            "target_va": "0xd63628"
+          },
+          {
+            "offset": 6,
+            "kind": 20,
+            "symbol": "___CxxFrameHandler",
+            "target_va": "0xa29182"
+          }
+        ]
+      },
+      {
+        "symbol": "$L383",
+        "va": "0xba9da0",
+        "size": 8,
+        "sha256": "ebadf25a6c1211630bae9eecec6624e3729dbd6d717986305d0f0c1c830858b9",
+        "relocations": [
+          {
+            "offset": 4,
+            "kind": 20,
+            "symbol": "??1EAStringC@@QAE@XZ",
+            "target_va": "0xad3010"
+          }
+        ]
+      },
+      {
+        "symbol": "$T387",
+        "va": "0xd63628",
+        "size": 28,
+        "sha256": "5a7cb695304f90ba5ff8f3dfa5b2a16b7b954cea67fa5c4e32d3d6e0ddde28b9",
+        "relocations": [
+          {
+            "offset": 8,
+            "kind": 6,
+            "symbol": "$T392",
+            "target_va": "0xd63620"
+          }
+        ]
+      },
+      {
+        "symbol": "$T392",
+        "va": "0xd63620",
+        "size": 8,
+        "sha256": "fd2f5f68a04da1c9914ccf72deaa0e26e11d5d0e478ec3902c28846d523bc526",
+        "relocations": [
+          {
+            "offset": 4,
+            "kind": 6,
+            "symbol": "$L383",
+            "target_va": "0xba9da0"
+          }
+        ]
+      }
+    ],
+    "boundary": "RET4 at6F46BB followed by two CC bytes; next independently dispatched getter at6F46C0."
   }
 }
