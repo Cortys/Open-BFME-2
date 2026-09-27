@@ -71,11 +71,14 @@ struct BFME2WideStringRef
 };
 
 // @0x0021AC32 (56B): ref payload copy
-// ?copyPayloadTo@BFME2WideStringRef@@ present-unmatched
 int BFME2WideStringRef::copyPayloadTo(unsigned short *dst) const
 {
-	int len = length();
-	memcpy(dst, payload(), len * 2);
+	const UnicodeString *text = m_ptr;
+	StringBase<unsigned short>::Header *lengthData = text->m_data;
+	int len = lengthData != 0 ? lengthData->length : 0;
+	StringBase<unsigned short>::Header *payloadData =
+		*const_cast<StringBase<unsigned short>::Header * const volatile *>(&text->m_data);
+	memcpy(dst, payloadData != 0 ? payloadData->data : L"", len * 2);
 	return len;
 }
 
