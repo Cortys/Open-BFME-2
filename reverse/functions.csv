@@ -37287,3 +37287,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_G?$DynamicVectorClass@PAUW3dAggregateSubobjectStruct@@@@UAEPAXI@Z,,0x001A3E90,30,Code/Libraries/Source/WWVegas/WW3D2/agg_def.cpp,matched,slot0 vtable BD6C3C ctor 1A3ED0 calls rowed 1A39D0 gap agg_def
 ??_G?$DynamicVectorClass@PAVRender2DClass@@@@UAEPAXI@Z,,0x001A3EB0,30,Code/Libraries/Source/WWVegas/WW3D2/render2dsentence.cpp,matched,calls true dtor pinned 1A3AB0 gap agg_def
 ??_GMeshLoadContextClass@@AAEPAXI@Z,,0x0018B3E0,30,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc30.cpp,matched,scalar deleting dtor add-esp via rowed AAE dtor
+?isKey@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC440,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DD020 asserts isKey plus type 24

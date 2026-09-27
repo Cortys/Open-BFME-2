@@ -19,6 +19,7 @@ public:
     int isNativeFunction() const;
     int isScriptFunction() const;
     int isDate() const;
+    int isKey() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -113,5 +114,19 @@ int BfmeAptValue006DCD20::isDate() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 29 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isKey@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC440, 78 bytes.
+// Predicate for type 24 (0x30000000), "this" assert at AptValue.inl:1763.
+// Evidence: caller 0x006DD020 asserts "isKey()" after calling it; second caller
+// 0x006EACE2; same /O2 shape as isDate/isBoolean siblings in this TU.
+int BfmeAptValue006DCD20::isKey() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1763);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 24 && !isUndefined()) return 1;
     return 0;
 }
