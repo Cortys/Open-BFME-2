@@ -37621,3 +37621,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1TensileFormationUpdateMember@@QAE@XZ,,0x004BA35A,63,Code/Libraries/Source/WWVegas/WWLib/VectorMemberRecordDtors.cpp,matched,vector body via rowed Rva004BA341DestroyRange
 ??0Rva005D9D5A@@QAE@XZ,,0x005D9D48,18,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005D9DCC precedes dtor 005D9D5A
 ?toLower@?$StringBase@G@@QAEXXZ,0x000374E0,0x000374E0,251,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideToLower.cpp,matched,wide twin of narrow 0x36A70 via unsigned capacity towlower IAT
+?toUpper@?$StringBase@G@@QAEXXZ,0x000375E0,0x000375E0,251,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideToUpper.cpp,matched,wide twin of toLower 0x374E0 via towupper IAT
