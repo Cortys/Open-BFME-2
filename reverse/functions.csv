@@ -37813,3 +37813,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?aiAttackTeam@AICommandInterface@@QAEXPBVTeam@@HW4CommandSourceType@@@Z,,0x0036F0C8,110,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiAttackTeam AICMD 0x0D m_team plus callers 0x36FF63 0x3C8476
 ?rva00292ED0@Object@@QAE_NW4DisabledType@@@Z,,0x00292ED0,26,Code/GameEngine/Source/GameLogic/Object/ObjectScriptStatus.cpp,matched,Object dec array at 0x1F8 with clearDisabled passthrough
 ?rva0036EBB8@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0036EBB8,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,101B object shape AICMD 0x42 plus m_obj plus slot-0 with caller at 0x372A05 via plus-0x20
+?Rva00524FEDCheck@@YGEPAVObject@@@Z,,0x00524FED,83,Code/GameEngine/Source/GameLogic/Object/Rva00524FEDCheck.cpp,matched,chain via isSelectable with AI slot92 and slot8 guard
