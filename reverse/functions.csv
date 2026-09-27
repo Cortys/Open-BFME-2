@@ -37325,3 +37325,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1Rva0022DDF4@@QAE@XZ,,0x0022DDF4,53,Code/GameEngine/Source/GameClient/Rva0022DDF4Dtor.cpp,matched,opaque dtor MapMetaData plus StringBase
 ??0Rva005D9DC1@@QAE@XZ,,0x005D9DCC,26,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005EED92 plus member 0024C7B3 at 20 vtable 00876464
 ?clear@Rva003ECA69Element@@QAEXXZ,,0x003ECA69,24,Code/GameEngine/Source/GameLogic/Object/Update/Rva003ECA69ElementClear.cpp,matched,shared 0x44 element clear via memset thunk 0x6291AE called by array clear 0x003ECB13
+??_GRva0022DDF4@@QAEPAXI@Z,,0x0022DF53,28,Code/GameEngine/Source/GameClient/Rva0022DDF4Dtor.cpp,matched,scalar deleting dtor via TU vtable emission

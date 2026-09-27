@@ -29,3 +29,6 @@ private:
 Rva0022DDF4::~Rva0022DDF4()
 {
 }
+
+// ?forceRva0022DDF4Delete@@YAXPAVRva0022DDF4@@@Z absent-from-retail
+void forceRva0022DDF4Delete(Rva0022DDF4 *p) { delete p; }
