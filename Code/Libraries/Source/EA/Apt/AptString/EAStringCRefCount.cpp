@@ -85,6 +85,7 @@ public:
 	void rva006D3C20();
 	void rva006D3C60();
 	void rva006D3CA0(const EAStringC *other);
+	unsigned int GetInternalRefCount() const;
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -427,4 +428,15 @@ void EAStringC::rva006D3CA0(const EAStringC *other)
 		}
 	}
 	++m_pData->m_uRefCount;
+}
+
+// ?GetInternalRefCount@EAStringC@@QBEIXZ, retail 0x006D2E10 (6B). EAStringC
+// internal refcount accessor: returns m_pData->m_uRefCount zero-extended.
+// Caller at 0x0070DB62 proves the name via assert
+// "saConstant[i].GetInternalRefCount() == 1" in StringPool.cpp;
+// sibling GetInternalMaxSize pattern proves unsigned-int const accessor;
+// neighbours FreeData 0x006D2EB0 and rva006D2F40 share /O2 /DNDEBUG /MD.
+unsigned int EAStringC::GetInternalRefCount() const
+{
+	return m_pData->m_uRefCount;
 }
