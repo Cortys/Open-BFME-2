@@ -8,6 +8,9 @@
 // default constructor emits no retail body of its own.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+void __debugbreak();
+#pragma intrinsic(__debugbreak)
 
 class Rva006DB160
 {
@@ -58,6 +61,7 @@ class AptValueVector
 public:
 	static void *Allocate(int size);
 	AptValue ***GetData();
+	void rva006CC0A0(int iPos);
 
 	EAStringC m_name;
 	int mCurrentNum;
@@ -102,4 +106,22 @@ AptValue ***AptValueVector::GetData()
 void *AptValueVector::Allocate(int size)
 {
 	return g_aptPoolAllocator->allocBlock(size);
+}
+
+// ?rva006CC0A0@AptValueVector@@QAEXH@Z, retail 0x006CC0A0 (104B). Erase at
+// iPos: assert iPos bounds via the AptVector.h line 0x45 check, decrement
+// mCurrentNum, memmove the tail left unless the last slot was removed,
+// then null the freed slot. Caller at 0x006CE27D passes one int;
+// strings name AptValueVector.h and mCurrentNum.
+void AptValueVector::rva006CC0A0(int iPos)
+{
+	if (!(iPos >= 0 && iPos < mCurrentNum)) {
+		g_bfmeAptAssertAtE17734("iPos >= 0 && iPos < mCurrentNum", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValueVector.h", 0x45);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	--mCurrentNum;
+	if (mCurrentNum != 0 && iPos != mCurrentNum) {
+		memmove(&m_data[iPos], &m_data[iPos + 1], (mCurrentNum - iPos) * sizeof(*m_data));
+	}
+	m_data[mCurrentNum] = 0;
 }
