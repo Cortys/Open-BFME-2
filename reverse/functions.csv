@@ -38754,3 +38754,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Matrix4@@QAE@ABVMatrix3D@@@Z,,0x0006A2CD,129,Code/Libraries/Source/WWVegas/WW3D2/Matrix4FromMatrix3DO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Point_In_Triangle_2D@@YA_NABVVector3@@000HHAAE@Z,,0x0027EAFC,704,Code/Libraries/Source/WWVegas/WW3D2/PointInTriangle2DO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Convert_Color@DX8Wrapper@@SA?AVVector4@@I@Z,,0x000EDF46,136,Code/Libraries/Source/WWVegas/WW3D2/DX8ConvertColorVector4O1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Delete@?$SimpleDynVecClass@VVector3@@@@QAE_NH_N@Z,,0x00100306,73,Code/Libraries/Source/WWVegas/WW3D2/SimpleDynVecDeleteO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
