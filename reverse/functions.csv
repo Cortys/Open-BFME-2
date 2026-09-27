@@ -35043,7 +35043,6 @@ _Rva001CA000Vp6WideAccum,,0x001CA000,4240,Code/GameEngine/Source/Common/Rva001CA
 ?get@Rva00050D50ZeroGetter@@QBEHXZ,,0x00050D50,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva00050D5DZeroGetter@@QBEHXZ,,0x00050D5D,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva00050DEDZeroGetter@@QBEHXZ,,0x00050DED,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
-?get@Rva0006CEEBZeroGetter@@QBEHXZ,,0x0006CEEB,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva00075692ZeroGetter@@QBEHXZ,,0x00075692,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva0007B716ZeroGetter@@QBEHXZ,,0x0007B716,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
 ?get@Rva0008550CZeroGetter@@QBEHXZ,,0x0008550C,3,Code/GameEngine/Source/Common/IntZeroGetters.cpp,matched,Trivial int-zero getter ret-delimited
@@ -38764,3 +38763,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Set_Animation_Hidden@RenderObjClass@@UAEXH@Z,,0x0006CF2C,20,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Set_Hidden@RenderObjClass@@UAEXH@Z,,0x0006CF0C,20,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Set_Translucent@RenderObjClass@@UAEXH@Z,,0x0006CF52,20,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Is_Really_Visible@RenderObjClass@@UAEHXZ,,0x0006CECD,33,Code/Libraries/Source/WWVegas/WW3D2/RenderObjO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
