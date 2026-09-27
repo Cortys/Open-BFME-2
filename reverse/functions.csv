@@ -37064,3 +37064,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QAE@XZ,,0x00286852,56,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_ptr_tree_dtor.cpp,matched,STLport 4.5.3 tree dtor for Contain int-void maps via 0x0033C432
 ?set@Rva001F3899Slot@@QAEXABURva001F3899Arg@@@Z,,0x001F3899,40,Code/GameEngine/Source/Common/Rva001F3899Set.cpp,matched,struct copy plus0xc8 plus0xd8 plus0xe8 clear plus0x1a0 24 callers
 ??1PartTheHeavensUpdateModuleData@@UAE@XZ,,0x004ACCCD,105,Code/GameEngine/Source/GameLogic/Object/Update/PartTheHeavensUpdateModuleDataDtor.cpp,matched,Snapshot base BBB554 plus 44B members plus AsciiString via CritterEmitter shape
+?clear@StateMachine@@QAEXXZ,,0x004D72C5,68,Code/GameEngine/Source/GameLogic/AI/StateMachineGoal.cpp,matched,vtable slot5 plus BFME1 donor clear plus FLT_MAX unk34

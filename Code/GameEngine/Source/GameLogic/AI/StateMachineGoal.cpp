@@ -131,6 +131,7 @@ public:
 	StateReturnType initDefaultState();
 	StateReturnType resetToDefaultState();
 	StateReturnType setState(StateID newStateID);
+	void clear();
 };
 
 class TurretStateMachine : public StateMachine
@@ -324,4 +325,27 @@ StateReturnType StateMachine::resetToDefaultState()
 	m_unk34 = 0;
 	m_goalRange = FLT_MAX;
 	return internalSetState(m_defaultStateID);
+}
+
+// ?clear@StateMachine@@QAEXXZ @0x004D72C5 68B
+// Retail vtable slot 5 (offset 0x14) of 19 Rva004D759C-derived vtables; donor BFME1
+// StateMachine.cpp clear (locked gate plus onExit RESET plus internalClear inlined).
+// BFME2 deltas same as reset: goalRange FLT_MAX plus unk34 zeroed; no callees.
+void StateMachine::clear()
+{
+	if (m_locked)
+	{
+		return;
+	}
+
+	if (m_currentState)
+		((State *)m_currentState)->onExit(EXIT_RESET);
+
+	m_currentState = NULL;
+	m_goalObjectID = 0;
+	m_unk34 = 0;
+	m_goalPosition.x = 0.0f;
+	m_goalPosition.y = 0.0f;
+	m_goalPosition.z = 0.0f;
+	m_goalRange = FLT_MAX;
 }
