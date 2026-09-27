@@ -90,6 +90,7 @@ public:
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
 	void rva0036EBB8(Object *target, CommandSourceType cmdSource);
 	void rva0036EC1D(Object *target, CommandSourceType cmdSource);
+	void rva0036EFF5(Object *target, CommandSourceType cmdSource);
 	void aiBfmeObjectCommand3D(Object *obj, CommandSourceType cmdSource);
 	void aiFollowWaypointPath(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void aiFollowWaypointPathExact(const Waypoint *waypoint, CommandSourceType cmdSource);
@@ -188,6 +189,17 @@ void AICommandInterface::rva0036EBB8(Object *target, CommandSourceType cmdSource
 void AICommandInterface::rva0036EC1D(Object *target, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x45, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// retail 0x0036EFF5, 101 bytes. Gap between aiBfmeCommand33 and aiForceAttackObject in this TU.
+// Same 101B object shape: AICMD 0x39 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x003C8339 via lea ecx,[esi+0x20] (AICommandInterface subobject) with source 1.
+// Callers at 0x0036FEEC and 0x003C8339.
+void AICommandInterface::rva0036EFF5(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x39, cmdSource);
 	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
