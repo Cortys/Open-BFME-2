@@ -38030,3 +38030,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00263546@Rva00263546@@QBE_NPBV1@@Z,,0x00263546,35,Code/GameEngine/Source/Common/Rva00263546Overlap.cpp,matched,19-dword overlap test via test loop callers pass masks
 ?rva0039D9E3@Team@@QBEHXZ,,0x0039D9E3,71,Code/GameEngine/Source/Common/RTS/TeamRva0039D9E3.cpp,matched,Team live-member count via rowed iterate and advance
 ?rva0039DD12@Team@@QBEHP6AHPAVObject@@PAX@Z1@Z,,0x0039DD12,57,Code/GameEngine/Source/Common/RTS/TeamRva0039DD12.cpp,matched,Team all-of predicate via rowed iterate and advance
+?_M_create_node@?$list@UTreeKey00242F5E@@V?$allocator@UTreeKey00242F5E@@@_STL@@@_STL@@IAEPAU?$_List_node@UTreeKey00242F5E@@@2@ABUTreeKey00242F5E@@@Z,,0x002A1361,34,Code/Libraries/Source/WWVegas/WWLib/stlport_list_treekey00242f5e_create_node.cpp,matched,list TreeKey create node via rowed Construct and byte allocator and hook caller
