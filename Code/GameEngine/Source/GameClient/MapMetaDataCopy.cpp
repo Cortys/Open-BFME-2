@@ -24,7 +24,7 @@ typedef _STL::list<Coord3D> Coord3DList;
 class WaypointMap : public _STL::map<AsciiString,Coord3D> { int numStartSpots; public: WaypointMap(const WaypointMap &); };
 // The copy chain301EF6->301A3E->3012B0->2C552 proves a string-only20B node:
 // these faction names form a set, not a map with an unobserved mapped value.
-struct PlayerPosition { unsigned char human,computer,loadAIScripts; int forceTeam; _STL::set<AsciiString> factions; ~PlayerPosition(); };
+struct PlayerPosition { unsigned char human,computer,loadAIScripts; int forceTeam; _STL::set<AsciiString> factions; PlayerPosition(); ~PlayerPosition(); };
 // Implicit copy emits the real EH array-copy helper: eight20B records.
 // Callback302CE2 copies three flags/team/map; callback22D920 destroys map+8.
 struct MapPlayers { PlayerPosition items[8]; };
@@ -54,6 +54,9 @@ WaypointMap::WaypointMap(const WaypointMap &o)
 // Retail faction-tree destruction uses the BFME null-checked header free.
 typedef _STL::_Rb_tree<AsciiString,AsciiString,_STL::_Identity<AsciiString>,_STL::less<AsciiString>,_STL::allocator<AsciiString> > FactionSetTree;
 template FactionSetTree::~_Rb_tree();
+
+PlayerPosition::PlayerPosition()
+    : human(1), computer(1), loadAIScripts(1), forceTeam(-1) {}
 
 PlayerPosition::~PlayerPosition() {}
 
