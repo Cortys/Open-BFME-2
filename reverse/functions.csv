@@ -36994,3 +36994,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?setBit0@Rva005FC64AOwner@@QAEXE@Z,,0x005FC64A,33,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC6F7 caller plus 0xEE mask at +0x34
 ?setBit1@Rva005FC66BOwner@@QAEXE@Z,,0x005FC66B,37,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC70A caller plus 0xDD mask at +0x34
 ?setBit2@Rva005FC690Owner@@QAEXE@Z,,0x005FC690,39,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC71E caller plus 0xBB mask at +0x34
+?rva005FC6F7@Rva005FC6F7@@QAEXE@Z,,0x005FC6F7,8,Code/GameEngine/Source/Common/Rva005FCBitThunks.cpp,matched,chase +0x18 to rowed bit0 setter 0x005FC64A
+?rva005FC70A@Rva005FC70A@@QAEXE@Z,,0x005FC70A,8,Code/GameEngine/Source/Common/Rva005FCBitThunks.cpp,matched,chase +0x18 to rowed bit1 setter 0x005FC66B
+?rva005FC71E@Rva005FC71E@@QAEXE@Z,,0x005FC71E,8,Code/GameEngine/Source/Common/Rva005FCBitThunks.cpp,matched,chase +0x18 to rowed bit2 setter 0x005FC690
