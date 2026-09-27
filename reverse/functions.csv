@@ -38154,3 +38154,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00342572@Rva00342572@@QAEHXZ,,0x00342572,46,Code/GameEngine/Source/Common/Rva00342572Get.cpp,matched,chain F8D4 predicate copy 1A0 to 20 or -1
 ??0Rva00342FCD@@QAE@PAVStateMachine@@H@Z,,0x00342FCD,37,Code/GameEngine/Source/Common/Rva00342FCDCtor.cpp,matched,chain FE65 base 0 vtable 0x812FA0 store 0x28
 ?xfer@Rva00342502@@MAEXPAVXfer@@@Z,,0x00342502,42,Code/GameEngine/Source/Common/Rva00342502Xfer.cpp,matched,chain FF76 base Version1 bool 4C
+??4Rva003427DD@@QAEAAV0@ABV0@@Z,,0x003427DD,45,Code/GameEngine/Source/Common/Rva003427DDCopy.cpp,matched,chain F16E assign plus 70 74 78
