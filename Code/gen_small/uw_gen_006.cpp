@@ -17,6 +17,7 @@ struct Gen_uw_0004f82b { int m; ~Gen_uw_0004f82b(); };
 struct Gen_uw_000519ab { int m; ~Gen_uw_000519ab(); };
 struct Gen_uw_000657d0 { int m; ~Gen_uw_000657d0(); };
 struct Gen_uw_000796bc { int m; ~Gen_uw_000796bc(); };
+struct Gen_uw_0007b724 { int m; ~Gen_uw_0007b724(); };
 struct Gen_uw_0007bb16 { int m; ~Gen_uw_0007bb16(); };
 struct Gen_uw_0007fab3 { int m; ~Gen_uw_0007fab3(); };
 struct Gen_uw_000a8a37 { int m; ~Gen_uw_000a8a37(); };
@@ -31,7 +32,9 @@ struct Gen_uw_0017098d { int m; ~Gen_uw_0017098d(); };
 struct Gen_uw_00176cb0 { int m; ~Gen_uw_00176cb0(); };
 struct Gen_uw_00176ff0 { int m; ~Gen_uw_00176ff0(); };
 struct Gen_uw_0020e205 { int m; ~Gen_uw_0020e205(); };
+struct Gen_uw_002154be { int m; ~Gen_uw_002154be(); };
 struct Gen_uw_002294fd { int m; ~Gen_uw_002294fd(); };
+struct Gen_uw_00229840 { int m; ~Gen_uw_00229840(); };
 struct Gen_uw_00238580 { int m; ~Gen_uw_00238580(); };
 struct Gen_uw_0023c85e { int m; ~Gen_uw_0023c85e(); };
 struct Gen_uw_0029d7c2 { int m; ~Gen_uw_0029d7c2(); };
@@ -1085,6 +1088,8 @@ void gen_uw_p2_000657d0(Gen_uw_000657d0 a0, Gen_uw_000657d0 a1) { gen_uw_ext(); 
 
 void gen_uw_p6_000796bc(Gen_uw_000796bc a0, Gen_uw_000796bc a1, Gen_uw_000796bc a2, Gen_uw_000796bc a3, Gen_uw_000796bc a4, Gen_uw_000796bc a5) { gen_uw_ext(); }
 
+void gen_uw_p3_0007b724(Gen_uw_0007b724 a0, Gen_uw_0007b724 a1, Gen_uw_0007b724 a2) { gen_uw_ext(); }
+
 void gen_uw_p3_0007bb16(Gen_uw_0007bb16 a0, Gen_uw_0007bb16 a1, Gen_uw_0007bb16 a2) { gen_uw_ext(); }
 
 void gen_uw_p3_0007fab3(Gen_uw_0007fab3 a0, Gen_uw_0007fab3 a1, Gen_uw_0007fab3 a2) { gen_uw_ext(); }
@@ -1113,7 +1118,11 @@ void gen_uw_p2_00176ff0(Gen_uw_00176ff0 a0, Gen_uw_00176ff0 a1) { gen_uw_ext(); 
 
 void gen_uw_p2_0020e205(Gen_uw_0020e205 a0, Gen_uw_0020e205 a1) { gen_uw_ext(); }
 
+void gen_uw_p3_002154be(Gen_uw_002154be a0, Gen_uw_002154be a1, Gen_uw_002154be a2) { gen_uw_ext(); }
+
 void gen_uw_p3_002294fd(Gen_uw_002294fd a0, Gen_uw_002294fd a1, Gen_uw_002294fd a2) { gen_uw_ext(); }
+
+void gen_uw_p2_00229840(Gen_uw_00229840 a0, Gen_uw_00229840 a1) { gen_uw_ext(); }
 
 void gen_uw_p5_00238580(Gen_uw_00238580 a0, Gen_uw_00238580 a1, Gen_uw_00238580 a2, Gen_uw_00238580 a3, Gen_uw_00238580 a4) { gen_uw_ext(); }
 

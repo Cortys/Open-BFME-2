@@ -4663,6 +4663,7 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uw_000358b0@@QAE@XZ,0x000358B0,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0003f320@@QAE@XZ,0x0003F320,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00040fe5@@QAE@XZ,0x00040FE5,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_0004122f@@QAE@XZ,0x0004122F,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_000419e3@@QAE@XZ,0x000419E3,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_00042ff8@@QAE@XZ,0x00042FF8,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_000470a0@@QAE@XZ,0x000470A0,gen-uw-pin dtor target read from the retail funclet bytes
@@ -4698,6 +4699,8 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uw_00079554@@QAE@XZ,0x00079554,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00079554@@QAE@XZ,0x00079554,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_000796bc@@QAE@XZ,0x000796BC,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_0007b724@@QAE@XZ,0x0007B724,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uwm_0007b724@@QAE@XZ,0x0007B724,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0007bb16@@QAE@XZ,0x0007BB16,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0007de9a@@QAE@XZ,0x0007DE9A,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0007dea1@@QAE@XZ,0x0007DEA1,gen-uw-pin dtor target read from the retail funclet bytes
@@ -4857,11 +4860,13 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uwm_00207e65@@QAE@XZ,0x00207E65,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0020e205@@QAE@XZ,0x0020E205,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00210cc5@@QAE@XZ,0x00210CC5,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_002154be@@QAE@XZ,0x002154BE,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_002175ce@@QAE@XZ,0x002175CE,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002218d0@@QAE@XZ,0x002218D0,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00225a55@@QAE@XZ,0x00225A55,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_002294fd@@QAE@XZ,0x002294FD,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002294fd@@QAE@XZ,0x002294FD,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_00229840@@QAE@XZ,0x00229840,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0022cac4@@QAE@XZ,0x0022CAC4,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0022d9f3@@QAE@XZ,0x0022D9F3,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0022dbc6@@QAE@XZ,0x0022DBC6,gen-uw-pin dtor target read from the retail funclet bytes
@@ -4890,6 +4895,7 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uwm_0026e1fc@@QAE@XZ,0x0026E1FC,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0026e836@@QAE@XZ,0x0026E836,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00270221@@QAE@XZ,0x00270221,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_0027ea49@@QAE@XZ,0x0027EA49,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0028562e@@QAE@XZ,0x0028562E,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002892ed@@QAE@XZ,0x002892ED,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0029d7c2@@QAE@XZ,0x0029D7C2,gen-uw-pin dtor target read from the retail funclet bytes
@@ -4898,6 +4904,7 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uw_002a73b8@@QAE@XZ,0x002A73B8,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_002a983d@@QAE@XZ,0x002A983D,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002a983d@@QAE@XZ,0x002A983D,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uwm_002ae627@@QAE@XZ,0x002AE627,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_002af1ec@@QAE@XZ,0x002AF1EC,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002b221a@@QAE@XZ,0x002B221A,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_002b228d@@QAE@XZ,0x002B228D,gen-uw-pin dtor target read from the retail funclet bytes
@@ -4985,6 +4992,7 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uw_00422d48@@QAE@XZ,0x00422D48,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00429191@@QAE@XZ,0x00429191,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00433bd7@@QAE@XZ,0x00433BD7,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uw_00434513@@QAE@XZ,0x00434513,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0043c286@@QAE@XZ,0x0043C286,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0043c286@@QAE@XZ,0x0043C286,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00447aca@@QAE@XZ,0x00447ACA,gen-uw-pin dtor target read from the retail funclet bytes
@@ -5063,6 +5071,7 @@ _AVIFileInit@0,0x0065479C,jmp [IAT 0xBBA050] stub; import table names avifil32!A
 ??1Gen_uw_004f5115@@QAE@XZ,0x004F5115,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_004fa830@@QAE@XZ,0x004FA830,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_00506b28@@QAE@XZ,0x00506B28,gen-uw-pin dtor target read from the retail funclet bytes
+??1Gen_uwm_00507823@@QAE@XZ,0x00507823,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0050c283@@QAE@XZ,0x0050C283,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uw_0050c4e8@@QAE@XZ,0x0050C4E8,gen-uw-pin dtor target read from the retail funclet bytes
 ??1Gen_uwm_0050c4e8@@QAE@XZ,0x0050C4E8,gen-uw-pin dtor target read from the retail funclet bytes
@@ -6066,4 +6075,3 @@ _ConvertBoolTrees,0x001BBD60
 ?Set_Name@GameFileClass@@UAEPBDPBD@Z,0x0007846F,target call from the matching GameFileClass filename constructor; Ghidra function boundary and size 712
 ?reset@Win32Mouse@@UAEXXZ,0x000419F5,target call from W3DMouse::reset at 0x990CF; Ghidra boundary 17B; body invokes Mouse reset then sets Win32Mouse byte +0x4F9C to 1
 ?Execute@ThreadClass@@QAEXXZ,0x006104B0,target call from W3DMouse::reset at 0x990CF+0x29; same 54B target body is byte-matched as ?Execute@ThreadClass@@UAEXXZ
-?_M_erase_bucket@?$hashtable@U?$pair@$$CBW4NameKeyType@@VDamageFX@@@_STL@@W4NameKeyType@@U?$hash@W4NameKeyType@@@rts@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@VDamageFX@@@_STL@@@2@U?$equal_to@W4NameKeyType@@@5@V?$allocator@U?$pair@$$CBW4NameKeyType@@VDamageFX@@@_STL@@@2@@_STL@@AAEXIPAU?$_Hashtable_node@U?$pair@$$CBW4NameKeyType@@VDamageFX@@@_STL@@@2@@Z,0x00053EE8,DamageFX specialization callee from Ghidra-start body 0x53F22; exact ICF body already represented at target address

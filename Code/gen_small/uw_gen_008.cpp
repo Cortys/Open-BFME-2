@@ -66,6 +66,7 @@ struct Gen_uwm_0007461f { int m; Gen_uwm_0007461f(int); ~Gen_uwm_0007461f(); };
 struct Gen_uwm_00078246 { int m; Gen_uwm_00078246(int); ~Gen_uwm_00078246(); };
 struct Gen_uwm_00078274 { int m; Gen_uwm_00078274(int); ~Gen_uwm_00078274(); };
 struct Gen_uwm_00079554 { int m; Gen_uwm_00079554(int); ~Gen_uwm_00079554(); };
+struct Gen_uwm_0007b724 { int m; Gen_uwm_0007b724(int); ~Gen_uwm_0007b724(); };
 struct Gen_uwm_0007de9a { int m; Gen_uwm_0007de9a(int); ~Gen_uwm_0007de9a(); };
 struct Gen_uwm_0007dea1 { int m; Gen_uwm_0007dea1(int); ~Gen_uwm_0007dea1(); };
 struct Gen_uwm_0007dea8 { int m; Gen_uwm_0007dea8(int); ~Gen_uwm_0007dea8(); };
@@ -412,6 +413,14 @@ Gen_uwh0_00079554::Gen_uwh0_00079554() : a0(0), z(0) {  }
 struct Gen_uwh4_00079554 { char q0[140]; Gen_uwm_00079554 a0; Gen_uwm_00079554 z; Gen_uwh4_00079554(); };
 // ??0Gen_uwh4_00079554@@QAE@XZ absent-from-retail
 Gen_uwh4_00079554::Gen_uwh4_00079554() : a0(0), z(0) { char pad[4]; gen_uw_sink(pad); }
+
+struct Gen_uwh0_0007b724 { Gen_uwm_0007b724 a0; Gen_uwm_0007b724 a1; Gen_uwm_0007b724 a2; char q3[20]; Gen_uwm_0007b724 a3; Gen_uwm_0007b724 a4; char q5[12]; Gen_uwm_0007b724 a5; char q6[8]; Gen_uwm_0007b724 a6; char q7[16]; Gen_uwm_0007b724 a7; char q8[40]; Gen_uwm_0007b724 a8; char q9[120]; Gen_uwm_0007b724 a9; char q10[40]; Gen_uwm_0007b724 a10; char q11[14348]; Gen_uwm_0007b724 a11; Gen_uwm_0007b724 z; Gen_uwh0_0007b724(); };
+// ??0Gen_uwh0_0007b724@@QAE@XZ absent-from-retail
+Gen_uwh0_0007b724::Gen_uwh0_0007b724() : a0(0), a1(1), a2(2), a3(3), a4(4), a5(5), a6(6), a7(7), a8(8), a9(9), a10(10), a11(11), z(0) {  }
+
+struct Gen_uwh4_0007b724 { char q0[52]; Gen_uwm_0007b724 a0; char q1[72]; Gen_uwm_0007b724 a1; char q2[120]; Gen_uwm_0007b724 a2; char q3[40]; Gen_uwm_0007b724 a3; Gen_uwm_0007b724 z; Gen_uwh4_0007b724(); };
+// ??0Gen_uwh4_0007b724@@QAE@XZ absent-from-retail
+Gen_uwh4_0007b724::Gen_uwh4_0007b724() : a0(0), a1(1), a2(2), a3(3), z(0) { char pad[4]; gen_uw_sink(pad); }
 
 struct Gen_uwh0_0007de9a { char q0[60]; Gen_uwm_0007de9a a0; Gen_uwm_0007de9a z; Gen_uwh0_0007de9a(); };
 // ??0Gen_uwh0_0007de9a@@QAE@XZ absent-from-retail
