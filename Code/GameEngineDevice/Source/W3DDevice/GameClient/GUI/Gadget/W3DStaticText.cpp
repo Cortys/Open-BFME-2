@@ -201,10 +201,11 @@ void W3DGadgetStaticTextDraw( GameWindow *window, WinInstanceData *instData )
 	if( backColor != WIN_COLOR_UNDEFINED )
 	{
 
-		start.x = origin.x + 1;
-		start.y = origin.y + 1;
-		end.x = start.x + size.x - 2;
-		end.y = start.y + size.y - 2;
+		Int sx = origin.x + 1, sy = origin.y + 1;
+		start.x = sx;
+		start.y = sy;
+		end.x = sx + size.x - 2;
+		end.y = sy + size.y - 2;
 		TheWindowManager->winFillRect( backColor, WIN_DRAW_LINE_WIDTH,
 																	 start.x, start.y, end.x, end.y );
 	}  // end if
@@ -268,4 +269,3 @@ void W3DGadgetStaticTextImageDraw( GameWindow *window, WinInstanceData *instData
   
 
 }  // end W3DGadgetStaticTextImageDraw
-
