@@ -56,6 +56,24 @@ void __cdecl rva007B7070()
 	return p->Free_String();
 }
 
+// ??1?$VectorClass@UTextureStatisticsStruct@@@@UAE@XZ rowed target for next thunk (67B @0x0012A4D0).
+struct TextureStatisticsStruct;
+template<class T>
+class VectorClass
+{
+public:
+	virtual ~VectorClass();
+};
+
+extern unsigned g_Va009EE920;
+
+// ?rva007B7060@@YAXXZ @ 0x007B7060 (10B). Global VectorClass dtor thunk: ecx=&g_Va009EE920 then tail-jmp to rowed ??1?$VectorClass@UTextureStatisticsStruct@@@@UAE@XZ (0x0012A4D0). No callers. Prev 0x007B7050 next 0x007B7070 in this TU. Honest address name.
+void __cdecl rva007B7060()
+{
+	VectorClass<TextureStatisticsStruct> *p = (VectorClass<TextureStatisticsStruct> *)&g_Va009EE920;
+	return p->VectorClass<TextureStatisticsStruct>::~VectorClass();
+}
+
 // ??1AsciiString@@QAE@XZ rowed target for next thunk (5B @0x0048BA39, ICF with StringBase clear/dtor).
 class AsciiString
 {
