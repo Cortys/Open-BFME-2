@@ -64,6 +64,7 @@ class INI
 public:
 	int getLineNum( void ) const;
 	AsciiString getFilename( void ) const;
+	int rva0002BBDE( void ) const;
 
 private:
 	int m_head[ 4 ];
@@ -84,4 +85,9 @@ int INI::getLineNum( void ) const
 AsciiString INI::getFilename( void ) const
 {
 	return m_fileTable.getName( m_fileIndex );
+}
+
+int INI::rva0002BBDE( void ) const
+{
+	return m_fileTable.getLine( m_head[ 3 ] );
 }
