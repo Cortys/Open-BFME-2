@@ -38198,3 +38198,10 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?advance@T4Host0060C2E0@@QAEXXZ,,0x003F93AD,29,Code/GameEngine/Source/Common/T4LeafPredicatesAndMath.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?t4IsZero005F4180@@YAHPBM@Z,,0x0055D3D9,28,Code/GameEngine/Source/Common/T4LeafPredicatesAndMath.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Matrix3D@@QAE@_N@Z,,0x0004C91A,101,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/JetAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+??0Matrix4@@QAE@ABVVector4@@000@Z,,0x0006A34E,131,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set_Material@DX8Wrapper@@SAXPBVVertexMaterialClass@@@Z,,0x000662B1,52,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Set_Alpha@RenderObjClass@@UAEXH@Z,,0x0006CF6F,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?_bfme_ro_flag110@RenderObjClass@@UAEXH@Z,,0x0006CFA9,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?_bfme_ro_flag112@RenderObjClass@@UAEXH@Z,,0x0006CFC6,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?_bfme_ro_flag114@RenderObjClass@@UAEXH@Z,,0x0006CFE3,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?_bfme_ro_flag116@RenderObjClass@@UAEXH@Z,,0x0006D000,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/HeightMap.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
