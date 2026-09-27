@@ -36853,3 +36853,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004CA167@AnimationSoundTree@@QAEXPAX@Z,,0x004CA167,53,Code/GameEngine/Source/Common/AnimationSoundTreeFree.cpp,matched,tree node free via rowed Rva002390CB dtor plus free callers 004CA179 plus 004CA278
 ?clear@Rva004BA3CC@@QAEXXZ,,0x004BA3CC,30,Code/GameEngine/Source/Common/Rva004BA1C8Record.cpp,matched,clear destroys range via rowed 0x004BA341 then rowed free
 ??0TransportContainModuleData@@QAE@XZ,,0x00468301,468,Code/GameEngine/Source/GameLogic/Object/Contain/TransportContainModuleDataCtor.cpp,matched,INI table 0xC44648 layout plus ZH donor plus factory plus derived callers plus vtable 0xC442F8
+??0SubsystemInterface@@QAE@ABV0@@Z,,0x00329F5E,37,Code/Libraries/Source/subsystem/SubsystemInterfaceCopy.cpp,matched,SubsystemInterface copy ctor vtable plus byte plus StringBase via 0x365F0

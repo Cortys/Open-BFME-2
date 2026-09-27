@@ -36,7 +36,6 @@ private:
 	AsciiString m_name; // +8
 };
 
-// ??0SubsystemInterface@@QAE@ABV0@@Z present-unmatched
 SubsystemInterface::SubsystemInterface(const SubsystemInterface &that) :
 	m_flag(that.m_flag),
 	m_name(that.m_name)
