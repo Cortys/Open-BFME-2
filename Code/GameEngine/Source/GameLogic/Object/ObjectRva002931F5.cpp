@@ -50,8 +50,10 @@ public:
 	Object *rva002931F5(Bool checkProducer);
 	Bool rva00293926(KindOfType kind);
 	int rva002933CD();
+	void *rva0029439D();
 	Bool isKindOf(KindOfType kind) const;
 	Bool testStatus(ObjectStatusTypes bit) const;
+	void *rva0028C197() const;
 
 private:
 	unsigned char m_pad00[4];
@@ -102,5 +104,18 @@ int Object::rva002933CD()
 	}
 	if (cur->testStatus(STATUS_60) || cur->testStatus(STATUS_5F))
 		return 1;
+	return 0;
+}
+
+// ?rva0029439D@Object@@QAEPAXXZ, retail 0x0029439D, 21 bytes.
+// Object helper: related via rva002931F5(false); if non-null tail to
+// rva0028C197 else null. Evidence: thiscall with no args proven by callers
+// 0x002946AB (mov esi ecx then call) and 0x002957FC (mov ecx esi then call);
+// callees rowed 0x002931F5 and 0x0028C197; sits after 0x00293926 in this TU.
+void *Object::rva0029439D()
+{
+	Object *related = rva002931F5(false);
+	if (related != 0)
+		return related->rva0028C197();
 	return 0;
 }
