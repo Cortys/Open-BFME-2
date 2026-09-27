@@ -22,11 +22,18 @@ public:
 class Rva004C9B8F
 {
 public:
+	~Rva004C9B8F();
 	Rva004C9B8F &operator=(const Rva004C9B8F &other);
 
 private:
 	void *m_ptr;
 };
+
+Rva004C9B8F::~Rva004C9B8F()
+{
+	if (m_ptr != 0)
+		reinterpret_cast<Rva002D76BB *>(m_ptr)->release();
+}
 
 Rva004C9B8F &Rva004C9B8F::operator=(const Rva004C9B8F &other)
 {
