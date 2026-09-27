@@ -37623,3 +37623,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva00254CCF@ActivateModuleSpecialPowerModuleData@@UAEXPAVRva00254CCFArg@@@Z,,0x00254CCF,60,Code/GameEngine/Source/GameLogic/Object/SpecialPower/ActivateModuleSpecialPowerModuleDataRva00254CCF.cpp,matched,Vslot34 of 0x7F3F60 via vector loop plus virtual slots 10 and 12
 ?rva004635EC@SlaughterHordeContain@@UAEXP6AXPAVObject@@PAX@Z1H@Z,,0x004635EC,83,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainIterate.cpp,matched,vtable slot 106 of 0x00848AA0 via ctor plus list at +0x34 plus callers at 0x47BE90 and 0x47CEFF
 ??1Rva00496A63@@QAE@XZ,,0x00496A63,53,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496A63Dtor.cpp,matched,two-string vector element dtor via pinned StringBase
+?set@Rva0040F9D@@QAE_NXZ,,0x00040F9D,24,Code/GameEngine/Source/Common/Rva0040F9DEvent.cpp,matched,IAT SetEvent plus 8 callers plus base-dtor handle layout
