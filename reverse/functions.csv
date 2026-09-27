@@ -38969,3 +38969,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Rva006D6360@@QAE@HH@Z,,0x006D6360,86,Code/Libraries/Source/Apt/Rva006D6360Ctor.cpp,matched,vtable 0x008EA228; base BfmeAptValue plus AptNativeHash at +8; 7 callers; EH state 0
 ??0Rva006D6470Owner@@QAE@HH@Z,,0x006D6410,43,Code/Libraries/Source/Apt/Rva006D6360Ctor.cpp,matched,vtable 0x008EA264; calls base 0x006D6360; m_bits at +0x1C; dtor row 0x006D6470
 ?rva006D61E0@EAStringC@@QAEAAV1@H@Z,,0x006D61E0,79,Code/Libraries/Source/EA/Apt/AptString/EAStringCAssign.cpp,matched,EAStringC assign codepoint; FreeData plus empty singleton plus utf8 len plus ChangeBuffer plus encode
+??1Rva006D6D20@@UAE@XZ,,0x006D6D20,82,Code/Libraries/Source/Apt/Rva006D6D20Dtor.cpp,matched,vtable 0x008EA358; EAStringC at +8 plus base 0x006DE350; ctor twin 0x006D6CC0; size 0x10
