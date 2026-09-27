@@ -1,0 +1,37 @@
+// cl: /Ireference/shims/bfmelist /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ??_G?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@QAEPAXI@Z @0x004348AE 28B: deleting dtor calls rowed pair dtor 0x00434513 then operator delete 0x0002FD60 on flag; public QAE like AudioEventRTS precedent.
+#include <map>
+template <typename T> class StringBase {
+    friend class AsciiString;
+    friend class UnicodeString;
+    StringBase(const StringBase &);
+    void releaseBuffer();
+    __forceinline ~StringBase() { releaseBuffer(); }
+    void *m_data;
+};
+class AsciiString : private StringBase<char> {
+public:
+    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+    __forceinline ~AsciiString() {}
+};
+class UnicodeString : private StringBase<unsigned short> {
+public:
+    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
+    __forceinline ~UnicodeString() {}
+};
+struct BfmeSubobject0022CE19 {
+    virtual ~BfmeSubobject0022CE19();
+    unsigned char m_opaque[0xDE4];
+    BfmeSubobject0022CE19(const BfmeSubobject0022CE19 &);
+};
+struct TreeHintOpaque0043671B {
+    UnicodeString m_text;
+    BfmeSubobject0022CE19 m_subobject;
+    unsigned int m_wordDEC, m_wordDF0;
+    TreeHintOpaque0043671B();
+    TreeHintOpaque0043671B(const TreeHintOpaque0043671B &);
+    ~TreeHintOpaque0043671B();
+};
+typedef _STL::pair<const AsciiString, TreeHintOpaque0043671B> TreeHintPair0043671B;
+void famgenDeletePair0043671B(TreeHintPair0043671B *p) { delete p; }
