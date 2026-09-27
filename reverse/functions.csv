@@ -38025,3 +38025,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?doFXPos@FXList@@SAXPBV1@PBUCoord3D@@PBVMatrix3D@@M1@Z,,0x00094C29,47,Code/GameEngine/Source/GameClient/FXListStaticDoFXPos.cpp,matched,ZH static doFXPos null-guard plus 0x1E2EF1 gate to member doFXPos
 ?rva0030750A@DataChunkInput@@QAE?AVAsciiString@@XZ,,0x0030750A,153,Code/GameEngine/Source/Common/System/DataChunkInputReadAsciiString.cpp,matched,unlock DataChunkInput readAsciiString shape via ZH donor
 ?iterate_TeamMemberList@Team@@QBE?AV?$DLINK_ITERATOR@VObject@@@@XZ,,0x00263864,49,Code/GameEngine/Source/Common/RTS/TeamIterateTeamMemberList.cpp,matched,BFME1 GameCommon MAKE_DLINK_HEAD donor plus Team head at 0x38 and Object vbptr delta
+?Rva002634E0Equal@@YA_NPBX0@Z,,0x002634E0,24,Code/GameEngine/Source/Common/Rva002634E0Equal.cpp,matched,memcmp 16-byte equality predicate same shape as equalTag
