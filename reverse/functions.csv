@@ -37751,3 +37751,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0006E52A@Rva0006E52A@@QAEXPAVRva0006E52AObj@@H@Z,,0x0006E52A,61,Code/GameEngine/Source/Common/Rva0006E52ASet.cpp,matched,indexed refcounted assign growing count AddRef Release
 ?rva002AB7FD@Player@@QBE_NABV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x002AB7FD,48,Code/GameEngine/Source/Common/RTS/PlayerRva002AB7FD.cpp,matched,Player any-of over ScienceVec via rowed hasScience and vector copy ctor
 ?rva002ABA9B@Player@@QAEXXZ,,0x002ABA9B,11,Code/GameEngine/Source/Common/RTS/PlayerRva002ABA9B.cpp,matched,Player clears int list at 0x700 via rowed ListBase clear
+?rva0042680D@Rva004266A1@@QAEEH@Z,,0x0042680D,30,Code/GameEngine/Source/Common/Rva0042680DGetter.cpp,matched,flag1 getter via rowed bounds check at 0x004266A1
