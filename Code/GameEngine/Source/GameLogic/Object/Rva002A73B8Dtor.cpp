@@ -44,3 +44,9 @@ void Rva002A73B8_Anchor()
 	Rva002A73B8 *p = new Rva002A73B8;
 	delete p;
 }
+
+void Rva002A752FDestroy(Rva002A73B8 *first, Rva002A73B8 *last)
+{
+	for (; first != last; ++first)
+		first->~Rva002A73B8();
+}

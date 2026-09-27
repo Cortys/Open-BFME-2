@@ -37127,3 +37127,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva005CD1A9@@QAE@XZ,,0x005CD167,66,Code/GameEngine/Source/Common/Rva005CD1A9Ctor.cpp,matched,outer ctor new inner via rowed 0x5CD0DC; vtable 0x874F60; callers 0x57624E 0x576E13 0x5776C9
 ??1Rva002A73B8@@QAE@XZ,,0x002A73B8,8,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,forwarder to rowed Rva00360D26Member dtor at plus 8
 ??_GRva002A73B8@@QAEPAXI@Z,,0x002A73E4,28,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,scalar deleting dtor via anchor new-delete calls rowed dtor plus delete
+?Rva002A752FDestroy@@YAXPAVRva002A73B8@@0@Z,,0x002A752F,25,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,array destroy for Rva002A73B8 size 0xC calls rowed dtor
