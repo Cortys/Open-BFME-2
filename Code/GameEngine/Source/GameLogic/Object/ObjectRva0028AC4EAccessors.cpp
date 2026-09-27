@@ -52,7 +52,6 @@ public:
 	float rva0028AC7D() const;
 };
 
-// ?rva0028AC4E@Object@@QBEPBURva0028AC4EEntry@@XZ present-unmatched
 __declspec(noinline) const Rva0028AC4EEntry *Object::rva0028AC4E() const
 {
 	Rva0028AC4EHolder *holder = m_holder;
