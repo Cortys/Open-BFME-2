@@ -39472,3 +39472,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0028B842@Object@@QBEMXZ,,0x0028B842,25,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B842.cpp,matched,Object plus0x250 provider float wrapper returns 1.0f else slot 0xD4
 ?getSoleHealingBenefactor@Object@@QBE?AW4ObjectID@@XZ,,0x0028B204,26,Code/GameEngine/Source/GameLogic/Object/ObjectGetSoleHealingBenefactor.cpp,matched,BFME1 donor getSoleHealingBenefactor plus repair callers compare to m_id
 ?rva0028B7C8@Object@@QBEHXZ,,0x0028B7C8,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B7C8.cpp,matched,Object int gate calls rva0028AC7D compares to 0.1f at 0xBC2424
+?rva0028B85B@Object@@QBE?AW4ObjectID@@XZ,,0x0028B85B,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B85B.cpp,matched,Object body slot 0x3C ObjectID at plus8 else INVALID_ID
