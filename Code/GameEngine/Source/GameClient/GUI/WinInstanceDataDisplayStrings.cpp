@@ -56,6 +56,7 @@ private:
 class UnicodeString
 {
 public:
+	static const UnicodeString TheEmptyString;
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() {}
@@ -72,6 +73,7 @@ class DisplayString
 public:
 	virtual ~DisplayString() {}
 	virtual void setText(UnicodeString text);
+	virtual UnicodeString getText();
 };
 
 class DisplayStringManager
@@ -101,6 +103,7 @@ class WinInstanceData
 public:
 	void setTooltipText(UnicodeString tip);
 	void setText(UnicodeString text);
+	UnicodeString getTooltipText();
 
 private:
 	char m_pad[0x19C];
@@ -128,4 +131,11 @@ void WinInstanceData::setText(UnicodeString text)
 
 	// set text
 	m_text->setText(text);
+}
+
+UnicodeString WinInstanceData::getTooltipText()
+{
+	if (m_tooltip)
+		return m_tooltip->getText();
+	return UnicodeString::TheEmptyString;
 }
