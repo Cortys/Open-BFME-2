@@ -55,5 +55,4 @@ Rva0048130E::Rva0048130E(const Rva0048130E &src)
 {
 }
 
-// ??_GRva0048130E@@QAEPAXI@Z present-unmatched
 void deleteRva0048130E(Rva0048130E *p) { delete p; }
