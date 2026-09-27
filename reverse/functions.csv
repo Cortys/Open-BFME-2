@@ -37076,3 +37076,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?set@Rva001F3FD0Slot@@QAEXABVAsciiString@@@Z,,0x001F3FD0,26,Code/GameEngine/Source/Common/Rva001F3FD0Set.cpp,matched,AsciiString plus0x68 via pinned assign plus zero plus0xa0
 ??1SiegeEngineContain@@UAE@XZ,,0x0047BF43,207,Code/GameEngine/Source/GameLogic/Object/Contain/SiegeEngineContainDtor.cpp,matched,SiegeContain dtor with contained-Object loop via destroyObject plus list-map-list
 ?rva005F2773@Rva005F2577Holder@@QAEXPAURva005F2577Inner@@@Z,,0x005F2773,31,Code/GameEngine/Source/Common/Rva005F2278MapContains.cpp,matched,Smart-ptr assign via rowed release honest address name
+?get@Rva001F45DFSlot@@QBEHXZ,,0x001F45DF,16,Code/GameEngine/Source/Common/Rva001F45DFGet.cpp,matched,nullable ptr plus0x3c via Make then dword plus0x7c
