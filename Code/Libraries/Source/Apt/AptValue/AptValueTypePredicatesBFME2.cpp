@@ -20,6 +20,8 @@ public:
     int isScriptFunction() const;
     int isDate() const;
     int isKey() const;
+    int isMath() const;
+    int isScriptColour() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -128,5 +130,33 @@ int BfmeAptValue006DCD20::isKey() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 24 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isMath@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC4E0, 78 bytes.
+// Predicate for type 23 (0x2E000000), "this" assert at AptValue.inl:1816.
+// Evidence: caller 0x006DD060 asserts "isMath()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isMath() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1816);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 23 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isScriptColour@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC530, 78 bytes.
+// Predicate for type 26 (0x34000000), "this" assert at AptValue.inl:1843.
+// Evidence: caller 0x006DD0A0 asserts "isScriptColour()" after calling it;
+// same /O2 shape as siblings in this TU.
+int BfmeAptValue006DCD20::isScriptColour() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1843);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 26 && !isUndefined()) return 1;
     return 0;
 }
