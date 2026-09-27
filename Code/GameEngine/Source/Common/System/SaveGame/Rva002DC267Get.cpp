@@ -27,7 +27,9 @@ class StringBase
 public:
 	StringBase() : m_data(0) {}
 	void concat(const T *text);
+	void concat(const StringBase<T> &other);
 	bool startsWithNoCase(const StringBase<T> &other) const;
+	const T *find(T c) const;
 protected:
 	struct Header
 	{
@@ -76,6 +78,12 @@ public:
 	bool rva002DC7C1(const UnicodeString &path) const;
 };
 
+class Rva002DC74A
+{
+public:
+	UnicodeString rva002DC74A(const UnicodeString &leaf) const;
+};
+
 UnicodeString Rva002DC267::rva002DC267() const
 {
 	UnicodeString wtmp(TheGlobalData->rva002360DE());
@@ -88,4 +96,15 @@ UnicodeString Rva002DC267::rva002DC267() const
 bool Rva002DC7C1::rva002DC7C1(const UnicodeString &path) const
 {
 	return ((const StringBase<WideChar> *)&path)->startsWithNoCase((const StringBase<WideChar> &)((const Rva002DC267 *)this)->rva002DC267());
+}
+
+// Unicode getFilePathInSaveDirectory: if leaf holds a backslash return it,
+// else save dir from 0x002DC267 plus leaf via StringBase concat at 0x00006A2A.
+UnicodeString Rva002DC74A::rva002DC74A(const UnicodeString &leaf) const
+{
+	if (((const StringBase<WideChar> *)&leaf)->find((WideChar)L'\\'))
+		return leaf;
+	UnicodeString tmp(((const Rva002DC267 *)this)->rva002DC267());
+	((StringBase<WideChar> *)&tmp)->concat(*(const StringBase<WideChar> *)&leaf);
+	return tmp;
 }
