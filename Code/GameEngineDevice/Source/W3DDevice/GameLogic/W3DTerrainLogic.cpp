@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /DZH_EMIT_POOL_GLUE /Ireference/shims/bfmerendobj /Ireference/shims/debugvtable /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/bfmeanimobj /Ireference/shims/indexbuffercount /Ireference/shims/bfmecaps /Ireference/shims/bfmehcanim /Ireference/shims/bfmevector /Ireference/shims/bfmemapper /Ireference/shims/meshmatdesclayout /Ireference/shims/bfmeshader /Ireference/shims/bfmecpudetect /Ireference/shims/bfmepool /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWAudio /Ireference/shims/bfmealloc /Ireference/shims/bfmehashtable /Ireference/shims/bfmelist /Ireference/shims/asciistring_downloadmanager /Ireference/shims/stlp_nodealloc /Ireference/shims/asciistring_thin /ICode/GameEngine/Source/Common /Ireference/shims/w3droadbuffer /Ireference/shims/bfmeterraintracks /ICode/Libraries/Include/Lib /Ireference/shims
+// cl: /O1 /G7 /arch:SSE /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /DZH_EMIT_POOL_GLUE /Ireference/shims/bfmerendobj /Ireference/shims/debugvtable /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/bfmeanimobj /Ireference/shims/indexbuffercount /Ireference/shims/bfmecaps /Ireference/shims/bfmehcanim /Ireference/shims/bfmevector /Ireference/shims/bfmemapper /Ireference/shims/meshmatdesclayout /Ireference/shims/bfmeshader /Ireference/shims/bfmecpudetect /Ireference/shims/bfmepool /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWAudio /Ireference/shims/bfmealloc /Ireference/shims/bfmehashtable /Ireference/shims/bfmelist /Ireference/shims/asciistring_downloadmanager /Ireference/shims/stlp_nodealloc /Ireference/shims/asciistring_thin /ICode/GameEngine/Source/Common /Ireference/shims/w3droadbuffer /Ireference/shims/bfmeterraintracks /ICode/Libraries/Include/Lib /Ireference/shims
 // stlport
 // Ported verbatim from the Generals Zero Hour reference
 // (GameEngineDevice/Source/W3DDevice/GameLogic/W3DTerrainLogic.cpp); this unit had no counterpart under Code/.
@@ -53,6 +53,7 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0W3DTerrainLogic@@ present-unmatched
 W3DTerrainLogic::W3DTerrainLogic():
 m_mapMinZ(0),
 m_mapMaxZ(1)
@@ -62,6 +63,7 @@ m_mapMaxZ(1)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1W3DTerrainLogic@@ present-unmatched
 W3DTerrainLogic::~W3DTerrainLogic()
 {
 
@@ -72,6 +74,7 @@ W3DTerrainLogic::~W3DTerrainLogic()
 //-------------------------------------------------------------------------------------------------
 /** Device DEPENDENT implementation init details for logical terrain */
 //-------------------------------------------------------------------------------------------------
+// ?init@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::init( void )
 {
 
@@ -87,6 +90,7 @@ void W3DTerrainLogic::init( void )
 //-------------------------------------------------------------------------------------------------
 /** Reset */
 //-------------------------------------------------------------------------------------------------
+// ?reset@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::reset( void )
 {
 	TerrainLogic::reset();
@@ -110,6 +114,7 @@ void W3DTerrainLogic::newMap( Bool saveGame )
 //-------------------------------------------------------------------------------------------------
 /** Update */
 //-------------------------------------------------------------------------------------------------
+// ?update@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::update( void )
 {
 	TerrainLogic::update();
@@ -119,6 +124,7 @@ void W3DTerrainLogic::update( void )
 /** Device DEPENDENT implementation for load details of logical terrain.
 Note - if query is true, we are  */
 //-------------------------------------------------------------------------------------------------
+// ?loadMap@W3DTerrainLogic@@ present-unmatched
 Bool W3DTerrainLogic::loadMap( AsciiString filename , Bool query )
 {
 	if(!TheMapCache)
@@ -201,6 +207,7 @@ Bool W3DTerrainLogic::loadMap( AsciiString filename , Bool query )
 //-------------------------------------------------------------------------------------------------
 /** Get the 3D extent of the terrain in world coordinates */
 //-------------------------------------------------------------------------------------------------
+// ?getExtent@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::getExtent( Region3D *extent ) const 
 {
 	extent->lo.x = 0.0f;
@@ -225,6 +232,7 @@ void W3DTerrainLogic::getExtent( Region3D *extent ) const
 //-------------------------------------------------------------------------------------------------
 /** Get the 3D largest bounds defined in the map. */
 //-------------------------------------------------------------------------------------------------
+// ?getMaximumPathfindExtent@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::getMaximumPathfindExtent( Region3D *extent ) const
 {
 	extent->lo.x = 0.0f;
@@ -253,6 +261,7 @@ void W3DTerrainLogic::getMaximumPathfindExtent( Region3D *extent ) const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?getExtentIncludingBorder@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::getExtentIncludingBorder( Region3D *extent ) const 
 {
 	extent->lo.x = 0.0f;
@@ -281,6 +290,7 @@ Bool W3DTerrainLogic::isClearLineOfSight(const Coord3D& pos, const Coord3D& posO
 //-------------------------------------------------------------------------------------------------
 /** W3D specific get height function for logical terrain */
 //-------------------------------------------------------------------------------------------------
+// ?getGroundHeight@W3DTerrainLogic@@ present-unmatched
 Real W3DTerrainLogic::getGroundHeight( Real x, Real y, Coord3D* normal ) const
 {
 #define USE_THE_TERRAIN_OBJECT
@@ -306,6 +316,7 @@ Real W3DTerrainLogic::getGroundHeight( Real x, Real y, Coord3D* normal ) const
 //-------------------------------------------------------------------------------------------------
 /** Get the height considering the layer. */
 //-------------------------------------------------------------------------------------------------
+// ?getLayerHeight@W3DTerrainLogic@@ present-unmatched
 Real W3DTerrainLogic::getLayerHeight( Real x, Real y, PathfindLayerEnum layer, Coord3D* normal, Bool clip ) const
 {
 #ifdef USE_THE_TERRAIN_OBJECT
@@ -360,6 +371,7 @@ Real W3DTerrainLogic::getLayerHeight( Real x, Real y, PathfindLayerEnum layer, C
 //-------------------------------------------------------------------------------------------------
 /** W3D isCliffCell for terrain logic */
 //-------------------------------------------------------------------------------------------------
+// ?isCliffCell@W3DTerrainLogic@@ present-unmatched
 Bool W3DTerrainLogic::isCliffCell( Real x, Real y) const
 {
 
@@ -370,6 +382,7 @@ Bool W3DTerrainLogic::isCliffCell( Real x, Real y) const
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::crc( Xfer *xfer )
 {
 
@@ -383,6 +396,7 @@ void W3DTerrainLogic::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::xfer( Xfer *xfer )
 {
 
@@ -399,6 +413,7 @@ void W3DTerrainLogic::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@W3DTerrainLogic@@ present-unmatched
 void W3DTerrainLogic::loadPostProcess( void )
 {
 
