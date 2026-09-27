@@ -38005,3 +38005,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002931F5@Object@@QAEPAV1@_N@Z,,0x002931F5,84,Code/GameEngine/Source/GameLogic/Object/ObjectRva002931F5.cpp,matched,Object template flag 0x2000 plus containedBy plus producer via findObjectByID
 ?rva00293926@Object@@QAE_NW4KindOfType@@@Z,,0x00293926,47,Code/GameEngine/Source/GameLogic/Object/ObjectRva002931F5.cpp,matched,Object isKindOf else related via rva002931F5 plus tail isKindOf
 ?rva002933CD@Object@@QAEHXZ,,0x002933CD,59,Code/GameEngine/Source/GameLogic/Object/ObjectRva002931F5.cpp,matched,Object related chain plus testStatus 0x60 0x5F
+??$__uninitialized_copy@PBUBfmeStringRecord00204A30@@PAU1@@_STL@@YAPAUBfmeStringRecord00204A30@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x00205754,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy_stringrecord_00204a30.cpp,matched,stlport 20B record unlocks 0x00209952 via rowed Construct
