@@ -5935,3 +5935,13 @@ _ConvertBoolTrees,0x001BBD60
 ?enableRadar@Player@@QAEXXZ,0x002AAAF9,address read from the REL32 displacement at a byte-verified placed body (0x2AB8D0)
 ?iterateObjects@Player@@QBEXP6AXPAVObject@@PAX@Z1@Z,0x002AB08B,address read from the REL32 displacement at a byte-verified placed body (0x2AB8D0)
 ?addScience@Player@@AAE_NW4ScienceType@@@Z,0x002AD661,address read from the REL32 displacement at a byte-verified placed body (0x2AD85E)
+??0RoadSegment@@QAE@ABV0@@Z,0x000D50CE,address read from the REL32 displacement at a placed body
+??1RoadSegment@@QAE@XZ,0x000D44B4,address read from the REL32 displacement at a placed body
+??4LineSegClass@@QAEAAV0@ABV0@@Z,0x000B2CE5,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+??4RoadSegment@@QAEAAV0@ABV0@@Z,0x000D6DB1,address read from the REL32 displacement at a placed body
+??4TRoadPt@@QAEAAU0@ABU0@@Z,0x000D6A72,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
+?insert4Way@W3DRoadBuffer@@IAEXVVector2@@HM@Z,0x000D60A0,address read from the REL32 displacement at a placed body
+?insertCurveSegmentAt@W3DRoadBuffer@@IAEXHH@Z,0x000DB8DA,address read from the REL32 displacement at a placed body
+?insertTee@W3DRoadBuffer@@IAEXVVector2@@HM@Z,0x000DA2B2,address read from the REL32 displacement at a placed body
+?loadFloat4PtSection@W3DRoadBuffer@@IAEXPAVRoadSegment@@VVector2@@11PAV3@MMMM@Z,0x000D7DCE,address read from the REL32 displacement at a placed body
+?updateLighting@W3DRoadBuffer@@QAEXXZ,0x000D4A4B,address read from the REL32 displacement at a placed body

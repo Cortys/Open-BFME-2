@@ -1,4 +1,4 @@
-// cl: /arch:SSE /DNDEBUG /DWIN32 /MD /EHsc /Ireference/shims/w3droadbuffer /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
+// cl: /O1 /arch:SSE /DNDEBUG /DWIN32 /MD /EHsc /Ireference/shims/w3droadbuffer /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
 // stlport
 #define Matrix4x4 Matrix4  // BFME renamed it
 /*
@@ -232,6 +232,7 @@ void RoadType::loadTestTexture(void)
 //=============================================================================
 /** Nulls index & vertex data. */
 //=============================================================================
+// ??0RoadSegment@@ present-unmatched
 RoadSegment::RoadSegment(void) :
 m_curveRadius(0.0f),
 m_type(SEGMENT),
@@ -252,6 +253,7 @@ m_bounds(Vector3(0.0f, 0.0f, 0.0f), 1.0f)
 //=============================================================================
 /** Frees index & vertex data. */
 //=============================================================================
+// ??1RoadSegment@@ present-unmatched
 RoadSegment::~RoadSegment(void)
 {
 	m_numVertex = 0;
@@ -273,6 +275,7 @@ RoadSegment::~RoadSegment(void)
 //=============================================================================
 /** Allocates & sets the vertex entries. */
 //=============================================================================
+// ?SetVertexBuffer@RoadSegment@@ present-unmatched
 void RoadSegment::SetVertexBuffer(VertexFormatXYZDUV1 *vb, Int numVertex)
 {
 	if (m_vb) {
@@ -301,6 +304,7 @@ void RoadSegment::SetVertexBuffer(VertexFormatXYZDUV1 *vb, Int numVertex)
 //=============================================================================
 /** Allocates & sets the index entries. */
 //=============================================================================
+// ?SetIndexBuffer@RoadSegment@@ present-unmatched
 void RoadSegment::SetIndexBuffer(UnsignedShort *ib, Int numIndex)
 {
 	if (m_ib) {
@@ -320,6 +324,7 @@ void RoadSegment::SetIndexBuffer(UnsignedShort *ib, Int numIndex)
 //=============================================================================
 /** Copies vertex entries into destination_vb. */
 //=============================================================================
+// ?GetVertices@RoadSegment@@ present-unmatched
 Int RoadSegment::GetVertices(VertexFormatXYZDUV1 *destination_vb, Int numToCopy)
 {
 	if (m_vb == NULL || numToCopy<1) return	(0);
@@ -1370,6 +1375,7 @@ void W3DRoadBuffer::loadLitRoadsInVertexAndIndexBuffers(RefRenderObjListIterator
 //=============================================================================
 /** Loads a road segment into the vertex buffer for drawing. */
 //=============================================================================
+// ?loadRoadSegment@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::loadRoadSegment(UnsignedShort *ib, VertexFormatXYZDUV1 *vb, RoadSegment *pRoad)
 {
 	if (pRoad->m_uniqueID != m_curUniqueID) {
@@ -1542,6 +1548,7 @@ static Bool warnSegments = true;
 //=============================================================================
 /** Loads the roads from the map objects. */
 //=============================================================================
+// ?addMapObject@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::addMapObject(RoadSegment *pRoad, Bool updateTheCounts)
 {
 	// BFME added a guard vs ZH: refuses to add before init (proven by target
@@ -2464,6 +2471,7 @@ void W3DRoadBuffer::offset4Way(TRoadPt *pc1, TRoadPt *pc2, TRoadPt *pc3, TRoadPt
 //=============================================================================
 /** Inserts a 4 way intersection. */
 //=============================================================================
+// ?insert4Way@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insert4Way(Vector2 loc, Int index1, Real scale)
 {
 	// BFME added a guard vs ZH: refuses to insert before init (proven by
@@ -2764,6 +2772,7 @@ Int W3DRoadBuffer::findCrossTypeJoinVector(Vector2 loc, Vector2 *joinVector, Int
 //=============================================================================
 /** Adjusts the stacking order. */
 //=============================================================================
+// ?adjustStacking@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::adjustStacking(Int topUniqueID, Int bottomUniqueID)
 {
 	if (!*(Bool *)((char *)this + 0x0C))
@@ -2801,6 +2810,7 @@ void W3DRoadBuffer::adjustStacking(Int topUniqueID, Int bottomUniqueID)
 //=============================================================================
 /** Inserts alpha blend type joins at open ends. */
 //=============================================================================
+// ?insertCrossTypeJoins@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insertCrossTypeJoins(void)
 {
 	if (!m_initialized) {
@@ -2943,6 +2953,7 @@ void W3DRoadBuffer::miter(Int ndx1, Int ndx2)
 //=============================================================================
 /** Insertes curves at the corner of 2 segments. */
 //=============================================================================
+// ?insertCurveSegmentAt@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insertCurveSegmentAt(Int ndx1, Int ndx2)
 {
 	if (!m_initialized) {
@@ -3280,6 +3291,7 @@ void W3DRoadBuffer::setMap(WorldHeightMap *pMap)
 //=============================================================================
 /** Loads the roads from the map objects. */
 //=============================================================================
+// ?loadRoads@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::loadRoads()
 {
 	if (!m_initialized) {
