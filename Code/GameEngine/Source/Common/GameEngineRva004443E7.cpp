@@ -44,11 +44,16 @@ class GameEngine
 {
 public:
 	void rva004443E7();
+	void rva00444E69(int unused);
 
 private:
 	void _bfme_terminateChildProcesses();
 	char m_pad[0x288];
 	Member004443E7 m_mem288; // +0x288
+	char m_pad28C[0x54B - 0x28C];
+	unsigned char m_54B; // +0x54B
+	char m_pad54C[0x6A4 - 0x54C];
+	int m_6A4; // +0x6A4
 };
 
 void GameEngine::rva004443E7()
@@ -59,4 +64,15 @@ void GameEngine::rva004443E7()
 		g->g18();
 	GameEngine *e = TheGameEngine004443E7;
 	e->_bfme_terminateChildProcesses();
+}
+
+void GameEngine::rva00444E69(int unused)
+{
+	(void)unused;
+	if (m_6A4 == 6)
+		m_54B = 0;
+	else {
+		rva004443E7();
+		m_6A4 = 0;
+	}
 }

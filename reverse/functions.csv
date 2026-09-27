@@ -39458,3 +39458,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??1?$SubsystemSlot@VGlobalWeatherSystem@@@@UAE@XZ,,0x00226E5F,78,Code/Libraries/Source/subsystem/SubsystemInterface.cpp,matched,SubsystemSlot GlobalWeatherSystem stores slot vtable 0xbe72ac then base vtable
 ??_G?$SubsystemSlot@VGlobalWeatherSystem@@@@UAEPAXI@Z,,0x00226E43,28,Code/Libraries/Source/subsystem/SubsystemInterface.cpp,matched,SubsystemSlot GlobalWeatherSystem slot 0 of slot vtable 0xbe72ac
 ?rva004443E7@GameEngine@@QAEXXZ,,0x004443E7,37,Code/GameEngine/Source/Common/GameEngineRva004443E7.cpp,matched,GameEngine helper calls plus288 slot1 then global slot72 then terminateChild tail
+?rva00444E69@GameEngine@@QAEXH@Z,,0x00444E69,33,Code/GameEngine/Source/Common/GameEngineRva004443E7.cpp,matched,GameEngine helper checks plus6A4 equals 6 else calls rva004443E7
