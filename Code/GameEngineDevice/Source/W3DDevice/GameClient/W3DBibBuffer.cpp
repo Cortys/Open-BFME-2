@@ -296,7 +296,6 @@ void W3DBibBuffer::allocateBibBuffers(void)
 //=============================================================================
 /** Removes all bibs. */
 //=============================================================================
-// ?clearAllBibs@W3DBibBuffer@@QAEXXZ present-unmatched
 void W3DBibBuffer::clearAllBibs(void)
 {
 	m_numBibs=0;
