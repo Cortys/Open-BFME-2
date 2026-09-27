@@ -344,6 +344,7 @@ static Int scanUnsignedInt( const char *source, UnsignedInt& val )
 
 // resetWindowStack ===========================================================
 //=============================================================================
+#pragma optimize("s", on)
 static void resetWindowStack( void )
 {
 
@@ -351,6 +352,7 @@ static void resetWindowStack( void )
   stackPtr = windowStack;
 
 }  // end resetWindowStack
+#pragma optimize("", on)
 
 // resetWindowDefaults ========================================================
 //=============================================================================
@@ -2653,6 +2655,7 @@ Bool parseLayoutBlock( File *inFile, char *buffer, UnsignedInt version, WindowLa
 /** Load window(s) from a .wnd definition file and wrap within a
 	* new window layout */
 //=============================================================================
+// ?winCreateLayout@GameWindowManager@@ present-unmatched
 WindowLayout *GameWindowManager::winCreateLayout( AsciiString filename )
 {
 	WindowLayout *layout;
@@ -2677,6 +2680,7 @@ WindowLayout *GameWindowManager::winCreateLayout( AsciiString filename )
 /** Free up the memory used by static strings.  Normally this memory
 is freed by the string destructor but we do it here to make the
 memory leak detection code happy.*/
+#pragma optimize("s", on)
 void GameWindowManager::freeStaticStrings(void)
 {
 	theSystemString.clear();
@@ -2684,7 +2688,9 @@ void GameWindowManager::freeStaticStrings(void)
 	theTooltipString.clear();
 	theDrawString.clear();
 }
+#pragma optimize("", on)
 
+// ??0WindowLayoutInfo@@ present-unmatched
 WindowLayoutInfo::WindowLayoutInfo() :
 	version(0),
 	init(NULL),
@@ -2707,6 +2713,7 @@ WindowLayoutInfo::WindowLayoutInfo() :
 	* not be at the head of the window list if there is a modal window active.
 	*/
 //=============================================================================
+// ?winCreateFromScript@GameWindowManager@@ present-unmatched
 GameWindow *GameWindowManager::winCreateFromScript( AsciiString filenameString,
 																										WindowLayoutInfo *info )
 {
