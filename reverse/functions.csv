@@ -37628,3 +37628,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva003748BD@StealthUpdate@@QAEXXZ,,0x003748BD,133,Code/GameEngine/Source/GameLogic/Object/Update/StealthUpdateUpgradeMasks.cpp,matched,StealthUpdate upgrade masks via ModuleData vectors
 ?apply@Rva002036B4GlobalCopier@@QAEXXZ,,0x002036B4,12,Code/GameEngine/Source/Common/Rva002036B4GlobalCopiers.cpp,matched,global Va00DFE18C to plus1A104 via defaults no donor
 ?apply@Rva002036C0GlobalCopier@@QAEXXZ,,0x002036C0,12,Code/GameEngine/Source/Common/Rva002036B4GlobalCopiers.cpp,matched,global Va00DFE18C to plus1A108 via defaults no donor
+??$__uninitialized_copy@PBUBfmeStringRecord005EC43C@@PAU1@@_STL@@YAPAUBfmeStringRecord005EC43C@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x005EC4E3,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy.cpp,matched,stlport uninitialized_copy stride 0x18 via rowed Construct 0x005EC4B6
