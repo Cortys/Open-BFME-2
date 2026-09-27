@@ -60,6 +60,22 @@ private:
 	_STL::map<AsciiString, AsciiString> m_map;
 };
 
+class Rva004E35AF
+{
+public:
+	void rva004E35AF(const AsciiString &key, Int a);
+private:
+	_STL::map<AsciiString, AsciiString> m_map;
+};
+
+class Rva004E35FF
+{
+public:
+	void rva004E35FF(const AsciiString &key, Int a, Int b);
+private:
+	_STL::map<AsciiString, AsciiString> m_map;
+};
+
 extern AsciiString g_Rva00E02E7C;
 extern AsciiString g_Rva00E02E78;
 extern AsciiString g_Rva00E02E80;
@@ -101,6 +117,15 @@ private:
 	Rva004E35D5 m_owner;
 };
 
+class Rva003EE84A
+{
+public:
+	void rva003EE84A(Int a, Int b);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+
 void Rva003EE900::rva003EE900(Int arg)
 {
 	m_owner.rva004E35D5(g_Rva00E02E7C, (Int)((char *)arg + 0x54), 0);
@@ -119,4 +144,12 @@ void Rva003EE966::rva003EE966(Int arg)
 void Rva003EEA9D::rva003EEA9D(Int arg)
 {
 	m_owner.rva004E35D5(g_Rva00E02E68, (Int)((char *)arg + 0x54), 0);
+}
+
+void Rva003EE84A::rva003EE84A(Int a, Int b)
+{
+	char *p = (char *)a + 0x54;
+	m_owner.rva004E35D5(g_Rva00E02E78, (Int)p, 1);
+	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E78, (Int)p, b);
+	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E78, 0);
 }
