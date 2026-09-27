@@ -37104,3 +37104,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??E?$_Deque_iterator@PAXU?$_Nonconst_traits@PAX@_STL@@@_STL@@QAEAAU01@XZ,,0x00054B33,12,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_ptr_o1.cpp,matched,same TU as PAX deque calls rowed PAX increment
 ?utf8EncodedLength@@YAHH@Z,,0x006D3DB0,133,Code/Libraries/Source/EA/Apt/AptString/Utf8EncodedLength.cpp,matched,donor utf8EncodedLength plus Apt assert triple plus callers 6D4E29 6D61FE
 ?rva002630FD@AIUpdateInterface@@MAEXH@Z,,0x002630FD,54,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002630FD.cpp,matched,vslot84 state 0x2D clear store 0x48 setState
+?rva006D4190@EAStringC@@QAEXH@Z,,0x006D4190,225,Code/Libraries/Source/EA/Apt/AptString/EAStringCUtf8Encode.cpp,matched,EAStringC encode worker plus SetSize hash-zero plus caller 6D6223
