@@ -22,6 +22,11 @@ class AnimationSoundTree
 {
 public:
 	void rva004CA167(void *node);
+	void rva004CA26A();
+
+private:
+	void *m_header;
+	unsigned int m_count;
 };
 
 void AnimationSoundTree::rva004CA167(void *nodeIn)
@@ -38,4 +43,24 @@ void AnimationSoundTree::rva004CA167(void *nodeIn)
 		free(cur);
 		cur = next;
 	} while (cur);
+}
+
+// ?rva004CA26A@AnimationSoundTree@@QAEXXZ, retail 0x004CA26A, 41 bytes.
+// AnimationSoundTree clear: returns when the count at +4 is zero; otherwise
+// frees the list at header+4 through the rowed rva004CA167 helper above,
+// then repairs the 0xB8 header sentinel (self at +8 and +0x0C, zero at +4)
+// and zeroes the count. Prev is the helper itself with the same // cl: line.
+// Evidence: callees all rowed after 0x004CA167 landed; sole caller at
+// 0x004CA668 in FUN_008CA653.
+
+void AnimationSoundTree::rva004CA26A()
+{
+	if (m_count == 0)
+		return;
+	void *first = *(void **)((char *)m_header + 4);
+	rva004CA167(first);
+	*(void **)((char *)m_header + 8) = m_header;
+	*(unsigned int *)((char *)m_header + 4) = 0;
+	*(void **)((char *)m_header + 0x0C) = m_header;
+	m_count = 0;
 }
