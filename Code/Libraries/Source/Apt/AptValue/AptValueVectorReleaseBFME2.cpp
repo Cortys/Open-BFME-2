@@ -18,6 +18,13 @@ public:
     void freeBlock(void *block, int blockSize);
 };
 extern Rva006DB270 *g_pChainBlockAllocator; // 0x00E176E8
+class Rva006DB160
+{
+public:
+    void *allocBlock(int blockSize);
+};
+// Same pool instance allocation side; per-TU extern patches from retail.
+extern Rva006DB160 *g_aptPoolAllocator; // 0x00E176E8
 class AptValue {
 public:
     virtual void AddRef();
@@ -37,6 +44,7 @@ public:
     void ReleaseValues();
     void rva006E6C00(AptValue *pValue);
     void rva006E6D50();
+    AptValueVector *rva006E6CF0(int capacity);
 };
 AptValue *AptValueVector::PopValue()
 {
@@ -96,4 +104,22 @@ void AptValueVector::rva006E6D50()
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     g_pChainBlockAllocator->freeBlock(mpValues, mCapacity * 4);
+}
+// ?rva006E6CF0@AptValueVector@@QAEPAV1@H@Z, retail 0x006E6CF0 (82B).
+// AptValueVector init: sets capacity then allocs array via pool allocBlock.
+// Evidence: AptValueVector.cpp:62 cond mpValues!=NULL; layout capacity+0
+// count+4 pointer+8 highwater+0xC from siblings; callee allocBlock at
+// 0x006DB160 via pool at 0x00E176E8; 2 callers.
+AptValueVector *AptValueVector::rva006E6CF0(int capacity)
+{
+    mCapacity = capacity;
+    mCurrentNum = 0;
+    mHighWaterNum = 0;
+    mpValues = (AptValue **)g_aptPoolAllocator->allocBlock(capacity * 4);
+    if (!mpValues) {
+        g_bfmeAptAssertAtE17734("mpValues != NULL", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValue\\AptValueVector.cpp", 0x3E);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
 }
