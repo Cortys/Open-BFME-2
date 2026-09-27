@@ -39386,3 +39386,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva004E0790@Rva004E0790@@QAEXXZ,,0x004E0790,25,Code/GameEngine/Source/Common/Rva004E0790Release.cpp,matched,guarded TreeHint release plus 0xAC then null
 ?rva004E08F6@Rva004E0790@@QAEXPAURva004E0790Inner@@@Z,,0x004E08F6,34,Code/GameEngine/Source/Common/Rva004E08F6Set.cpp,matched,ref-counted assign via 0x004E0790 plus inc at plus 0xB0
 ?rva002D9531@Rva002D9531@@QAEXH@Z,,0x002D9531,28,Code/GameEngine/Source/Common/Rva002D9531CondSetter.cpp,matched,honest address name thiscall ret4 conditional setter state 2 or 6
+?rva002D94DD@Rva002D94DD@@QBEMXZ,,0x002D94DD,7,Code/GameEngine/Source/Common/Rva002D94DDMulGetter.cpp,matched,honest address name const float product getter fld fmul
