@@ -1,7 +1,8 @@
 // cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // ?_M_insert@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@AAE?AU?$_Rb_tree_iterator@UBfmePod20@@U?$_Nonconst_traits@UBfmePod20@@@_STL@@@2@PAU_Rb_tree_node_base@2@0ABUBfmePod20@@0@Z
-// retail 0x004AF3E6 136 bytes. _Rb_tree set _M_insert for the 20-byte
+// retail 0x004AF3E6 136 bytes plus ?insert_unique@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@UBfmePod20@@U?$_Nonconst_traits@UBfmePod20@@@_STL@@@_STL@@_N@2@ABUBfmePod20@@@Z
+// retail 0x004AF4A6 134 bytes. _Rb_tree set _M_insert plus insert_unique for the 20-byte
 // RespawnRule value (BfmePod20 size view). Called once by the unique-insert
 // worker 0x004AF4A6. Calls the rowed BfmePod20 _M_create_node 0x004AF2BC
 // twice and the rowed _Rebalance 0x00025490. Unsigned first-dword level key
