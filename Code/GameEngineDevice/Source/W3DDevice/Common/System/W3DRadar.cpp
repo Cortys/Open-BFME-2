@@ -111,7 +111,6 @@ static __declspec(noinline) WW3DFormat findFormat(const WW3DFormat formats[])
 	* be supported by the hardware.  The "more preferred" formats appear at the top of
 	* the format tables in order from most preferred to least preferred */
 //-------------------------------------------------------------------------------------------------
-// ?initializeTextureFormats@W3DRadar@@IAEXXZ present-unmatched
 void W3DRadar::initializeTextureFormats( void )
 {
 	const WW3DFormat terrainFormats[] = 
@@ -143,10 +142,10 @@ void W3DRadar::initializeTextureFormats( void )
 
 	// BFME has a fourth radar texture absent from the shared Zero Hour layout.
 	char *radar = reinterpret_cast<char *>(this);
-	*reinterpret_cast<WW3DFormat *>(radar + 0x1470) = findFormat(terrainFormats);
-	*reinterpret_cast<WW3DFormat *>(radar + 0x1480) = findFormat(overlayFormats);
-	*reinterpret_cast<WW3DFormat *>(radar + 0x148c) = findFormat(shroudFormats);
-	*reinterpret_cast<WW3DFormat *>(radar + 0x1498) = findFormat(borderShroudFormats);
+	*reinterpret_cast<WW3DFormat *>(radar + 0x1468) = findFormat(terrainFormats);
+	*reinterpret_cast<WW3DFormat *>(radar + 0x1478) = findFormat(overlayFormats);
+	*reinterpret_cast<WW3DFormat *>(radar + 0x1484) = findFormat(shroudFormats);
+	*reinterpret_cast<WW3DFormat *>(radar + 0x1490) = findFormat(borderShroudFormats);
 
 }  // end initializeTextureFormats
 
