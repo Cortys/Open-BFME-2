@@ -88,6 +88,7 @@ public:
 	void aiHunt(CommandSourceType cmdSource);
 	void aiEvacuate(bool exposeStealthUnits, CommandSourceType cmdSource);
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
+	void rva0026C2D9(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiFacePosition(const Coord3D *pos, Int cmdSource);
 	void rva0026C26D(const Coord3D *pos, Int cmdSource);
@@ -133,6 +134,18 @@ void AICommandInterface::aiHunt(CommandSourceType cmdSource)
 void AICommandInterface::aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_FORCE_ATTACK_OBJECT, cmdSource);
+	parms.m_obj = victim;
+	parms.m_intValue = maxShotsToFire;
+	aiDoCommand(&parms);
+}
+
+// ?rva0026C2D9@AICommandInterface@@QAEXPAVObject@@HW4CommandSourceType@@@Z, retail 0x0026C2D9, 110 bytes.
+// Same 110B shape as aiForceAttackObject in this TU: AICMD 0x0B plus m_obj at +0x14 plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// Gap between rva0026C26D and rva0026C347; donor BFME1 ATTACK_OBJECT 0x0B with same m_obj plus int slots.
+// Pinned as ?Rva0026C2D9Command@Rva0026C2D9Commands@@QAEXPAXHH@Z (void plus int plus int) for 27 callers.
+void AICommandInterface::rva0026C2D9(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x0B, cmdSource);
 	parms.m_obj = victim;
 	parms.m_intValue = maxShotsToFire;
 	aiDoCommand(&parms);
