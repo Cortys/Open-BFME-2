@@ -37011,3 +37011,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1HordeTransportContain@@UAE@XZ,,0x004771E6,5,Code/GameEngine/Source/GameLogic/Object/Contain/HordeTransportContainDtor.cpp,matched,5B jmp thunk to rowed TransportContain base 0x00467E61 via novtable; wrapper 0x004771CA vtable 0x00C45EB8
 ??1CitadelSlaughterHordeContain@@UAE@XZ,,0x00480718,5,Code/GameEngine/Source/GameLogic/Object/Contain/CitadelSlaughterHordeContainDtor.cpp,matched,5B jmp thunk to rowed SlaughterHordeContain base 0x004803FB via novtable; wrapper 0x004806FC vtable 0x00C48CC0
 ??1Rva004C9B8F@@QAE@XZ,,0x0004E4E1,12,Code/GameEngine/Source/GameClient/Drawable/Update/Rva004C9B8FAssign.cpp,matched,honest smart-ptr dtor via rowed release plus8 slot1; same TU as assign
+?write@Rva0002C9C2@@QAEHPAD@Z,,0x0002C9C2,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat string-char-string via rowed writes 0x2C7A7 0x2C5B1 caller 0x2CB02

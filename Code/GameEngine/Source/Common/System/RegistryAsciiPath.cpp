@@ -458,3 +458,22 @@ unsigned int GetRegistryMapPackVersion()
 	GetUnsignedIntFromRegistry("", "MapPackVersion", val);
 	return val;
 }
+
+// ?write@Rva0002C9C2@@QAEHPAD@Z @0x0002C9C2 37B
+// Narrow concat node "string + char + string": an AsciiString operand
+// followed by one char, then a second AsciiString operand. Retail writes
+// the first part through AsciiStringRefWithChar 0x0002C7A7 then the second
+// through AsciiStringRef 0x0002C5B1, summing the lengths. Called from the
+// unclaimed operator at 0x0002CB02. Honest address name; true type unknown.
+struct Rva0002C9C2
+{
+	AsciiStringRefWithChar m_first;
+	AsciiStringRef m_second;
+	int write(char *dst);
+};
+
+int Rva0002C9C2::write(char *dst)
+{
+	int n = m_first.write(dst);
+	return n + m_second.write(dst + n);
+}
