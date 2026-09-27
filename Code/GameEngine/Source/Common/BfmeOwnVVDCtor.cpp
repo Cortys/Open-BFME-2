@@ -46,6 +46,7 @@ class BfmeOwnVVD : public BfmeBaseVVD
 public:
 	BfmeOwnVVD();
 	~BfmeOwnVVD();
+	unsigned char Rva0042E8C1();
 
 private:
 	unsigned int m_04;                    // +0x04 body-set
@@ -82,6 +83,10 @@ private:
 
 extern BfmeOwnVVD *g_bfmeSingletonVVD;
 
+struct BfmeRva42E8C1Limit { char m_pad[0x40]; unsigned int m_40; };
+extern BfmeRva42E8C1Limit *g_bfmeRva42E8C1Holder;
+extern unsigned int g_bfmeRva42E8C1Add;
+
 // ??0BfmeOwnVVD@@QAE@XZ
 BfmeOwnVVD::BfmeOwnVVD()
 	: m_1c(0), m_38(0), m_39(0), m_3a(0), m_3b(0), m_3c(0), m_40(0), m_44(0)
@@ -113,4 +118,13 @@ BfmeOwnVVD::~BfmeOwnVVD()
 {
 	if (g_bfmeSingletonVVD == this)
 		g_bfmeSingletonVVD = 0;
+}
+
+// ?Rva0042E8C1@BfmeOwnVVD@@QAEEXZ 0x0042E8C1 44B: uses m_150 plus globals 0x009FE78C 0x009BA4E4; callers 0x0029F2CF 0x0037A90C
+unsigned char BfmeOwnVVD::Rva0042E8C1()
+{
+	unsigned int &slot = m_150;
+	if (slot > g_bfmeRva42E8C1Holder->m_40)
+		slot = 0;
+	return slot + g_bfmeRva42E8C1Add >= g_bfmeRva42E8C1Holder->m_40;
 }
