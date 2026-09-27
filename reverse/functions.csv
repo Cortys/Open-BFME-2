@@ -38083,3 +38083,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?GetStrFileFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CDF1,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetStrFileFromMap via GetBasePath map.str
 ?GetSoloINIFromMap@@YA?AVAsciiString@@V1@@Z,,0x0044CE90,159,Code/GameEngine/Source/Common/GetBasePathFromPath.cpp,matched,BFME1 donor GetSoloINIFromMap via GetBasePath solo.ini
 ?_M_do_or@?$_Base_bitset@$0CA@@_STL@@QAEXABU12@@Z,,0x0028C557,25,Code/Libraries/Source/WWVegas/WWLib/stlport_BaseBitset32DoOr.cpp,matched,STLport Base_bitset32 do_or 32 words same shape as rowed 28C53E 23 callers
+?rva0028C197@Object@@QBEPAXXZ,,0x0028C197,18,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C197.cpp,matched,Object plus250 iface slot7C tail 40 callers including 28C4B6
