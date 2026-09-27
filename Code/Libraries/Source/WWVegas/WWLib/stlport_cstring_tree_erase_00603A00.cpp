@@ -1,7 +1,8 @@
-// cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // ?_M_erase@?$_Rb_tree@PBDU?$pair@QBDURva00603A00Mapped@@@_STL@@U?$_Select1st@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@U?$less@PBD@2@V?$allocator@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@@Z @ 0x00603A00 (45B).
 // ?clear@?$_Rb_tree@PBDU?$pair@QBDURva00603A00Mapped@@@_STL@@U?$_Select1st@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@U?$less@PBD@2@V?$allocator@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@@_STL@@QAEXXZ @ 0x00603A7F (41B).
+// ??1?$_Rb_tree@PBDU?$pair@QBDURva00603A00Mapped@@@_STL@@U?$_Select1st@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@U?$less@PBD@2@V?$allocator@U?$pair@QBDURva00603A00Mapped@@@_STL@@@2@@_STL@@QAE@XZ @ 0x00603AA8 (56B).
 // C-string keyed red-black tree node eraser in the 0x00600854-0x00604518 strcmp-keyed family.
 // Evidence: self-recursive right then left-walk with GameMemory free 0x00030830 matches the rowed
 // 45B int-int erase 0x000692F5 modulo reloc; caller is clear 0x00603A7F which passes root [eax+4];
@@ -22,3 +23,4 @@ typedef _STL::_Rb_tree<const char*, Rva00603A00Pair, _STL::_Select1st<Rva00603A0
 
 template void Rva00603A00Tree::_M_erase(Rva00603A00Tree::_Link_type);
 template void Rva00603A00Tree::clear();
+template Rva00603A00Tree::~_Rb_tree();
