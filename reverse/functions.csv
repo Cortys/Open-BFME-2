@@ -38732,3 +38732,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getNumChunks@NetWrapperCommandMsg@@QAEIXZ,,0x003F3FE8,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8
 ?getTotalDataLength@NetWrapperCommandMsg@@QAEIXZ,,0x005C4AE1,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8
 ??0Rva0059B7CB@@QAE@II@Z,,0x0059B7CB,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,Target Ghidra boundary 25B; constructor-shaped vtable installation at VA 0x00C70EBC and two four-byte fields at +4/+8; original owner and argument semantics unknown; replaces unsupported GDI+ attribution
+?buildProviderList@MilesAudioManager@@AAEXXZ,,0x00051744,73,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerBuildProviderList.cpp,matched,
+?getProviderIndex@MilesAudioManager@@QBEIABVAsciiString@@@Z,,0x00056634,60,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerGetProviderIndex.cpp,matched,
