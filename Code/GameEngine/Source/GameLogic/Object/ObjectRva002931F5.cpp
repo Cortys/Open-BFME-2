@@ -1,0 +1,64 @@
+// cl: /O1 /G7
+// ?rva002931F5@Object@@QAEPAV1@_N@Z, retail 0x002931F5, 84 bytes.
+// Object helper: if own template dword +0x114 carries 0x2000 return this;
+// else if containedBy (+0x274) template carries it return containedBy;
+// else if bool arg set look up producerID (+0x78) via TheGameLogic
+// findObjectByID (rowed 0x00049DC5) and return producer if its template
+// carries it, else null. Evidence: Object offsets template +0x04
+// (Object_isAbleToAttack/ObjectScriptStatus), producer +0x78
+// (ObjectSetProducer), containedBy +0x274 (Object_isAbleToAttack),
+// TheGameLogic at 0x00DFE78C; callers 0x002933CD (chain + testStatus
+// 0x5F/0x60) and 0x00293926 (isKindOf gate) prove Object owner.
+
+typedef bool Bool;
+
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+struct ThingTemplate
+{
+	unsigned char m_pad[0x114];
+	unsigned int m_flags114;
+};
+
+class Object;
+
+class GameLogic
+{
+public:
+	class Object *findObjectByID(ObjectID id);
+};
+
+extern GameLogic *TheGameLogic;
+
+class Object
+{
+public:
+	Object *rva002931F5(Bool checkProducer);
+
+private:
+	unsigned char m_pad00[4];
+	ThingTemplate *m_template;
+	unsigned char m_pad08[0x78 - 0x08];
+	ObjectID m_producerID;
+	unsigned char m_pad7C[0x274 - 0x7C];
+	Object *m_containedBy;
+};
+
+Object *Object::rva002931F5(Bool checkProducer)
+{
+	if ((m_template->m_flags114 & 0x2000) != 0)
+		return this;
+	Object *contained = m_containedBy;
+	if (contained != 0 && (contained->m_template->m_flags114 & 0x2000) != 0)
+		return contained;
+	if (checkProducer)
+	{
+		Object *producer = TheGameLogic->findObjectByID(m_producerID);
+		if (producer != 0 && (producer->m_template->m_flags114 & 0x2000) != 0)
+			return producer;
+	}
+	return 0;
+}
