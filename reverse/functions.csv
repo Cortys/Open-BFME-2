@@ -36939,3 +36939,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0LifetimeUpdate@@QAE@PAVThing@@PBVModuleData@@@Z,,0x003A4B58,165,Code/GameEngine/Source/GameLogic/Object/Update/LifetimeUpdateCtor.cpp,matched,ZH and BFME1 donor plus DeletionUpdate and SlowDeath HULK precedent and rowed xfer layout and rowed calc
 ?rva003A4AD2@LifetimeUpdate@@QAEXXZ,,0x003A4AD2,15,Code/GameEngine/Source/GameLogic/Object/Update/LifetimeUpdateSetLifetimeRange.cpp,matched,honest wrapper reapplying moduleData min max through rowed setLifetimeRange
 ?xfer@EvacuateDamage@@MAEXPAVXfer@@@Z,,0x004BAC83,44,Code/GameEngine/Source/GameLogic/Object/Damage/EvacuateDamageXfer.cpp,matched,slot 3 of vtable 0x00859E2C via rowed ctor plus Version12 plus base 0x004CE56D plus WallHub 44B pattern
+?rva00256A7C@GateProxyBehavior@@UBEMXZ,,0x00256A7C,40,Code/GameEngine/Source/GameLogic/Object/Behavior/GateProxyBehaviorFloatGetters.cpp,matched,vslot 11 GateProxy float proxy via if-else temp
+?rva00256AA4@GateProxyBehavior@@UBEMXZ,,0x00256AA4,40,Code/GameEngine/Source/GameLogic/Object/Behavior/GateProxyBehaviorFloatGetters.cpp,matched,vslot 12 GateProxy float proxy via if-else temp
