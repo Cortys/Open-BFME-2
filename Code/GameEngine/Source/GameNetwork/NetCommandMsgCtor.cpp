@@ -18,7 +18,8 @@ typedef int Int;
 
 enum NetCommandType
 {
-	NETCOMMANDTYPE_UNKNOWN = -1
+	NETCOMMANDTYPE_UNKNOWN = -1,
+	NETCOMMANDTYPE_KEEPALIVE = 12
 };
 
 class NetCommandMsg
@@ -45,4 +46,19 @@ NetCommandMsg::NetCommandMsg()
 	m_playerID = 0;
 	m_commandType = NETCOMMANDTYPE_UNKNOWN;
 	m_referenceCount = 1;
+}
+
+// ??0NetKeepAliveCommandMsg@@QAE@XZ, retail 0x004D57C7, 21 bytes. Calls the
+// base above then stamps KEEPALIVE (12, +0x14) and its vtable 0x860244. Donor
+// is BFME1 NetCommandMsg_ctors.cpp (NetKeepAliveCommandMsg, no members).
+class NetKeepAliveCommandMsg : public NetCommandMsg
+{
+public:
+	NetKeepAliveCommandMsg();
+};
+
+// ??0NetKeepAliveCommandMsg@@QAE@XZ
+NetKeepAliveCommandMsg::NetKeepAliveCommandMsg() : NetCommandMsg()
+{
+	m_commandType = NETCOMMANDTYPE_KEEPALIVE;
 }
