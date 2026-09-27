@@ -36956,3 +36956,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva004AB4AB@Rva004AB4AB@@QBE_NXZ,,0x004AB4AB,45,Code/GameEngine/Source/Common/Rva004AB4ABCheck.cpp,matched,bool check via findObjectByID and inverted isKindOf 0x45
 ?remove@?$list@VUnicodeString@@V?$allocator@VUnicodeString@@@_STL@@@_STL@@QAEXABVUnicodeString@@@Z,,0x0043BF50,67,Code/Libraries/Source/WWVegas/WWLib/stlport_list_unicodestring_insert.cpp,matched,STLport 4.5.3 list UnicodeString remove 67B exact via inlined compare operator-eq
 ??4GeometryShape@@QAEAAU0@ABU0@@Z,,0x00063627,75,Code/GameEngine/Source/Common/System/GeometryShapeAssign.cpp,matched,shape assign via 0x24 stride loop and GeometryInfo set callers
+??1CritterEmitterUpdateModuleData@@UAE@XZ,,0x004C8F49,75,Code/GameEngine/Source/GameLogic/Object/Update/CritterEmitterUpdateModuleDataDtor.cpp,matched,dtor lane via twin E16 vectors plus Snapshot BBB554 restore
