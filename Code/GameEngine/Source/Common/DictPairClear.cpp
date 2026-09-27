@@ -78,6 +78,7 @@ public:
 		void clear();
 		void setNameAndType(int key, DataType type);
 		void copyFrom(DictPair *that);
+		AsciiString *asAsciiString() { return (AsciiString *)&m_value; }
 	};
 
 	struct DictPairData
@@ -516,5 +517,16 @@ void Dict::setInt(int key, int value)
 {
 	DictPair *pair = setPrep(key, DICT_INT);
 	*(int *)&pair->m_value = value;
+	sortPairs();
+}
+
+// ?setAsciiString@Dict@@QAEXHABVAsciiString@@@Z @0x0031375A 39B
+// Dict::setAsciiString from ZH Dict.cpp donor. Rowed setPrep at 0x0031369D
+// plus pinned AsciiString assign at 0x000366F0 plus rowed sortPairs.
+void Dict::setAsciiString(int key, const AsciiString &value)
+{
+	DictPair *pair = setPrep(key, DICT_ASCIISTRING);
+	AsciiString *slot = pair->asAsciiString();
+	*slot = value;
 	sortPairs();
 }
