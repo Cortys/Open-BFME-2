@@ -38965,3 +38965,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?resetFrame@FrameDataManager@@QAEXI_N@Z,,0x0058B715,54,Code/GameEngine/Source/Common/FrameDataManagerCounts.cpp,matched,BFME1 resetFrame donor calls init not reset plus m_isLocal plus caller 0x004D009D
 ??0Connection@@QAE@XZ,,0x0058BDA0,90,Code/GameEngine/Source/GameNetwork/ConnectionCtor.cpp,matched,BFME1 Connection ctor donor plus 200 latencies plus caller 0x004D16DB
 ?rva00232683@AIPlayer@@QAE_NXZ,,0x00232683,19,Code/GameEngine/Source/GameLogic/AI/AIPlayerDestructor.cpp,matched,AIPlayer flags0C 0x30 plus 0x0400 predicate plus 18 callers plus sibling bit2
+?rva0073A2A0@Gen_008F7CD0@@QAEXPAPAVBfmeCellFD@@0HHH@Z,,0x0073A2A0,135,Code/GameEngine/Source/Common/BfmeCellAt.cpp,matched,Gen008F7CD0 row-range sibling of bfmeAt same 0xA8 stride
