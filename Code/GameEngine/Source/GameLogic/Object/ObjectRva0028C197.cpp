@@ -22,13 +22,45 @@ public:
 	virtual void *slot31();
 };
 
+class BfmeObjectModule
+{
+public:
+	virtual void slot0();
+
+private:
+	unsigned int m_data[2];
+};
+
+class BehaviorModuleInterface37
+{
+public:
+	virtual void s00(); virtual void s01(); virtual void s02(); virtual void s03();
+	virtual void s04(); virtual void s05(); virtual void s06(); virtual void s07();
+	virtual void s08(); virtual void s09(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
+	virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void s36();
+	virtual void *slot37();
+};
+
+class BehaviorModule37 : public BfmeObjectModule, public BehaviorModuleInterface37
+{
+};
+
 class Object
 {
-	char m_pad[0x250];
+	char m_pad[0x244];
+	BehaviorModule37 **m_modules244;
+	char m_pad248[0x250 - 0x248];
 	Rva0028C197Provider *m_provider250;
 
 public:
 	void *rva0028C197() const;
+	void *rva0028C1A9() const;
 };
 
 void *Object::rva0028C197() const
@@ -37,4 +69,15 @@ void *Object::rva0028C197() const
 	if (provider == 0)
 		return 0;
 	return provider->slot31();
+}
+
+void *Object::rva0028C1A9() const
+{
+	for (BehaviorModule37 **m = m_modules244; *m; ++m)
+	{
+		void *p = (*m)->slot37();
+		if (p)
+			return p;
+	}
+	return 0;
 }

@@ -2276,3 +2276,4 @@ FUN_00430e20	0x00030E20	104	blocked	guard-fill dword+byte loop needs exact shr-l
 ?downloadFile@DownloadManager@@UAEJVAsciiString@@00000_N@Z	0x005E04F5	225	blocked	AsciiString Header layout: retail +8 WWLib 8-byte header vs TU ZH 4-byte header t=15 model=muse-357b
 ?rva005AD964@Rva005AD964@@QAE_NXZ	0x005AD964	56	partial	inc-add-mov scheduling 54B vs 56B t=18 model=muse-2c14 score=0.95 stash=reverse/attempts/0x005ad964.cpp
 FUN_00998f3f	0x00598F3F	112	blocked	complex EH ctor with base plus member plus 2 vectors t=5 model=muse-2c14
+?buildSegments@W3DRopeDraw@@AAEXXZ	0x000CA9F1	564	partial	first Line3D ctor float scheduling: endZ/blue/green order plus xmm allocation and Vector3 temp slots t=25 model=muse-728a score=0.93 stash=reverse/attempts/0x000ca9f1.cpp

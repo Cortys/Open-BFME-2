@@ -39504,3 +39504,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??RParabolicEase@@QBEMM@Z,,0x0030E5D1,171,Code/GameEngine/Source/GameClient/ParabolicEase.cpp,matched,ParabolicEase operator from BFME1 donor with 7 lerp callers and 1.0f at BBB8D8
 ?rva0030E8DF@Rva0030E8DF@@QAEXXZ,,0x0030E8DF,44,Code/Libraries/Source/WWVegas/WWLib/Rva0030E8DFClear.cpp,matched,Clear helper with vector erase and 1.0f default at BBB8D8
 ?Rva001F458BWrite@@YAAAVFile@@AAV1@ABURva001F458BText@@@Z,,0x001F458B,29,Code/GameEngine/Source/Common/Rva001F458BWrite.cpp,matched,File write slot4 from ostringstream str via donor writeStreamText
+?rva0028C1A9@Object@@QBEPAXXZ,,0x0028C1A9,35,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C197.cpp,matched,Object modules244 scan via 0x0C slot37 first-nonnull plus 11 callers including 0x41BB87
