@@ -39868,3 +39868,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?GadgetComboBoxGetSelectedPos@@YAXPAVGameWindow@@PAH@Z,,0x003228EB,37,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor GadgetComboBoxGetSelectedPos GCM_GET_SELECTION 0x402c caller 0x322910 proves Int out-param
 ?Rva00322910@@YAHPAVGameWindow@@@Z,,0x00322910,33,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva00322910.cpp,matched,chain of 0x3228EB stack slot Int out-param callers compare to -1
 ?Rva0032277F@@YAXPAVGameWindow@@_N@Z,,0x0032277F,33,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,GetEditBox then winHide Bool callers 0x57E17D 0x57E643
+?GadgetComboBoxHideList@@YAXPAVGameWindow@@@Z,,0x0032275D,34,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor HideList GGM_CLOSE 0x4005 same shape as Reset

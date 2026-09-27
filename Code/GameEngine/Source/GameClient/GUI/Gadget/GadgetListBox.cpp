@@ -332,3 +332,15 @@ void Rva0032277F(GameWindow *comboBox, Bool hide)
 		return;
 	editBox->winHide(hide);
 }
+
+// ?GadgetComboBoxHideList@@YAXPAVGameWindow@@@Z, retail 0x0032275D (34B).
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBox.cpp
+// GadgetComboBoxHideList: null-checks the combobox then GGM_CLOSE (0x4005)
+// through TheWindowManager at 0x9FEF1C slot 58 0xE8. Same xor-shape as the
+// landed GadgetComboBoxReset 0x0032273B (34B). Callers at 0x00440617 etc.
+void GadgetComboBoxHideList(GameWindow *comboBox)
+{
+	if (comboBox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(comboBox, 0x4005, 0, 0);
+}
