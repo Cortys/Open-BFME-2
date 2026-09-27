@@ -5702,3 +5702,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ??1?$_Vector_base@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QAE@XZ,0x00467FCC,vector teardown at +0x180 in TransportContainModuleData dtor 0x004684F1; 16-byte-element vector base dtor freeing via 0x00430830
 ??1Rva002572D7Member@@QAE@XZ,0x002572D7,opaque member dtor at +0x48 in Rva00465124Base dtor 0x00257481; 23B body freeing its buffer via 0x00430830
 ??1Rva00256461Member@@QAE@XZ,0x00256461,opaque member dtor at +0x4C in Rva00465124Base dtor 0x00257481; EH body freeing its buffer
+??_7GateOpenAndCloseBehaviorModuleData@@6B@,0x00C501B0,vtable installed by pinned ctor 0x00498E2E; slot 0 ??_G 0x00498DD7
