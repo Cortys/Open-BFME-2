@@ -2040,7 +2040,14 @@ bool HLodClass::Is_NULL_Lod_Included(void) const
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Include_NULL_Lod present-unmatched
+// BFME2: matched HLod constructors at 0x0019F8C0 and 0x001A0410 install
+// vtable RVA 0x007D6780. Slot +0x23C names this body, immediately after the
+// matched Is_NULL_Lod_Included slot. The method name and semantics come from
+// the EA/BFME1 donor; target calls and accesses independently support them.
+// Retail uses the global factory and global array deletion, as in Free above.
+// Boundary batch 6 spans [0x001A0560,0x001A09E4): 1156 bytes including the
+// three alignment bytes at 0x001A085D excluded from its reachable-byte count.
+extern RenderObjClass *Create_Render_Obj(const char *name);
 void HLodClass::Include_NULL_Lod(bool include)
 {
 	if ((include == false) && Is_NULL_Lod_Included ()) {
@@ -2071,7 +2078,7 @@ void HLodClass::Include_NULL_Lod(bool include)
 		::memcpy (temp_cost, &Cost[1], sizeof (float) * LodCount);
 		::memcpy (temp_value, &Value[1], sizeof (float) * (LodCount + 1));
 
-		delete [] Lod;
+		::delete [] Lod;
 		delete [] Value;
 		delete [] Cost;
 		Lod = temp_lods;
@@ -2082,7 +2089,7 @@ void HLodClass::Include_NULL_Lod(bool include)
 	} else if (include && (Is_NULL_Lod_Included () == false)) {
 
 		// Tag the NULL render object onto the end
-		RenderObjClass *null_object = WW3DAssetManager::Get_Instance ()->Create_Render_Obj ("NULL");
+		RenderObjClass *null_object = ::Create_Render_Obj ("NULL");
 		WWASSERT (null_object != NULL);
 		if (null_object != NULL) {
 
@@ -2098,7 +2105,7 @@ void HLodClass::Include_NULL_Lod(bool include)
 			::memcpy (&temp_cost[1], Cost, sizeof (float) * LodCount);
 			::memcpy (&temp_value[1], Value, sizeof (float) * (LodCount + 1));
 
-			delete [] Lod;
+			::delete [] Lod;
 			delete [] Value;
 			delete [] Cost;
 			Lod = temp_lods;
