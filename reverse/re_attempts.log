@@ -2186,3 +2186,4 @@ FUN_0076f710	0x0036F710	71	blocked	mixed MSVC list plus STLport Science vector p
 ?dup_0018c600@@YAXXZ	0x0018C600	213	blocked	boundary 0x18C600-0x18C6D5 (ghidra FUN_0058c600 213B); second retail copy of vector<short>::_M_fill_insert (stlport_vector_s_o1.cpp object symbol byte-verifies as gen-alias) but its overflow call targets the local copy 0x18C41E (?dup_0018c41e) - needs a second _M_insert_overflow<short> pin and pin_consistency rejects it: 0x7EAA7 vs 0x18C41E bodies diverge at +0x2B (per-TU callee copies). t=15 model=grok
 FUN_006bea10	0x002BEA10	83	blocked	101-slot vtable loop with 4 virtuals needs large interface proof t=12 model=muse-190e
 ?rva005C3DE1@Rva005C3DE1@@QAEH@Z	0x005C3DE1	80	blocked	loop with 3 clears plus virtual slot8 needs register and imul shape proof t=15 model=muse-190e
+?rva00045837@Rva00045837@@QBEHXZ	0x00045837	22	blocked	int vec-size check with sar3 vs test-mask wall t=18 model=muse-2bd4
