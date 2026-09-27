@@ -35,6 +35,7 @@ public:
 	virtual void s10();
 	virtual void s11();
 	virtual void slot12(int v);
+	virtual void slot13(int v);
 };
 
 class Object
@@ -48,6 +49,7 @@ protected:
 	Module *findModule(NameKeyType key) const;
 public:
 	void rva0028B78A(int v);
+	void rva0028B79C(int v);
 };
 
 Module *Object::findModule(NameKeyType key) const
@@ -74,4 +76,14 @@ void Object::rva0028B78A(int v)
 	BodyFwd *b = m_body;
 	if (b != 0)
 		b->slot12(v);
+}
+
+// ?rva0028B79C@Object@@QAEXH@Z, retail 0x0028B79C, 18 bytes.
+// Sibling of 0x0028B78A in the same TU: same body at +0x254, same int arg
+// shape, tail-jumps to slot 0x34. Callers pass 6/9 at 0x0049927D 0x004ADFD5.
+void Object::rva0028B79C(int v)
+{
+	BodyFwd *b = m_body;
+	if (b != 0)
+		b->slot13(v);
 }
