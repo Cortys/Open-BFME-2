@@ -8,6 +8,7 @@
 // allocator 0x000307F0. Model/flags donor TU
 // Code/Libraries/Source/WWVegas/WWLib/StringBaseWideStrLenSet.cpp // cl: /O2 /EHsc
 // plus char-size bytes len+9 and capacity bytes-8 (no divide).
+#include <string.h>
 namespace _STL {
 template <class _Tp> class allocator;
 template <> class allocator<char> {
@@ -51,15 +52,13 @@ public:
     virtual int getLength() const { return m_len; }
     virtual void _gap() const {}
     virtual int getChars(char *dest) const {
-        for (int i = 0; i < m_len; i++)
-            dest[i] = m_str[i];
+        memcpy(dest, m_str, m_len);
         return m_len;
     }
 };
 
 // ?getLength@NarrowStrLenSource@@UBEHXZ present-unmatched
 // ?_gap@NarrowStrLenSource@@UBEXXZ present-unmatched
-// ?getChars@NarrowStrLenSource@@UBEHPAD@Z present-unmatched
 // ??0NarrowStrLenSource@@QAE@PBDH@Z present-unmatched
 // ??1NarrowStrLenSource@@QAE@XZ present-unmatched
 template <>
