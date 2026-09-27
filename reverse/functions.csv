@@ -37224,3 +37224,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva0028D282@Object@@QAEXPAX@Z,,0x0028D282,32,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,Object guarded forward to plus4C4 helper template 0x10E flag 0x20 caller 0x3958D5
 ?xferRandomVariable@@YAAAVXfer@@AAV1@AAVGameClientRandomVariable@@@Z,,0x00306183,149,Code/GameEngine/Source/GameClient/System/FXParticleSystem/xferRandomVariable.cpp,matched,BFME1 donor xferRandomVariable via Version1 and XferDistributionType helpers
 ?xfer@Rva003AF22E@@MAEXPAVXfer@@@Z,,0x0055EA8E,31,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF22EXfer.cpp,matched,slot3 of vtable 0x0081C884 via Version1 plus rowed xferRandomVariable at plus 0x1C
+?rva0028D491@Object@@QBE_NXZ,,0x0028D491,51,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D491.cpp,matched,Object KindOf mask gate via Thing isAnyKindOf callers 0x28D4D0 0x293874 0x40601A
