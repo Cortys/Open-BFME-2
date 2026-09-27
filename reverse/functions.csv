@@ -38737,3 +38737,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Matrix3D@@QAE@MMMMMMMMMMMM@Z,,0x00125FD9,147,Code/Libraries/Source/WWVegas/WW3D2/StreakRendererSetTextureBFME1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0Matrix4@@QAE@_N@Z,,0x000A682E,121,Code/Libraries/Source/WWVegas/WW3D2/StreakRendererSetTextureBFME1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0LineSegment@?7??RenderStreak@StreakRendererClass@@QAEXAAVRenderInfoClass@@ABVMatrix3D@@IPAVVector3@@PAVVector4@@PAMABVSphereClass@@PAI@Z@QAE@XZ,,0x0012639E,25,Code/Libraries/Source/WWVegas/WW3D2/StreakRendererSetTextureBFME1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Rotate_Y@Matrix3D@@QAEXM@Z,,0x0008533A,202,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DRotateO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?Rotate_Z@Matrix3D@@QAEXM@Z,,0x00098CC0,202,Code/GameEngine/Source/GameLogic/Object/Behavior/Matrix3DRotateO1.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
