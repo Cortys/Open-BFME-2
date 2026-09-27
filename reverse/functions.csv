@@ -39004,3 +39004,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004E0625@Rva004E0625@@QBEHXZ,,0x004E0625,13,Code/GameEngine/Source/Common/Rva004E0625Getters.cpp,matched,conditional dword getter plus 0x20 equals minus 1 else plus 0x40
 ?rva004E0632@Rva004E0632@@QBEHXZ,,0x004E0632,13,Code/GameEngine/Source/Common/Rva004E0625Getters.cpp,matched,conditional dword getter plus 0x20 equals minus 1 else plus 0x44
 ?rva004E06A7@Rva004E06A7@@QBEXXZ,,0x004E06A7,17,Code/GameEngine/Source/Common/Rva004E06A7Call.cpp,matched,conditional void tail-call via 0x004E0632 to slot 5
+_IDct1,,0x001D6C60,48,Code/Libraries/Source/Theora/IDct1.c,matched,vendored=libtheora-1.0alpha2
+_CopyBlock,,0x001B7F30,142,Code/Libraries/Source/Theora/CopyBlock.c,matched,vendored=libtheora-1.0alpha2
