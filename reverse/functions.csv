@@ -38074,3 +38074,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?setState@GameSlot@@QAEXW4SlotState@@VUnicodeString@@PBUGameSlotConnectInfo@@@Z,,0x003FFC28,399,Code/GameEngine/Source/GameNetwork/GameSlotSetState.cpp,matched,BFME1 GameInfo.cpp donor with SLOT_PLAYER 6 and AI state 5 and template -2
 ?clearSlotList@GameInfo@@QAEXXZ,,0x003FFDB7,67,Code/GameEngine/Source/GameNetwork/GameInfoClearSlotList.cpp,matched,BFME1 GameInfo.cpp clearSlotList with CLOSED and TheEmptyString
 ?endGame@GameInfo@@QAEXXZ,,0x003FF296,9,Code/GameEngine/Source/GameNetwork/GameInfoEndGame.cpp,matched,BFME1 GameInfo.cpp endGame clears inGame and inProgress
+?rva003FF1C2@Rva003FF1C2@@QBE_NXZ,,0x003FF1C2,24,Code/GameEngine/Source/GameNetwork/Rva003FF1C2.cpp,matched,honest 16B nonzero check at CC with five callers
