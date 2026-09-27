@@ -73,6 +73,7 @@
 /**
  * Le destructor.
  */
+// ??1ConnectionManager@@ present-unmatched
 ConnectionManager::~ConnectionManager(void)
 {
 	if (m_localUser != NULL) {
@@ -136,6 +137,7 @@ ConnectionManager::~ConnectionManager(void)
 /**
  * Le constructor
  */
+// ??0ConnectionManager@@ present-unmatched
 ConnectionManager::ConnectionManager(void)
 {
 	for (Int i = 0; i < MAX_SLOTS; ++i) {
@@ -155,6 +157,7 @@ ConnectionManager::ConnectionManager(void)
 /**
  * Initialize the connection manager and any subsystems.
  */
+// ?init@ConnectionManager@@ present-unmatched
 void ConnectionManager::init() 
 {
 //	if (m_transport == NULL) {
@@ -229,6 +232,7 @@ void ConnectionManager::init()
 /**
  * Reset the connection manager and any subsystems.
  */
+// ?reset@ConnectionManager@@ present-unmatched
 void ConnectionManager::reset() 
 {
 //	if (m_transport == NULL) {
@@ -293,26 +297,31 @@ void ConnectionManager::reset()
 	m_frameMetrics.reset();
 }
 
+// ?getPingFrame@ConnectionManager@@ present-unmatched
 UnsignedInt ConnectionManager::getPingFrame()
 {
 	return (m_disconnectManager)?m_disconnectManager->getPingFrame():0;
 }
 
+// ?getPingsSent@ConnectionManager@@ present-unmatched
 Int ConnectionManager::getPingsSent()
 {
 	return (m_disconnectManager)?m_disconnectManager->getPingsSent():0;
 }
 
+// ?getPingsRecieved@ConnectionManager@@ present-unmatched
 Int ConnectionManager::getPingsRecieved()
 {
 	return (m_disconnectManager)?m_disconnectManager->getPingsRecieved():0;
 }
 
+// ?isPlayerConnected@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::isPlayerConnected( Int playerID )
 {
 	return ( playerID == m_localSlot || (m_connections[playerID] && !m_connections[playerID]->isQuitting()) );
 }
 
+// ?attachTransport@ConnectionManager@@ present-unmatched
 void ConnectionManager::attachTransport(Transport *transport) {
 	if (m_transport != NULL) {
 		delete m_transport;
@@ -325,6 +334,7 @@ void ConnectionManager::attachTransport(Transport *transport) {
  * zero out the command counts for the given frames.  Presently this is used for
  * the start of a game since there won't be any commands for the first few frames due to runahead.
  */
+// ?zeroFrames@ConnectionManager@@ present-unmatched
 void ConnectionManager::zeroFrames(UnsignedInt startingFrame, UnsignedInt numFrames) {
 	for (Int i = 0; i < MAX_SLOTS; ++i) {
 		if (m_frameData[i] != NULL) {
@@ -337,6 +347,7 @@ void ConnectionManager::zeroFrames(UnsignedInt startingFrame, UnsignedInt numFra
 /**
  * Destroy any game messages that are left over due to the run ahead.
  */
+// ?destroyGameMessages@ConnectionManager@@ present-unmatched
 void ConnectionManager::destroyGameMessages() {
 	for (Int i = 0; i < MAX_SLOTS; ++i) {
 		// Need to destroy these game messages because when the game ends, there are
@@ -348,12 +359,14 @@ void ConnectionManager::destroyGameMessages() {
 	}
 }
 
+// ?doRelay@ConnectionManager@@ present-unmatched
 /**
  * ConnectionManager::doRelay()
  * Queries the transport for commands that need to be relayed to another client.
  * Get those commands and relay them to the appropriate Connection(s). We make the
  * assumption that a command will only be relayed once.
  */
+// ?doRelay@ConnectionManager@@ present-unmatched
 void ConnectionManager::doRelay() {
 	static Int numPackets = 0;
 	static Int numCommands = 0;
@@ -429,6 +442,7 @@ void ConnectionManager::doRelay() {
  * This is where the non-synchronized network commands should be processed.
  * Return TRUE if the command should not be relayed. Return FALSE if it should be relayed.
  */
+// ?processNetCommand@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::processNetCommand(NetCommandRef *ref) {
 	NetCommandMsg *msg = ref->getCommand();
 
@@ -551,6 +565,7 @@ Bool ConnectionManager::processNetCommand(NetCommandRef *ref) {
 	return FALSE;
 }
 
+// ?processFrameResendRequest@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFrameResendRequest(NetFrameResendRequestCommandMsg *msg) {
 	// first make sure this is a valid slot
 	Int playerID = msg->getPlayerID();
@@ -569,6 +584,7 @@ void ConnectionManager::processFrameResendRequest(NetFrameResendRequestCommandMs
 /**
  * We have received a wrapper for a command too big to fit in a packet.
  */
+// ?processWrapper@ConnectionManager@@ present-unmatched
 void ConnectionManager::processWrapper(NetCommandRef *ref) 
 {
 	NetWrapperCommandMsg *wrapperMsg = (NetWrapperCommandMsg *)(ref->getCommand());
@@ -616,6 +632,7 @@ void ConnectionManager::processWrapper(NetCommandRef *ref)
 /**
  * A client has sent us their run ahead metrics, lets store them away for future calculations.
  */
+// ?processRunAheadMetrics@ConnectionManager@@ present-unmatched
 void ConnectionManager::processRunAheadMetrics(NetRunAheadMetricsCommandMsg *msg) 
 {
 	UnsignedInt player = msg->getPlayerID();
@@ -632,6 +649,7 @@ void ConnectionManager::processRunAheadMetrics(NetRunAheadMetricsCommandMsg *msg
 	}
 }
 
+// ?processDisconnectChat@ConnectionManager@@ present-unmatched
 void ConnectionManager::processDisconnectChat(NetDisconnectChatCommandMsg *msg) 
 {
 	UnicodeString unitext;
@@ -647,6 +665,7 @@ void ConnectionManager::processDisconnectChat(NetDisconnectChatCommandMsg *msg)
 	TheDisconnectMenu->showChat(unitext); // <-- need to implement this
 }
 
+// ?processChat@ConnectionManager@@ present-unmatched
 void ConnectionManager::processChat(NetChatCommandMsg *msg) 
 {
 	UnicodeString unitext;
@@ -688,6 +707,7 @@ void ConnectionManager::processChat(NetChatCommandMsg *msg)
 	}
 }
 
+// ?processFile@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFile(NetFileCommandMsg *msg) 
 {
 #ifdef _INTERNAL
@@ -772,6 +792,7 @@ void ConnectionManager::processFile(NetFileCommandMsg *msg)
 #endif // COMPRESS_TARGAS
 }
 
+// ?processFileAnnounce@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFileAnnounce(NetFileAnnounceCommandMsg *msg) 
 {
 	DEBUG_LOG(("ConnectionManager::processFileAnnounce() - expecting '%s' (%s) in command %d\n", msg->getPortableFilename().str(), msg->getRealFilename().str(), msg->getFileID()));
@@ -790,6 +811,7 @@ void ConnectionManager::processFileAnnounce(NetFileAnnounceCommandMsg *msg)
 	}
 }
 
+// ?processFileProgress@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFileProgress(NetFileProgressCommandMsg *msg) 
 {
 	DEBUG_LOG(("ConnectionManager::processFileProgress() - command %d is at %d%%\n",
@@ -804,11 +826,13 @@ void ConnectionManager::processProgress( NetProgressCommandMsg *msg )
 	TheGameLogic->processProgress(msg->getPlayerID(), msg->getPercentage());
 }
 
+// ?processLoadComplete@ConnectionManager@@ present-unmatched
 void ConnectionManager::processLoadComplete( NetCommandMsg *msg )
 {
 	TheGameLogic->processProgressComplete(msg->getPlayerID());
 }
 
+// ?processTimeOutGameStart@ConnectionManager@@ present-unmatched
 void ConnectionManager::processTimeOutGameStart( NetCommandMsg *msg )
 {
 	TheGameLogic->timeOutGameStart();
@@ -817,6 +841,7 @@ void ConnectionManager::processTimeOutGameStart( NetCommandMsg *msg )
 /**
  * Another client has sent us the command count for a new frame.
  */
+// ?processFrameInfo@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFrameInfo(NetFrameCommandMsg *msg) {
 	//stupid frame info, why don't you process yourself?
 
@@ -834,6 +859,7 @@ void ConnectionManager::processFrameInfo(NetFrameCommandMsg *msg) {
  * We just got a stage 1 ack from someone.  So we should remove it from the connection that sent it so
  * it doesn't keep resending it.
  */
+// ?processAckStage1@ConnectionManager@@ present-unmatched
 void ConnectionManager::processAckStage1(NetCommandMsg *msg) {
 #if defined(_DEBUG) || defined(_INTERNAL)
 	Bool doDebug = (msg->getNetCommandType() == NETCOMMANDTYPE_DISCONNECTFRAME) ? TRUE : FALSE;
@@ -870,6 +896,7 @@ void ConnectionManager::processAckStage1(NetCommandMsg *msg) {
  * We just got a stage 2 ack from someone.  So remove it from the pending commands list so it doesn't
  * get sent in the case of a new packet router.
  */
+// ?processAckStage2@ConnectionManager@@ present-unmatched
 void ConnectionManager::processAckStage2(NetCommandMsg *msg) {
 	UnsignedShort commandID = 0;
 	UnsignedByte playerID = 0;
@@ -920,6 +947,7 @@ void ConnectionManager::processAckStage2(NetCommandMsg *msg) {
 /**
  * We just got a "both" ack from someone.  So process it as both a stage 1 and stage 2 ack.
  */
+// ?processAck@ConnectionManager@@ present-unmatched
 void ConnectionManager::processAck(NetCommandMsg *msg) {
 	if ((msg->getNetCommandType() == NETCOMMANDTYPE_ACKSTAGE1) || (msg->getNetCommandType() == NETCOMMANDTYPE_ACKBOTH)) {
 		processAckStage1(msg);
@@ -939,6 +967,7 @@ void ConnectionManager::processAck(NetCommandMsg *msg) {
  *
  * If we are leaving and are also the packet router, it will return the PLAYERLEAVECODE_LOCAL return code.
  */
+// ?processPlayerLeave@ConnectionManager@@ present-unmatched
 PlayerLeaveCode ConnectionManager::processPlayerLeave(NetPlayerLeaveCommandMsg *msg) {
 	UnsignedByte playerID = msg->getLeavingPlayerID();
 	if ((playerID != m_localSlot) && (m_connections[playerID] != NULL)) {
@@ -973,6 +1002,7 @@ PlayerLeaveCode ConnectionManager::processPlayerLeave(NetPlayerLeaveCommandMsg *
 	return code;
 }
 
+// ?getPacketRouterFallbackSlot@ConnectionManager@@ present-unmatched
 UnsignedInt ConnectionManager::getPacketRouterFallbackSlot(Int packetRouterNumber) {
 	if ((packetRouterNumber >= 0) && (packetRouterNumber < MAX_SLOTS)) {
 		return m_packetRouterFallback[packetRouterNumber];
@@ -984,6 +1014,7 @@ UnsignedInt ConnectionManager::getPacketRouterSlot() {
 	return m_packetRouterSlot;
 }
 
+// ?areAllQueuesEmpty@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::areAllQueuesEmpty(void) {
 	Bool retval = TRUE;
 	for (Int i = 0; (i < MAX_SLOTS) && retval; ++i) {
@@ -999,6 +1030,7 @@ Bool ConnectionManager::areAllQueuesEmpty(void) {
 	return retval;
 }
 
+// ?canILeave@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::canILeave() {
 	return areAllQueuesEmpty();
 }
@@ -1007,6 +1039,7 @@ Bool ConnectionManager::canILeave() {
  * The local player is leaving. Tell the local player as well as the other players
  * to remove this player at the specified frame.
  */
+// ?handleLocalPlayerLeaving@ConnectionManager@@ present-unmatched
 void ConnectionManager::handleLocalPlayerLeaving(UnsignedInt frame) {
 	NetPlayerLeaveCommandMsg *msg = newInstance(NetPlayerLeaveCommandMsg);
 
@@ -1028,6 +1061,7 @@ void ConnectionManager::handleLocalPlayerLeaving(UnsignedInt frame) {
 /**
  * We just got a message that needs to be ack'd, so ack it!
  */
+// ?ackCommand@ConnectionManager@@ present-unmatched
 void ConnectionManager::ackCommand(NetCommandRef *ref, UnsignedInt localSlot) {
 	NetCommandMsg *msg = ref->getCommand();
 	NetCommandMsg *ackmsg;
@@ -1112,6 +1146,7 @@ void ConnectionManager::ackCommand(NetCommandRef *ref, UnsignedInt localSlot) {
  * This is where we relay a command from one client to others (including ourselves).
  * This should only be done by the current packet router.
  */
+// ?sendRemoteCommand@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendRemoteCommand(NetCommandRef *msg) {
 	UnsignedByte actualRelay = 0;
 	if (msg->getCommand() == NULL) {
@@ -1164,6 +1199,7 @@ void ConnectionManager::sendRemoteCommand(NetCommandRef *msg) {
  * Update the connections. Tell them to do the receive and send.  Also relay
  * commands to their final destinations as necessary.
  */
+// ?update@ConnectionManager@@ present-unmatched
 void ConnectionManager::update(Bool isInGame) {
 //
 // 1. do this
@@ -1221,6 +1257,7 @@ void ConnectionManager::update(Bool isInGame) {
 	m_transport->doSend();
 }
 
+// ?updateRunAhead@ConnectionManager@@ present-unmatched
 void ConnectionManager::updateRunAhead(Int oldRunAhead, Int frameRate, Bool didSelfSlug, Int nextExecutionFrame) {
 	static time_t lasttimesent = 0;
 	time_t curTime = timeGetTime();
@@ -1364,6 +1401,7 @@ void ConnectionManager::updateRunAhead(Int oldRunAhead, Int frameRate, Bool didS
 	}
 }
 
+// ?getMaximumLatency@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getMaximumLatency() {
 	// This works for 2 player games because the latency for the packet router is always 0.
 	Real lat1 = 0.0;
@@ -1385,6 +1423,7 @@ Real ConnectionManager::getMaximumLatency() {
 	return (lat1 + lat2);
 }
 
+// ?getMinimumFps@ConnectionManager@@ present-unmatched
 void ConnectionManager::getMinimumFps(Int &minFps, Int &minFpsPlayer) {
 	minFps = -1;
 	minFpsPlayer = -1;
@@ -1403,6 +1442,7 @@ void ConnectionManager::getMinimumFps(Int &minFps, Int &minFpsPlayer) {
 //	DEBUG_LOG(("\n"));
 }
 
+// ?getMinimumCushion@ConnectionManager@@ present-unmatched
 UnsignedInt ConnectionManager::getMinimumCushion() {
 	return m_frameMetrics.getMinimumCushion();
 }
@@ -1410,6 +1450,7 @@ UnsignedInt ConnectionManager::getMinimumCushion() {
 /**
  * The commands for the given frame are all ready, time to send out our command count for that frame.
  */
+// ?processFrameTick@ConnectionManager@@ present-unmatched
 void ConnectionManager::processFrameTick(UnsignedInt frame) {
 	if ((m_frameData[m_localSlot] == NULL) || (m_frameData[m_localSlot]->getIsQuitting() == TRUE)) {
 		// if the local frame data stuff is NULL, we must be leaving the game.
@@ -1436,6 +1477,7 @@ void ConnectionManager::processFrameTick(UnsignedInt frame) {
 /**
  * Set the local address.
  */
+// ?setLocalAddress@ConnectionManager@@ present-unmatched
 void ConnectionManager::setLocalAddress(UnsignedInt ip, UnsignedInt port) {
 	DEBUG_LOG(("ConnectionManager::setLocalAddress() - local address is %X:%d\n", ip, port));
 	m_localAddr = ip;
@@ -1445,6 +1487,7 @@ void ConnectionManager::setLocalAddress(UnsignedInt ip, UnsignedInt port) {
 /**
  * Initialize the transport object
  */
+// ?initTransport@ConnectionManager@@ present-unmatched
 void ConnectionManager::initTransport() {
 	DEBUG_ASSERTCRASH((m_transport == NULL), ("m_transport already exists when trying to init it."));
 	DEBUG_LOG(("ConnectionManager::initTransport - Initializing Transport\n"));
@@ -1462,6 +1505,7 @@ void ConnectionManager::initTransport() {
  * the game.  This is also where the local commands are put into the frame data for
  * future execution.
  */
+// ?sendLocalGameMessage@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendLocalGameMessage(GameMessage *msg, UnsignedInt frame) {
 	UnsignedShort currentID = 0;
 	if (DoesCommandRequireACommandID(NETCOMMANDTYPE_GAMECOMMAND)) {
@@ -1482,6 +1526,7 @@ void ConnectionManager::sendLocalGameMessage(GameMessage *msg, UnsignedInt frame
  * This is a NetCommandMsg that originated on the local computer. Send this to everyone specified
  * in the relay field.  Commands sent in this way go through the packet router.
  */
+// ?sendLocalCommand@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendLocalCommand(NetCommandMsg *msg, UnsignedByte relay /* = 0xff by default*/) {
 	if (CommandRequiresDirectSend(msg) || (m_packetRouterSlot < 0) || (m_packetRouterSlot >= MAX_SLOTS) || (m_connections[m_packetRouterSlot] == NULL)) {
 		sendLocalCommandDirect(msg, relay);
@@ -1532,6 +1577,7 @@ void ConnectionManager::sendLocalCommand(NetCommandMsg *msg, UnsignedByte relay 
  * This is a NetCommandMsg that originated on the local computer.  Send this to everyone specified
  * in the relay field.  Commands sent in this way do not go through the packet router.
  */
+// ?sendLocalCommandDirect@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendLocalCommandDirect(NetCommandMsg *msg, UnsignedByte relay) {
 	msg->attach();
 
@@ -1560,6 +1606,7 @@ Int commandsReadyDebugSpewage = 0;
 /**
  * Returns true if all the commands for the given frame are ready to be executed.
  */
+// ?allCommandsReady@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::allCommandsReady(UnsignedInt frame, Bool justTesting /* = FALSE */) {
 	Bool retval = TRUE;
 	FrameDataReturnType frameRetVal;
@@ -1606,6 +1653,7 @@ Bool ConnectionManager::allCommandsReady(UnsignedInt frame, Bool justTesting /* 
 	return retval;
 }
 
+// ?handleAllCommandsReady@ConnectionManager@@ present-unmatched
 void ConnectionManager::handleAllCommandsReady(void)
 {
 	m_disconnectManager->allCommandsReady(TheGameLogic->getFrame(), this, FALSE);
@@ -1621,6 +1669,7 @@ void ConnectionManager::handleAllCommandsReady(void)
  *       frames so we can potentially send those commands to the other players in the
  *       game so they can catch up.
  */
+// ?getFrameCommandList@ConnectionManager@@ present-unmatched
 NetCommandList *ConnectionManager::getFrameCommandList(UnsignedInt frame) 
 {
 	NetCommandList *retlist = newInstance(NetCommandList);
@@ -1641,6 +1690,7 @@ NetCommandList *ConnectionManager::getFrameCommandList(UnsignedInt frame)
 	return retlist; // retlist deallocated by calling function.
 }
 
+// ?setFrameGrouping@ConnectionManager@@ present-unmatched
 void ConnectionManager::setFrameGrouping(time_t frameGrouping) {
 	// Since we are the packet router, we should send more packets per second since we
 	// may become the latency bottleneck for sending packets from one player to the next.
@@ -1657,6 +1707,7 @@ void ConnectionManager::setFrameGrouping(time_t frameGrouping) {
 }
 
 /*
+// ?determineRouterFallbackPlan@ConnectionManager@@ present-unmatched
 void ConnectionManager::determineRouterFallbackPlan() {
 	memset(m_packetRouterFallback, 0, sizeof(m_packetRouterFallback));
 	Int curnum = 1;
@@ -1672,6 +1723,7 @@ void ConnectionManager::determineRouterFallbackPlan() {
 }
 */
 
+// ?doKeepAlive@ConnectionManager@@ present-unmatched
 void ConnectionManager::doKeepAlive() {
 	static Int nextIndex = 0;
 	static time_t startTime = 0;
@@ -1705,6 +1757,7 @@ void ConnectionManager::doKeepAlive() {
 	}
 }
 
+// ?disconnectPlayer@ConnectionManager@@ present-unmatched
 PlayerLeaveCode ConnectionManager::disconnectPlayer(Int slot) {
 	// Need to do the deletion of the slot's connection and frame data here.
 	PlayerLeaveCode retval = PLAYERLEAVECODE_CLIENT;
@@ -1780,6 +1833,7 @@ PlayerLeaveCode ConnectionManager::disconnectPlayer(Int slot) {
 	return retval;
 }
 
+// ?quitGame@ConnectionManager@@ present-unmatched
 void ConnectionManager::quitGame() {
 	// Need to do the NetDisconnectPlayerCommandMsg creation and sending here.
 	NetDisconnectPlayerCommandMsg *disconnectMsg = newInstance(NetDisconnectPlayerCommandMsg);
@@ -1813,6 +1867,7 @@ void ConnectionManager::disconnectLocalPlayer() {
 /**
  * Takes all the commands that are ready to send and sends them right now.
  */
+// ?flushConnections@ConnectionManager@@ present-unmatched
 void ConnectionManager::flushConnections() {
 	for (Int i = 0; i < MAX_SLOTS; ++i) {
 		if (m_connections[i] != NULL) {
@@ -1831,6 +1886,7 @@ void ConnectionManager::flushConnections() {
 	}
 }
 
+// ?resendPendingCommands@ConnectionManager@@ present-unmatched
 void ConnectionManager::resendPendingCommands() {
 	//DEBUG_LOG(("ConnectionManager::resendPendingCommands()\n"));
 	if (m_pendingCommands == NULL) {
@@ -1849,6 +1905,7 @@ UnsignedInt ConnectionManager::getLocalPlayerID() {
 	return m_localSlot;
 }
 
+// ?getPlayerName@ConnectionManager@@ present-unmatched
 UnicodeString ConnectionManager::getPlayerName(Int playerNum) {
 	UnicodeString retval;
 	if( playerNum == m_localSlot ) {
@@ -1863,6 +1920,7 @@ UnicodeString ConnectionManager::getPlayerName(Int playerNum) {
  * Take a user list and make connections and frame data manager objects for each of the players.
  * For now, this is also how we'll determine the packet router fallback plan.
  */
+// ?parseUserList@ConnectionManager@@ present-unmatched
 void ConnectionManager::parseUserList(const GameInfo *game)
 {
 	if (!game)
@@ -2008,6 +2066,7 @@ void ConnectionManager::parseUserList(const GameInfo *game)
 /**
  * Return the number of incoming bytes per second averaged over 30 sec.
  */
+// ?getIncomingBytesPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getIncomingBytesPerSecond( void )
 {
 	if (m_transport)
@@ -2019,6 +2078,7 @@ Real ConnectionManager::getIncomingBytesPerSecond( void )
 /**
  * Return the number of incoming packets per second averaged over the last 30 sec.
  */
+// ?getIncomingPacketsPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getIncomingPacketsPerSecond( void )
 {
 	if (m_transport)
@@ -2030,6 +2090,7 @@ Real ConnectionManager::getIncomingPacketsPerSecond( void )
 /**
  * Return the number of outgoing bytes per second averaged over the last 30 sec.
  */
+// ?getOutgoingBytesPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getOutgoingBytesPerSecond( void )
 {
 	if (m_transport)
@@ -2041,6 +2102,7 @@ Real ConnectionManager::getOutgoingBytesPerSecond( void )
 /**
  * Return the number of outgoing packets per second averaged over the last 30 sec.
  */
+// ?getOutgoingPacketsPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getOutgoingPacketsPerSecond( void )
 {
 	if (m_transport) {
@@ -2053,6 +2115,7 @@ Real ConnectionManager::getOutgoingPacketsPerSecond( void )
 /**
  * Return the number of bytes not from generals clients received per second averaged over the last 30 sec.
  */
+// ?getUnknownBytesPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getUnknownBytesPerSecond( void )
 {
 	if (m_transport)
@@ -2064,6 +2127,7 @@ Real ConnectionManager::getUnknownBytesPerSecond( void )
 /**
  * Return the number ov packets not from generals clients received per second averaged over the last 30 sec.
  */
+// ?getUnknownPacketsPerSecond@ConnectionManager@@ present-unmatched
 Real ConnectionManager::getUnknownPacketsPerSecond( void )
 {
 	if (m_transport)
@@ -2075,12 +2139,14 @@ Real ConnectionManager::getUnknownPacketsPerSecond( void )
 /**
  * Return the smallest packet arrival cushion since this was last called.
  */
+// ?getPacketArrivalCushion@ConnectionManager@@ present-unmatched
 UnsignedInt ConnectionManager::getPacketArrivalCushion() {
 	UnsignedInt retval = m_smallestPacketArrivalCushion;
 	m_smallestPacketArrivalCushion = -1;
 	return retval;
 }
 
+// ?sendChat@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendChat(UnicodeString text, Int playerMask, UnsignedInt executionFrame)
 {
 	NetChatCommandMsg *msg = newInstance(NetChatCommandMsg);
@@ -2101,6 +2167,7 @@ void ConnectionManager::sendChat(UnicodeString text, Int playerMask, UnsignedInt
 	msg->detach();
 }
 
+// ?sendDisconnectChat@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendDisconnectChat(UnicodeString text) {
 	NetDisconnectChatCommandMsg *msg = newInstance(NetDisconnectChatCommandMsg);
 	msg->setPlayerID(m_localSlot);
@@ -2113,6 +2180,7 @@ void ConnectionManager::sendDisconnectChat(UnicodeString text) {
 	processDisconnectChat(msg);
 }
 
+// ?sendFileAnnounce@ConnectionManager@@ present-unmatched
 UnsignedShort ConnectionManager::sendFileAnnounce(AsciiString path, UnsignedByte playerMask)
 {
 	File *theFile = TheLocalFileSystem->openFile(path.str());
@@ -2151,6 +2219,7 @@ UnsignedShort ConnectionManager::sendFileAnnounce(AsciiString path, UnsignedByte
 	return fileID;
 }
 
+// ?sendFile@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendFile(AsciiString path, UnsignedByte playerMask, UnsignedShort commandID)
 {
 	File *theFile = TheLocalFileSystem->openFile(path.str());
@@ -2220,6 +2289,7 @@ void ConnectionManager::sendFile(AsciiString path, UnsignedByte playerMask, Unsi
 	fileMsg->detach();
 }
 
+// ?getFileTransferProgress@ConnectionManager@@ present-unmatched
 Int ConnectionManager::getFileTransferProgress(Int playerID, AsciiString path)
 {
 	FileCommandMap::iterator commandIt = s_fileCommandMap.begin();
@@ -2239,12 +2309,14 @@ Int ConnectionManager::getFileTransferProgress(Int playerID, AsciiString path)
 }
 
 
+// ?voteForPlayerDisconnect@ConnectionManager@@ present-unmatched
 void ConnectionManager::voteForPlayerDisconnect(Int slot) {
 	if (m_disconnectManager != NULL) {
 		m_disconnectManager->voteForPlayerDisconnect(slot, this);
 	}
 }
 
+#pragma optimize("s", on)
 Int ConnectionManager::getNumPlayers()
 {
 	Int retval = 0;
@@ -2257,7 +2329,9 @@ Int ConnectionManager::getNumPlayers()
 
 	return retval;
 }
+#pragma optimize("", on)
 
+// ?updateLoadProgress@ConnectionManager@@ present-unmatched
 void ConnectionManager::updateLoadProgress( Int progress )
 {
 	NetProgressCommandMsg *msg = newInstance(NetProgressCommandMsg);
@@ -2272,6 +2346,7 @@ void ConnectionManager::updateLoadProgress( Int progress )
 	msg->detach();
 }
 
+// ?loadProgressComplete@ConnectionManager@@ present-unmatched
 void ConnectionManager::loadProgressComplete()
 {
 	NetCommandMsg *msg = newInstance(NetCommandMsg);
@@ -2286,6 +2361,7 @@ void ConnectionManager::loadProgressComplete()
 	msg->detach();
 }
 
+// ?sendTimeOutGameStart@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendTimeOutGameStart()
 {
 	NetCommandMsg *msg = newInstance(NetCommandMsg);
@@ -2300,16 +2376,19 @@ void ConnectionManager::sendTimeOutGameStart()
 	msg->detach();
 }
 
+// ?isPacketRouter@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::isPacketRouter( void )
 {
 	return m_localSlot == m_packetRouterSlot;
 }
 
+// ?getAverageFPS@ConnectionManager@@ present-unmatched
 Int ConnectionManager::getAverageFPS( void )
 {
 	return m_frameMetrics.getAverageFPS();
 }
 
+// ?getSlotAverageFPS@ConnectionManager@@ present-unmatched
 Int ConnectionManager::getSlotAverageFPS(Int slot) {
 	if ((slot < 0) || (slot >= MAX_SLOTS)) {
 		return -1;
@@ -2323,6 +2402,7 @@ Int ConnectionManager::getSlotAverageFPS(Int slot) {
 }
 
 #if defined(_DEBUG) || defined(_INTERNAL)
+// ?debugPrintConnectionCommands@ConnectionManager@@ present-unmatched
 void ConnectionManager::debugPrintConnectionCommands() {
 	DEBUG_LOG(("ConnectionManager::debugPrintConnectionCommands - begin commands\n"));
 	for (Int i = 0; i < MAX_SLOTS; ++i) {
@@ -2335,6 +2415,7 @@ void ConnectionManager::debugPrintConnectionCommands() {
 }
 #endif
 
+// ?notifyOthersOfCurrentFrame@ConnectionManager@@ present-unmatched
 void ConnectionManager::notifyOthersOfCurrentFrame(Int frame) {
 	NetDisconnectFrameCommandMsg *msg = newInstance(NetDisconnectFrameCommandMsg);
 
@@ -2359,6 +2440,7 @@ void ConnectionManager::notifyOthersOfCurrentFrame(Int frame) {
 #endif
 }
 
+// ?notifyOthersOfNewFrame@ConnectionManager@@ present-unmatched
 void ConnectionManager::notifyOthersOfNewFrame(UnsignedInt frame) {
 	NetDisconnectScreenOffCommandMsg *msg = newInstance(NetDisconnectScreenOffCommandMsg);
 
@@ -2377,6 +2459,7 @@ void ConnectionManager::notifyOthersOfNewFrame(UnsignedInt frame) {
 	msg->detach();
 }
 
+// ?sendFrameDataToPlayer@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendFrameDataToPlayer(UnsignedInt playerID, UnsignedInt startingFrame) {
 	DEBUG_LOG(("ConnectionManager::sendFrameDataToPlayer - sending frame data to player %d starting with frame %d\n", playerID, startingFrame));
 	for (UnsignedInt frame = startingFrame; frame < TheGameLogic->getFrame(); ++frame) {
@@ -2385,6 +2468,7 @@ void ConnectionManager::sendFrameDataToPlayer(UnsignedInt playerID, UnsignedInt 
 	DEBUG_LOG(("ConnectionManager::sendFrameDataToPlayer - done sending commands to player %d\n", playerID));
 }
 
+// ?sendSingleFrameToPlayer@ConnectionManager@@ present-unmatched
 void ConnectionManager::sendSingleFrameToPlayer(UnsignedInt playerID, UnsignedInt frame) {
 	if ((TheGameLogic->getFrame() - FRAMES_TO_KEEP) > frame) {
 		DEBUG_LOG(("ConnectionManager::sendSingleFrameToPlayer - player %d requested frame %d when we are on frame %d, this is too far in the past.\n", playerID, frame, TheGameLogic->getFrame()));
@@ -2420,6 +2504,7 @@ void ConnectionManager::sendSingleFrameToPlayer(UnsignedInt playerID, UnsignedIn
 	}
 }
 
+// ?getNextPacketRouterSlot@ConnectionManager@@ present-unmatched
 UnsignedInt ConnectionManager::getNextPacketRouterSlot(UnsignedInt playerID) {
 	Int index = 0;
 	while ((index < (MAX_SLOTS-1)) && (m_packetRouterFallback[index] != playerID)) {
@@ -2429,6 +2514,7 @@ UnsignedInt ConnectionManager::getNextPacketRouterSlot(UnsignedInt playerID) {
 	return m_packetRouterFallback[index];
 }
 
+// ?requestFrameDataResend@ConnectionManager@@ present-unmatched
 void ConnectionManager::requestFrameDataResend(Int playerID, UnsignedInt frame) {
 	NetFrameResendRequestCommandMsg *msg = newInstance(NetFrameResendRequestCommandMsg);
 	msg->setPlayerID(m_localSlot);
