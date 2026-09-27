@@ -5845,3 +5845,4 @@ _ConvertBoolTrees,0x001BBD60
 ??$_Destroy@PAURva00414BDBElement@@@_STL@@YAXPAURva00414BDBElement@@0@Z,0x00414508,address read from the REL32 displacement at 0x4147B9 in the pinned _M_clear 0x4147B1; Ghidra boundary 0x414508/24
 ??$__partial_sort@PAHHU?$greater@H@_STL@@@_STL@@YAXPAH000U?$greater@H@0@@Z,0x005E5177,address read from the REL32 displacement at 0x5E522E in the pinned partial_sort<int*,greater<int>> 0x5E521C; Ghidra boundary 0x5E5177/92
 ??1OpenContainModuleData@@UAE@XZ,0x00257481,address read from the JMP displacement at 0x25770F in the pinned ??1CaveContainModuleData; the body there is held under ??1Rva00465124Base@@UAE@XZ and is also the base dtor the matched Transport and Garrison ContainModuleData dtors call - all three derive from OpenContainModuleData in ZH
+?IsReleaseAtEnd@AptValue@@QBEHXZ,0x006DBDD0,AptValueVector.inl asserts pValue->IsReleaseAtEnd at 0x006E6C00; bit2 matches ClearReleaseAtEnd at 0x006DBDC0; target call at 0x006E6C0A

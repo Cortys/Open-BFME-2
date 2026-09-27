@@ -37699,3 +37699,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva005F0647@Rva005F0647@@QAEPAXI@Z,,0x005F0647,37,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,Deleting shape release holder then conditional delete
 ?rva004D6119@Rva004D6119@@QBE?AVUnicodeString@@XZ,,0x004D6119,27,Code/GameEngine/Source/Common/Rva004D6119Get.cpp,matched,honest-address getter twin of PlayerTemplate getDisplayName
 ?rva004D6C9C@Rva004D6C9C@@QAEXW4ScienceType@@@Z,,0x004D6C9C,16,Code/GameEngine/Source/Common/Rva004D6C9CAdd.cpp,matched,honest-address ScienceType push_back wrapper
+?rva006E6C00@AptValueVector@@QAEXPAVAptValue@@@Z,,0x006E6C00,137,Code/Libraries/Source/Apt/AptValue/AptValueVectorReleaseBFME2.cpp,matched,AptValueVector push via IsReleaseAtEnd assert and ClearReleaseAtEnd on full; inl lines 0x35 and 0x43; layout from PopValue sibling; pinned callees at 0x006DBDD0 and 0x006DBDC0; 16 callers unblock

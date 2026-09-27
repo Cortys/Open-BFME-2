@@ -18,6 +18,7 @@ public:
     virtual void Release();
     virtual void ForceDelete();
     unsigned int getRefCount() const;
+    int IsReleaseAtEnd() const;
     void ClearReleaseAtEnd();
 };
 class AptValueVector {
@@ -28,6 +29,7 @@ class AptValueVector {
 public:
     AptValue *PopValue();
     void ReleaseValues();
+    void rva006E6C00(AptValue *pValue);
 };
 AptValue *AptValueVector::PopValue()
 {
@@ -48,4 +50,30 @@ void AptValueVector::ReleaseValues()
         g_bfmeAptAssertAtE17734("mCurrentNum == 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptValue\\AptValueVector.cpp",120);
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
+}
+// ?rva006E6C00@AptValueVector@@QAEXPAVAptValue@@@Z, retail 0x006E6C00 (137B).
+// AptValueVector push with ReleaseAtEnd handling: asserts IsReleaseAtEnd,
+// drops on full via ClearReleaseAtEnd, else stores and bumps high-water.
+// Evidence: AptValueVector.inl lines 0x35/0x43 with pValue asserts; layout
+// count+4 pointer+8 capacity+0 highwater+0xC from PopValue/ReleaseValues;
+// callees IsReleaseAtEnd at 0x006DBDD0 and ClearReleaseAtEnd at 0x006DBDC0;
+// 16 callers unblock on landing.
+void AptValueVector::rva006E6C00(AptValue *pValue)
+{
+    if (!static_cast<unsigned char>(pValue->IsReleaseAtEnd())) {
+        g_bfmeAptAssertAtE17734("pValue->IsReleaseAtEnd()", ".\\AptValue/AptValueVector.inl", 0x35);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (mCurrentNum >= mCapacity) {
+        pValue->ClearReleaseAtEnd();
+        return;
+    }
+    if (!pValue) {
+        g_bfmeAptAssertAtE17734("pValue != NULL", ".\\AptValue/AptValueVector.inl", 0x43);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    mpValues[mCurrentNum] = pValue;
+    ++mCurrentNum;
+    if (mCurrentNum > mHighWaterNum)
+        mHighWaterNum = mCurrentNum;
 }
