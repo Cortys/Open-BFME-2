@@ -13,7 +13,10 @@ class GameWindow
 public:
 	void *winGetUserData(void);
 	GameWindow *winGetChild(void);
+	Int winHide(Bool hide);
 };
+
+GameWindow *GadgetComboBoxGetEditBox(GameWindow *comboBox);
 
 class GameWindowManager
 {
@@ -314,4 +317,18 @@ void GadgetComboBoxGetSelectedPos(GameWindow *comboBox, Int *selectedIndex)
 	if (comboBox == 0)
 		return;
 	TheWindowManager->winSendSystemMsg(comboBox, 0x402c, 0, (int)selectedIndex);
+}
+
+// ?Rva0032277F@@YAXPAVGameWindow@@_N@Z, retail 0x0032277F (33B).
+// Null-checks the combobox, gets its edit box via rowed GadgetComboBoxGetEditBox,
+// null-checks that, then hides it with the Bool arg via rowed GameWindow::winHide.
+// Callers at 0x0057E17D/0x0057E643. True name unknown, honest address name.
+void Rva0032277F(GameWindow *comboBox, Bool hide)
+{
+	if (comboBox == 0)
+		return;
+	GameWindow *editBox = GadgetComboBoxGetEditBox(comboBox);
+	if (editBox == 0)
+		return;
+	editBox->winHide(hide);
 }
