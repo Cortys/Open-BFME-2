@@ -820,7 +820,9 @@ name,address,notes
 ??1TimeCodedBitChannelClass@@QAE@XZ,0x001960C0,address read from the retail REL32 in ~NodeCompressedMotionStruct at 0x0018F6A0
 ??1TimeCodedMotionChannelClass@@QAE@XZ,0x001960E0,address read from the retail REL32 in ~NodeCompressedMotionStruct at 0x0018F6A0
 ??1Transport@@QAE@XZ,0x004494BA,BFME2 transport destructor used before replacing the connection-manager transport pointer
-??1TransportContainModuleData@@UAE@XZ,0x001DFA48,address read from the REL32 displacement at a placed body
+??1TransportContainModuleData@@UAE@XZ,0x004684F1,called by ??_G 0x004684D5 in slot 0 of vtable 0x00C442F8 installed by ctor 0x00468301; HordeTransport dtor 0x00477D8F jmps here
+??1Rva001DFA48Owner@@UAE@XZ,0x001DFA48,address read from the REL32 displacement at a placed body (was misnamed ~TransportContainModuleData)
+??1Rva00465124Base@@UAE@XZ,0x00257481,called by ??_G 0x00465221 in slot 0 of vtable 0x00C43658 installed by ctor 0x00465124
 ??1UpdateModule@@UAE@XZ,0x0024A797,tail target of rowed BoredUpdate dtor 0x49669A which reinstalls BoredUpdate vptrs before the tail jump so it is the direct UpdateModule base dtor
 ??1UpgradeModuleData@@UAE@XZ,0x00255A42
 ??1WriteLock@BfmeSortingIBAccess@@QAE@XZ,0x00138D80,Recovered dynamic index write-lock view; 120-byte destructor unlocks and releases the reference-counted index buffer then its device guard
@@ -5696,3 +5698,5 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ??1CrateCollideModuleData@@UAE@XZ,0x00255A42,ICF twin of UpgradeModuleData dtor at same address; Salvage dtor 0x2563EF calls it as Crate base; both destroy string at +0x4C and restore BBB554
 ?xfer@CollideModule@@QAEXPAVXfer@@@Z,0x004CE56D,slot3 of CollideModule vtable 0x0085A130 via rowed ctor plus ZH donor identical body plus base call from CrateCollide 0x004BC617
 ?xfer@Locomotor@@MAEXPAVXfer@@@Z,0x00341E2D,ICF twin of Rva00341E22 xfer 27B at same address plus Rva000647D4 base call at 0x000647F8
+??1?$_List_base@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@XZ,0x002FECBC,list teardown at +0xA4 in TransportContainModuleData dtor 0x004684F1; folds with the _List_base<AsciiString> dtor body
+??1?$_Vector_base@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QAE@XZ,0x00467FCC,vector teardown at +0x180 in TransportContainModuleData dtor 0x004684F1; 16-byte-element vector base dtor freeing via 0x00430830
