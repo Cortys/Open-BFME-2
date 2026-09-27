@@ -37143,3 +37143,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva004E3816Parse@INI@@SAXPAV1@PAX1PBX@Z,,0x004E3816,39,Code/GameEngine/Source/Common/System/INI_Rva004E3816ParseCoord2DList.cpp,matched,INI Coord2D list parse via rowed parseCoord2D and push_back
 ??1DataChunkInfo@@QAE@XZ,,0x003073DA,53,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,DataChunkInfo dtor; labels at 0x00 0x04; EH two strings
 ?remove@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432F23,90,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,honest doubly linked removal via 4 heads and shared count
+?openDataChunk@DataChunkInput@@QAE?AVAsciiString@@PAG@Z,,0x0030740F,200,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,ZH DataChunk openDataChunk; new InputChunk 0x1C; getName row 0x3070F1

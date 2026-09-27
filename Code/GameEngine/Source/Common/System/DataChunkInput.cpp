@@ -102,6 +102,7 @@ public:
 	// encodes the base copy ctor at 0x00887B60 directly, so the delegation has
 	// to be visible here.
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	AsciiString(const char *text);
 	~AsciiString();
 
 	AsciiString &operator=(const AsciiString &other)
@@ -238,7 +239,7 @@ protected:
 	UserParser *m_parserList;				// this+0x18
 	InputChunk *m_chunkStack;				// this+0x1C
 
-	void decrementDataLeft(Int size)
+	__declspec(noinline) void decrementDataLeft(Int size)
 	{
 		InputChunk *c;
 
@@ -465,6 +466,28 @@ UserParser *DataChunkInput::registerParser(const AsciiString &label,
 	p->previous = head;
 	*head = p;
 	return p;
+}
+
+AsciiString DataChunkInput::openDataChunk(DataChunkVersionType *ver)
+{
+	InputChunk *c = new InputChunk;
+	c->id = 0;
+	c->version = 0;
+	c->dataSize = 0;
+	m_file->read((char *)&c->id, sizeof(UnsignedInt));
+	decrementDataLeft(sizeof(UnsignedInt));
+	m_file->read((char *)&c->version, sizeof(DataChunkVersionType));
+	decrementDataLeft(sizeof(DataChunkVersionType));
+	m_file->read((char *)&c->dataSize, sizeof(Int));
+	decrementDataLeft(sizeof(Int));
+	c->dataLeft = c->dataSize;
+	c->chunkStart = m_file->tell();
+	*ver = c->version;
+	c->next = m_chunkStack;
+	m_chunkStack = c;
+	if (atEndOfFile())
+		return AsciiString("");
+	return m_contents.getName(c->id);
 }
 
 UserParser::~UserParser()
