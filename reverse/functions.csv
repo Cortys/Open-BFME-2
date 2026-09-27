@@ -37796,3 +37796,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?didEnterOrExit@Object@@IBE_NXZ,,0x0028D6EB,45,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,donor BFME1 didEnterOrExit with INERT kind byte
 ?aiFollowWaypointPath@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x0036EC82,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiFollowWaypointPath plus slot-0 aiDoCommand plus callers at 0x36FA44 and 0x3C8767
 ?hasAnyObjects@Team@@QAE_N_N@Z,,0x0039E042,142,Code/GameEngine/Source/Common/RTS/TeamHasAnyObjects.cpp,matched,BFME1 TeamMemberQueries donor plus 0x438 0x94 0x108 0x110 0x114 0x11a layout
+?rva0039E8EB@Team@@QAEPAVObject@@XZ,,0x0039E8EB,20,Code/GameEngine/Source/Common/RTS/TeamRva0039E8EB.cpp,matched,Team first-member getter via iterate cur
