@@ -37247,3 +37247,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?getNthType@Dict@@QBE?AW4DataType@1@H@Z,,0x00306BCD,39,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,Dict nth type via ZH donor and writeDict dispatch caller at 0x00307E08
 ?getNthUnicodeString@Dict@@QBE?AVUnicodeString@@H@Z,,0x00313665,56,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,Dict nth unicode via Ascii twin and writeDict caller at 0x00307E3F
 ?rva000D1C10@Rva000D1C10@@QAEXXZ,,0x000D1C10,115,Code/GameEngine/Source/Common/Rva000D1C10.cpp,matched,leaf fade-step helper via float constants plus caller
+?allocateNewWeapon@WeaponStore@@QBEPAVWeapon@@PBVWeaponTemplate@@W4WeaponSlotType@@@Z,,0x0028AA81,58,Code/GameEngine/Source/GameLogic/Object/WeaponStoreAllocateNewWeapon.cpp,matched,BFME1 allocate thunk plus ZH friendship; size 0x60 via 0x0002FDA0 and pinned ctor 0x002CC23D
