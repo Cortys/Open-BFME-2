@@ -5744,3 +5744,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 _VP6_ConfigureEntropyDecoder,0x001BBF70
 _VP6_ConfigureMvEntropyDecoder,0x001C6EF0
 _ConvertBoolTrees,0x001BBD60
+??1BfmeWideString000543F5@@QAE@XZ,0x00036E70,wide string member teardown at +0x04 of record 0x000543F5; folds with the pinned StringBase<wchar> releaseBuffer body

@@ -37492,3 +37492,8 @@ _vp6_drawb,,0x001BB4E0,160,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CRT calls/ab mode/stride-row loop establish raw-image appender; source-derived spelling; no PDB claim; authored C++; provenance reverse/vp6_structural_evidence.json debug_writers
 ??1W3DTornadoDraw@@UAE@XZ,,0x000D18AB,77,Code/GameEngine/Source/GameClient/Drawable/Update/W3DTornadoDrawDtor.cpp,matched,audited ??_G 0x000D19DD calls here; drains list via 0x000D1743
 ??1UpgradeSoundSelectorClientBehaviorModuleData@@UAE@XZ,,0x004CBAEA,48,Code/GameEngine/Source/GameLogic/Object/Behavior/UpgradeSoundSelectorClientBehaviorModuleDataDtor.cpp,matched,audited ??_G 0x004CBACE calls here; vector +0x08 via 0x004CB996
+??1Rva00111B25Record@@QAE@XZ,,0x00111B25,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,non-virtual two-string record teardown +0x18 then +0x00
+??1Rva0007BB16Record@@QAE@XZ,,0x0007BB16,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,non-virtual two-string record teardown +0x08 then +0x00
+??1BfmeStringRecord000B94D2@@QAE@XZ,,0x000B6CF1,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,two-string record teardown +0x04 then +0x00; pinned name
+??1Rva000BEDF0Record@@QAE@XZ,,0x000BEDF0,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,AsciiString vector +0x04 then string +0x00
+??1Rva000543F5Record@@QAE@XZ,,0x000543F5,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,wide string +0x04 then narrow +0x00
