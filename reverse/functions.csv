@@ -37673,3 +37673,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?xfer@HealCrateCollide@@MAEXPAVXfer@@@Z,,0x004BD2F9,27,Code/GameEngine/Source/GameLogic/Object/Collide/CrateCollide/HealCrateCollideXfer.cpp,matched,slot3 of 6 CrateCollide vtables; Version1 plus base CrateCollide xfer
 ?Rva0007E2FACopy@@YAPAPAXPAPAX00ABU__false_type@_STL@@@Z,,0x0007E2FA,38,Code/GameEngine/Source/Common/Rva0007E2FACopy.cpp,matched,chain copy walk via rowed Rva00087A5CCopy
 ?rva0007E02A@Rva0007E02A@@QAEPAXPAX@Z,,0x0007E02A,16,Code/GameEngine/Source/Common/Rva0007E02AThunk.cpp,matched,honest thiscall forwarder to slot3 returning out
+?rva003FF145@GameSlot@@QBEHPBUBfmeNetAddress@@@Z,,0x003FF145,32,Code/GameEngine/Source/GameNetwork/GameInfoPlayerCounts.cpp,matched,GameSlot state 6 plus BfmeNetAddress pin 0x248CBF gap between isAI and isObserver

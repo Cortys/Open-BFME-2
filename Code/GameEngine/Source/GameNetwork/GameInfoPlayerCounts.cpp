@@ -34,12 +34,20 @@ enum
 	PLAYERTEMPLATE_OBSERVER = -2
 };
 
+struct BfmeNetAddress
+{
+	bool Rva00248CBF(const BfmeNetAddress *other) const;
+	unsigned int m_ip;
+	unsigned short m_port;
+};
+
 class GameSlot
 {
 public:
 	virtual void reset();
 	bool isOccupied() const;
 	bool isAI() const;
+	Int rva003FF145(const BfmeNetAddress *other) const;
 	bool isObserver() const;
 	bool isOpen() const { return m_state == SLOT_OPEN; }
 	Int getPlayerTemplate() const { return m_playerTemplate; }
@@ -48,7 +56,9 @@ private:
 	Int m_state;                    // +0x04
 	char m_pad08[0x10];             // +0x08
 	Int m_playerTemplate;           // +0x18
-	char m_pad1C[0x188];            // +0x1C
+	char m_pad1C[0x1C];             // +0x1C..+0x37
+	BfmeNetAddress m_addr38;        // +0x38
+	char m_pad40[0x164];            // +0x40..+0x1A3
 	unsigned char m_occupancy;      // +0x1A4
 };
 
@@ -76,6 +86,13 @@ bool GameSlot::isAI() const
 {
 	return m_state == SLOT_EASY_AI || m_state == SLOT_MED_AI
 		|| m_state == SLOT_BRUTAL_AI || m_state == SLOT_AI_5;
+}
+
+Int GameSlot::rva003FF145(const BfmeNetAddress *other) const
+{
+	if (m_state == SLOT_PLAYER && m_addr38.Rva00248CBF(other))
+		return 1;
+	return 0;
 }
 
 // ?isObserver@GameSlot@@QBE_NXZ
