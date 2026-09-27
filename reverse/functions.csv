@@ -38985,3 +38985,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?remove@Dict@@QAE_NH@Z,,0x003137A8,70,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,ZH Dict.cpp remove donor with ensureUnique and sortPairs
 ?copyPairFrom@Dict@@QAEXABV1@H@Z,,0x003137EE,82,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,ZH Dict.cpp copyPairFrom donor with setPrep remove
 ?GadgetListBoxGetSelected@@YAXPAVGameWindow@@PAH@Z,,0x00324773,37,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 GadgetListBoxGetSelected donor 0x4018 via TheWindowManager slot 0xE8
+?GadgetListBoxSetSelected@@YAXPAVGameWindow@@H@Z,,0x00324798,38,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 GadgetListBoxSetSelected single-index donor 0x4017 via slot 0xE8

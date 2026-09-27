@@ -199,3 +199,14 @@ void GadgetListBoxGetSelected(GameWindow *listbox, Int *selectList)
 		return;
 	TheWindowManager->winSendSystemMsg(listbox, 0x4018, 0, (int)selectList);
 }
+
+// ?GadgetListBoxSetSelected@@YAXPAVGameWindow@@H@Z, retail 0x00324798, 38 bytes.
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp
+// GadgetListBoxSetSelected single-index overload: null-guards the listbox then
+// winSendSystemMsg 0x4017 with the index address and count 1 through slot +0xE8.
+void GadgetListBoxSetSelected(GameWindow *listbox, Int selectIndex)
+{
+	if (listbox == 0)
+		return;
+	TheWindowManager->winSendSystemMsg(listbox, 0x4017, (int)&selectIndex, 1);
+}
