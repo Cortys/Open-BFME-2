@@ -38072,3 +38072,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0033F852@Rva0033F852@@QAEXPBUSource0033F852@@@Z,,0x0033F852,21,Code/GameEngine/Source/Common/Rva0033F852Setter.cpp,matched,m40 equals src m34 or 0 caller 0x3511E3 twin 0x33F83D
 ?Rva0033FA64Do@@YAXPBVObject0033FA64@@@Z,,0x0033FA64,21,Code/GameEngine/Source/Common/Rva0033FA64Do.cpp,matched,Object 0x258 AIUpdate slot142 with 5 callers 0x34F004
 ?setState@GameSlot@@QAEXW4SlotState@@VUnicodeString@@PBUGameSlotConnectInfo@@@Z,,0x003FFC28,399,Code/GameEngine/Source/GameNetwork/GameSlotSetState.cpp,matched,BFME1 GameInfo.cpp donor with SLOT_PLAYER 6 and AI state 5 and template -2
+?clearSlotList@GameInfo@@QAEXXZ,,0x003FFDB7,67,Code/GameEngine/Source/GameNetwork/GameInfoClearSlotList.cpp,matched,BFME1 GameInfo.cpp clearSlotList with CLOSED and TheEmptyString
