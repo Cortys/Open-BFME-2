@@ -2177,3 +2177,5 @@ FUN_00947263	0x00547263	52	blocked	free armor range check tail merge prevents se
 ?didExit@Object@@QAE_NPAVPolygonTrigger@@@Z	0x0028D757	63	partial	twin of didEnter retail edx-for-this vs ours esi-for-this t=20 model=muse score=0.93 stash=reverse/attempts/0x0028d757.cpp
 ?rva005C65F1@Rva005C65F1@@QAEXXZ	0x005C65F1	75	partial	add edi eax vs add eax edi and cmp edi 2 vs cmp eax 2; only register allocation differs t=25 model=muse-109a score=0.93 stash=reverse/attempts/0x005c65f1.cpp
 ??1Rva00524A4C@@UAE@XZ	0x00524BB4	75	blocked	EH states 1 plus byte0 vs single and0; vptr reloc ok t=15 model=muse-361d
+FUN_00924e95	0x00524E95	10	blocked	prolog-only 10B with no ret plus EH_prolog and codeaddr operand t=5 model=muse
+FUN_00925e55	0x00525E55	435	blocked	435B two-loop GameMessage plus InGameUI builder exceeds 30min box t=5 model=muse
