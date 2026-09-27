@@ -38138,3 +38138,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002A9EFB@Rva002A9EFB@@QAEXH@Z,,0x002A9EFB,20,Code/GameEngine/Source/Common/Rva002A9EFBSub.cpp,matched,unlock saturated subtract with zero clamp
 ??0Rva0033F33D@@QAE@PAVStateMachine@@@Z,,0x0033F33D,33,Code/GameEngine/Source/Common/Rva0033F33DCtor.cpp,matched,State hash 0x6D9C1CB9 vtable 0x810EE0 zero 0x20
 ??0Rva0033F6DA@@QAE@PAVStateMachine@@@Z,,0x0033F6DA,33,Code/GameEngine/Source/Common/Rva0033F6DACtor.cpp,matched,State hash 0xEBE7A650 vtable 0x811740 zero 0x20 twin F33D
+??0Rva0033FC42@@QAE@PAVStateMachine@@@Z,,0x0033FC1B,33,Code/GameEngine/Source/Common/Rva0033FC42Ctor.cpp,matched,State hash 0x7E4CE41F vtable 0x811DB0 ctor of FC42
