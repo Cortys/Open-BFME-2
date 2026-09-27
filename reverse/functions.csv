@@ -37743,3 +37743,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva00345CAB@@UAE@XZ,,0x00345CAB,79,Code/GameEngine/Source/Common/Rva00345CABDtor.cpp,matched,vtable 0x00813548 vf0free plus54 base 0x33FF2B caller 0x349FF8
 ??_GRva00345CAB@@UAEPAXI@Z,,0x00349FF5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x00813548 base 0x345CAB delete 0x2FD60
 ??_GRva0033FF2B@@UAEPAXI@Z,,0x0034280A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x00810DE8 base 0x33FF2B delete 0x2FD60
+??1Rva00340D1F@@UAE@XZ,,0x00340D1F,75,Code/GameEngine/Source/Common/Rva00340D1FDtor.cpp,matched,vtable 0x008121E8 if-free plus5C base 0x33FF2B caller 0x345BB6
