@@ -62,3 +62,8 @@ template _STL::vector<RvaPair00257544>::~vector();
 struct BfmeStringHeadRecord160 { AsciiString m_head; int m_tail[39]; public: ~BfmeStringHeadRecord160(); };
 template _STL::vector<BfmeStringHeadRecord160>::~vector();
 
+// ??1?$vector@URva0048130E@@V?$allocator@URva0048130E@@@_STL@@@_STL@@QAE@XZ @0x004815AE 63B.
+// ProductionQueueHordeContainModuleData +0xD4 member vector: retail destroys the range through the rowed 8-byte filter-plus-string _Destroy at 0x00481595 then frees storage via 0x30830 (EH states 0/-1); called by the ModuleData dtor at 0x004817B6. Element is Rva0048130E whose dtor is rowed at 0x0048130E; size-free per the family rule.
+struct Rva0048130E { public: ~Rva0048130E(); };
+template _STL::vector<Rva0048130E>::~vector();
+
