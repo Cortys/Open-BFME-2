@@ -4,7 +4,7 @@
 // Installs no derived vptr (novtable view like Helix 0x001E116E sibling).
 // Destroys _STL::vector<AsciiString> at +0x184 via rowed 0x0002CC70 then eight
 // AsciiString/StringBase<char> members at +0x170 down to +0x154 via folded
-// 0x00036410 then calls base ??1TransportContainModuleData@@UAE@XZ at
+// 0x00036410 then calls base ??1Rva001DFA48Owner@@UAE@XZ at
 // 0x001DFA48. Identity: ctor 0x001E2FCE installs vtable 0x007DD9B4 whose slot 0
 // ??_G 0x001E32B7 calls here; FieldParse table 0x00BDCEB8 fixes the eight
 // strings; news 0x190 fixes the extent.
@@ -32,10 +32,10 @@ public:
 	~AsciiString();
 };
 
-class TransportContainModuleData
+class Rva001DFA48Owner
 {
 public:
-	virtual ~TransportContainModuleData();
+	virtual ~Rva001DFA48Owner();
 
 private:
 	unsigned char unknownBaseTail[0x144];
@@ -50,7 +50,7 @@ struct RGBColor
 
 // The target dtor has no derived-vptr store. novtable keeps this view's dtor
 // body aligned with that fact; no constructor is emitted from this file.
-class __declspec(novtable) BuffNuggetFXNugget : public TransportContainModuleData
+class __declspec(novtable) BuffNuggetFXNugget : public Rva001DFA48Owner
 {
 public:
 	virtual ~BuffNuggetFXNugget();
@@ -73,7 +73,7 @@ private:
 	_STL::vector<AsciiString> m_member; // +0x184
 };
 
-typedef char BaseExtent[sizeof(TransportContainModuleData) == 0x148 ? 1 : -1];
+typedef char BaseExtent[sizeof(Rva001DFA48Owner) == 0x148 ? 1 : -1];
 typedef char AsciiExtent[sizeof(AsciiString) == 4 ? 1 : -1];
 
 BuffNuggetFXNugget::~BuffNuggetFXNugget() {}
