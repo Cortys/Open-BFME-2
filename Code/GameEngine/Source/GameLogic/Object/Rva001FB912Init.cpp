@@ -4,6 +4,7 @@
 // ?Rva001FBC69Init@@YAXPAX@Z @0x001FBC69 38B
 // ?Rva001FC010Init@@YAXPAX@Z @0x001FC010 38B
 // ?Rva001FC37DInit@@YAXPAX@Z @0x001FC37D 38B
+// ?Rva001FC477Init@@YAXPAX@Z @0x001FC477 38B
 // Free __cdecl init storing FXParticleSystem GetKey(8) token at +0x80 and parse
 // 0x001FA8DD at +0x84 with zeros at +0x88 and +0x8C. Evidence: push 8 GetKey
 // rowed 0x003AFD16; stores mirror 0x001FBAB2 at +0x70 and 0x001FBC69 at +0x60;
@@ -126,4 +127,26 @@ void __cdecl Rva001FC37DInit(void *obj_)
     obj->token = key;
     obj->parse = (void *)Rva001F8607Parse;
     Rva001FC010Init(obj_);
+}
+
+void __cdecl Rva001F8599Parse();
+
+struct Obj30
+{
+    char pad[0x30];
+    const char *token;
+    void *parse;
+    void *userdata;
+    int offset;
+};
+
+void __cdecl Rva001FC477Init(void *obj_)
+{
+    Obj30 *obj = (Obj30 *)obj_;
+    const char *key = FXParticleSystem::GetKey((FXParticleSystem::ModuleCategory)3);
+    obj->userdata = 0;
+    obj->offset = 0;
+    obj->token = key;
+    obj->parse = (void *)Rva001F8599Parse;
+    Rva001FC37DInit(obj_);
 }
