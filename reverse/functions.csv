@@ -37285,3 +37285,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva00465124Base@@UAEPAXI@Z,,0x00465221,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor slot0 vtable 0xC43658 via rowed UAE dtor
 ??_GRva004930A0@@UAEPAXI@Z,,0x00493333,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-8fbc.cpp,matched,scalar deleting dtor via rowed UAE dtor at 0x49334F
 ??_G?$DynamicVectorClass@PAUW3dAggregateSubobjectStruct@@@@UAEPAXI@Z,,0x001A3E90,30,Code/Libraries/Source/WWVegas/WW3D2/agg_def.cpp,matched,slot0 vtable BD6C3C ctor 1A3ED0 calls rowed 1A39D0 gap agg_def
+??_G?$DynamicVectorClass@PAVRender2DClass@@@@UAEPAXI@Z,,0x001A3EB0,30,Code/Libraries/Source/WWVegas/WW3D2/render2dsentence.cpp,matched,calls true dtor pinned 1A3AB0 gap agg_def
