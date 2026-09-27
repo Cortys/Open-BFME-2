@@ -38130,3 +38130,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva0026EE11@Rva0026EE11@@QAEXPAVXfer@@@Z,,0x0026EE11,31,Code/GameEngine/Source/Common/System/XferUpgradeStatusTransfer.cpp,matched,Chain of 0x0026EDC4 Version1 plus status helper status at +8 both callees rowed
 ?unlinkUpgrade@UpgradeCenter@@IAEXPAVUpgradeTemplate@@@Z,,0x0026EEF2,44,Code/GameEngine/Source/Common/System/UpgradeCenterFindUpgradeByKey.cpp,matched,ZH unlink verbatim next 0x64 prev 0x68 head 0x0C caller 0x0026FA71
 ?getRelationship@Player@@QBE?AW4Relationship@@PBV1@@Z,,0x002AC3E0,69,Code/GameEngine/Source/Common/RTS/PlayerGetRelationship.cpp,matched,Player Player overload via BFME1 Team donor plus 13 callers plus ALLIES cmp
+?rva000309B0@Rva000309B0@@QAEXXZ,,0x000309B0,21,Code/GameEngine/Source/Common/Rva000309B0TlsSet.cpp,matched,TLS index 0xDB35A4 TlsSetValue IAT callers 0x62265B 0x62214F
