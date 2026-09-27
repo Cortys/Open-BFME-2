@@ -62,6 +62,7 @@ static Bool greater_than(PairObjectIDAndUInt a, PairObjectIDAndUInt b)
 	return a.second > b.second;
 }
 
+#pragma optimize("s", on)
 PartitionSolver::PartitionSolver(const EntriesVec& elements, const SpacesVec& spaces, SolutionType solveHow)
 {
 	m_data = elements;
@@ -72,7 +73,9 @@ PartitionSolver::PartitionSolver(const EntriesVec& elements, const SpacesVec& sp
 	m_currentSolutionLeftovers = 0;
 	//
 }
+#pragma optimize("", on)
 
+// ?solve@PartitionSolver@@ present-unmatched
 void PartitionSolver::solve(void)
 {
 	m_bestSolution.clear();
@@ -124,6 +127,7 @@ void PartitionSolver::solve(void)
 	}
 }
 
+// ?getSolution@PartitionSolver@@ present-unmatched
 const SolutionVec& PartitionSolver::getSolution( void ) const
 {
 	return m_bestSolution;
