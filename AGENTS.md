@@ -34,7 +34,8 @@ An explicit request or assigned lane overrides the queue:
    recovery. Prune what `./build.sh` refuses to a fixpoint, recording the
    refusal in `reverse/place_denylist.txt`.
 
-A tier reporting zero candidates is exhausted, not broken. Regenerate with
+A tier reporting zero candidates exhausts only that search method. In particular,
+an empty byte-match queue does not exhaust reusable reference source. Regenerate with
 `tools/drift_classify.py`, `tools/anchor_unclaimed.py`, `./build.sh`.
 
 Finish or revert each body or homogeneous trivial batch before the next.
@@ -56,6 +57,22 @@ Do not spend unbounded effort forcing a weak reference. Once evidence no longer 
 
 Re-run sweeps as new dependencies, identities, compiler configurations, and sibling matches land; previously unproductive reference units may become viable later.
 
+## Compile BFME 1 donors beyond byte matches
+
+`bfme1_sweep.py` compares retail bytes; it cannot discover every reusable source
+body. Before treating BFME 1 references as exhausted, compile plausible clean C++
+donor units under BFME 2 settings and search their emitted bodies in `game.dat`,
+even when the original BFME 1 bytes have no match. Prioritize supported identities
+and siblings of successful transfers; exclude dumps and retired or refuted
+candidates unless new evidence addresses the earlier finding.
+
+Use isolated scratch trials and existing compilation/placement tools, starting
+with settings from matched BFME 2 siblings. Keep useful near matches with their
+donor revision, flags, dependencies and failure evidence. Cache trials against
+those inputs and retry affected units when they change. A placement remains a
+candidate until target identity, boundaries, relocations and full body bytes
+are verified through the normal matching pipeline.
+
 ## Investigate shared deltas first
 
 When multiple failures suggest the same layout, offset, callee, compiler,
@@ -69,35 +86,40 @@ affected units after the dependency is resolved.
 
 ## BFME 1 reference freshness
 
-When initializing `reference/open-bfme-1`, and before BFME 2 work if the last
-successful check is missing or over 24 hours old, fetch official
-`Open-BFME/Open-BFME-1` `master` and update the clean submodule to that HEAD.
-Compare commits, not commit dates: upstream need not have a commit today.
-Preserve dirty or unpublished submodule work and report any blocked update.
-Record the successful check time locally in ignored `build/bfme1-last-check.txt`;
-do not repeat the check per transfer. After a pointer change, run BFME 2's full
-build verification and include the verified pointer in the next commit batch.
+Use the existing `reference/open-bfme-1` submodule for both building and donor
+discovery. When initializing it, and before BFME 2 work if the last successful
+check is missing or over 24 hours old, fetch official `Open-BFME/Open-BFME-1`
+`master`. Compare commit IDs; preserve dirty or unpublished submodule work.
 
-**The pointer bump to current upstream is blocked; do not retry it without
-fixing this first.** Upstream restructured its tree — `Code/` -> `game/`,
-`reference/` -> `inputs/reference/`, `build/toolchains/` -> `inputs/toolchains/`,
-`baselines/` -> `inputs/baselines/`, `vendor/` -> `inputs/vendor/`. BFME 2's own
-tooling is layout-agnostic and survives the move (`build.bfme1_subtree()` probes
-both spellings), but **626 byte-matched sources under `Code/` name the submodule's
-old `Code/` prefix in their `// cl:` provenance line**. Those `/I` directories
-silently stop existing after the bump: `cl` does not error on a missing include
-directory, so 6070 of 6071 TUs still compiled and only `WWMath/matrix3d.cpp`
-failed outright (its shim's `always.h` had no other source). The rest resolved
-their headers from somewhere else, unverified. Rewriting the 626 provenance lines
-to `game/` is not a free rename either: it would re-point them at headers carrying
-1785 commits of drift, changing codegen for 626 already-matched TUs. Land a
-verified path-migration plan for those `// cl:` lines before moving the pointer.
+Complete the current layout migration once: reconcile the old `Code/` and
+`reference/` paths with upstream's `game/` and `inputs/reference/`, including
+source `// cl:` flags and other moved build inputs. Use the existing layout
+resolver where applicable and check the resolved directories and headers. MSVC
+silently ignores missing include directories, so compilation alone does not
+prove the intended headers were used. Verify and commit this repair with the
+updated pointer; repeat path migration only if upstream changes its layout again.
 
-**Current state:** upstream reorganized its tree in `904cff1` (`Code/` ->
-`game/`, `reference/` and `vendor/` -> `inputs/`) to add WorldBuilder as a
-second target. Our sources still use the old paths, so the pointer is held at
-`79ae05a`, the last old-layout commit. Until the migration lands, don't bump
-it and skip the 24-hour freshness check. `bfme1_sweep.py` reads either layout.
+For routine submodule updates:
+
+1. Record the previous verified pointer and the actual checkout revision. Update
+   the clean checkout to upstream HEAD, preserving enough information to compare
+   the old and new inputs at the same BFME 2 revision.
+2. Run BFME 2's full byte verification with valid dependency caches. Compare
+   failures against the previous verified inputs under the same conditions;
+   repair update regressions and report pre-existing failures separately. Never
+   weaken verification or substitute headers silently to make an update pass.
+3. Refresh the donor byte sweep and compile trials affected by changed source,
+   headers or compiler settings. Record the donor revision with cached results;
+   discard or regenerate results whose inputs no longer agree.
+4. Include the verified submodule pointer and any required repairs in the next
+   commit batch. Advancing the local checkout alone does not update the pointer
+   other contributors receive.
+
+Record a successful check in ignored `build/bfme1-last-check.txt` only after
+verification, or when upstream is already at the verified pointer. Do not repeat
+the fetch per transfer. If an update is blocked, retain the last verified build
+inputs and report the exact blocker and attempted repair; do not mark the update
+successful or suspend future freshness checks indefinitely.
 
 ## Work the file, not the row
 
