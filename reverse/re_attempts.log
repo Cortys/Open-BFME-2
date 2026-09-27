@@ -2262,3 +2262,4 @@ FUN_00668B79	0x00268B79	92	blocked	push0 to findObjectByID always null makes loo
 ?rva00056DA2@Rva00056DA2@@QAEXXZ	0x00056DA2	73	partial	test-vs-sar plus missing dead mov ecx esi before free t=25 model=muse-f961 score=0.93 stash=reverse/attempts/0x00056da2.cpp
 FUN_008c71d3	0x004C71D3	68	blocked	__unguarded_partition bit_iter with fn-ptr pred plus Bit_iter swap; needs predicate identity and bit-proxy modeling t=12 model=muse-dac7
 FUN_00612858	0x00212858	199	blocked	hashtable resize with AsciiString hash and shared _M_next_size needs type-specific hash functor reconstruction t=12 model=muse-6665
+?rva00625790@Rva00625790@@QAEXPAV1@@Z	0x00625790	46	blocked	append via +4 tail walk needs esi+push+leaebx alignment and mov eax ecx for this. O1 O2 G7 with self and next vars give eax-ecx cmp-mem loop without esi. t=12 model=muse-d648

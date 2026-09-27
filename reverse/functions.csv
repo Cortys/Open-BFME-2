@@ -39464,3 +39464,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Release_Bone@HTreeClass@@QAEXH@Z,,0x001661F0,70,Code/Libraries/Source/WWVegas/WW3D2/HTreeClassReleaseBone.cpp,matched,pin from Animatable forwarder 0x1A4EE0 and vector erase via 0x161350
 ?push_back@?$list@UBfmePod264@@V?$allocator@UBfmePod264@@@_STL@@@_STL@@QAEXABUBfmePod264@@@Z,,0x00289F2C,26,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_list_bodies.cpp,matched,twin of rowed BfmePod196 push_back same TU via BfmePod264 insert
 ?rva00289218@Rva00289218@@QAEXPBVModuleData@@@Z,,0x00289218,16,Code/Libraries/Source/WWVegas/WWLib/Rva00289218PushBack.cpp,matched,forwards to rowed ModuleFactory vector push_back 0x4DFCB0 callers 0x2892CF 0x52D0F8
+??1Rva004E3184@@UAE@XZ,,0x004E3184,201,Code/GameEngine/Source/Common/Rva004E3184Dtor.cpp,matched,ModuleData dtor with AsciiStrings plus vector restores BBB554
