@@ -39872,3 +39872,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva00322699@@YAXPAVGameWindow@@H@Z,,0x00322699,38,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva00322699.cpp,matched,OR Int into userdata plus 0x0C copy to child plus 0x14 callers pass 4
 ?GadgetComboBoxSetItemData@@YAXPAVGameWindow@@HPAX@Z,,0x0032295A,39,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor SetItemData GCM_SET_ITEM_DATA 0x402b 37 callers
 ?GadgetComboBoxSetSelectedPos@@YAXPAVGameWindow@@H_N@Z,,0x00322931,41,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor SetSelectedPos GCM_SET_SELECTION 0x402d 37 callers
+?GadgetComboBoxGetItemData@@YAPAXPAVGameWindow@@H@Z,,0x00322981,48,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor GetItemData GCM_GET_ITEM_DATA 0x402a 26 callers
