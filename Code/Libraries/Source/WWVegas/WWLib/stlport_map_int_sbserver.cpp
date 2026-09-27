@@ -19,6 +19,7 @@ struct SBServer
     __declspec(noinline) ~SBServer();
     SBServer &operator=(const SBServer &src);
     void Rva005E3B9E();
+    void Rva005E3E8A(void *newHandle);
 };
 
 __declspec(noinline) SBServer::SBServer(const SBServer &src)
@@ -58,6 +59,19 @@ void SBServer::Rva005E3B9E()
         char *obj = (char *)((void **)slot)[1] + (unsigned int)handle;
         ReleaseTreeHintRef00217D4C((TargetRef00217D4C *)obj);
         m_handle = 0;
+    }
+}
+
+void SBServer::Rva005E3E8A(void *newHandle)
+{
+    if (newHandle != m_handle) {
+        Rva005E3B9E();
+        m_handle = newHandle;
+        if (newHandle != 0) {
+            void *slot = *(void **)newHandle;
+            char *obj = (char *)((void **)slot)[1] + (unsigned int)newHandle;
+            ++*(int *)(obj + 4);
+        }
     }
 }
 

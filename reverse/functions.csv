@@ -37021,3 +37021,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva001DBAA4@@QAE@XZ,,0x001DBAA4,31,Code/GameEngine/Source/Common/Rva001DBAA4Ctor.cpp,matched,vtable 0x007DBC10 shared with base dtor 0x001DBAC3 and 12 family callers
 ?Rva005E3B9E@SBServer@@QAEXXZ,,0x005E3B9E,26,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,SBServer release and clear via rowed 0x0007DEEF called by 0x005E3E8A
 ?rva005890A6@Rva005890A6@@QAEX_N@Z,,0x005890A6,71,Code/GameEngine/Source/Common/Rva005890A6Pause.cpp,matched,pause-like helper whole+0x24 caller 0x589628 vcall slot2 frame+0x40 donor pauseCountdown
+?Rva005E3E8A@SBServer@@QAEXPAX@Z,,0x005E3E8A,38,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_sbserver.cpp,matched,SBServer assign handle via rowed release-clear and AddRef
