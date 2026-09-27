@@ -37232,3 +37232,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@W3DProjectileStreamDraw@@MAEXPAVXfer@@@Z,,0x000D11A6,44,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DProjectileStreamDrawXfer.cpp,matched,slot 3 of 0x007CE010 via ZH donor xfer Version 1 1 plus base
 ?rva00111D65@LookupTablePostEffect@@UAEXXZ,,0x00111D65,53,Code/GameEngineDevice/Source/W3DDevice/GameClient/LookupTablePostEffectSlot3.cpp,matched,vtable 0xBCFAC8 slot3 guarded holder release via rowed callees
 ?Rva006DE210@Rva006DE2B0@@UAEPAXHABVEAStringC@@@Z,,0x006DE210,34,Code/GameEngine/Source/Common/Rva006DE2B0Slot7.cpp,matched,slot7 of vtable 0x008EB150 via rowed EAStringC compare
+??0Rva0055EFE1@@QAE@I@Z,,0x0055EFE1,31,Code/GameEngine/Source/Common/Rva0055EFE1Ctor.cpp,matched,derived of rowed Rva00563FE1 via placement new plus same two vftables
