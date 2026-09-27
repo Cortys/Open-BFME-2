@@ -2244,3 +2244,4 @@ FUN_00ae3810	0x006E3810	191	blocked	pool enqueue with 2 virtuals needs bool gett
 ?Rva002B2FF4Swap@@YAXAAVRva002B2F97@@0@Z	0x002B2FF4	85	partial	esi vs eax allocation plus push esi pop esi vs reload t=15 model=muse-2660 score=0.93 stash=reverse/attempts/0x002b2ff4.cpp
 ?Rva0040D66BFunc	0x0040D66B	29	blocked	5 pushes to 3arg copy_backward 0040D251 plus own 4arg caller mismatch t=10 model=muse-2660
 ??0Rva004D759C@@QAE@PAVObject@@VAsciiString@@_N@Z	0x004D79E1	120	partial	ordering only plus20 plus1c early in retail late in ours t=25 model=muse-7c2e score=0.93 stash=reverse/attempts/0x004d79e1.cpp
+FUN_005ead69	0x001EAD69	107	blocked	EH INI token push_front with 0 callers identity unproven list at 0x138 t=15 model=muse-71a4
