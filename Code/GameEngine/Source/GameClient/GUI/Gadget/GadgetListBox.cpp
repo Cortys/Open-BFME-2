@@ -263,3 +263,33 @@ void Rva0032434ASet(GameWindow *listbox, Int row, Int column, Int value)
 		return;
 	data->listData[row].cell[column].color = value;
 }
+
+// ?GadgetListBoxAddEntryImage@@YAHPAVGameWindow@@PBVImage@@HHHH_NH@Z, retail 0x00324380, 80 bytes.
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp
+// GadgetListBoxAddEntryImage 8-arg overload: builds the 28B AddMessageStruct
+// with type LISTBOX_IMAGE (2) and sends GLM_ADD_ENTRY 0x4011 through slot +0xE8.
+class Image;
+
+struct AddMessageStruct
+{
+	Int row;
+	Int column;
+	const void *data;
+	Int type;
+	Bool overwrite;
+	Int width;
+	Int height;
+};
+
+Int GadgetListBoxAddEntryImage(GameWindow *listbox, const Image *image, Int row, Int column, Int hight, Int width, Bool overwrite, Int color)
+{
+	AddMessageStruct addInfo;
+	addInfo.row = row;
+	addInfo.column = column;
+	addInfo.type = 2;
+	addInfo.data = image;
+	addInfo.overwrite = overwrite;
+	addInfo.height = hight;
+	addInfo.width = width;
+	return TheWindowManager->winSendSystemMsg(listbox, 0x4011, (int)&addInfo, color);
+}
