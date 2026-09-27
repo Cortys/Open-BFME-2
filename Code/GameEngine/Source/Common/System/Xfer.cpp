@@ -286,6 +286,14 @@ void Xfer::Version1()
     *this == version;
 }
 
+// Retail 0x00306A9B (12B): Version1-only DoXfer shared as slot 3 (offset 0x0C)
+// by 10+ FXParticleSystem ConcreteModule vtables (0x0081BAC0 and siblings).
+// Caller is FUN_004926EC at 0x000926FA. Ignores this.
+void __stdcall Rva00306A9BDoXfer(Xfer *xfer)
+{
+    xfer->Version1();
+}
+
 Xfer &Xfer::operator==(char &value)
 {
     XferData('byte', &value, sizeof(char));

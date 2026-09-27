@@ -38942,3 +38942,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?XferLivingWorldUniqueID@@YAXPAVXfer@@PAH@Z,,0x003060E2,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,LivingWorldUniqueID string 0x00807CE0
 ?XferRespawnModeType@@YAXPAVXfer@@PAH@Z,,0x003060FA,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,RespawnModeType string 0x00807CF4
 ?XferSiegeTypeEnum@@YAXPAVXfer@@PAH@Z,,0x00306112,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,SiegeTypeEnum string 0x00807D04
+?Rva00306A9BDoXfer@@YGXPAVXfer@@@Z,,0x00306A9B,12,Code/GameEngine/Source/Common/System/Xfer.cpp,matched,DoXfer slot 3 shared Version1-only caller 0x000926FA
