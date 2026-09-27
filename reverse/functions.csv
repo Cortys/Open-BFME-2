@@ -37943,3 +37943,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??4Rva005EEFD2@@QAEAAV0@ABV0@@Z,,0x005EEFD2,46,Code/GameEngine/Source/Common/Rva005EEFD2Assign.cpp,matched,refcounted holder assign callers copy arrays
 ?Rva0070B4F0GetString@@YAPAVEAStringC@@H@Z,,0x0070B4F0,58,Code/Libraries/Source/EA/Apt/Rva0070B4F0GetString.cpp,matched,StringPool constant accessor via IsEmpty assert at StringPool.inl 42
 ?getUnitNamed@ScriptEngine@@QAEPAVObject@@PAVParameter@@@Z,,0x003588E7,76,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineGetUnitNamed.cpp,matched,ScriptEngine slot 26 Parameter overload with ObjectID at 0x24 and string at 0x10 via rowed findObjectByID and pinned lookupUnitByValue
+??R?$hash@VAsciiString@@@rts@@QBEIABVAsciiString@@@Z,,0x0002BF8C,89,Code/GameEngine/Source/Common/System/RtsAsciiStringHash.cpp,matched,rts AsciiString case-insensitive hash via lower plus stl hash
