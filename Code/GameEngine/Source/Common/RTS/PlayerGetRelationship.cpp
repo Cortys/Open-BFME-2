@@ -30,12 +30,14 @@ struct RetailPlayerRelationMap
 };
 
 class Team;
+class Object;
 class Player
 {
 public:
 	int getPlayerIndex() const { return m_playerIndex; }
 	Relationship getRelationship(const Player *that) const;
 	Relationship getRelationship(const Team *that) const;
+	Relationship getRelationship(const Object *that) const;
 
 private:
 	char m_pad00[0x54];
@@ -53,6 +55,12 @@ public:
 private:
 	char m_pad00[0x34];
 	int m_key34; // +0x34
+};
+
+class Object
+{
+public:
+	Player *getControllingPlayer() const;
 };
 
 Relationship Player::getRelationship(const Player *that) const
@@ -83,5 +91,12 @@ Relationship Player::getRelationship(const Team *that) const
 		}
 		return getRelationship(that->getControllingPlayer());
 	}
+	return NEUTRAL;
+}
+
+Relationship Player::getRelationship(const Object *that) const
+{
+	if (that)
+		return getRelationship(that->getControllingPlayer());
 	return NEUTRAL;
 }
