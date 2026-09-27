@@ -6078,3 +6078,4 @@ _ConvertBoolTrees,0x001BBD60
 ??1Rva0060D031Member@@QAE@XZ,0x0060D031,Target direct call from XferSave field at +0x18; opaque helper identity
 ??1Rva0060CC99Member@@QAE@XZ,0x0060CC99,Target direct call from XferSave field at +0x2C; opaque helper identity
 ?invoke@Rva0038BDEEReceiver@@QAEXPAX@Z,0x0038BDEE,Target direct call from stopHostingAlready at 0x0038D53B; receiver identity opaque
+?get@Rva00091A56DwordField@@QBEHXZ,0x00091A56,Opaque alias for Object::rva0028AF65 target call at 0x28AF6B; +0x24 getter body is independently shared with rowed NetWrapperCommandMsg::getDataOffset; does not imply shared class identity

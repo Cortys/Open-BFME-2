@@ -2,12 +2,14 @@
 // Object-side ammo-availability gate called by Weapon::isAmmoReady (retail
 // 0x002CC3FF). The body advances this by 0x330 and null-checks a pointer the
 // callee fetches at +0x24 there; both identities are unproven so both names
-// are address-derived. The callee stays a pin: it is a 4-byte shared getter
-// whose true owner is still open.
+// are address-derived. The callee stays an opaque pin for this caller: its
+// four-byte body is also used by NetWrapperCommandMsg::getDataOffset, which
+// does not make the Object-side subobject a network command.
 typedef bool Bool;
 
-// Host of the +0x24 fetch at retail 0x00091A56 (matched as
-// Rva00091A56DwordField::get in Disp8DwordFieldGetters.cpp).
+// Host of the +0x24 fetch at retail 0x00091A56. One ledger body is retained
+// under the target-supported network identity; this alias preserves the
+// independently observed Object-side call without claiming a shared owner.
 class Rva00091A56DwordField
 {
 public:

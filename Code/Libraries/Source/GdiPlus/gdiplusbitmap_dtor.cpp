@@ -179,11 +179,11 @@ Status Image::GetPalette(ColorPalette *palette, INT size)
     return SetStatus(DllExports::GdipGetImagePalette(nativeImage, palette, size));
 }
 
-
-// 25 bytes, and unlike the FXParticleSystem folds this one is unambiguous:
-// the shape occurs ten times in .text but at exactly one function start, and
-// there at exactly this extent — RVA 0x0059B7CB, which Ghidra has as
-// FUN_0099b7cb and no ledger row claims. Present in retail; not yet pinned.
+// ?Image::Image present-unmatched
+// No target identity has been established for this SDK constructor.
+// The former 25-byte candidate at RVA 0x0059B7CB installs an unrelated
+// vtable at VA 0x00C70EBC. Its matching instruction shape does not prove
+// GDI+ ownership; it is recovered separately with an address-derived name.
 Image::Image(GpImage *nativeImage, Status status)
 {
     SetNativeImage(nativeImage);
