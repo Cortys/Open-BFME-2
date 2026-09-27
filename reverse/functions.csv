@@ -38065,3 +38065,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?xfer@Rva003ECD60Object@@QAEXPAVXfer@@@Z,,0x003ECBF8,136,Code/GameEngine/Source/GameLogic/Object/Update/Rva003ECD60Ctor.cpp,matched,heap xfer Version 1 1 plus 20-element helper plus Ascii Coord float uint bool proven by 0x3ECED5
 ??0Rva004D92FE@@QAE@XZ,,0x004D92FE,61,Code/GameEngine/Source/Common/Rva004D92FECtor.cpp,matched,honest Rva ctor via Coord3D global default
 ?rva004D9596@Rva004D9596@@QAE_NXZ,,0x004D9596,28,Code/GameEngine/Source/Common/Rva004D9596Check.cpp,matched,honest Rva predicate via AND-chain
+??0Rva0007671F@@QAE@XZ,,0x0007671F,22,Code/Libraries/Source/WWVegas/WWMath/Rva0007671FCtor.cpp,matched,4x0x10 Region2D array via vector iterator rowed callees
