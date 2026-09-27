@@ -44,3 +44,30 @@ bool Rva005E3B1A::rva005E3B1A(int key) const
 {
 	return m_ptr->m_inner->rva005F2278(key);
 }
+
+// ?rva005F2767@Rva005F2767@@QBE_NXZ, retail 0x005F2767, 12 bytes.
+// Bit-4 getter: m_ptr at this+4, flag bit at ptr+0x58 bit 4 (0x10).
+// Retail mov eax,[ecx+4] / mov al,[eax+0x58] / shr al,4 / and al,1 / ret.
+// Bitfield spelling reproduces the byte shr+and shape. Callees none.
+// Caller 0x005E5469. Honest address name.
+struct Rva005F2767Inner
+{
+	char m_pad[0x58];
+	unsigned char _lo:4;
+	unsigned char m_flag:1;
+	unsigned char _hi:3;
+};
+
+class Rva005F2767
+{
+public:
+	bool rva005F2767() const;
+private:
+	char m_pad2[0x4];
+	Rva005F2767Inner *m_ptr;
+};
+
+bool Rva005F2767::rva005F2767() const
+{
+	return m_ptr->m_flag;
+}
