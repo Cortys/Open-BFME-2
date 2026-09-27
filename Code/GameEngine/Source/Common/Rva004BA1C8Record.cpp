@@ -49,3 +49,9 @@ Rva004BA1C8 &Rva004BA1C8::operator=(const Rva004BA1C8 &other)
 	m_20 = other.m_20;
 	return *this;
 }
+
+void Rva004BA341DestroyRange(Rva004BA1C8 *first, Rva004BA1C8 *last)
+{
+	for (; first != last; ++first)
+		first->~Rva004BA1C8();
+}
