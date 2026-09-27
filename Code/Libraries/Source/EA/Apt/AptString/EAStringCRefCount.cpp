@@ -75,6 +75,7 @@ public:
 	int GetAt(int index) const;
 	bool IsEmpty() const;
 	bool IsEqualTo(const EAStringC *other) const;
+	bool rva006D30D0(const EAStringC *other) const;
 	unsigned short rva006D2F40() const;
 };
 
@@ -289,4 +290,17 @@ unsigned short EAStringC::rva006D2F40() const
 		}
 	}
 	return m_pData->m_uHash;
+}
+
+// ?rva006D30D0@EAStringC@@QBE_NPBV1@@Z, retail 0x006D30D0, 83 bytes.
+// EAStringC inequality: logical negation of IsEqualTo in this TU; the 83B
+// verbose bool shape (xor/test/sete/mov per return) is the inlined !IsEqualTo
+// (56B IsEqualTo at 0x006D3090 plus outer !), not a hand-rolled compare.
+// Callers at 0x006CC682/0x006EC123/0x006EE7F0/0x006EE808/0x006EEA9D/0x006EEB7E
+// pass string objects; neighbours IsEqualTo 0x006D3090 and compare family
+// at 0x006D3130 live in this cluster. Honest address name; identity is
+// class plus sibling pattern.
+bool EAStringC::rva006D30D0(const EAStringC *other) const
+{
+	return !IsEqualTo(other);
 }
