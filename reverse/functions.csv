@@ -37315,3 +37315,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??$__copy_ptrs@PAUBfmeAssignRecord84@@PAU1@@_STL@@YAPAUBfmeAssignRecord84@@PAU1@00U__false_type@0@@Z,,0x00586DBF,29,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_record_bodies.cpp,matched,stlport copy_ptrs wrapper via rowed copy 0x00586D2A
 ?rva00432F7D@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432F7D,42,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,prepend to head1 tail1 with count callers at 0x004CA10F and 0x004CA20C
 ?rva00106874@Rva00106874Host@@QAE_NXZ,,0x00106874,27,Code/GameEngine/Source/Common/Rva00106874Host.cpp,matched,frameless release slot2 plus bool ret callers 0x106A3F 0x106B68
+??1Rva00106874Host@@QAE@XZ,,0x00106A2D,47,Code/GameEngine/Source/Common/Rva00106874Host.cpp,matched,dtor calls release then AsciiString dtor same TU
