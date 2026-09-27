@@ -37723,3 +37723,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004D632D@Rva004D632D@@QBE?AVAsciiString@@XZ,,0x004D632D,33,Code/GameEngine/Source/Common/Rva004D632DGet.cpp,matched,honest-address AsciiString forwarder via TheGameState
 ?rva004D6BCD@Rva004D6BCD@@QBE_NPBVObject@@@Z,,0x004D6BCD,35,Code/GameEngine/Source/Common/Rva004D6BCDHas.cpp,matched,honest-address ScienceType vector contains check
 ?getObjectCount@GameLogic@@QAEIXZ,,0x0023CFCE,22,Code/GameEngine/Source/GameLogic/System/GameLogicGetObjectCount.cpp,matched,Object list count via +0xAC head and +0x8C next BFME1 donor
+?rva0023CFE4@GameLogic@@QAEXPAVXfer@@@Z,,0x0023CFE4,24,Code/GameEngine/Source/GameLogic/System/GameLogicRva0023CFE4.cpp,matched,GameLogic Version1 plus tail to +0x184 xfer via TheGameLogic caller
