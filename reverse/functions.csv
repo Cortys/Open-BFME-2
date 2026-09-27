@@ -37220,3 +37220,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?call@Rva001F4276@@QAEXHH@Z,,0x001F4276,36,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slotC two args via O1 flags
 ?call@Rva001F429A@@QAEXXZ,,0x001F429A,32,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slot4 guarded by byte1C via O1 flags
 ?call@Rva001F42BA@@QAEXH@Z,,0x001F42BA,32,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slotC one arg via O1 flags
+?rva0028D481@Object@@QBEHXZ,,0x0028D481,16,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,Object template plus108 bit7 reader callers 0x261250 0x2612D5 0x5399F1
