@@ -34,6 +34,7 @@ private:
 
 public:
 	const T *str() const { return m_data ? &m_data->text[0] : (const T *)L""; }
+	int compare(const StringBase &other) const;
 };
 
 class UnicodeString : private StringBase<wchar_t>
@@ -43,9 +44,10 @@ public:
 	UnicodeString(const wchar_t *text);
 	UnicodeString(const UnicodeString &other);
 	~UnicodeString() { releaseBuffer(); }
+	int compare(const UnicodeString &other) const { return StringBase<wchar_t>::compare(other); }
 };
 
-bool operator==(const UnicodeString &a, const UnicodeString &b);
+inline bool operator==(const UnicodeString &a, const UnicodeString &b) { return a.compare(b) == 0; }
 bool operator<(const UnicodeString &a, const UnicodeString &b);
 
 template class _STL::list<UnicodeString, _STL::allocator<UnicodeString> >;

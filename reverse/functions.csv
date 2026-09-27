@@ -36954,3 +36954,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@Rva004B4CDF@@MAEXPAVXfer@@@Z,,0x004B4F67,42,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004B4CDFXfer.cpp,matched,slot 3 of 0x00857C40 Version1 via 0x53EE bool at 0x20 via 0x90 base 0x004CE3F9
 ?rva002E718A@BFMEPathfinderMapShim@@QAEXPAVObject@@@Z,,0x002E718A,17,Code/GameEngine/Source/GameLogic/Object/PathfindShimAddObject.cpp,matched,adjacent sibling of addObjectToPathfindMap via same helper with 0 0 0
 ?rva004AB4AB@Rva004AB4AB@@QBE_NXZ,,0x004AB4AB,45,Code/GameEngine/Source/Common/Rva004AB4ABCheck.cpp,matched,bool check via findObjectByID and inverted isKindOf 0x45
+?remove@?$list@VUnicodeString@@V?$allocator@VUnicodeString@@@_STL@@@_STL@@QAEXABVUnicodeString@@@Z,,0x0043BF50,67,Code/Libraries/Source/WWVegas/WWLib/stlport_list_unicodestring_insert.cpp,matched,STLport 4.5.3 list UnicodeString remove 67B exact via inlined compare operator-eq
