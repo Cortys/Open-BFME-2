@@ -37,6 +37,7 @@
 
 DownloadManager *TheDownloadManager;
 
+// ??0DownloadManager@@ present-unmatched
 DownloadManager::DownloadManager()
 {
 	m_download = NEW CDownload(this);
@@ -72,6 +73,7 @@ DownloadManager::DownloadManager()
 
 }
 
+#pragma optimize("s", on)
 DownloadManager::~DownloadManager()
 {
 	delete m_download;
@@ -81,25 +83,31 @@ DownloadManager::~DownloadManager()
 		m_winsockInit = false;
 	}
 }
+#pragma optimize("", on)
 
+// ?init@DownloadManager@@ present-unmatched
 void DownloadManager::init( void )
 {
 }
 
+// ?reset@DownloadManager@@ present-unmatched
 void DownloadManager::reset( void )
 {
 }
 
+// ?update@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::update( void )
 {
 	return m_download->PumpMessages();
 }
 
+// ?downloadFile@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::downloadFile( AsciiString server, AsciiString username, AsciiString password, AsciiString file, AsciiString localfile, AsciiString regkey, Bool tryResume )
 {
 	return m_download->DownloadFile( server.str(), username.str(), password.str(), file.str(), localfile.str(), regkey.str(), tryResume );
 }
 
+// ?queueFileForDownload@DownloadManager@@ present-unmatched
 void DownloadManager::queueFileForDownload( AsciiString server, AsciiString username, AsciiString password, AsciiString file, AsciiString localfile, AsciiString regkey, Bool tryResume )
 {
 	QueuedDownload q;
@@ -114,6 +122,7 @@ void DownloadManager::queueFileForDownload( AsciiString server, AsciiString user
 	m_queuedDownloads.push_back(q);
 }
 
+// ?downloadNextQueuedFile@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::downloadNextQueuedFile( void )
 {
 	QueuedDownload q;
@@ -132,6 +141,7 @@ HRESULT DownloadManager::downloadNextQueuedFile( void )
 	}
 }
 
+// ?getLastLocalFile@DownloadManager@@ present-unmatched
 AsciiString DownloadManager::getLastLocalFile( void )
 {
 	char buf[256] = "";
@@ -172,6 +182,7 @@ HRESULT DownloadManager::OnError( Int error )
 	return S_OK;
 }
 
+// ?OnEnd@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::OnEnd()
 {
 	m_sawEnd = true;
@@ -179,6 +190,7 @@ HRESULT DownloadManager::OnEnd()
 	return S_OK;
 }
 
+// ?OnQueryResume@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::OnQueryResume()
 {
 	DEBUG_LOG(("DownloadManager::OnQueryResume()\n"));
@@ -186,6 +198,7 @@ HRESULT DownloadManager::OnQueryResume()
 	return DOWNLOADEVENT_RESUME;
 }
 
+// ?OnProgressUpdate@DownloadManager@@ present-unmatched
 HRESULT DownloadManager::OnProgressUpdate( Int bytesread, Int totalsize, Int timetaken, Int timeleft )
 {
 	DEBUG_LOG(("DownloadManager::OnProgressUpdate(): %d/%d %d/%d\n", bytesread, totalsize, timetaken, timeleft));

@@ -6102,3 +6102,5 @@ _ConvertBoolTrees,0x001BBD60
 ??$sort_heap@PAU?$pair@W4ObjectID@@I@_STL@@P6A_NU12@0@Z@_STL@@YAXPAU?$pair@W4ObjectID@@I@0@0P6A_NU10@1@Z@Z,0x0056730E,address read from the REL32 displacement at a placed body
 ??$swap@U?$pair@W4ObjectID@@I@_STL@@@_STL@@YAXAAU?$pair@W4ObjectID@@I@0@0@Z,0x005A9125,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ??$_Construct@UElem36@@U1@@_STL@@YAXPAUElem36@@ABU1@@Z,0x001610F0,address read from the REL32 displacement at a placed body
+??1?$list@VQueuedDownload@@V?$allocator@VQueuedDownload@@@_STL@@@_STL@@QAE@XZ,0x005BD090,address read from the REL32 displacement at a placed body
+??1CDownload@@QAE@XZ,0x006C9730,address read from the REL32 displacement at a placed body
