@@ -39396,3 +39396,7 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002D9608@Rva002D9608@@QAE_NXZ,,0x002D9608,26,Code/GameEngine/Source/Common/Rva002D9608AudioCheck.cpp,matched,honest address name audio gate TheAudio slot D0
 ?rva00268B04@Rva00268B04@@QAEXXZ,,0x00268B04,8,Code/GameEngine/Source/Common/Rva00268B04Forward.cpp,matched,honest address name tail jmp void forwarder to PoolMember
 ?rva00219B9E@Rva00219B9E@@QAEPAXI@Z,,0x00219B9E,44,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,unlock lane 12 callers need 216B vector accessor signed idiv
+?rva00219CDF@Rva00219B9E@@QAEHI@Z,,0x00219CDF,23,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,chain of 219B9E returns element plus 0x10
+?rva00219CF6@Rva00219B9E@@QAEHI@Z,,0x00219CF6,23,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,chain of 219B9E returns element plus 0x14
+?rva00219D0D@Rva00219B9E@@QAEHI@Z,,0x00219D0D,23,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,chain of 219B9E returns element plus 0x18
+?rva00219D24@Rva00219B9E@@QAEHI@Z,,0x00219D24,23,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,chain of 219B9E returns element plus 0x1C

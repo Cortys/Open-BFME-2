@@ -12,7 +12,14 @@
 // at 0x009FE344. Landing unblocks 24 functions (14 fully ready). No donor;
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
-struct Elem216 { char data[0xD8]; };
+struct Elem216 {
+    char m_00[0x10];
+    int m_10;
+    int m_14;
+    int m_18;
+    int m_1C;
+    char m_20[0xD8 - 0x20];
+};
 struct Vec216 {
     Elem216 *m_start;
     Elem216 *m_finish;
@@ -25,6 +32,10 @@ class Rva00219B9E {
     Vec216 m_vec;
 public:
     void *rva00219B9E(unsigned int index);
+    int rva00219CDF(unsigned int index);
+    int rva00219CF6(unsigned int index);
+    int rva00219D0D(unsigned int index);
+    int rva00219D24(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -33,4 +44,40 @@ void *Rva00219B9E::rva00219B9E(unsigned int index)
     if (index < count)
         result = &VecAt(&m_vec, index);
     return result;
+}
+// ?rva00219CDF@Rva00219B9E@@QAEHI@Z @0x00219CDF 23B: returns element+0x10 or 0.
+// Chain of 0x00219B9E; caller 0x0021A016 (outer 32B vector at +0x14C) needs it.
+int Rva00219B9E::rva00219CDF(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_10;
+    return 0;
+}
+// ?rva00219CF6@Rva00219B9E@@QAEHI@Z @0x00219CF6 23B: returns element+0x14 or 0.
+// Chain of 0x00219B9E; caller 0x0021A041 needs it.
+int Rva00219B9E::rva00219CF6(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_14;
+    return 0;
+}
+// ?rva00219D0D@Rva00219B9E@@QAEHI@Z @0x00219D0D 23B: returns element+0x18 or 0.
+// Chain of 0x00219B9E; caller 0x0021A06C needs it.
+int Rva00219B9E::rva00219D0D(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_18;
+    return 0;
+}
+// ?rva00219D24@Rva00219B9E@@QAEHI@Z @0x00219D24 23B: returns element+0x1C or 0.
+// Chain of 0x00219B9E; caller 0x0021A097 needs it.
+int Rva00219B9E::rva00219D24(unsigned int index)
+{
+    void *p = rva00219B9E(index);
+    if (p)
+        return ((Elem216 *)p)->m_1C;
+    return 0;
 }
