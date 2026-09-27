@@ -41,8 +41,8 @@ public:
 	PlayingAudio();
 	virtual ~PlayingAudio();
 
-	char m_unknown08[8];
 	void *m_milesHandle;
+	char m_unknown0c[8];
 	int m_type;
 	volatile PlayingStatus m_status;
 	char m_tail[0x34];

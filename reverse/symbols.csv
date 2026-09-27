@@ -5899,3 +5899,9 @@ _ConvertBoolTrees,0x001BBD60
 ??0PlayingAudio@@QAE@XZ,0x000A8D5F,Miles allocation at 0x53238; target ctor initializes 0x50-byte audio state with stopped status at +0x18; donor class identity
 ??0PlayingAudioRef@@QAE@PAVPlayingAudio@@@Z,0x00051914,Counted audio reference construction at 0x53249; full 29B helper matches existing AudioEventInfoRef body including InterlockedIncrement
 ??0PlayingAudioRef@@QAE@ABV0@@Z,0x000A8C7C,Counted audio return-copy at 0x5325F; full 31B helper matches existing opaque reference copy including InterlockedIncrement
+??0MilesMutexGuard@@QAE@PAXH@Z,0x0004120E,stopAudio target constructs guard over manager+0x9D4; 33B guard initializes held flag and calls virtual acquire through 0x41037
+??1MilesMutexGuard@@QAE@XZ,0x0004122F,stopAudio cleanup; 12B tests held flag and tail-calls virtual release through 0x41055
+??4PlayingAudioRef@@QAEAAV0@ABV0@@Z,0x00239099,Full 50B compiled helper equals existing OpaqueRefElement4 assignment including resolved Release_Ref call
+?getSoundClass@AudioEventRTS@@QBEIXZ,0x002D9D39,stopAudio event+0x1C call; 67B target maps info+0xB0 to flags 1/8/2/4/16 matching BFME1 AudioEventRTSClassification semantics
+?rva000A8AC0@MilesStreamRef@@QAEXXZ,0x000A8AC0,Address-derived stream-holder method; 12B null guard then tail-call 0x10FB64; called by stopAudio
+?rva000A8B4B@MilesStreamRef@@QAEXI@Z,0x000A8B4B,Address-derived stream-holder method; 14B null guard then tail-call 0x10FEF3 preserving one dword argument
