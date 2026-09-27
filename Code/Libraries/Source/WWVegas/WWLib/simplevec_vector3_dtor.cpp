@@ -23,3 +23,9 @@ public:
 };
 
 template class SimpleVecClass<Vector3>;
+
+// ??1?$SimpleDynVecClass@VVector3@@@@UAE@XZ, retail 0x0007E2D7, 35 bytes:
+// stores 0x00BC6F50 (SimpleDynVecClass<Vector3> per the matched segline and
+// streak bodies), frees and zeroes Vector, then tail-jumps to the base dtor
+// above (0x0007E1AE).
+template SimpleDynVecClass<Vector3>::~SimpleDynVecClass();
