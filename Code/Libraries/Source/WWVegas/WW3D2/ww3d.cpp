@@ -2020,11 +2020,12 @@ WW3DErrorType WW3D::On_Activate_App(void)
 }
 
 
-// ?Get_Pixel_Center@WW3D@@ present-unmatched
+#pragma optimize("s", on)
 void WW3D::Get_Pixel_Center(float &x, float &y)
 {
 	x = PixelCenterX; y = PixelCenterY;
 }
+#pragma optimize("", on)
 
 
 // ?Update_Pixel_Center@WW3D@@ present-unmatched
