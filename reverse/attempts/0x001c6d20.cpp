@@ -34,4 +34,3 @@ extern "C" void VP6_EncodeValue(Vp6HuffmanCoder *coder,Vp6HuffmanNode *tree,int 
         else index=tree[index].left.fields.index;
     }
 }
-

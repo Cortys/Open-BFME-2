@@ -1275,7 +1275,7 @@
           "text": "ret "
         },
         "following_bytes": "518b44240868f887",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored target C++ in Code/Libraries/Source/VP6/debug.cpp; source-derived spelling; no donor PDB identity claim; source body not imported",
         "ghidra_entry": null
       },
       {
@@ -1403,7 +1403,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccc8b4424048b",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored target C++ in Code/Libraries/Source/VP6/debug.cpp; source-derived spelling; no donor PDB identity claim; source body not imported",
         "ghidra_entry": null
       },
       {
@@ -1462,7 +1462,7 @@
           "text": "ret "
         },
         "following_bytes": "cccc81ec08010000",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored target C++ in Code/Libraries/Source/VP6/debug.cpp; source-derived spelling; no donor PDB identity claim; source body not imported",
         "ghidra_entry": null
       },
       {
@@ -1536,8 +1536,9 @@
     ],
     "placement_count": 11,
     "placement_bytes": 1266,
-    "new_matched_bytes_from_this_handoff": 0,
-    "follow_up": "Study context-free generic candidates first. Target-view experiments prove three source bodies can compile exactly after layout adaptation, but remain private reference experiments. Retain banked independent C++ attempts; do not replace them with restricted source. Full-unit layout reconciliation needs individually verified fields, not a uniform offset delta."
+    "new_matched_bytes_from_this_handoff": 1025,
+    "follow_up": "Three original placement candidates remain: EncodeValue125B has a banked129B C++ attempt; InsertSorted88B uses an internal register ABI and needs its enclosing Huffman unit; LoadFrame28B needs independent callee identity confirmation. Target-view entropy/motion/ConvertBoolTrees experiments remain private reference compilations. Retain banked authored C++ attempts; do not replace them with restricted source. Full-unit layout reconciliation requires individually verified fields.",
+    "recovery_accounting": "Eight placed candidates recovered as separately authored target C++: boolean encoders407B; Huffman decoder70B; quantization error185B; debug writers363B. No pristine Winamp source body imported. Earlier625B frame decoder predates this source handoff and is excluded."
   },
   "boolean_encoders": {
     "reconstruction_basis": "Retail disassembly/dataflow; donor identity/types; source handoff supplied byte-placement candidates. This does not assert clean-room isolation: the handoff was available, but its encoder bodies were not copied into the authored unit.",
@@ -1711,5 +1712,62 @@
     },
     "provenance": "Authored from target disassembly; private source-handoff compile supplied candidate. Original source body not imported; no clean-room claim.",
     "status": "C++ byte-verified recovery"
+  },
+  "debug_writers": {
+    "source": "Code/Libraries/Source/VP6/debug.cpp",
+    "compiler": "MSVC7.1 /O2 /MD",
+    "identity_provenance": "Names are source-derived from the unique compiled debug.c placements, corroborated by target CRT call sequence, exact format/mode strings and dimensions/stride behavior. No matching donor PDB procedure name record was found; do not treat spelling as a target symbol fact. These independently authored bodies do not import original source body text; no clean-room claim.",
+    "reference_source": {
+      "path": "build/vp6-source-handoff/source/Src/libvpShared/corelibs/cdxv/VP60/vp60/dx/Generic/debug.c",
+      "sha256": "11777dc4a308f71f54a1ce2ba21f3b1da58c8ad9cbefacf509202c650a115456",
+      "commit": "0954e03b3acbc11b6c90298598db6b6469568d72"
+    },
+    "target_imports": {
+      "sprintf": "IAT VA0x00bba6bc",
+      "fopen": "IAT VA0x00bba5d4",
+      "fwrite": "IAT VA0x00bba534",
+      "fclose": "IAT VA0x00bba5dc"
+    },
+    "functions": [
+      {
+        "name": "_vp6_draw",
+        "rva": "0x1bb480",
+        "size": 94,
+        "target_sha256": "e960583d8a978908014a382c0867dab774962ad4f80a99b81aa1e253d92726e1",
+        "last_instruction": {
+          "rva": "0x1bb4dd",
+          "text": "ret "
+        },
+        "following_bytes": "cccc81ec08010000",
+        "target_identity_basis": "Formats %s%04d.raw, opens wb, writes one buffer of the fourth-argument length, closes.",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "_vp6_drawb",
+        "rva": "0x1bb4e0",
+        "size": 160,
+        "target_sha256": "192a6290e0333ce06f27506f6cbc6dc1af4069eacac7f592eeee23e26408f1de",
+        "last_instruction": {
+          "rva": "0x1bb57f",
+          "text": "ret "
+        },
+        "following_bytes": "518b44240868f887",
+        "target_identity_basis": "Formats %s%04d.raw, opens wb, writes height rows of width bytes while advancing by stride, closes.",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "_vp6_drawc",
+        "rva": "0x1bb580",
+        "size": 109,
+        "target_sha256": "fc6732583f094074647363eddcd3c641dcd9541352b0ea1034ca3bb9680443a2",
+        "last_instruction": {
+          "rva": "0x1bb5ec",
+          "text": "ret "
+        },
+        "following_bytes": "cccccc8b4424048b",
+        "target_identity_basis": "Opens supplied filename in ab, appends height rows of width bytes while advancing by stride, closes.",
+        "status": "C++ byte-verified recovery"
+      }
+    ]
   }
 }
