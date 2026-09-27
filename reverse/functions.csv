@@ -37727,3 +37727,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Rva0023C85EDisable@@YAXXZ,,0x0023C85E,29,Code/GameEngine/Source/Common/Rva0023C85EDisable.cpp,matched,Main window close disable via 0xDDE024 and user32 imports
 ?isTooClose@Weapon@@QBE_NPBVObject@@PBUCoord3D@@@Z,,0x002C9B3D,67,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon isTooClose coord overload minRange zero check shrunken distance via rva002C97E8
 ?rva002C957E@Weapon@@QBEMXZ,,0x002C957E,8,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon minRange forwarder tail-jmp to template getMinimumAttackRange
+??1Rva0033FF2B@@UAE@XZ,,0x0033FF2B,75,Code/GameEngine/Source/Common/Rva0033FF2BDtor.cpp,matched,vtable 0x00810DE8 TheAudio 0x009FE6E8 slot 0x6c base 0x49B47C pin callers 0x340BDC 0x340D1F 0x34280A 0x345CAB 0x345F21
