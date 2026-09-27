@@ -5739,3 +5739,4 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?Update_Sub_Object_Transforms@Animatable3DObjClass@@MAEXXZ,0x001A5900,HLod Update_Sub_Object_Transforms call19D649; matched Animatable constructors1A4900/1A5C50 install table7D6D10 slotA8 pointing directly here; target parent-hierarchy and motion-mode update dispatch independently supports donor method identity
 ??0State@@QAE@PAVStateMachine@@I@Z,0x004D73FC,ICF twin of VAsciiString row same body via 6 derived 29B call sites with hash immediates
 ?ClearReleaseAtEnd@AptValue@@QAEXXZ,0x006DBDC0
+??1Rva00B6CF1@@QAE@XZ,0x000B6CF1,ICF twin of rowed QAE Rva0048130E 53B plus call site in BDCD6 25B destroy
