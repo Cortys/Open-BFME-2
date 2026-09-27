@@ -8,6 +8,7 @@ public:
     virtual void v0();
     virtual void v1();
     virtual void v2();
+    ~Rva0031455E();
     void Rva0031455ELink(Rva0031455E *arg);
     void Rva00314581Unlink();
 private:
@@ -35,4 +36,9 @@ void Rva0031455E::Rva00314581Unlink()
         owner->m_1DC = m_04;
         m_08 = 0;
     }
+}
+
+Rva0031455E::~Rva0031455E()
+{
+    Rva00314581Unlink();
 }
