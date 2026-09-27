@@ -37497,3 +37497,6 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1BfmeStringRecord000B94D2@@QAE@XZ,,0x000B6CF1,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,two-string record teardown +0x04 then +0x00; pinned name
 ??1Rva000BEDF0Record@@QAE@XZ,,0x000BEDF0,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,AsciiString vector +0x04 then string +0x00
 ??1Rva000543F5Record@@QAE@XZ,,0x000543F5,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,wide string +0x04 then narrow +0x00
+??1Rva00AAD26@@UAE@XZ,,0x000AAD26,54,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000AB09C calls here; vector +0x08; base vtable 0x00BC93DC
+??1Rva00AB15D@@UAE@XZ,,0x000AB15D,54,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000AB141 calls here; vector +0x0C; base vtable 0x00BC93DC
+??1Rva00B6971@@UAE@XZ,,0x000B6971,48,Code/GameEngine/Source/Common/Rva000AAD26FamilyDtors.cpp,matched,??_G 0x000B9866 calls here; string +0x10; Snapshot base
