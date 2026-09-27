@@ -38745,3 +38745,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?Init@AABoxClass@@QAEXABVMinMaxAABoxClass@@@Z,,0x00068F68,126,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?Overlap_Test@CollisionMath@@SA?AW4OverlapType@1@ABVPlaneClass@@ABVVector3@@@Z,,0x0007B638,86,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ??0AABTreeLinkClass@@QAE@PAVAABTreeCullSystemClass@@@Z,,0x005EA038,26,Code/Libraries/Source/WWVegas/WWMath/AABTreeCullO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?HSV_To_RGB@@YAXAAVVector3@@ABV1@@Z,,0x0006E3D7,321,Code/Libraries/Source/WWVegas/WW3D2/ColorSpaceO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?RGB_To_HSV@@YAXAAVVector3@@ABV1@@Z,,0x0006E2C2,277,Code/Libraries/Source/WWVegas/WW3D2/ColorSpaceO1Inlines.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
