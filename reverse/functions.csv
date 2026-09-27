@@ -36941,3 +36941,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?xfer@EvacuateDamage@@MAEXPAVXfer@@@Z,,0x004BAC83,44,Code/GameEngine/Source/GameLogic/Object/Damage/EvacuateDamageXfer.cpp,matched,slot 3 of vtable 0x00859E2C via rowed ctor plus Version12 plus base 0x004CE56D plus WallHub 44B pattern
 ?rva00256A7C@GateProxyBehavior@@UBEMXZ,,0x00256A7C,40,Code/GameEngine/Source/GameLogic/Object/Behavior/GateProxyBehaviorFloatGetters.cpp,matched,vslot 11 GateProxy float proxy via if-else temp
 ?rva00256AA4@GateProxyBehavior@@UBEMXZ,,0x00256AA4,40,Code/GameEngine/Source/GameLogic/Object/Behavior/GateProxyBehaviorFloatGetters.cpp,matched,vslot 12 GateProxy float proxy via if-else temp
+??1?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE@XZ,,0x004AF46E,56,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfmepod20_insert.cpp,matched,gap dtor EHs explicit instantiation
