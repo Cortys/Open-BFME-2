@@ -2169,3 +2169,6 @@ FUN_0068f940	0x0028F940	28	blocked	contested StringBase pin plus unclear stdcall
 FUN_006c9d3b	0x002C9D3B	12	blocked	ptr-chase getter owner unknown ignores 2 args t=8 model=muse
 FUN_00942f43	0x00542F43	130	blocked	complex turret goal status frame range predicate class unknown t=10 model=muse
 FUN_00947263	0x00547263	52	blocked	free armor range check tail merge prevents separate early return t=25 model=muse
+?Rva004D6B6E@@YAMM@Z	0x004D6B6E	47	partial	pop-fadd order only: retail pop-fadd-pop vs ours fadd-pop-pop t=25 model=muse-3d2e score=0.94 stash=reverse/attempts/0x004d6b6e.cpp
+?Rva00590F76Get@@YAHPBVRva004D6119@@@Z	0x00590F76	47	partial	hidden-return slot reuse only: retail constructs UnicodeString in dead arg slot [ebp+8] vs ours local [ebp-4] with push ecx t=20 model=muse-3d2e score=0.9 stash=reverse/attempts/0x00590f76.cpp
+?Rva001F6951Pad@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@I@Z	0x001F6951	29	partial	frame+register only: retail frameless push-esi with n in esi vs ours EBP frame with n in mem t=18 model=muse-3d2e score=0.9 stash=reverse/attempts/0x001f6951.cpp
