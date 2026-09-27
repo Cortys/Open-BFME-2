@@ -36866,3 +36866,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva004BA1B2@@QAE@XZ,,0x004BA1B2,22,Code/GameEngine/Source/Common/Rva004BA1B2Ctor.cpp,matched,default ctor via rowed Vector_base BfmeE16 0x00211E58
 ?rva007B7060@@YAXXZ,,0x007B7060,10,Code/GameEngine/Source/Common/Rva007B6880Thunks.cpp,matched,global VectorClass dtor thunk tail-jmp to rowed 0x0012A4D0
 ?xfer@Rva004CE56D@@QAEXPAVXfer@@@Z,,0x004CE56D,27,Code/GameEngine/Source/Common/Rva004CE56DXfer.cpp,matched,slot-3 xfer via rowed Version1 and rowed BehaviorModule xfer
+??_GRva003AE13C@@UAEPAXI@Z,,0x003AE16E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-v8k-b1a0.cpp,matched,slot 0 of vtable 0x81D2C0 plus calls rowed dtor at 0x3A583E plus public to match UAE
