@@ -20,3 +20,27 @@ bool Rva005F2278::rva005F2278(int key) const
 {
 	return m_map.find(key) != m_map.end();
 }
+
+// ?rva005E3B1A@Rva005E3B1A@@QBE_NH@Z, retail 0x005E3B1A, 11 bytes.
+// Ptr-chase tail-jmp into rowed ?rva005F2278@Rva005F2278@@QBE_NH@Z at 0x005F2278.
+// this+0x10 holds Mid*, Mid+0x14 holds Rva005F2278*. Callees all
+// rowed after 0x005F2278 landed. Callers 0x005E690A 0x005E6987. Honest name.
+struct Rva005E3B1AMid
+{
+	char m_pad[0x14];
+	Rva005F2278 *m_inner;
+};
+
+class Rva005E3B1A
+{
+public:
+	bool rva005E3B1A(int key) const;
+private:
+	char m_pad[0x10];
+	Rva005E3B1AMid *m_ptr;
+};
+
+bool Rva005E3B1A::rva005E3B1A(int key) const
+{
+	return m_ptr->m_inner->rva005F2278(key);
+}
