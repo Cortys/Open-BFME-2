@@ -36935,3 +36935,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?updateTreadPositions@W3DTankTruckDraw@@IAEXM@Z,,0x000CDFC8,116,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTankTruckDrawUpdateTreadPositions.cpp,matched,donor W3DTankTruckDraw.cpp caller 0x000CE66F offsets 0x304/0x354
 ?rva004969E7@@YA_NPBD@Z,,0x004969E7,24,Code/GameEngine/Source/GameLogic/Object/Update/Rva004969E7ShowEq.cpp,matched,caller 0x0049735A string Show strcmpi eq
 ?Rva0028A704@Rva28A6E7Node@@QAEXPAPAV1@@Z,,0x0028A704,75,Code/GameEngine/Source/Common/Rva0028A704ListRemove.cpp,matched,list remove prev 0x328 next 0x32C caller 0x0028A796 siblings 0x0028A6C7 0x0028A6E7
+??0Rva0046262D@@QAE@PAXABVWeaponTemplateSetHead@@@Z,,0x0046262D,29,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046262DCtor.cpp,matched,ctor after slot129 plus vptr plus rowed head copy
