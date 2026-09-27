@@ -38943,3 +38943,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?XferRespawnModeType@@YAXPAVXfer@@PAH@Z,,0x003060FA,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,RespawnModeType string 0x00807CF4
 ?XferSiegeTypeEnum@@YAXPAVXfer@@PAH@Z,,0x00306112,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,SiegeTypeEnum string 0x00807D04
 ?Rva00306A9BDoXfer@@YGXPAVXfer@@@Z,,0x00306A9B,12,Code/GameEngine/Source/Common/System/Xfer.cpp,matched,DoXfer slot 3 shared Version1-only caller 0x000926FA
+??4Rva001EAFC1@@QAEAAV0@ABV0@@Z,,0x001EAFC1,61,Code/GameEngine/Source/Common/Rva001EAFC1Assign.cpp,matched,honest subrecord assign 3 ints plus Unicode set plus Ascii assign plus byte
