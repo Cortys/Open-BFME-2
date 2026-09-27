@@ -38153,3 +38153,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??_GRva005F8F96@@QAEPAXI@Z,,0x005CCCB4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-6937.cpp,matched,deleting dtor calls rowed dtor 0x5F8F96 chain
 ?rva00342572@Rva00342572@@QAEHXZ,,0x00342572,46,Code/GameEngine/Source/Common/Rva00342572Get.cpp,matched,chain F8D4 predicate copy 1A0 to 20 or -1
 ??0Rva00342FCD@@QAE@PAVStateMachine@@H@Z,,0x00342FCD,37,Code/GameEngine/Source/Common/Rva00342FCDCtor.cpp,matched,chain FE65 base 0 vtable 0x812FA0 store 0x28
+?xfer@Rva00342502@@MAEXPAVXfer@@@Z,,0x00342502,42,Code/GameEngine/Source/Common/Rva00342502Xfer.cpp,matched,chain FF76 base Version1 bool 4C
