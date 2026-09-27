@@ -229,6 +229,16 @@ void XferParticleSystemID(Xfer *xfer, int *value)
 	xfer->XferEnum("ParticleSystemID", value, 4);
 }
 
+// ?XferParticleShaderType@@YAXPAVXfer@@PAH@Z
+// Retail 0x00306052 (24B): labelled-enum helper moving a 4-byte particle
+// shader type through XferEnum with the "ParticleShaderType" label (string at
+// 0x00807C88). Callers include DoXfer bodies at 0x001F4F99 0x005628B4
+// 0x005628E1 0x0056290E.
+void XferParticleShaderType(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ParticleShaderType", value, 4);
+}
+
 // Retail 0x00306082 (24B): labelled-enum helper moving a 4-byte rotation type
 // through XferEnum with the "RotationType" label (string at 0x00807CA8).
 // Callers include DoXfer bodies at 0x0055F6DB 0x0055F7D1 0x00562226 0x0056233E.
