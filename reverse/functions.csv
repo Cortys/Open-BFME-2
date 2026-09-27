@@ -36880,3 +36880,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??_GRva003AF50D@@UAEPAXI@Z,,0x003AE492,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-v8k-b1a0b.cpp,matched,slot 0 of vtable 0x81D420 plus calls rowed dtor at 0x3A983C plus public to match UAE
 ?upgradeMuxXfer@UpgradeMux@@MAEXPAVXfer@@@Z,,0x004CE397,34,Code/GameEngine/Source/GameLogic/Object/Update/UpgradeMuxXfer.cpp,matched,UpgradeMux member vtable slot 16 plus 12 derived xfer callers plus ZH donor
 ?clone@Rva003AE1A7@@QBEPAV1@XZ,,0x003AE18A,29,Code/GameEngine/Source/Common/Rva003AE18AClone.cpp,matched,vslot 2 of vtable 0x81CA40 via new 0x44 plus rowed copy 0x3AE1A7 plus throw to drop EH
+??1GpuDrawModuleInfo@FXParticleSystem@@UAE@XZ,0x003A9D43,0x003A9D43,48,Code/GameEngine/Source/GameClient/System/FXParticleSystem/GpuDrawModuleInfoDtor.cpp,matched,string at C via 36410 and base BBB554
