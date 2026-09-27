@@ -16,6 +16,8 @@ class AsciiString;
 AsciiString GetAssetUsageFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetReadmeFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetFileFromPath(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -117,4 +119,13 @@ AsciiString GetReadmeFromMap(AsciiString path)
 	AsciiString out;
 	out.format("%s\\readme.txt", base.str());
 	return out;
+}
+
+AsciiString GetFileFromPath(AsciiString path)
+{
+	const char *separator = path.reverseFind('\\');
+	if (separator) {
+		return separator + 1;
+	}
+	return path;
 }
