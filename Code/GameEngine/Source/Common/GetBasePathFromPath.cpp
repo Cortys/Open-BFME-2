@@ -24,6 +24,8 @@ class AsciiString;
 AsciiString GetPreviewFromMap(AsciiString path);
 class AsciiString;
 AsciiString GetArtPreviewFromMap(AsciiString path);
+class AsciiString;
+AsciiString GetPicPreviewFromMap(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -165,5 +167,14 @@ AsciiString GetArtPreviewFromMap(AsciiString path)
 	AsciiString base = GetBasePathFromPath(path);
 	AsciiString out;
 	out.format("%s\\%s_art.tga", base.str(), fname.str());
+	return out;
+}
+
+AsciiString GetPicPreviewFromMap(AsciiString path)
+{
+	AsciiString fname = GetBaseFileFromFile(GetFileFromPath(path));
+	AsciiString base = GetBasePathFromPath(path);
+	AsciiString out;
+	out.format("%s\\%s_pic.tga", base.str(), fname.str());
 	return out;
 }
