@@ -37130,3 +37130,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva002A752FDestroy@@YAXPAVRva002A73B8@@0@Z,,0x002A752F,25,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,array destroy for Rva002A73B8 size 0xC calls rowed dtor
 ?writeUnicodeString@DataChunkOutput@@QAEXVUnicodeString@@@Z,,0x0030708E,99,Code/GameEngine/Source/GameLogic/ScriptEngine/DataChunkOutput_writeUnicodeString.cpp,matched,ZH DataChunk writeUnicodeString; caller writeDict 0x00307E46; releaseBuffer pin 0x36E70
 ?rva002186A6@FontLibrary@@QAEPAXPBVAsciiString@@M@Z,,0x002186A6,69,Code/GameEngine/Source/GameClient/GUI/FontLibraryFindRecord.cpp,matched,FontLibrary record lookup via BFME1 donor plus rowed map workers
+?getName@DataChunkTableOfContents@@QAE?AVAsciiString@@I@Z,,0x003070F1,53,Code/GameEngine/Source/Common/System/DataChunkTableOfContentsGetName.cpp,matched,ZH DataChunk getName; callers 0x3074C9 0x3074FE; AsciiString copy pin 0x365F0
