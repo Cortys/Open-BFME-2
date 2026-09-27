@@ -5741,3 +5741,6 @@ __mbscat,0x0062988C,retail REL32 from INI getNextQuotedAsciiString 0x002E93F; IA
 ?ClearReleaseAtEnd@AptValue@@QAEXXZ,0x006DBDC0
 ??1Rva00B6CF1@@QAE@XZ,0x000B6CF1,ICF twin of rowed QAE Rva0048130E 53B plus call site in BDCD6 25B destroy
 ??1StatusBitsUpgrade@@UAE@XZ,0x004B48D3,twin of rowed Rva004B48D3 dtor for StatusBitsUpgradeIfEldestKindof base call
+_VP6_ConfigureEntropyDecoder,0x001BBF70
+_VP6_ConfigureMvEntropyDecoder,0x001C6EF0
+_ConvertBoolTrees,0x001BBD60

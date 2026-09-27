@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "target_sha256": "f008b587570bad693981dc7218588c81d192a1e064b0f7f861539c51156a7640",
+  "donor_identity": {
+    "guid": "729627e9-b922-4d59-9b50-e116a2834635",
+    "age": 24,
+    "streams": 1933,
+    "bytes": 33624064
+  },
+  "reference_source": {
+    "repo": "mofo7777/MFNode",
+    "commit": "50fbdb1ac21022b9846aa70183f9d6abf336b345",
+    "files": [
+      {
+        "source_path": "MFTVp6Decoder/VP62.cpp",
+        "local_file": "MFNode\\VP62.cpp",
+        "url": "https://raw.githubusercontent.com/mofo7777/MFNode/50fbdb1ac21022b9846aa70183f9d6abf336b345/MFTVp6Decoder/VP62.cpp",
+        "bytes": 71286,
+        "sha256": "f9e023b61b6911494512cbbb4c66c69837a2f532c32f13c55326711c9fa13338"
+      },
+      {
+        "source_path": "MFTVp6Decoder/VP62.h",
+        "local_file": "MFNode\\VP62.h",
+        "url": "https://raw.githubusercontent.com/mofo7777/MFNode/50fbdb1ac21022b9846aa70183f9d6abf336b345/MFTVp6Decoder/VP62.h",
+        "bytes": 6058,
+        "sha256": "789f21b7077d84db2740862820570d06829da538283c038f585be372dc25d178"
+      },
+      {
+        "source_path": "LICENSE",
+        "local_file": "MFNode\\LICENSE",
+        "url": "https://raw.githubusercontent.com/mofo7777/MFNode/50fbdb1ac21022b9846aa70183f9d6abf336b345/LICENSE",
+        "bytes": 35147,
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "source_path": "README.md",
+        "local_file": "MFNode\\README.md",
+        "url": "https://raw.githubusercontent.com/mofo7777/MFNode/50fbdb1ac21022b9846aa70183f9d6abf336b345/README.md",
+        "bytes": 2807,
+        "sha256": "08545c1aba74efe8300c17433d881e1321c97aca4959c0c368604882dea849d1"
+      }
+    ],
+    "attribution": "VP62.cpp and VP62.h state that they come from ffdshow. Exact historical origin/libvp62 relationship not established."
+  },
+  "provenance_limits": [
+    "Public MFNode/ffdshow VP62 is semantic reference, not established original EA/On2 source.",
+    "Function and member names come from donor PDB/MAP; target table references, behavior and checked field accesses support the correspondences.",
+    "Partial PB views model only accessed target offsets, not the complete donor layout.",
+    "Code/Libraries/Source/VP6/decodembs.cpp groups the recovered library unit using the donor basename; no original BFME2 on-disk VP6 source path was found."
+  ],
+  "frame_decoder": {
+    "name": "_VP6_DecodeFrameMbs",
+    "target_rva": "0x001BC9C0",
+    "size": 625,
+    "target_sha256": "e8974f502dec95bed735a62b2626486f841a9ebcff23b222958ba6c059c89536",
+    "last_instruction": "RET at 0x001BCC30",
+    "following_bytes": "cccccccccccccccccccccccccccccc",
+    "identity_basis": "Both independently matched 64-byte default scan tables; calls into table-anchored mode/entropy updates; matching donor frame-type and Huffman branches, 64-entry merged scan, row/column traversal, and existing macroblock decoder.",
+    "compiler": "MSVC7.1 /O2 /MD plus standard build.py flags",
+    "codegen_findings": "Separate memcpy calls in the interlaced/noninterlaced branches reproduce shared setup scheduling; separate zero assignments preserve retail store order.",
+    "donor": {
+      "name": "VP6_DecodeFrameMbs",
+      "size": 462,
+      "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\decodembs.c.obj",
+      "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+      "donor_va": "0x46226d",
+      "donor_offset": 4526701,
+      "record": "3a001011000000009c06000000000000ce0100001c000000cc010000a68701006d1245000100005650365f4465636f64654672616d654d6273000000",
+      "references": [
+        {
+          "table": "ilCoeffReorder",
+          "offset_into_table": 0,
+          "instruction_va": "0x46234d",
+          "instruction": "mov esi, 0x55d960"
+        },
+        {
+          "table": "defCoeffReorder",
+          "offset_into_table": 0,
+          "instruction_va": "0x462354",
+          "instruction": "mov esi, 0x55d920"
+        }
+      ]
+    },
+    "source": "Code/Libraries/Source/VP6/decodembs.cpp"
+  },
+  "callee_pins": [
+    {
+      "name": "_VP6_ConfigureEntropyDecoder",
+      "rva": "0x001BBF70",
+      "size": 556,
+      "target_sha256": "1732d79b2264025dd45db18b90318ed7505dc74b8704c488313d54775192ac5f",
+      "entry_kind": "full cdecl function, not a thunk",
+      "identity_basis": "Target independently references equal ScanBandUpdateProbs and VP6_AcUpdateProbs; 2x11 DC, 1..63 scan, 2x14 zero-run and 3x2x6x11 AC update logic agrees with donor and semantic reference. Four called helpers already have matched ledger bodies.",
+      "donor": {
+        "name": "VP6_ConfigureEntropyDecoder",
+        "size": 469,
+        "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\decodembs.c.obj",
+        "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+        "donor_va": "0x4619f9",
+        "donor_offset": 4524537,
+        "record": "42001011000000002803000000000000d50100000c000000d3010000a2870100f90945000100015650365f436f6e666967757265456e74726f70794465636f6465720000",
+        "references": [
+          {
+            "table": "coeffReorderPCT",
+            "offset_into_table": 0,
+            "instruction_va": "0x461aa0",
+            "instruction": "movzx eax, byte ptr [esi + 0x55d568]"
+          },
+          {
+            "table": "ractPCT",
+            "offset_into_table": 0,
+            "instruction_va": "0x461b2c",
+            "instruction": "mov eax, 0x55d5e0"
+          }
+        ]
+      },
+      "pin_is_coverage": false
+    },
+    {
+      "name": "_VP6_ConfigureMvEntropyDecoder",
+      "rva": "0x001C6EF0",
+      "size": 331,
+      "target_sha256": "910479a33fbefe9dfe12bf4a6c0fb37e959d603c4f222c7dc71bd90ee841c539",
+      "entry_kind": "full cdecl function, not a thunk",
+      "identity_basis": "Complete34-byte motion update table is independently equal in target, named donor and public reference; two sign/short updates then 2x7 and 2x8 probability loops write +704,+706,+708,+71C. Calls existing matched bool decoder1C4F00 and bitread1BCF40. Donor cdecl PB pointer plus unsigned char agrees with frame caller; second argument unused.",
+      "donor": {
+        "stream": 1730,
+        "record_offset": 148,
+        "record": "46001011000000000401000000000000380100001200000036010000a2870100d08445000100015650365f436f6e6669677572654d76456e74726f70794465636f64657200000000",
+        "donor_va": "0x4694d0",
+        "donor_size": 312,
+        "type": "0x187a2",
+        "type_record": "0e0008100300000000000200a1870100",
+        "args_record": "0e00011202000000df70010020000000"
+      },
+      "pin_is_coverage": false
+    },
+    {
+      "name": "_ConvertBoolTrees",
+      "rva": "0x001BBD60",
+      "size": 521,
+      "target_sha256": "6d3320dbfe6ee6f90e3250a26d1951a7898f6bc73e92d95f52393411786aeba0",
+      "entry_kind": "full cdecl function, not a thunk",
+      "identity_basis": "Target converts two DC, two zero-run and 3x2x6 AC probability trees into Huffman trees, lookup tables, codes and lengths. Target field offsets match donor DcHuff/ZeroHuff/AcHuff fields individually. The 12-token and 9-token loops call existing matched expansion1BBAF0/1BBC40, lookup1C6BA0 and tree-code walker1C6C20. Same donor semantic call sequence; name is not inferred from call order alone.",
+      "donor": {
+        "stream": 1728,
+        "record_offset": 600,
+        "record": "3600101100000000a002000000000000d30100002d000000d1010000a687010026084500010001436f6e76657274426f6f6c547265657300",
+        "donor_va": "0x461826",
+        "donor_size": 467,
+        "type": "0x187a6",
+        "type_record": "0e0008100300000000000100c5860100",
+        "args_record": "0a00011201000000df700100"
+      },
+      "pin_is_coverage": false
+    }
+  ],
+  "motion_update_table": {
+    "target_va": "0x00BD94A8",
+    "donor_va": "0x55da64",
+    "size": 34,
+    "data_hex": "edf6fdfdfefefefefefefefefefefafafce7f3f5fdfefefefefefefefefefefbfbfe",
+    "source_arrays": {
+      "sigdctPCT": "edf6e7f3",
+      "pdvPCT": "fdfdfefefefefef5fdfefefefefe",
+      "fdvPCT": "fefefefefefafafcfefefefefefbfbfe"
+    },
+    "relation": "Source arrays interleaved by component as 2 sign/short + 7 short + 8 long entries; complete 34-byte equality to donor and target."
+  },
+  "field_provenance": [
+    {
+      "donor_name": "quantizer",
+      "offset": "0x13c",
+      "donor_type": "0x1870c",
+      "raw_donor_record": "0d1503000c8701003c017175616e74697a657200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "br",
+      "offset": "0x150",
+      "donor_type": "0x186ad",
+      "raw_donor_record": "0d150300ad8601005001627200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "FrameType",
+      "offset": "0x1ac",
+      "donor_type": "0x20",
+      "raw_donor_record": "0d15030020000000ac014672616d655479706500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "Configuration",
+      "offset": "0x1b0",
+      "donor_type": "0x1870f",
+      "raw_donor_record": "0d1503000f870100b001436f6e66696775726174696f6e00",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MacroBlocks",
+      "offset": "0x228",
+      "donor_type": "0x75",
+      "raw_donor_record": "0d1503007500000028024d6163726f426c6f636b7300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MBRows",
+      "offset": "0x22c",
+      "donor_type": "0x75",
+      "raw_donor_record": "0d150300750000002c024d42526f777300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MBCols",
+      "offset": "0x230",
+      "donor_type": "0x75",
+      "raw_donor_record": "0d1503007500000030024d42436f6c7300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "LastMode",
+      "offset": "0x39c",
+      "donor_type": "0x186c4",
+      "raw_donor_record": "0d150300c48601009c034c6173744d6f646500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcProbs",
+      "offset": "0x3a0",
+      "donor_type": "0x18713",
+      "raw_donor_record": "0d15030013870100a003446350726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcProbs",
+      "offset": "0x3b6",
+      "donor_type": "0x18714",
+      "raw_donor_record": "0d15030014870100b603416350726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroRunProbs",
+      "offset": "0x560",
+      "donor_type": "0x18718",
+      "raw_donor_record": "0d1503001887010060055a65726f52756e50726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MergedScanOrder",
+      "offset": "0x57c",
+      "donor_type": "0xfd42",
+      "raw_donor_record": "0d15030042fd00007c054d65726765645363616e4f7264657200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ModifiedScanOrder",
+      "offset": "0x5bc",
+      "donor_type": "0xfd42",
+      "raw_donor_record": "0d15030042fd0000bc054d6f6469666965645363616e4f7264657200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ScanBands",
+      "offset": "0x63c",
+      "donor_type": "0xfd42",
+      "raw_donor_record": "0d15030042fd00003c065363616e42616e647300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MBModeProb",
+      "offset": "0x67c",
+      "donor_type": "0x18719",
+      "raw_donor_record": "0d150300198701007c064d424d6f646550726f6200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "BModeProb",
+      "offset": "0x687",
+      "donor_type": "0x18719",
+      "raw_donor_record": "0d150300198701008706424d6f646550726f6200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "probInterlaced",
+      "offset": "0x6e8",
+      "donor_type": "0x74",
+      "raw_donor_record": "0d15030074000000e80670726f62496e7465726c6163656400",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "predictionMode",
+      "offset": "0x6f0",
+      "donor_type": "0x470",
+      "raw_donor_record": "0d15030070040000f00670726564696374696f6e4d6f646500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MvSignProbs",
+      "offset": "0x704",
+      "donor_type": "0x120e",
+      "raw_donor_record": "0d1503000e12000004074d765369676e50726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "IsMvShortProb",
+      "offset": "0x706",
+      "donor_type": "0x120e",
+      "raw_donor_record": "0d1503000e120000060749734d7653686f727450726f6200",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MvShortProbs",
+      "offset": "0x708",
+      "donor_type": "0x1871b",
+      "raw_donor_record": "0d1503001b87010008074d7653686f727450726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "MvSizeProbs",
+      "offset": "0x71c",
+      "donor_type": "0x1871c",
+      "raw_donor_record": "0d1503001c8701001c074d7653697a6550726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "probXmitted",
+      "offset": "0x72c",
+      "donor_type": "0x1871e",
+      "raw_donor_record": "0d1503001e8701002c0770726f62586d697474656400",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcHuffCode",
+      "offset": "0x948",
+      "donor_type": "0x18723",
+      "raw_donor_record": "0d150300238701004809446348756666436f646500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcHuffLength",
+      "offset": "0x9a8",
+      "donor_type": "0x18724",
+      "raw_donor_record": "0d15030024870100a8094463487566664c656e67746800",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcHuffProbs",
+      "offset": "0x9c0",
+      "donor_type": "0x18723",
+      "raw_donor_record": "0d15030023870100c00944634875666650726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcHuffTree",
+      "offset": "0xa20",
+      "donor_type": "0x18726",
+      "raw_donor_record": "0d15030026870100200a4463487566665472656500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcHuffCode",
+      "offset": "0xb40",
+      "donor_type": "0x18729",
+      "raw_donor_record": "0d15030029870100400b416348756666436f646500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcHuffLength",
+      "offset": "0x1200",
+      "donor_type": "0x1872c",
+      "raw_donor_record": "0d1503002c87010000124163487566664c656e67746800",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcHuffProbs",
+      "offset": "0x13b0",
+      "donor_type": "0x18729",
+      "raw_donor_record": "0d15030029870100b01341634875666650726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcHuffTree",
+      "offset": "0x1a70",
+      "donor_type": "0x1872f",
+      "raw_donor_record": "0d1503002f870100701a4163487566665472656500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroHuffCode",
+      "offset": "0x2eb0",
+      "donor_type": "0x18731",
+      "raw_donor_record": "0d15030031870100b02e5a65726f48756666436f646500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroHuffLength",
+      "offset": "0x2f20",
+      "donor_type": "0x18718",
+      "raw_donor_record": "0d15030018870100202f5a65726f487566664c656e67746800",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroHuffProbs",
+      "offset": "0x2f3c",
+      "donor_type": "0x18731",
+      "raw_donor_record": "0d150300318701003c2f5a65726f4875666650726f627300",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroHuffTree",
+      "offset": "0x2fac",
+      "donor_type": "0x18733",
+      "raw_donor_record": "0d15030033870100ac2f5a65726f487566665472656500",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "DcHuffLUT",
+      "offset": "0x30fc",
+      "donor_type": "0x18734",
+      "raw_donor_record": "0d15030034870100fc304463487566664c555400",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "AcHuffLUT",
+      "offset": "0x31fc",
+      "donor_type": "0x18737",
+      "raw_donor_record": "0d15030037870100fc314163487566664c555400",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "ZeroHuffLUT",
+      "offset": "0x43fc",
+      "donor_type": "0x18734",
+      "raw_donor_record": "0d15030034870100fc435a65726f487566664c555400",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "UseHuffman",
+      "offset": "0x4520",
+      "donor_type": "0x74",
+      "raw_donor_record": "0d150300740000002045557365487566666d616e00",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "CurrentDcRunLen",
+      "offset": "0x4524",
+      "donor_type": "0x1013",
+      "raw_donor_record": "0d15030013100000244543757272656e74446352756e4c656e00",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    },
+    {
+      "donor_name": "CurrentAc1RunLen",
+      "offset": "0x452c",
+      "donor_type": "0x1013",
+      "raw_donor_record": "0d150300131000002c4543757272656e7441633152756e4c656e00",
+      "target_support": "Accessed by frame decoder, its entropy callees or ConvertBoolTrees; only these uses transfer."
+    }
+  ],
+  "unclaimed_reconstructions": [
+    {
+      "name": "_VP6_ConfigureEntropyDecoder",
+      "rva": "0x001BBF70",
+      "actual_size": 556,
+      "handoff_truncated_size": 550,
+      "last_instruction": "RET at 0x001BC19B",
+      "compiled_size": 556,
+      "score": 0.9280575539568345,
+      "stash": "reverse/attempts/0x001bbf70.cpp",
+      "remaining": "byte-result register allocation"
+    },
+    {
+      "name": "_VP6_ConfigureMvEntropyDecoder",
+      "rva": "0x001C6EF0",
+      "actual_size": 331,
+      "last_instruction": "RET at 0x001C703A",
+      "compiled_size": 293,
+      "score": 0.8301282051282052,
+      "stash": "reverse/attempts/0x001c6ef0.cpp",
+      "remaining": "independent table iterator versus combined indexed addressing"
+    }
+  ]
+}
