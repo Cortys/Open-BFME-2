@@ -757,11 +757,3 @@ int Rva006882D0Get(void)
 {
 	return 0x00ce43b0;
 }
-
-// ?Rva006E3E14Get@@YAHXZ @ 0x006e3e14 (6B): returns 6.
-// Follows a movsx plus sub plus ret tail. No direct callers. Opaque
-// address-derived name.
-int Rva006E3E14Get(void)
-{
-	return 6;
-}
