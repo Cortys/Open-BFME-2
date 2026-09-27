@@ -93,6 +93,7 @@ public:
 	void rva006D3C60();
 	void rva006D3CA0(const EAStringC *other);
 	unsigned int GetInternalRefCount() const;
+	unsigned int rva006D3750() const;
 };
 
 // Retail empty singleton at 0x00DDC020. The linker never sees this TU's
@@ -539,4 +540,14 @@ unsigned short EAStringC::rva006D3D10() const
 		}
 	}
 	return m_pData->m_uHash;
+}
+
+// ?rva006D3750@EAStringC@@QBEIXZ, retail 0x006D3750 (7B). EAStringC
+// internal size accessor: returns m_pData->m_uSize zero-extended.
+// 40+ callers; sibling GetInternalRefCount 0x006D2E10 proves unsigned-int
+// const accessor pattern (movzx); neighbours compare 0x006D36C0 and
+// Reserve 0x006D3760 share /O2 /DNDEBUG /MD. Honest address name.
+unsigned int EAStringC::rva006D3750() const
+{
+	return m_pData->m_uSize;
 }
