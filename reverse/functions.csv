@@ -37401,3 +37401,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?Rva00584F37@Rva00586D8E@@UAE_NH@Z,,0x00584F37,52,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot8 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 compare to 2
 ?Rva00584FBF@Rva00586D8E@@UAEXH@Z,,0x00584FBF,44,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot10 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 store 2
 ?Rva00584FEB@Rva00586D8E@@UAEXH@Z,,0x00584FEB,44,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlots.cpp,matched,slot11 of vtable 0x0086FD90 via rowed ctor TU; bounds-checked vec84 store 3
+?createFontLibrary@W3DGameClient@@MAEPAVFontLibrary@@XZ,,0x0004C4F9,62,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DGameClientFontFactory.cpp,matched,vtable slot 40 of 0x007C4738 plus ZH donor NEW W3DFontLibrary plus sibling snow factory
