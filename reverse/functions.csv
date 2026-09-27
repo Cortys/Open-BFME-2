@@ -37967,3 +37967,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva002039C5@Rva002039C5Host@@QAEXXZ,,0x002039C5,15,Code/GameEngine/Source/Common/Rva002039C5Host.cpp,matched,cache GameLogic frame 0x40 to 0x1A160 sibling of 0x002039B6
 ?rva00270260@Rva00270260@@QAE_NXZ,,0x00270260,22,Code/GameEngine/Source/GameLogic/Object/Rva00270260.cpp,matched,callers test al at 0x000CE0A9 0x0007896B 0x000B6EFA; no donor; honest Rva name
 ??1Rva0027EA49@@QAE@XZ,,0x0027EA49,13,Code/GameEngine/Source/Common/Rva0027EA49Dtor.cpp,matched,holder dtor at plus4 via rowed Release tail-jmp
+?AppendDebugMessage@ScriptEngine@@QAEXABVAsciiString@@_N@Z,,0x00205263,171,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineAppendDebugMessage.cpp,matched,pinned name callers frame gate BFME1 donor plus setFrame pattern
