@@ -2469,7 +2469,6 @@ void W3DRoadBuffer::offset4Way(TRoadPt *pc1, TRoadPt *pc2, TRoadPt *pc3, TRoadPt
 //=============================================================================
 /** Inserts a 4 way intersection. */
 //=============================================================================
-// ?insert4Way@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insert4Way(Vector2 loc, Int index1, Real scale)
 {
 	// BFME added a guard vs ZH: refuses to insert before init (proven by
@@ -2950,7 +2949,6 @@ void W3DRoadBuffer::miter(Int ndx1, Int ndx2)
 //=============================================================================
 /** Insertes curves at the corner of 2 segments. */
 //=============================================================================
-// ?insertCurveSegmentAt@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insertCurveSegmentAt(Int ndx1, Int ndx2)
 {
 	if (!m_initialized) {
