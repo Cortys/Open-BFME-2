@@ -38953,3 +38953,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?atEndOfChunk@DataChunkInput@@QAE_NXZ,,0x00306E2E,18,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,ZH donor atEndOfChunk verbatim caller 0x000AD07F
 ?rva0029439D@Object@@QAEPAXXZ,,0x0029439D,21,Code/GameEngine/Source/GameLogic/Object/ObjectRva002931F5.cpp,matched,Object thiscall via 2946AB 2957FC plus rowed callees 2931F5 28C197
 ??4Rva004F6352@@QAEAAU0@ABU0@@Z,,0x004F6352,35,Code/GameEngine/Source/Common/Rva004F6352Assign.cpp,matched,12B struct assign via stride 0xC callers plus rowed TreeHintRef assign
+?rva0026C26D@AICommandInterface@@QAEXPBUCoord3D@@H@Z,,0x0026C26D,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same 108B position shape as aiFacePosition AICMD 0x00 plus caller 0x2AF138 via plus-0x20

@@ -90,6 +90,7 @@ public:
 	void aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiFacePosition(const Coord3D *pos, Int cmdSource);
+	void rva0026C26D(const Coord3D *pos, Int cmdSource);
 	void aiFaceObject(Object *target, CommandSourceType cmdSource);
 	void aiWanderInPlace(CommandSourceType cmdSource);
 	void rva003C7653(Object *target, CommandSourceType cmdSource);
@@ -150,6 +151,17 @@ void AICommandInterface::aiAttackPosition(const Coord3D *pos, Int maxShotsToFire
 void AICommandInterface::aiFacePosition(const Coord3D *pos, Int cmdSource)
 {
 	AICommandParms parms(AICMD_FACE_POSITION, (CommandSourceType)cmdSource);
+	parms.m_pos = *pos;
+	aiDoCommand(&parms);
+}
+
+// ?rva0026C26D@AICommandInterface@@QAEXPBUCoord3D@@H@Z, retail 0x0026C26D, 108 bytes.
+// Same 108B position shape as aiFacePosition in this TU: AICMD 0x00 plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x002AF138 via lea ecx,[esi+0x20] (AICommandInterface subobject) with Coord3D plus source 1.
+// Callers at 0x0026D1C0 0x0026D519 0x002AF138 plus 37 more; landing unblocks 37.
+void AICommandInterface::rva0026C26D(const Coord3D *pos, Int cmdSource)
+{
+	AICommandParms parms((AICommandType)0, (CommandSourceType)cmdSource);
 	parms.m_pos = *pos;
 	aiDoCommand(&parms);
 }
