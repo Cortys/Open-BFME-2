@@ -46,6 +46,7 @@ struct Rva002BA8F1Primary { char opaque[0x18]; };
 class Rva002BA8F1Logic : public Rva002BA8F1Primary, public Rva002BA8F1Listener {
 public:
     Rva002E2903Player *find(const AsciiString &, unsigned int *);
+    Rva002E2903Player *find(int, unsigned int *);
     void setLocal(Rva002E2903Player *);
     void addPlayer(Rva002BA8F1Input *, bool, int, Rva002BA8F1Slot *);
     char gap[0x8c-0x1c]; Rva002BA8F1PlayerList players;
@@ -66,6 +67,24 @@ AsciiString *Rva002E18C3Lookup::find(const AsciiString &name)
 {
     for (unsigned int i = 0; i < entries.size(); ++i) {
         if (entries[i]->compare(name) == 0) return entries[i];
+    }
+    return 0;
+}
+
+// ?find@Rva002BA8F1Logic@@QAEPAVRva002E2903Player@@HPAI@Z @0x002B51F8 94B.
+// Id lookup over the same +0x8C player vector as the string find above.
+// Compares entry +0x14 against the id with -1 early-out and optional index out.
+// Callers use the 0x00DFEF10 singleton and unblock 67 functions.
+Rva002E2903Player *Rva002BA8F1Logic::find(int id, unsigned int *index)
+{
+    if (id == -1)
+        return 0;
+    for (unsigned int i = 0; i < players.size(); ++i) {
+        if (players[i]->at14 == id) {
+            if (index)
+                *index = i;
+            return players[i];
+        }
     }
     return 0;
 }
