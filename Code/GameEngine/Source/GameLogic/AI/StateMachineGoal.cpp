@@ -117,7 +117,7 @@ public:
 	Int m_goalObjectID; // +0x20
 	Coord3D m_goalPosition; // +0x24
 	float m_goalRange; // +0x30, BFME2-new range carried with the goal
-	unsigned char m_pad34[0x38 - 0x34];
+	Int m_unk34; // +0x34 retail resetToDefaultState zeroes alongside goal members (internalClear); identity unproven
 	bool m_locked; // +0x38
 	bool m_defaultStateInited; // +0x39
 
@@ -129,6 +129,7 @@ public:
 	Bool hasState(StateID id);
 	StateReturnType internalSetState(StateID newStateID);
 	StateReturnType initDefaultState();
+	StateReturnType resetToDefaultState();
 	StateReturnType setState(StateID newStateID);
 };
 
@@ -293,4 +294,34 @@ StateReturnType StateMachine::setState(StateID newStateID)
 	}
 
 	return internalSetState(newStateID);
+}
+
+// ?resetToDefaultState@StateMachine@@QAE?AW4StateReturnType@@XZ @0x004D7A75 88B
+// Retail vtable slot 6 (offset 0x18) of 19 Rva004D759C-derived vtables; donor BFME1
+// StateMachine.cpp resetToDefaultState (locked check plus inited check plus onExit RESET
+// plus internalClear plus internalSetState of default). BFME2 deltas: goalRange FLT_MAX
+// plus unk34 zeroed with goal members; single callee internalSetState 0x004D766B rowed.
+StateReturnType StateMachine::resetToDefaultState()
+{
+	if (m_locked)
+	{
+		return STATE_FAILURE;
+	}
+
+	if (!m_defaultStateInited)
+	{
+		return STATE_FAILURE;
+	}
+
+	if (m_currentState)
+		((State *)m_currentState)->onExit(EXIT_RESET);
+
+	m_goalPosition.x = 0.0f;
+	m_goalPosition.y = 0.0f;
+	m_goalPosition.z = 0.0f;
+	m_currentState = NULL;
+	m_goalObjectID = 0;
+	m_unk34 = 0;
+	m_goalRange = FLT_MAX;
+	return internalSetState(m_defaultStateID);
 }
