@@ -56,6 +56,7 @@ public:
 	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
 	UnicodeString(const AsciiString &src);
 	__forceinline ~UnicodeString() { releaseBuffer(); }
+	const WideChar *str() const { return m_data ? &m_data->data[0] : L""; }
 };
 
 class GlobalData
@@ -84,6 +85,20 @@ public:
 	UnicodeString rva002DC74A(const UnicodeString &leaf) const;
 };
 
+class BFME2FileSystemFacade
+{
+public:
+	bool doesWideFileExist(const WideChar *path);
+};
+
+#define TheFileSystem (*(BFME2FileSystemFacade **)0x00E06A48)
+
+class Rva002DCCFB
+{
+public:
+	bool rva002DCCFB(UnicodeString filename);
+};
+
 UnicodeString Rva002DC267::rva002DC267() const
 {
 	UnicodeString wtmp(TheGlobalData->rva002360DE());
@@ -107,4 +122,13 @@ UnicodeString Rva002DC74A::rva002DC74A(const UnicodeString &leaf) const
 	UnicodeString tmp(((const Rva002DC267 *)this)->rva002DC267());
 	((StringBase<WideChar> *)&tmp)->concat(*(const StringBase<WideChar> *)&leaf);
 	return tmp;
+}
+
+// Unicode doesSaveGameExist: full path from 0x002DC74A then wide existence
+// via facade doesWideFileExist pin at 0x0060068A. Filename by value.
+bool Rva002DCCFB::rva002DCCFB(UnicodeString filename)
+{
+	UnicodeString filepath(((const Rva002DC74A *)this)->rva002DC74A((const UnicodeString &)filename));
+	bool result = TheFileSystem->doesWideFileExist(filepath.str());
+	return result;
 }
