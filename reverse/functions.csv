@@ -37909,3 +37909,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??0Rva001FB93D@@QAE@XZ,,0x001FB93D,18,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 wraps Rva001FA584 at 8
 ?rva006DCEE0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DCEE0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,calls rowed isScriptFunction asserts isScriptFunction inl 791
 ?rva006DCF20@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DCF20,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,calls rowed isNativeFunction asserts isNativeFunction inl 816
+?rva006DCFA0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DCFA0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,calls rowed isArray asserts isArray inl 865

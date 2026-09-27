@@ -35,12 +35,14 @@ public:
     int isXmlAttributes() const;
     int isLoadVars() const;
     int isStage() const;
+    int isArray() const;
     int isNativeFunction() const;
     int isScriptFunction() const;
     int isCIH(bool bUndefOK) const;
     BfmeAptValue006DCD20 *rva006DCEA0();
     BfmeAptValue006DCD20 *rva006DCEE0();
     BfmeAptValue006DCD20 *rva006DCF20();
+    BfmeAptValue006DCD20 *rva006DCFA0();
     BfmeAptValue006DCD20 *rva006DCF60(bool bUndefOK);
     BfmeAptValue006DCD20 *rva006DD020();
     BfmeAptValue006DCD20 *rva006DD060();
@@ -236,6 +238,17 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCF20()
 {
     if (!static_cast<unsigned char>(isNativeFunction())) {
         g_bfmeAptAssertAtE17734("isNativeFunction()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x330);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DCFA0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DCFA0 50B. Checked cast for isArray type 22.
+// Evidence: calls rowed ?isArray@BfmeAptValue006DCD20@@QBEHXZ; asserts "isArray()" at AptValue.inl:865.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCFA0()
+{
+    if (!static_cast<unsigned char>(isArray())) {
+        g_bfmeAptAssertAtE17734("isArray()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x361);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __asm int 3
     }
