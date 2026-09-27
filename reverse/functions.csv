@@ -38994,3 +38994,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00212A5A@Rva000427195@@QAE?AUInsertRet00212A5A@@PBX@Z,,0x00212A5A,124,Code/GameEngine/Source/GameClient/Rva00212A5AInsert.cpp,matched,Eva table insert_unique via rowed bucketIndex and compare and pinned NewNode twin; 12B nodes and count at 0x10
 ?rva002129A1@Rva002129A1@@QAEXPBVModuleData@@@Z,,0x002129A1,19,Code/Libraries/Source/WWVegas/WWLib/Rva002129A1PushBack.cpp,matched,push_back wrapper to vector at this plus 0x258 via rowed 0x4DFCB0; caller 0x3FC6AD
 ?rva0043FE9A@Rva0043FE9A@@QAE_NPAVMapMetaData@@0@Z,,0x0043FE9A,309,Code/GameEngine/Source/GameClient/GUI/Rva0043FE9AComparer.cpp,matched,MapMetaData sort comparator via displayName playerCount wordF4 and two sort keys
+?rva0043F103@Rva0043F103@@QAEPAUTargetRef00217D4C@@H@Z,,0x0043F103,33,Code/GameEngine/Source/GameClient/GUI/Rva0043F103Holder.cpp,matched,lazy Rva002BED91 holder via virtual slot 0x50 and rowed set
