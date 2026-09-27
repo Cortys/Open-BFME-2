@@ -13,6 +13,9 @@ template <typename T> class StringBase {
     StringBase(const StringBase &);
     __forceinline ~StringBase() { releaseBuffer(); }
     void releaseBuffer();
+public:
+    void set(const StringBase &);
+private:
     void *m_data;
 };
 class AsciiString : private StringBase<char> {
@@ -25,6 +28,7 @@ class UnicodeString : private StringBase<unsigned short> {
 public:
     __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
     __forceinline ~UnicodeString() {}
+    __forceinline void assign(const UnicodeString &o) { StringBase<unsigned short>::set(o); }
 };
 
 // Complete retail record copy at0x00054F57.
@@ -153,8 +157,21 @@ template void _STL::_Construct<BfmeStringRecord002B4DC1,BfmeStringRecord002B4DC1
 struct BfmeStringRecord005DDD40 {
     UnicodeString text; unsigned int word;
     BfmeStringRecord005DDD40(const BfmeStringRecord005DDD40 &o);
+    BfmeStringRecord005DDD40 &operator=(const BfmeStringRecord005DDD40 &o);
 };
 BfmeStringRecord005DDD40::BfmeStringRecord005DDD40(const BfmeStringRecord005DDD40 &o) : text(o.text), word(o.word) {}
+// ??4BfmeStringRecord005DDD40@@QAEAAU0@ABU0@@Z retail 0x005DD6B6 31B.
+// Same layout as the 0x005DDD40 copy above (UnicodeString text + word).
+// Callee is StringBase<ushort>::set at 0x00037150 (pin-only); self-check plus word copy.
+// Callers 0x005DD704/0x005DD72D/0x005DD764/0x005DDB86 unblock 0x005DD743/0x005DDD5B chain.
+BfmeStringRecord005DDD40 &BfmeStringRecord005DDD40::operator=(const BfmeStringRecord005DDD40 &o)
+{
+    if (this != &o) {
+        text.assign(o.text);
+        word = o.word;
+    }
+    return *this;
+}
 template void _STL::_Construct<BfmeStringRecord005DDD40,BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40*,const BfmeStringRecord005DDD40&);
 
 // Complete retail record copy at0x00415F34.
