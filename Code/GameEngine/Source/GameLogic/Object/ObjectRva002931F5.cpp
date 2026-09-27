@@ -22,6 +22,12 @@ enum KindOfType
 	KINDOF_DUMMY = 0
 };
 
+enum ObjectStatusTypes
+{
+	STATUS_5F = 0x5F,
+	STATUS_60 = 0x60
+};
+
 struct ThingTemplate
 {
 	unsigned char m_pad[0x114];
@@ -43,7 +49,9 @@ class Object
 public:
 	Object *rva002931F5(Bool checkProducer);
 	Bool rva00293926(KindOfType kind);
+	int rva002933CD();
 	Bool isKindOf(KindOfType kind) const;
+	Bool testStatus(ObjectStatusTypes bit) const;
 
 private:
 	unsigned char m_pad00[4];
@@ -78,4 +86,21 @@ Bool Object::rva00293926(KindOfType kind)
 	if (related != 0)
 		return related->isKindOf(kind);
 	return false;
+}
+
+int Object::rva002933CD()
+{
+	Object *cur = this;
+	for (;;)
+	{
+		Object *next = cur->rva002931F5(false);
+		if (next == 0)
+			break;
+		if (next == cur)
+			break;
+		cur = next;
+	}
+	if (cur->testStatus(STATUS_60) || cur->testStatus(STATUS_5F))
+		return 1;
+	return 0;
 }
