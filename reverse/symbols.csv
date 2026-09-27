@@ -5843,3 +5843,4 @@ _ConvertBoolTrees,0x001BBD60
 ??0BfmeStringHeadRecord148@@QAE@ABU0@@Z,0x0036105B,address read from the REL32 displacement at 0x36148C in the pinned _Construct wrapper 0x361470; the body there is held under ??0Rva0036105B@@QAE@ABV0@@Z and this emitter view folds onto it
 ??$__copy_ptrs@PAUBfmePod44@@PAU1@@_STL@@YAPAUBfmePod44@@PAU1@00ABU__false_type@0@@Z,0x0007EA02,address read from the REL32 displacement at 0x81A62 in the pinned vector<BfmePod44>::erase 0x81A4F; Ghidra boundary 0x7EA02/29
 ??$_Destroy@PAURva00414BDBElement@@@_STL@@YAXPAURva00414BDBElement@@0@Z,0x00414508,address read from the REL32 displacement at 0x4147B9 in the pinned _M_clear 0x4147B1; Ghidra boundary 0x414508/24
+??$__partial_sort@PAHHU?$greater@H@_STL@@@_STL@@YAXPAH000U?$greater@H@0@@Z,0x005E5177,address read from the REL32 displacement at 0x5E522E in the pinned partial_sort<int*,greater<int>> 0x5E521C; Ghidra boundary 0x5E5177/92
