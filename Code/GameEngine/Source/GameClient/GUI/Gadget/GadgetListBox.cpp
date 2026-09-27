@@ -293,3 +293,12 @@ Int GadgetListBoxAddEntryImage(GameWindow *listbox, const Image *image, Int row,
 	addInfo.width = width;
 	return TheWindowManager->winSendSystemMsg(listbox, 0x4011, (int)&addInfo, color);
 }
+
+// ?GadgetListBoxAddEntryImage@@YAHPAVGameWindow@@PBVImage@@HH_NH@Z, retail 0x003243D0, 35 bytes.
+// Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp
+// GadgetListBoxAddEntryImage 6-arg overload: forwards to the 8-arg body with
+// hight -1 and width -1.
+Int GadgetListBoxAddEntryImage(GameWindow *listbox, const Image *image, Int row, Int column, Bool overwrite, Int color)
+{
+	return GadgetListBoxAddEntryImage(listbox, image, row, column, -1, -1, overwrite, color);
+}
