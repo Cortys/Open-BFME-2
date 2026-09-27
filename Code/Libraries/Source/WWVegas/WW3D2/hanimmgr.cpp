@@ -73,6 +73,7 @@
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ??0HAnimManagerClass@@ present-unmatched
 HAnimManagerClass::HAnimManagerClass(void) 
 {
 	// Create the hash tables
@@ -93,6 +94,7 @@ HAnimManagerClass::HAnimManagerClass(void)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ??1HAnimManagerClass@@ present-unmatched
 HAnimManagerClass::~HAnimManagerClass(void)
 {
 	Free_All_Anims();
@@ -119,6 +121,7 @@ HAnimManagerClass::~HAnimManagerClass(void)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ?Load_Anim@HAnimManagerClass@@ present-unmatched
 int HAnimManagerClass::Load_Anim(ChunkLoadClass & cload)
 {
 	WWMEMLOG(MEM_ANIMATION);
@@ -154,6 +157,7 @@ int HAnimManagerClass::Load_Anim(ChunkLoadClass & cload)
  * HISTORY:                                                                                    *
  *   5/23/2000  pds : Created.                                                                 *
  *=============================================================================================*/
+// ?Load_Morph_Anim@HAnimManagerClass@@ present-unmatched
 int HAnimManagerClass::Load_Morph_Anim(ChunkLoadClass & cload)
 {
 	HMorphAnimClass * newanim = W3DNEW HMorphAnimClass;
@@ -197,6 +201,7 @@ Error:
  * HISTORY:                                                                                    *
  *   5/23/2000  gth : Created.                                                                 *
  *=============================================================================================*/
+// ?Load_Raw_Anim@HAnimManagerClass@@ present-unmatched
 int HAnimManagerClass::Load_Raw_Anim(ChunkLoadClass & cload)
 {
 	HRawAnimClass * newanim = W3DNEW HRawAnimClass;
@@ -240,6 +245,7 @@ Error:
  * HISTORY:                                                                                    *
  *   5/23/2000  gth : Created.                                                                 *
  *=============================================================================================*/
+// ?Load_Compressed_Anim@HAnimManagerClass@@ present-unmatched
 int HAnimManagerClass::Load_Compressed_Anim(ChunkLoadClass & cload)
 {
 	HCompressedAnimClass * newanim = W3DNEW HCompressedAnimClass;
@@ -282,10 +288,12 @@ Error:
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+#pragma optimize("s", on)
 HAnimClass * HAnimManagerClass::Peek_Anim(const char * name)
 {
 	return (HAnimClass*)AnimPtrTable->Find( name );
 }
+#pragma optimize("", on)
 
 
 /*********************************************************************************************** 
@@ -300,6 +308,7 @@ HAnimClass * HAnimManagerClass::Peek_Anim(const char * name)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ?Get_Anim@HAnimManagerClass@@ present-unmatched
 HAnimClass * HAnimManagerClass::Get_Anim(const char * name)
 {	
 	HAnimClass * anim = Peek_Anim( name );
@@ -322,6 +331,7 @@ HAnimClass * HAnimManagerClass::Get_Anim(const char * name)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ?Free_All_Anims@HAnimManagerClass@@ present-unmatched
 void HAnimManagerClass::Free_All_Anims(void)
 {
 	// Make an iterator, and release all ptrs
@@ -347,6 +357,7 @@ void HAnimManagerClass::Free_All_Anims(void)
  * HISTORY:                                                                                    * 
  *   12/12/2002 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ?Free_All_Anims_With_Exclusion_List@HAnimManagerClass@@ present-unmatched
 void HAnimManagerClass::Free_All_Anims_With_Exclusion_List(const W3DExclusionListClass & exclusion_list)
 {
 	// Remove and Release_Ref any animation not in the exclusion list.
@@ -379,6 +390,7 @@ void HAnimManagerClass::Free_All_Anims_With_Exclusion_List(const W3DExclusionLis
  * HISTORY:                                                                                    * 
  *   12/12/2002 GH  : Created.                                                                 * 
  *=============================================================================================*/
+// ?Create_Asset_List@HAnimManagerClass@@ present-unmatched
 void HAnimManagerClass::Create_Asset_List(DynamicVectorClass<StringClass> & exclusion_list)
 {
 	HAnimManagerIterator it( *this );
@@ -427,16 +439,20 @@ bool HAnimManagerClass::Add_Anim(HAnimClass *new_anim)
 ** so that if they are asked for again, we can quickly return NULL, without searching the
 ** disk again.
 */
+// ?Register_Missing@HAnimManagerClass@@ present-unmatched
 void	HAnimManagerClass::Register_Missing( const char * name )
 {
 	MissingAnimTable->Add( W3DNEW MissingAnimClass( name ) );
 }
 
+#pragma optimize("s", on)
 bool	HAnimManagerClass::Is_Missing( const char * name )
 {
 	return ( MissingAnimTable->Find( name ) != NULL );
 }
+#pragma optimize("", on)
 
+// ?Reset_Missing@HAnimManagerClass@@ present-unmatched
 void	HAnimManagerClass::Reset_Missing( void )
 {
 	// Make an iterator, and release all ptrs
@@ -454,6 +470,7 @@ void	HAnimManagerClass::Reset_Missing( void )
 /*
 ** Iterator converter from HashableClass to HAnimClass
 */
+// ?Get_Current_Anim@HAnimManagerIterator@@ present-unmatched
 HAnimClass * HAnimManagerIterator::Get_Current_Anim( void )	
 { 
 	return (HAnimClass *)Get_Current(); 
