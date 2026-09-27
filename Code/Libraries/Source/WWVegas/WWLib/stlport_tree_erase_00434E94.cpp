@@ -43,3 +43,4 @@ public:
 };
 }
 template void TreeHint0043671B::_M_erase(TreeHint0043671B::_Link_type);
+template void TreeHint0043671B::clear();
