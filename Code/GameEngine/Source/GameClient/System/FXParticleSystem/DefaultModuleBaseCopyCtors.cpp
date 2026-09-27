@@ -2,7 +2,7 @@
 // Default module base copy constructors (retail 0x003AEEB3 cluster).
 // The shared three-vtable base: smart-pointer head (vptr 0x00C1B590,
 // 12-byte member copied through the rowed 0x0004CC19 body, int at +0x10)
-// plus two vtable-only bases sharing 0x00C1C780. The 71-byte body is the
+// plus two vtable-only bases sharing 0x00C1C780. The 73-byte body is the
 // 59-byte info-base shape (see ParticleModuleInfoCopyCtors.cpp) with one
 // more vtable-only base: compare 0x003AF50D.
 // Identity: eight per-module template copies (0x003AEA4C, 0x003AEB14,
@@ -52,7 +52,7 @@ public:
 	int m_int10; // +0x10
 };
 
-// Retail 0x003AEEB3, 71 bytes: the shared base copy constructor.
+// Retail 0x003AEEB3, 73 bytes: the shared base copy constructor.
 // noinline: the template copies below call it; inlining would absorb the
 // straight-line body into each caller.
 class Rva003AEEB3 : public DefaultModuleHeadBase, public DefaultModuleSecondBase,
