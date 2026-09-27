@@ -37375,3 +37375,5 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?isCIH@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006DC580,91,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,wrapper 0x006DCF60 asserts isCIH plus 12 callers push 0
 ?Rva0070DF60@Rva006DE2B0@@UAEXXZ,,0x0070DF60,30,Code/GameEngine/Source/Common/Rva006DE2B0Slot11.cpp,matched,slot11 of vtable 0x008EB150 via rowed dtor and clear
 ??0FontLibrary@@QAE@XZ,,0x00218942,103,Code/GameEngine/Source/GameClient/GUI/FontLibraryCtor.cpp,matched,FontLibrary ctor via BFME1 donor plus rowed map workers
+?isArray@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC3A0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DCFA0 asserts isArray plus 12 callers
+?isSound@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC3F0,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,caller 0x006DCFE0 asserts isSound plus 4 callers

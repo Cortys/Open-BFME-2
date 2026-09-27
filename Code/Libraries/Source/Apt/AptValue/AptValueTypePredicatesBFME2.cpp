@@ -18,6 +18,8 @@ public:
     int isBoolean() const;
     int isNativeFunction() const;
     int isScriptFunction() const;
+    int isArray() const;
+    int isSound() const;
     int isDate() const;
     int isKey() const;
     int isMath() const;
@@ -112,6 +114,35 @@ int BfmeAptValue006DCD20::isScriptFunction() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type >= 43 && flags.type <= 45 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isArray@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC3A0, 78 bytes.
+// Predicate for type 22 (0x2C000000), "this" assert at AptValue.inl:1711.
+// Evidence: caller 0x006DCFA0 asserts "isArray()" after calling it; 12 callers
+// in FUN_00ad9780/00ad9b50/00ad9c70/00ad9ce0/00ad9f00/00ada0c0; same /O2 shape
+// as siblings in this TU.
+int BfmeAptValue006DCD20::isArray() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1711);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 22 && !isUndefined()) return 1;
+    return 0;
+}
+
+// ?isSound@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC3F0, 78 bytes.
+// Predicate for type 21 (0x2A000000), "this" assert at AptValue.inl:1737.
+// Evidence: caller 0x006DCFE0 asserts "isSound()" after calling it; callers at
+// 0x006DCFE3/0x006F359D/0x006F3677/0x006F36B4; same /O2 shape as siblings.
+int BfmeAptValue006DCD20::isSound() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1737);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 21 && !isUndefined()) return 1;
     return 0;
 }
 
