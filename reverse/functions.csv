@@ -37766,3 +37766,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004267E9@Rva004266A1@@QAEPAXH@Z,,0x004267E9,36,Code/GameEngine/Source/Common/Rva004267E9Getter.cpp,matched,indexed pointer via rowed bounds check with empty-string fallback
 ?rva002AB87D@Player@@QBE_NPBVUpgradeTemplate@@@Z,,0x002AB87D,23,Code/GameEngine/Source/Common/RTS/PlayerRva002AB87D.cpp,matched,Player null-guarded UpgradeTemplate bit test via rowed testBit
 ?aiFacePosition@AICommandInterface@@QAEXPBUCoord3D@@H@Z,,0x003C7782,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 donor aiFacePosition plus AICMD 0x27 plus slot-0 aiDoCommand plus callers 0x3C9A75 0x3C9B92
+?rva00278689@Drawable@@QAE_NABVAsciiString@@_N1@Z,,0x00278689,80,Code/GameEngine/Source/GameClient/Drawable_rva00278689.cpp,matched,Drawable find DrawModule by tag via TheNameKeyGenerator same 14C walk as 2724FD
