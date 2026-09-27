@@ -2016,3 +2016,4 @@ FUN_007eca81	0x003ECA81	50	blocked	register wall 3 variants best 49of50B t=12 mo
 ?dispatch@SidesListNotifier@@QAEXPBUPost@1@@Z	0x0032AE25	109	blocked	virtual Guard 12B plus member-ptr callback gives 107B; wall swapped esi edi xor ecx-vs-eax inc-vs-lea p-in-ebx t=30 model=muse-4e9b
 ??1Rva004703E0@@QAE@XZ	0x004703E0	78	partial	EH state mov 1 vs and 0 plus mov ecx scheduling t=30 model=muse-2d95 score=0.93 stash=reverse/attempts/0x004703e0.cpp
 ??0LargeGroupAudioUpdateModuleData@@QAE@XZ	0x004ABED8	111	partial	fstp-vs-EH-state scheduling wall: retail push-push-fstp-movstate-call vs body push-push-movstate-fstp-call; 111B/32insns exact size; 6 variants tried (init-list plus OCL-dtor plus G7 plus Os plus O2 plus GX); t=45min model=muse-spark score=0.93 stash=reverse/attempts/0x004abed8.cpp
+FUN_006e3714	0x002E3714	40	blocked	unlink head-or-link 4 variants best 34B merged-head-check t=20 model=muse-567d
