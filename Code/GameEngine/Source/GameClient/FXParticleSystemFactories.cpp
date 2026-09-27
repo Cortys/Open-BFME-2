@@ -1,4 +1,5 @@
 // cl: /O1 /EHsc /arch:SSE2
+#include <memory>
 
 // The module factories, split out of FXParticleSystemModules.cpp for one flag.
 // createTemplate allocates, so its body sits inside an unwind region and opens
@@ -478,17 +479,22 @@ typename TAG::TemplateType *ConcreteModuleClass<TAG>::createTemplate() const
     return new ConcreteModuleTemplate<TAG>();
 }
 
-// The INI-taking overload: allocate, then hand the block straight to the module
-// template's own parser. The allocation and the parse call sit in the same
-// unwind region, which is what puts the state stores around them.
+// The INI-taking overload: allocate inside an auto_ptr, then hand the block
+// straight to the module template's own parser. BFME1's bulk file proves the
+// auto_ptr shape (std::auto_ptr<T> moduleTemplate(new ...); get()->parse;
+// release); the holder is what keeps the parse call inside a second unwind
+// region (state 1) and emits the extra mov [ebp-0x10],esi store. 0x003AC857
+// is the TerrainCollision slot-0 (vslot of 0x0081BEB8, ctor 0x003A8826,
+// parse 0x00564497, push 0x28).
 template <class TAG>
 typename TAG::TemplateType *ConcreteModuleClass<TAG>::createTemplate(INI *ini) const
 {
-    ConcreteModuleTemplate<TAG> *result = new ConcreteModuleTemplate<TAG>();
+    std::auto_ptr<ConcreteModuleTemplate<TAG> > moduleTemplate(
+        new ConcreteModuleTemplate<TAG>());
 
-    result->parse(ini);
+    moduleTemplate.get()->parse(ini);
 
-    return result;
+    return moduleTemplate.release();
 }
 
 #define FX_WRAPPER(CATEGORY, KEY, MOD, TMPL)                                                      \
