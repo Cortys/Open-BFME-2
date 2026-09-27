@@ -74,12 +74,21 @@ class Rva003ED2A3Manager : public SubsystemInterface
 {
 public:
 	void remove(const AsciiString &name, void *unused);
+	void add(const AsciiString &name, void *obj);
 	void init() { }
 	void reset() { }
 	void update() { }
 
 private:
 	ArmorTemplateMap m_map;
+};
+
+class Object;
+
+class ObjectLookupMap
+{
+public:
+	Object **findSlot(int *key);
 };
 
 void Rva003ED2A3Manager::remove(const AsciiString &name, void *unused)
@@ -89,4 +98,15 @@ void Rva003ED2A3Manager::remove(const AsciiString &name, void *unused)
 	ArmorTemplateMap::iterator it = m_map.find(key);
 	if (it != m_map.end())
 		m_map.erase(it);
+}
+
+void Rva003ED2A3Manager::add(const AsciiString &name, void *obj)
+{
+	NameKeyType key = TheNameKeyGenerator->nameToKey(name);
+	ArmorTemplateMap::iterator it = m_map.find(key);
+	if (it == m_map.end())
+	{
+		Object **slot = ((ObjectLookupMap *)&m_map)->findSlot((int *)&key);
+		*slot = (Object *)obj;
+	}
 }
