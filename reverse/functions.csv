@@ -37368,3 +37368,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??0Rva004A6956@@QAE@PAVStateMachine@@@Z,,0x004A6956,29,Code/GameEngine/Source/Common/StateDerivedCtors_muse-a7a4.cpp,matched,State derived ctor hash 0xC40022B2 vtable 0x00852DE0 via I base pin
 ??0Rva004A6979@@QAE@PAVStateMachine@@@Z,,0x004A6979,29,Code/GameEngine/Source/Common/StateDerivedCtors_muse-a7a4.cpp,matched,State derived ctor hash 0xCAD6313C vtable 0x00852E38 via I base pin
 ??0Rva004A699C@@QAE@PAVStateMachine@@@Z,,0x004A699C,29,Code/GameEngine/Source/Common/StateDerivedCtors_muse-a7a4.cpp,matched,State derived ctor hash 0xE6B21889 vtable 0x00852E90 via I base pin
+?releaseBuffer@?$StringBase@D@@AAEXXZ,0x00036410,0x00036410,133,Code/Libraries/Source/WWVegas/WWLib/StringBaseWideReleaseBuffer.cpp,matched,BFME2 export narrow releaseBuffer via ZH donor and rowed lock singleton and free
