@@ -298,10 +298,23 @@ public:
 		}
 		return m_chunkStack->dataSize;
 	}
+	// Retail 0x00306E2E (18B): atEndOfChunk via dataLeft<=0 (null=>true).
+	// ZH donor DataChunk.cpp atEndOfChunk verbatim. Caller 0x000AD07F.
+	Bool atEndOfChunk(void);
 	Bool atEndOfFile(void) { return m_file->eof(); }
 
 	Bool parse(void *userData);
 };
+
+Bool DataChunkInput::atEndOfChunk(void)
+{
+	if (m_chunkStack) {
+		if (m_chunkStack->dataLeft <= 0)
+			return true;
+		return false;
+	}
+	return true;
+}
 
 // ??1DataChunkInput@@QAE@XZ
 // ??1DataChunkInput@@QAE@XZ present-unmatched
