@@ -37907,3 +37907,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva00389F4A@Rva00389F4A@@QAEHH@Z,,0x00389F4A,45,Code/GameEngine/Source/Common/Rva00389F4AMapAssign.cpp,matched,post-inc id plus map assign via rowed operator[]; caller keeps id
 ??0Rva001FBC8F@@QAE@XZ,,0x001FBC8F,18,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 wraps Rva001FBAD8 at 4
 ??0Rva001FB93D@@QAE@XZ,,0x001FB93D,18,Code/GameEngine/Source/GameLogic/Object/Rva001FA584Ctor.cpp,matched,chain zeroes 0 wraps Rva001FA584 at 8
+?rva006DCEE0@BfmeAptValue006DCD20@@QAEPAV1@XZ,,0x006DCEE0,50,Code/Libraries/Source/Apt/AptValue/AptValueCheckedCastsBFME2.cpp,matched,calls rowed isScriptFunction asserts isScriptFunction inl 791
