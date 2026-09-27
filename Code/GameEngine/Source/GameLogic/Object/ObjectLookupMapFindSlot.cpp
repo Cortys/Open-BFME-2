@@ -81,3 +81,36 @@ Object **ObjectLookupMap::findSlot( int *key )
 	}
 	return &node->value;
 }
+
+class Player
+{
+public:
+	int getPlayerIndex() const { return m_index54; }
+private:
+	char m_pad00[0x54];
+	int m_index54; // +0x54
+};
+
+struct MapHolder
+{
+	void *m_vtbl;
+	ObjectLookupMap m_map; // +0x04
+};
+
+class Rva002ADF9C
+{
+public:
+	void rva002ADF9C(const Player *p, Object *o);
+private:
+	char m_pad00[0x330];
+	MapHolder *m_holder; // +0x330
+};
+
+void Rva002ADF9C::rva002ADF9C(const Player *p, Object *o)
+{
+	if (!p)
+		return;
+	int key = p->getPlayerIndex();
+	Object **slot = m_holder->m_map.findSlot(&key);
+	*slot = o;
+}

@@ -39478,3 +39478,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0028BD17@Object@@QBEPAXXZ,,0x0028BD17,35,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BD17.cpp,matched,Object plus0x244 behavior scan slot 0x80 sibling of slot 0x98 and spawn slot 30
 ?getRelationship@Player@@QBE?AW4Relationship@@PBVTeam@@@Z,,0x002AD0C6,88,Code/GameEngine/Source/Common/RTS/PlayerGetRelationship.cpp,matched,Player Team overload via BFME1 donor and sibling 0x2AC3E0 pattern
 ?getRelationship@Player@@QBE?AW4Relationship@@PBVObject@@@Z,,0x002AD11E,33,Code/GameEngine/Source/Common/RTS/PlayerGetRelationship.cpp,matched,Player Object overload via controllingPlayer plus sibling
+?rva002ADF9C@Rva002ADF9C@@QAEXPBVPlayer@@PAVObject@@@Z,,0x002ADF9C,43,Code/GameEngine/Source/GameLogic/Object/ObjectLookupMapFindSlot.cpp,matched,Lookup table store via PlayerIndex plus findSlot
