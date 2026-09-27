@@ -114,6 +114,7 @@ AIUpdateModuleData::~AIUpdateModuleData()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?findLocomotorTemplateVector@AIUpdateModuleData@@ present-unmatched
 const LocomotorTemplateVector* AIUpdateModuleData::findLocomotorTemplateVector(LocomotorSetType t) const
 {
 	if (m_locomotorTemplates.empty())
@@ -205,6 +206,7 @@ const LocomotorTemplateVector* AIUpdateModuleData::findLocomotorTemplateVector(L
 
 //-------------------------------------------------------------------------------------------------
 // subclasses may want to override this, to use a subclass of AIStateMachine.
+// ?makeStateMachine@AIUpdateInterface@@ present-unmatched
 AIStateMachine* AIUpdateInterface::makeStateMachine()
 {
 	return newInstance(AIStateMachine)( getObject(), "AIUpdateInterfaceMachine");
@@ -213,6 +215,7 @@ AIStateMachine* AIUpdateInterface::makeStateMachine()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0AIUpdateInterface@@ present-unmatched
 AIUpdateInterface::AIUpdateInterface( Thing *thing, const ModuleData* moduleData ) : 
 	UpdateModule( thing, moduleData )
 {
@@ -314,6 +317,7 @@ AIUpdateInterface::AIUpdateInterface( Thing *thing, const ModuleData* moduleData
 //=============================================================================
 // Object::setSurrendered, and related methods ================================
 //=============================================================================
+// ?setSurrendered@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setSurrendered( const Object *objWeSurrenderedTo, Bool surrendered )
 {
 	if (surrendered)
@@ -358,6 +362,7 @@ void AIUpdateInterface::setSurrendered( const Object *objWeSurrenderedTo, Bool s
 #endif
 
 //=============================================================================
+// ?setGoalPositionClipped@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setGoalPositionClipped(const Coord3D* in, CommandSourceType cmdSource)
 {
 	if (in)
@@ -403,6 +408,7 @@ to call use the PathfindServicesInterface to do a pathfind operation.  This shou
 (and in fact is very hard to do because PathfindServicesInterace is private to the pathfinder)
 except by the pathfinder during pathfind queue processing.  jba */
 //-------------------------------------------------------------------------------------------------
+// ?doPathfind@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::doPathfind( PathfindServicesInterface *pathfinder )
 {
 	if (!m_waitingForPath) {
@@ -486,6 +492,7 @@ void AIUpdateInterface::doPathfind( PathfindServicesInterface *pathfinder )
 pathfinder (air units just move point to point) it generates the path immediately.  Otherwise the path
 will be processed when we get to the front of the pathfind queue. jba */
 //-------------------------------------------------------------------------------------------------
+// ?requestPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::requestPath( Coord3D *destination, Bool isFinalGoal ) 
 {
 
@@ -527,6 +534,7 @@ void AIUpdateInterface::requestPath( Coord3D *destination, Bool isFinalGoal )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?requestAttackPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::requestAttackPath( ObjectID victimID, const Coord3D* victimPos ) 
 {
 	if (m_locomotorSet.getValidSurfaces() == 0) {
@@ -550,6 +558,7 @@ void AIUpdateInterface::requestAttackPath( ObjectID victimID, const Coord3D* vic
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?requestApproachPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::requestApproachPath( Coord3D *destination ) 
 {
 	if (m_locomotorSet.getValidSurfaces() == 0) {
@@ -574,6 +583,7 @@ void AIUpdateInterface::requestApproachPath( Coord3D *destination )
 
 //-------------------------------------------------------------------------------------------------
 // Requests a safe path away from the repulsor.
+// ?requestSafePath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::requestSafePath( ObjectID repulsor ) 
 {
 	if (repulsor != m_repulsor1) {
@@ -599,6 +609,7 @@ void AIUpdateInterface::requestSafePath( ObjectID repulsor )
 enum {WAYPOINT_PATH_LIMIT=1024};
 //-------------------------------------------------------------------------------------------------
 // 
+// ?setPathFromWaypoint@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setPathFromWaypoint(const Waypoint *way, const Coord2D *offset) 
 {
 	destroyPath();
@@ -628,6 +639,7 @@ void AIUpdateInterface::setPathFromWaypoint(const Waypoint *way, const Coord2D *
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?onObjectCreated@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::onObjectCreated()
 {
 	// create the behavior state machine.
@@ -641,6 +653,7 @@ void AIUpdateInterface::onObjectCreated()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ??1AIUpdateInterface@@ present-unmatched
 AIUpdateInterface::~AIUpdateInterface( void )
 {
 	m_locomotorSet.clear();
@@ -799,6 +812,7 @@ WhichTurretType AIUpdateInterface::getWhichTurretForWeaponSlot(WeaponSlotType ws
 }
 
 //=============================================================================
+// ?getCurLocomotorSpeed@AIUpdateInterface@@ present-unmatched
 Real AIUpdateInterface::getCurLocomotorSpeed() const
 {
 	if (m_curLocomotor != NULL)
@@ -809,6 +823,7 @@ Real AIUpdateInterface::getCurLocomotorSpeed() const
 }
 
 //=============================================================================
+// ?setLocomotorUpgrade@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setLocomotorUpgrade(Bool set)
 {
 	m_upgradedLocomotors = set;
@@ -817,6 +832,7 @@ void AIUpdateInterface::setLocomotorUpgrade(Bool set)
 }
 
 //=============================================================================
+// ?chooseLocomotorSet@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::chooseLocomotorSet(LocomotorSetType wst)
 {
 	DEBUG_ASSERTCRASH(wst != LOCOMOTORSET_NORMAL_UPGRADED, ("never pass LOCOMOTORSET_NORMAL_UPGRADED here"));
@@ -838,6 +854,7 @@ Bool AIUpdateInterface::chooseLocomotorSet(LocomotorSetType wst)
 //=============================================================================
 // this should only be called by load/save, or by chooseLocomotorSet.
 // it does no sanity checking; it just jams it in.
+// ?chooseLocomotorSetExplicit@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::chooseLocomotorSetExplicit(LocomotorSetType wst)
 {
 	const LocomotorTemplateVector* set = getAIUpdateModuleData()->findLocomotorTemplateVector(wst);
@@ -858,6 +875,7 @@ Bool AIUpdateInterface::chooseLocomotorSetExplicit(LocomotorSetType wst)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?chooseGoodLocomotorFromCurrentSet@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::chooseGoodLocomotorFromCurrentSet( void )
 {
 	Locomotor* prevLoco = m_curLocomotor;
@@ -901,6 +919,7 @@ void AIUpdateInterface::chooseGoodLocomotorFromCurrentSet( void )
 }
 
 //----------------------------------------------------------------------------------------------------------
+// ?checkForCrateToPickup@AIUpdateInterface@@ present-unmatched
 Object* AIUpdateInterface::checkForCrateToPickup()
 {
 	if (m_crateCreated != INVALID_ID) 
@@ -927,6 +946,7 @@ Object* AIUpdateInterface::checkForCrateToPickup()
 
 #ifdef ALLOW_SURRENDER
 //-------------------------------------------------------------------------------------------------
+// ?doSurrenderUpdateStuff@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::doSurrenderUpdateStuff()
 {
 	RELEASE_CRASH(("Read the comment in doSurrenderUpdateStuff"));
@@ -1000,6 +1020,7 @@ void AIUpdateInterface::wakeUpNow()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?friend_notifyStateMachineChanged@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::friend_notifyStateMachineChanged()
 {
 	wakeUpNow();
@@ -1010,6 +1031,7 @@ void AIUpdateInterface::friend_notifyStateMachineChanged()
  * The "main loop" of the AI subsystem
  */
 DECLARE_PERF_TIMER(AIUpdateInterface_update)
+// ?update@AIUpdateInterface@@ present-unmatched
 UpdateSleepTime AIUpdateInterface::update( void )	 
 {
 	//DEBUG_LOG(("AIUpdateInterface frame %d: %08lx\n",TheGameLogic->getFrame(),getObject()));
@@ -1164,6 +1186,7 @@ UpdateSleepTime AIUpdateInterface::update( void )
 /**
  * Append waypoint to queue for later movement
  */
+// ?queueWaypoint@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::queueWaypoint( const Coord3D *pos )
 {
 	if (m_waypointCount < MAX_WAYPOINTS)
@@ -1178,6 +1201,7 @@ Bool AIUpdateInterface::queueWaypoint( const Coord3D *pos )
 /**
  * Start moving along the waypoint path in the queue
  */
+// ?executeWaypointQueue@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::executeWaypointQueue( void )
 {
 	// the dead don't listen very well
@@ -1194,6 +1218,7 @@ void AIUpdateInterface::executeWaypointQueue( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?clearWaypointQueue@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::clearWaypointQueue( void )
 {
 	m_waypointCount = 0;
@@ -1201,6 +1226,7 @@ void AIUpdateInterface::clearWaypointQueue( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?markAsDead@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::markAsDead()
 {
 	m_isAiDead = TRUE;
@@ -1216,6 +1242,7 @@ The way to have a higher priority is:
 3. If exactly tied (usually beacause both units got unfortunately snapped to the same location), ObjectID is used
 to break the tie. 
 */
+// ?hasHigherPathPriority@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::hasHigherPathPriority(AIUpdateInterface *otherAI) const
 {
 	Object *other = otherAI->getObject();
@@ -1259,6 +1286,7 @@ Bool AIUpdateInterface::hasHigherPathPriority(AIUpdateInterface *otherAI) const
 //-------------------------------------------------------------------------------------------------
 /* Returns max speed we can have and not run into unit that is blocking us.
 */
+// ?calculateMaxBlockedSpeed@AIUpdateInterface@@ present-unmatched
 Real AIUpdateInterface::calculateMaxBlockedSpeed(Object *other) const
 {
 	Coord3D ourDir = *getObject()->getUnitDirectionVector2D();
@@ -1297,6 +1325,7 @@ Real AIUpdateInterface::calculateMaxBlockedSpeed(Object *other) const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?blockedBy@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::blockedBy(Object *other)
 /* Returns TRUE if we are blocked from moving by the other object.*/
 {
@@ -1405,6 +1434,7 @@ Bool AIUpdateInterface::blockedBy(Object *other)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?needToRotate@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::needToRotate(void)
 /* Returns TRUE if we need to rotate to point in our path's direcion.*/
 {
@@ -1435,6 +1465,7 @@ Bool AIUpdateInterface::needToRotate(void)
 //-------------------------------------------------------------------------------------------------
 /* Returns TRUE if the physics collide should apply the force.  Normally not.  
 Also determines whether objects are blocked, and if so, if they are stuck.  jba.*/
+// ?processCollision@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::processCollision(PhysicsBehavior *physics, Object *other)
 {
 
@@ -1596,6 +1627,7 @@ Bool AIUpdateInterface::processCollision(PhysicsBehavior *physics, Object *other
 /**
  * See if we can do a quick path without pathfinding.
  */
+// ?canComputeQuickPath@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::canComputeQuickPath( void )
 {
 	/* Basically, if a unit is moving through the air, we can quick path.  jba. */
@@ -1623,6 +1655,7 @@ Bool AIUpdateInterface::canComputeQuickPath( void )
 /**
  * Create a quick path.  (Just places the start & end point as the path). jba.
  */
+// ?computeQuickPath@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::computeQuickPath( const Coord3D *destination )
 {
 	// for now, quick path objects don't pathfind, generally airborne units
@@ -1676,6 +1709,7 @@ Bool AIUpdateInterface::computeQuickPath( const Coord3D *destination )
 /**
  * Invoke the pathfinder to compute a path to the desired location.
  */
+// ?computePath@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::computePath( PathfindServicesInterface *pathServices, Coord3D *destination )
 {
 
@@ -1790,6 +1824,7 @@ Bool AIUpdateInterface::computePath( PathfindServicesInterface *pathServices, Co
 /**
  * Invoke the pathfinder to compute a path to attack the current victim.
  */
+// ?computeAttackPath@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::computeAttackPath( PathfindServicesInterface *pathServices, const Object *victim, const Coord3D* victimPos )
 {
 	//CRCDEBUG_LOG(("AIUpdateInterface::computeAttackPath() for object %d\n", getObject()->getID()));
@@ -2043,6 +2078,7 @@ void AIUpdateInterface::destroyPath( void )
 /**
  * This is used by the internal move to state to indicate that a move started.
  */
+// ?friend_startingMove@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::friend_startingMove(void) 
 {
 	m_movementComplete = FALSE; // we aren't finished moving.
@@ -2055,6 +2091,7 @@ void AIUpdateInterface::friend_startingMove(void)
 /**
  * This is used by the internal move to state to indicate that a move completed.
  */
+// ?friend_endingMove@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::friend_endingMove()
 {
 	m_movementComplete = TRUE;
@@ -2075,6 +2112,7 @@ void AIUpdateInterface::friend_setPath(Path *path)
 /**
  * This is used by the guard tunnel network state to set a target object.
  */
+// ?friend_setGoalObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::friend_setGoalObject(Object *obj)
 {
 	Bool locked = getStateMachine()->isLocked();
@@ -2088,6 +2126,7 @@ void AIUpdateInterface::friend_setGoalObject(Object *obj)
 //-------------------------------------------------------------------------------------------------
 /** Is there a path at all that exists from us to the destination location */
 //-------------------------------------------------------------------------------------------------
+// ?isPathAvailable@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isPathAvailable( const Coord3D *destination ) const
 {
 	
@@ -2105,6 +2144,7 @@ Bool AIUpdateInterface::isPathAvailable( const Coord3D *destination ) const
 /** Is there a path (computed using the less accurate but quick method )
 	* at all that exists from us to the destination location */
 //-------------------------------------------------------------------------------------------------
+// ?isQuickPathAvailable@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isQuickPathAvailable( const Coord3D *destination ) const
 {
 	
@@ -2122,6 +2162,7 @@ Bool AIUpdateInterface::isQuickPathAvailable( const Coord3D *destination ) const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?isValidLocomotorPosition@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isValidLocomotorPosition(const Coord3D* pos) const
 {
 	return TheAI->pathfinder()->validMovementPosition( getObject()->getCrusherLevel()>0, getObject()->getLayer(), m_locomotorSet, pos );
@@ -2132,6 +2173,7 @@ DECLARE_PERF_TIMER(doLocomotor)
 /**
  * Compute drive forces
  */
+// ?doLocomotor@AIUpdateInterface@@ present-unmatched
 UpdateSleepTime AIUpdateInterface::doLocomotor( void )
 {
 	USE_PERF_TIMER(doLocomotor)
@@ -2325,6 +2367,7 @@ UpdateSleepTime AIUpdateInterface::doLocomotor( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setLocomotorGoalPositionOnPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setLocomotorGoalPositionOnPath()
 {
 	m_locomotorGoalType = POSITION_ON_PATH;
@@ -2345,6 +2388,7 @@ if (_isnan(m_locomotorGoalData.x) || _isnan(m_locomotorGoalData.y) || _isnan(m_l
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setLocomotorGoalOrientation@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setLocomotorGoalOrientation(Real angle)
 {
 	m_locomotorGoalType = ANGLE;
@@ -2358,12 +2402,14 @@ if (_isnan(m_locomotorGoalData.x) || _isnan(m_locomotorGoalData.y) || _isnan(m_l
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?setLocomotorGoalNone@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setLocomotorGoalNone()
 {
 	m_locomotorGoalType = NONE;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?isDoingGroundMovement@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isDoingGroundMovement(void) const
 {
   
@@ -2413,6 +2459,7 @@ Bool AIUpdateInterface::isDoingGroundMovement(void) const
 Others, like missles, should stack destinations.  AdjustDestination in pathfinder unstacks
 destinations, and this routine identifies non-ground units that should unstack. */
 
+// ?isAircraftThatAdjustsDestination@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isAircraftThatAdjustsDestination(void) const
 {
 	if (m_curLocomotor == NULL) 
@@ -2437,6 +2484,7 @@ Bool AIUpdateInterface::isAircraftThatAdjustsDestination(void) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getTreatAsAircraftForLocoDistToGoal@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::getTreatAsAircraftForLocoDistToGoal() const
 {
 	Bool treatAsAircraft = !isDoingGroundMovement();
@@ -2454,6 +2502,7 @@ Bool AIUpdateInterface::getTreatAsAircraftForLocoDistToGoal() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getLocomotorDistanceToGoal@AIUpdateInterface@@ present-unmatched
 Real AIUpdateInterface::getLocomotorDistanceToGoal() 
 {
 	switch (m_locomotorGoalType)
@@ -2541,6 +2590,7 @@ Real AIUpdateInterface::getLocomotorDistanceToGoal()
 /**
  * Catch up with the rest of the team.
  */
+// ?joinTeam@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::joinTeam( void )
 {
 	// the dead don't listen very well
@@ -2597,6 +2647,7 @@ void AIUpdateInterface::joinTeam( void )
 }  // end joinTeam
 
 //-------------------------------------------------------------------------------------------------
+// ?isAllowedToRespondToAiCommands@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isAllowedToRespondToAiCommands(const AICommandParms* parms) const
 {
 	// the dead don't listen very well
@@ -2627,6 +2678,7 @@ Bool AIUpdateInterface::isAllowedToRespondToAiCommands(const AICommandParms* par
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?aiDoCommand@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::aiDoCommand(const AICommandParms* parms)
 {
 	if (!isAllowedToRespondToAiCommands(parms))
@@ -2889,6 +2941,7 @@ void AIUpdateInterface::aiDoCommand(const AICommandParms* parms)
 /**
  * Move to given position(s)
  */
+// ?privateMoveToPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateMoveToPosition( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE) 
@@ -2927,6 +2980,7 @@ void AIUpdateInterface::privateMoveToPosition( const Coord3D *pos, CommandSource
 /**
  * Move to given object
  */
+// ?privateMoveToObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateMoveToObject( Object *obj, CommandSourceType cmdSource ) 
 {
 	// the dead don't listen very well
@@ -2955,6 +3009,7 @@ void AIUpdateInterface::privateMoveToObject( Object *obj, CommandSourceType cmdS
 //----------------------------------------------------------------------------------------
 // Face a specified object -- succeed when facing
 //----------------------------------------------------------------------------------------
+// ?privateFaceObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFaceObject( Object *obj, CommandSourceType cmdSource )
 {
 	if( !getObject()->isMobile() )
@@ -2980,6 +3035,7 @@ void AIUpdateInterface::privateFaceObject( Object *obj, CommandSourceType cmdSou
 //----------------------------------------------------------------------------------------
 // Face a specified position -- succeed when facing
 //----------------------------------------------------------------------------------------
+// ?privateFacePosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFacePosition( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if( !getObject()->isMobile() )
@@ -3006,6 +3062,7 @@ void AIUpdateInterface::privateFacePosition( const Coord3D *pos, CommandSourceTy
 // Rappel into target and devastate contents (if not empty).
 // If target is null, rappel to ground.
 //----------------------------------------------------------------------------------------
+// ?privateRappelInto@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateRappelInto( Object *target, const Coord3D& pos, CommandSourceType cmdSource )
 {
 
@@ -3031,6 +3088,7 @@ void AIUpdateInterface::privateRappelInto( Object *target, const Coord3D& pos, C
  * Move to given position(s)
  * If transportExits, transport returns and deletes itself.
  */
+// ?privateMoveToAndEvacuate@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateMoveToAndEvacuate( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3057,6 +3115,7 @@ void AIUpdateInterface::privateMoveToAndEvacuate( const Coord3D *pos, CommandSou
  * Move to given position(s)
  * If transportExits, transport returns and deletes itself.
  */
+// ?privateMoveToAndEvacuateAndExit@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateMoveToAndEvacuateAndExit( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3092,6 +3151,7 @@ void AIUpdateInterface::privateMoveToAndEvacuateAndExit( const Coord3D *pos, Com
 /**
  * Enter idle state.
  */
+// ?privateIdle@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateIdle(CommandSourceType cmdSource)
 {
 	if (getObject()->isKindOf(KINDOF_PROJECTILE))
@@ -3120,6 +3180,7 @@ void AIUpdateInterface::privateIdle(CommandSourceType cmdSource)
 }
 
 //----------------------------------------------------------------------------------------
+// ?isIdle@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isIdle() const
 {
 	const AIStateMachine *state = getStateMachine();
@@ -3131,6 +3192,7 @@ Bool AIUpdateInterface::isIdle() const
 }
 
 //----------------------------------------------------------------------------------------
+// ?isAttacking@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isAttacking() const
 {
 	return getStateMachine()->isInAttackState();
@@ -3139,12 +3201,14 @@ Bool AIUpdateInterface::isAttacking() const
 //----------------------------------------------------------------------------------------
 //Definition of busy -- when explicitly in the busy state. Moving or attacking is not considered busy!
 //----------------------------------------------------------------------------------------
+// ?isBusy@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isBusy() const
 {
 	return getStateMachine()->isInBusyState();
 }
 
 //----------------------------------------------------------------------------------------
+// ?isClearingMines@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isClearingMines() const
 {
 	// if we are attacking with an anti-mine weapon, we are clearing mines, regardless
@@ -3167,6 +3231,7 @@ Bool AIUpdateInterface::isClearingMines() const
 /**
  * Take the shortest path towards pos in order to tighten up a formation
  */
+// ?privateTightenToPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateTightenToPosition( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3181,6 +3246,7 @@ void AIUpdateInterface::privateTightenToPosition( const Coord3D *pos, CommandSou
 /**
  * Is this moving out of the way of another unit.
  */
+// ?isMovingAwayFrom@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isMovingAwayFrom(Object *obj)	 const
 {
 	ObjectID id = obj->getID();
@@ -3194,6 +3260,7 @@ Bool AIUpdateInterface::isMovingAwayFrom(Object *obj)	 const
 /**
  * Is this moving out of the way of another unit.
  */
+// ?isMoving@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::isMoving() const
 {
 	if (isIdle()) {
@@ -3212,6 +3279,7 @@ Bool AIUpdateInterface::isMoving() const
 /**
  * Move out of the way of another unit.
  */
+// ?privateMoveAwayFromUnit@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateMoveAwayFromUnit( Object *unit, CommandSourceType cmdSource )
 {
 	// the dead don't listen very well
@@ -3271,6 +3339,7 @@ void AIUpdateInterface::privateMoveAwayFromUnit( Object *unit, CommandSourceType
 /**
  * Start following the path from the given point
  */
+// ?privateFollowWaypointPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowWaypointPath( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3292,6 +3361,7 @@ void AIUpdateInterface::privateFollowWaypointPath( const Waypoint *way, CommandS
 /**
  * Start following the path from the given point
  */
+// ?privateFollowWaypointPathExact@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowWaypointPathExact( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3313,6 +3383,7 @@ void AIUpdateInterface::privateFollowWaypointPathExact( const Waypoint *way, Com
 /**
  * Start following the path from the given point
  */
+// ?privateFollowWaypointPathAsTeam@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowWaypointPathAsTeam( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3334,6 +3405,7 @@ void AIUpdateInterface::privateFollowWaypointPathAsTeam( const Waypoint *way, Co
 /**
  * Start following the path from the given point
  */
+// ?privateFollowWaypointPathAsTeamExact@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowWaypointPathAsTeamExact( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3352,6 +3424,7 @@ void AIUpdateInterface::privateFollowWaypointPathAsTeamExact( const Waypoint *wa
 }
 
 //----------------------------------------------------------------------------------------
+// ?privateFollowPathAppend@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowPathAppend( const Coord3D *pos, CommandSourceType cmdSource )
 {
 	// We're adding a dynamic waypoint!
@@ -3384,6 +3457,7 @@ void AIUpdateInterface::privateFollowPathAppend( const Coord3D *pos, CommandSour
 /**
  * Follow the path defined by the given array of points
  */
+// ?privateFollowPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateFollowPath( const std::vector<Coord3D>* path, Object *ignoreObject, CommandSourceType cmdSource, Bool exitProduction )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3420,6 +3494,7 @@ void AIUpdateInterface::privateFollowPath( const std::vector<Coord3D>* path, Obj
 /**
  * Attack given object
  */
+// ?privateAttackObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackObject( Object *victim, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	//Resetting the locomotor here was initially added for scripting purposes. It has been moved
@@ -3446,6 +3521,7 @@ void AIUpdateInterface::privateAttackObject( Object *victim, Int maxShotsToFire,
 }
 
 //-----------------------------------------------------------------------------------------
+// ?privateForceAttackObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateForceAttackObject( Object *victim, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	if (!victim) {
@@ -3464,6 +3540,7 @@ void AIUpdateInterface::privateForceAttackObject( Object *victim, Int maxShotsTo
 }
 
 //-----------------------------------------------------------------------------------------
+// ?privateGuardRetaliate@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGuardRetaliate( Object *victim, const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	if (!victim) {
@@ -3486,6 +3563,7 @@ void AIUpdateInterface::privateGuardRetaliate( Object *victim, const Coord3D *po
 /**
  * Attack the given team
  */
+// ?privateAttackTeam@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackTeam( const Team *team, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	//Resetting the locomotor here was initially added for scripting purposes. It has been moved
@@ -3509,6 +3587,7 @@ void AIUpdateInterface::privateAttackTeam( const Team *team, Int maxShotsToFire,
 /**
  * Attack given spot
  */
+// ?privateAttackPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackPosition( const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	//Resetting the locomotor here was initially added for scripting purposes. It has been moved
@@ -3583,6 +3662,7 @@ void AIUpdateInterface::privateAttackPosition( const Coord3D *pos, Int maxShotsT
 /**
  * Attack move to the given location
  */
+// ?privateAttackMoveToPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackMoveToPosition( const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource )
 {
 	if (m_isAiDead || getObject()->isMobile() == FALSE)
@@ -3609,6 +3689,7 @@ void AIUpdateInterface::privateAttackMoveToPosition( const Coord3D *pos, Int max
 /**
  * Attack move down a given waypoint path. If asTeam is TRUE, do so as a team.
  */
+// ?privateAttackFollowWaypointPath@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackFollowWaypointPath( const Waypoint *way, Int maxShotsToFire, Bool asTeam, CommandSourceType cmdSource )
 {
 	if (m_isAiDead || getObject()->isMobile() == FALSE)
@@ -3636,6 +3717,7 @@ void AIUpdateInterface::privateAttackFollowWaypointPath( const Waypoint *way, In
 /**
  * Begin "seek and destroy"
  */
+// ?privateHunt@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateHunt( CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3659,6 +3741,7 @@ void AIUpdateInterface::privateHunt( CommandSourceType cmdSource )
 /**
  * Begin "seek and destroy"
  */
+// ?privateAttackArea@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateAttackArea( const PolygonTrigger *areaToGuard, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3684,6 +3767,7 @@ void AIUpdateInterface::privateAttackArea( const PolygonTrigger *areaToGuard, Co
 /**
  * Repair the given object
  */
+// ?privateRepair@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateRepair( Object *obj, CommandSourceType cmdSource )
 {
 
@@ -3697,6 +3781,7 @@ void AIUpdateInterface::privateRepair( Object *obj, CommandSourceType cmdSource 
 /**
 	* Pick up prisoner
 	*/
+// ?privatePickUpPrisoner@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privatePickUpPrisoner( Object *prisoner, CommandSourceType cmdSource )
 {
 
@@ -3711,6 +3796,7 @@ void AIUpdateInterface::privatePickUpPrisoner( Object *prisoner, CommandSourceTy
 /**
 	* Return prisoners
 	*/
+// ?privateReturnPrisoners@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateReturnPrisoners( Object *prison, CommandSourceType cmdSource )
 {
 
@@ -3724,6 +3810,7 @@ void AIUpdateInterface::privateReturnPrisoners( Object *prison, CommandSourceTyp
 /**
 	* Resume construction of object
 	*/
+// ?privateResumeConstruction@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateResumeConstruction( Object *obj, CommandSourceType cmdSource )
 {
 
@@ -3736,6 +3823,7 @@ void AIUpdateInterface::privateResumeConstruction( Object *obj, CommandSourceTyp
 /**
  * Get healed at the heal depot
  */
+// ?privateGetHealed@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGetHealed( Object *healDepot, CommandSourceType cmdSource )
 {
 
@@ -3752,6 +3840,7 @@ void AIUpdateInterface::privateGetHealed( Object *healDepot, CommandSourceType c
 /**
  * Get repaired at the repair depot
  */
+// ?privateGetRepaired@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGetRepaired( Object *repairDepot, CommandSourceType cmdSource )
 {
 
@@ -3768,6 +3857,7 @@ void AIUpdateInterface::privateGetRepaired( Object *repairDepot, CommandSourceTy
 /**
  * Enter the given object
  */
+// ?privateEnter@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateEnter( Object *obj, CommandSourceType cmdSource )
 {
 	Object *me = getObject();
@@ -3793,6 +3883,7 @@ void AIUpdateInterface::privateEnter( Object *obj, CommandSourceType cmdSource )
 /**
  * Dock with the given object
  */
+// ?privateDock@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateDock( Object *obj, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3805,6 +3896,7 @@ void AIUpdateInterface::privateDock( Object *obj, CommandSourceType cmdSource )
 }
 
 //----------------------------------------------------------------------------------------
+// ?privateCombatDrop@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateCombatDrop( Object *target, const Coord3D& pos, CommandSourceType cmdSource )
 {
 	DEBUG_CRASH(("default implementation, should never be called"));
@@ -3818,6 +3910,7 @@ void AIUpdateInterface::privateCombatDrop( Object *target, const Coord3D& pos, C
 /**
  * Get out of whatever it is inside of
  */
+// ?privateExit@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateExit( Object *objectToExit, CommandSourceType cmdSource )
 {
 	Object *us = getObject();
@@ -3847,6 +3940,7 @@ void AIUpdateInterface::privateExit( Object *objectToExit, CommandSourceType cmd
 /**
  * Get out of whatever it is inside of this frame
  */
+// ?privateExitInstantly@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateExitInstantly( Object *objectToExit, CommandSourceType cmdSource )
 {
 	Object *us = getObject();
@@ -3876,6 +3970,7 @@ void AIUpdateInterface::privateExitInstantly( Object *objectToExit, CommandSourc
 /**
  * Get out of whatever it is inside of
  */
+// ?doQuickExit@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::doQuickExit( const std::vector<Coord3D>* path )
 {
 
@@ -3895,6 +3990,7 @@ void AIUpdateInterface::doQuickExit( const std::vector<Coord3D>* path )
 /**
  * Empty its contents
  */
+// ?privateEvacuate@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateEvacuate( Int exposeStealthUnits, CommandSourceType cmdSource )
 {
 
@@ -3917,6 +4013,7 @@ void AIUpdateInterface::privateEvacuate( Int exposeStealthUnits, CommandSourceTy
 /**
  * Empty its contents this frame
  */
+// ?privateEvacuateInstantly@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateEvacuateInstantly( Int exposeStealthUnits, CommandSourceType cmdSource )
 {
 
@@ -3936,6 +4033,7 @@ void AIUpdateInterface::privateEvacuateInstantly( Int exposeStealthUnits, Comman
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?privateExecuteRailedTransport@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateExecuteRailedTransport( CommandSourceType cmdSource )
 {
 
@@ -3945,6 +4043,7 @@ void AIUpdateInterface::privateExecuteRailedTransport( CommandSourceType cmdSour
 
 //----------------------------------------------------------------------------------------
 ///< life altering state change, if this AI can do it
+#pragma optimize("s", on)
 void AIUpdateInterface::privateGoProne( const DamageInfo *damageInfo, CommandSourceType )
 {
 	static NameKeyType proneModuleKey = TheNameKeyGenerator->nameToKey( "ProneUpdate" );
@@ -3953,12 +4052,14 @@ void AIUpdateInterface::privateGoProne( const DamageInfo *damageInfo, CommandSou
 	if( proneModule )
 		proneModule->goProne( damageInfo );
 }
+#pragma optimize("", on)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 /**
  * Wander around
  */
+// ?privateWander@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateWander( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -3982,6 +4083,7 @@ void AIUpdateInterface::privateWander( const Waypoint *way, CommandSourceType cm
 /**
  * Wander around
  */
+// ?privateWanderInPlace@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateWanderInPlace( CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4004,6 +4106,7 @@ void AIUpdateInterface::privateWanderInPlace( CommandSourceType cmdSource )
 /**
  * Panic
  */
+// ?privatePanic@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privatePanic( const Waypoint *way, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4027,6 +4130,7 @@ void AIUpdateInterface::privatePanic( const Waypoint *way, CommandSourceType cmd
 /**
  * Busy
  */
+// ?privateBusy@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateBusy( CommandSourceType cmdSource )
 {
 	getStateMachine()->clear();
@@ -4039,6 +4143,7 @@ void AIUpdateInterface::privateBusy( CommandSourceType cmdSource )
 /**
  * Guard the given spot
  */
+// ?privateGuardPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGuardPosition( const Coord3D *pos, GuardMode guardMode, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4073,6 +4178,7 @@ void AIUpdateInterface::privateGuardPosition( const Coord3D *pos, GuardMode guar
 /**
  * Guard the given spot
  */
+// ?privateGuardTunnelNetwork@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGuardTunnelNetwork( GuardMode guardMode, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4093,6 +4199,7 @@ void AIUpdateInterface::privateGuardTunnelNetwork( GuardMode guardMode, CommandS
 /**
  * Guard the given spot
  */
+// ?privateGuardObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGuardObject( Object *objectToGuard, GuardMode guardMode, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4119,6 +4226,7 @@ void AIUpdateInterface::privateGuardObject( Object *objectToGuard, GuardMode gua
 /**
  * Guard the given spot
  */
+// ?privateGuardArea@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateGuardArea( const PolygonTrigger *areaToGuard, GuardMode guardMode, CommandSourceType cmdSource )
 {
 	if (getObject()->isMobile() == FALSE)
@@ -4145,6 +4253,7 @@ void AIUpdateInterface::privateGuardArea( const PolygonTrigger *areaToGuard, Gua
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?privateHackInternet@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateHackInternet( CommandSourceType cmdSource )
 {
 	// We need to be able to hack in containers
@@ -4167,6 +4276,7 @@ void AIUpdateInterface::privateHackInternet( CommandSourceType cmdSource )
 }
 
 /// if we are attacking "fromID", stop that and attack "toID" instead
+// ?transferAttack@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::transferAttack(ObjectID fromID, ObjectID toID)
 {
 	Object *newTarget = TheGameLogic->findObjectByID( toID );
@@ -4194,6 +4304,7 @@ void AIUpdateInterface::transferAttack(ObjectID fromID, ObjectID toID)
 /**
  * Indicate who we are attacking.
  */
+// ?setCurrentVictim@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setCurrentVictim( const Object *victim )
 {
 	if (victim == NULL)
@@ -4236,6 +4347,7 @@ Object *AIUpdateInterface::getCurrentVictim( void ) const
 }
 
 // if we are attacking a position (and NOT an object), return it. otherwise return null.
+// ?getCurrentVictimPos@AIUpdateInterface@@ present-unmatched
 const Coord3D *AIUpdateInterface::getCurrentVictimPos( void ) const
 {
 	if (getObject()->testStatus(OBJECT_STATUS_IS_ATTACKING))
@@ -4253,6 +4365,7 @@ const Coord3D *AIUpdateInterface::getCurrentVictimPos( void ) const
 /**
  * Set the behavior modifier for this agent
  */
+// ?setAttitude@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setAttitude( AttitudeType tude )
 {
 	m_attitude = tude;
@@ -4261,6 +4374,7 @@ void AIUpdateInterface::setAttitude( AttitudeType tude )
 /**
  * Get the current behavior modifier state	
  */
+// ?getAttitude@AIUpdateInterface@@ present-unmatched
 AttitudeType AIUpdateInterface::getAttitude( void ) const
 {
 	return m_attitude;
@@ -4269,30 +4383,35 @@ AttitudeType AIUpdateInterface::getAttitude( void ) const
 /**
  * Return the current state the AI is in.
  */
+// ?getAIStateType@AIUpdateInterface@@ present-unmatched
 AIStateType AIUpdateInterface::getAIStateType() const
 {
 	return (AIStateType)getStateMachine()->getCurrentStateID();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ignoreObstacle@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::ignoreObstacle( const Object *obj )
 {
 	m_ignoreObstacleID = obj ? obj->getID() : INVALID_ID;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ignoreObstacleID@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::ignoreObstacleID( ObjectID id )
 {
 	m_ignoreObstacleID = id;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getIgnoredObstacleID@AIUpdateInterface@@ present-unmatched
 ObjectID AIUpdateInterface::getIgnoredObstacleID( void ) const
 { 
 	return m_ignoreObstacleID; 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getEnterTarget@AIUpdateInterface@@ present-unmatched
 Object* AIUpdateInterface::getEnterTarget()
 {
 	AIStateType stateType = getAIStateType();
@@ -4312,6 +4431,7 @@ void AIUpdateInterface::setLastCommandSource( CommandSourceType source )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getMoodMatrixValue@AIUpdateInterface@@ present-unmatched
 UnsignedInt AIUpdateInterface::getMoodMatrixValue( void ) const
 {
 	UnsignedInt returnVal = 0;
@@ -4372,6 +4492,7 @@ UnsignedInt AIUpdateInterface::getMoodMatrixValue( void ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getMoodMatrixActionAdjustment@AIUpdateInterface@@ present-unmatched
 UnsignedInt AIUpdateInterface::getMoodMatrixActionAdjustment( MoodMatrixAction action ) const
 {
 	// Angry Mob Members (but not Nexi) are never subject to moods. In particular,
@@ -4453,6 +4574,7 @@ UnsignedInt AIUpdateInterface::getMoodMatrixActionAdjustment( MoodMatrixAction a
 }
 
 //----------------------------------------------------------------------------------------------
+// ?wakeUpAndAttemptToTarget@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::wakeUpAndAttemptToTarget( void )
 {
 	if (!isIdle()) {
@@ -4468,6 +4590,7 @@ void AIUpdateInterface::wakeUpAndAttemptToTarget( void )
 /**
  * Reset when we should next look for a target. Usually called by *Idle::onEnter
  */
+// ?resetNextMoodCheckTime@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::resetNextMoodCheckTime()
 {
 	UnsignedInt now = TheGameLogic->getFrame();
@@ -4476,6 +4599,7 @@ void AIUpdateInterface::resetNextMoodCheckTime()
 }
 
 //----------------------------------------------------------------------------------------------
+// ?setNextMoodCheckTime@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setNextMoodCheckTime( UnsignedInt frame )
 {
 	m_nextMoodCheckTime = frame;
@@ -4484,6 +4608,7 @@ void AIUpdateInterface::setNextMoodCheckTime( UnsignedInt frame )
 
 
 
+// ?canAutoAcquireWhileStealthed@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::canAutoAcquireWhileStealthed() const 
 { 
   if ( getObject() && getObject()->getStealth() && getObject()->getStealth()->isGrantedBySpecialPower() )
@@ -4496,6 +4621,7 @@ Bool AIUpdateInterface::canAutoAcquireWhileStealthed() const
 /**
  * Return the next object that our mood suggests we should attack.
  */
+// ?getNextMoodTarget@AIUpdateInterface@@ present-unmatched
 Object* AIUpdateInterface::getNextMoodTarget( Bool calledByAI, Bool calledDuringIdle )
 {
 	Object *obj = getObject();
@@ -4678,6 +4804,7 @@ setTmpValue(now);
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?evaluateMoraleBonus@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::evaluateMoraleBonus( void )
 {
 	Object *us = getObject();
@@ -4798,6 +4925,7 @@ void AIUpdateInterface::evaluateMoraleBonus( void )
 #ifdef ALLOW_DEMORALIZE
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?setDemoralized@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setDemoralized( UnsignedInt durationInFrames )
 {
 	UnsignedInt prevDemoralizedFrames = m_demoralizedFramesLeft;
@@ -4820,6 +4948,7 @@ void AIUpdateInterface::setDemoralized( UnsignedInt durationInFrames )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?privateCommandButton@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateCommandButton( const CommandButton *commandButton, CommandSourceType cmdSource )
 {
 	if( !commandButton )
@@ -4875,6 +5004,7 @@ void AIUpdateInterface::privateCommandButton( const CommandButton *commandButton
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?privateCommandButtonPosition@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateCommandButtonPosition( const CommandButton *commandButton, const Coord3D *pos, CommandSourceType cmdSource )
 {
 	if( !commandButton )
@@ -4929,6 +5059,7 @@ void AIUpdateInterface::privateCommandButtonPosition( const CommandButton *comma
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?privateCommandButtonObject@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::privateCommandButtonObject( const CommandButton *commandButton, Object *obj, CommandSourceType cmdSource )
 {
 	if( !commandButton )
@@ -4990,6 +5121,7 @@ void AIUpdateInterface::privateCommandButtonObject( const CommandButton *command
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?getGroup@AIUpdateInterface@@ present-unmatched
 AIGroup *AIUpdateInterface::getGroup(void)
 {
 	return getObject()->getGroup();
@@ -5003,6 +5135,7 @@ AIGroup *AIUpdateInterface::getGroup(void)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::crc( Xfer *x )
 {
 	CRCGEN_LOG(("AIUpdateInterface::crc() begin - %8.8X\n", ((XferCRC *)x)->getCRC()));
@@ -5020,6 +5153,7 @@ void AIUpdateInterface::crc( Xfer *x )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?xfer@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::xfer( Xfer *xfer )
 {
   // version
@@ -5242,6 +5376,7 @@ void AIUpdateInterface::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::loadPostProcess( void )
 {
 	UpdateModule::loadPostProcess();
@@ -5278,6 +5413,7 @@ void AIUpdateInterface::loadPostProcess( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?friend_getWaypointGoalPathSize@AIUpdateInterface@@ present-unmatched
 Int AIUpdateInterface::friend_getWaypointGoalPathSize() const 
 { 
 			//
@@ -5296,6 +5432,7 @@ Int AIUpdateInterface::friend_getWaypointGoalPathSize() const
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?hasLocomotorForSurface@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::hasLocomotorForSurface(LocomotorSurfaceType surfaceType)
 {
 	LocomotorSurfaceTypeMask surfaceMask = (LocomotorSurfaceTypeMask)surfaceType;
