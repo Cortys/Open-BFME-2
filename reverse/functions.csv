@@ -37762,3 +37762,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??_GRva00340D1F@@UAEPAXI@Z,,0x00345BB3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x008121E8 base 0x340D1F delete 0x2FD60
 ??_GRva00345F21@@UAEPAXI@Z,,0x0034A183,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x00813638 base 0x345F21 delete 0x2FD60
 ?rva0039D4B5@Rva0039D4B5@@QAEXPAVRva0039D40F@@@Z,,0x0039D4B5,35,Code/GameEngine/Source/Common/Rva0039D4B5MaybePrepend.cpp,matched,conditional prepend via 39D40F plus 39D429
+?rva0023C641@Rva0023C641@@QAEXPBD@Z,,0x0023C641,37,Code/GameEngine/Source/Common/Rva0023C641Write.cpp,matched,File write via fputs plus fflush on +0x18 handle
