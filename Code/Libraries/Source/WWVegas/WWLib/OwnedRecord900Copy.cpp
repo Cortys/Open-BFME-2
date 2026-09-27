@@ -16,3 +16,4 @@ BfmeRecordOwner900::BfmeRecordOwner900(const BfmeRecordOwner900 &other)
       unknown_37C(other.unknown_37C), unknown_380(other.unknown_380),
       unknown_381(other.unknown_381), unknown_382(other.unknown_382) {}
 BfmeRecordOwner900::~BfmeRecordOwner900() {}
+template void _STL::_Destroy<BfmeRecordOwner900*>(BfmeRecordOwner900*, BfmeRecordOwner900*);
