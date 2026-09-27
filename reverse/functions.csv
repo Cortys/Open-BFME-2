@@ -37082,3 +37082,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1HordeSiegeEngineContain@@UAE@XZ,,0x0047CFB2,207,Code/GameEngine/Source/GameLogic/Object/Contain/HordeSiegeEngineContainDtor.cpp,matched,HordeSiegeContain dtor with contained-Object loop via destroyObject plus list-map-list
 ?rva0045A748@AutoAbilityBehavior@@QAEXPAX_N@Z,,0x0045A748,71,Code/GameEngine/Source/GameLogic/Object/Behavior/AutoAbilityBehaviorRva0045A748.cpp,matched,AutoAbility copy or clear via rowed compare plus leaves
 ?rva006D30D0@EAStringC@@QBE_NPBV1@@Z,,0x006D30D0,83,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC inequality via inlined IsEqualTo plus 6 callers plus IsEqualTo neighbour
+?rva006D3470@EAStringC@@QAEXXZ,,0x006D3470,29,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EAStringC release to empty via FreeData plus empty singleton plus 9 callers

@@ -76,6 +76,7 @@ public:
 	bool IsEmpty() const;
 	bool IsEqualTo(const EAStringC *other) const;
 	bool rva006D30D0(const EAStringC *other) const;
+	void rva006D3470();
 	unsigned short rva006D2F40() const;
 };
 
@@ -303,4 +304,18 @@ unsigned short EAStringC::rva006D2F40() const
 bool EAStringC::rva006D30D0(const EAStringC *other) const
 {
 	return !IsEqualTo(other);
+}
+
+// ?rva006D3470@EAStringC@@QAEXXZ, retail 0x006D3470, 29 bytes.
+// EAStringC release-to-empty: frees the shared data through FreeData
+// (rowed 0x006D2EB0 in this TU), then re-roots to the empty singleton
+// at 0x00DDC020 with its own reference. Callers at 0x006CFC68/0x006DA115
+// /0x006DD6EE/0x006FD712/0x006FD71B/0x007016A2/0x0070B2FA/0x0070DB90 plus
+// jmp 0x006D6CB2; neighbours IsEqualTo 0x006D3090 and rva006D30D0 live
+// in this TU. Honest address name; void return proves it is not clear.
+void EAStringC::rva006D3470()
+{
+	FreeData(m_pData);
+	m_pData = &g_eaEmptyStringData;
+	g_eaEmptyStringData.m_uRefCount++;
 }
