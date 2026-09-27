@@ -2327,9 +2327,11 @@ void HLodClass::Special_Render(SpecialRenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Set_Transform present-unmatched
+// BFME2 table RVA 0x007D6780 slot 0x54 -> 0x0019B6F0. Retail first
+// compares all 12 matrix components and returns if none changed.
 void HLodClass::Set_Transform(const Matrix3D &m)
 {
+	if (Transform == m) return;
 	Animatable3DObjClass::Set_Transform(m); 
 	Set_Sub_Object_Transforms_Dirty(true);
 }
