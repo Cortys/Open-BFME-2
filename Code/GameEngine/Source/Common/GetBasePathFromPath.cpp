@@ -6,6 +6,8 @@
 // 0x44CAFE 0x44CBE2 0x44CCC6 0x44CD7D 0x44CE1C 0x44CEBB 0x44CF5A 0x44CFF9.
 class AsciiString;
 AsciiString GetBasePathFromPath(AsciiString path);
+class AsciiString;
+AsciiString GetINIFromMap(AsciiString path);
 
 extern "C" void *memcpy(void *destination, const void *source, unsigned int count);
 
@@ -49,6 +51,7 @@ public:
 	const char *str() const { return StringBase<char>::str(); }
 	const char *reverseFind(char match) const { return StringBase<char>::reverseFind(match); }
 	char *getBufferForRead(int length) { return StringBase<char>::getBufferForRead(length); }
+	void __cdecl format(const char *format, ...);
 
 	static const AsciiString TheEmptyString;
 	friend AsciiString GetBasePathFromPath(AsciiString path);
@@ -66,4 +69,12 @@ AsciiString GetBasePathFromPath(AsciiString path)
 		return buffer;
 	}
 	return AsciiString::TheEmptyString;
+}
+
+AsciiString GetINIFromMap(AsciiString path)
+{
+	AsciiString base = GetBasePathFromPath(path);
+	AsciiString out;
+	out.format("%s\\map.ini", base.str());
+	return out;
 }
