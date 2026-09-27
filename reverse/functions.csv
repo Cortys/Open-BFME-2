@@ -37241,3 +37241,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006DE160@AptValuePtrStack@@QAEPAVBfmeAptValue006DCD20@@XZ,,0x006DE160,53,Code/Libraries/Source/Apt/AptValuePtrStackTop.cpp,matched,Apt stack top via shared assert triple
 ?xfer@W3DDebrisDraw@@MAEXPAVXfer@@@Z,,0x000B1DC3,268,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DDebrisDrawXfer.cpp,matched,slot 3 of vtable 0x007C97A8 via rowed ctor plus base DrawModule plus Version1
 ??0Rva004523F5@@QAE@XZ,,0x004523F5,12,Code/GameEngine/Source/GameLogic/Object/Update/Rva004523F5Ctor.cpp,matched,gap ctor over rowed 0x24C7B3 helper honest name
+??0Rva0022CD65@@QAE@XZ,,0x0022CD65,19,Code/GameEngine/Source/Common/System/SaveGame/Rva0022CD65Ctor.cpp,matched,opaque map-holder with int flag via Rva004E35A3 pattern
