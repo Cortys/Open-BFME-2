@@ -2,7 +2,7 @@
 // partial score=0.99 date=2026-09-26
 // ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z
 // partial score=0.99 date=2026-09-26
-// cl: /O1 /G7 /Ob2 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS
+// cl: /O1 /G7 /Ob2 /arch:SSE /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS
 // stlport
 
 // ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z, retail 0x0024297F (323 bytes).
@@ -157,7 +157,6 @@ private:
 	UpdateModule *current; // +0x104
 };
 
-// ?friend_awakenUpdateModule@GameLogic@@QAEXPAVObject@@PAVUpdateModule@@I@Z present-unmatched
 void GameLogic::friend_awakenUpdateModule(Object *obj, UpdateModule *u, UnsignedInt when)
 {
 	UnsignedInt now = TheGameLogic->m_frame;
