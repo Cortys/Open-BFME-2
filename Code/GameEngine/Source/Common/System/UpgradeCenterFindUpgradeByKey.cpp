@@ -25,6 +25,11 @@ public:
 	NameKeyType getUpgradeNameKey() const { return m_nameKey; }
 	int getMaskIndex() const { return m_maskIndex; }
 	const UpgradeTemplate *friend_getNext() const { return m_next; }
+	UpgradeTemplate *friend_getNext() { return m_next; }
+	const UpgradeTemplate *friend_getPrev() const { return m_prev; }
+	UpgradeTemplate *friend_getPrev() { return m_prev; }
+	void friend_setNext(UpgradeTemplate *n) { m_next = n; }
+	void friend_setPrev(UpgradeTemplate *p) { m_prev = p; }
 
 private:
 	unsigned char m_unreconstructed_000[0x0C];
@@ -33,6 +38,7 @@ private:
 	int m_maskIndex; // +0x38 mask bit index retail-measured
 	unsigned char m_pad03C[0x64 - 0x3C];
 	UpgradeTemplate *m_next; // +0x64
+	UpgradeTemplate *m_prev; // +0x68
 };
 
 class UpgradeCenter
@@ -40,6 +46,9 @@ class UpgradeCenter
 public:
 	const UpgradeTemplate *findUpgradeByKey(NameKeyType key) const;
 	const UpgradeTemplate *rva0026EEA0(int key) const;
+
+protected:
+	void unlinkUpgrade(UpgradeTemplate *upgrade);
 
 private:
 	unsigned char m_unreconstructed_000[0x0C];
@@ -78,4 +87,19 @@ const UpgradeTemplate *UpgradeCenter::rva0026EEA0(int key) const
 
 	// item not found
 	return 0;
+}
+
+// unlinkUpgrade at retail 0x0026EEF2 44 bytes: ZH Upgrade.cpp unlink verbatim
+// with BFME2 links at +0x64 next and +0x68 prev and head at +0x0C.
+void UpgradeCenter::unlinkUpgrade(UpgradeTemplate *upgrade)
+{
+	if (upgrade == 0)
+		return;
+
+	if (upgrade->friend_getNext())
+		upgrade->friend_getNext()->friend_setPrev(upgrade->friend_getPrev());
+	if (upgrade->friend_getPrev())
+		upgrade->friend_getPrev()->friend_setNext(upgrade->friend_getNext());
+	else
+		m_upgradeList = upgrade->friend_getNext();
 }
