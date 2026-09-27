@@ -36991,3 +36991,6 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ??1FloodUpdate@@UAE@XZ,,0x0048E454,142,Code/GameEngine/Source/GameLogic/Object/Update/FloodUpdateDtor.cpp,matched,audited ??_G 0x0048E603 calls here; deletes +0x20 list records then clear
 ??0Rva004B2B2F@@QAE@XZ,,0x004B2B14,27,Code/GameEngine/Source/GameLogic/Object/Update/ReplaceObjectUpdateEntryDtor.cpp,matched,entry ctor via pinned 0x003623E5 plus Vector_base 0x00211E58
 ??1ActivateModuleSpecialPowerModuleData@@UAE@XZ,,0x0025714A,93,Code/GameEngine/Source/GameLogic/Object/SpecialPower/ActivateModuleSpecialPowerModuleDataDtor.cpp,matched,audited ??_G 0x0025712E calls here; clears +0xC8 vector via 0x002571A7; base 0x0044ECCE
+?setBit0@Rva005FC64AOwner@@QAEXE@Z,,0x005FC64A,33,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC6F7 caller plus 0xEE mask at +0x34
+?setBit1@Rva005FC66BOwner@@QAEXE@Z,,0x005FC66B,37,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC70A caller plus 0xDD mask at +0x34
+?setBit2@Rva005FC690Owner@@QAEXE@Z,,0x005FC690,39,Code/GameEngine/Source/Common/Rva005FCBitAccess.cpp,matched,thunk 0x005FC71E caller plus 0xBB mask at +0x34
