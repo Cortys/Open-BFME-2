@@ -41556,3 +41556,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Set@Rva0023D229@@QAEXH@Z,,0x0023D229,35,Code/GameEngine/Source/Common/Rva0023D229Set.cpp,matched,unlock thiscall guard 0-7 store global 0x009FE78C
 ?getCurrentFrameHeight@Anim2D@@QBEIXZ,,0x002D6BEA,24,Code/GameEngine/Source/GameClient/System/Anim2DCurrentFrameHeight.cpp,matched,ZH donor Anim2D getCurrentFrameHeight plus G7 plus caller 0x002D6DDE plus getFrame row
 ??$__uninitialized_copy@PAURva00423A4A@@PAU1@@_STL@@YAPAURva00423A4A@@PAU1@00ABU__false_type@0@@Z,,0x00423ED1,38,Code/Libraries/Source/WWVegas/WWLib/Rva00423A4AUninitCopy.cpp,matched,chain uninit copy via rowed Construct stride 0xC
+?doUnitGuardPosition@ScriptActions@@IAEXABVAsciiString@@0@Z,,0x003C8964,109,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doUnitGuardForFramecount.cpp,matched,BFME1 doUnitGuardPosition donor waypoint 0x88 SSE

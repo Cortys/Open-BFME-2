@@ -26,6 +26,11 @@ private:
 
 struct Coord3D { float x, y, z; };
 class Object;
+class Waypoint
+{
+public:
+	const Coord3D *location() const { return (const Coord3D *)((const char *)this + 0x0c); }
+};
 enum GuardMode { GUARDMODE_NORMAL = 0 };
 enum CommandSourceType { CMD_FROM_SCRIPT = 1 };
 
@@ -64,10 +69,26 @@ public:
 	void setSequentialTimer(Object *obj, int frames);
 };
 
+class TerrainLogicByValue
+{
+public:
+	virtual void _0()=0; virtual void _1()=0; virtual void _2()=0; virtual void _3()=0;
+	virtual void _4()=0; virtual void _5()=0; virtual void _6()=0; virtual void _7()=0;
+	virtual void _8()=0; virtual void _9()=0; virtual void _10()=0; virtual void _11()=0;
+	virtual void _12()=0; virtual void _13()=0; virtual void _14()=0; virtual void _15()=0;
+	virtual void _16()=0; virtual void _17()=0; virtual void _18()=0; virtual void _19()=0;
+	virtual void _20()=0; virtual void _21()=0; virtual void _22()=0; virtual void _23()=0;
+	virtual void _24()=0; virtual void _25()=0; virtual void _26()=0; virtual void _27()=0;
+	virtual void _28()=0; virtual void _29()=0; virtual void _30()=0; virtual void _31()=0;
+	virtual void _32()=0; virtual void _33()=0;
+	virtual Waypoint *getWaypointByName(const AsciiString &) = 0;
+};
+
 class ScriptActions
 {
 protected:
 	void doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds);
+	void doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName);
 };
 
 void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds)
@@ -87,4 +108,27 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
 	else
 		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount);
+}
+
+// ?doUnitGuardPosition@ScriptActions@@IAEXABVAsciiString@@0@Z, retail 0x003C8964, 109 bytes.
+// BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doUnitGuardPosition.cpp
+// doUnitGuardPosition at AICMD 0x1E via rowed aiGuardPosition 0x0036F46A.
+// BFME2 deltas: float Coord3D with SSE movss from Waypoint+0x0C plus TheTerrainLogic slot 0x88.
+// Caller at 0x003CB676. Prev doNamedFollowWaypointsExact / next doUnitGuardForFramecount.
+void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName)
+{
+	Waypoint *way = (*(TerrainLogicByValue **)0x00DFEC50)->getWaypointByName(waypointName);
+	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	if (!object)
+		return;
+	AIUpdateInterface *ai = object->getAIUpdateInterface();
+	if (!ai)
+		return;
+	if (!way)
+		return;
+	Coord3D position;
+	position.x = way->location()->x;
+	position.y = way->location()->y;
+	position.z = way->location()->z;
+	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
 }
