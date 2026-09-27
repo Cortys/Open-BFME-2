@@ -76,6 +76,7 @@ public:
 	void SetSize(int size);
 	void Assign(const char *text);
 	EAStringC &Rva006D4F00Append(const EAStringC &other);
+	EAStringC &Rva006D50A0Append(const char *text);
 	int GetAt(int index) const;
 	bool IsEmpty() const;
 	bool IsEqualTo(const EAStringC *other) const;
@@ -478,4 +479,29 @@ bool EAStringC::rva006D3560(const EAStringC *other) const
 	if (ownData == otherData)
 		return true;
 	return _strcmpi((const char *)ownData + 8, (const char *)otherData + 8) == 0;
+}
+
+// ?Rva006D50A0Append@EAStringC@@QAEAAV1@PBD@Z, retail 0x006D50A0 (191B).
+// EAStringC C-string append: empty target delegates to PBD assign via a
+// temp plus operator=, empty source is a no-op, otherwise the buffer grows
+// through ChangeBuffer and the text (terminator included) lands via
+// intrinsic memcpy. Callers at 0x006D9737/0x006DDED2/0x006DDEEE plus Apt
+// workers; neighbours Rva006D4F00Append 0x006D4F00 and bfmeAppendVKG
+// 0x006D52A0 share /O2 /DNDEBUG /MD. Honest address name; PBD proves
+// C-string overload, sibling Rva006D4F00Append proves Append identity.
+EAStringC &EAStringC::Rva006D50A0Append(const char *text)
+{
+	unsigned int oldSize = m_pData->m_uSize;
+	if (oldSize == 0) {
+		EAStringC tmp(text);
+		operator=(tmp);
+		return *this;
+	}
+	unsigned int len = strlen(text);
+	if (len == 0)
+		return *this;
+	unsigned int newSize = oldSize + len;
+	ChangeBuffer(newSize, 0, oldSize, CB_NO_PUSH_ZERO, newSize);
+	memcpy((char *)m_pData + sizeof(StringDataC) + oldSize, text, len + 1);
+	return *this;
 }
