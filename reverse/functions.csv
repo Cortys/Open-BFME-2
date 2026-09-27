@@ -38121,3 +38121,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?xfer@Rva0033FE65@@MAEXPAVXfer@@@Z,,0x0033FEA3,98,Code/GameEngine/Source/Common/Rva0033FE65Ctor.cpp,matched,slot3 vtable 0x811E08 Version12 words bools
 ?Rva000308E0AddHeap@@YAXII@Z,,0x000308E0,16,Code/GameEngine/Source/Common/Rva000308E0AddHeap.cpp,matched,guard flag 0xDE0821 tail-jump to AddHeap at 0xDE03E8 callers 0x22542E
 ?Rva00030890Set@@YAXXZ,,0x00030890,17,Code/GameEngine/Source/Common/Rva00030890Set.cpp,matched,guard 0xDE0821 set byte 0xDE0818 to 1 caller 0x22540E
+?Rva000308B0Clear@@YAXXZ,,0x000308B0,17,Code/GameEngine/Source/Common/Rva000308B0Clear.cpp,matched,guard 0xDE0821 clear byte 0xDE0818 to 0 caller 0x225401
