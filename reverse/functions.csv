@@ -37747,3 +37747,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1Rva00340BDC@@UAE@XZ,,0x00340BDC,75,Code/GameEngine/Source/Common/Rva00340BDCDtor.cpp,matched,vtable 0x00812150 if-free plus4C base 0x33FF2B caller 0x342B6E
 ??_GRva00340BDC@@UAEPAXI@Z,,0x00342B6B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e157.cpp,matched,slot0 0x00812150 base 0x340BDC delete 0x2FD60
 ?Rva0006EB3BReverse@@YAHH@Z,,0x0006EB3B,50,Code/GameEngine/Source/Common/Rva0006EB3BReverse.cpp,matched,frameless cdecl 4-bit reversal via shifts
+?rva0006E567@Rva0006E567@@QAEXPAVRva0006E567Obj@@H@Z,,0x0006E567,57,Code/GameEngine/Source/Common/Rva0006E567Set.cpp,matched,indexed refcounted assign bounds plus AddRef Release
