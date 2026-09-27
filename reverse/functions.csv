@@ -38976,3 +38976,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?notifyOfAcquiredScience@ScriptEngine@@QAEXHW4ScienceType@@@Z,,0x00357F43,27,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineNotifyAcquiredScience.cpp,matched,ZH notifyOfAcquiredScience donor plus player callers and layout
 ?rva00357DAC@ScriptEngine@@QAEXABVAsciiString@@@Z,,0x00357DAC,38,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357DAC.cpp,matched,ScriptEngine crc push to list at 1A260 via rowed callees
 ?rva00357DD2@ScriptEngine@@QAEXABVAsciiString@@@Z,,0x00357DD2,38,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357DD2.cpp,matched,ScriptEngine crc push_front to list at 1A264 sibling of 57DAC
+?setPrep@Dict@@AAEPAUDictPair@1@HW4DataType@1@@Z,,0x0031369D,89,Code/GameEngine/Source/Common/DictPairClear.cpp,matched,ZH Dict.cpp setPrep donor with 6 set callers and sortPairs

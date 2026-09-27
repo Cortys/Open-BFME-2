@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /G7 /DNDEBUG /MD
 // Dict pair clear plus releaseData.
 // Reference basis is BFME1 Dict_releaseData.cpp (retail 0x000681C0), which
 // carries the Dict layout, the pair switch and releaseData. BFME2 outlines
@@ -109,6 +109,7 @@ private:
 	DictPair *findPairByKey(int key) const;
 	void sortPairs();
 	DictPair *ensureUnique(int numPairsNeeded, bool preserveData, DictPair *pairToTranslate);
+	DictPair *setPrep(int key, DataType type);
 
 	DictPairData *m_data;
 };
@@ -472,4 +473,23 @@ UnicodeString Dict::getUnicodeString(int key, bool *exists) const
 	if (exists)
 		*exists = false;
 	return UnicodeString::TheEmptyString;
+}
+
+// ?setPrep@Dict@@AAEPAUDictPair@1@HW4DataType@1@@Z @0x0031369D 89B
+// Dict::setPrep from ZH Dict.cpp donor (BFME1 0xsetPrep). Finds pair by key,
+// grows via rowed ensureUnique at 0x0031346B when missing, appends at
+// m_data peek plus used when ensure returns null, then rowed setNameAndType
+// at 0x00313376. Callers at 0x003136F6 0x00313716 0x00313736 0x0031375A
+// 0x00313781 0x00313812.
+Dict::DictPair *Dict::setPrep(int key, DataType type)
+{
+	DictPair *pair = findPairByKey(key);
+	int pairsNeeded = m_data ? m_data->m_numPairsUsed : 0;
+	if (!pair)
+		++pairsNeeded;
+	pair = ensureUnique(pairsNeeded, true, pair);
+	if (!pair)
+		pair = (DictPair *)(m_data + 1) + m_data->m_numPairsUsed++;
+	pair->setNameAndType(key, type);
+	return pair;
 }
