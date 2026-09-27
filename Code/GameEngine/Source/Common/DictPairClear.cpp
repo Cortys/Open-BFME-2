@@ -508,3 +508,13 @@ void Dict::setBool(int key, bool value)
 	*(bool *)&pair->m_value = value;
 	sortPairs();
 }
+
+// ?setInt@Dict@@QAEXHH@Z @0x00313716 32B
+// Dict::setInt from ZH Dict.cpp donor. Rowed setPrep at 0x0031369D plus
+// int store plus rowed sortPairs at 0x00313299. Callers in INI parse.
+void Dict::setInt(int key, int value)
+{
+	DictPair *pair = setPrep(key, DICT_INT);
+	*(int *)&pair->m_value = value;
+	sortPairs();
+}
