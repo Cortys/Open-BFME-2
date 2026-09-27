@@ -38728,3 +38728,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getDataOffset@NetWrapperCommandMsg@@QAEIXZ,,0x00091A56,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched copyChunkData at 0x58C047
 ?getNumChunks@NetWrapperCommandMsg@@QAEIXZ,,0x003F3FE8,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8
 ?getTotalDataLength@NetWrapperCommandMsg@@QAEIXZ,,0x005C4AE1,4,Code/GameEngine/Source/GameNetwork/NetCommandMsg.cpp,matched,Exact 4B target getter; called from matched constructor at 0x58BFA8
+??0Image@Gdiplus@@IAE@PAVGpImage@1@W4Status@1@@Z,,0x0059B7CB,25,Code/Libraries/Source/GdiPlus/gdiplusbitmap_dtor.cpp,matched,Target Ghidra start and exact 25B extent; sole occurrence at a function start and this extent

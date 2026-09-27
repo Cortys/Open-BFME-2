@@ -179,7 +179,7 @@ Status Image::GetPalette(ColorPalette *palette, INT size)
     return SetStatus(DllExports::GdipGetImagePalette(nativeImage, palette, size));
 }
 
-// ?Image::Image present-unmatched
+
 // 25 bytes, and unlike the FXParticleSystem folds this one is unambiguous:
 // the shape occurs ten times in .text but at exactly one function start, and
 // there at exactly this extent — RVA 0x0059B7CB, which Ghidra has as
