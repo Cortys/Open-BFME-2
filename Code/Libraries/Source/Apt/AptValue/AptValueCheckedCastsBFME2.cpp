@@ -36,6 +36,7 @@ public:
     int isLoadVars() const;
     int isStage() const;
     int isArray() const;
+    int isSound() const;
     int isNativeFunction() const;
     int isScriptFunction() const;
     int isCIH(bool bUndefOK) const;
@@ -43,6 +44,7 @@ public:
     BfmeAptValue006DCD20 *rva006DCEE0();
     BfmeAptValue006DCD20 *rva006DCF20();
     BfmeAptValue006DCD20 *rva006DCFA0();
+    BfmeAptValue006DCD20 *rva006DCFE0();
     BfmeAptValue006DCD20 *rva006DCF60(bool bUndefOK);
     BfmeAptValue006DCD20 *rva006DD020();
     BfmeAptValue006DCD20 *rva006DD060();
@@ -249,6 +251,17 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCFA0()
 {
     if (!static_cast<unsigned char>(isArray())) {
         g_bfmeAptAssertAtE17734("isArray()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x361);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    return this;
+}
+// ?rva006DCFE0@BfmeAptValue006DCD20@@QAEPAV1@XZ @0x006DCFE0 50B. Checked cast for isSound type 21.
+// Evidence: calls rowed ?isSound@BfmeAptValue006DCD20@@QBEHXZ; asserts "isSound()" at AptValue.inl:891.
+BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006DCFE0()
+{
+    if (!static_cast<unsigned char>(isSound())) {
+        g_bfmeAptAssertAtE17734("isSound()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl", 0x37B);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __asm int 3
     }
