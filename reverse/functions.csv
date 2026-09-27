@@ -38076,3 +38076,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?endGame@GameInfo@@QAEXXZ,,0x003FF296,9,Code/GameEngine/Source/GameNetwork/GameInfoEndGame.cpp,matched,BFME1 GameInfo.cpp endGame clears inGame and inProgress
 ?rva003FF1C2@Rva003FF1C2@@QBE_NXZ,,0x003FF1C2,24,Code/GameEngine/Source/GameNetwork/Rva003FF1C2.cpp,matched,honest 16B nonzero check at CC with five callers
 ?markPlayerAsPreorder@GameInfo@@QAEXH@Z,,0x003FF1FE,26,Code/GameEngine/Source/GameNetwork/GameInfoMarkPreorder.cpp,matched,BFME1 GameInfo.cpp preorder bit set with mask at 8
+?rva002CEC34@Rva002CEC0A@@QAEXXZ,,0x002CEC34,14,Code/GameEngine/Source/Common/Rva002CEC34Clear.cpp,matched,clears vector at plus4 via rowed erase; same class as dtor 0x002CEC0A
