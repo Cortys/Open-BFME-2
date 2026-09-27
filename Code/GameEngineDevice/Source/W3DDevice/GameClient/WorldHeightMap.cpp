@@ -163,7 +163,7 @@ void MapObject::setRenderObj(RenderObjClass *pObj)
 	REF_PTR_SET(m_renderObj, pObj);
 }
 
-// ?setBridgeRenderObject@MapObject@@ present-unmatched
+#pragma optimize("s", on)
 void MapObject::setBridgeRenderObject( BridgeTowerType type, RenderObjClass* renderObj )
 {
 
@@ -171,8 +171,9 @@ void MapObject::setBridgeRenderObject( BridgeTowerType type, RenderObjClass* ren
 		REF_PTR_SET( m_bridgeTowers[ type ], renderObj );
 
 }
+#pragma optimize("", on)
 
-// ?getBridgeRenderObject@MapObject@@ present-unmatched
+#pragma optimize("s", on)
 RenderObjClass* MapObject::getBridgeRenderObject( BridgeTowerType type )
 {
 
@@ -181,6 +182,7 @@ RenderObjClass* MapObject::getBridgeRenderObject( BridgeTowerType type )
 	return NULL;
 
 }
+#pragma optimize("", on)
 
 // ?validate@MapObject@@ present-unmatched
 void MapObject::validate(void)
@@ -2488,7 +2490,7 @@ UnsignedByte * WorldHeightMap::getPointerToTileData(Int xIndex, Int yIndex, Int 
 #define K_DIR_MOD 0x05
 #define K_INV 6
 
-// ?getRGBAlphaDataForWidth@WorldHeightMap@@ present-unmatched
+#pragma optimize("s", on)
 UnsignedByte *WorldHeightMap::getRGBAlphaDataForWidth(Int width, TBlendTileInfo *pBlend)
 {
 	Int alphaTileNdx = 0;
@@ -2508,6 +2510,7 @@ UnsignedByte *WorldHeightMap::getRGBAlphaDataForWidth(Int width, TBlendTileInfo 
 	}
 	return m_alphaTiles[alphaTileNdx]->getRGBDataForWidth(width);
 }
+#pragma optimize("", on)
 
 // ?setupAlphaTiles@WorldHeightMap@@ present-unmatched
 void WorldHeightMap::setupAlphaTiles(void)
