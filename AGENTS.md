@@ -66,6 +66,23 @@ an empty byte-match queue does not exhaust reusable reference source. Regenerate
 
 Finish or revert each body or homogeneous trivial batch before the next.
 
+**Claim retail bodies before starting work.** Use
+`python3 tools/claims.py claim 0xRVA` (pass every RVA in a batch). For a single selected candidate,
+`python3 tools/next_work.py --claim` and
+`python3 tools/list_naked_candidates.py Code --claim` claim while selecting and
+retry if another worker won the race. The ranked and BFME 1 donor queues skip
+live claims; after choosing a donor file, claim its target RVAs before editing.
+If a claim is held by another worker, choose other work. An orchestrator should
+set a stable, distinct `BFME_CLAIM_OWNER` for each seat so a seat can renew and
+release only its own claims.
+
+Claims are shared `refs/claims/0xRVA` on origin, expire after four hours, and
+do not change `master` publication. `python3 tools/claims.py list` shows current
+owners. A verified `add_match` or `add_match_batch` releases landed claims; run
+`python3 tools/claims.py release 0xRVA` for a banked, blocked or abandoned body.
+Renew the claim before expiry when work lasts longer than four hours.
+Network failure warns and leaves work available without a shared claim.
+
 ## Prefer coverage-first reference sweeps
 
 Prefer reference-source sweeps as the first approach whenever compatible reference units are available. Optimize for verified unique-byte gain per unit of effort by batching compatible units, especially within related library families whose dependencies already exist.

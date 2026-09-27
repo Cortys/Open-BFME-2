@@ -48,6 +48,7 @@ import argparse
 import bisect
 import csv
 import json
+import os
 import re
 import shutil
 import struct
@@ -59,6 +60,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build
+import claims as shared_claims
 
 ROOT = build.ROOT
 BFME1 = ROOT / "reference" / "open-bfme-1"
@@ -1060,12 +1062,15 @@ def bfme1_siblings():
 TIER_ORDER = {"T1": 0, "T2": 1, "T3": 2, "T4": 3}
 
 
-def group_files(payload, include_refused=False, tiers=("T1", "T2", "T3"), include_held=False):
+def group_files(payload, include_refused=False, tiers=("T1", "T2", "T3"),
+                include_held=False, busy_rvas=()):
     claims = Claims(ledger_claims(BFME2_LEDGER))
     pins = pinned_symbols()
     siblings = bfme1_siblings()
     files = defaultdict(lambda: {"bodies": [], "held": []})
     for record in payload["records"]:
+        if record["bfme2_rva"] in busy_rvas:
+            continue
         tier, reasons, pin_lines = body_tier(record, claims, pins)
         record = dict(record, tier=tier, reasons=reasons, pins=pin_lines)
         bucket = files[record["source"]]
@@ -1116,7 +1121,8 @@ def group_files(payload, include_refused=False, tiers=("T1", "T2", "T3"), includ
 def do_ranked(args):
     payload = load_matches()
     served = group_files(payload, include_refused=args.include_refused,
-                         include_held=args.include_held or bool(args.copy_tier))
+                         include_held=args.include_held or bool(args.copy_tier),
+                         busy_rvas=shared_claims.busy_rvas())
     if args.copy_tier:
         served = [entry for entry in served if entry["copy_tier"] in args.copy_tier]
     if args.tier:
@@ -1271,7 +1277,8 @@ def packet_path(source):
 
 def do_packets(args):
     payload = load_matches()
-    served = group_files(payload, include_refused=args.include_refused)
+    served = group_files(payload, include_refused=args.include_refused,
+                         busy_rvas=shared_claims.busy_rvas())
     PACKET_DIR.mkdir(parents=True, exist_ok=True)
     written = 0
     for entry in served[: args.limit]:
@@ -1308,7 +1315,7 @@ def find_entry(served, source, near=()):
     raise SystemExit("bfme1_sweep: ambiguous — " + ", ".join(entry["source"] for entry in loose[:8]))
 
 
-def near_candidates(payload, include_held=False, limit=None):
+def near_candidates(payload, include_held=False, limit=None, busy_rvas=()):
     """Classify the recorded near misses and return the ones worth serving.
 
     Classification is done here rather than in `scan` because it shells out to a
@@ -1321,6 +1328,8 @@ def near_candidates(payload, include_held=False, limit=None):
     scratch = OUT_DIR / "disasm"
     served = []
     for record in sorted(payload.get("near", ()), key=lambda r: -r["alignment"]):
+        if record["bfme2_rva"] in busy_rvas:
+            continue
         source = record["source"]
         if claims.covering(record["bfme2_rva"], record["size"]) is not None:
             continue                       # re-checked live, like the exact tier
@@ -1537,7 +1546,8 @@ def near_packet(entry):
 
 def do_near(args):
     payload = load_matches()
-    served = near_candidates(payload, include_held=args.include_held, limit=args.limit)
+    served = near_candidates(payload, include_held=args.include_held, limit=args.limit,
+                             busy_rvas=() if args.source else shared_claims.busy_rvas())
     if args.source:
         matches = [e for e in served if args.source in e["source"] or args.source == e["name"]]
         if not matches:
@@ -1576,15 +1586,38 @@ def remove_rows(source):
 
 
 def do_land(args):
+    """Acquire every donor body's shared claim before modifying the checkout."""
+    if args.dry_run:
+        return _do_land(args)
+    payload = load_matches()
+    served = group_files(payload, include_refused=args.include_refused, include_held=True)
+    entry = find_entry(served, args.source, near=near_candidates(payload, include_held=True))
+    wanted = ("T1", "T2", "T3") if args.allow_icf else ("T1", "T2")
+    rvas = [body["bfme2_rva"] for body in entry["bodies"] if body["tier"] in wanted]
+    acquired, refused = shared_claims.claim(rvas, note=f"BFME1 donor {entry['source']}")
+    if refused:
+        if acquired:
+            shared_claims.release(acquired)
+        raise SystemExit("bfme1_sweep: donor body claimed by another worker: " +
+                         " ".join(f"0x{r:08X}" for r in refused))
+    try:
+        return _do_land(args, entry=entry)
+    finally:
+        if acquired:
+            shared_claims.release(acquired)
+
+
+def _do_land(args, entry=None):
     """Copy one donor file, append its pins, claim its bodies, build.
 
     add_match.py already verifies each row and puts the ledger back when the
     row does not byte-match, so all this owns is the copy and the pin lines --
     and putting those back, which it does before it reports anything.
     """
-    payload = load_matches()
-    served = group_files(payload, include_refused=args.include_refused, include_held=True)
-    entry = find_entry(served, args.source, near=near_candidates(payload, include_held=True))
+    if entry is None:
+        payload = load_matches()
+        served = group_files(payload, include_refused=args.include_refused, include_held=True)
+        entry = find_entry(served, args.source, near=near_candidates(payload, include_held=True))
     if entry["copy_tier"] in HELD_COPY_TIERS:
         raise SystemExit(f"bfme1_sweep: held (copy-tier {entry['copy_tier']}): {entry['copy_note']}")
     if entry.get("import_alias") and not args.ignore_import_alias:
@@ -1640,7 +1673,11 @@ def do_land(args):
             command = [sys.executable, str(ROOT / "tools" / "add_match.py"), body["name"],
                        f"0x{body['bfme2_rva']:08X}", str(body["size"]), target_source,
                        "--notes", ledger_note(body)]
-            result = subprocess.run(command, cwd=ROOT)
+            # The wrapper releases the whole donor batch together after the
+            # last verification (or failure), avoiding one Git push per row.
+            verify_env = os.environ.copy()
+            verify_env["BFME_CLAIMS"] = "off"
+            result = subprocess.run(command, cwd=ROOT, env=verify_env)
             if result.returncode != 0:
                 raise RuntimeError(f"add_match refused {body['name']} at 0x{body['bfme2_rva']:08X}")
             landed.append(body)
@@ -1729,7 +1766,8 @@ def do_drain(args):
     """
     wanted = ("T1", "T2", "T3") if args.allow_icf else ("T1", "T2")
     queue = [entry["source"] for entry in
-             group_files(load_matches(), include_refused=False, include_held=False)
+             group_files(load_matches(), include_refused=False, include_held=False,
+                         busy_rvas=shared_claims.busy_rvas())
              if drainable(entry, wanted)]
     if args.limit:
         queue = queue[: args.limit]

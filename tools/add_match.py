@@ -25,6 +25,7 @@ new claim does not byte-verify.
 import argparse
 import csv
 import io
+import os
 import re
 import subprocess
 import sys
@@ -328,6 +329,14 @@ def main():
              "marker strip REVERTED; nothing was changed")
     print("add_match: verified OK — row is live")
     remove_stash(rva, args.root)
+    if root == DEFAULT_ROOT.resolve() and os.environ.get("BFME_CLAIMS", "on") != "off":
+        # Verification has landed this body; a worker no longer needs its
+        # shared work claim. A test-only --root must never touch origin.
+        try:
+            import claims
+            claims.release([rva], force=True)
+        except Exception as error:  # advisory; the ref expires on its own
+            print(f"add_match: could not release shared claim: {error}", file=sys.stderr)
 
 
 if __name__ == "__main__":

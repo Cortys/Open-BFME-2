@@ -16,6 +16,7 @@ import struct
 import sys
 
 import build
+import claims
 import re_log
 import yield_model
 
@@ -274,6 +275,17 @@ def stash_for_item(item):
     return path.relative_to(build.ROOT).as_posix(), score
 
 
+def candidate_rva(item):
+    try:
+        return int(item["rva"], 16) if item.get("rva") else None
+    except ValueError:
+        return None
+
+
+def without_busy(candidates, busy):
+    return [item for item in candidates if candidate_rva(item) not in busy]
+
+
 def drop_logged(candidates):
     """Remove candidates whose BOUNDARY the fleet has already refuted.
 
@@ -361,6 +373,19 @@ def select_candidate(candidates):
     raise AssertionError("select_candidate fell through its cumulative walk")
 
 
+def claim_choice(candidates):
+    """Claim one tracked draw, retrying after a remote claim race."""
+    remaining = [item for item in candidates if candidate_rva(item) is not None]
+    while remaining:
+        selected, meta = select_candidate(remaining)
+        rva = candidate_rva(selected)
+        acquired, refused = claims.claim([rva], note="naked conversion")
+        if rva not in refused:
+            return selected, meta, acquired
+        remaining = without_busy(remaining, {rva})
+    return None, {"pool": 0}, []
+
+
 def parse_shard(value):
     try:
         index_text, count_text = value.split("/", 1)
@@ -407,6 +432,8 @@ def main():
     parser.add_argument("--all", action="store_true", help="include untracked naked functions")
     parser.add_argument("--ranked", action="store_true",
                         help="show the complete ranking for humans/debugging")
+    parser.add_argument("--claim", action="store_true",
+                        help="claim the selected RVA on origin before serving it; retry a raced selection")
     parser.add_argument("--groups", action="store_true",
                         help="with --ranked, group repeated naked byte patterns")
     parser.add_argument("--limit", type=int, default=30,
@@ -424,6 +451,8 @@ def main():
     parser.add_argument("--json", action="store_true",
                         help="emit the filtered candidate queue as machine-readable JSON")
     args = parser.parse_args()
+    if args.claim and (args.ranked or args.json):
+        parser.error("--claim selects one candidate; omit --ranked and --json")
     if args.groups and not args.ranked:
         parser.error("--groups requires --ranked")
 
@@ -526,6 +555,7 @@ def main():
     retired_count = sum(candidate["symbol"] in retired for candidate in candidates)
     candidates = [candidate for candidate in candidates
                   if candidate["symbol"] not in retired]
+    candidates = without_busy(candidates, claims.busy_rvas())
     candidates = apply_shard(candidates, args.shard)
     rank_candidates(candidates)
     # Layer the boundary/status-aware index on top of the 3-field retirement
@@ -551,11 +581,17 @@ def main():
                           "excluded_logged": retired_count}, indent=2))
         return
     if not args.ranked:
-        selected, meta = select_candidate(candidates)
+        if args.claim:
+            selected, meta, acquired = claim_choice(candidates)
+        else:
+            selected, meta = select_candidate(candidates)
+            acquired = []
         if selected is None:
             print("No validated naked-asm candidates remain in the requested paths.")
             return
         print(f"== selected naked-asm conversion (drawn from {meta['pool']}) ==")
+        if acquired:
+            print(f"  claim: 0x{acquired[0]:08X} held on origin; release it if work is abandoned")
         print(f"  {selected['symbol'] or selected['signature'] or '(unnamed)'}")
         print(f"  {selected['size']} bytes  {selected['path']}:{selected['line']}")
         if meta.get("packet"):

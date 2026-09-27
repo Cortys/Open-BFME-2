@@ -4,7 +4,7 @@
 The default draws one candidate at random from the selected tier, weighted by
 measured land rate for its size, so concurrent contributors still rarely
 collide but no draw is worth merely the pool average. ``--ranked`` is the human/debug
-view of the complete queues. No network, no compiling — runs in seconds.
+view of the available queues. Live claims are fetched from origin; no compiling.
 
 Sections, in priority order:
   0. Ledger health   tools/check_csv.py — a corrupt ledger aborts everything (exit 2)
@@ -35,6 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import boundary_validator
+import claims
 import re_log
 import yield_model
 
@@ -544,6 +545,26 @@ def _candidate_rva(candidate):
             except ValueError:
                 return None
     return None
+
+
+def without_busy(candidates, busy):
+    """Keep every queue view consistent with live shared work claims."""
+    return [candidate for candidate in candidates if _candidate_rva(candidate) not in busy]
+
+
+def claim_choice(candidates, label):
+    """Claim one draw, trying another RVA if a peer won the claim race."""
+    remaining = list(candidates)
+    while remaining:
+        candidate = weighted_choice(remaining)
+        rva = _candidate_rva(candidate)
+        if rva is None:
+            raise SystemExit("next_work: selected candidate has no claimable RVA")
+        acquired, refused = claims.claim([rva], note=f"next_work {label}")
+        if rva not in refused:
+            return candidate, acquired  # network failures warn and keep work available
+        remaining = without_busy(remaining, {rva})
+    return None, []
 
 
 def _print_boundary_verdicts(candidate, limit=3):
@@ -1124,6 +1145,8 @@ def main():
                     help="machine-readable selected item (or full queues with --ranked)")
     ap.add_argument("--ranked", action="store_true",
                     help="show complete ranked queues for humans/debugging")
+    ap.add_argument("--claim", action="store_true",
+                    help="claim the selected RVA on origin before serving it; retry a raced selection")
     ap.add_argument("--tier",
                     choices=("packet", "named", "harvest", "structural", "ghidra", "anchored"),
                     help="choose from only this task lane")
@@ -1135,6 +1158,8 @@ def main():
                     help="keep candidates already recorded no-match in "
                          "reverse/re_attempts.log (they are dropped by default)")
     args = ap.parse_args()
+    if args.claim and args.ranked:
+        ap.error("--claim selects one candidate; omit --ranked")
 
     ledger = check_ledger()  # exit 2 happens in there; nothing below matters if red
     drifts = (drift_quick_wins()
@@ -1182,6 +1207,13 @@ def main():
         suppressed = (dropped_named + dropped_drift + dropped_structural
                       + dropped_ghidra + dropped_anchored)
 
+    busy = claims.busy_rvas()
+    named = without_busy(named, busy)
+    drifts = without_busy(drifts, busy)
+    structural = without_busy(structural, busy)
+    ghidra_absent = without_busy(ghidra_absent, busy)
+    anchored = without_busy(anchored, busy)
+
     # After the log filter, so one dead name cannot retire a whole address, and
     # before sharding, so every worker sees the same collapsed queue.
     structural, structural_meta = collapse_and_validate(structural)
@@ -1218,6 +1250,7 @@ def main():
 
     packets = (packet_candidates(claimed)
                if args.tier in (None, "packet") else [])
+    packets = without_busy(packets, busy)
     # The packet tier carries its own boundary, so a logged verdict retires it
     # exactly as it does for every other lane. Without this the recommender
     # keeps serving packets already recorded not-convertible or no-boundary.
@@ -1226,7 +1259,8 @@ def main():
         suppressed += dropped_packets
     label, candidates = selected_queue(args.tier, drifts, structural, ghidra_absent,
                                        anchored, named, packets)
-    candidate = weighted_choice(candidates) if candidates else None
+    candidate, acquired = (claim_choice(candidates, label) if args.claim else
+                           (weighted_choice(candidates) if candidates else None, []))
     deferred = sum(1 for c in candidates if c.get("deferred_attempts"))
     meta = {"pool": len(candidates), "suppressed_logged": suppressed,
             "deferred_pool": deferred, "shard": shard_meta}
@@ -1234,6 +1268,8 @@ def main():
         meta = dict(meta, cluster=[
             c["function"] for c in cluster_of(candidate, candidates)]) \
             if candidate else meta
+        if args.claim:
+            meta["claimed"] = bool(acquired)
         print(json.dumps({"ledger": ledger, "tier": label,
                           "selection": candidate, "selection_meta": meta}, indent=2))
         return
@@ -1250,6 +1286,8 @@ def main():
         print(f"\nNo {label} candidates remain.")
         print("Convert lane always has work: python3 tools/list_naked_candidates.py Code")
         return
+    if acquired:
+        print(f"claim: 0x{acquired[0]:08X} held on origin; release it if work is abandoned")
     print()
     print_candidate(label, candidate, meta, candidates)
     print("\nConvert lane (byte-true dumps in Code/gen_asm/, the largest queue): "

@@ -48,6 +48,7 @@ Usage:
 import argparse
 import csv
 import io
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -242,6 +243,13 @@ def main():
             revert(f"verification failed for {s} (exit {result.returncode})")
             sys.exit(1)
     print(f"add_match_batch: verified OK -- {len(claims)} row(s) live")
+    if root == DEFAULT_ROOT.resolve() and os.environ.get("BFME_CLAIMS", "on") != "off":
+        try:
+            import claims as shared_claims
+            shared_claims.release([c["rva"] for c in claims], force=True)
+        except Exception as error:  # advisory; the refs expire on their own
+            print(f"add_match_batch: could not release shared claims: {error}",
+                  file=sys.stderr)
 
 
 if __name__ == "__main__":
