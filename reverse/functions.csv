@@ -37090,3 +37090,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?wakeUpNow@AIUpdateInterface@@IAEXXZ,,0x00262871,36,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_wakeUpNow.cpp,matched,BFME1 AIUpdate wakeUpNow with 0x3C2 guard via turret siblings
 ?setQueueForPathTime@AIUpdateInterface@@QAEXH@Z,,0x0026282A,71,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_setQueueForPathTime.cpp,matched,BFME1 AIUpdate setQueueForPathTime with 0x3C2 guard
 ??1W3DRopeDraw@@UAE@XZ,,0x000CA8BC,90,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/W3DRopeDrawDtor.cpp,matched,BFME1 donor dtor via EHs malloc pattern with DrawableModule pin
+?xfer@DrawModule@@MAEXPAVXfer@@@Z,,0x004CBF58,21,Code/GameEngine/Source/GameLogic/Object/Behavior/DrawModuleXfer.cpp,matched,slot 3 of DrawModule vtable 0x007C9690 via ctor pin plus base ObjectModule plus Version1
