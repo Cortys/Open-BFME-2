@@ -39393,3 +39393,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002D9576@Rva002D9576@@QAEHXZ,,0x002D9576,13,Code/GameEngine/Source/Common/Rva002D9576GuardedGetter.cpp,matched,honest address name guarded getter state 1 returns value else 0
 ?rva002D94CE@Rva002D94CE@@QAEXH@Z,,0x002D94CE,15,Code/GameEngine/Source/Common/Rva002D94CECondSetter.cpp,matched,honest address name conditional setter skip redundant store
 ?rva002D94EB@Rva002D94EB@@QAEXM@Z,,0x002D94EB,19,Code/GameEngine/Source/Common/Rva002D94EBFloatSub.cpp,matched,honest address name float subtract setter SSE movss subss
+?rva002D9608@Rva002D9608@@QAE_NXZ,,0x002D9608,26,Code/GameEngine/Source/Common/Rva002D9608AudioCheck.cpp,matched,honest address name audio gate TheAudio slot D0
