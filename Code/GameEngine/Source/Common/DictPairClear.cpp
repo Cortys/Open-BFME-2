@@ -530,3 +530,14 @@ void Dict::setAsciiString(int key, const AsciiString &value)
 	*slot = value;
 	sortPairs();
 }
+
+// ?setUnicodeString@Dict@@QAEXHABVUnicodeString@@@Z @0x00313781 39B
+// Dict::setUnicodeString from ZH Dict.cpp donor. Rowed setPrep at 0x0031369D
+// plus pinned StringBase wide set at 0x00037150 plus rowed sortPairs.
+void Dict::setUnicodeString(int key, const UnicodeString &value)
+{
+	DictPair *pair = setPrep(key, DICT_UNICODESTRING);
+	StringBase<unsigned short> *slot = (StringBase<unsigned short> *)&pair->m_value;
+	slot->set(*(const StringBase<unsigned short> *)&value);
+	sortPairs();
+}
