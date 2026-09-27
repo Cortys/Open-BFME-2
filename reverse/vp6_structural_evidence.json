@@ -1291,7 +1291,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccccccccccccc",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored retail-based C++ in Code/Libraries/Source/VP6/boolhuff.cpp; source-handoff body not imported.",
         "ghidra_entry": {
           "rva": "0x1BCCF0",
           "size": "145",
@@ -1311,7 +1311,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccccccccccccc",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored retail-based C++ in Code/Libraries/Source/VP6/boolhuff.cpp; source-handoff body not imported.",
         "ghidra_entry": null
       },
       {
@@ -1327,7 +1327,7 @@
           "text": "ret "
         },
         "following_bytes": "cccccccccccccccc",
-        "status": "unique masked placement, not a verified recovery or independently settled identity",
+        "status": "Recovered by separately authored retail-based C++ in Code/Libraries/Source/VP6/boolhuff.cpp; source-handoff body not imported.",
         "ghidra_entry": null
       },
       {
@@ -1538,5 +1538,82 @@
     "placement_bytes": 1266,
     "new_matched_bytes_from_this_handoff": 0,
     "follow_up": "Study context-free generic candidates first. Target-view experiments prove three source bodies can compile exactly after layout adaptation, but remain private reference experiments. Retain banked independent C++ attempts; do not replace them with restricted source. Full-unit layout reconciliation needs individually verified fields, not a uniform offset delta."
+  },
+  "boolean_encoders": {
+    "reconstruction_basis": "Retail disassembly/dataflow; donor identity/types; source handoff supplied byte-placement candidates. This does not assert clean-room isolation: the handoff was available, but its encoder bodies were not copied into the authored unit.",
+    "codegen_finding": "Use the split itself as the live interval in general/zero functions; mutate the original interval in One. Reset local count before the output-byte store so it stays live across the alias-sensitive position reload.",
+    "compiler": "MSVC7.1 /O2 /MD",
+    "field_layout": {
+      "low": "0x00 u32",
+      "range": "0x04 u32",
+      "value": "0x08 u32 unused here",
+      "count": "0x0c s32",
+      "position": "0x10 u32",
+      "buffer": "0x14 pointer",
+      "measureCost": "0x18 u32 unused here",
+      "bitCounter": "0x1c u32 unused here"
+    },
+    "functions": [
+      {
+        "name": "_VP6_EncodeBool",
+        "rva": "0x1bccf0",
+        "size": 145,
+        "last_instruction_rva": "0x1bcd80",
+        "target_sha256": "47599d26ac56549c8f7369d163eed74509254a16ee04ab1e92231a677cca60eb",
+        "following_bytes": "cccccccccccccccc",
+        "donor": {
+          "name": "VP6_EncodeBool",
+          "size": 141,
+          "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\boolhuff.c.obj",
+          "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+          "donor_va": "0x4624c0",
+          "donor_offset": 4527296,
+          "record": "3600101100000000c4010000000000008d0000001d0000008b000000d0870100c01445000100015650365f456e636f6465426f6f6c000000"
+        },
+        "target_identity_basis": "Same checked BOOL_CODER field accesses as matched decoder1C4F00; multiply/shift interval split and carry-propagating byte output establish encoder role. General routine branches on its second argument; One and Zero implement the distinct fixed outcomes while retaining the three-argument ABI. PDB provides original spellings. General routine called at1C6D75 by the target prefix-code encoder.",
+        "source": "Code/Libraries/Source/VP6/boolhuff.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "_VP6_EncodeBoolOne",
+        "rva": "0x1bcd90",
+        "size": 133,
+        "last_instruction_rva": "0x1bce14",
+        "target_sha256": "d360b2735fdc3719cd71d9a5169a23f621d58a46886068a1627b655bd1a805d3",
+        "following_bytes": "cccccccccccccccc",
+        "donor": {
+          "name": "VP6_EncodeBoolOne",
+          "size": 133,
+          "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\boolhuff.c.obj",
+          "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+          "donor_va": "0x46254d",
+          "donor_offset": 4527437,
+          "record": "3a001011000000005002000000000000850000000d00000083000000d08701004d1545000100015650365f456e636f6465426f6f6c4f6e6500000000"
+        },
+        "target_identity_basis": "Same checked BOOL_CODER field accesses as matched decoder1C4F00; multiply/shift interval split and carry-propagating byte output establish encoder role. General routine branches on its second argument; One and Zero implement the distinct fixed outcomes while retaining the three-argument ABI. PDB provides original spellings. General routine called at1C6D75 by the target prefix-code encoder.",
+        "source": "Code/Libraries/Source/VP6/boolhuff.cpp",
+        "status": "C++ byte-verified recovery"
+      },
+      {
+        "name": "_VP6_EncodeBoolZero",
+        "rva": "0x1bce20",
+        "size": 129,
+        "last_instruction_rva": "0x1bcea0",
+        "target_sha256": "3e2b5b10c7c9c5ebedf127a004dc306d0a76dd39e4c20412e2c595236fdc0aa5",
+        "following_bytes": "cccccccccccccccc",
+        "donor": {
+          "name": "VP6_EncodeBoolZero",
+          "size": 127,
+          "module": "D:\\env\\egami\\vp6\\dev\\build\\xbox-vc7-release\\vp6decode\\cmn\\boolhuff.c.obj",
+          "object": "\\packages\\vp6\\1.0.5\\lib\\xbox-vc7\\vp6decodez.lib",
+          "donor_va": "0x4625d2",
+          "donor_offset": 4527570,
+          "record": "3a00101100000000dc020000000000007f0000001d0000007d000000d0870100d21545000100015650365f456e636f6465426f6f6c5a65726f000000"
+        },
+        "target_identity_basis": "Same checked BOOL_CODER field accesses as matched decoder1C4F00; multiply/shift interval split and carry-propagating byte output establish encoder role. General routine branches on its second argument; One and Zero implement the distinct fixed outcomes while retaining the three-argument ABI. PDB provides original spellings. General routine called at1C6D75 by the target prefix-code encoder.",
+        "source": "Code/Libraries/Source/VP6/boolhuff.cpp",
+        "status": "C++ byte-verified recovery"
+      }
+    ]
   }
 }
