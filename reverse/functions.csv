@@ -38910,3 +38910,7 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004E35D5@Rva004E35D5@@QAEXABVAsciiString@@HH@Z,,0x004E35D5,42,Code/GameEngine/Source/Common/Rva004E35D5Notify.cpp,matched,map dispatch slot 0xC donor V4Lookup find 0x1F8437
 ?rva004E35FF@Rva004E35FF@@QAEXABVAsciiString@@HH@Z,,0x004E35FF,42,Code/GameEngine/Source/Common/Rva004E35D5Notify.cpp,matched,map dispatch slot 0x10 donor V4Lookup find 0x1F8437
 ?rva004E3629@Rva004E3629@@QAEXABVAsciiString@@H@Z,,0x004E3629,38,Code/GameEngine/Source/Common/Rva004E35D5Notify.cpp,matched,map dispatch slot 8 donor V4Lookup find 0x1F8437
+?rva003EE900@Rva003EE900@@QAEXH@Z,,0x003EE900,26,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,forwarder to notify0C HomeRegionHighlight chain of 0x4E35D5
+?rva003EE884@Rva003EE884@@QAEXH@Z,,0x003EE884,26,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,forwarder to notify0C FilledOwnershipEffect chain of 0x4E35D5
+?rva003EE966@Rva003EE966@@QAEXH@Z,,0x003EE966,26,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,forwarder to notify0C RegionSelectionEffect chain of 0x4E35D5
+?rva003EEA9D@Rva003EEA9D@@QAEXH@Z,,0x003EEA9D,26,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,forwarder to notify0C MouseoverEffectFlareup chain of 0x4E35D5
