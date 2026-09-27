@@ -39380,3 +39380,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva007F6FC0BrowserGameReply@@YAXPAVRva007E8810Message@@PAVRva007F7980Browser@@@Z,,0x006636B0,17,Code/GameEngine/Source/GameNetwork/V2FeslBrowserRecords.cpp,matched,Retail forwards the message and status 1 with browser as ECX to 0x00662D70; target layout and handler labels remain donor-derived
 ?rva004E0741@Rva004E0741@@QBEXXZ,,0x004E0741,15,Code/GameEngine/Source/Common/Rva004E0741VCalls.cpp,matched,conditional void tail-call slot 1 via plus 0x2c
 ?rva004E0750@Rva004E0750@@QBEXXZ,,0x004E0750,15,Code/GameEngine/Source/Common/Rva004E0741VCalls.cpp,matched,conditional void tail-call slot 2 via plus 0x2c
+??0Rva004E04FD@@QAE@XZ,,0x004E04FD,22,Code/GameEngine/Source/Common/Rva004E04FDCtor.cpp,matched,zeroing ctor five dwords plus byte at plus 0x14
