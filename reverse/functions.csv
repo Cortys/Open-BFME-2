@@ -38894,3 +38894,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ??1?$_List_base@URva005F8F96@@V?$allocator@URva005F8F96@@@_STL@@@_STL@@QAE@XZ,,0x005CD032,23,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva005F8F96_clear.cpp,matched,listbase dtor via rowed clear 0x5CCEFA and free
 ??RRva00422CA8@@QBE_NHH@Z,,0x00422CA8,65,Code/Libraries/Source/WWVegas/WWLib/Rva00422CA8Cmp.cpp,matched,int sort predicate via TheGameLogic lookup and template order
 ?groupEnter@AIGroup@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x00370198,127,Code/GameEngine/Source/GameLogic/AI/AIGroupGroupEnter.cpp,matched,TEAM_ENTER_NAMED caller plus ZH donor plus BFME1 snapshot plus rowed list int calls
+?groupHunt@AIGroup@@QAEXW4CommandSourceType@@@Z,,0x0037008E,50,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,caller builds AIGroup plus ZH donor plus BFME1 groupHunt plus rowed aiHunt
