@@ -222,3 +222,44 @@ void GadgetListBoxSetSelected(GameWindow *listbox, const Int *selectList, Int se
 		return;
 	TheWindowManager->winSendSystemMsg(listbox, 0x4017, (int)selectList, selectCount);
 }
+
+// Candidate 0x0032434A 54B: null-guarded listbox cell store through winGetUserData.
+// listLength bound at +0x00, rows at +0x18 (16B stride, cell at +8), cells 28B
+// stride with the stored value at +4. Callers pass row then column then value.
+struct Rva2434ACell
+{
+	Int cellType;
+	Int color;
+	Int data;
+	Int userData;
+	Int width;
+	Int height;
+	Int pad18;
+};
+
+struct Rva2434ARow
+{
+	Int listHeight;
+	Int height;
+	Rva2434ACell *cell;
+	Int padC;
+};
+
+struct Rva2434AData
+{
+	Short listLength;
+	char pad2[0x16];
+	Rva2434ARow *listData;
+};
+
+void Rva0032434ASet(GameWindow *listbox, Int row, Int column, Int value)
+{
+	if (listbox == 0)
+		return;
+	Rva2434AData *data = (Rva2434AData *)listbox->winGetUserData();
+	if (data == 0)
+		return;
+	if ((unsigned)row >= (unsigned)data->listLength)
+		return;
+	data->listData[row].cell[column].color = value;
+}
