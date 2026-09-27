@@ -67,3 +67,12 @@ template _STL::vector<BfmeStringHeadRecord160>::~vector();
 struct Rva0048130E { public: ~Rva0048130E(); };
 template _STL::vector<Rva0048130E>::~vector();
 
+// ??1?$vector@VRva002A73B8@@V?$allocator@VRva002A73B8@@@_STL@@@_STL@@QAE@XZ @0x002AE486 63B.
+// Same 63B Destroy-plus-free shape under /O1 /GX (EH states 0/-1): destroys the range
+// through the ICF-twin _Destroy at 0x002A752F (pinned twin of the rowed 25B
+// Rva002A752FDestroy at same address stride 0xC via rowed dtor 0x002A73B8) then frees
+// via 0x30830; called at +0x20 by the 48B parent at 0x002AE627. Element is the 0xC
+// Rva002A73B8 with rowed dtor at 0x002A73B8; 0xC pad gives the twin stride.
+class Rva002A73B8 { public: ~Rva002A73B8(); private: char m_pad[0xC]; };
+template _STL::vector<Rva002A73B8>::~vector();
+
