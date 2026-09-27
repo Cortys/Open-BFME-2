@@ -21,7 +21,25 @@ extern "C" void free(void *);
 namespace _STL
 {
 void __cdecl free(void *block);
+template <class _Tp> class allocator
+{
+public:
+	static _Tp *allocate(unsigned int __n, void const *__hint);
+};
+template <class _P, class _T, class _A> class _STLP_alloc_proxy
+{
+public:
+	_STLP_alloc_proxy(const _A &__a, _P __p);
+	_P _M_data;
+};
 }
+
+inline void *__cdecl operator new(unsigned int, void *__p)
+{
+	return __p;
+}
+
+typedef unsigned int ProxyUInt;
 
 class AnimationSoundTreeHeaderHandle
 {
@@ -41,6 +59,7 @@ public:
 	~AnimationSoundTree();
 	void rva004CA167(void *node);
 	void rva004CA26A();
+	AnimationSoundTree *rva004CA018(void const *dummy);
 
 private:
 	AnimationSoundTreeHeaderHandle m_handle;
@@ -89,4 +108,22 @@ void AnimationSoundTree::rva004CA26A()
 AnimationSoundTree::~AnimationSoundTree()
 {
 	rva004CA26A();
+}
+
+// ?rva004CA018@AnimationSoundTree@@QAEPAV1@PBX@Z, retail 0x004CA018, 39 bytes.
+// Header-handle alloc helper: proxy at this with a stack uint allocator temp
+// and null, then the 0xB8 header via the rowed byte allocator stored at +0,
+// returning this. Called once from 0x004CA13D. Evidence: callees rowed
+// 0x0014F3C4 proxy and 0x000307F0 allocate; caller at 0x004CA144;
+// prev/next with the same // cl: line.
+AnimationSoundTree *AnimationSoundTree::rva004CA018(void const *dummy)
+{
+	(void)dummy;
+	_STL::allocator<ProxyUInt> tmp;
+	_STL::_STLP_alloc_proxy<ProxyUInt *, ProxyUInt, _STL::allocator<ProxyUInt> > *proxy =
+		(_STL::_STLP_alloc_proxy<ProxyUInt *, ProxyUInt, _STL::allocator<ProxyUInt> > *)this;
+	__assume(proxy != 0);
+	new (proxy) _STL::_STLP_alloc_proxy<ProxyUInt *, ProxyUInt, _STL::allocator<ProxyUInt> >(tmp, (ProxyUInt *)0);
+	*(char **)this = _STL::allocator<char>::allocate(0xb8, 0);
+	return this;
 }
