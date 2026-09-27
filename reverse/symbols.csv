@@ -6116,3 +6116,4 @@ _ConvertBoolTrees,0x001BBD60
 ??0?$_List_base@UICoord2D@@V?$allocator@UICoord2D@@@_STL@@@_STL@@QAE@ABV?$allocator@UICoord2D@@@1@@Z,0x0035C9A6,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
 ?loadRoadsAndBridges@BaseHeightMapRenderObjClass@@QAEXPAVW3DTerrainLogic@@_N@Z,0x00067800,address read from the REL32 displacement at a placed body
 ?newMap@TerrainLogic@@UAEX_N@Z,0x00284290,address read from the REL32 displacement at a placed body
+?fill@_STL@@YAXPAE0ABE@Z,0x000ABC25,address read from the REL32 displacement at a placed body; the body there is held under another instantiation name and the two folded
