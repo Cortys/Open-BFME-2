@@ -28,3 +28,23 @@ class Rva00340BDC { public: __declspec(noinline) virtual ~Rva00340BDC(); private
   friend void famgenDelete(Rva00340BDC *p); };
 Rva00340BDC::~Rva00340BDC() { m_famgen = 0; }
 void famgenDelete(Rva00340BDC *p) { delete p; }
+
+// ??_GRva00340D1F@@UAEPAXI@Z @0x00345BB3, 28B.
+// Scalar deleting dtor slot 0 of vtable 0x008121E8; calls rowed ??1 at
+// 0x00340D1F plus rowed delete at 0x0002FD60.
+
+// ??_GRva00340D1F@@UAEPAXI@Z @0x00345BB3
+class Rva00340D1F { public: __declspec(noinline) virtual ~Rva00340D1F(); private: int m_famgen;
+  friend void famgenDelete(Rva00340D1F *p); };
+Rva00340D1F::~Rva00340D1F() { m_famgen = 0; }
+void famgenDelete(Rva00340D1F *p) { delete p; }
+
+// ??_GRva00345F21@@UAEPAXI@Z @0x0034A183, 28B.
+// Scalar deleting dtor slot 0 of vtable 0x00813638; calls rowed ??1 at
+// 0x00345F21 plus rowed delete at 0x0002FD60.
+
+// ??_GRva00345F21@@UAEPAXI@Z @0x0034A183
+class Rva00345F21 { public: __declspec(noinline) virtual ~Rva00345F21(); private: int m_famgen;
+  friend void famgenDelete(Rva00345F21 *p); };
+Rva00345F21::~Rva00345F21() { m_famgen = 0; }
+void famgenDelete(Rva00345F21 *p) { delete p; }
