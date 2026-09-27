@@ -15,8 +15,10 @@ void __debugbreak();
 extern "C" int __cdecl memcmp(const void *left, const void *right, unsigned int count);
 extern "C" void *__cdecl memcpy(void *dst, const void *src, unsigned int count);
 extern "C" unsigned int __cdecl strlen(const char *str);
+extern "C" int __cdecl strcmp(const char *left, const char *right);
 #pragma intrinsic(memcpy)
 #pragma intrinsic(strlen)
+#pragma intrinsic(strcmp)
 
 class Rva006DB270
 {
@@ -77,6 +79,7 @@ public:
 	bool IsEqualTo(const EAStringC *other) const;
 	bool rva006D30D0(const EAStringC *other) const;
 	void rva006D3470();
+	bool rva006D3490(const char *text) const;
 	unsigned short rva006D2F40() const;
 };
 
@@ -318,4 +321,22 @@ void EAStringC::rva006D3470()
 	FreeData(m_pData);
 	m_pData = &g_eaEmptyStringData;
 	g_eaEmptyStringData.m_uRefCount++;
+}
+
+// ?rva006D3490@EAStringC@@QBE_NPBD@Z, retail 0x006D3490, 125 bytes.
+// EAStringC C-string equality: asserts pStrText non-null via EAString.inl
+// 0x3A6, then compares the internal buffer (+8) with the C-string through
+// intrinsic strcmp inlined as a 2-byte unrolled loop with sbb -1/0/1 tail
+// plus outer ! for bool. Callers at 0x006DE21C/0x006DE24C/0x006E95A5
+// /0x006E9607/0x006EAB54/0x006EAB90/0x006EABCC/0x0070DC2B; neighbours
+// rva006D3470 and compare family live in this cluster. Honest address
+// name; PBD signature proves C-string overload.
+bool EAStringC::rva006D3490(const char *text) const
+{
+	if (!(text != 0)) {
+		g_bfmeAptAssertAtE17734("pStrText != NULL", ".\\string\\EAString.inl", 0x3A6);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	const char *a = (const char *)m_pData + 8;
+	return strcmp(a, text) == 0;
 }
