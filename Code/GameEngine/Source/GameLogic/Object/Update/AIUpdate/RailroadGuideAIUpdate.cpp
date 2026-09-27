@@ -74,11 +74,13 @@ static const Int INVALID_PATH = -1;
 #define FRAMES_UNPULLED_LONG_ENOUGH_TO_UNHITCH (2)
 
 
+// ?incReference@TrainTrack@@ present-unmatched
 void TrainTrack::incReference() 
 { 
 	++m_refCount; 
 }
 
+// ?releaseReference@TrainTrack@@ present-unmatched
 Bool TrainTrack::releaseReference() 
 { 
 	return ( --m_refCount == 0 ); 
@@ -87,6 +89,7 @@ Bool TrainTrack::releaseReference()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ??0RailroadBehaviorModuleData@@ present-unmatched
 RailroadBehaviorModuleData::RailroadBehaviorModuleData( void )
 {
 	m_carriageTemplateNameData.clear();
@@ -106,6 +109,7 @@ RailroadBehaviorModuleData::RailroadBehaviorModuleData( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??0RailroadBehavior@@ present-unmatched
 RailroadBehavior::RailroadBehavior( Thing *thing, const ModuleData *moduleData ) 
 											 : PhysicsBehavior( thing, moduleData )          
 {
@@ -177,6 +181,7 @@ RailroadBehavior::RailroadBehavior( Thing *thing, const ModuleData *moduleData )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ??1RailroadBehavior@@ present-unmatched
 RailroadBehavior::~RailroadBehavior( void )
 {
 
@@ -196,6 +201,7 @@ RailroadBehavior::~RailroadBehavior( void )
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 
+// ?isRailroad@RailroadBehavior@@ present-unmatched
 Bool RailroadBehavior::isRailroad() const 
 {
 	if ( ! m_track )
@@ -218,6 +224,7 @@ Bool RailroadBehavior::isRailroad() const
 
 // ------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?onCollide@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::onCollide( Object *other, const Coord3D *loc, const Coord3D *normal )
 {
 	Object *obj = getObject();
@@ -433,6 +440,7 @@ void RailroadBehavior::onCollide( Object *other, const Coord3D *loc, const Coord
 // ------------------------------------------------------------------------------------------------
 
 
+// ?playImpactSound@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::playImpactSound(Object *victim, const Coord3D *impactPosition)
 {
 	AudioEventRTS impact;
@@ -505,6 +513,7 @@ void RailroadBehavior::playImpactSound(Object *victim, const Coord3D *impactPosi
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?loadTrackData@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::loadTrackData( void )
 {
 
@@ -647,6 +656,7 @@ void RailroadBehavior::loadTrackData( void )
 
 
 
+// ?makeAWallOutOfThisTrain@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::makeAWallOutOfThisTrain( Bool on )
 {
   if ( on == TRUE )
@@ -677,6 +687,7 @@ void RailroadBehavior::makeAWallOutOfThisTrain( Bool on )
 
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// ?update@RailroadBehavior@@ present-unmatched
 UpdateSleepTime RailroadBehavior::update( void )
 {
 
@@ -865,6 +876,7 @@ UpdateSleepTime RailroadBehavior::update( void )
 
 
 
+// ?disembark@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::disembark(void)
 {
 	ContainModuleInterface *contain = getObject()->getContain();
@@ -946,6 +958,7 @@ public:
 };
 
 
+// ?createCarriages@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::createCarriages( void )
 {
 
@@ -1038,6 +1051,7 @@ void RailroadBehavior::createCarriages( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?hitchNewCarriagebyTemplate@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::hitchNewCarriagebyTemplate( ObjectID locoID, const TemplateNameVector& list, TemplateNameIterator& iter, TrainTrack *track)
 {
 
@@ -1097,6 +1111,7 @@ void RailroadBehavior::hitchNewCarriagebyTemplate( ObjectID locoID, const Templa
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?hitchNewCarriagebyProximity@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::hitchNewCarriagebyProximity( ObjectID locoID, TrainTrack *track)
 {
 	if ( m_isLocomotive )
@@ -1173,6 +1188,7 @@ void RailroadBehavior::hitchNewCarriagebyProximity( ObjectID locoID, TrainTrack 
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?getPulled@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::getPulled( PullInfo *info )
 {
 	//ENFORCE MY STATUS AS A PULLEE, NOT A PULLER, and update my position, speed etc.
@@ -1229,6 +1245,7 @@ void RailroadBehavior::getPulled( PullInfo *info )
 
 // ------------------------------------------------------------------------------------------------
 
+#pragma optimize("s", on)
 void alignToTerrain( Real angle, const Coord3D& pos, const Coord3D& normal, Matrix3D& mtx)
 {
 	Coord3D x, y, z;
@@ -1254,10 +1271,12 @@ void alignToTerrain( Real angle, const Coord3D& pos, const Coord3D& normal, Matr
 							x.y, y.y, z.y, pos.y,
 							x.z, y.z, z.z, pos.z );
 }
+#pragma optimize("", on)
 
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?updatePositionTrackDistance@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::updatePositionTrackDistance( PullInfo *pullerInfo, PullInfo *myInfo )
 {
 
@@ -1349,6 +1368,7 @@ void RailroadBehavior::updatePositionTrackDistance( PullInfo *pullerInfo, PullIn
 
 //---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------
+// ?destroyTheWholeTrainNow@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::destroyTheWholeTrainNow( void )
 {
 	TheGameLogic->destroyObject( getObject());
@@ -1380,6 +1400,7 @@ void RailroadBehavior::destroyTheWholeTrainNow( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?FindPosByPathDistance@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::FindPosByPathDistance( Coord3D *pos, const Real dist, const Real length, Bool setState )
 {
 	
@@ -1513,6 +1534,7 @@ void RailroadBehavior::FindPosByPathDistance( Coord3D *pos, const Real dist, con
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?crc@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::crc( Xfer *xfer )
 {
 	// extend base class
@@ -1528,6 +1550,7 @@ void RailroadBehavior::crc( Xfer *xfer )
 	* 3: m_held script driven flag for hanging out
 	**/
 // ------------------------------------------------------------------------------------------------
+// ?xfer@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::xfer( Xfer *xfer )
 {
 
@@ -1608,6 +1631,7 @@ void RailroadBehavior::xfer( Xfer *xfer )
 
 
 
+// ?xferPullInfo@PullInfo@@ present-unmatched
 void RailroadBehavior::PullInfo::xferPullInfo( Xfer *xfer )
 {
 	XferVersion currentVersion = 1;
@@ -1626,6 +1650,7 @@ void RailroadBehavior::PullInfo::xferPullInfo( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?loadPostProcess@RailroadBehavior@@ present-unmatched
 void RailroadBehavior::loadPostProcess( void )
 {
 	// extend base class
