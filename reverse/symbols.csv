@@ -5945,3 +5945,4 @@ _ConvertBoolTrees,0x001BBD60
 ?insertTee@W3DRoadBuffer@@IAEXVVector2@@HM@Z,0x000DA2B2,address read from the REL32 displacement at a placed body
 ?loadFloat4PtSection@W3DRoadBuffer@@IAEXPAVRoadSegment@@VVector2@@11PAV3@MMMM@Z,0x000D7DCE,address read from the REL32 displacement at a placed body
 ?updateLighting@W3DRoadBuffer@@QAEXXZ,0x000D4A4B,address read from the REL32 displacement at a placed body
+?getUnitDirectionVector2D@Thing@@QBEPBUCoord3D@@XZ,0x0030A25F,address read from the REL32 displacement at a placed body

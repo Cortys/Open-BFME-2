@@ -38211,3 +38211,5 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?getMostRecentCommand@WorkerAIUpdate@@UAE?AW4DozerTask@@XZ,,0x004A9838,61,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/WorkerAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?getDockPoint@WorkerAIUpdate@@UAEPBUCoord3D@@W4DozerTask@@W4DozerDockPoint@@@Z,,0x004A9875,55,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/WorkerAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
 ?internalTaskComplete@WorkerAIUpdate@@UAEXW4DozerTask@@@Z,,0x004A9809,47,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/WorkerAIUpdate.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?calculateHeightAboveTerrain@Thing@@MBEMXZ,,0x0030A4AC,36,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
+?getUnitDirectionVector2D@Thing@@QBEXAAUCoord3D@@@Z,,0x0030A2A2,21,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,placed by masked whole-.text search of the compiled body - single hit

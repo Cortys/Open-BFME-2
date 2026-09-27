@@ -108,6 +108,7 @@ public:
 //=============================================================================
 /** Constructor */
 //=============================================================================
+// ??0Thing@@ present-unmatched
 Thing::Thing( const ThingTemplate *thingTemplate ) 
 {
 	// sanity
@@ -145,6 +146,7 @@ Thing::~Thing()
 //DECLARE_PERF_TIMER(ThingMatrixStuff)
 
 //=============================================================================
+// ?getTemplate@Thing@@ present-unmatched
 const ThingTemplate *Thing::getTemplate() const
 {
 	return m_template;
@@ -167,12 +169,15 @@ const Coord3D* Thing::getUnitDirectionVector2D() const
 }
 
 //=============================================================================
+#pragma optimize("s", on)
 void Thing::getUnitDirectionVector2D(Coord3D& dir) const
 {
 	dir = *getUnitDirectionVector2D();
 }
+#pragma optimize("", on)
 
 //=============================================================================
+// ?getUnitDirectionVector3D@Thing@@ present-unmatched
 void Thing::getUnitDirectionVector3D(Coord3D& dir) const
 {
 	Vector3 vdir = m_transform.Get_X_Vector();
@@ -221,6 +226,7 @@ void Thing::setPositionZ( Real z )
 }
 
 //=============================================================================
+// ?setPosition@Thing@@ present-unmatched
 void Thing::setPosition( const Coord3D *pos )
 {
 	//USE_PERF_TIMER(ThingMatrixStuff)
@@ -308,6 +314,7 @@ void Thing::setOrientation( Real angle )
 //=============================================================================
 /** Set the world transformation matrix */
 //=============================================================================
+// ?setTransformMatrix@Thing@@ present-unmatched
 void Thing::setTransformMatrix( const Matrix3D *mx )
 {
 	//USE_PERF_TIMER(ThingMatrixStuff)
@@ -362,6 +369,7 @@ Bool Thing::isAnyKindOf( const KindOfMaskType& anyKindOf ) const
 }
 
 // ------------------------------------------------------------------------------------------------
+#pragma optimize("s", on)
 Real Thing::calculateHeightAboveTerrain() const 
 {
 	//USE_PERF_TIMER(ThingMatrixStuff)
@@ -370,6 +378,7 @@ Real Thing::calculateHeightAboveTerrain() const
 	Real myZ = pos->z;
 	return myZ - terrainZ;
 }
+#pragma optimize("", on)
 
 //-------------------------------------------------------------------------------------------------
 Real Thing::getHeightAboveTerrain() const
@@ -383,6 +392,7 @@ Real Thing::getHeightAboveTerrain() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?getHeightAboveTerrainOrWater@Thing@@ present-unmatched
 Real Thing::getHeightAboveTerrainOrWater() const
 {
 	//USE_PERF_TIMER(ThingMatrixStuff)
@@ -417,6 +427,7 @@ Bool Thing::isSignificantlyAboveTerrain() const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?convertBonePosToWorldPos@Thing@@ present-unmatched
 void Thing::convertBonePosToWorldPos(const Coord3D* bonePos, const Matrix3D* boneTransform, Coord3D* worldPos, Matrix3D* worldTransform) const
 {
 	if (worldTransform)
@@ -443,6 +454,7 @@ void Thing::convertBonePosToWorldPos(const Coord3D* bonePos, const Matrix3D* bon
 // ------------------------------------------------------------------------------------------------
 /** Push the 'in' parameter through our transformation matrix and store in 'out' */
 // ------------------------------------------------------------------------------------------------
+// ?transformPoint@Thing@@ present-unmatched
 void Thing::transformPoint( const Coord3D *in, Coord3D *out )
 {
 
