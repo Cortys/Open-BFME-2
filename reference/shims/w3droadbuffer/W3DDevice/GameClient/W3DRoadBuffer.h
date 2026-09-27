@@ -220,18 +220,17 @@ protected:
 	Bool		m_initialized;		///< True if the subsystem initialized.
 	WorldHeightMap *m_map;		///< Pointer to the height map data.
 	RefRenderObjListIterator *m_lightsIterator;	///< Lighting iterator.
-	// BFME-only fields inserted here vs ZH (TU-scoped shim). insertTee and
-	// insert4Way's CHECK_SEGMENTS macro reads m_maxRoadSegments at target
-	// this+0x38 against ZH's this+0x28, which fixes the size of the gap at
-	// 0x10 (four dwords) but not where it sits: anywhere between
-	// m_lightsIterator and m_maxRoadSegments produces the same 0x38.
+	// BFME-only fields inserted here vs ZH (TU-scoped shim). Matched
+	// loadRoadSegment places m_curUniqueID at target this+0x28, while
+	// addMapObject, insertCrossTypeJoins, insertTee and insert4Way compare
+	// m_numRoads with m_maxRoadSegments at target this+0x34. The target
+	// adjustStacking body reads m_maxRoadTypes at this+0x40, so the test-only
+	// m_curOpenRoad slot follows the capacity fields, unlike the donor header.
 	//
-	// loadRoadSegment (0x00704610) settles it. That function compares
-	// pRoad->m_uniqueID against m_curUniqueID at target this+0x28, where the
-	// gap-after-m_curRoadType placement leaves it at this+0x18; putting the
-	// four dwords ahead of m_curUniqueID lands it on 0x28 and still leaves
-	// m_maxRoadVertex on 0x3c, which the same function already agreed on.
-	// True field identities remain unknown -- no landed function reads them.
+	// The 0x704610 loadRoadSegment body compares pRoad->m_uniqueID against
+	// m_curUniqueID at target this+0x28. The four dwords before that field
+	// remain opaque; their identities and the intervening capacity layout
+	// are inferred only where the target reads them above.
 	Int m__bfmeUnk0;
 	Int m__bfmeUnk1;
 	Int m__bfmeUnk2;
@@ -241,7 +240,6 @@ protected:
 	Int m_curRoadType;
 #ifdef LOAD_TEST_ASSETS
 	Int m_maxUID;				///< Maximum UID.
-	Int m_curOpenRoad;  ///< First road type not used.
 #endif
 
 	Int m_maxRoadSegments;  ///< Size of m_roads.
@@ -250,6 +248,9 @@ protected:
 	Int m_maxRoadTypes;			///< Size of m_roadTypes.
 	Int			m_curNumRoadVertices; ///<Number of vertices used in current road type.
 	Int			m_curNumRoadIndices;	///<Number of indices used in current road type;
+#ifdef LOAD_TEST_ASSETS
+	Int m_curOpenRoad;  ///< First road type not used.
+#endif
 
 	Bool m_updateBuffers; ///< If true, update the vertex buffers.
 

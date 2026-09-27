@@ -1548,7 +1548,6 @@ static Bool warnSegments = true;
 //=============================================================================
 /** Loads the roads from the map objects. */
 //=============================================================================
-// ?addMapObject@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::addMapObject(RoadSegment *pRoad, Bool updateTheCounts)
 {
 	// BFME added a guard vs ZH: refuses to add before init (proven by target
@@ -2810,7 +2809,6 @@ void W3DRoadBuffer::adjustStacking(Int topUniqueID, Int bottomUniqueID)
 //=============================================================================
 /** Inserts alpha blend type joins at open ends. */
 //=============================================================================
-// ?insertCrossTypeJoins@W3DRoadBuffer@@ present-unmatched
 void W3DRoadBuffer::insertCrossTypeJoins(void)
 {
 	if (!m_initialized) {
