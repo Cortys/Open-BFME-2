@@ -37222,3 +37222,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?call@Rva001F42BA@@QAEXH@Z,,0x001F42BA,32,Code/GameEngine/Source/GameClient/FXParticleSystem.cpp,matched,sibling begin-end loop slotC one arg via O1 flags
 ?rva0028D481@Object@@QBEHXZ,,0x0028D481,16,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,Object template plus108 bit7 reader callers 0x261250 0x2612D5 0x5399F1
 ?rva0028D282@Object@@QAEXPAX@Z,,0x0028D282,32,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,Object guarded forward to plus4C4 helper template 0x10E flag 0x20 caller 0x3958D5
+?xferRandomVariable@@YAAAVXfer@@AAV1@AAVGameClientRandomVariable@@@Z,,0x00306183,149,Code/GameEngine/Source/GameClient/System/FXParticleSystem/xferRandomVariable.cpp,matched,BFME1 donor xferRandomVariable via Version1 and XferDistributionType helpers
