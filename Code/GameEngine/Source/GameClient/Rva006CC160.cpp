@@ -1,5 +1,4 @@
 // ??HRva006CC160@@QAE?AU0@ABU0@@Z
-// partial score=1.0 date=2026-09-27
 // cl: /O2 /MD
 // Address-derived target identity: direct callers have not been located. The retail body performs eight 32-bit field-wise additions and returns a 32-byte value. The relationship to AptMemoryAllocationsT and the field meanings remain donor-based inferences.
 // Whole body122 bytes and eight32-bit arithmetic fields match the donor.
