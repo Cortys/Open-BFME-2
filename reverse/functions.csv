@@ -37044,3 +37044,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?rva006D2F40@EAStringC@@QBEGXZ,,0x006D2F40,62,Code/Libraries/Source/EA/Apt/AptString/EAStringCRefCount.cpp,matched,EA hash accessor via EAString.inl 0x184 plus m_uHash plus 8 callers plus IsEmpty-clear neighbours
 ??1DefectorSpecialPowerModuleData@@UAE@XZ,,0x004C8AB0,5,Code/GameEngine/Source/GameLogic/Object/SpecialPower/DefectorSpecialPowerModuleDataDtor.cpp,matched,vtable 0x0085E7A8 slot0 Defector novtable tail-jmp base
 ??_GDefectorSpecialPowerModuleData@@UAEPAXI@Z,,0x004C2A84,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-fd8f.cpp,matched,vtable 0x0085E7A8 slot0 Defector calls rowed dtor
+??0Rva0035F4A6@@QAE@XZ,,0x0035F4A6,37,Code/GameEngine/Source/Common/Rva0035F4A6Ctor.cpp,matched,derived ctor base 0x001DBAA4 vtable 0x0081665C factory 0x0035F4E7 news 0x24
