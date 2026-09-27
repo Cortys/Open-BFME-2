@@ -36887,3 +36887,4 @@ _setlinehook,,0x00748350,37,Code/Libraries/Source/Lua/ldblib.c,matched,BFME1 ldb
 ?clone@Rva003AE017@@QBEPAV1@XZ,,0x003ADFFA,29,Code/GameEngine/Source/Common/Rva003ADFFAClone.cpp,matched,vslot 2 of vtable 0x81CED8 via new 0x14 plus rowed copy 0x3AE017 plus throw to drop EH
 ?xfer@AutoHealBehavior@@MAEXPAVXfer@@@Z,,0x00452401,95,Code/GameEngine/Source/GameLogic/Object/Update/AutoHealBehaviorXfer.cpp,matched,AutoHealBehavior slot 3 plus mux member plus version gate plus ZH donor
 ??1RebuildHoleBehaviorModuleData@@UAE@XZ,,0x0048334A,48,Code/GameEngine/Source/GameLogic/Object/Behavior/RebuildHoleBehaviorModuleDataDtor.cpp,matched,audited wrapper 0x0048332E plus ctor 0x0048323E plus table 0x00C49A10 plus AIUpdate shape
+?xfer@GeometryUpgrade@@MAEXPAVXfer@@@Z,,0x004B6C02,55,Code/GameEngine/Source/GameLogic/Object/Upgrade/GeometryUpgradeXfer.cpp,matched,slot 3 of vtable 0x008589C0 via rowed ctor plus Version11 plus string plus base 0x004CE3F9
