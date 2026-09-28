@@ -18,6 +18,7 @@ class Rva003B8BAA
 	Rva003B8BAAElem **m_array14;
 public:
 	void *rva003B8BAA();
+	void *rva003B8BF9(int index);
 };
 
 struct Rva00DFEF10Global
@@ -33,4 +34,12 @@ void *Rva003B8BAA::rva003B8BAA()
 		return 0;
 	Rva003B8BAAElem *elem = m_array14[m_index10];
 	return elem->m_ptr20;
+}
+
+// ?rva003B8BF9@Rva003B8BAA@@QAEPAXH@Z @0x003B8BF9 13B.
+// Index-arg array fetch from the same +0x14 array: mov eax,[ecx+0x14]; mov ecx,[esp+4];
+// mov eax,[eax+ecx*4]; ret 4. Callers at 0x00522434 0x0056DB3B 0x0057D286.
+void *Rva003B8BAA::rva003B8BF9(int index)
+{
+	return m_array14[index];
 }
