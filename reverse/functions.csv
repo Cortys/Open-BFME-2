@@ -40960,3 +40960,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00382BA1Alloc@@YGPAXPAX@Z,,0x00382BA1,34,Code/Libraries/Source/WWVegas/WWLib/Rva00382BA1Alloc.cpp,matched,calls 0x307F0 and 0x3821A0 caller 0x3834AF
 ?erase@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEIABVAsciiString@@@Z,,0x005CA950,73,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_set_base.cpp,matched,set tree erase key via equal_range 0x5C9F41 distance 0xD20DB range-erase 0x5CA7A9; callers 0x5CABF9 0x5CAB59
 ??1Made002CCC90@@UAE@XZ,,0x0050BD9D,56,Code/GameEngine/Source/GameLogic/Object/Made002CCC90Dtor.cpp,matched,novtable string plus base same as Rva00508CF7
+??_GMade002CCC90@@UAEPAXI@Z,,0x0050BD81,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain deleting dtor calls rowed 0x0050BD9D
