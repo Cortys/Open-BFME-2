@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?parseCommonStuff@@YAXPAVINI@@PBQBDAAH222@Z, retail 0x00360613, 118 bytes.
 // DamageFX parseCommonStuff: BFME1 Code/GameEngine/Source/Common/DamageFX.cpp
 // parseCommonStuff shape verbatim (vet pair via scanIndexList or 0/3, damage via
@@ -96,14 +96,13 @@ void DamageFX::parseAmount(INI *ini, void *instance, void *store, const void *us
 	}
 }
 
-// ?parseMajorFXList@DamageFX@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void DamageFX::parseMajorFXList(INI *ini, void *instance, void *store, const void *userData)
 {
 	DamageFX *self = (DamageFX *)instance;
 	ConstCharPtrArray names = (ConstCharPtrArray)userData;
 	int vetFirst, vetLast, damageFirst, damageLast;
 	parseCommonStuff(ini, names, vetFirst, vetLast, damageFirst, damageLast);
-	void *fx = 0;
+	void *fx;
 	INI::parseFXList(ini, 0, &fx, 0);
 	for (Int dt = damageFirst; dt <= damageLast; ++dt)
 	{
@@ -121,7 +120,7 @@ void DamageFX::parseMinorFXList(INI *ini, void *instance, void *store, const voi
 	ConstCharPtrArray names = (ConstCharPtrArray)userData;
 	int vetFirst, vetLast, damageFirst, damageLast;
 	parseCommonStuff(ini, names, vetFirst, vetLast, damageFirst, damageLast);
-	void *fx = 0;
+	void *fx;
 	INI::parseFXList(ini, 0, &fx, 0);
 	for (Int dt = damageFirst; dt <= damageLast; ++dt)
 	{
@@ -139,7 +138,7 @@ void DamageFX::parseTime(INI *ini, void *instance, void *store, const void *user
 	ConstCharPtrArray names = (ConstCharPtrArray)userData;
 	int vetFirst, vetLast, damageFirst, damageLast;
 	parseCommonStuff(ini, names, vetFirst, vetLast, damageFirst, damageLast);
-	UnsignedInt t = 0;
+	UnsignedInt t;
 	INI::parseDurationUnsignedInt(ini, 0, &t, 0);
 	for (Int dt = damageFirst; dt <= damageLast; ++dt)
 	{
