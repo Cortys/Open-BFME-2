@@ -71,6 +71,7 @@ class Player
 public:
 	void rva002AE252();
 	void rva002AC673();
+	void rva002AE2ED(Player *other);
 private:
 	bool addScience(ScienceType science);
 	char m_pad00[0x1C];
@@ -102,4 +103,13 @@ void Player::rva002AE252()
 	}
 	for (int *it = m_sciences.m_start; it != m_sciences.m_finish; ++it)
 		TheScriptEngine->notifyOfAcquiredScience(m_playerIndex, (ScienceType)*it);
+}
+
+void Player::rva002AE2ED(Player *other)
+{
+	IntVec *vec = &other->m_sciences;
+	int *start = vec->m_start;
+	int *finish = vec->m_finish;
+	for (int *it = start; it != finish; ++it)
+		addScience((ScienceType)*it);
 }
