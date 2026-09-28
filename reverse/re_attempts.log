@@ -2517,3 +2517,5 @@ FUN_008b9c4d	0x004B9C4D	313	blocked	static getLocalEffectPos needs same-TU onBod
 FUN_00949d9e	0x00549D9E	45	blocked	swap 8B int-float needs Oy- for frame but still 8B short no stack spill t=20 model=muse-x8q-0d17
 ?rva001DE9C4@Eva@@QAEHPBD@Z	0x001DE9C4	161	partial	register wall key in edi not ebx plus lea vs add for table48 t=25 model=muse-0f2 score=0.93 stash=reverse/attempts/0x001de9c4.cpp
 ?rva00265143@AIUpdateInterface@@QAEHXZ	0x00265143	48	partial	add-vs-disp for begin load ours 46B vs 48B t=20 model=muse-457d score=0.95 stash=reverse/attempts/0x00265143.cpp
+?rva003F44A9@Rva003F44A9@@QAEPAXXZ	0x003F44A9	68	partial	first size calc uses cached base sub eax edi plus early push edi vs retail reload sub eax esi+4 plus late push edi 67B vs 68B loop plus return match t=20 model=muse-88cb score=0.97 stash=reverse/attempts/0x003f44a9.cpp
+?rva002B2E31@GameMessage@@QAE_NPAHHPAVRva003F4DCA@@HH@Z	0x002B2E31	70	partial	same size 70B with correct offsets but thiscall ret 14 vs retail plain ret plus caller add esp plus setl vs xor-inc branches t=25 model=muse-88cb score=0.9 stash=reverse/attempts/0x002b2e31.cpp

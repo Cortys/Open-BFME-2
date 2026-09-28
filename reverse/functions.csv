@@ -40220,3 +40220,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002655E3@Path@@QAEXPBUCoord3D@@W4PathfindLayerEnum@@H@Z,,0x002655E3,132,Code/GameEngine/Source/GameLogic/AI/PathAppendNode.cpp,matched,Path tail append via pool E01E94 and PathNode ctor 26212A callers 26569F 2657CE
 ?rva00265596@Path@@QAEXPBUCoord3D@@W4PathfindLayerEnum@@H@Z,,0x00265596,77,Code/GameEngine/Source/GameLogic/AI/PathPrependNode.cpp,matched,Path head prepend via pool E01E94 and PathNode ctor 26212A and set 262161
 ?rva003F4DCA@Rva003F4DCA@@QAEHHH@Z,,0x003F4DCA,36,Code/Libraries/Source/WWVegas/WWLib/Rva003F4DCAInnerSize.cpp,matched,triple nested vector inner size via STL plus G7 imul
+?rva0037E270@Rva0037E270@@QAEPAXXZ,,0x0037E270,25,Code/GameEngine/Source/Common/Rva0037E270Lookup.cpp,matched,global 0x00DFF000 plus AsciiString at 0xd4 plus rowed 0x002D06CA plus 7 callers
