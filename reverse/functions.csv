@@ -39767,3 +39767,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva0041A3C4@Rva0041A3C4@@QAEXXZ,,0x0041A3C4,51,Code/GameEngine/Source/Common/NarrowStringRecordDequePop.cpp,matched,deque node advance via rowed dtor and Cpp free unblocks 0x41A486
 ?rva0041A486@Rva0041A3C4@@QAEXXZ,,0x0041A486,33,Code/GameEngine/Source/Common/NarrowStringRecordDequePop.cpp,matched,pop front destroy advance or aux tail unblocks 0x41AAA4
 ?length@Rva002226E5TextPlusString@@QBEHXZ,,0x00513B94,23,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,text-plus-string length mirrors string-plus-text at 0x002DBF50
+?length@Rva00513E03@@QBEHXZ,,0x00513E03,34,Code/GameEngine/Source/Common/System/Rva00513E03Length.cpp,matched,four-part length over TextPlusString base at 0x00513B94
