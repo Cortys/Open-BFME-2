@@ -59,6 +59,7 @@ class BuildListInfo : public EmptyBase
 {
 public:
 	BuildListInfo();
+	BuildListInfo *duplicate();
 
 private:
 	void *m_vtable; // +0x00
@@ -119,4 +120,22 @@ BuildListInfo::BuildListInfo() :
 	m_selected = false;
 	for (int i = 0; i < 10; i++)
 		m_resourceGatherers[i] = 0;
+}
+
+BuildListInfo *BuildListInfo::duplicate()
+{
+	BuildListInfo *first = new BuildListInfo;
+	*first = *this;
+	first->m_nextBuildList = 0;
+	BuildListInfo *next = m_nextBuildList;
+	BuildListInfo *cur = first;
+	while (next) {
+		BuildListInfo *link = new BuildListInfo;
+		*link = *next;
+		link->m_nextBuildList = 0;
+		cur->m_nextBuildList = link;
+		cur = link;
+		next = next->m_nextBuildList;
+	}
+	return first;
 }
