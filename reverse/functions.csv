@@ -40920,3 +40920,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0029E2A9@@QAE@XZ,,0x0029E2A9,53,Code/GameEngine/Source/Common/Rva0029E2A9Dtor.cpp,matched,record dtor with two AsciiStrings
 ?rva005E306D@Rva005E2D74@@QAE?AVAsciiString@@XZ,,0x005E306D,97,Code/GameEngine/Source/Common/Rva005E2D74.cpp,matched,chain same class AsciiString via buffer
 ?rva005E70DF@Rva005E70DF@@QAEXH@Z,,0x005E70DF,25,Code/GameEngine/Source/Common/Bfme/Rva005E70DF.cpp,matched,setter via vcall slot7 plus store via caller 0x005E7A27
+?Rva00151ECDLen@@YAHPBD@Z,,0x00151ECD,21,Code/GameEngine/Source/Main/Rva00151ECDLen.cpp,matched,pair init length helper
