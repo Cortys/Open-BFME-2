@@ -40607,3 +40607,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?write@RAMFile@@UAEHPBXH@Z,,0x00574473,6,Code/GameEngine/Source/Common/System/RAMFileWrite.cpp,matched,slot4 write in 0x87AA00 0x87AA50 ZH RAMFile write return minus1
 ?rva005748F2@Rva005748F2@@QAEXXZ,,0x005748F2,30,Code/GameEngine/Source/Common/System/Rva005748F2Method.cpp,matched,holder at 0x54 flag at 0x58 null ret slot1 or pinned clear 0xAD6F4
 ?EraseRange@Rva0015229CVector@@QAEPAURva0007BB16Record@@PAU2@0@Z,,0x0015229C,51,Code/Libraries/Source/WWVegas/WWLib/Rva0015229CEraseRange.cpp,matched,range erase via rowed copy 0x151FCA and Destroy 0x7C2D7
+?Rva002BF198Cast@@YG_NPAVRenderObjClass@@ABVVector3@@1PAV2@H_N@Z,,0x002BF198,287,Code/Libraries/Source/WWVegas/WW3D2/Rva002BF198Cast.cpp,matched,rowed LineSeg 0x000927F9 and RayCollision 0x0006F1A6 with Cast_Ray slot 0xF0 and callers 0x0020E354
