@@ -15,3 +15,23 @@ struct Rva00395D77
 };
 
 template void _STL::_Destroy<Rva00395D77 *>(Rva00395D77 *, Rva00395D77 *);
+
+extern "C" void free(void *ptr);
+
+// ??1Rva00399800@@QAE@XZ @0x00399800 30B
+// Owning two-pointer range over Rva00395D77: destroy via rowed _Destroy 0x00399336 then free via 0x00030830.
+// Same frameless shape as BfmeRecordRange004B205 at 0x004B205. Caller at 0x0039A009.
+struct Rva00399800
+{
+	Rva00395D77 *m_begin;
+	Rva00395D77 *m_end;
+	~Rva00399800();
+};
+
+Rva00399800::~Rva00399800()
+{
+	_STL::_Destroy(m_begin, m_end);
+	if (m_begin != 0) {
+		free(m_begin);
+	}
+}
