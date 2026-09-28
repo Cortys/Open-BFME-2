@@ -39672,3 +39672,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??0Rva00204B12@@QAE@ABU0@@Z,,0x00204B12,33,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204B12Ctor.cpp,matched,pair plus two-int copy via rowed pair plus callers
 ?fadeIn@Drawable@@QAEXI@Z,,0x002707A8,82,Code/GameEngine/Source/GameClient/DrawableFade.cpp,matched,BFME1 Drawable fadeIn donor plus frame holder 0xDFE77C plus caller 0x265173
 ?fadeOut@Drawable@@QAEXI@Z,,0x00270756,82,Code/GameEngine/Source/GameClient/DrawableFade.cpp,matched,BFME1 Drawable fadeOut donor plus frame holder 0xDFE77C plus caller 0x265173
+?Rva0039BEC3Count@@YGHABV?$BitFlags@$0HE@@@0PBUObjectCountMap@@@Z,,0x0039BEC3,72,Code/GameEngine/Source/Common/ScoreKeeperMapCount.cpp,matched,ZH getTotalUnitsBuilt donor null-check plus KindOf sum 4 callers 0x39BF0B-50
