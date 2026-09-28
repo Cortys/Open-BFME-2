@@ -40158,3 +40158,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?reset@NetPacket@@QAEXXZ,,0x0058D160,44,Code/GameEngine/Source/GameNetwork/NetPacket_init.cpp,matched,BFME1 reset donor tail-jmp to init with detach delete
 ??1NetPacket@@UAE@XZ,,0x0058D0E2,40,Code/GameEngine/Source/GameNetwork/NetPacket_init.cpp,matched,NetPacket dtor vtable 870A28 with detach delete
 ??0NetPacket@@QAE@XZ,,0x0058E5B4,28,Code/GameEngine/Source/GameNetwork/NetPacket_init.cpp,matched,NetPacket default ctor vtable init donor
+??0NetPacket@@QAE@PAUTransportMessage@@@Z,,0x0058E5EC,102,Code/GameEngine/Source/GameNetwork/NetPacket_init.cpp,matched,NetPacket TransportMessage ctor memcpy donor

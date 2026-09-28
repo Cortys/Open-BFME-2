@@ -102,7 +102,6 @@ NetPacket::NetPacket()
 	init();
 }
 
-// ??0NetPacket@@QAE@PAUTransportMessage@@@Z present-unmatched
 NetPacket::NetPacket(TransportMessage *msg)
 {
 	init();
