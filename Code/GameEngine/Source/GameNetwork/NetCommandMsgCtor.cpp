@@ -76,3 +76,19 @@ NetDisconnectKeepAliveCommandMsg::NetDisconnectKeepAliveCommandMsg() : NetComman
 {
 	m_commandType = NETCOMMANDTYPE_DISCONNECTKEEPALIVE;
 }
+
+// ??0Rva004D5795@@QAE@XZ @0x004D5795 25B: calls base plus vtable 0x860224 plus byte 0 at +0x1c plus type 10 at +0x14.
+// Vtable 0x860224 names unknown owner; honest-address ctor with 1-byte derived member.
+class Rva004D5795 : public NetCommandMsg
+{
+public:
+	Rva004D5795();
+private:
+	bool m_1c;
+};
+
+Rva004D5795::Rva004D5795() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_commandType = (NetCommandType)10;
+}
