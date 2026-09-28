@@ -36,11 +36,7 @@ class ProxyClass
 public:
 	__forceinline ProxyClass();
 	__forceinline void Initialize();
-	__forceinline ~ProxyClass()
-	{
-		if (Texture)
-			Texture->Release_Ref();
-	}
+	~ProxyClass();
 	ProxyClass &operator=(ProxyClass const &other);
 
 	TextureBaseClass *Texture;
