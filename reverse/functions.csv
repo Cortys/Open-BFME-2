@@ -40214,3 +40214,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0039BA68Fill@@YAXPAVRva0039B893@@0ABV1@@Z,,0x0039BA68,29,Code/GameEngine/Source/Common/Rva0039BA68Fill.cpp,matched,chain fill via rowed assign stride 0x14 two callers clean caller
 ?Rva0039B92DCopyBackward@@YAPAVRva0039B893@@PAV1@00ABURandomAccessTag@@PAH@Z,,0x0039B92D,50,Code/GameEngine/Source/Common/Rva0039B92DCopyBackward.cpp,matched,chain copy-backward via rowed assign 5-arg dispatch tag plus null
 ?Rva0039BA4BCopyBackward@@YAXPAVRva0039B893@@00@Z,,0x0039BA4B,29,Code/GameEngine/Source/Common/Rva0039BA4BCopyBackward.cpp,matched,chain wrapper to rowed copy-backward tag plus null sole caller
+?Rva0039BAA0Copy@@YAPAVRva0039B893@@PAV1@00ABURandomAccessTag@@PAH@Z,,0x0039BAA0,50,Code/GameEngine/Source/Common/Rva0039BAA0Copy.cpp,matched,chain forward copy via rowed assign 5-arg dispatch
