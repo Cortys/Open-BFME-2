@@ -25,6 +25,10 @@
 // one forwarded int arg on every member.
 // Evidence: same begin/end loop as rva0036DDCD in AIGroupAttackTeam TU,
 // +0x250 provider offset per ObjectRva0028C197 TU, caller 0x00379AF7.
+//
+// ?rva0036D837@AIGroup@@QAEXH@Z @ 0x0036D837 50B
+// Same broadcast shape calling provider slot35 instead of slot34.
+// Evidence: byte-identical loop to 0x0036D805 above, caller 0x003787FA.
 #include <list>
 #include <algorithm>
 
@@ -71,6 +75,7 @@ public:
 	virtual void s32();
 	virtual void s33();
 	virtual void slot34(int x);
+	virtual void slot35(int x);
 };
 
 class Object
@@ -161,6 +166,7 @@ public:
 	bool rva0036D7A6(Rva0036D7A6Outer *o);
 	void rva0036DC6F(int a, int b);
 	void rva0036D805(int x);
+	void rva0036D837(int x);
 
 private:
 	virtual void *deleteInstance(int flags);
@@ -221,5 +227,15 @@ void AIGroup::rva0036D805(int x)
 		Rva0036D805If *p = obj->m_provider250;
 		if (p)
 			p->slot34(x);
+	}
+}
+
+void AIGroup::rva0036D837(int x)
+{
+	for (_STL::list<ObjectID>::iterator it = m_memberList.begin(); it != m_memberList.end(); ++it) {
+		Object *obj = (Object *)(*it);
+		Rva0036D805If *p = obj->m_provider250;
+		if (p)
+			p->slot35(x);
 	}
 }

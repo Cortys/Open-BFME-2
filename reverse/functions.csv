@@ -40716,3 +40716,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00528B06@@QAE@HABVAsciiString@@@Z,,0x00528B06,28,Code/GameEngine/Source/Common/Rva00528B06Ctor.cpp,matched,ctor vtable 0x8681C4 base 0x5C31D5 ret8 unblocks 3 callers
 ?Rva00204E64Find@@YGPAVScriptList@@ABVAsciiString@@@Z,,0x00204E64,87,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204E64Find.cpp,matched,free find via namekey player sides evidence rowed callees
 ??1Rva004104C9@@QAE@XZ,,0x004104C9,53,Code/GameEngine/Source/Common/Rva004104C9Dtor.cpp,matched,unlock pair dtor base string plus Rva0045EF90Object via ctor 0x004106C1 and callers
+?rva0036D837@AIGroup@@QAEXH@Z,,0x0036D837,50,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,twin of 0x0036D805 plus provider slot35 broadcast
