@@ -40175,3 +40175,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D06CA@Rva002D06CA@@QAEPAXPBVAsciiString@@@Z,,0x002D06CA,38,Code/GameEngine/Source/GameClient/Rva002D06CAGet.cpp,matched,sibling Rva0021311F same recipe plus callers 0x001E0243 0x0033947E unlock fanout
 ?setTransformMatrix@Thing@@QAEXPBVMatrix3D@@@Z,,0x0030A2B7,301,Code/GameEngine/Source/Common/Thing/ThingSetTransformMatrix.cpp,matched,ZH donor Thing setTransformMatrix unconditional react slot 0x14
 ?setPosition@Thing@@QAEXPBUCoord3D@@@Z,,0x0030AA80,285,Code/GameEngine/Source/Common/Thing/ThingSetPosition.cpp,matched,ZH donor Thing setPosition KINDOF 0x108 align slot 0x48
+?rva0073BAA0@Rva0073BAA0@@QAEDHHH@Z,,0x0073BAA0,159,Code/GameEngine/Source/Common/RTS/Rva0073BAA0.cpp,matched,shroud range updater with predicate via BfmeConv1561 donor and rowed callees
