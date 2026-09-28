@@ -13,8 +13,11 @@
 
 class MixFileInfoBuffer
 {
+private:
+	void bfmeLinkInto(MixFileInfoBuffer **head);
 public:
 	void releaseInto(void *pool);
+	friend class Rva0052DE5B;
 };
 
 extern int TheMixFileInfoPool;
@@ -43,6 +46,7 @@ public:
 	Rva0052DE5B *rva0052DFF2();
 	bool rva0052DFB1(const Rva0052DFB1Arg *arg);
 	void rva0052DAE9(bool flag);
+	void rva0052DC29(MixFileInfoBuffer **head);
 
 private:
 	Rva0052DE5BNode *m_node;
@@ -113,4 +117,12 @@ void Rva0052DE5B::rva0052DAE9(bool flag)
 		m_node->m_nodeFlags |= 8u;
 	else
 		m_node->m_nodeFlags &= ~8u;
+}
+
+void Rva0052DE5B::rva0052DC29(MixFileInfoBuffer **head)
+{
+	if ((m_node->m_nodeFlags & 0x10) != 0)
+		return;
+	m_node->m_nodeFlags |= 0x10u;
+	((MixFileInfoBuffer *)m_node)->bfmeLinkInto(head);
 }
