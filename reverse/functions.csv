@@ -40694,3 +40694,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva001E3E43@@UAEPAXI@Z,,0x001E4625,28,Code/GameEngine/Source/Common/Rva001E3E43Dtor.cpp,matched,deleting dtor calls 0x001E3E43
 ?rva001E34FA@Rva001E34FA@@QAEHXZ,,0x001E34FA,23,Code/GameEngine/Source/Common/Rva001E34FA.cpp,matched,guarded two-level 0x18 reader
 ?Rva00418BB7Less@@YG_NPBX0@Z,,0x00418BB7,44,Code/GameEngine/Source/Common/Rva00418BB7Compare.cpp,matched,signed dword pair less via callers 0x18C14 0x18C58 0x18D63
+?rva0032A46C@Rva0032A46C@@QAEXVAsciiString@@@Z,,0x0032A46C,52,Code/Libraries/Source/WWVegas/WWLib/Rva0032A46CSet.cpp,matched,twin Rva0032A438Set slot at +0x30 callers 0x32CFAA 0x32F2B9
