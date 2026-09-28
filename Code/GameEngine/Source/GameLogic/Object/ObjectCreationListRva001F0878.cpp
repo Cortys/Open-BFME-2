@@ -109,3 +109,32 @@ void ObjectCreationList::rva001F0468(Rva001F0468Node *head)
 		cur = next;
 	}
 }
+
+struct Rva001F050BMid
+{
+	char m_pad00[4];
+	Rva001F0468Node *m_head04;
+	Rva001F050BMid *m_next08;
+	Rva001F050BMid *m_prev0c;
+};
+
+class Rva001F050B
+{
+public:
+	void rva001F050B();
+
+private:
+	Rva001F050BMid *m_ptr00;
+	int m_count04;
+};
+
+void Rva001F050B::rva001F050B()
+{
+	if (m_count04 == 0)
+		return;
+	((ObjectCreationList *)this)->rva001F0468(m_ptr00->m_head04);
+	m_ptr00->m_next08 = m_ptr00;
+	m_ptr00->m_head04 = 0;
+	m_ptr00->m_prev0c = m_ptr00;
+	m_count04 = 0;
+}

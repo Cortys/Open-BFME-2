@@ -39648,3 +39648,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva001F0878@ObjectCreationList@@QAEXPAX00H@Z,,0x001F0878,91,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 through store find at 0x1F07B8
 ?rva001F0410@ObjectCreationList@@QAEXPAX0@Z,,0x001F0410,36,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL nugget loop via vslot 0x10 with 2 args sibling of 0x1F0878
 ?rva001F0468@ObjectCreationList@@QAEXPAURva001F0468Node@@@Z,,0x001F0468,45,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL tree free via child0C next08 with free row 0x30830
+?rva001F050B@Rva001F050B@@QAEXXZ,,0x001F050B,41,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,Rva list clear via OCL free 0x1F0468 and sentinel reset
