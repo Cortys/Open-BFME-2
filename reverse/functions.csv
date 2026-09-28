@@ -39798,3 +39798,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva000A78A3Less@@YG_NABUTreeKey00242F5E@@0@Z,,0x000A78A3,46,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5ELess.cpp,matched,TreeKey set comparator unsigned id then AsciiString via rowed 0x5598C
 ?GadgetComboBoxGetText@@YA?AVUnicodeString@@PAVGameWindow@@@Z,,0x00322D21,66,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxGetText.cpp,matched,ZH donor GadgetComboBoxGetText style 0x8000 11 callers empty A0C898
 ??1Rva0033F33D@@UAE@XZ,,0x003401E4,75,Code/GameEngine/Source/Common/Rva0033F33DDtor.cpp,matched,dtor vtable 0x00810EE0 member slot0 plus delete plus base WindModuleInfo
+??_GRva0033F33D@@UAEPAXI@Z,,0x003428F1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-a530.cpp,matched,deleting dtor slot0 calls rowed dtor plus delete
