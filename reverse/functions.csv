@@ -39758,3 +39758,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva005D5C61Median@@YAPAVRva005D5A7E@@PAV1@00H@Z,,0x005D5C61,94,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,median of 3 via rva ordering 5 calls
 ?Rva005D5E8AAdjustHeap@@YAXPAVRva005D5A7E@@HHV1@H@Z,,0x005D5E8A,140,Code/GameEngine/Source/Common/Rva005D5BA3PushHeap.cpp,matched,adjust heap sift-down 12B calls push heap
 ?Rva00222547Get@@YAPAVGameWindow@@PAV1@@Z,,0x00222547,80,Code/GameEngine/Source/Common/System/Rva00222547Get.cpp,matched,WindowManager 0xDFEF1C slot 0xE8 msg29 data2000 walking winGetParent ICF twin 0x3140A4 callers 0x43C8E4 0x43C7FB
+?rva0023E928@Rva0023E928@@QBE?AVUnicodeString@@XZ,,0x0023E928,27,Code/GameEngine/Source/GameNetwork/Rva0023E928Getter.cpp,matched,RVO UnicodeString getter member +0x24 via rowed 0x37050 same shape as getMap 0x23E943 unlocks 5 callers
