@@ -40062,3 +40062,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00031BB0@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z,,0x00031BB0,51,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,GeneralAllocator this passthrough caller 0x3324E calls 0x31680
 ?Rva00031660Unlink@@YGXPAX@Z,,0x00031660,25,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,intrusive unlink next 0x18 prev 0x1C caller 0x33E05
 ?Rva00050E1CEqual@@YG_NPBX0@Z,,0x00050E1C,41,Code/Libraries/Source/WWVegas/WWLib/stlport_equal_00050E1C.cpp,matched,null-safe dword-at-8 equality; callers 0x53FD2 0x54BC3 0x54C93; unblocks 3
+?rva00050DBD@Rva00050DBD@@QAE_NXZ,,0x00050DBD,19,Code/GameEngine/Source/Common/Rva00050DBDChecks.cpp,matched,virtual-forward via +0x44; callers 0x53633 0x5ED07; unblocks 2
+?rva00050DD0@Rva00050DD0@@QAE_NXZ,,0x00050DD0,19,Code/GameEngine/Source/Common/Rva00050DBDChecks.cpp,matched,virtual-forward via +0x4C; callers 0x536A0 0x5EDAB; unblocks 2
