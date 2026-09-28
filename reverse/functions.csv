@@ -39029,3 +39029,5 @@ _Rva0084DDD0Sign,,0x00021050,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20S
 ?bfmeUnlink8F7C00@Gen_008F7BE0@@QAEXXZ,,0x0073A1A0,28,Code/GameEngine/Source/Common/Bfme5LinkedNode8F7BE0.cpp,matched,BFME1 byte-identical donor; b1 0x008F7C00
 ?setYear@Rva007FF700Date@@QAEHH@Z,,0x0066B9A0,27,Code/GameEngine/Source/GameNetwork/Y4DirtySockDate.cpp,matched,BFME1 byte-identical donor; b1 0x007FF4D0
 ?setMonth@Rva007FF700Date@@QAEHH@Z,,0x0066B900,26,Code/GameEngine/Source/GameNetwork/Y4DirtySockDate.cpp,matched,BFME1 byte-identical donor; b1 0x007FF430
+?Rva00845640WriteUnsignedDigits@@YAPADPADII@Z,,0x0001A2E0,52,Code/Libraries/Source/WWVegas/WWLib/NumPutUnsignedDigits.cpp,matched,BFME1 byte-identical donor; b1 0x00845640
+?rva00844730DispatchTables@@YAXHHPAVRva00844730TableSink@@@Z,,0x00017C40,51,Code/Libraries/Source/WWVegas/WWLib/Rva00844730DualDigitTables.cpp,matched,BFME1 byte-identical donor; b1 0x00844730; 2 DIR32 string literal(s) agree
