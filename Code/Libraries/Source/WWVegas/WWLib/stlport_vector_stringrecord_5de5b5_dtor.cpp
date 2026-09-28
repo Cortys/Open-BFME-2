@@ -11,7 +11,31 @@
 // TU's (stlport_vector_stringrecord_5ddd40_allocate_copy.cpp) verbatim
 // so the member dtor calls land on the rowed bodies.
 
-class UnicodeString { public: UnicodeString(const UnicodeString &); __forceinline ~UnicodeString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class UnicodeString;
+class Rva005DE5B5;
+
+typedef unsigned short wchar_t;
+
+template <typename T>
+class StringBase
+{
+public:
+	__forceinline ~StringBase() { releaseBuffer(); }
+protected:
+	void releaseBuffer();
+private:
+	StringBase(const StringBase &);
+	friend class Rva005DE5B5;
+	friend class UnicodeString;
+	void *m_data;
+};
+
+class UnicodeString : public StringBase<wchar_t>
+{
+public:
+	UnicodeString(const UnicodeString &);
+	__forceinline ~UnicodeString() { releaseBuffer(); }
+};
 #include <vector>
 struct BfmeStringRecord005DDD40 {
     UnicodeString text;
@@ -28,14 +52,26 @@ class Rva005DE5B5
 {
 public:
 	~Rva005DE5B5();
+	Rva005DE5B5(const Rva005DE5B5 &other);
 	void *rva005DE782(unsigned int flags);
 
 private:
-	UnicodeString m_00;
+	StringBase<wchar_t> m_00;
 	_STL::vector<BfmeStringRecord005DDD40, _STL::allocator<BfmeStringRecord005DDD40> > m_04;
+	unsigned int m_10;
+	unsigned char m_14;
 };
 
 Rva005DE5B5::~Rva005DE5B5()
+{
+}
+
+// Retail 0x005DE56C (73B): Rva005DE5B5 copy ctor. Chain lane: StringBase
+// copy 0x00037050 at +0, vector copy ctor 0x005DE0A3 at +4, dword at
+// +0x10, byte at +0x14. Total size 0x18, matching the Destroy stride.
+// Caller is 0x005DE771 in 0x005DE755.
+Rva005DE5B5::Rva005DE5B5(const Rva005DE5B5 &other)
+	: m_00(other.m_00), m_04(other.m_04), m_10(other.m_10), m_14(other.m_14)
 {
 }
 
