@@ -46,6 +46,7 @@ class Rva0043B1C9Tree
 {
 public:
 	Rva0043B1C9Tree *rva0043B1C9(void const *dummy);
+	Rva0043B1C9Tree *rva0043B214(void const *d1, void const *d2);
 
 private:
 	Rva0043B1C9HeaderHandle m_handle;
@@ -61,5 +62,22 @@ Rva0043B1C9Tree *Rva0043B1C9Tree::rva0043B1C9(void const *dummy)
 	__assume(proxy != 0);
 	new (proxy) _STL::_STLP_alloc_proxy<ProxyUInt *, ProxyUInt, _STL::allocator<ProxyUInt> >(tmp, (ProxyUInt *)0);
 	*(char **)this = _STL::allocator<char>::allocate(0x9c, 0);
+	return this;
+}
+
+// ?rva0043B214@Rva0043B1C9Tree@@QAEPAV1@PBX0@Z @0x0043B214 42B
+// Header init mirroring AnimationSoundTree::rva004CA13D (42B): runs rowed
+// rva0043B1C9 alloc with second dummy, zeroes count at +4 and repairs 0x9c
+// header sentinel (zero at +0/+4, self at +8/+0xC), returning this. Called
+// from 0x0043B69C which becomes ready. Same class/flags as sibling.
+Rva0043B1C9Tree *Rva0043B1C9Tree::rva0043B214(void const *d1, void const *d2)
+{
+	(void)d1;
+	rva0043B1C9(d2);
+	m_count = 0;
+	*(char *)m_handle.m_header = 0;
+	*(unsigned int *)((char *)m_handle.m_header + 4) = 0;
+	*(void **)((char *)m_handle.m_header + 8) = m_handle.m_header;
+	*(void **)((char *)m_handle.m_header + 0x0C) = m_handle.m_header;
 	return this;
 }
