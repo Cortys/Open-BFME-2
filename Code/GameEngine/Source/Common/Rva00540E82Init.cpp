@@ -10,6 +10,8 @@
 // call from inlining so retail keeps lea ecx,[edx+4] call.
 // ??0Rva00540FDB@@QAE@HABURegion3D@@@Z, retail 0x00540FDB 27B: ctor with
 // int at +0 and Region3D at +4 via rowed copy ctor 0x0009AC04.
+// ??0Rva00540E9D@@QAE@ABURva00540E9DSrc@@H@Z, retail 0x00540E9D 32B:
+// ctor with 12B src at +4..+0xC and int at +0.
 
 class Rva00540E82
 {
@@ -52,4 +54,26 @@ public:
 
 Rva00540FDB::Rva00540FDB(int v, const Region3D &r) : m_00(v), m_04(r)
 {
+}
+
+struct Rva00540E9DSrc
+{
+	int a;
+	int b;
+	int c;
+};
+
+class Rva00540E9D
+{
+public:
+	Rva00540E9D(const Rva00540E9DSrc &src, int v);
+	int m_00;
+	Rva00540E9DSrc m_04;
+};
+
+Rva00540E9D::Rva00540E9D(const Rva00540E9DSrc &src, int v) : m_00(v)
+{
+	m_04.a = src.a;
+	m_04.b = src.b;
+	m_04.c = src.c;
 }

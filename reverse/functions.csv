@@ -40202,3 +40202,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00540E82@@QAE@XZ,,0x00540E82,27,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,ctor int 2 plus 3 float zeros via xorps
 ??0Rva00540FF6@@QAE@XZ,,0x00540FF6,16,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,outer ctor zeros 0 plus rowed inner at 4
 ??0Rva00540FDB@@QAE@HABURegion3D@@@Z,,0x00540FDB,27,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,ctor int plus Region3D copy at 4 via rowed 0x9AC04
+??0Rva00540E9D@@QAE@ABURva00540E9DSrc@@H@Z,,0x00540E9D,32,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,ctor int at 0 plus 12B src copy at 4
