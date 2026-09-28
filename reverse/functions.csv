@@ -40089,3 +40089,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4BuildListInfo@@QAEAAV0@ABV0@@Z,,0x003299AD,211,Code/GameEngine/Source/GameLogic/Map/BuildListInfoAssign.cpp,matched,BuildListInfo assign matches pinned copy ctor 0x29DE6 and 0x80 copy loops
 ??$__copy@PAVBuildListInfo@@PAV1@H@_STL@@YAPAVBuildListInfo@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00329D64,52,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_buildlistinfo.cpp,matched,STLport copy for BuildListInfo via rowed assign 0x3299AD
 ??$copy@PAVBuildListInfo@@PAV1@@_STL@@YAPAVBuildListInfo@@PAV1@00@Z,,0x0032A40E,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_buildlistinfo.cpp,matched,STLport copy for BuildListInfo via rowed __copy 0x329D64
+?rva001DFE56@Rva001DFE56@@QBE_NPBX0@Z,,0x001DFE56,66,Code/GameEngine/Source/Common/Rva001DFE56TestMasks.cpp,matched,19-dword dual-mask tester Rva family donor Rva0026157E plus BitFlags116
