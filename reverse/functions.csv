@@ -40792,3 +40792,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0023F88C@Rva0023E7D9@@QAEXH@Z,,0x0023F88C,78,Code/GameEngine/Source/Common/Rva0023E7D9Clear.cpp,matched,same class clear plus flag byte and state dword
 ??1Rva00416088@@QAE@XZ,,0x00416088,54,Code/GameEngine/Source/Common/Rva00416088Dtor.cpp,matched,string record dtor via releaseBuffer 0x36410 same family
 ?Rva005DE952Destroy@@YAXPAVRva005DE5B5@@0@Z,,0x005DE952,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,chain destroy range via dtor
+?rva005DE782@Rva005DE5B5@@QAEPAXI@Z,,0x005DE782,28,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,flag teardown via dtor plus delete

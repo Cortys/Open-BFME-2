@@ -28,6 +28,7 @@ class Rva005DE5B5
 {
 public:
 	~Rva005DE5B5();
+	void *rva005DE782(unsigned int flags);
 
 private:
 	UnicodeString m_00;
@@ -45,4 +46,19 @@ void Rva005DE952Destroy(Rva005DE5B5 *start, Rva005DE5B5 *end)
 {
 	for (; start != end; start = (Rva005DE5B5 *)((char *)start + 0x18))
 		start->~Rva005DE5B5();
+}
+
+void operator delete(void *ptr);
+
+// Retail 0x005DE782 (28B): flag-guarded teardown calling the 0x005DE5B5
+// dtor then operator delete, returning this. Chain lane: callees are
+// the just-landed dtor plus rowed operator delete 0x0002FD60. Owner
+// proven by the dtor call with this; honest address-derived method name
+// (non-virtual class, so not a ??_G).
+void *Rva005DE5B5::rva005DE782(unsigned int flags)
+{
+	this->~Rva005DE5B5();
+	if (flags & 1)
+		::operator delete(this);
+	return this;
 }
