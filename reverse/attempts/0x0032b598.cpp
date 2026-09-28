@@ -1,24 +1,30 @@
-// ?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z
-// partial score=0.93 date=2026-09-28
-// ?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z
-// partial score=0.93 date=2026-09-28
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// ?Rva0032B598Construct@@YAXPAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@ABV12@@Z
+// partial score=0.97 date=2026-09-28
+// ?Rva0032B598Construct@@YAXPAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@ABV12@@Z
+// partial score=0.97 date=2026-09-28
+// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
-// ?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z at 0x0032B598 (45B).
-// Null-guarded placement copy-construct of vector<BfmeE8> via rowed
-// copy-ctor 0x4334D7. Evidence: 4 callers incl 0x32B5FE/0x32B5D3,
-// unblocks 0x32B5EB/0x32B5C5.
-
+//
+// ?Rva0032B598Construct@@YAXPAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@ABV12@@Z @ 0x0032B598 (45B).
+// Guarded placement copy of vector<BfmeE8>: null-checked destination,
+// out-of-line rowed copy ctor 0x004334D7, EH state 0 for the partial vector.
+// Callers walk 0xC-stride vector arrays (0x0032B5C5/0x0032B5EB/0x0032E842/0x0032EA3F).
 #include <vector>
-#include <new.h>
+#include <new>
 
 struct BfmeE8 { int a, b; };
 
-void Rva0032B598Construct(void *dst, const _STL::vector<BfmeE8> &src);
-
-// ?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z present-unmatched
-void Rva0032B598Construct(void *dst, const _STL::vector<BfmeE8> &src)
+namespace _STL
 {
-	if (dst != 0)
+
+template <>
+vector<BfmeE8, allocator<BfmeE8> >::vector(const vector<BfmeE8, allocator<BfmeE8> > &);
+
+}
+
+// ?Rva0032B598Construct@@YAXPAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@ABV12@@Z present-unmatched
+void __cdecl Rva0032B598Construct(_STL::vector<BfmeE8> *dst, const _STL::vector<BfmeE8> &src)
+{
+	if (dst)
 		new (dst) _STL::vector<BfmeE8>(src);
 }

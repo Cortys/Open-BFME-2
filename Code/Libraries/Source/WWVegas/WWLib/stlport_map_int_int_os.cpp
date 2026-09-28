@@ -15,3 +15,31 @@
 #include <map>
 
 template class _STL::map<int, int, _STL::less<int>, _STL::allocator<_STL::pair<const int, int> > >;
+
+typedef _STL::pair<const int, int> IntIntValue;
+typedef _STL::_Rb_tree_node<IntIntValue> IntIntNode;
+
+namespace _STL
+{
+
+template <> class allocator<char>
+{
+public:
+	static char *allocate(unsigned int bytes, const void *hint) throw();
+};
+
+}
+
+void __cdecl dup_00382BC3() throw();
+
+// ?Rva003834CDCreate@@YGPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@_STL@@ABU?$pair@$$CBHH@2@@Z @ 0x003834CD (34B).
+// Map<int,int> node create: 0x18-byte node via the rowed byte allocator
+// 0x000307F0, value copy through the rowed dup fold 0x00382BC3 at +0x10.
+// Callers 0x003834EF (+0x10 color-copy clone) and 0x00383BAC x2.
+IntIntNode * __stdcall Rva003834CDCreate(const IntIntValue &value)
+{
+	IntIntNode *node = (IntIntNode *)_STL::allocator<char>::allocate(sizeof(IntIntNode), 0);
+	IntIntValue *slot = &node->_M_value_field;
+	((void (__cdecl *)(IntIntValue *, const IntIntValue *))&dup_00382BC3)(slot, &value);
+	return node;
+}
