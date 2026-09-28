@@ -39841,3 +39841,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?didUnitExist@ScriptEngine@@QAE_NABVAsciiString@@@Z,,0x0035743F,54,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineDidUnitExist.cpp,matched,BFME1 didUnitExist donor plus ScriptEngine named vector and doCreateObject callers
 ?rva00357A03@ScriptEngine@@QAEXHW4ScienceType@@@Z,,0x00357A03,51,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357A03.cpp,matched,ScriptEngine per-player Science vector removal via Science erase ICF twin
 ?rva00357D52@ScriptEngine@@QAEXABVAsciiString@@@Z,,0x00357D52,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357D52.cpp,matched,ScriptEngine CRC-keyed BfmeStringRecord vector removal
+?Rva00405337Clear@@YAXPAX0@Z,,0x00405337,25,Code/GameEngine/Source/Common/Rva00405337Clear.cpp,matched,range clear 0x18 records via StringBase clear callers 0x40536A 0xC04EE
