@@ -8,6 +8,8 @@
 // ??0Rva00540FF6@@QAE@XZ, retail 0x00540FF6 16B: outer ctor with int at +0
 // = 0 and inner Rva00540E82 at +4 via rowed ctor. /Ob0 keeps the inner
 // call from inlining so retail keeps lea ecx,[edx+4] call.
+// ??0Rva00540FDB@@QAE@HABURegion3D@@@Z, retail 0x00540FDB 27B: ctor with
+// int at +0 and Region3D at +4 via rowed copy ctor 0x0009AC04.
 
 class Rva00540E82
 {
@@ -32,5 +34,22 @@ public:
 };
 
 Rva00540FF6::Rva00540FF6() : m_00(0)
+{
+}
+
+struct Region3D
+{
+	Region3D(const Region3D &that);
+};
+
+class Rva00540FDB
+{
+public:
+	Rva00540FDB(int v, const Region3D &r);
+	int m_00;
+	Region3D m_04;
+};
+
+Rva00540FDB::Rva00540FDB(int v, const Region3D &r) : m_00(v), m_04(r)
 {
 }
