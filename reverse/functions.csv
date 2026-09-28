@@ -39838,3 +39838,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva002714CA@Rva002714CA@@QAEXXZ,,0x002714CA,28,Code/GameEngine/Source/Common/Rva002714CALoop.cpp,matched,TheAudio slot 0x6c remove handle +0x148 then 1 unblocks 3
 ?rva00271496@Rva00271496@@QAEXXZ,,0x00271496,30,Code/GameEngine/Source/Common/Rva00271496Free.cpp,matched,if ptr +0x344 free via manager slot 0x3C then null unblocks 0x00278064
 ?rva002714E6@Rva002714E6@@QAEXPAPAV1@@Z,,0x002714E6,36,Code/GameEngine/Source/Common/Rva002714E6List.cpp,matched,doubly linked push-front next +0x104 prev +0x108 unblocks 0x00238E25
+?didUnitExist@ScriptEngine@@QAE_NABVAsciiString@@@Z,,0x0035743F,54,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineDidUnitExist.cpp,matched,BFME1 didUnitExist donor plus ScriptEngine named vector and doCreateObject callers
