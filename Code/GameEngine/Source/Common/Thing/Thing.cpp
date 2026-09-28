@@ -262,33 +262,8 @@ void Thing::setPosition( const Coord3D *pos )
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngine/Source/Common/Thing/ThingSetOrientation.cpp
 //=============================================================================
-/** Set the world transformation matrix */
+// byte-exact reconstruction: Code/GameEngine/Source/Common/Thing/ThingSetTransformMatrix.cpp
 //=============================================================================
-// ?setTransformMatrix@Thing@@ present-unmatched
-void Thing::setTransformMatrix( const Matrix3D *mx )
-{
-	//USE_PERF_TIMER(ThingMatrixStuff)
-	Real oldAngle = m_cachedAngle;
-	Real oldX = m_cachedPos.x;
-	Real oldY = m_cachedPos.y;
-	Real oldZ = m_cachedPos.z;
-
-	m_transform = *mx;
-	m_cachedPos.x = m_transform.Get_X_Translation();
-	m_cachedPos.y = m_transform.Get_Y_Translation();
-	m_cachedPos.z = m_transform.Get_Z_Translation();
-	m_cachedAngle = m_transform.Get_Z_Rotation();
-	m_cacheFlags = 0;
-
-	if (oldAngle != m_cachedAngle ||
-		oldX != m_cachedPos.x ||
-		oldY != m_cachedPos.y ||
-		oldZ != m_cachedPos.z)
-	{
-		reinterpret_cast<BFMEThingSetTransformVTable *>(this)->reactToTransformChange();
-	}
-	DEBUG_ASSERTCRASH(!(_isnan(getPosition()->x) || _isnan(getPosition()->y) || _isnan(getPosition()->z)), ("Drawable/Object position NAN! '%s'\n", m_template->getName().str() ));
-}
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/Thing/Thing_isKindOf.cpp
