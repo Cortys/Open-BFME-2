@@ -2522,3 +2522,4 @@ FUN_00949d9e	0x00549D9E	45	blocked	swap 8B int-float needs Oy- for frame but sti
 ?rva0040DDD6@Rva0040DDD6@@QAEHXZ	0x0040DDD6	64	partial	lea edi vs mov esi for vec base only scheduling diff t=20 model=muse-p4k-adab score=0.93 stash=reverse/attempts/0x0040ddd6.cpp
 FUN_008f8eaf	0x004F8EAF	178	blocked	mixed CB11Entry copies plus 004F69C3 clear 5-arg assign-like 178B needs custom class t=10 model=muse-p4k-adab
 ??1?$vector@URva004F69C3@@V?$allocator@URva004F69C3@@@_STL@@@_STL@@QAE@XZ	0x0040E0EB	63	blocked	twin of landed 0x4F8832 same 63B Destroy-plus-free different scope table VA duplicate-name policy t=10 model=muse-p4k-adab
+?Rva006D9C70Shift@@YAPAVBfmeAptValue006DCD20@@PAV1@@Z	0x006D9C70	108	blocked	early spill mov edi eax vs late mov edi eax after fallback plus newLen data regs swapped t=25 model=muse-xtf-5a10
