@@ -40545,3 +40545,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Destroy@PAURva00B9AC2@@@_STL@@YAXPAURva00B9AC2@@0@Z,,0x000BD28D,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b9ac2_destroy.cpp,matched,24B range destroy stride 0x18 via QAE twin at B9AC2 same shape as 481595
 ??$_Destroy@PAUBfmeStringRecord005D511F@@@_STL@@YAXPAUBfmeStringRecord005D511F@@0@Z,,0x005D541B,25,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,range destroy via rowed dtor stride 0x14 with two vector-dtor callers
 ??_GBfmeStringRecord005D511F@@QAEPAXI@Z,,0x005D5266,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-3fc4.cpp,matched,deleting dtor via rowed dtor and operator delete same shape as 00204A30 precedent
+??0Rva0039B893@@QAE@XZ,,0x0039B7FB,34,Code/GameEngine/Source/Common/Rva0039B893DefaultCtor.cpp,matched,default ctor zeroing with same vtable and stride as copy ctor
