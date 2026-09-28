@@ -40659,3 +40659,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0032AD58Fill@@YAPAVRva00193660@@PAV1@IABURva00193660Src@@@Z,,0x0032AD58,37,Code/GameEngine/Source/Common/Rva00193660SetGuard.cpp,matched,Rva00193660 fill loop via null-guarded set wrapper stride 0x10
 ?Rva004ED0E9Copy@@YAPAVModelNodeClass@HLodClass@@PBV12@0PAV12@@Z,,0x004ED0E9,38,Code/Libraries/Source/WWVegas/WW3D2/HLodModelNodeCopy.cpp,matched,range ModelNode copy via rowed Assign stride 0x14
 ?_M_clear@?$vector@UBfmeStringRecord00568CE0@@V?$allocator@UBfmeStringRecord00568CE0@@@_STL@@@_STL@@IAEXXZ,,0x00569DE1,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_568ce0_allocate_copy.cpp,matched,Typed 568CE0 vector clear via Destroy 0x569A5B plus free exact 30B
+?rva002041FC@Rva002041E1@@QAEXVAsciiString@@@Z,,0x002041FC,52,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002041E1Getter.cpp,matched,AsciiString setter at +0x44 via operator= pin callers 0x0020649E

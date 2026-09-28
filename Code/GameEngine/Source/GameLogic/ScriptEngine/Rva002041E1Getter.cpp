@@ -38,9 +38,16 @@ struct Rva002041E1
     char pad[0x44];
     AsciiString m_name;
     AsciiString rva002041E1() const;
+    void rva002041FC(AsciiString s);
 };
 
 AsciiString Rva002041E1::rva002041E1() const
 {
     return m_name;
+}
+
+void Rva002041E1::rva002041FC(AsciiString s)
+{
+    AsciiString &slot = m_name;
+    slot = s;
 }
