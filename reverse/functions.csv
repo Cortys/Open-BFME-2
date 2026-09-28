@@ -40800,3 +40800,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00416504@@QAE@PBHABVGen_004E9FD0@@@Z,,0x00416504,29,Code/GameEngine/Source/Common/Rva00416504Ctor.cpp,matched,int Gen copy ctor via rowed Gen copy 0x415FAB
 ?rva00528BC1@Rva00528BC1@@QAEPAV1@PAX@Z,,0x00528BC1,28,Code/GameEngine/Source/Common/Rva00528BDDFirer.cpp,matched,init +0 with ptr zeroes +4-0xC returns this caller 0x0052A01D
 ?rva00528B72@Rva00528B72@@QAEPAV1@PAX@Z,,0x00528B72,38,Code/GameEngine/Source/Common/Rva00528B72Init.cpp,matched,init +0 ptr zeroes +4-0x10 -1.0f +0x14 returns this caller 0x0052A00E
+??0Rva005D2462@@QAE@HABVAsciiString@@HH@Z,,0x005D2462,42,Code/GameEngine/Source/Common/Rva005D2462Ctor.cpp,matched,ctor base 0x00528B06 stores +0x10 +0x14 vtable 0x008757E4 callers 0x0052975A 0x005D2778
