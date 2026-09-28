@@ -39531,3 +39531,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?clear@?$_List_base@URva001EA443@@V?$allocator@URva001EA443@@@_STL@@@_STL@@QAEXXZ,,0x001EA529,49,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva001EA443_clear.cpp,matched,list clear via rowed Rva001EA443 dtor and free
 ??1?$_List_base@URva001EA443@@V?$allocator@URva001EA443@@@_STL@@@_STL@@QAE@XZ,,0x001EA97D,23,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva001EA443_clear.cpp,matched,list base dtor via clear and free
 ??1GlobalLanguage@@UAE@XZ,,0x001EABAB,446,Code/GameEngine/Source/GameClient/GlobalLanguageDtor.cpp,matched,GlobalLanguage dtor via vtable list strings base
+??_GGlobalLanguage@@UAEPAXI@Z,,0x001EADD4,28,Code/GameEngine/Source/GameClient/GlobalLanguageDtor.cpp,matched,GlobalLanguage deleting dtor slot0 vtable

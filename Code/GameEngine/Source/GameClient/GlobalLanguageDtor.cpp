@@ -97,3 +97,4 @@ private:
 };
 
 GlobalLanguage::~GlobalLanguage() {}
+void famgenDeleteGlobalLanguage(GlobalLanguage *p) { delete p; }
