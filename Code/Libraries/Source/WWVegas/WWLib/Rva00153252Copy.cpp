@@ -21,3 +21,8 @@ struct Rva00153252
 };
 #include <vector>
 template Rva00153252 *_STL::__copy<Rva00153252 *, Rva00153252 *, int>(Rva00153252 *, Rva00153252 *, Rva00153252 *, const _STL::random_access_iterator_tag &, int *);
+Rva00153252 *Rva001534B6Copy(Rva00153252 *first, Rva00153252 *last, Rva00153252 *result)
+{
+	const _STL::random_access_iterator_tag tag;
+	return _STL::__copy(first, last, result, tag, (int *)0);
+}
