@@ -15,6 +15,11 @@ struct Rva0028AF76Sub
 {
 	char m_pad[0x44];				// +0x000..+0x044 unknown
 	int m_value;					// +0x044
+	float m_float48;				// +0x048
+	int m_int4C;					// +0x04C
+	int m_int50;					// +0x050
+
+	void rva0028A82A(void *dst) const;
 };
 
 class GameLogic
@@ -113,4 +118,12 @@ bool Object::isOutOfAmmo() const
 {
 	const WeaponSet *ws = (const WeaponSet *)((const char *)this + 0x330);
 	return ws->isOutOfAmmo();
+}
+
+void Rva0028AF76Sub::rva0028A82A(void *dst) const
+{
+	char *d = (char *)dst;
+	*(float *)d = m_float48;
+	*(int *)(d + 4) = m_int4C;
+	*(int *)(d + 8) = m_int50;
 }
