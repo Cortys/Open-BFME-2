@@ -40517,3 +40517,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005B2E09@Rva005B2DDF@@QAEPAXPAURva005B2E09Cell@@@Z,,0x005B2E09,44,Code/Libraries/Source/WWVegas/WWLib/Rva005B2DDFLookup.cpp,matched,chain backward search over grid via rowed lookup
 ?Rva00282FE0CreateNode@@YGPAXPBX@Z,,0x00282FE0,34,Code/Libraries/Source/WWVegas/WWLib/Rva00282FE0CreateNode.cpp,matched,caller 0x00283405 links node plus rowed allocate 0x000307F0 plus rowed Construct 0x00282843
 ?rva0044E6AE@Rva0044E6AE@@QAEXXZ,,0x0044E6AE,10,Code/GameEngine/Source/Common/Rva0044E6AEVirtForward.cpp,matched,unlock virtual forward slot 0x34 with 0 1 via Rva0044E6AE callers at 0x29314E 0x49C96F 0x49C9BD and jmp at 0x49C937
+?setSelectable@Object@@QAEX_N@Z,,0x0028B76D,29,Code/GameEngine/Source/GameLogic/Object/ObjectFindModule.cpp,matched,BFME1 Object donor Drawable 0x00271700 caller plus 0x434 0x84

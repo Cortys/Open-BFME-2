@@ -2583,3 +2583,4 @@ FUN_008c3acc	0x004C3ACC	38	blocked	STL 38B uninit-copy stride8 calling dupe 0x4C
 ?Rva005E71DECopy@@YAPAPAXPAPAX00PAX@Z	0x005E71DE	38	partial	add order swapped retail edi-then-esi ours esi-then-edi t=15 model=muse-v7x-7889 score=0.95 stash=reverse/attempts/0x005e71de.cpp
 ?rva002D96D3@BfmeStringTailRecord144@@QAEXABUOpaqueRefElement4@@@Z	0x002D96D3	259	partial	push edi 1B early before 3C-44 zero floats; all else exact size 259 same 70 insns; float literal addrs are reloc; t=28 model=muse-120c score=0.97 stash=reverse/attempts/0x002d96d3.cpp
 ?rva002197A6@Rva002197A6@@QAEPAVRva002197A6Entry@@H@Z	0x002197A6	116	partial	cmove-vs-branch plus vector regs and xor order t=25 model=muse-b8d2 score=0.95 stash=reverse/attempts/0x002197a6.cpp
+?rva00271008@Rva00270FEE@@QAEMXZ	0x00271008	55	partial	retail keeps this in ECX across rva00270FEE call ours saves esi 59B vs 55B t=18 model=muse-8bd9 score=0.93 stash=reverse/attempts/0x00271008.cpp

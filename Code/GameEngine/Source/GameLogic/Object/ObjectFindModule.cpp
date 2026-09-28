@@ -38,18 +38,29 @@ public:
 	virtual void slot13(int v);
 };
 
+class Drawable
+{
+public:
+	void setSelectable(bool selectable);
+};
+
 class Object
 {
-	char pad[0x244];
+	char pad00[0x84];
+	Drawable *m_drawable; // +0x84
+	char pad88[0x244 - 0x88];
 	Module **m_modules; // +0x244
 	char pad248[0x254 - 0x248];
 	BodyFwd *m_body; // +0x254, proven by Object_attemptHealing precedent
+	char pad258[0x434 - 0x258];
+	bool m_isSelectable; // +0x434
 
 protected:
 	Module *findModule(NameKeyType key) const;
 public:
 	void rva0028B78A(int v);
 	void rva0028B79C(int v);
+	void setSelectable(bool selectable);
 };
 
 Module *Object::findModule(NameKeyType key) const
@@ -64,6 +75,13 @@ Module *Object::findModule(NameKeyType key) const
 		}
 	}
 	return found;
+}
+
+void Object::setSelectable(bool selectable)
+{
+	m_isSelectable = selectable;
+	if (m_drawable != 0)
+		m_drawable->setSelectable(selectable);
 }
 
 // ?rva0028B78A@Object@@QAEXH@Z, retail 0x0028B78A, 18 bytes.
