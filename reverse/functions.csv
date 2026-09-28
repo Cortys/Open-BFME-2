@@ -39918,3 +39918,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??1Rva003563A7@@UAE@XZ,,0x003563A7,80,Code/GameEngine/Source/Common/Rva00355D66Dtor.cpp,matched,vtable 0x00814ED4 plus display slot plus string plus base
 ??_GRva003563A7@@UAEPAXI@Z,,0x00356AFA,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-q8z-19f8.cpp,matched,slot 0 of 0x00814ED4 calls rowed dtor plus delete
 ?setAttitude@AIGroup@@QAEXW4AttitudeType@@@Z,,0x0036DD16,47,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,AIGroup setAttitude via BFME1 donor; Object+0x258 AIUpdate; rowed rva0026DE3B; TEAM_SET_ATTITUDE caller 0x3BEE5E
+?isIdle@AIGroup@@QBE_NXZ,,0x0036DF4D,69,Code/GameEngine/Source/GameLogic/AI/AIGroupIsIdle.cpp,matched,AIGroup isIdle via BFME1 StatePredicates donor; Object+0x258 plus +0x438 dead; AI slot 110; callers 0x20C9E0 0x2624DF 0x372C08
