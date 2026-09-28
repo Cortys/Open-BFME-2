@@ -40251,3 +40251,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?parseFXList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z,,0x00487200,175,Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdateParse.cpp,matched,chain fxlist caller of parseFXLocInfo plus INI helpers
 ?parseObjectCreationList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z,,0x004872AF,175,Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdateParse.cpp,matched,chain ocl caller of parseFXLocInfo plus INI helpers
 ?parseParticleSystem@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z,,0x0048735E,175,Code/GameEngine/Source/GameLogic/Object/Update/BoneFXUpdateParse.cpp,matched,chain psys caller of parseFXLocInfo plus INI helpers
+?rva00318E8C@Rva00318E8C@@QAEXPAURva00318E8COut@@@Z,,0x00318E8C,18,Code/GameEngine/Source/Common/Rva00318E8CGet.cpp,matched,float at +0x20 and dword at +0x24 to 8-byte out; callers FUN_0071A372 at 0x0031A51E and 0x0031A542
