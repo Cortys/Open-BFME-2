@@ -549,6 +549,21 @@ void XferSiegeTypeEnum(Xfer *xfer, int *value)
 	xfer->XferEnum("SiegeTypeEnum", value, 4);
 }
 
+// Retail 0x00318D1E (24B): labelled-enum helper with the "LivingWorldArmyID"
+// label (string at 0x0080C7F0). Callers include xfer bodies at 0x002B8D69
+// 0x002B8DCA passing member pointers through XferEnum slot 37.
+void XferLivingWorldArmyID(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("LivingWorldArmyID", value, 4);
+}
+
+// Retail 0x00318D36 (24B): labelled-enum helper with the "ArmyIconSize"
+// label (string at 0x0080C804). Caller is FUN_0071A6DB at 0x0031A88A.
+void XferArmyIconSize(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("ArmyIconSize", value, 4);
+}
+
 // Two version bytes, stored back to back: the retail Version1 body writes 1 to
 // both of them in a four-byte stack slot before handing their address to the
 // slot-10 transfer operator. Xfer.cpp's model verbatim.
