@@ -17,3 +17,11 @@ char *__cdecl Rva0044780FCopy(char *dst, void *src, unsigned int size, char *lim
 	memcpy(dst, src, size);
 	return dst + size;
 }
+// ?Rva00447891Write1@@YAPADPADD0@Z, retail 0x00447891, 24 bytes.
+// Fixed-size-1 checked write: forwards value byte to Rva0044780FCopy.
+// Evidence: chain lane calls 0x0044780F which this session landed; callers in
+// 0x00447CA9.
+char *__cdecl Rva00447891Write1(char *dst, char value, char *limit)
+{
+	return Rva0044780FCopy(dst, &value, 1, limit);
+}
