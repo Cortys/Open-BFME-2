@@ -40863,3 +40863,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00517397@@UAE@XZ,,0x00517397,52,Code/GameEngine/Source/Common/Rva00517397Dtor.cpp,matched,novtable dtor releasing holder plus base vtable
 ?dup_005de4ba@@YAXXZ,,0x005DE4BA,178,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ddd40_allocate_copy.cpp,matched,gen-alias;object-symbol=?_M_insert_overflow@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@IAEXPAUBfmeStringRecord005DDD40@@ABU3@ABU__false_type@2@I_N@Z;twin of rowed 0x00381B7B insert overflow called by 0x005DE740 in 0x005DE651
 ??_GRva00517397@@UAEPAXI@Z,,0x0051737B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10.cpp,matched,deleting dtor via rowed dtor plus rowed delete
+??_GRva00555B79@@QAEPAXI@Z,,0x00555BB9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08b.cpp,matched,chain deleting dtor for Rva00555B79 via famgenDelete
