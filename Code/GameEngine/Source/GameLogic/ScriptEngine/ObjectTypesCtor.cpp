@@ -1,6 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0ObjectTypes@@QAE@XZ @0x003769F9 32B: ObjectTypes default ctor.
+// ??4ObjectTypes@@QAEAAV0@ABV0@@Z @0x00376A9C 39B: ObjectTypes copy-assign.
 // Evidence: stores vtable 0x00C18630 at +0 (vtable holds deleting dtor
 // 0x00376AC3 at slot 0, empty crc at slot 1, GetSnapshotName 0x00376A19
 // returning "ObjectTypes" at slot 2, xfer 0x00376B70 at slot 3, then the
@@ -30,12 +31,14 @@ class AsciiString : public StringBase<char>
 {
 public:
 	AsciiString() {}
+	AsciiString &operator=(const AsciiString &other);
 };
 
 class ObjectTypes
 {
 public:
 	ObjectTypes();
+	ObjectTypes &operator=(const ObjectTypes &that);
 	virtual ~ObjectTypes();
 private:
 	AsciiString m_listName; // +4
@@ -46,4 +49,11 @@ ObjectTypes::ObjectTypes()
 	: m_listName()
 	, m_objectTypes(_STL::allocator<AsciiString>())
 {
+}
+
+ObjectTypes &ObjectTypes::operator=(const ObjectTypes &that)
+{
+	m_listName = that.m_listName;
+	m_objectTypes = that.m_objectTypes;
+	return *this;
 }
