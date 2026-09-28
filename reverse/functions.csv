@@ -40133,3 +40133,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00079147@W3DHordeModelDrawModuleData@@QAE_NXZ,,0x00079147,16,Code/GameEngine/Source/Common/Rva0007912DGet.cpp,matched,Horde LOD allow via clamped index 0x7912D stride 0x14 plus 0x188
 ?rva00079157@W3DHordeModelDrawModuleData@@QAEHXZ,,0x00079157,16,Code/GameEngine/Source/Common/Rva0007912DGet.cpp,matched,Horde LOD maxtex via clamped index 0x7912D stride 0x14 plus 0x18C
 ?rva00079176@W3DHordeModelDrawModuleData@@QAEMXZ,,0x00079176,16,Code/GameEngine/Source/Common/Rva0007912DGet.cpp,matched,Horde LOD delta via clamped index 0x7912D stride 0x14 plus 0x194
+??1Rva006003FC@@UAE@XZ,,0x006003FC,54,Code/GameEngine/Source/Common/Rva006003FCDtor.cpp,matched,dual-vtable dtor stores 0x87A638 then member 0x600084 at plus8 then base 0x7C6F20
+??_GRva006003FC@@UAEPAXI@Z,,0x006004A5,28,Code/GameEngine/Source/Common/Rva006003FCDtor.cpp,matched,deleting dtor calls 0x6003FC then operator delete auto-emitted
