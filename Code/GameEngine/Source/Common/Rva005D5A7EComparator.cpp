@@ -39,3 +39,16 @@ bool Rva005D5A7E::rva005D5A7E(const Rva005D5A7E &other) const
         return m_ptr->m_str.compareNoCase(other.m_ptr->m_str) < 0;
     return m_val > other.m_val;
 }
+
+void Rva005D5B21Insert(Rva005D5A7E *last, Rva005D5A7E val, int dummy)
+{
+    (void)dummy;
+    Rva005D5A7E *next = last;
+    --next;
+    while (val.rva005D5A7E(*next)) {
+        *last = *next;
+        last = next;
+        --next;
+    }
+    *last = val;
+}
