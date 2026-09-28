@@ -315,6 +315,7 @@ AsciiStringPlusText operator+(const AsciiString &left, const char *right)
 // Char-text plus string node mirroring string-plus-text at 0xB49C5: pair from the left literal plus the right string ref. Builds "_nrm" plus extension in makeNrmTextureName 0x317D89 plus 24 other callers. No donor; honest address struct; shape mirrors the rowed sibling with swapped operands.
 struct Rva002226E5TextPlusString
 {
+	int length() const;
 	Rva000B3F84Pair m_left;
 	const AsciiString *m_right;
 };
@@ -327,6 +328,13 @@ Rva002226E5TextPlusString operator+(const char *left, const AsciiString &right)
 	result.m_left = text;
 	result.m_right = &right;
 	return result;
+}
+
+// ?length@Rva002226E5TextPlusString@@QBEHXZ @0x00513B94 23B: text-plus-string length (left len + right getLength); mirrors rowed string-plus-text length at 0x002DBF50 with swapped operands; callers 0x00513E03 0x005E366A 0x005F1B75 0x0022309D 0x0059B49E.
+int Rva002226E5TextPlusString::length() const
+{
+	int left = m_left.m_len;
+	return left + m_right->getLength();
 }
 
 // ??H@YA?AUAsciiStringCharPlusText@@ABUAsciiStringRefWithChar@@PBD@Z @0x109CFD
