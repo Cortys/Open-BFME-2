@@ -40022,3 +40022,5 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??0Rva002D76A6@@QAE@XZ,,0x002D76A6,17,Code/GameEngine/Source/Common/Rva002D76A6Ctor.cpp,matched,ctor vtable 0x87506C zeroes plus 0x04 plus 0x08
 ??0Rva004F6352@@QAE@ABU0@@Z,,0x004F62DE,32,Code/GameEngine/Source/Common/Rva004F6352Assign.cpp,matched,copy ctor same layout as rowed assign 0x004F6352 via inline AddRef at +4 with callers 0x004F6A76 and 0x004F6E62
 ??$_Construct@URva004F6352@@U1@@_STL@@YAXPAURva004F6352@@ABU1@@Z,,0x004F6A76,18,Code/GameEngine/Source/Common/Rva004F6352Construct.cpp,matched,stlport _Construct null-check dest then thiscall copy ctor 0x004F62DE
+??$__uninitialized_fill_n@PAURva004F6352@@IU1@@_STL@@YAPAURva004F6352@@PAU1@IABU1@ABU__false_type@0@@Z,,0x004F6B44,37,Code/GameEngine/Source/Common/Rva004F6352UninitializedCopy.cpp,matched,stlport fill_n stride 0xC via rowed _Construct 0x004F6A76
+??$__uninitialized_copy@PAURva004F6352@@PAU1@@_STL@@YAPAURva004F6352@@PAU1@00ABU__false_type@0@@Z,,0x004F6B1E,38,Code/GameEngine/Source/Common/Rva004F6352UninitializedCopy.cpp,matched,stlport copy stride 0xC via rowed _Construct 0x004F6A76
