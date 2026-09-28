@@ -14,14 +14,18 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 class BfmeAptValue006DCD20
 {
     virtual void slot0();
+public:
     unsigned int m_flags;
     char m_pad[0x18];
     BfmeAptValue006DCD20 **m_data;
     int mnCapacity;
     int mnLength;
 public:
+    int isArray() const;
+    BfmeAptValue006DCD20 *rva006DCFA0();
     BfmeAptValue006DCD20 *rva006D8A50(int nIndex);
 };
+extern BfmeAptValue006DCD20 *g_aptUndefinedAtE18078; // 0x00A18078
 BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006D8A50(int nIndex)
 {
     if (!(nIndex < mnLength)) {
@@ -35,4 +39,37 @@ BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006D8A50(int nIndex)
             __asm int 3
     }
     return m_data[nIndex];
+}
+// ?Rva006D9B50Pop@@YAPAVBfmeAptValue006DCD20@@PAV1@@Z @0x006D9B50 (92 bytes).
+// Array pop: returns undefined at 0x00A18078 when not isArray or empty,
+// else At(last) (rowed 0x006D8A50) with undefined fallback for null/out of
+// bounds, then decrements mnLength and nulls the freed slot. Callers: none
+// yet (chain from 0x006D8A50); callees isArray at 0x006DC3A0, cast at
+// 0x006DCFA0 and At are all rowed. Out-of-bounds and null-At share the
+// global reload (not the edi local) to match retail's mov eax,[global].
+BfmeAptValue006DCD20 *__cdecl Rva006D9B50Pop(BfmeAptValue006DCD20 *pValue)
+{
+    BfmeAptValue006DCD20 *undefined = g_aptUndefinedAtE18078;
+    if (static_cast<unsigned char>(pValue->isArray())) {
+        BfmeAptValue006DCD20 *arr = pValue->rva006DCFA0();
+        int len = arr->mnLength;
+        if (len > 0) {
+            int last = len - 1;
+            BfmeAptValue006DCD20 *value;
+            if (last < 0 || last >= len)
+                value = g_aptUndefinedAtE18078;
+            else {
+                value = arr->rva006D8A50(last);
+                if (!value)
+                    value = g_aptUndefinedAtE18078;
+            }
+            int newLen = arr->mnLength;
+            BfmeAptValue006DCD20 **data = arr->m_data;
+            --newLen;
+            arr->mnLength = newLen;
+            data[newLen] = 0;
+            return value;
+        }
+    }
+    return undefined;
 }

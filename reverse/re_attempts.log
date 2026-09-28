@@ -2426,3 +2426,4 @@ FUN_008f7e78	0x004F7E78	25	blocked	12B stride vs 8B Rva size needs +8 member evi
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	167B vs 171B; missing EH state 2; lea hoisted above movs; floats reordered t=25 model=muse-9ce6 score=0.93 stash=reverse/attempts/0x000a8d5f.cpp
 ?getMinMaxAndCenter@AIGroup@@QAE_NPAUCoord2D@@0PAUCoord3D@@@Z	0x0036D14F	374	partial	379B vs 374B; y-add and mulss operand order swapped; movaps vs movss tail t=30 model=muse-9ce6 score=0.93 stash=reverse/attempts/0x0036d14f.cpp
 FUN_00903e4f	0x00503E4F	39	blocked	eax-arg private static needs callers in same TU t=15 model=muse-k3p-cc5c
+?Rva006D8630Drain@@YAXXZ	0x006D8630	55	partial	store via esi not ecx t=22 model=muse-xtf-5a10 score=0.98 stash=reverse/attempts/0x006d8630.cpp
