@@ -39662,3 +39662,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?_M_insert_overflow@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@IAEXPAUBfmeStringRecord005DDD40@@ABU3@ABU__false_type@2@I_N@Z,,0x00381B7B,178,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ddd40_allocate_copy.cpp,matched,Insert overflow via allocate plus copy plus clear exact 178B
 ?rva00620090@EAStringC@@QBEPBDXZ,,0x00620090,6,Code/Libraries/Source/EA/Apt/AptString/EAStringCRva00620090.cpp,matched,date callback data-plus-eight StringDataC 8B header donor aliases
 ?rva00620390@Rva00620390@@QAEXPAX@Z,,0x00620390,51,Code/Libraries/Source/WWVegas/WWLib/Rva00620390Cleanup.cpp,matched,unlock deque sentinels plus free self-recurse loop
+?rva006206E0@Rva006206E0@@QAEXXZ,,0x006206E0,51,Code/Libraries/Source/WWVegas/WWLib/Rva006206E0Clear.cpp,matched,chain deque sentinel reset via 620390
