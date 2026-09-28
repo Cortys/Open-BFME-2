@@ -39550,3 +39550,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva002DB9EFGet@@YAHPAURva002DB9EFObj@@PAX@Z,,0x002DB9EF,24,Code/GameEngine/Source/Common/Rva002DB9EFGet.cpp,matched,virtual slot 94 IsAutoSaveOrNot size 4 leaf
 ?setFont@SuperweaponInfo@@QAEXABVAsciiString@@H_N@Z,,0x0029A4CA,119,Code/GameEngine/Source/GameClient/SuperweaponInfo.cpp,matched,SuperweaponInfo setFont via adjustFontSize getFont
 ??0Rva0028F59A@@QAE@HH@Z,,0x0028F59A,44,Code/GameEngine/Source/Common/System/Rva0028F59ABitSet.cpp,matched,twin of Rva00045411BitSet with 19 dwords; stack temporaries prove size
+?rva0028F662@Rva0028F662@@QAEXPAURva0028F662Node@@@Z,,0x0028F662,45,Code/GameEngine/Source/Common/System/Rva0028F662TreeFree.cpp,matched,tree free via rowed free; caller resets head
