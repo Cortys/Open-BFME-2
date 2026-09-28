@@ -2662,3 +2662,4 @@ FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no
 ?Rva00186CF0@@YAX	0x00186CF0	165	blocked	same WW3D mesh-unique vtable wall as 0x10E4F6 t=2 model=muse-06
 ?rva0040B560@Rva0040B560@@QAEXXZ	0x0040B560	63	blocked	EH teardown 63B vs no-EH 30B same destroy-plus-free; method and dtor with EHsc slash EHs all 30B no prolog; needs unwind object recipe t=15 model=muse-08
 ?rva00577A2A@Rva00577A2A@@QAEXH@Z	0x00577A2A	163	blocked	GetLevel call has 2 pushes vs rowed 1-arg YAHPBD; new+EH+virtual 163B needs donor; no Code edits t=12 model=muse-02
+?rva003C9E4E@ScriptActions@@IAEXABVAsciiString@@0@Z	0x003C9E4E	253	partial	hoisted xor-zero reg vs retail and-mem zero plus test-vs-cmp null checks; +1B 6 regions same root cause; lever75 split and not-spelling tried; t=25 model=muse-03 score=0.99 stash=reverse/attempts/0x003c9e4e.cpp
