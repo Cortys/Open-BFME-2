@@ -39665,3 +39665,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva006206E0@Rva006206E0@@QAEXXZ,,0x006206E0,51,Code/Libraries/Source/WWVegas/WWLib/Rva006206E0Clear.cpp,matched,chain deque sentinel reset via 620390
 ??1Rva00613B90@@UAE@XZ,,0x00613B90,11,Code/Libraries/Source/WWVegas/WWLib/Rva00613B90Dtor.cpp,matched,virtual dtor novtable deletes plus4 via scalar delete
 ??RRva00204BB8@@QBE_NHH@Z,,0x00204BB8,94,Code/GameEngine/Source/GameClient/ParticleSystemTemplateSortComparator.cpp,matched,BFME1 Q4Sort donor plus STL sort callers plus rowed callees
+?rva002041E1@Rva002041E1@@QBE?AVAsciiString@@XZ,,0x002041E1,27,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002041E1Getter.cpp,matched,same copy-pin shape as template getters plus three AsciiString callers
