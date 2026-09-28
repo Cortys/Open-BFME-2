@@ -39985,3 +39985,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva005B6353Adjust@@YAXPAPAXHHPAXVRva005B61B3@@@Z,,0x005B6353,76,Code/GameEngine/Source/Common/Rva005B6353Adjust.cpp,matched,chain adjust heap via rowed comparator
 ?Rva005B6543Final@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B6543,77,Code/GameEngine/Source/Common/Rva005B6543Final.cpp,matched,chain final insertion sort via rowed sorts
 ?Rva005B6409Heap@@YAXPAPAXHHPAXVRva005B61B3@@@Z,,0x005B6409,97,Code/GameEngine/Source/Common/Rva005B6409Heap.cpp,matched,chain adjust heap down plus rowed push
+?Rva005B64B5Pop@@YAXPAPAX00PAXVRva005B61B3@@H@Z,,0x005B64B5,44,Code/GameEngine/Source/Common/Rva005B64B5Pop.cpp,matched,chain pop heap helper via rowed adjust
