@@ -2481,3 +2481,5 @@ FUN_006606AF	0x002606AF	55	blocked	manual erase 49B vs 55B missing dummy push an
 ?rva00625790@Rva00625790@@QAEXPAX@Z	0x00625790	46	blocked	singly-linked append head-at-+4 next-at-+4; tried holder-node void-star with O2-Ob0 44B and O1 35B vs 46B without push-esi plus lea alignment; needs esi-cur allocation lever t=10 model=muse-f950
 FUN_00433930	0x00033930	325	blocked	picker size 317 hides call to unclaimed 0x33700; true end ret 0x33A74 size 325 needs unready callee t=8 model=muse-b7e2
 FUN_004c09cf	0x000C09CF	116	blocked	reserve-like manual array manager calls honest Clear 0xC065B plus vector helpers; home TU vector reserve gives 12 reg diffs imul-vs-lea t=12 model=muse-243f
+??0TerrainTracksRenderObjClass@@QAE@XZ	0x0008E54F	97	blocked	ctor small-layout vs ZH inline-edges header t=12 model=muse-3639
+FUN_006930a9	0x002930A9	92	blocked	producer spawn onSpawnDeath plus iface250 slot31-slot13 fallback needs donor IDs t=15 model=muse-bf6a

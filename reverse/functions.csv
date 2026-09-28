@@ -40085,3 +40085,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?clear@Rva00053D89@@QAEXXZ,,0x00053D89,26,Code/GameEngine/Source/Common/Rva00053D89Clear.cpp,matched,same shape as clear 0x000A8879 plus dtor pin 0x000A897D
 ?rva0008EEF0@W3DDisplay@@QAEXMMMMMH@Z,,0x0008EEF0,79,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayDrawImageMode.cpp,matched,W3DDisplay wrapper pre D4 post 100 middle E0 via TheDisplay
 ?rva0008EE9E@W3DDisplay@@QAEXMMMMMHH@Z,,0x0008EE9E,82,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayDrawImageMode.cpp,matched,W3DDisplay wrapper pre D4 post 100 middle D8 via TheDisplay
+?draw@FullFadeTransition@@UAEXXZ,,0x0035F369,197,Code/GameEngine/Source/GameClient/GUI/FullFadeTransitionUpdate.cpp,matched,FullFadeTransition draw via fillRect openRect TheDisplay
