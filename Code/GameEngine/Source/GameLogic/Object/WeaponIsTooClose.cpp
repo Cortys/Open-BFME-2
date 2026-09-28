@@ -32,15 +32,27 @@ public:
 	float getMinimumAttackRange() const;
 };
 
+class GameLogic
+{
+public:
+	char m_pad00[0x40];
+	unsigned int m_frame; // +0x40
+};
+
+#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+
 class Weapon
 {
 public:
 	bool isTooClose(const Object *source, const Coord3D *pos) const;
 	float rva002C957E() const;
+	bool rva002C95F0() const;
 
 private:
 	char m_pad00[4];
 	const WeaponTemplate *m_template; // +4
+	char m_pad08[0x50 - 8]; // +8..0x50
+	volatile unsigned int m_50; // +0x50 volatile forces m_50-first load order (retail 17B vs 16B A1 size opt)
 };
 
 bool Weapon::isTooClose(const Object *source, const Coord3D *pos) const
@@ -57,4 +69,12 @@ bool Weapon::isTooClose(const Object *source, const Coord3D *pos) const
 float Weapon::rva002C957E() const
 {
 	return m_template->getMinimumAttackRange();
+}
+
+// ?rva002C95F0@Weapon@@QBE_NXZ @0x002C95F0 17B
+// Weapon frame check: m_50 (+0x50 leech/active frame per WeaponCtor) vs GameLogic frame+0x40 via TheGameLogic.
+// Evidence: callers 0x00343EAD 0x00343EC0 in 0x00343DD8; unblocks 0x00343DD8; prev/next Weapon owners; pooled TheGameLogic.
+bool Weapon::rva002C95F0() const
+{
+	return m_50 > TheGameLogic->m_frame;
 }
