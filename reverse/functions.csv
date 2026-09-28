@@ -39598,3 +39598,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002E6B06@Rva002E6B06@@QAEHXZ,,0x002E6B06,19,Code/GameEngine/Source/Common/Rva002E6B06Get.cpp,matched,null-checked ptr-chase bit test with 22 callers and no callees via nonzero guard model
 ??0Rva00507823@@QAE@XZ,,0x0050775B,172,Code/GameEngine/Source/Common/Rva00507823Ctor.cpp,matched,vtable 00864010 same as dtor 00507823 deleting 00507807 base of 00507C2D
 ??0Made002CC5E1@@QAE@XZ,,0x00507C2D,343,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Ctor.cpp,matched,base rowed 0050775B derived vtable 00864048 callers parseDamage plus 0050B1FF plus 0050BF92
+?findPlayerTemplate@PlayerTemplateStore@@QBEPBVPlayerTemplate@@W4NameKeyType@@@Z,,0x001FD31B,45,Code/GameEngine/Source/Common/PlayerTemplateStoreFind.cpp,matched,BFME1 identity retail vector plus override via pinned getFinalOverride
