@@ -40271,3 +40271,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039D84A@Team@@QAEXPAVObject@@@Z,,0x0039D84A,63,Code/GameEngine/Source/Common/RTS/TeamGetControllingPlayer.cpp,matched,Team target id via proto 0x30 plus computer 0x5c plus difficulty rva plus Object 0x74
 ??4Rva00153252@@QAEAAU0@ABU0@@Z,,0x00153252,27,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Assign.cpp,matched,8byte assign via rowed 0x2174A4 plus int caller 0x153339 stride 8
 ?rva0039D440@Rva0039D440@@QAEXPAPAV1@@Z,,0x0039D440,48,Code/GameEngine/Source/Common/Rva0039D440Remove.cpp,matched,list remove via 3C 40 links plus head update plus zero clears
+?rva0039D4D8@Rva0039D4D8@@QAEXPAVRva0039D40F@@@Z,,0x0039D4D8,35,Code/GameEngine/Source/Common/Rva0039D4D8MaybeRemove.cpp,matched,conditional remove via isInList plus remove sharing 334 head
