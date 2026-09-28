@@ -40137,3 +40137,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva006003FC@@UAEPAXI@Z,,0x006004A5,28,Code/GameEngine/Source/Common/Rva006003FCDtor.cpp,matched,deleting dtor calls 0x6003FC then operator delete auto-emitted
 ?Rva00600676Get@@YGPAXPBDHH@Z,,0x00600676,20,Code/GameEngine/Source/Common/Rva00600676Get.cpp,matched,guarded global 0xA06E5C forward to slot 2 with 3 stdcall args
 ?Rva006006A9Get@@YG_NPBD@Z,,0x006006A9,20,Code/GameEngine/Source/Common/Rva00600676Get.cpp,matched,sibling of 0x600676 same global 0xA06E5C to slot 11 bool with 1 arg
+?rva006007A5@Rva006007A5@@QAEXPAX@Z,,0x006007A5,45,Code/GameEngine/Source/Common/Rva006007A5Free.cpp,matched,recursive tree free via child plus8 sibling plus free 0x30830
