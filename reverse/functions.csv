@@ -40522,3 +40522,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0044E633@Rva0044E633@@QAEPAXXZ,,0x0044E633,15,Code/GameEngine/Source/Common/Rva0044E633FilteredFind.cpp,matched,unlock filtered find forward via BfmeSubBEC rowed 0x28BB9E callers at 0x45021D 0x450FE9 0x4510C6 plus four more
 ?rva005B2E35@Rva005B2DDF@@QAEPAXPAURva005B2E09Cell@@@Z,,0x005B2E35,48,Code/Libraries/Source/WWVegas/WWLib/Rva005B2DDFLookup.cpp,matched,chain forward search over grid via rowed lookup
 ?rva00275545@Drawable@@QAEXXZ,,0x00275545,83,Code/GameEngine/Source/GameClient/Drawable_rva00275545.cpp,matched,Drawable gate via isLocallyControlled clears DFE77C plus B8 tail slot E0 else 272BE7
+?rva00270644@Rva00270644@@QAEXMM@Z,,0x00270644,52,Code/GameEngine/Source/GameLogic/Object/Rva00270644.cpp,matched,Honest 2-float setter with frame holder 0xDFE77C slot 0x7C
