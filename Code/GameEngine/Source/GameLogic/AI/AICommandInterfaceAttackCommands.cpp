@@ -145,6 +145,7 @@ public:
 	void rva0036F4DF(Object *target, Int value, CommandSourceType cmdSource);
 	void rva0036F54D(const Team *team, Int value, CommandSourceType cmdSource);
 	void rva0036F5BB(const PolygonTrigger *area, Int value, CommandSourceType cmdSource);
+	void rva0036F629(const PolygonTrigger *area, Int value, CommandSourceType cmdSource, const Coord3D *pos);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
 };
 
@@ -584,6 +585,18 @@ void AICommandInterface::rva0036F5BB(const PolygonTrigger *area, Int value, Comm
 	AICommandParms parms((AICommandType)0x21, cmdSource);
 	parms.m_polygon = area;
 	parms.m_intValue = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F629@AICommandInterface@@QAEXPBVPolygonTrigger@@HW4CommandSourceType@@PBUCoord3D@@@Z, retail 0x0036F629, 126 bytes.
+// Same TU polygon-plus-int-plus-pos shape: AICMD 0x44 plus m_polygon at +0x30 plus m_intValue at +0x34 plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// Class proven by gap between rva0036F5BB and rva0036F6A7 plus same TU flags; callers at 0x00370505 0x003C8A7E forward 4 args.
+void AICommandInterface::rva0036F629(const PolygonTrigger *area, Int value, CommandSourceType cmdSource, const Coord3D *pos)
+{
+	AICommandParms parms((AICommandType)0x44, cmdSource);
+	parms.m_polygon = area;
+	parms.m_intValue = value;
+	parms.m_pos = *pos;
 	aiDoCommand(&parms);
 }
 
