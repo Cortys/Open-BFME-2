@@ -39980,3 +39980,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva005B63E4Sort@@YAXPAPAX00VRva005B61B3@@@Z,,0x005B63E4,37,Code/GameEngine/Source/Common/Rva005B63E4Sort.cpp,matched,chain unguarded insertion sort aux via rowed insert
 ?Rva005B649ASort@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B649A,27,Code/GameEngine/Source/Common/Rva005B649ASort.cpp,matched,chain unguarded insertion sort forwarder via rowed aux
 ?Rva005B639FGuarded@@YAXPAPAX0PAXVRva005B61B3@@@Z,,0x005B639F,69,Code/GameEngine/Source/Common/Rva005B639FGuarded.cpp,matched,chain guarded linear insert via copy backward and rowed insert
+?Rva005B646ASort@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B646A,48,Code/GameEngine/Source/Common/Rva005B646ASort.cpp,matched,chain insertion sort via rowed guarded insert
