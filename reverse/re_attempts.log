@@ -2448,3 +2448,4 @@ FUN_007317f9	0x003317F9	73	blocked	bitset predicate with holder plus header need
 ?xfer@StateMachine@@MAEXPAVXfer@@@Z	0x004D7744	535	partial	esi-edi swap for this-xfer plus return-vs-saved chaining mov; size exact 535B insns exact 213 t=25 model=muse-af1-6aa9 score=0.92 stash=reverse/attempts/0x004d7744.cpp
 ??1Rva006003FC@@UAE@XZ	0x006003FC	54	blocked	EH dtor two vtable stores plus base at +8 needs EH plus second store without second call; tail-jmp models give 14-20B vs 54B retail t=12 model=muse-af1-6aa9
 ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	partial	cur in eax plus esi copy with edi mask vs retail esi cur edx mask; extra push esi edi and mov ecx which; final cmp al vs 0 t=25 model=muse-ced7 score=0.93 stash=reverse/attempts/0x0039e303.cpp
+?rva0026336D@AIUpdateInterface@@QAEXXZ	0x0026336D	73	blocked	bool-temp scheduling wall t=15 model=muse-af01
