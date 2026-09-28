@@ -2537,3 +2537,4 @@ FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C famil
 ??0Rva0043B1C9Tree@@QAE@XZ	0x0043B69C	25	partial	missing second lea ebp-1; ours one lea two pushes 22B vs retail two leas 25B t=15 model=muse-6c12 score=0.92 stash=reverse/attempts/0x0043b69c.cpp
 ?Rva0043B278Get@@YAXXZ	0x0043B278	44	blocked	free fn type confusion: findObjectByID Object* vs BuildListInfo int return vs setter this=int t=10 model=muse-6c12
 ??1WeaponSet@@UAE@XZ	0x002C7311	81	blocked	EH dtor loop reg wall t=15 model=muse-4d9a
+?rva00239E0B@Rva00239E0BHolder@@QAEPAPAXPAPAX@Z	0x00239E0B	26	blocked	wrapper around rowed insert 0x239D02 gives 19-21B frameless or push-head vs retail 26B EBP frame plus push-ecx-mov-esp-store shape; tried O1 Oy- Os modulefactory-flags and local-head spellings t=15 model=muse-599a
