@@ -24,6 +24,7 @@ public:
 
 private:
 	StringBase(const StringBase<T> &that);
+	void releaseBuffer();
 	T *m_data;
 };
 
@@ -32,6 +33,7 @@ class AsciiString : public StringBase<char>
 public:
 	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
 	~AsciiString();
+	AsciiString &operator=(const AsciiString &other);
 };
 
 class UnicodeString : public StringBase<WideChar>
@@ -221,6 +223,7 @@ class Rva00581777AsciiField
 {
 public:
 	AsciiString get() const;
+	void rva00581740(AsciiString value);
 
 private:
 	char m_pad[0x1C8];
@@ -231,6 +234,21 @@ private:
 AsciiString Rva00581777AsciiField::get() const
 {
 	return m_value;
+}
+
+// ?rva00581740@Rva00581777AsciiField@@QAEXVAsciiString@@@Z, retail 0x00581740, 55 bytes.
+// Setter for the same +0x1C8 member the getter above returns: abuts it
+// (0x581740+55=0x581777), same class and offset. Takes AsciiString by value
+// (lea eax,[ebp+8]; ret 4), assigns via rowed operator= then destroys the copy
+// via rowed releaseBuffer with EH unwind (mov eax,scope; call __EH_prolog).
+// Caller at 0x00582C77 passes a temp built from [ebp+8]+0x3A to this GameSlot-sized
+// owner at [ebp-0x3E8]. Same // cl: as getters. Retail computes the member
+// address before pushing the value (lea, add, push), so the slot reference
+// form is needed for the byte-exact order.
+void Rva00581777AsciiField::rva00581740(AsciiString value)
+{
+	AsciiString &slot = m_value;
+	slot = value;
 }
 
 class Rva0059F322AsciiField
