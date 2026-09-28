@@ -157,7 +157,6 @@ void BoneFXUpdateModuleData::parseObjectCreationList(INI *ini, void *instance, v
 	INI::parseObjectCreationList(ini, instance, (void *)&info->ocl, 0);
 }
 
-// ?parseParticleSystem@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void BoneFXUpdateModuleData::parseParticleSystem(INI *ini, void *instance, void *store, const void *userData)
 {
 	BoneParticleSystemInfo *info = (BoneParticleSystemInfo *)store;
