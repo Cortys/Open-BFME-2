@@ -40476,3 +40476,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00142DF0@Rva001431B0@@QAEXXZ,,0x00142DF0,44,Code/GameEngine/Source/Common/System/Rva001431B0Pop.cpp,matched,guarded pop from member vector at 0x13c via empty plus pop_back
 ??0Rva005C48D0@@QAE@XZ,,0x005C48D0,21,Code/GameEngine/Source/Common/Rva005C48D0Ctor.cpp,matched,unlock ctor member 0x330757 at plus4 then vtable 0x00C40818
 ??_GRva00342228@@UAEPAXI@Z,,0x00342FB1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-334e.cpp,matched,slot 0 vtable 0x00811900 rowed dtor 0x00342228
+?Rva0014F746CopyBackward@@YAPAVRva0014F699@@PAV1@00PAXH@Z,,0x0014F746,50,Code/GameEngine/Source/Common/Rva0014F746CopyBackward.cpp,matched,copy_backward via rowed 0x0014F699 dummy tag args caller 0x0014FA20 pushes 5
