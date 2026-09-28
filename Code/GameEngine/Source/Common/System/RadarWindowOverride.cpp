@@ -23,6 +23,7 @@ class RadarWindowOverrideSource
 public:
 	bool hasOverrideWindow( void ) const;
 	GameWindow *getOverrideWindow( void ) const;
+	bool rva002D35E6( void ) const;
 
 private:
 	char m_pad[ 0x10 ];
@@ -37,4 +38,9 @@ GameWindow *RadarWindowOverrideSource::getOverrideWindow( void ) const
 bool RadarWindowOverrideSource::hasOverrideWindow( void ) const
 {
 	return ( m_inner->m_flag0 || m_inner->m_flag1 || m_inner->m_flag2 ) ? 0 : 1;
+}
+
+bool RadarWindowOverrideSource::rva002D35E6( void ) const
+{
+	return m_inner->m_flag2;
 }
