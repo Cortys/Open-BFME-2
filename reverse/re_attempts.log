@@ -2302,3 +2302,4 @@ FUN_004c0495	0x000C0495	10	blocked	no ret; mov eax plus call EH_prolog falls thr
 ?rva001E4A63@Rva001E4A63@@QAE	0x001E4A63	30	blocked	contested callee 0x000365F0 12 pins plus EH and-mem-0 t=5 model=muse-2ab4
 ?rva00072B3A@Rva00072B3A@@QBE?AVAssetReference@@XZ	0x00072B3A	27	blocked	by-value AssetReference getter from +0x1c via rowed 0x424BB needs push-ecx-and-zero frame with leave in 6 flag variants tried t=20 model=muse-0cef
 ?rva0027532F@Rva0027532F@@QAE_N_N@Z	0x0027532F	71	blocked	early push esi plus branch layout differs t=8 model=muse-2ab4
+?Rva0050EDD5Copy@@YAXPAURva0050EDD5Dst@@PAURva0050EDD5Src@@E@Z	0x0050EDD5	43	blocked	EBP temp plus movsd x3 needs late pushes: best 41B vs 43B with early push esi-edi and reordered loads under O1 Os G7 O2; direct assign gives 26B frameless; aggregate zeroes pad to 49B t=15 model=muse-1024
