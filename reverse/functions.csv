@@ -40257,3 +40257,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0BfmeAssignRecord32@@QAE@ABU0@@Z,,0x00173731,85,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_copy.cpp,matched,implicit copy via rowed dtor 0x17330A and pinned assign 0x173499
 ??$_Construct@UBfmeAssignRecord32@@U1@@_STL@@YAXPAUBfmeAssignRecord32@@ABU1@@Z,,0x001737EF,45,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_copy.cpp,matched,placement copy via rowed copy 0x173731
 ??0Rva00087A93@@QAE@ABV0@@Z,,0x0007E380,20,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_copy.cpp,matched,refcount copy inc via rowed dtor 0x7B724
+?rva00225375@BfmeAptWindowManager@@QAEXABVAsciiString@@0_N@Z,,0x00225375,77,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapTitle.cpp,matched,apt translate plus settext nine callers same this EH

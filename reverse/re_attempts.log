@@ -2524,3 +2524,4 @@ FUN_008f8eaf	0x004F8EAF	178	blocked	mixed CB11Entry copies plus 004F69C3 clear 5
 ??1?$vector@URva004F69C3@@V?$allocator@URva004F69C3@@@_STL@@@_STL@@QAE@XZ	0x0040E0EB	63	blocked	twin of landed 0x4F8832 same 63B Destroy-plus-free different scope table VA duplicate-name policy t=10 model=muse-p4k-adab
 ?Rva006D9C70Shift@@YAPAVBfmeAptValue006DCD20@@PAV1@@Z	0x006D9C70	108	blocked	early spill mov edi eax vs late mov edi eax after fallback plus newLen data regs swapped t=25 model=muse-xtf-5a10
 ?shouldTryToSpawn@SpawnBehavior@@QAE_NXZ	0x0045F3F8	103	partial	test byte vs mov+shr for +0x124 bit26 and dword not+and vs byte not+and for +0x438 dead t=20 model=muse-cc4c score=0.93 stash=reverse/attempts/0x0045f3f8.cpp
+?rva0039B9DD@Rva0039B709@@QAEHXZ	0x0039B9DD	69	partial	missing lea plus movss for limit in xmm1 uses mem operand t=15 model=muse-b825 score=0.93 stash=reverse/attempts/0x0039b9dd.cpp

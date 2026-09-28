@@ -17,6 +17,8 @@ template <typename T> class StringBase
 {
     friend class AsciiString;
     friend class UnicodeString;
+public:
+    StringBase() : m_data(0) {}
 private:
     StringBase(const T *text);
     StringBase(const StringBase<T> &other);
@@ -36,9 +38,11 @@ public:
 class UnicodeString : private StringBase<unsigned short>
 {
 public:
+    UnicodeString() {}
     UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
     UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
     ~UnicodeString() {}
+    void translate(const AsciiString &that);
 };
 
 class MapMetaData
@@ -51,6 +55,7 @@ class BfmeAptWindowManager
 {
 public:
     void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
+    void rva00225375(const AsciiString &, const AsciiString &, bool);
 };
 
 extern BfmeAptWindowManager *g_bfmeAptWindowManager;
@@ -73,4 +78,15 @@ void AptMapPreview::bfmeSetMapTitle(MapMetaData *map)
         else
             g_bfmeAptWindowManager->bfmeSetText(AsciiString("APT:MapTitle"), UnicodeString(L" "), false);
     }
+}
+
+// ?rva00225375@BfmeAptWindowManager@@QAEXABVAsciiString@@0_N@Z @0x00225375 77B
+// translate second Ascii to Unicode local then bfmeSetText with bool.
+// Evidence: calls rowed translate 0x006CB6A0 plus pinned bfmeSetText 0x00225301
+// plus rowed releaseBuffer 0x00036E70 with same this; nine callers.
+void BfmeAptWindowManager::rva00225375(const AsciiString &key, const AsciiString &value, bool flag)
+{
+    UnicodeString translated;
+    translated.translate(value);
+    bfmeSetText(key, translated, flag);
 }
