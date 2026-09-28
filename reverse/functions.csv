@@ -39019,3 +39019,4 @@ _CopyBlock,,0x001B7F30,142,Code/Libraries/Source/Theora/CopyBlock.c,matched,vend
 ?Rva009A7EF0@@YAXPBEPAEHHHHPBH@Z,,0x001B8950,108,Code/GameEngine/Source/Common/Rva009A7EF0.cpp,matched,BFME1 byte-identical donor; b1 0x009A7EF0
 _Rva0084D8D0WideToByte,,0x00020B90,52,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodePointConversions.c,matched,BFME1 byte-identical donor; b1 0x0084D8D0
 _Rva0084D890ByteToWide,,0x00020B50,50,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodePointConversions.c,matched,BFME1 byte-identical donor; b1 0x0084D890
+?Rva009AA9E0RawDump@@YAXPAX0H@Z,,0x001BB420,95,Code/GameEngine/Source/Common/Rva009AA9E0RawDump.cpp,matched,BFME1 byte-identical donor; b1 0x009AA9E0; 1 DIR32 string literal(s) agree
