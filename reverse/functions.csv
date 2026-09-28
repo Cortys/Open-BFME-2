@@ -39825,3 +39825,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva000FE001@Rva000FE001@@QAEXPAUFeNode@@@Z,,0x000FE001,100,Code/GameEngine/Source/Common/Rva000FE001Move.cpp,matched,intrusive unlink prepend to head
 ?rva000FE8FC@Rva000FE001@@QAEXPAUFeNode@@@Z,,0x000FE8FC,17,Code/GameEngine/Source/Common/Rva000FE001Move.cpp,matched,clear flag then move
 ?Rva000422A0Atan2@@YANMM@Z,,0x000422A0,27,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,unlock float atan2 adapter for atan2f
+_atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,chain atan2f wrapper calls 422A0

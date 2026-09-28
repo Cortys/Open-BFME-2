@@ -10,3 +10,8 @@ double __cdecl Rva000422A0Atan2(float y, float x)
 {
 	return atan2(y, x);
 }
+
+extern "C" float __cdecl atan2f(float y, float x)
+{
+	return Rva000422A0Atan2(y, x);
+}
