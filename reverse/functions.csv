@@ -40624,3 +40624,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?remove@AIGroup@@QAE_NPAVObject@@@Z,,0x0036CF07,108,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,AIGroup remove find erase leaveGroup TheAI destroyGroup BFME1 ZH donor
 ?push_front@?$list@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@QAEXABUCoord3D@@@Z,,0x002819AD,28,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,list Coord3D push_front via insert begin twin of int push_front 0x00392076
 ?Rva00306769Forward@@YGXPAX@Z,,0x00306769,25,Code/GameEngine/Source/Common/Rva00306769Forward.cpp,matched,stdcall null-checked forward to manager slot 25 via global 0x9FF080 caller dtor 0xD1BA6
+??0Rva0036CB94@@QAE@HHHH_N@Z,,0x0036CB94,49,Code/GameEngine/Source/Common/Rva0036CB94Ctor.cpp,matched,stack struct ctor callers 0x379788 0x37FCD8 arg to 0x372571
