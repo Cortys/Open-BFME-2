@@ -2373,3 +2373,4 @@ FUN_00612858	0x00212858	199	blocked	STL hashtable resize with EvaAscii hash give
 ?Rva0002C5E6StartsWithAny@@YA_NABVAsciiString@@PBUAsciiStringRange@@@Z	0x0002C5E6	59	blocked	test-mask vs sar plus late edi push plus register wall t=18 model=muse-a246
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	big WW3D 396B DirectX DXT fill no BFME1 body t=5 model=muse-a246
 ?rva006C1AA0@Rva006C1F60@@QAEPAUSlot64@@I@Z	0x006C1AA0	168	partial	169B-46ins vs 168B-46ins only index reg swap eax-ecx and add scheduling left t=15 model=muse-dc0a score=0.9 stash=reverse/attempts/0x006c1aa0.cpp
+?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DXT color clear needs donor - 6 variants best 438 vs 396 with edi-ebx wall and 0x24 vs 0x20 frame t=25 model=muse-bf61

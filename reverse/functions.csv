@@ -39789,3 +39789,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva004F6A52Assign@@YAXPAVRva004C5DD0@@PBURva004C5DD0Pair@@@Z,,0x004F6A52,18,Code/GameEngine/Source/Common/Rva004C5DD0Set.cpp,matched,null-guarded assign via rowed set 0x44BD00 same 18B as Construct
 ?Rva004F6AAEFill@@YAPAVRva004C5DD0@@PAV1@IPBURva004C5DD0Pair@@@Z,,0x004F6AAE,37,Code/GameEngine/Source/Common/Rva004C5DD0Set.cpp,matched,fill 8B via assign helper same loop as Entry fill_n
 ?Rva004F6A88Copy@@YAPAVRva004C5DD0@@PBURva004C5DD0Pair@@0PAV1@@Z,,0x004F6A88,38,Code/GameEngine/Source/Common/Rva004C5DD0Set.cpp,matched,copy 8B via assign helper same loop as Entry copy
+??_GTracerFXNugget@@MAEPAXI@Z,,0x004E1B45,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-bf61.cpp,matched,slot 0 vtable 0x00861DB4 calls rowed 0x004E1B00 plus rowed delete 0x0002FD60
