@@ -2548,3 +2548,5 @@ FUN_0085ee57	0x0045EE57	109	blocked	EH vector loop with stack temp vtable 0x7FB1
 FUN_00797b89	0x00397B89	80	blocked	CastleMemberBehavior predicate findObjectByID plus Object bit checks shr-vs-test wall dl-hoist t=12 model=muse-a4f1
 FUN_007973eb	0x003973EB	62	blocked	map-int-int find via AsciiString nameToKey needs container layout at this+4 plus arg+0x58 t=10 model=muse-a4f1
 FUN_007b6676	0x003B6676	98	blocked	subrecord drain with sentinel head and index chain via m_link; 6 probes tried O1-G7-Oy-EHsc combos with vector and raw ptr models; best 86B vs 98B missing EBP spill temps and retail calls ??1+??3 not ??_G; t=25 model=muse-6e54
+?countKind@Team@@QAEHH_N0@Z	0x0039DC05	94	partial	register ecx-vs-esi for cur plus mov placement t=25 model=muse-99b9 score=0.93 stash=reverse/attempts/0x0039dc05.cpp
+?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z	0x002DB4DA	68	partial	EH and-0-vs-or--1 t=20 model=muse-99b9 score=0.95 stash=reverse/attempts/0x002db4da.cpp

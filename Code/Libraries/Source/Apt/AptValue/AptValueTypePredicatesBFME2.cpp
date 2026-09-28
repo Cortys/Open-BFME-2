@@ -31,6 +31,7 @@ public:
     int isMovieClip() const;
     int isStage() const;
     int rva006DC300() const;
+    int rva006DC350() const;
     int rva006DC490() const;
     int rva006DCC60(bool bUndefOK) const;
     int isCharacterInst() const;
@@ -315,6 +316,19 @@ int BfmeAptValue006DCD20::rva006DC300() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 11 && !isUndefined()) return 1;
+    return 0;
+}
+// ?rva006DC350@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006DC350, 78 bytes.
+// Predicate for type 20 (0x28000000), "this" assert at AptValue.inl:1686.
+// Evidence: gap between 0x006DC300 (type 11) and 0x006DC3A0 isArray (type 22);
+// same /O2 shape as siblings; no callers yet so honest-address name.
+int BfmeAptValue006DCD20::rva006DC350() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptValue/AptValue.inl",1686);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (flags.type == 20 && !isUndefined()) return 1;
     return 0;
 }
 // ?rva006DCC60@BfmeAptValue006DCD20@@QBEH_N@Z, retail 0x006DCC60, 90 bytes.
