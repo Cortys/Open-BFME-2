@@ -54,3 +54,16 @@ void Rva00528309::rva005283E3()
 	m_1C = 0;
 	m_20 = 0;
 }
+
+class Rva00528545
+{
+public:
+	void rva00528545();
+private:
+	Rva00528309 *m_ptr;
+};
+
+void Rva00528545::rva00528545()
+{
+	m_ptr->rva005283E3();
+}
