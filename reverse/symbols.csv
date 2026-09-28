@@ -6177,3 +6177,7 @@ rva009C7380WeightPairs,0x009B84E0
 ??$_Construct@UBfmeStringRecord005DDD40@@U1@@_STL@@YAXPAUBfmeStringRecord005DDD40@@ABU1@@Z,0x003814A6,ICF twin of true Construct at 0x5DDD78; 45B EH plus copy ctor 0x5DDD40; scope table VA differs
 ??$__uninitialized_fill_n@PAUBfmeStringRecord005DDD40@@IU1@@_STL@@YAPAUBfmeStringRecord005DDD40@@PAU1@IABU1@ABU__false_type@0@@Z,0x003814F9,ICF twin of true fill_n at 0x5DDDA5; 37B loop via Construct; reloc to Construct dupe vs true
 ??$__uninitialized_copy@PAUBfmeStringRecord005DDD40@@PAU1@@_STL@@YAPAUBfmeStringRecord005DDD40@@PAU1@00ABU__false_type@0@@Z,0x003814D3,ICF twin of true PA copy at 0x5DDDCA; 38B loop via Construct; retail dupe is PB const version same bytes
+?ReAcquireResources@W3DVolumetricShadowManager@@QAE_NXZ,0x000F09E1,target REL32 at 0x0009A390; donor W3DShadow.cpp names first check; helper body remains unlanded so identity provisional
+?ReAcquireResources@W3DProjectedShadowManager@@QAE_NXZ,0x0010716D,target REL32 at 0x0009A3A5; donor W3DShadow.cpp names second check; helper body remains unlanded so identity provisional
+?ReAcquireResources@Rva00108660ResourceManager@@QAE_NXZ,0x00108660,target REL32 at 0x0009A3BA; address-derived helper name; manager identity unproven
+?ReAcquireResources@Rva0007DA23ResourceManager@@QAE_NXZ,0x0007DA23,target REL32 at 0x0009A3CF; address-derived helper name; manager identity unproven
