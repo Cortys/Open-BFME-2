@@ -39922,3 +39922,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?invoke@Rva0057CC15Ref@@QAEXH@Z,,0x0057CC15,46,Code/Libraries/Source/WWVegas/WWLib/FunctorRefInvoke0057CC15.cpp,matched,FunctorNotSet guard family sibling of 0x1531F2; slot1 one-int void; caller 0x223D83 ignores return
 ?rva0057C597@AptMapPreview@@QAEX_N@Z,,0x0057C597,34,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapDescription.cpp,matched,AptMapPreview 8-window winEnable loop via sibling layout; rowed winEnable; caller 0x440698
 ?rva0057CC43@AptMapPreview@@QAEXPAURva0057CC43Node@@@Z,,0x0057CC43,45,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapDescription.cpp,matched,AptMapPreview tree free via malloc-free sibling recursion; rowed free; self-call harmless
+?rva006D8A50@BfmeAptValue006DCD20@@QAEPAV1@H@Z,,0x006D8A50,121,Code/Libraries/Source/Apt/AptValue/AptValueArrayAt.cpp,matched,array At via _Apt.h asserts callers 0x006D94A0 0x006D9B50
