@@ -16,6 +16,7 @@ class Rva0039B20C
 public:
 	void rva0039B20C(void *src);
 	void rva0039B227(int val);
+	void rva0039B246(void);
 
 private:
 	char m_pad00[0x20];
@@ -46,4 +47,12 @@ void Rva0039B20C::rva0039B227(int val)
 	m_efc2C->bfmeUpdate(val);
 	if (m_ptr24 == (void *)val)
 		m_flag20 = false;
+}
+
+// ?rva0039B246@Rva0039B20C@@QAEXXZ @ 0x0039B246 (9B):
+// forwarder pushing +0x24 into rowed 0x0039B227. Same class as neighbours;
+// callers pass this with no stack args; callee cleans its own push.
+void Rva0039B20C::rva0039B246(void)
+{
+	rva0039B227((int)m_ptr24);
 }
