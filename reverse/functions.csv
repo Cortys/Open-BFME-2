@@ -40922,3 +40922,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005E70DF@Rva005E70DF@@QAEXH@Z,,0x005E70DF,25,Code/GameEngine/Source/Common/Bfme/Rva005E70DF.cpp,matched,setter via vcall slot7 plus store via caller 0x005E7A27
 ?Rva00151ECDLen@@YAHPBD@Z,,0x00151ECD,21,Code/GameEngine/Source/Main/Rva00151ECDLen.cpp,matched,pair init length helper
 ?Rva0052CEF6Clear@@YAXPAVRva004E366E@@0@Z,,0x0052CEF6,25,Code/GameEngine/Source/Common/Rva0052CEF6.cpp,matched,unlock range destroy step 0xC
+??1Rva0032C4D5@@QAE@XZ,,0x0032C4D5,30,Code/GameEngine/Source/Common/Rva0032C4D5Dtor.cpp,matched,container dtor destroy range plus free non-EH twin
