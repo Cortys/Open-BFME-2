@@ -40275,3 +40275,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__copy@PAURva00153252@@PAU1@H@_STL@@YAPAURva00153252@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00153320,47,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Copy.cpp,matched,forward copy via rowed 0x153252 sar3 stride8 caller 0x1534C9
 ?Rva001534B6Copy@@YAPAURva00153252@@PAU1@00@Z,,0x001534B6,29,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Copy.cpp,matched,ptrs wrapper via rowed __copy 0x153320 same as 0x426B29 caller 0x15383A
 ?rva00318BEB@Rva00318BEB@@QAEXXZ,,0x00318BEB,26,Code/GameEngine/Source/Common/Rva00318BEBAudio.cpp,matched,TheAudio present and +0x60 handle not 1 then slot 0x6c remove; caller FUN_00719D01 at 0x00319D3B
+?rva00318CEB@Rva00318CEB@@QAE_NPBURva00318CEBOther@@@Z,,0x00318CEB,26,Code/GameEngine/Source/Common/Rva00318CEBCheck.cpp,matched,null-checked other+0x14 equals this+0x54; callers at 0x002BCA19 and 0x002BEF14
