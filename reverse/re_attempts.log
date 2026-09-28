@@ -2651,3 +2651,6 @@ FUN_00516F08	0x00516F08	25	blocked	needs data global 0xA02320 name t=5 model=mus
 ?Rva004F6B8DCopy@@YAPAURva004F6966@@PBU1@0PAU1@@Z	0x004F6B8D	38	partial	esi edi swap for dst src adds t=15 model=muse-10 score=0.95 stash=reverse/attempts/0x004f6b8d.cpp
 ?rva00410C42@Rva00410C42@@QAEXXZ	0x00410C42	57	blocked	EH_prolog 57B vs no-EH 19B; clear plus null-checked free with state 0 slash -1; needs EH recipe for hashtable dtor; tried plain method t=10 model=muse-08
 ?rva00410AC7@Rva00410AC7@@QAEXPAX@Z	0x00410AC7	80	blocked	hashtable erase 80B exact size 37ins but whole-body esi slash edi mirror plus search-loop extra test-je vs retail push-jmp shared tail; tried 6 variants incl local-order lever t=28 model=muse-08
+??0Rva005C76C0@@QAE@HABVRva0055A246@@@Z	0x005C7448	105	partial	push-pop plus mov scheduling vs retail t=18 model=muse-05 score=0.95 stash=reverse/attempts/0x005c7448.cpp
+FUN_00973c7c	0x00573C7C	127	blocked	multi-call virtual float bool needs class donor t=8 model=muse-05
+FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no ret no Cpp identity t=5 model=muse-05
