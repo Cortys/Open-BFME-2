@@ -6,7 +6,7 @@
 // Unlock lane; landing unblocks 11 functions. No donor; recipe follows
 // Rva00219B9EAccessor signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva0037E421 class, void* return, int index.
-struct Elem216 { char m_pad00[0x98]; int m_98; char m_pad9C[0xD8 - 0x9C]; };
+struct Elem216 { char m_pad00[0x98]; int m_98; char m_pad9C[0xA4 - 0x9C]; int m_a4; char m_padA8[0xD8 - 0xA8]; };
 struct Vec216 { Elem216 *m_start; Elem216 *m_finish; Elem216 *m_end; };
 static __forceinline unsigned VecSize(Vec216 *v) { return v->m_finish - v->m_start; }
 static __forceinline Elem216 &VecAt(Vec216 *v, int i) { return v->m_start[i]; }
@@ -16,6 +16,7 @@ class Rva0037E421 {
 public:
     void *rva0037E421(int index);
     unsigned char rva0037E7BC(int index);
+    void *rva0037E451(int key);
 };
 void *Rva0037E421::rva0037E421(int index)
 {
@@ -35,4 +36,17 @@ unsigned char Rva0037E421::rva0037E7BC(int index)
     if (!p)
         return 0;
     return ((Elem216 *)p)->m_98 == -1;
+}
+// ?rva0037E451@Rva0037E421@@QAEPAXH@Z @0x0037E451 34B
+// Linear search of the same 216-byte vector for element with m_a4 == key.
+// Proven by 4 callers and the +4/+8 vector with 0xD8 stride; same class and flags.
+void *Rva0037E421::rva0037E451(int key)
+{
+    Elem216 *p = m_vec.m_start;
+    Elem216 *end = m_vec.m_finish;
+    for (; p != end; ++p) {
+        if (p->m_a4 == key)
+            return p;
+    }
+    return 0;
 }
