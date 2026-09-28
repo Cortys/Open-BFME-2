@@ -40182,3 +40182,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00132784@TextureBaseClass@@QBEHXZ,,0x00132784,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x2C via Peek pattern
 ?rva001327D8@TextureBaseClass@@QBEHXZ,,0x001327D8,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x34 via Peek pattern
 ?rva00132802@TextureBaseClass@@QBEHXZ,,0x00132802,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x38 via Peek pattern
+??$_Destroy@PAURva004F69C3@@@_STL@@YAXPAURva004F69C3@@0@Z,,0x0040DCF1,25,Code/GameEngine/Source/Common/Rva004F69C3Destroy.cpp,matched,range destroy 8B elements via rowed dtor 0x004F69C3 callers 0x0040E105 0x004F884C 0x004F8A01
