@@ -40309,3 +40309,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00540F0B@Rva00540F0B@@QAEXPAVDataChunkOutput@@@Z,,0x00540F0B,66,Code/GameEngine/Source/Common/Rva00540F0BWrite.cpp,matched,chain of 0x00540C59 stride 0x1C array writer sibling of 0x00540F4D
 ??0Rva00540D67@@QAE@XZ,,0x00540D67,45,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,ctor int 2 plus zeros plus global float at 14
 ??0Rva00540FCB@@QAE@XZ,,0x00540FCB,16,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,outer ctor int 0 plus rowed 0x00540D67 chain
+?Rva0033BEF5Make@@YA?AURva0033B830@@ABV?$StringBase@D@@ABVRva002390CB@@@Z,,0x0033BEF5,27,Code/GameEngine/Source/Common/Rva0033BEF5Make.cpp,matched,Hidden dest forwarder over rowed Rva ctor plus chain caller
