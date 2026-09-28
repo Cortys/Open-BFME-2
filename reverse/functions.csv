@@ -39626,3 +39626,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??0Rva0006EE7A@@QAE@HHHHH@Z,,0x0006EEBC,109,Code/Libraries/Source/WWVegas/WW3D2/Rva0006EE7ABitSet.cpp,matched,four-bit ctor overload via 23-site two-bit sibling and memset thunk
 ?rva00141800@Rva0006EFC8@@QAEPAXXZ,,0x00141800,46,Code/Libraries/Source/WWVegas/WWLib/Rva0006EFC8Grow.cpp,matched,pool pop with grow retry via landed grow 0x6EFC8
 ?rva00141DC0@Rva00141DC0@@QAEPAXPAX@Z,,0x00141DC0,44,Code/Libraries/Source/WWVegas/WW3D2/Rva00141DC0CreateNode.cpp,matched,list push_front via global pool 0x9B424C and landed pop
+?rva003B8BAA@Rva003B8BAA@@QAEPAXXZ,,0x003B8BAA,30,Code/GameEngine/Source/Common/Rva003B8BAALookup.cpp,matched,guard 0xDFEF10 plus0xB4 array chase plus0x10 plus0x14 elem plus0x20 via callers using 0xE02D6C
