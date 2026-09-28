@@ -39025,3 +39025,5 @@ _Rva0084D890ByteToWide,,0x00020B50,50,Code/Libraries/Source/WWVegas/WWLib/Rva008
 _Rva0084DD20Sign,,0x00020FA0,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20SignPositions.c,matched,BFME1 byte-identical donor; b1 0x0084DD20
 _Rva0084DDD0Sign,,0x00021050,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20SignPositions.c,matched,BFME1 byte-identical donor; b1 0x0084DDD0
 ??0Rva007F0460BlobHeader@@QAE@PAVRva007E8810Message@@@Z,,0x0065D280,65,Code/GameEngine/Source/GameNetwork/Rva007F0460BlobHeader.cpp,matched,BFME1 byte-identical donor; b1 0x007F0460; 2 DIR32 string literal(s) agree
+?bfmeLinkTo@Gen_008F7BE0@@QAEXPAV1@@Z,,0x0073A180,30,Code/GameEngine/Source/Common/Bfme5LinkedNode8F7BE0.cpp,matched,BFME1 byte-identical donor; b1 0x008F7BE0
+?bfmeUnlink8F7C00@Gen_008F7BE0@@QAEXXZ,,0x0073A1A0,28,Code/GameEngine/Source/Common/Bfme5LinkedNode8F7BE0.cpp,matched,BFME1 byte-identical donor; b1 0x008F7C00
