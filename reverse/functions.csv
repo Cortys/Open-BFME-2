@@ -40502,3 +40502,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004693AD@Rva004693AD@@QAE_NPAURva004693ADArg@@@Z,,0x004693AD,44,Code/GameEngine/Source/Common/Rva004693ADCheck.cpp,matched,int at arg74 vs this 264 26c or flag109 bit8
 ?rva00469B73@Rva00469B73@@QAEXPAX@Z,,0x00469B73,44,Code/GameEngine/Source/Common/Rva00469B73Call.cpp,matched,null-guarded slot58 with arg and slot0C via ptr at 250
 ?rva00469C07@Rva00469C07@@QAEXPAURva00469C07Node@@@Z,,0x00469C07,45,Code/GameEngine/Source/Common/Rva00469C07Free.cpp,matched,child sibling tree free via rowed free plus self recursion
+?rva00469C34@Rva00469C34@@QAEXPAURva00469C34Node@@@Z,,0x00469C34,45,Code/GameEngine/Source/Common/Rva00469C07Free.cpp,matched,twin of 0x469C07 child sibling free caller 0x46A94C
