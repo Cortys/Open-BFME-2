@@ -26,10 +26,28 @@ struct NetPacketAddress
 	UnsignedShort port;
 };
 
+struct TransportMessageHeader
+{
+	UnsignedInt crc;
+};
+
+struct TransportMessage
+{
+	TransportMessageHeader header;
+	UnsignedByte data[0x400];
+	Int length;
+	UnsignedInt addr;
+	UnsignedShort port;
+};
+
+extern "C" void *__cdecl memcpy(void *dest, const void *src, unsigned int count);
+
 class NetPacket
 {
 public:
 	virtual ~NetPacket();
+	NetPacket();
+	NetPacket(TransportMessage *msg);
 	void init();
 	void reset();
 
@@ -77,4 +95,20 @@ NetPacket::~NetPacket()
 		delete m_lastCommand;
 		m_lastCommand = 0;
 	}
+}
+
+NetPacket::NetPacket()
+{
+	init();
+}
+
+// ??0NetPacket@@QAE@PAUTransportMessage@@@Z present-unmatched
+NetPacket::NetPacket(TransportMessage *msg)
+{
+	init();
+	m_dest.ip = msg->addr;
+	m_dest.port = msg->port;
+	m_packetLen = msg->length;
+	memcpy(m_packet, msg->data, sizeof(m_packet));
+	m_numCommands = -1;
 }
