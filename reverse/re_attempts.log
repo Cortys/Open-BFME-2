@@ -2393,3 +2393,4 @@ FUN_0052D355	0x0052D355	45	blocked	STL EH vector<BfmeE8> copy with __EH_prolog h
 ?loadDockPositions@DockUpdate@@QAEXXZ	0x005897FB	270	partial	loop dest add edi eax vs retail lea edi eax ecx t=25 model=muse-7ef6 score=0.99 stash=reverse/attempts/0x005897fb.cpp
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	init lea hoisted early plus 1.0f load late vs early plus EH 1 vs 2 t=18 model=muse-7ef6 score=0.88 stash=reverse/attempts/0x000a8d5f.cpp
 FUN_00670234	0x00270234	44	blocked	Drawable 3-list broadcaster slot 0x20; 3 probe shapes give jmp not retail add-esi-4 jne t=15 model=muse-ca6
+?rva00271B03@Rva00271B03@@QAEXXZ	0x00271B03	35	partial	global into eax 5B vs edx 6B plus tmp order plus jbe fixed t=20 model=muse-7ef6 score=0.9 stash=reverse/attempts/0x00271b03.cpp
