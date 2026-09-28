@@ -39883,3 +39883,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva001166E0@Rva001166E0@@QAEPAXPAHHHHH@Z,,0x001166E0,120,Code/Libraries/Source/WWVegas/WW3D2/SurfaceByteSize.cpp,matched,unlock Lock with rect plus pitch out
 ?getCurrentStateID@AIUpdateInterface@@QBEHXZ,,0x00262FC3,40,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_getCurrentStateID.cpp,matched,AIUpdateInterface getCurrentStateID via machine+0x30 primary+0x50 fallback+0x04 donor BFME1 joinTeam shape
 ?rva00262D2D@AIUpdateInterface@@QAEXXZ,,0x00262D2D,19,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262D2D.cpp,matched,AIUpdateInterface leaf destroyPath then vslot 0x60 with 2 honest name
+??0Rva0026201C@@QAE@XZ,,0x00262002,26,Code/GameEngine/Source/Common/Rva0026201CCtor.cpp,matched,Rva0026201C ctor baseConstruct zero 0x0C 0x10 vtable 0xBF9010
