@@ -11,6 +11,11 @@
 // Same W3DDisplay pre/post (+0xD4/+0x100) with 6-arg float core at +0xDC
 // (5 Reals + Int color, e.g. drawLine float overload with width 1.0f via fld1
 // in callers 0x000506F4/0x000507D4/0x0005080A).
+// ?rva0008EEF0@W3DDisplay@@QAEXMMMMMH@Z, retail 0x0008EEF0, 79 bytes.
+// Same shape as 0x0004D664 but middle virtual at +0xE0 (5 Reals + Int color).
+// Evidence: byte-identical to 0x0004D664 except middle slot DC vs E0; pre/post
+// +0xD4/+0x100 shared; callers pass TheDisplay global 0x00DFE9D8 as this
+// (0x00314B75/0x0008F395 second branch single color 0xBBFFBB33).
 
 class Image;
 
@@ -73,7 +78,7 @@ public:
 	virtual void beginImageDraw();
 	virtual void unused54();
 	virtual void slotDC(float x0, float y0, float x1, float y1, float w, int color);
-	virtual void unused56();
+	virtual void slotE0(float x0, float y0, float x1, float y1, float w, int color);
 	virtual void unused57();
 	virtual void unused58();
 	virtual void unused59();
@@ -85,6 +90,7 @@ public:
 
 	void rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
 	void rva0004D664(float x0, float y0, float x1, float y1, float w, int color);
+	void rva0008EEF0(float x0, float y0, float x1, float y1, float w, int color);
 };
 
 void W3DDisplay::rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode)
@@ -98,5 +104,12 @@ void W3DDisplay::rva0004D664(float x0, float y0, float x1, float y1, float w, in
 {
 	beginImageDraw();
 	slotDC(x0, y0, x1, y1, w, color);
+	endImageDraw();
+}
+
+void W3DDisplay::rva0008EEF0(float x0, float y0, float x1, float y1, float w, int color)
+{
+	beginImageDraw();
+	slotE0(x0, y0, x1, y1, w, color);
 	endImageDraw();
 }
