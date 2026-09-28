@@ -40470,3 +40470,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E6C79@Rva002E6C79@@QAEHXZ,,0x002E6C79,20,Code/GameEngine/Source/Common/Rva002E6C79Get.cpp,matched,honest double ptr-chase 10 callers nested positive true-inline flags O1
 ?rva005C4CC1@Rva005C4B56@@QAEXXZ,,0x005C4CC1,19,Code/GameEngine/Source/Common/Rva005C4B56.cpp,matched,chain calls 0x005C4B56 with 2 0 plus sub 0x3C
 ?rva005C4CD4@Rva005C4B56@@QAEXXZ,,0x005C4CD4,19,Code/GameEngine/Source/Common/Rva005C4B56.cpp,matched,chain calls 0x005C4B56 with 0 2 plus sub 0x40
+??$__uninitialized_fill_n@PAVRva00064640Record@@IV1@@_STL@@YAPAVRva00064640Record@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00469CC8,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00064640_fill_n.cpp,matched,0x1c stride fill via rowed _Construct 0x469C73 caller 0x4701B6
