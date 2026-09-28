@@ -2447,3 +2447,4 @@ FUN_005e3e5c	0x001E3E5C	17	blocked	register wall retail ecx-next single setge al
 FUN_007317f9	0x003317F9	73	blocked	bitset predicate with holder plus header needs ThingTemplate donor investigation t=12 model=muse-3aa3
 ?xfer@StateMachine@@MAEXPAVXfer@@@Z	0x004D7744	535	partial	esi-edi swap for this-xfer plus return-vs-saved chaining mov; size exact 535B insns exact 213 t=25 model=muse-af1-6aa9 score=0.92 stash=reverse/attempts/0x004d7744.cpp
 ??1Rva006003FC@@UAE@XZ	0x006003FC	54	blocked	EH dtor two vtable stores plus base at +8 needs EH plus second store without second call; tail-jmp models give 14-20B vs 54B retail t=12 model=muse-af1-6aa9
+?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	partial	cur in eax plus esi copy with edi mask vs retail esi cur edx mask; extra push esi edi and mov ecx which; final cmp al vs 0 t=25 model=muse-ced7 score=0.93 stash=reverse/attempts/0x0039e303.cpp
