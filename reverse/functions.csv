@@ -39780,3 +39780,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ??_GRva0033FBB7@@UAEPAXI@Z,,0x00343BAD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-k9x-d5f9.cpp,matched,slot0 vtable 0x00811CF0 calls rowed 0x0033FBB7 plus delete 0x0002FD60
 ??1strstreambuf@_STL@@UAE@XZ,,0x00602B50,115,Code/Libraries/Source/WWVegas/WWLib/stlport_strstreambuf_dtor.cpp,matched,vtable 0x0087A878 donor STLport strstream.cpp callers 0x602DF0 0x602E50 0x602EB0 0x602F60 base 0x1C6E0
 ??_Gstrstreambuf@_STL@@UAEPAXI@Z,,0x00602F60,30,Code/Libraries/Source/WWVegas/WWLib/stlport_strstreambuf_dtor.cpp,matched,vtable 0x0087A878 slot 0 via rowed dtor 0x00602B50 and delete 0x0002FD60
+??0Rva0002C4FD@@QAE@ABV?$StringBase@D@@0@Z,,0x0002C4FD,57,Code/Libraries/Source/WWVegas/WWLib/Rva0002C4FDCtor.cpp,matched,honest Rva ctor two StringBase via pinned 0x365F0 same 57B shape as pair ctor 0x2027B1
