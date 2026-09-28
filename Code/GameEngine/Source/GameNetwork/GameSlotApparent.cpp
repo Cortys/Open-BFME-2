@@ -158,6 +158,7 @@ public:
 
     Bool isHuman() const { return m_state == SLOT_PLAYER; }
     Bool isAI() const;
+    Int getColor() const { return m_color; }
     Int getTeamNumber() const { return m_teamNumber; }
     Int getOriginalPlayerTemplate() const { return m_origPlayerTemplate; }
 
@@ -209,6 +210,7 @@ public:
     const GameSlot *getConstSlot(Int slotNum) const;
 
     Bool isSkirmish();
+    Bool isColorTaken(Int colorIdx, Int slotToIgnore) const;
 
 private:
     // vfptr (+0x00) then pads so the slot array lands at +0x18.
@@ -366,5 +368,19 @@ Bool GameInfo::isSkirmish()
         }
     }
     return sawAI;
+}
+
+// ?isColorTaken@GameInfo@@QBE_NHH@Z @0x003FF34A (42B):
+// GameInfo::isColorTaken. BFME1 GameInfo.cpp donor verbatim: scan 8 slots
+// via getConstSlot, inline color at +0x0C, ignore one slot.
+Bool GameInfo::isColorTaken(Int colorIdx, Int slotToIgnore) const
+{
+    for (Int i = 0; i < MAX_SLOTS; ++i)
+    {
+        const GameSlot *slot = getConstSlot(i);
+        if (slot && slot->getColor() == colorIdx && i != slotToIgnore)
+            return true;
+    }
+    return false;
 }
 
