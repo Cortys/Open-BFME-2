@@ -41572,3 +41572,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0023D614Set@@YAXPAV?$StringBase@D@@@Z,,0x0023D614,77,Code/GameEngine/Source/Common/Rva0023D614Film.cpp,matched,unlock StillImage_Film random clamp sprintf set
 ??0Rva002C752F@@QAE@XZ,,0x0033A888,81,Code/GameEngine/Source/GameLogic/Object/WeaponSetRva0033A888.cpp,matched,ctor via base reset plus 3x vector-ctor plus clear 0x2C752F caller 0x33D362
 ?rva002B8106@Rva002B8106@@QAEXABUBfmeStringRecord002B4DC1@@@Z,,0x002B8106,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_002b4dc1_insert.cpp,matched,Rva002B8106 list append thunk via end insert to rowed 0x002B70DC
+?rva002B87E0@Rva002B87E0@@QAEXURva002B87E0Param@@@Z,,0x002B87E0,55,Code/Libraries/Source/WWVegas/WWLib/stlport_list_002b4dc1_append.cpp,matched,Rva002B87E0 by-value record append via rowed 0x002B8106
