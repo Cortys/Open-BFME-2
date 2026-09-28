@@ -40963,3 +40963,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GMade002CCC90@@UAEPAXI@Z,,0x0050BD81,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain deleting dtor calls rowed 0x0050BD9D
 ??1Made002CCC2D@@UAE@XZ,,0x0050BB82,74,Code/GameEngine/Source/GameLogic/Object/Made002CCC2DDtor.cpp,matched,novtable filter plus string plus base
 ??_GMade002CCC2D@@UAEPAXI@Z,,0x0050BB66,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain deleting dtor calls rowed 0x0050BB82
+??0Made002CCAA1@@QAE@XZ,,0x0050B374,29,Code/GameEngine/Source/GameLogic/Object/Made002CCAA1Ctor.cpp,matched,leaf ctor base plus vtable plus float zero
