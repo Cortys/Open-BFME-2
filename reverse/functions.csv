@@ -40932,3 +40932,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00566AB7@Rva00566AB7@@QAEXABUBfmePod88@@@Z,,0x00566AB7,8,Code/GameEngine/Source/Common/Rva00566AB7.cpp,matched,unlock tail jmp push_back Pod88
 ?rva002147D1@Rva002147D1@@QAEPAXHPAVObject@@@Z,,0x002147D1,48,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,chain from 0x004032D3 via barrier reload
 ?rva005E70F8@Rva005E70F8@@QAEXXZ,,0x005E70F8,25,Code/GameEngine/Source/Common/Bfme/Rva005E70F8.cpp,matched,guarded init via vcall slot9 plus flag via callers
+?rva001514D0@Rva001514D0@@QAEPAXH@Z,,0x001514D0,37,Code/Libraries/Source/WWVegas/WW3D2/Rva001514D0Getter.cpp,matched,indexed getter bounds plus null guards
