@@ -52,3 +52,10 @@ void Rva005D5B21Insert(Rva005D5A7E *last, Rva005D5A7E val, int dummy)
     }
     *last = val;
 }
+
+void Rva005D5DF0Sort(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E *tag, int comp)
+{
+    (void)tag;
+    for (Rva005D5A7E *it = first; it != last; ++it)
+        Rva005D5B21Insert(it, *it, comp);
+}
