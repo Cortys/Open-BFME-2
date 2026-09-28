@@ -40957,3 +40957,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028D8EB@Rva0028D8EB@@QAEHH@Z,,0x0028D8EB,21,Code/GameEngine/Source/GameLogic/Object/Rva0028D8EB.cpp,matched,unlock bittest forward via rowed test
 ?Rva00152004Copy@@YAPAVRva00151E30@@PAV1@00@Z,,0x00152004,47,Code/Libraries/Source/WWVegas/WWLib/Rva00152004Copy.cpp,matched,array copy via rowed assign
 ?Rva003821A0Copy@@YAXPAX0@Z,,0x003821A0,25,Code/GameEngine/Source/Common/System/Rva003821A0Copy.cpp,matched,caller 0x00382BA1 pushes dst-src pair
+?Rva00382BA1Alloc@@YGPAXPAX@Z,,0x00382BA1,34,Code/Libraries/Source/WWVegas/WWLib/Rva00382BA1Alloc.cpp,matched,calls 0x307F0 and 0x3821A0 caller 0x3834AF
