@@ -39593,3 +39593,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva000728E2@Rva000728E2@@QAEXXZ,,0x000728E2,14,Code/GameEngine/Source/Common/Rva000728E2Clear.cpp,matched,small clear wrapper for holder at +0x1c via rowed clear 0x4D75B
 ?rva000723AC@W3DRadarResetSurface@@QAEXXZ,,0x000723AC,20,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DMouse_loadD3DCursorTextures.cpp,matched,COM surface release with null store via caller 0x724AE and sibling assign 0x72381
 ?rva000724AE@Rva000724AE@@QAEXXZ,,0x000724AE,25,Code/GameEngine/Source/Common/Rva000724AEClear.cpp,matched,triple clear via rowed cleanup 0x723E4 clear 0x4D75B and 0x723AC
+?rva00072583@W3DVideoBuffer@@QAEXXZ,,0x00072583,57,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DVideoBufferCtorBfme.cpp,matched,slot3 guarded reset via lock guard and rowed 0x724AE

@@ -15,6 +15,24 @@
 
 class TextureClass;
 
+void __cdecl BFME_DX8_Thread_Lock();
+bool __cdecl BFME_DX8_Thread_Assert();
+
+class BFMEDX8DeviceLock
+{
+public:
+	BFMEDX8DeviceLock() { BFME_DX8_Thread_Lock(); }
+	~BFMEDX8DeviceLock() { BFME_DX8_Thread_Assert(); }
+};
+
+class Rva000724AE
+{
+public:
+	void rva000724AE();
+private:
+	char m_pad[0x10];
+};
+
 class W3DVideoSurfaceHandle
 {
 public:
@@ -88,6 +106,7 @@ public:
     virtual bool valid();
     virtual void Rva000723FB();
     virtual void Rva00072472();
+    void rva00072583();
 
 private:
     Rva00739C70State m_states[1];
@@ -132,4 +151,16 @@ void W3DVideoBuffer::Rva00072472()
 {
     lock();
     m_flag_4a = true;
+}
+
+// ?rva00072583@W3DVideoBuffer@@QAEXXZ, RVA 0x00072583, 57B. Virtual slot 3
+// (offset 0xC) of vtable 0x007C64D8. Guarded reset: device lock guard then
+// triple-clear of the 0x10-byte state at +0x2c via rowed 0x724AE and clear
+// of flag +0x4a. Evidence: chain from 0x724AE; caller at 0x72828; same
+// lock/clear shape as sibling video-buffer methods.
+void W3DVideoBuffer::rva00072583()
+{
+    BFMEDX8DeviceLock guard;
+    reinterpret_cast<Rva000724AE*>(m_states)->rva000724AE();
+    m_flag_4a = false;
 }
