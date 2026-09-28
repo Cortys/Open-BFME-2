@@ -126,6 +126,12 @@ public:
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 
+// Local list-remove support only: satisfies list<AsciiString>::remove's
+// operator== requirement in this TU. The claimed remove body lives in
+// stlport_list_asciistring_remove.cpp (inlined StringBase compare); this
+// TU only emits the call to it.
+inline bool operator==(const AsciiString &a, const AsciiString &b) { return strcmp(a.str(), b.str()) == 0; }
+
 namespace _STL
 {
 template <> struct less<AsciiString>
@@ -193,6 +199,10 @@ public:
 	// retail factored the nick_ tokenize loop into this helper and reuses
 	// it for clan_.
 	void ReadEmailList_Rva005CAEA3(NickMap &emails, const char *prefix, UserPreferences::iterator &upIt);
+
+	// Removes one nick from one email's clan list; retail guards with find
+	// before subscripting (sibling 0x005CADD3 is the nick-map twin at +0x2c).
+	void rva005CAE72(const AsciiString &email, const AsciiString &nick);
 
 private:
 	PassMap m_emailPasswordMap;
@@ -334,6 +344,16 @@ Bool GameSpyLoginPreferences::load(AsciiString fname)
 	}
 
 	return true;
+}
+
+// ?rva005CAE72@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z 0x005CAE72 49B
+// Evidence: chain from landed list remove 0x005C9E90; find 0x001F8437 and
+// list-map operator[] 0x005CAC49 rowed; map at +0x38 is m_emailClanMap;
+// caller 0x0057F920; sibling 0x005CADD3 is the +0x2c nick twin.
+void GameSpyLoginPreferences::rva005CAE72(const AsciiString &email, const AsciiString &nick)
+{
+	if (m_emailClanMap.find(email) != m_emailClanMap.end())
+		m_emailClanMap[email].remove(nick);
 }
 
 // FUN @0x5C9CDE: retail copy of Zero Hour's WOLLoginMenu obfuscate()

@@ -40927,3 +40927,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002A14FAFree@@YGXPAX@Z,,0x002A14FA,28,Code/GameEngine/Source/Common/Rva002A14FAFree.cpp,matched,free wrapper around rowed dtor plus free
 ?rva005DE96B@Rva005DE96B@@QAEXXZ,,0x005DE96B,26,Code/Libraries/Source/WWVegas/WWLib/stlport_rva005de96b_apply.cpp,matched,chain range apply caller via pinned fn
 ?rva0032C2C4@BfmeIndexedNodesFM@@QAEXXZ,,0x0032C2C4,51,Code/GameEngine/Source/Common/BfmeIndexedNodesRva0032C2C4.cpp,matched,release chained nodes via rowed bfmeRelease twin of clearChained
+?rva005CAE72@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z,,0x005CAE72,49,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,clan remove via find 0x1F8437 subscript 0x5CAC49 remove 0x5C9E90; caller 0x57F920
