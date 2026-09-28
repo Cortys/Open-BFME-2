@@ -47,3 +47,9 @@ Rva002E9E70 *Rva00337501Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 
 	}
 	return result;
 }
+Rva002E9E70 *Rva00337638Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 *result)
+{
+	Rva002E9E70FiveArg f = (Rva002E9E70FiveArg)Rva00337501Copy;
+	char tmp;
+	return f(first, last, result, &tmp, 0);
+}
