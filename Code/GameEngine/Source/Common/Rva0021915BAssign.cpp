@@ -1,6 +1,7 @@
 // cl: /O1 /DNDEBUG /MD
 // ??4Rva0021915B@@QAEAAV0@ABV0@@Z @0x0021915B 31B
-// Honest-address copy-assignment for an 8-byte AsciiString-plus-byte entry.
+// ??RRva0021B753@@QBE_NABVRva0021915B@@0@Z @0x0021B753 34B
+// Honest-address copy-assignment for an 8-byte AsciiString-plus-bool entry.
 // Retail: self-check (cmp this,other; je skip), AsciiString::operator= at +0
 // via pinned 0x000366F0, byte copy at +4, return *this (mov eax,esi; ret 4).
 // Evidence: element stride 8 in copy_backward caller 0x002195B7 (47B loop with
@@ -8,25 +9,40 @@
 // 0x0021D39E drive per-element *dest=*src over the same 8B layout; temp pair
 // copy ctor 0x005117F6 (pair<const AsciiString,char>) and releaseBuffer
 // 0x00036410 in those callers prove AsciiString at +0 plus 1-byte mapped at
-// +4 (size 8 with padding). No donor; honest Rva name (never guess template args).
+// +4 (size 8 with padding). bool (not unsigned char) proven by 0x0021B753
+// comparator below: only bool gives byte-exact jne-return without test/setne.
+// No donor; honest Rva name (never guess template args).
+// Comparator 0x0021B753: strict-weak-ordering for Rva0021915B sorting (median
+// 0x0021B9A0, linear-insert 0x0021BAA3, binary-heap 0x0021BB61, lower/upper
+// 0x0021C6CB and callers 0x0021BB61/0x0021C798/0x0021C8D7/0x0021E4A5). Primary
+// key bool at +4 (true-first: differ returns a.flag), secondary AsciiString
+// at +0 via rowed StringBase<char>::compareNoCase 0x00006A00 <0. Empty
+// comparator struct (this unused, ecx dead) proven by lea ecx at every caller.
 
-class AsciiString
+template <typename T> class StringBase
 {
 public:
-	AsciiString &operator=(const AsciiString &other);
+	int compareNoCase(const StringBase<T> &that) const;
 
 private:
 	void *m_data;
+};
+
+class AsciiString : public StringBase<char>
+{
+public:
+	AsciiString &operator=(const AsciiString &other);
 };
 
 class Rva0021915B
 {
 public:
 	Rva0021915B &operator=(const Rva0021915B &other);
+	friend struct Rva0021B753;
 
 private:
 	AsciiString m_str;
-	unsigned char m_byte;
+	bool m_byte;
 };
 
 Rva0021915B &Rva0021915B::operator=(const Rva0021915B &other)
@@ -36,4 +52,16 @@ Rva0021915B &Rva0021915B::operator=(const Rva0021915B &other)
 		m_byte = other.m_byte;
 	}
 	return *this;
+}
+
+struct Rva0021B753
+{
+	bool operator()(const Rva0021915B &a, const Rva0021915B &b) const;
+};
+
+bool Rva0021B753::operator()(const Rva0021915B &a, const Rva0021915B &b) const
+{
+	if (a.m_byte != b.m_byte)
+		return a.m_byte;
+	return a.m_str.compareNoCase(b.m_str) < 0;
 }
