@@ -19,7 +19,8 @@ typedef int Int;
 enum NetCommandType
 {
 	NETCOMMANDTYPE_UNKNOWN = -1,
-	NETCOMMANDTYPE_KEEPALIVE = 12
+	NETCOMMANDTYPE_KEEPALIVE = 12,
+	NETCOMMANDTYPE_DISCONNECTKEEPALIVE = 0x19
 };
 
 class NetCommandMsg
@@ -61,4 +62,17 @@ public:
 NetKeepAliveCommandMsg::NetKeepAliveCommandMsg() : NetCommandMsg()
 {
 	m_commandType = NETCOMMANDTYPE_KEEPALIVE;
+}
+
+// ??0NetDisconnectKeepAliveCommandMsg@@QAE@XZ @0x004D57DC 21B: calls base plus stamps DISCONNECTKEEPALIVE (0x19) plus vtable 0x860244 shared via ICF.
+// Donor BFME1 NetCommandMsg_ctors.cpp DisconnectKeepAlive (no members).
+class NetDisconnectKeepAliveCommandMsg : public NetCommandMsg
+{
+public:
+	NetDisconnectKeepAliveCommandMsg();
+};
+
+NetDisconnectKeepAliveCommandMsg::NetDisconnectKeepAliveCommandMsg() : NetCommandMsg()
+{
+	m_commandType = NETCOMMANDTYPE_DISCONNECTKEEPALIVE;
 }
