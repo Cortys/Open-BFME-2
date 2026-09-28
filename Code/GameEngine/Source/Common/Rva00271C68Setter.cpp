@@ -9,6 +9,7 @@ class Rva00271C68
 {
 public:
 	void rva00271C68(int value);
+	void rva00271C79(int value);
 
 private:
 	unsigned char m_pre[0x118];
@@ -19,4 +20,10 @@ void Rva00271C68::rva00271C68(int value)
 {
 	if (value == 0x1A)
 		m_118 |= 4;
+}
+
+void Rva00271C68::rva00271C79(int value)
+{
+	if (value == 0x1A)
+		m_118 &= ~4;
 }
