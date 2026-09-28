@@ -2541,3 +2541,4 @@ FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C famil
 ?rva0053FF5F@Rva0053FF5F@@QAEAAV1@ABV1@@Z	0x0053FF5F	51	partial	push edi one store late only scheduling differs t=15 model=muse-10f0 score=0.95 stash=reverse/attempts/0x0053ff5f.cpp
 ??0Rva00540D94@@QAE@ABURva00540D94Src@@MMH@Z	0x00540D94	54	blocked	m0c store late vs retail early t=12 model=muse-10f0
 FUN_009f4aed	0x005F4AED	74	blocked	EH method with virtual slot1 plus Holder copy-dtor and ret 0xC plus scope 0xBA525A t=25 model=muse-bf13
+?rva005960E0@Rva0025BF8C@@QAE_NPAX@Z	0x005960E0	31	blocked	ecx save wall: ours saves this in esi across stdcall Get vs retail forwards ecx without save; t=12 model=muse-e41f

@@ -64,6 +64,8 @@ class Object : public Thing
 {
 public:
 	bool getSingleLogicalBonePosition(const char *boneName, Coord3D *position, Matrix3D *transform) const;
+	int getMultiLogicalBonePosition(const char *boneNamePrefix, int maxBones,
+		Coord3D *positions, Matrix3D *transforms, bool convertToWorld, int extra) const;
 
 private:
 	Drawable *m_drawable; // +0x84
@@ -85,4 +87,27 @@ bool Object::getSingleLogicalBonePosition(const char *boneName, Coord3D *positio
 			*transform = *getTransformMatrix();
 		return false;
 	}
+}
+
+int Object::getMultiLogicalBonePosition(const char *boneNamePrefix, int maxBones,
+	Coord3D *positions, Matrix3D *transforms, bool convertToWorld, int extra) const
+{
+	int count;
+	if (m_drawable &&
+		(count = m_drawable->getPristineBonePositions(boneNamePrefix, 1, positions, transforms, maxBones, extra)) > 0)
+	{
+		if (convertToWorld)
+		{
+			for (int i = 0; i < count; ++i)
+			{
+				m_drawable->convertBonePosToWorldPos(
+					positions ? &positions[i] : 0,
+					transforms ? &transforms[i] : 0,
+					positions ? &positions[i] : 0,
+					transforms ? &transforms[i] : 0);
+			}
+		}
+		return count;
+	}
+	return 0;
 }
