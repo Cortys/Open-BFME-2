@@ -40969,3 +40969,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039E968@Team@@QAEPAVObject@@H@Z,,0x0039E968,57,Code/GameEngine/Source/Common/RTS/TeamRva0039E8EB.cpp,matched,chain team finder via bittest plus advance
 ?rva0039EA21@Rva0039EA21@@QAEXPAURva0039EA21Node@@@Z,,0x0039EA21,45,Code/GameEngine/Source/Common/RTS/Rva0039EA21.cpp,matched,unlock recursive teardown via free
 ??0Made002CCB67@@QAE@XZ,,0x0050B6B4,29,Code/GameEngine/Source/GameLogic/Object/Made002CCB67Ctor.cpp,matched,leaf ctor base plus vtable plus float zero
+?rva005E7111@Rva005E7111@@QAEXXZ,,0x005E7111,25,Code/GameEngine/Source/Common/Bfme/Rva005E7111.cpp,matched,guarded teardown via vcall slot9 plus flag via callers
