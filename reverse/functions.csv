@@ -40418,3 +40418,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005778E3@Rva005778E3@@QAEHXZ,,0x005778E3,25,Code/GameEngine/Source/Common/Rva005778E3Acquire.cpp,matched,acquire returns old flag caller 0x00577FE2
 ?rva006DC350@BfmeAptValue006DCD20@@QBEHXZ,,0x006DC350,78,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,gap type20 line1686 same-O2-shape-as-siblings
 ?rva0028BD5D@Object@@QBEPAXH@Z,,0x0028BD5D,53,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BD5D.cpp,matched,Object module scan slot 0x64 then bool slot 0x10 with unused int
+?rva0028B3D7@Object@@QBEXXZ,,0x0028B3D7,58,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B3D7.cpp,matched,Object module scan slot 0x28 then bool slot 0x10 then slot 0x14
