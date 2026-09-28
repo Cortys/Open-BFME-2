@@ -40358,3 +40358,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva005F4AD7@@QAE@ABU0@@Z,,0x005F4AB9,30,Code/GameEngine/Source/Common/Rva005F4AD7Dtor.cpp,matched,unlock lane copy-ctor abutting dtor 0x5F4AD7 via shared double-deref plus inc
 ??0Rva0037D076@@QAE@XZ,,0x0037D076,33,Code/GameEngine/Source/Common/Rva0037D076Ctor.cpp,matched,list at plus4 int minus1 bytes zero caller 0x0037D2CC
 ?rva007401A3@Rva007401A3@@QAEXHH@Z,,0x007401A3,66,Code/GameEngine/Source/Common/Rva007401A3Set.cpp,matched,setter caches two ints notifies slot B4 with float callers 0x740AAB 0x740BA7
+?rva0073BB40@Rva0073BB40@@QAEDHHH@Z,,0x0073BB40,159,Code/GameEngine/Source/Common/RTS/Rva0073BB40.cpp,matched,twin of 0x0073BAA0 with 008FC3B0 decrement callers 0x73C3B0 0x73C450 0x73C7C0
