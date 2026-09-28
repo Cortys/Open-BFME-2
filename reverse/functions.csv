@@ -39814,3 +39814,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva00210749@Rva00210749@@QAEXXZ,,0x00210749,38,Code/GameEngine/Source/Common/Rva00210749Clear.cpp,matched,vector erase plus six zeroes plus caller 0x002109E2 plus local ref for lea
 ?isCharacterInst@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0200,87,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,isCharacterInst via caller 0x006E1170 assert plus AptCIH range 12-19 plus rowed get and isUndefined
 ?ClipStackShutdown@AptMath@@SAXXZ,,0x006E0020,55,Code/Libraries/Source/Apt/AptMathClipStack.cpp,matched,ClipStackShutdown via AptMath statics plus pool freeBlock plus donor JSON
+?Rva003284ED@@YAXPAVGameWindow@@H@Z,,0x003284ED,43,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetUserDataHelpers.cpp,matched,sibling of Rva004BCB20 stores int at 0x18 always reinstalls user data

@@ -222,3 +222,21 @@ _PushButtonData *getNewPushButtonData(void)
 {
 	return new _PushButtonData;
 }
+
+struct Rva003284EDData
+{
+	char m_prefix[0x18];
+	int m_value;						// +0x18
+};
+
+void Rva003284ED(GameWindow *window, int value)
+{
+	if (window == 0)
+		return;
+	Rva003284EDData *data =
+		(Rva003284EDData *)window->winGetUserData();
+	if (data == 0)
+		data = (Rva003284EDData *)getNewPushButtonData();
+	data->m_value = value;
+	window->winSetUserData(data);
+}
