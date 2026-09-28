@@ -40837,3 +40837,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004071AAForward@@YAXPAVRva004071AAVirt@@ABVUnicodeString@@HPAVRva00407137@@@Z,,0x004071AA,45,Code/GameEngine/Source/Common/Rva00407137Crc.cpp,matched,chain virtual 0x68 plus rowed 0x00407137 plus Ascii 0x38250 plus 0x36410
 ?rva00108951@W3DProjectedShadow@@QAEXXZ,,0x00108951,25,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DProjectedShadowRva007AEC10.cpp,matched,single ref release via virtual deleteThis
 ??1?$vector@VRva005DE5B5@@V?$allocator@VRva005DE5B5@@@_STL@@@_STL@@QAE@XZ,,0x005DE985,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva005de5b5_dtor.cpp,matched,chain vector dtor via Destroy 0x005DE952 plus free
+?rva00407A6A@Rva00407A6A@@QAE_NABVUnicodeString@@@Z,,0x00407A6A,124,Code/GameEngine/Source/Common/Rva00407A6A.cpp,matched,unlock wide compare set plus CoCreateGuid plus format 0x38150
