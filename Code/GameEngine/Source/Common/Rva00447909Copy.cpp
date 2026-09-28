@@ -6,6 +6,7 @@
 // at 0x006291A8); callers at 0x0044794F 0x0044797C 0x004479A8 0x0044865E;
 // landing unblocks 0x0044793F 0x0044796C 0x0044799A 0x00448423.
 extern "C" void *__cdecl memcpy(void *dest, const void *src, unsigned int count);
+extern "C" __declspec(dllimport) unsigned long __stdcall htonl(unsigned long v);
 char *__cdecl Rva00447909Copy(char *src, void *dst, unsigned int size, char *limit)
 {
 	if (limit != 0) {
@@ -23,4 +24,14 @@ char *__cdecl Rva00447909Copy(char *src, void *dst, unsigned int size, char *lim
 char *__cdecl Rva0044799ACopy1(char *src, void *dst, char *limit)
 {
 	return Rva00447909Copy(src, dst, 1, limit);
+}
+// ?Rva0044793FReadU32@@YAPADPADPAI0@Z, retail 0x0044793F, 45 bytes.
+// Checked 4-byte read with htonl: copies via Rva00447909Copy into the src slot
+// then byte-swaps to *out. Evidence: chain lane calls 0x00447909; IAT htonl;
+// callers in 0x00448423.
+char *__cdecl Rva0044793FReadU32(char *src, unsigned int *out, char *limit)
+{
+	char *next = Rva00447909Copy(src, &src, 4, limit);
+	*out = htonl(*(unsigned int *)&src);
+	return next;
 }
