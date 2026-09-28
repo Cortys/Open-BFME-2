@@ -40549,3 +40549,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003BC6C7Set@@YGXH@Z,,0x003BC6C7,18,Code/GameEngine/Source/GameLogic/System/GameLogicRva003BC6C7Wrapper.cpp,matched,chain wrapper for GameLogic rva003BA5DD via TheGameLogic
 ?xfer@Rva004DF87C@@QAEXPAVXfer@@@Z,,0x004DF87C,27,Code/GameEngine/Source/Common/Rva004DF87CXfer.cpp,matched,vslot 3 plus rowed Version1 plus rowed Rva004DF81B xfer
 ?Rva00583B11Copy@@YAPAVRva002337F0@@PAV1@00ABUTag@@@Z,,0x00583B11,38,Code/GameEngine/Source/Common/Rva00583B11Copy.cpp,matched,copy via rowed Init 0x00583A72 callers 0x0058435E 0x005843A9 0x00584460 0x005844AC
+?rva0023CEE5@GameLogic@@QAE_NXZ,,0x0023CEE5,55,Code/GameEngine/Source/GameLogic/System/GameLogicSetGamePaused.cpp,matched,GameLogic readiness gate via isInMultiplayer TheNetwork plus 0x128 and 0x150

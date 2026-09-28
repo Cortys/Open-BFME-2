@@ -14,6 +14,7 @@ class GameLogic
 public:
 	bool isInMultiplayerGame();
 	void rva0023CD9E(bool paused, int pauseMode, bool affectMouse);
+	bool rva0023CEE5();
 
 private:
 	char m_pad[0x124];
@@ -21,7 +22,12 @@ private:
 	char m_pad125; // +0x125
 	bool m_inputEnabledMemory; // +0x126
 	bool m_mouseVisibleMemory; // +0x127
+	unsigned char m_128[8]; // +0x128
+	char m_pad130[0x150 - 0x130]; // +0x130 timeouts
+	bool m_150; // +0x150
 };
+
+class NetworkInterface;
 
 class Rva00210C66CmpBoolField
 {
@@ -93,6 +99,7 @@ public:
 #define TheInGameUI (*(InGameUI **)0x00DFEDF0)
 #define TheMouse (*(Mouse **)0x00DFDCA0)
 #define TheAudio (*(BfmeAudio **)0x00DFE6E8)
+#define TheNetwork (*(NetworkInterface **)0x00DFEA28)
 
 void GameLogic::rva0023CD9E(bool paused, int pauseMode, bool affectMouse)
 {
@@ -138,4 +145,20 @@ void GameLogic::rva0023CD9E(bool paused, int pauseMode, bool affectMouse)
 			TheAudio->resumeAudio(audToAffect, 4, 1);
 		}
 	}
+}
+
+bool GameLogic::rva0023CEE5()
+{
+	if (!isInMultiplayerGame())
+		return true;
+	if (TheNetwork == 0)
+		return true;
+	if (m_150)
+		return true;
+	for (int i = 0; i < 8; i++)
+	{
+		if (m_128[i] == 0)
+			return false;
+	}
+	return true;
 }
