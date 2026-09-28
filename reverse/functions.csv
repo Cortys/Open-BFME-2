@@ -40546,3 +40546,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Destroy@PAUBfmeStringRecord005D511F@@@_STL@@YAXPAUBfmeStringRecord005D511F@@0@Z,,0x005D541B,25,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,range destroy via rowed dtor stride 0x14 with two vector-dtor callers
 ??_GBfmeStringRecord005D511F@@QAEPAXI@Z,,0x005D5266,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-3fc4.cpp,matched,deleting dtor via rowed dtor and operator delete same shape as 00204A30 precedent
 ??0Rva0039B893@@QAE@XZ,,0x0039B7FB,34,Code/GameEngine/Source/Common/Rva0039B893DefaultCtor.cpp,matched,default ctor zeroing with same vtable and stride as copy ctor
+?Rva003BC6C7Set@@YGXH@Z,,0x003BC6C7,18,Code/GameEngine/Source/GameLogic/System/GameLogicRva003BC6C7Wrapper.cpp,matched,chain wrapper for GameLogic rva003BA5DD via TheGameLogic
