@@ -39909,3 +39909,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?setPlayerTemplate@GameSlot@@QAEXH@Z,,0x00400E33,108,Code/GameEngine/Source/GameNetwork/GameSlotSetPlayerTemplate.cpp,matched,BFME1 GameInfo.h donor with faction remap and GlobalData flag
 ?setMapCRC@GameInfo@@QAEXI@Z,,0x00400E9F,187,Code/GameEngine/Source/GameNetwork/GameInfoSetMapCRC.cpp,matched,BFME1 GameInfo.cpp setMapCRC donor with inlined availability
 ?setMapSize@GameInfo@@QAEXI@Z,,0x00400F5A,187,Code/GameEngine/Source/GameNetwork/GameInfoSetMapSize.cpp,matched,BFME1 GameInfo.cpp setMapSize twin of setMapCRC
+??1Rva00355D66@@UAE@XZ,,0x00355D66,73,Code/GameEngine/Source/Common/Rva00355D66Dtor.cpp,matched,vtable 0x00814E5C plus WindowManager slot 0x8C plus base dtor row
