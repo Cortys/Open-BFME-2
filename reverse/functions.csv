@@ -39855,3 +39855,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva004E7A76@Rva004E7A76@@QAEXXZ,,0x004E7A76,15,Code/GameEngine/Source/Common/Rva004E7A76Fwd.cpp,matched,tail forward slot2 via plus8 6 callers
 ?rva002B2F0C@Rva002B2F0C@@QAEAAV1@PAURva002B2F0CTarget@@@Z,,0x002B2F0C,21,Code/GameEngine/Source/Common/Rva002B2F0CSet.cpp,matched,intrusive ref setter stores ptr plus inc 0xB0 plus return this
 ??0Rva004D582B@@QAE@XZ,,0x004D582B,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor base plus type 15 plus byte plus vtable 0x860244
+??0Rva004D59B8@@QAE@XZ,,0x004D59B8,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor base plus dword plus vtable 0x860244 plus type 28
