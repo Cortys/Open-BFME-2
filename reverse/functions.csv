@@ -40728,3 +40728,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00528C65@Rva00528C65@@QBE?AVAsciiString@@XZ,,0x00528C65,32,Code/GameEngine/Source/Common/Rva00528C65Getter.cpp,matched,AsciiString copy [ecx+4]+0x12C via 0x365F0 caller 0x529224
 ?rva007590B0@Rva007590B0@@QAEXPAURva007590B0Node@@@Z,,0x007590B0,51,Code/GameEngine/Source/Common/System/Rva007590B0TreeFree.cpp,matched,unlock lane tree free via self plus free 30830 twin 59AE0
 ?rva00759AE0@Rva007590B0@@QAEXXZ,,0x00759AE0,51,Code/GameEngine/Source/Common/System/Rva007590B0TreeFree.cpp,matched,chain via tree free 590B0 reset sentinel same class
+??0Rva0023E8D8@@QAE@PAX@Z,,0x0023E8D8,53,Code/Libraries/Source/WWVegas/WWLib/Rva0023E8D8Ctor.cpp,matched,ctor wrapper refcounted impl via caller 0x00512069
