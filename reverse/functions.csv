@@ -40817,3 +40817,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005D2449@Rva005D242F@@UAEXXZ,,0x005D2449,25,Code/GameEngine/Source/Common/Rva005D242FDtor.cpp,matched,vslot 2 validate plus cond clear -1
 ?rva005D24B1@Rva005D242F@@UAEXXZ,,0x005D24B1,52,Code/GameEngine/Source/Common/Rva005D242FDtor.cpp,matched,vslot 1 validate cond imul call store
 ?rva00418D3C@Rva00418BFB@@QAE?AURva00418BFBPair@@ABURva00418BFBKey@@@Z,,0x00418D3C,166,Code/GameEngine/Source/Common/Rva00418D3CInsertUnique.cpp,matched,tree insert_unique via member less and rowed Minsert
+??_GRva00448089@@QAEPAXI@Z,,0x004480F7,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-448089.cpp,matched,deleting dtor calls rowed dtor 0x00448089 then delete
