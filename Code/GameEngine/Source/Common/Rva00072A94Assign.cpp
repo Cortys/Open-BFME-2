@@ -41,3 +41,20 @@ Rva00072A94 &Rva00072A94::operator=(const Rva00072A94 &other)
 	}
 	return *this;
 }
+
+// ?Rva000E1860Copy@@YAPAVRva00072A94@@PAV1@00@Z, RVA 0x000E1860, 47B. Forward
+// copy for Rva00072A94 holders using rowed assignment 0x00072A94.
+// count = last-first; if <=0 return dest; else for (i=n;i!=0;--i)
+// { *dest = *first; ++first; ++dest; } return dest. Caller at 0x000E1D64.
+Rva00072A94 *__cdecl Rva000E1860Copy(Rva00072A94 *first, Rva00072A94 *last, Rva00072A94 *dest)
+{
+	int n = last - first;
+	if (n <= 0)
+		return dest;
+	for (int i = n; i != 0; --i) {
+		*dest = *first;
+		++first;
+		++dest;
+	}
+	return dest;
+}
