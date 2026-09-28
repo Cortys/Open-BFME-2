@@ -8,7 +8,7 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 * We rewrite the game's code as C++, one small piece at a time.
 * Each piece must turn back into the exact same bytes as the original game.dat (BFME 2, version 1.06).
-* When every piece matches, the whole game is open source, and we can fix bugs and make big mods.
+* When every piece matches, the whole game is open source, and we can fix bugs and make mods.
 * The target is `game.dat` — the real engine PE; `lotrbfme2.exe` is only a launcher stub
 * Sister project of [Open-BFME-1](https://github.com/Open-BFME/Open-BFME-1): same engine family, same MSVC 7.1 toolchain, same workflow — and BFME 1's converted source rides in as a submodule reference
 
@@ -16,8 +16,8 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 ## Status
 
-Green: bytes that match the original game.dat. Blue: bytes matched by C++ source
-code. Retail statically
+Green: bytes rebuilt without copying the original game.dat. Blue: the game's own
+code now in C++. Retail statically
 links Visual C++ 7.1's own support libraries, and `tools/lib_probe.py` places
 their members without needing an attached row to anchor a window. The vendored
 DirectX archives do **not** place — BFME 2 links a later SDK than the Summer
