@@ -13,6 +13,12 @@
 // with (Object 0 1), remove failures, false when group destroyed.
 // Evidence: chain caller of remove 0x0036CF07, caller 0x00372670,
 // slot38 virtual plus remove row, BFME1 removeAny donor shape.
+//
+// ?rva0036DC6F@AIGroup@@QAEXHH@Z @ 0x0036DC6F 30B
+// AIGroup first-member delegate: empty check on +0x04 list, front Object,
+// rva0028C1A9 module lookup, tail-call its slot0 with forwarded args.
+// Evidence: flanked by AIGroup rows 0x0036D7A6 and setAttitude 0x0036DD16,
+// callee rva0028C1A9 row, ret 8 two-arg forward plus jmp [edx] tail shape.
 #include <list>
 #include <algorithm>
 
@@ -25,6 +31,13 @@ class Object
 {
 public:
 	void leaveGroup();
+	void *rva0028C1A9() const;
+};
+
+class Rva0036DC6FIf
+{
+public:
+	virtual void slot0(int a, int b);
 };
 
 class AIGroup;
@@ -97,6 +110,7 @@ public:
 	bool remove(Object *member);
 	bool isEmpty() { return m_memberList.empty(); }
 	bool rva0036D7A6(Rva0036D7A6Outer *o);
+	void rva0036DC6F(int a, int b);
 
 private:
 	virtual void *deleteInstance(int flags);
@@ -137,4 +151,15 @@ bool AIGroup::rva0036D7A6(Rva0036D7A6Outer *o)
 		}
 	}
 	return true;
+}
+
+void AIGroup::rva0036DC6F(int a, int b)
+{
+	if (m_memberList.empty())
+		return;
+	Object *obj = (Object *)m_memberList.front();
+	void *p = obj->rva0028C1A9();
+	if (p == 0)
+		return;
+	((Rva0036DC6FIf *)p)->slot0(a, b);
 }
