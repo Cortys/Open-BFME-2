@@ -9,3 +9,8 @@ int __stdcall Rva0056DD95First(int a, int b)
 {
 	return a;
 }
+
+int __stdcall Rva0056DD86Second(int a, int b)
+{
+	return b;
+}
