@@ -40139,3 +40139,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva006006A9Get@@YG_NPBD@Z,,0x006006A9,20,Code/GameEngine/Source/Common/Rva00600676Get.cpp,matched,sibling of 0x600676 same global 0xA06E5C to slot 11 bool with 1 arg
 ?rva006007A5@Rva006007A5@@QAEXPAX@Z,,0x006007A5,45,Code/GameEngine/Source/Common/Rva006007A5Free.cpp,matched,recursive tree free via child plus8 sibling plus free 0x30830
 ?rva0060082B@Rva006007A5@@QAEXXZ,,0x0060082B,41,Code/GameEngine/Source/Common/Rva006007A5Free.cpp,matched,clear via helper 0x6007A5 then sentinel repair
+?Rva001E4426Test@@YAHPAIH@Z,,0x001E4426,31,Code/GameEngine/Source/Common/Rva001E4426Test.cpp,matched,cdecl bit test over dword array with 3 callers 0x000456AC 0x001E4A4E 0x0028D8EB and Object testStatus shape
