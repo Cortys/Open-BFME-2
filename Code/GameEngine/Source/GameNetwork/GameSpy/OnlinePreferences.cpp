@@ -184,6 +184,10 @@ class QuickMatchPreferences : public UserPreferences
 public:
 	QuickMatchPreferences();
 	virtual ~QuickMatchPreferences();
+	void setColor(Int val);
+	Int getColor(void);
+	void setSide(Int val);
+	Int getSide(void);
 };
 
 class GameSpyMiscPreferences : public UserPreferences
@@ -199,6 +203,26 @@ QuickMatchPreferences::QuickMatchPreferences()
 	AsciiString userPrefFilename;
 	userPrefFilename.format("%s\\QMPref%d.ini", "Online Files", TheGameSpyInfo->getLocalProfileID());
 	load(userPrefFilename);
+}
+
+void QuickMatchPreferences::setColor(Int val)
+{
+	setInt("Color", val);
+}
+
+Int QuickMatchPreferences::getColor(void)
+{
+	return getInt("Color", 0);
+}
+
+void QuickMatchPreferences::setSide(Int val)
+{
+	setInt("Side", val);
+}
+
+Int QuickMatchPreferences::getSide(void)
+{
+	return getInt("Side", 0);
 }
 
 // ??0GameSpyMiscPreferences@@QAE@XZ @0x559711
