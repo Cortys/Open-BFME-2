@@ -40240,3 +40240,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B6EE@Rva0039B709@@QAEIXZ,,0x0039B6EE,27,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,fallback then divide F0-or-global40 by tick rate two callers
 ?Rva0021BAA3Insert@@YAXPAVRva0021915B@@V1@URva0021B753@@@Z,,0x0021BAA3,89,Code/GameEngine/Source/Common/System/Rva0021BAA3Insert.cpp,matched,unguarded linear insert for Rva0021915B with rowed comparator
 ?Rva0021B9A0Median@@YAABVRva0021915B@@ABV1@00URva0021B753@@@Z,,0x0021B9A0,101,Code/GameEngine/Source/Common/Rva0021B9A0Median.cpp,matched,median of three for Rva0021915B with rowed comparator
+?rva0039B9D1@Rva0039B709@@QAEHXZ,,0x0039B9D1,12,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,chain divide fallback getter by 60 two callers same this

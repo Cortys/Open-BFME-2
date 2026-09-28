@@ -11,6 +11,7 @@ public:
 	unsigned int rva0039B709(void);
 	unsigned int rva0039B718(void);
 	unsigned int rva0039B6EE(void);
+	int rva0039B9D1(void);
 
 private:
 	char m_pad00[0xF0];
@@ -50,4 +51,12 @@ unsigned int Rva0039B709::rva0039B6EE(void)
 	if (val == 0)
 		val = Global40Ptr->m_val40;
 	return val / LogicFramesPerSecond;
+}
+
+// ?rva0039B9D1@Rva0039B709@@QAEHXZ @0x0039B9D1 12B chain divide of the fallback
+// getter by 60 seconds. Evidence: chain from just-landed 0xB6EE with same
+// this; callers 0x0039B9F0 and 0x005BED31.
+int Rva0039B709::rva0039B9D1(void)
+{
+	return (int)rva0039B6EE() / 60;
 }
