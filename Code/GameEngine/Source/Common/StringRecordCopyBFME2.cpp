@@ -202,3 +202,20 @@ private:
 };
 Rva001EA443::~Rva001EA443() {}
 void famgenDelete001EA443(Rva001EA443 *p) { delete p; }
+
+// Retail dtor 0x00395D77 (53B): two narrow-string members at +0/+4 destroyed
+// in reverse order through the pinned StringBase dtor at 0x36410 with /EHsc
+// states. Same 53B shape as 0x001EA443 in this TU (mov eax scope-table reloc
+// plus EH prolog plus two releaseBuffer calls). Callers at 0x3962CE 0x396EF2
+// 0x396F22 0x39933F 0x39A618 plus jmp tail at 0x39698F prove dtor role.
+// Next copy 0x395E75 (BfmeStringRecord00395E75 text0 text1 word) shares the
+// string-pair layout. Honest Rva address name; same flags.
+class Rva00395D77
+{
+public:
+	~Rva00395D77();
+private:
+	StringBase<char> m_text0;
+	StringBase<char> m_text1;
+};
+Rva00395D77::~Rva00395D77() {}
