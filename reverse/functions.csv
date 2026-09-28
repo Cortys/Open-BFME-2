@@ -40949,3 +40949,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0029F93A@Rva0029F93A@@QAEXH@Z,,0x0029F93A,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_int_remove_guard.cpp,matched,guarded list int remove at plus9C4
 ??1Rva00382B3F@@QAE@XZ,,0x00382B3F,8,Code/GameEngine/Source/Common/Rva00382B3FDtor.cpp,matched,dtor tail-jmp to BuddyInfo
 ?rva0015168C@Rva0015168C@@QAE_NPAVCreateAHeroData@@@Z,,0x0015168C,53,Code/Libraries/Source/WWVegas/WWLib/Rva0015168CHeroContains.cpp,matched,hero contains via find
+?rva001085B4@Rva001085B4@@QAE?AVAssetReference@@XZ,,0x001085B4,27,Code/GameEngine/Source/Common/RTS/Rva001085B4.cpp,matched,AssetReference member at +0x30 via 5 call sites
