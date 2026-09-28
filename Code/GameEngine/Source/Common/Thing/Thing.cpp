@@ -226,39 +226,7 @@ void Thing::setPositionZ( Real z )
 }
 
 //=============================================================================
-// ?setPosition@Thing@@ present-unmatched
-void Thing::setPosition( const Coord3D *pos )
-{
-	//USE_PERF_TIMER(ThingMatrixStuff)
-	if( !(reinterpret_cast<const unsigned char *>(m_template.operator->())[0xc8] & 0x10) )
-	{
-		Real oldAngle = m_cachedAngle;
-		Coord3D oldPos;
-		oldPos.x = m_cachedPos.x;
-		oldPos.y = m_cachedPos.y;
-		oldPos.z = m_cachedPos.z;
-		Matrix3D oldMtx;
-		oldMtx = m_transform;
-
-		//DEBUG_ASSERTCRASH(!(_isnan(pos->x) || _isnan(pos->y) || _isnan(pos->z)), ("Drawable/Object position NAN! '%s'\n", m_template->getName().str() ));
-		m_transform.Set_X_Translation( pos->x );
-		m_transform.Set_Y_Translation( pos->y );
-		m_transform.Set_Z_Translation( pos->z );
-		m_cachedPos = *pos;
-		m_cacheFlags &= ~(VALID_ALTITUDE_TERRAIN | VALID_ALTITUDE_SEALEVEL);	// but don't clear the dir flags.
-
-		reinterpret_cast<BFMERetailThingVTable *>(this)->reactToTransformChange(&oldMtx, &oldPos, oldAngle);
-	}
-	else
-	{
-		Matrix3D mtx;
-		const Bool stickToGround = true;	// yes, set the "z" pos				
-		reinterpret_cast<BFMERetailTerrainLogicVTable *>(TheTerrainLogic)->alignOnTerrain(getOrientation(), *pos, stickToGround, mtx );
-		setTransformMatrix(&mtx);
-	}
-	DEBUG_ASSERTCRASH(!(_isnan(getPosition()->x) || _isnan(getPosition()->y) || _isnan(getPosition()->z)), ("Drawable/Object position NAN! '%s'\n", m_template->getName().str() ));
-}
-
+// byte-exact reconstruction: Code/GameEngine/Source/Common/Thing/ThingSetPosition.cpp
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngine/Source/Common/Thing/ThingSetOrientation.cpp
 //=============================================================================
@@ -406,3 +374,12 @@ void Thing::transformPoint( const Coord3D *in, Coord3D *out )
 	out->z = vectorOut.Z;
 
 }  // end transformPoint
+
+// Carrier to keep emitting the 10B Matrix3D::Set_Y_Translation alias rowed from
+// this TU after Thing::setPosition moved to ThingSetPosition.cpp.
+// ?carrierThingSetYTranslation@@YAXXZ present-unmatched
+void carrierThingSetYTranslation()
+{
+	Matrix3D m;
+	m.Set_Y_Translation(0.0f);
+}

@@ -40174,3 +40174,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005E7204Fill@@YAPAPAXPAPAXI0PAX@Z,,0x005E7204,37,Code/GameEngine/Source/Common/Bfme/Rva005E7204Fill.cpp,matched,fill looping 0x005E71C6 assign 4th word ignored caller 0x005E81F9
 ?rva002D06CA@Rva002D06CA@@QAEPAXPBVAsciiString@@@Z,,0x002D06CA,38,Code/GameEngine/Source/GameClient/Rva002D06CAGet.cpp,matched,sibling Rva0021311F same recipe plus callers 0x001E0243 0x0033947E unlock fanout
 ?setTransformMatrix@Thing@@QAEXPBVMatrix3D@@@Z,,0x0030A2B7,301,Code/GameEngine/Source/Common/Thing/ThingSetTransformMatrix.cpp,matched,ZH donor Thing setTransformMatrix unconditional react slot 0x14
+?setPosition@Thing@@QAEXPBUCoord3D@@@Z,,0x0030AA80,285,Code/GameEngine/Source/Common/Thing/ThingSetPosition.cpp,matched,ZH donor Thing setPosition KINDOF 0x108 align slot 0x48
