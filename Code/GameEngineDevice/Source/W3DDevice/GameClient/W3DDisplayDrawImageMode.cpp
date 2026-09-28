@@ -16,6 +16,10 @@
 // Evidence: byte-identical to 0x0004D664 except middle slot DC vs E0; pre/post
 // +0xD4/+0x100 shared; callers pass TheDisplay global 0x00DFE9D8 as this
 // (0x00314B75/0x0008F395 second branch single color 0xBBFFBB33).
+// ?rva0008EE9E@W3DDisplay@@QAEXMMMMMHH@Z, retail 0x0008EE9E, 82 bytes.
+// Same pre/post (+0xD4/+0x100) with 7-arg core at +0xD8 (5 Reals + 2 Ints).
+// Evidence: sibling of 0x0008EEF0 with one extra pushed color; sole caller
+// 0x0008F424 pushes 0xBBFFBB33 twice via TheDisplay path.
 
 class Image;
 
@@ -76,7 +80,7 @@ public:
 	virtual void unused51();
 	virtual void unused52();
 	virtual void beginImageDraw();
-	virtual void unused54();
+	virtual void slotD8(float x0, float y0, float x1, float y1, float w, int color0, int color1);
 	virtual void slotDC(float x0, float y0, float x1, float y1, float w, int color);
 	virtual void slotE0(float x0, float y0, float x1, float y1, float w, int color);
 	virtual void unused57();
@@ -91,6 +95,7 @@ public:
 	void rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
 	void rva0004D664(float x0, float y0, float x1, float y1, float w, int color);
 	void rva0008EEF0(float x0, float y0, float x1, float y1, float w, int color);
+	void rva0008EE9E(float x0, float y0, float x1, float y1, float w, int color0, int color1);
 };
 
 void W3DDisplay::rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode)
@@ -111,5 +116,12 @@ void W3DDisplay::rva0008EEF0(float x0, float y0, float x1, float y1, float w, in
 {
 	beginImageDraw();
 	slotE0(x0, y0, x1, y1, w, color);
+	endImageDraw();
+}
+
+void W3DDisplay::rva0008EE9E(float x0, float y0, float x1, float y1, float w, int color0, int color1)
+{
+	beginImageDraw();
+	slotD8(x0, y0, x1, y1, w, color0, color1);
 	endImageDraw();
 }
