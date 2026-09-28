@@ -82,3 +82,10 @@ Int GadgetComboBoxAddEntry(GameWindow *comboBox, UnicodeString text, Color color
 		return -1;
 	return (Int)TheWindowManager->winSendSystemMsg(comboBox, 0x4022, (WindowMsgData)&text, color);
 }
+
+Int Rva00322E19Add(GameWindow *comboBox, UnicodeString text, Color color)
+{
+	if (comboBox == NULL)
+		return -1;
+	return (Int)TheWindowManager->winSendSystemMsg(comboBox, 0x4023, (WindowMsgData)&text, color);
+}
