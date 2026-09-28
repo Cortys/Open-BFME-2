@@ -142,6 +142,7 @@ public:
 	void rva0036F265(Object *target, CommandSourceType cmdSource);
 	void rva0036F2CA(Object *target, CommandSourceType cmdSource);
 	void rva0036F32F(const Coord3D *position, CommandSourceType cmdSource);
+	void rva0036F4DF(Object *target, Int value, CommandSourceType cmdSource);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
 };
 
@@ -548,6 +549,17 @@ void AICommandInterface::rva0036F32F(const Coord3D *position, CommandSourceType 
 {
 	AICommandParms parms((AICommandType)0x19, cmdSource);
 	parms.m_pos = *position;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F4DF@AICommandInterface@@QAEXPAVObject@@HW4CommandSourceType@@@Z, retail 0x0036F4DF, 110 bytes.
+// Same 110B object-plus-int shape as aiForceAttackObject in this TU: AICMD 0x1F plus m_obj at +0x14 plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// Class proven by gap between aiGuardPosition and rva0036F6A7 plus same TU flags; callers at 0x00370440 0x003C8A0C 0x003C9D01.
+void AICommandInterface::rva0036F4DF(Object *target, Int value, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x1F, cmdSource);
+	parms.m_obj = target;
+	parms.m_intValue = value;
 	aiDoCommand(&parms);
 }
 
