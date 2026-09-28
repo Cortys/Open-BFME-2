@@ -40499,3 +40499,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00142BE0@Rva00142BE0@@QAEXXZ,,0x00142BE0,52,Code/GameEngine/Source/Common/System/Rva00142BE0ArrayPop.cpp,matched,single-step release from array at 0x30 with counts at 0xB0 and 0xB4
 ?Rva002ACF9CInsert@@YGPAPAXPAPAXPAX0@Z,,0x002ACF9C,37,Code/GameEngine/Source/Common/Rva002ACF9CInsert.cpp,matched,Freelist node insert via rowed Rva002AC04EAlloc same as Rva00239D02Insert
 ?rva004695DA@Rva004695DA@@QAEEXZ,,0x004695DA,40,Code/GameEngine/Source/Common/Rva004695DAGet.cpp,matched,flag 0x80 at obj plus4 plus116 then weapon null gives 1 else byte get
+?rva004693AD@Rva004693AD@@QAE_NPAURva004693ADArg@@@Z,,0x004693AD,44,Code/GameEngine/Source/Common/Rva004693ADCheck.cpp,matched,int at arg74 vs this 264 26c or flag109 bit8
