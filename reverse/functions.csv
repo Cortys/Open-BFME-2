@@ -39016,3 +39016,4 @@ _CopyBlock,,0x001B7F30,142,Code/Libraries/Source/Theora/CopyBlock.c,matched,vend
 ?Rva007F8E10TaggedField@@YGIPBURva007F8E10Fields@@PBURva007F8E10Message@@@Z,,0x00665490,134,Code/GameEngine/Source/GameNetwork/Rva007F8E10TaggedField.cpp,matched,BFME1 byte-identical donor; b1 0x007F8E10
 ?Rva00844F60FindTwoWideRanges@@YAHGPBG0G@Z,,0x00018180,116,Code/Libraries/Source/WWVegas/WWLib/Rva00844F60DualRangeFind.cpp,matched,BFME1 byte-identical donor; b1 0x00844F60
 ?Rva009A7560Copy12x12@@YAXPBEPAEHH@Z,,0x001B7FC0,113,Code/GameEngine/Source/Common/SmallGaps/Rva009A74D0BlockCopies.cpp,matched,BFME1 byte-identical donor; b1 0x009A7560
+?Rva009A7EF0@@YAXPBEPAEHHHHPBH@Z,,0x001B8950,108,Code/GameEngine/Source/Common/Rva009A7EF0.cpp,matched,BFME1 byte-identical donor; b1 0x009A7EF0
