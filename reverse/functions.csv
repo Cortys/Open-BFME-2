@@ -40711,3 +40711,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003062FEXfer@@YAXPAVXfer@@PAM@Z,,0x003062FE,41,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,triple 4-float row via nested Xfer star helper
 ?rva0055ADD8@Rva0055ADD8@@QAEHH@Z,,0x0055ADD8,10,Code/GameEngine/Source/Common/Rva0055ADD8Thunk.cpp,matched,thunk const 3 to vslot 7 callers 0x573CED
 ?xferUnicodeStringVector@@YAPAVXfer@@PAV1@PAV?$vector@VUnicodeString@@V?$allocator@VUnicodeString@@@_STL@@@_STL@@@Z,,0x0005CD41,241,Code/GameEngine/Source/Common/System/XferUnicodeStringVector.cpp,matched,chain via push_back 5CBE7 donor BFME1 XferUnicodeStringVector with BFME2 push-then-xfer order
+??1Rva002AC340@@MAE@XZ,,0x002AC366,60,Code/GameEngine/Source/Common/Rva002AC340Dtor.cpp,matched,Rva002AC340 dtor via vector free and Snapshot base 0xBBB554 same as ctor 0x002AC340
