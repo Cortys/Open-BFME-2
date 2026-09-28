@@ -39645,3 +39645,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva002B2FE2Copy@@YAXPAVRva004F6093Holder@@ABV1@@Z,,0x002B2FE2,18,Code/GameEngine/Source/Common/Rva002B2FE2Copy.cpp,matched,null-checked placement copy via rowed 0x4F6093 throw removes EH
 ?Rva003F74F5Fill@@YAPAVRva004F6093Holder@@PAV1@IABV1@@Z,,0x003F74F5,37,Code/GameEngine/Source/Common/Rva003F74F5Fill.cpp,matched,honest fill_n stride 4 via rowed 0x2B2FE2 mirrors Pod104 fill_n
 ?Rva003F74CFCopy@@YAPAVRva004F6093Holder@@PAV1@00@Z,,0x003F74CF,38,Code/GameEngine/Source/Common/Rva003F74CFCopy.cpp,matched,honest uninit-copy stride 4 via rowed 0x2B2FE2 sibling of fill_n
+?rva001F0878@ObjectCreationList@@QAEXPAX00H@Z,,0x001F0878,91,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 through store find at 0x1F07B8
