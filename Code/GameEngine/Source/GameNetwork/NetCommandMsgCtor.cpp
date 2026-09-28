@@ -92,3 +92,19 @@ Rva004D5795::Rva004D5795() : NetCommandMsg()
 	m_1c = 0;
 	m_commandType = (NetCommandType)10;
 }
+
+// ??0Rva004D57AE@@QAE@XZ @0x004D57AE 25B: calls base plus dword 0 at +0x1c via And plus vtable 0x860234 plus type 11 at +0x14.
+// Honest-address ctor with 4-byte derived member; And is /O1 size form of =0.
+class Rva004D57AE : public NetCommandMsg
+{
+public:
+	Rva004D57AE();
+private:
+	unsigned int m_1c;
+};
+
+Rva004D57AE::Rva004D57AE() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_commandType = (NetCommandType)11;
+}
