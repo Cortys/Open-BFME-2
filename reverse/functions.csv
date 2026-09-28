@@ -39586,3 +39586,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva001E4912@Rva001E4912@@QAEPAV1@HII@Z,,0x001E4912,66,Code/GameEngine/Source/Common/Rva001E4912Init.cpp,matched,memset 0x4c plus two bit sets via 24 callers returns this
 ?rva001E434A@Rva001E434A@@QAEPAXXZ,,0x001E434A,19,Code/GameEngine/Source/Common/Rva001E434ASelect.cpp,matched,select member by flag plus 0x1a6 via 3 callers
 ?rva001E4147@Rva001E4147@@QAEXPAURva001E4147Twelve@@@Z,,0x001E4147,24,Code/GameEngine/Source/Common/Rva001E4147Copy.cpp,matched,copy 12B src plus 0x38 to this plus 0x14 if src
+?Rva001E4194Get@@YG_NPAURva001E4194A@@@Z,,0x001E4194,24,Code/GameEngine/Source/Common/Rva001E4194Get.cpp,matched,bool via double deref plus 0x25c then plus 0x5c
