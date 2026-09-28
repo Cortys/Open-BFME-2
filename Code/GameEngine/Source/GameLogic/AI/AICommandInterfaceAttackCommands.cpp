@@ -141,6 +141,7 @@ public:
 	void rva0036F200(Object *target, CommandSourceType cmdSource);
 	void rva0036F265(Object *target, CommandSourceType cmdSource);
 	void rva0036F2CA(Object *target, CommandSourceType cmdSource);
+	void rva0036F32F(const Coord3D *position, CommandSourceType cmdSource);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
 };
 
@@ -537,6 +538,16 @@ void AICommandInterface::rva0036F2CA(Object *target, CommandSourceType cmdSource
 {
 	AICommandParms parms((AICommandType)0x16, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F32F@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z, retail 0x0036F32F, 108 bytes.
+// Same 108B position shape as aiTightenToPosition in this TU: AICMD 0x19 plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// Class proven by gap between rva0036F2CA and aiExit plus same TU flags; callers at 0x00370272 0x00494767 0x004A731D.
+void AICommandInterface::rva0036F32F(const Coord3D *position, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x19, cmdSource);
+	parms.m_pos = *position;
 	aiDoCommand(&parms);
 }
 
