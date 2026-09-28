@@ -40776,3 +40776,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0010ED3D@Rva0010ED3D@@QAEXH@Z,,0x0010ED3D,15,Code/GameEngine/Source/Common/Rva0010ED3DMax.cpp,matched,max setter plus3C callers 0xA7FCF 0xA8064
 ?rva0010E482@Rva0010E482@@QAEHH@Z,,0x0010E482,34,Code/GameEngine/Source/Common/Rva0010E482Check.cpp,matched,dual table nonzero check callers 0xE6DA 0xE8DE 0xEAAD
 ?rva0023E7D9@Rva0023E7D9@@QAEXXZ,,0x0023E7D9,97,Code/GameEngine/Source/Common/Rva0023E7D9Clear.cpp,matched,two-list clear delete plus EC take and free
+?rva00407E28@Rva00407E28@@QAEHH@Z,,0x00407E28,43,Code/Libraries/Source/WWVegas/WWLib/stlport_map_rva00407E28.cpp,matched,unlock map find then subscript via rowed find and subscript
