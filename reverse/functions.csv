@@ -40600,3 +40600,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003229C5Hide@@YAXPAVGameWindow@@@Z,,0x003229C5,132,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva003229C5.cpp,matched,ZH donor HideListBox with loneWindow release plus listBox entry accessors
 ?add@Rva002E07AC@@QAEXH@Z,,0x002E07AC,13,Code/GameEngine/Source/Common/Rva002E07ACAdd.cpp,matched,honest Rva adder 1 caller /O1
 ?add@Rva002E07B9@@QAEXH@Z,,0x002E07B9,13,Code/GameEngine/Source/Common/Rva002E07B9Add.cpp,matched,honest Rva adder 1 caller /O1 sibling 07AC
+??$_Destroy@PAURva00395D77@@@_STL@@YAXPAURva00395D77@@0@Z,,0x00399336,25,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395D77Destroy.cpp,matched,stride 0xC via rowed dtor 0x395D77 callers 0x39977A 0x3997CD 0x399800 same shape 0x331FF1
