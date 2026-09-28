@@ -9,6 +9,9 @@
 // 0x003AEBD3, 0x003AEC95, 0x003AED75, 0x003AEE2D, 0x003AEFA5, 0x003AF08D)
 // call this address at the same +0x10 displacement; all vftable dwords
 // are DIR32 sites the gate takes from the target.
+// ??0Rva003AEEB3@@QAE@ABVRvaSmartPtr12@@H@Z retail 0x0055BEE9 56B: same class
+// own vtable 0x00C1D5FC plus second/third 0x00C1C780 via rowed Head 0x003A57C5;
+// callers at 0x003A5861 0x0055B5CA 0x0055BF2C 0x0055F995 0x005641C6.
 
 class RvaSmartPtr12
 {
@@ -46,6 +49,7 @@ public:
 		, m_int10(other.m_int10)
 	{
 	}
+	DefaultModuleHeadBase(const RvaSmartPtr12 &smart, int i);
 	virtual ~DefaultModuleHeadBase();
 
 	RvaSmartPtr12 m_smart; // +0x04
@@ -60,10 +64,16 @@ class Rva003AEEB3 : public DefaultModuleHeadBase, public DefaultModuleSecondBase
 {
 public:
 	__declspec(noinline) Rva003AEEB3(const Rva003AEEB3 &other);
+	__declspec(noinline) Rva003AEEB3(const RvaSmartPtr12 &smart, int i);
 	virtual ~Rva003AEEB3();
 };
 
 Rva003AEEB3::Rva003AEEB3(const Rva003AEEB3 &other)
 	: DefaultModuleHeadBase(other)
+{
+}
+
+Rva003AEEB3::Rva003AEEB3(const RvaSmartPtr12 &smart, int i)
+	: DefaultModuleHeadBase(smart, i)
 {
 }
