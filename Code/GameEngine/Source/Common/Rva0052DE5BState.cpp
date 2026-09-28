@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /G7 /DNDEBUG /MD /EHsc
 //
 // Rva0052DE5B::rva0052DE5B (retail 0x0052DE5B, 64 bytes): finish-reset that
 // releases the node buffer back to the pool at 0x00A049D0 when the low nibble
@@ -33,10 +33,13 @@ class Rva0052DE5B
 {
 public:
 	void rva0052DE5B();
+	void rva0052DED3();
 
 private:
 	Rva0052DE5BNode *m_node;
-	unsigned char m_pad[8];
+	unsigned int m_4;
+	unsigned short m_8;
+	unsigned short m_A;
 	unsigned int m_flags;
 };
 
@@ -58,4 +61,12 @@ void Rva0052DE5B::rva0052DE5B()
 		return;
 	((MixFileInfoBuffer *)node)->releaseInto(&TheMixFileInfoPool);
 	m_node = 0;
+}
+
+void Rva0052DE5B::rva0052DED3()
+{
+	m_4 = 0;
+	m_8 = 0xffff;
+	m_flags = (m_flags & 0xff000010) | 0x10;
+	rva0052DE5B();
 }
