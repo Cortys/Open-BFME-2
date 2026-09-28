@@ -39925,3 +39925,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva006D8A50@BfmeAptValue006DCD20@@QAEPAV1@H@Z,,0x006D8A50,121,Code/Libraries/Source/Apt/AptValue/AptValueArrayAt.cpp,matched,array At via _Apt.h asserts callers 0x006D94A0 0x006D9B50
 ?Rva006D9B50Pop@@YAPAVBfmeAptValue006DCD20@@PAV1@@Z,,0x006D9B50,92,Code/Libraries/Source/Apt/AptValue/AptValueArrayAt.cpp,matched,array Pop via At isArray cast callers none chain from 0x006D8A50
 ??1Rva00151DAB@@QAE@XZ,,0x00151DAB,13,Code/GameEngine/Source/Common/Rva00151DABTextureRelease.cpp,matched,8B holder tex at +4 via rowed Release_Ref callers 0x151EB1 0x5209B 0x70B19
+??_GRva00151DAB@@QAEPAXI@Z,,0x00151EB1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-b4f6.cpp,matched,deleting dtor for Rva00151DAB rowed 0x151DAB
