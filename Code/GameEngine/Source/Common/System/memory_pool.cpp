@@ -37,14 +37,17 @@ struct BlockInfo
 	bool m_mapped;
 };
 
-// PPMalloc's allocator. Most methods remain address-named; one now has a
-// donor PDB name backed by an exact target body and boundary.
+// PPMalloc's allocator. Most methods remain address-named; a few now have
+// donor PDB names backed by exact target bodies and boundaries.
 class GeneralAllocator
 {
 public:
 	// Godfather PPMalloc 1.03.01 PDB name; retail stores the two arguments
 	// at +0x4B8 and +0x4BC. Their callback contract remains donor-derived.
 	void SetAssertionFailureFunction(void *function, void *context);
+	// Donor PDB name; target caller at 0x32D7F and the chunk-header stores
+	// support the fencepost role. The precise chunk type remains unknown.
+	static void AddDoubleFencepost(void *chunk, unsigned int flags);
 	bool rva00032830(const void *block, int addressType);	// ValidateAddress-like
 	bool rva00032920(const void *block);			// owns-address test
 	bool rva000329E0(int level);				// ValidateHeap-like
@@ -65,6 +68,20 @@ void GeneralAllocator::SetAssertionFailureFunction(void *function, void *context
 	*reinterpret_cast<void **>(fields + 4) = context;
 }
 
+void GeneralAllocator::AddDoubleFencepost(void *chunk, unsigned int flags)
+{
+	unsigned int *const header = static_cast<unsigned int *>(chunk);
+	unsigned int size = header[1];
+	unsigned int fencepostOffset = (size & 0x7FFFFFF8) - 9;
+	fencepostOffset &= 0xFFFFFFF8;
+	header[1] = (size & 0x80000007) | fencepostOffset;
+	unsigned int *const fencepost = reinterpret_cast<unsigned int *>(
+		reinterpret_cast<char *>(chunk) + fencepostOffset);
+	fencepost[0] = fencepostOffset;
+	fencepost[1] = flags | 8;
+	fencepost[2] = 8;
+	fencepost[3] = 9;
+}
 
 }
 }
