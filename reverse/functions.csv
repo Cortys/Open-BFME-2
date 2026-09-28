@@ -40721,3 +40721,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00528273@Rva00528273@@QAEXXZ,,0x00528273,7,Code/GameEngine/Source/Common/Rva00528273Clear.cpp,matched,ptr-chase and 0x1C 0 caller jmp 0x2D36A9
 ??1Rva00528B06@@UAE@XZ,,0x00528F25,11,Code/GameEngine/Source/Common/Rva00528B06Ctor.cpp,matched,dtor vtable 0x8681C4 tail base 0x5C31FB same class as 0x528B06
 ??_GRva002AC340@@MAEPAXI@Z,,0x002AC3A2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10.cpp,matched,deleting dtor slot 0 vtable 0x7FDD6C via rowed dtor 0x002AC366
+?rva0055AFF1@Rva0055AFF1@@QAEXH@Z,,0x0055AFF1,46,Code/GameEngine/Source/Common/Rva0055AFF1ListRemove.cpp,matched,list int find-erase at plus1C caller 0x55B0FB
