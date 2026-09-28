@@ -2358,3 +2358,4 @@ FUN_0079d954	0x0039D954	42	blocked	linked-list count via plus40 getter with indi
 FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm plus pop-eax prolog/epilog 24 fns not compiler-emittable no asm copy per anti-lift boundary 379B ret t=12 model=muse-48a8
 FUN_0045407E	0x0005407E	41	blocked	AudioSettings.ini INI-load wrapper needs MilesAudioManager layout plus INI+8 field meaning t=10 model=muse-829b
 FUN_008d7744	0x004D7744	535	blocked	StateMachine xfer version 1-4 with owner at +0x14 plus ObjectID at +0x34 plus 3 bools plus goalRange; chaining via Xfer& returns plus interleaved pushes needs layout evidence and stronger model t=15 model=muse-42e3
+?rva00318F42@Drawable@@QBEHXZ	0x00318F42	34	blocked	two getWheelInfo calls reuse ecx with no spill or reload; declared-only callee spills via esi-edx across O1 O2 Os Ob0 plus test-setg vs sar-sbb-neg t=20 model=muse-f6b6
