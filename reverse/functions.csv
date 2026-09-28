@@ -40237,3 +40237,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B795@Rva0039B795@@QAEXH@Z,,0x0039B795,24,Code/GameEngine/Source/Common/Rva0039B795CondAdd.cpp,matched,conditional add plus08 when global98 nonzero caller 0x3B0D65
 ?rva0039B7CB@Rva0039B795@@QAEXH@Z,,0x0039B7CB,24,Code/GameEngine/Source/Common/Rva0039B795CondAdd.cpp,matched,sibling conditional add plus0C same flag caller 0x23D878
 ?rva0039B7E3@Rva0039B795@@QAEXH@Z,,0x0039B7E3,24,Code/GameEngine/Source/Common/Rva0039B795CondAdd.cpp,matched,sibling conditional add plus10 same flag caller 0x23D86E
+?rva0039B6EE@Rva0039B709@@QAEIXZ,,0x0039B6EE,27,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,fallback then divide F0-or-global40 by tick rate two callers

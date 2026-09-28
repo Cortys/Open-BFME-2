@@ -10,6 +10,7 @@ class Rva0039B709
 public:
 	unsigned int rva0039B709(void);
 	unsigned int rva0039B718(void);
+	unsigned int rva0039B6EE(void);
 
 private:
 	char m_pad00[0xF0];
@@ -38,4 +39,15 @@ unsigned int Rva0039B709::rva0039B718(void)
 	if (m_fieldF0 != 0)
 		return m_fieldF0;
 	return Global40Ptr->m_val40;
+}
+
+// ?rva0039B6EE@Rva0039B709@@QAEIXZ @0x0039B6EE 27B fallback then divide: F0 or
+// Global40 divided by LogicFramesPerSecond. Evidence: callers 0x0039B9D1 and
+// 0x005BEAE8 in the same big function as the div caller; same class.
+unsigned int Rva0039B709::rva0039B6EE(void)
+{
+	unsigned int val = m_fieldF0;
+	if (val == 0)
+		val = Global40Ptr->m_val40;
+	return val / LogicFramesPerSecond;
 }
