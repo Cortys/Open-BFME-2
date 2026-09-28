@@ -1,0 +1,25 @@
+// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?rva005B2DDF@Rva005B2DDF@@QAEPAXII@Z @0x005B2DDF 42B
+// Unlock lane: bounds-checked 2D grid lookup over a vector of 16-byte rows at +0x14.
+// count = (finish-start)/16 via vector<BfmeE16>::size(); if a>=count return 0;
+// if b>=4 return 0; else return ((void**)row)[a*4+b]. Callers 0x005B2E09/0x005B2E35
+// (prev/next search loops) and 0x005B314B/0x005B3245 (sscanf %d,%d Apt tooltips
+// CAH Palantir/HeroPowers) deref the result as a pointer. BfmeE16 is a size
+// stand-in per stlport_vector_e16_o1.cpp; the 16B stride and sar-4 match retail.
+#include <vector>
+struct BfmeE16 { float x, y, z, w; };
+class Rva005B2DDF {
+  char m_00[0x14];
+  _STL::vector<BfmeE16> m_14;
+public:
+  void* rva005B2DDF(unsigned a, unsigned b);
+};
+void* Rva005B2DDF::rva005B2DDF(unsigned a, unsigned b)
+{
+  if (a >= m_14.size())
+    return 0;
+  if (b >= 4)
+    return 0;
+  return ((void**)&m_14[0])[a * 4 + b];
+}
