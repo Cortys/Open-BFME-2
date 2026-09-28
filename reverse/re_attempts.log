@@ -2286,3 +2286,4 @@ FUN_0098b567	0x0058B567	113	blocked	FrameDataManager ctor needs vtable order plu
 ?buildSegments@W3DRopeDraw@@AAEXXZ	0x000CA9F1	564	blocked	donor far 88B longer 35 regions EH prolog mismatch t=8 model=muse-434c
 ?rva0028C24C@Object@@QAEXXZ	0x0028C24C	24	partial	eax-edx swap for LogicFPS vs TheGameLogic plus imul needs G7 t=20 model=muse-728a score=0.95 stash=reverse/attempts/0x0028c24c.cpp
 ??0Rva00985E4@@QAE@XZ	0x0030AFC4	55	partial	int store m_3C grouped early vs retail interleaved t=22 model=muse-7aec score=0.93 stash=reverse/attempts/0x0030afc4.cpp
+?rva002D2DB2@Rva002D2DB2@@QAEXHH@Z	0x002D2DB2	34	blocked	register wall this in ecx vs eax and lea vs imul t=12 model=muse-434c
