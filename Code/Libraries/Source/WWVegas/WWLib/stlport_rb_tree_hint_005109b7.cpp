@@ -8,17 +8,22 @@
 // Comparison reaches the established AsciiString operator< at 0x5598C.
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
 #include <map>
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
 bool operator<(const AsciiString &, const AsciiString &);
-// Only the copied pointer and pointee reference-count prefix are established.
-// The original application type and release behavior remain unidentified.
+// Retail pair destructor 0x0050ED1F releases its non-null mapped pointer
+// through the shared rowed fastcall 0x0007DEEF before destroying the
+// AsciiString key, identical to 0x002175CE except its EH scopetable.
+// The pointee carries a virtual destroy slot and a reference count at +4.
+struct TargetRef00217D4C { virtual void *destroy(unsigned flags); int references; };
+void __fastcall ReleaseTreeHintRef00217D4C(TargetRef00217D4C *);
 struct TreeHintRef0051030C {
-    struct Target { unsigned int unknownHeader; int references; };
-    Target *m_ptr;
+    TargetRef00217D4C *m_ptr;
     TreeHintRef0051030C(const TreeHintRef0051030C &other) : m_ptr(other.m_ptr) {
         if (m_ptr) ++m_ptr->references;
     }
-    ~TreeHintRef0051030C();
+    __forceinline ~TreeHintRef0051030C() {
+        if (m_ptr) ReleaseTreeHintRef00217D4C(m_ptr);
+    }
 };
 
 typedef _STL::pair<const AsciiString, TreeHintRef0051030C> TreeHintPair0051030C;
@@ -43,3 +48,5 @@ template TreeHint0051030C::iterator TreeHint0051030C::insert_unique(TreeHint0051
 // The map wrapper directly calls this tree's verified hinted insertion.
 typedef _STL::map<AsciiString,TreeHintRef0051030C,_STL::less<AsciiString >,_STL::allocator<TreeHintPair0051030C> > MapInsert005109b7;
 template MapInsert005109b7::iterator MapInsert005109b7::insert(MapInsert005109b7::iterator, const TreeHintPair0051030C &);
+
+template void _STL::_Destroy<TreeHintPair0051030C>(TreeHintPair0051030C *);
