@@ -1,0 +1,43 @@
+// cl: /O1 /MD
+// ??4Rva00072A94@@QAEAAV0@ABV0@@Z, RVA 0x00072A94, 47B. Ref-counted holder
+// assignment with self-check: Add_Ref the incoming referent (inc dword at
+// +4) then Release_Ref the held one (dec dword at +4, Delete_This at vtable
+// slot 0 when zero) before copying the pointer. Evidence: 11 free-function
+// callers pass wrapper temps built by factory 0x152C47 (ctor 0x1525FB sets
+// vtable 0x007D3B1C with NumRefs=1 at +4); release halves in callers
+// 0x7DB7D/0x7DBB9/0x83744/0xE1879 inline the same dec-virtual sequence;
+// BfmeAssignRecord32 operator= at 0x173499 calls it 7 times. Shape follows
+// OpaqueRefElement4::operator= at 0x239099 and Rva005EEFD2::operator= at
+// 0x5EEFD2 with inlined non-atomic counting.
+class RefCountClass
+{
+public:
+	virtual void Delete_This();
+	void Add_Ref() { ++NumRefs; }
+	void Release_Ref()
+	{
+		--NumRefs;
+		if (NumRefs == 0)
+			Delete_This();
+	}
+private:
+	int NumRefs;
+};
+class Rva00072A94
+{
+public:
+	Rva00072A94 &operator=(const Rva00072A94 &other);
+private:
+	RefCountClass *m_ptr;
+};
+Rva00072A94 &Rva00072A94::operator=(const Rva00072A94 &other)
+{
+	if (this != &other) {
+		if (other.m_ptr)
+			other.m_ptr->Add_Ref();
+		if (m_ptr)
+			m_ptr->Release_Ref();
+		m_ptr = other.m_ptr;
+	}
+	return *this;
+}

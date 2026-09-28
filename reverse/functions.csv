@@ -39589,3 +39589,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva001E4194Get@@YG_NPAURva001E4194A@@@Z,,0x001E4194,24,Code/GameEngine/Source/Common/Rva001E4194Get.cpp,matched,bool via double deref plus 0x25c then plus 0x5c
 ?rva001E415F@Rva001E415F@@QAEXMH@Z,,0x001E415F,29,Code/GameEngine/Source/Common/Rva001E415FSet.cpp,matched,store float plus 0x5c and frame plus int plus 0x60
 ?Rva00275D9FGet@@YA_NPBVRva00263546@@@Z,,0x00275D9F,47,Code/GameEngine/Source/Common/Rva00275D9FGet.cpp,matched,one-time init global mask then overlap test
+??4Rva00072A94@@QAEAAV0@ABV0@@Z,,0x00072A94,47,Code/GameEngine/Source/Common/Rva00072A94Assign.cpp,matched,honest holder assign self-check inc-dec with slot0 Delete_This via 11 callers and factory 0x152C47
