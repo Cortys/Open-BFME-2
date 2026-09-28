@@ -179,3 +179,32 @@ Rva004D580E::Rva004D580E() : NetCommandMsg()
 	m_commandType = (NetCommandType)27;
 	m_1c = 0;
 }
+
+// ??0NetWrapperCommandMsg@@QAE@XZ @0x004D5844 45B: calls base plus six dword 0 at +0x1c/+0x20/+0x24/+0x28/+0x2c/+0x30 plus word 0 at +0x34 plus vtable 0x860254 plus type 18 (WRAPPER).
+// Real name via vtable 0x860254 and sibling dtor ??1NetWrapperCommandMsg@@MAE@XZ at 0x004D5871; same /O1 recipe as ctors above.
+// Callers at 0x0058E108 0x00594762.
+class NetWrapperCommandMsg : public NetCommandMsg
+{
+public:
+	NetWrapperCommandMsg();
+private:
+	unsigned int m_1c;
+	unsigned int m_20;
+	unsigned int m_24;
+	unsigned int m_28;
+	unsigned int m_2c;
+	unsigned int m_30;
+	unsigned short m_34;
+};
+
+NetWrapperCommandMsg::NetWrapperCommandMsg() : NetCommandMsg()
+{
+	m_30 = 0;
+	m_1c = 0;
+	m_28 = 0;
+	m_2c = 0;
+	m_20 = 0;
+	m_24 = 0;
+	m_34 = 0;
+	m_commandType = (NetCommandType)18;
+}
