@@ -15,13 +15,26 @@ class Rva002C589B
 {
 public:
 	~Rva002C589B();
+	void rva002C5843(bool v);
 
 private:
-	char m_pad[0x24];
+	char m_pad[0x18];
+	bool m_18;
+	bool m_19;
+	char m_pad1A[0xA];
 	Rva003ECDB7Object *m_ptr;
 };
 
 Rva002C589B::~Rva002C589B()
 {
 	delete m_ptr;
+}
+
+void Rva002C589B::rva002C5843(bool v)
+{
+	if (m_18 != v) {
+		m_18 = v;
+		if (v)
+			m_19 = 1;
+	}
 }

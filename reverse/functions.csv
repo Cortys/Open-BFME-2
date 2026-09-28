@@ -40570,3 +40570,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005D5853Swap@@YAXPAURva005D5853@@0@Z,,0x005D5853,35,Code/GameEngine/Source/Common/Rva005D5853Swap.cpp,matched,swap of 8-byte ptr-plus-bool outer via tmp copy plus member assigns with sort caller
 ?Rva003BAAD6@@YAXXZ,,0x003BAAD6,14,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,free forwarder to vslot 0x1A0 via global 0xDFEA3C
 ?Rva003BC107@@YAXXZ,,0x003BC107,14,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BC107.cpp,matched,clear InGameUI byte 0x779 via TheInGameUI
+?rva002C5843@Rva002C589B@@QAEX_N@Z,,0x002C5843,23,Code/GameEngine/Source/Common/Rva002C589BDtor.cpp,matched,bool setter for plus0x18 with plus0x19 dirty flag called with 1 from 0x004ED7E6
