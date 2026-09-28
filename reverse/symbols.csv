@@ -6181,3 +6181,6 @@ rva009C7380WeightPairs,0x009B84E0
 ?ReAcquireResources@W3DProjectedShadowManager@@QAE_NXZ,0x0010716D,target REL32 at 0x0009A3A5; donor W3DShadow.cpp names second check; helper body remains unlanded so identity provisional
 ?ReAcquireResources@Rva00108660ResourceManager@@QAE_NXZ,0x00108660,target REL32 at 0x0009A3BA; address-derived helper name; manager identity unproven
 ?ReAcquireResources@Rva0007DA23ResourceManager@@QAE_NXZ,0x0007DA23,target REL32 at 0x0009A3CF; address-derived helper name; manager identity unproven
+?rva0082C760Acquire@@YAXPAVNodeAllocMutex@_STL@@@Z,0x00007690,call alias from BFME1 donor lock path; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
+_BfmeNodeAllocLockAcquire,0x00007690,donor node allocator lock acquire alias; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
+_bfmeLockXH,0x00007690,donor locale guard lock alias; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
