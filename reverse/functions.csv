@@ -40087,3 +40087,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0008EE9E@W3DDisplay@@QAEXMMMMMHH@Z,,0x0008EE9E,82,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayDrawImageMode.cpp,matched,W3DDisplay wrapper pre D4 post 100 middle D8 via TheDisplay
 ?draw@FullFadeTransition@@UAEXXZ,,0x0035F369,197,Code/GameEngine/Source/GameClient/GUI/FullFadeTransitionUpdate.cpp,matched,FullFadeTransition draw via fillRect openRect TheDisplay
 ??4BuildListInfo@@QAEAAV0@ABV0@@Z,,0x003299AD,211,Code/GameEngine/Source/GameLogic/Map/BuildListInfoAssign.cpp,matched,BuildListInfo assign matches pinned copy ctor 0x29DE6 and 0x80 copy loops
+??$__copy@PAVBuildListInfo@@PAV1@H@_STL@@YAPAVBuildListInfo@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00329D64,52,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_buildlistinfo.cpp,matched,STLport copy for BuildListInfo via rowed assign 0x3299AD
+??$copy@PAVBuildListInfo@@PAV1@@_STL@@YAPAVBuildListInfo@@PAV1@00@Z,,0x0032A40E,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_buildlistinfo.cpp,matched,STLport copy for BuildListInfo via rowed __copy 0x329D64
