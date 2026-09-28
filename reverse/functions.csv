@@ -39819,3 +39819,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva003284B9@@YAXPAVGameWindow@@HH@Z,,0x003284B9,52,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetUserDataHelpers.cpp,matched,sibling sets byte00 2 int04 int08 always reinstalls
 ?rva0004263F@Rva0004263F@@QAEXMMMMH@Z,,0x0004263F,72,Code/GameEngine/Source/Common/Rva0004263F.cpp,matched,unlock 3 virtuals wrapper for 9 callers
 ?rva000421FD@Rva000421FD@@QAEXXZ,,0x000421FD,21,Code/GameEngine/Source/Common/Rva000421FD.cpp,matched,unlock counter with setFPMode for 2 callers
+?rva0004224C@Rva0004224C@@QAEPAV1@XZ,,0x0004224C,22,Code/GameEngine/Source/Common/Rva0004224C.cpp,matched,chain calls 421FD returns this
