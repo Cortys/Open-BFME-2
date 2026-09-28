@@ -89,6 +89,7 @@ public:
     V(0) V(1) V(2) V(3) V(4) V(5) V(6) V(7) V(8) V(9) V(10) V(11)
 #undef V
     virtual HRESULT __stdcall GetDesc(D3DSurfaceDesc *desc) = 0;
+    virtual HRESULT __stdcall LockRect(void *locked, void *rect, unsigned flags) = 0;
 };
 void Log_DX8_ErrorCode(unsigned int code);
 void SurfaceClass::Get_Description(SurfaceDescription &description)
@@ -104,4 +105,38 @@ void SurfaceClass::Get_Description(SurfaceDescription &description)
     description.Format = d3dDesc.Format;
     description.Height = d3dDesc.Height;
     description.Width = d3dDesc.Width;
+}
+
+// ?rva00116680@Rva00116680@@QAEPAXPAH_N@Z, retail 0x00116680 (87B).
+// Evidence: unlock lane (unblocks 5, incl 0x001321A7/1347 0x00158E90/2129);
+// 9 jmp/call callers in unclaimed; Lock slot 0x34 with discard-derived flags
+// 0x0800/0x2800 and pitch-out plus bits return; same TU/flags as neighbours.
+struct D3DLockedRect
+{
+    int Pitch;
+    void *pBits;
+};
+class Rva00116680
+{
+public:
+    void *rva00116680(int *pitchOut, bool discard);
+private:
+    void *m_surface;
+};
+
+void *Rva00116680::rva00116680(int *pitchOut, bool discard)
+{
+    void *surf = m_surface;
+    if (!surf)
+        return 0;
+    D3DLockedRect locked;
+    memset(&locked, 0, sizeof(locked));
+    D3DSurface *s = (D3DSurface *)surf;
+    unsigned flags = discard ? 0x2000 : 0;
+    flags |= 0x0800;
+    HRESULT hr = s->LockRect(&locked, 0, flags);
+    if (hr != 0)
+        Log_DX8_ErrorCode((unsigned int)hr);
+    *pitchOut = locked.Pitch;
+    return locked.pBits;
 }
