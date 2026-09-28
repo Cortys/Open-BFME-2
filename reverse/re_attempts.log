@@ -2556,3 +2556,4 @@ FUN_004535A6	0x000535A6	38	blocked	audio double-chase plus 0x678 compare needs d
 ?Rva00075A23Draw@@YAXHH@Z	0x00075A23	437	partial	scheduling-or-movsd-interleave-13B-diff-score-0.97 t=45 model=muse-2223 score=0.97 stash=reverse/attempts/0x00075a23.cpp
 ?countKind@Team@@QAEHH_N0@Z	0x0039DC05	94	blocked	esi-vs-ecx-cur-plus-push-order-99vs94B-test-al-ok-via-uchar-cast t=20 model=muse-2223
 ??1Rva002048EC@@UAE@XZ	0x002048EC	63	blocked	vtable-0x7E3AB4-plus-AsciiString-opassign-at-0x366F0-plus-releaseBuffer-EH-prolog-caller-00204968-deleting-dtor-shape-needs-class-layout t=10 model=muse-2223
+?rva00473ADF@Rva00473ADF@@QAEXXZ	0x00473ADF	87	partial	extra mov second via eax then edi vs direct edi t=20 model=muse-fe32 score=0.93 stash=reverse/attempts/0x00473adf.cpp

@@ -40438,3 +40438,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?aiBfmeCommand35@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x0036EF89,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 position commands donor AICMD 0x35 with m_pos
 ?rva0022C4DF@Rva0022C4DF@@QBE?AVUnicodeString@@XZ,,0x0022C4DF,27,Code/GameEngine/Source/GameNetwork/Rva0022C4DFGetter.cpp,matched,RVO UnicodeString getter member +0x04 via rowed 0x37050 same shape as 0x23E928
 ?rva00469294@Rva00469294@@QAEPAXH@Z,,0x00469294,38,Code/GameEngine/Source/Common/Rva00469294Find.cpp,matched,ptr vector at 18c key match callers 46AF67 472421 472CDC 474D57 470D4E
+?Rva000F5B43Get@@YAHXZ,,0x000F5B43,19,Code/GameEngine/Source/Common/Rva000F5B43Get.cpp,matched,two globals init 0x009E1F28 to 0x009B5A34 and 0x009E1F20 to 1
