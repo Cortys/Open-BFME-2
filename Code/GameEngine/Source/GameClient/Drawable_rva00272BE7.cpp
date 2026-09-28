@@ -1,0 +1,58 @@
+// cl: /O1 /DNDEBUG /MD /EHsc /Oy- /G7
+//
+// ?rva00272BE7@Drawable@@QAEXXZ @0x00272BE7 (55B):
+// Drawable dual null-terminated walk: draw modules at +0x14C via slot 0x70
+// then client items at +0x154 via slot 0x48. Evidence: same +0x14C module walk
+// and slot 0x70 as Drawable_getCurrentClientBonePositions plus slot 0x48 as in
+// Drawable_rva00278689; neighbours Drawable 0x002727C8 and 0x00274176 share flags;
+// callers 0x00265200 0x00275313 0x00469F23 plus jmp tail 0x00275590.
+class DrawModule
+{
+public:
+    virtual void slot00() = 0; virtual void slot04() = 0;
+    virtual void slot08() = 0; virtual void slot0C() = 0;
+    virtual void slot10() = 0; virtual void slot14() = 0;
+    virtual void slot18() = 0; virtual void slot1C() = 0;
+    virtual void slot20() = 0; virtual void slot24() = 0;
+    virtual void slot28() = 0; virtual void slot2C() = 0;
+    virtual void slot30() = 0; virtual void slot34() = 0;
+    virtual void slot38() = 0; virtual void slot3C() = 0;
+    virtual void slot40() = 0; virtual void slot44() = 0;
+    virtual void slot48() = 0; virtual void slot4C() = 0;
+    virtual void slot50() = 0; virtual void slot54() = 0;
+    virtual void slot58() = 0; virtual void slot5C() = 0;
+    virtual void slot60() = 0; virtual void slot64() = 0;
+    virtual void slot68() = 0; virtual void slot6C() = 0;
+    virtual void slot70() = 0;
+};
+class ClientItem
+{
+public:
+    virtual void slot00() = 0; virtual void slot04() = 0;
+    virtual void slot08() = 0; virtual void slot0C() = 0;
+    virtual void slot10() = 0; virtual void slot14() = 0;
+    virtual void slot18() = 0; virtual void slot1C() = 0;
+    virtual void slot20() = 0; virtual void slot24() = 0;
+    virtual void slot28() = 0; virtual void slot2C() = 0;
+    virtual void slot30() = 0; virtual void slot34() = 0;
+    virtual void slot38() = 0; virtual void slot3C() = 0;
+    virtual void slot40() = 0; virtual void slot44() = 0;
+    virtual void slot48() = 0;
+};
+class Drawable
+{
+public:
+    void rva00272BE7();
+private:
+    char m_pad[0x14C];
+    DrawModule **m_drawModules;
+    char m_pad14C[0x154 - 0x150];
+    ClientItem **m_client;
+};
+void Drawable::rva00272BE7()
+{
+    for (DrawModule **p = m_drawModules; *p; ++p)
+        (*p)->slot70();
+    for (ClientItem **q = m_client; q && *q; ++q)
+        (*q)->slot48();
+}
