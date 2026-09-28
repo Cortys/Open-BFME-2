@@ -40269,3 +40269,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00225F12@GameEngine@@QAEPAVMessageStream@@XZ,,0x00225F12,50,Code/GameEngine/Source/Common/Rva00225F12Create.cpp,matched,vslot30 factory new MessageStream size 0x20 no callers
 ??0Rva0098477@@QAE@XZ,,0x00318AA5,22,Code/GameEngine/Source/Common/Rva0098477Ctor.cpp,matched,ctor via rowed baseConstruct then vtable 0x00BC8298 then zero +0x0C; dtor 0x00098477 proves class
 ?rva0039D84A@Team@@QAEXPAVObject@@@Z,,0x0039D84A,63,Code/GameEngine/Source/Common/RTS/TeamGetControllingPlayer.cpp,matched,Team target id via proto 0x30 plus computer 0x5c plus difficulty rva plus Object 0x74
+??4Rva00153252@@QAEAAU0@ABU0@@Z,,0x00153252,27,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Assign.cpp,matched,8byte assign via rowed 0x2174A4 plus int caller 0x153339 stride 8
