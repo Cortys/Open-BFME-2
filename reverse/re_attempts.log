@@ -2355,3 +2355,5 @@ $L62673	0x00765877	25	blocked	Retail is a by-value Money parameter EH cleanup an
 FUN_00626156	0x00226156	379	blocked	protector 27B push-eax mov-pop NOPs at prologue and epilogue unreproducible via clean C++ - core is cdecl int ptr-int t=15 model=muse-spark
 FUN_0079d954	0x0039D954	42	blocked	linked-list count via plus40 getter with indirect call edi plus useless esi lea needs new idea t=15 model=muse-df77
 ?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z	0x001FF3DC	86	partial	game load hoisted above si mov and null test retail sinks after null check t=40 model=muse-cb86 score=0.93 stash=reverse/attempts/0x001ff3dc.cpp
+FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm plus pop-eax prolog/epilog 24 fns not compiler-emittable no asm copy per anti-lift boundary 379B ret t=12 model=muse-48a8
+FUN_0045407E	0x0005407E	41	blocked	AudioSettings.ini INI-load wrapper needs MilesAudioManager layout plus INI+8 field meaning t=10 model=muse-829b
