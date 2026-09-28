@@ -314,3 +314,12 @@ UnicodeString getUserDataLeafName()
 		return leafName;
 	return makeStringRef(GetRegistryUserDataLeafName());
 }
+
+// ?Rva00108B93Make@@YA?AVRva000B3F84Pair@@PBD@Z @0x00108B93 33B
+// By-value pair snapshot like makeStringRef at 0x002343F7 but deref-returning
+// via init; callers at 0x005F94E3 0x005F9588 0x005FA033 0x0057A109 0x0057A17A.
+Rva000B3F84Pair Rva00108B93Make(const char *src)
+{
+	Rva000B3F84Pair ref;
+	return *ref.init(src);
+}
