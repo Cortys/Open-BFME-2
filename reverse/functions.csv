@@ -40806,3 +40806,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0040B5DE@Rva0040B5DE@@QAEXXZ,,0x0040B5DE,30,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B52E.cpp,matched,chain vector destroy plus free via rowed range
 ?rva00418C33@Rva00418BFB@@QAE?AURva00418BFBIter@@PAURva00418BFBNode@@0ABURva00418BFBKey@@0@Z,,0x00418C33,149,Code/GameEngine/Source/Common/Rva00418C33Insert.cpp,matched,tree Minsert via member less and rowed factory
 ?enable@Rva0043DB47DoubleSetter@@QAEXXZ,,0x0043DB47,15,Code/GameEngine/Source/Common/Rva0043DB47DoubleSetter.cpp,matched,double byte setter plus2B9 plus2BA neighbours Rva0043DA65 DispByteOneSetters 13 callers
+??1Rva0032E83A@@QAE@XZ,,0x0032E83A,8,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0032E83ADtor.cpp,matched,nonvirtual dtor tail-jmp vector member plus4
