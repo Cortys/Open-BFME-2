@@ -84,3 +84,16 @@ int Rva005E366A::length() const
 {
 	return Rva002226E5TextPlusString::length() + m_third.m_len;
 }
+
+// ?length@Rva005F1B75@@QBEHXZ @0x005F1B75 27B: three-part string extension (TextPlusString base at 0x00513B94 plus third string len at +0x0C); chain from 0x00513B94 landing; callers 0x005F1BAA 0x005F1D47.
+struct Rva005F1B75 : Rva002226E5TextPlusString
+{
+	int length() const;
+	const AsciiString *m_third;
+};
+int Rva005F1B75::length() const
+{
+	int third = m_third->getLength();
+	int base = Rva002226E5TextPlusString::length();
+	return base + third;
+}
