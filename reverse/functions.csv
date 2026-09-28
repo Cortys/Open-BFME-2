@@ -40396,3 +40396,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Construct@V?$list@PAVObject@@V?$allocator@PAVObject@@@_STL@@@_STL@@V12@@_STL@@YAXPAV?$list@PAVObject@@V?$allocator@PAVObject@@@_STL@@@0@ABV10@@Z,,0x004740AD,45,Code/Libraries/Source/WWVegas/WWLib/stlport_list_objectptr_construct.cpp,matched,STLport _Construct list ObjectPtr via rowed copy ctor 0x4702FB
 ?rva0039B227@Rva0039B20C@@QAEXH@Z,,0x0039B227,31,Code/GameEngine/Source/Common/Rva0039B20CSetter.cpp,matched,adjacent to 0x39B20C sharing +0x24/+0x2C layout and flags; callers 0x39B249 0x39B285 pass +0x24
 ?rva0028B265@Object@@QBEXXZ,,0x0028B265,45,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B265.cpp,matched,Object module scan slot 0x20 then slot 0x3C with 1.0f
+?rva0028B292@Object@@QBEXH@Z,,0x0028B292,45,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B265.cpp,matched,Object module scan slot 0x20 then slot 0x24 with int arg
