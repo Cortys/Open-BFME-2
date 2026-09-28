@@ -40737,3 +40737,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00574815@@QAE@H@Z,,0x00574815,49,Code/GameEngine/Source/Common/Rva00574815Ctor.cpp,matched,derived of Rva005CBA04 via FixedStorage global 0x00E0661C same as sibling Rva005756B6
 ?rva00528B98@Rva00528B98@@QAEXXZ,,0x00528B98,41,Code/GameEngine/Source/Common/Rva00528BDDFirer.cpp,matched,guarded HideRank via 0x222A8B plus global 0x9FE4CC sibling of 0x528BDD
 ?rva0035BD3F@Rva0035BD3F@@QAEXXZ,,0x0035BD3F,30,Code/GameEngine/Source/Common/Rva0035BD3FAudio.cpp,matched,unlock via TheAudio 9FE6E8 slot 6c precedent Rva0033FF2BDtor
+?rva00206706@Rva00206706@@QAEXPAURva00206706Node@@@Z,,0x00206706,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206706Clear.cpp,matched,recursive clear via child next dtor free same this
