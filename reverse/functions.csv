@@ -40586,3 +40586,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0032B7A7@SidesList@@QAEXPAV1@@Z,,0x0032B7A7,60,Code/GameEngine/Source/GameLogic/Map/SidesListRva0032B7A7.cpp,matched,SidesList single teamrec swap via teamrec swap plus notifier posts plus load caller
 ??$_Destroy@PAVRva00151DAB@@@_STL@@YAXPAVRva00151DAB@@0@Z,,0x0015209B,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00151dab_destroy.cpp,matched,range destroy via rowed dtor 0x151DAB stride 8 callers vector dtor clear erase
 ?rva005C39AA@Rva005C39AA@@QAEXXZ,,0x005C39AA,8,Code/GameEngine/Source/Common/Disp8ByteChaseOneSetters.cpp,matched,ptr-chase byte setter callers 0x567AD5 0x5680CD 0x5D24D5 0x5E0CE4
+?GadgetComboBoxSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,,0x00322D63,98,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxSetText.cpp,matched,BFME1 donor GadgetComboBoxAccessors SetText with listBox entry accessors
