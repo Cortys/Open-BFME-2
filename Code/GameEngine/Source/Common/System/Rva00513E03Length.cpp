@@ -97,3 +97,14 @@ int Rva005F1B75::length() const
 	int base = Rva002226E5TextPlusString::length();
 	return base + third;
 }
+
+// ?length@Rva005F1BAA@@QBEHXZ @0x005F1BAA 13B: four-part extension (three-part string base at 0x005F1B75 plus fourth pair len at +0x14); chain from 0x005F1B75 landing.
+struct Rva005F1BAA : Rva005F1B75
+{
+	int length() const;
+	Rva000B3F84Pair m_fourth;
+};
+int Rva005F1BAA::length() const
+{
+	return Rva005F1B75::length() + m_fourth.m_len;
+}
