@@ -1,8 +1,14 @@
 // cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2
-// BFME's Render2D layout predates the later vendored class. Keep the retail
-// layout and nonvirtual Reset ABI local to this translation unit.
+// BFME2 retail's Render2D layout uses an STLport vector of 0x74-byte ProxyClass
+// records. The live 1.06.2429.30210 snapshot has the same .text as the audited
+// image; Ghidra shows Reset clearing Batches at +0x34, appending one initialized
+// ProxyClass, then selecting CurrentBatch from Texture at +0x40.
+//
+// cl: /O1 /G7 /arch:SSE /DNDEBUG /DWIN32 /MD /EHsc /D_STLP_USE_STATIC_LIB
+// stlport
 
-// upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/texture.h
+#include <vector>
+
 class TextureBaseClass
 {
 public:
@@ -25,7 +31,6 @@ public:
 	int GrowthStep;
 };
 
-// upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/proxy.h
 class ProxyClass
 {
 public:
@@ -207,7 +212,6 @@ protected:
 	int GrowthStep;
 };
 
-// upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/render2d.h
 class Render2DClass
 {
 public:
@@ -219,7 +223,7 @@ private:
 	float CoordinateOffset[2];
 	Render2DRawArray ArrayA;
 	Render2DRawArray ArrayB;
-	DynamicVectorClass<ProxyClass> Batches;
+	std::vector<ProxyClass> Batches;
 	TextureBaseClass *Texture;
 	int CurrentBatch;
 	bool IsDirty;
@@ -231,11 +235,9 @@ void Render2DClass::Reset()
 {
 	ArrayA.Reset_Active();
 	ArrayB.Reset_Active();
-	Batches.Clear();
+	Batches.clear();
 	ProxyClass batch;
-	DynamicVectorClass<ProxyClass> *batches = &Batches;
-	int count = batches->Count();
 	batch.Initialize();
-	batches->Add(batch, count);
+	Batches.push_back(batch);
 	CurrentBatch = Texture ? -1 : 0;
 }
