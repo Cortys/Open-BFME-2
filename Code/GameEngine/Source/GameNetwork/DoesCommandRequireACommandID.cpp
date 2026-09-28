@@ -82,3 +82,44 @@ Int IsCommandSynchronized(NetCommandType type)
 	}
 	return 0;
 }
+
+// ?Rva00581229Get@@YAHPAURva00581229Msg@@@Z, retail 0x00581229, 119 bytes.
+// Predicate over NetCommandMsg m_commandType at +0x14, same Int xor/inc shape
+// as siblings above. Retail order read off the chain: 4,5,6,3,10,8,9,7,11,14,
+// 27,26,16,17,18,20,19,21,22,28,30 (26 early vs DoesCommandRequireACommandID).
+// Callers at 0x004D31C3 0x0058BC59 0x005DA634; honest-address free function.
+struct Rva00581229Msg
+{
+	char m_pad[0x14];
+	NetCommandType m_type;
+};
+
+Int Rva00581229Get(Rva00581229Msg *msg)
+{
+	NetCommandType type = msg->m_type;
+	if ((type == NETCOMMANDTYPE_GAMECOMMAND) ||
+		(type == NETCOMMANDTYPE_REQUEST_GAMESPY_STATS_AUTHKEY) ||
+		(type == NETCOMMANDTYPE_GAMESPY_STATS_AUTHKEY) ||
+		(type == NETCOMMANDTYPE_FRAMEINFO) ||
+		(type == NETCOMMANDTYPE_PLAYERLEAVE) ||
+		(type == NETCOMMANDTYPE_INFORMPLAYERLEAVEFRAME) ||
+		(type == NETCOMMANDTYPE_REQUESTFRAMEDATA) ||
+		(type == NETCOMMANDTYPE_REQUESTPLAYERLEAVE) ||
+		(type == NETCOMMANDTYPE_DESTROYPLAYER) ||
+		(type == NETCOMMANDTYPE_CHAT) ||
+		(type == NETCOMMANDTYPE_DISCONNECTFRAME) ||
+		(type == NETCOMMANDTYPE_DISCONNECTVOTE) ||
+		(type == NETCOMMANDTYPE_LOADCOMPLETE) ||
+		(type == NETCOMMANDTYPE_TIMEOUTSTART) ||
+		(type == NETCOMMANDTYPE_WRAPPER) ||
+		(type == NETCOMMANDTYPE_FILEANNOUNCE) ||
+		(type == NETCOMMANDTYPE_FILE) ||
+		(type == NETCOMMANDTYPE_FILEPROGRESS) ||
+		(type == (NetCommandType)22) ||
+		(type == NETCOMMANDTYPE_DISCONNECTSCREENOFF) ||
+		(type == (NetCommandType)30))
+	{
+		return 1;
+	}
+	return 0;
+}

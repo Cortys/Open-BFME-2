@@ -40425,3 +40425,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D35E6@RadarWindowOverrideSource@@QBE_NXZ,,0x002D35E6,12,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,adjacent to hasOverrideWindow sharing +0x10 outer and +0x60 bit2 with /O1
 ?rva002D383F@Rva002D383F@@QAEXH@Z,,0x002D383F,17,Code/GameEngine/Source/Common/System/Rva002D381DCalls.cpp,matched,chain of 0x002D352C index 2 via outer plus 0x10
 ??0Rva004D580E@@QAE@XZ,,0x004D580E,29,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,gap ctor type27 m20 same-recipe-as-Rva004D57F1
+?Rva00581229Get@@YAHPAURva00581229Msg@@@Z,,0x00581229,119,Code/GameEngine/Source/GameNetwork/DoesCommandRequireACommandID.cpp,matched,gap msg-type21 list26-early same-Int-chain
