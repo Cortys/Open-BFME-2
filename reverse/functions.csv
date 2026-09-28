@@ -40331,3 +40331,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002228E8Get@@YA?AVAsciiString@@M@Z,,0x002228E8,95,Code/GameEngine/Source/Common/System/Rva002228E8Get.cpp,matched,free AsciiString float via percent-g sibling of 0x0022288E
 ?rva002C75D1@WeaponSet@@QBE_NHH@Z,,0x002C75D1,41,Code/GameEngine/Source/GameLogic/Object/WeaponSetRva002C75D1.cpp,matched,WeaponSet slot check via byte plus autochoose mask callers
 ??_GRva007401F6@@UAEPAXI@Z,,0x00740226,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e282.cpp,matched,deleting dtor calls rowed dtor 0x7401F6 plus rowed delete
+?setCopiedFromDefault@ThingTemplate@@QAEXXZ,,0x0033B539,71,Code/GameEngine/Source/Common/Thing/ThingTemplateSetCopiedFromDefault.cpp,matched,four ModuleInfos plus armor weapons flags via rowed ModuleInfo setter
