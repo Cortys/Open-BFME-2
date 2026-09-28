@@ -40690,3 +40690,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?_M_clear@?$vector@URva000BEDF0Record@@V?$allocator@URva000BEDF0Record@@@_STL@@@_STL@@IAEXXZ,,0x000C695D,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bedf0_mclear.cpp,matched,vector clear via Destroy 0xC37E6 plus free exact 30B
 ??0Rva002048A2@@QAE@PAVAsciiString@@ABV1@@Z,,0x002048A2,74,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002048A2Ctor.cpp,matched,virtual-class ctor vtable +0 alias at +8 callers 0x00207D2B
 ?rva0032A438@Rva0032A438@@QAEXVAsciiString@@@Z,,0x0032A438,52,Code/Libraries/Source/WWVegas/WWLib/Rva0032A438Set.cpp,matched,twin Rva0050BFFDSet slot at +4 callers 0x32CF16 0x32F22D 0x32F6BC
+??1Rva001E3E43@@UAE@XZ,,0x001E3E43,19,Code/GameEngine/Source/Common/Rva001E3E43Dtor.cpp,matched,dtor restores Snapshot BBB554 dec DFDC64
+??_GRva001E3E43@@UAEPAXI@Z,,0x001E4625,28,Code/GameEngine/Source/Common/Rva001E3E43Dtor.cpp,matched,deleting dtor calls 0x001E3E43
