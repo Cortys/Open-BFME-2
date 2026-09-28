@@ -40819,3 +40819,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00418D3C@Rva00418BFB@@QAE?AURva00418BFBPair@@ABURva00418BFBKey@@@Z,,0x00418D3C,166,Code/GameEngine/Source/Common/Rva00418D3CInsertUnique.cpp,matched,tree insert_unique via member less and rowed Minsert
 ??_GRva00448089@@QAEPAXI@Z,,0x004480F7,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-448089.cpp,matched,deleting dtor calls rowed dtor 0x00448089 then delete
 ?rva00448D96@Rva00448D96@@QAEXPAURva00448D96Node@@@Z,,0x00448D96,53,Code/GameEngine/Source/Common/Rva00448D96Free.cpp,matched,chain free walk via rowed dtor 0x00448089 and free
+?rva00448E3B@Rva00448E3B@@QAEXXZ,,0x00448E3B,41,Code/GameEngine/Source/Common/Rva00448E3BClear.cpp,matched,chain clear via rowed free walk 0x00448D96
