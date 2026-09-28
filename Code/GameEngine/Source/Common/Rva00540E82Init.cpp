@@ -15,6 +15,9 @@
 // ??0Rva00540D67@@QAE@XZ, retail 0x00540D67 45B: sibling of 0x00540E82
 // with int 2 at +0, zeros at +4 +8 +0xC +0x10, global float 0x00BC74F0
 // at +0x14.
+// ??0Rva00540FCB@@QAE@XZ, retail 0x00540FCB 16B: outer ctor with int at +0
+// = 0 and inner Rva00540D67 at +4 via rowed ctor. /Ob0 keeps the inner
+// call from inlining so retail keeps lea ecx,[edx+4] call.
 
 class Rva00540E82
 {
@@ -96,5 +99,17 @@ public:
 };
 
 Rva00540D67::Rva00540D67() : m_00(2), m_04(0.0f), m_08(0.0f), m_0c(0.0f), m_10(0.0f), m_14(g_Va00BC74F0)
+{
+}
+
+class Rva00540FCB
+{
+public:
+	Rva00540FCB();
+	int m_00;
+	Rva00540D67 m_04;
+};
+
+Rva00540FCB::Rva00540FCB() : m_00(0)
 {
 }
