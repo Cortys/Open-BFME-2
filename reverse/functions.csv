@@ -40618,3 +40618,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?_M_clear@?$vector@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@V?$allocator@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@2@@_STL@@IAEXXZ,,0x00079EF1,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrow_string_destroy.cpp,matched,typed narrow-string vector clear via Destroy 0x798BE and free 0x30830
 ?Rva005D2F96Build@@YA?AURva005D2F96S24@@ABURva005D2F96S16@@PBD@Z,,0x005D2F96,58,Code/GameEngine/Source/Common/Rva005D2F96Build.cpp,matched,concat S16 to S24 via Pair init
 ??1Rva005D242F@@UAE@XZ,,0x005D242F,26,Code/GameEngine/Source/Common/Rva005D242FDtor.cpp,matched,vptr store plus conditional clear then base dtor tail jmp
+??0Rva002AC3BE@@QAE@PAX@Z,,0x002AC3BE,34,Code/GameEngine/Source/Common/Rva002AC3BECtor.cpp,matched,holder ctor voidptr plus0 vector BfmeE16 plus4 via 0x00211E58 and bool plus0x14 zeroed
