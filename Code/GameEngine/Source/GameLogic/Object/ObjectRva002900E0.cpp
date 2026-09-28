@@ -7,6 +7,7 @@
 // 0x00379228 mov ecx esi push frame, 0x00492E04 mov ecx ebx; status 0x4A per Rva004AD9B0 TU.
 enum ObjectStatusTypes
 {
+	STATUS_04 = 4,
 	STATUS_4A = 0x4A
 };
 
@@ -25,10 +26,12 @@ public:
 	void setStatus(ObjectStatusTypes status, bool flag);
 	void rva002900E0(int frame);
 	void rva002903C3();
+	void rva002903EF();
 
 private:
 	char m_pad[0x42C];
 	unsigned int m_frame42C;
+	unsigned int m_frame430;
 };
 
 void Object::rva002900E0(int frame)
@@ -46,4 +49,15 @@ void Object::rva002903C3()
 		return;
 	setStatus(STATUS_4A, false);
 	m_frame42C = 0;
+}
+
+void Object::rva002903EF()
+{
+	unsigned int f = m_frame430;
+	if (f <= 0)
+		return;
+	if (TheGameLogic->m_frame <= f)
+		return;
+	setStatus(STATUS_04, false);
+	m_frame430 = 0;
 }
