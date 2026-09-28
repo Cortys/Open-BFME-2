@@ -40496,3 +40496,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0040CA24@Rva0040C985@@QAEHXZ,,0x0040CA24,22,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,same TU Rva0040C985 m_24 m_28 plus TheGlobalData plus caller 0x0040D299
 ?rva005391FD@Rva005391FD@@QAEXXZ,,0x005391FD,42,Code/GameEngine/Source/Common/Rva005391FD.cpp,matched,chain loop via slots 0x34 0x3C then 0x005C4CC1
 ?rva00539227@Rva005391FD@@QAEXXZ,,0x00539227,42,Code/GameEngine/Source/Common/Rva005391FD.cpp,matched,chain loop via slots 0x34 0x3C then 0x005C4CD4
+?rva00142BE0@Rva00142BE0@@QAEXXZ,,0x00142BE0,52,Code/GameEngine/Source/Common/System/Rva00142BE0ArrayPop.cpp,matched,single-step release from array at 0x30 with counts at 0xB0 and 0xB4
