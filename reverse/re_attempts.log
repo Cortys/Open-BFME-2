@@ -2590,3 +2590,5 @@ FUN_009b2b3b	0x005B2B3B	50	blocked	StringBase placement-new null checks plus pus
 ?rva0044E689@Rva0044E689@@QAEHXZ	0x0044E689	30	partial	first cmp je not jne; second cmp je not jne; false xor eax not xor al; separate rets not shared t=12 model=muse-6df3 score=0.9 stash=reverse/attempts/0x0044e689.cpp
 FUN_00454C93	0x00054C93	148	blocked	hashtable erase shape exact ignoring relocs but calls our bkt_num_key plus equal vs retail Armor bkt_num_key 0x53EA8 plus Rva equal 0x50E1C; need ICF pins or Armor TU t=25 model=muse-b7e2
 ?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z	0x006BD9C0	560	partial	tail fst vs fstp plus fld st1 and store order only; 0 reg diffs t=30 model=muse-57ac score=0.95 stash=reverse/attempts/0x006bd9c0.cpp
+??1Rva005838F8@@QAE@XZ	0x005838F8	59	blocked	EH-prolog plus free-plus-apply dtor shape unclear t=8 model=muse-3c78
+?rva0049C592@Rva0049C592@@QAEXXZ	0x0049C592	71	blocked	ebx holds 0 for pushes cmps and mov vs retail push imm test and t=15 model=muse-6df3
