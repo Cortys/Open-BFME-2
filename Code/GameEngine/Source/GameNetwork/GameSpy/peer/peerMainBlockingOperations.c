@@ -174,6 +174,8 @@ void piRoomsCleanup(PEER peer);
 void piPlayersCleanup(PEER peer);
 void piPingCleanup(PEER peer);
 void piStopAutoMatch(PEER peer);
+void Rva00860380(void *chat, int sessionKey, const char *nick,
+	const char *secondNick);
 int piSBInit(PEER peer);
 void peerClearTitle(PEER peer);
 void piOperationsCleanup(PEER peer);
@@ -1739,4 +1741,23 @@ void piSendPlayerUTM(PEER peer, const char *nick, const char *command,
 	sprintf(buffer, "%s %s", command, parameters);
 	chatSendUserMessageA(connection->chat, nick, buffer,
 		authenticate ? 4 : 3);
+}
+
+// BFME1 donors at 0x00858100 and 0x008571E0 transfer to BFME2 0x006996C0
+// and 0x006987A0. The piConnection offsets come from this target TU; the
+// address-derived helper names remain provisional. Their callees are the
+// independently matched piStopAutoMatch and chatRegisterUniqueNickA bodies.
+void Rva00858100StopAutoMatchIfTitled(PEER peer)
+{
+	piConnection *connection = (piConnection *)peer;
+	if (connection->title[0] && connection->connected)
+		piStopAutoMatch(peer);
+}
+
+void Rva008571E0RegisterNick(PEER peer, int sessionKey, const char *nick,
+	const char *secondNick)
+{
+	piConnection *connection = (piConnection *)peer;
+	if (connection->connecting)
+		Rva00860380(connection->chat, sessionKey, nick, secondNick);
 }
