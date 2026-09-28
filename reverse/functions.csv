@@ -40592,3 +40592,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva0057416B@@QAE@XZ,,0x0057416B,19,Code/GameEngine/Source/Common/Rva0057416BCtor.cpp,matched,default ctor timeGetTime init member at esi+8 in 0x5CF8A1 0x5E9FC1 and new8 at 0x42C4F1 0x42C598
 ?rva0046ACF6@Rva0046ACF6@@QAEHH@Z,,0x0046ACF6,34,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046ACF6MapFind.cpp,matched,12 callers push ObjectID at +0x74 and use return as slot index; BFME1 bfmeGetMemberIndex donor
 ?rva00111F0E@Rva00111F0E@@QAEXXZ,,0x00111F0E,97,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00111F0EClear.cpp,matched,unlock 4 ref releases plus 4 int zeroes proven by 4 callers
+?get@Rva002E0CD4@@QBEHXZ,,0x002E0CD4,46,Code/GameEngine/Source/Common/Rva002E0CD4Get.cpp,matched,honest Rva getter 7 callers min via ptr-ternary /O1
