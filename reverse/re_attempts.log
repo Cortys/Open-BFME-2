@@ -2530,3 +2530,4 @@ FUN_00573FE9	0x00173FE9	180	blocked	insert_overflow tail uses rowed _M_clear vs 
 ??0Rva000EFA4E@@QAE@XZ	0x000EFA4E	132	partial	eax-vs-ecx-this-plus-mov-2B-rest-exact t=20 model=muse-a42-5899 score=0.98 stash=reverse/attempts/0x000efa4e.cpp
 ?rva00628770@Rva00628770@@QAE?AUBfmeResultA@@PBURva009F4130Point@@MPBURva009F4130Range@@HPAVRva009F2AB0Mask@@H@Z	0x00628770	525	blocked	register wall esi-edi vs ebx-ebp plus 4B frame sub1c vs sub18 t=35 model=muse-x4j
 ?rva00363D74@Rva00363D74@@QAEMXZ	0x00363D74	84	blocked	path-length loop holder-plus8 layout uncertain and x87 esi-plus-shared-pop wall t=15 model=muse-3552
+?countIntersection@?$BitFlags@$0HF@@@QBEHABV1@@Z	0x0033ADFC	87	blocked	ebx-edi swap for delta vs 0x33333333 plus early-vs-late that load t=20 model=muse-f3b0
