@@ -40794,3 +40794,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005DE952Destroy@@YAXPAVRva005DE5B5@@0@Z,,0x005DE952,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,chain destroy range via dtor
 ?rva005DE782@Rva005DE5B5@@QAEPAXI@Z,,0x005DE782,28,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,flag teardown via dtor plus delete
 ?rva00407DE0@Rva00407E28@@QAE_NHH@Z,,0x00407DE0,72,Code/Libraries/Source/WWVegas/WWLib/stlport_map_rva00407E28.cpp,matched,unlock update via flag plus value
+?rva00407137@Rva00407137@@QAEXABVUnicodeString@@@Z,,0x00407137,88,Code/GameEngine/Source/Common/Rva00407137Crc.cpp,matched,unlock Ascii from Unicode plus CRC
