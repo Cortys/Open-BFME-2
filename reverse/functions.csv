@@ -40413,3 +40413,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D382E@Rva002D382E@@QAEXH@Z,,0x002D382E,17,Code/GameEngine/Source/Common/System/Rva002D381DCalls.cpp,matched,chain of 0x002D352C index 1 via outer plus 0x10
 ?rva0039727A@Rva0039727A@@QAEHXZ,,0x0039727A,66,Code/GameEngine/Source/Common/Rva0039727ACount.cpp,matched,ObjectID range count via rowed findObjectByID and rva0028BCF4 slot3
 ?Rva00337533Copy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x00337533,29,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,forwarder to 0x33738B via tmp 0 shaped by 0x331B8F
+?Rva00337501Copy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x00337501,50,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,backward 20B copy loop via copy 0x3372EC shaped by 0x33177E

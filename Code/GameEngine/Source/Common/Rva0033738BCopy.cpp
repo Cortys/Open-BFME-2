@@ -32,3 +32,18 @@ Rva002E9E70 *Rva00337533Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 
 	char tmp;
 	return f(first, last, result, &tmp, 0);
 }
+Rva002E9E70 *Rva00337501Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 *result) throw()
+{
+	int n = last - first;
+	if (n <= 0)
+		return result;
+	__assume(result != 0);
+	for (int i = 0; i < n; ++i)
+	{
+		--last;
+		--result;
+		__assume(result != 0);
+		new (result) Rva002E9E70(*last);
+	}
+	return result;
+}
