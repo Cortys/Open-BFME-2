@@ -43,6 +43,7 @@ class Rva00596389 : public Rva0025BFE3
 public:
 	Rva00596389(int arg);
 	virtual ~Rva00596389();
+	int rva00596394() const;
 private:
 	char m_pad08[8];
 	int m_arg10;
@@ -63,4 +64,15 @@ Rva00596389::Rva00596389(int arg) : Rva0025BFE3()
 
 Rva00596389::~Rva00596389()
 {
+}
+
+// ?rva00596394@Rva00596389@@QBEHXZ @0x00596394 13B
+// Const chase-add getter of Rva00596389: return *(int*)(*(int*)(this+0x10)+0x94)
+// plus *(this+0x14). Evidence: neighbours 0x00596389 dtor / 0x005963F0 deleting
+// dtor prove Rva00596389 owner (+0x10 arg ptr +0x14 zero per rowed ctor
+// 0x00596366); single caller at 0x005AC092; no donor string vtable or export.
+int Rva00596389::rva00596394() const
+{
+	int const *ptr = reinterpret_cast<int const *>(m_arg10);
+	return *(int const *)((char const *)ptr + 0x94) + m_zero14;
 }

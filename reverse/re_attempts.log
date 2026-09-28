@@ -2526,3 +2526,5 @@ FUN_008f8eaf	0x004F8EAF	178	blocked	mixed CB11Entry copies plus 004F69C3 clear 5
 ?shouldTryToSpawn@SpawnBehavior@@QAE_NXZ	0x0045F3F8	103	partial	test byte vs mov+shr for +0x124 bit26 and dword not+and vs byte not+and for +0x438 dead t=20 model=muse-cc4c score=0.93 stash=reverse/attempts/0x0045f3f8.cpp
 ?rva0039B9DD@Rva0039B709@@QAEHXZ	0x0039B9DD	69	partial	missing lea plus movss for limit in xmm1 uses mem operand t=15 model=muse-b825 score=0.93 stash=reverse/attempts/0x0039b9dd.cpp
 FUN_00573FE9	0x00173FE9	180	blocked	insert_overflow tail uses rowed _M_clear vs direct free plus6B t=15 model=muse-p4x-6130
+?Rva002E9B31Get@@YAHPAX@Z	0x002E9B31	180	partial	add-eax-52C-vs-disp plus pop-order-fixed-via-fast-helpers t=25 model=muse-a42-5899 score=0.99 stash=reverse/attempts/0x002e9b31.cpp
+??0Rva000EFA4E@@QAE@XZ	0x000EFA4E	132	partial	eax-vs-ecx-this-plus-mov-2B-rest-exact t=20 model=muse-a42-5899 score=0.98 stash=reverse/attempts/0x000efa4e.cpp
