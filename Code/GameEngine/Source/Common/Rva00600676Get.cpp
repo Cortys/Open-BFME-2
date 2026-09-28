@@ -4,7 +4,8 @@
 // Rva003F7E83Forward.cpp. Evidence: callers push 3 args (e.g. 0x0040980B
 // pushes ebx/[ebp+0x10]/eax, 0x002DD9F6 pushes esi/0x41/eax); ret 0xC;
 // global 0x00A06E5C; sibling FileSystem::openFile takes the same
-// (PBDHH) args.
+// (PBDHH) args. Sibling ?Rva006006A9Get@@YG_NPBD@Z @0x006006A9 20B shares
+// the global and forwards to slot 11 (0x2C) with 1 arg returning bool.
 
 class Rva00600676Target
 {
@@ -12,6 +13,15 @@ public:
 	virtual void v0();
 	virtual void v1();
 	virtual void *v2(const char *a1, int a2, int a3);
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual bool v11(const char *a1);
 };
 
 extern Rva00600676Target *G00A06E5C;
@@ -23,4 +33,12 @@ void *__stdcall Rva00600676Get(const char *a1, int a2, int a3)
 	if (p != 0)
 		r = p->v2(a1, a2, a3);
 	return r;
+}
+
+bool __stdcall Rva006006A9Get(const char *a1)
+{
+	Rva00600676Target *p = G00A06E5C;
+	if (p != 0)
+		return p->v11(a1);
+	return false;
 }
