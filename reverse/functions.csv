@@ -39578,3 +39578,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva003F498A@Rva003F498A@@QAEXPAVRva003F498ACallback@@@Z,,0x003F498A,188,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,triple vector scan with virtual predicate via STL
 ?get@Rva001F4E1BSlot@@QBEPBURGBColor@@XZ,,0x001F4E1B,18,Code/GameEngine/Source/Common/Rva001F4E1BGet.cpp,matched,Null-checked RGBColor at plus0x94 via slot plus0x14
 ?rva001F4206@Rva001F4206@@QAEXXZ,,0x001F4206,21,Code/GameEngine/Source/Common/Rva001F4206.cpp,matched,Null-checked holder plus0 via slot0 with rowed delete
+??4Rva001F41AF@@QAEAAV0@ABV0@@Z,,0x001F41AF,30,Code/GameEngine/Source/Common/Rva001F41AFAssign.cpp,matched,Assignment clones holder plus0 via slot1 with null else
