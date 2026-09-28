@@ -2362,3 +2362,5 @@ FUN_008d7744	0x004D7744	535	blocked	StateMachine xfer version 1-4 with owner at 
 ?rva00222A33@Rva00222A33@@QAEXH@Z	0x00222A33	32	blocked	lea-reuse plus esi push-pop vs direct mov-add across O1 Os EHsc with int and ptr models t=15 model=muse-f6b6
 ?rva0043C8E4@GameWindow@@QAEXHH@Z	0x0043C8E4	79	blocked	frameless vs frame plus deferred add10 vs add0c-pop plus fresh 8 pushes vs 7-reuse across O1 Oy- Os t=25 model=muse-f6b6
 ?Rva0030CA65Copy@@YAPAVRva004733E0@@PBV1@0PAV1@@Z	0x0030CA65	38	partial	EBP frame with dst in mem vs retail frameless edi+esi both in regs t=18 model=muse score=0.93 stash=reverse/attempts/0x0030ca65.cpp
+?rva005EC52E@Rva005EC52E@@QAE_NABV1@@Z	0x005EC52E	102	partial	ebx-for-edi edx-for-eax dword-cmp-for-byte-cmp plus xor placement t=20 model=muse-k9x-d5f9 score=0.9 stash=reverse/attempts/0x005ec52e.cpp
+?rva00625790@Rva009F2AB0Mask@@QAEXPAV1@@Z	0x00625790	46	blocked	tail-walk needs push-esi plus mov-eax-ecx with do-while shape t=15 model=muse-k9x-d5f9
