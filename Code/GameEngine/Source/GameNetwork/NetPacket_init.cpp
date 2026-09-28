@@ -61,3 +61,12 @@ void NetPacket::init()
 	m_lastRelay = 0;
 	m_lastCommand = 0;
 }
+
+void NetPacket::reset()
+{
+	if (m_lastCommand != 0) {
+		delete m_lastCommand;
+		m_lastCommand = 0;
+	}
+	init();
+}
