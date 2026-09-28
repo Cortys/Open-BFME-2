@@ -2661,3 +2661,4 @@ FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no
 ??0Rva0010F058@@QAE@H@Z	0x0010F058	108	partial	push-store scheduling same size-insns t=15 model=muse-06 score=0.91 stash=reverse/attempts/0x0010f058.cpp
 ?Rva00186CF0@@YAX	0x00186CF0	165	blocked	same WW3D mesh-unique vtable wall as 0x10E4F6 t=2 model=muse-06
 ?rva0040B560@Rva0040B560@@QAEXXZ	0x0040B560	63	blocked	EH teardown 63B vs no-EH 30B same destroy-plus-free; method and dtor with EHsc slash EHs all 30B no prolog; needs unwind object recipe t=15 model=muse-08
+?rva00577A2A@Rva00577A2A@@QAEXH@Z	0x00577A2A	163	blocked	GetLevel call has 2 pushes vs rowed 1-arg YAHPBD; new+EH+virtual 163B needs donor; no Code edits t=12 model=muse-02
