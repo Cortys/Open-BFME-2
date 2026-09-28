@@ -40102,3 +40102,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva00367F8D@@UAEPAXI@Z,,0x00368B35,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-2254.cpp,matched,slot0 vtable 0x817768 calls rowed dtor 0x367F8D
 ?rva00368004@Rva00368004@@QAE_NXZ,,0x00368004,17,Code/GameEngine/Source/Common/Rva00368004Getter.cpp,matched,null-checked virtual slot 0x48 forward callers 0x36A5A7 0x36A7C7
 ??0Rva003685CF@@QAE@ABVBfmeObject872Header@@0@Z,,0x003685CF,43,Code/GameEngine/Source/Common/Rva003685CFCtor.cpp,matched,vtable 0x817968 plus two header copies via rowed 0x2CF108
+??0Rva006587C0View@@QAE@XZ,,0x006587C0,27,Code/GameEngine/Source/GameNetwork/Rva006587C0.cpp,matched,Address-derived layout view: retail constructor writes vtable VA 0xCE157C callback VA 0xA587B0 and zeroes three dwords; BFME1 ICF donor is only a structural lead and owner identity remains unknown
