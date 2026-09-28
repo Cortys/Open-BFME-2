@@ -27,4 +27,3 @@ void Rva009A7560Copy12x12(const unsigned char *src, unsigned char *dst, int srcS
   src += srcStride; dst += dstStride;
  } while (--rows);
 }
-
