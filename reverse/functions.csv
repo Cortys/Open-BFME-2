@@ -40325,3 +40325,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?isOutOfAmmo@WeaponSet@@QBE_NXZ,,0x002C73CE,41,Code/GameEngine/Source/GameLogic/Object/WeaponSetIsOutOfAmmo.cpp,matched,WeaponSet out-of-ammo via six slots and getStatus callers
 ?rva0031DF89@Rva0031D5F8@@QAEPAXPBX@Z,,0x0031DF89,72,Code/GameEngine/Source/GameClient/Rva0031D5F8Lookup.cpp,matched,same table guarded lookup via 0x00DFE78C gate and isEmpty then rva0031D5F8
 ?Add_Visible_Skin@DX8SkinFVFCategoryContainer@@QAEXPAVMeshClass@@@Z,,0x00143CB0,67,Code/Libraries/Source/WWVegas/WW3D2/DX8SkinClearVisibleList.cpp,matched,ZH donor Add Visible Skin with BFME2 offsets head F0 tail F4
+?Add_Textures_Material_And_Shader@Textures_Material_And_Shader_Booking_Struct@@QAE_NPAVBfmeHandleCX@@PAVVertexMaterialClass@@VShaderClass@@@Z,,0x00143AD0,292,Code/Libraries/Source/WWVegas/WW3D2/TextureMaterialShaderBooking.cpp,matched,BFME1 donor booking with inlined CRC cache and BfmeHandleCX refs
