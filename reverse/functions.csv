@@ -40346,3 +40346,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?isAnyWithinTargetPitch@WeaponSet@@ABE_NPBVObject@@0@Z,,0x002C7362,60,Code/GameEngine/Source/GameLogic/Object/WeaponSetIsOutOfAmmo.cpp,matched,WeaponSet pitch check via hasPitchLimit and six slots
 ??1Rva00740242@@UAE@XZ,,0x00740242,126,Code/GameEngine/Source/Common/Rva00740242Dtor.cpp,matched,derived dtor three Release plus Rva4011F at 20 plus base 401F6 caller 0x740590
 ?Rva0037DC8AEqual@@YA_NPBX0@Z,,0x0037DC8A,27,Code/GameEngine/Source/Common/Rva0037DC8AEqual.cpp,matched,memcmp 0x80 wrapper precedent Rva002634E0Equal
+?Rva000F630CGet@@YAHXZ,,0x000F630C,20,Code/GameEngine/Source/Common/Rva000F630CGet.cpp,matched,two globals 0x009E1F64 0x009E1F6C ternary 1-0 shape callers test al
