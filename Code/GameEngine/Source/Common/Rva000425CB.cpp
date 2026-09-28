@@ -15,16 +15,26 @@ class Rva000425CB
 	virtual bool _M_slot_06();
 	char _pad04[0xc - 4];
 	unsigned int m_0c;
-	char _pad10[0x14 - 0x10];
+	unsigned int m_10;
 	unsigned int m_14;
+	unsigned int m_18;
 public:
 	float rva000425CB();
+	float rva00042605();
 };
 
 float Rva000425CB::rva000425CB()
 {
 	if (_M_slot_06())
 		return (float)m_0c / (float)m_14;
+	else
+		return 0.0f;
+}
+
+float Rva000425CB::rva00042605()
+{
+	if (_M_slot_06())
+		return (float)m_10 / (float)m_18;
 	else
 		return 0.0f;
 }

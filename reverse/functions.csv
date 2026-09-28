@@ -39827,3 +39827,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva000422A0Atan2@@YANMM@Z,,0x000422A0,27,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,unlock float atan2 adapter for atan2f
 _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,chain atan2f wrapper calls 422A0
 ?rva000425CB@Rva000425CB@@QAEMXZ,,0x000425CB,58,Code/GameEngine/Source/Common/Rva000425CB.cpp,matched,unlock virtual gate unsigned division
+?rva00042605@Rva000425CB@@QAEMXZ,,0x00042605,58,Code/GameEngine/Source/Common/Rva000425CB.cpp,matched,unlock sibling division uses 0x10 0x18
