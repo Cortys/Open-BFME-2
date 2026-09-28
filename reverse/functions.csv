@@ -40554,3 +40554,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0049C8FC@Rva0044E6AE@@QAEXXZ,,0x0049C8FC,67,Code/GameEngine/Source/Common/Rva0044E6AEVirtForward.cpp,matched,chain caller of rowed 0x44E6AE via same this findObject plus aiIdle plus flag plus tail jmp caller at 0x49478C
 ??1BfmeRecordRange005D5473@@QAE@XZ,,0x005D5473,30,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,owning range dtor via rowed Destroy and free same shape as 004B205 precedent
 ?xfer@ObjectDefectionHelper@@MAEXPAVXfer@@@Z,,0x004DF76E,84,Code/GameEngine/Source/GameLogic/Object/Helper/ObjectDefectionHelperXfer.cpp,matched,slot 3 plus base 0x004DF81B plus IsLightCRC plus Version1 plus uint uint float bool
+?Rva003BA8F3Get@@YAEXZ,,0x003BA8F3,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BA8F3.cpp,matched,free predicate PlayerList ScriptEngine GameLogic via three globals
