@@ -39863,3 +39863,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??4AudioEventRTS@@QAEAAV0@ABV0@@Z,,0x0009A41B,93,Code/GameEngine/Source/Common/System/AudioEventRTSAssign.cpp,matched,BFME2 AudioEventRTS assign with ctor layout proven by caller 0x9A8D3
 ?Rva0006E5A0Get@@YGXPAVVector3@@@Z,,0x0006E5A0,40,Code/GameEngine/Source/Common/Rva0006E5A0Get.cpp,matched,shadow light 0 copy via getLightPosWorld proven by caller 0x95665
 ??1Rva00395D77@@QAE@XZ,,0x00395D77,53,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,same 53B string-pair dtor shape as 0x001EA443 with EH prolog
+??4Rva0021915B@@QAEAAV0@ABV0@@Z,,0x0021915B,31,Code/GameEngine/Source/Common/Rva0021915BAssign.cpp,matched,self-check AsciiString plus byte assign proven by copy_backward stride 8 and pair swap callers

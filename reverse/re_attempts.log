@@ -2411,3 +2411,6 @@ FUN_00670234	0x00270234	44	blocked	Drawable 3-list broadcaster slot 0x20; 3 prob
 ?rva00264688@Rva00264688@@QAE_NXZ	0x00264688	97	blocked	AI-or-Object bool walk via +8->+4->+0x108 containment chain plus +0x3b7 flag plus slot-0x1b8 virtual plus +0x1fc contain-or-goal; 6 probes best v2-v4 103B vs 97B with loop-rotation initial-jmp plus cmp-mem-imm-vs-reg plus shared-fail dup; needs loop-shape idea t=20 model=muse-5a9a
 ?bfmeRelativeAngleTo@Thing@@QBEMPBUCoord3D@@@Z	0x000B4542	273	partial	mov esi eax placement plus dot cross load order vs retail size exact 273B 86 insns t=20 model=muse-b7e4 score=0.93 stash=reverse/attempts/0x000b4542.cpp
 ?bfmeRelativeAngleTo@Thing@@QBEMPBUCoord3D@@@Z	0x000B4542	273	partial	SSE scheduling only; mov esi eax delayed past dy load; cosine-cross dir load order swapped; 273B 86insns exact size t=25 model=muse-e013 score=0.95 stash=reverse/attempts/0x000b4542.cpp
+?rva0009AB85@Rva0009AB85@@QAEXXZ	0x0009AB85	127	blocked	refcount virtual slot3 scheduling wall needs donor class t=12 model=muse-k7x
+?rva0006E605@Rva0006E605@@QAEXPBVM@@_N@Z	0x0006E605	273	blocked	light blend with GetDiffuse Ambient needs donor math t=10 model=muse-k7x
+?rva001074D5@Rva001074D5@@QAEXXZ	0x001074D5	532	blocked	large 532B shadow volumetric update needs donor t=5 model=muse-k7x
