@@ -39516,3 +39516,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??0Rva005961D6@@QAE@XZ,,0x005961D6,79,Code/GameEngine/Source/Common/Rva005961D6Ctor.cpp,matched,Derived ctor via base plus elements plus vector
 ??0Rva00596069@@QAE@XZ,,0x00596057,18,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,Rva00596069 ctor via base plus vtable
 ??0Rva005965A5@@QAE@XZ,,0x005965A5,33,Code/GameEngine/Source/Common/Rva005965A5Ctor.cpp,matched,Derived ctor via base plus vector
+??0Rva00596389@@QAE@H@Z,,0x00596366,35,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,Rva00596389 ctor via base plus ints

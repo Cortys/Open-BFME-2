@@ -2280,3 +2280,5 @@ FUN_00998f3f	0x00598F3F	112	blocked	complex EH ctor with base plus member plus 2
 ?setCursorTooltip@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z	0x001EEA6D	360	partial	lea ecx push order swapped retail lea lea push vs ours lea push lea and float addrs are relocs t=30 model=muse-637b-ccbf score=0.97 stash=reverse/attempts/0x001eea6d.cpp
 FUN_009815ab	0x005815AB	63	blocked	LANAPI lobby walk plus removePlayer plus virtual slot33 with unused first arg needs full class reconstruction t=15 model=muse-090f
 FUN_0098b567	0x0058B567	113	blocked	FrameDataManager ctor needs vtable order plus imul multiply plus vector new helpers t=20 model=muse-090f
+??0BfmeB1137@@QAE@XZ	0x00094EBF	93	partial	store scheduling: ints-pointers-bytes-E4 before vtable vs retail pointers-bytes-E4 after; floats-guard-E0 match; 93B/26 same size-count t=15 model=muse-9951 score=0.93 stash=reverse/attempts/0x00094ebf.cpp
+?Rva002DBEDDCreate@@YGPAURva002DBEDDNode@@PBURva002DBEDDPair@@@Z	0x002DBEDD	34	blocked	ICE msc1.cpp:2701 on _Construct call same wall as 003EF066 t=8 model=muse-b4ee
