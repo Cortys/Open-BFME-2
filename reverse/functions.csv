@@ -40670,3 +40670,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028C6FB@Rva0028C6FB@@QAEPAXI@Z,,0x0028C6FB,42,Code/GameEngine/Source/Common/Rva0028C6FB.cpp,matched,Bit-present DisabilityTypeNames lookup via global table
 ?rva0028C725@Rva0028C725@@QAEPAXI@Z,,0x0028C725,42,Code/GameEngine/Source/Common/Rva0028C725.cpp,matched,Bit-present table lookup twin via global table
 ?rva0028C753@Rva0028C753@@QAEPAXI@Z,,0x0028C753,42,Code/GameEngine/Source/Common/Rva0028C753.cpp,matched,Bit-present table lookup twin via global table
+?rva0028C4B6@Object@@QAEXXZ,,0x0028C4B6,55,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C4B6.cpp,matched,Object provider-gated holder flag set via virtual slots
