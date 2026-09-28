@@ -40029,3 +40029,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva004F6B7BInit@@YAXPAVRva00468520@@PBV1@@Z,,0x004F6B7B,18,Code/GameEngine/Source/Common/Rva004F6B7BInit.cpp,matched,null-checked wrapper around rowed set 0x004F62FE same shape as _Construct 0x004F6A76
 ??1Rva004F69C3@@QAE@XZ,,0x004F69C3,19,Code/GameEngine/Source/Common/Rva004F69C3Dtor.cpp,matched,holder dtor at +4 via rowed release 0x0007DEEF with target offset 0xAC
 ??0Rva004F692B@@QAE@ABU0@@Z,,0x004F692B,24,Code/GameEngine/Source/Common/Rva004F692BCopyCtor.cpp,matched,copy ctor 8-byte holder AddRef at +4 and zero +4 caller 0x004F9819
+??0Rva004F6318Entry@@QAE@PBHABVRva004F6093Holder@@@Z,,0x004F6318,29,Code/GameEngine/Source/Common/Rva004F6318EntryCtor.cpp,matched,entry ctor int via ptr plus rowed Holder copy 0x004F6093 caller 0x004F6A2B
