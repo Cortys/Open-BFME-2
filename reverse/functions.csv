@@ -39551,3 +39551,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?setFont@SuperweaponInfo@@QAEXABVAsciiString@@H_N@Z,,0x0029A4CA,119,Code/GameEngine/Source/GameClient/SuperweaponInfo.cpp,matched,SuperweaponInfo setFont via adjustFontSize getFont
 ??0Rva0028F59A@@QAE@HH@Z,,0x0028F59A,44,Code/GameEngine/Source/Common/System/Rva0028F59ABitSet.cpp,matched,twin of Rva00045411BitSet with 19 dwords; stack temporaries prove size
 ?rva0028F662@Rva0028F662@@QAEXPAURva0028F662Node@@@Z,,0x0028F662,45,Code/GameEngine/Source/Common/System/Rva0028F662TreeFree.cpp,matched,tree free via rowed free; caller resets head
+??0Rva0028F633@@QAE@HH@Z,,0x0028F633,47,Code/GameEngine/Source/Common/System/Rva0028F633BitSet.cpp,matched,twin of Rva0028F59A with 32 dwords; 5-byte push explains size
