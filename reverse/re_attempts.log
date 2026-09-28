@@ -2705,3 +2705,4 @@ FUN_009c98f6	0x005C98F6	109	blocked	vector-visitor with virtual call and typed c
 FUN_009e2d26	0x005E2D26	32	blocked	static 3x8 table at 0x00C77B40 has no name donor or string identity t=10 model=muse-spark
 FUN_0092c8ef	0x0052C8EF	38	blocked	uninit-copy FXList needs direct _Construct without EBP tried static plus Oy still EBP plus inline t=20 model=muse-spark
 ?rva0040314A@Rva0040314A@@QAEIXZ	0x0040314A	20	partial	cmovb vs jae-mov for unsigned min 21B vs 20B 0reg 0mem tried O1 O2 G7 le-gt flip t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x0040314a.cpp
+FUN_00957bfe	0x00557BFE	56	blocked	EH clear plus free head via rowed 0x005562DD and free 0x00030830; 5 variants dtor ctor try empty-base; closest ctor 61B vs 56B extra inits plus return-this missing or-1 placement; dtor 63B extra base-call plus eax-vs-esi; t=20 model=muse-spark

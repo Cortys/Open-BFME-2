@@ -40934,3 +40934,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005E70F8@Rva005E70F8@@QAEXXZ,,0x005E70F8,25,Code/GameEngine/Source/Common/Bfme/Rva005E70F8.cpp,matched,guarded init via vcall slot9 plus flag via callers
 ?rva001514D0@Rva001514D0@@QAEPAXH@Z,,0x001514D0,37,Code/Libraries/Source/WWVegas/WW3D2/Rva001514D0Getter.cpp,matched,indexed getter bounds plus null guards
 ??1Rva005C1A36@@UAE@XZ,,0x005C1A36,79,Code/GameEngine/Source/Common/Rva005C1A36Dtor.cpp,matched,chain dtor virtual release plus base
+??$__uninitialized_copy@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@PAV12@@_STL@@YAPAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@0@PAV10@00ABU__false_type@0@@Z,,0x00339962,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy_sciencevec.cpp,matched,unlock STL copy via rowed Construct 0x001FF819 stride 12
