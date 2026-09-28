@@ -11,6 +11,13 @@
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
+class Rva005C4CC1Sub
+{
+public:
+	char m_pad[0x3C];
+	int m_val3C; // +0x3C
+};
+
 class Rva005C4B56
 {
 public:
@@ -34,8 +41,11 @@ public:
 	virtual bool s17();
 	virtual void s18(bool a, bool b, int c);
 	void rva005C4B56(int setBits, int clearBits, int val);
+	void rva005C4CC1();
 private:
-	char m_pad[0xB8 - 4];
+	char m_padAC[0xAC - 4];
+	Rva005C4CC1Sub *m_subAC; // +0xAC
+	char m_padB8[0xB8 - 0xAC - 4];
 	int m_flags; // +0xB8
 };
 
@@ -47,4 +57,9 @@ void Rva005C4B56::rva005C4B56(int setBits, int clearBits, int val)
 	m_flags &= ~clearBits;
 	bool second = s17();
 	s18(first, second, val);
+}
+
+void Rva005C4B56::rva005C4CC1()
+{
+	rva005C4B56(2, 0, m_subAC->m_val3C);
 }
