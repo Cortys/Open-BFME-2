@@ -2510,3 +2510,5 @@ FUN_004855D1	0x000855D1	121	blocked	angle normalize in place via EAX pointer: if
 ?isAngleDifferent@@YA_NMM@Z	0x0028B119	40	partial	pop before fxch vs fxch before pop t=25 model=muse-a8da score=0.95 stash=reverse/attempts/0x0028b119.cpp
 ?isPosDifferent@@YA_NPBUCoord3D@@0@Z	0x0028B0A8	113	partial	same pop fxch order in 3 arms t=25 model=muse-a8da score=0.95 stash=reverse/attempts/0x0028b0a8.cpp
 ??0Rva0035973D@@QAE@XZ	0x0035973D	79	blocked	EH map order needs placement-new after baseConstruct plus manual vtable t=12 model=muse
+FUN_008d7cb9	0x004D7CB9	45	blocked	eax-incoming plus 3 stack min-frame helper no donor t=12 model=muse-4aba
+?rva005EC52E@Rva005EC52E@@QAE_NABU1@@Z	0x005EC52E	102	blocked	custom 8B pair comparator with flag bit 0x4000000 plus 0x9c key plus AsciiString less; 5 probe variants frameless vs EBP and shr vs and wall t=25 model=muse-4da0

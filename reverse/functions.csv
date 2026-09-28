@@ -40177,3 +40177,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?setPosition@Thing@@QAEXPBUCoord3D@@@Z,,0x0030AA80,285,Code/GameEngine/Source/Common/Thing/ThingSetPosition.cpp,matched,ZH donor Thing setPosition KINDOF 0x108 align slot 0x48
 ?rva0073BAA0@Rva0073BAA0@@QAEDHHH@Z,,0x0073BAA0,159,Code/GameEngine/Source/Common/RTS/Rva0073BAA0.cpp,matched,shroud range updater with predicate via BfmeConv1561 donor and rowed callees
 ?xfer@SpecialAbilityUpdate@@MAEXPAVXfer@@@Z,,0x0044F996,402,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,slot3 vtable 0083FBA8 ZH donor Flammable recipe
+?validateSpecialObjects@SpecialAbilityUpdate@@IAEXXZ,,0x0044F7A4,70,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,list validate entries dec ZH donor

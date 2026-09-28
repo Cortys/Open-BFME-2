@@ -250,10 +250,19 @@ private:
 
 class SpecialTrailing { public: virtual void trailingSlot(); };
 
+class GameLogic
+{
+public:
+	Object *findObjectByID(ObjectID id);
+};
+
+extern GameLogic *TheGameLogic;
+
 class SpecialAbilityUpdate : public UpdateModule, public SpecialTrailing
 {
 protected:
 	virtual void xfer(Xfer *xfer);
+	void validateSpecialObjects();
 
 private:
 	int m_24;
@@ -320,5 +329,19 @@ void SpecialAbilityUpdate::xfer(Xfer *xfer)
 	}
 	if (version.m_minimum >= 3) {
 		*xfer == m_60;
+	}
+}
+
+void SpecialAbilityUpdate::validateSpecialObjects()
+{
+	ListInt::iterator it = m_64.begin();
+	while (it != m_64.end()) {
+		ListInt::iterator prev = it;
+		Object *obj = TheGameLogic->findObjectByID((ObjectID)*it);
+		++it;
+		if (!obj) {
+			m_64.erase(prev);
+			--m_68;
+		}
 	}
 }
