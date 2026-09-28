@@ -237,3 +237,5 @@ void Render2DClass::Reset()
 	Batches.push_back(batch);
 	CurrentBatch = Texture ? -1 : 0;
 }
+
+template void std::_Destroy<ProxyClass *>(ProxyClass *, ProxyClass *);
