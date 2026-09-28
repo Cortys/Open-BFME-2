@@ -26,3 +26,5 @@ public:
 Rva0032E83A::~Rva0032E83A()
 {
 }
+
+void Rva0032E83ADelete(Rva0032E83A *p) { delete p; }
