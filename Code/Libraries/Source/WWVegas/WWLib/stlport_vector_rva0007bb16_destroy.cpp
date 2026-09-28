@@ -1,6 +1,7 @@
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ??$_Destroy@PAURva0007BB16Record@@@_STL@@YAXPAURva0007BB16Record@@0@Z @0x0007C2D7 25B:
+// ?_M_clear@?$vector@URva0007BB16Record@@V?$allocator@URva0007BB16Record@@@_STL@@@_STL@@IAEXXZ @0x0007C614 30B:
 // STLport 4.5.3 range destroy over the 0x24-byte two-string record whose dtor
 // is rowed at 0x0007BB16 (strings at +0x00/+0x08, tail past +0x0C unrecovered,
 // same definition as Code/GameEngine/Source/Common/StringRecordDtors.cpp).
@@ -38,3 +39,5 @@ __declspec(noinline) void _Destroy<Rva0007BB16Record *>(Rva0007BB16Record *__fir
 }
 
 }
+
+template void _STL::vector<Rva0007BB16Record>::_M_clear();
