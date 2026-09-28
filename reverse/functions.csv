@@ -40767,3 +40767,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001F385A@Rva001F385A@@QAEXPAX@Z,,0x001F385A,63,Code/GameEngine/Source/Common/Rva001F385AXfer.cpp,matched,SSE triple copy via sub memcpy
 ??0Rva004F6966@@QAE@ABU0@@Z,,0x004F6966,32,Code/GameEngine/Source/Common/Rva004F6966CopyCtor.cpp,matched,copy ctor 12B holder with AddRef same as Rva004F692B
 ?Rva004F6B69Construct@@YAXPAURva004F6966@@PBU1@@Z,,0x004F6B69,18,Code/GameEngine/Source/Common/Rva004F6B69Construct.cpp,matched,placement copy via rowed copy ctor 0x4F6966 callers walk 0xC
+?Rva004F6BB3Fill@@YAPAURva004F6966@@PAU1@IPBU1@@Z,,0x004F6BB3,37,Code/GameEngine/Source/Common/Rva004F6BB3Fill.cpp,matched,uninitialized_fill_n via rowed construct 0x4F6B69
