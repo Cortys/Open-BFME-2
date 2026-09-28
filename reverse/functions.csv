@@ -40646,3 +40646,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0032ACEASet@@YAXPAVRva00193660@@PBURva00193660Src@@@Z,,0x0032ACEA,18,Code/GameEngine/Source/Common/Rva00193660SetGuard.cpp,matched,Null-guarded Rva00193660 set wrapper for uninit copy loops
 ?leaveGroup@Object@@QAEXXZ,,0x0028C01F,24,Code/GameEngine/Source/GameLogic/Object/ObjectLeaveGroup.cpp,matched,Object leaveGroup clears 0x1A8 before AIGroup remove per BFME1 donor
 ?rva00204984@Rva00204136@@QAEXXZ,,0x00204984,41,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_nodeFree.cpp,matched,clear list via rva204136 reinit sentinel callers 0x2055F9 0x209DF0
+?rva0036F6A7@AICommandInterface@@QAEXMW4CommandSourceType@@@Z,,0x0036F6A7,105,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same TU float store AICMD 0x50 with m_float38

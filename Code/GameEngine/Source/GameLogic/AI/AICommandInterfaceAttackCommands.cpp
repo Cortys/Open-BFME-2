@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ?aiForceAttackObject@AICommandInterface@@QAEXPAVObject@@HW4CommandSourceType@@@Z,
 // retail 0x0036F05A, 110 bytes, plus
@@ -94,7 +94,7 @@ struct AICommandParms
 	const Waypoint *m_waypoint; // +0x2C
 	const void *m_polygon; // +0x30
 	Int m_intValue; // +0x34
-	char m_pad38[0x3C - 0x38]; // +0x38..+0x3B
+	float m_float38; // +0x38, float store for AICMD 0x50 (retail movss at +0x38)
 	Rva003427DD m_3C; // +0x3C, copied via rowed 0x003427DD (e.g. 0x0036F400)
 	char m_tailPad[0xC0 - 0x3C - 0x7C]; // +0xB8..+0xBF, retail block size
 };
@@ -141,6 +141,7 @@ public:
 	void rva0036F200(Object *target, CommandSourceType cmdSource);
 	void rva0036F265(Object *target, CommandSourceType cmdSource);
 	void rva0036F2CA(Object *target, CommandSourceType cmdSource);
+	void rva0036F6A7(float value, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -536,5 +537,15 @@ void AICommandInterface::rva0036F2CA(Object *target, CommandSourceType cmdSource
 {
 	AICommandParms parms((AICommandType)0x16, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F6A7@AICommandInterface@@QAEXMW4CommandSourceType@@@Z, retail 0x0036F6A7, 105 bytes.
+// Same TU single-store shape with float: AICMD 0x50 plus m_float38 at +0x38 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x0037077B via lea ecx [edi+0x20] from AIUpdate+0x258 with ACos float plus source.
+void AICommandInterface::rva0036F6A7(float value, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x50, cmdSource);
+	parms.m_float38 = value;
 	aiDoCommand(&parms);
 }
