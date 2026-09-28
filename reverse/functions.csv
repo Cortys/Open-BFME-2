@@ -40364,3 +40364,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00740169@Rva00740242@@QAEXHMMM@Z,,0x00740169,58,Code/GameEngine/Source/Common/Rva00740169.cpp,matched,vslot4 of Rva00740242 calls m_0C slot6 with three floats
 ??0Rva0040F9D@@QAE@HHPBDPAX@Z,,0x00040F64,57,Code/GameEngine/Source/Common/Rva0040F9DEvent.cpp,matched,vtable 0x007C16D0 CreateEventA IAT 0x00BBA2C8 same this at 0x0010F058 for ctor and set plus callers pass 1 0 0 0
 ?reset@Rva0040F9D@@QAE_NXZ,,0x00040FCD,24,Code/GameEngine/Source/Common/Rva0040F9DEvent.cpp,matched,same handle layout as set IAT ResetEvent 0x00BBA2D4 5 callers
+??0Rva00040F1E@@QAE@HPBDPAX@Z,,0x00040F1E,46,Code/GameEngine/Source/Common/Rva00040F1EMutex.cpp,matched,vtable 0x007C16C4 CreateMutexA IAT 0x00BBA210 caller 0x0005D189 passes 1 0 0
