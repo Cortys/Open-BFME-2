@@ -42,3 +42,5 @@ Rva0031455E::~Rva0031455E()
 {
     Rva00314581Unlink();
 }
+
+void Rva0031455EDelete(Rva0031455E *p) { delete p; }
