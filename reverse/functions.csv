@@ -39642,3 +39642,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??0Rva002E8BCF@@QAE@PBURva002E8BCFSrc@@_NH1@Z,,0x002E8BCF,41,Code/GameEngine/Source/Common/Rva002E8BCFCtor.cpp,matched,ctor returns this via 21 callers lea member and stack local fully inits 0x10 struct
 ?Rva003B8E13DestroyRange@@YAXPAURva003B8B61Elem@@0@Z,,0x003B8E13,24,Code/GameEngine/Source/Common/Rva003B8E13DestroyRange.cpp,matched,honest DestroyRange forwarding to 0x3B8B61 tagged loop mirrors LivingWorld helpers
 ?Rva002B256EGet@@YAPAXXZ,,0x002B256E,11,Code/GameEngine/Source/Common/Rva002B256EThunk.cpp,matched,global 0xE02D6C tail jmp to rowed 0x3B8BAA via chain
+?Rva002B2FE2Copy@@YAXPAVRva004F6093Holder@@ABV1@@Z,,0x002B2FE2,18,Code/GameEngine/Source/Common/Rva002B2FE2Copy.cpp,matched,null-checked placement copy via rowed 0x4F6093 throw removes EH
