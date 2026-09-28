@@ -40462,3 +40462,7 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?isColorTaken@GameInfo@@QBE_NHH@Z,,0x003FF34A,42,Code/GameEngine/Source/GameNetwork/GameSlotApparent.cpp,matched,BFME1 GameInfo.cpp color scan with inline color at C
 ?Rva00469103Xfer@@YAAAVXfer@@PAV1@PAURva00469103Pair@@@Z,,0x00469103,33,Code/GameEngine/Source/Common/Rva00469124Xfer.cpp,matched,ObjectID plus int pair via XferObjectID then slot 0x90 callers 47403C 47408A
 ?rva005C4B56@Rva005C4B56@@QAEXHHH@Z,,0x005C4B56,64,Code/GameEngine/Source/Common/Rva005C4B56.cpp,matched,unlock lane vtable slots 0x44 0x48 flags at 0xB8 callers share layout
+?rva00537505@UserPreferences@@QAEHVAsciiString@@ABV2@@Z,,0x00537505,85,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences getInt slot 0x18 via LossesVs faction callers
+?rva005374B3@UserPreferences@@QAEXVAsciiString@@ABV2@H@Z,,0x005374B3,82,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences setInt slot 0x2C via LossesVs faction callers
+?rva0053745E@UserPreferences@@QAEHVAsciiString@@ABV2@@Z,,0x0053745E,85,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences getInt slot 0x18 via WinsVs faction callers
+?rva0053740C@UserPreferences@@QAEXVAsciiString@@ABV2@H@Z,,0x0053740C,82,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences setInt slot 0x2C via WinsVs faction callers
