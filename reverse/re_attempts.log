@@ -2298,3 +2298,4 @@ FUN_004c0495	0x000C0495	10	blocked	no ret; mov eax plus call EH_prolog falls thr
 ?rva004CEAB7@Rva004CEAB7@@QAE_NPAX0@Z	0x004CEAB7	93	blocked	SSE distance compare needs xmm scheduling plus jbe vs jb return shape t=25 model=muse-823
 ?rva00062EA9@Rva00062EA9@@QAEEHH@Z	0x00062EA9	79	blocked	register wall push-first vs delayed shared xor vs duplicate 7 regions best 82 vs 79 unsigned char setne close t=22 model=muse-q8x-08dc
 ?rva00091D61@Rva00091D61@@QAEXPAHH@Z	0x00091D61	81	partial	notifier in ecx vs ebx missing mov ecx ebx only tail differs 79 vs 81 t=25 model=muse-q8x-08dc score=0.96 stash=reverse/attempts/0x00091d61.cpp
+??$__unguarded_linear_insert@PAPAXPAXURva00568721Cmp@@@_STL@@YAXPAPAXPAXURva00568721Cmp@@@Z	0x005687FF	49	partial	ebx-vs-edi reg alloc plus val-on-stack needs method-twin ICF t=20 model=muse-c69b score=0.93 stash=reverse/attempts/0x005687ff.cpp
