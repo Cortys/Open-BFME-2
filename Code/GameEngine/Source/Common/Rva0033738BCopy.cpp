@@ -1,0 +1,27 @@
+// cl: /O1 /MD
+// ?Rva0033738BCopy@@YAPAVRva002E9E70@@PAV1@00@Z @0x0033738B (50B): forward
+// 20-byte copy loop via rowed copy ctor 0x003372EC; stride 0x14 from the
+// retail idiv. Shape matches the 50B forward loop at 0x003319C9 in
+// Rva002DFC30CopyLoop.cpp. Caller is 0x00337533.
+#include <new.h>
+class Rva002E9E70
+{
+	char _m[0x14];
+public:
+	Rva002E9E70(const Rva002E9E70 &other) throw();
+};
+Rva002E9E70 *Rva0033738BCopy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 *result) throw()
+{
+	int n = last - first;
+	if (n <= 0)
+		return result;
+	__assume(result != 0);
+	for (int i = 0; i < n; ++i)
+	{
+		__assume(result != 0);
+		new (result) Rva002E9E70(*first);
+		++first;
+		++result;
+	}
+	return result;
+}
