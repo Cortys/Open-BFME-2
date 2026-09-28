@@ -40679,3 +40679,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028C20F@Object@@QAEXH@Z,,0x0028C20F,61,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C20F.cpp,matched,Object module loop with inner key check and notify
 ??_GRva00204686@@QAEPAXI@Z,,0x00204AF6,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-03-204AF6.cpp,matched,scalar deleting dtor over rowed 0x00204686
 ?rva0056A9B5@Rva0056A9B5@@QAEXXZ,,0x0056A9B5,17,Code/GameEngine/Source/Common/Rva0056A9B5GuardedOneSetter.cpp,matched,guarded one setter at plus1E via bytes at plus1C plus1D
+??$_Destroy@PAURva000BEDF0Record@@@_STL@@YAXPAURva000BEDF0Record@@0@Z,,0x000C37E6,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bedf0_destroy.cpp,matched,range destroy stride 0x14 via rowed dtor 0xBEDF0
