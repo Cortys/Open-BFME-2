@@ -40390,3 +40390,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00625330@PartitionManager@@QAEXPAX@Z,,0x00625330,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed bfmeDropYQ caller 0x0028BAE5
 ?Rva0045EE2CGet@@YA?AW4NameKeyType@@XZ,,0x0045EE2C,43,Code/GameEngine/Source/GameLogic/Object/Behavior/StancesBehaviorNameKey.cpp,matched,StancesBehavior string via rowed Cache get callers use findModule
 ??0Rva003371B1@@QAE@ABV0@@Z,,0x003371B1,67,Code/GameEngine/Source/Common/Rva003371B1Copy.cpp,matched,20B record copy via StringBase 0x365F0 and vector 0x33629E shaped by 0xC0BEC
+?insert@?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@QAEPAPBVModuleData@@PAPBV3@ABQBV3@@Z,,0x003B67B3,126,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_moduledatalist_insert.cpp,matched,STLport vector const ModuleData ptr single insert via vendor _vector.h
