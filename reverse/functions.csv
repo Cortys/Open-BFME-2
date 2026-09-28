@@ -39637,3 +39637,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0052DFF2@Rva0052DE5B@@QAEPAV1@XZ,,0x0052DFF2,15,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,clear node then reset returns this
 ?Rva0052DE9BRelease@@YAHPAVMixFileInfoBuffer@@@Z,,0x0052DE9B,56,Code/GameEngine/Source/Common/Rva0052DE9BRelease.cpp,matched,walk unlink list call finishReset return count
 ?rva0052DFB1@Rva0052DE5B@@QAE_NPBURva0052DFB1Arg@@@Z,,0x0052DFB1,65,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,resetIfMatching port returns bool
+?rva0052DAC4@Rva0052DAC4@@QAEXPAH@Z,,0x0052DAC4,14,Code/GameEngine/Source/Common/Rva0052DAC4Set.cpp,matched,nested one-field setter mirrors Rva003F69C0
