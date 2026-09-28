@@ -19,6 +19,7 @@ struct Rva0006EE7A
 	unsigned m_bits[7];
 
 	Rva0006EE7A(int unused, int b1, int b2);
+	Rva0006EE7A(int unused, int b1, int b2, int b3, int b4);
 };
 
 Rva0006EE7A::Rva0006EE7A(int /*unused*/, int b1, int b2)
@@ -26,4 +27,13 @@ Rva0006EE7A::Rva0006EE7A(int /*unused*/, int b1, int b2)
 	memset(this, 0, 0x1C);
 	m_bits[(unsigned)b1 >> 5] |= 1u << (b1 & 31);
 	m_bits[(unsigned)b2 >> 5] |= 1u << (b2 & 31);
+}
+
+Rva0006EE7A::Rva0006EE7A(int /*unused*/, int b1, int b2, int b3, int b4)
+{
+	memset(this, 0, 0x1C);
+	m_bits[(unsigned)b1 >> 5] |= 1u << (b1 & 31);
+	m_bits[(unsigned)b2 >> 5] |= 1u << (b2 & 31);
+	m_bits[(unsigned)b3 >> 5] |= 1u << (b3 & 31);
+	m_bits[(unsigned)b4 >> 5] |= 1u << (b4 & 31);
 }
