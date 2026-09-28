@@ -39997,3 +39997,5 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva002633B6@AIUpdateInterface@@QAEXXZ,,0x002633B6,61,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva002633B6.cpp,matched,AI slot advance via s15 and deleteInstance0 and delete2FD60 caller 29A1E0
 ?rva0026331C@AIUpdateInterface@@QAEXXZ,,0x0026331C,81,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026331C.cpp,matched,AI slot advance with 3E0 gate via s15 and deleteInstance0 caller 2989B5
 ?Rva00153565Register@@YAXPBDPAX@Z,,0x00153565,154,Code/Libraries/Source/WWVegas/WWLib/Rva00153565Register.cpp,matched,unique-register over global vector 0x00DF6F20 via rowed push_back 0x001534D3 with 4 callers including 0x0007EBFB WaterDraw
+?rva0010F24F@Rva0010F24F@@QAEXXZ,,0x0010F24F,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Enter 0xBBA200 layout Rva00041004
+?rva0010F26E@Rva0010F26E@@QAEXXZ,,0x0010F26E,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Leave 0xBBA204 layout Rva00041004
