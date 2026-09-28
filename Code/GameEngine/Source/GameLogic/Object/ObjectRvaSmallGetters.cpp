@@ -26,6 +26,12 @@ public:
 
 #define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
+class WeaponSet
+{
+public:
+	bool isOutOfAmmo() const;
+};
+
 class Object
 {
 	char m_pad0[0xA4];				// +0x000..+0x0A4 unknown
@@ -50,6 +56,7 @@ public:
 	int rva0028AF76() const;
 	int rva0028B511() const;
 	void rva0028B95F();
+	bool isOutOfAmmo() const;
 };
 
 // ?rva0028AD6C@Object@@QBEHXZ
@@ -100,4 +107,10 @@ void Object::rva0028B95F()
 {
 	m_flag48C = 1;
 	m_frame490 = TheGameLogic->m_frame;
+}
+
+bool Object::isOutOfAmmo() const
+{
+	const WeaponSet *ws = (const WeaponSet *)((const char *)this + 0x330);
+	return ws->isOutOfAmmo();
 }

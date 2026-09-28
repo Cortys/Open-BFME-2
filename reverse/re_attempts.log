@@ -2536,3 +2536,4 @@ FUN_0071DBFC	0x0031DBFC	64	blocked	STL EH ctor with vector plus ArmorTemplate ha
 FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C family via 27B Version1 wrappers; needs ctor offsets and Xfer recipe; deferred for smaller work t=5 model=muse-a127
 ??0Rva0043B1C9Tree@@QAE@XZ	0x0043B69C	25	partial	missing second lea ebp-1; ours one lea two pushes 22B vs retail two leas 25B t=15 model=muse-6c12 score=0.92 stash=reverse/attempts/0x0043b69c.cpp
 ?Rva0043B278Get@@YAXXZ	0x0043B278	44	blocked	free fn type confusion: findObjectByID Object* vs BuildListInfo int return vs setter this=int t=10 model=muse-6c12
+??1WeaponSet@@UAE@XZ	0x002C7311	81	blocked	EH dtor loop reg wall t=15 model=muse-4d9a
