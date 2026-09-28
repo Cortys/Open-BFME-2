@@ -91,3 +91,35 @@ Rva00355DC5::~Rva00355DC5()
 {
 	m_extra = 0;
 }
+
+// ??1Rva00355F3E@@UAE@XZ @0x00355F3E 55B
+// Large derived dtor (vtable 0x00814E8C) tail-jumping to base 0x00355D66.
+// Evidence: clears five 8-int arrays at +0x10/+0x30/+0x50 to 0 and +0x70/+0x90
+// to -1 plus +0xB0/+0xB4 to 0, then jmp base; deleting dtor at 0x003563F7 calls
+// here; chain of 0x00355D66.
+class Rva00355F3E : public Rva00355D66
+{
+public:
+	virtual ~Rva00355F3E();
+private:
+	int m_a[8];
+	int m_b[8];
+	int m_c[8];
+	int m_d[8];
+	int m_e[8];
+	int m_f;
+	int m_g;
+};
+
+Rva00355F3E::~Rva00355F3E()
+{
+	for (int i = 0; i < 8; i++) {
+		m_a[i] = 0;
+		m_b[i] = 0;
+		m_c[i] = 0;
+		m_d[i] = -1;
+		m_e[i] = -1;
+	}
+	m_f = 0;
+	m_g = 0;
+}
