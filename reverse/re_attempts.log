@@ -2531,3 +2531,8 @@ FUN_00573FE9	0x00173FE9	180	blocked	insert_overflow tail uses rowed _M_clear vs 
 ?rva00628770@Rva00628770@@QAE?AUBfmeResultA@@PBURva009F4130Point@@MPBURva009F4130Range@@HPAVRva009F2AB0Mask@@H@Z	0x00628770	525	blocked	register wall esi-edi vs ebx-ebp plus 4B frame sub1c vs sub18 t=35 model=muse-x4j
 ?rva00363D74@Rva00363D74@@QAEMXZ	0x00363D74	84	blocked	path-length loop holder-plus8 layout uncertain and x87 esi-plus-shared-pop wall t=15 model=muse-3552
 ?countIntersection@?$BitFlags@$0HF@@@QBEHABV1@@Z	0x0033ADFC	87	blocked	ebx-edi swap for delta vs 0x33333333 plus early-vs-late that load t=20 model=muse-f3b0
+FUN_0071DBFC	0x0031DBFC	64	blocked	STL EH ctor with vector plus ArmorTemplate hashtable init needs STLport version work t=6 model=muse-7q2-a3cb
+?rva003A2EBD@Rva000427195@@QAE@XZ	0x003A2EBD	57	blocked	57B dtor clear-plus-free needs EH frame with single state ending before free plus esi-reuse for buckets; simple EHsc EHs GX give 24B no-EH; empty-base gives 64B with extra base call and eax-vs-esi plus late or-state; try-catch gives 68B; t=18 model=muse-a127
+FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C family via 27B Version1 wrappers; needs ctor offsets and Xfer recipe; deferred for smaller work t=5 model=muse-a127
+??0Rva0043B1C9Tree@@QAE@XZ	0x0043B69C	25	partial	missing second lea ebp-1; ours one lea two pushes 22B vs retail two leas 25B t=15 model=muse-6c12 score=0.92 stash=reverse/attempts/0x0043b69c.cpp
+?Rva0043B278Get@@YAXXZ	0x0043B278	44	blocked	free fn type confusion: findObjectByID Object* vs BuildListInfo int return vs setter this=int t=10 model=muse-6c12
