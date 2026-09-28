@@ -40,6 +40,7 @@ public:
     int rva003F46A8(int idx);
     int rva003F46C1(int outerIdx, int innerIdx);
     int* rva003F46F2(int outerIdx, int innerIdx);
+    int rva003F48FE(int outerIdx, int middleIdx, int innerIdx);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -72,4 +73,9 @@ int Rva003F498A::rva003F46C1(int outerIdx, int innerIdx)
 int* Rva003F498A::rva003F46F2(int outerIdx, int innerIdx)
 {
     return m_outers[outerIdx].inners[innerIdx].tail;
+}
+
+int Rva003F498A::rva003F48FE(int outerIdx, int middleIdx, int innerIdx)
+{
+    return m_outers[outerIdx].inners[middleIdx].vals[innerIdx];
 }
