@@ -40759,3 +40759,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1?$vector@URva004F691E@@V?$allocator@URva004F691E@@@_STL@@@_STL@@QAE@XZ,,0x004F8A17,30,Code/GameEngine/Source/Common/Rva004F8A17VectorDtor.cpp,matched,chain vector dtor via Destroy throw no EH
 ?rva0006653B@Rva0006653B@@QAEGHH@Z,,0x0006653B,64,Code/GameEngine/Source/Common/Rva0006653BClampedLookup.cpp,matched,unlocks 3 callers plus clamped ushort table plus O1
 ?rva004076EE@Rva004076EE@@QAEPAVObject@@XZ,,0x004076EE,23,Code/GameEngine/Source/Common/Rva004076EEObject.cpp,matched,unlock via TheGameLogic findObjectByID precedent BuildListInfo
+?rva0010ECB5@Rva0010ECB5@@QAE_NXZ,,0x0010ECB5,8,Code/GameEngine/Source/Common/Rva0010ECB5Set.cpp,matched,thunk add ecx 0x4C jmp set callers 0xA835A 0xA83F5 0xA860B
