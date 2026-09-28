@@ -28,3 +28,13 @@ class Rva005C1A36 { public: __declspec(noinline) virtual ~Rva005C1A36(); private
   friend void famgenDelete(Rva005C1A36 *p); };
 Rva005C1A36::~Rva005C1A36() { m_famgen = 0; }
 void famgenDelete(Rva005C1A36 *p) { delete p; }
+
+// ??_GRva005C18F0@@UAEPAXI@Z, RVA 0x005C18D4, 28B. Chain lane: deleting dtor
+// calling rowed ??1Rva005C18F0@@UAE@XZ at 0x005C18F0 then rowed operator
+// delete 0x0002FD60; test flags, ret 4. Vtable slot 0 of 0x008743C4 proves
+// virtual public dtor (UAE). Same pattern as above.
+
+class Rva005C18F0 { public: __declspec(noinline) virtual ~Rva005C18F0(); private: int m_famgen;
+  friend void famgenDelete(Rva005C18F0 *p); };
+Rva005C18F0::~Rva005C18F0() { m_famgen = 0; }
+void famgenDelete(Rva005C18F0 *p) { delete p; }

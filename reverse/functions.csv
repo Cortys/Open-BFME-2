@@ -40937,3 +40937,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_copy@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@PAV12@@_STL@@YAPAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@0@PAV10@00ABU__false_type@0@@Z,,0x00339962,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy_sciencevec.cpp,matched,unlock STL copy via rowed Construct 0x001FF819 stride 12
 ??_GRva005C1A36@@UAEPAXI@Z,,0x005C1A9E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete
 ??1Rva005C18F0@@UAE@XZ,,0x005C18F0,54,Code/GameEngine/Source/Common/Rva005C18F0Dtor.cpp,matched,unlock dtor member plus base vtable
+??_GRva005C18F0@@UAEPAXI@Z,,0x005C18D4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete
