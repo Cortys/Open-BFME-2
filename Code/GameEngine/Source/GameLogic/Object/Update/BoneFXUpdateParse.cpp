@@ -142,7 +142,6 @@ void BoneFXUpdateModuleData::parseFXList(INI *ini, void *instance, void *store, 
 	INI::parseFXList(ini, instance, (void *)&info->fx, 0);
 }
 
-// ?parseObjectCreationList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void BoneFXUpdateModuleData::parseObjectCreationList(INI *ini, void *instance, void *store, const void *userData)
 {
 	BoneOCLInfo *info = (BoneOCLInfo *)store;
