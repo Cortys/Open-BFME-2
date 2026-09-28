@@ -51,6 +51,7 @@ enum AICommandType
 	AICMD_WANDER_IN_PLACE = 0x2C,
 	AICMD_FOLLOW_WAYPOINT_PATH_EXACT = 0x32,
 	AICMD_BFME_33 = 0x33,
+	AICMD_BFME_35 = 0x35,
 	AICMD_BFME_3D = 0x3D
 };
 
@@ -124,6 +125,7 @@ public:
 	void aiTightenToPosition(const Coord3D *position, CommandSourceType cmdSource);
 	void aiMoveToAndEvacuate(const Coord3D *position, CommandSourceType cmdSource);
 	void aiMoveToAndEvacuateAndExit(const Coord3D *position, CommandSourceType cmdSource);
+	void aiBfmeCommand35(const Coord3D *position, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -463,6 +465,13 @@ void AICommandInterface::aiMoveToAndEvacuate(const Coord3D *position, CommandSou
 void AICommandInterface::aiMoveToAndEvacuateAndExit(const Coord3D *position, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_MOVE_TO_POSITION_AND_EVACUATE_AND_EXIT, cmdSource);
+	parms.m_pos = *position;
+	aiDoCommand(&parms);
+}
+
+void AICommandInterface::aiBfmeCommand35(const Coord3D *position, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_BFME_35, cmdSource);
 	parms.m_pos = *position;
 	aiDoCommand(&parms);
 }
