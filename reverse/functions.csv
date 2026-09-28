@@ -40360,3 +40360,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva007401A3@Rva007401A3@@QAEXHH@Z,,0x007401A3,66,Code/GameEngine/Source/Common/Rva007401A3Set.cpp,matched,setter caches two ints notifies slot B4 with float callers 0x740AAB 0x740BA7
 ?rva0073BB40@Rva0073BB40@@QAEDHHH@Z,,0x0073BB40,159,Code/GameEngine/Source/Common/RTS/Rva0073BB40.cpp,matched,twin of 0x0073BAA0 with 008FC3B0 decrement callers 0x73C3B0 0x73C450 0x73C7C0
 ?Rva000FDCD7Get@@YAHXZ,,0x000FDCD7,26,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000FDCD7Get.cpp,matched,chain of 0x000F630C al-test xor-false global 0x009E1F50 to 0x009B5BD4
+?Rva00740EA1DistanceSquared@@YAHPBE0@Z,,0x00740EA1,77,Code/GameEngine/Source/Common/Rva00740EA1Distance.cpp,matched,squared distance of two 4-byte vectors caller 0x741459
