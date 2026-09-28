@@ -4,3 +4,8 @@ int __stdcall rva00549000(short a, short b)
 {
 	return a >= b;
 }
+
+int __stdcall Rva0056DD95First(int a, int b)
+{
+	return a;
+}

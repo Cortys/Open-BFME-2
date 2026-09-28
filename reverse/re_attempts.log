@@ -2538,3 +2538,5 @@ FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C famil
 ?Rva0043B278Get@@YAXXZ	0x0043B278	44	blocked	free fn type confusion: findObjectByID Object* vs BuildListInfo int return vs setter this=int t=10 model=muse-6c12
 ??1WeaponSet@@UAE@XZ	0x002C7311	81	blocked	EH dtor loop reg wall t=15 model=muse-4d9a
 ?rva00239E0B@Rva00239E0BHolder@@QAEPAPAXPAPAX@Z	0x00239E0B	26	blocked	wrapper around rowed insert 0x239D02 gives 19-21B frameless or push-head vs retail 26B EBP frame plus push-ecx-mov-esp-store shape; tried O1 Oy- Os modulefactory-flags and local-head spellings t=15 model=muse-599a
+?rva0053FF5F@Rva0053FF5F@@QAEAAV1@ABV1@@Z	0x0053FF5F	51	partial	push edi one store late only scheduling differs t=15 model=muse-10f0 score=0.95 stash=reverse/attempts/0x0053ff5f.cpp
+??0Rva00540D94@@QAE@ABURva00540D94Src@@MMH@Z	0x00540D94	54	blocked	m0c store late vs retail early t=12 model=muse-10f0
