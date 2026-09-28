@@ -2546,3 +2546,4 @@ FUN_009f4aed	0x005F4AED	74	blocked	EH method with virtual slot1 plus Holder copy
 ?Rva002E9B31Get@@YAHPAX@Z	0x002E9B31	180	partial	add-eax-52c-vs-disp-only-179vs180 t=35 model=muse-c76e score=0.99 stash=reverse/attempts/0x002e9b31.cpp
 FUN_0085ee57	0x0045EE57	109	blocked	EH vector loop with stack temp vtable 0x7FB1CC no donor class unknown t=12 model=muse-a4f1
 FUN_00797b89	0x00397B89	80	blocked	CastleMemberBehavior predicate findObjectByID plus Object bit checks shr-vs-test wall dl-hoist t=12 model=muse-a4f1
+FUN_007973eb	0x003973EB	62	blocked	map-int-int find via AsciiString nameToKey needs container layout at this+4 plus arg+0x58 t=10 model=muse-a4f1
