@@ -39761,3 +39761,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva0023E928@Rva0023E928@@QBE?AVUnicodeString@@XZ,,0x0023E928,27,Code/GameEngine/Source/GameNetwork/Rva0023E928Getter.cpp,matched,RVO UnicodeString getter member +0x24 via rowed 0x37050 same shape as getMap 0x23E943 unlocks 5 callers
 ??0BfmeNarrowRecord0041A5D2@@QAE@XZ,,0x0041A1CF,49,Code/GameEngine/Source/Common/NarrowStringRecordCopyBFME2.cpp,matched,default ctor two strings reserves caller 0x41A843
 ??4BfmeNarrowRecord0041A617@@QAEAAU0@ABU0@@Z,,0x0041A820,35,Code/GameEngine/Source/Common/NarrowStringRecordCopyBFME2.cpp,matched,copy assign via assign text short flag caller 0x41AB06
+??4BfmeNarrowRecord0041A5D2@@QAEAAU0@ABU0@@Z,,0x0041A7F7,41,Code/GameEngine/Source/Common/NarrowStringRecordCopyBFME2.cpp,matched,copy assign two strings short caller 0x41AAA4
