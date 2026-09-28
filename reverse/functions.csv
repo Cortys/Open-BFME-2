@@ -40455,3 +40455,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00507558@Rva00507823@@QAEEPBX@Z,,0x00507558,126,Code/GameEngine/Source/Common/Rva00507823Check.cpp,matched,Rva00507823 masks plus 75D6 774A callers plus vtable 864010
 ?rva002E6FDF@Rva002E6FDF@@QAEPAV1@XZ,,0x002E6FDF,59,Code/GameEngine/Source/Common/Rva002E6FDFClear.cpp,matched,honest Rva clearer returns this 11 callers barrier pins or order flags O1
 ?isPlayerPreorder@GameInfo@@QAE_NH@Z,,0x003FF1DA,36,Code/GameEngine/Source/GameNetwork/GameInfoMarkPreorder.cpp,matched,BFME1 GameInfo.cpp preorder bit test with mask at 8
+??0Rva00469187@@QAE@XZ,,0x00469187,30,Code/GameEngine/Source/Common/Rva004691A5Ctor.cpp,matched,zero int pair plus two rowed 0x4C member ctors at 8 and 54
