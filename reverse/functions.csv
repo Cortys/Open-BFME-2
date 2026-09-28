@@ -40281,3 +40281,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00153729@@QAE@XZ,,0x001538A8,33,Code/Libraries/Source/WWVegas/WWLib/Rva00153729Dtor.cpp,matched,ctor zeroes plus0 then ehvec 6x0xC sibling of rowed dtor 0x153729
 ?rva0039DC63@Team@@QBEHXZ,,0x0039DC63,59,Code/GameEngine/Source/Common/RTS/TeamRva0039D9E3.cpp,matched,Team template 0x80 count via 263864 plus 263526
 ?Rva0015344BFillN@@YAPAVRva00468520@@PAV1@IABV1@ABUTag@@@Z,,0x0015344B,37,Code/Libraries/Source/WWVegas/WWLib/Rva0015344BFillN.cpp,matched,FillN via rowed Init 0x4F6B7B same as Rva0014F5AB caller 0x153934
+??4Rva0039D769@@QAEAAV0@ABV0@@Z,,0x0039D769,61,Code/GameEngine/Source/Common/Rva0039D769Assign.cpp,matched,0x18 element assign via 3 dwords plus 2 AsciiStrings plus tail
