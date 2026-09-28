@@ -208,3 +208,22 @@ NetWrapperCommandMsg::NetWrapperCommandMsg() : NetCommandMsg()
 	m_34 = 0;
 	m_commandType = (NetCommandType)18;
 }
+
+// ??0Rva004D59D1@@QAE@XZ @0x004D59D1 29B: calls base plus dword 0 at +0x1c via And plus dword -1 at +0x20 via Or plus vtable 0x860274 plus type 8.
+// Honest-address ctor; same /O1 And/Or recipe as siblings above; unblocks 0x0058E367.
+// Callers at 0x004D1E37 0x0058E38C.
+class Rva004D59D1 : public NetCommandMsg
+{
+public:
+	Rva004D59D1();
+private:
+	unsigned int m_1c;
+	unsigned int m_20;
+};
+
+Rva004D59D1::Rva004D59D1() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_20 = (unsigned int)-1;
+	m_commandType = (NetCommandType)8;
+}

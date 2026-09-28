@@ -2552,3 +2552,7 @@ FUN_007b6676	0x003B6676	98	blocked	subrecord drain with sentinel head and index 
 ?rva002DB4DA@Rva002DB4DA@@QAEPAURva002DB4DANode@@V?$StringBase@D@@@Z	0x002DB4DA	68	partial	EH and-0-vs-or--1 t=20 model=muse-99b9 score=0.95 stash=reverse/attempts/0x002db4da.cpp
 ?rva0028BE93@Object@@QBEPAUCoord3D@@PAU2@@Z	0x0028BE93	77	blocked	SSE x87 EBP Coord filler with 0x240 sub and dummy needs new idea t=12 model=muse-2641
 FUN_00a0197d	0x0060197D	189	blocked	needs 4-arg uninit-copy-fill pins plus allocator pin plus vector layout; Rva rows are 3-arg but retail pushes 4; t=15 model=muse-021a
+FUN_004535A6	0x000535A6	38	blocked	audio double-chase plus 0x678 compare needs donor layouts t=12 model=muse-3146
+?Rva00075A23Draw@@YAXHH@Z	0x00075A23	437	partial	scheduling-or-movsd-interleave-13B-diff-score-0.97 t=45 model=muse-2223 score=0.97 stash=reverse/attempts/0x00075a23.cpp
+?countKind@Team@@QAEHH_N0@Z	0x0039DC05	94	blocked	esi-vs-ecx-cur-plus-push-order-99vs94B-test-al-ok-via-uchar-cast t=20 model=muse-2223
+??1Rva002048EC@@UAE@XZ	0x002048EC	63	blocked	vtable-0x7E3AB4-plus-AsciiString-opassign-at-0x366F0-plus-releaseBuffer-EH-prolog-caller-00204968-deleting-dtor-shape-needs-class-layout t=10 model=muse-2223
