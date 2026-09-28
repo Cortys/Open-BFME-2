@@ -40947,3 +40947,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00041168@Rva00041168@@QAEXPAX@Z,,0x00041168,28,Code/GameEngine/Source/Common/Rva00041168.cpp,matched,unlock setter delete array if different
 ??0Rva0029FB63@@QAE@PBHABURva0029E067@@@Z,,0x0029FB63,29,Code/GameEngine/Source/Common/Rva0029FB63Init.cpp,matched,init ctor with int plus record copy
 ?rva0029F93A@Rva0029F93A@@QAEXH@Z,,0x0029F93A,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_int_remove_guard.cpp,matched,guarded list int remove at plus9C4
+??1Rva00382B3F@@QAE@XZ,,0x00382B3F,8,Code/GameEngine/Source/Common/Rva00382B3FDtor.cpp,matched,dtor tail-jmp to BuddyInfo

@@ -2711,3 +2711,4 @@ FUN_00688C34	0x00288C34	52	blocked	52B unlock calls ICF-folded dup 0x00148B27 na
 FUN_004BDD48	0x000BDD48	36	blocked	36B ctor needs string literal bytes at 0x007BAC1C plus vector-base STL layout low value unlocks 1 none ready t=3 model=muse-spark
 ??1Rva0052D20C@@QAE@XZ	0x0052D20C	63	blocked	EH prolog plus 3 Unwind funclets needs unknown locals with dtors simple clear plus free gives 30B no EH t=10 model=muse-spark
 ?rva002A1D02@Rva002A1D02@@QAEXXZ	0x002A1D02	73	blocked	caller sets ecx for Free 0x002A14FA which landed as stdcall free; needs member repoint with same bytes t=10 model=muse
+?Rva0029FB80Store@@YGXPAPAX@Z	0x0029FB80	28	partial	useless lea-test kept plus edx regs t=10 model=muse score=0.9 stash=reverse/attempts/0x0029fb80.cpp
