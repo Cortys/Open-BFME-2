@@ -1,3 +1,7 @@
+// ?reset@Anim2D@@QAEXXZ
+// partial score=0.91 date=2026-09-28
+// ?reset@Anim2D@@QAEXXZ
+// partial score=0.91 date=2026-09-28
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad
 // stlport
 #define Matrix4x4 Matrix4  // BFME renamed it
@@ -277,7 +281,8 @@ void Anim2D::setCurrentFrame( UnsignedShort frame )
 // ------------------------------------------------------------------------------------------------
 /** Randomize the current frame */
 // ------------------------------------------------------------------------------------------------
-#line 424 "C:\\\\projects\\\\bfme2patch103\\\\bfme2\\\\Code\\\\GameEngine\\\\Source\\\\GameClient\\\\System\\\\Anim2D.cpp"
+#line 424 "F:\\\\bfme\\\\Code\\\\gameengine\\\\Source\\\\GameClient\\\\System\\\\Anim2D.cpp"
+// ?randomizeCurrentFrame@Anim2D@@QAEXXZ present-unmatched
 void Anim2D::randomizeCurrentFrame( void )
 {
 
