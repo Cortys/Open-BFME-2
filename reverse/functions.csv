@@ -39967,3 +39967,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?getMaxTurnRate@Locomotor@@QBEMPAVObject@@@Z,,0x001E3E9F,105,Code/GameEngine/Source/GameLogic/Object/LocomotorGetMaxTurnRate.cpp,matched,Locomotor turn-rate via BFME1 donor Object slot 0x20 template periods clamp
 ?rva00215E6F@Rva00215E6F@@QAEXPAI@Z,,0x00215E6F,24,Code/GameEngine/Source/Common/Rva00215E6F.cpp,matched,caller 0x00215EF7 collects two slots; honest rva name
 ?rva0041534B@Rva00056F61@@QAE?AURva0041534BIter@@PBVAsciiString@@@Z,,0x0041534B,27,Code/GameEngine/Source/GameClient/Rva00056F61IterFind.cpp,matched,find iterator over rowed Rva00056F61 find via callers at 0x00223D02 and 0x002AE98B
+?rva00415C56@Rva00415C56@@QAEXPAVINI@@@Z,,0x00415C56,18,Code/GameEngine/Source/Common/Rva00415C56Parse.cpp,matched,INI parse wrapper over rowed initFromINI with table 0x00C3A304 via caller at 0x00415E2A
