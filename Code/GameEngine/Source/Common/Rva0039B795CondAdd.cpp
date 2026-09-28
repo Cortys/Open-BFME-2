@@ -16,11 +16,13 @@ class Rva0039B795
 public:
 	void rva0039B795(int delta);
 	void rva0039B7CB(int delta);
+	void rva0039B7E3(int delta);
 
 private:
 	char m_pad00[0x8];
 	int m_val08;
 	int m_val0C;
+	int m_val10;
 };
 
 void Rva0039B795::rva0039B795(int delta)
@@ -37,4 +39,13 @@ void Rva0039B795::rva0039B7CB(int delta)
 	if (Global98Ptr->m_flag98 == 0)
 		return;
 	m_val0C += delta;
+}
+
+// ?rva0039B7E3@Rva0039B795@@QAEXH@Z @0x0039B7E3 24B same conditional add to
+// +0x10. Evidence: sole caller 0x0023D86E; same global flag and class layout.
+void Rva0039B795::rva0039B7E3(int delta)
+{
+	if (Global98Ptr->m_flag98 == 0)
+		return;
+	m_val10 += delta;
 }
