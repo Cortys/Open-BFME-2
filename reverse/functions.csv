@@ -40560,3 +40560,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003BCFC9Set@@YGX_N@Z,,0x003BCFC9,11,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,forwarder to PartitionManager shroud thunk via TheShroudManager
 ?rva004DF161@Rva004DF161@@QBEMXZ,,0x004DF161,30,Code/GameEngine/Source/Common/Rva004DF161Ratio.cpp,matched,callers 0x0033AAAC 0x003E46FB use float plus 1.0f pool 0x007BB8D8 plus fild fidiv
 ?rva004DF18D@Rva004DF18D@@QAEXH@Z,,0x004DF18D,34,Code/GameEngine/Source/Common/Rva004DF18DAdd.cpp,matched,callers 5 sites plus rowed Player onPowerBrownOutChange 0x002AB8D0
+?rva004DF1AF@Rva004DF1AF@@QAEXH@Z,,0x004DF1AF,34,Code/GameEngine/Source/Common/Rva004DF1AFAdd.cpp,matched,callers 0x004DF1FF 0x004DF21F 0x004DF247 plus sibling 0x004DF18D
