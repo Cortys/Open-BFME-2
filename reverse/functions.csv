@@ -40651,3 +40651,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?reset@DataChunkInput@@QAEXXZ,,0x00306DCC,20,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,ZH donor reset via rowed clearChunkStack plus absoluteSeek slot 2
 ??1DataChunkInput@@QAE@XZ,,0x00306F01,82,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,ZH donor three-phase teardown via rowed clearChunkStack and contents dtor
 ?Rva004ED10FFill@@YAPAVModelNodeClass@HLodClass@@PAV12@IPBV12@@Z,,0x004ED10F,37,Code/Libraries/Source/WWVegas/WW3D2/HLodModelNodeFill.cpp,matched,counted ModelNode fill via rowed Assign stride 0x14
+?rva002ACD09@Player@@QAEXPAXH@Z,,0x002ACD09,98,Code/GameEngine/Source/Common/RTS/PlayerRva002ACD09.cpp,matched,Player factory new 0x18 ctor 0x002AC3BE vector uint assign 0x0026F4F4 list push 0x0005548F
