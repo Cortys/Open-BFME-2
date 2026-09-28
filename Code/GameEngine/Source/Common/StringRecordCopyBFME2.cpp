@@ -219,3 +219,20 @@ private:
 	StringBase<char> m_text1;
 };
 Rva00395D77::~Rva00395D77() {}
+
+// Retail dtor 0x00568C4E (53B): two narrow-string members at +0/+4 destroyed
+// in reverse order through the pinned StringBase dtor at 0x36410 with /EHsc
+// states. Same 53B shape as 0x001EA443 and 0x00395D77 in this TU (mov eax
+// scope-table reloc plus EH prolog plus two releaseBuffer calls). Destroy loop
+// at 0x569A5B steps 0x14 (20-byte BfmeStringRecord00568CE0) plus deleting-dtor
+// caller at 0x568E17 and parse caller at 0x56A96F prove dtor role.
+// Honest Rva address name; same flags.
+class Rva00568C4E
+{
+public:
+	~Rva00568C4E();
+private:
+	StringBase<char> m_text0;
+	StringBase<char> m_text1;
+};
+Rva00568C4E::~Rva00568C4E() {}
