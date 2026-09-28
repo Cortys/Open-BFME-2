@@ -1,6 +1,7 @@
 // cl: /O1
 // ??1Rva005F4AD7@@QAE@XZ @0x005F4AD7 22B
 // ??0Rva005F4AD7@@QAE@ABU0@@Z @0x005F4AB9 30B copy-ctor abutting the dtor.
+// ??4Rva005F4AD7@@QAEAAU0@ABU0@@Z @0x005FD4FF 63B assign same Holder trio.
 // Holder dtor releasing computed TargetRef via rowed fastcall 0x0007DEEF.
 // If m_ptr is null return; else Release((TargetRef *)(Q + S + 4)) where
 // S is m_ptr and Q is *( *(S+4) + 4 ). Same computation as the sibling
@@ -31,6 +32,7 @@ struct Rva005F4AD7
 	Rva005F4AD7Inner *m_ptr;
 	~Rva005F4AD7();
 	Rva005F4AD7(const Rva005F4AD7 &other);
+	Rva005F4AD7 &operator=(const Rva005F4AD7 &other);
 };
 Rva005F4AD7::~Rva005F4AD7()
 {
@@ -46,4 +48,17 @@ Rva005F4AD7::Rva005F4AD7(const Rva005F4AD7 &other)
 		TargetRef00217D4C *t = (TargetRef00217D4C *)((char *)p + 4 + p->m_04->m_04);
 		++t->references;
 	}
+}
+Rva005F4AD7 &Rva005F4AD7::operator=(const Rva005F4AD7 &other)
+{
+	if (this != &other) {
+		if (other.m_ptr) {
+			TargetRef00217D4C *t = (TargetRef00217D4C *)((char *)other.m_ptr + 4 + other.m_ptr->m_04->m_04);
+			++t->references;
+		}
+		if (m_ptr)
+			ReleaseTreeHintRef00217D4C((TargetRef00217D4C *)((char *)m_ptr + 4 + m_ptr->m_04->m_04));
+		m_ptr = other.m_ptr;
+	}
+	return *this;
 }
