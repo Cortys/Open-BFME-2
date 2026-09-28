@@ -40166,3 +40166,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001F08D3@ObjectCreationList@@QAEXPAX00@Z,,0x001F08D3,87,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 sibling of 0x1F0878
 ?rva001F081A@ObjectCreationList@@QAEXPAX000H@Z,,0x001F081A,94,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 sibling of 0x1F0878
 ?Rva004C309CForward@@YAXPAX0000H@Z,,0x004C309C,32,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,null checked wrapper forwarding 5 args to 0x1F081A chain
+?bfmeGo1050D@BfmeC1050@@QAEXHHHH@Z,,0x00625360,33,Code/GameEngine/Source/Common/BfmeConv1050.cpp,matched,BfmeC1050 4-arg fwd with 0 in third slot via pin 0x628040 inner at +0x10

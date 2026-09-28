@@ -1,0 +1,110 @@
+// ?rva005D5AB3@Rva005D5AB3@@QBE_NABV1@@Z
+// partial score=0.95 date=2026-09-28
+// ?rva005D5AB3@Rva005D5AB3@@QBE_NABV1@@Z
+// partial score=0.95 date=2026-09-28
+// cl: /O1 /MD
+// ?rva005D5A7E@Rva005D5A7E@@QBE_NABV1@@Z @0x005D5A7E 53B.
+// Ordering by int at +4 then AsciiString NoCase at inner+4.
+// Evidence: 13 callers (0x005D5B09 0x005D5B3C 0x005D5BC9 0x005D5C6F etc.)
+// unblock 7 (3 ready); callee StringBase<char>::compareNoCase rowed at 0x6A00;
+// 12B stride (imul 0xC movsd x3) in callers 0x005D5B21 0x005D5BA3 0x005D5C61.
+
+template <typename T>
+class StringBase
+{
+public:
+    int compareNoCase(const StringBase &other) const;
+private:
+    void *m_data;
+};
+
+struct Rva005D5A7EInner
+{
+    int m00;
+    StringBase<char> m_str;
+    int m08;
+    int m0C;
+    int m10;
+};
+
+class Rva005D5A7E
+{
+public:
+    bool rva005D5A7E(const Rva005D5A7E &other) const;
+private:
+    Rva005D5A7EInner *m_ptr;
+    int m_val;
+    int m_pad;
+};
+
+bool Rva005D5A7E::rva005D5A7E(const Rva005D5A7E &other) const
+{
+    if (m_val == other.m_val)
+        return m_ptr->m_str.compareNoCase(other.m_ptr->m_str) < 0;
+    return m_val > other.m_val;
+}
+
+void Rva005D5B21Insert(Rva005D5A7E *last, Rva005D5A7E val, int dummy)
+{
+    (void)dummy;
+    Rva005D5A7E *next = last;
+    --next;
+    while (val.rva005D5A7E(*next)) {
+        *last = *next;
+        last = next;
+        --next;
+    }
+    *last = val;
+}
+
+void Rva005D5DF0Sort(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E *tag, int comp)
+{
+    (void)tag;
+    for (Rva005D5A7E *it = first; it != last; ++it)
+        Rva005D5B21Insert(it, *it, comp);
+}
+
+Rva005D5A7E *Rva005D5C61Median(Rva005D5A7E *a, Rva005D5A7E *b, Rva005D5A7E *c, int comp)
+{
+    (void)comp;
+    if (a->rva005D5A7E(*b)) {
+        if (b->rva005D5A7E(*c))
+            return b;
+        else if (a->rva005D5A7E(*c))
+            return c;
+        else
+            return a;
+    } else {
+        if (a->rva005D5A7E(*c))
+            return a;
+        else if (b->rva005D5A7E(*c))
+            return c;
+        else
+            return b;
+    }
+}
+
+class Rva005D5AB3
+{
+public:
+    bool rva005D5AB3(const Rva005D5AB3 &other) const;
+private:
+    Rva005D5A7EInner *m_ptr;
+    bool m_flag;
+};
+
+// ?rva005D5AB3@Rva005D5AB3@@QBE_NABV1@@Z present-unmatched
+bool Rva005D5AB3::rva005D5AB3(const Rva005D5AB3 &other) const
+{
+    if (m_flag != other.m_flag)
+        return other.m_flag;
+    if (m_ptr == 0)
+        return true;
+    if (other.m_ptr == 0)
+        return false;
+    bool otherEmpty = !other.m_ptr->m10;
+    bool thisEmpty = !m_ptr->m10;
+    if (otherEmpty ^ thisEmpty)
+        return otherEmpty;
+    return m_ptr->m_str.compareNoCase(other.m_ptr->m_str) < 0;
+}
