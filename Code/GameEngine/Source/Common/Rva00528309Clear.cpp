@@ -24,8 +24,13 @@ class Rva00528309
 {
 public:
 	void rva00528309();
+	void rva005283E3();
 private:
-	char m_pad[0x24];
+	char m_pad00[0x14];
+	int m_14;
+	char m_pad18[4];
+	int m_1C;
+	int m_20;
 	Rva00528309Elem m_elems[15];
 	int m_count;
 };
@@ -40,4 +45,12 @@ void Rva00528309::rva00528309()
 		e.m_b.clear();
 		e.m_c = -1;
 	}
+}
+
+void Rva00528309::rva005283E3()
+{
+	rva00528309();
+	m_14 = 0;
+	m_1C = 0;
+	m_20 = 0;
 }
