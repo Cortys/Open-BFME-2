@@ -2540,3 +2540,4 @@ FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C famil
 ?rva00239E0B@Rva00239E0BHolder@@QAEPAPAXPAPAX@Z	0x00239E0B	26	blocked	wrapper around rowed insert 0x239D02 gives 19-21B frameless or push-head vs retail 26B EBP frame plus push-ecx-mov-esp-store shape; tried O1 Oy- Os modulefactory-flags and local-head spellings t=15 model=muse-599a
 ?rva0053FF5F@Rva0053FF5F@@QAEAAV1@ABV1@@Z	0x0053FF5F	51	partial	push edi one store late only scheduling differs t=15 model=muse-10f0 score=0.95 stash=reverse/attempts/0x0053ff5f.cpp
 ??0Rva00540D94@@QAE@ABURva00540D94Src@@MMH@Z	0x00540D94	54	blocked	m0c store late vs retail early t=12 model=muse-10f0
+FUN_009f4aed	0x005F4AED	74	blocked	EH method with virtual slot1 plus Holder copy-dtor and ret 0xC plus scope 0xBA525A t=25 model=muse-bf13
