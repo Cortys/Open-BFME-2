@@ -5,6 +5,7 @@
 // ?someInsideSomeOutside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E50D (172B).
 // ?allInside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E3C8 (172B).
 // ?rva0039E7F2@Team@@QAEXMMM@Z @0x0039E7F2 (35B).
+// ?noneInside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E474 (153B).
 // Team::didPartialEnter(): returns true when a considered member has entered
 // the trigger. Retail guard is the byte at Team+0x5c; the member walk uses the
 // pinned iterate_TeamMemberList at 0x263864 and the pinned DLINK advance at
@@ -74,6 +75,7 @@ public:
 	bool didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool someInsideSomeOutside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool allInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
+	bool noneInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	void rva0039E7F2(float a, float b, float c);
 
 private:
@@ -201,6 +203,36 @@ bool Team::allInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
 		anyConsidered = true;
 	}
 	return anyConsidered && !anyOutside;
+}
+
+bool Team::noneInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
+{
+	bool anyConsidered = false;
+	bool anyInside = false;
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+		Object *cur = iter.cur();
+		AIUpdateInterface *ai = cur->m_ai;
+		if (ai) {
+			UnsignedInt mask = 1u << whichToConsider;
+			if ((ai->m_surfaces & mask) == 0)
+				continue;
+		} else {
+			unsigned char mask8 = (unsigned char)(1u << whichToConsider);
+			if ((mask8 & 1) == 0)
+				continue;
+		}
+		if ((cur->m_dead & 1) != 0)
+			continue;
+		ThingTemplate *tmpl = cur->m_template;
+		if ((tmpl->m_kindByte113 & 2) != 0)
+			continue;
+		if ((tmpl->m_kindByte118 & 0x40) != 0)
+			continue;
+		if (cur->isInside(pTrigger))
+			anyInside = true;
+		anyConsidered = true;
+	}
+	return anyConsidered && !anyInside;
 }
 
 void Team::rva0039E7F2(float a, float b, float c)

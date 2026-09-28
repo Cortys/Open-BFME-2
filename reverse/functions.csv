@@ -39929,3 +39929,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?someInsideSomeOutside@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E50D,172,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,BFME1 TeamTriggerAreaTests donor plus BFME2 layout Team 0x5c Object 0x258 AI 0x1dc dead 0x438 kind 0x113 0x118
 ?allInside@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E3C8,172,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,BFME1 TeamTriggerAreaTests donor plus BFME2 layout Team 0x5c Object 0x258 AI 0x1dc dead 0x438 kind 0x113 0x118
 ?rva0039E7F2@Team@@QAEXMMM@Z,,0x0039E7F2,35,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,Team walk via iterate plus advance unlocks 0x39F03A
+?noneInside@Team@@QAE_NPAVPolygonTrigger@@I@Z,,0x0039E474,153,Code/GameEngine/Source/Common/RTS/TeamDidPartialEnter.cpp,matched,BFME1 TeamTriggerAreaTests donor plus BFME2 layout Team 0x5c Object 0x258 AI 0x1dc dead 0x438 kind 0x113 0x118
