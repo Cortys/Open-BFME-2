@@ -40763,3 +40763,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0055AA06@Rva0055AA06@@QAEXPBUCoord3D@@@Z,,0x0055AA06,49,Code/GameEngine/Source/Common/Rva0055AA06ListPush.cpp,matched,TheGameLogic plus0x40 push_back plus18 inc plus1C copy 12B to plus20 caller 0x39CF0A
 ?rva0041097B@Rva0041097B@@QAEXPAX@Z,,0x0041097B,28,Code/GameEngine/Source/Common/Rva0041097BDelete.cpp,matched,chain hashtable node delete val plus4 via rowed dtor and free
 ?rva0023E7B4@Rva0023E7B4@@QAEPAXG@Z,,0x0023E7B4,37,Code/GameEngine/Source/Common/Rva0023E7B4Find.cpp,matched,circular list head 0x1c0 word key return node plus 8
+?rva00407C6B@Rva00407C6B@@QAEXXZ,,0x00407C6B,20,Code/GameEngine/Source/Common/Rva00407C6BClear.cpp,matched,unlock two map clears via twin pin clear 21A917
