@@ -2440,3 +2440,4 @@ FUN_00903e4f	0x00503E4F	39	blocked	eax-arg private static needs callers in same 
 ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	partial	cur in eax not esi; mask in edi not edx; push esi edi late not ebx esi early t=25 model=muse-k4m-87d4 score=0.98 stash=reverse/attempts/0x0039e303.cpp
 ?rva002E7542@Rva002E7542@@QAEXHPBUCoord3D@@H@Z	0x002E7542	39	partial	missing mov eax ecx plus base-temp swap t=15 model=muse-ded4 score=0.95 stash=reverse/attempts/0x002e7542.cpp
 ?pickBridge@Bridge@@QAE_NABVVector3@@0PAV2@@Z	0x0027FBFE	300	blocked	frame 44 vs 34 plus Plane init and no t-reuse t=20 model=muse-ded4
+?rva004151C4@Rva004151C4@@QAE	0x004151C4	39	blocked	odd lea esp+0xb points to esp0-1 and AllocProxy pair unclear; needs deque base precedent t=8 model=muse-qx3z
