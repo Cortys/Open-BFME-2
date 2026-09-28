@@ -40171,3 +40171,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00540CED@Rva00540CED@@QAEXPAVDataChunkOutput@@@Z,,0x00540CED,61,Code/GameEngine/Source/Common/Rva00540CEDWrite.cpp,matched,calls rowed 0x5C706A plus 3 writeReal floats at +4 +8 +0C
 ?rva00540F4D@Rva00540F4D@@QAEXPAVDataChunkOutput@@@Z,,0x00540F4D,66,Code/GameEngine/Source/Common/Rva00540F4DWrite.cpp,matched,array writer stride 0x14 count plus time plus rowed 0x540CED
 ?Rva005E71C6Assign@@YAXPAPAX0@Z,,0x005E71C6,24,Code/GameEngine/Source/Common/Bfme/Rva005E71C6Assign.cpp,matched,null-guarded assign with +0x28 refcount 6 callers
+?Rva005E7204Fill@@YAPAPAXPAPAXI0PAX@Z,,0x005E7204,37,Code/GameEngine/Source/Common/Bfme/Rva005E7204Fill.cpp,matched,fill looping 0x005E71C6 assign 4th word ignored caller 0x005E81F9
