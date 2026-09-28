@@ -32,3 +32,13 @@ void Rva0041A3F7::rva0041A3F7()
 	_M_last = _M_first + 8;
 	_M_cur = _M_first;
 }
+void Rva0041A3F7::rva0041A4A7()
+{
+	if (_M_cur != _M_last - 1)
+	{
+		_M_cur->text.~basic_string();
+		_M_cur += 1;
+		return;
+	}
+	rva0041A3F7();
+}
