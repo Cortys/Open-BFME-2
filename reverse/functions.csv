@@ -40353,3 +40353,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005C743B@Rva005C743B@@QBE_NXZ,,0x005C743B,13,Code/GameEngine/Source/Common/Rva005C743BCompare.cpp,matched,dword compare m00 GE m04 callers 0x55A82A 0x55A85B
 ?Rva00239BD8Alloc@@YGPAXPAPAX@Z,,0x00239BD8,28,Code/GameEngine/Source/Common/Rva00239BD8Alloc.cpp,matched,freelist node alloc via rowed pop plus store to node+8 same pool as 0x00239380
 ?rva0028A82A@Rva0028AF76Sub@@QBEXPAX@Z,,0x0028A82A,24,Code/GameEngine/Source/GameLogic/Object/ObjectRvaSmallGetters.cpp,matched,Rva sub float plus two ints via Object plus 0x240 caller
+?Rva00740A60Get@@YAHABV?$StringBase@D@@@Z,,0x00740A60,54,Code/GameEngine/Source/Common/Rva00740A60Get.cpp,matched,table walk compareNoCase returns index else 0 caller 0x740E49 table 0x9DDF68
