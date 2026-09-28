@@ -40409,3 +40409,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028B1D4@Object@@QBEXHH@Z,,0x0028B1D4,48,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B265.cpp,matched,Object module scan slot 0x14 then slot 0 with two int args
 ?Rva00601772Fill@@YAPAVCoord3D@@PAV1@IABUCoord3DBase@@@Z,,0x00601772,37,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,Coord3D fill via rowed 0x60173A with dst-first local order
 ?Rva0033738BCopy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x0033738B,50,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,forward 20B copy loop via copy 0x3372EC shaped by 0x3319C9
+?rva002D381D@Rva002D381D@@QAEXH@Z,,0x002D381D,17,Code/GameEngine/Source/Common/System/Rva002D381DCalls.cpp,matched,chain of 0x002D352C index 0 via outer plus 0x10
+?rva002D382E@Rva002D382E@@QAEXH@Z,,0x002D382E,17,Code/GameEngine/Source/Common/System/Rva002D381DCalls.cpp,matched,chain of 0x002D352C index 1 via outer plus 0x10
