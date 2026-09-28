@@ -40402,3 +40402,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B246@Rva0039B20C@@QAEXXZ,,0x0039B246,9,Code/GameEngine/Source/Common/Rva0039B20CSetter.cpp,matched,forwarder pushing +0x24 into rowed 0x39B227 same class
 ??$__uninitialized_fill_n@PAVRva003371B1@@IV1@@_STL@@YAPAVRva003371B1@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00337366,37,Code/GameEngine/Source/Common/Rva003371B1FillN.cpp,matched,fill_n for 20B record via Construct 0x337313 stride 0x14
 ??$__uninitialized_copy@PAVRva003371B1@@PAV1@@_STL@@YAPAVRva003371B1@@PAV1@00ABU__false_type@0@@Z,,0x00337340,38,Code/GameEngine/Source/Common/Rva003371B1UninitCopy.cpp,matched,uninit copy for 20B record via Construct 0x337313 stride 0x14
+?rva00397C94@Rva00397C94@@QAEXPAURva00397C94Node@@@Z,,0x00397C94,53,Code/GameEngine/Source/Common/Rva00397C94Clear.cpp,matched,tree clear via rowed CameraMarker dtor and free caller resets list head
