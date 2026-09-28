@@ -39914,3 +39914,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??_GRva00355D66@@UAEPAXI@Z,,0x00355FDD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-q8z-19f8.cpp,matched,slot 0 of 0x00814E5C calls rowed dtor plus delete
 ??_GRva00355DC5@@UAEPAXI@Z,,0x00356066,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-q8z-19f8.cpp,matched,slot 0 of 0x00814E74 calls rowed dtor plus delete
 ??1Rva00355F3E@@UAE@XZ,,0x00355F3E,55,Code/GameEngine/Source/Common/Rva00355D66Dtor.cpp,matched,vtable 0x00814E8C plus array clear plus base tail jmp
+??_GRva00355F3E@@UAEPAXI@Z,,0x003563F7,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-q8z-19f8.cpp,matched,slot 0 of 0x00814E8C calls rowed dtor plus delete
