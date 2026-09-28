@@ -47,3 +47,11 @@ Rva004C5DD0 *__cdecl Rva004F6AAEFill(Rva004C5DD0 *dest, unsigned int count, cons
 		Rva004F6A52Assign(cur, value);
 	return cur;
 }
+
+Rva004C5DD0 *__cdecl Rva004F6A88Copy(const Rva004C5DD0Pair *first, const Rva004C5DD0Pair *last, Rva004C5DD0 *result)
+{
+	Rva004C5DD0 *cur = result;
+	for (; first != last; ++first, ++cur)
+		Rva004F6A52Assign(cur, first);
+	return cur;
+}
