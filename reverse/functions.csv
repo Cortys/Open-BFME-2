@@ -39582,3 +39582,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva001F4DC4@Rva001F4DC4@@QAEMXZ,,0x001F4DC4,34,Code/GameEngine/Source/Common/Rva001F4DC4.cpp,matched,Float getter plus9c via slot8 with 0.0f else
 ?rva001F4DF9@Rva001F4DF9@@QAEMXZ,,0x001F4DF9,34,Code/GameEngine/Source/Common/Rva001F4DF9.cpp,matched,Float getter plus98 via slot5 with 0.0f else
 ??4Rva001F41CD@@QAEAAV0@ABV0@@Z,,0x001F41CD,57,Code/GameEngine/Source/Common/Rva001F41CDAssign.cpp,matched,Assignment clones plus0 via slot4 then deletes old via slot0
+?Rva002E6E8AGet@@YAHH@Z,,0x002E6E8A,21,Code/GameEngine/Source/Common/Rva002E6E8AGet.cpp,matched,range predicate 0x11 to 0x40 with 12 callers and no callees via OR-guard model
