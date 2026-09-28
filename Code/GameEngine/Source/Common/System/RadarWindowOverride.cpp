@@ -7,6 +7,8 @@
 
 class GameWindow;
 
+void setHideScroll();
+
 struct RadarWindowOverrideInner
 {
 	char m_pad[ 0x60 ];
@@ -16,6 +18,8 @@ struct RadarWindowOverrideInner
 	bool m_unused : 5;
 	char m_pad61[ 3 ];
 	GameWindow *m_window;
+	char m_pad68[ 0x14 ];
+	bool m_7C;
 };
 
 class RadarWindowOverrideSource
@@ -24,6 +28,7 @@ public:
 	bool hasOverrideWindow( void ) const;
 	GameWindow *getOverrideWindow( void ) const;
 	bool rva002D35E6( void ) const;
+	void rva002D3615( bool value );
 
 private:
 	char m_pad[ 0x10 ];
@@ -43,4 +48,10 @@ bool RadarWindowOverrideSource::hasOverrideWindow( void ) const
 bool RadarWindowOverrideSource::rva002D35E6( void ) const
 {
 	return m_inner->m_flag2;
+}
+
+void RadarWindowOverrideSource::rva002D3615( bool value )
+{
+	m_inner->m_7C = value;
+	setHideScroll();
 }

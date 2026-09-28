@@ -40428,3 +40428,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00581229Get@@YAHPAURva00581229Msg@@@Z,,0x00581229,119,Code/GameEngine/Source/GameNetwork/DoesCommandRequireACommandID.cpp,matched,gap msg-type21 list26-early same-Int-chain
 ?rva002D3850@Rva002D3850@@QAEPAMH@Z,,0x002D3850,17,Code/GameEngine/Source/Common/System/Rva002D3850Array.cpp,matched,outer plus 0x10 inner array plus 0xFC stride 8 callers 0x104195 0x104359
 ?rva0036E1F7@Rva0036E1F7@@QAEXHHH@Z,,0x0036E1F7,56,Code/GameEngine/Source/Common/Rva0036E346Count.cpp,matched,List walk calling Object 0x28BD5D then slot 0x14
+?rva002D3615@RadarWindowOverrideSource@@QAEX_N@Z,,0x002D3615,18,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,setter for inner plus 0x7C then setHideScroll callers push 0 and 1
