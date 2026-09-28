@@ -8,12 +8,16 @@ extern "C" void __cdecl free(void *p);
 
 class Rva00204136 {
 	struct Node {
-		char pad[8];
+		char pad0[4];
+		void *pFirst;
 		Node *pNext;
 		Node *pOther;
 	};
+	Node *m_sentinel; // +0
+	int m_size; // +4
 public:
 	void rva00204136(void *p);
+	void rva00204984();
 };
 
 void Rva00204136::rva00204136(void *p)
@@ -27,4 +31,15 @@ void Rva00204136::rva00204136(void *p)
 		free(n);
 		n = next;
 	}
+}
+
+void Rva00204136::rva00204984()
+{
+	if (m_size == 0)
+		return;
+	rva00204136(m_sentinel->pFirst);
+	m_sentinel->pNext = m_sentinel;
+	m_sentinel->pFirst = 0;
+	m_sentinel->pOther = m_sentinel;
+	m_size = 0;
 }
