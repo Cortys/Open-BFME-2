@@ -72,7 +72,6 @@ public:
 	BfmeP1050 *m_bfmeP;
 };
 
-// ?bfmeGo1050C@BfmeC1050@@QAEXHHHHH@Z present-unmatched
 void BfmeC1050::bfmeGo1050C(int a, int b, int c, int d, int e)
 {
 	m_bfmeP->bfmeFwd1050(a, c, b, d, e);

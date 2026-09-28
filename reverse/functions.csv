@@ -40398,3 +40398,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028B265@Object@@QBEXXZ,,0x0028B265,45,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B265.cpp,matched,Object module scan slot 0x20 then slot 0x3C with 1.0f
 ?rva0028B292@Object@@QBEXH@Z,,0x0028B292,45,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B265.cpp,matched,Object module scan slot 0x20 then slot 0x24 with int arg
 ?rva00625340@PartitionManager@@QAEXHHH@Z,,0x00625340,30,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,forwarder via +0x10 to bfmeFwd1050 callers 0x00392ECB 0x00393433
+?bfmeGo1050C@BfmeC1050@@QAEXHHHHH@Z,,0x006253C0,36,Code/GameEngine/Source/Common/BfmeConv1050.cpp,matched,swap b c forwarder to bfmeFwd1050 caller 0x002FFAE9
