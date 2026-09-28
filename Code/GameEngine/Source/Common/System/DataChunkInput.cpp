@@ -190,6 +190,7 @@ typedef Bool (*DataChunkParserPtr)(DataChunkInput &file, DataChunkInfo *info, vo
 class UserParser
 {
 	public:
+	virtual void *deleteInstance(int flags);
 	virtual ~UserParser();
 	UserParser *next;					// this+0x04
 	UserParser **previous;					// this+0x08
@@ -213,15 +214,7 @@ public:
 	AsciiString getName(UnsignedInt id);
 	Bool isOpenedForRead(void) { return m_headerOpened; }
 
-	~DataChunkTableOfContents()
-	{
-		Mapping *mapping = m_list;
-		while (mapping != 0) {
-			Mapping *next = mapping->next;
-			delete mapping;
-			mapping = next;
-		}
-	}
+	~DataChunkTableOfContents();
 
 	Mapping *m_list;					// this+0x00
 	Int m_listLength;
@@ -318,6 +311,8 @@ Bool DataChunkInput::atEndOfChunk(void)
 	return true;
 }
 
+void operator delete(void *ptr);
+
 // Retail 0x00306DCC (20B): reset the stream to just-opened state: drain the
 // chunk stack, then seek the file back to the first-chunk position. ZH
 // DataChunk.cpp donor verbatim (clearChunkStack(); m_file->absoluteSeek(
@@ -331,21 +326,19 @@ void DataChunkInput::reset()
 }
 
 // ??1DataChunkInput@@QAE@XZ
-// ??1DataChunkInput@@QAE@XZ present-unmatched
+// Retail 0x00306F01 (82B): clearChunkStack() for the InputChunk stack, the
+// deleteInstance(0)/operator-delete loop over m_parserList at +0x18, then
+// the implicit m_contents dtor (rowed 0x00306D5C) under the /EHsc frame.
+// ZH donor proves the three phases; BFME2 routes both lists through the
+// virtual deleteInstance at slot 0 (MessageStreamListCtors.cpp precedent).
 DataChunkInput::~DataChunkInput()
 {
-	InputChunk *chunk = m_chunkStack;
-	while (chunk != 0) {
-		InputChunk *next = chunk->next;
-		delete chunk;
-		chunk = next;
-	}
-	m_chunkStack = 0;
+	clearChunkStack();
 
 	UserParser *parser = m_parserList;
 	while (parser != 0) {
 		UserParser *next = parser->next;
-		delete parser;
+		::operator delete(parser->deleteInstance(0));
 		parser = next;
 	}
 }
