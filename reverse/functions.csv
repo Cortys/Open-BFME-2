@@ -40913,3 +40913,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005DD6D5Apply@@YAXPAP8Rva005DE5B5@@AEXXZPAU1@1P81@AEXXZ@Z,,0x005DD6D5,34,Code/Libraries/Source/WWVegas/WWLib/stlport_rva005de5b5_foreach.cpp,matched,unlock range apply helper via member fn
 ?remove@?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEXABVAsciiString@@@Z,,0x005C9E90,67,Code/Libraries/Source/WWVegas/WWLib/stlport_list_asciistring_remove.cpp,matched,list AsciiString remove via inlined compare 0x69D6; erase 0xBC67A; callers 0x5CADD3 0x5CAE72
 ?rva005DDC6B@Rva005DDC6B@@QAEMII@Z,,0x005DDC6B,58,Code/GameEngine/Source/Common/Rva005DDC6BSum.cpp,matched,unlock float range sum via counted buffer
+?rva005E2D74@Rva005E2D74@@QAEHPAD@Z,,0x005E2D74,22,Code/GameEngine/Source/Common/Rva005E2D74.cpp,matched,unlock byte plus pair write plus 1
