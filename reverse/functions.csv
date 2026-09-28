@@ -40559,3 +40559,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1?$vector@UBfmeStringRecord005D511F@@V?$allocator@UBfmeStringRecord005D511F@@@_STL@@@_STL@@QAE@XZ,,0x005D5434,63,Code/GameEngine/Source/Common/FamilyVectorDtors_muse-3fc4.cpp,matched,vector dtor via rowed Destroy and free same EH shape as 111ACF precedent
 ?Rva003BCFC9Set@@YGX_N@Z,,0x003BCFC9,11,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,forwarder to PartitionManager shroud thunk via TheShroudManager
 ?rva004DF161@Rva004DF161@@QBEMXZ,,0x004DF161,30,Code/GameEngine/Source/Common/Rva004DF161Ratio.cpp,matched,callers 0x0033AAAC 0x003E46FB use float plus 1.0f pool 0x007BB8D8 plus fild fidiv
+?rva004DF18D@Rva004DF18D@@QAEXH@Z,,0x004DF18D,34,Code/GameEngine/Source/Common/Rva004DF18DAdd.cpp,matched,callers 5 sites plus rowed Player onPowerBrownOutChange 0x002AB8D0
