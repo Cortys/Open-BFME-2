@@ -40282,3 +40282,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039DC63@Team@@QBEHXZ,,0x0039DC63,59,Code/GameEngine/Source/Common/RTS/TeamRva0039D9E3.cpp,matched,Team template 0x80 count via 263864 plus 263526
 ?Rva0015344BFillN@@YAPAVRva00468520@@PAV1@IABV1@ABUTag@@@Z,,0x0015344B,37,Code/Libraries/Source/WWVegas/WWLib/Rva0015344BFillN.cpp,matched,FillN via rowed Init 0x4F6B7B same as Rva0014F5AB caller 0x153934
 ??4Rva0039D769@@QAEAAV0@ABV0@@Z,,0x0039D769,61,Code/GameEngine/Source/Common/Rva0039D769Assign.cpp,matched,0x18 element assign via 3 dwords plus 2 AsciiStrings plus tail
+?Rva00153425Copy@@YAPAVRva00468520@@PAV1@00ABUTag@@@Z,,0x00153425,38,Code/Libraries/Source/WWVegas/WWLib/Rva00153425Copy.cpp,matched,copy via rowed Init 0x4F6B7B callers 0x1534A7 0x15353B 0x153873
