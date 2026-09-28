@@ -39628,3 +39628,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva00141DC0@Rva00141DC0@@QAEPAXPAX@Z,,0x00141DC0,44,Code/Libraries/Source/WWVegas/WW3D2/Rva00141DC0CreateNode.cpp,matched,list push_front via global pool 0x9B424C and landed pop
 ?rva003B8BAA@Rva003B8BAA@@QAEPAXXZ,,0x003B8BAA,30,Code/GameEngine/Source/Common/Rva003B8BAALookup.cpp,matched,guard 0xDFEF10 plus0xB4 array chase plus0x10 plus0x14 elem plus0x20 via callers using 0xE02D6C
 ?rva003B8BF9@Rva003B8BAA@@QAEPAXH@Z,,0x003B8BF9,13,Code/GameEngine/Source/Common/Rva003B8BAALookup.cpp,matched,same plus0x14 array indexed by stack arg via callers at 0x522434 0x56DB3B 0x57D286
+?rva003B8B2A@Rva003B8B2A@@QAEHXZ,,0x003B8B2A,19,Code/GameEngine/Source/Common/Rva003B8B2ACheck.cpp,matched,triple-and byte4C dword20 dword1C via callers testing al at 0x3B92E6 0x3B933E
