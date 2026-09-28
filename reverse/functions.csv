@@ -41574,3 +41574,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002B8106@Rva002B8106@@QAEXABUBfmeStringRecord002B4DC1@@@Z,,0x002B8106,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_002b4dc1_insert.cpp,matched,Rva002B8106 list append thunk via end insert to rowed 0x002B70DC
 ?rva002B87E0@Rva002B87E0@@QAEXURva002B87E0Param@@@Z,,0x002B87E0,55,Code/Libraries/Source/WWVegas/WWLib/stlport_list_002b4dc1_append.cpp,matched,Rva002B87E0 by-value record append via rowed 0x002B8106
 ?Rva003834CDCreate@@YGPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@_STL@@ABU?$pair@$$CBHH@2@@Z,,0x003834CD,34,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_int_os.cpp,matched,Map int-int node create via rowed allocate 0x307F0 and dup 0x382BC3
+?Rva003834EFClone@@YGPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@_STL@@PAU12@@Z,,0x003834EF,30,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_int_os.cpp,matched,Map int-int node clone via rowed create 0x3834CD color copy

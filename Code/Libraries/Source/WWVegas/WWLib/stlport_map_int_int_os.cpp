@@ -43,3 +43,15 @@ IntIntNode * __stdcall Rva003834CDCreate(const IntIntValue &value)
 	((void (__cdecl *)(IntIntValue *, const IntIntValue *))&dup_00382BC3)(slot, &value);
 	return node;
 }
+
+// ?Rva003834EFClone@@YGPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@_STL@@PAU12@@Z @ 0x003834EF (30B).
+// Map<int,int> node clone: create from the source value at +0x10, copy the
+// color byte, zero left/right. Caller 0x00383C34 x2.
+IntIntNode * __stdcall Rva003834EFClone(IntIntNode *src)
+{
+	IntIntNode *node = Rva003834CDCreate(src->_M_value_field);
+	node->_M_color = src->_M_color;
+	node->_M_left = 0;
+	node->_M_right = 0;
+	return node;
+}
