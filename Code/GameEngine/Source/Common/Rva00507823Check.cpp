@@ -72,6 +72,7 @@ class Rva00507823
 {
 public:
 	unsigned char rva00507558(const void *arg);
+	unsigned char rva0050774A(const void *arg, int unused);
 private:
 	char m_pad00[4];
 	_STL::_Base_bitset<32> m_need04;
@@ -90,4 +91,9 @@ unsigned char Rva00507823::rva00507558(const void *arg)
 	Player *player = obj->getControllingPlayer();
 	((_STL::_Base_bitset<32> &)tmp)._M_do_or((const _STL::_Base_bitset<32> &)player->m_mask13c);
 	return ((const Rva0033A453 &)tmp).rva0033A453(&m_need04, &m_ban84) != 0;
+}
+
+unsigned char Rva00507823::rva0050774A(const void *arg, int unused)
+{
+	return rva00507558(arg) != 0;
 }
