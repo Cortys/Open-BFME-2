@@ -37,3 +37,4 @@ Rva003371B1::Rva003371B1(const Rva003371B1 &other)
     : m_str(other.m_str), m_flag(other.m_flag), m_vec(other.m_vec)
 {
 }
+template void _STL::_Construct<Rva003371B1, Rva003371B1>(Rva003371B1 *, const Rva003371B1 &);

@@ -40392,3 +40392,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva003371B1@@QAE@ABV0@@Z,,0x003371B1,67,Code/GameEngine/Source/Common/Rva003371B1Copy.cpp,matched,20B record copy via StringBase 0x365F0 and vector 0x33629E shaped by 0xC0BEC
 ?insert@?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@QAEPAPBVModuleData@@PAPBV3@ABQBV3@@Z,,0x003B67B3,126,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_moduledatalist_insert.cpp,matched,STLport vector const ModuleData ptr single insert via vendor _vector.h
 ?rva0028BAAE@Object@@QAEXH@Z,,0x0028BAAE,18,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BA85.cpp,matched,Object setter stores 0x45C int then broadcasts via 0x28BA85
+??$_Construct@VRva003371B1@@V1@@_STL@@YAXPAVRva003371B1@@ABV1@@Z,,0x00337313,45,Code/GameEngine/Source/Common/Rva003371B1Copy.cpp,matched,Construct for 20B record via copy 0x3371B1 shaped by 0xC23B4
