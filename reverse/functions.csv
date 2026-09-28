@@ -40774,3 +40774,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0010EFB1Inc@@YAJXZ,,0x0010EFB1,12,Code/GameEngine/Source/Common/Rva0010EFB1Inc.cpp,matched,InterlockedIncrement global 0x9EC38C caller 0x10F09F unblocks 0x10F058
 ?rva004074B6@Rva004074B6@@QAEXABVAsciiString@@@Z,,0x004074B6,25,Code/GameEngine/Source/Common/Rva004074B6NameKey.cpp,matched,unlock NameKey via TheNameKeyGenerator nameToKey
 ?rva0010ED3D@Rva0010ED3D@@QAEXH@Z,,0x0010ED3D,15,Code/GameEngine/Source/Common/Rva0010ED3DMax.cpp,matched,max setter plus3C callers 0xA7FCF 0xA8064
+?rva0010E482@Rva0010E482@@QAEHH@Z,,0x0010E482,34,Code/GameEngine/Source/Common/Rva0010E482Check.cpp,matched,dual table nonzero check callers 0xE6DA 0xE8DE 0xEAAD
