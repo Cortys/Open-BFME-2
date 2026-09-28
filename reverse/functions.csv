@@ -40165,3 +40165,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003AFA64FillUnitVector@@YAPAVCoord3D@@PAV1@@Z,,0x003AFA64,198,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFA64FillUnitVector.cpp,matched,BFME1 donor Rva005FAD00 same file same lines 31-33 and sibling Rva005EE317 shape
 ?rva001F08D3@ObjectCreationList@@QAEXPAX00@Z,,0x001F08D3,87,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 sibling of 0x1F0878
 ?rva001F081A@ObjectCreationList@@QAEXPAX000H@Z,,0x001F081A,94,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 sibling of 0x1F0878
+?Rva004C309CForward@@YAXPAX0000H@Z,,0x004C309C,32,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,null checked wrapper forwarding 5 args to 0x1F081A chain

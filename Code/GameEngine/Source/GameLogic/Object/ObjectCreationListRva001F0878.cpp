@@ -98,6 +98,13 @@ void ObjectCreationList::rva001F0410(void *a1, void *a2)
 		(*i)->v4(a1, a2);
 }
 
+void __cdecl Rva004C309CForward(void *ocl, void *a1, void *a2, void *a3, void *a4, int a5)
+{
+	if (ocl == 0)
+		return;
+	((ObjectCreationList *)ocl)->rva001F081A(a1, a2, a3, a4, a5);
+}
+
 void ObjectCreationList::rva001F081A(void *a1, void *a2, void *a3, void *a4, int a5)
 {
 	ObjectCreationList *cur = this;
