@@ -32,6 +32,7 @@ class PolygonTrigger;
 
 enum AICommandType
 {
+	AICMD_TIGHTEN_TO_POSITION = 0x02,
 	AICMD_IDLE = 5,
 	AICMD_FOLLOW_WAYPOINT_PATH = 0x06,
 	AICMD_FOLLOW_WAYPOINT_PATH_AS_TEAM = 0x07,
@@ -118,6 +119,7 @@ public:
 	void aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource);
 	void rva0045003E(Int value, CommandSourceType cmdSource);
+	void aiTightenToPosition(const Coord3D *position, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -437,5 +439,12 @@ void AICommandInterface::rva0045003E(Int value, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x31, cmdSource);
 	parms.m_intValue = value;
+	aiDoCommand(&parms);
+}
+
+void AICommandInterface::aiTightenToPosition(const Coord3D *position, CommandSourceType cmdSource)
+{
+	AICommandParms parms(AICMD_TIGHTEN_TO_POSITION, cmdSource);
+	parms.m_pos = *position;
 	aiDoCommand(&parms);
 }
