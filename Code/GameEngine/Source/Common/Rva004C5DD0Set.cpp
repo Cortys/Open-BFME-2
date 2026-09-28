@@ -33,3 +33,9 @@ Rva004C5DD0 &Rva004C5DD0::set(const Rva004C5DD0Pair *p)
 		b->m_refs++;
 	return *this;
 }
+
+void __cdecl Rva004F6A52Assign(Rva004C5DD0 *dest, const Rva004C5DD0Pair *src)
+{
+	if (dest)
+		dest->set(src);
+}
