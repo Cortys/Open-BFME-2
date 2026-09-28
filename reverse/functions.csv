@@ -40318,3 +40318,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0033B352Record@@QAE@XZ,,0x0033B352,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,Record dtor wide plus narrow via StringRecordDtors family plus unwind callers
 ?Rva0033A3F4Lookup@@YAHABVAsciiString@@@Z,,0x0033A3F4,60,Code/GameEngine/Source/Common/Rva0033A3F4Lookup.cpp,matched,faction lookup Goblins returns 5 else table 0xDBE9B0 index else 7
 ?any@?$BitFlags@$0NK@@@QBE_NXZ,,0x002C7501,20,Code/GameEngine/Source/Common/System/BitFlags218Any.cpp,matched,KindOf any via WeaponTemplateSet masks and isAnyKindOf callers
+?rva0031D5F8@Rva0031D5F8@@QAEPAXPBVAsciiString@@@Z,,0x0031D5F8,38,Code/GameEngine/Source/GameClient/Rva0031D5F8Lookup.cpp,matched,table at this+0x30 via rowed Rva00056F61 find with node+8 payload and callers at 0x00219317 0x0031D623 0x0031DFC7
