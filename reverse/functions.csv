@@ -40292,3 +40292,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D352C@Rva002D352C@@QAEXHH@Z,,0x002D352C,42,Code/GameEngine/Source/Common/System/Rva002D352CMaxStore.cpp,matched,callers 0x002D381D 0x002D382E 0x002D383F via outer plus 0x10 FPS global 0x00DBA4E8 honest inner
 ??4ObjectTypes@@QAEAAV0@ABV0@@Z,,0x00376A9C,39,Code/GameEngine/Source/GameLogic/ScriptEngine/ObjectTypesCtor.cpp,matched,ObjectTypes copy assign AsciiString plus vector
 ??1Rva0039AD56@@UAE@XZ,,0x0039AD56,89,Code/GameEngine/Source/Common/Rva0039AD56Dtor.cpp,matched,vtable 0x81AD20 Snapshot base 0x7BB554 deleting-dtor caller plus PlayerList ternary pattern
+?rva000B3A68@Rva000B3A68@@QAEEXZ,,0x000B3A68,24,Code/GameEngine/Source/Common/Rva000B3A68.cpp,matched,unlock callers 0x000B3D42 0x000BF2CA 0x000C0270 vslot62 same-this
