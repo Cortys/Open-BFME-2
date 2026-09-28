@@ -40673,3 +40673,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028C4B6@Object@@QAEXXZ,,0x0028C4B6,55,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C4B6.cpp,matched,Object provider-gated holder flag set via virtual slots
 ??_GRva00466E23@@QAEPAXI@Z,,0x00466EC2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-466E23.cpp,matched,deleting dtor for rowed 0x00466E23 via delete plus 0x0002FD60
 ?rva002041AC@Rva002041AC@@QBE?AVAsciiString@@I@Z,,0x002041AC,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002041ACGetter.cpp,matched,bounds-checked AsciiString getter over +8/+0xc via TheEmptyString callers 0x00206011
+?rva00466398@Rva00466398@@QAEXPAUOut00466398@@@Z,,0x00466398,26,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00466398Get.cpp,matched,branchless this+4 or 0 plus this+16 callers 0x00466A7C 0x0046654B
