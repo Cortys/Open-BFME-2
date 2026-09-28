@@ -2543,3 +2543,4 @@ FUN_008d7744	0x004D7744	535	blocked	535B StateMachine xfer for Rva004D759C famil
 FUN_009f4aed	0x005F4AED	74	blocked	EH method with virtual slot1 plus Holder copy-dtor and ret 0xC plus scope 0xBA525A t=25 model=muse-bf13
 ?rva005960E0@Rva0025BF8C@@QAE_NPAX@Z	0x005960E0	31	blocked	ecx save wall: ours saves this in esi across stdcall Get vs retail forwards ecx without save; t=12 model=muse-e41f
 ?rva00031D00@GeneralAllocator@Allocator@EA@@QAEHPBX@Z	0x00031D00	351	blocked	unlock 351B validator CS+depth+bool counts; 3 probes O2-383B-frameless O1-350B-framed O1min-303B register wall errors-spilled-vs-esi volatile-lock-ok; needs shared layout first t=25 model=muse-812a
+?Rva002E9B31Get@@YAHPAX@Z	0x002E9B31	180	partial	add-eax-52c-vs-disp-only-179vs180 t=35 model=muse-c76e score=0.99 stash=reverse/attempts/0x002e9b31.cpp
