@@ -40705,3 +40705,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?push_back@?$vector@VUnicodeString@@V?$allocator@VUnicodeString@@@_STL@@@_STL@@QAEXABVUnicodeString@@@Z,,0x0005CBE7,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_unicode_push_back.cpp,matched,unlock lane via rowed Construct 54DF6 and overflow 5B538 same 55B as AsciiString pushback
 ??0Rva0055A246@@QAE@XZ,,0x0055A246,56,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,array-new Coord3D 4 plus SSE zero loop caller 0x5C76CD
 ?rva0036DC6F@AIGroup@@QAEXHH@Z,,0x0036DC6F,30,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,flanked by AIGroup rows plus rva0028C1A9 delegate plus tail slot0
+??$_Destroy@PAVRva0032A3A9Element@@@_STL@@YAXPAVRva0032A3A9Element@@0@Z,,0x0032B580,24,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_0032B580.cpp,matched,chain from 0x32A3A9 tag local callers 0x32BE80 0x32BF1B

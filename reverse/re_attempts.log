@@ -2608,3 +2608,5 @@ FUN_00569FB3	0x00569FB3	174	blocked	ctor layout ambiguous E16 base plus ModuleDa
 ?Rva0053442ADiv@@YAXPAH0@Z	0x0053442A	37	partial	two signed div16 with late stores temporaries plus barrier keeps src0-then-src1 order at 35B vs 37B; remaining is cdq-vs-push scheduling and second-divisor push placement t=15 model=muse-spark score=0.86 stash=reverse/attempts/0x0053442a.cpp
 ?rva004ED471@Rva004ED471@@QAEXPAVModelNodeClass@HLodClass@@PBV23@PBXI_N@Z	0x004ED471	189	partial	missing 3 lea-push [ebp+0x1B] 4th args to Copy-Fill-Copy add-esp-0xC-vs-0x10 max-via-ptr-matched imul-matched t=25 model=muse-05 score=0.92 stash=reverse/attempts/0x004ed471.cpp
 ?rva001E3591@Rva001E3591@@QAE_NXZ	0x001E3591	37	partial	cmove-vs-branch jne+mov t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x001e3591.cpp
+??1BuildListInfo@@MAE@XZ	0x0032A186	120	partial	push 1 vs retail push 0 plus separate push eax call delete pop ecx t=20 model=muse-06 score=0.93 stash=reverse/attempts/0x0032a186.cpp
+FUN_0072b565	0x0032B565	27	blocked	4 pushes to 3-arg Fill 0x32AD58 needs ICF 4-arg twin proof t=10 model=muse-06
