@@ -2620,3 +2620,4 @@ FUN_0072bee8	0x0032BEE8	51	blocked	4 pushes to 3-arg copy 0x32A40E needs ICF 4-a
 ??1Rva007590B0@@QAE@XZ	0x00759B40	122	blocked	dtor needs EH prolog 22B plus state stores 56B gap; ours 66B with /EHsc has no EH; class appears POD but retail has unwind for tree-free region; likely needs base-member with dtor or /EHs plus local; unblocks 75A1A0 747B t=10 model=muse-spark
 ?Rva00204032Update@@YAXXZ	0x00204032	98	partial	push eax before store vs store before push at slot3 98B exact size 0 reg 2 regions t=25 model=muse-03 score=0.97 stash=reverse/attempts/0x00204032.cpp
 FUN_007063A9	0x003063A9	112	blocked	EH StringBase Xfer body needs globals and rva002D06CA donor beyond 4-lookup budget t=10 model=muse-09
+?rva002ACF02@Rva002ACF02@@QAEMABVAsciiString@@@Z	0x002ACF02	79	blocked	empty-vec check scheduling 74B vs 79B 0reg 1float-mem t=20 model=muse-10

@@ -40740,3 +40740,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00206706@Rva00206706@@QAEXPAURva00206706Node@@@Z,,0x00206706,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206706Clear.cpp,matched,recursive clear via child next dtor free same this
 ?rva00206FE6@Rva00206706@@QAEXXZ,,0x00206FE6,41,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206706Clear.cpp,matched,same this clear reset head links count
 ?rva000E5725@Rva000E5725@@QAEXPAVXfer@@@Z,,0x000E5725,218,Code/GameEngine/Source/Common/Rva000E5725Xfer.cpp,matched,chain xfer via triple DrawableID Version 1 1
+?rva001F8F2A@Rva000427195@@QAE?AUInsertRet001F8F2A@@PBX@Z,,0x001F8F2A,124,Code/GameEngine/Source/GameClient/Rva001F8F2AInsert.cpp,matched,hashtable insert via bucketIndex 0x223149 compare 0x69D6 NewNode 0x2ACFD6 same as rva00212A5A
