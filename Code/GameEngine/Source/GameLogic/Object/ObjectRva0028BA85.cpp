@@ -49,10 +49,17 @@ class Object
 
 public:
 	void rva0028BA85() const;
+	void rva0028BAAE(int v);
 };
 
 void Object::rva0028BA85() const
 {
 	for (BehaviorModule **m = m_modules244; *m; ++m)
 		(*m)->slot46(m_val45c);
+}
+
+void Object::rva0028BAAE(int v)
+{
+	m_val45c = v;
+	rva0028BA85();
 }
