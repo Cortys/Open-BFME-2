@@ -93,9 +93,12 @@ public:
 class UnicodeString : public StringBase<unsigned short>
 {
 public:
+	static const UnicodeString TheEmptyString;
+
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
 	UnicodeString &operator=(const UnicodeString &other) { set(other); return *this; }
+	bool isEmpty() const { return m_data == 0 || m_data->length == 0; }
 	int compare(const UnicodeString &other) const
 	{
 		return StringBase<unsigned short>::compare(other);
@@ -206,6 +209,7 @@ public:
 	AsciiString buildProfileKey(const char *name);
 	AsciiString encodeUserKey(const UnicodeString &user, const char *name);
 	void Rva0043BFDB(const UnicodeString &user, int profileIndex);
+	UnicodeString Rva0043B9F5(void);
 	UnicodeString Rva0043BB88(void);
 	void Rva0043BE36(const AsciiString &mapName);
 	int Rva0043BBB6(UnicodeString user);
@@ -350,4 +354,21 @@ void SkirmishPreferences::Rva0043C2EB(const UnicodeString &user)
 	RealTimeStatsPreferences::deleteStatsFile(user);
 	Rva0043BFDB(user, 1);
 	StrategicStatsPreferences::deleteStatsFile(user);
+}
+
+// ?Rva0043B9F5@SkirmishPreferences@@QAE?AVUnicodeString@@XZ @0x0043B9F5 160B
+// Current-user-name getter: QP-decodes m_currentUserName (+0x1c) via rowed
+// 0x005355F2, trims, defaults empty to UnicodeString::TheEmptyString
+// (0x00A0C898) and returns by value. Class proven by same-object calls in
+// 0x00521B56 (edi+0x698 used for Rva0043BBB6/setCurrentUserName/write and
+// this body) and by +0x1c matching m_currentUserName in ctor 0x43C128 and
+// setter 0x43C4D2. Honest Rva name; no donor proves a real method name.
+UnicodeString SkirmishPreferences::Rva0043B9F5(void)
+{
+	UnicodeString tmp;
+	tmp = QuotedPrintableToUnicodeString(m_currentUserName);
+	tmp.trim();
+	if (tmp.isEmpty())
+		tmp = UnicodeString::TheEmptyString;
+	return tmp;
 }
