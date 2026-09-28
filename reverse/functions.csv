@@ -39545,3 +39545,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva003EFDDB@Rva003EFDDBHolder@@QAEXHPAURva003EFDDBOut@@@Z,,0x003EFDDB,26,Code/GameEngine/Source/Common/Rva003EFDDBCompare.cpp,matched,thiscall cmp 13C store 0 or minus1 at out plus10 leaf
 ?rva002DBA3F@Rva002DBA3F@@QAEXPAVXfer@@@Z,,0x002DBA3F,43,Code/GameEngine/Source/Common/Rva002DBA3FXfer.cpp,matched,chain via 003EFE82 Version1 then slot 3C int
 ?rva002DB44F@Rva002DB44F@@QAEXHABUOpaqueRefElement4@@@Z,,0x002DB44F,20,Code/GameEngine/Source/Common/Rva002DB44FSetter.cpp,matched,array set via rowed OpaqueRef assign leaf
+?rva002DB9B6@Rva002DB9B6@@QAEXPAX@Z,,0x002DB9B6,21,Code/GameEngine/Source/Common/Rva002DB9B6Copy.cpp,matched,memcpy out 28B from plus60 via thunk leaf
