@@ -82,3 +82,9 @@ template _STL::vector<Rva002A73B8>::~vector();
 struct Rva00395D77 { public: ~Rva00395D77(); };
 template _STL::vector<Rva00395D77>::~vector();
 
+// ??1?$vector@URva000BEDF0Record@@V?$allocator@URva000BEDF0Record@@@_STL@@@_STL@@QAE@XZ @0x000c68c2 63B.
+// Same 63B Destroy-plus-free shape: destroys the range through the rowed
+// _Destroy at 0x000c37e6 then frees via 0x30830; called at 0x000c8c74 plus Unwind funclets.
+struct Rva000BEDF0Record { public: ~Rva000BEDF0Record(); };
+template _STL::vector<Rva000BEDF0Record>::~vector();
+
