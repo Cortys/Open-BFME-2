@@ -2562,3 +2562,4 @@ FUN_004535A6	0x000535A6	38	blocked	audio double-chase plus 0x678 compare needs d
 FUN_00797b03	0x00397B03	134	blocked	setStatus range loop flag ternary setne-vs-branch plus index-vs-pointer t=15 model=muse-a4f1
 FUN_00797429	0x00397429	165	blocked	SSE Coord3D distance loop with string compare needs float layout t=5 model=muse-a4f1
 FUN_007974ce	0x003974CE	233	blocked	233B callback via ebp+8 plus virtuals too big t=5 model=muse-a4f1
+?rva004598F2@SiegeDockingBehavior@@QAEXPAUCoord3D@@H@Z	0x004598F2	61	blocked	vector bounds with fallback needs register lever t=10 model=muse-2641
