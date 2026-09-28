@@ -40191,3 +40191,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?parseParticleSystem@TransitionDamageFXModuleData@@SAXPAVINI@@PAX1PBX@Z,,0x004B9B2E,107,Code/GameEngine/Source/GameLogic/Object/Damage/TransitionDamageFXParse.cpp,matched,chain psys caller of parseFXLocInfo plus INI helper
 ?parseFXList@TransitionDamageFXModuleData@@SAXPAVINI@@PAX1PBX@Z,,0x004B9A57,108,Code/GameEngine/Source/GameLogic/Object/Damage/TransitionDamageFXParse.cpp,matched,chain fxlist caller of parseFXLocInfo plus INI helper
 ?Get_Anim@HAnimManagerClass@@QAEPAVHAnimClass@@PBD@Z,,0x000F0B98,19,Code/Libraries/Source/WWVegas/WW3D2/hanimmgr_GetAnim.cpp,matched,gap Get_Anim calls Peek_Anim plus Add_Ref inc
+??0Rva003AF15E@@QAE@ABV0@@Z,,0x003AF15E,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleTemplateCopyCtors.cpp,matched,copy ctor of Rva003AF184 base with own 3 vftables and caller 0x003AF127 clone
