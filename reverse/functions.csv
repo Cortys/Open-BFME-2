@@ -40213,3 +40213,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4Rva0039B893@@QAEAAV0@ABV0@@Z,,0x0039B900,45,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,V3Poly 2-int-plus-3-word assign no vptr store 3 callers share copy-ctor layout
 ?Rva0039BA68Fill@@YAXPAVRva0039B893@@0ABV1@@Z,,0x0039BA68,29,Code/GameEngine/Source/Common/Rva0039BA68Fill.cpp,matched,chain fill via rowed assign stride 0x14 two callers clean caller
 ?Rva0039B92DCopyBackward@@YAPAVRva0039B893@@PAV1@00ABURandomAccessTag@@PAH@Z,,0x0039B92D,50,Code/GameEngine/Source/Common/Rva0039B92DCopyBackward.cpp,matched,chain copy-backward via rowed assign 5-arg dispatch tag plus null
+?Rva0039BA4BCopyBackward@@YAXPAVRva0039B893@@00@Z,,0x0039BA4B,29,Code/GameEngine/Source/Common/Rva0039BA4BCopyBackward.cpp,matched,chain wrapper to rowed copy-backward tag plus null sole caller
