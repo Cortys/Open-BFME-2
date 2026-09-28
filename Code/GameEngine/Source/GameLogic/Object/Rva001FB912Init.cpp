@@ -195,3 +195,24 @@ void __cdecl Rva001FD048Init(void *obj_)
     obj->parse = (void *)Rva001F84BDParse;
     Rva001FD022Init(obj_);
 }
+
+void __cdecl Rva001F83C9Parse();
+
+struct Obj00
+{
+    const char *token;
+    void *parse;
+    void *userdata;
+    int offset;
+};
+
+void __cdecl Rva001FD06EInit(void *obj_)
+{
+    Obj00 *obj = (Obj00 *)obj_;
+    const char *key = FXParticleSystem::GetKey((FXParticleSystem::ModuleCategory)0);
+    obj->userdata = 0;
+    obj->offset = 0;
+    obj->token = key;
+    obj->parse = (void *)Rva001F83C9Parse;
+    Rva001FD048Init(obj_);
+}
