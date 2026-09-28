@@ -6220,3 +6220,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??0?$_Vector_base@V?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@_STL@@V?$allocator@V?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@_STL@@@2@@_STL@@QAE@IABV?$allocator@V?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@_STL@@@1@@Z,0x005C8C37,typed vector-BfmePod88 count base ICF twin of rowed PrereqUnitRec base via call at 0x00500EAB; same 12B stride template
 ??1?$vector@UDynamicPortalLink@@V?$allocator@UDynamicPortalLink@@@_STL@@@_STL@@QAE@XZ,0x0032E7A3,twin of 0x004613EB for Rva0032E83A tail-jmp
 ??$_Destroy@PAVRva005DE5B5@@@_STL@@YAXPAVRva005DE5B5@@0@Z,0x005DE952,twin of rowed Rva005DE952Destroy range loop stride 0x18 via dtor 0x005DE5B5; resolves vector dtor call at 0x005DE985
+?insertY@W3DRoadBuffer@@IAE_NVVector2@@HM@Z,0x000D6E2C,retail REL32 from insertTee 0xDA2B2+0x39 (ZH insertTee calls insertY first); ghidra FUN_004d6e2c 2343B

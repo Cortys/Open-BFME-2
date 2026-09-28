@@ -1814,7 +1814,6 @@ void W3DRoadBuffer::updateCountsAndFlags()
 /** Inserts a Tee intersection. */
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/W3DRoadBufferInsertTeeThunk.cpp
-// ?insertTee@W3DRoadBuffer@@IAEXVVector2@@HM@Z present-unmatched
 void W3DRoadBuffer::insertTee(Vector2 loc, Int index1, Real scale)
 {
 	// BFME added a guard vs ZH: refuses to insert before init (proven by
@@ -1939,7 +1938,7 @@ void W3DRoadBuffer::insertTee(Vector2 loc, Int index1, Real scale)
 		Vector2 teeVector(upVector);
 		teeVector.Rotate(angle);
 
-		Bool flip;
+		Bool flip = false;
 		if (do12) {
 			flip = xpSign(teeVector, v3) == 1;
 			offsetH(pc1, pc2, pc3, loc, upVector, teeVector, flip, mirror, m_roads[index1].m_widthInTexture);
@@ -2018,9 +2017,12 @@ void W3DRoadBuffer::insertTee(Vector2 loc, Int index1, Real scale)
 /** Inserts a Y intersection if the corner meets "Y" criteria. */
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DRoadBufferInsertYThunk.cpp
-// ?insertY@W3DRoadBuffer@@IAE_NVVector2@@HM@Z present-unmatched
 Bool W3DRoadBuffer::insertY(Vector2 loc, Int index1, Real scale)
 {
+	// BFME guard vs ZH, same as insertTee: target reads this+0xc first and
+	// takes the false-return exit when uninitialized.
+	if (!m_initialized) return false;
+
 	// pr1-3 point to the points on the segments that form the tee.
 	// They are the points on the segments that are != loc.
 	TRoadPt *pr1=NULL;

@@ -40848,3 +40848,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?hideReplayControls@@YAXXZ,,0x0029A3BC,18,Code/GameEngine/Source/GameClient/ReplayControls.cpp,matched,InGameUI replay window helper; ZH semantics; retail mode field at GameLogic+0x110 via TU shim
 ?showReplayControls@@YAXXZ,,0x0029A39C,32,Code/GameEngine/Source/GameClient/ReplayControls.cpp,matched,InGameUI replay window helper; ZH semantics; retail mode field at GameLogic+0x110 via TU shim
 ?toggleReplayControls@@YAXXZ,,0x0029A3CE,57,Code/GameEngine/Source/GameClient/ReplayControls.cpp,matched,InGameUI replay window helper; ZH semantics; retail mode field at GameLogic+0x110 via TU shim
+?insertTee@W3DRoadBuffer@@IAEXVVector2@@HM@Z,,0x000DA2B2,2736,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DRoadBuffer.cpp,matched,ZH insertTee; retail zero-initialises the slant-tee flip local
+?insertY@W3DRoadBuffer@@IAE_NVVector2@@HM@Z,,0x000D6E2C,2343,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DRoadBuffer.cpp,matched,ZH insertY plus BFME m_initialized guard (this+0xc) returning false; pinned from insertTee REL32
