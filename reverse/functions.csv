@@ -39893,3 +39893,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva003807B7Hide@@YAXXZ,,0x003807B7,60,Code/GameEngine/Source/Common/TooltipHide_muse-f8cb.cpp,matched,HideToolTip string plus UiCallbackFirers donor plus manager slot 0x3c plus 4 callers
 ?rva001EEC4B@Rva001EEC4B@@QAEXXZ,,0x001EEC4B,76,Code/GameEngine/Source/GameClient/MouseRva001EEC4B_muse-f8cb.cpp,matched,Mouse tooltip reset via Hide plus StringBase release plus timeGetTime
 ?rva001EE5EE@Mouse@@QAEXEPAE@Z,,0x001EE5EE,66,Code/GameEngine/Source/GameClient/MouseRva001EE5EE_muse-f8cb.cpp,matched,Mouse tooltip setter via Hide plus isEmpty plus rva001EDE26 plus release
+?Rva003807F3Move@@YAXMM@Z,,0x003807F3,118,Code/GameEngine/Source/Common/TooltipMove_muse-f8cb.cpp,matched,MoveToolTip firer via GuiScale slot 0x40 plus snprintf plus invoker
