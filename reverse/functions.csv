@@ -40698,3 +40698,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0036F629@AICommandInterface@@QAEXPBVPolygonTrigger@@HW4CommandSourceType@@PBUCoord3D@@@Z,,0x0036F629,126,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap 0x44 polygon int pos shape same TU callers 370505 3C8A7E
 ?rva001E3511@Rva001E3511@@QAEHXZ,,0x001E3511,27,Code/GameEngine/Source/Common/Rva001E34FA.cpp,matched,guarded two-level 0x20 reader default 7fffffff
 ?init@Rva002AC026Member@@QAEPAXPAX@Z,,0x002AC026,40,Code/GameEngine/Source/Common/Rva002AC026MemberInit.cpp,matched,freelist init same as 0x001EB984 via proxy 0x14F3C4 and pop 0x2393E2 pool 0x009BBD2C
+?Rva002ACFFBEqual@@YA_NPAV?$StringBase@D@@00@Z,,0x002ACFFB,44,Code/GameEngine/Source/Common/Rva002ACFFBEqual.cpp,matched,AsciiString range equal via rowed compare 0x69D6 caller 0x002ADD9C
