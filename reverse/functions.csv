@@ -40080,3 +40080,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00293249@Rva00293249@@QAE_NW4ObjectID@@@Z,,0x00293249,44,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293249.cpp,matched,ObjectID helper via TheGameLogic findObjectByID and AI 0x258 slot 0x248 caller 0x352C3C
 ?rva00293330@Rva00293330@@QAEPAXI@Z,,0x00293330,63,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293330.cpp,matched,Map lookup at 0x268 via rowed find 0x357180 with begin fallback callers prove owner
 ?rva000E488F@Rva000E488F@@QAE_NPAX@Z,,0x000E488F,45,Code/GameEngine/Source/Common/Rva000E488F.cpp,matched,array-all predicate via slot 0x204 callers 0xE4998 0xE76DB 0xEB247 0xEE17A
+?rva000E48BC@Rva000E48BC@@QAE_NPAVRva000E488F@@@Z,,0x000E48BC,252,Code/GameEngine/Source/Common/Rva000E48BC.cpp,matched,transform plus container check via slot 0x204 caller 0xE5819
