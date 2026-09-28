@@ -50,3 +50,5 @@ typedef _STL::map<AsciiString,TreeHintRef00221D6B,_STL::less<AsciiString>,_STL::
 template MapInsert00221e3a::iterator MapInsert00221e3a::insert(MapInsert00221e3a::iterator, const TreeHintPair00221D6B &);
 
 template void _STL::_Destroy<TreeHintPair00221D6B>(TreeHintPair00221D6B *);
+
+template TreeHint00221D6B::~_Rb_tree();
