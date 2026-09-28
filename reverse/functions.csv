@@ -41562,3 +41562,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003F46C1@Rva003F498A@@QAEHHH@Z,,0x003F46C1,49,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,bounds checked int getter via size helper
 ?rva003F46F2@Rva003F498A@@QAEPAHHH@Z,,0x003F46F2,28,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,inner tail pointer getter via STL
 ?rva003F48FE@Rva003F498A@@QAEHHHH@Z,,0x003F48FE,35,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,triple indexed int getter via STL
+?rva00359835@Rva00359835@@QBEMXZ,,0x00359835,30,Code/GameEngine/Source/Common/Rva00359835Ratio.cpp,matched,float ratio with pooled 0.0f guard plus int divide via x87
