@@ -39765,3 +39765,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ??1BfmeNarrowRecord0041A5D2@@QAE@XZ,,0x0041A200,65,Code/GameEngine/Source/Common/NarrowStringRecord0041A5D2Dtor.cpp,matched,dtor two strings EHs frame unblocks 0x41A241 0x41A3C4 0x41A486
 ?rva0041A241@BfmeNarrowRecord0041A5D2@@QAEPAXI@Z,,0x0041A241,28,Code/GameEngine/Source/Common/NarrowStringRecord0041A5D2Delete.cpp,matched,deleting helper via rowed dtor and delete chain from 0x41A200
 ?rva0041A3C4@Rva0041A3C4@@QAEXXZ,,0x0041A3C4,51,Code/GameEngine/Source/Common/NarrowStringRecordDequePop.cpp,matched,deque node advance via rowed dtor and Cpp free unblocks 0x41A486
+?rva0041A486@Rva0041A3C4@@QAEXXZ,,0x0041A486,33,Code/GameEngine/Source/Common/NarrowStringRecordDequePop.cpp,matched,pop front destroy advance or aux tail unblocks 0x41AAA4

@@ -19,6 +19,7 @@ struct Rva0041A3C4 {
     BfmeNarrowRecord0041A5D2 *_M_last;
     BfmeNarrowRecord0041A5D2 **_M_node;
     void rva0041A3C4();
+    void rva0041A486();
 };
 void Rva0041A3C4::rva0041A3C4()
 {
@@ -30,4 +31,14 @@ void Rva0041A3C4::rva0041A3C4()
 	_M_first = *node;
 	_M_last = _M_first + 4;
 	_M_cur = _M_first;
+}
+void Rva0041A3C4::rva0041A486()
+{
+	if (_M_cur != _M_last - 1)
+	{
+		_M_cur->~BfmeNarrowRecord0041A5D2();
+		_M_cur += 1;
+		return;
+	}
+	rva0041A3C4();
 }
