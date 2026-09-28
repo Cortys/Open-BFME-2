@@ -11,11 +11,27 @@ public:
 	~Rva003ECDB7Object();
 };
 
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+class Object;
+
+class GameLogic
+{
+public:
+	Object *findObjectByID(ObjectID id);
+};
+
+extern GameLogic *TheGameLogic;
+
 class Rva002C589B
 {
 public:
 	~Rva002C589B();
 	void rva002C5843(bool v);
+	Object *rva002C5DA6();
 
 private:
 	char m_pad[0x18];
@@ -23,6 +39,8 @@ private:
 	bool m_19;
 	char m_pad1A[0xA];
 	Rva003ECDB7Object *m_ptr;
+	char m_pad28[0xC];
+	ObjectID m_34;
 };
 
 Rva002C589B::~Rva002C589B()
@@ -37,4 +55,9 @@ void Rva002C589B::rva002C5843(bool v)
 		if (v)
 			m_19 = 1;
 	}
+}
+
+Object *Rva002C589B::rva002C5DA6()
+{
+	return m_34 ? TheGameLogic->findObjectByID(m_34) : 0;
 }
