@@ -2422,3 +2422,5 @@ FUN_00626156	0x00226156	379	blocked	bracket family push-eax+5x mov-eax-imm+pop-e
 FUN_008f7e78	0x004F7E78	25	blocked	12B stride vs 8B Rva size needs +8 member evidence t=10 model=muse-6937
 ?Rva002E79A8CellToWorld@@YAPAUCoord3D@@PAU1@_NHHH@Z	0x002E79A8	186	partial	xmm allocation plus param-home locals vs sub esp frame t=45 model=muse-adb6 score=0.91 stash=reverse/attempts/0x002e79a8.cpp
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	blocked	EH order plus 1.0f single movss vs double volatile and int mov t=50 model=muse-adb6
+?rva00318F42@Drawable@@QBE_NXZ	0x00318F42	34	blocked	two-thiscall ECX reuse needs same-TU IPO; int-ne0 gives and not sar; uchar forces sar but boolizes on ecx via neg-cl not xor-cmp on eax t=28 model=muse-9ce6
+??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	167B vs 171B; missing EH state 2; lea hoisted above movs; floats reordered t=25 model=muse-9ce6 score=0.93 stash=reverse/attempts/0x000a8d5f.cpp

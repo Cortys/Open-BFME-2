@@ -24,6 +24,8 @@ enum CommandSourceType
 	CMD_FROM_AI = 2
 };
 
+enum AttitudeType {}; // opaque order enum, passed through as int (BFME1 donor)
+
 class Team;
 class Object;
 
@@ -37,6 +39,7 @@ public:
 class AIUpdateInterface
 {
 public:
+	void rva0026DE3B(int arg);
 	char m_pad[0x20];
 	AICommandInterface m_commands;
 };
@@ -53,6 +56,7 @@ class AIGroup
 public:
 	void groupAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void groupHunt(CommandSourceType cmdSource);
+	void setAttitude(AttitudeType tude);
 
 private:
 	std::list<Object *> m_memberList;
@@ -78,6 +82,16 @@ void AIGroup::groupHunt(CommandSourceType cmdSource)
 		AIUpdateInterface *ai = (*i)->m_ai;
 		if (ai) {
 			ai->m_commands.aiHunt(cmdSource);
+		}
+	}
+}
+
+void AIGroup::setAttitude(AttitudeType tude)
+{
+	for (std::list<Object *>::iterator i = m_memberList.begin(); i != m_memberList.end(); ++i) {
+		AIUpdateInterface *ai = (*i)->m_ai;
+		if (ai) {
+			ai->rva0026DE3B(tude);
 		}
 	}
 }
