@@ -39857,3 +39857,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??0Rva004D582B@@QAE@XZ,,0x004D582B,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor base plus type 15 plus byte plus vtable 0x860244
 ??0Rva004D59B8@@QAE@XZ,,0x004D59B8,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor base plus dword plus vtable 0x860244 plus type 28
 ??0Rva004D57F1@@QAE@XZ,,0x004D57F1,29,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor base plus dword plus vtable 0x860244 plus type 26 plus byte
+?rva0028D9E5@Object@@QBE_NH@Z,,0x0028D9E5,67,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D9E5.cpp,matched,Object owner via same-this rowed rva0028C197 plus slot44 virtual plus +0x284 bit test plus 8 callers
