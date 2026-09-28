@@ -215,13 +215,6 @@ int Rva00030A40Get(void)
 	return 16;
 }
 
-// ?Rva00030F58Get@@YAHXZ @ 0x00030f58 (6B): returns 126.
-// Follows a ret tail. No direct callers. Opaque address-derived name.
-int Rva00030F58Get(void)
-{
-	return 126;
-}
-
 // ?Rva000454CEGet@@YAHXZ @ 0x000454ce (6B): returns 0x00da5f30.
 // Follows a tiny mov-al returner. No direct callers.
 // Opaque address-derived name.

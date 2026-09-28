@@ -36103,7 +36103,6 @@ _piChannelKickedA,,0x006AADF0,100,Code/GameEngine/Source/GameNetwork/GameSpy/pee
 ?Rva00019B50Get@@YAHXZ,,0x00019B50,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
 ?Rva0002BBC3Get@@YAHXZ,,0x0002BBC3,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
 ?Rva00030A40Get@@YAHXZ,,0x00030A40,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
-?Rva00030F58Get@@YAHXZ,,0x00030F58,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
 ?getNthData@ModuleInfo@@QBEPBVModuleData@@H@Z,,0x0033ACE8,43,Code/GameEngine/Source/Common/Thing/ModuleInfoGetNthData.cpp,matched,ModuleInfo indexed data access via locomotor parser call sites plus ZH donor shape
 ?Rva000454CEGet@@YAHXZ,,0x000454CE,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
 ?Rva00051EA9Get@@YAHXZ,,0x00051EA9,6,Code/GameEngine/Source/Common/ConstIntGetters5.cpp,matched,B8-6 const-int returner
@@ -39360,3 +39359,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?SetAssertionFailureFunction@GeneralAllocator@Allocator@EA@@QAEXPAX0@Z,,0x000313E0,23,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,target: GeneralAllocator family is independently named by MemoryPool export edges; exact body stores arg0 at+4B8 and arg1 at+4BC; donor: validated Godfather PPMalloc1.03.01 Xbox Final PDB names method; callback contract donor-derived
 ?AddDoubleFencepost@GeneralAllocator@Allocator@EA@@SAXPAXI@Z,,0x00031120,62,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,Godfather PPMalloc1.03.01 Xbox Final PDB identity; target allocator call site 0x32D7F and target size/header/fencepost writes corroborate behavior; chunk type remains unresolved
 ??0Snapshot@GeneralAllocator@Allocator@EA@@QAE@IPAX@Z,,0x00031570,79,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,Godfather PPMalloc1.03.01 Xbox Final PDB name; target constructor caller at 0x34D10 and PAN S marker support snapshot identity; field offsets and byte-clear extent taken from target instructions
+?GetLargeBinIndexFromChunkSize@GeneralAllocator@Allocator@EA@@SAII@Z,,0x00030F10,78,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,Godfather PPMalloc1.03.01 Xbox Final PDB name; target allocator callers at 0x31C6C and 0x3459A plus the target size-bin ladder support identity; parameter type follows donor

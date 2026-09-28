@@ -63,6 +63,9 @@ public:
 	// Donor PDB name; target caller at 0x32D7F and the chunk-header stores
 	// support the fencepost role. The precise chunk type remains unknown.
 	static void AddDoubleFencepost(void *chunk, unsigned int flags);
+	// Donor PDB name; target allocator call sites and the size-bin thresholds
+	// support its role. Its parameter meaning is carried from the donor.
+	static unsigned int GetLargeBinIndexFromChunkSize(unsigned int size);
 	bool rva00032830(const void *block, int addressType);	// ValidateAddress-like
 	bool rva00032920(const void *block);			// owns-address test
 	bool rva000329E0(int level);				// ValidateHeap-like
@@ -112,6 +115,31 @@ void GeneralAllocator::AddDoubleFencepost(void *chunk, unsigned int flags)
 	fencepost[1] = flags | 8;
 	fencepost[2] = 8;
 	fencepost[3] = 9;
+}
+
+unsigned int GeneralAllocator::GetLargeBinIndexFromChunkSize(unsigned int size)
+{
+	unsigned int index = size >> 6;
+	if (index <= 0x20)
+		return index + 0x38;
+
+	index = size >> 9;
+	if (index <= 0x14)
+		return index + 0x5B;
+
+	index = size >> 12;
+	if (index <= 0x0A)
+		return index + 0x6E;
+
+	index = size >> 15;
+	if (index <= 4)
+		return index + 0x77;
+
+	index = size >> 18;
+	if (index <= 2)
+		return index + 0x7C;
+
+	return 0x7E;
 }
 
 }
