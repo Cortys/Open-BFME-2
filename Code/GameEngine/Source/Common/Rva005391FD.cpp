@@ -8,6 +8,7 @@ class Rva005C4B56
 {
 public:
 	void rva005C4CC1();
+	void rva005C4CD4();
 };
 
 class Rva005391FD
@@ -30,6 +31,7 @@ public:
 	virtual void s14();
 	virtual Rva005C4B56 *s15(int i);
 	void rva005391FD();
+	void rva00539227();
 };
 
 void Rva005391FD::rva005391FD()
@@ -39,5 +41,15 @@ void Rva005391FD::rva005391FD()
 	{
 		Rva005C4B56 *p = s15(i);
 		p->rva005C4CC1();
+	}
+}
+
+void Rva005391FD::rva00539227()
+{
+	int count = s13();
+	for (int i = 0; i < count; ++i)
+	{
+		Rva005C4B56 *p = s15(i);
+		p->rva005C4CD4();
 	}
 }

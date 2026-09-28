@@ -2572,3 +2572,4 @@ FUN_007ff496	0x003FF496	62	blocked	GameInfo slot check with word index plus occu
 ?rva005377B6@UserPreferences@@QAE?AVAsciiString@@XZ	0x005377B6	228	partial	extra stack slot for inner ptr t=12 model=muse-0de4 score=0.93 stash=reverse/attempts/0x005377b6.cpp
 ?transformPoint@Thing@@QAEXPBUCoord3D@@PAU2@@Z	0x0030A812	191	partial	EBP frame plus SSE via O1 archSSE; 191B 52insns 0 structural regions only xmm load order and matrix row1-2 operand order differ t=35 model=muse-e955 score=0.93 stash=reverse/attempts/0x0030a812.cpp
 FUN_006e6c23	0x002E6C23	42	blocked	final cmp uses branches xor-inc plus xor vs sete plus early je vs jne t=12 model=muse-spark
+FUN_009c4a39	0x005C4A39	60	blocked	EH auto_ptr factory needs STLport shape t=15 model=muse-a3f9
