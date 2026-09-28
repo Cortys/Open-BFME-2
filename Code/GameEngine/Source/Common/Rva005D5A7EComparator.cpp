@@ -59,3 +59,23 @@ void Rva005D5DF0Sort(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E *tag, in
     for (Rva005D5A7E *it = first; it != last; ++it)
         Rva005D5B21Insert(it, *it, comp);
 }
+
+Rva005D5A7E *Rva005D5C61Median(Rva005D5A7E *a, Rva005D5A7E *b, Rva005D5A7E *c, int comp)
+{
+    (void)comp;
+    if (a->rva005D5A7E(*b)) {
+        if (b->rva005D5A7E(*c))
+            return b;
+        else if (a->rva005D5A7E(*c))
+            return c;
+        else
+            return a;
+    } else {
+        if (a->rva005D5A7E(*c))
+            return a;
+        else if (b->rva005D5A7E(*c))
+            return c;
+        else
+            return b;
+    }
+}
