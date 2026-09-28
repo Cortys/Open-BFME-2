@@ -170,3 +170,16 @@ void Rva007F7980Browser::onLobby( Rva007E8810Message *msg )
 	if( m_lobbyIndex >= m_lobbies.m_count )
 		m_listener->onLobbyCountDone( 0 );
 }
+
+// BFME1 donor forwards the game reply through d_007f65e0. Retail's target
+// wrapper passes the browser as ECX, the message, and status 1 to 0x00662D70.
+// The handler and browser labels remain donor-derived.
+extern void d_007f65e0( void );
+void Rva007F6FC0BrowserGameReply( Rva007E8810Message *msg,
+	Rva007F7980Browser *browser )
+{
+	typedef void (Rva007F7980Browser::*GameReply)( Rva007E8810Message *, int );
+	union { void (*function)( void ); GameReply member; } reply;
+	reply.function = d_007f65e0;
+	(browser->*reply.member)( msg, 1 );
+}
