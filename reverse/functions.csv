@@ -39006,3 +39006,4 @@ _vp6_drawc,,0x001BB580,109,Code/Libraries/Source/VP6/debug.cpp,matched,Target CR
 ?rva004E06A7@Rva004E06A7@@QBEXXZ,,0x004E06A7,17,Code/GameEngine/Source/Common/Rva004E06A7Call.cpp,matched,conditional void tail-call via 0x004E0632 to slot 5
 _IDct1,,0x001D6C60,48,Code/Libraries/Source/Theora/IDct1.c,matched,vendored=libtheora-1.0alpha2
 _CopyBlock,,0x001B7F30,142,Code/Libraries/Source/Theora/CopyBlock.c,matched,vendored=libtheora-1.0alpha2
+?Rva009A9D90ScalePlanes@@YAXPAURva009A9D90Planes@@0PAEEIIIII@Z,,0x001BA7D0,865,Code/GameEngine/Source/Common/Rva009A9D90ScalePlanes.cpp,matched,Clean Open-BFME-1 donor transfer from cd32c8ef06dfb0d995b2f47e93e41622e4447092; donor at 0x009A9D90 has a unique BFME2 placement at 0x001BA7D0 for 865 bytes; existing callees resolve; donor name and layout remain donor facts pending independent target evidence.
