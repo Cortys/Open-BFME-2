@@ -39978,3 +39978,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva005B61B3@Rva005B61B3@@QAE_NPAX0@Z,,0x005B61B3,189,Code/GameEngine/Source/Common/Rva005B61B3Comparer.cpp,matched,unlock comparator for sort helpers via StringBaseG compareNoCase
 ?Rva005B6324Insert@@YAXPAPAXPAXVRva005B61B3@@@Z,,0x005B6324,47,Code/GameEngine/Source/Common/Rva005B6324Insert.cpp,matched,chain unguarded linear insert via rowed comparator
 ?Rva005B63E4Sort@@YAXPAPAX00VRva005B61B3@@@Z,,0x005B63E4,37,Code/GameEngine/Source/Common/Rva005B63E4Sort.cpp,matched,chain unguarded insertion sort aux via rowed insert
+?Rva005B649ASort@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B649A,27,Code/GameEngine/Source/Common/Rva005B649ASort.cpp,matched,chain unguarded insertion sort forwarder via rowed aux
