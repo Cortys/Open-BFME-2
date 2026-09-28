@@ -9,7 +9,9 @@
 
 struct FeNode
 {
-	unsigned char m_pad[0xb0];
+	unsigned char m_pad0[0x3c];
+	unsigned char m_flag3c;
+	unsigned char m_pad1[0xb0 - 0x3d];
 	FeNode *m_next;
 	FeNode *m_prev;
 };
@@ -18,6 +20,7 @@ class Rva000FE001
 {
 public:
 	void rva000FE001(FeNode *other);
+	void rva000FE8FC(FeNode *other);
 
 private:
 	unsigned char m_pad[0x10];
@@ -43,4 +46,10 @@ void Rva000FE001::rva000FE001(FeNode *other)
 	if (m_head14 != 0)
 		m_head14->m_prev = other;
 	m_head14 = other;
+}
+
+void Rva000FE001::rva000FE8FC(FeNode *other)
+{
+	other->m_flag3c = 0;
+	rva000FE001(other);
 }
