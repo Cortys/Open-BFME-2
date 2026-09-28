@@ -32,3 +32,4 @@ typedef _STL::pair<const AsciiString, AsciiStringList> ListPair;
 typedef _STL::_Rb_tree<AsciiString, ListPair, _STL::_Select1st<ListPair>, _STL::less<AsciiString>, _STL::allocator<ListPair> > ListPairTree;
 
 template void ListPairTree::erase(ListPairTree::iterator);
+template void ListPairTree::erase(ListPairTree::iterator, ListPairTree::iterator);
