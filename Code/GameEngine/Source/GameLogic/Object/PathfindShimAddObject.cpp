@@ -15,6 +15,7 @@ class BFMEPathfinderMapShim
 public:
 	void addObjectToPathfindMap(Object *object);
 	void rva002E718A(Object *object);
+	void rva002E719B(Object *object);
 };
 
 // ?addObjectToPathfindMap@BFMEPathfinderMapShim@@QAEXPAVObject@@@Z
@@ -26,4 +27,9 @@ void BFMEPathfinderMapShim::addObjectToPathfindMap(Object *object)
 void BFMEPathfinderMapShim::rva002E718A(Object *object)
 {
 	Rva00530212Helper(object, 0, 0, 0);
+}
+
+void BFMEPathfinderMapShim::rva002E719B(Object *object)
+{
+	Rva00530212Helper(object, 0, 0, 1);
 }
