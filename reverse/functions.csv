@@ -40055,3 +40055,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?randomizeCurrentFrame@Anim2D@@QAEXXZ,,0x002D6B66,45,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,BFME1 donor randomizeCurrentFrame plus setCurrentFrame row plus caller 0x2D6DA3
 ?xfer@ObjectCreationUpgrade@@MAEXPAVXfer@@@Z,,0x004B421D,62,Code/GameEngine/Source/GameLogic/Object/Upgrade/ObjectCreationUpgradeXfer.cpp,matched,slot3 vtable 0x0085762C Version1 bool uint base UpdateModule UpgradeMux
 ?rva0041A96D@Rva0041A96D@@QAEXABUBfmeNarrowRecord0041A5D2@@@Z,,0x0041A96D,123,Code/GameEngine/Source/Common/NarrowStringRecordDequePush.cpp,matched,push back aux temp reserve alloc construct reload unblocks none
+?rva0041AB68@Rva0041A96D@@QAEXABUBfmeNarrowRecord0041A5D2@@@Z,,0x0041AB68,45,Code/GameEngine/Source/Common/NarrowStringRecordDequePush.cpp,matched,deque push_back fast path calls rowed Construct and aux

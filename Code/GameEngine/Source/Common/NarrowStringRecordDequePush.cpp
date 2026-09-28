@@ -31,6 +31,7 @@ struct Rva0041A96D : _STL::deque<BfmePod28, _STL::allocator<BfmePod28> > {
     BfmeNarrowRecord0041A5D2 *_M_last18;
     BfmeNarrowRecord0041A5D2 **_M_node1C;
     void rva0041A96D(const BfmeNarrowRecord0041A5D2 &x);
+    void rva0041AB68(const BfmeNarrowRecord0041A5D2 &x);
 };
 void Rva0041A96D::rva0041A96D(const BfmeNarrowRecord0041A5D2 &x)
 {
@@ -43,4 +44,14 @@ void Rva0041A96D::rva0041A96D(const BfmeNarrowRecord0041A5D2 &x)
 	_M_first14 = *node;
 	_M_last18 = _M_first14 + 4;
 	_M_cur10 = _M_first14;
+}
+void Rva0041A96D::rva0041AB68(const BfmeNarrowRecord0041A5D2 &x)
+{
+	if (_M_cur10 != _M_last18 - 1)
+	{
+		_STL::_Construct(_M_cur10, x);
+		++_M_cur10;
+	}
+	else
+		rva0041A96D(x);
 }
