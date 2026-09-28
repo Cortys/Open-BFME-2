@@ -40719,3 +40719,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0036D837@AIGroup@@QAEXH@Z,,0x0036D837,50,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,twin of 0x0036D805 plus provider slot35 broadcast
 ?rva_53229d_copy_unsigned_short@@YAXPAG0@Z,,0x0053229D,27,Code/GameEngine/Source/Common/Rva192000SwapUnsignedShort.cpp,matched,unlocks 3 callers plus nullguarded wordpair copy
 ?rva00528273@Rva00528273@@QAEXXZ,,0x00528273,7,Code/GameEngine/Source/Common/Rva00528273Clear.cpp,matched,ptr-chase and 0x1C 0 caller jmp 0x2D36A9
+??1Rva00528B06@@UAE@XZ,,0x00528F25,11,Code/GameEngine/Source/Common/Rva00528B06Ctor.cpp,matched,dtor vtable 0x8681C4 tail base 0x5C31FB same class as 0x528B06
