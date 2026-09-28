@@ -40074,3 +40074,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00568C4E@@QAE@XZ,,0x00568C4E,53,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,EH dtor over two StringBase members via pinned 0x36410 same shape as 0x001EA443
 ??_GRva00568C4E@@QAEPAXI@Z,,0x00568E17,28,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,deleting dtor calls 0x00568C4E then operator delete
 ?rva005686C1@Rva005686C1@@QAEHH@Z,,0x005686C1,24,Code/GameEngine/Source/Common/Rva005686C1Getter.cpp,matched,bounds-checked indexed dword getter at plus 0x2C with 4 entries
+?rva00568C36@Rva00568C36@@QAE_NPBVRva00568C36Provider@@@Z,,0x00568C36,24,Code/GameEngine/Source/Common/Rva00568C36Overlap.cpp,matched,virtual slot 7 range wrapper calls rowed 0x00568B81 overlap
