@@ -22,6 +22,7 @@ namespace _STL {
 	template <typename D> class _Rb_global {
 	public:
 		static void _Rebalance(_Rb_tree_node_base *x, _Rb_tree_node_base *&root);
+		static _Rb_tree_node_base *_M_decrement(_Rb_tree_node_base *x);
 	};
 }
 struct Rva004075E0Node {
@@ -44,10 +45,22 @@ struct Rva004075E0Iter {
 };
 // ??0Rva004075E0Iter@@QAE@PAURva004075E0Node@@@Z present-unmatched
 inline Rva004075E0Iter::Rva004075E0Iter(Rva004075E0Node *n) : node(n) {}
+struct Rva004075E0Pair {
+	Rva004075E0Node *first;
+	bool second;
+	char _pad[3];
+	Rva004075E0Pair(Rva004075E0Node *f, bool s);
+	Rva004075E0Pair(Rva004075E0Iter it, bool s);
+};
+// ??0Rva004075E0Pair@@QAE@PAURva004075E0Node@@_N@Z present-unmatched
+inline Rva004075E0Pair::Rva004075E0Pair(Rva004075E0Node *f, bool s) : first(f), second(s) {}
+// ??0Rva004075E0Pair@@QAE@URva004075E0Iter@@_N@Z present-unmatched
+inline Rva004075E0Pair::Rva004075E0Pair(Rva004075E0Iter it, bool s) : first(it.node), second(s) {}
 struct Rva004075E0 {
 	Rva004075E0Node *_head;
 	int _size;
 	Rva004075E0Iter rva004075E0(Rva004075E0Node *x, Rva004075E0Node *y, const Rva004075E0Key &v, Rva004075E0Node *w);
+	Rva004075E0Pair rva00407668(const Rva004075E0Key &v);
 };
 typedef _STL::_Rb_tree<unsigned int, _STL::pair<const unsigned int, bool>, _STL::_Select1st<_STL::pair<const unsigned int, bool> >, _STL::less<unsigned int>, _STL::allocator<_STL::pair<const unsigned int, bool> > > UIntBoolTree075E0;
 Rva004075E0Iter Rva004075E0::rva004075E0(Rva004075E0Node *x, Rva004075E0Node *y, const Rva004075E0Key &v, Rva004075E0Node *w)
@@ -75,4 +88,27 @@ Rva004075E0Iter Rva004075E0::rva004075E0(Rva004075E0Node *x, Rva004075E0Node *y,
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)_head->_parent);
 	++_size;
 	return Rva004075E0Iter(z);
+}
+// ?rva00407668@Rva004075E0@@QAE?AURva004075E0Pair@@ABURva004075E0Key@@@Z retail 0x00407668 134B
+// Evidence: chain lane calls rowed 0x004075E0 plus rowed _M_decrement 0x000242C0 plus inlined less uint; caller 0x00407D92; prev same TU same flags.
+Rva004075E0Pair Rva004075E0::rva00407668(const Rva004075E0Key &v)
+{
+	Rva004075E0Node *header = _head;
+	Rva004075E0Node *x = header->_parent;
+	Rva004075E0Node *y = header;
+	bool comp = true;
+	while (x != 0) {
+		y = x;
+		comp = v.key < x->_key10;
+		x = comp ? x->_left : x->_right;
+	}
+	Rva004075E0Node *j = y;
+	if (comp) {
+		if (j == header->_left)
+			return Rva004075E0Pair(rva004075E0(y, y, v, 0), true);
+		j = (Rva004075E0Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)y);
+	}
+	if (j->_key10 < v.key)
+		return Rva004075E0Pair(rva004075E0(x, y, v, 0), true);
+	return Rva004075E0Pair(j, false);
 }
