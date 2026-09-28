@@ -40301,3 +40301,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0043B9F5@SkirmishPreferences@@QAE?AVUnicodeString@@XZ,,0x0043B9F5,160,Code/GameEngine/Source/Common/SkirmishPreferences.cpp,matched,Skirmish current-name getter via QP decode trim empty default
 ?rva0033B580@ThingTemplate@@QAEPBVImage@@XZ,,0x0033B580,56,Code/GameEngine/Source/Common/Thing/ThingTemplateButtonImage.cpp,matched,ThingTemplate ButtonImage resolver via portrait sibling plus resolveNames callers plus INI order
 ?worldToRadar@Radar@@QAE_NPBUCoord3D@@PAUICoord2D@@@Z,,0x002D77C9,99,Code/GameEngine/Source/Common/System/Radar_radarToWorld.cpp,matched,BFME1 Radar.cpp worldToRadar with same sample offsets as radarToWorld sibling
+?rva0043B208@Rva0043B208@@QAEPAV1@XZ,,0x0043B208,12,Code/GameEngine/Source/Common/Rva0043B208InitWrapper.cpp,matched,forwarder to pinned init 0x263895 returns this
