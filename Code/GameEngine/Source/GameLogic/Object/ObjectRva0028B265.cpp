@@ -19,11 +19,17 @@ public:
 	virtual void slot15(float v);
 };
 
+class Rva0028B1D4Result
+{
+public:
+	virtual void slot00(int a, int b);
+};
+
 class BehaviorModuleInterface
 {
 public:
 	virtual void slot00(); virtual void slot01(); virtual void slot02(); virtual void slot03();
-	virtual void slot04(); virtual void slot05(); virtual void slot06(); virtual void slot07();
+	virtual void slot04(); virtual Rva0028B1D4Result *slot05(); virtual void slot06(); virtual void slot07();
 	virtual Rva0028B265Result *slot08();
 };
 
@@ -48,6 +54,7 @@ class Object
 public:
 	void rva0028B265() const;
 	void rva0028B292(int v) const;
+	void rva0028B1D4(int a, int b) const;
 };
 
 void Object::rva0028B265() const
@@ -67,5 +74,15 @@ void Object::rva0028B292(int v) const
 		Rva0028B265Result *r = (*m)->slot08();
 		if (r != 0)
 			r->slot09(v);
+	}
+}
+
+void Object::rva0028B1D4(int a, int b) const
+{
+	for (BehaviorModule **m = m_modules244; *m; ++m)
+	{
+		Rva0028B1D4Result *r = (*m)->slot05();
+		if (r != 0)
+			r->slot00(a, b);
 	}
 }
