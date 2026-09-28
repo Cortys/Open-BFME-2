@@ -39999,3 +39999,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva00153565Register@@YAXPBDPAX@Z,,0x00153565,154,Code/Libraries/Source/WWVegas/WWLib/Rva00153565Register.cpp,matched,unique-register over global vector 0x00DF6F20 via rowed push_back 0x001534D3 with 4 callers including 0x0007EBFB WaterDraw
 ?rva0010F24F@Rva0010F24F@@QAEXXZ,,0x0010F24F,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Enter 0xBBA200 layout Rva00041004
 ?rva0010F26E@Rva0010F26E@@QAEXXZ,,0x0010F26E,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Leave 0xBBA204 layout Rva00041004
+?rva0010F33C@Rva0010F33C@@QAEXXZ,,0x0010F33C,78,Code/GameEngine/Source/Common/Rva0010F33CStart.cpp,matched,guarded AIL_start_stream via rowed lock pair
