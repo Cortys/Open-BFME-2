@@ -40723,3 +40723,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva002AC340@@MAEPAXI@Z,,0x002AC3A2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10.cpp,matched,deleting dtor slot 0 vtable 0x7FDD6C via rowed dtor 0x002AC366
 ?rva0055AFF1@Rva0055AFF1@@QAEXH@Z,,0x0055AFF1,46,Code/GameEngine/Source/Common/Rva0055AFF1ListRemove.cpp,matched,list int find-erase at plus1C caller 0x55B0FB
 ?rva00418BFB@Rva00418BFB@@QAEPAXPBX@Z,,0x00418BFB,56,Code/GameEngine/Source/Common/Rva00418BFBSearch.cpp,matched,tree lower_bound via twinless 0x00418BB7
+??_GRva004104C9@@QAEPAXI@Z,,0x004105A8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08.cpp,matched,chain deleting dtor for Rva004104C9 via famgenDelete
