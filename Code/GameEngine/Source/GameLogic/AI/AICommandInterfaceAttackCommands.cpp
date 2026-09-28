@@ -117,6 +117,7 @@ public:
 	void aiAttackArea(const PolygonTrigger *areaToGuard, CommandSourceType cmdSource);
 	void aiAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource);
+	void rva0045003E(Int value, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -425,5 +426,16 @@ void AICommandInterface::aiGuardPosition(const Coord3D *position, GuardMode guar
 	AICommandParms parms(AICMD_GUARD_POSITION, cmdSource);
 	parms.m_pos = *position;
 	parms.m_intValue = guardMode;
+	aiDoCommand(&parms);
+}
+
+// ?rva0045003E@AICommandInterface@@QAEXHW4CommandSourceType@@@Z, retail 0x0045003E, 101 bytes.
+// Same 101B single-store shape as aiFaceObject in this TU: AICMD 0x31 plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// Class proven by callers at 0x00450575 and 0x0045059F via lea ecx,[eax+0x20] from Object+0x258 (AICommandInterface subobject) with source 2.
+// Callers pass ModuleData ints at +0x28 and +0x90/0x94; landing unblocks 14 functions (2 become ready).
+void AICommandInterface::rva0045003E(Int value, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x31, cmdSource);
+	parms.m_intValue = value;
 	aiDoCommand(&parms);
 }
