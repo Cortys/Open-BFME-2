@@ -23,6 +23,7 @@ namespace _STL {
 	public:
 		static void _Rebalance(_Rb_tree_node_base *x, _Rb_tree_node_base *&root);
 		static _Rb_tree_node_base *_M_decrement(_Rb_tree_node_base *x);
+		static _Rb_tree_node_base *_M_increment(_Rb_tree_node_base *x);
 	};
 }
 struct Rva004075E0Node {
@@ -58,9 +59,10 @@ inline Rva004075E0Pair::Rva004075E0Pair(Rva004075E0Node *f, bool s) : first(f), 
 inline Rva004075E0Pair::Rva004075E0Pair(Rva004075E0Iter it, bool s) : first(it.node), second(s) {}
 struct Rva004075E0 {
 	Rva004075E0Node *_head;
-	int _size;
+	unsigned int _size;
 	Rva004075E0Iter rva004075E0(Rva004075E0Node *x, Rva004075E0Node *y, const Rva004075E0Key &v, Rva004075E0Node *w);
 	Rva004075E0Pair rva00407668(const Rva004075E0Key &v);
+	Rva004075E0Iter rva00407C7F(Rva004075E0Iter position, const Rva004075E0Key &v);
 };
 typedef _STL::_Rb_tree<unsigned int, _STL::pair<const unsigned int, bool>, _STL::_Select1st<_STL::pair<const unsigned int, bool> >, _STL::less<unsigned int>, _STL::allocator<_STL::pair<const unsigned int, bool> > > UIntBoolTree075E0;
 Rva004075E0Iter Rva004075E0::rva004075E0(Rva004075E0Node *x, Rva004075E0Node *y, const Rva004075E0Key &v, Rva004075E0Node *w)
@@ -111,4 +113,64 @@ Rva004075E0Pair Rva004075E0::rva00407668(const Rva004075E0Key &v)
 	if (j->_key10 < v.key)
 		return Rva004075E0Pair(rva004075E0(x, y, v, 0), true);
 	return Rva004075E0Pair(j, false);
+}
+// ?rva00407C7F@Rva004075E0@@QAE?AURva004075E0Iter@@U2@ABURva004075E0Key@@@Z retail 0x00407C7F 294B
+// Evidence: chain lane calls rowed 0x004075E0 plus rowed 0x00407668 plus rowed _M_increment 0x00024250 plus _M_decrement 0x000242C0; caller 0x00407DB6; prev same TU same flags.
+Rva004075E0Iter Rva004075E0::rva00407C7F(Rva004075E0Iter position, const Rva004075E0Key &v)
+{
+	if (position.node == _head->_left) {
+		if (_size <= 0)
+			return rva00407668(v).first;
+		if (v.key < position.node->_key10)
+			return rva004075E0(position.node, position.node, v, 0);
+		else {
+			bool comp_pos_v = position.node->_key10 < v.key;
+			if (comp_pos_v == false)
+				return position;
+			Rva004075E0Iter after = position;
+			after.node = (Rva004075E0Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			if (after.node == _head)
+				return rva004075E0(0, position.node, v, position.node);
+			if (v.key < after.node->_key10) {
+				if (position.node->_right == 0)
+					return rva004075E0(0, position.node, v, position.node);
+				else
+					return rva004075E0(after.node, after.node, v, 0);
+			} else {
+				return rva00407668(v).first;
+			}
+		}
+	} else if (position.node == _head) {
+		if (_head->_right->_key10 < v.key)
+			return rva004075E0(0, _head->_right, v, position.node);
+		else
+			return rva00407668(v).first;
+	} else {
+		Rva004075E0Iter before = position;
+		before.node = (Rva004075E0Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)before.node);
+		bool comp_v_pos = v.key < position.node->_key10;
+		if (comp_v_pos && before.node->_key10 < v.key) {
+			if (before.node->_right == 0)
+				return rva004075E0(0, before.node, v, before.node);
+			else
+				return rva004075E0(position.node, position.node, v, 0);
+		} else {
+			Rva004075E0Iter after = position;
+			after.node = (Rva004075E0Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			bool comp_pos_v = !comp_v_pos;
+			if (!comp_v_pos)
+				comp_pos_v = position.node->_key10 < v.key;
+			if (!comp_v_pos && comp_pos_v && (after.node == _head || v.key < after.node->_key10)) {
+				if (position.node->_right == 0)
+					return rva004075E0(0, position.node, v, position.node);
+				else
+					return rva004075E0(after.node, after.node, v, 0);
+			} else {
+				if (comp_v_pos == comp_pos_v)
+					return position;
+				else
+					return rva00407668(v).first;
+			}
+		}
+	}
 }

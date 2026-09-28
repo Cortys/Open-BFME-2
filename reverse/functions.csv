@@ -40856,3 +40856,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00517547@Rva00517547@@QAEPAU1@URva0051732A@@@Z,,0x00517547,59,Code/GameEngine/Source/Common/Rva00517547Set.cpp,matched,EH setter forwarding holder plus arg dtor Release
 ?rva00517027@Rva00517027@@QAEXPBD@Z,,0x00517027,33,Code/GameEngine/Source/Common/Rva00517027Set.cpp,matched,conditional StringBase set via rowed isEmpty plus set
 ?rva00407668@Rva004075E0@@QAE?AURva004075E0Pair@@ABURva004075E0Key@@@Z,,0x00407668,134,Code/GameEngine/Source/Common/Rva004075E0.cpp,matched,chain insert unique via rowed 0x004075E0 and decrement
+?rva00407C7F@Rva004075E0@@QAE?AURva004075E0Iter@@U2@ABURva004075E0Key@@@Z,,0x00407C7F,294,Code/GameEngine/Source/Common/Rva004075E0.cpp,matched,chain hint insert via rowed 0x004075E0 and 0x00407668
