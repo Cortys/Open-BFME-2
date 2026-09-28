@@ -26,7 +26,7 @@ class UnicodeString
 public:
 	static const UnicodeString TheEmptyString;
 	UnicodeString() {}
-	UnicodeString(const UnicodeString &that);
+	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() { m_data.releaseBuffer(); }
 	void trim() { m_data.trim(); }
 private:
@@ -70,7 +70,18 @@ public:
 	virtual void pad4();
 	virtual void vslot5();
 	bool rva00407A6A(const UnicodeString &arg);
+private:
+	char m_pad04[4];
+public:
+	UnicodeString m_wide08;
 };
+class BfmeKeyLC
+{
+public:
+	void *bfmeFindLC();
+};
+void GadgetTextEntrySetText(GameWindow *textEntry, UnicodeString text);
+void bfmeGo924F(BfmeKeyLC *k, unsigned short w);
 class Rva005B4BDBOuter
 {
 public:
@@ -82,6 +93,7 @@ class Rva005B4BDB
 public:
 	void rva005B4BDB();
 	void rva005B4D20();
+	void rva005B4C3C();
 private:
 	char m_pad0[4];
 	Rva005B4BDBOuter *m_outer04;
@@ -103,4 +115,11 @@ void Rva005B4BDB::rva005B4D20()
 		TheIMEManager->m40();
 		m_flag0D = false;
 	}
+}
+void Rva005B4BDB::rva005B4C3C()
+{
+	if (m_window08 == 0)
+		return;
+	GadgetTextEntrySetText(m_window08, m_outer04->m_inner.m_wide08);
+	bfmeGo924F((BfmeKeyLC *)m_window08, 0x16);
 }
