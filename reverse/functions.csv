@@ -39891,3 +39891,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva00262B0F@AIUpdateInterface@@QAEXH@Z,,0x00262B0F,42,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262B0F.cpp,matched,AIUpdateInterface lock guard clear vslot 0x38 restore honest name
 ?rva00262045@Rva00262045@@QAEXPAUNode00262045@@@Z,,0x00262045,50,Code/GameEngine/Source/Common/Rva00262045Unlink.cpp,matched,doubly linked unlink via head 0x0C next 0x0C prev 0x10 honest
 ?Rva003807B7Hide@@YAXXZ,,0x003807B7,60,Code/GameEngine/Source/Common/TooltipHide_muse-f8cb.cpp,matched,HideToolTip string plus UiCallbackFirers donor plus manager slot 0x3c plus 4 callers
+?rva001EEC4B@Rva001EEC4B@@QAEXXZ,,0x001EEC4B,76,Code/GameEngine/Source/GameClient/MouseRva001EEC4B_muse-f8cb.cpp,matched,Mouse tooltip reset via Hide plus StringBase release plus timeGetTime
