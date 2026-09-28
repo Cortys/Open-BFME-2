@@ -40492,3 +40492,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002AC04EAlloc@@YGPAXPAPAX@Z,,0x002AC04E,28,Code/GameEngine/Source/Common/Rva002AC04EAlloc.cpp,matched,Freelist node alloc via rowed pop same as Rva00239BD8Alloc
 ??$_M_allocate_and_copy@PBVRva00064640Record@@@?$vector@VRva00064640Record@@V?$allocator@VRva00064640Record@@@_STL@@@_STL@@IAEPAVRva00064640Record@@IPBV2@0@Z,,0x00469CED,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00064640_fill_n.cpp,matched,allocate via twin pin at 0xB40EA then rowed copy 0x469CA2 caller 0x46EE72
 ?rva0040C9F4@Rva0040C985@@QAEHXZ,,0x0040C9F4,21,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,same TU Rva0040C985 m_34 plus TheGameLogic frame plus caller 0x0040D3E8
+??0Rva005DD9F9@@QAE@M@Z,,0x005DD9F9,94,Code/GameEngine/Source/Common/Rva005DD772Ctor.cpp,matched,chain of base 0x5DD772 rounds float via 0.5 plus slot44 WinPercent format

@@ -29,6 +29,10 @@ public:
 class UnicodeString:public StringBase<Wide> {
 public:
     UnicodeString(const AsciiString&);
+    UnicodeString(){}
+    UnicodeString(const UnicodeString& o):StringBase<Wide>(o){}
+    ~UnicodeString(){}
+    void __cdecl format(const UnicodeString* fmt, ...);
 };
 class Rva005DD772 : public UnicodeString {
 public:
@@ -36,3 +40,26 @@ public:
     Rva005DD772();
 };
 Rva005DD772::Rva005DD772() : UnicodeString(AsciiString("-")), m04(0.0f) {}
+class GameTextInterface {
+public:
+    virtual ~GameTextInterface(){}
+    virtual void slot00()=0; virtual void slot01()=0; virtual void slot02()=0; virtual void slot03()=0;
+    virtual void slot04()=0; virtual void slot05()=0; virtual void slot06()=0; virtual void slot07()=0;
+    virtual void slot08()=0; virtual void slot09()=0; virtual void slot10()=0; virtual void slot11()=0;
+    virtual void slot12()=0; virtual void slot13()=0; virtual void slot14()=0; virtual void slot15()=0;
+    virtual const UnicodeString& slot44(const char* label, bool* exists=0)=0;
+};
+extern GameTextInterface* TheGameText;
+// ??0Rva005DD9F9@@QAE@M@Z @0x005DD9F9 94B chain of base 0x5DD772.
+// Float ctor overwrites base m04 then rounds v+0.5f via 0x7C26F0 to int for
+// TheGameText slot44 GUI:WinPercent fetch returning const UnicodeString&
+// then UnicodeString format 0x6CB660. Same 8B layout no vptr returns this.
+class Rva005DD9F9 : public Rva005DD772 {
+public:
+    Rva005DD9F9(float v);
+};
+Rva005DD9F9::Rva005DD9F9(float v) : Rva005DD772() {
+    m04 = v;
+    int i = (int)(v + 0.5f);
+    ((UnicodeString*)this)->format(&TheGameText->slot44("GUI:WinPercent"), i);
+}
