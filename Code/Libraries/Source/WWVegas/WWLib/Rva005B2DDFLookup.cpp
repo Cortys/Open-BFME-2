@@ -16,6 +16,7 @@ class Rva005B2DDF {
 public:
   void* rva005B2DDF(unsigned a, unsigned b);
   void* rva005B2E09(Rva005B2E09Cell* c);
+  void* rva005B2E35(Rva005B2E09Cell* c);
 };
 void* Rva005B2DDF::rva005B2DDF(unsigned a, unsigned b)
 {
@@ -30,6 +31,16 @@ void* Rva005B2DDF::rva005B2E09(Rva005B2E09Cell* c)
   for (int cur = c->m_08 - 1; cur >= 0; ) {
     void* r = rva005B2DDF(c->m_04, cur);
     --cur;
+    if (r != 0)
+      return r;
+  }
+  return 0;
+}
+void* Rva005B2DDF::rva005B2E35(Rva005B2E09Cell* c)
+{
+  for (int cur = c->m_08 + 1; cur < 4; ) {
+    void* r = rva005B2DDF(c->m_04, cur);
+    ++cur;
     if (r != 0)
       return r;
   }
