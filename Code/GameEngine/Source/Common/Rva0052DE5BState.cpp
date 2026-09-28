@@ -34,6 +34,7 @@ class Rva0052DE5B
 public:
 	void rva0052DE5B();
 	void rva0052DED3();
+	Rva0052DE5B *rva0052DFF2();
 
 private:
 	Rva0052DE5BNode *m_node;
@@ -69,4 +70,11 @@ void Rva0052DE5B::rva0052DED3()
 	m_8 = 0xffff;
 	m_flags = (m_flags & 0xff000010) | 0x10;
 	rva0052DE5B();
+}
+
+Rva0052DE5B *Rva0052DE5B::rva0052DFF2()
+{
+	m_node = 0;
+	rva0052DED3();
+	return this;
 }
