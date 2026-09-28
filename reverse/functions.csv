@@ -39036,3 +39036,4 @@ _Rva0084DDD0Sign,,0x00021050,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20S
 ?element@Rva007F6C40Array@@QAEPADH@Z,,0x00663350,24,Code/GameEngine/Source/GameNetwork/Rva007F6B80ArrayIndex.cpp,matched,BFME1 byte-identical donor; b1 0x007F6C40
 ?copy@Rva00808AC0Owner@@QAEXPAD@Z,,0x00674A30,25,Code/GameEngine/Source/GameNetwork/Y4FeslFavGameAddress.cpp,matched,BFME1 byte-identical donor; b1 0x00808AC0
 ?copy@Rva00808900Owner@@QAEXPAD@Z,,0x00674890,22,Code/GameEngine/Source/GameNetwork/Y4FeslFavGameAddress.cpp,matched,BFME1 byte-identical donor; b1 0x00808900
+?set@Rva007EA490Owner@@QAEXHHH@Z,,0x00657440,42,Code/GameEngine/Source/GameNetwork/Rva007EA490SetFields.cpp,matched,BFME1 byte-identical donor; b1 0x007EA490
