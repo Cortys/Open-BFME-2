@@ -40379,3 +40379,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003551B5@Rva0035516C@@QBE_NW4NameKeyType@@@Z,,0x003551B5,30,Code/GameEngine/Source/GameLogic/Object/Rva0035516CArmorFind.cpp,matched,chain wrapper over rva0035516C checks plus8 nonzero
 ?Rva0056DD8DSecond@@YGFHF@Z,,0x0056DD8D,8,Code/GameEngine/Source/Common/Rva00549000Cmp.cpp,matched,returns second short callers 0x3F0B15 0x43467E 0x56E1E4 0x56E53F
 ??1Rva005D4EC6@@QAE@XZ,,0x005D4EC6,72,Code/GameEngine/Source/Common/Rva005D4EC6Dtor.cpp,matched,chain lane member dtor via rowed Holder 0x5F4AD7 plus direct Release plus base 0x57C3B6
+??0Rva0040C351@@QAE@XZ,,0x0040C351,77,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,derived of 0x0037DF2C plus dual-vtable member plus zeros
