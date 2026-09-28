@@ -25,3 +25,11 @@ Coord3D *__cdecl Rva00601772Fill(Coord3D *first, unsigned int count, const Coord
         Rva0060173ACopy(dst, value);
     return dst;
 }
+Coord3D *__cdecl Rva0060174CCopy(const Coord3D *first, const Coord3D *last, Coord3D *result)
+{
+    Coord3D *dst = result;
+    const Coord3D *src = first;
+    for (; src != last; ++src, ++dst)
+        Rva0060173ACopy(dst, *(const Coord3DBase *)src);
+    return dst;
+}
