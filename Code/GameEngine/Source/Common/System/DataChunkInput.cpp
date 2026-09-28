@@ -304,6 +304,8 @@ public:
 	Bool atEndOfFile(void) { return m_file->eof(); }
 
 	Bool parse(void *userData);
+	void clearChunkStack();
+	void reset();
 };
 
 Bool DataChunkInput::atEndOfChunk(void)
@@ -314,6 +316,18 @@ Bool DataChunkInput::atEndOfChunk(void)
 		return false;
 	}
 	return true;
+}
+
+// Retail 0x00306DCC (20B): reset the stream to just-opened state: drain the
+// chunk stack, then seek the file back to the first-chunk position. ZH
+// DataChunk.cpp donor verbatim (clearChunkStack(); m_file->absoluteSeek(
+// m_fileposOfFirstChunk)); absoluteSeek at ChunkInputStream slot 2 (+0x08)
+// is proven by parse()'s inlined closeDataChunk. Rowed clearChunkStack at
+// 0x00306DA4 resolves the call. Served via the chain lane.
+void DataChunkInput::reset()
+{
+	clearChunkStack();
+	m_file->absoluteSeek(m_fileposOfFirstChunk);
 }
 
 // ??1DataChunkInput@@QAE@XZ
