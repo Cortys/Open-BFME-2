@@ -40006,3 +40006,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0010F11C@Rva0010F110@@QAE_NH@Z,,0x0010F11C,45,Code/GameEngine/Source/Common/Rva0010F110Wait.cpp,matched,guarded loop-count check via rowed wait and AIL
 ??$_Destroy@PAURva0007BB16Record@@@_STL@@YAXPAURva0007BB16Record@@0@Z,,0x0007C2D7,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0007bb16_destroy.cpp,matched,range destroy stride 0x24 via rowed dtor 0x7BB16 callers 0x7C5D5 0x7C614
 ?_M_clear@?$vector@URva0007BB16Record@@V?$allocator@URva0007BB16Record@@@_STL@@@_STL@@IAEXXZ,,0x0007C614,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0007bb16_destroy.cpp,matched,vector clear via rowed Destroy 0x7C2D7 plus free
+??1?$vector@URva0007BB16Record@@V?$allocator@URva0007BB16Record@@@_STL@@@_STL@@QAE@XZ,,0x0007C5D5,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0007bb16_dtor.cpp,matched,vector dtor via rowed Destroy 0x7C2D7 plus free
