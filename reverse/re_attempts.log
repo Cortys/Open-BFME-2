@@ -2601,3 +2601,4 @@ FUN_004780bc	0x000780BC	394	blocked	394B filter kernel SSE plus x87 exp plus STL
 FUN_006894a2	0x002894A2	125	blocked	Overridable-base dtor with CameraMarker vec plus 2 AsciiString vecs plus StringRecord plus malloc-free; base pin 0x1E3624 opaque identity unproven no donor t=12 model=muse-02
 ?Rva005D23BBGet@@YAPBVImage@@PAURva005D23BBIn@@@Z	0x005D23BB	67	partial	push esi early plus shared null epilogue vs delayed save t=20 model=muse-spark score=0.96 stash=reverse/attempts/0x005d23bb.cpp
 ??0Rva00281A76@@QAE@M@Z	0x00281A76	65	blocked	float-vector ctor 65B same size same 21 insns store order plus lea hoisting volatile moves b00 first retail second push after vs before 6 variants O1 Ob2 EHs archSSE t=20 model=muse-11
+FUN_00569FB3	0x00569FB3	174	blocked	ctor layout ambiguous E16 base plus ModuleData reserve overlap at plus40 plus4C needs donor t=8 model=muse-01
