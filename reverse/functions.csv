@@ -40385,3 +40385,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1MetaMapRec@@QAE@XZ,,0x001DB48E,54,Code/GameEngine/Source/GameClient/MessageStream/MetaMapRecDtor.cpp,matched,ZH MetaEvent.h layout plus BFME1 destructor thunk plus dual wide releaseBuffer
 ?Rva00577CA0Fill@@YAPAPAXPAPAXIABQAXABU__false_type@_STL@@@Z,,0x00577CA0,37,Code/GameEngine/Source/Common/Rva00577CA0Fill.cpp,matched,fill via rowed copy plus overflow caller 0x0057833B
 ??_GMetaMapRec@@QAEPAXI@Z,,0x001DB51B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-x7k-f694.cpp,matched,deleting dtor via rowed MetaMapRec dtor plus plain delete
+?Rva0060173ACopy@@YAXPAVCoord3D@@ABUCoord3DBase@@@Z,,0x0060173A,18,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,null-checked Coord3D assign via rowed 0x4216D3 with 0x0C stride callers
