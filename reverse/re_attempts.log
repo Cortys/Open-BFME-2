@@ -2712,3 +2712,5 @@ FUN_004BDD48	0x000BDD48	36	blocked	36B ctor needs string literal bytes at 0x007B
 ??1Rva0052D20C@@QAE@XZ	0x0052D20C	63	blocked	EH prolog plus 3 Unwind funclets needs unknown locals with dtors simple clear plus free gives 30B no EH t=10 model=muse-spark
 ?rva002A1D02@Rva002A1D02@@QAEXXZ	0x002A1D02	73	blocked	caller sets ecx for Free 0x002A14FA which landed as stdcall free; needs member repoint with same bytes t=10 model=muse
 ?Rva0029FB80Store@@YGXPAPAX@Z	0x0029FB80	28	partial	useless lea-test kept plus edx regs t=10 model=muse score=0.9 stash=reverse/attempts/0x0029fb80.cpp
+?rva0004128E@Rva0004128E@@QAEXXZ	0x0004128E	72	blocked	small-buffer plus heap plus copy loop register wall eax-vs-ecx for i tried pad plus reload t=15 model=muse-spark
+FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same family as blocked 0x4128E register wall t=5 model=muse-spark
