@@ -39515,3 +39515,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0025BF8C@Rva0025BF8C@@QAE_NPAX@Z,,0x0025BF8C,59,Code/GameEngine/Source/Common/Rva0025BF8CHeroRemover.cpp,matched,Hero vector find erase via rowed find erase
 ??0Rva005961D6@@QAE@XZ,,0x005961D6,79,Code/GameEngine/Source/Common/Rva005961D6Ctor.cpp,matched,Derived ctor via base plus elements plus vector
 ??0Rva00596069@@QAE@XZ,,0x00596057,18,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,Rva00596069 ctor via base plus vtable
+??0Rva005965A5@@QAE@XZ,,0x005965A5,33,Code/GameEngine/Source/Common/Rva005965A5Ctor.cpp,matched,Derived ctor via base plus vector
