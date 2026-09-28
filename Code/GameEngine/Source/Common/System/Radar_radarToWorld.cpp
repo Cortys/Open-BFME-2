@@ -46,6 +46,7 @@ class Radar
 {
 public:
 	bool radarToWorld(const ICoord2D *radar, Coord3D *world);
+	bool worldToRadar(const Coord3D *world, ICoord2D *radar);
 
 private:
 	unsigned char m_pad[0x24];
@@ -75,6 +76,26 @@ bool Radar::radarToWorld(const ICoord2D *radar, Coord3D *world)
 
 	BfmeTerrainHeightView *terrain = TheTerrainLogic;
 	world->z = terrain->getGroundHeight(world->x, world->y);
+
+	return true;
+}
+
+bool Radar::worldToRadar(const Coord3D *world, ICoord2D *radar)
+{
+	if (world == NULL || radar == NULL)
+		return false;
+
+	radar->x = (int)(world->x / m_xSample);
+	radar->y = (int)(world->y / m_ySample);
+
+	if (radar->x < 0)
+		radar->x = 0;
+	if (radar->x >= 128)
+		radar->x = 128 - 1;
+	if (radar->y < 0)
+		radar->y = 0;
+	if (radar->y >= 128)
+		radar->y = 128 - 1;
 
 	return true;
 }
