@@ -40803,3 +40803,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva005D2462@@QAE@HABVAsciiString@@HH@Z,,0x005D2462,42,Code/GameEngine/Source/Common/Rva005D2462Ctor.cpp,matched,ctor base 0x00528B06 stores +0x10 +0x14 vtable 0x008757E4 callers 0x0052975A 0x005D2778
 ?Rva000B3E96Get@@YGHH@Z,,0x000B3E96,29,Code/GameEngine/Source/Common/Rva000B3E96Get.cpp,matched,wrapper over rowed 0x0023404A with file line 0x28F8
 ?Rva0040B52EDestroy@@YAXPAUDestroyElem0040B52E@@0@Z,,0x0040B52E,25,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B52E.cpp,matched,unlock destroy range stride16 via rowed string dtor
+?rva0040B5DE@Rva0040B5DE@@QAEXXZ,,0x0040B5DE,30,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B52E.cpp,matched,chain vector destroy plus free via rowed range
