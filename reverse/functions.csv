@@ -39958,3 +39958,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??1W3DTruckDraw@@UAE@XZ,,0x000CDE73,151,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DTruckDrawDtor.cpp,matched,dtor vtable BCC650 slot0 deleting dtor CDF34 pool key CB578 string W3DTruckDraw
 ?isPointOnBridge@Bridge@@QAE_NPBUCoord3D@@@Z,,0x0027EEAD,348,Code/GameEngine/Source/GameLogic/Map/BridgeIsPointOnBridge.cpp,matched,BFME1 donor BridgeIsPointOnBridge plus pickBridge caller 0x0027FBFE bounds B4 extra C8
 ?rva002E757D@Rva002E757D@@QAE_NPBUCoord3D@@@Z,,0x002E757D,38,Code/GameEngine/Source/GameLogic/Object/Rva002E757D.cpp,matched,chain from Bridge isPointOnBridge walks list head 5C next 04
+?rva002E74B5@Rva002E74B5@@QAEXPBUCoord3D@@@Z,,0x002E74B5,17,Code/GameEngine/Source/GameLogic/Object/Rva002E74B5.cpp,matched,unlocks 00363930 copies 12B to 4C
