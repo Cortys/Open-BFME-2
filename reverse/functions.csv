@@ -41564,3 +41564,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003F48FE@Rva003F498A@@QAEHHHH@Z,,0x003F48FE,35,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,triple indexed int getter via STL
 ?rva00359835@Rva00359835@@QBEMXZ,,0x00359835,30,Code/GameEngine/Source/Common/Rva00359835Ratio.cpp,matched,float ratio with pooled 0.0f guard plus int divide via x87
 ??0Rva003598D3@@QAE@HHH_N@Z,,0x003598D3,47,Code/GameEngine/Source/Common/Rva003598D3Ctor.cpp,matched,ctor with vtable plus 4 args and zeroed 0x10 0x14
+??0Rva0035986C@@QAE@H_NH0@Z,,0x0035986C,57,Code/GameEngine/Source/Common/Rva0035986CCtor.cpp,matched,ctor with vtable plus bool to 0x7FFFF43 convert
