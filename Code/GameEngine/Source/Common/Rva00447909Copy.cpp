@@ -17,3 +17,10 @@ char *__cdecl Rva00447909Copy(char *src, void *dst, unsigned int size, char *lim
 	memcpy(dst, src, size);
 	return src + size;
 }
+// ?Rva0044799ACopy1@@YAPADPADPAX0@Z, retail 0x0044799A, 23 bytes.
+// Fixed-size-1 checked copy: forwards to Rva00447909Copy. Evidence: chain lane
+// calls 0x00447909 which this session landed; callers in 0x00448423.
+char *__cdecl Rva0044799ACopy1(char *src, void *dst, char *limit)
+{
+	return Rva00447909Copy(src, dst, 1, limit);
+}

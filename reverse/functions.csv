@@ -39898,3 +39898,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva00503D8EEvaluate@@YAMMMMMM@Z,,0x00503D8E,93,Code/GameEngine/Source/Common/calc.cpp,matched,Catmull-Rom scalar evaluate donor calc.cpp 8 callers
 ?Rva00503F2CCalc@@YAXPAURva00503F2CPoint@@PBU1@111M@Z,,0x00503F2C,165,Code/GameEngine/Source/Common/calc.cpp,matched,Catmull-Rom 3D wrapper 3 evaluate calls donor calc.cpp
 ?Rva00447909Copy@@YAPADPADPAXI0@Z,,0x00447909,54,Code/GameEngine/Source/Common/Rva00447909Copy.cpp,matched,unlock checked memcpy unblocks 44793F 44796C 44799A
+?Rva0044799ACopy1@@YAPADPADPAX0@Z,,0x0044799A,23,Code/GameEngine/Source/Common/Rva00447909Copy.cpp,matched,chain calls 00447909 landed this session
