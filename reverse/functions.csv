@@ -39944,3 +39944,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva0014F90DFillN@@YAPAVRva0014F480@@PAV1@IABV1@@Z,,0x0014F90D,27,Code/GameEngine/Source/Common/Rva0014F9FillN.cpp,matched,dispatcher calls fill_n 0x0014F5AB tag at ebp-1
 ?Rva0014F951FillN@@YAPAVRva0014F4A1@@PAV1@IABV1@@Z,,0x0014F951,27,Code/GameEngine/Source/Common/Rva0014F9FillN.cpp,matched,dispatcher calls fill_n 0x0014F5E5 tag at ebp-1
 ?Rva0014F9CCFillN@@YAPAVRva0014F4C2@@PAV1@IABV1@@Z,,0x0014F9CC,27,Code/GameEngine/Source/Common/Rva0014F9FillN.cpp,matched,dispatcher calls fill_n 0x0014F61F tag at ebp-1
+??1?$pair@$$CBJVLadderPref@@@_STL@@QAE@XZ,,0x005DFB77,8,Code/GameEngine/Source/Common/LadderPrefCopy.cpp,matched,pair dtor add ecx 4 jmp LadderPref dtor proven by map node erase callers
