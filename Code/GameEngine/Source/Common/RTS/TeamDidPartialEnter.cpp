@@ -4,6 +4,7 @@
 // ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E288 (123B).
 // ?someInsideSomeOutside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E50D (172B).
 // ?allInside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E3C8 (172B).
+// ?rva0039E7F2@Team@@QAEXMMM@Z @0x0039E7F2 (35B).
 // Team::didPartialEnter(): returns true when a considered member has entered
 // the trigger. Retail guard is the byte at Team+0x5c; the member walk uses the
 // pinned iterate_TeamMemberList at 0x263864 and the pinned DLINK advance at
@@ -73,6 +74,7 @@ public:
 	bool didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool someInsideSomeOutside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool allInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
+	void rva0039E7F2(float a, float b, float c);
 
 private:
 	unsigned char m_pad[0x5c];
@@ -199,4 +201,10 @@ bool Team::allInside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
 		anyConsidered = true;
 	}
 	return anyConsidered && !anyOutside;
+}
+
+void Team::rva0039E7F2(float a, float b, float c)
+{
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+	}
 }
