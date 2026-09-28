@@ -24,21 +24,35 @@
 // the following CC starts at 0x143CA6.
 #include <stddef.h>
 
+class MeshModelClass
+{
+public:
+    unsigned char pad[0x28];
+    int VertexCount;
+    int Get_Vertex_Count() const
+    { return VertexCount; }
+};
+
 class MeshClass
 {
 public:
-    unsigned char opaque[0x304];
+    unsigned char pad0[0xC4];
+    MeshModelClass *Model;
+    unsigned char pad1[0x23C];
     MeshClass *NextVisibleSkin;
     MeshClass *Peek_Next_Visible_Skin()
     { return NextVisibleSkin; }
     void Set_Next_Visible_Skin(MeshClass *next)
     { NextVisibleSkin = next; }
+    MeshModelClass *Peek_Model()
+    { return Model; }
 };
 
 class __declspec(novtable) DX8SkinFVFCategoryContainer
 {
 public:
     virtual ~DX8SkinFVFCategoryContainer();
+    void Add_Visible_Skin(MeshClass *mesh);
 private:
     void clearVisibleSkinList();
     unsigned char prefix[0xE4];
@@ -59,4 +73,15 @@ void DX8SkinFVFCategoryContainer::clearVisibleSkinList()
     VisibleSkinTail = NULL;
     VisibleVertexCount = 0;
     VisibleSkinCount = 0;
+}
+
+void DX8SkinFVFCategoryContainer::Add_Visible_Skin(MeshClass *mesh)
+{
+    if (mesh->Peek_Next_Visible_Skin() != NULL || mesh == VisibleSkinTail)
+        return;
+    if (VisibleSkinHead == NULL)
+        VisibleSkinTail = mesh;
+    mesh->Set_Next_Visible_Skin(VisibleSkinHead);
+    VisibleSkinHead = mesh;
+    VisibleVertexCount += mesh->Peek_Model()->Get_Vertex_Count();
 }
