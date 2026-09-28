@@ -37,6 +37,7 @@ class Rva003F498A {
 public:
     void rva003F498A(Rva003F498ACallback* cb);
     int rva003F46A8(int idx);
+    int rva003F46C1(int outerIdx, int innerIdx);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -57,4 +58,11 @@ int Rva003F498A::rva003F46A8(int idx)
 {
     Rva003F498AOuter& o = m_outers[idx];
     return (int)o.ints.size();
+}
+
+int Rva003F498A::rva003F46C1(int outerIdx, int innerIdx)
+{
+    if (innerIdx < 0 || innerIdx >= rva003F46A8(outerIdx))
+        return -1;
+    return m_outers[outerIdx].ints[innerIdx];
 }

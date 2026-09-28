@@ -41559,3 +41559,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?doUnitGuardPosition@ScriptActions@@IAEXABVAsciiString@@0@Z,,0x003C8964,109,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doUnitGuardForFramecount.cpp,matched,BFME1 doUnitGuardPosition donor waypoint 0x88 SSE
 ?doNamedGuard@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C886A,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doUnitGuardForFramecount.cpp,matched,BFME1 doNamedGuard donor leaveGroup plus SSE
 ?rva003F46A8@Rva003F498A@@QAEHH@Z,,0x003F46A8,25,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,outer vector int size getter via STL
+?rva003F46C1@Rva003F498A@@QAEHHH@Z,,0x003F46C1,49,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,bounds checked int getter via size helper
