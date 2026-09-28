@@ -40896,3 +40896,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva005DD1EA@@UAE@XZ,,0x005DD1EA,65,Code/GameEngine/Source/Common/Rva005DD1EADtor.cpp,matched,chain dtor vtable plus free plus base
 ?Rva004168D3Erase@@YGXPAPAXPAUBuddyEraseNode@@@Z,,0x004168D3,42,Code/Libraries/Source/WWVegas/WWLib/stlport_list_buddymessage_erase.cpp,matched,list unlink plus BuddyMessage destroy plus free
 ??_GRva005DD1EA@@UAEPAXI@Z,,0x005DD5ED,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete
+??0Rva005DD772@@QAE@ABVUnicodeString@@M@Z,,0x005DD86D,29,Code/GameEngine/Source/Common/Rva005DD772Ctor.cpp,matched,unlock string float copy ctor via base copy

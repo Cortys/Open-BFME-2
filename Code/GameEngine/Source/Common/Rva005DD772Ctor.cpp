@@ -38,8 +38,15 @@ class Rva005DD772 : public UnicodeString {
 public:
     float m04;
     Rva005DD772();
+    Rva005DD772(const UnicodeString &str, float v);
 };
 Rva005DD772::Rva005DD772() : UnicodeString(AsciiString("-")), m04(0.0f) {}
+// ??0Rva005DD772@@QAE@ABVUnicodeString@@M@Z @0x005DD86D 29B unlock lane:
+// (UnicodeString,float) copy ctor: StringBase Wide copy 0x00037050 for the
+// base at +0 then float to +4 via xmm; frameless ret 8 returning this.
+// Same 8B layout and callees as the default ctor above; callers in the big
+// parsers 0x005BEA70/0x005C1BDE.
+Rva005DD772::Rva005DD772(const UnicodeString &str, float v) : UnicodeString(str), m04(v) {}
 class GameTextInterface {
 public:
     virtual ~GameTextInterface(){}
