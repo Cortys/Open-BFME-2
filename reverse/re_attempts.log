@@ -2690,3 +2690,4 @@ FUN_00818F7D	0x00418F7D	160	blocked	INI attack priority parse with EH throw t=12
 FUN_009b4023	0x005B4023	151	blocked	map temp with custom payload 0 plus -1s needs real TreeHintPayload fields not opaque words t=10 model=muse-spark
 FUN_00846A95	0x00446A95	387	blocked	387B GUI slot winEnable logic 8plus stack params virtual calls no donor class identity exceeds quick box t=3 model=muse-spark
 FUN_00a253f0	0x006253F0	146	blocked	EH ctor with new State size 0x124 and vtables 0x87C6B0 needs PartitionManager identity and EH shape t=15 model=muse-096b
+?rva00416939@Rva00416939@@QAEXXZ	0x00416939	22	blocked	chain caller of erase needs edx double-deref plus reserve-fill t=25 model=muse
