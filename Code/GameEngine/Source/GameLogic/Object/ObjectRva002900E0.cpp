@@ -25,6 +25,7 @@ class Object
 public:
 	void setStatus(ObjectStatusTypes status, bool flag);
 	void rva002900E0(int frame);
+	void rva002900FA(int frame);
 	void rva002903C3();
 	void rva002903EF();
 
@@ -38,6 +39,12 @@ void Object::rva002900E0(int frame)
 {
 	setStatus(STATUS_4A, true);
 	m_frame42C = frame;
+}
+
+void Object::rva002900FA(int frame)
+{
+	setStatus(STATUS_04, true);
+	m_frame430 = frame;
 }
 
 void Object::rva002903C3()
