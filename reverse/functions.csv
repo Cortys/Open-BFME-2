@@ -40488,3 +40488,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0040C64A@Rva0037DCA5@@QAEPAXXZ,,0x0040C64A,19,Code/GameEngine/Source/Common/Rva0037DCA5Get.cpp,matched,chain of rva0037DC52 fallback empty plus 0x58
 ??0Rva005C4986@@QAE@II@Z,,0x005C4986,50,Code/GameEngine/Source/Common/Rva005C4986Ctor.cpp,matched,chain ctor base 0x59B7CB plus member 0x48D0 then vptrs
 ?rva00142C80@Rva00142C80@@QAEPAXXZ,,0x00142C80,14,Code/GameEngine/Source/Common/Rva00142C80LeaIndexer.cpp,matched,indexed lea from array at 0xB8 by index at 0x138
+??_GRva0021A0C2@@QAEPAXI@Z,,0x0021AC81,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-0a3a.cpp,matched,Deleting dtor for Rva0021A0C2 via AudioEventRTS shape
