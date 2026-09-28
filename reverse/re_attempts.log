@@ -2657,3 +2657,6 @@ FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no
 ??1Rva0023FD06@@UAE@XZ	0x0023FD06	48	blocked	EH dtor with StringBase at plus8 gives small 14B tail-jmp without EH_prolog vs retail 48B with EH t=15 model=muse-spark
 ?rva000B3FA5@Rva000B3FA5@@QAEXHH@Z	0x000B3FA5	43	blocked	branchless bit set regalloc wall 7reg 2mem same size 43B tried O1 O2 G7 EHsc self named-temp stepwise-neg variants t=20 model=muse-04
 ?Rva003319FBGet@@YAHXZ	0x003319FB	75	blocked	EH prolog with StringRecord temp plus double Rva002DFC30 copy dst-src ambiguity needs layout and handler beyond 4-lookup budget t=10 model=muse-04
+?Rva0010E4F6@@YAX	0x0010E4F6	172	blocked	WW3D recursive mesh-unique 5 vslots plus self-call needs full vtable t=10 model=muse-06
+??0Rva0010F058@@QAE@H@Z	0x0010F058	108	partial	push-store scheduling same size-insns t=15 model=muse-06 score=0.91 stash=reverse/attempts/0x0010f058.cpp
+?Rva00186CF0@@YAX	0x00186CF0	165	blocked	same WW3D mesh-unique vtable wall as 0x10E4F6 t=2 model=muse-06
