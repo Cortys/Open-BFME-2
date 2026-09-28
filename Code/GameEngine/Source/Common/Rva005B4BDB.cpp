@@ -38,6 +38,28 @@ public:
 	unsigned int winGetStyle();
 };
 UnicodeString GadgetTextEntryGetText(GameWindow *textEntry);
+class IMEManager
+{
+public:
+	virtual void m00() = 0;
+	virtual void m04() = 0;
+	virtual void m08() = 0;
+	virtual void m0C() = 0;
+	virtual void m10() = 0;
+	virtual void m14() = 0;
+	virtual void m18() = 0;
+	virtual void m1C() = 0;
+	virtual void m20() = 0;
+	virtual void m24() = 0;
+	virtual void m28() = 0;
+	virtual void m2C() = 0;
+	virtual void m30() = 0;
+	virtual void m34() = 0;
+	virtual void m38() = 0;
+	virtual void m3C() = 0;
+	virtual void m40() = 0;
+};
+extern IMEManager *TheIMEManager;
 class Rva00407A6A
 {
 public:
@@ -59,10 +81,13 @@ class Rva005B4BDB
 {
 public:
 	void rva005B4BDB();
+	void rva005B4D20();
 private:
 	char m_pad0[4];
 	Rva005B4BDBOuter *m_outer04;
 	GameWindow *m_window08;
+	char m_pad0C;
+	bool m_flag0D;
 };
 void Rva005B4BDB::rva005B4BDB()
 {
@@ -70,4 +95,12 @@ void Rva005B4BDB::rva005B4BDB()
 	tmp.trim();
 	m_outer04->m_inner.rva00407A6A(tmp);
 	m_outer04->m_inner.vslot5();
+}
+void Rva005B4BDB::rva005B4D20()
+{
+	rva005B4BDB();
+	if (m_flag0D) {
+		TheIMEManager->m40();
+		m_flag0D = false;
+	}
 }
