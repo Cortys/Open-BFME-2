@@ -40440,3 +40440,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00469294@Rva00469294@@QAEPAXH@Z,,0x00469294,38,Code/GameEngine/Source/Common/Rva00469294Find.cpp,matched,ptr vector at 18c key match callers 46AF67 472421 472CDC 474D57 470D4E
 ?Rva000F5B43Get@@YAHXZ,,0x000F5B43,19,Code/GameEngine/Source/Common/Rva000F5B43Get.cpp,matched,two globals init 0x009E1F28 to 0x009B5A34 and 0x009E1F20 to 1
 ?Build_Subobject_List@AggregateDefClass@@MAEXAAVRenderObjClass@@0@Z,,0x001A4010,1039,Code/Libraries/Source/WWVegas/WW3D2/AggregateDefBuildSubobjectList.cpp,matched,BFME1 a38d345e donor algorithm; target AggregateDef vtable BD6C70 slot40 and matched Initialize establish identity; target bone/subobject virtual slots and nonthrowing array cleanup; full1039B verified
+??1Rva00226883@@QAE@XZ,,0x0022C612,56,Code/GameEngine/Source/Common/Rva0022C612Dtor.cpp,matched,Nonvirtual dtor calls clear 0x22999F then inline header free same 56B shape as 0x384DEB
