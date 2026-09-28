@@ -39733,3 +39733,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva005490D2@Rva005490D2@@QBEHXZ,,0x005490D2,31,Code/GameEngine/Source/Common/Rva005490D2Sum.cpp,matched,summing loop over inline array with count at plus0 and field at 568
 ?resize@?$vector@PAVDrawable@@V?$allocator@PAVDrawable@@@_STL@@@_STL@@QAEXIPAVDrawable@@@Z,,0x000E6D39,63,Code/GameEngine/Source/Common/DrawableVectorResize.cpp,matched,unlock lane vector Drawable resize via Pod8 ObjectID 63B precedents erase 0x31BD55 fill 0x233A5A
 ?rva000E6594@Rva000E6594@@QAEXXZ,,0x000E6594,8,Code/GameEngine/Source/Common/Rva000E6594.cpp,matched,unlock lane add ecx 0x38 jmp FillLevelSurfaces 0x132989 callers 0x6B819
+?Rva002E6E6CGet@@YAHH@Z,,0x002E6E6C,19,Code/GameEngine/Source/Common/Rva002E6E6CGet.cpp,matched,free cdecl predicate 22 callers no donor flags O1 from Rva002E6ECA sibling
