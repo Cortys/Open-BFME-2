@@ -12,6 +12,11 @@
 // groupHunt forwards aiHunt to each member; caller 0x003BF8F8 builds an AIGroup
 // and calls with source 1; ZH groupHunt plus BFME1 ForwardedOrders groupHunt
 // at 0x00156270 plus rowed aiHunt at 0x002AE657 prove the identity.
+//
+// ?rva0036DDCD@AIGroup@@QAEXH@Z @ 0x0036DDCD 37B
+// AIGroup broadcast: forward one int arg to rva0028C20F on every member.
+// Evidence: same begin/end loop shape as setAttitude just above in this TU,
+// callee rva0028C20F row, caller 0x003790B4, ret 4 single-int forward.
 
 #include <list>
 
@@ -47,6 +52,7 @@ public:
 class Object
 {
 public:
+	void rva0028C20F(int x);
 	char m_pad[0x258];
 	AIUpdateInterface *m_ai;
 };
@@ -57,6 +63,7 @@ public:
 	void groupAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void groupHunt(CommandSourceType cmdSource);
 	void setAttitude(AttitudeType tude);
+	void rva0036DDCD(int x);
 
 private:
 	std::list<Object *> m_memberList;
@@ -93,5 +100,12 @@ void AIGroup::setAttitude(AttitudeType tude)
 		if (ai) {
 			ai->rva0026DE3B(tude);
 		}
+	}
+}
+
+void AIGroup::rva0036DDCD(int x)
+{
+	for (std::list<Object *>::iterator i = m_memberList.begin(); i != m_memberList.end(); ++i) {
+		(*i)->rva0028C20F(x);
 	}
 }
