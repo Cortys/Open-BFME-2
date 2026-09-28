@@ -6198,3 +6198,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??0BfmePod88@@QAE@ABU0@@Z,0x004E2F9F,twin of rowed Rva004E3184 copy ctor at same address called by _Construct 0x004E3706 size 88 match
 ?allocate@?$allocator@URva004F6352@@@_STL@@QBEPAURva004F6352@@IPBX@Z,0x00395928,typed 12-byte Rva004F6352 vector allocator ICF twin of rowed BfmeE12 allocate via call at 0x004F6C11
 ?xfer@UpdateModule@@UAEXPAVXfer@@@Z,0x0044DF9F,virtual twin of QAE row for secondary vtable xfer placement
+??1?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@XZ,0x0007FAB3,ICF twin of 0x00142D70 proven by call at 0x0041A3FC in 53B pop aux
