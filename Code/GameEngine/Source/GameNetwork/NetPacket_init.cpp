@@ -70,3 +70,11 @@ void NetPacket::reset()
 	}
 	init();
 }
+
+NetPacket::~NetPacket()
+{
+	if (m_lastCommand != 0) {
+		delete m_lastCommand;
+		m_lastCommand = 0;
+	}
+}
