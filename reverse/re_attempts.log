@@ -2704,3 +2704,4 @@ FUN_0072A4A0	0x0032A4A0	27	blocked	27B string copy getter via contested StringBa
 FUN_009c98f6	0x005C98F6	109	blocked	vector-visitor with virtual call and typed catch RTTI 0x7FB1CC funclet 0x7A0F41; index at +0xC begin end at +0 +4; owner among LocomotorStore neighbors unproven t=15 model=muse-spark
 FUN_009e2d26	0x005E2D26	32	blocked	static 3x8 table at 0x00C77B40 has no name donor or string identity t=10 model=muse-spark
 FUN_0092c8ef	0x0052C8EF	38	blocked	uninit-copy FXList needs direct _Construct without EBP tried static plus Oy still EBP plus inline t=20 model=muse-spark
+?rva0040314A@Rva0040314A@@QAEIXZ	0x0040314A	20	partial	cmovb vs jae-mov for unsigned min 21B vs 20B 0reg 0mem tried O1 O2 G7 le-gt flip t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x0040314a.cpp

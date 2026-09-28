@@ -40930,3 +40930,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005CAE72@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z,,0x005CAE72,49,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,clan remove via find 0x1F8437 subscript 0x5CAC49 remove 0x5C9E90; caller 0x57F920
 ?rva0056614D@Rva0056614DVec@@QAEXXZ,,0x0056614D,30,Code/GameEngine/Source/Common/System/Rva0056614DScrap.cpp,matched,chain scrap storage via range clear plus free
 ?rva00566AB7@Rva00566AB7@@QAEXABUBfmePod88@@@Z,,0x00566AB7,8,Code/GameEngine/Source/Common/Rva00566AB7.cpp,matched,unlock tail jmp push_back Pod88
+?rva002147D1@Rva002147D1@@QAEPAXHPAVObject@@@Z,,0x002147D1,48,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,chain from 0x004032D3 via barrier reload
