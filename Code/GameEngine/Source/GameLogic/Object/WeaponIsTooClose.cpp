@@ -47,6 +47,7 @@ public:
 	bool isTooClose(const Object *source, const Coord3D *pos) const;
 	float rva002C957E() const;
 	bool rva002C95F0() const;
+	void rva002C95DE(int offset);
 
 private:
 	char m_pad00[4];
@@ -77,4 +78,12 @@ float Weapon::rva002C957E() const
 bool Weapon::rva002C95F0() const
 {
 	return m_50 > TheGameLogic->m_frame;
+}
+
+// ?rva002C95DE@Weapon@@QAEXH@Z @0x002C95DE 18B
+// Weapon frame set: m_50 = GameLogic frame + offset. Caller 0x002C7484 passes 0 in 6-weapon loop (unblocks 0x002C7474).
+// Evidence: same Weapon +0x50 and TheGameLogic +0x40 as rva002C95F0 sibling; prev/next same TU and flags.
+void Weapon::rva002C95DE(int offset)
+{
+	m_50 = TheGameLogic->m_frame + offset;
 }
