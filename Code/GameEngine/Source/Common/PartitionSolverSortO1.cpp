@@ -14,4 +14,9 @@ void _bfmePartitionSortAnchor(PairObjectIDAndUInt *first, PairObjectIDAndUInt *l
 {
 	std::sort(first, last, cmp);
 }
+// ?_bfmePartitionUnguardedAnchor@@YAXPAU?$pair@W4ObjectID@@I@_STL@@0P6A_NU12@0@Z@Z absent-from-retail
+void _bfmePartitionUnguardedAnchor(PairObjectIDAndUInt *first, PairObjectIDAndUInt *last, Bool (*cmp)(PairObjectIDAndUInt, PairObjectIDAndUInt))
+{
+	_STL::__unguarded_insertion_sort(first, last, cmp);
+}
 #pragma inline_depth()
