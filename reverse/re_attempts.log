@@ -2435,3 +2435,4 @@ FUN_00903e4f	0x00503E4F	39	blocked	eax-arg private static needs callers in same 
 ?rva0057CD78@AptMapPreview@@QAEXXZ	0x0057CD78	41	partial	37B vs 41B; edi-for-this vs esi plus single sentinel reuse vs triple reload t=15 model=muse-9ce6 score=0.9 stash=reverse/attempts/0x0057cd78.cpp
 ?Rva0014F8E4Copy@@YAPAVRva0014F480@@PAV1@00ABUTag@@@Z	0x0014F8E4	41	blocked	copy loop sub-lea strength reduction vs two adds t=25 model=muse-7c8e
 ?Rva0014F96CCopy@@YAPAVRva0014F4C2@@PAV1@00ABUTag@@@Z	0x0014F96C	41	blocked	same 41B copy wall as 0x0014F8E4 sub-lea vs two adds t=2 model=muse-7c8e
+?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z	0x0039E303	197	partial	cur in eax mask in edi vs retail cur in esi mask in edx plus push pop and cmp imm differences t=20 model=muse-953e score=0.9 stash=reverse/attempts/0x0039e303.cpp
