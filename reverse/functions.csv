@@ -40387,3 +40387,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GMetaMapRec@@QAEPAXI@Z,,0x001DB51B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-x7k-f694.cpp,matched,deleting dtor via rowed MetaMapRec dtor plus plain delete
 ?Rva0060173ACopy@@YAXPAVCoord3D@@ABUCoord3DBase@@@Z,,0x0060173A,18,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,null-checked Coord3D assign via rowed 0x4216D3 with 0x0C stride callers
 ?rva0028BA85@Object@@QBEXXZ,,0x0028BA85,41,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BA85.cpp,matched,Object module broadcast via 0x244 array slot 0xB8 with 0x45C int
+?rva00625330@PartitionManager@@QAEXPAX@Z,,0x00625330,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed bfmeDropYQ caller 0x0028BAE5

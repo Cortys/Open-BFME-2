@@ -24,6 +24,14 @@ struct Coord3D
 
 struct Region3D;
 
+class BfmeThingYQ;
+
+class Gen009F5040
+{
+public:
+	void bfmeDropYQ(BfmeThingYQ *t);
+};
+
 class ShroudManager
 {
 public:
@@ -58,6 +66,7 @@ public:
 	void rva00625300(const Region3D *region);
 	void rva00625310(int value);
 	void rva00625320(void *ptr);
+	void rva00625330(void *ptr);
 	// Retail 0x007397A0 forwards to ShroudManagerImpl008FBA40::setEnabled_Rva0073B460
 	// (single-byte enabled flag at +0x68). Identity unproven, honest address name.
 	void rva007397A0(bool value);
@@ -107,6 +116,11 @@ void PartitionManager::rva00625310(int value)
 void PartitionManager::rva00625320(void *ptr)
 {
 	m_shroudManager->Rva00627810(ptr);
+}
+
+void PartitionManager::rva00625330(void *ptr)
+{
+	((Gen009F5040 *)m_shroudManager)->bfmeDropYQ((BfmeThingYQ *)ptr);
 }
 
 // ?rva007397A0@PartitionManager@@QAEX_N@Z
