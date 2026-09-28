@@ -25,3 +25,24 @@ Rva0040CB11Entry::Rva0040CB11Entry(int key, const Rva004F6093Holder &val) : m_fi
 Rva0040CB11Entry::Rva0040CB11Entry(const Rva0040CB11Entry &other) : m_first(other.m_first), m_second(other.m_second)
 {
 }
+
+typedef unsigned int size_t;
+
+inline void *operator new(size_t, void *place)
+{
+	return place;
+}
+
+namespace _STL
+{
+
+template <class T1, class T2>
+void _Construct(T1 *p, const T2 &value)
+{
+	if (p)
+		new (p) T1(value);
+}
+
+}
+
+template void _STL::_Construct(Rva0040CB11Entry *, const Rva0040CB11Entry &);

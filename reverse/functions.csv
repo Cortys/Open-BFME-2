@@ -39782,3 +39782,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ??_Gstrstreambuf@_STL@@UAEPAXI@Z,,0x00602F60,30,Code/Libraries/Source/WWVegas/WWLib/stlport_strstreambuf_dtor.cpp,matched,vtable 0x0087A878 slot 0 via rowed dtor 0x00602B50 and delete 0x0002FD60
 ??0Rva0002C4FD@@QAE@ABV?$StringBase@D@@0@Z,,0x0002C4FD,57,Code/Libraries/Source/WWVegas/WWLib/Rva0002C4FDCtor.cpp,matched,honest Rva ctor two StringBase via pinned 0x365F0 same 57B shape as pair ctor 0x2027B1
 ??0Rva0040CB11Entry@@QAE@ABV0@@Z,,0x004F6335,29,Code/GameEngine/Source/Common/Rva0040CB11EntryCtor.cpp,matched,copy ctor int plus Holder same 8B entry as two-arg 0x40CB11
+??$_Construct@VRva0040CB11Entry@@V1@@_STL@@YAXPAVRva0040CB11Entry@@ABV1@@Z,,0x004F6A64,18,Code/GameEngine/Source/Common/Rva0040CB11EntryCtor.cpp,matched,stlport Construct null-check then Entry copy same as WeaponTemplateSet 0x4AE915
