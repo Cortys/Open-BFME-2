@@ -1,0 +1,32 @@
+// cl: /O1 /DNDEBUG /MD /EHsc
+// ?rva0041534B@Rva00056F61@@QAE?AURva0041534BIter@@PBVAsciiString@@@Z, retail 0x0041534B (27B).
+// Find returning iterator over the AsciiString-keyed bucket table owned by
+// Rva00056F61 (rowed find 0x00056F61). Same this plus AsciiString key in then
+// hidden-pointer out {node table} with ret 8. Callers at 0x00223D02
+// (add ecx 0x48) and 0x002AE98B (add ecx 0x294) read node at out+0 and use
+// payload at node+8. Shape matches STLport hashtable find 0x00620DD0 and the
+// InsertRet00212A5A hidden-pointer precedent via user ctor.
+class AsciiString
+{
+	char *m_text;
+};
+
+class Rva00056F61;
+struct Rva0041534BIter
+{
+	void *m_node;
+	Rva00056F61 *m_table;
+	Rva0041534BIter(void *n, Rva00056F61 *t) : m_node(n), m_table(t) {}
+};
+
+class Rva00056F61
+{
+public:
+	void *rva00056F61(const AsciiString *key);
+	Rva0041534BIter rva0041534B(const AsciiString *key);
+};
+
+Rva0041534BIter Rva00056F61::rva0041534B(const AsciiString *key)
+{
+	return Rva0041534BIter(rva00056F61(key), this);
+}
