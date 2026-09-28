@@ -20,6 +20,8 @@
 // after the record stores when the records and buckets share one object.
 // The variable names are descriptive; retail's are not recoverable.
 
+#include <string.h>
+
 extern "C" __declspec(dllimport) void *__stdcall TlsGetValue(unsigned long index);
 
 namespace EA
@@ -42,6 +44,19 @@ struct BlockInfo
 class GeneralAllocator
 {
 public:
+	struct Snapshot
+	{
+		// The type name is donor-derived. Target evidence establishes these
+		// offsets and writes; field labels below are descriptive only.
+		unsigned int m_magic;
+		unsigned int m_size;
+		void *m_arg2;
+		unsigned char m_state[4];
+		unsigned int m_values[5];
+
+		Snapshot(unsigned int size, void *context);
+	};
+
 	// Godfather PPMalloc 1.03.01 PDB name; retail stores the two arguments
 	// at +0x4B8 and +0x4BC. Their callback contract remains donor-derived.
 	void SetAssertionFailureFunction(void *function, void *context);
@@ -60,6 +75,22 @@ public:
 	const BlockInfo *rva00032F60(void *context, int blockTypes);	// ReportNext-like
 	void rva00033E90(void *context);			// ReportEnd-like
 };
+
+GeneralAllocator::Snapshot::Snapshot(unsigned int size, void *context)
+{
+	memset(this, 0, size);
+	m_size = size;
+	m_arg2 = context;
+	m_state[0] = 0;
+	m_state[1] = 0;
+	m_state[2] = 0;
+	m_values[0] = 0;
+	m_values[1] = 0;
+	m_values[2] = 0;
+	m_values[3] = 0;
+	m_values[4] = 0;
+	m_magic = 0x534E4150;
+}
 
 void GeneralAllocator::SetAssertionFailureFunction(void *function, void *context)
 {
