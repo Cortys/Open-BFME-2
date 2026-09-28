@@ -40661,3 +40661,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?_M_clear@?$vector@UBfmeStringRecord00568CE0@@V?$allocator@UBfmeStringRecord00568CE0@@@_STL@@@_STL@@IAEXXZ,,0x00569DE1,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_568ce0_allocate_copy.cpp,matched,Typed 568CE0 vector clear via Destroy 0x569A5B plus free exact 30B
 ?rva002041FC@Rva002041E1@@QAEXVAsciiString@@@Z,,0x002041FC,52,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002041E1Getter.cpp,matched,AsciiString setter at +0x44 via operator= pin callers 0x0020649E
 ??0Rva005CB8D4@@QAE@XZ,,0x005CB8AC,40,Code/GameEngine/Source/Common/Rva005CB8D4Ctor.cpp,matched,vtable 0x00874DA8 inner 0x005CB4C7 new 0x0002FDA0 caller 0x00574320
+?rva0028C0F2@Object@@QAEXI@Z,,0x0028C0F2,40,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C0F2.cpp,matched,Object ms-to-frame setter via TheGameLogic frame and rate globals
