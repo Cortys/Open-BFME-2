@@ -39746,3 +39746,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?parseCommonStuff@@YAXPAVINI@@PBQBDAAH222@Z,,0x00360613,118,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,BFME1 DamageFX parseCommonStuff shape plus 4 DamageFX callers in same TU
 ?parseMajorFXList@DamageFX@@SAXPAVINI@@PAX1PBX@Z,,0x00360702,114,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,DamageFX MajorFX via parseCommonStuff plus FXList
 ?parseMinorFXList@DamageFX@@SAXPAVINI@@PAX1PBX@Z,,0x00360774,114,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,DamageFX MinorFX via parseCommonStuff plus FXList
+?parseTime@DamageFX@@SAXPAVINI@@PAX1PBX@Z,,0x003607E6,114,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,DamageFX ThrottleTime via parseCommonStuff plus duration
