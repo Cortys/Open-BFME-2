@@ -30,7 +30,9 @@ class ArmorTemplate
 {
 public:
 	void *m_ptr; // +0x00 returned via mov [node+8]
-	char m_pad[0x78]; // +0x04..+0x7C pad to true 0x7C size
+	char m_pad4[4]; // +0x04 pad to +0x08
+	int m_check; // +0x08 compared by rva003551B5
+	char m_padC[0x70]; // +0x0C..+0x7C pad to true 0x7C size
 };
 
 typedef std::hash_map<
@@ -43,6 +45,7 @@ class Rva0035516C
 {
 public:
 	const ArmorTemplate *rva0035516C(NameKeyType key) const;
+	bool rva003551B5(NameKeyType key) const;
 
 private:
 	char m_pad[0x24]; // +0x00..+0x24 unknown
@@ -55,4 +58,12 @@ const ArmorTemplate *Rva0035516C::rva0035516C(NameKeyType key) const
 	if (it == m_map.end())
 		return 0;
 	return (const ArmorTemplate *)it->second.m_ptr;
+}
+
+bool Rva0035516C::rva003551B5(NameKeyType key) const
+{
+	const ArmorTemplate *found = rva0035516C(key);
+	if (found)
+		return found->m_check != 0;
+	return false;
 }
