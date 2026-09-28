@@ -15,10 +15,17 @@ class Rva003829E5
 	AsciiUnicodePair m4;
 public:
 	Rva003829E5(void* a, const AsciiUnicodePair& b);
+	Rva003829E5(const Rva003829E5& other);
 };
 
 Rva003829E5::Rva003829E5(void* a, const AsciiUnicodePair& b)
 	: m0(*(int*)a)
 	, m4(b)
+{
+}
+
+Rva003829E5::Rva003829E5(const Rva003829E5& other)
+	: m0(other.m0)
+	, m4(other.m4)
 {
 }
