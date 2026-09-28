@@ -62,3 +62,23 @@ Int DoesCommandRequireACommandID(NetCommandType type)
 	}
 	return 0;
 }
+
+// ?IsCommandSynchronized@@YAHW4NetCommandType@@@Z, retail 0x005812A0, 36 bytes.
+// BFME2's IsCommandSynchronized: same Int whole-register shape (xor eax,eax / inc eax)
+// as DoesCommandRequireACommandID above. Identity from 2 callers (0x004CF5F5,
+// 0x004CF733) pushing [esi+0x14] (m_commandType) and testing al, matching ZH
+// ConnectionManager::sendLocalCommand's if (IsCommandSynchronized(type)) use.
+// Donor BFME1 NetworkUtil_CommandRequiresAck.cpp has 4 types in this order;
+// BFME2 adds (NetCommandType)30 at the end, read off the chain: 4,3,10,11,30.
+Int IsCommandSynchronized(NetCommandType type)
+{
+	if ((type == NETCOMMANDTYPE_GAMECOMMAND) ||
+		(type == NETCOMMANDTYPE_FRAMEINFO) ||
+		(type == NETCOMMANDTYPE_PLAYERLEAVE) ||
+		(type == NETCOMMANDTYPE_DESTROYPLAYER) ||
+		(type == (NetCommandType)30))
+	{
+		return 1;
+	}
+	return 0;
+}

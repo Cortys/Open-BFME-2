@@ -39507,3 +39507,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0028C1A9@Object@@QBEPAXXZ,,0x0028C1A9,35,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C197.cpp,matched,Object modules244 scan via 0x0C slot37 first-nonnull plus 11 callers including 0x41BB87
 ?adjustFontSize@GlobalLanguage@@QAEHH@Z,,0x001EA40D,54,Code/GameEngine/Source/GameClient/GlobalLanguageAdjustFontSize.cpp,matched,GlobalLanguage adjustFontSize via TheGlobalData xRes over 1024 floor
 ?DoesCommandRequireACommandID@@YAHW4NetCommandType@@@Z,,0x005811B5,116,Code/GameEngine/Source/GameNetwork/DoesCommandRequireACommandID.cpp,matched,DoesCommandRequireACommandID via caller GenerateNextCommandID pattern plus BFME1 donor
+?IsCommandSynchronized@@YAHW4NetCommandType@@@Z,,0x005812A0,36,Code/GameEngine/Source/GameNetwork/DoesCommandRequireACommandID.cpp,matched,IsCommandSynchronized via caller type test plus BFME1 donor
