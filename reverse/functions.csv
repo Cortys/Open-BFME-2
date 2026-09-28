@@ -39603,3 +39603,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva001FD221@PlayerTemplate@@QBEPBVImage@@XZ,,0x001FD221,19,Code/GameEngine/Source/Common/PlayerTemplateImageGetters.cpp,matched,PlayerTemplate image getter at plus0x174 via TheMappedImageCollection
 ?rva001FD23F@PlayerTemplate@@QBEPBVImage@@XZ,,0x001FD23F,19,Code/GameEngine/Source/Common/PlayerTemplateImageGetters.cpp,matched,PlayerTemplate image getter at plus0x1D8 via TheMappedImageCollection
 ?rva001FD9EF@Rva001FD9EF@@QAEXPAX@Z,,0x001FD9EF,28,Code/GameEngine/Source/Common/Rva001FD9EFFree.cpp,matched,Hash node free clears key at plus4 then frees via rowed callees
+?Rva001FD048Init@@YAXPAX@Z,,0x001FD048,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,FX init chain category 1 parse 0x001F84BD calls 0x001FD022
