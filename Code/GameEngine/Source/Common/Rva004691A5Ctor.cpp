@@ -20,17 +20,29 @@ class Rva00469155
 {
 public:
 	Rva00469155();
+	Rva00469155 &operator=(const Rva00469155 &o);
 
 private:
-	float m_00;
-	float m_04;
-	float m_08;
+	struct Float3
+	{
+		float x;
+		float y;
+		float z;
+	};
+	Float3 m_pos;
 	int m_0C;
 };
 
 Rva00469155::Rva00469155() : m_0C(0)
 {
-	m_00 = 0.0f;
-	m_04 = 0.0f;
-	m_08 = 0.0f;
+	m_pos.x = 0.0f;
+	m_pos.y = 0.0f;
+	m_pos.z = 0.0f;
+}
+
+Rva00469155 &Rva00469155::operator=(const Rva00469155 &o)
+{
+	m_pos = o.m_pos;
+	m_0C = o.m_0C;
+	return *this;
 }
