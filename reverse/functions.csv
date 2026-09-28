@@ -40726,3 +40726,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva004104C9@@QAEPAXI@Z,,0x004105A8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08.cpp,matched,chain deleting dtor for Rva004104C9 via famgenDelete
 ??_GRva00528B06@@UAEPAXI@Z,,0x00528F09,28,Code/GameEngine/Source/Common/Rva00528B06Ctor.cpp,matched,deleting dtor slot0 calls 0x528F25 plus delete 0x2FD60
 ?rva00528C65@Rva00528C65@@QBE?AVAsciiString@@XZ,,0x00528C65,32,Code/GameEngine/Source/Common/Rva00528C65Getter.cpp,matched,AsciiString copy [ecx+4]+0x12C via 0x365F0 caller 0x529224
+?rva007590B0@Rva007590B0@@QAEXPAURva007590B0Node@@@Z,,0x007590B0,51,Code/GameEngine/Source/Common/System/Rva007590B0TreeFree.cpp,matched,unlock lane tree free via self plus free 30830 twin 59AE0
