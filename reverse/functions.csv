@@ -40773,3 +40773,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0055AA37@Rva0055AA06@@QAEXXZ,,0x0055AA37,49,Code/GameEngine/Source/Common/Rva0055AA06ListPush.cpp,matched,drain list plus18 while front plus04 ult TheGameLogic plus0x40 caller 0x39D3FC
 ?Rva0010EFB1Inc@@YAJXZ,,0x0010EFB1,12,Code/GameEngine/Source/Common/Rva0010EFB1Inc.cpp,matched,InterlockedIncrement global 0x9EC38C caller 0x10F09F unblocks 0x10F058
 ?rva004074B6@Rva004074B6@@QAEXABVAsciiString@@@Z,,0x004074B6,25,Code/GameEngine/Source/Common/Rva004074B6NameKey.cpp,matched,unlock NameKey via TheNameKeyGenerator nameToKey
+?rva0010ED3D@Rva0010ED3D@@QAEXH@Z,,0x0010ED3D,15,Code/GameEngine/Source/Common/Rva0010ED3DMax.cpp,matched,max setter plus3C callers 0xA7FCF 0xA8064
