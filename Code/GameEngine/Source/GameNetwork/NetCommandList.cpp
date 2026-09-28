@@ -5,10 +5,28 @@
 // and destroy the head node until the list is empty, then clear the counters.
 // Each node's +4/+8 links are cleared before it is detached and deleted.
 
+typedef unsigned int UnsignedInt;
+typedef unsigned short UnsignedShort;
+typedef unsigned char UnsignedByte;
+typedef int Int;
+enum NetCommandType
+{
+	NETCOMMANDTYPE_UNKNOWN = -1
+};
+Int DoesCommandRequireACommandID(NetCommandType type);
+
 class NetCommandMsg
 {
 public:
+	virtual ~NetCommandMsg();
 	void detach();
+
+public:
+	UnsignedInt m_timestamp; // +4 (vtable at +0)
+	UnsignedInt m_executionFrame; // +8
+	UnsignedInt m_playerID; // +0xC
+	UnsignedShort m_id; // +0x10
+	NetCommandType m_commandType; // +0x14
 };
 
 class NetCommandNode
@@ -42,6 +60,7 @@ class NetCommandList
 public:
 	void reset();
 	void removeMessage(NetCommandRef *msg);
+	NetCommandRef *findMessage(UnsignedShort id, UnsignedByte player, UnsignedInt frame);
 };
 
 void NetCommandList::reset()
@@ -91,4 +110,30 @@ void NetCommandList::removeMessage(NetCommandRef *msg)
 	}
 	ref->m_next = 0;
 	ref->m_prev = 0;
+}
+
+// ?findMessage@NetCommandList@@QAEPAVNetCommandRef@@GEI@Z, retail 0x0058B0D7, 74 bytes.
+// 3-arg findMessage (id, player, frame) used by processAck-style callers to retire
+// acknowledged commands: walks m_first via +4 links, checks the command at +0 for
+// timestamp at +4 == frame first, then DoesCommandRequireACommandID(type at +0x14),
+// then ID word at +0x10 == id and player dword at +0xC == zero-extended player byte.
+// Returns the wrapping node (edi) on match, else NULL. Donor is BFME1 NetCommandList.cpp
+// 2-arg findMessage plus the frame check from native_connection_timing's 3-arg decl.
+// Caller at 0x004D087E passes (commandID word, playerID byte, timestamp dword) and
+// removes+deletes the result.
+NetCommandRef *NetCommandList::findMessage(UnsignedShort id, UnsignedByte player, UnsignedInt frame)
+{
+	NetCommandNode *retval = m_first;
+	while (retval != 0)
+	{
+		NetCommandMsg *msg = retval->m_msg;
+		if (msg != 0 && msg->m_timestamp == frame &&
+			(UnsignedByte)DoesCommandRequireACommandID(msg->m_commandType) &&
+			msg->m_id == id && msg->m_playerID == player)
+		{
+			return (NetCommandRef *)retval;
+		}
+		retval = retval->m_next;
+	}
+	return 0;
 }
