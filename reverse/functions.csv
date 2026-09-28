@@ -39350,3 +39350,4 @@ _Rva008572C0InlineName,,0x00698880,17,Code/GameEngine/Source/GameNetwork/GameSpy
 ?invoke@Rva007EB6E0Object@@QAEXXZ,,0x00658670,16,Code/GameEngine/Source/Common/Rva007EB6E0VirtualTail.cpp,matched,BFME1 byte-identical donor; b1 0x007EB6E0; target label provisional
 ?at@Rva00801550@@QAEPAVRva00801550Elem@@H@Z,,0x0066D870,27,Code/GameEngine/Source/Common/S3PolymorphicArrayClear.cpp,matched,BFME1 byte-identical donor; b1 0x00801550; address-derived target type remains provisional
 ?at@Rva008029F0@@QAEPAVRva008029F0Elem@@H@Z,,0x0066EB20,24,Code/GameEngine/Source/Common/S3PolymorphicArrayClear.cpp,matched,BFME1 byte-identical donor; b1 0x008029F0; address-derived target type remains provisional
+?forward00800C80@BfmeH1052@@QAEXPAUBfmeRecord00800C80@@@Z,,0x0066D060,21,Code/GameEngine/Source/Common/BfmeConv1052Do.cpp,matched,BFME1 byte-identical donor; b1 0x00800C80; record label and field semantics remain donor-derived
