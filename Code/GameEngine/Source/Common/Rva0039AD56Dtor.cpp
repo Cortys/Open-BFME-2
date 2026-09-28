@@ -64,3 +64,16 @@ private:
 Rva0039AD56::~Rva0039AD56()
 {
 }
+
+// ??1Rva0039ADF3@@UAE@XZ @0x0039ADF3 11B
+// Derived dtor: stores vtable 0x0081AD34 then tail-jmps to rowed base
+// ??1Rva0039AD56@@UAE@XZ at 0x0039AD56; caller is 0x0039B0F1.
+class Rva0039ADF3 : public Rva0039AD56
+{
+public:
+	virtual ~Rva0039ADF3();
+};
+
+Rva0039ADF3::~Rva0039ADF3()
+{
+}

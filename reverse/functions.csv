@@ -40295,3 +40295,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000B3A68@Rva000B3A68@@QAEEXZ,,0x000B3A68,24,Code/GameEngine/Source/Common/Rva000B3A68.cpp,matched,unlock callers 0x000B3D42 0x000BF2CA 0x000C0270 vslot62 same-this
 ??1ObjectTypes@@UAE@XZ,,0x00376ADF,63,Code/GameEngine/Source/GameLogic/ScriptEngine/ObjectTypesDtor.cpp,matched,ObjectTypes dtor vector plus AsciiString Snapshot BBB554
 ?rva002D9508@Rva002D9508@@QAEXPBX@Z,,0x002D9508,41,Code/GameEngine/Source/Common/Rva002D9531CondSetter.cpp,matched,unlock cond 12B copy via movsd mask 0or6
+??1Rva0039ADF3@@UAE@XZ,,0x0039ADF3,11,Code/GameEngine/Source/Common/Rva0039AD56Dtor.cpp,matched,vtable 0x81AD34 tail-jmp to rowed base 0x39AD56 caller 0x39B0F1
