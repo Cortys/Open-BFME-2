@@ -258,3 +258,24 @@ void Rva00328518(GameWindow *window, int value)
 	data->m_value = value;
 	window->winSetUserData(data);
 }
+
+struct Rva003284B9Data
+{
+	char m_byte00;			// +0x00
+	int m_int04;			// +0x04
+	int m_int08;			// +0x08
+};
+
+void Rva003284B9(GameWindow *window, int a, int b)
+{
+	if (window == 0)
+		return;
+	Rva003284B9Data *data =
+		(Rva003284B9Data *)window->winGetUserData();
+	if (data == 0)
+		data = (Rva003284B9Data *)getNewPushButtonData();
+	data->m_int04 = a;
+	data->m_int08 = b;
+	data->m_byte00 = 2;
+	window->winSetUserData(data);
+}
