@@ -19,7 +19,11 @@ public:
     ~UnicodeString() {}
 };
 
-class GameWindow;
+class GameWindow
+{
+public:
+	int winEnable(bool enable);
+};
 void GadgetListBoxReset(GameWindow *listbox);
 int GadgetListBoxAddEntryText(GameWindow *listbox, UnicodeString text,
     int color, int row, int column, bool overwrite);
@@ -34,9 +38,11 @@ class AptMapPreview
 {
 public:
     void bfmeSetMapDescription(MapMetaData *map);
+    void rva0057C597(bool show);
 private:
     char m_unmodelled[0x2C];
     GameWindow *m_descriptionList;
+    GameWindow *m_windows[8];
 };
 
 void AptMapPreview::bfmeSetMapDescription(MapMetaData *map)
@@ -47,5 +53,15 @@ void AptMapPreview::bfmeSetMapDescription(MapMetaData *map)
         if (map)
             GadgetListBoxAddEntryText(m_descriptionList,
                 map->bfme_getDescriptionFirstLine(), -1, -1, -1, true);
+    }
+}
+
+void AptMapPreview::rva0057C597(bool show)
+{
+    for (int i = 0; i < 8; ++i) {
+        GameWindow *w = m_windows[i];
+        if (w) {
+            w->winEnable(show);
+        }
     }
 }
