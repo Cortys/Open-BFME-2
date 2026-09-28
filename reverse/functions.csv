@@ -40163,3 +40163,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00333374Get@@YA?AVAsciiString@@PBURva00333374IdOwner@@@Z,,0x00333374,93,Code/GameEngine/Source/Common/Rva00333374Get.cpp,matched,twin of Rva00222834Get plus 0x74 id load callers 0x33E5B 0x33F37 0x34003
 ?rva00270FAC@Drawable@@QAEX_N@Z,,0x00270FAC,66,Code/GameEngine/Source/GameClient/Drawable_rva00270FAC.cpp,matched,Drawable broadcast via 0xA8 to 0x54 with 0x454 gated by 0x3AA; callers use getDrawable; same 0x14C walk as 0x002724FD
 ?Rva003AFA64FillUnitVector@@YAPAVCoord3D@@PAV1@@Z,,0x003AFA64,198,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFA64FillUnitVector.cpp,matched,BFME1 donor Rva005FAD00 same file same lines 31-33 and sibling Rva005EE317 shape
+?rva001F08D3@ObjectCreationList@@QAEXPAX00@Z,,0x001F08D3,87,Code/GameEngine/Source/GameLogic/Object/ObjectCreationListRva001F0878.cpp,matched,OCL chain via flag0C and AsciiString name10 sibling of 0x1F0878

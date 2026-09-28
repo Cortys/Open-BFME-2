@@ -31,7 +31,7 @@ class ObjectCreationNugget
 public:
 	virtual void v0() = 0;
 	virtual void v1() = 0;
-	virtual void v2() = 0;
+	virtual void v2(void *a1, void *a2, void *a3) = 0;
 	virtual void v3(void *a1, void *a2, void *a3, int a4) = 0;
 	virtual void v4(void *a1, void *a2) = 0;
 };
@@ -59,6 +59,7 @@ class ObjectCreationList
 {
 public:
 	void rva001F0878(void *a1, void *a2, void *a3, int a4);
+	void rva001F08D3(void *a1, void *a2, void *a3);
 	void rva001F0410(void *a1, void *a2);
 	void rva001F0468(Rva001F0468Node *head);
 
@@ -94,6 +95,27 @@ void ObjectCreationList::rva001F0410(void *a1, void *a2)
 {
 	for (ObjectCreationNugget **i = m_nuggets.begin(); i != m_nuggets.end(); ++i)
 		(*i)->v4(a1, a2);
+}
+
+void ObjectCreationList::rva001F08D3(void *a1, void *a2, void *a3)
+{
+	ObjectCreationList *cur = this;
+	while (cur->m_flag0c != 0)
+	{
+		const char *name = cur->m_name10.str();
+		const ObjectCreationList *found = TheObjectCreationListStore->findObjectCreationList(name);
+		if (found == 0)
+			break;
+		if (found->m_flag0c != 0)
+		{
+			cur = (ObjectCreationList *)found;
+			continue;
+		}
+		cur = (ObjectCreationList *)found;
+		break;
+	}
+	for (ObjectCreationNugget **i = cur->m_nuggets.begin(); i != cur->m_nuggets.end(); ++i)
+		(*i)->v2(a1, a2, a3);
 }
 
 void ObjectCreationList::rva001F0468(Rva001F0468Node *head)
