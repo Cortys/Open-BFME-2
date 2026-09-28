@@ -9,11 +9,13 @@
 // stand-in per stlport_vector_e16_o1.cpp; the 16B stride and sar-4 match retail.
 #include <vector>
 struct BfmeE16 { float x, y, z, w; };
+struct Rva005B2E09Cell { int m_00; int m_04; int m_08; };
 class Rva005B2DDF {
   char m_00[0x14];
   _STL::vector<BfmeE16> m_14;
 public:
   void* rva005B2DDF(unsigned a, unsigned b);
+  void* rva005B2E09(Rva005B2E09Cell* c);
 };
 void* Rva005B2DDF::rva005B2DDF(unsigned a, unsigned b)
 {
@@ -22,4 +24,14 @@ void* Rva005B2DDF::rva005B2DDF(unsigned a, unsigned b)
   if (b >= 4)
     return 0;
   return ((void**)&m_14[0])[a * 4 + b];
+}
+void* Rva005B2DDF::rva005B2E09(Rva005B2E09Cell* c)
+{
+  for (int cur = c->m_08 - 1; cur >= 0; ) {
+    void* r = rva005B2DDF(c->m_04, cur);
+    --cur;
+    if (r != 0)
+      return r;
+  }
+  return 0;
 }
