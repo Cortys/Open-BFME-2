@@ -95,15 +95,33 @@ Rva00538C5F::~Rva00538C5F()
 {
 }
 
+class AsciiString
+{
+public:
+	AsciiString(const AsciiString &other);
+	~AsciiString();
+private:
+	void *m_data;
+};
+
 class Rva005C31FB
 {
 public:
 	virtual ~Rva005C31FB();
+	Rva005C31FB(int level, const AsciiString &name);
 
 private:
-	char m_pad04[4];
-	AsciiStringMember m_member08;
+	int m_level;
+	AsciiString m_name;
+	bool m_flag0C;
 };
+
+// ??0Rva005C31FB@@QAE@HABVAsciiString@@@Z @0x005C31D5 38B: vtable 0x008743F8, level at +4, name copy at +8 via 0x365F0, flag 0 at +0xC.
+// Callers at 0x005284F4 0x00528B11 0x005F2856 pass level from GetLevel 0x4128BB plus StringBase temp; new 0x10.
+// Sibling dtor at 0x005C31FB plus deleting dtor at 0x005C327F in this TU (/O1 /MD).
+Rva005C31FB::Rva005C31FB(int level, const AsciiString &name) : m_level(level), m_name(name), m_flag0C(false)
+{
+}
 
 Rva005C31FB::~Rva005C31FB()
 {
