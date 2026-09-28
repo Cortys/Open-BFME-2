@@ -40964,3 +40964,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Made002CCC2D@@UAE@XZ,,0x0050BB82,74,Code/GameEngine/Source/GameLogic/Object/Made002CCC2DDtor.cpp,matched,novtable filter plus string plus base
 ??_GMade002CCC2D@@UAEPAXI@Z,,0x0050BB66,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain deleting dtor calls rowed 0x0050BB82
 ??0Made002CCAA1@@QAE@XZ,,0x0050B374,29,Code/GameEngine/Source/GameLogic/Object/Made002CCAA1Ctor.cpp,matched,leaf ctor base plus vtable plus float zero
+??0Rva003829E5@@QAE@PAXABUAsciiUnicodePair@@@Z,,0x003829E5,29,Code/GameEngine/Source/GameClient/GUI/GUICallbacks/Menus/Rva003829E5Init.cpp,matched,ctor stores int then copies pair caller 0x385EA0
