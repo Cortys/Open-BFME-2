@@ -2424,3 +2424,5 @@ FUN_008f7e78	0x004F7E78	25	blocked	12B stride vs 8B Rva size needs +8 member evi
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	blocked	EH order plus 1.0f single movss vs double volatile and int mov t=50 model=muse-adb6
 ?rva00318F42@Drawable@@QBE_NXZ	0x00318F42	34	blocked	two-thiscall ECX reuse needs same-TU IPO; int-ne0 gives and not sar; uchar forces sar but boolizes on ecx via neg-cl not xor-cmp on eax t=28 model=muse-9ce6
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	167B vs 171B; missing EH state 2; lea hoisted above movs; floats reordered t=25 model=muse-9ce6 score=0.93 stash=reverse/attempts/0x000a8d5f.cpp
+?getMinMaxAndCenter@AIGroup@@QAE_NPAUCoord2D@@0PAUCoord3D@@@Z	0x0036D14F	374	partial	379B vs 374B; y-add and mulss operand order swapped; movaps vs movss tail t=30 model=muse-9ce6 score=0.93 stash=reverse/attempts/0x0036d14f.cpp
+FUN_00903e4f	0x00503E4F	39	blocked	eax-arg private static needs callers in same TU t=15 model=muse-k3p-cc5c
