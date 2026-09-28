@@ -40709,3 +40709,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0036D805@AIGroup@@QAEXH@Z,,0x0036D805,50,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,member broadcast plus nullchecked provider slot34 plus 0x250 offset
 ?Rva00306151Xfer@@YAPAVXfer@@PAV1@PAM@Z,,0x00306151,50,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,return Xfer star per triple caller eax forwarding
 ?Rva003062FEXfer@@YAXPAVXfer@@PAM@Z,,0x003062FE,41,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,triple 4-float row via nested Xfer star helper
+?rva0055ADD8@Rva0055ADD8@@QAEHH@Z,,0x0055ADD8,10,Code/GameEngine/Source/Common/Rva0055ADD8Thunk.cpp,matched,thunk const 3 to vslot 7 callers 0x573CED
