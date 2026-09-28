@@ -40581,3 +40581,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00584E02@Rva00584E02@@QAEAAV1@XZ,,0x00584E02,12,Code/Libraries/Source/WWVegas/WWLib/Rva00584E02Inc.cpp,matched,pre-inc via rowed increment 0x00421B1E same as PAX 0x00054B33
 ?rva0051ED51@Rva0051ED51Holder@@QAEPAVRva0039B893@@IPAV2@0@Z,,0x0051ED51,45,Code/GameEngine/Source/Common/Rva0051ED51AllocateCopy.cpp,matched,allocate-and-copy via rowed allocator and uninit copy
 ?rva002C5DA6@Rva002C589B@@QAEPAVObject@@XZ,,0x002C5DA6,23,Code/GameEngine/Source/Common/Rva002C589BDtor.cpp,matched,ID lookup via TheGameLogic findObjectByID for plus0x34 called by 0x005052D3
+??1Rva006D63C0@@QAE@XZ,,0x006D63C0,76,Code/Libraries/Source/Apt/Rva006D63C0Dtor.cpp,matched,Apt dtor member plus base via derived tail-calls

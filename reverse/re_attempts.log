@@ -2593,3 +2593,4 @@ FUN_00454C93	0x00054C93	148	blocked	hashtable erase shape exact ignoring relocs 
 ??1Rva005838F8@@QAE@XZ	0x005838F8	59	blocked	EH-prolog plus free-plus-apply dtor shape unclear t=8 model=muse-3c78
 ?rva0049C592@Rva0049C592@@QAEXXZ	0x0049C592	71	blocked	ebx holds 0 for pushes cmps and mov vs retail push imm test and t=15 model=muse-6df3
 ?rva0039B683@Rva0039B683@@QAEXM@Z	0x0039B683	37	partial	movss-addss order swapped vs retail t=15 model=muse-d772 score=0.9 stash=reverse/attempts/0x0039b683.cpp
+FUN_00454BC3	0x00054BC3	129	blocked	same wall as 0x00054C93: calls Armor bkt_num_key 0x53EA8 plus Rva equal 0x50E1C plus int new_node 0x53EC8; mixed hashtable types no donor; need shared ICF pins t=5 model=muse-b7e2
