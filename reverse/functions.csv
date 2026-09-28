@@ -40337,3 +40337,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0BfmeStringRecord002CF4C6@@QAE@ABVAsciiString@@0IIE@Z,,0x0033B13B,79,Code/GameEngine/Source/Common/BfmeStringRecord002CF4C6Ctor.cpp,matched,five-arg ctor for vector push_back caller 0x0033D751 via StringBase copies
 ?write@Rva005F1B75@@QAEHPAD@Z,,0x005F1BB7,37,Code/GameEngine/Source/Common/System/Rva00513E03Length.cpp,matched,three-part write base plus third ref chain from base write
 ?rva0037DCA5@Rva0037DCA5@@QAEHXZ,,0x0037DCA5,39,Code/GameEngine/Source/Common/Rva0037DCA5Get.cpp,matched,sibling 0x0037E270 same global and callee via Rva0037E270Lookup plus same-shape 0x0037DC52
+?rva0037DC52@Rva0037DCA5@@QAEPAXXZ,,0x0037DC52,16,Code/GameEngine/Source/Common/Rva0037DCA5Get.cpp,matched,same class as 0x0037DCA5 same global and callee

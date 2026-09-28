@@ -28,6 +28,7 @@ class Rva0037DCA5
 	int m_count;
 public:
 	int rva0037DCA5();
+	void *rva0037DC52();
 };
 int Rva0037DCA5::rva0037DCA5()
 {
@@ -35,4 +36,9 @@ int Rva0037DCA5::rva0037DCA5()
 	if (found == 0)
 		return 0;
 	return ((Rva0037DCA5Template *)found)->m_cost * m_count;
+}
+// ?rva0037DC52@Rva0037DCA5@@QAEPAXXZ @0x0037DC52 16B same +0x4 lookup via 0x002D06CA and global 0x00DFF000.
+void *Rva0037DCA5::rva0037DC52()
+{
+	return TheThingFactory->rva002D06CA(&m_name);
 }
