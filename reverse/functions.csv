@@ -40469,3 +40469,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0014FA2AFill@@YAXPAVRva0014F699@@0ABV1@@Z,,0x0014FA2A,29,Code/GameEngine/Source/Common/Rva0014FA2AFill.cpp,matched,range fill via rowed 0x0014F699 stride 0x4C callers 0x1509E0 0x150A20
 ?rva002E6C79@Rva002E6C79@@QAEHXZ,,0x002E6C79,20,Code/GameEngine/Source/Common/Rva002E6C79Get.cpp,matched,honest double ptr-chase 10 callers nested positive true-inline flags O1
 ?rva005C4CC1@Rva005C4B56@@QAEXXZ,,0x005C4CC1,19,Code/GameEngine/Source/Common/Rva005C4B56.cpp,matched,chain calls 0x005C4B56 with 2 0 plus sub 0x3C
+?rva005C4CD4@Rva005C4B56@@QAEXXZ,,0x005C4CD4,19,Code/GameEngine/Source/Common/Rva005C4B56.cpp,matched,chain calls 0x005C4B56 with 0 2 plus sub 0x40

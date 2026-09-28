@@ -16,6 +16,7 @@ class Rva005C4CC1Sub
 public:
 	char m_pad[0x3C];
 	int m_val3C; // +0x3C
+	int m_val40; // +0x40
 };
 
 class Rva005C4B56
@@ -42,6 +43,7 @@ public:
 	virtual void s18(bool a, bool b, int c);
 	void rva005C4B56(int setBits, int clearBits, int val);
 	void rva005C4CC1();
+	void rva005C4CD4();
 private:
 	char m_padAC[0xAC - 4];
 	Rva005C4CC1Sub *m_subAC; // +0xAC
@@ -62,4 +64,9 @@ void Rva005C4B56::rva005C4B56(int setBits, int clearBits, int val)
 void Rva005C4B56::rva005C4CC1()
 {
 	rva005C4B56(2, 0, m_subAC->m_val3C);
+}
+
+void Rva005C4B56::rva005C4CD4()
+{
+	rva005C4B56(0, 2, m_subAC->m_val40);
 }
