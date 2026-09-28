@@ -39635,3 +39635,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva0052DE5B@Rva0052DE5B@@QAEXXZ,,0x0052DE5B,64,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,finishReset ported from BFME1 Rva003F7380State with +8 shift
 ?rva0052DED3@Rva0052DE5B@@QAEXXZ,,0x0052DED3,28,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,same class reset then tail finishReset
 ?rva0052DFF2@Rva0052DE5B@@QAEPAV1@XZ,,0x0052DFF2,15,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,clear node then reset returns this
+?Rva0052DE9BRelease@@YAHPAVMixFileInfoBuffer@@@Z,,0x0052DE9B,56,Code/GameEngine/Source/Common/Rva0052DE9BRelease.cpp,matched,walk unlink list call finishReset return count
