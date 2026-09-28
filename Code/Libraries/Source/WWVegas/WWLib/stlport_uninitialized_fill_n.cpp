@@ -92,3 +92,9 @@ template _STL::vector<Rva0048130E, _STL::allocator<Rva0048130E> >::vector(unsign
 template _STL::vector<Rva002390CB, _STL::allocator<Rva002390CB> >::vector(unsigned int, const Rva002390CB &, const _STL::allocator<Rva002390CB> &);
 template _STL::vector<AsciiString, _STL::allocator<AsciiString> >::vector(unsigned int, const AsciiString &, const _STL::allocator<AsciiString> &);
 template _STL::vector<Rva0040CB11Entry, _STL::allocator<Rva0040CB11Entry> >::vector(unsigned int, const Rva0040CB11Entry &, const _STL::allocator<Rva0040CB11Entry> &);
+
+// Retail 0x005DE088 (27B): public _STL::uninitialized_fill_n for
+// BfmeStringRecord005DDD40, forwarding first/n/value to the rowed 4-arg
+// __uninitialized_fill_n 0x005DDDA5 with a false_type tag temporary.
+// Unlock lane: caller is 0x005DE6EA in 0x005DE651/260.
+template BfmeStringRecord005DDD40 *_STL::uninitialized_fill_n(BfmeStringRecord005DDD40 *, unsigned int, const BfmeStringRecord005DDD40 &);
