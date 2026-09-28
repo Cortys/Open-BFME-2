@@ -10,6 +10,7 @@
 #include <vector>
 struct BfmeE16 { float x, y, z, w; };
 struct Rva005B2E09Cell { int m_00; int m_04; int m_08; };
+struct Rva005B269DRow { void* slots[4]; void rva005B269D(Rva005B2E09Cell* c, int v, unsigned idx); };
 class Rva005B2DDF {
   char m_00[0x14];
   _STL::vector<BfmeE16> m_14;
@@ -45,4 +46,17 @@ void* Rva005B2DDF::rva005B2E35(Rva005B2E09Cell* c)
       return r;
   }
   return 0;
+}
+void Rva005B269DRow::rva005B269D(Rva005B2E09Cell* c, int v, unsigned idx)
+{
+  if (c->m_04 >= 0 && c->m_08 >= 0)
+    return;
+  if (idx >= 4)
+    return;
+  void** slot = (void**)((char*)this + idx * 4);
+  if (*slot != 0)
+    return;
+  c->m_04 = v;
+  c->m_08 = idx;
+  *slot = c;
 }
