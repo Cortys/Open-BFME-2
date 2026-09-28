@@ -40815,3 +40815,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0043DB3DSet@@YAXE@Z,,0x0043DB3D,10,Code/GameEngine/Source/Common/Rva0043DB3DGlobalSet.cpp,matched,global byte setter VA 0xE03340 caller 0x5BDB42 neighbours DA65 DB47
 ?Rva005D2FD0Set@@YAXHPAURva005D2FD0Outer@@PBDABVUnicodeString@@@Z,,0x005D2FD0,106,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,APT level format via 0x00038150 bfmeSetText pin callers 0x005D3128 0x005D318D
 ?rva005D2449@Rva005D242F@@UAEXXZ,,0x005D2449,25,Code/GameEngine/Source/Common/Rva005D242FDtor.cpp,matched,vslot 2 validate plus cond clear -1
+?rva005D24B1@Rva005D242F@@UAEXXZ,,0x005D24B1,52,Code/GameEngine/Source/Common/Rva005D242FDtor.cpp,matched,vslot 1 validate cond imul call store
