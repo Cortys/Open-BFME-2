@@ -2594,3 +2594,4 @@ FUN_00454C93	0x00054C93	148	blocked	hashtable erase shape exact ignoring relocs 
 ?rva0049C592@Rva0049C592@@QAEXXZ	0x0049C592	71	blocked	ebx holds 0 for pushes cmps and mov vs retail push imm test and t=15 model=muse-6df3
 ?rva0039B683@Rva0039B683@@QAEXM@Z	0x0039B683	37	partial	movss-addss order swapped vs retail t=15 model=muse-d772 score=0.9 stash=reverse/attempts/0x0039b683.cpp
 FUN_00454BC3	0x00054BC3	129	blocked	same wall as 0x00054C93: calls Armor bkt_num_key 0x53EA8 plus Rva equal 0x50E1C plus int new_node 0x53EC8; mixed hashtable types no donor; need shared ICF pins t=5 model=muse-b7e2
+FUN_0084f679	0x0044F679	87	blocked	SpecialAbilityUpdate predicate m60-zero-guard plus targetID find plus ModuleData38 finalOverride kind 0x27 plus Object04 flag108-0x40 plus m24-gt1 plus ModuleData78 flag return; no donor for method name or ModuleData/Object layouts t=10 model=muse-dd72
