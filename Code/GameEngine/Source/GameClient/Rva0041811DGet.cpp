@@ -1,0 +1,42 @@
+// cl: /O1 /DNDEBUG /MD /EHsc
+// ?rva0041811D@Rva0041811D@@QAEPAXPBVAsciiString@@@Z, retail 0x0041811D (38B).
+// Lookup in the embedded Rva00056F61 bucket table at +0xC via rowed
+// iterator find 0x0041534B. Returns node+8 or null (inline payload, add
+// not deref, unlike siblings at +0x26c/+0x280/+0x294 which deref).
+// Callers at 0x00418169 (Leadership INI parse via global 0x00A030A8 with
+// Unknown LivingWorldAutoResolveLeadership), 0x00418879 (Body via
+// 0x00A030B0), 0x004191A8 (CombatChain via 0x00A030B8), 0x0041974C
+// (Weapon via 0x00A030C0) and default getters 0x0041883F
+// (AutoResolve_DefaultBody) 0x0041916E (AutoResolve_DefaultCombatChain)
+// 0x00419712 (AutoResolve_DefaultWeapon). Chain over 0x0041534B.
+// Owner unproven so honest-address class Rva0041811D.
+class AsciiString
+{
+	char *m_text;
+};
+class Rva00056F61;
+struct Rva0041534BIter
+{
+	void *m_node;
+	Rva00056F61 *m_table;
+};
+class Rva00056F61
+{
+public:
+	Rva0041534BIter rva0041534B(const AsciiString *key);
+};
+class Rva0041811D
+{
+public:
+	void *rva0041811D(const AsciiString *key);
+private:
+	char m_pad[0xC];
+	Rva00056F61 m_table;
+};
+void *Rva0041811D::rva0041811D(const AsciiString *key)
+{
+	Rva0041534BIter it = m_table.rva0041534B(key);
+	if (it.m_node != 0)
+		return (void *)((char *)it.m_node + 8);
+	return 0;
+}
