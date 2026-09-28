@@ -2617,3 +2617,4 @@ FUN_005fd9c5	0x001FD9C5	42	blocked	5 pushes incl dummy tag lea ebp+0xB vs 4-para
 FUN_0072bee8	0x0032BEE8	51	blocked	4 pushes to 3-arg copy 0x32A40E needs ICF 4-arg copy-aux twin t=8 model=muse-06
 ??1Rva00467FCC@@QAE@XZ	0x00467FCC	63	blocked	manual destroy+free gives 30B no EH_prolog needs STL vector_base machinery t=12 model=muse-04
 ?rva0047DEE1@TunnelContain@@QAEPAXPAX@Z	0x0047DEE1	99	partial	extra mov eax-ebp-4 plus mov ebx-eax vs mov ebx-ebp-4 only; rest exact 101B vs 99B 1 reg 1 mem t=20 model=muse-04 score=0.95 stash=reverse/attempts/0x0047dee1.cpp
+??1Rva007590B0@@QAE@XZ	0x00759B40	122	blocked	dtor needs EH prolog 22B plus state stores 56B gap; ours 66B with /EHsc has no EH; class appears POD but retail has unwind for tree-free region; likely needs base-member with dtor or /EHs plus local; unblocks 75A1A0 747B t=10 model=muse-spark
