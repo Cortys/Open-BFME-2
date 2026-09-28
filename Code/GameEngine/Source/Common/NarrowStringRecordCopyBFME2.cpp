@@ -36,8 +36,16 @@ template void _STL::_Construct<BfmeNarrowRecord0041A5D2,BfmeNarrowRecord0041A5D2
 struct BfmeNarrowRecord0041A617 {
     _STL::basic_string<char> text; unsigned short short0; unsigned char flag;
     BfmeNarrowRecord0041A617(const BfmeNarrowRecord0041A617 &o);
+    BfmeNarrowRecord0041A617 &operator=(const BfmeNarrowRecord0041A617 &o);
 };
 BfmeNarrowRecord0041A617::BfmeNarrowRecord0041A617(const BfmeNarrowRecord0041A617 &o) : text(o.text), short0(o.short0), flag(o.flag) {}
+BfmeNarrowRecord0041A617 &BfmeNarrowRecord0041A617::operator=(const BfmeNarrowRecord0041A617 &o)
+{
+	text.assign(o.text);
+	short0 = o.short0;
+	flag = o.flag;
+	return *this;
+}
 template void _STL::_Construct<BfmeNarrowRecord0041A617,BfmeNarrowRecord0041A617>(BfmeNarrowRecord0041A617*,const BfmeNarrowRecord0041A617&);
 
 // Complete retail record copy at 0x00427F75.
