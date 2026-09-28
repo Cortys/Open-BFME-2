@@ -40277,3 +40277,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00318BEB@Rva00318BEB@@QAEXXZ,,0x00318BEB,26,Code/GameEngine/Source/Common/Rva00318BEBAudio.cpp,matched,TheAudio present and +0x60 handle not 1 then slot 0x6c remove; caller FUN_00719D01 at 0x00319D3B
 ?rva00318CEB@Rva00318CEB@@QAE_NPBURva00318CEBOther@@@Z,,0x00318CEB,26,Code/GameEngine/Source/Common/Rva00318CEBCheck.cpp,matched,null-checked other+0x14 equals this+0x54; callers at 0x002BCA19 and 0x002BEF14
 ?rva002E071E@Rva002E071E@@QBE_NPBV1@@Z,,0x002E071E,48,Code/GameEngine/Source/Common/Rva002E071ECompare.cpp,matched,equality predicate with 15 callers and Common neighbours
+?rva0039D4FB@Rva0039D4FB@@QAEXP6AXPAVRva0039D40F@@@Z@Z,,0x0039D4FB,42,Code/GameEngine/Source/Common/Rva0039D4FBDrain.cpp,matched,list drain via conditional remove plus callback sharing 334 head
