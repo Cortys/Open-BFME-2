@@ -40732,3 +40732,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002AC673@Player@@QAEXXZ,,0x002AC673,62,Code/GameEngine/Source/Common/RTS/PlayerRva002AC673.cpp,matched,Player science reset via ScriptEngine 0x357A03 and vector erase 0x532803
 ?closeDataChunk@DataChunkInput@@IAEXXZ,,0x00306F53,82,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,standalone closeDataChunk via tell seek decrement unlink deleteInstance
 ?rva_5322de_fill_unsigned_short@@YAPAGPAGI0@Z,,0x005322DE,37,Code/GameEngine/Source/Common/Rva5322DEFillUnsignedShort.cpp,matched,chain of 0x0053229D plus counted splat plus O1 pops
+?rva00528FE6@Rva00528FE6@@QAEXPAUCameraMarker@@@Z,,0x00528FE6,35,Code/GameEngine/Source/Common/Rva00528FE6Setter.cpp,matched,setter deletes old CameraMarker via 0x29D7C2 plus 0x2FD60
