@@ -39596,3 +39596,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva00072583@W3DVideoBuffer@@QAEXXZ,,0x00072583,57,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DVideoBufferCtorBfme.cpp,matched,slot3 guarded reset via lock guard and rowed 0x724AE
 ?Rva000E1860Copy@@YAPAVRva00072A94@@PAV1@00@Z,,0x000E1860,47,Code/GameEngine/Source/Common/Rva00072A94Assign.cpp,matched,forward copy for Rva00072A94 via rowed assign 0x72A94 caller 0xE1D64
 ?rva002E6B06@Rva002E6B06@@QAEHXZ,,0x002E6B06,19,Code/GameEngine/Source/Common/Rva002E6B06Get.cpp,matched,null-checked ptr-chase bit test with 22 callers and no callees via nonzero guard model
+??0Rva00507823@@QAE@XZ,,0x0050775B,172,Code/GameEngine/Source/Common/Rva00507823Ctor.cpp,matched,vtable 00864010 same as dtor 00507823 deleting 00507807 base of 00507C2D
