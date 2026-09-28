@@ -210,6 +210,7 @@ public:
 	AsciiString encodeUserKey(const UnicodeString &user, const char *name);
 	void Rva0043BFDB(const UnicodeString &user, int profileIndex);
 	UnicodeString Rva0043B9F5(void);
+	Bool Rva0043B9E8(void);
 	UnicodeString Rva0043BB88(void);
 	void Rva0043BE36(const AsciiString &mapName);
 	int Rva0043BBB6(UnicodeString user);
@@ -371,4 +372,14 @@ UnicodeString SkirmishPreferences::Rva0043B9F5(void)
 	if (tmp.isEmpty())
 		tmp = UnicodeString::TheEmptyString;
 	return tmp;
+}
+
+// ?Rva0043B9E8@SkirmishPreferences@@QAE_NXZ @0x0043B9E8 13B
+// User-names non-empty test: reads m_userNames (+0x18) head and returns
+// ![head==head]. Class proven by +0x18 matching m_userNames in ctor
+// 0x43C128 and Rva0043BB88; callers at 0x5217C4/0x522352/0x52288E.
+// Honest Rva name.
+Bool SkirmishPreferences::Rva0043B9E8(void)
+{
+	return !m_userNames.empty();
 }
