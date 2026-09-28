@@ -6187,3 +6187,4 @@ _bfmeLockXH,0x00007690,donor locale guard lock alias; target implementation is m
 ?bfmeFwd1050@BfmeP1050@@QAEXHHHHH@Z,0x00628040,BFME1 wrapper donor call target; five integer arguments and thiscall shape agree; owner name provisional
 ?d_009f5c00@@YAXXZ,0x00628040,BFME2 call target observed at 0x00625390; anonymous dump alias candidate pending independent identity
 ??1DisplayString@@UAE@XZ,0x00358994,Target body stores vptr 0x00C15338 calls rowed reset 0x358946 and WideString dtor 0x36E70; invoked as W3DDisplayString base cleanup at 0x1061AC
+?expandPrototypeValues@Rva00700170@@QAEXPAX0@Z,0x00700170,BFME1 donor method name is provisional; target call from 0x702B40 and thiscall signature support this address but owner identity remains RVA-derived
