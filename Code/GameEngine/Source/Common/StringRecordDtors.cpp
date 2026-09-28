@@ -10,7 +10,11 @@
 // and callees are target facts.
 //
 // ??1Rva00111B25Record@@QAE@XZ         @0x00111B25 53B: strings +0x18, +0x00
-// ??1Rva0007BB16Record@@QAE@XZ         @0x0007BB16 53B: strings +0x08, +0x00
+// ??1Rva0007BB16Record@@QAE@XZ         @0x0007BB16 53B: strings +0x08, +0x00,
+//   0x24-byte element proven by the rowed range destroy at 0x0007C2D7 (steps
+//   0x24 via this dtor) and its vector callers at 0x0007C5D5/0x0007C614; tail
+//   bytes past +0x0C are unrecovered. The 0x24 stride also matches the retail
+//   copy at 0x00151336 (two strings at +0x00/+0x08 plus tail).
 // ??1BfmeStringRecord000B94D2@@QAE@XZ  @0x000B6CF1 53B: strings +0x04, +0x00
 // ??1Rva000543F5Record@@QAE@XZ         @0x000543F5 53B: wide +0x04, narrow +0x00
 // ??1Rva000BEDF0Record@@QAE@XZ         @0x000BEDF0 53B: vector +0x04, string +0x00
@@ -57,6 +61,7 @@ struct Rva0007BB16Record
 	AsciiString m_00;
 	int m_04;
 	AsciiString m_08;
+	int m_tail0C[6];
 };
 Rva0007BB16Record::~Rva0007BB16Record() {}
 
