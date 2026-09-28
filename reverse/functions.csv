@@ -40730,3 +40730,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00759AE0@Rva007590B0@@QAEXXZ,,0x00759AE0,51,Code/GameEngine/Source/Common/System/Rva007590B0TreeFree.cpp,matched,chain via tree free 590B0 reset sentinel same class
 ??0Rva0023E8D8@@QAE@PAX@Z,,0x0023E8D8,53,Code/Libraries/Source/WWVegas/WWLib/Rva0023E8D8Ctor.cpp,matched,ctor wrapper refcounted impl via caller 0x00512069
 ?rva002AC673@Player@@QAEXXZ,,0x002AC673,62,Code/GameEngine/Source/Common/RTS/PlayerRva002AC673.cpp,matched,Player science reset via ScriptEngine 0x357A03 and vector erase 0x532803
+?closeDataChunk@DataChunkInput@@IAEXXZ,,0x00306F53,82,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,standalone closeDataChunk via tell seek decrement unlink deleteInstance

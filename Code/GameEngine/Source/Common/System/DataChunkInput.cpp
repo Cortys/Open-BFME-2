@@ -158,7 +158,7 @@ public:
 class InputChunk
 {
 public:
-	virtual ~InputChunk();					// vptr this+0x00
+	virtual void *deleteInstance(int flags);	// vptr this+0x00 (MemoryPoolObject pattern)
 
 	InputChunk *next;					// this+0x04
 	UnsignedInt id;						// this+0x08
@@ -252,8 +252,11 @@ protected:
 	}
 
 	// parse() has no separate call target for closeDataChunk -- MSVC inlines
-	// this whole body (the deleting destructor call at the end is the only
+	// this whole body (the deleteInstance call at the end is the only
 	// call still visible), so it is modelled here rather than as its own row.
+	// Retail 0x00306F53 (82B) is the standalone out-of-line copy, called by
+	// 0x00307BF6; evidence is the tell/absoluteSeek/decrement/unlink/
+	// deleteInstance(0)/operator-delete sequence.
 	void closeDataChunk(void)
 	{
 		if (m_chunkStack == 0) {
@@ -267,7 +270,7 @@ protected:
 
 		InputChunk *c = m_chunkStack;
 		m_chunkStack = m_chunkStack->next;
-		delete c;
+		::operator delete(c != 0 ? c->deleteInstance(0) : 0);
 	}
 
 public:
