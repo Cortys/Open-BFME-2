@@ -39,7 +39,10 @@ public:
     void attach(void *);
     void initialize();
     char at00[4]; Rva005A0B4CList listeners; char at10[4]; int at14;
-    char at18[8]; AsciiString name; char remaining[0x3c8-0x24];
+    char at18[8]; AsciiString name;
+    char pad24_44[0x44-0x24]; int m_44; // +0x44 dword-checked count gate
+    char pad48_3C4[0x3C4-0x48]; bool m_3C4; // +0x3C4 byte-checked with flag OR
+    char pad3C5_3C8[0x3C8-0x3C5];
 };
 typedef _STL::vector<Rva002E2903Player *> Rva002BA8F1PlayerList;
 struct Rva002BA8F1Primary { char opaque[0x18]; };
@@ -48,6 +51,7 @@ public:
     Rva002E2903Player *find(const AsciiString &, unsigned int *);
     Rva002E2903Player *find(int, unsigned int *);
     Rva002E2903Player *rva002B52A8(int);
+    int rva002B5256(bool flag);
     void setLocal(Rva002E2903Player *);
     void addPlayer(Rva002BA8F1Input *, bool, int, Rva002BA8F1Slot *);
     char gap[0x8c-0x1c]; Rva002BA8F1PlayerList players;
@@ -97,4 +101,21 @@ Rva002E2903Player *Rva002BA8F1Logic::rva002B52A8(int index)
     if (index < 0 || (unsigned int)index >= players.size())
         return 0;
     return players[index];
+}
+
+// ?rva002B5256@Rva002BA8F1Logic@@QAEH_N@Z @0x002B5256 82B.
+// Gap between find 0x002B51F8 and rva002B52A8 in same TU; counts +0x8C player
+// vector entries with dword at +0x44 == 0 and (byte at +0x3C4 == 0 or flag).
+// Evidence: (finish-start)>>2 count with je early-out plus esi/edi pointer-index
+// loop matching find's id-vector shape; dword cmp at +0x44 then byte cmp at
+// +0x3C4 then byte cmp of stack bool arg; ret 4 single bool arg returning int.
+int Rva002BA8F1Logic::rva002B5256(bool flag)
+{
+    int count = 0;
+    for (unsigned int i = 0; i < players.size(); ++i) {
+        Rva002E2903Player *p = players[i];
+        if (p->m_44 == 0 && (p->m_3C4 == 0 || flag))
+            ++count;
+    }
+    return count;
 }

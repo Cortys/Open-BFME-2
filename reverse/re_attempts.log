@@ -2357,3 +2357,4 @@ FUN_0079d954	0x0039D954	42	blocked	linked-list count via plus40 getter with indi
 ?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z	0x001FF3DC	86	partial	game load hoisted above si mov and null test retail sinks after null check t=40 model=muse-cb86 score=0.93 stash=reverse/attempts/0x001ff3dc.cpp
 FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm plus pop-eax prolog/epilog 24 fns not compiler-emittable no asm copy per anti-lift boundary 379B ret t=12 model=muse-48a8
 FUN_0045407E	0x0005407E	41	blocked	AudioSettings.ini INI-load wrapper needs MilesAudioManager layout plus INI+8 field meaning t=10 model=muse-829b
+FUN_008d7744	0x004D7744	535	blocked	StateMachine xfer version 1-4 with owner at +0x14 plus ObjectID at +0x34 plus 3 bools plus goalRange; chaining via Xfer& returns plus interleaved pushes needs layout evidence and stronger model t=15 model=muse-42e3
