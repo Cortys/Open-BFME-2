@@ -40,3 +40,27 @@ void Rva00528B98::rva00528B98()
 	TheRva00222A8BTarget->invoke(m_owner, "HideRankInterface", 0, 0, 0, 0, 0, 0);
 	m_flag04 = false;
 }
+
+class Rva00528BC1
+{
+public:
+	Rva00528BC1 *rva00528BC1(void *p);
+private:
+	void *m_ptr;
+	unsigned char m_04;
+	unsigned char m_05;
+	unsigned char m_06;
+	int m_08;
+	int m_0C;
+};
+
+Rva00528BC1 *Rva00528BC1::rva00528BC1(void *p)
+{
+	m_ptr = p;
+	m_04 = 0;
+	m_05 = 0;
+	m_06 = 0;
+	m_08 = 0;
+	m_0C = 0;
+	return this;
+}
