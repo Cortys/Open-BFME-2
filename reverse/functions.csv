@@ -40370,3 +40370,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4Rva005F4AD7@@QAEAAU0@ABU0@@Z,,0x005FD4FF,63,Code/GameEngine/Source/Common/Rva005F4AD7Dtor.cpp,matched,unlock lane Holder assign same trio via shared double-deref plus self-check
 ?rva0073BBE0@Rva0073BBE0@@QAEDHHH@Z,,0x0073BBE0,117,Code/GameEngine/Source/Common/RTS/Rva0073BBE0.cpp,matched,adjust sibling of 0x73BAA0 via 008FC1F0 callers 0x73C820
 ?Rva0073BF40Raster@@YADHHHVRva0073BAA0@@@Z,,0x0073BF40,155,Code/GameEngine/Source/Common/RTS/Rva0073BF40Raster.cpp,matched,circle raster via rowed 0x73BAA0 caller 0x73CB5A donor taintmanager_impl
+?Rva0073C3B0Raster@@YADHHHVRva0073BB40@@@Z,,0x0073C3B0,155,Code/GameEngine/Source/Common/RTS/Rva0073C3B0Raster.cpp,matched,decrement circle via rowed 0x73BB40 caller 0x73CD2A twin of 0x73BF40
