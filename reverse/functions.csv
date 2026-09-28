@@ -39844,3 +39844,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva00405337Clear@@YAXPAX0@Z,,0x00405337,25,Code/GameEngine/Source/Common/Rva00405337Clear.cpp,matched,range clear 0x18 records via StringBase clear callers 0x40536A 0xC04EE
 ?Rva00438144Update@@YAXPBVObject@@PAE@Z,,0x00438144,34,Code/GameEngine/Source/Common/Rva00438144Update.cpp,matched,cached Object predicate via rowed rva0028C1CC no callers
 ?Rva004D39DEGet@@YAHHH@Z,,0x004D39DE,18,Code/GameEngine/Source/Common/Rva004D39DEGet.cpp,matched,signed cmp helper 12 callers 11 unblocks
+?rva004D3CA8@DisconnectManager@@QAEXPAXPAVConnectionManager@@@Z,,0x004D3CA8,48,Code/GameEngine/Source/GameNetwork/DisconnectManager.cpp,matched,DisconnectManager helper via Get plus reset plus localID
