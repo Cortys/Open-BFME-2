@@ -40804,3 +40804,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva000B3E96Get@@YGHH@Z,,0x000B3E96,29,Code/GameEngine/Source/Common/Rva000B3E96Get.cpp,matched,wrapper over rowed 0x0023404A with file line 0x28F8
 ?Rva0040B52EDestroy@@YAXPAUDestroyElem0040B52E@@0@Z,,0x0040B52E,25,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B52E.cpp,matched,unlock destroy range stride16 via rowed string dtor
 ?rva0040B5DE@Rva0040B5DE@@QAEXXZ,,0x0040B5DE,30,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B52E.cpp,matched,chain vector destroy plus free via rowed range
+?rva00418C33@Rva00418BFB@@QAE?AURva00418BFBIter@@PAURva00418BFBNode@@0ABURva00418BFBKey@@0@Z,,0x00418C33,149,Code/GameEngine/Source/Common/Rva00418C33Insert.cpp,matched,tree Minsert via member less and rowed factory
