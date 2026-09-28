@@ -40350,3 +40350,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva005F4AD7@@QAE@XZ,,0x005F4AD7,22,Code/GameEngine/Source/Common/Rva005F4AD7Dtor.cpp,matched,unlock lane tail-jmp release via rowed 0x7DEEF plus member callers at 0x5FD607 and 0x5D4EE1
 ?isOutOfAmmo@Object@@QBE_NXZ,,0x0028ADD5,11,Code/GameEngine/Source/GameLogic/Object/ObjectRvaSmallGetters.cpp,matched,Object forwarder via plus 0x330 to WeaponSet isOutOfAmmo
 ??_GRva00740242@@UAEPAXI@Z,,0x0074058D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-e282.cpp,matched,deleting dtor calls rowed dtor 0x740242 plus rowed delete
+?rva005C743B@Rva005C743B@@QBE_NXZ,,0x005C743B,13,Code/GameEngine/Source/Common/Rva005C743BCompare.cpp,matched,dword compare m00 GE m04 callers 0x55A82A 0x55A85B
