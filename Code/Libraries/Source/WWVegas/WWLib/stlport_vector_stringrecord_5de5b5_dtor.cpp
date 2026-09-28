@@ -37,3 +37,12 @@ private:
 Rva005DE5B5::~Rva005DE5B5()
 {
 }
+
+// Retail 0x005DE952 (25B): destroy range calling the 0x005DE5B5 dtor per
+// 0x18-byte element from start (inclusive) to end (exclusive). Chain lane:
+// callee is the just-landed dtor; caller is 0x005DE99F in 0x005DE985.
+void Rva005DE952Destroy(Rva005DE5B5 *start, Rva005DE5B5 *end)
+{
+	for (; start != end; start = (Rva005DE5B5 *)((char *)start + 0x18))
+		start->~Rva005DE5B5();
+}
