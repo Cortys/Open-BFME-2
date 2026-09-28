@@ -1,14 +1,17 @@
 // cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 //
 // UserPreferences WinsVs/LossesVs helpers (retail 0x0053740C/82, 0x0053745E/85,
-// 0x005374B3/82, 0x00537505/85).
+// 0x005374B3/82, 0x00537505/85, plus max-finders 0x0053755A/188 and
+// 0x00537616/188).
 // Each builds "<outer>WinsVs<inner>" or "<outer>LossesVs<inner>" from a
 // by-value outer AsciiString plus "WinsVs"/"LossesVs" plus an inner faction
 // string, then forwards to the UserPreferences virtual at slot 6 (getInt,
-// +0x18, default 0) or slot 11 (setInt, +0x2C). Vtable layout mirrors
-// Common/UserPreferences.cpp (13 slots: dtor, 2 loads, write, 5 getters,
-// 4 setters) so the indirect offsets match; the mirror omits the map base
-// and m_filename since these bodies touch only the vtable.
+// +0x18, default 0) or slot 11 (setInt, +0x2C). The max-finders loop the
+// six-entry faction table at 0x009BE9B0 (Men/Elves/Dwarves/Isengard/Mordor/
+// Wild) and return the faction with the largest WinsVs/LossesVs value.
+// Vtable layout mirrors Common/UserPreferences.cpp (13 slots: dtor, 2 loads,
+// write, 5 getters, 4 setters) so the indirect offsets match; the mirror
+// omits the map base and m_filename since these bodies touch only the vtable.
 // Evidence: "WinsVs" at 0x00869120, "LossesVs" at 0x00869128; faction table
 // at 0x009BE9B0 (Men/Elves/Dwarves/Isengard/Mordor/Wild); callers 0x0053755A,
 // 0x00537616 (outer = [ebp+0x0C]) and 0x005376D2/0x005377B6 (outer/inner loop
@@ -40,6 +43,7 @@ public:
 	~StringBase() { releaseBuffer(); }
 	void concat(const T *text);
 	void concat(const StringBase<T> &other);
+	void set(const T *text);
 protected:
 	BfmeStringData<T> *m_data;
 };
@@ -50,6 +54,7 @@ public:
 	AsciiString() {}
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
 	~AsciiString() {}
+	AsciiString &operator=(const AsciiString &other);
 };
 
 class UnicodeString;
@@ -75,6 +80,8 @@ public:
 	void rva005374B3(AsciiString a, const AsciiString &b, Int v);
 	Int rva0053745E(AsciiString a, const AsciiString &b);
 	void rva0053740C(AsciiString a, const AsciiString &b, Int v);
+	AsciiString rva0053755A(AsciiString a);
+	AsciiString rva00537616(AsciiString a);
 };
 
 Int UserPreferences::rva00537505(AsciiString a, const AsciiString &b)
@@ -103,4 +110,38 @@ void UserPreferences::rva0053740C(AsciiString a, const AsciiString &b, Int v)
 	a.concat("WinsVs");
 	a.concat(b);
 	setInt(a, v);
+}
+
+static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
+
+AsciiString UserPreferences::rva0053755A(AsciiString a)
+{
+	AsciiString best;
+	AsciiString cur;
+	Int max = 0;
+	for (Int i = 0; i < 6; ++i) {
+		cur.set(kFactions[i]);
+		Int v = rva0053745E(a, cur);
+		if (v > max) {
+			best = cur;
+			max = v;
+		}
+	}
+	return best;
+}
+
+AsciiString UserPreferences::rva00537616(AsciiString a)
+{
+	AsciiString best;
+	AsciiString cur;
+	Int max = 0;
+	for (Int i = 0; i < 6; ++i) {
+		cur.set(kFactions[i]);
+		Int v = rva00537505(a, cur);
+		if (v > max) {
+			best = cur;
+			max = v;
+		}
+	}
+	return best;
 }
