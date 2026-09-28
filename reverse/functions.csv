@@ -40828,3 +40828,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003C0F09@ScriptActions@@IAEXABVAsciiString@@H@Z,,0x003C0F09,59,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0F09.cpp,matched,honest team flag pair at 0x110 plus 0x111 via getTeamNamed pin
 ?rva003C0091@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C0091,61,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0091.cpp,matched,honest audio trigger-area call via slot 0x178 and trigger pin
 ?rva004031C9@AttributeModifierPoolUpdate@@QAEHH@Z,,0x004031C9,20,Code/GameEngine/Source/Common/AttributeModifierPoolUpdateRva.cpp,matched,index checked fetch via caller 0x0040327B
+?rva003C004D@ScriptActions@@IAEXABVAsciiString@@M@Z,,0x003C004D,68,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C004D.cpp,matched,honest audio trigger-area float call via slot 0x174 sibling of 0x178
