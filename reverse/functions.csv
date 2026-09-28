@@ -39874,3 +39874,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?GadgetComboBoxSetSelectedPos@@YAXPAVGameWindow@@H_N@Z,,0x00322931,41,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor SetSelectedPos GCM_SET_SELECTION 0x402d 37 callers
 ?GadgetComboBoxGetItemData@@YAPAXPAVGameWindow@@H@Z,,0x00322981,48,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,BFME1 donor GetItemData GCM_GET_ITEM_DATA 0x402a 26 callers
 ?GadgetComboBoxSetIsEditable@@YAXPAVGameWindow@@_N@Z,,0x00322660,57,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxSetIsEditable.cpp,matched,BFME1 donor SetIsEditable listBox 0x600 callers 4
+?Rva005B26CELess@@YG_NPBX0@Z,,0x005B26CE,53,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_e16_helpers.cpp,matched,leaf stdcall comparator for 16-byte sort heap partition median callers
