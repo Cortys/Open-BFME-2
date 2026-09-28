@@ -40631,3 +40631,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva005CBA04@@QAE@VBfmeFixedStorage002CF0F0@@@Z,,0x005CBA04,28,Code/GameEngine/Source/Common/Rva005CBA04Ctor.cpp,matched,vtable 0x00C74DB8 with deleting dtor at 0x005CBA20 and derived ctors at 0x00574815 0x005756B6 0x0057709A 0x005E5A38
 ?setSequentialTimer@ScriptEngine@@QAEXPAVTeam@@H@Z,,0x00204002,48,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_setSequentialTimer.cpp,matched,ZH donor 7862 Team overload callers 0x3C0CE3 0x3C1017 0x3C93FA vector 0x10
 ??1DataChunkTableOfContents@@QAE@XZ,,0x00306D5C,31,Code/GameEngine/Source/Common/System/DataChunk.cpp,matched,ZH donor deleteInstance loop via slot 0 plus operator delete caller 0x306F41
+?rva00281BF7@Rva00281BF7@@QAEHXZ,,0x00281BF7,28,Code/GameEngine/Source/GameLogic/AI/BuildListInfoRva00281BF7.cpp,matched,BuildListInfo ID lookup via findObjectByID tail to getDesiredGatherers
