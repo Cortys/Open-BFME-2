@@ -40884,3 +40884,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001E3591@Rva001E3591@@QAE_NXZ,,0x001E3591,37,Code/GameEngine/Source/Common/Rva001E3591.cpp,matched,banked partial promoted to exact: /arch:SSE added (cmove-vs-branch difference); honest Rva name; own TU
 ?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z,,0x002710AE,57,Code/GameEngine/Source/Common/Rva002710AE.cpp,matched,banked partial promoted to exact: compiler flags corrected (/O1 /MD); identity and evidence per the banked note
 ?rva005E73E4@Rva005E73E4@@QAEPAXH@Z,,0x005E73E4,23,Code/GameEngine/Source/Common/Bfme/Rva005E73E4.cpp,matched,indexed accessor via caller 0x005E7CAA
+?rva00517048@Rva00517048@@QAEXABVUnicodeString@@@Z,,0x00517048,108,Code/GameEngine/Source/Common/Rva00517048Chat.cpp,matched,chat login APT text plus ChatMessageOpen invoke via pins
