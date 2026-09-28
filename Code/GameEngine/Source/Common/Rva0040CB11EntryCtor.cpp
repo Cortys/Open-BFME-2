@@ -12,11 +12,16 @@ class Rva0040CB11Entry
 {
 public:
 	Rva0040CB11Entry(int key, const Rva004F6093Holder &val);
+	Rva0040CB11Entry(const Rva0040CB11Entry &other);
 private:
 	int m_first;
 	Rva004F6093Holder m_second;
 };
 
 Rva0040CB11Entry::Rva0040CB11Entry(int key, const Rva004F6093Holder &val) : m_first(key), m_second(val)
+{
+}
+
+Rva0040CB11Entry::Rva0040CB11Entry(const Rva0040CB11Entry &other) : m_first(other.m_first), m_second(other.m_second)
 {
 }
