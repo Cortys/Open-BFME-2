@@ -2465,3 +2465,6 @@ FUN_008f6a1a	0x004F6A1A	27	blocked	forwarding wrapper for Entry ctor 0x004F6318 
 ?_M_insert_overflow@?$vector@URva00541021@@V?$allocator@URva00541021@@@_STL@@@_STL@@IAEXPAURva00541021@@ABU3@ABU__false_type@2@I_N@Z	0x00541709	189	blocked	needs Rva allocate pin to 0xB40EA and PAU copy row; align exact but gate unresolved t=15 model=muse-ab32
 ?rva0054107F@Rva0054107F@@QAE@XZ	0x0054107F	50	blocked	calls rowed copy 0x00541021 directly not via Construct; needs inlined Construct in vector TU not extern t=15 model=muse-ab32
 ?rva0054112D@Rva0054112D@@QAE@XZ	0x0054112D	50	blocked	same as 0x0054107F backward copy calls rowed copy directly needs inlined Construct t=5 model=muse-ab32
+FUN_00718f42	0x00318F42	34	blocked	double-call ecx preservation wall: single-call AND gives correct mov ecx[eax+4] alloc but double-call needs push esi for second getWheelInfo; tried O1 O2 G7 Ob0 sametu int charptr div16 shift variants; need new idea for two E8 with no save t=25 model=muse-087c
+?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	extern PixelSize push plus this-in-ebx vs edi plus single-Unlock vs dual plus and-vs-shr t=25 model=muse-4b35
+FUN_006606AF	0x002606AF	55	blocked	manual erase 49B vs 55B missing dummy push and ebp frame needs Oy- and real copy_ptrs t=12 model=muse-3800
