@@ -40210,3 +40210,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001DE78E@Eva@@QAEHPBVAsciiString@@@Z,,0x001DE78E,39,Code/GameEngine/Source/GameClient/EvaRva001DE78E.cpp,matched,Eva event id lookup via rowed 0x0041534B table at plus 0x34
 ??$__uninitialized_copy@PAUCoord3D@@PAU1@@_STL@@YAPAUCoord3D@@PAU1@00ABU__false_type@0@@Z,,0x00346C2D,38,Code/GameEngine/Source/Common/Coord3DUninitializedCopy.cpp,matched,Coord3D uninitialized_copy stride 0x0C via pinned Construct 0x2CA82C
 ?rva003468F5@Rva003468F5@@QAE_NXZ,,0x003468F5,48,Code/GameEngine/Source/Common/Rva003468F5RangeCheck.cpp,matched,Turret goal distSq exceeds 2500 via rowed callees
+??4Rva0039B893@@QAEAAV0@ABV0@@Z,,0x0039B900,45,Code/GameEngine/Source/Common/V3PolyCopyCtors.cpp,matched,V3Poly 2-int-plus-3-word assign no vptr store 3 callers share copy-ctor layout

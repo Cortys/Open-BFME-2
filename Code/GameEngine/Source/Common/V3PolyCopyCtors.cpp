@@ -351,6 +351,7 @@ class Rva0039B893
 {
 public:
 	Rva0039B893(const Rva0039B893 &other);
+	Rva0039B893 &operator=(const Rva0039B893 &other);
 	virtual ~Rva0039B893();
 
 	Int m_field04;
@@ -367,6 +368,21 @@ Rva0039B893::Rva0039B893(const Rva0039B893 &other)
 	m_field0C = other.m_field0C;
 	m_field0E = other.m_field0E;
 	m_field10 = other.m_field10;
+}
+
+// --------------------- vptr-skip assign of same layout (retail 0x0039B900)
+// ??4Rva0039B893@@QAEAAV0@ABV0@@Z @0x0039B900 45B: same two ints plus three
+// words as the 0x0039B893 copy ctor above with no vptr store (6B smaller).
+// Evidence: three callers 0x0039B92D/0x0039BA68/0x0039BAA0 looping with 0x14
+// stride; class identity from the shared copy-ctor layout.
+Rva0039B893 &Rva0039B893::operator=(const Rva0039B893 &other)
+{
+	m_field04 = other.m_field04;
+	m_field08 = other.m_field08;
+	m_field0C = other.m_field0C;
+	m_field0E = other.m_field0E;
+	m_field10 = other.m_field10;
+	return *this;
 }
 
 // ---- vptr + two ints base plus derived vptr and third int (retail 0x0015E640)
