@@ -2597,3 +2597,4 @@ FUN_00454BC3	0x00054BC3	129	blocked	same wall as 0x00054C93: calls Armor bkt_num
 FUN_0084f679	0x0044F679	87	blocked	SpecialAbilityUpdate predicate m60-zero-guard plus targetID find plus ModuleData38 finalOverride kind 0x27 plus Object04 flag108-0x40 plus m24-gt1 plus ModuleData78 flag return; no donor for method name or ModuleData/Object layouts t=10 model=muse-dd72
 FUN_0096ecae	0x0056ECAE	44	blocked	esp-reading key selector mov [ebp-4]esp needs asm no clean C++ shape t=8 model=muse-02
 FUN_00568952	0x00168952	41	blocked	push-ecx-zero plus mov-ebp-4-esp loop calling virtual-1c with 0 arg; volatile-int-plus-push gives fixed-slot C7-plus-push vs retail dynamic push-plus-and plus save-esp; tried O1-EHsc-Os-G7 ptr-vs-int RefPtr-byval-byref variants t=25 model=muse-spark
+FUN_004780bc	0x000780BC	394	blocked	394B filter kernel SSE plus x87 exp plus STL erase pushback plus idiv pad wall t=18 model=muse-08

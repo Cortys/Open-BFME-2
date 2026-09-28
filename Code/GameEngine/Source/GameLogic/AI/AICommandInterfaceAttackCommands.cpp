@@ -137,6 +137,10 @@ public:
 	void aiMoveToAndEvacuateAndExit(const Coord3D *position, CommandSourceType cmdSource);
 	void aiBfmeCommand35(const Coord3D *position, CommandSourceType cmdSource);
 	void rva0036F400(const Rva003427DD *info, CommandSourceType cmdSource);
+	void rva0036F19B(Object *target, CommandSourceType cmdSource);
+	void rva0036F200(Object *target, CommandSourceType cmdSource);
+	void rva0036F265(Object *target, CommandSourceType cmdSource);
+	void rva0036F2CA(Object *target, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -494,5 +498,43 @@ void AICommandInterface::rva0036F400(const Rva003427DD *info, CommandSourceType 
 {
 	AICommandParms parms((AICommandType)0x1D, cmdSource);
 	parms.m_3C = *info;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F19B@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0036F19B, 101 bytes.
+// Same 101B object shape as rva0026C3AC in this TU: AICMD 0x13 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x003700E5 via mov eax [eax+0x258] plus lea ecx [eax+0x20] (AICommandInterface subobject).
+void AICommandInterface::rva0036F19B(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x13, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F200@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0036F200, 101 bytes.
+// Same 101B object shape: AICMD 0x14 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+// Class proven by caller at 0x0037011B via AIUpdate+0x258 plus 0x20 pattern.
+void AICommandInterface::rva0036F200(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x14, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F265@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0036F265, 101 bytes.
+// Same 101B object shape: AICMD 0x15 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+void AICommandInterface::rva0036F265(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x15, cmdSource);
+	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F2CA@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z, retail 0x0036F2CA, 101 bytes.
+// Same 101B object shape: AICMD 0x16 plus m_obj at +0x14 plus slot-0 aiDoCommand.
+void AICommandInterface::rva0036F2CA(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x16, cmdSource);
+	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
