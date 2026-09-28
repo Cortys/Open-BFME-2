@@ -40823,3 +40823,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00418DE2@Rva00418DE2@@QAE?AURva00418BFBPair@@ABURva00418BFBKey@@@Z,,0x00418DE2,35,Code/GameEngine/Source/Common/Rva00418DE2Forwarder.cpp,matched,map insert forwarder via rowed insert_unique
 ??0Rva005C3975@@QAE@HHABVAsciiString@@@Z,,0x005C3975,35,Code/GameEngine/Source/Common/Rva005C3975Ctor.cpp,matched,ctor base 0x00528B06 stores +0x10 vtable 0x00874490 caller 0x005C3D0E
 ?doTeamSpinForFramecount@ScriptActions@@IAEXABVAsciiString@@H@Z,,0x003C0FEA,54,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doTeamSpinForFramecount.cpp,matched,BFME1 donor doTeamSpinForFramecount timer-only team action
+??1Rva005C3549@@UAE@XZ,,0x005C3549,54,Code/GameEngine/Source/Common/Rva005C3549Dtor.cpp,matched,dtor vtable plus clear +8 plus base vtable callers 0x00568617 0x005C367E
