@@ -40955,3 +40955,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva000C20A3@@QAE@XZ,,0x000C20A3,30,Code/Libraries/Source/WWVegas/WWLib/Rva000C20A3Dtor.cpp,matched,container dtor via rowed Destroy plus free
 ??0Made002CCB04@@QAE@XZ,,0x0050B59B,43,Code/GameEngine/Source/GameLogic/Object/Made002CCB04Ctor.cpp,matched,leaf ctor base plus vtable plus defaults
 ?rva0028D8EB@Rva0028D8EB@@QAEHH@Z,,0x0028D8EB,21,Code/GameEngine/Source/GameLogic/Object/Rva0028D8EB.cpp,matched,unlock bittest forward via rowed test
+?Rva00152004Copy@@YAPAVRva00151E30@@PAV1@00@Z,,0x00152004,47,Code/Libraries/Source/WWVegas/WWLib/Rva00152004Copy.cpp,matched,array copy via rowed assign
