@@ -8,15 +8,25 @@ class Rva000514EB
 {
 public:
 	void rva000514EB();
+	void rva000514FB();
 
 private:
 	char m_pad[0x684];
 	unsigned m_count684;
+	unsigned m_count688; // +0x688
 };
 
 void Rva000514EB::rva000514EB()
 {
 	unsigned *p = (unsigned *)((char *)this + 0x684);
+	if (*p <= 0u)
+		return;
+	--(*p);
+}
+
+void Rva000514EB::rva000514FB()
+{
+	unsigned *p = (unsigned *)((char *)this + 0x688);
 	if (*p <= 0u)
 		return;
 	--(*p);
