@@ -20,6 +20,10 @@ template _STL::vector<Rva002390CB>::~vector();
 class BfmePoolRef10 { public: ~BfmePoolRef10(); char m_pad[12]; };
 template _STL::vector<BfmePoolRef10>::~vector();
 
+// @0x569d63 / _Destroy @0x569a5b
+struct BfmeStringRecord00568CE0 { ~BfmeStringRecord00568CE0(); char m_pad[20]; };
+template _STL::vector<BfmeStringRecord00568CE0>::~vector();
+
 // _Destroy @0x297360 (no vector-dtor home: retail callers are manual destroys,
 // not a vector dtor, so the vector emission stays unclaimed)
 class Rva00297360Element { public: ~Rva00297360Element(); char m_pad[16]; };
