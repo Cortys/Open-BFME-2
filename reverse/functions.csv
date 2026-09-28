@@ -40667,3 +40667,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00466E23@@QAE@XZ,,0x00466E23,53,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00466E23Dtor.cpp,matched,two StringBase-D at +0 +4 via 0x00036410 EH_prolog 0x00629188 callers 0x00466EC5
 ?_M_clear@?$vector@VBfmePoolRef10@@V?$allocator@VBfmePoolRef10@@@_STL@@@_STL@@IAEXXZ,,0x00569DFF,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_poolref10_mclear.cpp,matched,vector clear via Destroy 0x569A74 plus free exact 30B
 ?rva00569543@Rva00569543@@QAEXPBVModuleData@@@Z,,0x00569543,42,Code/GameEngine/Source/Common/Thing/Rva00569543DedupPush.cpp,matched,dedup push into vector at plus58 via rowed pushback 0x4DFCB0
+?rva0028C6FB@Rva0028C6FB@@QAEPAXI@Z,,0x0028C6FB,42,Code/GameEngine/Source/Common/Rva0028C6FB.cpp,matched,Bit-present DisabilityTypeNames lookup via global table
