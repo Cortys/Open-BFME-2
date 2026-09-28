@@ -41,11 +41,17 @@ public:
 	const char *m_ptr;
 	int m_len;
 };
+struct AsciiStringRef
+{
+	int write(char *dst);
+	const AsciiString *m_string;
+};
 struct Rva002226E5TextPlusString
 {
 	int length() const;
+	int write(char *dst);
 	Rva000B3F84Pair m_left;
-	const AsciiString *m_right;
+	AsciiStringRef m_right;
 };
 struct Rva00513E03
 {
@@ -89,13 +95,20 @@ int Rva005E366A::length() const
 struct Rva005F1B75 : Rva002226E5TextPlusString
 {
 	int length() const;
-	const AsciiString *m_third;
+	int write(char *dst);
+	AsciiStringRef m_third;
 };
 int Rva005F1B75::length() const
 {
-	int third = m_third->getLength();
+	int third = m_third.m_string->getLength();
 	int base = Rva002226E5TextPlusString::length();
 	return base + third;
+}
+
+int Rva005F1B75::write(char *dst)
+{
+	int n = Rva002226E5TextPlusString::write(dst);
+	return n + m_third.write(dst + n);
 }
 
 // ?length@Rva005F1BAA@@QBEHXZ @0x005F1BAA 13B: four-part extension (three-part string base at 0x005F1B75 plus fourth pair len at +0x14); chain from 0x005F1B75 landing.

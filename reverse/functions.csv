@@ -40335,3 +40335,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005C702D@Rva005C702D@@QAE_NPAVDataChunkInput@@PAUDataChunkInfo@@@Z,,0x005C702D,61,Code/GameEngine/Source/Common/Rva005C702DRead.cpp,matched,table 0xC74934 step line catm default catm callers 0x53FB9E 0x540C17 0x540CBF
 ?write@Rva002226E5TextPlusString@@QAEHPAD@Z,,0x00222D9A,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,text-plus-string write pair then string ref
 ??0BfmeStringRecord002CF4C6@@QAE@ABVAsciiString@@0IIE@Z,,0x0033B13B,79,Code/GameEngine/Source/Common/BfmeStringRecord002CF4C6Ctor.cpp,matched,five-arg ctor for vector push_back caller 0x0033D751 via StringBase copies
+?write@Rva005F1B75@@QAEHPAD@Z,,0x005F1BB7,37,Code/GameEngine/Source/Common/System/Rva00513E03Length.cpp,matched,three-part write base plus third ref chain from base write
