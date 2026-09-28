@@ -40595,3 +40595,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?get@Rva002E0CD4@@QBEHXZ,,0x002E0CD4,46,Code/GameEngine/Source/Common/Rva002E0CD4Get.cpp,matched,honest Rva getter 7 callers min via ptr-ternary /O1
 ?get@Rva002E063B@@QBEHXZ,,0x002E063B,13,Code/GameEngine/Source/Common/Rva002E063BGet.cpp,matched,honest Rva sum getter 2 callers /O1
 ??$_Construct@VRva00469BEA@@V1@@_STL@@YAXPAVRva00469BEA@@ABV1@@Z,,0x0046A9FF,18,Code/GameEngine/Source/Common/Rva00469BEAConstruct.cpp,matched,null-guarded placement copy via rowed copy ctor 0x469D33; caller 0x46AC44
+?rva00111F6F@Rva00111F0E@@QAEXPAVRvaRef@@HHH@Z,,0x00111F6F,77,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00111F0EClear.cpp,matched,chain setter calls clear stores 3 ints plus ref at 0x5C

@@ -10,6 +10,10 @@ class RvaRef
 {
 public:
 	virtual void Delete_This();
+	void Add_Ref()
+	{
+		++m_refs;
+	}
 	void Release_Ref()
 	{
 		if (--m_refs == 0)
@@ -23,6 +27,7 @@ class Rva00111F0E
 {
 public:
 	void rva00111F0E();
+	void rva00111F6F(RvaRef *a, int b, int c, int d);
 private:
 	char m_pad00[0x24];
 	RvaRef *m_24;
@@ -31,7 +36,12 @@ private:
 	char m_pad30[0x48 - 0x30];
 	int m_48;
 	int m_4C;
-	char m_pad50[0x68 - 0x50];
+	int m_50;
+	int m_54;
+	int m_58;
+	RvaRef *m_5C;
+	unsigned char m_60;
+	char m_pad61[0x68 - 0x61];
 	RvaRef *m_68;
 	int m_6C;
 	RvaRef *m_70;
@@ -62,4 +72,22 @@ void Rva00111F0E::rva00111F0E()
 	}
 	m_78 = 0;
 	m_7C = 0;
+}
+
+void Rva00111F0E::rva00111F6F(RvaRef *a, int b, int c, int d)
+{
+	if (a) {
+		rva00111F0E();
+		m_48 = 0;
+		m_4C = 0;
+		m_50 = b;
+		m_54 = c;
+		m_58 = d;
+		m_60 = 1;
+		a->Add_Ref();
+		if (m_5C) {
+			m_5C->Release_Ref();
+		}
+		m_5C = a;
+	}
 }
