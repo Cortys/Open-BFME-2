@@ -40003,3 +40003,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0010F38A@Rva0010F38A@@QAEXXZ,,0x0010F38A,80,Code/GameEngine/Source/Common/Rva0010F38APause.cpp,matched,guarded AIL_pause_stream flag 1 via lock pair
 ?rva0010F3DA@Rva0010F3DA@@QAEXXZ,,0x0010F3DA,80,Code/GameEngine/Source/Common/Rva0010F38APause.cpp,matched,guarded AIL_pause_stream flag 0 via lock pair
 ?rva0010F110@Rva0010F110@@QAEXXZ,,0x0010F110,12,Code/GameEngine/Source/Common/Rva0010F110Wait.cpp,matched,infinite wait on 0x18 via WaitForSingleObject
+?rva0010F11C@Rva0010F110@@QAE_NH@Z,,0x0010F11C,45,Code/GameEngine/Source/Common/Rva0010F110Wait.cpp,matched,guarded loop-count check via rowed wait and AIL
