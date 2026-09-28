@@ -50,3 +50,29 @@ void ControlBarSchemeManager::init( void )
 		return;
 	}
 }
+
+// Target extent: 0x005F8376..0x005F8387, bounded by Ghidra functions
+// [0x005F835A,0x005F8376) and [0x005F8388,...). The body copies the two
+// dwords at this+0x18 and this+0x1C to its stack argument. Its thiscall ABI
+// could be a hidden ICoord2D return buffer or an explicit output reference;
+// no target caller resolves that distinction, so keep the address-derived
+// identity and the raw machine-level contract.
+//
+// BFME1 lead: ControlBarSchemeAnimation::getStartPos at b1 0x003D4D30 is
+// ICF-folded with AnimateWindow::getCurPos and PathfindLayer::getStartCellIndex
+// plus three thunk names; it supplies shape only and no target name is used.
+class Rva005F8376
+{
+	unsigned char m_prefix[0x18];
+	unsigned int m_word18;
+	unsigned int m_word1C;
+
+public:
+	void rva005F8376(unsigned int *out) const;
+};
+
+void Rva005F8376::rva005F8376(unsigned int *out) const
+{
+	out[0] = m_word18;
+	out[1] = m_word1C;
+}
