@@ -39887,3 +39887,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0026228F@Rva0026228F@@QAEXHH@Z,,0x0026228F,26,Code/GameEngine/Source/Common/Rva0026228FMethod.cpp,matched,thiscall leaf FLT_MAX global into vslot 0x34 honest name
 ?rva00262436@Rva00262436@@QAEPAV1@H@Z,,0x00262436,29,Code/GameEngine/Source/Common/Rva00262436Setter.cpp,matched,thiscall setter returns this stores arg zeroes plus flag bytes
 ?rva00262271@Rva00262271@@QAEXHHH@Z,,0x00262271,30,Code/GameEngine/Source/Common/Rva00262271Method.cpp,matched,thiscall leaf FLT_MAX global into vslot 0x38 honest name sibling 0x26228F
+?rva00262FFF@AIUpdateInterface@@QAEXXZ,,0x00262FFF,38,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262FFF.cpp,matched,AIUpdateInterface tail vslot 0x1B8 gate TheGameLogic frame to 0x21C
