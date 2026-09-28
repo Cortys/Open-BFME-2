@@ -15,3 +15,10 @@ extern "C" float __cdecl atan2f(float y, float x)
 {
 	return Rva000422A0Atan2(y, x);
 }
+
+extern "C" __declspec(dllimport) double __cdecl ceil(double x);
+
+double __cdecl Rva000422BBCeil(float x)
+{
+	return ceil(x);
+}
