@@ -40760,3 +40760,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0006653B@Rva0006653B@@QAEGHH@Z,,0x0006653B,64,Code/GameEngine/Source/Common/Rva0006653BClampedLookup.cpp,matched,unlocks 3 callers plus clamped ushort table plus O1
 ?rva004076EE@Rva004076EE@@QAEPAVObject@@XZ,,0x004076EE,23,Code/GameEngine/Source/Common/Rva004076EEObject.cpp,matched,unlock via TheGameLogic findObjectByID precedent BuildListInfo
 ?rva0010ECB5@Rva0010ECB5@@QAE_NXZ,,0x0010ECB5,8,Code/GameEngine/Source/Common/Rva0010ECB5Set.cpp,matched,thunk add ecx 0x4C jmp set callers 0xA835A 0xA83F5 0xA860B
+?rva0055AA06@Rva0055AA06@@QAEXPBUCoord3D@@@Z,,0x0055AA06,49,Code/GameEngine/Source/Common/Rva0055AA06ListPush.cpp,matched,TheGameLogic plus0x40 push_back plus18 inc plus1C copy 12B to plus20 caller 0x39CF0A

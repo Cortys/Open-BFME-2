@@ -1,0 +1,38 @@
+// cl: /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?rva0055AA06@Rva0055AA06@@QAEXPBUCoord3D@@@Z @ 0x0055AA06, 49 bytes.
+// Push TheGameLogic+0x40 onto list at +0x18 inc count at +0x1C copy 12B to +0x20.
+// Evidence: retail lea-push-call push_back 0x5548F inc [esi+0x1C] lea edi [esi+0x20] movsd x3; caller 0x39CF0A.
+#include <list>
+
+struct Coord3D
+{
+	float x;
+	float y;
+	float z;
+};
+
+struct GameLogic0055AA06
+{
+	char m_pad[0x40];
+	int m_val;
+};
+#define TheGameLogic (*(GameLogic0055AA06 **)0x00DFE78C)
+
+class Rva0055AA06
+{
+public:
+	void rva0055AA06(const Coord3D *src);
+	char m_pad[0x18];
+	_STL::list<int, _STL::allocator<int> > m_list;
+	int m_count;
+	Coord3D m_pos;
+};
+
+void Rva0055AA06::rva0055AA06(const Coord3D *src)
+{
+	int tmp = TheGameLogic->m_val;
+	m_list.push_back(tmp);
+	++m_count;
+	m_pos = *src;
+}
