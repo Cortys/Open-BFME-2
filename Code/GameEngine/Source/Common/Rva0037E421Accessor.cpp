@@ -6,7 +6,7 @@
 // Unlock lane; landing unblocks 11 functions. No donor; recipe follows
 // Rva00219B9EAccessor signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva0037E421 class, void* return, int index.
-struct Elem216 { char data[0xD8]; };
+struct Elem216 { char m_pad00[0x98]; int m_98; char m_pad9C[0xD8 - 0x9C]; };
 struct Vec216 { Elem216 *m_start; Elem216 *m_finish; Elem216 *m_end; };
 static __forceinline unsigned VecSize(Vec216 *v) { return v->m_finish - v->m_start; }
 static __forceinline Elem216 &VecAt(Vec216 *v, int i) { return v->m_start[i]; }
@@ -15,6 +15,7 @@ class Rva0037E421 {
     Vec216 m_vec;
 public:
     void *rva0037E421(int index);
+    unsigned char rva0037E7BC(int index);
 };
 void *Rva0037E421::rva0037E421(int index)
 {
@@ -24,4 +25,14 @@ void *Rva0037E421::rva0037E421(int index)
     if ((unsigned int)index < count)
         return &VecAt(&m_vec, index);
     return 0;
+}
+// ?rva0037E7BC@Rva0037E421@@QAEEH@Z @0x0037E7BC 30B
+// Chain of rva0037E421; returns element+0x98 == -1 as unsigned char, else 0.
+// Proven by caller at 0x00392C96 and the rowed callee; same class and flags.
+unsigned char Rva0037E421::rva0037E7BC(int index)
+{
+    void *p = rva0037E421(index);
+    if (!p)
+        return 0;
+    return ((Elem216 *)p)->m_98 == -1;
 }
