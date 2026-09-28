@@ -81,8 +81,9 @@ public:
 	void rva00033E90(void *context);			// ReportEnd-like
 
 private:
-	// Intrusive list node proven by 0x00031680: size at +4 and next at +0x18,
-	// sentinel embedded at +0x448 with its next at +0x460 (0x448+0x18).
+	// Intrusive list node proven by 0x00031680 (size at +4 next at +0x18)
+	// and 0x00031660 (next at +0x18 prev at +0x1C); sentinel embedded
+	// at +0x448 with its next at +0x460 (0x448+0x18) and prev at +0x464.
 	// Labels are descriptive; only offsets are target facts.
 	struct ListNode
 	{
@@ -90,6 +91,7 @@ private:
 		unsigned int m_size;
 		unsigned char m_pad[16];
 		ListNode *m_next;
+		ListNode *m_prev;
 	};
 	unsigned char m_pad0[0x448];
 	ListNode m_sentinel;
@@ -203,6 +205,16 @@ bool GeneralAllocator::rva00031BB0(const void *block)
 }
 
 }
+}
+
+// ?Rva00031660Unlink@@YGXPAX@Z @ 0x00031660 (25B):
+// intrusive doubly-linked unlink with next at +0x18 and prev at +0x1C.
+// Caller 0x00033E05 in 0x00033D50; direct double-load shape proves the two
+// one-line stores rather than hoisted temps.
+void __stdcall Rva00031660Unlink(void *node)
+{
+	*(void **)((char *)*(void **)((char *)node + 0x18) + 0x1C) = *(void **)((char *)node + 0x1C);
+	*(void **)((char *)*(void **)((char *)node + 0x1C) + 0x18) = *(void **)((char *)node + 0x18);
 }
 
 namespace MemoryPool

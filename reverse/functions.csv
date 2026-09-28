@@ -40060,3 +40060,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0041A4A7@Rva0041A3F7@@QAEXXZ,,0x0041A4A7,33,Code/GameEngine/Source/Common/NarrowStringRecord16DequePop.cpp,matched,deque pop_front fast 16B inline string dtor
 ?rva00031680@GeneralAllocator@Allocator@EA@@QAEPAXPBX@Z,,0x00031680,47,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,GeneralAllocator this via callers 0x31BB0 0x31D00 0x32920 sentinel list
 ?rva00031BB0@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z,,0x00031BB0,51,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,GeneralAllocator this passthrough caller 0x3324E calls 0x31680
+?Rva00031660Unlink@@YGXPAX@Z,,0x00031660,25,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,intrusive unlink next 0x18 prev 0x1C caller 0x33E05
