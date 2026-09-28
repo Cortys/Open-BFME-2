@@ -40229,3 +40229,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B1F9@BfmeThingEFC@@QAEXXZ,,0x0039B1F9,19,Code/GameEngine/Source/Common/Rva0039B1F9Refresh.cpp,matched,refresh m_f8 via bfmeCalcEFC of src plus24 caller 0xB21F
 ?rva0039B20C@Rva0039B20C@@QAEXPAX@Z,,0x0039B20C,27,Code/GameEngine/Source/Common/Rva0039B20CSetter.cpp,matched,conditional setter cache plus24 refresh efc plus2C four callers
 ?rva0039B718@Rva0039B709@@QAEIXZ,,0x0039B718,19,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,fallback getter F0 else global40 two callers same class
+??1?$vector@URva004F69C3@@V?$allocator@URva004F69C3@@@_STL@@@_STL@@QAE@XZ,,0x004F8832,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva004F69C3_dtor.cpp,matched,dtor via _Destroy 0x40DCF1 and free 0x30830 same shape Rva005F8F96 caller 0x4FA33D
