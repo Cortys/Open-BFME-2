@@ -40473,3 +40473,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_fill_n@PAVRva00064640Record@@IV1@@_STL@@YAPAVRva00064640Record@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00469CC8,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00064640_fill_n.cpp,matched,0x1c stride fill via rowed _Construct 0x469C73 caller 0x4701B6
 ?rva0053755A@UserPreferences@@QAE?AVAsciiString@@V2@@Z,,0x0053755A,188,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences max WinsVs faction finder via rva0053745E
 ?rva00537616@UserPreferences@@QAE?AVAsciiString@@V2@@Z,,0x00537616,188,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences max LossesVs faction finder via rva00537505
+?rva00142DF0@Rva001431B0@@QAEXXZ,,0x00142DF0,44,Code/GameEngine/Source/Common/System/Rva001431B0Pop.cpp,matched,guarded pop from member vector at 0x13c via empty plus pop_back

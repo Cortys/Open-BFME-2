@@ -2563,3 +2563,5 @@ FUN_00797b03	0x00397B03	134	blocked	setStatus range loop flag ternary setne-vs-b
 FUN_00797429	0x00397429	165	blocked	SSE Coord3D distance loop with string compare needs float layout t=5 model=muse-a4f1
 FUN_007974ce	0x003974CE	233	blocked	233B callback via ebp+8 plus virtuals too big t=5 model=muse-a4f1
 ?rva004598F2@SiegeDockingBehavior@@QAEXPAUCoord3D@@H@Z	0x004598F2	61	blocked	vector bounds with fallback needs register lever t=10 model=muse-2641
+FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm plus pop-eax prolog epilog 24 fns not compiler-emittable; clean-C++ blocked no asm copy per anti-lift t=15 model=muse-408d
+?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z	0x001FF3DC	86	partial	esi-edi swap plus mode in eax vs esi with 0 structural regions t=20 model=muse-8fee score=0.92 stash=reverse/attempts/0x001ff3dc.cpp
