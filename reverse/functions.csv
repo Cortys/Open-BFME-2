@@ -39739,3 +39739,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva0039D8BA@Team@@QAEXPAVObject@@@Z,,0x0039D8BA,18,Code/GameEngine/Source/Common/RTS/TeamRva0039D8BA.cpp,matched,Team entered flag plus ScriptEngine frame cache via Object team callers
 ?rva0039D8D3@Team@@QAEXI@Z,,0x0039D8D3,40,Code/GameEngine/Source/Common/RTS/TeamRva0039D8D3.cpp,matched,Team deadline from ms via fps plus GameLogic frame with 5000 caller
 ?findSpecialPowerModuleInterface@Object@@QBEPAVSpecialPowerModuleInterface@@W4SpecialPowerType@@@Z,,0x00290E22,69,Code/GameEngine/Source/GameLogic/Object/ObjectFindSpecialPowerModuleInterface.cpp,matched,BFME1 donor findSpecialPowerModuleInterface plus BFME2 offsets and finalOverride type at +0x1C
+?rva005D5A7E@Rva005D5A7E@@QBE_NABV1@@Z,,0x005D5A7E,53,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,ordering int then NoCase string 13 callers 12B stride
