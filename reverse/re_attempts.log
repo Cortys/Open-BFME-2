@@ -2699,3 +2699,4 @@ FUN_00a253f0	0x006253F0	146	blocked	EH ctor with new State size 0x124 and vtable
 FUN_007297FB	0x003297FB	68	blocked	68B thiscall list splice with 0x2C links ret-8 no class donor identity loop plus branches t=2 model=muse-spark
 FUN_0072A4A0	0x0032A4A0	27	blocked	27B string copy getter via contested StringBase pin 0x000365F0 narrow_string version wall EH state t=4 model=muse-spark
 ??1Rva0032C3A3@@QAE@XZ	0x0032C3A3	63	blocked	63B vector-like dtor needs EH_prolog plus funclet ours 30B frameless without EH 2 variants O1 EHsc EHs t=10 model=muse-spark
+?rva0029E159@Rva0029E159@@QAEPAU1@ABUSource0029E159@@@Z	0x0029E159	150	partial	global load 6B late plus same size exact 150B t=20 model=muse score=0.96 stash=reverse/attempts/0x0029e159.cpp
