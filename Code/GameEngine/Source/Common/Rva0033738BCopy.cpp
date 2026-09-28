@@ -53,3 +53,10 @@ Rva002E9E70 *Rva00337638Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 
 	char tmp;
 	return f(first, last, result, &tmp, 0);
 }
+typedef Rva002E9E70 *(__cdecl *Rva002E9E70FourArg)(Rva002E9E70 *, Rva002E9E70 *, Rva002E9E70 *, void *);
+Rva002E9E70 *Rva003377A1Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 *result)
+{
+	Rva002E9E70FourArg f = (Rva002E9E70FourArg)Rva00337638Copy;
+	char tmp;
+	return f(first, last, result, &tmp);
+}
