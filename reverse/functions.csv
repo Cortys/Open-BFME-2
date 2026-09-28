@@ -40460,3 +40460,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4Rva0014F699@@QAEAAV0@ABV0@@Z,,0x0014F699,127,Code/GameEngine/Source/Common/Rva0014F699Assign.cpp,matched,0x4C element assign 17 dwords plus rowed 0x424D0 callers 0x14F746 0x14FA2A 0x14FA90
 ?rva0050774A@Rva00507823@@QAEEPBXH@Z,,0x0050774A,17,Code/GameEngine/Source/Common/Rva00507823Check.cpp,matched,chain of 7558 plus slot2 vtable 864010
 ?isColorTaken@GameInfo@@QBE_NHH@Z,,0x003FF34A,42,Code/GameEngine/Source/GameNetwork/GameSlotApparent.cpp,matched,BFME1 GameInfo.cpp color scan with inline color at C
+?Rva00469103Xfer@@YAAAVXfer@@PAV1@PAURva00469103Pair@@@Z,,0x00469103,33,Code/GameEngine/Source/Common/Rva00469124Xfer.cpp,matched,ObjectID plus int pair via XferObjectID then slot 0x90 callers 47403C 47408A

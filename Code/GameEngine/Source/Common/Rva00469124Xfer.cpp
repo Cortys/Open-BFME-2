@@ -41,6 +41,12 @@ public:
 	virtual void slot28();
 	virtual void slot29();
 	virtual Xfer &xferInt(int *value);
+	virtual void slot31();
+	virtual void slot32();
+	virtual void slot33();
+	virtual void slot34();
+	virtual void slot35();
+	virtual Xfer &xferSlot90(int *value);
 };
 enum ObjectID
 {
@@ -59,4 +65,18 @@ Xfer &Rva00469124Xfer(Xfer *xfer, Rva00469124Pair *pair)
 	// slot-0x78 call, so call it through an Xfer&-returning type.
 	Xfer &r = ((Xfer &(__cdecl *)(Xfer *, ObjectID *))XferObjectID)(xfer, (ObjectID *)pair);
 	return r.xferInt(&pair->m_value);
+}
+
+// ?Rva00469103Xfer@@YAAAVXfer@@PAV1@PAURva00469103Pair@@@Z 0x00469103 33B evidence: ObjectID+int pair via rowed XferObjectID 0x3060B2 then slot 0x90 callers 0x47403C 0x47408A
+struct Rva00469103Pair
+{
+	ObjectID m_id;
+	int m_value;
+};
+Xfer &Rva00469103Xfer(Xfer *xfer, Rva00469103Pair *pair)
+{
+	// Same tail-call eax reuse as Rva00469124Xfer above; second field goes
+	// through slot 0x90 instead of slot 0x78.
+	Xfer &r = ((Xfer &(__cdecl *)(Xfer *, ObjectID *))XferObjectID)(xfer, (ObjectID *)pair);
+	return r.xferSlot90(&pair->m_value);
 }
