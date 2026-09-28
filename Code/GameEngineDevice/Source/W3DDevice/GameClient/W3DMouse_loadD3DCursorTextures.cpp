@@ -35,6 +35,7 @@ class W3DRadarResetSurface
 public:
 	~W3DRadarResetSurface();
 	W3DRadarResetSurface &operator=(const W3DRadarResetSurface &rhs);
+	void rva000723AC();
 };
 
 class BFME2ParticleTextureHandle
@@ -111,6 +112,18 @@ W3DRadarResetSurface &W3DRadarResetSurface::operator=(const W3DRadarResetSurface
 		m_surface->Release();
 	m_surface = rhs.m_surface;
 	return *this;
+}
+
+// ?rva000723AC@W3DRadarResetSurface@@QAEXXZ, RVA 0x000723AC, 20B. Release the
+// held COM surface if present and null it. Evidence: caller 0x724AE clears
+// +0x08 via rowed BfmeResetTextureRef::clear then tail-jumps here for +0x0c;
+// same AddRef/Release slots as operator= at 0x72381 in this TU.
+void W3DRadarResetSurface::rva000723AC()
+{
+	if (m_surface) {
+		m_surface->Release();
+		m_surface = 0;
+	}
 }
 
 // ??1BFME2ParticleTextureHandle@@QAE@XZ present-unmatched
