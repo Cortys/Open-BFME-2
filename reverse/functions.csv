@@ -40844,3 +40844,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00517345@@QAE@ABURva0051732A@@@Z,,0x00517345,31,Code/GameEngine/Source/Common/Rva00517345Ctor.cpp,matched,ctor with vtable plus zeroed refcount plus AddRef TargetRef
 ?rva005173CB@Rva005173CB@@QAEPAU1@ABURva0051732A@@@Z,,0x005173CB,45,Code/GameEngine/Source/Common/Rva005173CBSet.cpp,matched,allocating setter via rowed new plus rowed ctor plus AddRef
 ??$uninitialized_fill_n@PAUBfmeStringRecord005DDD40@@IU1@@_STL@@YAPAUBfmeStringRecord005DDD40@@PAU1@IABU1@@Z,,0x005DE088,27,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_fill_n.cpp,matched,unlock fill_n wrapper via rowed 0x005DDDA5
+?rva004075E0@Rva004075E0@@QAE?AURva004075E0Iter@@PAURva004075E0Node@@0ABURva004075E0Key@@0@Z,,0x004075E0,136,Code/GameEngine/Source/Common/Rva004075E0.cpp,matched,unlock tree insert uintbool via rowed create node and Rebalance
