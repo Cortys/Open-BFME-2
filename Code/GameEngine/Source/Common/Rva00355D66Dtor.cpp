@@ -74,3 +74,20 @@ Rva00355D66::~Rva00355D66()
 		TheWindowManager->managerSlot35(m_win);
 	m_win = 0;
 }
+
+// ??1Rva00355DC5@@UAE@XZ @0x00355DC5 15B
+// Derived dtor (vtable 0x00814E74) tail-jumping to base 0x00355D66.
+// Evidence: clears +0x10 then stores vtable then jmp base; deleting dtor at
+// 0x00356066 calls here; chain of 0x00355D66.
+class Rva00355DC5 : public Rva00355D66
+{
+public:
+	virtual ~Rva00355DC5();
+private:
+	int m_extra;
+};
+
+Rva00355DC5::~Rva00355DC5()
+{
+	m_extra = 0;
+}
