@@ -40703,3 +40703,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001E3459@Rva001E3459@@QAEXH_N@Z,,0x001E3459,31,Code/GameEngine/Source/Common/Rva001E3459Flag.cpp,matched,flag bit set clear at 0x44
 ?rva001E3F08@Rva001E3F08@@QAEMPAURva001E3F08Arg@@@Z,,0x001E3F08,31,Code/GameEngine/Source/Common/Rva001E3F08Calc.cpp,matched,float product with global DBA4F8
 ?push_back@?$vector@VUnicodeString@@V?$allocator@VUnicodeString@@@_STL@@@_STL@@QAEXABVUnicodeString@@@Z,,0x0005CBE7,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_unicode_push_back.cpp,matched,unlock lane via rowed Construct 54DF6 and overflow 5B538 same 55B as AsciiString pushback
+??0Rva0055A246@@QAE@XZ,,0x0055A246,56,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,array-new Coord3D 4 plus SSE zero loop caller 0x5C76CD
