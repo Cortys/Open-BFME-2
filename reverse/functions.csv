@@ -40752,3 +40752,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003C90B1Exit@@YGXPAVParameter@@@Z,,0x003C90B1,44,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C90B1Exit.cpp,matched,unit named then aiExit null script
 ?rva00528309@Rva00528309@@QAEXXZ,,0x00528309,64,Code/GameEngine/Source/Common/Rva00528309Clear.cpp,matched,pop loop count 0xD8 stride 12 clears 0xAD6F4 0x2BED91 or -1
 ?rva005283E3@Rva00528309@@QAEXXZ,,0x005283E3,21,Code/GameEngine/Source/Common/Rva00528309Clear.cpp,matched,calls 0x528309 then zeroes 0x14 0x1C 0x20 same class
+?Rva004F838CDestroy@@YAXPAURva004F691E@@0@Z,,0x004F838C,25,Code/GameEngine/Source/Common/Rva004F838CDestroy.cpp,matched,unlock Destroy stride12 via dtor 4F691E callers vector dtors
