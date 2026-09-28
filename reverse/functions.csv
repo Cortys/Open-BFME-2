@@ -40043,3 +40043,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??$__uninitialized_copy@PBUBfmeStringRecord005ED5F3@@PAU1@@_STL@@YAPAUBfmeStringRecord005ED5F3@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x005ED886,38,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ed5f3_allocate_copy.cpp,matched,copy 005ED5F3 via rowed Construct 0x005ED68C stride 0x14
 ?rva004DFB55@Rva004DFB55@@QAEXPAVCreateAHeroData@@@Z,,0x004DFB55,41,Code/GameEngine/Source/Common/Rva004DFB55HeroRemover.cpp,matched,hero vector find erase via rowed find and voidptr erase frameless
 ?rva004DF2E2@Rva004DF2E2@@QAEXXZ,,0x004DF2E2,13,Code/GameEngine/Source/Common/Rva004DF2E2StatusSetter.cpp,matched,deck offset true via rowed setStatus frameless
+?rva004DF2EF@Rva004DF2E2@@QAEXXZ,,0x004DF2EF,13,Code/GameEngine/Source/Common/Rva004DF2E2StatusSetter.cpp,matched,deck offset false via rowed setStatus twin

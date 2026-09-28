@@ -54,9 +54,18 @@ private:
 	Object *m_obj08; // +0x08
 public:
 	void rva004DF2E2();
+	void rva004DF2EF();
 };
 
 void Rva004DF2E2::rva004DF2E2()
 {
 	m_obj08->setStatus(OBJECT_STATUS_DECK_HEIGHT_OFFSET, true);
+}
+
+// @0x004DF2EF 13B. Clears DECK_HEIGHT_OFFSET (0x1d) to false on the same
+// Object at this+8 via rowed setStatus; caller at 0x004DF31B passes its own
+// this with no stack args; twin of rva004DF2E2 differing only by Bool false.
+void Rva004DF2E2::rva004DF2EF()
+{
+	m_obj08->setStatus(OBJECT_STATUS_DECK_HEIGHT_OFFSET, false);
 }
