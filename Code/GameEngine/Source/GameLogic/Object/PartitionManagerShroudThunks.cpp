@@ -32,6 +32,12 @@ public:
 	void bfmeDropYQ(BfmeThingYQ *t);
 };
 
+class BfmeP1050
+{
+public:
+	void bfmeFwd1050(int a, int b, int c, int d, int e);
+};
+
 class ShroudManager
 {
 public:
@@ -67,6 +73,7 @@ public:
 	void rva00625310(int value);
 	void rva00625320(void *ptr);
 	void rva00625330(void *ptr);
+	void rva00625340(int a, int b, int c);
 	// Retail 0x007397A0 forwards to ShroudManagerImpl008FBA40::setEnabled_Rva0073B460
 	// (single-byte enabled flag at +0x68). Identity unproven, honest address name.
 	void rva007397A0(bool value);
@@ -121,6 +128,11 @@ void PartitionManager::rva00625320(void *ptr)
 void PartitionManager::rva00625330(void *ptr)
 {
 	((Gen009F5040 *)m_shroudManager)->bfmeDropYQ((BfmeThingYQ *)ptr);
+}
+
+void PartitionManager::rva00625340(int a, int b, int c)
+{
+	((BfmeP1050 *)m_shroudManager)->bfmeFwd1050(a, b, 0, c, 0);
 }
 
 // ?rva007397A0@PartitionManager@@QAEX_N@Z
