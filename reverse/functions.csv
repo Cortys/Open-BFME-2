@@ -40478,3 +40478,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva00342228@@UAEPAXI@Z,,0x00342FB1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-334e.cpp,matched,slot 0 vtable 0x00811900 rowed dtor 0x00342228
 ?Rva0014F746CopyBackward@@YAPAVRva0014F699@@PAV1@00PAXH@Z,,0x0014F746,50,Code/GameEngine/Source/Common/Rva0014F746CopyBackward.cpp,matched,copy_backward via rowed 0x0014F699 dummy tag args caller 0x0014FA20 pushes 5
 ?Rva0014FA0DCopyBackward@@YAXPAVRva0014F699@@00@Z,,0x0014FA0D,29,Code/GameEngine/Source/Common/Rva0014FA0DCopyBackward.cpp,matched,wrapper to rowed 0x0014F746 tag plus null caller 0x001509D3
+?rva002E6B89@Object@@QAE_NXZ,,0x002E6B89,24,Code/GameEngine/Source/GameLogic/Object/ObjectRva002E6B89.cpp,matched,proven Object visit-stamp plus224 vs global DFECD0 9 callers test al al bool
