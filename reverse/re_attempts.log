@@ -2670,3 +2670,4 @@ FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no
 FUN_009f1295	0x005F1295	10	blocked	only EH prolog visible no ret; Ghidra 10 vs 11 bytes-to-next; true end unprovable from packet; callers are deleting dtors 0x005F12FE 0x005F13CC t=8 model=muse-02
 FUN_00818F7D	0x00418F7D	160	blocked	INI attack priority parse with EH throw t=12 model=muse-01
 ?rva002D370A@RadarWindowOverrideSource@@QAEXXZ	0x002D370A	19	partial	cmp-mem-vs-mov-test t=12 model=muse-01 score=0.95 stash=reverse/attempts/0x002d370a.cpp
+?push_front@?$list@UBfmeStringRecord00415F34@@V?$allocator@UBfmeStringRecord00415F34@@@_STL@@@_STL@@QAEXABUBfmeStringRecord00415F34@@@Z	0x0041691F	26	partial	extra mov edx ecx before load ours 28B vs retail 26B t=8 model=muse-10 score=0.92 stash=reverse/attempts/0x0041691f.cpp
