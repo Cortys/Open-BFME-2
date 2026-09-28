@@ -40827,3 +40827,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva005C3549@@UAEPAXI@Z,,0x005C367B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-5C367B.cpp,matched,deleting dtor slot 0 calls 0x005C3549 plus delete
 ?rva003C0F09@ScriptActions@@IAEXABVAsciiString@@H@Z,,0x003C0F09,59,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0F09.cpp,matched,honest team flag pair at 0x110 plus 0x111 via getTeamNamed pin
 ?rva003C0091@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C0091,61,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0091.cpp,matched,honest audio trigger-area call via slot 0x178 and trigger pin
+?rva004031C9@AttributeModifierPoolUpdate@@QAEHH@Z,,0x004031C9,20,Code/GameEngine/Source/Common/AttributeModifierPoolUpdateRva.cpp,matched,index checked fetch via caller 0x0040327B
