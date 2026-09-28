@@ -2696,3 +2696,4 @@ FUN_00a253f0	0x006253F0	146	blocked	EH ctor with new State size 0x124 and vtable
 ?rva00355FF9@@QAE	0x00355FF9	109	blocked	x87 string mouse 5 globals 4 vslots needs layout t=3 model=muse-06
 ??0Rva0010F155@@QAE@VRva0036CA00Str@@@Z	0x0010F155	48	blocked	ctor store-order wall: retail mov [esi+4] 0 after lea-ecx before vtable store; single-class O2 emits vtable first; base model emits mov too early; tried O1 O2 G7 G6 plus base; 48B 15of15 insns same bytes swapped t=15 model=muse-06
 ?rva0004F580@Rva0004F580@@QAEXXZ	0x0004F580	600	blocked	600B W3DRadar shroud copy needs donor t=25 model=muse-06
+FUN_007297FB	0x003297FB	68	blocked	68B thiscall list splice with 0x2C links ret-8 no class donor identity loop plus branches t=2 model=muse-spark

@@ -40915,3 +40915,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005DDC6B@Rva005DDC6B@@QAEMII@Z,,0x005DDC6B,58,Code/GameEngine/Source/Common/Rva005DDC6BSum.cpp,matched,unlock float range sum via counted buffer
 ?rva005E2D74@Rva005E2D74@@QAEHPAD@Z,,0x005E2D74,22,Code/GameEngine/Source/Common/Rva005E2D74.cpp,matched,unlock byte plus pair write plus 1
 ?rva0015148D@Rva0015148D@@QAEPAXXZ,,0x0015148D,37,Code/Libraries/Source/WWVegas/WW3D2/Rva0015148DGetter.cpp,matched,ref-holder getter via Is_Initialized Ensure slots
+?Rva0032AF56Destroy@@YAXPAVRva00329D0E@@0@Z,,0x0032AF56,25,Code/GameEngine/Source/Common/Rva0032AF56Destroy.cpp,matched,array destroy range over Rva00329D0E calls rowed dtor
