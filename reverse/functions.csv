@@ -40381,3 +40381,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva005D4EC6@@QAE@XZ,,0x005D4EC6,72,Code/GameEngine/Source/Common/Rva005D4EC6Dtor.cpp,matched,chain lane member dtor via rowed Holder 0x5F4AD7 plus direct Release plus base 0x57C3B6
 ??0Rva0040C351@@QAE@XZ,,0x0040C351,77,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,derived of 0x0037DF2C plus dual-vtable member plus zeros
 ?getMultiLogicalBonePosition@Object@@QBEHPBDHPAUCoord3D@@PAVMatrix3D@@_NH@Z,,0x0028BF81,120,Code/GameEngine/Source/GameLogic/Object/ObjectGetSingleLogicalBonePosition.cpp,matched,BFME1 Object.cpp getMultiLogicalBonePosition 6-arg with BFME2 extra param
+?rva00625840@Rva00625840@@QAEXXZ,,0x00625840,40,Code/GameEngine/Source/Common/Rva00625840Init.cpp,matched,twin of Rva009A2350 init with head at +0x120 and Object+0x4c8 callers
