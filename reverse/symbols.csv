@@ -6163,3 +6163,4 @@ rva009C7380WeightPairs,0x009B84E0
 ?erase@?$vector@PAVCreateAHeroData@@V?$allocator@PAVCreateAHeroData@@@_STL@@@_STL@@QAEPAPAVCreateAHeroData@@PAPAV3@@Z,0x0025BF5D,ICF twin of ObjectID erase at same address via matched call site 0x0025BF8C
 ??1?$pair@$$CBHURva004D1B38Mapped@@@_STL@@QAE@XZ,0x0029D7C2,erase 0x004D1B38 calls it for value at node+16 ICF-shared with CameraMarker
 ??1Rva002DFC30@@QAE@XZ,0x0029D7C2,Rva _Destroy element teardown; stride-0xC range destroy at 0x331FF1 calls it per element; address rowed as ??1CameraMarker whose identical bytes serve this teardown (ICF)
+??1BfmeStringRecord005DDD40@@QAE@XZ,0x005B804E,ICF twin of UnicodeString dtor at 0x5B804E; 5B jmp to releaseBuffer 0x36E70; record holds UnicodeString plus word
