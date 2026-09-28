@@ -2512,3 +2512,4 @@ FUN_004855D1	0x000855D1	121	blocked	angle normalize in place via EAX pointer: if
 ??0Rva0035973D@@QAE@XZ	0x0035973D	79	blocked	EH map order needs placement-new after baseConstruct plus manual vtable t=12 model=muse
 FUN_008d7cb9	0x004D7CB9	45	blocked	eax-incoming plus 3 stack min-frame helper no donor t=12 model=muse-4aba
 ?rva005EC52E@Rva005EC52E@@QAE_NABU1@@Z	0x005EC52E	102	blocked	custom 8B pair comparator with flag bit 0x4000000 plus 0x9c key plus AsciiString less; 5 probe variants frameless vs EBP and shr vs and wall t=25 model=muse-4da0
+FUN_008b9c4d	0x004B9C4D	313	blocked	static getLocalEffectPos needs same-TU onBodyDamageStateChange for reg convention plus EH SSE vector-new t=15 model=muse-p7q
