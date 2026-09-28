@@ -35,4 +35,6 @@ struct Rva004D1B38Mapped
 typedef _STL::pair<const int, Rva004D1B38Mapped> Rva004D1B38Pair;
 typedef _STL::_Rb_tree<int, Rva004D1B38Pair, _STL::_Select1st<Rva004D1B38Pair>, _STL::less<int>, _STL::allocator<Rva004D1B38Pair> > Rva004D1B38Tree;
 
+// ?clear@?$_Rb_tree@HU?$pair@$$CBHURva004D1B38Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva004D1B38Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva004D1B38Mapped@@@_STL@@@2@@_STL@@QAEXXZ @ 0x004D1EF1 (41B).
 template void Rva004D1B38Tree::_M_erase(Rva004D1B38Tree::_Link_type);
+template void Rva004D1B38Tree::clear();
