@@ -7,6 +7,7 @@ class Object;
 class Rva0040327B
 {
 public:
+	void *rva0040327B(Object *obj);
 	void *rva004032D3(Object *obj);
 };
 extern "C" void _ReadWriteBarrier();
@@ -14,12 +15,28 @@ extern "C" void _ReadWriteBarrier();
 class Rva002147D1
 {
 public:
+	void *rva002147A1(int index, Object *obj);
 	void *rva002147D1(int index, Object *obj);
 private:
 	char _pad[0x0C];
 	int m_begin;
 	int m_end;
 };
+// ?rva002147A1@Rva002147D1@@QAEPAXHPAVObject@@@Z retail 0x002147A1 48B sibling
+// of 0x002147D1 differing only by callee rva0040327B vs rva004032D3; same
+// guarded fetch via barrier reload. Evidence: chain from 0x0040327B.
+void *Rva002147D1::rva002147A1(int index, Object *obj)
+{
+	if (index < 0)
+		return 0;
+	if ((unsigned)index > (unsigned)((m_end - m_begin >> 2) - 1))
+		return 0;
+	_ReadWriteBarrier();
+	Rva0040327B *slot = *(Rva0040327B **)(m_begin + index * 4);
+	if (slot != 0)
+		return slot->rva0040327B(obj);
+	return 0;
+}
 void *Rva002147D1::rva002147D1(int index, Object *obj)
 {
 	if (index < 0)
