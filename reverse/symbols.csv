@@ -6212,3 +6212,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??1BfmeStringRecord00568CE0@@QAE@XZ,0x00568C4E,ICF twin of rowed Rva00568C4E 53B stride-0x14 Destroy 0x569A5B calls it per element
 ??4?$vector@IV?$allocator@I@_STL@@@_STL@@QAEAAV01@ABV01@@Z,0x0026F4F4,vector uint assign folded 4B ICF-twin of int row via caller 0x002ACD09
 ??$__uninitialized_copy@PAUBfmeStringRecord00568CE0@@PAU1@@_STL@@YAPAUBfmeStringRecord00568CE0@@PAU1@00ABU__false_type@0@@Z,0x00569079,ICF twin of rowed PBU worker at this address G7 insert overflow calls it
+??RRva00418BFBComp@@QBE_NPBX0@Z,0x00418BB7,twin of rowed free less via caller 0x00418BFB empty-this identical body
