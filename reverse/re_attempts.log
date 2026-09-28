@@ -2637,3 +2637,5 @@ FUN_007063A9	0x003063A9	112	blocked	EH StringBase Xfer body needs globals and rv
 ??1Rva000D1BA6@@UAE@XZ	0x000D1BA6	68	blocked	dtor needs globals 0x9FF190 0x9EBC38 names beyond lookup budget t=12 model=muse-09
 ?rva002AE53E@Rva000427195@@QAEXXZ	0x002AE53E	57	blocked	same 57B clear-free EH wall as 0x001F8D70 no base call t=5 model=muse-10
 ?Rva002ADD75Equal@@YA_NPBUAsciiRange002ADD75@@0@Z	0x002ADD75	61	partial	setne vs jexorinc bool return plus xor-al vs xor-eax t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x002add75.cpp
+?rva00066E69@Rva00066E69@@QAE	0x00066E69	591	blocked	591B terrain max-filter: this+0x37C0 table else default VA 0xBBAEAC; floor IAT msvcr71 twice with fistp grid walk; ushort table movzx maxss reductions times VA 0xBC596C; x87 fld return; ret 8 two ptr args; needs donor plus float scale consts t=10 model=muse-12
+?rva0006AA45@Rva0006AA45@@QAE	0x0006AA45	260	blocked	terrain normal via 4x 0x0006653B central differences plus Inv_Sqrt normalize; BLOCKED on 4 float const values VA 0xBC596C 0xBC5CCC 0xBC5D00 0xBC5CFC unknowable from packet; hypothesis C00 equals CFC equals 1.0 up-component t=12 model=muse-12
