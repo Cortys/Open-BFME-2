@@ -71,6 +71,7 @@ public:
 	bool rva000329E0(int level);				// ValidateHeap-like
 	unsigned int rva00032A20(const void *block);		// GetUsableSize-like
 	void *rva00031680(const void *block);	// intrusive-list search unblocking 0x31BB0 0x31D00 0x32920
+	bool rva00031BB0(const void *block);	// small-block fencepost check via 0x31680 caller 0x3324E
 	void rva000338F0(void *block);				// Free-like
 	void *rva00035080(unsigned int size, int flags);	// Malloc-like
 	void *rva00035190(void *block, unsigned int size, int flags);	// Realloc-like
@@ -177,6 +178,28 @@ void *GeneralAllocator::rva00031680(const void *block)
 		cur = cur->m_next;
 	}
 	return 0;
+}
+
+// ?rva00031BB0@GeneralAllocator@Allocator@EA@@QAE_NPBX@Z @ 0x00031BB0 (51B):
+// small-block check calling 0x00031680 then requiring the address to lie in
+// the last 0x10 bytes of the containing node. Class proven by this
+// pass-through (ecx preserved for the 0x31680 call) and caller 0x0003324E
+// passing GeneralAllocator this; bool return from al 1/0 shape.
+bool GeneralAllocator::rva00031BB0(const void *block)
+{
+	unsigned int size = *(const unsigned int *)((const char *)block + 4) & 0x7FFFFFF8;
+	if (size < 0x10)
+	{
+		void *node = rva00031680(block);
+		if (node != 0)
+		{
+			unsigned int nodeSize = *(unsigned int *)((char *)node + 4);
+			const void *limit = (const char *)node + nodeSize - 0x10;
+			if ((unsigned int)block >= (unsigned int)limit)
+				return true;
+		}
+	}
+	return false;
 }
 
 }
