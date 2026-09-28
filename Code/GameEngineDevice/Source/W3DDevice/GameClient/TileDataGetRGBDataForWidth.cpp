@@ -16,6 +16,7 @@ typedef unsigned char UnsignedByte;
 class RefCountClass
 {
 public:
+	RefCountClass() : m_refs(1) {}
 	virtual ~RefCountClass();
 	virtual void Delete_This();
 private:
@@ -25,6 +26,7 @@ private:
 class TileData : public RefCountClass
 {
 public:
+	TileData();
 	UnsignedByte m_tileData[0x2000];
 	UnsignedByte m_tileDataMip32[0x800];
 	UnsignedByte m_tileDataMip16[0x200];
@@ -32,6 +34,7 @@ public:
 	UnsignedByte m_tileDataMip4[0x20];
 	UnsignedByte m_tileDataMip2[0x8];
 	UnsignedByte m_tileDataMip1[0x4];
+	int m_2AB4;
 	UnsignedByte *getRGBDataForWidth(Int width);
 };
 
@@ -51,4 +54,9 @@ UnsignedByte *TileData::getRGBDataForWidth(Int width)
 	if (width == TILE_PIXEL_EXTENT_MIP5) return m_tileDataMip2;
 	if (width == TILE_PIXEL_EXTENT_MIP6) return m_tileDataMip1;
 	return m_tileData;
+}
+
+TileData::TileData()
+{
+	m_2AB4 = 0;
 }
