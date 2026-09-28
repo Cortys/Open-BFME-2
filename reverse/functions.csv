@@ -39737,3 +39737,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva0028C1CC@Object@@QBE_NXZ,,0x0028C1CC,67,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C1CC.cpp,matched,Object owner via callers 0x493645 0x438152 plus rowed callees and globals 0xDBA4E4 0xDFE78C
 ?Rva0039D8FBLess@@YAHABURva0039D8FBKey@@0@Z,,0x0039D8FB,36,Code/GameEngine/Source/Common/RTS/TeamRva0039D8FB.cpp,matched,TeamFactory pair key comparator via RB-tree callers and twin 0x169F50 with O1 tail
 ?rva0039D8BA@Team@@QAEXPAVObject@@@Z,,0x0039D8BA,18,Code/GameEngine/Source/Common/RTS/TeamRva0039D8BA.cpp,matched,Team entered flag plus ScriptEngine frame cache via Object team callers
+?rva0039D8D3@Team@@QAEXI@Z,,0x0039D8D3,40,Code/GameEngine/Source/Common/RTS/TeamRva0039D8D3.cpp,matched,Team deadline from ms via fps plus GameLogic frame with 5000 caller
