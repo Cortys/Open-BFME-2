@@ -40626,3 +40626,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00306769Forward@@YGXPAX@Z,,0x00306769,25,Code/GameEngine/Source/Common/Rva00306769Forward.cpp,matched,stdcall null-checked forward to manager slot 25 via global 0x9FF080 caller dtor 0xD1BA6
 ??0Rva0036CB94@@QAE@HHHH_N@Z,,0x0036CB94,49,Code/GameEngine/Source/Common/Rva0036CB94Ctor.cpp,matched,stack struct ctor callers 0x379788 0x37FCD8 arg to 0x372571
 ?Rva004ED0D7Assign@@YAXPAVModelNodeClass@HLodClass@@PBV12@@Z,,0x004ED0D7,18,Code/Libraries/Source/WWVegas/WW3D2/HLodModelNodeAssign.cpp,matched,guarded ModelNode copy via rowed operator= stride 0x14
+?Rva0028867DCheck@@YA_NPBX@Z,,0x0028867D,37,Code/GameEngine/Source/Common/Rva0028867DCheck.cpp,matched,ESI static helper via TheBfmeGlob gate plus adjacent byte getters
