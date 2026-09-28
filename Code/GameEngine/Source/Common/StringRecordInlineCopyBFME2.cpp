@@ -116,6 +116,24 @@ template void _STL::_Construct<BfmeStringRecord005D511F,BfmeStringRecord005D511F
 // Range destroy over 0x14-byte record via rowed dtor 0x005D51B9 in this TU. Callers 0x005D5434 and 0x005D5473.
 template void _STL::_Destroy<BfmeStringRecord005D511F *>(BfmeStringRecord005D511F *, BfmeStringRecord005D511F *);
 
+extern "C" void free(void *ptr);
+
+// ??1BfmeRecordRange005D5473@@QAE@XZ retail 0x005D5473 30B.
+// Owning two-pointer range over BfmeStringRecord005D511F: destroy via rowed _Destroy 0x005D541B then free via 0x00030830.
+// Same frameless shape as BfmeRecordRange004B205 at 0x0004B205. Caller 0x005D5491.
+struct BfmeRecordRange005D5473 {
+    BfmeStringRecord005D511F *m_begin;
+    BfmeStringRecord005D511F *m_end;
+    ~BfmeRecordRange005D5473();
+};
+BfmeRecordRange005D5473::~BfmeRecordRange005D5473()
+{
+    _STL::_Destroy(m_begin, m_end);
+    if (m_begin != 0) {
+        free(m_begin);
+    }
+}
+
 // Retail 0x00111ACF copies strings at +0 and +0x18, a word at +4,
 // then the four-float subobject at +8 through its observed x87 loop.
 struct BfmeStringRecord00111ACF {
