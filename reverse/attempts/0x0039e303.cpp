@@ -1,23 +1,22 @@
 // ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z
-// partial score=0.9 date=2026-09-28
+// partial score=0.98 date=2026-09-28
 // ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z
-// partial score=0.9 date=2026-09-28
+// partial score=0.98 date=2026-09-28
 // cl: /O1 /DNDEBUG /MD
 //
-// ?didPartialEnter@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E20D (123B).
-// ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E288 (123B).
 // ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E303 (197B).
-// Team::didPartialEnter(): returns true when a considered member has entered
-// the trigger. Retail guard is the byte at Team+0x5c; the member walk uses the
-// pinned iterate_TeamMemberList at 0x263864 and the pinned DLINK advance at
-// 0x263526, asking the pinned Object::didEnter at 0x28D718. Retail filter is
-// AI at Object+0x258 with surfaces at AI+0x1DC tested against 1<<which, ground
-// units via (1<<which)&1, dead bit at Object+0x438 bit0, then template at
-// Object+0x04 with kind byte at +0x113 bit 2. BFME1 donor
-// reference/open-bfme-1/Code/GameEngine/Source/Common/RTS/TeamTriggerAreaTests.cpp:164
+// Team::didAllExit(): true when a considered member exited and none remains
+// inside. Retail guard is the byte at Team+0x5c; the member walk uses the
+// rowed iterate_TeamMemberList at 0x263864 and the pinned DLINK advance at
+// 0x263526, asking the pinned Object::didExit at 0x28D757 plus the rowed
+// Object::isInside at 0x28B411. Retail filter is AI at Object+0x258 with
+// surfaces at AI+0x1DC tested against 1<<which, ground units via (1<<which)&1,
+// dead bit at Object+0x438 bit0, then template at Object+0x04 with kind bytes
+// at +0x113 bit2 and +0x118 bit0x40. BFME1 donor
+// reference/open-bfme-1/Code/GameEngine/Source/Common/RTS/TeamTriggerAreaTests.cpp:228
 // proves the name and loop; BFME2 deltas are the non-const signature plus the
-// +0x5c/+0x258/+0x1DC/+0x438/+0x04/+0x113 layout and the shift filter above.
-// Callers at 0x003E6E60 and 0x003E700A pass Team ECX with trigger/type args.
+// +0x5c/+0x258/+0x1DC/+0x438/+0x04/+0x113/+0x118 layout and the shift filter
+// above. Callers at 0x003E6EC6 and 0x003E7024 pass Team ECX with trigger/type args.
 
 typedef unsigned int UnsignedInt;
 
@@ -54,7 +53,6 @@ struct ThingTemplate
 class Object
 {
 public:
-	bool didEnter(PolygonTrigger *pTrigger);
 	bool didExit(PolygonTrigger *pTrigger);
 	bool isInside(PolygonTrigger *pTrigger);
 
@@ -71,70 +69,12 @@ class Team
 {
 public:
 	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
-	bool didPartialEnter(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
-	bool didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool didAllExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 
 private:
 	unsigned char m_pad[0x5c];
 	bool m_enteredOrExited;
 };
-
-bool Team::didPartialEnter(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
-{
-	if (!m_enteredOrExited)
-		return false;
-
-	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
-		Object *cur = iter.cur();
-		AIUpdateInterface *ai = cur->m_ai;
-		if (ai) {
-			UnsignedInt mask = 1u << whichToConsider;
-			if ((ai->m_surfaces & mask) == 0)
-				continue;
-		} else {
-			unsigned char mask8 = (unsigned char)(1u << whichToConsider);
-			if ((mask8 & 1) == 0)
-				continue;
-		}
-		if ((cur->m_dead & 1) != 0)
-			continue;
-		ThingTemplate *tmpl = cur->m_template;
-		if ((tmpl->m_kindByte113 & 2) != 0)
-			continue;
-		if (cur->didEnter(pTrigger))
-			return true;
-	}
-	return false;
-}
-
-bool Team::didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
-{
-	if (!m_enteredOrExited)
-		return false;
-
-	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
-		Object *cur = iter.cur();
-		AIUpdateInterface *ai = cur->m_ai;
-		if (ai) {
-			UnsignedInt mask = 1u << whichToConsider;
-			if ((ai->m_surfaces & mask) == 0)
-				continue;
-		} else {
-			unsigned char mask8 = (unsigned char)(1u << whichToConsider);
-			if ((mask8 & 1) == 0)
-				continue;
-		}
-		if ((cur->m_dead & 1) != 0)
-			continue;
-		ThingTemplate *tmpl = cur->m_template;
-		if ((tmpl->m_kindByte113 & 2) != 0)
-			continue;
-		if (cur->didExit(pTrigger))
-			return true;
-	}
-	return false;
-}
 
 // ?didAllExit@Team@@QAE_NPAVPolygonTrigger@@I@Z present-unmatched
 bool Team::didAllExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
