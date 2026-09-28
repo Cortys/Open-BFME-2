@@ -40755,3 +40755,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004F838CDestroy@@YAXPAURva004F691E@@0@Z,,0x004F838C,25,Code/GameEngine/Source/Common/Rva004F838CDestroy.cpp,matched,unlock Destroy stride12 via dtor 4F691E callers vector dtors
 ?rva002AE252@Player@@QAEXXZ,,0x002AE252,155,Code/GameEngine/Source/Common/RTS/PlayerRva002AE252.cpp,matched,Player science init via reset assign get addScience notify int fold
 ?rva002AE2ED@Player@@QAEXPAV1@@Z,,0x002AE2ED,43,Code/GameEngine/Source/Common/RTS/PlayerRva002AE252.cpp,matched,Player grant sciences from other via addScience 0x2AD661
+?rva00271A0F@Rva00271A0F@@QAEXPAVXfer@@@Z,,0x00271A0F,113,Code/GameEngine/Source/Common/Rva00271A0FXfer.cpp,matched,chain xfer lightCRC Version1 four triples uint char bool
