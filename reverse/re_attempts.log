@@ -2648,3 +2648,4 @@ FUN_0095a04c	0x0055A04C	59	blocked	TheGameText fetch plus3C with table 0xDD2344 
 FUN_009645fe	0x005645FE	144	blocked	x87 FX chain needs global 0x9FEC50 name plus virtual slot 0x18 plus doFXPos exact beyond budget t=12 model=muse-09
 FUN_0096405c	0x0056405C	144	blocked	sibling of 0x5645FE same global plus x87 wall t=5 model=muse-09
 FUN_00516F08	0x00516F08	25	blocked	needs data global 0xA02320 name t=5 model=muse-09
+?Rva004F6B8DCopy@@YAPAURva004F6966@@PBU1@0PAU1@@Z	0x004F6B8D	38	partial	esi edi swap for dst src adds t=15 model=muse-10 score=0.95 stash=reverse/attempts/0x004f6b8d.cpp
