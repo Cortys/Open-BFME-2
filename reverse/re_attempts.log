@@ -2359,3 +2359,5 @@ FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm 
 FUN_0045407E	0x0005407E	41	blocked	AudioSettings.ini INI-load wrapper needs MilesAudioManager layout plus INI+8 field meaning t=10 model=muse-829b
 FUN_008d7744	0x004D7744	535	blocked	StateMachine xfer version 1-4 with owner at +0x14 plus ObjectID at +0x34 plus 3 bools plus goalRange; chaining via Xfer& returns plus interleaved pushes needs layout evidence and stronger model t=15 model=muse-42e3
 ?rva00318F42@Drawable@@QBEHXZ	0x00318F42	34	blocked	two getWheelInfo calls reuse ecx with no spill or reload; declared-only callee spills via esi-edx across O1 O2 Os Ob0 plus test-setg vs sar-sbb-neg t=20 model=muse-f6b6
+?rva00222A33@Rva00222A33@@QAEXH@Z	0x00222A33	32	blocked	lea-reuse plus esi push-pop vs direct mov-add across O1 Os EHsc with int and ptr models t=15 model=muse-f6b6
+?rva0043C8E4@GameWindow@@QAEXHH@Z	0x0043C8E4	79	blocked	frameless vs frame plus deferred add10 vs add0c-pop plus fresh 8 pushes vs 7-reuse across O1 Oy- Os t=25 model=muse-f6b6
