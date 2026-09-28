@@ -12,6 +12,7 @@
 class Rva0025BFE3
 {
 public:
+	Rva0025BFE3();
 	virtual ~Rva0025BFE3();
 
 private:
@@ -21,8 +22,17 @@ private:
 class Rva00596069 : public Rva0025BFE3
 {
 public:
+	Rva00596069();
 	virtual ~Rva00596069();
 };
+
+// ??0Rva00596069@@QAE@XZ, retail 0x00596057, 18 bytes. Derived default ctor
+// abutting its dtor at 0x00596069: calls base Rva0025BFE3 ctor at 0x0025BFC7,
+// stores derived vtable 0x00870A40, returns this. No extra members.
+// Caller at 0x004E0387 constructs this.
+Rva00596069::Rva00596069() : Rva0025BFE3()
+{
+}
 
 Rva00596069::~Rva00596069()
 {
