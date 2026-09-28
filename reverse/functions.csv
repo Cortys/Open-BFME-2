@@ -39969,3 +39969,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0041534B@Rva00056F61@@QAE?AURva0041534BIter@@PBVAsciiString@@@Z,,0x0041534B,27,Code/GameEngine/Source/GameClient/Rva00056F61IterFind.cpp,matched,find iterator over rowed Rva00056F61 find via callers at 0x00223D02 and 0x002AE98B
 ?rva00415C56@Rva00415C56@@QAEXPAVINI@@@Z,,0x00415C56,18,Code/GameEngine/Source/Common/Rva00415C56Parse.cpp,matched,INI parse wrapper over rowed initFromINI with table 0x00C3A304 via caller at 0x00415E2A
 ?Rva004152E6NewNode@@YGPAXPBX@Z,,0x004152E6,37,Code/Libraries/Source/WWVegas/WWLib/Rva004152E6NewNode.cpp,matched,12B node via rowed allocator 0x000307F0 and rowed Construct 0x004151EB called by 0x004153E5
+?rva0041539F@Rva000427195@@QAE?AUInsertRet0041539F@@PBX@Z,,0x0041539F,124,Code/GameEngine/Source/GameClient/Rva0041539FInsert.cpp,matched,insert_unique over rowed bucketIndex and compare via pinned NewNode twin 0x004152E6; caller at 0x00415591
