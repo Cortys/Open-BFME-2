@@ -40415,3 +40415,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00337533Copy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x00337533,29,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,forwarder to 0x33738B via tmp 0 shaped by 0x331B8F
 ?Rva00337501Copy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x00337501,50,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,backward 20B copy loop via copy 0x3372EC shaped by 0x33177E
 ?Rva0060174CCopy@@YAPAVCoord3D@@PBV1@0PAV1@@Z,,0x0060174C,38,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,Coord3D range copy via rowed 0x60173A with dst-first local order
+?rva005778E3@Rva005778E3@@QAEHXZ,,0x005778E3,25,Code/GameEngine/Source/Common/Rva005778E3Acquire.cpp,matched,acquire returns old flag caller 0x00577FE2
