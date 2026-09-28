@@ -6184,3 +6184,5 @@ rva009C7380WeightPairs,0x009B84E0
 ?rva0082C760Acquire@@YAXPAVNodeAllocMutex@_STL@@@Z,0x00007690,call alias from BFME1 donor lock path; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
 _BfmeNodeAllocLockAcquire,0x00007690,donor node allocator lock acquire alias; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
 _bfmeLockXH,0x00007690,donor locale guard lock alias; target implementation is matched STLport spin lock at 0x7690; alias identity provisional
+?bfmeFwd1050@BfmeP1050@@QAEXHHHHH@Z,0x00628040,BFME1 wrapper donor call target; five integer arguments and thiscall shape agree; owner name provisional
+?d_009f5c00@@YAXXZ,0x00628040,BFME2 call target observed at 0x00625390; anonymous dump alias candidate pending independent identity
