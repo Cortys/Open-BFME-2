@@ -154,7 +154,6 @@ static void parseFXLocInfo(INI *ini, void *instance, FXLocInfo *locInfo)
 	}
 }
 
-// ?parseFXList@TransitionDamageFXModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void TransitionDamageFXModuleData::parseFXList(INI *ini, void *instance, void *store, const void *userData)
 {
 	const char *token;
