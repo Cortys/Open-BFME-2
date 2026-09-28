@@ -39988,3 +39988,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva005B64B5Pop@@YAXPAPAX00PAXVRva005B61B3@@H@Z,,0x005B64B5,44,Code/GameEngine/Source/Common/Rva005B64B5Pop.cpp,matched,chain pop heap helper via rowed adjust
 ?Rva005B6521Pop@@YAXPAPAX00VRva005B61B3@@@Z,,0x005B6521,34,Code/GameEngine/Source/Common/Rva005B6521Pop.cpp,matched,chain pop heap via rowed pop helper
 ?Rva005B65ADPop@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B65AD,27,Code/GameEngine/Source/Common/Rva005B65ADPop.cpp,matched,chain pop heap forwarder via rowed pop
+?rva004E9378@Rva004E9378@@QAE_NXZ,,0x004E9378,20,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004E9378.cpp,matched,honest-address bool predicate int at plus0x10 true on 2 or 3 via 19 callers testing al
