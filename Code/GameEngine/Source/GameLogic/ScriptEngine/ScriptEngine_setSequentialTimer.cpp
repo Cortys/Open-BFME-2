@@ -11,6 +11,8 @@
 
 typedef int ObjectID;
 
+class Team;
+
 class Object
 {
 public:
@@ -26,7 +28,7 @@ class SequentialScript
 public:
 	virtual ~SequentialScript();
 
-	void *m_pad04; // +0x04 Team* m_teamToExecOn
+	Team *m_teamToExecOn; // +0x04
 	int m_objectID; // +0x08
 	char m_pad0C[0x20 - 0x0C]; // +0x0C..0x1F
 	int m_framesToWait; // +0x20
@@ -45,6 +47,7 @@ protected:
 
 public:
 	void setSequentialTimer(Object *obj, int frameCount);
+	void setSequentialTimer(Team *team, int frameCount);
 };
 
 void ScriptEngine::setSequentialTimer(Object *obj, int frameCount)
@@ -59,6 +62,23 @@ void ScriptEngine::setSequentialTimer(Object *obj, int frameCount)
 			continue;
 
 		if (seqScript->m_objectID == id) {
+			seqScript->m_framesToWait = frameCount;
+			return;
+		}
+	}
+}
+
+void ScriptEngine::setSequentialTimer(Team *team, int frameCount)
+{
+	if (!team)
+		return;
+
+	for (VecSequentialScriptPtrIt it = m_sequentialScripts.begin(); it != m_sequentialScripts.end(); ++it) {
+		SequentialScript *seqScript = (*it);
+		if (!seqScript)
+			continue;
+
+		if (seqScript->m_teamToExecOn == team) {
 			seqScript->m_framesToWait = frameCount;
 			return;
 		}

@@ -40629,3 +40629,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0028867DCheck@@YA_NPBX@Z,,0x0028867D,37,Code/GameEngine/Source/Common/Rva0028867DCheck.cpp,matched,ESI static helper via TheBfmeGlob gate plus adjacent byte getters
 ??0BuildListInfo@@QAE@XZ,,0x0032A0CE,184,Code/GameEngine/Source/GameLogic/Map/BuildListInfoCtor.cpp,matched,BuildListInfo default ctor via ZH donor plus empty-base EH0 plus archSSE float zero
 ??0Rva005CBA04@@QAE@VBfmeFixedStorage002CF0F0@@@Z,,0x005CBA04,28,Code/GameEngine/Source/Common/Rva005CBA04Ctor.cpp,matched,vtable 0x00C74DB8 with deleting dtor at 0x005CBA20 and derived ctors at 0x00574815 0x005756B6 0x0057709A 0x005E5A38
+?setSequentialTimer@ScriptEngine@@QAEXPAVTeam@@H@Z,,0x00204002,48,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_setSequentialTimer.cpp,matched,ZH donor 7862 Team overload callers 0x3C0CE3 0x3C1017 0x3C93FA vector 0x10
