@@ -1,0 +1,58 @@
+// stlport
+// cl: /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
+// ?rva0035516C@Rva0035516C@@QBEPBVArmorTemplate@@W4NameKeyType@@@Z retail 0x0035516C 23B.
+// Unlock lane: ready body calling rowed Armor hashtable _M_find 0x002888D4 with map at +0x24.
+// Returns first dword of the ArmorTemplate value (mov [eax+8]) as const pointer; callers at
+// 0x000E05A3 0x0035521F 0x003553E3 use return+4 as list head proving +0 is pointer-sized.
+// Layout mirrors ArmorStoreCtor TU-local hash_map but at +0x24 with 0x24 pad.
+
+#include <hash_map>
+#include <cstddef>
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0,
+	NAMEKEY_MAX = 1 << 23,
+	FORCE_NAMEKEYTYPE_LONG = 0x7fffffff
+};
+
+namespace rts
+{
+
+template <typename T> struct hash
+{
+	size_t operator()(const T &value) const;
+};
+
+}
+
+class ArmorTemplate
+{
+public:
+	void *m_ptr; // +0x00 returned via mov [node+8]
+	char m_pad[0x78]; // +0x04..+0x7C pad to true 0x7C size
+};
+
+typedef std::hash_map<
+	NameKeyType,
+	ArmorTemplate,
+	rts::hash<NameKeyType>,
+	std::equal_to<NameKeyType> > ArmorTemplateMap;
+
+class Rva0035516C
+{
+public:
+	const ArmorTemplate *rva0035516C(NameKeyType key) const;
+
+private:
+	char m_pad[0x24]; // +0x00..+0x24 unknown
+	ArmorTemplateMap m_map; // +0x24
+};
+
+const ArmorTemplate *Rva0035516C::rva0035516C(NameKeyType key) const
+{
+	ArmorTemplateMap::const_iterator it = m_map.find(key);
+	if (it == m_map.end())
+		return 0;
+	return (const ArmorTemplate *)it->second.m_ptr;
+}
