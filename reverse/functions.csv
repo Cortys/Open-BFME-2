@@ -40356,3 +40356,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00740A60Get@@YAHABV?$StringBase@D@@@Z,,0x00740A60,54,Code/GameEngine/Source/Common/Rva00740A60Get.cpp,matched,table walk compareNoCase returns index else 0 caller 0x740E49 table 0x9DDF68
 ?Rva00239D02Insert@@YGPAPAXPAPAXPAX0@Z,,0x00239D02,37,Code/GameEngine/Source/Common/Rva00239D02Insert.cpp,matched,freelist node insert via rowed alloc 0x00239BD8 same pool as 0x00239380
 ??0Rva005F4AD7@@QAE@ABU0@@Z,,0x005F4AB9,30,Code/GameEngine/Source/Common/Rva005F4AD7Dtor.cpp,matched,unlock lane copy-ctor abutting dtor 0x5F4AD7 via shared double-deref plus inc
+??0Rva0037D076@@QAE@XZ,,0x0037D076,33,Code/GameEngine/Source/Common/Rva0037D076Ctor.cpp,matched,list at plus4 int minus1 bytes zero caller 0x0037D2CC
