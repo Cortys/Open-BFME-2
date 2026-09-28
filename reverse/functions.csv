@@ -40789,3 +40789,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0052854C@Rva0052854C@@QAEXPAURva0052854CArg@@@Z,,0x0052854C,26,Code/GameEngine/Source/Common/Rva00528309Clear.cpp,matched,null-check +0x74 to setter 0x00528264 caller 0x002D3664
 ?rva0010E4D4@Rva0010E4D4@@QAEXXZ,,0x0010E4D4,34,Code/GameEngine/Source/Common/Rva0010E4D4Loop.cpp,matched,make unique loop count 0x18 array 0x0C callers 0xE52A 0x35FA7
 ?doUnitIdleForFramecount@ScriptActions@@IAEXABVAsciiString@@H_N@Z,,0x003C9311,82,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doUnitIdleForFramecount.cpp,matched,BFME1 donor doUnitIdleForFramecount plus seconds factor via guard sibling
+?rva0023F88C@Rva0023E7D9@@QAEXH@Z,,0x0023F88C,78,Code/GameEngine/Source/Common/Rva0023E7D9Clear.cpp,matched,same class clear plus flag byte and state dword

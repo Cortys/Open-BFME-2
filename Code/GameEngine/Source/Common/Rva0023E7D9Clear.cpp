@@ -31,6 +31,7 @@ class Rva0023E7D9
 {
 public:
 	void rva0023E7D9();
+	void rva0023F88C(int dummy);
 	char m_lead[0x48];
 	Rva0023E7D9Link *m_head;
 	_STL::list<int, _STL::allocator<int> >::iterator m_cur;
@@ -57,4 +58,46 @@ void Rva0023E7D9::rva0023E7D9()
 	}
 	m_list.clear();
 	m_head = 0;
+}
+
+class Rva00A00958Obj
+{
+public:
+	virtual void virt00();
+	virtual void virt01();
+	virtual void virt02();
+	virtual void virt03();
+	virtual void virt04();
+	virtual void virt05();
+	virtual void virt06();
+	virtual void virt07();
+	virtual void virt08();
+	virtual void virt09();
+};
+
+extern Rva00A00958Obj *g_Rva00A00958;
+extern unsigned char g_Rva00A02D86;
+extern unsigned char g_Rva00A02D87;
+
+struct Rva009FE758Obj
+{
+	char m_pad[0xc18];
+	int m_c18;
+};
+
+extern Rva009FE758Obj *g_Rva009FE758;
+
+void Rva0023E7D9::rva0023F88C(int dummy)
+{
+	g_Rva00A00958->virt09();
+	rva0023E7D9();
+	*(unsigned char *)((char *)this + 0x71) = 0;
+	if (g_Rva00A02D86 != 0)
+	{
+		g_Rva009FE758->m_c18 = 2;
+		return;
+	}
+	if (g_Rva00A02D87 == 0)
+		return;
+	g_Rva009FE758->m_c18 = 5;
 }
