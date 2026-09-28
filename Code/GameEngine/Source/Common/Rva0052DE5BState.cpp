@@ -42,6 +42,7 @@ public:
 	void rva0052DED3();
 	Rva0052DE5B *rva0052DFF2();
 	bool rva0052DFB1(const Rva0052DFB1Arg *arg);
+	void rva0052DAE9(bool flag);
 
 private:
 	Rva0052DE5BNode *m_node;
@@ -104,4 +105,12 @@ bool Rva0052DE5B::rva0052DFB1(const Rva0052DFB1Arg *arg)
 		result = true;
 	}
 	return result;
+}
+
+void Rva0052DE5B::rva0052DAE9(bool flag)
+{
+	if (flag)
+		m_node->m_nodeFlags |= 8u;
+	else
+		m_node->m_nodeFlags &= ~8u;
 }
