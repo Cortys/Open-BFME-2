@@ -18,4 +18,6 @@ private:
 namespace _STL {
 template <> void _Construct<Rva00064640Record, Rva00064640Record>(Rva00064640Record *, const Rva00064640Record &);
 template Rva00064640Record *__uninitialized_fill_n<Rva00064640Record *, unsigned int, Rva00064640Record>(Rva00064640Record *, unsigned int, const Rva00064640Record &, const __false_type &);
+// ??$__uninitialized_copy@PBVRva00064640Record@@PAV1@@_STL@@YAPAVRva00064640Record@@PBV1@0PAV1@ABU__false_type@0@@Z 0x00469CA2 38B evidence: 0x1c-stride range copy via rowed _Construct 0x469C73 callers 0x469D0B 0x470189 0x4701D4
+template Rva00064640Record *__uninitialized_copy<const Rva00064640Record *, Rva00064640Record *>(const Rva00064640Record *, const Rva00064640Record *, Rva00064640Record *, const __false_type &);
 }
