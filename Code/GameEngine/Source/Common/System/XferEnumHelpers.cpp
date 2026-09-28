@@ -723,3 +723,13 @@ void Rva0030612AXfer(Xfer *xfer, float *vals)
 {
 	(((*xfer == vals[0]) == vals[1]) == vals[2]);
 }
+
+// Retail 0x00306151 (50B): free cdecl helper moving four consecutive floats
+// through the float operator== (Xfer slot 28, 0x70), chaining the returned
+// Xfer& as the next call's this. Sibling of Rva0030612AXfer above (three
+// floats); sole caller shape is 0x003062FE, which invokes it three times at
+// +0x00/+0x10/+0x20 (a 48-byte triple row).
+void Rva00306151Xfer(Xfer *xfer, float *vals)
+{
+	(((((*xfer == vals[0]) == vals[1]) == vals[2]) == vals[3]));
+}
