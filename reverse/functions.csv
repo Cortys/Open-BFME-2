@@ -40178,3 +40178,7 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0073BAA0@Rva0073BAA0@@QAEDHHH@Z,,0x0073BAA0,159,Code/GameEngine/Source/Common/RTS/Rva0073BAA0.cpp,matched,shroud range updater with predicate via BfmeConv1561 donor and rowed callees
 ?xfer@SpecialAbilityUpdate@@MAEXPAVXfer@@@Z,,0x0044F996,402,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,slot3 vtable 0083FBA8 ZH donor Flammable recipe
 ?validateSpecialObjects@SpecialAbilityUpdate@@IAEXXZ,,0x0044F7A4,70,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,list validate entries dec ZH donor
+?rva0013275A@TextureBaseClass@@QBEHXZ,,0x0013275A,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x28 via Peek pattern
+?rva00132784@TextureBaseClass@@QBEHXZ,,0x00132784,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x2C via Peek pattern
+?rva001327D8@TextureBaseClass@@QBEHXZ,,0x001327D8,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x34 via Peek pattern
+?rva00132802@TextureBaseClass@@QBEHXZ,,0x00132802,42,Code/Libraries/Source/WWVegas/WW3D2/TextureRvaGetters.cpp,matched,TextureBaseClass handle getter at +0x38 via Peek pattern
