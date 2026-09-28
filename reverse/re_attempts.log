@@ -2273,3 +2273,6 @@ FUN_00430e20	0x00030E20	104	blocked	guard-fill dword+byte loop needs exact shr-l
 ?rva006C1F60@Rva006C1F60@@QAEHI@Z	0x006C1F60	113	partial	113B-40ins exact size-count only this-result reg swap esi-edi and push scheduling left t=18 model=muse-dc0a score=0.9 stash=reverse/attempts/0x006c1f60.cpp
 ?rva00222A33@Rva00222A33@@QAEXH@Z	0x00222A33	32	blocked	O2 closest with edx-vs-eax plus hoisted add and mov-vs-add t=12 model=muse-22c6
 ?Rva00216496Get@@YAPAXPAVReproTarget@@PAXPBDPAIPAVAsciiString@@4@Z	0x00216496	129	blocked	chain 3-string invoke wrapper uses xor-esi plus push-edi plus add-vs-lea t=18 model=muse-22c6
+?downloadFile@DownloadManager@@UAEJVAsciiString@@00000_N@Z	0x005E04F5	225	blocked	AsciiString Header layout: retail +8 WWLib 8-byte header vs TU ZH 4-byte header t=15 model=muse-357b
+?rva005AD964@Rva005AD964@@QAE_NXZ	0x005AD964	56	partial	inc-add-mov scheduling 54B vs 56B t=18 model=muse-2c14 score=0.95 stash=reverse/attempts/0x005ad964.cpp
+FUN_00998f3f	0x00598F3F	112	blocked	complex EH ctor with base plus member plus 2 vectors t=5 model=muse-2c14
