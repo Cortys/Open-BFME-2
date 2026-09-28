@@ -713,3 +713,13 @@ void GameSlot::xfer(Xfer *xfer)
 	*xfer == m_bfme1A4;
 	*xfer == m_bfme1A8;
 }
+
+// Retail 0x0030612A (39B): free cdecl helper moving three consecutive floats
+// through the float operator== (Xfer slot 28, 0x70), chaining the returned
+// Xfer& as the next call's this. Callers pass 12-byte triples at e.g.
+// +0x51264/+0x51270 (0x000E96B4), edi+0xF8 (0x0009AAFB) and four in a row at
+// +0x04/+0x10/+0x1C/+0x28 (0x00271A0F).
+void Rva0030612AXfer(Xfer *xfer, float *vals)
+{
+	(((*xfer == vals[0]) == vals[1]) == vals[2]);
+}
