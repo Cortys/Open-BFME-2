@@ -40707,3 +40707,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Destroy@PAVRva0032A3A9Element@@@_STL@@YAXPAVRva0032A3A9Element@@0@Z,,0x0032B580,24,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_0032B580.cpp,matched,chain from 0x32A3A9 tag local callers 0x32BE80 0x32BF1B
 ?rva0036DDCD@AIGroup@@QAEXH@Z,,0x0036DDCD,37,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,same loop as setAttitude plus rowed rva0028C20F broadcast
 ?rva0036D805@AIGroup@@QAEXH@Z,,0x0036D805,50,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,member broadcast plus nullchecked provider slot34 plus 0x250 offset
+?Rva00306151Xfer@@YAPAVXfer@@PAV1@PAM@Z,,0x00306151,50,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,return Xfer star per triple caller eax forwarding
+?Rva003062FEXfer@@YAXPAVXfer@@PAM@Z,,0x003062FE,41,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,triple 4-float row via nested Xfer star helper
