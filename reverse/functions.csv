@@ -40457,3 +40457,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?isPlayerPreorder@GameInfo@@QAE_NH@Z,,0x003FF1DA,36,Code/GameEngine/Source/GameNetwork/GameInfoMarkPreorder.cpp,matched,BFME1 GameInfo.cpp preorder bit test with mask at 8
 ??0Rva00469187@@QAE@XZ,,0x00469187,30,Code/GameEngine/Source/Common/Rva004691A5Ctor.cpp,matched,zero int pair plus two rowed 0x4C member ctors at 8 and 54
 ?rva002E6C4D@Rva002E6C4D@@QAEHXZ,,0x002E6C4D,19,Code/GameEngine/Source/Common/Rva002E6C4DGet.cpp,matched,honest ptr-chase bit2 test 1 caller sibling shifts 4 and 3 flags O1
+??4Rva0014F699@@QAEAAV0@ABV0@@Z,,0x0014F699,127,Code/GameEngine/Source/Common/Rva0014F699Assign.cpp,matched,0x4C element assign 17 dwords plus rowed 0x424D0 callers 0x14F746 0x14FA2A 0x14FA90
