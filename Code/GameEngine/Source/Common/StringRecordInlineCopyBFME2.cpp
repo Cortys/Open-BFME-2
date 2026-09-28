@@ -269,3 +269,4 @@ BfmeStringRecord002602A6 *Rva00260647Copy(BfmeStringRecord002602A6 *first, BfmeS
 template void _STL::fill<BfmeStringRecord005ED5F3 *, BfmeStringRecord005ED5F3>(BfmeStringRecord005ED5F3 *, BfmeStringRecord005ED5F3 *, const BfmeStringRecord005ED5F3 &);
 template BfmeStringRecord005ED5F3* _STL::__copy_backward<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, int>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::random_access_iterator_tag&, int*);
 template BfmeStringRecord005ED5F3* _STL::__copy_backward_ptrs<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::__false_type&);
+template BfmeStringRecord005ED5F3* _STL::__copy<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, int>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::random_access_iterator_tag&, int*);
