@@ -2565,3 +2565,5 @@ FUN_007974ce	0x003974CE	233	blocked	233B callback via ebp+8 plus virtuals too bi
 ?rva004598F2@SiegeDockingBehavior@@QAEXPAUCoord3D@@H@Z	0x004598F2	61	blocked	vector bounds with fallback needs register lever t=10 model=muse-2641
 FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm plus pop-eax prolog epilog 24 fns not compiler-emittable; clean-C++ blocked no asm copy per anti-lift t=15 model=muse-408d
 ?getSciencePurchaseCost@ScienceStore@@QBEHW4ScienceType@@@Z	0x001FF3DC	86	partial	esi-edi swap plus mode in eax vs esi with 0 structural regions t=20 model=muse-8fee score=0.92 stash=reverse/attempts/0x001ff3dc.cpp
+?rva002D9C37@AudioEventRTS@@QBE_NXZ	0x002D9C37	67	partial	extra dec edx before jmp false only; 66of67B dec-chain esi-zero cmp-sub branch tails exact t=25 model=muse-334e score=0.98 stash=reverse/attempts/0x002d9c37.cpp
+?rva0039DA2A@Team@@QBEXPAUCoord3D@@@Z	0x0039DA2A	202	partial	x-accum movss-addss operand order swapped only plus global reloc; 202of202B 0 structural 0 register t=30 model=muse-334e score=0.99 stash=reverse/attempts/0x0039da2a.cpp
