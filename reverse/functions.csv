@@ -39787,3 +39787,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ??$__uninitialized_copy@PBVRva0040CB11Entry@@PAV1@@_STL@@YAPAVRva0040CB11Entry@@PBV1@0PAV1@ABU__false_type@0@@Z,,0x004F6AD3,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy.cpp,matched,8B uninit copy via rowed Entry Construct 0x4F6A64 same as Rva002390CB 0x3399AD
 ??1Rva004F691E@@QAE@XZ,,0x004F691E,13,Code/GameEngine/Source/Common/Rva004F691EDtor.cpp,matched,holder dtor release at plus8 via 0x7DEEF same 13B as Rva0027EA49
 ?Rva004F6A52Assign@@YAXPAVRva004C5DD0@@PBURva004C5DD0Pair@@@Z,,0x004F6A52,18,Code/GameEngine/Source/Common/Rva004C5DD0Set.cpp,matched,null-guarded assign via rowed set 0x44BD00 same 18B as Construct
+?Rva004F6AAEFill@@YAPAVRva004C5DD0@@PAV1@IPBURva004C5DD0Pair@@@Z,,0x004F6AAE,37,Code/GameEngine/Source/Common/Rva004C5DD0Set.cpp,matched,fill 8B via assign helper same loop as Entry fill_n

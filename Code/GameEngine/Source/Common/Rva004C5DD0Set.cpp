@@ -39,3 +39,11 @@ void __cdecl Rva004F6A52Assign(Rva004C5DD0 *dest, const Rva004C5DD0Pair *src)
 	if (dest)
 		dest->set(src);
 }
+
+Rva004C5DD0 *__cdecl Rva004F6AAEFill(Rva004C5DD0 *dest, unsigned int count, const Rva004C5DD0Pair *value)
+{
+	Rva004C5DD0 *cur = dest;
+	for (; count > 0; --count, ++cur)
+		Rva004F6A52Assign(cur, value);
+	return cur;
+}
