@@ -2374,3 +2374,5 @@ FUN_00612858	0x00212858	199	blocked	STL hashtable resize with EvaAscii hash give
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	big WW3D 396B DirectX DXT fill no BFME1 body t=5 model=muse-a246
 ?rva006C1AA0@Rva006C1F60@@QAEPAUSlot64@@I@Z	0x006C1AA0	168	partial	169B-46ins vs 168B-46ins only index reg swap eax-ecx and add scheduling left t=15 model=muse-dc0a score=0.9 stash=reverse/attempts/0x006c1aa0.cpp
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DXT color clear needs donor - 6 variants best 438 vs 396 with edi-ebx wall and 0x24 vs 0x20 frame t=25 model=muse-bf61
+?loadDockPositions@DockUpdate@@IAEXXZ	0x005897FB	270	partial	copy-loop dst uses mov edi plus add edi eax vs retail mov ecx plus lea esi src plus lea edi dst; 269 vs 270B t=22 model=muse-3cb2 score=0.99 stash=reverse/attempts/0x005897fb.cpp
+?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	no donor: BFME1 has dtor only plus reloc-derived 508B clear with no body; ZH SurfaceClass::Clear takes no color plus no DXT plus memset loop vs retail color plus DXT1-5 plus rep stosd/movsd; 396B DX Lock/Unlock t=12 model=muse-3cb2

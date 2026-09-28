@@ -1,19 +1,22 @@
 // ?loadDockPositions@DockUpdate@@IAEXXZ
-// partial score=0.97 date=2026-09-28
+// partial score=0.99 date=2026-09-28
 // ?loadDockPositions@DockUpdate@@IAEXXZ
-// partial score=0.97 date=2026-09-28
-// cl: /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /G7 /Ireference/shims/sweep
+// partial score=0.99 date=2026-09-28
+// cl: /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /arch:SSE /Ireference/shims/sweep
 // stlport
 //
 // ?loadDockPositions@DockUpdate@@IAEXXZ, retail 0x005897FB, 270 bytes.
-// Protected DockUpdate bone loader. Evidence: BFME1 donor
-// reference/open-bfme-1/Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdate.cpp
-// loadDockPositions with DockStart DockAction DockEnd DockWaiting bones; rowed
-// ctor 0x0058A290 proves +0x24 +0x30 +0x3C +0x48 +0x4C +0x50 +0x54 layout;
-// 8 callers in 0x00589909..0x0058A1A1 wait on it.
+// Dock bone strings DockStart/DockAction/DockEnd/DockWaiting plus eight callers
+// (0x589909 loadPostProcess wrapper tail-jumping to UpdateModule::loadPostProcess,
+// 0x589972/0x58A1A1 with -0x20 this-adjustment) prove DockUpdate identity.
+// Donor is BFME1 DockUpdate::loadDockPositions
+// (reference/open-bfme-1/Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdate.cpp:524,
+// protected IAEXXZ) via ZH DockUpdate.cpp:491. BFME2 drops the KINDOF_IGNORE_DOCKING_BONES
+// patch branch. Layout is the rowed DockUpdateCtor TU (UpdateModule base 0x20 plus
+// DockUpdateInterface vptr at +0x20, enter/dock/exit at +0x24/+0x30/+0x3C,
+/// number/bones/loaded at +0x48/+0x4C/+0x50, approach vector at +0x54).
 #include <limits.h>
 
-typedef float Real;
 typedef int Int;
 typedef unsigned int UnsignedInt;
 typedef bool Bool;
@@ -25,94 +28,18 @@ typedef bool Bool;
 
 struct Coord3D
 {
-	Coord3D() {}
-	Coord3D(const Coord3D &);
-	void zero()
-	{
-		x = 0.0f;
-		y = 0.0f;
-		z = 0.0f;
-	}
+	Coord3D();
+	~Coord3D();
 
 	float x;
 	float y;
 	float z;
 };
 
-class Matrix3D;
-
-enum ObjectID
+class Matrix3D
 {
-	INVALID_ID = 0,
-	FORCE_OBJECTID_TO_LONG_SIZE = 0x7fffffff
+	float m[12];
 };
-
-#include <stl/_bvector.h>
-
-namespace _STL
-{
-template <>
-class vector<Coord3D, allocator<Coord3D> > : public _Vector_base<Coord3D, allocator<Coord3D> >
-{
-public:
-	__forceinline vector() : _Vector_base<Coord3D, allocator<Coord3D> >(allocator<Coord3D>()) {}
-
-	unsigned int size() const
-	{
-		return (unsigned int)(_M_finish - _M_start);
-	}
-
-	Coord3D &operator[](unsigned int index)
-	{
-		return _M_start[index];
-	}
-
-	void insert(Coord3D *position, unsigned int count, const Coord3D &value)
-	{
-		_M_fill_insert(position, count, value);
-	}
-
-	void resize(unsigned int newSize, Coord3D value);
-	void resize(unsigned int newSize);
-	void _M_fill_insert(Coord3D *position, unsigned int count, const Coord3D &value);
-	Coord3D *erase(Coord3D *first, Coord3D *last);
-
-};
-
-template <>
-class vector<ObjectID, allocator<ObjectID> > : public _Vector_base<ObjectID, allocator<ObjectID> >
-{
-public:
-	__forceinline vector() : _Vector_base<ObjectID, allocator<ObjectID> >(allocator<ObjectID>()) {}
-
-	typedef _STL::__type_traits<ObjectID>::has_trivial_assignment_operator _TrivialAss;
-
-	unsigned int size() const
-	{
-		return (unsigned int)(_M_finish - _M_start);
-	}
-
-	ObjectID &operator[](unsigned int index)
-	{
-		return _M_start[index];
-	}
-
-	void insert(ObjectID *position, unsigned int count, const ObjectID &value)
-	{
-		_M_fill_insert(position, count, value);
-	}
-
-	void resize(unsigned int newSize, ObjectID value);
-	void resize(unsigned int newSize);
-	void _M_fill_insert(ObjectID *position, unsigned int count, const ObjectID &value);
-	ObjectID *erase(ObjectID *first, ObjectID *last);
-
-};
-}
-
-typedef _STL::vector<Coord3D, _STL::allocator<Coord3D> > VecCoord3D;
-typedef _STL::vector<ObjectID, _STL::allocator<ObjectID> > ObjectIDVector;
-typedef _STL::vector<bool, _STL::allocator<bool> > BoolVector;
 
 class Drawable
 {
@@ -132,15 +59,13 @@ class Object : public Thing
 };
 
 class ModuleData;
+class Thing;
 
 class BehaviorModuleBase
 {
 public:
-	Object *getObject() const { return m_object; }
-
-private:
 	virtual void unused();
-	int m_a;
+	const ModuleData *m_moduleData;
 	Object *m_object;
 };
 
@@ -179,6 +104,30 @@ public:
 	virtual void dockAnchor() = 0;
 };
 
+#include <stl/_bvector.h>
+
+namespace _STL
+{
+template <>
+class vector<Coord3D, allocator<Coord3D> > : public _Vector_base<Coord3D, allocator<Coord3D> >
+{
+public:
+	__forceinline vector() : _Vector_base<Coord3D, allocator<Coord3D> >(allocator<Coord3D>()) {}
+
+	Int size() const
+	{
+		return (Int)(_M_finish - _M_start);
+	}
+
+	Coord3D &operator[](Int index)
+	{
+		return _M_start[index];
+	}
+};
+}
+
+typedef _STL::vector<Coord3D, _STL::allocator<Coord3D> > VecCoord3D;
+
 class DockUpdate : public UpdateModule, public DockUpdateInterface
 {
 public:
@@ -193,7 +142,6 @@ public:
 protected:
 	void loadDockPositions();
 
-private:
 	Coord3D m_enterPosition;
 	Coord3D m_dockPosition;
 	Coord3D m_exitPosition;
@@ -201,12 +149,6 @@ private:
 	Int m_numberApproachPositionBones;
 	Bool m_positionsLoaded;
 	VecCoord3D m_approachPositions;
-	ObjectIDVector m_approachPositionOwners;
-	BoolVector m_approachPositionReached;
-	ObjectID m_activeDocker;
-	Bool m_dockerInside;
-	Bool m_dockCrippled;
-	Bool m_dockOpen;
 };
 
 enum
@@ -215,17 +157,10 @@ enum
 	DYNAMIC_APPROACH_VECTOR_FLAG = -1
 };
 
-class DockUpdateApproachBone : public Coord3D
-{
-public:
-	DockUpdateApproachBone();
-	~DockUpdateApproachBone();
-};
-
 // ?loadDockPositions@DockUpdate@@IAEXXZ present-unmatched
 void DockUpdate::loadDockPositions()
 {
-	Object *obj = getObject();
+	Object *obj = m_object;
 	Drawable *myDrawable = obj->getDrawable();
 
 	if (myDrawable != NULL)
@@ -235,20 +170,20 @@ void DockUpdate::loadDockPositions()
 		myDrawable->getPristineBonePositions("DockEnd", 0, &m_exitPosition, NULL, 1, 0);
 		if (m_numberApproachPositions != DYNAMIC_APPROACH_VECTOR_FLAG)
 		{
-			DockUpdateApproachBone approachBones[DEFAULT_APPROACH_VECTOR_SIZE];
-			m_numberApproachPositionBones = myDrawable->getPristineBonePositions("DockWaiting", 1, (Coord3D *)approachBones, NULL, m_numberApproachPositions, 0);
+			Coord3D approachBones[DEFAULT_APPROACH_VECTOR_SIZE];
+			m_numberApproachPositionBones = myDrawable->getPristineBonePositions("DockWaiting", 1, approachBones, NULL, m_numberApproachPositions, 0);
 			if (m_numberApproachPositions == m_approachPositions.size())
 			{
 				for (Int copyIndex = 0; copyIndex < m_numberApproachPositions; ++copyIndex)
 				{
-					Coord3D *src = (Coord3D *)&approachBones[copyIndex];
-					Coord3D &slot = m_approachPositions[copyIndex];
-					slot = *src;
+					m_approachPositions[copyIndex] = approachBones[copyIndex];
 				}
 			}
 		}
 		else
+		{
 			m_numberApproachPositionBones = 0;
+		}
 
 		m_positionsLoaded = TRUE;
 	}

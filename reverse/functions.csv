@@ -39795,3 +39795,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?getSingleLogicalBonePosition@Object@@QBE_NPBDPAUCoord3D@@PAVMatrix3D@@@Z,,0x0028BEE0,161,Code/GameEngine/Source/GameLogic/Object/ObjectGetSingleLogicalBonePosition.cpp,matched,Object single bone via BFME1 donor
 ?isUsingAirborneLocomotor@Object@@QBE_NXZ,,0x0028B81E,36,Code/GameEngine/Source/GameLogic/Object/ObjectIsUsingAirborneLocomotor.cpp,matched,Object airborne check via BFME1 donor
 ?Rva0052DBCDInit@@YAXXZ,,0x0052DBCD,92,Code/GameEngine/Source/Common/MixFileInfoBuffer_releaseInto.cpp,matched,pool init callers 0x002E8BAC 0x002F45A7 element 0x3c pool 0x00A049D0 ctor 0x52DB99
+?Rva000A78A3Less@@YG_NABUTreeKey00242F5E@@0@Z,,0x000A78A3,46,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5ELess.cpp,matched,TreeKey set comparator unsigned id then AsciiString via rowed 0x5598C
