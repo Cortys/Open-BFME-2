@@ -2960,3 +2960,4 @@ FUN_009d5491	0x005D5491	183	blocked	vector _M_insert_overflow NO_EXCEPTIONS prob
 FUN_006dc2dd	0x002DC2DD	99	blocked	frameless esi-edi register-passed args suggest static-internal custom calling convention not external YA stdcall; manual dual backward scan for 0x5c with empty-string fallback 0x7BAC1C; needs caller context beyond budget t=8 model=muse-11
 FUN_00756e8e	0x00356E8E	198	blocked	chain UI updater with GameState basename TheGameState plus TheGameText slot44 with MapTransfer CurrentFile plus Unicode format plus GadgetStaticTextSetText by-value needs GameText 0x44 identity and class with GameWindow at 0xB0 t=12 model=muse-11
 ?rva00573B5E@Rva00573B5E@@QAE_NXZ	0x00573B5E	258	blocked	SSE search loop 17 regions first draft far t=15 model=muse-spark
+??0Rva00502C80@@QAE@XZ	0x00502C80	121	partial	121B/41insns exact size; only 2nd Vector_base allocator temp lea ebp-0xe vs retail ebp-0xd t=20 model=muse-spark score=0.99 stash=reverse/attempts/0x00502c80.cpp
