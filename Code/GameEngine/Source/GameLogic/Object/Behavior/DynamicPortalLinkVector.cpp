@@ -20,6 +20,7 @@ struct DynamicPortalLink
 	~DynamicPortalLink();
 };
 
+// ??1DynamicPortalLink@@QAE@XZ present-unmatched
 DynamicPortalLink::~DynamicPortalLink()
 {
 	if (m_owned != 0)
@@ -27,3 +28,26 @@ DynamicPortalLink::~DynamicPortalLink()
 }
 
 template _STL::vector<DynamicPortalLink>::~vector();
+
+// ?rva0032E7E2@Rva0032E7E2@@QAEXXZ — RVA 0x0032E7E2, 30B.
+// Vector storage teardown: destroy range [start finish) via the rowed
+// _Destroy at 0x003F29F8, then free start via the rowed _free at 0x00030830.
+// Evidence: retail push [esi+4] push [esi] plus call 0x003F29F8,
+// mov esi [esi] plus test, push esi plus call 0x00030830;
+// prev 0x0032E7A3 same TU and flags, same Link Destroy callee.
+extern "C" void free(void *p);
+
+class Rva0032E7E2
+{
+public:
+	void rva0032E7E2();
+	DynamicPortalLink *m_start;
+	DynamicPortalLink *m_finish;
+};
+
+void Rva0032E7E2::rva0032E7E2()
+{
+	_STL::_Destroy(m_start, m_finish);
+	if (m_start != 0)
+		free(m_start);
+}
