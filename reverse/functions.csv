@@ -40219,3 +40219,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B709@Rva0039B709@@QAEIXZ,,0x0039B709,15,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,unsigned div getter F4 by LogicFramesPerSecond caller 0x5BEF34
 ?rva002655E3@Path@@QAEXPBUCoord3D@@W4PathfindLayerEnum@@H@Z,,0x002655E3,132,Code/GameEngine/Source/GameLogic/AI/PathAppendNode.cpp,matched,Path tail append via pool E01E94 and PathNode ctor 26212A callers 26569F 2657CE
 ?rva00265596@Path@@QAEXPBUCoord3D@@W4PathfindLayerEnum@@H@Z,,0x00265596,77,Code/GameEngine/Source/GameLogic/AI/PathPrependNode.cpp,matched,Path head prepend via pool E01E94 and PathNode ctor 26212A and set 262161
+?rva003F4DCA@Rva003F4DCA@@QAEHHH@Z,,0x003F4DCA,36,Code/Libraries/Source/WWVegas/WWLib/Rva003F4DCAInnerSize.cpp,matched,triple nested vector inner size via STL plus G7 imul
