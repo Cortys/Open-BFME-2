@@ -39523,3 +39523,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002D2D13@Rva002D2D13@@QAEXPAXH@Z,,0x002D2D13,32,Code/GameEngine/Source/Common/Rva002D2D13Calls.cpp,matched,virtual slot 31 twice with this and this+4; caller 0x2D649B; O1 gives eax
 ?setOrientation@Thing@@QAEXM@Z,,0x0030AB9D,480,Code/GameEngine/Source/Common/Thing/ThingSetOrientation.cpp,matched,BFME1 donor Thing setOrientation via 0x108 KINDOF and 0x48 align slot
 ?rva00469075@Rva00469075@@QAEXM@Z,,0x00469075,52,Code/GameEngine/Source/Common/Rva00469075Setter.cpp,matched,chain via setOrientation 0x30AB9D and setWakeFrame 1
+??0Rva004691A5@@QAE@XZ,,0x004691A5,18,Code/GameEngine/Source/Common/Rva004691A5Ctor.cpp,matched,tiny O1 SSE ctor via caller 0x474431 stack record
