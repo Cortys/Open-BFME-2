@@ -39542,3 +39542,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva005F17C6Build@@YA?AURva005F17C6S16@@ABURva005F17C6S12@@H@Z,,0x005F17C6,39,Code/GameEngine/Source/Common/Rva005F17C6Build.cpp,matched,leaf 12B plus dword to 16B via temp no callees
 ?Rva003EFE82Get@@YAHPAURva003EFE82Obj@@PAX@Z,,0x003EFE82,24,Code/GameEngine/Source/Common/Rva003EFE82Get.cpp,matched,virtual slot 94 LivingWorldRegionID size 4 leaf
 ?Rva003EF634Count@@YGHPAURva003EF634Node@@@Z,,0x003EF634,20,Code/GameEngine/Source/Common/Rva003EF634Count.cpp,matched,stdcall next-at-28 count from minus 1 leaf
+?rva003EFDDB@Rva003EFDDBHolder@@QAEXHPAURva003EFDDBOut@@@Z,,0x003EFDDB,26,Code/GameEngine/Source/Common/Rva003EFDDBCompare.cpp,matched,thiscall cmp 13C store 0 or minus1 at out plus10 leaf
