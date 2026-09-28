@@ -40508,3 +40508,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_G?$pair@$$CBVAsciiString@@UTreeHintRef00222C5A@@@_STL@@QAEPAXI@Z,,0x00222DEC,28,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_hint_00222C5A.cpp,matched,deleting dtor for 00222C5A pair via rowed dtor 0x00222C5A and delete 0x2FD60
 ?setSelectable@Drawable@@QAEX_N@Z,,0x00271700,69,Code/GameEngine/Source/GameClient/Drawable_setSelectable.cpp,matched,BFME1 Drawable donor Object selectable caller 0x0028B76D plus 0x14c 0xA8 walk
 ?rva005B2DDF@Rva005B2DDF@@QAEPAXII@Z,,0x005B2DDF,42,Code/Libraries/Source/WWVegas/WWLib/Rva005B2DDFLookup.cpp,matched,unlock 2D grid lookup over vector BfmeE16 at +0x14 via size and row index
+?rva002224FE@Rva002224FE@@QAE_NH@Z,,0x002224FE,47,Code/GameEngine/Source/Common/System/Rva002224FE.cpp,matched,slot flag setter via global 0x009FE4CC sibling of 0x0022252D
