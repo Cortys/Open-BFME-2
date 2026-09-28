@@ -10,19 +10,40 @@ enum ObjectStatusTypes
 	STATUS_4A = 0x4A
 };
 
+class GameLogic
+{
+public:
+	char m_pad[0x40];
+	unsigned int m_frame;
+};
+
+#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+
 class Object
 {
 public:
 	void setStatus(ObjectStatusTypes status, bool flag);
 	void rva002900E0(int frame);
+	void rva002903C3();
 
 private:
 	char m_pad[0x42C];
-	int m_frame42C;
+	unsigned int m_frame42C;
 };
 
 void Object::rva002900E0(int frame)
 {
 	setStatus(STATUS_4A, true);
 	m_frame42C = frame;
+}
+
+void Object::rva002903C3()
+{
+	unsigned int f = m_frame42C;
+	if (f <= 0)
+		return;
+	if (TheGameLogic->m_frame <= f)
+		return;
+	setStatus(STATUS_4A, false);
+	m_frame42C = 0;
 }

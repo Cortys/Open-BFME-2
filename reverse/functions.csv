@@ -40243,3 +40243,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039B9D1@Rva0039B709@@QAEHXZ,,0x0039B9D1,12,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,chain divide fallback getter by 60 two callers same this
 ?Rva0021BB61PushHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z,,0x0021BB61,123,Code/GameEngine/Source/Common/System/Rva0021BB61PushHeap.cpp,matched,push heap for Rva0021915B with rowed comparator
 ?rva002900E0@Object@@QAEXH@Z,,0x002900E0,26,Code/GameEngine/Source/GameLogic/Object/ObjectRva002900E0.cpp,matched,Object status 4A plus 42C frame same-this setStatus
+?rva002903C3@Object@@QAEXXZ,,0x002903C3,44,Code/GameEngine/Source/GameLogic/Object/ObjectRva002900E0.cpp,matched,Object 42C expiry clears status 4A frame-gated
