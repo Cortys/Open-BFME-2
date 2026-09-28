@@ -40143,3 +40143,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$swap@UBfmeE12@@@_STL@@YAXAAUBfmeE12@@0@Z,,0x004219CD,39,Code/Libraries/Source/WWVegas/WWLib/stlport_swap_e12.cpp,matched,stlport swap BfmeE12 donor _algobase exact
 ?rva004210A0@Rva004210A0@@QAEXH@Z,,0x004210A0,16,Code/GameEngine/Source/Common/Rva004210A0Add.cpp,matched,clamped add at plus4 caller 0x002AA773 honest Rva
 ??$?MUBfmeE12@@@_STL@@YA_NABU?$_Deque_iterator_base@UBfmeE12@@@0@0@Z,,0x004219B0,29,Code/Libraries/Source/WWVegas/WWLib/stlport_swap_e12.cpp,matched,stlport deque base operator less BfmeE12 exact
+??1?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@QAE@XZ,,0x0022187B,57,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_hint_00221e3a.cpp,matched,pair dtor for 00221D6B tree via shared release 0x7DEEF and AsciiString teardown 0x36410 identical to 0x002175CE except scopetable
