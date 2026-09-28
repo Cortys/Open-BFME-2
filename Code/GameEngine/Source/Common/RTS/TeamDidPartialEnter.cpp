@@ -2,6 +2,7 @@
 //
 // ?didPartialEnter@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E20D (123B).
 // ?didPartialExit@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E288 (123B).
+// ?someInsideSomeOutside@Team@@QAE_NPAVPolygonTrigger@@I@Z @0x0039E50D (172B).
 // Team::didPartialEnter(): returns true when a considered member has entered
 // the trigger. Retail guard is the byte at Team+0x5c; the member walk uses the
 // pinned iterate_TeamMemberList at 0x263864 and the pinned DLINK advance at
@@ -42,6 +43,8 @@ struct ThingTemplate
 {
 	unsigned char m_pad[0x113];
 	unsigned char m_kindByte113;
+	unsigned char m_pad2[0x118 - 0x114];
+	unsigned char m_kindByte118;
 };
 
 class Object
@@ -49,6 +52,7 @@ class Object
 public:
 	bool didEnter(PolygonTrigger *pTrigger);
 	bool didExit(PolygonTrigger *pTrigger);
+	bool isInside(PolygonTrigger *pTrigger);
 
 public:
 	unsigned char m_pad0[4];
@@ -65,6 +69,7 @@ public:
 	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
 	bool didPartialEnter(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 	bool didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
+	bool someInsideSomeOutside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider);
 
 private:
 	unsigned char m_pad[0x5c];
@@ -125,4 +130,37 @@ bool Team::didPartialExit(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
 			return true;
 	}
 	return false;
+}
+
+bool Team::someInsideSomeOutside(PolygonTrigger *pTrigger, UnsignedInt whichToConsider)
+{
+	bool anyConsidered = false;
+	bool anyInside = false;
+	bool anyOutside = false;
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+		Object *cur = iter.cur();
+		AIUpdateInterface *ai = cur->m_ai;
+		if (ai) {
+			UnsignedInt mask = 1u << whichToConsider;
+			if ((ai->m_surfaces & mask) == 0)
+				continue;
+		} else {
+			unsigned char mask8 = (unsigned char)(1u << whichToConsider);
+			if ((mask8 & 1) == 0)
+				continue;
+		}
+		if ((cur->m_dead & 1) != 0)
+			continue;
+		ThingTemplate *tmpl = cur->m_template;
+		if ((tmpl->m_kindByte113 & 2) != 0)
+			continue;
+		if ((tmpl->m_kindByte118 & 0x40) != 0)
+			continue;
+		if (cur->isInside(pTrigger))
+			anyInside = true;
+		else
+			anyOutside = true;
+		anyConsidered = true;
+	}
+	return anyConsidered && anyInside && anyOutside;
 }
