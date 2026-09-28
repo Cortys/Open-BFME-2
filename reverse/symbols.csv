@@ -6154,3 +6154,4 @@ _acos,0x00629964,address read from the REL32 displacement at a placed body; the 
 ?ji_009f70a8@@YAXXZ,0x006298DA
 _toupper,0x006298DA
 _Rva00860380,0x006A1280
+rva009C7380WeightPairs,0x009B84E0
