@@ -53,3 +53,24 @@ void Rva00407137::rva00407137(const UnicodeString &u)
 	const char *str = s.str();
 	m_crc = CRC::String(str, m_crc);
 }
+
+// ?Rva004071AAForward@@YAXPAVRva004071AAVirt@@ABVUnicodeString@@HPAVRva00407137@@@Z retail 0x004071AA 45B
+// Evidence: chain lane calls rowed 0x00407137 plus virtual slot 0x68 plus AsciiString 0x00038250 plus releaseBuffer 0x00036410; caller 0x00408CA9; prev same TU same flags.
+class Rva004071AAVirt
+{
+public:
+	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25();
+	virtual void v26(const UnicodeString &u);
+};
+void Rva004071AAForward(Rva004071AAVirt *p, const UnicodeString &u, int dummy, Rva00407137 *r)
+{
+	p->v26(u);
+	r->rva00407137(u);
+	AsciiString tmp(u);
+}
