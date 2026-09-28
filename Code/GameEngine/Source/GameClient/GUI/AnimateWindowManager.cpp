@@ -136,6 +136,11 @@ void AnimateWindow::setAnimData( 	ICoord2D startPos, ICoord2D endPos,
 typedef ICoord2D (AnimateWindow::*AnimateWindowGetRestPos)( void );
 AnimateWindowGetRestPos g_animateWindowGetRestPos = &AnimateWindow::getRestPos;
 
+// Target Ghidra places AnimateWindow's current coordinate pair at +0x18;
+// the matched getRestPos body reads the adjacent pair at +0x20.
+typedef ICoord2D (AnimateWindow::*AnimateWindowGetCurPos)( void );
+AnimateWindowGetCurPos g_animateWindowGetCurPos = &AnimateWindow::getCurPos;
+
 //-----------------------------------------------------------------------------
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
@@ -493,6 +498,5 @@ void AnimateWindowManager::resetToRestPosition( void )
 //-----------------------------------------------------------------------------
 // PRIVATE FUNCTIONS //////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
-
 
 
