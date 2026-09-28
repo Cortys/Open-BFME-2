@@ -248,3 +248,11 @@ BfmeStringRecord002602A6 &BfmeStringRecord002602A6::operator=(const BfmeStringRe
 #include <vector>
 // Retail __copy 0x002605EB 47B: forward copy of 8-byte BfmeStringRecord002602A6 via operator= at 0x002602A6; sar 3 stride 8; caller at 0x0026065A; same shape as 47B __copy at 0x00426A82.
 template BfmeStringRecord002602A6* _STL::__copy<BfmeStringRecord002602A6*, BfmeStringRecord002602A6*, int>(BfmeStringRecord002602A6*, BfmeStringRecord002602A6*, BfmeStringRecord002602A6*, const _STL::random_access_iterator_tag&, int*);
+
+// Retail __copy_ptrs 0x00260647 29B: ptrs wrapper via rowed __copy 0x002605EB; same shape as 29B wrapper 0x00426B29; caller at 0x002606CA.
+// Manual wrapper with identical pushes: tag local plus null distance.
+BfmeStringRecord002602A6 *Rva00260647Copy(BfmeStringRecord002602A6 *first, BfmeStringRecord002602A6 *last, BfmeStringRecord002602A6 *result)
+{
+    const _STL::random_access_iterator_tag tag;
+    return _STL::__copy(first, last, result, tag, (int *)0);
+}
