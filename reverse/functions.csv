@@ -39821,3 +39821,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?rva000421FD@Rva000421FD@@QAEXXZ,,0x000421FD,21,Code/GameEngine/Source/Common/Rva000421FD.cpp,matched,unlock counter with setFPMode for 2 callers
 ?rva0004224C@Rva0004224C@@QAEPAV1@XZ,,0x0004224C,22,Code/GameEngine/Source/Common/Rva0004224C.cpp,matched,chain calls 421FD returns this
 ?rva0052DC29@Rva0052DE5B@@QAEXPAPAVMixFileInfoBuffer@@@Z,,0x0052DC29,22,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,set bit 16 then link into head
+?rva0052DAFF@Rva0052DE5B@@QAEXXZ,,0x0052DAFF,18,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,unlink then clear bit 16
