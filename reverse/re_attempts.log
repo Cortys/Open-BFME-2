@@ -2708,3 +2708,4 @@ FUN_0092c8ef	0x0052C8EF	38	blocked	uninit-copy FXList needs direct _Construct wi
 FUN_00957bfe	0x00557BFE	56	blocked	EH clear plus free head via rowed 0x005562DD and free 0x00030830; 5 variants dtor ctor try empty-base; closest ctor 61B vs 56B extra inits plus return-this missing or-1 placement; dtor 63B extra base-call plus eax-vs-esi; t=20 model=muse-spark
 FUN_0072CA4E	0x0032CA4E	63	blocked	63B container dtor with EH_prolog plus funclet same wall as blocked twin 0x0032C3A3 ours frameless 30B t=3 model=muse-spark
 FUN_00688C34	0x00288C34	52	blocked	52B unlock calls ICF-folded dup 0x00148B27 named void but site pushes 2 args needs twin pin plus dead ecx load self-move t=5 model=muse-spark
+FUN_004BDD48	0x000BDD48	36	blocked	36B ctor needs string literal bytes at 0x007BAC1C plus vector-base STL layout low value unlocks 1 none ready t=3 model=muse-spark
