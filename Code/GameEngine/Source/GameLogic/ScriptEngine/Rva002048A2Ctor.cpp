@@ -1,0 +1,48 @@
+// cl: /O1 /EHsc
+//
+// ??0Rva002048A2@@QAE@PAVAsciiString@@ABV1@@Z @0x002048A2 74B: virtual-class
+// ctor storing vtable at +0, default-constructing AsciiString at +4, aliasing
+// the input string at +8, then m_str = *a1 and *a1 = a2 via the operator= pin
+// 0x000366F0. Evidence: 11 callers incl 0x00207D2B 0x0020A1EE 0x0020C1AC;
+// unblocks 7 functions.
+template <typename T>
+class StringBase
+{
+    friend class AsciiString;
+    StringBase(const StringBase<T> &that);
+    struct Header
+    {
+        int ref_count;
+        unsigned short length;
+        unsigned short capacity;
+        T data[1];
+    };
+    Header *m_data;
+    void releaseBuffer();
+};
+
+class AsciiString
+{
+public:
+    AsciiString() { m_text = 0; }
+    __forceinline ~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
+    AsciiString &operator=(const AsciiString &that);
+private:
+    char *m_text;
+};
+
+struct Rva002048A2
+{
+    virtual ~Rva002048A2();
+    AsciiString m_str;
+    AsciiString *m_alias;
+    Rva002048A2(AsciiString *a1, const AsciiString &a2);
+};
+
+Rva002048A2::Rva002048A2(AsciiString *a1, const AsciiString &a2)
+    : m_str()
+{
+    m_alias = a1;
+    m_str = *a1;
+    *a1 = a2;
+}
