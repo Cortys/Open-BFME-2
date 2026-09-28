@@ -40466,3 +40466,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005374B3@UserPreferences@@QAEXVAsciiString@@ABV2@H@Z,,0x005374B3,82,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences setInt slot 0x2C via LossesVs faction callers
 ?rva0053745E@UserPreferences@@QAEHVAsciiString@@ABV2@@Z,,0x0053745E,85,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences getInt slot 0x18 via WinsVs faction callers
 ?rva0053740C@UserPreferences@@QAEXVAsciiString@@ABV2@H@Z,,0x0053740C,82,Code/GameEngine/Source/Common/UserPreferencesWinsLossesVs.cpp,matched,UserPreferences setInt slot 0x2C via WinsVs faction callers
+?Rva0014FA2AFill@@YAXPAVRva0014F699@@0ABV1@@Z,,0x0014FA2A,29,Code/GameEngine/Source/Common/Rva0014FA2AFill.cpp,matched,range fill via rowed 0x0014F699 stride 0x4C callers 0x1509E0 0x150A20
