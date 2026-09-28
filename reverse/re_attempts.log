@@ -2604,3 +2604,4 @@ FUN_006894a2	0x002894A2	125	blocked	Overridable-base dtor with CameraMarker vec 
 FUN_00569FB3	0x00569FB3	174	blocked	ctor layout ambiguous E16 base plus ModuleData reserve overlap at plus40 plus4C needs donor t=8 model=muse-01
 ?rva00466D50@Rva00466D50@@QAE_NI@Z	0x00466D50	67	partial	ebx-edi mirror only sbb-inc ok t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x00466d50.cpp
 ?rva0028CC7C@Object@@QAE_NH@Z	0x0028CC7C	61	partial	bool tail needs test-je-mov not setne; 59B vs 61B 0 reg-mem 2 regions t=20 model=muse-02 score=0.92 stash=reverse/attempts/0x0028cc7c.cpp
+?rva0036CE87@AIGroup@@QAEXXZ	0x0036CE87	73	partial	pop ecx 1B early before float stores; all else exact 73B 23insns; float addrs reloc; tried O1-SSE O2 volatile barrier t=20 model=muse-12 score=0.96 stash=reverse/attempts/0x0036ce87.cpp

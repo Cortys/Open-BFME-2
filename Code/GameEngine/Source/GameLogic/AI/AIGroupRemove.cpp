@@ -7,6 +7,12 @@
 // Evidence: callers 0x0036CFCB 0x0036D01B plus 0x0036D7E5,
 // callees leaveGroup pin 0x0028C01F plus rva002FE712 row 0x002FE712,
 // BFME1 AIGroupMembership remove plus ZH AIGroup remove donor shape.
+//
+// ?rva0036D7A6@AIGroup@@QAE_NPAURva0036D7A6Outer@@@Z @ 0x0036D7A6 95B
+// AIGroup member filter: walk +0x04 list, slot38 check on +0x250 receiver
+// with (Object 0 1), remove failures, false when group destroyed.
+// Evidence: chain caller of remove 0x0036CF07, caller 0x00372670,
+// slot38 virtual plus remove row, BFME1 removeAny donor shape.
 #include <list>
 #include <algorithm>
 
@@ -29,11 +35,68 @@ public:
 	void rva002FE712(AIGroup *group);
 };
 
+class Rva0036D7A6Receiver
+{
+public:
+	virtual void s00();
+	virtual void s01();
+	virtual void s02();
+	virtual void s03();
+	virtual void s04();
+	virtual void s05();
+	virtual void s06();
+	virtual void s07();
+	virtual void s08();
+	virtual void s09();
+	virtual void s10();
+	virtual void s11();
+	virtual void s12();
+	virtual void s13();
+	virtual void s14();
+	virtual void s15();
+	virtual void s16();
+	virtual void s17();
+	virtual void s18();
+	virtual void s19();
+	virtual void s20();
+	virtual void s21();
+	virtual void s22();
+	virtual void s23();
+	virtual void s24();
+	virtual void s25();
+	virtual void s26();
+	virtual void s27();
+	virtual void s28();
+	virtual void s29();
+	virtual void s30();
+	virtual void s31();
+	virtual void s32();
+	virtual void s33();
+	virtual void s34();
+	virtual void s35();
+	virtual void s36();
+	virtual void s37();
+	virtual bool slot38(Object *obj, int a, int b);
+};
+
+struct Rva0036D7A6Inner
+{
+	char m_pad[0x250];
+	Rva0036D7A6Receiver *m_rec;
+};
+
+struct Rva0036D7A6Outer
+{
+	char m_pad[0x0c];
+	Rva0036D7A6Inner *m_inner;
+};
+
 class AIGroup
 {
 public:
 	bool remove(Object *member);
 	bool isEmpty() { return m_memberList.empty(); }
+	bool rva0036D7A6(Rva0036D7A6Outer *o);
 
 private:
 	virtual void *deleteInstance(int flags);
@@ -55,4 +118,23 @@ bool AIGroup::remove(Object *member)
 		return true;
 	}
 	return false;
+}
+
+bool AIGroup::rva0036D7A6(Rva0036D7A6Outer *o)
+{
+	Rva0036D7A6Inner *inner = o->m_inner;
+	if (inner) {
+		Rva0036D7A6Receiver *r = inner->m_rec;
+		for (_STL::list<ObjectID>::iterator it = m_memberList.begin(); it != m_memberList.end();) {
+			Object *obj = (Object *)(*it);
+			_STL::list<ObjectID>::iterator nxt = it;
+			++nxt;
+			if (!r->slot38(obj, 0, 1)) {
+				if (remove(obj))
+					return false;
+			}
+			it = nxt;
+		}
+	}
+	return true;
 }
