@@ -127,7 +127,6 @@ static void parseFXLocInfo(INI *ini, void *instance, BoneLocInfo *locInfo)
 	}
 }
 
-// ?parseFXList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void BoneFXUpdateModuleData::parseFXList(INI *ini, void *instance, void *store, const void *userData)
 {
 	BoneFXListInfo *info = (BoneFXListInfo *)store;
