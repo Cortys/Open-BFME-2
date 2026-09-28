@@ -3487,3 +3487,19 @@ void W3DRoadBuffer::drawRoads(CameraClass * camera, TextureClass *cloudTexture, 
 #endif
 	m_curRoadType = 0;
 }
+
+class Rva000D4435Buffers
+{
+public:
+	void rva000D4435();
+private:
+	char m_pad[8];
+	class VertexBufferClass *m_vb; // +0x08
+	class IndexBufferClass *m_ib; // +0x0C
+};
+
+void Rva000D4435Buffers::rva000D4435()
+{
+	DX8Wrapper::Set_Index_Buffer(m_ib, 0);
+	DX8Wrapper::Set_Vertex_Buffer(m_vb, 0);
+}
