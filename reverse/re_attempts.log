@@ -2309,3 +2309,4 @@ FUN_004c0495	0x000C0495	10	blocked	no ret; mov eax plus call EH_prolog falls thr
 FUN_007efeb2	0x003EFEB2	379	blocked	27B push-mov5-pop NOP sled at both ends preserves eax and cannot come from MSVC71 C++ ; no flag emits 5x B8 imm between 50 and 58 ; inline asm would be lift not conversion ; inner 312B hash loads 9 dwords at +0x14 to +0x34 and mixes via AND ADD IMUL XOR NOT ; 24-function family shares same sled ; t=15 model=muse-v4n-9d78
 ?rva002D9C07@Rva002D9C07@@QAEEXZ	0x002D9C07	40	partial	last branch je vs jne true-false placement t=25 model=muse-b28c score=0.93 stash=reverse/attempts/0x002d9c07.cpp
 ?Rva00591062Get@@YAHPAURva00591062Host@@@Z	0x00591062	82	partial	second temp slot ebp-4 vs ebp+8 t=30 model=muse-b28c score=0.93 stash=reverse/attempts/0x00591062.cpp
+?rva00141EF0@BFME2SceneSpatialIndex@@QAEXPAPAX@Z	0x00141EF0	151	blocked	spatial drain with inlined pool pop and Remove call; 1 probe +98B t=10 model=muse-ec65

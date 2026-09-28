@@ -29,12 +29,19 @@ struct Rva0052DE5BNode
 	void *m_link;
 };
 
+struct Rva0052DFB1Arg
+{
+	unsigned char m_pad[0x74];
+	int m_value;
+};
+
 class Rva0052DE5B
 {
 public:
 	void rva0052DE5B();
 	void rva0052DED3();
 	Rva0052DE5B *rva0052DFF2();
+	bool rva0052DFB1(const Rva0052DFB1Arg *arg);
 
 private:
 	Rva0052DE5BNode *m_node;
@@ -77,4 +84,24 @@ Rva0052DE5B *Rva0052DE5B::rva0052DFF2()
 	m_node = 0;
 	rva0052DED3();
 	return this;
+}
+
+bool Rva0052DE5B::rva0052DFB1(const Rva0052DFB1Arg *arg)
+{
+	bool result = false;
+	unsigned int flags = m_flags;
+	if ((flags & 0xf) == 3)
+	{
+		m_flags = flags & ~0xfu;
+		result = true;
+	}
+	Rva0052DE5BNode *node = m_node;
+	if (node != 0 && node->m_value == arg->m_value)
+	{
+		m_flags &= ~0xfu;
+		node->m_value = 0;
+		rva0052DE5B();
+		result = true;
+	}
+	return result;
 }
