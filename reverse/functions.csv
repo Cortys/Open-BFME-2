@@ -40654,3 +40654,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002ACD09@Player@@QAEXPAXH@Z,,0x002ACD09,98,Code/GameEngine/Source/Common/RTS/PlayerRva002ACD09.cpp,matched,Player factory new 0x18 ctor 0x002AC3BE vector uint assign 0x0026F4F4 list push 0x0005548F
 ?Rva002ACFD6NewNode@@YGPAXPBX@Z,,0x002ACFD6,37,Code/GameEngine/Source/Common/Rva002ACFD6NewNode.cpp,matched,hash node 12B next plus pair via 0x000307F0 and 0x001F6882
 ?Rva00306151Xfer@@YAXPAVXfer@@PAM@Z,,0x00306151,50,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,free xfer helper for 4-float quad via float slot 0x70 chained caller 0x3062FE
+?Rva00534BAFParse@@YAXPAVINI@@PAX1PBX@Z,,0x00534BAF,45,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,INI Coord3D parse to list at A8 via push_front
+?Rva00534BDCParse@@YAXPAVINI@@PAX1PBX@Z,,0x00534BDC,45,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,INI Coord3D parse to list at AC via push_front

@@ -95,3 +95,34 @@ MapMetaData &MapMetaData::operator=(const MapMetaData &o)
 // 0x00534BDC push parsed supply/tech positions, and 0x005352DD/0x00535302
 // copy waypoint lists. Same shape as rowed list<int> push_front 0x00392076.
 template void _STL::list<Coord3D, _STL::allocator<Coord3D> >::push_front(const Coord3D &);
+// Retail 0x00534BAF/0x00534BDC 45B are INI Coord3D-list parse callbacks:
+// parse a local Coord3D via rowed INI::parseCoord3D 0x0002F507 then push_front
+// it into the instance list at +0xA8/+0xAC. Same /O1 /Oy- shape as the rowed
+// SideFlags callbacks; honest Rva names, no donor class claimed.
+class INI
+{
+public:
+	static void parseCoord3D(INI *, void *, void *, const void *);
+};
+struct Rva00534BAFHolder
+{
+	char m_pad[0xA8];
+	Coord3DList m_listA8;
+};
+struct Rva00534BDCHolder
+{
+	char m_pad[0xAC];
+	Coord3DList m_listAC;
+};
+void Rva00534BAFParse(INI *ini, void *instance, void *, const void *)
+{
+	Coord3D pos;
+	INI::parseCoord3D(ini, 0, &pos, 0);
+	((Rva00534BAFHolder *)instance)->m_listA8.push_front(pos);
+}
+void Rva00534BDCParse(INI *ini, void *instance, void *, const void *)
+{
+	Coord3D pos;
+	INI::parseCoord3D(ini, 0, &pos, 0);
+	((Rva00534BDCHolder *)instance)->m_listAC.push_front(pos);
+}
