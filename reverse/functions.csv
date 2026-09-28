@@ -40809,3 +40809,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0032E83A@@QAE@XZ,,0x0032E83A,8,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0032E83ADtor.cpp,matched,nonvirtual dtor tail-jmp vector member plus4
 ??_GRva0032E83A@@QAEPAXI@Z,,0x0032E92F,28,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0032E83ADtor.cpp,matched,deleting dtor for Rva0032E83A via delete helper
 ?rva003317B0@Rva003317B0@@QAE_NPBVWeaponTemplateSetHead@@@Z,,0x003317B0,73,Code/GameEngine/Source/Common/Rva003317B0Check.cpp,matched,chain from 0x000B3ED3 via copy intersect equal with overlap guard
+??1Rva00448089@@QAE@XZ,,0x00448089,53,Code/GameEngine/Source/Common/Rva00448089Dtor.cpp,matched,dtor releasing two StringBase members with EH
