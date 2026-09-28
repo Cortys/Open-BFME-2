@@ -39773,3 +39773,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?length@Rva005F1B75@@QBEHXZ,,0x005F1B75,27,Code/GameEngine/Source/Common/System/Rva00513E03Length.cpp,matched,three-part string extension over TextPlusString base at 0x00513B94
 ?length@Rva005F1BAA@@QBEHXZ,,0x005F1BAA,13,Code/GameEngine/Source/Common/System/Rva00513E03Length.cpp,matched,four-part extension over three-part base at 0x005F1B75
 ?rva002B2466@Display@@QAEXMMMM@Z,,0x002B2466,138,Code/GameEngine/Source/GameClient/DisplayRva002B2466.cpp,matched,TheDisplay callers prove owner plus getWidth getHeight slots 0x40 0x44 plus 0xFC stores
+?Rva0030CA53Set@@YAXPAVRva004733E0@@PBV1@@Z,,0x0030CA53,18,Code/GameEngine/Source/Common/Rva0030CA53Set.cpp,matched,null-guarded wrapper over Rva004733E0 set 0x0030BF66 with 5 cdecl callers
