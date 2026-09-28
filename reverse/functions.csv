@@ -40135,3 +40135,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00079176@W3DHordeModelDrawModuleData@@QAEMXZ,,0x00079176,16,Code/GameEngine/Source/Common/Rva0007912DGet.cpp,matched,Horde LOD delta via clamped index 0x7912D stride 0x14 plus 0x194
 ??1Rva006003FC@@UAE@XZ,,0x006003FC,54,Code/GameEngine/Source/Common/Rva006003FCDtor.cpp,matched,dual-vtable dtor stores 0x87A638 then member 0x600084 at plus8 then base 0x7C6F20
 ??_GRva006003FC@@UAEPAXI@Z,,0x006004A5,28,Code/GameEngine/Source/Common/Rva006003FCDtor.cpp,matched,deleting dtor calls 0x6003FC then operator delete auto-emitted
+?Rva00600676Get@@YGPAXPBDHH@Z,,0x00600676,20,Code/GameEngine/Source/Common/Rva00600676Get.cpp,matched,guarded global 0xA06E5C forward to slot 2 with 3 stdcall args
