@@ -140,3 +140,22 @@ Rva004D59B8::Rva004D59B8() : NetCommandMsg()
 	m_1c = 0;
 	m_commandType = (NetCommandType)28;
 }
+
+// ??0Rva004D57F1@@QAE@XZ @0x004D57F1 29B: calls base plus dword 0 at +0x24 via And plus vtable 0x860244 plus type 26 plus byte 0 at +0x1c.
+// Honest-address ctor with 4-byte plus 1-byte derived members sharing KeepAlive vtable via ICF.
+class Rva004D57F1 : public NetCommandMsg
+{
+public:
+	Rva004D57F1();
+private:
+	bool m_1c;
+	char m_pad1D[0x24 - 0x1D];
+	unsigned int m_24;
+};
+
+Rva004D57F1::Rva004D57F1() : NetCommandMsg()
+{
+	m_24 = 0;
+	m_commandType = (NetCommandType)26;
+	m_1c = 0;
+}
