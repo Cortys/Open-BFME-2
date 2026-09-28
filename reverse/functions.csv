@@ -40013,3 +40013,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??$_Construct@UBfmePod88@@U1@@_STL@@YAXPAUBfmePod88@@ABU1@@Z,,0x004E3706,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod88_rva.cpp,matched,placement copy via twin-pinned Rva004E3184 copy 0x4E2F9F same shape as _Construct 0x2C485
 ??0Rva00500500@@QAE@ABV0@@Z,,0x00500500,29,Code/GameEngine/Source/Common/Rva00500500Ctors.cpp,matched,copy of ptr plus Rva004E3184 wrapper used as temp in caller 0x502FE9
 ??0Rva00500500@@QAE@AAPAXABVRva004E3184@@@Z,,0x00500770,29,Code/GameEngine/Source/Common/Rva00500500Ctors.cpp,matched,ptr plus Rva004E3184 wrapper temp built in caller 0x502FE9
+??$_Construct@VRva00500500@@V1@@_STL@@YAXPAVRva00500500@@ABV1@@Z,,0x0050097D,45,Code/GameEngine/Source/Common/Rva00500500Ctors.cpp,matched,placement copy via rowed Rva00500500 copy 0x500500 same 45B shape as _Construct 0x2C485

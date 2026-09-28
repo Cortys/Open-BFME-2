@@ -3,6 +3,7 @@
 //
 // ??0Rva00500500@@QAE@ABV0@@Z @ 0x00500500 (29B).
 // ??0Rva00500500@@QAE@AAPAXABVRva004E3184@@@Z @ 0x00500770 (29B).
+// ??$_Construct@VRva00500500@@V1@@_STL@@YAXPAVRva00500500@@ABV1@@Z @ 0x0050097D (45B).
 // Copy and pointer-plus-Rva ctors of the 92-byte wrapper holding a pointer
 // at +0 and the ModuleData Rva004E3184 at +4 via its rowed copy at
 // 0x004E2F9F. Caller 0x00503355 builds a temp with the two-arg ctor then
@@ -83,3 +84,5 @@ Rva00500500::Rva00500500(void *&p, const Rva004E3184 &r)
     : m_ptr(p), m_rva(r)
 {
 }
+
+template void _STL::_Construct<Rva00500500, Rva00500500>(Rva00500500 *, const Rva00500500 &);
