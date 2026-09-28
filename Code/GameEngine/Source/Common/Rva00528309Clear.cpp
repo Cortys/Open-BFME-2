@@ -67,3 +67,29 @@ void Rva00528545::rva00528545()
 {
 	m_ptr->rva005283E3();
 }
+
+class Rva00528264
+{
+public:
+	void rva00528264(int v);
+};
+
+struct Rva0052854CArg
+{
+	char m_pad74[0x74];
+	int m_val;
+};
+
+class Rva0052854C
+{
+public:
+	void rva0052854C(Rva0052854CArg *p);
+private:
+	Rva00528264 *m_ptr;
+};
+
+void Rva0052854C::rva0052854C(Rva0052854CArg *p)
+{
+	int v = p ? p->m_val : 0;
+	m_ptr->rva00528264(v);
+}
