@@ -40010,3 +40010,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ??0Rva007C454@@QAE@XZ,,0x0007C3CD,43,Code/GameEngine/Source/Common/Rva007C454Ctor.cpp,matched,ctor via rowed Camera 0x134AB0 and Vector_base 0x211E58 vptr BC6C58
 ??0Rva004E3184@@QAE@ABV0@@Z,,0x004E2F9F,295,Code/GameEngine/Source/Common/Rva004E3184CopyCtor.cpp,matched,vtable 0x861F28 shared with dtor 0x4E3184 and same temp in caller 0x4FB924 via _Construct 0x4E3706
 ??0Rva004E2382@@QAE@XZ,,0x004E2382,63,Code/GameEngine/Source/Common/Rva004E2382Ctor.cpp,matched,temp built in caller 0x4E3E91 and destroyed by 0x4E2941 with set 0xD3A71 and Vector_base 0x211E58
+??$_Construct@UBfmePod88@@U1@@_STL@@YAXPAUBfmePod88@@ABU1@@Z,,0x004E3706,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod88_rva.cpp,matched,placement copy via twin-pinned Rva004E3184 copy 0x4E2F9F same shape as _Construct 0x2C485
