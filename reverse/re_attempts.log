@@ -2702,3 +2702,5 @@ FUN_0072A4A0	0x0032A4A0	27	blocked	27B string copy getter via contested StringBa
 ?rva0029E159@Rva0029E159@@QAEPAU1@ABUSource0029E159@@@Z	0x0029E159	150	partial	global load 6B late plus same size exact 150B t=20 model=muse score=0.96 stash=reverse/attempts/0x0029e159.cpp
 ?rva005DDE33@Rva005DDE33@@QAEMIII@Z	0x005DDE33	54	partial	align 53/54B 20/20insns; wall=park this in esi first (retail push esi mov esi ecx) vs load base late; G7 fixed imul; fld global fillable per getters precedent t=20 model=muse-09 score=0.95 stash=reverse/attempts/0x005dde33.cpp
 FUN_009c98f6	0x005C98F6	109	blocked	vector-visitor with virtual call and typed catch RTTI 0x7FB1CC funclet 0x7A0F41; index at +0xC begin end at +0 +4; owner among LocomotorStore neighbors unproven t=15 model=muse-spark
+FUN_009e2d26	0x005E2D26	32	blocked	static 3x8 table at 0x00C77B40 has no name donor or string identity t=10 model=muse-spark
+FUN_0092c8ef	0x0052C8EF	38	blocked	uninit-copy FXList needs direct _Construct without EBP tried static plus Oy still EBP plus inline t=20 model=muse-spark
