@@ -40069,3 +40069,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00050C79Dispatch@@YAXPAVAudioReceiver@@PAX@Z,,0x00050C79,24,Code/GameEngine/Source/Common/Rva00050C61Dispatch.cpp,matched,slot94 forward AudioViewTypeBits caller 0x5E473 sibling 0x50C61
 ?Rva00050C91Dispatch@@YAXPAVAudioReceiver@@PAX@Z,,0x00050C91,24,Code/GameEngine/Source/Common/Rva00050C61Dispatch.cpp,matched,slot94 forward MusicSystem caller 0x5E4AA sibling 0x50C61
 ?_M_clear@?$vector@VRva002DFC30@@V?$allocator@VRva002DFC30@@@_STL@@@_STL@@IAEXXZ,,0x000C05EC,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva002dfc30_clear.cpp,matched,Vector clear via rowed Destroy 0x331FF1 and free 0x30830 same shape as siblings 0xC05CE and 0xC060A
+?rva000C065B@Rva000C065B@@QAEXXZ,,0x000C065B,30,Code/Libraries/Source/WWVegas/WWLib/Rva000C065BClear.cpp,matched,Range clear via rowed Clear 0x405337 and free 0x30830 same shape as sibling 0xC060A
