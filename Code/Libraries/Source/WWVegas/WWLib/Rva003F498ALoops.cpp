@@ -28,7 +28,7 @@ struct Rva003F498AInner {
 struct Rva003F498AOuter {
     int unk0;
     _STL::vector<Rva003F498AInner> inners;
-    char pad[12];
+    _STL::vector<int> ints;
 };
 
 class Rva003F498A {
@@ -36,6 +36,7 @@ class Rva003F498A {
     _STL::vector<Rva003F498AOuter> m_outers;
 public:
     void rva003F498A(Rva003F498ACallback* cb);
+    int rva003F46A8(int idx);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -50,4 +51,10 @@ void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
             }
         }
     }
+}
+
+int Rva003F498A::rva003F46A8(int idx)
+{
+    Rva003F498AOuter& o = m_outers[idx];
+    return (int)o.ints.size();
 }
