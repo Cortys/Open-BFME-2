@@ -266,3 +266,4 @@ BfmeStringRecord002602A6 *Rva00260647Copy(BfmeStringRecord002602A6 *first, BfmeS
     const _STL::random_access_iterator_tag tag;
     return _STL::__copy(first, last, result, tag, (int *)0);
 }
+template void _STL::fill<BfmeStringRecord005ED5F3 *, BfmeStringRecord005ED5F3>(BfmeStringRecord005ED5F3 *, BfmeStringRecord005ED5F3 *, const BfmeStringRecord005ED5F3 &);
