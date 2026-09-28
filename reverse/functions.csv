@@ -40128,3 +40128,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0028C264@Object@@QAE_NPAHH@Z,,0x0028C264,121,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C264.cpp,matched,Object owner via callers and offsets provider 0x250 body 0x254 globals match neighbour
 ?rva0028C570@Rva0028C570@@QAEXABV1@@Z,,0x0028C570,27,Code/Libraries/Source/WWVegas/WWLib/stlport_Rva0028C570.cpp,matched,4-word bulk clear same shape as rowed do_or siblings clear counterpart
 ?rva0028C4ED@Object@@QBE_NXZ,,0x0028C4ED,38,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C4ED.cpp,matched,Object module scan bool via 0x0C slot 0x68 same shape as void siblings
+?rva0028C513@Object@@QBE?AW4ObjectID@@XZ,,0x0028C513,39,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C513.cpp,matched,Object module scan ObjectID via 0x0C slot 0x68 tail slot0 ID for findObjectByID
