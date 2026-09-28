@@ -90,3 +90,8 @@ MapMetaData &MapMetaData::operator=(const MapMetaData &o)
     cachedDescription.set(o.cachedDescription);
     return *this;
 }
+// Retail 0x002819AD 28B is list<Coord3D>::push_front: insert(begin(), x).
+// Begin is the sentinel's _M_next (double deref); callers at 0x00534BD5 and
+// 0x00534BDC push parsed supply/tech positions, and 0x005352DD/0x00535302
+// copy waypoint lists. Same shape as rowed list<int> push_front 0x00392076.
+template void _STL::list<Coord3D, _STL::allocator<Coord3D> >::push_front(const Coord3D &);
