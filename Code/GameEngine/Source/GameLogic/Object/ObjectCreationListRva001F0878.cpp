@@ -46,11 +46,21 @@ public:
 
 extern ObjectCreationListStore *TheObjectCreationListStore;
 
+extern "C" void __cdecl free(void *p);
+
+struct Rva001F0468Node
+{
+	char m_pad00[8];
+	Rva001F0468Node *m_next08;
+	Rva001F0468Node *m_child0c;
+};
+
 class ObjectCreationList
 {
 public:
 	void rva001F0878(void *a1, void *a2, void *a3, int a4);
 	void rva001F0410(void *a1, void *a2);
+	void rva001F0468(Rva001F0468Node *head);
 
 private:
 	_STL::vector<ObjectCreationNugget *> m_nuggets;
@@ -84,4 +94,18 @@ void ObjectCreationList::rva001F0410(void *a1, void *a2)
 {
 	for (ObjectCreationNugget **i = m_nuggets.begin(); i != m_nuggets.end(); ++i)
 		(*i)->v4(a1, a2);
+}
+
+void ObjectCreationList::rva001F0468(Rva001F0468Node *head)
+{
+	Rva001F0468Node *cur = head;
+	if (cur == 0)
+		return;
+	while (cur != 0)
+	{
+		rva001F0468(cur->m_child0c);
+		Rva001F0468Node *next = cur->m_next08;
+		free(cur);
+		cur = next;
+	}
 }
