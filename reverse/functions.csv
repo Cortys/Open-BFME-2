@@ -40611,3 +40611,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005E59FCCopy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAHABU__true_type@2@@Z,,0x005E59FC,40,Code/GameEngine/Source/Common/Rva005E59FCCopy.cpp,matched,RB key copy via rowed increment callers 0x005E5F43 0x005F4D62 0x005F4F74
 ?rva0056EBA1@Rva0056EBA1@@QAE_NABVUnicodeString@@@Z,,0x0056EBA1,47,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva0056EBA1.cpp,matched,chain of SetText 0x322D63 null member plus copy
 ?Rva00150265Copy@@YAXPAVRva0014F699@@00@Z,,0x00150265,29,Code/GameEngine/Source/Common/Rva00150265Copy.cpp,matched,wrapper to rowed 0x0014FA90 tag plus null caller 0x001506A0
+?rva005C39C4@Rva005C39C4@@QAE?AUTreeHintRef00217D4C@@H@Z,,0x005C39C4,26,Code/GameEngine/Source/Common/Rva005C39C4TreeHint.cpp,matched,TreeHint forwarder to slot2 callers 0x5C3BB9 0x5D2A87 0x5F84BF
