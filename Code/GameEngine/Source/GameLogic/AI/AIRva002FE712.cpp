@@ -1,0 +1,43 @@
+// cl: /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+//
+// ?rva002FE712@AI@@QAEXPAVAIGroup@@@Z @ 0x002FE712 89B
+// AI group destroy: find in +0x14 list, erase, deleteInstance(0)+delete.
+// Evidence: TheAI at 0x00DFF0F8 callers 0x0036CF62 and 0x0023C99D pass AIGroup*,
+// list at +0x14 matches createGroup push_back<int> at 0x002FEC4B, donor
+// BFME1 ai.cpp destroyGroup find+erase+deleteInstance shape.
+#include <list>
+#include <algorithm>
+
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+class AIGroup
+{
+public:
+	virtual void *deleteInstance(int flags);
+};
+
+class AI
+{
+public:
+	void rva002FE712(AIGroup *group);
+
+private:
+	char m_pad[0x14];
+	_STL::list<ObjectID> m_groupList;
+};
+
+void AI::rva002FE712(AIGroup *group)
+{
+	_STL::list<ObjectID>::iterator it = _STL::find(m_groupList.begin(), m_groupList.end(), *(ObjectID *)&group);
+	if (it == m_groupList.end())
+		return;
+	((_STL::list<int> *)&m_groupList)->erase(*(_STL::list<int>::iterator *)&it);
+	void *mem = 0;
+	if (group)
+		mem = group->deleteInstance(0);
+	::operator delete(mem);
+}
