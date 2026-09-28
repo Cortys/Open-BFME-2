@@ -236,3 +236,4 @@ private:
 	StringBase<char> m_text1;
 };
 Rva00568C4E::~Rva00568C4E() {}
+void famgenDelete00568C4E(Rva00568C4E *p) { delete p; }
