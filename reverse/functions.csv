@@ -40116,3 +40116,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001072C9@W3DProjectedShadowManager@@QAEXXZ,,0x001072C9,125,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DProjectedShadowManagerReAcquire.cpp,matched,this is TheW3DProjectedShadowManager via 0xDEC2CC caller
 ?rva0033A453@Rva0033A453@@QBE_NPBX0@Z,,0x0033A453,66,Code/GameEngine/Source/Common/Rva0033A453TestMasks.cpp,matched,same 66B dual-mask shape as Rva0026157E only bound 0x20
 ?rva0033A8D9@Rva0033A8D9@@QBE_NPBX@Z,,0x0033A8D9,23,Code/GameEngine/Source/Common/Rva0033A8D9Wrapper.cpp,matched,forwarder to rowed 0x33A453 with need at +4 ban at +84
+?rva0033A68A@Rva0033A68A@@QAEPAVOverridable@@XZ,,0x0033A68A,16,Code/GameEngine/Source/Common/Rva0033A68AWrapper.cpp,matched,final-override-or-self via rowed 0x288609
