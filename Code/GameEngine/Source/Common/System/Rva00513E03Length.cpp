@@ -73,3 +73,14 @@ int Rva005E3693::length() const
 {
 	return Rva00513E03::length() + m_fifth.m_len;
 }
+
+// ?length@Rva005E366A@@QBEHXZ @0x005E366A 13B: three-part extension (TextPlusString base at 0x00513B94 plus third pair len at +0x10); chain from 0x00513B94 landing.
+struct Rva005E366A : Rva002226E5TextPlusString
+{
+	int length() const;
+	Rva000B3F84Pair m_third;
+};
+int Rva005E366A::length() const
+{
+	return Rva002226E5TextPlusString::length() + m_third.m_len;
+}
