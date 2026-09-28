@@ -2622,3 +2622,4 @@ FUN_0072bee8	0x0032BEE8	51	blocked	4 pushes to 3-arg copy 0x32A40E needs ICF 4-a
 FUN_007063A9	0x003063A9	112	blocked	EH StringBase Xfer body needs globals and rva002D06CA donor beyond 4-lookup budget t=10 model=muse-09
 ?rva002ACF02@Rva002ACF02@@QAEMABVAsciiString@@@Z	0x002ACF02	79	blocked	empty-vec check scheduling 74B vs 79B 0reg 1float-mem t=20 model=muse-10
 ??0Rva005746AF@@QAE@H@Z	0x005746AF	35	partial	post-call stores swapped mov-8-and-c vs and-c-mov-8; 35B same size 0 reg 2 mem relocs t=15 model=muse-04 score=0.94 stash=reverse/attempts/0x005746af.cpp
+?rva0035BF4C@Shell@@QAEX_N@Z	0x0035BF4C	112	blocked	Shell method needs globals 9FE728 slot3c and 9FE758+af0 plus W3DDisplay 9FE9D8 and TheAudio 9FE6E8 slot8c; donor BFME1 Shell.cpp has top but no audio-W3D combo; class proven via Shell::top call plus +0x5c but globals unproven; unblocks 11-1ready 19 callers t=10 model=muse-spark
