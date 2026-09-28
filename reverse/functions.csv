@@ -40745,3 +40745,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0046800B@Rva0046800B@@QAEXXZ,,0x0046800B,30,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0046800BClear.cpp,matched,range destroy via 0x00467DCD then free if non-null same as retail pops
 ?rva00272835@Drawable@@QAE_NHH@Z,,0x00272835,59,Code/GameEngine/Source/GameClient/Drawable_rva00272835.cpp,matched,unlock Drawable list via slots A4 and 14 same flags minus Oy
 ?Rva001F84A7Put@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@ABUTreeHintPayload001F8ACB@@@Z,,0x001F84A7,22,Code/Libraries/Source/WWVegas/WWLib/Rva001F84A7Put.cpp,matched,ostream TreeHintPayload put via rowed put_num 0x1F60AA caller 0x1F8BD0
+?rva002D35F2@RadarWindowOverrideSource@@QAEXXZ,,0x002D35F2,23,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,gap inner78 flag01 push500 via caller
