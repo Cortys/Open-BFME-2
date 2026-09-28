@@ -39548,3 +39548,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?rva002DB9B6@Rva002DB9B6@@QAEXPAX@Z,,0x002DB9B6,21,Code/GameEngine/Source/Common/Rva002DB9B6Copy.cpp,matched,memcpy out 28B from plus60 via thunk leaf
 ?rva002DB463@Rva002DB463@@QAEXHABUOpaqueRefElement4@@@Z,,0x002DB463,23,Code/GameEngine/Source/Common/Rva002DB44FSetter.cpp,matched,sibling array set at D4 via rowed assign leaf
 ?Rva002DB9EFGet@@YAHPAURva002DB9EFObj@@PAX@Z,,0x002DB9EF,24,Code/GameEngine/Source/Common/Rva002DB9EFGet.cpp,matched,virtual slot 94 IsAutoSaveOrNot size 4 leaf
+?setFont@SuperweaponInfo@@QAEXABVAsciiString@@H_N@Z,,0x0029A4CA,119,Code/GameEngine/Source/GameClient/SuperweaponInfo.cpp,matched,SuperweaponInfo setFont via adjustFontSize getFont
