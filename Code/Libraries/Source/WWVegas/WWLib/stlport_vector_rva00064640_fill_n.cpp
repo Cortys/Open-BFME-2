@@ -20,4 +20,6 @@ template <> void _Construct<Rva00064640Record, Rva00064640Record>(Rva00064640Rec
 template Rva00064640Record *__uninitialized_fill_n<Rva00064640Record *, unsigned int, Rva00064640Record>(Rva00064640Record *, unsigned int, const Rva00064640Record &, const __false_type &);
 // ??$__uninitialized_copy@PBVRva00064640Record@@PAV1@@_STL@@YAPAVRva00064640Record@@PBV1@0PAV1@ABU__false_type@0@@Z 0x00469CA2 38B evidence: 0x1c-stride range copy via rowed _Construct 0x469C73 callers 0x469D0B 0x470189 0x4701D4
 template Rva00064640Record *__uninitialized_copy<const Rva00064640Record *, Rva00064640Record *>(const Rva00064640Record *, const Rva00064640Record *, Rva00064640Record *, const __false_type &);
+// ??$_M_allocate_and_copy@PBVRva00064640Record@@@?$vector@VRva00064640Record@@V?$allocator@VRva00064640Record@@@_STL@@@_STL@@IAEPAVRva00064640Record@@IPBV2@0@Z 0x00469CED 45B evidence: allocate via ICF twin pin allocator Rva00064640Record at 0xB40EA then rowed copy 0x469CA2 caller 0x46EE72
+template Rva00064640Record *vector<Rva00064640Record, allocator<Rva00064640Record> >::_M_allocate_and_copy<const Rva00064640Record *>(unsigned int, const Rva00064640Record *, const Rva00064640Record *);
 }
