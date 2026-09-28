@@ -40868,3 +40868,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?get@Rva00555AA6NarrowField@@QBE?AV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@XZ,,0x00555AA6,27,Code/GameEngine/Source/Common/System/StlportStringRvoGetter555AA6.cpp,matched,sibling of 0x00555AC1 getter at plus0x78 via rowed copy ctor
 ?rva0043D3A8@Rva0043D3A8@@QAEXXZ,,0x0043D3A8,22,Code/GameEngine/Source/Common/Rva0043D3A8Clear.cpp,matched,caller 0x0043D3DA passes outer+0x288 as this rowed Science erase
 ?rva0032EAA1@Rva0032EAA1@@QAEXPAX@Z,,0x0032EAA1,53,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0032E83ADtor.cpp,matched,rb-erase recurse-right loop-left via rowed dtor plus free
+?set@Rva00555EB4Setter@@QAEXV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@Z,,0x00555EB4,59,Code/GameEngine/Source/Common/System/StlportStringByValueSetter555EB4.cpp,matched,by-value string setter at plus0x6c via rowed assign
