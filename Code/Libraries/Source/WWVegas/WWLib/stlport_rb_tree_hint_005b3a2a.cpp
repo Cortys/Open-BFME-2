@@ -39,3 +39,6 @@ template TreeHint005B3786::iterator TreeHint005B3786::insert_unique(TreeHint005B
 // The map wrapper directly calls this tree's verified hinted insertion.
 typedef _STL::map<AsciiString,TreeHintPayload005B3786,_STL::less<AsciiString >,_STL::allocator<TreeHintPair005B3786> > MapInsert005b3a2a;
 template MapInsert005b3a2a::iterator MapInsert005b3a2a::insert(MapInsert005b3a2a::iterator, const TreeHintPair005B3786 &);
+
+// This two-argument pair constructor is reached by the map temporary at 0x005B4023.
+template TreeHintPair005B3786::pair(const AsciiString &, const TreeHintPayload005B3786 &);
