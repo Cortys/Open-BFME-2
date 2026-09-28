@@ -40018,3 +40018,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva003A2A41@Rva000427195@@QAEXXZ,,0x003A2A41,73,Code/GameEngine/Source/GameClient/Rva003A2A41Clear.cpp,matched,hash clear via bucketIndex insert and rowed node free
 ??_GRva0031455E@@QAEPAXI@Z,,0x003149EA,34,Code/GameEngine/Source/GameClient/GUI/Rva0031455EList.cpp,matched,slot0 of vtable 0x80BBF8 vptr store plus Unlink plus delete
 ?rva003140AB@Rva003140AB@@QAE_NPAV1@@Z,,0x003140AB,29,Code/GameEngine/Source/Common/Rva003140ABContains.cpp,matched,intrusive list search via plus 0x200 honest Rva
+?rva002D752D@Rva002D752D@@QAEPAURva002D752DNode@@ABV?$StringBase@D@@@Z,,0x002D752D,39,Code/GameEngine/Source/Common/Rva002D752DFind.cpp,matched,list find by StringBase compare via plus 0x04 plus 0x08
