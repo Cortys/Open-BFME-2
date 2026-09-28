@@ -40216,3 +40216,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0039BA4BCopyBackward@@YAXPAVRva0039B893@@00@Z,,0x0039BA4B,29,Code/GameEngine/Source/Common/Rva0039BA4BCopyBackward.cpp,matched,chain wrapper to rowed copy-backward tag plus null sole caller
 ?Rva0039BAA0Copy@@YAPAVRva0039B893@@PAV1@00ABURandomAccessTag@@PAH@Z,,0x0039BAA0,50,Code/GameEngine/Source/Common/Rva0039BAA0Copy.cpp,matched,chain forward copy via rowed assign 5-arg dispatch
 ?Rva0039BD9BCopy@@YAXPAVRva0039B893@@00@Z,,0x0039BD9B,29,Code/GameEngine/Source/Common/Rva0039BD9BCopy.cpp,matched,chain wrapper to rowed forward copy tag plus null
+?rva0039B709@Rva0039B709@@QAEIXZ,,0x0039B709,15,Code/GameEngine/Source/Common/Rva0039B709DivGetter.cpp,matched,unsigned div getter F4 by LogicFramesPerSecond caller 0x5BEF34
