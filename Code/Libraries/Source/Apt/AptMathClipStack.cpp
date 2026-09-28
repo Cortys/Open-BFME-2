@@ -14,10 +14,17 @@ public:
     struct ClipTransform_t { unsigned char unaccessed[96]; };
     static ClipTransform_t *ClipStackPush();
     static ClipTransform_t *ClipStackPop();
+    static void ClipStackShutdown();
 private:
     static ClipTransform_t *m_pStackBase;
     static unsigned short m_nStackCapacity;
     static unsigned short m_nStackCount;
+};
+
+class Rva006DB270
+{
+public:
+    void freeBlock(void *pBlock, int size);
 };
 // The unusual pop assertion is present in retail: preserve it literally.
 AptMath::ClipTransform_t *AptMath::ClipStackPop()
@@ -35,4 +42,24 @@ AptMath::ClipTransform_t *AptMath::ClipStackPush()
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     return &m_pStackBase[++m_nStackCount];
+}
+
+// retail 0x006E0020, 55 bytes. Frees the clip-stack allocation via the
+// DOGMA deallocator at 0x006DB270 when the base is non-null, then clears
+// the base. Size is capacity*96+16. Evidence: same TU owns ClipStackPush
+// and ClipStackPop with identical statics (base E180F4 capacity E180FC)
+// and stride96; donor JSON labels this address ClipStackShutdown6E0020;
+// sole caller 0x006CFAB0 is Apt shutdown; freeBlock resolves via its pin.
+void AptMath::ClipStackShutdown()
+{
+    if (m_pStackBase == 0) {
+        m_pStackBase = 0;
+        return;
+    }
+    unsigned short capacity = m_nStackCapacity;
+    void *ptr = *(void * *)0x00E180F8;
+    int size = capacity * 96 + 16;
+    Rva006DB270 *pool = *(Rva006DB270 * *)0x00E176E8;
+    pool->freeBlock(ptr, size);
+    m_pStackBase = 0;
 }
