@@ -2685,3 +2685,4 @@ FUN_00818F7D	0x00418F7D	160	blocked	INI attack priority parse with EH throw t=12
 ?rva000E598B@Rva000E598B@@QAEXXZ	0x000E598B	72	blocked	STL list iteration plus node clear via 0x000E4567 plus dtor-delete plus List_base-int clear; needs _STL List_base recipe with exact clear mangling t=10 model=muse-02
 ??1Gen_uw_000e5033@@QAE@XZ	0x000E5033	104	blocked	non-virtual dtor(?) calls base clear 0x000E4567 on this plus 2 releaseBuffer +0x8C +0x90 plus 2 Release_Ref +0x20 +0x24 with EH states 3-0; base-member offset overlap needs layout proof t=10 model=muse-02
 ?rva00407DA5@Rva004075E0@@QAE?AURva004075E0Iter@@PAURva004075E0Node@@ABURva004075E0Key@@@Z	0x00407DA5	29	blocked	forward to hint 0x407C7F needs temp push-ecx shape t=15 model=muse-spark
+?Rva0043DDF8Get@@YAHH@Z	0x0043DDF8	33	blocked	value-select 19B vs retail pointer-select 33B with locals and lea pair; 6 variants incl O1 Oy- Os split-assign ptr-forcing t=12 model=muse-spark

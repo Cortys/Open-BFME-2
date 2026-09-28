@@ -40891,3 +40891,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004161F1Notify@@YAXVAsciiString@@VUnicodeString@@@Z,,0x004161F1,198,Code/GameEngine/Source/Common/Rva004161F1Notify.cpp,matched,buddy multiple-online notify via TheGameText fetch and chat login
 ?rva005E70AD@Rva005E70AD@@QAEXH@Z,,0x005E70AD,25,Code/GameEngine/Source/Common/Bfme/Rva005E70AD.cpp,matched,setter via vcall plus store via caller 0x005E79FB
 ?rva005562DD@Rva005562DD@@QAEXXZ,,0x005562DD,41,Code/GameEngine/Source/Common/Rva005562DDClear.cpp,matched,chain via rowed teardown 0x00556050 and caller 0x00557BFE
+?Rva00446A77Enable@@YAXXZ,,0x00446A77,30,Code/GameEngine/Source/Common/Rva00446A77Enable.cpp,matched,gated by byte 0x00A0335C and pointer 0x00A03354 tail-jmp to rowed enable 0x0043DB47
