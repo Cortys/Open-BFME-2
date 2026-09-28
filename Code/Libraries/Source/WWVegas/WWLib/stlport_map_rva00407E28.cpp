@@ -2,6 +2,8 @@
 // stlport
 //
 // ?rva00407E28@Rva00407E28@@QAEHH@Z retail 0x00407E28 43B
+// ?rva00407E53@Rva00407E28@@QAE_NH@Z retail 0x00407E53 65B
+// Evidence: unlock lane; two maps at +0x14/+0x20 insert 0/-1 returns bool; callers 0x00408C11 0x005B1B5E.
 // Evidence: unlock lane; map<int int> at +0x14 via rowed _M_find 0x00388F63 and operator[] 0x0028932C; callers 0x005B05E8 0x005B07C1 0x005B0EE6 0x005B1B5E; prev-next Rb_tree hint same flags.
 #include <map>
 
@@ -9,15 +11,26 @@ class Rva00407E28
 {
 public:
 	int rva00407E28(int key);
+	bool rva00407E53(int key);
 private:
 	char m_pad[0x14];
-	_STL::map<int, int> m_map;
+	_STL::map<int, int> m_map1;
+	_STL::map<int, int> m_map2;
 };
+
+bool Rva00407E28::rva00407E53(int key)
+{
+	if (m_map1.find(key) != m_map1.end())
+		return false;
+	m_map1[key] = 0;
+	m_map2[key] = -1;
+	return true;
+}
 
 int Rva00407E28::rva00407E28(int key)
 {
-	_STL::map<int, int>::iterator it = m_map.find(key);
-	if (it == m_map.end())
+	_STL::map<int, int>::iterator it = m_map1.find(key);
+	if (it == m_map1.end())
 		return -1;
-	return m_map[key];
+	return m_map1[key];
 }
