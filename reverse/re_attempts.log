@@ -2598,3 +2598,4 @@ FUN_0084f679	0x0044F679	87	blocked	SpecialAbilityUpdate predicate m60-zero-guard
 FUN_0096ecae	0x0056ECAE	44	blocked	esp-reading key selector mov [ebp-4]esp needs asm no clean C++ shape t=8 model=muse-02
 FUN_00568952	0x00168952	41	blocked	push-ecx-zero plus mov-ebp-4-esp loop calling virtual-1c with 0 arg; volatile-int-plus-push gives fixed-slot C7-plus-push vs retail dynamic push-plus-and plus save-esp; tried O1-EHsc-Os-G7 ptr-vs-int RefPtr-byval-byref variants t=25 model=muse-spark
 FUN_004780bc	0x000780BC	394	blocked	394B filter kernel SSE plus x87 exp plus STL erase pushback plus idiv pad wall t=18 model=muse-08
+FUN_006894a2	0x002894A2	125	blocked	Overridable-base dtor with CameraMarker vec plus 2 AsciiString vecs plus StringRecord plus malloc-free; base pin 0x1E3624 opaque identity unproven no donor t=12 model=muse-02
