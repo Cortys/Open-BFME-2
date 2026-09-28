@@ -40342,3 +40342,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00239AF4@Rva00239AF4@@QAEXXZ,,0x00239AF4,29,Code/GameEngine/Source/Common/Rva00239380Clear.cpp,matched,dispose via clear 0x00239380 plus freelist 0x009BA5E8 same shape as 0x001EB769
 ?rva00540C0A@Rva00540C0A@@QAE_NPAVDataChunkInput@@PAUDataChunkInfo@@@Z,,0x00540C0A,79,Code/GameEngine/Source/Common/Rva00540C0ARead.cpp,matched,calls rowed 0x5C702D plus 5 readReal floats next row 0x540C59 writer
 ?rva00540CB2@Rva00540CB2@@QAE_NPAVDataChunkInput@@PAUDataChunkInfo@@@Z,,0x00540CB2,59,Code/GameEngine/Source/Common/Rva00540CB2Read.cpp,matched,calls rowed 0x5C702D plus 3 readReal floats neighbours 0x540C59 0x540CED writers
+?rva0053FB91@Rva0053FB91@@QAE_NPAVDataChunkInput@@PAUDataChunkInfo@@@Z,,0x0053FB91,109,Code/GameEngine/Source/Common/Rva0053FB91Read.cpp,matched,calls rowed 0x5C702D plus 8 readReal floats siblings 0x540C0A 0x540CB2
