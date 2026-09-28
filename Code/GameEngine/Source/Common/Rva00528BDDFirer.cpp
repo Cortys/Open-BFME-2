@@ -23,3 +23,20 @@ void Rva00528BDD::rva00528BDD()
 	TheRva00222A8BTarget->invoke(m_owner, "HideCostModifierUpgradeInterface", 0, 0, 0, 0, 0, 0);
 	m_flag04 = false;
 }
+
+class Rva00528B98
+{
+public:
+	void rva00528B98();
+private:
+	void *m_owner;
+	bool m_flag04;
+};
+
+void Rva00528B98::rva00528B98()
+{
+	if (!m_flag04)
+		return;
+	TheRva00222A8BTarget->invoke(m_owner, "HideRankInterface", 0, 0, 0, 0, 0, 0);
+	m_flag04 = false;
+}
