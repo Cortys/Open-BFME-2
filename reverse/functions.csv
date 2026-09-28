@@ -40141,3 +40141,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0060082B@Rva006007A5@@QAEXXZ,,0x0060082B,41,Code/GameEngine/Source/Common/Rva006007A5Free.cpp,matched,clear via helper 0x6007A5 then sentinel repair
 ?Rva001E4426Test@@YAHPAIH@Z,,0x001E4426,31,Code/GameEngine/Source/Common/Rva001E4426Test.cpp,matched,cdecl bit test over dword array with 3 callers 0x000456AC 0x001E4A4E 0x0028D8EB and Object testStatus shape
 ??$swap@UBfmeE12@@@_STL@@YAXAAUBfmeE12@@0@Z,,0x004219CD,39,Code/Libraries/Source/WWVegas/WWLib/stlport_swap_e12.cpp,matched,stlport swap BfmeE12 donor _algobase exact
+?rva004210A0@Rva004210A0@@QAEXH@Z,,0x004210A0,16,Code/GameEngine/Source/Common/Rva004210A0Add.cpp,matched,clamped add at plus4 caller 0x002AA773 honest Rva
