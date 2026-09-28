@@ -44,7 +44,6 @@ void Rva002D382E::rva002D382E(int seconds)
 {
 	m_inner->rva002D352C(1, seconds);
 }
-// ?rva002D383F@Rva002D383F@@QAEXH@Z present-unmatched
 void Rva002D383F::rva002D383F(int seconds)
 {
 	m_inner->rva002D352C(2, seconds);

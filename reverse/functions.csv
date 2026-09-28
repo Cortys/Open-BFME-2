@@ -40423,3 +40423,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003377A1Copy@@YAPAVRva002E9E70@@PAV1@00@Z,,0x003377A1,27,Code/GameEngine/Source/Common/Rva0033738BCopy.cpp,matched,4-arg forwarder over 0x337638 shaped by 0x331E0D
 ?rva0057702E@Rva0057702E@@QAEXXZ,,0x0057702E,30,Code/GameEngine/Source/Common/Rva0057702EClear.cpp,matched,guarded clear via virtual slot4 plus delete
 ?rva002D35E6@RadarWindowOverrideSource@@QBE_NXZ,,0x002D35E6,12,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,adjacent to hasOverrideWindow sharing +0x10 outer and +0x60 bit2 with /O1
+?rva002D383F@Rva002D383F@@QAEXH@Z,,0x002D383F,17,Code/GameEngine/Source/Common/System/Rva002D381DCalls.cpp,matched,chain of 0x002D352C index 2 via outer plus 0x10
