@@ -2714,3 +2714,4 @@ FUN_004BDD48	0x000BDD48	36	blocked	36B ctor needs string literal bytes at 0x007B
 ?Rva0029FB80Store@@YGXPAPAX@Z	0x0029FB80	28	partial	useless lea-test kept plus edx regs t=10 model=muse score=0.9 stash=reverse/attempts/0x0029fb80.cpp
 ?rva0004128E@Rva0004128E@@QAEXXZ	0x0004128E	72	blocked	small-buffer plus heap plus copy loop register wall eax-vs-ecx for i tried pad plus reload t=15 model=muse-spark
 FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same family as blocked 0x4128E register wall t=5 model=muse-spark
+?rva005CA53E@GameSpyLoginPreferences@@QAEXABVAsciiString@@@Z	0x005CA53E	80	partial	push-email scheduling early-vs-late plus temp teardown dtor-vs-releaseBuffer; 80B 24insns exact size; tried direct slot-ref named-local t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x005ca53e.cpp

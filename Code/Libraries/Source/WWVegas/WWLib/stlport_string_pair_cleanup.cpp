@@ -14,3 +14,4 @@ typedef _STL::_Rb_tree<AsciiString,StringPair,_STL::_Select1st<StringPair>,_STL:
 template StringPairTree::~_Rb_tree();
 template void StringPairTree::erase(StringPairTree::iterator);
 template void StringPairTree::erase(StringPairTree::iterator, StringPairTree::iterator);
+template StringPairTree::size_type StringPairTree::erase(const AsciiString &);
