@@ -39,3 +39,9 @@ Rva0021915B *__cdecl Rva002195B7CopyBackward(Rva0021915B *first, Rva0021915B *la
 	}
 	return dest;
 }
+
+Rva0021915B *__cdecl Rva00219947Forward(Rva0021915B *first, Rva0021915B *last, Rva0021915B *dest, void *ignored)
+{
+	char tag;
+	return Rva002195B7CopyBackward(first, last, dest, &tag, 0);
+}
