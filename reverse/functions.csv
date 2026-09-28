@@ -40833,3 +40833,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0040327B@Rva0040327B@@QAEPAXPAVObject@@@Z,,0x0040327B,88,Code/GameEngine/Source/Common/Rva0040327BGet.cpp,matched,guarded fetch via pool and clamp
 ?rva004032D3@Rva0040327B@@QAEPAXPAVObject@@@Z,,0x004032D3,88,Code/GameEngine/Source/Common/Rva0040327BGet.cpp,matched,sibling fetch from plusc0 array via pool clamp
 ?rva000E4567@Rva000E4567@@QAEXXZ,,0x000E4567,56,Code/GameEngine/Source/Common/Rva000E4567Clear.cpp,matched,release +0x28 plus clear +0x20 +0x24 zeroes callers 0x000E504B 0x000E599F
+?rva000E440D@Rva000E440D@@QAE_NXZ,,0x000E440D,21,Code/GameEngine/Source/Common/Rva000E440DPred.cpp,matched,pred byte +0x9C nonzero plus int +0x98 not 2 callers 0x000E5AEF 0x000E606C
