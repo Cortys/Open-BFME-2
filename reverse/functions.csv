@@ -39743,3 +39743,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva005D5B21Insert@@YAXPAVRva005D5A7E@@V1@H@Z,,0x005D5B21,47,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,unguarded linear insert 12B stride calls rva005D5A7E
 ?Rva005D5DF0Sort@@YAXPAVRva005D5A7E@@00H@Z,,0x005D5DF0,45,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,unguarded insertion sort aux 12B calls linear insert
 ?Rva005D5BA3PushHeap@@YAXPAVRva005D5A7E@@HHV1@H@Z,,0x005D5BA3,90,Code/GameEngine/Source/Common/Rva005D5BA3PushHeap.cpp,matched,push heap sift-up 12B via rva ordering needs G7 for imul
+?parseCommonStuff@@YAXPAVINI@@PBQBDAAH222@Z,,0x00360613,118,Code/GameEngine/Source/Common/DamageFXParseCommon.cpp,matched,BFME1 DamageFX parseCommonStuff shape plus 4 DamageFX callers in same TU
