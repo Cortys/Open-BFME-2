@@ -316,8 +316,9 @@ AsciiStringPlusText operator+(const AsciiString &left, const char *right)
 struct Rva002226E5TextPlusString
 {
 	int length() const;
+	int write(char *dst);
 	Rva000B3F84Pair m_left;
-	const AsciiString *m_right;
+	AsciiStringRef m_right;
 };
 
 Rva002226E5TextPlusString operator+(const char *left, const AsciiString &right)
@@ -326,7 +327,7 @@ Rva002226E5TextPlusString operator+(const char *left, const AsciiString &right)
 	text.init(left);
 	Rva002226E5TextPlusString result;
 	result.m_left = text;
-	result.m_right = &right;
+	result.m_right.m_string = &right;
 	return result;
 }
 
@@ -334,7 +335,13 @@ Rva002226E5TextPlusString operator+(const char *left, const AsciiString &right)
 int Rva002226E5TextPlusString::length() const
 {
 	int left = m_left.m_len;
-	return left + m_right->getLength();
+	return left + m_right.m_string->getLength();
+}
+
+int Rva002226E5TextPlusString::write(char *dst)
+{
+	int n = m_left.write(dst);
+	return n + m_right.write(dst + n);
 }
 
 // ??H@YA?AUAsciiStringCharPlusText@@ABUAsciiStringRefWithChar@@PBD@Z @0x109CFD
