@@ -6,8 +6,9 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 ## What?
 
-* If you take a part of the BFME 2 binary, recreate the exact source code that would make that part of the binary, then compile the source code and inject it into the binary, you get the same binary
-* Doing this piece by piece will eventually give you a full, open source recreation of BFME 2, and enable some (insane) mods
+* We rewrite the game's code as C++, one small piece at a time.
+* Each piece must turn back into the exact same bytes as the original game.dat (BFME 2, version 1.06).
+* When every piece matches, the whole game is open source, and we can fix bugs and make big mods.
 * The target is `game.dat` — the real engine PE; `lotrbfme2.exe` is only a launcher stub
 * Sister project of [Open-BFME-1](https://github.com/Open-BFME/Open-BFME-1): same engine family, same MSVC 7.1 toolchain, same workflow — and BFME 1's converted source rides in as a submodule reference
 
@@ -15,11 +16,8 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 ## Status
 
-**16.16% of the game's retail `.text` has exact byte coverage** — 1,299,292 C++
-bytes plus 9,037 ASM-only bytes. Source-backed reconstruction accounts for
-12.77% of real code: 1,013,009 bytes of C++ we wrote and 5,878 bytes from
-attached prebuilt-library rows. Vendored library source contributes 270,795
-bytes, while generator-written C++ contributes 15,488 bytes. Retail statically
+Green: bytes that match the original game.dat. Blue: bytes matched by C++ source
+code. Retail statically
 links Visual C++ 7.1's own support libraries, and `tools/lib_probe.py` places
 their members without needing an attached row to anchor a window. The vendored
 DirectX archives do **not** place — BFME 2 links a later SDK than the Summer
