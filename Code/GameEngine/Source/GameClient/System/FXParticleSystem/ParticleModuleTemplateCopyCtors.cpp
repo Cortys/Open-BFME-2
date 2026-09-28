@@ -193,3 +193,21 @@ Rva003AF15E::Rva003AF15E(const Rva003AF15E &that)
 	*(void **)((char *)this + 0x14) = &Rva003AF15E_v14;
 	*(void **)((char *)this + 0x18) = &Rva003AF15E_v18;
 }
+
+extern "C" char Rva003AF208_v0;
+extern "C" char Rva003AF208_v14;
+extern "C" char Rva003AF208_v18;
+
+class Rva003AF208 : public Rva003AF22E
+{
+public:
+	__declspec(noinline) Rva003AF208(const Rva003AF208 &other);
+};
+
+Rva003AF208::Rva003AF208(const Rva003AF208 &that)
+	: Rva003AF22E(that)
+{
+	*(void **)this = &Rva003AF208_v0;
+	*(void **)((char *)this + 0x14) = &Rva003AF208_v14;
+	*(void **)((char *)this + 0x18) = &Rva003AF208_v18;
+}
