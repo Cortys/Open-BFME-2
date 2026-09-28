@@ -39983,3 +39983,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva005B646ASort@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B646A,48,Code/GameEngine/Source/Common/Rva005B646ASort.cpp,matched,chain insertion sort via rowed guarded insert
 ?Rva005B62DBPartition@@YAPAPAXPAPAX0PAXVRva005B61B3@@@Z,,0x005B62DB,73,Code/GameEngine/Source/Common/Rva005B62DBPartition.cpp,matched,chain unguarded partition via rowed comparator
 ?Rva005B6353Adjust@@YAXPAPAXHHPAXVRva005B61B3@@@Z,,0x005B6353,76,Code/GameEngine/Source/Common/Rva005B6353Adjust.cpp,matched,chain adjust heap via rowed comparator
+?Rva005B6543Final@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B6543,77,Code/GameEngine/Source/Common/Rva005B6543Final.cpp,matched,chain final insertion sort via rowed sorts
