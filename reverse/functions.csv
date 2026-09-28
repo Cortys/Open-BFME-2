@@ -40289,3 +40289,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000B304B@Rva000B304B@@QAEXPAX_N@Z,,0x000B304B,73,Code/GameEngine/Source/Common/Rva000B304B.cpp,matched,unlock lane callers 0x000B4EF4 0x000B51C0 0x000B5903 slots 0x88 0x194 refcount plus4
 ?Rva00363CF3Distance@@YANPBUCoord3D@@0@Z,,0x00363CF3,45,Code/GameEngine/Source/GameLogic/AI/PathDistance.cpp,matched,2D distance via sqrt for PathNode positions callers 363D74 and 3642DF
 ??0ObjectTypes@@QAE@XZ,,0x003769F9,32,Code/GameEngine/Source/GameLogic/ScriptEngine/ObjectTypesCtor.cpp,matched,ObjectTypes default ctor vtable 0x00C18630 ZH donor
+?rva002D352C@Rva002D352C@@QAEXHH@Z,,0x002D352C,42,Code/GameEngine/Source/Common/System/Rva002D352CMaxStore.cpp,matched,callers 0x002D381D 0x002D382E 0x002D383F via outer plus 0x10 FPS global 0x00DBA4E8 honest inner
