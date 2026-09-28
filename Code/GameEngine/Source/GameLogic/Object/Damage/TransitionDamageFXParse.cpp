@@ -187,7 +187,6 @@ void TransitionDamageFXModuleData::parseObjectCreationList(INI *ini, void *insta
 	INI::parseObjectCreationList(ini, instance, store, &info->ocl);
 }
 
-// ?parseParticleSystem@TransitionDamageFXModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void TransitionDamageFXModuleData::parseParticleSystem(INI *ini, void *instance, void *store, const void *userData)
 {
 	const char *token;
