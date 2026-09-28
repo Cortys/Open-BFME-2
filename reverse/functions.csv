@@ -40058,3 +40058,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0041AB68@Rva0041A96D@@QAEXABUBfmeNarrowRecord0041A5D2@@@Z,,0x0041AB68,45,Code/GameEngine/Source/Common/NarrowStringRecordDequePush.cpp,matched,deque push_back fast path calls rowed Construct and aux
 ?rva0041A3F7@Rva0041A3F7@@QAEXXZ,,0x0041A3F7,53,Code/GameEngine/Source/Common/NarrowStringRecord16DequePop.cpp,matched,deque pop_front aux 16B inline string dtor
 ?rva0041A4A7@Rva0041A3F7@@QAEXXZ,,0x0041A4A7,33,Code/GameEngine/Source/Common/NarrowStringRecord16DequePop.cpp,matched,deque pop_front fast 16B inline string dtor
+?rva00031680@GeneralAllocator@Allocator@EA@@QAEPAXPBX@Z,,0x00031680,47,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,GeneralAllocator this via callers 0x31BB0 0x31D00 0x32920 sentinel list

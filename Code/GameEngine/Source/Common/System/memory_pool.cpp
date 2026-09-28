@@ -70,6 +70,7 @@ public:
 	bool rva00032920(const void *block);			// owns-address test
 	bool rva000329E0(int level);				// ValidateHeap-like
 	unsigned int rva00032A20(const void *block);		// GetUsableSize-like
+	void *rva00031680(const void *block);	// intrusive-list search unblocking 0x31BB0 0x31D00 0x32920
 	void rva000338F0(void *block);				// Free-like
 	void *rva00035080(unsigned int size, int flags);	// Malloc-like
 	void *rva00035190(void *block, unsigned int size, int flags);	// Realloc-like
@@ -77,6 +78,20 @@ public:
 	void *rva000353B0(void *context, int blockTypes, bool copy, void *storage, unsigned int storageSize);	// ReportBegin-like
 	const BlockInfo *rva00032F60(void *context, int blockTypes);	// ReportNext-like
 	void rva00033E90(void *context);			// ReportEnd-like
+
+private:
+	// Intrusive list node proven by 0x00031680: size at +4 and next at +0x18,
+	// sentinel embedded at +0x448 with its next at +0x460 (0x448+0x18).
+	// Labels are descriptive; only offsets are target facts.
+	struct ListNode
+	{
+		unsigned int m_unk0;
+		unsigned int m_size;
+		unsigned char m_pad[16];
+		ListNode *m_next;
+	};
+	unsigned char m_pad0[0x448];
+	ListNode m_sentinel;
 };
 
 GeneralAllocator::Snapshot::Snapshot(unsigned int size, void *context)
@@ -140,6 +155,28 @@ unsigned int GeneralAllocator::GetLargeBinIndexFromChunkSize(unsigned int size)
 		return index + 0x7C;
 
 	return 0x7E;
+}
+
+// ?rva00031680@GeneralAllocator@Allocator@EA@@QAEPAXPBX@Z @ 0x00031680 (47B):
+// intrusive circular-list search returning the node containing the address or
+// null. Class proven by callers 0x00031BB0 0x00031D00 0x00032920 passing the
+// same GeneralAllocator this through; head at +0x460 is sentinel.next
+// (+0x448+0x18); node size at +4 and next at +0x18.
+void *GeneralAllocator::rva00031680(const void *block)
+{
+	ListNode *cur = m_sentinel.m_next;
+	ListNode *sentinel = &m_sentinel;
+	while (cur != sentinel)
+	{
+		if ((unsigned int)block >= (unsigned int)cur)
+		{
+			unsigned int end = (unsigned int)cur + cur->m_size;
+			if ((unsigned int)block < end)
+				return cur;
+		}
+		cur = cur->m_next;
+	}
+	return 0;
 }
 
 }
