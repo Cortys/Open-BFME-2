@@ -39606,3 +39606,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva001FD048Init@@YAXPAX@Z,,0x001FD048,38,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,FX init chain category 1 parse 0x001F84BD calls 0x001FD022
 ?Rva001FD06EInit@@YAXPAX@Z,,0x001FD06E,37,Code/GameEngine/Source/GameLogic/Object/Rva001FB912Init.cpp,matched,FX init chain category 0 parse 0x001F83C9 calls 0x001FD048
 ?rva001FD404@Rva001FD404@@QAEPAU1@ABU1@@Z,,0x001FD404,39,Code/GameEngine/Source/Common/Rva001FD404Assign.cpp,matched,0x10 byte assign AsciiString plus three dwords returns this
+?Rva001FD837Find@@YAXPAPAXPAURva001FD837Node@@1ABVAsciiString@@@Z,,0x001FD837,39,Code/Libraries/Source/WWVegas/WWLib/Rva001FD837Find.cpp,matched,List find via StringBase compare stores match through out pointer
