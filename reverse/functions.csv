@@ -40076,3 +40076,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005686C1@Rva005686C1@@QAEHH@Z,,0x005686C1,24,Code/GameEngine/Source/Common/Rva005686C1Getter.cpp,matched,bounds-checked indexed dword getter at plus 0x2C with 4 entries
 ?rva00568C36@Rva00568C36@@QAE_NPBVRva00568C36Provider@@@Z,,0x00568C36,24,Code/GameEngine/Source/Common/Rva00568C36Overlap.cpp,matched,virtual slot 7 range wrapper calls rowed 0x00568B81 overlap
 ?rva00568920@Rva00568920@@QBE_NXZ,,0x00568920,25,Code/GameEngine/Source/Common/Rva00568920Check.cpp,matched,all-nonzero test over four dwords at plus 0x2C
+?clear@?$_List_base@UCameraMarker@@V?$allocator@UCameraMarker@@@_STL@@@_STL@@QAEXXZ,,0x002934A8,49,Code/Libraries/Source/WWVegas/WWLib/stlport_list_cameramarker_clear.cpp,matched,List_base clear CameraMarker via rowed dtor 0x0029D7C2 and free 0x00030830 shape matches 0x00434EC9
