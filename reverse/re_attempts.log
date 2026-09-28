@@ -2570,3 +2570,4 @@ FUN_007efeb2	0x003EFEB2	379	blocked	bracket family push-eax plus 5x mov-eax-imm 
 FUN_007ff496	0x003FF496	62	blocked	GameInfo slot check with word index plus occupied plus slot+0x50/0x60/0x64; no BFME1 donor and no proven real name; t=12 model=muse-0a3a
 ?rva005376D2@UserPreferences@@QAE?AVAsciiString@@XZ	0x005376D2	228	partial	extra stack slot for inner ptr t=12 model=muse-0de4 score=0.93 stash=reverse/attempts/0x005376d2.cpp
 ?rva005377B6@UserPreferences@@QAE?AVAsciiString@@XZ	0x005377B6	228	partial	extra stack slot for inner ptr t=12 model=muse-0de4 score=0.93 stash=reverse/attempts/0x005377b6.cpp
+?transformPoint@Thing@@QAEXPBUCoord3D@@PAU2@@Z	0x0030A812	191	partial	EBP frame plus SSE via O1 archSSE; 191B 52insns 0 structural regions only xmm load order and matrix row1-2 operand order differ t=35 model=muse-e955 score=0.93 stash=reverse/attempts/0x0030a812.cpp
