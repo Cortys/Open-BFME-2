@@ -40621,3 +40621,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva002AC3BE@@QAE@PAX@Z,,0x002AC3BE,34,Code/GameEngine/Source/Common/Rva002AC3BECtor.cpp,matched,holder ctor voidptr plus0 vector BfmeE16 plus4 via 0x00211E58 and bool plus0x14 zeroed
 ?Rva0030612AXfer@@YAXPAVXfer@@PAM@Z,,0x0030612A,39,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,free xfer helper for 3-float triple via float slot 0x70 chained callers at 0x9AB5E 0x271A2E
 ??_GRva005D242F@@UAEPAXI@Z,,0x005D2495,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-01-5D2495.cpp,matched,scalar deleting dtor via rowed dtor plus delete
+?remove@AIGroup@@QAE_NPAVObject@@@Z,,0x0036CF07,108,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,AIGroup remove find erase leaveGroup TheAI destroyGroup BFME1 ZH donor
