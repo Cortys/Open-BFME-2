@@ -20,6 +20,7 @@ class Rva00469BEA
 {
 public:
 	Rva00469BEA(const int &a, const Rva00469155 &b);
+	Rva00469BEA(const Rva00469BEA &o);
 
 private:
 	int m_00;
@@ -29,4 +30,9 @@ private:
 Rva00469BEA::Rva00469BEA(const int &a, const Rva00469155 &b) : m_00(a)
 {
 	m_04 = b;
+}
+
+Rva00469BEA::Rva00469BEA(const Rva00469BEA &o) : m_00(o.m_00)
+{
+	m_04 = o.m_04;
 }
