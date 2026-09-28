@@ -2643,3 +2643,4 @@ FUN_007063A9	0x003063A9	112	blocked	EH StringBase Xfer body needs globals and rv
 ??0Rva00540D94@@QAE@ABURva00540E9DSrc@@MMH@Z	0x00540D94	54	partial	store order swapped movss vs mov t=18 model=muse-k7q score=0.93 stash=reverse/attempts/0x00540d94.cpp
 ?rva0046824A@Rva0046824A@@QAE...	0x0046824A	183	blocked	183B STL vector realloc 5 args ret-14 calling allocate uninitialized_copy Construct fill_n plus clear 0x46800B; needs TransportContain donor and BfmeStringRecord layout; caller 0x4688D1 pushes 1-1-stackptr-arg-eax t=10 model=muse-04
 ?rva0013EA00@Rva0013EA00@@QAEXH@Z	0x0013EA00	43	partial	mirror eax-ecx missing mov eax-ecx plus add-eax--1 vs sub-ecx-1; 41B vs 43B t=20 model=muse-04 score=0.9 stash=reverse/attempts/0x0013ea00.cpp
+FUN_0095a04c	0x0055A04C	59	blocked	TheGameText fetch plus3C with table 0xDD2344 and wide default 0xC6B8CC needs table contents and local ebp-4 purpose t=12 model=muse-05
