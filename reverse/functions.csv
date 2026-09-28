@@ -40749,3 +40749,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00528B37Equal@@YAHPBURva00528B37Key@@0@Z,,0x00528B37,59,Code/GameEngine/Source/Common/Rva00528B37Compare.cpp,matched,ints plus fabs float lt 0.1f at 0x7C2424 caller 0x529C1D
 ?Rva002D337FHide@@YAXXZ,,0x002D337F,10,Code/GameEngine/Source/Common/System/Rva002D337FThunk.cpp,matched,leaf call then jmp via callers
 ?doTeamGuardForFramecount@ScriptActions@@IAEXABVAsciiString@@H_N@Z,,0x003C9363,161,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doTeamGuardForFramecount.cpp,matched,team guard iterate aiGuard sequential timer
+?Rva003C90B1Exit@@YGXPAVParameter@@@Z,,0x003C90B1,44,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C90B1Exit.cpp,matched,unit named then aiExit null script
