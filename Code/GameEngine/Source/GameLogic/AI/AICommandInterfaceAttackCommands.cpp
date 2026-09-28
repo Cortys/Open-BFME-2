@@ -143,6 +143,7 @@ public:
 	void rva0036F2CA(Object *target, CommandSourceType cmdSource);
 	void rva0036F32F(const Coord3D *position, CommandSourceType cmdSource);
 	void rva0036F4DF(Object *target, Int value, CommandSourceType cmdSource);
+	void rva0036F54D(const Team *team, Int value, CommandSourceType cmdSource);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
 };
 
@@ -559,6 +560,17 @@ void AICommandInterface::rva0036F4DF(Object *target, Int value, CommandSourceTyp
 {
 	AICommandParms parms((AICommandType)0x1F, cmdSource);
 	parms.m_obj = target;
+	parms.m_intValue = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F54D@AICommandInterface@@QAEXPBVTeam@@HW4CommandSourceType@@@Z, retail 0x0036F54D, 110 bytes.
+// Same 110B team-plus-int shape as aiAttackTeam in this TU: AICMD 0x20 plus m_team at +0x1C plus m_intValue at +0x34 plus slot-0 aiDoCommand.
+// Class proven by gap between rva0036F4DF and rva0036F6A7 plus same TU flags; caller at 0x00370481.
+void AICommandInterface::rva0036F54D(const Team *team, Int value, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x20, cmdSource);
+	parms.m_team = team;
 	parms.m_intValue = value;
 	aiDoCommand(&parms);
 }
