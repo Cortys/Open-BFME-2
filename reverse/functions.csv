@@ -39037,3 +39037,4 @@ _Rva0084DDD0Sign,,0x00021050,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20S
 ?copy@Rva00808AC0Owner@@QAEXPAD@Z,,0x00674A30,25,Code/GameEngine/Source/GameNetwork/Y4FeslFavGameAddress.cpp,matched,BFME1 byte-identical donor; b1 0x00808AC0
 ?copy@Rva00808900Owner@@QAEXPAD@Z,,0x00674890,22,Code/GameEngine/Source/GameNetwork/Y4FeslFavGameAddress.cpp,matched,BFME1 byte-identical donor; b1 0x00808900
 ?set@Rva007EA490Owner@@QAEXHHH@Z,,0x00657440,42,Code/GameEngine/Source/GameNetwork/Rva007EA490SetFields.cpp,matched,BFME1 byte-identical donor; b1 0x007EA490
+?bfmeInsert@Gen_008F7D90@@QAE_NPAUBfmeLink8F7D90@@0@Z,,0x0073A330,36,Code/GameEngine/Source/Common/Bfme5InsertLink8F7D90.cpp,matched,BFME1 donor bfmeInsert; target bytes verify link updates. Gen_008F7D90 and field layout are donor-derived pending independent target identity evidence; donor b1 0x008F7D90
