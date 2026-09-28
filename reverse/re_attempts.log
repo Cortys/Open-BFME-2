@@ -2635,3 +2635,5 @@ FUN_007063A9	0x003063A9	112	blocked	EH StringBase Xfer body needs globals and rv
 ?rva004F8F61@Rva004F8F61@@QAEXI@Z	0x004F8F61	183	blocked	same mixed-type wall as 4F8BA2: allocate for BfmeE12 plus copy for Rva004F6352 plus dtor for Rva004F691E; cannot name vector element honestly; chain from our dtor but needs referee t=3 model=muse-spark
 ?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z	0x002710AE	57	partial	exact 57B first try but hook find_declared_unmatched false positive blocks landing t=15 model=muse-09 score=1.0 stash=reverse/attempts/0x002710ae.cpp
 ??1Rva000D1BA6@@UAE@XZ	0x000D1BA6	68	blocked	dtor needs globals 0x9FF190 0x9EBC38 names beyond lookup budget t=12 model=muse-09
+?rva002AE53E@Rva000427195@@QAEXXZ	0x002AE53E	57	blocked	same 57B clear-free EH wall as 0x001F8D70 no base call t=5 model=muse-10
+?Rva002ADD75Equal@@YA_NPBUAsciiRange002ADD75@@0@Z	0x002ADD75	61	partial	setne vs jexorinc bool return plus xor-al vs xor-eax t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x002add75.cpp
