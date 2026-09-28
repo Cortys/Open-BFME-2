@@ -2317,3 +2317,4 @@ FUN_007b8b44	0x003B8B44	29	blocked	STL uninit-copy wrapper 4-arg to 5-arg dup __
 ??0Rva000D46E3@@QAE@XZ	0x000D46E3	25	blocked	needs Vector3 array 100x12 with ICF Vector3 ctor at Region3D addr t=10 model=muse-b28c
 ?Rva001530E9Parse@@YAXPBDPAX@Z	0x001530E9	224	partial	lea tmp in ebx not eax plus missing spill to ebp+C and cap in ecx not eax t=22 model=muse-240a score=0.93 stash=reverse/attempts/0x001530e9.cpp
 ?loadDockPositions@DockUpdate@@IAEXXZ	0x005897FB	270	partial	copy loop base in edi via add vs ecx via two leas; 269 vs 270B t=25 model=muse-spark score=0.97 stash=reverse/attempts/0x005897fb.cpp
+?getBitNameIfSet@?$BitFlags@$0BDA@@@QBEPBDH@Z	0x000454F3	42	blocked	eax edx swap for this vs index persists across 6 variants; 42B 17 insns structural exact; table 0xDBAA98 plus test shape prove BitFlags304 getBitNameIfSet t=25 model=muse-spark
