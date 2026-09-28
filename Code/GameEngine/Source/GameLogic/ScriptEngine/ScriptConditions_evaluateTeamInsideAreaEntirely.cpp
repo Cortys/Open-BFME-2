@@ -1,7 +1,4 @@
-// ?evaluateTeamInsideAreaEntirely@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// partial score=0.86 date=2026-09-26
-// ?evaluateTeamInsideAreaEntirely@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /Oy-
+// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // BFME1 donor: ScriptConditionsTriggerAreas.cpp.
 template <class T> class StringBase
 { friend class AsciiString; private: StringBase(const StringBase &); ~StringBase(); };

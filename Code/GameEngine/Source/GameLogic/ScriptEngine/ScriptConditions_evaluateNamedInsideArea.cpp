@@ -1,6 +1,4 @@
-// ?evaluateNamedInsideArea@ScriptConditions@@IAE_NPAVParameter@@0@Z
-// partial score=0.85 date=2026-09-26
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /Oy-
+// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // ScriptConditions::evaluateNamedInsideArea, target 0x003E5EFF (116 bytes).
 // Identity: target retrieves the named unit and trigger, converts the unit's
 // three position coordinates to ints, then calls the trigger point test.

@@ -1,8 +1,4 @@
-// ?doSetTeamState@ScriptActions@@IAEXABVAsciiString@@0@Z
-// partial score=0.96 date=2026-09-26
-// ?doSetTeamState@ScriptActions@@IAEXABVAsciiString@@0@Z
-// partial score=0.96 date=2026-09-26
-// cl: /O1 /Oy- /DNDEBUG /MD /EHsc
+// cl: /DNDEBUG /MD /EHsc /O1
 //
 // ScriptActions::doSetTeamState, retail 0x003BEC9B, 50 bytes.
 // Target evidence: executeAction action index 0x25 is named TEAM_SET_STATE by

@@ -1,6 +1,4 @@
-// ?doTeamAvailableForRecruitment@ScriptActions@@IAEXABVAsciiString@@_N@Z
-// partial score=0.96 date=2026-09-26
-// cl: /O1 /Oy- /DNDEBUG /MD /EHsc
+// cl: /DNDEBUG /MD /EHsc /O1
 //
 // ScriptActions::doTeamAvailableForRecruitment, retail 0x003C01AB, 55 bytes.
 // Target evidence: action template 0x5E is TEAM_AVAILABLE_FOR_RECRUITMENT and

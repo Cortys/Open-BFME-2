@@ -1,6 +1,4 @@
-// ?GadgetListBoxSetBottomVisibleEntry@@YAXPAVGameWindow@@H@Z
-// partial score=0.96 date=2026-09-21
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /G7
 // Retail RVA 0x00326BEC, 260 bytes (the reloc size 10 is stale).
 // GadgetListBoxAddEntryText, the listbox text insertion body called by
 // AptMapPreview::bfmeSetMapDescription. Ported from Open-BFME-1
@@ -169,7 +167,7 @@ extern GameWindowManager *TheWindowManager;
 int Rva00324807(GameWindow *listbox);
 bool GadgetListBoxIsFull(GameWindow *window);
 void GadgetListBoxSetBottomVisibleEntry(GameWindow *window, int newPos);
-void adjustDisplay(GameWindow *window, Bool updateSlider);
+void Rva003249D2(GameWindow *window, Bool updateSlider);
 
 int GadgetListBoxAddEntryText(GameWindow *listbox, UnicodeString text,
 	int color, int row, int column, bool overwrite)
@@ -226,5 +224,5 @@ void GadgetListBoxSetBottomVisibleEntry(GameWindow *window, Int newPos)
 
 	listData->displayPos = listData->listData[newPos].listHeight - listData->displayHeight + 1;
 
-	adjustDisplay(window, true);
+	Rva003249D2(window, true);
 }

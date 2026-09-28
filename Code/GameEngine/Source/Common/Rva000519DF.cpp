@@ -1,7 +1,4 @@
-// ?rva000519DF@Rva000519DF@@QAEPAV1@PAPAXABVBfmePoolRef10@@@Z
-// partial score=0.95 date=2026-09-28
-// ?rva000519DF@Rva000519DF@@QAEPAV1@PAPAXABVBfmePoolRef10@@@Z
-// partial score=0.95 date=2026-09-28
+// cl: /O1 /MD
 //
 // ?rva000519DF@Rva000519DF@@QAEPAV1@PAPAXABVBfmePoolRef10@@@Z @0x000519DF 29B
 // Pool-ref pair setter returning this. Evidence: __thiscall via ecx plus
