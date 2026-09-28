@@ -6150,3 +6150,4 @@ _acos,0x00629964,address read from the REL32 displacement at a placed body; the 
 ?attach@NetCommandMsg@@QAEXXZ,0x004D55B8,NetCommandMsg attach inc +0x18 called by NetCommandRef ctor 0x0058B88A; ZH donor and retail call site
 ?getCommandList@FrameData@@QAEPAVNetCommandList@@XZ,0x0030F45F,ICF 4-byte mov eax [ecx+8] ret; FrameData m_commandList at plus 8 called by FrameDataManager::getFrameCommandList
 ?rva00212354@Rva000427195@@QAEPAXPBX@Z,0x00212354,ICF twin of free NewNode for table insert call with this; same 12B node and pair copy
+?ji_009f6fe2@@YAXXZ,0x0062995E
