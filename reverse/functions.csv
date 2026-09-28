@@ -40609,3 +40609,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?EraseRange@Rva0015229CVector@@QAEPAURva0007BB16Record@@PAU2@0@Z,,0x0015229C,51,Code/Libraries/Source/WWVegas/WWLib/Rva0015229CEraseRange.cpp,matched,range erase via rowed copy 0x151FCA and Destroy 0x7C2D7
 ?Rva002BF198Cast@@YG_NPAVRenderObjClass@@ABVVector3@@1PAV2@H_N@Z,,0x002BF198,287,Code/Libraries/Source/WWVegas/WW3D2/Rva002BF198Cast.cpp,matched,rowed LineSeg 0x000927F9 and RayCollision 0x0006F1A6 with Cast_Ray slot 0xF0 and callers 0x0020E354
 ?Rva005E59FCCopy@@YAPAHPAU_Rb_tree_node_base@_STL@@0PAHABU__true_type@2@@Z,,0x005E59FC,40,Code/GameEngine/Source/Common/Rva005E59FCCopy.cpp,matched,RB key copy via rowed increment callers 0x005E5F43 0x005F4D62 0x005F4F74
+?rva0056EBA1@Rva0056EBA1@@QAE_NABVUnicodeString@@@Z,,0x0056EBA1,47,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva0056EBA1.cpp,matched,chain of SetText 0x322D63 null member plus copy
