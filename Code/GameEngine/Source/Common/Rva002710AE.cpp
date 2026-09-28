@@ -1,11 +1,6 @@
-// ?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z
-// partial score=1.0 date=2026-09-28
-// ?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z
-// partial score=1.0 date=2026-09-28
 // cl: /O1 /MD
 
-// ?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z,
-// RVA 0x002710AE, 57B. Unlock lane: all callees rowed (slot 0x14 bool,
+// Rva002710AE::rva002710AE at RVA 0x002710AE, 57B. Unlock lane: all callees rowed (slot 0x14 bool,
 // getDesiredGatherers 0x005508E2). Caller at 0x004A1B0C in 0x004A1A69.
 // Guard virtual bool at +0x14 on arg2, then resolve gatherer pointer via
 // BuildListInfo and copy bytes at +0x445/+0x446 to this.

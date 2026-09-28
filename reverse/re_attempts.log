@@ -2680,3 +2680,4 @@ FUN_00818F7D	0x00418F7D	160	blocked	INI attack priority parse with EH throw t=12
 ?rva000519DF@Rva000519DF@@QAEPAV1@PAPAXABVBfmePoolRef10@@@Z	0x000519DF	29	solved	byte-exact after correcting compiler flags (/O1 instead of default); source unchanged from the banked attempt; t=15 model=claude-sonnet-5-5
 ?GadgetListBoxSetBottomVisibleEntry@@YAXPAVGameWindow@@H@Z	0x003253FD	79	solved	byte-exact after correcting compiler flags (/G7 added; callee named Rva003249D2); source unchanged from the banked attempt; t=15 model=claude-sonnet-5-5
 ?rva001E3591@Rva001E3591@@QAE_NXZ	0x001E3591	37	solved	byte-exact after correcting compiler flags (/arch:SSE added); source unchanged from the banked attempt; t=15 model=claude-sonnet-5-5
+?rva002710AE@Rva002710AE@@QAEXPAVBuildListInfo@@PAVArg2@@@Z	0x002710AE	57	solved	byte-exact; the earlier hook false positive no longer blocks landing; source unchanged from the banked attempt; t=5 model=claude-sonnet-5-5
