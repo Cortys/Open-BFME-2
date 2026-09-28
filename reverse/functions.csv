@@ -40665,3 +40665,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1?$vector@UBfmeStringRecord00568CE0@@V?$allocator@UBfmeStringRecord00568CE0@@@_STL@@@_STL@@QAE@XZ,,0x00569D63,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorChains.cpp,matched,vector dtor via Destroy 0x569A5B stride 0x14 exact 63B
 ??0Rva005756B6@@QAE@H@Z,,0x005756B6,49,Code/GameEngine/Source/Common/Rva005756B6Ctor.cpp,matched,derived of 0x005CBA04 via global 0x00E0661C vtable 0x0086E620 caller 0x005757B9
 ??1Rva00466E23@@QAE@XZ,,0x00466E23,53,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00466E23Dtor.cpp,matched,two StringBase-D at +0 +4 via 0x00036410 EH_prolog 0x00629188 callers 0x00466EC5
+?_M_clear@?$vector@VBfmePoolRef10@@V?$allocator@VBfmePoolRef10@@@_STL@@@_STL@@IAEXXZ,,0x00569DFF,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_poolref10_mclear.cpp,matched,vector clear via Destroy 0x569A74 plus free exact 30B
