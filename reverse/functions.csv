@@ -40225,3 +40225,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?XferArmyIconSize@@YAXPAVXfer@@PAH@Z,,0x00318D36,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,ArmyIconSize string via XferEnum slot 37; caller FUN_0071A6DB at 0x0031A88A
 ?rva00318D05@Rva00318D05@@QAE_NH@Z,,0x00318D05,15,Code/GameEngine/Source/Common/Rva00318D05Check.cpp,matched,dword at +0x54 equality predicate; caller FUN_006B5A5F at 0x002B5AB5 and adjacent +0x58 setter
 ??RRva0021B753@@QBE_NABVRva0021915B@@0@Z,,0x0021B753,34,Code/GameEngine/Source/Common/Rva0021915BAssign.cpp,matched,sort comparator for Rva0021915B via median and insert callers with rowed compareNoCase
+??0SpawnBehavior@@QAE@PAVThing@@PBVModuleData@@@Z,,0x0045F581,263,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorCtor.cpp,matched,BFME1 donor SpawnBehavior poolkey vtable layout
