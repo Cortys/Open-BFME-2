@@ -1,11 +1,14 @@
-// ?Build_Subobject_List@AggregateDefClass@@MAEXAAVRenderObjClass@@0@Z
-// partial score=0.8719923002887392 date=2026-09-23
-// cl: /arch:SSE /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MT /EHsc /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
-// BFME 1 WW3D2/agg_def.cpp donor trial, adapted to the target global factory.
-// Target table 0xBD6C70 slot 0x40 and matched Initialize establish identity.
-// This draft retains donor virtual slots that differ from the target:
-// bone count/name C0/C4, subobjects 84/88, release 94, attachment 3C.
-// Candidate is 1046 bytes; target is 1039, with 133 differing positions.
+// cl: /Ireference/shims/bfme2renderobj /arch:SSE /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MT /EHsc /Ireference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
+// BFME 2 AggregateDefClass::Build_Subobject_List, RVA 0x001A4010, 1039 bytes.
+// Donor: BFME 1 a38d345e79e3bfa4417212ffa37d53ca1ccae65f,
+// game/Libraries/Source/WWVegas/WW3D2/agg_def.cpp; continued from the
+// banked BFME 2 reconstruction at reverse/attempts/0x001a4010.cpp.
+// Target evidence: AggregateDef table 0x00BD6C70 has this method at +0x40,
+// Is_Object_In_List at +0x3C, and Add_Subobject at +0x38. Matched Initialize
+// calls +0x40 after creating the vanilla model. Target accesses establish
+// the bone/subobject virtual slots; names and algorithm come from the donor.
+// The target omits an intermediate cleanup state across array deallocation.
+// Declare the pointer-array deallocator nonthrowing to preserve that lifetime.
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 /*
 **	Command & Conquer Generals Zero Hour(tm)
@@ -54,6 +57,26 @@
 
 #include <windows.h>
 
+
+void __cdecl operator delete[](void *) throw();
+class AggregateSubobjectCalls { public:
+virtual void slot0()=0;
+virtual void slot1()=0;
+virtual void slot2()=0;
+virtual void slot3()=0;
+virtual void slot4()=0;
+virtual void slot5()=0;
+virtual void slot6()=0;
+virtual void slot7()=0;
+virtual void slot8()=0;
+virtual void slot9()=0;
+virtual void slot10()=0;
+virtual void slot11()=0;
+virtual void slot12()=0;
+virtual void slot13()=0;
+virtual void slot14()=0;
+virtual bool Is_Object_In_List(const char *, DynamicVectorClass<RenderObjClass *> &)=0;
+};
 
 void
 AggregateDefClass::Build_Subobject_List
@@ -104,7 +127,7 @@ AggregateDefClass::Build_Subobject_List
 				// Is this subobject new?  (i.e. not in a 'vanilla' instance?)
 				const char *prototype_name = psubobject->Get_Name ();
 				if (psubobject != NULL &&
-					 (Is_Object_In_List (prototype_name, orig_node_list) == false)) {
+					 (reinterpret_cast<AggregateSubobjectCalls *>(this)->Is_Object_In_List (prototype_name, orig_node_list) == false)) {
 
 					// Add this subobject to our list
 					::lstrcpy (subobj_info.SubobjectName, prototype_name);
@@ -114,8 +137,8 @@ AggregateDefClass::Build_Subobject_List
 
 					// Attach this render object to the 'original' model (this is done
 					// so we can do texture compares later)
-					// MSVC 7.1 keeps the original-model reference live across this
-					// call, which changes the retail frame and consumes EBP.  The
+					// Target attachment is a nonthrowing virtual call at +0x94.
+					// Keep this call view local; other slots are not identified here.
 					class __declspec (novtable) RetailRenderObjCallView {
 					public:
 						virtual void slot00 (void) = 0;
@@ -154,6 +177,7 @@ AggregateDefClass::Build_Subobject_List
 						virtual void slot33 (void) = 0;
 						virtual void slot34 (void) = 0;
 						virtual void slot35 (void) = 0;
+ virtual void slot36(void) = 0;
 						virtual int Add_Sub_Object_To_Bone (RenderObjClass *, const char *, const Vector3 *) throw () = 0;
 						static __forceinline void Attach (RenderObjClass *model, RenderObjClass *subobj, const char *bone)
 						{
