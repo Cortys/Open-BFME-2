@@ -2415,3 +2415,4 @@ FUN_00670234	0x00270234	44	blocked	Drawable 3-list broadcaster slot 0x20; 3 prob
 ?rva0006E605@Rva0006E605@@QAEXPBVM@@_N@Z	0x0006E605	273	blocked	light blend with GetDiffuse Ambient needs donor math t=10 model=muse-k7x
 ?rva001074D5@Rva001074D5@@QAEXXZ	0x001074D5	532	blocked	large 532B shadow volumetric update needs donor t=5 model=muse-k7x
 ?rva00395E53@Rva00395E53@@QAEPAXI@Z	0x00395E53	34	partial	register allocation only; base in ecx index in eax vs retail base in eax index in ecx; sar and jb match; 34B 12insns exact size t=20 model=muse-e013 score=0.92 stash=reverse/attempts/0x00395e53.cpp
+FUN_00626156	0x00226156	379	blocked	bracket family push-eax+5x mov-eax-imm+pop-eax prolog/epilog not compiler-emittable; same 379B shape as 0x003EFEB2 blocked 2026-09-28; callers carry opaque xor-eax-je predicates; no clean-C++ path t=12 model=muse-1457
