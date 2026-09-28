@@ -1,38 +1,31 @@
 // ?setCursorTooltip@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z
-// partial score=0.97 date=2026-09-27
+// partial score=0.98 date=2026-09-28
 // ?setCursorTooltip@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z
-// partial score=0.97 date=2026-09-27
-// cl: /O1 /DNDEBUG /MD /EHsc
+// partial score=0.98 date=2026-09-28
+// cl: /O1 /MD /EHsc
+
 // ?setCursorTooltip@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z @0x001EEA6D 360B
-// Evidence: this is TheMouse (*(Mouse **)0x00DFDCA0, DisplaySetHeight.cpp); callers
-// construct a UnicodeString temp via 0x00037050 from TheEmptyString 0x00A0C898 then
-// call here with (tmp, -1/0, NULL, 1.0f) (0x00355FF9, 0x002BEFE5, 0x005830AE) or with a
-// GameText-fetched tooltip (0x005F6F0C via slot 0x3C on 0x00DFF0BC STRATEGIChud string).
-// Float immediates are 127.5f at 0x00BE03E4 (with MouseCursor string), 1.0f at
-// 0x00BBB8D8, 255.0f at 0x00BC2900. Color math matches ZH/BFME1 Mouse::setCursorTooltip
-// (reference/open-bfme-1/.../Input/Mouse.cpp): text (color+1)*255/2 vs color*255,
-// back color*255*0.5 vs color*255, null color copies 16B defaults. Width ignored.
-// Prev 0x001EE5D6 Mouse::setVisibility /O1 /MD, next 0x001EEFB6 deleting dtor /O1 /MD.
-typedef unsigned short WideChar;
+// BFME2 Mouse::setCursorTooltip: m_tooltipString.set at +0x12FC, delay at +0x4FCC,
+// text/back colors at +0x4FDC/+0x4FEC from +0x128C/+0x12BC with alt flags at
+// +0x12E0/+0x12E1/+0x12E2. Caller at 0x001EB5FC passes TheEmptyString, -1, 0, 1.0f
+// (matches ZH/BFME1 donor LoadScreenUpdates: setCursorTooltip(TheEmptyString, -1, 0, 1.0f)).
+// Donor: reference/open-bfme-1/Code/GameEngine/Source/GameClient/Input/Mouse.cpp
+// (ZH GeneralsMD Mouse.cpp setCursorTooltip with DisplayString/wordwrap removed in
+// BFME2; width param unused, color conversion kept: (c+1)*127.5 vs c*255).
+// TheMouse singleton at 0x009FDCA0 (TheMouse in MouseSetEngineVisibility.cpp).
 
 template <typename T>
 class StringBase
 {
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-	void releaseBuffer();
 public:
-	void set(const StringBase &src);
 	~StringBase() { releaseBuffer(); }
+	void set(const StringBase &other);
+private:
+	void releaseBuffer();
+	T *m_data;
 };
 
-class UnicodeString : public StringBase<WideChar>
+class UnicodeString : public StringBase<unsigned short>
 {
 };
 
@@ -43,79 +36,79 @@ struct RGBColor
 	float blue;
 };
 
-struct RGBAInt
+struct RGBAColorInt
 {
-	int r;
-	int g;
-	int b;
-	int a;
+	unsigned int red;
+	unsigned int green;
+	unsigned int blue;
+	unsigned int alpha;
 };
 
 class Mouse
 {
+	char _pad0[0x128c];
+	RGBAColorInt m_tooltipColorText;
+	char _pad1[0x12bc - 0x129c];
+	RGBAColorInt m_tooltipColorBackground;
+	char _pad2[0x12e0 - 0x12cc];
+	bool m_useTooltipAltTextColor;
+	bool m_useTooltipAltBackColor;
+	bool m_adjustTooltipAltColor;
+	char _pad3[0x12fc - 0x12e3];
+	UnicodeString m_tooltipString;
+	char _pad4[0x4fcc - 0x1300];
+	int m_tooltipDelay;
+	char _pad5[0x4fdc - 0x4fd0];
+	RGBAColorInt m_tooltipTextColor;
+	RGBAColorInt m_tooltipBackColor;
 public:
-	void setCursorTooltip(UnicodeString tooltip, int delay, const RGBColor *color, float);
-private:
-	char m_pad00[0x128C];
-	RGBAInt m_128C;
-	char m_pad129C[0x12BC - (0x128C + 16)];
-	RGBAInt m_12BC;
-	char m_pad12CC[0x12E0 - (0x12BC + 16)];
-	bool m_12E0;
-	bool m_12E1;
-	bool m_12E2;
-	char m_pad12E3[0x12FC - 0x12E3];
-	UnicodeString m_12FC;
-	char m_pad1300[0x4FCC - (0x12FC + 4)];
-	int m_4FCC;
-	char m_pad4FD0[0x4FDC - (0x4FCC + 4)];
-	RGBAInt m_4FDC;
-	RGBAInt m_4FEC;
+	void setCursorTooltip(UnicodeString tooltip, int delay, const RGBColor *color, float width);
 };
 
 // ?setCursorTooltip@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z present-unmatched
-void Mouse::setCursorTooltip(UnicodeString tooltip, int delay, const RGBColor *color, float)
+void Mouse::setCursorTooltip(UnicodeString tooltip, int delay, const RGBColor *color, float width)
 {
-	m_4FCC = delay;
-	m_12FC.set(tooltip);
+	(void)width;
+	m_tooltipDelay = delay;
+	m_tooltipString.set(tooltip);
 	if (color)
 	{
-		if (m_12E0)
+		if (m_useTooltipAltTextColor)
 		{
-			if (m_12E2)
+			if (m_adjustTooltipAltColor)
 			{
-				m_4FDC.r = (int)((color->red + 1.0f) * 255.0f / 2.0f);
-				m_4FDC.g = (int)((color->green + 1.0f) * 255.0f / 2.0f);
-				m_4FDC.b = (int)((color->blue + 1.0f) * 255.0f / 2.0f);
+				m_tooltipTextColor.red = (int)((color->red + 1.0f) * 127.5f);
+				m_tooltipTextColor.green = (int)((color->green + 1.0f) * 127.5f);
+				m_tooltipTextColor.blue = (int)((color->blue + 1.0f) * 127.5f);
 			}
 			else
 			{
-				m_4FDC.r = (int)(color->red * 255.0f);
-				m_4FDC.g = (int)(color->green * 255.0f);
-				m_4FDC.b = (int)(color->blue * 255.0f);
+				m_tooltipTextColor.red = (int)(color->red * 255.0f);
+				m_tooltipTextColor.green = (int)(color->green * 255.0f);
+				m_tooltipTextColor.blue = (int)(color->blue * 255.0f);
 			}
-			m_4FDC.a = m_128C.a;
+			m_tooltipTextColor.alpha = m_tooltipColorText.alpha;
 		}
-		if (m_12E1)
+		if (m_useTooltipAltBackColor)
 		{
-			if (m_12E2)
+			if (m_adjustTooltipAltColor)
 			{
-				m_4FEC.r = (int)(color->red * 255.0f * 0.5f);
-				m_4FEC.g = (int)(color->green * 255.0f * 0.5f);
-				m_4FEC.b = (int)(color->blue * 255.0f * 0.5f);
+				m_tooltipBackColor.red = (int)(color->red * 127.5f);
+				m_tooltipBackColor.green = (int)(color->green * 127.5f);
+				m_tooltipBackColor.blue = (int)(color->blue * 127.5f);
 			}
 			else
 			{
-				m_4FEC.r = (int)(color->red * 255.0f);
-				m_4FEC.g = (int)(color->green * 255.0f);
-				m_4FEC.b = (int)(color->blue * 255.0f);
+				m_tooltipBackColor.red = (int)(color->red * 255.0f);
+				m_tooltipBackColor.green = (int)(color->green * 255.0f);
+				m_tooltipBackColor.blue = (int)(color->blue * 255.0f);
 			}
-			m_4FEC.a = m_12BC.a;
+			m_tooltipBackColor.alpha = m_tooltipColorBackground.alpha;
 		}
 	}
 	else
 	{
-		m_4FDC = m_128C;
-		m_4FEC = m_12BC;
+		m_tooltipTextColor = m_tooltipColorText;
+		m_tooltipBackColor = m_tooltipColorBackground;
 	}
 }
