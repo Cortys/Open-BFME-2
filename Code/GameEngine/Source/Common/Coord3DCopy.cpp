@@ -17,3 +17,11 @@ void __cdecl Rva0060173ACopy(Coord3D *dst, const Coord3DBase &src)
     if (dst)
         *dst = src;
 }
+Coord3D *__cdecl Rva00601772Fill(Coord3D *first, unsigned int count, const Coord3DBase &value)
+{
+    Coord3D *dst = first;
+    unsigned int n = count;
+    for (; n > 0; --n, ++dst)
+        Rva0060173ACopy(dst, value);
+    return dst;
+}
