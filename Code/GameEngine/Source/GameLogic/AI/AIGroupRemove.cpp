@@ -19,6 +19,12 @@
 // rva0028C1A9 module lookup, tail-call its slot0 with forwarded args.
 // Evidence: flanked by AIGroup rows 0x0036D7A6 and setAttitude 0x0036DD16,
 // callee rva0028C1A9 row, ret 8 two-arg forward plus jmp [edx] tail shape.
+//
+// ?rva0036D805@AIGroup@@QAEXH@Z @ 0x0036D805 50B
+// AIGroup broadcast: null-checked Object +0x250 provider slot34 call with
+// one forwarded int arg on every member.
+// Evidence: same begin/end loop as rva0036DDCD in AIGroupAttackTeam TU,
+// +0x250 provider offset per ObjectRva0028C197 TU, caller 0x00379AF7.
 #include <list>
 #include <algorithm>
 
@@ -27,11 +33,54 @@ enum ObjectID
 	INVALID_ID = 0
 };
 
+class Rva0036D805If
+{
+public:
+	virtual void s00();
+	virtual void s01();
+	virtual void s02();
+	virtual void s03();
+	virtual void s04();
+	virtual void s05();
+	virtual void s06();
+	virtual void s07();
+	virtual void s08();
+	virtual void s09();
+	virtual void s10();
+	virtual void s11();
+	virtual void s12();
+	virtual void s13();
+	virtual void s14();
+	virtual void s15();
+	virtual void s16();
+	virtual void s17();
+	virtual void s18();
+	virtual void s19();
+	virtual void s20();
+	virtual void s21();
+	virtual void s22();
+	virtual void s23();
+	virtual void s24();
+	virtual void s25();
+	virtual void s26();
+	virtual void s27();
+	virtual void s28();
+	virtual void s29();
+	virtual void s30();
+	virtual void s31();
+	virtual void s32();
+	virtual void s33();
+	virtual void slot34(int x);
+};
+
 class Object
 {
 public:
 	void leaveGroup();
 	void *rva0028C1A9() const;
+
+	char m_pad[0x250];
+	Rva0036D805If *m_provider250;
 };
 
 class Rva0036DC6FIf
@@ -111,6 +160,7 @@ public:
 	bool isEmpty() { return m_memberList.empty(); }
 	bool rva0036D7A6(Rva0036D7A6Outer *o);
 	void rva0036DC6F(int a, int b);
+	void rva0036D805(int x);
 
 private:
 	virtual void *deleteInstance(int flags);
@@ -162,4 +212,14 @@ void AIGroup::rva0036DC6F(int a, int b)
 	if (p == 0)
 		return;
 	((Rva0036DC6FIf *)p)->slot0(a, b);
+}
+
+void AIGroup::rva0036D805(int x)
+{
+	for (_STL::list<ObjectID>::iterator it = m_memberList.begin(); it != m_memberList.end(); ++it) {
+		Object *obj = (Object *)(*it);
+		Rva0036D805If *p = obj->m_provider250;
+		if (p)
+			p->slot34(x);
+	}
 }
