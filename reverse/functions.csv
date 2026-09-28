@@ -40700,3 +40700,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?init@Rva002AC026Member@@QAEPAXPAX@Z,,0x002AC026,40,Code/GameEngine/Source/Common/Rva002AC026MemberInit.cpp,matched,freelist init same as 0x001EB984 via proxy 0x14F3C4 and pop 0x2393E2 pool 0x009BBD2C
 ?Rva002ACFFBEqual@@YA_NPAV?$StringBase@D@@00@Z,,0x002ACFFB,44,Code/GameEngine/Source/Common/Rva002ACFFBEqual.cpp,matched,AsciiString range equal via rowed compare 0x69D6 caller 0x002ADD9C
 ?rva0036D7A6@AIGroup@@QAE_NPAURva0036D7A6Outer@@@Z,,0x0036D7A6,95,Code/GameEngine/Source/GameLogic/AI/AIGroupRemove.cpp,matched,chain caller of remove 0x0036CF07 plus slot38 receiver plus BFME1 removeAny donor
+?rva001E3459@Rva001E3459@@QAEXH_N@Z,,0x001E3459,31,Code/GameEngine/Source/Common/Rva001E3459Flag.cpp,matched,flag bit set clear at 0x44
