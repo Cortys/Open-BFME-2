@@ -38,3 +38,40 @@ int Rva001E34FA::rva001E34FA()
 		return q->m_val18;
 	return p->m_val18;
 }
+
+// ?rva001E3511@Rva001E3511@@QAEHXZ, retail 0x001E3511, 27 bytes.
+// Sibling of 0x001E34FA: null returns 0x7fffffff, level offset 0x20.
+// Called at 0x001E74C0/0x001E753A plus 10 more. Honest Rva name.
+
+struct Rva001E3511Inner
+{
+	int m_pad00[8]; // +0x00..+0x1F
+	int m_val20; // +0x20
+};
+
+struct Rva001E3511Outer
+{
+	int m_pad00[2]; // +0x00..+0x07
+	Rva001E3511Inner *m_p08; // +0x08
+	int m_pad0C[5]; // +0x0C..+0x1F
+	int m_val20; // +0x20
+};
+
+class Rva001E3511
+{
+public:
+	int rva001E3511();
+private:
+	Rva001E3511Outer *m_p00;
+};
+
+int Rva001E3511::rva001E3511()
+{
+	Rva001E3511Outer *p = m_p00;
+	if (!p)
+		return 0x7fffffff;
+	Rva001E3511Inner *q = p->m_p08;
+	if (q)
+		return q->m_val20;
+	return p->m_val20;
+}
