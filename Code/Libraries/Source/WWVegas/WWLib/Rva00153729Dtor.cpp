@@ -14,9 +14,13 @@ struct Rva005F8F96
 struct Rva00153729
 {
 	~Rva00153729();
+	Rva00153729();
 	int m_00;
 	_STL::vector<Rva005F8F96, _STL::allocator<Rva005F8F96> > m_04[6];
 };
 Rva00153729::~Rva00153729()
+{
+}
+Rva00153729::Rva00153729() : m_00(0)
 {
 }
