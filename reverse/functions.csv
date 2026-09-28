@@ -39673,3 +39673,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?fadeIn@Drawable@@QAEXI@Z,,0x002707A8,82,Code/GameEngine/Source/GameClient/DrawableFade.cpp,matched,BFME1 Drawable fadeIn donor plus frame holder 0xDFE77C plus caller 0x265173
 ?fadeOut@Drawable@@QAEXI@Z,,0x00270756,82,Code/GameEngine/Source/GameClient/DrawableFade.cpp,matched,BFME1 Drawable fadeOut donor plus frame holder 0xDFE77C plus caller 0x265173
 ?Rva0039BEC3Count@@YGHABV?$BitFlags@$0HE@@@0PBUObjectCountMap@@@Z,,0x0039BEC3,72,Code/GameEngine/Source/Common/ScoreKeeperMapCount.cpp,matched,ZH getTotalUnitsBuilt donor null-check plus KindOf sum 4 callers 0x39BF0B-50
+?Rva00588B8AGet@@YGHPAX@Z,,0x00588B8A,30,Code/Libraries/Source/WWVegas/WWLib/Rva00588B8AGet.cpp,matched,null-safe virtual slot 0x7C at plus 0x250 11 callers

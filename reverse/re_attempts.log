@@ -2325,3 +2325,7 @@ FUN_00626156	0x00226156	379	blocked	obfuscated prologue-epilogue push-eax 5x-mov
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	blocked	scheduling wall EH fixed via Holder1C states 0 and 2 layout 0x50 proven but float split plus top mov order unchanged across G7 Os body SSE2 4 variants same t=22 model=muse-c2ff
 ?internalTaskComplete@DozerAIUpdate@@UAEXW4DozerTask@@@Z	0x00488B8E	47	blocked	layout drift dock 0x8C vs retail 0x2C from ZH AudioEventRTS buildingSound 0x60 plus MI vtable slot16 needs 16 real virtuals new TU compile fails AudioHandle missing via guard t=18 model=muse-c2ff
 ??1Rva006206E0@@QAE@XZ	0x00620A00	122	blocked	EH wall manual SEH push-1 plus states 0 then -1 plus sentinel free clear same flags O2 EHsc has no EH need member with dtor or EHs vs EHsc t=14 model=muse-c2ff
+?rva0039BF0B@Rva0039BF0B@@QAEHABV?$BitFlags@$0HE@@@0@Z	0x0039BF0B	23	partial	lea-eax-vs-add-ecx plus push-reg only t=25 model=muse-d633 score=0.91 stash=reverse/attempts/0x0039bf0b.cpp
+?rva0039BF22@Rva0039BF22@@QAEHABV?$BitFlags@$0HE@@@0@Z	0x0039BF22	23	blocked	same lea-vs-add wall as 0x39BF0B partial t=2 model=muse-d633
+?rva0039BF39@Rva0039BF39@@QAEHABV?$BitFlags@$0HE@@@0@Z	0x0039BF39	23	blocked	same lea-vs-add wall as 0x39BF0B partial t=2 model=muse-d633
+?rva0039BF50@Rva0039BF50@@QAEHABV?$BitFlags@$0HE@@@0@Z	0x0039BF50	23	blocked	same lea-vs-add wall as 0x39BF0B partial t=2 model=muse-d633
