@@ -40321,3 +40321,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0031D5F8@Rva0031D5F8@@QAEPAXPBVAsciiString@@@Z,,0x0031D5F8,38,Code/GameEngine/Source/GameClient/Rva0031D5F8Lookup.cpp,matched,table at this+0x30 via rowed Rva00056F61 find with node+8 payload and callers at 0x00219317 0x0031D623 0x0031DFC7
 ?Rva00740A45Create@@YAPAVRva00789900Init@@E@Z,,0x00740A45,27,Code/GameEngine/Source/Common/Rva00740A45Create.cpp,matched,factory new Rva00789900Init via rowed ctor caller 0x41194B
 ?rva000456AC@ThingTemplate@@QBEHH@Z,,0x000456AC,21,Code/GameEngine/Source/Common/Thing/ThingTemplateRva000456AC.cpp,matched,Team countKind 0x0039DC05 passes Object+4 template plus kind index with 0x108 kind bits per Handicap Rva00290EFE StatsCollector via helper 0x001E4426
+?rva002C7492@Rva002C7492@@QAEXPBV1@@Z,,0x002C7492,25,Code/GameEngine/Source/Common/Rva002C7492Or.cpp,matched,19-dword OR via 0x4C temps and Head copy ctor callers
