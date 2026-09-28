@@ -40515,3 +40515,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0DrawableLocoInfo@@QAE@XZ,,0x00270098,192,Code/GameEngine/Source/Common/DrawableLocoInfoCtor.cpp,matched,DrawableLocoInfo ctor BFME1 donor random modulators vtable 0x7FAD38
 ?rva00272BE7@Drawable@@QAEXXZ,,0x00272BE7,55,Code/GameEngine/Source/GameClient/Drawable_rva00272BE7.cpp,matched,Drawable dual walk plus0x14C slot0x70 plus0x154 slot0x48 neighbours share flags
 ?rva005B2E09@Rva005B2DDF@@QAEPAXPAURva005B2E09Cell@@@Z,,0x005B2E09,44,Code/Libraries/Source/WWVegas/WWLib/Rva005B2DDFLookup.cpp,matched,chain backward search over grid via rowed lookup
+?Rva00282FE0CreateNode@@YGPAXPBX@Z,,0x00282FE0,34,Code/Libraries/Source/WWVegas/WWLib/Rva00282FE0CreateNode.cpp,matched,caller 0x00283405 links node plus rowed allocate 0x000307F0 plus rowed Construct 0x00282843
