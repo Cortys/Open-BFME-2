@@ -40656,3 +40656,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00306151Xfer@@YAXPAVXfer@@PAM@Z,,0x00306151,50,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,free xfer helper for 4-float quad via float slot 0x70 chained caller 0x3062FE
 ?Rva00534BAFParse@@YAXPAVINI@@PAX1PBX@Z,,0x00534BAF,45,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,INI Coord3D parse to list at A8 via push_front
 ?Rva00534BDCParse@@YAXPAVINI@@PAX1PBX@Z,,0x00534BDC,45,Code/GameEngine/Source/GameClient/MapMetaDataCopy.cpp,matched,INI Coord3D parse to list at AC via push_front
+?Rva0032AD58Fill@@YAPAVRva00193660@@PAV1@IABURva00193660Src@@@Z,,0x0032AD58,37,Code/GameEngine/Source/Common/Rva00193660SetGuard.cpp,matched,Rva00193660 fill loop via null-guarded set wrapper stride 0x10

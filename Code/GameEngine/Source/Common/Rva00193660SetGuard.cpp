@@ -35,3 +35,11 @@ void __cdecl Rva0032ACEASet(Rva00193660 *dest, const Rva00193660Src *src)
 	if (dest)
 		dest->set(src);
 }
+
+Rva00193660 *__cdecl Rva0032AD58Fill(Rva00193660 *first, unsigned count, const Rva00193660Src &value)
+{
+	Rva00193660 *cur = first;
+	for (; count > 0; --count, ++cur)
+		Rva0032ACEASet(cur, &value);
+	return cur;
+}
