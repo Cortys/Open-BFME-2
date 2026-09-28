@@ -40605,3 +40605,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1?$vector@URva00395D77@@V?$allocator@URva00395D77@@@_STL@@@_STL@@QAE@XZ,,0x0039977A,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy 0x399336 and free 0x30830 caller 0x39A1F1 same shape 0x4815AE
 ??0Rva002AC340@@QAE@XZ,,0x002AC340,32,Code/GameEngine/Source/Common/Rva002AC340Ctor.cpp,matched,Opaque ctor with int at 4 and BfmeE16 vector at 8 same as Rva0022DE6B
 ?write@RAMFile@@UAEHPBXH@Z,,0x00574473,6,Code/GameEngine/Source/Common/System/RAMFileWrite.cpp,matched,slot4 write in 0x87AA00 0x87AA50 ZH RAMFile write return minus1
+?rva005748F2@Rva005748F2@@QAEXXZ,,0x005748F2,30,Code/GameEngine/Source/Common/System/Rva005748F2Method.cpp,matched,holder at 0x54 flag at 0x58 null ret slot1 or pinned clear 0xAD6F4
