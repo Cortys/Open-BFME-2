@@ -171,7 +171,6 @@ void TransitionDamageFXModuleData::parseFXList(INI *ini, void *instance, void *s
 	INI::parseFXList(ini, instance, &info->fx, 0);
 }
 
-// ?parseObjectCreationList@TransitionDamageFXModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void TransitionDamageFXModuleData::parseObjectCreationList(INI *ini, void *instance, void *store, const void *userData)
 {
 	const char *token;
