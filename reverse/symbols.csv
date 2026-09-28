@@ -6161,3 +6161,4 @@ rva009C7380WeightPairs,0x009B84E0
 ??0?$_Vector_base@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod8@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as matched BfmeE16 row; Rva004E364F TU vector<BfmePod8> member
 ?erase@RvaVector@@QAEPAPAXPAPAX0@Z,0x0031BD55,ICF twin of rowed voidptr erase at same address 4-byte elements fold
 ?erase@?$vector@PAVCreateAHeroData@@V?$allocator@PAVCreateAHeroData@@@_STL@@@_STL@@QAEPAPAVCreateAHeroData@@PAPAV3@@Z,0x0025BF5D,ICF twin of ObjectID erase at same address via matched call site 0x0025BF8C
+??1?$pair@$$CBHURva004D1B38Mapped@@@_STL@@QAE@XZ,0x0029D7C2,erase 0x004D1B38 calls it for value at node+16 ICF-shared with CameraMarker
