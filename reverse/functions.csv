@@ -40771,3 +40771,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_copy@PBV?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@_STL@@PAV12@@_STL@@YAPAV?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@0@PBV10@0PAV10@ABU__false_type@0@@Z,,0x00500B5B,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy12.cpp,matched,unlocks 3 callers plus stride12 vector copy plus rowed Construct
 ?rva00410A3D@Rva00410A3D@@QAEXXZ,,0x00410A3D,73,Code/GameEngine/Source/Common/Rva00410A3DClear.cpp,matched,chain hashtable clear via rowed node delete
 ?rva0055AA37@Rva0055AA06@@QAEXXZ,,0x0055AA37,49,Code/GameEngine/Source/Common/Rva0055AA06ListPush.cpp,matched,drain list plus18 while front plus04 ult TheGameLogic plus0x40 caller 0x39D3FC
+?Rva0010EFB1Inc@@YAJXZ,,0x0010EFB1,12,Code/GameEngine/Source/Common/Rva0010EFB1Inc.cpp,matched,InterlockedIncrement global 0x9EC38C caller 0x10F09F unblocks 0x10F058
