@@ -6207,3 +6207,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??$__copy_ptrs@PAURva004F69C3@@PAU1@@_STL@@YAPAURva004F69C3@@PAU1@00ABU__false_type@0@@Z,0x0040D8FB,ICF twin of rowed D0A4Entry copy_ptrs at same address via erase call site 0x40DC3A same 8B layout
 ?allocate@?$allocator@VRva00064640Record@@@_STL@@QBEPAVRva00064640Record@@IPBX@Z,0x000B40EA,ICF twin of rowed BfmeStringRecord00111ACF allocate at same address; identical 28B n-times-0x1c byte-allocate body proven by align_diff for vector Rva00064640Record _M_allocate_and_copy call site 0x469CF9
 ??1Rva00B9AC2@@QAE@XZ,0x000B9AC2,ICF twin of rowed QAE Rva0048130E 53B plus call site in BD28D 25B destroy
+?_M_copy@?$_Rb_tree@HHU?$_Identity@H@_STL@@U?$less@H@2@V?$allocator@H@2@@_STL@@AAEPAU?$_Rb_tree_node@H@2@PAU32@0@Z,0x002CF6CF,set<int> spelling of the tree copy recursion: clones via integer-set _M_create_node 0x004ABCC9 (ledger names this address with the pair<int;int> spelling)
