@@ -40533,3 +40533,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$sort@PAU?$pair@W4ObjectID@@I@_STL@@P6A_NU12@0@Z@_STL@@YAXPAU?$pair@W4ObjectID@@I@0@0P6A_NU10@1@Z@Z,,0x00567570,67,Code/GameEngine/Source/Common/PartitionSolverSortO1.cpp,matched,chain sort calls rowed introsort_loop and final_insertion_sort
 ?rva004DF17F@Rva004DF17F@@QBE_NXZ,,0x004DF17F,14,Code/GameEngine/Source/Common/Rva004DF17FCompare.cpp,matched,caller 0x003E41B2 tests al plus same shape as rowed 0x005C743B
 ?rva005B269D@Rva005B269DRow@@QAEXPAURva005B2E09Cell@@HI@Z,,0x005B269D,49,Code/Libraries/Source/WWVegas/WWLib/Rva005B2DDFLookup.cpp,matched,unlock grid cell register via empty slot check
+?Rva0039BA22UninitCopy@@YAPAVRva0039B893@@PAV1@00ABU__false_type@_STL@@@Z,,0x0039BA22,41,Code/GameEngine/Source/Common/Rva0039BA22UninitCopy.cpp,matched,null-guarded uninit copy via placement new with rowed copy ctor
