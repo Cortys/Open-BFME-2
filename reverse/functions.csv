@@ -40368,3 +40368,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000FD4B3@Rva000FD4B3@@QAEHXZ,,0x000FD4B3,27,Code/GameEngine/Source/Common/Rva000FD4B3.cpp,matched,chain of 0x000F630C al-test stores this to 0x009E1F34
 ?Rva00511730@@YAXH@Z,,0x00511730,135,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva00511730Save.cpp,matched,free cdecl helper saving textentry text to global string
 ??4Rva005F4AD7@@QAEAAU0@ABU0@@Z,,0x005FD4FF,63,Code/GameEngine/Source/Common/Rva005F4AD7Dtor.cpp,matched,unlock lane Holder assign same trio via shared double-deref plus self-check
+?rva0073BBE0@Rva0073BBE0@@QAEDHHH@Z,,0x0073BBE0,117,Code/GameEngine/Source/Common/RTS/Rva0073BBE0.cpp,matched,adjust sibling of 0x73BAA0 via 008FC1F0 callers 0x73C820
