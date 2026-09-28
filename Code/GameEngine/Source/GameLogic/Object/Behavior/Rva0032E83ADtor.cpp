@@ -51,6 +51,9 @@ class Rva0032EAA1
 {
 public:
 	void rva0032EAA1(void *p);
+	void rva0032EB5E();
+	Rva0032EAA1Node *m_header;
+	int m_count;
 };
 
 void Rva0032EAA1::rva0032EAA1(void *p)
@@ -63,4 +66,21 @@ void Rva0032EAA1::rva0032EAA1(void *p)
 		free(cur);
 		cur = left;
 	}
+}
+
+// ?rva0032EB5E@Rva0032EAA1@@QAEXXZ — RVA 0x0032EB5E, 41B.
+// Clear: if count is zero return, else erase the root at header+4,
+// then re-init header left/right to self, root to 0, count to 0.
+// Evidence: retail cmp [esi+4] plus call 0x0032EAA1 with [eax+4],
+// then mov [eax+8] eax, and [eax+4] 0, mov [eax+0xc] eax, and [esi+4] 0;
+// same this as 0x0032EAA1, same TU and flags.
+void Rva0032EAA1::rva0032EB5E()
+{
+	if (m_count == 0)
+		return;
+	rva0032EAA1(m_header->m_parent);
+	m_header->m_left = m_header;
+	m_header->m_parent = 0;
+	m_header->m_right = m_header;
+	m_count = 0;
 }
