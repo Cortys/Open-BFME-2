@@ -185,6 +185,17 @@ Rva00318B5C::Rva00318B5C(const Rva00318B5C &other)
 	m_field0C = other.m_field0C;
 }
 
+// Retail 0x00318D63 (18B): null-guarded copy-construct of one Rva00318B5C
+// (vptr + three ints, 0x10 bytes) via its rowed copy ctor. Callers are the
+// 0x10-stride loops at 0x00318D83 0x00318DAE 0x00319FAD 0x0031A13B.
+inline void *__cdecl operator new(unsigned int, void *p) { return p; }
+inline void __cdecl operator delete(void *, void *) {}
+void Rva00318D63Copy(Rva00318B5C *dest, const Rva00318B5C &src)
+{
+	if (dest)
+		new (dest) Rva00318B5C(src);
+}
+
 // -------------------- vptr + one int + two bytes (retail 0x003ADE98)
 // B2 body-address name: +0x08 and +0x09 are byte members (8A51/8850 and
 // 8A49/8848). Retail caller 0x003ADE78 installs adjacent-vtable parts
