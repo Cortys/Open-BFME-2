@@ -231,7 +231,25 @@ Anim2D::~Anim2D( void )
 // ------------------------------------------------------------------------------------------------
 /** Set the current animation frame */
 // ------------------------------------------------------------------------------------------------
-// ?setCurrentFrame@Anim2D@@QAEXG@Z present-unmatched
+// Retail frame holder at 0xDFE77C slot 0x7C (slot1F) returns the current
+// frame; DrawableFade (landed 0x2707A8/0x270756) and ScriptEngine_setFrame
+// prove the global and slot. BFME1 donor uses TheGameClient->getFrame()
+// (slot 0x68 in the ZH header), but BFME2 retail calls [eax+0x7C] here.
+class Rva00DFE77CHolder
+{
+public:
+	virtual void slot00(); virtual void slot01(); virtual void slot02(); virtual void slot03();
+	virtual void slot04(); virtual void slot05(); virtual void slot06(); virtual void slot07();
+	virtual void slot08(); virtual void slot09(); virtual void slot0A(); virtual void slot0B();
+	virtual void slot0C(); virtual void slot0D(); virtual void slot0E(); virtual void slot0F();
+	virtual void slot10(); virtual void slot11(); virtual void slot12(); virtual void slot13();
+	virtual void slot14(); virtual void slot15(); virtual void slot16(); virtual void slot17();
+	virtual void slot18(); virtual void slot19(); virtual void slot1A(); virtual void slot1B();
+	virtual void slot1C(); virtual void slot1D(); virtual void slot1E(); virtual int slot1F();
+};
+
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
+
 void Anim2D::setCurrentFrame( UnsignedShort frame )
 {
 
@@ -252,7 +270,7 @@ void Anim2D::setCurrentFrame( UnsignedShort frame )
 	m_currentFrame = frame;
 
 	// record the frame of this update to our current frame
-	m_lastUpdateFrame = TheGameClient->getFrame();
+	m_lastUpdateFrame = TheRva00DFE77C->slot1F();
 
 }  // end setCurrentFrame
 
