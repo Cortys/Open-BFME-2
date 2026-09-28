@@ -28,3 +28,39 @@ Rva0032E83A::~Rva0032E83A()
 }
 
 void Rva0032E83ADelete(Rva0032E83A *p) { delete p; }
+
+// ?rva0032EAA1@Rva0032EAA1@@QAEXPAX@Z — RVA 0x0032EAA1, 53B.
+// Rb-tree _M_erase shape: recurse on right (+0xc), iterate left (+8),
+// destroy Rva0032E83A value at +0x10 via the rowed dtor, free the node
+// via the rowed _free at 0x00030830.
+// Evidence: retail push [esi+0xc] plus self-call, mov edi [esi+8],
+// lea ecx [esi+0x10] plus call 0x0032E83A, push esi plus call 0x00030830;
+// caller at 0x0032EB5E passes the root and re-inits the header.
+extern "C" void free(void *p);
+
+struct Rva0032EAA1Node
+{
+	int m_color;
+	Rva0032EAA1Node *m_parent;
+	Rva0032EAA1Node *m_left;
+	Rva0032EAA1Node *m_right;
+	Rva0032E83A m_value;
+};
+
+class Rva0032EAA1
+{
+public:
+	void rva0032EAA1(void *p);
+};
+
+void Rva0032EAA1::rva0032EAA1(void *p)
+{
+	Rva0032EAA1Node *cur = (Rva0032EAA1Node *)p;
+	while (cur != 0) {
+		rva0032EAA1(cur->m_right);
+		Rva0032EAA1Node *left = cur->m_left;
+		cur->m_value.~Rva0032E83A();
+		free(cur);
+		cur = left;
+	}
+}
