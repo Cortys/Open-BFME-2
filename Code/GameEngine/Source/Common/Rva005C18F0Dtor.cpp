@@ -32,3 +32,20 @@ private:
 Rva005C18F0::~Rva005C18F0()
 {
 }
+
+// ??1Rva005C1980@@UAE@XZ, RVA 0x005C1980, 54B. Unlock lane: same shape as the
+// 0x005C18F0 dtor above (derived vtable 0x008743D0 here, same member at +8
+// through rowed 0x00535776, same base vtable 0x008743B8). Caller is its ??_G
+// at 0x005C1964.
+class Rva005C1980 : public Rva005C18F0Base
+{
+public:
+	virtual ~Rva005C1980();
+private:
+	char m_pad04[4];
+	Rva00535776 m_08;
+};
+
+Rva005C1980::~Rva005C1980()
+{
+}
