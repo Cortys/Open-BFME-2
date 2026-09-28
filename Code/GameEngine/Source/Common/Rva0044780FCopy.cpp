@@ -6,6 +6,7 @@
 // at 0x006291A8); callers at 0x00447861 0x00447887 0x004478A0 0x00447E28;
 // landing unblocks 0x00447845 0x0044786B 0x00447891.
 extern "C" void *__cdecl memcpy(void *dest, const void *src, unsigned int count);
+extern "C" __declspec(dllimport) unsigned short __stdcall htons(unsigned short v);
 char *__cdecl Rva0044780FCopy(char *dst, void *src, unsigned int size, char *limit)
 {
 	if (limit != 0) {
@@ -24,4 +25,12 @@ char *__cdecl Rva0044780FCopy(char *dst, void *src, unsigned int size, char *lim
 char *__cdecl Rva00447891Write1(char *dst, char value, char *limit)
 {
 	return Rva0044780FCopy(dst, &value, 1, limit);
+}
+// ?Rva00447845WriteU16@@YAPADPADG0@Z, retail 0x00447845, 38 bytes.
+// Checked 2-byte write with htons: converts then copies via Rva0044780FCopy.
+// Evidence: chain lane calls 0x0044780F; IAT htons; callers at 0x00447D4A.
+char *__cdecl Rva00447845WriteU16(char *dst, unsigned short value, char *limit)
+{
+	unsigned short net = htons(value);
+	return Rva0044780FCopy(dst, &net, 2, limit);
 }
