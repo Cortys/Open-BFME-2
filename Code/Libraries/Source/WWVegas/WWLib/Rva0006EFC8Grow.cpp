@@ -15,6 +15,7 @@ class Rva0006EFC8
 {
 public:
 	bool rva0006EFC8(int arena, int size);
+	void *rva00141800();
 
 	int m_00;		// +0x00 default-size count (size = m_00*8+4 when size==0)
 	void *m_04;		// +0x04 current block (linked into block header)
@@ -58,4 +59,17 @@ carve:
 done:
 	*(int *)aligned = 0;
 	return true;
+}
+
+void *Rva0006EFC8::rva00141800()
+{
+retry:
+	if (m_head == 0) {
+		if (rva0006EFC8(0, m_00 * 8 + 4))
+			goto retry;
+		return 0;
+	}
+	void *node = m_head;
+	m_head = *(void **)node;
+	return node;
 }
