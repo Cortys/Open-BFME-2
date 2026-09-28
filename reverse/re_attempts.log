@@ -2655,3 +2655,4 @@ FUN_00516F08	0x00516F08	25	blocked	needs data global 0xA02320 name t=5 model=mus
 FUN_00973c7c	0x00573C7C	127	blocked	multi-call virtual float bool needs class donor t=8 model=muse-05
 FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no ret no Cpp identity t=5 model=muse-05
 ??1Rva0023FD06@@UAE@XZ	0x0023FD06	48	blocked	EH dtor with StringBase at plus8 gives small 14B tail-jmp without EH_prolog vs retail 48B with EH t=15 model=muse-spark
+?rva000B3FA5@Rva000B3FA5@@QAEXHH@Z	0x000B3FA5	43	blocked	branchless bit set regalloc wall 7reg 2mem same size 43B tried O1 O2 G7 EHsc self named-temp stepwise-neg variants t=20 model=muse-04
