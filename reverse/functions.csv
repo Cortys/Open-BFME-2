@@ -40127,3 +40127,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva0050B6ED@@UAEPAXI@Z,,0x0050B6D1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-531d.cpp,matched,slot0 of 0x864D80 calls rowed dtor plus delete
 ?rva0028C264@Object@@QAE_NPAHH@Z,,0x0028C264,121,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C264.cpp,matched,Object owner via callers and offsets provider 0x250 body 0x254 globals match neighbour
 ?rva0028C570@Rva0028C570@@QAEXABV1@@Z,,0x0028C570,27,Code/Libraries/Source/WWVegas/WWLib/stlport_Rva0028C570.cpp,matched,4-word bulk clear same shape as rowed do_or siblings clear counterpart
+?rva0028C4ED@Object@@QBE_NXZ,,0x0028C4ED,38,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028C4ED.cpp,matched,Object module scan bool via 0x0C slot 0x68 same shape as void siblings
