@@ -10,6 +10,9 @@ class Rva0036748E
 {
 public:
 	void rva0036748E(int bit, bool flag);
+	void rva00368654(bool flag);
+	void rva0036940A(bool flag);
+	void rva0036C897(bool flag);
 	char m_lead[0x4B8];
 	unsigned int m_flags;
 };
@@ -19,4 +22,16 @@ void Rva0036748E::rva0036748E(int bit, bool flag)
 		m_flags |= 1u << bit;
 	else
 		m_flags &= ~(1u << bit);
+}
+void Rva0036748E::rva00368654(bool flag)
+{
+	rva0036748E(7, flag);
+}
+void Rva0036748E::rva0036940A(bool flag)
+{
+	rva0036748E(5, flag);
+}
+void Rva0036748E::rva0036C897(bool flag)
+{
+	rva0036748E(3, flag);
 }

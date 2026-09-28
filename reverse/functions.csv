@@ -40095,3 +40095,6 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003EDE2A@Rva003EDE2A@@QBE_NPBX@Z,,0x003EDE2A,26,Code/GameEngine/Source/Common/Rva003EDE2AForward_muse-8c42.cpp,matched,forwarder to 4-dword tester plusC0 plusD0 sibling of 003EDE16
 ??0Made002CC7DE@@QAE@XZ,,0x0050968B,32,Code/GameEngine/Source/Common/Made002CC7DECtor_muse-8c42.cpp,matched,Weapon OCL nugget ctor base Rva00507823 plus vtable plus zeros
 ?rva0036748E@Rva0036748E@@QAEXH_N@Z,,0x0036748E,37,Code/GameEngine/Source/Common/Rva0036748ESetter.cpp,matched,wrappers bit7 bit5 bit3 plus shr3 test at 0x36C80D
+?rva00368654@Rva0036748E@@QAEX_N@Z,,0x00368654,14,Code/GameEngine/Source/Common/Rva0036748ESetter.cpp,matched,chain of 0x36748E bit7 setter
+?rva0036940A@Rva0036748E@@QAEX_N@Z,,0x0036940A,14,Code/GameEngine/Source/Common/Rva0036748ESetter.cpp,matched,chain of 0x36748E bit5 setter
+?rva0036C897@Rva0036748E@@QAEX_N@Z,,0x0036C897,14,Code/GameEngine/Source/Common/Rva0036748ESetter.cpp,matched,chain of 0x36748E bit3 setter cleared at 0x36C839
