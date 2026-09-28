@@ -39669,3 +39669,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??0Rva00204AA4@@QAE@ABU?$pair@VAsciiString@@V1@@_STL@@AB_N@Z,,0x00204AA4,27,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204AA4Ctor.cpp,matched,pair plus bool ctor via rowed pair plus wrapper caller
 ??0Rva00204ABF@@QAE@ABU?$pair@VAsciiString@@V1@@_STL@@ABH@Z,,0x00204ABF,27,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204ABFCtor.cpp,matched,pair plus int ctor via rowed pair plus wrapper caller
 ??0Rva00204A83@@QAE@ABU?$pair@VAsciiString@@V1@@_STL@@AB_J@Z,,0x00204A83,33,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204A83Ctor.cpp,matched,pair plus int64 ctor via rowed pair plus wrapper caller
+??0Rva00204B12@@QAE@ABU0@@Z,,0x00204B12,33,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00204B12Ctor.cpp,matched,pair plus two-int copy via rowed pair plus callers
