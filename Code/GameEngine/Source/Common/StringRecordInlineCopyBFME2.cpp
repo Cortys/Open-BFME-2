@@ -112,6 +112,9 @@ BfmeStringRecord005D511F::BfmeStringRecord005D511F(const BfmeStringRecord005D511
 // Callers are the deleting dtor 0x005D5266 and the 0x14-stride destroy range 0x005D541B.
 BfmeStringRecord005D511F::~BfmeStringRecord005D511F() {}
 template void _STL::_Construct<BfmeStringRecord005D511F,BfmeStringRecord005D511F>(BfmeStringRecord005D511F*,const BfmeStringRecord005D511F&);
+// ??$_Destroy@PAUBfmeStringRecord005D511F@@@_STL@@YAXPAUBfmeStringRecord005D511F@@0@Z retail 0x005D541B 25B.
+// Range destroy over 0x14-byte record via rowed dtor 0x005D51B9 in this TU. Callers 0x005D5434 and 0x005D5473.
+template void _STL::_Destroy<BfmeStringRecord005D511F *>(BfmeStringRecord005D511F *, BfmeStringRecord005D511F *);
 
 // Retail 0x00111ACF copies strings at +0 and +0x18, a word at +4,
 // then the four-float subobject at +8 through its observed x87 loop.
