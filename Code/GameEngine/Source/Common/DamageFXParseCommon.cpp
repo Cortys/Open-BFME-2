@@ -113,7 +113,6 @@ void DamageFX::parseMajorFXList(INI *ini, void *instance, void *store, const voi
 	}
 }
 
-// ?parseMinorFXList@DamageFX@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void DamageFX::parseMinorFXList(INI *ini, void *instance, void *store, const void *userData)
 {
 	DamageFX *self = (DamageFX *)instance;
