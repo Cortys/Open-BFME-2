@@ -40813,3 +40813,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00132FE9@Rva0090E250@@QAEX_N@Z,,0x00132FE9,18,Code/GameEngine/Source/Common/Rva00132FE9Forward.cpp,matched,bool to int forwarder callers 0x47178 0x4F628 unblocks 5
 ??1Rva00555B79@@QAE@XZ,,0x00555B79,8,Code/GameEngine/Source/Common/Rva00555B79Dtor.cpp,matched,unlock empty dtor plus4 via pinned member dtor
 ?Rva0043DB3DSet@@YAXE@Z,,0x0043DB3D,10,Code/GameEngine/Source/Common/Rva0043DB3DGlobalSet.cpp,matched,global byte setter VA 0xE03340 caller 0x5BDB42 neighbours DA65 DB47
+?Rva005D2FD0Set@@YAXHPAURva005D2FD0Outer@@PBDABVUnicodeString@@@Z,,0x005D2FD0,106,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,APT level format via 0x00038150 bfmeSetText pin callers 0x005D3128 0x005D318D
