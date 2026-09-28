@@ -40918,3 +40918,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0032AF56Destroy@@YAXPAVRva00329D0E@@0@Z,,0x0032AF56,25,Code/GameEngine/Source/Common/Rva0032AF56Destroy.cpp,matched,array destroy range over Rva00329D0E calls rowed dtor
 ??0Rva0029E067@@QAE@ABU0@@Z,,0x0029E067,127,Code/GameEngine/Source/Common/Rva0029E067Ctor.cpp,matched,copy ctor with two AsciiStrings plus tail
 ??1Rva0029E2A9@@QAE@XZ,,0x0029E2A9,53,Code/GameEngine/Source/Common/Rva0029E2A9Dtor.cpp,matched,record dtor with two AsciiStrings
+?rva005E306D@Rva005E2D74@@QAE?AVAsciiString@@XZ,,0x005E306D,97,Code/GameEngine/Source/Common/Rva005E2D74.cpp,matched,chain same class AsciiString via buffer
