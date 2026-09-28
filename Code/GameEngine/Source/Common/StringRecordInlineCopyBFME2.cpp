@@ -103,8 +103,14 @@ template void _STL::_Construct<BfmeStringRecord005BC576,BfmeStringRecord005BC576
 struct BfmeStringRecord005D511F {
     UnicodeString text0; unsigned int word0, word1; UnicodeString text1; unsigned int word2;
     BfmeStringRecord005D511F(const BfmeStringRecord005D511F &o);
+    ~BfmeStringRecord005D511F();
 };
 BfmeStringRecord005D511F::BfmeStringRecord005D511F(const BfmeStringRecord005D511F &o) : text0(o.text0), word0(o.word0), word1(o.word1), text1(o.text1), word2(o.word2) {}
+// ??1BfmeStringRecord005D511F@@QAE@XZ retail 0x005D51B9 53B.
+// Layout from the 0x005D511F copy ctor in this TU (UnicodeString +0 and +0xC with words at +4 +8 +0x10 = 0x14).
+// Retail destroys text1 (+0xC) then text0 (+0) via StringBase<ushort>::releaseBuffer 0x00036E70 with EH states 0 then -1.
+// Callers are the deleting dtor 0x005D5266 and the 0x14-stride destroy range 0x005D541B.
+BfmeStringRecord005D511F::~BfmeStringRecord005D511F() {}
 template void _STL::_Construct<BfmeStringRecord005D511F,BfmeStringRecord005D511F>(BfmeStringRecord005D511F*,const BfmeStringRecord005D511F&);
 
 // Retail 0x00111ACF copies strings at +0 and +0x18, a word at +4,

@@ -40538,3 +40538,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004DFEC8@Rva004DFEC8@@QAEXPBVModuleData@@@Z,,0x004DFEC8,16,Code/GameEngine/Source/Common/Rva004DFEC8Add.cpp,matched,callers 0x0059760B 0x00598F38 plus rowed push_back 0x004DFCB0 plus sibling 0x0039C7A5
 ?xfer@Rva004DF81B@@QAEXPAVXfer@@@Z,,0x004DF81B,27,Code/GameEngine/Source/Common/Rva004DF81BXfer.cpp,matched,vslot 3 plus callers 0x004DE913 0x004DF777 0x004DF88E plus rowed Version1 plus rowed UpdateModule xfer
 ?rva0039B7AD@Rva0039B7AD@@QAEXH@Z,,0x0039B7AD,30,Code/GameEngine/Source/Common/Rva0039B795CondAdd.cpp,matched,conditional double add to +0x04 and +0x114 under same global flag
+??1BfmeStringRecord005D511F@@QAE@XZ,,0x005D51B9,53,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,dtor via two UnicodeString releaseBuffer calls with EH matched by deleting dtor and stride callers
