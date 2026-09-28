@@ -40078,3 +40078,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00568920@Rva00568920@@QBE_NXZ,,0x00568920,25,Code/GameEngine/Source/Common/Rva00568920Check.cpp,matched,all-nonzero test over four dwords at plus 0x2C
 ?clear@?$_List_base@UCameraMarker@@V?$allocator@UCameraMarker@@@_STL@@@_STL@@QAEXXZ,,0x002934A8,49,Code/Libraries/Source/WWVegas/WWLib/stlport_list_cameramarker_clear.cpp,matched,List_base clear CameraMarker via rowed dtor 0x0029D7C2 and free 0x00030830 shape matches 0x00434EC9
 ?rva00293249@Rva00293249@@QAE_NW4ObjectID@@@Z,,0x00293249,44,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293249.cpp,matched,ObjectID helper via TheGameLogic findObjectByID and AI 0x258 slot 0x248 caller 0x352C3C
+?rva00293330@Rva00293330@@QAEPAXI@Z,,0x00293330,63,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293330.cpp,matched,Map lookup at 0x268 via rowed find 0x357180 with begin fallback callers prove owner
