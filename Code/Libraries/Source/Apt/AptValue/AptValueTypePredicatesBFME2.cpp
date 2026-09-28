@@ -33,6 +33,13 @@ public:
     int rva006DC300() const;
     int rva006DC490() const;
     int rva006DCC60(bool bUndefOK) const;
+    int isCharacterInst() const;
+};
+
+class Rva006DBB30SarDwordField
+{
+public:
+    int get() const;
 };
 // Corresponding checked casts at 6DCD50/90/D0 and 6DCE10/50 assert these
 // exact predicate names. Type numbers are independently decoded from PC.
@@ -324,5 +331,26 @@ int BfmeAptValue006DCD20::rva006DCC60(bool bUndefOK) const
         if (bUndefOK) return 1;
         if (!isUndefined()) return 1;
     }
+    return 0;
+}
+
+// retail 0x006E0200, 87 bytes. Predicate for CIH range 12..19 without
+// bUndefOK, "this" assert at AptCIH.h:176 (0xB0) via file string at
+// 0x008E8C60. Evidence: caller 0x006E1170 asserts "isCharacterInst()" at
+// AptCIH.h:165 after calling it then returns +0x4C; type range via rowed
+// get@Rva006DBB30SarDwordField plus !isUndefined via rowed isUndefined.
+int BfmeAptValue006DCD20::isCharacterInst() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xB0);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() < 12)
+        goto ret0;
+    if (((const Rva006DBB30SarDwordField *)this)->get() > 19)
+        goto ret0;
+    if (!isUndefined())
+        return 1;
+ret0:
     return 0;
 }

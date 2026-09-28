@@ -39812,3 +39812,4 @@ uw_0076443a,,0x0076443A,8,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DD
 ?Rva00210DC9Get@@YAEXZ,,0x00210DC9,12,Code/GameEngine/Source/Common/Rva00210DC9Get.cpp,matched,singleton 0xDFEF10 byte 0xB4 plus 3 callers plus O1 mov-al form
 ?rva00210C33@Rva00210C33@@QAEXXZ,,0x00210C33,25,Code/GameEngine/Source/Common/Rva00210C33ShowCursor.cpp,matched,IAT ShowCursor plus flag 0x5008 plus caller 0x00213C10 plus O1
 ?rva00210749@Rva00210749@@QAEXXZ,,0x00210749,38,Code/GameEngine/Source/Common/Rva00210749Clear.cpp,matched,vector erase plus six zeroes plus caller 0x002109E2 plus local ref for lea
+?isCharacterInst@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0200,87,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,isCharacterInst via caller 0x006E1170 assert plus AptCIH range 12-19 plus rowed get and isUndefined
