@@ -23,6 +23,7 @@ class W3DProjectedShadow
 {
 public:
 	void rva007AEC10(void);
+	void rva00108951(void);
 
 private:
 	unsigned char m_shadowData[0x68];
@@ -50,5 +51,16 @@ void W3DProjectedShadow::rva007AEC10(void)
 	{
 		releaseReference(m_reference70);
 		m_reference70 = 0;
+	}
+}
+
+void W3DProjectedShadow::rva00108951(void)
+{
+	RefCountedShadowResource *p = m_references68[0];
+	if (p != 0)
+	{
+		if (--p->referenceCount == 0)
+			p->deleteThis();
+		m_references68[0] = 0;
 	}
 }

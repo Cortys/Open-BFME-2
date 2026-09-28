@@ -2668,3 +2668,5 @@ FUN_009aa7df	0x005AA7DF	10	blocked	EH_prolog stub mov eax unclaimed plus call no
 ?rva005C3A86@Rva005C3A86@@QAEXUTreeHintRef00217D4C@@@Z	0x005C3A86	71	blocked	array append stride 0xC via operator= plus arg Release dtor plus EH; tried by-value TreeHintRef got 29B no EH no imul need copy-dtor-EH recipe t=15 model=muse-02
 ?rva005F8447@Rva005F8447@@QAEXXZ	0x005F8447	61	blocked	dual Release on +4 then +0 with EH state 0 plus funclet; tried raw TargetRef if-Release got 28B no EH; likely non-virtual dtor with 2 TreeHintRef members needs dtor-EH recipe t=10 model=muse-02
 FUN_009f1295	0x005F1295	10	blocked	only EH prolog visible no ret; Ghidra 10 vs 11 bytes-to-next; true end unprovable from packet; callers are deleting dtors 0x005F12FE 0x005F13CC t=8 model=muse-02
+FUN_00818F7D	0x00418F7D	160	blocked	INI attack priority parse with EH throw t=12 model=muse-01
+?rva002D370A@RadarWindowOverrideSource@@QAEXXZ	0x002D370A	19	partial	cmp-mem-vs-mov-test t=12 model=muse-01 score=0.95 stash=reverse/attempts/0x002d370a.cpp
