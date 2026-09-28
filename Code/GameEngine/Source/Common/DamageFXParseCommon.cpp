@@ -79,7 +79,6 @@ static void parseCommonStuff(INI *ini, ConstCharPtrArray names, int &vetFirst, i
 	}
 }
 
-// ?parseAmount@DamageFX@@SAXPAVINI@@PAX1PBX@Z present-unmatched
 void DamageFX::parseAmount(INI *ini, void *instance, void *store, const void *userData)
 {
 	DamageFX *self = (DamageFX *)instance;
