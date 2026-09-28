@@ -2516,3 +2516,4 @@ FUN_008b9c4d	0x004B9C4D	313	blocked	static getLocalEffectPos needs same-TU onBod
 ?getRelationship@Team@@QBE?AW4Relationship@@PBV1@@Z	0x003A0FD2	137	partial	second map in esi not edx plus lea-add order t=25 model=muse-x8q-0d17 score=0.95 stash=reverse/attempts/0x003a0fd2.cpp
 FUN_00949d9e	0x00549D9E	45	blocked	swap 8B int-float needs Oy- for frame but still 8B short no stack spill t=20 model=muse-x8q-0d17
 ?rva001DE9C4@Eva@@QAEHPBD@Z	0x001DE9C4	161	partial	register wall key in edi not ebx plus lea vs add for table48 t=25 model=muse-0f2 score=0.93 stash=reverse/attempts/0x001de9c4.cpp
+?rva00265143@AIUpdateInterface@@QAEHXZ	0x00265143	48	partial	add-vs-disp for begin load ours 46B vs 48B t=20 model=muse-457d score=0.95 stash=reverse/attempts/0x00265143.cpp
