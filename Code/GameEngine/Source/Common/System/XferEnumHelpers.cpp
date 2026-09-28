@@ -726,10 +726,24 @@ void Rva0030612AXfer(Xfer *xfer, float *vals)
 
 // Retail 0x00306151 (50B): free cdecl helper moving four consecutive floats
 // through the float operator== (Xfer slot 28, 0x70), chaining the returned
-// Xfer& as the next call's this. Sibling of Rva0030612AXfer above (three
-// floats); sole caller shape is 0x003062FE, which invokes it three times at
-// +0x00/+0x10/+0x20 (a 48-byte triple row).
-void Rva00306151Xfer(Xfer *xfer, float *vals)
+// Xfer& as the next call's this and returning the final Xfer* so the
+// 0x003062FE triple-row caller can forward it in eax for its next call.
+// Sibling of Rva0030612AXfer above (three floats); sole caller shape is
+// 0x003062FE, which invokes it three times at +0x00/+0x10/+0x20
+// (a 48-byte triple row).
+// ?Rva00306151Xfer@@YAPAVXfer@@PAV1@PAM@Z present-unmatched
+Xfer *Rva00306151Xfer(Xfer *xfer, float *vals)
 {
-	(((((*xfer == vals[0]) == vals[1]) == vals[2]) == vals[3]));
+	return &(((((*xfer == vals[0]) == vals[1]) == vals[2]) == vals[3]));
+}
+
+// Retail 0x003062FE (41B): free cdecl helper moving twelve consecutive floats
+// (a 48-byte triple row) through Rva00306151Xfer at +0x00/+0x10/+0x20.
+// Callers pass edi+0x50 (0x000E5725), row triples in xfer bodies listed in the
+// packet; evidence is the three E8 calls to 0x00306151 with the push/pop
+// reuse shape (nested calls forward Xfer* in eax).
+// ?Rva003062FEXfer@@YAXPAVXfer@@PAM@Z present-unmatched
+void Rva003062FEXfer(Xfer *xfer, float *vals)
+{
+	Rva00306151Xfer(Rva00306151Xfer(Rva00306151Xfer(xfer, vals), vals + 4), vals + 8);
 }
