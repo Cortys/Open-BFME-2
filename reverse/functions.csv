@@ -40266,3 +40266,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_copy@PBUBfmeAssignRecord32@@PAU1@@_STL@@YAPAUBfmeAssignRecord32@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x0017398C,38,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmeassignrecord32_allocate_copy.cpp,matched,uninit copy via rowed Construct 0x1737EF stride 0x20
 ??$uninitialized_fill_n@PAUBfmeAssignRecord32@@IU1@@_STL@@YAPAUBfmeAssignRecord32@@PAU1@IABU1@@Z,,0x001739B2,27,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmeassignrecord32_allocate_copy.cpp,matched,wrapper via rowed fill_n 0x17381C
 ?rva00225D38@GameEngine@@AAE_NXZ,,0x00225D38,48,Code/GameEngine/Source/Common/Rva00225D38Check.cpp,matched,GameEngine frame-period check same plus34 globals ten callers
+?rva00225F12@GameEngine@@QAEPAVMessageStream@@XZ,,0x00225F12,50,Code/GameEngine/Source/Common/Rva00225F12Create.cpp,matched,vslot30 factory new MessageStream size 0x20 no callers
