@@ -15,6 +15,7 @@ public:
     };
     void Get_Description(SurfaceDescription &description);
     unsigned int Rva008FCA30_Surface_Byte_Size() const;
+    void DrawPixel(unsigned int x, unsigned int y, unsigned int color);
 private:
     void *surface;
 };
@@ -90,6 +91,7 @@ public:
 #undef V
     virtual HRESULT __stdcall GetDesc(D3DSurfaceDesc *desc) = 0;
     virtual HRESULT __stdcall LockRect(void *locked, void *rect, unsigned flags) = 0;
+    virtual HRESULT __stdcall UnlockRect() = 0;
 };
 void Log_DX8_ErrorCode(unsigned int code);
 void SurfaceClass::Get_Description(SurfaceDescription &description)
@@ -175,4 +177,46 @@ void *Rva001166E0::rva001166E0(int *pitchOut, int left, int top, int right, int 
         Log_DX8_ErrorCode((unsigned int)hr);
     *pitchOut = locked.Pitch;
     return locked.pBits;
+}
+
+// ?DrawPixel@SurfaceClass@@QAEXIII@Z, retail 0x00116C30 (210B).
+// Evidence: unlock lane unblocks 9 incl 0x00050125; 15 callers with 3 args;
+// Lock slot 0x34 with rect plus Unlock slot 0x38; pixel-size 1/2/4 switch;
+// BFME1 surfaceclass.cpp DrawPixel donor; same TU and flags.
+void SurfaceClass::DrawPixel(unsigned int x, unsigned int y, unsigned int color)
+{
+    if (!surface)
+        return;
+    SurfaceDescription sd;
+    Get_Description(sd);
+    unsigned int size = Rva008FC4F0_PixelSize(sd);
+    D3DLockedRect locked;
+    memset(&locked, 0, sizeof(locked));
+    BfmeRect rect;
+    memset(&rect, 0, sizeof(rect));
+    rect.bottom = (int)(y + 1);
+    rect.top = (int)y;
+    rect.left = (int)x;
+    rect.right = (int)(x + 1);
+    HRESULT hr = ((D3DSurface *)surface)->LockRect(&locked, &rect, 0);
+    if (hr != 0)
+        Log_DX8_ErrorCode((unsigned int)hr);
+    unsigned char *cptr = (unsigned char *)locked.pBits;
+    unsigned short *sptr = (unsigned short *)locked.pBits;
+    unsigned int *lptr = (unsigned int *)locked.pBits;
+    switch (size)
+    {
+    case 1:
+        *cptr = (unsigned char)(color & 0xFF);
+        break;
+    case 2:
+        *sptr = (unsigned short)(color & 0xFFFF);
+        break;
+    case 4:
+        *lptr = color;
+        break;
+    }
+    hr = ((D3DSurface *)surface)->UnlockRect();
+    if (hr != 0)
+        Log_DX8_ErrorCode((unsigned int)hr);
 }
