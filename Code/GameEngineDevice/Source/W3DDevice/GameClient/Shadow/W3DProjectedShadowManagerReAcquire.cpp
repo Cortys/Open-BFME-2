@@ -37,13 +37,41 @@ public:
 private:
 	char _t[0x10];
 };
+class VertexBufferClass
+{
+public:
+	class WriteLockClass
+	{
+	public:
+		WriteLockClass(VertexBufferClass *b, int flags);
+	private:
+		char _t[0xC];
+	};
+};
+class IndexBufferClass
+{
+public:
+	class WriteLockClass
+	{
+	public:
+		WriteLockClass(IndexBufferClass *b, int flags);
+	private:
+		char _t[0xC];
+	};
+};
 class W3DProjectedShadowManager
 {
 public:
 	bool ReAcquireResources();
+	void rva001072C9();
 private:
 	BfmeDynamicNativeVB *m_vertexBuffer;
 	DX8IndexBufferClass *m_indexBuffer;
+	char _pad08[4];
+	VertexBufferClass::WriteLockClass *m_vertexLock;
+	IndexBufferClass::WriteLockClass *m_indexLock;
+	int m_14;
+	int m_18;
 };
 bool W3DProjectedShadowManager::ReAcquireResources()
 {
@@ -52,4 +80,11 @@ bool W3DProjectedShadowManager::ReAcquireResources()
 	if (!m_indexBuffer)
 		m_indexBuffer = new DX8IndexBufferClass(0x7530, DX8IndexBufferClass::USAGE_DYNAMIC);
 	return true;
+}
+void W3DProjectedShadowManager::rva001072C9()
+{
+	m_vertexLock = new VertexBufferClass::WriteLockClass((VertexBufferClass *)m_vertexBuffer, 0x2800);
+	m_indexLock = new IndexBufferClass::WriteLockClass((IndexBufferClass *)m_indexBuffer, 0x2800);
+	m_14 = 0x7530;
+	m_18 = 0x7530;
 }
