@@ -6214,3 +6214,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??$__uninitialized_copy@PAUBfmeStringRecord00568CE0@@PAU1@@_STL@@YAPAUBfmeStringRecord00568CE0@@PAU1@00ABU__false_type@0@@Z,0x00569079,ICF twin of rowed PBU worker at this address G7 insert overflow calls it
 ??RRva00418BFBComp@@QBE_NPBX0@Z,0x00418BB7,twin of rowed free less via caller 0x00418BFB empty-this identical body
 ?rva002ACFD6@Rva000427195@@QAEPAXPBX@Z,0x002ACFD6,ICF twin of free NewNode for table insert call with this; same 12B node and pair copy
+??$_Destroy@PAURva004F691E@@@_STL@@YAXPAURva004F691E@@0@Z,0x004F838C,twin of RvaDestroy 4F838C via vector dtor 4F8A17 call site bytes matched
