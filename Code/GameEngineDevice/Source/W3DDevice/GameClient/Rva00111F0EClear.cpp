@@ -28,6 +28,7 @@ class Rva00111F0E
 public:
 	void rva00111F0E();
 	void rva00111F6F(RvaRef *a, int b, int c, int d);
+	int rva00111FBC(unsigned char *a);
 private:
 	char m_pad00[0x24];
 	RvaRef *m_24;
@@ -48,6 +49,8 @@ private:
 	char m_pad74[0x78 - 0x74];
 	int m_78;
 	int m_7C;
+	char m_pad80[0x90 - 0x80];
+	int m_90;
 };
 
 void Rva00111F0E::rva00111F0E()
@@ -90,4 +93,11 @@ void Rva00111F0E::rva00111F6F(RvaRef *a, int b, int c, int d)
 		}
 		m_5C = a;
 	}
+}
+
+int Rva00111F0E::rva00111FBC(unsigned char *a)
+{
+	m_90 = 1;
+	*a = 0;
+	return 1;
 }

@@ -40613,3 +40613,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00150265Copy@@YAXPAVRva0014F699@@00@Z,,0x00150265,29,Code/GameEngine/Source/Common/Rva00150265Copy.cpp,matched,wrapper to rowed 0x0014FA90 tag plus null caller 0x001506A0
 ?rva005C39C4@Rva005C39C4@@QAE?AUTreeHintRef00217D4C@@H@Z,,0x005C39C4,26,Code/GameEngine/Source/Common/Rva005C39C4TreeHint.cpp,matched,TreeHint forwarder to slot2 callers 0x5C3BB9 0x5D2A87 0x5F84BF
 ??0Rva005C31FB@@QAE@HABVAsciiString@@@Z,,0x005C31D5,38,Code/GameEngine/Source/Common/AsciiStringFoldDeleters.cpp,matched,ctor vtable 0x8743F8 level plus name via 0x365F0 callers 0x5284F4 0x528B11 0x5F2856
+?rva00111FBC@Rva00111F0E@@QAEHPAE@Z,,0x00111FBC,19,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00111F0EClear.cpp,matched,unlock returns 1 sets 0x90 zeroes out byte
