@@ -40825,3 +40825,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?doTeamSpinForFramecount@ScriptActions@@IAEXABVAsciiString@@H@Z,,0x003C0FEA,54,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doTeamSpinForFramecount.cpp,matched,BFME1 donor doTeamSpinForFramecount timer-only team action
 ??1Rva005C3549@@UAE@XZ,,0x005C3549,54,Code/GameEngine/Source/Common/Rva005C3549Dtor.cpp,matched,dtor vtable plus clear +8 plus base vtable callers 0x00568617 0x005C367E
 ??_GRva005C3549@@UAEPAXI@Z,,0x005C367B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-5C367B.cpp,matched,deleting dtor slot 0 calls 0x005C3549 plus delete
+?rva003C0F09@ScriptActions@@IAEXABVAsciiString@@H@Z,,0x003C0F09,59,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C0F09.cpp,matched,honest team flag pair at 0x110 plus 0x111 via getTeamNamed pin
