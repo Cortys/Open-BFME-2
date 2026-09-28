@@ -39835,3 +39835,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva00271C68@Rva00271C68@@QAEXH@Z,,0x00271C68,17,Code/GameEngine/Source/Common/Rva00271C68Setter.cpp,matched,cond bit setter arg 26 or 4 at +0x118 unblocks 0x0043B278
 ?rva00271C79@Rva00271C68@@QAEXH@Z,,0x00271C79,17,Code/GameEngine/Source/Common/Rva00271C68Setter.cpp,matched,cond bit clearer arg 26 and FB at +0x118 unblocks 0x0043B2A4
 ?rva00271AEA@Rva00271AEA@@QAEXXZ,,0x00271AEA,25,Code/GameEngine/Source/Common/Rva00271AEALoop.cpp,matched,null array loop +0x14C slot 0x3C unblocks 0x00293E64
+?rva002714CA@Rva002714CA@@QAEXXZ,,0x002714CA,28,Code/GameEngine/Source/Common/Rva002714CALoop.cpp,matched,TheAudio slot 0x6c remove handle +0x148 then 1 unblocks 3
