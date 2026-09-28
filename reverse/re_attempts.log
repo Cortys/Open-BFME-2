@@ -2312,3 +2312,4 @@ FUN_007efeb2	0x003EFEB2	379	blocked	27B push-mov5-pop NOP sled at both ends pres
 ?rva00141EF0@BFME2SceneSpatialIndex@@QAEXPAPAX@Z	0x00141EF0	151	blocked	spatial drain with inlined pool pop and Remove call; 1 probe +98B t=10 model=muse-ec65
 FUN_006e9acc	0x002E9ACC	101	blocked	enclosing ctor needs ebp frame and dead-slot local plus member-ctor scheduling; init-list keeps ptr in edi vs retail eax t=20 model=muse-06dc
 ?GetVertices@RoadSegment@@QAEHPAUVertexFormatXYZDUV1@@H@Z	0x000D45A3	51	blocked	retail imul 0x24 for 36B stride vs donor 24B lea+shl; needs /G7 or 36B struct but shared TU flag change risks siblings t=15 model=muse-06dc
+FUN_007b8b44	0x003B8B44	29	blocked	STL uninit-copy wrapper 4-arg to 5-arg dup __copy at 0x3F421D needs true copy signature plus tag dispatch t=12 model=muse-91be
