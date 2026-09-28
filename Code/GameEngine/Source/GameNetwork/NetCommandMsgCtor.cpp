@@ -227,3 +227,22 @@ Rva004D59D1::Rva004D59D1() : NetCommandMsg()
 	m_20 = (unsigned int)-1;
 	m_commandType = (NetCommandType)8;
 }
+
+// ??0Rva004D5A30@@QAE@XZ @0x004D5A30 29B: calls base plus dword 0 at +0x1c via And plus dword 0 at +0x20 via And plus vtable 0x860294 plus type 9.
+// Honest-address ctor; same /O1 And recipe as siblings above; unblocks 0x0058E481 0x004CFD06.
+// Callers at 0x004CFDA2 0x0058E4A5.
+class Rva004D5A30 : public NetCommandMsg
+{
+public:
+	Rva004D5A30();
+private:
+	unsigned int m_1c;
+	unsigned int m_20;
+};
+
+Rva004D5A30::Rva004D5A30() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_20 = 0;
+	m_commandType = (NetCommandType)9;
+}

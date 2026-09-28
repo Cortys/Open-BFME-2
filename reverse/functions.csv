@@ -40432,3 +40432,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0NetWrapperCommandMsg@@QAE@XZ,,0x004D5844,45,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,ctor wrapper type18 six-dword-plus-word vtable860254
 ??0Rva004D59D1@@QAE@XZ,,0x004D59D1,29,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,unlock ctor And0 Or-1 vtable860274 type8
 ?aiTightenToPosition@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x0036EA74,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,BFME1 position commands donor AICMD 0x02 with m_pos
+??0Rva004D5A30@@QAE@XZ,,0x004D5A30,29,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,unlock ctor And-And vtable860294 type9
