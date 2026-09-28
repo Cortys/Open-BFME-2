@@ -76,3 +76,9 @@ template _STL::vector<Rva0048130E>::~vector();
 class Rva002A73B8 { public: ~Rva002A73B8(); private: char m_pad[0xC]; };
 template _STL::vector<Rva002A73B8>::~vector();
 
+// ??1?$vector@URva00395D77@@V?$allocator@URva00395D77@@@_STL@@@_STL@@QAE@XZ @0x0039977A 63B.
+// CastleBehavior range vector: destroys via rowed 12-byte _Destroy at 0x00399336 then frees via 0x30830.
+// Same 63B Destroy-plus-free shape as rowed 0x004815AE. Caller at 0x0039A1F1 plus Unwind funclets.
+struct Rva00395D77 { public: ~Rva00395D77(); };
+template _STL::vector<Rva00395D77>::~vector();
+
