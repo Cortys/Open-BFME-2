@@ -40785,3 +40785,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00407E53@Rva00407E28@@QAE_NH@Z,,0x00407E53,65,Code/Libraries/Source/WWVegas/WWLib/stlport_map_rva00407E28.cpp,matched,unlock two-map insert via find subscript
 ??0Rva005C76C0@@QAE@XZ,,0x005C76C0,85,Code/GameEngine/Source/Common/Rva005C76C0Ctor.cpp,matched,ctor zero plus00 plus04 init Rva0055A246 plus08 zero 12 floats plus38 chain 0x55A246
 ??1Rva005DE5B5@@QAE@XZ,,0x005DE5B5,53,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,nonvirtual dtor vector plus UnicodeString EH
+?rva00528264@Rva00528264@@QAEXH@Z,,0x00528264,15,Code/GameEngine/Source/Common/Rva00528264Setter.cpp,matched,cond setter +0x1C callers 0x0052855E 0x0052827C
