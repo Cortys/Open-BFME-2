@@ -60,6 +60,16 @@ private:
 	char m_pad[8];
 };
 
+class Rva0040CB11Entry
+{
+public:
+	Rva0040CB11Entry();
+	Rva0040CB11Entry(const Rva0040CB11Entry &other);
+
+private:
+	char m_pad[8];
+};
+
 typedef _STL::pair<const AsciiString, NoCaseTreeValue4> FillNoCasePair;
 typedef _STL::pair<const AsciiString, char> FillPairC;
 
@@ -71,6 +81,7 @@ template<> void _Construct<BfmeStringRecord005DDD40, BfmeStringRecord005DDD40>(B
 template<> void _Construct<Rva0048130E, Rva0048130E>(Rva0048130E *, const Rva0048130E &);
 template<> void _Construct<Rva002390CB, Rva002390CB>(Rva002390CB *, const Rva002390CB &);
 template<> void _Construct<AsciiString, AsciiString>(AsciiString *, const AsciiString &);
+template<> void _Construct<Rva0040CB11Entry, Rva0040CB11Entry>(Rva0040CB11Entry *, const Rva0040CB11Entry &);
 }
 
 template _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> >::vector(unsigned int, const TreeKey00242F5E &, const _STL::allocator<TreeKey00242F5E> &);
@@ -80,3 +91,4 @@ template _STL::vector<BfmeStringRecord005DDD40, _STL::allocator<BfmeStringRecord
 template _STL::vector<Rva0048130E, _STL::allocator<Rva0048130E> >::vector(unsigned int, const Rva0048130E &, const _STL::allocator<Rva0048130E> &);
 template _STL::vector<Rva002390CB, _STL::allocator<Rva002390CB> >::vector(unsigned int, const Rva002390CB &, const _STL::allocator<Rva002390CB> &);
 template _STL::vector<AsciiString, _STL::allocator<AsciiString> >::vector(unsigned int, const AsciiString &, const _STL::allocator<AsciiString> &);
+template _STL::vector<Rva0040CB11Entry, _STL::allocator<Rva0040CB11Entry> >::vector(unsigned int, const Rva0040CB11Entry &, const _STL::allocator<Rva0040CB11Entry> &);
