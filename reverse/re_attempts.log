@@ -2378,3 +2378,4 @@ FUN_00612858	0x00212858	199	blocked	STL hashtable resize with EvaAscii hash give
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	no donor: BFME1 has dtor only plus reloc-derived 508B clear with no body; ZH SurfaceClass::Clear takes no color plus no DXT plus memset loop vs retail color plus DXT1-5 plus rep stosd/movsd; 396B DX Lock/Unlock t=12 model=muse-3cb2
 ?buildSegments@W3DRopeDraw@@AAEXXZ	0x000CA9F1	564	partial	564B exact size 165 insns 5 regions Line3D arg order plus xmm alloc t=25 model=muse-a530 score=0.93 stash=reverse/attempts/0x000ca9f1.cpp
 ?clear@W3DRadarResetSurface@@QAEXI@Z	0x00116780	396	blocked	DX surface LockRect DXT no donor needs full D3D RE t=5 model=muse-a530
+?Rva006038EFBswap@@YAKK@Z	0x006038EF	35	partial	34B vs 35B movzx plus add vs xor mov dh plus add t=15 model=muse-a530 score=0.94 stash=reverse/attempts/0x006038ef.cpp
