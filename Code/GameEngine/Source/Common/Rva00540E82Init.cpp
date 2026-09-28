@@ -12,6 +12,9 @@
 // int at +0 and Region3D at +4 via rowed copy ctor 0x0009AC04.
 // ??0Rva00540E9D@@QAE@ABURva00540E9DSrc@@H@Z, retail 0x00540E9D 32B:
 // ctor with 12B src at +4..+0xC and int at +0.
+// ??0Rva00540D67@@QAE@XZ, retail 0x00540D67 45B: sibling of 0x00540E82
+// with int 2 at +0, zeros at +4 +8 +0xC +0x10, global float 0x00BC74F0
+// at +0x14.
 
 class Rva00540E82
 {
@@ -76,4 +79,22 @@ Rva00540E9D::Rva00540E9D(const Rva00540E9DSrc &src, int v) : m_00(v)
 	m_04.a = src.a;
 	m_04.b = src.b;
 	m_04.c = src.c;
+}
+
+extern float g_Va00BC74F0;
+
+class Rva00540D67
+{
+public:
+	Rva00540D67();
+	int m_00;
+	float m_04;
+	float m_08;
+	float m_0c;
+	float m_10;
+	float m_14;
+};
+
+Rva00540D67::Rva00540D67() : m_00(2), m_04(0.0f), m_08(0.0f), m_0c(0.0f), m_10(0.0f), m_14(g_Va00BC74F0)
+{
 }
