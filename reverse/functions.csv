@@ -40297,3 +40297,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D9508@Rva002D9508@@QAEXPBX@Z,,0x002D9508,41,Code/GameEngine/Source/Common/Rva002D9531CondSetter.cpp,matched,unlock cond 12B copy via movsd mask 0or6
 ??1Rva0039ADF3@@UAE@XZ,,0x0039ADF3,11,Code/GameEngine/Source/Common/Rva0039AD56Dtor.cpp,matched,vtable 0x81AD34 tail-jmp to rowed base 0x39AD56 caller 0x39B0F1
 ??_GObjectTypes@@UAEPAXI@Z,,0x00376AC3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-81e4.cpp,matched,ObjectTypes deleting dtor slot 0 vtable 0x00C18630
+??RMapHelper@?$SparseMatchFinder@UModelConditionInfo@@V?$BitFlags@$0HF@@@@@QBE_NABV?$BitFlags@$0HF@@@0@Z,,0x0033AD13,73,Code/GameEngine/Source/Common/Thing/SparseMatchFinderModelConditionCompare117.cpp,matched,byte-twin of Weapon MapHelper 0x0033AD5C loop 104 for ModelCondition 117
