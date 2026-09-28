@@ -39935,3 +39935,6 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0037E451@Rva0037E421@@QAEPAXH@Z,,0x0037E451,34,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,unlock linear search 216B m_a4 equals key
 ?rva0037E7DA@Rva0037E421@@QAEEH@Z,,0x0037E7DA,59,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,chain of 37E451 sets 98 a4 to minus1 cc to 1.0f
 ??0Rva0014F401@@QAE@ABV0@@Z,,0x0014F401,11,Code/GameEngine/Source/Common/Rva0014F401Copy.cpp,matched,base copy ctor vtable 0x007C6F2C callers 0x0014F480 0x0014F4A1 0x0014F4C2
+??0Rva0014F480@@QAE@ABV0@@Z,,0x0014F480,33,Code/GameEngine/Source/Common/Rva0014FDerivedCopies.cpp,matched,derived copy calls base 0x0014F401 vtable 0x007D3854
+??0Rva0014F4A1@@QAE@ABV0@@Z,,0x0014F4A1,33,Code/GameEngine/Source/Common/Rva0014FDerivedCopies.cpp,matched,derived copy calls base 0x0014F401 vtable 0x007D385C
+??0Rva0014F4C2@@QAE@ABV0@@Z,,0x0014F4C2,33,Code/GameEngine/Source/Common/Rva0014FDerivedCopies.cpp,matched,derived copy calls base 0x0014F401 vtable 0x007D3864
