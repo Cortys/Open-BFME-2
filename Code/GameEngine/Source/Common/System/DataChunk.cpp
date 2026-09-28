@@ -34,12 +34,23 @@ unsigned short DataChunkInput::getChunkVersion()
 // DataChunkTableOfContents (list head, entry count, next ID allocator,
 // header-open flag); declaration order is what the bytes prove: retail
 // stores NULL, 0, 1, false in that order.
+class Mapping
+{
+public:
+	virtual void *deleteInstance(int flags);
+
+	Mapping *m_next;			// +0x04
+};
+
+void operator delete(void *ptr);
+
 class DataChunkTableOfContents
 {
 public:
 	DataChunkTableOfContents();
+	~DataChunkTableOfContents();
 
-	void *m_list;				// +0x00
+	Mapping *m_list;			// +0x00
 	int m_listLength;			// +0x04
 	unsigned int m_nextID;		// +0x08
 	bool m_headerOpened;		// +0x0C
@@ -52,4 +63,21 @@ DataChunkTableOfContents::DataChunkTableOfContents() :
 	m_listLength(0),
 	m_headerOpened(false)
 {
+}
+
+// Retail 0x00306D5C (31B): frees every Mapping in the list head at +0 via
+// the MemoryPoolObject pattern (MessageStreamListCtors.cpp precedent):
+// next at +4, deleteInstance(0) through vtable slot 0, then operator
+// delete on the returned block. ZH DataChunk.cpp donor proves the loop
+// (next = m->next; m->deleteInstance()); BFME2's deleteInstance takes the
+// int flag and returns the block. Caller is DataChunkInput teardown at
+// 0x00306F41 (lea ecx,[edi+4]).
+DataChunkTableOfContents::~DataChunkTableOfContents()
+{
+	Mapping *mapping, *next;
+	for (mapping = m_list; mapping; mapping = next)
+	{
+		next = mapping->m_next;
+		::operator delete(mapping->deleteInstance(0));
+	}
 }
