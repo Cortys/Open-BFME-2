@@ -40092,3 +40092,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001DFE56@Rva001DFE56@@QBE_NPBX0@Z,,0x001DFE56,66,Code/GameEngine/Source/Common/Rva001DFE56TestMasks.cpp,matched,19-dword dual-mask tester Rva family donor Rva0026157E plus BitFlags116
 ??0Rva001DFEAABase@@QAE@XZ,,0x001DFEAA,117,Code/GameEngine/Source/GameClient/FXNuggetBaseCtor_muse-8c42.cpp,matched,FXNugget base ctor BFME1 donor plus 76-byte members
 ?rva003EDE16@Rva003EDE16@@QBE_NPBX@Z,,0x003EDE16,20,Code/GameEngine/Source/Common/Rva003EDE16Forward_muse-8c42.cpp,matched,chain of 001DFE56 forwards plus28 plus74 masks
+?rva003EDE2A@Rva003EDE2A@@QBE_NPBX@Z,,0x003EDE2A,26,Code/GameEngine/Source/Common/Rva003EDE2AForward_muse-8c42.cpp,matched,forwarder to 4-dword tester plusC0 plusD0 sibling of 003EDE16
