@@ -40485,3 +40485,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00142C30@Rva00142C30@@QAEPAXH@Z,,0x00142C30,11,Code/GameEngine/Source/Common/Rva00142C30Indexer.cpp,matched,indexed fetch from inline array at 0x30
 ?Rva0014FA90Copy@@YAPAVRva0014F699@@PAV1@00PAXH@Z,,0x0014FA90,50,Code/GameEngine/Source/Common/Rva0014FA90Copy.cpp,matched,forward copy via rowed 0x0014F699 dummy tag args caller 0x00150278 pushes 5
 ?rva002AC629@Player@@QAEPAVObject@@XZ,,0x002AC629,74,Code/GameEngine/Source/Common/RTS/PlayerRva002AC629.cpp,matched,Player cached finder via iterateObjects and rowed findObjectByID
+?rva0040C64A@Rva0037DCA5@@QAEPAXXZ,,0x0040C64A,19,Code/GameEngine/Source/Common/Rva0037DCA5Get.cpp,matched,chain of rva0037DC52 fallback empty plus 0x58
