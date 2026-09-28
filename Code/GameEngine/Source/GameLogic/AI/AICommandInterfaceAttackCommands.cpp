@@ -69,6 +69,14 @@ enum GuardMode
 
 void free(void *block);
 
+class Rva003427DD
+{
+public:
+	Rva003427DD &operator=(const Rva003427DD &src);
+private:
+	char m_data[0x7C];
+};
+
 struct AICommandParms
 {
 	AICommandParms(AICommandType cmd, CommandSourceType cmdSource);
@@ -86,7 +94,9 @@ struct AICommandParms
 	const Waypoint *m_waypoint; // +0x2C
 	const void *m_polygon; // +0x30
 	Int m_intValue; // +0x34
-	char m_tailPad[0xC0 - 0x38]; // +0x38..+0xBF, retail block size
+	char m_pad38[0x3C - 0x38]; // +0x38..+0x3B
+	Rva003427DD m_3C; // +0x3C, copied via rowed 0x003427DD (e.g. 0x0036F400)
+	char m_tailPad[0xC0 - 0x3C - 0x7C]; // +0xB8..+0xBF, retail block size
 };
 
 class AICommandInterface
@@ -126,6 +136,7 @@ public:
 	void aiMoveToAndEvacuate(const Coord3D *position, CommandSourceType cmdSource);
 	void aiMoveToAndEvacuateAndExit(const Coord3D *position, CommandSourceType cmdSource);
 	void aiBfmeCommand35(const Coord3D *position, CommandSourceType cmdSource);
+	void rva0036F400(const Rva003427DD *info, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -473,5 +484,15 @@ void AICommandInterface::aiBfmeCommand35(const Coord3D *position, CommandSourceT
 {
 	AICommandParms parms(AICMD_BFME_35, cmdSource);
 	parms.m_pos = *position;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036F400@AICommandInterface@@QAEXPBVRva003427DD@@W4CommandSourceType@@@Z, retail 0x0036F400, 106 bytes.
+// Gap between aiExit and aiGuardPosition in this TU: AICMD 0x1D plus m_3C at +0x3C via rowed 0x003427DD copy plus slot-0 aiDoCommand.
+// Class proven by caller at 0x003703BE via lea ecx,[eax+0x20] (AICommandInterface subobject); callers forward (info, source).
+void AICommandInterface::rva0036F400(const Rva003427DD *info, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x1D, cmdSource);
+	parms.m_3C = *info;
 	aiDoCommand(&parms);
 }

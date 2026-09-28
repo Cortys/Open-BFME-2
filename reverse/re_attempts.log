@@ -2558,3 +2558,7 @@ FUN_004535A6	0x000535A6	38	blocked	audio double-chase plus 0x678 compare needs d
 ??1Rva002048EC@@UAE@XZ	0x002048EC	63	blocked	vtable-0x7E3AB4-plus-AsciiString-opassign-at-0x366F0-plus-releaseBuffer-EH-prolog-caller-00204968-deleting-dtor-shape-needs-class-layout t=10 model=muse-2223
 ?rva00473ADF@Rva00473ADF@@QAEXXZ	0x00473ADF	87	partial	extra mov second via eax then edi vs direct edi t=20 model=muse-fe32 score=0.93 stash=reverse/attempts/0x00473adf.cpp
 ?Apply_Default_State@DX8Wrapper@@SAXXZ	0x00123170	4600	blocked	Reproduced banked full 4600B body with seven patched-byte differences at +462..46d in ALPHAREF diagnostic StringClass initialization; no unresolved REL32. G5/G6/O1 worsen; SSE2/Ob2 and formatter split/direct-call variants retain seven differences. Constructor pointer/reference/char locals perturb other scheduling; equivalent subscript/qualified/comma forms unchanged. Existing bank preserved; no Code edits. Boundary includes final ret at full4600. t=18min model=gpt-6
+?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z	0x003971BF	121	partial	alt-range emptiness test-vs-sar only 123-vs-121 t=25 model=muse-a4f1 score=0.97 stash=reverse/attempts/0x003971bf.cpp
+FUN_00797b03	0x00397B03	134	blocked	setStatus range loop flag ternary setne-vs-branch plus index-vs-pointer t=15 model=muse-a4f1
+FUN_00797429	0x00397429	165	blocked	SSE Coord3D distance loop with string compare needs float layout t=5 model=muse-a4f1
+FUN_007974ce	0x003974CE	233	blocked	233B callback via ebp+8 plus virtuals too big t=5 model=muse-a4f1
