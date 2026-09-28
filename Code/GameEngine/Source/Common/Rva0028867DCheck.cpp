@@ -35,3 +35,15 @@ bool Rva0028867DCaller(const void *p)
 		return Rva0028867DCheck(p);
 	return false;
 }
+
+// ?Rva0028891FCheck@@YG_NPBQBXPBX@Z, retail 0x0028891F, 33 bytes.
+// Chain on Rva0028867DCheck: null guard plus equality-against-first guard then ESI call with +8.
+// Evidence: callers at 0x00288ADA plus 19 others push two dwords; same-TU static call gives lea esi call shape.
+bool __stdcall Rva0028891FCheck(const void *const *p1, const void *p2)
+{
+	if (!p1)
+		return false;
+	if (p2 == *p1)
+		return false;
+	return Rva0028867DCheck((const char *)p2 + 8);
+}

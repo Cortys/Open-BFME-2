@@ -40640,3 +40640,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0036F200@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0036F200,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same 101B object shape as rva0026C3AC with AICMD 0x14
 ?rva0036F265@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0036F265,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same 101B object shape as rva0026C3AC with AICMD 0x15
 ?rva0036F2CA@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0036F2CA,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same 101B object shape as rva0026C3AC with AICMD 0x16
+?Rva0028891FCheck@@YG_NPBQBXPBX@Z,,0x0028891F,33,Code/GameEngine/Source/Common/Rva0028867DCheck.cpp,matched,chain on 0x28867D via same TU ESI call plus guards
