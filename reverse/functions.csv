@@ -40286,3 +40286,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?DrawPixel@SurfaceClass@@QAEXIII@Z,,0x00116C30,210,Code/Libraries/Source/WWVegas/WW3D2/SurfaceByteSize.cpp,matched,BFME1 DrawPixel donor unlock unblocks 9
 ?rva00596394@Rva00596389@@QBEHXZ,,0x00596394,13,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,neighbours prove Rva00596389 owner plus caller 0x005AC092
 ??0Path@@QAE@XZ,,0x00363DC8,49,Code/GameEngine/Source/GameLogic/AI/PathCtor.cpp,matched,Path ctor via BFME1 donor and new-0x28 callers 2657CE and 2EDEAB
+?rva000B304B@Rva000B304B@@QAEXPAX_N@Z,,0x000B304B,73,Code/GameEngine/Source/Common/Rva000B304B.cpp,matched,unlock lane callers 0x000B4EF4 0x000B51C0 0x000B5903 slots 0x88 0x194 refcount plus4
