@@ -39022,3 +39022,5 @@ _Rva0084D890ByteToWide,,0x00020B50,50,Code/Libraries/Source/WWVegas/WWLib/Rva008
 ?Rva009AA9E0RawDump@@YAXPAX0H@Z,,0x001BB420,95,Code/GameEngine/Source/Common/Rva009AA9E0RawDump.cpp,matched,BFME1 byte-identical donor; b1 0x009AA9E0; 1 DIR32 string literal(s) agree
 ?requestRegionCount@Rva007F7A00Browser@@QAEXXZ,,0x00664080,85,Code/GameEngine/Source/GameNetwork/Rva007F7A00RegionCountRequest.cpp,matched,BFME1 byte-identical donor; b1 0x007F7A00
 ?request@Rva007F8650Owner@@QAEXXZ,,0x00664CD0,80,Code/GameEngine/Source/GameNetwork/Rva007F8650CloseRequest.cpp,matched,BFME1 byte-identical donor; b1 0x007F8650
+_Rva0084DD20Sign,,0x00020FA0,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20SignPositions.c,matched,BFME1 byte-identical donor; b1 0x0084DD20
+_Rva0084DDD0Sign,,0x00021050,37,Code/Libraries/Source/WWVegas/WWLib/Rva0084DD20SignPositions.c,matched,BFME1 byte-identical donor; b1 0x0084DDD0
