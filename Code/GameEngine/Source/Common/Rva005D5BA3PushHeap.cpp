@@ -43,3 +43,21 @@ void Rva005D5BA3PushHeap(Rva005D5A7E *first, int hole, int top, Rva005D5A7E val,
     }
     *(first + hole) = val;
 }
+
+void Rva005D5E8AAdjustHeap(Rva005D5A7E *first, int hole, int len, Rva005D5A7E val, int comp)
+{
+    int top = hole;
+    int secondChild = hole + hole + 2;
+    while (secondChild < len) {
+        if ((first + secondChild)->rva005D5A7E(*(first + secondChild - 1)))
+            --secondChild;
+        *(first + hole) = *(first + secondChild);
+        hole = secondChild;
+        secondChild = hole + hole + 2;
+    }
+    if (secondChild == len) {
+        *(first + hole) = *(first + (secondChild - 1));
+        hole = secondChild - 1;
+    }
+    Rva005D5BA3PushHeap(first, hole, top, val, comp);
+}
