@@ -2484,3 +2484,5 @@ FUN_004c09cf	0x000C09CF	116	blocked	reserve-like manual array manager calls hone
 ??0TerrainTracksRenderObjClass@@QAE@XZ	0x0008E54F	97	blocked	ctor small-layout vs ZH inline-edges header t=12 model=muse-3639
 FUN_006930a9	0x002930A9	92	blocked	producer spawn onSpawnDeath plus iface250 slot31-slot13 fallback needs donor IDs t=15 model=muse-bf6a
 FUN_007ede44	0x003EDE44	293	blocked	293B virtual-heavy with unclaimed func pointers 0x969628 plus SSE t=5 model=muse-8c42
+?rva002B59FF@Rva002B59FF@@QAE_NXZ	0x002B59FF	96	partial	vec STL size test-vs-sar plus shared true-false blocks remain; 0 memory 0 register diffs t=20 model=muse-42e3 score=0.93 stash=reverse/attempts/0x002b59ff.cpp
+?rva00056DA2@Rva00056DA2@@QAEXXZ	0x00056DA2	73	partial	single redundant mov ecx esi before stdcall Free remains; 0 memory 0 register diffs t=12 model=muse-42e3 score=0.97 stash=reverse/attempts/0x00056da2.cpp

@@ -1,51 +1,59 @@
 // ?rva00056DA2@Rva00056DA2@@QAEXXZ
-// partial score=0.93 date=2026-09-27
+// partial score=0.97 date=2026-09-28
 // ?rva00056DA2@Rva00056DA2@@QAEXXZ
-// partial score=0.93 date=2026-09-27
+// partial score=0.97 date=2026-09-28
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
-// ?rva00056DA2@Rva00056DA2@@QAEXXZ, retail 0x00056DA2 (73B).
-// Honest-address hashtable clear twin of unclaimed 0x00057FC1 (same bytes
-// except the free reloc): bucket-vector at +4/+8 with size at +0x10, freeing
-// each chain via rowed ?Rva00055864Free@@YGXPAURva00055864Node@@@Z at
-// 0x00055864, clearing buckets and size. Callers at 0x00057B03/0x00058851.
+// stlport
+// BFME 1 STLport deque algorithms, instantiated for the target-supported 4-byte
+// owning-reference element view; original class names are unknown. Its release and assignment members are defined in
+// OpaqueRefOwnership.cpp; this TU provides the inline target-observed destructor.
+#include <deque>
+#include <vector>
+extern "C" __declspec(dllimport) long __stdcall InterlockedIncrement(long volatile *);
+class OpaqueRefCounted {
+public:
+    virtual ~OpaqueRefCounted();
+    void Add_Ref() { InterlockedIncrement(&refs); }
+    void Release_Ref();
+private:
+    long refs;
+};
+struct OpaqueRefElement4 {
+    OpaqueRefCounted *referent;
+    ~OpaqueRefElement4() { if (referent) referent->Release_Ref(); }
+    OpaqueRefElement4 &operator=(const OpaqueRefElement4 &);
+};
+template class _STL::deque<OpaqueRefElement4, _STL::allocator<OpaqueRefElement4> >;
 
 struct Rva00055864Node
 {
-	Rva00055864Node *m_next;
+    void *m_next;
 };
 
-void __stdcall Rva00055864Free(Rva00055864Node *node);
+void __stdcall Rva00055864Free(Rva00055864Node *p);
 
 class Rva00056DA2
 {
 public:
-	void rva00056DA2();
-	void *m_unused00;
-	union {
-		Rva00055864Node **m_begin;
-		Rva00055864Node ** volatile m_beginVolatile;
-	};
-	Rva00055864Node **m_end;
-	void *m_pad0C;
-	unsigned m_size;
+    void rva00056DA2();
+
+private:
+    char pad00_04[4];
+    _STL::vector<Rva00055864Node *> m_vec; // +0x04 start +0x08 finish
+    int m_10; // +0x10 dword-cleared at end
 };
 
 // ?rva00056DA2@Rva00056DA2@@QAEXXZ present-unmatched
 void Rva00056DA2::rva00056DA2()
 {
-	unsigned i = 0;
-	unsigned count = (unsigned)(((char *)m_end - (char *)m_begin) >> 2);
-	if (count != 0) {
-		do {
-			Rva00055864Node *cur = m_beginVolatile[i];
-			while (cur != 0) {
-				Rva00055864Node *next = cur->m_next;
-				Rva00055864Free(cur);
-				cur = next;
-			}
-			m_beginVolatile[i] = 0;
-			++i;
-		} while (i < (unsigned)(((char *)m_end - (char *)m_begin) >> 2));
-	}
-	m_size = 0;
+    for (unsigned int i = 0; i < m_vec.size(); ++i) {
+        Rva00055864Node *p = m_vec[i];
+        while (p) {
+            Rva00055864Node *next = (Rva00055864Node *)p->m_next;
+            Rva00055864Free(p);
+            p = next;
+        }
+        m_vec[i] = 0;
+    }
+    m_10 = 0;
 }
