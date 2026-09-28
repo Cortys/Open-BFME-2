@@ -39539,3 +39539,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ??4Rva002C99FB@@QAEAAU0@ABU0@@Z,,0x002C99FB,29,Code/GameEngine/Source/GameLogic/Object/Rva002C99FBAssign.cpp,matched,dword plus OpaqueRef via rowed 0x00239099 callers 0x002CD82A
 ?rva002C95F0@Weapon@@QBE_NXZ,,0x002C95F0,17,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon plus0x50 vs GameLogic frame plus0x40 callers 0x00343EAD
 ?rva002C95DE@Weapon@@QAEXH@Z,,0x002C95DE,18,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon m_50 equals frame plus offset caller 0x002C7484
+?Rva005F17C6Build@@YA?AURva005F17C6S16@@ABURva005F17C6S12@@H@Z,,0x005F17C6,39,Code/GameEngine/Source/Common/Rva005F17C6Build.cpp,matched,leaf 12B plus dword to 16B via temp no callees
