@@ -40000,3 +40000,5 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0010F24F@Rva0010F24F@@QAEXXZ,,0x0010F24F,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Enter 0xBBA200 layout Rva00041004
 ?rva0010F26E@Rva0010F26E@@QAEXXZ,,0x0010F26E,31,Code/GameEngine/Source/Common/Rva0010F24FLock.cpp,matched,12 callers IAT Leave 0xBBA204 layout Rva00041004
 ?rva0010F33C@Rva0010F33C@@QAEXXZ,,0x0010F33C,78,Code/GameEngine/Source/Common/Rva0010F33CStart.cpp,matched,guarded AIL_start_stream via rowed lock pair
+?rva0010F38A@Rva0010F38A@@QAEXXZ,,0x0010F38A,80,Code/GameEngine/Source/Common/Rva0010F38APause.cpp,matched,guarded AIL_pause_stream flag 1 via lock pair
+?rva0010F3DA@Rva0010F3DA@@QAEXXZ,,0x0010F3DA,80,Code/GameEngine/Source/Common/Rva0010F38APause.cpp,matched,guarded AIL_pause_stream flag 0 via lock pair
