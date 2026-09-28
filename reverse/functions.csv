@@ -40859,3 +40859,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00407C7F@Rva004075E0@@QAE?AURva004075E0Iter@@U2@ABURva004075E0Key@@@Z,,0x00407C7F,294,Code/GameEngine/Source/Common/Rva004075E0.cpp,matched,chain hint insert via rowed 0x004075E0 and 0x00407668
 ??0?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x005DE0A3,93,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ddd40_allocate_copy.cpp,matched,unlock vector copy ctor via folded alloc base
 ??0Rva005DE5B5@@QAE@ABV0@@Z,,0x005DE56C,73,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,chain copy ctor via StringBase and vector copies
+??$_Construct@VRva005DE5B5@@V1@@_STL@@YAXPAVRva005DE5B5@@ABV1@@Z,,0x005DE755,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de5b5_dtor.cpp,matched,chain Construct via copy ctor 0x005DE56C

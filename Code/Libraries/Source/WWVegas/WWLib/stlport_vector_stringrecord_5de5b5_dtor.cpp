@@ -75,6 +75,13 @@ Rva005DE5B5::Rva005DE5B5(const Rva005DE5B5 &other)
 {
 }
 
+// Retail 0x005DE755 (45B): _STL::_Construct<Rva005DE5B5> null-guarded
+// placement copy-construct. Chain lane: callee is the just-landed copy
+// ctor 0x005DE56C. Caller is 0x005DE7B6 in 0x005DE7A3.
+namespace _STL {
+template void _Construct<Rva005DE5B5, Rva005DE5B5>(Rva005DE5B5 *, const Rva005DE5B5 &);
+}
+
 // Retail 0x005DE952 (25B): destroy range calling the 0x005DE5B5 dtor per
 // 0x18-byte element from start (inclusive) to end (exclusive). Chain lane:
 // callee is the just-landed dtor; caller is 0x005DE99F in 0x005DE985.
