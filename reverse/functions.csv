@@ -40323,3 +40323,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000456AC@ThingTemplate@@QBEHH@Z,,0x000456AC,21,Code/GameEngine/Source/Common/Thing/ThingTemplateRva000456AC.cpp,matched,Team countKind 0x0039DC05 passes Object+4 template plus kind index with 0x108 kind bits per Handicap Rva00290EFE StatsCollector via helper 0x001E4426
 ?rva002C7492@Rva002C7492@@QAEXPBV1@@Z,,0x002C7492,25,Code/GameEngine/Source/Common/Rva002C7492Or.cpp,matched,19-dword OR via 0x4C temps and Head copy ctor callers
 ?isOutOfAmmo@WeaponSet@@QBE_NXZ,,0x002C73CE,41,Code/GameEngine/Source/GameLogic/Object/WeaponSetIsOutOfAmmo.cpp,matched,WeaponSet out-of-ammo via six slots and getStatus callers
+?rva0031DF89@Rva0031D5F8@@QAEPAXPBX@Z,,0x0031DF89,72,Code/GameEngine/Source/GameClient/Rva0031D5F8Lookup.cpp,matched,same table guarded lookup via 0x00DFE78C gate and isEmpty then rva0031D5F8
