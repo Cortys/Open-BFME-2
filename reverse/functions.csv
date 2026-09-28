@@ -40906,3 +40906,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0029E00D@@QAE@XZ,,0x0029E00D,8,Code/GameEngine/Source/Common/Rva0029E00DDtor.cpp,matched,dtor tail-jmp to BfmeStringRecord000B94D2
 ?rva005C96A9@Rva005C96A9@@QAEXUTreeHintRef00217D4C@@H@Z,,0x005C96A9,66,Code/Libraries/Source/WWVegas/WWLib/stlport_treehint_setter_005c96a9.cpp,matched,TreeHint setter via caller 0x5C976F; op-eq 0x2174A4 Release 0x7DEEF; stores +34 +38
 ??_GRva00329D0E@@QAEPAXI@Z,,0x00329D98,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor for Rva00329D0E via rowed dtor and delete
+?rva005E2138@Rva005E2138@@QAEPAXXZ,,0x005E2138,12,Code/GameEngine/Source/Common/Rva005E2138.cpp,matched,unlock forwarder to rva005F05E6
