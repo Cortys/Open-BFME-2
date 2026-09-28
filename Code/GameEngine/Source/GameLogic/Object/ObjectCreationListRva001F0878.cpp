@@ -33,6 +33,7 @@ public:
 	virtual void v1() = 0;
 	virtual void v2() = 0;
 	virtual void v3(void *a1, void *a2, void *a3, int a4) = 0;
+	virtual void v4(void *a1, void *a2) = 0;
 };
 
 class ObjectCreationList;
@@ -49,6 +50,7 @@ class ObjectCreationList
 {
 public:
 	void rva001F0878(void *a1, void *a2, void *a3, int a4);
+	void rva001F0410(void *a1, void *a2);
 
 private:
 	_STL::vector<ObjectCreationNugget *> m_nuggets;
@@ -76,4 +78,10 @@ void ObjectCreationList::rva001F0878(void *a1, void *a2, void *a3, int a4)
 	}
 	for (ObjectCreationNugget **i = cur->m_nuggets.begin(); i != cur->m_nuggets.end(); ++i)
 		(*i)->v3(a1, a2, a3, a4);
+}
+
+void ObjectCreationList::rva001F0410(void *a1, void *a2)
+{
+	for (ObjectCreationNugget **i = m_nuggets.begin(); i != m_nuggets.end(); ++i)
+		(*i)->v4(a1, a2);
 }
