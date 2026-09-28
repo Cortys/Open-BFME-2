@@ -40227,3 +40227,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??RRva0021B753@@QBE_NABVRva0021915B@@0@Z,,0x0021B753,34,Code/GameEngine/Source/Common/Rva0021915BAssign.cpp,matched,sort comparator for Rva0021915B via median and insert callers with rowed compareNoCase
 ??0SpawnBehavior@@QAE@PAVThing@@PBVModuleData@@@Z,,0x0045F581,263,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehaviorCtor.cpp,matched,BFME1 donor SpawnBehavior poolkey vtable layout
 ?rva0039B1F9@BfmeThingEFC@@QAEXXZ,,0x0039B1F9,19,Code/GameEngine/Source/Common/Rva0039B1F9Refresh.cpp,matched,refresh m_f8 via bfmeCalcEFC of src plus24 caller 0xB21F
+?rva0039B20C@Rva0039B20C@@QAEXPAX@Z,,0x0039B20C,27,Code/GameEngine/Source/Common/Rva0039B20CSetter.cpp,matched,conditional setter cache plus24 refresh efc plus2C four callers
