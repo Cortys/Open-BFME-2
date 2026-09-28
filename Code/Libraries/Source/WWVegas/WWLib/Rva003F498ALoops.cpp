@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva003F498A@Rva003F498A@@QAEXPAVRva003F498ACallback@@@Z, retail 0x003F498A, 188 bytes.
@@ -22,7 +22,8 @@ public:
 struct Rva003F498AInner {
     int unk0;
     _STL::vector<int> vals;
-    char pad[32];
+    char pad16[12];
+    int tail[5];
 };
 
 struct Rva003F498AOuter {
@@ -38,6 +39,7 @@ public:
     void rva003F498A(Rva003F498ACallback* cb);
     int rva003F46A8(int idx);
     int rva003F46C1(int outerIdx, int innerIdx);
+    int* rva003F46F2(int outerIdx, int innerIdx);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -65,4 +67,9 @@ int Rva003F498A::rva003F46C1(int outerIdx, int innerIdx)
     if (innerIdx < 0 || innerIdx >= rva003F46A8(outerIdx))
         return -1;
     return m_outers[outerIdx].ints[innerIdx];
+}
+
+int* Rva003F498A::rva003F46F2(int outerIdx, int innerIdx)
+{
+    return m_outers[outerIdx].inners[innerIdx].tail;
 }
