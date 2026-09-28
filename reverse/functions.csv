@@ -40315,3 +40315,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0074011F@Rva0074011F@@QAEXXZ,,0x0074011F,43,Code/GameEngine/Source/Common/Rva0074011FRelease.cpp,matched,two RefCount holders via inlined Release_Ref callers 0x66817 0xD1C9F 0x7402A3
 ?rva001431B0@Rva001431B0@@QAEXVAsciiString@@@Z,,0x001431B0,131,Code/GameEngine/Source/Common/System/Rva001431B0Push.cpp,matched,by-value push into member vector at 0x13c via rowed overflow
 ?rva0043B214@Rva0043B1C9Tree@@QAEPAV1@PBX0@Z,,0x0043B214,42,Code/GameEngine/Source/Common/Rva0043B1C9TreeAlloc.cpp,matched,header init zeroes count repairs sentinel
+??1Rva0033B352Record@@QAE@XZ,,0x0033B352,53,Code/GameEngine/Source/Common/StringRecordDtors.cpp,matched,Record dtor wide plus narrow via StringRecordDtors family plus unwind callers

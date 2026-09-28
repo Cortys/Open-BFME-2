@@ -18,6 +18,7 @@
 // ??1BfmeStringRecord000B94D2@@QAE@XZ  @0x000B6CF1 53B: strings +0x04, +0x00
 // ??1Rva000543F5Record@@QAE@XZ         @0x000543F5 53B: wide +0x04, narrow +0x00
 // ??1Rva000BEDF0Record@@QAE@XZ         @0x000BEDF0 53B: vector +0x04, string +0x00
+// ??1Rva0033B352Record@@QAE@XZ         @0x0033B352 53B: wide +0x04, narrow +0x00
 
 class AsciiString
 {
@@ -88,3 +89,11 @@ struct Rva000BEDF0Record
 	RvaVecAscii m_04;
 };
 Rva000BEDF0Record::~Rva000BEDF0Record() {}
+
+struct Rva0033B352Record
+{
+	~Rva0033B352Record();
+	AsciiString m_00;
+	BfmeWideString000543F5 m_04;
+};
+Rva0033B352Record::~Rva0033B352Record() {}
