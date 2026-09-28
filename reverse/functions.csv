@@ -40940,3 +40940,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva005C18F0@@UAEPAXI@Z,,0x005C18D4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete
 ??1Rva005C1980@@UAE@XZ,,0x005C1980,54,Code/GameEngine/Source/Common/Rva005C18F0Dtor.cpp,matched,unlock dtor twin via member plus base
 ??_GRva005C1980@@UAEPAXI@Z,,0x005C1964,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete
+?rva005CADD3@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z,,0x005CADD3,49,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,nick remove via find 0x1F8437 subscript 0x5CAC49 remove 0x5C9E90; twin of 0x5CAE72

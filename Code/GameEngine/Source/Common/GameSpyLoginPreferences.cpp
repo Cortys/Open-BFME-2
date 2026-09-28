@@ -203,6 +203,8 @@ public:
 	// Removes one nick from one email's clan list; retail guards with find
 	// before subscripting (sibling 0x005CADD3 is the nick-map twin at +0x2c).
 	void rva005CAE72(const AsciiString &email, const AsciiString &nick);
+	// Nick-map twin of rva005CAE72 at +0x2c (retail 0x005CADD3).
+	void rva005CADD3(const AsciiString &email, const AsciiString &nick);
 
 private:
 	PassMap m_emailPasswordMap;
@@ -344,6 +346,15 @@ Bool GameSpyLoginPreferences::load(AsciiString fname)
 	}
 
 	return true;
+}
+
+// ?rva005CADD3@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z 0x005CADD3 49B
+// Evidence: nick-map (+0x2c) twin of clan remove 0x005CAE72; same find
+// 0x001F8437 subscript 0x005CAC49 remove 0x005C9E90; caller 0x00571593.
+void GameSpyLoginPreferences::rva005CADD3(const AsciiString &email, const AsciiString &nick)
+{
+	if (m_emailNickMap.find(email) != m_emailNickMap.end())
+		m_emailNickMap[email].remove(nick);
 }
 
 // ?rva005CAE72@GameSpyLoginPreferences@@QAEXABVAsciiString@@0@Z 0x005CAE72 49B
