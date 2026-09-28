@@ -40451,3 +40451,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00469124Xfer@@YAAAVXfer@@PAV1@PAURva00469124Pair@@@Z,,0x00469124,30,Code/GameEngine/Source/Common/Rva00469124Xfer.cpp,matched,ObjectID plus int pair via XferObjectID then slot 0x78 callers 47028A 4702D8
 ?rva0036F9FE@AIGroup@@QAEXPBVWaypoint@@W4CommandSourceType@@H@Z,,0x0036F9FE,88,Code/GameEngine/Source/GameLogic/AI/AIGroupWaypointMode.cpp,matched,AIGroup mode switch via rowed aiFollowWaypointPath and pinned invoke
 ?isPlayer@GameSlot@@QBE_NVAsciiString@@@Z,,0x003FFEF5,109,Code/GameEngine/Source/GameNetwork/GameSlotIsPlayerAscii.cpp,matched,BFME1 GameSlotIsPlayerAsciiThunk donor with SLOT_PLAYER 6 and m_name at 0x30
+?Rva000F5D1BGet@@YA?AVAssetReference@@H@Z,,0x000F5D1B,32,Code/GameEngine/Source/Common/Rva000F5D1BGet.cpp,matched,hidden-pointer array getter over 0x00DE1F8C via rowed 0x000424BB caller 0x000F5D9C
