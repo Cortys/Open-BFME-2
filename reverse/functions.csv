@@ -40274,3 +40274,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0039D4D8@Rva0039D4D8@@QAEXPAVRva0039D40F@@@Z,,0x0039D4D8,35,Code/GameEngine/Source/Common/Rva0039D4D8MaybeRemove.cpp,matched,conditional remove via isInList plus remove sharing 334 head
 ??$__copy@PAURva00153252@@PAU1@H@_STL@@YAPAURva00153252@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00153320,47,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Copy.cpp,matched,forward copy via rowed 0x153252 sar3 stride8 caller 0x1534C9
 ?Rva001534B6Copy@@YAPAURva00153252@@PAU1@00@Z,,0x001534B6,29,Code/Libraries/Source/WWVegas/WWLib/Rva00153252Copy.cpp,matched,ptrs wrapper via rowed __copy 0x153320 same as 0x426B29 caller 0x15383A
+?rva00318BEB@Rva00318BEB@@QAEXXZ,,0x00318BEB,26,Code/GameEngine/Source/Common/Rva00318BEBAudio.cpp,matched,TheAudio present and +0x60 handle not 1 then slot 0x6c remove; caller FUN_00719D01 at 0x00319D3B
