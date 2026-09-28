@@ -7,7 +7,10 @@
 
 struct InputChunk
 {
-	unsigned char m_pre[0x0C];
+	virtual void *deleteInstance(int flags);	// vtable slot 0 (MemoryPoolObject pattern)
+
+	InputChunk *m_next;			// +0x04
+	unsigned int m_id;			// +0x08
 	unsigned short m_version;	// +0x0C
 };
 
@@ -15,6 +18,7 @@ class DataChunkInput
 {
 public:
 	unsigned short getChunkVersion();
+	void clearChunkStack();
 
 private:
 	unsigned char m_pre[0x1C];
@@ -80,4 +84,21 @@ DataChunkTableOfContents::~DataChunkTableOfContents()
 		next = mapping->m_next;
 		::operator delete(mapping->deleteInstance(0));
 	}
+}
+
+// Retail 0x00306DA4 (40B): drains the InputChunk stack at +0x1C with the
+// same deleteInstance(0)/operator-delete loop, then NULLs the head. ZH
+// DataChunk.cpp donor proves the name and shape (next = c->next;
+// c->deleteInstance(); m_chunkStack = NULL); BFME2's deleteInstance takes
+// the int flag and returns the block. Callers are DataChunkInput teardown
+// at 0x00306F16 and 0x00306DCC.
+void DataChunkInput::clearChunkStack()
+{
+	InputChunk *chunk, *next;
+	for (chunk = m_chunkStack; chunk; chunk = next)
+	{
+		next = chunk->m_next;
+		::operator delete(chunk->deleteInstance(0));
+	}
+	m_chunkStack = 0;
 }
