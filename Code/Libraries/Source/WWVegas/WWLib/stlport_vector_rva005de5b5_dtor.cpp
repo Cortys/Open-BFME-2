@@ -37,3 +37,19 @@ private:
 // Retail 0x005DE985 (63B): _STL::vector<Rva005DE5B5> dtor, Destroy range
 // 0x005DE952 plus _free.
 template _STL::vector<Rva005DE5B5, _STL::allocator<Rva005DE5B5> >::~vector();
+
+// Retail 0x005DE9E3 (18B): Rva005DE9E3::~Rva005DE9E3. Chain lane: stores
+// vtable 0x00876AFC, zeroes +0x10, tail-jmps the vector base dtor at +4.
+// Caller is the deleting dtor at 0x005DF144; vtable proves virtual dtor.
+class Rva005DE9E3 : public _STL::vector<Rva005DE5B5, _STL::allocator<Rva005DE5B5> >
+{
+public:
+	virtual ~Rva005DE9E3();
+private:
+	int m_10;
+};
+
+Rva005DE9E3::~Rva005DE9E3()
+{
+	m_10 = 0;
+}
