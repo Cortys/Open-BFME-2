@@ -27,6 +27,7 @@ public:
 	AIHolder *m_ai; // +0x258
 	char m_mid[0x438 - 0x25C]; // +0x25C..+0x437
 	unsigned char m_flag438; // +0x438
+	void *rva0028BD5D(int v) const;
 };
 
 class Rva0036E346
@@ -103,4 +104,41 @@ bool Rva0036E0E3::rva0036E0E3()
 		} while (cur != head);
 	}
 	return ok;
+}
+
+class Rva0036E1F7Result
+{
+public:
+	virtual void slot00(); virtual void slot01(); virtual void slot02(); virtual void slot03();
+	virtual void slot04();
+	virtual void slot05(int v);
+};
+
+class Rva0036E1F7
+{
+public:
+	void rva0036E1F7(int a, int b, int c);
+
+private:
+	char m_pad0[4];
+	ListNode *m_head;
+};
+
+void Rva0036E1F7::rva0036E1F7(int a, int b, int c)
+{
+	(void)c;
+	ListNode *cur = m_head->m_next;
+	if (cur == m_head)
+		return;
+	do
+	{
+		Object *obj = cur->m_obj;
+		if (obj != 0)
+		{
+			void *p = obj->rva0028BD5D(a);
+			if (p != 0)
+				((Rva0036E1F7Result *)p)->slot05(b);
+		}
+		cur = cur->m_next;
+	} while (cur != m_head);
 }
