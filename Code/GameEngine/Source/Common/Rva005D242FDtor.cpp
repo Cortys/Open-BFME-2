@@ -25,12 +25,26 @@ class Rva005D242F : public Rva005C3F02
 {
 public:
 	virtual ~Rva005D242F();
+	virtual void rva005D2449();
 private:
 	int m0C;
 };
 
 Rva005D242F::~Rva005D242F()
 {
+	if (m08->m18 == m0C)
+		m08->m18 = -1;
+}
+
+template <typename T> class StringBase
+{
+	friend class Rva005D242F;
+	void validate() const;
+};
+
+void Rva005D242F::rva005D2449()
+{
+	((StringBase<unsigned short> *)this)->validate();
 	if (m08->m18 == m0C)
 		m08->m18 = -1;
 }
