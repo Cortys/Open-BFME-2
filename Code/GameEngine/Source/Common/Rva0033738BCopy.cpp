@@ -25,3 +25,10 @@ Rva002E9E70 *Rva0033738BCopy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 
 	}
 	return result;
 }
+typedef Rva002E9E70 *(__cdecl *Rva002E9E70FiveArg)(Rva002E9E70 *, Rva002E9E70 *, Rva002E9E70 *, void *, int);
+Rva002E9E70 *Rva00337533Copy(Rva002E9E70 *first, Rva002E9E70 *last, Rva002E9E70 *result)
+{
+	Rva002E9E70FiveArg f = (Rva002E9E70FiveArg)Rva0033738BCopy;
+	char tmp;
+	return f(first, last, result, &tmp, 0);
+}
