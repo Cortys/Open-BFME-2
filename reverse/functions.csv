@@ -39559,3 +39559,4 @@ _VP6_EncodeValue,,0x001C6D20,125,Code/Libraries/Source/VP6/Huffman.cpp,matched,B
 ?Rva004CE245@@YAXPAX@Z,,0x004CE245,34,Code/GameEngine/Source/Common/Rva004CE245.cpp,matched,free helper cond step finish via slots 0x1C 0x20 0x24 2 callers
 ??0Rva004CEEC3@@QAE@XZ,,0x004CEEC3,37,Code/GameEngine/Source/GameNetwork/Rva004CEEC3Ctor.cpp,matched,NetCommandMsg derived ctor type 3 vtable 0x860140 members 0 0 minus1
 ?rva004CE3B9@Rva004CE3B9@@QAEABVAsciiString@@XZ,,0x004CE3B9,64,Code/GameEngine/Source/GameLogic/Object/Update/Rva004CE3B9UpgradeName.cpp,matched,first set upgrade name via UpgradeCenter mask walk empty if none
+?rva005C45D2@Rva005C45D2@@QAEXPAVXfer@@@Z,,0x005C45D2,44,Code/GameEngine/Source/Common/Rva005C45D2Xfer.cpp,matched,chain Version11 plus Rva004CE6E4 with this
