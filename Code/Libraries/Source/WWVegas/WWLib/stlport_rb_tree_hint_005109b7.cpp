@@ -52,3 +52,5 @@ template MapInsert005109b7::iterator MapInsert005109b7::insert(MapInsert005109b7
 template void _STL::_Destroy<TreeHintPair0051030C>(TreeHintPair0051030C *);
 
 template TreeHint0051030C::~_Rb_tree();
+
+template void TreeHint0051030C::erase(TreeHint0051030C::iterator);
