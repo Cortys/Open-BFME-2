@@ -37,12 +37,14 @@ struct BlockInfo
 	bool m_mapped;
 };
 
-// PPMalloc's allocator. Its methods are named by address: the call shapes fit
-// the public PPMalloc API (noted beside each), but nothing in this binary
-// names them.
+// PPMalloc's allocator. Most methods remain address-named; one now has a
+// donor PDB name backed by an exact target body and boundary.
 class GeneralAllocator
 {
 public:
+	// Godfather PPMalloc 1.03.01 PDB name; retail stores the two arguments
+	// at +0x4B8 and +0x4BC. Their callback contract remains donor-derived.
+	void SetAssertionFailureFunction(void *function, void *context);
 	bool rva00032830(const void *block, int addressType);	// ValidateAddress-like
 	bool rva00032920(const void *block);			// owns-address test
 	bool rva000329E0(int level);				// ValidateHeap-like
@@ -55,6 +57,15 @@ public:
 	const BlockInfo *rva00032F60(void *context, int blockTypes);	// ReportNext-like
 	void rva00033E90(void *context);			// ReportEnd-like
 };
+
+void GeneralAllocator::SetAssertionFailureFunction(void *function, void *context)
+{
+	char *const fields = reinterpret_cast<char *>(this) + 0x4B8;
+	*reinterpret_cast<void **>(fields) = function;
+	*reinterpret_cast<void **>(fields + 4) = context;
+}
+
+
 }
 }
 
