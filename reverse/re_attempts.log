@@ -2444,3 +2444,4 @@ FUN_00903e4f	0x00503E4F	39	blocked	eax-arg private static needs callers in same 
 FUN_00457B74	0x00057B74	41	blocked	rb_tree clear twin calls twin erase 0x56CF8 owner unproven caller 0x589FB identity-suspect per log t=8 model=muse-3fa7
 ?Rva00215EF7Collect@@YAXPAPAIPAI111@Z	0x00215EF7	43	partial	final mov ecx ebp14 then mov eax ebp8 swapped in ours t=20 model=muse-k4m-87d4 score=0.95 stash=reverse/attempts/0x00215ef7.cpp
 FUN_005e3e5c	0x001E3E5C	17	blocked	register wall retail ecx-next single setge al vs probe eax-next cl-mov 6 variants t=15 model=muse-a559
+FUN_007317f9	0x003317F9	73	blocked	bitset predicate with holder plus header needs ThingTemplate donor investigation t=12 model=muse-3aa3
