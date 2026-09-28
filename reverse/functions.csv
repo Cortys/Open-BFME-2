@@ -39933,3 +39933,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva0037E421@Rva0037E421@@QAEPAXH@Z,,0x0037E421,48,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,unlock 14 callers 216B vector plus4 plus8 signed idiv
 ?rva0037E7BC@Rva0037E421@@QAEEH@Z,,0x0037E7BC,30,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,chain of 37E421 element 98 equals minus1 uchar
 ?rva0037E451@Rva0037E421@@QAEPAXH@Z,,0x0037E451,34,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,unlock linear search 216B m_a4 equals key
+?rva0037E7DA@Rva0037E421@@QAEEH@Z,,0x0037E7DA,59,Code/GameEngine/Source/Common/Rva0037E421Accessor.cpp,matched,chain of 37E451 sets 98 a4 to minus1 cc to 1.0f
