@@ -13,6 +13,11 @@ class Rva006007A5
 {
 public:
 	void rva006007A5(void *node);
+	void rva0060082B();
+
+private:
+	void *m_header;
+	unsigned m_count;
 };
 
 void Rva006007A5::rva006007A5(void *nodeIn)
@@ -28,4 +33,16 @@ void Rva006007A5::rva006007A5(void *nodeIn)
 		free(cur);
 		cur = next;
 	} while (cur);
+}
+
+void Rva006007A5::rva0060082B()
+{
+	if (m_count == 0)
+		return;
+	void *first = *(void **)((char *)m_header + 4);
+	rva006007A5(first);
+	*(void **)((char *)m_header + 8) = m_header;
+	*(unsigned *)((char *)m_header + 4) = 0;
+	*(void **)((char *)m_header + 0x0C) = m_header;
+	m_count = 0;
 }
