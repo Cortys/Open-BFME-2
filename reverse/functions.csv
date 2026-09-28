@@ -40199,3 +40199,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?clone@Rva003AF27B@@QBEPAV1@XZ,,0x003AF27B,81,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF27BClone.cpp,matched,EH new 0x28 plus rowed base copy 0x003AF2CC plus own 3 vftables forceinline copy
 ?GadgetComboBoxAddEntry@@YAHPAVGameWindow@@VUnicodeString@@H@Z,,0x00322DC5,84,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxAddEntry.cpp,matched,ZH donor GadgetComboBoxAddEntry null to -1 via 0x4022
 ?Rva00322E19Add@@YAHPAVGameWindow@@VUnicodeString@@H@Z,,0x00322E19,84,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxAddEntry.cpp,matched,twin of GadgetComboBoxAddEntry via 0x4023 same shape
+??0Rva00540E82@@QAE@XZ,,0x00540E82,27,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,ctor int 2 plus 3 float zeros via xorps
