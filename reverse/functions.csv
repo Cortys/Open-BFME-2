@@ -39880,3 +39880,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva00116482@Rva00116482@@QAEXXZ,,0x00116482,20,Code/GameEngine/Source/Common/Rva00116482Method.cpp,matched,unlock flag plus slot 0x08 then set flag
 ?rva00116496@Rva00116496@@QAEXXZ,,0x00116496,20,Code/GameEngine/Source/Common/Rva00116496Method.cpp,matched,unlock flag plus slot 0x0C then clear flag
 ?rva00116680@Rva00116680@@QAEPAXPAH_N@Z,,0x00116680,87,Code/Libraries/Source/WWVegas/WW3D2/SurfaceByteSize.cpp,matched,unlock Lock with discard flags plus pitch out
+?rva001166E0@Rva001166E0@@QAEPAXPAHHHHH@Z,,0x001166E0,120,Code/Libraries/Source/WWVegas/WW3D2/SurfaceByteSize.cpp,matched,unlock Lock with rect plus pitch out

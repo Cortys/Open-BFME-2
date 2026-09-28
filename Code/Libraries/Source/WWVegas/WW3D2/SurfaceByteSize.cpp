@@ -140,3 +140,39 @@ void *Rva00116680::rva00116680(int *pitchOut, bool discard)
     *pitchOut = locked.Pitch;
     return locked.pBits;
 }
+
+// ?rva001166E0@Rva001166E0@@QAEPAXPAHHHHH@Z, retail 0x001166E0 (120B).
+// Evidence: unlock lane unblocks 5 incl 0x001321A7 and 0x00158E90;
+// 6 callers in unclaimed with 5 pushes plus ecx; Lock slot 0x34 with rect
+// and hardcoded 0x0800 plus pitch-out and bits return; same TU and flags.
+struct BfmeRect
+{
+    int left;
+    int top;
+    int right;
+    int bottom;
+};
+class Rva001166E0
+{
+public:
+    void *rva001166E0(int *pitchOut, int left, int top, int right, int bottom);
+private:
+    void *m_surface;
+};
+
+void *Rva001166E0::rva001166E0(int *pitchOut, int left, int top, int right, int bottom)
+{
+    D3DLockedRect locked;
+    BfmeRect rect;
+    rect.top = top;
+    rect.left = left;
+    rect.right = right;
+    rect.bottom = bottom;
+    memset(&locked, 0, sizeof(locked));
+    D3DSurface *s = (D3DSurface *)m_surface;
+    HRESULT hr = s->LockRect(&locked, &rect, 0x800);
+    if (hr != 0)
+        Log_DX8_ErrorCode((unsigned int)hr);
+    *pitchOut = locked.Pitch;
+    return locked.pBits;
+}

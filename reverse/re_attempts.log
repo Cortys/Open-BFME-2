@@ -2414,3 +2414,4 @@ FUN_00670234	0x00270234	44	blocked	Drawable 3-list broadcaster slot 0x20; 3 prob
 ?rva0009AB85@Rva0009AB85@@QAEXXZ	0x0009AB85	127	blocked	refcount virtual slot3 scheduling wall needs donor class t=12 model=muse-k7x
 ?rva0006E605@Rva0006E605@@QAEXPBVM@@_N@Z	0x0006E605	273	blocked	light blend with GetDiffuse Ambient needs donor math t=10 model=muse-k7x
 ?rva001074D5@Rva001074D5@@QAEXXZ	0x001074D5	532	blocked	large 532B shadow volumetric update needs donor t=5 model=muse-k7x
+?rva00395E53@Rva00395E53@@QAEPAXI@Z	0x00395E53	34	partial	register allocation only; base in ecx index in eax vs retail base in eax index in ecx; sar and jb match; 34B 12insns exact size t=20 model=muse-e013 score=0.92 stash=reverse/attempts/0x00395e53.cpp
