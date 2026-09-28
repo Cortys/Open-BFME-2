@@ -39963,3 +39963,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?rva002E71AD@BFMEPathfinderMapShim@@QAEXPAVObject@@@Z,,0x002E71AD,18,Code/GameEngine/Source/GameLogic/Object/PathfindShimAddObject.cpp,matched,fourth wrapper Helper object 0 1 0 abuts 719B
 ?Rva0036ABAFXfer@@YAPAVXfer@@PAV1@PAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x0036ABAF,196,Code/GameEngine/Source/Common/System/XferListObjectID.cpp,matched,unlock helper version plus TypeName plus ObjectID plus list-int pushback
 ??_GRva00342157@@UAEPAXI@Z,,0x00342F95,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-953e.cpp,matched,slot0 of vtable 0x8118B0 calls rowed 0x342157 plus delete 0x2FD60
+??1Rva00342228@@UAE@XZ,,0x00342228,91,Code/GameEngine/Source/Common/Rva00342228Dtor.cpp,matched,sibling of 0x342157 same 91B shape vtable 0x811900 plus base 0x49B47C
