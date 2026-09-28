@@ -2390,3 +2390,6 @@ FUN_00612858	0x00212858	199	blocked	STL hash_map probe with Eva hash gives 184B 
 ??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	same-size-171 store-order-only m24-before-or t=30 model=muse-b5af score=0.93 stash=reverse/attempts/0x000a8d5f.cpp
 ?rva00625790@Rva00625790@@QAEXPAX@Z	0x00625790	46	partial	exact-size-46 reg-only eaxecx-vs-eaxedxesi t=15 model=muse-b5af score=0.92 stash=reverse/attempts/0x00625790.cpp
 FUN_0052D355	0x0052D355	45	blocked	STL EH vector<BfmeE8> copy with __EH_prolog handler 0x797185 unclaimed; class with vector member unproven; t=10 model=muse-k8q-957d
+?loadDockPositions@DockUpdate@@QAEXXZ	0x005897FB	270	partial	loop dest add edi eax vs retail lea edi eax ecx t=25 model=muse-7ef6 score=0.99 stash=reverse/attempts/0x005897fb.cpp
+??0PlayingAudio@@QAE@XZ	0x000A8D5F	171	partial	init lea hoisted early plus 1.0f load late vs early plus EH 1 vs 2 t=18 model=muse-7ef6 score=0.88 stash=reverse/attempts/0x000a8d5f.cpp
+FUN_00670234	0x00270234	44	blocked	Drawable 3-list broadcaster slot 0x20; 3 probe shapes give jmp not retail add-esi-4 jne t=15 model=muse-ca6

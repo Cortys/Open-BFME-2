@@ -39831,3 +39831,4 @@ _atan2f,,0x000422CD,25,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,cha
 ?Rva000422BBCeil@@YANM@Z,,0x000422BB,18,Code/GameEngine/Source/Common/Rva000422A0.cpp,matched,gap ceil adapter between 422A0 and atan2f
 ?rva00395561@Rva00395561@@QAEXXZ,,0x00395561,34,Code/GameEngine/Source/Common/Rva00395561.cpp,matched,chain drains counter via 421FD
 ?rva00395A60@Rva00395A60@@QAEMXZ,,0x00395A60,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395A60.cpp,matched,unlock ptr float or 0 via SSE
+?rva00271C8A@Rva00271C8A@@QAEXPBH0@Z,,0x00271C8A,44,Code/GameEngine/Source/Common/Rva00271C8ALoop.cpp,matched,19-dword loop unlocks 7 callers prev 0x00271892 next 0x002722AA /O1 push-pop dec-jne
