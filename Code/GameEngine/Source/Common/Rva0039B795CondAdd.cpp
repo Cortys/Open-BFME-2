@@ -49,3 +49,26 @@ void Rva0039B795::rva0039B7E3(int delta)
 		return;
 	m_val10 += delta;
 }
+
+// ?rva0039B7AD@Rva0039B7AD@@QAEXH@Z @0x0039B7AD 30B conditional double add: when
+// the same global byte is nonzero add the int arg to +0x04 and +0x114.
+// Evidence: sole caller 0x003B0E23 passes ecx from [ebp+0xC] with delta edi.
+class Rva0039B7AD
+{
+public:
+	void rva0039B7AD(int delta);
+
+private:
+	char m_pad00[0x4];
+	int m_val04;
+	char m_pad08[0x10C];
+	int m_val114;
+};
+
+void Rva0039B7AD::rva0039B7AD(int delta)
+{
+	if (Global98Ptr->m_flag98 == 0)
+		return;
+	m_val04 += delta;
+	m_val114 += delta;
+}
