@@ -41950,3 +41950,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0BfmeStringRecord00219B0B@@QAE@ABU0@@Z,,0x00219B0B,87,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,copy word plus 3 AsciiString via 0x365F0 prev 0x00219A68
 ??1Rva004D60CA@@MAE@XZ,,0x004D60E3,54,Code/GameEngine/Source/GameNetwork/Rva004D60CADtor.cpp,matched,dtor via ctor plus wide setter plus vtable
 ?rva00535A96@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00535A96,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences AverageGameTime setter via slot28 same TU
+??0Rva003AE2A9@@QAE@ABV0@@Z,,0x003AE2A9,38,Code/GameEngine/Source/Common/Rva003AE2A9CopyCtor.cpp,matched,copy via base plus own vptrs
