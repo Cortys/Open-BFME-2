@@ -41899,3 +41899,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00535E50@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00535E50,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences BestWinStreak via slot2C gap same TU
 ?rva00272393@Drawable@@QAEXH@Z,,0x00272393,45,Code/GameEngine/Source/GameClient/Drawable_rva00272393.cpp,matched,Drawable 0x14C walk via 0xA8 to 0x64 frameless
 ?rva002723C0@Drawable@@QAEXH@Z,,0x002723C0,45,Code/GameEngine/Source/GameClient/Drawable_rva00272393.cpp,matched,Drawable 0x14C walk via 0xA8 to 0x68 frameless
+??_GBfmeRva00C7B388@@UAEPAXI@Z,,0x0060DF0B,28,Code/GameEngine/Source/Common/System/BfmeRva00C7B388Xfer.cpp,matched,slot0 of 0x0087B388 calls rowed dtor 0x0060DED5 then delete 0x0002FD60
