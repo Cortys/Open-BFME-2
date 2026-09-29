@@ -3475,3 +3475,5 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ?Rva00452496Check@@YA_NPAVObject@@@Z	0x00452496	79	partial	final setne-al vs xor-inc-plus-final wall t=25 model=muse-11 score=0.94 stash=reverse/attempts/0x00452496.cpp
 ?rva001F0434@ObjectCreationList@@QAE_NPAX0@Z	0x001F0434	52	partial	hoisted nugget load fixes mov wall; remaining setne-al vs branches uchar-bool normalize wall t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x001f0434.cpp
 ??1Rva00256461Member@@QAE@XZ	0x00256461	56	blocked	EH prolog with states 0 then -1 not reproduced by GX without base 23B vs 56B t=15 model=muse-12
+?rva00262DD3@Rva00262DD3@@QAE_NPAURva00262DD3Arg@@@Z	0x00262DD3	81	partial	tail OR-merged to two je true vs retail je-true jne-false with true block first; head exact t=30 model=muse-05 score=0.93 stash=reverse/attempts/0x00262dd3.cpp
+?allocateBibBuffers@W3DBibBuffer@@IAEXXZ	0x000D3C9F	150	partial	first new hoists xor eax eax before cmp with fallthrough vs retail jmp plus late xor; mov ax and all else exact t=25 model=muse-05 score=0.96 stash=reverse/attempts/0x000d3c9f.cpp
