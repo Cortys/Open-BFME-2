@@ -42451,3 +42451,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?reserve@?$vector@URva00541021@@V?$allocator@URva00541021@@@_STL@@@_STL@@QAEXI@Z,,0x0046EE38,125,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00541021_allocate_copy.cpp,matched,exact-ambiguous fold - callee addresses decoded from the target REL32 bytes by tools/decode_calls.py then pinned; byte comparison is the judge
 ??1Rva002105A6@@UAE@XZ,,0x002105A6,94,Code/GameEngine/Source/Common/Rva002105A6Dtor.cpp,matched,ModuleData dtor via Snapshot BBB554 and vector and strings and free
 ??_GRva002105A6@@UAEPAXI@Z,,0x00210604,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-2105A6.cpp,matched,Deleting dtor via rowed dtor and operator delete
+?rva00564C08@Rva00564C08@@QAEXXZ,,0x00564C08,56,Code/GameEngine/Source/Common/Rva00564C08Loop.cpp,matched,chain singleton find loop via rowed 0x002B48E1 and 0x00318D14 caller 0x005669AA
