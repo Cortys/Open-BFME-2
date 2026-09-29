@@ -13,11 +13,19 @@ public:
     virtual void Release();
 };
 class Rva006E0DE0 {
-    unsigned short m_nElements;
-    unsigned short m_nMaxElements;
+    union {
+        struct {
+            unsigned short m_nElements;
+            unsigned short m_nMaxElements;
+        };
+        int m_0;
+    };
     AptValue **m_ppElements;
+    int m_8;
+    int m_C;
 public:
     int rva006E0DE0(AptValue *p);
+    void rva006E0E70();
 };
 int Rva006E0DE0::rva006E0DE0(AptValue *p)
 {
@@ -41,4 +49,29 @@ int Rva006E0DE0::rva006E0DE0(AptValue *p)
         return 1;
     }
     return 0;
+}
+
+// ?rva006E0E70@Rva006E0DE0@@QAEXXZ, retail 0x006E0E70, 49 bytes.
+// Pool teardown clearing +0/+8/+0xC and freeing array via freeBlock.
+// Evidence: gap after 0x6E0DE0; pinned freeBlock 0x6DB270 via pool 0xE176E8;
+// same /O2 Apt layout as neighbours.
+#define G_AptAlloc (*(Rva006DB270 *const *)0x00E176E8)
+class Rva006DB270
+{
+public:
+    void freeBlock(void *p, int bytes);
+};
+void Rva006E0DE0::rva006E0E70()
+{
+    AptValue **arr = m_ppElements;
+    m_0 = 0;
+    m_8 = 0;
+    m_C = 0;
+    if (arr) {
+        arr[0] = 0;
+        arr[1] = 0;
+        arr[2] = 0;
+        G_AptAlloc->freeBlock(arr, 0x1C);
+        m_ppElements = 0;
+    }
 }
