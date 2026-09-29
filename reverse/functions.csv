@@ -42623,3 +42623,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva001518D1@Rva001518D1@@QAEPAV?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@XZ,,0x001518D1,68,Code/GameEngine/Source/Common/Rva001518D1Get.cpp,matched,link vector getter via static empty plus base rows
 ??0Rva001517DE@@QAE@XZ,,0x00151866,48,Code/GameEngine/Source/Common/Rva00151866Ctor.cpp,matched,ctor vtable 0x007D3AA8 via OCL plus vector rows
 ??0Rva0015145C@@QAE@ABVHierarchyPrototypeRef@@@Z,,0x0015145C,49,Code/Libraries/Source/WWVegas/WW3D2/Rva0015145CCtor.cpp,matched,copy ctor via ShaderRef assign plus factory caller
+??1Rva00104E03@@UAE@XZ,,0x00104E03,66,Code/GameEngine/Source/Common/Rva00104E03Dtor.cpp,matched,dtor vptr plus clear 4 plus member 218 plus base GameWindow
