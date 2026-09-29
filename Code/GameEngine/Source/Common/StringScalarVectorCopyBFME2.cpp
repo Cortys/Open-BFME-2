@@ -32,7 +32,9 @@ public:
 struct BfmeAsciiScalarValue8 {
     AsciiString text;
     unsigned int value;
+    BfmeAsciiScalarValue8();
     BfmeAsciiScalarValue8(const BfmeAsciiScalarValue8 &o)
         : text(o.text), value(o.value) {}
 };
 template _STL::vector<BfmeAsciiScalarValue8>::vector(const _STL::vector<BfmeAsciiScalarValue8>&);
+template class _STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> >;
