@@ -41883,3 +41883,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E3710@Rva006E3710@@QAE_NPAURva006E3710Node@@@Z,,0x006E3710,39,Code/Libraries/Source/Apt/Rva006E3710Check.cpp,matched,unlock lane list search via plus48 for this plus9c
 ??_GRenderObjectDrawModuleInfo@FXParticleSystem@@UAEPAXI@Z,,0x003A9B7B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor calls rowed dtor 0x003A9A8B plus delete
 ??_GRva00509D4C@@UAEPAXI@Z,,0x00509D30,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain from 00509D4C same 28B scalar-deleting shape
+?rva002EEA09@Rva002EB416@@QAEXXZ,,0x002EEA09,20,Code/Libraries/Source/WWVegas/WWLib/Rva002EE9E0Reset.cpp,matched,pool head release to global free list
