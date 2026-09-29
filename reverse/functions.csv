@@ -41628,3 +41628,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva000B6AF5Build@@YAPAURva000B6AF5Rec@@PAU1@PAPAXH@Z,,0x000B6AF5,90,Code/GameEngine/Source/Common/Rva000B6AF5Build.cpp,matched,build 12B rec via Clamp plus double movzx returning dest
 ??0Rva000B642A@@QAE@PBHABUPristineBoneInfo@@@Z,,0x000B642A,29,Code/GameEngine/Source/Common/Rva000B642ACtor.cpp,matched,2-arg ctor int plus PristineBoneInfo via caller 0x000BCF96
 ?Rva000B64C5Build@@YA?AURva000B64C5S28@@ABURva000B64C5S16@@ABURva000B64C5S12@@@Z,,0x000B64C5,44,Code/GameEngine/Source/Common/Rva000B64C5Build.cpp,matched,struct-concat 28B from 16+12 same family as 0x005F17C6 caller 0x000BDD6C
+?rva000B646B@Rva000B646B@@QAEXPAURva000B646BNode@@@Z,,0x000B646B,45,Code/GameEngine/Source/Common/Rva000B646BFree.cpp,matched,thiscall recurse child plus free chain via _free caller 0x000B9309
