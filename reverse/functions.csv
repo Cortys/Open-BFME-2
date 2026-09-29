@@ -42193,3 +42193,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0053FB33@@UAE@XZ,,0x0053FB33,66,Code/GameEngine/Source/Common/Rva0053FB33Dtor.cpp,matched,vtable 0x008694DC plus StringBase plus18 plus free plus4 via EH prolog 0x629188
 ??_GRva0053FB33@@UAEPAXI@Z,,0x0053FB75,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain from 0x0053FB33 same 28B scalar-deleting shape
 ??1Rva002E0F1E@@UAE@XZ,,0x002E0F1E,99,Code/GameEngine/Source/Common/Rva002E0F1EDtor.cpp,matched,Snapshot dtor five strings via caller 0x2E18A7
+?rva001FD42B@Rva001FD42B@@QAEXPAURva001FD42BNode@@@Z,,0x001FD42B,45,Code/GameEngine/Source/Common/Rva001FD42BErase.cpp,matched,unlock caller 0x001FD63E unblocks 0x001FD630 via free 0x00030830
