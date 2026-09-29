@@ -318,6 +318,8 @@ struct BfmeStringRecord0021A940 {
     unsigned int word0; BfmeStringRecord00219B0B rec;
     BfmeStringRecord0021A940(const unsigned int *p, const BfmeStringRecord00219B0B &o);
     BfmeStringRecord0021A940(const BfmeStringRecord0021A940 &o);
+    ~BfmeStringRecord0021A940();
 };
 BfmeStringRecord0021A940::BfmeStringRecord0021A940(const unsigned int *p, const BfmeStringRecord00219B0B &o) : word0(*p), rec(o) {}
 BfmeStringRecord0021A940::BfmeStringRecord0021A940(const BfmeStringRecord0021A940 &o) : word0(o.word0), rec(o.rec) {}
+BfmeStringRecord0021A940::~BfmeStringRecord0021A940() {}
