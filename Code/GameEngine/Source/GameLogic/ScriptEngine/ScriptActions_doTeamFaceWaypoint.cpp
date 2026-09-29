@@ -28,6 +28,10 @@ typedef bool Bool;
 class Object;
 class AIUpdateInterface;
 struct Coord3D { float x, y, z; };
+enum CommandSourceType
+{
+	CMD_FROM_SCRIPT = 1
+};
 class Waypoint
 {
 public:
@@ -60,6 +64,7 @@ public:
 class AICommandInterface
 {
 public: void aiFacePosition(const Coord3D *, int);
+	void rva003C76B8(int value, CommandSourceType cmdSource);
 };
 class AIUpdateInterface
 {
@@ -100,6 +105,7 @@ class ScriptActions
 {
 protected:
     void doTeamFaceWaypoint(const AsciiString &, const AsciiString &);
+    void rva003C9BAD(const AsciiString &);
 };
 extern ScriptEngine *TheScriptEngine;
 extern TerrainLogicByValue *TheTerrainLogic;
@@ -120,6 +126,24 @@ void ScriptActions::doTeamFaceWaypoint(const AsciiString &teamName,
             ai->clearWaypointQueue();
             object->leaveGroup();
             ai->command.aiFacePosition(waypoint->location(), 1);
+        }
+        iter.advance();
+    }
+}
+
+// ?rva003C9BAD@ScriptActions@@IAEXABVAsciiString@@@Z @0x003C9BAD 93B
+// Evidence: gap 0x003C9B19+148=0x003C9BAD in this TU; team lookup plus per-member rva003C76B8 with 0 plus 1.
+// Chain via landed 0x003C76B8; caller at 0x003CDA49.
+void ScriptActions::rva003C9BAD(const AsciiString &teamName)
+{
+    Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
+    if (!team) return;
+    DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList();
+    while (!iter.done()) {
+        Object *object = iter.cur();
+        AIUpdateInterface *ai = object->getAIUpdateInterface();
+        if (ai) {
+            ai->command.rva003C76B8(0, CMD_FROM_SCRIPT);
         }
         iter.advance();
     }
