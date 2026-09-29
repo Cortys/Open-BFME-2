@@ -42638,3 +42638,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva006FBC30@Rva006FBC90Owner@@UAEXXZ,,0x006FBC30,45,Code/GameEngine/Source/Common/Rva006FBC30Slot13.cpp,matched,slot13 mark call plus forwarder tail
 ??_GRva0025FC61@@MAEPAXI@Z,,0x0025FF73,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0025FC61.cpp,matched,deleting dtor slot0 vtable 0x7F63F8 via rowed dtor and delete
 ?rva002BC39D@Rva002BBBE7@@QAEXXZ,,0x002BC39D,41,Code/Libraries/Source/WWVegas/WWLib/Rva002BC39D.cpp,matched,chain lane callee rowed 0x002BBBE7 callers annotated
+??1Rva002544B5@@UAE@XZ,,0x002544B5,60,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002544B5Dtor.cpp,matched,WorkerAI-adjacent dtor honest name duplicate WorkerAI name at 0x00240831 base Transport twin pin 0x0026E1FC holder +0x90
