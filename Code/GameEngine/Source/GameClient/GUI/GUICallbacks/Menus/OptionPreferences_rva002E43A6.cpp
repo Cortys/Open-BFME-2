@@ -85,6 +85,7 @@ public:
 	virtual ~OptionPreferences();
 	void rva002E43A6(Int val);
 	void rva002E43EE(short val);
+	void rva002E4438(unsigned short val);
 };
 
 void OptionPreferences::rva002E43A6(Int val)
@@ -99,4 +100,13 @@ void OptionPreferences::rva002E43A6(Int val)
 void OptionPreferences::rva002E43EE(short val)
 {
 	setInt(AsciiString("FirewallPortAllocationDelta"), val);
+}
+
+// ?rva002E4438@OptionPreferences@@QAEXG@Z 0x002E4438 74B
+// Evidence: FirewallPortOverride key (string 0x7EB71C) via rowed StringBase
+// ctor 0x00037BA0; virtual setInt slot 0x2c with movzx word arg; temp
+// teardown via releaseBuffer 0x00036410; third sibling above.
+void OptionPreferences::rva002E4438(unsigned short val)
+{
+	setInt(AsciiString("FirewallPortOverride"), val);
 }
