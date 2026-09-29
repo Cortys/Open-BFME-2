@@ -41107,3 +41107,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004E21FE@Rva004E21FE@@QAEXXZ,,0x004E21FE,41,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_erase_004e1f97.cpp,matched,chain caller 3 sites clear header reset via 0x004E1F97
 ?Rva00211E0DGet@@YAPAVRva002111C8@@PAV1@00@Z,,0x00211E0D,38,Code/GameEngine/Source/Common/Rva00211E0DUninitCopy.cpp,matched,chain callers 2 sites uninit copy via 0x00211DFB
 ?rva00211ED9@Rva00211ED9@@QAEPAXI@Z,,0x00211ED9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-211ED9.cpp,matched,chain scalar delete via 0x002115C5 plus 0x0002FD60
+?rva000BBD66@Rva000BBD66@@QAEHPAD@Z,,0x000BBD66,25,Code/GameEngine/Source/Common/Rva000BBD66Write.cpp,matched,chain from 0x000B980E plus 2 callers plus contiguous prev
