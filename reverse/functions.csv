@@ -41081,3 +41081,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?clear@Rva0009990D@@QAEXXZ,,0x0009990D,26,Code/GameEngine/Source/Common/Rva0009990DSet.cpp,matched,clear via dtor plus delete
 ?rva000B980E@Rva000B980E@@QAEXPADHH@Z,,0x000B980E,44,Code/GameEngine/Source/Common/Rva000B980ECopy.cpp,matched,string data memcpy via empty default
 ?rva0029AA27@Rva0029AA27@@QAEXPBUS12_0029AA27@@@Z,,0x0029AA27,24,Code/GameEngine/Source/Common/Rva0029AA27Copy.cpp,matched,guarded 12B copy via movsd caller 0x432145
+?Rva00212AD6Get@@YAXPAURva002115C5@@0@Z,,0x00212AD6,25,Code/GameEngine/Source/GameClient/Rva00212AD6Loop.cpp,matched,chain range 0x10 calling 0x002115C5 callers 2
