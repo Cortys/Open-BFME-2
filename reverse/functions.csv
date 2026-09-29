@@ -42580,3 +42580,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0044D836@GameModePreferences@@QAEHXZ,,0x0044D836,86,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Color getter via makeKey map find atoi plus lazy limit
 ?getPair@LivingWorldEyeTower@@AAEPAXXZ,,0x003F9A2B,110,Code/GameEngine/Source/GameClient/LivingWorldEyeTower.cpp,matched,BFME1 donor LivingWorldEyeTower getPair with LivingWorld path line 355 and caller layout
 ?rva0070B180@AptNativeHash@@QAEXPAVBfmeAptValue006DCD20@@PAVEAStringC@@H@Z,,0x0070B180,159,Code/Libraries/Source/Apt/AptNativeHashRva0070B180.cpp,matched,AptNativeHash nEventHandlers bit table aSpriteGperfToActionFlag via isCIH len gperf
+?rva00358333@Rva0034C5E0@@QAEXPAVOverridable@@PAVImage@@@Z,,0x00358333,116,Code/GameEngine/Source/Common/Rva00358333.cpp,matched,lazy map init plus final override keyed subscript via rowed ctor and subscript
