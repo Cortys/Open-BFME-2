@@ -41110,3 +41110,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000BBD66@Rva000BBD66@@QAEHPAD@Z,,0x000BBD66,25,Code/GameEngine/Source/Common/Rva000BBD66Write.cpp,matched,chain from 0x000B980E plus 2 callers plus contiguous prev
 ??0Rva000BB4AC@@QAE@ABV0@@Z,,0x000BB4AC,34,Code/GameEngine/Source/Common/Rva000BB4ACCopy.cpp,matched,chain from 0x000B9074 plus 2 callers plus contiguous prev
 ??$_Construct@VRva000BB491@@V1@@_STL@@YAXPAVRva000BB491@@ABV1@@Z,,0x000BB993,45,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,chain from 0x000BB491 plus 4 callers plus same 45B shape
+?Rva005DBD78FillN@@YAPAVRva005DBCD1@@PAV1@IABV1@ABUTag@@@Z,,0x005DBD78,40,Code/GameEngine/Source/Common/Rva005DBD78FillN.cpp,matched,FillN via rowed copy ctor 0x5DBCD1 caller 0x5DC507

@@ -2802,3 +2802,4 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?rva002138E5@Rva002138E5@@QAEHHHHPAX@Z	0x002138E5	64	blocked	same callees as ArmorRtsCtor 0x002896AA vector-uint plus Armor-rts-initbuckets same 64B same 0x64 caller pattern duplicate hashtable ctor identity needs disambiguation t=12 model=muse-09
 ?rva004FF9B6@Rva004FF9B6@@QAEPAHH@Z	0x004FF9B6	19	blocked	needs Rb_tree _M_find t=5 model=muse-06
 ?Rva004582F3Loop@@YAXPAURva004582F3Outer@@@Z	0x004582F3	41	partial	ret inline vs end t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x004582f3.cpp
+?rva002AA2CF@Rva002AA2CF@@QBEPBDH@Z	0x002AA2CF	42	blocked	register wall eax-edx swapped plus branch inversion table base needs gate t=8 model=muse-10
