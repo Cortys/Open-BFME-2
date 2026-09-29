@@ -87,6 +87,7 @@ public:
 	void clear();
 	void rva003ECAE0(Xfer *xfer);
 	class Rva003ECA69Element *rva003ECB52(struct Rva003ECB52Arg *arg);
+	class Rva003ECA69Element *rva003ECB94(struct Rva003ECB52Arg *arg);
 
 private:
 	float m_0;
@@ -174,6 +175,22 @@ Rva003ECA69Element *Rva003ECA69Element::rva003ECB52(Rva003ECB52Arg *arg)
 		m_0 += v;
 		int idx = arg->m_ptr->m_index;
 		reinterpret_cast<float *>(m_rest)[idx] += v;
+	}
+	return this;
+}
+
+// ?rva003ECB94@Rva003ECA69Element@@QAEPAV1@PAURva003ECB52Arg@@@Z @0x003ECB94 (66B):
+// subtracts the float at +0x51c of the arg's +4 object from m_0 and from
+// m_rest[idx] where idx is the int at +0x520 when the value exceeds
+// g_007BAEAC. Evidence: sibling of 0x003ECB52 in the same TU with identical
+// shape but subss; caller 0x005961C5; stride 0x44 element type.
+Rva003ECA69Element *Rva003ECA69Element::rva003ECB94(Rva003ECB52Arg *arg)
+{
+	float v = arg->m_ptr->m_value;
+	if (v > g_007BAEAC) {
+		m_0 -= v;
+		int idx = arg->m_ptr->m_index;
+		reinterpret_cast<float *>(m_rest)[idx] -= v;
 	}
 	return this;
 }
