@@ -13,7 +13,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern Rva007EB810Diag *Rva007EB810Get();
+int Rva007EB810Get();
 
 struct Rva007E9B70Obj
 {
@@ -22,7 +22,7 @@ struct Rva007E9B70Obj
 	virtual unsigned tick();
 };
 
-extern Rva007E9B70Obj *Rva007E9B70Get();
+extern int Rva00656B60Get();
 
 struct Rva008006C0Sink
 {
@@ -75,7 +75,7 @@ int Rva008006C0Owner::connect( const char *name, const char *addr, int cookie )
 
 	if( !m_browser->isInternetConnected() )
 	{
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"mGameBrowser->IsInternetConnected()",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserdemangler.cpp",
 			0x73 );
@@ -92,7 +92,7 @@ int Rva008006C0Owner::connect( const char *name, const char *addr, int cookie )
 		m_addr[0] = 0;
 	}
 
-	m_c4 = Rva007E9B70Get()->tick();
+	m_c4 = ((Rva007E9B70Obj *)Rva00656B60Get())->tick();
 	m_c8 = m_seq;
 	m_seq = m_seq + 1;
 	m_d0 = cookie;
