@@ -41537,3 +41537,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?reserve@?$vector@VRva0036CA00Str@@V?$allocator@VRva0036CA00Str@@@_STL@@@_STL@@QAEXI@Z,,0x00239ED8,104,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0036CA00_reserve.cpp,matched,chain from 0x00239408 caller 0x0023B990 same 104B shape as Ascii 0x57E02
 ?rva0054FC14@Rva0054FC14@@QAEXXZ,,0x0054FC14,70,Code/GameEngine/Source/Common/Rva0054FC14Cleanup.cpp,matched,clear lock plus stop virtual-destroy delete 10 threads caller 0x0054FFC3
 ??_GRva0023D377@@QAEPAXI@Z,,0x0023DACC,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-07-23DACC.cpp,matched,chain from 0x0023D377 landing QAE deleting dtor
+?rva00043511@Rva00043511@@QAEXXZ,,0x00043511,43,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00043511Init.cpp,matched,rowed setFromInt callee plus two white colors plus ints
