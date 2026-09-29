@@ -283,6 +283,16 @@ here: it suggests `reverse/unclaimed_sources_whitelist.txt`, and that file
 exists only in the BFME 1 reference tree, not in this repo. Do not go looking
 for it — marker the definitions or row them.
 
+Do not try to script the marking. The report names each definition as
+`Class::method` with no argument types, so when a file defines two overloads of
+one method — `MeshClass::Scale` is the worked case — nothing in the output says
+which one is undeclared. A marker placed on the wrong overload is caught, and
+caught loudly, but only after the edit: the tool then reports
+`?Scale@MeshClass@@UAEXMMM@Z is matched in functions.csv from this file but
+still marked present-unmatched (stale annotation — remove the marker)`.
+Locate the definition by reading the file, and verify the overload from its
+signature rather than from the name.
+
 A related trap worth knowing, because it presents identically: a marker
 written `// ?<mangled>,` is not the symbol name. The comma is the ledger row's
 separator, copied along with the name, and the tool takes everything after
