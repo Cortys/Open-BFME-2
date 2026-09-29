@@ -84,3 +84,53 @@ Int __stdcall Rva00596446Get(void *arg)
 	}
 	return 0;
 }
+// ?rva00596472@Rva0025C061@@QAE_NPAX@Z @0x00596472 31B
+// __thiscall predicate over holder: requires Rva00596446Get(holder)!=0
+// (byte test al), then calls this Rva0025C061::rva0025C061(holder) with same
+// ecx and returns true, else false. Same-this ECX survives because callee
+// definition is visible in this TU (shape-lever visibility); separate TU
+// spills this to esi and grows to 37B.
+// Evidence: push [esp+4] call 0x596446 test al je; push [esp+4] call 0x25C061;
+// mov al1 jmp xor al ret4; caller at 0x004E01F9; ecx pass-through.
+enum ScienceType
+{
+	SCIENCE_FIRST = 0
+};
+
+namespace _STL
+{
+
+template <class _Tp> class allocator
+{
+};
+
+template <class _Tp, class _Alloc> class vector
+{
+public:
+	void push_back(const _Tp &v);
+	_Tp *m_start;
+	_Tp *m_finish;
+	_Tp *m_end;
+};
+
+}
+
+class Rva0025C061
+{
+public:
+	void rva0025C061(void *holder);
+	bool rva00596472(void *holder);
+private:
+	int m_unk0;
+	_STL::vector<ScienceType, _STL::allocator<ScienceType> > m_sciences;
+};
+
+bool Rva0025C061::rva00596472(void *holder)
+{
+	if (((unsigned char)Rva00596446Get(holder)) != 0)
+	{
+		rva0025C061(holder);
+		return true;
+	}
+	return false;
+}
