@@ -41105,3 +41105,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00330CDD@RadiusDecalTemplate@@QAEXABV1@@Z,,0x00330CDD,97,Code/GameEngine/Source/GameClient/RadiusDecalTemplateAssign.cpp,matched,RadiusDecalTemplate copy via pinned AsciiString op-eq
 ?rva0025E539@NetworkInterface@@QAEXPAVNetWrapperCommandMsg@@@Z,,0x0025E539,187,Code/GameEngine/Source/Common/NetworkInterfaceFramePacing.cpp,matched,thiscall via caller 0x25E5F4 slot name to player msg 0x448 send 0x38
 ?rva004E21FE@Rva004E21FE@@QAEXXZ,,0x004E21FE,41,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_erase_004e1f97.cpp,matched,chain caller 3 sites clear header reset via 0x004E1F97
+?Rva00211E0DGet@@YAPAVRva002111C8@@PAV1@00@Z,,0x00211E0D,38,Code/GameEngine/Source/Common/Rva00211E0DUninitCopy.cpp,matched,chain callers 2 sites uninit copy via 0x00211DFB
