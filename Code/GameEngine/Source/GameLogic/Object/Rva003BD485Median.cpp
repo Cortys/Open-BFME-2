@@ -53,3 +53,30 @@ void Rva003BD4E8SiftUp(Rva003BD485Keyed **base, int idx, int top, Rva003BD485Key
 	}
 	base[idx] = pivot;
 }
+
+// ?Rva003BE553AdjustHeap@@YAXPAPAURva003BD485Keyed@@HHPAU1@H@Z @0x003BE553 90B.
+// Heap adjust over the same keyed array: sifts the hole down picking the
+// larger child, drops the last slot in when the child runs even with len,
+// then tail-calls the 5-push sift-up at 0x003BD4E8. Chain lane on 0x003BD4E8;
+// callers 0x003C3AC7/0x003C3AF0 push 5 args (cdecl, ret with caller cleanup).
+void Rva003BD4E8SiftUp(Rva003BD485Keyed **base, int idx, int top, Rva003BD485Keyed *pivot, int extra);
+
+void Rva003BE553AdjustHeap(Rva003BD485Keyed **base, int hole, int len, Rva003BD485Keyed *value, int extra)
+{
+	int top = hole;
+	int child = hole * 2 + 2;
+	while (child < len)
+	{
+		if (base[child]->m_key < base[child - 1]->m_key)
+			--child;
+		base[hole] = base[child];
+		hole = child;
+		child = child * 2 + 2;
+	}
+	if (child == len)
+	{
+		base[hole] = base[child - 1];
+		hole = child - 1;
+	}
+	Rva003BD4E8SiftUp(base, hole, top, value, extra);
+}
