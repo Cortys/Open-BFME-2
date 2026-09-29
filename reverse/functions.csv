@@ -42345,3 +42345,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?rva00151288@Rva00151288@@QAEXPBD@Z,,0x00151288,105,Code/GameEngine/Source/Common/Rva00151288SetPath.cpp,matched,path surgery via splitpath plus makepath into StringBase member
 ?Rva00314B28@@YGXHHHHHH@Z,,0x00314B28,77,Code/GameEngine/Source/GameClient/GUI/GameWindowRva00314AE0.cpp,matched,Display rect forward via rowed rva0004263F and TheDisplay
 ?rva001F3C9A@Rva001F3C9A@@QAE_NXZ,,0x001F3C9A,105,Code/GameEngine/Source/Common/Rva001F3C9ACheck.cpp,matched,bool predicate helper slots retry counter caller 0x001FAB59
+?Rva00468F0FInRange@@YG_NPAVObject@@0@Z,,0x00468F0F,89,Code/GameEngine/Source/GameLogic/Object/Update/Rva00468F0FCheck.cpp,matched,SSE range check via caller 0x47390E prev 0x468E26 next 0x469075
