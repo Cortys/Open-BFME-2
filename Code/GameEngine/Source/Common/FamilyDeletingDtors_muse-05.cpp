@@ -50,3 +50,8 @@ class Rva003ABA36 { public: __declspec(noinline) virtual ~Rva003ABA36(); private
   friend void famgenDelete(Rva003ABA36 *p); };
 Rva003ABA36::~Rva003ABA36() { m_famgen = 0; }
 void famgenDelete(Rva003ABA36 *p) { delete p; }
+// ??_GRva001DC0EC@@QAEPAXI@Z @0x001DC1E1 28B
+// Deleting dtor calls rowed ??1Rva001DC0EC@@QAE@XZ at 0x001DC0EC then rowed operator delete at 0x0002FD60.
+// Evidence: chain lane after landing 0x001DC0EC; retail push esi call ??1 test flag delete ret 4.
+class Rva001DC0EC { public: ~Rva001DC0EC(); };
+void famgenDelete(Rva001DC0EC *p) { delete p; }
