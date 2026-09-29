@@ -42599,3 +42599,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??_EFileInfoStruct@MixFileCreator@@QAEPAXI@Z,,0x002E70E8,75,Code/Libraries/Source/WWVegas/WWLib/MixFileCreator_FileInfoStruct_VectorDtor.cpp,matched,vector deleting dtor via delete anchor element 0x10 rowed scalar dtor
 ?rva0040203C@GameInfo@@QAEHXZ,,0x0040203C,146,Code/GameEngine/Source/GameNetwork/GameInfoSetMapSize.cpp,matched,GameInfo sibling of setMapSize with TheMapCache numPlayers or minus 1
 ??0Rva00402BE3@@QAE@ABVAsciiString@@@Z,,0x00402BE3,44,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva00402BE3Ctor.cpp,matched,Honest Rva ctor with AsciiString vector and zeroed tail via caller new size
+?rva001517B5@Rva00151632@@QAEXXZ,,0x001517B5,41,Code/GameEngine/Source/Common/Rva001517B5Link.cpp,matched,slot 7 of vtable 0x007D3A6C via ctor row plus cleared link row 0x00151744
