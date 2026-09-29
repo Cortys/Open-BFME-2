@@ -4,7 +4,7 @@
 // virtual dtor (scalar-deleting slot with zero flag); caller 0x005A6EDA is the
 // tag-dispatch DestroyRange. Same shape as Rva0052BF81_DestroyTagged in
 // LivingWorldRegionConnectionHelpers.cpp but stride 8. Next is that TU.
-void free(void *block);
+extern "C" void free(void *block);
 namespace _STL
 {
 struct __false_type
