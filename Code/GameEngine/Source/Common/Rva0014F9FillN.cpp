@@ -74,3 +74,9 @@ Rva0014F4A1 *__cdecl Rva0014F928Copy(Rva0014F4A1 *first, Rva0014F4A1 *last, Rva0
 	}
 	return cur;
 }
+
+void __cdecl Rva0014F9B2Fill(Rva0014F4A1 *first, Rva0014F4A1 *last, const Rva0014F4A1 &value)
+{
+	for (; first != last; ++first)
+		first->m_04 = value.m_04;
+}

@@ -41457,3 +41457,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0014F8C6@Rva0014F8C6@@QAEXXZ,,0x0014F8C6,30,Code/GameEngine/Source/Common/Rva0014F3E7Destroy.cpp,matched,tidy destroy plus free via 0x0014F8AE and free
 ??0?$_Rb_tree@UBfmeRecord001DD3BC@@U1@U?$_Identity@UBfmeRecord001DD3BC@@@_STL@@U?$less@UBfmeRecord001DD3BC@@@3@V?$allocator@UBfmeRecord001DD3BC@@@3@@_STL@@QAE@ABV01@@Z,,0x001DDD85,165,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme001DD3BC_copyctor.cpp,matched,chain tree copy ctor via rowed base plus copy same 165B shape
 ?rva0025C010@Rva0025C010@@QAEXXZ,,0x0025C010,53,Code/GameEngine/Source/Common/Rva0025C010Prune.cpp,matched,prune dead ObjectIDs via TheGameLogic findObjectByID and vector erase
+?Rva0014F9B2Fill@@YAXPAVRva0014F4A1@@0ABV1@@Z,,0x0014F9B2,26,Code/GameEngine/Source/Common/Rva0014F9FillN.cpp,matched,range fill m_04 via assign gap between FillN dispatchers
