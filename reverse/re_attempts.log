@@ -2716,3 +2716,8 @@ FUN_004BDD48	0x000BDD48	36	blocked	36B ctor needs string literal bytes at 0x007B
 FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same family as blocked 0x4128E register wall t=5 model=muse-spark
 ?rva005CA53E@GameSpyLoginPreferences@@QAEXABVAsciiString@@@Z	0x005CA53E	80	partial	push-email scheduling early-vs-late plus temp teardown dtor-vs-releaseBuffer; 80B 24insns exact size; tried direct slot-ref named-local t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x005ca53e.cpp
 ?_M_insert_overflow@?$vector@V?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@V?$allocator@V?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@2@@_STL@@IAEXPAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@2@ABV32@ABU__false_type@2@I_N@Z	0x00339FA7	183	blocked	183B G7 insert overflow aligns exact 183B/76insns 0 structural 5 relocs; gate fails unresolved _M_clear for FillSciVec vs retail rva0032E7E2 for Links (both 30B 12-byte clears different Destroy callees); needs clear identity and allocate twin already pinned; t=30 model=muse-spark
+?rva001513AD@Rva001513AD@@QAEAAV0@ABUBfmeAssignRecord36@@@Z	0x001513AD	56	blocked	EH copyctor needs donor t=10 model=muse-06
+??1Rva00152411@@UAE@XZ	0x00152411	173	blocked	173B dtor needs vtable layout t=5 model=muse-06
+?Rva0015207ECopy@@YAXPAVRva00151E30@@00@Z	0x0015207E	29	blocked	29B wrapper 5-push to 3-arg needs ICF t=8 model=muse-06
+?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z	0x0032B598	45	partial	EH save order early vs late t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x0032b598.cpp
+?Rva005F1773Get@@YAHXZ	0x005F1773	28	blocked	fastcall edx unclear t=8 model=muse-06
