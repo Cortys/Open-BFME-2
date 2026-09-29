@@ -23,6 +23,7 @@ class Rva006E3230 {
 public:
     void rva006E3230(Rva006E3230Action *pCur);
     Rva006E3230Action *rva006E3DB0();
+    Rva006E3230Action *rva006E3920(int arg);
 };
 void Rva006E3230::rva006E3230(Rva006E3230Action *pCur)
 {
@@ -39,4 +40,24 @@ Rva006E3230Action *Rva006E3230::rva006E3DB0()
 {
     rva006E3230(m_pCurrent);
     return m_pCurrent;
+}
+
+// ?rva006E3920@Rva006E3230@@QAEPAURva006E3230Action@@H@Z @0x006E3920 114B.
+// Wraps an argument by the action-pool cursor: iOffset = m_pCurrent -
+// m_aActionPool (element stride 24), asserted into [0, m_iActionPoolSize) at
+// AptAnimation.cpp:1911, then returns &pool[wrapped (arg + iOffset)] with a
+// signed modulo folded into range. Evidence: unlock lane, caller 0x006E39A0;
+// layout/stride/names shared with the two bodies above.
+Rva006E3230Action *Rva006E3230::rva006E3920(int arg)
+{
+    int iOffset = m_pCurrent - m_aActionPool;
+    if (iOffset < 0 || iOffset >= m_iActionPoolSize) {
+        g_bfmeAptAssertAtE17734("(iOffset >= 0) && (iOffset < m_iActionPoolSize)", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptAnimation.cpp", 0x777);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    int idx = (arg + iOffset) % m_iActionPoolSize;
+    if (idx >= 0)
+        return &m_aActionPool[idx];
+    return &m_aActionPool[idx + m_iActionPoolSize];
 }
