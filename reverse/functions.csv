@@ -41214,3 +41214,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003EE89E@Rva003EE89E@@QAEXHH@Z,,0x003EE89E,58,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,unlock same pattern as 003EE84A string 0x00E02E7C callers 3
 ?write@Rva000BD268@@QAEHPAD@Z,,0x000BD268,37,Code/GameEngine/Source/Common/Rva000BC834Write.cpp,matched,chain from 0x000BC834 plus caller 0x000BDC6D
 ?rva0029B380@Rva0029B380@@QAEXH@Z,,0x0029B380,65,Code/GameEngine/Source/GameClient/Rva0029B380Clean.cpp,matched,unlocks 0x002A1582 array 0x5D0 elem16 release plus slot15
+??1Rva0029B816@@UAE@XZ,,0x0029B816,98,Code/GameEngine/Source/GameClient/Rva0029B816Dtor.cpp,matched,unlocks 0x0029E1EF vtable 0x7FD028 ptrs plus narrow
