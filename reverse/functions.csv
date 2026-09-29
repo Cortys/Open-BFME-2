@@ -41354,3 +41354,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002CF7DE@Rva002CF7DE@@QAEXXZ,,0x002CF7DE,41,Code/Libraries/Source/WWVegas/WWLib/Rva002CF7DEClear.cpp,matched,tree clear via 0x002CF302; 41B exact; callers 0x002D01B5 0x0033BD9D
 ?rva002CF32F@Rva002CF32F@@QAEXPAURva002CF32FNode@@@Z,,0x002CF32F,45,Code/Libraries/Source/WWVegas/WWLib/Rva002CF32FErase.cpp,matched,tree erase via right plusC left plus8 free 0x30830; 45B exact; caller 0x002CF815
 ?Rva000E007DEqual@@YGHPBURva000E007DPair@@0@Z,,0x000E007D,32,Code/GameEngine/Source/Common/Rva000E007DEqual.cpp,matched,equality pair ret8 stdcall callers E01DD E02D1
+?Rva002E608CLowerBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C15Comp@@@Z,,0x002E608C,27,Code/GameEngine/Source/GameClient/GameTextStringLookUpBound.cpp,matched,chain LowerBound wrapper d2 0
+?Rva002E60A7UpperBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C61Comp@@@Z,,0x002E60A7,27,Code/GameEngine/Source/GameClient/GameTextStringLookUpBound.cpp,matched,chain UpperBound wrapper d2 0

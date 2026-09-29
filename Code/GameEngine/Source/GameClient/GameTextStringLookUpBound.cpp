@@ -54,3 +54,13 @@ StringLookUp *__cdecl Rva002E5C61UpperBound(StringLookUp *first, StringLookUp *l
 	}
 	return first;
 }
+
+StringLookUp *__cdecl Rva002E608CLowerBound(StringLookUp *first, StringLookUp *last, const char *const &val, Rva002E5C15Comp comp)
+{
+	return Rva002E5C15LowerBound(first, last, val, comp, 0);
+}
+
+StringLookUp *__cdecl Rva002E60A7UpperBound(StringLookUp *first, StringLookUp *last, const char *const &val, Rva002E5C61Comp comp)
+{
+	return Rva002E5C61UpperBound(first, last, val, comp, 0);
+}
