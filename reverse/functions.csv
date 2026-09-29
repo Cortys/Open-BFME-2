@@ -42672,3 +42672,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00559924@GameSpyMiscPreferences@@QAEXVAsciiString@@@Z,,0x00559924,89,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,chain setAsciiString AllOtherCachedStats via slot 0x30
 ?rva00559813@GameSpyMiscPreferences@@QAE?AVAsciiString@@XZ,,0x00559813,92,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,gap getAsciiString ToolTipCachedStats via slot 0x20
 ?rva005598C8@GameSpyMiscPreferences@@QAE?AVAsciiString@@XZ,,0x005598C8,92,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,gap getAsciiString AllOtherCachedStats via slot 0x20
+?Rva00030EF0Get@@YAKXZ,,0x00030EF0,21,Code/GameEngine/Source/Common/Rva00030DD0AddRef.cpp,matched,gap page size via GetSystemInfo plus4

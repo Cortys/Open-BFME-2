@@ -63,3 +63,19 @@ inline Rva00030DD0Lock::~Rva00030DD0Lock()
 	DeleteCriticalSection(this);
 }
 void famgenDelete(Rva00030DD0Lock *p) { delete p; }
+
+// ?Rva00030EF0Get@@YAKXZ @0x00030EF0 21B.
+// Free function returning SYSTEM_INFO dwPageSize (+4) via IAT
+// GetSystemInfo at 0xBBA3AC. Same TU defaults frameless sub/push/call.
+// Honest address-derived name, DWORD return.
+extern "C" __declspec(dllimport) void __stdcall GetSystemInfo(void *info);
+unsigned long Rva00030EF0Get()
+{
+	struct SysInfo
+	{
+		unsigned long m_00[9];
+	};
+	SysInfo info;
+	GetSystemInfo(&info);
+	return info.m_00[1];
+}

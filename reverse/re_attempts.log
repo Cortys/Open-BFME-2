@@ -3474,3 +3474,4 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ?rva002120C2@Rva002120C2@@QAEPAURva002120C2Elem@@ABVAsciiString@@@Z	0x002120C2	86	blocked	array search reload-plus-add wall t=20 model=muse-11
 ?Rva00452496Check@@YA_NPAVObject@@@Z	0x00452496	79	partial	final setne-al vs xor-inc-plus-final wall t=25 model=muse-11 score=0.94 stash=reverse/attempts/0x00452496.cpp
 ?rva001F0434@ObjectCreationList@@QAE_NPAX0@Z	0x001F0434	52	partial	hoisted nugget load fixes mov wall; remaining setne-al vs branches uchar-bool normalize wall t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x001f0434.cpp
+??1Rva00256461Member@@QAE@XZ	0x00256461	56	blocked	EH prolog with states 0 then -1 not reproduced by GX without base 23B vs 56B t=15 model=muse-12
