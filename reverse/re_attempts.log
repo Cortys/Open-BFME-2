@@ -3353,3 +3353,4 @@ FUN_007c38ef	0x003C38EF	84	blocked	owner struct unknown iterator layout mismatch
 ?set@?$StringBase@D@@QAEXABV1@@Z	0x000366F0	132	blocked	StringBase assign with lock needs EH scopetable plus manual frame plus lock vptr plus20 plus IAT Enter Leave plus RAII unwind; probe without vptr RAII gives 77B vs 132B missing EH layout plus4 t=12 model=muse-07
 ?Rva00205840Partition@@YAPAHPAH0HURva00204BB8@@@Z	0x00205840	73	blocked	73B-33insns exact size-count partition with do-while past-end plus single-inc; esi-edi mirror persists across 6 variants plain swapped-locals Ob2-EHsc-G7 t=25 model=muse-11
 ?rva004CE6BA@Rva004CE6BA@@QAEXXZ	0x004CE6BA	42	partial	38B 10insns vs 42B 11insns float-first plus eax-ecx swap for this-calc t=20 model=muse-12 score=0.88 stash=reverse/attempts/0x004ce6ba.cpp
+FUN_007ed4e5	0x003ED4E5	192	blocked	bitgated map-to-string join needs inline StringBase zero plus raw RB header loads t=12 model=muse-10
