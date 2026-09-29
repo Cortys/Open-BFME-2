@@ -1,4 +1,6 @@
 // ?parseSubtitleLineTable@@YAXPAVINI@@PAX1PBX@Z
+// partial score=0.98 date=2026-09-29
+// ?parseSubtitleLineTable@@YAXPAVINI@@PAX1PBX@Z
 // partial score=0.98 date=2026-09-24
 // Retail 0x006883F0, 340 bytes. The BFME2 beta debug string and the
 // SubtitleManager field table identify this as the LineTable parser.
