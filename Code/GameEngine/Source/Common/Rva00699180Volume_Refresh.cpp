@@ -20,6 +20,7 @@ public:
 	void refreshPair(int a, int b);
 	void refreshAll();
 	void rva00051FFE(int b);
+	void rva00052015(int b);
 	void setVolumes(float volume, unsigned char flags);
 
 	char m_pad0[4];
@@ -99,4 +100,10 @@ void Rva00699180Owner::rva00051FFE(int b)
 {
 	for (int i = 0; i < 2; ++i)
 		refreshPair(b, i);
+}
+
+void Rva00699180Owner::rva00052015(int b)
+{
+	for (int i = 0; i < 6; ++i)
+		refreshPair(i, b);
 }
