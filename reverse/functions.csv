@@ -42584,3 +42584,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00583CE0@Rva005843DA@@QAEXHH@Z,,0x00583CE0,42,Code/Libraries/Source/WWVegas/WWLib/Rva005843DACtor.cpp,matched,vslot 12 via rowed ctor vec28 idiv imul
 ??_GRva002B923F@@QAEPAXI@Z,,0x002BADF3,28,Code/GameEngine/Source/Common/Rva002B82D5Dtor.cpp,matched,chain lane scalar deleting via anchor new-delete calls rowed dtor plus delete
 ?Rva001EF291Find@@YGHABVAsciiString@@@Z,,0x001EF291,58,Code/GameEngine/Source/Common/Rva001EF291Find.cpp,matched,table lookup 0x38 via isEmpty compareNoCase
+?__get_date_order@_STL@@YA?AW4dateorder@time_base@1@PAU_Locale_time@@@Z,,0x00018500,198,Code/Libraries/Source/WWVegas/WWLib/stlport_X4TimeFacets.cpp,matched,BFME1 byte-identical donor; b1 0x00845C10; calls the rowed locale getter _Rva0084ECA0 (donor __Locale_d_fmt)
