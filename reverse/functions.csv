@@ -42625,3 +42625,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??0Rva0015145C@@QAE@ABVHierarchyPrototypeRef@@@Z,,0x0015145C,49,Code/Libraries/Source/WWVegas/WW3D2/Rva0015145CCtor.cpp,matched,copy ctor via ShaderRef assign plus factory caller
 ??1Rva00104E03@@UAE@XZ,,0x00104E03,66,Code/GameEngine/Source/Common/Rva00104E03Dtor.cpp,matched,dtor vptr plus clear 4 plus member 218 plus base GameWindow
 ?PointInsideArea2D@@YA_NPBUCoord3D@@0H@Z,,0x0025F86D,169,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,ZH donor Line2D two-return bool tail via probe exact
+??1Rva0025FC61@@MAE@XZ,,0x0025FC61,89,Code/GameEngine/Source/GameClient/Rva0025FC61Dtor.cpp,matched,SubtitleEntry derived dtor vtable 0x7F63F8 array release via global slot
