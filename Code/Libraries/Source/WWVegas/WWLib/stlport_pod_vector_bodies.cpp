@@ -14,6 +14,7 @@
 // copy constructor), _Construct<BfmePodN> is pinned in symbols.csv at the
 // address the byte-true call site proves; that body is not compiled from here.
 #include <vector>
+#include <algorithm>
 struct BfmePod20 { int a[5]; };
 struct BfmePod24 { int a[6]; };
 inline bool operator==(const BfmePod20 &x, const BfmePod20 &y) { return x.a[0] == y.a[0]; }
@@ -182,3 +183,7 @@ template BfmePod260* _STL::__copy<BfmePod260*, BfmePod260*, int>(
     BfmePod260*, BfmePod260*, BfmePod260*,
     const _STL::random_access_iterator_tag&, int*);
 template class _STL::vector<BfmePod340, _STL::allocator<BfmePod340 > >;
+// ??$__find@PAUBfmePod20@@U1@@_STL@@YAPAUBfmePod20@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z @0x002194CC 118B
+// Unrolled random-access __find over 20-byte elements comparing a[0]; caller
+// 0x002198BE is the 27B find wrapper that becomes ready on landing.
+template BfmePod20* _STL::__find(BfmePod20*, BfmePod20*, const BfmePod20&, const _STL::random_access_iterator_tag&);
