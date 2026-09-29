@@ -15,7 +15,11 @@ class StateMachine;
 class CEMid
 {
 public:
-	char m_pad00[0x258];
+	char m_pad00[0x44];
+	unsigned int m_44;
+	char m_pad48[0x1C0 - 0x48];
+	unsigned int m_1C0;
+	char m_pad1C4[0x258 - 0x1C4];
 	class CEFinal *m_ptr258;
 };
 
@@ -167,7 +171,7 @@ public:
 	virtual void _cp133();
 	virtual void _cp134();
 	virtual void method21C(float value);
-	virtual void _cq136();
+	virtual void method220();
 	virtual void _cq137();
 	virtual void _cq138();
 	virtual void _cq139();
@@ -198,6 +202,7 @@ public:
 	virtual void _s02();
 	virtual void _s03();
 	virtual int rva003426CE();
+	virtual void rva0034270C(int);
 };
 
 int Rva003426AB::rva003426CE()
@@ -208,4 +213,21 @@ int Rva003426AB::rva003426CE()
 	target->method238(15);
 	target->method21C(m_machine->m_float24);
 	return 0;
+}
+
+// ?rva0034270C@Rva003426AB@@UAEXH@Z, retail 0x0034270C, 62 bytes.
+// Virtual slot 5 (offset 0x14) of the same vtable 0x00812438: same machine
+// chain, early-out on null, slot 0x238 with 0, slot 0x220, then copy
+// mid+0x44 to mid+0x1C0. The 4-byte arg (ret 4) is never read; int/void are
+// code-neutral guesses.
+
+void Rva003426AB::rva0034270C(int)
+{
+	CEFinal *target = m_machine->m_ptr14->m_ptr258;
+	if (target == 0)
+		return;
+	target->method238(0);
+	target->method220();
+	CEMid *mid = m_machine->m_ptr14;
+	mid->m_1C0 = mid->m_44;
 }
