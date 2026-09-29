@@ -2794,3 +2794,5 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?rva00538B95@Rva00538B95@@QAEPAURva0052A28EDwordField@@PAU2@@Z	0x00538B95	121	blocked	121B vslot7 plus virtual-direct ICF needs donor t=10 model=muse-02
 ?Rva004EAC28Insert@@YAXPAPAXPAX1@Z	0x004EAC28	37	blocked	same edx esi swap wall as 0x003BD4C3 t=5 model=muse-02
 ?Rva005A9146Insert@@YAXPAUE8@@U1@@Z	0x005A9146	50	blocked	insertion eax ecx swap plus branch polarity t=8 model=muse-02
+?rva00323674@Rva00323674@@QBEHXZ	0x00323674	44	partial	43B vs 44B push mem vs mov plus push for m_8 tried named listWin O1 t=10 model=muse-01 score=0.95 stash=reverse/attempts/0x00323674.cpp
+?Rva004582F3Find@@YAXPAUOwner004582F3@@@Z	0x004582F3	41	partial	40B vs 41B shared early ret vs separate push after check tried O1 default t=10 model=muse-01 score=0.95 stash=reverse/attempts/0x004582f3.cpp
