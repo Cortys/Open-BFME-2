@@ -14,9 +14,9 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 ### What the bars measure
 
-* **Rebuilt from source**: code that rebuilds to the original game.dat's exact bytes, part of it generated code or prebuilt libraries.
-* **Game code in C++**: the game's own code (no libraries) written as C++.
-* **Linking**: the part of that code in files that link cleanly (daily link census).
+* **Rebuilt from source**: code rebuilding to the original game.dat's exact bytes, partly generated code or prebuilt libraries.
+* **Game code in C++**: the game's own code (no libraries) in C++.
+* **Linking**: the part of that code in files that link cleanly (link census).
 
 <details open>
 <summary><b>Progress over time and code map</b></summary>
