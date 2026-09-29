@@ -1,6 +1,7 @@
 // cl: /O1 /MD
 // ?rva005312BE@Rva005312BE@@QAEXXZ @ 0x005312BE (66B): __thiscall clears byte at +0x34 of each 0x44-sized entry.
 // ?rva00531300@Rva005312BE@@QAEXXZ @ 0x00531300 (66B): same shape sets byte to 1.
+// ?rva00531512@Rva005312BE@@QAEEHH@Z @ 0x00531512 (76B): bounded getter returns entry flag or 0.
 // Offsets 0x1BA38/0x1BA3C/0x1BA40 shared with Rva005315B0IntPairField in Disp32IntPairFieldGetters.cpp.
 // Callers at 0x002F960C 0x002FA743 0x002FB050 0x002FCA6F 0x002FD573. Owner unknown so honest address name.
 class Rva005312BEItem
@@ -15,6 +16,7 @@ class Rva005312BE
 public:
 	void rva005312BE();
 	void rva00531300();
+	unsigned char rva00531512(int a, int b);
 	char m_pad[0x1BA38];
 	Rva005312BEItem **m_ppItems;
 	int m_outer;
@@ -35,4 +37,14 @@ void Rva005312BE::rva00531300()
 		for (int j = 0; j < m_inner; ++j)
 			m_ppItems[i][j].m_cleared = 1;
 	}
+}
+unsigned char Rva005312BE::rva00531512(int a, int b)
+{
+	if (a < 0 || b < 0)
+		return 0;
+	int i = a / 16;
+	int j = b / 16;
+	if (i >= m_outer || j >= m_inner)
+		return 0;
+	return m_ppItems[i][j].m_cleared;
 }

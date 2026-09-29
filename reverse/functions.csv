@@ -41837,3 +41837,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CC774@@YAXPAXPAVMade002CC774@@HH@Z,,0x00509379,77,Code/GameEngine/Source/GameLogic/Object/Made002CC774Parse.cpp,matched,DamageField parser two tables
 ?q4Notify002CC7DE@@YAXPAXPAVMade002CC7DE@@HH@Z,,0x005095AE,77,Code/GameEngine/Source/GameLogic/Object/Made002CC7DEParse.cpp,matched,WeaponOCL parser two tables
 ?q4Notify002CC8A4@@YAXPAXPAVMade002CC8A4@@HH@Z,,0x00509DAB,77,Code/GameEngine/Source/GameLogic/Object/Made002CC8A4Parse.cpp,matched,field parser two tables
+?rva00531512@Rva005312BE@@QAEEHH@Z,,0x00531512,76,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,same class bounded getter callers at 0x002F5A88 plus 6
