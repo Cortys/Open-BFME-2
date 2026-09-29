@@ -41369,3 +41369,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00441E4DFaction@@YA_NPAXABVAsciiString@@@Z,,0x00441E4D,129,Code/GameEngine/Source/GameClient/GUI/Rva00441E4DFaction.cpp,matched,Faction prefix check via rowed find and caller 0x004426D1
 ?rva002E6551@Rva002E6551@@QAEXXZ,,0x002E6551,96,Code/GameEngine/Source/GameClient/Rva002E6551Clear.cpp,matched,chain clears 2c 30 plus 24 list
 ?rva0026F0F0@Rva0026F0F0@@QAEPAXPBX@Z,,0x0026F0F0,42,Code/GameEngine/Source/Common/System/Rva0026F0F0Find.cpp,matched,unlock bitmask list find 8 callers
+??1Rva0048C200Owner@@QAE@XZ,,0x002019E1,54,Code/GameEngine/Source/Common/Rva0048C200StringOwnerDtor.cpp,matched,dtor abuts ctor E1998 plus two releaseBuffer EH
