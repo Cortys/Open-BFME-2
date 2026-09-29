@@ -75,4 +75,8 @@ basic_filebuf<CharT, Traits> *basic_filebuf<CharT, Traits>::open(const char *nam
 template basic_filebuf<char, char_traits<char> > *
 basic_filebuf<char, char_traits<char> >::open(const char *, int);
 
+// 0x0001D870  36B  wide instantiation, _Filebuf_base at this+0x24.
+template basic_filebuf<wchar_t, char_traits<wchar_t> > *
+basic_filebuf<wchar_t, char_traits<wchar_t> >::open(const char *, int);
+
 }
