@@ -41299,3 +41299,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0052BCE7DestroyTagged@@YAXPAURva0052BCE7Elem@@0ABU__false_type@_STL@@@Z,,0x0052BCE7,29,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0xB8 caller 1
 ?rva005F0185@Rva005F0185@@QAEPBVImage@@H@Z,,0x005F0185,51,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,unlock image cache twin via same volatile recipe
 ?Rva005F01C7Get@@YAPBVImage@@H@Z,,0x005F01C7,15,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,chain from 0x005F0185 via same global
+??1Rva006F8460@@UAE@XZ,,0x006F8460,37,Code/GameEngine/Source/Common/Rva006F8460Dtor.cpp,matched,dtor vtable 0x008EC9CC member 0x70A840 pool free 0x14

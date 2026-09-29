@@ -2862,3 +2862,5 @@ FUN_004EE233	0x004EE233	45	blocked	vector allocate_and_copy BfmeE12 allocate vs 
 ?rva005E8044@Rva005E8044@@QAEPAXPAX0@Z	0x005E8044	51	partial	lea tag ebp+0xf vs retail ebp+0xb single dummy byte t=18 model=muse-05 score=0.98 stash=reverse/attempts/0x005e8044.cpp
 ??1Rva005E8005@@QAE@XZ	0x005E8005	63	blocked	EH dtor Forward plus free needs single-state EH with no base call t=15 model=muse-05
 ?Rva0040AD75BinarySearch@@YA_NPAH0ABH@Z	0x0040AD75	56	blocked	STL 4.6-style binary_search constructs less locally plus 5-arg lower_bound vs vendored 4.5.3 47-48B t=20 model=muse-05
+FUN_00340F7C	0x00340F7C	67	blocked	needs exact C-projects string plus TurretAI Waypoint layout t=5 model=muse-04
+?rva000B65FD@Rva000B65FD@@QAEHXZ	0x000B65FD	23	partial	eax-ecx-edx mirror base in edx vs eax 23B same size t=15 model=muse-04 score=0.91 stash=reverse/attempts/0x000b65fd.cpp
