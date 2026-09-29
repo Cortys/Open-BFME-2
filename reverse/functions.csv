@@ -41854,3 +41854,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003638BA@Rva003638BA@@QAE_NXZ,,0x003638BA,67,Code/GameEngine/Source/Common/Rva003638BAMethod.cpp,matched,unlock via rowed callers same this list proves
 ?q4Notify002CC64B@@YAXPAXPAVMade002CC64B@@HH@Z,,0x0050893A,77,Code/GameEngine/Source/GameLogic/Object/Made002CC64BParse.cpp,matched,AttributeModifier parser two tables
 ?rva00363AD7@Rva003638BA@@QAE_NXZ,,0x00363AD7,77,Code/GameEngine/Source/Common/Rva003638BAMethod.cpp,matched,chain via rowed valid plus TerrainLogic plus rowed get
+??$__uninitialized_copy@PAUBfmeNarrowRecord000BFDC7@@PAU1@@_STL@@YAPAUBfmeNarrowRecord000BFDC7@@PAU1@00ABU__false_type@0@@Z,,0x000C0B3A,38,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_bfdc7_fill.cpp,matched,copy via rowed Construct 0x000C0A9D incidental of fill TU
