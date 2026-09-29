@@ -41391,3 +41391,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0056ECDAPick@@YAXPAH0@Z,,0x0056ECDA,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,unlock esp-seed table pick
 ?rva002CFD61@Rva002CFD61@@QAEXPAURva002CFD61Node@@@Z,,0x002CFD61,53,Code/Libraries/Source/WWVegas/WWLib/Rva002CFD61Erase.cpp,matched,53B erase with string at +16 via rowed 0x48BA39 same shape as rowed 0x56CC3
 ?rva002CF21B@Rva002CF21B@@QAEPAXPAXHH@Z,,0x002CF21B,99,Code/GameEngine/Source/Common/Rva002CF21BGet.cpp,matched,manager slot 0x70 via global 0xDFE77C array at +154 Sleep spin via 0xDFF004
+?rva002C752F@Rva002C752F@@QAEXXZ,,0x002C752F,134,Code/GameEngine/Source/GameLogic/Object/WeaponSetRva002C752F.cpp,matched,six-slot clear via caller 0x0033A888 and WeaponSet neighbours

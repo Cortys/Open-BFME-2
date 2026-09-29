@@ -2903,3 +2903,5 @@ FUN_006BF0D6	0x002BF0D6	57	blocked	EH dtor with Unwind funclet needs donor class
 ?rva00532DF6@Rva00532DF6@@QAE_NXZ	0x00532DF6	227	blocked	hash table with lower bound needs donor t=5 model=muse-01
 ?Rva00532C75Add@@YAXXZ	0x00532C75	385	blocked	hash table insert needs donor t=5 model=muse-01
 ??1Rva0026F445@@UAE@XZ	0x0026F445	175	blocked	virtual dtor with manual scalar-delete loops plus voidptr vector needs UpgradeCenter vtable and node identity t=10 model=muse-05
+FUN_0022cac4	0x0022CAC4	63	blocked	same EH wall handler 0xb6f893 t=3 model=muse-spark
+FUN_0032be80	0x0032BE80	63	blocked	same EH wall handler 0xb7b9bc t=3 model=muse-spark
