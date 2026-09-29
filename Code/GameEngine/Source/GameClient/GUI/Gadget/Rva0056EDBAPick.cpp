@@ -32,3 +32,51 @@ void __cdecl Rva0056ECDAPick(int *out1, int *out2)
 	*out1 = g_Va00DD29CC[i];
 	*out2 = g_Va00DD29BC[i];
 }
+// ?rva0056EF65@Rva0056EF65@@QAEPAU1@PAX0@Z @0x0056EF65 141B chain from 0x0056ECDA
+struct Rva0056EF65
+{
+	int m_00;
+	int m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	Rva0056EF65 *rva0056EF65(void *a1, void *a2);
+};
+Rva0056EF65 *Rva0056EF65::rva0056EF65(void *a1, void *a2)
+{
+	int p;
+	int q;
+	Rva0056ECDAPick(&p, &q);
+	m_00 = p;
+	m_04 = 0x18245AC1;
+	m_08 = 0x18245AC5;
+	m_0c = 0x0C24180A;
+	m_10 = *(int *)a1;
+	m_14 = *(int *)a2;
+	int b = q;
+	int e = b;
+	e *= b;
+	e ^= 0x18245AC1;
+	m_04 = e;
+	e *= b;
+	e ^= 0x18245AC5;
+	m_08 = e;
+	e *= b;
+	e ^= 0x0C24180A;
+	m_0c = e;
+	e *= b;
+	m_10 ^= e;
+	e = m_10;
+	e *= b;
+	m_14 ^= e;
+	e = m_14;
+	e *= b;
+	m_18 ^= e;
+	e = m_18;
+	e *= b;
+	m_1c ^= e;
+	return this;
+}

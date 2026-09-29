@@ -41402,3 +41402,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0033C3F3@@QAE@XZ,,0x0033C3F3,63,Code/GameEngine/Source/Common/Rva0033C3F3Free.cpp,matched,scalar dtor range Wrap then inlined member free via 0x30830 under EHs
 ?rva0041A00F@Rva0041A00F@@QAEXXZ,,0x0041A00F,56,Code/GameEngine/Source/Common/Rva0041A00FMethod.cpp,matched,clears 0x80 stops thread 0x74 slot0 delete chain 0x41A662
 ??0Rva004D9A44@@QAE@ABVRva0036CA00Str@@ABVRva004D964E@@@Z,,0x004D9A44,30,Code/GameEngine/Source/Common/Rva004D9A44Ctor.cpp,matched,chain two-member ctor via rowed 0x000A8C7C and 0x004D964E
+?rva0056EF65@Rva0056EF65@@QAEPAU1@PAX0@Z,,0x0056EF65,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056ECDA thiscall init mix
