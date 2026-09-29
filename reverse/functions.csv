@@ -42009,3 +42009,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001DBCC0@Rva001DBC77@@QAEPAXI@Z,,0x001DBCC0,28,Code/GameEngine/Source/GameLogic/Object/Rva001DBCC0Delete.cpp,matched,chain of landed 0x001DBC77 plus rowed delete
 ??1Rva001DB60F@@UAE@XZ,,0x001DB60F,91,Code/GameEngine/Source/Common/Rva001DB60FDtor.cpp,matched,vtable plus MetaMapRec list clear plus rowed base dtor
 ??1Rva001EC349@@QAE@XZ,,0x001EC349,108,Code/Libraries/Source/WWVegas/WWLib/Rva001EC349Dtor.cpp,matched,dtor vector plus ref plus strings via rowed dtors
+?clear@?$_Rb_tree@UBfmeStringRecord0021A940@@U1@U?$_Identity@UBfmeStringRecord0021A940@@@_STL@@U?$less@UBfmeStringRecord0021A940@@@3@V?$allocator@UBfmeStringRecord0021A940@@@3@@_STL@@QAEXXZ,,0x0021CFD1,41,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme0021A940_erase.cpp,matched,chain STL clear via rowed erase 0x0021C3B2 41B shape
