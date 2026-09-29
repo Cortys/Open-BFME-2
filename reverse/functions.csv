@@ -42179,3 +42179,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001FD234@PlayerTemplate@@QBEHXZ,,0x001FD234,11,Code/GameEngine/Source/Common/PlayerTemplateImageGetters.cpp,matched,PlayerTemplate m18 lookup via 0x33A3F4
 ?Rva00412DD8Get@@YA?AVAsciiString@@PBD@Z,,0x00412DD8,158,Code/GameEngine/Source/Common/BfmePathRva00412DD8.cpp,matched,slash to dot via 32k buf caller 0x0041196E empty 0xBBAC1C
 ?Rva00412E76Get@@YA?AVAsciiString@@PBD@Z,,0x00412E76,158,Code/GameEngine/Source/Common/BfmePathRva00412DD8.cpp,matched,dot to slash via 32k buf sibling 0x00412DD8 empty 0xBBAC1C
+??0Rva004104AB@@QAE@_NPBD@Z,,0x004104AB,30,Code/GameEngine/Source/Common/Rva004104ABCtor.cpp,matched,bool plus path via 0x00412E76 callers 0x00411803 0x00411861
