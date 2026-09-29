@@ -41995,3 +41995,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva005B77F1@@UAE@XZ,,0x005B77F1,151,Code/GameEngine/Source/Common/Rva005B77F1Dtor.cpp,matched,chain from 0x005B72E7 plus deleting-dtor 0x005B7888
 ?rva005505E3@Rva005505E3@@QAEXXZ,,0x005505E3,29,Code/GameEngine/Source/Common/Rva005505E3Lock.cpp,matched,scoped criticalsection lock at plus0xA0 via rowed lock
 ?rva00550041@Rva0055011A@@QAEXXZ,,0x00550041,66,Code/Libraries/Source/WWVegas/WWLib/Rva0055011A00550041.cpp,matched,slot10 lock plus map clear via rowed callees
+??_GRva005B72E7@@QAEPAXI@Z,,0x005B7352,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-5B7352.cpp,matched,chain from 0x005B72E7 plus flag delete
