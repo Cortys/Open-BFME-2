@@ -144,6 +144,17 @@ public:
 	char m_body[16];
 };
 
+// Twenty-byte string record at 0x00219A68: same 38-byte copy shape,
+// striding 0x14 per element through its own rowed _Construct at 0x0021A98A.
+// Layout matches the 0x00219A68 copy ctor (word plus two AsciiStrings plus two words).
+struct BfmeStringRecord00219A68
+{
+public:
+	BfmeStringRecord00219A68();
+	BfmeStringRecord00219A68(const BfmeStringRecord00219A68 &other);
+	char m_body[20];
+};
+
 namespace _STL {
 template<> void _Construct<TreeKey00242F5E, TreeKey00242F5E>(TreeKey00242F5E *, const TreeKey00242F5E &);
 template<> void _Construct<CopyNoCasePair, CopyNoCasePair>(CopyNoCasePair *, const CopyNoCasePair &);
@@ -159,6 +170,7 @@ template<> void _Construct<BfmeStringRecord005F93E3, BfmeStringRecord005F93E3>(B
 template<> void _Construct<RvaSmartPtr12, RvaSmartPtr12>(RvaSmartPtr12 *, const RvaSmartPtr12 &);
 template<> void _Construct<BfmeStringRecord005EC43C, BfmeStringRecord005EC43C>(BfmeStringRecord005EC43C *, const BfmeStringRecord005EC43C &);
 template<> void _Construct<BfmeStringRecord002199C8, BfmeStringRecord002199C8>(BfmeStringRecord002199C8 *, const BfmeStringRecord002199C8 &);
+template<> void _Construct<BfmeStringRecord00219A68, BfmeStringRecord00219A68>(BfmeStringRecord00219A68 *, const BfmeStringRecord00219A68 &);
 }
 
 template _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> >::vector(const _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> > &);
@@ -175,3 +187,4 @@ template _STL::vector<BfmeStringRecord005F93E3, _STL::allocator<BfmeStringRecord
 template _STL::vector<RvaSmartPtr12, _STL::allocator<RvaSmartPtr12> >::vector(const _STL::vector<RvaSmartPtr12, _STL::allocator<RvaSmartPtr12> > &);
 template _STL::vector<BfmeStringRecord005EC43C, _STL::allocator<BfmeStringRecord005EC43C> >::vector(const _STL::vector<BfmeStringRecord005EC43C, _STL::allocator<BfmeStringRecord005EC43C> > &);
 template _STL::vector<BfmeStringRecord002199C8, _STL::allocator<BfmeStringRecord002199C8> >::vector(const _STL::vector<BfmeStringRecord002199C8, _STL::allocator<BfmeStringRecord002199C8> > &);
+template _STL::vector<BfmeStringRecord00219A68, _STL::allocator<BfmeStringRecord00219A68> >::vector(const _STL::vector<BfmeStringRecord00219A68, _STL::allocator<BfmeStringRecord00219A68> > &);
