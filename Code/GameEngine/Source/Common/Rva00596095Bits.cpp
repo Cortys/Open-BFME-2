@@ -68,3 +68,19 @@ Int __stdcall Rva005964ECGet(void *arg)
 	}
 	return 0;
 }
+// ?Rva00596446Get@@YGHPAX@Z @0x00596446 44B
+// Bit-test predicate returning Int: loads inner at arg+4, requires
+// [0x10E]&0x44==0 and [0x108]&0x80!=0 and [0x120]&0x10!=0 for 1, else 0.
+// Evidence: mov eax[esp+4] mov eax[eax+4] test chain; callers at 0x00596476
+// and 0x00596495; __stdcall ret 4 with xor+inc.
+Int __stdcall Rva00596446Get(void *arg)
+{
+	void *inner = *(void **)((char *)arg + 4);
+	if ((((unsigned char *)inner)[0x10E] & 0x44) == 0 &&
+		(((unsigned char *)inner)[0x108] & 0x80) != 0 &&
+		(((unsigned char *)inner)[0x120] & 0x10) != 0)
+	{
+		return 1;
+	}
+	return 0;
+}
