@@ -73,6 +73,7 @@ public:
     int rva0021A041(unsigned int o, unsigned int i);
     int rva0021A06C(unsigned int o, unsigned int i);
     int rva0021A097(unsigned int o, unsigned int i);
+    void *rva0021A1B6(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -292,6 +293,18 @@ int Rva00219B9E::rva0021A097(unsigned int o, unsigned int i)
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;
         return ((Rva00219B9E *)&base[o])->rva00219D24(i);
+    }
+    return 0;
+}
+// ?rva0021A1B6@Rva00219B9E@@QAEPAXII@Z @0x0021A1B6 43B
+// Twin returning the inner element itself via rowed 0x00219B9E; null on miss.
+// Callers 0x0021D58E/0x00409A93.
+void *Rva00219B9E::rva0021A1B6(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219B9E(i);
     }
     return 0;
 }
