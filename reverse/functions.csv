@@ -41527,3 +41527,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0023D377@@QAE@XZ,,0x0023D377,8,Code/GameEngine/Source/Common/Rva0023D377Dtor.cpp,matched,dtor tail-jmp to rowed Rva00438FC5 dtor
 ?rva000433AC@W3DDisplay@@QAEXI@Z,,0x000433AC,108,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva000433AC.cpp,matched,W3DDisplay resolution apply via setWidth plus dims plus range
 ?Rva0004300DGet@@YA_JXZ,,0x0004300D,23,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva0004300D.cpp,matched,perf counter wrapper via IAT plus tick return
+?Rva00043024Get@@YA_JXZ,,0x00043024,23,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva0004300D.cpp,matched,perf frequency wrapper via IAT plus rate return
