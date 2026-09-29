@@ -41808,3 +41808,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005BA36D@Rva005BA36D@@QAEPAVRva0054D8D8@@XZ,,0x005BA36D,50,Code/GameEngine/Source/Common/Rva005BA36DGet.cpp,matched,combobox selected to itemdata to finder via global
 ?rva006E3BF0@Rva006E3BF0@@QAEXXZ,,0x006E3BF0,74,Code/Libraries/Source/Apt/Rva006E3BF0.cpp,matched,unlock lane Apt pool teardown via pinned freeBlock
 ??_GRva0054D974@@QAEPAXI@Z,,0x00381DE2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-381DE2.cpp,matched,scalar deleting dtor calls rowed dtor 0x0054D974
+??4Rva00381E56@@QAEAAV0@ABV0@@Z,,0x00381E56,69,Code/GameEngine/Source/Common/Rva00381E56Assign.cpp,matched,copy assign AsciiString Unicode ints returns this
