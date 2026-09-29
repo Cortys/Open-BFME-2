@@ -41593,3 +41593,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00220CD4@@UAE@XZ,,0x00220CD4,74,Code/GameEngine/Source/GameLogic/Object/Rva00220CD4Dtor.cpp,matched,Virtual dtor via holder member and base chain
 ??_GRva00220CD4@@UAEPAXI@Z,,0x00220F71,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10.cpp,matched,Deleting dtor slot 0 vtable 0x007E6A84 via rowed dtor
 ?countInverseIntersection@?$BitFlags@$0HF@@@QBEHABV1@@Z,,0x0033AE53,89,Code/GameEngine/Source/Common/System/BitFlags117CountInverseIntersection.cpp,matched,ModelCondition findBestInfoSlow caller plus 4-word SWAR shape
+?rva0033AFBB@Rva0033AFBB@@QAE_NPBDPA_N1@Z,,0x0033AFBB,308,Code/GameEngine/Source/Common/System/INI_VeterancyLevelToken.cpp,matched,VeterancyLevel single-token worker via scanIndex plus filler-throw
