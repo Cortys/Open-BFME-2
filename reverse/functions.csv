@@ -41817,3 +41817,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva002CEE1B@@UAE@XZ,,0x002CEE1B,72,Code/GameEngine/Source/Common/Rva002CEE1BDtor.cpp,matched,Rva002CEE1B dtor via vtable plus ehvec plus base
 ??_GRva002CEE1B@@UAEPAXI@Z,,0x002CEEE6,28,Code/GameEngine/Source/Common/Rva002CEE1BDtor.cpp,matched,Rva002CEE1B deleting dtor via base delete
 ?rva003551EA@Rva0035516C@@QBEXW4NameKeyType@@@Z,,0x003551EA,23,Code/GameEngine/Source/GameLogic/Object/Rva0035516CArmorFind.cpp,matched,chain via rowed find plus rowed pop same this caller proves
+??_GBfmeVectorRecord001B4A39@@QAEPAXI@Z,,0x001B4B40,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-1B4B40.cpp,matched,scalar deleting dtor calls rowed dtor 0x001B4ACC

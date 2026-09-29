@@ -3065,3 +3065,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ??4?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x005BAB0B	115	partial	115B exact size 54 insns ebx edi swap plus add ecx 8 scheduling t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x005bab0b.cpp
 ?rva0005A3FA@Rva0005A3FA@@QAEXABVAsciiString@@M@Z	0x0005A3FA	87	partial	89/87B 27 vs 25 insns; 0 mem 0 reg; extra float spill pair plus integer mov vs movss t=20 model=muse-05 score=0.92 stash=reverse/attempts/0x0005a3fa.cpp
 ?rva003815AB@Rva003815AB@@QAE@XZ	0x003815AB	109	blocked	vector plus virtual functor with EH needs donor t=5 model=muse-10
+?clear@?$list@UBfmeVectorRecord001B4A39@@V?$allocator@UBfmeVectorRecord001B4A39@@@_STL@@@_STL@@QAEXXZ	0x001B4C7A	49	blocked	list Record clear needs default ctor for whole-class instantiation single-member syntax fails t=10 model=muse-10
