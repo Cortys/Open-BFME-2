@@ -2989,3 +2989,4 @@ FUN_004bc0db	0x000BC0DB	88	blocked	list copy 88B matches list<int> shape but nam
 FUN_004b92fb	0x000B92FB	41	blocked	twin clear 41B calling free 0xB646B plus sentinel reset; element and owner unprovable; needs list-node vs tree-node layout evidence; twin 0xB9324 calls 0xB6498 t=10 model=muse-12
 ?rva003F0F13@Rva003F0F13@@QAEXPAURva003F0F13Elem@@@Z	0x003F0F13	53	partial	sar-vs-test size check 6 variants vector-size gives test-fffffff8 not sar3 copy and zero exact t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x003f0f13.cpp
 ?rva00581EA7@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z	0x00581EA7	217	blocked	EH AsciiString getMap plus realMap plus CRC prefix needs donor tmp early destroy plus stack index plus slot39 t=12 model=muse-08
+FUN_00445127	0x00045127	236	blocked	eax ecx register inputs plus BMP file IO with IAT LocalAlloc t=6 model=muse-01
