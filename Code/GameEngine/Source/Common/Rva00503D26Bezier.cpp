@@ -11,3 +11,15 @@ float __cdecl Rva00503D26Evaluate(float a, float b, float c, float t)
 	s = s * u + c * t * t;
 	return s;
 }
+extern float g_Va007C26F0;
+extern float g_Va00863BF8;
+struct Rva00503DEB
+{
+	char m_pad[0x10];
+	float m_10;
+	float rva00503DEB();
+};
+float Rva00503DEB::rva00503DEB()
+{
+	return Rva00503D26Evaluate(g_Va007C26F0, g_Va00863BF8, 1.0f, m_10);
+}
