@@ -2956,3 +2956,4 @@ FUN_009d5491	0x005D5491	183	blocked	vector _M_insert_overflow NO_EXCEPTIONS prob
 ?rva00438268@Rva002542F3Member@@QBEHABV1@@Z	0x00438268	148	partial	first cmp je-vs-jne shared-fail plus tail neg-sbb-vs-test-je-xor-inc; self-compare at +a8 proven t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x00438268.cpp
 ??0BfmeStrVM0@@QAE@XZ	0x0025D489	509	blocked	ctor needs unclaimed element ctor 0x25C07D plus stale-ecx releaseBuffer shape plus unknown float const 0x7BB8D8 t=8 model=muse-spark
 ??0Rva005E1E0F@@QAE@PAXPAURva005E1E0FArg2@@@Z	0x005E1E0F	114	blocked	ctor double vtable stores need virtual-base modeling EH3 vs EH1 layout mismatch t=12 model=muse-04
+?rva0033BFA6@Rva0033BFA6@@QAE?AURva0033BFA6Iter@@PAURva0033BFA6Node@@0ABURva0033BFA6Key@@0@Z	0x0033BFA6	149	partial	145of149B missing 2x mov ecx edi before stdcall Create t=25 model=muse-10 score=0.97 stash=reverse/attempts/0x0033bfa6.cpp

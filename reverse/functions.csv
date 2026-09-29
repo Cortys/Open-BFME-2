@@ -41538,3 +41538,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0054FC14@Rva0054FC14@@QAEXXZ,,0x0054FC14,70,Code/GameEngine/Source/Common/Rva0054FC14Cleanup.cpp,matched,clear lock plus stop virtual-destroy delete 10 threads caller 0x0054FFC3
 ??_GRva0023D377@@QAEPAXI@Z,,0x0023DACC,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-07-23DACC.cpp,matched,chain from 0x0023D377 landing QAE deleting dtor
 ?rva00043511@Rva00043511@@QAEXXZ,,0x00043511,43,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00043511Init.cpp,matched,rowed setFromInt callee plus two white colors plus ints
+??4Rva002D0136@@QAEAAU0@ABU0@@Z,,0x002D0136,115,Code/Libraries/Source/WWVegas/WWLib/Rva002D0136Assign.cpp,matched,chain tree assign via rowed clear 0x002CF7B5 and rowed copy 0x002CFC7B
