@@ -41140,3 +41140,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_M_allocate_and_copy@PAVRva000BB4AC@@@?$vector@VRva000BB4AC@@V?$allocator@VRva000BB4AC@@@_STL@@@_STL@@IAEPAVRva000BB4AC@@IPAV2@0@Z,,0x000BC6D1,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb4ac_allocate_copy.cpp,matched,chain from 0x000BBB12 plus caller 0x000C21CE
 ?rva0025EB36@Rva0025EB36@@QAEXXZ,,0x0025EB36,13,Code/GameEngine/Source/GameClient/ViewRva0025EB36.cpp,matched,thiscall copies 48 to 28 and 4C to 2C caller 0x8D256
 ??0Condition@@QAE@XZ,,0x003B26DF,48,Code/GameEngine/Source/GameLogic/ScriptEngine/ConditionCtor.cpp,matched,Condition default ctor vtable 0x81F3F8 parms memset; /Oi for rep stosd
+??$__uninitialized_fill_n@PAVRva00585B16@@IV1@@_STL@@YAPAVRva00585B16@@PAV1@IABV1@ABU__false_type@0@@Z,,0x005859F3,37,Code/Libraries/Source/WWVegas/WWLib/Rva005859F3Fill.cpp,matched,fill_n loop calls rowed Construct 0x5859C6 advances 0x54
