@@ -41744,3 +41744,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_fill_n@PAURva00423A4A@@IU1@@_STL@@YAPAURva00423A4A@@PAU1@IABU1@@Z,,0x004246EE,27,Code/Libraries/Source/WWVegas/WWLib/Rva00423A4AFillN.cpp,matched,chain filln dispatch via rowed false type
 ?Rva003E40AFGet@@YGHH@Z,,0x003E40AF,35,Code/GameEngine/Source/Common/Rva003E40AFGet.cpp,matched,unlock switch 0 1 2 to 1 2 4 else minus 1
 ?rva00052015@Rva00699180Owner@@QAEXH@Z,,0x00052015,23,Code/GameEngine/Source/Common/Rva00699180Volume_Refresh.cpp,matched,column refresh loop 0-5 via rowed refreshPair
+?rva00271547@Rva002716Holder@@QAEXXZ,,0x00271547,186,Code/GameEngine/Source/Common/Rva00271547.cpp,matched,holder 0x14c array plus ThePlayerList local plus InGameUI slot 0x10C via caller 0x00271601
