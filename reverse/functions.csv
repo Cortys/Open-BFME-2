@@ -41271,3 +41271,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0052BF4DDestroyTagged@@YAXPAURva0052BF4DElem@@0ABU__false_type@_STL@@@Z,,0x0052BF4D,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x28 caller 1
 ?Rva0052BF67DestroyTagged@@YAXPAURva0052BF67Elem@@0ABU__false_type@_STL@@@Z,,0x0052BF67,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x20 caller 1
 ?Rva0052BF9BDestroyTagged@@YAXPAURva0052BF9BElem@@0ABU__false_type@_STL@@@Z,,0x0052BF9B,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x14 caller 1
+?Rva00440B1BPartition@@YAPAPAXPAPAX0PAXVRva0043FE9A@@@Z,,0x00440B1B,73,Code/GameEngine/Source/GameClient/GUI/Rva00440B1BPartition.cpp,matched,unguarded partition with Rva0043FE9A comp caller 0x004434B5
