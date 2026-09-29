@@ -109,3 +109,8 @@ const Image *Rva005F0185::rva005F0185(int index)
 	*slot = TheMappedImageCollection->findImageByName(name);
 	return *slot;
 }
+
+const Image *Rva005F01C7Get(int index)
+{
+	return ((Rva005F0185 *)&Rva00A06858)->rva005F0185(index);
+}
