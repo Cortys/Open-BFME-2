@@ -3492,3 +3492,4 @@ FUN_0080D868	0x0040D868	68	blocked	STL range ctor mixes AsciiString get_allocato
 ?rva004C0DF3@Rva004C0DF3@@QAEMXZ	0x004C0DF3	49	blocked	same float-zero wall as 0x004C10F0 stash t=2 model=muse-spark
 ?allocateBibBuffers@W3DBibBuffer@@IAEXXZ	0x000D3C9F	150	blocked	needs header retype: m_vertexBib to BfmeDynamicNativeVB plus m_indexBibSize word to dword plus sizeof 0x20 t=15 model=muse-spark
 ?rva00201A84@Rva00201A33@@QAEPAXV?$StringBase@D@@@Z	0x00201A84	79	partial	mov ecx-esp vs mov ebp-10-esp order swapped; else exact t=15 model=muse-spark score=0.95 stash=reverse/attempts/0x00201a84.cpp
+FUN_0096DA0F	0x0056DA0F	41	blocked	pure cmp chain on entry eax with no stack or ecx load; register arg convention needs caller context over 200B t=5 model=muse-05
