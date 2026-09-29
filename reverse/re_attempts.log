@@ -2723,3 +2723,4 @@ FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same fa
 ?Rva005F1773Get@@YAHXZ	0x005F1773	28	blocked	fastcall edx unclear t=8 model=muse-06
 ?rva003C05DE@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C05DE	79	partial	loop check cmp-mem plus body reload vs retail mov-ecx test reuse; +2B 2 regions; while for assign-cond truth done-bang done-eq all same; sibling face-waypoint edi-homes via bigger body; t=20 model=muse-03 score=0.97 stash=reverse/attempts/0x003c05de.cpp
 ?rva005E755E@Rva005E755E@@QAEHH@Z	0x005E755E	36	blocked	frame plus dead local and kept under Oy- only with volatile extra reads t=18 model=muse-02
+?rva00108AD8@Rva00108AD8@@QAEXXZ	0x00108AD8	95	partial	same size 95B same insns 28 only vptr-Table store order swapped Table-first vs vptr-first tried O1 Os G7 archSSE EHsc MI static-cast plus float-ptr t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x00108ad8.cpp
