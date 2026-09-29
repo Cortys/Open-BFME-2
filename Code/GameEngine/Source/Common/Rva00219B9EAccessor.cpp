@@ -67,6 +67,7 @@ public:
     void *rva0021AF7E(unsigned int index);
     void *rva0021AFEA(unsigned int index);
     void *rva0021B1B4(unsigned int o, unsigned int i);
+    void *rva0021B2A2(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -215,6 +216,19 @@ void *Rva00219B9E::rva0021B1B4(unsigned int o, unsigned int i)
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;
         return ((Rva00219B9E *)&base[o])->rva0021AE56(i);
+    }
+    return &err;
+}
+// ?rva0021B2A2@Rva00219B9E@@QAEPAXII@Z @0x0021B2A2 122B
+// Twin of 0x0021B1B4 resolving through the +4 accessor 0x0021AEB9;
+// callers 0x0021CC0C 0x005B561A.
+void *Rva00219B9E::rva0021B2A2(unsigned int o, unsigned int i)
+{
+    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva0021AEB9(i);
     }
     return &err;
 }
