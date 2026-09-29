@@ -249,3 +249,9 @@ template class SubsystemSlot<VictorySystem>;
 template class SubsystemSlot<ActionManager>;
 template class SubsystemSlot<GameStateMap>;
 template class SubsystemSlot<GameState>;
+
+// Slots named from the matched initSubsystem<T> that installs their vtable
+// (the inlined SubsystemSlot<T> ctor there stores it into the new slot):
+// ParticleSystemManager 0xbe72d0 by 0x0022A3EC, Radar 0xbe7384 by 0x0022B888.
+template class SubsystemSlot<ParticleSystemManager>;
+template class SubsystemSlot<Radar>;
