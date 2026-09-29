@@ -411,3 +411,15 @@ template class SubsystemSlot<Rva0022C142Subsystem>;
 class Rva0022C1B7Subsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022C1B7Subsystem>(Rva0022C1B7Subsystem *&, AsciiString, Rva0022C1B7Subsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022C1B7Subsystem>;
+// Rva0022C22CSubsystem: site 0x0022FC76 registers "TheScoredKillEvaAnnouncerController" (global 0x00A03074); slot vtable 0xbe73d8.
+class Rva0022C22CSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022C22CSubsystem>(Rva0022C22CSubsystem *&, AsciiString, Rva0022C22CSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022C22CSubsystem>;
+// Rva0022C2A1Subsystem: site 0x0022FCBD registers "TheLivingWorldAutoResolveReinforcementScheduleStore" (global 0x00A03064); slot vtable 0xbe73dc.
+class Rva0022C2A1Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022C2A1Subsystem>(Rva0022C2A1Subsystem *&, AsciiString, Rva0022C2A1Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022C2A1Subsystem>;
+// Rva0022C316Subsystem: site 0x0022FD03 registers "TheLivingWorldAutoResolveResourceBonusScheduleStore" (global 0x00A0306C); slot vtable 0xbe73e0.
+class Rva0022C316Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022C316Subsystem>(Rva0022C316Subsystem *&, AsciiString, Rva0022C316Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022C316Subsystem>;
