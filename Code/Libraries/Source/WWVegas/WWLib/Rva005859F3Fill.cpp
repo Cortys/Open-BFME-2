@@ -26,3 +26,9 @@ template Rva00585B16 *_STL::__uninitialized_fill_n<Rva00585B16 *,
 	unsigned int, Rva00585B16>(
 	Rva00585B16 *first, unsigned int n, const Rva00585B16 &x,
 	const _STL::__false_type &);
+
+Rva00585B16 *Rva00585D06Fill(Rva00585B16 *first, unsigned int n, const Rva00585B16 &x)
+{
+	_STL::__false_type tag;
+	return _STL::__uninitialized_fill_n(first, n, x, tag);
+}
