@@ -42688,3 +42688,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0028FB6F@Object@@QAEXPAX@Z,,0x0028FB6F,79,Code/GameEngine/Source/GameLogic/Object/Object_Rva0028FB6F.cpp,matched,Object helper mask via slot44 plus status clear
 ?bfmeDropVGO@@YAXPAX@Z,,0x006D0440,32,Code/GameEngine/Source/Common/BfmeDropVGO.cpp,matched,leaf LINK BONUS drop via teardown and pool freeBlock
 ?Rva0054A0D8Insert@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@UBfmeE8@@UComp0054A0D8@@@Z,,0x0054A0D8,82,Code/Libraries/Source/WWVegas/WWLib/Rva0054A0D8Insert.cpp,matched,deque insertion shift via rowed decrement and Cmp twin plus callers 0x0054A591 0x0054AF57
+?rva0037E3D9@Rva0037E270@@QAEXABVAsciiString@@@Z,,0x0037E3D9,72,Code/GameEngine/Source/Common/Rva0037E270Lookup.cpp,matched,update from AsciiString with def lookup
