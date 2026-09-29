@@ -41905,3 +41905,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005095FB@Made002CC7DE@@UAEXXZ,,0x005095FB,48,Code/GameEngine/Source/GameLogic/Object/Made002CC7DEResolve.cpp,matched,slot 8 of 00864588 base 00507877 OCL 012C via 00BBAC1C store 00DFDCCC find 001F07B8
 ?rva00272DBB@Drawable@@QAEXPAVObject@@@Z,,0x00272DBB,51,Code/GameEngine/Source/GameClient/Drawable_rva00272DBB.cpp,matched,Drawable guarded 0x14C walk via isKindOf 0x45 to slot 0xF4
 ?rva00272A02@Drawable@@QAEX_N@Z,,0x00272A02,54,Code/GameEngine/Source/GameClient/Drawable_rva00272A02.cpp,matched,Drawable flag 0x114 bit2 plus 0x14C walk to slot 0x30
+?rva00535F72@UserPreferences@@QAEXH@Z,,0x00535F72,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences OverallWinStreak via local string slot2C

@@ -27,6 +27,9 @@
 // ?rva00535EE1@UserPreferences@@QAEXVAsciiString@@H@Z @0x00535EE1 71B
 // UserPreferences WorstLossStreak-void path: append WorstLossStreak slot 0x2C with (arg, x) void ret 8.
 // Evidence: concat WorstLossStreak 0x00868EB4 slot 0x2C releaseBuffer gap same TU unlock.
+// ?rva00535F72@UserPreferences@@QAEXH@Z @0x00535F72 72B
+// UserPreferences OverallWinStreak-void path: local AsciiString OverallWinStreak slot 0x2C with (tmp, x) void ret 4.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x2C releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -36,6 +39,7 @@ public:
 private:
 	StringBase() : m_data(0) {}
 	StringBase(const StringBase<T> &that);
+	StringBase(const char *s);
 	void releaseBuffer();
 	struct Header
 	{
@@ -52,6 +56,7 @@ class AsciiString
 public:
 	AsciiString() {}
 	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
+	AsciiString(const char *s) : m_data(s) {}
 	~AsciiString() { m_data.releaseBuffer(); }
 	void concat(const char *s) { m_data.concat(s); }
 private:
@@ -81,6 +86,7 @@ public:
 	void rva00535DBF(AsciiString arg, int x);
 	void rva00535E50(AsciiString arg, int x);
 	void rva00535EE1(AsciiString arg, int x);
+	void rva00535F72(int x);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -130,4 +136,10 @@ void UserPreferences::rva00535EE1(AsciiString arg, int x)
 {
 	arg.concat("WorstLossStreak");
 	v11(arg, x);
+}
+
+void UserPreferences::rva00535F72(int x)
+{
+	AsciiString tmp("OverallWinStreak");
+	v11(tmp, x);
 }
