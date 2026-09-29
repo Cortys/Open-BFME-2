@@ -97,6 +97,7 @@ class Rva002716Holder
 {
 public:
 	void rva00271547();
+	void rva00271601(unsigned char val);
 public:
 	unsigned char m_preFC[0xFC];
 	Object *m_objFC;
@@ -139,4 +140,12 @@ void Rva002716Holder::rva00271547()
 		(*pp)->apply(flag);
 		++pp;
 	}
+}
+
+void Rva002716Holder::rva00271601(unsigned char val)
+{
+	if (val == m_43D)
+		return;
+	m_43D = val;
+	rva00271547();
 }
