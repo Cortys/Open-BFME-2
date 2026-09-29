@@ -2884,3 +2884,4 @@ FUN_0052cd03	0x0052CD03	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-
 ?Rva000C99F9Destroy@@YAXPAX0@Z	0x000C99F9	25	blocked	RefCountPtr TextureClass destroy range needs WW3D headers t=8 model=muse-05
 ?rva000E01B0@Rva000E01B0@@QAEPAXPBURva000E007DPair@@@Z	0x000E01B0	68	blocked	hash find needs this-plus1 ecx setup plus uchar al test vs int eax t=15 model=muse-spark
 ?rva000E0298@Rva000E0298@@QAEHXZ	0x000E0298	138	blocked	same wall as E01B0 this-plus1 ecx plus uchar al test needs callee twin t=5 model=muse-spark
+?rva004419FA@Rva004419FA@@QAEXXZ	0x004419FA	176	blocked	complex vector-bool plus MultiplayerSettings lazy-count needs full layout t=12 model=muse-spark
