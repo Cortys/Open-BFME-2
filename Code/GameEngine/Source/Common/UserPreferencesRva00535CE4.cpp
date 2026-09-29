@@ -18,6 +18,9 @@
 // ?rva00535D2E@UserPreferences@@QAEXVAsciiString@@H@Z @0x00535D2E 71B
 // UserPreferences WinStreak-void path: append WinStreak slot 0x2C with (arg, x) void ret 8.
 // Evidence: concat WinStreak 0x00868E8C slot 0x2C releaseBuffer gap same TU unlock.
+// ?rva00535DBF@UserPreferences@@QAEXVAsciiString@@H@Z @0x00535DBF 71B
+// UserPreferences LossStreak-void path: append LossStreak slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat LossStreak 0x00868E98 slot 0x2C releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -69,6 +72,7 @@ public:
 	void rva00535BAF(AsciiString arg, int x);
 	void rva00535C9D(AsciiString arg, int x);
 	void rva00535D2E(AsciiString arg, int x);
+	void rva00535DBF(AsciiString arg, int x);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -99,5 +103,11 @@ void UserPreferences::rva00535C9D(AsciiString arg, int x)
 void UserPreferences::rva00535D2E(AsciiString arg, int x)
 {
 	arg.concat("WinStreak");
+	v11(arg, x);
+}
+
+void UserPreferences::rva00535DBF(AsciiString arg, int x)
+{
+	arg.concat("LossStreak");
 	v11(arg, x);
 }
