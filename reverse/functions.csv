@@ -41718,3 +41718,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__sort_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z,,0x004247A9,58,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain sort heap via rowed pop heap
 ?Rva001DE906Copy@@YAPAVRva001DE727@@PAV1@00@Z,,0x001DE906,50,Code/Libraries/Source/WWVegas/WWLib/Rva001DE906Copy.cpp,matched,chain array copy via rowed assign
 ??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
+?Rva003F24D6CopyBackward@@YAXPAD00@Z,,0x003F24D6,29,Code/GameEngine/Source/Common/System/Rva003F24D6CopyBackward.cpp,matched,wrapper of rowed copy-backward 0x003F1F38 with extra local-plus-0 args caller 0x003F365D
