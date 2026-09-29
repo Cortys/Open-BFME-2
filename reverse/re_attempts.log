@@ -2996,3 +2996,6 @@ FUN_00445127	0x00045127	236	blocked	eax ecx register inputs plus BMP file IO wit
 FUN_00639CC9	0x00239CC9	57	blocked	hashtable clear plus free needs explicit dtor instantiation custom holder 24B no-EH vs 57B EH dtor 64B extra member call t=12 model=muse-03
 ?rva002728C5@Drawable@@QAEXMM@Z	0x002728C5	71	partial	head in ecx plus vtable in eax missing mov ecx eax; SSE half-store matches t=25 model=muse-07 score=0.97 stash=reverse/attempts/0x002728c5.cpp
 FUN_007f3277	0x003F3277	183	blocked	STL vector12 insert with 5 callees needs donor signature t=10 model=muse-07
+?doFXPos@RayEffectFXNugget@@UBEXPBUCoord3D@@PBVMatrix3D@@M0@Z	0x001E022D	212	blocked	register wall esi-vs-ebx plus frame 4B short donor-style struct-copy vs direct t=20 model=muse-11
+?Rva002EBD99Apply@@YA_NPAXPBX@Z	0x002EBD99	187	blocked	complex recursive tint hierarchy with child walk at +0x250 plus virtual slot 0x118 plus self-call; outer caller 0x002F1180 666B exceeds 200B show budget; needs hierarchy identity beyond budget t=5 model=muse-11
+FUN_00445e8b	0x00445E8B	88	blocked	STL list EH ctor with AsciiString-vector get_allocator vs int-list base mismatch plus iterator setup; needs allocator identity beyond budget t=6 model=muse-11
