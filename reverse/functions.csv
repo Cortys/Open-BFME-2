@@ -41826,3 +41826,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00531300@Rva005312BE@@QAEXXZ,,0x00531300,66,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,sibling of 0x005312BE sets flag to 1 same offsets
 ?q4Notify002CCCF3@@YAXPAXPAVMade002CCCF3@@HH@Z,,0x0050BDED,71,Code/GameEngine/Source/GameLogic/Object/Made002CCCF3Parse.cpp,matched,FireLogic field parser via build plus table
 ?q4Notify002CCBCA@@YAXPAXPAVMade002CCBCA@@HH@Z,,0x0050B6F8,77,Code/GameEngine/Source/GameLogic/Object/Made002CCBCAParse.cpp,matched,HordeAttack field parser two tables
+?Rva005D5876CopyBackward@@YAPAURva005D5853@@PAU1@00@Z,,0x005D5876,50,Code/GameEngine/Source/Common/Rva005D5853Swap.cpp,matched,copy_backward ptr bool via member assigns

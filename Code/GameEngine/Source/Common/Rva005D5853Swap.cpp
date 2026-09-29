@@ -14,3 +14,21 @@ void Rva005D5853Swap(Rva005D5853 *a, Rva005D5853 *b)
     b->m_ptr = tmp.m_ptr;
     b->m_flag = tmp.m_flag;
 }
+
+// ?Rva005D5876CopyBackward@@YAPAURva005D5853@@PAU1@00@Z @0x005D5876 50B.
+// copy_backward for 8-byte ptr+bool entries via assignment. Evidence: caller 0x005D58DC; neighbours share /O1 /MD.
+Rva005D5853 *Rva005D5876CopyBackward(Rva005D5853 *first, Rva005D5853 *last, Rva005D5853 *dest)
+{
+    int n = last - first;
+    if (n > 0) {
+        int i = n;
+        do {
+            --last;
+            --dest;
+            dest->m_ptr = last->m_ptr;
+            dest->m_flag = last->m_flag;
+        } while (--i != 0);
+        return dest;
+    }
+    return dest;
+}
