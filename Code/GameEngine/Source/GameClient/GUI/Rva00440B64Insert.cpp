@@ -25,3 +25,23 @@ void Rva00440B64Insert(void **last, void *val, Rva0043FE9A comp)
 	}
 	*last = val;
 }
+
+namespace _STL
+{
+void *__copy_trivial_backward(const void *first, const void *last, void *result);
+}
+
+// ?Rva0044192FGuarded@@YAXPAPAX0PAXVRva0043FE9A@@@Z @0x0044192F 69B.
+// Guarded insert: if comp(first val) shift via copy_backward and store at
+// first else delegate to unguarded insert. Evidence: caller 0x00441D90;
+// callees rowed 0x0043FE9A 0x00620840 0x00440B64; mirrors Rva005B639FGuarded.
+void Rva0044192FGuarded(void **first, void **last, void *val, Rva0043FE9A comp)
+{
+	if (comp.rva0043FE9A((MapMetaData *)val, (MapMetaData *)*first)) {
+		_STL::__copy_trivial_backward(first, last, last + 1);
+		*first = val;
+	}
+	else {
+		Rva00440B64Insert(last, val, comp);
+	}
+}
