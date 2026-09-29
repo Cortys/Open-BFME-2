@@ -41410,3 +41410,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0056ED60Pick@@YAXPAH0@Z,,0x0056ED60,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap esp-seed pick same pattern
 ?Rva0056ED8CPick@@YAXPAH0@Z,,0x0056ED8C,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap rdtsc pick same pattern
 ?rva00739780@Rva00739780@@QAEXH@Z,,0x00739780,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B3B0 gap between 0x00739770 and 0x00739790 same TU
+?rva007397D0@Rva007397D0@@QAEXXZ,,0x007397D0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B7E0 gap between 0x007397B0 and 0x007397F0 same TU

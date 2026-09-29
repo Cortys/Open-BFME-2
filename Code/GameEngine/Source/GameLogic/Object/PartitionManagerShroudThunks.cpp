@@ -61,6 +61,7 @@ public:
 	void setEnabled_Rva0073B460(bool value);
 	void rva008F8C70(CDEProvider *first, CDEProvider *second);
 	void updatePlayerCells300And3B0_Rva0073B3B0(int value);
+	void notify();
 };
 
 class PartitionManager
@@ -268,4 +269,22 @@ private:
 void Rva00739780::rva00739780(int value)
 {
 	m_cell->updatePlayerCells300And3B0_Rva0073B3B0(value);
+}
+
+//
+// ?rva007397D0@Rva007397D0@@QAEXXZ retail 0x007397D0 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073B7E0.
+// Evidence: retail mov ecx [ecx+0x10] jmp; gap between 0x007397B0 and 0x007397F0 in same TU.
+class Rva007397D0
+{
+public:
+	void rva007397D0();
+private:
+	char m_pad[0x10];
+	ShroudManagerImpl008FBA40 *m_cell; // +0x10
+};
+
+void Rva007397D0::rva007397D0()
+{
+	m_cell->notify();
 }
