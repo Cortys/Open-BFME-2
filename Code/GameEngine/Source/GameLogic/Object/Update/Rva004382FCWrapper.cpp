@@ -8,14 +8,25 @@ class Rva002542F3Member
 {
 public:
 	Rva002542F3Member();
+	Rva002542F3Member(const Rva002542F3Member &other);
 private:
 	char m_pad[0xB8];
 };
+
+class GameLogic
+{
+public:
+	unsigned char m_pad00[0x40];
+	unsigned int m_frame;
+};
+
+#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class Rva004382FC
 {
 public:
 	Rva004382FC();
+	Rva004382FC(const Rva002542F3Member &a1, int a2);
 private:
 	Rva002542F3Member m_00;
 	int m_B8;
@@ -28,4 +39,12 @@ Rva004382FC::Rva004382FC()
 	m_B8 = 0;
 	m_BC = 0;
 	m_C0 = 0;
+}
+
+Rva004382FC::Rva004382FC(const Rva002542F3Member &a1, int a2)
+	: m_00(a1)
+	, m_B8((int)TheGameLogic->m_frame)
+	, m_BC(a2)
+	, m_C0(0)
+{
 }
