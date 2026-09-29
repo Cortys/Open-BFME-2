@@ -32,3 +32,16 @@ void Rva00446A77Enable(void)
 		return;
 	return p->m_sub.enable();
 }
+
+// ?Rva00248D84Enable@@YAXXZ @0x00248D84 25B unlock lane.
+// Null-checked pointer 0x00A03354: null tail-jmps to rowed
+// ?Rva00446A77Enable@@YAXXZ @0x00446A77, else tail-jmps to rowed
+// ?enable@Rva0043DB47DoubleSetter@@QAEXXZ @0x0043DB47 via outer+0x288.
+// Evidence: 6 callers in unclaimed bodies; landing unblocks 5 waiters.
+void Rva00248D84Enable(void)
+{
+	Outer00446A77 *p = g_Va00A03354;
+	if (p != 0)
+		return p->m_sub.enable();
+	return Rva00446A77Enable();
+}
