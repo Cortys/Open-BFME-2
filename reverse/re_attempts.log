@@ -2800,3 +2800,5 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ??1Rva000C1BE1@@QAE@XZ	0x000C1BE1	63	blocked	EH vector-like dtor via 0xBDD08 plus free needs __EH_prolog plus states; custom 2-ptr with EHs EHsc GX all give 30B frameless; needs unwind member or base without extra call t=18 model=muse-05
 ?rva000C4D52@Rva000C4D52@@QAEPAVRva000C24EA@@PAV2@@Z	0x000C4D52	55	blocked	single erase via 4-arg copy_ptrs plus single pair dtor 0x796BC mixes string copy PBV with pair dtor needs ICF alias plus 32B pair-plus-string element t=20 model=muse-05
 ?rva002138E5@Rva002138E5@@QAEHHHHPAX@Z	0x002138E5	64	blocked	same callees as ArmorRtsCtor 0x002896AA vector-uint plus Armor-rts-initbuckets same 64B same 0x64 caller pattern duplicate hashtable ctor identity needs disambiguation t=12 model=muse-09
+?rva004FF9B6@Rva004FF9B6@@QAEPAHH@Z	0x004FF9B6	19	blocked	needs Rb_tree _M_find t=5 model=muse-06
+?Rva004582F3Loop@@YAXPAURva004582F3Outer@@@Z	0x004582F3	41	partial	ret inline vs end t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x004582f3.cpp

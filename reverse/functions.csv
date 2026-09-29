@@ -41103,3 +41103,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004E2227@Rva004E2227@@QAEXXZ,,0x004E2227,30,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_004e1fcc.cpp,matched,chain caller 0x004E3973 range destroy plus conditional free
 ?rva003B24C7@Rva003B24C7@@QAEX_N@Z,,0x003B24C7,20,Code/GameEngine/Source/Common/Rva003B24C7Set.cpp,matched,bool setter with false-clear of +4 and +1; callers 0x207557
 ?rva00330CDD@RadiusDecalTemplate@@QAEXABV1@@Z,,0x00330CDD,97,Code/GameEngine/Source/GameClient/RadiusDecalTemplateAssign.cpp,matched,RadiusDecalTemplate copy via pinned AsciiString op-eq
+?rva0025E539@NetworkInterface@@QAEXPAVNetWrapperCommandMsg@@@Z,,0x0025E539,187,Code/GameEngine/Source/Common/NetworkInterfaceFramePacing.cpp,matched,thiscall via caller 0x25E5F4 slot name to player msg 0x448 send 0x38

@@ -17,6 +17,8 @@ struct BFMEConnectionManager
 	volatile int frameCeiling;
 };
 
+class NetWrapperCommandMsg;
+
 class NetworkInterface
 {
 public:
@@ -44,6 +46,7 @@ public:
 	virtual void slot21(void);
 	virtual void slot22(void);
 	int getFramePacingStatus(void);
+	void rva0025E539(NetWrapperCommandMsg *msg);
 	virtual void slot23(void);
 	virtual void slot24(void);
 	virtual void slot25(void);
@@ -102,4 +105,126 @@ int NetworkInterface::getFramePacingStatus(void)
 		return 1;
 
 	return 2;
+}
+
+// ?rva0025E539@NetworkInterface@@QAEXPAVNetWrapperCommandMsg@@@Z at 0x0025E539 (187B).
+// Thiscall handler: slot index from NetWrapperCommandMsg::getData, GameSlot name
+// to NameKey to Player, new Rva0030F47A((void*)0x448) with bool true, +0x14 from
+// Player+0x54, virtual send at +0x38 on global 0xA00954. Evidence: caller
+// 0x0025E5F4 push edi + mov ecx,esi, all callees rowed/pinned, ret 4.
+
+class AsciiString
+{
+public:
+	AsciiString(const AsciiString &other);
+	~AsciiString();
+private:
+	void *m_data;
+};
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0
+};
+
+class NameKeyGenerator
+{
+public:
+	NameKeyType nameToKey(const AsciiString &s);
+};
+
+class GameSlot
+{
+public:
+	char m_pad[0x34];
+	AsciiString m_name;
+};
+
+class GameInfo
+{
+public:
+	GameSlot *getSlot(int n);
+};
+
+class Player
+{
+public:
+	char m_pad[0x54];
+	void *m_54;
+};
+
+class PlayerList
+{
+public:
+	Player *findPlayerWithNameKey(NameKeyType key);
+};
+
+class NetWrapperCommandMsg
+{
+public:
+	unsigned char *getData();
+};
+
+class GameMessage
+{
+public:
+	void appendBooleanArgument(bool arg);
+};
+
+class Rva0030F47A
+{
+public:
+	Rva0030F47A(void *arg);
+	void *m_vft;
+	int m_04;
+	int m_08;
+	int m_0C;
+	void *m_10;
+	void *m_14;
+	bool m_18;
+	int m_1C;
+	int m_20;
+};
+
+class MessageTarget
+{
+public:
+	virtual void s00(void);
+	virtual void s01(void);
+	virtual void s02(void);
+	virtual void s03(void);
+	virtual void s04(void);
+	virtual void s05(void);
+	virtual void s06(void);
+	virtual void s07(void);
+	virtual void s08(void);
+	virtual void s09(void);
+	virtual void s10(void);
+	virtual void s11(void);
+	virtual void s12(void);
+	virtual void s13(void);
+	virtual void s14(Rva0030F47A *m);
+};
+
+#define TheGameInfo (*(GameInfo **)0x00E02EEC)
+#define TheNameKeyGenerator (*(NameKeyGenerator **)0x00DF36A4)
+#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
+#define TheMessageTarget (*(MessageTarget **)0x00E00954)
+
+void NetworkInterface::rva0025E539(NetWrapperCommandMsg *msg)
+{
+	unsigned int idx = (unsigned int)msg->getData();
+	if (idx >= 8)
+		return;
+	GameSlot *slot = TheGameInfo->getSlot((int)idx);
+	AsciiString tmp(slot->m_name);
+	NameKeyType key = TheNameKeyGenerator->nameToKey(tmp);
+	Player *player = ThePlayerList->findPlayerWithNameKey(key);
+	if (player)
+	{
+		Rva0030F47A *m = new Rva0030F47A((void *)0x448);
+		((GameMessage *)m)->appendBooleanArgument(true);
+		m->m_14 = player->m_54;
+		TheMessageTarget->s14(m);
+	}
 }
