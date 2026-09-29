@@ -34,3 +34,8 @@ void __cdecl Rva0021C811InsertionSort(Rva0021915B *first, Rva0021915B *last, int
 	for (Rva0021915B *i = first; i != last; ++i)
 		Rva0021BAA3Insert(i, *i, comp);
 }
+// ?Rva0021D305Forward@@YAXPAVRva0021915B@@0URva0021B753@@@Z @0x0021D305 23B forwarder to rowed 0x0021C811 with 0 for unused.
+void __cdecl Rva0021D305Forward(Rva0021915B *first, Rva0021915B *last, Rva0021B753 comp)
+{
+	Rva0021C811InsertionSort(first, last, 0, comp);
+}

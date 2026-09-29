@@ -42044,3 +42044,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Resize@?$SimpleVecClass@VVector3@@@@UAE_NH@Z,,0x0007E1CF,160,Code/Libraries/Source/WWVegas/WW3D2/SimpleVecVector3ResizeO1.cpp,matched,vslot Resize callers at 0x0007E3F4 0x0007E9C1
 ?Resize@?$SimpleDynVecClass@VVector3@@@@UAE_NH@Z,,0x0007E9BA,37,Code/Libraries/Source/WWVegas/WWLib/simplevec_vector3_dtor.cpp,matched,chain calls 0x0007E1CF vslot 1 of 0x007C6F50
 ?rva0021CF03@Rva0021C459@@QAEXXZ,,0x0021CF03,41,Code/GameEngine/Source/Common/System/Rva0021C459Cleanup.cpp,matched,chain clear via rowed cleanup 0x0021C459 41B shape
+?Rva0021D305Forward@@YAXPAVRva0021915B@@0URva0021B753@@@Z,,0x0021D305,23,Code/GameEngine/Source/Common/System/Rva0021C811InsertionSort.cpp,matched,chain forwarder to rowed 0x0021C811 with 0
