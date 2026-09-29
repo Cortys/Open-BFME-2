@@ -127,6 +127,7 @@ template <typename T>
 class StringBase
 {
 	friend class AsciiString;
+	friend class UnicodeString;
 public:
 	void concat(const char *s);
 private:
@@ -152,9 +153,38 @@ public:
 	AsciiString(const char *s) : m_data(s) {}
 	~AsciiString() { m_data.releaseBuffer(); }
 	void concat(const char *s) { m_data.concat(s); }
+	void translate(const class UnicodeString &src);
 private:
 	StringBase<char> m_data;
 };
+
+typedef unsigned short WideChar;
+
+class UnicodeString
+{
+public:
+	UnicodeString() {}
+	UnicodeString(const UnicodeString &that);
+	__forceinline ~UnicodeString() { m_data.releaseBuffer(); }
+private:
+	StringBase<WideChar> m_data;
+};
+
+struct SYSTEMTIME
+{
+	unsigned short wYear;
+	unsigned short wMonth;
+	unsigned short wDayOfWeek;
+	unsigned short wDay;
+	unsigned short wHour;
+	unsigned short wMinute;
+	unsigned short wSecond;
+	unsigned short wMilliseconds;
+};
+
+extern "C" __declspec(dllimport) void __stdcall GetLocalTime(SYSTEMTIME *st);
+
+UnicodeString Rva002DBFAD(SYSTEMTIME st);
 
 class UserPreferences
 {
@@ -171,6 +201,7 @@ public:
 	virtual void v9();
 	virtual void v10(const AsciiString &s, float x);
 	virtual void v11(const AsciiString &s, int x);
+	virtual void v12(const AsciiString &a, const AsciiString &b);
 	int rva00535CE4(AsciiString arg);
 	void rva0053587C(AsciiString arg, int x);
 	void rva00535BAF(AsciiString arg, int x);
@@ -211,6 +242,7 @@ public:
 	float rva00535AE1(AsciiString arg);
 	void rva005359FA(AsciiString arg, float x);
 	void rva00535A96(AsciiString arg, float x);
+	void rva00535781();
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -479,4 +511,15 @@ void UserPreferences::rva00535A96(AsciiString arg, float x)
 {
 	arg.concat("AverageGameTime");
 	v10(arg, x);
+}
+
+void UserPreferences::rva00535781()
+{
+	SYSTEMTIME st;
+	GetLocalTime(&st);
+	UnicodeString tmp = Rva002DBFAD(st);
+	AsciiString val;
+	val.translate(tmp);
+	AsciiString key("ProfileCreatedDate");
+	v12(key, val);
 }

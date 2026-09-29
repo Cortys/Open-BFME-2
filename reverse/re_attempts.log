@@ -3252,3 +3252,4 @@ FUN_0061a651	0x0021A651	119	blocked	name-builder via AsciiString::format %s%s%s 
 ?Rva003C4DC2Do@@YGXABVAsciiString@@@Z	0x003C4DC2	102	partial	102B exact size; holder mov ecx 6B before vs between movss load-store t=25 model=muse-09 score=0.95 stash=reverse/attempts/0x003c4dc2.cpp
 ??1ShroudManagerImpl008FBA40@@QAE@XZ	0x0073E3F0	140	blocked	not ShroudManager: retail deque dtor is BfmeE32 not Gen_t plus array pushes debugIgnoreLeaks not ElementDtor plus lea nop t=30 model=muse-09
 ?rva00358B9E@AsciiString@@QAEXAAV1@ABVUnicodeString@@@Z	0x00358B9E	194	blocked	194B EH_prolog amp entity helper needs donor plus exact Unicode layouts t=20 model=muse-09
+?rva002DB496@Rva002DB496@@QAEPAXVAsciiString@@@Z	0x002DB496	68	partial	72B vs 68B single extra and ebp-4 0 EH init; 0 mem 0 reg; tried EHs vs EHsc same throw kills EH t=15 model=muse-05 score=0.95 stash=reverse/attempts/0x002db496.cpp
