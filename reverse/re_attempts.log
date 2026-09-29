@@ -3266,3 +3266,4 @@ FUN_008c4c99	0x004C4C99	137	blocked	SSE FX body needs globals 0xA01CE4 0x9FEC50 
 FUN_00577860	0x00177860	195	blocked	dtor-like 4x RefPtr plus globals 0x9F7044 0x9F7048 plus TextureBase needs global IDs plus EH t=12 model=muse-09
 ??1Rva004D060B@@QAE@XZ	0x004D060B	66	blocked	wide dtor needs EH prolog plus delete flag0 plus operator delete split t=12 model=muse-09
 FUN_008ec3ac	0x004EC3AC	132	blocked	list plus Object testStatus plus String compare needs layouts t=8 model=muse-09
+?rva0058D7B6@NetPacket@@QAE_NPAVNetCommandRef@@@Z	0x0058D7B6	112	blocked	register wall 15 diffs plus prologue mismatch plus shared-fail shape needs donor layout t=18 model=muse-12
