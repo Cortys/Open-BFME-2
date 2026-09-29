@@ -282,6 +282,7 @@ static void calcDirectionToApplyThrust(
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorTemplate::LocomotorTemplate present-unmatched
 LocomotorTemplate::LocomotorTemplate()
 {
 	// these values mean "make the same as undamaged if not explicitly specified"
@@ -362,12 +363,14 @@ LocomotorTemplate::LocomotorTemplate()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorTemplate::~LocomotorTemplate present-unmatched
 LocomotorTemplate::~LocomotorTemplate()
 {
 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorTemplate::validate present-unmatched
 void LocomotorTemplate::validate()
 {
 	// this is ok; parachutes need it!
@@ -442,6 +445,7 @@ static void parseFrictionPerSec( INI* ini, void * /*instance*/, void *store, con
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorTemplate::getFieldParse present-unmatched
 const FieldParse* LocomotorTemplate::getFieldParse() const  
 {
 	static const FieldParse TheFieldParse[] =
@@ -565,11 +569,13 @@ const LocomotorTemplate* LocomotorStore::findLocomotorTemplate(NameKeyType namek
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorStore::update present-unmatched
 void LocomotorStore::update()
 {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorStore::reset present-unmatched
 void LocomotorStore::reset()
 {
 	// cleanup overrides.
@@ -588,6 +594,7 @@ void LocomotorStore::reset()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorStore::newOverride present-unmatched
 LocomotorTemplate *LocomotorStore::newOverride( LocomotorTemplate *locoTemplate )
 {
 	if (locoTemplate == NULL)
@@ -654,6 +661,7 @@ LocomotorTemplate *LocomotorStore::newOverride( LocomotorTemplate *locoTemplate 
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::Locomotor present-unmatched
 Locomotor::Locomotor(const LocomotorTemplate* tmpl)
 {
 	m_template = tmpl;
@@ -679,6 +687,7 @@ Locomotor::Locomotor(const LocomotorTemplate* tmpl)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::Locomotor present-unmatched
 Locomotor::Locomotor(const Locomotor& that)
 {
 	//Added By Sadullah Nader
@@ -707,6 +716,7 @@ Locomotor::Locomotor(const Locomotor& that)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::operator= present-unmatched
 Locomotor& Locomotor::operator=(const Locomotor& that)
 {
 	if (this != &that)
@@ -737,6 +747,7 @@ Locomotor::~Locomotor()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?Locomotor::crc present-unmatched
 void Locomotor::crc( Xfer *xfer )
 {
 
@@ -747,6 +758,7 @@ void Locomotor::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?Locomotor::xfer present-unmatched
 void Locomotor::xfer( Xfer *xfer )
 {
 	// version
@@ -780,12 +792,14 @@ void Locomotor::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?Locomotor::loadPostProcess present-unmatched
 void Locomotor::loadPostProcess( void )
 {
 
 }  // end loadPostProcess
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::startMove present-unmatched
 void Locomotor::startMove(void) 
 {
 	// Reset the donut timer.
@@ -793,6 +807,7 @@ void Locomotor::startMove(void)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::getMaxSpeedForCondition present-unmatched
 Real Locomotor::getMaxSpeedForCondition(BodyDamageType condition) const
 {
 	Real speed;
@@ -829,6 +844,7 @@ Real Locomotor::getMaxTurnRate(BodyDamageType condition) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::getMaxAcceleration present-unmatched
 Real Locomotor::getMaxAcceleration(BodyDamageType condition) const
 {
 	Real accel;
@@ -845,6 +861,7 @@ Real Locomotor::getMaxAcceleration(BodyDamageType condition) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::getBraking present-unmatched
 Real Locomotor::getBraking() const
 {
 	Real braking = m_template->m_braking;
@@ -856,6 +873,7 @@ Real Locomotor::getBraking() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::getMaxLift present-unmatched
 Real Locomotor::getMaxLift(BodyDamageType condition) const
 {
 	Real lift;
@@ -872,6 +890,7 @@ Real Locomotor::getMaxLift(BodyDamageType condition) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::locoUpdate_moveTowardsAngle present-unmatched
 void Locomotor::locoUpdate_moveTowardsAngle(Object* obj, Real goalAngle)
 {
 	setFlag(MAINTAIN_POS_IS_VALID, false);
@@ -926,6 +945,7 @@ void Locomotor::locoUpdate_moveTowardsAngle(Object* obj, Real goalAngle)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::rotateTowardsPosition present-unmatched
 PhysicsTurningType Locomotor::rotateTowardsPosition(Object* obj, const Coord3D& goalPos, Real *relAngle)
 {
 	BodyDamageType bdt = obj->getBodyModule()->getDamageState();
@@ -936,6 +956,7 @@ PhysicsTurningType Locomotor::rotateTowardsPosition(Object* obj, const Coord3D& 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::setPhysicsOptions present-unmatched
 void Locomotor::setPhysicsOptions(Object* obj)
 {
 	PhysicsBehavior *physics = obj->getPhysics();
@@ -954,6 +975,7 @@ void Locomotor::setPhysicsOptions(Object* obj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::locoUpdate_moveTowardsPosition present-unmatched
 void Locomotor::locoUpdate_moveTowardsPosition(Object* obj, const Coord3D& goalPos, 
 																							 Real onPathDistToGoal, Real desiredSpeed, Bool *blocked)
 {
@@ -1169,6 +1191,7 @@ void Locomotor::locoUpdate_moveTowardsPosition(Object* obj, const Coord3D& goalP
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionTreads present-unmatched
 void Locomotor::moveTowardsPositionTreads(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 
@@ -1283,6 +1306,7 @@ void Locomotor::moveTowardsPositionTreads(Object* obj, PhysicsBehavior *physics,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionWheels present-unmatched
 void Locomotor::moveTowardsPositionWheels(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	BodyDamageType bdt = obj->getBodyModule()->getDamageState();
@@ -1525,6 +1549,7 @@ void Locomotor::moveTowardsPositionWheels(Object* obj, PhysicsBehavior *physics,
 
 }
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::fixInvalidPosition present-unmatched
 Bool Locomotor::fixInvalidPosition(Object* obj, PhysicsBehavior *physics)
 {
 	if (obj->isKindOf(KINDOF_DOZER)) {
@@ -1592,6 +1617,7 @@ Bool Locomotor::fixInvalidPosition(Object* obj, PhysicsBehavior *physics)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::calcMinTurnRadius present-unmatched
 Real Locomotor::calcMinTurnRadius(BodyDamageType condition, Real* timeToTravelThatDist) const
 {
 	Real minSpeed = getMinSpeed();								// in dist/frame
@@ -1619,6 +1645,7 @@ Real Locomotor::calcMinTurnRadius(BodyDamageType condition, Real* timeToTravelTh
 
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionLegs present-unmatched
 void Locomotor::moveTowardsPositionLegs(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	if (getIsDownhillOnly() && obj->getPosition()->z < goalPos.z)
@@ -1715,6 +1742,7 @@ void Locomotor::moveTowardsPositionLegs(Object* obj, PhysicsBehavior *physics, c
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionClimb present-unmatched
 void Locomotor::moveTowardsPositionClimb(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	Real maxAcceleration = getMaxAcceleration( obj->getBodyModule()->getDamageState() );
@@ -1846,6 +1874,7 @@ void Locomotor::moveTowardsPositionClimb(Object* obj, PhysicsBehavior *physics, 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionWings present-unmatched
 void Locomotor::moveTowardsPositionWings(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 #ifdef CIRCLE_FOR_LANDING
@@ -1888,6 +1917,7 @@ void Locomotor::moveTowardsPositionWings(Object* obj, PhysicsBehavior *physics, 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionHover present-unmatched
 void Locomotor::moveTowardsPositionHover(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	// handle the 2D component.
@@ -1916,6 +1946,7 @@ void Locomotor::moveTowardsPositionHover(Object* obj, PhysicsBehavior *physics, 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionThrust present-unmatched
 void Locomotor::moveTowardsPositionThrust(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	BodyDamageType bdt = obj->getBodyModule()->getDamageState();
@@ -2032,6 +2063,7 @@ void Locomotor::moveTowardsPositionThrust(Object* obj, PhysicsBehavior *physics,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::getSurfaceHtAtPt present-unmatched
 Real Locomotor::getSurfaceHtAtPt(Real x, Real y)
 {
 	Real ht = 0;
@@ -2047,6 +2079,7 @@ Real Locomotor::getSurfaceHtAtPt(Real x, Real y)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::calcLiftToUseAtPt present-unmatched
 Real Locomotor::calcLiftToUseAtPt(Object* obj, PhysicsBehavior *physics, Real curZ, Real surfaceAtPt, Real preferredHeight)
 {
 	/*
@@ -2138,6 +2171,7 @@ Real Locomotor::calcLiftToUseAtPt(Object* obj, PhysicsBehavior *physics, Real cu
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::rotateObjAroundLocoPivot present-unmatched
 PhysicsTurningType Locomotor::rotateObjAroundLocoPivot(Object* obj, const Coord3D& goalPos, 
 																											 Real maxTurnRate, Real *relAngle)
 {
@@ -2221,6 +2255,7 @@ PhysicsTurningType Locomotor::rotateObjAroundLocoPivot(Object* obj, const Coord3
 	return true if we can maintain the position without being called every frame (eg, we are
 	resting on the ground), false if not (eg, we are hovering or circling)
 */
+// ?Locomotor::handleBehaviorZ present-unmatched
 Bool Locomotor::handleBehaviorZ(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos)
 {
 	Bool requiresConstantCalling = TRUE;
@@ -2351,6 +2386,7 @@ Bool Locomotor::handleBehaviorZ(Object* obj, PhysicsBehavior *physics, const Coo
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::moveTowardsPositionOther present-unmatched
 void Locomotor::moveTowardsPositionOther(Object* obj, PhysicsBehavior *physics, const Coord3D& goalPos, Real onPathDistToGoal, Real desiredSpeed)
 {
 	BodyDamageType bdt = obj->getBodyModule()->getDamageState();
@@ -2437,6 +2473,7 @@ void Locomotor::moveTowardsPositionOther(Object* obj, PhysicsBehavior *physics, 
 	return true if we can maintain the position without being called every frame (eg, we are
 	resting on the ground), false if not (eg, we are hovering or circling)
 */
+// ?Locomotor::locoUpdate_maintainCurrentPosition present-unmatched
 Bool Locomotor::locoUpdate_maintainCurrentPosition(Object* obj)
 {
 	if (!getFlag(MAINTAIN_POS_IS_VALID))
@@ -2505,6 +2542,7 @@ Bool Locomotor::locoUpdate_maintainCurrentPosition(Object* obj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::maintainCurrentPositionThrust present-unmatched
 void Locomotor::maintainCurrentPositionThrust(Object* obj, PhysicsBehavior *physics)
 {
 	DEBUG_ASSERTCRASH(getFlag(MAINTAIN_POS_IS_VALID), ("invalid maintain pos"));
@@ -2513,6 +2551,7 @@ void Locomotor::maintainCurrentPositionThrust(Object* obj, PhysicsBehavior *phys
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::maintainCurrentPositionWings present-unmatched
 void Locomotor::maintainCurrentPositionWings(Object* obj, PhysicsBehavior *physics)
 {
 	DEBUG_ASSERTCRASH(getFlag(MAINTAIN_POS_IS_VALID), ("invalid maintain pos"));
@@ -2552,6 +2591,7 @@ void Locomotor::maintainCurrentPositionWings(Object* obj, PhysicsBehavior *physi
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::maintainCurrentPositionHover present-unmatched
 void Locomotor::maintainCurrentPositionHover(Object* obj, PhysicsBehavior *physics)
 {
 	physics->setTurning(TURN_NONE);
@@ -2604,6 +2644,7 @@ void Locomotor::maintainCurrentPositionHover(Object* obj, PhysicsBehavior *physi
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?Locomotor::maintainCurrentPositionOther present-unmatched
 void Locomotor::maintainCurrentPositionOther(Object* obj, PhysicsBehavior *physics)
 {
 
@@ -2621,6 +2662,7 @@ void Locomotor::maintainCurrentPositionOther(Object* obj, PhysicsBehavior *physi
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::LocomotorSet present-unmatched
 LocomotorSet::LocomotorSet()
 {
 	m_locomotors.clear();
@@ -2630,12 +2672,14 @@ LocomotorSet::LocomotorSet()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::LocomotorSet present-unmatched
 LocomotorSet::LocomotorSet(const LocomotorSet& that)
 {
 	DEBUG_CRASH(("unimplemented"));
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::operator= present-unmatched
 LocomotorSet& LocomotorSet::operator=(const LocomotorSet& that)
 {
 	if (this != &that)
@@ -2646,6 +2690,7 @@ LocomotorSet& LocomotorSet::operator=(const LocomotorSet& that)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::~LocomotorSet present-unmatched
 LocomotorSet::~LocomotorSet()
 {
 	clear();
@@ -2654,6 +2699,7 @@ LocomotorSet::~LocomotorSet()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?LocomotorSet::crc present-unmatched
 void LocomotorSet::crc( Xfer *xfer )
 {
 
@@ -2664,6 +2710,7 @@ void LocomotorSet::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?LocomotorSet::xfer present-unmatched
 void LocomotorSet::xfer( Xfer *xfer )
 {
 	// version
@@ -2721,12 +2768,14 @@ void LocomotorSet::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?LocomotorSet::loadPostProcess present-unmatched
 void LocomotorSet::loadPostProcess( void )
 {
 
 }  // end loadPostProcess
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::xferSelfAndCurLocoPtr present-unmatched
 void LocomotorSet::xferSelfAndCurLocoPtr(Xfer *xfer, Locomotor** loco)
 {
 	xfer->xferSnapshot(this);
@@ -2765,6 +2814,7 @@ void LocomotorSet::xferSelfAndCurLocoPtr(Xfer *xfer, Locomotor** loco)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::clear present-unmatched
 void LocomotorSet::clear()
 {
 	for (int i = 0; i < m_locomotors.size(); ++i)
@@ -2778,6 +2828,7 @@ void LocomotorSet::clear()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::addLocomotor present-unmatched
 void LocomotorSet::addLocomotor(const LocomotorTemplate* lt)
 {
 	Locomotor* loco = TheLocomotorStore->newLocomotor(lt);
@@ -2798,6 +2849,7 @@ void LocomotorSet::addLocomotor(const LocomotorTemplate* lt)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LocomotorSet::findLocomotor present-unmatched
 Locomotor* LocomotorSet::findLocomotor(LocomotorSurfaceTypeMask t)
 {
 	for (LocomotorVector::iterator it = m_locomotors.begin(); it != m_locomotors.end(); ++it)

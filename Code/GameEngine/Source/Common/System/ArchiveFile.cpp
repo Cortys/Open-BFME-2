@@ -85,6 +85,7 @@ static Bool SearchStringMatches(AsciiString str, AsciiString searchString)
 	return FALSE;
 }
 
+// ?ArchiveFile::~ArchiveFile present-unmatched
 ArchiveFile::~ArchiveFile() 
 {
 	if (m_file != NULL) {
@@ -93,11 +94,13 @@ ArchiveFile::~ArchiveFile()
 	}
 }
 
+// ?ArchiveFile::ArchiveFile present-unmatched
 ArchiveFile::ArchiveFile() 
 {
 	m_rootDirectory.clear();
 }
 
+// ?ArchiveFile::addFile present-unmatched
 void ArchiveFile::addFile(const AsciiString& path, const ArchivedFileInfo *fileInfo) 
 {
 	AsciiString temp;
@@ -127,6 +130,7 @@ void ArchiveFile::addFile(const AsciiString& path, const ArchivedFileInfo *fileI
 	//path.concat(fileInfo->m_filename);
 }
 
+// ?ArchiveFile::getFileListInDirectory present-unmatched
 void ArchiveFile::getFileListInDirectory(const AsciiString& currentDirectory, const AsciiString& originalDirectory, const AsciiString& searchName, FilenameList &filenameList, Bool searchSubdirectories) const
 {
 
@@ -158,6 +162,7 @@ void ArchiveFile::getFileListInDirectory(const AsciiString& currentDirectory, co
 	getFileListInDirectory(dirInfo, originalDirectory, searchName, filenameList, searchSubdirectories);
 }
 
+// ?ArchiveFile::getFileListInDirectory present-unmatched
 void ArchiveFile::getFileListInDirectory(const DetailedArchivedDirectoryInfo *dirInfo, const AsciiString& currentDirectory, const AsciiString& searchName, FilenameList &filenameList, Bool searchSubdirectories) const
 {
 	DetailedArchivedDirectoryInfoMap::const_iterator diriter = dirInfo->m_directories.begin();
@@ -191,6 +196,7 @@ void ArchiveFile::getFileListInDirectory(const DetailedArchivedDirectoryInfo *di
 	}
 }
 
+// ?ArchiveFile::attachFile present-unmatched
 void ArchiveFile::attachFile(File *file) 
 {
 	if (m_file != NULL) {
@@ -200,6 +206,7 @@ void ArchiveFile::attachFile(File *file)
 	m_file = file;
 }
 
+// ?ArchiveFile::getArchivedFileInfo present-unmatched
 const ArchivedFileInfo * ArchiveFile::getArchivedFileInfo(const AsciiString& filename) const
 {
 	AsciiString path;

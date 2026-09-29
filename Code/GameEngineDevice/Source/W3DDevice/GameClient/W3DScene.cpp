@@ -96,6 +96,7 @@ static ShaderClass PlayerColorShader(SC_PLAYER_COLOR);
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS3DScene::RTS3DScene present-unmatched
 RTS3DScene::RTS3DScene()
 {
 	setName("RTS3DScene");
@@ -202,6 +203,7 @@ RTS3DScene::RTS3DScene()
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS3DScene::~RTS3DScene present-unmatched
 RTS3DScene::~RTS3DScene()
 {
 	for (Int i=0; i<LightEnvironmentClass::MAX_LIGHTS; i++)
@@ -239,6 +241,7 @@ RTS3DScene::~RTS3DScene()
 }  // end ~RTS3DScene
 
 
+// ?RTS3DScene::setGlobalLight present-unmatched
 void	RTS3DScene::setGlobalLight(LightClass *pLight, Int lightIndex)
 {
 	if (m_numGlobalLights < (lightIndex+1))
@@ -251,6 +254,7 @@ objects.
 @todo:  Need some kind of scene subdivision or find way to use Partition manger to speed up the ray
 intersection tests.  Maybe truncate the ray to terrain length before using it?
 */
+// ?RTS3DScene::flagOccludedObjects present-unmatched
 void RTS3DScene::flagOccludedObjects(CameraClass * camera)
 {
 	Vector3 camPosition=camera->Get_Position();
@@ -322,6 +326,7 @@ void RTS3DScene::flagOccludedObjects(CameraClass * camera)
 	CollisionType is used as a mask to ignore certain types of objects.
  */
 //=============================================================================
+// ?RTS3DScene::castRay present-unmatched
 Bool RTS3DScene::castRay(RayCollisionTestClass & raytest, Bool testAll, Int collisionType)
 {
 // this shouldn't be necessary here, and would be an undesirable performance hit.
@@ -395,6 +400,7 @@ Bool RTS3DScene::castRay(RayCollisionTestClass & raytest, Bool testAll, Int coll
 /** Custom visibility check method for the RTS3DScene, we can put optimized
   * culling methods in here */
 //=============================================================================
+// ?RTS3DScene::Visibility_Check present-unmatched
 void RTS3DScene::Visibility_Check(CameraClass * camera)
 {
 #ifdef DIRTY_CONDITION_FLAGS
@@ -539,6 +545,7 @@ void RTS3DScene::Visibility_Check(CameraClass * camera)
 //=============================================================================
 /** Renders a single drawable entity. */
 //=============================================================================
+// ?RTS3DScene::renderSpecificDrawables present-unmatched
 void RTS3DScene::renderSpecificDrawables(RenderInfoClass &rinfo, Int numDrawable, Drawable **theDrawables)
 {
 #ifdef DIRTY_CONDITION_FLAGS
@@ -578,6 +585,7 @@ void RTS3DScene::renderSpecificDrawables(RenderInfoClass &rinfo, Int numDrawable
 //=============================================================================
 /** Renders a single drawable entity. */
 //=============================================================================
+// ?RTS3DScene::renderOneObject present-unmatched
 void RTS3DScene::renderOneObject(RenderInfoClass &rinfo, RenderObjClass *robj, Int localPlayerIndex)
 {
 
@@ -834,6 +842,7 @@ void RTS3DScene::renderOneObject(RenderInfoClass &rinfo, RenderObjClass *robj, I
 //DECLARE_PERF_TIMER(translucentRender)
 
 /**Draw everything that was submitted from this scene*/
+// ?RTS3DScene::Flush present-unmatched
 void RTS3DScene::Flush(RenderInfoClass & rinfo)
 {
 	//don't draw shadows in this mode because they interfere with destination alpha or are invisible (wireframe)
@@ -870,6 +879,7 @@ void RTS3DScene::Flush(RenderInfoClass & rinfo)
 		if (m_customPassMode == SCENE_PASS_DEFAULT && Get_Extra_Pass_Polygon_Mode() == EXTRA_PASS_DISABLE)
 			DoParticles(rinfo);	//queue up particles for rendering.
 
+// ?SortingRendererClass::Flush present-unmatched
 		SortingRendererClass::Flush();	//draw sorted translucent polys like particles.
 	}
 	TheDX8MeshRenderer.Clear_Pending_Delete_Lists();
@@ -877,6 +887,7 @@ void RTS3DScene::Flush(RenderInfoClass & rinfo)
 
 /**Generate a predefined light environment(s) that will be applied to many objects.  Useful for things like totally fogged
 objects and most generaic map objects that are not lit by dynamic lights.*/
+// ?RTS3DScene::updateFixedLightEnvironments present-unmatched
 void RTS3DScene::updateFixedLightEnvironments(RenderInfoClass & rinfo)
 {
 	//Figure out how dimly lit fogged objects should be compared to fully lit.
@@ -926,6 +937,7 @@ void RTS3DScene::updateFixedLightEnvironments(RenderInfoClass & rinfo)
 
 /**Generate custom rendering passes for each potential player color.  This is currently only used
 to render occluded objects using the color of the player*/
+// ?RTS3DScene::updatePlayerColorPasses present-unmatched
 void RTS3DScene::updatePlayerColorPasses(void)
 {
 #ifdef USE_NON_STENCIL_OCCLUSION
@@ -953,6 +965,7 @@ void RTS3DScene::updatePlayerColorPasses(void)
 #define ZBias 0.0001f
 
 //DECLARE_PERF_TIMER(NonTerrainRender)
+// ?RTS3DScene::Render present-unmatched
 void RTS3DScene::Render(RenderInfoClass & rinfo)
 {
 	//USE_PERF_TIMER(NonTerrainRender)
@@ -999,6 +1012,7 @@ void RTS3DScene::Render(RenderInfoClass & rinfo)
 			//a projected alpha texture which will later be used to determine where
 			//wireframe should be visible.
 			///@todo: Clearing to black may not be needed if the scene already did the clear.
+// ?DX8Wrapper::Clear present-unmatched
 			DX8Wrapper::Clear(true, false, Vector3(0.0f,0.0f,0.0f),1.0f);	// Clear color but not z
 			DX8Wrapper::Set_DX8_Render_State(D3DRS_COLORWRITEENABLE,D3DCOLORWRITEENABLE_ALPHA);
 			DX8Wrapper::Set_DX8_Render_State (D3DRS_ZBIAS, 0);
@@ -1058,6 +1072,7 @@ void RTS3DScene::Render(RenderInfoClass & rinfo)
 				Customized_Render(rinfo);
 				break;
 			case EXTRA_PASS_CLEAR_LINE:
+// ?DX8Wrapper::Clear present-unmatched
 				DX8Wrapper::Clear(true, false, Vector3(0.0f,0.0f,0.0f), 0.0f);	// Clear color but not z
 				WW3D::Enable_Texturing(false);
 				WW3D::Enable_Coloring(0xff008000);
@@ -1082,6 +1097,7 @@ void RTS3DScene::Render(RenderInfoClass & rinfo)
 /** Custom render method for the RTS3DScene, custom render properties for our
   * particular game go here */
 //=============================================================================
+// ?RTS3DScene::Customized_Render present-unmatched
 void RTS3DScene::Customized_Render( RenderInfoClass &rinfo )
 {
 #ifdef DIRTY_CONDITION_FLAGS
@@ -1327,6 +1343,7 @@ void renderStenciledPlayerColor( UnsignedInt color, UnsignedInt stencilRef, Bool
 }  // end renderStencilShadows
 
 #define MAX_VISIBLE_OCCLUDED_PLAYER_OBJECTS	512 //maximum number of occluded objects permitted per player
+// ?RTS3DScene::flushOccludedObjectsIntoStencil present-unmatched
 void RTS3DScene::flushOccludedObjectsIntoStencil(RenderInfoClass & rinfo)
 {
 	RenderObjClass *robj;
@@ -1535,6 +1552,7 @@ void RTS3DScene::flushOccludedObjectsIntoStencil(RenderInfoClass & rinfo)
 }
 
 /*Version which does not require stencil buffer*/
+// ?RTS3DScene::flushOccludedObjects present-unmatched
 void RTS3DScene::flushOccludedObjects(RenderInfoClass & rinfo)
 {
 	RenderObjClass *robj;
@@ -1606,6 +1624,7 @@ void RTS3DScene::flushOccludedObjects(RenderInfoClass & rinfo)
 	DX8Wrapper::Set_DX8_Render_State(D3DRS_AMBIENT,DX8Wrapper::Convert_Color(this->Get_Ambient_Light(),0.0f));
 }
 
+// ?RTS3DScene::flushTranslucentObjects present-unmatched
 void RTS3DScene::flushTranslucentObjects(RenderInfoClass & rinfo)
 {
 	RenderObjClass *robj;
@@ -1655,6 +1674,7 @@ RefRenderObjListIterator * RTS3DScene::createLightsIterator(void)
 //=============================================================================
 /** Destroys the iterator returned by createLightsIterator. */
 //=============================================================================
+// ?RTS3DScene::destroyLightsIterator present-unmatched
 void RTS3DScene::destroyLightsIterator(RefRenderObjListIterator * it)
 {
 	delete it;
@@ -1666,6 +1686,7 @@ void RTS3DScene::destroyLightsIterator(RefRenderObjListIterator * it)
 //=============================================================================
 /** Adds a dynamic light. */
 //=============================================================================
+// ?RTS3DScene::addDynamicLight present-unmatched
 void RTS3DScene::addDynamicLight(W3DDynamicLight * obj)
 {
 	m_dynamicLightList.Add(obj);
@@ -1677,6 +1698,7 @@ void RTS3DScene::addDynamicLight(W3DDynamicLight * obj)
 //=============================================================================
 /** Adds a dynamic light. */
 //=============================================================================
+// ?RTS3DScene::getADynamicLight present-unmatched
 W3DDynamicLight * RTS3DScene::getADynamicLight(void)
 {
 		RefRenderObjListIterator dynaLightIt(&m_dynamicLightList);
@@ -1701,6 +1723,7 @@ W3DDynamicLight * RTS3DScene::getADynamicLight(void)
 //=============================================================================
 /** Removes a dynamic light. */
 //=============================================================================
+// ?RTS3DScene::removeDynamicLight present-unmatched
 void RTS3DScene::removeDynamicLight(W3DDynamicLight * obj)
 {
 	m_dynamicLightList.Remove(obj);
@@ -1711,6 +1734,7 @@ void RTS3DScene::removeDynamicLight(W3DDynamicLight * obj)
 //=============================================================================
 /** Render the scene */
 //=============================================================================
+// ?RTS3DScene::doRender present-unmatched
 void RTS3DScene::doRender( CameraClass * cam )
 {
 	m_camera = cam;
@@ -1724,6 +1748,7 @@ void RTS3DScene::doRender( CameraClass * cam )
 //=============================================================================
 /** Customized render for the 2d scene management */
 //=============================================================================
+// ?RTS3DScene::draw present-unmatched
 void RTS3DScene::draw( )
 {
 
@@ -1746,6 +1771,7 @@ void RTS3DScene::draw( )
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS2DScene::RTS2DScene present-unmatched
 RTS2DScene::RTS2DScene()
 {
 	setName("RTS2DScene");
@@ -1758,6 +1784,7 @@ RTS2DScene::RTS2DScene()
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS2DScene::~RTS2DScene present-unmatched
 RTS2DScene::~RTS2DScene()
 {
 	this->Remove_Render_Object(m_status);
@@ -1769,6 +1796,7 @@ RTS2DScene::~RTS2DScene()
 //=============================================================================
 /** Customized render for the 2d scene management */
 //=============================================================================
+// ?RTS2DScene::Customized_Render present-unmatched
 void RTS2DScene::Customized_Render( RenderInfoClass &rinfo )
 {
 
@@ -1782,6 +1810,7 @@ void RTS2DScene::Customized_Render( RenderInfoClass &rinfo )
 //=============================================================================
 /** Render the scene */
 //=============================================================================
+// ?RTS2DScene::doRender present-unmatched
 void RTS2DScene::doRender( CameraClass * cam )
 {
 
@@ -1796,6 +1825,7 @@ void RTS2DScene::doRender( CameraClass * cam )
 //=============================================================================
 /** Customized render for the 2d scene management */
 //=============================================================================
+// ?RTS2DScene::draw present-unmatched
 void RTS2DScene::draw( )
 {
 
@@ -1819,6 +1849,7 @@ void RTS2DScene::draw( )
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS3DInterfaceScene::RTS3DInterfaceScene present-unmatched
 RTS3DInterfaceScene::RTS3DInterfaceScene()
 {
 }  // end RTS3DInterfaceScene
@@ -1828,6 +1859,7 @@ RTS3DInterfaceScene::RTS3DInterfaceScene()
 //=============================================================================
 /** */
 //=============================================================================
+// ?RTS3DInterfaceScene::~RTS3DInterfaceScene present-unmatched
 RTS3DInterfaceScene::~RTS3DInterfaceScene()
 {
 }  // end ~RTS3DInterfaceScene
@@ -1837,6 +1869,7 @@ RTS3DInterfaceScene::~RTS3DInterfaceScene()
 //=============================================================================
 /** Customized render for the 3d interface scene management */
 //=============================================================================
+// ?RTS3DInterfaceScene::Customized_Render present-unmatched
 void RTS3DInterfaceScene::Customized_Render( RenderInfoClass &rinfo )
 {
 
@@ -1851,6 +1884,7 @@ void RTS3DInterfaceScene::Customized_Render( RenderInfoClass &rinfo )
 /*
  *
 	
+// ?RTS3DScene::Visibility_Check present-unmatched
 void RTS3DScene::Visibility_Check(CameraClass * camera)
 {
 #ifdef DIRTY_CONDITION_FLAGS

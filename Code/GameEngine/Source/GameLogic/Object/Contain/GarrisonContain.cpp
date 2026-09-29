@@ -68,6 +68,7 @@ enum { MUZZLE_FLASH_LIFETIME = LOGICFRAMES_PER_SECOND / 7 };
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContainModuleData::GarrisonContainModuleData present-unmatched
 GarrisonContainModuleData::GarrisonContainModuleData( void )
 {
 
@@ -95,6 +96,7 @@ inline Real calcDistSqr(const Coord3D& a, const Coord3D& b)
 // ------------------------------------------------------------------------------------------------
 /** Given the target position, find the garrison point that is closest to it */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::findClosestFreeGarrisonPointIndex present-unmatched
 Int GarrisonContain::findClosestFreeGarrisonPointIndex( Int conditionIndex, 
 																												const Coord3D *targetPos )
 {
@@ -136,6 +138,7 @@ Int GarrisonContain::findClosestFreeGarrisonPointIndex( Int conditionIndex,
 // ------------------------------------------------------------------------------------------------
 /** Given the object, return the garrison point index the object is placed at ... if any */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::getObjectGarrisonPointIndex present-unmatched
 Int GarrisonContain::getObjectGarrisonPointIndex( Object *obj )
 {
 
@@ -154,6 +157,7 @@ Int GarrisonContain::getObjectGarrisonPointIndex( Object *obj )
 // ------------------------------------------------------------------------------------------------
 /** Put the object at the specified garrison point by index */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::putObjectAtGarrisonPoint present-unmatched
 void GarrisonContain::putObjectAtGarrisonPoint( Object *obj, 
 																								ObjectID targetID,
 																								Int conditionIndex, 
@@ -236,6 +240,7 @@ TheInGameUI->message( msg );
 /** Given the current state of the structure, return the condition index we are to use
 	* from the garrison point position arrays */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::findConditionIndex present-unmatched
 Int GarrisonContain::findConditionIndex( void )
 {
 	BodyModuleInterface *body = getObject()->getBodyModule();
@@ -281,6 +286,7 @@ Int GarrisonContain::findConditionIndex( void )
 //The weapon system would like to perform a range check assuming the object is placed in the
 //best possible available garrison position. If found, we change sourcePos to that position.
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::calcBestGarrisonPosition present-unmatched
 Bool GarrisonContain::calcBestGarrisonPosition( Coord3D *sourcePos, const Coord3D *targetPos )
 {
 	// sanity
@@ -313,6 +319,7 @@ Bool GarrisonContain::calcBestGarrisonPosition( Coord3D *sourcePos, const Coord3
 //The AI is entering the aim state and would like to move the unit to the best position, perform
 //a range check, and if it succeeds, leave him there -- otherwise, remove him immediately.
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::attemptBestFirePointPosition present-unmatched
 Bool GarrisonContain::attemptBestFirePointPosition( Object *source, Weapon *weapon, Object *victim )
 {
 	//Sanity
@@ -354,6 +361,7 @@ Bool GarrisonContain::attemptBestFirePointPosition( Object *source, Weapon *weap
 //The AI is entering the aim state and would like to move the unit to the best position, perform
 //a range check, and if it succeeds, leave him there -- otherwise, remove him immediately.
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::attemptBestFirePointPosition present-unmatched
 Bool GarrisonContain::attemptBestFirePointPosition( Object *source, Weapon *weapon, const Coord3D *targetPos )
 {
 	//Sanity
@@ -395,6 +403,7 @@ Bool GarrisonContain::attemptBestFirePointPosition( Object *source, Weapon *weap
 /** Place the object at the "best" garrison point position so it's on the same "side" of
 	* the structure that its target is */
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::putObjectAtBestGarrisonPoint present-unmatched
 void GarrisonContain::putObjectAtBestGarrisonPoint( Object *obj, Object *target, const Coord3D *targetPos )
 {
 
@@ -431,6 +440,7 @@ void GarrisonContain::putObjectAtBestGarrisonPoint( Object *obj, Object *target,
 // ------------------------------------------------------------------------------------------------
 /** Remove the object from the garrison point position and replace at the center of the building */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::removeObjectFromGarrisonPoint present-unmatched
 void GarrisonContain::removeObjectFromGarrisonPoint( Object *obj, Int index )
 {
 
@@ -506,6 +516,7 @@ TheInGameUI->message( msg );
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::GarrisonContain present-unmatched
 GarrisonContain::GarrisonContain( Thing *thing, const ModuleData *moduleData ) : 
 								 OpenContain( thing, moduleData )
 {
@@ -554,6 +565,7 @@ GarrisonContain::~GarrisonContain( void )
 	and, if checkCapacity is TRUE, does this container have enough space 
 	left to hold the given unit? */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::isValidContainerFor present-unmatched
 Bool GarrisonContain::isValidContainerFor(const Object* obj, Bool checkCapacity) const
 {
 
@@ -589,6 +601,7 @@ Bool GarrisonContain::isValidContainerFor(const Object* obj, Bool checkCapacity)
 /** Any objects that are sitting at the garrison points which no longer have targets need
 	* to be moved to the center of the building and taken off the garrison point */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::removeInvalidObjectsFromGarrisonPoints present-unmatched
 void GarrisonContain::removeInvalidObjectsFromGarrisonPoints( void )
 {
 #if defined __DEBUG || defined _INTERNAL
@@ -638,6 +651,7 @@ void GarrisonContain::removeInvalidObjectsFromGarrisonPoints( void )
 /** Are there any objects in the center that have now obtained targets and need to move to
 	* a garrison point */
 	// ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::addValidObjectsToGarrisonPoints present-unmatched
 void GarrisonContain::addValidObjectsToGarrisonPoints( void )
 {
 
@@ -683,6 +697,7 @@ void GarrisonContain::addValidObjectsToGarrisonPoints( void )
 	* points that are available if they are closer.  We will also track our targets position
 	* and orient any effect stuff we need to (gun barrel / muzzle flash) */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::trackTargets present-unmatched
 void GarrisonContain::trackTargets( void )
 {
 
@@ -786,6 +801,7 @@ void GarrisonContain::trackTargets( void )
 	* which could shuffle the garrison point positions but that shouldn't logically change
 	* when an object was placed at the point */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::redeployOccupants present-unmatched
 void GarrisonContain::redeployOccupants( void )
 {
 	GarrisonPointData garrisonPointDataCopy[ MAX_GARRISON_POINTS ];
@@ -833,6 +849,7 @@ void GarrisonContain::redeployOccupants( void )
 // ------------------------------------------------------------------------------------------------
 /** Do any effects during an update cycle that we need to */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::updateEffects present-unmatched
 void GarrisonContain::updateEffects( void )
 {
 
@@ -910,6 +927,7 @@ void GarrisonContain::updateEffects( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::update present-unmatched
 UpdateSleepTime GarrisonContain::update( void )
 {
 	const GarrisonContainModuleData *modData = getGarrisonContainModuleData();
@@ -978,6 +996,7 @@ UpdateSleepTime GarrisonContain::update( void )
 //-------------------------------------------------------------------------------------------------
 /** Every frame, and whenever anyone enters or leaves */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::matchObjectsToGarrisonPoints present-unmatched
 void GarrisonContain::matchObjectsToGarrisonPoints( void )
 {
   if ( isEnclosingContainerFor( NULL ) == FALSE )
@@ -1008,6 +1027,7 @@ void GarrisonContain::matchObjectsToGarrisonPoints( void )
 //-------------------------------------------------------------------------------------------------
 /** enforce that everybody stays at their pre-assigned space */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::positionObjectsAtStationGarrisonPoints present-unmatched
 void GarrisonContain::positionObjectsAtStationGarrisonPoints()
 {
   if ( ! m_stationGarrisonPointsInitialized )
@@ -1052,6 +1072,7 @@ void GarrisonContain::positionObjectsAtStationGarrisonPoints()
 //-------------------------------------------------------------------------------------------------
 /** When a new guy enters a non-enclosing garrison container */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::pickAStationForMe present-unmatched
 Bool GarrisonContain::pickAStationForMe( const Object *obj )
 {
   Bool foundVacancy = FALSE;
@@ -1072,6 +1093,7 @@ Bool GarrisonContain::pickAStationForMe( const Object *obj )
 
 }
 
+// ?GarrisonContain::removeObjectFromStationPoint present-unmatched
 void GarrisonContain::removeObjectFromStationPoint( const Object *obj )
 {
 
@@ -1101,6 +1123,7 @@ void GarrisonContain::removeObjectFromStationPoint( const Object *obj )
 //-------------------------------------------------------------------------------------------------
 /** When I become damaged */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onDamage present-unmatched
 void GarrisonContain::onDamage( DamageInfo * /*info*/ )
 {
 
@@ -1126,6 +1149,7 @@ void GarrisonContain::onDamage( DamageInfo * /*info*/ )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::healObjects present-unmatched
 void GarrisonContain::healObjects( void )
 {
 	const GarrisonContainModuleData *modData = getGarrisonContainModuleData();
@@ -1151,6 +1175,7 @@ void GarrisonContain::healObjects( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::healSingleObject present-unmatched
 void GarrisonContain::healSingleObject( Object *obj, Real framesForFullHeal)
 {
 	// setup the healing damageInfo structure with all but the amount
@@ -1192,6 +1217,7 @@ void GarrisonContain::healSingleObject( Object *obj, Real framesForFullHeal)
 /** return the player that *appears* to control this unit. if null, 
 		use getObject()->getControllingPlayer() instead. */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::getApparentControllingPlayer present-unmatched
 const Player* GarrisonContain::getApparentControllingPlayer( const Player* observingPlayer ) const
 {
 	const Player* myPlayer = getObject()->getControllingPlayer();
@@ -1207,6 +1233,7 @@ const Player* GarrisonContain::getApparentControllingPlayer( const Player* obser
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::recalcApparentControllingPlayer present-unmatched
 void GarrisonContain::recalcApparentControllingPlayer( void )
 {
 	//Record original team first time through.
@@ -1307,6 +1334,7 @@ void GarrisonContain::recalcApparentControllingPlayer( void )
 // ------------------------------------------------------------------------------------------------
 /** Load the garrison point position data and save for use later */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::loadGarrisonPoints present-unmatched
 void GarrisonContain::loadGarrisonPoints( void )
 {
 
@@ -1413,6 +1441,7 @@ void GarrisonContain::loadGarrisonPoints( void )
 /** Validate any exit rally point that has been chosen (if any).  If it's not valid,
 	* try to find a new one */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::validateRallyPoint present-unmatched
 void GarrisonContain::validateRallyPoint( void )
 {
 
@@ -1455,6 +1484,7 @@ void GarrisonContain::validateRallyPoint( void )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onSelling present-unmatched
 void GarrisonContain::onSelling( void )
 {
   removeAllContained( FALSE );
@@ -1468,6 +1498,7 @@ void GarrisonContain::onSelling( void )
 	* logic, but if all else fails no matter, we need to get all things out after this
 	* call is complete */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::removeAllContained present-unmatched
 void GarrisonContain::removeAllContained( Bool exposeStealthUnits )
 {
 
@@ -1498,6 +1529,7 @@ void GarrisonContain::removeAllContained( Bool exposeStealthUnits )
 // ------------------------------------------------------------------------------------------------
 /** 'exitObj' is one of the things we contain, it needs to 'exit' us */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::exitObjectViaDoor present-unmatched
 void GarrisonContain::exitObjectViaDoor( Object *exitObj, ExitDoorType exitDoor )
 {
 	DEBUG_ASSERTCRASH(exitDoor == DOOR_1, ("multiple exit doors not supported here"));
@@ -1614,6 +1646,7 @@ void GarrisonContain::exitObjectViaDoor( Object *exitObj, ExitDoorType exitDoor 
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onContaining present-unmatched
 void GarrisonContain::onContaining( Object *obj, Bool wasSelected )
 {
 
@@ -1654,6 +1687,7 @@ void GarrisonContain::onContaining( Object *obj, Bool wasSelected )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onRemoving present-unmatched
 void GarrisonContain::onRemoving( Object *obj )
 {
 	OpenContain::onRemoving(obj);
@@ -1716,6 +1750,7 @@ void GarrisonContain::onRemoving( Object *obj )
 // ------------------------------------------------------------------------------------------------
 /** A GarrisonContain always lets people shoot out */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::isPassengerAllowedToFire present-unmatched
 Bool GarrisonContain::isPassengerAllowedToFire( ObjectID id ) const
 {
 
@@ -1730,6 +1765,7 @@ Bool GarrisonContain::isPassengerAllowedToFire( ObjectID id ) const
 // ------------------------------------------------------------------------------------------------
 /** A Mobile garrison keeps its occupants with it when it moves */
 //-------------------------------------------------------------------------------------------------
+// ?GarrisonContain::moveObjectsWithMe present-unmatched
 void GarrisonContain::moveObjectsWithMe( void )
 {
 	const GarrisonContainModuleData *modData = getGarrisonContainModuleData();
@@ -1749,6 +1785,7 @@ void GarrisonContain::moveObjectsWithMe( void )
 
 //-------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onBodyDamageStateChange present-unmatched
 void GarrisonContain::onBodyDamageStateChange( const DamageInfo* , BodyDamageType , BodyDamageType newState )
 {
 	// This is an event triggered on edge, so we just need to look at the newState. We know a change happened.
@@ -1762,6 +1799,7 @@ void GarrisonContain::onBodyDamageStateChange( const DamageInfo* , BodyDamageTyp
 
 //-------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::onObjectCreated present-unmatched
 void GarrisonContain::onObjectCreated()
 {
 	GarrisonContainModuleData* self = (GarrisonContainModuleData*)getGarrisonContainModuleData();
@@ -1789,6 +1827,7 @@ void GarrisonContain::onObjectCreated()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::crc present-unmatched
 void GarrisonContain::crc( Xfer *xfer )
 {
 
@@ -1802,6 +1841,7 @@ void GarrisonContain::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::xfer present-unmatched
 void GarrisonContain::xfer( Xfer *xfer )
 {
 	Int i;
@@ -1928,6 +1968,7 @@ void GarrisonContain::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::loadPostProcess present-unmatched
 void GarrisonContain::loadPostProcess( void )
 {
 
@@ -1983,6 +2024,7 @@ void GarrisonContain::loadPostProcess( void )
 // ------------------------------------------------------------------------------------------------
 /** Load the loadStationGarrisonPoints data and save for use later */
 // ------------------------------------------------------------------------------------------------
+// ?GarrisonContain::loadStationGarrisonPoints present-unmatched
 void GarrisonContain::loadStationGarrisonPoints( void )
 {
 	const GarrisonContainModuleData *modData = getGarrisonContainModuleData();

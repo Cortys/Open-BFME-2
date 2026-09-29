@@ -245,6 +245,7 @@ GameTextInterface* CreateGameTextInterface( void )
 // GameTextManager::GameTextManager
 //============================================================================
 
+// ?GameTextManager::GameTextManager present-unmatched
 GameTextManager::GameTextManager()
 :	m_textCount(0),
 	m_maxLabelLen(0),
@@ -279,6 +280,7 @@ GameTextManager::GameTextManager()
 // GameTextManager::~GameTextManager
 //============================================================================
 
+// ?GameTextManager::~GameTextManager present-unmatched
 GameTextManager::~GameTextManager()
 {
 	deinit();
@@ -291,6 +293,7 @@ GameTextManager::~GameTextManager()
 extern const Char *g_strFile;
 extern const Char *g_csfFile;
 
+// ?GameTextManager::init present-unmatched
 void GameTextManager::init( void )
 {
 	AsciiString csfFile;
@@ -390,6 +393,7 @@ void GameTextManager::init( void )
 // GameTextManager::deinit
 //============================================================================
 
+// ?GameTextManager::deinit present-unmatched
 void GameTextManager::deinit( void )
 {
 
@@ -428,6 +432,7 @@ void GameTextManager::deinit( void )
 // GameTextManager::reset
 //============================================================================
 
+// ?GameTextManager::reset present-unmatched
 void GameTextManager::reset( void )
 {
 	if( m_mapStringInfo != NULL )
@@ -448,6 +453,7 @@ void GameTextManager::reset( void )
 // GameTextManager::stripSpaces 
 //============================================================================
 
+// ?GameTextManager::stripSpaces present-unmatched
 void GameTextManager::stripSpaces ( WideChar *string )
 {
 	WideChar *str, *ptr;
@@ -495,6 +501,7 @@ void GameTextManager::stripSpaces ( WideChar *string )
 // GameTextManager::removeLeadingAndTrailing 
 //============================================================================
 
+// ?GameTextManager::removeLeadingAndTrailing present-unmatched
 void GameTextManager::removeLeadingAndTrailing ( Char *buffer )
 {
 	Char *first, *ptr;
@@ -524,6 +531,7 @@ void GameTextManager::removeLeadingAndTrailing ( Char *buffer )
 // GameTextManager::readToEndOfQuote
 //============================================================================
 
+// ?GameTextManager::readToEndOfQuote present-unmatched
 void GameTextManager::readToEndOfQuote( File *file, Char *in, Char *out, Char *wavefile, Int maxBufLen )
 {
 	Int slash = FALSE;
@@ -654,6 +662,7 @@ void GameTextManager::readToEndOfQuote( File *file, Char *in, Char *out, Char *w
 // GameTextManager::reverseWord 
 //============================================================================
 
+// ?GameTextManager::reverseWord present-unmatched
 void GameTextManager::reverseWord ( Char *file, Char *lp )
 {
 	Int first = TRUE;
@@ -695,6 +704,7 @@ void GameTextManager::reverseWord ( Char *file, Char *lp )
 // GameTextManager::translateCopy
 //============================================================================
 
+// ?GameTextManager::translateCopy present-unmatched
 void GameTextManager::translateCopy( WideChar *outbuf, Char *inbuf )
 {
 	Int slash = FALSE;
@@ -822,6 +832,7 @@ void GameTextManager::translateCopy( WideChar *outbuf, Char *inbuf )
 // GameTextManager::getStringCount
 //============================================================================
 
+// ?GameTextManager::getStringCount present-unmatched
 Bool GameTextManager::getStringCount( const char *filename, Int& textCount )
 {
 	Int ok = TRUE;
@@ -866,6 +877,7 @@ Bool GameTextManager::getStringCount( const char *filename, Int& textCount )
 // GameTextManager::getCSFInfo 
 //============================================================================
 
+// ?GameTextManager::getCSFInfo present-unmatched
 Bool GameTextManager::getCSFInfo ( const Char *filename )
 {
 	CSFHeader header;
@@ -905,6 +917,7 @@ Bool GameTextManager::getCSFInfo ( const Char *filename )
 // GameTextManager::parseCSF
 //============================================================================
 
+// ?GameTextManager::parseCSF present-unmatched
 Bool GameTextManager::parseCSF( const Char *filename )
 {
 	File *file;
@@ -1032,6 +1045,7 @@ quit:
 // GameTextManager::parseStringFile
 //============================================================================
 
+// ?GameTextManager::parseStringFile present-unmatched
 Bool GameTextManager::parseStringFile( const char *filename )
 {
 	Int listCount = 0;
@@ -1133,6 +1147,7 @@ quit:
 // GameTextManager::initMapStringFile
 //============================================================================
 
+// ?GameTextManager::initMapStringFile present-unmatched
 void GameTextManager::initMapStringFile( const AsciiString& filename )
 {
 	m_mapTextCount = 0;
@@ -1162,6 +1177,7 @@ void GameTextManager::initMapStringFile( const AsciiString& filename )
 // GameTextManager::parseMapStringFile
 //============================================================================
 
+// ?GameTextManager::parseMapStringFile present-unmatched
 Bool GameTextManager::parseMapStringFile( const char *filename )
 {
 	Int listCount = 0;
@@ -1268,6 +1284,7 @@ quit:
 // *GameTextManager::fetch
 //============================================================================
 
+// ?GameTextManager::fetch present-unmatched
 UnicodeString GameTextManager::fetch( const Char *label, Bool *exists )
 {
 	DEBUG_ASSERTCRASH ( m_initialized, ("String Manager has not been m_initialized") );
@@ -1331,6 +1348,7 @@ UnicodeString GameTextManager::fetch( const Char *label, Bool *exists )
 // *GameTextManager::fetch
 //============================================================================
 
+// ?GameTextManager::fetch present-unmatched
 UnicodeString GameTextManager::fetch( AsciiString label, Bool *exists )
 {
 	return fetch(label.str(), exists);
@@ -1340,6 +1358,7 @@ UnicodeString GameTextManager::fetch( AsciiString label, Bool *exists )
 // GameTextManager::getStringsWithLabelPrefix
 //============================================================================
 
+// ?GameTextManager::getStringsWithLabelPrefix present-unmatched
 AsciiStringVec& GameTextManager::getStringsWithLabelPrefix(AsciiString label)
 {
 	m_asciiStringVec.clear();
@@ -1364,6 +1383,7 @@ AsciiStringVec& GameTextManager::getStringsWithLabelPrefix(AsciiString label)
 // GameTextManager::readLine
 //============================================================================
 
+// ?GameTextManager::readLine present-unmatched
 Bool	GameTextManager::readLine( char *buffer, Int max, File *file )
 {
 	Int ok = FALSE;
@@ -1390,6 +1410,7 @@ Bool	GameTextManager::readLine( char *buffer, Int max, File *file )
 // GameTextManager::readChar
 //============================================================================
 
+// ?GameTextManager::readChar present-unmatched
 Char	GameTextManager::readChar( File *file )
 {
 	Char ch;
