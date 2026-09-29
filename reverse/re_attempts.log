@@ -3549,3 +3549,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?countKind@Team@@QAEHH_N0@Z	0x0039DC05	94	blocked	ecx-vs-esi cur persists via sibling-shape 99B definition-order temp a-false G7 variants all 94B exact size t=15 model=muse-03
 ?Rva003E7B56Get@@YG_NPAX@Z	0x003E7B56	356	blocked	chain teams-distance 355of356B ternary close but 22 structural regions t1-stack-vs-ebx centroid-eax-vs-stack switch-cmov-vs-branches t=25 model=muse-03
 ?rva0039E9A1@Team@@QAEPAUCoord3D@@PAU2@@Z	0x0039E9A1	63	blocked	cached-pos-else-centroid return-out-ptr lever31 add-je-for-proto-plus-12C elusive frame-persists-via-s-local 71vs63B t=18 model=muse-03
+?Rva003919F6Check@@YA_NPAX0@Z	0x003919F6	122	blocked	free bool check needs shared tails plus esi edi prologue plus reg pushes t=15 model=muse-12
