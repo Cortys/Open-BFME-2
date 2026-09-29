@@ -3052,3 +3052,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva005FD978@Rva005FD788@@QAEXHABVUnicodeString@@@Z	0x005FD978	67	blocked	chain caller of 0x005FD788 needs ebp frame and esi-this edi-stored imul-0x18; probe kept index in esi and used lea-strength-reduction t=12 model=muse-spark
 ?rva005FD9BB@Rva005FD9BB@@QAEXHABVUnicodeString@@@Z	0x005FD9BB	68	blocked	same wall as 0x005FD978 ebp-frame imul-0x18 esi-edi allocation t=3 model=muse-spark
 ??1Rva0040AFF3@@QAE@XZ	0x0040AFF3	117	partial	EH states off by one 3-vs-4 missing mov-0 t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x0040aff3.cpp
+?rva0035CDDF@Rva0035CDDF@@QAEHH@Z	0x0035CDDF	115	blocked	STL list FXBoneInfo assign plus erase insert needs stlport list operator pattern t=12 model=muse-11

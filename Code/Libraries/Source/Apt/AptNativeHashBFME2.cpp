@@ -14,6 +14,8 @@
 // Entry is a local view: the key is opaque here, not a recovered donor key type.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 class EAStringC {
@@ -28,6 +30,11 @@ public:
     bool hasData() const;
 };
 EAStringC *Rva0070B4F0GetString(int eSC);
+class Rva006DB160 {
+public:
+    void *allocBlock(int blockSize);
+};
+extern Rva006DB160 *g_aptPoolAllocator;
 class AptValue {
 public:
     virtual void AddRef();
@@ -50,6 +57,7 @@ public:
     void rva0070A680(int index, AptValue *pValue);
     void rva0070A610(int index, AptValue *pValue);
     AsciiString *rva0070AA40();
+    void rva0070AB30();
 };
 void AptNativeHash::Set__Proto__(AptValue *const value)
 {
@@ -183,4 +191,21 @@ void Rva0070A6D0Release(void *pHashItem)
     }
     (*ppValue)->Release();
     *ppValue = 0;
+}
+void AptNativeHash::rva0070AB30()
+{
+    if (mpData) {
+        g_bfmeAptAssertAtE17734("IsEmpty()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptNativeHash.cpp", 0x1F7);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    mpData = (Entry *)g_aptPoolAllocator->allocBlock(mnTotalSize * 8);
+    if (!mpData) {
+        g_bfmeAptAssertAtE17734("mpData != NULL", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptNativeHash.cpp", 0x1F9);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    memset(mpData, 0, mnTotalSize * 8);
 }
