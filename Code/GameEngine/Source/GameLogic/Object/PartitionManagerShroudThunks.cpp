@@ -53,10 +53,13 @@ public:
 	void Rva00627810(void *ptr);
 };
 
+class CDEProvider;
+
 class ShroudManagerImpl008FBA40
 {
 public:
 	void setEnabled_Rva0073B460(bool value);
+	void rva008F8C70(CDEProvider *first, CDEProvider *second);
 };
 
 class PartitionManager
@@ -209,4 +212,22 @@ private:
 void Rva00739750::rva00739750(void *ptr)
 {
 	m_cell->rva008fa850(ptr);
+}
+
+//
+// ?rva00739760@Rva00739760@@QAEXPAVCDEProvider@@0@Z retail 0x00739760 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073B2C0.
+// Evidence: retail mov ecx [ecx+0x10] jmp; gap between 0x00739750 and 0x00739790 in same TU.
+class Rva00739760
+{
+public:
+	void rva00739760(CDEProvider *first, CDEProvider *second);
+private:
+	char m_pad[0x10];
+	ShroudManagerImpl008FBA40 *m_cell; // +0x10
+};
+
+void Rva00739760::rva00739760(CDEProvider *first, CDEProvider *second)
+{
+	m_cell->rva008F8C70(first, second);
 }

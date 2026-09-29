@@ -41397,3 +41397,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva00201B64@@QAEPAXI@Z,,0x00238DE4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-238DE4.cpp,matched,chain deleting dtor calls rowed dtor plus delete
 ?rva00739730@Rva00739730@@QAEXHH@Z,,0x00739730,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B280 callers 0x002A7B73 0x002A84D2 next row in same TU
 ?rva00739750@Rva00739750@@QAEXPAX@Z,,0x00739750,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073D440 gap between 0x00739740 and 0x00739790 same TU
+?rva00739760@Rva00739760@@QAEXPAVCDEProvider@@0@Z,,0x00739760,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B2C0 gap between 0x00739750 and 0x00739790 same TU
