@@ -1,0 +1,24 @@
+// ?_M_insert@?$_Rb_tree@UBfmeStringRecord004071F7@@U1@U?$_Identity@UBfmeStringRecord004071F7@@@_STL@@URecordNocaseLess@@V?$allocator@UBfmeStringRecord004071F7@@@3@@_STL@@AAE?AU?$_Rb_tree_iterator@UBfmeStringRecord004071F7@@U?$_Nonconst_traits@UBfmeStringRecord004071F7@@@_STL@@@2@PAU_Rb_tree_node_base@2@0ABUBfmeStringRecord004071F7@@0@Z
+// partial score=0.98 date=2026-09-29
+// ?_M_insert@?$_Rb_tree@UBfmeStringRecord004071F7@@U1@U?$_Identity@UBfmeStringRecord004071F7@@@_STL@@URecordNocaseLess@@V?$allocator@UBfmeStringRecord004071F7@@@3@@_STL@@AAE?AU?$_Rb_tree_iterator@UBfmeStringRecord004071F7@@U?$_Nonconst_traits@UBfmeStringRecord004071F7@@@_STL@@@2@PAU_Rb_tree_node_base@2@0ABUBfmeStringRecord004071F7@@0@Z
+// partial score=0.98 date=2026-09-29
+// cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// stlport
+#include <map>
+class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
+bool __stdcall Rva0002C63CAsciiNocaseLess(const AsciiString &, const AsciiString &);
+struct BfmeStringRecord004071F7 { AsciiString key; char payload[8]; };
+struct RecordNocaseLess {
+    bool operator()(const BfmeStringRecord004071F7 &a, const BfmeStringRecord004071F7 &b) const
+    {
+        return Rva0002C63CAsciiNocaseLess(a.key, b.key);
+    }
+};
+typedef _STL::_Rb_tree<BfmeStringRecord004071F7, BfmeStringRecord004071F7, _STL::_Identity<BfmeStringRecord004071F7>, RecordNocaseLess, _STL::allocator<BfmeStringRecord004071F7> > TestTree;
+namespace _STL {
+template <> class allocator<char> {
+public:
+    static char *allocate(unsigned int bytes, const void *hint);
+};
+}
+template _STL::pair<TestTree::iterator, bool> TestTree::insert_unique(const TestTree::value_type &);

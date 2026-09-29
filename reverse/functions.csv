@@ -42912,3 +42912,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??0Rva0025460F@@QAE@XZ,,0x0025460F,25,Code/GameEngine/Source/GameLogic/Object/Update/Rva0025460FCtor.cpp,matched,vtable 0x00BF2558 caller 0x0025465C int at 0x118
 ?Rva0017351CInsert@@YAXPAUBfmeAssignRecord32@@U1@P6A_NABU1@2@Z@Z,,0x0017351C,86,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_linear_insert.cpp,matched,insertion helper with 0x20 stride via callers 0x00173841 and 0x00173B5E plus pinned assign and rowed dtor
 ?rva0025C6E2@BfmeStrVM0@@QAEXHHMMMM@Z,,0x0025C6E2,74,Code/GameEngine/Source/Common/Rva0025C6E2.cpp,matched,BfmeStrVM0 array init via neighbours and G7 imul
+?rva003A28ED@Rva003A28ED@@QAE_NW4NameKeyType@@@Z,,0x003A28ED,86,Code/GameEngine/Source/GameLogic/Object/ArmorRva003A28ED.cpp,matched,Armor map remover via rowed clear find erase
