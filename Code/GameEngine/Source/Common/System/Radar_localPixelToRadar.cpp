@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
-// ?localPixelToRadar@Radar@@QAE_NPBUICoord2D@@PAU2@@Z,
+// ?localPixelToRadar@Radar@@QAE_NPBUICoord2D@@PAU2@@Z
 // retail 0x002D81EC, 248 bytes. Dedicated TU: the caller
 // (screenPixelToWorld) lives in Radar_screenPixelToWorld.cpp, so the body
 // lives here (a TU holding a row must not define that row's callees).

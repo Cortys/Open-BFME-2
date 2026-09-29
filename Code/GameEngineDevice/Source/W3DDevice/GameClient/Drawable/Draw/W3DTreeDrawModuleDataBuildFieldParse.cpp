@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// ?buildFieldParse@W3DTreeDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@W3DTreeDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x000CED03 (17 bytes: a single MultiIniFieldParse::add of the class
 // table at 0x00BCCFE8 with offset 0). The table runs ModelName, TextureName,
 // MoveOutwardTime, MoveInwardTime, MoveOutwardDistanceFactor, DarkeningFactor,

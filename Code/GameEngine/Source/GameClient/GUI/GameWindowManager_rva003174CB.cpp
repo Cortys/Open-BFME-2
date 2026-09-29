@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
-// ?rva003174CB@GameWindowManager@@QAEPAVGameWindow@@PAV2@H@Z,
+// ?rva003174CB@GameWindowManager@@QAEPAVGameWindow@@PAV2@H@Z
 // retail 0x003174CB, 262 bytes. Dedicated TU.
 //
 // Rebuilds a gadget from a live window. Target facts:

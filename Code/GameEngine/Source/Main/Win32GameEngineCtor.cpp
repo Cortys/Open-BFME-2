@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
-// ??0Win32GameEngine@@QAE@XZ,
+// ??0Win32GameEngine@@QAE@XZ
 // retail 0x00041D41, 29 bytes. Dedicated shard.
 //
 // ZH Win32GameEngine.cpp donor verbatim: base GameEngine ctor plus

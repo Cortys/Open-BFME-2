@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
-// ?setName@SubsystemInterface@@QAEXVAsciiString@@@Z,
+// ?setName@SubsystemInterface@@QAEXVAsciiString@@@Z
 // retail 0x0006F3CC, 52 bytes. Dedicated shard.
 //
 // Out-of-line m_name assignment at +0x08 taking AsciiString by value.

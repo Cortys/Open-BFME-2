@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// ?Rva0048F7A7Dispatch@AssaultTransportAIUpdateSecondary@@QAEXPAUBfmeBehaviorRequest@@@Z,
+// ?Rva0048F7A7Dispatch@AssaultTransportAIUpdateSecondary@@QAEXPAUBfmeBehaviorRequest@@@Z
 // retail 0x0048F7A7 (129 bytes). Request dispatcher on the behavior's
 // secondary subobject at +0x20: mode 2 requests skip straight to the base
 // tail delegate, otherwise the request ID selects helper work on the primary

@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// ?buildFieldParse@W3DModelDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@W3DModelDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x000C9240 (17 bytes: a single MultiIniFieldParse::add of the class
 // table at 0x00BCB3C8 with offset 0). The table starts InitialRecoilSpeed,
 // MaxRecoilDistance, RecoilDamping, RecoilSettleSpeed and runs through the

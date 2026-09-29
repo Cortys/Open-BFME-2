@@ -1,6 +1,6 @@
 // cl: /O1 /Oy- /DNDEBUG /MD /GX-
 //
-// ?doFXPos@FXList@@QBEXPBVCoord3D@@PBVMatrix3D@@MPBV2@@Z,
+// ?doFXPos@FXList@@QBEXPBUCoord3D@@PBVMatrix3D@@M0@Z
 // retail 0x001E296E, 168 bytes. Dedicated TU.
 //
 // Battle for Middle-earth reference
@@ -107,7 +107,7 @@ private:
 	bool m_hasAlias;
 };
 
-// ?doFXPos@FXList@@QBEXPBVCoord3D@@PBVMatrix3D@@MPBV2@@Z
+// ?doFXPos@FXList@@QBEXPBUCoord3D@@PBVMatrix3D@@M0@Z
 void FXList::doFXPos(const Coord3D *pos, const Matrix3D *mtx, float speed, const Coord3D *secondary) const
 {
 	const FXList *list = this;

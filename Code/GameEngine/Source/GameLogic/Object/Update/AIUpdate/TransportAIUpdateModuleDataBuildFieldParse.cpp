@@ -83,7 +83,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-// ?buildFieldParse@AssaultTransportAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@AssaultTransportAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x0024D248 (27 bytes): base-table call above plus the
 // AssaultTransport table at 0x00BEED74 (MembersGetHealedAtLifeRatio at +0x64
 // plus ClearRangeRequiredToContinueAttackMove at +0x68). Both fields match
@@ -103,7 +103,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-// ?buildFieldParse@AnimalAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@AnimalAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x0024BE7A (27 bytes): base-table call above plus the AnimalAI table
 // at 0x00BEEB88 (FleeRange at +0x64 plus FleeDistance at +0x68 plus
 // WanderPercentage at +0x6C matching the ctor stores 0x14/0x64/0x32 at
@@ -121,7 +121,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-// ?buildFieldParse@WanderAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@WanderAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x0024F1F2 (27 bytes): base-table call above plus the Wander table
 // at 0x00BEF580 (WildBeast at +0x64 plus ConditionForEntry at +0x68 plus
 // Selectable at +0x6C plus WanderDistance at +0x70). The owning factory at

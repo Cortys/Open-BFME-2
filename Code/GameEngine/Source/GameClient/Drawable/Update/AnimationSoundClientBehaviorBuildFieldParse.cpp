@@ -2,7 +2,7 @@
 //
 // Client-side Drawable behavior ModuleData::buildFieldParse procs.
 //
-// ?buildFieldParse@AnimationSoundClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z,
+// ?buildFieldParse@AnimationSoundClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z
 // retail 0x004CAB2C (17 bytes): the AnimationSound table at 0x00C5F064
 // (AnimationSound, MaxUpdateRangeCap). Class evidenced by BFME1's
 // AnimationSoundClientBehaviorModuleData files (Drawable/Behavior, 0x18-byte
