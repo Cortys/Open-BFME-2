@@ -242,6 +242,54 @@ Header, vendored-reference and shared-shim edits — and a resolved merge — tr
 
 Additionally, internally note the time of your last successful push and allow at least a 3-minute cooldown until the next push by the same GitHub account to this repository. Share that clock across workers using the account and continue useful work during the cooldown.
 
+## Frozen files: check before you plan an edit
+
+`find_declared_unmatched` refuses a source that defines **any** function the
+ledger does not declare. Because a file accumulates definitions as bodies are
+written ahead of their addresses, a file can cross that line and become
+uneditable — and nothing re-checks it, because the gate only ever inspects
+*staged* sources.
+
+Measured 2026-09-29 over all 9,067 ledger sources: **116 files are refused
+today, every one of them carrying matched rows**, so none is an exempt parked
+draft. They include the ones with the most remaining work:
+
+```
+InGameUI.cpp            121 undeclared definitions
+Locomotor.cpp            50
+OpenContain.cpp          50
+GameWindowManager.cpp    45
+PhysicsUpdate.cpp        44
+```
+
+Any edit to one of those — however small, however correct — fails the commit
+until its undeclared definitions are dealt with. Check membership before you
+plan work in a file:
+
+```sh
+python3 tools/find_declared_unmatched.py <file>   # silent means it will commit
+```
+
+Two remedies, and they are not interchangeable:
+
+- **`present-unmatched` / `absent-from-retail` markers**, one per definition.
+  This is a *declaration* that the body is known but unpinned (or that retail
+  dead-stripped it), so it is honest only where that is true. Adding it to hide
+  a real over-claim is exactly the failure the gate exists to catch.
+- **Row the body**, which is real work and the reason the file is frozen.
+
+Note that the second half of the tool's own error message is not actionable
+here: it suggests `reverse/unclaimed_sources_whitelist.txt`, and that file
+exists only in the BFME 1 reference tree, not in this repo. Do not go looking
+for it — marker the definitions or row them.
+
+A related trap worth knowing, because it presents identically: a marker
+written `// ?<mangled>,` is not the symbol name. The comma is the ledger row's
+separator, copied along with the name, and the tool takes everything after
+`// ?` to end-of-line as the symbol, so it misses and reports a declared,
+matched definition as undeclared. 689 files carried such a marker; 14 of them
+failed on it and were fixed in `24d5a90fb`.
+
 ## Anti-lift policy
 
 Clean C++ is preferred; MASM or inline asm only for a proven codegen blocker
