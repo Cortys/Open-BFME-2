@@ -157,6 +157,7 @@ public:
 	Int rva0054F5A4(void);
 	void rva0054F7C0(Int val);
 	void rva0044DDFB(int *vals);
+	Int rva0044D836(void);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -253,6 +254,38 @@ Int GameModePreferences::rva0054F5A4(void)
 	if (it == end())
 		return 0;
 	return atoi(it->second.str());
+}
+
+// Color-limit globals at 0x00A022F4: +0x38 count source plus +0x40 cached limit.
+struct Rva00A022F4
+{
+	char m_pad[0x38];
+	int m_38;
+	int m_3C;
+	int m_40;
+};
+
+extern Rva00A022F4 *g_00A022F4;
+
+// ?rva0044D836@GameModePreferences@@QAEHXZ @0x0044D836 (86B): Color getter
+// over the mode-keyed map with -1 for missing or out of range plus lazy
+// cached limit from 0x00A022F4.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT; limit
+// 0x00A022F4 plus 0x38 plus 0x40; callers 0x00249E23 0x00446853.
+Int GameModePreferences::rva0044D836(void)
+{
+	PreferenceMap::const_iterator it = find(makeKey("Color"));
+	if (it == end())
+		return -1;
+	int v = atoi(it->second.str());
+	if (v < -1)
+		return -1;
+	int *limit = &g_00A022F4->m_40;
+	if (*limit == 0)
+		*limit = g_00A022F4->m_38;
+	if (v < *limit)
+		return v;
+	return -1;
 }
 
 // ?rva0054F7C0@GameModePreferences@@QAEXH@Z retail 0x0054F7C0 101B.
