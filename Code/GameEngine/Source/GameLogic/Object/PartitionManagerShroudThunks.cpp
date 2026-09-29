@@ -199,6 +199,7 @@ class BfmeOwnerCDE
 {
 public:
 	void rva008fa850(void *ptr);
+	void bfmeOneCDE(void *ptr);
 };
 class Rva00739750
 {
@@ -230,4 +231,22 @@ private:
 void Rva00739760::rva00739760(CDEProvider *first, CDEProvider *second)
 {
 	m_cell->rva008F8C70(first, second);
+}
+
+//
+// ?rva00739770@Rva00739770@@QAEXPAX@Z retail 0x00739770 8B.
+// Thunk via +0x10 pointer tail-jumping to pinned 0x0073B350.
+// Evidence: retail mov ecx [ecx+0x10] jmp; caller 0x00299E40 pushes one ptr; pin bfmeOneCDE same body as rowed bfmeReleaseABI.
+class Rva00739770
+{
+public:
+	void rva00739770(void *ptr);
+private:
+	char m_pad[0x10];
+	BfmeOwnerCDE *m_cell; // +0x10
+};
+
+void Rva00739770::rva00739770(void *ptr)
+{
+	m_cell->bfmeOneCDE(ptr);
 }
