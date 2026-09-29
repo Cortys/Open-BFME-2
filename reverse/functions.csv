@@ -42627,3 +42627,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?PointInsideArea2D@@YA_NPBUCoord3D@@0H@Z,,0x0025F86D,169,Code/GameEngine/Source/GameClient/Line2D.cpp,matched,ZH donor Line2D two-return bool tail via probe exact
 ??1Rva0025FC61@@MAE@XZ,,0x0025FC61,89,Code/GameEngine/Source/GameClient/Rva0025FC61Dtor.cpp,matched,SubtitleEntry derived dtor vtable 0x7F63F8 array release via global slot
 ?rva0070DFB0@Rva006D6470Owner@@UAEHPAXPAURva008A4570Owner@@@Z,,0x0070DFB0,29,Code/GameEngine/Source/Common/Rva0070DFB0Pred.cpp,matched,slot7 registerClass ternary global mask
+?rva006FE400@Rva006FE400@@QAEHPAXPAURva008A4570Owner@@@Z,,0x006FE400,42,Code/Libraries/Source/Apt/Rva006FE400Chain.cpp,matched,chain virtual slot7 fallback to 70DFB0
