@@ -240,6 +240,7 @@ OptionPreferences::OptionPreferences( void )
 	load("Options.ini");
 }
 
+// ?OptionPreferences::~OptionPreferences present-unmatched
 OptionPreferences::~OptionPreferences()
 {
 }
@@ -295,6 +296,7 @@ void OptionPreferences::setLANIPAddress( UnsignedInt IP )
 	(*this)["IPAddress"] = tmp;
 }
 
+// ?OptionPreferences::getOnlineIPAddress present-unmatched
 UnsignedInt OptionPreferences::getOnlineIPAddress(void)
 {
 	AsciiString selectedIP = (*this)["GameSpyIPAddress"];
@@ -323,6 +325,7 @@ void OptionPreferences::setOnlineIPAddress( UnsignedInt IP )
 	(*this)["GameSpyIPAddress"] = tmp;
 }
 
+// ?OptionPreferences::getAlternateMouseModeEnabled present-unmatched
 Bool OptionPreferences::getAlternateMouseModeEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseAlternateMouse");
@@ -335,6 +338,7 @@ Bool OptionPreferences::getAlternateMouseModeEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getRetaliationModeEnabled present-unmatched
 Bool OptionPreferences::getRetaliationModeEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("Retaliation");
@@ -347,6 +351,7 @@ Bool OptionPreferences::getRetaliationModeEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getDoubleClickAttackMoveEnabled present-unmatched
 Bool OptionPreferences::getDoubleClickAttackMoveEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseDoubleClickAttackMove");
@@ -493,6 +498,7 @@ Bool OptionPreferences::getFirewallNeedToRefresh()
 	return retval;
 }
 
+// ?OptionPreferences::getPreferred3DProvider present-unmatched
 AsciiString OptionPreferences::getPreferred3DProvider(void)
 {
 	OptionPreferences::const_iterator it = find("3DAudioProvider");
@@ -501,6 +507,7 @@ AsciiString OptionPreferences::getPreferred3DProvider(void)
 	return it->second;
 }
 
+// ?OptionPreferences::getSpeakerType present-unmatched
 AsciiString OptionPreferences::getSpeakerType(void)
 {
 	OptionPreferences::const_iterator it = find("SpeakerType");
@@ -509,6 +516,7 @@ AsciiString OptionPreferences::getSpeakerType(void)
 	return it->second;
 }
 
+// ?OptionPreferences::getSoundVolume present-unmatched
 Real OptionPreferences::getSoundVolume(void)
 {
 	OptionPreferences::const_iterator it = find("SFXVolume");
@@ -531,6 +539,7 @@ Real OptionPreferences::getSoundVolume(void)
 	return volume;
 }
 
+// ?OptionPreferences::get3DSoundVolume present-unmatched
 Real OptionPreferences::get3DSoundVolume(void)
 {
 	OptionPreferences::const_iterator it = find("SFX3DVolume");
@@ -553,6 +562,7 @@ Real OptionPreferences::get3DSoundVolume(void)
 	return volume;
 }
 
+// ?OptionPreferences::getSpeechVolume present-unmatched
 Real OptionPreferences::getSpeechVolume(void)
 {
 	OptionPreferences::const_iterator it = find("VoiceVolume");
@@ -567,6 +577,7 @@ Real OptionPreferences::getSpeechVolume(void)
 	return volume;
 }
 
+// ?OptionPreferences::getCloudShadowsEnabled present-unmatched
 Bool OptionPreferences::getCloudShadowsEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseCloudMap");
@@ -579,6 +590,7 @@ Bool OptionPreferences::getCloudShadowsEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getLightmapEnabled present-unmatched
 Bool OptionPreferences::getLightmapEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseLightMap");
@@ -591,6 +603,7 @@ Bool OptionPreferences::getLightmapEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getSmoothWaterEnabled present-unmatched
 Bool OptionPreferences::getSmoothWaterEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("ShowSoftWaterEdge");
@@ -603,6 +616,7 @@ Bool OptionPreferences::getSmoothWaterEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getTreesEnabled present-unmatched
 Bool OptionPreferences::getTreesEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("ShowTrees");
@@ -615,6 +629,7 @@ Bool OptionPreferences::getTreesEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getExtraAnimationsDisabled present-unmatched
 Bool OptionPreferences::getExtraAnimationsDisabled(void)
 {
 	OptionPreferences::const_iterator it = find("ExtraAnimations");
@@ -627,6 +642,7 @@ Bool OptionPreferences::getExtraAnimationsDisabled(void)
 	return TRUE;
 }
 
+// ?OptionPreferences::getUseHeatEffects present-unmatched
 Bool OptionPreferences::getUseHeatEffects(void)
 {
 	OptionPreferences::const_iterator it = find("HeatEffects");
@@ -639,6 +655,7 @@ Bool OptionPreferences::getUseHeatEffects(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getDynamicLODEnabled present-unmatched
 Bool OptionPreferences::getDynamicLODEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("DynamicLOD");
@@ -651,6 +668,7 @@ Bool OptionPreferences::getDynamicLODEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getFPSLimitEnabled present-unmatched
 Bool OptionPreferences::getFPSLimitEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("FPSLimit");
@@ -663,6 +681,7 @@ Bool OptionPreferences::getFPSLimitEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::get3DShadowsEnabled present-unmatched
 Bool OptionPreferences::get3DShadowsEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseShadowVolumes");
@@ -675,6 +694,7 @@ Bool OptionPreferences::get3DShadowsEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::get2DShadowsEnabled present-unmatched
 Bool OptionPreferences::get2DShadowsEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("UseShadowDecals");
@@ -687,6 +707,7 @@ Bool OptionPreferences::get2DShadowsEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getBuildingOcclusionEnabled present-unmatched
 Bool OptionPreferences::getBuildingOcclusionEnabled(void)
 {
 	OptionPreferences::const_iterator it = find("BuildingOcclusion");
@@ -699,6 +720,7 @@ Bool OptionPreferences::getBuildingOcclusionEnabled(void)
 	return FALSE;
 }
 
+// ?OptionPreferences::getParticleCap present-unmatched
 Int OptionPreferences::getParticleCap(void)
 {
 	OptionPreferences::const_iterator it = find("MaxParticleCount");
@@ -712,6 +734,7 @@ Int OptionPreferences::getParticleCap(void)
 	return factor;
 }
 
+// ?OptionPreferences::getTextureReduction present-unmatched
 Int OptionPreferences::getTextureReduction(void)
 {
 	OptionPreferences::const_iterator it = find("TextureReduction");
@@ -724,6 +747,7 @@ Int OptionPreferences::getTextureReduction(void)
 	return factor;
 }
 
+// ?OptionPreferences::getGammaValue present-unmatched
 Real OptionPreferences::getGammaValue(void)
 {
 	OptionPreferences::const_iterator it = find("Gamma");
@@ -751,6 +775,7 @@ void OptionPreferences::getResolution(Int *xres, Int *yres)
 	*yres=selectedYRes;
 }
 
+// ?OptionPreferences::getMusicVolume present-unmatched
 Real OptionPreferences::getMusicVolume(void)
 {
 	OptionPreferences::const_iterator it = find("MusicVolume");

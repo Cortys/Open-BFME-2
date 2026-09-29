@@ -67,6 +67,7 @@ DamageFXStore *TheDamageFXStore = NULL;					///< the DamageFX store definition
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::DamageFX present-unmatched
 DamageFX::DamageFX()
 {
 	// not necessary.
@@ -74,6 +75,7 @@ DamageFX::DamageFX()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::clear present-unmatched
 void DamageFX::clear()
 {
 	for (Int dt = 0; dt < DAMAGE_NUM_TYPES; ++dt)
@@ -86,12 +88,14 @@ void DamageFX::clear()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::getDamageFXThrottleTime present-unmatched
 UnsignedInt DamageFX::getDamageFXThrottleTime(DamageType t, const Object* source) const 
 { 
 	return m_dfx[t][source ? source->getVeterancyLevel() : LEVEL_REGULAR].m_damageFXThrottleTime; 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::doDamageFX present-unmatched
 void DamageFX::doDamageFX(DamageType t, Real damageAmount, const Object* source, const Object* victim) const
 { 
 	ConstFXListPtr fx = getDamageFXList(t, damageAmount, source);
@@ -102,6 +106,7 @@ void DamageFX::doDamageFX(DamageType t, Real damageAmount, const Object* source,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::getDamageFXList present-unmatched
 ConstFXListPtr DamageFX::getDamageFXList(DamageType t, Real damageAmount, const Object* source) const
 { 
 	/*
@@ -122,6 +127,7 @@ ConstFXListPtr DamageFX::getDamageFXList(DamageType t, Real damageAmount, const 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFX::getFieldParse present-unmatched
 const FieldParse* DamageFX::getFieldParse() const
 {
 	static const FieldParse myFieldParse[] = 
@@ -264,18 +270,21 @@ static void parseCommonStuff(
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::DamageFXStore present-unmatched
 DamageFXStore::DamageFXStore()
 {
 	m_dfxmap.clear();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::~DamageFXStore present-unmatched
 DamageFXStore::~DamageFXStore()
 {
 	m_dfxmap.clear();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::findDamageFX present-unmatched
 const DamageFX *DamageFXStore::findDamageFX(AsciiString name) const
 {
 	NameKeyType namekey = TheNameKeyGenerator->nameToKey(name);
@@ -291,16 +300,19 @@ const DamageFX *DamageFXStore::findDamageFX(AsciiString name) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::init present-unmatched
 void DamageFXStore::init()
 {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::reset present-unmatched
 void DamageFXStore::reset()
 {
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?DamageFXStore::update present-unmatched
 void DamageFXStore::update()
 {
 }

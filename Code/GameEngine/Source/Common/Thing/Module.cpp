@@ -75,6 +75,7 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?Module::~Module present-unmatched
 Module::~Module()
 {
 
@@ -83,6 +84,7 @@ Module::~Module()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?Module::crc present-unmatched
 void Module::crc( Xfer *xfer )
 {
 
@@ -93,6 +95,7 @@ void Module::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?Module::xfer present-unmatched
 void Module::xfer( Xfer *xfer )
 {
 
@@ -106,6 +109,7 @@ void Module::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** load post process */
 // ------------------------------------------------------------------------------------------------
+// ?Module::loadPostProcess present-unmatched
 void Module::loadPostProcess( void )
 {
 
@@ -129,6 +133,7 @@ ObjectModule::ObjectModule( Thing *thing, const ModuleData* moduleData ) : Modul
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ObjectModule::~ObjectModule present-unmatched
 ObjectModule::~ObjectModule( void )
 {
 
@@ -137,6 +142,7 @@ ObjectModule::~ObjectModule( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?ObjectModule::crc present-unmatched
 void ObjectModule::crc( Xfer *xfer )
 {
 
@@ -166,6 +172,7 @@ void ObjectModule::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** load post process */
 // ------------------------------------------------------------------------------------------------
+// ?ObjectModule::loadPostProcess present-unmatched
 void ObjectModule::loadPostProcess( void )
 {
 
@@ -192,6 +199,7 @@ DrawableModule::DrawableModule( Thing *thing, const ModuleData* moduleData ) : M
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?DrawableModule::~DrawableModule present-unmatched
 DrawableModule::~DrawableModule( void )
 {
 
@@ -200,6 +208,7 @@ DrawableModule::~DrawableModule( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?DrawableModule::crc present-unmatched
 void DrawableModule::crc( Xfer *xfer )
 {
 
@@ -213,6 +222,7 @@ void DrawableModule::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?DrawableModule::xfer present-unmatched
 void DrawableModule::xfer( Xfer *xfer )
 {
 
@@ -229,6 +239,7 @@ void DrawableModule::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** load post process */
 // ------------------------------------------------------------------------------------------------
+// ?DrawableModule::loadPostProcess present-unmatched
 void DrawableModule::loadPostProcess( void )
 {
 
@@ -242,6 +253,7 @@ void DrawableModule::loadPostProcess( void )
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
+// ?UpgradeMuxData::performUpgradeFX present-unmatched
 void UpgradeMuxData::performUpgradeFX(Object* obj) const
 {
 	if (m_fxListUpgrade)
@@ -251,6 +263,7 @@ void UpgradeMuxData::performUpgradeFX(Object* obj) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?UpgradeMuxData::muxDataProcessUpgradeRemoval present-unmatched
 void UpgradeMuxData::muxDataProcessUpgradeRemoval(Object* obj) const
 {
 	if( !m_removalUpgradeNames.empty() )
@@ -273,6 +286,7 @@ void UpgradeMuxData::muxDataProcessUpgradeRemoval(Object* obj) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?UpgradeMuxData::isTriggeredBy present-unmatched
 Bool UpgradeMuxData::isTriggeredBy(const std::string &upgrade) const
 {
 	std::vector<AsciiString>::const_iterator it;

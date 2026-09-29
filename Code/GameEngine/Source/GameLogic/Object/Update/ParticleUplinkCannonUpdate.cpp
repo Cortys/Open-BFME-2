@@ -71,6 +71,7 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdateModuleData::ParticleUplinkCannonUpdateModuleData present-unmatched
 ParticleUplinkCannonUpdateModuleData::ParticleUplinkCannonUpdateModuleData()
 {
 	m_specialPowerTemplate					= NULL;
@@ -167,6 +168,7 @@ ParticleUplinkCannonUpdateModuleData::ParticleUplinkCannonUpdateModuleData()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::ParticleUplinkCannonUpdate present-unmatched
 ParticleUplinkCannonUpdate::ParticleUplinkCannonUpdate( Thing *thing, const ModuleData* moduleData ) : SpecialPowerUpdateModule( thing, moduleData )
 {
 
@@ -212,6 +214,7 @@ ParticleUplinkCannonUpdate::ParticleUplinkCannonUpdate( Thing *thing, const Modu
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::killEverything present-unmatched
 void ParticleUplinkCannonUpdate::killEverything()
 {
 	removeAllEffects();
@@ -236,6 +239,7 @@ void ParticleUplinkCannonUpdate::killEverything()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::~ParticleUplinkCannonUpdate present-unmatched
 ParticleUplinkCannonUpdate::~ParticleUplinkCannonUpdate( void )
 {
 	killEverything();
@@ -245,6 +249,7 @@ ParticleUplinkCannonUpdate::~ParticleUplinkCannonUpdate( void )
 //-------------------------------------------------------------------------------------------------
 // Validate that we have the necessary data from the ini file.
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::onObjectCreated present-unmatched
 void ParticleUplinkCannonUpdate::onObjectCreated()
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -273,6 +278,7 @@ void ParticleUplinkCannonUpdate::onObjectCreated()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::initiateIntentToDoSpecialPower present-unmatched
 Bool ParticleUplinkCannonUpdate::initiateIntentToDoSpecialPower(const SpecialPowerTemplate *specialPowerTemplate, const Object *targetObj, const Coord3D *targetPos, const Waypoint *way, UnsignedInt commandOptions )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -360,6 +366,7 @@ Bool ParticleUplinkCannonUpdate::initiateIntentToDoSpecialPower(const SpecialPow
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::isPowerCurrentlyInUse present-unmatched
 Bool ParticleUplinkCannonUpdate::isPowerCurrentlyInUse( const CommandButton *command ) const
 {
 	if( m_startAttackFrame != 0 && m_startAttackFrame <= TheGameLogic->getFrame() )
@@ -370,6 +377,7 @@ Bool ParticleUplinkCannonUpdate::isPowerCurrentlyInUse( const CommandButton *com
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::setSpecialPowerOverridableDestination present-unmatched
 void ParticleUplinkCannonUpdate::setSpecialPowerOverridableDestination( const Coord3D *loc )
 { 
 	if( !getObject()->isDisabled() )
@@ -385,6 +393,7 @@ void ParticleUplinkCannonUpdate::setSpecialPowerOverridableDestination( const Co
 //-------------------------------------------------------------------------------------------------
 /** The update callback. */
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::update present-unmatched
 UpdateSleepTime ParticleUplinkCannonUpdate::update()
 {	
 	if( m_invalidSettings )
@@ -778,6 +787,7 @@ UpdateSleepTime ParticleUplinkCannonUpdate::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createOuterNodeParticleSystems present-unmatched
 void ParticleUplinkCannonUpdate::createOuterNodeParticleSystems( IntensityTypes intensity )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -818,6 +828,7 @@ void ParticleUplinkCannonUpdate::createOuterNodeParticleSystems( IntensityTypes 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createConnectorLasers present-unmatched
 void ParticleUplinkCannonUpdate::createConnectorLasers( IntensityTypes intensity )
 {
 	//Cache bone positions for the laser when it is ready to fire
@@ -868,6 +879,7 @@ void ParticleUplinkCannonUpdate::createConnectorLasers( IntensityTypes intensity
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createConnectorFlare present-unmatched
 void ParticleUplinkCannonUpdate::createConnectorFlare( IntensityTypes intensity )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -903,6 +915,7 @@ void ParticleUplinkCannonUpdate::createConnectorFlare( IntensityTypes intensity 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createLaserBaseFlare present-unmatched
 void ParticleUplinkCannonUpdate::createLaserBaseFlare( IntensityTypes intensity )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -938,6 +951,7 @@ void ParticleUplinkCannonUpdate::createLaserBaseFlare( IntensityTypes intensity 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createGroundToOrbitLaser present-unmatched
 void ParticleUplinkCannonUpdate::createGroundToOrbitLaser( UnsignedInt growthFrames )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -974,6 +988,7 @@ void ParticleUplinkCannonUpdate::createGroundToOrbitLaser( UnsignedInt growthFra
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createOrbitToTargetLaser present-unmatched
 void ParticleUplinkCannonUpdate::createOrbitToTargetLaser( UnsignedInt growthFrames )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1016,11 +1031,13 @@ void ParticleUplinkCannonUpdate::createOrbitToTargetLaser( UnsignedInt growthFra
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::createGroundHitParticleSystem present-unmatched
 void ParticleUplinkCannonUpdate::createGroundHitParticleSystem( IntensityTypes intensity )
 {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::removeAllEffects present-unmatched
 void ParticleUplinkCannonUpdate::removeAllEffects()
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1060,6 +1077,7 @@ void ParticleUplinkCannonUpdate::removeAllEffects()
 
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::calculateDefaultInformation present-unmatched
 Bool ParticleUplinkCannonUpdate::calculateDefaultInformation()
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1092,6 +1110,7 @@ Bool ParticleUplinkCannonUpdate::calculateDefaultInformation()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::calculateUpBonePositions present-unmatched
 Bool ParticleUplinkCannonUpdate::calculateUpBonePositions()
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1116,6 +1135,7 @@ Bool ParticleUplinkCannonUpdate::calculateUpBonePositions()
 
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::setLogicalStatus present-unmatched
 void ParticleUplinkCannonUpdate::setLogicalStatus( PUCStatus newStatus )
 {
 	Object *obj = getObject();
@@ -1221,6 +1241,7 @@ void ParticleUplinkCannonUpdate::setLogicalStatus( PUCStatus newStatus )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::setClientStatus present-unmatched
 void ParticleUplinkCannonUpdate::setClientStatus( PUCStatus newStatus, Bool revealThisFrame )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1329,6 +1350,7 @@ void ParticleUplinkCannonUpdate::setClientStatus( PUCStatus newStatus, Bool reve
 
 
 //-------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::doesSpecialPowerHaveOverridableDestinationActive present-unmatched
 Bool ParticleUplinkCannonUpdate::doesSpecialPowerHaveOverridableDestinationActive() const
 {
 	return m_status == STATUS_PREFIRE || m_status == STATUS_FIRING || m_status == STATUS_POSTFIRE;
@@ -1338,6 +1360,7 @@ Bool ParticleUplinkCannonUpdate::doesSpecialPowerHaveOverridableDestinationActiv
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::crc present-unmatched
 void ParticleUplinkCannonUpdate::crc( Xfer *xfer )
 {
 
@@ -1351,6 +1374,7 @@ void ParticleUplinkCannonUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::xfer present-unmatched
 void ParticleUplinkCannonUpdate::xfer( Xfer *xfer )
 {
 	const ParticleUplinkCannonUpdateModuleData *data = getParticleUplinkCannonUpdateModuleData();
@@ -1469,6 +1493,7 @@ void ParticleUplinkCannonUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?ParticleUplinkCannonUpdate::loadPostProcess present-unmatched
 void ParticleUplinkCannonUpdate::loadPostProcess( void )
 {
 

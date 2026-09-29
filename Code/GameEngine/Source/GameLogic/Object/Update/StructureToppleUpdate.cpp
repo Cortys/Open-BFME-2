@@ -87,6 +87,7 @@ StructureToppleUpdate::StructureToppleUpdate( Thing *thing, const ModuleData* mo
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::~StructureToppleUpdate present-unmatched
 StructureToppleUpdate::~StructureToppleUpdate( void )
 {
 }
@@ -144,6 +145,7 @@ static void parseAngleFX(INI* ini, void *instance, void * /* store */, const voi
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::beginStructureTopple present-unmatched
 void StructureToppleUpdate::beginStructureTopple(const DamageInfo *damageInfo)
 {
 	const StructureToppleUpdateModuleData *d = getStructureToppleUpdateModuleData();
@@ -193,6 +195,7 @@ void StructureToppleUpdate::beginStructureTopple(const DamageInfo *damageInfo)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::onDie present-unmatched
 void StructureToppleUpdate::onDie( const DamageInfo *damageInfo )
 {
 	const StructureToppleUpdateModuleData* d = getStructureToppleUpdateModuleData();
@@ -211,6 +214,7 @@ void StructureToppleUpdate::onDie( const DamageInfo *damageInfo )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::update present-unmatched
 UpdateSleepTime StructureToppleUpdate::update( void )
 {
 	static const Real TOPPLE_ACCELERATION_FACTOR = 0.02f;
@@ -319,6 +323,7 @@ UpdateSleepTime StructureToppleUpdate::update( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doToppleDoneStuff present-unmatched
 void StructureToppleUpdate::doToppleDoneStuff() 
 {
 	static NameKeyType key_BoneFXUpdate = NAMEKEY("BoneFXUpdate");
@@ -341,6 +346,7 @@ void StructureToppleUpdate::doToppleDoneStuff()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doAngleFX present-unmatched
 void StructureToppleUpdate::doAngleFX(Real curAngle, Real newAngle) 
 {
 	const StructureToppleUpdateModuleData *d = getStructureToppleUpdateModuleData();
@@ -360,6 +366,7 @@ void StructureToppleUpdate::doAngleFX(Real curAngle, Real newAngle)
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // theta is the angle of the building with respect to the ground.
+// ?StructureToppleUpdate::applyCrushingDamage present-unmatched
 void StructureToppleUpdate::applyCrushingDamage(Real theta) 
 {
 //	static const Real THETA_CEILING = PI/8; // This weapon won't do any damage until theta is less than this value.
@@ -423,6 +430,7 @@ void StructureToppleUpdate::applyCrushingDamage(Real theta)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doDamageLine present-unmatched
 void StructureToppleUpdate::doDamageLine(Object *building, const WeaponTemplate* wt, Real jcos, Real jsin, Real facingWidth, Real toppleAngle) 
 {
 	const DamageInfo *lastDamageInfo = getObject()->getBodyModule()->getLastDamageInfo();
@@ -468,6 +476,7 @@ void StructureToppleUpdate::doDamageLine(Object *building, const WeaponTemplate*
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doToppleStartFX present-unmatched
 void StructureToppleUpdate::doToppleStartFX(Object *building, const DamageInfo *damageInfo) 
 {
 	const StructureToppleUpdateModuleData *d = getStructureToppleUpdateModuleData();
@@ -481,6 +490,7 @@ void StructureToppleUpdate::doToppleStartFX(Object *building, const DamageInfo *
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doToppleDelayBurstFX present-unmatched
 void StructureToppleUpdate::doToppleDelayBurstFX() 
 {
 	const StructureToppleUpdateModuleData *d = getStructureToppleUpdateModuleData();
@@ -548,6 +558,7 @@ static void buildNonDupRandomIndexList(Int range, Int count, Int idxList[])
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::doPhaseStuff present-unmatched
 void StructureToppleUpdate::doPhaseStuff(StructureTopplePhaseType stphase, const Coord3D *target)
 {
 	const StructureToppleUpdateModuleData* d = getStructureToppleUpdateModuleData();
@@ -573,6 +584,7 @@ void StructureToppleUpdate::doPhaseStuff(StructureTopplePhaseType stphase, const
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::crc present-unmatched
 void StructureToppleUpdate::crc( Xfer *xfer )
 {
 
@@ -586,6 +598,7 @@ void StructureToppleUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::xfer present-unmatched
 void StructureToppleUpdate::xfer( Xfer *xfer )
 {
 
@@ -629,6 +642,7 @@ void StructureToppleUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?StructureToppleUpdate::loadPostProcess present-unmatched
 void StructureToppleUpdate::loadPostProcess( void )
 {
 

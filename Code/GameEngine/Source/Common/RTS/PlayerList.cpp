@@ -74,6 +74,7 @@
 /*extern*/ PlayerList *ThePlayerList = NULL;
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::PlayerList present-unmatched
 PlayerList::PlayerList() :
 	m_local(NULL),
 	m_playerCount(0)
@@ -130,6 +131,7 @@ void PlayerList::reset()
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::newGame present-unmatched
 void PlayerList::newGame()
 {
 	Int i;
@@ -240,6 +242,7 @@ void PlayerList::newGame()
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::init present-unmatched
 void PlayerList::init()
 {
 	m_playerCount = 1;
@@ -254,6 +257,7 @@ void PlayerList::init()
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::update present-unmatched
 void PlayerList::update()
 {
 	// update all players
@@ -265,6 +269,7 @@ void PlayerList::update()
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::newMap present-unmatched
 void PlayerList::newMap()
 {
 	// update all players
@@ -276,6 +281,7 @@ void PlayerList::newMap()
 }
 
 // ------------------------------------------------------------------------
+// ?PlayerList::teamAboutToBeDeleted present-unmatched
 void PlayerList::teamAboutToBeDeleted(Team* team)
 {
 	for( Int i = 0; i < MAX_PLAYER_COUNT; i++ )
@@ -285,6 +291,7 @@ void PlayerList::teamAboutToBeDeleted(Team* team)
 }
 
 //=============================================================================
+// ?PlayerList::updateTeamStates present-unmatched
 void PlayerList::updateTeamStates(void) 
 {
 	// Clear team flags for all players.
@@ -295,6 +302,7 @@ void PlayerList::updateTeamStates(void)
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::validateTeam present-unmatched
 Team *PlayerList::validateTeam( AsciiString owner )
 {
 	// owner could be a player or team. first, check team names.
@@ -312,6 +320,7 @@ Team *PlayerList::validateTeam( AsciiString owner )
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::setLocalPlayer present-unmatched
 void PlayerList::setLocalPlayer(Player *player)
 {
 	// can't set local player to null -- if you try, you get neutral.
@@ -355,6 +364,7 @@ void PlayerList::setLocalPlayer(Player *player)
 }
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::getPlayerFromMask present-unmatched
 Player *PlayerList::getPlayerFromMask( PlayerMaskType mask )
 {
 	Player *player = NULL;
@@ -375,6 +385,7 @@ Player *PlayerList::getPlayerFromMask( PlayerMaskType mask )
 }  // end getPlayerFromMask
 
 //-----------------------------------------------------------------------------
+// ?PlayerList::getEachPlayerFromMask present-unmatched
 Player *PlayerList::getEachPlayerFromMask( PlayerMaskType& maskToAdjust )
 {
 	Player *player = NULL;
@@ -398,6 +409,7 @@ Player *PlayerList::getEachPlayerFromMask( PlayerMaskType& maskToAdjust )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?PlayerList::getPlayersWithRelationship present-unmatched
 PlayerMaskType PlayerList::getPlayersWithRelationship( Int srcPlayerIndex, UnsignedInt allowedRelationships )
 {
 	PlayerMaskType retVal = 0;
@@ -444,6 +456,7 @@ PlayerMaskType PlayerList::getPlayersWithRelationship( Int srcPlayerIndex, Unsig
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?PlayerList::crc present-unmatched
 void PlayerList::crc( Xfer *xfer )
 {
 	xfer->xferInt( &m_playerCount );
@@ -457,6 +470,7 @@ void PlayerList::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?PlayerList::xfer present-unmatched
 void PlayerList::xfer( Xfer *xfer )
 {
 
@@ -490,6 +504,7 @@ void PlayerList::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?PlayerList::loadPostProcess present-unmatched
 void PlayerList::loadPostProcess( void )
 {
 

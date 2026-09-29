@@ -103,6 +103,7 @@ const char* WeaponSetFlags::s_bitNameList[] =
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::clear present-unmatched
 void WeaponTemplateSet::clear()
 {
 	m_isReloadTimeShared = false;
@@ -117,6 +118,7 @@ void WeaponTemplateSet::clear()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::hasAnyWeapons present-unmatched
 Bool WeaponTemplateSet::hasAnyWeapons() const
 {
 	for (int i = 0; i < WEAPONSLOT_COUNT; ++i) 
@@ -128,6 +130,7 @@ Bool WeaponTemplateSet::hasAnyWeapons() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::parseWeapon present-unmatched
 void WeaponTemplateSet::parseWeapon(INI* ini, void *instance, void * /*store*/, const void* userData)
 {
 	WeaponTemplateSet* self = (WeaponTemplateSet*)instance;
@@ -136,6 +139,7 @@ void WeaponTemplateSet::parseWeapon(INI* ini, void *instance, void * /*store*/, 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::parseAutoChoose present-unmatched
 void WeaponTemplateSet::parseAutoChoose(INI* ini, void *instance, void * /*store*/, const void* userData)
 {
 	WeaponTemplateSet* self = (WeaponTemplateSet*)instance;
@@ -144,6 +148,7 @@ void WeaponTemplateSet::parseAutoChoose(INI* ini, void *instance, void * /*store
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::parsePreferredAgainst present-unmatched
 void WeaponTemplateSet::parsePreferredAgainst(INI* ini, void *instance, void * /*store*/, const void* userData)
 {
 	WeaponTemplateSet* self = (WeaponTemplateSet*)instance;
@@ -170,6 +175,7 @@ void WeaponTemplateSet::parseWeaponTemplateSet( INI* ini, const ThingTemplate* t
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponTemplateSet::testWeaponSetFlag present-unmatched
 Bool WeaponTemplateSet::testWeaponSetFlag( WeaponSetType wst ) const
 {
 	return m_types.test( wst );
@@ -180,6 +186,7 @@ Bool WeaponTemplateSet::testWeaponSetFlag( WeaponSetType wst ) const
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::WeaponSet present-unmatched
 WeaponSet::WeaponSet()
 {
 	m_curWeapon = PRIMARY_WEAPON;
@@ -195,6 +202,7 @@ WeaponSet::WeaponSet()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::~WeaponSet present-unmatched
 WeaponSet::~WeaponSet()
 {
 	for (Int i = 0; i < WEAPONSLOT_COUNT; ++i)
@@ -205,6 +213,7 @@ WeaponSet::~WeaponSet()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?WeaponSet::crc present-unmatched
 void WeaponSet::crc( Xfer *xfer )
 {
 
@@ -215,6 +224,7 @@ void WeaponSet::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?WeaponSet::xfer present-unmatched
 void WeaponSet::xfer( Xfer *xfer )
 {
 	// version
@@ -294,12 +304,14 @@ void WeaponSet::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?WeaponSet::loadPostProcess present-unmatched
 void WeaponSet::loadPostProcess( void )
 {
 
 }  // end loadPostProcess
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::updateWeaponSet present-unmatched
 void WeaponSet::updateWeaponSet(const Object* obj)
 {
 	const WeaponTemplateSet* set = obj->getTemplate()->findWeaponTemplateSet(obj->getWeaponSetFlags());
@@ -418,6 +430,7 @@ static Int getVictimAntiMask(const Object* victim)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::weaponSetOnWeaponBonusChange present-unmatched
 void WeaponSet::weaponSetOnWeaponBonusChange(const Object *source)
 {
 	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
@@ -448,6 +461,7 @@ Bool WeaponSet::isAnyWithinTargetPitch(const Object* obj, const Object* victim) 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::getAbleToAttackSpecificObject present-unmatched
 CanAttackResult WeaponSet::getAbleToAttackSpecificObject( AbleToAttackType attackType, const Object* source, const Object* victim, CommandSourceType commandSource, WeaponSlotType specificSlot ) const
 {
 
@@ -606,6 +620,7 @@ CanAttackResult WeaponSet::getAbleToAttackSpecificObject( AbleToAttackType attac
 //This is formerly the 2nd half of getAbleToAttackSpecificObject
 //This function is responsible for determining if our object is physically capable of attacking the target and it
 //supports both victim or position.
+// ?WeaponSet::getAbleToUseWeaponAgainstTarget present-unmatched
 CanAttackResult WeaponSet::getAbleToUseWeaponAgainstTarget( AbleToAttackType attackType, const Object *source, const Object *victim, const Coord3D *pos, CommandSourceType commandSource, WeaponSlotType specificSlot ) const
 {
 
@@ -789,6 +804,7 @@ CanAttackResult WeaponSet::getAbleToUseWeaponAgainstTarget( AbleToAttackType att
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::chooseBestWeaponForTarget present-unmatched
 Bool WeaponSet::chooseBestWeaponForTarget(const Object* obj, const Object* victim, WeaponChoiceCriteria criteria, CommandSourceType cmdSource)
 {
 	/*
@@ -1009,6 +1025,7 @@ Bool WeaponSet::isOutOfAmmo() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::findAmmoPipShowingWeapon present-unmatched
 const Weapon* WeaponSet::findAmmoPipShowingWeapon() const
 {
 	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
@@ -1023,6 +1040,7 @@ const Weapon* WeaponSet::findAmmoPipShowingWeapon() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::findWaypointFollowingCapableWeapon present-unmatched
 Weapon* WeaponSet::findWaypointFollowingCapableWeapon()
 {
 	for( Int i = WEAPONSLOT_COUNT - 1; i >= PRIMARY_WEAPON; i-- )
@@ -1036,6 +1054,7 @@ Weapon* WeaponSet::findWaypointFollowingCapableWeapon()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::getMostPercentReadyToFireAnyWeapon present-unmatched
 UnsignedInt WeaponSet::getMostPercentReadyToFireAnyWeapon() const
 {
 	UnsignedInt mostReady = 0;
@@ -1060,6 +1079,7 @@ UnsignedInt WeaponSet::getMostPercentReadyToFireAnyWeapon() const
 //-------------------------------------------------------------------------------------------------
 // A special type of command demands that you use this (normally unchooseable) weapon
 // until told otherwise.
+// ?WeaponSet::setWeaponLock present-unmatched
 Bool WeaponSet::setWeaponLock( WeaponSlotType weaponSlot, WeaponLockType lockType )
 {
 	if (lockType == NOT_LOCKED)
@@ -1095,6 +1115,7 @@ Bool WeaponSet::setWeaponLock( WeaponSlotType weaponSlot, WeaponLockType lockTyp
 //-------------------------------------------------------------------------------------------------
 // Either we have successfully fired a full clip of our special attack, or we have switched
 // weaponsets entirely, or any Player issued command besides special attack has been given.
+// ?WeaponSet::releaseWeaponLock present-unmatched
 void WeaponSet::releaseWeaponLock(WeaponLockType lockType)
 {
 	if( m_curWeaponLockedStatus == NOT_LOCKED )
@@ -1118,6 +1139,7 @@ void WeaponSet::releaseWeaponLock(WeaponLockType lockType)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::getWeaponInWeaponSlot present-unmatched
 Weapon* WeaponSet::getWeaponInWeaponSlot(WeaponSlotType wslot) const
 { 
 	return m_weapons[wslot]; 
@@ -1126,6 +1148,7 @@ Weapon* WeaponSet::getWeaponInWeaponSlot(WeaponSlotType wslot) const
 //-------------------------------------------------------------------------------------------------
 	//When an AIAttackState is over, it needs to clean up any weapons that might be in leech range mode
 	//or else those weapons will have unlimited range!
+// ?WeaponSet::clearLeechRangeModeForAllWeapons present-unmatched
 void WeaponSet::clearLeechRangeModeForAllWeapons()
 {
 	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
@@ -1140,6 +1163,7 @@ void WeaponSet::clearLeechRangeModeForAllWeapons()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?WeaponSet::isSharedReloadTime present-unmatched
 Bool WeaponSet::isSharedReloadTime() const
 {
 	if (m_curWeaponTemplateSet)

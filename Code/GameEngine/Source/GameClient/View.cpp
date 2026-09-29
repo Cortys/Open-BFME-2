@@ -43,6 +43,7 @@ UnsignedInt View::m_idNext = 1;
 View *TheTacticalView = NULL;
 
 
+// ?View::View present-unmatched
 View::View( void )
 {
 	//Added By Sadullah Nader
@@ -86,10 +87,12 @@ View::View( void )
 	m_guardBandBias.y = 0.0f;
 }
 
+// ?View::~View present-unmatched
 View::~View()
 {
 }
 
+// ?View::init present-unmatched
 void View::init( void )
 {
 	m_width = DEFAULT_VIEW_WIDTH;
@@ -114,6 +117,7 @@ void View::init( void )
 	m_defaultPitchAngle = 0.0f;
 }
 
+// ?View::reset present-unmatched
 void View::reset( void )
 {
 	// Only fixing the reported bug.  Who knows what side effects resetting the rest could have.
@@ -123,17 +127,20 @@ void View::reset( void )
 /**
  * Prepend this view to the given list, return the new list.
  */
+// ?View::prependViewToList present-unmatched
 View *View::prependViewToList( View *list )
 {
 	m_next = list;
 	return this;
 }
 
+// ?View::zoomIn present-unmatched
 void View::zoomIn( void )
 {
 	setHeightAboveGround(getHeightAboveGround() - 10.0f);
 }
 
+// ?View::zoomOut present-unmatched
 void View::zoomOut( void )
 {
 	setHeightAboveGround(getHeightAboveGround() + 10.0f);
@@ -142,6 +149,7 @@ void View::zoomOut( void )
 /**
  * Center the view on the given coordinate.
  */
+// ?View::lookAt present-unmatched
 void View::lookAt( const Coord3D *o ) 
 { 
 
@@ -155,6 +163,7 @@ void View::lookAt( const Coord3D *o )
 /**
  * Shift the view by the given delta.
  */
+// ?View::scrollBy present-unmatched
 void View::scrollBy( Coord2D *delta ) 
 { 
 	// update view's world position
@@ -188,6 +197,7 @@ void View::setPitch( Real angle )
 /**
  * Set the view angle back to default
  */
+// ?View::setAngleAndPitchToDefault present-unmatched
 void View::setAngleAndPitchToDefault( void )
 { 
 	m_angle = m_defaultAngle;
@@ -197,6 +207,7 @@ void View::setAngleAndPitchToDefault( void )
 /**
  * write the view's current location in to the view location object
  */
+// ?View::getLocation present-unmatched
 void View::getLocation( ViewLocation *location )
 {
 
@@ -209,6 +220,7 @@ void View::getLocation( ViewLocation *location )
 /**
  * set the view's current location from to the view location object
  */
+// ?View::setLocation present-unmatched
 void View::setLocation( const ViewLocation *location )
 {
 	if ( location->m_valid )
@@ -226,6 +238,7 @@ void View::setLocation( const ViewLocation *location )
 /** project the 4 corners of this view into the world and return each point as a parameter,
 		the world points are at the requested Z */
 //-------------------------------------------------------------------------------------------------
+// ?View::getScreenCornerWorldPointsAtZ present-unmatched
 void View::getScreenCornerWorldPointsAtZ( Coord3D *topLeft, Coord3D *topRight,
 																					Coord3D *bottomLeft, Coord3D *bottomRight,
 																					Real z )
@@ -261,6 +274,7 @@ void View::getScreenCornerWorldPointsAtZ( Coord3D *topLeft, Coord3D *topRight,
 // ------------------------------------------------------------------------------------------------
 /** Xfer method for a view */
 // ------------------------------------------------------------------------------------------------
+// ?View::xfer present-unmatched
 void View::xfer( Xfer *xfer )
 {
 

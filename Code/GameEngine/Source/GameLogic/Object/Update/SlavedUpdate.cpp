@@ -77,11 +77,13 @@ SlavedUpdate::SlavedUpdate( Thing *thing, const ModuleData* moduleData ) : Updat
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::~SlavedUpdate present-unmatched
 SlavedUpdate::~SlavedUpdate( void )
 {
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::onObjectCreated present-unmatched
 void SlavedUpdate::onObjectCreated()
 {
 	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
@@ -94,18 +96,21 @@ void SlavedUpdate::onObjectCreated()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::onEnslave present-unmatched
 void SlavedUpdate::onEnslave( const Object *slaver )
 {
 	startSlavedEffects( slaver );
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::onSlaverDie present-unmatched
 void SlavedUpdate::onSlaverDie( const DamageInfo *info )
 {
 	stopSlavedEffects();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::onSlaverDamage present-unmatched
 void SlavedUpdate::onSlaverDamage( const DamageInfo *info )
 {
 	// Only slaves with a ProneUpdate will even care.
@@ -116,6 +121,7 @@ void SlavedUpdate::onSlaverDamage( const DamageInfo *info )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::update present-unmatched
 UpdateSleepTime SlavedUpdate::update( void )
 {
 /// @todo srj use SLEEPY_UPDATE here
@@ -291,6 +297,7 @@ UpdateSleepTime SlavedUpdate::update( void )
 //-------------------------------------------------------------------------------------------------
 // We are ordered to attempt to get as close as possible to my master's target.
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::doAttackLogic present-unmatched
 void SlavedUpdate::doAttackLogic( const Object *target )
 {
 	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
@@ -355,6 +362,7 @@ void SlavedUpdate::doAttackLogic( const Object *target )
 //-------------------------------------------------------------------------------------------------
 // We are ordered to attempt to get as close as possible to my master's movement destination point.
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::doScoutLogic present-unmatched
 void SlavedUpdate::doScoutLogic( const Coord3D *mastersDestination )
 {
 	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
@@ -411,6 +419,7 @@ void SlavedUpdate::doScoutLogic( const Coord3D *mastersDestination )
 //-------------------------------------------------------------------------------------------------
 // We are ordered to attempt to get as close as possible to my master's position.
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::doGuardLogic present-unmatched
 void SlavedUpdate::doGuardLogic( Coord3D *pinnedPosition )
 {
 	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
@@ -438,6 +447,7 @@ void SlavedUpdate::doGuardLogic( Coord3D *pinnedPosition )
 //-------------------------------------------------------------------------------------------------
 // We are ordered to repair our master
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::doRepairLogic present-unmatched
 void SlavedUpdate::doRepairLogic()
 {
 	Object *me = getObject();
@@ -524,6 +534,7 @@ void SlavedUpdate::doRepairLogic()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::endRepair present-unmatched
 void SlavedUpdate::endRepair()
 {
 	if( m_repairState != REPAIRSTATE_NONE )
@@ -551,6 +562,7 @@ void SlavedUpdate::endRepair()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::setRepairModelConditionStates present-unmatched
 void SlavedUpdate::setRepairModelConditionStates( ModelConditionFlagType flag )
 {
 	Object *obj = getObject();
@@ -566,6 +578,7 @@ void SlavedUpdate::setRepairModelConditionStates( ModelConditionFlagType flag )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::setRepairState present-unmatched
 void SlavedUpdate::setRepairState( RepairStates repairState )
 {
 	Object *obj = getObject();
@@ -675,6 +688,7 @@ void SlavedUpdate::setRepairState( RepairStates repairState )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::moveToNewRepairSpot present-unmatched
 void SlavedUpdate::moveToNewRepairSpot()
 {
 	const SlavedUpdateModuleData* data = getSlavedUpdateModuleData();
@@ -711,6 +725,7 @@ void SlavedUpdate::moveToNewRepairSpot()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::startSlavedEffects present-unmatched
 void SlavedUpdate::startSlavedEffects( const Object *slaver )
 {
 	if( slaver == NULL )
@@ -744,6 +759,7 @@ void SlavedUpdate::startSlavedEffects( const Object *slaver )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::stopSlavedEffects present-unmatched
 void SlavedUpdate::stopSlavedEffects()
 {
 	m_slaver = INVALID_ID;
@@ -757,6 +773,7 @@ void SlavedUpdate::stopSlavedEffects()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::crc present-unmatched
 void SlavedUpdate::crc( Xfer *xfer )
 {
 
@@ -770,6 +787,7 @@ void SlavedUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::xfer present-unmatched
 void SlavedUpdate::xfer( Xfer *xfer )
 {
 
@@ -801,6 +819,7 @@ void SlavedUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?SlavedUpdate::loadPostProcess present-unmatched
 void SlavedUpdate::loadPostProcess( void )
 {
 
