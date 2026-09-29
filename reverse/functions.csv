@@ -42063,3 +42063,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006C8770@Rva006C8770@@QAE_NHHH@Z,,0x006C8770,5,Code/GameEngine/Source/Common/VtableConstantPredicates.cpp,matched,unnamed vtable slot target; identity not recoverable so address-derived class name; exact match
 ?Rva003C43A3Do@@YGXABVAsciiString@@0@Z,,0x003C43A3,80,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C43A3Do.cpp,matched,chain lane script team armor remove
 ??$_Construct@UBfmeStringRecord0021A940@@U1@@_STL@@YAXPAUBfmeStringRecord0021A940@@ABU1@@Z,,0x0021B8C5,45,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,chain Construct via rowed copy 0x0021AAE1 45B shape
+?rva00536F36@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536F36,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,RegionsLost setter slot2C same TU
