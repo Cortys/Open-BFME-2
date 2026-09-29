@@ -277,7 +277,7 @@ GameWindowManager.cpp    45
 PhysicsUpdate.cpp        44
 ```
 
-**79 of those 116 have since been unfrozen, leaving 37** (measured after the
+**89 of those 116 have since been unfrozen, leaving 27** (measured after the
 sweeps below). The recipe that did it is worth reusing, because it is
 self-verifying rather than judgement-based:
 
@@ -290,10 +290,16 @@ self-verifying rather than judgement-based:
    refuses.** A marker on the wrong overload — the `MeshClass::Scale` case —
    cannot then survive.
 
-That loop took 76 files in two passes with 2 reverts, and the reverts are the
-point: the guard, not a hand-set ceiling, is what makes the marking safe. Files
-with more than ten undeclared definitions still need the definitions read one at
-a time, because past that point the report stops telling you which is which.
+That loop took 86 files in three passes (ceilings 3, 10 and 25) with 8 reverts,
+and the reversions are the point: the guard, not a hand-set ceiling, is what
+makes the marking safe. The ceiling only decides how many files are *attempted*
+-- a file whose declarations cannot all be placed is restored untouched rather
+than half-marked, so raising it risks nothing but time.
+
+The 27 that remain carry more than 25 undeclared definitions each, up to
+InGameUI.cpp at 121. Those need each definition read, because the report stops
+telling you which of two same-named methods is the undeclared one long before
+121.
 
 Any edit to a still-frozen file — however small, however correct — fails the
 commit until its undeclared definitions are dealt with. Check membership before
