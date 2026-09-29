@@ -41011,3 +41011,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00109610@@UAE@XZ,,0x00109610,51,Code/GameEngine/Source/Common/Rva00109610Dtor.cpp,matched,derived dtor calls rowed base rva00108951 restores base vtable caller 0x10BA83
 ?rva00382983@Rva003820D1@@QAEXXZ,,0x00382983,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,fifth twin clear
 ?Rva004F8373Destroy@@YAXPAURva004F6986@@0@Z,,0x004F8373,25,Code/GameEngine/Source/Common/Rva004F8373Destroy.cpp,matched,chain destroy loop stride 8 via rowed dtor
+?rva004F89DB@Rva004F89DB@@QAEXXZ,,0x004F89DB,30,Code/GameEngine/Source/Common/Rva004F89DBClear.cpp,matched,chain holder clear via rowed destroy plus free
