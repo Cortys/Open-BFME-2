@@ -45,6 +45,36 @@ private:
 	StringBase<wchar_t> m_data;
 };
 
+class AsciiString
+{
+public:
+	AsciiString() {}
+	~AsciiString() {}
+	void __cdecl format(const char *fmt, ...);
+private:
+	StringBase<char> m_data;
+};
+
+struct Rva005D2FD0Inner
+{
+	char m_pad8[8];
+	char m_name[1];
+};
+
+struct Rva005D2FD0Outer
+{
+	Rva005D2FD0Inner *m_ptr;
+};
+
+class BfmeAptWindowManager
+{
+public:
+	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
+};
+
+extern BfmeAptWindowManager *g_Va009FE4CC;
+extern char g_Va007BAC1C;
+
 class GameTextInterface
 {
 public:
@@ -81,4 +111,14 @@ UnicodeString Rva005D38C8Get(int a, int b)
 		}
 	}
 	return tmp;
+}
+
+// ?Rva005D3966Set@@YAXHPAURva005D2FD0Outer@@HH@Z retail 0x005D3966 132B
+// Evidence: chain from 0x005D38C8; APT:_level%u.%s_CP via 0x00038150; bfmeSetText pin 0x00225301; release wide 0x00036E70 ansi 0x00036410; callers 0x005D3A0A 0x005D3F46
+void __cdecl Rva005D3966Set(int level, Rva005D2FD0Outer *outer, int a, int b)
+{
+	AsciiString key;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	key.format("APT:_level%u.%s_CP", level, mid);
+	g_Va009FE4CC->bfmeSetText(key, Rva005D38C8Get(a, b), true);
 }

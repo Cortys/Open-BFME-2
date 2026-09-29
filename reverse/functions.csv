@@ -41986,3 +41986,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4BfmeNarrowRecord0054FEF1@@QAEAAU0@ABU0@@Z,,0x005501D3,33,Code/GameEngine/Source/Common/NarrowStringRecordCopyBFME2.cpp,matched,record assign via string assign plus words
 ?rva0055076F@Rva0055076F@@QAEXXZ,,0x0055076F,13,Code/GameEngine/Source/Common/Rva0055076FRelease.cpp,matched,null and delete owned pointer via rowed delete
 ?Rva005D38C8Get@@YA?AVUnicodeString@@HH@Z,,0x005D38C8,158,Code/GameEngine/Source/Common/Rva005D38C8Fetch.cpp,matched,unlock TheGameText fetch ArmyUnitSwapperCP format caller 0x005D3966
+?Rva005D3966Set@@YAXHPAURva005D2FD0Outer@@HH@Z,,0x005D3966,132,Code/GameEngine/Source/Common/Rva005D38C8Fetch.cpp,matched,chain from 0x005D38C8 APT CP via 0x00038150 bfmeSetText pin callers 0x005D3A0A 0x005D3F46
