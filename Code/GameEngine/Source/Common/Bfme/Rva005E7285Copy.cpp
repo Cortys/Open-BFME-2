@@ -23,3 +23,8 @@ Rva005E7198 *__cdecl Rva005E7285Copy(Rva005E7198 *first, Rva005E7198 *last, Rva0
 	}
 	return dest;
 }
+Rva005E7198 *__cdecl Rva005E748DForward(Rva005E7198 *first, Rva005E7198 *last, Rva005E7198 *dest, void *ignored)
+{
+	char tag;
+	return Rva005E7285Copy(first, last, dest, &tag, 0);
+}

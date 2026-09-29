@@ -2822,3 +2822,5 @@ FUN_00611f50	0x00211F50	29	blocked	passes 5 args to 3-arg rowed 0x00211EAA copy 
 ??0Made002CC8A4@@QAE@XZ	0x0050A39B	263	partial	two movss +0x150/+0x144 swapped all else exact 263B/58insns structural 0 t=25 model=muse-04 score=0.97 stash=reverse/attempts/0x0050a39b.cpp
 FUN_008fabe2	0x004FABE2	63	blocked	EH destroy-plus-free needs EH_prolog handler 0x793432: plain dtor 30B no EH vs empty-base 70B extra base call plus eax-vs-esi wall t=20 model=muse-10
 FUN_00799F70	0x00399F70	183	blocked	183B M_insert_overflow exact shape via Bfme vector but mixed Rva destroy plus BfmeE12 allocate plus PBU copy need multiple pins t=15 model=muse-03
+FUN_0047989c	0x0007989C	34	blocked	rb-tree create_node 0x20 duplicates hero 0x21D159 but calls dup Construct 0x7975E vs true 0x21C671 needs twin-pin identity t=15 model=muse-08
+?isSelf@Rva002E0687@@QBE_NXZ	0x002E0687	18	partial	eax-edx mirror plus extra mov al-dl t=18 model=muse-11-1a98 score=0.9 stash=reverse/attempts/0x002e0687.cpp
