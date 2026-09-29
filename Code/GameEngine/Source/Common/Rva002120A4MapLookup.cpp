@@ -39,7 +39,6 @@ private:
 	NameKeyIntMap m_map;
 };
 
-// ?rva002120A4@Rva002120A4@@QAEHW4NameKeyType@@@Z present-unmatched
 int Rva002120A4::rva002120A4(NameKeyType key)
 {
 	void *node = (void *)m_map._M_ht._M_find(key);
