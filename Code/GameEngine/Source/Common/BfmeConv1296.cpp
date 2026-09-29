@@ -18,7 +18,7 @@ public:
 	virtual void bfmeModeSNA(int a, int b) = 0;
 };
 
-BfmeLogSNA *bfmeGetSNA(void);
+extern int Rva007EB810Get();
 
 class FeslConnectionHandler
 {
@@ -31,12 +31,12 @@ public:
 
 void FeslConnectionHandler::onConnectionMade()
 {
-	bfmeGetSNA()->bfmeSaySNA("conn made\n");
+	((BfmeLogSNA *)Rva007EB810Get())->bfmeSaySNA("conn made\n");
 	m_bfmeCtl->bfmeModeSNA(3, 0);
 }
 
 void FeslConnectionHandler::onConnectionBroken()
 {
-	bfmeGetSNA()->bfmeSaySNA("conn broken\n");
+	((BfmeLogSNA *)Rva007EB810Get())->bfmeSaySNA("conn broken\n");
 	m_bfmeCtl->bfmeModeSNA(0, 0);
 }
