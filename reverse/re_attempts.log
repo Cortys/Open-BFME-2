@@ -3233,3 +3233,4 @@ FUN_008fc2b3	0x004FC2B3	109	blocked	twin of 0x002E16C0 109B EH vector visitor wa
 ??0BuildListInfo@@QAE@ABV0@@Z	0x00329DE6	253	partial	m_location string vs mov plus gatherers loop vs rep movsd t=30 model=muse-07 score=0.99 stash=reverse/attempts/0x00329de6.cpp
 ?rva0018C57C@Rva0018C57C@@QAEXXZ	0x0018C57C	127	blocked	EH prolog plus scope plus Thread_Lock guard plus ref-dec Release slot0 needs SEH or lock-guard layout t=15 model=muse-07
 ?rva001FDC0F@Rva001FDC0F@@QAEHABV?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@@Z	0x001FDC0F	192	blocked	STLport vector voidptr plus hashtable New plus BfmeVec erase wall needs donor layout t=5 model=muse-07
+?Rva00341695Thunk@@YAIXZ	0x00341695	10	blocked	vslot4 mov-eax-call-EHprolog no-ret likely split boundary t=5 model=muse-04

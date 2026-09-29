@@ -42131,3 +42131,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva004978A3@@UAE@XZ,,0x004978A3,114,Code/GameEngine/Source/GameLogic/Object/Update/BattlePlanUpdateRva004978A3Dtor.cpp,matched,unlock MI dtor base 24A797 array 16x4 global virtual
 ??_GRva004978A3@@UAEPAXI@Z,,0x00497FD7,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-03.cpp,matched,chain deleting dtor calls rowed dtor
 ??1Rva00497DD6@@UAE@XZ,,0x00497DD6,250,Code/GameEngine/Source/GameLogic/Object/Update/BattlePlanUpdateRva00497DD6Dtor.cpp,matched,unlock Snapshot dtor strings holders
+??_GRva0034149B@@UAEPAXI@Z,,0x00342E58,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04.cpp,matched,deleting dtor slot0 calls rowed 34149B then delete
