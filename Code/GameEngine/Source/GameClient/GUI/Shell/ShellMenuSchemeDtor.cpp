@@ -53,3 +53,24 @@ Rva002006B0::~Rva002006B0()
 			delete p;
 	}
 }
+
+class Rva002007D5
+{
+public:
+	~Rva002007D5();
+private:
+	_STL::list<int> m_0;
+	int m_4;
+};
+
+Rva002007D5::~Rva002007D5()
+{
+	m_4 = 0;
+	for (_STL::list<int>::iterator it = m_0.begin(); it != m_0.end(); )
+	{
+		Rva002006B0 *p = (Rva002006B0 *)(int)*it;
+		it = m_0.erase(it);
+		if (p != 0)
+			delete p;
+	}
+}
