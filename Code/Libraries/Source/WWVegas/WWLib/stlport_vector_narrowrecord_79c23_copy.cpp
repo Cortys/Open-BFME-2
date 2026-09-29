@@ -18,3 +18,6 @@ struct BfmeNarrowRecord00079C23
 template BfmeNarrowRecord00079C23 *_STL::__copy<const BfmeNarrowRecord00079C23 *, BfmeNarrowRecord00079C23 *, int>(
 	const BfmeNarrowRecord00079C23 *first, const BfmeNarrowRecord00079C23 *last, BfmeNarrowRecord00079C23 *result,
 	const _STL::random_access_iterator_tag &, int *);
+
+template BfmeNarrowRecord00079C23 *_STL::copy<BfmeNarrowRecord00079C23 *, BfmeNarrowRecord00079C23 *>(
+	BfmeNarrowRecord00079C23 *first, BfmeNarrowRecord00079C23 *last, BfmeNarrowRecord00079C23 *result);

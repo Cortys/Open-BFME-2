@@ -6330,3 +6330,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??1RealTimeStatsPreferences@@UAE@XZ,0x00535776,ICF twin of rowed Rva00535776 dtor via RealTime construction at 0x0043C612
 ??1StrategicStatsPreferences@@UAE@XZ,0x00535776,ICF twin of rowed Rva00535776 dtor via Strategic construction at 0x0043C612
 ??1BfmeNarrowRecord00079C23@@QAE@XZ,0x00079554,BfmeNarrowRecord dtor ICF twin of Rva00079554Record via caller 0x000C3C59
+??$__copy@PAUBfmeNarrowRecord00079C23@@PAU1@H@_STL@@YAPAUBfmeNarrowRecord00079C23@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x000C379B,Bfme __copy nonconst twin of const via caller 0x000C47B2

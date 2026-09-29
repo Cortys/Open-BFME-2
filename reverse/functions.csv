@@ -42279,3 +42279,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva003426AB@@QAE@PAVStateMachine@@@Z,,0x003426AB,29,Code/GameEngine/Source/Common/StateDerivedCtorRva003426AB.cpp,matched,State derived ctor hash 0x9AA7C3F8 plus vtable 0x00812438
 ?rva003426CE@Rva003426AB@@UAEHXZ,,0x003426CE,62,Code/GameEngine/Source/Common/Rva003426ABSlot4.cpp,matched,slot4 of vtable 0x00812438 via machine chain plus float call
 ?rva0034270C@Rva003426AB@@UAEXH@Z,,0x0034270C,62,Code/GameEngine/Source/Common/Rva003426ABSlot4.cpp,matched,slot5 of vtable 0x00812438 via machine chain plus mid copy
+??$copy@PAUBfmeNarrowRecord00079C23@@PAU1@@_STL@@YAPAUBfmeNarrowRecord00079C23@@PAU1@00@Z,,0x000C47B2,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_79c23_copy.cpp,matched,BfmeNarrowRecord copy wrapper via rowed __copy
