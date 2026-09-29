@@ -1,7 +1,3 @@
-// ?rva004442FD@Rva004442FD@@QAEXXZ
-// partial score=0.9 date=2026-09-29
-// ?rva004442FD@Rva004442FD@@QAEXXZ
-// partial score=0.90 date=2026-09-29
 // cl: /O1 /MD
 //
 // ?rva004442FD@Rva004442FD@@QAEXXZ, retail 0x004442FD, 46 bytes.
@@ -33,12 +29,16 @@ private:
 	Member00442FD6AC m_6AC;
 };
 
-// ?rva004442FD@Rva004442FD@@QAEXXZ present-unmatched
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 void Rva004442FD::rva004442FD()
 {
+	Member00442FD6AC *p = &m_6AC;
 	m_6A8 = 0;
 	m_6AC.m_14 = 1;
 	m_6AC.m_0F = 0;
-	m_6AC.v1(0);
+	_ReadWriteBarrier();
+	p->v1(0);
 	m_6A4 = 0;
 }
