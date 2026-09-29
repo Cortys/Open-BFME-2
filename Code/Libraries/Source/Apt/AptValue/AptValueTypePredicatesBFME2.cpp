@@ -34,6 +34,7 @@ public:
     int rva006DC350() const;
     int rva006DC490() const;
     int rva006DCC60(bool bUndefOK) const;
+    int rva006E01A0(bool bUndefOK) const;
     int isCharacterInst() const;
     int rva006E02B0() const;
     int rva006E0260() const;
@@ -347,6 +348,25 @@ int BfmeAptValue006DCD20::rva006DCC60(bool bUndefOK) const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (flags.type == 14) {
+        if (bUndefOK) return 1;
+        if (!isUndefined()) return 1;
+    }
+    return 0;
+}
+
+// ?rva006E01A0@BfmeAptValue006DCD20@@QBEH_N@Z, retail 0x006E01A0, 87 bytes.
+// Predicate for type 13 (0x1A000000) with bUndefOK, "this" assert at AptCIH.h:171 (0xAB)
+// via the same file string at 0x008E8C60 as isCharacterInst. Evidence: rowed
+// get@Rva006DBB30SarDwordField equals 0xd plus bUndefOK/isUndefined path;
+// callers at 0x006EF22A/0x006EF290/0x006FF17E/0x00702A62; same /O2 shape as
+// rva006DCC60 sibling in this TU.
+int BfmeAptValue006DCD20::rva006E01A0(bool bUndefOK) const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xAB);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() == 13) {
         if (bUndefOK) return 1;
         if (!isUndefined()) return 1;
     }

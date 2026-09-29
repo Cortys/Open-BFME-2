@@ -41763,3 +41763,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva0060061A@@UAEPAXI@Z,,0x006006BD,28,Code/GameEngine/Source/Common/Rva0060061ADtor.cpp,matched,deleting dtor calls rowed dtor 0x0060061A same vtable
 ?rva005FD788@Rva005FD788@@QAEXHPBDABVUnicodeString@@@Z,,0x005FD788,116,Code/GameEngine/Source/Common/Rva005FD788Apt.cpp,matched,APT level table method via format bfmeSetText
 ?rva0070AA40@AptNativeHash@@QAEPAVAsciiString@@XZ,,0x0070AA40,90,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash find key hasData not empty returns key
+?rva006E01A0@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006E01A0,87,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,CIH type-13 predicate with bUndefOK same shape as rva006DCC60
