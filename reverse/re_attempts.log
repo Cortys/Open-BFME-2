@@ -2913,3 +2913,6 @@ FUN_0099205C	0x0059205C	199	blocked	Wide Rva004D60CA deserializer same wall as 0
 ?rva003B7057@Rva003B7057Vec@@QAEXXZ	0x003B7057	63	blocked	63B EH destroy+free twin of 30B 0x3B6846; needs __EH_prolog with scopetable plus states 0/-1 plus fs restore; /EHsc /GX /EHs all give 30B frameless with same source; needs unwind local or try structure to trigger EH; t=12 model=muse-spark
 ?rva005EF8BB@Rva005EF8BB@@QAEXXZ	0x005EF8BB	63	partial	owner-guard model exact except missing or ebp-4 -1 disarm; trycatch gives trampoline t=27 model=muse-11 score=0.94 stash=reverse/attempts/0x005ef8bb.cpp
 ?rva005F11D0@Rva005F11D0@@QAEXXZ	0x005F11D0	63	partial	owner-guard model exact except missing or ebp-4 -1 disarm; EHs same as EHsc t=8 model=muse-11 score=0.94 stash=reverse/attempts/0x005f11d0.cpp
+??0Rva00211E75@@QAE@PAPAX@Z	0x00211E75	53	blocked	manual vtable 0x7E5128 plus new-12 plus AddRef needs donor t=10 model=muse-spark
+??0Rva0031F7AB@@QAE@XZ	0x0031F7AB	64	partial	EH record vs esi save and m_data vs state store order t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0031f7ab.cpp
+?Rva0030B343Swap@@YAXPAURva0030B343@@0@Z	0x0030B343	53	blocked	8B 2-float swap spills to stack with single xmm0 plus int reloads; 6 variants with O1 arch-SSE Oy- all enregister to xmm0-xmm1 39B vs 53B t=15 model=muse-03

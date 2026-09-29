@@ -41417,3 +41417,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0056EDE8Pick@@YAXPAH0@Z,,0x0056EDE8,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap rdtsc pick same pattern
 ?rva007397E0@Rva007397E0@@QBEHHPBUCoord3D@@@Z,,0x007397E0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B890 gap between 0x007397D0 and 0x007397F0 same TU
 ?rva00739800@Rva00739800@@QBE?AW4ObjectShroudStatus@@HPBUCoord3D@@@Z,,0x00739800,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B990 gap between 0x007397F0 and 0x00739830 same TU
+?rva0033DCD1@Rva0033DCD1@@QBEPBUModelConditionInfo@@ABV?$BitFlags@$0HF@@@@Z,,0x0033DCD1,25,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva0033DCD1.cpp,matched,wrapper calls rowed finder 0x0033D46A with vec at 0x358 map at 0x364
