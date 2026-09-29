@@ -3449,3 +3449,4 @@ FUN_0070DDC0	0x0070DDC0	402	blocked	402B StringPool hash idiv GC with bFound ass
 ?rva006FE050@AptBasePtrStack@@QAEXH@Z	0x006FE050	88	partial	pop-esi vs sub order wall 93 vs 93 per shape_levers pop-order t=20 model=muse-03 score=0.97 stash=reverse/attempts/0x006fe050.cpp
 ?rva003F9D08@Rva003F9D08@@QAEHH@Z	0x003F9D08	168	blocked	168B dtor puzzle 8 releases for 4 string offsets plus manual Pod8 erase plus Snapshot base 0xBBB554 cannot model honestly double-destroy t=10 model=muse-spark
 ?Rva00391CE3Get@@YGEPBX@Z	0x00391CE3	66	blocked	shared-tail early-vs-late wall 66B-19insns same size final bitfield fixed mov-and-al but null-false early tail vs late plus true inline vs forward t=25 model=muse-12
+?rva0025FBBC@Rva0025FBBC@@QAEXPAHHH@Z	0x0025FBBC	165	partial	165B/66insns size-exact only push order and esi-vs-eax register alloc remains t=25 model=muse-10 score=0.92 stash=reverse/attempts/0x0025fbbc.cpp
