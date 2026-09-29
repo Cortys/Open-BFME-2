@@ -2,6 +2,8 @@
 // partial score=0.99 date=2026-09-29
 // ??$__adjust_heap@PAHHHU?$greater@H@_STL@@@_STL@@YAXPAHHHHU?$greater@H@0@@Z
 // partial score=0.99 date=2026-09-29
+// ??$__adjust_heap@PAHHHU?$greater@H@_STL@@@_STL@@YAXPAHHHHU?$greater@H@0@@Z
+// partial score=0.99 date=2026-09-29
 // cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
