@@ -47,3 +47,24 @@ AsciiString Rva00412DD8Get(const char *path)
 	AsciiString tmp(buf);
 	return tmp;
 }
+
+// ?Rva00412E76Get@@YA?AVAsciiString@@PBD@Z, retail 0x00412E76 158B.
+// Sibling of Rva00412DD8Get above: same 32k buf plus strncpy 0x7fff and RVO
+// via 0x365F0/0x36410/0x37BA0, but skips one leading '.' and rewrites '.'
+// to '/'. Prev is 0x00412DD8 in this TU; unblocks 0x004104AB plus 4 more.
+
+AsciiString Rva00412E76Get(const char *path)
+{
+	char buf[32768];
+	if (path == 0)
+		path = g_bfmeEmptyF9;
+	if (*path == '.')
+		path++;
+	strncpy(buf, path, 0x7fff);
+	for (char *p = buf; *p != 0; p++) {
+		if (*p == '.')
+			*p = '/';
+	}
+	AsciiString tmp(buf);
+	return tmp;
+}
