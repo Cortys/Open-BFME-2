@@ -3019,3 +3019,4 @@ FUN_00640d34	0x00240D34	88	blocked	EH list-base plus allocator plus range insert
 FUN_0099764A	0x0059764A	73	blocked	needs KINDOF BitFlags donor for mask bits t=8 model=muse-05
 FUN_00839360	0x00439360	118	blocked	list assign with rep movsd 49 plus erase plus insert needs donor t=8 model=muse-07
 ?allow@FilePathGate@@QAE_NPBD@Z	0x00600AE5	212	blocked	named no BFME1 ZH donor plus IAT strcmpi plus tree plus 212B t=8 model=muse-07
+?Rva001DEE1FCopy@@YAPAVRva001DE727@@PAV1@00@Z	0x001DEE1F	29	blocked	5-push dispatch to 3-arg copy 0x001DE906 unclear t=12 model=muse-02
