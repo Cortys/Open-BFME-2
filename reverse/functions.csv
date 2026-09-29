@@ -41101,3 +41101,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0007E3B1Fill@@YAXPAH0PBH@Z,,0x0007E3B1,40,Code/Libraries/Source/WWVegas/WWLib/stlport_fill_e12.cpp,matched,fill 12B via explicit moves
 ??0Rva005843DA@@QAE@PAX@Z,,0x005843DA,43,Code/Libraries/Source/WWVegas/WWLib/Rva005843DACtor.cpp,matched,ctor base 0x5D6FCC plus Vector_base 0x211E58 plus bool vtable 0x86FC80
 ?rva004E2227@Rva004E2227@@QAEXXZ,,0x004E2227,30,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_004e1fcc.cpp,matched,chain caller 0x004E3973 range destroy plus conditional free
+?rva003B24C7@Rva003B24C7@@QAEX_N@Z,,0x003B24C7,20,Code/GameEngine/Source/Common/Rva003B24C7Set.cpp,matched,bool setter with false-clear of +4 and +1; callers 0x207557
