@@ -3151,3 +3151,5 @@ FUN_0098FE15	0x0058FE15	400	blocked	same ebx edi framework wall as banked 0058F7
 ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z	0x003B573E	80	partial	imul 0x14 vs lea 5x plus 4x single insn wall t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x003b573e.cpp
 ?rva0037EE4C@Rva0037EE4C@@QAEHPBURva0037EE4COuter@@HH@Z	0x0037EE4C	109	partial	ternary sete vs direct branches plus counter homing t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x0037ee4c.cpp
 ??0Rva005D36D1@@QAE@HABVAsciiString@@@Z	0x005D36D1	96	blocked	ctor EH AsciiString Outer reinterpret plus OCL12 layout t=15 model=muse-07
+FUN_008fa738	0x004FA738	109	blocked	EH plus interface-virtual loop over raw vectors; single_variant far 68B no-prolog vs 109B prolog plus interface layout unknown; needs donor plus vector-interface identity t=10 model=muse-12
+FUN_008fb0c7	0x004FB0C7	97	blocked	search-plus-assign with idiv-0x58 count and imul-0x58 found; 2 variants far 77B frameless and 88B volatile-base-frame vs 97B 10 regions; interface-vector layout plus cdq-vs-xor plus frame-slot needs donor t=15 model=muse-12
