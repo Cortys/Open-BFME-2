@@ -42520,3 +42520,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?XferRawBytes@BfmeRva00C7B388@@UAEAAVXfer@@PAXI@Z,,0x0060D66E,286,Code/GameEngine/Source/Common/System/BfmeRva00C7B388Xfer.cpp,matched,gap slot9 rawbytes hexdump m04 formats extern
 ?rva003FAC3F@Rva003FAC3F@@QAEXXZ,,0x003FAC3F,68,Code/GameEngine/Source/Common/Rva003FAC3F.cpp,matched,unlock global DFE6E8 m2c gate slot8c slot6c
 ?Rva003BFB8CDo@@YGXABVAsciiString@@H@Z,,0x003BFB8C,155,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFB8C.cpp,matched,Script team priority increase via getTeamNamed precedent Rva003BFC27Do
+?Rva003BFCBFDo@@YGXABVAsciiString@@H@Z,,0x003BFCBF,155,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFCBF.cpp,matched,Script team priority decrease with delta precedent Rva003BFB8CDo
