@@ -41525,3 +41525,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_M_initialize_aux@PAPAUBfmeE12@@@?$vector@PAUBfmeE12@@V?$allocator@PAUBfmeE12@@@_STL@@@_STL@@QAEXPAPAUBfmeE12@@0ABU__false_type@1@@Z,,0x00423082,22,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pE12_range.cpp,matched,chain initialize aux forwarder via landed range-init no source change
 ?_M_insert_overflow@?$vector@UBfmePod40@@V?$allocator@UBfmePod40@@@_STL@@@_STL@@IAEXPAUBfmePod40@@ABU3@ABU__false_type@2@I_N@Z,,0x00565B7D,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod40_overflow.cpp,matched,stlport 4.5.3 G7 imul virtual-dtor element
 ??1Rva0023D377@@QAE@XZ,,0x0023D377,8,Code/GameEngine/Source/Common/Rva0023D377Dtor.cpp,matched,dtor tail-jmp to rowed Rva00438FC5 dtor
+?rva000433AC@W3DDisplay@@QAEXI@Z,,0x000433AC,108,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva000433AC.cpp,matched,W3DDisplay resolution apply via setWidth plus dims plus range
