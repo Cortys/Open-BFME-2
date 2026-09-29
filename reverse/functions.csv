@@ -42363,3 +42363,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?Rva003BE26DGrantUpgrade@@YGXPAVParameter@@ABVAsciiString@@@Z,,0x003BE26D,110,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BE26DGrantUpgrade.cpp,matched,grant upgrade to named unit via ScriptEngine UpgradeCenter caller 0x003CD380
 ?Rva003C3AF0MakeHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C3AF0,60,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap make via AdjustHeap chain caller 0x003C4B77
 ?rva002B5558@Rva002B5558@@QAEXXZ,,0x002B5558,41,Code/GameEngine/Source/Common/Rva002B5558.cpp,matched,chain via rowed 0x002B43BA free plus sentinel reset
+?rva002B57D5@Rva002B57D5@@QAEXXZ,,0x002B57D5,41,Code/GameEngine/Source/Common/Rva002B57D5.cpp,matched,chain via rowed 0x002B4509 free plus sentinel reset
