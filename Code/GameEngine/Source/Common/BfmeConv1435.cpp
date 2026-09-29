@@ -120,6 +120,7 @@ public:
 	void bfmeGoVM0(int);
 	void bfmeTickVM0();
 	void rva0025C46E();
+	void rva0025D9CB(bool flag);
 	char m_pad04[0x34];
 	BfmeVM0Timer *m_timer;
 	char m_pad3C[0x4];
@@ -177,4 +178,15 @@ void BfmeStrVM0::rva0025C46E()
 		m_secondMutex = 0;
 		m_firstMutex = 0;
 	}
+}
+
+// ?rva0025D9CB@BfmeStrVM0@@QAEX_N@Z retail 0x0025D9CB 24B.
+// Flag selects watchdog arm (bfmeGoVM0 mode 5) versus mutex release
+// (rva0025C46E), forwarding this. Callers at 0x0043A30B/0x0043A326 push 0/1.
+void BfmeStrVM0::rva0025D9CB(bool flag)
+{
+	if (flag)
+		bfmeGoVM0(5);
+	else
+		rva0025C46E();
 }
