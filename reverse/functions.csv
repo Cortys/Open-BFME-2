@@ -41265,3 +41265,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004EE33B@Rva004EE037@@QAEHXZ,,0x004EE33B,34,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,map sum via rowed increment 0x00024250
 ?Rva002E5C15LowerBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C15Comp@@H@Z,,0x002E5C15,76,Code/GameEngine/Source/GameClient/GameTextStringLookUpBound.cpp,matched,chain from 0x002E56B3 Less binary lower_bound 8B array
 ?Rva00440B64Insert@@YAXPAPAXPAXVRva0043FE9A@@@Z,,0x00440B64,47,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,unguarded insert with Rva0043FE9A comp callers 0x00441968 0x00441986
+?Rva0052BF33DestroyTagged@@YAXPAURva0052BF33Elem@@0ABU__false_type@_STL@@@Z,,0x0052BF33,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 8 caller 1
