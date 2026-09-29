@@ -38,3 +38,32 @@ void BfmeTrackEdgeInfoAnchor::anchor(edgeInfo *e)
 	e->edgeInfo::edgeInfo();
 }
 #pragma inline_depth()
+class Rva00083CB2
+{
+public:
+	void rva00083CB2();
+private:
+	char _pad00[0x30];
+	int m_30;
+	int m_34;
+	int m_38;
+	char _pad3C[0x1308 - 0x3C];
+	int m_1308;
+	int m_130C;
+	unsigned char m_1310;
+	char _pad1311[0x131D - 0x1311];
+	unsigned char m_131D;
+};
+// ?rva00083CB2@Rva00083CB2@@QAEXXZ retail 0x00083CB2 37B reset of scattered
+// fields to 0 with +0x131D set to 1. Evidence: unlock lane; callers at
+// 0x00083D4C 0x000840B1 0x00084213 unblock 0x00083CE9 0x00084206.
+void Rva00083CB2::rva00083CB2()
+{
+	m_1310 = 0;
+	m_131D = 1;
+	m_130C = 0;
+	m_1308 = 0;
+	m_30 = 0;
+	m_34 = 0;
+	m_38 = 0;
+}

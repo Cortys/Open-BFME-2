@@ -2727,3 +2727,6 @@ FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same fa
 ?Rva004F6C64Push@@YAXPAURva004F64FC@@HHU1@@Z	0x004F6C64	121	partial	imul 0xC vs lea lea strength reduction only t=22 model=muse-02 score=0.95 stash=reverse/attempts/0x004f6c64.cpp
 ??0Made002CCC90@@QAE@XZ	0x0050BD45	55	partial	vtable store late after members vs retail early before members t=25 model=muse-spark score=0.91 stash=reverse/attempts/0x0050bd45.cpp
 ??0TRoadSegInfo@@QAE@XZ	0x000D4ED0	95	blocked	donor POD has no ctor but retail calls vector-ctor for 8x4B at 0x18 plus loop zeroes same 0x18-0x38 range double-init contradiction plus unfamiliar W3D shims t=15 model=muse-spark
+FUN_00614917	0x00214917	52	blocked	EH AsciiString setter at plus10 needs new class and scope table unlike array TU t=10 model=muse-04
+FUN_00803170	0x00403170	89	blocked	chain caller of 0x00214983 needs global 0x009FE1D4 plus unknown 3-arg bool signature t=12 model=muse-04
+??0TRoadSegInfo@@QAE@XZ	0x000D4ED0	95	blocked	needs Vector2 user ctor plus header decl for corner array plus SSE zero loop t=15 model=muse-04
