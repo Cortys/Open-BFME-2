@@ -255,6 +255,19 @@ leaves 252 with no consistent copy and 16 with exactly one — every one of whic
 claimed. The anchor lands nothing, because the functions distinctive enough to anchor are
 the ones earlier passes already identified.
 
+`place_bodies` is a worked-out seam, and one family wide. Measured: the 669 `stlport_*`
+shards yielded 5 bodies (315B), and **1,711 further ledger sources yielded 0** — 395
+non-stlport `WWLib`, all 316 of the `FamilyDeletingDtors_*` / `GlobalFlagClearers_*` /
+`INI_*` shards, a 160-file `Common` probe, and 840 sources walked alphabetically from the
+top of the ledger list. The zero is not noise: at the stlport rate (0.75% of files) the
+expected count over that sample was ~13, and the walk is compile-bound at roughly 1.5
+minutes per 120 sources, so a full pass over the 7,649 untouched sources costs ~100 minutes
+to find single-digit bodies. The reason is structural rather than incidental —
+`place_bodies` pays only where a unit emits more than the ledger captured, which is a
+property of generated per-instantiation shards, not of ordinary source. It returns nothing
+on a file with many `present-unmatched` markers either, and that is consistent: those
+bodies are unmatched precisely because they do not place uniquely.
+
 `tools/conversion_gate.py` scans added lines under `Code/` only, so these rows fall outside
 its Rule A, and that is deliberate. Rule A stops a contributor deleting authored C++ and
 committing an `__emit` byte dump in its place; nobody authors the vendored tree, and nine of
