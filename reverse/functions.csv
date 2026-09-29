@@ -41187,3 +41187,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0056612F@Rva0056612FVec@@QAEXXZ,,0x0056612F,30,Code/GameEngine/Source/Common/System/Rva0056612FScrap.cpp,matched,unlock scrap via Clear 0x52CEDD plus free
 ?XferLivingWorldRegionBonusRuleID@@YAXPAVXfer@@PAH@Z,,0x002E05CA,24,Code/GameEngine/Source/Common/System/XferEnumHelpers.cpp,matched,labelled-enum helper LivingWorldRegionBonusRuleID via XferEnum slot 37
 ?Rva0029B4F9Init@@YAXXZ,,0x0029B4F9,67,Code/GameEngine/Source/GameClient/Rva0029B4F9Init.cpp,matched,chain from 0x0029B2E7 via global 0xDFEA3C slots
+??0Rva005CDB8F@@QAE@PBUPayload@0@@Z,,0x005CDB8F,31,Code/GameEngine/Source/Common/Rva005CDB8FCtor.cpp,matched,vtable 0x0087507C refcount 0 rep movsd 5 dwords caller 0x005CDC18
