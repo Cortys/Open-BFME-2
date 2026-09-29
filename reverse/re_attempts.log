@@ -3391,3 +3391,6 @@ FUN_006b8ed2	0x002B8ED2	85	blocked	STL ctor wall: real vector include gives EH f
 ?rva0041F369@Rva0041F760@@QAEXXZ	0x0041F369	200	partial	first-loop xmm allocation needs direct addss mem form vs movss temp plus 100f addr t=20 model=muse-spark score=0.93 stash=reverse/attempts/0x0041f369.cpp
 ?rva0054D12A@Rva0054D12A@@QAE_NHABVUnicodeString@@0@Z	0x0054D12A	248	blocked	248B APT dual Title Text setter via format 38150 plus Registry PlusText B49C5 BC4F7 plus bfmeSetText pin 225301 plus releaseBuffer 36410; needs exact PlusText temp layout at ebp-10 ebp-1C plus Unicode args plus int level move; no dual Title Text Registry precedent t=15 model=muse-spark
 FUN_009657e1	0x005657E1	29	blocked	wrapper pushes 5 args to 3-arg copy 0x005657B2 plus tmp byte plus 0 needs central retype t=10 model=muse-06
+?rva00433F7F@Rva00433F7F@@QAEXXZ	0x00433F7F	94	partial	second block ecx-eax swap t=18 model=muse-11 score=0.93 stash=reverse/attempts/0x00433f7f.cpp
+?rva002061D7@Rva002061D7@@QAEXXZ	0x002061D7	126	blocked	EH scope with StringBase temp and attack-priority table t=10 model=muse-11
+?rva003236A0@Rva003236A0@@QAEXHH@Z	0x003236A0	36	partial	folded push mem vs mov plus push t=15 model=muse-11 score=0.94 stash=reverse/attempts/0x003236a0.cpp
