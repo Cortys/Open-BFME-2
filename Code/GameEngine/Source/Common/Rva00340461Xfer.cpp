@@ -123,9 +123,21 @@ private:
 	bool m_54;
 };
 
+class Rva00340411 : public Rva00340123
+{
+protected:
+	virtual void xfer(Xfer *xfer);
+};
+
 void Rva00340461::xfer(Xfer *xfer)
 {
 	xfer->Version1();
 	*xfer == m_54;
+	Rva00340123::xfer(xfer);
+}
+
+void Rva00340411::xfer(Xfer *xfer)
+{
+	xfer->Version1();
 	Rva00340123::xfer(xfer);
 }

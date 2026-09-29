@@ -41730,3 +41730,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00603C0F@Rva00603C0F@@QAEPBXPBD0@Z,,0x00603C0F,67,Code/Libraries/Source/WWVegas/WWLib/stlport_cstring_tree_lookup_00603C0F.cpp,matched,two-level strcmp map lookup via rowed _M_find 0x00603A2D
 ??_GRva00596F18@@UAEPAXI@Z,,0x00597011,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor slot 0 calls rowed base dtor plus delete
 ?xfer@Rva00340461@@MAEXPAVXfer@@@Z,,0x00340461,42,Code/GameEngine/Source/Common/Rva00340461Xfer.cpp,matched,chain xfer Version1 bool base
+?xfer@Rva00340411@@MAEXPAVXfer@@@Z,,0x00340411,27,Code/GameEngine/Source/Common/Rva00340461Xfer.cpp,matched,chain xfer Version1 base
