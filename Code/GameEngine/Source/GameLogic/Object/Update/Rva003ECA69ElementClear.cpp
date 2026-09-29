@@ -86,10 +86,26 @@ class Rva003ECA69Element
 public:
 	void clear();
 	void rva003ECAE0(Xfer *xfer);
+	class Rva003ECA69Element *rva003ECB52(struct Rva003ECB52Arg *arg);
 
 private:
 	float m_0;
 	char m_rest[0x40];
+};
+
+extern float g_007BAEAC;
+
+struct Rva003ECB52Inner
+{
+	char m_pad[0x51c];
+	float m_value;
+	int m_index;
+};
+
+struct Rva003ECB52Arg
+{
+	void *m_vtbl;
+	Rva003ECB52Inner *m_ptr;
 };
 
 void Rva003ECA69Element::clear()
@@ -143,4 +159,21 @@ void Rva003ECB13Array::clear()
 	Rva003ECA69Element *p = m_elems;
 	for (int i = 20; i != 0; --i, ++p)
 		p->clear();
+}
+
+// ?rva003ECB52@Rva003ECA69Element@@QAEPAV1@PAURva003ECB52Arg@@@Z @0x003ECB52 (66B):
+// accumulates the float at +0x51c of the arg's +4 object into m_0 and into
+// m_rest[idx] where idx is the int at +0x520 when the value exceeds
+// g_007BAEAC. Evidence: caller 0x003ED07A computes this as array base + idx*0x44
+// with idx from player+0x54 and passes Object in edi; caller 0x005962B9 passes
+// element at esi+0x54 with Object in ebx; stride 0x44 matches this element type.
+Rva003ECA69Element *Rva003ECA69Element::rva003ECB52(Rva003ECB52Arg *arg)
+{
+	float v = arg->m_ptr->m_value;
+	if (v > g_007BAEAC) {
+		m_0 += v;
+		int idx = arg->m_ptr->m_index;
+		reinterpret_cast<float *>(m_rest)[idx] += v;
+	}
+	return this;
 }
