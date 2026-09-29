@@ -18,16 +18,25 @@ private:
 	unsigned char m_storage[8];
 };
 
+class AsciiString : public StringBase<char>
+{
+public:
+	AsciiString &operator=(const AsciiString &src);
+};
+
 class Rva0033AC7F
 {
 public:
 	bool rva0033AC7F(StringBase<unsigned short> &dst);
 	bool rva0033ACA2(StringBase<unsigned short> &dst);
+	bool rva0033ACC5(AsciiString &dst);
 
 private:
 	unsigned char m_pad[0x48];
 	StringBase<unsigned short> m_str;
 	StringBase<unsigned short> m_str2;
+	unsigned char m_pad58[0x60 - 0x58];
+	AsciiString m_asc;
 };
 
 bool Rva0033AC7F::rva0033AC7F(StringBase<unsigned short> &dst)
@@ -43,6 +52,15 @@ bool Rva0033AC7F::rva0033ACA2(StringBase<unsigned short> &dst)
 {
 	if (!m_str2.isEmpty()) {
 		dst.set(m_str2);
+		return true;
+	}
+	return false;
+}
+
+bool Rva0033AC7F::rva0033ACC5(AsciiString &dst)
+{
+	if (!m_asc.isEmpty()) {
+		dst = m_asc;
 		return true;
 	}
 	return false;
