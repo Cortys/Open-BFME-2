@@ -10,3 +10,4 @@ struct BfmeRecord001DD3BC {
 bool operator<(const BfmeRecord001DD3BC &a, const BfmeRecord001DD3BC &b);
 typedef _STL::_Rb_tree<BfmeRecord001DD3BC, BfmeRecord001DD3BC, _STL::_Identity<BfmeRecord001DD3BC>, _STL::less<BfmeRecord001DD3BC>, _STL::allocator<BfmeRecord001DD3BC> > BfmeRecord001DD3BCSetTree;
 template void BfmeRecord001DD3BCSetTree::_M_erase(BfmeRecord001DD3BCSetTree::_Link_type);
+template void BfmeRecord001DD3BCSetTree::clear();
