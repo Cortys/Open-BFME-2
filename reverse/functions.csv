@@ -41650,3 +41650,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003F0DA5@Rva003F0DA5@@QAE_NPAVCreateAHeroData@@@Z,,0x003F0DA5,33,Code/GameEngine/Source/Common/Rva003F0DA5Contains.cpp,matched,find row caller 0x003F11EC unlocks 0x003F11EC
 ?rva003F0442@Rva003F0442@@QAEPBVImage@@XZ,,0x003F0442,36,Code/GameEngine/Source/Common/System/Rva003F0442ImageGet.cpp,matched,isEmpty plus TheMappedImageCollection findImageByName caller 0x005E2B45
 ?rva003F038E@Rva003F038E@@QAEPBVImage@@XZ,,0x003F038E,43,Code/GameEngine/Source/Common/System/Rva003F038EImageGet.cpp,matched,cached image load empty guard plus find store wrapper 0x003F03B9
+?rva003F03B9@Rva003F038E@@QAEPBVImage@@XZ,,0x003F03B9,16,Code/GameEngine/Source/Common/System/Rva003F038EImageGet.cpp,matched,cache check tail jmp to 0x003F038E same class

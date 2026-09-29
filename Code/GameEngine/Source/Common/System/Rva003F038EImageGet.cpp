@@ -29,12 +29,20 @@ class Rva003F038E
 {
 public:
 	const Image *rva003F038E();
+	const Image *rva003F03B9();
 private:
 	char m_pad70[0x70];
 	AsciiString m_name;
 	char m_pad9C[0x19C - 0x74];
 	const Image *m_cached;
 };
+
+const Image *Rva003F038E::rva003F03B9()
+{
+	if (m_cached)
+		return m_cached;
+	return rva003F038E();
+}
 
 const Image *Rva003F038E::rva003F038E()
 {
