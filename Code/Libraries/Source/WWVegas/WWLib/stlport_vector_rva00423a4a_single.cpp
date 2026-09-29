@@ -35,3 +35,19 @@ Rva0042499E::Rva0042499E(unsigned int n)
 {
 	this->_M_finish = _STL::__uninitialized_fill_n(this->_M_start, n, Rva00423A4A());
 }
+
+// ??0Rva00424CB6@@QAE@I@Z
+// retail 0x00424CB6, 33 bytes. Honest ctor with vector<Rva00423A4A> holder at
+// +0x00 via rowed 0x0042499E plus vector<BfmeE16> at +0x0C via empty base
+// 0x00211E58. Evidence: chain lane (calls 0x0042499E just landed); caller
+// 0x004257C6 in 0x004257AD; unblocks 0x004257AD.
+struct BfmeE16 { float x, y, z, w; };
+
+struct Rva00424CB6
+{
+	Rva0042499E m_00;
+	_STL::vector<BfmeE16> m_0c;
+	Rva00424CB6(unsigned int n);
+};
+
+Rva00424CB6::Rva00424CB6(unsigned int n) : m_00(n) {}
