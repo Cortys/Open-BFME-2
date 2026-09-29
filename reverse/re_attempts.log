@@ -3150,3 +3150,4 @@ FUN_0098F5E3	0x0058F5E3	501	blocked	same ebx edi wall as banked 0058F7D8 partial
 FUN_0098FE15	0x0058FE15	400	blocked	same ebx edi framework wall as banked 0058F7D8 partial no percentage value t=3 model=muse-11
 ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z	0x003B573E	80	partial	imul 0x14 vs lea 5x plus 4x single insn wall t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x003b573e.cpp
 ?rva0037EE4C@Rva0037EE4C@@QAEHPBURva0037EE4COuter@@HH@Z	0x0037EE4C	109	partial	ternary sete vs direct branches plus counter homing t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x0037ee4c.cpp
+??0Rva005D36D1@@QAE@HABVAsciiString@@@Z	0x005D36D1	96	blocked	ctor EH AsciiString Outer reinterpret plus OCL12 layout t=15 model=muse-07

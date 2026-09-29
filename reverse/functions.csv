@@ -41972,3 +41972,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00535AE1@UserPreferences@@QAEMVAsciiString@@@Z,,0x00535AE1,81,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,AverageGameTime getter slot14 same TU unlock
 ?_M_push_back_aux_v@?$deque@UBfmeNarrowRecord0054FEF1@@V?$allocator@UBfmeNarrowRecord0054FEF1@@@_STL@@@_STL@@IAEXABUBfmeNarrowRecord0054FEF1@@@Z,,0x00550098,130,Code/Libraries/Source/WWVegas/WWLib/StlportNarrowRecord0054FEF1DequeAux.cpp,matched,deque pushback aux via stock STLport temp plus reserve plus node
 ?Rva0021ACB9Swap@@YAXPAVRva0021915B@@0@Z,,0x0021ACB9,74,Code/GameEngine/Source/Common/Rva0021ACB9Swap.cpp,matched,swap 8B via pair copy plus Rva assign
+?rva005D3846@Rva005D3846@@QAEXABVUnicodeString@@@Z,,0x005D3846,53,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,chain from 0x005D366A compare 0x00006A7A set pin 0x00037150 caller 0x00578611

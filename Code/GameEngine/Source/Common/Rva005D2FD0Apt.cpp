@@ -16,6 +16,8 @@ template <typename T> class StringBase
 public:
 	StringBase() : m_data(0) {}
 	void format_va(const T *format, char *args);
+	int compare(const StringBase<T> &other) const;
+	void set(const StringBase<T> &other);
 private:
 	~StringBase() { releaseBuffer(); }
 	void releaseBuffer();
@@ -71,4 +73,25 @@ void __cdecl Rva005D366ASet(int level, Rva005D2FD0Outer *outer, const UnicodeStr
 	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
 	key.format("APT:_level%u.%s_RegionName", level, mid);
 	g_Va009FE4CC->bfmeSetText(key, text, false);
+}
+
+// ?rva005D3846@Rva005D3846@@QAEXABVUnicodeString@@@Z retail 0x005D3846 53B
+// Evidence: chain from 0x005D366A; compare 0x00006A7A; set pin 0x00037150; caller jmp 0x00578611
+class Rva005D3846
+{
+public:
+	void rva005D3846(const UnicodeString &text);
+private:
+	int m_level;
+	Rva005D2FD0Outer m_outer;
+	char m_pad[0x18 - 8];
+	UnicodeString m_cached;
+};
+
+void Rva005D3846::rva005D3846(const UnicodeString &text)
+{
+	if (((const StringBase<unsigned short> *)(const void *)&text)->compare(*(const StringBase<unsigned short> *)(const void *)&m_cached) != 0) {
+		Rva005D366ASet(m_level, &m_outer, text);
+		((StringBase<unsigned short> *)(void *)&m_cached)->set(*(const StringBase<unsigned short> *)(const void *)&text);
+	}
 }
