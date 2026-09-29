@@ -113,4 +113,16 @@ void __make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
 template void __make_heap<int *,
 	Rva00422CA8>(int *, int *, Rva00422CA8);
 
+// ?pop_heap int Rva00422CA8 23B @0x00424637: public wrapper calling
+// __pop_heap_aux with (int*)0 dummy. Evidence: calls rowed 0x00423F9F;
+// caller 0x004247C8 in 0x004247A9; unblocks 0x004247A9.
+template <class RandomAccessIter, class Compare>
+void pop_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
+{
+	__pop_heap_aux(first, last, (int *)0, comp);
+}
+
+template void pop_heap<int *,
+	Rva00422CA8>(int *, int *, Rva00422CA8);
+
 }
