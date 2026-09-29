@@ -41160,3 +41160,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?_M_insert_overflow@?$vector@UBfmePod88@@V?$allocator@UBfmePod88@@@_STL@@@_STL@@IAEXPAUBfmePod88@@ABU3@ABU__false_type@2@I_N@Z,,0x004E38DA,183,Code/Libraries/Source/WWVegas/WWLib/StlportVectorInsertOverflowRva004E38DA.cpp,matched,chain caller push_back 0x004E3BCE stride 0x58 helpers rowed
 ??0Rva004FAC21@@QAE@ABV?$StringBase@D@@@Z,,0x004FAC21,46,Code/GameEngine/Source/Common/Rva004FAC21Ctor.cpp,matched,derived of Rva004FA830 plus vector E16 plus int 10 vtable 0x8633B0
 ?rva005CD708@Rva005CD708@@QAEXXZ,,0x005CD708,47,Code/GameEngine/Source/Common/Rva005CD708Notify.cpp,matched,lazy notify via 0x0042D6C6 0x005A0B4C virtual
+??0Rva005CD7BD@@QAE@PAXHH@Z,,0x005CD7BD,29,Code/GameEngine/Source/Common/Rva005CD7BDCtor.cpp,matched,init 3 dwords callers 0x005762CA 0x00576E71 0x00577708
