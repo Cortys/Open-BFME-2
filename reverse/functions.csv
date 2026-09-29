@@ -42456,3 +42456,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva003C78AF@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x003C78AF,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap after 0x003C7853 plus waypoint shape plus caller 0x003C8C54
 ?rva003C75DD@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x003C75DD,118,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,caller 0x003C7BA0 plus pos plus int1 plus AICMD 0x52
 ??0Rva001DD0A0@@QAE@ABU0@@Z,,0x001DD0A0,97,Code/GameEngine/Source/Common/Rva001DD0A0Copy.cpp,matched,copy ctor via Construct pin and fill_insert stride
+?Rva003FF02EPowerCap@@YAXH@Z,,0x003FF02E,134,Code/GameEngine/Source/Common/Rva003FF02EPowerCap.cpp,matched,static AsciiString APT key via 0x00037BA0 format 0x006CB5D0 bfmeSetText pin 0x00225301
