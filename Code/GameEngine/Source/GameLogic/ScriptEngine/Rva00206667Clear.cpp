@@ -1,0 +1,38 @@
+// cl: /O1 /EHsc
+// ?rva00206667@Rva00206667@@QAEXPAURva00206667Node@@@Z @0x00206667 53B thiscall recursive clear over child +0x0C with iteration over next +0x08 clearing value +0x10 via rowed StringBase clear 0x0048BA39 then free 0x00030830.
+// Evidence: unlock lane every callee rowed; same 53B shape as 0x00206706; self-call plus caller 0x00206F79.
+template <typename T>
+class StringBase
+{
+public:
+	void clear();
+};
+
+struct Rva00206667Node
+{
+	char m_pad[8];
+	Rva00206667Node *m_next; // +0x08
+	Rva00206667Node *m_child; // +0x0C
+	StringBase<char> m_value; // +0x10
+};
+
+class Rva00206667
+{
+public:
+	void rva00206667(Rva00206667Node *node);
+};
+
+extern "C" void __cdecl free(void *block);
+
+void Rva00206667::rva00206667(Rva00206667Node *node)
+{
+	if (!node)
+		return;
+	for (Rva00206667Node *cur = node; cur;) {
+		rva00206667(cur->m_child);
+		Rva00206667Node *next = cur->m_next;
+		cur->m_value.clear();
+		free(cur);
+		cur = next;
+	}
+}

@@ -41474,3 +41474,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0BfmeStringRecord005D511F@@QAE@ABVUnicodeString@@II0I@Z,,0x005D516E,75,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,5-arg ctor same record via 0x37050 callers 0x005D5604 0x005D5692
 ??1Rva00438FC5@@QAE@XZ,,0x00438FC5,47,Code/Libraries/Source/WWVegas/WWLib/stlport_list_int_dtor.cpp,matched,list-int dtor via clear plus base with EHs
 ??0Rva004382FC@@QAE@XZ,,0x004382FC,32,Code/GameEngine/Source/GameLogic/Object/Update/Rva004382FCWrapper.cpp,matched,wrapper ctor via member plus zero B8 BC C0
+?rva00206667@Rva00206667@@QAEXPAURva00206667Node@@@Z,,0x00206667,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206667Clear.cpp,matched,unlock recursive clear via rowed StringBase clear plus free same 53B shape
