@@ -42570,3 +42570,4 @@ __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_Local
 ?rva002B9386@Rva002B9386@@QAEXW4ScienceType@@@Z,,0x002B9386,45,Code/Libraries/Source/WWVegas/WWLib/Rva002B9386.cpp,matched,leaf lane Science add-if-absent via pinned find plus rowed push_back 0x002E01C6 caller 0x002BE717
 ?rva002BBBE7@Rva002BBBE7@@QAEXPAUNode002BBBE7@@@Z,,0x002BBBE7,53,Code/Libraries/Source/WWVegas/WWLib/Rva002BBBE7.cpp,matched,chain lane recursive list clear via rowed dtor 0x002B923F plus free 0x00030830 unblocks 0x002BC39D
 ?Rva001516C1RegisterPrototype@@YAXPBD@Z,,0x001516C1,86,Code/GameEngine/Source/Common/Rva001516C1RegisterPrototype.cpp,matched,twin of 0x0014D01C plus 0x0017FD2F via rows 0x0061F0D0 0x001515CA 0x0061EF90
+?rva001EF90E@Rva001EF90E@@QAEXVAsciiString@@HVUnicodeString@@HH@Z,,0x001EF90E,146,Code/GameEngine/Source/Common/Open2RecChain146.cpp,matched,chain from 0x001EF5BD GetMap 0x54 Bar 0xFC rec wide
