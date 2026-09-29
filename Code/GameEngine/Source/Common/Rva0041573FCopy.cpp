@@ -32,3 +32,16 @@ Rva0041573F::Rva0041573F(const Rva0041573F &src)
 	, m_tree(src.m_tree)
 {
 }
+
+class Rva0041579E {
+public:
+	Rva0041579E(const Rva0041579E &src);
+private:
+	int m_00;
+	Rva0041573F m_04;
+};
+Rva0041579E::Rva0041579E(const Rva0041579E &src)
+	: m_00(src.m_00)
+	, m_04(src.m_04)
+{
+}
