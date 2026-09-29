@@ -3128,3 +3128,6 @@ FUN_007afe48	0x003AFE48	70	blocked	STL __push_heap for 12B float-keyed struct; t
 FUN_007c4b97	0x003C4B97	112	blocked	EH prolog plus list-int plus virtuals 9C-A8-10C plus EDI has no init t=10 model=muse-07
 ??0WaterTransparencySetting@@QAE@XZ	0x00200D80	249	partial	249B 63insns push-edi plus temp lea hoisted above early inits plus final vtables sunk below floats plus float at plus0x4c unproven 20.0f placeholder for 0x7D5E50 t=28 model=muse-10 score=0.9 stash=reverse/attempts/0x00200d80.cpp
 ??0Rva00201618@@QAE@XZ	0x00201618	503	blocked	WeatherSetting ctor via Weather plus EXSnowFlake plus ZH Snow.h donor but BFME2 extensions 170B object with 20plus floats incl 0x7D5E50 unproven plus same store-order wall as 0x00200D80 partial push-edi lea hoist plus vtable sink t=8 model=muse-10
+?rva00265514@Object@@QBEPAUCoord3D@@PAU2@PBV1@@Z	0x00265514	130	partial	131B vs 130B extra movss vs movaps plus xmm rotation t=30 model=muse-spark score=0.94 stash=reverse/attempts/0x00265514.cpp
+?rva00300021@Rva00300021@@QBE_NPBX@Z	0x00300021	84	blocked	branchy flag plus 0x24-0x26 bytes with redundant dl test needs donor t=15 model=muse-spark
+?rva0005B137@Rva0005B137@@QAE_NXZ	0x0005B137	103	blocked	STL hashtable begin plus set insert plus WindowVideoManager layout needs donor t=10 model=muse-spark
