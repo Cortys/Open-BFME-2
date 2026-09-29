@@ -21,6 +21,7 @@ class BfmePod8Vector : public _STL::vector<BfmePod8, _STL::allocator<BfmePod8> >
 {
 public:
 	void resize(unsigned int n, BfmePod8 x);
+	void resize(unsigned int n);
 };
 
 void BfmePod8Vector::resize(unsigned int n, BfmePod8 x)
@@ -29,4 +30,14 @@ void BfmePod8Vector::resize(unsigned int n, BfmePod8 x)
 		erase(begin() + n, end());
 	else
 		_M_fill_insert(end(), n - size(), x);
+}
+
+// ?resize@BfmePod8Vector@@QAEXI@Z @ 0x000B0857 (23B). One-argument resize
+// forwarding an indeterminate default pod to the rowed by-value resize
+// above; the two filler pushes carry the incoming ecx. Callers 0x000B0DA8
+// and 0x000B0F82.
+void BfmePod8Vector::resize(unsigned int n)
+{
+	BfmePod8 x;
+	resize(n, x);
 }
