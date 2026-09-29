@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /O1 /MD /EHsc
 // ?rva005C436E@Rva005C436E@@QAEXH@Z retail 0x005C436E 65B
 // Evidence: callers 0x005C43BE 0x005C444D unblocks 0x005C4423 plus 0x005C43AF; rowed find 0x002B51F8 plus adds 0x002E07B9 0x002E07AC; chain [esi+4]+0x24+0x13c plus switch [esi+8]+8
 class Rva002E2903Player;
@@ -36,16 +36,32 @@ struct Outer08
 {
 	char m_pad[8];
 	int m_val;
+	int m_0C;
 };
 
-class Rva005C436E
+class Snapshot
 {
 public:
+	virtual ~Snapshot();
+	virtual void crc();
+	virtual void loadPostProcess();
+	virtual void xfer();
+};
+
+inline Snapshot::~Snapshot()
+{
+	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+}
+
+class Rva005C436E : public Snapshot
+{
+public:
+	virtual ~Rva005C436E();
 	void rva005C436E(int v);
 private:
-	char m_pad00[4];
 	Inner24 *m_04;
 	Outer08 *m_08;
+	bool m_0C;
 };
 
 void Rva005C436E::rva005C436E(int v)
@@ -61,5 +77,13 @@ void Rva005C436E::rva005C436E(int v)
 	case 1:
 		((Rva002E07B9 *)p)->add(v);
 		break;
+	}
+}
+
+Rva005C436E::~Rva005C436E()
+{
+	if (m_0C) {
+		rva005C436E(-m_08->m_0C);
+		m_0C = 0;
 	}
 }
