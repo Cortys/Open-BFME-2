@@ -41626,3 +41626,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva000B2BE5Get@@YAHPBURva000B2BE5Src@@H@Z,,0x000B2BE5,26,Code/GameEngine/Source/Common/Rva000B2BE5Get.cpp,matched,flag getter bit 0x20 at plus0x114 else fallback via 4 callers
 ?Rva000B6AA9Build@@YAPAURva000B6AA9Rec@@PAU1@PAPAXH@Z,,0x000B6AA9,76,Code/GameEngine/Source/Common/Rva000B6AA9Build.cpp,matched,build 12B rec via Clamp 0x000B2B42 plus movsd returning dest
 ?Rva000B6AF5Build@@YAPAURva000B6AF5Rec@@PAU1@PAPAXH@Z,,0x000B6AF5,90,Code/GameEngine/Source/Common/Rva000B6AF5Build.cpp,matched,build 12B rec via Clamp plus double movzx returning dest
+??0Rva000B642A@@QAE@PBHABUPristineBoneInfo@@@Z,,0x000B642A,29,Code/GameEngine/Source/Common/Rva000B642ACtor.cpp,matched,2-arg ctor int plus PristineBoneInfo via caller 0x000BCF96
