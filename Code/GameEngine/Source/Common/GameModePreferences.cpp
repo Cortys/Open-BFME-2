@@ -160,6 +160,7 @@ public:
 	Int rva0044D836(void);
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
+	void rva0044DD1E(Int val);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -325,6 +326,19 @@ void GameModePreferences::rva0044DCB9(Int val)
 	AsciiString tmp;
 	tmp.format("%d", val);
 	AsciiString &slot = (*this)[makeKey("Color")];
+	slot = tmp;
+}
+
+// ?rva0044DD1E@GameModePreferences@@QAEXH@Z @0x0044DD1E (101B): PlayerTemplate
+// setter via "%d" format then map makeKey("PlayerTemplate") slot assign.
+// Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
+// AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; prev 0x0044DCB9
+// next 0x0044DDFB.
+void GameModePreferences::rva0044DD1E(Int val)
+{
+	AsciiString tmp;
+	tmp.format("%d", val);
+	AsciiString &slot = (*this)[makeKey("PlayerTemplate")];
 	slot = tmp;
 }
 
