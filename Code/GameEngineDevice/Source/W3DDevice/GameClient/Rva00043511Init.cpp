@@ -14,6 +14,7 @@ class Rva00043511
 {
 public:
 	void rva00043511();
+	Rva00043511 *rva00045984();
 private:
 	int m_00;
 	int m_04;
@@ -29,4 +30,10 @@ void Rva00043511::rva00043511()
 	m_04 = 0;
 	m_00 = 1;
 	m_08 = 0.0f;
+}
+
+Rva00043511 *Rva00043511::rva00045984()
+{
+	rva00043511();
+	return this;
 }
