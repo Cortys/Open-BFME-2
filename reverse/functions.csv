@@ -42020,3 +42020,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva001EC349@@QAEPAXI@Z,,0x001ECB91,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva001EC349.cpp,matched,deleting dtor via rowed dtor plus delete
 ?Rva0021C8D7AdjustHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z,,0x0021C8D7,153,Code/GameEngine/Source/Common/System/Rva0021C8D7AdjustHeap.cpp,matched,unlock heap adjust via rowed pushheap and assign
 ?getMetaMapRec@MetaMap@@IAEPAVMetaMapRec@@W4Type@GameMessage@@@Z,,0x001DB537,107,Code/GameEngine/Source/GameClient/MessageStream/MetaMapGetMetaMapRec.cpp,matched,ZH donor MetaEvent body plus caller 0x001DB5A2 plus rowed new and releaseBuffer
+?rva002AD19E@Rva002AD19E@@QAE_NPAX@Z,,0x002AD19E,95,Code/GameEngine/Source/Common/RTS/Rva002AD19EArmor.cpp,matched,unlock lane armor map remove clear

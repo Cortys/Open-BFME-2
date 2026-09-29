@@ -3178,3 +3178,5 @@ FUN_00A0C7AD	0x0060C7AD	260	blocked	chain260 xfer CxxThrow plus format plus virt
 ??0Rva000C6A4D@@QAE@XZ	0x000C6A4D	202	partial	or-lea-state hoisted above mid scalars; early prolog fixed via base-int plus Rva dtor; size-insns exact t=35 model=muse-spark score=0.93 stash=reverse/attempts/0x000c6a4d.cpp
 ?rva005130E2@Rva005130E2@@QAEXVUnicodeString@@@Z	0x005130E2	86	blocked	EH prolog plus virtual-slot plus globals need donor; single-probe model missing EH and uses esi-edi vs eax-ecx t=12 model=muse-spark
 ?rva002E8548@Rva002E8548@@QAE_NPAXH@Z	0x002E8548	101	blocked	register wall plus imul-vs-lea strength reduction; single-probe O1 model uses ebx-edi with lea-chain vs retail esi-edi imul t=10 model=muse-spark
+?rva005C8176@Rva005C8176@@QAEPAXMM@Z	0x005C8176	98	blocked	float cell-before-sub vs retail sub-before-cell plus separate fail blocks vs shared plus base-in-reg vs mem plus xmm0 vs xmm2 t=25 model=muse-spark
+?rva006E1090@AptCIH@@QAEPAXXZ	0x006E1090	103	partial	shared return vs duplicated load-hoisted copy plus shape-lever split-OR lever t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x006e1090.cpp
