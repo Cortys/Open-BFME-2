@@ -44,3 +44,22 @@ void Rva0038201D::rva003828B6()
 	m_head->m_child = m_head;
 	m_count = 0;
 }
+
+class Rva0038204A
+{
+public:
+	void rva0038204A(Rva0038201DNode* n);
+};
+
+void Rva0038204A::rva0038204A(Rva0038201DNode* n)
+{
+	Rva0038201DNode* cur = n;
+	if (!cur)
+		return;
+	do {
+		rva0038204A(cur->m_child);
+		Rva0038201DNode* next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}

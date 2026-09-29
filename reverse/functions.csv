@@ -40994,3 +40994,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva004F6986@@QAEPAXI@Z,,0x004F6E2B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02.cpp,matched,chain deleting dtor via rowed dtor plus delete
 ??4Rva004F64FC@@QAEAAU0@ABU0@@Z,,0x004F64FC,33,Code/GameEngine/Source/Common/Rva004F64FCAssign.cpp,matched,12B assign TreeHint at 0 via rowed assign plus ints
 ?rva00214738@Rva002147D1@@QAEPAXH@Z,,0x00214738,42,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,guarded plus18 fetch same array
+?rva0038204A@Rva0038204A@@QAEXPAURva0038201DNode@@@Z,,0x0038204A,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,twin tree free same node layout caller 0x3828DF
