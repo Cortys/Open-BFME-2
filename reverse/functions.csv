@@ -42249,3 +42249,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002B438D@Rva002B438D@@QAEXPAUNode002B438D@@@Z,,0x002B438D,45,Code/GameEngine/Source/Common/Rva002B438D.cpp,matched,unlock sibling recursive free via rowed free
 ??_E?$StringBase@G@@AAEPAXI@Z,,0x002331F0,75,Code/Libraries/Source/WWVegas/WWLib/string_base_vector_dtor.cpp,matched,wide StringBase vector deleting dtor element size 4
 ?rva0021A06C@Rva00219B9E@@QAEHII@Z,,0x0021A06C,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219D0D or 0 caller 0x00407069
+?rva003421B2@Rva00342157@@UAEHXZ,,0x003421B2,66,Code/GameEngine/Source/Common/Rva00342157Slot4.cpp,matched,vslot4 of vtable 0x008118B0 via TheGameLogic frame plus random tail call
