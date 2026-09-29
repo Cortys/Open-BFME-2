@@ -28,3 +28,43 @@ bool Rva0025BF8C::rva0025BF8C(void *arg)
 	}
 	return false;
 }
+// ?rva00596548@Rva00596548@@QAE_NPAX@Z @0x00596548 93B
+// __thiscall over holder arg: requires Rva005964ECGet(holder)!=0 (byte test),
+// then if inner(+4)[0x123]&1 finds hero(+0x74) in derived vector at this+0x10
+// via rowed find and erases via rowed erase when present, else calls base
+// Rva0025BF8C::rva0025BF8C(holder). Returns true in both push paths, false
+// when predicate fails. Base size 0x10, derived vector at +0x10.
+// Evidence: push edi mov esi ecx call 0x5964EC test al je; mov eax[edi+4]
+// test [eax+123]1 je to base call else find 0x20E873 erase 0x25BF5D; caller
+// at 0x004E0458; EBP frame /Oy- with stlport like base.
+int __stdcall Rva005964ECGet(void *holder);
+class Rva00596548 : public Rva0025BF8C
+{
+public:
+	bool rva00596548(void *holder);
+private:
+	_STL::vector<CreateAHeroData *> m_vec10;
+};
+bool Rva00596548::rva00596548(void *holder)
+{
+	if (((unsigned char)Rva005964ECGet(holder)) != 0)
+	{
+		void *inner = *(void **)((char *)holder + 4);
+		if ((((unsigned char *)inner)[0x123] & 1) != 0)
+		{
+			CreateAHeroData *hero = *(CreateAHeroData **)((char *)holder + 0x74);
+			_STL::vector<CreateAHeroData *>::iterator it =
+				_STL::find(m_vec10.begin(), m_vec10.end(), hero);
+			if (it != m_vec10.end())
+			{
+				m_vec10.erase(it);
+			}
+		}
+		else
+		{
+			Rva0025BF8C::rva0025BF8C(holder);
+		}
+		return true;
+	}
+	return false;
+}

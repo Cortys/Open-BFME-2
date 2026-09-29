@@ -41697,3 +41697,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0023AB78@Rva0023AB78@@QAEXVAsciiString@@G@Z,,0x0023AB78,101,Code/GameEngine/Source/Common/Rva0023AB78Insert.cpp,matched,build record text plus short then list insert via rowed 0x0023A014 callers 0x0023ACD6 0x0023AD69
 ?Rva005964ECGet@@YGHPAX@Z,,0x005964EC,92,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,bit predicate inner plus 0x10c mask chain
 ?rva00596635@Rva00596635@@QAE_NPAX@Z,,0x00596635,72,Code/GameEngine/Source/Common/Rva0025C061Push.cpp,matched,thiscall predicate plus Science push or base call
+?rva00596548@Rva00596548@@QAE_NPAX@Z,,0x00596548,93,Code/GameEngine/Source/Common/Rva0025BF8CHeroRemover.cpp,matched,thiscall predicate plus hero find erase or base
