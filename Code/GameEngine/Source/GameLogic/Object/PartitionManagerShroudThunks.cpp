@@ -62,6 +62,7 @@ public:
 	void rva008F8C70(CDEProvider *first, CDEProvider *second);
 	void updatePlayerCells300And3B0_Rva0073B3B0(int value);
 	void notify();
+	int getPlayerStatusWord_Rva0073B890(int playerIndex, const Coord3D *pos) const;
 };
 
 class PartitionManager
@@ -287,4 +288,22 @@ private:
 void Rva007397D0::rva007397D0()
 {
 	m_cell->notify();
+}
+
+//
+// ?rva007397E0@Rva007397E0@@QBEHHPBUCoord3D@@@Z retail 0x007397E0 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073B890.
+// Evidence: retail mov ecx [ecx+0x10] jmp; gap between 0x007397D0 and 0x007397F0 in same TU.
+class Rva007397E0
+{
+public:
+	int rva007397E0(int playerIndex, const Coord3D *pos) const;
+private:
+	char m_pad[0x10];
+	ShroudManagerImpl008FBA40 *m_cell; // +0x10
+};
+
+int Rva007397E0::rva007397E0(int playerIndex, const Coord3D *pos) const
+{
+	return m_cell->getPlayerStatusWord_Rva0073B890(playerIndex, pos);
 }
