@@ -2918,3 +2918,5 @@ FUN_0099205C	0x0059205C	199	blocked	Wide Rva004D60CA deserializer same wall as 0
 ?Rva0030B343Swap@@YAXPAURva0030B343@@0@Z	0x0030B343	53	blocked	8B 2-float swap spills to stack with single xmm0 plus int reloads; 6 variants with O1 arch-SSE Oy- all enregister to xmm0-xmm1 39B vs 53B t=15 model=muse-03
 FUN_00638F79	0x00238F79	24	blocked	eax-base predicate wall not ecx thiscall no stack load al-return t=12 model=muse-spark
 FUN_00680176	0x00280176	286	blocked	TerrainLogic file method needs donor complex float idiv virtuals t=8 model=muse-spark
+??1Rva002E66F2@@UAE@XZ	0x002E66F2	89	partial	83B vs 89B missing second vtable store mov esi c04e90 only diff t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x002e66f2.cpp
+?Rva002E6184EqualRange@@YA?AURva002E6184Pair@@PAUStringLookUp@@0ABQBDURva002E5C15Comp@@@Z	0x002E6184	151	blocked	151B equal_range binary plus Lower Upper wrappers needs register allocation wall across 6 shapes t=15 model=muse-07
