@@ -19,3 +19,16 @@ void __cdecl Rva0056EDBAPick(int *out1, int *out2)
 	*out1 = g_Va00DD2A6C[i];
 	*out2 = g_Va00DD2A5C[i];
 }
+extern int g_Va00DD29BC[4];
+extern int g_Va00DD29CC[4];
+void __cdecl Rva0056ECDAPick(int *out1, int *out2);
+void __cdecl Rva0056ECDAPick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, esp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DD29CC[i];
+	*out2 = g_Va00DD29BC[i];
+}

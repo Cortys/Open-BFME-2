@@ -41388,3 +41388,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00739830@Rva00739830@@QBEHPBUBfmePointFD@@HI@Z,,0x00739830,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,cell-sum thunk via plus16 pointer tail-jump to rowed bfmeCellSum
 ??0Rva00201B64@@QAE@XZ,,0x00201B51,19,Code/GameEngine/Source/Common/Rva00201B64HolderDtor.cpp,matched,ctor abuts dtor B64 list base
 ?Rva0056EDBAPick@@YAXPAH0@Z,,0x0056EDBA,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,unlock rdtsc table pick 2 callers
+?Rva0056ECDAPick@@YAXPAH0@Z,,0x0056ECDA,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,unlock esp-seed table pick
