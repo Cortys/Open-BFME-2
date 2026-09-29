@@ -34,3 +34,20 @@ void Rva002E214ESort(void **begin, void **end, void *extra)
 	for (void **p = begin + 1; p != end; ++p)
 		Rva002E1EB7Insert(begin, p, *p, extra);
 }
+
+void Rva002E180DReinsert(void **begin, void **end, void *extra);
+
+// ?Rva002E22EBSort@@YAXPAPAX0PAX@Z @0x002E22EB 68B.
+// Hybrid sort: insertion sort directly for 16 or fewer slots, else sort the
+// first 16 then reinsert the tail. Evidence: caller 0x002E2D82; callees
+// rowed 0x002E214E 0x002E180D.
+void Rva002E22EBSort(void **begin, void **end, void *extra)
+{
+	if ((((char *)end - (char *)begin) & ~3) > 0x40) {
+		void **mid = (void **)((char *)begin + 0x40);
+		Rva002E214ESort(begin, mid, extra);
+		Rva002E180DReinsert(mid, end, extra);
+		return;
+	}
+	Rva002E214ESort(begin, end, extra);
+}
