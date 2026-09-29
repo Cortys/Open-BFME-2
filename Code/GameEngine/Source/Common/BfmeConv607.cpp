@@ -9,10 +9,10 @@ public:
 	int m_bfmeErr;
 };
 
-int bfmeCallCIC(void *a, void *b, void *one, void *two);
+int Rva007ECE60(char *a, int b, const char *one, const char *two);
 
 void BfmeThingCIC::bfmeGoCIC(void *one, void *two)
 {
-	if (bfmeCallCIC(m_bfmeA, m_bfmeB, one, two) < 0)
+	if (Rva007ECE60((char *)m_bfmeA, (int)m_bfmeB, (const char *)one, (const char *)two) < 0)
 		m_bfmeErr = -100;
 }
