@@ -41297,3 +41297,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00441DA4Sort@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00441DA4,27,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,wrapper zero to reinsert sweep caller 0x00442856
 ?Rva00441D74Sort@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00441D74,48,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,insertion sort via guarded insert callers 0x00442847 0x0044286B
 ?Rva0052BCE7DestroyTagged@@YAXPAURva0052BCE7Elem@@0ABU__false_type@_STL@@@Z,,0x0052BCE7,29,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0xB8 caller 1
+?rva005F0185@Rva005F0185@@QAEPBVImage@@H@Z,,0x005F0185,51,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,unlock image cache twin via same volatile recipe

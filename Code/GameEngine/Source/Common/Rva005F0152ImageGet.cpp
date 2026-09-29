@@ -86,3 +86,26 @@ const Image *Rva005F0220Get(Rva005F0220In *in)
 		return Rva005F020BGet(p);
 	return 0;
 }
+
+class Rva005F0185
+{
+public:
+	const Image *rva005F0185(int index);
+
+private:
+	char m_pad[0x1C];
+	AsciiString m_names[13];
+	const Image *volatile m_images[13];
+};
+
+const Image *Rva005F0185::rva005F0185(int index)
+{
+	const Image *volatile *slot = &m_images[index];
+	if (*slot)
+		return *slot;
+	const AsciiString &name = m_names[index];
+	if (name.isEmpty())
+		return *slot;
+	*slot = TheMappedImageCollection->findImageByName(name);
+	return *slot;
+}
