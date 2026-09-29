@@ -8,6 +8,7 @@
 // frameless push/call/inc shape, CriticalSectionDeleteWrapper precedent).
 struct Rva00030DD0Lock
 {
+	~Rva00030DD0Lock();
 	unsigned char m_cs[0x18];
 	int m_ref;
 };
@@ -15,6 +16,7 @@ struct Rva00030DD0Lock
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(void *cs);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(void *cs);
 extern "C" __declspec(dllimport) void __stdcall InitializeCriticalSection(void *cs);
+extern "C" __declspec(dllimport) void __stdcall DeleteCriticalSection(void *cs);
 
 int Rva00030DD0AddRef(Rva00030DD0Lock *lock)
 {
@@ -50,3 +52,14 @@ Rva00030DD0Lock *Rva00030D90Init(Rva00030DD0Lock *lock)
 	}
 	return result;
 }
+
+// ??_GRva00030DD0Lock@@QAEPAXI@Z @0x00030DB0 32B.
+// Non-virtual deleting dtor: inlined DeleteCriticalSection at IAT 0xBBA158
+// then conditional operator delete 0x2FD60 on flag bit0. Gap between
+// 0x00030D90 and 0x00030DD0 same TU defaults. __thiscall ret 4.
+// ??1Rva00030DD0Lock@@QAE@XZ present-unmatched
+inline Rva00030DD0Lock::~Rva00030DD0Lock()
+{
+	DeleteCriticalSection(this);
+}
+void famgenDelete(Rva00030DD0Lock *p) { delete p; }
