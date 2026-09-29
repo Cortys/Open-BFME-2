@@ -1,0 +1,28 @@
+// cl: /O1
+// ?rva0052B53C@Rva0052B53C@@QAEXXZ @0x0052B53C 29B. Unlock lane: lazy MD5Final
+// of digest at +0x41 with ctx ptr at +0x54 guarded by flag at +0x58; callers
+// at 0x002DE265/0x0052B562; unblocks 0x0052B559. Prev/next are Disp getters
+// (no // cl:); /O1 for pop-pop cleanup and cmp-byte guard.
+struct MD5_CTX;
+void __cdecl MD5Final(unsigned char digest[16], MD5_CTX *context);
+
+typedef int Int;
+
+class Rva0052B53C
+{
+public:
+	void rva0052B53C();
+private:
+	char m_pad[0x41];
+	unsigned char m_digest[16];
+	char m_pad2[3];
+	MD5_CTX *m_ctx;
+	unsigned char m_done;
+};
+void Rva0052B53C::rva0052B53C()
+{
+	if (m_done == 0) {
+		MD5Final(m_digest, m_ctx);
+		m_done = 1;
+	}
+}
