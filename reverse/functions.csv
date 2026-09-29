@@ -41953,3 +41953,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva003AE2A9@@QAE@ABV0@@Z,,0x003AE2A9,38,Code/GameEngine/Source/Common/Rva003AE2A9CopyCtor.cpp,matched,copy via base plus own vptrs
 ?rva0073F778@Rva0073F778@@QAE_NP6GIPAX@Z0HIH0@Z,,0x0073F778,129,Code/GameEngine/Source/Common/Rva0073F778Thread.cpp,matched,unlock lane thread create with priority switch via imports
 ??0BfmeStringRecord0021A940@@QAE@PBIABUBfmeStringRecord00219B0B@@@Z,,0x0021A940,29,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,2-arg ctor word plus rec via 0x00219B0B chain
+?rva004FAFF2@Rva004FAFF2@@QAEAAU1@ABU1@@Z,,0x004FAFF2,213,Code/GameEngine/Source/Common/Rva004FAFF2Assign.cpp,matched,copy-assign twelve strings plus vector plus tail
