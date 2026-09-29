@@ -41616,7 +41616,6 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0033A5F4@Rva0033A5F4@@QAEXPAHPAM010@Z,,0x0033A5F4,62,Code/GameEngine/Source/Common/Rva0033A5F4Getter.cpp,matched,five-out-param x87 getter via caller plus frame shape
 ?rva00200084@Rva0023C6A4@@QAE_NXZ,,0x00200084,32,Code/GameEngine/Source/Common/Rva0023C6A4Check.cpp,matched,OR of global-mode check and this predicate
 ??0Rva0054F508@@QAE@H@Z,,0x0054F52F,117,Code/GameEngine/Source/Common/Rva0054F508Ctor.cpp,matched,vtable 0x86AA60 CustomPref GameSpy slot 0x7C base 0x44D54B
-??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
 ?Rva0052340DEnable@@YAXXZ,,0x0052340D,43,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,one-shot enabler via globals 0xA04934 0xA01E48 and tail enable 0x222479
 ?rva00523149@Rva00523149@@QAEAAU1@PBU1@@Z,,0x00523149,47,Code/Libraries/Source/WWVegas/WWLib/Rva00523149Assign.cpp,matched,assign from pointer via rb_tree 0x0052274D ternary plus UnicodeString set 0x00037150
 ??0Rva005CD651@@QAE@H@Z,,0x005CD651,63,Code/GameEngine/Source/Common/Rva005CD651Ctor.cpp,matched,ctor vtable 0x00874FF4 plus int plus Enable 0x0052340D via caller 0x00577720
@@ -41639,3 +41638,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__adjust_heap@PAHHHVRva00422CA8@@@_STL@@YAXPAHHHHVRva00422CA8@@@Z,,0x004239BF,94,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap sift-down via landed push heap
 ??$__pop_heap@PAHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@@Z,,0x00423EF7,41,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap pop via landed adjust heap
 ??$__make_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z,,0x00423F63,60,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap make via landed adjust heap
+?Rva00523EFFEqual@@YAHPBURva00523DB7@@0@Z,,0x00523EFF,35,Code/Libraries/Source/WWVegas/WWLib/Rva00523EFFEqual.cpp,matched,8B struct int plus StringBase compare via 7x caller 0x0052408B
+??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
