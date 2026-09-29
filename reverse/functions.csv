@@ -41051,3 +41051,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004E1FCCGet@@YAXPAURva004E1AD5Item@@0@Z,,0x004E1FCC,24,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_004e1fcc.cpp,matched,chain forwards tag to 0x004E1AD5 callers 3
 ??0Rva004E13EB@@QAE@XZ,,0x004E13EB,43,Code/GameEngine/Source/Common/Rva004E13EBCtor.cpp,matched,unlock ctor vtable 0x008618CC zero floats caller 0x004E1439
 ?rva00330F7D@RadiusDecal@@QAEXPAVXfer@@@Z,,0x00330F7D,27,Code/GameEngine/Source/GameLogic/Object/Update/RadiusDecal_rva00330F7D.cpp,matched,unlock RadiusDecal clear if Xfer IsLoading caller 0x003915D2
+??1Rva004FF2F4@@QAE@XZ,,0x004FF2F4,8,Code/GameEngine/Source/Common/Rva004FF2F4Dtor.cpp,matched,tail dtor via base

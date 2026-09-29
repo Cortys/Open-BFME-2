@@ -2759,3 +2759,7 @@ FUN_008D0198	0x004D0198	61	blocked	Unicode StringBase copy with EH plus large ta
 ?rva0021122A@Rva0021122A@@QAEPAVRvaSmartPtr12@@PAV2@@Z	0x0021122A	27	partial	align 26/27B 11/11insns; wall=retail EBP frame plus dead push-and slot ours frameless; Oy- overshoots to 28B t=8 model=muse-09 score=0.9 stash=reverse/attempts/0x0021122a.cpp
 ?Rva0009DE01Get@@YAMMM@Z	0x0009DE01	37	partial	align 37/37B 16/16insns; wall=early pop ecx before fdiv vs ours fdiv first (Oy- fixed frame); ji log10 shape exact t=10 model=muse-09 score=0.95 stash=reverse/attempts/0x0009de01.cpp
 FUN_005FF743	0x001FF743	43	blocked	EH clear plus prepend via rowed 0x001FF6AE and 0x001FF6D7; 3 variants dtor Guard try-catch; closest 16B no-EH tail-jmp vs 43B EH call-plus-epilog and 56B try-catch overshoot; same wall as blocked 0x00557BFE (EH without base call no or-1); t=15 model=muse-spark
+?rva00410D96@Rva00410D96@@QAEXXZ	0x00410D96	73	blocked	needs ICF for free call t=5 model=muse-06
+?rva00410D05@Rva00410D05@@QAEHABVAsciiString@@@Z	0x00410D05	145	blocked	needs Free ICF t=3 model=muse-06
+??1Rva0030F47A@@QAE@XZ	0x0030F4AF	59	blocked	dtor needs node virtuals t=5 model=muse-06
+?rva004530ED@Rva004530ED@@QAEXPBV1@@Z	0x004530ED	32	partial	register swap esi edi t=12 model=muse-06 score=0.91 stash=reverse/attempts/0x004530ed.cpp
