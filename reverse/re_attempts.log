@@ -3517,3 +3517,4 @@ FUN_0066DF80	0x0066DF80	523	blocked	523B GameNetwork leaf too big for quick lane
 ?rva00584405@Rva00584405@@QAEXPAVRva002337F0@@IPBURva002337F0Blk@@@Z	0x00584405	225	blocked	chain fill-insert needs mixed Rva plus Bfme callees with empty-Tag at plus0xB t=20 model=muse-07
 ?rva0006AB49@Rva0006AB49@@QAE_NHH@Z	0x0006AB49	79	blocked	unlock bit test bool-local gives 78vs79 t=25 model=muse-07
 ?Rva006C2010Find@@YGPAEPAEIG0IPAI@Z	0x006C2010	143	blocked	register wall esi-edi swap plus ebp spill and merged p-subs; memcpy tail matches but loop keeps add-neg plus extra push; t=20 model=muse-03
+?rva0037EE4C@Rva0037EE4C@@QAEHPBURva0037EE4COuter@@HH@Z	0x0037EE4C	109	blocked	register wall name-in-ebx vs stack plus filter reload 6 variants t=25 model=muse-05

@@ -42702,3 +42702,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?Rva006BE270Fill@@YAXPAUBfmeElem60@@0ABU1@@Z,,0x006BE270,112,Code/GameEngine/Source/Common/Rva0087EAA0Fill.cpp,matched,BfmeVec60 insert fill range with AsciiString op at 0x366F0 via sibling copy flags
 ??0Rva003ED658@@QAE@ABV0@@Z,,0x003ED658,53,Code/GameEngine/Source/Common/Rva003ED658Ctor.cpp,matched,chain from 0x003ED498 via rowed vector copy
 ?Scale@ParticleEmitterClass@@UAEXM@Z,,0x001A18D0,152,Code/Libraries/Source/WWVegas/WW3D2/particle_emitter_scale.cpp,matched,slot 92 vtable 0x7D69F8 Buffer Scale via 0x170 TU-local view
+?rva0037DE0E@Rva0037DE0E@@QAEEPAX@Z,,0x0037DE0E,85,Code/GameEngine/Source/Common/Rva0037DE0ECopy.cpp,matched,chain of rowed 0x0037E3D9 plus block and Rva001EAFC1
