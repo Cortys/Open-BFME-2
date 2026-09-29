@@ -42587,3 +42587,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??1Rva002BAEAB@@QAE@XZ,,0x002BAEAB,53,Code/GameEngine/Source/Common/Rva002BAEAB.cpp,matched,unlock lane EH dtor via pinned 0x002B80CE plus rowed WindModuleInfo 0x0049B47C unblocks 0x002BAE8F
 ??_GRva002BAEAB@@QAEPAXI@Z,,0x002BAE8F,28,Code/GameEngine/Source/Common/Rva002BAEAB.cpp,matched,chain lane scalar deleting via anchor new-delete calls rowed dtor plus delete
 ?xfer@ReplaceObjectUpdate@@MAEXPAVXfer@@@Z,,0x004B29DE,33,Code/GameEngine/Source/GameLogic/Object/Update/ReplaceObjectUpdateXfer.cpp,matched,vslot 3 base plus lightcrc plus Version1 no members
+?rva004B2A9D@Rva004B2A9D@@QAEPAHXZ,,0x004B2A9D,39,Code/GameEngine/Source/GameLogic/Object/Update/Rva004B2A9D.cpp,matched,unlock random int pick via GetGameLogicRandomValue
