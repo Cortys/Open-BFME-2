@@ -3267,3 +3267,5 @@ FUN_00577860	0x00177860	195	blocked	dtor-like 4x RefPtr plus globals 0x9F7044 0x
 ??1Rva004D060B@@QAE@XZ	0x004D060B	66	blocked	wide dtor needs EH prolog plus delete flag0 plus operator delete split t=12 model=muse-09
 FUN_008ec3ac	0x004EC3AC	132	blocked	list plus Object testStatus plus String compare needs layouts t=8 model=muse-09
 ?rva0058D7B6@NetPacket@@QAE_NPAVNetCommandRef@@@Z	0x0058D7B6	112	blocked	register wall 15 diffs plus prologue mismatch plus shared-fail shape needs donor layout t=18 model=muse-12
+?rva001E2BB0@FXListStore@@QBEPAPAXPAPAXPBD@Z	0x001E2BB0	226	blocked	EH factory with auto_ptr plus list copy gives different states and node walk needs raw model t=12 model=muse-10
+FUN_005E2CAE	0x001E2CAE	261	blocked	261B EH INI plus Armor erase plus vector plus FXList new needs global 0xDFDC3C layout plus donor mismatch t=10 model=muse-10
