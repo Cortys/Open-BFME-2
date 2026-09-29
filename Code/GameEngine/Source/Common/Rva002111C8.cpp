@@ -10,6 +10,7 @@ class RvaSmartPtr12
 {
 public:
 	RvaSmartPtr12(const RvaSmartPtr12 &o);
+	RvaSmartPtr12 &operator=(const RvaSmartPtr12 &o);
 private:
 	char m_data[12];
 };
@@ -18,6 +19,7 @@ class Rva002111C8
 {
 public:
 	Rva002111C8(const Rva002111C8 &o);
+	Rva002111C8 &operator=(const Rva002111C8 &o);
 private:
 	RvaSmartPtr12 m_00;
 	int m_0c;
@@ -40,4 +42,14 @@ void Rva00211DFBConstruct(Rva002111C8 *d, const Rva002111C8 *s)
 {
 	if (d)
 		new (d) Rva002111C8(*s);
+}
+
+// ??4Rva002111C8@@QAEAAV0@ABV0@@Z, RVA 0x002111E3, 27B. Unlock lane: copy
+// assignment through rowed ??4RvaSmartPtr12 at 0x0004CC3D for +0 then the
+// +0x0C dword; returns *this, ret 4. Caller at 0x00211EC3 in 0x00211EAA.
+Rva002111C8 &Rva002111C8::operator=(const Rva002111C8 &o)
+{
+	m_00 = o.m_00;
+	m_0c = o.m_0c;
+	return *this;
 }
