@@ -3079,3 +3079,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva002741DE@Drawable@@QAEX_N@Z	0x002741DE	98	blocked	Drawable BitSet isAnyKindOf global flag needs donor layout t=15 model=muse-10
 ?rva00409C3D@CreateAHeroData@@QAE@HHHHHHH@Z	0x00409C3D	244	blocked	CreateAHeroData ctor 244B needs vector E16 vs RvaVecAscii plus Bvector Module map layout t=10 model=muse-10
 ?rva0050B288@Rva0050B288@@QAEHH@Z	0x0050B288	165	blocked	Gate behaviors static NameKey plus findModule MI adjust needs layout t=8 model=muse-11
+??0Rva003B39C7@@QAE@XZ	0x003B39C7	113	partial	109B vs 113B init order for m04 array plus rep t=15 model=muse-10 score=0.9 stash=reverse/attempts/0x003b39c7.cpp
