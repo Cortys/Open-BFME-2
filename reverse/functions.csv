@@ -42469,3 +42469,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??$_Construct@UBfmePod52@@U1@@_STL@@YAXPAUBfmePod52@@ABU1@@Z,,0x001DD2DC,18,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod52_rva.cpp,matched,placement copy via twin-pinned Rva001DD0A0 copy
 ?rva003C9BAD@ScriptActions@@IAEXABVAsciiString@@@Z,,0x003C9BAD,93,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doTeamFaceWaypoint.cpp,matched,gap after 0x003C9B19 plus team iteration plus rva003C76B8
 ??1Rva0041F760@@QAE@XZ,,0x0041F760,245,Code/GameEngine/Source/Common/Rva0041F760Dtor.cpp,matched,Nonvirtual dtor via ptrvec erase plus AsciiString vectors plus MallocPtrs plus strings
+?rva0041F855@Rva0041F760@@QAEPAXI@Z,,0x0041F855,28,Code/GameEngine/Source/Common/Rva0041F760Dtor.cpp,matched,Deleting-shaped wrapper via rowed dtor plus operator delete

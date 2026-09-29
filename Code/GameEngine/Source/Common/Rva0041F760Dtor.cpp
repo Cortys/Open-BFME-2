@@ -47,6 +47,7 @@ class Rva0041F760
 {
 public:
 	~Rva0041F760();
+	void *rva0041F855(unsigned int flags);
 private:
 	AsciiString m_00;
 	_STL::vector<void *, _STL::allocator<void *> > m_04;
@@ -76,4 +77,12 @@ Rva0041F760::~Rva0041F760()
 	pv8C->erase(pv8C->begin(), pv8C->end());
 	_STL::vector<AsciiString, _STL::allocator<AsciiString> > *pv98 = &m_98;
 	pv98->erase(pv98->begin(), pv98->end());
+}
+
+void *Rva0041F760::rva0041F855(unsigned int flags)
+{
+	this->~Rva0041F760();
+	if (flags & 1)
+		operator delete(this);
+	return this;
 }
