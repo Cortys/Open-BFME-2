@@ -12,8 +12,16 @@ struct Rva00583CE0Elem
 	int m_00;
 	char m_pad04[0x0C];
 	bool m_10;
-	char m_pad11[0x0B];
+	char m_pad11[0x03];
+	unsigned int m_14;
+	char m_pad18[0x04];
 };
+struct SingletonDFE78C
+{
+	char m_pad[0x40];
+	unsigned int m_40;
+};
+extern SingletonDFE78C *g_00DFE78C;
 
 class Rva005D6FCC
 {
@@ -31,6 +39,7 @@ public:
 	void rva00583CE0(int unused, int i);
 	bool rva00583BE6(int i);
 	bool rva00583C1A(int i);
+	bool rva00583C4E(int i);
 private:
 	_STL::vector<Rva00583CE0Elem> m_vec; // +8
 	bool m_flag; // +0x14
@@ -56,5 +65,11 @@ bool Rva005843DA::rva00583C1A(int i)
 {
 	if (i >= 0 && i < m_vec.size())
 		return m_vec[i].m_00 == 2;
+	return false;
+}
+bool Rva005843DA::rva00583C4E(int i)
+{
+	if (i >= 0 && i < m_vec.size())
+		return m_vec[i].m_14 > g_00DFE78C->m_40;
 	return false;
 }
