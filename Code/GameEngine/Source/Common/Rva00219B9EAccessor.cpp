@@ -53,6 +53,7 @@ public:
     int rva00219BE1(unsigned int index);
     int rva00219C1F(unsigned int index);
     void *rva0021AE56(unsigned int index);
+    void *rva0021AEB9(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -154,5 +155,16 @@ void *Rva00219B9E::rva0021AE56(unsigned int index)
     void *p = rva00219B9E(index);
     if (p)
         return (char *)p + 8;
+    return &err;
+}
+// ?rva0021AEB9@Rva00219B9E@@QAEPAXI@Z @0x0021AEB9 99B
+// Twin of 0x0021AE56 above with element+4: same static fallback literal,
+// same rowed callees; caller 0x0021B303.
+void *Rva00219B9E::rva0021AEB9(unsigned int index)
+{
+    static StringBase<char> err("ERROR: Invalid SubCalssIndex");
+    void *p = rva00219B9E(index);
+    if (p)
+        return (char *)p + 4;
     return &err;
 }
