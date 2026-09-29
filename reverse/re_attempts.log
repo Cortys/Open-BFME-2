@@ -2905,3 +2905,4 @@ FUN_006BF0D6	0x002BF0D6	57	blocked	EH dtor with Unwind funclet needs donor class
 ??1Rva0026F445@@UAE@XZ	0x0026F445	175	blocked	virtual dtor with manual scalar-delete loops plus voidptr vector needs UpgradeCenter vtable and node identity t=10 model=muse-05
 FUN_0022cac4	0x0022CAC4	63	blocked	same EH wall handler 0xb6f893 t=3 model=muse-spark
 FUN_0032be80	0x0032BE80	63	blocked	same EH wall handler 0xb7b9bc t=3 model=muse-spark
+FUN_0099205C	0x0059205C	199	blocked	Wide Rva004D60CA deserializer same wall as 0x592123: obj in ebx vs mem plus shl vs add plus push-reg vs push-1 plus late-and-18h. Single-wide no-m20 still shows it so wall is wide-memcpy-EH shape not m20 alias. Needs donor plus shared-delta fix t=12 model=muse-06
