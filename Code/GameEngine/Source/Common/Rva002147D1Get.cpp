@@ -17,6 +17,7 @@ class Rva002147D1
 public:
 	void *rva002147A1(int index, Object *obj);
 	void *rva002147D1(int index, Object *obj);
+	void *rva00214983(int index);
 private:
 	char _pad[0x0C];
 	int m_begin;
@@ -47,5 +48,17 @@ void *Rva002147D1::rva002147D1(int index, Object *obj)
 	Rva0040327B *slot = *(Rva0040327B **)(m_begin + index * 4);
 	if (slot != 0)
 		return slot->rva004032D3(obj);
+	return 0;
+}
+// ?rva00214983@Rva002147D1@@QAEPAXH@Z retail 0x00214983 34B plain indexed fetch
+// from same +0x0c array as 0x002147D1 without barrier or slot call.
+// Evidence: same +0x0c +0x10 layout; callers at 0x0040317F 0x004038DB.
+void *Rva002147D1::rva00214983(int index)
+{
+	if (index >= 0 && (unsigned)index < (unsigned)(m_end - m_begin >> 2))
+	{
+		_ReadWriteBarrier();
+		return *(void **)(m_begin + index * 4);
+	}
 	return 0;
 }
