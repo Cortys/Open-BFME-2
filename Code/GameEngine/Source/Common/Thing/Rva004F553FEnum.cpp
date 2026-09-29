@@ -14,7 +14,9 @@ class Rva004F553F {
     Rva004F553FNode *m_head;
 public:
     void rva004F553F(Rva004F553FCb cb, void *user, bool forward);
+    void rva004F558C(int value);
 };
+void __cdecl Rva004F53C3Cb(void *data, void *user);
 void Rva004F553F::rva004F553F(Rva004F553FCb cb, void *user, bool forward)
 {
     if (forward) {
@@ -35,4 +37,12 @@ void Rva004F553F::rva004F553F(Rva004F553FCb cb, void *user, bool forward)
         cur = cur->m_prev;
         cb(data, user);
     } while (cur != m_head);
+}
+
+// ?rva004F558C@Rva004F553F@@QAEXH@Z @0x004F558C 20B.
+// Forwards to the visitor above with a fixed callback and backward direction.
+// Evidence: chain lane packet; same this as rva004F553F; ret 4.
+void Rva004F553F::rva004F558C(int value)
+{
+    rva004F553F((Rva004F553FCb)Rva004F53C3Cb, &value, false);
 }
