@@ -41293,3 +41293,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00441974Sort@@YAXPAPAX0PAXVRva0043FE9A@@@Z,,0x00441974,37,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,reinsert sweep via unguarded insert caller 0x00441DB6
 ?rva004D68C6@Rva004D68C6@@QAEPAVGameMessage@@XZ,,0x004D68C6,443,Code/GameEngine/Source/Common/Rva004D68C6Create.cpp,matched,chain of 0x0030F47A with rowed callees and GameMessage appends
 ?Rva00503D26Evaluate@@YAMMMMM@Z,,0x00503D26,40,Code/GameEngine/Source/Common/Rva00503D26Bezier.cpp,matched,unlock Bezier evaluate via callers 0x00503E0E 0x00503E46 unblocks 0x00503DEB 0x00503E17
+??F?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@QAE?AU01@H@Z,,0x004222D1,40,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_e12_postdec.cpp,matched,postfix dec via rowed _M_decrement 0x00421B47 same TU flags
