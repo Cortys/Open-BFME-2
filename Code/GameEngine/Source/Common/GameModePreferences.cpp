@@ -156,6 +156,7 @@ public:
 	void setStrategicScenario(Int scenario);
 	Int rva0054F5A4(void);
 	void rva0054F7C0(Int val);
+	void rva0044DDFB(int *vals);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -263,6 +264,20 @@ void GameModePreferences::rva0054F7C0(Int val)
 	AsciiString tmp;
 	tmp.format("%d", val);
 	AsciiString &slot = (*this)[makeKey("LobbyRoomID")];
+	slot = tmp;
+}
+
+// ?rva0044DDFB@GameModePreferences@@QAEXPAH@Z @0x0044DDFB (95B): Rules setter
+// over the mode-keyed map via ten-int array formatter into tmp then slot assign.
+// Evidence: formatter 0x0055A087; makeKey 0x0044D512; map subscript 0x002031FB;
+// AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; callers
+// 0x004442CB 0x0059EC3F; prev GameModePreferences 0x0044D758.
+void __cdecl Rva0055A087Format(int *vals, AsciiString *out);
+void GameModePreferences::rva0044DDFB(int *vals)
+{
+	AsciiString tmp;
+	Rva0055A087Format(vals, &tmp);
+	AsciiString &slot = (*this)[makeKey("Rules")];
 	slot = tmp;
 }
 
