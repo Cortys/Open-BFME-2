@@ -388,3 +388,53 @@ Rva0056F192 *Rva0056F192::rva0056F192(void *a1, void *a2)
 	m_1c ^= e;
 	return this;
 }
+// ?rva0056F3B1@Rva0056F3B1@@QAEPAU1@PAX0@Z @0x0056F3B1 141B
+// Chain from 0x0056EDE8 via Rva0056EDE8Pick sibling of 0x0056F192.
+// Evidence: same 8-int obfuscated init shape with three constants 0x18245AC1 0x18245AC5 0x5C80520D.
+struct Rva0056F3B1
+{
+	int m_00;
+	int m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	Rva0056F3B1 *rva0056F3B1(void *a1, void *a2);
+};
+Rva0056F3B1 *Rva0056F3B1::rva0056F3B1(void *a1, void *a2)
+{
+	int p;
+	int q;
+	Rva0056EDE8Pick(&p, &q);
+	m_00 = p;
+	m_04 = 0x18245AC1;
+	m_08 = 0x18245AC5;
+	m_0c = 0x5C80520D;
+	m_10 = *(int *)a1;
+	m_14 = *(int *)a2;
+	int b = q;
+	int e = b;
+	e *= b;
+	e ^= 0x18245AC1;
+	m_04 = e;
+	e *= b;
+	e ^= 0x18245AC5;
+	m_08 = e;
+	e *= b;
+	e ^= 0x5C80520D;
+	m_0c = e;
+	e *= b;
+	m_10 ^= e;
+	e = m_10;
+	e *= b;
+	m_14 ^= e;
+	e = m_14;
+	e *= b;
+	m_18 ^= e;
+	e = m_18;
+	e *= b;
+	m_1c ^= e;
+	return this;
+}
