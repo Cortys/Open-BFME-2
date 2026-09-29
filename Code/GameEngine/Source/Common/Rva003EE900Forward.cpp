@@ -81,6 +81,7 @@ extern AsciiString g_Rva00E02E78;
 extern AsciiString g_Rva00E02E80;
 extern AsciiString g_Rva00E02E68;
 extern AsciiString g_Rva00E02E6C;
+extern AsciiString g_Rva00E02E64;
 
 class Rva003EE900
 {
@@ -318,4 +319,26 @@ void Rva003EEB9F::rva003EEB9F(Int a, Int b)
 {
 	((Rva004E3629 *)&m_owner)->rva004E3629(g_Rva00E02E6C, 1);
 	((Rva003EEA1A *)this)->rva003EEA1A(a, b);
+}
+
+// ?rva003EE7E1@Rva003EE7E1@@QAEXH@Z retail 0x003EE7E1 105B. Unlock lane: six
+// calls to rowed 0x004E35D5 with strings 64/68/6C/78/7C/80 and (arg+0x54, 0);
+// caller at 0x003EEE08.
+class Rva003EE7E1
+{
+public:
+	void rva003EE7E1(Int a);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+void Rva003EE7E1::rva003EE7E1(Int a)
+{
+	char *p = (char *)a + 0x54;
+	m_owner.rva004E35D5(g_Rva00E02E64, (Int)p, 0);
+	m_owner.rva004E35D5(g_Rva00E02E68, (Int)p, 0);
+	m_owner.rva004E35D5(g_Rva00E02E6C, (Int)p, 0);
+	m_owner.rva004E35D5(g_Rva00E02E78, (Int)p, 0);
+	m_owner.rva004E35D5(g_Rva00E02E7C, (Int)p, 0);
+	m_owner.rva004E35D5(g_Rva00E02E80, (Int)p, 0);
 }
