@@ -291,3 +291,23 @@ template class SubsystemSlot<Rva0022A968Subsystem>;
 class Rva0022A9DDSubsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022A9DDSubsystem>(Rva0022A9DDSubsystem *&, AsciiString, Rva0022A9DDSubsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022A9DDSubsystem>;
+// Rva0022AA52Subsystem: site 0x0022EEEB registers "TheLivingWorldAutoResolveCombatChainStore" (global 0x00A030B8); slot vtable 0xbe7308.
+class Rva0022AA52Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AA52Subsystem>(Rva0022AA52Subsystem *&, AsciiString, Rva0022AA52Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AA52Subsystem>;
+// Rva0022AAC7Subsystem: site 0x0022EF31 registers "TheLivingWorldAutoResolveHandicapStore" (global 0x00A03040); slot vtable 0xbe730c.
+class Rva0022AAC7Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AAC7Subsystem>(Rva0022AAC7Subsystem *&, AsciiString, Rva0022AAC7Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AAC7Subsystem>;
+// Rva0022AB3CSubsystem: site 0x0022EF78 registers "TheMissionObjectiveTracker" (global 0x00A031E8); slot vtable 0xbe7310.
+class Rva0022AB3CSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AB3CSubsystem>(Rva0022AB3CSubsystem *&, AsciiString, Rva0022AB3CSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AB3CSubsystem>;
+// Rva0022AC9BSubsystem: site 0x0022F04C registers "TheStancesStore" (global 0x00A031D4); slot vtable 0xbe731c.
+class Rva0022AC9BSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AC9BSubsystem>(Rva0022AC9BSubsystem *&, AsciiString, Rva0022AC9BSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AC9BSubsystem>;
+// Rva0022AD10Subsystem: site 0x0022F090 registers "TheFormationAssistant" (global 0x00A03160); slot vtable 0xbe7320.
+class Rva0022AD10Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AD10Subsystem>(Rva0022AD10Subsystem *&, AsciiString, Rva0022AD10Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AD10Subsystem>;
