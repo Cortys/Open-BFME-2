@@ -41421,3 +41421,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1BfmeRecord001DD3BC@@QAE@XZ,,0x001DD1FF,57,Code/GameEngine/Source/Common/BfmeRecord001DD3BCDtor.cpp,matched,unlock EH dtor ref plus AsciiString via next-row layout
 ??_GBfmeRecord001DD3BC@@QAEPAXI@Z,,0x001DD38E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-1DD38E.cpp,matched,chain deleting dtor calls rowed dtor plus delete
 ??0?$queue@UBfmePod28@@V?$deque@UBfmePod28@@V?$allocator@UBfmePod28@@@_STL@@@_STL@@@_STL@@QAE@XZ,,0x0041A6D0,21,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_pod28_base.cpp,matched,queue Pod28 default ctor inlines deque calls base 0x41A10C caller 0x41A793
+?rva00739720@Rva00739720@@QAEXH@Z,,0x00739720,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0066C940 prev gap before 0x00739730 same TU

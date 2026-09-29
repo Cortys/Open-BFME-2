@@ -335,3 +335,26 @@ ObjectShroudStatus Rva00739800::rva00739800(int playerIndex, const Coord3D *pos)
 {
 	return m_cell->getPropShroudStatusForPlayer(playerIndex, pos);
 }
+
+//
+// ?rva00739720@Rva00739720@@QAEXH@Z retail 0x00739720 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0066C940.
+// Evidence: retail mov ecx [ecx+0x10] jmp; prev gap before 0x00739730 in same TU.
+class NodeCompressedMotionStruct
+{
+public:
+	void SetFlavor(int flavor);
+};
+class Rva00739720
+{
+public:
+	void rva00739720(int flavor);
+private:
+	char m_pad[0x10];
+	NodeCompressedMotionStruct *m_cell; // +0x10
+};
+
+void Rva00739720::rva00739720(int flavor)
+{
+	m_cell->SetFlavor(flavor);
+}
