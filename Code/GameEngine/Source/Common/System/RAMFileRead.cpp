@@ -81,6 +81,17 @@ public:
 	virtual void lock(void);						// slot 15
 	virtual void unlock(void);					// slot 16
 
+	__forceinline const char *getName(void) const
+	{
+		const char *data = (const char *)m_nameStr;
+		return data ? data + 8 : "";
+	}
+
+	__forceinline int getAccess(void) const
+	{
+		return m_access;
+	}
+
 protected:
 	void *m_nameStr;	// +0x04 AsciiString untouched here
 	int m_access;		// +0x08
@@ -92,6 +103,8 @@ protected:
 class RAMFile : public File
 {
 public:
+	virtual bool open(const char *filename, int access);	// slot 1
+	virtual bool open(File *file);				// slot 17
 	virtual int read(void *buffer, int bytes);
 	virtual int seek(int pos, seekMode mode);
 	virtual void nextLine(char *buf, int bufSize);
@@ -347,4 +360,63 @@ char *RAMFile::readEntireAndClose(void)
 	close();
 
 	return tmp;
+}
+
+class FileSystem
+{
+public:
+	File *openFile(const char *filename, int access, int flags);
+};
+
+extern FileSystem *TheFileSystem;
+
+// ?open@RAMFile@@UAE_NPAVFile@@@Z @ 0x006059B5 (115B): slot 17 (offset 0x44)
+// of vtable 0x0087AA00, the File* overload LocalFile::convertToRAMFile calls.
+// ZH RAMFile::open(File*) verbatim, as BFME1's RAMFileOpen.cpp donor has it.
+bool RAMFile::open(File *file)
+{
+	if (file == 0)
+		return false;
+
+	int access = file->getAccess();
+
+	if (!File::open(file->getName(), access))
+		return false;
+
+	m_size = file->size();
+	m_data = new char[m_size];
+
+	if (m_data == 0)
+		return false;
+
+	m_size = file->read(m_data, m_size);
+
+	if (m_size < 0)
+	{
+		delete [] m_data;
+		m_data = 0;
+		return false;
+	}
+
+	m_pos = 0;
+	return true;
+}
+
+// ?open@RAMFile@@UAE_NPBDH@Z @ 0x006056BD (61B): slot 1 of vtable 0x0087AA00.
+// ZH RAMFile::open(name, access) through BFME's three-argument
+// FileSystem::openFile (rowed at 0x00600C34), then the slot-17 overload.
+bool RAMFile::open(const char *filename, int access)
+{
+	File *file = TheFileSystem->openFile(filename, access, 0);
+
+	if (file == 0)
+	{
+		return false;
+	}
+
+	bool result = open(file);
+
+	file->close();
+
+	return result;
 }
