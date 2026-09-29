@@ -41890,3 +41890,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Made002CC774@@UAE@XZ,,0x00509564,56,Code/GameEngine/Source/GameLogic/Object/Made002CC774Dtor.cpp,matched,novtable of 00507823 destroys string 0130 via 00036410 then base
 ??_GMade002CC774@@UAEPAXI@Z,,0x00509548,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11.cpp,matched,chain from 00509564 same 28B scalar-deleting shape
 ??1LifeEventModuleInfo@FXParticleSystem@@UAE@XZ,0x003A9F8A,0x003A9F8A,48,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LifeEventModuleInfoDtor.cpp,matched,dtor via copyctor layout and BBB554 base
+??$__introsort_loop@PAHHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@@Z,,0x00425385,123,Code/Libraries/Source/WWVegas/WWLib/stlport_int_introsort_loop_rva00422ca8.cpp,matched,chain via rowed partition plus median plus partial
