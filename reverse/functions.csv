@@ -41717,3 +41717,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00523EFFEqual@@YAHPBURva00523DB7@@0@Z,,0x00523EFF,35,Code/Libraries/Source/WWVegas/WWLib/Rva00523EFFEqual.cpp,matched,8B struct int plus StringBase compare via 7x caller 0x0052408B
 ??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
 ?Rva003F2460Copy@@YAXPAD00@Z,,0x003F2460,29,Code/GameEngine/Source/Common/System/Rva003F2460Copy.cpp,matched,wrapper of rowed copy 0x003F1F06 with extra local-plus-0 args caller 0x003F316D
+??$__sort_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z,,0x004247A9,58,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain sort heap via rowed pop heap

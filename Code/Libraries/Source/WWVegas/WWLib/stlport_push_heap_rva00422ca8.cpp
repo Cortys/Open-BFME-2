@@ -125,4 +125,21 @@ void pop_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
 template void pop_heap<int *,
 	Rva00422CA8>(int *, int *, Rva00422CA8);
 
+// ??$__sort_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z
+// retail 0x004247A9, 58 bytes. Sorts heap by repeatedly popping max to the
+// end. Evidence: calls rowed pop_heap 0x00424637; caller 0x00424C71 in
+// 0x00424C21; unblocks 0x00424C21.
+template <class RandomAccessIter, class Compare>
+void __sort_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
+{
+	while (last - first > 1)
+	{
+		pop_heap(first, last, comp);
+		--last;
+	}
+}
+
+template void __sort_heap<int *,
+	Rva00422CA8>(int *, int *, Rva00422CA8);
+
 }
