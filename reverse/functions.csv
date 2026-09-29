@@ -42121,3 +42121,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005ED708@Rva005ED445@@QAEXHH@Z,,0x005ED708,98,Code/GameEngine/Source/Common/Rva005ED708Apt.cpp,matched,APT NumRegions cached setter via Get and generic
 ?rva005ED76A@Rva005ED445@@QAEXHH@Z,,0x005ED76A,98,Code/GameEngine/Source/Common/Rva005ED708Apt.cpp,matched,APT NumUnits cached setter via Get and generic
 ?rva005ED937@Rva005ED445@@QAEXHABVUnicodeString@@@Z,,0x005ED937,63,Code/GameEngine/Source/Common/Rva005ED708Apt.cpp,matched,APT PlayerName cached setter via generic
+?_M_copy@?$_Rb_tree@UBfmeStringRecord0021A940@@U1@U?$_Identity@UBfmeStringRecord0021A940@@@_STL@@U?$less@UBfmeStringRecord0021A940@@@3@V?$allocator@UBfmeStringRecord0021A940@@@3@@_STL@@AAEPAU?$_Rb_tree_node@UBfmeStringRecord0021A940@@@2@PAU32@0@Z,,0x0021D7CF,115,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme0021A940_clone.cpp,matched,chain lane Mcopy via clone rowed self-call phantom harmless
