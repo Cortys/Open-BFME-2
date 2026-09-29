@@ -42235,3 +42235,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0060C3C3@Rva0060C3C3@@QAE_NPAURva0060C3C3Stream@@PAH@Z,,0x0060C3C3,155,Code/GameEngine/Source/Common/Rva0060C3C3Bind.cpp,matched,8 callers pass stream plus int slot3 reader magic AALE version RTS1 RTS2
 ?rva006E0BF0@AptCIH@@QBE_NXZ,,0x006E0BF0,89,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,AptCIH ancestor float threshold via 0.5 global
 ?rva002B41F4@Rva002B41F4@@QAEXXZ,,0x002B41F4,140,Code/GameEngine/Source/Common/Rva002B41F4.cpp,matched,unlock count plus GameMessage 0x6BA via rowed 0x0030F936
+?rva006E0920@Rva006E0920@@QBEMH@Z,,0x006E0920,13,Code/Libraries/Source/Apt/Rva006E0920Getter.cpp,matched,Float array getter at 0x44
