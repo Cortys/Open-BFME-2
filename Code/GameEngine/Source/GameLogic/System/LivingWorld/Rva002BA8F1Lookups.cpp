@@ -137,3 +137,20 @@ Rva002E1904Entry *Rva002E1904Lookup::find(const AsciiString &name)
     }
     return 0;
 }
+
+// ?find@Rva002E1948Lookup@@QAEPAURva002E1948Entry@@ABVAsciiString@@@Z @0x002E1948 86B.
+// Vector +0x1B8 lookup for an entry string at +0x1C, same sibling-find shape as
+// 0x002E1904 (68B) with wider disp32 offsets. Evidence: unlock lane (unblocks
+// 0x002B48E1); caller passes key by ref with ret 4; same file drains siblings.
+struct Rva002E1948Entry { char m_0[0x1c]; AsciiString m_1c; };
+class Rva002E1948Lookup {
+public: Rva002E1948Entry *find(const AsciiString &);
+private: char at00[0x1b8]; _STL::vector<Rva002E1948Entry *> entries;
+};
+Rva002E1948Entry *Rva002E1948Lookup::find(const AsciiString &name)
+{
+    for (unsigned int i = 0; i < entries.size(); ++i) {
+        if (entries[i]->m_1c.compare(name) == 0) return entries[i];
+    }
+    return 0;
+}

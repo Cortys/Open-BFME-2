@@ -42068,3 +42068,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00536FC7@UserPreferences@@QAEXH@Z,,0x00536FC7,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,Challenge setter local slot2C same TU
 ?rva005C436E@Rva005C436E@@QAEXH@Z,,0x005C436E,65,Code/GameEngine/Source/Common/Rva005C436EDispatch.cpp,matched,unlock dispatch via find plus adds
 ?rva001EDD80@Rva001EDD80@@QAE_NPBURva001EDD80Pair@@0@Z,,0x001EDD80,59,Code/GameEngine/Source/Common/Rva001EDD80Range.cpp,matched,abs range check vs thresh via pinned abs
+?find@Rva002E1948Lookup@@QAEPAURva002E1948Entry@@ABVAsciiString@@@Z,,0x002E1948,86,Code/GameEngine/Source/GameLogic/System/LivingWorld/Rva002BA8F1Lookups.cpp,matched,unlock lane vector 1B8 plus1C find
