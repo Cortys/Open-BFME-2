@@ -3009,3 +3009,4 @@ FUN_0067675F	0x0027675F	166	blocked	needs Upgrades 0x4CEE6E layout plus virtual 
 FUN_0063fb58	0x0023FB58	104	blocked	static Invalid Slot StringBase with EH prolog plus atexit needs EH donor t=10 model=muse-07
 ??0Rva0059675A@@QAE@XZ	0x005966DD	125	blocked	EH ctor with private StringBase SSE memset and globals needs donor t=12 model=muse-05
 FUN_0099702D	0x0059702D	156	blocked	needs donor layout for plus64 PlayerList xfer and slot reuse t=10 model=muse-05
+?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z	0x005AFD43	70	partial	saved-esp and this swapped mov EbP8 esp vs mov ecx esp t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x005afd43.cpp
