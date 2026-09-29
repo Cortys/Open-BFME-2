@@ -1,13 +1,12 @@
 // ??1?$_Rb_tree@HU?$pair@$$CBHURva0016CB50Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@_STL@@QAE@XZ
 // partial score=0.98 date=2026-09-29
-// ??1?$_Rb_tree@HU?$pair@$$CBHURva0016CB50Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@_STL@@QAE@XZ
-// partial score=0.98 date=2026-09-29
-// cl: /O2 /EHs /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /O2 /EHs /G7 /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // Dtor @0x0016DAA0 (121B) of the trivial Rb tree at 0x0016CB50: clear plus
 // header free with EH handler 0x767788. Same TU as the rowed _M_erase but
 // with /EHs (fixes the missing mov [esp+0x10],-1 state store). Only diff is
 // the inherited clear wall: mov eax+test vs retail cmp at +0x1D (122 vs 121).
+// Try /O1 for size (cmp 4B vs mov+test 5B).
 #include <map>
 
 struct Rva0016CB50Mapped
