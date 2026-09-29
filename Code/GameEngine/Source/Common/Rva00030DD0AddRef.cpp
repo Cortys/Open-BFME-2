@@ -8,6 +8,7 @@
 // frameless push/call/inc shape, CriticalSectionDeleteWrapper precedent).
 struct Rva00030DD0Lock
 {
+	Rva00030DD0Lock();
 	~Rva00030DD0Lock();
 	unsigned char m_cs[0x18];
 	int m_ref;
@@ -78,4 +79,14 @@ unsigned long Rva00030EF0Get()
 	SysInfo info;
 	GetSystemInfo(&info);
 	return info.m_00[1];
+}
+
+// ??0Rva00030DD0Lock@@QAE@XZ @0x00030D60 21B.
+// Non-virtual ctor: zeroes +0x18 refcount then InitializeCriticalSection
+// at IAT 0xBBA15C on this. Same lock layout as AddRef. __thiscall ret.
+// Callers none yet. Neighbour flags defaults.
+Rva00030DD0Lock::Rva00030DD0Lock()
+{
+	m_ref = 0;
+	InitializeCriticalSection(this);
 }
