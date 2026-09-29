@@ -16,6 +16,9 @@ typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef int Int;
 
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 enum NetCommandType
 {
 	NETCOMMANDTYPE_UNKNOWN = -1,
@@ -245,4 +248,22 @@ Rva004D5A30::Rva004D5A30() : NetCommandMsg()
 	m_1c = 0;
 	m_20 = 0;
 	m_commandType = (NetCommandType)9;
+}
+
+// ??0Rva004D60CA@@QAE@XZ @0x004D60CA 25B: calls base plus dword 0 at +0x1c via And plus vtable 0x860464 plus type 13 at +0x14.
+// Honest-address ctor; same /O1 And recipe as siblings above; unblocks 0x004D187B 0x0059205C.
+// Callers at 0x004D18A3 0x00592083.
+class Rva004D60CA : public NetCommandMsg
+{
+public:
+	Rva004D60CA();
+private:
+	unsigned int m_1c;
+};
+
+Rva004D60CA::Rva004D60CA() : NetCommandMsg()
+{
+	_ReadWriteBarrier();
+	m_1c = 0;
+	m_commandType = (NetCommandType)0xd;
 }
