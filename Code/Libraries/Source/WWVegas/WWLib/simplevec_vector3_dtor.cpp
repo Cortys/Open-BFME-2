@@ -29,3 +29,16 @@ template class SimpleVecClass<Vector3>;
 // streak bodies), frees and zeroes Vector, then tail-jumps to the base dtor
 // above (0x0007E1AE).
 template SimpleDynVecClass<Vector3>::~SimpleDynVecClass();
+// ?Resize@?$SimpleDynVecClass@VVector3@@@@UAE_NH@Z retail 0x0007E9BA 37B Dyn
+// clamp of ActiveCount to Length after Base Resize. Evidence: chain calls
+// 0x0007E1CF; vslot 1 of 0x007C6F50.
+bool SimpleDynVecClass<Vector3>::Resize(int newsize)
+{
+	if (SimpleVecClass<Vector3>::Resize(newsize))
+	{
+		if (Length() < ActiveCount)
+			ActiveCount = Length();
+		return true;
+	}
+	return false;
+}
