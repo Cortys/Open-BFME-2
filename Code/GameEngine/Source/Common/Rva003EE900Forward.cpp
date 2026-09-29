@@ -173,3 +173,23 @@ void Rva003EEAB7::rva003EEAB7()
 {
 	m_owner.rva004E1F62();
 }
+
+// ?rva003EE89E@Rva003EE89E@@QAEXHH@Z retail 0x003EE89E 58B. Unlock lane: same
+// three-call forward as rva003EE84A above but with string g_Rva00E02E7C;
+// callers at 0x003EE8F6/0x003EF120/0x0057DD5A; unblocks 3. Prev/next are the
+// Rva003EE884/900 family in this TU.
+class Rva003EE89E
+{
+public:
+	void rva003EE89E(Int a, Int b);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+void Rva003EE89E::rva003EE89E(Int a, Int b)
+{
+	char *p = (char *)a + 0x54;
+	m_owner.rva004E35D5(g_Rva00E02E7C, (Int)p, 1);
+	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E7C, (Int)p, b);
+	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E7C, 0);
+}
