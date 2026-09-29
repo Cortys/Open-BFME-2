@@ -2971,3 +2971,5 @@ FUN_00756e8e	0x00356E8E	198	blocked	chain UI updater with GameState basename The
 ?rva002CDF8A@Rva002CDF8A@@QAE...X	0x002CDF8A	189	blocked	189B vector-like fill path ret-0x14 with dead ebp+0x10 slot and mixed callees BfmeE12-allocate 0x395928 vs Coord3D-copy 0x346C2D fill 0x2CA849 plus Construct 0x2CA82C; needs donor ID for 5-arg contract t=10 model=muse-spark
 ??0Rva0007C50B@@QAE@XZ	0x0007C50B	174	partial	172B SSE close; ebx-edi swap plus EH spill and movss order t=18 model=muse-12 score=0.92 stash=reverse/attempts/0x0007c50b.cpp
 ??_GRva002BBD31@@UAEPAXI@Z	0x002BBD31	28	blocked	calls vector dtor 2BBB57 directly; owner with vector-at-0 guessed but G calls owner D1 not vector; no callers or vtable to prove owner; t=12 model=muse-12
+?rva002D0867@Rva002D0867@@QAEAAU0@ABU0@@Z	0x002D0867	115	blocked	honest assign cannot call private STL _M_copy C2248 needs access-twin ICF or STL outer with honest clear t=15 model=muse-10
+?rva005DC499@Rva005DC499@@QAEAAU0@ABU0@@Z	0x005DC499	181	blocked	181B vector fill-assign with 5 callees needs full honest reconstruction t=10 model=muse-10
