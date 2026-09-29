@@ -149,6 +149,7 @@ public:
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
 	void rva003C77EE(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void rva003C76B8(Int value, CommandSourceType cmdSource);
+	void rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -629,5 +630,15 @@ void AICommandInterface::rva003C76B8(Int value, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x37, cmdSource);
 	parms.m_intValue = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva003C78AF@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z @0x003C78AF 101B
+// Evidence: gap 0x003C7853+92=0x003C78AF in this TU; AICMD 0x2D plus m_waypoint at +0x2C plus slot-0 aiDoCommand.
+// Same 101B waypoint shape as rva003C77EE; caller at 0x003C8C54 via lea ecx [esi+0x20] with waypoint plus source 1.
+void AICommandInterface::rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x2D, cmdSource);
+	parms.m_waypoint = waypoint;
 	aiDoCommand(&parms);
 }
