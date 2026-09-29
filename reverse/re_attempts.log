@@ -3104,3 +3104,6 @@ FUN_00948B97	0x00548B97	83	blocked	global table plus object identity unproven 3 
 FUN_006D9ADC	0x002D9ADC	202	blocked	float SSE plus x87 audio randoms need donor t=10 model=muse-spark
 ??0Made002CC774@@QAE@XZ	0x00509522	38	partial	38/38B 11/11 insns 0 regions; vptr last vs first plus store order t=25 model=muse-11 score=0.9 stash=reverse/attempts/0x00509522.cpp
 FUN_0060CAEA	0x0060CAEA	65	blocked	hashtable string find div bucket register wall ecx vs esi plus push source t=18 model=muse-04
+?rva003B0FD0@Rva003B0FD0@@QAEPAXH@Z	0x003B0FD0	71	blocked	3-local array search spills to EBP frame vs retail frameless EBP-as-idx. Best 75B frameless with 2 locals (p in EDI idx in EBX) vs retail EDI-begin EBX-cur EBP-idx. Initial count test-eax-fffffffc vs retail sub-sar-je. 6 variants t=30 model=muse-01
+?rva0035C7CF@Shell@@QAEX_N@Z	0x0035C7CF	163	partial	by-value AsciiString stack with saved-esp vs frame lea plus push-ebx vs push-0 t=28 model=muse-01 score=0.96 stash=reverse/attempts/0x0035c7cf.cpp
+?rva0035B570@Rva0035B570@@QAEXXZ	0x0035B570	82	partial	early null return inline vs shared end plus jne vs je t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x0035b570.cpp
