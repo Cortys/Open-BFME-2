@@ -3054,3 +3054,6 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ??1Rva0040AFF3@@QAE@XZ	0x0040AFF3	117	partial	EH states off by one 3-vs-4 missing mov-0 t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x0040aff3.cpp
 ?rva0035CDDF@Rva0035CDDF@@QAEHH@Z	0x0035CDDF	115	blocked	STL list FXBoneInfo assign plus erase insert needs stlport list operator pattern t=12 model=muse-11
 ?rva006E3530@Rva006E34D0@@QAEXHHH@Z	0x006E3530	77	blocked	tag-pack with per-arm a-shift-or plus duplicated push-call tails; O2 O1 Os all head-merge common prefix above branch and tail-share call via jmp; O2 Og- spills through ebp; need enregistered no-motion mode t=30 model=muse-09
+?rva004DFA43@Rva004DFA43@@QAE_NPAX0@Z	0x004DFA43	112	partial	112/112B same 35 insns; 0 mem diffs; early r load xmm3 vs late plus xmm4 vs xmm3 allocation plus comiss d-vs-r plus jbe vs jb t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x004dfa43.cpp
+?rva0028BFF9@Object@@QAEXI@Z	0x0028BFF9	38	partial	42/38B 14 vs 11 insns; 0 reg 1 mem esi-vs-ecx; extra push-esi mov-esi-ecx pop-esi for this-live-across-setter t=20 model=muse-05 score=0.88 stash=reverse/attempts/0x0028bff9.cpp
+?Rva005D303AFormat@@YA_XZ	0x005D303A	99	blocked	EH UnicodeString format needs literal at 0x008380FC plus handler 0x007A20FC beyond packet t=10 model=muse-05
