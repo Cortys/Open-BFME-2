@@ -41570,3 +41570,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00596CDF@@UAE@XZ,,0x00596CDF,11,Code/GameEngine/Source/Common/Rva00596CDFDtor.cpp,matched,derived dtor tail-jmp base 0x00573B23
 ?Rva00596CEA@Rva00596CDF@@UAEXPAVXfer@@PAX@Z,,0x00596CEA,147,Code/GameEngine/Source/Common/Rva00596CEAXfer.cpp,matched,Version11 base first plus members plus IsLoading tail
 ?Rva0023D614Set@@YAXPAV?$StringBase@D@@@Z,,0x0023D614,77,Code/GameEngine/Source/Common/Rva0023D614Film.cpp,matched,unlock StillImage_Film random clamp sprintf set
+??0Rva002C752F@@QAE@XZ,,0x0033A888,81,Code/GameEngine/Source/GameLogic/Object/WeaponSetRva0033A888.cpp,matched,ctor via base reset plus 3x vector-ctor plus clear 0x2C752F caller 0x33D362
