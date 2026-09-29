@@ -2880,3 +2880,5 @@ FUN_005a7172	0x005A7172	63	blocked	same EH wall as 0x0052CA6C handler 0xb9e4d3 n
 FUN_0052cb26	0x0052CB26	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark
 FUN_0052cd03	0x0052CD03	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark
 ?Rva0059B036Copy@@YAXPAX0H@Z	0x0059B036	42	partial	dst via edi not eax via barrier t=25 model=muse score=0.95 stash=reverse/attempts/0x0059b036.cpp
+?Rva004398ABConstruct@@YAXPAURva004395EC@@ABU1@@Z	0x004398AB	45	partial	EH arm before null check vs after t=12 model=muse-05 score=0.93 stash=reverse/attempts/0x004398ab.cpp
+?Rva000C99F9Destroy@@YAXPAX0@Z	0x000C99F9	25	blocked	RefCountPtr TextureClass destroy range needs WW3D headers t=8 model=muse-05
