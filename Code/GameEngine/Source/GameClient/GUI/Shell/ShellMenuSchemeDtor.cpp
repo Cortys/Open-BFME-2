@@ -77,3 +77,6 @@ Rva002007D5::~Rva002007D5()
 
 // ?forceRva002006B0Delete@@YAXPAVRva002006B0@@@Z absent-from-retail
 void forceRva002006B0Delete(Rva002006B0 *p) { delete p; }
+
+// ?forceRva002007D5Delete@@YAXPAVRva002007D5@@@Z absent-from-retail
+void forceRva002007D5Delete(Rva002007D5 *p) { delete p; }

@@ -3212,3 +3212,4 @@ FUN_0079DB31	0x0039DB31	88	blocked	unlock88 Team AI virtuals 0x7C 0xB8 plus Obje
 FUN_0079ED11	0x0039ED11	91	blocked	chain91 Team FixedStorage plus getter loop needs model t=5 model=muse-04
 FUN_00B3E3F0	0x0073E3F0	140	blocked	unlock140 manual SEH plus arraydelete plus deque needs model t=5 model=muse-04
 FUN_00896F30	0x00496F30	117	blocked	unlock117 voidptr erase plus string deletes plus free needs model t=5 model=muse-04
+?rva00200A01@Rva00200A01@@QAEXXZ	0x00200A01	100	partial	O1 do-while gives 96B vs 100B missing upfront cmp-je plus push-ebx def-hoist t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x00200a01.cpp
