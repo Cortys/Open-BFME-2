@@ -41270,3 +41270,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00308C13@@QAE@XZ,,0x00308C13,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0027EA49_dtor.cpp,matched,vector-like dtor via rowed Destroy plus free caller 0x282906
 ?Rva0052BF4DDestroyTagged@@YAXPAURva0052BF4DElem@@0ABU__false_type@_STL@@@Z,,0x0052BF4D,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x28 caller 1
 ?Rva0052BF67DestroyTagged@@YAXPAURva0052BF67Elem@@0ABU__false_type@_STL@@@Z,,0x0052BF67,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x20 caller 1
+?Rva0052BF9BDestroyTagged@@YAXPAURva0052BF9BElem@@0ABU__false_type@_STL@@@Z,,0x0052BF9B,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x14 caller 1
