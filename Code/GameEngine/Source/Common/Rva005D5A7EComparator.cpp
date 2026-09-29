@@ -79,3 +79,21 @@ Rva005D5A7E *Rva005D5C61Median(Rva005D5A7E *a, Rva005D5A7E *b, Rva005D5A7E *c, i
             return b;
     }
 }
+
+struct BfmeE12 { float x, y, z; };
+namespace _STL { template <class _Tp> void swap(_Tp &a, _Tp &b); }
+
+Rva005D5A7E *Rva005D5CBFPartition(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E pivot)
+{
+	while (true) {
+		while (first->rva005D5A7E(pivot))
+			++first;
+		--last;
+		while (pivot.rva005D5A7E(*last))
+			--last;
+		if (first >= last)
+			return first;
+		_STL::swap(*(BfmeE12 *)first, *(BfmeE12 *)last);
+		++first;
+	}
+}
