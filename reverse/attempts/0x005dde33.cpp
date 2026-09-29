@@ -1,7 +1,7 @@
 // ?rva005DDE33@Rva005DDE33@@QAEMIII@Z
-// partial score=0.95 date=2026-09-28
+// partial score=0.97 date=2026-09-29
 // ?rva005DDE33@Rva005DDE33@@QAEMIII@Z
-// partial score=0.95 date=2026-09-28
+// partial score=0.97 date=2026-09-29
 // cl: /O1 /G7 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 
 // ?rva005DDE33@Rva005DDE33@@QAEMIII@Z, RVA 0x005DDE33, 54B. Chain lane:
@@ -12,6 +12,8 @@
 // name; element head overlaps the callee layout at +4 by construction.
 // Flags copy the prev neighbour allocate_copy TU (frameless-friendly, no EH).
 extern float g_Va00BBAEAC;
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 class Rva005DDC6B
 {
@@ -40,9 +42,11 @@ private:
 // ?rva005DDE33@Rva005DDE33@@QAEMIII@Z present-unmatched
 float Rva005DDE33::rva005DDE33(unsigned idx, unsigned lo, unsigned hi)
 {
-	Rva005DDE33Elem *start = m_04;
-	Rva005DDE33Elem *finish = m_08;
+	Rva005DDE33 *self = this;
+	Rva005DDE33Elem *start = self->m_04;
+	Rva005DDE33Elem *finish = self->m_08;
 	if (idx >= (unsigned)(finish - start))
 		return g_Va00BBAEAC;
-	return start[idx].m_head.rva005DDC6B(lo, hi);
+	_ReadWriteBarrier();
+	return self->m_04[idx].m_head.rva005DDC6B(lo, hi);
 }
