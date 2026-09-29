@@ -16,6 +16,7 @@ void Rva0034FF50::checkAndSet()
 	}
 }
 
+// ?addFloat34@Rva00336630@@QAEXM@Z present-unmatched
 class Rva00336630
 {
 public:
@@ -30,6 +31,7 @@ void Rva00336630::addFloat34( float val )
 	m_val34 += val;
 }
 
+// ?getBit2@Rva00321EE0@@QBEIXZ present-unmatched
 class Rva00321EE0
 {
 public:
