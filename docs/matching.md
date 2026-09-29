@@ -143,6 +143,33 @@ functions the sweep never placed, and `find_declared_unmatched` refuses a source
 definition the ledger lacks. Wave 1 found all three by landing into them; the tiers agreed with
 31 of 31 of that wave's files.
 
+**S is a bundling rule, not a byte difference, and it yields.** The way past it is to carry ONLY
+the placed bodies into a new `Code/` TU: keep the class declarations, because the member offsets
+are what the body's shape depends on, and omit the bodies the sweep never placed, so the gate has
+nothing left to refuse. Landed that way: 5 donors, 67 bodies, 1,512 bytes —
+`Rva0090C280Ctor.cpp` (20B), `Rva0089CompactHelpers.cpp` (145B/7),
+`AddressTinyBodiesD0083FDF0.cpp` (84B/3), `SmallGaps/Rva0083ED40StreamStateReport.cpp` (53B) and
+`StaticTagInitializers.cpp` (1210B/55, the largest donor the queue holds). The last needed no pins
+at all: its 62 tag-slot globals are reached through DIR32 data slots, so the file resolves with
+zero unresolved symbols — reading its `extern` declarations suggests a pin cost the build never
+charges. Test one body before declining a donor on how it looks.
+
+**A donor's inline immediates are not relocation slots.** The sweep derives DIR32 windows from the
+byte stream and blanks them, but the compiler emits no relocation for a source literal, so
+`mov DWORD PTR [ecx],0x0113A56C` is a blanked window to the sweep and a plain immediate to the
+linker, and the build's copy-from-retail cannot reach it. A donor that hardcodes BFME 1's vtable or
+a member offset therefore reports a clean transfer and then fails on exactly those four bytes. Both
+instances so far are one-constant repairs read off retail: `releaseResource0090C2D0` (0x001310CF,
+donor 0x0113A56C against this game's 0x00BD25C8) and `Rva0088D990Owner::set` (0x0003CD10, donor pad
+0x9F48 against 0x9F54) — 2 of the 67 bodies above. Treat T1 "clean transfer" as a hypothesis:
+compile the donor and diff it.
+
+**T3 byte counts overstate the yield.** A T3 donor is one whose name is an ICF guess, and its rows
+usually collapse onto a SINGLE BFME 2 address: `S1LazyPointerFieldReads` places 5 rows at one,
+`BfmeTwoHundredFifteen` 2 at one, `VirtualSlot5CallThunk` 3 at one. Count the packet's distinct
+`b2` addresses, not its rows, before costing the file — and where several BFME 1 names share one
+address, land a single row under an address-derived name rather than several real-looking ones.
+
 `bfme1_sweep.py ambiguous` resolves donors by WHERE they should be rather than by more
 bytes. The two images lay the same code out in the same order: order the placed bodies by
 BFME 1 address and 84% sit in ascending runs of five or more (longest 248), with 76% of
