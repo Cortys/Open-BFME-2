@@ -8,15 +8,24 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 * We rewrite the game's code as C++, one small piece at a time.
 * Each piece must turn back into the exact same bytes as the original game.dat (BFME 2, version 1.06).
-* When every piece matches, the whole game is open source, and we can fix bugs and make mods.
+* When every piece matches and links, the whole game is open source, and we can fix bugs and make mods.
 
 [![BFME 2 rebuild progress](docs/progress.svg)](tools/progress.py)
 
+<details>
+<summary><b>Progress over time and code map</b></summary>
+
+[Interactive report](https://open-bfme.github.io/Open-BFME-2/)
+
+![Progress chart](docs/progress_chart.svg)
+
+![Code map](docs/progress_map.svg)
+
+</details>
+
 ## Status
 
-Green: bytes rebuilt without copying the original game.dat. Blue: the game's own
-code now in C++. Retail statically
-links Visual C++ 7.1's own support libraries, and `tools/lib_probe.py` places
+Retail statically links Visual C++ 7.1's own support libraries, and `tools/lib_probe.py` places
 their members without needing an attached row to anchor a window. The vendored
 DirectX archives do **not** place — BFME 2 links a later SDK than the Summer
 2003 `d3dx9`/`dxerr9` kept here for BFME 1. Flag calibration is proven: 756
