@@ -41342,3 +41342,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0052CAAB@Rva0052CAABVec@@QAEXXZ,,0x0052CAAB,30,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain scrap storage via 0052C24E plus free caller 1
 ?rva005F06EF@Rva005F06EF@@QAEXXZ,,0x005F06EF,57,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,unlock lane tooltip via TheGameText fetch and Mouse tooltip
 ?rva005F09BC@Rva005F09BC@@QAEXXZ,,0x005F09BC,27,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,chain lane array loop over Rva005F06EF
+??4Rva002CF5D4@@QAEAAU0@ABU0@@Z,,0x002CF5D4,43,Code/GameEngine/Source/GameLogic/Object/Rva002CF5D4Assign.cpp,matched,56-element assign via 0x002C99FB; 43B exact; caller 0x002D128C
