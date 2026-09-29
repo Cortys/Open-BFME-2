@@ -376,7 +376,6 @@ bool GameFileClass::Is_Available( int forced )
 //-------------------------------------------------------------------------------------------------
 /** Is the file open. */
 //-------------------------------------------------------------------------------------------------
-// ?Is_Open@GameFileClass@@UBE_NXZ present-unmatched
 bool GameFileClass::Is_Open(void) const
 {
 	return m_theFile != NULL;
@@ -522,8 +521,10 @@ FileClass * W3DFileSystem::Get_File( char const *filename )
 //-------------------------------------------------------------------------------------------------
 /** Releases a file returned by Get_File. */
 //-------------------------------------------------------------------------------------------------
-// ?Return_File@W3DFileSystem@@UAEXPAVFileClass@@@Z present-unmatched
+// Slot 2 of the W3DFileSystem vtable 0x007C67D0. Retail destroys through the
+// virtual destructor with a zero flag and then frees with the global operator
+// delete -- the ::delete form, as the matched File::close spells it.
 void W3DFileSystem::Return_File( FileClass *file )
 {
-	delete file;
+	::delete file;
 }
