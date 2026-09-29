@@ -41545,3 +41545,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00573A00@Rva00573A00@@QAEXPBUCoord3D@@@Z,,0x00573A00,53,Code/GameEngine/Source/Common/Rva00573A00Set.cpp,matched,Coord3D copy plus terrain height to z via slot 0x18
 ??$__uninitialized_fill_n@PAVFXList@@IV1@@_STL@@YAPAVFXList@@PAV1@IABV1@ABU__false_type@0@@Z,,0x005655DC,37,Code/Libraries/Source/WWVegas/WWLib/FXListFillN.cpp,matched,fill_n stride 0x08 via rowed Construct 0x52C2F3 caller 0x565B36 same as 0x56561E
 ??4Rva002D021C@@QAEAAU0@ABU0@@Z,,0x002D021C,115,Code/Libraries/Source/WWVegas/WWLib/Rva002D021CAssign.cpp,matched,chain tree assign via rowed clear 0x002CF807 and rowed copy 0x002CFD96 same shape as 0x002D0136
+?Rva0023D30FCall@@YGXHHH@Z,,0x0023D30F,30,Code/GameEngine/Source/Common/Rva0023D30FCall.cpp,matched,unlock guarded virtual slot 0x108 forwarder ret 12
