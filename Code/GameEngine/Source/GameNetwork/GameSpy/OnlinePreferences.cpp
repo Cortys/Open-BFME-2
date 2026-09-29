@@ -196,6 +196,7 @@ class GameSpyMiscPreferences : public UserPreferences
 public:
 	GameSpyMiscPreferences();
 	virtual ~GameSpyMiscPreferences();
+	int rva00559782();
 };
 
 // ??0QuickMatchPreferences@@QAE@XZ @0x5DF1A3
@@ -232,6 +233,11 @@ GameSpyMiscPreferences::GameSpyMiscPreferences()
 	AsciiString userPrefFilename;
 	userPrefFilename.format("%s\\GSMiscPref%d.ini", "Online Files", TheGameSpyInfo->getLocalProfileID());
 	load(userPrefFilename);
+}
+
+int GameSpyMiscPreferences::rva00559782()
+{
+	return getInt("Locale", 0);
 }
 
 typedef long time_t;

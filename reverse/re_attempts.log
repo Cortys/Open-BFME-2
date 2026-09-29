@@ -3470,3 +3470,7 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ??0Rva002541FA@@QAE@XZ	0x002541FA	68	partial	xor ecx early vs late only diff 68B 18insns vtable ok t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x002541fa.cpp
 ?rva004C0ECE@Rva004C0ECE@@QAEPAXPAX@Z	0x004C0ECE	161	blocked	EH AsciiString with pin-only copy ctor 0x365F0 plus unclaimed handler 0x78FBC9 t=12 model=muse-spark
 ??0BfmeResetTextureRef@@QAE@ABUBfmeResetAnyRef@@@Z	0x00131DCB	49	blocked	copy ctor from AnyRef trivial pointer gives frameless 21B no EH vs retail EBP plus EH 49B needs unwindable member t=12 model=muse-01
+?rva00587C40@Rva00587C40@@QAE	0x00587C40	189	blocked	vector overflow 0x3C needs Rva-Pod60 alias plus allocate-free t=15 model=muse-11
+?rva002120C2@Rva002120C2@@QAEPAURva002120C2Elem@@ABVAsciiString@@@Z	0x002120C2	86	blocked	array search reload-plus-add wall t=20 model=muse-11
+?Rva00452496Check@@YA_NPAVObject@@@Z	0x00452496	79	partial	final setne-al vs xor-inc-plus-final wall t=25 model=muse-11 score=0.94 stash=reverse/attempts/0x00452496.cpp
+?rva001F0434@ObjectCreationList@@QAE_NPAX0@Z	0x001F0434	52	partial	hoisted nugget load fixes mov wall; remaining setne-al vs branches uchar-bool normalize wall t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x001f0434.cpp
