@@ -47,3 +47,11 @@ void __cdecl Rva002C52E0PopHeap(void **first, void **last, void **result, void *
 	*result = tmp;
 	Rva002198ECAdjustHeap(first, 0, last - first, value, comp);
 }
+// ?Rva002C531BWrap@@YAXPAPAX0P6A_NPAX1@Z@Z @0x002C52E0+? no: 0x002C531B 25B
+// make_heap forwarding wrapper: pushes two trailing zeros alongside
+// (first,last,comp) into rowed worker 0x0021AD03; callers 0x0021D32D 0x002C5640.
+void __cdecl Rva002C531BWrap(void **first, void **last, HeapLess comp)
+{
+	typedef void (__cdecl *MakeHeap5)(void **, void **, HeapLess, int, int);
+	((MakeHeap5)Rva0021AD03MakeHeap)(first, last, comp, 0, 0);
+}

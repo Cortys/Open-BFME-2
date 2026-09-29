@@ -42160,3 +42160,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002C52E0PopHeap@@YAXPAPAX00PAXP6A_N11@Z@Z,,0x002C52E0,41,Code/GameEngine/Source/Common/Rva002198ECAdjustHeap.cpp,matched,pop_heap over 4-byte entries via rowed adjust_heap
 ??_GRva004FCE73@@UAEPAXI@Z,,0x004FD7DF,28,Code/GameEngine/Source/Common/Rva004FCE73Dtor.cpp,matched,deleting dtor slot 0 of vtable 0x00863560 via rowed ??1 and rowed delete
 ??0BfmeNarrowRecord00079C23@@QAE@XZ,,0x000797C4,87,Code/GameEngine/Source/Common/BfmeNarrowRecord00079C23Ctor.cpp,matched,unlock ctor 3 strings 2 ints via caller 0x000C3C59
+?Rva002C531BWrap@@YAXPAPAX0P6A_NPAX1@Z@Z,,0x002C531B,25,Code/GameEngine/Source/Common/Rva002198ECAdjustHeap.cpp,matched,make_heap forwarder pushing two trailing zeros
