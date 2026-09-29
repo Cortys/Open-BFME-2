@@ -41276,3 +41276,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002E56E2Greater@@YG_NPBDPBUStringLookUp@@@Z,,0x002E56E2,47,Code/GameEngine/Source/GameClient/GameTextStringLookUpLess.cpp,matched,unlock upper-bound twin of Less reversed args
 ?Rva005F01B8Get@@YAPBVImage@@H@Z,,0x005F01B8,15,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,chain from 0x005F0152 via global plus forward
 ?Rva002CFA30Clone@@YGPAURva002CFA30Node@@PBU1@@Z,,0x002CFA30,30,Code/Libraries/Source/WWVegas/WWLib/Rva002CFA30Clone.cpp,matched,node clone via create 0x2CF84D callers 0x2CFC88 0x2CFCB8
+?xfer@Rva00340123@@MAEXPAVXfer@@@Z,,0x00340123,53,Code/GameEngine/Source/Common/Rva00340123Xfer.cpp,matched,slot 3 Version1 base 0x0033FF76 int 0x4C bool 0x50
