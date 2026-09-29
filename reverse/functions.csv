@@ -41612,3 +41612,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00596F18@@UAE@XZ,,0x00596F18,11,Code/GameEngine/Source/Common/Rva00596F18Dtor.cpp,matched,derived dtor vptr plus tail jmp to base dtor
 ??_GRva00596CDF@@UAEPAXI@Z,,0x00596D7D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor slot0 calls rowed dtor plus delete
 ?Rva005960FFGet@@YGHPAX@Z,,0x005960FF,76,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,bit predicate with Object check via rowed callee
+??1Rva0059675A@@UAE@XZ,,0x0059675A,89,Code/GameEngine/Source/Common/Rva0059675ADtor.cpp,matched,dtor with EH slot0 delete plus StringBase plus base vtable
