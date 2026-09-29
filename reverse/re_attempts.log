@@ -2811,3 +2811,8 @@ FUN_004c35a4	0x000C35A4	183	blocked	mixed-type ICF allocate-b9534 dtor-Rva000C20
 ?Rva00584A3DResize@@YAEXPAUVectorPod28@@I@Z	0x00584A3D	56	blocked	1-arg resize via 2-arg 0x5849F4 needs inline default temp with bool true plus floats 0 plus EBP frame; vendored 1-arg gives 33B vs 56B 4 regions different temp setup t=12 model=muse-05
 ?rva000C34ED@Rva000C34ED@@QAEXIIPBX_N@Z	0x000C34ED	183	blocked	complex vector insert overflow 183B with allocate plus 2x uninit_copy plus Construct fill_n plus dtor 0xC2067 plus 5 stack args exceeds quick box t=5 model=muse-05
 ?rva004692BA@Rva004692BA@@QAEXI@Z	0x004692BA	177	blocked	app Draw method via new 0x18 plus ctor 0x5843DA plus 4 virtuals slots 0 1 plus idiv 0x1c plus EH needs vtable identities t=5 model=muse-05
+?rva005DB928@Elem005DB98E@@QAEMXZ	0x005DB928	51	partial	fdiv dword vs fld-fdivr-fstp tail t=15 model=muse-10 score=0.93 stash=reverse/attempts/0x005db928.cpp
+?rva004907AA@Rva004907AA@@QAEXXZ	0x004907AA	22	blocked	pool-free push-mem vs push-reg-store wall t=10 model=muse-10
+FUN_006aaec5	0x002AAEC5	173	blocked	big EH new plus StringBase plus BuildListInfo needs Player-Side layouts t=5 model=muse-10
+FUN_006aaf72	0x002AAF72	170	blocked	sibling of 0x2AAEC5 same EH BuildListInfo wall t=2 model=muse-10
+?Rva00599435Insert@@YAPAUKeyframe@@PAU1@IIPAX@Z	0x00599435	49	partial	loop rotation jbe-top vs ja-bottom t=15 model=muse-10 score=0.95 stash=reverse/attempts/0x00599435.cpp
