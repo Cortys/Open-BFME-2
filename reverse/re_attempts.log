@@ -3486,3 +3486,8 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ?erase@CameraMarkerVec@@QAEPAVCameraMarker@@PAV2@0@Z	0x0048D042	51	blocked	finish 0.98 wall confirmed tag-home 0xb vs 0xf exact-tag-param tried same 51B 22insns t=8 model=muse-08
 FUN_0080D868	0x0040D868	68	blocked	STL range ctor mixes AsciiString get_allocator with Rva entry uninit copy and BfmeE8 base; converting identity unprovable without donor t=10 model=muse-05
 ?Rva00545239Get@@YAMPAX@Z	0x00545239	84	partial	movss mulss order swapped ours global-then-local vs retail local-then-global; TheAI reloc t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x00545239.cpp
+?rva004C10F0@Rva004C10F0@@QAEMXZ	0x004C10F0	49	partial	false zero via fldz/fstp not xorps/movss; frame plus call already exact t=18 model=muse-spark score=0.93 stash=reverse/attempts/0x004c10f0.cpp
+?rva004C10BC@Rva004C10BC@@QAEMXZ	0x004C10BC	52	partial	same wall as 0x004C10F0: false zero via fldz/fstp not xorps/movss t=5 model=muse-spark score=0.93 stash=reverse/attempts/0x004c10bc.cpp
+?rva004C105A@Rva004C105A@@QAEMXZ	0x004C105A	49	blocked	same float-zero wall as 0x004C10F0/0x004C10BC stashes: xorps/movss vs fldz/fstp t=2 model=muse-spark
+?rva004C0DF3@Rva004C0DF3@@QAEMXZ	0x004C0DF3	49	blocked	same float-zero wall as 0x004C10F0 stash t=2 model=muse-spark
+?allocateBibBuffers@W3DBibBuffer@@IAEXXZ	0x000D3C9F	150	blocked	needs header retype: m_vertexBib to BfmeDynamicNativeVB plus m_indexBibSize word to dword plus sizeof 0x20 t=15 model=muse-spark
