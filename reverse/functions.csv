@@ -41399,3 +41399,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00739750@Rva00739750@@QAEXPAX@Z,,0x00739750,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073D440 gap between 0x00739740 and 0x00739790 same TU
 ?rva00739760@Rva00739760@@QAEXPAVCDEProvider@@0@Z,,0x00739760,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B2C0 gap between 0x00739750 and 0x00739790 same TU
 ?rva00238E1B@Rva00238E1B@@QAEHXZ,,0x00238E1B,10,Code/GameEngine/Source/Common/Rva00238E1BCounter.cpp,matched,unlock postinc counter plus2c returns old via callers
+??1Rva0033C3F3@@QAE@XZ,,0x0033C3F3,63,Code/GameEngine/Source/Common/Rva0033C3F3Free.cpp,matched,scalar dtor range Wrap then inlined member free via 0x30830 under EHs
