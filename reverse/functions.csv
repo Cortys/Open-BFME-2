@@ -42402,3 +42402,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva003C3B2CPopHeap@@YAXPAPAURva003BD485Keyed@@0HH@Z,,0x003C3B2C,30,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap pop-aux via rowed PopHeap chain caller 0x003C4B8E
 ?Rva002C562FPartialSort@@YAXPAPAX00HP6A_NPAX1@Z@Z,,0x002C562F,89,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort via rowed make_heap pop_heap sort_heap caller 0x002C569A
 ?Rva002C5688PartialSortWrap@@YAXPAPAX00P6A_NPAX1@Z@Z,,0x002C5688,27,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort wrapper via rowed 0x002C562F caller 0x002C5711
+?rva0047ED64@Rva0047ED64@@QAEXPAXW4CommandSourceType@@@Z,,0x0047ED64,101,Code/GameEngine/Source/Common/Rva0047ED64AICommand.cpp,matched,AI command builder via rowed parms ctor virtual slot0 and rowed free callers 0x0047EDC9 0x004B2C00 0x004BAF2D
