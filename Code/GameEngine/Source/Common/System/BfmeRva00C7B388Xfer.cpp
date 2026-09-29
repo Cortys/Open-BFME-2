@@ -254,6 +254,7 @@ public:
     virtual Xfer &operator==(RGBColor &value);
     virtual Xfer &operator==(RGBAColorReal &value);
     virtual Xfer &operator==(RGBAColorInt &value);
+    virtual Xfer &operator==(Xfer::Version &value);
     virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
 
 private:
@@ -285,6 +286,16 @@ Xfer &BfmeRva00C7B388::operator==(bool &value)
     if (!m_bfme04)
         Print(this, 0);
     Print(this, "%i [bool]\n", value);
+    m_bfme04 = false;
+    return *this;
+}
+
+extern const char g_00C7B0D4[];
+Xfer &BfmeRva00C7B388::operator==(Xfer::Version &value)
+{
+    if (!m_bfme04)
+        Print(this, 0);
+    Print(this, g_00C7B0D4, value.m_minimum);
     m_bfme04 = false;
     return *this;
 }
