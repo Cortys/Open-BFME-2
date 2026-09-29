@@ -1,8 +1,6 @@
 // ?clear@?$_Rb_tree@HU?$pair@$$CBHURva0016CB50Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@_STL@@QAEXXZ
 // partial score=0.96 date=2026-09-29
-// ?clear@?$_Rb_tree@HU?$pair@$$CBHURva0016CB50Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@_STL@@QAEXXZ
-// partial score=0.96 date=2026-09-29
-// cl: /O2 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /O2 /EHsc /G7 /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // ?_M_erase@?$_Rb_tree@HU?$pair@$$CBHURva0016CB50Mapped@@@_STL@@U?$_Select1st@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@$$CBHURva0016CB50Mapped@@@_STL@@@2@@Z @0x0016CB50 51B.
 // Trivial red-black tree node eraser: recurse-right via [esi+0x0C],
@@ -13,6 +11,7 @@
 // Near miss for clear @0x0016D500 (50B): same TU with
 // `template void Rva0016CB50Tree::clear();` emits 51B; only diff is
 // `mov eax,[esi+4]; test eax,eax` vs retail `cmp dword ptr [esi+4],0`.
+// Try /G7 per sibling dtor 0x0016DAA0 which fixed identical wall.
 #include <map>
 
 struct Rva0016CB50Mapped
