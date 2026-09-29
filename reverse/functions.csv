@@ -41389,3 +41389,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00201B64@@QAE@XZ,,0x00201B51,19,Code/GameEngine/Source/Common/Rva00201B64HolderDtor.cpp,matched,ctor abuts dtor B64 list base
 ?Rva0056EDBAPick@@YAXPAH0@Z,,0x0056EDBA,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,unlock rdtsc table pick 2 callers
 ?Rva0056ECDAPick@@YAXPAH0@Z,,0x0056ECDA,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,unlock esp-seed table pick
+?rva002CFD61@Rva002CFD61@@QAEXPAURva002CFD61Node@@@Z,,0x002CFD61,53,Code/Libraries/Source/WWVegas/WWLib/Rva002CFD61Erase.cpp,matched,53B erase with string at +16 via rowed 0x48BA39 same shape as rowed 0x56CC3
