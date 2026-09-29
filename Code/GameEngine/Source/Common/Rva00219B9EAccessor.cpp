@@ -13,6 +13,8 @@
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
 class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static AsciiString TheEmptyString; };
+template <typename T> class StringBase {
+public: StringBase(const char *s); __forceinline ~StringBase() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
 struct IntVec { int *m_start; int *m_finish; int *m_end; };
 struct Elem216 {
     char m_00[0x0C];
@@ -50,6 +52,7 @@ public:
     void *rva00219CC5(unsigned int index);
     int rva00219BE1(unsigned int index);
     int rva00219C1F(unsigned int index);
+    void *rva0021AE56(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -139,4 +142,17 @@ int Rva00219B9E::rva00219C1F(unsigned int index)
     if (p)
         return ((Elem216 *)p)->m_30.m_finish - ((Elem216 *)p)->m_30.m_start;
     return 0;
+}
+// ?rva0021AE56@Rva00219B9E@@QAEPAXI@Z @0x0021AE56 99B
+// Subclass-name accessor with function-static fallback "ERROR: Invalid SubCalssIndex".
+// Chain of 0x00219B9E; static constructed via rowed StringBase<char> PBD 0x00037BA0
+// with atexit cleanup; null path returns the static, else element+8.
+// Caller 0x0021B215.
+void *Rva00219B9E::rva0021AE56(unsigned int index)
+{
+    static StringBase<char> err("ERROR: Invalid SubCalssIndex");
+    void *p = rva00219B9E(index);
+    if (p)
+        return (char *)p + 8;
+    return &err;
 }
