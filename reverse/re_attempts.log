@@ -3165,3 +3165,5 @@ FUN_002E8548	0x002E8548	101	blocked	pool grow needs imul not lea plus register s
 ?rva00535B32@UserPreferences@@QAE?AVUnicodeString@@M@Z	0x00535B32	125	blocked	gap TimePlayed-format needs archSSE cvttss2si TheGameText slot44 format-copy model t=15 model=muse
 ?rva0073F895@Rva0073F895@@QAEHXZ	0x0073F895	213	partial	comiss operand order and return tail sharing t=15 model=muse-spark score=0.95 stash=reverse/attempts/0x0073f895.cpp
 ?rva0021ADF8@Rva00219B9E@@QAEPAXI@Z	0x0021ADF8	94	blocked	getter with static global ERROR SubCalssIndex plus flag plus atexit plus accessor 0x219B9E t=15 model=muse-10
+FUN_007ae94e	0x003AE94E	105	blocked	EH copy needs interim own C1D520 vs final C1D588 plus second; natural shim lacks interim mechanism t=20 model=muse-spark
+??0Rva002A991D@@QAE@XZ	0x002A991D	82	partial	add-esp scheduling only 82B same-size 27 insns; xorps-movss-load-and-store match; add esp early at +0x2a vs retail late at +0x45 t=25 model=muse-spark score=0.96 stash=reverse/attempts/0x002a991d.cpp
