@@ -72,3 +72,17 @@ const Image *Rva005F020BGet(Rva005F020BIn *in)
 {
 	return Rva00A06858.rva005F0152(in->m_mid->m_index);
 }
+
+struct Rva005F0220In
+{
+	char m_pad[0x20];
+	Rva005F020BIn *m_in;
+};
+
+const Image *Rva005F0220Get(Rva005F0220In *in)
+{
+	Rva005F020BIn *p = in->m_in;
+	if (p)
+		return Rva005F020BGet(p);
+	return 0;
+}
