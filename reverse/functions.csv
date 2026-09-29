@@ -42640,3 +42640,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva002BC39D@Rva002BBBE7@@QAEXXZ,,0x002BC39D,41,Code/Libraries/Source/WWVegas/WWLib/Rva002BC39D.cpp,matched,chain lane callee rowed 0x002BBBE7 callers annotated
 ??1Rva002544B5@@UAE@XZ,,0x002544B5,60,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002544B5Dtor.cpp,matched,WorkerAI-adjacent dtor honest name duplicate WorkerAI name at 0x00240831 base Transport twin pin 0x0026E1FC holder +0x90
 ??_GRva002544B5@@UAEPAXI@Z,,0x00254499,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva002544B5.cpp,matched,deleting dtor calls rowed Rva002544B5 dtor 0x002544B5 then delete 0x0002FD60
+?rva00254D0B@Rva00254D0B@@QAEXPAURva00254D0BNode@@@Z,,0x00254D0B,45,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva00254D0BFree.cpp,matched,recursive list free child +0xC then free node via _free 0x00030830 next +0x8 self-call 0x00254D1D
