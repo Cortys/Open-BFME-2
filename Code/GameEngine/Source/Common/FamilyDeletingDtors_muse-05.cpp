@@ -35,3 +35,10 @@ void famgenDelete(FXParticleSystem::RenderObjectDrawModuleInfo *p) { delete p; }
 namespace FXParticleSystem { class LifeEventModuleInfo { public: __declspec(noinline) virtual ~LifeEventModuleInfo(); private: int m_famgen; }; }
 FXParticleSystem::LifeEventModuleInfo::~LifeEventModuleInfo() { m_famgen = 0; }
 void famgenDelete(FXParticleSystem::LifeEventModuleInfo *p) { delete p; }
+// ??_GRva003ABC58@@UAEPAXI@Z @0x003AF929 28B
+// Deleting dtor calls rowed ??1Rva003ABC58@@UAE@XZ at 0x003ABC58 then rowed operator delete at 0x0002FD60.
+// Evidence: chain lane after landing 0x003ABC58; retail push esi call ??1 test flag delete ret 4.
+class Rva003ABC58 { public: __declspec(noinline) virtual ~Rva003ABC58(); private: int m_famgen;
+  friend void famgenDelete(Rva003ABC58 *p); };
+Rva003ABC58::~Rva003ABC58() { m_famgen = 0; }
+void famgenDelete(Rva003ABC58 *p) { delete p; }

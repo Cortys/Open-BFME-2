@@ -3122,3 +3122,4 @@ FUN_009e5f43	0x005E5F43	79	blocked	STL vector range-init needs exact template ca
 FUN_0060D089	0x0060D089	37	blocked	stl clone allocate 0x14 plus placeholder dup YAXXZ takes 2 stack args t=8 model=muse-spark
 FUN_005F6B74	0x005F6B74	96	blocked	unicode format helper needs rdata string at 0xBC9260 plus private StringBase copy access t=10 model=muse-spark
 FUN_005E5F43	0x005E5F43	79	blocked	stl map-range to deque assign needs exact iterator plus allocator types t=6 model=muse-spark
+FUN_007aa228	0x003AA228	42	blocked	smart-int ctor with duplicate +0x14 C1C780 store plus own C1D420; implicit 3-base emits zeros not relocs; needs explicit extern-vtable pattern t=15 model=muse-spark
