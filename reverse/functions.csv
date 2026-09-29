@@ -41334,3 +41334,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002CF1FB@Rva002CF1FB@@QAEPAURva002CF1FBNode@@G@Z,,0x002CF1FB,32,Code/GameEngine/Source/Common/Rva002CF1FBFind.cpp,matched,list search head plusC via 0x484 key 0x5D8; 32B exact; callers 0x377613 0x77BE15
 ?Rva0052C24EDestroyRange@@YAXPAURva0052BCE7Elem@@0@Z,,0x0052C24E,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BCE7 callers 2
 ?Rva0052C266DestroyRange@@YAXPAURva0052BF4DElem@@0@Z,,0x0052C266,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BF4D callers 2
+?Rva002CF9DCCreate@@YGPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x002CF9DC,37,Code/Libraries/Source/WWVegas/WWLib/Rva002CF9DCCreate.cpp,matched,12-byte NoCase pair node via dup 0x002CF954; 37B exact; caller 0x002CFB77
