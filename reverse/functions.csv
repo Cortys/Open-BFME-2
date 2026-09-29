@@ -42703,3 +42703,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??0Rva003ED658@@QAE@ABV0@@Z,,0x003ED658,53,Code/GameEngine/Source/Common/Rva003ED658Ctor.cpp,matched,chain from 0x003ED498 via rowed vector copy
 ?Scale@ParticleEmitterClass@@UAEXM@Z,,0x001A18D0,152,Code/Libraries/Source/WWVegas/WW3D2/particle_emitter_scale.cpp,matched,slot 92 vtable 0x7D69F8 Buffer Scale via 0x170 TU-local view
 ?rva0037DE0E@Rva0037DE0E@@QAEEPAX@Z,,0x0037DE0E,85,Code/GameEngine/Source/Common/Rva0037DE0ECopy.cpp,matched,chain of rowed 0x0037E3D9 plus block and Rva001EAFC1
+?rva0040C4CB@Rva0040C4CB@@QAEEPAXH@Z,,0x0040C4CB,51,Code/GameEngine/Source/Common/Rva0040C4CBCopy.cpp,matched,chain of rowed 0x0037DE0E plus int and this+0xC0
