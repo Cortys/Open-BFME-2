@@ -296,6 +296,20 @@ int Rva005D32EC::write(char *dst)
 	return n + m_text2.write(dst + n);
 }
 
+// ?write@Rva005D3311@@QAEHPAD@Z @0x005D3311 37B narrow concat node: base Rva005D32EC write 0x005D32EC then Rva pair write 0x000B44F0 at +0x18; callers 0x005D3365 0x005F985C.
+struct Rva005D3311 : Rva005D32EC
+{
+	int write(char *dst);
+
+	Rva000B3F84Pair m_text3;
+};
+
+int Rva005D3311::write(char *dst)
+{
+	int n = Rva005D32EC::write(dst);
+	return n + m_text3.write(dst + n);
+}
+
 // ??BRva0050F23E@@QAE?AVAsciiString@@XZ @0x0050F7B4 107B narrow concat to AsciiString: sized getBufferForRead then Rva0050F23E write; length is base PlusString fold plus text len plus 1 for char.
 Rva0050F23E::operator AsciiString()
 {
