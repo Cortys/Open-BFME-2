@@ -42,3 +42,12 @@ bool SimpleDynVecClass<Vector3>::Resize(int newsize)
 	}
 	return false;
 }
+// ??0?$SimpleDynVecClass@VVector3@@@@QAE@H@Z retail 0x0007E99E 28B Dyn ctor
+// via Base ctor plus ActiveCount 0. Evidence: chain calls 0x0007E3D9;
+// callers at 0x0007EEB5 0x0007FBB0 0x0007FBF1 0x0010070F 0x0010071B
+// 0x0016847E.
+SimpleDynVecClass<Vector3>::SimpleDynVecClass(int size) :
+	SimpleVecClass<Vector3>(size),
+	ActiveCount(0)
+{
+}
