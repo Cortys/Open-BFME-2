@@ -41494,3 +41494,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1BfmeStrVM0@@UAE@XZ,,0x0025D686,111,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,BfmeStrVM0 dtor via helpers plus strings plus base
 ??_GBfmeStrVM0@@UAEPAXI@Z,,0x0025DA57,28,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,BfmeStrVM0 deleting dtor via TU vtable
 ??_GRva004444D2@@UAEPAXI@Z,,0x00444509,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08.cpp,matched,chain deleting dtor for Rva004444D2 via famgenDelete
+?rva00444462@Rva00444462@@QAEXXZ,,0x00444462,11,Code/GameEngine/Source/Common/Rva00444462.cpp,matched,tail jmp enable at plus288
