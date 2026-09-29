@@ -42146,3 +42146,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005830AE@Rva005830AE@@QAEXH@Z,,0x005830AE,115,Code/GameEngine/Source/Common/Rva005830AE.cpp,matched,callers 0x0044C629 0x0044C828 empty A0C898 via 0x37050
 ??0BfmeStringRecord002199C8@@QAE@IABVAsciiString@@00@Z,,0x0021997A,78,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,4-arg ctor of same 0x10 record via permuted init
 ??0BfmeStringRecord00219B0B@@QAE@IABVAsciiString@@00@Z,,0x00219ABB,80,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,4-arg ctor of same 0x10 record in order
+?rva0027656F@Drawable@@QAEXHVAsciiString@@@Z,,0x0027656F,101,Code/GameEngine/Source/GameClient/Drawable_rva0027656F.cpp,matched,same 0x14C slot-0xA8 walk as 0x002724FD and 0x00278689 with AsciiString inline copy order
