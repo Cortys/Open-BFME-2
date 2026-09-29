@@ -3174,3 +3174,7 @@ FUN_00A0C7AD	0x0060C7AD	260	blocked	chain260 xfer CxxThrow plus format plus virt
 ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z	0x00537A9B	397	partial	397exact 2regions xmm-swap key-offset4 push-sched float1-literal t=25 model=muse-01 score=0.94 stash=reverse/attempts/0x00537a9b.cpp
 ?rva005C1AE4@Rva005C1A36@@QAEHH@Z	0x005C1AE4	73	partial	69vs73 missing-and0-EHstate0 across-held-call table-reloc t=20 model=muse-01 score=0.9 stash=reverse/attempts/0x005c1ae4.cpp
 ?rva005D388B@Rva005D388B@@QAEHH@Z	0x005D388B	61	blocked	inlined FunctorNotSet base IAT 0xBBA600 plus vtable 0xBD3B54 plus throwinfo 0xD0B644 needs sub 0x10 plus and ebp-4 0 best 59B vs 61B with push ecx frame t=18 model=muse-07
+??0Rva004261B8@@QAE@XZ	0x004261B8	55	partial	vptr store 6B early: ours call store and-0 lea map vs retail call and-0 lea store map t=25 model=muse-spark score=0.9 stash=reverse/attempts/0x004261b8.cpp
+??0Rva000C6A4D@@QAE@XZ	0x000C6A4D	202	partial	or-lea-state hoisted above mid scalars; early prolog fixed via base-int plus Rva dtor; size-insns exact t=35 model=muse-spark score=0.93 stash=reverse/attempts/0x000c6a4d.cpp
+?rva005130E2@Rva005130E2@@QAEXVUnicodeString@@@Z	0x005130E2	86	blocked	EH prolog plus virtual-slot plus globals need donor; single-probe model missing EH and uses esi-edi vs eax-ecx t=12 model=muse-spark
+?rva002E8548@Rva002E8548@@QAE_NPAXH@Z	0x002E8548	101	blocked	register wall plus imul-vs-lea strength reduction; single-probe O1 model uses ebx-edi with lea-chain vs retail esi-edi imul t=10 model=muse-spark
