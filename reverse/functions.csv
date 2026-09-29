@@ -42503,3 +42503,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva003BF8B4Hunt@@YGXABVAsciiString@@@Z,,0x003BF8B4,79,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF8B4.cpp,matched,via team hunt group precedent
 ?Rva003BFFECDo@@YGXABVAsciiString@@H@Z,,0x003BFFEC,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFFEC.cpp,matched,via display fullscreen trigger precedent
 ?Rva003253BEGet@@YAHPAVGameWindow@@HH@Z,,0x003253BE,63,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetMsg00325388.cpp,matched,WindowManager slot E8 sender 0x4020 via TheWindowManager
+?rva0060D4C9@Rva0060D4C9@@QAEEPAVXfer@@@Z,,0x0060D4C9,49,Code/Libraries/Source/xfer/XferSaveChain.cpp,matched,chain over rowed open 0x0060D10A slot4 NOT m44 clear caller 0x0023CB61
