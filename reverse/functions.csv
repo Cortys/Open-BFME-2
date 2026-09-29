@@ -42475,3 +42475,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?xfer@Rva003AE2A9@@MAEXPAVXfer@@@Z,,0x0056454F,79,Code/GameEngine/Source/Common/Rva003AE2A9Xfer.cpp,matched,slot-3 xfer Version 1 2 plus subobject 0x00564522 plus gated bools caller 0x003ACB6A
 ?getEventFX@LifeEventModuleInfo@FXParticleSystem@@QAEPBVFXList@@XZ,0x0056410F,0x0056410F,46,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LifeEventModuleInfoGetEventFX.cpp,matched,lazy FX cache via rowed findFXList 0x001E281A callers 0x00564197 0x00564249
 ?Rva003C6464SortHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C6464,58,Code/GameEngine/Source/GameLogic/Object/Rva003C6464SortHeap.cpp,matched,chain on 0x003C4B80 via caller 0x003C6A01 heap sort loop
+?Rva003C69B7PartialSort@@YAXPAPAURva003BD485Keyed@@00HH@Z,,0x003C69B7,87,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,chain on MakeHeap PopHeap6 SortHeap via caller 0x003C75D4 partial sort

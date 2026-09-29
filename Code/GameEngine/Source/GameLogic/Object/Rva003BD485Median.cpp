@@ -165,3 +165,22 @@ Rva003BD485Keyed **Rva003C3A79Partition(Rva003BD485Keyed **first, Rva003BD485Key
 		++first;
 	}
 }
+
+void Rva003C6464SortHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int extra);
+// ?Rva003C69B7PartialSort@@YAXPAPAURva003BD485Keyed@@00HH@Z @0x003C69B7 87B.
+// Heap partial sort over the same keyed array: make a heap over [first,
+// middle), then for each slot in [middle, last) keep the smaller key via
+// the 6-push PopHeap at 0x003C3AC7, then sort the heap via 0x003C6464.
+// Chain lane on 0x003C4B67/0x003C3AC7/0x003C6464; caller 0x003C75D4 passes
+// (first, middle, last, 0, extra) with caller cleanup (cdecl, 5 pushes).
+void Rva003C69B7PartialSort(Rva003BD485Keyed **first, Rva003BD485Keyed **middle, Rva003BD485Keyed **last, int, int extra)
+{
+	typedef void (__cdecl *PopHeap6)(Rva003BD485Keyed **, Rva003BD485Keyed **, Rva003BD485Keyed **, Rva003BD485Keyed *, int, int);
+	Rva003C4B67MakeHeap(first, middle, extra);
+	for (Rva003BD485Keyed **p = middle; p < last; ++p)
+	{
+		if ((*p)->m_key < (*first)->m_key)
+			((PopHeap6)Rva003C3AC7PopHeap)(first, middle, p, *p, extra, 0);
+	}
+	Rva003C6464SortHeap(first, middle, extra);
+}
