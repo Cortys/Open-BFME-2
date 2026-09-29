@@ -134,3 +134,12 @@ void Rva0052C266DestroyRange(Rva0052BF4DElem *first, Rva0052BF4DElem *last)
 	_STL::__false_type tag;
 	Rva0052BF4DDestroyTagged(first, last, tag);
 }
+
+// ?Rva0052C3BFDestroyRange@@YAXPAURva0052BF67Elem@@0@Z retail 0x0052C3BF 24B.
+// Chain lane: calls this TU's 0x0052BF67 with tag temp; 3 callers including
+// 0x0052CD1D/0x0056591D.
+void Rva0052C3BFDestroyRange(Rva0052BF67Elem *first, Rva0052BF67Elem *last)
+{
+	_STL::__false_type tag;
+	Rva0052BF67DestroyTagged(first, last, tag);
+}
