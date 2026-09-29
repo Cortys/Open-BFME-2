@@ -41414,3 +41414,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000D1BEA@Rva000D1BEA@@QAEEH@Z,,0x000D1BEA,38,Code/GameEngine/Source/Common/Rva000D1BEA.cpp,matched,TheShroudManager null check and rowed 0x007397F0 cmp1 shared false
 ?rva005F120F@Rva005F120F@@QAEXXZ,,0x005F120F,30,Code/GameEngine/Source/Common/Rva005F120FFree.cpp,matched,buffer clear plus free no-EH twin of 63B pair
 ??0?$_Deque_base@UBfmePod28@@V?$allocator@UBfmePod28@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod28@@@1@I@Z,,0x0041A10C,75,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_pod28_base.cpp,matched,Deque_base Pod28 ctor via STL explicit instantiation unlocks 0x41A6D0
+?Rva0056EDE8Pick@@YAXPAH0@Z,,0x0056EDE8,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap rdtsc pick same pattern
