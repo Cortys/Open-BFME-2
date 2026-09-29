@@ -42175,3 +42175,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?xfer@Rva004C8A95@@MAEXPAVXfer@@@Z,,0x004C8A95,27,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva004C8A95Xfer.cpp,matched,slot3 xfer via Version1 plus base 0x00493009
 ?Rva005832D0Set@@YGXABVAsciiString@@@Z,,0x005832D0,137,Code/GameEngine/Source/Common/Rva005832D0MapName.cpp,matched,filename after backslash via reverseFind str empty BBAC1C manager 9FE4CC
 ?xfer@Rva004C447D@@MAEXPAVXfer@@@Z,,0x004C447D,64,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva004C447DXfer.cpp,matched,slot3 Scavenger xfer via Version12 plus base 0x493009 plus bool 0x34
+??0Rva001E28B8@@QAE@ABVAsciiString@@@Z,,0x001E28B8,42,Code/GameEngine/Source/GameClient/FXListRva001E28B8Ctor.cpp,matched,derived of 0x001E2747 via caller 0x001E2C0F and vtables 0x7DD978 0x7DD974
