@@ -41934,3 +41934,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva0055011A@@QAE@XZ,,0x0055011A,157,Code/Libraries/Source/WWVegas/WWLib/Rva0055011ACtor.cpp,matched,vtable plus mutex deque map layout; empty base arms EH
 ?Rva003C4570Do@@YGXABVAsciiString@@0@Z,,0x003C4570,100,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C4570Team.cpp,matched,chain team level via two iterates
 ?rva00535D75@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535D75,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences WinStreak getter via slot18 same TU
+?rva00535E06@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535E06,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences LossStreak getter via slot18 same TU
