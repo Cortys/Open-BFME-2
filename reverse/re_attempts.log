@@ -2865,3 +2865,4 @@ FUN_004EE233	0x004EE233	45	blocked	vector allocate_and_copy BfmeE12 allocate vs 
 FUN_00340F7C	0x00340F7C	67	blocked	needs exact C-projects string plus TurretAI Waypoint layout t=5 model=muse-04
 ?rva000B65FD@Rva000B65FD@@QAEHXZ	0x000B65FD	23	partial	eax-ecx-edx mirror base in edx vs eax 23B same size t=15 model=muse-04 score=0.91 stash=reverse/attempts/0x000b65fd.cpp
 ??0Rva00391667@@QAE@PBX@Z	0x00391667	44	partial	44B ctor vtable 0x00C1A068 3-dword copy from param. Body 44B/13insns matches except load scheduling: retail and [eax+4] before mov ecx [esp+4]; ours mov ecx before and. movss tail fixed by body order m_04 copies m_08; init-list pins to decl order not list order; /Os /Od tried. t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x00391667.cpp
+FUN_0052b6d9	0x0052B6D9	37	blocked	stlport hashtable new_node 12B via allocator 0x307F0 plus dup _Construct pair AsciiString-NoCase needs hash donor t=12 model=muse-spark
