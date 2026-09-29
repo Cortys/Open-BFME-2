@@ -34,7 +34,8 @@ UnicodeString Rva005ED310Get(int val);
 
 struct Rva005ED445Slot
 {
-	char m_pad[0x0C];
+	UnicodeString m_name;
+	char m_pad[0x0C - 0x04];
 	int m_numRegions;
 	int m_numUnits;
 };
@@ -45,6 +46,7 @@ public:
 	void rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text);
 	void rva005ED708(int index, int num);
 	void rva005ED76A(int index, int num);
+	void rva005ED937(int index, const UnicodeString &text);
 private:
 	char m_pad44[0x44];
 	Rva005ED445Slot *m_slots;
@@ -67,5 +69,15 @@ void Rva005ED445::rva005ED76A(int index, int num)
 	if (num != slot->m_numUnits) {
 		rva005ED516(index, "NumUnits", Rva005ED310Get(num));
 		slot->m_numUnits = num;
+	}
+}
+
+void Rva005ED445::rva005ED937(int index, const UnicodeString &text)
+{
+	Rva005ED445Slot *base = m_slots;
+	Rva005ED445Slot *slot = base + index;
+	if (((const StringBase<unsigned short> *)(const void *)&text)->compare(*(const StringBase<unsigned short> *)(const void *)&slot->m_name) != 0) {
+		rva005ED516(index, "PlayerName", text);
+		((StringBase<unsigned short> *)(void *)&slot->m_name)->set(*(const StringBase<unsigned short> *)(const void *)&text);
 	}
 }
