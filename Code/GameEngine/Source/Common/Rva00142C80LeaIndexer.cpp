@@ -10,6 +10,26 @@
 // Stack-indexed lea: mov eax [esp+4] lea eax [ecx+eax*4+0x78] ret 4.
 // Spelled as byte arithmetic (no array size claimed); unlocks 0x7EDBC/
 // 0x81E36/0x81CDF. Honest address name.
+//
+// ?rva003080AA@Rva003080AA@@QAEPAURva003080AARef@@H@Z, retail 0x003080AA, 25B.
+// AddRef fetch from array at +0xB8 (same offset as 0x142C80 family):
+// p=m_items[i]; if (p) ++p->m_ref; return m_items[i] (reload for return).
+// Callers 0x38D9E/0x380C9. Honest address name.
+
+struct Rva003080AARef
+{
+	virtual void _slot00();
+	int m_ref04;
+};
+
+class Rva003080AA
+{
+	char m_pad00[0xb8];
+	Rva003080AARef *m_itemsB8[32];
+
+public:
+	Rva003080AARef *rva003080AA(int i);
+};
 
 class Rva00142C80
 {
@@ -35,4 +55,12 @@ public:
 void *Rva0030812E::rva0030812E(int i)
 {
 	return (char *)this + 0x78 + i * 4;
+}
+
+Rva003080AARef *Rva003080AA::rva003080AA(int i)
+{
+	Rva003080AARef *p = m_itemsB8[i];
+	if (p)
+		p->m_ref04++;
+	return m_itemsB8[i];
 }
