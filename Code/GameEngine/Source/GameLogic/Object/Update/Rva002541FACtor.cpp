@@ -1,8 +1,14 @@
 // ??0Rva002541FA@@QAE@XZ
 // partial score=0.97 date=2026-09-29
-// ??0Rva002541FA@@QAE@XZ
-// partial score=0.97 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /arch:SSE
+//
+// ??0Rva002541FA@@QAE@XZ @ 0x002541FA (68B). Ctor stores vtable 0x00BF1D58,
+// six floats at +0x08..+0x1C via movss, ints/bytes at +0x20..+0x32, byte +0x32=1.
+// Caller at 0x0025425E. Finish from banked 0.97 stash: xor ecx early vs late
+// only diff; try literals for ints so xor lands late like retail.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 class Rva002541FA
 {
 public:
@@ -28,7 +34,6 @@ private:
 Rva002541FA::Rva002541FA()
 {
 	float fzero = 0.0f;
-	int zero = 0;
 	m_vtable = (const void *)0x00BF1D58;
 	m_f08 = fzero;
 	m_f0C = fzero;
@@ -36,11 +41,12 @@ Rva002541FA::Rva002541FA()
 	m_f14 = fzero;
 	m_f18 = fzero;
 	m_f1C = fzero;
-	m_20 = zero;
-	m_24 = (unsigned char)zero;
-	m_28 = zero;
+	_ReadWriteBarrier();
+	m_20 = 0;
+	m_24 = 0;
+	m_28 = 0;
 	m_f2C = fzero;
-	m_30 = (unsigned char)zero;
-	m_31 = (unsigned char)zero;
+	m_30 = 0;
+	m_31 = 0;
 	m_32 = 1;
 }

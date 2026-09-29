@@ -42908,3 +42908,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??_GRva00469D86@@QAEPAXI@Z,,0x0046AA4D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00469D86.cpp,matched,deleting dtor via rowed dtor plus delete
 ??1Rva0060237D@@UAE@XZ,,0x0060237D,68,Code/GameEngine/Source/Common/System/Rva0060237DDtor.cpp,matched,File-derived dtor with array delete and StringBase member via File row
 ??_GRva0060237D@@UAEPAXI@Z,,0x006023F6,28,Code/GameEngine/Source/Common/System/Rva0060237DDtor.cpp,matched,deleting dtor via rowed dtor slot 0 chain
+??0Rva002541FA@@QAE@XZ,,0x002541FA,68,Code/GameEngine/Source/GameLogic/Object/Update/Rva002541FACtor.cpp,matched,vtable 0x00BF1D58 caller 0x0025425E barrier for late xor

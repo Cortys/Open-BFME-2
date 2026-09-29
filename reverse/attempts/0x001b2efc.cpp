@@ -1,14 +1,15 @@
 // ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z
-// partial score=0.9907 date=2026-09-29
+// partial score=0.9953 date=2026-09-29
 // ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z
-// partial score=0.9907 date=2026-09-29
+// partial score=0.9953 date=2026-09-29
 // cl: /O1 /EHsc /DNDEBUG /MD
 // ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z, retail 0x001B2EFC, 215 bytes.
-// Finish from banked 0.98 stash: cached index cursor walk plus binary search
+// Finish from banked 0.9907 stash: cached index cursor walk plus binary search
 // over TimeCodes masked with ~0x8000. Evidence: RET8 thiscall with context
 // double-pointer; neighbours BFME2MotionChannelFactory and
-// BFME2Encoding0MotionChannelCtor; two operand-order differences at 0xB1-0xB3
-// (mov edx eax vs mem and xor edx mem vs eax).
+// BFME2Encoding0MotionChannelCtor; one diff at 0xB3 xor edx mem vs sub edx mem
+// (mov edx eax now matches via sub spelling); retail uses xor for index!=low,
+// ours sub tests same equality; 215B/93insns exact size t=15 model=muse-06.
 class BFME2Encoding0MotionChannel {
 public:
  void *VTable;
@@ -34,7 +35,7 @@ int BFME2Encoding0MotionChannel::FindIndex(unsigned int time, int **context)
     index=(low+high)/2;
     if (time < (TimeCodes[index] & ~0x8000)) high=index;
     else if (time >= (TimeCodes[index+1] & ~0x8000)) {
-     if (index ^ low) low=index; else ++low;
+     int diff = index - low; if (diff) low=index; else ++low;
     } else break;
    }
   }
