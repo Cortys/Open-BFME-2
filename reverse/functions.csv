@@ -42619,3 +42619,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??0Rva0041579E@@QAE@ABV0@@Z,,0x0041579E,29,Code/GameEngine/Source/Common/Rva0041573FCopy.cpp,matched,Chain container copy with int plus rowed Rva0041573F
 ??0Rva002007D5@@QAE@XZ,,0x00200774,23,Code/GameEngine/Source/GameClient/GUI/Shell/ShellMenuSchemeDtor.cpp,matched,Gap ctor for Rva002007D5 with list plus zeroed int
 ?rva00587375@Rva00587375@@QAEXPBV1@@Z,,0x00587375,70,Code/GameEngine/Source/Common/Rva00587375Copy.cpp,matched,struct copy 0x3C via callers 0x0058741C 0x00587DFF
+?Rva00587410Copy@@YAXPAVRva00587375@@PBV1@@Z,,0x00587410,18,Code/GameEngine/Source/Common/Rva00587410Copy.cpp,matched,null-checked copy via rowed 0x00587375
