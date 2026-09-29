@@ -5,6 +5,10 @@
 // retail 0x00424363, 42 bytes. list<basic_string<char>>::erase single-iterator
 // via rowed basic_string dtor 0x0007FAB3 plus _free 0x00030830. Evidence:
 // unlock lane; caller 0x004246E7 in 0x004246D7; unblocks 0x004246D7.
+// ?pop_back@?$list@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@V?$allocator@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@2@@_STL@@QAEXXZ
+// retail 0x004246D7, 23 bytes. list<basic_string<char>>::pop_back via rowed
+// erase 0x00424363. Evidence: chain lane (calls 0x00424363 just landed);
+// caller 0x00424982 in 0x0042481E; unblocks 0x0042481E.
 #include <list>
 #include <string>
 
