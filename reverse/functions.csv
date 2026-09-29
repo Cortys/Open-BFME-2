@@ -42053,3 +42053,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva002A7400@@QAE@XZ,,0x002A7400,97,Code/GameEngine/Source/GameLogic/Object/Rva002A7400Ctor.cpp,matched,unlock lane EH ctor via fixed storage
 ??0?$SimpleVecClass@VVector3@@@@QAE@H@Z,,0x0007E3D9,38,Code/Libraries/Source/WWVegas/WWLib/simplevec_vector3_dtor.cpp,matched,ctor calls 0x0007E1CF vtable 0x007C6F44
 ??0?$SimpleDynVecClass@VVector3@@@@QAE@H@Z,,0x0007E99E,28,Code/Libraries/Source/WWVegas/WWLib/simplevec_vector3_dtor.cpp,matched,ctor calls 0x0007E3D9 vtable 0x007C6F50
+?rva001EDC41@Rva001EDD1C@@QAEXHHH@Z,,0x001EDC41,112,Code/GameEngine/Source/Common/Rva001EDD1CSetter.cpp,matched,addassign plus dual clamp same class
