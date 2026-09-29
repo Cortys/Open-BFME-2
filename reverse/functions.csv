@@ -41625,3 +41625,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000B2D4D@Rva000B2D4D@@QAEXHH@Z,,0x000B2D4D,17,Code/GameEngine/Source/Common/Rva000B2D4DThunk.cpp,matched,null-guarded delegate to plus16 slot3 via callers 0x000BC954 0x000BCCE5
 ?Rva000B2BE5Get@@YAHPBURva000B2BE5Src@@H@Z,,0x000B2BE5,26,Code/GameEngine/Source/Common/Rva000B2BE5Get.cpp,matched,flag getter bit 0x20 at plus0x114 else fallback via 4 callers
 ?Rva000B6AA9Build@@YAPAURva000B6AA9Rec@@PAU1@PAPAXH@Z,,0x000B6AA9,76,Code/GameEngine/Source/Common/Rva000B6AA9Build.cpp,matched,build 12B rec via Clamp 0x000B2B42 plus movsd returning dest
+?Rva000B6AF5Build@@YAPAURva000B6AF5Rec@@PAU1@PAPAXH@Z,,0x000B6AF5,90,Code/GameEngine/Source/Common/Rva000B6AF5Build.cpp,matched,build 12B rec via Clamp plus double movzx returning dest
