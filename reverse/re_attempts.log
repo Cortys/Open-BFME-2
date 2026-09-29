@@ -3034,3 +3034,4 @@ FUN_00620EBA	0x00220EBA	183	blocked	mixed LocomotorStore destroy with BfmeString
 ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z	0x0039EA4E	78	partial	top test+je vs jmp only diff uchar fixed test-al t=15 model=muse-10 score=0.95 stash=reverse/attempts/0x0039ea4e.cpp
 FUN_006D0A30	0x006D0A30	82	blocked	intrusive list find with Apt compare and refcount needs donor layout t=10 model=muse-10
 ?rva0002DFE2@INI@@QAEPBDPBDPA_N@Z	0x0002DFE2	91	partial	honest INI thiscall shape 87B vs 91B retail keeps jmp plus xor eax tail ours folds return-0 as eax provably 0 V2 ifElse puts xor early V5 late-shared-return hits 91B with 1B je diff but returns 0 for null changed vs retail expanded so semantics wrong t=35 model=muse-10 score=0.95 stash=reverse/attempts/0x0002dfe2.cpp
+FUN_0045213e	0x0005213E	182	blocked	float-heavy SSE+x87 sqrt needs true param layout at +0x1c and double-sqrt shaping t=15 model=muse-11

@@ -41,6 +41,7 @@ public:
     void Unset__Proto__();
     void UnsetPrototype();
     void DestroyGCPointers();
+    void rva0070A680(int index, AptValue *pValue);
 };
 void AptNativeHash::Set__Proto__(AptValue *const value)
 {
@@ -119,4 +120,15 @@ void AptNativeHash::DestroyGCPointers()
         }
         nEventHandlers = 0;
     }
+}
+void AptNativeHash::rva0070A680(int index, AptValue *pValue)
+{
+    if (!pValue) {
+        g_bfmeAptAssertAtE17734("pValue != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptNativeHash.h", 0xBD);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    pValue->AddRef();
+    mpData[index].value = pValue;
 }
