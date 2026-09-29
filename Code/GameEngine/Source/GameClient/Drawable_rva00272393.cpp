@@ -59,6 +59,7 @@ class Drawable
 {
 public:
 	void rva00272393(int arg);
+	void rva002723C0(int arg);
 };
 
 void Drawable::rva00272393(int arg)
@@ -69,5 +70,66 @@ void Drawable::rva00272393(int arg)
 		BfmeObjectDrawForRva272393 *di = (*dm)->getObjectDrawInterface();
 		if (di)
 			di->rva00272393Target(arg);
+	}
+}
+
+// ?rva002723C0@Drawable@@QAEXH@Z — RVA 0x002723C0, 45B.
+// Draw-module walk at this+0x14C via slot 0xA8, forwarding int arg to
+// slot 0x68 targets. Evidence: same walk/flags as rva00272393 above in
+// this TU; ret 4 single int arg; unblocks 0x00450635 0x004508B7.
+class BfmeObjectDrawForRva2723C0
+{
+public:
+	virtual void slot00() = 0; virtual void slot04() = 0;
+	virtual void slot08() = 0; virtual void slot0C() = 0;
+	virtual void slot10() = 0; virtual void slot14() = 0;
+	virtual void slot18() = 0; virtual void slot1C() = 0;
+	virtual void slot20() = 0; virtual void slot24() = 0;
+	virtual void slot28() = 0; virtual void slot2C() = 0;
+	virtual void slot30() = 0; virtual void slot34() = 0;
+	virtual void slot38() = 0; virtual void slot3C() = 0;
+	virtual void slot40() = 0; virtual void slot44() = 0;
+	virtual void slot48() = 0; virtual void slot4C() = 0;
+	virtual void slot50() = 0; virtual void slot54() = 0;
+	virtual void slot58() = 0; virtual void slot5C() = 0;
+	virtual void slot60() = 0; virtual void slot64() = 0;
+	virtual void rva002723C0Target(int arg) = 0;
+};
+
+class BfmeDrawModuleForRva2723C0
+{
+public:
+	virtual void slot00() = 0; virtual void slot04() = 0;
+	virtual void slot08() = 0; virtual void slot0C() = 0;
+	virtual void slot10() = 0; virtual void slot14() = 0;
+	virtual void slot18() = 0; virtual void slot1C() = 0;
+	virtual void slot20() = 0; virtual void slot24() = 0;
+	virtual void slot28() = 0; virtual void slot2C() = 0;
+	virtual void slot30() = 0; virtual void slot34() = 0;
+	virtual void slot38() = 0; virtual void slot3C() = 0;
+	virtual void slot40() = 0; virtual void slot44() = 0;
+	virtual void slot48() = 0; virtual void slot4C() = 0;
+	virtual void slot50() = 0; virtual void slot54() = 0;
+	virtual void slot58() = 0; virtual void slot5C() = 0;
+	virtual void slot60() = 0; virtual void slot64() = 0;
+	virtual void slot68() = 0; virtual void slot6C() = 0;
+	virtual void slot70() = 0; virtual void slot74() = 0;
+	virtual void slot78() = 0; virtual void slot7C() = 0;
+	virtual void slot80() = 0; virtual void slot84() = 0;
+	virtual void slot88() = 0; virtual void slot8C() = 0;
+	virtual void slot90() = 0; virtual void slot94() = 0;
+	virtual void slot98() = 0; virtual void slot9C() = 0;
+	virtual void slotA0() = 0; virtual void slotA4() = 0;
+	virtual BfmeObjectDrawForRva2723C0 *getObjectDrawInterface() = 0;
+};
+
+void Drawable::rva002723C0(int arg)
+{
+	BfmeDrawModuleForRva2723C0 **modules =
+		*reinterpret_cast<BfmeDrawModuleForRva2723C0 ***>((unsigned char *)this + 0x14C);
+	for (BfmeDrawModuleForRva2723C0 **dm = modules; *dm; ++dm) {
+		BfmeObjectDrawForRva2723C0 *di = (*dm)->getObjectDrawInterface();
+		if (di)
+			di->rva002723C0Target(arg);
 	}
 }
