@@ -41166,3 +41166,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0027D347@Rva0027D347@@QAEXPAURva0027D347Arg@@H@Z,,0x0027D347,24,Code/GameEngine/Source/Common/Rva0027D3CBForward.cpp,matched,same global slot29 with arg plus this0
 ?Rva003B242CGet@@YAEXZ,,0x003B242C,59,Code/GameEngine/Source/Common/Rva003B242CGet.cpp,matched,NameKey cache Dict equality via rowed callees caller 0x003B7951
 ?Rva005E7470Forward@@YAPAVRva005E7198@@PAV1@00PAX@Z,,0x005E7470,29,Code/GameEngine/Source/Common/Bfme/Rva005E7256CopyBackward.cpp,matched,forwarder via local tag to rowed copy_backward 0x005E7256 caller 0x005E82FF
+?_M_insert_overflow@?$vector@URva002111C8@@V?$allocator@URva002111C8@@@_STL@@@_STL@@IAEXPAURva002111C8@@ABU3@ABU__false_type@2@I_N@Z,,0x00213E3B,180,Code/GameEngine/Source/Common/Rva00213E3BOverflow.cpp,matched,chain caller 0x00214270 stride 0x10 helpers rowed
