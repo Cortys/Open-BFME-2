@@ -42480,3 +42480,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva0041FE86@Rva0041FE86@@QAEXXZ,,0x0041FE86,101,Code/GameEngine/Source/Common/Rva0041FE86Init.cpp,matched,Init arrays plus defaults plus GameLogic flag plus tail virtual
 ??1Rva003C649E@@QAE@XZ,,0x003C649E,105,Code/GameEngine/Source/GameLogic/Object/Rva003C649EDtor.cpp,matched,unlock dtor with 4 AsciiString frees via _free EH states
 ??1Rva002B82D5@@QAE@XZ,,0x002B82D5,53,Code/GameEngine/Source/Common/Rva002B82D5Dtor.cpp,matched,family dtor via rowed 0x002B62A6 and 0x002B626E unblocks 7
+?rva00067878@Rva00067878@@QAEXXZ,,0x00067878,67,Code/GameEngine/Source/Common/Rva00067878Clear.cpp,matched,unlock release CC D0 tail BfmeResetTextureRef clear
