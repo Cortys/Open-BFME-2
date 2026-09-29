@@ -41114,3 +41114,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005DBD4FUninitCopy@@YAPAVRva005DBCD1@@PAV1@00ABU__false_type@_STL@@@Z,,0x005DBD4F,41,Code/GameEngine/Source/Common/Rva005DBD4FUninitCopy.cpp,matched,UninitCopy via rowed ctor 0x5DBCD1 callers 0x5DC4D7 0x5DC525
 ?rva005DBCA6@Rva005DBCA6@@QAEHGG@Z,,0x005DBCA6,43,Code/GameEngine/Source/Common/Rva005DBCA6Get.cpp,matched,2D dword at 118 callers 0x5A6FD4 0x5A80B4
 ?rva005DB8F7@Elem005DB98E@@QAEXMMM@Z,,0x005DB8F7,49,Code/GameEngine/Source/Common/Rva005DB8F7Set.cpp,matched,Elem set 3 floats plus timeGetTime caller 0x5DBEC7
+??$__uninitialized_fill_n@PAVRva000BB491@@IV1@@_STL@@YAPAVRva000BB491@@PAV1@IABV1@ABU__false_type@0@@Z,,0x000BBAED,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb491_allocate_copy.cpp,matched,chain from 0x000BB993 plus caller 0x000C355B
+??$__uninitialized_copy@PAVRva000BB491@@PAV1@@_STL@@YAPAVRva000BB491@@PAV1@00ABU__false_type@0@@Z,,0x000BBAC7,38,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb491_allocate_copy.cpp,matched,chain from 0x000BB993 plus 5 callers
