@@ -3484,3 +3484,5 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ??0?$_Vector_base@VSaveMapPreview@@V?$allocator@VSaveMapPreview@@@_STL@@@_STL@@QAE@IABV?$allocator@VSaveMapPreview@@@1@@Z	0x004FF36C	60	blocked	finish 0.95 wall confirmed 61B ebx-edi lea-vs-imul G7 gives 59B Os gives 61B same wall t=10 model=muse-08
 ?updateCountsAndFlags@W3DRoadBuffer@@IAEXXZ	0x000D52EA	487	blocked	unlock 487B ZH donor updateCountsAndFlags matches logic plus retail m_initialized guard 3 shapes 332B 351B 345B vs 487B -142B 26 regions float-hoist plus btype-reload tried t=20 model=muse-08
 ?erase@CameraMarkerVec@@QAEPAVCameraMarker@@PAV2@0@Z	0x0048D042	51	blocked	finish 0.98 wall confirmed tag-home 0xb vs 0xf exact-tag-param tried same 51B 22insns t=8 model=muse-08
+FUN_0080D868	0x0040D868	68	blocked	STL range ctor mixes AsciiString get_allocator with Rva entry uninit copy and BfmeE8 base; converting identity unprovable without donor t=10 model=muse-05
+?Rva00545239Get@@YAMPAX@Z	0x00545239	84	partial	movss mulss order swapped ours global-then-local vs retail local-then-global; TheAI reloc t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x00545239.cpp
