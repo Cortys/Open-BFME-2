@@ -3224,3 +3224,4 @@ FUN_008fc2b3	0x004FC2B3	109	blocked	twin of 0x002E16C0 109B EH vector visitor wa
 ?rva005262BF@Rva005262BF@@QAE@XZ	0x005262BF	74	blocked	EH dtor with 2 List_base-int dtors at +0x10/+0x14 4-apart plus free at +0x0; List_base size exceeds 4 overlap needs donor layout t=10 model=muse-12
 ?rva0039ED9C@Rva0039ED9C@@QAE@XZ	0x0039ED9C	69	blocked	Team-pred loop with indirect getter via ebx plus dead-edi lea; member-ptr folds to direct call and off-to-mov; needs anti-folding for ebx-addr plus edi-lea t=15 model=muse-12
 ??0BuildListInfo@@QAE@ABV0@@Z	0x00329DE6	253	partial	push-lea order for first two StringBase copies retail lea-lea-push vs ours lea-push-lea plus vtable reloc only t=30 model=muse-12 score=0.97 stash=reverse/attempts/0x00329de6.cpp
+??0Rva00496ADE@@QAE@XZ	0x00496ADE	78	partial	order plus dummy string X: retail +0 clear before +8 ctor and +54 lea before +4 vs ours +8 then +0/+4/+54 t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x00496ade.cpp

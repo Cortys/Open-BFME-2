@@ -55,8 +55,9 @@ protected:
 	UnsignedShort m_lastCommandID;
 	UnsignedByte m_lastPlayerID;
 	UnsignedByte m_lastCommandType;
-	UnsignedByte m_lastRelay;
-	Bool isRoomForFrameMessage(NetCommandRef *msg);
+ UnsignedByte m_lastRelay;
+ Bool isRoomForFrameMessage(NetCommandRef *msg);
+ UnsignedByte rva0058D513(NetCommandRef *msg);
 };
 
 Bool NetPacket::isRoomForFrameMessage(NetCommandRef *msg)
@@ -90,8 +91,37 @@ Bool NetPacket::isRoomForFrameMessage(NetCommandRef *msg)
 	++len;
 	len += sizeof(UnsignedInt);
 	len += sizeof(UnsignedInt);
-	if ((len + m_packetLen) > MAX_PACKET_SIZE) {
-		return false;
-	}
-	return true;
+ if ((len + m_packetLen) > MAX_PACKET_SIZE) {
+ 	return false;
+ }
+ return true;
+}
+
+UnsignedByte NetPacket::rva0058D513(NetCommandRef *msg)
+{
+ Int len = 0;
+ Bool needNewCommandID = false;
+ NetCommandMsg *cmdMsg = (NetCommandMsg *)(msg->getCommand());
+ if (m_lastCommandType != cmdMsg->m_commandType) {
+ 	++len;
+ 	len += sizeof(UnsignedByte);
+ }
+ if (m_lastRelay != msg->getRelay()) {
+ 	++len;
+ 	++len;
+ }
+ if (m_unknown1F8 != cmdMsg->m_timestamp) {
+ 	len += sizeof(UnsignedInt) + sizeof(UnsignedByte);
+ }
+ if (m_lastPlayerID != cmdMsg->getPlayerID()) {
+ 	++len;
+ 	++len;
+ 	needNewCommandID = true;
+ }
+ if (((m_lastCommandID + 1) != (UnsignedShort)(cmdMsg->getID())) ||
+ 	(needNewCommandID == true)) {
+ 	len += sizeof(UnsignedShort) + sizeof(UnsignedByte);
+ }
+ Int total = m_packetLen + len + 6;
+ return total <= MAX_PACKET_SIZE;
 }
