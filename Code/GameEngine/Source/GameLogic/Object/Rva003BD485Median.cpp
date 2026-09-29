@@ -80,3 +80,23 @@ void Rva003BE553AdjustHeap(Rva003BD485Keyed **base, int hole, int len, Rva003BD4
 	}
 	Rva003BD4E8SiftUp(base, hole, top, value, extra);
 }
+
+// ?Rva003C3AF0MakeHeap@@YAXPAPAURva003BD485Keyed@@0H@Z @0x003C3AF0 60B.
+// Heap make over the same keyed array: count = last - first; for holes from
+// (count - 2) / 2 down to 0 run AdjustHeap with the slot value. Chain lane
+// on 0x003BE553; caller 0x003C4B77; cdecl with caller cleanup like siblings.
+
+void Rva003C3AF0MakeHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int extra)
+{
+	int count = last - first;
+	if (count < 2)
+		return;
+	int hole = (count - 2) / 2;
+	while (true)
+	{
+		Rva003BE553AdjustHeap(first, hole, count, first[hole], extra);
+		if (hole == 0)
+			break;
+		--hole;
+	}
+}

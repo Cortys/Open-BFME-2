@@ -42361,3 +42361,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?rva0021B05A@Rva00219B9E@@QAEPAXI@Z,,0x0021B05A,112,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer element plus8 twin of 0x0021AFEA
 ??0Rva0060C5FA@@QAE@PAX00@Z,,0x0060C5FA,47,Code/Libraries/Source/xfer/Rva0060C5FACtor.cpp,matched,Xfer-family ctor vtable 0x00C7AF18 caller 0x00409A0C destroys via Xfer dtor
 ?Rva003BE26DGrantUpgrade@@YGXPAVParameter@@ABVAsciiString@@@Z,,0x003BE26D,110,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BE26DGrantUpgrade.cpp,matched,grant upgrade to named unit via ScriptEngine UpgradeCenter caller 0x003CD380
+?Rva003C3AF0MakeHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C3AF0,60,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap make via AdjustHeap chain caller 0x003C4B77
