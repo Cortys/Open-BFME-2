@@ -3057,3 +3057,5 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva004DFA43@Rva004DFA43@@QAE_NPAX0@Z	0x004DFA43	112	partial	112/112B same 35 insns; 0 mem diffs; early r load xmm3 vs late plus xmm4 vs xmm3 allocation plus comiss d-vs-r plus jbe vs jb t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x004dfa43.cpp
 ?rva0028BFF9@Object@@QAEXI@Z	0x0028BFF9	38	partial	42/38B 14 vs 11 insns; 0 reg 1 mem esi-vs-ecx; extra push-esi mov-esi-ecx pop-esi for this-live-across-setter t=20 model=muse-05 score=0.88 stash=reverse/attempts/0x0028bff9.cpp
 ?Rva005D303AFormat@@YA_XZ	0x005D303A	99	blocked	EH UnicodeString format needs literal at 0x008380FC plus handler 0x007A20FC beyond packet t=10 model=muse-05
+?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z	0x00238FF3	72	partial	frameless esp vs ebp frame plus edi esi swap t=30 model=muse-03 score=0.96 stash=reverse/attempts/0x00238ff3.cpp
+?rva00272DEE@Drawable@@QAEXXZ	0x00272DEE	456	blocked	456B Drawable float x87 SSE complex needs donor t=10 model=muse-03
