@@ -42621,3 +42621,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00587375@Rva00587375@@QAEXPBV1@@Z,,0x00587375,70,Code/GameEngine/Source/Common/Rva00587375Copy.cpp,matched,struct copy 0x3C via callers 0x0058741C 0x00587DFF
 ?Rva00587410Copy@@YAXPAVRva00587375@@PBV1@@Z,,0x00587410,18,Code/GameEngine/Source/Common/Rva00587410Copy.cpp,matched,null-checked copy via rowed 0x00587375
 ?rva001518D1@Rva001518D1@@QAEPAV?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@XZ,,0x001518D1,68,Code/GameEngine/Source/Common/Rva001518D1Get.cpp,matched,link vector getter via static empty plus base rows
+??0Rva001517DE@@QAE@XZ,,0x00151866,48,Code/GameEngine/Source/Common/Rva00151866Ctor.cpp,matched,ctor vtable 0x007D3AA8 via OCL plus vector rows
