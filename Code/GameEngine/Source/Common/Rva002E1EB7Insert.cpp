@@ -22,3 +22,15 @@ void Rva002E1EB7Insert(void **first, void **last, void *val, void *extra)
 		Rva002E08A2Insert(last, val, extra);
 	}
 }
+
+// ?Rva002E214ESort@@YAXPAPAX0PAX@Z @0x002E214E 45B.
+// Insertion sort via guarded insert: for each slot from begin+1 to end call
+// Rva002E1EB7Insert with (begin slot value extra). Evidence: callers
+// 0x002E2307 0x002E2325; callee rowed 0x002E1EB7.
+void Rva002E214ESort(void **begin, void **end, void *extra)
+{
+	if (begin == end)
+		return;
+	for (void **p = begin + 1; p != end; ++p)
+		Rva002E1EB7Insert(begin, p, *p, extra);
+}

@@ -41236,3 +41236,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva0029B816@@UAEPAXI@Z,,0x0029E1EF,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0029B816.cpp,matched,chain slot0 calls rowed dtor plus delete
 ?rva004EE057@Rva004EE037@@QAEHH@Z,,0x004EE057,27,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,array bound check 5 else m80 callers 5 sites
 ?rva004EE016@Rva004EE037@@QAEHXZ,,0x004EE016,33,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling time plus m6C minus m70 callers 0x005BE3FF 0x005BFDED
+?Rva002E214ESort@@YAXPAPAX0PAX@Z,,0x002E214E,45,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,insertion sort via guarded insert callers 0x002E2307 0x002E2325
