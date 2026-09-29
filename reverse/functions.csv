@@ -42927,3 +42927,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ??$__unguarded_insertion_sort@PAUBfmeAssignRecord32@@P6A_NABU1@0@Z@_STL@@YAXPAUBfmeAssignRecord32@@0P6A_NABU1@1@Z@Z,,0x001739CD,23,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_insertion_sort.cpp,matched,insertion sort entry forwarding first last plus NULL plus pred to rowed aux
 ?rva0025C72C@BfmeStrVM0@@QAEXHHMMMM@Z,,0x0025C72C,74,Code/GameEngine/Source/Common/Rva0025C6E2.cpp,matched,BfmeStrVM0 array twin const 2 via same G7 imul
 ?rva000783A1@FileSystem@@QAEPAVFile@@PBDHHH@Z,,0x000783A1,36,Code/GameEngineDevice/Source/W3DDevice/GameClient/FileSystemRva000783A1.cpp,matched,FileSystem 4-arg wrapper packs 2 ints for rowed openFile via TheFileSystem caller 0x7882F
+??1Rva0039205C@@QAE@XZ,,0x0039205C,26,Code/GameEngine/Source/Common/Rva0039205CDtor.cpp,matched,outer dtor via vector delete plus zeroing
