@@ -506,17 +506,8 @@ UnsignedInt Anim2D::getCurrentFrameWidth( void ) const
 // ------------------------------------------------------------------------------------------------
 /** Return the "natural" height of the image for our current frame */
 // ------------------------------------------------------------------------------------------------
-// ?getCurrentFrameHeight@Anim2D@@QBEIXZ present-unmatched
-UnsignedInt Anim2D::getCurrentFrameHeight( void ) const
-{
-	const Image *currentFrameImage = m_template->getFrame( m_currentFrame );
-
-	if( currentFrameImage )
-		return currentFrameImage->getImageHeight();
-	
-	return 0;
-
-}  // end getCurrentFrameHeight
+// ?getCurrentFrameHeight@Anim2D@@QBEIXZ
+// Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCurrentFrameHeight.cpp.
 
 // ------------------------------------------------------------------------------------------------
 /** Drawing an Anim2D using a forced width and height */

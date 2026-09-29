@@ -41554,3 +41554,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Construct@URva00423A4A@@U1@@_STL@@YAXPAURva00423A4A@@ABU1@@Z,,0x00423E83,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pE12_holder.cpp,matched,chain Construct via twin-pinned copy ctor unblocks copy and fill
 ??4Rva002D01A9@@QAEAAU0@ABU0@@Z,,0x002D01A9,115,Code/Libraries/Source/WWVegas/WWLib/Rva002D01A9Assign.cpp,matched,chain tree assign via rowed clear 0x002CF7DE and rowed copy 0x002CFCEE same shape as 0x002D0136
 ?Set@Rva0023D229@@QAEXH@Z,,0x0023D229,35,Code/GameEngine/Source/Common/Rva0023D229Set.cpp,matched,unlock thiscall guard 0-7 store global 0x009FE78C
+?getCurrentFrameHeight@Anim2D@@QBEIXZ,,0x002D6BEA,24,Code/GameEngine/Source/GameClient/System/Anim2DCurrentFrameHeight.cpp,matched,ZH donor Anim2D getCurrentFrameHeight plus G7 plus caller 0x002D6DDE plus getFrame row
