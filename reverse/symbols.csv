@@ -6325,3 +6325,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?rva0053444F@Rva001FD751@@QAEPAURva001FD751Node@@PAU2@@Z,0x0053444F,thiscall twin of rowed _M_clone_node map int int via copy call sites 0x001FD75E 0x001FD78E
 ?_M_copy@?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@AAEPAU?$_Rb_tree_node@U?$pair@$$CBHPAX@_STL@@@2@PAU32@0@Z,0x001FD751,fold twin of Rva001FD751 copy same 115B node shape via copy ctor call site 0x001FDA66
 ?get_allocator@?$_Rb_tree_base@U?$pair@$$CBHPAX@_STL@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QBE?AV?$allocator@U?$pair@$$CBHPAX@_STL@@@2@XZ,0x0021983A,fold twin of rowed vector AsciiString get_allocator same stateless 7B body via copy ctor call site 0x001FDA28
+?rva0053444F@Rva001FD7C4@@QAEPAURva001FD7C4Node@@PAU2@@Z,0x0053444F,thiscall twin of rowed _M_clone_node map int int via copy call sites 0x001FD7D1 0x001FD801

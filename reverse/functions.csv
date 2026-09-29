@@ -42188,3 +42188,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QAE@ABV01@@Z,,0x001FDA0B,165,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_ptr_tree_copy.cpp,matched,chain via Rva001FD751 copy pin HPAX base 0x001F0534 get_allocator fold
 ?Rva000B69EAGet@@YA?AVAsciiString@@ABV1@H@Z,,0x000B69EA,125,Code/GameEngine/Source/Common/Rva000B69EA.cpp,matched,switch 1-2 concat plus early return via callers 0xC2E3A
 ?rva000B6253@Rva000B6253@@QAEPAV1@HIIIII@Z,,0x000B6253,129,Code/GameEngine/Source/Common/Rva000B6253.cpp,matched,memset 0x4c plus five bit sets via caller 0x2C8B9B
+?rva001FD7C4@Rva001FD7C4@@QAEPAURva001FD7C4Node@@PAU2@0@Z,,0x001FD7C4,115,Code/Libraries/Source/WWVegas/WWLib/Rva001FD7C4Copy.cpp,matched,unlock unblocks 0x001FDAB0 0x001FD952 via twin clone 0x0053444F
