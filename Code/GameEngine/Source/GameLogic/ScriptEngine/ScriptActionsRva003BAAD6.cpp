@@ -170,3 +170,9 @@ void Rva003BBF8F()
 {
 	Rva00DFEDF0->s037(false);
 }
+
+// ?Rva003BBFA0@@YAXXZ @0x003BBFA0 17B free caller of vslot 0x94 with true via global 0xDFEDF0 caller 0x003CC458
+void Rva003BBFA0()
+{
+	Rva00DFEDF0->s037(true);
+}
