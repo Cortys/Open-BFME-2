@@ -3508,3 +3508,6 @@ FUN_007F0588	0x003F0588	70	blocked	array-search loop shape wall 51vs70B compact 
 ?rva00119C00@Rva00119C00@@QAE@XZ	0x00119C00	107	blocked	gap vector-ProxyClass release-plus-free called as Batches-0x34 from Render2D dtor; needs inline ProxyClass dtor releasing Texture but none rowed and adding one risks matched erase 0x119C70 in same TU; needs donor t=12 model=muse-11
 ?rva00262DD3@AIUpdateInterface@@QAE_NPAX@Z	0x00262DD3	81	partial	goto shares false size-equal 81-81; remaining 2nd-check jne-vs-je plus mov-xor order wall t=30 model=muse-11 score=0.95 stash=reverse/attempts/0x00262dd3.cpp
 ?rva0055997D@QuickMatchPreferences@@QAE_NXZ	0x0055997D	75	blocked	align_diff exact 75-75 0-struct getBool QMResLock slot-0x10 QuickMatch TU; gate check refused HEAD 13 behind and sync could-not-detach-HEAD; redo 7-line add after sync t=15 model=muse-11
+?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z	0x006D0A30	82	partial	finish retry: G6/G7 plus refcount-addr reorder still ecx-eax swapped plus push-edi late t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x006d0a30.cpp
+?first@Gen_00943CF0@@AAEXPAXPAH11@Z	0x00140FA0	266	blocked	LINK BONUS first needs Gen_00943CF0 layout plus 11-signature decode plus bit-clear tail t=8 model=muse-spark
+FUN_0066DF80	0x0066DF80	523	blocked	523B GameNetwork leaf too big for quick lane t=3 model=muse-spark

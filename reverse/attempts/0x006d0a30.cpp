@@ -2,6 +2,8 @@
 // partial score=0.93 date=2026-09-29
 // ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z
 // partial score=0.93 date=2026-09-29
+// ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z
+// partial score=0.93 date=2026-09-29
 //
 // ?rva006D0A30@Rva006D0A30@@QAEXPAPAUPayload@@ABURva008B4260StringRef@@@Z @0x006D0A30 82B
 // Find interned payload by StringRef: walks the +0/+4 list comparing the
