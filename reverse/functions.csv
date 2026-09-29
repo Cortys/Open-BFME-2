@@ -41997,3 +41997,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00550041@Rva0055011A@@QAEXXZ,,0x00550041,66,Code/Libraries/Source/WWVegas/WWLib/Rva0055011A00550041.cpp,matched,slot10 lock plus map clear via rowed callees
 ??_GRva005B72E7@@QAEPAXI@Z,,0x005B7352,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-5B7352.cpp,matched,chain from 0x005B72E7 plus flag delete
 ??_GRva005B77F1@@UAEPAXI@Z,,0x005B7888,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-5B7888.cpp,matched,chain from 0x005B77F1 plus slot0 0x873918
+?write@Rva005D32EC@@QAEHPAD@Z,,0x005D32EC,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,unlock PlusStringText 0x0050F219 plus Pair 0x000B44F0 caller 0x005D3311
