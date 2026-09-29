@@ -144,3 +144,17 @@ void Rva003BB61E()
 {
 	Rva00DFEDF0->s087();
 }
+
+class RadarWindowOverrideSource
+{
+public:
+	void rva002D3615(bool value);
+};
+
+#define Rva00DFF028 (*(RadarWindowOverrideSource **)0x00DFF028)
+
+// ?Rva003BB7E2@@YAXXZ @0x003BB7E2 14B free caller of 0x002D3615 with false via global 0xDFF028 caller 0x003CBD39
+void Rva003BB7E2()
+{
+	Rva00DFF028->rva002D3615(false);
+}
