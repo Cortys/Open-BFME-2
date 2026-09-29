@@ -74,6 +74,7 @@ public:
     int rva0021A06C(unsigned int o, unsigned int i);
     int rva0021A097(unsigned int o, unsigned int i);
     void *rva0021A1B6(unsigned int o, unsigned int i);
+    void *rva0021A15D(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -307,4 +308,18 @@ void *Rva00219B9E::rva0021A1B6(unsigned int o, unsigned int i)
         return ((Rva00219B9E *)&base[o])->rva00219B9E(i);
     }
     return 0;
+}
+// ?rva0021A15D@Rva00219B9E@@QAEPAXII@Z @0x0021A15D 46B
+// Two-level string lookup: outer 32B vector at +0x14C selects the element,
+// then the rowed 0x00219CC5 accessor resolves the inner index to element+0x20;
+// out-of-range returns TheEmptyString. Same reinterpret-cast pattern as
+// 0x0021A016/0x0021A1B6. Caller 0x004085D7.
+void *Rva00219B9E::rva0021A15D(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219CC5(i);
+    }
+    return &AsciiString::TheEmptyString;
 }
