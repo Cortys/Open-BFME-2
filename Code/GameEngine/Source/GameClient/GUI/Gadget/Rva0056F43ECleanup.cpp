@@ -22,6 +22,7 @@ struct Rva0056F43E
 	void *m_0c;
 	StringBase<unsigned short> m_10;
 	void rva0056F43E(void *node);
+	void rva0056F503();
 };
 void Rva0056F43E::rva0056F43E(void *p)
 {
@@ -35,4 +36,20 @@ void Rva0056F43E::rva0056F43E(void *p)
 		free(node);
 		node = next;
 	} while (node);
+}
+// ?rva0056F503@Rva0056F43E@@QAEXXZ @0x0056F503 41B
+// Clear the table: if m_04 is set, run this->rva0056F43E over the root at
+// [m_00+4], reset the header at m_00 to self-links, and zero m_04.
+// Same class as 0x0056F43E: the call threads the same this (no ecx reload).
+// Evidence: cmp [esi+4]0 je, push [eax+4] call 0x0056F43E with live ecx,
+// then mov [eax+8]eax / and [eax+4]0 / mov [eax+0xc]eax / and [esi+4]0.
+void Rva0056F43E::rva0056F503()
+{
+	if (m_04 == 0)
+		return;
+	rva0056F43E((void *)((Rva0056F43E *)m_00)->m_04);
+	((Rva0056F43E *)m_00)->m_08 = (void *)m_00;
+	((Rva0056F43E *)m_00)->m_04 = 0;
+	((Rva0056F43E *)m_00)->m_0c = (void *)m_00;
+	m_04 = 0;
 }
