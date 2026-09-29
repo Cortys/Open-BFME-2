@@ -291,6 +291,20 @@ Two remedies, and they are not interchangeable:
   This is a *declaration* that the body is known but unpinned (or that retail
   dead-stripped it), so it is honest only where that is true. Adding it to hide
   a real over-claim is exactly the failure the gate exists to catch.
+
+  **The marker must start with `?` or it is silently ignored.** The tool enters
+  its symbol-splitting path only for lines beginning `// ?`, so a marker written
+  any other way leaves the definition undeclared and the tool reports the *same
+  refusal you started with*, saying nothing about the marker itself:
+
+  ```
+  // GameLogicRandomVariable::setRange present-unmatched    no effect
+  // ?GameLogicRandomVariable::setRange present-unmatched   works
+  ```
+
+  Worth knowing before concluding that markers do not work. The label after `?`
+  is never checked against the ledger -- only the trailing word is -- so a
+  readable name is fine, but keep it honest.
 - **Row the body**, which is real work and the reason the file is frozen.
 
 Note that the second half of the tool's own error message is not actionable
