@@ -2807,3 +2807,4 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 FUN_004bbddf	0x000BBDDF	74	blocked	map-int-int-find but node-plus-0x44 plus float caller struct suggests larger value ICF-fold t=12 model=muse-11
 ?_M_insert_overflow@?$vector@UBfmeAsciiScalarValue8@@V?$allocator@UBfmeAsciiScalarValue8@@@_STL@@@_STL@@IAEXPAUBfmeAsciiScalarValue8@@ABU3@ABU__false_type@2@I_N@Z	0x000C1D98	178	partial	extra push 0 at +0x24 allocate-hint version wall t=15 model=muse-11 score=0.99 stash=reverse/attempts/0x000c1d98.cpp
 FUN_004c35a4	0x000C35A4	183	blocked	mixed-type ICF allocate-b9534 dtor-Rva000C2085 for Rva000BB4AC overflow needs twin pins t=10 model=muse-11
+?rva0007EEBE@Rva0007EEBE@@QAEXH@Z	0x0007EEBE	119	partial	push-then-lea vs retail lea-then-push after loader; 119B 45insns 0 reg-mem diffs t=25 model=muse-02 score=0.96 stash=reverse/attempts/0x0007eebe.cpp

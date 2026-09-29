@@ -56,6 +56,7 @@ public:
 	virtual float Rva0027D85B(void *water);
 	virtual void slot31();
 	virtual void Rva0027D88E(void *water, float finalHeight, float transitionTime, float damageAmount);
+	void Rva0027D960(void *water, float *out);
 
 private:
 	char m_pad04[0x64];
@@ -223,4 +224,79 @@ void Rva0062AF7::Rva0027D5E0(float *out, const float *in)
 	out[2] = slot06(distances[1], distances[2], 0);
 	out[0] = distances[1];
 	out[1] = distances[2];
+}
+
+//
+// ?Rva0027D960@Rva0062AF7@@QAEXPAXPAM@Z retail 0x0027D960 248 bytes.
+// Follows 0x0027D88E in retail (0x27D88E+210=0x27D960), same TU flags.
+// slot08 box expanded by *(float*)0x7FB1C8, out lo/hi init to empty
+// (lo=hi+c hi=lo-c), water+0x18+off real gives count via slot0,
+// points via rowed 0x7E016 forwarder to slot1, Z via slot2 int to float.
+// Callers: 0x282E8B. Identity class plus honest address name.
+class Rva0007E016
+{
+	virtual void f0();
+	virtual void vfunc(int a0, int a1);
+public:
+	int rva0007E016(int a0, int a1);
+};
+
+struct Rva0027D960Real
+{
+	virtual int getCount();
+	virtual void getPoint(int a0, int a1);
+	virtual int getFinal();
+};
+
+struct Rva0027D960Inner
+{
+	char m_pad00[4];
+	int m_off04;
+};
+
+struct Rva0027D960Water
+{
+	char m_pad00[0x18];
+	Rva0027D960Inner *m_inner18;
+};
+
+void Rva0062AF7::Rva0027D960(void *water, float *out)
+{
+	if (water == 0)
+		return;
+	if (out == 0)
+		return;
+	Rva0027D5E0Box tmp;
+	slot08(&tmp);
+	const float c = *(const float *)0x00BFB1C8;
+	out[0] = tmp.hiX + c;
+	out[1] = tmp.hiY + c;
+	out[3] = tmp.loX - c;
+	out[4] = tmp.loY - c;
+	Rva0027D960Water *w = (Rva0027D960Water *)water;
+	Rva0027D960Real *real0 = (Rva0027D960Real *)((char *)water + 0x18 + w->m_inner18->m_off04);
+	int n = real0->getCount();
+	int i = 0;
+	if (n <= 0)
+		return;
+	for (; i < n; ++i)
+	{
+		float xy[2];
+		Rva0027D960Water *w2 = (Rva0027D960Water *)water;
+		Rva0027D960Real *real1 = (Rva0027D960Real *)((char *)water + 0x18 + w2->m_inner18->m_off04);
+		((Rva0007E016 *)real1)->rva0007E016((int)xy, i);
+		if (out[0] > xy[0])
+			out[0] = xy[0];
+		if (xy[0] > out[3])
+			out[3] = xy[0];
+		if (out[1] > xy[1])
+			out[1] = xy[1];
+		if (xy[1] > out[4])
+			out[4] = xy[1];
+		Rva0027D960Water *w3 = (Rva0027D960Water *)water;
+		Rva0027D960Real *real2 = (Rva0027D960Real *)((char *)water + 0x18 + w3->m_inner18->m_off04);
+		float f = (float)real2->getFinal();
+		out[5] = f;
+		out[2] = f;
+	}
 }

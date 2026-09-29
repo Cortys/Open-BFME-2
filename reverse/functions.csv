@@ -41145,3 +41145,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CC907@@YAXPAXPAVMade002CC907@@HH@Z,,0x0050A7E5,77,Code/GameEngine/Source/GameLogic/Object/Made002CC907Parse.cpp,matched,Grab parser two-add via 0x00507552 caller 0x002CC94C
 ?q4Notify002CC971@@YAXPAXPAVMade002CC971@@HH@Z,,0x0050AAEA,77,Code/GameEngine/Source/GameLogic/Object/Made002CC971Parse.cpp,matched,SlaveAttack parser two-add via 0x00507552 caller 0x002CC9B6
 ??0Made002CC907@@QAE@XZ,,0x0050AA97,83,Code/GameEngine/Source/GameLogic/Object/Made002CC907Ctor.cpp,matched,Grab ctor floats plus vtable caller 0x002CC92C
+?Rva0027D960@Rva0062AF7@@QAEXPAXPAM@Z,,0x0027D960,248,Code/GameEngine/Source/Common/Rva0062AF7Rva0027D815.cpp,matched,follows 0x27D88E same TU slot08 box plus water poly via 0x7E016
