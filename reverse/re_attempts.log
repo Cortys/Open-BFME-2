@@ -3168,3 +3168,4 @@ FUN_002E8548	0x002E8548	101	blocked	pool grow needs imul not lea plus register s
 FUN_007ae94e	0x003AE94E	105	blocked	EH copy needs interim own C1D520 vs final C1D588 plus second; natural shim lacks interim mechanism t=20 model=muse-spark
 ??0Rva002A991D@@QAE@XZ	0x002A991D	82	partial	add-esp scheduling only 82B same-size 27 insns; xorps-movss-load-and-store match; add esp early at +0x2a vs retail late at +0x45 t=25 model=muse-spark score=0.96 stash=reverse/attempts/0x002a991d.cpp
 FUN_00966920	0x00566920	29	blocked	Copy-wrapper with extra-push paradox: 5 pushes to 3-arg Copy 0x00566663 plus push-ecx alloc and byte-local lea; same family as blocked heap wrappers t=10 model=muse-12
+?rva000E44BE@Rva000E44BE@@QAEXPAVArg1Holder@@PAVTextureBaseClass@@@Z	0x000E44BE	169	blocked	EH AssetReference temps plus virtuals need donor t=15 model=muse-03

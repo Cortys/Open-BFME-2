@@ -26,6 +26,7 @@ private:
 
 struct Coord3D { float x, y, z; };
 class Object;
+enum ObjectStatusTypes;
 class Waypoint
 {
 public:
@@ -55,6 +56,7 @@ public:
 		return *(AIUpdateInterface **)((char *)this + 0x258);
 	}
 	void leaveGroup();
+	bool testStatus(ObjectStatusTypes bit) const;
 private:
 	char m_pad00[0x38];
 public:
@@ -63,10 +65,28 @@ private:
 	char m_pad01[0x258 - 0x44];
 };
 
+template<class OBJ> class DLINK_ITERATOR
+{
+public:
+	void advance();
+	bool done() const { return m_cur == 0; }
+	OBJ *cur() const { return m_cur; }
+private:
+	OBJ *m_cur;
+	char m_pad[20];
+};
+
+class Team
+{
+public:
+	DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
+};
+
 class ScriptEngine
 {
 public:
 	Object *getUnitNamed(const AsciiString &name);
+	Team *getTeamNamed(AsciiString name, bool exact);
 	void setSequentialTimer(Object *obj, int frames);
 };
 
@@ -91,6 +111,7 @@ protected:
 	void doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds);
 	void doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName);
 	void doNamedGuard(const AsciiString &unitName);
+	void doTeamGuard(const AsciiString &teamName);
 };
 
 void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds)
@@ -154,4 +175,26 @@ void ScriptActions::doNamedGuard(const AsciiString &unitName)
 	position.y = object->m_position.y;
 	position.z = object->m_position.z;
 	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
+}
+
+void ScriptActions::doTeamGuard(const AsciiString &teamName)
+{
+	Team *team = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+	if (!team)
+		return;
+	for (DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList(); !iter.done(); iter.advance()) {
+		Object *obj = iter.cur();
+		if (obj->testStatus((ObjectStatusTypes)0x26))
+			continue;
+		if (obj->testStatus((ObjectStatusTypes)2))
+			continue;
+		AIUpdateInterface *ai = obj->getAIUpdateInterface();
+		if (!ai)
+			continue;
+		Coord3D pos;
+		pos.x = obj->m_position.x;
+		pos.y = obj->m_position.y;
+		pos.z = obj->m_position.z;
+		ai->m_command.aiGuardPosition(&pos, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
+	}
 }
