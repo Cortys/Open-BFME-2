@@ -16,6 +16,7 @@ class StringBase
 	friend class UnicodeString;
 public:
 	void set(const StringBase<T> &src);
+	void trim();
 private:
 	StringBase() : m_data(0) {}
 	StringBase(const StringBase<T> &that);
@@ -38,6 +39,7 @@ public:
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() { m_data.releaseBuffer(); }
 	UnicodeString &operator=(const UnicodeString &that) { m_data.set(that.m_data); return *this; }
+	void trim() { m_data.trim(); }
 private:
 	StringBase<wchar_t> m_data;
 };
@@ -52,6 +54,7 @@ class Rva0056EBA1
 {
 public:
 	bool rva0056EBA1(const UnicodeString &text);
+	UnicodeString rva0056EB15();
 private:
 	unsigned char m_pad[0xA4];
 	GameWindow *m_combo;
@@ -66,6 +69,16 @@ bool Rva0056EBA1::rva0056EBA1(const UnicodeString &text)
 		ok = true;
 	}
 	return ok;
+}
+
+UnicodeString Rva0056EBA1::rva0056EB15()
+{
+	UnicodeString tmp = UnicodeString::TheEmptyString;
+	if (m_combo != NULL) {
+		tmp = GadgetComboBoxGetText(m_combo);
+		tmp.trim();
+	}
+	return tmp;
 }
 
 // ?rva0056EA91@Rva0056EA91@@QAE?AVUnicodeString@@XZ retail 0x0056EA91 132B

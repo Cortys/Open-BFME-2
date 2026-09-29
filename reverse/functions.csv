@@ -41802,3 +41802,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00548753@Rva00548800@@QAE_NABV1@@Z,,0x00548753,59,Code/Libraries/Source/WWVegas/WWLib/Rva00548800Contains.cpp,matched,subset-check vector range via rowed find same class callers prove
 ?rva006E2460@AptCIH@@QBE_NPBV1@@Z,,0x006E2460,104,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,ancestor-code comparison via rowed rva006E0B80 chain lane
 ??_GRva00447B0E@@QAEPAXI@Z,,0x0044818B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-07-44818B.cpp,matched,chain deleting dtor via rowed dtor plus delete
+?rva0056EB15@Rva0056EBA1@@QAE?AVUnicodeString@@XZ,,0x0056EB15,140,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva0056EBA1.cpp,matched,ComboBox trimmed GetText same class EBA1
