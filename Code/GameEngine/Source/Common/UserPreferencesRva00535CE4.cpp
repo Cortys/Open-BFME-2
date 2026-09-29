@@ -54,6 +54,9 @@
 // ?rva00535F28@UserPreferences@@QAEHVAsciiString@@@Z @0x00535F28 74B
 // UserPreferences WorstLossStreak-getter path: append WorstLossStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat WorstLossStreak 0x00868EB4 slot 0x18 releaseBuffer gap same TU unlock.
+// ?rva0053595E@UserPreferences@@QAEXVAsciiString@@M@Z @0x0053595E 75B
+// UserPreferences LongestGameTime-setter path: append LongestGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
+// Evidence: concat LongestGameTime 0x00868E38 slot 0x28 releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -100,7 +103,7 @@ public:
 	virtual void v7();
 	virtual void v8();
 	virtual void v9();
-	virtual void v10();
+	virtual void v10(const AsciiString &s, float x);
 	virtual void v11(const AsciiString &s, int x);
 	int rva00535CE4(AsciiString arg);
 	void rva0053587C(AsciiString arg, int x);
@@ -119,6 +122,7 @@ public:
 	int rva00535E06(AsciiString arg);
 	int rva00535E97(AsciiString arg);
 	int rva00535F28(AsciiString arg);
+	void rva0053595E(AsciiString arg, float x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -234,4 +238,10 @@ int UserPreferences::rva00535F28(AsciiString arg)
 	arg.concat("WorstLossStreak");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+void UserPreferences::rva0053595E(AsciiString arg, float x)
+{
+	arg.concat("LongestGameTime");
+	v10(arg, x);
 }
