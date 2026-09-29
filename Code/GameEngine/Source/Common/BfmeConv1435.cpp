@@ -121,6 +121,7 @@ public:
 	void bfmeTickVM0();
 	void rva0025C46E();
 	void rva0025D9CB(bool flag);
+	void rva0025D10F();
 	char m_pad04[0x34];
 	BfmeVM0Timer *m_timer;
 	char m_pad3C[0x4];
@@ -188,5 +189,14 @@ void BfmeStrVM0::rva0025D9CB(bool flag)
 	if (flag)
 		bfmeGoVM0(5);
 	else
+		rva0025C46E();
+}
+
+// ?rva0025D10F@BfmeStrVM0@@QAEXXZ retail 0x0025D10F 25B.
+// Predicate-guarded mutex release: tail-jumps to rva0025C46E when the slot
+// 0x114 predicate (bfmePredVM0) is true. Caller at 0x0025D1B3, same class.
+void BfmeStrVM0::rva0025D10F()
+{
+	if (bfmePredVM0())
 		rva0025C46E();
 }
