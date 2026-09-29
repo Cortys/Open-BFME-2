@@ -81,7 +81,11 @@ Rva005D5A7E *Rva005D5C61Median(Rva005D5A7E *a, Rva005D5A7E *b, Rva005D5A7E *c, i
 }
 
 struct BfmeE12 { float x, y, z; };
-namespace _STL { template <class _Tp> void swap(_Tp &a, _Tp &b); }
+namespace _STL {
+template <class _Tp> void swap(_Tp &a, _Tp &b);
+template <class _InputIter, class _OutputIter>
+_OutputIter copy_backward(_InputIter first, _InputIter last, _OutputIter result);
+}
 
 Rva005D5A7E *Rva005D5CBFPartition(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E pivot)
 {
@@ -95,5 +99,18 @@ Rva005D5A7E *Rva005D5CBFPartition(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D
 			return first;
 		_STL::swap(*(BfmeE12 *)first, *(BfmeE12 *)last);
 		++first;
+	}
+}
+
+// ?Rva005D5DA5Guarded@@YAXPAVRva005D5A7E@@0V1@H@Z @0x005D5DA5 75B.
+// Guarded linear insert: if val precedes *first shift via copy_backward else unguarded insert.
+// Evidence: callees rowed 0x005D5A7E 0x0051C94D 0x005D5B21; caller 0x005D63FA; neighbours share /O1 /MD.
+void Rva005D5DA5Guarded(Rva005D5A7E *first, Rva005D5A7E *last, Rva005D5A7E val, int comp)
+{
+	if (val.rva005D5A7E(*first)) {
+		_STL::copy_backward((BfmeE12 *)first, (BfmeE12 *)last, (BfmeE12 *)(last + 1));
+		*first = val;
+	} else {
+		Rva005D5B21Insert(last, val, comp);
 	}
 }
