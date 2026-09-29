@@ -27,11 +27,14 @@ public:
 	void rva004EE072(const class Rva004E06FBPtrChase32Field *a, int b);
 	void rva004EE0A6(int a, int b);
 	int rva004EE057(int i);
+	int rva004EE016();
 private:
 	char m_pad[0x5C];
 	int m_5C;
 	int m_60;
-	char m_low[0x10];
+	char m_low0[0x08];
+	int m_6C;
+	int m_70;
 	unsigned m_74;
 	int m_78;
 	char m_mid0[0x04];
@@ -76,4 +79,11 @@ int Rva004EE037::rva004EE057(int i)
 	if (i < 0 || (unsigned)i >= 5)
 		return 0;
 	return m_80[i];
+}
+
+int Rva004EE037::rva004EE016()
+{
+	if (m_70 != 0)
+		return time(0) + m_6C - m_70;
+	return m_6C;
 }
