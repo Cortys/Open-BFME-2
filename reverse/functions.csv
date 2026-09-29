@@ -41052,3 +41052,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva004E13EB@@QAE@XZ,,0x004E13EB,43,Code/GameEngine/Source/Common/Rva004E13EBCtor.cpp,matched,unlock ctor vtable 0x008618CC zero floats caller 0x004E1439
 ?rva00330F7D@RadiusDecal@@QAEXPAVXfer@@@Z,,0x00330F7D,27,Code/GameEngine/Source/GameLogic/Object/Update/RadiusDecal_rva00330F7D.cpp,matched,unlock RadiusDecal clear if Xfer IsLoading caller 0x003915D2
 ??1Rva004FF2F4@@QAE@XZ,,0x004FF2F4,8,Code/GameEngine/Source/Common/Rva004FF2F4Dtor.cpp,matched,tail dtor via base
+?rva0030BAA0@Rva0030BAA0@@QAEXHABUBfmeE8@@@Z,,0x0030BAA0,56,Code/GameEngine/Source/Common/Rva0030BAA0Set.cpp,matched,holder set via push for append else copy plus flag
