@@ -41156,3 +41156,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003BD412Set@@YGXE@Z,,0x003BD412,13,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,free forwarder to rowed Rva004E432ASet via stdcall
 ??$_M_allocate_and_copy@PAVRva000BB491@@@?$vector@VRva000BB491@@V?$allocator@VRva000BB491@@@_STL@@@_STL@@IAEPAVRva000BB491@@IPAV2@0@Z,,0x000BC6A4,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb491_allocate_copy.cpp,matched,chain from 0x000BBAC7 plus caller 0x000C20C1 plus allocator fold
 ?Rva0027DA58@Rva0062AF7@@QAEXXZ,,0x0027DA58,18,Code/GameEngine/Source/Common/Rva0062AF7Rva0027D815.cpp,matched,follows 0x27D960 same TU array delete at 0x24
+?rva0029B732@Rva0029B732@@QAE_NXZ,,0x0029B732,24,Code/GameEngine/Source/GameClient/Rva0029B732Check.cpp,matched,null-guarded word gt0 callers 0x2A4C3A
