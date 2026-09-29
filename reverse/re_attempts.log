@@ -2820,3 +2820,4 @@ FUN_00985B1E	0x00585B1E	109	blocked	tried _M_push_back_aux_v got 90B vs 109B dup
 ?Rva004E43F2Find@@YAHH@Z	0x004E43F2	84	partial	push ebp-esi order plus sar-xor scheduling plus jle-jl latch vs jge-jmp t=20 model=muse-03 score=0.91 stash=reverse/attempts/0x004e43f2.cpp
 FUN_00611f50	0x00211F50	29	blocked	passes 5 args to 3-arg rowed 0x00211EAA copy needs arity disambiguation t=10 model=muse-09
 ??0Made002CC8A4@@QAE@XZ	0x0050A39B	263	partial	two movss +0x150/+0x144 swapped all else exact 263B/58insns structural 0 t=25 model=muse-04 score=0.97 stash=reverse/attempts/0x0050a39b.cpp
+FUN_008fabe2	0x004FABE2	63	blocked	EH destroy-plus-free needs EH_prolog handler 0x793432: plain dtor 30B no EH vs empty-base 70B extra base call plus eax-vs-esi wall t=20 model=muse-10
