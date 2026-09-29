@@ -42013,3 +42013,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003C89D1Guard@@YGXPAVParameter@@0@Z,,0x003C89D1,68,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C89D1Guard.cpp,matched,leaf guard via getUnitNamed plus rva0036F4DF
 ?Rva003248F5Show@@YAXPAVGameWindow@@_N@Z,,0x003248F5,115,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,listbox children visibility sync unlock same TU
 ??$_Destroy@PAVRva001EC349@@@_STL@@YAXPAVRva001EC349@@0@Z,,0x001ECFC6,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva001ec349_destroy.cpp,matched,range destroy stride 0x24 via rowed dtor
+??1?$vector@VRva001EC349@@V?$allocator@VRva001EC349@@@_STL@@@_STL@@QAE@XZ,,0x001ECFDF,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy plus free
