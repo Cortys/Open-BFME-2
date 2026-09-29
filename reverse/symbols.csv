@@ -6260,3 +6260,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?get_allocator@?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QBE?AV?$allocator@UBfmeE16@@@2@XZ,0x0021983A,ICF twin of AsciiString get_allocator via call site 0x0052CE20
 ?rva002CFA4E@Rva002CFCEE@@QAEPAURva002CFA4ENode@@PBU2@@Z,0x002CFA4E,thiscall twin of rowed stdcall clone same 30B body ignores this via call site 0x002CFD2B reloads ecx
 ?Rva00441DBFPop@@YAXPAPAX00PAXVRva0043FE9A@@H@Z,0x00441DBF,twin of rowed Pop with dummy for 7-push callers 0x00441E44 0x00443018 mirrors Rva005B64B5Pop
+??1Rva006F84C0@@UAE@XZ,0x006F8460,twin of rowed ??1Rva006F8460 for pooled deleting dtor 0x006F84C0 size 0x1C
