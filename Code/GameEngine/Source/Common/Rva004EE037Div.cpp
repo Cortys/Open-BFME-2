@@ -18,14 +18,19 @@ public:
 	int m_FC;
 };
 #define TheThing (*(Rva00DFEF10 *const *)0x00DFEF10)
+extern "C" __declspec(dllimport) long __cdecl time(long *value);
 class Rva004EE037
 {
 public:
 	unsigned rva004EE037();
 	int rva004EE043();
 	void rva004EE072(const class Rva004E06FBPtrChase32Field *a, int b);
+	void rva004EE0A6(int a, int b);
 private:
-	char m_pad[0x74];
+	char m_pad[0x5C];
+	int m_5C;
+	int m_60;
+	char m_low[0x10];
 	unsigned m_74;
 	int m_78;
 	char m_mid[0x10];
@@ -55,4 +60,13 @@ void Rva004EE037::rva004EE072(const Rva004E06FBPtrChase32Field *a, int b)
 		++m_8C;
 	if (b == m_EC)
 		++m_90;
+}
+
+void Rva004EE037::rva004EE0A6(int a, int b)
+{
+	if (m_60 == 0)
+		return;
+	int now = time(0);
+	m_5C += now - m_60;
+	m_60 = 0;
 }
