@@ -41066,3 +41066,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002493BC@LANAPI@@UAEXHVUnicodeString@@@Z,,0x002493BC,116,Code/GameEngine/Source/GameNetwork/LANAPIRva002493BC.cpp,matched,chain LANAPI slot35 address match plus slot14 slot26 plus enable
 ?rva005386B7@Rva005386B7@@QAEXPAU1@@Z,,0x005386B7,62,Code/GameEngine/Source/Common/Rva005386B7Swap.cpp,matched,swap holder via vector Region float byte
 ??1Rva00538F61@@QAE@XZ,,0x00538F61,10,Code/GameEngine/Source/Common/Rva00538F61Dtor.cpp,matched,dtor freeing ptr at 4 via free
+?rva002AA292@Rva002AA292@@QBE_NPBH@Z,,0x002AA292,41,Code/GameEngine/Source/Common/RTS/Rva002AA292Check.cpp,matched,32-way bitmask subset check
