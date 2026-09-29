@@ -2796,3 +2796,6 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?Rva005A9146Insert@@YAXPAUE8@@U1@@Z	0x005A9146	50	blocked	insertion eax ecx swap plus branch polarity t=8 model=muse-02
 ?rva00323674@Rva00323674@@QBEHXZ	0x00323674	44	partial	43B vs 44B push mem vs mov plus push for m_8 tried named listWin O1 t=10 model=muse-01 score=0.95 stash=reverse/attempts/0x00323674.cpp
 ?Rva004582F3Find@@YAXPAUOwner004582F3@@@Z	0x004582F3	41	partial	40B vs 41B shared early ret vs separate push after check tried O1 default t=10 model=muse-01 score=0.95 stash=reverse/attempts/0x004582f3.cpp
+?rva000C4DBC@Rva000C4DBC@@QAEPAURva000C24EA@@PAU2@0@Z	0x000C4DBC	51	blocked	erase shape via vector plus copy_ptrs plus Destroy probe 54B vs 51B 2 regions tag-at-ebp+b needs 4.6-style plus custom Destroy 0xBDCEF vs same-type t=15 model=muse-05
+??1Rva000C1BE1@@QAE@XZ	0x000C1BE1	63	blocked	EH vector-like dtor via 0xBDD08 plus free needs __EH_prolog plus states; custom 2-ptr with EHs EHsc GX all give 30B frameless; needs unwind member or base without extra call t=18 model=muse-05
+?rva000C4D52@Rva000C4D52@@QAEPAVRva000C24EA@@PAV2@@Z	0x000C4D52	55	blocked	single erase via 4-arg copy_ptrs plus single pair dtor 0x796BC mixes string copy PBV with pair dtor needs ICF alias plus 32B pair-plus-string element t=20 model=muse-05
