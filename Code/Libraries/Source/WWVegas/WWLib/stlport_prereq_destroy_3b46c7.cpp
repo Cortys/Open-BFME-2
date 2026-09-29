@@ -25,3 +25,22 @@ void Rva003B46C7Destroy(ProductionPrerequisite::PrereqUnitRec *first, Production
 	for (; first != last; ++first)
 		first->~PrereqUnitRec();
 }
+
+extern "C" void __cdecl free(void *block);
+
+class Rva003B6846Vec
+{
+public:
+	void rva003B6846();
+private:
+	ProductionPrerequisite::PrereqUnitRec *m_start;
+	ProductionPrerequisite::PrereqUnitRec *m_finish;
+};
+
+// ?rva003B6846@Rva003B6846Vec@@QAEXXZ @0x003B6846 30B chain via 0x003B46C7 destroy plus _free callers 0x003B68A8 0x003B72F5
+void Rva003B6846Vec::rva003B6846()
+{
+	Rva003B46C7Destroy(m_start, m_finish);
+	if (m_start)
+		free(m_start);
+}

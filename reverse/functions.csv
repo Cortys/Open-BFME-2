@@ -41379,3 +41379,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?friend_makeVeterancyUpgrade@UpgradeTemplate@@QAEXW4VeterancyLevel@@@Z,,0x0026F1A5,113,Code/GameEngine/Source/Common/System/Rva0026F1A5Veterancy.cpp,matched,ZH Upgrade donor via getVet nameToKey
 ??1Rva00201B64@@QAE@XZ,,0x00201B64,108,Code/GameEngine/Source/Common/Rva00201B64HolderDtor.cpp,matched,holder dtor list int erase plus Owner delete EHs
 ?rva002CF807@Rva002CF807@@QAEXXZ,,0x002CF807,41,Code/Libraries/Source/WWVegas/WWLib/Rva002CF807Clear.cpp,matched,same 41B clear shape as rowed 0x002CF7DE via rowed erase 0x002CF32F
+?rva003B6846@Rva003B6846Vec@@QAEXXZ,,0x003B6846,30,Code/Libraries/Source/WWVegas/WWLib/stlport_prereq_destroy_3b46c7.cpp,matched,chain via 0x003B46C7 destroy plus _free callers 0x003B68A8 0x003B72F5
