@@ -23,6 +23,7 @@ class Rva006E34D0
 {
 public:
 	void rva006E34D0(int v);
+	void rva006E3580(int a, int b);
 private:
 	char m_pad0[0x3C];
 	int m_count;
@@ -46,4 +47,15 @@ void Rva006E34D0::rva006E34D0(int v)
 		r.b = v;
 		(*G_Send)(&r, 8);
 	}
+}
+
+// ?rva006E3580@Rva006E34D0@@QAEXHH@Z @0x006E3580 31B chain lane.
+// Two-arg packer into the same bounded buffer: v = ((a << 15) | (b & 0x7FFF))
+// << 2, appended via rva006E34D0 with ecx passed through (caller 0x006CC950
+// supplies this the same way as for 0x006E3530).
+void Rva006E34D0::rva006E3580(int a, int b)
+{
+	int v = (a << 15) | (b & 0x7FFF);
+	v <<= 2;
+	rva006E34D0(v);
 }

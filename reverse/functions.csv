@@ -41788,3 +41788,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva005D5828@@QAE@XZ,,0x005D5828,20,Code/GameEngine/Source/Common/Rva005D583CCtor.cpp,matched,chain ctor passes 0 to base 0x005D57D3 then vtable
 ?rva0056EA91@Rva0056EA91@@QAE?AVUnicodeString@@XZ,,0x0056EA91,132,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva0056EBA1.cpp,matched,ComboBox GetText wrapper via empty set return sibling EBA1
 ?rva0070AB30@AptNativeHash@@QAEXXZ,,0x0070AB30,130,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash alloc entries via pool zeroed
+?rva006E3580@Rva006E34D0@@QAEXHH@Z,,0x006E3580,31,Code/Libraries/Source/Apt/Rva006E34D0.cpp,matched,chain lane Apt two-arg packer via rva006E34D0

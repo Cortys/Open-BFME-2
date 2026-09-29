@@ -3053,3 +3053,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva005FD9BB@Rva005FD9BB@@QAEXHABVUnicodeString@@@Z	0x005FD9BB	68	blocked	same wall as 0x005FD978 ebp-frame imul-0x18 esi-edi allocation t=3 model=muse-spark
 ??1Rva0040AFF3@@QAE@XZ	0x0040AFF3	117	partial	EH states off by one 3-vs-4 missing mov-0 t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x0040aff3.cpp
 ?rva0035CDDF@Rva0035CDDF@@QAEHH@Z	0x0035CDDF	115	blocked	STL list FXBoneInfo assign plus erase insert needs stlport list operator pattern t=12 model=muse-11
+?rva006E3530@Rva006E34D0@@QAEXHHH@Z	0x006E3530	77	blocked	tag-pack with per-arm a-shift-or plus duplicated push-call tails; O2 O1 Os all head-merge common prefix above branch and tail-share call via jmp; O2 Og- spills through ebp; need enregistered no-motion mode t=30 model=muse-09
