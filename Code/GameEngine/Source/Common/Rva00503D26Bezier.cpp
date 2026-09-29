@@ -23,3 +23,12 @@ float Rva00503DEB::rva00503DEB()
 {
 	return Rva00503D26Evaluate(g_Va007C26F0, g_Va00863BF8, 1.0f, m_10);
 }
+float __cdecl Rva00503D4ECubic(float a, float b, float c, float d, float t);
+float __cdecl Rva00503D4ECubic(float a, float b, float c, float d, float t)
+{
+	float u = 1 - t;
+	float s = a * u + b * t * 3.0f;
+	s = s * u + c * t * t * 3.0f;
+	s = s * u + d * t * t * t;
+	return s;
+}
