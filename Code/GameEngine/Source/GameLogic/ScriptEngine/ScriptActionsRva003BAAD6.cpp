@@ -125,6 +125,7 @@ public:
 
 #define Rva00DFEA3C (*(Rva003BAAD6Holder **)0x00DFEA3C)
 #define Rva00DFEDF0 (*(Rva003BAAD6Holder **)0x00DFEDF0)
+#define Rva00DFE6E8 (*(Rva003BAAD6Holder **)0x00DFE6E8)
 
 void Rva003BAAD6()
 {
@@ -175,4 +176,12 @@ void Rva003BBF8F()
 void Rva003BBFA0()
 {
 	Rva00DFEDF0->s037(true);
+}
+
+// ?Rva003BB641@@YAXXZ @0x003BB641 19B null-guarded forwarder to vslot 0x16C via global 0xDFE6E8 caller 0x003CE42B
+void Rva003BB641()
+{
+	Rva003BAAD6Holder *p = Rva00DFE6E8;
+	if (p)
+		p->s091();
 }
