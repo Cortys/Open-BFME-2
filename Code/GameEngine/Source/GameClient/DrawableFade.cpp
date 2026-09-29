@@ -31,11 +31,18 @@ public:
 
 #define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
 
+class Rva002716Holder
+{
+public:
+	void rva00271601(unsigned char v);
+};
+
 class Drawable
 {
 public:
 	void fadeIn(unsigned int frames);
 	void fadeOut(unsigned int frames);
+	void rva00272D77(unsigned int a, unsigned int b);
 
 private:
 	unsigned char m_pad00[0xB0];
@@ -44,7 +51,8 @@ private:
 	int m_fadeMode; // +0x128
 	int m_timeElapsedFade; // +0x12C
 	int m_timeToFade; // +0x130
-	unsigned char m_pad134[0x37C - 0x134];
+	int m_134; // +0x134
+	unsigned char m_pad138[0x37C - 0x138];
 	int m_fadeStartFrame; // +0x37C
 };
 
@@ -77,5 +85,16 @@ void Drawable::fadeOut(unsigned int frames)
 	m_timeElapsedFade = 0;
 	m_explicitOpacity = opacity;
 	m_timeToFade = frames;
+	m_fadeStartFrame = TheRva00DFE77C->slot1F();
+}
+// @0x00272D77 (68B): third fade mode 5 setter; holder call with 1 then elapsed 0
+// toFade a plus field +0x134 b plus start frame via holder slot1F. Caller 0x0045BEA0.
+void Drawable::rva00272D77(unsigned int a, unsigned int b)
+{
+	((Rva002716Holder *)this)->rva00271601(1);
+	m_timeElapsedFade = 0;
+	m_timeToFade = a;
+	m_fadeMode = 5;
+	m_134 = b;
 	m_fadeStartFrame = TheRva00DFE77C->slot1F();
 }
