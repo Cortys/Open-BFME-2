@@ -41439,3 +41439,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0025C46E@BfmeStrVM0@@QAEXXZ,,0x0025C46E,54,Code/GameEngine/Source/Common/BfmeConv1435.cpp,matched,mutex release via m_firstMutex +0x40 m_secondMutex +0x44 callers 0x0025D9DB 0x0025D121 same this
 ?setWidth@Display@@UAEXI@Z,,0x0025C391,25,Code/GameEngine/Source/GameClient/DisplaySetHeight.cpp,matched,width twin of setHeight storing at +0x10 BFME1 Display.h donor gap before 0x0025C46E
 ??0Rva004D9B18@@QAE@ABEI@Z,,0x004D9B18,51,Code/GameEngine/Source/Common/Rva004D9B18Ctor.cpp,matched,chain derived of 0x004D9A8B plus 0 plus byte plus head init unblocks 0x004DA329
+?Rva004D933BIs@@YA_NH@Z,,0x004D933B,39,Code/GameEngine/Source/Common/Rva004D933BPred.cpp,matched,unlock cdecl predicate 0x7E6 0x7E7 0x7EC 0x7E8 caller uses al
