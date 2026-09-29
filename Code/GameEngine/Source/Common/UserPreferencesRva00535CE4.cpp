@@ -63,6 +63,9 @@
 // ?rva00536D39@UserPreferences@@QAEHVAsciiString@@@Z @0x00536D39 74B
 // UserPreferences BattlesWonRTS-getter path: append BattlesWonRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat BattlesWonRTS 0x00869094 slot 0x18 releaseBuffer gap same TU.
+// ?rva00536D83@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536D83 71B
+// UserPreferences BattlesLostAutoResolve-void path: append BattlesLostAutoResolve slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat BattlesLostAutoResolve 0x008690A4 slot 0x2C releaseBuffer gap same TU.
 // ?rva00535D75@UserPreferences@@QAEHVAsciiString@@@Z @0x00535D75 74B
 // UserPreferences WinStreak-getter path: append WinStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat WinStreak 0x00868E8C slot 0x18 releaseBuffer gap same TU unlock.
@@ -164,6 +167,7 @@ public:
 	int rva00536CA8(AsciiString arg);
 	void rva00536CF2(AsciiString arg, int x);
 	int rva00536D39(AsciiString arg);
+	void rva00536D83(AsciiString arg, int x);
 	int rva00535D75(AsciiString arg);
 	int rva00535E06(AsciiString arg);
 	int rva00535E97(AsciiString arg);
@@ -311,6 +315,12 @@ int UserPreferences::rva00536D39(AsciiString arg)
 	arg.concat("BattlesWonRTS");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+void UserPreferences::rva00536D83(AsciiString arg, int x)
+{
+	arg.concat("BattlesLostAutoResolve");
+	v11(arg, x);
 }
 
 int UserPreferences::rva00535D75(AsciiString arg)
