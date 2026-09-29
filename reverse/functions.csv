@@ -42008,3 +42008,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__unguarded_partition@PAVRva0021915B@@V1@URva0021B753@@@_STL@@YAPAVRva0021915B@@PAV1@0V1@URva0021B753@@@Z,,0x0021C6CB,107,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva0021915B.cpp,matched,chain partition via rowed comparator 0x0021B753 and swap 0x0021ACB9
 ?rva001DBCC0@Rva001DBC77@@QAEPAXI@Z,,0x001DBCC0,28,Code/GameEngine/Source/GameLogic/Object/Rva001DBCC0Delete.cpp,matched,chain of landed 0x001DBC77 plus rowed delete
 ??1Rva001DB60F@@UAE@XZ,,0x001DB60F,91,Code/GameEngine/Source/Common/Rva001DB60FDtor.cpp,matched,vtable plus MetaMapRec list clear plus rowed base dtor
+??1Rva001EC349@@QAE@XZ,,0x001EC349,108,Code/Libraries/Source/WWVegas/WWLib/Rva001EC349Dtor.cpp,matched,dtor vector plus ref plus strings via rowed dtors
