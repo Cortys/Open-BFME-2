@@ -38,6 +38,7 @@ public:
     int rva006E02B0() const;
     int rva006E0260() const;
     int rva006E0300() const;
+    int rva006E0350() const;
 };
 
 class Rva006DBB30SarDwordField
@@ -416,6 +417,22 @@ int BfmeAptValue006DCD20::rva006E0300() const
         if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
     }
     if (((const Rva006DBB30SarDwordField *)this)->get() == 16 && !isUndefined())
+        return 1;
+    return 0;
+}
+
+// ?rva006E0350@BfmeAptValue006DCD20@@QBEHXZ, retail 0x006E0350, 75 bytes.
+// Predicate for type 17, "this" assert at AptCIH.h:206 (0xCE) via the same
+// file string at 0x008E8C60 as isCharacterInst. Evidence: rowed
+// get@Rva006DBB30SarDwordField equals 0x11 plus !isUndefined via rowed
+// isUndefined; 4 callers; same /O2 shape as rva006E0300 sibling.
+int BfmeAptValue006DCD20::rva006E0350() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xCE);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() == 17 && !isUndefined())
         return 1;
     return 0;
 }
