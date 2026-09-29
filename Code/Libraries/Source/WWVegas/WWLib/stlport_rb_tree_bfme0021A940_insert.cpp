@@ -15,3 +15,4 @@ public:
 };
 }
 template _STL::pair<UBfmeStringRecord0021A940SetTree::iterator, bool> UBfmeStringRecord0021A940SetTree::insert_unique(const UBfmeStringRecord0021A940SetTree::value_type &);
+template UBfmeStringRecord0021A940SetTree::iterator UBfmeStringRecord0021A940SetTree::insert_unique(UBfmeStringRecord0021A940SetTree::iterator, const UBfmeStringRecord0021A940SetTree::value_type &);
