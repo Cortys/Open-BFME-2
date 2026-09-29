@@ -42411,3 +42411,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva003C3A79Partition@@YAPAPAURva003BD485Keyed@@PAPAU1@0PAU1@H@Z,,0x003C3A79,55,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,unlock lane caller 0x003CA2EB quicksort partition
 ??1Rva005D3731@@QAE@XZ,,0x005D3731,69,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,chain dtor via rowed 0x005242D7 and releaseBuffers
 ?Rva0021D993PartialSortWrap@@YAXPAPAX00P6A_NPAX1@Z@Z,,0x0021D993,27,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort wrapper twin via rowed 0x0021D31C
+??1Rva002B5558@@QAE@XZ,,0x002B609F,56,Code/GameEngine/Source/Common/Rva002B5558Dtor.cpp,matched,chain via rowed clear 0x002B5558 and free 0x00030830 same 56B shape as 0x001FD6BC
