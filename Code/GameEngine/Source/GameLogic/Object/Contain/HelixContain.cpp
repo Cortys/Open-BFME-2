@@ -60,6 +60,7 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?HelixContainModuleData::HelixContainModuleData present-unmatched
 HelixContainModuleData::HelixContainModuleData()
 {
 //	m_initialPayload.count = 0;
@@ -69,6 +70,7 @@ HelixContainModuleData::HelixContainModuleData()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?HelixContainModuleData::buildFieldParse present-unmatched
 void HelixContainModuleData::buildFieldParse(MultiIniFieldParse& p)
 {
   TransportContainModuleData::buildFieldParse(p);
@@ -97,6 +99,7 @@ void HelixContainModuleData::buildFieldParse(MultiIniFieldParse& p)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::HelixContain present-unmatched
 HelixContain::HelixContain( Thing *thing, const ModuleData *moduleData ) : 
 								 TransportContain( thing, moduleData )
 {
@@ -108,12 +111,14 @@ HelixContain::HelixContain( Thing *thing, const ModuleData *moduleData ) :
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::~HelixContain present-unmatched
 HelixContain::~HelixContain( void )
 {
 
 }
 
 
+// ?HelixContain::onObjectCreated present-unmatched
 void HelixContain::onObjectCreated( void )
 {
   HelixContain::createPayload();
@@ -123,6 +128,7 @@ void HelixContain::onObjectCreated( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::update present-unmatched
 UpdateSleepTime HelixContain::update()
 {
 
@@ -133,10 +139,12 @@ UpdateSleepTime HelixContain::update()
     portable->setOrientation( getObject()->getOrientation());
   }
 
+// ?TransportContain::update present-unmatched
   return TransportContain::update(); // extend base
 }
 
 
+// ?HelixContain::redeployOccupants present-unmatched
 void HelixContain::redeployOccupants( void )
 {
   Coord3D firePos = *getObject()->getPosition();
@@ -154,6 +162,7 @@ void HelixContain::redeployOccupants( void )
 
 //-------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::createPayload present-unmatched
 void HelixContain::createPayload()
 {
 	HelixContainModuleData* self = (HelixContainModuleData*)getHelixContainModuleData();
@@ -199,6 +208,7 @@ void HelixContain::createPayload()
 
 // ------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::onBodyDamageStateChange present-unmatched
 void HelixContain::onBodyDamageStateChange( const DamageInfo* damageInfo, 
 																				BodyDamageType oldState, 
 																				BodyDamageType newState)  ///< state change callback
@@ -214,6 +224,7 @@ void HelixContain::onBodyDamageStateChange( const DamageInfo* damageInfo,
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::getPortableStructure present-unmatched
 Object* HelixContain::getPortableStructure( void )
 {
   return TheGameLogic->findObjectByID( m_portableStructureID );
@@ -222,16 +233,19 @@ Object* HelixContain::getPortableStructure( void )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::onDie present-unmatched
 void HelixContain::onDie( const DamageInfo *damageInfo )
 {
   Object *portable = getPortableStructure();
   if ( portable )
     portable->kill();
 
+// ?TransportContain::onDie present-unmatched
 	TransportContain::onDie( damageInfo );//extend base class
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::onDelete present-unmatched
 void HelixContain::onDelete( void )
 {
   Object *portable = getPortableStructure();
@@ -242,6 +256,7 @@ void HelixContain::onDelete( void )
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::onCapture present-unmatched
 void HelixContain::onCapture( Player *oldOwner, Player *newOwner )
 {
 //  Need to setteam() the portable structure, that's all;
@@ -251,6 +266,7 @@ void HelixContain::onCapture( Player *oldOwner, Player *newOwner )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::addToContainList present-unmatched
 void HelixContain::addToContainList( Object *obj )
 {
   if ( obj->isKindOf( KINDOF_PORTABLE_STRUCTURE ) && m_portableStructureID == INVALID_ID)  
@@ -269,6 +285,7 @@ void HelixContain::addToContainList( Object *obj )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::addToContain present-unmatched
 void HelixContain::addToContain( Object *obj )
 {
   if ( obj->isKindOf( KINDOF_PORTABLE_STRUCTURE ) && m_portableStructureID == INVALID_ID)  
@@ -287,6 +304,7 @@ void HelixContain::addToContain( Object *obj )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::removeFromContain present-unmatched
 void HelixContain::removeFromContain( Object *obj, Bool exposeStealthUnits )
 {
   if ( obj->isKindOf( KINDOF_PORTABLE_STRUCTURE ) && obj->getID() == m_portableStructureID )  
@@ -306,6 +324,7 @@ void HelixContain::removeFromContain( Object *obj, Bool exposeStealthUnits )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::isValidContainerFor present-unmatched
 Bool HelixContain::isValidContainerFor(const Object* obj, Bool checkCapacity) const
 {
   if ( obj->isKindOf( KINDOF_PORTABLE_STRUCTURE ) && INVALID_ID == m_portableStructureID )  
@@ -316,6 +335,7 @@ Bool HelixContain::isValidContainerFor(const Object* obj, Bool checkCapacity) co
 
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::friend_getRider present-unmatched
 const Object *HelixContain::friend_getRider() const
 {
 // The draw order dependency bug for riders means that our draw module needs to cheat to get around it.	
@@ -330,6 +350,7 @@ const Object *HelixContain::friend_getRider() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::isEnclosingContainerFor present-unmatched
 Bool HelixContain::isEnclosingContainerFor( const Object *obj ) const
 {
   if ( m_portableStructureID == obj->getID() )
@@ -348,6 +369,7 @@ Bool HelixContain::isEnclosingContainerFor( const Object *obj ) const
 //-------------------------------------------------------------------------------------------------
 // if my object gets selected, then my visible passengers should, too
 // this gets called from
+// ?HelixContain::clientVisibleContainedFlashAsSelected present-unmatched
 void HelixContain::clientVisibleContainedFlashAsSelected()
 {
   if ( m_portableStructureID != INVALID_ID)
@@ -365,6 +387,7 @@ void HelixContain::clientVisibleContainedFlashAsSelected()
 }
 
 
+// ?HelixContain::isPassengerAllowedToFire present-unmatched
 Bool HelixContain::isPassengerAllowedToFire( ObjectID id ) const
 {
   // WHETHER WE ARE ALLOWED TO FIRE DEPENDS ON WHO WE ARE
@@ -380,6 +403,7 @@ Bool HelixContain::isPassengerAllowedToFire( ObjectID id ) const
   {
     const Object *rider = TheGameLogic->findObjectByID( id );
     if ( rider && rider->isKindOf( KINDOF_INFANTRY ))
+// ?TransportContain::isPassengerAllowedToFire present-unmatched
       return TransportContain::isPassengerAllowedToFire( id );//extend
   }
 
@@ -393,6 +417,7 @@ Bool HelixContain::isPassengerAllowedToFire( ObjectID id ) const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?HelixContain::onContaining present-unmatched
 void HelixContain::onContaining( Object *obj, Bool wasSelected )
 {
 	// extend base class
@@ -420,6 +445,7 @@ void HelixContain::onContaining( Object *obj, Bool wasSelected )
 
 }  // end onContaining
 
+// ?HelixContain::onRemoving present-unmatched
 void HelixContain::onRemoving( Object *obj )
 {
 	// extend base class
@@ -443,6 +469,7 @@ void HelixContain::onRemoving( Object *obj )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::crc present-unmatched
 void HelixContain::crc( Xfer *xfer )
 {
 
@@ -456,6 +483,7 @@ void HelixContain::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::xfer present-unmatched
 void HelixContain::xfer( Xfer *xfer )
 {
 
@@ -476,6 +504,7 @@ void HelixContain::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?HelixContain::loadPostProcess present-unmatched
 void HelixContain::loadPostProcess( void )
 {
 

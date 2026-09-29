@@ -272,6 +272,7 @@ BoxRenderObjClass & BoxRenderObjClass::operator = (const BoxRenderObjClass & tha
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::Get_Num_Polys present-unmatched
 int BoxRenderObjClass::Get_Num_Polys(void) const
 {
 	return 12;
@@ -290,6 +291,7 @@ int BoxRenderObjClass::Get_Num_Polys(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::Get_Name present-unmatched
 const char * BoxRenderObjClass::Get_Name(void) const
 {
 	return Name;
@@ -328,6 +330,7 @@ void BoxRenderObjClass::Set_Name(const char * name)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::Set_Color present-unmatched
 void BoxRenderObjClass::Set_Color(const Vector3 & color)
 {
 	Color = color;
@@ -409,6 +412,7 @@ void BoxRenderObjClass::Shutdown(void)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::Set_Box_Display_Mask present-unmatched
 void BoxRenderObjClass::Set_Box_Display_Mask(int mask)
 {
 	DisplayMask = mask;
@@ -427,6 +431,7 @@ void BoxRenderObjClass::Set_Box_Display_Mask(int mask)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::Get_Box_Display_Mask present-unmatched
 int BoxRenderObjClass::Get_Box_Display_Mask(void)
 {
 	return DisplayMask;
@@ -445,6 +450,7 @@ int BoxRenderObjClass::Get_Box_Display_Mask(void)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::render_box present-unmatched
 void BoxRenderObjClass::render_box(RenderInfoClass & rinfo,const Vector3 & center,const Vector3 & extent)
 {
 	if (!IsInitted) return;
@@ -537,6 +543,7 @@ void BoxRenderObjClass::render_box(RenderInfoClass & rinfo,const Vector3 & cente
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?BoxRenderObjClass::vis_render_box present-unmatched
 void BoxRenderObjClass::vis_render_box(SpecialRenderInfoClass & rinfo,const Vector3 & center,const Vector3 & extent)
 {
 	if (!IsInitted) return;
@@ -686,6 +693,7 @@ RenderObjClass * AABoxRenderObjClass::Clone(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Class_ID present-unmatched
 int AABoxRenderObjClass::Class_ID(void) const
 {
 	return RenderObjClass::CLASSID_AABOX;
@@ -704,6 +712,7 @@ int AABoxRenderObjClass::Class_ID(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Render present-unmatched
 void AABoxRenderObjClass::Render(RenderInfoClass & rinfo)
 {
 	Matrix3D temp(1);
@@ -725,6 +734,7 @@ void AABoxRenderObjClass::Render(RenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Special_Render present-unmatched
 void AABoxRenderObjClass::Special_Render(SpecialRenderInfoClass & rinfo)
 {
 	if (rinfo.RenderType == SpecialRenderInfoClass::RENDER_VIS) {
@@ -832,6 +842,7 @@ bool AABoxRenderObjClass::Cast_Ray(RayCollisionTestClass & raytest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Cast_AABox present-unmatched
 bool AABoxRenderObjClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -857,6 +868,7 @@ bool AABoxRenderObjClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Cast_OBBox present-unmatched
 bool AABoxRenderObjClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -882,6 +894,7 @@ bool AABoxRenderObjClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Intersect_AABox present-unmatched
 bool AABoxRenderObjClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -901,6 +914,7 @@ bool AABoxRenderObjClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?AABoxRenderObjClass::Intersect_OBBox present-unmatched
 bool AABoxRenderObjClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -1072,6 +1086,7 @@ RenderObjClass * OBBoxRenderObjClass::Clone(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Class_ID present-unmatched
 int OBBoxRenderObjClass::Class_ID(void) const
 {
 	return RenderObjClass::CLASSID_OBBOX;
@@ -1090,6 +1105,7 @@ int OBBoxRenderObjClass::Class_ID(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Render present-unmatched
 void OBBoxRenderObjClass::Render(RenderInfoClass & rinfo)
 {
 	DX8Wrapper::Set_Transform(D3DTS_WORLD,Transform);
@@ -1109,6 +1125,7 @@ void OBBoxRenderObjClass::Render(RenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Special_Render present-unmatched
 void OBBoxRenderObjClass::Special_Render(SpecialRenderInfoClass & rinfo)
 {
 	if (rinfo.RenderType == SpecialRenderInfoClass::RENDER_VIS) {
@@ -1131,6 +1148,7 @@ void OBBoxRenderObjClass::Special_Render(SpecialRenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Set_Transform present-unmatched
 void OBBoxRenderObjClass::Set_Transform(const Matrix3D &m)
 {
 	RenderObjClass::Set_Transform(m);
@@ -1150,6 +1168,7 @@ void OBBoxRenderObjClass::Set_Transform(const Matrix3D &m)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Set_Position present-unmatched
 void OBBoxRenderObjClass::Set_Position(const Vector3 &v)
 {
 	RenderObjClass::Set_Position(v);
@@ -1215,6 +1234,7 @@ bool OBBoxRenderObjClass::Cast_Ray(RayCollisionTestClass & raytest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Cast_AABox present-unmatched
 bool OBBoxRenderObjClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -1240,6 +1260,7 @@ bool OBBoxRenderObjClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Cast_OBBox present-unmatched
 bool OBBoxRenderObjClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -1265,6 +1286,7 @@ bool OBBoxRenderObjClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Intersect_AABox present-unmatched
 bool OBBoxRenderObjClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -1284,6 +1306,7 @@ bool OBBoxRenderObjClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Intersect_OBBox present-unmatched
 bool OBBoxRenderObjClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
 {
 	if ((Get_Collision_Type() & boxtest.CollisionType) == 0) return false;
@@ -1303,6 +1326,7 @@ bool OBBoxRenderObjClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Get_Obj_Space_Bounding_Sphere present-unmatched
 void OBBoxRenderObjClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) const
 {
 	sphere.Init(ObjSpaceCenter,ObjSpaceExtent.Length());
@@ -1321,6 +1345,7 @@ void OBBoxRenderObjClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) co
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?OBBoxRenderObjClass::Get_Obj_Space_Bounding_Box present-unmatched
 void OBBoxRenderObjClass::Get_Obj_Space_Bounding_Box(AABoxClass & box) const
 {
 	box.Init(ObjSpaceCenter,ObjSpaceExtent);
@@ -1349,6 +1374,7 @@ OBBoxClass & OBBoxRenderObjClass::Get_Box(void)
 /*
 ** BoxLoaderClass Implementation
 */
+// ?BoxLoaderClass::Load_W3D present-unmatched
 PrototypeClass * BoxLoaderClass::Load_W3D(ChunkLoadClass & cload)
 {
 	W3dBoxStruct box;
@@ -1359,16 +1385,19 @@ PrototypeClass * BoxLoaderClass::Load_W3D(ChunkLoadClass & cload)
 /*
 ** BoxPrototypeClass Implementation
 */
+// ?BoxPrototypeClass::BoxPrototypeClass present-unmatched
 BoxPrototypeClass::BoxPrototypeClass(W3dBoxStruct box)
 {
 	Definition = box;
 }
 
+// ?BoxPrototypeClass::Get_Name present-unmatched
 const char * BoxPrototypeClass::Get_Name(void) const
 {
 	return Definition.Name;
 }
 
+// ?BoxPrototypeClass::Get_Class_ID present-unmatched
 int BoxPrototypeClass::Get_Class_ID(void) const
 {
 	if (Definition.Attributes & W3D_BOX_ATTRIBUTE_ORIENTED) {
@@ -1378,6 +1407,7 @@ int BoxPrototypeClass::Get_Class_ID(void) const
 	}
 }
 	
+// ?BoxPrototypeClass::Create present-unmatched
 RenderObjClass * BoxPrototypeClass::Create(void)
 {
 	if (Definition.Attributes & W3D_BOX_ATTRIBUTE_ORIENTED) {

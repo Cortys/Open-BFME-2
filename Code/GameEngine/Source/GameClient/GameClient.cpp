@@ -99,6 +99,7 @@
 GameClient *TheGameClient = NULL;
 
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::GameClient present-unmatched
 GameClient::GameClient()
 {
 
@@ -126,6 +127,7 @@ GameClient::GameClient()
 //std::vector<std::string>	preloadTextureNamesGlobalHack2;
 
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::~GameClient present-unmatched
 GameClient::~GameClient()
 {
 #ifdef PERF_TIMERS
@@ -250,6 +252,7 @@ GameClient::~GameClient()
 //-------------------------------------------------------------------------------------------------
 /** Initialize resources for the game client */
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::init present-unmatched
 void GameClient::init( void )
 {
 
@@ -451,6 +454,7 @@ void GameClient::init( void )
 
 //-------------------------------------------------------------------------------------------------
 /** Reset the game client for a new game */
+// ?GameClient::reset present-unmatched
 void GameClient::reset( void )
 {
 	Drawable *draw, *nextDraw;
@@ -498,6 +502,7 @@ DrawableID GameClient::allocDrawableID( void )
 /** -----------------------------------------------------------------------------------------------
  * Given a drawable, register it with the GameClient and give it a unique ID.
  */
+// ?GameClient::registerDrawable present-unmatched
 void GameClient::registerDrawable( Drawable *draw ) 
 {
 
@@ -514,6 +519,7 @@ void GameClient::registerDrawable( Drawable *draw )
  */
 DECLARE_PERF_TIMER(GameClient_update)
 DECLARE_PERF_TIMER(GameClient_draw)
+// ?GameClient::update present-unmatched
 void GameClient::update( void )
 {
 	USE_PERF_TIMER(GameClient_update)
@@ -782,6 +788,7 @@ void GameClient::update( void )
 /** -----------------------------------------------------------------------------------------------
  * Call the given callback function for each object contained within the given region.
  */
+// ?GameClient::iterateDrawablesInRegion present-unmatched
 void GameClient::iterateDrawablesInRegion( Region3D *region, GameClientFuncPtr userFunc, void *userData )
 {
 	Drawable *draw, *nextDrawable;
@@ -804,6 +811,7 @@ void GameClient::iterateDrawablesInRegion( Region3D *region, GameClientFuncPtr u
 /**Helper function to update fake GLA structures to become visible to certain players.
 We should only call this during critical moments, such as changing teams, changing to
 observer, etc.*/
+// ?GameClient::updateFakeDrawables present-unmatched
 void GameClient::updateFakeDrawables(void)
 {
 	for( Drawable *draw = getDrawableList(); draw; draw = draw->getNextDrawable() )
@@ -824,6 +832,7 @@ void GameClient::updateFakeDrawables(void)
 /** -----------------------------------------------------------------------------------------------
  * Destroy the drawable immediately.
  */
+// ?GameClient::destroyDrawable present-unmatched
 void GameClient::destroyDrawable( Drawable *draw )
 {
 
@@ -858,6 +867,7 @@ void GameClient::destroyDrawable( Drawable *draw )
 // ------------------------------------------------------------------------------------------------
 /** Add drawable to lookup table for fast id searching */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::addDrawableToLookupTable present-unmatched
 void GameClient::addDrawableToLookupTable(Drawable *draw )
 {
 
@@ -878,6 +888,7 @@ void GameClient::addDrawableToLookupTable(Drawable *draw )
 // ------------------------------------------------------------------------------------------------
 /** Remove drawable from lookup table of fast id searching */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::removeDrawableFromLookupTable present-unmatched
 void GameClient::removeDrawableFromLookupTable( Drawable *draw )
 {
 
@@ -893,6 +904,7 @@ void GameClient::removeDrawableFromLookupTable( Drawable *draw )
 
 //-------------------------------------------------------------------------------------------------
 /** Load a map into the game interface */
+// ?GameClient::loadMap present-unmatched
 Bool GameClient::loadMap( AsciiString mapName )
 {
 
@@ -908,6 +920,7 @@ Bool GameClient::loadMap( AsciiString mapName )
 
 //-------------------------------------------------------------------------------------------------
 /** Unload a map from the game interface */
+// ?GameClient::unloadMap present-unmatched
 void GameClient::unloadMap( AsciiString mapName )
 {
 
@@ -916,6 +929,7 @@ void GameClient::unloadMap( AsciiString mapName )
 }  // end unloadMap
 
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::setTimeOfDay present-unmatched
 void GameClient::setTimeOfDay( TimeOfDay tod )
 {
 	Drawable *draw = firstDrawable();
@@ -929,6 +943,7 @@ void GameClient::setTimeOfDay( TimeOfDay tod )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::assignSelectedDrawablesToGroup present-unmatched
 void GameClient::assignSelectedDrawablesToGroup( Int group )
 {
 /*
@@ -952,6 +967,7 @@ void GameClient::assignSelectedDrawablesToGroup( Int group )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::selectDrawablesInGroup present-unmatched
 void GameClient::selectDrawablesInGroup( Int group )
 {
 /*
@@ -990,12 +1006,14 @@ void GameClient::selectDrawablesInGroup( Int group )
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::addTextBearingDrawable present-unmatched
 void GameClient::addTextBearingDrawable( Drawable *tbd )
 {
 	if ( tbd != NULL )
 		m_textBearingDrawableList.push_back( tbd );
 }
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::flushTextBearingDrawables present-unmatched
 void GameClient::flushTextBearingDrawables( void )
 {
 
@@ -1010,6 +1028,7 @@ void GameClient::flushTextBearingDrawables( void )
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::evaluateContextCommand present-unmatched
 GameMessage::Type GameClient::evaluateContextCommand( Drawable *draw,
 																											const Coord3D *pos,
 																											CommandTranslator::CommandEvaluateType cmdType )
@@ -1024,6 +1043,7 @@ GameMessage::Type GameClient::evaluateContextCommand( Drawable *draw,
 
 //-------------------------------------------------------------------------------------------------
 /** Get the ray effect data for a drawable */
+// ?GameClient::getRayEffectData present-unmatched
 void GameClient::getRayEffectData( Drawable *draw, RayEffectData *effectData )
 {
 
@@ -1033,6 +1053,7 @@ void GameClient::getRayEffectData( Drawable *draw, RayEffectData *effectData )
 
 //-------------------------------------------------------------------------------------------------
 /** remove the drawble from the ray effects sytem if present */
+// ?GameClient::removeFromRayEffects present-unmatched
 void GameClient::removeFromRayEffects( Drawable *draw )
 {
 
@@ -1041,6 +1062,7 @@ void GameClient::removeFromRayEffects( Drawable *draw )
 }  // end removeFromRayEffects
 
 /** frees all shadow resources used by this module - used by Options screen.*/
+// ?GameClient::releaseShadows present-unmatched
 void GameClient::releaseShadows(void)
 {
 	Drawable *draw;
@@ -1049,6 +1071,7 @@ void GameClient::releaseShadows(void)
 }
 
 /** create shadow resources if not already present. Used by Options screen.*/
+// ?GameClient::allocateShadows present-unmatched
 void GameClient::allocateShadows(void)
 {
 	Drawable *draw;
@@ -1061,6 +1084,7 @@ void GameClient::allocateShadows(void)
 	* for every building loaded, as well as any faction units/structures we can build and
 	* all their damage states */
 //-------------------------------------------------------------------------------------------------
+// ?GameClient::preloadAssets present-unmatched
 void GameClient::preloadAssets( TimeOfDay timeOfDay )
 {
 
@@ -1213,6 +1237,7 @@ void GameClient::preloadAssets( TimeOfDay timeOfDay )
 // ------------------------------------------------------------------------------------------------
 /** Given a string name, find the drawable TOC entry (if any) associated with it */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::findTOCEntryByName present-unmatched
 GameClient::DrawableTOCEntry *GameClient::findTOCEntryByName( AsciiString name )
 {
 
@@ -1227,6 +1252,7 @@ GameClient::DrawableTOCEntry *GameClient::findTOCEntryByName( AsciiString name )
 // ------------------------------------------------------------------------------------------------
 /** Given a drawable TOC identifier, find the drawable TOC if any */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::findTOCEntryById present-unmatched
 GameClient::DrawableTOCEntry *GameClient::findTOCEntryById( UnsignedShort id )
 {
 
@@ -1241,6 +1267,7 @@ GameClient::DrawableTOCEntry *GameClient::findTOCEntryById( UnsignedShort id )
 // ------------------------------------------------------------------------------------------------
 /** Add an drawable TOC entry */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::addTOCEntry present-unmatched
 void GameClient::addTOCEntry( AsciiString name, UnsignedShort id )
 {
 
@@ -1271,6 +1298,7 @@ static Bool shouldSaveDrawable(const Drawable* draw)
 // ------------------------------------------------------------------------------------------------
 /** Xfer drawable table of contents */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::xferDrawableTOC present-unmatched
 void GameClient::xferDrawableTOC( Xfer *xfer )
 {
 
@@ -1363,6 +1391,7 @@ void GameClient::xferDrawableTOC( Xfer *xfer )
 	*		 this version breaks compatibility with previous versions. (CBD)
  */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::xfer present-unmatched
 void GameClient::xfer( Xfer *xfer )
 {
 
@@ -1593,6 +1622,7 @@ void GameClient::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::loadPostProcess present-unmatched
 void GameClient::loadPostProcess( void )
 {
 
@@ -1611,6 +1641,7 @@ void GameClient::loadPostProcess( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?GameClient::crc present-unmatched
 void GameClient::crc( Xfer *xfer )
 {
 

@@ -162,6 +162,7 @@ static TestSeismicFilter testSeismicFilter;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::W3DTerrainVisual present-unmatched
 W3DTerrainVisual::W3DTerrainVisual()
 {
 
@@ -189,6 +190,7 @@ W3DTerrainVisual::W3DTerrainVisual()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::~W3DTerrainVisual present-unmatched
 W3DTerrainVisual::~W3DTerrainVisual()
 {
 	// release our render object
@@ -235,6 +237,7 @@ W3DTerrainVisual::~W3DTerrainVisual()
 //-------------------------------------------------------------------------------------------------
 /** init */
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::init present-unmatched
 void W3DTerrainVisual::init( void )
 {
 
@@ -314,6 +317,7 @@ void W3DTerrainVisual::init( void )
 //-------------------------------------------------------------------------------------------------
 /** reset */
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::reset present-unmatched
 void W3DTerrainVisual::reset( void )
 {
 
@@ -356,6 +360,7 @@ void W3DTerrainVisual::reset( void )
 //-------------------------------------------------------------------------------------------------
 /** update */
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::update present-unmatched
 void W3DTerrainVisual::update( void )
 {
 
@@ -375,6 +380,7 @@ void W3DTerrainVisual::update( void )
 
 #ifdef DO_SEISMIC_SIMULATIONS
 
+// ?W3DTerrainVisual::addSeismicSimulation present-unmatched
 void W3DTerrainVisual::addSeismicSimulation( const SeismicSimulationNode& sim )
 {
     // HERE WOULD BE A GREAT PLACE FOR AN IDIOT TEST:
@@ -388,6 +394,7 @@ void W3DTerrainVisual::addSeismicSimulation( const SeismicSimulationNode& sim )
 
 
 
+// ?W3DTerrainVisual::handleSeismicSimulations present-unmatched
 void W3DTerrainVisual::handleSeismicSimulations( void )
 {
   if ( ! m_clientHeightMap || ! m_logicHeightMap || ! m_terrainRenderObject )
@@ -483,6 +490,7 @@ void W3DTerrainVisual::handleSeismicSimulations( void )
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ?W3DTerrainVisual::updateSeismicSimulations present-unmatched
 void W3DTerrainVisual::updateSeismicSimulations( void )
 {
 
@@ -551,6 +559,7 @@ void W3DTerrainVisual::updateSeismicSimulations( void )
 //-------------------------------------------------------------------------------------------------
 /** load method for W3D visual terrain */
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::load present-unmatched
 Bool W3DTerrainVisual::load( AsciiString filename )
 {
 	
@@ -719,6 +728,7 @@ Bool W3DTerrainVisual::load( AsciiString filename )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::enableWaterGrid present-unmatched
 void W3DTerrainVisual::enableWaterGrid( Bool enable )
 {
 
@@ -735,6 +745,7 @@ void W3DTerrainVisual::enableWaterGrid( Bool enable )
 /** intersect the ray with the terrain, if a hit occurs TRUE is returned
 	* and the result point on the terrain is returned in "result" */
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::intersectTerrain present-unmatched
 Bool W3DTerrainVisual::intersectTerrain( Coord3D *rayStart, 
 																				 Coord3D *rayEnd, 
 																				 Coord3D *result )
@@ -772,6 +783,7 @@ Bool W3DTerrainVisual::intersectTerrain( Coord3D *rayStart,
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getTerrainColorAt present-unmatched
 void W3DTerrainVisual::getTerrainColorAt( Real x, Real y, RGBColor *pColor )
 {
 
@@ -787,6 +799,7 @@ void W3DTerrainVisual::getTerrainColorAt( Real x, Real y, RGBColor *pColor )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getTerrainTile present-unmatched
 TerrainType *W3DTerrainVisual::getTerrainTile( Real x, Real y )
 {
 	TerrainType *tile = NULL;
@@ -816,6 +829,7 @@ TerrainType *W3DTerrainVisual::getTerrainTile( Real x, Real y )
 // ------------------------------------------------------------------------------------------------
 /** set min/max height values allowed in water grid pointed to by waterTable */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setWaterGridHeightClamps present-unmatched
 void W3DTerrainVisual::setWaterGridHeightClamps( const WaterHandle *waterTable, 
 																								 Real minZ, Real maxZ )
 {
@@ -828,6 +842,7 @@ void W3DTerrainVisual::setWaterGridHeightClamps( const WaterHandle *waterTable,
 // ------------------------------------------------------------------------------------------------
 /** adjust fallof parameters for grid change method */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setWaterAttenuationFactors present-unmatched
 void W3DTerrainVisual::setWaterAttenuationFactors( const WaterHandle *waterTable, 
 																									 Real a, Real b, Real c, Real range )
 {
@@ -863,6 +878,7 @@ void W3DTerrainVisual::setWaterTransform( const Matrix3D *transform )
 // ------------------------------------------------------------------------------------------------
 /** get the water transform matrix */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getWaterTransform present-unmatched
 void W3DTerrainVisual::getWaterTransform( const WaterHandle *waterTable, Matrix3D *transform )
 {
 
@@ -874,6 +890,7 @@ void W3DTerrainVisual::getWaterTransform( const WaterHandle *waterTable, Matrix3
 // ------------------------------------------------------------------------------------------------
 /** water grid resolution spacing */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setWaterGridResolution present-unmatched
 void W3DTerrainVisual::setWaterGridResolution( const WaterHandle *waterTable,
 																							 Real gridCellsX, Real gridCellsY, Real cellSize )
 {
@@ -886,6 +903,7 @@ void W3DTerrainVisual::setWaterGridResolution( const WaterHandle *waterTable,
 // ------------------------------------------------------------------------------------------------
 /** get water grid resolution spacing */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getWaterGridResolution present-unmatched
 void W3DTerrainVisual::getWaterGridResolution( const WaterHandle *waterTable,	
 																							 Real *gridCellsX, Real *gridCellsY, Real *cellSize )
 {
@@ -898,6 +916,7 @@ void W3DTerrainVisual::getWaterGridResolution( const WaterHandle *waterTable,
 // ------------------------------------------------------------------------------------------------
 /** adjust the water grid in world coords by the delta */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::changeWaterHeight present-unmatched
 void W3DTerrainVisual::changeWaterHeight( Real x, Real y, Real delta )
 {
 
@@ -908,6 +927,7 @@ void W3DTerrainVisual::changeWaterHeight( Real x, Real y, Real delta )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::addWaterVelocity present-unmatched
 void W3DTerrainVisual::addWaterVelocity( Real worldX, Real worldY, 
 																				 Real velocity, Real preferredHeight )
 {
@@ -919,6 +939,7 @@ void W3DTerrainVisual::addWaterVelocity( Real worldX, Real worldY,
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getWaterGridHeight present-unmatched
 Bool W3DTerrainVisual::getWaterGridHeight( Real worldX, Real worldY, Real *height)
 {
 	Real gridX, gridY;
@@ -934,6 +955,7 @@ Bool W3DTerrainVisual::getWaterGridHeight( Real worldX, Real worldY, Real *heigh
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setRawMapHeight present-unmatched
 void W3DTerrainVisual::setRawMapHeight(const ICoord2D *gridPos, Int height)
 {
   // This method writes to the m_logicHeightMap member, 
@@ -966,6 +988,7 @@ void W3DTerrainVisual::setRawMapHeight(const ICoord2D *gridPos, Int height)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::getRawMapHeight present-unmatched
 Int W3DTerrainVisual::getRawMapHeight(const ICoord2D *gridPos)
 {
 	if (m_logicHeightMap) 
@@ -981,6 +1004,7 @@ Int W3DTerrainVisual::getRawMapHeight(const ICoord2D *gridPos)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::addFactionBibDrawable present-unmatched
 void W3DTerrainVisual::addFactionBibDrawable(Drawable *factionBuilding, Bool highlight, Real extra)
 {
 #ifdef DO_SEISMIC_SIMULATIONS 
@@ -1023,6 +1047,7 @@ void W3DTerrainVisual::addFactionBibDrawable(Drawable *factionBuilding, Bool hig
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::addFactionBib present-unmatched
 void W3DTerrainVisual::addFactionBib(Object *factionBuilding, Bool highlight, Real extra)
 {
 #ifdef DO_SEISMIC_SIMULATIONS
@@ -1065,6 +1090,7 @@ void W3DTerrainVisual::addFactionBib(Object *factionBuilding, Bool highlight, Re
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::removeFactionBibDrawable present-unmatched
 void W3DTerrainVisual::removeFactionBibDrawable(Drawable *factionBuilding)
 {
 	if (m_terrainRenderObject) {
@@ -1074,6 +1100,7 @@ void W3DTerrainVisual::removeFactionBibDrawable(Drawable *factionBuilding)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::removeFactionBib present-unmatched
 void W3DTerrainVisual::removeFactionBib(Object *factionBuilding)
 {
 	if (m_terrainRenderObject) {
@@ -1092,6 +1119,7 @@ void W3DTerrainVisual::removeAllBibs(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::removeBibHighlighting present-unmatched
 void W3DTerrainVisual::removeBibHighlighting(void)
 {
 	if (m_terrainRenderObject) {
@@ -1101,6 +1129,7 @@ void W3DTerrainVisual::removeBibHighlighting(void)
  
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::removeTreesAndPropsForConstruction present-unmatched
 void W3DTerrainVisual::removeTreesAndPropsForConstruction(const Coord3D* pos, 
 																				const GeometryInfo& geom,
 																				Real angle)
@@ -1112,6 +1141,7 @@ void W3DTerrainVisual::removeTreesAndPropsForConstruction(const Coord3D* pos,
  
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::addProp present-unmatched
 void W3DTerrainVisual::addProp(const ThingTemplate *tTemplate, const Coord3D *pos, Real angle)
 {
 	ModelConditionFlags state;
@@ -1143,6 +1173,7 @@ void W3DTerrainVisual::addProp(const ThingTemplate *tTemplate, const Coord3D *po
  
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setTerrainTracksDetail present-unmatched
 void W3DTerrainVisual::setTerrainTracksDetail(void)
 {
 	if (TheTerrainTracksRenderObjClassSystem)
@@ -1151,6 +1182,7 @@ void W3DTerrainVisual::setTerrainTracksDetail(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::setShoreLineDetail present-unmatched
 void W3DTerrainVisual::setShoreLineDetail(void)
 {
 	if (m_terrainRenderObject) 
@@ -1160,6 +1192,7 @@ void W3DTerrainVisual::setShoreLineDetail(void)
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
 /// Replace the skybox texture
+// ?W3DTerrainVisual::replaceSkyboxTextures present-unmatched
 void W3DTerrainVisual::replaceSkyboxTextures(const AsciiString *oldTexName[5], const AsciiString *newTexName[5])
 {
 	if (m_waterRenderObject)
@@ -1183,6 +1216,7 @@ void W3DTerrainVisual::replaceSkyboxTextures(const AsciiString *oldTexName[5], c
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::crc present-unmatched
 void W3DTerrainVisual::crc( Xfer *xfer )
 {
 
@@ -1199,6 +1233,7 @@ void W3DTerrainVisual::crc( Xfer *xfer )
 	* 3: Add client side trees & props. jba.
 */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::xfer present-unmatched
 void W3DTerrainVisual::xfer( Xfer *xfer )
 {
 
@@ -1304,6 +1339,7 @@ void W3DTerrainVisual::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?W3DTerrainVisual::loadPostProcess present-unmatched
 void W3DTerrainVisual::loadPostProcess( void )
 {
 

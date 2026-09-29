@@ -185,6 +185,7 @@ const float INTENSITY_RATE_OF_CHANGE			= 1.0f;			// change in intensity per seco
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::TexProjectClass present-unmatched
 TexProjectClass::TexProjectClass(void) :
 	Flags(DEFAULT_FLAGS),
 	DesiredIntensity(1.0f),
@@ -236,6 +237,7 @@ TexProjectClass::TexProjectClass(void) :
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::~TexProjectClass present-unmatched
 TexProjectClass::~TexProjectClass(void)
 {
 	REF_PTR_RELEASE(Mapper1);
@@ -261,6 +263,7 @@ TexProjectClass::~TexProjectClass(void)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Texture_Size present-unmatched
 void TexProjectClass::Set_Texture_Size(int size)
 {
 	WWASSERT(size > 0);
@@ -286,6 +289,7 @@ void TexProjectClass::Set_Texture_Size(int size)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Get_Texture_Size present-unmatched
 int TexProjectClass::Get_Texture_Size(void)
 {
 	return (Flags & SIZE_MASK) >> SIZE_SHIFT;
@@ -306,6 +310,7 @@ int TexProjectClass::Get_Texture_Size(void)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Flag present-unmatched
 void TexProjectClass::Set_Flag(uint32 flag,bool onoff)	
 { 
 	if (onoff) { 
@@ -330,6 +335,7 @@ void TexProjectClass::Set_Flag(uint32 flag,bool onoff)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Get_Flag present-unmatched
 bool TexProjectClass::Get_Flag(uint32 flag) const
 { 
 	return (Flags & flag) == flag; 
@@ -354,6 +360,7 @@ bool TexProjectClass::Get_Flag(uint32 flag) const
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Intensity present-unmatched
 void TexProjectClass::Set_Intensity(float intensity,bool immediate)
 {
 	WWASSERT(intensity <= 1.0f);
@@ -382,6 +389,7 @@ void TexProjectClass::Set_Intensity(float intensity,bool immediate)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Get_Intensity present-unmatched
 float TexProjectClass::Get_Intensity(void)
 {
 	return DesiredIntensity;
@@ -402,6 +410,7 @@ float TexProjectClass::Get_Intensity(void)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Is_Intensity_Zero present-unmatched
 bool TexProjectClass::Is_Intensity_Zero(void)
 {
 	return ((Intensity == 0.0f) && (DesiredIntensity == 0.0f));
@@ -423,6 +432,7 @@ bool TexProjectClass::Is_Intensity_Zero(void)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Attenuation present-unmatched
 void TexProjectClass::Set_Attenuation(float attenuation)
 {
 	WWASSERT(attenuation >= 0.0f);
@@ -443,6 +453,7 @@ void TexProjectClass::Set_Attenuation(float attenuation)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Get_Attenuation present-unmatched
 float TexProjectClass::Get_Attenuation(void)
 {
 	return Attenuation;
@@ -461,6 +472,7 @@ float TexProjectClass::Get_Attenuation(void)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Enable_Attenuation present-unmatched
 void TexProjectClass::Enable_Attenuation(bool onoff)
 {
 	Set_Flag(ATTENUATE,onoff);
@@ -479,6 +491,7 @@ void TexProjectClass::Enable_Attenuation(bool onoff)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Is_Attenuation_Enabled present-unmatched
 bool TexProjectClass::Is_Attenuation_Enabled(void)
 {
 	return Get_Flag(ATTENUATE);
@@ -497,6 +510,7 @@ bool TexProjectClass::Is_Attenuation_Enabled(void)
  * HISTORY:                                                                                    *
  *   2/25/2000  gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Enable_Depth_Gradient present-unmatched
 void TexProjectClass::Enable_Depth_Gradient(bool onoff)
 {
 	Set_Flag(USE_DEPTH_GRADIENT,onoff);
@@ -522,6 +536,7 @@ void TexProjectClass::Enable_Depth_Gradient(bool onoff)
  * HISTORY:                                                                                    *
  *   2/25/2000  gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Is_Depth_Gradient_Enabled present-unmatched
 bool TexProjectClass::Is_Depth_Gradient_Enabled(bool onoff)
 {
 	return Get_Flag(USE_DEPTH_GRADIENT);
@@ -542,6 +557,7 @@ bool TexProjectClass::Is_Depth_Gradient_Enabled(bool onoff)
  * HISTORY:                                                                                    *
  *   1/4/00     gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Init_Multiplicative present-unmatched
 void TexProjectClass::Init_Multiplicative(void)
 {	
 	Set_Flag(ADDITIVE,false);
@@ -647,6 +663,7 @@ void TexProjectClass::Init_Multiplicative(void)
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Init_Additive present-unmatched
 void TexProjectClass::Init_Additive(void)
 {
 	Set_Flag(ADDITIVE,true);
@@ -733,6 +750,7 @@ void TexProjectClass::Init_Additive(void)
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Texture present-unmatched
 void TexProjectClass::Set_Texture(TextureClass * texture)
 {
 	if (texture != NULL) 
@@ -757,6 +775,7 @@ void TexProjectClass::Set_Texture(TextureClass * texture)
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Get_Texture present-unmatched
 TextureClass * TexProjectClass::Get_Texture(void) const
 {
 	return MaterialPass->Get_Texture();
@@ -775,6 +794,7 @@ TextureClass * TexProjectClass::Get_Texture(void) const
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Peek_Texture present-unmatched
 TextureClass * TexProjectClass::Peek_Texture(void) const
 {
 	return MaterialPass->Peek_Texture();
@@ -793,6 +813,7 @@ TextureClass * TexProjectClass::Peek_Texture(void) const
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Peek_Material_Pass present-unmatched
 MaterialPassClass * TexProjectClass::Peek_Material_Pass(void) 
 {
 	return MaterialPass;
@@ -811,6 +832,7 @@ MaterialPassClass * TexProjectClass::Peek_Material_Pass(void)
  * HISTORY:                                                                                    *
  *   1/27/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Perspective_Projection present-unmatched
 void TexProjectClass::Set_Perspective_Projection(float hfov,float vfov,float znear,float zfar)
 {
 	HFov = hfov;
@@ -835,6 +857,7 @@ void TexProjectClass::Set_Perspective_Projection(float hfov,float vfov,float zne
  * HISTORY:                                                                                    *
  *   1/27/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Set_Ortho_Projection present-unmatched
 void TexProjectClass::Set_Ortho_Projection(float xmin,float xmax,float ymin,float ymax,float znear,float zfar)
 {
 	XMin = xmin;
@@ -1161,10 +1184,12 @@ bool TexProjectClass::Compute_Texture
 
 		bool snapshot=WW3D::Is_Snapshot_Activated();
 		SNAPSHOT_SAY(("TexProjectCLass::Begin_Render()\n"));
+// ?WW3D::Begin_Render present-unmatched
 		WW3D::Begin_Render(true,zclear,color);	// false to zclear as we don't have z-buffer
 		WW3D::Render(*model,*context);
 		SNAPSHOT_SAY(("TexProjectCLass::End_Render()\n"));
 		WW3D::End_Render(false);
+// ?WW3D::Activate_Snapshot present-unmatched
 		WW3D::Activate_Snapshot(snapshot);	// End_Render() ends the shapsnot, so restore the state
 
 		DX8Wrapper::Set_Render_Target((IDirect3DSurface8 *)NULL);
@@ -1198,6 +1223,7 @@ bool TexProjectClass::Compute_Texture
  * HISTORY:                                                                                    *
  *   4/17/2001  gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Needs_Render_Target present-unmatched
 bool TexProjectClass::Needs_Render_Target(void)
 {
 	return Get_Flag(TEXTURE_DIRTY);
@@ -1270,6 +1296,7 @@ TextureClass* TexProjectClass::Peek_Render_Target
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Configure_Camera present-unmatched
 void TexProjectClass::Configure_Camera(CameraClass & camera)
 {
 	camera.Set_Transform(Transform);
@@ -1305,6 +1332,7 @@ void TexProjectClass::Configure_Camera(CameraClass & camera)
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Pre_Render_Update present-unmatched
 void TexProjectClass::Pre_Render_Update(const Matrix3D & camera)
 {
 	/*
@@ -1380,6 +1408,7 @@ void TexProjectClass::Pre_Render_Update(const Matrix3D & camera)
  * HISTORY:                                                                                    *
  *   1/11/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?TexProjectClass::Update_WS_Bounding_Volume present-unmatched
 void TexProjectClass::Update_WS_Bounding_Volume(void)
 {
 	ProjectorClass::Update_WS_Bounding_Volume();

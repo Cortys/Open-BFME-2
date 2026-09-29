@@ -284,6 +284,7 @@ const FieldParse ThingTemplate::s_objectReskinFieldParseTable[] =
 // ------------------------------------------------------------------------------------------------
 /** See if the tag string is present in any of the module info entries here */
 // ------------------------------------------------------------------------------------------------
+// ?ModuleInfo::getNuggetWithTag present-unmatched
 const ModuleInfo::Nugget *ModuleInfo::getNuggetWithTag( const AsciiString& tag ) const
 {
 
@@ -300,6 +301,7 @@ const ModuleInfo::Nugget *ModuleInfo::getNuggetWithTag( const AsciiString& tag )
 // ------------------------------------------------------------------------------------------------
 /** Add this module info to the thing template */
 // ------------------------------------------------------------------------------------------------
+// ?ModuleInfo::addModuleInfo present-unmatched
 void ModuleInfo::addModuleInfo(ThingTemplate *thingTemplate, 
 															 const AsciiString& name, 
 															 const AsciiString& moduleTag, 
@@ -377,6 +379,7 @@ void ModuleInfo::addModuleInfo(ThingTemplate *thingTemplate,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleInfo::clearModuleDataWithTag present-unmatched
 Bool ModuleInfo::clearModuleDataWithTag(const AsciiString& tagToClear, AsciiString& clearedModuleNameOut) 
 { 
 	Bool cleared = false;
@@ -407,6 +410,7 @@ Bool ModuleInfo::clearModuleDataWithTag(const AsciiString& tagToClear, AsciiStri
 
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleInfo::clearCopiedFromDefaultEntries present-unmatched
 Bool ModuleInfo::clearCopiedFromDefaultEntries(Int interfaceMask, const AsciiString &newName, const ThingTemplate *fullTemplate ) 
 { 
   static KindOfMaskType ImmuneToGPSScramblerMask;
@@ -511,6 +515,7 @@ Bool ModuleInfo::clearAiModuleInfo()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseModuleName present-unmatched
 void ThingTemplate::parseModuleName(INI* ini, void *instance, void* store, const void* userData)
 {
 	ThingTemplate* self = (ThingTemplate*)instance;
@@ -620,6 +625,7 @@ void ThingTemplate::parseModuleName(INI* ini, void *instance, void* store, const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseIntList present-unmatched
 void ThingTemplate::parseIntList(INI* ini, void *instance, void* store, const void* userData)
 {
 	Int numberEntries = (Int)userData;
@@ -692,6 +698,7 @@ static void parseArbitraryFXIntoMap( INI* ini, void *instance, void* /* store */
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parsePerUnitFX present-unmatched
 void ThingTemplate::parsePerUnitFX( INI* ini, void *instance, void *store, const void *userData )
 {
 	PerUnitFXMap* fxmap = (PerUnitFXMap*)store;
@@ -723,6 +730,7 @@ static void parseArbitrarySoundsIntoMap( INI* ini, void *instance, void* /* stor
 //-------------------------------------------------------------------------------------------------
 /** Parse Additional per unit sounds such as TankTurretMove and TankTurretMoveLoop. */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parsePerUnitSounds present-unmatched
 void ThingTemplate::parsePerUnitSounds( INI* ini, void *instance, void *store, const void *userData )
 {
 	PerUnitSoundMap *mapSounds = (PerUnitSoundMap*)store;
@@ -740,6 +748,7 @@ void ThingTemplate::parsePerUnitSounds( INI* ini, void *instance, void *store, c
 //-------------------------------------------------------------------------------------------------
 /** Parse modules to add to the existing set of modules. */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseAddModule present-unmatched
 void ThingTemplate::parseAddModule(INI *ini, void *instance, void *store, const void *userData)
 {
 	// don't care about the result.
@@ -759,6 +768,7 @@ void ThingTemplate::parseAddModule(INI *ini, void *instance, void *store, const 
 //-------------------------------------------------------------------------------------------------
 /** Parse modules to remove from the existing set of modules. */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseRemoveModule present-unmatched
 void ThingTemplate::parseRemoveModule(INI *ini, void *instance, void *store, const void *userData)
 {
 	ThingTemplate* self = (ThingTemplate*)instance;	
@@ -784,6 +794,7 @@ void ThingTemplate::parseRemoveModule(INI *ini, void *instance, void *store, con
 //-------------------------------------------------------------------------------------------------
 /** Replace the existing tagged modules with the new modules. */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseReplaceModule present-unmatched
 void ThingTemplate::parseReplaceModule(INI *ini, void *instance, void *store, const void *userData)
 {
 	ThingTemplate* self = (ThingTemplate*)instance;	
@@ -816,6 +827,7 @@ void ThingTemplate::parseReplaceModule(INI *ini, void *instance, void *store, co
 //-------------------------------------------------------------------------------------------------
 /** mark the module(s) as being "Inheritable". */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseInheritableModule present-unmatched
 void ThingTemplate::parseInheritableModule(INI *ini, void *instance, void *store, const void *userData)
 {
 	ThingTemplate* self = (ThingTemplate*)instance;	
@@ -835,6 +847,7 @@ void ThingTemplate::parseInheritableModule(INI *ini, void *instance, void *store
 //-------------------------------------------------------------------------------------------------
 /** mark the module(s) as being "VverrideableByLikeKind". default module will be replaced by any of the exact same class */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::OverrideableByLikeKind present-unmatched
 void ThingTemplate::OverrideableByLikeKind(INI *ini, void *instance, void *store, const void *userData)
 {
 	ThingTemplate* self = (ThingTemplate*)instance;	
@@ -858,6 +871,7 @@ void ThingTemplate::OverrideableByLikeKind(INI *ini, void *instance, void *store
 //-------------------------------------------------------------------------------------------------
 /** Remove the module whose tag matches moduleToRemove. */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::removeModuleInfo present-unmatched
 Bool ThingTemplate::removeModuleInfo(const AsciiString& moduleToRemove, AsciiString& clearedModuleNameOut)
 {
 	Bool removed = false;
@@ -887,6 +901,7 @@ Bool ThingTemplate::removeModuleInfo(const AsciiString& moduleToRemove, AsciiStr
 
 //-------------------------------------------------------------------------------------------------
 /// @todo srj -- move this to another file
+// ?ArmorTemplateSet::parseArmorTemplateSet present-unmatched
 void ArmorTemplateSet::parseArmorTemplateSet( INI* ini )
 {
 	static const FieldParse myFieldParse[] = 
@@ -901,6 +916,7 @@ void ArmorTemplateSet::parseArmorTemplateSet( INI* ini )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseArmorTemplateSet present-unmatched
 void ThingTemplate::parseArmorTemplateSet( INI* ini, void *instance, void * /*store*/, const void* /*userData*/ )
 {
 	ThingTemplate* self = (ThingTemplate*)instance;
@@ -929,6 +945,7 @@ void ThingTemplate::parseArmorTemplateSet( INI* ini, void *instance, void * /*st
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::parseWeaponTemplateSet present-unmatched
 void ThingTemplate::parseWeaponTemplateSet( INI* ini, void *instance, void * /*store*/, const void* /*userData*/ )
 {
 	ThingTemplate* self = (ThingTemplate*)instance;
@@ -958,6 +975,7 @@ void ThingTemplate::parseWeaponTemplateSet( INI* ini, void *instance, void * /*s
 
 //-------------------------------------------------------------------------------------------------
 // Parse the "maxSimultaneousOfType" keyword
+// ?ThingTemplate::parseMaxSimultaneous present-unmatched
 void ThingTemplate::parseMaxSimultaneous(INI *ini, void *instance, void *store, const void *userData)
 {
   // Most of the time, this is an UnsignedShort, but sometimes this is the keyword
@@ -990,6 +1008,7 @@ void ThingTemplate::parseMaxSimultaneous(INI *ini, void *instance, void *store, 
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::ThingTemplate present-unmatched
 ThingTemplate::ThingTemplate() :
 	m_geometryInfo(GEOMETRY_SPHERE, FALSE, 1, 1, 1)
 {
@@ -1070,6 +1089,7 @@ AIUpdateModuleData *ThingTemplate::friend_getAIModuleInfo(void)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::validateAudio present-unmatched
 void ThingTemplate::validateAudio()
 {
 #if defined(_DEBUG) || defined(_INTERNAL)
@@ -1220,6 +1240,7 @@ void ThingTemplate::validate()
 
 //-------------------------------------------------------------------------------------------------
 // copy the guts of that into this, but preserve this' name, id, and list-links.
+// ?ThingTemplate::copyFrom present-unmatched
 void ThingTemplate::copyFrom(const ThingTemplate* that)
 {
 	if (!that)
@@ -1247,6 +1268,7 @@ void ThingTemplate::setCopiedFromDefault()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::~ThingTemplate present-unmatched
 ThingTemplate::~ThingTemplate()
 {
 	// note, we don't need to take any special action for Armor/WeaponSets...
@@ -1255,6 +1277,7 @@ ThingTemplate::~ThingTemplate()
 } 
 
 //=============================================================================
+// ?ThingTemplate::resolveNames present-unmatched
 void ThingTemplate::resolveNames()
 {
 	Int i, j;
@@ -1320,6 +1343,7 @@ void ThingTemplate::resolveNames()
 
 //=============================================================================
 #ifdef LOAD_TEST_ASSETS
+// ?ThingTemplate::initForLTA present-unmatched
 void ThingTemplate::initForLTA(const AsciiString& name)
 {
 	m_nameString = name;
@@ -1366,12 +1390,14 @@ void ThingTemplate::initForLTA(const AsciiString& name)
 
 
 //=============================================================================
+// ?ThingTemplate::findArmorTemplateSet present-unmatched
 const ArmorTemplateSet* ThingTemplate::findArmorTemplateSet(const ArmorSetFlags& t) const
 {
   return m_armorTemplateSetFinder.findBestInfo(m_armorTemplateSets, t);
 }
 
 //=============================================================================
+// ?ThingTemplate::findWeaponTemplateSet present-unmatched
 const WeaponTemplateSet* ThingTemplate::findWeaponTemplateSet(const WeaponSetFlags& t) const
 {
   return m_weaponTemplateSetFinder.findBestInfo(m_weaponTemplateSets, t);
@@ -1380,6 +1406,7 @@ const WeaponTemplateSet* ThingTemplate::findWeaponTemplateSet(const WeaponSetFla
 //-----------------------------------------------------------------------------
 // returns true iff we have at least one weaponset that contains a weapon.
 // returns false if we have no weaponsets, or they are all empty.
+// ?ThingTemplate::canPossiblyHaveAnyWeapon present-unmatched
 Bool ThingTemplate::canPossiblyHaveAnyWeapon() const
 {
 	for (WeaponTemplateSetVector::const_iterator it = m_weaponTemplateSets.begin(); 
@@ -1393,6 +1420,7 @@ Bool ThingTemplate::canPossiblyHaveAnyWeapon() const
 }
 
 //-----------------------------------------------------------------------------
+// ?ThingTemplate::getSkillPointValue present-unmatched
 Int ThingTemplate::getSkillPointValue(Int level) const 
 { 
 	Int value = m_skillPointValues[level]; 
@@ -1404,6 +1432,7 @@ Int ThingTemplate::getSkillPointValue(Int level) const
 }
 
 //-----------------------------------------------------------------------------
+// ?ThingTemplate::getBuildFacilityTemplate present-unmatched
 const ThingTemplate *ThingTemplate::getBuildFacilityTemplate( const Player *player ) const
 {
 	if (getPrereqCount() > 0)
@@ -1417,6 +1446,7 @@ const ThingTemplate *ThingTemplate::getBuildFacilityTemplate( const Player *play
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::getBuildable present-unmatched
 BuildableStatus ThingTemplate::getBuildable() const 
 { 
 	BuildableStatus bs;
@@ -1427,6 +1457,7 @@ BuildableStatus ThingTemplate::getBuildable() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::getPerUnitFX present-unmatched
 const FXList *ThingTemplate::getPerUnitFX(const AsciiString& fxName) const
 {
 	if (fxName.isEmpty()) 
@@ -1445,6 +1476,7 @@ const FXList *ThingTemplate::getPerUnitFX(const AsciiString& fxName) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::getPerUnitSound present-unmatched
 const AudioEventRTS *ThingTemplate::getPerUnitSound(const AsciiString& soundName) const
 {
 	if (soundName.isEmpty()) 
@@ -1465,6 +1497,7 @@ const AudioEventRTS *ThingTemplate::getPerUnitSound(const AsciiString& soundName
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::getMaxSimultaneousOfType present-unmatched
 UnsignedInt ThingTemplate::getMaxSimultaneousOfType() const
 {
   if ( m_maxSimultaneousDeterminedBySuperweaponRestriction && TheGameLogic )
@@ -1523,6 +1556,7 @@ Bool ThingTemplate::isEquivalentTo(const ThingTemplate* tt) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::isBuildableItem present-unmatched
 Bool ThingTemplate::isBuildableItem(void) const
 {
 	return (getBuildCost() != 0);
@@ -1533,6 +1567,7 @@ Bool ThingTemplate::isBuildableItem(void) const
 	* that retrieve template data values use the get() wrappers, which *DO* pay
 	* attention to the override values */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::calcCostToBuild present-unmatched
 Int ThingTemplate::calcCostToBuild( const Player* player) const
 {
 	if (!player)
@@ -1549,6 +1584,7 @@ Int ThingTemplate::calcCostToBuild( const Player* player) const
 	* that retrieve template data values use the get() wrappers, which *DO* pay
 	* attention to the override values */
 //-------------------------------------------------------------------------------------------------
+// ?ThingTemplate::calcTimeToBuild present-unmatched
 Int ThingTemplate::calcTimeToBuild( const Player* player) const
 {
 	Int buildTime = getBuildTime() * LOGICFRAMES_PER_SECOND;
@@ -1605,6 +1641,7 @@ Int ThingTemplate::calcTimeToBuild( const Player* player) const
 
 //---------------------------------------------------------------------------------------ModuleInfo
 //-------------------------------------------------------------------------------------------------
+// ?ModuleInfo::friend_getNthData present-unmatched
 ModuleData* ModuleInfo::friend_getNthData(Int i)
 {
 	if (i >= 0 && i < m_info.size())

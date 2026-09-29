@@ -78,11 +78,13 @@
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
 
+// ?ScoreKeeper::ScoreKeeper present-unmatched
 ScoreKeeper::ScoreKeeper( void )
 {
 	reset(0);
 }
 
+// ?ScoreKeeper::~ScoreKeeper present-unmatched
 ScoreKeeper::~ScoreKeeper( void )
 {
 
@@ -92,6 +94,7 @@ static KindOfMaskType scoringBuildingMask;
 static KindOfMaskType scoringBuildingDestroyMask;
 static KindOfMaskType scoringBuildingCreateMask;
 
+// ?ScoreKeeper::reset present-unmatched
 void ScoreKeeper::reset( Int playerIdx )
 {
 	scoringBuildingMask.set(KINDOF_STRUCTURE);
@@ -122,6 +125,7 @@ void ScoreKeeper::reset( Int playerIdx )
 	m_myPlayerIdx	= playerIdx;
 }
 	
+// ?ScoreKeeper::addObjectBuilt present-unmatched
 void ScoreKeeper::addObjectBuilt( const Object *o)
 {
 	Bool addToCount = FALSE;
@@ -159,6 +163,7 @@ void ScoreKeeper::addObjectBuilt( const Object *o)
 	}
 }
 
+// ?ScoreKeeper::getTotalUnitsBuilt present-unmatched
 Int ScoreKeeper::getTotalUnitsBuilt( KindOfMaskType validMask, KindOfMaskType invalidMask )
 {
 	Int count = 0;
@@ -172,6 +177,7 @@ Int ScoreKeeper::getTotalUnitsBuilt( KindOfMaskType validMask, KindOfMaskType in
 	return count;
 }
 
+// ?ScoreKeeper::getTotalObjectsBuilt present-unmatched
 Int ScoreKeeper::getTotalObjectsBuilt( const ThingTemplate *pTemplate )
 {
 	Int count = 0;
@@ -185,6 +191,7 @@ Int ScoreKeeper::getTotalObjectsBuilt( const ThingTemplate *pTemplate )
 }
 
 
+// ?ScoreKeeper::removeObjectBuilt present-unmatched
 void ScoreKeeper::removeObjectBuilt( const Object *o)
 {
 	if (TheGameLogic->isScoringEnabled() == FALSE) {
@@ -221,6 +228,7 @@ void ScoreKeeper::removeObjectBuilt( const Object *o)
 	}
 }
 
+// ?ScoreKeeper::addObjectCaptured present-unmatched
 void ScoreKeeper::addObjectCaptured( const Object *o )
 {
 	if (TheGameLogic->isScoringEnabled() == FALSE) {
@@ -253,6 +261,7 @@ void ScoreKeeper::addObjectCaptured( const Object *o )
 
 
 
+// ?ScoreKeeper::addObjectDestroyed present-unmatched
 void ScoreKeeper::addObjectDestroyed( const Object *o)
 {
 
@@ -298,6 +307,7 @@ void ScoreKeeper::addObjectDestroyed( const Object *o)
 	}
 }
 
+// ?ScoreKeeper::addObjectLost present-unmatched
 void ScoreKeeper::addObjectLost( const Object *o )
 {
 	if (TheGameLogic->isScoringEnabled() == FALSE) {
@@ -340,6 +350,7 @@ void ScoreKeeper::addObjectLost( const Object *o )
 	}	
 }
 
+// ?ScoreKeeper::calculateScore present-unmatched
 Int ScoreKeeper::calculateScore( void )
 {
 	Int score = 0;
@@ -400,6 +411,7 @@ Int ScoreKeeper::getTotalUnitsDestroyed( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?ScoreKeeper::crc present-unmatched
 void ScoreKeeper::crc( Xfer *xfer )
 {
 
@@ -410,6 +422,7 @@ void ScoreKeeper::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?ScoreKeeper::xferObjectCountMap present-unmatched
 void ScoreKeeper::xferObjectCountMap( Xfer *xfer, ObjectCountMap *map )
 {
 
@@ -490,6 +503,7 @@ void ScoreKeeper::xferObjectCountMap( Xfer *xfer, ObjectCountMap *map )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?ScoreKeeper::xfer present-unmatched
 void ScoreKeeper::xfer( Xfer *xfer )
 {
 
@@ -566,6 +580,7 @@ void ScoreKeeper::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?ScoreKeeper::loadPostProcess present-unmatched
 void ScoreKeeper::loadPostProcess( void )
 {
 
