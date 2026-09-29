@@ -42662,3 +42662,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva004C0FB5@Rva004C0FB5@@QAEPAXPAX@Z,,0x004C0FB5,81,Code/GameEngine/Source/Common/Rva004C0FB5.cpp,matched,chain from 0x004C0D4F row; BfmeThing Go family; slot 0x7C zero fallback
 ?Rva00314B75@@YGXHMHHHH@Z,,0x00314B75,84,Code/GameEngine/Source/GameClient/GUI/GameWindowRva00314AE0.cpp,matched,gap in GameWindowRva00314AE0; W3DDisplay 5-float plus int via TheDisplay
 ?Rva00300678Get@@YAPAVAsciiString@@XZ,,0x00300678,76,Code/GameEngine/Source/Common/Rva00300678Get.cpp,matched,static AsciiString lws with guard plus atexit
+??_GRva00131BE5@@UAEPAXI@Z,,0x001320B4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-01.cpp,matched,scalar deleting dtor over rowed dtor vtable slot 9
