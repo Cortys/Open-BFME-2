@@ -164,3 +164,26 @@ int Rva00739830::rva00739830(const BfmePointFD *pt, int a, unsigned int b) const
 {
 	return m_cell->bfmeCellSum(pt, a, b);
 }
+
+//
+// ?rva00739730@Rva00739730@@QAEXHH@Z retail 0x00739730 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073B280.
+// Evidence: retail mov ecx [ecx+0x10] jmp; callers 0x002A7B73 0x002A84D2 with two int pushes; next row 0x00739740 in same TU.
+class Rva008F8C30
+{
+public:
+	void set(int a, int b);
+};
+class Rva00739730
+{
+public:
+	void rva00739730(int a, int b);
+private:
+	char m_pad[0x10];
+	Rva008F8C30 *m_cell; // +0x10
+};
+
+void Rva00739730::rva00739730(int a, int b)
+{
+	m_cell->set(a, b);
+}
