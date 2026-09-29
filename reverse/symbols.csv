@@ -6302,3 +6302,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?getDrawable@Object@@QBEPAVDrawable@@XZ,0x005508E2,chain doFXObj 0x001E09D8 calls getDrawable at 0x001E09E5 plus 0x001E09F2 plus 0x001E0A29; boundary 0x005508E2/7 ICF twin of rowed BuildListInfo getter same bytes
 ??$__pop_heap@PAHHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@0@Z,0x00423EF7,ICF twin of rowed 5-arg pop heap at same address; 6-arg overload Distance int identical 41B body called by 30B aux 0x00423F9F
 ??RRva006038D4Less@@QBE_NPBD0@Z,0x006038D4,ICF twin of rowed Rva0006038D4CStrLess proven by 27B probe and _M_find callsite 0x00603A2D
+?rva001DD8C9@Rva001DE556@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x001DD8C9,thiscall twin of rowed stdcall alloc via call-site mov ecx esi at 0x001DE556
