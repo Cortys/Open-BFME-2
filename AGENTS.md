@@ -212,6 +212,21 @@ otherwise reassess the batch.
 1. Make the smallest source and ledger change for one function or a homogeneous trivial batch under the rule above.
 2. `./build.sh <file-or-symbol>`. If a command returns a process or session ID,
    poll it; never launch a duplicate build.
+
+   **Do not reach past the tools to debug a body.** `tools/build.py` is
+   importable and `build.compile_source(source, output)` looks like the obvious
+   way to see a raw compiler error, but it writes the **shared** object cache at
+   `build/match/<mangled-source-path>.obj`. Every later `explain_mismatch` and
+   `./build.sh` run for that source then silently reuses *your* object instead
+   of building one, and the symptom is not an error — it is a body that stops
+   emitting its symbol at all.
+
+   That cost a wrong conclusion once: a "symbol not found in object" after an
+   edit was read as proof the edit suppressed the function, when it was the
+   cache replaying a hand-built object. The tell is a cached `.obj` whose source
+   path no longer exists; the repair is to delete the `.obj` **and** its
+   `.deps.json`. If you need a raw compile error, read `build.sh`'s own output
+   or the `explain_mismatch` traceback — both go through the tools.
 3. Stage explicit paths only: `git add <specific-paths>`, never `git add .`.
    Check every new ledger source is tracked.
 4. Commit normally. **Never bypass hooks.**
