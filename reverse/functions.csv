@@ -41776,3 +41776,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E0B80@AptCIH@@QBEHH@Z,,0x006E0B80,103,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,level-indexed ancestor field via parent chain plus sign-extended code
 ??0Rva0054840A@@QAE@W4ObjectID@@@Z,,0x005482C0,41,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva0054840AXfer.cpp,matched,one-arg ctor ObjectID plus list base plus three uints same 0x14 layout
 ??0Rva0054840A@@QAE@XZ,,0x0054829B,37,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva0054840AXfer.cpp,matched,default ctor zero ObjectID plus list base plus three uints same 0x14 layout
+?rva0070A610@AptNativeHash@@QAEXHPAVAptValue@@@Z,,0x0070A610,104,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash slot set AddRef Release old

@@ -48,6 +48,7 @@ public:
     void UnsetPrototype();
     void DestroyGCPointers();
     void rva0070A680(int index, AptValue *pValue);
+    void rva0070A610(int index, AptValue *pValue);
     AsciiString *rva0070AA40();
 };
 void AptNativeHash::Set__Proto__(AptValue *const value)
@@ -137,6 +138,20 @@ void AptNativeHash::rva0070A680(int index, AptValue *pValue)
         }
     }
     pValue->AddRef();
+    mpData[index].value = pValue;
+}
+void AptNativeHash::rva0070A610(int index, AptValue *pValue)
+{
+    if (!pValue) {
+        g_bfmeAptAssertAtE17734("pValue != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptNativeHash.h", 0xA8);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    AptValue *oldValue = mpData[index].value;
+    pValue->AddRef();
+    if (oldValue)
+        oldValue->Release();
     mpData[index].value = pValue;
 }
 AsciiString *AptNativeHash::rva0070AA40()
