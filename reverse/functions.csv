@@ -42026,3 +42026,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0021C811InsertionSort@@YAXPAVRva0021915B@@0HURva0021B753@@@Z,,0x0021C811,45,Code/GameEngine/Source/Common/System/Rva0021C811InsertionSort.cpp,matched,unlock insertion sort via rowed linear insert 0x0021BAA3
 ?rva00536C61@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536C61,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesLostRTS setter slot2C same TU
 ?rva001ED01E@Rva001ED01E@@QAEXXZ,,0x001ED01E,30,Code/GameEngine/Source/Common/Rva001ED01EClear.cpp,matched,manual destroy plus nullchecked free via rowed
+?rva0021C459@Rva0021C459@@QAEXPAUNode0021C459@@@Z,,0x0021C459,53,Code/GameEngine/Source/Common/System/Rva0021C459Cleanup.cpp,matched,unlock tree cleanup via rowed clear 0x005B804E and free
