@@ -42260,3 +42260,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0043C99AGet@@YAHXZ,,0x0043C99A,25,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,Null-or-flag test on global 0x00A03314 via caller evidence
 ?rva0021A1B6@Rva00219B9E@@QAEPAXII@Z,,0x0021A1B6,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219B9E or 0 callers 0x0021D58E
 ?rva002332B2@Rva002332B2@@QAEXH@Z,,0x002332B2,73,Code/GameEngine/Source/GameClient/Rva002332B2Cleanup.cpp,matched,chain after StringBase vector dtor window hide plus array free
+?Rva00468E26Get@@YGPAVModule@@PAVObject@@@Z,,0x00468E26,83,Code/GameEngine/Source/GameLogic/Object/Update/Rva00468E26Get.cpp,matched,BannerCarrierUpdate static key via nameToKey plus Object findModule via 3 callers
