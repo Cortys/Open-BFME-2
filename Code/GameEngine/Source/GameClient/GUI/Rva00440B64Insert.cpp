@@ -62,3 +62,14 @@ void Rva00441DA4Sort(void **begin, void **end, Rva0043FE9A comp)
 {
 	Rva00441974Sort(begin, end, 0, comp);
 }
+
+// ?Rva00441D74Sort@@YAXPAPAX0VRva0043FE9A@@@Z @0x00441D74 48B.
+// Insertion sort via guarded insert for each slot from begin+1. Evidence:
+// callers 0x00442847 0x0044286B; callee rowed 0x0044192F.
+void Rva00441D74Sort(void **begin, void **end, Rva0043FE9A comp)
+{
+	if (begin == end)
+		return;
+	for (void **p = begin + 1; p != end; ++p)
+		Rva0044192FGuarded(begin, p, *p, comp);
+}
