@@ -41246,3 +41246,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003EEB9F@Rva003EEB9F@@QAEXHH@Z,,0x003EEB9F,37,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,chain via 004E3629 and 003EEA1A caller 1
 ?rva003EE980@Rva003EE980@@QAEXH@Z,,0x003EE980,87,Code/GameEngine/Source/Common/Rva003EE980Forward.cpp,matched,unlock three-call forward with floats caller 1
 ?rva003EE7E1@Rva003EE7E1@@QAEXH@Z,,0x003EE7E1,105,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,unlock six-call broadcast strings 64 to 80 caller 1
+?Rva002CF571Loop@@YAXPAURva002CF571Item@@0PAX@Z,,0x002CF571,26,Code/GameEngine/Source/Common/Rva002CF571Loop.cpp,matched,range loop slot0 stride 0x5c caller 0x2CF891
