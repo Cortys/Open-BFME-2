@@ -42416,3 +42416,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??1Rva002B57D5@@QAE@XZ,,0x002B62A6,56,Code/GameEngine/Source/Common/Rva002B57D5Dtor.cpp,matched,chain via rowed clear 0x002B57D5 and free 0x00030830 twin of 0x002B609F
 ?rva005786E7@Rva005786E7@@QAEXXZ,,0x005786E7,26,Code/GameEngine/Source/Common/Rva005786E7Deleter.cpp,matched,chain deleter via rowed dtor 0x005D3731 and delete
 ??_GRva005D3731@@QAEPAXI@Z,,0x0057856A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005D3731.cpp,matched,chain deleting dtor via rowed dtor 0x005D3731
+?toUpper@?$StringBase@D@@QAEXXZ,0x00036B60,0x00036B60,233,Code/Libraries/Source/WWVegas/WWLib/StringBaseNarrowToUpper.cpp,matched,StringBase char toUpper via toLower donor IAT toupper
