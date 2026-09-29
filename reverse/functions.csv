@@ -42637,3 +42637,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??$copy_backward@PAUBfmePod60@@PAU1@@_STL@@YAPAUBfmePod60@@PAU1@00@Z,,0x005875BF,29,Code/Libraries/Source/WWVegas/WWLib/stlport_pod60_copy_backward.cpp,matched,copy_backward Pod60 via rowed __copy_backward
 ?rva006FBC30@Rva006FBC90Owner@@UAEXXZ,,0x006FBC30,45,Code/GameEngine/Source/Common/Rva006FBC30Slot13.cpp,matched,slot13 mark call plus forwarder tail
 ??_GRva0025FC61@@MAEPAXI@Z,,0x0025FF73,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0025FC61.cpp,matched,deleting dtor slot0 vtable 0x7F63F8 via rowed dtor and delete
+?rva002BC39D@Rva002BBBE7@@QAEXXZ,,0x002BC39D,41,Code/Libraries/Source/WWVegas/WWLib/Rva002BC39D.cpp,matched,chain lane callee rowed 0x002BBBE7 callers annotated

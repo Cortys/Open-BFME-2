@@ -3447,3 +3447,4 @@ _Rva000219C0LocaleName	0x000219C0	23	landed	bfme1_sweep donor game/stlport/Local
 ?rva002E7087@Rva002E7087@@QAEXHHHHHHDDHHPAHD@Z	0x002E7087	97	partial	this in ecx vs eax wall 95B vs 97B t=15 model=muse-12 score=0.88 stash=reverse/attempts/0x002e7087.cpp
 FUN_0070DDC0	0x0070DDC0	402	blocked	402B StringPool hash idiv GC with bFound asserts; free 1-arg but dual exits ret vs tail-jmp; caller 0x006FC909 2398B too big to clarify signature per 200B rule; needs donor layout t=5 model=muse-03
 ?rva006FE050@AptBasePtrStack@@QAEXH@Z	0x006FE050	88	partial	pop-esi vs sub order wall 93 vs 93 per shape_levers pop-order t=20 model=muse-03 score=0.97 stash=reverse/attempts/0x006fe050.cpp
+?rva003F9D08@Rva003F9D08@@QAEHH@Z	0x003F9D08	168	blocked	168B dtor puzzle 8 releases for 4 string offsets plus manual Pod8 erase plus Snapshot base 0xBBB554 cannot model honestly double-destroy t=10 model=muse-spark
