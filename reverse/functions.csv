@@ -41978,3 +41978,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva005B72E7@@QAE@XZ,,0x005B72E7,107,Code/GameEngine/Source/Common/Rva005B72E7Dtor.cpp,matched,deleting-dtor caller 0x005B7352 plus list-dtor 0x005B77F1
 ?rva000E459F@Rva000E459F@@QAE_NXZ,,0x000E459F,315,Code/GameEngine/Source/Common/Rva000E459F.cpp,matched,chain via Drawable rva00272C9E plus getTransformMatrix matrix plus clamp
 ?push_back@?$deque@UBfmeNarrowRecord0054FEF1@@V?$allocator@UBfmeNarrowRecord0054FEF1@@@_STL@@@_STL@@QAEXABUBfmeNarrowRecord0054FEF1@@@Z,,0x00550384,45,Code/Libraries/Source/WWVegas/WWLib/StlportNarrowRecord0054FEF1DequeAux.cpp,matched,deque pushback fast plus aux via rowed Construct plus aux
+??1Rva004D6208@@MAE@XZ,,0x004D6208,72,Code/GameEngine/Source/GameNetwork/Rva004D6208Dtor.cpp,matched,dtor vtable 0x860484 array delete plus20 Ascii plus1c
