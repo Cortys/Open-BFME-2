@@ -42532,3 +42532,4 @@ __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_Local
 ?rva004442FD@Rva004442FD@@QAEXXZ,,0x004442FD,46,Code/GameEngine/Source/Common/Rva004442FD.cpp,matched,clear 6a8 6a4 set 6c0 6bb virtual slot1
 ?rva00444083@Rva00444083@@QAEXH@Z,,0x00444083,113,Code/GameEngine/Source/Common/Rva00444083.cpp,matched,EnableCreateGame JoinGame via invoke
 ?rva004440F4@Rva00444083@@QAEXH@Z,,0x004440F4,113,Code/GameEngine/Source/Common/Rva00444083.cpp,matched,DisableCreateGame DisableJoinGame via invoke
+?rva005DD7C3@Rva005DD7C3@@QAEXPAVGameWindow@@PBUWidths@@@Z,,0x005DD7C3,56,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva005DD7C3.cpp,matched,listbox widths then init chain
