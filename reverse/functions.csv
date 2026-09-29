@@ -42367,3 +42367,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?rva0021B0CA@Rva00219B9E@@QAEPAXI@Z,,0x0021B0CA,112,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer element plus12 twin of 0x0021AFEA
 ?rva0021B22E@Rva00219B9E@@QAEPAXII@Z,,0x0021B22E,116,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,two-level via rowed 0x00219CAB static err fallback
 ?rva00223429@Rva000427195@@QAEHPBVAsciiString@@@Z,,0x00223429,145,Code/GameEngine/Source/GameClient/Rva00223429Erase.cpp,matched,erase-all via rowed bucketIndex compare free head-last caller 0x00224BB6
+?rva00223A94@Rva00223A94@@QAEHPBVAsciiString@@@Z,,0x00223A94,11,Code/GameEngine/Source/GameClient/Rva00223A94Thunk.cpp,matched,tail-jmp thunk to rowed erase 0x00223429 table at plus 0x90
