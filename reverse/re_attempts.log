@@ -3434,3 +3434,5 @@ _Rva000219C0LocaleName	0x000219C0	23	landed	bfme1_sweep donor game/stlport/Local
 ?Rva0070B590Cleanup@@YAXXZ	0x0070B590	52	partial	mov [global] via esi not ecx 55B 0 structural 1 store-source byte t=25 model=muse-03 score=0.98 stash=reverse/attempts/0x0070b590.cpp
 ?rva003F036E@Rva003F02E4@@QAEHXZ	0x003F036E	32	partial	sar edx 2 vs test edx fffffffc only diff 35B vs 32B t=18 model=muse-12 score=0.91 stash=reverse/attempts/0x003f036e.cpp
 ?processItems@LivingWorldEyeTower@@AAEXXZ	0x003F9A99	193	partial	second rate block xmm swap ours xmm1-g xmm0-frames vs retail xmm0 xmm1 plus 0x6c store reg t=22 model=muse-01 score=0.95 stash=reverse/attempts/0x003f9a99.cpp
+?rva00531757@Rva00531757@@QAE_NHH@Z	0x00531757	128	blocked	dec-chain dispatch matches /O1/G7; bit-test shr-vs-test and case5 sete-vs-je persist across if/switch/signed/==0/bare variants t=25 model=muse-11
+??0Rva000A8684@@QAE@XZ	0x000A8684	74	partial	74B identical size/count; only store order swaps (mov [esi] vs mov [ebp-0x10] and m_4 vs EH state); AsciiString+int+UnicodeString model with EH t=20 model=muse-11 score=0.92 stash=reverse/attempts/0x000a8684.cpp

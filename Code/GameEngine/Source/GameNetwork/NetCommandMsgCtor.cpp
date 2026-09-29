@@ -289,21 +289,48 @@ Rva004D64F5::Rva004D64F5() : NetCommandMsg()
 // ??0Rva004D6134@@QAE@XZ @0x004D6134 29B: calls base plus vtable 0x860474 plus dword 0 at +0x1c via And plus dword 0 at +0x20 via And plus type 14 at +0x14.
 // Honest-address ctor; same barrier-pinned vptr-first recipe as siblings above; unblocks 0x00592123 0x004D17C5.
 // Callers at 0x004D17ED 0x0059214A.
+template <class T> class StringBase
+{
+public:
+	StringBase() : m_data(0) {}
+	~StringBase() { releaseBuffer(); }
+private:
+	void releaseBuffer();
+	struct Header
+	{
+		int ref_count;
+		unsigned short length;
+		unsigned short capacity;
+		T data[1];
+	};
+	Header *m_data;
+};
 class Rva004D6134 : public NetCommandMsg
 {
 public:
 	Rva004D6134();
+protected:
+	virtual ~Rva004D6134();
 private:
-	unsigned int m_1c;
+	StringBase<unsigned short> m_1c;
 	unsigned int m_20;
 };
 
 Rva004D6134::Rva004D6134() : NetCommandMsg()
 {
 	_ReadWriteBarrier();
-	m_1c = 0;
 	m_20 = 0;
 	m_commandType = (NetCommandType)0xe;
+}
+
+// ??1Rva004D6134@@MAE@XZ, retail 0x004D6151, 54 bytes. Protected virtual
+// dtor for Rva004D6134 (vtable 0x860474, base NetCommandMsg vtable 0x860130):
+// stores derived vptr, destroys wide-string member at +0x1C via the rowed
+// releaseBuffer at 0x00036E70, reinstalls base vptr. Member at +0x1C is a
+// 4-byte StringBase<ushort> nulled inline in the ctor (And form preserved).
+// Caller at 0x004D6AA0 is the deleting dtor at 0x004D6A9D (slot 0).
+Rva004D6134::~Rva004D6134()
+{
 }
 
 // ??0Rva004D65DC@@QAE@XZ @0x004D65DC 29B: calls base plus vtable 0x860530 plus dword 0 at +0x1c via And plus dword 0 at +0x20 via And plus type 6 at +0x14.
