@@ -41725,3 +41725,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
 ?rva00271058@Rva00271058@@QAEXPAX@Z,,0x00271058,61,Code/GameEngine/Source/Common/Rva00271058.cpp,matched,nullable slot plus0x100 via global erase 0x00239C38 store 0x00239FA0 at 0x009FE77C callers 0x00238E36 0x00246677
 ?rva00240C60@Rva00439325@@QAEXXZ,,0x00240C60,41,Code/Libraries/Source/WWVegas/WWLib/Rva00439325Erase.cpp,matched,chain lane tree clear via destroy plus header reset
+??0Rva00261058@@QAE@PAVObject@@_N@Z,,0x00261058,69,Code/GameEngine/Source/Common/Rva00261058Ctor.cpp,matched,caller 0x002FDCBE temp plus push0 push esi vtable 0x7F8FE4 rowed getControllingPlayer
