@@ -41785,3 +41785,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva0054D8D8@@QAEPAXI@Z,,0x0054D958,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-54D958.cpp,matched,scalar deleting dtor calls rowed dtor 0x0054D8D8
 ?rva0054D6C8@Rva0054D974@@QAEPAVRva0054D8D8@@H@Z,,0x0054D6C8,83,Code/GameEngine/Source/Common/Rva0054D974Dtor.cpp,matched,finder in 3 lists by m38 null id returns null
 ??0Rva005D5802@@QAE@XZ,,0x005D5802,20,Code/GameEngine/Source/Common/Rva005D583CCtor.cpp,matched,chain ctor passes 1 to base 0x005D57D3 then vtable
+??0Rva005D5828@@QAE@XZ,,0x005D5828,20,Code/GameEngine/Source/Common/Rva005D583CCtor.cpp,matched,chain ctor passes 0 to base 0x005D57D3 then vtable

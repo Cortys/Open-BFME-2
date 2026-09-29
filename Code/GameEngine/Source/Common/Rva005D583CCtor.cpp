@@ -48,3 +48,14 @@ Rva005D5802::Rva005D5802() : Rva005D57D3((void *)1)
 {
 	*(unsigned *)this = 0x00C75B44;
 }
+
+class Rva005D5828 : public Rva005D57D3
+{
+public:
+	Rva005D5828();
+};
+
+Rva005D5828::Rva005D5828() : Rva005D57D3((void *)0)
+{
+	*(unsigned *)this = 0x00C75B5C;
+}
