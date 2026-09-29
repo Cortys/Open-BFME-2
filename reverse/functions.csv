@@ -42222,3 +42222,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002B4DE2@Rva002B4DE2@@QAEHXZ,,0x002B4DE2,139,Code/GameEngine/Source/Common/Rva002B4DE2.cpp,matched,unlock list count via rowed 0x002B4DC1 and 0x00036E70
 ??1Rva001FD42B@@QAE@XZ,,0x001FD6BC,56,Code/GameEngine/Source/Common/Rva001FD42BDtor.cpp,matched,chain dtor via rowed clear null-guarded free unblocks 0x002B11A7
 ?rva001FD458@Rva001FD458@@QAEXPAURva001FD458Node@@@Z,,0x001FD458,45,Code/GameEngine/Source/Common/Rva001FD458Erase.cpp,matched,unlock erase via rowed free unblocks 0x001FD659
+??$__uninitialized_fill_n@PAUBfmeStringRecord00219A68@@IU1@@_STL@@YAPAUBfmeStringRecord00219A68@@PAU1@IABU1@ABU__false_type@0@@Z,,0x0021AA55,37,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_fill_n.cpp,matched,37B fill_n stride 0x14 via rowed _Construct 0x0021A98A caller 0x0021E30D

@@ -81,6 +81,17 @@ public:
 	char m_body[16];
 };
 
+// Twenty-byte string record at 0x00219A68: same 37-byte fill_n shape,
+// striding 0x14 per element through its own rowed _Construct at 0x0021A98A.
+// Layout matches the 0x00219A68 copy ctor (word plus two AsciiStrings plus two words).
+struct BfmeStringRecord00219A68
+{
+public:
+	BfmeStringRecord00219A68();
+	BfmeStringRecord00219A68(const BfmeStringRecord00219A68 &other);
+	char m_body[20];
+};
+
 typedef _STL::pair<const AsciiString, NoCaseTreeValue4> FillNoCasePair;
 typedef _STL::pair<const AsciiString, char> FillPairC;
 
@@ -94,6 +105,7 @@ template<> void _Construct<Rva002390CB, Rva002390CB>(Rva002390CB *, const Rva002
 template<> void _Construct<AsciiString, AsciiString>(AsciiString *, const AsciiString &);
 template<> void _Construct<Rva0040CB11Entry, Rva0040CB11Entry>(Rva0040CB11Entry *, const Rva0040CB11Entry &);
 template<> void _Construct<BfmeStringRecord002199C8, BfmeStringRecord002199C8>(BfmeStringRecord002199C8 *, const BfmeStringRecord002199C8 &);
+template<> void _Construct<BfmeStringRecord00219A68, BfmeStringRecord00219A68>(BfmeStringRecord00219A68 *, const BfmeStringRecord00219A68 &);
 }
 
 template _STL::vector<TreeKey00242F5E, _STL::allocator<TreeKey00242F5E> >::vector(unsigned int, const TreeKey00242F5E &, const _STL::allocator<TreeKey00242F5E> &);
@@ -105,6 +117,7 @@ template _STL::vector<Rva002390CB, _STL::allocator<Rva002390CB> >::vector(unsign
 template _STL::vector<AsciiString, _STL::allocator<AsciiString> >::vector(unsigned int, const AsciiString &, const _STL::allocator<AsciiString> &);
 template _STL::vector<Rva0040CB11Entry, _STL::allocator<Rva0040CB11Entry> >::vector(unsigned int, const Rva0040CB11Entry &, const _STL::allocator<Rva0040CB11Entry> &);
 template _STL::vector<BfmeStringRecord002199C8, _STL::allocator<BfmeStringRecord002199C8> >::vector(unsigned int, const BfmeStringRecord002199C8 &, const _STL::allocator<BfmeStringRecord002199C8> &);
+template _STL::vector<BfmeStringRecord00219A68, _STL::allocator<BfmeStringRecord00219A68> >::vector(unsigned int, const BfmeStringRecord00219A68 &, const _STL::allocator<BfmeStringRecord00219A68> &);
 
 // Retail 0x005DE088 (27B): public _STL::uninitialized_fill_n for
 // BfmeStringRecord005DDD40, forwarding first/n/value to the rowed 4-arg
