@@ -40986,3 +40986,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003828B6@Rva0038201D@@QAEXXZ,,0x003828B6,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,clear via tree free resets sentinel
 ?rva002E43A6@OptionPreferences@@QAEXH@Z,,0x002E43A6,72,Code/GameEngine/Source/GameClient/GUI/GUICallbacks/Menus/OptionPreferences_rva002E43A6.cpp,matched,FirewallBehavior setInt slot 0x2c via temp key; ctor 0x37BA0 release 0x36410; caller 0x5194F6
 ??_GRva00410688@@QAEPAXI@Z,,0x00410792,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06.cpp,matched,deleting dtor via rowed dtor
+??1Rva004F6986@@QAE@XZ,,0x004F6986,61,Code/GameEngine/Source/Common/Rva004F6986Dtor.cpp,matched,8B holder two inline member dtors via rowed Release destroy loop stride 8
