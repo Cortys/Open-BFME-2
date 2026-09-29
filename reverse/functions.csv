@@ -41705,3 +41705,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005960C1@Rva0025C061@@QAE_NPAX@Z,,0x005960C1,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus base Science push via visible callee
 ??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
 ?Rva003F1F06Copy@@YAPADPAD00@Z,,0x003F1F06,50,Code/Libraries/Source/WWVegas/WWLib/Rva003F1F06Copy.cpp,matched,counted copy stride 12 via vector uint assign 0x0026F4F4 caller 0x003F2460
+?Rva003F1F38CopyBackward@@YAPADPAD00@Z,,0x003F1F38,50,Code/Libraries/Source/WWVegas/WWLib/Rva003F1F38CopyBackward.cpp,matched,counted copy-backward stride 12 via vector uint assign 0x0026F4F4 caller 0x003F24D6
