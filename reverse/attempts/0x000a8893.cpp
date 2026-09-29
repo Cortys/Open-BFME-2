@@ -2,6 +2,8 @@
 // partial score=0.96 date=2026-09-29
 // ??0Rva000A8893@@QAE@PAXH@Z
 // partial score=0.96 date=2026-09-29
+// ??0Rva000A8893@@QAE@PAXH@Z
+// partial score=0.96 date=2026-09-29
 // cl: /O1 /MD /EHsc
 // ??0Rva000A8893@@QAE@PAXH@Z @0x000A8893 112B.
 // Twin of 0x0073F708: holder with arg, thread object, and event, then starts
