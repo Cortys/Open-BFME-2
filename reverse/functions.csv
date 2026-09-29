@@ -42527,3 +42527,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva00094B67Dot@@YAMPBVRva00094B67Plane@@PBVRva00094B67Vec3@@@Z,,0x00094B67,32,Code/GameEngine/Source/Common/Bfme5Thirty.cpp,matched,BFME1 byte-identical donor Bfme5Thirty.cpp (a38d345e); tier T3 so the name is address-derived and asserts no identity; boundary proven by the ret at 0x00094B66
 __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleCtypeCase.c,matched,BFME1 byte-identical donor game/stlport/LocaleCtypeCase.c (a38d345e); tier T1 clean transfer; identity not recovered so the name keeps the donor address token
 ??0Rva00271826@@QAE@XZ,,0x00271826,108,Code/GameEngine/Source/GameClient/Rva00271826.cpp,matched,finish banked 0.98 via barrier plus vtable global
+??1Rva003FAFB9@@UAE@XZ,,0x003FAFB9,82,Code/GameEngine/Source/Common/Rva003FAFB9Dtor.cpp,matched,chain dtor calls FAC3F ReleaseRef releaseBuffer BBB554
