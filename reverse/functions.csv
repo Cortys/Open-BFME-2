@@ -42384,3 +42384,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva0060CB2B@Rva0060CB2B@@QBEPAURva0060CB2BNode@@ABQBD@Z,,0x0060CB2B,54,Code/Libraries/Source/WWVegas/WWLib/stlport_char_find_0060CB2B.cpp,matched,hashtable _M_find char-pointer interned keys via rowed hash_string bucket walk callers 0x0060CB7C 0x0060CEA5 sibling bktnum 0x0060CD16
 ?rva0058D211@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D211,133,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room sibling of wrapper via donor layout
 ?rva0060CB7C@Rva0060CB2B@@QAE?AURva0060CB2BIterator@@ABQBD@Z,,0x0060CB7C,27,Code/Libraries/Source/WWVegas/WWLib/stlport_char_find_0060CB2B.cpp,matched,hashtable find wraps rowed _M_find 0x0060CB2B into iterator callers 0x0060CBAC 0x0060CDFD
+?rva00531431@Rva005312BE@@QAEXHH@Z,,0x00531431,80,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,gap lane bounded setter writes 0x35 and 0x1BA30 flag
