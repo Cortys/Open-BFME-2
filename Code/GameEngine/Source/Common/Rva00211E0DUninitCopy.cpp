@@ -12,6 +12,8 @@ class Rva002111C8
 {
 	RvaSmartPtr12 m_00;
 	int m_0c;
+public:
+	Rva002111C8 &operator=(const Rva002111C8 &o);
 };
 void __cdecl Rva00211DFBConstruct(Rva002111C8 *d, const Rva002111C8 *s);
 
@@ -35,4 +37,19 @@ Rva002111C8 *__cdecl Rva00211E33Fill(Rva002111C8 *dest, unsigned int count, cons
 	for (; count > 0; --count, ++cur)
 		Rva00211DFBConstruct(cur, value);
 	return cur;
+}
+
+// ?Rva00211EAACopy@@YAPAVRva002111C8@@PAV1@00@Z, RVA 0x00211EAA, 47B. Chain
+// lane: copy via rowed operator= 0x002111E3; byte-diff sar 4 count with jle
+// guard, EBP frame, updates first/dest slots, returns final dest. Caller at
+// 0x00211F63. Owner unknown so honest address-derived names.
+
+Rva002111C8 *__cdecl Rva00211EAACopy(Rva002111C8 *first, Rva002111C8 *last, Rva002111C8 *dest)
+{
+	for (int n = ((int)last - (int)first) >> 4; n > 0; --n) {
+		*dest = *first;
+		++first;
+		++dest;
+	}
+	return dest;
 }
