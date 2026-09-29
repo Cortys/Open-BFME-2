@@ -3131,3 +3131,6 @@ FUN_007c4b97	0x003C4B97	112	blocked	EH prolog plus list-int plus virtuals 9C-A8-
 ?rva00265514@Object@@QBEPAUCoord3D@@PAU2@PBV1@@Z	0x00265514	130	partial	131B vs 130B extra movss vs movaps plus xmm rotation t=30 model=muse-spark score=0.94 stash=reverse/attempts/0x00265514.cpp
 ?rva00300021@Rva00300021@@QBE_NPBX@Z	0x00300021	84	blocked	branchy flag plus 0x24-0x26 bytes with redundant dl test needs donor t=15 model=muse-spark
 ?rva0005B137@Rva0005B137@@QAE_NXZ	0x0005B137	103	blocked	STL hashtable begin plus set insert plus WindowVideoManager layout needs donor t=10 model=muse-spark
+??0Rva004F5B63@@QAE@XZ	0x004F5B63	71	blocked	EH ctor missing state1 and vptr order vs list base t=20 model=muse-spark
+?rva0047DCDF@Rva0047DCDF@@QAEXP6AXPAX0@Z0I@Z	0x0047DCDF	48	partial	shr-and flag needs byte and bl 1 vs dword FFFFFF01 t=15 model=muse-spark score=0.94 stash=reverse/attempts/0x0047dcdf.cpp
+?Rva005116C2Load@@YAXXZ	0x005116C2	110	partial	push order and StringBase temp lea vs push-mov-mov t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x005116c2.cpp
