@@ -41865,3 +41865,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00535CE4@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535CE4,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Losses via slot6 concat
 ?rva0053587C@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053587C,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Points via slot2C sibling Losses
 ?rva0027290C@Drawable@@QAEXH@Z,,0x0027290C,35,Code/GameEngine/Source/GameClient/Drawable_rva0027290C.cpp,matched,Drawable first-module setter slot 5C callers 0x0039B5AF plus 1
+?rva0028951F@Rva0028951F@@QAEPBVOverridable@@H@Z,,0x0028951F,144,Code/Libraries/Source/WWVegas/WWLib/Rva0028951FFind.cpp,matched,unlock lane NameKey cache plus hashtable fallback plus final override
