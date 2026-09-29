@@ -526,3 +526,23 @@ int Rva0002C9C2::write(char *dst)
 	int n = m_first.write(dst);
 	return n + m_second.write(dst + n);
 }
+
+// ??BWinMainTitlePair@@QAE?AVAsciiString@@XZ @0x0010BA9F 101B
+// Narrow materializer for the double-pair title segment rowed at 0x00109D3A:
+// sizes via both pair lengths then fills through that write; callers at
+// 0x0010BCC8 0x0057A11F 0x0057A190; chain from 0x00109D3A.
+struct WinMainTitlePair : Rva000B3F84Pair
+{
+	int write(char *dst);
+	int firstLength() const { return m_len; }
+	int length() const { return firstLength() + m_secondPair.m_len; }
+	operator AsciiString();
+	Rva000B3F84Pair m_secondPair;
+};
+
+WinMainTitlePair::operator AsciiString()
+{
+	AsciiString tmp;
+	write(tmp.getBufferForRead(length()));
+	return tmp;
+}
