@@ -41098,3 +41098,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0007E016@Rva0007E016@@QAEHHH@Z,,0x0007E016,20,Code/GameEngine/Source/Common/Rva0007E016Thunk.cpp,matched,thunk forwarder to vslot1 returning first
 ??1Rva00585B16@@QAE@XZ,,0x00585B16,8,Code/Libraries/Source/WWVegas/WWLib/Rva00585B16Dtor.cpp,matched,tail-jmp to rowed deque dtor callers 0x585D24 0x586B9B
 ?rva003B2832@Rva003B2832@@QAEHXZ,,0x003B2832,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003B2832Get.cpp,matched,action-template first-dword getter via 0x203926; twin of 0x3B275A
+?Rva0007E3B1Fill@@YAXPAH0PBH@Z,,0x0007E3B1,40,Code/Libraries/Source/WWVegas/WWLib/stlport_fill_e12.cpp,matched,fill 12B via explicit moves
