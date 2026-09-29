@@ -36,3 +36,21 @@ private:
 Rva002B82D5::~Rva002B82D5()
 {
 }
+
+// ??1Rva002B923F@@QAE@XZ @0x002B923F 8B.
+// Trivial dtor over member Rva002B82D5 at +4; empty body tail-jumps.
+// Evidence: chain lane; callee rowed 0x002B82D5; callers at 0x002BADF6
+// plus 0x002BBC04; unblocks 0x002BADF3 plus 0x002BBBE7; same add-4-jmp
+// shape as rowed Rva004BA1C8 dtor at 0x004BA1C8.
+class Rva002B923F
+{
+public:
+	~Rva002B923F();
+private:
+	int m_00;
+	Rva002B82D5 m_04;
+};
+
+Rva002B923F::~Rva002B923F()
+{
+}

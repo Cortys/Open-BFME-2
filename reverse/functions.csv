@@ -42561,3 +42561,4 @@ __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_Local
 ??0Rva002B55AE@@QAE@ABV0@@Z,,0x002B55AE,68,Code/GameEngine/Source/Common/Rva002B55AECopy.cpp,matched,vector copy ctor via rowed Vector_base pinned get_allocator and 4-arg copy ICF
 ??_GRva003FD3EF@@UAEPAXI@Z,,0x002B30AE,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003FD3EF.cpp,matched,chain deleting dtor vtable FE024 rowed base
 ?EraseRange@Rva00566B81Vector@@QAEPAVRva00566695@@PAV2@0@Z,,0x00566B81,51,Code/GameEngine/Source/Common/Rva00566B81EraseRange.cpp,matched,chain lane erase via rowed CopyRange 0x00566A9A plus rowed DestroyRange 0x003F0CA1 same shape as 0x004BA399
+??1Rva002B923F@@QAE@XZ,,0x002B923F,8,Code/GameEngine/Source/Common/Rva002B82D5Dtor.cpp,matched,chain lane trivial dtor add4 jmp rowed 0x002B82D5 unblocks 0x002BADF3 0x002BBBE7
