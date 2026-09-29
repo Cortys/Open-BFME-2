@@ -8,7 +8,9 @@ extern "C" void __cdecl free(void *block);
 
 struct Rva001FD458Node
 {
-	unsigned char m_pad00[8];
+	unsigned char m_color;
+	unsigned char m_pad01[3];
+	Rva001FD458Node *m_parent;
 	Rva001FD458Node *m_left;
 	Rva001FD458Node *m_right;
 };
@@ -16,6 +18,9 @@ struct Rva001FD458Node
 struct Rva001FD458
 {
 	void rva001FD458(Rva001FD458Node *x);
+	void rva001FD659();
+	Rva001FD458Node *m_header;
+	unsigned int m_count;
 };
 
 void Rva001FD458::rva001FD458(Rva001FD458Node *x)
@@ -25,5 +30,16 @@ void Rva001FD458::rva001FD458(Rva001FD458Node *x)
 		Rva001FD458Node *y = x->m_left;
 		free(x);
 		x = y;
+	}
+}
+
+void Rva001FD458::rva001FD659()
+{
+	if (m_count != 0) {
+		rva001FD458(m_header->m_parent);
+		m_header->m_left = m_header;
+		m_header->m_parent = 0;
+		m_header->m_right = m_header;
+		m_count = 0;
 	}
 }
