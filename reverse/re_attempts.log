@@ -2859,3 +2859,6 @@ FUN_004EE233	0x004EE233	45	blocked	vector allocate_and_copy BfmeE12 allocate vs 
 ?rva0029D844@Rva0029D844@@QAEXH@Z	0x0029D844	130	blocked	130B EH copyctor-Rva0043FC20x2 isEmpty AsciiString-assign releaseBuffer global-DFDC84-plus-110 plus-7BC needs-donor t=8 model=muse-spark
 ?rva00586C56@Rva00586C56@@QAEHHH@Z	0x00586C56	183	blocked	183B vector-Rva00585B16 insert allocate copy Construct fill_n Destroy ret14 needs-STL-member-ID t=12 model=muse-spark
 ??1Rva004FF582@@QAE@XZ	0x004FFBEB	56	blocked	dtor needs EH prolog with unwind 0x793D27 t=10 model=muse-06
+?rva005E8044@Rva005E8044@@QAEPAXPAX0@Z	0x005E8044	51	partial	lea tag ebp+0xf vs retail ebp+0xb single dummy byte t=18 model=muse-05 score=0.98 stash=reverse/attempts/0x005e8044.cpp
+??1Rva005E8005@@QAE@XZ	0x005E8005	63	blocked	EH dtor Forward plus free needs single-state EH with no base call t=15 model=muse-05
+?Rva0040AD75BinarySearch@@YA_NPAH0ABH@Z	0x0040AD75	56	blocked	STL 4.6-style binary_search constructs less locally plus 5-arg lower_bound vs vendored 4.5.3 47-48B t=20 model=muse-05
