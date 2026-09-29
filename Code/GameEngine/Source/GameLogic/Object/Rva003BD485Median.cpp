@@ -122,3 +122,26 @@ void Rva003C3B2CPopHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int, 
 	Rva003BD485Keyed **newLast = last - 1;
 	((PopHeap6)Rva003C3AC7PopHeap)(first, newLast, newLast, *newLast, extra, 0);
 }
+
+// ?Rva003C3A79Partition@@YAPAPAURva003BD485Keyed@@PAPAU1@0PAU1@H@Z @0x003C3A79 55B.
+// Quicksort unguarded partition over the same keyed array: scans first up
+// while its key is below the pivot key and last down while the pivot key is
+// below its key, swapping on cross and returning the split. Unlock lane;
+// caller 0x003CA2EB passes (first, last, *median, extra); cdecl.
+Rva003BD485Keyed **Rva003C3A79Partition(Rva003BD485Keyed **first, Rva003BD485Keyed **last, Rva003BD485Keyed *pivot, int)
+{
+	while (true)
+	{
+		while ((*first)->m_key < pivot->m_key)
+			++first;
+		--last;
+		while (pivot->m_key < (*last)->m_key)
+			--last;
+		if (!(first < last))
+			return first;
+		Rva003BD485Keyed *tmp = *first;
+		*first = *last;
+		*last = tmp;
+		++first;
+	}
+}
