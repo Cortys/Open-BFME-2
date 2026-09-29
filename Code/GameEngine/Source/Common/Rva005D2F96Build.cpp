@@ -45,7 +45,6 @@ struct Rva005D2F96S24 __cdecl Rva005D2F96Build(const struct Rva005D2F96S16 &src,
 	return r;
 }
 
-// ?Rva005E35F4Build@@YA?AURva005E35F4S32@@ABURva005D2F96S24@@PBD@Z present-unmatched
 struct Rva005E35F4S32 __cdecl Rva005E35F4Build(const struct Rva005D2F96S24 &src, const char *text)
 {
 	Rva000B3F84Pair p;
