@@ -10,7 +10,7 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-extern Rva007EB810Diag *Rva007EB810Get();
+extern int Rva007EB810Get();
 
 class Rva00803080;
 
@@ -35,7 +35,7 @@ void Rva007EAServiceList::add(Rva00803080 *owner)
 			return;
 		}
 	}
-	Rva007EB810Get()->fail(
+	((Rva007EB810Diag *)Rva007EB810Get())->fail(
 		"false",
 		"\\views\\feslbuild_main\\jabba\\fesl\\source\\servicehub.cpp",
 		679);
@@ -51,7 +51,7 @@ void Rva007EAServiceList::remove(Rva00803080 *owner)
 			return;
 		}
 	}
-	Rva007EB810Get()->fail(
+	((Rva007EB810Diag *)Rva007EB810Get())->fail(
 		"false",
 		"\\views\\feslbuild_main\\jabba\\fesl\\source\\servicehub.cpp",
 		694);
