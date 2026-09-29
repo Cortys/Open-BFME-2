@@ -51,6 +51,9 @@
 // ?rva00537C28@UserPreferences@@QAEHXZ @0x00537C28 23B
 // UserPreferences grand-total path: total-losses plus total-wins chain.
 // Evidence: calls 0x005373AF 0x00535C40 ret 0 chain same TU.
+// ?rva00536C61@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536C61 71B
+// UserPreferences BattlesLostRTS-void path: append BattlesLostRTS slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat BattlesLostRTS 0x00869084 slot 0x2C releaseBuffer gap same TU.
 // ?rva00535D75@UserPreferences@@QAEHVAsciiString@@@Z @0x00535D75 74B
 // UserPreferences WinStreak-getter path: append WinStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat WinStreak 0x00868E8C slot 0x18 releaseBuffer gap same TU unlock.
@@ -148,6 +151,7 @@ public:
 	int rva005373AF();
 	int rva0053734E(AsciiString arg);
 	int rva00537C28();
+	void rva00536C61(AsciiString arg, int x);
 	int rva00535D75(AsciiString arg);
 	int rva00535E06(AsciiString arg);
 	int rva00535E97(AsciiString arg);
@@ -269,6 +273,12 @@ int UserPreferences::rva00537C28()
 	int losses = rva005373AF();
 	int wins = rva00535C40();
 	return losses + wins;
+}
+
+void UserPreferences::rva00536C61(AsciiString arg, int x)
+{
+	arg.concat("BattlesLostRTS");
+	v11(arg, x);
 }
 
 int UserPreferences::rva00535D75(AsciiString arg)
