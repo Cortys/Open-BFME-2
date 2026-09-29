@@ -80,6 +80,7 @@ extern AsciiString g_Rva00E02E7C;
 extern AsciiString g_Rva00E02E78;
 extern AsciiString g_Rva00E02E80;
 extern AsciiString g_Rva00E02E68;
+extern AsciiString g_Rva00E02E6C;
 
 class Rva003EE900
 {
@@ -238,4 +239,24 @@ void Rva003EEBC4::rva003EEBC4(Int a, Int b)
 	((Rva004E3629 *)&m_owner)->rva004E3629(g_Rva00E02E68, 1);
 	((Rva003EEA63 *)this)->rva003EEA63(a, b);
 	m_saved = a;
+}
+
+// ?rva003EEE64@Rva003EEE64@@QAEXH@Z retail 0x003EEE64 42B. Chain lane: if
+// this+0x14 nonzero calls rowed 0x004E3629 with string g_Rva00E02E6C then
+// this session's 0x003EEBC4 with (m_saved X); caller at 0x003EF05C.
+class Rva003EEE64
+{
+public:
+	void rva003EEE64(Int x);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+	Int m_saved;
+};
+void Rva003EEE64::rva003EEE64(Int x)
+{
+	if (m_saved != 0) {
+		((Rva004E3629 *)&m_owner)->rva004E3629(g_Rva00E02E6C, 1);
+		((Rva003EEBC4 *)this)->rva003EEBC4(m_saved, x);
+	}
 }
