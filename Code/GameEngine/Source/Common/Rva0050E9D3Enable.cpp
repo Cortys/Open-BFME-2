@@ -182,3 +182,11 @@ void Rva0043CCDASet(unsigned char val)
 		Rva0043C96FEnable();
 	*flag = val;
 }
+
+// ?Rva0043CCD1Get@@YAEXZ @0x0043CCD1 9B.
+// Flag-byte getter on the 0x0043C9B3 singleton block: returns the byte at
+// +4. Callers at 0x002D4CE9 0x002D4D5A. Chain lane on 0x0043C9B3.
+unsigned char Rva0043CCD1Get(void)
+{
+	return *((unsigned char *)Rva0043C9B3Get() + 4);
+}
