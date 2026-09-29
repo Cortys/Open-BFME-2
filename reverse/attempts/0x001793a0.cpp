@@ -1,4 +1,6 @@
 // ?Resize@?$VectorClass@VVector4@@@@UAE_NHPBVVector4@@@Z
+// partial score=0.9927 date=2026-09-29
+// ?Resize@?$VectorClass@VVector4@@@@UAE_NHPBVVector4@@@Z
 // partial score=0.9927272727 date=2026-09-23
 // cl: /G7 /DNDEBUG /MD /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep
 // BFME1 VectorClassResizeNothrowDelete.cpp donor; name linked by target ctor.
