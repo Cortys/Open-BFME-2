@@ -2783,3 +2783,6 @@ FUN_009096C7	0x005096C7	56	blocked	EH AsciiString plus base dtor needs scope plu
 FUN_006e553d	0x002E553D	155	blocked	enum-table setter with erase fallback; extern-array gives lea-form addressing vs retail absolute-disp form; imul-CSE and ebx-role differ; needs table-decl or flag lever t=20 model=muse-spark
 ?rva002E537B@OptionPreferences@@QAEXH@Z	0x002E537B	127	partial	table-load scheduling late-vs-early single cause; 126B 38insns vs 127B 39insns; tried eq-ne direct local do-shapes; local-form poisons EH t=22 model=muse-spark score=0.94 stash=reverse/attempts/0x002e537b.cpp
 ?rva0057ABD0@Rva0057ABD0@@QBEMXZ	0x0057ABD0	60	blocked	60B x87 conditional sum needs Final union for m_38 at 0x38 overlapping RvaFloatField pad at 0x8 plus faddp vs fadd for unnamed getters tried 3 shapes casts clean 65B vs 60B extra push fstp t=15 model=muse-01
+FUN_0049921F	0x0009921F	145	blocked	EH mutex plus image loop needs globals t=5 model=muse-04
+FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 model=muse-04
+??$__destroy_aux@PAUBfmeAssignRecord172@@@_STL@@YAXPAU1@0ABU__false_type@0@@Z	0x001EAF5E	29	blocked	virtual call vs POD record mismatch t=5 model=muse-04

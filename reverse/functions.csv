@@ -41078,3 +41078,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00249595@Rva0024955E@@QAEXVAsciiString@@@Z,,0x00249595,55,Code/GameEngine/Source/GameNetwork/Rva0024955ETranslate.cpp,matched,unlock twin member translate at plus1B4
 ?rva005382A6@Rva005382A6@@QAEPAXHH@Z,,0x005382A6,16,Code/GameEngine/Source/Common/Rva005382A6Getter.cpp,matched,indexed address base plus i16 plus off
 ?rva005DB98E@Rva005DB98E@@QAEPAXGG@Z,,0x005DB98E,46,Code/GameEngine/Source/Common/Rva005DB98EGet.cpp,matched,2D index 20B at 218 via G7 imul
+?clear@Rva0009990D@@QAEXXZ,,0x0009990D,26,Code/GameEngine/Source/Common/Rva0009990DSet.cpp,matched,clear via dtor plus delete

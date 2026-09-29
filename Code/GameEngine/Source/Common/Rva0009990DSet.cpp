@@ -8,6 +8,7 @@ class Rva0009990D
 {
 public:
 	void set(void *p);
+	void clear();
 private:
 	MutexClass::LockClass *m_ptr;
 };
@@ -17,6 +18,17 @@ void Rva0009990D::set(void *p)
 	if (p == old)
 		return;
 	m_ptr = (MutexClass::LockClass *)p;
+	if (old == 0)
+		return;
+	old->~LockClass();
+	::operator delete(old);
+}
+// ?clear@Rva0009990D@@QAEXXZ retail 0x0009990D 26B clear pointer with dtor plus
+// delete. Evidence: named pin plus same callees as set; 23 callers.
+void Rva0009990D::clear()
+{
+	MutexClass::LockClass *old = m_ptr;
+	m_ptr = 0;
 	if (old == 0)
 		return;
 	old->~LockClass();
