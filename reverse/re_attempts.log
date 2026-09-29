@@ -3184,3 +3184,4 @@ FUN_00A0C7AD	0x0060C7AD	260	blocked	chain260 xfer CxxThrow plus format plus virt
 FUN_004a52ae	0x000A52AE	304	blocked	complex GUI draw with SSE UnicodeString and 10 callees t=12 model=muse-11
 ?Rva003249D2@@YAXPAVGameWindow@@_N@Z	0x003249D2	275	blocked	276vs275 18reg slider-layout wall t=20 model=muse-01
 ?Rva001ECD5FFill@@YAPAUBfmeRecord001ECAF9@@PAU1@IABU1@@Z	0x001ECD5F	37	partial	fill37 pop-cleanup plus return-reg t=15 model=muse-04 score=0.9 stash=reverse/attempts/0x001ecd5f.cpp
+FUN_006ade71	0x002ADE71	77	blocked	multi-map clear-findSlot dual-use plus GameWindow hashtable typedefs plus ICF clear ambiguity t=10 model=muse-spark

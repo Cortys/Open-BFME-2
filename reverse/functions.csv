@@ -42037,3 +42037,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00536D39@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536D39,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesWonRTS getter slot18 same TU
 ?rva00536D83@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536D83,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesLostAutoResolve setter slot2C same TU
 ?rva00536DCA@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536DCA,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesLostAutoResolve getter slot18 same TU
+?rva002A7AFE@PlayerList@@QAEXPAX@Z,,0x002A7AFE,30,Code/GameEngine/Source/Common/RTS/PlayerListRva002A7AFE.cpp,matched,chain lane player fanout via armor remove
