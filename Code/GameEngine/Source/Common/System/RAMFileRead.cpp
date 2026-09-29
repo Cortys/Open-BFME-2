@@ -93,10 +93,12 @@ class RAMFile : public File
 {
 public:
 	virtual int read(void *buffer, int bytes);
+	virtual int seek(int pos, seekMode mode);
 	virtual void nextLine(char *buf, int bufSize);
 	virtual bool scanInt(int &newInt);
 	virtual bool scanReal(float &newReal);
 	virtual bool scanString(AsciiString &newString);
+	virtual char *readEntireAndClose(void);
 	virtual bool openFromArchive(File *archiveFile, const AsciiString &filename, int offset, int size);
 
 protected:
@@ -288,4 +290,61 @@ bool RAMFile::scanReal(float &newReal)
 
 	newReal = (float)atof(tempstr.str());
 	return true;
+}
+
+// ?seek@RAMFile@@UAEHHW4seekMode@File@@@Z @ 0x006055AA (61B): slot 5 (offset
+// 0x14) of vtable 0x0087AA00, between the rowed read (3) and nextLine (6).
+// ZH GameEngine RAMFile::seek verbatim: START/CURRENT/END switch, clamp to
+// [0, m_size], store m_pos.
+int RAMFile::seek(int pos, seekMode mode)
+{
+	int newPos;
+
+	switch (mode)
+	{
+		case START:
+			newPos = pos;
+			break;
+		case CURRENT:
+			newPos = m_pos + pos;
+			break;
+		case END:
+			newPos = m_size + pos;
+			break;
+		default:
+			// bad seek mode
+			return -1;
+	}
+
+	if (newPos < 0)
+	{
+		newPos = 0;
+	}
+	else if (newPos > m_size)
+	{
+		newPos = m_size;
+	}
+
+	m_pos = newPos;
+
+	return m_pos;
+}
+
+// ?readEntireAndClose@RAMFile@@UAEPADXZ @ 0x00605682 (31B): slot 13 (offset
+// 0x34) of vtable 0x0087AA00. ZH GameEngine RAMFile::readEntireAndClose
+// verbatim (its DEBUG_CRASH compiles out): hand m_data to the caller, then
+// close through slot 2.
+char *RAMFile::readEntireAndClose(void)
+{
+	if (m_data == 0)
+	{
+		return new char[1];	// just to avoid crashing...
+	}
+
+	char *tmp = m_data;
+	m_data = 0;	// will belong to our caller!
+
+	close();
+
+	return tmp;
 }
