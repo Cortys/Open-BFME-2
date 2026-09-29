@@ -42012,3 +42012,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?clear@?$_Rb_tree@UBfmeStringRecord0021A940@@U1@U?$_Identity@UBfmeStringRecord0021A940@@@_STL@@U?$less@UBfmeStringRecord0021A940@@@3@V?$allocator@UBfmeStringRecord0021A940@@@3@@_STL@@QAEXXZ,,0x0021CFD1,41,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme0021A940_erase.cpp,matched,chain STL clear via rowed erase 0x0021C3B2 41B shape
 ?Rva003C89D1Guard@@YGXPAVParameter@@0@Z,,0x003C89D1,68,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C89D1Guard.cpp,matched,leaf guard via getUnitNamed plus rva0036F4DF
 ?Rva003248F5Show@@YAXPAVGameWindow@@_N@Z,,0x003248F5,115,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,listbox children visibility sync unlock same TU
+??$_Destroy@PAVRva001EC349@@@_STL@@YAXPAVRva001EC349@@0@Z,,0x001ECFC6,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva001ec349_destroy.cpp,matched,range destroy stride 0x24 via rowed dtor
