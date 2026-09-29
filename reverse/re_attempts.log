@@ -2804,3 +2804,6 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?Rva004582F3Loop@@YAXPAURva004582F3Outer@@@Z	0x004582F3	41	partial	ret inline vs end t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x004582f3.cpp
 ?rva002AA2CF@Rva002AA2CF@@QBEPBDH@Z	0x002AA2CF	42	blocked	register wall eax-edx swapped plus branch inversion table base needs gate t=8 model=muse-10
 ?rva0039B6A8@Rva0039B6A8@@QAEXM@Z	0x0039B6A8	37	blocked	SSE param-first vs field-first load order wall t=15 model=muse-04
+FUN_004bbddf	0x000BBDDF	74	blocked	map-int-int-find but node-plus-0x44 plus float caller struct suggests larger value ICF-fold t=12 model=muse-11
+?_M_insert_overflow@?$vector@UBfmeAsciiScalarValue8@@V?$allocator@UBfmeAsciiScalarValue8@@@_STL@@@_STL@@IAEXPAUBfmeAsciiScalarValue8@@ABU3@ABU__false_type@2@I_N@Z	0x000C1D98	178	partial	extra push 0 at +0x24 allocate-hint version wall t=15 model=muse-11 score=0.99 stash=reverse/attempts/0x000c1d98.cpp
+FUN_004c35a4	0x000C35A4	183	blocked	mixed-type ICF allocate-b9534 dtor-Rva000C2085 for Rva000BB4AC overflow needs twin pins t=10 model=muse-11
