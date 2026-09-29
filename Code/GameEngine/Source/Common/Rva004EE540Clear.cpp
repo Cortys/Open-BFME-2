@@ -8,7 +8,7 @@
 
 struct Rva0052BFB5Elem;
 void __cdecl Rva0052C37ADestroyRange(Rva0052BFB5Elem *first, Rva0052BFB5Elem *last);
-void free(void *block);
+extern "C" void free(void *block);
 
 class Rva004EE540
 {
