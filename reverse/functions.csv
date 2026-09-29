@@ -41153,3 +41153,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0029B53C@Rva0029A407@@QAEPAXI@Z,,0x0029B53C,28,Code/GameEngine/Source/GameClient/Rva0029A407Clear.cpp,matched,calls rowed Clear 0x29A407 then delete 0x2FD60 on flag
 ?rva0029B17C@Rva0029B17C@@QAEXXZ,,0x0029B17C,11,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder loads 0x7F4 jumps vtable 0x24 callers 0x213B3B
 ?write@Rva000BC834@@QAEHPAD@Z,,0x000BC834,37,Code/GameEngine/Source/Common/Rva000BC834Write.cpp,matched,chain from 0x000BBD66 plus caller 0x000BD268 plus 37B concat shape
+?Rva003BD412Set@@YGXE@Z,,0x003BD412,13,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,free forwarder to rowed Rva004E432ASet via stdcall
