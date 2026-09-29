@@ -42387,3 +42387,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva00531431@Rva005312BE@@QAEXHH@Z,,0x00531431,80,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,gap lane bounded setter writes 0x35 and 0x1BA30 flag
 ?rva0058D310@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D310,119,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room no-frame plus7 sibling
 ?rva0058D58A@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D58A,119,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room plus9 sibling
+?rva00531A44@Rva00531A44@@QAEAAV1@G@Z,,0x00531A44,79,Code/GameEngine/Source/Common/Rva00531A44Alloc.cpp,matched,unlock lane ushort allocator three short arrays plus byte array
