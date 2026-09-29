@@ -3059,3 +3059,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?Rva005D303AFormat@@YA_XZ	0x005D303A	99	blocked	EH UnicodeString format needs literal at 0x008380FC plus handler 0x007A20FC beyond packet t=10 model=muse-05
 ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z	0x00238FF3	72	partial	frameless esp vs ebp frame plus edi esi swap t=30 model=muse-03 score=0.96 stash=reverse/attempts/0x00238ff3.cpp
 ?rva00272DEE@Drawable@@QAEXXZ	0x00272DEE	456	blocked	456B Drawable float x87 SSE complex needs donor t=10 model=muse-03
+?rva006E0F40@BfmeAptValue006DCD20@@QBEPAXXZ	0x006E0F40	103	partial	shared-tail restores as duplicated load-plus-return plus5B t=25 model=muse-12 score=0.95 stash=reverse/attempts/0x006e0f40.cpp

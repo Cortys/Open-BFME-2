@@ -17,6 +17,7 @@ class AptCIH {
     int m_code;
 public:
     int rva006E0B80(int nLvl) const;
+    bool rva006E2460(const AptCIH *other) const;
 };
 int AptCIH::rva006E0B80(int nLvl) const
 {
@@ -37,4 +38,27 @@ int AptCIH::rva006E0B80(int nLvl) const
         } while (--steps != 0);
     }
     return (node->m_code << 15) >> 15;
+}
+
+// ?rva006E2460@AptCIH@@QBE_NPBV1@@Z, retail 0x006E2460, 104 bytes.
+// Ancestor-code comparison, true when other sorts strictly below this at the
+// first differing level. Evidence: chain lane, calls rowed
+// rva006E0B80 twice per level with the same index; self/depth-zero guards;
+// caller at 0x006FB21E; same /O2 shape and AptCIH layout as above.
+bool AptCIH::rva006E2460(const AptCIH *other) const
+{
+    int depth = 0;
+    for (const AptCIH *p = m_parent; p; p = p->m_parent)
+        ++depth;
+    if (this == other || depth == 0)
+        return false;
+    for (int i = 0; i <= depth; ++i) {
+        int a = rva006E0B80(i);
+        int b = other->rva006E0B80(i);
+        if (b < a)
+            return true;
+        if (b > a)
+            break;
+    }
+    return false;
 }
