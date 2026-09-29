@@ -45,3 +45,12 @@ void Rva0044192FGuarded(void **first, void **last, void *val, Rva0043FE9A comp)
 		Rva00440B64Insert(last, val, comp);
 	}
 }
+
+// ?Rva00441974Sort@@YAXPAPAX0PAXVRva0043FE9A@@@Z @0x00441974 37B.
+// Reinsert sweep via unguarded insert for each slot. Evidence: caller
+// 0x00441DB6; callee rowed 0x00440B64.
+void Rva00441974Sort(void **begin, void **end, void *unused, Rva0043FE9A comp)
+{
+	for (void **p = begin; p != end; ++p)
+		Rva00440B64Insert(p, *p, comp);
+}
