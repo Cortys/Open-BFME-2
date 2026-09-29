@@ -70,6 +70,7 @@ public:
     void *rva0021B2A2(unsigned int o, unsigned int i);
     void *rva0021A134(unsigned int index);
     int rva0021A016(unsigned int o, unsigned int i);
+    int rva0021A041(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -255,6 +256,18 @@ int Rva00219B9E::rva0021A016(unsigned int o, unsigned int i)
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;
         return ((Rva00219B9E *)&base[o])->rva00219CDF(i);
+    }
+    return 0;
+}
+// ?rva0021A041@Rva00219B9E@@QAEHII@Z @0x0021A041 43B
+// Twin of 0x0021A016 resolving through the +0x14 accessor 0x00219CF6;
+// caller 0x00407050.
+int Rva00219B9E::rva0021A041(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219CF6(i);
     }
     return 0;
 }

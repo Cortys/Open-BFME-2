@@ -42244,3 +42244,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002B4FEB@Rva002B4FEB@@QAEXXZ,,0x002B4FEB,56,Code/GameEngine/Source/Common/Rva002B4FEB.cpp,matched,chain calls 0x002B41F4 and 0x002B4280 via global 0x009FEF18
 ?Rva0043CCD1Get@@YAEXZ,,0x0043CCD1,9,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,Flag byte getter on 0x0043C9B3 block via caller evidence
 ?reserve@?$vector@_NV?$allocator@_N@_STL@@@_STL@@QAEXI@Z,,0x0060C1C0,147,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_reserve.cpp,matched,rowed bit_alloc copy free via bool o1 unit caller 0x0060C33F
+?rva0021A041@Rva00219B9E@@QAEHII@Z,,0x0021A041,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219CF6 or 0 caller 0x00407050
