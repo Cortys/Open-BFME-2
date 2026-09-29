@@ -30,6 +30,7 @@ public:
 	virtual ~Rva005843DA();
 	void rva00583CE0(int unused, int i);
 	bool rva00583BE6(int i);
+	bool rva00583C1A(int i);
 private:
 	_STL::vector<Rva00583CE0Elem> m_vec; // +8
 	bool m_flag; // +0x14
@@ -49,5 +50,11 @@ bool Rva005843DA::rva00583BE6(int i)
 {
 	if (i >= 0 && i < m_vec.size())
 		return m_vec[i].m_00 == 1;
+	return false;
+}
+bool Rva005843DA::rva00583C1A(int i)
+{
+	if (i >= 0 && i < m_vec.size())
+		return m_vec[i].m_00 == 2;
 	return false;
 }
