@@ -41074,3 +41074,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva000B9596Fill@@YAPAVAsciiString@@PAV1@IABV1@@Z,,0x000B9596,27,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_fill_n_asciistring.cpp,matched,fill_n dispatcher via rowed tag body
 ?rva003B2322@UserPreferences@@QAEXABVAsciiString@@H_N@Z,,0x003B2322,104,Code/GameEngine/Source/Common/UserPreferences.cpp,matched,indexed conditional setter via format subscript erase; callers 0x385B1C 0x385E2A
 ?rva0029A407@Rva0029A407@@QAEXXZ,,0x0029A407,19,Code/GameEngine/Source/GameClient/Rva0029A407Clear.cpp,matched,guarded slot2 clear callers 0x29B53F 0x29D9EB
+?rva0024955E@Rva0024955E@@QAEXVAsciiString@@@Z,,0x0024955E,55,Code/GameEngine/Source/GameNetwork/Rva0024955ETranslate.cpp,matched,unlock member translate plus ascii teardown
