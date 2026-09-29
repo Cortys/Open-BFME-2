@@ -3099,3 +3099,6 @@ FUN_0042464E	0x0042464E	63	blocked	EH clear 30B vs 63B t=15 model=muse-spark
 ?Rva002B445CMedian@@YAPAPAVRva0037DCA5@@PAPAV1@00@Z	0x002B445C	101	blocked	median needs 4 lea ecx ebp14 mystery t=10 model=muse-10
 ?rva00531132@Rva00531132@@QAEX_NH@Z	0x00531132	77	partial	77B 34insns single cmp edx-eax vs edx-mem reload t=25 model=muse-03 score=0.97 stash=reverse/attempts/0x00531132.cpp
 ?rva002A1158@Rva002A1158@@QAEHXZ	0x002A1158	231	blocked	chain 231B EH plus STL list-int temp plus virtuals 0x118 0x12c plus member list 0x9c4 plus flag obj 0xfc 0x109: owning class unproven no donor t=12 model=muse-03
+FUN_0075568F	0x0035568F	225	blocked	hashtable begin is GameWindow alias not Rva map true instantiation needs proof t=15 model=muse-spark
+FUN_00948B97	0x00548B97	83	blocked	global table plus object identity unproven 3 virtuals need donor t=12 model=muse-spark
+FUN_006D9ADC	0x002D9ADC	202	blocked	float SSE plus x87 audio randoms need donor t=10 model=muse-spark
