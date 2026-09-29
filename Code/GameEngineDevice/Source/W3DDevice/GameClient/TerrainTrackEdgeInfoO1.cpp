@@ -126,3 +126,37 @@ void __stdcall Rva00083CD7Clear(Rva00083CB2 *p)
 	p->m_38 = 0;
 	p->m_1311 = 0;
 }
+class Rva00083E5CRef
+{
+public:
+	virtual void ReleaseRef();
+	int m_ref;
+};
+class Rva00083E5C
+{
+public:
+	void rva00083E5C();
+private:
+	Rva00083E5CRef *m_0;
+	Rva00083E5CRef *m_4;
+};
+// ?rva00083E5C@Rva00083E5C@@QAEXXZ retail 0x00083E5C 43B release two
+// refcounted slots at +0 and +4 via virtual slot0 then null them.
+// Evidence: unlock lane; callers at 0x0006688B 0x0007E161 0x0008405F.
+void Rva00083E5C::rva00083E5C()
+{
+	Rva00083E5CRef *a = m_4;
+	if (a != 0)
+	{
+		if (--a->m_ref == 0)
+			a->ReleaseRef();
+		m_4 = 0;
+	}
+	Rva00083E5CRef *b = m_0;
+	if (b != 0)
+	{
+		if (--b->m_ref == 0)
+			b->ReleaseRef();
+		m_0 = 0;
+	}
+}
