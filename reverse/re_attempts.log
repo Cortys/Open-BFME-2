@@ -2879,3 +2879,4 @@ FUN_0052d1cd	0x0052D1CD	63	blocked	same EH wall as 0x0052CA6C handler 0xb9723a n
 FUN_005a7172	0x005A7172	63	blocked	same EH wall as 0x0052CA6C handler 0xb9e4d3 needs member layout t=3 model=muse-spark
 FUN_0052cb26	0x0052CB26	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark
 FUN_0052cd03	0x0052CD03	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark
+?Rva0059B036Copy@@YAXPAX0H@Z	0x0059B036	42	partial	dst via edi not eax via barrier t=25 model=muse score=0.95 stash=reverse/attempts/0x0059b036.cpp
