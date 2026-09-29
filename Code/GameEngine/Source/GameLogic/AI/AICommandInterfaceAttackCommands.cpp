@@ -147,6 +147,7 @@ public:
 	void rva0036F5BB(const PolygonTrigger *area, Int value, CommandSourceType cmdSource);
 	void rva0036F629(const PolygonTrigger *area, Int value, CommandSourceType cmdSource, const Coord3D *pos);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
+	void rva003C77EE(const Waypoint *waypoint, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -607,5 +608,15 @@ void AICommandInterface::rva0036F6A7(float value, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x50, cmdSource);
 	parms.m_float38 = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva003C77EE@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z retail 0x003C77EE 101B
+// Gap between aiFacePosition and aiWanderInPlace in this TU: AICMD 0x2B plus m_waypoint at +0x2C plus slot-0 aiDoCommand.
+// Same 101B waypoint shape as aiFollowWaypointPath family in this TU.
+void AICommandInterface::rva003C77EE(const Waypoint *waypoint, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x2B, cmdSource);
+	parms.m_waypoint = waypoint;
 	aiDoCommand(&parms);
 }
