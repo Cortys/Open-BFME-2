@@ -41880,3 +41880,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00200D38@@QAE@ABVAsciiString@@@Z,,0x00200D38,72,Code/GameEngine/Source/Common/Thing/Rva00200D38Ctor.cpp,matched,vtable 0x00BE2B78 StringBase copy pin pushback rowed callers ready
 ?rva002EE9E0@Rva002EB416@@QAEXXZ,,0x002EE9E0,41,Code/Libraries/Source/WWVegas/WWLib/Rva002EE9E0Reset.cpp,matched,pool block reset via rowed release self-links
 ?rva002EEA1D@Rva002EB46E@@QAEXXZ,,0x002EEA1D,41,Code/Libraries/Source/WWVegas/WWLib/Rva002EEA1DReset.cpp,matched,pool block reset via rowed release self-links
+?rva006E3710@Rva006E3710@@QAE_NPAURva006E3710Node@@@Z,,0x006E3710,39,Code/Libraries/Source/Apt/Rva006E3710Check.cpp,matched,unlock lane list search via plus48 for this plus9c
