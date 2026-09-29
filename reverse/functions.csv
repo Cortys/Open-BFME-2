@@ -42218,3 +42218,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E0DE0@Rva006E0DE0@@QAEHPAVAptValue@@@Z,,0x006E0DE0,142,Code/Libraries/Source/Apt/Rva006E0DE0Remove.cpp,matched,Apt word array remove via Release slot
 ??$__uninitialized_fill_n@PAUBfmeStringRecord002199C8@@IU1@@_STL@@YAPAUBfmeStringRecord002199C8@@PAU1@IABU1@ABU__false_type@0@@Z,,0x0021AA0A,37,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_fill_n.cpp,matched,37B fill_n stride 0x10 via rowed _Construct 0x0021A95D caller 0x0021E256
 ?rva006E0D60@Rva006E0D60@@QAEXPAVAptValue@@@Z,,0x006E0D60,63,Code/Libraries/Source/Apt/Rva006E0D60Add.cpp,matched,Apt set add via AddRef slot
+?rva002637E2@Object@@QBEMPBUCoord3D@@0@Z,,0x002637E2,57,Code/GameEngine/Source/GameLogic/Object/Object_rva002637E2Worker.cpp,matched,chain after distance caller pattern ptr float get float ptr 0 0
