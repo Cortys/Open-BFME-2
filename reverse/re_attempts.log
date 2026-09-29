@@ -3375,3 +3375,4 @@ FUN_007c7914	0x003C7914	284	blocked	script team-plus-parameter with dual warning
 FUN_007c8bcb	0x003C8BCB	163	blocked	chain team waypoint needs TerrainLogic plus0x88 plus0x90 plus AIUpdate plus0x238 slot identities plus per-member coord from Object plus0x38 t=12 model=muse-spark
 FUN_007c8abf	0x003C8ABF	163	blocked	twin of 0x003C8BCB needs TerrainLogic plus0x90 coord-plus-arg2 plus AIUpdate plus0x238 with 3 plus rva003C77EE t=8 model=muse-spark
 FUN_00584502	0x00584502	59	blocked	dtor needs vector free plus apply setter as vptr-or-base plus no base call t=10 model=muse-spark
+?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z	0x003C4E28	155	partial	loop exact via goto-test shape; found block 6B short with movaps-mem muls vs retail movss-reg muls plus push timing t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x003c4e28.cpp
