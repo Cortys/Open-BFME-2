@@ -41959,3 +41959,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1BfmeStringRecord00219B0B@@QAE@XZ,,0x0021A75E,69,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,dtor 3 AsciiString via releaseBuffer
 ??1BfmeStringRecord0021A940@@QAE@XZ,,0x0021A90F,8,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,dtor tailjmp rec via 0x0021A75E chain
 ?Rva000A4999Get@@YAXPAVObject@@PAXPAPAX2@Z,,0x000A4999,92,Code/GameEngine/Source/GameLogic/Object/Rva000A4999Get.cpp,matched,module pair fetch via rowed Object SidesList Category accessors
+??_GBfmeStringRecord0021A940@@QAEPAXI@Z,,0x0021AAC5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-0021AAC5.cpp,matched,deleting dtor via rowed dtor plus delete chain
