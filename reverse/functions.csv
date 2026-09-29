@@ -41001,3 +41001,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E43EE@OptionPreferences@@QAEXF@Z,,0x002E43EE,74,Code/GameEngine/Source/GameClient/GUI/GUICallbacks/Menus/OptionPreferences_rva002E43A6.cpp,matched,FirewallPortAllocationDelta setInt slot 0x2c movsx word; twin of 0x2E43A6
 ?rva0010959E@Rva0010959E@@QAEXXZ,,0x0010959E,20,Code/GameEngine/Source/Common/Rva0010959E.cpp,matched,calls rowed rva00108951 at 0x58 then tail at 0x5C caller 0x10BA18
 ?rva00382908@Rva00382077@@QAEXXZ,,0x00382908,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,third twin clear
+?rva003820A4@Rva003820A4@@QAEXPAURva0038201DNode@@@Z,,0x003820A4,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,fourth twin tree free
