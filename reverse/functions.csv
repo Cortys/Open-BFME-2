@@ -42578,3 +42578,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0055EF6E@Rva0055EF6E@@QAEXPAVXfer@@@Z,,0x0055EF6E,87,Code/GameEngine/Source/GameClient/Rva0055EF6E.cpp,matched,unlock xfer version gated float plus 2 bools
 ?rva0055EFC5@Rva0055EFC5@@QAEXPAVXfer@@@Z,,0x0055EFC5,28,Code/GameEngine/Source/GameClient/Rva0055EFC5.cpp,matched,chain parent xfer Version1 plus sub 0x0055EF6E
 ?rva0044D836@GameModePreferences@@QAEHXZ,,0x0044D836,86,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Color getter via makeKey map find atoi plus lazy limit
+?getPair@LivingWorldEyeTower@@AAEPAXXZ,,0x003F9A2B,110,Code/GameEngine/Source/GameClient/LivingWorldEyeTower.cpp,matched,BFME1 donor LivingWorldEyeTower getPair with LivingWorld path line 355 and caller layout

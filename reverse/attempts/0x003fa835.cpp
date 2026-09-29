@@ -1,7 +1,7 @@
 // ?rva003FA835@Rva003FA835@@QAEXPAM@Z
-// partial score=0.9 date=2026-09-29
+// partial score=0.92 date=2026-09-29
 // ?rva003FA835@Rva003FA835@@QAEXPAM@Z
-// partial score=0.90 date=2026-09-29
+// partial score=0.92 date=2026-09-29
 // cl: /O1 /MD /arch:SSE
 // ?rva003FA835@Rva003FA835@@QAEXPAM@Z @0x003FA835 67B
 // Unlock float triad via inner slot 0x50. Evidence: this+0x10+8 null-gated,
@@ -36,9 +36,9 @@ private:
 // ?rva003FA835@Rva003FA835@@QAEXPAM@Z present-unmatched
 void Rva003FA835::rva003FA835(float *out)
 {
-    float a = 0.0f;
     float c = 0.0f;
     float b = 0.0f;
+    float a = 0.0f;
     Inner003FA835 *inner = m_10->inner;
     if (inner != 0) {
         inner->slot20();
