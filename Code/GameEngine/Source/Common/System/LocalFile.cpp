@@ -187,9 +187,11 @@ public:
 		m_deleteOnClose = true;
 	}
 
-	void deleteInstance( void )
+	// ::delete, as File::close spells it: retail calls slot 0 with a zero flag
+	// and then the global operator delete, not the flag-1 deleting dtor.
+	__forceinline void deleteInstance( void )
 	{
-		delete this;
+		::delete this;
 	}
 
 protected:
@@ -342,8 +344,7 @@ void StreamingArchiveFile::close( void )
 	File::close();
 }
 
-// ?convertToRAMFile@LocalFile@@UAEPAVFile@@XZ
-// ?convertToRAMFile@LocalFile@@UAEPAVFile@@XZ present-unmatched
+// ?convertToRAMFile@LocalFile@@UAEPAVFile@@XZ: slot 14 of the LocalFile vtables (retail 0x00605FDF, 144B).
 File *LocalFile::convertToRAMFile( void )
 {
 	RAMFile *ramFile = new RAMFile;
