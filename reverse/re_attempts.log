@@ -2830,3 +2830,4 @@ FUN_00730590	0x00330590	109	blocked	try-catch cursor-guard dispatch via pmf call
 ??1Rva003B262E@@MAE@XZ	0x003B262E	68	partial	and [ecx+4]0 before vtable load vs after t=25 model=muse-spark score=0.94 stash=reverse/attempts/0x003b262e.cpp
 ?erase@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEIABVAsciiString@@@Z	0x0005B5EA	73	blocked	name already rowed at 0x005CA950 with different third callee 0x5CA7A9 vs 0x57D5C t=20 model=muse-spark
 ?Rva005CA1A0Get@@YAHXZ	0x005CA1A0	97	blocked	static List_base plus direct _M_find plus ICF twins need pins t=10 model=muse-spark
+?Rva005CDC18Create@@YAPAPAVRva005CDB8F@@PAPAV1@PBUPayload@1@@Z	0x005CDC18	50	partial	mov [ebp-4] 0 vs retail and [ebp-4] 0 plus push order 53B vs 50B t=15 model=muse-04 score=0.94 stash=reverse/attempts/0x005cdc18.cpp

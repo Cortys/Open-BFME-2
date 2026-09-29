@@ -21,6 +21,7 @@ class Rva0040C985
 public:
 	void rva0040C985(int x);
 	int rva0040C9F4();
+	void rva0040CA09();
 	int rva0040CA24();
 
 private:
@@ -48,6 +49,15 @@ int Rva0040C985::rva0040C9F4()
 	if (frame < val)
 		return val - frame;
 	return 0;
+}
+void Rva0040C985::rva0040CA09()
+{
+	int frame = TheGameLogic->m_40;
+	if ((unsigned)frame < (unsigned)m_34)
+		return;
+	if (m_2C != 2)
+		return;
+	m_2C = 3;
 }
 int Rva0040C985::rva0040CA24()
 {

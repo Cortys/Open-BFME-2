@@ -41204,3 +41204,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva002E5711@@QAEPAXI@Z,,0x002E5D46,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse07-2E5711.cpp,matched,Deleting dtor calls rowed dtor plus delete
 ??1Rva0029B8DD@@UAE@XZ,,0x0029B8DD,60,Code/GameEngine/Source/GameClient/Rva0029B8DDDtor.cpp,matched,unlocks 0x0029B8C1 vtable 0x7FD02C wide plus narrow
 ??_GRva0029B8DD@@UAEPAXI@Z,,0x0029B8C1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0029B8DD.cpp,matched,chain slot0 calls rowed dtor plus delete
+?rva0040CA09@Rva0040C985@@QAEXXZ,,0x0040CA09,27,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,gap frame check plus state 2 to 3 callers 0x002B31E8 0x0040F82C
