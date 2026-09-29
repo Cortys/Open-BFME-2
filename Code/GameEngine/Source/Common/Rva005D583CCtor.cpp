@@ -1,0 +1,39 @@
+// cl: /O1 /MD
+// ??0Rva005D57D3@@QAE@PAX@Z retail 0x005D57D3 24B
+// Derived ctor: calls rowed base ??0Rva005AFE86@@QAE@PAX@Z 0x005AFE86
+// with same arg, then overwrites base m_vtable slot at +0 with own
+// vtable 0x00875B2C via plain store (non-polymorphic derived, no shift,
+// no lea). Evidence: callers 0x005D5807 0x005D582D do new plus this ctor.
+class EmptyBase005AFE86
+{
+public:
+	EmptyBase005AFE86() {}
+	~EmptyBase005AFE86();
+};
+
+class Rva005AFE86 : public EmptyBase005AFE86
+{
+public:
+	Rva005AFE86(void *p);
+private:
+	const void *m_vtable;
+	void *m_04;
+	int m_08;
+	int m_0C;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1C;
+	int m_20;
+};
+
+class Rva005D57D3 : public Rva005AFE86
+{
+public:
+	Rva005D57D3(void *p);
+};
+
+Rva005D57D3::Rva005D57D3(void *p) : Rva005AFE86(p)
+{
+	*(unsigned *)this = 0x00C75B2C;
+}

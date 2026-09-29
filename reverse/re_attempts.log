@@ -3046,3 +3046,6 @@ FUN_0045213e	0x0005213E	182	blocked	float-heavy SSE+x87 sqrt needs true param la
 ?rva00600579@Rva00600579@@QAEPAUTargetRef00217D4C@@PAPAU2@HPAU2@@Z	0x00600579	82	blocked	EH prolog plus virtual slot2 with in-out a3 plus AddRef Release needs donor layout t=15 model=muse-10
 FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x4 0x6c plus AsciiString temps plus global Eva lookups needs full Xfer vtable and Eva donor t=12 model=muse-02
 ??0Rva006FBB10@@QAE@PAVAptValue@@H@Z	0x006FBB10	90	blocked	EH ctor base size plus EBP vs ESP frame plus handler baa1e8 unclaimed t=15 model=muse-11
+?rva00340FCD@Rva00340FCD@@QAEMXZ	0x00340FCD	110	partial	push order plus loop branches test-jle-jmp vs test-jg t=20 model=muse-04 score=0.95 stash=reverse/attempts/0x00340fcd.cpp
+?rva00550B4C@Rva00550B4C@@QAEXXZ	0x00550B4C	55	blocked	delete gives push1 no separate delete vs retail push0 plus vtable plus delete t=15 model=muse-04
+??0Rva005E4AE2@@QAE@PAXPAU_Rva005E4AE2In@@H@Z	0x005E4AE2	141	partial	137of141B 0 reg diffs 7 mem diffs ordering plus missing EH state 1 before map needs Root unwind entry volatile base plus forceinline inlined t=25 model=muse-04 score=0.91 stash=reverse/attempts/0x005e4ae2.cpp
