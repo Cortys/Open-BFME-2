@@ -11,7 +11,9 @@ class Rva0073F778 {
     void *m_handle;
 public:
     bool rva0073F778(unsigned (__stdcall *start)(void *), void *arglist, int resume, unsigned stackSize, int priority, void *security);
+    bool rva0073F83F(int resume, unsigned stackSize, int priority, void *security);
 };
+unsigned __stdcall Rva0073F833Cb(void *arg);
 bool Rva0073F778::rva0073F778(unsigned (__stdcall *start)(void *), void *arglist, int resume, unsigned stackSize, int priority, void *security)
 {
     void *h = (void *)_beginthreadex(security, stackSize, start, arglist, 4, (unsigned *)&arglist);
@@ -33,4 +35,12 @@ bool Rva0073F778::rva0073F778(unsigned (__stdcall *start)(void *), void *arglist
         return true;
     }
     return false;
+}
+
+// ?rva0073F83F@Rva0073F778@@QAE_NHIHPAX@Z @0x0073F83F 30B.
+// Forwards to the spawner above with a fixed start routine and this as arg.
+// Evidence: chain lane packet; same this; ret 0x10.
+bool Rva0073F778::rva0073F83F(int resume, unsigned stackSize, int priority, void *security)
+{
+    return rva0073F778((unsigned (__stdcall *)(void *))Rva0073F833Cb, this, resume, stackSize, priority, security);
 }
