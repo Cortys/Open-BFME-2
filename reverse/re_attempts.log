@@ -2944,3 +2944,7 @@ FUN_005ddcc5	0x001DDCC5	192	blocked	Rva000427195 bucket copy needs mixed BfmeVec
 ?rva0009D9BD@Rva0009D9BD@@QAEXXZ	0x0009D9BD	64	partial	65B vs 64B plus extra outer-this save and missing mov ecx global for thunk this plus index ebx vs edi t=15 model=muse-08 score=0.9 stash=reverse/attempts/0x0009d9bd.cpp
 ?rva0049B303@Rva0049B303@@QAEHXZ	0x0049B303	13	partial	ecx-reuse vs edx plus load order t=12 model=muse-03 score=0.92 stash=reverse/attempts/0x0049b303.cpp
 ??1Rva0056F43E@@QAE@XZ	0x0056F9D4	56	partial	missing or-ebp-4-minus1 disarm only 52of56B t=20 model=muse-05 score=0.93 stash=reverse/attempts/0x0056f9d4.cpp
+FUN_0091a669	0x0051A669	293	blocked	EH frameless with STL map OptionPreferences sscanf UnicodeString Apt call handler 0x795A63 unclaimed t=6 model=muse-11
+?rva00055475@Rva00055475@@QAEXABVRva0036CA00Str@@@Z	0x00055475	26	partial	eax-edx swapped for head load and esp temp only; size 26 exact structural 0 single-load manual head matches t=20 model=muse-11 score=0.88 stash=reverse/attempts/0x00055475.cpp
+?rva005D4E22@Rva005D4E22@@QAEXPAEH@Z	0x005D4E22	21	blocked	frameless 2-arg init persistently 19B vs 21B missing pre-load mov edx-esp8 plus save mov eax-ecx across 6 variants O1 O2 orders tmp volatile t=15 model=muse-11
+?rva0040CF91@Rva0040CF91@@QBEHXZ	0x0040CF91	54	blocked	index sum over 8B entries persistently 55B vs 54B begin-first vs end-first plus extra mov across 5 variants unsigned explicit volatile t=18 model=muse-11

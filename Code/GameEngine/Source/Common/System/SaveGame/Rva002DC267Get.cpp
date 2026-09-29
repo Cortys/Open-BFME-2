@@ -30,6 +30,7 @@ public:
 	void concat(const StringBase<T> &other);
 	bool startsWithNoCase(const StringBase<T> &other) const;
 	const T *find(T c) const;
+	const T *reverseFind(T c) const;
 protected:
 	struct Header
 	{
@@ -46,6 +47,7 @@ class AsciiString : public StringBase<char>
 public:
 	AsciiString() {}
 	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	__forceinline AsciiString(const char *text) : StringBase<char>(text) {}
 	__forceinline ~AsciiString() { releaseBuffer(); }
 };
 
@@ -131,4 +133,18 @@ bool Rva002DCCFB::rva002DCCFB(UnicodeString filename)
 	UnicodeString filepath(((const Rva002DC74A *)this)->rva002DC74A((const UnicodeString &)filename));
 	bool result = TheFileSystem->doesWideFileExist(filepath.str());
 	return result;
+}
+
+// ?Rva002DC802BaseName@@YG?AVAsciiString@@ABV1@@Z @0x002DC802 49B:
+// Ascii basename: reverseFind '\\' at 0x00035930 then AsciiString from
+// substring at 0x00037BA0 or copy at 0x000365F0 into hidden return buffer.
+// Caller 0x00356E8E forwards map path at ebp+8 with temp at ebp-0x14 then
+// translates via UnicodeString at 0x006CB6A0. Honest-address free function.
+// Ret 8 proves __stdcall.
+AsciiString __stdcall Rva002DC802BaseName(const AsciiString &in)
+{
+	const char *slash = ((const StringBase<char> &)in).reverseFind('\\');
+	if (slash)
+		return AsciiString(slash + 1);
+	return in;
 }
