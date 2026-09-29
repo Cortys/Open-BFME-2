@@ -109,3 +109,33 @@ unsigned char Rva003081FB::rva003081FB()
 	int v = m_ptr8C ? m_ptr8C->m_word04 : 0;
 	return (unsigned char)(v > 0);
 }
+
+//
+// ?rva003081DF@Rva003081DF@@QAEXXZ retail 0x003081DF 28 bytes.
+// StringBase at +0x80 set from 0x00BBAC1C via rowed set 0x000055F5
+// then byte at +0x88 set to 1. Same page/flags as siblings.
+template <typename T>
+class StringBase
+{
+public:
+	void set(const char *s);
+private:
+	void *m_data;
+};
+
+class Rva003081DF
+{
+public:
+	void rva003081DF();
+private:
+	char m_pad00[0x80];
+	StringBase<char> m_str80;
+	char m_pad84[0x88 - 0x84];
+	unsigned char m_flag88;
+};
+
+void Rva003081DF::rva003081DF()
+{
+	m_str80.set(reinterpret_cast<const char *>(0x00BBAC1C));
+	m_flag88 = 1;
+}
