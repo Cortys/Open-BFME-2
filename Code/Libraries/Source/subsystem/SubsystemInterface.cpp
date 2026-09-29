@@ -331,3 +331,19 @@ template class SubsystemSlot<Rva0022AF59Subsystem>;
 class Rva0022AFCESubsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022AFCESubsystem>(Rva0022AFCESubsystem *&, AsciiString, Rva0022AFCESubsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022AFCESubsystem>;
+// Rva0022B043Subsystem: site 0x0022F25D registers "TheLivingWorldAITemplateStore" (global 0x00A03140); slot vtable 0xbe733c.
+class Rva0022B043Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022B043Subsystem>(Rva0022B043Subsystem *&, AsciiString, Rva0022B043Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022B043Subsystem>;
+// Rva0022B0B8Subsystem: site 0x0022F2A0 registers "TheLivingWorldRegionEffectsManagerStore" (global 0x00A02E60); slot vtable 0xbe7340.
+class Rva0022B0B8Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022B0B8Subsystem>(Rva0022B0B8Subsystem *&, AsciiString, Rva0022B0B8Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022B0B8Subsystem>;
+// Rva0022B12DSubsystem: site 0x0022F2E7 registers "TheLivingWorldManager" (global 0x009FE1C8); slot vtable 0xbe7344.
+class Rva0022B12DSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022B12DSubsystem>(Rva0022B12DSubsystem *&, AsciiString, Rva0022B12DSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022B12DSubsystem>;
+// Rva0022B1A2Subsystem: site 0x0022F331 registers "TheLivingWorldLogic" (global 0x009FEF10); slot vtable 0xbe7348.
+class Rva0022B1A2Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022B1A2Subsystem>(Rva0022B1A2Subsystem *&, AsciiString, Rva0022B1A2Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022B1A2Subsystem>;
