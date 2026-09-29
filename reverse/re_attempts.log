@@ -3189,3 +3189,5 @@ FUN_006ade71	0x002ADE71	77	blocked	multi-map clear-findSlot dual-use plus GameWi
 ?Rva00101E6DCalc@@YAXHHPAM0HH@Z	0x00101E6D	86	partial	SSE regs exact under Ot; out2 load hoisted to ecx early vs eax late t=28 model=muse-02 score=0.9 stash=reverse/attempts/0x00101e6d.cpp
 ?rva005C8176@Rva005C8176@@QAEHMM@Z	0x005C8176	98	blocked	cell load folds into both divs under O1-Os vs retail CSE to xmm2; cols to edi not eax; shared xor tail differs t=35 model=muse-02
 FUN_006a7644	0x002A7644	51	blocked	dual-type copy-destroy plus odd lea ebp+b plus GameWindow typedefs t=10 model=muse-spark
+?Rva0021D39EPopHeap@@YAXPAVRva0021915B@@0URva0021B753@@@Z	0x0021D39E	91	blocked	5-arg popheap-aux shape with value at +0x14 comp at +0x1c vs 3-arg std popheap 118B mismatch t=15 model=muse-10
+?Rva0021D9C7@@YAwhatever	0x0021D9C7	25	blocked	5 pushes for 3-arg make-heap callee paradox t=10 model=muse-10

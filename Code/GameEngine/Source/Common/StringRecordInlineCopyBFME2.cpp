@@ -323,3 +323,4 @@ struct BfmeStringRecord0021A940 {
 BfmeStringRecord0021A940::BfmeStringRecord0021A940(const unsigned int *p, const BfmeStringRecord00219B0B &o) : word0(*p), rec(o) {}
 BfmeStringRecord0021A940::BfmeStringRecord0021A940(const BfmeStringRecord0021A940 &o) : word0(o.word0), rec(o.rec) {}
 BfmeStringRecord0021A940::~BfmeStringRecord0021A940() {}
+template void _STL::_Construct<BfmeStringRecord0021A940,BfmeStringRecord0021A940>(BfmeStringRecord0021A940*,const BfmeStringRecord0021A940&);
