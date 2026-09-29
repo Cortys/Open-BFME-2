@@ -42255,3 +42255,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002B43BA@Rva002B43BA@@QAEXPAUNode002B43BA@@@Z,,0x002B43BA,45,Code/GameEngine/Source/Common/Rva002B43BA.cpp,matched,unlock sibling recursive free via rowed free
 ?rva002B44DC@Rva002B44DC@@QAEXPAUNode002B44DC@@@Z,,0x002B44DC,45,Code/GameEngine/Source/Common/Rva002B44DC.cpp,matched,unlock sibling recursive free via rowed free
 ?rva0021A097@Rva00219B9E@@QAEHII@Z,,0x0021A097,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219D24 or 0 caller 0x005B1B81
+?Rva000C3C59Parse@INI@@SAXPAV1@PAX1PBX@Z,,0x000C3C59,167,Code/GameEngine/Source/Common/System/INI_Rva000C3C59Parse.cpp,matched,INI parse BfmeNarrowRecord via rowed ctor assign scanInt and dtor
