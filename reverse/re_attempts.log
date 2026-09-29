@@ -3444,3 +3444,4 @@ _Rva000219C0LocaleName	0x000219C0	23	landed	bfme1_sweep donor game/stlport/Local
 ?rva006DC9E0@Rva006DC9E0@@QAEHXZ	0x006DC9E0	123	partial	true-epilogue duplicated inline vs shared plus extra loop je-mov-test 130 vs 123 t=25 model=muse-03 score=0.94 stash=reverse/attempts/0x006dc9e0.cpp
 ?rva00415218@Rva0041573F@@QAE...	0x00415218	163	blocked	INI parse with MultiIni plus 56-array and tree EVA checks plus INIException layout and iterator shape need donor t=15 model=muse-01
 ?rva0044DE5A@GameModePreferences@@QAEXVAsciiString@@@Z	0x0044DE5A	103	blocked	119B vs 103B Ascii by-value copy via ebp frame not esp plus no edi hold t=10 model=muse-09
+?rva002E7087@Rva002E7087@@QAEXHHHHHHDDHHPAHD@Z	0x002E7087	97	partial	this in ecx vs eax wall 95B vs 97B t=15 model=muse-12 score=0.88 stash=reverse/attempts/0x002e7087.cpp
