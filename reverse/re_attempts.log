@@ -2921,3 +2921,4 @@ FUN_00680176	0x00280176	286	blocked	TerrainLogic file method needs donor complex
 ??1Rva002E66F2@@UAE@XZ	0x002E66F2	89	partial	83B vs 89B missing second vtable store mov esi c04e90 only diff t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x002e66f2.cpp
 ?Rva002E6184EqualRange@@YA?AURva002E6184Pair@@PAUStringLookUp@@0ABQBDURva002E5C15Comp@@@Z	0x002E6184	151	blocked	151B equal_range binary plus Lower Upper wrappers needs register allocation wall across 6 shapes t=15 model=muse-07
 ?rva000D1AF3@Rva000D1AF3@@QAEIJ@Z	0x000D1AF3	173	blocked	vtable 0x7CE310 unrowed plus pin-only BFMERopeDrawable getPosition plus x87 fstp plus vector-iterator Region3D array needs rope donor t=8 model=muse-08
+FUN_00b398d0	0x007398D0	143	blocked	EH ctor dual vtable plus interim 0xBBB554 store and new 0x70 ShroudManagerImpl; bases unproven and callers unclaimed t=10 model=muse-01

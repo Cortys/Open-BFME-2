@@ -119,6 +119,7 @@ public:
 	virtual bool bfmePredVM0();
 	void bfmeGoVM0(int);
 	void bfmeTickVM0();
+	void rva0025C46E();
 	char m_pad04[0x34];
 	BfmeVM0Timer *m_timer;
 	char m_pad3C[0x4];
@@ -160,5 +161,20 @@ void BfmeStrVM0::bfmeGoVM0(int mode)
 					ReleaseMutex(m_firstMutex);
 			} while (status != 0x102);
 		}
+	}
+}
+
+//
+// ?rva0025C46E@BfmeStrVM0@@QAEXXZ retail 0x0025C46E 54B.
+// Mutex release via m_firstMutex +0x40 and m_secondMutex +0x44 tail of BfmeStrVM0.
+// Evidence: retail cmp [esi+0x44] 0 je then ReleaseMutex WaitForSingleObject ReleaseMutex and zero both; callers 0x0025D9DB 0x0025D121 with no stack pushes and same this.
+void BfmeStrVM0::rva0025C46E()
+{
+	if (m_secondMutex != 0) {
+		ReleaseMutex(m_secondMutex);
+		WaitForSingleObject(m_firstMutex, (unsigned long)-1);
+		ReleaseMutex(m_firstMutex);
+		m_secondMutex = 0;
+		m_firstMutex = 0;
 	}
 }
