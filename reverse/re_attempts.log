@@ -3335,3 +3335,4 @@ FUN_005fd5b2	0x001FD5B2	97	blocked	vslot-5 of 0x7E1BB0 (Rva001FDB55 class): need
 ?rva00468E98@Rva00468E98@@QAEXPAMMM@Z	0x00468E98	119	partial	118B sin-cos stores plus SSE order differ t=25 model=muse-12 score=0.92 stash=reverse/attempts/0x00468e98.cpp
 ?rva004738B6@Rva004738B6@@QAEXPAVObject@@@Z	0x004738B6	254	blocked	254B Contain iterate via InRange rb AI plus 250B 4-variant wall missing lea ecx edi-11c before InRange plus loop-top jmp-mov plus push-push prologue plus esi-edi swap plus useObject order t=25 model=muse-12
 ?rva00223E4B@Rva00223E4B@@QAEXPBDPAD@Z	0x00223E4B	256	blocked	fscommand dispatcher 258vs256B 94insns 28reg wall arg-slot tmp reuse plus ebx-vs-edi t=12 model=muse-spark
+?Rva0053166DEqual@@YAHPBUKey0053166D@@0@Z	0x0053166D	115	blocked	115B-51insns free-function bitfield equality on +0xC dword; ours 64B-23insns with dword tests vs retail shr-xor-byte tests plus shared fail tail; needs bitfield layout and shift idiom donor t=12 model=muse-11
