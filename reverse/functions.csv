@@ -42155,3 +42155,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0059534A@Rva0059534A@@QAEXG@Z,,0x0059534A,70,Code/GameEngine/Source/Common/Rva0059534ACleanup.cpp,matched,callees UDPDrain dtor operator delete rowed 12 callers
 ?rva0021AE56@Rva00219B9E@@QAEPAXI@Z,,0x0021AE56,99,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,subclass-name accessor with static error fallback
 ?rva0021AEB9@Rva00219B9E@@QAEPAXI@Z,,0x0021AEB9,99,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,twin accessor element+4 with static error fallback
+?rva0021AF7E@Rva00219B9E@@QAEPAXI@Z,,0x0021AF7E,108,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer 32B vector accessor with static Calss fallback

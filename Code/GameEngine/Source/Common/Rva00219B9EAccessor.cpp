@@ -36,11 +36,21 @@ struct Vec216 {
     Elem216 *m_finish;
     Elem216 *m_end;
 };
+struct OuterElem32 { char m_00[32]; };
+struct Vec32 {
+    OuterElem32 *m_start;
+    OuterElem32 *m_finish;
+    OuterElem32 *m_end;
+};
 static __forceinline unsigned VecSize(const Vec216 *v) { return v->m_finish - v->m_start; }
 static __forceinline Elem216 &VecAt(Vec216 *v, unsigned i) { return v->m_start[i]; }
+static __forceinline unsigned Vec32Size(const Vec32 *v) { return v->m_finish - v->m_start; }
+static __forceinline OuterElem32 &Vec32At(Vec32 *v, unsigned i) { return v->m_start[i]; }
 class Rva00219B9E {
     char m_pad[0x14];
     Vec216 m_vec;
+    char m_pad2[0x14C - 0x20];
+    Vec32 m_outer;
 public:
     void *rva00219B9E(unsigned int index);
     int rva00219CDF(unsigned int index);
@@ -54,6 +64,7 @@ public:
     int rva00219C1F(unsigned int index);
     void *rva0021AE56(unsigned int index);
     void *rva0021AEB9(unsigned int index);
+    void *rva0021AF7E(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -166,5 +177,16 @@ void *Rva00219B9E::rva0021AEB9(unsigned int index)
     void *p = rva00219B9E(index);
     if (p)
         return (char *)p + 4;
+    return &err;
+}
+// ?rva0021AF7E@Rva00219B9E@@QAEPAXI@Z @0x0021AF7E 108B
+// Outer 32-byte vector accessor at +0x14C with static "ERROR: Invalid CalssIndex"
+// fallback; callers 0x0021CB79 0x005B20FB.
+void *Rva00219B9E::rva0021AF7E(unsigned int index)
+{
+    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    unsigned int count = Vec32Size(&m_outer);
+    if (index < count)
+        return &Vec32At(&m_outer, index);
     return &err;
 }
