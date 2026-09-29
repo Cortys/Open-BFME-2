@@ -27,3 +27,17 @@ Rva002111C8::Rva002111C8(const Rva002111C8 &o)
 	: m_00(o.m_00), m_0c(o.m_0c)
 {
 }
+
+// ?Rva00211DFBConstruct@@YAXPAVRva002111C8@@PBV1@@Z, RVA 0x00211DFB, 18B.
+// Unlock lane: null-guarded placement copy through the row above; frameless
+// cdecl with plain ret. Local nothrow placement new (not <new>'s, whose
+// placement delete pulls EH states) so the throwing copy construction emits
+// no EH states or handler, as retail has none. Callers at
+// 0x00211E1B/0x00211E46/0x00213E8E.
+inline void *__cdecl operator new(unsigned int, Rva002111C8 *p) throw() { return (void *)p; }
+
+void Rva00211DFBConstruct(Rva002111C8 *d, const Rva002111C8 *s)
+{
+	if (d)
+		new (d) Rva002111C8(*s);
+}
