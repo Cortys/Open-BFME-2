@@ -41579,3 +41579,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?resize@BfmePod8Vector@@QAEXI@Z,,0x000B0857,23,Code/Libraries/Source/WWVegas/WWLib/stlport_pod8_resize_byvalue.cpp,matched,BfmePod8Vector one-arg resize via rowed by-value resize
 ??$__uninitialized_fill_n@PAUCoord3D@@IU1@@_STL@@YAPAUCoord3D@@PAU1@IABU1@ABU__false_type@0@@Z,,0x002CA849,37,Code/GameEngine/Source/Common/Coord3DUninitializedFillN.cpp,matched,STLport Coord3D fill_n via pinned Construct callers 0xCA1D3 0xCDF8A
 ??$uninitialized_fill_n@PAUCoord3D@@IU1@@_STL@@YAPAUCoord3D@@PAU1@IABU1@@Z,,0x000CA1D3,27,Code/GameEngine/Source/Common/Coord3DUninitializedFillNWrapper.cpp,matched,STLport Coord3D fill_n wrapper forwards to rowed worker 0x2CA849
+?initRopeParms@W3DRopeDraw@@UAEXMMABURGBColor@@MMM@Z,,0x000CAC25,131,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DRopeDrawInitRopeParms.cpp,matched,BFME1 W3DRopeDraw donor verbatim vslot68 toss plus build
