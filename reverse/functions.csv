@@ -41796,3 +41796,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005D5CBFPartition@@YAPAVRva005D5A7E@@PAV1@0V1@@Z,,0x005D5CBF,68,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,unguarded partition via rowed comparator and swap
 ?rva00238F91@Rva00238E1B@@QAEXHHH@Z,,0x00238F91,47,Code/GameEngine/Source/Common/Rva00238E1BCounter.cpp,matched,setter plus flags via same class
 ?rva00238FC0@Rva00238E1B@@QAEXXZ,,0x00238FC0,51,Code/GameEngine/Source/Common/Rva00238E1BCounter.cpp,matched,copy setter via same class
+?rva00423A75@Rva00423A75@@QAE_NPAVRva001EB130Holder@@PAVPlayer@@0@Z,,0x00423A75,119,Code/Libraries/Source/WWVegas/WWLib/stlport_moduledatavector_push.cpp,matched,unlock filter via rowed player plus tab plus list unblocks 0x00372571

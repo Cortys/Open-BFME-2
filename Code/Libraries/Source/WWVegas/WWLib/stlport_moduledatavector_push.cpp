@@ -21,3 +21,82 @@ void Rva00423A68::rva00423A68(const ModuleData *p)
 {
 	m_vec.push_back(p);
 }
+
+// ?rva00423A75@Rva00423A75@@QAE_NPAVRva001EB130Holder@@PAVPlayer@@0@Z
+// retail 0x00423A75, 119 bytes.
+#include <list>
+
+class Object;
+class Player;
+class BfmeTab1026;
+class Rva001EB130Holder;
+
+class Object
+{
+public:
+	Player *getControllingPlayer() const;
+};
+
+class Player
+{
+};
+
+class BfmeTab1026
+{
+public:
+	char bfmeHas1026(int a, int b);
+};
+
+class Rva001EB130Holder
+{
+public:
+	void rva001EB130();
+	void *m_head;
+};
+
+struct RvaListNode
+{
+	RvaListNode *m_next;
+	RvaListNode *m_prev;
+	Object *m_obj;
+};
+
+class Rva00423A75
+{
+public:
+	bool rva00423A75(Rva001EB130Holder *input, Player *player, Rva001EB130Holder *output);
+private:
+	char m_pad[0x20];
+	BfmeTab1026 m_tab;
+};
+
+bool Rva00423A75::rva00423A75(Rva001EB130Holder *input, Player *player, Rva001EB130Holder *output)
+{
+	output->rva001EB130();
+	if (!player)
+		return false;
+	RvaListNode *sentinel = (RvaListNode *)input->m_head;
+	RvaListNode *cur = sentinel->m_next;
+	if (cur == sentinel)
+		goto empty;
+	{
+		RvaListNode *head = sentinel;
+		do {
+			Object *obj = cur->m_obj;
+			Object *slot = obj;
+			if (slot) {
+				if (slot->getControllingPlayer() == player) {
+					if (m_tab.bfmeHas1026((int)slot, (int)player)) {
+						((_STL::list<Object *> *)output)->push_back(slot);
+					}
+				}
+			}
+			cur = cur->m_next;
+		} while (cur != (RvaListNode *)input->m_head);
+	}
+empty:
+	{
+		RvaListNode *outSent = (RvaListNode *)output->m_head;
+		return outSent->m_next != outSent;
+	}
+}
