@@ -142,4 +142,22 @@ void __sort_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
 template void __sort_heap<int *,
 	Rva00422CA8>(int *, int *, Rva00422CA8);
 
+// ??$make_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z
+// retail 0x0042461E, 25 bytes. Public wrapper calling the 5-arg __make_heap
+// overload (ICF twin of rowed 3-arg 0x00423F63, pinned) with (first, last,
+// comp, 0, 0). Evidence: calls rowed/pinned 0x00423F63; caller 0x00424C32 in
+// 0x00424C21; unblocks 0x00424C21.
+template <class RandomAccessIter, class Compare>
+void __make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp,
+	int *, int *);
+
+template <class RandomAccessIter, class Compare>
+void make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
+{
+	__make_heap(first, last, comp, (int *)0, (int *)0);
+}
+
+template void make_heap<int *,
+	Rva00422CA8>(int *, int *, Rva00422CA8);
+
 }
