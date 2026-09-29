@@ -42486,3 +42486,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva00370492@AIGroup@@QAEXPBVPolygonTrigger@@HW4CommandSourceType@@@Z,,0x00370492,65,Code/GameEngine/Source/GameLogic/AI/Rva00370492Group.cpp,matched,AIGroup forward via 0x0036F5BB same list loop
 ?rva003704D3@AIGroup@@QAEXPBVPolygonTrigger@@HW4CommandSourceType@@PBUCoord3D@@@Z,,0x003704D3,68,Code/GameEngine/Source/GameLogic/AI/Rva003704D3Group.cpp,matched,AIGroup forward via 0x0036F629 same list loop
 ?rva004D6D95@Rva004D6C9C@@QAEXPAVTeam@@_N@Z,,0x004D6D95,94,Code/GameEngine/Source/Common/Rva004D6C9CAdd.cpp,matched,vector erase plus team iteration plus push_back Object plus0x74
+??1Rva004D64F5@@UAE@XZ,,0x004D65A6,54,Code/GameEngine/Source/GameNetwork/Rva004D64F5Dtor.cpp,matched,vptr 0x86050C plus releaseBuffer plus0x1c plus vptr 0x860130
