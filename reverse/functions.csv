@@ -42099,3 +42099,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva002007D5@@QAEPAXI@Z,,0x0035BCE4,28,Code/GameEngine/Source/GameClient/GUI/Shell/ShellMenuSchemeDtor.cpp,matched,scalar deleting dtor via force delete helper
 ??_GRva002E1F42@@UAEPAXI@Z,,0x002E21B5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-2E21B5.cpp,matched,chain deleting dtor
 ??1Rva001DC0EC@@QAE@XZ,,0x001DC0EC,120,Code/GameEngine/Source/GameLogic/Object/Rva001DC0ECDtor.cpp,matched,deleting-dtor caller 0x001DC1E1 item dtor 0x001DBC77 erase 0x00438539 releaseBuffer 0x00036410 listbase 0x004EC395 EHs
+??1Rva00496F30@@QAE@XZ,,0x00496F30,117,Code/GameEngine/Source/GameLogic/Object/Update/Rva00496F30Dtor.cpp,matched,unlock caller 0x0049703A plus rowed releaseBuffer erase free via static stlport EHs
