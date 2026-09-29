@@ -233,3 +233,24 @@ int Rva0043C933Get(void)
 	}
 	return 0;
 }
+
+// ?Rva0043C99AGet@@YAHXZ @0x0043C99A 25B.
+// Null-or-flag test on global 0x00A03314: 1 when set with the byte at
+// +0x2A1 set, else 0. Sits between rowed 0x0043C96F and 0x0043C9B3.
+// Callers at 0x0029B58A 0x002A1A22 0x002D4CE0 0x0031AD97 0x0031D247
+// 0x003EC58E plus jmp 0x003E54A3. Unlock lane.
+struct GlobalA03314Flag2A1
+{
+	char m_pad[0x2A1];
+	unsigned char m_flag;
+};
+int Rva0043C99AGet(void)
+{
+	GlobalA03314 *p = g_Va00A03314;
+	if (p != 0)
+	{
+		if (((GlobalA03314Flag2A1 *)p)->m_flag != 0)
+			return 1;
+	}
+	return 0;
+}
