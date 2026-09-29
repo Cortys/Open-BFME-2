@@ -41086,3 +41086,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005DB004@Rva005DB004@@QAEXXZ,,0x005DB004,31,Code/GameEngine/Source/Common/Rva005DB004Copy.cpp,matched,three-field copy to struct at 38
 ?rva00538B2F@Rva00538B2F@@QAEPAURva0052A28EDwordField@@PAU2@@Z,,0x00538B2F,25,Code/GameEngine/Source/Common/Rva00538B2FFind.cpp,matched,list search via head plus next getter
 ?Rva004E400DEnable@@YAXXZ,,0x004E400D,43,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,unlock one-shot enabler twin plus 8 callers
+?Rva004E40A6Enable@@YGXH@Z,,0x004E40A6,33,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,chain guarded enabler stdcall plus dead arg

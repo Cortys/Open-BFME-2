@@ -42,3 +42,18 @@ void Rva004E400DEnable(void)
 	g_Va00A01E48->flag = 1;
 	g_Va009FE4CC->enable();
 }
+
+// ?Rva004E40A6Enable@@YGXH@Z @0x004E40A6 33B.
+// Guarded enabler, chain lane on 0x004E400D above: call it unless global
+// 0x009FE78C has 6 at +0x110 and global 0x009FEDF0 has 0 at +0x16. The int
+// parameter is dead (ret 4, never read); __stdcall for the callee cleanup.
+// One caller at 0x004E44EF.
+struct Global9FE78C { char m_pad[0x110]; int m_val; };
+extern Global9FE78C *g_Va009FE78C;
+struct Global9FEDF0 { char m_pad[0x16]; unsigned char m_flag; };
+extern Global9FEDF0 *g_Va009FEDF0;
+void __stdcall Rva004E40A6Enable(int unused)
+{
+	if (g_Va009FE78C->m_val != 6 || g_Va009FEDF0->m_flag != 0)
+		Rva004E400DEnable();
+}
