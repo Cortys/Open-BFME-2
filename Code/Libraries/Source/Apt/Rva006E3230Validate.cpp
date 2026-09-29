@@ -15,15 +15,40 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 struct Rva006E3230Action { char data[24]; };
+class AptValue {
+    virtual void unused0(); virtual void unused1(); virtual void unused2();
+    virtual void unused3(); virtual void unused4(); virtual void unused5();
+    virtual void unused6(); virtual void unused7(); virtual void unused8();
+    virtual void unused9(); virtual void unused10(); virtual void unused11();
+    virtual void unused12();
+public:
+    // Slot 0x34: PDB name unknown (cf AptValueForceDelete.cpp); this body calls it.
+    virtual void unused13();
+    void setGCMark(bool value);
+};
+class Rva006DBB40ShrAndField
+{
+public:
+    // Rowed body returns 0/1; all three retail call sites here test al, so
+    // the true donor return type is bool (cf isUndefined). Twin pin below.
+    bool get() const;
+};
+struct Rva006E3230ActionFull {
+    int eActionType;
+    char _pad4[8];
+    AptValue *m_pValues[3];
+};
 class Rva006E3230 {
     Rva006E3230Action *m_aActionPool;
     Rva006E3230Action *m_pCurrent;
-    char _pad2[8];
+    Rva006E3230Action *m_pEnd;
+    char _padC[4];
     int m_iActionPoolSize;
 public:
     void rva006E3230(Rva006E3230Action *pCur);
     Rva006E3230Action *rva006E3DB0();
     Rva006E3230Action *rva006E3920(int arg);
+    void rva006E39A0();
 };
 void Rva006E3230::rva006E3230(Rva006E3230Action *pCur)
 {
@@ -60,4 +85,52 @@ Rva006E3230Action *Rva006E3230::rva006E3920(int arg)
     if (idx >= 0)
         return &m_aActionPool[idx];
     return &m_aActionPool[idx + m_iActionPoolSize];
+}
+
+// ?rva006E39A0@Rva006E3230@@QAEXXZ @0x006E39A0 246B chain lane.
+// Drains newly queued actions: iDelta = m_pEnd - m_pCurrent (stride 24),
+// wrapped by size and asserted positive at AptAnimation.cpp:1887, then for
+// each k the wrapped action dispatches on eActionType: type 1 marks operand
+// 2, type 2 marks operands 0 and 1 (setGCMark(true) plus virtual slot 0x34
+// when the ShrAnd view reports the mark clear), anything else asserts
+// NOT_REACHED at AptAnimation.cpp:1962. Evidence: caller 0x006E47C0;
+// same queue object (rva006E3920 called with own this); vtable shape copied
+// from AptValueForceDelete.cpp.
+void Rva006E3230::rva006E39A0()
+{
+    int iDelta = m_pEnd - m_pCurrent;
+    if (iDelta < 0) {
+        iDelta += m_iActionPoolSize;
+        if (iDelta <= 0) {
+            g_bfmeAptAssertAtE17734("iDelta > 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptAnimation.cpp", 0x75F);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+    }
+    int k = 0;
+    if (iDelta > 0) {
+        do {
+            Rva006E3230ActionFull *a = (Rva006E3230ActionFull *)rva006E3920(k);
+            int t = a->eActionType;
+            if (t == 1) {
+                if (!((const Rva006DBB40ShrAndField *)a->m_pValues[2])->get()) {
+                    a->m_pValues[2]->setGCMark(true);
+                    a->m_pValues[2]->unused13();
+                }
+            } else if (t == 2) {
+                if (!((const Rva006DBB40ShrAndField *)a->m_pValues[0])->get()) {
+                    a->m_pValues[0]->setGCMark(true);
+                    a->m_pValues[0]->unused13();
+                }
+                if (!((const Rva006DBB40ShrAndField *)a->m_pValues[1])->get()) {
+                    a->m_pValues[1]->setGCMark(true);
+                    a->m_pValues[1]->unused13();
+                }
+            } else {
+                g_bfmeAptAssertAtE17734("NOT_REACHED && \"Encountered invalid pActionPool->eActionType\"", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptAnimation.cpp", 0x7AA);
+                if (g_bfmeAptBreakOnAssertAtDDC01C)
+                    __debugbreak();
+            }
+        } while (++k < iDelta);
+    }
 }
