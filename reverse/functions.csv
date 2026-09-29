@@ -41183,3 +41183,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005E7FB0Forward@@YAXPAURva005E74AA@@0@Z,,0x005E7FB0,24,Code/GameEngine/Source/Common/Bfme/Rva005E74AADeleting.cpp,matched,forwarder via local tag to destroy 0x005E7BE2 callers 0x5E801F 0x5E8063 0x5E807F
 ?rva003EEAB7@Rva003EEAB7@@QAEXXZ,,0x003EEAB7,8,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,chain thunk this+8 to rva004E1F62 caller 0x002123DC
 ?rva0029B2E7@Rva0029B2E7@@QAEPAV1@XZ,,0x0029B2E7,44,Code/GameEngine/Source/GameClient/Rva0029B2E7Zero.cpp,matched,zeroes byte plus 7 floats returns this caller 0x29B502
+??_GRva004FF2F4@@QAEPAXI@Z,,0x004FF318,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-4FF318.cpp,matched,chain lane deleting dtor calls rowed dtor plus rowed delete
