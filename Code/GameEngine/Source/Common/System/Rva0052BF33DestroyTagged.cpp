@@ -82,3 +82,19 @@ void Rva0052BFB5DestroyTagged(Rva0052BFB5Elem *first, Rva0052BFB5Elem *last, con
 	for (; first != last; ++first)
 		first->~Rva0052BFB5Elem();
 }
+
+// ?Rva0052BCE7DestroyTagged@@YAXPAURva0052BCE7Elem@@0ABU__false_type@_STL@@@Z
+// @0x0052BCE7 29B (push 0 form is 29B vs 26B above due to disp32 for 0xB8).
+// Unlock lane: same tagged virtual loop as above but stride 0xB8; caller at
+// 0x0052C25C; unblocks 0x0052C24E. Prev/next are stlport TUs.
+struct Rva0052BCE7Elem
+{
+	virtual ~Rva0052BCE7Elem();
+	char m_pad[180];
+};
+
+void Rva0052BCE7DestroyTagged(Rva0052BCE7Elem *first, Rva0052BCE7Elem *last, const _STL::__false_type &tag)
+{
+	for (; first != last; ++first)
+		first->~Rva0052BCE7Elem();
+}
