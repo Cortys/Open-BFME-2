@@ -33,6 +33,7 @@ public:
     UnicodeString(const UnicodeString& o):StringBase<Wide>(o){}
     ~UnicodeString(){}
     void __cdecl format(const UnicodeString* fmt, ...);
+    void __cdecl format(const Wide* fmt, ...);
 };
 class Rva005DD772 : public UnicodeString {
 public:
@@ -69,4 +70,20 @@ Rva005DD9F9::Rva005DD9F9(float v) : Rva005DD772() {
     m04 = v;
     int i = (int)(v + 0.5f);
     ((UnicodeString*)this)->format(&TheGameText->slot44("GUI:WinPercent"), i);
+}
+
+// ??0Rva005DD822@@QAE@I@Z @ 0x005DD822 75B
+// Unsigned-int ctor of 8-byte UnicodeString+float display record (Rva005DD772 layout).
+// Base default inlines to and [esi],0; m04 via fild plus 2^32 adjust at 0x7C26EC;
+// base formatted via rowed UnicodeString::format 0x6CB5D0 with static wide fmt at 0x7C9260.
+// Callers 40+ in big parsers 0x5B8116/0x5DE100/0x5BEA70/0x5C1BDE pass int; neighbours share /O1 /EHsc.
+extern const Wide g_007C9260[];
+class Rva005DD822 : public UnicodeString {
+public:
+    float m04;
+    Rva005DD822(unsigned int v);
+};
+Rva005DD822::Rva005DD822(unsigned int v) {
+    m04 = (float)v;
+    ((UnicodeString*)this)->format(g_007C9260, v);
 }
