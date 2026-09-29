@@ -15,10 +15,15 @@ public:
 class Rva00201B64
 {
 public:
+	Rva00201B64();
 	~Rva00201B64();
 private:
 	_STL::list<int> m_list00;
 };
+
+Rva00201B64::Rva00201B64()
+{
+}
 
 Rva00201B64::~Rva00201B64()
 {
