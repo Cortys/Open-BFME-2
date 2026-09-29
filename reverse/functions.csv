@@ -41363,3 +41363,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004D662D@Rva004D65DC@@QAEXVAsciiString@@@Z,,0x004D662D,52,Code/GameEngine/Source/Common/Rva004D662DSet.cpp,matched,Rva004D65DC AsciiString plus20 setter via caller 0x00592520
 ??_GRva002E6158@@QAEPAXI@Z,,0x002E6415,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse07-2E6158.cpp,matched,chain from 0x002E6158 scalar deleting
 ??0Rva004395EC@@QAE@ABU0@@Z,,0x0043964D,29,Code/Libraries/Source/WWVegas/WWLib/Rva004393D6Copy.cpp,matched,chain copy of 0x004395EC
+?rva002E6431@Rva002E6431@@QAEXXZ,,0x002E6431,32,Code/GameEngine/Source/GameClient/Rva002E6431Clear.cpp,matched,chain clears +0x30 via dtor delete
