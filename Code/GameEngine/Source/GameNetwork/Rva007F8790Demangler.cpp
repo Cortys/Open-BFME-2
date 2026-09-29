@@ -28,7 +28,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-Rva007EB810Diag *Rva007EB810Get();
+int Rva007EB810Get();
 
 struct Rva00804150ProtoMangleRef;
 
@@ -44,7 +44,7 @@ struct Rva007E9B70Obj
 	virtual unsigned int slot08();
 };
 
-Rva007E9B70Obj *Rva007E9B70Get();
+int Rva00656B60Get();
 
 class BfmeStrTWA
 {
@@ -73,7 +73,7 @@ void BfmeThingTWA::rva007F8790( const char *gameID, int port,
 	const char *session, unsigned char flag )
 {
 	if( m_bfme0c != 0 )
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"mState == DEMANGLER_READY", "\\views\\feslbuild_main\\jabba\\fesl\\source\\demangler.cpp", 0x3B );
 
 	Rva00804150ProtoMangleRef *ref = ProtoMangleCreate(
@@ -88,7 +88,7 @@ void BfmeThingTWA::rva007F8790( const char *gameID, int port,
 
 	Rva008043F0Connect( ref, port, session );
 	m_bfmeStr.m_bfme24 = flag;
-	m_bfmeStr.m_bfme20 = Rva007E9B70Get()->slot08();
+	m_bfmeStr.m_bfme20 = ((Rva007E9B70Obj *)Rva00656B60Get())->slot08();
 	m_bfme0c = 1;
 }
 
