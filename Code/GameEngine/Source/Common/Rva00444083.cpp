@@ -18,6 +18,7 @@ class Rva00444083
 {
 public:
 	void rva00444083(int flags);
+	void rva004440F4(int flags);
 private:
 	char m_pad00[0x274];
 	void *m_owner274;
@@ -41,6 +42,26 @@ void Rva00444083::rva00444083(int flags)
 		{
 			TheRva00222A8BTarget->invoke(m_owner274, "EnableJoinGame", 0, 0, 0, 0, 0, 0);
 			m_flags6bc |= 2;
+		}
+	}
+}
+
+void Rva00444083::rva004440F4(int flags)
+{
+	if ((flags & 1) != 0)
+	{
+		if ((m_flags6bc & 1) != 0)
+		{
+			TheRva00222A8BTarget->invoke(m_owner274, "DisableCreateGame", 0, 0, 0, 0, 0, 0);
+			m_flags6bc &= ~1;
+		}
+	}
+	if ((flags & 2) != 0)
+	{
+		if ((m_flags6bc & 2) != 0)
+		{
+			TheRva00222A8BTarget->invoke(m_owner274, "DisableJoinGame", 0, 0, 0, 0, 0, 0);
+			m_flags6bc &= ~2;
 		}
 	}
 }
