@@ -1,5 +1,5 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
-// ?isPlayer@GameSlot@@QBE_NUUnicodeString@@@Z @0x3FFF62 (45B):
+// ?isPlayer@GameSlot@@QBE_NVUnicodeString@@@Z @0x3FFF62 (45B):
 // GameSlot::isPlayer, UnicodeString by-value overload. BFME1
 // GameSlotIsPlayerUnicodeThunk.cpp donor
 // (reference/open-bfme-1/.../GameNetwork/GameSlotIsPlayerUnicodeThunk.cpp):
@@ -76,7 +76,7 @@ protected:
 	UnicodeString m_name;
 };
 
-// ?isPlayer@GameSlot@@QBE_NUUnicodeString@@@Z
+// ?isPlayer@GameSlot@@QBE_NVUnicodeString@@@Z
 Bool GameSlot::isPlayer(UnicodeString userName) const
 {
 	Bool result;
