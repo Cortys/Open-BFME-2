@@ -15,9 +15,20 @@ struct Rva004FF582Node {
 	Rva004FF2F4 m_10;
 };
 
+struct Rva004FF729Head {
+	char m_00[4];
+	Rva004FF582Node *m_04;
+	Rva004FF729Head *m_08;
+	Rva004FF729Head *m_0C;
+};
+
 class Rva004FF582 {
 public:
 	void rva004FF582(Rva004FF582Node *node);
+	void rva004FF729();
+private:
+	Rva004FF729Head *m_head;
+	int m_04;
 };
 
 void Rva004FF582::rva004FF582(Rva004FF582Node *node)
@@ -31,4 +42,19 @@ void Rva004FF582::rva004FF582(Rva004FF582Node *node)
 		free(node);
 		node = next;
 	} while (node);
+}
+
+// ?rva004FF729@Rva004FF582@@QAEXXZ at 0x004FF729 (41B).
+// List clear: if m_04!=0 free m_head->m_04 via rva004FF582 then reinit sentinel self-loop.
+// Evidence: chain lane calls 0x004FF582 rowed, caller 0x004FFBEB.
+
+void Rva004FF582::rva004FF729()
+{
+	if (m_04 == 0)
+		return;
+	rva004FF582(m_head->m_04);
+	m_head->m_08 = m_head;
+	m_head->m_04 = 0;
+	m_head->m_0C = m_head;
+	m_04 = 0;
 }
