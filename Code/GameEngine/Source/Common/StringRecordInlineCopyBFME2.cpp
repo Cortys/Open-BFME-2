@@ -307,8 +307,10 @@ template BfmeStringRecord005ED5F3* _STL::__copy<BfmeStringRecord005ED5F3*, BfmeS
 struct BfmeStringRecord00219B0B {
     unsigned int word0; AsciiString text0, text1, text2;
     BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o);
+    ~BfmeStringRecord00219B0B();
 };
 BfmeStringRecord00219B0B::BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o) : word0(o.word0), text0(o.text0), text1(o.text1), text2(o.text2) {}
+BfmeStringRecord00219B0B::~BfmeStringRecord00219B0B() {}
 template void _STL::_Construct<BfmeStringRecord00219B0B,BfmeStringRecord00219B0B>(BfmeStringRecord00219B0B*,const BfmeStringRecord00219B0B&);
 
 // Complete retail 2-arg ctor at0x0021A940.
