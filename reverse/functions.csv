@@ -40983,3 +40983,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00214983@Rva002147D1@@QAEPAXH@Z,,0x00214983,34,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,same array as 0x002147D1 via barrier reload
 ?rva00214713@Rva002147D1@@QAEHH@Z,,0x00214713,37,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,linear search same array via plus14 key
 ?rva0038201D@Rva0038201D@@QAEXPAURva0038201DNode@@@Z,,0x0038201D,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,tree free via child-next caller 0x3828B6
+?rva003828B6@Rva0038201D@@QAEXXZ,,0x003828B6,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,clear via tree free resets sentinel

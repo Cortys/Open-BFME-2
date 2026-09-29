@@ -7,15 +7,18 @@ extern "C" void __cdecl free(void* block);
 struct Rva0038201DNode
 {
 	int m0;
-	int m4;
+	Rva0038201DNode* m_first;
 	Rva0038201DNode* m_next;
 	Rva0038201DNode* m_child;
 };
 
 class Rva0038201D
 {
+	Rva0038201DNode* m_head;
+	int m_count;
 public:
 	void rva0038201D(Rva0038201DNode* n);
+	void rva003828B6();
 };
 
 void Rva0038201D::rva0038201D(Rva0038201DNode* n)
@@ -29,4 +32,15 @@ void Rva0038201D::rva0038201D(Rva0038201DNode* n)
 		free(cur);
 		cur = next;
 	} while (cur);
+}
+
+void Rva0038201D::rva003828B6()
+{
+	if (m_count == 0)
+		return;
+	rva0038201D(m_head->m_first);
+	m_head->m_next = m_head;
+	m_head->m_first = 0;
+	m_head->m_child = m_head;
+	m_count = 0;
 }
