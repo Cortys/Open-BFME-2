@@ -2769,3 +2769,6 @@ FUN_005FF743	0x001FF743	43	blocked	EH clear plus prepend via rowed 0x001FF6AE an
 FUN_00783276	0x00383276	56	blocked	twin of 0x3832E6 dtor needs EH hidden member same wall t=2 model=muse-10
 FUN_0078331E	0x0038331E	56	blocked	third twin dtor same EH wall as 0x3832E6 t=2 model=muse-10
 FUN_007832AE	0x003832AE	56	blocked	fourth twin dtor same EH wall t=2 model=muse-10
+?rva002A9DB8@Rva002A9DB8@@QAEPAXH@Z	0x002A9DB8	23	partial	single byte call 52 vs jmp 62 tail for slot15 holder plus missing-return null t=20 model=muse-spark score=0.96 stash=reverse/attempts/0x002a9db8.cpp
+?getQualifiedTriggerAreaByName@ScriptEngine@@QAEPAVPolygonTrigger@@VAsciiString@@@Z	0x0035768D	333	blocked	donor-guided 308B vs 333B this-in-ebx not edi plus EH and-state not or-state plus 11 structural regions needs deeper temp analysis t=25 model=muse-spark
+?rva00356F6E@Rva00356F6E@@QAEPAVPlayer@@XZ	0x00356F6E	65	blocked	65B size-exact but global base in eax not ecx plus extra reload needs allocator steering t=20 model=muse-spark
