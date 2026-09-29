@@ -41617,3 +41617,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0033ACC5@Rva0033AC7F@@QAE_NAAVAsciiString@@@Z,,0x0033ACC5,35,Code/GameEngine/Source/Common/Rva0033AC7FGuardedSet.cpp,matched,narrow sibling getter for plus0x60 member
 ?rva0033A5F4@Rva0033A5F4@@QAEXPAHPAM010@Z,,0x0033A5F4,62,Code/GameEngine/Source/Common/Rva0033A5F4Getter.cpp,matched,five-out-param x87 getter via caller plus frame shape
 ?rva00200084@Rva0023C6A4@@QAE_NXZ,,0x00200084,32,Code/GameEngine/Source/Common/Rva0023C6A4Check.cpp,matched,OR of global-mode check and this predicate
+??0Rva0054F508@@QAE@H@Z,,0x0054F52F,117,Code/GameEngine/Source/Common/Rva0054F508Ctor.cpp,matched,vtable 0x86AA60 CustomPref GameSpy slot 0x7C base 0x44D54B
