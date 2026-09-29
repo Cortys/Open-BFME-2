@@ -2774,3 +2774,4 @@ FUN_007832AE	0x003832AE	56	blocked	fourth twin dtor same EH wall t=2 model=muse-
 ?rva00356F6E@Rva00356F6E@@QAEPAVPlayer@@XZ	0x00356F6E	65	blocked	65B size-exact but global base in eax not ecx plus extra reload needs allocator steering t=20 model=muse-spark
 FUN_006ABFC3	0x002ABFC3	58	blocked	register wall plus dead mov ecx-ebx plus overwrite-trick push-mov-mov for free args t=10 model=muse-10
 ?rva00449522@Rva00447773@@QAEPAXH@Z	0x00449522	43	partial	single regalloc wall imul plus row in esi vs retail imul eax plus push esi plus lea esi eax-plus-ecx; tried separate-inline unsigned constfirst register-hint off-first spellings; shape-levers row26 def-order lead untried; all else exact t=25 model=muse-03 score=0.98 stash=reverse/attempts/0x00449522.cpp
+?rva0030B980@Rva0030B980@@QAEXH@Z	0x0030B980	74	blocked	ctor base E16 plus E8 vec overlap needs donor t=12 model=muse-02
