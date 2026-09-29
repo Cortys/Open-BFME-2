@@ -1,7 +1,8 @@
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // Trimmed from Open-BFME-1
 // (Code/GameEngine/Source/Common/System/File.cpp): only the placed
-// ?lock@File, ?close@File, ?open@File and ??1File bodies are defined here.
+// ?lock@File, ?close@File, ?open@File, ??1File, ?size@File, ?position@File,
+// ?print@File, ?eof@File and ?unlock@File bodies are defined here.
 // Slots stay declared-only (destructor for the slot-0 delete-this dispatch,
 // rest for layout) and the donor's other members stay out, so the
 // unmatched-definition gate passes. Layout follows the donor: AsciiString is
@@ -19,6 +20,12 @@ typedef void *FileHandle;
 extern "C" __declspec(dllimport) FileHandle __stdcall CreateMutexA(void *attrs, int owned, const char *name);
 extern "C" __declspec(dllimport) unsigned long __stdcall WaitForSingleObject(FileHandle handle, unsigned long timeout);
 extern "C" __declspec(dllimport) int __stdcall CloseHandle(void *handle);
+extern "C" __declspec(dllimport) int __stdcall ReleaseMutex(FileHandle handle);
+
+typedef char *va_list;
+#define va_start(ap, v) (ap = (va_list)&v + ((sizeof(v) + 3) & ~3))
+#define va_end(ap) (ap = (va_list)0)
+extern "C" __declspec(dllimport) int __cdecl vsprintf(char *buffer, const char *format, va_list args);
 
 static const unsigned long FILE_INFINITE = 0xFFFFFFFF;
 
@@ -47,20 +54,25 @@ public:
 	virtual ~File();
 	virtual bool open(const char *filename, int access);
 	virtual void close();
-	virtual void slot03();
-	virtual void slot04();
-	virtual void slot05();
+	enum seekMode { START, CURRENT, END };
+	enum { TEXT = 0x20 };
+
+	virtual int read(void *buffer, int bytes);
+	virtual int write(const void *buffer, int bytes);
+	virtual int seek(int bytes, seekMode mode);
 	virtual void slot06();
 	virtual void slot07();
 	virtual void slot08();
 	virtual void slot09();
-	virtual void slot10();
-	virtual void slot11();
-	virtual void slot12();
+	virtual bool print(const char *format, ...);
+	virtual int size();
+	virtual int position();
 	virtual void slot13();
 	virtual void slot14();
 	virtual void lock();
 	virtual void unlock();
+
+	bool eof();
 
 protected:
 	void setName(const char *name)
@@ -83,6 +95,71 @@ void File::lock()
 		m_mutex = CreateMutexA(0, 1, 0);
 	else
 		WaitForSingleObject(m_mutex, FILE_INFINITE);
+}
+
+// ?unlock@File@@UAEXXZ
+// Slot 16 of File's vtable (0x0087A808) and of every subclass that inherits
+// it. BFME1 File::unlock verbatim (matched there at 0x009CB790, same 15 bytes):
+// a File that was never locked has no mutex, hence the test.
+void File::unlock()
+{
+	if (m_mutex != 0)
+		ReleaseMutex(m_mutex);
+}
+
+// ?size@File@@UAEHXZ
+// Slot 11 of File's vtable, inherited by LocalFile, RAMFile and
+// StreamingArchiveFile. ZH / BFME1 File::size verbatim (BFME1 0x009CB670, 53B).
+int File::size()
+{
+	int pos = seek(0, CURRENT);
+	int size = seek(0, END);
+
+	seek(pos, START);
+
+	return size < 0 ? 0 : size;
+}
+
+// ?position@File@@UAEHXZ
+// Slot 12. ZH / BFME1 File::position verbatim (BFME1 0x009CB6B0, 10B).
+int File::position()
+{
+	return seek(0, CURRENT);
+}
+
+// ?print@File@@UAA_NPBDZZ
+// Slot 10, inherited by every File subclass here. ZH / BFME1 File::print
+// (BFME1 0x009CB6C0): 10K stack buffer, TEXT-mode check, vsprintf through the
+// msvcr71 import, then write through slot 4.
+bool File::print(const char *format, ...)
+{
+	char buffer[10*1024];
+	int len;
+
+	if (!(m_access & TEXT))
+	{
+		return false;
+	}
+
+	va_list args;
+	va_start(args, format);
+	len = vsprintf(buffer, format, args);
+	va_end(args);
+
+	if (len >= sizeof(buffer))
+	{
+		return false;
+	}
+
+	return (write(buffer, len) == len);
+}
+
+// ?eof@File@@QAE_NXZ
+// ZH / BFME1 File::eof verbatim (BFME1 0x009CB740, same 30 bytes): position
+// through slot 12 first, then size through slot 11.
+bool File::eof()
+{
+	return position() == size();
 }
 
 // ?close@File@@UAEXXZ
