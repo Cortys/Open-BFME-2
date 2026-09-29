@@ -3512,3 +3512,4 @@ FUN_007F0588	0x003F0588	70	blocked	array-search loop shape wall 51vs70B compact 
 ?first@Gen_00943CF0@@AAEXPAXPAH11@Z	0x00140FA0	266	blocked	LINK BONUS first needs Gen_00943CF0 layout plus 11-signature decode plus bit-clear tail t=8 model=muse-spark
 FUN_0066DF80	0x0066DF80	523	blocked	523B GameNetwork leaf too big for quick lane t=3 model=muse-spark
 ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z	0x001B2EFC	215	partial	two operand-order diffs at 0xB1-0xB3 mov edx eax vs mem t=15 model=muse-12 score=0.9907 stash=reverse/attempts/0x001b2efc.cpp
+??0Rva0040E3EE@@QAE@XZ	0x0040E3EE	165	partial	finish retry: real-vptr plus G6 plus refcount-addr still early vtable; keep 0.97 stash t=12 model=muse-spark score=0.97 stash=reverse/attempts/0x0040e3ee.cpp

@@ -63,8 +63,9 @@ class Rva00355D66 : public Gen_004902A0
 {
 public:
 	virtual ~Rva00355D66();
-private:
+protected:
 	GameWindow *m_win;
+private:
 	bool m_flag;
 };
 
@@ -160,12 +161,20 @@ class Rva003563A7 : public Rva00355D66
 {
 public:
 	virtual ~Rva003563A7();
+	void rva00355EE1();
 private:
-	int m_pad10;
+	bool m_pad10;
 	StringBase<char> m_str;
 };
 
 Rva003563A7::~Rva003563A7()
 {
 	TheDisplay->slot68();
+}
+
+void Rva003563A7::rva00355EE1()
+{
+	TheDisplay->slot68();
+	m_win = 0;
+	m_pad10 = false;
 }

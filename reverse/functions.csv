@@ -42697,3 +42697,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva006C0DA0@Rva006C0DA0@@QAEXXZ,,0x006C0DA0,76,Code/GameEngine/Source/Common/Rva006C0DA0.cpp,matched,grid iterator width height 12B stride via uchar callback param
 ?rva006C0820@Rva006C0820@@QAEXXZ,,0x006C0820,8,Code/GameEngine/Source/Common/Rva006C0820.cpp,matched,tail jmp to rowed 0x006C0DA0 via ptr plus 0x10
 ?rva0037EB1D@Rva0037EB1D@@QAEXPAX@Z,,0x0037EB1D,31,Code/GameEngine/Source/Common/Rva0037EB1DCopy.cpp,matched,chain of rowed 0x0037EACC plus AC to C0
+?rva00355EE1@Rva003563A7@@QAEXXZ,,0x00355EE1,27,Code/GameEngine/Source/Common/Rva00355D66Dtor.cpp,matched,vslot 3 of Rva003563A7 via Display slot68 plus clear
