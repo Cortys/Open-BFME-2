@@ -41253,3 +41253,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0029E03E@Rva0029B667@@QAEXXZ,,0x0029E03E,41,Code/GameEngine/Source/Common/Rva0029E03EClear.cpp,matched,chain same-this 0x0029B667 relink head
 ?rva0029D9CA@Rva0029D9CA@@QAEXXZ,,0x0029D9CA,47,Code/GameEngine/Source/GameClient/Rva0029D9CAClear.cpp,matched,chain 0x0029A407 global slot74 plus delete
 ?removeRecycleRva0029DFE9@@YGXPAX0@Z,,0x0029DFE9,36,Code/GameEngine/Source/GameClient/InGameUI_RemoveRecycle0029DFE9.cpp,matched,unlocks 0x0029F34F twin freelist 0xDBA5E8
+?rva005E8077@Rva005E8077@@QAEXXZ,,0x005E8077,30,Code/GameEngine/Source/Common/Bfme/Rva005E8077Clear.cpp,matched,chain via Forward 0x005E7FB0 and free 0x00030830 with callers 0x005E80D0 0x005E8224

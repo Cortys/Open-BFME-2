@@ -2846,3 +2846,4 @@ FUN_002817F2	0x002817F2	443	blocked	443B TGA loader with debug string no donor n
 ?rva0057A09F@Rva0057A09F@@QAEXXZ	0x0057A09F	406	blocked	406B STL vectors AsciiString plus BfmeE16 RowTitle RowHelp loop plus INI initFromINI needs ZH donor t=10 model=muse-spark
 ?rva00586C17@Rva00586C17@@QAEXXZ	0x00586C17	63	blocked	twin-of-586BAB-plus-33B-SEH-prolog-scope-B9CB23-state0 EHs-alone-gives-30B needs-SEH-object t=15 model=muse-spark
 ?rva0029FB03@Rva0029FB03@@QAEXXZ	0x0029FB03	56	blocked	same-destroy-plus-free-plus-33B-SEH-prolog-scope-B750A5-as-586C17 needs-SEH-object t=8 model=muse-spark
+FUN_009e73fb	0x005E73FB	84	blocked	EH prolog with negative this offsets and chained vtable overwrites via caller 0x005CE0B8 plus pin-only clear 0x000AD6F4 t=12 model=muse-05
