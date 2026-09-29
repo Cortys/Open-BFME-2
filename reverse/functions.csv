@@ -42930,3 +42930,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ??1Rva0039205C@@QAE@XZ,,0x0039205C,26,Code/GameEngine/Source/Common/Rva0039205CDtor.cpp,matched,outer dtor via vector delete plus zeroing
 ?Rva00295A0FCommand@Rva00295A0FCommands@@QAEXPAXHH@Z,,0x00295A0F,117,Code/GameEngine/Source/GameLogic/AI/AICommandRva00295A0F.cpp,matched,Position command via AICommandParms slot-0 aiDoCommand LINK bonus
 ?Rva0007882FGet@@YAPAVFile@@PBDHH@Z,,0x0007882F,128,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva0007882FGet.cpp,matched,Chain File opener via GameFileClass 0x214 plus rowed wrapper via TheFileSystem
+?Rva0032B389Join@@YA?AVAsciiString@@ABV1@0@Z,,0x0032B389,98,Code/GameEngine/Source/GameLogic/Map/Rva0032B389Join.cpp,matched,path join tmp slash concat sret 12 callers SidesList neighbour
