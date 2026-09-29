@@ -3253,3 +3253,7 @@ FUN_0061a651	0x0021A651	119	blocked	name-builder via AsciiString::format %s%s%s 
 ??1ShroudManagerImpl008FBA40@@QAE@XZ	0x0073E3F0	140	blocked	not ShroudManager: retail deque dtor is BfmeE32 not Gen_t plus array pushes debugIgnoreLeaks not ElementDtor plus lea nop t=30 model=muse-09
 ?rva00358B9E@AsciiString@@QAEXAAV1@ABVUnicodeString@@@Z	0x00358B9E	194	blocked	194B EH_prolog amp entity helper needs donor plus exact Unicode layouts t=20 model=muse-09
 ?rva002DB496@Rva002DB496@@QAEPAXVAsciiString@@@Z	0x002DB496	68	partial	72B vs 68B single extra and ebp-4 0 EH init; 0 mem 0 reg; tried EHs vs EHsc same throw kills EH t=15 model=muse-05 score=0.95 stash=reverse/attempts/0x002db496.cpp
+?rva0021BC53@Rva0021BC53@@QAEHH@Z	0x0021BC53	84	blocked	new DesignHero Elem216-like class with maps at +0x24/+0x48 second-find reads +0x18 past pair<int-int> node t=12 model=muse-spark
+?rva0021D61F@Rva0021D61F@@QAEHXZ	0x0021D61F	56	blocked	member at +0x54 of E50F parent calls tree-clear on this then frees [this] layout conflict t=10 model=muse-spark
+??1Rva0021C459@@QAE@XZ	0x0021D5D5	56	blocked	guessed Rva dtor clear+free-header gives 23B frameless vs retail 56B EH_prolog needs EHs TU t=8 model=muse-spark
+?Rva0021D657Insert@@YAHPAXHH@Z	0x0021D657	29	blocked	wrapper over hinted insert_unique set-vs-tree dual-layout puzzle caller DAA8 t=10 model=muse-spark
