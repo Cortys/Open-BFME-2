@@ -2869,3 +2869,5 @@ FUN_0052b6d9	0x0052B6D9	37	blocked	stlport hashtable new_node 12B via allocator 
 FUN_008221b2	0x004221B2	52	blocked	52B thiscall hidden-ret loop over linked nodes via game recycle 0x0029DFC5 with dead mov ecx needs donor t=12 model=muse-spark
 FUN_005a6b14	0x005A6B14	20	blocked	packet disassembly truncated at cmp eax ebx no ret; ghidra size 20 equals prolog only needs true boundary t=5 model=muse-spark
 ??$__unguarded_linear_insert@PAUStringLookUp@@U1@UStringLookUpLess@@@_STL@@YAXPAUStringLookUp@@U1@UStringLookUpLess@@@Z	0x002E5CAD	60	partial	57B vs 60B missing dead lea ecx ebp+0x14 only diff t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x002e5cad.cpp
+?rva00524F35@Rva00524F35@@QAEXH@Z	0x00524F35	37	partial	missing mov eax ecx this in eax vs ecx t=20 model=muse-05 score=0.95 stash=reverse/attempts/0x00524f35.cpp
+??0Rva002D2C34@@QAE@XZ	0x002D2C34	106	blocked	EH ctor with 5 OCL plus E16 vectors plus VA store needs member dtors and vptr evidence t=12 model=muse-05
