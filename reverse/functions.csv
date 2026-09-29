@@ -42906,3 +42906,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??0Rva00391F4E@@QAE@HHH@Z,,0x00391F4E,66,Code/GameEngine/Source/Common/Rva00391F4EBitSet.cpp,matched,two-bit ctor via memset plus bit sets
 ?dup_00858150@@YAXPAURva00858150Owner@@PAX@Z,,0x00699710,32,Code/GameEngine/Source/GameNetwork/GameSpy/Rva00858150SetRecord.cpp,matched,BFME1 byte-identical donor; b1 0x00858150; callee is the matched piSendStateChanged 0x006A7610
 ??_GRva00469D86@@QAEPAXI@Z,,0x0046AA4D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00469D86.cpp,matched,deleting dtor via rowed dtor plus delete
+??1Rva0060237D@@UAE@XZ,,0x0060237D,68,Code/GameEngine/Source/Common/System/Rva0060237DDtor.cpp,matched,File-derived dtor with array delete and StringBase member via File row
