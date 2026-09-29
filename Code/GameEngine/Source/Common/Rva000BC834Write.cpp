@@ -44,3 +44,22 @@ int Rva000BC834::write(char *dst)
 	int n = m_first.rva000BBD66(dst);
 	return n + m_second.write(dst + n);
 }
+
+// ?write@Rva000BD268@@QAEHPAD@Z retail 0x000BD268 37B
+// Narrow concat node "Rva000BC834 + Rva000BBD66": first composite write via
+// 0x000BC834 then second slice write via 0x000BBD66, summing lengths.
+// Evidence: chain from 0x000BC834 plus caller 0x000BDC6D plus 37B shape
+// matching 0x000BC834.
+struct Rva000BD268
+{
+	int write(char *dst);
+
+	Rva000BC834 m_first;
+	Rva000BBD66 m_second;
+};
+
+int Rva000BD268::write(char *dst)
+{
+	int n = m_first.write(dst);
+	return n + m_second.rva000BBD66(dst + n);
+}
