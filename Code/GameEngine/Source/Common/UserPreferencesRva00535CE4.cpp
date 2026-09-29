@@ -57,6 +57,9 @@
 // ?rva0053595E@UserPreferences@@QAEXVAsciiString@@M@Z @0x0053595E 75B
 // UserPreferences LongestGameTime-setter path: append LongestGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
 // Evidence: concat LongestGameTime 0x00868E38 slot 0x28 releaseBuffer gap same TU unlock.
+// ?rva0053590D@UserPreferences@@QAEMVAsciiString@@@Z @0x0053590D 81B
+// UserPreferences TimePlayed-getter path: append TimePlayed to by-value AsciiString slot 0x14 with (arg, 0.0f) float ret 4.
+// Evidence: concat TimePlayed 0x00868E2C slot 0x14 releaseBuffer fldz fstp gap same TU unlock.
 // ?rva005359FA@UserPreferences@@QAEXVAsciiString@@M@Z @0x005359FA 75B
 // UserPreferences ShortestGameTime-setter path: append ShortestGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
 // Evidence: concat ShortestGameTime 0x00868E48 slot 0x28 releaseBuffer gap same TU unlock.
@@ -104,7 +107,7 @@ public:
 	virtual void v2();
 	virtual void v3();
 	virtual void v4();
-	virtual void v5();
+	virtual float v5(const AsciiString &s, float x);
 	virtual int v6(const AsciiString &s, int x);
 	virtual void v7();
 	virtual void v8();
@@ -129,6 +132,7 @@ public:
 	int rva00535E97(AsciiString arg);
 	int rva00535F28(AsciiString arg);
 	void rva0053595E(AsciiString arg, float x);
+	float rva0053590D(AsciiString arg);
 	void rva005359FA(AsciiString arg, float x);
 	void rva00535A96(AsciiString arg, float x);
 };
@@ -252,6 +256,13 @@ void UserPreferences::rva0053595E(AsciiString arg, float x)
 {
 	arg.concat("LongestGameTime");
 	v10(arg, x);
+}
+
+float UserPreferences::rva0053590D(AsciiString arg)
+{
+	arg.concat("TimePlayed");
+	float ret = v5(arg, 0.0f);
+	return ret;
 }
 
 void UserPreferences::rva005359FA(AsciiString arg, float x)
