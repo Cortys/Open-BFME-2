@@ -41377,3 +41377,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00442B8FSort@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00442B8F,61,Code/GameEngine/Source/GameClient/GUI/Rva00442B8FSort.cpp,matched,sort heap drain via rowed pop and caller 0x00443030
 ?Rva00442828Final@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00442828,77,Code/GameEngine/Source/GameClient/GUI/Rva00442828Final.cpp,matched,final insertion sort via rowed sorts and caller 0x0044352C
 ?friend_makeVeterancyUpgrade@UpgradeTemplate@@QAEXW4VeterancyLevel@@@Z,,0x0026F1A5,113,Code/GameEngine/Source/Common/System/Rva0026F1A5Veterancy.cpp,matched,ZH Upgrade donor via getVet nameToKey
+??1Rva00201B64@@QAE@XZ,,0x00201B64,108,Code/GameEngine/Source/Common/Rva00201B64HolderDtor.cpp,matched,holder dtor list int erase plus Owner delete EHs
