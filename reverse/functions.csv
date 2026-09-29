@@ -42019,3 +42019,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E1001@Rva002E1001@@QAEHXZ,,0x002E1001,69,Code/GameEngine/Source/Common/Rva002E1001.cpp,matched,unlock lane triple-deref plus 0x13C count
 ??_GRva001EC349@@QAEPAXI@Z,,0x001ECB91,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva001EC349.cpp,matched,deleting dtor via rowed dtor plus delete
 ?Rva0021C8D7AdjustHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z,,0x0021C8D7,153,Code/GameEngine/Source/Common/System/Rva0021C8D7AdjustHeap.cpp,matched,unlock heap adjust via rowed pushheap and assign
+?getMetaMapRec@MetaMap@@IAEPAVMetaMapRec@@W4Type@GameMessage@@@Z,,0x001DB537,107,Code/GameEngine/Source/GameClient/MessageStream/MetaMapGetMetaMapRec.cpp,matched,ZH donor MetaEvent body plus caller 0x001DB5A2 plus rowed new and releaseBuffer
