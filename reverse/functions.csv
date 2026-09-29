@@ -41595,3 +41595,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?countInverseIntersection@?$BitFlags@$0HF@@@QBEHABV1@@Z,,0x0033AE53,89,Code/GameEngine/Source/Common/System/BitFlags117CountInverseIntersection.cpp,matched,ModelCondition findBestInfoSlow caller plus 4-word SWAR shape
 ?rva0033AFBB@Rva0033AFBB@@QAE_NPBDPA_N1@Z,,0x0033AFBB,308,Code/GameEngine/Source/Common/System/INI_VeterancyLevelToken.cpp,matched,VeterancyLevel single-token worker via scanIndex plus filler-throw
 ?rva0033AC7F@Rva0033AC7F@@QAE_NAAV?$StringBase@G@@@Z,,0x0033AC7F,35,Code/GameEngine/Source/Common/Rva0033AC7FGuardedSet.cpp,matched,guarded wide-string getter via rowed isEmpty plus pinned set
+?rva0033ACA2@Rva0033AC7F@@QAE_NAAV?$StringBase@G@@@Z,,0x0033ACA2,35,Code/GameEngine/Source/Common/Rva0033AC7FGuardedSet.cpp,matched,sibling guarded getter for plus0x50 member

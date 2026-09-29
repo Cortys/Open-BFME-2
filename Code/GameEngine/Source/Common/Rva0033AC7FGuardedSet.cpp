@@ -13,22 +13,36 @@ class StringBase
 public:
 	bool isEmpty() const;
 	void set(const StringBase &src);
+
+private:
+	unsigned char m_storage[8];
 };
 
 class Rva0033AC7F
 {
 public:
 	bool rva0033AC7F(StringBase<unsigned short> &dst);
+	bool rva0033ACA2(StringBase<unsigned short> &dst);
 
 private:
 	unsigned char m_pad[0x48];
 	StringBase<unsigned short> m_str;
+	StringBase<unsigned short> m_str2;
 };
 
 bool Rva0033AC7F::rva0033AC7F(StringBase<unsigned short> &dst)
 {
 	if (!m_str.isEmpty()) {
 		dst.set(m_str);
+		return true;
+	}
+	return false;
+}
+
+bool Rva0033AC7F::rva0033ACA2(StringBase<unsigned short> &dst)
+{
+	if (!m_str2.isEmpty()) {
+		dst.set(m_str2);
 		return true;
 	}
 	return false;
