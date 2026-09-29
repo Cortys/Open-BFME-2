@@ -1,7 +1,7 @@
 // ??0LargeGroupBonusUpdateModuleData@@QAE@XZ
-// partial score=0.985 date=2026-09-29
+// partial score=0.99 date=2026-09-29
 // ??0LargeGroupBonusUpdateModuleData@@QAE@XZ
-// partial score=0.985 date=2026-09-29
+// partial score=0.99 date=2026-09-29
 // cl: /O1 /arch:SSE /GX /Oy- /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
@@ -53,10 +53,9 @@ struct FlagSubObjectNames
 {
 	typedef _STL::_Vector_base<AsciiString, _STL::allocator<AsciiString> > Base;
 
-	__forceinline FlagSubObjectNames(const _STL::allocator<AsciiString> &alloc = _STL::allocator<AsciiString>())
+	inline FlagSubObjectNames(const _STL::allocator<AsciiString> &alloc = _STL::allocator<AsciiString>())
 	{
-		Base *const basePtr = reinterpret_cast<Base *>(&m_storage);
-		__assume(basePtr != 0);
+		Base *basePtr = reinterpret_cast<Base *>(&m_storage);
 		new (basePtr) Base(alloc);
 	}
 
