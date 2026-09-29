@@ -64,3 +64,19 @@ void Rva005F06EF::rva005F06EF()
 	if (m_flag)
 		TheMouse->rva001EEA6D(TheGameText->fetch((const char *)0x00C78CB8), -1, 0, 1.0f);
 }
+
+struct Rva005F09BC
+{
+	char m_pad[0x34];
+	Rva005F06EF **m_begin;
+	Rva005F06EF **m_end;
+	void rva005F09BC();
+};
+
+void Rva005F09BC::rva005F09BC()
+{
+	Rva005F06EF **begin = m_begin;
+	Rva005F06EF **end = m_end;
+	for (; begin != end; ++begin)
+		(*begin)->rva005F06EF();
+}
