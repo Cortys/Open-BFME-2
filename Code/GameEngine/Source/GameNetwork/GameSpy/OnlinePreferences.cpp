@@ -199,6 +199,7 @@ public:
 	int rva00559782();
 	void rva005597CB(int val);
 	void rva0055986F(AsciiString val);
+	void rva00559924(AsciiString val);
 };
 
 // ??0QuickMatchPreferences@@QAE@XZ @0x5DF1A3
@@ -250,6 +251,11 @@ void GameSpyMiscPreferences::rva005597CB(int val)
 void GameSpyMiscPreferences::rva0055986F(AsciiString val)
 {
 	setAsciiString("ToolTipCachedStats", val);
+}
+
+void GameSpyMiscPreferences::rva00559924(AsciiString val)
+{
+	setAsciiString("AllOtherCachedStats", val);
 }
 
 typedef long time_t;
