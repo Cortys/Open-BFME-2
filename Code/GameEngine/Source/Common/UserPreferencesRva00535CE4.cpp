@@ -84,6 +84,9 @@
 // ?rva00536F36@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536F36 71B
 // UserPreferences RegionsLost-void path: append RegionsLost slot 0x2C with (arg, x) void ret 8.
 // Evidence: concat RegionsLost 0x008690E8 slot 0x2C releaseBuffer gap same TU.
+// ?rva00536F7D@UserPreferences@@QAEHVAsciiString@@@Z @0x00536F7D 74B
+// UserPreferences RegionsLost-getter path: append RegionsLost to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat RegionsLost 0x008690E8 slot 0x18 releaseBuffer gap same TU.
 // ?rva00535D75@UserPreferences@@QAEHVAsciiString@@@Z @0x00535D75 74B
 // UserPreferences WinStreak-getter path: append WinStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat WinStreak 0x00868E8C slot 0x18 releaseBuffer gap same TU unlock.
@@ -192,6 +195,7 @@ public:
 	void rva00536EA5(AsciiString arg, int x);
 	int rva00536EEC(AsciiString arg);
 	void rva00536F36(AsciiString arg, int x);
+	int rva00536F7D(AsciiString arg);
 	int rva00535D75(AsciiString arg);
 	int rva00535E06(AsciiString arg);
 	int rva00535E97(AsciiString arg);
@@ -384,6 +388,13 @@ void UserPreferences::rva00536F36(AsciiString arg, int x)
 {
 	arg.concat("RegionsLost");
 	v11(arg, x);
+}
+
+int UserPreferences::rva00536F7D(AsciiString arg)
+{
+	arg.concat("RegionsLost");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 int UserPreferences::rva00535D75(AsciiString arg)
