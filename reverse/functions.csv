@@ -41674,3 +41674,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00357340@ScriptEngine@@QAEXPAXPAVCoord3D@@@Z,,0x00357340,132,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357340.cpp,matched,list1A498 isEmpty CRC Coord normalize
 ?rva00357C1F@ScriptEngine@@QAEXPAX0@Z,,0x00357C1F,75,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357C1F.cpp,matched,chain via 357340 Coord temp
 ??4Rva001DE727@@QAEAAV0@ABV0@@Z,,0x001DE727,85,Code/Libraries/Source/WWVegas/WWLib/Rva001DE727Assign.cpp,matched,assign via tree and int vector
+?rva005816A3@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z,,0x005816A3,64,Code/GameEngine/Source/GameNetwork/LANAPIRva005816A3.cpp,matched,chain via BfmeNetAddress compare plus slot0 plus slot44
