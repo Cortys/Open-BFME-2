@@ -82,3 +82,31 @@ evidence, revert the experiment, take another candidate.
 
 When this queue thins, `python3 tools/next_work.py --tier ghidra` serves
 string-anchored absent functions under the same rules.
+
+## Jump-encoding residuals are a wall, not a puzzle
+
+A body can match byte for byte except for one byte, where retail encodes a
+branch short and the build encodes it near, to the same target at the same
+distance:
+
+```
+retail   eb 20        jmp +0x20      2 bytes
+build    e9 xx xx xx  jmp +0x20      3 bytes
+```
+
+Measured on `__adjust_heap<int*,int,int,greater<int>>` at `0x5E48C2` (retail 94,
+build 95): the body is byte-identical from the function entry through the branch
+and again from the byte after it to the `ret`. Five codegen variants were tried
+on that exact build — `/O1 /G7`, `/O1 /G6`, `/O1`, `/O1 /EHs` all give 95, `/O2`
+gives 114 — so it is not a flag.
+
+This is the same residual the `_M_fill_insert<vector<void*>>` stash records
+alongside its frame difference ("homes ... plus jump encodings"), which suggests
+it is not specific to one body. Treat it as a layout-pass decision the source
+cannot reach: bank the body, record the one-byte residue, and move on. Do not
+spend rounds on operand order, driver shape or flag sweeps — all were tried here.
+
+**A related trap that cost a round:** a flag sweep is only valid for the build it
+was run on. One run earlier in this work was invalidated by a source change made
+afterwards, and answering the question again took one command against reasoning
+about whether the old result still applied.
