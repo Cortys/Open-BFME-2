@@ -8,16 +8,19 @@
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
-#pragma intrinsic(__debugbreak)
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(__debugbreak, _ReadWriteBarrier)
 class AptCIH {
     virtual void vtableSlot0();
     unsigned char _pad[0x44];
     AptCIH *m_parent;
-    unsigned char _pad2[0x0C];
+    void *m_4C;
+    unsigned char _pad3[8];
     int m_code;
 public:
     int rva006E0B80(int nLvl) const;
     bool rva006E2460(const AptCIH *other) const;
+    void *rva006E0FB0() const;
 };
 int AptCIH::rva006E0B80(int nLvl) const
 {
@@ -61,4 +64,38 @@ bool AptCIH::rva006E2460(const AptCIH *other) const
             break;
     }
     return false;
+}
+
+// ?rva006E0FB0@AptCIH@@QBEPAXXZ, retail 0x006E0FB0, 103 bytes.
+// Static-text field accessor at +0x4C guarded by type 0x10 and defined checks,
+// "this" assert at line 0xC9 and "isStaticTextInst()" at 0x87 via AptCIH.h.
+// Evidence: rowed getters 0x6DBB30 and 0x6DC010; unlock lane; caller at
+// 0x006E18FD; same /O2 AptCIH layout as neighbours. Barrier keeps the +0x4C
+// load late (retail test-je-int3-mov, no hoist); emits no bytes.
+class Rva006DBB30SarDwordField
+{
+public:
+    int get() const;
+};
+
+class BfmeAptValue006DCD20
+{
+public:
+    bool isUndefined() const;
+};
+
+void *AptCIH::rva006E0FB0() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xC9);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() != 0x10 || ((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
+        g_bfmeAptAssertAtE17734("isStaticTextInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x87);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    _ReadWriteBarrier();
+    return m_4C;
 }

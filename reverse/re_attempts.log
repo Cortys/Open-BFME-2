@@ -3277,3 +3277,4 @@ FUN_005E2CAE	0x001E2CAE	261	blocked	261B EH INI plus Armor erase plus vector plu
 FUN_004b6b4f	0x000B6B4F	161	blocked	ebx esi edi unsaved implies mid-function boundary plus virtual slots C8 CC need class t=5 model=muse-10
 ??0Rva0040E3EE@@QAE@XZ	0x0040E3EE	165	partial	vtable stored before member ctor instead of after lea push for m_18 t=25 model=muse-10 score=0.97 stash=reverse/attempts/0x0040e3ee.cpp
 FUN_006e07fa	0x002E07FA	92	blocked	virtual slot 0x78 x5 plus throw via format plus loop4 needs 30-virtual class and throwinfo t=5 model=muse-10
+??0Rva0053FDE6@@QAE@XZ	0x0053FDE6	68	partial	int2 store last vs first plus mov eax ecx position t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x0053fde6.cpp
