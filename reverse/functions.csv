@@ -41964,3 +41964,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0073F96A@@UAE@XZ,,0x0073F96A,103,Code/GameEngine/Source/Common/Rva0073F96ADtor.cpp,matched,unlock lane dtor with static releases via base
 ??_GRva004D60CA@@MAEPAXI@Z,,0x004D6A81,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-4D6A81.cpp,matched,deleting dtor slot 0 of 0x00860464 calls 0x004D60E3 plus delete
 ?rva0053590D@UserPreferences@@QAEMVAsciiString@@@Z,,0x0053590D,81,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,TimePlayed getter slot14 same TU unlock
+??_GRva0073F96A@@UAEPAXI@Z,,0x0073F9F4,28,Code/GameEngine/Source/Common/Rva0073F96ADtor.cpp,matched,chain lane deleting dtor via dtor TU
