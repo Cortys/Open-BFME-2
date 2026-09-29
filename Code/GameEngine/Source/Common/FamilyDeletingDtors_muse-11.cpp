@@ -22,3 +22,9 @@ void famgenDelete(Rva00509D4C *p) { delete p; }
 class Made002CC774 { public: __declspec(noinline) virtual ~Made002CC774(); private: int m_famgen; };
 Made002CC774::~Made002CC774() { m_famgen = 0; }
 void famgenDelete(Made002CC774 *p) { delete p; }
+
+// ??_GRva0053FB33@@UAEPAXI@Z @0x0053FB75 28B calls rowed ??1Rva0053FB33@@UAE@XZ at 0x0053FB33 then delete.
+// Chain from 0x0053FB33 same 28B scalar-deleting shape.
+class Rva0053FB33 { public: __declspec(noinline) virtual ~Rva0053FB33(); private: int m_famgen; };
+Rva0053FB33::~Rva0053FB33() { m_famgen = 0; }
+void famgenDelete(Rva0053FB33 *p) { delete p; }
