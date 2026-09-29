@@ -42263,3 +42263,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00468E26Get@@YGPAVModule@@PAVObject@@@Z,,0x00468E26,83,Code/GameEngine/Source/GameLogic/Object/Update/Rva00468E26Get.cpp,matched,BannerCarrierUpdate static key via nameToKey plus Object findModule via 3 callers
 ?Rva0060C253Xfer@@YAPAVXfer@@PAV1@PAV?$vector@_NV?$allocator@_N@_STL@@@_STL@@@Z,,0x0060C253,283,Code/GameEngine/Source/GameLogic/ScriptEngine/XferVectorBool.cpp,matched,chain after reserve skeleton mirrors xferListInt rowed pushback empty bumpup
 ?rva006E0E70@Rva006E0DE0@@QAEXXZ,,0x006E0E70,49,Code/Libraries/Source/Apt/Rva006E0DE0Remove.cpp,matched,Apt pool teardown via freeBlock
+?rva002B4509@Rva002B4509@@QAEXPAUNode002B4509@@@Z,,0x002B4509,45,Code/GameEngine/Source/Common/Rva002B4509.cpp,matched,unlock sibling recursive free via rowed free
