@@ -197,6 +197,7 @@ public:
 	GameSpyMiscPreferences();
 	virtual ~GameSpyMiscPreferences();
 	int rva00559782();
+	void rva005597CB(int val);
 };
 
 // ??0QuickMatchPreferences@@QAE@XZ @0x5DF1A3
@@ -238,6 +239,11 @@ GameSpyMiscPreferences::GameSpyMiscPreferences()
 int GameSpyMiscPreferences::rva00559782()
 {
 	return getInt("Locale", 0);
+}
+
+void GameSpyMiscPreferences::rva005597CB(int val)
+{
+	setInt("Locale", val);
 }
 
 typedef long time_t;
