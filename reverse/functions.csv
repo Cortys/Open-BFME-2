@@ -42373,3 +42373,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?rva002636F6@Object@@QBEMPBUCoord3D@@PBX0@Z,,0x002636F6,109,Code/GameEngine/Source/GameLogic/Object/ObjectRva002636F6.cpp,matched,recovered from banked attempt 0x002636f6.cpp (score 1.0); marker trailing comma removed so the commit gate sees the declared name
 ?rva002B5522@Rva002B5522@@QAEXXZ,,0x002B5522,41,Code/GameEngine/Source/Common/Rva002B5522.cpp,matched,chain via rowed 0x002B438D free plus sentinel reset
 ?rva002B57AC@Rva002B57AC@@QAEXXZ,,0x002B57AC,41,Code/GameEngine/Source/Common/Rva002B57AC.cpp,matched,chain via rowed 0x002B44DC free plus sentinel reset
+?rva002B54F9@Rva002B54F9@@QAEXXZ,,0x002B54F9,41,Code/GameEngine/Source/Common/Rva002B54F9.cpp,matched,chain via rowed 0x002B4360 free plus sentinel reset
