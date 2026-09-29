@@ -80,3 +80,17 @@ void *Rva004E4179Get(void)
 	}
 	return &g_Va00A0445C;
 }
+
+// ?Rva004E432ASet@@YAXE@Z @0x004E432A 34B.
+// Flag setter on the 0x004E4179 singleton block: if the byte arg equals the
+// flag byte at +4 of the block, return; if arg is 0, call rowed enable
+// 0x004E400D, then store arg. Caller 0x003BD412 forwards one dword.
+void Rva004E432ASet(unsigned char val)
+{
+	unsigned char *flag = (unsigned char *)Rva004E4179Get() + 4;
+	if (val == *flag)
+		return;
+	if (val == 0)
+		Rva004E400DEnable();
+	*flag = val;
+}
