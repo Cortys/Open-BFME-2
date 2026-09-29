@@ -167,3 +167,18 @@ void *Rva0043C9B3Get(void)
 	}
 	return &g_Va00A03318;
 }
+
+// ?Rva0043CCDASet@@YAXE@Z @0x0043CCDA 34B.
+// Flag setter on the 0x0043C9B3 singleton block, twin of 0x004E432A above:
+// if the byte arg equals the flag byte at +4 of the block, return; if arg
+// is 0, call rowed enable 0x0043C96F, then store arg. Caller 0x003BD405
+// forwards one dword. Chain lane on 0x0043C9B3.
+void Rva0043CCDASet(unsigned char val)
+{
+	unsigned char *flag = (unsigned char *)Rva0043C9B3Get() + 4;
+	if (val == *flag)
+		return;
+	if (val == 0)
+		Rva0043C96FEnable();
+	*flag = val;
+}
