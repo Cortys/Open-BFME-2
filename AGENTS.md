@@ -277,7 +277,7 @@ GameWindowManager.cpp    45
 PhysicsUpdate.cpp        44
 ```
 
-**89 of those 116 have since been unfrozen, leaving 27** (measured after the
+**99 of those 116 have since been unfrozen, leaving 17** (measured after the
 sweeps below). The recipe that did it is worth reusing, because it is
 self-verifying rather than judgement-based:
 
@@ -296,10 +296,30 @@ makes the marking safe. The ceiling only decides how many files are *attempted*
 -- a file whose declarations cannot all be placed is restored untouched rather
 than half-marked, so raising it risks nothing but time.
 
-The 27 that remain carry more than 25 undeclared definitions each, up to
+**There are two failure modes, and the recipe above only fixes one.** Adding a
+marker fixes a definition that has none. But a file can also be blocked by a
+marker sitting on a definition that IS matched, which the tool reports
+differently:
+
+```
+?getPath@CDDrive@@UAE?AVAsciiString@@XZ is matched in functions.csv from
+this file but still marked present-unmatched (stale annotation - remove the
+marker)
+```
+
+That needs the marker REMOVED, and an add-only sweep makes it worse -- it reads
+the stale line as an undeclared definition, marks an already-matched one, and
+the guard reverts the file. dx8indexbuffer.cpp sat in the remaining list with a
+count of 1 for this reason: it had one problem and the sweep could only
+aggravate it. Check for stale annotations before adding anything.
+
+And a count of undeclared definitions is not a count of work needed.
+CDManager.cpp reported 16 unclaimed definitions and needed nothing added --
+14 already carried markers, and removing 2 stale ones unfroze the file.
+
+The 17 that remain carry 15 to 121 undeclared definitions each, up to
 InGameUI.cpp at 121. Those need each definition read, because the report stops
-telling you which of two same-named methods is the undeclared one long before
-121.
+telling you which of two same-named methods is the undeclared one.
 
 Any edit to a still-frozen file — however small, however correct — fails the
 commit until its undeclared definitions are dealt with. Check membership before
