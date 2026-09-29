@@ -41340,3 +41340,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004D65F9@Rva004D64F5@@QAEXVAsciiString@@@Z,,0x004D65F9,52,Code/GameEngine/Source/Common/Rva004D65F9Set.cpp,matched,Rva004D64F5 AsciiString setter via caller 0x00592496
 ?Rva0052C3BFDestroyRange@@YAXPAURva0052BF67Elem@@0@Z,,0x0052C3BF,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BF67 callers 3
 ?rva0052CAAB@Rva0052CAABVec@@QAEXXZ,,0x0052CAAB,30,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain scrap storage via 0052C24E plus free caller 1
+?rva005F06EF@Rva005F06EF@@QAEXXZ,,0x005F06EF,57,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,unlock lane tooltip via TheGameText fetch and Mouse tooltip
