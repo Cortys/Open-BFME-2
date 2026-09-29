@@ -1,7 +1,3 @@
-// ?rva0039DA2A@Team@@QBEXPAUCoord3D@@@Z
-// partial score=0.99 date=2026-09-28
-// ?rva0039DA2A@Team@@QBEXPAUCoord3D@@@Z
-// partial score=0.99 date=2026-09-28
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva0039DA2A@Team@@QBEXPAUCoord3D@@@Z @ 0x0039DA2A 202B (ours 202B exact size/count, 0 structural, 0 register)
 // Team centroid: averages live member positions. Walks via rowed iterate_TeamMemberList 0x263864 + DLINK advance pin 0x263526 (pin 5911),
@@ -67,7 +63,7 @@ void Team::rva0039DA2A(Coord3D *out) const
             continue;
         if ((cur->m_status94 & 1) != 0)
             continue;
-        sum.x += cur->m_position.x;
+        sum.x = *(const volatile float *)&sum.x + cur->m_position.x;
         sum.y += cur->m_position.y;
         sum.z += cur->m_position.z;
         ++count;
