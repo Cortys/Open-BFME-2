@@ -41907,3 +41907,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00272A02@Drawable@@QAEX_N@Z,,0x00272A02,54,Code/GameEngine/Source/GameClient/Drawable_rva00272A02.cpp,matched,Drawable flag 0x114 bit2 plus 0x14C walk to slot 0x30
 ?rva00535F72@UserPreferences@@QAEXH@Z,,0x00535F72,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences OverallWinStreak via local string slot2C
 ?rva00535FBA@UserPreferences@@QAEHXZ,,0x00535FBA,73,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences OverallWinStreak getter local slot18
+?_M_erase@?$_Rb_tree@HU?$pair@$$CBHUBfmePod52@@@_STL@@U?$_Select1st@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@@Z,,0x00425EA6,45,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_pod52_o1.cpp,matched,unlock via Pod52 cluster plus rowed free
