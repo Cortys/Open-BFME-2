@@ -2733,3 +2733,4 @@ FUN_00803170	0x00403170	89	blocked	chain caller of 0x00214983 needs global 0x009
 FUN_00782841	0x00382841	56	blocked	vtable slots 0x134 slash 0x14c plus global 0xA02320 plus StringBase temp no donor t=12 model=muse-10
 FUN_00483E87	0x00083E87	136	blocked	chain list walk plus 4 COM Releases needs vtable plus ref layout t=12 model=muse-04
 FUN_00483F0F	0x00083F0F	243	blocked	big track update with x87 plus SSE plus globals needs float layout t=8 model=muse-04
+FUN_00484206	0x00084206	107	blocked	EH particle texture plus RefCountPtr needs handle layout t=8 model=muse-04
