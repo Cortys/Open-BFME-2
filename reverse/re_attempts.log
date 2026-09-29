@@ -3164,3 +3164,4 @@ FUN_002E8548	0x002E8548	101	blocked	pool grow needs imul not lea plus register s
 ?rva002A7DDE@Rva002A7DD0@@QAE_NPAX@Z	0x002A7DDE	54	blocked	gap ask-plus-relationship early rets vs shared jmp needs shape t=10 model=muse-03
 ?rva00535B32@UserPreferences@@QAE?AVUnicodeString@@M@Z	0x00535B32	125	blocked	gap TimePlayed-format needs archSSE cvttss2si TheGameText slot44 format-copy model t=15 model=muse
 ?rva0073F895@Rva0073F895@@QAEHXZ	0x0073F895	213	partial	comiss operand order and return tail sharing t=15 model=muse-spark score=0.95 stash=reverse/attempts/0x0073f895.cpp
+?rva0021ADF8@Rva00219B9E@@QAEPAXI@Z	0x0021ADF8	94	blocked	getter with static global ERROR SubCalssIndex plus flag plus atexit plus accessor 0x219B9E t=15 model=muse-10
