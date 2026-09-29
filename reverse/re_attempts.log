@@ -3162,3 +3162,4 @@ FUN_002E8548	0x002E8548	101	blocked	pool grow needs imul not lea plus register s
 ?rva0049015C@Rva0049015C@@QAEXH@Z	0x0049015C	89	blocked	ebx int-vs-Drawable this confusion getDesiredGatherers int but mov ecx ebx for Drawable calls needs donor t=8 model=muse-03
 ??1AptNativeHash@@QAE@XZ	0x0070A840	111	blocked	gap Apt dtor true size 203 not 111 needs proto releases plus full boundary t=12 model=muse-03
 ?rva002A7DDE@Rva002A7DD0@@QAE_NPAX@Z	0x002A7DDE	54	blocked	gap ask-plus-relationship early rets vs shared jmp needs shape t=10 model=muse-03
+?rva00535B32@UserPreferences@@QAE?AVUnicodeString@@M@Z	0x00535B32	125	blocked	gap TimePlayed-format needs archSSE cvttss2si TheGameText slot44 format-copy model t=15 model=muse
