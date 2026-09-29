@@ -2731,3 +2731,5 @@ FUN_00614917	0x00214917	52	blocked	EH AsciiString setter at plus10 needs new cla
 FUN_00803170	0x00403170	89	blocked	chain caller of 0x00214983 needs global 0x009FE1D4 plus unknown 3-arg bool signature t=12 model=muse-04
 ??0TRoadSegInfo@@QAE@XZ	0x000D4ED0	95	blocked	needs Vector2 user ctor plus header decl for corner array plus SSE zero loop t=15 model=muse-04
 FUN_00782841	0x00382841	56	blocked	vtable slots 0x134 slash 0x14c plus global 0xA02320 plus StringBase temp no donor t=12 model=muse-10
+FUN_00483E87	0x00083E87	136	blocked	chain list walk plus 4 COM Releases needs vtable plus ref layout t=12 model=muse-04
+FUN_00483F0F	0x00083F0F	243	blocked	big track update with x87 plus SSE plus globals needs float layout t=8 model=muse-04

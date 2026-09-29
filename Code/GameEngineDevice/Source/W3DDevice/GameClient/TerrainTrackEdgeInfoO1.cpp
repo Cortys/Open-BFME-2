@@ -77,6 +77,7 @@ class Rva00083CE9Host
 {
 public:
 	void rva00083CE9(Rva00083CE9Node *p);
+	void rva00084002();
 private:
 	char _pad00[0x10];
 	Rva00083CE9Node *m_10;
@@ -102,4 +103,16 @@ void Rva00083CE9Host::rva00083CE9(Rva00083CE9Node *p)
 		m_14->m_1324 = p;
 	m_14 = p;
 	p->rva00083CB2();
+}
+// ?rva00084002@Rva00083CE9Host@@QAEXXZ retail 0x00084002 34B drain m_10 list
+// via rva00083CE9. Evidence: chain calls 0x00083CE9; caller at 0x00091CE6.
+void Rva00083CE9Host::rva00084002()
+{
+	Rva00083CE9Node *cur = m_10;
+	while (cur != 0)
+	{
+		Rva00083CE9Node *next = cur->m_1320;
+		rva00083CE9(cur);
+		cur = next;
+	}
 }
