@@ -47,8 +47,11 @@ void Rva0038201D::rva003828B6()
 
 class Rva0038204A
 {
+	Rva0038201DNode* m_head;
+	int m_count;
 public:
 	void rva0038204A(Rva0038201DNode* n);
+	void rva003828DF();
 };
 
 void Rva0038204A::rva0038204A(Rva0038201DNode* n)
@@ -62,4 +65,15 @@ void Rva0038204A::rva0038204A(Rva0038201DNode* n)
 		free(cur);
 		cur = next;
 	} while (cur);
+}
+
+void Rva0038204A::rva003828DF()
+{
+	if (m_count == 0)
+		return;
+	rva0038204A(m_head->m_first);
+	m_head->m_next = m_head;
+	m_head->m_first = 0;
+	m_head->m_child = m_head;
+	m_count = 0;
 }
