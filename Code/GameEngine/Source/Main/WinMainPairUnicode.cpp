@@ -77,6 +77,7 @@ public:
 	void convertToWide(unsigned short *dst, int off, int len);
 	int convertToWideBuffer(unsigned short *dst);
 	int copyWchars(unsigned short *dst);
+	int write(char *dst);
 	operator UnicodeString();
 	int length() const { return m_len; }
 
@@ -113,6 +114,7 @@ struct Rva002343C3TitleSegment : PairWithChar
 struct WinMainTitlePair : Rva000B3F84Pair
 {
 	int convertTitlePair(unsigned short *dst);
+	int write(char *dst);
 	operator UnicodeString();
 	int length() const { return firstLength() + m_secondPair.length(); }
 	int firstLength() const { return Rva000B3F84Pair::length(); }
@@ -322,4 +324,13 @@ Rva000B3F84Pair Rva00108B93Make(const char *src)
 {
 	Rva000B3F84Pair ref;
 	return *ref.init(src);
+}
+
+// ?write@WinMainTitlePair@@QAEHPAD@Z @0x00109D3A 37B
+// Narrow concat write like AsciiStringCharPlusText::write at 0x002349D8:
+// base pair then second pair; callers at 0x0010BAD1 0x002D4692.
+int WinMainTitlePair::write(char *dst)
+{
+	int n = Rva000B3F84Pair::write(dst);
+	return n + m_secondPair.write(dst + n);
 }
