@@ -2791,3 +2791,6 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?rva00553222@Rva00553222@@QAEXXZ	0x00553222	58	partial	je displacement plus4 vs retail t=15 model=muse-04 score=0.98 stash=reverse/attempts/0x00553222.cpp
 ?Rva000B978ACopy@@YAPADPAD00@Z	0x000B978A	50	blocked	placement-new emits operator-new call plus nullcheck 92B; inline op-new still emits 61B; minimal decls get div plus mem-advances but count in edi not esi plus params enregistered not spilled t=20 model=muse-spark
 ?getQualifiedTriggerAreaByName@ScriptEngine@@QAEPAVPolygonTrigger@@VAsciiString@@@Z	0x001520B4	100	blocked	three pushes into pin-only 1-arg getBufferForRead 0x36640 needs callee arity verification t=10 model=muse-spark
+?rva00538B95@Rva00538B95@@QAEPAURva0052A28EDwordField@@PAU2@@Z	0x00538B95	121	blocked	121B vslot7 plus virtual-direct ICF needs donor t=10 model=muse-02
+?Rva004EAC28Insert@@YAXPAPAXPAX1@Z	0x004EAC28	37	blocked	same edx esi swap wall as 0x003BD4C3 t=5 model=muse-02
+?Rva005A9146Insert@@YAXPAUE8@@U1@@Z	0x005A9146	50	blocked	insertion eax ecx swap plus branch polarity t=8 model=muse-02
