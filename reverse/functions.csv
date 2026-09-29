@@ -41478,3 +41478,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005659CA@Rva005659CA@@QAEXXZ,,0x005659CA,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x005A6EDA plus free
 ?rva0056F503@Rva0056F43E@@QAEXXZ,,0x0056F503,41,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056F43ECleanup.cpp,matched,table clear via rva0056F43E with header self-link reset
 ?rva005659E8@Rva005659E8@@QAEXXZ,,0x005659E8,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x0052C266 plus free
+?rva00565A42@Rva00565A42@@QAEXXZ,,0x00565A42,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x0022C8E3 plus free
