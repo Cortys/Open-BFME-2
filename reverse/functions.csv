@@ -42163,3 +42163,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002C531BWrap@@YAXPAPAX0P6A_NPAX1@Z@Z,,0x002C531B,25,Code/GameEngine/Source/Common/Rva002198ECAdjustHeap.cpp,matched,make_heap forwarder pushing two trailing zeros
 ?Rva002DBFAD@@YA?AVUnicodeString@@USYSTEMTIME@@@Z,,0x002DBFAD,212,Code/GameEngine/Source/Common/System/Rva002DBFADFormat.cpp,matched,Win32 date format via GetVersionEx GetDateFormat rowed UnicodeString
 ?rva004FDB57@Rva004FDB57@@QAEXVAsciiString@@@Z,,0x004FDB57,83,Code/GameEngine/Source/Common/Rva004FDB57Assign.cpp,matched,by-value AsciiString assign plus GameSpy slot 0x120 id via global 0x00A02320
+??$__unguarded_partition@PAHHP6A_NHH@Z@_STL@@YAPAHPAH0HP6A_NHH@Z@Z,,0x002C529D,67,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_int_funptr.cpp,matched,int partition with function-pointer comparator
