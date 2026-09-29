@@ -3017,3 +3017,5 @@ FUN_00640d34	0x00240D34	88	blocked	EH list-base plus allocator plus range insert
 ?rva00150337@Rva00150337@@QAEHXZ	0x00150337	181	blocked	deque-BfmeE8 insert with map allocate plus Copy FillN Tidy; 5 callees rowed but deque map layout plus 5-arg ret14 ABI plus sar3 stride needs dedicated deque reconstruction t=10 model=muse-09
 ?rva0052CCC4@Rva0052CCC4@@QAEXXZ	0x0052CCC4	63	blocked	same EH wall as 0x004EE501: Destroy plus free needs EH_prolog; plain method and dtor with EHsc give 30B no-EH; stlport pod-vector siblings show flags but no unwindable object identified t=8 model=muse-09
 FUN_0099764A	0x0059764A	73	blocked	needs KINDOF BitFlags donor for mask bits t=8 model=muse-05
+FUN_00839360	0x00439360	118	blocked	list assign with rep movsd 49 plus erase plus insert needs donor t=8 model=muse-07
+?allow@FilePathGate@@QAE_NPBD@Z	0x00600AE5	212	blocked	named no BFME1 ZH donor plus IAT strcmpi plus tree plus 212B t=8 model=muse-07
