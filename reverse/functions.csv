@@ -41113,3 +41113,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005DBD78FillN@@YAPAVRva005DBCD1@@PAV1@IABV1@ABUTag@@@Z,,0x005DBD78,40,Code/GameEngine/Source/Common/Rva005DBD78FillN.cpp,matched,FillN via rowed copy ctor 0x5DBCD1 caller 0x5DC507
 ?Rva005DBD4FUninitCopy@@YAPAVRva005DBCD1@@PAV1@00ABU__false_type@_STL@@@Z,,0x005DBD4F,41,Code/GameEngine/Source/Common/Rva005DBD4FUninitCopy.cpp,matched,UninitCopy via rowed ctor 0x5DBCD1 callers 0x5DC4D7 0x5DC525
 ?rva005DBCA6@Rva005DBCA6@@QAEHGG@Z,,0x005DBCA6,43,Code/GameEngine/Source/Common/Rva005DBCA6Get.cpp,matched,2D dword at 118 callers 0x5A6FD4 0x5A80B4
+?rva005DB8F7@Elem005DB98E@@QAEXMMM@Z,,0x005DB8F7,49,Code/GameEngine/Source/Common/Rva005DB8F7Set.cpp,matched,Elem set 3 floats plus timeGetTime caller 0x5DBEC7
