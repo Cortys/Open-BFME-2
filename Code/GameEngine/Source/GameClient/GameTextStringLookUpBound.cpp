@@ -18,6 +18,11 @@ struct Rva002E5C15Comp
 	bool operator()(const StringLookUp *left, const char *right) const;
 };
 
+struct Rva002E5C61Comp
+{
+	bool operator()(const char *left, const StringLookUp *right) const;
+};
+
 StringLookUp *__cdecl Rva002E5C15LowerBound(StringLookUp *first, StringLookUp *last, const char *const &val, Rva002E5C15Comp comp, int d2)
 {
 	int count = int(last - first);
@@ -29,6 +34,22 @@ StringLookUp *__cdecl Rva002E5C15LowerBound(StringLookUp *first, StringLookUp *l
 			count = count - half - 1;
 		} else {
 			count = half;
+		}
+	}
+	return first;
+}
+
+StringLookUp *__cdecl Rva002E5C61UpperBound(StringLookUp *first, StringLookUp *last, const char *const &val, Rva002E5C61Comp comp, int d2)
+{
+	int count = int(last - first);
+	while (count > 0) {
+		int half = count >> 1;
+		StringLookUp *mid = first + half;
+		if (comp(val, mid)) {
+			count = half;
+		} else {
+			first = mid + 1;
+			count = count - half - 1;
 		}
 	}
 	return first;
