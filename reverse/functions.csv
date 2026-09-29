@@ -41259,3 +41259,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva004E1A04@@QAEPAXI@Z,,0x0052BBBB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-52BBBB.cpp,matched,chain deleting dtor calls rowed dtor plus delete
 ?rva0052BAB2@Rva0052BAB2@@QBEHXZ,,0x0052BAB2,15,Code/GameEngine/Source/Common/Rva0052BAB2Getter.cpp,matched,unlock conditional getter callers 4
 ??0Rva002CF120@@QAE@ABU0@@Z,,0x002CF120,27,Code/Libraries/Source/WWVegas/WWLib/Rva002CF120Copy.cpp,matched,small copy ctor via header 0x2CF108 caller 0x2CF368
+?rva0030815D@Rva0030815D@@QAEXABVAsciiString@@@Z,,0x0030815D,29,Code/GameEngine/Source/Common/Rva00142C80LeaIndexer.cpp,matched,asciistring assign plus8c flag plus9c caller 0x3091B1

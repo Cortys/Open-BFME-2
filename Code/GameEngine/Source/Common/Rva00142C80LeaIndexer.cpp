@@ -92,3 +92,25 @@ void Rva00308139::rva00308139(const AsciiString &s)
 	m_str80 = s;
 	m_flag88 = true;
 }
+
+//
+// ?rva0030815D@Rva0030815D@@QAEXABVAsciiString@@@Z, retail 0x0030815D, 29B.
+// AsciiString assign to member+0x8c via pinned operator= then flag+0x9c=1.
+// Caller 0x3092CC in 0x3091B1. Same recipe/flags as 0x00308139. Honest address name.
+
+class Rva0030815D
+{
+public:
+	void rva0030815D(const AsciiString &s);
+private:
+	char m_pad00[0x8c];
+	AsciiString m_str8C;
+	char m_pad94[0x9c - 0x94];
+	bool m_flag9C;
+};
+
+void Rva0030815D::rva0030815D(const AsciiString &s)
+{
+	m_str8C = s;
+	m_flag9C = true;
+}
