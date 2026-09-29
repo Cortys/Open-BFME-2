@@ -41489,3 +41489,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_M_range_initialize@PAPAUBfmeE12@@@?$vector@PAUBfmeE12@@V?$allocator@PAUBfmeE12@@@_STL@@@_STL@@IAEXPAPAUBfmeE12@@0ABUforward_iterator_tag@1@@Z,,0x00422B0E,62,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pE12_range.cpp,matched,unlock vector ptr range-init via rowed allocator and copy_trivial unblocks 2 callers
 ??1Rva004444D2@@UAE@XZ,,0x004444D2,25,Code/GameEngine/Source/Common/Rva004444D2Dtor.cpp,matched,vtable plus array2 via CRT helper
 ??0Rva002542F3Member@@QAE@ABV0@@Z,,0x0043831C,109,Code/GameEngine/Source/GameLogic/Object/Update/Rva002542F3MemberCopy.cpp,matched,copy ctor via ctor TU layout and rowed copies
+?rva00239435@Rva00239435@@QAE?AVRva002390CB@@H@Z,,0x00239435,34,Code/GameEngine/Source/Common/Rva00239435Get.cpp,matched,copy element at this+0x124 via rowed copy ctor
