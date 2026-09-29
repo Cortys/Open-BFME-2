@@ -20,6 +20,12 @@ class EAStringC {
 public:
     unsigned int rva006D3750() const;
     unsigned short rva006D3D10() const;
+    bool IsEmpty() const;
+};
+class AsciiString {
+    void *m_data;
+public:
+    bool hasData() const;
 };
 EAStringC *Rva0070B4F0GetString(int eSC);
 class AptValue {
@@ -28,7 +34,7 @@ public:
     virtual void Release();
 };
 class AptNativeHash {
-    struct Entry { void *key; AptValue *value; };
+    struct Entry { AsciiString key; AptValue *value; };
     int mnTotalSize;
     Entry *mpData;
     AptValue *mp__proto__;
@@ -42,6 +48,7 @@ public:
     void UnsetPrototype();
     void DestroyGCPointers();
     void rva0070A680(int index, AptValue *pValue);
+    AsciiString *rva0070AA40();
 };
 void AptNativeHash::Set__Proto__(AptValue *const value)
 {
@@ -131,4 +138,16 @@ void AptNativeHash::rva0070A680(int index, AptValue *pValue)
     }
     pValue->AddRef();
     mpData[index].value = pValue;
+}
+AsciiString *AptNativeHash::rva0070AA40()
+{
+    if (!mpData)
+        return 0;
+    for (int i = 0; i < mnTotalSize; ++i) {
+        if (!mpData[i].key.hasData())
+            continue;
+        if (!((const EAStringC *)&mpData[i].key)->IsEmpty())
+            return &mpData[i].key;
+    }
+    return 0;
 }
