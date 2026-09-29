@@ -42241,3 +42241,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0021A134@Rva00219B9E@@QAEPAXI@Z,,0x0021A134,41,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,41B outer vector 0x14C stride 0x20 plus 0x10 or empty callers 0x004085A1
 ?rva0021A016@Rva00219B9E@@QAEHII@Z,,0x0021A016,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219CDF or 0 caller 0x00407037
 ?rva002B4280@Rva002B4280@@QAEXXZ,,0x002B4280,140,Code/GameEngine/Source/Common/Rva002B4280.cpp,matched,unlock sibling count plus GameMessage 0x6BB via rowed 0x0030F936
+?rva002B4FEB@Rva002B4FEB@@QAEXXZ,,0x002B4FEB,56,Code/GameEngine/Source/Common/Rva002B4FEB.cpp,matched,chain calls 0x002B41F4 and 0x002B4280 via global 0x009FEF18
