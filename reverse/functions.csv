@@ -42709,3 +42709,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??1Rva001EBFE5@@UAE@XZ,,0x001EBFE5,87,Code/Libraries/Source/WWVegas/WWLib/Rva001EBFE5Dtor.cpp,matched,virtual dtor twin vectors 0x1EB945 plus free 0x30830 plus Snapshot BBB554
 ??_GRva001EBFE5@@UAEPAXI@Z,,0x001EBFC9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva001EBFE5.cpp,matched,deleting dtor via rowed 0x001EBFE5 plus delete 0x2FD60
 ?rva003ED9B1@Rva003ED9B1@@QAEXABV1@@Z,,0x003ED9B1,126,Code/GameEngine/Source/Common/Rva003ED9B1Merge.cpp,matched,merge bitset via rowed resize 0x000E6D39 and increment 0x00024250
+?rva00202B6C@Rva00202B6C@@QAEHVAsciiString@@@Z,,0x00202B6C,70,Code/GameEngine/Source/Common/Rva00202B6CGet.cpp,matched,unlock lane twin of getStaticGameLODIndex six-entry table
