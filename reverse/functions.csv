@@ -41993,3 +41993,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00514E20Restart@@YAXXZ,,0x00514E20,75,Code/GameEngine/Source/Common/Rva00514E20Restart.cpp,matched,chain lane thread restart via global wrapper
 ?rva000E46DA@Rva000E459F@@QAEXPAVDrawable@@ABVAsciiString@@1_N2@Z,,0x000E46DA,101,Code/GameEngine/Source/Common/Rva000E459F.cpp,matched,gap setter for Rva000E459F via DwordField plus AsciiString
 ??1Rva005B77F1@@UAE@XZ,,0x005B77F1,151,Code/GameEngine/Source/Common/Rva005B77F1Dtor.cpp,matched,chain from 0x005B72E7 plus deleting-dtor 0x005B7888
+?rva005505E3@Rva005505E3@@QAEXXZ,,0x005505E3,29,Code/GameEngine/Source/Common/Rva005505E3Lock.cpp,matched,scoped criticalsection lock at plus0xA0 via rowed lock
