@@ -42275,3 +42275,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00342120@Rva00341F99@@UAEXH@Z,,0x00342120,55,Code/GameEngine/Source/Common/Rva00341F99Slot5.cpp,matched,slot5 shared by vtables 0x008117F0 and 0x00811850 via delete plus chain call
 ?Rva003BD485Median@@YAPAPAURva003BD485Keyed@@PAPAU1@00@Z,,0x003BD485,62,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,Median-of-three pivot picker via quicksort caller evidence
 ?Rva003BD4E8SiftUp@@YAXPAPAURva003BD485Keyed@@HHPAU1@@Z,,0x003BD4E8,63,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,Heap sift-up sibling of median picker via loop evidence
+??0Rva00342619@@QAE@PAVStateMachine@@@Z,,0x00342619,29,Code/GameEngine/Source/Common/StateDerivedCtorRva00342619.cpp,matched,State derived ctor hash 0x9B3AE6B6 plus vtable 0x008123D8
