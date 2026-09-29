@@ -42354,3 +42354,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?Rva00468CB6Check@@YG_NPAVRva00468CB6A@@PAVObject@@@Z,,0x00468CB6,91,Code/GameEngine/Source/GameLogic/Object/Update/Rva00468CB6Check.cpp,matched,Turret goal check via callers 0x471FFA 0x4726DD prev 0x468A3F next 0x468E26
 ?Rva003BD444Set@@YGXH@Z,,0x003BD444,21,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,guarded forwarder to Rva002D382E index1 via global 0x00DFF028 caller 0x003CECDB
 ?Rva003BD459Set@@YGXH@Z,,0x003BD459,21,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,guarded forwarder to Rva002D383F index2 via global 0x00DFF028 caller 0x003CECEF
+??0Rva0023309A@@QAE@XZ,,0x0023309A,158,Code/GameEngine/Source/Common/Rva0023309ACtor.cpp,matched,NativeNetwork derived ctor baseConstruct plus twin short buffers caller 0x002331DF
