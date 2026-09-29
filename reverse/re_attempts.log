@@ -2779,3 +2779,6 @@ FUN_006ABFC3	0x002ABFC3	58	blocked	register wall plus dead mov ecx-ebx plus over
 FUN_009D0AD5	0x005D0AD5	137	blocked	EH ctor with 5 vtable stores plus IAT plus 2 appends needs layout t=5 model=muse-04
 FUN_009096C7	0x005096C7	56	blocked	EH AsciiString plus base dtor needs scope plus flags t=5 model=muse-04
 ??0Rva008B2EF0@@QAE@II@Z	0x006F1310	49	blocked	donor base vs retail Apt ctor mismatch needs layout t=10 model=muse-04
+?rva002E54EA@OptionPreferences@@QAEXXZ	0x002E54EA	83	partial	lea-edi scheduling early-vs-late plus loop branch jl-vs-jb; 83B 27insns exact; tried for-ne for-lt do-while ref-forms; int-cast addr theory open t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x002e54ea.cpp
+FUN_006e553d	0x002E553D	155	blocked	enum-table setter with erase fallback; extern-array gives lea-form addressing vs retail absolute-disp form; imul-CSE and ebx-role differ; needs table-decl or flag lever t=20 model=muse-spark
+?rva002E537B@OptionPreferences@@QAEXH@Z	0x002E537B	127	partial	table-load scheduling late-vs-early single cause; 126B 38insns vs 127B 39insns; tried eq-ne direct local do-shapes; local-form poisons EH t=22 model=muse-spark score=0.94 stash=reverse/attempts/0x002e537b.cpp

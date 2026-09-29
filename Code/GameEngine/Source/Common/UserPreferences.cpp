@@ -152,6 +152,10 @@ public:
 	virtual void setInt(const AsciiString &key, Int val);
 	virtual void setAsciiString(const AsciiString &key, const AsciiString &val);
 
+	// Conditionally indexed setter (retail 0x003B2322): formats the index
+	// with "%d" and either assigns or erases the slot by flag.
+	void rva003B2322(const AsciiString &val, Int num, Bool flag);
+
 protected:
 	UnicodeString m_filename;
 };
@@ -443,4 +447,19 @@ Bool deleteFileInGlobalDataDir(const AsciiString &name)
 	UnicodeString wideName;
 	wideName.translate(name);
 	return deleteFileInGlobalDataDir(wideName);
+}
+
+// ?rva003B2322@UserPreferences@@QAEXABVAsciiString@@H_N@Z 0x003B2322 104B
+// Evidence: formats arg2 with "%d" via rowed format 0x00038150; flag selects
+// base-map subscript-assign 0x002031FB/0x000366F0 vs string-tree erase
+// 0x002E4ED1 on the formatted key; callers 0x00385B1C/0x00385E2A.
+void UserPreferences::rva003B2322(const AsciiString &val, Int num, Bool flag)
+{
+	AsciiString key;
+	key.format("%d", num);
+	if (flag) {
+		AsciiString &slot = (*this)[key];
+		slot = val;
+	} else
+		erase(key);
 }
