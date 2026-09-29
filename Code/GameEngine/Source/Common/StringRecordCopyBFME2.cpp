@@ -237,3 +237,13 @@ private:
 };
 Rva00568C4E::~Rva00568C4E() {}
 void famgenDelete00568C4E(Rva00568C4E *p) { delete p; }
+
+// Retail _Construct 0x000BB993 45B: placement copy of Rva000BB491 via the
+// rowed copy ctor at 0x000BB491; same 45B EH shape as 0x000BB9ED in this TU;
+// callers at 0x000BBAD5 0x000BBB00 0x000C3543 0x000C46A0.
+class Rva000BB491
+{
+public:
+	Rva000BB491(const Rva000BB491 &o);
+};
+template void _STL::_Construct<Rva000BB491, Rva000BB491>(Rva000BB491 *, const Rva000BB491 &);

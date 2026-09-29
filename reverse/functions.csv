@@ -41109,3 +41109,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00211ED9@Rva00211ED9@@QAEPAXI@Z,,0x00211ED9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-211ED9.cpp,matched,chain scalar delete via 0x002115C5 plus 0x0002FD60
 ?rva000BBD66@Rva000BBD66@@QAEHPAD@Z,,0x000BBD66,25,Code/GameEngine/Source/Common/Rva000BBD66Write.cpp,matched,chain from 0x000B980E plus 2 callers plus contiguous prev
 ??0Rva000BB4AC@@QAE@ABV0@@Z,,0x000BB4AC,34,Code/GameEngine/Source/Common/Rva000BB4ACCopy.cpp,matched,chain from 0x000B9074 plus 2 callers plus contiguous prev
+??$_Construct@VRva000BB491@@V1@@_STL@@YAXPAVRva000BB491@@ABV1@@Z,,0x000BB993,45,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,chain from 0x000BB491 plus 4 callers plus same 45B shape
