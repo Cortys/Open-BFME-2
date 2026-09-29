@@ -193,3 +193,11 @@ void __stdcall Rva003BB62C(int v)
 	if (p)
 		p->s089(v);
 }
+
+// ?Rva003BB654@@YAXXZ @0x003BB654 19B null-guarded forwarder to vslot 0x17C via global 0xDFE6E8 caller 0x003CE477
+void Rva003BB654()
+{
+	Rva003BAAD6Holder *p = Rva00DFE6E8;
+	if (p)
+		p->s095();
+}
