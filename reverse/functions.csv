@@ -41622,3 +41622,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva005CD651@@QAE@H@Z,,0x005CD651,63,Code/GameEngine/Source/Common/Rva005CD651Ctor.cpp,matched,ctor vtable 0x00874FF4 plus int plus Enable 0x0052340D via caller 0x00577720
 ??0Rva005CDF6C@@QAE@PBUPayload@0@@Z,,0x005CDF6C,31,Code/GameEngine/Source/Common/Rva005CDF6CCtor.cpp,matched,copy 20B plus refcount 0 twin of 0x005CDB8F caller 0x005CE00E
 ?Rva000B2B42Clamp@@YAXPAH0H@Z,,0x000B2B42,58,Code/GameEngine/Source/Common/Rva000B2B42Clamp.cpp,matched,clamp plus min-max via callers 0x000B6ACF 0x000B6B29
+?rva000B2D4D@Rva000B2D4D@@QAEXHH@Z,,0x000B2D4D,17,Code/GameEngine/Source/Common/Rva000B2D4DThunk.cpp,matched,null-guarded delegate to plus16 slot3 via callers 0x000BC954 0x000BCCE5
