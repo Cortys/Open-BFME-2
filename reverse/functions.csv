@@ -42471,3 +42471,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??1Rva0041F760@@QAE@XZ,,0x0041F760,245,Code/GameEngine/Source/Common/Rva0041F760Dtor.cpp,matched,Nonvirtual dtor via ptrvec erase plus AsciiString vectors plus MallocPtrs plus strings
 ?rva0041F855@Rva0041F760@@QAEPAXI@Z,,0x0041F855,28,Code/GameEngine/Source/Common/Rva0041F760Dtor.cpp,matched,Deleting-shaped wrapper via rowed dtor plus operator delete
 ??1Rva004D62A9@@UAE@XZ,,0x004D62F7,54,Code/GameEngine/Source/GameNetwork/Rva004D62A9Ctor.cpp,matched,vptr 0x860494 plus releaseBuffer plus0x1c plus vptr 0x860130
+??_GRva004D62A9@@UAEPAXI@Z,,0x004D6AD5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-4D6AD5.cpp,matched,slot0 0x00860494 calls 0x004D62F7 plus delete
