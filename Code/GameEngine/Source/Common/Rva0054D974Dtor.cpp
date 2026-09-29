@@ -12,12 +12,28 @@ class Rva0054D8D8
 {
 public:
 	~Rva0054D8D8();
+	int m00;
+	int m04;
+	int m08;
+	int m0C;
+	int m10;
+	int m14;
+	int m18;
+	int m1C;
+	int m20;
+	int m24;
+	int m28;
+	int m2C;
+	int m30;
+	int m34;
+	int m38;
 };
 
 class Rva0054D974
 {
 public:
 	~Rva0054D974();
+	Rva0054D8D8 *rva0054D6C8(int id);
 private:
 	_STL::list<int, _STL::allocator<int> > m00;
 	_STL::list<int, _STL::allocator<int> > m04;
@@ -45,4 +61,27 @@ Rva0054D974::~Rva0054D974()
 			delete p;
 		m00.pop_front();
 	}
+}
+
+Rva0054D8D8 *Rva0054D974::rva0054D6C8(int id)
+{
+	if (id == 0)
+		return 0;
+	_STL::list<int, _STL::allocator<int> >::iterator it;
+	for (it = m04.begin(); it != m04.end(); ++it) {
+		Rva0054D8D8 *p = (Rva0054D8D8 *)*it;
+		if (p->m38 == id)
+			return p;
+	}
+	for (it = m08.begin(); it != m08.end(); ++it) {
+		Rva0054D8D8 *p = (Rva0054D8D8 *)*it;
+		if (p->m38 == id)
+			return p;
+	}
+	for (it = m00.begin(); it != m00.end(); ++it) {
+		Rva0054D8D8 *p = (Rva0054D8D8 *)*it;
+		if (p->m38 == id)
+			return p;
+	}
+	return 0;
 }
