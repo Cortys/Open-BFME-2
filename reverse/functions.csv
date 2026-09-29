@@ -41542,3 +41542,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002D02FD@Rva002D02FD@@QAEXXZ,,0x002D02FD,41,Code/Libraries/Source/WWVegas/WWLib/Rva002D02FDClear.cpp,matched,chain tree clear via rowed erase 0x002CFD61 same shape as rowed 0x002CF807
 ??0Rva00423A4A@@QAE@PAURva00423A4A_Range@@@Z,,0x00423A4A,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pE12_holder_00423A4A.cpp,matched,chain holder ctor via rowed range ctor unblocks 0x00423E83
 ?Rva0023D607Get@@YAEXZ,,0x0023D607,13,Code/GameEngine/Source/Common/Rva0023D607Check.cpp,matched,unlock caller 0x00200084 tests al global 0x009FDC8C
+?rva00573A00@Rva00573A00@@QAEXPBUCoord3D@@@Z,,0x00573A00,53,Code/GameEngine/Source/Common/Rva00573A00Set.cpp,matched,Coord3D copy plus terrain height to z via slot 0x18
