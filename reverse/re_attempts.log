@@ -3225,3 +3225,7 @@ FUN_008fc2b3	0x004FC2B3	109	blocked	twin of 0x002E16C0 109B EH vector visitor wa
 ?rva0039ED9C@Rva0039ED9C@@QAE@XZ	0x0039ED9C	69	blocked	Team-pred loop with indirect getter via ebx plus dead-edi lea; member-ptr folds to direct call and off-to-mov; needs anti-folding for ebx-addr plus edi-lea t=15 model=muse-12
 ??0BuildListInfo@@QAE@ABV0@@Z	0x00329DE6	253	partial	push-lea order for first two StringBase copies retail lea-lea-push vs ours lea-push-lea plus vtable reloc only t=30 model=muse-12 score=0.97 stash=reverse/attempts/0x00329de6.cpp
 ??0Rva00496ADE@@QAE@XZ	0x00496ADE	78	partial	order plus dummy string X: retail +0 clear before +8 ctor and +54 lea before +4 vs ours +8 then +0/+4/+54 t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x00496ade.cpp
+?rva005C41C9@Rva005C41C9@@QAEXE@Z	0x005C41C9	73	partial	test al,al vs cmp byte [ebp+8],0 t=12 model=muse-03 score=0.97 stash=reverse/attempts/0x005c41c9.cpp
+??1Rva005DCE08@@QAE@XZ	0x005DCE08	90	partial	whole-body esi-edi swap t=18 model=muse-03 score=0.95 stash=reverse/attempts/0x005dce08.cpp
+?Rva005F6BD4Format@@YAXPAVUnicodeString@@H@Z	0x005F6BD4	186	blocked	unknown virtual slot 0x3c signature on global 0x009FF0BC plus StringBase EH shape t=10 model=muse-03
+?rva001FDC0F@Rva001FDC0F@@QAEXH@Z	0x001FDC0F	192	blocked	STL vector-voidptr reserve plus fill-insert plus hashtable-node clone with pin-only callees needs pin verification t=5 model=muse-03
