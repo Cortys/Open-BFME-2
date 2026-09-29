@@ -42094,3 +42094,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00341796@@UAE@XZ,,0x00341796,91,Code/GameEngine/Source/Common/Rva00341796Dtor.cpp,matched,vtable plus member slot15 slot0 delete plus base WindModuleInfo
 ??1Rva00341E70@@UAE@XZ,,0x00341E70,91,Code/GameEngine/Source/Common/Rva00341E70Dtor.cpp,matched,vtable plus member slot15 slot0 delete plus base WindModuleInfo
 ?rva005ED8D1@Rva005ED445@@QAEXABVUnicodeString@@@Z,,0x005ED8D1,46,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,chain from 0x005ED445 compare cached set
+?rva005ED976@Rva005ED976@@QAEXABVUnicodeString@@@Z,,0x005ED976,8,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,thunk via plus4 to rva005ED8D1 caller 0x005D17B2

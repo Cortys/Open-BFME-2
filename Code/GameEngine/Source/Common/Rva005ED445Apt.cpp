@@ -88,3 +88,17 @@ void Rva005ED445::rva005ED8D1(const UnicodeString &text)
 		((StringBase<unsigned short> *)(void *)&m_cached)->set(*(const StringBase<unsigned short> *)(const void *)&text);
 	}
 }
+
+class Rva005ED976
+{
+public:
+	void rva005ED976(const UnicodeString &text);
+private:
+	int m_pad0;
+	Rva005ED445 *m_obj;
+};
+
+void Rva005ED976::rva005ED976(const UnicodeString &text)
+{
+	m_obj->rva005ED8D1(text);
+}
