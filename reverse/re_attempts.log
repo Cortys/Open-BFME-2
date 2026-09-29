@@ -3456,3 +3456,5 @@ FUN_006b3638	0x002B3638	49	blocked	vector at +0x154 begin-end with AddRef matche
 ?rva00104195@Rva00104195@@QAE_NXZ	0x00104195	67	blocked	leaf float compare register allocation wall t=10 model=muse-02
 ??1Rva001095B2@@UAE@XZ	0x001095B2	94	blocked	dtor delete push1 vs push0 plus explicit free wall t=12 model=muse-02
 ?gen001610F0@@YAXPAUElem36@@PBU1@@Z	0x001610F0	81	blocked	Elem36 copy push wall plus frame 6 variants t=18 model=muse-02
+??0Rva004930A0@@QAE@XZ	0x004930A0	359	blocked	359B base ctor needs full 0x7C layout with vtable Upgrades strings RvaMembers BitFlags FixedStorage initFromStorages; probe gave 282B missing vtable EH and temps t=12 model=muse-01
+?insert_unique@?$_Rb_tree@IU?$pair@$$CBIPAX@_STL@@U?$_Select1st@U?$pair@$$CBIPAX@_STL@@@2@U?$less@I@2@V?$allocator@U?$pair@$$CBIPAX@_STL@@@2@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@U?$pair@$$CBIPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBIPAX@_STL@@@2@@_STL@@_N@2@ABU?$pair@$$CBIPAX@2@@Z	0x00534827	134	blocked	STLport 4.5.3 vs 4.6 version wall: whole-class gives 132B missing retail push-0 plus push-pair at 0x3d t=10 model=muse-01
