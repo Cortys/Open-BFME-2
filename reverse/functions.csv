@@ -42504,3 +42504,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva003BFFECDo@@YGXABVAsciiString@@H@Z,,0x003BFFEC,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFFEC.cpp,matched,via display fullscreen trigger precedent
 ?Rva003253BEGet@@YAHPAVGameWindow@@HH@Z,,0x003253BE,63,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetMsg00325388.cpp,matched,WindowManager slot E8 sender 0x4020 via TheWindowManager
 ?rva0060D4C9@Rva0060D4C9@@QAEEPAVXfer@@@Z,,0x0060D4C9,49,Code/Libraries/Source/xfer/XferSaveChain.cpp,matched,chain over rowed open 0x0060D10A slot4 NOT m44 clear caller 0x0023CB61
+?_M_insert_overflow@?$vector@VRva003A6F70@@V?$allocator@VRva003A6F70@@@_STL@@@_STL@@IAEXPAVRva003A6F70@@ABV3@ABU__false_type@2@I_N@Z,,0x00565DA2,180,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva003a6f70_overflow.cpp,matched,stlport G7 false_type sibling Pod40 overflow via rowed Construct FillN
