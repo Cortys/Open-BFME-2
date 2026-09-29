@@ -41567,3 +41567,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva0035986C@@QAE@H_NH0@Z,,0x0035986C,57,Code/GameEngine/Source/Common/Rva0035986CCtor.cpp,matched,ctor with vtable plus bool to 0x7FFFF43 convert
 ??0Rva005B266D@@QAE@H@Z,,0x005B266D,34,Code/GameEngine/Source/Common/Rva005B266DCtor.cpp,matched,leaf thiscall ctor for 28-byte value called from 0x005B4695
 ??$__uninitialized_fill_n@PAURva00423A4A@@IU1@@_STL@@YAPAURva00423A4A@@PAU1@IABU1@ABU__false_type@0@@Z,,0x0042449C,37,Code/Libraries/Source/WWVegas/WWLib/Rva00423A4AFillN.cpp,matched,chain fill_n via rowed Construct stride 0xC unblocks 0x004246EE
+??1Rva00596CDF@@UAE@XZ,,0x00596CDF,11,Code/GameEngine/Source/Common/Rva00596CDFDtor.cpp,matched,derived dtor tail-jmp base 0x00573B23
