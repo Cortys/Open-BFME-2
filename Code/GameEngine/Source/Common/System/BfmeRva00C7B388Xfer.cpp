@@ -255,6 +255,7 @@ public:
     virtual Xfer &operator==(RGBAColorReal &value);
     virtual Xfer &operator==(RGBAColorInt &value);
     virtual Xfer &operator==(Xfer::Version &value);
+    virtual Xfer &XferRawBytes(void *data, unsigned int size);
     virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
 
 private:
@@ -515,6 +516,54 @@ Xfer &BfmeRva00C7B388::operator==(RGBAColorInt &value)
 // 0x0060DD1B 124B: vtable slot 37 (offset 0x94) of 0x00C7B388, the XferEnum
 // override. Base Xfer::XferEnum at 0x0060BBD5 is slot 37 of 0x00BBB910.
 // Prints the integer value selected by size, then " [name]", then newline.
+extern const char g_00BBE498[];
+extern const char g_00C7B0C0[];
+extern const char g_00C7B0B8[];
+extern const char g_00BBD40C[];
+extern const char g_00C7B0B0[];
+extern const char g_00BD8864[];
+extern const char g_00BBE8F8[];
+extern const char g_00C7B0AC[];
+Xfer &BfmeRva00C7B388::XferRawBytes(void *data, unsigned int size)
+{
+    if (size != 0) {
+        if (data == 0)
+            return *this;
+    }
+    if (m_bfme04) {
+        Print(this, g_00BBE498);
+        m_bfme04 = false;
+    }
+    if (size == 0) {
+        Print(this, (const char *)0);
+        Print(this, g_00C7B0C0);
+        return *this;
+    }
+    unsigned int off;
+    for (off = 0; off < size; off += 0x10) {
+        unsigned int col = 0;
+        Print(this, (const char *)col);
+        Print(this, g_00C7B0B8, off);
+        for (col = 0; col < 0x10; ++col) {
+            if ((col & 7) == 0)
+                Print(this, g_00BBD40C);
+            if (col + off < size)
+                Print(this, g_00C7B0B0, ((unsigned char *)data)[col + off]);
+            else
+                Print(this, g_00BD8864);
+        }
+        Print(this, g_00BBE8F8);
+        for (col = 0; col < 0x10; ++col) {
+            if (col + off >= size)
+                break;
+            unsigned char c = ((unsigned char *)data)[col + off];
+            int ch = (c > 0x20) ? (int)c : '.';
+            Print(this, g_00C7B0AC, ch);
+        }
+        Print(this, g_00BBE498);
+    }
+    return *this;
+}
 Xfer &BfmeRva00C7B388::XferEnum(const char *name, void *data, unsigned int size)
 {
     if (!m_bfme04)
