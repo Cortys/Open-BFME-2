@@ -11,7 +11,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern Rva007EB810Diag *Rva007EB810Get();
+extern int Rva007EB810Get();
 
 struct Rva007E9B70Obj
 {
@@ -20,7 +20,7 @@ struct Rva007E9B70Obj
 	virtual unsigned now();
 };
 
-extern Rva007E9B70Obj *Rva007E9B70Get();
+extern int Rva00656B60Get();
 
 struct BfmeRecUVB
 {
@@ -72,7 +72,7 @@ void BfmeSink1028::bfmeSend1028( int a, int *b, int *c )
 
 	if( m_08 == 0 )
 	{
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserpinger.cpp",
 			0x79 );
@@ -80,7 +80,7 @@ void BfmeSink1028::bfmeSend1028( int a, int *b, int *c )
 	}
 	if( m_10 == 0x80 )
 	{
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserpinger.cpp",
 			0x80 );
@@ -97,13 +97,13 @@ void BfmeSink1028::bfmeSend1028( int a, int *b, int *c )
 		if( id >= 0 )
 		{
 			m_0C[m_10].m_00 = id;
-			m_0C[m_10].m_04 = (int)Rva007E9B70Get()->now();
+			m_0C[m_10].m_04 = (int)((Rva007E9B70Obj *)Rva00656B60Get())->now();
 			m_0C[m_10].m_0C = *pc;
 			m_0C[m_10].m_08 = *pb;
 			( (BfmeSvcVMO *)this )->bfmeSetVMO( m_10 + 1 );
 			return;
 		}
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserpinger.cpp",
 			0xA4 );
