@@ -41446,3 +41446,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0056F21F@Rva0056F21F@@QAEPAU1@PAX0@Z,,0x0056F21F,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056ED8C sibling shape of 0x0056F2A5
 ?rva0056F10C@Rva0056F10C@@QAEPAU1@PAX0@Z,,0x0056F10C,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056ED34 sibling shape of 0x0056F21F
 ?rva0056F32B@Rva0056F32B@@QAEPAU1@PAX0@Z,,0x0056F32B,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056EDBA sibling shape of 0x0056F10C
+??4?$_Rb_tree@UBfmeRecord001DD3BC@@U1@U?$_Identity@UBfmeRecord001DD3BC@@@_STL@@U?$less@UBfmeRecord001DD3BC@@@3@V?$allocator@UBfmeRecord001DD3BC@@@3@@_STL@@QAEAAV01@ABV01@@Z,,0x001DDC52,115,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme001DD3BC_assign.cpp,matched,chain tree assign via rowed clear plus copy same 115B shape
