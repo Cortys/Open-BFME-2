@@ -42596,3 +42596,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00583C1A@Rva005843DA@@QAE_NH@Z,,0x00583C1A,52,Code/Libraries/Source/WWVegas/WWLib/Rva005843DACtor.cpp,matched,vslot 8 via same vec28 getter cmp 2
 ?rva00049D20@Rva00049D20@@QAEPAXPAXH@Z,,0x00049D20,36,Code/GameEngine/Source/Common/Rva00049D20Get.cpp,matched,caller 005EEAC6 Coord3D shroud table plus16 returns dest
 ?rva006DCC00@Rva006D6360@@QAEXXZ,,0x006DCC00,10,Code/Libraries/Source/Apt/Rva006DCC00Forwarder.cpp,matched,forwarder slot 0x34 add 8 to AptNativeHash mark
+??_EFileInfoStruct@MixFileCreator@@QAEPAXI@Z,,0x002E70E8,75,Code/Libraries/Source/WWVegas/WWLib/MixFileCreator_FileInfoStruct_VectorDtor.cpp,matched,vector deleting dtor via delete anchor element 0x10 rowed scalar dtor
