@@ -1,5 +1,7 @@
 // ??0LargeGroupBonusUpdateModuleData@@QAE@XZ
-// partial score=0.98 date=2026-09-23
+// partial score=0.985 date=2026-09-29
+// ??0LargeGroupBonusUpdateModuleData@@QAE@XZ
+// partial score=0.985 date=2026-09-29
 // cl: /O1 /arch:SSE /GX /Oy- /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
