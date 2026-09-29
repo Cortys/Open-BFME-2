@@ -1,11 +1,16 @@
-// ??0Rva00271826@@QAE@XZ
-// partial score=0.98 date=2026-09-29
-// ??0Rva00271826@@QAE@XZ
-// partial score=0.98 date=2026-09-29
-// cl: /O2 /arch:SSE
+// cl: /O1 /arch:SSE
 //
 // ??0Rva00271826@@QAE@XZ retail 0x00271826 108B
-// Evidence: unlock lane; vtable 0x007FAF68 at +0; 12 floats +0x04-0x30 plus int +0x34 plus bytes +0x38 +0x39 plus floats +0x3C +0x40 +0x44 +0x48 +0x4C all zero; prev Rva00271779 same flags; callers 12 including 0x0027543B.
+// FINISH from banked 0.98 by muse-11; vtable 0x007FAF68 at +0 via global;
+// 12 floats +0x04-0x30 plus int +0x34 plus bytes +0x38 +0x39 plus floats
+// +0x3C +0x40 +0x44 +0x48 +0x4C all zero; prev Rva00271779 same arch.
+// Evidence: vtable VA 0x007FAF68, 12 callers including 0x0027543B.
+
+extern const void *const g_007FAF68[];
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 class Rva00271826 {
 public:
 	Rva00271826();
@@ -32,9 +37,10 @@ private:
 	float m_48;
 	float m_4C;
 };
+
 Rva00271826::Rva00271826()
 {
-	*(unsigned int *)this = 0x007FAF68;
+	*(const void **)this = g_007FAF68;
 	m_04 = 0.0f;
 	m_08 = 0.0f;
 	m_0C = 0.0f;
@@ -50,6 +56,7 @@ Rva00271826::Rva00271826()
 	m_44 = 0.0f;
 	m_48 = 0.0f;
 	m_4C = 0.0f;
+	_ReadWriteBarrier();
 	m_38 = 0;
 	m_34 = 0;
 	m_39 = false;
