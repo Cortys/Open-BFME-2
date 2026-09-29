@@ -27,3 +27,8 @@ private:
 template Rva000C24EA *_STL::__copy<const Rva000C24EA *, Rva000C24EA *, int>(
 	const Rva000C24EA *first, const Rva000C24EA *last, Rva000C24EA *result,
 	const _STL::random_access_iterator_tag &, int *);
+
+// ??$copy@PBVRva000C24EA@@PAV1@@_STL@@YAPAVRva000C24EA@@PBV1@0PAV1@@Z @0x000C4795 29B
+// copy wrapper over __copy @0x000C376C with tag plus NULL distance; callers @0x000C4D6D @0x000C4DD0.
+template Rva000C24EA *_STL::copy<const Rva000C24EA *, Rva000C24EA *>(
+	const Rva000C24EA *first, const Rva000C24EA *last, Rva000C24EA *result);

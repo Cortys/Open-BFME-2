@@ -41029,3 +41029,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005472D3Alloc@@YGPAXABUBfmeFloat4Record00469C61@@@Z,,0x005472D3,37,Code/GameEngine/Source/Common/Rva005472D3Alloc.cpp,matched,allocate 20B node plus Float4 construct
 ?rva00109CB5@Rva00109CB5@@QAEXPBD@Z,,0x00109CB5,72,Code/GameEngine/Source/Common/Rva00109CB5Add.cpp,matched,news Rva00109C27 from arg Adds to table at 0x4
 ??$__copy@PBVRva000C24EA@@PAV1@H@_STL@@YAPAVRva000C24EA@@PBV1@0PAV1@ABUrandom_access_iterator_tag@0@PAH@Z,,0x000C376C,47,Code/Libraries/Source/WWVegas/WWLib/Rva000C24EACopy.cpp,matched,STL copy stride 0x20 via rowed assign 0xC24EA caller 0xC47A8
+??$copy@PBVRva000C24EA@@PAV1@@_STL@@YAPAVRva000C24EA@@PBV1@0PAV1@@Z,,0x000C4795,29,Code/Libraries/Source/WWVegas/WWLib/Rva000C24EACopy.cpp,matched,copy wrapper over __copy 0xC376C tag plus NULL distance
