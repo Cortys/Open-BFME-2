@@ -23,7 +23,11 @@ struct Rva004395EC
 	void *m_00;
 	Rva004393D6 m_04;
 	Rva004395EC(void **p, const Rva004393D6 &o);
+	Rva004395EC(const Rva004395EC &o);
 };
+Rva004395EC::Rva004395EC(const Rva004395EC &o) : m_00(o.m_00), m_04(o.m_04)
+{
+}
 Rva004395EC::Rva004395EC(void **p, const Rva004393D6 &o) : m_00(*p), m_04(o)
 {
 }
