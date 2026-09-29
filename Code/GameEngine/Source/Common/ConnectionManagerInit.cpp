@@ -42,6 +42,7 @@ class BFMEConnectionManager
 public:
 	void init(void);
 	unsigned char rva004CEF58(int slot);
+	unsigned char rva004CEFC2(int slot, unsigned int timeoutParam);
 
 private:
 	char unknown0[4];
@@ -112,6 +113,34 @@ unsigned char BFMEConnectionManager::rva004CEF58(int slot)
 		timeout = TheGlobalData->m_C20 << 2;
 	else
 		timeout = TheGlobalData->m_C20;
+	unsigned long elapsed = now - conn->m_34C;
+	return (unsigned char)(timeout >= elapsed);
+}
+
+// ?rva004CEFC2@BFMEConnectionManager@@QAEEHI@Z, retail 0x004CEFC2 112B.
+// Sibling of 0x4CEF58: same m_localSlot plus conn plus +0x34C time,
+// m40 vs g_007ED97C selects param timeout vs m_C20 shift.
+// Caller 0x4D4748, prev 0x4CEF58 next 0x4CF032.
+
+unsigned char BFMEConnectionManager::rva004CEFC2(int slot, unsigned int timeoutParam)
+{
+	if (slot == m_localSlot)
+		return 1;
+	ConnSlot *conn = *(ConnSlot **)((char *)this + 4 + slot * 4);
+	if (conn == 0)
+		return 1;
+	if (conn->m_34C == 0)
+	{
+		conn->m_34C = timeGetTime();
+		return 1;
+	}
+	unsigned long now = timeGetTime();
+	unsigned int m40 = TheGameLogic->m_40;
+	unsigned int timeout;
+	if (m40 >= g_007ED97C)
+		timeout = timeoutParam;
+	else
+		timeout = TheGlobalData->m_C20 << 2;
 	unsigned long elapsed = now - conn->m_34C;
 	return (unsigned char)(timeout >= elapsed);
 }
