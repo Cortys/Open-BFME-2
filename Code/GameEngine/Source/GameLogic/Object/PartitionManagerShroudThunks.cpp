@@ -187,3 +187,26 @@ void Rva00739730::rva00739730(int a, int b)
 {
 	m_cell->set(a, b);
 }
+
+//
+// ?rva00739750@Rva00739750@@QAEXPAX@Z retail 0x00739750 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073D440.
+// Evidence: retail mov ecx [ecx+0x10] jmp; gap between 0x00739740 and 0x00739790 in same TU.
+class BfmeOwnerCDE
+{
+public:
+	void rva008fa850(void *ptr);
+};
+class Rva00739750
+{
+public:
+	void rva00739750(void *ptr);
+private:
+	char m_pad[0x10];
+	BfmeOwnerCDE *m_cell; // +0x10
+};
+
+void Rva00739750::rva00739750(void *ptr)
+{
+	m_cell->rva008fa850(ptr);
+}
