@@ -67,8 +67,15 @@ BfmeStringRecord00204A30 &BfmeStringRecord00204A30::operator=(const BfmeStringRe
 struct BfmeStringRecord002199C8 {
     AsciiString text0, text1, text2; unsigned int word;
     BfmeStringRecord002199C8(const BfmeStringRecord002199C8 &o);
+    BfmeStringRecord002199C8(unsigned int w, const AsciiString &a, const AsciiString &b, const AsciiString &c);
 };
 BfmeStringRecord002199C8::BfmeStringRecord002199C8(const BfmeStringRecord002199C8 &o) : text0(o.text0), text1(o.text1), text2(o.text2), word(o.word) {}
+// ??0BfmeStringRecord002199C8@@QAE@IABVAsciiString@@00@Z @0x0021997A 78B
+// 4-arg ctor of the same 0x10 record: word + three AsciiString copies via 0x365F0.
+// Same EH scope as the copy; callers 0x0021E9D8 0x0021EAD3 forward (w,a,b,c) and
+// destroy the temp via rowed dtor 0x0021A0C2; init permuted to retail push order.
+// ?rva0021997A ctor via declaration-order emission text0(b) text1(c) text2(a) word(w).
+BfmeStringRecord002199C8::BfmeStringRecord002199C8(unsigned int w, const AsciiString &a, const AsciiString &b, const AsciiString &c) : text0(b), text1(c), text2(a), word(w) {}
 template void _STL::_Construct<BfmeStringRecord002199C8,BfmeStringRecord002199C8>(BfmeStringRecord002199C8*,const BfmeStringRecord002199C8&);
 
 // Complete retail record copy at0x00219A68.
