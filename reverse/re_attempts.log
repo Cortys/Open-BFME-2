@@ -3450,3 +3450,4 @@ FUN_0070DDC0	0x0070DDC0	402	blocked	402B StringPool hash idiv GC with bFound ass
 ?rva003F9D08@Rva003F9D08@@QAEHH@Z	0x003F9D08	168	blocked	168B dtor puzzle 8 releases for 4 string offsets plus manual Pod8 erase plus Snapshot base 0xBBB554 cannot model honestly double-destroy t=10 model=muse-spark
 ?Rva00391CE3Get@@YGEPBX@Z	0x00391CE3	66	blocked	shared-tail early-vs-late wall 66B-19insns same size final bitfield fixed mov-and-al but null-false early tail vs late plus true inline vs forward t=25 model=muse-12
 ?rva0025FBBC@Rva0025FBBC@@QAEXPAHHH@Z	0x0025FBBC	165	partial	165B/66insns size-exact only push order and esi-vs-eax register alloc remains t=25 model=muse-10 score=0.92 stash=reverse/attempts/0x0025fbbc.cpp
+FUN_00900d68	0x00500D68	56	blocked	EH dtor clear-plus-free needs unwind member empty-inline gives no EH declared-member adds extra call t=12 model=muse-06
