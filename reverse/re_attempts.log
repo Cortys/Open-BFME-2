@@ -3007,3 +3007,5 @@ FUN_00839609	0x00439609	68	blocked	erase-range with hashtable clear pin plus rb 
 FUN_00762DBD	0x00362DBD	89	blocked	ModuleData-like ctor with array-new 9x0x44 via undeciphered element 0x362D6C with unresolved callees 0x362CF2 0x419BA5 plus vtable 0x817088 plus global dedup 0x239FE4; needs INI and donor t=10 model=muse-03
 FUN_0067675F	0x0027675F	166	blocked	needs Upgrades 0x4CEE6E layout plus virtual iface at plus0x34 plus slot0 plus Rva002390CB copy 0x2390CB plus OpaqueRef release plus global dedup 0x239435; 166B EH loop too complex for quick chain t=12 model=muse-03
 FUN_0063fb58	0x0023FB58	104	blocked	static Invalid Slot StringBase with EH prolog plus atexit needs EH donor t=10 model=muse-07
+??0Rva0059675A@@QAE@XZ	0x005966DD	125	blocked	EH ctor with private StringBase SSE memset and globals needs donor t=12 model=muse-05
+FUN_0099702D	0x0059702D	156	blocked	needs donor layout for plus64 PlayerList xfer and slot reuse t=10 model=muse-05

@@ -17,3 +17,9 @@ class Rva0059675A { public: __declspec(noinline) virtual ~Rva0059675A(); private
   friend void famgenDelete(Rva0059675A *p); };
 Rva0059675A::~Rva0059675A() { m_famgen = 0; }
 void famgenDelete(Rva0059675A *p) { delete p; }
+// ??_GRva00596F18@@UAEPAXI@Z @0x00597011 28B
+// Deleting dtor slot 0 of vtable 0x00870B38; calls rowed ??1Rva00596F18@@UAE@XZ at 0x00596F18 then rowed operator delete at 0x0002FD60.
+class Rva00596F18 { public: __declspec(noinline) virtual ~Rva00596F18(); private: int m_famgen;
+  friend void famgenDelete(Rva00596F18 *p); };
+Rva00596F18::~Rva00596F18() { m_famgen = 0; }
+void famgenDelete(Rva00596F18 *p) { delete p; }
