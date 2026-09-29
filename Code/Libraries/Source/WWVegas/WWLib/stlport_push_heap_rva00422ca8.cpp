@@ -160,4 +160,26 @@ void make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
 template void make_heap<int *,
 	Rva00422CA8>(int *, int *, Rva00422CA8);
 
+// ??$__partial_sort@PAHHVRva00422CA8@@@_STL@@YAXPAH000VRva00422CA8@@@Z
+// retail 0x00424C21, 93 bytes. Partial sort via make/adjust/sort heap with
+// the rowed comparator. Evidence: calls rowed make_heap 0x0042461E,
+// pinned 6-arg pop_heap 0x00423EF7, rowed sort_heap 0x004247A9 and rowed
+// comparator 0x00422CA8; caller 0x00424DC3 in 0x00424DB1; unblocks 0x00424DB1.
+template <class RandomAccessIter, class Tp, class Compare>
+void __partial_sort(RandomAccessIter first, RandomAccessIter middle,
+	RandomAccessIter last, Tp *, Compare comp)
+{
+	make_heap(first, middle, comp);
+	for (RandomAccessIter i = middle; i < last; ++i)
+	{
+		int cur = *i;
+		if (comp(cur, *first))
+			__pop_heap(first, middle, i, *i, comp, (int *)0);
+	}
+	__sort_heap(first, middle, comp);
+}
+
+template void __partial_sort<int *, int,
+	Rva00422CA8>(int *, int *, int *, int *, Rva00422CA8);
+
 }
