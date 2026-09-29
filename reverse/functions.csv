@@ -41225,3 +41225,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E1588@Rva002E15BC@@QAEXPAX_N@Z,,0x002E1588,52,Code/GameEngine/Source/Common/Rva002E15BCClear.cpp,matched,bit set sibling with flag and plus78 guard caller 0x0020ED75
 ?rva003EEE64@Rva003EEE64@@QAEXH@Z,,0x003EEE64,42,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,chain via 004E3629 and 003EEBC4 guarded by saved caller 1
 ?Rva00586B92Destroy@@YAXPAVRva00585B16@@0@Z,,0x00586B92,25,Code/Libraries/Source/WWVegas/WWLib/Rva00586B92Destroy.cpp,matched,unlocks 3 via rowed dtor 0x585B16 elem 0x54
+?rva00586BAB@Rva00586BAB@@QAEXXZ,,0x00586BAB,30,Code/Libraries/Source/WWVegas/WWLib/Rva00586BABFree.cpp,matched,chain from 0x00586B92 destroy plus free 0x30830
