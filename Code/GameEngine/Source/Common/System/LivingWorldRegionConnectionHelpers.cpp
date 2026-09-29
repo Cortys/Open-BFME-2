@@ -47,7 +47,7 @@ struct ConnectionVec
 	LivingWorldRegionConnection *m_end_of_storage;
 };
 
-void free(void *block);
+extern "C" void __cdecl free(void *block);
 
 // ?Rva003F29D2_CopyRange@@YAPAVLivingWorldRegionConnection@@PAV1@00@Z @0x3F29D2
 LivingWorldRegionConnection *Rva003F29D2_CopyRange(LivingWorldRegionConnection *first, LivingWorldRegionConnection *last, LivingWorldRegionConnection *result)
