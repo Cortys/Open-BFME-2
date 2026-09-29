@@ -216,9 +216,25 @@ otherwise reassess the batch.
    Check every new ledger source is tracked.
 4. Commit normally. **Never bypass hooks.**
 5. `git pull --rebase origin master`, `git push`, then pull --rebase again. On
-   rejection, follow the batching and retry rules in #6 before another attempt.
+   rejection, follow the batching and retry rules in #7 before another attempt.
+6. **Never land a pull request with GitHub's merge button.** The byte gates live
+   in `.githooks/` and run on a local commit and a local push; a server-side
+   merge invokes neither, so it publishes ledger rows asserting `matched` that
+   nothing verified. That is the one failure this repo is built to prevent, and
+   it is invisible afterwards because an unverified row reads exactly like a
+   verified one. To land someone else's PR, cherry-pick it instead:
 
-6. This step governs when to run #5. Keep each change verified; batch publication under these rules:
+   ```sh
+   git fetch origin pull/<N>/head:pr<N>
+   git cherry-pick <sha>...        # onto master; authorship is preserved
+   ./build.sh <symbol>             # the row's own verification still has to pass
+   git push origin master
+   ```
+
+   Then comment on the PR: that it landed, under which SHAs, and that follow-up
+   work should be stacked off `master` rather than the now-stale branch.
+
+7. This step governs when to run #5. Keep each change verified; batch publication under these rules:
 
  Prefer accumulating verified commits until the unpublished batch recovers **300 retail bytes total or more**, then push them together. Keep substantive changes as separate verified commits. This is a preference, not a requirement to invent more work: publish a smaller final batch when the work or session ends, after the cooldown.
 
