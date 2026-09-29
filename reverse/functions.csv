@@ -42568,3 +42568,4 @@ __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_Local
 ??_GRva0034C5E0@@UAEPAXI@Z,,0x00358317,28,Code/GameEngine/Source/Common/Rva0034C5E0Dtor.cpp,matched,scalar deleting dtor slot 0 vtable 0x008150E4 calls rowed dtor 0x0035822E then delete 0x0002FD60
 ?rva004FAC4F@Rva004FAC21@@QAE?AV?$StringBase@D@@XZ,,0x004FAC4F,28,Code/GameEngine/Source/Common/Rva004FAC4F.cpp,matched,vslot 2 vtable 633B0 SpawnArmy string by value
 ?rva002B9386@Rva002B9386@@QAEXW4ScienceType@@@Z,,0x002B9386,45,Code/Libraries/Source/WWVegas/WWLib/Rva002B9386.cpp,matched,leaf lane Science add-if-absent via pinned find plus rowed push_back 0x002E01C6 caller 0x002BE717
+?rva002BBBE7@Rva002BBBE7@@QAEXPAUNode002BBBE7@@@Z,,0x002BBBE7,53,Code/Libraries/Source/WWVegas/WWLib/Rva002BBBE7.cpp,matched,chain lane recursive list clear via rowed dtor 0x002B923F plus free 0x00030830 unblocks 0x002BC39D
