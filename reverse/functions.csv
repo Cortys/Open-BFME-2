@@ -41047,3 +41047,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004E1AD5Get@@YAXPAURva004E1AD5Item@@0PAX@Z,,0x004E1AD5,26,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_004e1ad5.cpp,matched,unlock range virtual slot0 stride 0x58 caller 0x004E1FCC
 ??BWinMainTitlePair@@QAE?AVAsciiString@@XZ,,0x0010BA9F,101,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow materializer via write callers 0x10BCC8 0x57A11F
 ?rva0030B9CA@Rva0030B9CA@@QAEXXZ,,0x0030B9CA,19,Code/GameEngine/Source/Common/Rva0030B9CAClear.cpp,matched,holder clear via vector erase plus flag
+?rva0030BA8C@Rva0030BA8C@@QAEXABUBfmeE8@@@Z,,0x0030BA8C,20,Code/GameEngine/Source/Common/Rva0030BA8CPush.cpp,matched,holder push via vector push_back plus flag
