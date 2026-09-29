@@ -75,6 +75,7 @@ RenderInfoClass::~RenderInfoClass(void)
 {
 }
 
+// ?RenderInfoClass::Push_Material_Pass present-unmatched
 void RenderInfoClass::Push_Material_Pass(MaterialPassClass * matpass)
 {
 	// add to the end of the array
@@ -89,6 +90,7 @@ void RenderInfoClass::Push_Material_Pass(MaterialPassClass * matpass)
 	}
 }
 
+// ?RenderInfoClass::Pop_Material_Pass present-unmatched
 void RenderInfoClass::Pop_Material_Pass(void)
 {
 	if (RejectedMaterialPasses == 0) {
@@ -115,6 +117,7 @@ MaterialPassClass * RenderInfoClass::Peek_Additional_Pass(int i)
 	return AdditionalMaterialPassArray[i];
 }
 
+// ?RenderInfoClass::Push_Override_Flags present-unmatched
 void RenderInfoClass::Push_Override_Flags(RINFO_OVERRIDE_FLAGS flg)
 {
 	// copy to the end of the array
@@ -123,12 +126,14 @@ void RenderInfoClass::Push_Override_Flags(RINFO_OVERRIDE_FLAGS flg)
 	OverrideFlag[OverrideFlagLevel]=flg;
 }
 
+// ?RenderInfoClass::Pop_Override_Flags present-unmatched
 void RenderInfoClass::Pop_Override_Flags(void)
 {
 	WWASSERT(OverrideFlagLevel>0);
 	OverrideFlagLevel--;
 }
 
+// ?RenderInfoClass::Current_Override_Flags present-unmatched
 RenderInfoClass::RINFO_OVERRIDE_FLAGS & RenderInfoClass::Current_Override_Flags(void)
 {
 	return OverrideFlag[OverrideFlagLevel];

@@ -77,6 +77,7 @@ ProjectileStreamUpdate::ProjectileStreamUpdate( Thing *thing, const ModuleData* 
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ProjectileStreamUpdate::~ProjectileStreamUpdate present-unmatched
 ProjectileStreamUpdate::~ProjectileStreamUpdate( void )
 {
 
@@ -97,6 +98,7 @@ UpdateSleepTime ProjectileStreamUpdate::update( void )
 	return UPDATE_SLEEP_NONE;
 }
 
+// ?ProjectileStreamUpdate::addProjectile present-unmatched
 void ProjectileStreamUpdate::addProjectile( ObjectID sourceID, ObjectID newID, ObjectID victimID, const Coord3D *victimPos )
 {
 	DEBUG_ASSERTCRASH( m_owningObject == INVALID_ID  ||  m_owningObject == sourceID, ("Two objects are trying to use the same Projectile stream.") );//Don't cross the streams!
@@ -167,6 +169,7 @@ Bool ProjectileStreamUpdate::considerDying()
 	return FALSE;
 }
 
+// ?ProjectileStreamUpdate::getAllPoints present-unmatched
 void ProjectileStreamUpdate::getAllPoints( Vector3 *points, Int *count )
 {
 	Int pointCount = 0;
@@ -221,6 +224,7 @@ void ProjectileStreamUpdate::getAllPoints( Vector3 *points, Int *count )
 	*count = pointCount;
 }
 
+// ?ProjectileStreamUpdate::setPosition present-unmatched
 void ProjectileStreamUpdate::setPosition( const Coord3D *newPosition )
 {
 	Object *me = getObject();
@@ -230,6 +234,7 @@ void ProjectileStreamUpdate::setPosition( const Coord3D *newPosition )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?ProjectileStreamUpdate::crc present-unmatched
 void ProjectileStreamUpdate::crc( Xfer *xfer )
 {
 
@@ -245,6 +250,7 @@ void ProjectileStreamUpdate::crc( Xfer *xfer )
 	* 2: Target tracking for line breaking
 */
 // ------------------------------------------------------------------------------------------------
+// ?ProjectileStreamUpdate::xfer present-unmatched
 void ProjectileStreamUpdate::xfer( Xfer *xfer )
 {
 
@@ -279,6 +285,7 @@ void ProjectileStreamUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?ProjectileStreamUpdate::loadPostProcess present-unmatched
 void ProjectileStreamUpdate::loadPostProcess( void )
 {
 

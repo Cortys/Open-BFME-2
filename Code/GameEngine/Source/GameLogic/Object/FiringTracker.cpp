@@ -53,6 +53,7 @@
 #endif
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::FiringTracker present-unmatched
 FiringTracker::FiringTracker(Thing* thing, const ModuleData *modData) : UpdateModule( thing, modData )
 {
 	m_consecutiveShots = 0;
@@ -73,6 +74,7 @@ FiringTracker::~FiringTracker()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::getNumConsecutiveShotsAtVictim present-unmatched
 Int FiringTracker::getNumConsecutiveShotsAtVictim( const Object *victim ) const
 {
 	if( victim == NULL )
@@ -85,6 +87,7 @@ Int FiringTracker::getNumConsecutiveShotsAtVictim( const Object *victim ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::shotFired present-unmatched
 void FiringTracker::shotFired(const Weapon* weaponFired, ObjectID victimID)
 {
 	UnsignedInt now = TheGameLogic->getFrame();
@@ -188,6 +191,7 @@ void FiringTracker::shotFired(const Weapon* weaponFired, ObjectID victimID)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::update present-unmatched
 UpdateSleepTime FiringTracker::update()
 {
 	//DEBUG_ASSERTCRASH(m_frameToStartCooldown != 0 || m_frameToStopLoopingSound != 0, ("hmm, should be asleep"));
@@ -227,6 +231,7 @@ UpdateSleepTime FiringTracker::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::calcTimeToSleep present-unmatched
 UpdateSleepTime FiringTracker::calcTimeToSleep()
 {
  	// Figure out the longest amount of time we can sleep as unneeded
@@ -264,6 +269,7 @@ UpdateSleepTime FiringTracker::calcTimeToSleep()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::speedUp present-unmatched
 void FiringTracker::speedUp()
 {
 	ModelConditionFlags clr, set;
@@ -311,6 +317,7 @@ void FiringTracker::speedUp()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FiringTracker::coolDown present-unmatched
 void FiringTracker::coolDown()
 {
 	ModelConditionFlags clr, set;
@@ -352,6 +359,7 @@ void FiringTracker::coolDown()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?FiringTracker::crc present-unmatched
 void FiringTracker::crc( Xfer *xfer )
 {
 
@@ -390,6 +398,7 @@ void FiringTracker::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?FiringTracker::loadPostProcess present-unmatched
 void FiringTracker::loadPostProcess( void )
 {
 

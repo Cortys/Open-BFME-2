@@ -102,6 +102,7 @@ FloatUpdate::FloatUpdate( Thing *thing, const ModuleData *moduleData )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?FloatUpdate::~FloatUpdate present-unmatched
 FloatUpdate::~FloatUpdate( void )
 {
 
@@ -109,6 +110,7 @@ FloatUpdate::~FloatUpdate( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?FloatUpdate::update present-unmatched
 UpdateSleepTime FloatUpdate::update( void )
 {
 /// @todo srj use SLEEPY_UPDATE here
@@ -157,6 +159,7 @@ UpdateSleepTime FloatUpdate::update( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?FloatUpdate::crc present-unmatched
 void FloatUpdate::crc( Xfer *xfer )
 {
 
@@ -170,6 +173,7 @@ void FloatUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?FloatUpdate::xfer present-unmatched
 void FloatUpdate::xfer( Xfer *xfer )
 {
 
@@ -189,6 +193,7 @@ void FloatUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?FloatUpdate::loadPostProcess present-unmatched
 void FloatUpdate::loadPostProcess( void )
 {
 

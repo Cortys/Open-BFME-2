@@ -81,6 +81,7 @@ StructureCollapseUpdate::StructureCollapseUpdate( Thing *thing, const ModuleData
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::~StructureCollapseUpdate present-unmatched
 StructureCollapseUpdate::~StructureCollapseUpdate( void )
 {
 }
@@ -133,6 +134,7 @@ static void parseOCL( INI* ini, void *instance, void * /*store*/, const void* /*
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::beginStructureCollapse present-unmatched
 void StructureCollapseUpdate::beginStructureCollapse(const DamageInfo *damageInfo)
 {
 	const StructureCollapseUpdateModuleData *d = getStructureCollapseUpdateModuleData();
@@ -153,6 +155,7 @@ void StructureCollapseUpdate::beginStructureCollapse(const DamageInfo *damageInf
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::onDie present-unmatched
 void StructureCollapseUpdate::onDie( const DamageInfo *damageInfo )
 {
 	const StructureCollapseUpdateModuleData* d = getStructureCollapseUpdateModuleData();
@@ -171,6 +174,7 @@ void StructureCollapseUpdate::onDie( const DamageInfo *damageInfo )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::update present-unmatched
 UpdateSleepTime StructureCollapseUpdate::update( void )
 {
 	static const Real COLLAPSE_ACCELERATION_FACTOR = 0.02f;
@@ -305,6 +309,7 @@ static void buildNonDupRandomIndexList(Int range, Int count, Int idxList[])
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::doPhaseStuff present-unmatched
 void StructureCollapseUpdate::doPhaseStuff(StructureCollapsePhaseType scphase, const Coord3D *target)
 {
 	DEBUG_LOG(("Firing phase %d on frame %d\n", scphase, TheGameLogic->getFrame()));
@@ -359,6 +364,7 @@ void StructureCollapseUpdate::doCollapseDoneStuff()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::crc present-unmatched
 void StructureCollapseUpdate::crc( Xfer *xfer )
 {
 
@@ -372,6 +378,7 @@ void StructureCollapseUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::xfer present-unmatched
 void StructureCollapseUpdate::xfer( Xfer *xfer )
 {
 
@@ -403,6 +410,7 @@ void StructureCollapseUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?StructureCollapseUpdate::loadPostProcess present-unmatched
 void StructureCollapseUpdate::loadPostProcess( void )
 {
 

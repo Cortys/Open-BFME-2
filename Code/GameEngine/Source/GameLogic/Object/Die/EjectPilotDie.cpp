@@ -55,6 +55,7 @@ EjectPilotDieModuleData::EjectPilotDieModuleData() :
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?EjectPilotDieModuleData::buildFieldParse present-unmatched
 void EjectPilotDieModuleData::buildFieldParse(MultiIniFieldParse& p) 
 {
   DieModuleData::buildFieldParse(p);
@@ -72,12 +73,14 @@ void EjectPilotDieModuleData::buildFieldParse(MultiIniFieldParse& p)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::EjectPilotDie present-unmatched
 EjectPilotDie::EjectPilotDie( Thing *thing, const ModuleData* moduleData ) : DieModule( thing, moduleData )
 {
 }
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::~EjectPilotDie present-unmatched
 EjectPilotDie::~EjectPilotDie( void )
 {
 
@@ -105,6 +108,7 @@ EjectPilotDie::~EjectPilotDie( void )
 //-------------------------------------------------------------------------------------------------
 /** The die callback. */
 //-------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::onDie present-unmatched
 void EjectPilotDie::onDie( const DamageInfo * damageInfo )
 {
 	if (!isDieApplicable(damageInfo))
@@ -118,6 +122,7 @@ void EjectPilotDie::onDie( const DamageInfo * damageInfo )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::crc present-unmatched
 void EjectPilotDie::crc( Xfer *xfer )
 {
 
@@ -131,6 +136,7 @@ void EjectPilotDie::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::xfer present-unmatched
 void EjectPilotDie::xfer( Xfer *xfer )
 {
 
@@ -147,6 +153,7 @@ void EjectPilotDie::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?EjectPilotDie::loadPostProcess present-unmatched
 void EjectPilotDie::loadPostProcess( void )
 {
 

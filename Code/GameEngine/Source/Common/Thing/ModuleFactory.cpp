@@ -298,6 +298,7 @@ ModuleFactory *TheModuleFactory = NULL;  ///< the module factory singleton
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::ModuleFactory present-unmatched
 ModuleFactory::ModuleFactory( void )
 {
 	m_moduleTemplateMap.clear();
@@ -307,6 +308,7 @@ ModuleFactory::ModuleFactory( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::~ModuleFactory present-unmatched
 ModuleFactory::~ModuleFactory( void )
 {
 	m_moduleTemplateMap.clear();
@@ -325,6 +327,7 @@ ModuleFactory::~ModuleFactory( void )
 	* to objects or drawables as modules needs to add a template
 	* for that class here */
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::init present-unmatched
 void ModuleFactory::init( void )
 {
 
@@ -571,6 +574,7 @@ void ModuleFactory::init( void )
 }  // end init
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::findModuleInterfaceMask present-unmatched
 Int ModuleFactory::findModuleInterfaceMask(const AsciiString& name, ModuleType type)
 {
 	if (name.isEmpty())
@@ -696,6 +700,7 @@ Module *ModuleFactory::newModule( Thing *thing, const AsciiString& name, const M
 //-------------------------------------------------------------------------------------------------
 /** Add a module template to our list of templates */
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::addModuleInternal present-unmatched
 void ModuleFactory::addModuleInternal( NewModuleProc proc, NewModuleDataProc dataproc, ModuleType type, const AsciiString& name, Int whichIntf )
 {
 	NameKeyType namekey = makeDecoratedNameKey(name, type);
@@ -706,6 +711,7 @@ void ModuleFactory::addModuleInternal( NewModuleProc proc, NewModuleDataProc dat
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::crc present-unmatched
 void ModuleFactory::crc( Xfer *xfer )
 {
 	for (ModuleDataList::iterator mdIt = m_moduleDataList.begin(); mdIt != m_moduleDataList.end(); ++mdIt)
@@ -715,6 +721,7 @@ void ModuleFactory::crc( Xfer *xfer )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::xfer present-unmatched
 void ModuleFactory::xfer( Xfer *xfer )
 {
 
@@ -730,6 +737,7 @@ void ModuleFactory::xfer( Xfer *xfer )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ModuleFactory::loadPostProcess present-unmatched
 void ModuleFactory::loadPostProcess( void )
 {
 }

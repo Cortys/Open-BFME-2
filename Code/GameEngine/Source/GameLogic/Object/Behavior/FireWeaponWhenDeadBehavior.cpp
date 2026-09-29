@@ -67,6 +67,7 @@ const Real END_MIDPOINT_RATIO = 0.65f;
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?FireWeaponWhenDeadBehavior::FireWeaponWhenDeadBehavior present-unmatched
 FireWeaponWhenDeadBehavior::FireWeaponWhenDeadBehavior( Thing *thing, const ModuleData* moduleData ) : 
 	BehaviorModule( thing, moduleData )
 {
@@ -85,6 +86,7 @@ FireWeaponWhenDeadBehavior::~FireWeaponWhenDeadBehavior( void )
 //-------------------------------------------------------------------------------------------------
 /** The die callback. */
 //-------------------------------------------------------------------------------------------------
+// ?FireWeaponWhenDeadBehavior::onDie present-unmatched
 void FireWeaponWhenDeadBehavior::onDie( const DamageInfo *damageInfo )
 {
 	const FireWeaponWhenDeadBehaviorModuleData* d = getFireWeaponWhenDeadBehaviorModuleData();
@@ -125,6 +127,7 @@ void FireWeaponWhenDeadBehavior::onDie( const DamageInfo *damageInfo )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?FireWeaponWhenDeadBehavior::crc present-unmatched
 void FireWeaponWhenDeadBehavior::crc( Xfer *xfer )
 {
 
@@ -141,6 +144,7 @@ void FireWeaponWhenDeadBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?FireWeaponWhenDeadBehavior::xfer present-unmatched
 void FireWeaponWhenDeadBehavior::xfer( Xfer *xfer )
 {
 
@@ -160,6 +164,7 @@ void FireWeaponWhenDeadBehavior::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?FireWeaponWhenDeadBehavior::loadPostProcess present-unmatched
 void FireWeaponWhenDeadBehavior::loadPostProcess( void )
 {
 

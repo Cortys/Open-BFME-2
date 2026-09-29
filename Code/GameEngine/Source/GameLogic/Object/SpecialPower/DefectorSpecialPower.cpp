@@ -86,6 +86,7 @@ DefectorSpecialPower::DefectorSpecialPower( Thing *thing, const ModuleData *modu
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?DefectorSpecialPower::~DefectorSpecialPower present-unmatched
 DefectorSpecialPower::~DefectorSpecialPower( void )
 {
 
@@ -94,6 +95,7 @@ DefectorSpecialPower::~DefectorSpecialPower( void )
  
 // ------------------------------------------------------------------------------------------------
 
+// ?DefectorSpecialPower::doSpecialPowerAtLocation present-unmatched
 void DefectorSpecialPower::doSpecialPowerAtLocation( const Coord3D *loc, Real angle, UnsignedInt commandOptions )
 {
 	if (getObject()->isDisabled())
@@ -104,6 +106,7 @@ void DefectorSpecialPower::doSpecialPowerAtLocation( const Coord3D *loc, Real an
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?DefectorSpecialPower::doSpecialPowerAtObject present-unmatched
 void DefectorSpecialPower::doSpecialPowerAtObject( Object *objectToMakeDefector, UnsignedInt commandOptions )
 {
 	if (getObject()->isDisabled())
@@ -141,6 +144,7 @@ void DefectorSpecialPower::doSpecialPowerAtObject( Object *objectToMakeDefector,
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?DefectorSpecialPower::crc present-unmatched
 void DefectorSpecialPower::crc( Xfer *xfer )
 {
 
@@ -154,6 +158,7 @@ void DefectorSpecialPower::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?DefectorSpecialPower::xfer present-unmatched
 void DefectorSpecialPower::xfer( Xfer *xfer )
 {
 
@@ -170,6 +175,7 @@ void DefectorSpecialPower::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?DefectorSpecialPower::loadPostProcess present-unmatched
 void DefectorSpecialPower::loadPostProcess( void )
 {
 

@@ -123,6 +123,7 @@ LaserUpdate::~LaserUpdate( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LaserUpdate::updateStartPos present-unmatched
 void LaserUpdate::updateStartPos()
 {
 	Coord3D oldStartPos = m_startPos;
@@ -170,6 +171,7 @@ void LaserUpdate::updateStartPos()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LaserUpdate::updateEndPos present-unmatched
 void LaserUpdate::updateEndPos()
 {
 	const LaserUpdateModuleData *data = getLaserUpdateModuleData();
@@ -212,6 +214,7 @@ void LaserUpdate::updateEndPos()
 //-------------------------------------------------------------------------------------------------
 /** The update callback. */
 //-------------------------------------------------------------------------------------------------
+// ?LaserUpdate::clientUpdate present-unmatched
 void LaserUpdate::clientUpdate( void )
 {
 	updateStartPos();
@@ -246,6 +249,7 @@ void LaserUpdate::clientUpdate( void )
 	return;
 }
 
+// ?LaserUpdate::setDecayFrames present-unmatched
 void LaserUpdate::setDecayFrames( UnsignedInt decayFrames )
 {
 	if( decayFrames > 0 )
@@ -259,6 +263,7 @@ void LaserUpdate::setDecayFrames( UnsignedInt decayFrames )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?LaserUpdate::initLaser present-unmatched
 void LaserUpdate::initLaser( const Object *parent, const Object *target, const Coord3D *startPos, const Coord3D *endPos, AsciiString parentBoneName, Int sizeDeltaFrames )
 {
 	const LaserUpdateModuleData *data = getLaserUpdateModuleData();
@@ -408,6 +413,7 @@ void LaserUpdate::initLaser( const Object *parent, const Object *target, const C
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?LaserUpdate::getCurrentLaserRadius present-unmatched
 Real LaserUpdate::getCurrentLaserRadius() const
 {
 	const Drawable *draw = getDrawable();
@@ -430,6 +436,7 @@ Real LaserUpdate::getCurrentLaserRadius() const
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?LaserUpdate::crc present-unmatched
 void LaserUpdate::crc( Xfer *xfer )
 {
 
@@ -443,6 +450,7 @@ void LaserUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?LaserUpdate::xfer present-unmatched
 void LaserUpdate::xfer( Xfer *xfer )
 {
 
@@ -500,6 +508,7 @@ void LaserUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?LaserUpdate::loadPostProcess present-unmatched
 void LaserUpdate::loadPostProcess( void )
 {
 

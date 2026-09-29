@@ -94,6 +94,7 @@ CashHackSpecialPower::CashHackSpecialPower( Thing *thing, const ModuleData *modu
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::~CashHackSpecialPower present-unmatched
 CashHackSpecialPower::~CashHackSpecialPower( void )
 {
 
@@ -101,6 +102,7 @@ CashHackSpecialPower::~CashHackSpecialPower( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::doSpecialPowerAtLocation present-unmatched
 void CashHackSpecialPower::doSpecialPowerAtLocation( const Coord3D *loc, Real angle, UnsignedInt commandOptions )
 {
 	if (getObject()->isDisabled())
@@ -112,6 +114,7 @@ void CashHackSpecialPower::doSpecialPowerAtLocation( const Coord3D *loc, Real an
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::findAmountToSteal present-unmatched
 Int CashHackSpecialPower::findAmountToSteal() const
 {
 	const CashHackSpecialPowerModuleData* d = getCashHackSpecialPowerModuleData();
@@ -131,6 +134,7 @@ Int CashHackSpecialPower::findAmountToSteal() const
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::doSpecialPowerAtObject present-unmatched
 void CashHackSpecialPower::doSpecialPowerAtObject( Object *victim, UnsignedInt commandOptions )
 {
 	if (getObject()->isDisabled())
@@ -185,6 +189,7 @@ void CashHackSpecialPower::doSpecialPowerAtObject( Object *victim, UnsignedInt c
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::crc present-unmatched
 void CashHackSpecialPower::crc( Xfer *xfer )
 {
 
@@ -198,6 +203,7 @@ void CashHackSpecialPower::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::xfer present-unmatched
 void CashHackSpecialPower::xfer( Xfer *xfer )
 {
 
@@ -214,6 +220,7 @@ void CashHackSpecialPower::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?CashHackSpecialPower::loadPostProcess present-unmatched
 void CashHackSpecialPower::loadPostProcess( void )
 {
 

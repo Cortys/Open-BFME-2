@@ -56,6 +56,7 @@
 // PUBLIC /////////////////////////////////////////////////////////////////////////////////////////
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::StickyBombUpdate present-unmatched
 StickyBombUpdate::StickyBombUpdate( Thing *thing, const ModuleData *moduleData ) : UpdateModule( thing, moduleData )
 {
 	m_targetID		= INVALID_ID;
@@ -69,11 +70,13 @@ StickyBombUpdate::StickyBombUpdate( Thing *thing, const ModuleData *moduleData )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::~StickyBombUpdate present-unmatched
 StickyBombUpdate::~StickyBombUpdate( void )
 {
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::onObjectCreated present-unmatched
 void StickyBombUpdate::onObjectCreated()
 {
 	//This first step is an initialization step. Immediately after the stickybomb is created,
@@ -98,6 +101,7 @@ void StickyBombUpdate::onObjectCreated()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::initStickyBomb present-unmatched
 void StickyBombUpdate::initStickyBomb( Object *target, const Object *bomber, const Coord3D *specificPos )
 {
 	//Store the target.
@@ -167,6 +171,7 @@ void StickyBombUpdate::initStickyBomb( Object *target, const Object *bomber, con
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::update present-unmatched
 UpdateSleepTime StickyBombUpdate::update( void )
 {
 	// Continually reset position of stickybomb to match the position of the target.
@@ -220,6 +225,7 @@ UpdateSleepTime StickyBombUpdate::update( void )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::getTargetObject present-unmatched
 Object* StickyBombUpdate::getTargetObject() const
 {
 	return TheGameLogic->findObjectByID( m_targetID );
@@ -232,6 +238,7 @@ void StickyBombUpdate::setTargetObject( Object *obj )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::detonate present-unmatched
 void StickyBombUpdate::detonate()
 {
 	const StickyBombUpdateModuleData *data = getStickyBombUpdateModuleData();
@@ -292,6 +299,7 @@ void StickyBombUpdate::detonate()
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::crc present-unmatched
 void StickyBombUpdate::crc( Xfer *xfer )
 {
 
@@ -305,6 +313,7 @@ void StickyBombUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::xfer present-unmatched
 void StickyBombUpdate::xfer( Xfer *xfer )
 {
 
@@ -330,6 +339,7 @@ void StickyBombUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?StickyBombUpdate::loadPostProcess present-unmatched
 void StickyBombUpdate::loadPostProcess( void )
 {
 

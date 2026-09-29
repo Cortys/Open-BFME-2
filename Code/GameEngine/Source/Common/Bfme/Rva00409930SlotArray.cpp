@@ -47,6 +47,7 @@ struct Rva00409850SubObject
 	void rva_00409810( const Block3 &pos );
 };
 
+// ?Rva00409850SubObject::method present-unmatched
 void Rva00409850SubObject::method( unsigned char arg )
 {
 	if ( arg )
@@ -81,6 +82,7 @@ void Rva00409850SubObject::rva_004097F0( unsigned char value )
 	}
 }
 
+// ?Rva00409850SubObject::rva_00409810 present-unmatched
 void Rva00409850SubObject::rva_00409810( const Block3 &pos )
 {
 	if ( m_flag == 1 && m_target )
@@ -105,6 +107,7 @@ public:
 	Rva00409930Slot m_slots[6];
 };
 
+// ?Rva00409930::dispatchSlot present-unmatched
 void Rva00409930::dispatchSlot( int index, unsigned char arg )
 {
 	if ( index < 6 && index >= 1 )
@@ -113,6 +116,7 @@ void Rva00409930::dispatchSlot( int index, unsigned char arg )
 	}
 }
 
+// ?Rva00409930::setTargetFlag present-unmatched
 void Rva00409930::setTargetFlag( unsigned char value )
 {
 	for ( int i = 0; i < 6; ++i )
@@ -124,6 +128,7 @@ void Rva00409930::setTargetFlag( unsigned char value )
 	}
 }
 
+// ?Rva00409930::setPositions present-unmatched
 void Rva00409930::setPositions( const Block3 &pos )
 {
 	for ( int i = 0; i < 6; ++i )

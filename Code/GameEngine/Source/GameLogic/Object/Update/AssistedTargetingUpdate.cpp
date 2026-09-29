@@ -80,6 +80,7 @@ AssistedTargetingUpdate::AssistedTargetingUpdate( Thing *thing, const ModuleData
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::~AssistedTargetingUpdate present-unmatched
 AssistedTargetingUpdate::~AssistedTargetingUpdate( void )
 {
 }
@@ -99,6 +100,7 @@ Bool AssistedTargetingUpdate::isFreeToAssist() const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::assistAttack present-unmatched
 void AssistedTargetingUpdate::assistAttack( const Object *requestingObject, Object *victimObject )
 {
 	const AssistedTargetingUpdateModuleData *md = getAssistedTargetingUpdateModuleData();
@@ -119,6 +121,7 @@ void AssistedTargetingUpdate::assistAttack( const Object *requestingObject, Obje
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::makeFeedbackLaser present-unmatched
 void AssistedTargetingUpdate::makeFeedbackLaser( const ThingTemplate *laserTemplate, const Object *from, const Object *to )
 {
 	if( !getObject()->getControllingPlayer() )
@@ -146,6 +149,7 @@ void AssistedTargetingUpdate::makeFeedbackLaser( const ThingTemplate *laserTempl
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::update present-unmatched
 UpdateSleepTime AssistedTargetingUpdate::update( void )
 {
 
@@ -163,6 +167,7 @@ UpdateSleepTime AssistedTargetingUpdate::update( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::crc present-unmatched
 void AssistedTargetingUpdate::crc( Xfer *xfer )
 {
 
@@ -176,6 +181,7 @@ void AssistedTargetingUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::xfer present-unmatched
 void AssistedTargetingUpdate::xfer( Xfer *xfer )
 {
 
@@ -192,6 +198,7 @@ void AssistedTargetingUpdate::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?AssistedTargetingUpdate::loadPostProcess present-unmatched
 void AssistedTargetingUpdate::loadPostProcess( void )
 {
   const AssistedTargetingUpdateModuleData *d = getAssistedTargetingUpdateModuleData();

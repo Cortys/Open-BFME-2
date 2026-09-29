@@ -160,6 +160,7 @@ const AudioEventRTS& SpecialPowerModule::getInitiateSound() const
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // Matched via Code/masm_dumps/SpecialPowerModule_destructor.asm @ 0x00268F30 (232B ICF)
+// ?SpecialPowerModule::~SpecialPowerModule present-unmatched
 SpecialPowerModule::~SpecialPowerModule()
 {
 
@@ -249,6 +250,7 @@ void SpecialPowerModule::onSpecialPowerCreation( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SpecialPowerModule::getRequiredScience present-unmatched
 ScienceType SpecialPowerModule::getRequiredScience( void ) const
 {
 
@@ -257,6 +259,7 @@ ScienceType SpecialPowerModule::getRequiredScience( void ) const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SpecialPowerModule::getSpecialPowerTemplate present-unmatched
 const SpecialPowerTemplate * SpecialPowerModule::getSpecialPowerTemplate( void ) const
 {
 
@@ -265,6 +268,7 @@ const SpecialPowerTemplate * SpecialPowerModule::getSpecialPowerTemplate( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SpecialPowerModule::getPowerName present-unmatched
 AsciiString SpecialPowerModule::getPowerName( void ) const
 {
 
@@ -334,6 +338,7 @@ Bool SpecialPowerModule::isReady() const
 //-------------------------------------------------------------------------------------------------
 // Matched via Code/masm_dumps/SpecialPowerModule_getPercentReady.asm @ 0x00268A90 (210B)
 // Retail: early [this+0x14] flag returns 0.0; no ZH 0.99999 paused-at-ready path
+// ?SpecialPowerModule::getPercentReady present-unmatched
 Real SpecialPowerModule::getPercentReady() const
 {
 	if( m_pausedCount > 0 && m_pausedPercent == 1.0f )
@@ -506,6 +511,7 @@ void SpecialPowerModule::triggerSpecialPower( const Coord3D *location )
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // Matched via Code/masm_dumps/SpecialPowerModule_createViewObject.asm @ 0x00269130 (422B)
+// ?SpecialPowerModule::createViewObject present-unmatched
 void SpecialPowerModule::createViewObject( const Coord3D *location )
 {
 	const SpecialPowerModuleData *modData = getSpecialPowerModuleData();
@@ -778,6 +784,7 @@ void SpecialPowerModule::doSpecialPowerUsingWaypoints( const Waypoint *way, Unsi
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SpecialPowerModule::pauseCountdown present-unmatched
 void SpecialPowerModule::pauseCountdown( Bool pause )
 {
 	if (pause)// If pausing

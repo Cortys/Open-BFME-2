@@ -57,6 +57,7 @@ W3DSmudgeManager::W3DSmudgeManager(void)
 {
 }
 
+// ?W3DSmudgeManager::~W3DSmudgeManager present-unmatched
 W3DSmudgeManager::~W3DSmudgeManager()
 {
 	ReleaseResources();
@@ -68,6 +69,7 @@ void W3DSmudgeManager::init(void)
 	ReAcquireResources();
 }
 
+// ?W3DSmudgeManager::reset present-unmatched
 void W3DSmudgeManager::reset (void)
 {
 	SmudgeManager::reset();	//base
@@ -84,6 +86,7 @@ void W3DSmudgeManager::ReleaseResources(void)
 //Make sure (SMUDGE_DRAW_SIZE * 12) < 65535 because that's the max index buffer size.
 #define SMUDGE_DRAW_SIZE	500	//draw at most 50 smudges per call. Tweak value to improve CPU/GPU parallelism.
 
+// ?W3DSmudgeManager::ReAcquireResources present-unmatched
 void W3DSmudgeManager::ReAcquireResources(void)
 {
 	ReleaseResources();
@@ -208,6 +211,7 @@ error:
 #define UNIQUE_COLOR	(0x12345678)
 #define BLOCK_SIZE	(8)
 
+// ?W3DSmudgeManager::testHardwareSupport present-unmatched
 Bool W3DSmudgeManager::testHardwareSupport(void)
 {
 	if (m_hardwareSupportStatus == SMUDGE_SUPPORT_UNKNOWN)
@@ -307,6 +311,7 @@ Bool W3DSmudgeManager::testHardwareSupport(void)
 	return (SMUDGE_SUPPORT_YES == m_hardwareSupportStatus);
 }
 
+// ?W3DSmudgeManager::render present-unmatched
 void W3DSmudgeManager::render(RenderInfoClass &rinfo)
 {
 	//Verify that the card supports the effect.
@@ -367,6 +372,7 @@ void W3DSmudgeManager::render(RenderInfoClass &rinfo)
 
 	if (set)
 	{	//there are possibly some smudges to render, so make sure background particles have finished drawing.
+// ?SortingRendererClass::Flush present-unmatched
 		SortingRendererClass::Flush();	//draw sorted translucent polys like particles.
 	}
 
