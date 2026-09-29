@@ -36,7 +36,7 @@ public:
 	virtual void _slot26();
 	virtual void _slot27();
 	virtual void _slot28();
-	virtual void _slot29();
+	virtual void _slot29(int a, int b);
 	virtual void _slot30();
 	virtual void _slot31();
 	virtual void _slot32(void *water, int a, int b, int c);
@@ -47,4 +47,27 @@ public:
 void __stdcall Rva0027D3CBForward(void *water, int a, int b, int c)
 {
 	TheRva009FF080Manager0027D3CB->_slot32(water, a, b, c);
+}
+
+//
+// ?rva0027D347@Rva0027D347@@QAEXPAURva0027D347Arg@@H@Z retail 0x0027D347 24 bytes.
+// Thiscall with (Arg*,int-dummy-ret8) via same global to slot29 (0x74)
+// with (Arg+0xc, this+0). Caller 0x27E768. Same TU/flags as thunk above.
+struct Rva0027D347Arg
+{
+	char m_pad00[0xc];
+	int m_field0C;
+};
+
+class Rva0027D347
+{
+public:
+	void rva0027D347(Rva0027D347Arg *a, int dummy);
+private:
+	int m_00;
+};
+
+void Rva0027D347::rva0027D347(Rva0027D347Arg *a, int dummy)
+{
+	TheRva009FF080Manager0027D3CB->_slot29(a->m_field0C, m_00);
 }
