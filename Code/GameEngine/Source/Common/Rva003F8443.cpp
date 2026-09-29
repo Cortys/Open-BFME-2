@@ -1,0 +1,35 @@
+// cl: /O1 /MD
+//
+// ?rva003F8443@Rva003F8443@@QAEPAURva002E1948Entry@@H@Z @0x003F8443 25B.
+// Index AsciiString array at +0xC and find via rowed Rva002B48E1.
+// Evidence: chain lane; callee rowed 0x002B48E1; global 0x009FEF10;
+// callers at 0x003F8A65 0x003F8AC3 0x003F8C93; unblocks 0x003F88BC.
+class AsciiString
+{
+private:
+	void *m_data;
+};
+
+struct Rva002E1948Entry;
+
+class Rva002B48E1
+{
+public:
+	Rva002E1948Entry *rva002B48E1(const AsciiString &name);
+};
+
+extern Rva002B48E1 *g_Va009FEF10;
+
+class Rva003F8443
+{
+public:
+	Rva002E1948Entry *rva003F8443(int i);
+private:
+	char m_pad00[0x0C];
+	AsciiString *m_arr0C;
+};
+
+Rva002E1948Entry *Rva003F8443::rva003F8443(int i)
+{
+	return g_Va009FEF10->rva002B48E1(m_arr0C[i]);
+}
