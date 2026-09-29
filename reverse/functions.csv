@@ -41089,3 +41089,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004E40A6Enable@@YGXH@Z,,0x004E40A6,33,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,chain guarded enabler stdcall plus dead arg
 ?rva005DB023@Rva005DB023@@QAEXXZ,,0x005DB023,16,Code/GameEngine/Source/Common/Rva005DB023Chain.cpp,matched,call 39B246 tail to 5DB004
 ?rva005DB9BC@Rva005DB98E@@QAEHGG@Z,,0x005DB9BC,40,Code/GameEngine/Source/Common/Rva005DB98EGet.cpp,matched,2D dword at 18 same class
+?rva003B275A@Rva003B275A@@QAEHXZ,,0x003B275A,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003B275AGet.cpp,matched,condition-template first-dword getter via 0x203941; engine 0xDFE16C; caller 0x2096E2
