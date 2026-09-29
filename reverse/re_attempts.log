@@ -3214,3 +3214,4 @@ FUN_00B3E3F0	0x0073E3F0	140	blocked	unlock140 manual SEH plus arraydelete plus d
 FUN_00896F30	0x00496F30	117	blocked	unlock117 voidptr erase plus string deletes plus free needs model t=5 model=muse-04
 ?rva00200A01@Rva00200A01@@QAEXXZ	0x00200A01	100	partial	O1 do-while gives 96B vs 100B missing upfront cmp-je plus push-ebx def-hoist t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x00200a01.cpp
 FUN_008fc2b3	0x004FC2B3	109	blocked	twin of 0x002E16C0 109B EH vector visitor wall with RTTI 0x7FB1CC guard plus member-fn ptr needs typed catch type t=5 model=muse-06
+?rva001DBDA4@Rva001DBDA4@@QAEHXZ	0x001DBDA4	34	blocked	3-live loop ours uses ebx plus branch max vs retail edx plus cmovg; O1 O2 Os G6 G7 ternary all same branch shape t=30 model=muse-spark
