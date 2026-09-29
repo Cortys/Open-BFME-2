@@ -1,6 +1,6 @@
 // Open-BFME5 conversions, trimmed to the bfmeClearVDB unit.
 
-void bfmeFreeVDB(void *p);
+void __cdecl operator delete(void *p);
 
 struct BfmeNodeVDB
 {
@@ -22,14 +22,14 @@ void BfmeThingVDB::bfmeClearVDB()
 		BfmeNodeVDB *p = m_bfmeTable[i];
 		while (p) {
 			BfmeNodeVDB *next = p->m_bfmeNext;
-			bfmeFreeVDB(p);
+			operator delete(p);
 			p = next;
 		}
 	}
 	BfmeNodeVDB *p = m_bfmeExtra;
 	while (p) {
 		BfmeNodeVDB *next = p->m_bfmeNext;
-		bfmeFreeVDB(p);
+		operator delete(p);
 		p = next;
 	}
 }
