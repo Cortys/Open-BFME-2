@@ -158,3 +158,9 @@ void Rva003BB7E2()
 {
 	Rva00DFF028->rva002D3615(false);
 }
+
+// ?Rva003BB7F0@@YAXXZ @0x003BB7F0 14B free caller of 0x002D3615 with true via global 0xDFF028 caller 0x003CBD45
+void Rva003BB7F0()
+{
+	Rva00DFF028->rva002D3615(true);
+}
