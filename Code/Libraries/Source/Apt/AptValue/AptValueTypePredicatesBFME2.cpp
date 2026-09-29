@@ -8,6 +8,8 @@ void __debugbreak();
 class BfmeAptValue006DCD20 {
     virtual void vtableSlot0();
     struct { unsigned int unknown : 25; int type : 7; } flags;
+    unsigned char _padTo4C[0x44];
+    struct Rva006E04A0Target { unsigned char _pad[0x10]; void *field10; } *m_p;
 public:
     bool isUndefined() const;
     int isLookup() const;
@@ -41,6 +43,7 @@ public:
     int rva006E0300() const;
     int rva006E0350() const;
     int rva006E03A0() const;
+    void *rva006E04A0() const;
 };
 
 class Rva006DBB30SarDwordField
@@ -472,4 +475,25 @@ int BfmeAptValue006DCD20::rva006E03A0() const
     if (((const Rva006DBB30SarDwordField *)this)->get() == 19 && !isUndefined())
         return 1;
     return 0;
+}
+
+// ?rva006E04A0@BfmeAptValue006DCD20@@QBEPAXXZ, retail 0x006E04A0, 88 bytes.
+// Type-19-guarded display-object accessor, "this" assert at AptCIH.h:216 (0xD8)
+// via the same file string at 0x008E8C60 as siblings. Evidence: rowed
+// get@Rva006DBB30SarDwordField equals 0x13 plus rowed isUndefined guard, then
+// +0x4c pointer validated against null/0xbaadf00d returning its +0x10 field;
+// callers at 0x006DFD46/0x006E0510/0x006E11B4/0x006FA276/0x006FEF38 use the
+// result as an object pointer; same /O2 shape as siblings in this TU.
+void *BfmeAptValue006DCD20::rva006E04A0() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xD8);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() == 19 && !isUndefined())
+        return 0;
+    struct Rva006E04A0Target *p = m_p;
+    if (!p || p == (struct Rva006E04A0Target *)0xbaadf00d)
+        return 0;
+    return p->field10;
 }
