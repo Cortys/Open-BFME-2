@@ -41164,3 +41164,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005E7256CopyBackward@@YAPAVRva005E7198@@PAV1@00PAXH@Z,,0x005E7256,47,Code/GameEngine/Source/Common/Bfme/Rva005E7256CopyBackward.cpp,matched,copy backward stride 4 via assign 0x5E7198 dummy tags caller 0x5E7483
 ?push_back@?$list@UBfmePod32@@V?$allocator@UBfmePod32@@@_STL@@@_STL@@QAEXABUBfmePod32@@@Z,,0x000BCE1C,26,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_list_bodies.cpp,matched,unlock push_back via rowed insert plus 4 waiters
 ?rva0027D347@Rva0027D347@@QAEXPAURva0027D347Arg@@H@Z,,0x0027D347,24,Code/GameEngine/Source/Common/Rva0027D3CBForward.cpp,matched,same global slot29 with arg plus this0
+?Rva003B242CGet@@YAEXZ,,0x003B242C,59,Code/GameEngine/Source/Common/Rva003B242CGet.cpp,matched,NameKey cache Dict equality via rowed callees caller 0x003B7951
