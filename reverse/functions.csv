@@ -41484,3 +41484,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?xferListInt@@YAPAVXfer@@PAV1@PAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x00206861,194,Code/GameEngine/Source/GameLogic/ScriptEngine/XferListInt.cpp,matched,unlock xferListInt via donor skeleton plus rowed push_back same 194B shape
 ??$__uninitialized_fill_n@PAUBfmeStringRecord005D511F@@IU1@@_STL@@YAPAUBfmeStringRecord005D511F@@PAU1@IABU1@ABU__false_type@0@@Z,,0x005D5241,37,Code/Libraries/Source/WWVegas/WWLib/Rva005D5241FillN.cpp,matched,fill_n 0x14 via rowed Construct 0x005D51EE caller 0x005D54FF
 ?rva0054BBB5@Rva0054BBB5@@QAEXHM@Z,,0x0054BBB5,37,Code/Libraries/Source/WWVegas/WWLib/Rva0054BBB5.cpp,matched,prev deque push_back rowed movss lea add ecx ret8
+?rva0054B414@Rva0054BBB5@@QAEXXZ,,0x0054B414,8,Code/Libraries/Source/WWVegas/WWLib/Rva0054BBB5.cpp,matched,same deque at plus20 tail jmp clear

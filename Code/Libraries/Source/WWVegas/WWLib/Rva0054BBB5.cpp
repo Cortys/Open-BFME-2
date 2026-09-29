@@ -18,6 +18,7 @@ class Rva0054BBB5
 {
 public:
 	void rva0054BBB5(int a, float b);
+	void rva0054B414();
 
 private:
 	unsigned char m_pad00[0x14];
@@ -30,4 +31,9 @@ void Rva0054BBB5::rva0054BBB5(int a, float b)
 	tmp.a = a;
 	tmp.b = b;
 	m_deque.push_back(tmp);
+}
+
+void Rva0054BBB5::rva0054B414()
+{
+	return m_deque.clear();
 }
