@@ -1,7 +1,7 @@
 // ?rva003C9E4E@ScriptActions@@IAEXABVAsciiString@@0@Z
-// partial score=0.99 date=2026-09-28
+// partial score=0.99 date=2026-09-29
 // ?rva003C9E4E@ScriptActions@@IAEXABVAsciiString@@0@Z
-// partial score=0.99 date=2026-09-28
+// partial score=0.99 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // Retail RVA 0x003C9E4E, 253 bytes.
 // ?rva003C9E4E@ScriptActions@@IAEXABVAsciiString@@0@Z
@@ -35,7 +35,6 @@ struct Coord3D { float x, y, z; };
 class Object;
 class Team;
 enum CommandSourceType { CMD_FROM_SCRIPT = 1 };
-
 template<class OBJCLASS> class DLINK_ITERATOR
 {
 private:
@@ -46,14 +45,12 @@ public:
     Bool done() const { return !m_cur; }
     OBJCLASS *cur() const { return m_cur; }
 };
-
 struct ObjectFlags
 {
     char m_pad[0x108];
     unsigned char m_flag108;
     unsigned char m_flag109;
 };
-
 class FloatIface14
 {
 public:
@@ -64,7 +61,6 @@ public:
     virtual void _4() = 0;
     virtual float getFloat14() = 0;
 };
-
 class AICommandInterface
 {
 public:
@@ -102,9 +98,8 @@ class ScriptActions
 protected:
     void rva003C9E4E(const AsciiString &, const AsciiString &);
 };
-
 extern ScriptEngine *TheScriptEngine;
-
+extern float g_Va00BBB8D8;
 // ?rva003C9E4E@ScriptActions@@IAEXABVAsciiString@@0@Z present-unmatched
 void ScriptActions::rva003C9E4E(const AsciiString &teamAName, const AsciiString &teamBName)
 {
@@ -114,7 +109,7 @@ void ScriptActions::rva003C9E4E(const AsciiString &teamAName, const AsciiString 
     Object *bestObj;
     if (!teamA)
         return;
-    best = *(float *)0x00BBB8D8;
+    best = g_Va00BBB8D8;
     bestObj = 0;
     {
         DLINK_ITERATOR<Object> iter = teamB->iterate_TeamMemberList();

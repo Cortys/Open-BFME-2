@@ -10,20 +10,17 @@
 // Chain via BfmeNetAddress compare 0x00248CBF plus GameSlot isHuman 0x003FF0F1
 // plus null-checked global 0x009FE958 slot 64 returning address plus embedded
 // address at GameSlot+0x38 plus port bump by 8 on the copied address.
-
 typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef unsigned char UnsignedByte;
 typedef int Int;
 typedef bool Bool;
-
 struct BfmeNetAddress
 {
 	bool Rva00248CBF(const BfmeNetAddress *other) const;
 	UnsignedInt ip;
 	UnsignedShort port;
 };
-
 struct Global009FE958
 {
 	virtual int v00(); virtual int v01(); virtual int v02(); virtual int v03();
@@ -44,14 +41,12 @@ struct Global009FE958
 	virtual int v60(); virtual int v61(); virtual int v62(); virtual int v63();
 	virtual BfmeNetAddress *v64();
 };
-#define TheGlobal009FE958 (*(Global009FE958 **)0x009FE958)
-
+extern Global009FE958 *g_009FE958;
 class GameSlot
 {
 public:
 	Bool isHuman() const;
 	Bool rva0044770F() const;
-
 private:
 	void *m_vtable;
 	Int m_state;
@@ -71,19 +66,18 @@ private:
 	char m_pad30[8];
 	BfmeNetAddress m_addr38;
 };
-
 // ?rva0044770F@GameSlot@@QBE_NXZ present-unmatched
 Bool GameSlot::rva0044770F() const
 {
 	if (!isHuman())
 		return false;
-	Global009FE958 *g = TheGlobal009FE958;
+	Global009FE958 *g = g_009FE958;
 	if (g != 0)
 	{
 		const BfmeNetAddress *mine = &m_addr38;
 		if (g->v64()->Rva00248CBF(mine))
 			return true;
-		BfmeNetAddress tmp = *TheGlobal009FE958->v64();
+		BfmeNetAddress tmp = *g_009FE958->v64();
 		tmp.port += 8;
 		return tmp.Rva00248CBF(mine);
 	}
