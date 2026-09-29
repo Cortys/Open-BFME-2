@@ -140,3 +140,27 @@ void PartitionManager::rva007397A0(bool value)
 {
 	reinterpret_cast<ShroudManagerImpl008FBA40 *>(m_shroudManager)->setEnabled_Rva0073B460(value);
 }
+
+//
+// ?rva00739830@Rva00739830@@QBEHPBUBfmePointFD@@HI@Z retail 0x00739830 8B.
+// Cell-sum thunk via +0x10 pointer tail-jumping to rowed 0x0073BD70.
+// Evidence: retail mov ecx [ecx+0x10] jmp; callers 0x004B0F6D 0x004B1438 0x004B1954 0x004D942B.
+struct BfmePointFD;
+class Gen_008F7CD0
+{
+public:
+	int bfmeCellSum(const BfmePointFD *pt, int a, unsigned int b) const;
+};
+class Rva00739830
+{
+public:
+	int rva00739830(const BfmePointFD *pt, int a, unsigned int b) const;
+private:
+	char m_pad[0x10];
+	Gen_008F7CD0 *m_cell; // +0x10
+};
+
+int Rva00739830::rva00739830(const BfmePointFD *pt, int a, unsigned int b) const
+{
+	return m_cell->bfmeCellSum(pt, a, b);
+}

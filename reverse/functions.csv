@@ -41385,3 +41385,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00592496Read@@YAPAVRva004D64F5@@HPAI@Z,,0x00592496,138,Code/GameEngine/Source/GameNetwork/Rva00592496Read.cpp,matched,Rva004D64F5 deserializer via new plus loop plus AsciiString temp caller 0x5928EB chain from 0x004D64F5
 ?Rva00592520Read@@YAPAVRva004D65DC@@HPAI@Z,,0x00592520,194,Code/GameEngine/Source/GameNetwork/Rva00592520Read.cpp,matched,Rva004D65DC deserializer via new plus two loops plus AsciiString temps caller 0x5928FC chain from 0x004D662D
 ?Rva0053249DLowerBound@@YAPAHPAH0PAG@Z,,0x0053249D,59,Code/GameEngine/Source/Common/Rva0053249DLowerBound.cpp,matched,binary lower bound over dword array with word key returns first
+?rva00739830@Rva00739830@@QBEHPBUBfmePointFD@@HI@Z,,0x00739830,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,cell-sum thunk via plus16 pointer tail-jump to rowed bfmeCellSum

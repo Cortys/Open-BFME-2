@@ -2900,3 +2900,5 @@ FUN_006BF0D6	0x002BF0D6	57	blocked	EH dtor with Unwind funclet needs donor class
 ?Rva0056EDBAGet@@YAXPAH0@Z	0x0056EDBA	46	blocked	rdtsc plus data globals needs asm and pins t=8 model=muse-01
 ?Rva001F640BInsert@@YGXPAUListNode@@PAU1@ABVRvaSmartPtr@@@Z	0x001F640B	37	blocked	STL list splice needs template instantiation t=6 model=muse-01
 ?rva0042438D@Rva0042438D@@QAEXXZ	0x0042438D	49	blocked	STL list clear loop needs donor t=6 model=muse-01
+?rva00532DF6@Rva00532DF6@@QAE_NXZ	0x00532DF6	227	blocked	hash table with lower bound needs donor t=5 model=muse-01
+?Rva00532C75Add@@YAXXZ	0x00532C75	385	blocked	hash table insert needs donor t=5 model=muse-01
