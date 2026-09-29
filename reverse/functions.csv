@@ -42232,3 +42232,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva001FD458@@QAE@XZ,,0x001FD6F4,56,Code/GameEngine/Source/Common/Rva001FD458Dtor.cpp,matched,chain dtor via rowed clear null-guarded free unblocks 0x002B11A7
 ??1Rva000427195@@QAE@XZ,,0x001FDEDB,57,Code/GameEngine/Source/GameClient/Rva000427195Dtor.cpp,matched,unlock hash dtor via rowed clear null-guarded free
 ?Rva0043C96FEnable@@YAXXZ,,0x0043C96F,43,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,One-shot enabler twin on global 0x00A03314 via shared precedent
+?rva0060C3C3@Rva0060C3C3@@QAE_NPAURva0060C3C3Stream@@PAH@Z,,0x0060C3C3,155,Code/GameEngine/Source/Common/Rva0060C3C3Bind.cpp,matched,8 callers pass stream plus int slot3 reader magic AALE version RTS1 RTS2
