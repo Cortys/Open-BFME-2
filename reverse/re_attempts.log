@@ -3075,3 +3075,6 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?Rva00655B90Fesl@@YAHXZ	0x00655B90	549	blocked	Fesl SetField 549B GS string parser needs full layout t=5 model=muse-11
 ?rva003609F7@Rva003609F7@@QAEPAHH@Z	0x003609F7	73	blocked	DamageFX insertNode needs Armor resize plus DamageFX newnode type unification t=12 model=muse-11
 ?rva0046391B@Rva0046391B@@QAEHXZ	0x0046391B	186	blocked	186B STL GameLogic multi-call complex t=5 model=muse-03
+?rva001B49C4@Rva001B49C4@@QAEPAVAsciiString@@V2@@Z	0x001B49C4	117	blocked	list find via StringBase temp copy plus base compare needs base semantics t=10 model=muse-10
+?rva002741DE@Drawable@@QAEX_N@Z	0x002741DE	98	blocked	Drawable BitSet isAnyKindOf global flag needs donor layout t=15 model=muse-10
+?rva00409C3D@CreateAHeroData@@QAE@HHHHHHH@Z	0x00409C3D	244	blocked	CreateAHeroData ctor 244B needs vector E16 vs RvaVecAscii plus Bvector Module map layout t=10 model=muse-10

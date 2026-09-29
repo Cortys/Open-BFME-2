@@ -41828,3 +41828,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CCBCA@@YAXPAXPAVMade002CCBCA@@HH@Z,,0x0050B6F8,77,Code/GameEngine/Source/GameLogic/Object/Made002CCBCAParse.cpp,matched,HordeAttack field parser two tables
 ?Rva005D5876CopyBackward@@YAPAURva005D5853@@PAU1@00@Z,,0x005D5876,50,Code/GameEngine/Source/Common/Rva005D5853Swap.cpp,matched,copy_backward ptr bool via member assigns
 ?Rva00355096Xfer@@YAPAVXfer@@PAV1@PAPAVRva0054840A@@@Z,,0x00355096,106,Code/GameEngine/Source/GameLogic/Object/Rva00355096Xfer.cpp,matched,chain via rowed ctor plus rowed xfer caller proves
+?Rva003B3371Call@@YAXH@Z,,0x003B3371,81,Code/GameEngine/Source/Common/Rva003B3371Call.cpp,matched,free call via global table plus ScriptEngine
