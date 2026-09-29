@@ -3061,3 +3061,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva00272DEE@Drawable@@QAEXXZ	0x00272DEE	456	blocked	456B Drawable float x87 SSE complex needs donor t=10 model=muse-03
 ?rva006E0F40@BfmeAptValue006DCD20@@QBEPAXXZ	0x006E0F40	103	partial	shared-tail restores as duplicated load-plus-return plus5B t=25 model=muse-12 score=0.95 stash=reverse/attempts/0x006e0f40.cpp
 ?rva0044770F@GameSlot@@QAE_NXZ	0x0044770F	100	partial	8B copy load-store interleave vs retail load-load-store-store t=30 model=muse-spark score=0.94 stash=reverse/attempts/0x0044770f.cpp
+?rva0054D858@Rva0054D858@@QAE@XZ	0x0054D858	128	blocked	ctor with 2 int List_base plus Unicode Ascii nulls plus m38 -1 needs full layout vs AsciiString dtor type mismatch t=10 model=muse-10
