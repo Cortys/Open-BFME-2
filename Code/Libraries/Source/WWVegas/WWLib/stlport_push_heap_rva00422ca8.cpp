@@ -75,4 +75,23 @@ void __pop_heap(RandomAccessIter first, RandomAccessIter last,
 template void __pop_heap<int *, int,
 	Rva00422CA8>(int *, int *, int *, int, Rva00422CA8);
 
+template <class RandomAccessIter, class Compare>
+void __make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
+{
+	if (last - first < 2)
+		return;
+	int len = (int)(last - first);
+	int parent = (len - 2) / 2;
+	while (true)
+	{
+		__adjust_heap(first, parent, len, *(first + parent), comp);
+		if (parent == 0)
+			return;
+		--parent;
+	}
+}
+
+template void __make_heap<int *,
+	Rva00422CA8>(int *, int *, Rva00422CA8);
+
 }
