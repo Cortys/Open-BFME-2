@@ -64,3 +64,11 @@ void __cdecl Rva005D2FD0Set(int level, Rva005D2FD0Outer *outer, const char *suff
 	key.format("APT:_level%u.%s_%s", level, mid, suffix);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }
+
+void __cdecl Rva005D366ASet(int level, Rva005D2FD0Outer *outer, const UnicodeString &text)
+{
+	AsciiString key;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	key.format("APT:_level%u.%s_RegionName", level, mid);
+	g_Va009FE4CC->bfmeSetText(key, text, false);
+}
