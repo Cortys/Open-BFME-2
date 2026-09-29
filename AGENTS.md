@@ -21,6 +21,17 @@ An explicit request or assigned lane overrides the queue:
       `python3 tools/bfme1_sweep.py near`. The ranked queue is for byte-identical
       BFME 1 sources; `near` supplies source leads for repair.
 
+      **A ranked hit may already be refused.** The queue does not consult
+      `reverse/re_attempts.log`, so re-running it re-offers candidates that a
+      previous seat rejected. Measured twice, a full rescan apart: `ranked`
+      returns exactly one donor file and 17 bytes —
+      `Rva00889...`/`0x0003CCE0` in `Rva0089CompactHelpers.cpp` — which is tier T3
+      because lotrbfme.exe folded it, so the name is a guess on a folded address.
+      It was recorded as refused in the log after the first rescan and `ranked`
+      served it again after the second, with 5,006 control placements confirming
+      the scan itself was healthy. Check the log for the candidate's RVA before
+      treating a hit as available work.
+
    b. Ensure the committed BFME 1 pointer includes `tools/lift_lane.py`, then run
       `python3 reference/open-bfme-1/tools/lift_lane.py --limit 1000` at the
       start of the reference pass. This surfaces BFME 1's named lifted bodies
@@ -277,9 +288,9 @@ GameWindowManager.cpp    45
 PhysicsUpdate.cpp        44
 ```
 
-**99 of those 116 have since been unfrozen, leaving 17** (measured after the
-sweeps below). The recipe that did it is worth reusing, because it is
-self-verifying rather than judgement-based:
+**All 116 have since been unfrozen** (verified: zero of the 116 still refused).
+The recipe that did it is worth reusing, because it is self-verifying rather
+than judgement-based:
 
 1. Run `find_declared_unmatched` on each refused file and read the undeclared
    definitions it names.
@@ -317,9 +328,12 @@ And a count of undeclared definitions is not a count of work needed.
 CDManager.cpp reported 16 unclaimed definitions and needed nothing added --
 14 already carried markers, and removing 2 stale ones unfroze the file.
 
-The 17 that remain carry 15 to 121 undeclared definitions each, up to
-InGameUI.cpp at 121. Those need each definition read, because the report stops
-telling you which of two same-named methods is the undeclared one.
+A fourth and final cause, found on the last two files: the locator matched
+`Class::method` as a literal, but the source writes `operator =` with spaces.
+Matching with whitespace stripped on both sides, while still requiring `(` or
+`<` next, closed collect.cpp and shattersystem.cpp. Those two had looked
+permanently out of reach at 31 and 24 definitions; both were one whitespace
+bug.
 
 Any edit to a still-frozen file — however small, however correct — fails the
 commit until its undeclared definitions are dealt with. Check membership before
