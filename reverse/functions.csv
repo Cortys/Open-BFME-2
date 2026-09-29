@@ -41200,3 +41200,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E52FC@OptionPreferences@@QAEXH@Z,,0x002E52FC,127,Code/GameEngine/Source/GameClient/GUI/GUICallbacks/Menus/OptionPreferences_setStaticGameLOD.cpp,matched,Set StaticGameLOD from LOD table or erase via rowed map ops
 ?rva004FF729@Rva004FF582@@QAEXXZ,,0x004FF729,41,Code/GameEngine/Source/Common/Rva004FF582.cpp,matched,chain lane list clear frees via 0x004FF582 then reinits sentinel
 ?rva0029B132@Rva0029B132@@QAEPAV1@XZ,,0x0029B132,56,Code/GameEngine/Source/GameClient/Rva0029B132Init.cpp,matched,unlocks 0x002A0F19 zero plus 1.0f 0xBBB8D8 plus 0x20
+??1Rva002E5711@@QAE@XZ,,0x002E5711,8,Code/GameEngine/Source/GameClient/Rva002E5711Dtor.cpp,matched,Nonvirtual dtor tail-jump releaseBuffer via Unicode member
