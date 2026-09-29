@@ -41912,3 +41912,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0BfmeObject544@@QAE@ABU0@@Z,,0x004CAD61,103,Code/GameEngine/Source/Common/BfmeObject544CopyCtor.cpp,matched,pin plus Construct caller prove copy ctor; callees rowed
 ?rva0058D461@NetPacket@@IAE_NPAVNetCommandRef@@@Z,,0x0058D461,89,Code/GameEngine/Source/GameNetwork/NetPacket_rva0058D461.cpp,matched,NetPacket capacity check charges 2 1+1 5 1+1 plus 1 unblocks 0058F5E3 0058FE15
 ??1Rva003AB9FF@@UAE@XZ,,0x003AB9FF,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AB9FFDtor.cpp,matched,MI dtor via guarded base plus throw base
+??1Rva003ABA36@@UAE@XZ,,0x003ABA36,22,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ABA36Dtor.cpp,matched,dtor via guarded BBB554 plus base tail-jmp
