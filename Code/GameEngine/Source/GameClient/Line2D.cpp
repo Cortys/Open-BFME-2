@@ -338,7 +338,9 @@ Bool PointInsideArea2D( const Coord3D *ptToTest, const Coord3D *area, Int numPoi
 			++numIntersections;
 		}
 	}
-	return (numIntersections % 2 == 1);
+	if ((numIntersections % 2) == 1)
+		return true;
+	return false;
 }
 
 ///< Checks if a point is inside a perfect rectangle (top left and bottom right)
