@@ -41928,3 +41928,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004F558C@Rva004F553F@@QAEXH@Z,,0x004F558C,20,Code/GameEngine/Source/Common/Thing/Rva004F553FEnum.cpp,matched,chain lane visitor forward with fixed callback
 ??0Rva00265254@@QAE@IIII@Z,,0x00265254,88,Code/GameEngine/Source/GameLogic/AI/Rva00265254Ctor.cpp,matched,unlock via rowed callers same this memset plus bitsets
 ?rva00535C40@UserPreferences@@QAEHXZ,,0x00535C40,93,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences total wins sum factions chain
+??1Rva005A71B1@@UAE@XZ,,0x005A71B1,79,Code/GameEngine/Source/Common/System/Rva005A71B1Dtor.cpp,matched,dtor vstore 0x00871BF8 ehvec 0x40 array at 0x218 plus base free 0x00030830 unblocks 0x005A7200
+??_GRva005A71B1@@UAEPAXI@Z,,0x005A7200,28,Code/GameEngine/Source/Common/System/Rva005A71B1Dtor.cpp,matched,slot0 of 0x00871BF8 calls rowed dtor 0x005A71B1 then delete

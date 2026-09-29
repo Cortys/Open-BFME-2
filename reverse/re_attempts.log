@@ -3119,3 +3119,6 @@ FUN_0060CAEA	0x0060CAEA	65	blocked	hashtable string find div bucket register wal
 FUN_009e5f43	0x005E5F43	79	blocked	STL vector range-init needs exact template callee decls for distance and allocate t=10 model=muse-spark
 ?Rva00363B4BAngle@@YAMPBUCoord3D@@0@Z	0x00363B4B	124	blocked	float threshold C3 unknown need true value t=20 model=muse-spark
 ?rva0046A6C1@Rva0046A6C1@@QAE_NXZ	0x0046A6C1	81	partial	83B vs 81B mov edi-eax plus mov eax-mem vs mov edi-mem plus mov eax-edi t=25 model=muse-spark score=0.95 stash=reverse/attempts/0x0046a6c1.cpp
+FUN_0060D089	0x0060D089	37	blocked	stl clone allocate 0x14 plus placeholder dup YAXXZ takes 2 stack args t=8 model=muse-spark
+FUN_005F6B74	0x005F6B74	96	blocked	unicode format helper needs rdata string at 0xBC9260 plus private StringBase copy access t=10 model=muse-spark
+FUN_005E5F43	0x005E5F43	79	blocked	stl map-range to deque assign needs exact iterator plus allocator types t=6 model=muse-spark
