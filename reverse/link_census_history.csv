@@ -1,2 +1,2 @@
-date,commit,objects,unresolved,alias,pinned_elsewhere,dump,data,import,unpinned,duplicates,comdat_conflicts,comdat_vtables,scaffold_aliases,scaffold_unresolved,scaffold_crashed,files,files_linked,blocking_names,addresses,linked_bytes
-2026-09-29 11:03,c4d3910546,9016,9025,1703,651,0,0,600,6071,1739,6108,330,,,,8984,3552,8342,2228,572353
+date,commit,objects,unresolved,alias,pinned_elsewhere,dump,data,import,unpinned,duplicates,comdat_conflicts,comdat_vtables,scaffold_aliases,scaffold_unresolved,scaffold_crashed,files,files_linked,blocking_names,addresses,linked_bytes,linked_authored
+2026-09-29 11:03,c4d3910546,9016,9025,1703,651,0,0,600,6071,1739,6108,330,,,,8984,3552,8342,2228,572353,402941
