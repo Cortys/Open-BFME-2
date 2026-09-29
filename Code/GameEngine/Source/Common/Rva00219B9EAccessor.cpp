@@ -68,6 +68,7 @@ public:
     void *rva0021AFEA(unsigned int index);
     void *rva0021B1B4(unsigned int o, unsigned int i);
     void *rva0021B2A2(unsigned int o, unsigned int i);
+    void *rva0021A134(unsigned int index);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -231,4 +232,15 @@ void *Rva00219B9E::rva0021B2A2(unsigned int o, unsigned int i)
         return ((Rva00219B9E *)&base[o])->rva0021AEB9(i);
     }
     return &err;
+}
+// ?rva0021A134@Rva00219B9E@@QAEPAXI@Z @0x0021A134 41B
+// Outer 32-byte vector accessor at +0x14C returning element+0x10 or TheEmptyString.
+// Same outer vector as 0x0021AF7E/0x0021AFEA; +0x10 holds an AsciiString.
+// Proven by callers 0x004085A1/0x00409490 forwarding the result to StringBase copy 0x000365F0.
+void *Rva00219B9E::rva0021A134(unsigned int index)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (index < count)
+        return (char *)&Vec32At(&m_outer, index) + 0x10;
+    return &AsciiString::TheEmptyString;
 }
