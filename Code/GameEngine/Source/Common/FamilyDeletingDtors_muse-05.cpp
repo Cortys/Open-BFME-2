@@ -5,3 +5,9 @@
 // chain lane after landing ??1Rva00329D0E.
 class Rva00329D0E { public: ~Rva00329D0E(); };
 void famgenDelete(Rva00329D0E *p) { delete p; }
+// ??_GRva00596CDF@@UAEPAXI@Z @0x00596D7D 28B
+// Deleting dtor slot 0 of vtable 0x00870AF0; calls rowed ??1Rva00596CDF@@UAE@XZ at 0x00596CDF then rowed operator delete at 0x0002FD60.
+class Rva00596CDF { public: __declspec(noinline) virtual ~Rva00596CDF(); private: int m_famgen;
+  friend void famgenDelete(Rva00596CDF *p); };
+Rva00596CDF::~Rva00596CDF() { m_famgen = 0; }
+void famgenDelete(Rva00596CDF *p) { delete p; }

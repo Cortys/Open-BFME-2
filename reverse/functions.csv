@@ -41610,3 +41610,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GLocomotorStore@@QAEPAXI@Z,,0x00220903,28,Code/GameEngine/Source/GameLogic/Object/LocomotorStoreDeletingDtor.cpp,matched,Scalar deleting dtor via rowed dtor chain
 ??1Rva00220C56@@QAE@XZ,,0x00220C56,30,Code/GameEngine/Source/GameLogic/Object/Rva00220C56Dtor.cpp,matched,Frameless holder dtor via rowed destroy chain
 ??1Rva00596F18@@UAE@XZ,,0x00596F18,11,Code/GameEngine/Source/Common/Rva00596F18Dtor.cpp,matched,derived dtor vptr plus tail jmp to base dtor
+??_GRva00596CDF@@UAEPAXI@Z,,0x00596D7D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor slot0 calls rowed dtor plus delete
