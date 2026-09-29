@@ -57,9 +57,12 @@ public:
 	virtual void slot31();
 	virtual void Rva0027D88E(void *water, float finalHeight, float transitionTime, float damageAmount);
 	void Rva0027D960(void *water, float *out);
+	void Rva0027DA58();
 
 private:
-	char m_pad04[0x64];
+	char m_pad04[0x20];
+	char *m_arr24;
+	char m_pad28[0x40];
 	struct WaterEntry
 	{
 		void *waterTable;
@@ -299,4 +302,16 @@ void Rva0062AF7::Rva0027D960(void *water, float *out)
 		out[5] = f;
 		out[2] = f;
 	}
+}
+
+//
+// ?Rva0027DA58@Rva0062AF7@@QAEXXZ retail 0x0027DA58 18 bytes.
+// Follows 0x0027D960 in retail (0x27D960+248=0x27DA58), same TU flags.
+// delete[] at +0x24 then null. Pad split preserves +0x68 entries.
+// Callers 0x23E795 0x2817FD 0x2835F7.
+void __cdecl operator delete[](void *p);
+void Rva0062AF7::Rva0027DA58()
+{
+	operator delete[](m_arr24);
+	m_arr24 = 0;
 }
