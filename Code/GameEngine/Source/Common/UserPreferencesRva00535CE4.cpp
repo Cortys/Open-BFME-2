@@ -45,6 +45,9 @@
 // ?rva005373AF@UserPreferences@@QAEHXZ @0x005373AF 93B
 // UserPreferences total-losses path: sum Losses-getter over 6 faction table slot 0x18 chain.
 // Evidence: faction table 0x009BE9B0 calls 0x00535CE4 chain same TU.
+// ?rva0053734E@UserPreferences@@QAEHVAsciiString@@@Z @0x0053734E 97B
+// UserPreferences total-games path: Wins-getter plus Losses-getter over same by-value faction arg chain.
+// Evidence: copy 0x000365F0 calls 0x00535BF6 0x00535CE4 releaseBuffer ret 4 chain same TU.
 // ?rva00535D75@UserPreferences@@QAEHVAsciiString@@@Z @0x00535D75 74B
 // UserPreferences WinStreak-getter path: append WinStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat WinStreak 0x00868E8C slot 0x18 releaseBuffer gap same TU unlock.
@@ -140,6 +143,7 @@ public:
 	int rva00535BF6(AsciiString arg);
 	int rva00535C40();
 	int rva005373AF();
+	int rva0053734E(AsciiString arg);
 	int rva00535D75(AsciiString arg);
 	int rva00535E06(AsciiString arg);
 	int rva00535E97(AsciiString arg);
@@ -247,6 +251,13 @@ int UserPreferences::rva005373AF()
 	for (int i = 0; i < 6; ++i)
 		sum += rva00535CE4(AsciiString(kFactions[i]));
 	return sum;
+}
+
+int UserPreferences::rva0053734E(AsciiString arg)
+{
+	int wins = rva00535BF6(arg);
+	int losses = rva00535CE4(arg);
+	return wins + losses;
 }
 
 int UserPreferences::rva00535D75(AsciiString arg)
