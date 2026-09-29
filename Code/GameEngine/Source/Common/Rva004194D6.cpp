@@ -6,6 +6,7 @@ class Rva004194D6
 {
 public:
 	void rva004194D6();
+	bool rva0041950A();
 private:
 	char m_pad0[0x10];
 	int m_10;
@@ -29,4 +30,11 @@ void Rva004194D6::rva004194D6()
 		}
 	}
 	m_38 = 0;
+}
+
+bool Rva004194D6::rva0041950A()
+{
+	if (m_38 == 2)
+		rva004194D6();
+	return m_38;
 }
