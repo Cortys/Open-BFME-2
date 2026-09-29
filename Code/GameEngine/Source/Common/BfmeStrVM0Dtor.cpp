@@ -23,6 +23,15 @@ public:
 	void rva0025C0FF();
 };
 
+class AsciiString : private StringBase<char>
+{
+public:
+	__forceinline AsciiString() {}
+	__forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
+	__forceinline ~AsciiString() {}
+	AsciiString &operator=(const AsciiString &o);
+};
+
 class W3DDisplay
 {
 public:
@@ -270,6 +279,7 @@ public:
 	void rva0025D19E();
 	void rva0025D358(StringBase<unsigned short> s, float fC0, float fC4, int iB4, int iB8, int iBC);
 	void rva0025D9E3();
+	void rva00049F94(AsciiString s);
 private:
 	char m_pad0C[0x10];
 	ListNode0025D9E3 *m_head1C;
@@ -349,4 +359,15 @@ void BfmeStrVM0::rva0025D9E3()
 	}
 	m_fC8 = 0.0f;
 	m_fCC = 0.0f;
+}
+
+// ?rva00049F94@BfmeStrVM0@@QAEXVAsciiString@@@Z, retail 0x00049F94, 55 bytes.
+// Slot-89 virtual of BfmeStrVM0: sets the +0xF0 AsciiString from a by-value
+// string arg; the by-value temp is released at the end under EH.
+// Evidence: vtable slot 89 of 0x7F5DA0; same +0xF0 layout as the dtor in this
+// TU; callees AsciiString::operator= 0x000366F0 plus releaseBuffer 0x00036410.
+void BfmeStrVM0::rva00049F94(AsciiString s)
+{
+	AsciiString &dst = *(AsciiString *)&m_sF0;
+	dst = s;
 }
