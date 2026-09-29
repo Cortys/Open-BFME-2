@@ -41700,3 +41700,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00596548@Rva00596548@@QAE_NPAX@Z,,0x00596548,93,Code/GameEngine/Source/Common/Rva0025BF8CHeroRemover.cpp,matched,thiscall predicate plus hero find erase or base
 ?Rva00596446Get@@YGHPAX@Z,,0x00596446,44,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,bit predicate inner triple mask
 ?rva00596472@Rva0025C061@@QAE_NPAX@Z,,0x00596472,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus base Science push via visible callee
+?rva00596491@Rva0025BF8C@@QAE_NPAX@Z,,0x00596491,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus hero remover via visible callee
