@@ -41518,3 +41518,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0033BDC0@@QAE@XZ,,0x0033BDC0,56,Code/GameEngine/Source/Common/Rva0033BDC0Free.cpp,matched,chain via rowed clear 0x002CF807 and rowed free 0x00030830 same shape as rowed 0x0033C3F3
 ?Rva001FA8DDParse@@YAXPAVINI@@PAX@Z,,0x001FA8DD,110,Code/GameEngine/Source/GameLogic/Object/Rva001FA8DDParse.cpp,matched,INI token dispatch via StringBase table 0x9FDD5C virtual create append 0x5A0B4C
 ?Rva00248E98Enable@@YAXXZ,,0x00248E98,43,Code/GameEngine/Source/Common/Rva00446A77Enable.cpp,matched,chain via virtual Get global tail to 0x00444462
+??0Rva005734EB@@QAE@XZ,,0x005734D7,20,Code/GameEngine/Source/Common/Rva005734EBCtor.cpp,matched,holder base ctor with NULL plus own vtable
