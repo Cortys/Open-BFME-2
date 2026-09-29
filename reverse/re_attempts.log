@@ -3201,3 +3201,7 @@ FUN_009B776E	0x005B776E	131	blocked	ctor needs baseConstruct-before-vptr-before-
 ??A?$map@VAsciiString@@UTreeHintPayload001F8ACB@@U?$less@VAsciiString@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@UTreeHintPayload001F8ACB@@@_STL@@@4@@_STL@@QAEAAUTreeHintPayload001F8ACB@@ABVAsciiString@@@Z	0x002C6F8C	124	blocked	correct symbol for prev line which used lower_bound name t=20 model=muse-spark
 ??1Rva003516F3@@UAE@XZ	0x003516F3	96	blocked	opaque MI base with list walk needs more states plus free EH t=22 model=muse-spark
 FUN_005EDE9C	0x001EDE9C	59	blocked	unlock59 globals plus 115slot virtual plus tailcall needs vtable model t=5 model=muse-04
+??0Rva005F9141@@QAE@ABV0@@Z	0x005F9141	76	blocked	copy ctor shared ptr ref inc plus wide StringBase copy 0x37050 needs EH_prolog plus EBP frame best 48B vs 76B no EH t=12 model=muse-07
+?Rva001688FFProc@@YAXPAPAVNode@@H@Z	0x001688FF	83	blocked	array loop virtual 0x1C with next ref inc EBP frame plus dead esp store needs layout plus 9 callers but 0 ready t=10 model=muse-07
+??A?$map@VAsciiString@@UTreeHintPayload001F8ACB@@U?$less@VAsciiString@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@UTreeHintPayload001F8ACB@@@_STL@@@4@@_STL@@QAEAAUTreeHintPayload001F8ACB@@ABVAsciiString@@@Z	0x002C6F8C	124	blocked	STLport map operator[] 134B vs 124B 8 reg plus version wall lower_bound Ref vs Payload t=12 model=muse-07
+FUN_0068fbbe	0x0028FBBE	90	blocked	recursive self plus virtuals 0x14 0x118 offsets 0x250 0x5F1 plus list walk owner unproven 0 ready t=5 model=muse-07
