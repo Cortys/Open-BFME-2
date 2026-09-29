@@ -42513,3 +42513,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?push_back@?$vector@VRva003A6F70@@V?$allocator@VRva003A6F70@@@_STL@@@_STL@@QAEXABVRva003A6F70@@@Z,,0x0056633A,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva003a6f70_pushback.cpp,matched,stlport push_back via rowed Construct InsertOverflow sibling Pod40
 ?Rva003BFC27Do@@YGXABVAsciiString@@@Z,,0x003BFC27,152,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFC27.cpp,matched,via team priority decrease debug precedent
 ??8BfmeRva00C7B388@@UAEAAVXfer@@AAVVersion@1@@Z,,0x0060D78C,52,Code/GameEngine/Source/Common/System/BfmeRva00C7B388Xfer.cpp,matched,vslot 10 Version overload text dump m04 format 0xC7B0D4
+??4Rva00566695@@QAEAAV0@ABV0@@Z,,0x00566695,37,Code/GameEngine/Source/Common/Rva00566695Assign.cpp,matched,copy assign int plus byte plus map via rowed Rb_tree assign
