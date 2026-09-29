@@ -2803,3 +2803,4 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?rva004FF9B6@Rva004FF9B6@@QAEPAHH@Z	0x004FF9B6	19	blocked	needs Rb_tree _M_find t=5 model=muse-06
 ?Rva004582F3Loop@@YAXPAURva004582F3Outer@@@Z	0x004582F3	41	partial	ret inline vs end t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x004582f3.cpp
 ?rva002AA2CF@Rva002AA2CF@@QBEPBDH@Z	0x002AA2CF	42	blocked	register wall eax-edx swapped plus branch inversion table base needs gate t=8 model=muse-10
+?rva0039B6A8@Rva0039B6A8@@QAEXM@Z	0x0039B6A8	37	blocked	SSE param-first vs field-first load order wall t=15 model=muse-04
