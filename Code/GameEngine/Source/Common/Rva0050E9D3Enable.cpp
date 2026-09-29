@@ -190,3 +190,46 @@ unsigned char Rva0043CCD1Get(void)
 {
 	return *((unsigned char *)Rva0043C9B3Get() + 4);
 }
+
+// ?Rva0043C933Get@@YAHXZ @0x0043C933 54B.
+// Tri-state gate: 2 when the multiplayer predicate behind global 0x009FE78C
+// (rowed bfmeCall939D 0x0023C6FD) answers nonzero, else walks global
+// 0x009FEEE8 (+0x10, +0x34) to a flag byte at +0x1BC: 1 when set, 0 when any
+// link is null or clear. Caller at 0x0043CD78. Unlock lane.
+class BfmeGlob939D
+{
+public:
+	char bfmeCall939D();
+};
+struct Rva0043C933Sub
+{
+	char m_pad[0x1BC];
+	unsigned char m_flag;
+};
+struct Rva0043C933Mid
+{
+	char m_pad[0x34];
+	Rva0043C933Sub *m_sub;
+};
+struct Rva0043C933Outer
+{
+	char m_pad[0x10];
+	Rva0043C933Mid *m_mid;
+};
+extern Rva0043C933Outer *g_Va009FEEE8;
+int Rva0043C933Get(void)
+{
+	if (((BfmeGlob939D *)g_Va009FE78C)->bfmeCall939D())
+		return 2;
+	Rva0043C933Mid *mid = g_Va009FEEE8->m_mid;
+	if (mid != 0)
+	{
+		Rva0043C933Sub *sub = mid->m_sub;
+		if (sub != 0)
+		{
+			if (sub->m_flag != 0)
+				return 1;
+		}
+	}
+	return 0;
+}
