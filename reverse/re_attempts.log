@@ -3066,3 +3066,11 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva0005A3FA@Rva0005A3FA@@QAEXABVAsciiString@@M@Z	0x0005A3FA	87	partial	89/87B 27 vs 25 insns; 0 mem 0 reg; extra float spill pair plus integer mov vs movss t=20 model=muse-05 score=0.92 stash=reverse/attempts/0x0005a3fa.cpp
 ?rva003815AB@Rva003815AB@@QAE@XZ	0x003815AB	109	blocked	vector plus virtual functor with EH needs donor t=5 model=muse-10
 ?clear@?$list@UBfmeVectorRecord001B4A39@@V?$allocator@UBfmeVectorRecord001B4A39@@@_STL@@@_STL@@QAEXXZ	0x001B4C7A	49	blocked	list Record clear needs default ctor for whole-class instantiation single-member syntax fails t=10 model=muse-10
+??1Rva002E4049@@UAE@XZ	0x002E4049	146	blocked	derived dtor with EH_prolog triple vtable intrusive list plus 2 StringBase release needs full layout t=10 model=muse-11
+?rva0070A910@AptNativeHash@@QAEXXZ	0x0070A910	148	partial	144/148B 59/60 insns 0 regions; missing lea eax value-slot between cmp and je t=20 model=muse-11 score=0.97 stash=reverse/attempts/0x0070a910.cpp
+?rva0046D158@Rva0046D158@@QAEHABVAsciiString@@@Z	0x0046D158	84	blocked	HordeContain 0x198 vector plus StringBase temp compare needs layout t=10 model=muse-11
+?Rva004F6542Assign@@YAXPAU012345678@@PBU012345678@@@Z	0x004F6542	78	blocked	TreeHint temp on stack plus 2 assigns plus AddRef Release needs pair layout t=12 model=muse-11
+?Rva002213D9Init@@YAXXZ	0x002213D9	69	partial	64/69B 15/16 insns 0 regions; missing mov fs0 ecx EH epilogue t=15 model=muse-11 score=0.93 stash=reverse/attempts/0x002213d9.cpp
+?rva002D4531@Rva002D4531@@QAEXH@Z	0x002D4531	99	blocked	script invoke with AsciiString hidden return plus 8-arg pin needs layout t=8 model=muse-11
+?Rva00655B90Fesl@@YAHXZ	0x00655B90	549	blocked	Fesl SetField 549B GS string parser needs full layout t=5 model=muse-11
+?rva003609F7@Rva003609F7@@QAEPAHH@Z	0x003609F7	73	blocked	DamageFX insertNode needs Armor resize plus DamageFX newnode type unification t=12 model=muse-11
