@@ -38,3 +38,12 @@ void __cdecl Rva0021AD03MakeHeap(void **first, void **last, HeapLess comp)
 			break;
 	}
 }
+// ?Rva002C52E0PopHeap@@YAXPAPAX00PAXP6A_N11@Z@Z @0x002C52E0 41B
+// __pop_heap over 4-byte entries: move *first to *result then rowed
+// __adjust_heap 0x002198EC with hole 0; callers 0x0021AD54 0x0021D353 0x002C5666.
+void __cdecl Rva002C52E0PopHeap(void **first, void **last, void **result, void *value, HeapLess comp)
+{
+	void *tmp = *first;
+	*result = tmp;
+	Rva002198ECAdjustHeap(first, 0, last - first, value, comp);
+}
