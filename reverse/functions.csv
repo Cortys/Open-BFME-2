@@ -42584,3 +42584,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00583CE0@Rva005843DA@@QAEXHH@Z,,0x00583CE0,42,Code/Libraries/Source/WWVegas/WWLib/Rva005843DACtor.cpp,matched,vslot 12 via rowed ctor vec28 idiv imul
 ??_GRva002B923F@@QAEPAXI@Z,,0x002BADF3,28,Code/GameEngine/Source/Common/Rva002B82D5Dtor.cpp,matched,chain lane scalar deleting via anchor new-delete calls rowed dtor plus delete
 ?Rva001EF291Find@@YGHABVAsciiString@@@Z,,0x001EF291,58,Code/GameEngine/Source/Common/Rva001EF291Find.cpp,matched,table lookup 0x38 via isEmpty compareNoCase
+??1Rva002BAEAB@@QAE@XZ,,0x002BAEAB,53,Code/GameEngine/Source/Common/Rva002BAEAB.cpp,matched,unlock lane EH dtor via pinned 0x002B80CE plus rowed WindModuleInfo 0x0049B47C unblocks 0x002BAE8F
