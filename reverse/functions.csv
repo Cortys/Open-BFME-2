@@ -41176,3 +41176,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005E7285Copy@@YAPAVRva005E7198@@PAV1@00PAXH@Z,,0x005E7285,47,Code/GameEngine/Source/Common/Bfme/Rva005E7285Copy.cpp,matched,forward copy stride 4 via assign 0x5E7198 dummy tags caller 0x5E74A0
 ?Rva005E748DForward@@YAPAVRva005E7198@@PAV1@00PAX@Z,,0x005E748D,29,Code/GameEngine/Source/Common/Bfme/Rva005E7285Copy.cpp,matched,forwarder via local tag to rowed copy 0x005E7285 callers 0x005E7D54 0x005E8058
 ?rva005E74AA@Rva005E74AA@@QAEPAXI@Z,,0x005E74AA,37,Code/GameEngine/Source/Common/Bfme/Rva005E74AADeleting.cpp,matched,deleting shape release holder then conditional delete callers 0x5E7BED 0x5E7D65
+?bfmeOne928F@BfmeThing928F@@QAEXXZ,,0x0010C6C4,193,Code/GameEngine/Source/Common/BfmeThing928FOne.cpp,matched,ported BFME1 BfmeConv928 donor via pointer-list plus EHs

@@ -6248,3 +6248,7 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?allocate@?$allocator@URva002111C8@@@_STL@@QBEPAURva002111C8@@IPBX@Z,0x002226BE,target overflow 0x00213E3B calls allocate at 0x00213E67; boundary 0x002226BE/28 ICF twin of rowed BfmeE16 allocate same bytes stride 0x10
 ?Rva0052C404Construct@@YAXPAXPBX@Z,0x0052C404,target copy 0x0052C9AD calls Construct at 0x0052C9BB; boundary 0x0052C404/45 callable 2-arg honest pin for rowed 0-arg dup same bytes
 ??1BfmeStringRecord000B757D@@QAE@XZ,0x00577998,8B AsciiString at +8 fold via rowed PrereqUnitRec same body plus caller 0xBC9B1 B757D use
+??0?$_List_base@PAURva007B4CD0Entry@@V?$allocator@PAURva007B4CD0Entry@@@_STL@@@_STL@@QAE@ABV?$allocator@PAURva007B4CD0Entry@@@1@@Z,0x004EC36C,ICF twin of list-int base ctor same 12B node via call site 0x0010C6C4
+??1?$_List_base@PAURva007B4CD0Entry@@V?$allocator@PAURva007B4CD0Entry@@@_STL@@@_STL@@QAE@XZ,0x004EC395,ICF twin of list-int base dtor same 12B node via call site 0x0010C6C4
+?clear@?$_List_base@PAURva007B4CD0Entry@@V?$allocator@PAURva007B4CD0Entry@@@_STL@@@_STL@@QAEXXZ,0x0023DAA5,ICF twin of list-int base clear same 12B node via call site 0x0010C6C4
+?insert@?$list@PAURva007B4CD0Entry@@V?$allocator@PAURva007B4CD0Entry@@@_STL@@@_STL@@QAE?AU?$_List_iterator@PAURva007B4CD0Entry@@U?$_Nonconst_traits@PAURva007B4CD0Entry@@@_STL@@@2@U32@ABQAURva007B4CD0Entry@@@Z,0x005925E2,ICF twin of list-int insert same 12B node via call site 0x0010C6C4
