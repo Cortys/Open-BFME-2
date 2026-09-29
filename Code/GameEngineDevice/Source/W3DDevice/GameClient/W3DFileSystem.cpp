@@ -396,6 +396,9 @@ int  GameFileClass::Open(char const *filename, int rights)
 //-------------------------------------------------------------------------------------------------
 /** Open the file using the current file name. */
 //-------------------------------------------------------------------------------------------------
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/GameFileClassOpen.cpp
+// (retail calls BFME 2's three-argument FileSystem::openFile, which the
+// vendored header in this unit cannot declare)
 // ?Open@GameFileClass@@UAEHH@Z present-unmatched
 int  GameFileClass::Open(int rights) 
 {
@@ -425,7 +428,6 @@ int GameFileClass::Read(void *buffer, int len)
 //-------------------------------------------------------------------------------------------------
 /** Seek. */
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/GameFileClassSeek.cpp
 int GameFileClass::Seek(int pos, int dir) 
 {
 	File::seekMode mode = File::CURRENT;
