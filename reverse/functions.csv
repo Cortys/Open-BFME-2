@@ -42022,3 +42022,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?getMetaMapRec@MetaMap@@IAEPAVMetaMapRec@@W4Type@GameMessage@@@Z,,0x001DB537,107,Code/GameEngine/Source/GameClient/MessageStream/MetaMapGetMetaMapRec.cpp,matched,ZH donor MetaEvent body plus caller 0x001DB5A2 plus rowed new and releaseBuffer
 ?rva002AD19E@Rva002AD19E@@QAE_NPAX@Z,,0x002AD19E,95,Code/GameEngine/Source/Common/RTS/Rva002AD19EArmor.cpp,matched,unlock lane armor map remove clear
 ??1Rva002E1F42@@UAE@XZ,,0x002E1F42,65,Code/GameEngine/Source/Common/Rva002E1F42Dtor.cpp,matched,unlock lane vptr plus free plus base
+?rva0007E12F@Rva0007E12F@@QAEXXZ,,0x0007E12F,76,Code/GameEngine/Source/Common/Rva0007E12F.cpp,matched,chain calls 0x00083E5C callers at 0x00066939 0x0008221E
