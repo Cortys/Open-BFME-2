@@ -41023,3 +41023,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00083CE9@Rva00083CE9Host@@QAEXPAURva00083CE9Node@@@Z,,0x00083CE9,107,Code/GameEngineDevice/Source/W3DDevice/GameClient/TerrainTrackEdgeInfoO1.cpp,matched,unlink then push head then reset
 ??4Rva002111C8@@QAEAAV0@ABV0@@Z,,0x002111E3,27,Code/GameEngine/Source/Common/Rva002111C8.cpp,matched,unlock copy assign via smart member
 ??0Rva001DD81C@@QAE@HH@Z,,0x001DD81C,42,Code/Libraries/Source/WWVegas/WWLib/Rva00382A02Init.cpp,matched,container ctor over Rva00382A02 plus sentinel
+??0Rva00109C27@@QAE@PBD@Z,,0x00109C27,60,Code/GameEngine/Source/Common/Rva00109C27Ctor.cpp,matched,ctor over empty base for EH StringClass at 0x8 caller 0x109CDC
