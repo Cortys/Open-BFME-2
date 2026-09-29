@@ -23,7 +23,19 @@ public:
     virtual void slot58() = 0; virtual void slot5C() = 0;
     virtual void slot60() = 0; virtual void slot64() = 0;
     virtual void slot68() = 0; virtual void slot6C() = 0;
-    virtual void slot70() = 0;
+    virtual void slot70() = 0; virtual void slot74() = 0;
+    virtual void slot78() = 0; virtual void slot7C() = 0;
+    virtual void slot80() = 0; virtual void slot84() = 0;
+    virtual void slot88() = 0; virtual void slot8C() = 0;
+    virtual void slot90() = 0; virtual void slot94() = 0;
+    virtual void slot98() = 0; virtual void slot9C() = 0;
+    virtual void slotA0() = 0; virtual void slotA4() = 0;
+    virtual void slotA8() = 0; virtual void slotAC() = 0;
+    virtual void slotB0() = 0; virtual void slotB4() = 0;
+    virtual void slotB8() = 0; virtual void slotBC() = 0;
+    virtual void slotC0() = 0; virtual void slotC4() = 0;
+    virtual void slotC8() = 0; virtual void slotCC() = 0;
+    virtual int slotD0() = 0;
 };
 class ClientItem
 {
@@ -43,6 +55,7 @@ class Drawable
 {
 public:
     void rva00272BE7();
+    int rva0027272B();
 private:
     char m_pad[0x14C];
     DrawModule **m_drawModules;
@@ -55,4 +68,16 @@ void Drawable::rva00272BE7()
         (*p)->slot70();
     for (ClientItem **q = m_client; q && *q; ++q)
         (*q)->slot48();
+}
+// @0x0027272B (34B): module scan returning first nonzero slotD0 value else 0.
+// Caller 0x004087F7.
+int Drawable::rva0027272B()
+{
+    for (DrawModule **p = m_drawModules; *p; ++p)
+    {
+        int v = (*p)->slotD0();
+        if (v != 0)
+            return v;
+    }
+    return 0;
 }

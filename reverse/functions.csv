@@ -41860,3 +41860,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CC711@@YAXPAXPAVMade002CC711@@HH@Z,,0x00508EBF,77,Code/GameEngine/Source/GameLogic/Object/Made002CC711Parse.cpp,matched,Paralyze parser two tables
 ??1BfmeObject544@@QAE@XZ,,0x004CACB8,67,Code/GameEngine/Source/Common/BfmeObject544Dtor.cpp,matched,dtor array 56x8 plus Rb_tree set
 ?rva00272C9E@Drawable@@QAEMH@Z,,0x00272C9E,101,Code/GameEngine/Source/GameClient/DrawableFade.cpp,matched,Drawable opacity getter modules slots C4 F0 shared 1.0F callers 0x00070F80 plus 6
+?rva0027272B@Drawable@@QAEHXZ,,0x0027272B,34,Code/GameEngine/Source/GameClient/Drawable_rva00272BE7.cpp,matched,Drawable module scan first nonzero slotD0 caller 0x004087F7
