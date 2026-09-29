@@ -41886,3 +41886,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002EEA09@Rva002EB416@@QAEXXZ,,0x002EEA09,20,Code/Libraries/Source/WWVegas/WWLib/Rva002EE9E0Reset.cpp,matched,pool head release to global free list
 ?rva002EEA46@Rva002EB46E@@QAEXXZ,,0x002EEA46,20,Code/Libraries/Source/WWVegas/WWLib/Rva002EEA1DReset.cpp,matched,pool head release to global free list
 ?rva00535C9D@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00535C9D,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Losses-void via slot2C gap
+?rva00535D2E@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00535D2E,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences WinStreak via slot2C gap same TU
