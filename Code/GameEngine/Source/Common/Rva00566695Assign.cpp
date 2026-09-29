@@ -55,3 +55,20 @@ Rva00566695 *Rva0056693DCopy(Rva00566695 *first, Rva00566695 *last, Rva00566695 
 	}
 	return out;
 }
+
+namespace _STL {
+template <class _InputIter, class _OutputIter, class _Distance>
+_OutputIter __copy(_InputIter __first, _InputIter __last, _OutputIter __result, const random_access_iterator_tag &__tag, _Distance *__dist);
+}
+
+// ?Rva00566A9ACopyRange@@YAPAVRva00566695@@PAV1@00H@Z @0x00566A9A 29B.
+// Tag-temp plus null-distance forwarder to pinned 5-arg __copy at 0x0056693D
+// (ICF twin of rowed 3-arg Rva0056693DCopy 50B loop via assign).
+// Evidence: chain lane; caller 0x00566B95 is 51B erase-shape; same 29B shape
+// as rowed Rva004BA324CopyRange at 0x004BA324.
+Rva00566695 *Rva00566A9ACopyRange(Rva00566695 *first, Rva00566695 *last, Rva00566695 *result, int dummy)
+{
+	_STL::random_access_iterator_tag tag;
+	(void)dummy;
+	return _STL::__copy(first, last, result, tag, (int *)0);
+}
