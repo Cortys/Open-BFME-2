@@ -41044,3 +41044,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva002AE627@@UAEPAXI@Z,,0x002AF53E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-2AF53E.cpp,matched,deleting dtor via rowed base plus delete
 ?rva00449969@LANAPI@@IAE_NPAVLANGameInfo@@@Z,,0x00449969,37,Code/GameEngine/Source/GameNetwork/LANAPIRemoveGame.cpp,matched,unlock LANAPI game-list membership test plus removeGame
 ?rva0030BBA9@Rva0030BBA9@@QAEPAXH@Z,,0x0030BBA9,11,Code/GameEngine/Source/Common/Rva0030BBA9Getter.cpp,matched,indexed getter array at 0x40 stride 4
+?Rva004E1AD5Get@@YAXPAURva004E1AD5Item@@0PAX@Z,,0x004E1AD5,26,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_004e1ad5.cpp,matched,unlock range virtual slot0 stride 0x58 caller 0x004E1FCC
