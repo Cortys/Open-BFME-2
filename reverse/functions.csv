@@ -41133,3 +41133,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva004E4179Get@@YAPAXXZ,,0x004E4179,50,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,guarded singleton getter via rowed atexit callers 4E41BF 4E4317
 ?Rva004E432ASet@@YAXE@Z,,0x004E432A,34,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,flag setter on 4E4179 block via rowed enable caller 3BD412
 ??0Rva00585B16@@QAE@ABV0@@Z,,0x0058596B,91,Code/Libraries/Source/WWVegas/WWLib/Rva00585B16Dtor.cpp,matched,copy ctor copies scalars deque m50 same layout
+??$_Construct@VRva00585B16@@V1@@_STL@@YAXPAVRva00585B16@@ABV1@@Z,,0x005859C6,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_rva585B16.cpp,matched,null-guarded placement copy calls rowed copy 0x58596B
