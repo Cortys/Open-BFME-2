@@ -67,3 +67,39 @@ void Rva00083CB2::rva00083CB2()
 	m_34 = 0;
 	m_38 = 0;
 }
+struct Rva00083CE9Node : public Rva00083CB2
+{
+public:
+	Rva00083CE9Node *m_1320;
+	Rva00083CE9Node *m_1324;
+};
+class Rva00083CE9Host
+{
+public:
+	void rva00083CE9(Rva00083CE9Node *p);
+private:
+	char _pad00[0x10];
+	Rva00083CE9Node *m_10;
+	Rva00083CE9Node *m_14;
+};
+// ?rva00083CE9@Rva00083CE9Host@@QAEXPAURva00083CE9Node@@@Z retail 0x00083CE9
+// 107B unlink node from old list then push at head of this list and reset it.
+// Evidence: chain calls 0x00083CB2; callers at 0x00083EA6 0x00083FDD 0x00084016.
+void Rva00083CE9Host::rva00083CE9(Rva00083CE9Node *p)
+{
+	if (p == 0)
+		return;
+	if (p->m_1320 != 0)
+		p->m_1320->m_1324 = p->m_1324;
+	Rva00083CE9Node *next = p->m_1324;
+	if (next != 0)
+		next->m_1320 = p->m_1320;
+	else
+		m_10 = p->m_1320;
+	p->m_1324 = 0;
+	p->m_1320 = m_14;
+	if (m_14 != 0)
+		m_14->m_1324 = p;
+	m_14 = p;
+	p->rva00083CB2();
+}

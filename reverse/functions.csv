@@ -41020,3 +41020,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001FF55F@Rva001FF6D7@@QAEXPAURva001FF6D7Node@@@Z,,0x001FF55F,50,Code/GameEngine/Source/Common/Rva001FF6D7List.cpp,matched,unlock recursive teardown via global 0x009B9448 caller 0x001FF6BC
 ??0Rva002111C8@@QAE@ABV0@@Z,,0x002111C8,27,Code/GameEngine/Source/Common/Rva002111C8.cpp,matched,unlock copy ctor via smart member
 ?Rva00211DFBConstruct@@YAXPAVRva002111C8@@PBV1@@Z,,0x00211DFB,18,Code/GameEngine/Source/Common/Rva002111C8.cpp,matched,unlock placement copy via local new
+?rva00083CE9@Rva00083CE9Host@@QAEXPAURva00083CE9Node@@@Z,,0x00083CE9,107,Code/GameEngineDevice/Source/W3DDevice/GameClient/TerrainTrackEdgeInfoO1.cpp,matched,unlink then push head then reset
