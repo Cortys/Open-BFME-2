@@ -12,6 +12,7 @@ class Rva0029A407
 {
 public:
 	void rva0029A407();
+	void *rva0029B53C(unsigned int flag);
 private:
 	Freeable0029A407 *m_0;
 };
@@ -21,4 +22,11 @@ void Rva0029A407::rva0029A407()
 		m_0->slot2();
 		m_0 = 0;
 	}
+}
+void *Rva0029A407::rva0029B53C(unsigned int flag)
+{
+	rva0029A407();
+	if (flag & 1)
+		delete this;
+	return this;
 }
