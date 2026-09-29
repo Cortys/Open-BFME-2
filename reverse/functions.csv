@@ -41372,3 +41372,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0048C200Owner@@QAE@XZ,,0x002019E1,54,Code/GameEngine/Source/Common/Rva0048C200StringOwnerDtor.cpp,matched,dtor abuts ctor E1998 plus two releaseBuffer EH
 ??_GRva0048C200Owner@@QAEPAXI@Z,,0x00201A17,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-02-201A17.cpp,matched,deleting dtor chain from E19E1 QAE
 ?Rva00442892Pop@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00442892,27,Code/GameEngine/Source/GameClient/GUI/Rva00442892Pop.cpp,matched,pop forwarder via rowed 0x00441E2B and caller 0x00442BB1
+?rva005E36EA@Rva005E36C5@@QAE?AV?$StringBase@D@@XZ,,0x005E36EA,105,Code/GameEngine/Source/Common/Rva005E36EAMat.cpp,matched,five-part materializer via rowed length write and StringBase returns copy
