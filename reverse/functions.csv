@@ -42476,3 +42476,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?getEventFX@LifeEventModuleInfo@FXParticleSystem@@QAEPBVFXList@@XZ,0x0056410F,0x0056410F,46,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LifeEventModuleInfoGetEventFX.cpp,matched,lazy FX cache via rowed findFXList 0x001E281A callers 0x00564197 0x00564249
 ?Rva003C6464SortHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C6464,58,Code/GameEngine/Source/GameLogic/Object/Rva003C6464SortHeap.cpp,matched,chain on 0x003C4B80 via caller 0x003C6A01 heap sort loop
 ?Rva003C69B7PartialSort@@YAXPAPAURva003BD485Keyed@@00HH@Z,,0x003C69B7,87,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,chain on MakeHeap PopHeap6 SortHeap via caller 0x003C75D4 partial sort
+?rva003703CF@AIGroup@@QAEXPBUCoord3D@@W4GuardMode@@W4CommandSourceType@@@Z,,0x003703CF,65,Code/GameEngine/Source/GameLogic/AI/Rva003703CFGroup.cpp,matched,AIGroup guard pos via 0x0036F46A same list loop

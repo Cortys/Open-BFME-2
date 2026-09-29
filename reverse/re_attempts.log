@@ -3376,3 +3376,6 @@ FUN_007c8bcb	0x003C8BCB	163	blocked	chain team waypoint needs TerrainLogic plus0
 FUN_007c8abf	0x003C8ABF	163	blocked	twin of 0x003C8BCB needs TerrainLogic plus0x90 coord-plus-arg2 plus AIUpdate plus0x238 with 3 plus rva003C77EE t=8 model=muse-spark
 FUN_00584502	0x00584502	59	blocked	dtor needs vector free plus apply setter as vptr-or-base plus no base call t=10 model=muse-spark
 ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z	0x003C4E28	155	partial	loop exact via goto-test shape; found block 6B short with movaps-mem muls vs retail movss-reg muls plus push timing t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x003c4e28.cpp
+FUN_0036FF74	0x0036FF74	282	blocked	282B AIGroup gap nested outer-inner lists plus Coord3D SSE movss plus virtuals B4 118 plus getAbleToUseWeapon plus aiAttackPosition plus spawn 0x10 t=5 model=muse-spark
+FUN_002AA559	0x002AA559	136	blocked	136B free void2args Object flags 0x114bit100 plus 0x109bit40 plus behavior scans 0x28BD17 0x28BCF4 plus virtuals 8 28 4 plus arg2 plus0x74 t=5 model=muse-spark
+?rva00594C12@Rva00594C12@@QAEHPBDHKG@Z	0x00594C12	109	partial	only or edi eax remains 107vs109 t=15 model=muse-spark score=0.98 stash=reverse/attempts/0x00594c12.cpp
