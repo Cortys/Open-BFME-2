@@ -41752,3 +41752,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E0350@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0350,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 17 via rowed get plus rowed isUndefined 4 callers
 ?rva006E03A0@BfmeAptValue006DCD20@@QBEHXZ,,0x006E03A0,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 19 via rowed get plus rowed isUndefined 10 callers
 ?rva004479FD@Rva004479FD@@QAEAAU1@ABU1@@Z,,0x004479FD,69,Code/GameEngine/Source/Common/Rva004479FDAssign.cpp,matched,unlock assign via set plus ints plus return this
+?Rva001DE8E9Fill@@YAXPAVRva001DE727@@0ABV1@@Z,,0x001DE8E9,29,Code/Libraries/Source/WWVegas/WWLib/Rva001DE906Copy.cpp,matched,chain fill via rowed assign stride 0x30 two callers clean caller

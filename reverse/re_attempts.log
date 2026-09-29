@@ -3024,3 +3024,6 @@ FUN_00839360	0x00439360	118	blocked	list assign with rep movsd 49 plus erase plu
 ?rva00603D02@Rva00603D02@@QAE_HPBD0PAH@Z	0x00603D02	334	blocked	DieModuleData factory with EH new StringBase and 5 virtuals needs full Die hierarchy t=10 model=muse-11
 ?rva003F2106@Rva003F2106@@QAEXXZ	0x003F2106	74	partial	74/74B same 33 insns; 6 scheduling regions: count temp ecx vs eax null-path jmp-xor placement pop-ecx after cmp; round-robin scratch allocation t=25 model=muse-spark score=0.82 stash=reverse/attempts/0x003f2106.cpp
 ?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z	0x003F3159	51	partial	51/51B 0 regions; single LEA displacement for tag temp ebp+0xb vs ebp+0xf; dead-arg-slot choice t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x003f3159.cpp
+?rva003E4921@ScriptConditions@@QAE_NPAVParameter@@@Z	0x003E4921	151	partial	branch polarity plus setne vs shared xor mov t=18 model=muse-02 score=0.93 stash=reverse/attempts/0x003e4921.cpp
+?Rva001DEE3CCopy@@YAPAVRva001DE727@@PAV1@00@Z	0x001DEE3C	29	blocked	same 5-push dispatch wall as 0x001DEE1F to 3-arg copy t=3 model=muse-02
+?rva0035818E@Rva0035818E@@QAEHXABVAsciiString@@PBX@Z	0x0035818E	131	blocked	complex list crc Unicode erase needs shared layout t=15 model=muse-02
