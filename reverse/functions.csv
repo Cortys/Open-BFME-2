@@ -41814,3 +41814,5 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E3920@Rva006E3230@@QAEPAURva006E3230Action@@H@Z,,0x006E3920,114,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,unlock lane Apt action pool wrap index
 ?rva002CED26@Rva002CEC0A@@QAEXPAVXfer@@@Z,,0x002CED26,51,Code/GameEngine/Source/Common/Rva002CEC34Clear.cpp,matched,Rva002CEC0A xfer via Ascii vector plus CRC check
 ??1BfmeVectorRecord001B4A39@@QAE@XZ,,0x001B4ACC,116,Code/GameEngine/Source/Common/StringVectorRecordCopyBFME2.cpp,matched,dtor of copy ctor record 5 vectors 2 Ascii EH
+??1Rva002CEE1B@@UAE@XZ,,0x002CEE1B,72,Code/GameEngine/Source/Common/Rva002CEE1BDtor.cpp,matched,Rva002CEE1B dtor via vtable plus ehvec plus base
+??_GRva002CEE1B@@UAEPAXI@Z,,0x002CEEE6,28,Code/GameEngine/Source/Common/Rva002CEE1BDtor.cpp,matched,Rva002CEE1B deleting dtor via base delete
