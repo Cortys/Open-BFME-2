@@ -42029,3 +42029,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0021C459@Rva0021C459@@QAEXPAUNode0021C459@@@Z,,0x0021C459,53,Code/GameEngine/Source/Common/System/Rva0021C459Cleanup.cpp,matched,unlock tree cleanup via rowed clear 0x005B804E and free
 ?rva00536CA8@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536CA8,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesLostRTS getter slot18 same TU
 ?rva00536CF2@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536CF2,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesWonRTS setter slot2C same TU
+??1Rva001ED0DE@@QAE@XZ,,0x001ED0DE,92,Code/Libraries/Source/WWVegas/WWLib/Rva001ED0DEDtor.cpp,matched,dtor vectors plus strings via rowed
