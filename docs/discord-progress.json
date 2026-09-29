@@ -24,14 +24,14 @@
     "addresses": "2228",
     "linked_bytes": "572353"
   },
-  "authored": 1874436,
-  "vendored": 284372,
+  "authored": 1890493,
+  "vendored": 284873,
   "generated": 168035,
   "library": 177539,
   "linked_total": 572353,
-  "matched_total": 2504382,
-  "whole_total": 1538367.5,
-  "updated_at": "2026-09-29T15:27:45.636735+00:00",
-  "message_id": "1554515032891588610",
-  "run_id": "36590333309"
+  "matched_total": 2520940,
+  "whole_total": 1546646.5,
+  "updated_at": "2026-09-29T18:13:25.703094+00:00",
+  "message_id": "1554556724948508683",
+  "run_id": "36610481355"
 }
