@@ -1,6 +1,6 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// Four constant-return bodies found by tools/vtable_gaps.py: each is an
+// Six constant-return bodies found by tools/vtable_gaps.py: each is an
 // UNNAMED slot of a vtable-shaped run that also carries named slots, so the
 // only evidence that reaches them is the vtable -- they have no direct caller
 // to name them and no Zero Hour counterpart to port.
@@ -18,6 +18,8 @@
 //   0x0050B5F1   5B   32 c0 c2 08 00        xor al,al ; ret 8
 //   0x005CB9FF   5B   32 c0 c2 04 00        xor al,al ; ret 4
 //   0x006C8770   5B   32 c0 c2 0c 00        xor al,al ; ret 0xc
+//   0x005748AD   5B   33 c0 c2 0c 00        xor eax,eax ; ret 0xc
+//   0x005748B2   5B   33 c0 c2 08 00        xor eax,eax ; ret 8
 
 class Rva0050B5C6
 {
@@ -61,4 +63,28 @@ public:
 bool Rva006C8770::rva006C8770(int a, int b, int c)
 {
 	return false;
+}
+
+// The two below return Int rather than Bool -- `xor eax,eax`, not `xor al,al`.
+
+class Rva005748AD
+{
+public:
+	int rva005748AD(int a, int b, int c);
+};
+
+int Rva005748AD::rva005748AD(int a, int b, int c)
+{
+	return 0;
+}
+
+class Rva005748B2
+{
+public:
+	int rva005748B2(int a, int b);
+};
+
+int Rva005748B2::rva005748B2(int a, int b)
+{
+	return 0;
 }
