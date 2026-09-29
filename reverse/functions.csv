@@ -42629,3 +42629,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0070DFB0@Rva006D6470Owner@@UAEHPAXPAURva008A4570Owner@@@Z,,0x0070DFB0,29,Code/GameEngine/Source/Common/Rva0070DFB0Pred.cpp,matched,slot7 registerClass ternary global mask
 ?rva006FE400@Rva006FE400@@QAEHPAXPAURva008A4570Owner@@@Z,,0x006FE400,42,Code/Libraries/Source/Apt/Rva006FE400Chain.cpp,matched,chain virtual slot7 fallback to 70DFB0
 ??1Rva005AA55D@@UAE@XZ,,0x005AA55D,81,Code/GameEngine/Source/Common/Rva005AA55DDtor.cpp,matched,vtable 00871EB0 plus base row 005DC73C plus free delete rows
+??_GRva005AA55D@@UAEPAXI@Z,,0x005AA62B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005AA55D.cpp,matched,slot 0 of 00871EB0 calls rowed 005AA55D plus delete
