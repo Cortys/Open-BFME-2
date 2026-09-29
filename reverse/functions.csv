@@ -42090,3 +42090,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0034149B@@UAE@XZ,,0x0034149B,91,Code/GameEngine/Source/Common/Rva0034149BDtor.cpp,matched,vtable plus member slot15 slot0 delete plus base WindModuleInfo
 ??1Rva0034159A@@UAE@XZ,,0x0034159A,91,Code/GameEngine/Source/Common/Rva0034159ADtor.cpp,matched,vtable plus member slot15 slot0 delete plus base WindModuleInfo
 ?rva005ED445@Rva005ED445@@QAEXABVUnicodeString@@@Z,,0x005ED445,103,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,APT RegionName via level outer precedent Rva005FDF1C
+??1Rva004FCE73@@UAE@XZ,,0x004FCE73,66,Code/GameEngine/Source/Common/Rva004FCE73Dtor.cpp,matched,unlock lane vptr vector free
