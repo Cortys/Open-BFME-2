@@ -41920,3 +41920,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002897A8@Rva0028951F@@QAEPBVOverridable@@PAXH@Z,,0x002897A8,106,Code/Libraries/Source/WWVegas/WWLib/Rva002897A8Find.cpp,matched,chain threshold best scan via ESI Check copy
 ?rva0027248A@Drawable@@QAEXHH@Z,,0x0027248A,58,Code/GameEngine/Source/GameClient/Drawable_rva0027248A.cpp,matched,Drawable guarded 0xFC 0x14C walk via 0xA8 to 0x7C
 ??1Rva003ABC58@@UAE@XZ,,0x003ABC58,22,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ABC58Dtor.cpp,matched,dtor via guarded BBB554 plus base tail-jmp
+??1Rva003ABA4C@@UAE@XZ,,0x003ABA4C,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003ABA4CDtor.cpp,matched,MI dtor via guarded base plus throw base
