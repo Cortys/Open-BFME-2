@@ -41222,3 +41222,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0030817A@Rva0030817A@@QAEXH@Z,,0x0030817A,8,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,holder plus30 forward to 0x330B41 caller 0x308FDC
 ?rva004EE043@Rva004EE037@@QAEHXZ,,0x004EE043,20,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling of 0x004EE037 m78 else global 0xFC callers 0x005BE431 0x005C13D3
 ?rva004EE072@Rva004EE037@@QAEXPBVRva004E06FBPtrChase32Field@@H@Z,,0x004EE072,52,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling mEC check via rowed get 0x004E06FB inc 0x8C 0x90
+?rva002E1588@Rva002E15BC@@QAEXPAX_N@Z,,0x002E1588,52,Code/GameEngine/Source/Common/Rva002E15BCClear.cpp,matched,bit set sibling with flag and plus78 guard caller 0x0020ED75
