@@ -2827,3 +2827,5 @@ FUN_0047989c	0x0007989C	34	blocked	rb-tree create_node 0x20 duplicates hero 0x21
 FUN_00730590	0x00330590	109	blocked	try-catch cursor-guard dispatch via pmf callback; wall=esi-edi allocation mirror persists across 6 shapes t=25 model=muse-spark
 ?Rva0025E46DReset@@YAXXZ	0x0025E46D	96	partial	early mov ecx eax vs mov ebp-10 eax and test ecx vs eax and or ebp-4 -1 vs and ebp-10 0 t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x0025e46d.cpp
 ?Rva003BD46ESum@@YAHPAX@Z	0x003BD46E	23	partial	eax base vs edx base plus destructive end load t=25 model=muse-03 score=0.95 stash=reverse/attempts/0x003bd46e.cpp
+??1Rva003B262E@@MAE@XZ	0x003B262E	68	partial	and [ecx+4]0 before vtable load vs after t=25 model=muse-spark score=0.94 stash=reverse/attempts/0x003b262e.cpp
+?erase@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEIABVAsciiString@@@Z	0x0005B5EA	73	blocked	name already rowed at 0x005CA950 with different third callee 0x5CA7A9 vs 0x57D5C t=20 model=muse-spark
