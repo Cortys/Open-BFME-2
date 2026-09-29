@@ -41660,3 +41660,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003F10D0Pick@@YAXPAH0@Z,,0x003F10D0,44,Code/GameEngine/Source/Common/System/Rva003F10D0Pick.cpp,matched,stack pick via ebp into int4 tables 0xDC15EC 0xDC15DC
 ?rva003F17D6@Rva003F17D6@@QAEPAU1@PAX0@Z,,0x003F17D6,141,Code/GameEngine/Source/Common/System/Rva003F17D6Init.cpp,matched,obfuscated 8int init via Pick 0x003F10D0 sibling of Rva0056EF65
 ?Rva003F10FCPick@@YAXPAH0@Z,,0x003F10FC,44,Code/GameEngine/Source/Common/System/Rva003F10D0Pick.cpp,matched,stack pick via ebp into int4 tables 0xDC160C 0xDC15FC
+?rva003F1863@Rva003F1863@@QAEPAU1@PAX0@Z,,0x003F1863,141,Code/GameEngine/Source/Common/System/Rva003F17D6Init.cpp,matched,obfuscated 8int init via Pick 0x003F10FC sibling of 0x003F17D6
