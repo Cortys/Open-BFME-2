@@ -41714,8 +41714,7 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005960E0@Rva0025BF8C@@QAE_NPAX@Z,,0x005960E0,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus hero remover via visible callee
 ?rva0023FBDB@Rva0023FBDB@@QAEXPAURva0023FBDBNode@@@Z,,0x0023FBDB,53,Code/Libraries/Source/WWVegas/WWLib/Rva0023FBDBDestroy.cpp,matched,chain lane tree destroy via recurse plus dtor plus free
 ?rva002618A2@Rva002618A2@@QAEPAV1@HHHH@Z,,0x002618A2,88,Code/GameEngine/Source/Common/Rva002618A2.cpp,matched,caller 0x00261CCF pushes 0 0x6d 7 0x59 sibling 0x002618FA same first-0 pattern BitFlags7
-?Rva00523EFFEqual@@YAHPBURva00523DB7@@0@Z,,0x00523EFF,35,Code/Libraries/Source/WWVegas/WWLib/Rva00523EFFEqual.cpp,matched,8B struct int plus StringBase compare via 7x caller 0x0052408B
-??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
 ?Rva003F2460Copy@@YAXPAD00@Z,,0x003F2460,29,Code/GameEngine/Source/Common/System/Rva003F2460Copy.cpp,matched,wrapper of rowed copy 0x003F1F06 with extra local-plus-0 args caller 0x003F316D
 ??$__sort_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z,,0x004247A9,58,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain sort heap via rowed pop heap
 ?Rva001DE906Copy@@YAPAVRva001DE727@@PAV1@00@Z,,0x001DE906,50,Code/Libraries/Source/WWVegas/WWLib/Rva001DE906Copy.cpp,matched,chain array copy via rowed assign
+??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
