@@ -36,3 +36,22 @@ void __cdecl Rva0014F8AEDestroy(Rva0014F3E7 *first, Rva0014F3E7 *last)
 	char tag;
 	Rva0014F3E7Destroy(first, last, (void *)&tag);
 }
+
+extern "C" void __cdecl free(void *block);
+
+class Rva0014F8C6
+{
+public:
+	void rva0014F8C6();
+private:
+	Rva0014F3E7 *m_00;
+	Rva0014F3E7 *m_04;
+};
+
+void Rva0014F8C6::rva0014F8C6()
+{
+	Rva0014F8AEDestroy(m_00, m_04);
+	Rva0014F3E7 *buf = m_00;
+	if (buf != 0)
+		free(buf);
+}
