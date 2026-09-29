@@ -285,3 +285,23 @@ Rva004D64F5::Rva004D64F5() : NetCommandMsg()
 	m_1c = 0;
 	m_commandType = (NetCommandType)5;
 }
+
+// ??0Rva004D6134@@QAE@XZ @0x004D6134 29B: calls base plus vtable 0x860474 plus dword 0 at +0x1c via And plus dword 0 at +0x20 via And plus type 14 at +0x14.
+// Honest-address ctor; same barrier-pinned vptr-first recipe as siblings above; unblocks 0x00592123 0x004D17C5.
+// Callers at 0x004D17ED 0x0059214A.
+class Rva004D6134 : public NetCommandMsg
+{
+public:
+	Rva004D6134();
+private:
+	unsigned int m_1c;
+	unsigned int m_20;
+};
+
+Rva004D6134::Rva004D6134() : NetCommandMsg()
+{
+	_ReadWriteBarrier();
+	m_1c = 0;
+	m_20 = 0;
+	m_commandType = (NetCommandType)0xe;
+}

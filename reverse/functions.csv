@@ -41326,3 +41326,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00524415@@QAE@XZ,,0x00524415,33,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_e16_ctor00524415.cpp,matched,unlock dual E16 vectors via base 0x00211E58
 ?Rva003BBFA0@@YAXXZ,,0x003BBFA0,17,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,free caller of vslot 0x94 with true via global 0xDFEDF0 caller 0x003CC458
 ?Rva003BB641@@YAXXZ,,0x003BB641,19,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,null-guarded forwarder to vslot 0x16C via global 0xDFE6E8 caller 0x003CE42B
+??0Rva004D6134@@QAE@XZ,,0x004D6134,29,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,NetCommandMsg family vptr-first two-And plus type 14 sibling
