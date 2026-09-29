@@ -41331,3 +41331,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x0052CE20,93,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_e16_o1.cpp,matched,chain vector E16 copy via base plus uninit copy caller 1
 ?Rva0052C37ADestroyRange@@YAXPAURva0052BFB5Elem@@0@Z,,0x0052C37A,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BFB5 callers 6
 ?rva002CFCEE@Rva002CFCEE@@QAEPAURva002CFA4ENode@@PAU2@0@Z,,0x002CFCEE,115,Code/Libraries/Source/WWVegas/WWLib/Rva002CFCEECopy.cpp,matched,tree copy via thiscall twin of 0x002CFA4E; 115B exact; self callers and 0x002D01E0
+?rva002CF1FB@Rva002CF1FB@@QAEPAURva002CF1FBNode@@G@Z,,0x002CF1FB,32,Code/GameEngine/Source/Common/Rva002CF1FBFind.cpp,matched,list search head plusC via 0x484 key 0x5D8; 32B exact; callers 0x377613 0x77BE15
