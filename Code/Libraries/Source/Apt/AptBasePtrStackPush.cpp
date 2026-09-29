@@ -10,6 +10,7 @@ class BfmeAptValue006DCD20
 {
 public:
     virtual void AddRef();
+    virtual void Release();
     int isLookup() const;
     int isRegister() const;
 };
@@ -18,6 +19,7 @@ class AptBasePtrStack
 {
 public:
     void Push(BfmeAptValue006DCD20 *pValue);
+    void rva006E3AA0(int nItems);
 
     int m_nElements;
     int m_nCapacity;
@@ -45,4 +47,31 @@ void AptBasePtrStack::Push(BfmeAptValue006DCD20 *pValue)
     m_aElements[m_nElements] = pValue;
     ++m_nElements;
     pValue->AddRef();
+}
+
+// ?rva006E3AA0@AptBasePtrStack@@QAEXH@Z @0x006E3AA0 122B unlock lane.
+// Checked stack pop: asserts nItems >= 0 (_AptBasePtrStack.h:167), returns
+// early when more is popped than contained (_AptBasePtrStack.h:170 via the
+// shared Apt assert triple), else Releases the top nItems entries in order
+// and subtracts the count. Evidence: 12 callers; layout/flags/assert file
+// shared with Push above; strings pinned by reverse/string_xrefs.tsv.
+void AptBasePtrStack::rva006E3AA0(int nItems)
+{
+    if (nItems < 0) {
+        g_bfmeAptAssertAtE17734("nItems >= 0", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 167);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (m_nElements < nItems) {
+        g_bfmeAptAssertAtE17734("false && \"[APT] Error, Popping more elements than the stack contains. Please contact the Apt Team for Support.\"", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 170);
+        // __asm barrier (not the intrinsic): keeps int3 ahead of the early
+        // epilogue pops. Cf int3-barrier precedent in AptValueVectorReleaseBFME2.cpp.
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+        return;
+    }
+    for (int i = 1; i <= nItems; ++i) {
+        m_aElements[m_nElements - i]->Release();
+    }
+    m_nElements -= nItems;
 }
