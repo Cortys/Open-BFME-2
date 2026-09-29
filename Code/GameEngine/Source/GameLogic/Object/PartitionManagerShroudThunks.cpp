@@ -15,6 +15,15 @@ enum CellShroudStatus
 	SHROUD_CLEAR = 0
 };
 
+enum ObjectShroudStatus
+{
+	OBJECTSHROUD_INVALID,
+	OBJECTSHROUD_CLEAR,
+	OBJECTSHROUD_PARTIAL_CLEAR,
+	OBJECTSHROUD_FOGGED,
+	OBJECTSHROUD_SHROUDED
+};
+
 struct Coord3D
 {
 	float x;
@@ -63,6 +72,7 @@ public:
 	void updatePlayerCells300And3B0_Rva0073B3B0(int value);
 	void notify();
 	int getPlayerStatusWord_Rva0073B890(int playerIndex, const Coord3D *pos) const;
+	ObjectShroudStatus getPropShroudStatusForPlayer(int playerIndex, const Coord3D *pos) const;
 };
 
 class PartitionManager
@@ -306,4 +316,22 @@ private:
 int Rva007397E0::rva007397E0(int playerIndex, const Coord3D *pos) const
 {
 	return m_cell->getPlayerStatusWord_Rva0073B890(playerIndex, pos);
+}
+
+//
+// ?rva00739800@Rva00739800@@QBE?AW4ObjectShroudStatus@@HPBUCoord3D@@@Z retail 0x00739800 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073B990.
+// Evidence: retail mov ecx [ecx+0x10] jmp; gap between 0x007397F0 and 0x00739830 in same TU.
+class Rva00739800
+{
+public:
+	ObjectShroudStatus rva00739800(int playerIndex, const Coord3D *pos) const;
+private:
+	char m_pad[0x10];
+	ShroudManagerImpl008FBA40 *m_cell; // +0x10
+};
+
+ObjectShroudStatus Rva00739800::rva00739800(int playerIndex, const Coord3D *pos) const
+{
+	return m_cell->getPropShroudStatusForPlayer(playerIndex, pos);
 }

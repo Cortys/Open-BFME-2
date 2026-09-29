@@ -41416,3 +41416,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0?$_Deque_base@UBfmePod28@@V?$allocator@UBfmePod28@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod28@@@1@I@Z,,0x0041A10C,75,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_pod28_base.cpp,matched,Deque_base Pod28 ctor via STL explicit instantiation unlocks 0x41A6D0
 ?Rva0056EDE8Pick@@YAXPAH0@Z,,0x0056EDE8,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap rdtsc pick same pattern
 ?rva007397E0@Rva007397E0@@QBEHHPBUCoord3D@@@Z,,0x007397E0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B890 gap between 0x007397D0 and 0x007397F0 same TU
+?rva00739800@Rva00739800@@QBE?AW4ObjectShroudStatus@@HPBUCoord3D@@@Z,,0x00739800,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B990 gap between 0x007397F0 and 0x00739830 same TU
