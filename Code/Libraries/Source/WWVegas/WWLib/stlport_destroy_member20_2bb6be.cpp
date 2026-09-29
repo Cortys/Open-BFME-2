@@ -29,3 +29,4 @@ __declspec(noinline) void _Destroy<vector<Rva002BB6BE20Rec> *>(vector<Rva002BB6B
 }
 template void _STL::vector<Rva002BB6BE20Rec>::_M_clear();
 template _STL::vector<Rva002BB6BE20Rec>::~vector();
+template _STL::vector<_STL::vector<Rva002BB6BE20Rec> >::~vector();
