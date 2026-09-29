@@ -3086,3 +3086,11 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 FUN_0021042D	0x0021042D	131	blocked	EH ctor 3 BfmeE16 vectors plus 2 vptrs plus append needs layout t=8 model=muse-04
 FUN_005D0BDD	0x005D0BDD	84	blocked	double vptr plus global list append needs MI layout t=12 model=muse-04
 FUN_005761C6	0x005761C6	84	blocked	double vptr MI ctor plus append same wall as 005D0BDD t=3 model=muse-04
+?rva00581F80@Rva00581F80@@QAEHH@Z	0x00581F80	440	blocked	440B EH StringBase 3-path LANAPI handler with slots A0 FC C4 plus timeGetTime exceeds quick box t=5 model=muse-08
+?rva00582138@LANAPI@@QAEXPAULANMessage@@PBUBfmeNetAddress@@@Z	0x00582138	101	partial	100B in-place AsciiString temp via StringInline shape needs prologue push ecx plus saved-esp in ebp-4 not dead arg slot ebp+8 t=25 model=muse-08 score=0.95 stash=reverse/attempts/0x00582138.cpp
+?rva0044770F@GameSlot@@QBE_NXZ	0x0044770F	100	partial	100B 38ins zero structural regions only 8B copy scheduling mov ebp-8 ecx before mov eax eax+4 vs retail reversed t=20 model=muse-08 score=0.98 stash=reverse/attempts/0x0044770f.cpp
+?rva0044A808@LANAPI@@QAEXVAsciiString@@HI@Z	0x0044A808	249	partial	ebx-edi mirror off-vs-slotAddr plus temp esp-this order plus vtable load placement plus byte-store bl-vs-imm t=30 model=muse-08 score=0.92 stash=reverse/attempts/0x0044a808.cpp
+?Rva00270BD9Blend@@YAHXZ	0x00270BD9	205	blocked	custom convention float on stack plus two pointers in esi edi per caller 0x270CA6 lea setup no MSVC convention expresses it t=10 model=muse-08
+?Rva005B9378Ticker@@YAXHH@Z	0x005B9378	178	blocked	slot ebp+8 used as int index for format and table and as UnicodeString object for concat and releaseBuffer with no visible construction needs signature evidence t=10 model=muse-08
+??0Rva004F55A0@@QAE@XZ	0x004F55A0	119	blocked	unknown MI class with two vptrs plus three int lists plus base vptr overwrite needs class ID via caller or vtable evidence beyond budget t=15 model=muse-08
+??0Rva003B417E@@QAE@XZ	0x003B417E	122	partial	copy-ctor setup plus edi save hoisted above vptr and early inits plus lea edi shifted needs anti-hoist lever t=30 model=muse-08 score=0.95 stash=reverse/attempts/0x003b417e.cpp

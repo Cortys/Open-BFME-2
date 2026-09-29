@@ -1,90 +1,25 @@
-// ?rva0044770F@GameSlot@@QAE_NXZ
-// partial score=0.94 date=2026-09-29
-// ?rva0044770F@GameSlot@@QAE_NXZ
-// partial score=0.94 date=2026-09-29
-// cl: /O1 /MD
+// ?rva0044770F@GameSlot@@QBE_NXZ
+// partial score=0.98 date=2026-09-29
+// ?rva0044770F@GameSlot@@QBE_NXZ
+// partial score=0.98 date=2026-09-29
+// cl: /O1 /G7 /Oy- /DNDEBUG /MD
 //
-// ?rva0044770F@GameSlot@@QAE_NXZ @0x0044770F 100B.
-// Local-address slot test: if human and global 0x00DFE958 present, compare
-// connectInfo +0x38 as BfmeNetAddress against virtual slot 0x100 result via
-// rowed Rva00248CBF 0x00248CBF; retry with port+8 copy; else false. Evidence:
-// unlock lane; callees isHuman 0x003FF0F1 plus Rva00248CBF rowed; callers in
-// 0x00447794 0x004477C7 0x004454A1; neighbour shares flags.
+// ?rva0044770F@GameSlot@@QBE_NXZ, retail 0x0044770F, 100 bytes.
+// Chain via BfmeNetAddress compare 0x00248CBF plus GameSlot isHuman 0x003FF0F1
+// plus null-checked global 0x009FE958 slot 64 returning address plus embedded
+// address at GameSlot+0x38 plus port bump by 8 on the copied address.
+
+typedef unsigned int UnsignedInt;
+typedef unsigned short UnsignedShort;
+typedef unsigned char UnsignedByte;
 typedef int Int;
 typedef bool Bool;
-typedef unsigned short WideChar;
-
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class GameSlot;
-
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-public:
-	void set(const StringBase<T> &other);
-};
-
-class AsciiString
-{
-private:
-	void *m_data;
-};
-
-class UnicodeString
-{
-	friend class GameSlot;
-
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that);
-	~UnicodeString();
-
-private:
-	StringBase<WideChar> m_data;
-};
-
-struct GameSlotConnectInfo
-{
-	unsigned int m_nat;
-	unsigned int m_port;
-};
 
 struct BfmeNetAddress
 {
 	bool Rva00248CBF(const BfmeNetAddress *other) const;
-
-	unsigned int m_key0;
-	unsigned short m_key4;
-};
-
-struct NetAddr8
-{
-	unsigned int m_ip;
-	union
-	{
-		unsigned int m_w;
-		struct
-		{
-			unsigned short m_port;
-			unsigned short m_pad;
-		};
-	};
+	UnsignedInt ip;
+	UnsignedShort port;
 };
 
 struct Global009FE958
@@ -105,55 +40,50 @@ struct Global009FE958
 	virtual int v52(); virtual int v53(); virtual int v54(); virtual int v55();
 	virtual int v56(); virtual int v57(); virtual int v58(); virtual int v59();
 	virtual int v60(); virtual int v61(); virtual int v62(); virtual int v63();
-	virtual const NetAddr8 *v64();
+	virtual BfmeNetAddress *v64();
 };
-#define TheGlobal00DFE958 (*(Global009FE958 **)0x00DFE958)
+#define TheGlobal009FE958 (*(Global009FE958 **)0x009FE958)
 
 class GameSlot
 {
 public:
-	virtual void _v0();
-	virtual void _v4();
-	virtual void _v8();
-	virtual void _vC();
-	virtual void reset();
 	Bool isHuman() const;
-	bool rva0044770F();
+	Bool rva0044770F() const;
 
 private:
-	Int m_state;                    // +0x04
-	Bool m_isAccepted;              // +0x08
-	Bool m_hasMap;                  // +0x09
-	Bool m_isMuted;                 // +0x0A
-	char m_pad0B;                   // +0x0B
-	Int m_color;                    // +0x0C
-	Int m_startPos;                 // +0x10
-	Int m_bfme14;                   // +0x14
-	Int m_playerTemplate;           // +0x18
-	Int m_teamNumber;               // +0x1C
-	Int m_bfme20;                   // +0x20
-	Int m_origColor;                // +0x24
-	Int m_origStartPos;             // +0x28
-	Int m_origPlayerTemplate;       // +0x2C
-	UnicodeString m_name;           // +0x30
-	AsciiString m_ip;               // +0x34
-	GameSlotConnectInfo m_connectInfo; // +0x38
+	void *m_vtable;
+	Int m_state;
+	Bool m_isAccepted;
+	Bool m_hasMap;
+	Bool m_isMuted;
+	char m_pad0B[1];
+	Int m_color;
+	Int m_startPos;
+	Int m_bfme14;
+	Int m_playerTemplate;
+	Int m_teamNumber;
+	Int m_bfme20;
+	Int m_origColor;
+	Int m_origStartPos;
+	Int m_origPlayerTemplate;
+	char m_pad30[8];
+	BfmeNetAddress m_addr38;
 };
 
-// ?rva0044770F@GameSlot@@QAE_NXZ present-unmatched
-bool GameSlot::rva0044770F()
+// ?rva0044770F@GameSlot@@QBE_NXZ present-unmatched
+Bool GameSlot::rva0044770F() const
 {
 	if (!isHuman())
 		return false;
-	Global009FE958 *g = TheGlobal00DFE958;
-	if (g != 0) {
-		NetAddr8 tmp;
-		const BfmeNetAddress *conn = (const BfmeNetAddress *)&m_connectInfo;
-		if (((const BfmeNetAddress *)g->v64())->Rva00248CBF(conn))
+	Global009FE958 *g = TheGlobal009FE958;
+	if (g != 0)
+	{
+		const BfmeNetAddress *mine = &m_addr38;
+		if (g->v64()->Rva00248CBF(mine))
 			return true;
-		tmp = *TheGlobal00DFE958->v64();
-		tmp.m_port += 8;
-		return ((const BfmeNetAddress *)&tmp)->Rva00248CBF(conn);
+		BfmeNetAddress tmp = *TheGlobal009FE958->v64();
+		tmp.port += 8;
+		return tmp.Rva00248CBF(mine);
 	}
 	return false;
 }
