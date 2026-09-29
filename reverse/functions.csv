@@ -41704,3 +41704,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
 ??0Rva005AFE86@@QAE@PAX@Z,,0x005AFE86,85,Code/GameEngine/Source/Common/Rva005AFE86Ctor.cpp,matched,chain ctor vtable append via Get
 ?rva0059640C@Rva00596389@@QAEXPAX@Z,,0x0059640C,58,Code/GameEngine/Source/Common/Rva0025BFE3Derived.cpp,matched,triple virtual dispatch with TwoBytes local
+?rva005960C1@Rva0025C061@@QAE_NPAX@Z,,0x005960C1,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus base Science push via visible callee

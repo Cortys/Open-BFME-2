@@ -120,6 +120,7 @@ class Rva0025C061
 public:
 	void rva0025C061(void *holder);
 	bool rva00596472(void *holder);
+	bool rva005960C1(void *holder);
 private:
 	int m_unk0;
 	_STL::vector<ScienceType, _STL::allocator<ScienceType> > m_sciences;
@@ -157,6 +158,22 @@ bool Rva0025BF8C::rva00596491(void *holder)
 	if (((unsigned char)Rva00596446Get(holder)) != 0)
 	{
 		rva0025BF8C(holder);
+		return true;
+	}
+	return false;
+}
+// ?rva005960C1@Rva0025C061@@QAE_NPAX@Z @0x005960C1 31B
+// __thiscall predicate over holder: requires Rva00596095Get(holder)!=0
+// (byte test al), then calls this Rva0025C061::rva0025C061(holder) with same
+// ecx and returns true, else false. Same-this ECX survives because callee
+// definition is visible in this TU (shape-lever visibility).
+// Evidence: push [esp+4] call 0x596095 test al je; push [esp+4] call 0x25C061;
+// mov al1 jmp xor al ret4; caller at 0x004E0257; ecx pass-through.
+bool Rva0025C061::rva005960C1(void *holder)
+{
+	if (((unsigned char)Rva00596095Get(holder)) != 0)
+	{
+		rva0025C061(holder);
 		return true;
 	}
 	return false;
