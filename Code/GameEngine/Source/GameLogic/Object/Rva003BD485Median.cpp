@@ -32,3 +32,24 @@ Rva003BD485Keyed **Rva003BD485Median(Rva003BD485Keyed **a, Rva003BD485Keyed **b,
 		return c;
 	return b;
 }
+
+// ?Rva003BD4E8SiftUp@@YAXPAPAURva003BD485Keyed@@HHPAU1@@Z @0x003BD4E8 63B.
+// Heap sift-up over the same keyed array: bubbles pivot up from idx while
+// the parent key is below the pivot key, stopping at top or a parent key at
+// or above it. Sibling of the median picker above (same +0x20 key, same
+// quicksort/heap family); caller at 0x003BE5A1. Unlock lane, makes
+// 0x003BE553 ready.
+void Rva003BD4E8SiftUp(Rva003BD485Keyed **base, int idx, int top, Rva003BD485Keyed *pivot)
+{
+	int parent = (idx - 1) / 2;
+	while (idx > top)
+	{
+		Rva003BD485Keyed *p = base[parent];
+		if (p->m_key >= pivot->m_key)
+			break;
+		base[idx] = p;
+		idx = parent;
+		parent = (parent - 1) / 2;
+	}
+	base[idx] = pivot;
+}
