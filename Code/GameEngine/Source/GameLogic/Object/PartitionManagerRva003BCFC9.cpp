@@ -55,3 +55,21 @@ void __stdcall Rva003BD444Set(int value)
 	if (value >= 0)
 		TheRva002D382E->rva002D382E(value);
 }
+
+// ?Rva003BD459Set@@YGXH@Z @0x003BD459 21B: guarded forwarder to rowed Rva002D383F::rva002D383F.
+// Evidence: cmp [esp+4],0 jl ret; mov ecx,[0x00DFF028] jmp 0x002D383F; callee is
+// void(int) thiscall in Rva002D381DCalls.cpp (index 2 of 0/1/2 family via same
+// global); caller 0x003CECEF in huge dispatch; sibling of 0x003BD444 above.
+class Rva002D383F
+{
+public:
+	void rva002D383F(int seconds);
+};
+
+#define TheRva002D383F (*(Rva002D383F **)0x00DFF028)
+
+void __stdcall Rva003BD459Set(int value)
+{
+	if (value >= 0)
+		TheRva002D383F->rva002D383F(value);
+}
