@@ -2895,3 +2895,8 @@ FUN_0052cd03	0x0052CD03	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-
 ?rva005F40B0@Rva005F40B0@@QAEPAXXZ	0x005F40B0	123	blocked	chain method 123B TreeHint-assign-0x2174A4 Release-0x7DEEF append-0x5A0B4C thunks-0x5FC6F7-0x5FC745 virtuals-slots-1-2 flag-0x14 list-plus8 133B-vs-123B 6 regions tmp-zero-vs-uninit EH-state-order missing-state1 xor-vs-keep-eax t=30 model=muse-04
 FUN_008d6b3a	0x004D6B3A	52	blocked	tan cot helper t=tan(x*0.5) zero-guard fdivr fallback. fld order fixed by 0.5f literal and branch by !=. Still fldz vs fldl-0.0 and fucompi-fstp-lahf vs fucompp-fnstsw. /O1 /G7 /O2 tried 6 variants t=18 model=muse-06
 FUN_00992123	0x00592123	229	blocked	Rva004D6134 deserializer via new-memcpy-setter. Tried /O1-Oi-DNDEBUG-EHsc with StringBase set-copy-release plus base-derived. Closest 226B vs 229B. Left push-ebx vs push-esi frame plus obj-in-ebx vs mem plus late-and-18h vs early-zero plus memcpy batching. Needs packet-reader donor plus twin-pin for m20 at 0x317B9B t=22 model=muse-06
+FUN_009E3E1D	0x005E3E1D	36	blocked	virtual global slot 0x38 STL map helper needs donor t=10 model=muse-01
+FUN_006BF0D6	0x002BF0D6	57	blocked	EH dtor with Unwind funclet needs donor class t=8 model=muse-01
+?Rva0056EDBAGet@@YAXPAH0@Z	0x0056EDBA	46	blocked	rdtsc plus data globals needs asm and pins t=8 model=muse-01
+?Rva001F640BInsert@@YGXPAUListNode@@PAU1@ABVRvaSmartPtr@@@Z	0x001F640B	37	blocked	STL list splice needs template instantiation t=6 model=muse-01
+?rva0042438D@Rva0042438D@@QAEXXZ	0x0042438D	49	blocked	STL list clear loop needs donor t=6 model=muse-01
