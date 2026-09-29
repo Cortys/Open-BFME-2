@@ -42109,3 +42109,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva001DC0EC@@QAEPAXI@Z,,0x001DC1E1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,chain after 0x001DC0EC rowed dtor plus rowed delete
 ?xfer@Rva0034117C@@MAEXPAVXfer@@@Z,,0x0034117C,65,Code/GameEngine/Source/Common/Rva0034117CXfer.cpp,matched,Version11 base xfer IsLightCRC Snapshot68
 ?xfer@Rva00341205@@MAEXPAVXfer@@@Z,,0x00341205,50,Code/GameEngine/Source/Common/Rva00341205Xfer.cpp,matched,Version1 base xfer ints 68 6C
+?rva005ED516@Rva005ED445@@QAEXHPBDABVUnicodeString@@@Z,,0x005ED516,109,Code/GameEngine/Source/Common/Rva005ED445Apt.cpp,matched,APT generic suffix setter via level outer tag index

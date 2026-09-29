@@ -65,6 +65,7 @@ class Rva005ED445
 public:
 	void rva005ED445(const UnicodeString &text);
 	void rva005ED4AC(int bonusIndex, const UnicodeString &text);
+	void rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text);
 	void rva005ED8D1(const UnicodeString &text);
 	void rva005ED8FF(int bonusIndex, const UnicodeString &text);
 private:
@@ -89,6 +90,14 @@ void Rva005ED445::rva005ED4AC(int bonusIndex, const UnicodeString &text)
 	AsciiString key;
 	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : &g_Va007BAC1C;
 	key.format("APT:_level%u.%s_RegionBonus%d", m_level, mid, bonusIndex);
+	g_Va009FE4CC->bfmeSetText(key, text, true);
+}
+
+void Rva005ED445::rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text)
+{
+	AsciiString key;
+	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : &g_Va007BAC1C;
+	key.format("APT:_level%u.%s_%s%d", m_level, mid, suffix, suffixIndex);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }
 
