@@ -30,3 +30,10 @@ void __cdecl Rva002C562FPartialSort(void **first, void **middle, void **last, in
 	}
 	Rva002C5556SortHeap(first, middle, comp);
 }
+// ?Rva002C5688PartialSortWrap@@YAXPAPAX00P6A_NPAX1@Z@Z @0x002C5688 27B
+// partial_sort forwarding wrapper over rowed 0x002C562F: forwards
+// (first,middle,last) plus 0 tag and comp; caller 0x002C5711.
+void __cdecl Rva002C5688PartialSortWrap(void **first, void **middle, void **last, HeapLess comp)
+{
+	Rva002C562FPartialSort(first, middle, last, 0, comp);
+}
