@@ -2741,3 +2741,6 @@ FUN_004C781E	0x000C781E	183	blocked	vector _M_insert_overflow over BfmeVectorRec
 ??1Rva004F87F3@@QAE@XZ	0x004F87F3	63	blocked	EH dtor needs unwind without extra calls t=12 model=muse-02
 ?rva004F8DFD@Rva004F8DFD@@QAEHHHPBUPair@@HH@Z	0x004F8DFD	178	blocked	178B vector realloc with 5 calls needs donor t=10 model=muse-02
 ?Rva003BD4C3Insert@@YAXPAPAUNode@@PAU1@1@Z	0x003BD4C3	37	blocked	edx esi swap wall 6 variants t=20 model=muse-02
+FUN_005DDBC6	0x001DDBC6	25	blocked	0-arg ctor passing ebp-1 stack addrs as ints to HH ctor init-list temporaries unclear placement-new gives EH t=15 model=muse-10
+FUN_009538CE	0x005538CE	136	blocked	5-arg tree insert with custom 20B node byte-word value calls Rva382BA1Alloc plus Rebalance needs full arg mapping t=10 model=muse-10
+FUN_00953E47	0x00553E47	232	blocked	340B reset with 26 12B members plus ebp-counter loop member size 8 vs 12 needs padding t=8 model=muse-10
