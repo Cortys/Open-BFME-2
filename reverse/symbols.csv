@@ -6311,3 +6311,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?get@Rva006DBB60ShrNAndField@@QBE_NXZ,0x006DBB60,bool twin of rowed int shrn getter at same address proven by test-al call site in 0x006E3740
 ?ji_006291ae@@YAPAXPAXHI@Z,0x006291AE,twin of rowed YAXXZ same 6B jmp thunk call site 0x00265254 memset
 ?_M_reserve_map_at_back@?$deque@UBfmeNarrowRecord0054FEF1@@V?$allocator@UBfmeNarrowRecord0054FEF1@@@_STL@@@_STL@@IAEXI@Z,0x0042305C,address read from the retail REL32 at 0x005500BB in NarrowRecord _M_push_back_aux_v; folded onto the BfmeE12 body held there
+??0Rva0021915B@@QAE@ABV0@@Z,0x005117F6,icf-twin of pair copy for 8B AsciiString-plus-bool via adjust-heap 0x0021C8D7 call site
