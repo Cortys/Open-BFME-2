@@ -39,6 +39,9 @@
 // ?rva00535BF6@UserPreferences@@QAEHVAsciiString@@@Z @0x00535BF6 74B
 // UserPreferences Wins-getter path: append Wins to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat Wins 0x00868E7C slot 0x18 releaseBuffer gap same TU unlock.
+// ?rva00535C40@UserPreferences@@QAEHXZ @0x00535C40 93B
+// UserPreferences total-wins path: sum Wins-getter over 6 faction table slot 0x18 chain.
+// Evidence: faction table 0x009BE9B0 calls 0x00535BF6 chain same TU.
 template <typename T>
 class StringBase
 {
@@ -99,7 +102,10 @@ public:
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
+	int rva00535C40();
 };
+
+static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
 {
@@ -175,4 +181,13 @@ int UserPreferences::rva00535BF6(AsciiString arg)
 	arg.concat("Wins");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+int UserPreferences::rva00535C40()
+{
+	AsciiString dummy;
+	int sum = 0;
+	for (int i = 0; i < 6; ++i)
+		sum += rva00535BF6(AsciiString(kFactions[i]));
+	return sum;
 }
