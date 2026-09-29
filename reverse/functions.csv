@@ -41841,3 +41841,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002B367CLess@@YG_NPAPAVRva0037DCA5@@0@Z,,0x002B367C,66,Code/GameEngine/Source/Common/Rva002B367CLess.cpp,matched,stdcall comparator float then Get
 ?rva006E3640@AptAnimationPoolData@@QAEXPAVAptCIH@@@Z,,0x006E3640,180,Code/Libraries/Source/Apt/AptAnimationPoolDataBIL.cpp,matched,unlock lane Apt BIL button remover
 ?Rva002EBB53SiftUp@@YAXPAPAU_Rva002EBB53Wrap@@HHPAU1@@Z,,0x002EBB53,72,Code/Libraries/Source/WWVegas/WWLib/Rva002EBB53SiftUp.cpp,matched,heap sift-up via wrapper payload keys unblocks two callers
+?bfmeSkipPrefixed@Gen009D8C30@@QAEXXZ,,0x0060C59D,93,Code/Libraries/Source/xfer/xfer_load.cpp,matched,skip prefixed via stream read and skip

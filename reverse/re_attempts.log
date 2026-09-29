@@ -3083,3 +3083,6 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva0035CA2F@Rva0035CA2F@@QBEPBVOverridable@@U?$StringBase@D@@@Z	0x0035CA2F	133	blocked	family recipe right per PlayerTemplateStoreFind/GetNth plus pinned getFinalOverride but allocator gaps persist 123B vs 133B: result-holder edi vs esi found-block layout preheader reg t=30 model=muse-12
 ?rva001EEBD5@Mouse@@QAEXV?$StringBase@G@@PBU_MouseSixteen@@1@Z	0x001EEBD5	118	partial	same-size 118B: lea-holds-font-ptr vs retail mem-test plus reload plus temp-setup order t=30 model=muse-12 score=0.91 stash=reverse/attempts/0x001eebd5.cpp
 ?rva003F459A@Rva003F459A@@QBEHXZ	0x003F459A	69	blocked	nested-count shape right incl double outer idiv-28 per-iter idiv-48 guard-jbe at 71B vs 69B but saved-reg roles rotated ours divisorebp sumebx indexediboundesi vs retail divisorebx sumedi indexesi boundebx t=35 model=muse-12
+FUN_0021042D	0x0021042D	131	blocked	EH ctor 3 BfmeE16 vectors plus 2 vptrs plus append needs layout t=8 model=muse-04
+FUN_005D0BDD	0x005D0BDD	84	blocked	double vptr plus global list append needs MI layout t=12 model=muse-04
+FUN_005761C6	0x005761C6	84	blocked	double vptr MI ctor plus append same wall as 005D0BDD t=3 model=muse-04

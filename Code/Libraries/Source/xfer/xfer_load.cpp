@@ -36,6 +36,9 @@ class Gen009D8C30
 {
 public:
 	void bfmeSkipPrefixed();
+private:
+	unsigned char m_pad[0x14];
+	BfmeByteStream *m_stream;
 };
 
 class Xfer
@@ -207,4 +210,22 @@ void BlockStreamReader::skipBadBlock(void *snapshot, int size)
 		m_callback(snapshot, m_ctx, m_extra);
 	m_extra = -1;
 	--m_count;
+}
+
+// ?bfmeSkipPrefixed@Gen009D8C30@@QAEXXZ @0x0060C59D 93B.
+// Skip length-prefixed data via stream read plus skip. Evidence: callers beginBlock skipBlock rowed;
+// callee formatText rowed 0x0060C36E plus throw pin 0x00629094; neighbours share /DNDEBUG /MD /O1.
+void Gen009D8C30::bfmeSkipPrefixed()
+{
+	unsigned char prefix;
+	if (m_stream->read(&prefix, 1) != 1)
+	{
+		XferException error;
+		bfmeFormatText(&error, 1, 0);
+		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+	}
+	if (prefix == 0)
+		return;
+	int n = (prefix == 0xff) ? 4 : prefix;
+	m_stream->skip(n, 1);
 }
