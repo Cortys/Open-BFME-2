@@ -261,3 +261,33 @@ template class SubsystemSlot<Radar>;
 // extern GameResultsInterface *TheGameResultsQueue; 0x0022C058 installs 0xbe73c8.
 template class SubsystemSlot<GameClient>;
 template class SubsystemSlot<GameResultsInterface>;
+
+// ---------------------------------------------------------------------------
+// BFME 2-only registrations. Each GameEngine::init site pushes a "TheXxx"
+// literal and a global, and calls its own initSubsystem<T>, whose inlined slot
+// ctor installs the vtable of the SubsystemSlot<T> triple emitted beside the
+// others. That ties the four bodies together, but nothing supplies the CLASS:
+// neither donor declares these globals and no ledger row carries the names, and
+// the literal names the variable, not the type (see game_engine_subsystems.h
+// for the four times reading one off the other was wrong). So T is named after
+// its initSubsystem address; rename it when the class turns up.
+// Rva0022A809Subsystem: site 0x0022ED8D registers "TheCrowdResponseStore" (global 0x00A0307C); slot vtable 0xbe72f4.
+class Rva0022A809Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022A809Subsystem>(Rva0022A809Subsystem *&, AsciiString, Rva0022A809Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022A809Subsystem>;
+// Rva0022A87ESubsystem: site 0x0022EDD3 registers "TheLivingWorldAutoResolveArmorStore" (global 0x00A031F0); slot vtable 0xbe72f8.
+class Rva0022A87ESubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022A87ESubsystem>(Rva0022A87ESubsystem *&, AsciiString, Rva0022A87ESubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022A87ESubsystem>;
+// Rva0022A8F3Subsystem: site 0x0022EE19 registers "TheLivingWorldAutoResolveWeaponStore" (global 0x00A030C0); slot vtable 0xbe72fc.
+class Rva0022A8F3Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022A8F3Subsystem>(Rva0022A8F3Subsystem *&, AsciiString, Rva0022A8F3Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022A8F3Subsystem>;
+// Rva0022A968Subsystem: site 0x0022EE5F registers "TheLivingWorldAutoResolveBodyStore" (global 0x00A030B0); slot vtable 0xbe7300.
+class Rva0022A968Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022A968Subsystem>(Rva0022A968Subsystem *&, AsciiString, Rva0022A968Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022A968Subsystem>;
+// Rva0022A9DDSubsystem: site 0x0022EEA5 registers "TheLivingWorldAutoResolveLeadershipStore" (global 0x00A030A8); slot vtable 0xbe7304.
+class Rva0022A9DDSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022A9DDSubsystem>(Rva0022A9DDSubsystem *&, AsciiString, Rva0022A9DDSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022A9DDSubsystem>;
