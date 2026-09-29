@@ -41686,3 +41686,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00272414@Drawable@@QAEXH@Z,,0x00272414,118,Code/GameEngine/Source/GameClient/Drawable_rva002724FD.cpp,matched,chain lane TheGameLogic predicate plus kind mask plus module walk
 ?doFXObj@TintDrawableFXNugget@@UBEXPBVObject@@0@Z,,0x001E09D8,99,Code/GameEngine/Source/GameClient/TintDrawableFXNuggetDoFXObj.cpp,matched,chain calls 0x00271779 now rowed vtable slot 2 donor doFXObj
 ??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
+??$__pop_heap_aux@PAHHVRva00422CA8@@@_STL@@YAXPAH00VRva00422CA8@@@Z,,0x00423F9F,30,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap aux via pinned 6-arg pop heap

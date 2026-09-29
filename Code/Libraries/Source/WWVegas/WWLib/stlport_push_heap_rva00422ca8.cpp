@@ -75,6 +75,25 @@ void __pop_heap(RandomAccessIter first, RandomAccessIter last,
 template void __pop_heap<int *, int,
 	Rva00422CA8>(int *, int *, int *, int, Rva00422CA8);
 
+// ??$__pop_heap_aux@PAHHVRva00422CA8@@@_STL@@YAXPAH00VRva00422CA8@@@Z
+// retail 0x00423F9F, 30 bytes. Calls the 6-arg __pop_heap overload
+// (ICF twin of the rowed 5-arg 0x00423EF7, pinned) with (first, last-1,
+// last-1, *(last-1), comp, (int*)0). Evidence: caller 0x00424645 in
+// 0x00424637; callee rowed/pinned 0x00423EF7; unblocks 0x00424637.
+template <class RandomAccessIter, class Distance, class Tp, class Compare>
+void __pop_heap(RandomAccessIter first, RandomAccessIter last,
+	RandomAccessIter result, Tp val, Compare comp, Distance *);
+
+template <class RandomAccessIter, class Tp, class Compare>
+void __pop_heap_aux(RandomAccessIter first, RandomAccessIter last,
+	Tp *, Compare comp)
+{
+	__pop_heap(first, last - 1, last - 1, Tp(*(last - 1)), comp, (int *)0);
+}
+
+template void __pop_heap_aux<int *, int,
+	Rva00422CA8>(int *, int *, int *, Rva00422CA8);
+
 template <class RandomAccessIter, class Compare>
 void __make_heap(RandomAccessIter first, RandomAccessIter last, Compare comp)
 {
