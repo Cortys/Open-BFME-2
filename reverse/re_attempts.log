@@ -3404,3 +3404,4 @@ FUN_009dffb6	0x005DFFB6	29	blocked	29B STL Rb_tree BuddyInfo insert_unique wrapp
 FUN_0099614b	0x0059614B	139	blocked	139B STL find-erase plus hero remover plus Get dispatch needs exact vector layout t=10 model=muse-spark
 FUN_00ad2930	0x006D2930	169	blocked	169B Apt GC allocator with IsAllocated asserts no BFME1 donor t=5 model=muse-spark
 ?overflow@BfmeVec440@@QAEXPAUBfmeElem440@@ABU2@ABUBfmeFalse440@@I_N@Z	0x006BFD30	299	blocked	299B BfmeVec440 overflow with GeometryInfo copy plus bfmeCopyFC plus virtual dtor needs overflow recipe t=10 model=muse-spark
+?rva003FA835@Rva003FA835@@QAEXPAM@Z	0x003FA835	67	partial	missing movaps xmm2 xmm0 xmm allocation differs t=30 model=muse-10 score=0.9 stash=reverse/attempts/0x003fa835.cpp
