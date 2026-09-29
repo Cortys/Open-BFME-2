@@ -41336,3 +41336,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0052C266DestroyRange@@YAXPAURva0052BF4DElem@@0@Z,,0x0052C266,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BF4D callers 2
 ?Rva002CF9DCCreate@@YGPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x002CF9DC,37,Code/Libraries/Source/WWVegas/WWLib/Rva002CF9DCCreate.cpp,matched,12-byte NoCase pair node via dup 0x002CF954; 37B exact; caller 0x002CFB77
 ?Rva003BB62C@@YGXH@Z,,0x003BB62C,21,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,null-guarded forwarder to vslot 0x164 via global 0xDFE6E8 caller 0x003CE41F forwards stdcall int
+?rva004D6187@Rva004D60CA@@QAEXV?$StringBase@G@@@Z,,0x004D6187,52,Code/GameEngine/Source/Common/Rva004D6187Set.cpp,matched,Rva004D60CA wide string setter via caller 0x004D187B
