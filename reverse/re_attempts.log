@@ -2874,3 +2874,8 @@ FUN_005a6b14	0x005A6B14	20	blocked	packet disassembly truncated at cmp eax ebx n
 FUN_007086f5	0x003086F5	112	blocked	EH-protected virtual-dispatch loop over this-plus0 vector via arg vtable plus state save-restore at plusC needs class identity t=10 model=muse-spark
 FUN_0047EDBC	0x0007EDBC	244	blocked	244B WW3D particle-texture render with EH plus pin-only loader and RefCountPtr assign t=5 model=muse-spark
 ?rva000B65FD@Rva000B65FD@@QAEHXZ	0x000B65FD	23	partial	round-robin load order wall base-first retail vs handle-first ours t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x000b65fd.cpp
+??1Rva0052CA6CVec@@QAE@XZ	0x0052CA6C	63	blocked	EH vector dtor 63B needs handler 0xb9723a plus state; plain dtor 30B no EH t=10 model=muse-spark
+FUN_0052d1cd	0x0052D1CD	63	blocked	same EH wall as 0x0052CA6C handler 0xb9723a needs member layout t=5 model=muse-spark
+FUN_005a7172	0x005A7172	63	blocked	same EH wall as 0x0052CA6C handler 0xb9e4d3 needs member layout t=3 model=muse-spark
+FUN_0052cb26	0x0052CB26	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark
+FUN_0052cd03	0x0052CD03	63	blocked	same EH wall handler 0xb9723a t=3 model=muse-spark

@@ -161,3 +161,12 @@ void Rva0052CAABVec::rva0052CAAB()
 	if (start != 0)
 		free(start);
 }
+
+// ?Rva0022C8E3DestroyRange@@YAXPAURva0052BF9BElem@@0@Z retail 0x0022C8E3 24B.
+// Unlock lane: calls this TU's 0x0052BF9B with tag temp; unblocks 10 (5
+// ready); 10 callers including 0x0022CADE/0x00565950.
+void Rva0022C8E3DestroyRange(Rva0052BF9BElem *first, Rva0052BF9BElem *last)
+{
+	_STL::__false_type tag;
+	Rva0052BF9BDestroyTagged(first, last, tag);
+}

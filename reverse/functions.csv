@@ -41358,3 +41358,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002E60A7UpperBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C61Comp@@@Z,,0x002E60A7,27,Code/GameEngine/Source/GameClient/GameTextStringLookUpBound.cpp,matched,chain UpperBound wrapper d2 0
 ?Rva00441DEBHeap@@YAXPAPAX0VRva0043FE9A@@@Z,,0x00441DEB,64,Code/GameEngine/Source/GameClient/GUI/Rva00441DEBHeap.cpp,matched,make heap via rowed adjust and caller 0x00442889
 ??0Rva004395EC@@QAE@PAPAXABURva004393D6@@@Z,,0x004395EC,29,Code/Libraries/Source/WWVegas/WWLib/Rva004393D6Copy.cpp,matched,chain copy 0x004393D6 with ptr
+?Rva0022C8E3DestroyRange@@YAXPAURva0052BF9BElem@@0@Z,,0x0022C8E3,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy range via 0052BF9B callers 10
