@@ -2,6 +2,8 @@
 // stlport
 // ?Rva001DE906Copy@@YAPAVRva001DE727@@PAV1@00@Z @0x001DE906 50B array copy of 0x30-sized Rva001DE727 via rowed operator= 0x001DE727.
 // Evidence: chain lane callee rowed; caller 0x001DEE1F; count via sub plus idiv 0x30; loop via operator= plus add 0x30.
+// ?Rva001DE938CopyBackward@@YAPAVRva001DE727@@PAV1@00@Z @0x001DE938 50B array copy-backward of 0x30-sized Rva001DE727 via rowed operator= 0x001DE727.
+// Evidence: chain lane callee rowed; caller 0x001DEE3C; count via sub plus idiv 0x30; loop via operator= plus sub 0x30.
 #define _STLP_NO_EXCEPTIONS 1
 #include <map>
 #include <vector>
@@ -25,6 +27,21 @@ Rva001DE727 *Rva001DE906Copy(Rva001DE727 *first, Rva001DE727 *last, Rva001DE727 
 		*result = *first;
 		++first;
 		++result;
+	} while (--count != 0);
+	return result;
+}
+
+Rva001DE727 *Rva001DE938CopyBackward(Rva001DE727 *first, Rva001DE727 *last, Rva001DE727 *result)
+{
+	int n = (int)(last - first);
+	if (n <= 0)
+		return result;
+	int count = n;
+	do
+	{
+		--last;
+		--result;
+		*result = *last;
 	} while (--count != 0);
 	return result;
 }
