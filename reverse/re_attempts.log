@@ -3126,3 +3126,5 @@ FUN_007aa228	0x003AA228	42	blocked	smart-int ctor with duplicate +0x14 C1C780 st
 FUN_006895f8	0x002895F8	178	blocked	stl vector fill-insert 5-arg obligator plus dup allocators need header ID t=12 model=muse-07
 FUN_007afe48	0x003AFE48	70	blocked	STL __push_heap for 12B float-keyed struct; type identity unproven without deeper heap-type dig t=10 model=muse-spark
 FUN_007c4b97	0x003C4B97	112	blocked	EH prolog plus list-int plus virtuals 9C-A8-10C plus EDI has no init t=10 model=muse-07
+??0WaterTransparencySetting@@QAE@XZ	0x00200D80	249	partial	249B 63insns push-edi plus temp lea hoisted above early inits plus final vtables sunk below floats plus float at plus0x4c unproven 20.0f placeholder for 0x7D5E50 t=28 model=muse-10 score=0.9 stash=reverse/attempts/0x00200d80.cpp
+??0Rva00201618@@QAE@XZ	0x00201618	503	blocked	WeatherSetting ctor via Weather plus EXSnowFlake plus ZH Snow.h donor but BFME2 extensions 170B object with 20plus floats incl 0x7D5E50 unproven plus same store-order wall as 0x00200D80 partial push-edi lea hoist plus vtable sink t=8 model=muse-10

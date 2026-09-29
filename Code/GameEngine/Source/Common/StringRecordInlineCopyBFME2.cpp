@@ -302,3 +302,11 @@ template void _STL::fill<BfmeStringRecord005ED5F3 *, BfmeStringRecord005ED5F3>(B
 template BfmeStringRecord005ED5F3* _STL::__copy_backward<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, int>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::random_access_iterator_tag&, int*);
 template BfmeStringRecord005ED5F3* _STL::__copy_backward_ptrs<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::__false_type&);
 template BfmeStringRecord005ED5F3* _STL::__copy<BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, int>(BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, BfmeStringRecord005ED5F3*, const _STL::random_access_iterator_tag&, int*);
+
+// Complete retail record copy at0x00219B0B.
+struct BfmeStringRecord00219B0B {
+    unsigned int word0; AsciiString text0, text1, text2;
+    BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o);
+};
+BfmeStringRecord00219B0B::BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o) : word0(o.word0), text0(o.text0), text1(o.text1), text2(o.text2) {}
+template void _STL::_Construct<BfmeStringRecord00219B0B,BfmeStringRecord00219B0B>(BfmeStringRecord00219B0B*,const BfmeStringRecord00219B0B&);
