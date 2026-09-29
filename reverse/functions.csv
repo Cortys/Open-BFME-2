@@ -41765,3 +41765,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0070AA40@AptNativeHash@@QAEPAVAsciiString@@XZ,,0x0070AA40,90,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash find key hasData not empty returns key
 ?rva006E01A0@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006E01A0,87,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,CIH type-13 predicate with bUndefOK same shape as rva006DCC60
 ?Rva00447FD5Append@@YAPADPADPAV?$StringBase@D@@0@Z,,0x00447FD5,88,Code/GameEngine/Source/Common/Rva00447FD5Append.cpp,matched,unlock checked string append via set plus concat
+?Rva004478A9Copy@@YAPADPADPBD0@Z,,0x004478A9,96,Code/GameEngine/Source/Common/Rva004478A9Copy.cpp,matched,unlock checked strncpy copy via strlen plus truncate
