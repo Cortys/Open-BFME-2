@@ -42706,3 +42706,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0040C4CB@Rva0040C4CB@@QAEEPAXH@Z,,0x0040C4CB,51,Code/GameEngine/Source/Common/Rva0040C4CBCopy.cpp,matched,chain of rowed 0x0037DE0E plus int and this+0xC0
 ?rva00553222@Rva00553222@@QAEXXZ,,0x00553222,58,Code/GameEngine/Source/GameNetwork/GameSpy/Thread/Rva00553222.cpp,matched,stop thread plus clear plus virtual destroy plus delete
 ?Set_Force_Visible@ParticleEmitterClass@@UAEXH@Z,,0x001A14E0,27,Code/Libraries/Source/WWVegas/WW3D2/ParticleEmitterVisibilityWrappers.cpp,matched,visibility wrapper proven layout slot 132
+??1Rva001EBFE5@@UAE@XZ,,0x001EBFE5,87,Code/Libraries/Source/WWVegas/WWLib/Rva001EBFE5Dtor.cpp,matched,virtual dtor twin vectors 0x1EB945 plus free 0x30830 plus Snapshot BBB554
