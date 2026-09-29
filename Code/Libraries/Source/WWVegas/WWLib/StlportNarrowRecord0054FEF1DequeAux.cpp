@@ -18,3 +18,4 @@ typedef _STL::deque<BfmeNarrowRecord0054FEF1, _STL::allocator<BfmeNarrowRecord00
 typedef char NarrowRecord0054FEF1DequeSize[sizeof(NarrowRecord0054FEF1Deque) == 40 ? 1 : -1];
 
 template void NarrowRecord0054FEF1Deque::_M_push_back_aux_v(const BfmeNarrowRecord0054FEF1 &);
+template void NarrowRecord0054FEF1Deque::push_back(const BfmeNarrowRecord0054FEF1 &);
