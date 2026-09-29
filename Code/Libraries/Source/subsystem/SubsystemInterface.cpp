@@ -311,3 +311,23 @@ template class SubsystemSlot<Rva0022AC9BSubsystem>;
 class Rva0022AD10Subsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022AD10Subsystem>(Rva0022AD10Subsystem *&, AsciiString, Rva0022AD10Subsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022AD10Subsystem>;
+// Rva0022AD85Subsystem: site 0x0022F0D4 registers "TheAiOrdersManager" (global 0x00A01E18); slot vtable 0xbe7324.
+class Rva0022AD85Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AD85Subsystem>(Rva0022AD85Subsystem *&, AsciiString, Rva0022AD85Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AD85Subsystem>;
+// Rva0022ADFASubsystem: site 0x0022F11A registers "TheLightPointSystem" (global 0x00A03158); slot vtable 0xbe7328.
+class Rva0022ADFASubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022ADFASubsystem>(Rva0022ADFASubsystem *&, AsciiString, Rva0022ADFASubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022ADFASubsystem>;
+// Rva0022AEE4Subsystem: site 0x0022F1A4 registers "TheDelayedExperienceLevelGrantSystem" (global 0x00A03144); slot vtable 0xbe7330.
+class Rva0022AEE4Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AEE4Subsystem>(Rva0022AEE4Subsystem *&, AsciiString, Rva0022AEE4Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AEE4Subsystem>;
+// Rva0022AF59Subsystem: site 0x0022F1D1 registers "TheAptPlayer" (global 0x009FE4CC); slot vtable 0xbe7334.
+class Rva0022AF59Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AF59Subsystem>(Rva0022AF59Subsystem *&, AsciiString, Rva0022AF59Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AF59Subsystem>;
+// Rva0022AFCESubsystem: site 0x0022F217 registers "TheLivingWorldPlayerTemplateStore" (global 0x009FF0B0); slot vtable 0xbe7338.
+class Rva0022AFCESubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022AFCESubsystem>(Rva0022AFCESubsystem *&, AsciiString, Rva0022AFCESubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022AFCESubsystem>;
