@@ -37,3 +37,16 @@ private:
 Rva002BAEAB::~Rva002BAEAB()
 {
 }
+
+void *operator new(unsigned int size);
+void operator delete(void *p);
+
+// Anchor: new/delete calls the scalar deleting dtor directly (non-virtual,
+// so devirtualization is a direct ??_G call), emitting the COMDAT for
+// ??_GRva002BAEAB@@QAEPAXI@Z at 0x002BAE8F. Operator new/delete resolve to
+// their rows at 0x0002FDA0/0x0002FD60.
+void Rva002BAEAB_Anchor()
+{
+	Rva002BAEAB *p = new Rva002BAEAB;
+	delete p;
+}
