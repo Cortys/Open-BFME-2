@@ -1,0 +1,41 @@
+// cl: /O1 /DNDEBUG /MD /GX-
+// ?rva003F0442@Rva003F0442@@QAEPBVImage@@XZ, retail 0x003F0442, 36 bytes.
+// __thiscall image getter via AsciiString at +0x120: returns NULL when empty
+// else TheMappedImageCollection->findImageByName. Evidence: rowed isEmpty
+// 0x00001E2F, rowed findImageByName 0x002D92F6, global 0x00DFF078, caller 0x005E2B45.
+template <typename T> class StringBase
+{
+public:
+	bool isEmpty() const;
+private:
+	T *m_data;
+};
+
+class AsciiString : public StringBase<char>
+{
+};
+
+class Image;
+class ImageCollection
+{
+public:
+	const Image *findImageByName(const AsciiString &n);
+};
+
+#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
+
+class Rva003F0442
+{
+public:
+	const Image *rva003F0442();
+private:
+	char m_pad[0x120];
+	AsciiString m_name;
+};
+
+const Image *Rva003F0442::rva003F0442()
+{
+	if (!m_name.isEmpty())
+		return TheMappedImageCollection->findImageByName(m_name);
+	return 0;
+}

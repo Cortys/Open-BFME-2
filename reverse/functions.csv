@@ -41648,3 +41648,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0?$vector@VRva000BB4AC@@V?$allocator@VRva000BB4AC@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x000BCE96,96,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb4ac_allocate_copy.cpp,matched,chain from 0x000B63B2 plus caller 0x000C254B
 ??0Rva000B9AAA@@QAE@XZ,,0x000B9A9E,12,Code/GameEngine/Source/Common/Rva000B9AAACTor.cpp,matched,ctor delegates to rowed 0x000B6A67 plus next dtor 0x000B9AAA
 ?rva003F0DA5@Rva003F0DA5@@QAE_NPAVCreateAHeroData@@@Z,,0x003F0DA5,33,Code/GameEngine/Source/Common/Rva003F0DA5Contains.cpp,matched,find row caller 0x003F11EC unlocks 0x003F11EC
+?rva003F0442@Rva003F0442@@QAEPBVImage@@XZ,,0x003F0442,36,Code/GameEngine/Source/Common/System/Rva003F0442ImageGet.cpp,matched,isEmpty plus TheMappedImageCollection findImageByName caller 0x005E2B45
