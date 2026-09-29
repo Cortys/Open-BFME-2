@@ -35,3 +35,40 @@ private:
 Rva005A71B1::~Rva005A71B1()
 {
 }
+
+// 0x005A734B 119B: dtor stores vtable 0x00871BFC, frees 8 pointers at +0x90C
+// via operator delete 0x0002FD60, destroys global at 0x00A063B0 via slot0
+// with 0 then deletes and nulls it, then destroys Rva005A71B1 at +0x28 via
+// rowed 0x005A71B1. Unblocks ??_G at 0x005A73C2.
+void __cdecl operator delete(void *block);
+
+struct Rva00A063B0Obj
+{
+    virtual void *Unknown00(int x);
+};
+
+extern Rva00A063B0Obj *g_a063b0;
+
+class Rva005A734B
+{
+public:
+    virtual ~Rva005A734B();
+private:
+    unsigned char m_pre[0x24];
+    Rva005A71B1 m_mid;
+    unsigned char m_mid2[0x90C - 0x740];
+    void *m_ptrs[8];
+};
+
+Rva005A734B::~Rva005A734B()
+{
+    for (int i = 0; i < 8; i++) {
+        if (m_ptrs[i])
+            operator delete(m_ptrs[i]);
+    }
+    if (g_a063b0) {
+        void *q = g_a063b0->Unknown00(0);
+        operator delete(q);
+        g_a063b0 = 0;
+    }
+}
