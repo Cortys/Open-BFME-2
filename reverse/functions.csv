@@ -41061,3 +41061,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva004E1A04@@QAE@XZ,,0x004E1A04,47,Code/GameEngine/Source/Common/Rva004E1A04Dtor.cpp,matched,unlock dtor double releaseBuffer state0 then -1 callers 3
 ?rva0030BBE5@Rva0030BBE5@@QAEXH@Z,,0x0030BBE5,20,Code/GameEngine/Source/Common/Rva0030BBE5Set.cpp,matched,guarded setter plus vcall slot11
 ?rva0030B96B@Rva0030B96B@@QAEXH@Z,,0x0030B96B,21,Code/GameEngine/Source/Common/Rva0030B96BReserve.cpp,matched,holder ensure via reserve clamp 2
+?rva002AAE81@Rva002AAE81@@QAEXVAsciiString@@@Z,,0x002AAE81,52,Code/GameEngine/Source/Common/RTS/Rva002AAE81Set.cpp,matched,AsciiString at 8 via temp dst-src callers 0x2AAF19
