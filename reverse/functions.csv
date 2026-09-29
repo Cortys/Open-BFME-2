@@ -42031,3 +42031,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00536CF2@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536CF2,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesWonRTS setter slot2C same TU
 ??1Rva001ED0DE@@QAE@XZ,,0x001ED0DE,92,Code/Libraries/Source/WWVegas/WWLib/Rva001ED0DEDtor.cpp,matched,dtor vectors plus strings via rowed
 ??$_Destroy@PAVRva001ED0DE@@@_STL@@YAXPAVRva001ED0DE@@0@Z,,0x001ED34A,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva001ed0de_destroy.cpp,matched,range destroy stride 0x24 via rowed dtor
+??1?$vector@VRva001ED0DE@@V?$allocator@VRva001ED0DE@@@_STL@@@_STL@@QAE@XZ,,0x001ED363,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy plus free
