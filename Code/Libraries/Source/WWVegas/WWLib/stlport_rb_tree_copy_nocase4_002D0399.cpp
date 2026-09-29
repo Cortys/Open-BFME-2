@@ -1,0 +1,17 @@
+// cl: /O1 /EHs /D_STLP_NO_EXCEPTIONS /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?_M_copy@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@3@UBfmeStringNoCaseLess@@V?$allocator@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@3@@_STL@@AAEPAU?$_Rb_tree_node@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@2@PAU32@0@Z @0x002D0399 115B.
+// NoCase _M_copy: recursive copy through rowed _M_clone_node 0x002CFE27 with
+// self recursion. Same 115B shape as OwnedRecord900 _M_copy 0x002D0326.
+// Emitted via explicit instantiation of this one member; _M_clone_node stays
+// an external call resolved by its ledger row. Callers at 0x002D03C2
+// 0x002D03EF (self) and 0x002D089E unblocks 0x002D0867.
+#include <map>
+struct NoCaseTreeValue4 { public: unsigned char m_data[4]; };
+class AsciiString { public: void *m_data; };
+struct BfmeStringNoCaseLess
+{
+	bool operator()(const AsciiString &left, const AsciiString &right) const;
+};
+typedef _STL::_Rb_tree<AsciiString, _STL::pair<const AsciiString, NoCaseTreeValue4>, _STL::_Select1st<_STL::pair<const AsciiString, NoCaseTreeValue4> >, BfmeStringNoCaseLess, _STL::allocator<_STL::pair<const AsciiString, NoCaseTreeValue4> > > NoCaseTree4CF550;
+template NoCaseTree4CF550::_Link_type NoCaseTree4CF550::_M_copy(NoCaseTree4CF550::_Link_type, NoCaseTree4CF550::_Link_type);
