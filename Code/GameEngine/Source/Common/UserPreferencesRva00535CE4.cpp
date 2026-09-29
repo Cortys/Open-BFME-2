@@ -4,6 +4,10 @@
 // with (arg, 0), return its int, EH dtor via releaseBuffer.
 // Evidence: concat 0x00005629, slot6 0x18, releaseBuffer 0x00036410, ret 4,
 // unblocks 5, callers 10, sibling UserPreferencesWinsLossesVs.
+// ?rva0053587C@UserPreferences@@QAEXVAsciiString@@H@Z @0x0053587C 71B
+// UserPreferences Points path: append Points, slot 0x2C virtual with (arg, x), void ret 8.
+// Evidence: concat Points 0x00868E24, slot 0x2C, releaseBuffer, unblocks 2, callers 2,
+// sibling 0x00535CE4 same TU(flags pins).
 template <typename T>
 class StringBase
 {
@@ -45,7 +49,13 @@ public:
 	virtual void v4();
 	virtual void v5();
 	virtual int v6(const AsciiString &s, int x);
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11(const AsciiString &s, int x);
 	int rva00535CE4(AsciiString arg);
+	void rva0053587C(AsciiString arg, int x);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -53,4 +63,10 @@ int UserPreferences::rva00535CE4(AsciiString arg)
 	arg.concat("Losses");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+void UserPreferences::rva0053587C(AsciiString arg, int x)
+{
+	arg.concat("Points");
+	v11(arg, x);
 }

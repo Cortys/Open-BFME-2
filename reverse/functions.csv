@@ -41863,3 +41863,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0027272B@Drawable@@QAEHXZ,,0x0027272B,34,Code/GameEngine/Source/GameClient/Drawable_rva00272BE7.cpp,matched,Drawable module scan first nonzero slotD0 caller 0x004087F7
 ?find@Rva004CABE5Store@@QAE_NHPAURva002C99FB@@PBVRva000CF0D6@@@Z,,0x004CABE5,74,Code/GameEngine/Source/Common/BfmeObject544Find.cpp,matched,find via bit test plus indexed assign
 ?rva00535CE4@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535CE4,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Losses via slot6 concat
+?rva0053587C@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053587C,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Points via slot2C sibling Losses
