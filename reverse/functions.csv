@@ -41702,3 +41702,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00596491@Rva0025BF8C@@QAE_NPAX@Z,,0x00596491,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus hero remover via visible callee
 ?Rva00523EFFEqual@@YAHPBURva00523DB7@@0@Z,,0x00523EFF,35,Code/Libraries/Source/WWVegas/WWLib/Rva00523EFFEqual.cpp,matched,8B struct int plus StringBase compare via 7x caller 0x0052408B
 ??$__uninitialized_fill_n@PAUTreeKey00242F5E@@IU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@IABU1@ABU__false_type@0@@Z,,0x00523E27,37,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EFillN.cpp,matched,fill_n TreeKey stride 8 via dup Construct 0x00523DD4 caller 0x00524547
+??0Rva005AFE86@@QAE@PAX@Z,,0x005AFE86,85,Code/GameEngine/Source/Common/Rva005AFE86Ctor.cpp,matched,chain ctor vtable append via Get
