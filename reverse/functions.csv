@@ -41708,3 +41708,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003F1F38CopyBackward@@YAPADPAD00@Z,,0x003F1F38,50,Code/Libraries/Source/WWVegas/WWLib/Rva003F1F38CopyBackward.cpp,matched,counted copy-backward stride 12 via vector uint assign 0x0026F4F4 caller 0x003F24D6
 ?rva003F1093@Rva003F1093@@QAE_NPAVCreateAHeroData@@PAH@Z,,0x003F1093,61,Code/GameEngine/Source/Common/System/Rva003F1093Check.cpp,matched,thiscall check hero+0x1c is this hero+0x20 nonzero caller 0x003F1CB6
 ?rva00439325@Rva00439325@@QAEXPAURva00439325Node@@@Z,,0x00439325,59,Code/Libraries/Source/WWVegas/WWLib/Rva00439325Erase.cpp,matched,chain lane rb erase via rebalance plus dtor plus free
+??$__median@PAHVRva00422CA8@@@_STL@@YAPAHPAH00VRva00422CA8@@@Z,,0x00423134,108,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva00422ca8.cpp,matched,unlock median via q4sort donor and partition sibling
