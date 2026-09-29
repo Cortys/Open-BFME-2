@@ -24,6 +24,17 @@ struct Rva0060CAEANode
 	_STL::string m_key;
 };
 
+struct Rva0060CAEAIterator
+{
+	Rva0060CAEANode *m_cur;
+	const void *m_ht;
+
+	Rva0060CAEAIterator(Rva0060CAEANode *cur, const void *ht)
+		: m_cur(cur), m_ht(ht)
+	{
+	}
+};
+
 struct Rva0060CAEABuckets
 {
 	void **_M_start;
@@ -44,6 +55,7 @@ class Rva0060CAEA
 {
 public:
 	Rva0060CAEANode *rva0060CAEA(const _STL::string &key) const;
+	Rva0060CAEAIterator rva0060CB61(const _STL::string &key);
 
 private:
 	int m_00;
@@ -59,4 +71,9 @@ Rva0060CAEANode *Rva0060CAEA::rva0060CAEA(const _STL::string &key) const
 	{
 	}
 	return first;
+}
+
+Rva0060CAEAIterator Rva0060CAEA::rva0060CB61(const _STL::string &key)
+{
+	return Rva0060CAEAIterator(rva0060CAEA(key), this);
 }
