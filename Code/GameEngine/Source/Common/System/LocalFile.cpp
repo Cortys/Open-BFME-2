@@ -248,6 +248,7 @@ class StreamingArchiveFile : public RAMFile
 {
 public:
 	virtual ~StreamingArchiveFile();
+	virtual void close( void );
 	virtual bool openFromArchive(File *archiveFile, const AsciiString &filename, int offset, int size);
 	virtual int read(void *buffer, int bytes);
 
@@ -324,15 +325,19 @@ StreamingArchiveFile::~StreamingArchiveFile()
 // Closes the current file if it is open. Must be called once per successful
 // LocalFile::open.
 //
-// Left unclaimed on purpose. The body is a bare tail jump to File::close, so it
-// compiles to the same five bytes an incremental-link thunk does, and the
-// address the vtable gives (slot 2, retail 0x009D2540) is already carried by
-// ?j_009d2540@@YAXXZ in Code/gen_small/gthunks_086.cpp -- which does jump to
-// File::close at 0x009CB880, so the two claims are indistinguishable by bytes.
-// Repointing it would orphan that generated definition; the row is worth one
-// function and the retraction is a separate commit's work.
-// ?close@LocalFile@@UAEXXZ present-unmatched
+// BFME 2 retail 0x00605A7D: slot 2 of both LocalFile vtables (0x0087AB28 and
+// the derived 0x0087AAE0), a bare 5-byte tail jump to File::close. (In BFME 1
+// the same address was already carried by a generated incremental-link thunk
+// row, which is why the donor leaves this unclaimed; nothing claims it here.)
 void LocalFile::close( void )
+{
+	File::close();
+}
+
+// Zero Hour StreamingArchiveFile::close verbatim. Slot 2 of the
+// StreamingArchiveFile vtable (0x0087AA50) is the same 0x00605A7D: identical
+// bytes to LocalFile::close, folded by /OPT:ICF.
+void StreamingArchiveFile::close( void )
 {
 	File::close();
 }
