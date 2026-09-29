@@ -3113,3 +3113,5 @@ FUN_0060CAEA	0x0060CAEA	65	blocked	hashtable string find div bucket register wal
 ?Rva002B459E@@YAXXZ	0x002B459E	133	blocked	binary search with Less plus Rva assign Release plus lea ecx mystery t=5 model=muse-10
 ?rva003A2897@Rva003A2897Holder@@QAE_NW4NameKeyType@@@Z	0x003A2897	86	blocked	ArmorStore private map needs friend or header t=10 model=muse-10
 ??0Made002CC64B@@QAE@XZ	0x00508BE5	97	partial	and-zero 0128 before lea vs after plus float 0134 unproven 1.0f t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x00508be5.cpp
+?_M_insert_overflow@?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@IAEXPAVCameraMarker@@ABV3@ABU__false_type@2@I_N@Z	0x000C1E4A	178	blocked	align exact in cameramarker TU but gate needs E8 allocate plus dups plus CameraMarker clear t=15 model=muse-spark
+?_M_insert_overflow@?$vector@UBfmeNarrowRecord00079C23@@V?$allocator@UBfmeNarrowRecord00079C23@@@_STL@@@_STL@@IAEXPAUBfmeNarrowRecord00079C23@@ABU3@ABU__false_type@2@I_N@Z	0x000C365B	183	blocked	overflow exact except allocate Pod44 vs NarrowRecord and Rva20A3 dtor vs M_clear t=10 model=muse-spark

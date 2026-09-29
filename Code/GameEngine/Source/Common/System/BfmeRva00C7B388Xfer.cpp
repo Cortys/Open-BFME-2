@@ -154,7 +154,7 @@ public:
     class Version;
 
     Xfer();
-    virtual ~Xfer();
+    virtual ~Xfer() {}
 
     void Version1();
 
@@ -227,6 +227,8 @@ class BfmeRva00C7B388 : public Xfer
 {
 public:
     static void __cdecl Print(BfmeRva00C7B388 *self, const char *format, ...);
+
+    virtual ~BfmeRva00C7B388();
 
     virtual Xfer &operator==(bool &value);
     virtual Xfer &operator==(char &value);
@@ -524,4 +526,34 @@ Xfer &BfmeRva00C7B388::XferEnum(const char *name, void *data, unsigned int size)
     Print(this, "\n");
     m_bfme04 = false;
     return *this;
+}
+
+// 0x0060DED5 54B: dtor. Stores derived vtable 0x00C7B388, destroys the
+// narrow-string vector at +0x0C (rowed 0x000C0399), then stores base vtable
+// 0x00BBB910 with no base call (empty inline base). EH prolog arms state 0
+// around the vector call. Caller 0x0060DF0E.
+namespace _STL
+{
+template <class T> class allocator
+{
+};
+template <class T> class char_traits
+{
+};
+template <class C, class Tr, class A> class basic_string
+{
+	char m_pad[12];
+};
+template <class T, class A> class vector
+{
+public:
+	~vector();
+};
+}
+
+BfmeRva00C7B388::~BfmeRva00C7B388()
+{
+	typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > NarrowString;
+	typedef _STL::vector<NarrowString, _STL::allocator<NarrowString> > NarrowStringVec;
+	((NarrowStringVec *)&m_bfme0C)->~NarrowStringVec();
 }
