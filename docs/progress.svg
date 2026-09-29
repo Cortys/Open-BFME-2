@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="262" viewBox="0 0 880 262" role="img" aria-labelledby="title desc">
   <title id="title">BFME 2: 31.39% byte-matched, 7.17% linked</title>
-  <desc id="desc">2,504,311 of 7,978,500 code bytes rebuild to game.dat's exact bytes; 572,353 of them are in files that link cleanly (measured 2026-09-29). Whole game 19.28%.</desc>
+  <desc id="desc">2,504,382 of 7,978,500 code bytes rebuild to game.dat's exact bytes; 572,353 of them are in files that link cleanly (measured 2026-09-29). Whole game 19.28%.</desc>
   <style>
     .card { fill: #0d1117; stroke: #30363d; } .track { fill: #21262d; }
     .strong { fill: #f0f6fc; } .muted { fill: #8b949e; } .up { fill: #3fb950; } .down { fill: #f85149; }
@@ -21,7 +21,7 @@
     <text x="28" y="64" class="strong" font-size="15" font-weight="600">Byte-matched</text>
     <text x="852" y="64" class="strong" font-size="20" font-weight="700" text-anchor="end">31.39%</text>
     <rect class="track" x="28" y="74" width="824" height="14" rx="7"/>
-    <rect x="28" y="74" width="258.64" height="14" rx="7" fill="#2ea043"/>
+    <rect x="28" y="74" width="258.65" height="14" rx="7" fill="#2ea043"/>
     <text x="28" y="116" class="strong" font-size="15" font-weight="600">Linked</text>
     <text x="852" y="116" class="strong" font-size="20" font-weight="700" text-anchor="end">7.17%</text>
     <rect class="track" x="28" y="126" width="824" height="14" rx="7"/>
