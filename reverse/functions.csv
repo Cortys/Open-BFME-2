@@ -41273,3 +41273,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0052BF9BDestroyTagged@@YAXPAURva0052BF9BElem@@0ABU__false_type@_STL@@@Z,,0x0052BF9B,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x14 caller 1
 ?Rva00440B1BPartition@@YAPAPAXPAPAX0PAXVRva0043FE9A@@@Z,,0x00440B1B,73,Code/GameEngine/Source/GameClient/GUI/Rva00440B1BPartition.cpp,matched,unguarded partition with Rva0043FE9A comp caller 0x004434B5
 ?Rva00440B93Adjust@@YAXPAPAXHHPAXVRva0043FE9A@@@Z,,0x00440B93,76,Code/GameEngine/Source/GameClient/GUI/Rva00440B93Adjust.cpp,matched,push-heap adjust with Rva0043FE9A comp caller 0x004419ED
+?Rva002E56E2Greater@@YG_NPBDPBUStringLookUp@@@Z,,0x002E56E2,47,Code/GameEngine/Source/GameClient/GameTextStringLookUpLess.cpp,matched,unlock upper-bound twin of Less reversed args

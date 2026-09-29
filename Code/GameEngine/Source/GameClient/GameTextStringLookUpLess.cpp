@@ -34,3 +34,8 @@ bool __stdcall Rva002E56B3Less(const StringLookUp *left, const char *right)
 {
 	return _strcmpi(left->label->str(), right) < 0;
 }
+
+bool __stdcall Rva002E56E2Greater(const char *left, const StringLookUp *right)
+{
+	return _strcmpi(left, right->label->str()) < 0;
+}
