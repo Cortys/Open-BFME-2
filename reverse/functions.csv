@@ -41670,3 +41670,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00357A97@ScriptEngine@@QAE_NABVAsciiString@@_N@Z,,0x00357A97,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357A97.cpp,matched,list1A260 find erase like 357A36
 ?rva0035721A@ScriptEngine@@QAE_NHABVAsciiString@@_NH@Z,,0x0035721A,98,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva0035721A.cpp,matched,lists1A2B8 like 3571B8
 ?rva0035727C@ScriptEngine@@QAE_NHABVAsciiString@@_NH@Z,,0x0035727C,98,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva0035727C.cpp,matched,lists1A308 like 3571B8
+?rva003572DE@ScriptEngine@@QAE_NHABVAsciiString@@_NH@Z,,0x003572DE,98,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva003572DE.cpp,matched,lists1A358 like 3571B8
