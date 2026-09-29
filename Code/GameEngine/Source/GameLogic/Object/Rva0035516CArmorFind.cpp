@@ -46,10 +46,17 @@ class Rva0035516C
 public:
 	const ArmorTemplate *rva0035516C(NameKeyType key) const;
 	bool rva003551B5(NameKeyType key) const;
+	void rva003551EA(NameKeyType key) const;
 
 private:
 	char m_pad[0x24]; // +0x00..+0x24 unknown
 	ArmorTemplateMap m_map; // +0x24
+};
+
+class Rva0054840A
+{
+public:
+	void rva00548700();
 };
 
 const ArmorTemplate *Rva0035516C::rva0035516C(NameKeyType key) const
@@ -66,4 +73,12 @@ bool Rva0035516C::rva003551B5(NameKeyType key) const
 	if (found)
 		return found->m_check != 0;
 	return false;
+}
+
+void Rva0035516C::rva003551EA(NameKeyType key) const
+{
+	const ArmorTemplate *found = rva0035516C(key);
+	if (!found)
+		return;
+	((Rva0054840A *)found)->rva00548700();
 }
