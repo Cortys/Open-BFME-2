@@ -41847,3 +41847,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$upper_bound@PAHHVRva00422CA8@@@_STL@@YAPAHPAH0ABHVRva00422CA8@@@Z,,0x00423098,83,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,upper_bound int Rva00422CA8 callee rowed 0x00422CA8 caller 0x004235C4
 ?rva002CED84@Rva002CEE1B@@QAEXPAX00@Z,,0x002CED84,83,Code/GameEngine/Source/Common/Rva002CEE1BAdd.cpp,matched,Rva002CEE1B array slot fill via caller 0x0004C878 and dtor layout
 ??$__uninitialized_fill_n@PAUBfmeNarrowRecord00079C23@@IU1@@_STL@@YAPAUBfmeNarrowRecord00079C23@@PAU1@IABU1@ABU__false_type@0@@Z,,0x000C0B15,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_79c23_fill.cpp,matched,fill_n via rowed Construct 0x000C0A70 same shape as 0x000C0ACA
+?Rva00548B97Free@@YAXH@Z,,0x00548B97,83,Code/GameEngine/Source/Common/Rva00548B97Free.cpp,matched,free via global table virtuals plus delete

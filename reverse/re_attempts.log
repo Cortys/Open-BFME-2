@@ -3095,3 +3095,5 @@ FUN_005761C6	0x005761C6	84	blocked	double vptr MI ctor plus append same wall as 
 ??0Rva004F55A0@@QAE@XZ	0x004F55A0	119	blocked	unknown MI class with two vptrs plus three int lists plus base vptr overwrite needs class ID via caller or vtable evidence beyond budget t=15 model=muse-08
 ??0Rva003B417E@@QAE@XZ	0x003B417E	122	partial	copy-ctor setup plus edi save hoisted above vptr and early inits plus lea edi shifted needs anti-hoist lever t=30 model=muse-08 score=0.95 stash=reverse/attempts/0x003b417e.cpp
 FUN_0042464E	0x0042464E	63	blocked	EH clear 30B vs 63B t=15 model=muse-spark
+?Rva002B3049CopyBackward@@YAPAVRva002B2F97@@PAV1@00@Z	0x002B3049	47	blocked	copy_backward needs eax then mov esi plus late push t=10 model=muse-10
+?Rva002B445CMedian@@YAPAPAVRva0037DCA5@@PAPAV1@00@Z	0x002B445C	101	blocked	median needs 4 lea ecx ebp14 mystery t=10 model=muse-10
