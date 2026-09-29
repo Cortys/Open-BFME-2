@@ -3185,3 +3185,6 @@ FUN_004a52ae	0x000A52AE	304	blocked	complex GUI draw with SSE UnicodeString and 
 ?Rva003249D2@@YAXPAVGameWindow@@_N@Z	0x003249D2	275	blocked	276vs275 18reg slider-layout wall t=20 model=muse-01
 ?Rva001ECD5FFill@@YAPAUBfmeRecord001ECAF9@@PAU1@IABU1@@Z	0x001ECD5F	37	partial	fill37 pop-cleanup plus return-reg t=15 model=muse-04 score=0.9 stash=reverse/attempts/0x001ecd5f.cpp
 FUN_006ade71	0x002ADE71	77	blocked	multi-map clear-findSlot dual-use plus GameWindow hashtable typedefs plus ICF clear ambiguity t=10 model=muse-spark
+?rva004D6250@Rva004D632D@@QAEXVAsciiString@@@Z	0x004D6250	89	partial	89B exact except lea-push order before operator call t=25 model=muse-02 score=0.95 stash=reverse/attempts/0x004d6250.cpp
+?Rva00101E6DCalc@@YAXHHPAM0HH@Z	0x00101E6D	86	partial	SSE regs exact under Ot; out2 load hoisted to ecx early vs eax late t=28 model=muse-02 score=0.9 stash=reverse/attempts/0x00101e6d.cpp
+?rva005C8176@Rva005C8176@@QAEHMM@Z	0x005C8176	98	blocked	cell load folds into both divs under O1-Os vs retail CSE to xmm2; cols to edi not eax; shared xor tail differs t=35 model=muse-02
