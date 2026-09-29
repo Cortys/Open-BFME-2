@@ -41091,3 +41091,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005DB9BC@Rva005DB98E@@QAEHGG@Z,,0x005DB9BC,40,Code/GameEngine/Source/Common/Rva005DB98EGet.cpp,matched,2D dword at 18 same class
 ?rva003B275A@Rva003B275A@@QAEHXZ,,0x003B275A,17,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003B275AGet.cpp,matched,condition-template first-dword getter via 0x203941; engine 0xDFE16C; caller 0x2096E2
 ?rva0021397C@Rva0021397C@@QAEXXZ,,0x0021397C,30,Code/GameEngine/Source/GameClient/Rva0021397CCleanup.cpp,matched,chain destroy range then free callers 2
+?rva00330D3E@RadiusDecalTemplate@@QAEMI@Z,,0x00330D3E,83,Code/GameEngine/Source/GameClient/RadiusDecalTemplateRva00330D3E.cpp,matched,unlock lerp clamp via 20 24 28 callers 0x00330E3E 0x003312B3
