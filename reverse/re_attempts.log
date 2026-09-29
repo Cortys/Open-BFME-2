@@ -2973,3 +2973,4 @@ FUN_00756e8e	0x00356E8E	198	blocked	chain UI updater with GameState basename The
 ??_GRva002BBD31@@UAEPAXI@Z	0x002BBD31	28	blocked	calls vector dtor 2BBB57 directly; owner with vector-at-0 guessed but G calls owner D1 not vector; no callers or vtable to prove owner; t=12 model=muse-12
 ?rva002D0867@Rva002D0867@@QAEAAU0@ABU0@@Z	0x002D0867	115	blocked	honest assign cannot call private STL _M_copy C2248 needs access-twin ICF or STL outer with honest clear t=15 model=muse-10
 ?rva005DC499@Rva005DC499@@QAEAAU0@ABU0@@Z	0x005DC499	181	blocked	181B vector fill-assign with 5 callees needs full honest reconstruction t=10 model=muse-10
+?rva002E3E2A@Rva002E3E2A@@QAE...X	0x002E3E2A	39	blocked	transfer m_ptr into out with EH_prolog handler 778B43 plus and ebp-10 zero; tried raw 14B vs 39B missing EH plus auto_ptr member 22B correct move but push-ebp not EH_prolog plus auto_ptr local 45B extra calls; needs EH idiom for 4B struct return t=15 model=muse-12
