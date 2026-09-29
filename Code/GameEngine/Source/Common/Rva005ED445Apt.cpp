@@ -17,6 +17,8 @@ template <typename T> class StringBase
 public:
 	StringBase() : m_data(0) {}
 	void format_va(const T *format, char *args);
+	int compare(const StringBase<T> &other) const;
+	void set(const StringBase<T> &other);
 private:
 	~StringBase() { releaseBuffer(); }
 	void releaseBuffer();
@@ -62,10 +64,13 @@ class Rva005ED445
 {
 public:
 	void rva005ED445(const UnicodeString &text);
+	void rva005ED8D1(const UnicodeString &text);
 private:
 	int m_pad0;
 	int m_level;
 	Rva005ED445Outer m_outer;
+	char m_pad1C[0x28 - 0x0C];
+	UnicodeString m_cached;
 };
 
 void Rva005ED445::rva005ED445(const UnicodeString &text)
@@ -74,4 +79,12 @@ void Rva005ED445::rva005ED445(const UnicodeString &text)
 	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : &g_Va007BAC1C;
 	key.format("APT:_level%u.%s_RegionName", m_level, mid);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
+}
+
+void Rva005ED445::rva005ED8D1(const UnicodeString &text)
+{
+	if (((const StringBase<unsigned short> *)(const void *)&text)->compare(*(const StringBase<unsigned short> *)(const void *)&m_cached) != 0) {
+		rva005ED445(text);
+		((StringBase<unsigned short> *)(void *)&m_cached)->set(*(const StringBase<unsigned short> *)(const void *)&text);
+	}
 }
