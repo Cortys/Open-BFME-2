@@ -18,6 +18,7 @@ public:
 	void *rva002147A1(int index, Object *obj);
 	void *rva002147D1(int index, Object *obj);
 	void *rva00214983(int index);
+	int rva00214713(int key);
 private:
 	char _pad[0x0C];
 	int m_begin;
@@ -61,4 +62,21 @@ void *Rva002147D1::rva00214983(int index)
 		return *(void **)(m_begin + index * 4);
 	}
 	return 0;
+}
+struct Rva00214713Slot { char _pad[0x14]; int m_14; };
+// ?rva00214713@Rva002147D1@@QAEHH@Z retail 0x00214713 37B linear search of same
+// +0x0c array for slot whose +0x14 equals key else -1. Evidence: same +0x0c
+// +0x10 layout; callers at 0x00403774 0x00403EAD.
+int Rva002147D1::rva00214713(int key)
+{
+	Rva00214713Slot **base = *(Rva00214713Slot ***)&m_begin;
+	Rva00214713Slot **end = *(Rva00214713Slot ***)&m_end;
+	int index = 0;
+	for (; base != end; ++index, ++base)
+	{
+		Rva00214713Slot *slot = *base;
+		if (slot->m_14 == key)
+			return index;
+	}
+	return -1;
 }
