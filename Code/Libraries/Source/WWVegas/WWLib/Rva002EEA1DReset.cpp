@@ -13,6 +13,7 @@ struct Rva002EB46E {
     int m_flag;
     void rva002EB46E(_Rva002EB46ENode *p);
     void rva002EEA1D();
+    void rva002EEA46();
 };
 void Rva002EB46E::rva002EEA1D()
 {
@@ -23,4 +24,12 @@ void Rva002EB46E::rva002EEA1D()
     m_head->_m_list = 0;
     m_head->_m_child = m_head;
     m_flag = 0;
+}
+void Rva002EB46E::rva002EEA46()
+{
+    _Rva002EB46ENode *head = m_head;
+    if (!head)
+        return;
+    head->_m_link = *(void **)0x00DBD4D0;
+    *(_Rva002EB46ENode **)0x00DBD4D0 = head;
 }
