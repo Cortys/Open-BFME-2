@@ -146,3 +146,24 @@ void Rva0043C96FEnable(void)
 	g_Va00A01E48->flag = 1;
 	g_Va009FE4CC->enable();
 }
+
+// ?Rva0043C9B3Get@@YAPAXXZ @0x0043C9B3 50B.
+// One-shot guarded singleton getter, twin of 0x004E4179 above: unless guard
+// byte at 0x00A03320 is set, set it, point 0x00A03318 at 0x0083D690
+// (encoded 0x00C3D690) and set byte at 0x00A0331C, registering cleanup RVA
+// 0x007B83E1 (encoded 0x00BB83E1) via rowed _atexit, then return address of
+// 0x00A03318. Caller 0x0043CCD1 uses +4 as flag byte. Unlock lane.
+extern void *g_Va00A03318;
+extern unsigned char g_Va00A0331C;
+extern int g_Va00A03320;
+void *Rva0043C9B3Get(void)
+{
+	if ((g_Va00A03320 & 1) == 0)
+	{
+		g_Va00A03320 |= 1;
+		g_Va00A03318 = (void *)0x00C3D690;
+		g_Va00A0331C = 1;
+		atexit((void (__cdecl *)(void))0x00BB83E1);
+	}
+	return &g_Va00A03318;
+}
