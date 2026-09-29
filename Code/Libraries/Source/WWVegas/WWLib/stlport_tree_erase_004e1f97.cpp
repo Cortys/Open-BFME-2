@@ -41,3 +41,33 @@ void Rva004E1F97::rva004E1F97(Rva004E1F97Node *node)
 		node = left;
 	} while (node != 0);
 }
+
+// ?rva004E21FE@Rva004E21FE@@QAEXXZ, RVA 0x004E21FE, 41B. Chain lane: if
+// count at this+4 nonzero erase header-parent via rowed 0x004E1F97 then
+// reset header left/parent/right to self/0/self and count to 0; /O1 and
+// idioms. Callers at 0x004E29A5/0x004E2E9E/0x004E298B. Owner unknown so
+// honest address-derived names.
+struct Rva004E21FEHeader
+{
+	int m00;
+	Rva004E1F97Node *m04;
+	Rva004E1F97Node *m08;
+	Rva004E1F97Node *m0c;
+};
+struct Rva004E21FE : Rva004E1F97
+{
+	Rva004E21FEHeader *m_header;
+	int m_count;
+	void rva004E21FE();
+};
+
+void Rva004E21FE::rva004E21FE()
+{
+	if (m_count != 0) {
+		rva004E1F97(m_header->m04);
+		m_header->m08 = (Rva004E1F97Node *)m_header;
+		m_header->m04 = 0;
+		m_header->m0c = (Rva004E1F97Node *)m_header;
+		m_count = 0;
+	}
+}
