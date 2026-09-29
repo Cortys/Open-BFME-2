@@ -41668,3 +41668,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00357AF8@ScriptEngine@@QAE_NPAX@Z,,0x00357AF8,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357AF8.cpp,matched,prev ScriptEngine map190B8 compare and Rb increment
 ?rva00357B3D@ScriptEngine@@QAE_NHW4ObjectID@@_N@Z,,0x00357B3D,69,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357B3D.cpp,matched,playerVectors20 find erase via ObjectID
 ?rva00357A97@ScriptEngine@@QAE_NABVAsciiString@@_N@Z,,0x00357A97,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00357A97.cpp,matched,list1A260 find erase like 357A36
+?rva0035721A@ScriptEngine@@QAE_NHABVAsciiString@@_NH@Z,,0x0035721A,98,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva0035721A.cpp,matched,lists1A2B8 like 3571B8
