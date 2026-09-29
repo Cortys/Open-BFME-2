@@ -154,6 +154,7 @@ public:
 
 	Int getStrategicScenario(void);
 	void setStrategicScenario(Int scenario);
+	Int rva0054F5A4(void);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -237,6 +238,19 @@ Real GameModePreferences::getReal(const AsciiString &key, Real defaultValue) con
 Int GameModePreferences::getInt(const AsciiString &key, Int defaultValue) const
 {
 	return UserPreferences::getInt(makeKey(key.str()), defaultValue);
+}
+
+// ?rva0054F5A4@GameModePreferences@@QAEHXZ retail 0x0054F5A4 58B.
+// LobbyRoomID getter over the mode-keyed map: find makeKey("LobbyRoomID")
+// and atoi the value or 0 when missing/empty.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT; callers
+// 0x00385595 0x003855B6; prev Rva0054F508 ctor 0x0054F52F.
+Int GameModePreferences::rva0054F5A4(void)
+{
+	PreferenceMap::const_iterator it = find(makeKey("LobbyRoomID"));
+	if (it == end())
+		return 0;
+	return atoi(it->second.str());
 }
 
 // Zero Hour's LANPreferences on the mode-keyed base (vtable 0x00C3EF04).
