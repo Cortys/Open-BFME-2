@@ -41830,3 +41830,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00355096Xfer@@YAPAVXfer@@PAV1@PAPAVRva0054840A@@@Z,,0x00355096,106,Code/GameEngine/Source/GameLogic/Object/Rva00355096Xfer.cpp,matched,chain via rowed ctor plus rowed xfer caller proves
 ?Rva003B3371Call@@YAXH@Z,,0x003B3371,81,Code/GameEngine/Source/Common/Rva003B3371Call.cpp,matched,free call via global table plus ScriptEngine
 ?rva00531E14@Rva00531E14@@QAEEG@Z,,0x00531E14,71,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,table-walk predicate two word chains caller at 0x00534397
+?rva00531D52@Rva00531E14@@QAEGXZ,,0x00531D52,75,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,same class pop alloc helper callers at 0x00532AFB plus 1
