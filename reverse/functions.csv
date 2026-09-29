@@ -42924,3 +42924,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ??_ERva004D9A3C@@QAEPAXI@Z,,0x00392011,75,Code/GameEngine/Source/Common/Rva004D9A3CVectorDeletingDtor.cpp,matched,vector deleting dtor via delete array helper
 ??1Rva002160C4@@QAE@XZ,,0x002160C4,68,Code/GameEngine/Source/Common/Rva002160C4Dtor.cpp,matched,dtor over three StringBase char via releaseBuffer with EH states callers 0x00216120 0x00217019
 ??1Rva00216108@@QAE@XZ,,0x00216108,53,Code/GameEngine/Source/Common/Rva00216108Dtor.cpp,matched,outer dtor AsciiString plus rowed inner dtor chain from 0x002160C4
+??$__unguarded_insertion_sort@PAUBfmeAssignRecord32@@P6A_NABU1@0@Z@_STL@@YAXPAUBfmeAssignRecord32@@0P6A_NABU1@1@Z@Z,,0x001739CD,23,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_insertion_sort.cpp,matched,insertion sort entry forwarding first last plus NULL plus pred to rowed aux
