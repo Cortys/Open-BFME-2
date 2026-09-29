@@ -64,6 +64,7 @@ class WinInstanceData
 {
 public:
 	void setText(UnicodeString text);
+	void setTooltipText(UnicodeString text);
 
 private:
 	char m_pad[0x19C];
@@ -84,6 +85,7 @@ class GameWindow
 {
 public:
 	virtual int winSetText(UnicodeString text);
+	void rva003148A2(UnicodeString text);
 
 	GameWindowCallback *m_callback; // this+0x04
 	unsigned int m_status; // this+0x08
@@ -100,4 +102,9 @@ int GameWindow::winSetText(UnicodeString text)
 		m_callback->onTextChanged(&text);
 
 	return 0;
+}
+
+void GameWindow::rva003148A2(UnicodeString text)
+{
+	m_instData.setTooltipText(text);
 }

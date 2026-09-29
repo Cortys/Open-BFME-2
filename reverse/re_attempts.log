@@ -3300,3 +3300,8 @@ FUN_00ae3ff0	0x006E3FF0	342	blocked	342B Apt cleanup with 5 Release loops plus m
 FUN_0084bcab	0x0044BCAB	85	blocked	EH ctor with 2 TargetRef plus scopetable needs layout t=4 model=muse-11
 FUN_0047a307	0x0007A307	183	blocked	complex deque-string insert 183B needs donor t=5 model=muse-03
 ?erase@?$vector@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@V?$allocator@V?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@2@@_STL@@QAEPAV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@2@PAV32@0@Z	0x0007A7AA	51	blocked	vector string erase needs 4-arg copy shape t=15 model=muse-03
+?rva00093457@Rva00093457@@QAEXXZ	0x00093457	176	partial	all exact except epilogue pop interleaved with last store t=30 model=muse-02 score=0.97 stash=reverse/attempts/0x00093457.cpp
+?rva0028F6EB@Rva0028F6EB@@QAEHXZ	0x0028F6EB	72	partial	stage2-3 esi-edx mirror persists across 5 variants plain swapped-addends named-temps TAC-sequencing deforder shape-levers-row26 t=20 model=muse-02 score=0.88 stash=reverse/attempts/0x0028f6eb.cpp
+?rva000D6C35@RoadSegment@@QAEPAV1@XZ	0x000D6C35	173	partial	placement-new null check cmp-je plus early lea; bounds lea fixed via float ptr; 0 mem-reg diffs t=30 model=muse-02 score=0.95 stash=reverse/attempts/0x000d6c35.cpp
+?rva0028FAD1@Object@@QAEXPAV1@@Z	0x0028FAD1	158	partial	folded test byte8 vs retail mov-shr-test al1; 0 mem diffs t=30 model=muse-02 score=0.95 stash=reverse/attempts/0x0028fad1.cpp
+?rva003F083A@Rva003F083A@@QAEPAXH@Z	0x003F083A	82	blocked	register wall esi-edi edx-esi eax-ecx persists across 6 variants plus load order end-begin swapped; t=25 model=muse-02
