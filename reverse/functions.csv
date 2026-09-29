@@ -41507,3 +41507,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00565A06@Rva00565A06@@QAEXXZ,,0x00565A06,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy plus free chain sibling
 ??0Rva004382FC@@QAE@ABV0@@Z,,0x00438559,57,Code/GameEngine/Source/GameLogic/Object/Update/Rva004382FCWrapper.cpp,matched,wrapper copy ctor via member copy and tail fields
 ??$_Construct@UBfmePod196@@U1@@_STL@@YAXPAUBfmePod196@@ABU1@@Z,,0x00438E49,18,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod196_wrapper.cpp,matched,pod196 construct via twin-pinned wrapper copy
+?rva0025D358@BfmeStrVM0@@QAEXV?$StringBase@G@@MMHHH@Z,,0x0025D358,112,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,BfmeStrVM0 B0 block set via string plus ints plus floats
