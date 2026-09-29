@@ -108,3 +108,18 @@ void __cdecl Rva0056ED60Pick(int *out1, int *out2)
 	*out1 = g_Va00DD2A2C[i];
 	*out2 = g_Va00DD2A1C[i];
 }
+// ?Rva0056ED8CPick@@YAXPAH0@Z @0x0056ED8C 46B gap rdtsc pick
+extern int g_Va00DD2A3C[4];
+extern int g_Va00DD2A4C[4];
+void __cdecl Rva0056ED8CPick(int *out1, int *out2);
+void __cdecl Rva0056ED8CPick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		rdtsc
+		mov t, eax
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DD2A4C[i];
+	*out2 = g_Va00DD2A3C[i];
+}

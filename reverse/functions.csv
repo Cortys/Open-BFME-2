@@ -41408,3 +41408,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0056ED34Pick@@YAXPAH0@Z,,0x0056ED34,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap between 0x0056ECDA and 0x0056EDBA esp-seed pick
 ?rva00739770@Rva00739770@@QAEXPAX@Z,,0x00739770,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to pinned 0x0073B350 bfmeOneCDE same body as bfmeReleaseABI caller pushes one ptr
 ?Rva0056ED60Pick@@YAXPAH0@Z,,0x0056ED60,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap esp-seed pick same pattern
+?Rva0056ED8CPick@@YAXPAH0@Z,,0x0056ED8C,46,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,gap rdtsc pick same pattern
