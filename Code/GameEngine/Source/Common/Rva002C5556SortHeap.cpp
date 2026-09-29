@@ -47,3 +47,17 @@ void __cdecl Rva0021C83ESortHeap(void **first, void **last, HeapLess comp)
 		--last;
 	}
 }
+// ?Rva0021D31CPartialSort@@YAXPAPAX00HP6A_NPAX1@Z@Z @0x0021D31C 89B
+// __partial_sort twin of 0x002C562F: rowed make_heap 0x002C531B then
+// guarded __pop_heap 0x002C52E0 loop then rowed sort_heap twin 0x0021C83E;
+// caller 0x0021D9A5; unused int tag keeps comp at +0x18.
+void __cdecl Rva0021D31CPartialSort(void **first, void **middle, void **last, int, HeapLess comp)
+{
+	typedef void (__cdecl *PopHeap6)(void **, void **, void **, void *, HeapLess, int);
+	Rva002C531BWrap(first, middle, comp);
+	for (void **i = middle; i < last; ++i) {
+		if (comp(*i, *first))
+			((PopHeap6)Rva002C52E0PopHeap)(first, middle, i, *i, comp, 0);
+	}
+	Rva0021C83ESortHeap(first, middle, comp);
+}
