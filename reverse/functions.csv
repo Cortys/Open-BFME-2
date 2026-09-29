@@ -42039,3 +42039,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00536DCA@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536DCA,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesLostAutoResolve getter slot18 same TU
 ?rva002A7AFE@PlayerList@@QAEXPAX@Z,,0x002A7AFE,30,Code/GameEngine/Source/Common/RTS/PlayerListRva002A7AFE.cpp,matched,chain lane player fanout via armor remove
 ??_GRva001ED0DE@@QAEPAXI@Z,,0x001ED269,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva001ED0DE.cpp,matched,deleting dtor via rowed dtor
+?rva001ED3A2@Rva001ED3A2@@QAEXXZ,,0x001ED3A2,30,Code/GameEngine/Source/Common/Rva001ED3A2Clear.cpp,matched,manual destroy plus free via rowed
