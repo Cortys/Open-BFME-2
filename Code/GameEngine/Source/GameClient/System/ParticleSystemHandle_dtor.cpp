@@ -38,3 +38,20 @@ BfmeParticleSystemHandle::~BfmeParticleSystemHandle()
 	m_previous = 0;
 	m_next = 0;
 }
+
+// ?rva002115C5@Rva002115C5@@QAEXXZ, RVA 0x002115C5, 11B. Unlock lane:
+// conditionally destroys the handle at +0 in place through rowed
+// ??1BfmeParticleSystemHandle@@QAE@XZ at 0x0004CBC0 when its m_system is
+// set; tail-position explicit dtor call with this already in ecx emits jmp,
+// no reload. 40+ callers; unblocks 0x00211ED9/0x00212AD6. Owner unknown so
+// honest address-derived struct (no vtable) holding the real handle first.
+struct Rva002115C5 {
+	BfmeParticleSystemHandle m_handle;
+	void rva002115C5();
+};
+
+void Rva002115C5::rva002115C5()
+{
+	if (m_handle.m_system)
+		m_handle.~BfmeParticleSystemHandle();
+}
