@@ -41714,3 +41714,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001DE556@Rva001DE556@@QAEPAUInsertResult@@PAU2@ABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x001DE556,124,Code/Libraries/Source/WWVegas/WWLib/Rva001DE556Insert.cpp,matched,chain hash insert via bucketIndex compare alloc
 ?rva005960E0@Rva0025BF8C@@QAE_NPAX@Z,,0x005960E0,31,Code/GameEngine/Source/Common/Rva00596095Bits.cpp,matched,thiscall predicate plus hero remover via visible callee
 ?rva0023FBDB@Rva0023FBDB@@QAEXPAURva0023FBDBNode@@@Z,,0x0023FBDB,53,Code/Libraries/Source/WWVegas/WWLib/Rva0023FBDBDestroy.cpp,matched,chain lane tree destroy via recurse plus dtor plus free
+?rva002618A2@Rva002618A2@@QAEPAV1@HHHH@Z,,0x002618A2,88,Code/GameEngine/Source/Common/Rva002618A2.cpp,matched,caller 0x00261CCF pushes 0 0x6d 7 0x59 sibling 0x002618FA same first-0 pattern BitFlags7

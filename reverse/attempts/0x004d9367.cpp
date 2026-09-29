@@ -1,0 +1,38 @@
+// ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z
+// partial score=0.93 date=2026-09-29
+// ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z
+// partial score=0.93 date=2026-09-29
+// cl: /O1 /DNDEBUG /MD /EHsc
+// ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z, retail 0x004D9367, 78 bytes.
+// Strict-less on 0x14-byte key: m0 then flag m4 selects m8/mC vs m10 path.
+// Evidence: callers 0x004D93B5 (inequality via both orders) and 0x004DBC04; neighbours 0x004D9362/0x004D93F7.
+struct Rva004D9367Key
+{
+	int m0;
+	unsigned char m4;
+	char m_pad[3];
+	int m8;
+	int mC;
+	int m10;
+};
+// ?Rva004D9367Less@@YAEPBURva004D9367Key@@0@Z present-unmatched
+unsigned char __cdecl Rva004D9367Less(Rva004D9367Key const *a, Rva004D9367Key const *b)
+{
+	if (a->m0 < b->m0)
+		return 1;
+	if (a->m0 > b->m0)
+		return 0;
+	if (a->m4 != 0) {
+		if (b->m4 == 0)
+			return 0;
+		if (a->m8 < b->m8)
+			return 1;
+		if (a->m8 > b->m8)
+			return 0;
+		return (unsigned char)(a->mC > b->mC);
+	} else {
+		if (b->m4 == 0)
+			return (unsigned char)(a->m10 < b->m10);
+		return 1;
+	}
+}
