@@ -6,10 +6,27 @@ typedef bool (__cdecl *HeapLess)(void *a, void *b);
 
 void __cdecl Rva0021BAFCPopHeap(void **first, void **last, HeapLess comp);
 
+void __cdecl Rva002C531BWrap(void **first, void **last, HeapLess comp);
+void __cdecl Rva002C52E0PopHeap(void **first, void **last, void **result, void *value, HeapLess comp);
+
 void __cdecl Rva002C5556SortHeap(void **first, void **last, HeapLess comp)
 {
 	while ((((char *)last - (char *)first) & ~3) > 4) {
 		Rva0021BAFCPopHeap(first, last, comp);
 		--last;
 	}
+}
+// ?Rva002C562FPartialSort@@YAXPAPAX00HP6A_NPAX1@Z@Z @0x002C562F 89B
+// __partial_sort over 4-byte entries: rowed make_heap 0x002C531B then
+// guarded __pop_heap 0x002C52E0 loop then rowed sort_heap 0x002C5556;
+// caller 0x002C569A; unused int tag keeps comp at +0x18.
+void __cdecl Rva002C562FPartialSort(void **first, void **middle, void **last, int, HeapLess comp)
+{
+	typedef void (__cdecl *PopHeap6)(void **, void **, void **, void *, HeapLess, int);
+	Rva002C531BWrap(first, middle, comp);
+	for (void **i = middle; i < last; ++i) {
+		if (comp(*i, *first))
+			((PopHeap6)Rva002C52E0PopHeap)(first, middle, i, *i, comp, 0);
+	}
+	Rva002C5556SortHeap(first, middle, comp);
 }

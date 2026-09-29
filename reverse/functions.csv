@@ -42400,3 +42400,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva00205D5D@ScriptEngine@@QAEPAURva00205D5DEntry@@ABVAsciiString@@_N@Z,,0x00205D5D,128,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00205D5D.cpp,matched,unlock lane ScriptEngine attack set table find-or-append
 ?Rva002C5556SortHeap@@YAXPAPAX0P6A_NPAX1@Z@Z,,0x002C5556,58,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,sort_heap via rowed pop_heap 0x0021BAFC caller 0x002C567B G7
 ?Rva003C3B2CPopHeap@@YAXPAPAURva003BD485Keyed@@0HH@Z,,0x003C3B2C,30,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap pop-aux via rowed PopHeap chain caller 0x003C4B8E
+?Rva002C562FPartialSort@@YAXPAPAX00HP6A_NPAX1@Z@Z,,0x002C562F,89,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort via rowed make_heap pop_heap sort_heap caller 0x002C569A
