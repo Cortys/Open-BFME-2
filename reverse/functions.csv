@@ -42455,3 +42455,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??0Rva003ADEBF@@QAE@I@Z,,0x005640EC,35,Code/GameEngine/Source/Common/Rva003ADEBFUIntCtor.cpp,matched,uint ctor via rowed base 0x00563FE1 plus Rva003ADEBF vtable pair callers 0x00564152 0x005646D1
 ?rva003C78AF@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x003C78AF,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap after 0x003C7853 plus waypoint shape plus caller 0x003C8C54
 ?rva003C75DD@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x003C75DD,118,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,caller 0x003C7BA0 plus pos plus int1 plus AICMD 0x52
+??0Rva001DD0A0@@QAE@ABU0@@Z,,0x001DD0A0,97,Code/GameEngine/Source/Common/Rva001DD0A0Copy.cpp,matched,copy ctor via Construct pin and fill_insert stride
