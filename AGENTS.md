@@ -265,9 +265,9 @@ written ahead of their addresses, a file can cross that line and become
 uneditable — and nothing re-checks it, because the gate only ever inspects
 *staged* sources.
 
-Measured 2026-09-29 over all 9,067 ledger sources: **116 files are refused
-today, every one of them carrying matched rows**, so none is an exempt parked
-draft. They include the ones with the most remaining work:
+Measured 2026-09-29 over all 9,067 ledger sources: **116 files were refused,
+every one of them carrying matched rows**, so none is an exempt parked draft.
+They include the ones with the most remaining work:
 
 ```
 InGameUI.cpp            121 undeclared definitions
@@ -277,9 +277,27 @@ GameWindowManager.cpp    45
 PhysicsUpdate.cpp        44
 ```
 
-Any edit to one of those — however small, however correct — fails the commit
-until its undeclared definitions are dealt with. Check membership before you
-plan work in a file:
+**79 of those 116 have since been unfrozen, leaving 37** (measured after the
+sweeps below). The recipe that did it is worth reusing, because it is
+self-verifying rather than judgement-based:
+
+1. Run `find_declared_unmatched` on each refused file and read the undeclared
+   definitions it names.
+2. For files with few enough that the report still distinguishes them (**ten**
+   worked; the earlier ceiling of three was needlessly cautious), insert
+   `// ?<Class::method> present-unmatched` above each definition.
+3. **Re-run the gate on that file, and revert it entirely if it still
+   refuses.** A marker on the wrong overload — the `MeshClass::Scale` case —
+   cannot then survive.
+
+That loop took 76 files in two passes with 2 reverts, and the reverts are the
+point: the guard, not a hand-set ceiling, is what makes the marking safe. Files
+with more than ten undeclared definitions still need the definitions read one at
+a time, because past that point the report stops telling you which is which.
+
+Any edit to a still-frozen file — however small, however correct — fails the
+commit until its undeclared definitions are dealt with. Check membership before
+you plan work in a file:
 
 ```sh
 python3 tools/find_declared_unmatched.py <file>   # silent means it will commit
@@ -312,15 +330,24 @@ here: it suggests `reverse/unclaimed_sources_whitelist.txt`, and that file
 exists only in the BFME 1 reference tree, not in this repo. Do not go looking
 for it — marker the definitions or row them.
 
-Do not try to script the marking. The report names each definition as
-`Class::method` with no argument types, so when a file defines two overloads of
-one method — `MeshClass::Scale` is the worked case — nothing in the output says
-which one is undeclared. A marker placed on the wrong overload is caught, and
-caught loudly, but only after the edit: the tool then reports
-`?Scale@MeshClass@@UAEXMMM@Z is matched in functions.csv from this file but
-still marked present-unmatched (stale annotation — remove the marker)`.
-Locate the definition by reading the file, and verify the overload from its
-signature rather than from the name.
+An earlier version of this section said flatly: do not script the marking. That
+was too strong, and the sweeps above are the counter-example — but the reason
+behind it is real. The report names each definition as `Class::method` with no
+argument types, so when a file defines two overloads of one method —
+`MeshClass::Scale` is the worked case — nothing in the output says which one is
+undeclared, and a marker placed on the wrong overload is caught only after the
+edit, and loudly:
+
+```
+?Scale@MeshClass@@UAEXMMM@Z is matched in functions.csv from this file but
+still marked present-unmatched (stale annotation — remove the marker)
+```
+
+So the rule is not "never script it" but "never script it without the guard":
+insert, re-run the gate on that file, and revert the whole file if it still
+refuses. With that loop the overload case is handled automatically — it cost two
+reverts across 78 files. Without it, a script puts markers on matched
+definitions and the failure surfaces one file at a time.
 
 A related trap worth knowing, because it presents identically: a marker
 written `// ?<mangled>,` is not the symbol name. The comma is the ledger row's
