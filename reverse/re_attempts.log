@@ -2734,3 +2734,5 @@ FUN_00782841	0x00382841	56	blocked	vtable slots 0x134 slash 0x14c plus global 0x
 FUN_00483E87	0x00083E87	136	blocked	chain list walk plus 4 COM Releases needs vtable plus ref layout t=12 model=muse-04
 FUN_00483F0F	0x00083F0F	243	blocked	big track update with x87 plus SSE plus globals needs float layout t=8 model=muse-04
 FUN_00484206	0x00084206	107	blocked	EH particle texture plus RefCountPtr needs handle layout t=8 model=muse-04
+FUN_004C2CBF	0x000C2CBF	379	blocked	379B hash distribution idiv div min-max clamps plus compareNoCase plus pin-only push_back exceeds quick box t=3 model=muse-spark
+FUN_004C781E	0x000C781E	183	blocked	vector _M_insert_overflow over BfmeVectorRecord000C0BEC needs sibling allocate pin at 0x395960 plus whole-class instantiation plus cross-type _M_clear BEDF0Record call t=12 model=muse-spark
