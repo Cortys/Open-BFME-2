@@ -67,3 +67,18 @@ void Rva0052BF9BDestroyTagged(Rva0052BF9BElem *first, Rva0052BF9BElem *last, con
 	for (; first != last; ++first)
 		first->~Rva0052BF9BElem();
 }
+
+// ?Rva0052BFB5DestroyTagged@@YAXPAURva0052BFB5Elem@@0ABU__false_type@_STL@@@Z
+// @0x0052BFB5 26B. Unlock lane: same tagged virtual loop as above but stride
+// 0x0C; caller at 0x0052C388; unblocks 0x0052C37A.
+struct Rva0052BFB5Elem
+{
+	virtual ~Rva0052BFB5Elem();
+	char m_pad[8];
+};
+
+void Rva0052BFB5DestroyTagged(Rva0052BFB5Elem *first, Rva0052BFB5Elem *last, const _STL::__false_type &tag)
+{
+	for (; first != last; ++first)
+		first->~Rva0052BFB5Elem();
+}
