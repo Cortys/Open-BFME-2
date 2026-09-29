@@ -18,3 +18,12 @@ struct Rva004393D6 : public _STL::list<BfmePod196>
 Rva004393D6::Rva004393D6(const Rva004393D6 &o) : _STL::list<BfmePod196>(o), m_04(o.m_04), m_08(o.m_08), m_0c(o.m_0c)
 {
 }
+struct Rva004395EC
+{
+	void *m_00;
+	Rva004393D6 m_04;
+	Rva004395EC(void **p, const Rva004393D6 &o);
+};
+Rva004395EC::Rva004395EC(void **p, const Rva004393D6 &o) : m_00(*p), m_04(o)
+{
+}
