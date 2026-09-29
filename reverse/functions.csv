@@ -41393,3 +41393,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002CF21B@Rva002CF21B@@QAEPAXPAXHH@Z,,0x002CF21B,99,Code/GameEngine/Source/Common/Rva002CF21BGet.cpp,matched,manager slot 0x70 via global 0xDFE77C array at +154 Sleep spin via 0xDFF004
 ?rva002C752F@Rva002C752F@@QAEXXZ,,0x002C752F,134,Code/GameEngine/Source/GameLogic/Object/WeaponSetRva002C752F.cpp,matched,six-slot clear via caller 0x0033A888 and WeaponSet neighbours
 ??0Rva004D964E@@QAE@ABV0@@Z,,0x004D964E,63,Code/GameEngine/Source/Common/Rva004D964ECopy.cpp,matched,Rva004D964E copy ctor via two Rva002390CB plus dwords plus byte unblocks 0x004D9A44 0x004D971D
+?rva002CFD96@Rva002CFD96@@QAEPAURva002CFD96Node@@PAU2@0@Z,,0x002CFD96,115,Code/Libraries/Source/WWVegas/WWLib/Rva002CFD96Copy.cpp,matched,115B tree copy via twin of rowed clone 0x0053444F same shape as 0x002CFCEE
