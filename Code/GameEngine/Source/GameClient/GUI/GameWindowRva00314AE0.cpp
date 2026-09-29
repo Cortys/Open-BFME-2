@@ -19,6 +19,7 @@ class W3DDisplay
 public:
 	void rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
 	void rva0004D664(float x0, float y0, float x1, float y1, float w, int color);
+	void rva0008EEF0(float x0, float y0, float w, float h, float a1, int a0);
 };
 
 class Rva0004263F
@@ -40,4 +41,9 @@ void __stdcall Rva00314BC9(int a0, float a1, int a2, int a3, int a4, int a5)
 void __stdcall Rva00314B28(int a0, int a1, int x0, int y0, int x1, int y1)
 {
 	((Rva0004263F *)TheDisplay)->rva0004263F((float)x0, (float)y0, (float)(x1 - x0), (float)(y1 - y0), a0);
+}
+
+void __stdcall Rva00314B75(int a0, float a1, int x0, int y0, int x1, int y1)
+{
+	((W3DDisplay *)TheDisplay)->rva0008EEF0((float)x0, (float)y0, (float)(x1 - x0), (float)(y1 - y0), a1, a0);
 }

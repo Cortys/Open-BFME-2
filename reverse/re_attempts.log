@@ -3468,3 +3468,4 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z	0x006FBAA0	109	partial	missing base vtable store plus EH dword vs byte 100 vs 109 t=20 model=muse-03 score=0.92 stash=reverse/attempts/0x006fbaa0.cpp
 ??0LANAPI@@QAE@XZ	0x00449AB8	193	partial	extra lea base-plus-4 plus early string push plus early OR vs late retail 5 regions minus-1B t=25 model=muse-03 score=0.95 stash=reverse/attempts/0x00449ab8.cpp
 ??0Rva002541FA@@QAE@XZ	0x002541FA	68	partial	xor ecx early vs late only diff 68B 18insns vtable ok t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x002541fa.cpp
+?rva004C0ECE@Rva004C0ECE@@QAEPAXPAX@Z	0x004C0ECE	161	blocked	EH AsciiString with pin-only copy ctor 0x365F0 plus unclaimed handler 0x78FBC9 t=12 model=muse-spark
