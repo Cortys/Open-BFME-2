@@ -9,10 +9,39 @@ struct FrameDataManager
 	void reset(void);
 };
 
+extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
+
+class Object;
+class GameLogic
+{
+public:
+	char m_pad40[0x40];
+	unsigned int m_40;
+};
+
+extern GameLogic *TheGameLogic;
+
+class GlobalData
+{
+public:
+	char m_padC20[0xC20];
+	unsigned int m_C20;
+};
+
+extern GlobalData *TheGlobalData;
+extern unsigned int g_007ED97C;
+
+struct ConnSlot
+{
+	char m_pad[0x34C];
+	unsigned long m_34C;
+};
+
 class BFMEConnectionManager
 {
 public:
 	void init(void);
+	unsigned char rva004CEF58(int slot);
 
 private:
 	char unknown0[4];
@@ -57,4 +86,32 @@ void BFMEConnectionManager::init(void)
 	}
 	while (--framesRemaining != 0);
 	m_initialized = 0;
+}
+
+// ?rva004CEF58@BFMEConnectionManager@@QAEEH@Z, retail 0x004CEF58 106B.
+// Unlock: timeout check via m_localSlot 0x12028 plus +4 conn array
+// plus +0x34C timeGetTime plus m_40 vs g_007ED97C plus m_C20 shift.
+// Callers 0x4D3BA2 0x4D42E3 0x4D4758, prev 0x4CEF44 next 0x4CF032.
+
+unsigned char BFMEConnectionManager::rva004CEF58(int slot)
+{
+	if (slot == m_localSlot)
+		return 1;
+	ConnSlot *conn = *(ConnSlot **)((char *)this + 4 + slot * 4);
+	if (conn == 0)
+		return 1;
+	if (conn->m_34C == 0)
+	{
+		conn->m_34C = timeGetTime();
+		return 1;
+	}
+	unsigned long now = timeGetTime();
+	unsigned int m40 = TheGameLogic->m_40;
+	unsigned int timeout;
+	if (m40 < g_007ED97C)
+		timeout = TheGlobalData->m_C20 << 2;
+	else
+		timeout = TheGlobalData->m_C20;
+	unsigned long elapsed = now - conn->m_34C;
+	return (unsigned char)(timeout >= elapsed);
 }
