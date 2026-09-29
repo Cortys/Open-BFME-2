@@ -1,4 +1,4 @@
-void bfmeFreeVMN(void *place);
+void __cdecl operator delete(void *place);
 
 struct BfmeNodeVMN
 {
@@ -27,7 +27,7 @@ void BfmeTableVMN::bfmeClearVMN()
 		{
 			BfmeNodeVMN *n = p->m_bfme30;
 
-			bfmeFreeVMN(p);
+			::operator delete(p);
 			p = n;
 		}
 	}
@@ -37,7 +37,7 @@ void BfmeTableVMN::bfmeClearVMN()
 	{
 		BfmeNodeVMN *n = p->m_bfme30;
 
-		bfmeFreeVMN(p);
+		::operator delete(p);
 		p = n;
 	}
 }
