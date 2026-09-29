@@ -41256,3 +41256,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005E8077@Rva005E8077@@QAEXXZ,,0x005E8077,30,Code/GameEngine/Source/Common/Bfme/Rva005E8077Clear.cpp,matched,chain via Forward 0x005E7FB0 and free 0x00030830 with callers 0x005E80D0 0x005E8224
 ?xfer@RadiusDecalUpdate@@MAEXPAVXfer@@@Z,,0x003915AE,60,Code/GameEngine/Source/GameLogic/Object/Update/RadiusDecalUpdateXfer.cpp,matched,slot 3 of 0x0081A018 via rowed base and callees OneRing pattern
 ?xfer@Rva0033F33D@@MAEXPAVXfer@@@Z,,0x0034027D,30,Code/GameEngine/Source/Common/Rva0033F33DXfer.cpp,matched,slot 3 Version1 plus Snapshot m20 via 0x30
+??_GRva004E1A04@@QAEPAXI@Z,,0x0052BBBB,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-52BBBB.cpp,matched,chain deleting dtor calls rowed dtor plus delete

@@ -2848,3 +2848,4 @@ FUN_002817F2	0x002817F2	443	blocked	443B TGA loader with debug string no donor n
 ?rva0029FB03@Rva0029FB03@@QAEXXZ	0x0029FB03	56	blocked	same-destroy-plus-free-plus-33B-SEH-prolog-scope-B750A5-as-586C17 needs-SEH-object t=8 model=muse-spark
 FUN_009e73fb	0x005E73FB	84	blocked	EH prolog with negative this offsets and chained vtable overwrites via caller 0x005CE0B8 plus pin-only clear 0x000AD6F4 t=12 model=muse-05
 ?rva0033121F@RadiusDecalTemplate@@QAEXUCoord3D@@IPAXPAVRadiusDecal@@M@Z	0x0033121F	270	blocked	float eq-zero plus esi save plus movsd copy wall across 6 shapes t=20 model=muse-spark
+??0Rva003EEAFB@@QAE@XZ	0x003EEAFB	164	blocked	EH ctor with vtable 0x008363C8 StringBase plus 9 floats plus list needs donor t=8 model=muse-spark
