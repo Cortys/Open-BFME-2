@@ -42700,3 +42700,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00355EE1@Rva003563A7@@QAEXXZ,,0x00355EE1,27,Code/GameEngine/Source/Common/Rva00355D66Dtor.cpp,matched,vslot 3 of Rva003563A7 via Display slot68 plus clear
 ?Rva003ED498Count@@YAXPBX@Z,,0x003ED498,77,Code/GameEngine/Source/Common/Rva003ED498Count.cpp,matched,unlock lane callers 0x003ED658 0x003ED989 via rowed increment
 ?Rva006BE270Fill@@YAXPAUBfmeElem60@@0ABU1@@Z,,0x006BE270,112,Code/GameEngine/Source/Common/Rva0087EAA0Fill.cpp,matched,BfmeVec60 insert fill range with AsciiString op at 0x366F0 via sibling copy flags
+??0Rva003ED658@@QAE@ABV0@@Z,,0x003ED658,53,Code/GameEngine/Source/Common/Rva003ED658Ctor.cpp,matched,chain from 0x003ED498 via rowed vector copy
