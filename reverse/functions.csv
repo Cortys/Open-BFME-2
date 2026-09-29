@@ -42407,3 +42407,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??1Rva005242D7@@QAE@XZ,,0x005242D7,47,Code/Libraries/Source/WWVegas/WWLib/Rva005242D7Chain.cpp,matched,chain dtor via rowed 0x00524021 and vector dtor
 ?Rva0021C83ESortHeap@@YAXPAPAX0P6A_NPAX1@Z@Z,,0x0021C83E,58,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,sort_heap via rowed pop_heap 0x0021BAFC caller 0x0021D368 G7 twin
 ?Rva0021D31CPartialSort@@YAXPAPAX00HP6A_NPAX1@Z@Z,,0x0021D31C,89,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort twin via rowed make_heap pop_heap sort 0x0021C83E
+??0?$DynamicVectorClass@PAD@@QAE@IPBQAD@Z,,0x001A3AE0,94,Code/Libraries/Source/WWVegas/WW3D2/collect.cpp,matched,ICF fold owner - 12 DynamicVectorClass<T> instantiations compile to these identical 94 bytes (drift class exact-ambiguous; all 100% aligned). Rowed under the char instantiation from collect.cpp.
