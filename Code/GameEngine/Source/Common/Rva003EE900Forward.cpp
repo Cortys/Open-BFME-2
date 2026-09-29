@@ -302,3 +302,20 @@ void Rva003EEA1A::rva003EEA1A(Int a, Int b)
 	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E6C, 1);
 	m_owner.rva004E35D5(g_Rva00E02E68, (Int)p, 0);
 }
+
+// ?rva003EEB9F@Rva003EEB9F@@QAEXHH@Z retail 0x003EEB9F 37B. Chain lane: calls
+// rowed 0x004E3629 with string g_Rva00E02E6C then this session's 0x003EEA1A;
+// caller at 0x003EEEA9.
+class Rva003EEB9F
+{
+public:
+	void rva003EEB9F(Int a, Int b);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+void Rva003EEB9F::rva003EEB9F(Int a, Int b)
+{
+	((Rva004E3629 *)&m_owner)->rva004E3629(g_Rva00E02E6C, 1);
+	((Rva003EEA1A *)this)->rva003EEA1A(a, b);
+}
