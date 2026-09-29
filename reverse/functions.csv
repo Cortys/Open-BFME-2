@@ -41834,3 +41834,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CC841@@YAXPAXPAVMade002CC841@@HH@Z,,0x00509780,77,Code/GameEngine/Source/GameLogic/Object/Made002CC841Parse.cpp,matched,Projectile field parser two tables
 ?rva006E3AA0@AptBasePtrStack@@QAEXH@Z,,0x006E3AA0,127,Code/Libraries/Source/Apt/AptBasePtrStackPush.cpp,matched,unlock lane AptBasePtrStack pop via int3 barrier
 ?Rva0035511BXfer@@YAPAVXfer@@PAV1@PAURva0035511BPair@@@Z,,0x0035511B,29,Code/GameEngine/Source/GameLogic/Object/Rva0035511BXfer.cpp,matched,chain via rowed ObjectID plus rowed xfer caller proves
+?q4Notify002CC774@@YAXPAXPAVMade002CC774@@HH@Z,,0x00509379,77,Code/GameEngine/Source/GameLogic/Object/Made002CC774Parse.cpp,matched,DamageField parser two tables
