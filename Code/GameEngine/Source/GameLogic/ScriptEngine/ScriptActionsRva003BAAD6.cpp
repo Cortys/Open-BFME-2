@@ -105,7 +105,7 @@ public:
     virtual void s086();
     virtual void s087();
     virtual void s088();
-    virtual void s089();
+    virtual void s089(int v);
     virtual void s090();
     virtual void s091();
     virtual void s092();
@@ -184,4 +184,12 @@ void Rva003BB641()
 	Rva003BAAD6Holder *p = Rva00DFE6E8;
 	if (p)
 		p->s091();
+}
+
+// ?Rva003BB62C@@YGXH@Z @0x003BB62C 21B null-guarded forwarder to vslot 0x164 via global 0xDFE6E8 caller 0x003CE41F forwards stdcall int
+void __stdcall Rva003BB62C(int v)
+{
+	Rva003BAAD6Holder *p = Rva00DFE6E8;
+	if (p)
+		p->s089(v);
 }
