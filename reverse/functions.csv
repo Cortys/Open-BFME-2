@@ -41540,3 +41540,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00043511@Rva00043511@@QAEXXZ,,0x00043511,43,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva00043511Init.cpp,matched,rowed setFromInt callee plus two white colors plus ints
 ??4Rva002D0136@@QAEAAU0@ABU0@@Z,,0x002D0136,115,Code/Libraries/Source/WWVegas/WWLib/Rva002D0136Assign.cpp,matched,chain tree assign via rowed clear 0x002CF7B5 and rowed copy 0x002CFC7B
 ?rva002D02FD@Rva002D02FD@@QAEXXZ,,0x002D02FD,41,Code/Libraries/Source/WWVegas/WWLib/Rva002D02FDClear.cpp,matched,chain tree clear via rowed erase 0x002CFD61 same shape as rowed 0x002CF807
+??0Rva00423A4A@@QAE@PAURva00423A4A_Range@@@Z,,0x00423A4A,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pE12_holder_00423A4A.cpp,matched,chain holder ctor via rowed range ctor unblocks 0x00423E83
