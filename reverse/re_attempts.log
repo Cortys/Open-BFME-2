@@ -2932,3 +2932,4 @@ FUN_005ddcc5	0x001DDCC5	192	blocked	Rva000427195 bucket copy needs mixed BfmeVec
 ?Rva0025CEEFCheck@@YA_N_N@Z	0x0025CEEF	59	partial	found=true inline je+mov vs retail out-of-line jne+jmp+mov; all regs and operands match t=22 model=muse-spark score=0.95 stash=reverse/attempts/0x0025ceef.cpp
 ?Rva0041A047Send@@YGHKHPAUBuf0041A047@@@Z	0x0041A047	197	blocked	socket connect-send wsock32 IAT register wall esi-vs-eax and late push esi; best 197B same-size 4 structural 4 register t=20 model=muse-04
 ??0Rva0057605D@@QAE@HPAUParent0057605D@@@Z	0x0057605D	84	partial	same-size 84B 24-vs-25 insns second empty base shifts offsets +4 and dword state vs byte t=30 model=muse-04 score=0.9 stash=reverse/attempts/0x0057605d.cpp
+?Rva0027D3D9Forward@@YGXHHPAVMatrix3D@@M@Z	0x0027D3D9	50	partial	48B vs 50B 16/16 insns vtable-temp esi-vs-eax plus early fld-mov order t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0027d3d9.cpp
