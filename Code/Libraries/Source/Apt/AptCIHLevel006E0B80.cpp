@@ -22,6 +22,7 @@ public:
     bool rva006E2460(const AptCIH *other) const;
     void *rva006E0FB0() const;
     const AptCIH *rva006E0CB0() const;
+    bool rva006E0C50(const AptCIH *other) const;
 };
 int AptCIH::rva006E0B80(int nLvl) const
 {
@@ -126,4 +127,22 @@ const AptCIH *AptCIH::rva006E0CB0() const
             return node;
         node = node->m_parent;
     }
+}
+
+// ?rva006E0C50@AptCIH@@QBE_NPBV1@@Z, retail 0x006E0C50, 85 bytes.
+// Parent-chain membership test with !isUndefined() guard, +0x48 walk.
+// Evidence: leaf with caller at 0x006FB209; rowed isUndefined 0x6DC010;
+// same /O2 AptCIH layout as neighbours.
+bool AptCIH::rva006E0C50(const AptCIH *other) const
+{
+    if (((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
+        g_bfmeAptAssertAtE17734("!this->isUndefined()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptCIH.cpp", 0x8A8);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    for (const AptCIH *p = m_parent; p; p = p->m_parent) {
+        if (other == p)
+            return true;
+    }
+    return false;
 }
