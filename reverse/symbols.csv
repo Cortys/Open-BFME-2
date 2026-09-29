@@ -6258,3 +6258,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?rva002CFA30@Rva002CFC7B@@QAEPAURva002CFA30Node@@PBU2@@Z,0x002CFA30,thiscall twin of rowed stdcall clone same 30B body ignores this via call site 0x002CFCB8 reloads ecx
 ??$__uninitialized_copy@PBUBfmeE16@@PAU1@@_STL@@YAPAUBfmeE16@@PBU1@0PAU1@ABU__false_type@0@@Z,0x0052C9AD,ICF twin of Rva0052C9ADGet stride 16 via call site 0x0052CE20
 ?get_allocator@?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QBE?AV?$allocator@UBfmeE16@@@2@XZ,0x0021983A,ICF twin of AsciiString get_allocator via call site 0x0052CE20
+?rva002CFA4E@Rva002CFCEE@@QAEPAURva002CFA4ENode@@PBU2@@Z,0x002CFA4E,thiscall twin of rowed stdcall clone same 30B body ignores this via call site 0x002CFD2B reloads ecx
