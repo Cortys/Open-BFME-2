@@ -64,9 +64,11 @@ class UnicodeString : private StringBase<WideChar>
 {
 	friend class MapMetaData;
 public:
+	UnicodeString() {}
 	UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
 	~UnicodeString() {}
 	void translate(const char *text);
+	void translate(const AsciiString &text);
 };
 
 class GameTextInterface
@@ -100,6 +102,7 @@ class MapMetaData
 {
 public:
 	UnicodeString bfme_getBaseDisplayName();
+	UnicodeString rva00300D0E();
 
 private:
 	UnicodeString m_displayNameLabel;
@@ -157,4 +160,15 @@ UnicodeString MapMetaData::bfme_getBaseDisplayName()
 	}
 
 	return m_cachedBaseDisplayName;
+}
+
+UnicodeString MapMetaData::rva00300D0E()
+{
+	UnicodeString tmp;
+	const char *slash = ((StringBase<char> &)m_fileName).reverseFind('\\');
+	if (slash)
+		tmp.translate(slash + 1);
+	else
+		tmp.translate(m_fileName);
+	return tmp;
 }

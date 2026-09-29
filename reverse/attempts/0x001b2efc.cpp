@@ -1,6 +1,14 @@
 // ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z
-// partial score=0.981395 date=2026-09-08
+// partial score=0.9907 date=2026-09-29
+// ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z
+// partial score=0.9907 date=2026-09-29
 // cl: /O1 /EHsc /DNDEBUG /MD
+// ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z, retail 0x001B2EFC, 215 bytes.
+// Finish from banked 0.98 stash: cached index cursor walk plus binary search
+// over TimeCodes masked with ~0x8000. Evidence: RET8 thiscall with context
+// double-pointer; neighbours BFME2MotionChannelFactory and
+// BFME2Encoding0MotionChannelCtor; two operand-order differences at 0xB1-0xB3
+// (mov edx eax vs mem and xor edx mem vs eax).
 class BFME2Encoding0MotionChannel {
 public:
  void *VTable;

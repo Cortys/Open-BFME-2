@@ -3463,3 +3463,5 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ?rva002D9C37@AudioEventRTS@@QBE_NXZ	0x002D9C37	67	partial	extra dec edx before jmp false only 66of67B case4break case4false cases34 bitflip O2 tried 6 variants t=12 model=muse-07 score=0.98 stash=reverse/attempts/0x002d9c37.cpp
 ??0PhysicsBehavior@@QAE@PAVThing@@PBVModuleData@@@Z	0x003907A6	182	partial	EH state1 eager vs sunk barrier-move confirms MD hoists 2 variants t=10 model=muse-07 score=0.99 stash=reverse/attempts/0x003907a6.cpp
 ?rva006DFEA0@AptMath@@SAXXZ	0x006DFEA0	254	blocked	AptMath clip identity 6 variants direct chained arrays struct barrier O1-O2 all fold stack temp no frame 148vs254 need honest stack-forcing lever t=20 model=muse-07
+?Rva000787BAOpen@@YAPAVFile@@PBD@Z	0x000787BA	117	partial	extra push esi plus esi-vs-ebx for ret 121B vs 117B t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x000787ba.cpp
+?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z	0x001B2EFC	215	partial	two operand-order diffs at 0xB1-0xB3 mov edx eax vs mem t=15 model=muse-04 score=0.9907 stash=reverse/attempts/0x001b2efc.cpp
