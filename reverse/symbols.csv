@@ -6298,3 +6298,5 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??0?$_STLP_alloc_proxy@IUBfmePod20@@V?$allocator@UBfmePod20@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod20@@@1@I@Z,0x0014F3C4,ICF twin of rowed AllocProxyIntCtor_dupB same bytes call site 0x0054FC82 in Pod20 base 0x0054FC5A
 ??0?$_STLP_alloc_proxy@PAPAUBfmePod20@@PAU1@V?$allocator@PAUBfmePod20@@@_STL@@@_STL@@QAE@ABV?$allocator@PAUBfmePod20@@@1@PAPAUBfmePod20@@@Z,0x0014F3C4,ICF twin of rowed AllocProxyIntCtor_dupB same bytes call site 0x0054FC8E in Pod20 base 0x0054FC5A
 ??1PodPayload20@@QAE@XZ,0x0007FAB3,ICF twin of rowed BasicStringCharDtor same bytes dtor for string member call site 0x0054FD8C in destroy 0x0054FD83
+?applyTint@Drawable@@QAEXURGBColor@@IIIMM@Z,0x00271779,chain doFXObj 0x001E09D8 calls applyTint at 0x001E0A30 with TintDrawable RGB times freq amp; boundary 0x00271779/67 same bytes as rowed Rva00271779
+?getDrawable@Object@@QBEPAVDrawable@@XZ,0x005508E2,chain doFXObj 0x001E09D8 calls getDrawable at 0x001E09E5 plus 0x001E09F2 plus 0x001E0A29; boundary 0x005508E2/7 ICF twin of rowed BuildListInfo getter same bytes
