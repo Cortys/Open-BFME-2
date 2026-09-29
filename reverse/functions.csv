@@ -41750,3 +41750,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E0260@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0260,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 12 via rowed get plus rowed isUndefined 4 callers
 ?rva006E0300@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0300,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 16 via rowed get plus rowed isUndefined 2 callers
 ?rva006E0350@BfmeAptValue006DCD20@@QBEHXZ,,0x006E0350,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 17 via rowed get plus rowed isUndefined 4 callers
+?rva006E03A0@BfmeAptValue006DCD20@@QBEHXZ,,0x006E03A0,75,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,AptCIH predicate type 19 via rowed get plus rowed isUndefined 10 callers
