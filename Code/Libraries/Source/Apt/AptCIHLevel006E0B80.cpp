@@ -12,7 +12,8 @@ extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(__debugbreak, _ReadWriteBarrier)
 class AptCIH {
     virtual void vtableSlot0();
-    unsigned char _pad[0x44];
+    unsigned char _pad[0x40];
+    void *m_44;
     AptCIH *m_parent;
     void *m_4C;
     unsigned char _pad3[8];
@@ -23,6 +24,7 @@ public:
     void *rva006E0FB0() const;
     const AptCIH *rva006E0CB0() const;
     bool rva006E0C50(const AptCIH *other) const;
+    bool rva006E0BF0() const;
 };
 int AptCIH::rva006E0B80(int nLvl) const
 {
@@ -145,4 +147,28 @@ bool AptCIH::rva006E0C50(const AptCIH *other) const
             return true;
     }
     return false;
+}
+
+// ?rva006E0BF0@AptCIH@@QBE_NXZ, retail 0x006E0BF0, 89 bytes.
+// Ancestor float-threshold walk with !isUndefined() guard, +0x44/+0x2C check.
+// Evidence: gap between 0x6E0B80 and 0x6E0C50; rowed isUndefined 0x6DC010;
+// caller at 0x006FB1CD; same /O2 AptCIH layout as neighbours.
+extern float g_Va007C26F0;
+struct Rva006E0BF0Aux {
+    unsigned char _pad[0x2C];
+    float m_2C;
+};
+bool AptCIH::rva006E0BF0() const
+{
+    if (((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
+        g_bfmeAptAssertAtE17734("!this->isUndefined()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptCIH.cpp", 0x885);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    for (const AptCIH *node = this; node; node = node->m_parent) {
+        const Rva006E0BF0Aux *aux = (const Rva006E0BF0Aux *)node->m_44;
+        if (aux && aux->m_2C < g_Va007C26F0)
+            return false;
+    }
+    return true;
 }
