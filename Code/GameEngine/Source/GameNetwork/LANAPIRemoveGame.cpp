@@ -6,6 +6,7 @@
 // the removed game. That pointer remains address-derived at 0x00E02EEC.
 
 typedef unsigned char UnsignedByte;
+typedef bool Bool;
 
 class LANGameInfo
 {
@@ -28,6 +29,7 @@ public:
 
 protected:
 	void removeGame( LANGameInfo *game );
+	Bool rva00449969( LANGameInfo *game );
 };
 
 void LANAPI::removeGame( LANGameInfo *game )
@@ -47,4 +49,20 @@ void LANAPI::removeGame( LANGameInfo *game )
 		if( g->getNext() == game )
 			g->setNext( game->getNext() );
 	}
+}
+
+// Retail 0x00449969, 37 bytes. LANAPI game-list membership test over the
+// same +0x10 head and +0xF5C next proven by removeGame above. Honest
+// address name (protected like removeGame/addGame); three callers in
+// unclaimed lobby/game bodies. Unlock lane.
+Bool LANAPI::rva00449969( LANGameInfo *game )
+{
+	if( game == 0 )
+		return false;
+	for( LANGameInfo *g = m_games; g != 0; g = g->m_next )
+	{
+		if( g == game )
+			return true;
+	}
+	return false;
 }

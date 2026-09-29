@@ -41042,3 +41042,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0010B9E5@Rva0010B9E5@@QAEXPAUNode@@@Z,,0x0010B9E5,71,Code/GameEngine/Source/Common/Rva0010959E.cpp,matched,list unlink plus tail plus dual release caller 0x10BB0B
 ??_GRva0039AD56@@UAEPAXI@Z,,0x0039AF5A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-39AF5A.cpp,matched,deleting dtor via rowed base plus delete
 ??_GRva002AE627@@UAEPAXI@Z,,0x002AF53E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-2AF53E.cpp,matched,deleting dtor via rowed base plus delete
+?rva00449969@LANAPI@@IAE_NPAVLANGameInfo@@@Z,,0x00449969,37,Code/GameEngine/Source/GameNetwork/LANAPIRemoveGame.cpp,matched,unlock LANAPI game-list membership test plus removeGame
