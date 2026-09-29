@@ -3,6 +3,16 @@
 // ?Rva003BAAD6@@YAXXZ @0x003BAAD6 14B: free forwarder to virtual slot 0x1A0 via global 0xDFEA3C.
 // Evidence: mov ecx,[0xDFEA3C] mov eax,[ecx] jmp [eax+0x1A0]; callers 0x3CAD41 0x3CC8DF in ScriptActions dispatch with mov ecx,edi no pushes.
 
+template <class T> class StringBase;
+struct Rva0033070EEntry;
+class Rva0033070E
+{
+public:
+	Rva0033070EEntry *rva0033070E(const StringBase<char> &key);
+};
+
+#define Rva00E01DB0 (*(Rva0033070E **)0x00E01DB0)
+
 class Rva003BAAD6Holder
 {
 public:
@@ -32,7 +42,7 @@ public:
     virtual void s023();
     virtual void s024();
     virtual void s025();
-    virtual void s026();
+    virtual void s026(struct Rva0033070EEntry *e);
     virtual void s027();
     virtual void s028();
     virtual void s029();
@@ -118,4 +128,12 @@ public:
 void Rva003BAAD6()
 {
     Rva00DFEA3C->target();
+}
+
+// ?Rva003BB141Notify@@YGXABV?$StringBase@D@@@Z @0x003BB141 34B chain via 0x0033070E caller 0x003CAE0D globals 0xE01DB0 0xDFEA3C slot 0x68
+void __stdcall Rva003BB141Notify(const StringBase<char> &key)
+{
+	Rva0033070EEntry *e = Rva00E01DB0->rva0033070E(key);
+	if (e)
+		Rva00DFEA3C->s026(e);
 }
