@@ -37,3 +37,13 @@ void __cdecl Rva002C5688PartialSortWrap(void **first, void **middle, void **last
 {
 	Rva002C562FPartialSort(first, middle, last, 0, comp);
 }
+// ?Rva0021C83ESortHeap@@YAXPAPAX0P6A_NPAX1@Z@Z @0x0021C83E 58B
+// sort_heap over 4-byte entries via rowed pop_heap 0x0021BAFC; caller
+// 0x0021D368; same HeapLess comp and G7 and-al shape as 0x002C5556.
+void __cdecl Rva0021C83ESortHeap(void **first, void **last, HeapLess comp)
+{
+	while ((((char *)last - (char *)first) & ~3) > 4) {
+		Rva0021BAFCPopHeap(first, last, comp);
+		--last;
+	}
+}
