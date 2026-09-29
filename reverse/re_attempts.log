@@ -3257,3 +3257,4 @@ FUN_0061a651	0x0021A651	119	blocked	name-builder via AsciiString::format %s%s%s 
 ?rva0021D61F@Rva0021D61F@@QAEHXZ	0x0021D61F	56	blocked	member at +0x54 of E50F parent calls tree-clear on this then frees [this] layout conflict t=10 model=muse-spark
 ??1Rva0021C459@@QAE@XZ	0x0021D5D5	56	blocked	guessed Rva dtor clear+free-header gives 23B frameless vs retail 56B EH_prolog needs EHs TU t=8 model=muse-spark
 ?Rva0021D657Insert@@YAHPAXHH@Z	0x0021D657	29	blocked	wrapper over hinted insert_unique set-vs-tree dual-layout puzzle caller DAA8 t=10 model=muse-spark
+?rva002C58B3@Rva002C589B@@QAEXXZ	0x002C58B3	92	partial	push edi scheduled before byte stores instead of after; all 92B else exact t=12 model=muse-spark score=0.95 stash=reverse/attempts/0x002c58b3.cpp

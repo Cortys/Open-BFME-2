@@ -66,6 +66,7 @@ public:
     void *rva0021AEB9(unsigned int index);
     void *rva0021AF7E(unsigned int index);
     void *rva0021AFEA(unsigned int index);
+    void *rva0021B1B4(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -200,5 +201,20 @@ void *Rva00219B9E::rva0021AFEA(unsigned int index)
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 4;
+    return &err;
+}
+// ?rva0021B1B4@Rva00219B9E@@QAEPAXII@Z @0x0021B1B4 122B
+// Two-level lookup: outer 32B vector at +0x14C selects the element, then the
+// rowed 0x0021AE56 accessor resolves the inner index; either level falls back
+// to its own static error string. Outer elements share the +0x14 Vec216
+// prefix the callee reads, hence the layout-compatible reinterpret cast.
+void *Rva00219B9E::rva0021B1B4(unsigned int o, unsigned int i)
+{
+    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva0021AE56(i);
+    }
     return &err;
 }
