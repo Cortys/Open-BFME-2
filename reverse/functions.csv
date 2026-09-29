@@ -41248,3 +41248,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003EE7E1@Rva003EE7E1@@QAEXH@Z,,0x003EE7E1,105,Code/GameEngine/Source/Common/Rva003EE900Forward.cpp,matched,unlock six-call broadcast strings 64 to 80 caller 1
 ?Rva002CF571Loop@@YAXPAURva002CF571Item@@0PAX@Z,,0x002CF571,26,Code/GameEngine/Source/Common/Rva002CF571Loop.cpp,matched,range loop slot0 stride 0x5c caller 0x2CF891
 ?Rva002CF891Wrap@@YAXPAURva002CF571Item@@0@Z,,0x002CF891,24,Code/GameEngine/Source/Common/Rva002CF891Wrap.cpp,matched,ebp wrapper over loop 0x2CF571 callers 0x2CFB98 0x2D0FE5 0x33C40D
+?rva002CFB90@Rva002CFB90@@QAEXXZ,,0x002CFB90,30,Code/GameEngine/Source/Common/Rva002CFB90Free.cpp,matched,range destroy plus free caller 0x2D0FAD
