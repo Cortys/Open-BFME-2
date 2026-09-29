@@ -41242,3 +41242,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003080AA@Rva003080AA@@QAEPAURva003080AARef@@H@Z,,0x003080AA,25,Code/GameEngine/Source/Common/Rva00142C80LeaIndexer.cpp,matched,addref fetch array plusB8 callers 0x38D9E
 ?rva00308139@Rva00308139@@QAEXABVAsciiString@@@Z,,0x00308139,29,Code/GameEngine/Source/Common/Rva00142C80LeaIndexer.cpp,matched,asciistring assign plus80 flag plus88 caller 0x392A9
 ?rva0035B6B8@Rva0035B6B8@@QAEHH@Z,,0x0035B6B8,16,Code/GameEngine/Source/Common/Rva0035B6B8Getter.cpp,matched,unlock array indexer via 6 callers plus ecx thiscall
+?rva0035B140@Rva0035B140@@QAE_NXZ,,0x0035B140,36,Code/GameEngine/Source/Common/Rva0035B140Pred.cpp,matched,unlock predicate via 4 callers plus ecx thiscall
