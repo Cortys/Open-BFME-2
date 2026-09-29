@@ -2746,3 +2746,4 @@ FUN_009538CE	0x005538CE	136	blocked	5-arg tree insert with custom 20B node byte-
 FUN_00953E47	0x00553E47	232	blocked	340B reset with 26 12B members plus ebp-counter loop member size 8 vs 12 needs padding t=8 model=muse-10
 FUN_00784A00	0x00384A00	98	blocked	same global 0xA02320 plus vtable slots 0x178 0x17c needs large donor interface t=5 model=muse-10
 ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z	0x00248D9D	146	partial	single SIB byte lea base-index order ours 0x38 vs retail 0x07; tried ptr-plus-off off-plus-ptr int-cast paren-regroup subscript spellings plus do-while; all else exact incl relocs t=30 model=muse-03 score=0.99 stash=reverse/attempts/0x00248d9d.cpp
+?rva0010953E@Rva0010959E@@QAEXXZ	0x0010953E	96	partial	96B 24insns 0mem 0reg only xorps placement retail first ours fourth tried Os archSSE barriers cached ptrs t=30 model=muse-01 score=0.96 stash=reverse/attempts/0x0010953e.cpp
