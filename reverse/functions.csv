@@ -42462,3 +42462,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??$__uninitialized_fill_n@PAVRva003A6F70@@IV1@@_STL@@YAPAVRva003A6F70@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00564C58,37,Code/Libraries/Source/WWVegas/WWLib/Rva00564C58FillN.cpp,matched,fill_n stride 0x20 via rowed _Construct 0x0052BD04 unblocks 0x00565DA2
 ??4Rva00564DCB@@QAEAAU0@ABU0@@Z,,0x00564DCB,39,Code/Libraries/Source/WWVegas/WWLib/Rva00564DCBCopyAssign.cpp,matched,copy-assign 0x10 stride via rowed OpaqueRef op 0x00239099 unblocks 0x005657B2
 ?Rva00564C7DFill@@YAPAVRva003A6360Record@@PAV1@IABV1@@Z,,0x00564C7D,40,Code/GameEngine/Source/Common/Bfme/Rva00564C7DFill.cpp,matched,counted copy-construct loop via rowed copy ctor 0x0052BB9A caller 0x0056602F
+?rva002EDEAB@Rva002EDEAB@@QAEXPAURva002EDEABArg@@@Z,,0x002EDEAB,153,Code/GameEngine/Source/GameLogic/AI/Rva002EDEAB.cpp,matched,Path rebuild via GameInfo slot plus GlobalData flag plus new Path plus append

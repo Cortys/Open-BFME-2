@@ -3367,3 +3367,6 @@ FUN_007ed4e5	0x003ED4E5	192	blocked	bitgated map-to-string join needs inline Str
 ?rva005789F3@Rva005789F3@@QAEXXZ	0x005789F3	109	blocked	109B EH loop with virtual via arg plus counter at plus 0x0C plus restore on unwind needs interface modeling t=8 model=muse-spark
 ??0Rva002105A6@@QAE@H@Z	0x00210973	133	partial	EH and-before-vectors plus state 4 vs 3 t=25 model=muse-10 score=0.93 stash=reverse/attempts/0x00210973.cpp
 FUN_005A19C0	0x005A19C0	399	blocked	399B stdcall bool GameSlot-plus-Unicode with virtuals on 0xA02320 plus STL basic_string plus OwnedRecord492 plus clanID REQ literals t=5 model=muse-spark
+FUN_0058DF29	0x0058DF29	143	blocked	factory new-0x28 plus memcpy-thunk x2 plus pushes before YAXXZ dups 0006EDE3 005739F6 need dup signature resolution t=8 model=muse-spark
+?rva00590212@NetPacket@@QAE_NPAVNetCommandRef@@@Z	0x00590212	534	partial	exact-size 534B 150vs152insns; ID needs mov-ax-then-movzx form vs movzx; loop needs indexed-dl form vs pointer-bl form; prolog order t=28 model=muse-spark score=0.93 stash=reverse/attempts/0x00590212.cpp
+?rva0058F078@NetPacket@@QAE_NPAVNetCommandRef@@@Z	0x0058F078	594	partial	599B-173vs171insns zero-reg-diffs; ID load order swapped plus xor-ecx; word block movzx-vs-push-ebx plus extra push t=30 model=muse-spark score=0.96 stash=reverse/attempts/0x0058f078.cpp
