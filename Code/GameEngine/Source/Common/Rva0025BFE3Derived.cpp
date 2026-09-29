@@ -44,6 +44,7 @@ public:
 	Rva00596389(int arg);
 	virtual ~Rva00596389();
 	int rva00596394() const;
+	void rva0059640C(void *holder);
 private:
 	char m_pad08[8];
 	int m_arg10;
@@ -75,4 +76,65 @@ int Rva00596389::rva00596394() const
 {
 	int const *ptr = reinterpret_cast<int const *>(m_arg10);
 	return *(int const *)((char const *)ptr + 0x94) + m_zero14;
+}
+// ?rva0059640C@Rva00596389@@QAEXPAX@Z @0x0059640C 58B
+// __thiscall triple virtual dispatch over holder: builds TwoBytes{1,1} local
+// and calls holder vtable+0x28 with it, then holder vtable+0x78 with this+0x14
+// and vtable+0x7C with this+0x18. EBP frame with push ecx local.
+// Evidence: push ebp mov ebp esp push ecx/esi/edi; mov esi[ebp+8] edi ecx;
+// lea [ebp-4] push mov ecx esi mov [ebp-4]1 [ebp-3]1 call [eax+28];
+// lea [edi+14] push call [eax+78]; add edi18 push call [eax+7c]; ret4.
+// Caller at 0x004DFA38 passes [edi+0xC] as this and holder; prev deleting dtor
+// and +0x14/+0x18 members prove Rva00596389 owner.
+class Holder
+{
+public:
+	virtual void v00(void *);
+	virtual void v01(void *);
+	virtual void v02(void *);
+	virtual void v03(void *);
+	virtual void v04(void *);
+	virtual void v05(void *);
+	virtual void v06(void *);
+	virtual void v07(void *);
+	virtual void v08(void *);
+	virtual void v09(void *);
+	virtual void v10(void *);
+	virtual void v11(void *);
+	virtual void v12(void *);
+	virtual void v13(void *);
+	virtual void v14(void *);
+	virtual void v15(void *);
+	virtual void v16(void *);
+	virtual void v17(void *);
+	virtual void v18(void *);
+	virtual void v19(void *);
+	virtual void v20(void *);
+	virtual void v21(void *);
+	virtual void v22(void *);
+	virtual void v23(void *);
+	virtual void v24(void *);
+	virtual void v25(void *);
+	virtual void v26(void *);
+	virtual void v27(void *);
+	virtual void v28(void *);
+	virtual void v29(void *);
+	virtual void v30(void *);
+	virtual void v31(void *);
+};
+struct TwoBytes
+{
+	unsigned char a;
+	unsigned char b;
+};
+
+void Rva00596389::rva0059640C(void *holder)
+{
+	TwoBytes t;
+	t.a = 1;
+	t.b = 1;
+	Holder *h = (Holder *)holder;
+	h->v10(&t);
+	h->v30(&m_zero14);
+	h->v31(&m_minusOne18);
 }
