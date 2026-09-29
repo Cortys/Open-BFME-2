@@ -42576,3 +42576,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?dup_00843fb0@@YAPADPBG0PAD@Z,,0x00017490,36,Code/Libraries/Source/WWVegas/WWLib/stlport_Rva00843F20CopyWidenNarrow.cpp,matched,BFME1 byte-identical donor; b1 set 0x00843FB0/0x00844010/0x00844070 ICF-folded onto one body; identity unproven so the name stays the donor address token
 ?dup_00843fe0@@YAPAGPBD0PAG@Z,,0x000174C0,35,Code/Libraries/Source/WWVegas/WWLib/stlport_Rva00843F20CopyWidenNarrow.cpp,matched,BFME1 byte-identical donor; b1 set 0x00843FE0/0x00844040/0x008440A0 ICF-folded onto one body; identity unproven so the name stays the donor address token
 ?rva0055EF6E@Rva0055EF6E@@QAEXPAVXfer@@@Z,,0x0055EF6E,87,Code/GameEngine/Source/GameClient/Rva0055EF6E.cpp,matched,unlock xfer version gated float plus 2 bools
+?rva0055EFC5@Rva0055EFC5@@QAEXPAVXfer@@@Z,,0x0055EFC5,28,Code/GameEngine/Source/GameClient/Rva0055EFC5.cpp,matched,chain parent xfer Version1 plus sub 0x0055EF6E
