@@ -41530,3 +41530,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00043024Get@@YA_JXZ,,0x00043024,23,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva0004300D.cpp,matched,perf frequency wrapper via IAT plus rate return
 ?rva00248D35@Rva00248D35@@QAEXHH@Z,,0x00248D35,43,Code/GameEngine/Source/Common/Rva00248D35.cpp,matched,imul stride plus isHuman plus set
 ??_GRva00573F03@@UAEPAXI@Z,,0x00574013,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04.cpp,matched,deleting dtor via rowed dtor 0x00573F03 and delete 0x0002FD60
+??0Rva005737AF@@QAE@XZ,,0x0057379B,20,Code/GameEngine/Source/Common/Rva005737AFCtor.cpp,matched,holder base plus vtable sibling of 0x005734D7
