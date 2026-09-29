@@ -1,7 +1,3 @@
-// ?rva006C0DA0@Rva006C0DA0@@QAEXXZ
-// partial score=0.98 date=2026-09-29
-// ?rva006C0DA0@Rva006C0DA0@@QAEXXZ
-// partial score=0.98 date=2026-09-29
 // cl: /GX
 // ?rva006C0DA0@Rva006C0DA0@@QAEXXZ @ 0x006C0DA0 76B
 // Honest address name: thiscall grid iterator over width*height 12B records.
@@ -17,9 +13,8 @@ private:
 	int m_width;
 	int m_height;
 	unsigned char *m_data;
-	void (__cdecl *m_cb)(int x, int y, int v);
+	void (__cdecl *m_cb)(int x, int y, unsigned char v);
 };
-// ?rva006C0DA0@Rva006C0DA0@@QAEXXZ present-unmatched
 void Rva006C0DA0::rva006C0DA0()
 {
 	unsigned char *end = m_data + (m_height * m_width * 3) * 4;
@@ -29,7 +24,8 @@ void Rva006C0DA0::rva006C0DA0()
 	if (p == end)
 		return;
 	do {
-		m_cb(x, y, *p);
+		int v = *p;
+		m_cb(x, y, v);
 		if (++x == m_width) {
 			x = 0;
 			++y;

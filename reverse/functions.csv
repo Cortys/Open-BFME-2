@@ -42694,3 +42694,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?Rva004F53A3Destroy@@YAXPAVObject@@@Z,,0x004F53A3,32,Code/GameEngine/Source/Common/Thing/Rva004F53A3.cpp,matched,chain via rva0028FB6F plus destroyObject
 ??0Rva0016E400@@QAE@XZ,,0x0016E400,72,Code/Libraries/Source/WWVegas/WWLib/Rva0016E400Ctor.cpp,matched,hash_map 100 buckets via rowed _M_initialize_buckets no vtable
 ??_GRva0040DB52@@UAEPAXI@Z,,0x0040E09B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-10-40E09B.cpp,matched,dtor deleting dtor via family pattern
+?rva006C0DA0@Rva006C0DA0@@QAEXXZ,,0x006C0DA0,76,Code/GameEngine/Source/Common/Rva006C0DA0.cpp,matched,grid iterator width height 12B stride via uchar callback param
