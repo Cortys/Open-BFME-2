@@ -3453,3 +3453,6 @@ FUN_0070DDC0	0x0070DDC0	402	blocked	402B StringPool hash idiv GC with bFound ass
 FUN_00900d68	0x00500D68	56	blocked	EH dtor clear-plus-free needs unwind member empty-inline gives no EH declared-member adds extra call t=12 model=muse-06
 FUN_006b3638	0x002B3638	49	blocked	vector at +0x154 begin-end with AddRef matches top but retail has extra push ecx and ebp-4 zero plus ecx-for-p vs eax; 6 variants incl vector with Oy- and EHsc tried t=25 model=muse-05
 ?rva002E931F@Rva002E931F@@QAE PAV1@PAXPAVObject@@PAX@Z	0x002E931F	136	blocked	overlapping Clear plus inner copy needs layout work t=10 model=muse-04
+?rva00104195@Rva00104195@@QAE_NXZ	0x00104195	67	blocked	leaf float compare register allocation wall t=10 model=muse-02
+??1Rva001095B2@@UAE@XZ	0x001095B2	94	blocked	dtor delete push1 vs push0 plus explicit free wall t=12 model=muse-02
+?gen001610F0@@YAXPAUElem36@@PBU1@@Z	0x001610F0	81	blocked	Elem36 copy push wall plus frame 6 variants t=18 model=muse-02
