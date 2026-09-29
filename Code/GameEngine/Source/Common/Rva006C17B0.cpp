@@ -10,6 +10,7 @@ class Rva006C17B0
 {
 public:
 	void rva006C17B0(bool flag1, bool flag2);
+	void rva006C21B0();
 private:
 	void **m_array;
 	int m_pad4;
@@ -54,4 +55,9 @@ void Rva006C17B0::rva006C17B0(bool flag1, bool flag2)
 		m_count = 0;
 	}
 	m_10 = 0;
+}
+
+void Rva006C17B0::rva006C21B0()
+{
+	rva006C17B0(true, false);
 }
