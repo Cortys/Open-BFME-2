@@ -1,0 +1,32 @@
+// cl: /O1 /MD /EHsc
+// ?rva0038201D@Rva0038201D@@QAEXPAURva0038201DNode@@@Z 0x0038201D 45B
+// Frees sibling-child tree: recurse child at +12, free self, step next at +8.
+// Evidence: self-call plus _free at 0x30830; caller 0x003828B6 passes [eax+4].
+extern "C" void __cdecl free(void* block);
+
+struct Rva0038201DNode
+{
+	int m0;
+	int m4;
+	Rva0038201DNode* m_next;
+	Rva0038201DNode* m_child;
+};
+
+class Rva0038201D
+{
+public:
+	void rva0038201D(Rva0038201DNode* n);
+};
+
+void Rva0038201D::rva0038201D(Rva0038201DNode* n)
+{
+	Rva0038201DNode* cur = n;
+	if (!cur)
+		return;
+	do {
+		rva0038201D(cur->m_child);
+		Rva0038201DNode* next = cur->m_next;
+		free(cur);
+		cur = next;
+	} while (cur);
+}
