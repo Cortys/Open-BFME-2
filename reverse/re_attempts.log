@@ -2738,3 +2738,6 @@ FUN_004C2CBF	0x000C2CBF	379	blocked	379B hash distribution idiv div min-max clam
 FUN_004C781E	0x000C781E	183	blocked	vector _M_insert_overflow over BfmeVectorRecord000C0BEC needs sibling allocate pin at 0x395960 plus whole-class instantiation plus cross-type _M_clear BEDF0Record call t=12 model=muse-spark
 ?Rva00423262PushHeap@@YAXPAHHVRva00422CA8@@@Z	0x00423262	49	blocked	EBP frame plus Oy-minus plus by-value comp got 48B vs 49B but ebx holds value not hole plus parent-val in eax not edi t=20 model=muse-spark
 ?Rva003F2BEBDeleteRange@@YA_NPAPAV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@0_N@Z	0x003F2BEB	33	partial	30B exact except missing lea ecx ebp+10 before call needs thiscall ICF twin of 0x00423FBD t=20 model=muse-spark score=0.91 stash=reverse/attempts/0x003f2beb.cpp
+??1Rva004F87F3@@QAE@XZ	0x004F87F3	63	blocked	EH dtor needs unwind without extra calls t=12 model=muse-02
+?rva004F8DFD@Rva004F8DFD@@QAEHHHPBUPair@@HH@Z	0x004F8DFD	178	blocked	178B vector realloc with 5 calls needs donor t=10 model=muse-02
+?Rva003BD4C3Insert@@YAXPAPAUNode@@PAU1@1@Z	0x003BD4C3	37	blocked	edx esi swap wall 6 variants t=20 model=muse-02

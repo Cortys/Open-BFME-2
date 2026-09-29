@@ -41033,3 +41033,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001FF6AE@Rva001FF6D7@@QAEXXZ,,0x001FF6AE,41,Code/GameEngine/Source/Common/Rva001FF6AEClear.cpp,matched,chain clear via rowed teardown 0x001FF55F caller 0x001FF755
 ?rva002A9BBD@Rva002A9BBD@@QAEPAXXZ,,0x002A9BBD,23,Code/GameEngine/Source/Common/Rva002A9BBDGet.cpp,matched,ptr chase plus virtual slot 12 tail call
 ??0Rva0030F47A@@QAE@PAX@Z,,0x0030F47A,53,Code/GameEngine/Source/Common/Rva0030F47ACtor.cpp,matched,vtable ctor via playerlist
+?Rva0030B31ASwap@@YAXPAURegion2D@@0@Z,,0x0030B31A,41,Code/GameEngine/Source/Common/Rva0030B31ASwap.cpp,matched,swap two Region2D via temp copy plus movsd
