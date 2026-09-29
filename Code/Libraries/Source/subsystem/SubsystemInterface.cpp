@@ -347,3 +347,7 @@ template class SubsystemSlot<Rva0022B12DSubsystem>;
 class Rva0022B1A2Subsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022B1A2Subsystem>(Rva0022B1A2Subsystem *&, AsciiString, Rva0022B1A2Subsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022B1A2Subsystem>;
+// Rva0022B28CSubsystem: site 0x0022F3A1 registers "TheLinearCampaignManager" (global 0x009FDC8C); slot vtable 0xbe7350.
+class Rva0022B28CSubsystem : public Snapshot, public SubsystemInterface {};
+template void initSubsystem<Rva0022B28CSubsystem>(Rva0022B28CSubsystem *&, AsciiString, Rva0022B28CSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022B28CSubsystem>;
