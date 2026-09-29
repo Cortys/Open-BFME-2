@@ -41412,3 +41412,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00739780@Rva00739780@@QAEXH@Z,,0x00739780,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B3B0 gap between 0x00739770 and 0x00739790 same TU
 ?rva007397D0@Rva007397D0@@QAEXXZ,,0x007397D0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk via +0x10 to rowed 0x0073B7E0 gap between 0x007397B0 and 0x007397F0 same TU
 ?rva000D1BEA@Rva000D1BEA@@QAEEH@Z,,0x000D1BEA,38,Code/GameEngine/Source/Common/Rva000D1BEA.cpp,matched,TheShroudManager null check and rowed 0x007397F0 cmp1 shared false
+?rva005F120F@Rva005F120F@@QAEXXZ,,0x005F120F,30,Code/GameEngine/Source/Common/Rva005F120FFree.cpp,matched,buffer clear plus free no-EH twin of 63B pair
