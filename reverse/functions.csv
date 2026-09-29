@@ -42417,3 +42417,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva005786E7@Rva005786E7@@QAEXXZ,,0x005786E7,26,Code/GameEngine/Source/Common/Rva005786E7Deleter.cpp,matched,chain deleter via rowed dtor 0x005D3731 and delete
 ??_GRva005D3731@@QAEPAXI@Z,,0x0057856A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005D3731.cpp,matched,chain deleting dtor via rowed dtor 0x005D3731
 ?toUpper@?$StringBase@D@@QAEXXZ,0x00036B60,0x00036B60,233,Code/Libraries/Source/WWVegas/WWLib/StringBaseNarrowToUpper.cpp,matched,StringBase char toUpper via toLower donor IAT toupper
+?Rva003C4B67MakeHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C4B67,25,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,chain lane caller 0x003C69C8 heap make adapter
