@@ -41630,3 +41630,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva000B64C5Build@@YA?AURva000B64C5S28@@ABURva000B64C5S16@@ABURva000B64C5S12@@@Z,,0x000B64C5,44,Code/GameEngine/Source/Common/Rva000B64C5Build.cpp,matched,struct-concat 28B from 16+12 same family as 0x005F17C6 caller 0x000BDD6C
 ?rva000B646B@Rva000B646B@@QAEXPAURva000B646BNode@@@Z,,0x000B646B,45,Code/GameEngine/Source/Common/Rva000B646BFree.cpp,matched,thiscall recurse child plus free chain via _free caller 0x000B9309
 ?rva0004387E@W3DDisplay@@QAEXXZ,,0x0004387E,77,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayRva0004387E.cpp,matched,W3DDisplay 16 strings donor DrawStrings006e8790 plus 16
+?Rva0043A31ECleanup@@YAXXZ,,0x0043A31E,34,Code/GameEngine/Source/Common/Rva0043A31ECleanup.cpp,matched,chain via rowed VM0 release plus TheAudio slot 8c
