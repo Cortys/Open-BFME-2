@@ -41291,3 +41291,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00308765@Rva00308765@@QAEXHABVAsciiString@@@Z,,0x00308765,52,Code/GameEngine/Source/Common/Rva00308765IndexedAssign.cpp,matched,indexed asciistring assign plus78 notify slot7 callers 0x30923E 0x3292F1
 ?Rva005F0C39Destroy@@YAXPAURva005F0647@@0@Z,,0x005F0C39,27,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,unlock range destroy via rowed deleting plus loop
 ?Rva00441974Sort@@YAXPAPAX0PAXVRva0043FE9A@@@Z,,0x00441974,37,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,reinsert sweep via unguarded insert caller 0x00441DB6
+?rva004D68C6@Rva004D68C6@@QAEPAVGameMessage@@XZ,,0x004D68C6,443,Code/GameEngine/Source/Common/Rva004D68C6Create.cpp,matched,chain of 0x0030F47A with rowed callees and GameMessage appends
