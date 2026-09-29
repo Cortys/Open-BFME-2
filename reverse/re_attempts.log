@@ -2721,3 +2721,4 @@ FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same fa
 ?Rva0015207ECopy@@YAXPAVRva00151E30@@00@Z	0x0015207E	29	blocked	29B wrapper 5-push to 3-arg needs ICF t=8 model=muse-06
 ?Rva0032B598Construct@@YAXPAXABV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z	0x0032B598	45	partial	EH save order early vs late t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x0032b598.cpp
 ?Rva005F1773Get@@YAHXZ	0x005F1773	28	blocked	fastcall edx unclear t=8 model=muse-06
+?rva003C05DE@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C05DE	79	partial	loop check cmp-mem plus body reload vs retail mov-ecx test reuse; +2B 2 regions; while for assign-cond truth done-bang done-eq all same; sibling face-waypoint edi-homes via bigger body; t=20 model=muse-03 score=0.97 stash=reverse/attempts/0x003c05de.cpp
