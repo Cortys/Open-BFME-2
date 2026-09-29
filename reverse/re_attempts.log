@@ -3207,3 +3207,4 @@ FUN_005EDE9C	0x001EDE9C	59	blocked	unlock59 globals plus 115slot virtual plus ta
 FUN_0068fbbe	0x0028FBBE	90	blocked	recursive self plus virtuals 0x14 0x118 offsets 0x250 0x5F1 plus list walk owner unproven 0 ready t=5 model=muse-07
 ?rva0028C2DD@Object@@QAEXPAUVec0028C2DD@@@Z	0x0028C2DD	331	blocked	O1 archSSE holder-ptr fixes lea plus float-temps give exact size-count but row scheduling permuted y-first vs retail x-first t=20 model=muse-spark
 FUN_0047e6f6	0x0007E6F6	231	blocked	SSE box expand with thunk and 2 virtuals needs donor t=5 model=muse-11
+FUN_006e16c0	0x002E16C0	109	blocked	EH vector visitor with guard plus member-fn ptr closest 107B vs 109B missing RTTI 0x7FB1CC typed catch plus cookie frame plus xor-vs-and plus inc-vs-lea 5 variants t=25 model=muse-06
