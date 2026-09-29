@@ -48,3 +48,10 @@ const Image *Rva005F0152::rva005F0152(int index)
 	*slot = TheMappedImageCollection->findImageByName(name);
 	return *slot;
 }
+
+extern Rva005F0152 Rva00A06858;
+
+const Image *Rva005F01B8Get(int index)
+{
+	return Rva00A06858.rva005F0152(index);
+}
