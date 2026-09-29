@@ -193,3 +193,23 @@ void Rva003EE89E::rva003EE89E(Int a, Int b)
 	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E7C, (Int)p, b);
 	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E7C, 0);
 }
+
+// ?rva003EEA63@Rva003EEA63@@QAEXHH@Z retail 0x003EEA63 58B. Unlock lane: same
+// three-call forward as rva003EE84A/89E above but with string g_Rva00E02E68;
+// callers at 0x003EEBE2/0x003EEF7F; unblocks 0x003EEBC4/0x003EEF38. Prev/next
+// are the Rva003EE966/A9D family in this TU.
+class Rva003EEA63
+{
+public:
+	void rva003EEA63(Int a, Int b);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+void Rva003EEA63::rva003EEA63(Int a, Int b)
+{
+	char *p = (char *)a + 0x54;
+	m_owner.rva004E35D5(g_Rva00E02E68, (Int)p, 1);
+	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E68, (Int)p, b);
+	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E68, 0);
+}
