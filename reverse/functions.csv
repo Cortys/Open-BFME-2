@@ -42410,3 +42410,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??0?$DynamicVectorClass@PAD@@QAE@IPBQAD@Z,,0x001A3AE0,94,Code/Libraries/Source/WWVegas/WW3D2/collect.cpp,matched,ICF fold owner - 12 DynamicVectorClass<T> instantiations compile to these identical 94 bytes (drift class exact-ambiguous; all 100% aligned). Rowed under the char instantiation from collect.cpp.
 ?Rva003C3A79Partition@@YAPAPAURva003BD485Keyed@@PAPAU1@0PAU1@H@Z,,0x003C3A79,55,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,unlock lane caller 0x003CA2EB quicksort partition
 ??1Rva005D3731@@QAE@XZ,,0x005D3731,69,Code/GameEngine/Source/Common/Rva005D2FD0Apt.cpp,matched,chain dtor via rowed 0x005242D7 and releaseBuffers
+?Rva0021D993PartialSortWrap@@YAXPAPAX00P6A_NPAX1@Z@Z,,0x0021D993,27,Code/GameEngine/Source/Common/Rva002C5556SortHeap.cpp,matched,partial_sort wrapper twin via rowed 0x0021D31C
