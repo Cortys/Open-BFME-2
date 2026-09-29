@@ -9,6 +9,13 @@
 // caller 0x0042610C passes (comp, allocator); callee rowed 0x00382A4A;
 // same 42B shape as the rowed NameKeyType->ModuleTemplate 0x00603AE0 and
 // long->LadderPref 0x0046AB53 tree ctors.
+//
+// ??0?$map@W4NameKeyType@@UPristineBoneInfo@@U?$less@W4NameKeyType@@@_STL@@V?$allocator@U?$pair@$$CBW4NameKeyType@@UPristineBoneInfo@@@_STL@@@4@@_STL@@QAE@XZ
+// retail 0x004260FD, 25 bytes. Default map ctor for PristineBoneInfoMap:
+// forwards empty comp and allocator temporaries to the rowed _Rb_tree ctor
+// 0x00425FEC. Evidence: chain lane (calls 0x00425FEC just landed); same
+// explicit anchor as _bfmePristineBoneAnchor's map() call in
+// W3DModelDrawO1Inlines.cpp; unblocks 0x004261B8, 0x000C6A4D, 0x00385FE1.
 #include <map>
 
 enum NameKeyType
