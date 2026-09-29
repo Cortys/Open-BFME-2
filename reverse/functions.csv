@@ -42376,3 +42376,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?rva002B54F9@Rva002B54F9@@QAEXXZ,,0x002B54F9,41,Code/GameEngine/Source/Common/Rva002B54F9.cpp,matched,chain via rowed 0x002B4360 free plus sentinel reset
 ?rva0021B670@Rva00219B9E@@QAEPAXPBUIdxPair@@@Z,,0x0021B670,29,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,null-guarded forward into rowed 0x0021B22E
 ?Rva003C3AC7PopHeap@@YAXPAPAURva003BD485Keyed@@00PAU1@H@Z,,0x003C3AC7,41,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap pop via AdjustHeap chain callers 0x003C3B41 0x003C69EC
+??BRva002226E5TextPlusString@@QAE?AVAsciiString@@XZ,,0x0022309D,98,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow materializer via rowed length write callers 0x00223933 0x0051FAAB

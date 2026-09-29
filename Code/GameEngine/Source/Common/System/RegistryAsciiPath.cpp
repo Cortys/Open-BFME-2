@@ -359,6 +359,7 @@ struct Rva002226E5TextPlusString
 {
 	int length() const;
 	int write(char *dst);
+	operator AsciiString();
 	Rva000B3F84Pair m_left;
 	AsciiStringRef m_right;
 };
@@ -384,6 +385,16 @@ int Rva002226E5TextPlusString::write(char *dst)
 {
 	int n = m_left.write(dst);
 	return n + m_right.write(dst + n);
+}
+
+// ??BRva002226E5TextPlusString@@QAE?AVAsciiString@@XZ @0x0022309D 98B
+// Narrow materializer for text-plus-string: sizes via length then fills
+// through write; callers at 0x00223933 0x002AD3F1 0x0051FAAB.
+Rva002226E5TextPlusString::operator AsciiString()
+{
+	AsciiString tmp;
+	write(tmp.getBufferForRead(length()));
+	return tmp;
 }
 
 // ??H@YA?AUAsciiStringCharPlusText@@ABUAsciiStringRefWithChar@@PBD@Z @0x109CFD
