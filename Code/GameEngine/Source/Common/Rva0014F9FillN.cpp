@@ -58,3 +58,19 @@ Rva0014F4C2 *__cdecl Rva0014F9CCFillN(Rva0014F4C2 *first, unsigned count, const 
 	Tag tag;
 	return Rva0014F61FFillN(first, count, value, tag);
 }
+
+inline void *__cdecl operator new(unsigned int, void *where)
+{
+	return where;
+}
+
+Rva0014F4A1 *__cdecl Rva0014F928Copy(Rva0014F4A1 *first, Rva0014F4A1 *last, Rva0014F4A1 *result)
+{
+	Rva0014F4A1 *cur = result;
+	for (; first != last; ++cur) {
+		if (cur != 0)
+			new (cur) Rva0014F4A1(*first);
+		++first;
+	}
+	return cur;
+}

@@ -2923,3 +2923,6 @@ FUN_00680176	0x00280176	286	blocked	TerrainLogic file method needs donor complex
 ?rva000D1AF3@Rva000D1AF3@@QAEIJ@Z	0x000D1AF3	173	blocked	vtable 0x7CE310 unrowed plus pin-only BFMERopeDrawable getPosition plus x87 fstp plus vector-iterator Region3D array needs rope donor t=8 model=muse-08
 FUN_00b398d0	0x007398D0	143	blocked	EH ctor dual vtable plus interim 0xBBB554 store and new 0x70 ShroudManagerImpl; bases unproven and callers unclaimed t=10 model=muse-01
 ?Rva0056E6A4Check@@YA_NABVUnicodeString@@HH@Z	0x0056E6A4	91	blocked	EH_prolog scope 0x79A8F1 vs CxxFrameHandler nullcheck uses ebx not test t=25 model=muse-spark
+?Rva002C787FGet@@YAHXZ	0x002C787F	136	blocked	free-func regargs edx-based multi-ret bit tests callers 1020B 1477B over 200B cannot prove signature t=8 model=muse-spark
+?rva0039C151@Rva0039C151@@QAEXXZ	0x0039C151	63	blocked	EH vector clear DestroyRange 0x22C8E3 plus free needs EH prolog with unwind t=10 model=muse-spark
+?getAllPoints@ProjectileStreamUpdate@@QAEXPAVVector3@@PAH@Z	0x0033F090	143	partial	float copies via integer not movss plus delayed X store t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0033f090.cpp
