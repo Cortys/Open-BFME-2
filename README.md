@@ -12,7 +12,13 @@ Goal: Source code that rebuilds BFME 2's engine binary (`game.dat`) byte-for-byt
 
 [![BFME 2 rebuild progress](docs/progress.svg)](tools/progress.py)
 
-<details>
+### What the bars measure
+
+* **Rebuilt from source**: code that rebuilds to the original game.dat's exact bytes, part of it generated code or prebuilt libraries.
+* **Game code in C++**: the game's own code (no libraries) written as C++.
+* **Linking**: the part of that code in files that link cleanly (daily link census).
+
+<details open>
 <summary><b>Progress over time and code map</b></summary>
 
 [Interactive report](https://open-bfme.github.io/Open-BFME-2/)
@@ -34,7 +40,7 @@ wide open.
 
 ## Roadmap
 
-* [ ] BFME 2 Source Code (see the live progress bar above)
+* [ ] BFME 2 Source Code
 * [ ] 60/120 FPS
 * [ ] Memory fix
 * [ ] Better crash logs
