@@ -233,6 +233,7 @@ CollectionClass::CollectionClass(const CollectionClass & src) :
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::operator= present-unmatched
 CollectionClass & CollectionClass::operator = (const CollectionClass & that)
 {
 	if (this != &that) {
@@ -307,6 +308,7 @@ RenderObjClass * CollectionClass::Clone(void) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Free present-unmatched
 void CollectionClass::Free(void)
 {
 	for (int i=0; i<SubObjects.Count(); i++) {
@@ -333,6 +335,7 @@ void CollectionClass::Free(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Class_ID present-unmatched
 int CollectionClass::Class_ID(void)	const
 {
 	return RenderObjClass::CLASSID_COLLECTION;
@@ -351,6 +354,7 @@ int CollectionClass::Class_ID(void)	const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Num_Polys present-unmatched
 int CollectionClass::Get_Num_Polys(void) const
 {
 	int pcount = 0;
@@ -373,6 +377,7 @@ int CollectionClass::Get_Num_Polys(void) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Render present-unmatched
 void CollectionClass::Render(RenderInfoClass & rinfo)
 {
 	if (Is_Not_Hidden_At_All() == false) {
@@ -401,6 +406,7 @@ void CollectionClass::Render(RenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   3/2/99     GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Special_Render present-unmatched
 void CollectionClass::Special_Render(SpecialRenderInfoClass & rinfo)
 {
 	if (Is_Not_Hidden_At_All() == false) {
@@ -428,6 +434,7 @@ void CollectionClass::Special_Render(SpecialRenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Set_Transform present-unmatched
 void CollectionClass::Set_Transform(const Matrix3D &m)
 {
 	RenderObjClass::Set_Transform(m);
@@ -447,6 +454,7 @@ void CollectionClass::Set_Transform(const Matrix3D &m)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Set_Position present-unmatched
 void CollectionClass::Set_Position(const Vector3 &v)
 {
 	RenderObjClass::Set_Position(v);
@@ -484,6 +492,7 @@ int CollectionClass::Get_Num_Sub_Objects(void) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Sub_Object present-unmatched
 RenderObjClass * CollectionClass::Get_Sub_Object(int index) const
 {
 	if (SubObjects[index]) {
@@ -505,6 +514,7 @@ RenderObjClass * CollectionClass::Get_Sub_Object(int index) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Add_Sub_Object present-unmatched
 int CollectionClass::Add_Sub_Object(RenderObjClass * subobj)
 {
 	WWASSERT(subobj);
@@ -533,6 +543,7 @@ int CollectionClass::Add_Sub_Object(RenderObjClass * subobj)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Remove_Sub_Object present-unmatched
 int CollectionClass::Remove_Sub_Object(RenderObjClass * robj)
 {
 	if (robj == NULL) return 0;
@@ -576,6 +587,7 @@ int CollectionClass::Remove_Sub_Object(RenderObjClass * robj)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Cast_Ray present-unmatched
 bool CollectionClass::Cast_Ray(RayCollisionTestClass & raytest)
 {
 	bool res = false;
@@ -598,6 +610,7 @@ bool CollectionClass::Cast_Ray(RayCollisionTestClass & raytest)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Cast_AABox present-unmatched
 bool CollectionClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
 {
 	bool res = false;
@@ -620,6 +633,7 @@ bool CollectionClass::Cast_AABox(AABoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Cast_OBBox present-unmatched
 bool CollectionClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
 {
 	bool res = false;
@@ -642,6 +656,7 @@ bool CollectionClass::Cast_OBBox(OBBoxCollisionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Intersect_AABox present-unmatched
 bool CollectionClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
 {
 	bool res = false;
@@ -664,6 +679,7 @@ bool CollectionClass::Intersect_AABox(AABoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Intersect_OBBox present-unmatched
 bool CollectionClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
 {
 	bool res = false;
@@ -685,6 +701,7 @@ bool CollectionClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Obj_Space_Bounding_Sphere present-unmatched
 void CollectionClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) const
 {
 	sphere = BoundSphere;
@@ -703,6 +720,7 @@ void CollectionClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Obj_Space_Bounding_Box present-unmatched
 void CollectionClass::Get_Obj_Space_Bounding_Box(AABoxClass & box) const
 {
 	box = BoundBox;
@@ -721,6 +739,7 @@ void CollectionClass::Get_Obj_Space_Bounding_Box(AABoxClass & box) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Snap_Point_Count present-unmatched
 int CollectionClass::Snap_Point_Count(void)
 {
 	if (SnapPoints) {
@@ -746,6 +765,7 @@ int CollectionClass::Snap_Point_Count(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Snap_Point present-unmatched
 void CollectionClass::Get_Snap_Point(int index,Vector3 * set)
 {
 	WWASSERT(set != NULL);
@@ -769,6 +789,7 @@ void CollectionClass::Get_Snap_Point(int index,Vector3 * set)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Scale present-unmatched
 void CollectionClass::Scale(float scale)
 {
 	for (int i=0; i<SubObjects.Count(); i++) {
@@ -789,6 +810,7 @@ void CollectionClass::Scale(float scale)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Scale present-unmatched
 void CollectionClass::Scale(float scalex, float scaley, float scalez)
 {
 	for (int i=0; i<SubObjects.Count(); i++) {
@@ -809,6 +831,7 @@ void CollectionClass::Scale(float scalex, float scaley, float scalez)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Update_Obj_Space_Bounding_Volumes present-unmatched
 void CollectionClass::Update_Obj_Space_Bounding_Volumes(void)
 {
 	int i;
@@ -861,6 +884,7 @@ void CollectionClass::Update_Obj_Space_Bounding_Volumes(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Update_Sub_Object_Transforms present-unmatched
 void CollectionClass::Update_Sub_Object_Transforms(void)
 {
 	RenderObjClass::Update_Sub_Object_Transforms();
@@ -884,6 +908,7 @@ void CollectionClass::Update_Sub_Object_Transforms(void)
  * HISTORY:                                                                                    *
  *   4/28/99    PDS : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Proxy present-unmatched
 bool CollectionClass::Get_Proxy (int index, ProxyClass &proxy) const
 {
 	bool retval = false;
@@ -913,6 +938,7 @@ bool CollectionClass::Get_Proxy (int index, ProxyClass &proxy) const
  * HISTORY:                                                                                    *
  *   4/28/99    PDS : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionClass::Get_Proxy_Count present-unmatched
 int CollectionClass::Get_Proxy_Count (void) const
 {
 	return ProxyList.Count ();
@@ -931,6 +957,7 @@ int CollectionClass::Get_Proxy_Count (void) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionDefClass::CollectionDefClass present-unmatched
 CollectionDefClass::CollectionDefClass(void)
 {
 	SnapPoints = NULL;
@@ -949,6 +976,7 @@ CollectionDefClass::CollectionDefClass(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionDefClass::~CollectionDefClass present-unmatched
 CollectionDefClass::~CollectionDefClass(void)
 {
 	Free();
@@ -967,6 +995,7 @@ CollectionDefClass::~CollectionDefClass(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionDefClass::Free present-unmatched
 void CollectionDefClass::Free(void)
 {
 	for (int i=0; i<ObjectNames.Count(); i++) {
@@ -989,6 +1018,7 @@ void CollectionDefClass::Free(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionDefClass::Get_Name present-unmatched
 const char * CollectionDefClass::Get_Name(void) const
 {
 	return Name;
@@ -1007,6 +1037,7 @@ const char * CollectionDefClass::Get_Name(void) const
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionDefClass::Load present-unmatched
 WW3DErrorType CollectionDefClass::Load(ChunkLoadClass & cload)
 {
 	Free();
@@ -1086,6 +1117,7 @@ Error:
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?CollectionLoaderClass::Load_W3D present-unmatched
 PrototypeClass * CollectionLoaderClass::Load_W3D(ChunkLoadClass & cload)
 {
 	CollectionDefClass * def = W3DNEW CollectionDefClass;

@@ -250,6 +250,7 @@ static Vector3 * _get_temp_vertex_normal_array(int count)
 ** MeshMtlParamsClass Implementation
 **
 ***********************************************************************************************/
+// ?MeshMtlParamsClass::MeshMtlParamsClass present-unmatched
 MeshMtlParamsClass::MeshMtlParamsClass(MeshModelClass * model)
 {
 	PassCount = model->Get_Pass_Count();
@@ -265,6 +266,7 @@ MeshMtlParamsClass::MeshMtlParamsClass(MeshModelClass * model)
 	}
 }
 
+// ?MeshMtlParamsClass::~MeshMtlParamsClass present-unmatched
 MeshMtlParamsClass::~MeshMtlParamsClass(void)
 {
 }
@@ -275,6 +277,7 @@ MeshMtlParamsClass::~MeshMtlParamsClass(void)
 ** VertexClass Implementation
 **
 ***********************************************************************************************/
+// ?VertexClass::VertexClass present-unmatched
 VertexClass::VertexClass(void) :
 	Position(0,0,0),
 	Normal(0,0,1),
@@ -289,6 +292,7 @@ VertexClass::VertexClass(void) :
 	}
 }
 
+// ?VertexClass::VertexClass present-unmatched
 VertexClass::VertexClass(const VertexClass & that)
 {
 	Position = that.Position;
@@ -304,6 +308,7 @@ VertexClass::VertexClass(const VertexClass & that)
 	}
 }
 
+// ?VertexClass::operator= present-unmatched
 VertexClass & VertexClass::operator = (const VertexClass & that)
 {
 	if (this != &that) {
@@ -357,6 +362,7 @@ void VertexClass::Lerp
 	}
 }
 
+// ?VertexClass::Which_Side present-unmatched
 int VertexClass::Which_Side(const PlaneClass & plane) const
 {
 	float d = Vector3::Dot_Product(plane.N,Position);
@@ -393,11 +399,13 @@ void VertexClass::Intersect_Plane
 ** PolygonClass Implementation
 **
 ***********************************************************************************************/
+// ?PolygonClass::PolygonClass present-unmatched
 PolygonClass::PolygonClass(void) :
 	NumVerts(0)
 {
 }
 
+// ?PolygonClass::PolygonClass present-unmatched
 PolygonClass::PolygonClass(const PolygonClass & that)
 {
 	NumVerts = that.NumVerts;
@@ -406,6 +414,7 @@ PolygonClass::PolygonClass(const PolygonClass & that)
 	}
 }
 
+// ?PolygonClass::PolygonClass present-unmatched
 PolygonClass::PolygonClass(const VertexClass * points, int num)
 {
 	NumVerts = num;
@@ -414,6 +423,7 @@ PolygonClass::PolygonClass(const VertexClass * points, int num)
 	}
 }
 
+// ?PolygonClass::operator= present-unmatched
 PolygonClass & PolygonClass::operator = (const PolygonClass & that)
 {
 	if (this != &that) {
@@ -427,6 +437,7 @@ PolygonClass & PolygonClass::operator = (const PolygonClass & that)
 	return * this;
 }
 
+// ?PolygonClass::Compute_Plane present-unmatched
 void PolygonClass::Compute_Plane(void)
 {
 	double nx = 0;
@@ -462,6 +473,7 @@ void PolygonClass::Compute_Plane(void)
 	Plane.Set(Vector3(nx,ny,nz),Vector3(ax,ay,az));
 }
 
+// ?PolygonClass::Which_Side present-unmatched
 int PolygonClass::Which_Side(const PlaneClass & plane) const
 {
 	int side_mask = 0;
@@ -488,6 +500,7 @@ int PolygonClass::Which_Side(const PlaneClass & plane) const
 	return BPT_BOTH;
 }
 
+// ?PolygonClass::Split present-unmatched
 void PolygonClass::Split(const PlaneClass & plane,PolygonClass & front,PolygonClass & back) const
 {
 	front = *this;
@@ -619,6 +632,7 @@ void PolygonClass::Split(const PlaneClass & plane,PolygonClass & front,PolygonCl
 }
 
 
+// ?PolygonClass::Is_Degenerate present-unmatched
 bool PolygonClass::Is_Degenerate(void)
 {
 	int i,j;
@@ -656,6 +670,7 @@ bool PolygonClass::Is_Degenerate(void)
 	return false;
 }
 
+// ?PolygonClass::Salvage_Degenerate present-unmatched
 bool PolygonClass::Salvage_Degenerate(void)
 {
 	/*
@@ -689,6 +704,7 @@ bool PolygonClass::Salvage_Degenerate(void)
 **
 ***********************************************************************************************/
 
+// ?BSPClass::BSPClass present-unmatched
 BSPClass::BSPClass(HTreeClass * tree,int bone_index,int & leaf_index) :
 	Plane(0,0,1,0),
 	Front(NULL),
@@ -730,6 +746,7 @@ BSPClass::BSPClass(HTreeClass * tree,int bone_index,int & leaf_index) :
 	}
 }
 
+// ?BSPClass::~BSPClass present-unmatched
 BSPClass::~BSPClass(void)
 {
 	if (Front != NULL) {
@@ -741,11 +758,13 @@ BSPClass::~BSPClass(void)
 	Front = Back = NULL;
 }
 
+// ?BSPClass::Set_Plane_From_Transform present-unmatched
 void BSPClass::Set_Plane_From_Transform(const Matrix3D & tm)
 {
 	Plane.Set(tm.Get_Z_Vector(),tm.Get_Translation());
 }
 
+// ?BSPClass::Clip_Polygon present-unmatched
 void BSPClass::Clip_Polygon(const PolygonClass & polygon)
 {
 	PolygonClass front_poly,back_poly;
@@ -802,6 +821,7 @@ void BSPClass::Clip_Polygon(const PolygonClass & polygon)
 ** Vshatter = Mscale-to-unit * Mworld-shatterview * Mobj-world * Vobj
 **
 ***********************************************************************************************/
+// ?ShatterSystem::Init present-unmatched
 void ShatterSystem::Init(void)
 {
 	/*
@@ -839,6 +859,7 @@ void ShatterSystem::Init(void)
 	}
 }
 
+// ?ShatterSystem::Shutdown present-unmatched
 void ShatterSystem::Shutdown(void)
 {
 	/*
@@ -857,6 +878,7 @@ void ShatterSystem::Shutdown(void)
 }
 
 
+// ?ShatterSystem::Shatter_Mesh present-unmatched
 void ShatterSystem::Shatter_Mesh(MeshClass * mesh,const Vector3 & point,const Vector3 & direction)
 {
 	if (ShatterPatterns.Count() == 0) {
@@ -1048,11 +1070,13 @@ void ShatterSystem::Shatter_Mesh(MeshClass * mesh,const Vector3 & point,const Ve
 	REF_PTR_RELEASE(model);
 }
 
+// ?ShatterSystem::Get_Fragment_Count present-unmatched
 int ShatterSystem::Get_Fragment_Count(void)
 {
 	return MeshFragments.Count();
 }
 
+// ?ShatterSystem::Get_Fragment present-unmatched
 RenderObjClass * ShatterSystem::Get_Fragment(int fragment_index)
 {
 	if (MeshFragments[fragment_index] != NULL) {
@@ -1061,11 +1085,13 @@ RenderObjClass * ShatterSystem::Get_Fragment(int fragment_index)
 	return MeshFragments[fragment_index];
 }
 
+// ?ShatterSystem::Peek_Fragment present-unmatched
 RenderObjClass * ShatterSystem::Peek_Fragment(int fragment_index)
 {
 	return MeshFragments[fragment_index];
 }
 
+// ?ShatterSystem::Release_Fragments present-unmatched
 void ShatterSystem::Release_Fragments(void)
 {
 	// release any ref's to render objects
@@ -1077,6 +1103,7 @@ void ShatterSystem::Release_Fragments(void)
 	MeshFragments.Delete_All(false);					
 }
 
+// ?ShatterSystem::Reset_Clip_Pools present-unmatched
 void ShatterSystem::Reset_Clip_Pools(void)
 {
 	for (int i=0; i<MAX_MESH_FRAGMENTS; i++) {
