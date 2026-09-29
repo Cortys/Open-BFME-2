@@ -1,8 +1,10 @@
-// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /O1 /G7 /arch:SSE /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // Trimmed from Open-BFME-1
 // (Code/GameEngine/Source/Common/System/File.cpp): only the placed
 // ?lock@File, ?close@File, ?open@File, ??1File, ?size@File, ?position@File,
-// ?print@File, ?eof@File and ?unlock@File bodies are defined here.
+// ?print@File, ?eof@File and ?unlock@File bodies are defined here, plus the
+// MemoryReadFile read/seek/readEntireAndClose overrides (MemoryWriteFile's
+// seek is the same ICF-folded body).
 // Slots stay declared-only (destructor for the slot-0 delete-this dispatch,
 // rest for layout) and the donor's other members stay out, so the
 // unmatched-definition gate passes. Layout follows the donor: AsciiString is
@@ -26,6 +28,9 @@ typedef char *va_list;
 #define va_start(ap, v) (ap = (va_list)&v + ((sizeof(v) + 3) & ~3))
 #define va_end(ap) (ap = (va_list)0)
 extern "C" __declspec(dllimport) int __cdecl vsprintf(char *buffer, const char *format, va_list args);
+extern "C" void *__cdecl memcpy(void *dest, const void *src, unsigned int count);
+#pragma function(memcpy)
+void *operator new[](unsigned int bytes);
 
 static const unsigned long FILE_INFINITE = 0xFFFFFFFF;
 
@@ -67,7 +72,7 @@ public:
 	virtual bool print(const char *format, ...);
 	virtual int size();
 	virtual int position();
-	virtual void slot13();
+	virtual char *readEntireAndClose();
 	virtual void slot14();
 	virtual void lock();
 	virtual void unlock();
@@ -224,4 +229,142 @@ File::~File()
 	if (m_mutex) {
 		CloseHandle(m_mutex);
 	}
+}
+
+// BFME's in-memory File pair, from the Open-BFME-1 donor File.cpp (no Zero Hour
+// counterpart). Vtables 0x0087A748 (MemoryReadFile: real read, stub write) and
+// 0x0087A7B8 (MemoryWriteFile: stub read, real write); both inherit File's
+// print/lock/unlock at slots 10/15/16 and share one seek body at slot 5. Layout
+// as the donor proved it: data +0x14, size +0x18, position +0x1c.
+class MemoryReadFile : public File
+{
+public:
+	virtual int read(void *buffer, int bytes);
+	virtual int seek(int bytes, seekMode mode);
+	virtual char *readEntireAndClose();
+
+private:
+	char *m_data;
+	int m_size;
+	int m_pos;
+};
+
+class MemoryWriteFile : public File
+{
+public:
+	virtual int seek(int bytes, seekMode mode);
+
+private:
+	char *m_data;
+	int m_size;
+	int m_pos;
+	int m_capacity;
+};
+
+// ?read@MemoryReadFile@@UAEHPAXH@Z, retail 0x006020F0, 70 bytes: slot 3 of
+// vtable 0x0087A748. BFME1 donor MemoryReadFile::read (matched there at
+// 0x009CB090): the clamp is unsigned, hence cmova.
+int MemoryReadFile::read(void *buffer, int bytes)
+{
+	if (bytes < 0)
+	{
+		return -1;
+	}
+
+	unsigned int remaining = (unsigned int)m_size - (unsigned int)m_pos;
+	if ((unsigned int)bytes > remaining)
+	{
+		bytes = remaining;
+	}
+
+	if (bytes)
+	{
+		if (buffer)
+		{
+			memcpy(buffer, m_data + m_pos, bytes);
+		}
+	}
+	m_pos += bytes;
+
+	return bytes;
+}
+
+// ?seek@MemoryReadFile@@UAEHHW4seekMode@File@@@Z, retail 0x00602136, 49 bytes:
+// slot 5 of both memory-file vtables. BFME1 donor MemoryReadFile::seek (its
+// row spells the mode as Int, but an override of File::seek has to take
+// seekMode, as every other seek row in this ledger does). Out of range is -1,
+// not a clamp.
+int MemoryReadFile::seek(int bytes, seekMode mode)
+{
+	int pos;
+
+	switch (mode)
+	{
+		case START:
+			pos = bytes;
+			break;
+		case CURRENT:
+			pos = m_pos + bytes;
+			break;
+		case END:
+			pos = m_size + bytes;
+			break;
+		default:
+			return -1;
+	}
+
+	if ((unsigned int)pos > (unsigned int)m_size)
+	{
+		return -1;
+	}
+
+	m_pos = pos;
+	return pos;
+}
+
+// ?seek@MemoryWriteFile@@UAEHHW4seekMode@File@@@Z: the donor's identical body,
+// folded by /OPT:ICF into the same 0x00602136.
+int MemoryWriteFile::seek(int bytes, seekMode mode)
+{
+	int pos;
+
+	switch (mode)
+	{
+		case START:
+			pos = bytes;
+			break;
+		case CURRENT:
+			pos = m_pos + bytes;
+			break;
+		case END:
+			pos = m_size + bytes;
+			break;
+		default:
+			return -1;
+	}
+
+	if ((unsigned int)pos > (unsigned int)m_size)
+	{
+		return -1;
+	}
+
+	m_pos = pos;
+	return pos;
+}
+
+// ?readEntireAndClose@MemoryReadFile@@UAEPADXZ, retail 0x00602167, 61 bytes:
+// slot 13 of vtable 0x0087A748. BFME1 donor body (matched there at 0x009CB190):
+// a copy of the whole block, and an empty file still hands back an allocation.
+char *MemoryReadFile::readEntireAndClose()
+{
+	if (m_size == 0)
+	{
+		close();
+		return new char[1];
+	}
+
+	char *buffer = new char[m_size];
+	memcpy(buffer, m_data, m_size);
+	close();
+	return buffer;
 }
