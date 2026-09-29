@@ -42273,3 +42273,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__reverse@PAH@_STL@@YAXPAH0ABUrandom_access_iterator_tag@0@@Z,,0x002334F8,33,Code/Libraries/Source/WWVegas/WWLib/stlport_int_reverse.cpp,matched,STLport int reverse via explicit instantiation caller 0x00233A26 sibling __rotate
 ?rva0021AD5D@Rva0021AD5D@@QAEPAXI@Z,,0x0021AD5D,43,Code/GameEngine/Source/Common/Rva0021AD5DTreeAccess.cpp,matched,43B rb index via rowed _M_increment 0x00024250 caller 0x00409ABE
 ?rva00342120@Rva00341F99@@UAEXH@Z,,0x00342120,55,Code/GameEngine/Source/Common/Rva00341F99Slot5.cpp,matched,slot5 shared by vtables 0x008117F0 and 0x00811850 via delete plus chain call
+?Rva003BD485Median@@YAPAPAURva003BD485Keyed@@PAPAU1@00@Z,,0x003BD485,62,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,Median-of-three pivot picker via quicksort caller evidence
