@@ -9,9 +9,10 @@
 
 struct Rva00583CE0Elem
 {
-	char m_pad[0x10];
+	int m_00;
+	char m_pad04[0x0C];
 	bool m_10;
-	char m_pad2[0x0B];
+	char m_pad11[0x0B];
 };
 
 class Rva005D6FCC
@@ -28,6 +29,7 @@ public:
 	Rva005843DA(void *held);
 	virtual ~Rva005843DA();
 	void rva00583CE0(int unused, int i);
+	bool rva00583BE6(int i);
 private:
 	_STL::vector<Rva00583CE0Elem> m_vec; // +8
 	bool m_flag; // +0x14
@@ -42,4 +44,10 @@ void Rva005843DA::rva00583CE0(int unused, int i)
 {
 	if (i >= 0 && i < m_vec.size())
 		m_vec[i].m_10 = true;
+}
+bool Rva005843DA::rva00583BE6(int i)
+{
+	if (i >= 0 && i < m_vec.size())
+		return m_vec[i].m_00 == 1;
+	return false;
 }
