@@ -41480,3 +41480,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005659E8@Rva005659E8@@QAEXXZ,,0x005659E8,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x0052C266 plus free
 ?rva00565A42@Rva00565A42@@QAEXXZ,,0x00565A42,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x0022C8E3 plus free
 ?rva0025D19E@BfmeStrVM0@@QAEXXZ,,0x0025D19E,103,Code/GameEngine/Source/Common/BfmeStrVM0Rva0025D19E.cpp,matched,field reset with timer poll and empty-string restore caller 0x0025D6A4
+?rva00206F6B@Rva00206667@@QAEXXZ,,0x00206F6B,41,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206667Clear.cpp,matched,chain container clear via rowed node clear same 41B shape
