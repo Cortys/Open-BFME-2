@@ -42914,3 +42914,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva0025C6E2@BfmeStrVM0@@QAEXHHMMMM@Z,,0x0025C6E2,74,Code/GameEngine/Source/Common/Rva0025C6E2.cpp,matched,BfmeStrVM0 array init via neighbours and G7 imul
 ?rva003A28ED@Rva003A28ED@@QAE_NW4NameKeyType@@@Z,,0x003A28ED,86,Code/GameEngine/Source/GameLogic/Object/ArmorRva003A28ED.cpp,matched,Armor map remover via rowed clear find erase
 ?On_Frame_Update@ParticleBufferClass@@UAEXXZ,,0x001A6710,52,Code/Libraries/Source/WWVegas/WW3D2/part_buf.cpp,matched,ParticleBuffer Emit at slot 129 via TU-local view
+??$__unguarded_insertion_sort_aux@PAUBfmeAssignRecord32@@U1@P6A_NABU1@0@Z@_STL@@YAXPAUBfmeAssignRecord32@@00P6A_NABU1@1@Z@Z,,0x00173841,46,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_insertion_sort_aux.cpp,matched,insertion sort aux with 0x20 stride via copy plus rowed linear insert plus pred at plus 0x14
