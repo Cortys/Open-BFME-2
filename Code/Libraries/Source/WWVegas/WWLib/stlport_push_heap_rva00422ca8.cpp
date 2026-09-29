@@ -197,4 +197,37 @@ void partial_sort(RandomAccessIter first, RandomAccessIter middle,
 template void partial_sort<int *,
 	Rva00422CA8>(int *, int *, int *, Rva00422CA8);
 
+// ??$upper_bound@PAHHVRva00422CA8@@@_STL@@YAPAHPAH0ABHVRva00422CA8@@@Z
+// retail 0x00423098, 83 bytes. Upper bound over int sort keys with the
+// rowed thiscall comparator Rva00422CA8: caches val once, halves the range
+// while comp(cached, *middle) holds. Evidence: callee rowed 0x00422CA8;
+// caller 0x004235C4 in unclaimed 0x00423558.
+template <class RandomAccessIter, class T, class Compare>
+RandomAccessIter upper_bound(RandomAccessIter first, RandomAccessIter last,
+	const T &val, Compare comp)
+{
+	int len = (int)(last - first);
+	int cached;
+	if (len > 0)
+	{
+		cached = val;
+		do
+		{
+			int half = len >> 1;
+			RandomAccessIter middle = first + half;
+			if (comp(cached, *middle))
+				len = half;
+			else
+			{
+				first = middle + 1;
+				len = len - half - 1;
+			}
+		} while (len > 0);
+	}
+	return first;
+}
+
+template int *upper_bound<int *, int,
+	Rva00422CA8>(int *, int *, const int &, Rva00422CA8);
+
 }

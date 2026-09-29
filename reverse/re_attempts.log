@@ -3094,3 +3094,4 @@ FUN_005761C6	0x005761C6	84	blocked	double vptr MI ctor plus append same wall as 
 ?Rva005B9378Ticker@@YAXHH@Z	0x005B9378	178	blocked	slot ebp+8 used as int index for format and table and as UnicodeString object for concat and releaseBuffer with no visible construction needs signature evidence t=10 model=muse-08
 ??0Rva004F55A0@@QAE@XZ	0x004F55A0	119	blocked	unknown MI class with two vptrs plus three int lists plus base vptr overwrite needs class ID via caller or vtable evidence beyond budget t=15 model=muse-08
 ??0Rva003B417E@@QAE@XZ	0x003B417E	122	partial	copy-ctor setup plus edi save hoisted above vptr and early inits plus lea edi shifted needs anti-hoist lever t=30 model=muse-08 score=0.95 stash=reverse/attempts/0x003b417e.cpp
+FUN_0042464E	0x0042464E	63	blocked	EH clear 30B vs 63B t=15 model=muse-spark
