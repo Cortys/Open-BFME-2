@@ -36,6 +36,7 @@ class Rva004D62A9 : public NetCommandMsg
 {
 public:
 	Rva004D62A9();
+	virtual ~Rva004D62A9();
 private:
 	AsciiString m_str1c;
 	UnsignedShort m_20;
@@ -48,3 +49,7 @@ Rva004D62A9::Rva004D62A9() : NetCommandMsg(), m_str1c()
 	m_20 = 0;
 	m_22 = false;
 }
+
+// ??1Rva004D62A9@@UAE@XZ @0x004D62F7 54B
+// Evidence: vptr 0x860494 then releaseBuffer at +0x1c then vptr 0x860130; caller 0x004D6AD8 for ??_G.
+Rva004D62A9::~Rva004D62A9() {}

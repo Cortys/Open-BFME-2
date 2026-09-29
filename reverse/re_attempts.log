@@ -3373,3 +3373,5 @@ FUN_0058DF29	0x0058DF29	143	blocked	factory new-0x28 plus memcpy-thunk x2 plus p
 FUN_00519d80	0x00119D80	313	blocked	vector _M_insert_overflow 0x74 stride needs Nugget 116B vs ProxyClass vs TextureStatisticsStruct dtor identity plus _Construct Nugget row mismatch t=15 model=muse-spark
 FUN_007c7914	0x003C7914	284	blocked	script team-plus-parameter with dual warning AppendDebugMessage plus team iteration plus rva003C7653 per-member needs EH plus AsciiString temp pattern t=18 model=muse-spark
 FUN_007c8bcb	0x003C8BCB	163	blocked	chain team waypoint needs TerrainLogic plus0x88 plus0x90 plus AIUpdate plus0x238 slot identities plus per-member coord from Object plus0x38 t=12 model=muse-spark
+FUN_007c8abf	0x003C8ABF	163	blocked	twin of 0x003C8BCB needs TerrainLogic plus0x90 coord-plus-arg2 plus AIUpdate plus0x238 with 3 plus rva003C77EE t=8 model=muse-spark
+FUN_00584502	0x00584502	59	blocked	dtor needs vector free plus apply setter as vptr-or-base plus no base call t=10 model=muse-spark
