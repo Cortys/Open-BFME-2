@@ -41491,3 +41491,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva002542F3Member@@QAE@ABV0@@Z,,0x0043831C,109,Code/GameEngine/Source/GameLogic/Object/Update/Rva002542F3MemberCopy.cpp,matched,copy ctor via ctor TU layout and rowed copies
 ?rva00239435@Rva00239435@@QAE?AVRva002390CB@@H@Z,,0x00239435,34,Code/GameEngine/Source/Common/Rva00239435Get.cpp,matched,copy element at this+0x124 via rowed copy ctor
 ??$__uninitialized_copy@PBUBfmeStringRecord005D511F@@PAU1@@_STL@@YAPAUBfmeStringRecord005D511F@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x005D521B,38,Code/Libraries/Source/WWVegas/WWLib/Rva005D521BCopy.cpp,matched,uninitialized_copy 0x14 via rowed Construct 0x005D51EE callers 0x005D54D2 0x005D551D
+??1BfmeStrVM0@@UAE@XZ,,0x0025D686,111,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,BfmeStrVM0 dtor via helpers plus strings plus base
