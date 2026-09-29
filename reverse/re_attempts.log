@@ -2853,3 +2853,5 @@ FUN_006e208a	0x002E208A	196	blocked	Xfer set with unknown slots 0x28 0x2c plus V
 ?Rva0020ED8EClear@@YGXPAX0@Z	0x0020ED8E	71	blocked	pointer-diff loop codegen wall t=15 model=muse-03
 ?Rva0020ED51Set@@YGXPAX0_N@Z	0x0020ED51	61	blocked	same pointer-diff loop wall as 0x0020ED8E t=5 model=muse-03
 ?Rva0056ED06Rand@@YAXPAH0@Z	0x0056ED06	46	blocked	rdtsc needs asm plus global table identity t=10 model=muse-03
+?rva0035B19E@Rva0035B19E@@QAEHXZ	0x0035B19E	37	blocked	37B vector bounds check needs lea plus reload plus jae t=30 model=muse-11
+?Rva00567807Find@@YAHXZ	0x00567807	51	blocked	51B finder calls 0x35B6B8 needs obj live-in edi plus int stack t=5 model=muse-11
