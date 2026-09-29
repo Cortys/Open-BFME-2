@@ -28,6 +28,7 @@ class Rva002CEC0A
 {
 public:
 	void rva002CEC34();
+	void rva002CED26(class Xfer *xfer);
 
 private:
 	int m_00;
@@ -38,4 +39,26 @@ void Rva002CEC0A::rva002CEC34()
 {
 	_STL::vector<AsciiString> *v = &m_04;
 	v->erase(v->m_start, v->m_finish);
+}
+
+class Xfer
+{
+public:
+	virtual ~Xfer();
+	virtual bool isLoading();
+	virtual bool isSaving();
+	virtual void slot03();
+	virtual void slot04();
+	virtual void slot05(const char *name);
+	virtual void slot06();
+};
+
+Xfer *xferAsciiStringVector(Xfer *xfer, _STL::vector<AsciiString> *vec);
+
+void Rva002CEC0A::rva002CED26(Xfer *xfer)
+{
+	xfer->slot05("CRCParameterCheck");
+	xferAsciiStringVector(xfer, &m_04);
+	xfer->slot06();
+	rva002CEC34();
 }
