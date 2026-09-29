@@ -54,3 +54,15 @@ private:
 Rva003F8ED6::~Rva003F8ED6()
 {
 }
+
+void *operator new(unsigned int size);
+void operator delete(void *p);
+
+// Anchor: new/delete emits the scalar deleting dtor COMDAT for
+// ??_GRva003F8ED6@@UAEPAXI@Z at 0x003F905F. Operator new/delete resolve
+// to their rows at 0x0002FDA0/0x0002FD60.
+void Rva003F8ED6_Anchor()
+{
+	Rva003F8ED6 *p = new Rva003F8ED6;
+	delete p;
+}
