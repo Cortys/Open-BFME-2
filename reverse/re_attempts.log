@@ -3109,3 +3109,4 @@ FUN_0060CAEA	0x0060CAEA	65	blocked	hashtable string find div bucket register wal
 ?rva0035B570@Rva0035B570@@QAEXXZ	0x0035B570	82	partial	early null return inline vs shared end plus jne vs je t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x0035b570.cpp
 ?rva004482B7@Rva004482B7@@QAEPAXPAV?$StringBase@G@@H@Z	0x004482B7	40	partial	frame zero-slot encoding wall: retail and dword vs volatile mov byte t=30 model=muse-spark score=0.9 stash=reverse/attempts/0x004482b7.cpp
 ??1Rva000C04D4@@QAE@XZ	0x000C04D4	63	blocked	custom Clear-plus-free dtor gets 30B no EH vs retail 63B EH t=12 model=muse-spark
+?rva002CE226@Weapon@@QAEXPBVObject@@PAX@Z	0x002CE226	90	blocked	register wall this-in-esi p-in-edi vs retail ecx-edx t=18 model=muse-spark

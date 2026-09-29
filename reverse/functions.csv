@@ -41869,3 +41869,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00272870@Drawable@@QAEXH@Z,,0x00272870,37,Code/GameEngine/Source/GameClient/Drawable_rva0027290C.cpp,matched,Drawable guarded setter 0xA8 slot 0x50 unblocks 3 callers 0x002759A8 plus 4
 ?rva00535BAF@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00535BAF,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Wins via slot2C gap sibling
 ?rva000C18E3@Rva000C18E3@@QAEXPAUSrcArg000C18E3@@@Z,,0x000C18E3,186,Code/GameEngine/Source/Common/Rva000C18E3Chain.cpp,matched,chain of 0x000C0513 via erase 0x002A133B and resize
+?DoXfer@Rva004E3184@@UAEXAAVXfer@@@Z,,0x004E3991,221,Code/GameEngine/Source/Common/Rva004E3184Xfer.cpp,matched,Rva004E3184 DoXfer slot3 via copyctor layout and version 1 3
