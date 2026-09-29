@@ -7,7 +7,12 @@
 // ??0Rva00586D8E 0x00586D8E without the second ptr.
 #include <vector>
 
-struct BfmeE16 { float x, y, z, w; };
+struct Rva00583CE0Elem
+{
+	char m_pad[0x10];
+	bool m_10;
+	char m_pad2[0x0B];
+};
 
 class Rva005D6FCC
 {
@@ -22,13 +27,19 @@ class Rva005843DA : public Rva005D6FCC
 public:
 	Rva005843DA(void *held);
 	virtual ~Rva005843DA();
+	void rva00583CE0(int unused, int i);
 private:
-	_STL::vector<BfmeE16> m_vec; // +8
+	_STL::vector<Rva00583CE0Elem> m_vec; // +8
 	bool m_flag; // +0x14
 };
 
 Rva005843DA::Rva005843DA(void *held)
-	: Rva005D6FCC(held), m_vec(_STL::allocator<BfmeE16>())
+	: Rva005D6FCC(held), m_vec(_STL::allocator<Rva00583CE0Elem>())
 {
 	m_flag = false;
+}
+void Rva005843DA::rva00583CE0(int unused, int i)
+{
+	if (i >= 0 && i < m_vec.size())
+		m_vec[i].m_10 = true;
 }
