@@ -12,6 +12,7 @@ class Rva0052B53C
 {
 public:
 	void rva0052B53C();
+	unsigned char *rva0052B559();
 private:
 	char m_pad[0x41];
 	unsigned char m_digest[16];
@@ -25,4 +26,14 @@ void Rva0052B53C::rva0052B53C()
 		MD5Final(m_digest, m_ctx);
 		m_done = 1;
 	}
+}
+
+// ?rva0052B559@Rva0052B53C@@QAEPAEXZ retail 0x0052B559 19B. Chain lane: calls
+// this session's 0x0052B53C if flag at +0x58 is 0 then returns digest at
+// +0x41; caller at 0x002DE272.
+unsigned char *Rva0052B53C::rva0052B559()
+{
+	if (m_done == 0)
+		rva0052B53C();
+	return m_digest;
 }

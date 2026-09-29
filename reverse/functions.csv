@@ -41287,3 +41287,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00422D1CGet@@YGHH@Z,,0x00422D1C,34,Code/Libraries/Source/WWVegas/WWLib/Rva00422D1CFind.cpp,matched,global map lookup via rowed _M_find 0x00388F63 returns second or -1
 ??1Rva002E5791@@QAE@XZ,,0x002E5791,53,Code/GameEngine/Source/GameClient/Rva002E5791Dtor.cpp,matched,EH dtor wide at +4 then narrow at +0 via releaseBuffers
 ?rva0052B53C@Rva0052B53C@@QAEXXZ,,0x0052B53C,29,Code/GameEngine/Source/Common/Rva0052B53CLazy.cpp,matched,unlock lazy MD5Final callers 2
+?rva0052B559@Rva0052B53C@@QAEPAEXZ,,0x0052B559,19,Code/GameEngine/Source/Common/Rva0052B53CLazy.cpp,matched,chain lazy getter via 0052B53C caller 1
