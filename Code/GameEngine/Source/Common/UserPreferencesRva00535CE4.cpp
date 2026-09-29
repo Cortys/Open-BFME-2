@@ -12,6 +12,9 @@
 // UserPreferences Wins path: append Wins, slot 0x2C with (arg, x), void ret 8.
 // Evidence: concat Wins 0x00868E7C, slot 0x2C, releaseBuffer, gap between 0x0053587C
 // and 0x00535CE4 same TU, unblocks 2 callers 2.
+// ?rva00535C9D@UserPreferences@@QAEXVAsciiString@@H@Z @0x00535C9D 71B
+// UserPreferences Losses-void path: append Losses slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat Losses 0x00868E84 slot 0x2C releaseBuffer gap Wins-Losses same TU.
 template <typename T>
 class StringBase
 {
@@ -61,6 +64,7 @@ public:
 	int rva00535CE4(AsciiString arg);
 	void rva0053587C(AsciiString arg, int x);
 	void rva00535BAF(AsciiString arg, int x);
+	void rva00535C9D(AsciiString arg, int x);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -79,5 +83,11 @@ void UserPreferences::rva0053587C(AsciiString arg, int x)
 void UserPreferences::rva00535BAF(AsciiString arg, int x)
 {
 	arg.concat("Wins");
+	v11(arg, x);
+}
+
+void UserPreferences::rva00535C9D(AsciiString arg, int x)
+{
+	arg.concat("Losses");
 	v11(arg, x);
 }
