@@ -247,3 +247,13 @@ public:
 	Rva000BB491(const Rva000BB491 &o);
 };
 template void _STL::_Construct<Rva000BB491, Rva000BB491>(Rva000BB491 *, const Rva000BB491 &);
+
+// Retail _Construct 0x000BB9C0 45B: placement copy of Rva000BB4AC via the
+// rowed copy ctor at 0x000BB4AC; same 45B EH shape as neighbours in this TU;
+// callers at 0x000BBB20 0x000BBB4B 0x000C35FA 0x000C46D7.
+class Rva000BB4AC
+{
+public:
+	Rva000BB4AC(const Rva000BB4AC &o);
+};
+template void _STL::_Construct<Rva000BB4AC, Rva000BB4AC>(Rva000BB4AC *, const Rva000BB4AC &);
