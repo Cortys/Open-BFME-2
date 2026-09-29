@@ -41320,3 +41320,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva003BBF8F@@YAXXZ,,0x003BBF8F,17,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,free caller of vslot 0x94 with false via global 0xDFEDF0 caller 0x003CC44C
 ??0Rva004D60CA@@QAE@XZ,,0x004D60CA,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,NetCommandMsg family And plus type 13 sibling
 ??0Rva004D64F5@@QAE@XZ,,0x004D64F5,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,NetCommandMsg family vptr-first And plus type 5 sibling
+?rva005A6709@Rva005A6709@@QBEHXZ,,0x005A6709,20,Code/GameEngine/Source/Common/Rva005A6709Predicate.cpp,matched,unlock predicate callers 9
