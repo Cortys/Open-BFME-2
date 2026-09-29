@@ -42910,3 +42910,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??_GRva0060237D@@UAEPAXI@Z,,0x006023F6,28,Code/GameEngine/Source/Common/System/Rva0060237DDtor.cpp,matched,deleting dtor via rowed dtor slot 0 chain
 ??0Rva002541FA@@QAE@XZ,,0x002541FA,68,Code/GameEngine/Source/GameLogic/Object/Update/Rva002541FACtor.cpp,matched,vtable 0x00BF1D58 caller 0x0025425E barrier for late xor
 ??0Rva0025460F@@QAE@XZ,,0x0025460F,25,Code/GameEngine/Source/GameLogic/Object/Update/Rva0025460FCtor.cpp,matched,vtable 0x00BF2558 caller 0x0025465C int at 0x118
+?Rva0017351CInsert@@YAXPAUBfmeAssignRecord32@@U1@P6A_NABU1@2@Z@Z,,0x0017351C,86,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_linear_insert.cpp,matched,insertion helper with 0x20 stride via callers 0x00173841 and 0x00173B5E plus pinned assign and rowed dtor

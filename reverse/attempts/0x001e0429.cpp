@@ -1,4 +1,6 @@
 // ??0DynamicDecalFXNugget@@QAE@XZ
+// partial score=0.98 date=2026-09-29
+// ??0DynamicDecalFXNugget@@QAE@XZ
 // partial score=0.98 date=2026-09-24
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 //
