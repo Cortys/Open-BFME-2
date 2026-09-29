@@ -41833,3 +41833,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00531D52@Rva00531E14@@QAEGXZ,,0x00531D52,75,Code/GameEngine/Source/Common/Rva00531E14Lookup.cpp,matched,same class pop alloc helper callers at 0x00532AFB plus 1
 ?q4Notify002CC841@@YAXPAXPAVMade002CC841@@HH@Z,,0x00509780,77,Code/GameEngine/Source/GameLogic/Object/Made002CC841Parse.cpp,matched,Projectile field parser two tables
 ?rva006E3AA0@AptBasePtrStack@@QAEXH@Z,,0x006E3AA0,127,Code/Libraries/Source/Apt/AptBasePtrStackPush.cpp,matched,unlock lane AptBasePtrStack pop via int3 barrier
+?Rva0035511BXfer@@YAPAVXfer@@PAV1@PAURva0035511BPair@@@Z,,0x0035511B,29,Code/GameEngine/Source/GameLogic/Object/Rva0035511BXfer.cpp,matched,chain via rowed ObjectID plus rowed xfer caller proves
