@@ -3134,3 +3134,4 @@ FUN_007c4b97	0x003C4B97	112	blocked	EH prolog plus list-int plus virtuals 9C-A8-
 ??0Rva004F5B63@@QAE@XZ	0x004F5B63	71	blocked	EH ctor missing state1 and vptr order vs list base t=20 model=muse-spark
 ?rva0047DCDF@Rva0047DCDF@@QAEXP6AXPAX0@Z0I@Z	0x0047DCDF	48	partial	shr-and flag needs byte and bl 1 vs dword FFFFFF01 t=15 model=muse-spark score=0.94 stash=reverse/attempts/0x0047dcdf.cpp
 ?Rva005116C2Load@@YAXXZ	0x005116C2	110	partial	push order and StringBase temp lea vs push-mov-mov t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x005116c2.cpp
+?Rva002192C0Get@@YAHXZ	0x002192C0	73	blocked	free int 0-4 from TheGameLogic plus0x114 plus0x110 plus global 0xA02324 byte FF4 t=12 model=muse-10

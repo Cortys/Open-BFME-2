@@ -310,3 +310,10 @@ struct BfmeStringRecord00219B0B {
 };
 BfmeStringRecord00219B0B::BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o) : word0(o.word0), text0(o.text0), text1(o.text1), text2(o.text2) {}
 template void _STL::_Construct<BfmeStringRecord00219B0B,BfmeStringRecord00219B0B>(BfmeStringRecord00219B0B*,const BfmeStringRecord00219B0B&);
+
+// Complete retail 2-arg ctor at0x0021A940.
+struct BfmeStringRecord0021A940 {
+    unsigned int word0; BfmeStringRecord00219B0B rec;
+    BfmeStringRecord0021A940(const unsigned int *p, const BfmeStringRecord00219B0B &o);
+};
+BfmeStringRecord0021A940::BfmeStringRecord0021A940(const unsigned int *p, const BfmeStringRecord00219B0B &o) : word0(*p), rec(o) {}
