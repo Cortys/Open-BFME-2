@@ -24,15 +24,20 @@ public:
 
 #define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
 
+int Rva0033A3F4Lookup(const AsciiString &name);
+
 class PlayerTemplate
 {
 public:
 	const Image *rva001FD1FB() const;
 	const Image *rva001FD221() const;
+	int rva001FD234() const;
 	const Image *rva001FD23F() const;
 
 private:
-	char m_pad170[0x170];
+	char m_pad00[0x18];
+	AsciiString m_18;
+	char m_pad1C[0x170 - 0x1C];
 	AsciiString m_170;
 	AsciiString m_174;
 	char m_pad178[0x1D8 - 0x178];
@@ -47,6 +52,11 @@ const Image *PlayerTemplate::rva001FD1FB() const
 const Image *PlayerTemplate::rva001FD221() const
 {
 	return TheMappedImageCollection->findImageByName(m_174);
+}
+
+int PlayerTemplate::rva001FD234() const
+{
+	return Rva0033A3F4Lookup(m_18);
 }
 
 const Image *PlayerTemplate::rva001FD23F() const
