@@ -41656,3 +41656,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva003F11EC@Rva003F11EC@@QAEHPAVCreateAHeroData@@@Z,,0x003F11EC,70,Code/GameEngine/Source/Common/System/Rva003F11ECFind.cpp,matched,hero holder search via 0x003F0DA5 plus vec count unlocks 3
 ?rva003F1C22@Rva003F1C22@@QAE_NPAVCreateAHeroData@@PAH@Z,,0x003F1C22,52,Code/GameEngine/Source/Common/System/Rva003F1C22Check.cpp,matched,bool wrapper over 0x003F11EC with out plus size check
 ??0Rva003F1F6A@@QAE@PAX@Z,,0x003F1F6A,76,Code/GameEngine/Source/Common/System/Rva003F1F6ACtor.cpp,matched,ctor via Vector_base 0x211E58 plus voidptr erase 0x31BD55
+??$__uninitialized_copy@PAURva003F1EA8Elem@@PAU1@@_STL@@YAPAURva003F1EA8Elem@@PAU1@00ABU__false_type@0@@Z,,0x003F1EA8,38,Code/Libraries/Source/WWVegas/WWLib/Rva003F1EA8UninitCopy.cpp,matched,uninit copy stride 12 via dup Construct 0x003F1A5F
