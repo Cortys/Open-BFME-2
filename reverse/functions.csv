@@ -42427,3 +42427,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva003C77EE@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x003C77EE,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap waypoint 0x2B via same TU shape
 ?rva003C76B8@AICommandInterface@@QAEXHW4CommandSourceType@@@Z,,0x003C76B8,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap single int 0x37 via same TU shape
 ?Rva003C4B80PopHeap@@YAXPAPAURva003BD485Keyed@@0H@Z,,0x003C4B80,23,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,chain lane caller 0x003C6483 heap pop adapter
+?rva003FF5F2@GameSlot@@QAEXABVAsciiString@@@Z,,0x003FF5F2,36,Code/GameEngine/Source/GameNetwork/GameSlotRva003FF5F2.cpp,matched,GameSlot setter plus1a8 via assign trim toUpper caller 0x005A1A0B
