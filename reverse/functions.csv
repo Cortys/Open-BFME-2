@@ -42922,3 +42922,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva009A6780BuildQuantizers@@YAXPAURva009A6780State@@@Z,,0x001B71F0,945,Code/GameEngine/Source/Common/Rva009A6780BuildQuantizers.cpp,matched,
 ?Rva009A6BA0QuantizeBlock@@YAXPAURva009A6780State@@PBFPAFE@Z,,0x001B7610,500,Code/GameEngine/Source/Common/Rva009A6780BuildQuantizers.cpp,matched,
 ??_ERva004D9A3C@@QAEPAXI@Z,,0x00392011,75,Code/GameEngine/Source/Common/Rva004D9A3CVectorDeletingDtor.cpp,matched,vector deleting dtor via delete array helper
+??1Rva002160C4@@QAE@XZ,,0x002160C4,68,Code/GameEngine/Source/Common/Rva002160C4Dtor.cpp,matched,dtor over three StringBase char via releaseBuffer with EH states callers 0x00216120 0x00217019

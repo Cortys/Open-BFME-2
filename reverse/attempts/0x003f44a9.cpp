@@ -1,7 +1,7 @@
 // ?rva003F44A9@Rva003F44A9@@QAEPAXXZ
-// partial score=0.97 date=2026-09-28
+// partial score=0.98 date=2026-09-29
 // ?rva003F44A9@Rva003F44A9@@QAEPAXXZ
-// partial score=0.97 date=2026-09-28
+// partial score=0.98 date=2026-09-29
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
@@ -9,11 +9,12 @@
 // First-empty finder over vector<Element*> at +4 where Element has
 // StringBase<char> at +0x18 (isEmpty row 0x00001E2F). Returns first
 // element whose string is empty else 0. Callers 0x003F4ABB 0x003F4FBD.
-// Layout from Rva003F498AInner middle 48B with vector at +4 and outer
-// 28B at +0x18. Current body 67B: first size calc uses cached base
-// (sub eax edi plus early push edi) vs retail reload (sub eax [esi+4]
-// plus late push edi). Loop plus return already match.
+// Barrier between base/cur and loop fixes first size calc to reload
+// (sub eax [esi+4]) for 68B/32insns exact size; remains early push edi
+// plus mov ebp edi ordering and add ebp 4 position (1 reg wall).
 #include <vector>
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 template <class CHAR> class StringBase { void *m_data; public: bool isEmpty() const; };
 struct Rva003F44A9Element { char m_pad[24]; StringBase<char> m_str; };
 class Rva003F44A9 {
@@ -22,10 +23,12 @@ class Rva003F44A9 {
 public:
     void *rva003F44A9();
 };
+// ?rva003F44A9@Rva003F44A9@@QAEPAXXZ present-unmatched
 void *Rva003F44A9::rva003F44A9()
 {
     Rva003F44A9Element **base = m_list.begin();
     Rva003F44A9Element **cur = base;
+    _ReadWriteBarrier();
     for (unsigned i = 0; i < m_list.size(); ++i) {
         if ((*cur)->m_str.isEmpty())
             return base[i];
