@@ -41761,3 +41761,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0070A680@AptNativeHash@@QAEXHPAVAptValue@@@Z,,0x0070A680,68,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash entry layout AddRef slot0 assert pValue line BD
 ??0Rva001DE6E1@@QAE@XZ,,0x001DE6E1,70,Code/Libraries/Source/WWVegas/WWLib/Rva001DE6E1Ctor.cpp,matched,default ctor map plus vector constants 0x4E20 0x5DC callers clean
 ??_GRva0060061A@@UAEPAXI@Z,,0x006006BD,28,Code/GameEngine/Source/Common/Rva0060061ADtor.cpp,matched,deleting dtor calls rowed dtor 0x0060061A same vtable
+?rva005FD788@Rva005FD788@@QAEXHPBDABVUnicodeString@@@Z,,0x005FD788,116,Code/GameEngine/Source/Common/Rva005FD788Apt.cpp,matched,APT level table method via format bfmeSetText
