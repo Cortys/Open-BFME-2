@@ -42903,3 +42903,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?Rva00202BB2Parse@@YAXPAVINI@@@Z,,0x00202BB2,126,Code/GameEngine/Source/Common/Rva00202BB2Parse.cpp,matched,chain lane caller of rva00202B6C LOD preset INI parse
 ??1Rva00469D86@@QAE@XZ,,0x00469D86,72,Code/GameEngine/Source/Common/Rva00469D86Dtor.cpp,matched,dtor OpaqueRef plus two StringBase via EHsc
 ??1ostrstream@_STL@@UAE@XZ,,0x00602E50,89,Code/Libraries/Source/WWVegas/WWLib/stlport_ostrstream_dtor.cpp,matched,ostrstream dtor middle of three derived callers via strstreambuf row
+??0Rva00391F4E@@QAE@HHH@Z,,0x00391F4E,66,Code/GameEngine/Source/Common/Rva00391F4EBitSet.cpp,matched,two-bit ctor via memset plus bit sets

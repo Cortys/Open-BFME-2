@@ -3532,3 +3532,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z	0x001EBCD8	62	partial	first-last-reg-swap-only 62B-exact pristine-headers-fix-tag t=25 model=muse-09 score=0.92 stash=reverse/attempts/0x001ebcd8.cpp
 ?rva001DCF82@Rva001DCF82@@QAEPAXXZ	0x001DCF82	71	partial	71B-exact 16insns 0regdiffs return-this gives mov-eax-ecx; only imul-movss order swap float-before-imul vs after t=30 model=muse-09 score=0.94 stash=reverse/attempts/0x001dcf82.cpp
 ?rva0066F930@Rva0066F930@@QAEXPAURva0066F930Arg@@@Z	0x0066F930	123	blocked	virtual-slot3 plus unknown vtable CE0F20 plus ebx-zero vs eax-zero plus frame 18vs24 4 variants honest-arg still minus11B t=20 model=muse-09
+??1Rva006C09A0@@UAE@XZ	0x006C09A0	115	blocked	multi-inheritance dtor layout unclear t=12 model=muse-12
