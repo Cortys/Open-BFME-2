@@ -40977,3 +40977,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00108B93Make@@YA?AVRva000B3F84Pair@@PBD@Z,,0x00108B93,33,Code/GameEngine/Source/Main/WinMainPairUnicode.cpp,matched,by-value pair via deref init like makeStringRef callers 0x5F94E3 0x5F9588
 ??1Rva00410688@@QAE@XZ,,0x00410688,57,Code/GameEngine/Source/Common/Rva00410688Dtor.cpp,matched,dtor via treehint release
 ??0Rva00382A02@@QAE@H@Z,,0x00382A02,36,Code/Libraries/Source/WWVegas/WWLib/Rva00382A02Init.cpp,matched,proxy null then allocate 52 caller 0x1DD81C
+??$__uninitialized_copy@PAUBfmeVectorRecord000C0BEC@@PAU1@@_STL@@YAPAUBfmeVectorRecord000C0BEC@@PAU1@00ABU__false_type@0@@Z,,0x000C2438,38,Code/Libraries/Source/WWVegas/WWLib/Rva000C2438Copy.cpp,matched,STLport copy false_type overload stride 0x14
