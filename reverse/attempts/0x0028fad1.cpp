@@ -1,13 +1,15 @@
 // ?rva0028FAD1@Object@@QAEXPAV1@@Z
-// partial score=0.95 date=2026-09-29
+// partial score=0.96 date=2026-09-29
 // ?rva0028FAD1@Object@@QAEXPAV1@@Z
-// partial score=0.95 date=2026-09-29
-// cl: /O1 /DNDEBUG /MD /arch:SSE
-// ?rva0028FAD1@Object@@QAEXPAV1@Z 0x0028FAD1 158B
+// partial score=0.96 date=2026-09-29
+// cl: /O1 /DNDEBUG /MD /GX-
+// ?rva0028FAD1@Object@@QAEXPAV1@@Z, retail 0x0028FAD1, 158 bytes.
 // Evidence: unlock; callers 0x4648B1 and 0x4F5784 pass Object* this with Object* arg;
 // sets containedBy +0x274 and +0x27C from TheGameLogic+0x40; bit0 at +0x439;
 // calls rowed setStatus 0x23DB0E and pinned Rva0028CDEB 0x28CDEB; two vtable +0xB0 calls on +0x250 module.
-#define TheGameLogic (*(class GameLogic **)0x00DFE78C)
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 typedef int ObjectID;
 
@@ -31,6 +33,8 @@ public:
 	char m_pad00[0x40];
 	int m_unk40;
 };
+
+extern GameLogic *TheGameLogic;
 
 struct Flag04
 {
@@ -95,7 +99,7 @@ private:
 struct RetBits
 {
 	unsigned int m_bits[1];
-	int test(int i) { return m_bits[i >> 5] & (1u << (i & 31)); }
+	int test(int i) { return (m_bits[i >> 5] >> (i & 31)) & 1; }
 };
 
 // ?rva0028FAD1@Object@@QAEXPAV1@@Z present-unmatched
@@ -113,7 +117,10 @@ void Object::rva0028FAD1(Object *arg)
 		if (mod) {
 			ObjectStatusMask mask;
 			void *ret = mod->slot44(&mask, this);
-			if (((RetBits *)ret)->test(3) != 0)
+			unsigned int bits = *(unsigned int *)ret;
+			_ReadWriteBarrier();
+			bits >>= 3;
+			if ((bits & 1) != 0)
 				m_bit439 |= 1;
 			else
 				m_bit439 &= (unsigned char)~1;
