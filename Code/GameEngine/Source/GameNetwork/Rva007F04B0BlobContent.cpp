@@ -1,6 +1,6 @@
 // EA FESL blob-service content fetch at retail RVA 0x007F04B0.
 
-class Rva007EFFC0Allocator
+class GenAlloc
 {
 public:
 	virtual void v0();
@@ -9,7 +9,7 @@ public:
 	virtual void release( void *block, int flags );
 };
 
-extern void *bfmeGo929C();
+extern GenAlloc *Gen007EFFC0();
 
 class BfmeThingUPB
 {
@@ -45,7 +45,7 @@ public:
 bool Rva007F04B0BlobService::fetchContent( char *destination, unsigned int length )
 {
 	Rva007F04B0BlobService *self = this;
-	Rva007EFFC0Allocator *allocator = (Rva007EFFC0Allocator *)bfmeGo929C();
+	GenAlloc *allocator = Gen007EFFC0();
 	unsigned int adjustedLength = length + 2;
 	unsigned int size = ( adjustedLength / 3 ) * 4 + 1;
 	void *content = allocator->allocate( size, 2 );
@@ -61,11 +61,11 @@ bool Rva007F04B0BlobService::fetchContent( char *destination, unsigned int lengt
 	}
 	if( !self->m_reader->bfmeGoUPB( (void *)"content", (char *)content, (void *)size ) )
 	{
-		((Rva007EFFC0Allocator *)bfmeGo929C())->release( content, 0 );
+		Gen007EFFC0()->release( content, 0 );
 		return false;
 	}
 	rva007FF250Decode( ( (int)length + 2 ) / 3 * 4, (const char *)content,
 		(unsigned char *)destination );
-	((Rva007EFFC0Allocator *)bfmeGo929C())->release( content, 0 );
+	Gen007EFFC0()->release( content, 0 );
 	return true;
 }
