@@ -69,6 +69,7 @@ public:
     void *rva0021B1B4(unsigned int o, unsigned int i);
     void *rva0021B2A2(unsigned int o, unsigned int i);
     void *rva0021A134(unsigned int index);
+    int rva0021A016(unsigned int o, unsigned int i);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -243,4 +244,17 @@ void *Rva00219B9E::rva0021A134(unsigned int index)
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 0x10;
     return &AsciiString::TheEmptyString;
+}
+// ?rva0021A016@Rva00219B9E@@QAEHII@Z @0x0021A016 43B
+// Two-level int lookup: outer 32B vector at +0x14C selects the element, then the
+// rowed 0x00219CDF accessor resolves the inner index; out-of-range returns 0.
+// Same reinterpret-cast pattern as 0x0021B1B4/0x0021B2A2. Caller 0x00407037.
+int Rva00219B9E::rva0021A016(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219CDF(i);
+    }
+    return 0;
 }

@@ -42239,3 +42239,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0043C9B3Get@@YAPAXXZ,,0x0043C9B3,50,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,Guarded singleton getter twin via shared precedent
 ?Rva0043CCDASet@@YAXE@Z,,0x0043CCDA,34,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,Flag setter twin on 0x0043C9B3 block via shared precedent
 ?rva0021A134@Rva00219B9E@@QAEPAXI@Z,,0x0021A134,41,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,41B outer vector 0x14C stride 0x20 plus 0x10 or empty callers 0x004085A1
+?rva0021A016@Rva00219B9E@@QAEHII@Z,,0x0021A016,43,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,43B outer 0x14C plus inner 0x00219CDF or 0 caller 0x00407037
