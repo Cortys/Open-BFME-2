@@ -41208,3 +41208,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004EE037@Rva004EE037@@QAEIXZ,,0x004EE037,12,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,unsigned div by LogicFramesPerSecond 0x00DBA4E4 callers 0x005BE3D6 0x005BFDE4
 ?rva00330B2E@Rva00330B2E@@QAEXXZ,,0x00330B2E,19,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,member plus8 clear then slot12 chain 0x30B9CA
 ?Rva002E180DReinsert@@YAXPAPAX0PAX@Z,,0x002E180D,23,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,wrapper passing zero through to reinsert caller 0x002E2313
+?Rva002E1EB7Insert@@YAXPAPAX0PAX1@Z,,0x002E1EB7,58,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,guarded insert via copy-backward or Rva002E08A2Insert caller 0x002E2167
