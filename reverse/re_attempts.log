@@ -3498,3 +3498,8 @@ FUN_007007A8	0x003007A8	211	blocked	entry mov eax,[eax] with no eax set implies 
 ??0LargeGroupBonusUpdateModuleData@@QAE@XZ	0x004901BD	104	partial	104/104 size-exact 30/30 insns 0 reg 0 mem; walls int-global load before EH-state plus byte-18 store after vector lea-push plus push-vs-lea for vector alloc; t=20 model=muse-04 score=0.985 stash=reverse/attempts/0x004901bd.cpp
 FUN_007F0588	0x003F0588	70	blocked	array-search loop shape wall 51vs70B compact indexed vs retail ptr-plus-index with pre-loop check and per-iter bound reload t=15 model=muse-04
 ?rva004C108B@Rva004C108B@@QAEMXZ	0x004C108B	49	blocked	same float-zero wall as 0x004C10F0 stash t=1 model=muse-spark
+?rva001DE9C4@Eva@@QAEHPBD@Z	0x001DE9C4	161	blocked	register wall key edi not ebx plus lea vs add table48 named-local no change t=10 model=muse-06
+?rva002D9C37@AudioEventRTS@@QBE_NXZ	0x002D9C37	67	blocked	extra dec edx 6 variants switch if fallthrough case4 reversed G7 all 66vs67 t=15 model=muse-06
+?ReAcquireResources@W3DSnowManager@@QAE_NXZ	0x0009390F	444	blocked	lea-push order plus 4 global addrs 3 variants slot operator same 444B t=12 model=muse-06
+?Rva006D8630Drain@@YAXXZ	0x006D8630	52	blocked	store via esi not ecx 4 variants swap next0 rename same 55B t=10 model=muse-06
+?rva00202633@Rva00202633@@QAEXH@Z	0x00202633	69	partial	size-exact 69B/17insns only esi-edx swap plus push-store order shape-lever def-order G7 unsigned tried t=20 model=muse-06 score=0.92 stash=reverse/attempts/0x00202633.cpp
