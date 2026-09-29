@@ -314,9 +314,14 @@ template BfmeStringRecord005ED5F3* _STL::__copy<BfmeStringRecord005ED5F3*, BfmeS
 struct BfmeStringRecord00219B0B {
     unsigned int word0; AsciiString text0, text1, text2;
     BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o);
+    BfmeStringRecord00219B0B(unsigned int w0, const AsciiString &t0, const AsciiString &t1, const AsciiString &t2);
     ~BfmeStringRecord00219B0B();
 };
 BfmeStringRecord00219B0B::BfmeStringRecord00219B0B(const BfmeStringRecord00219B0B &o) : word0(o.word0), text0(o.text0), text1(o.text1), text2(o.text2) {}
+// ??0BfmeStringRecord00219B0B@@QAE@IABVAsciiString@@00@Z @0x00219ABB 80B
+// 4-arg ctor of the same 0x10 record: word0 + three AsciiString copies via 0x365F0.
+// Same EH scope as the copy; caller 0x0021DEF9 forwards (w,t0,t1,t2) in order.
+BfmeStringRecord00219B0B::BfmeStringRecord00219B0B(unsigned int w0, const AsciiString &t0, const AsciiString &t1, const AsciiString &t2) : word0(w0), text0(t0), text1(t1), text2(t2) {}
 BfmeStringRecord00219B0B::~BfmeStringRecord00219B0B() {}
 template void _STL::_Construct<BfmeStringRecord00219B0B,BfmeStringRecord00219B0B>(BfmeStringRecord00219B0B*,const BfmeStringRecord00219B0B&);
 

@@ -42145,3 +42145,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva00497DD6@@UAEPAXI@Z,,0x00497DBA,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-03.cpp,matched,chain deleting dtor calls rowed dtor
 ?rva005830AE@Rva005830AE@@QAEXH@Z,,0x005830AE,115,Code/GameEngine/Source/Common/Rva005830AE.cpp,matched,callers 0x0044C629 0x0044C828 empty A0C898 via 0x37050
 ??0BfmeStringRecord002199C8@@QAE@IABVAsciiString@@00@Z,,0x0021997A,78,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,4-arg ctor of same 0x10 record via permuted init
+??0BfmeStringRecord00219B0B@@QAE@IABVAsciiString@@00@Z,,0x00219ABB,80,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,4-arg ctor of same 0x10 record in order
