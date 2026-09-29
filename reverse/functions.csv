@@ -42396,3 +42396,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva0058D601@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D601,133,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room plus2 sibling
 ?rva005D3B9A@Rva005D3B9A@@QAEXXZ,,0x005D3B9A,109,Code/GameEngine/Source/Common/Rva005D3B9APortrait.cpp,matched,chain from rowed erase thunk 0x00223A94 via AsciiString format
 ?rva005D3FE4@Rva005D3FE4@@QAEXM@Z,,0x005D3FE4,28,Code/GameEngine/Source/Common/Rva005D3FE4FloatSetter.cpp,matched,unlock float setter plus 0x38 flag clear plus 0x3C
+?rva005D3F6D@Rva005D3F6D@@QAEXH@Z,,0x005D3F6D,32,Code/GameEngine/Source/Common/Rva005D3F6DSetter.cpp,matched,leaf virtual slot 0x28 cache plus 0x2C
