@@ -47,6 +47,7 @@ public:
 	Bool rva0058D310(NetCommandRef *msg);
 	Bool rva0058D58A(NetCommandRef *msg);
 	Bool rva0058D296(NetCommandRef *msg);
+	Bool rva0058D601(NetCommandRef *msg);
 private:
 	UnsignedByte m_pad0[0x1E0];
 	Int m_packetLen;
@@ -190,6 +191,42 @@ Bool NetPacket::rva0058D296(NetCommandRef *msg)
 	}
 	Int base = m_packetLen + cmdMsg->m_dataLen28;
 	if ((len + base + 0xB) > MAX_PACKET_SIZE) {
+		return false;
+	}
+	return true;
+}
+
+Bool NetPacket::rva0058D601(NetCommandRef *msg)
+{
+	Int len = 0;
+	Bool needNewCommandID = false;
+	NetCommandMsg *cmdMsg = msg->getCommand();
+	if (m_lastType1FF != cmdMsg->m_commandType) {
+		len += sizeof(UnsignedByte) + sizeof(UnsignedByte);
+	}
+	if (m_lastRelay200 != msg->getRelay()) {
+		++len;
+		++len;
+	}
+	if (m_lastTimestamp1F8 != cmdMsg->m_timestamp) {
+		len += sizeof(UnsignedInt) + sizeof(UnsignedByte);
+	}
+	if (m_lastFrame1F4 != cmdMsg->m_executionFrame) {
+		len += sizeof(UnsignedInt) + sizeof(UnsignedByte);
+	}
+	UnsignedInt lastPlayer = m_lastPlayer1FE;
+	if (lastPlayer != cmdMsg->m_playerID) {
+		++len;
+		++len;
+		needNewCommandID = true;
+	}
+	UnsignedInt lastID = m_lastID1FC;
+	UnsignedInt cmdID = cmdMsg->m_id;
+	if (((lastID + 1) != cmdID) ||
+		(needNewCommandID == true)) {
+		len += sizeof(UnsignedByte) + sizeof(UnsignedShort);
+	}
+	if ((len + m_packetLen + 2) > MAX_PACKET_SIZE) {
 		return false;
 	}
 	return true;

@@ -42393,3 +42393,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva004CEF58@BFMEConnectionManager@@QAEEH@Z,,0x004CEF58,106,Code/GameEngine/Source/Common/ConnectionManagerInit.cpp,matched,timeout via m_localSlot conn timeGetTime m40 global m_C20
 ?rva004CEFC2@BFMEConnectionManager@@QAEEHI@Z,,0x004CEFC2,112,Code/GameEngine/Source/Common/ConnectionManagerInit.cpp,matched,sibling timeout via param vs m_C20 shift
 ?rva0058D296@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D296,122,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room datalen plusB sibling
+?rva0058D601@NetPacket@@QAE_NPAVNetCommandRef@@@Z,,0x0058D601,133,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForMessage.cpp,matched,NetPacket room plus2 sibling
