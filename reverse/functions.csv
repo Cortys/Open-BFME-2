@@ -42358,3 +42358,4 @@ _ciSetQuietModeEnumJoinedChannelsA,,0x006A1610,19,Code/GameEngine/Source/GameNet
 ?Rva003BE553AdjustHeap@@YAXPAPAURva003BD485Keyed@@HHPAU1@H@Z,,0x003BE553,90,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,heap adjust sift-down plus 5-push SiftUp chain callers 0x003C3AC7 0x003C3AF0
 ?rva002DCDBF@Rva002DCDBF@@QAEPAXV?$StringBase@D@@H@Z,,0x002DCDBF,101,Code/GameEngine/Source/Common/Rva002DCDBFFind.cpp,matched,bucketed circular find via compare 0x69D6 release 0x36410
 ?Rva0021BAFCPopHeap@@YAXPAPAX0P6A_NPAX1@Z@Z,,0x0021BAFC,23,Code/GameEngine/Source/Common/Rva002198ECAdjustHeap.cpp,matched,pop_heap wrapper via rowed 0x0021AD3F
+?rva0021B05A@Rva00219B9E@@QAEPAXI@Z,,0x0021B05A,112,Code/GameEngine/Source/Common/Rva00219B9EAccessor.cpp,matched,outer element plus8 twin of 0x0021AFEA
