@@ -41128,3 +41128,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0025EF18@@UAE@XZ,,0x0025EF18,11,Code/GameEngine/Source/Common/System/Rva0025EF18Dtor.cpp,matched,Snapshot base BBB554 dtor zeroes 04 caller deleting 0x25EFF1
 ??0ScriptAction@@QAE@XZ,,0x003B2804,46,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionCtor.cpp,matched,ScriptAction default ctor vtable 0x81F3FC NO_OP parms memset; /Oi for rep stosd
 ?Rva0050AD97BuildFieldParse@@YAXAAVMultiIniFieldParse@@@Z,,0x0050AD97,34,Code/GameEngine/Source/GameLogic/Object/Die/Rva0050AD97BuildFieldParse.cpp,matched,two adds via 0x00507552 plus data table caller 0x0050ADB9
+?q4Notify002CC9D4@@YAXPAXPAVMade002CC9D4@@HH@Z,,0x0050ADB9,53,Code/GameEngine/Source/GameLogic/Object/Made002CC9D4Parse.cpp,matched,DamageContained parser via 0x0050AD97 caller 0x002CCA19
