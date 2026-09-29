@@ -3465,3 +3465,5 @@ FUN_00449BE8	0x00049BE8	296	blocked	bitflag-to-string leaf with varargs format a
 ?rva006DFEA0@AptMath@@SAXXZ	0x006DFEA0	254	blocked	AptMath clip identity 6 variants direct chained arrays struct barrier O1-O2 all fold stack temp no frame 148vs254 need honest stack-forcing lever t=20 model=muse-07
 ?Rva000787BAOpen@@YAPAVFile@@PBD@Z	0x000787BA	117	partial	extra push esi plus esi-vs-ebx for ret 121B vs 117B t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x000787ba.cpp
 ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z	0x001B2EFC	215	partial	two operand-order diffs at 0xB1-0xB3 mov edx eax vs mem t=15 model=muse-04 score=0.9907 stash=reverse/attempts/0x001b2efc.cpp
+??0Rva006FBC90Owner@@QAE@PAVAptValue@@@Z	0x006FBAA0	109	partial	missing base vtable store plus EH dword vs byte 100 vs 109 t=20 model=muse-03 score=0.92 stash=reverse/attempts/0x006fbaa0.cpp
+??0LANAPI@@QAE@XZ	0x00449AB8	193	partial	extra lea base-plus-4 plus early string push plus early OR vs late retail 5 regions minus-1B t=25 model=muse-03 score=0.95 stash=reverse/attempts/0x00449ab8.cpp

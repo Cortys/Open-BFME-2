@@ -42656,3 +42656,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??1Rva00131BE5@@UAE@XZ,,0x00131BE5,91,Code/Libraries/Source/WWVegas/WW3D2/Rva00131BE5Dtor.cpp,matched,dtor vtable 0x7D25D8 m14 virtual delete String base reset callers 0x131D42 0x1320B7
 ?rva00300D0E@MapMetaData@@QAE?AVUnicodeString@@XZ,,0x00300D0E,108,Code/GameEngine/Source/GameClient/GUI/MapMetaData_getBaseDisplayName.cpp,matched,MapMetaData leaf after backslash via reverseFind plus translate
 ?Rva0030062CGet@@YAPAVAsciiString@@XZ,,0x0030062C,76,Code/GameEngine/Source/Common/Rva0030062CGet.cpp,matched,static AsciiString LivingWorldScripts with guard plus atexit
+?reset@Rva00802290Owner@@QAEXXZ,,0x0066E520,12,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserSmallMembers.cpp,matched,BFME1 donor Y2FeslBrowserSmallMembers plus caller 0x0066244D plus pin
