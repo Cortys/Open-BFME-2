@@ -42166,3 +42166,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__unguarded_partition@PAHHP6A_NHH@Z@_STL@@YAPAHPAH0HP6A_NHH@Z@Z,,0x002C529D,67,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_int_funptr.cpp,matched,int partition with function-pointer comparator
 ?rva00493BD4@Rva00493BD4@@QAEXPAV1@@Z,,0x00493BD4,134,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva00493BD4.cpp,matched,calls friend_getFinalOverride at 0x00288609 plus virtual slots 0x18 and 0x0C caller 0x004ADCE8
 ?rva00535781@UserPreferences@@QAEXXZ,,0x00535781,159,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,chain via 0x002DBFAD ProfileCreatedDate slot 0x30
+?rva0058DE5B@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DE5B,106,Code/GameEngine/Source/GameNetwork/NetPacket_isRoomForFrameMessage.cpp,matched,readDestroyPlayer via new 0x20 memcpy setter

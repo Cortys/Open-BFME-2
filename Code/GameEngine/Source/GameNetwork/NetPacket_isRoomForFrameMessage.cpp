@@ -42,6 +42,7 @@ class NetPacket
 {
 public:
 	virtual ~NetPacket();
+	static class NetCommandMsg *rva0058DE5B(UnsignedByte *data, Int &readOffset);
 protected:
 	UnsignedByte m_packet[0x1DC];
 	Int m_packetLen;
@@ -124,4 +125,25 @@ UnsignedByte NetPacket::rva0058D513(NetCommandRef *msg)
  }
  Int total = m_packetLen + len + 6;
  return total <= MAX_PACKET_SIZE;
+}
+
+extern "C" void *__cdecl memcpy(void *dest, const void *src, unsigned int count);
+
+class Rva004D57AE : public NetCommandMsg
+{
+public:
+	Rva004D57AE();
+	void setPlayerIndex(UnsignedInt v);
+private:
+	UnsignedInt m_playerIndex;
+};
+
+NetCommandMsg *NetPacket::rva0058DE5B(UnsignedByte *data, Int &readOffset)
+{
+	Rva004D57AE *msg = new Rva004D57AE;
+	UnsignedInt v = 0;
+	memcpy(&v, data + readOffset, sizeof(v));
+	readOffset += sizeof(v);
+	msg->setPlayerIndex(v);
+	return msg;
 }
