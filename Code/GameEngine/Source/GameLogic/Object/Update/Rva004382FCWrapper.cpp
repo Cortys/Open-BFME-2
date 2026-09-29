@@ -27,6 +27,7 @@ class Rva004382FC
 public:
 	Rva004382FC();
 	Rva004382FC(const Rva002542F3Member &a1, int a2);
+	Rva004382FC(const Rva004382FC &other);
 private:
 	Rva002542F3Member m_00;
 	int m_B8;
@@ -46,5 +47,13 @@ Rva004382FC::Rva004382FC(const Rva002542F3Member &a1, int a2)
 	, m_B8((int)TheGameLogic->m_frame)
 	, m_BC(a2)
 	, m_C0(0)
+{
+}
+
+Rva004382FC::Rva004382FC(const Rva004382FC &other)
+	: m_00(other.m_00)
+	, m_B8(other.m_B8)
+	, m_BC(other.m_BC)
+	, m_C0(other.m_C0)
 {
 }
