@@ -41071,3 +41071,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004E1F62@Rva004E1F62@@QAEXXZ,,0x004E1F62,53,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_004e1f62.cpp,matched,unlock tree iterate virtual6 gates virtual5 via increment
 ?rva004E1F97@Rva004E1F97@@QAEXPAURva004E1F97Node@@@Z,,0x004E1F97,53,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_erase_004e1f97.cpp,matched,unlock tree erase recurse right walk left clear free
 ?set@Rva0009990D@@QAEXPAX@Z,,0x000998EA,35,Code/GameEngine/Source/Common/Rva0009990DSet.cpp,matched,guarded swap via dtor plus delete
+?Rva000B9596Fill@@YAPAVAsciiString@@PAV1@IABV1@@Z,,0x000B9596,27,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_fill_n_asciistring.cpp,matched,fill_n dispatcher via rowed tag body
