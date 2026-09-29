@@ -64,3 +64,13 @@ void __cdecl Rva005FDF1CSet(int level, Rva005FDF1COuter *outer, const UnicodeStr
 	key.format("APT:_level%u.%s_PlayerName", level, mid);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }
+
+// ?Rva005FDF83Set@@YAXHPAURva005FDF1COuter@@ABVUnicodeString@@@Z retail 0x005FDF83 103B
+// Evidence: format APT:_level%u.%s_LocalPlayerName via 0x00038150; same callees globals callers 0x005FE3AA 0x005FE7E1; sibling of 0x005FDF1C
+void __cdecl Rva005FDF83Set(int level, Rva005FDF1COuter *outer, const UnicodeString &text)
+{
+	AsciiString key;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	key.format("APT:_level%u.%s_LocalPlayerName", level, mid);
+	g_Va009FE4CC->bfmeSetText(key, text, true);
+}
