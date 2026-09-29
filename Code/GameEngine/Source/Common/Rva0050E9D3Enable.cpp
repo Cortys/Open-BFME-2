@@ -57,3 +57,26 @@ void __stdcall Rva004E40A6Enable(int unused)
 	if (g_Va009FE78C->m_val != 6 || g_Va009FEDF0->m_flag != 0)
 		Rva004E400DEnable();
 }
+
+// ?Rva004E4179Get@@YAPAXXZ @0x004E4179 50B.
+// One-shot guarded singleton getter: unless guard byte at 0x00A04464 is
+// set, set it, point 0x00A0445C at 0x008621F0 (encoded 0x00C621F0) and set
+// byte at 0x00A04460, registering cleanup RVA 0x007B8F26 (encoded
+// 0x00BB8F26) via rowed _atexit, then return address of 0x00A0445C.
+// Callers at 0x004E41BF 0x004E4317 0x004E4321 0x004E432C plus jmp thunk
+// 0x004E4312; caller 0x004E432A uses +4 as flag byte.
+extern "C" int __cdecl atexit(void (__cdecl *routine)(void));
+extern void *g_Va00A0445C;
+extern unsigned char g_Va00A04460;
+extern int g_Va00A04464;
+void *Rva004E4179Get(void)
+{
+	if ((g_Va00A04464 & 1) == 0)
+	{
+		g_Va00A04464 |= 1;
+		g_Va00A0445C = (void *)0x00C621F0;
+		g_Va00A04460 = 1;
+		atexit((void (__cdecl *)(void))0x00BB8F26);
+	}
+	return &g_Va00A0445C;
+}

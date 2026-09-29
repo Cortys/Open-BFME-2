@@ -41130,3 +41130,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0050AD97BuildFieldParse@@YAXAAVMultiIniFieldParse@@@Z,,0x0050AD97,34,Code/GameEngine/Source/GameLogic/Object/Die/Rva0050AD97BuildFieldParse.cpp,matched,two adds via 0x00507552 plus data table caller 0x0050ADB9
 ?q4Notify002CC9D4@@YAXPAXPAVMade002CC9D4@@HH@Z,,0x0050ADB9,53,Code/GameEngine/Source/GameLogic/Object/Made002CC9D4Parse.cpp,matched,DamageContained parser via 0x0050AD97 caller 0x002CCA19
 ??0Rva00585B16@@QAE@XZ,,0x00585ADA,60,Code/Libraries/Source/WWVegas/WWLib/Rva00585B16Dtor.cpp,matched,ctor inits 0 1 0 0 deque 0 plus 0.0f x3 via SSE
+?Rva004E4179Get@@YAPAXXZ,,0x004E4179,50,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,guarded singleton getter via rowed atexit callers 4E41BF 4E4317
