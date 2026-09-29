@@ -26,3 +26,27 @@ void Rva005659CA::rva005659CA()
 	if (buf != 0)
 		free(buf);
 }
+
+struct Rva0052BF4DElem
+{
+	virtual ~Rva0052BF4DElem();
+};
+
+void Rva0052C266DestroyRange(Rva0052BF4DElem *first, Rva0052BF4DElem *last);
+
+class Rva005659E8
+{
+public:
+	void rva005659E8();
+private:
+	Rva0052BF4DElem *m_00;
+	Rva0052BF4DElem *m_04;
+};
+
+void Rva005659E8::rva005659E8()
+{
+	Rva0052C266DestroyRange(m_00, m_04);
+	Rva0052BF4DElem *buf = m_00;
+	if (buf != 0)
+		free(buf);
+}

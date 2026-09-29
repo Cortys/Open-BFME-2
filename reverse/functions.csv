@@ -41477,3 +41477,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00206667@Rva00206667@@QAEXPAURva00206667Node@@@Z,,0x00206667,53,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206667Clear.cpp,matched,unlock recursive clear via rowed StringBase clear plus free same 53B shape
 ?rva005659CA@Rva005659CA@@QAEXXZ,,0x005659CA,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x005A6EDA plus free
 ?rva0056F503@Rva0056F43E@@QAEXXZ,,0x0056F503,41,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056F43ECleanup.cpp,matched,table clear via rva0056F43E with header self-link reset
+?rva005659E8@Rva005659E8@@QAEXXZ,,0x005659E8,30,Code/GameEngine/Source/Common/System/Rva005659CATidy.cpp,matched,tidy destroy via 0x0052C266 plus free
