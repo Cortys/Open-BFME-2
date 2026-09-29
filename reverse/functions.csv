@@ -42473,3 +42473,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??1Rva004D62A9@@UAE@XZ,,0x004D62F7,54,Code/GameEngine/Source/GameNetwork/Rva004D62A9Ctor.cpp,matched,vptr 0x860494 plus releaseBuffer plus0x1c plus vptr 0x860130
 ??_GRva004D62A9@@UAEPAXI@Z,,0x004D6AD5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-4D6AD5.cpp,matched,slot0 0x00860494 calls 0x004D62F7 plus delete
 ?xfer@Rva003AE2A9@@MAEXPAVXfer@@@Z,,0x0056454F,79,Code/GameEngine/Source/Common/Rva003AE2A9Xfer.cpp,matched,slot-3 xfer Version 1 2 plus subobject 0x00564522 plus gated bools caller 0x003ACB6A
+?getEventFX@LifeEventModuleInfo@FXParticleSystem@@QAEPBVFXList@@XZ,0x0056410F,0x0056410F,46,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LifeEventModuleInfoGetEventFX.cpp,matched,lazy FX cache via rowed findFXList 0x001E281A callers 0x00564197 0x00564249
