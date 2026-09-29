@@ -3424,3 +3424,4 @@ FUN_001EF5BD	0x001EF5BD	164	blocked	164B thiscall map-find with EH plus 4x pin-o
 ?rva0055A892@Rva0055A892@@QAEDPAVObject@@@Z	0x0055A892	80	blocked	80B player-bit filter needs holder stack reload not edi plus branch tail t=10 model=muse-spark
 ?m@T_007ea5e0@@QAEXXZ	0x00657590	87	partial	ebp-ebx mirror plus one vtable mov remains t=15 model=muse-spark score=0.96 stash=reverse/attempts/0x00657590.cpp
 ?rva005445FF@Rva005445FF@@QAEXXZ	0x005445FF	71	partial	69B vs 71B vtable load after call in edx not ebp plus missing push ebp pop ebp t=20 model=muse-09 score=0.93 stash=reverse/attempts/0x005445ff.cpp
+?rva00583CB4@Rva005843DA@@QAEXH@Z	0x00583CB4	44	partial	order-only mov eax ecx+8 after imul vs before; 44B 19insns 0 operand diffs t=20 model=muse-05 score=0.93 stash=reverse/attempts/0x00583cb4.cpp
