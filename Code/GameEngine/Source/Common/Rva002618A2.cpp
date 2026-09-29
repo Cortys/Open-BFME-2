@@ -7,6 +7,7 @@ class Rva002618A2
 {
 public:
 	Rva002618A2 *rva002618A2(int unused, int b1, int b2, int b3);
+	Rva002618A2 *rva002618FA(int unused, int b1, int b2, int b3, int b4, int b5);
 private:
 	unsigned m_words[7];
 };
@@ -17,5 +18,16 @@ Rva002618A2 *Rva002618A2::rva002618A2(int unused, int b1, int b2, int b3)
 	m_words[(unsigned)b1 >> 5] |= (1u << (b1 & 31));
 	m_words[(unsigned)b2 >> 5] |= (1u << (b2 & 31));
 	m_words[(unsigned)b3 >> 5] |= (1u << (b3 & 31));
+	return this;
+}
+Rva002618A2 *Rva002618A2::rva002618FA(int unused, int b1, int b2, int b3, int b4, int b5)
+{
+	(void)unused;
+	memset(this, 0, 0x1c);
+	m_words[(unsigned)b1 >> 5] |= (1u << (b1 & 31));
+	m_words[(unsigned)b2 >> 5] |= (1u << (b2 & 31));
+	m_words[(unsigned)b3 >> 5] |= (1u << (b3 & 31));
+	m_words[(unsigned)b4 >> 5] |= (1u << (b4 & 31));
+	m_words[(unsigned)b5 >> 5] |= (1u << (b5 & 31));
 	return this;
 }

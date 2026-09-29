@@ -41737,3 +41737,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva00261790@@QAE@PAVArg00261790@@_N@Z,,0x00261790,88,Code/GameEngine/Source/Common/Rva00261790Ctor.cpp,matched,caller 0x00272B3E GlobalData DFE758 plus float BF8FFC sibling SSE pattern
 ?Rva003E41E3Get@@YG_NPAX@Z,,0x003E41E3,24,Code/GameEngine/Source/Common/Rva003E41E3Get.cpp,matched,chain ScriptEngine wrapper via rowed rva
 ??$__partial_sort@PAHHVRva00422CA8@@@_STL@@YAXPAH000VRva00422CA8@@@Z,,0x00424C21,93,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain partial sort via rowed heap sorts
+?rva002618FA@Rva002618A2@@QAEPAV1@HHHHHH@Z,,0x002618FA,129,Code/GameEngine/Source/Common/Rva002618A2.cpp,matched,sibling 0x002618A2 same class 5-bit caller 0x00261CAD pushes 0 8 9 abc
