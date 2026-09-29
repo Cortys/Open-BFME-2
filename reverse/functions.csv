@@ -41983,3 +41983,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva004D6208@@QAE@XZ,,0x004D61BB,77,Code/GameEngine/Source/GameNetwork/Rva004D6208Ctor.cpp,matched,ctor vtable 0x860484 Ascii clear plus array plus type 0x13
 ?rva005373AF@UserPreferences@@QAEHXZ,,0x005373AF,93,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,total-losses sum Losses-getter faction table chain
 ?rva005504F9@Rva0055011A@@QAEXABUBfmeNarrowRecord0054FEF1@@@Z,,0x005504F9,125,Code/Libraries/Source/WWVegas/WWLib/Rva0055011A005504F9.cpp,matched,slot6 lock map plus lock inc pushback via rowed callees
+??4BfmeNarrowRecord0054FEF1@@QAEAAU0@ABU0@@Z,,0x005501D3,33,Code/GameEngine/Source/Common/NarrowStringRecordCopyBFME2.cpp,matched,record assign via string assign plus words

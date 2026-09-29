@@ -68,6 +68,14 @@ template void _STL::_Construct<BfmeNarrowRecord00427F75,BfmeNarrowRecord00427F75
 struct BfmeNarrowRecord0054FEF1 {
     _STL::basic_string<char> text; unsigned int word0, word1;
     BfmeNarrowRecord0054FEF1(const BfmeNarrowRecord0054FEF1 &o);
+    BfmeNarrowRecord0054FEF1 &operator=(const BfmeNarrowRecord0054FEF1 &o);
 };
 BfmeNarrowRecord0054FEF1::BfmeNarrowRecord0054FEF1(const BfmeNarrowRecord0054FEF1 &o) : text(o.text), word0(o.word0), word1(o.word1) {}
+BfmeNarrowRecord0054FEF1 &BfmeNarrowRecord0054FEF1::operator=(const BfmeNarrowRecord0054FEF1 &o)
+{
+	text.assign(o.text);
+	word0 = o.word0;
+	word1 = o.word1;
+	return *this;
+}
 template void _STL::_Construct<BfmeNarrowRecord0054FEF1,BfmeNarrowRecord0054FEF1>(BfmeNarrowRecord0054FEF1*,const BfmeNarrowRecord0054FEF1&);
