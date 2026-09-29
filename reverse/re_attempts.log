@@ -3124,3 +3124,4 @@ FUN_005F6B74	0x005F6B74	96	blocked	unicode format helper needs rdata string at 0
 FUN_005E5F43	0x005E5F43	79	blocked	stl map-range to deque assign needs exact iterator plus allocator types t=6 model=muse-spark
 FUN_007aa228	0x003AA228	42	blocked	smart-int ctor with duplicate +0x14 C1C780 store plus own C1D420; implicit 3-base emits zeros not relocs; needs explicit extern-vtable pattern t=15 model=muse-spark
 FUN_006895f8	0x002895F8	178	blocked	stl vector fill-insert 5-arg obligator plus dup allocators need header ID t=12 model=muse-07
+FUN_007afe48	0x003AFE48	70	blocked	STL __push_heap for 12B float-keyed struct; type identity unproven without deeper heap-type dig t=10 model=muse-spark
