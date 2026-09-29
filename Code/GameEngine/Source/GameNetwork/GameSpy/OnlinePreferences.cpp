@@ -198,6 +198,7 @@ public:
 	virtual ~GameSpyMiscPreferences();
 	int rva00559782();
 	void rva005597CB(int val);
+	void rva0055986F(AsciiString val);
 };
 
 // ??0QuickMatchPreferences@@QAE@XZ @0x5DF1A3
@@ -244,6 +245,11 @@ int GameSpyMiscPreferences::rva00559782()
 void GameSpyMiscPreferences::rva005597CB(int val)
 {
 	setInt("Locale", val);
+}
+
+void GameSpyMiscPreferences::rva0055986F(AsciiString val)
+{
+	setAsciiString("ToolTipCachedStats", val);
 }
 
 typedef long time_t;

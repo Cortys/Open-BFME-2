@@ -42668,3 +42668,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?Rva00584F6B@Rva00586D8E@@UAE_NH@Z,,0x00584F6B,84,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlot9.cpp,matched,slot9 of vtable 0x0086FD90 via rowed ctor TU and vec84 plus Held188
 ??_GRva00030DD0Lock@@QAEPAXI@Z,,0x00030DB0,32,Code/GameEngine/Source/Common/Rva00030DD0AddRef.cpp,matched,gap deleting dtor via DeleteCriticalSection plus delete
 ?parseColor@@YA_NPAHPAD@Z,,0x00314F32,103,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScript_parseColor.cpp,matched,leaf parseColor via strtok atoi and winMakeColor slot 0x118
+?rva0055986F@GameSpyMiscPreferences@@QAEXVAsciiString@@@Z,,0x0055986F,89,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,chain setAsciiString ToolTipCachedStats via slot 0x30
