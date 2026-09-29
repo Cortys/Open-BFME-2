@@ -25,6 +25,7 @@ struct OpaqueRefElement4
     OpaqueRefCounted *referent;
     ~OpaqueRefElement4();
     OpaqueRefElement4 &operator=(const OpaqueRefElement4 &other);
+    OpaqueRefElement4 &rva00239057(const OpaqueRefElement4 *other);
 };
 
 OpaqueRefElement4 &OpaqueRefElement4::operator=(const OpaqueRefElement4 &other)
@@ -36,5 +37,14 @@ OpaqueRefElement4 &OpaqueRefElement4::operator=(const OpaqueRefElement4 &other)
             referent->Release_Ref();
         referent = other.referent;
     }
+    return *this;
+}
+OpaqueRefElement4 &OpaqueRefElement4::rva00239057(const OpaqueRefElement4 *other)
+{
+    if (other->referent)
+        other->referent->Add_Ref();
+    if (referent)
+        referent->Release_Ref();
+    referent = other->referent;
     return *this;
 }

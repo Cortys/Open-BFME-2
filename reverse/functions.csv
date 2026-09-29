@@ -41691,3 +41691,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00239C5E@Rva00239C5E@@QAEPAXV?$StringBase@D@@@Z,,0x00239C5E,89,Code/GameEngine/Source/Common/Rva00239C5EFind.cpp,matched,circular list find via compare 0x69D6 same head as 0x2399EB callers 0x23ACB3 0x23B5D5
 ?rva00239C38@Rva00239C38@@QAEXPBVRva0055A88BDwordField@@@Z,,0x00239C38,38,Code/GameEngine/Source/Common/Rva00239C38Erase.cpp,matched,nullable erase via get 0x55A88B erase 0x54883B callers 0x239F86 0x271075
 ?rva00239FA0@Rva00239FA0@@QAEXPBVRva0055A88BDwordField@@@Z,,0x00239FA0,44,Code/GameEngine/Source/Common/Rva00239FA0Store.cpp,matched,nullable store via get 0x55A88B findSlot 0x41F4E5 caller 0x27108B
+?rva00239057@OpaqueRefElement4@@QAEAAU1@PBU1@@Z,,0x00239057,46,Code/Libraries/Source/WWVegas/WWLib/OpaqueRefOwnership.cpp,matched,opaque ref assign from pointer via AddRef Release caller 0x23B431
