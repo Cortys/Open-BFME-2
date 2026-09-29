@@ -18,3 +18,28 @@ Int __stdcall Rva00596095Get(void *arg)
 	}
 	return 0;
 }
+// ?Rva005960FFGet@@YGHPAX@Z @0x005960FF 76B
+// Bit-test predicate returning Int: loads inner at arg+4, checks 0x10E&0x40==0,
+// 0x108 low byte &0x84==0, 0x11F&0x80==0, then 0x108&8!=0 or 0x113&4!=0 gives 1,
+// else needs 0x109&0x40!=0 and rva004884B7(arg)==false for 1, else 0.
+// Evidence: mov edx[esp+4] mov eax[edx+4] test chain plus call 0x4884B7; callers
+// at 0x00596156 and 0x00596302 pass holder; __stdcall ret 4 with xor+inc.
+class Object;
+bool __cdecl rva004884B7(Object *obj);
+Int __stdcall Rva005960FFGet(void *arg)
+{
+	void *inner = *(void **)((char *)arg + 4);
+	if ((((unsigned char *)inner)[0x10E] & 0x40) == 0)
+	{
+		unsigned int flags = *(unsigned int *)((char *)inner + 0x108);
+		if (((flags & 0x84) == 0) &&
+			((((unsigned char *)inner)[0x11F] & 0x80) == 0) &&
+			(((flags & 8) != 0) ||
+				((((unsigned char *)inner)[0x113] & 4) != 0) ||
+				(((flags & 0x4000) != 0) && !rva004884B7((Object *)arg))))
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
