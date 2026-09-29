@@ -2,6 +2,10 @@
 // stlport
 // ?rva0054840A@Rva0054840A@@QAEXPAVXfer@@@Z @0x0054840A 90B thiscall xfer with version 1 1 plus ObjectID plus three uints plus list<int>.
 // Evidence: chain callee rowed xferListInt 0x00206861; callees rowed XferObjectID 0x003060B2 plus Xfer slots 0x28 version and 0x78 uint; caller 0x003550EB news 0x14 and calls directly; ret 4 single Xfer arg.
+// ??0Rva0054840A@@QAE@XZ @0x0054829B 37B default ctor zeroing ObjectID plus list base 0x004EC36C plus three uints.
+// Evidence: same 0x14 layout as xfer 0x0054840A; caller 0x003550DD news 0x14; no vtable.
+// ??0Rva0054840A@@QAE@W4ObjectID@@@Z @0x005482C0 41B one-arg ctor setting ObjectID plus list base 0x004EC36C plus three uints.
+// Evidence: same 0x14 layout; caller 0x00355842 in 0x003557B7; allocator temp at ebp+0xb.
 #define _STLP_NO_EXCEPTIONS 1
 #include <list>
 
@@ -64,6 +68,8 @@ Xfer *xferListInt(Xfer *xfer, ListInt *list);
 class Rva0054840A
 {
 public:
+	Rva0054840A();
+	Rva0054840A(ObjectID id);
 	void rva0054840A(Xfer *xfer);
 private:
 	ObjectID m_00;
@@ -72,6 +78,22 @@ private:
 	UnsignedInt m_0c;
 	UnsignedInt m_10;
 };
+
+Rva0054840A::Rva0054840A()
+	: m_00(INVALID_ID)
+	, m_08(0)
+	, m_0c(0)
+	, m_10(0)
+{
+}
+
+Rva0054840A::Rva0054840A(ObjectID id)
+	: m_00(id)
+	, m_08(0)
+	, m_0c(0)
+	, m_10(0)
+{
+}
 
 void Rva0054840A::rva0054840A(Xfer *xfer)
 {
