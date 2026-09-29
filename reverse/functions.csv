@@ -42202,3 +42202,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00263778Distance@@YAMPBUCoord3D@@MM0MM@Z,,0x00263778,106,Code/GameEngine/Source/GameLogic/Object/Rva00263778Distance.cpp,matched,caller 0x002637E2 Coord3D sqrt import
 ?rva001FD8DF@Rva001FD42B@@QAEPAU1@ABU1@@Z,,0x001FD8DF,115,Code/GameEngine/Source/Common/Rva001FD42BAssign.cpp,matched,chain clear via rowed erase unblocks 0x001FE78E
 ?Rva0021AD3FPopHeap@@YAXPAPAX0HP6A_NPAX1@Z@Z,,0x0021AD3F,30,Code/GameEngine/Source/Common/Rva002198ECAdjustHeap.cpp,matched,pop_heap wrapper via rowed pop_heap 0x002C52E0 caller 0x0021BB0A
+?rva006E0CB0@AptCIH@@QBEPBV1@XZ,,0x006E0CB0,134,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,AptCIH parent walker via rowed getters

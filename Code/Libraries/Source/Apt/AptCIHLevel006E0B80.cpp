@@ -21,6 +21,7 @@ public:
     int rva006E0B80(int nLvl) const;
     bool rva006E2460(const AptCIH *other) const;
     void *rva006E0FB0() const;
+    const AptCIH *rva006E0CB0() const;
 };
 int AptCIH::rva006E0B80(int nLvl) const
 {
@@ -98,4 +99,31 @@ void *AptCIH::rva006E0FB0() const
     }
     _ReadWriteBarrier();
     return m_4C;
+}
+
+// ?rva006E0CB0@AptCIH@@QBEPBV1@XZ, retail 0x006E0CB0, 134 bytes.
+// Parent-chain walker returning first ancestor (or self) whose get() is 0x12
+// or 0x13 with !isUndefined(), "this" asserts at lines 0xD3 and 0xD8.
+// Evidence: rowed getters 0x6DBB30 and 0x6DC010; unlock lane unblocking 7
+// callers; same /O2 AptCIH layout (m_parent +0x48) as neighbours.
+const AptCIH *AptCIH::rva006E0CB0() const
+{
+    const AptCIH *node = this;
+    for (;;) {
+        if (!node) {
+            g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xD3);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+        if (((const Rva006DBB30SarDwordField *)node)->get() == 0x12 && !((const BfmeAptValue006DCD20 *)node)->isUndefined())
+            return node;
+        if (!node) {
+            g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xD8);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+        if (((const Rva006DBB30SarDwordField *)node)->get() == 0x13 && !((const BfmeAptValue006DCD20 *)node)->isUndefined())
+            return node;
+        node = node->m_parent;
+    }
 }
