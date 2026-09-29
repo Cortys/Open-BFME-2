@@ -3022,3 +3022,5 @@ FUN_00839360	0x00439360	118	blocked	list assign with rep movsd 49 plus erase plu
 ?Rva001DEE1FCopy@@YAPAVRva001DE727@@PAV1@00@Z	0x001DEE1F	29	blocked	5-push dispatch to 3-arg copy 0x001DE906 unclear t=12 model=muse-02
 ?rva00603CA3@Rva00603C0F@@QAE_NPBDPAUOut603CA3@@@Z	0x00603CA3	95	partial	single lea reg ecx-vs-eax for buf plus empty-string reloc t=30 model=muse-11 score=0.95 stash=reverse/attempts/0x00603ca3.cpp
 ?rva00603D02@Rva00603D02@@QAE_HPBD0PAH@Z	0x00603D02	334	blocked	DieModuleData factory with EH new StringBase and 5 virtuals needs full Die hierarchy t=10 model=muse-11
+?rva003F2106@Rva003F2106@@QAEXXZ	0x003F2106	74	partial	74/74B same 33 insns; 6 scheduling regions: count temp ecx vs eax null-path jmp-xor placement pop-ecx after cmp; round-robin scratch allocation t=25 model=muse-spark score=0.82 stash=reverse/attempts/0x003f2106.cpp
+?rva003F3159@Rva003F3159@@QAEPAUDynamicPortalLink@@PAU2@0@Z	0x003F3159	51	partial	51/51B 0 regions; single LEA displacement for tag temp ebp+0xb vs ebp+0xf; dead-arg-slot choice t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x003f3159.cpp
