@@ -14,9 +14,12 @@ public:
 	void *winGetUserData(void);
 	GameWindow *winGetChild(void);
 	Int winHide(Bool hide);
+	Bool winIsHidden(void);
 };
 
 GameWindow *GadgetComboBoxGetEditBox(GameWindow *comboBox);
+GameWindow *GadgetListBoxGetDownButton(GameWindow *listbox);
+GameWindow *GadgetListBoxGetSlider(GameWindow *listbox);
 
 class GameWindowManager
 {
@@ -380,4 +383,23 @@ void *GadgetComboBoxGetItemData(GameWindow *comboBox, Int index)
 	if (comboBox != 0)
 		TheWindowManager->winSendSystemMsg(comboBox, 0x402a, index, (int)&data);
 	return data;
+}
+
+// ?Rva003248F5Show@@YAXPAVGameWindow@@_N@Z @0x003248F5 115B
+// Listbox children visibility sync: editbox via ComboBoxGetEditBox plus downbutton and slider, hide where isHidden != flag.
+// Evidence: GadgetComboBoxGetEditBox 0x002C02FE GadgetListBoxGetDownButton 0x002C02D0 GadgetListBoxGetSlider 0x002C02E7
+// winIsHidden 0x00313CD9 winHide 0x00313C64 unlock same TU.
+void Rva003248F5Show(GameWindow *listbox, Bool hide)
+{
+	if (listbox == 0)
+		return;
+	GameWindow *editBox = GadgetComboBoxGetEditBox(listbox);
+	if (editBox != 0 && editBox->winIsHidden() != hide)
+		editBox->winHide(hide);
+	GameWindow *downButton = GadgetListBoxGetDownButton(listbox);
+	if (downButton != 0 && downButton->winIsHidden() != hide)
+		downButton->winHide(hide);
+	GameWindow *slider = GadgetListBoxGetSlider(listbox);
+	if (slider != 0 && slider->winIsHidden() != hide)
+		slider->winHide(hide);
 }

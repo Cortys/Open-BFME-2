@@ -3171,3 +3171,5 @@ FUN_00966920	0x00566920	29	blocked	Copy-wrapper with extra-push paradox: 5 pushe
 ?rva000E44BE@Rva000E44BE@@QAEXPAVArg1Holder@@PAVTextureBaseClass@@@Z	0x000E44BE	169	blocked	EH AssetReference temps plus virtuals need donor t=15 model=muse-03
 FUN_009501F4	0x005501F4	394	blocked	vslot394 Winsock plus IAT plus ping different class needs donor t=5 model=muse-04
 FUN_00A0C7AD	0x0060C7AD	260	blocked	chain260 xfer CxxThrow plus format plus virtuals needs full Xfer context t=5 model=muse-04
+?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z	0x00537A9B	397	partial	397exact 2regions xmm-swap key-offset4 push-sched float1-literal t=25 model=muse-01 score=0.94 stash=reverse/attempts/0x00537a9b.cpp
+?rva005C1AE4@Rva005C1A36@@QAEHH@Z	0x005C1AE4	73	partial	69vs73 missing-and0-EHstate0 across-held-call table-reloc t=20 model=muse-01 score=0.9 stash=reverse/attempts/0x005c1ae4.cpp
