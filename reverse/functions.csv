@@ -41569,3 +41569,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_fill_n@PAURva00423A4A@@IU1@@_STL@@YAPAURva00423A4A@@PAU1@IABU1@ABU__false_type@0@@Z,,0x0042449C,37,Code/Libraries/Source/WWVegas/WWLib/Rva00423A4AFillN.cpp,matched,chain fill_n via rowed Construct stride 0xC unblocks 0x004246EE
 ??1Rva00596CDF@@UAE@XZ,,0x00596CDF,11,Code/GameEngine/Source/Common/Rva00596CDFDtor.cpp,matched,derived dtor tail-jmp base 0x00573B23
 ?Rva00596CEA@Rva00596CDF@@UAEXPAVXfer@@PAX@Z,,0x00596CEA,147,Code/GameEngine/Source/Common/Rva00596CEAXfer.cpp,matched,Version11 base first plus members plus IsLoading tail
+?Rva0023D614Set@@YAXPAV?$StringBase@D@@@Z,,0x0023D614,77,Code/GameEngine/Source/Common/Rva0023D614Film.cpp,matched,unlock StillImage_Film random clamp sprintf set
