@@ -64,3 +64,10 @@ void __cdecl Rva0021AD3FPopHeap(void **first, void **last, int, HeapLess comp)
 	void **newLast = last - 1;
 	((PopHeap6)Rva002C52E0PopHeap)(first, newLast, newLast, *newLast, comp, 0);
 }
+// ?Rva0021BAFCPopHeap@@YAXPAPAX0P6A_NPAX1@Z@Z @0x0021BAFC 23B
+// pop_heap forwarding wrapper over rowed 0x0021AD3F: forwards (first,last)
+// plus trailing zero and comp. Callers 0x0021C85D/0x002C5575. Same HeapLess.
+void __cdecl Rva0021BAFCPopHeap(void **first, void **last, HeapLess comp)
+{
+	Rva0021AD3FPopHeap(first, last, 0, comp);
+}
