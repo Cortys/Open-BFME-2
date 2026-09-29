@@ -41875,3 +41875,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Made002CC6AE@@QAE@XZ,,0x00508E11,90,Code/GameEngine/Source/GameLogic/Object/Made002CC6AECtor.cpp,matched,base 0050775B vtable 00864404 vector 0128 via 00211E58 cleared via 0002CCFC news 0138 caller 002CC6D3
 ??1RenderObjectDrawModuleInfo@FXParticleSystem@@UAE@XZ,0x003A9A8B,0x003A9A8B,75,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectDrawModuleInfoDtor.cpp,matched,RenderObjectDrawModuleInfo dtor via copyctor layout and BBB554 base
 ?rva002EB416@Rva002EB416@@QAEXPAU_Rva002EB416Node@@@Z,,0x002EB416,50,Code/Libraries/Source/WWVegas/WWLib/Rva002EB416Release.cpp,matched,recursive free-list release via child and next to pool head
+?rva002EB46E@Rva002EB46E@@QAEXPAU_Rva002EB46ENode@@@Z,,0x002EB46E,50,Code/Libraries/Source/WWVegas/WWLib/Rva002EB46ERelease.cpp,matched,recursive free-list release via child and next to pool head
