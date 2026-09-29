@@ -41471,3 +41471,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0056F43E@Rva0056F43E@@QAEXPAX@Z,,0x0056F43E,53,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056F43ECleanup.cpp,matched,recursive tree cleanup via StringBase clear and free unlocks 0x0056F503
 ?rva0025D9CB@BfmeStrVM0@@QAEX_N@Z,,0x0025D9CB,24,Code/GameEngine/Source/Common/BfmeConv1435.cpp,matched,flag selects watchdog arm mode 5 versus mutex release same callers push 0
 ?rva0025D10F@BfmeStrVM0@@QAEXXZ,,0x0025D10F,25,Code/GameEngine/Source/Common/BfmeConv1435.cpp,matched,predicate-guarded mutex release tail-jump same class caller 0x0025D1B3
+??0BfmeStringRecord005D511F@@QAE@ABVUnicodeString@@II0I@Z,,0x005D516E,75,Code/GameEngine/Source/Common/StringRecordInlineCopyBFME2.cpp,matched,5-arg ctor same record via 0x37050 callers 0x005D5604 0x005D5692

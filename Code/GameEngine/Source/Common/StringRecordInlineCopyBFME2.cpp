@@ -103,9 +103,14 @@ template void _STL::_Construct<BfmeStringRecord005BC576,BfmeStringRecord005BC576
 struct BfmeStringRecord005D511F {
     UnicodeString text0; unsigned int word0, word1; UnicodeString text1; unsigned int word2;
     BfmeStringRecord005D511F(const BfmeStringRecord005D511F &o);
+    BfmeStringRecord005D511F(const UnicodeString &t0, unsigned int w0, unsigned int w1, const UnicodeString &t1, unsigned int w2);
     ~BfmeStringRecord005D511F();
 };
 BfmeStringRecord005D511F::BfmeStringRecord005D511F(const BfmeStringRecord005D511F &o) : text0(o.text0), word0(o.word0), word1(o.word1), text1(o.text1), word2(o.word2) {}
+// ??0BfmeStringRecord005D511F@@QAE@ABVUnicodeString@@II0I@Z retail 0x005D516E 75B.
+// 5-arg ctor of the same 0x14 record: text0 via 0x37050 + word0/word1 + text1 via 0x37050 + word2.
+// Same EH scope as the copy (first StringBase before state 0, second after); callers 0x005D5604 0x005D5692.
+BfmeStringRecord005D511F::BfmeStringRecord005D511F(const UnicodeString &t0, unsigned int w0, unsigned int w1, const UnicodeString &t1, unsigned int w2) : text0(t0), word0(w0), word1(w1), text1(t1), word2(w2) {}
 // ??1BfmeStringRecord005D511F@@QAE@XZ retail 0x005D51B9 53B.
 // Layout from the 0x005D511F copy ctor in this TU (UnicodeString +0 and +0xC with words at +4 +8 +0x10 = 0x14).
 // Retail destroys text1 (+0xC) then text0 (+0) via StringBase<ushort>::releaseBuffer 0x00036E70 with EH states 0 then -1.

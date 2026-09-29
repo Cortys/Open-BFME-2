@@ -2930,3 +2930,5 @@ FUN_0073d3e8	0x0033D3E8	75	blocked	map-find plus Upgrades-default vs Rva-copy br
 FUN_00819561	0x00419561	139	blocked	map lower_bound plus SSE-x87 float needs ecx-this without spill plus jae shape t=15 model=muse-03
 FUN_005ddcc5	0x001DDCC5	192	blocked	Rva000427195 bucket copy needs mixed BfmeVec erase plus vector reserve plus fill-insert ambiguity and private _M_fill_insert vs bfmeInsert at 0x29CA0 t=15 model=muse-02
 ?Rva0025CEEFCheck@@YA_N_N@Z	0x0025CEEF	59	partial	found=true inline je+mov vs retail out-of-line jne+jmp+mov; all regs and operands match t=22 model=muse-spark score=0.95 stash=reverse/attempts/0x0025ceef.cpp
+?Rva0041A047Send@@YGHKHPAUBuf0041A047@@@Z	0x0041A047	197	blocked	socket connect-send wsock32 IAT register wall esi-vs-eax and late push esi; best 197B same-size 4 structural 4 register t=20 model=muse-04
+??0Rva0057605D@@QAE@HPAUParent0057605D@@@Z	0x0057605D	84	partial	same-size 84B 24-vs-25 insns second empty base shifts offsets +4 and dword state vs byte t=30 model=muse-04 score=0.9 stash=reverse/attempts/0x0057605d.cpp
