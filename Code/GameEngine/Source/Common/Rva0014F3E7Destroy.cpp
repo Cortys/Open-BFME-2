@@ -30,3 +30,9 @@ void __cdecl Rva0014F3E7Destroy(Rva0014F3E7 *first, Rva0014F3E7 *last, void *tag
 	for (; first != last; ++first)
 		first->destroy(0);
 }
+
+void __cdecl Rva0014F8AEDestroy(Rva0014F3E7 *first, Rva0014F3E7 *last)
+{
+	char tag;
+	Rva0014F3E7Destroy(first, last, (void *)&tag);
+}
