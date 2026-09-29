@@ -153,3 +153,23 @@ void Rva003EE84A::rva003EE84A(Int a, Int b)
 	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E78, (Int)p, b);
 	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E78, 0);
 }
+
+// ?rva003EEAB7@Rva003EEAB7@@QAEXXZ retail 0x003EEAB7 8B. Chain lane: tail-jmp
+// thunk adjusting this by +8 into rowed Rva004E1F62::rva004E1F62 at
+// 0x004E1F62; caller at 0x002123DC. Same m_pad[8]+owner layout as the
+// Rva003EE900 family above; unblocks 0x002123BE/175.
+struct Rva004E1F62 {
+	void rva004E1F62();
+};
+class Rva003EEAB7
+{
+public:
+	void rva003EEAB7();
+private:
+	char m_pad[8];
+	Rva004E1F62 m_owner;
+};
+void Rva003EEAB7::rva003EEAB7()
+{
+	m_owner.rva004E1F62();
+}
