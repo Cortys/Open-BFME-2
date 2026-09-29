@@ -95,3 +95,30 @@ void Rva005D3846::rva005D3846(const UnicodeString &text)
 		((StringBase<unsigned short> *)(void *)&m_cached)->set(*(const StringBase<unsigned short> *)(const void *)&text);
 	}
 }
+
+// ??1Rva005D3731@@QAE@XZ @0x005D3731 69B
+// Evidence: chain via rowed 0x005242D7 and releaseBuffers 0x00036E70 0x00036410;
+// members +0x04 ansi +0x08 vector-wrapper +0x18 wide; callers 0x0057856D 0x005786F3 0x00578714
+class Rva005242D7
+{
+public:
+	~Rva005242D7();
+private:
+	char m_pad[12];
+};
+
+class Rva005D3731
+{
+public:
+	~Rva005D3731();
+private:
+	int m_00;
+	AsciiString m_04;
+	Rva005242D7 m_08;
+	int m_14;
+	UnicodeString m_18;
+};
+
+Rva005D3731::~Rva005D3731()
+{
+}
