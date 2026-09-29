@@ -9,13 +9,16 @@ class Rva00585B16
 {
 public:
 	Rva00585B16();
+	Rva00585B16(const Rva00585B16 &other);
 	~Rva00585B16();
 private:
 	int m_0;
 	float m_4;
 	float m_8;
 	float m_C;
-	char m_pad10[12];
+	int m_10;
+	int m_14;
+	int m_18;
 	unsigned char m_1C;
 	char m_pad1D[3];
 	int m_20;
@@ -37,4 +40,19 @@ Rva00585B16::Rva00585B16()
 	m_4 = 0.0f;
 	m_8 = 0.0f;
 	m_C = 0.0f;
+}
+Rva00585B16::Rva00585B16(const Rva00585B16 &other)
+	: m_0(other.m_0)
+	, m_4(other.m_4)
+	, m_8(other.m_8)
+	, m_C(other.m_C)
+	, m_10(other.m_10)
+	, m_14(other.m_14)
+	, m_18(other.m_18)
+	, m_1C(other.m_1C)
+	, m_20(other.m_20)
+	, m_24(other.m_24)
+	, m_deque(other.m_deque)
+	, m_50(other.m_50)
+{
 }
