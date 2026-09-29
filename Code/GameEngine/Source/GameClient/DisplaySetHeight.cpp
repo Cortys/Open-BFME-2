@@ -22,15 +22,28 @@ class Display
 {
 public:
 	virtual void setHeight(unsigned int height);
+	virtual void setWidth(unsigned int width);
 
 private:
 	unsigned char m_pad4[8];
-	unsigned int m_height;
+	unsigned int m_height; // +0x0C
+	unsigned int m_width; // +0x10
 };
 
 void Display::setHeight(unsigned int height)
 {
 	m_height = height;
+	Mouse *mouse = TheMouse;
+	if (mouse)
+		mouse->setMouseLimits();
+}
+
+// ?setWidth@Display@@UAEXI@Z retail 0x0025C391 25B.
+// Width twin of setHeight storing at +0x10 then Mouse::setMouseLimits.
+// Evidence: retail mov [ecx+0x10] then TheMouse 0x00DFDCA0 slot 0x58; BFME1 Display.h setWidth donor; gap between 0x0025C378 and 0x0025C46E.
+void Display::setWidth(unsigned int width)
+{
+	m_width = width;
 	Mouse *mouse = TheMouse;
 	if (mouse)
 		mouse->setMouseLimits();
