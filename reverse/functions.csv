@@ -41590,3 +41590,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1LocomotorStore@@QAE@XZ,,0x002207C4,68,Code/GameEngine/Source/GameLogic/Object/LocomotorStoreDtor.cpp,matched,LocomotorStore dtor prev ctor same area deleting-dtor caller
 ?Rva00220AEBDestroy@@YAXPAVLocomotorStore@@0@Z,,0x00220AEB,25,Code/GameEngine/Source/GameLogic/Object/LocomotorStoreDestroy.cpp,matched,LocomotorStore range destroy via rowed dtor chain
 ??1Rva00220C17@@QAE@XZ,,0x00220C17,63,Code/GameEngine/Source/GameLogic/Object/LocomotorStoreVectorDtor.cpp,matched,Vector holder dtor via rowed destroy and free chain
+??1Rva00220CD4@@UAE@XZ,,0x00220CD4,74,Code/GameEngine/Source/GameLogic/Object/Rva00220CD4Dtor.cpp,matched,Virtual dtor via holder member and base chain
