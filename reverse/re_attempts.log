@@ -2788,3 +2788,4 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ??$__destroy_aux@PAUBfmeAssignRecord172@@@_STL@@YAXPAU1@0ABU__false_type@0@@Z	0x001EAF5E	29	blocked	virtual call vs POD record mismatch t=5 model=muse-04
 ?rva004E1D4E@Rva004E1D4E@@QAEXPAUVector12@@@Z	0x004E1D4E	71	blocked	mixed helpers AsciiString-getalloc plus PrereqUnitRec-base plus BfmeE12-copy need ICF or reinterpret plus EBP frame with idiv t=10 model=muse-09
 ?rva002122D4@Rva002122D4@@QAEHH@Z	0x002122D4	41	partial	branch only 41/41B 15/15insns retail jne-xor-jmp middle vs ours je-xor end t=14 model=muse-09 score=0.93 stash=reverse/attempts/0x002122d4.cpp
+?rva00553222@Rva00553222@@QAEXXZ	0x00553222	58	partial	je displacement plus4 vs retail t=15 model=muse-04 score=0.98 stash=reverse/attempts/0x00553222.cpp
