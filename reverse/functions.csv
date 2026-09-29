@@ -41063,3 +41063,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0030B96B@Rva0030B96B@@QAEXH@Z,,0x0030B96B,21,Code/GameEngine/Source/Common/Rva0030B96BReserve.cpp,matched,holder ensure via reserve clamp 2
 ?rva002AAE81@Rva002AAE81@@QAEXVAsciiString@@@Z,,0x002AAE81,52,Code/GameEngine/Source/Common/RTS/Rva002AAE81Set.cpp,matched,AsciiString at 8 via temp dst-src callers 0x2AAF19
 ?rva0033070E@Rva0033070E@@QAEPAURva0033070EEntry@@ABV?$StringBase@D@@@Z,,0x0033070E,46,Code/GameEngine/Source/Common/Rva0033070EFind.cpp,matched,unlock linear find via rowed compare 0x000069D6 caller 0x003BB14B
+?rva002493BC@LANAPI@@UAEXHVUnicodeString@@@Z,,0x002493BC,116,Code/GameEngine/Source/GameNetwork/LANAPIRva002493BC.cpp,matched,chain LANAPI slot35 address match plus slot14 slot26 plus enable
