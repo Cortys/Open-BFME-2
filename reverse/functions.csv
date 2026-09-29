@@ -41003,3 +41003,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00382908@Rva00382077@@QAEXXZ,,0x00382908,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,third twin clear
 ?rva003820A4@Rva003820A4@@QAEXPAURva0038201DNode@@@Z,,0x003820A4,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,fourth twin tree free
 ?rva00382931@Rva003820A4@@QAEXXZ,,0x00382931,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,fourth twin clear
+?rva003820D1@Rva003820D1@@QAEXPAURva0038201DNode@@@Z,,0x003820D1,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,fifth twin tree free
