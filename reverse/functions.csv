@@ -42184,3 +42184,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001FD2D9@Rva001FD2D9@@QAEPAUCoord3D@@PAU2@H@Z,,0x001FD2D9,66,Code/GameEngine/Source/Common/Rva001FD2D9ArrayCopy.cpp,matched,unlock caller 0x00241EFD in 0x00241C75 returns dest per EAX
 ?rva00410619@Rva00410619@@QAEXPAURva00410619Arg@@@Z,,0x00410619,111,Code/GameEngine/Source/Common/Rva00410619Check.cpp,matched,strncmp IAT winGetStatus 0x30F45F winEnable 0x313BEC empty 0xBBAC1C caller 0x411413
 ?rva001FD367@PlayerTemplateStore@@QBE_NHPAH@Z,,0x001FD367,95,Code/GameEngine/Source/Common/PlayerTemplateStoreFactionLookup.cpp,matched,unlock callers 0x0052203E 0x00522085 vector stride 0x1DC via Lookup 0x0033A3F4
+?rva001FD751@Rva001FD751@@QAEPAURva001FD751Node@@PAU2@0@Z,,0x001FD751,115,Code/Libraries/Source/WWVegas/WWLib/Rva001FD751Copy.cpp,matched,unlock unblocks 0x001FDA0B 0x001FD8DF via twin clone 0x0053444F
