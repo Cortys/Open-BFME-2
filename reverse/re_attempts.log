@@ -2789,3 +2789,5 @@ FUN_009965C6	0x005965C6	83	blocked	EH vtable plus vector erase needs layout t=5 
 ?rva004E1D4E@Rva004E1D4E@@QAEXPAUVector12@@@Z	0x004E1D4E	71	blocked	mixed helpers AsciiString-getalloc plus PrereqUnitRec-base plus BfmeE12-copy need ICF or reinterpret plus EBP frame with idiv t=10 model=muse-09
 ?rva002122D4@Rva002122D4@@QAEHH@Z	0x002122D4	41	partial	branch only 41/41B 15/15insns retail jne-xor-jmp middle vs ours je-xor end t=14 model=muse-09 score=0.93 stash=reverse/attempts/0x002122d4.cpp
 ?rva00553222@Rva00553222@@QAEXXZ	0x00553222	58	partial	je displacement plus4 vs retail t=15 model=muse-04 score=0.98 stash=reverse/attempts/0x00553222.cpp
+?Rva000B978ACopy@@YAPADPAD00@Z	0x000B978A	50	blocked	placement-new emits operator-new call plus nullcheck 92B; inline op-new still emits 61B; minimal decls get div plus mem-advances but count in edi not esi plus params enregistered not spilled t=20 model=muse-spark
+?getQualifiedTriggerAreaByName@ScriptEngine@@QAEPAVPolygonTrigger@@VAsciiString@@@Z	0x001520B4	100	blocked	three pushes into pin-only 1-arg getBufferForRead 0x36640 needs callee arity verification t=10 model=muse-spark
