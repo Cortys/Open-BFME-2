@@ -41152,3 +41152,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva004FA830@@QAE@ABV?$StringBase@D@@@Z,,0x004FA815,27,Code/GameEngine/Source/Common/Rva004FA830Ctor.cpp,matched,vtable 0x008633A0 plus StringBase copy 0x365F0 caller 0x4FAC21
 ?rva0029B53C@Rva0029A407@@QAEPAXI@Z,,0x0029B53C,28,Code/GameEngine/Source/GameClient/Rva0029A407Clear.cpp,matched,calls rowed Clear 0x29A407 then delete 0x2FD60 on flag
 ?rva0029B17C@Rva0029B17C@@QAEXXZ,,0x0029B17C,11,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder loads 0x7F4 jumps vtable 0x24 callers 0x213B3B
+?write@Rva000BC834@@QAEHPAD@Z,,0x000BC834,37,Code/GameEngine/Source/Common/Rva000BC834Write.cpp,matched,chain from 0x000BBD66 plus caller 0x000BD268 plus 37B concat shape
