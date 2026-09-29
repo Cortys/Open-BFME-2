@@ -15,20 +15,42 @@ public:
 	const Matrix3D *getTransformMatrix() const;
 };
 
+class AsciiString
+{
+public:
+	AsciiString &operator=(const AsciiString &other);
+private:
+	int m_data;
+};
+
+class Rva0055A88BDwordField
+{
+public:
+	int get() const;
+};
+
 class Rva000E459F
 {
 public:
 	bool rva000E459F();
+	void rva000E46DA(Drawable *d, const AsciiString &a1, const AsciiString &a2, bool b82, bool b81);
 private:
 	char m_pad00[0x2C];
 	Drawable *m_2C;
-	char m_pad30[0x20];
+	char m_pad30[0x1C];
+	int m_4C;
 	Matrix3D m_50;
-	char m_pad80[0x4];
+	bool m_80;
+	bool m_81;
+	bool m_82;
+	char m_pad83[1];
 	float m_84;
 	float m_88;
-	char m_pad8C[0xC];
+	AsciiString m_8C;
+	AsciiString m_90;
+	char m_pad94[4];
 	int m_98;
+	bool m_9C;
 };
 
 bool Rva000E459F::rva000E459F()
@@ -77,4 +99,21 @@ bool Rva000E459F::rva000E459F()
 		changed = true;
 	}
 	return changed;
+}
+
+void Rva000E459F::rva000E46DA(Drawable *d, const AsciiString &a1, const AsciiString &a2, bool b82, bool b81)
+{
+	m_2C = d;
+	int v;
+	if (d)
+		v = ((Rva0055A88BDwordField *)d)->get();
+	else
+		v = 0;
+	m_4C = v;
+	m_8C = a1;
+	m_90 = a2;
+	m_80 = (d != 0);
+	m_81 = b81;
+	m_82 = b82;
+	m_9C = 0;
 }
