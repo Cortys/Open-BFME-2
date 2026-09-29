@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /G7
+// cl: /O1 /DNDEBUG /MD /EHsc /G7 /arch:SSE
 // Open-BFME5: LocalFile, retail vtable 0x01143D38.
 //
 // File.cpp already pins this class by construction: 0x009D23E0 installs
@@ -90,7 +90,9 @@ public:
 		StringBase<char>::concat(text, length);
 	}
 
-	void concat(char value)
+	// Forced inline: retail scanReal copies the char to its own stack slot and
+	// calls the two-argument StringBase::concat directly.
+	__forceinline void concat(char value)
 	{
 		char text[2];
 		text[0] = value;
@@ -620,7 +622,6 @@ bool LocalFile::scanString( AsciiString &newString )
 }
 
 // ?scanReal@LocalFile@@UAE_NAAM@Z
-// ?scanReal@LocalFile@@UAE_NAAM@Z present-unmatched
 bool LocalFile::scanReal( float &newReal )
 {
 	newReal = 0.0f;
