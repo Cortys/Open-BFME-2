@@ -339,6 +339,7 @@ void PlayerRelationMap::loadPostProcess( void )
 }  // end loadPostProcess
 
 //=============================================================================
+// ?Player::Player present-unmatched
 Player::Player( Int playerIndex )
 {
 	m_isPreorder = FALSE;
@@ -671,6 +672,7 @@ Relationship Player::getRelationship(const Team *that) const
 }
 
 //=============================================================================
+// ?Player::setPlayerRelationship present-unmatched
 void Player::setPlayerRelationship(const Player *that, Relationship r)
 {
 	if (that != NULL)
@@ -731,6 +733,7 @@ void Player::setTeamRelationship(const Team *that, Relationship r)
 }
 
 // ------------------------------------------------------------------------
+// ?Player::removeTeamRelationship present-unmatched
 Bool Player::removeTeamRelationship(const Team *that)
 {
 	// The same two BFME offsets getRelationship above casts for: m_teamRelations
@@ -797,6 +800,7 @@ void Player::addToPriorityBuildList(AsciiString templateName, Coord3D *pos, Real
 } 
 
 //=============================================================================
+// ?Player::update present-unmatched
 void Player::update()
 {
 	if (m_ai)
@@ -875,6 +879,7 @@ struct BfmePlayerMapFields
 
 //=============================================================================
 // ?newMap@Player@@QAEXXZ
+// ?Player::newMap present-unmatched
 void Player::newMap()
 {
 	BfmePlayerMapFields *self = (BfmePlayerMapFields *)this;
@@ -1258,6 +1263,7 @@ void Player::becomingTeamMember(Object *obj, Bool yes)
 }
 
 //=============================================================================
+// ?Player::becomingLocalPlayer present-unmatched
 void Player::becomingLocalPlayer(Bool yes)
 {
 	if (yes)
@@ -1713,6 +1719,7 @@ Int Player::countReadyShortcutSpecialPowersOfType( SpecialPowerType spType )
 //-------------------------------------------------------------------------------------------------
 /** Difficulty level for this player */
 //-------------------------------------------------------------------------------------------------
+// ?Player::getPlayerDifficulty present-unmatched
 GameDifficulty Player::getPlayerDifficulty(void) const
 {
 	// BFME's Player and ScriptEngine tails differ from the recovered Zero Hour declarations.
@@ -1727,6 +1734,7 @@ GameDifficulty Player::getPlayerDifficulty(void) const
 //-------------------------------------------------------------------------------------------------
 /** Do any bridges need repair, and if so repair them. */
 //-------------------------------------------------------------------------------------------------
+// ?Player::checkBridges present-unmatched
 Bool Player::checkBridges(Object *unit, Waypoint *way)
 {
 	BFMEPlayerAIView *player = reinterpret_cast<BFMEPlayerAIView *>(this);
@@ -1736,6 +1744,7 @@ Bool Player::checkBridges(Object *unit, Waypoint *way)
 //-------------------------------------------------------------------------------------------------
 /** Do any bridges need repair, and if so repair them. */
 //-------------------------------------------------------------------------------------------------
+// ?Player::getAiBaseCenter present-unmatched
 Bool Player::getAiBaseCenter(Coord3D *pos)
 {
 	// BFME places the AI pointer and base-center pair earlier than the Zero Hour declarations.
@@ -1759,6 +1768,7 @@ struct BfmePlayerAiField
 };
 
 // ?repairStructure@Player@@UAEXW4ObjectID@@@Z
+// ?Player::repairStructure present-unmatched
 void Player::repairStructure(ObjectID structureID)
 {
 	if (((BfmePlayerAiField *)this)->m_ai) 
@@ -1789,6 +1799,7 @@ void Player::onUnitCreated( Object *factory, Object *unit )
 //-------------------------------------------------------------------------------------------------
 /** Is the nearest supply source safe? */
 //-------------------------------------------------------------------------------------------------
+// ?Player::isSupplySourceSafe present-unmatched
 Bool Player::isSupplySourceSafe( Int minSupplies )
 {
 	// ai query
@@ -1814,6 +1825,7 @@ Bool Player::isSupplySourceAttacked( void )
 //-------------------------------------------------------------------------------------------------
 /** Set delay between team production */
 //-------------------------------------------------------------------------------------------------
+// ?Player::setTeamDelaySeconds present-unmatched
 void Player::setTeamDelaySeconds(Int delay  )
 {
 	// ai action
@@ -1826,6 +1838,7 @@ void Player::setTeamDelaySeconds(Int delay  )
 //-------------------------------------------------------------------------------------------------
 /** Guard supply center */
 //-------------------------------------------------------------------------------------------------
+// ?Player::guardSupplyCenter present-unmatched
 void Player::guardSupplyCenter( Team *team, Int minSupplies  )
 {
 	// ai action
@@ -1838,6 +1851,7 @@ void Player::guardSupplyCenter( Team *team, Int minSupplies  )
 //-------------------------------------------------------------------------------------------------
 /** A team is about to be destroyed */
 //-------------------------------------------------------------------------------------------------
+// ?Player::preTeamDestroy present-unmatched
 void Player::preTeamDestroy( const Team *team )
 {
 	// ai notification callback
@@ -1948,6 +1962,7 @@ void Player::onStructureConstructionComplete( Object *builder, Object *structure
 }  // end onStructureConstructionComplete
 
 //=============================================================================
+// ?Player::onStructureUndone present-unmatched
 void Player::onStructureUndone(Object *structure)
 {
 	m_scoreKeeper.removeObjectBuilt(structure);
@@ -2014,6 +2029,7 @@ struct BfmePlayerTeamFields
 
 //=============================================================================
 // ?countObjectsByThingTemplate@Player@@QBEXHPBQBVThingTemplate@@_NPAH1@Z
+// ?Player::countObjectsByThingTemplate present-unmatched
 void Player::countObjectsByThingTemplate(Int numTmplates, const ThingTemplate* const * things, Bool ignoreDead, Int *counts, Bool ignoreUnderConstruction ) const
 {
 	Int i;
@@ -2032,6 +2048,7 @@ void Player::countObjectsByThingTemplate(Int numTmplates, const ThingTemplate* c
 
 //=============================================================================
 // BFME m_playerTeamPrototypes at +0x288 (ZH header places it earlier).
+// ?Player::countBuildings present-unmatched
 Int Player::countBuildings(void)
 {
 	struct BFMEPlayerTeamListField {
@@ -2110,6 +2127,7 @@ Bool Player::hasAnyBuildings(KindOfMaskType kindOf) const
 }
 
 //=============================================================================
+// ?Player::hasAnyUnits present-unmatched
 Bool Player::hasAnyUnits(void) const
 {
 	// BFME places this list at +0x288; the shared ZH header places it earlier.
@@ -2145,6 +2163,7 @@ Bool Player::hasAnyObjects(void) const
 
 //=============================================================================
 // ?hasAnyBuildFacility@Player@@QBE_NXZ
+// ?Player::hasAnyBuildFacility present-unmatched
 Bool Player::hasAnyBuildFacility(void) const
 {
 	const BfmePlayerTeamFields *self = (const BfmePlayerTeamFields *)this;
@@ -2159,6 +2178,7 @@ Bool Player::hasAnyBuildFacility(void) const
 
 //=============================================================================
 // ?updateTeamStates@Player@@QAEXXZ
+// ?Player::updateTeamStates present-unmatched
 void Player::updateTeamStates(void) 
 {
 	const BfmePlayerTeamFields *self = (const BfmePlayerTeamFields *)this;
@@ -2711,6 +2731,7 @@ void Player::doBountyForKill(const Object* killer, const Object* victim)
 }
 
 //=============================================================================
+// ?Player::hasPrereqsForScience present-unmatched
 Bool Player::hasPrereqsForScience(ScienceType t) const
 {
 	return TheScienceStore->playerHasPrereqsForScience(this, t);
@@ -2909,6 +2930,7 @@ __declspec(noinline) void Player::addSciencePurchasePoints(Int delta)
 
 //=============================================================================
 // BFME: no AcademyStats / markUIDirty tail (ZH-only); body @ 0xD55B0 size 60
+// ?Player::attemptToPurchaseScience present-unmatched
 Bool Player::attemptToPurchaseScience(ScienceType science)
 {
 	if (!isCapableOfPurchasingScience(science))
@@ -2940,6 +2962,7 @@ Bool Player::grantScience(ScienceType science)
 // BFME does not consult the disabled or hidden lists here; retail goes straight
 // from the inlined hasScience find to the prereq call.
 // ?isCapableOfPurchasingScience@Player@@QBE_NW4ScienceType@@@Z
+// ?Player::isCapableOfPurchasingScience present-unmatched
 Bool Player::isCapableOfPurchasingScience(ScienceType science) const
 {
 	if (science == SCIENCE_INVALID)
@@ -3402,6 +3425,7 @@ struct BfmePlayerRadarEdgeFlag
 
 //-------------------------------------------------------------------------------------------------
 // ?okToPlayRadarEdgeSound@Player@@QAE_NXZ
+// ?Player::okToPlayRadarEdgeSound present-unmatched
 Bool Player::okToPlayRadarEdgeSound( void )
 {
 	return (
@@ -3707,6 +3731,7 @@ struct BfmePlayerBattlePlanField
 };
 
 // ?doesObjectQualifyForBattlePlan@Player@@QBE_NPAVObject@@@Z
+// ?Player::doesObjectQualifyForBattlePlan present-unmatched
 Bool Player::doesObjectQualifyForBattlePlan( Object *obj ) const
 {
 	const BfmePlayerBattlePlanField *self = (const BfmePlayerBattlePlanField *)this;
@@ -3726,6 +3751,7 @@ Bool Player::doesObjectQualifyForBattlePlan( Object *obj ) const
 
 //-------------------------------------------------------------------------------------------------
 // note, bonus is an in-out parm.
+// ?Player::changeBattlePlan present-unmatched
 void Player::changeBattlePlan( BattlePlanStatus plan, Int delta, BattlePlanBonuses *bonus )
 {
 	DUMPBATTLEPLANBONUSES(bonus, this, NULL);
@@ -4096,6 +4122,7 @@ Squad *Player::getHotkeySquad(Int squadNumber)
 //-------------------------------------------------------------------------------------------------
 /** return the hotkey squad that a unit is in, or NO_HOTKEY_SQUAD if it isn't in one */
 //-------------------------------------------------------------------------------------------------
+// ?Player::getSquadNumberForObject present-unmatched
 Int Player::getSquadNumberForObject(const Object *objToFind) const
 {
 	#pragma pack(push, 1)
@@ -4118,6 +4145,7 @@ Int Player::getSquadNumberForObject(const Object *objToFind) const
 /** Remove an object from any hotkey squads its on. (Should never be more than one, but do them */
 /** all for good measure. */
 //-------------------------------------------------------------------------------------------------
+// ?Player::removeObjectFromHotkeySquad present-unmatched
 void Player::removeObjectFromHotkeySquad(Object *objToRemove)
 {
 	// m_squads is at Player+0x654 in BFME; this tree lands it at +0x41c.
@@ -4233,6 +4261,7 @@ Real Player::getProductionCostChangeBasedOnKindOf( KindOfMaskType kindOf ) const
 //-------------------------------------------------------------------------------------------------
 /** setAttackedBy */
 //-------------------------------------------------------------------------------------------------
+// ?Player::setAttackedBy present-unmatched
 void Player::setAttackedBy( Int playerNdx )
 {
 	DEBUG_ASSERTCRASH(playerNdx >= 0, ("Player::setAttackedBy Player index is %d", playerNdx));
@@ -4283,6 +4312,7 @@ void Player::setUnitsVisionSpied( Bool setting, KindOfMaskType whichUnits, Playe
 }
 
 // ------------------------------------------------------------------------------------------------
+// ?Player::isPlayerObserver present-unmatched
 Bool Player::isPlayerObserver(void) const
 {
 	return *reinterpret_cast<const Bool *>(reinterpret_cast<const char *>(this) + 0x296);

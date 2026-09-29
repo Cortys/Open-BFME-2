@@ -240,6 +240,7 @@ public:
  * HISTORY:                                                                                    *
  *   2/16/99    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?MeshModelClass::Load_W3D present-unmatched
 WW3DErrorType MeshModelClass::Load_W3D(ChunkLoadClass & cload)
 {
 	MeshLoadContextClass * context = NULL;
@@ -444,6 +445,7 @@ Error:
  * HISTORY:                                                                                    *
  *   2/16/99    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?MeshModelClass::read_chunks present-unmatched
 WW3DErrorType MeshModelClass::read_chunks(ChunkLoadClass & cload,MeshLoadContextClass * context) 
 {
 	/*
@@ -630,6 +632,7 @@ WW3DErrorType MeshModelClass::read_texcoords(ChunkLoadClass & cload,MeshLoadCont
  *   4/2/98     GTH : Created.                                                                 *
  *   2/16/99    GTH : Moved into MeshModelClass                                                *
  *=============================================================================================*/
+// ?MeshModelClass::read_v3_materials present-unmatched
 WW3DErrorType MeshModelClass::read_v3_materials(ChunkLoadClass & cload,MeshLoadContextClass * context)
 {
 	for (unsigned int mi=0; mi<context->Header.NumMaterials; mi++) {
@@ -882,6 +885,7 @@ WW3DErrorType MeshModelClass::read_per_tri_materials(ChunkLoadClass & cload,Mesh
  *   10/28/1997 GH  : Created.                                                                 * 
  *   2/16/99    GTH : Moved into MeshModelClass                                                *
  *=============================================================================================*/
+// ?MeshModelClass::read_vertex_colors present-unmatched
 WW3DErrorType MeshModelClass::read_vertex_colors(ChunkLoadClass & cload,MeshLoadContextClass * context)
 {
 	/*
@@ -928,6 +932,7 @@ WW3DErrorType MeshModelClass::read_vertex_colors(ChunkLoadClass & cload,MeshLoad
  * HISTORY:                                                                                    *
  *   2/16/99    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?MeshModelClass::read_material_info present-unmatched
 WW3DErrorType MeshModelClass::read_material_info(ChunkLoadClass & cload,MeshLoadContextClass * context)
 {
 	if (cload.Read(&(context->MatInfo),sizeof(W3dMaterialInfoStruct)) != sizeof(W3dMaterialInfoStruct)) {
@@ -1371,6 +1376,7 @@ WW3DErrorType MeshModelClass::read_dig(ChunkLoadClass & cload,MeshLoadContextCla
  *   9/1/2000   gth : Added alternate material desc support                                    *
  *   2/9/2001   gth : new dx8 code no longer supports this chunk                               *
  *=============================================================================================*/
+// ?MeshModelClass::read_scg present-unmatched
 WW3DErrorType MeshModelClass::read_scg(ChunkLoadClass & cload,MeshLoadContextClass * context)
 {
 	return WW3D_ERROR_OK;
@@ -1842,6 +1848,7 @@ void MeshModelClass::compute_static_sort_levels(void)
 	};
 }
 
+// ?MeshModelClass::modify_for_overbright present-unmatched
 void MeshModelClass::modify_for_overbright(void)
 {
 	// Iterate over all passes
@@ -1870,6 +1877,7 @@ void MeshModelClass::modify_for_overbright(void)
 
 }
 
+// ?MeshModelClass::install_materials present-unmatched
 void MeshModelClass::install_materials(MeshLoadContextClass * context)
 {
 	int i;
@@ -2200,6 +2208,7 @@ TextureClass * MeshLoadContextClass::Peek_Legacy_Texture(int legacy_material_ind
 }
 
 
+// ?MeshLoadContextClass::Get_Temporary_UV_Array present-unmatched
 Vector2 * MeshLoadContextClass::Get_Temporary_UV_Array(int elementcount)
 {
 	TempUVArray.Uninitialised_Grow(elementcount);
@@ -2237,6 +2246,7 @@ MeshSaveContextClass::MeshSaveContextClass(void) :
  *                                                                                             *
  * HISTORY:                                                                                    *
  *=============================================================================================*/
+// ?MeshSaveContextClass::~MeshSaveContextClass present-unmatched
 MeshSaveContextClass::~MeshSaveContextClass(void)
 {
 }
@@ -2259,6 +2269,7 @@ MeshSaveContextClass::~MeshSaveContextClass(void)
  * HISTORY:                                                                                    *
  *   2/16/99    GTH : Created.                                                                 *
  *=============================================================================================*/
+// ?MeshModelClass::Save_W3D present-unmatched
 WW3DErrorType MeshModelClass::Save_W3D(ChunkSaveClass & csave)
 {
 	MeshSaveContextClass * context = W3DNEW MeshSaveContextClass;
@@ -2271,6 +2282,7 @@ WW3DErrorType MeshModelClass::Save_W3D(ChunkSaveClass & csave)
 }
 
 
+// ?MeshModelClass::write_chunks present-unmatched
 WW3DErrorType MeshModelClass::write_chunks(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	
@@ -2300,6 +2312,7 @@ WW3DErrorType MeshModelClass::write_chunks(ChunkSaveClass & csave,MeshSaveContex
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_header present-unmatched
 WW3DErrorType MeshModelClass::write_header(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	W3dMeshHeader3Struct header;
@@ -2353,6 +2366,7 @@ WW3DErrorType MeshModelClass::write_header(ChunkSaveClass & csave,MeshSaveContex
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_user_text present-unmatched
 WW3DErrorType MeshModelClass::write_user_text(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	if (UserText == NULL) return WW3D_ERROR_OK;
@@ -2365,6 +2379,7 @@ WW3DErrorType MeshModelClass::write_user_text(ChunkSaveClass & csave,MeshSaveCon
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_triangles present-unmatched
 WW3DErrorType MeshModelClass::write_triangles(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	if (!csave.Begin_Chunk(W3D_CHUNK_TRIANGLES)) {
@@ -2420,6 +2435,7 @@ WW3DErrorType MeshModelClass::write_triangles(ChunkSaveClass & csave,MeshSaveCon
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertices present-unmatched
 WW3DErrorType MeshModelClass::write_vertices(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	if (!csave.Begin_Chunk(W3D_CHUNK_VERTICES)) {
@@ -2447,6 +2463,7 @@ WW3DErrorType MeshModelClass::write_vertices(ChunkSaveClass & csave,MeshSaveCont
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertex_normals present-unmatched
 WW3DErrorType MeshModelClass::write_vertex_normals(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	WWASSERT( Get_Vertex_Count() > 0);
@@ -2475,6 +2492,7 @@ WW3DErrorType MeshModelClass::write_vertex_normals(ChunkSaveClass & csave,MeshSa
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertex_shade_indices present-unmatched
 WW3DErrorType MeshModelClass::write_vertex_shade_indices(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	WWASSERT(Get_Vertex_Count() > 0);
@@ -2497,6 +2515,7 @@ WW3DErrorType MeshModelClass::write_vertex_shade_indices(ChunkSaveClass & csave,
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertex_influences present-unmatched
 WW3DErrorType MeshModelClass::write_vertex_influences(ChunkSaveClass & csave,MeshSaveContextClass * /*context*/)
 {
 	WWASSERT(Get_Vertex_Count() > 0);
@@ -2522,6 +2541,7 @@ WW3DErrorType MeshModelClass::write_vertex_influences(ChunkSaveClass & csave,Mes
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_material_info present-unmatched
 WW3DErrorType MeshModelClass::write_material_info(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (!csave.Begin_Chunk(W3D_CHUNK_MATERIAL_INFO)) {
@@ -2547,6 +2567,7 @@ WW3DErrorType MeshModelClass::write_material_info(ChunkSaveClass & csave,MeshSav
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_shaders present-unmatched
 WW3DErrorType MeshModelClass::write_shaders(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (context->Materials.Get_Shader_Count() <= 0) {
@@ -2569,6 +2590,7 @@ WW3DErrorType MeshModelClass::write_shaders(ChunkSaveClass & csave,MeshSaveConte
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertex_materials present-unmatched
 WW3DErrorType MeshModelClass::write_vertex_materials(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (context->Materials.Get_Vertex_Material_Count() <= 0) return WW3D_ERROR_OK;
@@ -2586,6 +2608,7 @@ WW3DErrorType MeshModelClass::write_vertex_materials(ChunkSaveClass & csave,Mesh
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_textures present-unmatched
 WW3DErrorType MeshModelClass::write_textures(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (context->Materials.Get_Texture_Count() <= 0) return WW3D_ERROR_OK;
@@ -2600,6 +2623,7 @@ WW3DErrorType MeshModelClass::write_textures(ChunkSaveClass & csave,MeshSaveCont
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_material_pass present-unmatched
 WW3DErrorType MeshModelClass::write_material_pass(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	context->CurStage = 0;
@@ -2619,6 +2643,7 @@ WW3DErrorType MeshModelClass::write_material_pass(ChunkSaveClass & csave,MeshSav
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_vertex_material_ids present-unmatched
 WW3DErrorType MeshModelClass::write_vertex_material_ids(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	// first check if all vertex material pointers are Null (is this legal?)
@@ -2647,6 +2672,7 @@ WW3DErrorType MeshModelClass::write_vertex_material_ids(ChunkSaveClass & csave,M
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_shader_ids present-unmatched
 WW3DErrorType MeshModelClass::write_shader_ids(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	csave.Begin_Chunk(W3D_CHUNK_SHADER_IDS);
@@ -2670,6 +2696,7 @@ WW3DErrorType MeshModelClass::write_shader_ids(ChunkSaveClass & csave,MeshSaveCo
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_scg present-unmatched
 WW3DErrorType MeshModelClass::write_scg(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (DefMatDesc->SCG[context->CurPass] == NULL) return WW3D_ERROR_OK;
@@ -2686,6 +2713,7 @@ WW3DErrorType MeshModelClass::write_scg(ChunkSaveClass & csave,MeshSaveContextCl
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_dig present-unmatched
 WW3DErrorType MeshModelClass::write_dig(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (DefMatDesc->DIG[context->CurPass] == NULL) return WW3D_ERROR_OK;
@@ -2701,6 +2729,7 @@ WW3DErrorType MeshModelClass::write_dig(ChunkSaveClass & csave,MeshSaveContextCl
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_dcg present-unmatched
 WW3DErrorType MeshModelClass::write_dcg(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (DefMatDesc->DCG[context->CurPass] == NULL) return WW3D_ERROR_OK;
@@ -2716,6 +2745,7 @@ WW3DErrorType MeshModelClass::write_dcg(ChunkSaveClass & csave,MeshSaveContextCl
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_texture_stage present-unmatched
 WW3DErrorType MeshModelClass::write_texture_stage(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (	(DefMatDesc->Texture[context->CurPass][context->CurStage] == NULL) &&
@@ -2730,6 +2760,7 @@ WW3DErrorType MeshModelClass::write_texture_stage(ChunkSaveClass & csave,MeshSav
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_texture_ids present-unmatched
 WW3DErrorType MeshModelClass::write_texture_ids(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	csave.Begin_Chunk(W3D_CHUNK_TEXTURE_IDS);
@@ -2753,6 +2784,7 @@ WW3DErrorType MeshModelClass::write_texture_ids(ChunkSaveClass & csave,MeshSaveC
 	return WW3D_ERROR_OK;
 }
 
+// ?MeshModelClass::write_stage_texcoords present-unmatched
 WW3DErrorType MeshModelClass::write_stage_texcoords(ChunkSaveClass & csave,MeshSaveContextClass * context)
 {
 	if (DefMatDesc->UV[context->CurPass][context->CurStage] == NULL) return WW3D_ERROR_OK;

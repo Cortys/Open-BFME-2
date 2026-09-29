@@ -123,6 +123,7 @@ void disableUVAnimations(RenderObjClass *robj)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::update present-unmatched
 void W3DRenderObjectSnapshot::update(RenderObjClass *robj, DrawableInfo *drawInfo,
 																		 Bool cloneParentRobj)
 {
@@ -157,6 +158,7 @@ void W3DRenderObjectSnapshot::update(RenderObjClass *robj, DrawableInfo *drawInf
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::addToScene present-unmatched
 void W3DRenderObjectSnapshot::addToScene(void)
 {
 	((SimpleSceneClass *)W3DDisplay::m_3DScene)->Add_Render_Object(m_robj);
@@ -164,6 +166,7 @@ void W3DRenderObjectSnapshot::addToScene(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::W3DRenderObjectSnapshot present-unmatched
 W3DRenderObjectSnapshot::W3DRenderObjectSnapshot(RenderObjClass *robj, DrawableInfo *drawInfo,
 																								 Bool cloneParentRobj)
 {
@@ -175,6 +178,7 @@ W3DRenderObjectSnapshot::W3DRenderObjectSnapshot(RenderObjClass *robj, DrawableI
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::crc present-unmatched
 void W3DRenderObjectSnapshot::crc( Xfer *xfer )
 {
 
@@ -185,6 +189,7 @@ void W3DRenderObjectSnapshot::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::xfer present-unmatched
 void W3DRenderObjectSnapshot::xfer( Xfer *xfer )
 {
 
@@ -286,6 +291,7 @@ void W3DRenderObjectSnapshot::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?W3DRenderObjectSnapshot::loadPostProcess present-unmatched
 void W3DRenderObjectSnapshot::loadPostProcess( void )
 {
 
@@ -293,6 +299,7 @@ void W3DRenderObjectSnapshot::loadPostProcess( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::W3DGhostObject present-unmatched
 W3DGhostObject::W3DGhostObject()
 {
 
@@ -311,6 +318,7 @@ W3DGhostObject::W3DGhostObject()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::~W3DGhostObject present-unmatched
 W3DGhostObject::~W3DGhostObject()
 {
 #ifdef DEBUG_FOG_MEMORY
@@ -328,6 +336,7 @@ W3DGhostObject::~W3DGhostObject()
 so we can display cached state when player is looking at fogged object.
 Should only be called when object enters the fogged state.*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::snapShot present-unmatched
 void W3DGhostObject::snapShot(int playerIndex)
 {
 #ifndef DEBUG_FOG_MEMORY
@@ -400,6 +409,7 @@ void W3DGhostObject::snapShot(int playerIndex)
 // ------------------------------------------------------------------------------------------------
 /** Remove the original object from our 3D scene*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::removeParentObject present-unmatched
 void W3DGhostObject::removeParentObject(void)
 {
 
@@ -435,6 +445,7 @@ void W3DGhostObject::removeParentObject(void)
 // ------------------------------------------------------------------------------------------------
 /** Reinsert the original object into our 3D scene*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::restoreParentObject present-unmatched
 void W3DGhostObject::restoreParentObject(void)
 {
 	Drawable *draw=m_parentObject->getDrawable();
@@ -470,6 +481,7 @@ void W3DGhostObject::restoreParentObject(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::freeAllSnapShots present-unmatched
 void W3DGhostObject::freeAllSnapShots(void)
 {
 	Int playerIndex;
@@ -502,6 +514,7 @@ void W3DGhostObject::freeAllSnapShots(void)
 // ------------------------------------------------------------------------------------------------
 /** Player has unfogged the object so he no longer needs the snapshot*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::freeSnapShot present-unmatched
 void W3DGhostObject::freeSnapShot(int playerIndex)
 {
 #ifndef DEBUG_FOG_MEMORY
@@ -538,6 +551,7 @@ void W3DGhostObject::freeSnapShot(int playerIndex)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::updateParentObject present-unmatched
 void W3DGhostObject::updateParentObject(Object *object, PartitionData *mod)
 {
 	m_parentObject = object;
@@ -547,6 +561,7 @@ void W3DGhostObject::updateParentObject(Object *object, PartitionData *mod)
 // ------------------------------------------------------------------------------------------------
 /**Remove the dummy render objects from scene that belong to given player*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::removeFromScene present-unmatched
 void W3DGhostObject::removeFromScene(int playerIndex)
 {
 	W3DRenderObjectSnapshot *snap=m_parentSnapshots[playerIndex];
@@ -561,6 +576,7 @@ void W3DGhostObject::removeFromScene(int playerIndex)
 // ------------------------------------------------------------------------------------------------
 /**Add the dummy render objects to scene so player sees the correct version within the fog*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::addToScene present-unmatched
 void W3DGhostObject::addToScene(int playerIndex)
 {
 	W3DRenderObjectSnapshot *snap=m_parentSnapshots[playerIndex];
@@ -574,6 +590,7 @@ void W3DGhostObject::addToScene(int playerIndex)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::release present-unmatched
 void W3DGhostObject::release(void)
 {
 	W3DRenderObjectSnapshot *snap,*nextSnap;
@@ -592,6 +609,7 @@ void W3DGhostObject::release(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::getShroudStatus present-unmatched
 void W3DGhostObject::getShroudStatus(int playerIndex)
 {
 	m_partitionData->getShroudedStatus(playerIndex); 
@@ -600,6 +618,7 @@ void W3DGhostObject::getShroudStatus(int playerIndex)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::crc present-unmatched
 void W3DGhostObject::crc( Xfer *xfer )
 {
 
@@ -613,6 +632,7 @@ void W3DGhostObject::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::xfer present-unmatched
 void W3DGhostObject::xfer( Xfer *xfer )
 {
 
@@ -835,6 +855,7 @@ void W3DGhostObject::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObject::loadPostProcess present-unmatched
 void W3DGhostObject::loadPostProcess( void )
 {
 
@@ -855,6 +876,7 @@ W3DGhostObjectManager::W3DGhostObjectManager(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::~W3DGhostObjectManager present-unmatched
 W3DGhostObjectManager::~W3DGhostObjectManager()
 {
 	reset();	//make sure it's empty
@@ -872,6 +894,7 @@ W3DGhostObjectManager::~W3DGhostObjectManager()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::reset present-unmatched
 void W3DGhostObjectManager::reset(void)
 {
 	W3DGhostObject *mod = m_usedModules;
@@ -903,6 +926,7 @@ void W3DGhostObjectManager::reset(void)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::removeGhostObject present-unmatched
 void W3DGhostObjectManager::removeGhostObject(GhostObject *object)
 {
 	if (!object)
@@ -930,6 +954,7 @@ void W3DGhostObjectManager::removeGhostObject(GhostObject *object)
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::addGhostObject present-unmatched
 GhostObject *W3DGhostObjectManager::addGhostObject(Object *object, PartitionData *pd)
 {
 
@@ -988,6 +1013,7 @@ GhostObject *W3DGhostObjectManager::addGhostObject(Object *object, PartitionData
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::setLocalPlayerIndex present-unmatched
 void W3DGhostObjectManager::setLocalPlayerIndex(int index)
 {
 	//Whenever we switch local players, we need to remove all ghost objects belonging
@@ -1026,6 +1052,7 @@ a GhostObject in case any players didn't see the death and have a fogged view of
 We need to manually determine if these orphaned GhostObjects ever become visible and are no longer
 needed*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::updateOrphanedObjects present-unmatched
 void W3DGhostObjectManager::updateOrphanedObjects(int *playerIndexList, int numNonLocalPlayers)
 {
 
@@ -1068,6 +1095,7 @@ void W3DGhostObjectManager::updateOrphanedObjects(int *playerIndexList, int numN
 stored inside the partition manager, we need to save and restore them.  This function will save
 enough data to restore the state of the partition manager.*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::releasePartitionData present-unmatched
 void W3DGhostObjectManager::releasePartitionData(void)
 {
 	W3DGhostObject *mod = m_usedModules;
@@ -1096,6 +1124,7 @@ void W3DGhostObjectManager::releasePartitionData(void)
 // ------------------------------------------------------------------------------------------------
 /*Insert ghost objects back into the partition manager*/
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::restorePartitionData present-unmatched
 void W3DGhostObjectManager::restorePartitionData(void)
 {
 	W3DGhostObject *mod = m_usedModules;
@@ -1132,6 +1161,7 @@ void W3DGhostObjectManager::restorePartitionData(void)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::crc present-unmatched
 void W3DGhostObjectManager::crc( Xfer *xfer )
 {
 
@@ -1145,6 +1175,7 @@ void W3DGhostObjectManager::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::xfer present-unmatched
 void W3DGhostObjectManager::xfer( Xfer *xfer )
 {
 
@@ -1253,6 +1284,7 @@ void W3DGhostObjectManager::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?W3DGhostObjectManager::loadPostProcess present-unmatched
 void W3DGhostObjectManager::loadPostProcess( void )
 {
 

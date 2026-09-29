@@ -84,6 +84,7 @@ static Bool sendMousePosMessages = TRUE;
 //-------------------------------------------------------------------------------------------------
 /** Process windows waiting to be destroyed */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::processDestroyList present-unmatched
 void GameWindowManager::processDestroyList( void )
 {
 	GameWindow *next;
@@ -184,6 +185,7 @@ WindowMsgHandledType PassMessagesToParentSystem( GameWindow *window, UnsignedInt
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::GameWindowManager present-unmatched
 GameWindowManager::GameWindowManager( void )
 {
 
@@ -206,6 +208,7 @@ GameWindowManager::GameWindowManager( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::~GameWindowManager present-unmatched
 GameWindowManager::~GameWindowManager( void )
 {
 
@@ -220,6 +223,7 @@ GameWindowManager::~GameWindowManager( void )
 //-------------------------------------------------------------------------------------------------
 /** Initialize the game window manager system */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::init present-unmatched
 void GameWindowManager::init( void )
 {
 	if(!TheTransitionHandler)
@@ -231,6 +235,7 @@ void GameWindowManager::init( void )
 //-------------------------------------------------------------------------------------------------
 /** Reset window system */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::reset present-unmatched
 void GameWindowManager::reset( void )
 {
 
@@ -244,6 +249,7 @@ void GameWindowManager::reset( void )
 //-------------------------------------------------------------------------------------------------
 /** Update cycle for game widnow manager */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::update present-unmatched
 void GameWindowManager::update( void )
 {
 
@@ -256,6 +262,7 @@ void GameWindowManager::update( void )
 //-------------------------------------------------------------------------------------------------
 /** Puts a window at the head of the window list */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::linkWindow present-unmatched
 void GameWindowManager::linkWindow( GameWindow *window )
 {
 	GameWindow *lastModalWindow = NULL;
@@ -310,6 +317,7 @@ void GameWindowManager::linkWindow( GameWindow *window )
 	* be a window in the master list or a child of any window in that master
 	* list */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::insertWindowAheadOf present-unmatched
 void GameWindowManager::insertWindowAheadOf( GameWindow *window, 
 																						 GameWindow *aheadOf )
 {
@@ -370,6 +378,7 @@ void GameWindowManager::insertWindowAheadOf( GameWindow *window,
 //-------------------------------------------------------------------------------------------------
 /** Takes a window off the window list */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::unlinkWindow present-unmatched
 void GameWindowManager::unlinkWindow( GameWindow *window )
 {
 
@@ -391,6 +400,7 @@ void GameWindowManager::unlinkWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Takes a child window off its parent's window list */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::unlinkChildWindow present-unmatched
 void GameWindowManager::unlinkChildWindow( GameWindow *window )
 {
 
@@ -433,6 +443,7 @@ void GameWindowManager::unlinkChildWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Check window and parents to see if this window is enabled */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::isEnabled present-unmatched
 Bool GameWindowManager::isEnabled( GameWindow *win )
 {
 
@@ -461,6 +472,7 @@ Bool GameWindowManager::isEnabled( GameWindow *win )
 //-------------------------------------------------------------------------------------------------
 /** Check window and parents to see if this window is hidden */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::isHidden present-unmatched
 Bool GameWindowManager::isHidden( GameWindow *win )
 {
 
@@ -489,6 +501,7 @@ Bool GameWindowManager::isHidden( GameWindow *win )
 //-------------------------------------------------------------------------------------------------
 // Adds a child window to its parent.
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::addWindowToParent present-unmatched
 void GameWindowManager::addWindowToParent( GameWindow *window, 
 																					 GameWindow *parent )
 {
@@ -550,6 +563,7 @@ void GameWindowManager::addWindowToParentAtEnd( GameWindow *window,
 //-------------------------------------------------------------------------------------------------
 /** this gets called from winHide() when a window hides itself */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::windowHiding present-unmatched
 void GameWindowManager::windowHiding( GameWindow *window )
 {
 
@@ -621,6 +635,7 @@ void GameWindowManager::enableWindowsInRange( GameWindow *baseWindow,
 //-------------------------------------------------------------------------------------------------
 /** Captures the mouse capture. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winCapture present-unmatched
 Int GameWindowManager::winCapture( GameWindow *window )
 {
 
@@ -636,6 +651,7 @@ Int GameWindowManager::winCapture( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Releases the mouse capture. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winRelease present-unmatched
 Int GameWindowManager::winRelease( GameWindow *window )
 {
 
@@ -649,6 +665,7 @@ Int GameWindowManager::winRelease( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Returns the current mouse captor. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winGetCapture present-unmatched
 GameWindow *GameWindowManager::winGetCapture( void )
 {
 
@@ -688,6 +705,7 @@ GameWindow *GameWindowManager::winGetWindowFromId( GameWindow *window, Int id )
 //-------------------------------------------------------------------------------------------------
 /** Gets the Window List Pointer */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winGetWindowList present-unmatched
 GameWindow *GameWindowManager::winGetWindowList( void )
 {
 
@@ -698,6 +716,7 @@ GameWindow *GameWindowManager::winGetWindowList( void )
 //-------------------------------------------------------------------------------------------------
 /** Send a system message to the specified window */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winSendSystemMsg present-unmatched
 WindowMsgHandledType GameWindowManager::winSendSystemMsg( GameWindow *window, 
 																					UnsignedInt msg,
 																					WindowMsgData mData1, 
@@ -717,6 +736,7 @@ WindowMsgHandledType GameWindowManager::winSendSystemMsg( GameWindow *window,
 //-------------------------------------------------------------------------------------------------
 /** Send a system message to the specified window */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winSendInputMsg present-unmatched
 WindowMsgHandledType GameWindowManager::winSendInputMsg( GameWindow *window, 
 																				 UnsignedInt msg,
 																				 WindowMsgData mData1, 
@@ -736,6 +756,7 @@ WindowMsgHandledType GameWindowManager::winSendInputMsg( GameWindow *window,
 //-------------------------------------------------------------------------------------------------
 /** Get the current input focus */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winGetFocus present-unmatched
 GameWindow *GameWindowManager::winGetFocus( void )
 {
 
@@ -796,6 +817,7 @@ Int GameWindowManager::winSetFocus( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Process key press through the GUI. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winProcessKey present-unmatched
 WinInputReturnCode GameWindowManager::winProcessKey( UnsignedByte key, 
 																										 UnsignedByte state )
 {
@@ -835,6 +857,7 @@ WinInputReturnCode GameWindowManager::winProcessKey( UnsignedByte key,
 //-------------------------------------------------------------------------------------------------
 /** Process a single mouse event through the window system */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winProcessMouseEvent present-unmatched
 WinInputReturnCode GameWindowManager::winProcessMouseEvent( GameWindowMessage msg,
 																														ICoord2D *mousePos,
 																														void *data )
@@ -1334,6 +1357,7 @@ Int GameWindowManager::drawWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Draw the GUI in reverse order to correlate with clicking priority */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winRepaint present-unmatched
 void GameWindowManager::winRepaint( void )
 {
 	GameWindow *window, *next;
@@ -1394,6 +1418,7 @@ void GameWindowManager::dumpWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Create a new window by setting up its parameters and callbacks. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winCreate present-unmatched
 GameWindow *GameWindowManager::winCreate( GameWindow *parent, 
 																				  UnsignedInt status, 
 																				  Int x, Int y,
@@ -1465,6 +1490,7 @@ GameWindow *GameWindowManager::winCreate( GameWindow *parent,
 /** Take a window and its children off the top level list and free
 	* their allocation class data. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winDestroy present-unmatched
 Int GameWindowManager::winDestroy( GameWindow *window )
 {
 	GameWindow *child, *next;
@@ -1532,6 +1558,7 @@ Int GameWindowManager::winDestroy( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Destroy all windows on the window list IMMEDIATELY */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winDestroyAll present-unmatched
 Int GameWindowManager::winDestroyAll( void )
 {
 	GameWindow *win, *next;
@@ -1563,6 +1590,7 @@ Int GameWindowManager::winDestroyAll( void )
 /** Sets selected window into a modal state.  This window will get
 	* put at the top of a modal stack */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winSetModal present-unmatched
 Int GameWindowManager::winSetModal( GameWindow *window )
 {
 	ModalWindow *modal;
@@ -1597,6 +1625,7 @@ Int GameWindowManager::winSetModal( GameWindow *window )
 /** pops window off of the modal stack.  If this window is not the top
 	* of the modal stack an error will occur. */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winUnsetModal present-unmatched
 Int GameWindowManager::winUnsetModal( GameWindow *window )
 {
 	ModalWindow *next;
@@ -1627,6 +1656,7 @@ Int GameWindowManager::winUnsetModal( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Get the grabbed window */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winGetGrabWindow present-unmatched
 GameWindow *GameWindowManager::winGetGrabWindow( void )
 {
 
@@ -1637,6 +1667,7 @@ GameWindow *GameWindowManager::winGetGrabWindow( void )
 //-------------------------------------------------------------------------------------------------
 /** Explicitly set the grab window */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::winSetGrabWindow present-unmatched
 void GameWindowManager::winSetGrabWindow( GameWindow *window )
 {
 
@@ -1842,6 +1873,7 @@ GameWindow *GameWindowManager::gogoMessageBox(Int x, Int y, Int width, Int heigh
 //-------------------------------------------------------------------------------------------------
 /** Create a button GUI control */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetPushButton present-unmatched
 GameWindow *GameWindowManager::gogoGadgetPushButton( GameWindow *parent,
 																										 UnsignedInt status,
 																										 Int x, Int y,
@@ -1909,6 +1941,7 @@ GameWindow *GameWindowManager::gogoGadgetPushButton( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a checkbox UI element */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetCheckbox present-unmatched
 GameWindow *GameWindowManager::gogoGadgetCheckbox( GameWindow *parent, 
 																									 UnsignedInt status,
 																									 Int x, Int y, 
@@ -1974,6 +2007,7 @@ GameWindow *GameWindowManager::gogoGadgetCheckbox( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a radio button GUI element */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetRadioButton present-unmatched
 GameWindow *GameWindowManager::gogoGadgetRadioButton( GameWindow *parent, 
 																										  UnsignedInt status,
 																										  Int x, Int y, 
@@ -2046,6 +2080,7 @@ GameWindow *GameWindowManager::gogoGadgetRadioButton( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a tab control GUI element */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetTabControl present-unmatched
 GameWindow *GameWindowManager::gogoGadgetTabControl( GameWindow *parent, 
 																										  UnsignedInt status,
 																										  Int x, Int y, 
@@ -2117,6 +2152,7 @@ GameWindow *GameWindowManager::gogoGadgetTabControl( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a list box GUI control */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetListBox present-unmatched
 GameWindow *GameWindowManager::gogoGadgetListBox( GameWindow *parent, 
 																									UnsignedInt status,
 										                              Int x, Int y, 
@@ -2262,6 +2298,7 @@ GameWindow *GameWindowManager::gogoGadgetListBox( GameWindow *parent,
 /** Does all generic window creation, calls appropriate slider create
 	* function to set up slider-specific data */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetSlider present-unmatched
 GameWindow *GameWindowManager::gogoGadgetSlider( GameWindow *parent, 
 																								 UnsignedInt status,
 																								 Int x, Int y, 
@@ -2386,6 +2423,7 @@ GameWindow *GameWindowManager::gogoGadgetSlider( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a Combo Box GUI element */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetComboBox present-unmatched
 GameWindow *GameWindowManager::gogoGadgetComboBox( GameWindow *parent, 
 																									UnsignedInt status,
 										                              Int x, Int y, 
@@ -2592,6 +2630,7 @@ GameWindow *GameWindowManager::gogoGadgetComboBox( GameWindow *parent,
 //-------------------------------------------------------------------------------------------------
 /** Create a progress bar GUI element */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetProgressBar present-unmatched
 GameWindow *GameWindowManager::gogoGadgetProgressBar( GameWindow *parent, 
 																										  UnsignedInt status,
 																										  Int x, Int y, 
@@ -2650,6 +2689,7 @@ GameWindow *GameWindowManager::gogoGadgetProgressBar( GameWindow *parent,
 /** Does all generic window creation, calls appropriate text field create
 	* function to set up specific data */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetStaticText present-unmatched
 GameWindow *GameWindowManager::gogoGadgetStaticText( GameWindow *parent, 
 																										 UnsignedInt status,
 																										 Int x, Int y, 
@@ -2719,6 +2759,7 @@ GameWindow *GameWindowManager::gogoGadgetStaticText( GameWindow *parent,
 /** Does all generic window creation, calls appropriate entry field create
 	* function to set up specific data */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::gogoGadgetTextEntry present-unmatched
 GameWindow *GameWindowManager::gogoGadgetTextEntry( GameWindow *parent, 
 																										UnsignedInt status,
 																										Int x, Int y, 
@@ -2866,6 +2907,7 @@ GameWindow *GameWindowManager::gogoGadgetTextEntry( GameWindow *parent,
 /** Use this method to assign the default images/colors to gadgets as 
 	* they area created */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::assignDefaultGadgetLook present-unmatched
 void GameWindowManager::assignDefaultGadgetLook( GameWindow *gadget,
 																								 GameFont *defaultFont,
 																								 Bool assignVisual )
@@ -3604,6 +3646,7 @@ UnicodeString GameWindowManager::winTextLabelToText( AsciiString label )
 //-------------------------------------------------------------------------------------------------
 /** find the top window at the given coordinates */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::getWindowUnderCursor present-unmatched
 GameWindow *GameWindowManager::getWindowUnderCursor( Int x, Int y, Bool ignoreEnabled )
 {
 	if( m_mouseCaptor )
@@ -3733,6 +3776,7 @@ static WindowMsgHandledType testGrab( GameWindow *window, UnsignedInt msg,
 //-------------------------------------------------------------------------------------------------
 /** Just for testing */
 //-------------------------------------------------------------------------------------------------
+// ?GameWindowManager::initTestGUI present-unmatched
 Bool GameWindowManager::initTestGUI( void )
 {
 
@@ -4097,6 +4141,7 @@ void GameWindowManager::registerTabList( GameWindowList tabList )
 	m_tabList = tabList;
 }
 
+// ?GameWindowManager::clearTabList present-unmatched
 void GameWindowManager::clearTabList( void )
 {
 	m_tabList.clear();

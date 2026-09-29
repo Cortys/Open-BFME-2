@@ -114,6 +114,7 @@ static Real heightToSpeed(Real height)
 } 
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehaviorModuleData::PhysicsBehaviorModuleData present-unmatched
 PhysicsBehaviorModuleData::PhysicsBehaviorModuleData()
 {
 	m_mass = DEFAULT_MASS;
@@ -207,6 +208,7 @@ static void parseFrictionPerSec( INI* ini, void * /*instance*/, void *store, con
 const Real INVALID_VEL_MAG = -1.0f;
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::PhysicsBehavior present-unmatched
 PhysicsBehavior::PhysicsBehavior( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
 {
 	m_accel.zero();
@@ -256,12 +258,14 @@ static ProjectileUpdateInterface* getPui(Object* obj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::onObjectCreated present-unmatched
 void PhysicsBehavior::onObjectCreated()
 {
 	m_pui = getPui(getObject());
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::~PhysicsBehavior present-unmatched
 PhysicsBehavior::~PhysicsBehavior()
 {
 	if (m_bounceSound)
@@ -278,12 +282,14 @@ void PhysicsBehavior::setIgnoreCollisionsWith(const Object* obj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::isIgnoringCollisionsWith present-unmatched
 Bool PhysicsBehavior::isIgnoringCollisionsWith(ObjectID id) const
 {
 	return id != INVALID_ID && id == m_ignoreCollisionsWith;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getAerodynamicFriction present-unmatched
 Real PhysicsBehavior::getAerodynamicFriction() const
 {
 	Real f = getPhysicsBehaviorModuleData()->m_aerodynamicFriction + m_extraFriction;
@@ -293,6 +299,7 @@ Real PhysicsBehavior::getAerodynamicFriction() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getForwardFriction present-unmatched
 Real PhysicsBehavior::getForwardFriction() const
 {
 	Real f = getPhysicsBehaviorModuleData()->m_forwardFriction + m_extraFriction;
@@ -302,6 +309,7 @@ Real PhysicsBehavior::getForwardFriction() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getLateralFriction present-unmatched
 Real PhysicsBehavior::getLateralFriction() const
 {
 	Real f = getPhysicsBehaviorModuleData()->m_lateralFriction + m_extraFriction;
@@ -311,6 +319,7 @@ Real PhysicsBehavior::getLateralFriction() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getZFriction present-unmatched
 Real PhysicsBehavior::getZFriction() const
 {
 	Real f = getPhysicsBehaviorModuleData()->m_ZFriction + m_extraFriction;
@@ -323,6 +332,7 @@ Real PhysicsBehavior::getZFriction() const
 /**
  * Apply a force at the object's CG
  */
+// ?PhysicsBehavior::applyForce present-unmatched
 void PhysicsBehavior::applyForce( const Coord3D *force )
 {
 	DEBUG_ASSERTCRASH(!(_isnan(force->x) || _isnan(force->y) || _isnan(force->z)), ("PhysicsBehavior::applyForce force NAN!\n"));
@@ -367,6 +377,7 @@ void PhysicsBehavior::applyForce( const Coord3D *force )
 /**
  * Apply a shocwave force at the object's CG
  */
+// ?PhysicsBehavior::applyShock present-unmatched
 void PhysicsBehavior::applyShock( const Coord3D *force )
 {
 	Coord3D resistedForce = *force;
@@ -380,6 +391,7 @@ void PhysicsBehavior::applyShock( const Coord3D *force )
 /**
  * Apply a random rotation at the object's CG
  */
+// ?PhysicsBehavior::applyRandomRotation present-unmatched
 void PhysicsBehavior::applyRandomRotation()
 {
 	// Ignore any pitch, roll & yaw rotation if behavior is stick to ground
@@ -414,12 +426,14 @@ void PhysicsBehavior::applyRandomRotation()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::isMotive present-unmatched
 Bool PhysicsBehavior::isMotive() const 
 { 
 	return m_motiveForceExpires > TheGameLogic->getFrame(); 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::applyMotiveForce present-unmatched
 void PhysicsBehavior::applyMotiveForce( const Coord3D *force )
 {
 	m_motiveForceExpires = 0; // make it accept this force unquestioningly :)
@@ -428,6 +442,7 @@ void PhysicsBehavior::applyMotiveForce( const Coord3D *force )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::resetDynamicPhysics present-unmatched
 void PhysicsBehavior::resetDynamicPhysics()
 {
 	m_accel.zero();
@@ -446,12 +461,14 @@ void PhysicsBehavior::resetDynamicPhysics()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::applyGravitationalForces present-unmatched
 void PhysicsBehavior::applyGravitationalForces()
 {
 	m_accel.z += TheGlobalData->m_gravity;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::applyFrictionalForces present-unmatched
 void PhysicsBehavior::applyFrictionalForces()
 {
 	//Are we a plane that is taxiing on a deck with a height offset?
@@ -506,6 +523,7 @@ void PhysicsBehavior::applyFrictionalForces()
 
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::handleBounce present-unmatched
 Bool PhysicsBehavior::handleBounce(Real oldZ, Real newZ, Real groundZ, Coord3D* bounceForce)
 {
 	if (getFlag(ALLOW_BOUNCE) && newZ <= groundZ)
@@ -572,6 +590,7 @@ inline Bool isZero3D(const Coord3D& v)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::setPitchRate present-unmatched
 void PhysicsBehavior::setPitchRate(Real pitch) 
 { 
 	m_pitchRate = pitch;
@@ -579,6 +598,7 @@ void PhysicsBehavior::setPitchRate(Real pitch)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::setRollRate present-unmatched
 void PhysicsBehavior::setRollRate(Real roll) 
 { 
 	m_rollRate = roll;
@@ -586,6 +606,7 @@ void PhysicsBehavior::setRollRate(Real roll)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::setYawRate present-unmatched
 void PhysicsBehavior::setYawRate(Real yaw) 
 { 
 	m_yawRate = yaw; 
@@ -593,6 +614,7 @@ void PhysicsBehavior::setYawRate(Real yaw)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::applyYPRDamping present-unmatched
 void PhysicsBehavior::applyYPRDamping(Real factor)
 {
 	m_pitchRate *= factor;
@@ -602,6 +624,7 @@ void PhysicsBehavior::applyYPRDamping(Real factor)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::setBounceSound present-unmatched
 void PhysicsBehavior::setBounceSound(const AudioEventRTS* bounceSound) 
 { 
 	if (bounceSound)
@@ -628,6 +651,7 @@ void PhysicsBehavior::setBounceSound(const AudioEventRTS* bounceSound)
  */
 
 DECLARE_PERF_TIMER(PhysicsBehavior)
+// ?PhysicsBehavior::update present-unmatched
 UpdateSleepTime PhysicsBehavior::update()
 {
 	USE_PERF_TIMER(PhysicsBehavior)
@@ -928,6 +952,7 @@ UpdateSleepTime PhysicsBehavior::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::calcSleepTime present-unmatched
 UpdateSleepTime PhysicsBehavior::calcSleepTime() const
 {
 #ifdef SLEEPY_PHYSICS
@@ -950,6 +975,7 @@ UpdateSleepTime PhysicsBehavior::calcSleepTime() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getVelocityMagnitude present-unmatched
 Real PhysicsBehavior::getVelocityMagnitude() const
 {
 	if (m_velMag == INVALID_VEL_MAG)
@@ -964,6 +990,7 @@ Real PhysicsBehavior::getVelocityMagnitude() const
  * Return the current velocity magnitude in the forward direction.  
  * If velocity is opposite facing vector, the returned value will be negative.
  */
+// ?PhysicsBehavior::getForwardSpeed2D present-unmatched
 Real PhysicsBehavior::getForwardSpeed2D() const
 {
 	const Coord3D *dir = getObject()->getUnitDirectionVector2D();
@@ -989,6 +1016,7 @@ Real PhysicsBehavior::getForwardSpeed2D() const
  * Return the current velocity magnitude in the forward direction.  
  * If velocity is opposite facing vector, the returned value will be negative.
  */
+// ?PhysicsBehavior::getForwardSpeed3D present-unmatched
 Real PhysicsBehavior::getForwardSpeed3D() const
 {
 	Vector3 dir = getObject()->getTransformMatrix()->Get_X_Vector();
@@ -1008,18 +1036,21 @@ Real PhysicsBehavior::getForwardSpeed3D() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::isCurrentlyOverlapped present-unmatched
 Bool PhysicsBehavior::isCurrentlyOverlapped(Object *obj) const
 { 
 	return obj != NULL && obj->getID() == m_currentOverlap;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::wasPreviouslyOverlapped present-unmatched
 Bool PhysicsBehavior::wasPreviouslyOverlapped(Object *obj) const
 { 
 	return obj != NULL && obj->getID() == m_previousOverlap;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::scrubVelocityZ present-unmatched
 void PhysicsBehavior::scrubVelocityZ( Real desiredVelocity ) 
 { 	 
 	if (fabs(desiredVelocity) < 0.001f) 
@@ -1037,6 +1068,7 @@ void PhysicsBehavior::scrubVelocityZ( Real desiredVelocity )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::scrubVelocity2D present-unmatched
 void PhysicsBehavior::scrubVelocity2D( Real desiredVelocity ) 
 { 	 
 	if (desiredVelocity < 0.001f) 
@@ -1059,6 +1091,7 @@ void PhysicsBehavior::scrubVelocity2D( Real desiredVelocity )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::addOverlap present-unmatched
 void PhysicsBehavior::addOverlap(Object *obj) 
 { 
 	if (obj && !isCurrentlyOverlapped(obj))
@@ -1068,6 +1101,7 @@ void PhysicsBehavior::addOverlap(Object *obj)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::transferVelocityTo present-unmatched
 void PhysicsBehavior::transferVelocityTo(PhysicsBehavior* that) const
 {
 	if (that != NULL)
@@ -1076,6 +1110,7 @@ void PhysicsBehavior::transferVelocityTo(PhysicsBehavior* that) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::addVelocityTo present-unmatched
 void PhysicsBehavior::addVelocityTo( const Coord3D *vel) 
 {
 	if (vel != NULL)
@@ -1083,6 +1118,7 @@ void PhysicsBehavior::addVelocityTo( const Coord3D *vel)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::setAngles present-unmatched
 void PhysicsBehavior::setAngles( Real yaw, Real pitch, Real roll )
 {
 	const Coord3D* pos = getObject()->getPosition();
@@ -1098,6 +1134,7 @@ void PhysicsBehavior::setAngles( Real yaw, Real pitch, Real roll )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::getMass present-unmatched
 Real PhysicsBehavior::getMass() const 
 {
 	Real mass = m_mass;
@@ -1114,6 +1151,7 @@ inline Real calcDistSqr(const Coord3D& a, const Coord3D& b)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::doBounceSound present-unmatched
 void PhysicsBehavior::doBounceSound(const Coord3D& prevPos)
 {
 	if (!m_bounceSound)
@@ -1166,6 +1204,7 @@ void PhysicsBehavior::doBounceSound(const Coord3D& prevPos)
  * @todo Physics collision resolution is 2D - should it be 3D? (MSB)
  */
 //DECLARE_PERF_TIMER(PhysicsBehavioronCollide)
+// ?PhysicsBehavior::onCollide present-unmatched
 void PhysicsBehavior::onCollide( Object *other, const Coord3D *loc, const Coord3D *normal )
 {
 	//USE_PERF_TIMER(PhysicsBehavioronCollide)
@@ -1449,6 +1488,7 @@ static Bool perpsLogicallyEqual( Real perpOne, Real perpTwo )
  * Return true if we want to skip having physics push us apart // LORENZEN
  */
 //-------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::checkForOverlapCollision present-unmatched
 Bool PhysicsBehavior::checkForOverlapCollision(Object *other)
 {
 	//This is the most Supreme Truth... that unless I am moving right now, I may not crush anyhing!
@@ -1778,6 +1818,7 @@ Bool PhysicsBehavior::checkForOverlapCollision(Object *other)
 // ------------------------------------------------------------------------------------------------
 /** Test whether unit needs to die because of being on illegal cell, upside down, outside legal bounds **/
 // ------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::testStunnedUnitForDestruction present-unmatched
 void PhysicsBehavior::testStunnedUnitForDestruction(void)
 {
 	// Only do test if unit is stunned
@@ -1824,6 +1865,7 @@ void PhysicsBehavior::testStunnedUnitForDestruction(void)
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::crc present-unmatched
 void PhysicsBehavior::crc( Xfer *xfer )
 {
 
@@ -1837,6 +1879,7 @@ void PhysicsBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::xfer present-unmatched
 void PhysicsBehavior::xfer( Xfer *xfer )
 {
 
@@ -1915,6 +1958,7 @@ void PhysicsBehavior::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?PhysicsBehavior::loadPostProcess present-unmatched
 void PhysicsBehavior::loadPostProcess( void )
 {
 

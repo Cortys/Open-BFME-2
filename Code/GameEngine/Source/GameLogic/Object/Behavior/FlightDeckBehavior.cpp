@@ -62,6 +62,7 @@
 //#pragma MESSAGE("************************************** WARNING, optimization disabled for debugging purposes")
 #endif
 
+// ?FlightDeckBehaviorModuleData::FlightDeckBehaviorModuleData present-unmatched
 FlightDeckBehaviorModuleData::FlightDeckBehaviorModuleData()
 {
 	//m_framesForFullHeal = 0;
@@ -75,6 +76,7 @@ FlightDeckBehaviorModuleData::FlightDeckBehaviorModuleData()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehaviorModuleData::parseRunwayStrip present-unmatched
 void FlightDeckBehaviorModuleData::parseRunwayStrip( INI* ini, void *instance, void *store, const void* /*userData*/ )
 {
 	AsciiString *runwayNames = (AsciiString*)store;
@@ -92,6 +94,7 @@ void FlightDeckBehaviorModuleData::parseRunwayStrip( INI* ini, void *instance, v
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehaviorModuleData::buildFieldParse present-unmatched
 void FlightDeckBehaviorModuleData::buildFieldParse(MultiIniFieldParse& p)
 {
 	AIUpdateModuleData::buildFieldParse(p);
@@ -136,6 +139,7 @@ void FlightDeckBehaviorModuleData::buildFieldParse(MultiIniFieldParse& p)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::FlightDeckBehavior present-unmatched
 FlightDeckBehavior::FlightDeckBehavior( Thing *thing, const ModuleData* moduleData ) : AIUpdateInterface( thing, moduleData )
 {
 	m_gotInfo = false;
@@ -164,12 +168,14 @@ FlightDeckBehavior::FlightDeckBehavior( Thing *thing, const ModuleData* moduleDa
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::~FlightDeckBehavior present-unmatched
 FlightDeckBehavior::~FlightDeckBehavior( void )
 {
 }
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::buildInfo present-unmatched
 void FlightDeckBehavior::buildInfo(Bool createUnits)
 {
 	if (m_gotInfo)
@@ -300,6 +306,7 @@ void FlightDeckBehavior::buildInfo(Bool createUnits)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::purgeDead present-unmatched
 void FlightDeckBehavior::purgeDead()
 {
 	buildInfo();
@@ -363,6 +370,7 @@ void FlightDeckBehavior::purgeDead()
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?FlightDeckBehavior::hasReservedSpace present-unmatched
 Bool FlightDeckBehavior::hasReservedSpace(ObjectID id) const
 {
 	if (!m_gotInfo)
@@ -380,6 +388,7 @@ Bool FlightDeckBehavior::hasReservedSpace(ObjectID id) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::getSpaceIndex present-unmatched
 Int FlightDeckBehavior::getSpaceIndex( ObjectID id ) const
 {
 	if( id == INVALID_ID )
@@ -399,6 +408,7 @@ Int FlightDeckBehavior::getSpaceIndex( ObjectID id ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::findPPI present-unmatched
 FlightDeckBehavior::FlightDeckInfo* FlightDeckBehavior::findPPI(ObjectID id)
 {
 	DEBUG_ASSERTCRASH(id != INVALID_ID, ("call findEmptyPPI instead"));
@@ -416,6 +426,7 @@ FlightDeckBehavior::FlightDeckInfo* FlightDeckBehavior::findPPI(ObjectID id)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::findEmptyPPI present-unmatched
 FlightDeckBehavior::FlightDeckInfo* FlightDeckBehavior::findEmptyPPI()
 {
 	if (!m_gotInfo)
@@ -432,6 +443,7 @@ FlightDeckBehavior::FlightDeckInfo* FlightDeckBehavior::findEmptyPPI()
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?FlightDeckBehavior::shouldReserveDoorWhenQueued present-unmatched
 Bool FlightDeckBehavior::shouldReserveDoorWhenQueued(const ThingTemplate* thing) const
 {
 	return true;
@@ -439,6 +451,7 @@ Bool FlightDeckBehavior::shouldReserveDoorWhenQueued(const ThingTemplate* thing)
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?FlightDeckBehavior::hasAvailableSpaceFor present-unmatched
 Bool FlightDeckBehavior::hasAvailableSpaceFor(const ThingTemplate* thing) const
 {
 	if (!m_gotInfo)	// degenerate case, shouldn't happen, but just in case...
@@ -468,6 +481,7 @@ Bool FlightDeckBehavior::hasAvailableSpaceFor(const ThingTemplate* thing) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::reserveSpace present-unmatched
 Bool FlightDeckBehavior::reserveSpace(ObjectID id, Real parkingOffset, ParkingPlaceBehaviorInterface::PPInfo* info)
 {
 	buildInfo();
@@ -512,6 +526,7 @@ Bool FlightDeckBehavior::reserveSpace(ObjectID id, Real parkingOffset, ParkingPl
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::validateAssignments present-unmatched
 void FlightDeckBehavior::validateAssignments()
 {
 	Int index = 0, index2 = 0;
@@ -537,6 +552,7 @@ void FlightDeckBehavior::validateAssignments()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::calcPPInfo present-unmatched
 void FlightDeckBehavior::calcPPInfo( ObjectID id, PPInfo *info )
 {
 	FlightDeckInfo *ppi = findPPI( id );
@@ -585,6 +601,7 @@ void FlightDeckBehavior::calcPPInfo( ObjectID id, PPInfo *info )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::releaseSpace present-unmatched
 void FlightDeckBehavior::releaseSpace(ObjectID id)
 {
 	buildInfo();
@@ -607,6 +624,7 @@ void FlightDeckBehavior::releaseSpace(ObjectID id)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::getRunwayReservation present-unmatched
 ObjectID FlightDeckBehavior::getRunwayReservation( Int runway, RunwayReservationType type )
 {
 	buildInfo();
@@ -623,12 +641,14 @@ ObjectID FlightDeckBehavior::getRunwayReservation( Int runway, RunwayReservation
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::transferRunwayReservationToNextInLineForTakeoff present-unmatched
 void FlightDeckBehavior::transferRunwayReservationToNextInLineForTakeoff(ObjectID id)
 {
 	//Aircraft carrier controls this functionality with an iron fist.
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::reserveRunway present-unmatched
 Bool FlightDeckBehavior::reserveRunway(ObjectID id, Bool forLanding)
 {
 	buildInfo();
@@ -694,6 +714,7 @@ Bool FlightDeckBehavior::reserveRunway(ObjectID id, Bool forLanding)
 
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::releaseRunway present-unmatched
 void FlightDeckBehavior::releaseRunway(ObjectID id)
 {
 	buildInfo();
@@ -761,6 +782,7 @@ const std::vector<Coord3D>* FlightDeckBehavior::getCreationLocations( ObjectID i
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::isAbleToGiveUpParkingSpace present-unmatched
 Bool FlightDeckBehavior::isAbleToGiveUpParkingSpace( Object *jet )
 {
 	//If we're airborne or non-existant, someone else can have my spot if they need it.
@@ -800,6 +822,7 @@ Bool FlightDeckBehavior::isAbleToGiveUpParkingSpace( Object *jet )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::isInPositionToTakeoff present-unmatched
 Bool FlightDeckBehavior::isInPositionToTakeoff( const Object &jet ) const
 {
 	const AIUpdateInterface *ai = jet.getAI();
@@ -829,6 +852,7 @@ Bool FlightDeckBehavior::isInPositionToTakeoff( const Object &jet ) const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::isAbleToMoveForward present-unmatched
 Bool FlightDeckBehavior::isAbleToMoveForward( const Object &jet ) const
 {
 	JetAIUpdate *jetAI = (JetAIUpdate*)jet.getAI();
@@ -852,6 +876,7 @@ Bool FlightDeckBehavior::isAbleToMoveForward( const Object &jet ) const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::calcBestParkingAssignment present-unmatched
 Bool FlightDeckBehavior::calcBestParkingAssignment( ObjectID id, Coord3D *pos, Int *oldIndex, Int *newIndex )
 {
 	//Find the runway the object is assigned to.
@@ -959,6 +984,7 @@ Bool FlightDeckBehavior::calcBestParkingAssignment( ObjectID id, Coord3D *pos, I
 const Int HEAL_RATE_FRAMES = LOGICFRAMES_PER_SECOND / 5;
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::resetWakeFrame present-unmatched
 void FlightDeckBehavior::resetWakeFrame()
 {
 	if (m_healing.empty())
@@ -972,6 +998,7 @@ void FlightDeckBehavior::resetWakeFrame()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::setHealee present-unmatched
 void FlightDeckBehavior::setHealee(Object* healee, Bool add)
 {
 	if (add)
@@ -1005,6 +1032,7 @@ void FlightDeckBehavior::setHealee(Object* healee, Bool add)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::defectAllParkedUnits present-unmatched
 void FlightDeckBehavior::defectAllParkedUnits(Team* newTeam, UnsignedInt detectionTime)
 {
 	buildInfo();
@@ -1046,6 +1074,7 @@ void FlightDeckBehavior::defectAllParkedUnits(Team* newTeam, UnsignedInt detecti
 
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::killAllParkedUnits present-unmatched
 void FlightDeckBehavior::killAllParkedUnits()
 {
 	buildInfo();
@@ -1075,12 +1104,14 @@ void FlightDeckBehavior::killAllParkedUnits()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::onDie present-unmatched
 void FlightDeckBehavior::onDie( const DamageInfo *damageInfo )
 {
 	killAllParkedUnits();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::update present-unmatched
 UpdateSleepTime FlightDeckBehavior::update()
 {
 	// alas, we need to keep the buildInfo and dead-purged stuff pretty much up to date, for
@@ -1300,6 +1331,7 @@ UpdateSleepTime FlightDeckBehavior::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::reserveDoorForExit present-unmatched
 ExitDoorType FlightDeckBehavior::reserveDoorForExit( const ThingTemplate* objType, Object *specificObject )
 {
 	//Uses the same door for all production.
@@ -1307,6 +1339,7 @@ ExitDoorType FlightDeckBehavior::reserveDoorForExit( const ThingTemplate* objTyp
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::exitObjectViaDoor present-unmatched
 void FlightDeckBehavior::exitObjectViaDoor( Object *newObj, ExitDoorType exitDoor ) ///< Here is the thing I want you to exit
 {
 	FlightDeckInfo* ppi = NULL;
@@ -1375,12 +1408,14 @@ void FlightDeckBehavior::exitObjectViaDoor( Object *newObj, ExitDoorType exitDoo
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::unreserveDoorForExit present-unmatched
 void FlightDeckBehavior::unreserveDoorForExit( ExitDoorType exitDoor )
 {
 	//Aircraft carrier doesn't use the door reservation system.
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::aiDoCommand present-unmatched
 void FlightDeckBehavior::aiDoCommand(const AICommandParms* parms)
 {
 	//Inspect the command and reset everything when necessary.
@@ -1432,6 +1467,7 @@ void FlightDeckBehavior::aiDoCommand(const AICommandParms* parms)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::propagateOrdersToPlanes present-unmatched
 void FlightDeckBehavior::propagateOrdersToPlanes()
 {
 	//We just ordered the carrier to stop, so order all the planes that are out to return!
@@ -1449,6 +1485,7 @@ void FlightDeckBehavior::propagateOrdersToPlanes()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::hasTakeoffOrders present-unmatched
 Bool FlightDeckBehavior::hasTakeoffOrders()
 {
 	Object *target = TheGameLogic->findObjectByID( m_designatedTarget );
@@ -1482,6 +1519,7 @@ Bool FlightDeckBehavior::hasTakeoffOrders()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::propagateOrderToSpecificPlane present-unmatched
 void FlightDeckBehavior::propagateOrderToSpecificPlane( Object *jet )
 {
 	if( jet )
@@ -1516,6 +1554,7 @@ void FlightDeckBehavior::propagateOrderToSpecificPlane( Object *jet )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::crc present-unmatched
 void FlightDeckBehavior::crc( Xfer *xfer )
 {
 
@@ -1529,6 +1568,7 @@ void FlightDeckBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::xfer present-unmatched
 void FlightDeckBehavior::xfer( Xfer *xfer )
 {
 	Int i;
@@ -1712,6 +1752,7 @@ void FlightDeckBehavior::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?FlightDeckBehavior::loadPostProcess present-unmatched
 void FlightDeckBehavior::loadPostProcess( void )
 {
 

@@ -57,6 +57,7 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::ParkingPlaceBehavior present-unmatched
 ParkingPlaceBehavior::ParkingPlaceBehavior( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
 {
 	m_gotInfo = false;
@@ -75,12 +76,14 @@ ParkingPlaceBehavior::ParkingPlaceBehavior( Thing *thing, const ModuleData* modu
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::~ParkingPlaceBehavior present-unmatched
 ParkingPlaceBehavior::~ParkingPlaceBehavior( void )
 {
 }
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::buildInfo present-unmatched
 void ParkingPlaceBehavior::buildInfo()
 {
 	if (m_gotInfo)
@@ -153,6 +156,7 @@ void ParkingPlaceBehavior::buildInfo()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::purgeDead present-unmatched
 void ParkingPlaceBehavior::purgeDead()
 {
 	buildInfo();
@@ -223,6 +227,7 @@ void ParkingPlaceBehavior::purgeDead()
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?ParkingPlaceBehavior::hasReservedSpace present-unmatched
 Bool ParkingPlaceBehavior::hasReservedSpace(ObjectID id) const
 {
 	if (!m_gotInfo)
@@ -240,6 +245,7 @@ Bool ParkingPlaceBehavior::hasReservedSpace(ObjectID id) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::getSpaceIndex present-unmatched
 Int ParkingPlaceBehavior::getSpaceIndex( ObjectID id ) const
 {
 	if( id == INVALID_ID )
@@ -259,6 +265,7 @@ Int ParkingPlaceBehavior::getSpaceIndex( ObjectID id ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::findPPI present-unmatched
 ParkingPlaceBehavior::ParkingPlaceInfo* ParkingPlaceBehavior::findPPI(ObjectID id)
 {
 	DEBUG_ASSERTCRASH(id != INVALID_ID, ("call findEmptyPPI instead"));
@@ -276,6 +283,7 @@ ParkingPlaceBehavior::ParkingPlaceInfo* ParkingPlaceBehavior::findPPI(ObjectID i
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::findEmptyPPI present-unmatched
 ParkingPlaceBehavior::ParkingPlaceInfo* ParkingPlaceBehavior::findEmptyPPI()
 {
 	if (!m_gotInfo)
@@ -292,6 +300,7 @@ ParkingPlaceBehavior::ParkingPlaceInfo* ParkingPlaceBehavior::findEmptyPPI()
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?ParkingPlaceBehavior::shouldReserveDoorWhenQueued present-unmatched
 Bool ParkingPlaceBehavior::shouldReserveDoorWhenQueued(const ThingTemplate* thing) const
 {
 	if (thing->isKindOf(KINDOF_PRODUCED_AT_HELIPAD))
@@ -302,6 +311,7 @@ Bool ParkingPlaceBehavior::shouldReserveDoorWhenQueued(const ThingTemplate* thin
 
 //-------------------------------------------------------------------------------------------------
 // note: called from client, so MUST NOT modify self in any way, or desyncs will occur
+// ?ParkingPlaceBehavior::hasAvailableSpaceFor present-unmatched
 Bool ParkingPlaceBehavior::hasAvailableSpaceFor(const ThingTemplate* thing) const
 {
 	if (!m_gotInfo)	// degenerate case, shouldn't happen, but just in case...
@@ -334,6 +344,7 @@ Bool ParkingPlaceBehavior::hasAvailableSpaceFor(const ThingTemplate* thing) cons
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::reserveSpace present-unmatched
 Bool ParkingPlaceBehavior::reserveSpace(ObjectID id, Real parkingOffset, ParkingPlaceBehaviorInterface::PPInfo* info)
 {
 	buildInfo();
@@ -382,6 +393,7 @@ Bool ParkingPlaceBehavior::reserveSpace(ObjectID id, Real parkingOffset, Parking
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::calcPPInfo present-unmatched
 void ParkingPlaceBehavior::calcPPInfo( ObjectID id, PPInfo *info )
 {
 
@@ -427,6 +439,7 @@ void ParkingPlaceBehavior::calcPPInfo( ObjectID id, PPInfo *info )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::releaseSpace present-unmatched
 void ParkingPlaceBehavior::releaseSpace(ObjectID id)
 {
 	buildInfo();
@@ -453,6 +466,7 @@ void ParkingPlaceBehavior::releaseSpace(ObjectID id)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::getRunwayReservation present-unmatched
 ObjectID ParkingPlaceBehavior::getRunwayReservation( Int runway, RunwayReservationType type )
 {
 	//Note: We don't care about type because these runways share the runway for taking off and landing.
@@ -462,6 +476,7 @@ ObjectID ParkingPlaceBehavior::getRunwayReservation( Int runway, RunwayReservati
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::transferRunwayReservationToNextInLineForTakeoff present-unmatched
 void ParkingPlaceBehavior::transferRunwayReservationToNextInLineForTakeoff(ObjectID id)
 {
 	buildInfo();
@@ -478,6 +493,7 @@ void ParkingPlaceBehavior::transferRunwayReservationToNextInLineForTakeoff(Objec
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::reserveRunway present-unmatched
 Bool ParkingPlaceBehavior::reserveRunway(ObjectID id, Bool forLanding)
 {
 	buildInfo();
@@ -530,6 +546,7 @@ Bool ParkingPlaceBehavior::reserveRunway(ObjectID id, Bool forLanding)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::releaseRunway present-unmatched
 void ParkingPlaceBehavior::releaseRunway(ObjectID id)
 {
 	buildInfo();
@@ -554,6 +571,7 @@ void ParkingPlaceBehavior::releaseRunway(ObjectID id)
 const Int HEAL_RATE_FRAMES = LOGICFRAMES_PER_SECOND / 5;
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::resetWakeFrame present-unmatched
 void ParkingPlaceBehavior::resetWakeFrame()
 {
 	if (m_healing.empty())
@@ -567,6 +585,7 @@ void ParkingPlaceBehavior::resetWakeFrame()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::setHealee present-unmatched
 void ParkingPlaceBehavior::setHealee(Object* healee, Bool add)
 {
 	if (add)
@@ -600,6 +619,7 @@ void ParkingPlaceBehavior::setHealee(Object* healee, Bool add)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::defectAllParkedUnits present-unmatched
 void ParkingPlaceBehavior::defectAllParkedUnits(Team* newTeam, UnsignedInt detectionTime)
 {
 	buildInfo();
@@ -639,6 +659,7 @@ void ParkingPlaceBehavior::defectAllParkedUnits(Team* newTeam, UnsignedInt detec
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::killAllParkedUnits present-unmatched
 void ParkingPlaceBehavior::killAllParkedUnits()
 {
 	buildInfo();
@@ -668,12 +689,14 @@ void ParkingPlaceBehavior::killAllParkedUnits()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::onDie present-unmatched
 void ParkingPlaceBehavior::onDie( const DamageInfo *damageInfo )
 {
 	killAllParkedUnits();
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::update present-unmatched
 UpdateSleepTime ParkingPlaceBehavior::update()
 {
 	// alas, we need to keep the buildInfo and dead-purged stuff pretty much up to date, for
@@ -720,6 +743,7 @@ UpdateSleepTime ParkingPlaceBehavior::update()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::reserveDoorForExit present-unmatched
 ExitDoorType ParkingPlaceBehavior::reserveDoorForExit( const ThingTemplate* objType, Object *specificObject )
 {
 	buildInfo();
@@ -744,6 +768,7 @@ ExitDoorType ParkingPlaceBehavior::reserveDoorForExit( const ThingTemplate* objT
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::exitObjectViaDoor present-unmatched
 void ParkingPlaceBehavior::exitObjectViaDoor( Object *newObj, ExitDoorType exitDoor ) ///< Here is the thing I want you to exit
 {
 	if (exitDoor != DOOR_NONE_NEEDED)
@@ -844,6 +869,7 @@ void ParkingPlaceBehavior::exitObjectViaDoor( Object *newObj, ExitDoorType exitD
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::unreserveDoorForExit present-unmatched
 void ParkingPlaceBehavior::unreserveDoorForExit( ExitDoorType exitDoor )
 {
 	if (exitDoor != DOOR_NONE_NEEDED)
@@ -864,6 +890,7 @@ void ParkingPlaceBehavior::unreserveDoorForExit( ExitDoorType exitDoor )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::setRallyPoint present-unmatched
 void ParkingPlaceBehavior::setRallyPoint( const Coord3D *pos )
 {
 	m_heliRallyPointExists = TRUE;
@@ -872,6 +899,7 @@ void ParkingPlaceBehavior::setRallyPoint( const Coord3D *pos )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::getRallyPoint present-unmatched
 const Coord3D* ParkingPlaceBehavior::getRallyPoint( void ) const
 {
 	if( m_heliRallyPointExists )
@@ -884,6 +912,7 @@ const Coord3D* ParkingPlaceBehavior::getRallyPoint( void ) const
 //-------------------------------------------------------------------------------------------------
 //We only use this for the helipad -- therefore the exit position is the helipad creation point.
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::getExitPosition present-unmatched
 Bool ParkingPlaceBehavior::getExitPosition( Coord3D& exitPosition ) const
 {
 	Matrix3D mtx;
@@ -891,6 +920,7 @@ Bool ParkingPlaceBehavior::getExitPosition( Coord3D& exitPosition ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::getNaturalRallyPoint present-unmatched
 Bool ParkingPlaceBehavior::getNaturalRallyPoint( Coord3D& rallyPoint, Bool offset ) const
 {
 	Matrix3D mtx;
@@ -900,6 +930,7 @@ Bool ParkingPlaceBehavior::getNaturalRallyPoint( Coord3D& rallyPoint, Bool offse
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::crc present-unmatched
 void ParkingPlaceBehavior::crc( Xfer *xfer )
 {
 
@@ -913,6 +944,7 @@ void ParkingPlaceBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::xfer present-unmatched
 void ParkingPlaceBehavior::xfer( Xfer *xfer )
 {
 	Int i;
@@ -1092,6 +1124,7 @@ void ParkingPlaceBehavior::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?ParkingPlaceBehavior::loadPostProcess present-unmatched
 void ParkingPlaceBehavior::loadPostProcess( void )
 {
 

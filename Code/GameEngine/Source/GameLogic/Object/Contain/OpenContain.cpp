@@ -165,6 +165,7 @@ OpenContain::OpenContain( Thing *thing, const ModuleData* moduleData ) : UpdateM
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::getContainMax present-unmatched
 Int OpenContain::getContainMax( void ) const
 {
 	const OpenContainModuleData *modData = getOpenContainModuleData();
@@ -175,6 +176,7 @@ Int OpenContain::getContainMax( void ) const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::~OpenContain present-unmatched
 OpenContain::~OpenContain()
 {
 
@@ -193,6 +195,7 @@ OpenContain::~OpenContain()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // our object changed position... react as appropriate.
+// ?OpenContain::containReactToTransformChange present-unmatched
 void OpenContain::containReactToTransformChange()
 {
 	// Our transform changed, which means our bones moved, and we keep people positioned on bones.
@@ -201,6 +204,7 @@ void OpenContain::containReactToTransformChange()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::update present-unmatched
 UpdateSleepTime OpenContain::update( void )
 {
 	m_playerEnteredMask = 0;
@@ -224,6 +228,7 @@ UpdateSleepTime OpenContain::update( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::addOrRemoveObjFromWorld present-unmatched
 void OpenContain::addOrRemoveObjFromWorld(Object* obj, Bool add) 
 { 
 
@@ -288,6 +293,7 @@ void OpenContain::addOrRemoveObjFromWorld(Object* obj, Bool add)
 	* This will trigger an onContaining event for the object that this module
 	* is a part of and an onContainedBy event for the object being contained */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::addToContain present-unmatched
 void OpenContain::addToContain( Object *rider )
 {
 	if( getObject()->checkAndDetonateBoobyTrap(rider) )
@@ -368,6 +374,7 @@ void OpenContain::addToContain( Object *rider )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::addToContainList present-unmatched
 void OpenContain::addToContainList( Object *rider )
 {
 	m_containList.push_back(rider);
@@ -383,6 +390,7 @@ void OpenContain::addToContainList( Object *rider )
 	* This will trigger an onRemoving event for the object that this module
 	* is a part of and an onRemovedFrom event for the object being removed */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::removeFromContain present-unmatched
 void OpenContain::removeFromContain( Object *rider, Bool exposeStealthUnits )
 {
 
@@ -419,6 +427,7 @@ void OpenContain::removeFromContain( Object *rider, Bool exposeStealthUnits )
 //-------------------------------------------------------------------------------------------------
 /** Remove all contained objects from the contained list */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::removeAllContained present-unmatched
 void OpenContain::removeAllContained( Bool exposeStealthUnits )
 {
 	ContainedItemsList::iterator it;
@@ -436,6 +445,7 @@ void OpenContain::removeAllContained( Bool exposeStealthUnits )
 //-------------------------------------------------------------------------------------------------
 /** Kill all contained objects in the contained list */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::killAllContained present-unmatched
 void OpenContain::killAllContained( void )
 {
 	ContainedItemsList::iterator it = m_containList.begin();
@@ -468,6 +478,7 @@ void OpenContain::killAllContained( void )
 //--------------------------------------------------------------------------------------------------------
 /** Force all contained objects in the contained list to exit, and kick them in the pants on the way out*/
 //--------------------------------------------------------------------------------------------------------
+// ?OpenContain::harmAndForceExitAllContained present-unmatched
 void OpenContain::harmAndForceExitAllContained( DamageInfo *info )
 {
 	ContainedItemsList::iterator it = m_containList.begin();
@@ -499,6 +510,7 @@ void OpenContain::harmAndForceExitAllContained( DamageInfo *info )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::doLoadSound present-unmatched
 void OpenContain::doLoadSound()
 {
 	//
@@ -523,6 +535,7 @@ void OpenContain::doLoadSound()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::doUnloadSound present-unmatched
 void OpenContain::doUnloadSound()
 {
 	//
@@ -547,6 +560,7 @@ void OpenContain::doUnloadSound()
 //-------------------------------------------------------------------------------------------------
 /** Iterate the contained list and call the callback on each of the objects */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::iterateContained present-unmatched
 void OpenContain::iterateContained( ContainIterateFunc func, void *userData, Bool reverse )
 {
 	if (reverse)
@@ -587,6 +601,7 @@ void OpenContain::iterateContained( ContainIterateFunc func, void *userData, Boo
 
 //-------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::getClosestRider present-unmatched
 Object* OpenContain::getClosestRider( const Coord3D *pos )
 {
 	Object *closest = NULL;
@@ -631,6 +646,7 @@ struct DropData
 /** Remove an object from the containment of this module given the item
 	* to remove and trigger the proper callback events */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::removeFromContainViaIterator present-unmatched
 void OpenContain::removeFromContainViaIterator( ContainedItemsList::iterator it, Bool exposeStealthUnits )
 {
 
@@ -689,6 +705,7 @@ void OpenContain::removeFromContainViaIterator( ContainedItemsList::iterator it,
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::scatterToNearbyPosition present-unmatched
 void OpenContain::scatterToNearbyPosition(Object* rider)
 {
 	Object *theContainer = getObject();
@@ -740,6 +757,7 @@ void OpenContain::scatterToNearbyPosition(Object* rider)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onContaining present-unmatched
 void OpenContain::onContaining( Object *rider, Bool wasSelected )
 {
 	// Play audio
@@ -752,6 +770,7 @@ void OpenContain::onContaining( Object *rider, Bool wasSelected )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onRemoving present-unmatched
 void OpenContain::onRemoving( Object *rider) 
 {
 	// Play audio
@@ -768,6 +787,7 @@ void OpenContain::onRemoving( Object *rider)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::getContainedItemsMass present-unmatched
 Real OpenContain::getContainedItemsMass() const
 {
 	/// @todo srj -- may want to cache this information.
@@ -783,6 +803,7 @@ Real OpenContain::getContainedItemsMass() const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onCollide present-unmatched
 void OpenContain::onCollide( Object *other, const Coord3D *loc, const Coord3D *normal )
 {
 	// colliding with nothing? we don't care.
@@ -844,6 +865,7 @@ void OpenContain::onCollide( Object *other, const Coord3D *loc, const Coord3D *n
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onDelete present-unmatched
 void OpenContain::onDelete( void )	///< Last possible moment cleanup
 {
 	// This uses my literal list, and not the gettor, because we don't want to get redirected some place fancy.
@@ -858,6 +880,7 @@ void OpenContain::onDelete( void )	///< Last possible moment cleanup
 //-------------------------------------------------------------------------------------------------
 /** The die callback. */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onDie present-unmatched
 void OpenContain::onDie( const DamageInfo * damageInfo )
 {
 	if (!getOpenContainModuleData()->m_dieMuxData.isDieApplicable(getObject(), damageInfo))
@@ -881,6 +904,7 @@ void OpenContain::onDie( const DamageInfo * damageInfo )
 // ------------------------------------------------------------------------------------------------
 /** Check to see if we are a valid container for 'obj' */
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::isValidContainerFor present-unmatched
 Bool OpenContain::isValidContainerFor(const Object* obj, Bool checkCapacity) const
 {
 	const Object *us = getObject();
@@ -940,6 +964,7 @@ Bool OpenContain::isValidContainerFor(const Object* obj, Bool checkCapacity) con
 
 	Exit and Evacuate can fail, removeAllContain and removeFromContain cannot.
 */
+// ?OpenContain::exitObjectViaDoor present-unmatched
 void OpenContain::exitObjectViaDoor( Object *exitObj, ExitDoorType exitDoor )
 {
 	DEBUG_ASSERTCRASH(exitDoor == DOOR_1, ("multiple exit doors not supported here"));
@@ -1061,6 +1086,7 @@ void OpenContain::exitObjectViaDoor( Object *exitObj, ExitDoorType exitDoor )
 	The main difference between this and exitObjectViaDoor is that this exit doesn't change the current
 	ai state, so the guard state doesn't get blown away. jba.
 */
+// ?OpenContain::exitObjectInAHurry present-unmatched
 void OpenContain::exitObjectInAHurry( Object *exitObj )
 {
 	removeFromContain( exitObj );
@@ -1152,6 +1178,7 @@ void OpenContain::exitObjectInAHurry( Object *exitObj )
 
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::isPassengerAllowedToFire present-unmatched
 Bool OpenContain::isPassengerAllowedToFire( ObjectID id ) const
 {
 //	const OpenContainModuleData *modData = getOpenContainModuleData();
@@ -1173,6 +1200,7 @@ Bool OpenContain::isPassengerAllowedToFire( ObjectID id ) const
 	* to a new damage state, we will want to redeploy all our occupants to be at new fire
 	* points that are reflected in the new artwork */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::monitorConditionChanges present-unmatched
 void OpenContain::monitorConditionChanges( void )
 {
 	Drawable *draw = getObject()->getDrawable();
@@ -1199,6 +1227,7 @@ void OpenContain::monitorConditionChanges( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::redeployOccupants present-unmatched
 void OpenContain::redeployOccupants( void )
 {
 
@@ -1228,6 +1257,7 @@ void OpenContain::redeployOccupants( void )
 //-------------------------------------------------------------------------------------------------
 /** Place the object at the 3D position of the next fire point to use */
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::putObjAtNextFirePoint present-unmatched
 void OpenContain::putObjAtNextFirePoint( Object *obj )
 {
 
@@ -1308,6 +1338,7 @@ void OpenContain::putObjAtNextFirePoint( Object *obj )
 	when something is in the enter state, and wants=WANTS_NOTHING when the unit has
 	either entered, or given up...
 */
+// ?OpenContain::onObjectWantsToEnterOrExit present-unmatched
 void OpenContain::onObjectWantsToEnterOrExit(Object* obj, ObjectEnterExitType wants)
 {
 	if (obj == NULL)
@@ -1327,6 +1358,7 @@ void OpenContain::onObjectWantsToEnterOrExit(Object* obj, ObjectEnterExitType wa
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::pruneDeadWanters present-unmatched
 void OpenContain::pruneDeadWanters()
 {
 	for (ObjectEnterExitMap::iterator it = m_objectEnterExitInfo.begin(); it != m_objectEnterExitInfo.end(); /*++it*/)
@@ -1347,6 +1379,7 @@ void OpenContain::pruneDeadWanters()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::markAllPassengersDetected present-unmatched
 void OpenContain::markAllPassengersDetected( )
 {
 	for( ContainedItemsList::iterator it = m_containList.begin(); it != m_containList.end(); )
@@ -1371,6 +1404,7 @@ void OpenContain::markAllPassengersDetected( )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::onSelling present-unmatched
 void OpenContain::onSelling()
 {
 	// An OpenContain tells everyone to leave.
@@ -1378,6 +1412,7 @@ void OpenContain::onSelling()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::orderAllPassengersToExit present-unmatched
 void OpenContain::orderAllPassengersToExit( CommandSourceType commandSource, Bool instantly )
 {
 	for( ContainedItemsList::const_iterator it = getContainedItemsList()->begin(); it != getContainedItemsList()->end(); )
@@ -1406,6 +1441,7 @@ void OpenContain::orderAllPassengersToExit( CommandSourceType commandSource, Boo
 
  
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::orderAllPassengersToIdle present-unmatched
 void OpenContain::orderAllPassengersToIdle( CommandSourceType commandSource )
 {
 	for( ContainedItemsList::const_iterator it = getContainedItemsList()->begin(); it != getContainedItemsList()->end(); )
@@ -1421,6 +1457,7 @@ void OpenContain::orderAllPassengersToIdle( CommandSourceType commandSource )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::orderAllPassengersToHackInternet present-unmatched
 void OpenContain::orderAllPassengersToHackInternet( CommandSourceType commandSource )
 {
 	for( ContainedItemsList::const_iterator it = getContainedItemsList()->begin(); it != getContainedItemsList()->end(); )
@@ -1442,6 +1479,7 @@ void OpenContain::orderAllPassengersToHackInternet( CommandSourceType commandSou
 
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::processDamageToContained present-unmatched
 void OpenContain::processDamageToContained(Real percentDamage)
 {
 	const OpenContainModuleData *data = getOpenContainModuleData();
@@ -1478,12 +1516,14 @@ void OpenContain::processDamageToContained(Real percentDamage)
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::isWeaponBonusPassedToPassengers present-unmatched
 Bool OpenContain::isWeaponBonusPassedToPassengers() const
 {
 	return getOpenContainModuleData()->m_weaponBonusPassedToPassengers;
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::getWeaponBonusPassedToPassengers present-unmatched
 WeaponBonusConditionFlags OpenContain::getWeaponBonusPassedToPassengers() const
 {
 	// Our entire weapon bonus flag set is passed on.  Maybe that could be limited in the future.
@@ -1491,18 +1531,21 @@ WeaponBonusConditionFlags OpenContain::getWeaponBonusPassedToPassengers() const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::getDamagePercentageToUnits present-unmatched
 Real OpenContain::getDamagePercentageToUnits( void ) 
 { 
 	return getOpenContainModuleData()->m_damagePercentageToUnits; 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::isEnclosingContainerFor present-unmatched
 Bool OpenContain::isEnclosingContainerFor( const Object * ) const
 {
 	return TRUE; 
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::hasObjectsWantingToEnterOrExit present-unmatched
 Bool OpenContain::hasObjectsWantingToEnterOrExit() const
 {
 	return !m_objectEnterExitInfo.empty();
@@ -1510,6 +1553,7 @@ Bool OpenContain::hasObjectsWantingToEnterOrExit() const
 
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::setRallyPoint present-unmatched
 void OpenContain::setRallyPoint( const Coord3D *pos )
 {
 	m_rallyPoint = *pos;
@@ -1517,6 +1561,7 @@ void OpenContain::setRallyPoint( const Coord3D *pos )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::getRallyPoint present-unmatched
 const Coord3D *OpenContain::getRallyPoint( void ) const
 {
 	if (m_rallyPointExists)
@@ -1526,6 +1571,7 @@ const Coord3D *OpenContain::getRallyPoint( void ) const
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::getNaturalRallyPoint present-unmatched
 Bool OpenContain::getNaturalRallyPoint( Coord3D& rallyPoint, Bool offset )  const
 {
 	Int numberExits = getOpenContainModuleData()->m_numberOfExitPaths;
@@ -1564,6 +1610,7 @@ void testForAttackingProc( Object *obj, void *userData )
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?OpenContain::isAnyRiderAttacking present-unmatched
 Bool OpenContain::isAnyRiderAttacking( void ) const
 {
   Bool wellIsHe = FALSE;
@@ -1586,6 +1633,7 @@ Bool OpenContain::isAnyRiderAttacking( void ) const
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::crc present-unmatched
 void OpenContain::crc( Xfer *xfer )
 {
 
@@ -1599,6 +1647,7 @@ void OpenContain::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::xfer present-unmatched
 void OpenContain::xfer( Xfer *xfer )
 {
 
@@ -1774,6 +1823,7 @@ void OpenContain::xfer( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?OpenContain::loadPostProcess present-unmatched
 void OpenContain::loadPostProcess( void )
 {
 	Object *us = getObject();
