@@ -3049,3 +3049,6 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva00340FCD@Rva00340FCD@@QAEMXZ	0x00340FCD	110	partial	push order plus loop branches test-jle-jmp vs test-jg t=20 model=muse-04 score=0.95 stash=reverse/attempts/0x00340fcd.cpp
 ?rva00550B4C@Rva00550B4C@@QAEXXZ	0x00550B4C	55	blocked	delete gives push1 no separate delete vs retail push0 plus vtable plus delete t=15 model=muse-04
 ??0Rva005E4AE2@@QAE@PAXPAU_Rva005E4AE2In@@H@Z	0x005E4AE2	141	partial	137of141B 0 reg diffs 7 mem diffs ordering plus missing EH state 1 before map needs Root unwind entry volatile base plus forceinline inlined t=25 model=muse-04 score=0.91 stash=reverse/attempts/0x005e4ae2.cpp
+?rva005FD978@Rva005FD788@@QAEXHABVUnicodeString@@@Z	0x005FD978	67	blocked	chain caller of 0x005FD788 needs ebp frame and esi-this edi-stored imul-0x18; probe kept index in esi and used lea-strength-reduction t=12 model=muse-spark
+?rva005FD9BB@Rva005FD9BB@@QAEXHABVUnicodeString@@@Z	0x005FD9BB	68	blocked	same wall as 0x005FD978 ebp-frame imul-0x18 esi-edi allocation t=3 model=muse-spark
+??1Rva0040AFF3@@QAE@XZ	0x0040AFF3	117	partial	EH states off by one 3-vs-4 missing mov-0 t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x0040aff3.cpp

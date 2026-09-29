@@ -14,6 +14,8 @@ template <typename T>
 class StringBase
 {
 	friend class UnicodeString;
+public:
+	void set(const StringBase<T> &src);
 private:
 	StringBase() : m_data(0) {}
 	StringBase(const StringBase<T> &that);
@@ -31,9 +33,11 @@ private:
 class UnicodeString
 {
 public:
+	static const UnicodeString TheEmptyString;
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() { m_data.releaseBuffer(); }
+	UnicodeString &operator=(const UnicodeString &that) { m_data.set(that.m_data); return *this; }
 private:
 	StringBase<wchar_t> m_data;
 };
@@ -41,6 +45,7 @@ private:
 class GameWindow;
 
 void GadgetComboBoxSetText(GameWindow *comboBox, UnicodeString text);
+UnicodeString GadgetComboBoxGetText(GameWindow *comboBox);
 
 class Rva0056EBA1
 {
@@ -60,4 +65,24 @@ bool Rva0056EBA1::rva0056EBA1(const UnicodeString &text)
 		ok = true;
 	}
 	return ok;
+}
+
+// ?rva0056EA91@Rva0056EA91@@QAE?AVUnicodeString@@XZ retail 0x0056EA91 132B
+// Evidence: empty 0x00A0C898 via StringBase copy 0x00037050; GadgetComboBoxGetText 0x00322D21 then set 0x00037150 and release 0x00036E70; combo at +0xA8; callers 0x0056F4AB 0x00570250; sibling GadgetComboBoxRva0056EBA1
+class Rva0056EA91
+{
+public:
+	UnicodeString rva0056EA91();
+private:
+	unsigned char m_pad[0xA8];
+	GameWindow *m_combo;
+};
+
+UnicodeString Rva0056EA91::rva0056EA91()
+{
+	UnicodeString tmp = UnicodeString::TheEmptyString;
+	if (m_combo != NULL) {
+		tmp = GadgetComboBoxGetText(m_combo);
+	}
+	return tmp;
 }

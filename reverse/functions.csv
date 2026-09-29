@@ -41786,3 +41786,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0054D6C8@Rva0054D974@@QAEPAVRva0054D8D8@@H@Z,,0x0054D6C8,83,Code/GameEngine/Source/Common/Rva0054D974Dtor.cpp,matched,finder in 3 lists by m38 null id returns null
 ??0Rva005D5802@@QAE@XZ,,0x005D5802,20,Code/GameEngine/Source/Common/Rva005D583CCtor.cpp,matched,chain ctor passes 1 to base 0x005D57D3 then vtable
 ??0Rva005D5828@@QAE@XZ,,0x005D5828,20,Code/GameEngine/Source/Common/Rva005D583CCtor.cpp,matched,chain ctor passes 0 to base 0x005D57D3 then vtable
+?rva0056EA91@Rva0056EA91@@QAE?AVUnicodeString@@XZ,,0x0056EA91,132,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetComboBoxRva0056EBA1.cpp,matched,ComboBox GetText wrapper via empty set return sibling EBA1
