@@ -318,7 +318,6 @@ IndexBufferClass::WriteLockClass::~WriteLockClass()
 
 // ----------------------------------------------------------------------------
 
-// ??0AppendLockClass@@ present-unmatched
 IndexBufferClass::AppendLockClass::AppendLockClass(IndexBufferClass* index_buffer_,unsigned start_index, unsigned index_range, int flags)
 	:
 	index_buffer(index_buffer_),
