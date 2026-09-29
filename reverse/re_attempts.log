@@ -2725,3 +2725,5 @@ FUN_0044123b	0x0004123B	83	blocked	two-buffer small plus heap via setter same fa
 ?rva005E755E@Rva005E755E@@QAEHH@Z	0x005E755E	36	blocked	frame plus dead local and kept under Oy- only with volatile extra reads t=18 model=muse-02
 ?rva00108AD8@Rva00108AD8@@QAEXXZ	0x00108AD8	95	partial	same size 95B same insns 28 only vptr-Table store order swapped Table-first vs vptr-first tried O1 Os G7 archSSE EHsc MI static-cast plus float-ptr t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x00108ad8.cpp
 ?Rva004F6C64Push@@YAXPAURva004F64FC@@HHU1@@Z	0x004F6C64	121	partial	imul 0xC vs lea lea strength reduction only t=22 model=muse-02 score=0.95 stash=reverse/attempts/0x004f6c64.cpp
+??0Made002CCC90@@QAE@XZ	0x0050BD45	55	partial	vtable store late after members vs retail early before members t=25 model=muse-spark score=0.91 stash=reverse/attempts/0x0050bd45.cpp
+??0TRoadSegInfo@@QAE@XZ	0x000D4ED0	95	blocked	donor POD has no ctor but retail calls vector-ctor for 8x4B at 0x18 plus loop zeroes same 0x18-0x38 range double-init contradiction plus unfamiliar W3D shims t=15 model=muse-spark
