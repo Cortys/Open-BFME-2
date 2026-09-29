@@ -41238,3 +41238,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004EE016@Rva004EE037@@QAEHXZ,,0x004EE016,33,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling time plus m6C minus m70 callers 0x005BE3FF 0x005BFDED
 ?Rva002E214ESort@@YAXPAPAX0PAX@Z,,0x002E214E,45,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,insertion sort via guarded insert callers 0x002E2307 0x002E2325
 ?Rva002E22EBSort@@YAXPAPAX0PAX@Z,,0x002E22EB,68,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,hybrid sort small direct else split 16 caller 0x002E2D82
+?rva003081FB@Rva003081FB@@QAEEXZ,,0x003081FB,24,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,same recipe ptr plus8c uchar caller 0x6B692

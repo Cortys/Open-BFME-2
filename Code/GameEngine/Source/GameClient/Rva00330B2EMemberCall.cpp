@@ -70,7 +70,7 @@ void Rva0030817A::rva0030817A(int v)
 }
 
 //
-// ?rva003081C7@Rva003081C7@@QAE_NXZ retail 0x003081C7 24 bytes.
+// ?rva003081C7@Rva003081C7@@QAEEXZ retail 0x003081C7 24 bytes.
 struct Rva003081C7Aux
 {
 	char m_pad00[4];
@@ -89,5 +89,23 @@ private:
 unsigned char Rva003081C7::rva003081C7()
 {
 	int v = m_ptr80 ? m_ptr80->m_word04 : 0;
+	return (unsigned char)(v > 0);
+}
+
+//
+// ?rva003081FB@Rva003081FB@@QAEEXZ retail 0x003081FB 24 bytes.
+// Same recipe as 0x81C7 with pointer at +0x8c. Caller 0x6B692.
+class Rva003081FB
+{
+public:
+	unsigned char rva003081FB();
+private:
+	char m_pad00[0x8c];
+	Rva003081C7Aux *m_ptr8C;
+};
+
+unsigned char Rva003081FB::rva003081FB()
+{
+	int v = m_ptr8C ? m_ptr8C->m_word04 : 0;
 	return (unsigned char)(v > 0);
 }
