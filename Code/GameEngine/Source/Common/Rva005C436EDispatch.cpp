@@ -58,6 +58,7 @@ class Rva005C436E : public Snapshot
 public:
 	virtual ~Rva005C436E();
 	void rva005C436E(int v);
+	void rva005C43AF();
 private:
 	Inner24 *m_04;
 	Outer08 *m_08;
@@ -85,5 +86,13 @@ Rva005C436E::~Rva005C436E()
 	if (m_0C) {
 		rva005C436E(-m_08->m_0C);
 		m_0C = 0;
+	}
+}
+
+void Rva005C436E::rva005C43AF()
+{
+	if (!m_0C) {
+		rva005C436E(m_08->m_0C);
+		m_0C = 1;
 	}
 }
