@@ -41189,3 +41189,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0029B4F9Init@@YAXXZ,,0x0029B4F9,67,Code/GameEngine/Source/GameClient/Rva0029B4F9Init.cpp,matched,chain from 0x0029B2E7 via global 0xDFEA3C slots
 ??0Rva005CDB8F@@QAE@PBUPayload@0@@Z,,0x005CDB8F,31,Code/GameEngine/Source/Common/Rva005CDB8FCtor.cpp,matched,vtable 0x0087507C refcount 0 rep movsd 5 dwords caller 0x005CDC18
 ?rva005CABF9@GameSpyLoginPreferences@@QAEXVAsciiString@@@Z,,0x005CABF9,80,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,Erase email from nick pass date maps via rowed erases
+?rva0029B63A@Rva0029B63A@@QAEXPAURva0029B63ANode@@@Z,,0x0029B63A,45,Code/GameEngine/Source/GameClient/Rva0029B63AFree.cpp,matched,unlocks 0x0029E015 recursive child plus free via 0x30830
