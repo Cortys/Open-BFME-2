@@ -42049,3 +42049,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00536E14@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536E14,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesWonAutoResolve setter slot2C same TU
 ?rva00536E5B@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536E5B,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,BattlesWonAutoResolve getter slot18 same TU
 ?rva00536EA5@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536EA5,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,RegionsConquered setter slot2C same TU
+?rva00536EEC@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536EEC,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,RegionsConquered getter slot18 same TU
