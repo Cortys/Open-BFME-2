@@ -24,3 +24,17 @@ void __cdecl Rva002198ECAdjustHeap(void **first, int holeIndex, int len, void *v
 	}
 	Rva0021956EPushHeap(first, holeIndex, topIndex, value, comp);
 }
+// ?Rva0021AD03MakeHeap@@YAXPAPAX0P6A_NPAX1@Z@Z @0x0021AD03 60B
+// make_heap over 4-byte entries via rowed __adjust_heap 0x002198EC; caller
+// 0x002C532B; same HeapLess comp.
+void __cdecl Rva0021AD03MakeHeap(void **first, void **last, HeapLess comp)
+{
+	int len = last - first;
+	if (len < 2)
+		return;
+	for (int i = (len - 2) / 2; ; --i) {
+		Rva002198ECAdjustHeap(first, i, len, first[i], comp);
+		if (i == 0)
+			break;
+	}
+}

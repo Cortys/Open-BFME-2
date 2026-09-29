@@ -3242,3 +3242,4 @@ FUN_00a028a0	0x006028A0	198	blocked	STLport strstreambuf narrow_stringbuf ctor w
 FUN_008ed3d1	0x004ED3D1	160	blocked	HLod vector-base plus StringBase plus SSE float-zero ctor needs full layout plus global 0xA044AC counter; 160B EH with /arch:SSE long-cl TU; defer for trivial batch t=8 model=muse-01
 ?rva0035B1E9@Rva0035B1E9@@QAEPAXXZ	0x0035B1E9	73	blocked	O1 int-char-unsigned variants give 65-67B vs 73B missing reloads plus esi-clobber t=20 model=muse-spark
 ?rva001DCF82@Rva001DCF82@@QAEXXZ	0x001DCF82	71	partial	O1 G7 archSSE float-literal shape matches 15of16 insns; missing mov eax ecx this-in-eax vs this-in-ecx register swap plus float literals at BBE358 BDC380 guessed as 1.0f 2.0f unproven; t9 probe 66B vs 71B t=20 model=muse-05 score=0.91 stash=reverse/attempts/0x001dcf82.cpp
+FUN_006195e6	0x002195E6	175	blocked	float-init ctor needs 7 literal values at data VAs not in packet; gaps at 0x14/0x2c/0x44/0x5c; t=5 model=muse-spark
