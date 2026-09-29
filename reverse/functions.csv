@@ -41465,3 +41465,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0056F3B1@Rva0056F3B1@@QAEPAU1@PAX0@Z,,0x0056F3B1,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056EDE8 sibling of 0x0056F192
 ?rva0041950A@Rva004194D6@@QAE_NXZ,,0x0041950A,19,Code/GameEngine/Source/Common/Rva004194D6.cpp,matched,Chain wrapper via state gate 0x004194D6
 ??0Rva0014F40C@@QAE@XZ,,0x0014F40C,44,Code/GameEngine/Source/Common/Rva0014F40CCtor.cpp,matched,default ctor vtable 0x007D38A0 plus 3 member vtables Sas member
+?Rva001DD8C9Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x001DD8C9,37,Code/GameEngine/Source/Common/Rva001DD8C9Alloc.cpp,matched,unlock hash node alloc via rowed allocate plus Construct same 37B shape
