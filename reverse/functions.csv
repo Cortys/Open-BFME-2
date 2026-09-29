@@ -41839,3 +41839,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?q4Notify002CC8A4@@YAXPAXPAVMade002CC8A4@@HH@Z,,0x00509DAB,77,Code/GameEngine/Source/GameLogic/Object/Made002CC8A4Parse.cpp,matched,field parser two tables
 ?rva00531512@Rva005312BE@@QAEEHH@Z,,0x00531512,76,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,same class bounded getter callers at 0x002F5A88 plus 6
 ?Rva002B367CLess@@YG_NPAPAVRva0037DCA5@@0@Z,,0x002B367C,66,Code/GameEngine/Source/Common/Rva002B367CLess.cpp,matched,stdcall comparator float then Get
+?rva006E3640@AptAnimationPoolData@@QAEXPAVAptCIH@@@Z,,0x006E3640,180,Code/Libraries/Source/Apt/AptAnimationPoolDataBIL.cpp,matched,unlock lane Apt BIL button remover
