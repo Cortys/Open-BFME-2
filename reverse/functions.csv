@@ -41917,3 +41917,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0058D4BA@NetPacket@@IAE_NPAVNetCommandRef@@@Z,,0x0058D4BA,89,Code/GameEngine/Source/GameNetwork/NetPacket_rva0058D4BA.cpp,matched,NetPacket capacity check charges 2 1+1 5 1+1 plus 2 unblocks 0058F7D8
 ?rva005358C3@UserPreferences@@QAEHVAsciiString@@@Z,,0x005358C3,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Points getter via slot18 same TU
 ?rva00535BF6@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535BF6,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences Wins getter via slot18 same TU
+?rva002897A8@Rva0028951F@@QAEPBVOverridable@@PAXH@Z,,0x002897A8,106,Code/Libraries/Source/WWVegas/WWLib/Rva002897A8Find.cpp,matched,chain threshold best scan via ESI Check copy
