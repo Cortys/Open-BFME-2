@@ -2744,3 +2744,4 @@ FUN_004C781E	0x000C781E	183	blocked	vector _M_insert_overflow over BfmeVectorRec
 FUN_005DDBC6	0x001DDBC6	25	blocked	0-arg ctor passing ebp-1 stack addrs as ints to HH ctor init-list temporaries unclear placement-new gives EH t=15 model=muse-10
 FUN_009538CE	0x005538CE	136	blocked	5-arg tree insert with custom 20B node byte-word value calls Rva382BA1Alloc plus Rebalance needs full arg mapping t=10 model=muse-10
 FUN_00953E47	0x00553E47	232	blocked	340B reset with 26 12B members plus ebp-counter loop member size 8 vs 12 needs padding t=8 model=muse-10
+FUN_00784A00	0x00384A00	98	blocked	same global 0xA02320 plus vtable slots 0x178 0x17c needs large donor interface t=5 model=muse-10
