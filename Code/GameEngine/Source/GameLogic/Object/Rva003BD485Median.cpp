@@ -100,3 +100,14 @@ void Rva003C3AF0MakeHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int 
 		--hole;
 	}
 }
+
+// ?Rva003C3AC7PopHeap@@YAXPAPAURva003BD485Keyed@@00PAU1@H@Z @0x003C3AC7 41B.
+// Heap pop over the same keyed array: moves the top slot to the result, then
+// adjusts from hole 0 over last - first with the given value. Chain lane on
+// 0x003BE553; callers 0x003C3B41/0x003C69EC; cdecl with caller cleanup.
+
+void Rva003C3AC7PopHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, Rva003BD485Keyed **result, Rva003BD485Keyed *value, int extra)
+{
+	*result = *first;
+	Rva003BE553AdjustHeap(first, 0, last - first, value, extra);
+}
