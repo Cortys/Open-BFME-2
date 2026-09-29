@@ -42653,3 +42653,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00254D38@Rva00254D38@@QAEXPAURva00254D38Node@@@Z,,0x00254D38,45,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva00254D38Free.cpp,matched,twin of 0x00254D0B child plus8 next plusC via caller 0x00255CB6
 ?rva004C0E8B@Rva004C0E8B@@QAEPAXPAX@Z,,0x004C0E8B,67,Code/GameEngine/Source/Common/Rva004C0E8B.cpp,matched,chain from 0x004C0D4F row; BfmeThing Go family; memcpy thunk
 ??0Rva005348AD@@QAE@XZ,,0x005348AD,58,Code/GameEngine/Source/Common/Rva005348ADCtor.cpp,matched,honest ctor list plus map plus bool via rowed callees
+??1Rva00131BE5@@UAE@XZ,,0x00131BE5,91,Code/Libraries/Source/WWVegas/WW3D2/Rva00131BE5Dtor.cpp,matched,dtor vtable 0x7D25D8 m14 virtual delete String base reset callers 0x131D42 0x1320B7
