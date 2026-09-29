@@ -45,12 +45,27 @@ struct Rva00439325Node : public _STL::_Rb_tree_node_base
 	Rva0023D377 m10;
 };
 
+struct Rva0023FBDBNode
+{
+	char m_pad00[8];
+	Rva0023FBDBNode *m_next08;
+	Rva0023FBDBNode *m_child0C;
+	Rva0023D377 m_value10;
+};
+
+class Rva0023FBDB
+{
+public:
+	void rva0023FBDB(Rva0023FBDBNode *pos);
+};
+
 class Rva00439325
 {
 	_STL::_Rb_tree_node_base *m_header;
 	int m_count;
 public:
 	void rva00439325(Rva00439325Node *pos);
+	void rva00240C60();
 };
 
 void Rva00439325::rva00439325(Rva00439325Node *pos)
@@ -61,4 +76,15 @@ void Rva00439325::rva00439325(Rva00439325Node *pos)
 	if (toDelete)
 		free(toDelete);
 	--m_count;
+}
+
+void Rva00439325::rva00240C60()
+{
+	if (m_count == 0)
+		return;
+	((Rva0023FBDB *)this)->rva0023FBDB((Rva0023FBDBNode *)m_header->_M_parent);
+	m_header->_M_left = m_header;
+	m_header->_M_parent = 0;
+	m_header->_M_right = m_header;
+	m_count = 0;
 }
