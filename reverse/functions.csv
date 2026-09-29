@@ -41876,3 +41876,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1RenderObjectDrawModuleInfo@FXParticleSystem@@UAE@XZ,0x003A9A8B,0x003A9A8B,75,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectDrawModuleInfoDtor.cpp,matched,RenderObjectDrawModuleInfo dtor via copyctor layout and BBB554 base
 ?rva002EB416@Rva002EB416@@QAEXPAU_Rva002EB416Node@@@Z,,0x002EB416,50,Code/Libraries/Source/WWVegas/WWLib/Rva002EB416Release.cpp,matched,recursive free-list release via child and next to pool head
 ?rva002EB46E@Rva002EB46E@@QAEXPAU_Rva002EB46ENode@@@Z,,0x002EB46E,50,Code/Libraries/Source/WWVegas/WWLib/Rva002EB46ERelease.cpp,matched,recursive free-list release via child and next to pool head
+?rva006E3740@Rva006E3230@@QAEXPAVAptValue@@00HH@Z,,0x006E3740,195,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,unlock lane AptAnimationPoolData type2 enqueue stride24 via shared queue

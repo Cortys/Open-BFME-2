@@ -16,6 +16,7 @@ void __debugbreak();
 #pragma intrinsic(__debugbreak)
 struct Rva006E3230Action { char data[24]; };
 class AptValue {
+public:
     virtual void unused0(); virtual void unused1(); virtual void unused2();
     virtual void unused3(); virtual void unused4(); virtual void unused5();
     virtual void unused6(); virtual void unused7(); virtual void unused8();
@@ -33,10 +34,24 @@ public:
     // the true donor return type is bool (cf isUndefined). Twin pin below.
     bool get() const;
 };
+class Rva006DBB60ShrNAndField
+{
+public:
+    bool get() const;
+};
+void __cdecl Rva006CC110Log(int level, const char *fmt, ...);
 struct Rva006E3230ActionFull {
     int eActionType;
     char _pad4[8];
     AptValue *m_pValues[3];
+};
+struct Rva006E3740Slot {
+    int eActionType;
+    int field4;
+    int field8;
+    AptValue *pValue0;
+    AptValue *pValue1;
+    AptValue *pValue2;
 };
 class Rva006E3230 {
     Rva006E3230Action *m_aActionPool;
@@ -49,6 +64,7 @@ public:
     Rva006E3230Action *rva006E3DB0();
     Rva006E3230Action *rva006E3920(int arg);
     void rva006E39A0();
+    void rva006E3740(AptValue *pContext, AptValue *pA, AptValue *pB, int iD, int iE);
 };
 void Rva006E3230::rva006E3230(Rva006E3230Action *pCur)
 {
@@ -133,4 +149,37 @@ void Rva006E3230::rva006E39A0()
             }
         } while (++k < iDelta);
     }
+}
+
+// ?rva006E3740@Rva006E3230@@QAEXPAVAptValue@@00HH@Z @0x006E3740 195B.
+// Enqueues a type-2 action: asserts pContext->getIsDefined() at
+// AptAnimation.cpp:1718 via the shared Apt assert triple, wraps m_pEnd+1 by
+// size back to base, validates it, logs and returns when it meets m_pCurrent
+// (Dequeue full), else fills type 2 plus the five args and advances m_pEnd.
+// Evidence: unlock lane packet; same queue object as rva006E3230/rva006E3920;
+// stride 24 and assert/log immediates read from retail.
+void Rva006E3230::rva006E3740(AptValue *pContext, AptValue *pA, AptValue *pB, int iD, int iE)
+{
+    if (!((const Rva006DBB60ShrNAndField *)pContext)->get()) {
+        g_bfmeAptAssertAtE17734("pContext->getIsDefined()", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptAnimation.cpp", 0x6b6);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    Rva006E3230Action *pNext = m_pEnd + 1;
+    if (pNext == &m_aActionPool[m_iActionPoolSize])
+        pNext = m_aActionPool;
+    rva006E3230(pNext);
+    if (pNext != m_pCurrent) {
+        ((Rva006E3740Slot *)m_pEnd)->eActionType = 2;
+        ((Rva006E3740Slot *)m_pEnd)->field8 = iE;
+        ((Rva006E3740Slot *)m_pEnd)->pValue0 = pContext;
+        ((Rva006E3740Slot *)m_pEnd)->pValue0->unused0();
+        ((Rva006E3740Slot *)m_pEnd)->pValue1 = pA;
+        ((Rva006E3740Slot *)m_pEnd)->pValue1->unused0();
+        ((Rva006E3740Slot *)m_pEnd)->pValue2 = pB;
+        ((Rva006E3740Slot *)m_pEnd)->field4 = iD;
+        m_pEnd = pNext;
+        return;
+    }
+    Rva006CC110Log(4, "!!!!!!!!!!!!! AptAnimationPoolData:  Dequeue is full !!!!!!!!");
 }
