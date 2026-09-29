@@ -41353,3 +41353,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00441E2BPop@@YAXPAPAX00VRva0043FE9A@@@Z,,0x00441E2B,34,Code/GameEngine/Source/GameClient/GUI/Rva00441E2BPop.cpp,matched,mirrors Rva005B6521Pop via rowed Pop and caller 0x004428A4
 ?rva002CF7DE@Rva002CF7DE@@QAEXXZ,,0x002CF7DE,41,Code/Libraries/Source/WWVegas/WWLib/Rva002CF7DEClear.cpp,matched,tree clear via 0x002CF302; 41B exact; callers 0x002D01B5 0x0033BD9D
 ?rva002CF32F@Rva002CF32F@@QAEXPAURva002CF32FNode@@@Z,,0x002CF32F,45,Code/Libraries/Source/WWVegas/WWLib/Rva002CF32FErase.cpp,matched,tree erase via right plusC left plus8 free 0x30830; 45B exact; caller 0x002CF815
+?Rva000E007DEqual@@YGHPBURva000E007DPair@@0@Z,,0x000E007D,32,Code/GameEngine/Source/Common/Rva000E007DEqual.cpp,matched,equality pair ret8 stdcall callers E01DD E02D1

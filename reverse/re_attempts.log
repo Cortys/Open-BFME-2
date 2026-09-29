@@ -2871,3 +2871,6 @@ FUN_005a6b14	0x005A6B14	20	blocked	packet disassembly truncated at cmp eax ebx n
 ??$__unguarded_linear_insert@PAUStringLookUp@@U1@UStringLookUpLess@@@_STL@@YAXPAUStringLookUp@@U1@UStringLookUpLess@@@Z	0x002E5CAD	60	partial	57B vs 60B missing dead lea ecx ebp+0x14 only diff t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x002e5cad.cpp
 ?rva00524F35@Rva00524F35@@QAEXH@Z	0x00524F35	37	partial	missing mov eax ecx this in eax vs ecx t=20 model=muse-05 score=0.95 stash=reverse/attempts/0x00524f35.cpp
 ??0Rva002D2C34@@QAE@XZ	0x002D2C34	106	blocked	EH ctor with 5 OCL plus E16 vectors plus VA store needs member dtors and vptr evidence t=12 model=muse-05
+FUN_007086f5	0x003086F5	112	blocked	EH-protected virtual-dispatch loop over this-plus0 vector via arg vtable plus state save-restore at plusC needs class identity t=10 model=muse-spark
+FUN_0047EDBC	0x0007EDBC	244	blocked	244B WW3D particle-texture render with EH plus pin-only loader and RefCountPtr assign t=5 model=muse-spark
+?rva000B65FD@Rva000B65FD@@QAEHXZ	0x000B65FD	23	partial	round-robin load order wall base-first retail vs handle-first ours t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x000b65fd.cpp
