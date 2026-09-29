@@ -41322,3 +41322,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva004D64F5@@QAE@XZ,,0x004D64F5,25,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,NetCommandMsg family vptr-first And plus type 5 sibling
 ?rva005A6709@Rva005A6709@@QBEHXZ,,0x005A6709,20,Code/GameEngine/Source/Common/Rva005A6709Predicate.cpp,matched,unlock predicate callers 9
 ?Rva00503D4ECubic@@YAMMMMMM@Z,,0x00503D4E,64,Code/GameEngine/Source/Common/Rva00503D26Bezier.cpp,matched,unlock cubic Bezier via 3.0f caller 0x005043EF
+?Rva005F01D6Get@@YAPBVImage@@PAURva005F01D6In@@@Z,,0x005F01D6,53,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,chain lane via AsciiString name at +4 and global 0x00DFF000

@@ -114,3 +114,34 @@ const Image *Rva005F01C7Get(int index)
 {
 	return ((Rva005F0185 *)&Rva00A06858)->rva005F0185(index);
 }
+
+class Rva002D06CA
+{
+public:
+	void *rva002D06CA(const AsciiString *key);
+};
+
+struct Rva005F01D6Payload
+{
+	char m_pad[0x5C4];
+	int m_imageIndex;
+};
+
+struct Rva005F01D6In
+{
+	char m_pad[4];
+	AsciiString m_name;
+};
+
+#define Rva00DFF000 (*(Rva002D06CA **)0x00DFF000)
+
+const Image *Rva005F01D6Get(Rva005F01D6In *in)
+{
+	AsciiString *name = &in->m_name;
+	if (!name->isEmpty()) {
+		void *found = Rva00DFF000->rva002D06CA(name);
+		if (found != 0)
+			return Rva005F01C7Get(((Rva005F01D6Payload *)found)->m_imageIndex);
+	}
+	return 0;
+}
