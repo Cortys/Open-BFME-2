@@ -3,6 +3,22 @@
 For drift rows classed `structural`/`register-swap` the source exists but
 compiles to a different shape. Expect 30-60 minutes per function.
 
+**Check the class before you budget that.** Measured 2026-09-29, the two classes
+in that sentence are not where the bytes are:
+
+| class | rows | what it actually is |
+|---|---|---|
+| `structural` | 3,782 | 99.3% are not function starts; best genuine alignment 35% |
+| `register-swap` | **0** | no rows exist in this class at all |
+| `exact-ambiguous` | 31 | compiles **byte-exactly**, but ties across instantiations at one address |
+
+`exact-ambiguous` is the profitable one and it is not in this doc's title. Its
+rows are usually blocked only on unresolved REL32 callees, which
+`tools/decode_calls.py` decodes straight out of the target bytes — run it, paste
+the pins it prints, re-verify. Worked in one pass: nine candidates, six reached
+exact (766 bytes), three did not. That is a far better rate than the structural
+loop below, so take the folds first.
+
 ## The loop for ONE function
 
 1. `python3 tools/next_work.py --tier structural` draws one candidate from the
