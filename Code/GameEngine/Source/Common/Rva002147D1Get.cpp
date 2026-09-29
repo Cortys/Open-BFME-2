@@ -19,6 +19,7 @@ public:
 	void *rva002147D1(int index, Object *obj);
 	void *rva00214983(int index);
 	int rva00214713(int key);
+	void *rva00214738(int index);
 private:
 	char _pad[0x0C];
 	int m_begin;
@@ -79,4 +80,20 @@ int Rva002147D1::rva00214713(int key)
 			return index;
 	}
 	return -1;
+}
+struct Rva00214738Slot { char _pad[0x18]; void *m_18; };
+// ?rva00214738@Rva002147D1@@QAEPAXH@Z retail 0x00214738 42B guarded fetch of
+// slot +0x18 from same +0x0c array as 0x002147D1. Evidence: same +0x0c +0x10
+// layout with dec/ja bound plus null slot check; callers at 0x0049410F.
+void *Rva002147D1::rva00214738(int index)
+{
+	if (index < 0)
+		return 0;
+	if ((unsigned)index > (unsigned)((m_end - m_begin >> 2) - 1))
+		return 0;
+	_ReadWriteBarrier();
+	Rva00214738Slot *slot = *(Rva00214738Slot **)(m_begin + index * 4);
+	if (slot != 0)
+		return slot->m_18;
+	return 0;
 }
