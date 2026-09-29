@@ -18,6 +18,7 @@ template class _STL::map<int, int, _STL::less<int>, _STL::allocator<_STL::pair<c
 
 typedef _STL::pair<const int, int> IntIntValue;
 typedef _STL::_Rb_tree_node<IntIntValue> IntIntNode;
+typedef _STL::_Rb_tree<int, IntIntValue, _STL::_Select1st<IntIntValue>, _STL::less<int>, _STL::allocator<IntIntValue> > MapIntIntTree;
 
 namespace _STL
 {
@@ -44,9 +45,10 @@ IntIntNode * __stdcall Rva003834CDCreate(const IntIntValue &value)
 	return node;
 }
 
-// ?Rva003834EFClone@@YGPAU?$_Rb_tree_node@U?$pair@$$CBHH@_STL@@@_STL@@PAU12@@Z @ 0x003834EF (30B).
-// Map<int,int> node clone: create from the source value at +0x10, copy the
-// color byte, zero left/right. Caller 0x00383C34 x2.
+// Map<int,int> node clone at 0x003834EF (30B): YG free spelling of the tree
+// _M_clone_node body (thiscall with unused receiver); the address-scoped
+// _M_copy_00383C34 in stlport_map_int_int_copy_os.cpp calls the member form
+// through the symbols.csv pin, which reproduces retail's dead ecx reload.
 IntIntNode * __stdcall Rva003834EFClone(IntIntNode *src)
 {
 	IntIntNode *node = Rva003834CDCreate(src->_M_value_field);
@@ -55,3 +57,6 @@ IntIntNode * __stdcall Rva003834EFClone(IntIntNode *src)
 	node->_M_right = 0;
 	return node;
 }
+
+
+
