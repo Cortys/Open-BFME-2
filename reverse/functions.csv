@@ -42498,3 +42498,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??_GRva003FD789@@UAEPAXI@Z,,0x003FD82D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003FD789.cpp,matched,chain slot0 calls rowed dtor plus delete
 ?Rva003BF7ACDo@@YGXABVAsciiString@@PAVParameter@@@Z,,0x003BF7AC,103,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF7AC.cpp,matched,via team group order precedent Rva003C2A29
 ?Rva003BF71EDo@@YGXABVAsciiString@@0@Z,,0x003BF71E,142,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF71E.cpp,matched,via team guard waypoint precedent guard
+??1Rva003FD4DA@@UAE@XZ,,0x003FD4DA,72,Code/GameEngine/Source/GameLogic/Object/Rva003FD4DADtor.cpp,matched,unlock dtor vtable FE1B0 double release plus0C Snapshot base
