@@ -10,6 +10,12 @@
 // same // cl:; caller 0x00425F77 clears the same tree that the rowed
 // Pod52 _M_create_node 0x00425F92 feeds; same 45B trivial shape as the rowed
 // int-ptr erase 0x004ABAD6.
+//
+// ?clear@?$_Rb_tree@HU?$pair@$$CBHUBfmePod52@@@_STL@@U?$_Select1st@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUBfmePod52@@@_STL@@@2@@_STL@@QAEXXZ
+// retail 0x00425F69, 41 bytes. Tree clear for the same int->BfmePod52 map:
+// erases the rooted subtree through 0x00425EA6, relinks the header to
+// itself and zeroes the node count. Evidence: chain lane (calls 0x00425EA6
+// just landed); unblocks 0x00425FB4.
 #include <map>
 struct BfmePod52 { int a[13]; };
 template class _STL::map<int, BfmePod52, _STL::less<int>, _STL::allocator<_STL::pair<const int, BfmePod52> > >;
