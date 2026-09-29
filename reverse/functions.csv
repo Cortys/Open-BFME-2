@@ -41445,3 +41445,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0056F2A5@Rva0056F2A5@@QAEPAU1@PAX0@Z,,0x0056F2A5,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056EDBA sibling shape of 0x0056EF65
 ?rva0056F21F@Rva0056F21F@@QAEPAU1@PAX0@Z,,0x0056F21F,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056ED8C sibling shape of 0x0056F2A5
 ?rva0056F10C@Rva0056F10C@@QAEPAU1@PAX0@Z,,0x0056F10C,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056ED34 sibling shape of 0x0056F21F
+?rva0056F32B@Rva0056F32B@@QAEPAU1@PAX0@Z,,0x0056F32B,134,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x0056EDBA sibling shape of 0x0056F10C
