@@ -74,3 +74,27 @@ void Rva00565A42::rva00565A42()
 	if (buf != 0)
 		free(buf);
 }
+
+struct Rva0052BF67Elem
+{
+	virtual ~Rva0052BF67Elem();
+};
+
+void Rva0052C3BFDestroyRange(Rva0052BF67Elem *first, Rva0052BF67Elem *last);
+
+class Rva00565A06
+{
+public:
+	void rva00565A06();
+private:
+	Rva0052BF67Elem *m_00;
+	Rva0052BF67Elem *m_04;
+};
+
+void Rva00565A06::rva00565A06()
+{
+	Rva0052C3BFDestroyRange(m_00, m_04);
+	Rva0052BF67Elem *buf = m_00;
+	if (buf != 0)
+		free(buf);
+}
