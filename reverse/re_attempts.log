@@ -3366,3 +3366,4 @@ FUN_007ed4e5	0x003ED4E5	192	blocked	bitgated map-to-string join needs inline Str
 ?rva00524C1B@Rva00524A4C@@QAEXPAUTargetRef00217D4C@@@Z	0x00524C1B	109	blocked	109B ctor needs EH prolog plus vtable reloc plus dual null-check AddRef Release; body without locals emits no EH t=12 model=muse-spark
 ?rva005789F3@Rva005789F3@@QAEXXZ	0x005789F3	109	blocked	109B EH loop with virtual via arg plus counter at plus 0x0C plus restore on unwind needs interface modeling t=8 model=muse-spark
 ??0Rva002105A6@@QAE@H@Z	0x00210973	133	partial	EH and-before-vectors plus state 4 vs 3 t=25 model=muse-10 score=0.93 stash=reverse/attempts/0x00210973.cpp
+FUN_005A19C0	0x005A19C0	399	blocked	399B stdcall bool GameSlot-plus-Unicode with virtuals on 0xA02320 plus STL basic_string plus OwnedRecord492 plus clanID REQ literals t=5 model=muse-spark
