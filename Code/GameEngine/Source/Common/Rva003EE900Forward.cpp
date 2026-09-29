@@ -213,3 +213,29 @@ void Rva003EEA63::rva003EEA63(Int a, Int b)
 	((Rva004E35FF *)&m_owner)->rva004E35FF(g_Rva00E02E68, (Int)p, b);
 	((Rva004E35AF *)&m_owner)->rva004E35AF(g_Rva00E02E68, 0);
 }
+
+// ?rva003EEBC4@Rva003EEBC4@@QAEXHH@Z retail 0x003EEBC4 43B. Chain lane: calls
+// rowed 0x004E3629 with string g_Rva00E02E68 then this session's 0x003EEA63,
+// stores first arg at this+0x14; callers at 0x003EEE85/0x003EEF2E.
+class Rva004E3629
+{
+public:
+	void rva004E3629(const AsciiString &key, Int a);
+private:
+	_STL::map<AsciiString, AsciiString> m_map;
+};
+class Rva003EEBC4
+{
+public:
+	void rva003EEBC4(Int a, Int b);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+	Int m_saved;
+};
+void Rva003EEBC4::rva003EEBC4(Int a, Int b)
+{
+	((Rva004E3629 *)&m_owner)->rva004E3629(g_Rva00E02E68, 1);
+	((Rva003EEA63 *)this)->rva003EEA63(a, b);
+	m_saved = a;
+}
