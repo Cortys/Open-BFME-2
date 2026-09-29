@@ -148,7 +148,7 @@ public:
 	virtual void onEntry( BfmeEntryZI *entry, int value );
 };
 
-class Rva007EB810Diag
+struct Rva007EB810Diag
 {
 public:
 	virtual void v0();
@@ -157,7 +157,7 @@ public:
 	virtual void fail( const char *expression, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class Rva00800920Owner
 {
@@ -177,7 +177,7 @@ void BfmeThingZI::rva007F7DA0( Rva007E8810Message *msg )
 
 	if( entry == 0 )
 	{
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"peri",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowser.cpp",
 			0x59f );

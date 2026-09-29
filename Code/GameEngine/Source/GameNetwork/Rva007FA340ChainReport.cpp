@@ -32,7 +32,7 @@ struct Rva007EB810Diag
 	virtual void v4(void *, void *, void *, void *);
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 extern void *Rva007F93E0(void *, void *, void *);
 
@@ -62,7 +62,7 @@ void Rva007FA340::process(void *item)
 	Rva00800550Chain *chain = &m_chain;
 	void *first = chain->first();
 
-	Rva007EB810Diag *diag = (Rva007EB810Diag *)Rva007EB810Get();
+	Rva007EB810Diag *diag = Rva007EB810Get();
 	diag->v4(Rva007F93E0(
 		first, (void *)"->Q", m_handler),
 		(void *)"SendTransaction(t, \"->Q\", mTransport)", (void *)"\\views\\feslbuild_main\\jabba\\fesl\\source\\transactor.cpp", (void *)0x2d6);

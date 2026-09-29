@@ -60,7 +60,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 // ------------------------------------------------------------- byte buffer
 class Rva00800290Buffer
@@ -113,7 +113,7 @@ void Rva00800290Buffer::append( const char *text )
 		m_ptr = (char *)Gen007EFFC0()->acquire( m_size, 0 );
 	}
 	if( m_ptr == 0 )
-		((Rva007EB810Diag *)Rva007EB810Get())->fail( "mBuffer",
+		Rva007EB810Get()->fail( "mBuffer",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\util.cpp", 149 );
 	strcpy( m_ptr, text );
 }

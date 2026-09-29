@@ -11,7 +11,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class Rva00800460Arena
 {
@@ -35,7 +35,7 @@ char *Rva00800460Arena::append( const char *text )
 
 	if( next > m_cap )
 	{
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\util.cpp",
 			0xd1 );
@@ -48,7 +48,7 @@ char *Rva00800460Arena::append( const char *text )
 	}
 	if( dest == 0 )
 	{
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\util.cpp",
 			0xeb );

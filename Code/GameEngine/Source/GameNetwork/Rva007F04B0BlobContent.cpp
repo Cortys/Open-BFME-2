@@ -17,7 +17,7 @@ public:
 	char bfmeGoUPB( void *a, char *b, void *c );
 };
 
-class Rva007EB810Diag
+struct Rva007EB810Diag
 {
 public:
 	virtual void v0();
@@ -26,7 +26,7 @@ public:
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 // Retail calls the decoder with the encoded blob first and writes decoded bytes
 // into this method's destination buffer.  Its return value is intentionally
@@ -51,9 +51,9 @@ bool Rva007F04B0BlobService::fetchContent( char *destination, unsigned int lengt
 	void *content = allocator->allocate( size, 2 );
 	if( content == 0 )
 	{
-		Rva007EB810Diag *diag = (Rva007EB810Diag *)Rva007EB810Get();
+		Rva007EB810Diag *diag = Rva007EB810Get();
 		diag->assertValue( content, "--- out of memory\n" );
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\blobservice.cpp",
 			0x1F9 );

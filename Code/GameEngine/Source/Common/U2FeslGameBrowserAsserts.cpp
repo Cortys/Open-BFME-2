@@ -33,7 +33,7 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 struct Rva008013F0Browser
 {
@@ -42,7 +42,7 @@ struct Rva008013F0Browser
 
 void Rva008013F0Browser::assertFailed(int)
 {
-	((Rva007EB810Diag *)Rva007EB810Get())->fail("false",
+	Rva007EB810Get()->fail("false",
 	                       "\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowsergame.cpp",
 	                       529);
 }
@@ -54,7 +54,7 @@ struct Rva00802980Browser
 
 void Rva00802980Browser::assertFailed(int)
 {
-	((Rva007EB810Diag *)Rva007EB810Get())->fail("false",
+	Rva007EB810Get()->fail("false",
 	                       "\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserlobby.cpp",
 	                       321);
 }

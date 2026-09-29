@@ -67,7 +67,7 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class Rva00800F40PendingProbeUpdate
 {
@@ -126,7 +126,7 @@ void Rva00800F40PendingProbeUpdate::update(unsigned int now)
 					slot->m_bfme08 = (char)zero;
 					--m_bfme1f0;
 					if (m_bfme1f0 < zero)
-						((Rva007EB810Diag *)Rva007EB810Get())->fail(
+						Rva007EB810Get()->fail(
 							"mNumProbes >= 0",
 							"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserdemangler.cpp",
 							0x147);

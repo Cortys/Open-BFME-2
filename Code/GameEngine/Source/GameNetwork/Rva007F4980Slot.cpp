@@ -10,7 +10,7 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-int Rva007EB810Get();
+Rva007EB810Diag *Rva007EB810Get();
 
 class Rva007F4980
 {
@@ -25,7 +25,7 @@ private:
 void Rva007F4980::set(void *p, int i)
 {
 	if (i < 0 || i >= 2)
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\ariesudp.cpp",
 			76);

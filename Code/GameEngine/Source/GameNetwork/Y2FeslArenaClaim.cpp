@@ -9,7 +9,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class Rva00800460Arena
 {
@@ -30,7 +30,7 @@ void *Rva00800460Arena::claim( int size, bool align )
 		pad = 0;
 	if( m_used + pad + (unsigned)size > m_cap )
 	{
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"false",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\util.cpp",
 			0xd1 );

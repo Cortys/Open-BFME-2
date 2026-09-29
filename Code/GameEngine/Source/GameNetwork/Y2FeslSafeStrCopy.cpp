@@ -23,17 +23,17 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 void Rva00655700(char *dst, unsigned dstSize, const char *src)
 {
 	if (src == 0)
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"src",
 			"..\\..\\source\\include\\fesl/internal/util.h",
 			33);
 	if (!(strlen(src) < dstSize))
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"strlen(src) < dstSize",
 			"..\\..\\source\\include\\fesl/internal/util.h",
 			34);

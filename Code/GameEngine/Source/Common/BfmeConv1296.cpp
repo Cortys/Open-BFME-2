@@ -18,7 +18,8 @@ public:
 	virtual void bfmeModeSNA(int a, int b) = 0;
 };
 
-extern int Rva007EB810Get();
+struct Rva007EB810Diag;
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class FeslConnectionHandler
 {

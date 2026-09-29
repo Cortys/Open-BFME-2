@@ -9,7 +9,8 @@ public:
 	virtual void bfmeAssertVPE(const char *cond, const char *file, int line);
 };
 
-extern int Rva007EB810Get();
+struct Rva007EB810Diag;
+extern Rva007EB810Diag *Rva007EB810Get();
 
 struct BfmeSlotVPE
 {

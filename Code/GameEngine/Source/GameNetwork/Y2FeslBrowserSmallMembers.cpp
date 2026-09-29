@@ -15,7 +15,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 // ------------------------------------- the already-landed array clear
 class Rva00801570Elem
@@ -76,7 +76,7 @@ public:
 // ?setHpState@Rva008022A0Owner@@QAEXH@Z
 void Rva008022A0Owner::setHpState( int state )
 {
-	((Rva007EB810Diag *)Rva007EB810Get())->log( 0, "hpstate: %d -> %d\n", m_hpState, state );
+	Rva007EB810Get()->log( 0, "hpstate: %d -> %d\n", m_hpState, state );
 	m_hpState = state;
 }
 

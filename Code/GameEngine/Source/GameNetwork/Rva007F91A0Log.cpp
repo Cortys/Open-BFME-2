@@ -10,7 +10,7 @@ struct Rva007EB810Diag
 	virtual void fail(const char *expr, const char *file, int line);
 };
 
-int Rva007EB810Get();
+Rva007EB810Diag *Rva007EB810Get();
 
 struct Rva007F91A0Sink
 {
@@ -30,6 +30,6 @@ public:
 
 void Rva007F91A0Host::apply(int err)
 {
-	((Rva007EB810Diag *)Rva007EB810Get())->log(0, "conn err %d\n", err);
+	Rva007EB810Get()->log(0, "conn err %d\n", err);
 	m_sink->slot2(0, 0);
 }

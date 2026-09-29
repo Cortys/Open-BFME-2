@@ -21,7 +21,7 @@ struct Rva007EB810Diag
     virtual void fail(const char *expr, const char *file, int line);
 };
 
-extern int Rva007EB810Get();
+extern Rva007EB810Diag *Rva007EB810Get();
 
 class Rva007E8760Addr
 {
@@ -38,7 +38,7 @@ private:
 void Rva007E8760Addr::format(char *destination, unsigned destinationSize)
 {
     if (destinationSize < 17)
-        ((Rva007EB810Diag *)Rva007EB810Get())->fail(
+        Rva007EB810Get()->fail(
             "false",
             "\\views\\feslbuild_main\\jabba\\fesl\\source\\address.cpp",
             49);
