@@ -26,3 +26,26 @@ void Rva005EC594Clear(Rva005EC594 *first, Rva005EC594 *last)
 	for (; first != last; ++first)
 		first->m_00.clear();
 }
+
+// ?rva005EC9F9@Rva005EC9F9@@QAEXXZ, RVA 0x005EC9F9, 30B. Chain lane: clears
+// the [m_00,m_04) range through the row above, then frees m_00 through rowed
+// _free at 0x00030830 when non-null; frameless, ret. Caller at 0x005ECBC1 in
+// 0x005ECB28. Owner unknown so honest address-derived names.
+extern "C" void free(void *);
+
+class Rva005EC9F9
+{
+public:
+	void rva005EC9F9();
+private:
+	Rva005EC594 *m_00;
+	Rva005EC594 *m_04;
+};
+
+void Rva005EC9F9::rva005EC9F9()
+{
+	Rva005EC594Clear(m_00, m_04);
+	Rva005EC594 *p = m_00;
+	if (p)
+		free(p);
+}

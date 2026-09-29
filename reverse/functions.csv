@@ -40997,3 +40997,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0038204A@Rva0038204A@@QAEXPAURva0038201DNode@@@Z,,0x0038204A,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,twin tree free same node layout caller 0x3828DF
 ?rva003828DF@Rva0038204A@@QAEXXZ,,0x003828DF,41,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,twin clear resets sentinel
 ?rva00382077@Rva00382077@@QAEXPAURva0038201DNode@@@Z,,0x00382077,45,Code/GameEngine/Source/Common/Rva0038201DFree.cpp,matched,third twin tree free caller 0x382908
+?rva005EC9F9@Rva005EC9F9@@QAEXXZ,,0x005EC9F9,30,Code/Libraries/Source/WWVegas/WWLib/stlport_rva005ec594_clear.cpp,matched,chain clear plus free via helpers
