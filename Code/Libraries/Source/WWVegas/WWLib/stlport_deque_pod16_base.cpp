@@ -5,5 +5,7 @@
 // base at 0x0041A10C; calls rowed _M_initialize_map for BfmePod16 at
 // 0x00419ED4 and ICF alloc_proxy bodies at 0x0014F3C4; unlocks 0x0041A6E5.
 #include <deque>
+#include <queue>
 struct BfmePod16 { int a[4]; };
 template _STL::_Deque_base<BfmePod16, _STL::allocator<BfmePod16> >::_Deque_base(const _STL::allocator<BfmePod16> &, size_t);
+template _STL::queue<BfmePod16, _STL::deque<BfmePod16, _STL::allocator<BfmePod16> > >::queue();
