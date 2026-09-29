@@ -41939,3 +41939,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva005A734B@@UAEPAXI@Z,,0x005A73C2,28,Code/GameEngine/Source/Common/System/Rva005A71B1Dtor.cpp,matched,slot0 of 0x00871BFC calls rowed dtor 0x005A734B then delete
 ??_GRva003ABA36@@UAEPAXI@Z,,0x003AE8D5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05.cpp,matched,deleting dtor calls rowed dtor 0x003ABA36 plus delete
 ?rva005503B1@Rva005503B1@@QAEPAVRva0055011A@@XZ,,0x005503B1,53,Code/Libraries/Source/WWVegas/WWLib/Rva005503B1Factory.cpp,matched,new plus ctor shape proves factory; callee ctor rowed
+?rva00535E97@UserPreferences@@QAEHVAsciiString@@@Z,,0x00535E97,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UserPreferences BestWinStreak getter via slot18 same TU

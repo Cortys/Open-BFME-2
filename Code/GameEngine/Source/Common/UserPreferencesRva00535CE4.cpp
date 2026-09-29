@@ -48,6 +48,9 @@
 // ?rva00535E06@UserPreferences@@QAEHVAsciiString@@@Z @0x00535E06 74B
 // UserPreferences LossStreak-getter path: append LossStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
 // Evidence: concat LossStreak 0x00868E98 slot 0x18 releaseBuffer gap same TU unlock.
+// ?rva00535E97@UserPreferences@@QAEHVAsciiString@@@Z @0x00535E97 74B
+// UserPreferences BestWinStreak-getter path: append BestWinStreak to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat BestWinStreak 0x00868EA4 slot 0x18 releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -111,6 +114,7 @@ public:
 	int rva00535C40();
 	int rva00535D75(AsciiString arg);
 	int rva00535E06(AsciiString arg);
+	int rva00535E97(AsciiString arg);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -210,6 +214,13 @@ int UserPreferences::rva00535D75(AsciiString arg)
 int UserPreferences::rva00535E06(AsciiString arg)
 {
 	arg.concat("LossStreak");
+	int ret = v6(arg, 0);
+	return ret;
+}
+
+int UserPreferences::rva00535E97(AsciiString arg)
+{
+	arg.concat("BestWinStreak");
 	int ret = v6(arg, 0);
 	return ret;
 }
