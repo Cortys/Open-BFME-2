@@ -119,3 +119,21 @@ int Rva002BA8F1Logic::rva002B5256(bool flag)
     }
     return count;
 }
+
+// ?find@Rva002E1904Lookup@@QAEPAURva002E1904Entry@@ABVAsciiString@@@Z @0x002E1904 68B.
+// Vector +0x0C lookup for an entry string at +4, same shape as Rva002E18C3Lookup
+// find 0x002E18C3 (65B) plus the three-byte add ecx,4 for the +4 field.
+// Evidence: unlock lane (unblocks 0x0052C45E); caller passes key by ref with
+// ret 4; same sub-sar-2 count plus compare loop as sibling finds.
+struct Rva002E1904Entry { int m_0; AsciiString m_4; };
+class Rva002E1904Lookup {
+public: Rva002E1904Entry *find(const AsciiString &);
+private: char at00[0xc]; _STL::vector<Rva002E1904Entry *> entries;
+};
+Rva002E1904Entry *Rva002E1904Lookup::find(const AsciiString &name)
+{
+    for (unsigned int i = 0; i < entries.size(); ++i) {
+        if (entries[i]->m_4.compare(name) == 0) return entries[i];
+    }
+    return 0;
+}
