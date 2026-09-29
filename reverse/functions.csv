@@ -42077,3 +42077,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000D20D6@Rva000D20D6@@UAEXXZ,,0x000D20D6,5,Code/GameEngine/Source/Common/VtableVirtualForwarders.cpp,matched,unnamed vtable slot target; pure virtual forwarder to slot 9; identity not recoverable so address-derived class name; exact match
 ??1Rva005C436E@@UAE@XZ,,0x005C4423,70,Code/GameEngine/Source/Common/Rva005C436EDispatch.cpp,matched,chain dtor via dispatch plus Snapshot base
 ?rva005C43AF@Rva005C436E@@QAEXXZ,,0x005C43AF,26,Code/GameEngine/Source/Common/Rva005C436EDispatch.cpp,matched,chain vslot6 via dispatch enable
+??_GRva005C436E@@UAEPAXI@Z,,0x005C451B,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-03-5C451B.cpp,matched,chain deleting dtor via dtor plus delete
