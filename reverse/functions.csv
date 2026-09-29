@@ -41843,3 +41843,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002EBB53SiftUp@@YAXPAPAU_Rva002EBB53Wrap@@HHPAU1@@Z,,0x002EBB53,72,Code/Libraries/Source/WWVegas/WWLib/Rva002EBB53SiftUp.cpp,matched,heap sift-up via wrapper payload keys unblocks two callers
 ?bfmeSkipPrefixed@Gen009D8C30@@QAEXXZ,,0x0060C59D,93,Code/Libraries/Source/xfer/xfer_load.cpp,matched,skip prefixed via stream read and skip
 ?rva000C0513@Rva000C0513@@QAEXIUCoord3D@@@Z,,0x000C0513,73,Code/GameEngine/Source/Common/Rva000C0513Resize.cpp,matched,resize via rowed erase 0x002A133B and fill_insert 0x004E29C8
+??1Rva00509D4C@@UAE@XZ,,0x00509D4C,89,Code/GameEngine/Source/GameLogic/Object/Rva00509D4CDtor.cpp,matched,novtable dtor 3 strings plus base
