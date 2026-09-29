@@ -58,6 +58,7 @@ public:
     void rva0070A610(int index, AptValue *pValue);
     AsciiString *rva0070AA40();
     void rva0070AB30();
+    Entry *rva0070AAA0(Entry *pItem);
 };
 void AptNativeHash::Set__Proto__(AptValue *const value)
 {
@@ -208,4 +209,23 @@ void AptNativeHash::rva0070AB30()
         }
     }
     memset(mpData, 0, mnTotalSize * 8);
+}
+AptNativeHash::Entry *AptNativeHash::rva0070AAA0(Entry *pItem)
+{
+    if (!mpData)
+        return 0;
+    if (pItem < &mpData[0] || pItem >= &mpData[mnTotalSize]) {
+        g_bfmeAptAssertAtE17734("(pItem >= &mpData[0]) && (pItem < &mpData[mnTotalSize])", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptNativeHash.cpp", 0x1DB);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    pItem = pItem + 1;
+    for (; pItem < &mpData[mnTotalSize]; ++pItem) {
+        if (!pItem->key.hasData())
+            continue;
+        if (!((const EAStringC *)&pItem->key)->IsEmpty())
+            return pItem;
+    }
+    return 0;
 }

@@ -41798,3 +41798,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00238FC0@Rva00238E1B@@QAEXXZ,,0x00238FC0,51,Code/GameEngine/Source/Common/Rva00238E1BCounter.cpp,matched,copy setter via same class
 ?rva00423A75@Rva00423A75@@QAE_NPAVRva001EB130Holder@@PAVPlayer@@0@Z,,0x00423A75,119,Code/Libraries/Source/WWVegas/WWLib/stlport_moduledatavector_push.cpp,matched,unlock filter via rowed player plus tab plus list unblocks 0x00372571
 ?rva006E3410@Rva006E3410@@QAEHH@Z,,0x006E3410,70,Code/Libraries/Source/Apt/Rva006E3410.cpp,matched,unlock lane AptAnimation index search via assert triple
+?rva0070AAA0@AptNativeHash@@QAEPAUEntry@1@PAU21@@Z,,0x0070AAA0,132,Code/Libraries/Source/Apt/AptNativeHashBFME2.cpp,matched,AptNativeHash find next nonempty entry
