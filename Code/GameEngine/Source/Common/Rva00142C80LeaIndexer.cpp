@@ -15,6 +15,10 @@
 // AddRef fetch from array at +0xB8 (same offset as 0x142C80 family):
 // p=m_items[i]; if (p) ++p->m_ref; return m_items[i] (reload for return).
 // Callers 0x38D9E/0x380C9. Honest address name.
+//
+// ?rva00308139@Rva00308139@@QAEXABVAsciiString@@@Z, retail 0x00308139, 29B.
+// AsciiString assign to member+0x80 via pinned operator= then flag+0x88=1.
+// Caller 0x392A9. Same flags.
 
 struct Rva003080AARef
 {
@@ -63,4 +67,28 @@ Rva003080AARef *Rva003080AA::rva003080AA(int i)
 	if (p)
 		p->m_ref04++;
 	return m_itemsB8[i];
+}
+
+class AsciiString
+{
+public:
+	AsciiString &operator=(const AsciiString &other);
+private:
+	char m_pad[8];
+};
+
+class Rva00308139
+{
+public:
+	void rva00308139(const AsciiString &s);
+private:
+	char m_pad00[0x80];
+	AsciiString m_str80;
+	bool m_flag88;
+};
+
+void Rva00308139::rva00308139(const AsciiString &s)
+{
+	m_str80 = s;
+	m_flag88 = true;
 }
