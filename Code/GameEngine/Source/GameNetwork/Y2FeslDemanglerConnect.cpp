@@ -13,7 +13,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-int Rva007EB810Get();
+Rva007EB810Diag *Rva007EB810Get();
 
 struct Rva007E9B70Obj
 {
@@ -75,7 +75,7 @@ int Rva008006C0Owner::connect( const char *name, const char *addr, int cookie )
 
 	if( !m_browser->isInternetConnected() )
 	{
-		((Rva007EB810Diag *)Rva007EB810Get())->fail(
+		Rva007EB810Get()->fail(
 			"mGameBrowser->IsInternetConnected()",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserdemangler.cpp",
 			0x73 );
