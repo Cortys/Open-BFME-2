@@ -6,6 +6,8 @@
 // Evidence: same 0x14 layout as xfer 0x0054840A; caller 0x003550DD news 0x14; no vtable.
 // ??0Rva0054840A@@QAE@W4ObjectID@@@Z @0x005482C0 41B one-arg ctor setting ObjectID plus list base 0x004EC36C plus three uints.
 // Evidence: same 0x14 layout; caller 0x00355842 in 0x003557B7; allocator temp at ebp+0xb.
+// ?rva00548700@Rva0054840A@@QAEXXZ @0x00548700 44B pop list back when non-empty and m_08 non-zero with m_10 clear plus conditional m_08 clear.
+// Evidence: same 0x14 layout list at +4 uints at +8 +0x10; caller 0x003551F9; tail-jmp to rowed pop_back 0x00053D4F.
 #define _STLP_NO_EXCEPTIONS 1
 #include <list>
 
@@ -71,6 +73,7 @@ public:
 	Rva0054840A();
 	Rva0054840A(ObjectID id);
 	void rva0054840A(Xfer *xfer);
+	void rva00548700();
 private:
 	ObjectID m_00;
 	ListInt m_list04;
@@ -106,4 +109,16 @@ void Rva0054840A::rva0054840A(Xfer *xfer)
 	xfer->xferUnsignedShort(&m_0c);
 	xfer->xferUnsignedShort(&m_10);
 	xferListInt(xfer, &m_list04);
+}
+
+void Rva0054840A::rva00548700()
+{
+	if (m_list04.empty())
+		return;
+	if (m_08 == 0)
+		return;
+	m_10 = 0;
+	if (m_list04.back() == (int)m_08)
+		m_08 = 0;
+	m_list04.pop_back();
 }
