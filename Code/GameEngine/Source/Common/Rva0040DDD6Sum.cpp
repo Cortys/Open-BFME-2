@@ -1,8 +1,8 @@
-// ?rva0040DDD6@Rva0040DDD6@@QAEHXZ
-// partial score=0.93 date=2026-09-28
-// ?rva0040DDD6@Rva0040DDD6@@QAEHXZ
-// partial score=0.93 date=2026-09-28
 // cl: /O1
+// ?rva0040DDD6@Rva0040DDD6@@QAEHXZ @0x0040DDD6 64B. Vector sum-and-erase: iterate
+// backwards over m_vec at +0x40, skip entries whose pointee +0xC4 is 0, sum
+// pointee +0x90, erase via rowed 0x0040DC1F. Evidence: 4-push erase shape,
+// callers 0x003191B7, neighbours Rva0040DC1FErase and ModuleNameGetters.
 struct Rva004F69C3
 {
 	int m_00;
@@ -37,8 +37,9 @@ private:
 };
 int Rva0040DDD6::rva0040DDD6()
 {
+	_STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> > *vec = &m_vec;
+	int n = vec->m_finish - vec->m_start;
 	int sum = 0;
-	int n = m_vec.m_finish - m_vec.m_start;
 	for (int i = n - 1; i >= 0; --i) {
 		if (((Pointee090C4*)m_vec.m_start[i].m_04)->m_C4 == 0)
 			continue;
