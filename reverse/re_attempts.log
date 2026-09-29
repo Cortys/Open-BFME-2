@@ -3298,3 +3298,4 @@ FUN_004113F4	0x004113F4	95	blocked	EH loop with 7-arg stack plus BfmeThing itera
 FUN_00ae3ff0	0x006E3FF0	342	blocked	342B Apt cleanup with 5 Release loops plus manager global needs layout t=5 model=muse-11
 ?rva0052DA1C@Rva0052DA1C@@QAE_NH@Z	0x0052DA1C	71	partial	dword and-or vs byte al oval t=12 model=muse-11 score=0.97 stash=reverse/attempts/0x0052da1c.cpp
 FUN_0084bcab	0x0044BCAB	85	blocked	EH ctor with 2 TargetRef plus scopetable needs layout t=4 model=muse-11
+FUN_0047a307	0x0007A307	183	blocked	complex deque-string insert 183B needs donor t=5 model=muse-03
