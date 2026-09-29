@@ -1,7 +1,7 @@
 // ??0DefaultPhysicsModuleInfo@FXParticleSystem@@QAE@XZ
-// partial score=0.98 date=2026-09-26
+// partial score=0.99 date=2026-09-29
 // ??0DefaultPhysicsModuleInfo@FXParticleSystem@@QAE@XZ
-// partial score=0.98 date=2026-09-26
+// partial score=0.99 date=2026-09-29
 // cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
 
 // ??0DefaultPhysicsModuleInfo@FXParticleSystem@@QAE@XZ @0x0055EE5E 109B
@@ -12,6 +12,8 @@
 // Single EH state from the virtual base. Caller 0x003A9852
 // (DefaultModuleTemplate@$02 default) calls here at the site its BFME1 donor
 // calls the physics info default.
+// HEAD START from 0.98 stash: body field order 3,0,1,2 fixes 4 mem diffs;
+// remains vtable+and-var early vs pushes-first + var movss split.
 
 class GameClientRandomVariable
 {
@@ -57,11 +59,11 @@ private:
 
 // ??0DefaultPhysicsModuleInfo@FXParticleSystem@@QAE@XZ present-unmatched
 DefaultPhysicsModuleInfo::DefaultPhysicsModuleInfo()
-	: m_field0(0.0f)
-	, m_field1(0.0f)
-	, m_field2(0.0f)
-	, m_field3(0.0f)
 {
+	m_field3 = 0.0f;
+	m_field0 = 0.0f;
+	m_field1 = 0.0f;
+	m_field2 = 0.0f;
 	m_var1.setRange(0.0f, 0.0f);
 	m_flag20 = false;
 	m_flag21 = false;
