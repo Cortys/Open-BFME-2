@@ -41499,3 +41499,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva00573B23@@UAE@XZ,,0x00573B23,59,Code/GameEngine/Source/Common/Rva00573B23Dtor.cpp,matched,vptr plus StringBase member plus virtual base dtor unlocks 2
 ?rva002399EB@Rva002399EB@@QAEPAXG@Z,,0x002399EB,37,Code/GameEngine/Source/Common/Rva002399EBFind.cpp,matched,circular list find key at +0xC return node+8
 ??0Rva004382FC@@QAE@ABVRva002542F3Member@@H@Z,,0x004383BA,49,Code/GameEngine/Source/GameLogic/Object/Update/Rva004382FCWrapper.cpp,matched,wrapper param ctor via member copy and TheGameLogic frame
+??1Rva00573F03@@UAE@XZ,,0x00573F03,11,Code/GameEngine/Source/Common/Rva00573B23Dtor.cpp,matched,derived dtor vptr store plus tail jump to base dtor

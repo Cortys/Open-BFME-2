@@ -27,3 +27,14 @@ struct Rva00573B23 : Rva0055B0CC
 Rva00573B23::~Rva00573B23()
 {
 }
+// ??1Rva00573F03@@UAE@XZ @0x00573F03 11B
+// Derived dtor: stores its own vtable, then tail-jumps to the rowed base
+// dtor ??1Rva00573B23@@UAE@XZ. Empty body, no new members.
+// Evidence: mov [ecx] 0x0086E2C8 then jmp 0x00573B23.
+struct Rva00573F03 : Rva00573B23
+{
+	virtual ~Rva00573F03();
+};
+Rva00573F03::~Rva00573F03()
+{
+}
