@@ -42057,3 +42057,7 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva001ED0A9@@QAE@ABVAsciiString@@@Z,,0x001ED0A9,53,Code/GameEngine/Source/Common/Rva001ED0A9Ctor.cpp,matched,ctor string plus vectors via pinned plus rowed
 ?rva000932E1@Rva000932E1@@QAEMXZ,,0x000932E1,104,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000932E1Get.cpp,matched,weather float getter via double override hop plus 1.0f default
 ?Rva0021D435MakeHeap@@YAXPAVRva0021915B@@0URva0021B753@@@Z,,0x0021D435,79,Code/GameEngine/Source/Common/System/Rva0021C8D7AdjustHeap.cpp,matched,chain make heap via rowed adjust 0x0021C8D7
+?rva0050B5C6@Rva0050B5C6@@QAE_NXZ,,0x0050B5C6,3,Code/GameEngine/Source/Common/VtableConstantPredicates.cpp,matched,unnamed vtable slot target; identity not recoverable so address-derived class name; exact match
+?rva0050B5F1@Rva0050B5F1@@QAE_NHH@Z,,0x0050B5F1,5,Code/GameEngine/Source/Common/VtableConstantPredicates.cpp,matched,unnamed vtable slot target; identity not recoverable so address-derived class name; exact match
+?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z,,0x005CB9FF,5,Code/GameEngine/Source/Common/VtableConstantPredicates.cpp,matched,unnamed vtable slot target; identity not recoverable so address-derived class name; exact match
+?rva006C8770@Rva006C8770@@QAE_NHHH@Z,,0x006C8770,5,Code/GameEngine/Source/Common/VtableConstantPredicates.cpp,matched,unnamed vtable slot target; identity not recoverable so address-derived class name; exact match
