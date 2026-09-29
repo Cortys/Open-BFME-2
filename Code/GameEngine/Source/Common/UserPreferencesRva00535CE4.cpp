@@ -33,6 +33,9 @@
 // ?rva00535FBA@UserPreferences@@QAEHXZ @0x00535FBA 73B
 // UserPreferences OverallWinStreak-getter path: local AsciiString OverallWinStreak slot 0x18 with (tmp, 0) int ret 0.
 // Evidence: StringBase PBD ctor 0x00037BA0 slot 0x18 releaseBuffer gap same TU unlock.
+// ?rva005358C3@UserPreferences@@QAEHVAsciiString@@@Z @0x005358C3 74B
+// UserPreferences Points-getter path: append Points to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat Points 0x00868E24 slot 0x18 releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -91,6 +94,7 @@ public:
 	void rva00535EE1(AsciiString arg, int x);
 	void rva00535F72(int x);
 	int rva00535FBA();
+	int rva005358C3(AsciiString arg);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -152,5 +156,12 @@ int UserPreferences::rva00535FBA()
 {
 	AsciiString tmp("OverallWinStreak");
 	int ret = v6(tmp, 0);
+	return ret;
+}
+
+int UserPreferences::rva005358C3(AsciiString arg)
+{
+	arg.concat("Points");
+	int ret = v6(arg, 0);
 	return ret;
 }
