@@ -20,3 +20,10 @@ void *Rva005E74AA::rva005E74AA(unsigned int flags)
         ::operator delete(this);
     return this;
 }
+void __cdecl Rva005E7BE2Destroy(Rva005E74AA *first, Rva005E74AA *last, void *ignored)
+{
+	while (first != last) {
+		first->rva005E74AA(0);
+		++first;
+	}
+}
