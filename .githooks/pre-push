@@ -19,6 +19,41 @@ run_build() {
     esac
 }
 
+# Host guard — same two non-portable assumptions as .githooks/pre-commit, and it
+# runs BEFORE `refs="$(cat)"` below so the re-exec cannot lose stdin:
+#   * `mapfile` and `declare -A` are bash 4+; /bin/bash on macOS is 3.2.
+#   * the tools need Python 3.10+ (PEP 604); /usr/bin/python3 on macOS is 3.9.
+if [ "${BASH_VERSINFO[0]:-0}" -lt 4 ]; then
+    for _candidate in bash5 bash4 \
+            /opt/homebrew/bin/bash /usr/local/bin/bash /usr/bin/bash; do
+        _newer="$(command -v "$_candidate" 2>/dev/null || true)"
+        [ -n "$_newer" ] || continue
+        [ "$_newer" = "$BASH" ] && continue
+        if "$_newer" -c '[ "${BASH_VERSINFO[0]}" -ge 4 ]' 2>/dev/null; then
+            exec "$_newer" "$0" "$@"
+        fi
+    done
+    fail "these hooks need bash 4+ (mapfile, associative arrays) and this is bash ${BASH_VERSION:-unknown}. Install one (e.g. 'brew install bash') and put it first on PATH, or run from a host that has it."
+fi
+
+python_ok() {
+    python3 -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)' 2>/dev/null
+}
+
+if ! python_ok; then
+    for _candidate in python3.13 python3.12 python3.11 python3.10; do
+        command -v "$_candidate" >/dev/null 2>&1 || continue
+        mkdir -p "$ROOT/build/hook-python"
+        ln -sf "$(command -v "$_candidate")" "$ROOT/build/hook-python/python3" 2>/dev/null || true
+        PATH="$ROOT/build/hook-python:$PATH"
+        export PATH
+        break
+    done
+fi
+if ! python_ok; then
+    fail "the tools need Python 3.10+ but 'python3' is $(python3 -V 2>&1 || echo 'not found'). Install a newer python3 and put it first on PATH."
+fi
+
 refs="$(cat || true)"
 
 ZERO=0000000000000000000000000000000000000000
