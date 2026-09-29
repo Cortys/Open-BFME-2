@@ -16,3 +16,9 @@ void *Rva005F0647::rva005F0647(unsigned int flags)
         ::operator delete(this);
     return this;
 }
+
+void Rva005F0C39Destroy(Rva005F0647 *begin, Rva005F0647 *end)
+{
+    for (; begin != end; ++begin)
+        begin->rva005F0647(0);
+}
