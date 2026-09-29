@@ -134,6 +134,15 @@ void Rva003C4B67MakeHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int 
 	((MakeHeap5)Rva003C3AF0MakeHeap)(first, last, extra, 0, 0);
 }
 
+// ?Rva003C4B80PopHeap@@YAXPAPAURva003BD485Keyed@@0H@Z @0x003C4B80 23B.
+// Heap pop-aux adapter over the same keyed array: forwards (first, last,
+// extra) to the 4-arg PopHeap aux at 0x003C3B2C as (first, last, 0, extra).
+// Chain lane on 0x003C3B2C; caller 0x003C6483; cdecl with caller cleanup.
+void Rva003C4B80PopHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int extra)
+{
+	Rva003C3B2CPopHeap(first, last, 0, extra);
+}
+
 // ?Rva003C3A79Partition@@YAPAPAURva003BD485Keyed@@PAPAU1@0PAU1@H@Z @0x003C3A79 55B.
 // Quicksort unguarded partition over the same keyed array: scans first up
 // while its key is below the pivot key and last down while the pivot key is
