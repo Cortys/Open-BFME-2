@@ -30,6 +30,9 @@
 // ?rva00535F72@UserPreferences@@QAEXH@Z @0x00535F72 72B
 // UserPreferences OverallWinStreak-void path: local AsciiString OverallWinStreak slot 0x2C with (tmp, x) void ret 4.
 // Evidence: StringBase PBD ctor 0x00037BA0 slot 0x2C releaseBuffer gap same TU unlock.
+// ?rva00535FBA@UserPreferences@@QAEHXZ @0x00535FBA 73B
+// UserPreferences OverallWinStreak-getter path: local AsciiString OverallWinStreak slot 0x18 with (tmp, 0) int ret 0.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x18 releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -87,6 +90,7 @@ public:
 	void rva00535E50(AsciiString arg, int x);
 	void rva00535EE1(AsciiString arg, int x);
 	void rva00535F72(int x);
+	int rva00535FBA();
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -142,4 +146,11 @@ void UserPreferences::rva00535F72(int x)
 {
 	AsciiString tmp("OverallWinStreak");
 	v11(tmp, x);
+}
+
+int UserPreferences::rva00535FBA()
+{
+	AsciiString tmp("OverallWinStreak");
+	int ret = v6(tmp, 0);
+	return ret;
 }
