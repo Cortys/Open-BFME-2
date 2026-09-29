@@ -3442,3 +3442,4 @@ _Rva000219C0LocaleName	0x000219C0	23	landed	bfme1_sweep donor game/stlport/Local
 ?rva0020611D@ScriptEngine@@QAEXABVParam@@@Z	0x0020611D	186	blocked	ScriptEngine Param list walk plus helper fill complex t=8 model=muse-02
 ?rva003F85D9@Rva003F85D9@@QAEHH@Z	0x003F85D9	109	blocked	109B EH vector visitor twin wall vtable 0x7FB1CC typed-catch plus member-fn-ptr; twins blocked 0x002E16C0 0x004FC2B3 0x0045EE57 0x005C98F6 no new idea t=5 model=muse-spark
 ?rva006DC9E0@Rva006DC9E0@@QAEHXZ	0x006DC9E0	123	partial	true-epilogue duplicated inline vs shared plus extra loop je-mov-test 130 vs 123 t=25 model=muse-03 score=0.94 stash=reverse/attempts/0x006dc9e0.cpp
+?rva00415218@Rva0041573F@@QAE...	0x00415218	163	blocked	INI parse with MultiIni plus 56-array and tree EVA checks plus INIException layout and iterator shape need donor t=15 model=muse-01

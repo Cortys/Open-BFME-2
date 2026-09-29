@@ -57,11 +57,18 @@ Rva002006B0::~Rva002006B0()
 class Rva002007D5
 {
 public:
+	Rva002007D5();
 	~Rva002007D5();
 private:
 	_STL::list<int> m_0;
 	int m_4;
 };
+
+Rva002007D5::Rva002007D5()
+	: m_0()
+	, m_4(0)
+{
+}
 
 Rva002007D5::~Rva002007D5()
 {
