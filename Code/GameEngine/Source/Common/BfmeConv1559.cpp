@@ -9,7 +9,7 @@ public:
 	virtual void bfmeAssertVPE(const char *cond, const char *file, int line);
 };
 
-BfmeLogVPE *bfmeGetLogVPE();
+extern int Rva007EB810Get();
 
 struct BfmeSlotVPE
 {
@@ -45,6 +45,6 @@ BfmeSlotVPE *BfmeMgrVPE::bfmeAllocSlotVPE()
 		}
 	}
 
-	bfmeGetLogVPE()->bfmeAssertVPE("false", "\\views\\feslbuild_main\\jabba\\fesl\\source\\transactor.cpp", 0x2ac);
+	((BfmeLogVPE *)Rva007EB810Get())->bfmeAssertVPE("false", "\\views\\feslbuild_main\\jabba\\fesl\\source\\transactor.cpp", 0x2ac);
 	return 0;
 }
