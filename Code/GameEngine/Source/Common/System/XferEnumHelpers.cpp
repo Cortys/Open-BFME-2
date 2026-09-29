@@ -564,6 +564,14 @@ void XferArmyIconSize(Xfer *xfer, int *value)
 	xfer->XferEnum("ArmyIconSize", value, 4);
 }
 
+// Retail 0x002E05CA (24B): labelled-enum helper with the
+// "LivingWorldRegionBonusRuleID" label (string at 0x00804700). Callers are the
+// set xfer at 0x002E208A passing int values through XferEnum slot 37.
+void XferLivingWorldRegionBonusRuleID(Xfer *xfer, int *value)
+{
+	xfer->XferEnum("LivingWorldRegionBonusRuleID", value, 4);
+}
+
 // Two version bytes, stored back to back: the retail Version1 body writes 1 to
 // both of them in a four-byte stack slot before handing their address to the
 // slot-10 transfer operator. Xfer.cpp's model verbatim.
