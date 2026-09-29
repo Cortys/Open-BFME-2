@@ -2849,3 +2849,7 @@ FUN_002817F2	0x002817F2	443	blocked	443B TGA loader with debug string no donor n
 FUN_009e73fb	0x005E73FB	84	blocked	EH prolog with negative this offsets and chained vtable overwrites via caller 0x005CE0B8 plus pin-only clear 0x000AD6F4 t=12 model=muse-05
 ?rva0033121F@RadiusDecalTemplate@@QAEXUCoord3D@@IPAXPAVRadiusDecal@@M@Z	0x0033121F	270	blocked	float eq-zero plus esi save plus movsd copy wall across 6 shapes t=20 model=muse-spark
 ??0Rva003EEAFB@@QAE@XZ	0x003EEAFB	164	blocked	EH ctor with vtable 0x008363C8 StringBase plus 9 floats plus list needs donor t=8 model=muse-spark
+FUN_006e208a	0x002E208A	196	blocked	Xfer set with unknown slots 0x28 0x2c plus Version and type-string methods t=10 model=muse-03
+?Rva0020ED8EClear@@YGXPAX0@Z	0x0020ED8E	71	blocked	pointer-diff loop codegen wall t=15 model=muse-03
+?Rva0020ED51Set@@YGXPAX0_N@Z	0x0020ED51	61	blocked	same pointer-diff loop wall as 0x0020ED8E t=5 model=muse-03
+?Rva0056ED06Rand@@YAXPAH0@Z	0x0056ED06	46	blocked	rdtsc needs asm plus global table identity t=10 model=muse-03

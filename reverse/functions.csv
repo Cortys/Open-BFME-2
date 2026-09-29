@@ -41264,3 +41264,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002CF84DCreate@@YGPAXPBURva002CF120@@@Z,,0x002CF84D,34,Code/Libraries/Source/WWVegas/WWLib/Rva002CF84DCreate.cpp,matched,stdcall node create via copy 0x2CF35C callers 0x2CFA39 0x33BFD9 0x33BFF4
 ?rva004EE33B@Rva004EE037@@QAEHXZ,,0x004EE33B,34,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,map sum via rowed increment 0x00024250
 ?Rva002E5C15LowerBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C15Comp@@H@Z,,0x002E5C15,76,Code/GameEngine/Source/GameClient/GameTextStringLookUpBound.cpp,matched,chain from 0x002E56B3 Less binary lower_bound 8B array
+?Rva00440B64Insert@@YAXPAPAXPAXVRva0043FE9A@@@Z,,0x00440B64,47,Code/GameEngine/Source/GameClient/GUI/Rva00440B64Insert.cpp,matched,unguarded insert with Rva0043FE9A comp callers 0x00441968 0x00441986
