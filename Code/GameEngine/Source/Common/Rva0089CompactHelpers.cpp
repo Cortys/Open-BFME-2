@@ -17,9 +17,20 @@
 //   0x006CFE60  17B  Rva00894E60Ref::Rva00894E60Ref(int*)
 //   0x0003CD10  17B  Rva0088D990Owner::set(Rva0088D990Inner*)
 //
-// The eighth placement (0x0003CCE0, `Rva0088D960Owner::set`) is deliberately
-// NOT carried: it is tier T3 because lotrbfme.exe folded it, so the name is a
-// guess, and AGENTS.md forbids spending a guessed name on a folded address.
+// The donor's eighth placement (0x0003CCE0, 17B) is carried here too, but NOT
+// under the donor's name. lotrbfme.exe folded that 17B body across eight BFME1
+// addresses, so `Rva0088D960Owner::set` is the sweep's pick among nine twins
+// and AGENTS.md forbids spending a guessed name on a folded address. The BYTES
+// are not in doubt: the sweep placed them uniquely here, and the retail body is
+// complete -- 0x0003CCE0 + 17 = 0x0003CCF1 is int3 padding before the next
+// 16-aligned entry at 0x0003CD00, and the body is a whole `ret 4` function:
+//
+//   mov eax, ecx / mov ecx, [esp+4] / mov edx, [ecx] /
+//   mov dword ptr [eax+0x9F50], edx / ret 4
+//
+// so the row lands under an address-derived name: it asserts the bytes and no
+// identity. Same pad-then-member shape as its sibling above, with the pad set
+// to retail's own store offset.
 //
 // No reverse/symbols.csv pin is needed -- every one of these bodies is
 // self-contained and reaches no global and no callee.
@@ -93,6 +104,26 @@ private:
 	unsigned char m_copy;
 };
 Rva0088D990Owner *Rva0088D990Owner::set( Rva0088D990Inner *src )
+{
+	m_copy = src->m_value;
+	return this;
+}
+
+struct Rva0003CCE0Inner
+{
+	int m_value;
+};
+class Rva0003CCE0Owner
+{
+public:
+	Rva0003CCE0Owner *set( Rva0003CCE0Inner *src );
+
+private:
+	char m_pad[0x9F50];
+	int m_copy;
+};
+// ?set@Rva0003CCE0Owner@@QAEPAV1@PAURva0003CCE0Inner@@@Z
+Rva0003CCE0Owner *Rva0003CCE0Owner::set( Rva0003CCE0Inner *src )
 {
 	m_copy = src->m_value;
 	return this;
