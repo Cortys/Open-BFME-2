@@ -86,6 +86,9 @@ class GameWindow
 public:
 	virtual int winSetText(UnicodeString text);
 	void rva003148A2(UnicodeString text);
+	unsigned char rva003147F6(int x, int y);
+	int winGetScreenPosition(int *x, int *y);
+	int winGetSize(int *width, int *height);
 
 	GameWindowCallback *m_callback; // this+0x04
 	unsigned int m_status; // this+0x08
@@ -107,4 +110,18 @@ int GameWindow::winSetText(UnicodeString text)
 void GameWindow::rva003148A2(UnicodeString text)
 {
 	m_instData.setTooltipText(text);
+}
+
+unsigned char GameWindow::rva003147F6(int x, int y)
+{
+	int sx, sy, w, h;
+	winGetScreenPosition(&sx, &sy);
+	winGetSize(&w, &h);
+	if (x < sx)
+		return 0;
+	if (x > sx + w)
+		return 0;
+	if (y < sy || y > sy + h)
+		return 0;
+	return 1;
 }
