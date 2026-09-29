@@ -42502,3 +42502,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva003BF813Do@@YGXABVAsciiString@@00@Z,,0x003BF813,161,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF813.cpp,matched,via team trigger waypoint group precedent
 ?Rva003BF8B4Hunt@@YGXABVAsciiString@@@Z,,0x003BF8B4,79,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF8B4.cpp,matched,via team hunt group precedent
 ?Rva003BFFECDo@@YGXABVAsciiString@@H@Z,,0x003BFFEC,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFFEC.cpp,matched,via display fullscreen trigger precedent
+?Rva003253BEGet@@YAHPAVGameWindow@@HH@Z,,0x003253BE,63,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetMsg00325388.cpp,matched,WindowManager slot E8 sender 0x4020 via TheWindowManager

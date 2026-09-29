@@ -54,3 +54,19 @@ void Rva00325388Send(GameWindow *window, int a, int b, int c)
 		return;
 	TheWindowManager->winSendSystemMsg(window, 0x4021, (WindowMsgData)&p, (WindowMsgData)a);
 }
+
+int Rva003253BEGet(GameWindow *window, int a, int b)
+{
+	struct MsgPair
+	{
+		int x;
+		int y;
+	};
+	MsgPair p;
+	int out = 0;
+	p.x = b;
+	p.y = a;
+	if (window != 0)
+		TheWindowManager->winSendSystemMsg(window, 0x4020, (WindowMsgData)&p, (WindowMsgData)&out);
+	return out;
+}
