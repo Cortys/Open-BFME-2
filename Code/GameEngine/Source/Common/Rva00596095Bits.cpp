@@ -43,3 +43,28 @@ Int __stdcall Rva005960FFGet(void *arg)
 	}
 	return 0;
 }
+// ?Rva005964ECGet@@YGHPAX@Z @0x005964EC 92B
+// Bit-test predicate returning Int: loads inner at arg+4, ecx at +0x10c,
+// edx 0x1000000; requires (ecx&0x400000==0 or [0x120]&edx!=0) and
+// ([0x118]&4==0 or ecx&0x40!=0) and [0x108]&0x80!=0 and [0x120]&0x10==0 and
+// ecx&0x40000==0 and [0x114]&edx==0 for 1, else 0.
+// Evidence: mov eax[esp+4] mov eax[eax+4] mov ecx[exa+10c] test chain with
+// edx 0x1000000; callers at 0x00596553 and 0x00596640; __stdcall ret 4.
+Int __stdcall Rva005964ECGet(void *arg)
+{
+	void *inner = *(void **)((char *)arg + 4);
+	unsigned int bitfields = *(unsigned int *)((char *)inner + 0x10C);
+	unsigned int denom = 0x1000000;
+	if (((bitfields & 0x400000) == 0 ||
+			(*(unsigned int *)((char *)inner + 0x120) & denom) != 0) &&
+		((((unsigned char *)inner)[0x118] & 4) == 0 ||
+			((bitfields & 0x40) != 0)) &&
+		((((unsigned char *)inner)[0x108] & 0x80) != 0) &&
+		((*(unsigned int *)((char *)inner + 0x120) & 0x10) == 0) &&
+		((bitfields & 0x40000) == 0) &&
+		((*(unsigned int *)((char *)inner + 0x114) & denom) == 0))
+	{
+		return 1;
+	}
+	return 0;
+}
