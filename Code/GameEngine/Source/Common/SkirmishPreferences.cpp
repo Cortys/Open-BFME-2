@@ -153,6 +153,8 @@ public:
 	virtual void setInt(const AsciiString &key, Int val);
 	virtual void setAsciiString(const AsciiString &key, const AsciiString &val);
 
+	void rva00535781(void);
+
 protected:
 	UnicodeString m_filename;
 };
@@ -185,15 +187,29 @@ private:
 	unsigned char m_unreconstructed[8];
 };
 
-class RealTimeStatsPreferences
+extern UnicodeString g_emptyProfilePath;
+
+class ProfilePreferences : public UserPreferences
 {
 public:
+	ProfilePreferences(int profileKind);
+};
+
+class RealTimeStatsPreferences : public ProfilePreferences
+{
+public:
+	RealTimeStatsPreferences(const UnicodeString &profilePath);
+	virtual ~RealTimeStatsPreferences();
+	virtual void loadProfileStats(const UnicodeString &profilePath);
 	static Bool deleteStatsFile(const UnicodeString &profilePath);
 };
 
-class StrategicStatsPreferences
+class StrategicStatsPreferences : public ProfilePreferences
 {
 public:
+	StrategicStatsPreferences(const UnicodeString &profilePath);
+	virtual ~StrategicStatsPreferences();
+	virtual void loadProfileStats(const UnicodeString &profilePath);
 	static Bool deleteStatsFile(const UnicodeString &profilePath);
 };
 
@@ -215,6 +231,7 @@ public:
 	void Rva0043BE36(const AsciiString &mapName);
 	int Rva0043BBB6(UnicodeString user);
 	void Rva0043C2EB(const UnicodeString &user);
+	void rva0043C612(const UnicodeString &user);
 
 private:
 	void rebuildUserNamesEntry(void);
@@ -382,4 +399,28 @@ UnicodeString SkirmishPreferences::Rva0043B9F5(void)
 Bool SkirmishPreferences::Rva0043B9E8(void)
 {
 	return !m_userNames.empty();
+}
+
+// ?rva0043C612@SkirmishPreferences@@QAEXABVUnicodeString@@@Z @0x0043C612 181B
+// Add-user: appends the profile to m_userNames (+0x18), rebuilds the
+// UserNames entry, saves Skirmish.ini through slot-3 write, then resets
+// both stats files for the new profile (empty-path ctor, load user file,
+// clear entries, stamp ProfileCreatedDate, write back). Class proven by
+// +0x18 matching m_userNames in ctor 0x43C128 and Rva0043BB88; callees all
+// rowed or pinned. Honest Rva name.
+void SkirmishPreferences::rva0043C612(const UnicodeString &user)
+{
+	m_userNames.push_back(user);
+	rebuildUserNamesEntry();
+	write();
+	RealTimeStatsPreferences realTime(g_emptyProfilePath);
+	realTime.loadProfileStats(user);
+	realTime.clear();
+	realTime.rva00535781();
+	realTime.write();
+	StrategicStatsPreferences strategic(g_emptyProfilePath);
+	strategic.loadProfileStats(user);
+	strategic.clear();
+	strategic.rva00535781();
+	strategic.write();
 }
