@@ -2994,3 +2994,5 @@ FUN_00445127	0x00045127	236	blocked	eax ecx register inputs plus BMP file IO wit
 ??0Rva00271826@@QAE@XZ	0x00271826	108	partial	xor ecx hoisting early vs late plus vtable VA reloc t=18 model=muse-11 score=0.98 stash=reverse/attempts/0x00271826.cpp
 ?rva0015068C@Rva0015068C@@QAEPAVRva0014F699@@PAV2@0@Z	0x0015068C	51	partial	tag local at ebp+0xf vs retail ebp+0xb; shape-lever row76 Fa-table names winner t=25 model=muse-09 score=0.98 stash=reverse/attempts/0x0015068c.cpp
 FUN_00639CC9	0x00239CC9	57	blocked	hashtable clear plus free needs explicit dtor instantiation custom holder 24B no-EH vs 57B EH dtor 64B extra member call t=12 model=muse-03
+?rva002728C5@Drawable@@QAEXMM@Z	0x002728C5	71	partial	head in ecx plus vtable in eax missing mov ecx eax; SSE half-store matches t=25 model=muse-07 score=0.97 stash=reverse/attempts/0x002728c5.cpp
+FUN_007f3277	0x003F3277	183	blocked	STL vector12 insert with 5 callees needs donor signature t=10 model=muse-07
