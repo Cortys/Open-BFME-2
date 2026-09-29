@@ -41192,3 +41192,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0029B63A@Rva0029B63A@@QAEXPAURva0029B63ANode@@@Z,,0x0029B63A,45,Code/GameEngine/Source/GameClient/Rva0029B63AFree.cpp,matched,unlocks 0x0029E015 recursive child plus free via 0x30830
 ?rva0029B667@Rva0029B667@@QAEXPAURva0029B667Node@@@Z,,0x0029B667,45,Code/GameEngine/Source/GameClient/Rva0029B667Free.cpp,matched,unlocks 0x0029E03E twin of 0x0029B63A via 0x30830
 ?rva0027D35F@Rva0027D35F@@QAEXPAURva0027D35FArg@@H@Z,,0x0027D35F,25,Code/GameEngine/Source/Common/Rva0027D35FSlot30.cpp,matched,same global 0x009FF080 slot30 with arg plus this byte caller 0x27EA13
+?Rva002E08A2Insert@@YAXPAPAXPAX1@Z,,0x002E08A2,37,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,sorted pointer-array insert by key at plus12 two callers
