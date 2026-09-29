@@ -3116,3 +3116,4 @@ FUN_0060CAEA	0x0060CAEA	65	blocked	hashtable string find div bucket register wal
 ?_M_insert_overflow@?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@IAEXPAVCameraMarker@@ABV3@ABU__false_type@2@I_N@Z	0x000C1E4A	178	blocked	align exact in cameramarker TU but gate needs E8 allocate plus dups plus CameraMarker clear t=15 model=muse-spark
 ?_M_insert_overflow@?$vector@UBfmeNarrowRecord00079C23@@V?$allocator@UBfmeNarrowRecord00079C23@@@_STL@@@_STL@@IAEXPAUBfmeNarrowRecord00079C23@@ABU3@ABU__false_type@2@I_N@Z	0x000C365B	183	blocked	overflow exact except allocate Pod44 vs NarrowRecord and Rva20A3 dtor vs M_clear t=10 model=muse-spark
 ?rva006E32E0@Rva006E32E0@@QAEPAXPBD@Z	0x006E32E0	303	blocked	strcmp call vs inlined byte loop plus unknown format and export strings t=15 model=muse-spark
+FUN_009e5f43	0x005E5F43	79	blocked	STL vector range-init needs exact template callee decls for distance and allocate t=10 model=muse-spark
