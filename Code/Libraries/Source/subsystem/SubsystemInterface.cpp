@@ -371,3 +371,23 @@ template class SubsystemSlot<Rva0022BA67Subsystem>;
 class Rva0022BADCSubsystem : public SubsystemInterface {};
 template void initSubsystem<Rva0022BADCSubsystem>(Rva0022BADCSubsystem *&, AsciiString, Rva0022BADCSubsystem *, Xfer *, const char *, const char *, const char *);
 template class SubsystemSlot<Rva0022BADCSubsystem>;
+// Rva0022BBC6Subsystem: site 0x0022F8AE registers "TheFireLogicSystem" (global 0x009FEC68); slot vtable 0xbe73a0.
+class Rva0022BBC6Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022BBC6Subsystem>(Rva0022BBC6Subsystem *&, AsciiString, Rva0022BBC6Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022BBC6Subsystem>;
+// Rva0022BC3BSubsystem: site 0x0022F8F2 registers "TheMineshaftPortalNetworkManager" (global 0x00A01EDC); slot vtable 0xbe73a4.
+class Rva0022BC3BSubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022BC3BSubsystem>(Rva0022BC3BSubsystem *&, AsciiString, Rva0022BC3BSubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022BC3BSubsystem>;
+// Rva0022BCB0Subsystem: site 0x0022F939 registers "TheSkirmishAIManager" (global 0x009FEEF8); slot vtable 0xbe73a8.
+class Rva0022BCB0Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022BCB0Subsystem>(Rva0022BCB0Subsystem *&, AsciiString, Rva0022BCB0Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022BCB0Subsystem>;
+// Rva0022BD25Subsystem: site 0x0022F97C registers "TheArmyDefinitionManager" (global 0x00A0312C); slot vtable 0xbe73ac.
+class Rva0022BD25Subsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022BD25Subsystem>(Rva0022BD25Subsystem *&, AsciiString, Rva0022BD25Subsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022BD25Subsystem>;
+// Rva0022BD9ASubsystem: site 0x0022F9C0 registers "TheBaseTemplateLibrary" (global 0x00A03124); slot vtable 0xbe73b0.
+class Rva0022BD9ASubsystem : public SubsystemInterface {};
+template void initSubsystem<Rva0022BD9ASubsystem>(Rva0022BD9ASubsystem *&, AsciiString, Rva0022BD9ASubsystem *, Xfer *, const char *, const char *, const char *);
+template class SubsystemSlot<Rva0022BD9ASubsystem>;
