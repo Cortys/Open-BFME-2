@@ -260,3 +260,24 @@ void Rva003EEE64::rva003EEE64(Int x)
 		((Rva003EEBC4 *)this)->rva003EEBC4(m_saved, x);
 	}
 }
+
+// ?rva003EEFA0@Rva003EEFA0@@QAEXH@Z retail 0x003EEFA0 59B. Unlock lane: loop
+// over int array at arg (begin/end) calling rowed 0x003EEA9D for each nonzero;
+// caller at 0x0057D79F. Prev is 0x003EEE64 in this TU.
+class Rva003EEFA0
+{
+public:
+	void rva003EEFA0(Int p);
+private:
+	char m_pad[8];
+	Rva004E35D5 m_owner;
+};
+void Rva003EEFA0::rva003EEFA0(Int p)
+{
+	Int *arr = (Int *)p;
+	for (unsigned int i = 0; i < (unsigned int)((arr[1] - arr[0]) >> 2); ++i) {
+		Int v = *(Int *)(arr[0] + i * 4);
+		if (v != 0)
+			((Rva003EEA9D *)this)->rva003EEA9D(v);
+	}
+}
