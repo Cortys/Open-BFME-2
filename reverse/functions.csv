@@ -41180,3 +41180,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?push_back@?$list@UBfmeStringRecord000B757D@@V?$allocator@UBfmeStringRecord000B757D@@@_STL@@@_STL@@QAEXABUBfmeStringRecord000B757D@@@Z,,0x000BCFDF,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_b757d_insert.cpp,matched,chain push_back via rowed insert 0xBC1E8
 ?rva000BCA55@Rva000BCA55@@QAEXH@Z,,0x000BCA55,28,Code/Libraries/Source/WWVegas/WWLib/stlport_set_int_wrapper.cpp,matched,leaf set insert discard via rowed 0xBC15D
 ?Rva005E7BE2Destroy@@YAXPAURva005E74AA@@0PAX@Z,,0x005E7BE2,27,Code/GameEngine/Source/Common/Bfme/Rva005E74AADeleting.cpp,matched,destroy range via deleting 0x005E74AA flag 0 caller 0x005E7FBE
+?Rva005E7FB0Forward@@YAXPAURva005E74AA@@0@Z,,0x005E7FB0,24,Code/GameEngine/Source/Common/Bfme/Rva005E74AADeleting.cpp,matched,forwarder via local tag to destroy 0x005E7BE2 callers 0x5E801F 0x5E8063 0x5E807F

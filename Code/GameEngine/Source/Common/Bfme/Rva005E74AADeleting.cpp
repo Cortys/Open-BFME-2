@@ -27,3 +27,8 @@ void __cdecl Rva005E7BE2Destroy(Rva005E74AA *first, Rva005E74AA *last, void *ign
 		++first;
 	}
 }
+void __cdecl Rva005E7FB0Forward(Rva005E74AA *first, Rva005E74AA *last)
+{
+	char tag;
+	Rva005E7BE2Destroy(first, last, &tag);
+}
