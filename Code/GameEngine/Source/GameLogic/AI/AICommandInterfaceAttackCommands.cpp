@@ -150,6 +150,7 @@ public:
 	void rva003C77EE(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void rva003C76B8(Int value, CommandSourceType cmdSource);
 	void rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource);
+	void rva003C75DD(const Coord3D *position, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -640,5 +641,16 @@ void AICommandInterface::rva003C78AF(const Waypoint *waypoint, CommandSourceType
 {
 	AICommandParms parms((AICommandType)0x2D, cmdSource);
 	parms.m_waypoint = waypoint;
+	aiDoCommand(&parms);
+}
+
+// ?rva003C75DD@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z @0x003C75DD 118B
+// Evidence: AICMD 0x52 plus m_pos at +0x08 plus m_intValue 1 at +0x34 plus slot-0 aiDoCommand.
+// Caller at 0x003C7BA0 via lea ecx [edi+0x20] with coord plus source 1; next row rva003C7653 in this TU.
+void AICommandInterface::rva003C75DD(const Coord3D *position, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x52, cmdSource);
+	parms.m_pos = *position;
+	parms.m_intValue = 1;
 	aiDoCommand(&parms);
 }

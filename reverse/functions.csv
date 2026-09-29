@@ -42454,3 +42454,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?rva00564C08@Rva00564C08@@QAEXXZ,,0x00564C08,56,Code/GameEngine/Source/Common/Rva00564C08Loop.cpp,matched,chain singleton find loop via rowed 0x002B48E1 and 0x00318D14 caller 0x005669AA
 ??0Rva003ADEBF@@QAE@I@Z,,0x005640EC,35,Code/GameEngine/Source/Common/Rva003ADEBFUIntCtor.cpp,matched,uint ctor via rowed base 0x00563FE1 plus Rva003ADEBF vtable pair callers 0x00564152 0x005646D1
 ?rva003C78AF@AICommandInterface@@QAEXPBVWaypoint@@W4CommandSourceType@@@Z,,0x003C78AF,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap after 0x003C7853 plus waypoint shape plus caller 0x003C8C54
+?rva003C75DD@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x003C75DD,118,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,caller 0x003C7BA0 plus pos plus int1 plus AICMD 0x52
