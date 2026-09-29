@@ -41038,3 +41038,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00383F9C@Rva00383F9C@@QAEXPAURva00383F9CNode@@@Z,,0x00383F9C,59,Code/GameEngine/Source/Common/Rva00383F9CErase.cpp,matched,rb erase via rebalance plus Rva dtor
 ?rva0030B76F@Rva0030B76F@@QAEXPAU1@@Z,,0x0030B76F,78,Code/GameEngine/Source/Common/Rva0030B76FSwap.cpp,matched,swap holder via vector Region float byte swaps
 ?rva0030B812@Rva0030B812@@QAEXPAU1@@Z,,0x0030B812,31,Code/GameEngine/Source/Common/Rva0030B812Swap.cpp,matched,chain swap via inner swap plus int
+?rva00449745@LANAPI@@UAEXI@Z,,0x00449745,167,Code/GameEngine/Source/GameNetwork/LANAPIRva00449745.cpp,matched,chain LANAPI slot24 timer plus message plus slot44
