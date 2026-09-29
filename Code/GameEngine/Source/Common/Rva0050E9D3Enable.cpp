@@ -94,3 +94,15 @@ void Rva004E432ASet(unsigned char val)
 		Rva004E400DEnable();
 	*flag = val;
 }
+
+// ?Rva00444040Enable@@YAXXZ @0x00444040 21B.
+// Guarded enabler: if int at 0x00A03354 is 0 return else tail-jmp to rowed
+// enable 0x00222479 on global 0x009FE4CC. Callers at 0x00444342 0x0044529B
+// 0x0044674E. Unlock lane.
+extern int g_Va00A03354;
+void Rva00444040Enable(void)
+{
+	if (g_Va00A03354 == 0)
+		return;
+	g_Va009FE4CC->enable();
+}
