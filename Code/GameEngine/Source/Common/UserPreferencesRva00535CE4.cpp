@@ -60,6 +60,9 @@
 // ?rva005359FA@UserPreferences@@QAEXVAsciiString@@M@Z @0x005359FA 75B
 // UserPreferences ShortestGameTime-setter path: append ShortestGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
 // Evidence: concat ShortestGameTime 0x00868E48 slot 0x28 releaseBuffer gap same TU unlock.
+// ?rva00535A96@UserPreferences@@QAEXVAsciiString@@M@Z @0x00535A96 75B
+// UserPreferences AverageGameTime-setter path: append AverageGameTime to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
+// Evidence: concat AverageGameTime 0x00868E5C slot 0x28 releaseBuffer gap same TU unlock.
 template <typename T>
 class StringBase
 {
@@ -127,6 +130,7 @@ public:
 	int rva00535F28(AsciiString arg);
 	void rva0053595E(AsciiString arg, float x);
 	void rva005359FA(AsciiString arg, float x);
+	void rva00535A96(AsciiString arg, float x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -253,5 +257,11 @@ void UserPreferences::rva0053595E(AsciiString arg, float x)
 void UserPreferences::rva005359FA(AsciiString arg, float x)
 {
 	arg.concat("ShortestGameTime");
+	v10(arg, x);
+}
+
+void UserPreferences::rva00535A96(AsciiString arg, float x)
+{
+	arg.concat("AverageGameTime");
 	v10(arg, x);
 }
