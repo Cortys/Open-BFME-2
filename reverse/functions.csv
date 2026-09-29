@@ -41988,3 +41988,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005D38C8Get@@YA?AVUnicodeString@@HH@Z,,0x005D38C8,158,Code/GameEngine/Source/Common/Rva005D38C8Fetch.cpp,matched,unlock TheGameText fetch ArmyUnitSwapperCP format caller 0x005D3966
 ?Rva005D3966Set@@YAXHPAURva005D2FD0Outer@@HH@Z,,0x005D3966,132,Code/GameEngine/Source/Common/Rva005D38C8Fetch.cpp,matched,chain from 0x005D38C8 APT CP via 0x00038150 bfmeSetText pin callers 0x005D3A0A 0x005D3F46
 ?rva0053734E@UserPreferences@@QAEHVAsciiString@@@Z,,0x0053734E,97,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,total-games Wins plus Losses chain same TU
+?rva00537C28@UserPreferences@@QAEHXZ,,0x00537C28,23,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,grand-total losses plus wins chain
