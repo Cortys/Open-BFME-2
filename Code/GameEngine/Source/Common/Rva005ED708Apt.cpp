@@ -35,8 +35,8 @@ UnicodeString Rva005ED310Get(int val);
 struct Rva005ED445Slot
 {
 	char m_pad[0x0C];
-	int m_num;
-	char m_pad2[0x14 - 0x10];
+	int m_numRegions;
+	int m_numUnits;
 };
 
 class Rva005ED445
@@ -44,6 +44,7 @@ class Rva005ED445
 public:
 	void rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text);
 	void rva005ED708(int index, int num);
+	void rva005ED76A(int index, int num);
 private:
 	char m_pad44[0x44];
 	Rva005ED445Slot *m_slots;
@@ -53,8 +54,18 @@ void Rva005ED445::rva005ED708(int index, int num)
 {
 	Rva005ED445Slot *base = m_slots;
 	Rva005ED445Slot *slot = base + index;
-	if (num != slot->m_num) {
+	if (num != slot->m_numRegions) {
 		rva005ED516(index, "NumRegions", Rva005ED310Get(num));
-		slot->m_num = num;
+		slot->m_numRegions = num;
+	}
+}
+
+void Rva005ED445::rva005ED76A(int index, int num)
+{
+	Rva005ED445Slot *base = m_slots;
+	Rva005ED445Slot *slot = base + index;
+	if (num != slot->m_numUnits) {
+		rva005ED516(index, "NumUnits", Rva005ED310Get(num));
+		slot->m_numUnits = num;
 	}
 }
