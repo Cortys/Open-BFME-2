@@ -41220,3 +41220,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva002E14DD@Rva002E0CD4@@QBEHXZ,,0x002E14DD,12,Code/GameEngine/Source/Common/Rva002E0CD4Get.cpp,matched,sibling getter get minus m40 plus8 callers 0x002A7318 0x002D486E
 ?rva002E15BC@Rva002E15BC@@QAEXPAX@Z,,0x002E15BC,42,Code/GameEngine/Source/Common/Rva002E15BCClear.cpp,matched,bit clear at this plus1D8 by arg plus38 caller 0x0020EDB5
 ?rva0030817A@Rva0030817A@@QAEXH@Z,,0x0030817A,8,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,holder plus30 forward to 0x330B41 caller 0x308FDC
+?rva004EE043@Rva004EE037@@QAEHXZ,,0x004EE043,20,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling of 0x004EE037 m78 else global 0xFC callers 0x005BE431 0x005C13D3

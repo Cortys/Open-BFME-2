@@ -2836,3 +2836,4 @@ FUN_00730590	0x00330590	109	blocked	try-catch cursor-guard dispatch via pmf call
 ?rva000BC9B1@Rva000BC9B1@@QAEX_N@Z	0x000BC9B1	164	blocked	164B EH_prolog plus list B757D at +0x64 plus manager 0xDFDD04 plus 7 callees needs GX plus globals t=12 model=muse-11
 FUN_003305FD	0x003305FD	112	blocked	EH prolog plus loop callback via interface arg passthrough this needs donor t=10 model=muse-spark
 FUN_002817F2	0x002817F2	443	blocked	443B TGA loader with debug string no donor needs strong model t=5 model=muse-spark
+?rva0040C9A4@Rva0040C985@@QAEMXZ	0x0040C9A4	80	partial	fcom-fnstsw vs retail fld-fld1-fxch-fcompi plus fld1 vs fld-mem 77B vs 80B t=20 model=muse-04 score=0.93 stash=reverse/attempts/0x0040c9a4.cpp
