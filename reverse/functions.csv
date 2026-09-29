@@ -42615,3 +42615,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?rva00583C4E@Rva005843DA@@QAE_NH@Z,,0x00583C4E,58,Code/Libraries/Source/WWVegas/WWLib/Rva005843DACtor.cpp,matched,vslot 9 via same vec28 singleton cmp
 ?rva0015115C@Rva0015115C@@QAE_NPAVChunkLoadClass@@@Z,,0x0015115C,231,Code/GameEngine/Source/Common/Rva0015115CLoad.cpp,matched,chunk load versioned strings via Read plus getBuffer rows
 ??_GRva004D6134@@MAEPAXI@Z,,0x004D6A9D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-11-4D6A9D.cpp,matched,deleting dtor slot 0 of 0x00860474 calls 0x004D6151 plus delete
+??0Rva0041573F@@QAE@ABV0@@Z,,0x0041573F,67,Code/GameEngine/Source/Common/Rva0041573FCopy.cpp,matched,Honest Rva copy ctor with Array56 and tree900 via rowed copies
