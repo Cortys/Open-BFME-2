@@ -3395,3 +3395,4 @@ FUN_009657e1	0x005657E1	29	blocked	wrapper pushes 5 args to 3-arg copy 0x005657B
 ?rva002061D7@Rva002061D7@@QAEXXZ	0x002061D7	126	blocked	EH scope with StringBase temp and attack-priority table t=10 model=muse-11
 ?rva003236A0@Rva003236A0@@QAEXHH@Z	0x003236A0	36	partial	folded push mem vs mov plus push t=15 model=muse-11 score=0.94 stash=reverse/attempts/0x003236a0.cpp
 FUN_0060D594	0x0060D594	68	blocked	esi holds stream with no mov esi ecx t=10 model=muse-10
+_Rva000219C0LocaleName	0x000219C0	23	partial	MSVC 7.1 scheduling only: 23/23 bytes emitted and the rowed ___GetLocaleName call matches but cp is loaded into edx before the buffer lea instead of after the push (2 bytes differ); t=25 model=deepseek-flash score=0.85 stash=reverse/attempts/0x000219c0.cpp
