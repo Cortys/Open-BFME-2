@@ -25,3 +25,11 @@ void Rva002E0E7CReinsert(void **begin, void **end, void *unused, void *extra)
 	for (void **p = begin; p != end; ++p)
 		Rva002E08A2Insert(p, *p, extra);
 }
+
+// ?Rva002E180DReinsert@@YAXPAPAX0PAX@Z @0x002E180D 23B.
+// Wrapper passing (begin end 0 extra) through to Rva002E0E7CReinsert.
+// Evidence: sole caller 0x002E2313; callee rowed 0x002E0E7C.
+void Rva002E180DReinsert(void **begin, void **end, void *extra)
+{
+	Rva002E0E7CReinsert(begin, end, 0, extra);
+}

@@ -2832,3 +2832,4 @@ FUN_00730590	0x00330590	109	blocked	try-catch cursor-guard dispatch via pmf call
 ?Rva005CA1A0Get@@YAHXZ	0x005CA1A0	97	blocked	static List_base plus direct _M_find plus ICF twins need pins t=10 model=muse-spark
 ?Rva005CDC18Create@@YAPAPAVRva005CDB8F@@PAPAV1@PBUPayload@1@@Z	0x005CDC18	50	partial	mov [ebp-4] 0 vs retail and [ebp-4] 0 plus push order 53B vs 50B t=15 model=muse-04 score=0.94 stash=reverse/attempts/0x005cdc18.cpp
 ?rva0027D1C6@Rva0027D1C6@@QAEXXZ	0x0027D1C6	41	partial	base via eax plus mov eax ecx missing ours via ecx t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x0027d1c6.cpp
+??0Rva002E0EF7@@QAE@XZ	0x002E0EF7	39	partial	or-minus1 hoisted early vs retail late t=25 model=muse-03 score=0.92 stash=reverse/attempts/0x002e0ef7.cpp
