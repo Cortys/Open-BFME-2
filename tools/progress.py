@@ -8,8 +8,9 @@ to game.dat's exact bytes (authored and generated C++, vendored source,
 attached prebuilt libraries; dumps excluded), over all code. GAME CODE C++ is
 the C++ we wrote over the game's own code (all code minus vendored source and
 prebuilt libraries); LINKING is the part of it whose files also link cleanly,
-over the same denominator, as measured and stored by the last
-tools/link_census.py run (reverse/link_census_history.csv, linked_authored).
+over the census tree's game code, both measured and stored by the last
+tools/link_census.py run (reverse/link_census_history.csv: linked_authored,
+game_code).
 LINKED, under them, is all our own source in clean files over all code (the
 chart's linked dots). Every figure counts 0xCC padding out, the way the
 denominator does, so the breakdown under them adds up to them. Total exact, at
@@ -605,20 +606,27 @@ def print_headline(padding, denominator, old_split, new_split, old_census, new_c
                 if game == game_before else "delta n/a (the game's own code changed size)",
                 f"C++ we wrote, over the game's own code ({game:,} bytes: no library source or .lib)"))
 
-    def census_line(label, field, over, note):
-        value = new_census.get(field) if new_census else None
-        if not value:
+    def census_line(label, field, over_field, note):
+        """One census figure over its denominator: `over_field` names the
+        census column holding it, or None for all code (fixed)."""
+        def figure(census):
+            if not census or not census.get(field) or (over_field and not census.get(over_field)):
+                return None
+            return int(census[field]), int(census[over_field]) if over_field else denominator
+        now = figure(new_census)
+        if now is None:
             print(f"{label:<14} not measured  <- no census stored {field} yet (tools/link_census.py --history)")
             return
         # A range that starts before any census has nothing to compare with;
         # showing the whole figure as a gain would credit it to that range.
-        was = old_census.get(field) if old_census else None
-        delta = f"delta {format_delta(int(value), int(was), over)}" if was else "delta n/a (no census at the start of the range)"
-        print(_line(label, int(value), over, delta,
-                    f"{note}, census {new_census['date']} at {new_census['commit']}"))
-    census_line("LINKING", "linked_authored", game, "that C++ in files that link cleanly, over the game's own code")
+        was = figure(old_census)
+        delta = (f"delta {now[0] - was[0]:+,} bytes, {percent(*now) - percent(*was):+.2f} pp" if was
+                 else f"delta n/a (no {label} figure stored at the start of the range)")
+        print(_line(label, now[0], now[1], delta, f"{note}, census {new_census['date']} at {new_census['commit']}"))
+    census_line("LINKING", "linked_authored", "game_code",
+                "that C++ in files that link cleanly, over the census tree's game code")
     print("               (the three figures on the README card and in the daily Discord post)")
-    census_line("LINKED", "linked_bytes", denominator, "all our own source in files that link cleanly (the chart)")
+    census_line("LINKED", "linked_bytes", None, "all our own source in files that link cleanly (the chart)")
 
     print(f"\nreal code = .text minus {padding:,} bytes of 0xCC padding = {denominator:,} bytes")
     print("  byte-matched, by where its source comes from:")
