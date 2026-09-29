@@ -3259,3 +3259,4 @@ FUN_0061a651	0x0021A651	119	blocked	name-builder via AsciiString::format %s%s%s 
 ?Rva0021D657Insert@@YAHPAXHH@Z	0x0021D657	29	blocked	wrapper over hinted insert_unique set-vs-tree dual-layout puzzle caller DAA8 t=10 model=muse-spark
 ?rva002C58B3@Rva002C589B@@QAEXXZ	0x002C58B3	92	partial	push edi scheduled before byte stores instead of after; all 92B else exact t=12 model=muse-spark score=0.95 stash=reverse/attempts/0x002c58b3.cpp
 ??0Rva004FD0DA@@QAE@XZ	0x004FD0DA	226	blocked	ctor needs class vtable but dtor unclaimed: declared-only virtual dtor emits no vptr so members shift -4 and zero-reg flips edi-for-eax; EH map states a-b-c vs 2-3-4 imply funclet with out-of-line member dtors while full headers inline them; needs dtor-family worker landing ctor-plus-dtor together t=20 model=muse-06
+?rva004934B8@Rva004934B8@@QAE?AVAsciiString@@XZ	0x004934B8	38	blocked	ptr-chase plus StringBase copy needs EH and state plus placement-new null check t=25 model=muse-09
