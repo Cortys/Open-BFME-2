@@ -124,6 +124,7 @@ public:
 };
 
 #define Rva00DFEA3C (*(Rva003BAAD6Holder **)0x00DFEA3C)
+#define Rva00DFEDF0 (*(Rva003BAAD6Holder **)0x00DFEDF0)
 
 void Rva003BAAD6()
 {
@@ -136,4 +137,10 @@ void __stdcall Rva003BB141Notify(const StringBase<char> &key)
 	Rva0033070EEntry *e = Rva00E01DB0->rva0033070E(key);
 	if (e)
 		Rva00DFEA3C->s026(e);
+}
+
+// ?Rva003BB61E@@YAXXZ @0x003BB61E 14B free forwarder to virtual slot 0x15C via global 0xDFEDF0 caller 0x003CBBCE
+void Rva003BB61E()
+{
+	Rva00DFEDF0->s087();
 }
