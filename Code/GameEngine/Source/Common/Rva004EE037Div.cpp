@@ -19,6 +19,21 @@ public:
 };
 #define TheThing (*(Rva00DFEF10 *const *)0x00DFEF10)
 extern "C" __declspec(dllimport) long __cdecl time(long *value);
+namespace _STL
+{
+struct _Rb_tree_node_base
+{
+	bool _M_color;
+	_Rb_tree_node_base *_M_parent;
+	_Rb_tree_node_base *_M_left;
+	_Rb_tree_node_base *_M_right;
+};
+template <class D> class _Rb_global
+{
+public:
+	static _Rb_tree_node_base *__cdecl _M_increment(_Rb_tree_node_base *);
+};
+}
 class Rva004EE037
 {
 public:
@@ -28,6 +43,7 @@ public:
 	void rva004EE0A6(int a, int b);
 	int rva004EE057(int i);
 	int rva004EE016();
+	int rva004EE33B();
 private:
 	char m_pad[0x5C];
 	int m_5C;
@@ -39,7 +55,9 @@ private:
 	int m_78;
 	char m_mid0[0x04];
 	int m_80[5];
-	char m_high[0x58];
+	char m_high0[0x08];
+	_STL::_Rb_tree_node_base *m_9C;
+	char m_high1[0x4C];
 	int m_EC;
 };
 
@@ -86,4 +104,16 @@ int Rva004EE037::rva004EE016()
 	if (m_70 != 0)
 		return time(0) + m_6C - m_70;
 	return m_6C;
+}
+
+int Rva004EE037::rva004EE33B()
+{
+	_STL::_Rb_tree_node_base *h = m_9C;
+	_STL::_Rb_tree_node_base *node = h->_M_left;
+	int sum = 0;
+	while (node != h) {
+		sum += *(int *)((char *)node + 0x14);
+		node = _STL::_Rb_global<bool>::_M_increment(node);
+	}
+	return sum;
 }

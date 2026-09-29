@@ -41262,3 +41262,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0030815D@Rva0030815D@@QAEXABVAsciiString@@@Z,,0x0030815D,29,Code/GameEngine/Source/Common/Rva00142C80LeaIndexer.cpp,matched,asciistring assign plus8c flag plus9c caller 0x3091B1
 ?Rva002CF35CCopy@@YAXPAURva002CF120@@PBU1@@Z,,0x002CF35C,18,Code/Libraries/Source/WWVegas/WWLib/Rva002CF35CCopy.cpp,matched,null guarded placement copy caller 0x2CF861
 ?Rva002CF84DCreate@@YGPAXPBURva002CF120@@@Z,,0x002CF84D,34,Code/Libraries/Source/WWVegas/WWLib/Rva002CF84DCreate.cpp,matched,stdcall node create via copy 0x2CF35C callers 0x2CFA39 0x33BFD9 0x33BFF4
+?rva004EE33B@Rva004EE037@@QAEHXZ,,0x004EE33B,34,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,map sum via rowed increment 0x00024250
