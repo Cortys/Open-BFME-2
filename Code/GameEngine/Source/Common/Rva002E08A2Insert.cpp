@@ -15,3 +15,13 @@ void Rva002E08A2Insert(void **pos, void *val, void *unused)
 	}
 	*pos = val;
 }
+
+// ?Rva002E0E7CReinsert@@YAXPAPAX0PAX1@Z @0x002E0E7C 33B.
+// Array re-sort sweep: re-inserts each slot from begin to end via
+// Rva002E08A2Insert passing the extra arg through.
+// Evidence: sole caller 0x002E180D; callee rowed 0x002E08A2.
+void Rva002E0E7CReinsert(void **begin, void **end, void *unused, void *extra)
+{
+	for (void **p = begin; p != end; ++p)
+		Rva002E08A2Insert(p, *p, extra);
+}

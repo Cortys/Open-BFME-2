@@ -41194,3 +41194,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0027D35F@Rva0027D35F@@QAEXPAURva0027D35FArg@@H@Z,,0x0027D35F,25,Code/GameEngine/Source/Common/Rva0027D35FSlot30.cpp,matched,same global 0x009FF080 slot30 with arg plus this byte caller 0x27EA13
 ?Rva002E08A2Insert@@YAXPAPAXPAX1@Z,,0x002E08A2,37,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,sorted pointer-array insert by key at plus12 two callers
 ?rva004FF582@Rva004FF582@@QAEXPAURva004FF582Node@@@Z,,0x004FF582,53,Code/GameEngine/Source/Common/Rva004FF582.cpp,matched,chain lane tree free recurses child destroys member frees node
+?Rva002E0E7CReinsert@@YAXPAPAX0PAX1@Z,,0x002E0E7C,33,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,array resort sweep via insert four args caller 0x002E180D
