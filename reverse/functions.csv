@@ -41845,3 +41845,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva000C0513@Rva000C0513@@QAEXIUCoord3D@@@Z,,0x000C0513,73,Code/GameEngine/Source/Common/Rva000C0513Resize.cpp,matched,resize via rowed erase 0x002A133B and fill_insert 0x004E29C8
 ??1Rva00509D4C@@UAE@XZ,,0x00509D4C,89,Code/GameEngine/Source/GameLogic/Object/Rva00509D4CDtor.cpp,matched,novtable dtor 3 strings plus base
 ??$upper_bound@PAHHVRva00422CA8@@@_STL@@YAPAHPAH0ABHVRva00422CA8@@@Z,,0x00423098,83,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,upper_bound int Rva00422CA8 callee rowed 0x00422CA8 caller 0x004235C4
+?rva002CED84@Rva002CEE1B@@QAEXPAX00@Z,,0x002CED84,83,Code/GameEngine/Source/Common/Rva002CEE1BAdd.cpp,matched,Rva002CEE1B array slot fill via caller 0x0004C878 and dtor layout
