@@ -42056,3 +42056,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva001EDC41@Rva001EDD1C@@QAEXHHH@Z,,0x001EDC41,112,Code/GameEngine/Source/Common/Rva001EDD1CSetter.cpp,matched,addassign plus dual clamp same class
 ??0Rva001ED0A9@@QAE@ABVAsciiString@@@Z,,0x001ED0A9,53,Code/GameEngine/Source/Common/Rva001ED0A9Ctor.cpp,matched,ctor string plus vectors via pinned plus rowed
 ?rva000932E1@Rva000932E1@@QAEMXZ,,0x000932E1,104,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000932E1Get.cpp,matched,weather float getter via double override hop plus 1.0f default
+?Rva0021D435MakeHeap@@YAXPAVRva0021915B@@0URva0021B753@@@Z,,0x0021D435,79,Code/GameEngine/Source/Common/System/Rva0021C8D7AdjustHeap.cpp,matched,chain make heap via rowed adjust 0x0021C8D7

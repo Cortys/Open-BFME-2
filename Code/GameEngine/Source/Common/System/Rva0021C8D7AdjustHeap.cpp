@@ -1,5 +1,5 @@
 // cl: /O1 /EHsc /MD
-// ?Rva0021C8D7AdjustHeap@@YAXPAURva0021915B@@HHU1@URva0021B753@@@Z @0x0021C8D7 153B adjust-heap with rowed comparator assign pushheap.
+// ?Rva0021C8D7AdjustHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z @0x0021C8D7 153B adjust-heap with rowed comparator assign pushheap.
 // Evidence: unlock lane all callees rowed; stride 8 plus bool-first comparator plus pushheap caller prove Rva0021915B family; same adjust shape as STL __adjust_heap with EH for non-trivial value.
 template <typename T> class StringBase {
 	friend class AsciiString;
@@ -17,6 +17,7 @@ public:
 };
 class Rva0021915B {
 public:
+	Rva0021915B(const Rva0021915B &other);
 	Rva0021915B &operator=(const Rva0021915B &other);
 	friend struct Rva0021B753;
 private:
@@ -43,4 +44,20 @@ void __cdecl Rva0021C8D7AdjustHeap(Rva0021915B *first, int holeIndex, int len, R
 		holeIndex = secondChild - 1;
 	}
 	Rva0021BB61PushHeap(first, holeIndex, topIndex, value, comp);
+}
+// ?Rva0021D435MakeHeap@@YAXPAVRva0021915B@@0URva0021B753@@@Z @0x0021D435 79B make-heap via rowed adjust 0x0021C8D7 and pair-pinned Rva copy.
+void __cdecl Rva0021D435MakeHeap(Rva0021915B *first, Rva0021915B *last, Rva0021B753 comp)
+{
+	int len = last - first;
+	if (len < 2)
+		return;
+	int parent = (len - 2) / 2;
+	Rva0021915B *parentPtr = first + parent;
+	while (true) {
+		Rva0021C8D7AdjustHeap(first, parent, len, *parentPtr, comp);
+		if (parent == 0)
+			return;
+		--parent;
+		--parentPtr;
+	}
 }
