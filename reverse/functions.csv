@@ -41268,3 +41268,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0052BF33DestroyTagged@@YAXPAURva0052BF33Elem@@0ABU__false_type@_STL@@@Z,,0x0052BF33,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 8 caller 1
 ?rva005F0152@Rva005F0152@@QAEPBVImage@@H@Z,,0x005F0152,51,Code/GameEngine/Source/Common/Rva005F0152ImageGet.cpp,matched,unlock image cache via 2 callers plus prev donor
 ??1Rva00308C13@@QAE@XZ,,0x00308C13,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0027EA49_dtor.cpp,matched,vector-like dtor via rowed Destroy plus free caller 0x282906
+?Rva0052BF4DDestroyTagged@@YAXPAURva0052BF4DElem@@0ABU__false_type@_STL@@@Z,,0x0052BF4D,26,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,unlock destroy tagged stride 0x28 caller 1
