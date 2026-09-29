@@ -29,3 +29,8 @@ bool __stdcall compareStringLookUpLess(const void *left, const void *right)
 	const StringLookUp *lut2 = (const StringLookUp *)right;
 	return _strcmpi(lut1->label->str(), lut2->label->str()) < 0;
 }
+
+bool __stdcall Rva002E56B3Less(const StringLookUp *left, const char *right)
+{
+	return _strcmpi(left->label->str(), right) < 0;
+}

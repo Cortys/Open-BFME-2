@@ -41209,3 +41209,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00330B2E@Rva00330B2E@@QAEXXZ,,0x00330B2E,19,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,member plus8 clear then slot12 chain 0x30B9CA
 ?Rva002E180DReinsert@@YAXPAPAX0PAX@Z,,0x002E180D,23,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,wrapper passing zero through to reinsert caller 0x002E2313
 ?Rva002E1EB7Insert@@YAXPAPAX0PAX1@Z,,0x002E1EB7,58,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,guarded insert via copy-backward or Rva002E08A2Insert caller 0x002E2167
+?Rva002E56B3Less@@YG_NPBUStringLookUp@@PBD@Z,,0x002E56B3,47,Code/GameEngine/Source/GameClient/GameTextStringLookUpLess.cpp,matched,StringLookUp label less-than char key via strcmpi
