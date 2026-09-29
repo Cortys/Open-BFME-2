@@ -41449,3 +41449,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??4?$_Rb_tree@UBfmeRecord001DD3BC@@U1@U?$_Identity@UBfmeRecord001DD3BC@@@_STL@@U?$less@UBfmeRecord001DD3BC@@@3@V?$allocator@UBfmeRecord001DD3BC@@@3@@_STL@@QAEAAV01@ABV01@@Z,,0x001DDC52,115,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_bfme001DD3BC_assign.cpp,matched,chain tree assign via rowed clear plus copy same 115B shape
 ?Rva0014F928Copy@@YAPAVRva0014F4A1@@PAV1@00@Z,,0x0014F928,41,Code/GameEngine/Source/Common/Rva0014F9FillN.cpp,matched,uninitialized_copy range via copy ctor plus placement new
 ?Rva0014F3E7Destroy@@YAXPAVRva0014F3E7@@0PAX@Z,,0x0014F3E7,26,Code/GameEngine/Source/Common/Rva0014F3E7Destroy.cpp,matched,destroy range step 0x4C vtable0 with 0 via dispatcher 0x0014F8BC
+?Rva0051AF0BEnable@@YAXH@Z,,0x0051AF0B,59,Code/GameEngine/Source/Common/Rva0051AF0BEnable.cpp,matched,one-shot enabler with stored int via globals tail enable
