@@ -42536,3 +42536,4 @@ __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_Local
 ?Rva0055A087Format@@YAXPAHPAVAsciiString@@@Z,,0x0055A087,86,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,caller 0x0044DE18 plus pct-d literal plus format concat
 ??4BfmeAssignRecord36@@QAEAAU0@ABU0@@Z,,0x00151336,119,Code/GameEngine/Source/Common/BfmeAssignRecord36Assign.cpp,matched,chain via 0x00151288 and set 0x000055F5 with memcpy tail
 ??_GRva003FAFB9@@UAEPAXI@Z,,0x003FB4EC,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003FAFB9.cpp,matched,chain deleting dtor calls rowed FAFB9 then delete
+??0Rva0055A246@@QAE@ABV0@@Z,,0x0055A3C5,71,Code/GameEngine/Source/Common/Rva0055A246Ctor.cpp,matched,copy ctor plus array-new plus 4x3 movsd plus callers

@@ -19,6 +19,7 @@ class Rva0055A246
 {
 public:
 	Rva0055A246();
+	Rva0055A246(const Rva0055A246 &other);
 	Coord3D m_arr[4];
 };
 
@@ -29,4 +30,16 @@ Rva0055A246::Rva0055A246()
 		m_arr[i].y = 0.0f;
 		m_arr[i].z = 0.0f;
 	}
+}
+
+// ??0Rva0055A246@@QAE@ABV0@@Z @0x0055A3C5 (71B): copy ctor that array-news the
+// 4 Coord3Ds via the rowed empty ctor/dtor then copies 12 floats via movsd.
+// Evidence: same ??_L pushes as default ctor plus 4x3 movsd matching 4x12;
+// callers at 0x00390488 0x0045B87F 0x0048DEDF pass source; returns this.
+Rva0055A246::Rva0055A246(const Rva0055A246 &other)
+{
+	m_arr[0] = other.m_arr[0];
+	m_arr[1] = other.m_arr[1];
+	m_arr[2] = other.m_arr[2];
+	m_arr[3] = other.m_arr[3];
 }
