@@ -6238,3 +6238,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?Rva00142E20@@YAXXZ,0x00142E20,address-derived call alias for 0x007B661B to the rowed vector constructor; no separate semantic claim
 ??$__uninitialized_fill_n@PAVAsciiString@@IV1@@_STL@@YAPAVAsciiString@@PAV1@IABV1@ABU__false_type@0@@Z,0x0002C4D8,real spelling of dup row 0x0002C4D8 object-symbol; byte-exact 27B caller 0x000B9596 needs it
 ?allocate@?$allocator@VRva000BB4AC@@@_STL@@QBEPAVRva000BB4AC@@IPBX@Z,0x00395944,24-byte allocate fold via rowed 0xBC6D1 caller same stride
+?allocate@?$allocator@VRva000BB491@@@_STL@@QBEPAVRva000BB491@@IPBX@Z,0x00395944,24-byte allocate fold via rowed 0xBC6A4 caller same stride
