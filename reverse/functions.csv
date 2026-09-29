@@ -42265,3 +42265,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E0E70@Rva006E0DE0@@QAEXXZ,,0x006E0E70,49,Code/Libraries/Source/Apt/Rva006E0DE0Remove.cpp,matched,Apt pool teardown via freeBlock
 ?rva002B4509@Rva002B4509@@QAEXPAUNode002B4509@@@Z,,0x002B4509,45,Code/GameEngine/Source/Common/Rva002B4509.cpp,matched,unlock sibling recursive free via rowed free
 ?rva0043C6EA@Rva0043C6EA@@QAE_NH@Z,,0x0043C6EA,27,Code/GameEngine/Source/Common/Rva0043C6EABoolWrap.cpp,matched,Bool wrapper around virtual slot 2 via caller evidence
+??0Rva001FDB55@@QAE@XZ,,0x001FDB55,76,Code/GameEngine/Source/Common/Rva001FDB55Ctor.cpp,matched,leaf ctor via baseConstruct vector set members
