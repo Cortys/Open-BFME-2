@@ -3229,3 +3229,7 @@ FUN_008fc2b3	0x004FC2B3	109	blocked	twin of 0x002E16C0 109B EH vector visitor wa
 ??1Rva005DCE08@@QAE@XZ	0x005DCE08	90	partial	whole-body esi-edi swap t=18 model=muse-03 score=0.95 stash=reverse/attempts/0x005dce08.cpp
 ?Rva005F6BD4Format@@YAXPAVUnicodeString@@H@Z	0x005F6BD4	186	blocked	unknown virtual slot 0x3c signature on global 0x009FF0BC plus StringBase EH shape t=10 model=muse-03
 ?rva001FDC0F@Rva001FDC0F@@QAEXH@Z	0x001FDC0F	192	blocked	STL vector-voidptr reserve plus fill-insert plus hashtable-node clone with pin-only callees needs pin verification t=5 model=muse-03
+??0Rva0027C36A@@QAE@ABV0@@Z	0x0027C410	228	partial	loop setup lea order plus fld vs mov for float member t=25 model=muse-07 score=0.98 stash=reverse/attempts/0x0027c410.cpp
+??0BuildListInfo@@QAE@ABV0@@Z	0x00329DE6	253	partial	m_location string vs mov plus gatherers loop vs rep movsd t=30 model=muse-07 score=0.99 stash=reverse/attempts/0x00329de6.cpp
+?rva0018C57C@Rva0018C57C@@QAEXXZ	0x0018C57C	127	blocked	EH prolog plus scope plus Thread_Lock guard plus ref-dec Release slot0 needs SEH or lock-guard layout t=15 model=muse-07
+?rva001FDC0F@Rva001FDC0F@@QAEHABV?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@@Z	0x001FDC0F	192	blocked	STLport vector voidptr plus hashtable New plus BfmeVec erase wall needs donor layout t=5 model=muse-07
