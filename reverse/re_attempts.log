@@ -3011,3 +3011,8 @@ FUN_0063fb58	0x0023FB58	104	blocked	static Invalid Slot StringBase with EH prolo
 FUN_0099702D	0x0059702D	156	blocked	needs donor layout for plus64 PlayerList xfer and slot reuse t=10 model=muse-05
 ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z	0x005AFD43	70	partial	saved-esp and this swapped mov EbP8 esp vs mov ecx esp t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x005afd43.cpp
 FUN_00640d34	0x00240D34	88	blocked	EH list-base plus allocator plus range insert needs donor t=8 model=muse-07
+?rva0039CF1D@Rva0039CF1D@@QAEXABIPBUKeyInfo@@H@Z	0x0039CF1D	86	blocked	stlport _M_find via public find gives esi-edi swap plus imul-to-lea strength reduction and extra iterator pushes; needs direct private _M_find plus Image map overlay t=15 model=muse-09
+??1Rva004EE501@@QAE@XZ	0x004EE501	63	blocked	vector clear Destroy plus free needs EH_prolog; plain method and dtor with /EHsc both give 30B frameless no-EH; missing unwindable object or try that forces 63B EH frame t=12 model=muse-09
+??4Rva0051F6DF@@QAEAAV0@ABV0@@Z	0x0051F6DF	206	partial	tags via otherSize+3 match ebp+0xb and second idiv restored; left imul-vs-lea x4 for stride 20 plus otherSize in mem vs ebx t=25 model=muse-09 score=0.9 stash=reverse/attempts/0x0051f6df.cpp
+?rva00150337@Rva00150337@@QAEHXZ	0x00150337	181	blocked	deque-BfmeE8 insert with map allocate plus Copy FillN Tidy; 5 callees rowed but deque map layout plus 5-arg ret14 ABI plus sar3 stride needs dedicated deque reconstruction t=10 model=muse-09
+?rva0052CCC4@Rva0052CCC4@@QAEXXZ	0x0052CCC4	63	blocked	same EH wall as 0x004EE501: Destroy plus free needs EH_prolog; plain method and dtor with EHsc give 30B no-EH; stlport pod-vector siblings show flags but no unwindable object identified t=8 model=muse-09
