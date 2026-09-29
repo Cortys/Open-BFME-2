@@ -55,3 +55,12 @@ void __cdecl Rva002C531BWrap(void **first, void **last, HeapLess comp)
 	typedef void (__cdecl *MakeHeap5)(void **, void **, HeapLess, int, int);
 	((MakeHeap5)Rva0021AD03MakeHeap)(first, last, comp, 0, 0);
 }
+// ?Rva0021AD3FPopHeap@@YAXPAPAX0HP6A_NPAX1@Z@Z @0x0021AD3F 30B
+// pop_heap wrapper over rowed __pop_heap 0x002C52E0: last-1 as result/value
+// plus trailing zero; caller 0x0021BB0A; same HeapLess comp.
+void __cdecl Rva0021AD3FPopHeap(void **first, void **last, int, HeapLess comp)
+{
+	typedef void (__cdecl *PopHeap6)(void **, void **, void **, void *, HeapLess, int);
+	void **newLast = last - 1;
+	((PopHeap6)Rva002C52E0PopHeap)(first, newLast, newLast, *newLast, comp, 0);
+}
