@@ -24,3 +24,11 @@ void __cdecl Rva0051AF0BEnable(int val)
 	g_Va00A01E48->flag = 1;
 	g_Va009FE4CC->enable();
 }
+
+// ?Rva0051B11CEnable@@YAXXZ @0x0051B11C 9B.
+// Chain lane on 0x0051AF0B above: push 0, call it, pop ecx, ret. Callers at
+// 0x00376DC7 0x004028A0 0x004028E4 0x00512E06.
+void __cdecl Rva0051B11CEnable(void)
+{
+	Rva0051AF0BEnable(0);
+}

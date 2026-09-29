@@ -41452,3 +41452,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0051AF0BEnable@@YAXH@Z,,0x0051AF0B,59,Code/GameEngine/Source/Common/Rva0051AF0BEnable.cpp,matched,one-shot enabler with stored int via globals tail enable
 ?rva0025C061@Rva0025C061@@QAEXPAX@Z,,0x0025C061,28,Code/GameEngine/Source/Common/Rva0025C061Push.cpp,matched,holder+0x74 int to ScienceType vector push via callers at 0x005960D2 et al
 ?rva0029091E@Object@@QBE_NI@Z,,0x0029091E,69,Code/GameEngine/Source/GameLogic/Object/ObjectRva0029091E.cpp,matched,Object bit-gate via memset plus finder wrapper 0x0033DCD1
+?Rva0051B11CEnable@@YAXXZ,,0x0051B11C,9,Code/GameEngine/Source/Common/Rva0051AF0BEnable.cpp,matched,chain wrapper calling 0x0051AF0B with 0
