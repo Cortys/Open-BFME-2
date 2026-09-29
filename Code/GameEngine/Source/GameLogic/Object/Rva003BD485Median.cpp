@@ -184,3 +184,13 @@ void Rva003C69B7PartialSort(Rva003BD485Keyed **first, Rva003BD485Keyed **middle,
 	}
 	Rva003C6464SortHeap(first, middle, extra);
 }
+
+// ?Rva003C75C2PartialSort@@YAXPAPAURva003BD485Keyed@@00H@Z @0x003C75C2 27B.
+// Heap partial-sort adapter over the same keyed array: forwards (first,
+// middle, last, extra) to the 5-arg PartialSort at 0x003C69B7 as (first,
+// middle, last, 0, extra). Chain lane on 0x003C69B7; caller 0x003CA315;
+// cdecl with caller cleanup like siblings.
+void Rva003C75C2PartialSort(Rva003BD485Keyed **first, Rva003BD485Keyed **middle, Rva003BD485Keyed **last, int extra)
+{
+	Rva003C69B7PartialSort(first, middle, last, 0, extra);
+}
