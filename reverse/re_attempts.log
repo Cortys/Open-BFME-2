@@ -3173,3 +3173,4 @@ FUN_009501F4	0x005501F4	394	blocked	vslot394 Winsock plus IAT plus ping differen
 FUN_00A0C7AD	0x0060C7AD	260	blocked	chain260 xfer CxxThrow plus format plus virtuals needs full Xfer context t=5 model=muse-04
 ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z	0x00537A9B	397	partial	397exact 2regions xmm-swap key-offset4 push-sched float1-literal t=25 model=muse-01 score=0.94 stash=reverse/attempts/0x00537a9b.cpp
 ?rva005C1AE4@Rva005C1A36@@QAEHH@Z	0x005C1AE4	73	partial	69vs73 missing-and0-EHstate0 across-held-call table-reloc t=20 model=muse-01 score=0.9 stash=reverse/attempts/0x005c1ae4.cpp
+?rva005D388B@Rva005D388B@@QAEHH@Z	0x005D388B	61	blocked	inlined FunctorNotSet base IAT 0xBBA600 plus vtable 0xBD3B54 plus throwinfo 0xD0B644 needs sub 0x10 plus and ebp-4 0 best 59B vs 61B with push ecx frame t=18 model=muse-07
