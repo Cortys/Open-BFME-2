@@ -187,3 +187,7 @@ template class _STL::vector<BfmePod340, _STL::allocator<BfmePod340 > >;
 // Unrolled random-access __find over 20-byte elements comparing a[0]; caller
 // 0x002198BE is the 27B find wrapper that becomes ready on landing.
 template BfmePod20* _STL::__find(BfmePod20*, BfmePod20*, const BfmePod20&, const _STL::random_access_iterator_tag&);
+// ??$find@PAUBfmePod20@@U1@@_STL@@YAPAUBfmePod20@@PAU1@0ABU1@@Z @0x002198AD 27B
+// find wrapper over the rowed __find 0x002194CC via tag local; callers
+// 0x0021EAA6 0x004EDD71.
+template BfmePod20* _STL::find(BfmePod20*, BfmePod20*, const BfmePod20&);
