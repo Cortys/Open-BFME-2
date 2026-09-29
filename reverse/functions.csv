@@ -41822,3 +41822,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E39A0@Rva006E3230@@QAEXXZ,,0x006E39A0,246,Code/Libraries/Source/Apt/Rva006E3230Validate.cpp,matched,chain lane Apt action drain via bool twin pin
 ?Rva005D5DA5Guarded@@YAXPAVRva005D5A7E@@0V1@H@Z,,0x005D5DA5,75,Code/GameEngine/Source/Common/Rva005D5A7EComparator.cpp,matched,guarded linear insert via rowed comparator copy_backward unguarded
 ?rva0056F495@Rva0056EA91@@QAE_NABVUnicodeString@@@Z,,0x0056F495,110,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EA91CompareSet.cpp,matched,chain of Rva0056EA91 via compare and SetText
+?rva005312BE@Rva005312BE@@QAEXXZ,,0x005312BE,66,Code/GameEngine/Source/Common/Rva005312BEClear.cpp,matched,offsets shared with Rva005315B0IntPairField callers at 0x002F960C plus 4

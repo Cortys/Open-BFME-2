@@ -3074,3 +3074,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva002D4531@Rva002D4531@@QAEXH@Z	0x002D4531	99	blocked	script invoke with AsciiString hidden return plus 8-arg pin needs layout t=8 model=muse-11
 ?Rva00655B90Fesl@@YAHXZ	0x00655B90	549	blocked	Fesl SetField 549B GS string parser needs full layout t=5 model=muse-11
 ?rva003609F7@Rva003609F7@@QAEPAHH@Z	0x003609F7	73	blocked	DamageFX insertNode needs Armor resize plus DamageFX newnode type unification t=12 model=muse-11
+?rva0046391B@Rva0046391B@@QAEHXZ	0x0046391B	186	blocked	186B STL GameLogic multi-call complex t=5 model=muse-03
