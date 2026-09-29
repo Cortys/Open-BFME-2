@@ -6415,3 +6415,4 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ??$_M_allocate_and_copy@PAUBfmeVectorRecord0002154F3@@@?$vector@UBfmeVectorRecord0002154F3@@V?$allocator@UBfmeVectorRecord0002154F3@@@_STL@@@_STL@@IAEPAUBfmeVectorRecord0002154F3@@IPAU2@0@Z,0x00319304
 ??$_M_allocate_and_copy@PAURva00541021@@@?$vector@URva00541021@@V?$allocator@URva00541021@@@_STL@@@_STL@@IAEPAURva00541021@@IPAU2@0@Z,0x00469CED
 ?allocate@?$allocator@URva00541021@@@_STL@@QBEPAURva00541021@@IPBX@Z,0x000B40EA
+??0BfmePod52@@QAE@ABU0@@Z,0x001DD0A0,twin of rowed Rva001DD0A0 copy ctor at same address called by _Construct 0x001DD2DC size 52 match
