@@ -41017,3 +41017,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?write@WinMainTitlePair@@QAEHPAD@Z,,0x00109D3A,37,Code/GameEngine/Source/Main/WinMainPairUnicode.cpp,matched,narrow concat base plus second pair callers 0x10BAD1 0x2D4692
 ?rva00423A68@Rva00423A68@@QAEXPBVModuleData@@@Z,,0x00423A68,13,Code/Libraries/Source/WWVegas/WWLib/stlport_moduledatavector_push.cpp,matched,thin vector const ModuleData push forward
 ?rva00382234@Rva00382234@@QAEXVAsciiString@@@Z,,0x00382234,55,Code/GameEngine/Source/GameNetwork/GameSpy/Rva00382234Set.cpp,matched,AsciiString at FE8 via temp dst-src
+?rva001FF55F@Rva001FF6D7@@QAEXPAURva001FF6D7Node@@@Z,,0x001FF55F,50,Code/GameEngine/Source/Common/Rva001FF6D7List.cpp,matched,unlock recursive teardown via global 0x009B9448 caller 0x001FF6BC
