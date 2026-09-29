@@ -3045,3 +3045,4 @@ FUN_0045213e	0x0005213E	182	blocked	float-heavy SSE+x87 sqrt needs true param la
 ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z	0x00271108	190	partial	extra movss xmm1 global plus reg-reg addss vs direct addss mem t=30 model=muse-03 score=0.98 stash=reverse/attempts/0x00271108.cpp
 ?rva00600579@Rva00600579@@QAEPAUTargetRef00217D4C@@PAPAU2@HPAU2@@Z	0x00600579	82	blocked	EH prolog plus virtual slot2 with in-out a3 plus AddRef Release needs donor layout t=15 model=muse-10
 FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x4 0x6c plus AsciiString temps plus global Eva lookups needs full Xfer vtable and Eva donor t=12 model=muse-02
+??0Rva006FBB10@@QAE@PAVAptValue@@H@Z	0x006FBB10	90	blocked	EH ctor base size plus EBP vs ESP frame plus handler baa1e8 unclaimed t=15 model=muse-11

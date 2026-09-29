@@ -151,3 +151,21 @@ AsciiString *AptNativeHash::rva0070AA40()
     }
     return 0;
 }
+void Rva0070A6D0Release(void *pHashItem)
+{
+    if (!pHashItem) {
+        g_bfmeAptAssertAtE17734("pHashItem != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptNativeHash.h", 0xCD);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    AptValue **ppValue = (AptValue **)((char *)pHashItem + 4);
+    if (!*ppValue) {
+        g_bfmeAptAssertAtE17734("pHashItem->mValue != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptNativeHash.h", 0xCE);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) {
+            __asm int 3
+        }
+    }
+    (*ppValue)->Release();
+    *ppValue = 0;
+}
