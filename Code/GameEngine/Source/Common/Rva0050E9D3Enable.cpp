@@ -106,3 +106,23 @@ void Rva00444040Enable(void)
 		return;
 	g_Va009FE4CC->enable();
 }
+
+// ?Rva0052340DEnable@@YAXXZ @0x0052340D 43B.
+// One-shot enabler, twin of 0x0050E9D3 above on global 0x00A04934: if it is
+// null or its byte at +0x278 is set, return; else set it and the byte at
+// +0x54 of global 0x00A01E48, then tail-jmp to rowed enable 0x00222479 on
+// global 0x009FE4CC. Callers at 0x00523481 0x005235C9 0x005CD60B 0x005CD67A
+// 0x005CD6C4 0x005CD6EF plus jmp 0x0052359B. Unlock lane.
+struct GlobalA04934 { char pad[0x278]; unsigned char flag; };
+extern GlobalA04934 *g_Va00A04934;
+void Rva0052340DEnable(void)
+{
+	GlobalA04934 *p = g_Va00A04934;
+	if (!p)
+		return;
+	if (p->flag)
+		return;
+	p->flag = 1;
+	g_Va00A01E48->flag = 1;
+	g_Va009FE4CC->enable();
+}

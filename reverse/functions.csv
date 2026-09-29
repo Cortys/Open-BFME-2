@@ -41617,3 +41617,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00200084@Rva0023C6A4@@QAE_NXZ,,0x00200084,32,Code/GameEngine/Source/Common/Rva0023C6A4Check.cpp,matched,OR of global-mode check and this predicate
 ??0Rva0054F508@@QAE@H@Z,,0x0054F52F,117,Code/GameEngine/Source/Common/Rva0054F508Ctor.cpp,matched,vtable 0x86AA60 CustomPref GameSpy slot 0x7C base 0x44D54B
 ??$__uninitialized_copy@PAUTreeKey00242F5E@@PAU1@@_STL@@YAPAUTreeKey00242F5E@@PAU1@00ABU__false_type@0@@Z,,0x00523E01,38,Code/Libraries/Source/WWVegas/WWLib/TreeKey00242F5EUninitCopy.cpp,matched,copy TreeKey stride 8 via dup Construct 0x00523DD4 callers 0x0052451A 0x00524565
+?Rva0052340DEnable@@YAXXZ,,0x0052340D,43,Code/GameEngine/Source/Common/Rva0050E9D3Enable.cpp,matched,one-shot enabler via globals 0xA04934 0xA01E48 and tail enable 0x222479
