@@ -42659,3 +42659,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?reset@Rva00802290Owner@@QAEXXZ,,0x0066E520,12,Code/GameEngine/Source/GameNetwork/Y2FeslBrowserSmallMembers.cpp,matched,BFME1 donor Y2FeslBrowserSmallMembers plus caller 0x0066244D plus pin
 ?rva00255CA8@Rva00255CA8@@QAEXXZ,,0x00255CA8,41,Code/GameEngine/Source/Common/Thing/Rva00255CA8.cpp,matched,chain from 0x00254D38 free plus reset via callers 0x00256E6C
 ?rva00255CD1@Rva00255CD1@@QAEXXZ,,0x00255CD1,41,Code/GameEngine/Source/Common/Thing/Rva00255CD1.cpp,matched,twin of 0x00255CA8 via 0x00254D0B plus reset via caller 0x00256476
+?rva004C0FB5@Rva004C0FB5@@QAEPAXPAX@Z,,0x004C0FB5,81,Code/GameEngine/Source/Common/Rva004C0FB5.cpp,matched,chain from 0x004C0D4F row; BfmeThing Go family; slot 0x7C zero fallback
