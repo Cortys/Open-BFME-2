@@ -41317,3 +41317,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva002CF86FCreate@@YGPAXPBURva002CF13B@@@Z,,0x002CF86F,34,Code/Libraries/Source/WWVegas/WWLib/Rva002CF86FCreate.cpp,matched,node create via 0x002CF36E; 34B exact; callers 0x002CFA57 0x0033C114
 ?Rva002CFA4EClone@@YGPAURva002CFA4ENode@@PBU1@@Z,,0x002CFA4E,30,Code/Libraries/Source/WWVegas/WWLib/Rva002CFA4EClone.cpp,matched,node clone via 0x002CF86F; 30B exact; callers 0x002CFCFB 0x002CFD2B
 ?Rva003BB7F0@@YAXXZ,,0x003BB7F0,14,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,free caller of 0x002D3615 with true via global 0xDFF028 caller 0x003CBD45
+?Rva003BBF8F@@YAXXZ,,0x003BBF8F,17,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,free caller of vslot 0x94 with false via global 0xDFEDF0 caller 0x003CC44C

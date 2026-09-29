@@ -53,7 +53,7 @@ public:
     virtual void s034();
     virtual void s035();
     virtual void s036();
-    virtual void s037();
+    virtual void s037(bool v);
     virtual void s038();
     virtual void s039();
     virtual void s040();
@@ -163,4 +163,10 @@ void Rva003BB7E2()
 void Rva003BB7F0()
 {
 	Rva00DFF028->rva002D3615(true);
+}
+
+// ?Rva003BBF8F@@YAXXZ @0x003BBF8F 17B free caller of vslot 0x94 with false via global 0xDFEDF0 caller 0x003CC44C
+void Rva003BBF8F()
+{
+	Rva00DFEDF0->s037(false);
 }
