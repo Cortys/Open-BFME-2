@@ -46,6 +46,7 @@ public:
 	void set(const T *text);
 	void trim(void);
 	Bool nextToken(StringBase *token, const char *seps);
+	void concat(const StringBase &other);
 
 protected:
 	BfmeStringData<T> *m_data;
@@ -304,4 +305,18 @@ Bool LadderPreferences::write(void)
 	}
 
 	return UserPreferences::write();
+}
+
+// ?Rva0055A087Format@@YAXPAHPAVAsciiString@@@Z @0x0055A087 (86B): formats ten
+// ints from the array as "%d " into a temp then concats into the output.
+// Evidence: caller 0x0044DE18 passes its int array plus temp AsciiString;
+// shared "%d " literal at 0x007E3AC0 plus rowed format 0x00038150 and concat
+// 0x00006987; loop 0xa matches ten ints.
+void __cdecl Rva0055A087Format(int *vals, AsciiString *out)
+{
+	AsciiString tmp;
+	for (int i = 0; i < 10; ++i) {
+		tmp.format("%d ", vals[i]);
+		out->concat(tmp);
+	}
 }

@@ -3399,3 +3399,8 @@ _Rva000219C0LocaleName	0x000219C0	23	partial	MSVC 7.1 scheduling only: 23/23 byt
 FUN_0046737e	0x0006737E	278	blocked	static-guard SSE x87 BoundedShortGrid 4-call loop needs data pins t=12 model=muse-12
 ?rva0006B3F3@Rva00067878@@QAEXXZ	0x0006B3F3	217	partial	214B vs 217B 66insns extra push ecx plus missing or -1 after IB new plus push-lea order for assign plus lea ebp-14 vs ebp-10 t=30 model=muse-12 score=0.91 stash=reverse/attempts/0x0006b3f3.cpp
 ??0Rva003FD789@@QAE@ABV?$StringBase@D@@@Z	0x003FD716	109	partial	tail int store plus0x04 scheduled early before plus0x20 floats while retail places it after plus0x28 t=18 model=muse-08 score=0.95 stash=reverse/attempts/0x003fd716.cpp
+?rva00596269@Rva005961D6@@QAEXXZ	0x00596269	98	partial	begin-end loads swapped ecx-vs-eax only residue t=15 model=muse-spark score=0.95 stash=reverse/attempts/0x00596269.cpp
+FUN_009dffb6	0x005DFFB6	29	blocked	29B STL Rb_tree BuddyInfo insert_unique wrapper needs exact map layout t=5 model=muse-spark
+FUN_0099614b	0x0059614B	139	blocked	139B STL find-erase plus hero remover plus Get dispatch needs exact vector layout t=10 model=muse-spark
+FUN_00ad2930	0x006D2930	169	blocked	169B Apt GC allocator with IsAllocated asserts no BFME1 donor t=5 model=muse-spark
+?overflow@BfmeVec440@@QAEXPAUBfmeElem440@@ABU2@ABUBfmeFalse440@@I_N@Z	0x006BFD30	299	blocked	299B BfmeVec440 overflow with GeometryInfo copy plus bfmeCopyFC plus virtual dtor needs overflow recipe t=10 model=muse-spark
