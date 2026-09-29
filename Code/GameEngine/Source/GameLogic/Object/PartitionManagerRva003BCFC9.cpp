@@ -27,3 +27,13 @@ void __stdcall Rva003BD412Set(unsigned char value)
 {
 	Rva004E432ASet(value);
 }
+
+// ?Rva003BD405Set@@YGXE@Z @0x003BD405 13B: free forwarder to rowed Rva0043CCDASet.
+// Evidence: push dword [esp+4] call 0x0043CCDA pop ecx ret 4; callee is
+// void(unsigned char) in Rva0050E9D3Enable.cpp; caller 0x003CEC81 in huge
+// dispatch. Chain lane on 0x0043CCDA.
+void Rva0043CCDASet(unsigned char value);
+void __stdcall Rva003BD405Set(unsigned char value)
+{
+	Rva0043CCDASet(value);
+}

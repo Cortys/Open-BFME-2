@@ -42268,3 +42268,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva001FDB55@@QAE@XZ,,0x001FDB55,76,Code/GameEngine/Source/Common/Rva001FDB55Ctor.cpp,matched,leaf ctor via baseConstruct vector set members
 ?xfer@Rva00342228@@MAEXPAVXfer@@@Z,,0x00342283,108,Code/GameEngine/Source/Common/Rva00342228Xfer.cpp,matched,slot3 xfer shared by vtables 0x008118B0 and 0x00811900 via Snapshot pattern
 ??$__copy@PBUBfmeNarrowRecord00079C23@@PAU1@H@_STL@@YAPAUBfmeNarrowRecord00079C23@@PBU1@0PAU1@ABUrandom_access_iterator_tag@0@PAH@Z,,0x000C379B,50,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_79c23_copy.cpp,matched,BfmeNarrowRecord __copy via rowed assign stride 0x2c
+?Rva003BD405Set@@YGXE@Z,,0x003BD405,13,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BCFC9.cpp,matched,Free forwarder to rowed Rva0043CCDASet via twin precedent
