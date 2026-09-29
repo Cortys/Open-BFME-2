@@ -3144,3 +3144,9 @@ FUN_0053331a	0x0013331A	102	blocked	EH plus manual ScopedCriticalSection Lock-Un
 ??0Rva004FBC4D@@QAE@ABV?$StringBase@G@@0H@Z	0x004FBC4D	113	partial	113B same-size 3 regions; tail or-mov-bytes vs mov-ecx scheduling plus vtable-DIR32; m04-in-base fixed head; no shape-lever for ctor tail order t=30 model=muse-12 score=0.92 stash=reverse/attempts/0x004fbc4d.cpp
 ??0Rva0073F708@@QAE@PAXH@Z	0x0073F708	112	partial	missing thread store scheduling vs new ThreadObj t=20 model=muse-spark score=0.96 stash=reverse/attempts/0x0073f708.cpp
 ??0Rva000A8893@@QAE@PAXH@Z	0x000A8893	112	partial	twin of 0x0073F708 same thread store gap t=5 model=muse-spark score=0.96 stash=reverse/attempts/0x000a8893.cpp
+FUN_0098DDF2	0x0058DDF2	105	blocked	new plus memcpy plus dup string ctor needs Rva004D5795 layout t=8 model=muse-11
+?rva0058F7D8@NetPacket@@IAE_NPAVNetCommandRef@@@Z	0x0058F7D8	423	partial	ebx edi swap for ref cmd plus tail jmp xor missing t=25 model=muse-11 score=0.88 stash=reverse/attempts/0x0058f7d8.cpp
+FUN_0098F5E3	0x0058F5E3	501	blocked	same ebx edi wall as banked 0058F7D8 partial plus ID C step t=5 model=muse-11
+FUN_0098FE15	0x0058FE15	400	blocked	same ebx edi framework wall as banked 0058F7D8 partial no percentage value t=3 model=muse-11
+?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z	0x003B573E	80	partial	imul 0x14 vs lea 5x plus 4x single insn wall t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x003b573e.cpp
+?rva0037EE4C@Rva0037EE4C@@QAEHPBURva0037EE4COuter@@HH@Z	0x0037EE4C	109	partial	ternary sete vs direct branches plus counter homing t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x0037ee4c.cpp
