@@ -182,4 +182,19 @@ void __partial_sort(RandomAccessIter first, RandomAccessIter middle,
 template void __partial_sort<int *, int,
 	Rva00422CA8>(int *, int *, int *, int *, Rva00422CA8);
 
+// ??$partial_sort@PAHVRva00422CA8@@@_STL@@YAXPAH00VRva00422CA8@@@Z
+// retail 0x00424DB1, 27 bytes. Public partial_sort wrapper forwarding to the
+// rowed __partial_sort 0x00424C21 with (int*)0 dummy. Evidence: chain lane
+// (calls 0x00424C21 just landed); caller 0x004253F3 in 0x00425385; unblocks
+// 0x00425385.
+template <class RandomAccessIter, class Compare>
+void partial_sort(RandomAccessIter first, RandomAccessIter middle,
+	RandomAccessIter last, Compare comp)
+{
+	__partial_sort(first, middle, last, (int *)0, comp);
+}
+
+template void partial_sort<int *,
+	Rva00422CA8>(int *, int *, int *, Rva00422CA8);
+
 }
