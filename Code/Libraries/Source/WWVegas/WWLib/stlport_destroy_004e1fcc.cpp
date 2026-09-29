@@ -21,3 +21,23 @@ void __cdecl Rva004E1FCCGet(Rva004E1AD5Item *first, Rva004E1AD5Item *last)
 	Rva004E1FCCTag tag;
 	Rva004E1AD5Get(first, last, &tag);
 }
+
+// ?rva004E2227@Rva004E2227@@QAEXXZ, RVA 0x004E2227, 30B. Chain lane: calls
+// rowed 0x004E1FCC range destroy with first/last at this+0/+4 then frees
+// first via rowed free 0x00030830 when non-null; push-esi this plus
+// pop-cleaned pushes. Caller at 0x004E3973. Owner unknown so honest
+// address-derived names.
+extern "C" void __cdecl free(void *p);
+struct Rva004E2227
+{
+	Rva004E1AD5Item *m_first;
+	Rva004E1AD5Item *m_last;
+	void rva004E2227();
+};
+
+void Rva004E2227::rva004E2227()
+{
+	Rva004E1FCCGet(m_first, m_last);
+	if (m_first != 0)
+		free(m_first);
+}
