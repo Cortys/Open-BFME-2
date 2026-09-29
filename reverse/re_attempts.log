@@ -3191,3 +3191,8 @@ FUN_006ade71	0x002ADE71	77	blocked	multi-map clear-findSlot dual-use plus GameWi
 FUN_006a7644	0x002A7644	51	blocked	dual-type copy-destroy plus odd lea ebp+b plus GameWindow typedefs t=10 model=muse-spark
 ?Rva0021D39EPopHeap@@YAXPAVRva0021915B@@0URva0021B753@@@Z	0x0021D39E	91	blocked	5-arg popheap-aux shape with value at +0x14 comp at +0x1c vs 3-arg std popheap 118B mismatch t=15 model=muse-10
 ?Rva0021D9C7@@YAwhatever	0x0021D9C7	25	blocked	5 pushes for 3-arg make-heap callee paradox t=10 model=muse-10
+?Rva003C8E2BExit@@YGXABVAsciiString@@@Z	0x003C8E2B	94	partial	push esi xor esi vs push 0 plus cmp vs test plus pop esi t=12 model=muse-03 score=0.95 stash=reverse/attempts/0x003c8e2b.cpp
+?rva0027C36A@Rva0027C36A@@QAE_NXZ	0x0027C36A	166	blocked	ctor ATL Region3D4 plus 6B2 ReturnThis ICF plus 19 floats unknown class t=5 model=muse-03
+??1Rva003B35B1@@UAE@XZ	0x003B35B1	177	partial	missing jmp xor always-delete plus loop dec plus pop ecx t=15 model=muse-03 score=0.93 stash=reverse/attempts/0x003b35b1.cpp
+?Rva002C5DD0Parse@@YAHPBD@Z	0x002C5DD0	112	partial	index vs pointer plus neg sbb bool plus return reg t=12 model=muse-03 score=0.92 stash=reverse/attempts/0x002c5dd0.cpp
+?rva002C6F8C@MapInsert002c6c93@@QAEAAUTreeHintPayload001F8ACB@@ABVAsciiString@@@Z	0x002C6F8C	124	blocked	STL map op_index Ref lower_bound private friend plus Payload insert 2 payloads need donor t=10 model=muse-03
