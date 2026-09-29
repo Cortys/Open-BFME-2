@@ -41976,3 +41976,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00566663Copy@@YAPAURva004FAFF2@@PAU1@00@Z,,0x00566663,50,Code/GameEngine/Source/Common/Rva00566663Copy.cpp,matched,array copy via rowed assign stride 0x58
 ?Rva00083CD7Clear@@YGXPAVRva00083CB2@@@Z,,0x00083CD7,18,Code/GameEngineDevice/Source/W3DDevice/GameClient/TerrainTrackEdgeInfoO1.cpp,matched,gap clears m_38 and m_1311 caller 000C7A2C
 ??1Rva005B72E7@@QAE@XZ,,0x005B72E7,107,Code/GameEngine/Source/Common/Rva005B72E7Dtor.cpp,matched,deleting-dtor caller 0x005B7352 plus list-dtor 0x005B77F1
+?rva000E459F@Rva000E459F@@QAE_NXZ,,0x000E459F,315,Code/GameEngine/Source/Common/Rva000E459F.cpp,matched,chain via Drawable rva00272C9E plus getTransformMatrix matrix plus clamp

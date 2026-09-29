@@ -3157,3 +3157,8 @@ FUN_004A49F5	0x000A49F5	248	blocked	eax plus ecx entry convention unprovable cal
 ?rva00308325@Rva00308325@@QAEXPAMMH@Z	0x00308325	242	partial	xmm assignment plus out0 tail merge plus count rem regs t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x00308325.cpp
 FUN_005A73DE	0x005A73DE	250	blocked	250B NAT PROBED method needs stlport string frame plus OwnedRecord plus virtual slot t=12 model=muse-spark
 FUN_002E8548	0x002E8548	101	blocked	pool grow needs imul not lea plus register swap plus goto loop shape t=18 model=muse-spark
+?rva00272BAB@Drawable@@QAEXHH@Z	0x00272BAB	60	partial	missing mov ecx eax first in ecx not eax vtbl eax not edx t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x00272bab.cpp
+?rva0046DA6B@Rva0046DA6B@@QAEXHHHH@Z	0x0046DA6B	258	blocked	chain 258B multi-loop STL x87 float unknown class no callers prev-next HordeContain only t=5 model=muse-03
+?rva0049015C@Rva0049015C@@QAEXH@Z	0x0049015C	89	blocked	ebx int-vs-Drawable this confusion getDesiredGatherers int but mov ecx ebx for Drawable calls needs donor t=8 model=muse-03
+??1AptNativeHash@@QAE@XZ	0x0070A840	111	blocked	gap Apt dtor true size 203 not 111 needs proto releases plus full boundary t=12 model=muse-03
+?rva002A7DDE@Rva002A7DD0@@QAE_NPAX@Z	0x002A7DDE	54	blocked	gap ask-plus-relationship early rets vs shared jmp needs shape t=10 model=muse-03
