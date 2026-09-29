@@ -41467,3 +41467,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??0Rva0014F40C@@QAE@XZ,,0x0014F40C,44,Code/GameEngine/Source/Common/Rva0014F40CCtor.cpp,matched,default ctor vtable 0x007D38A0 plus 3 member vtables Sas member
 ?Rva001DD8C9Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x001DD8C9,37,Code/GameEngine/Source/Common/Rva001DD8C9Alloc.cpp,matched,unlock hash node alloc via rowed allocate plus Construct same 37B shape
 ?Rva0049B6AEAppend@@YGXPBDPAV?$StringBase@D@@@Z,,0x0049B6AE,47,Code/GameEngine/Source/Common/Rva0049B6AEAppend.cpp,matched,Path join via isEmpty plus concat default
+?push_back@?$list@UBfmeFloat4Record00469C61@@V?$allocator@UBfmeFloat4Record00469C61@@@_STL@@@_STL@@QAEXABUBfmeFloat4Record00469C61@@@Z,,0x00206579,26,Code/Libraries/Source/WWVegas/WWLib/stlport_list_float4_469c61_insert.cpp,matched,chain list push_back via rowed insert same 26B shape

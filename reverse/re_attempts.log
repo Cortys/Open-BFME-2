@@ -2928,3 +2928,4 @@ FUN_00b398d0	0x007398D0	143	blocked	EH ctor dual vtable plus interim 0xBBB554 st
 ?getAllPoints@ProjectileStreamUpdate@@QAEXPAVVector3@@PAH@Z	0x0033F090	143	partial	float copies via integer not movss plus delayed X store t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0033f090.cpp
 FUN_0073d3e8	0x0033D3E8	75	blocked	map-find plus Upgrades-default vs Rva-copy branches need parent map at 0x388 and Upgrades-Rva identity; time-box t=10 model=muse-03
 FUN_00819561	0x00419561	139	blocked	map lower_bound plus SSE-x87 float needs ecx-this without spill plus jae shape t=15 model=muse-03
+FUN_005ddcc5	0x001DDCC5	192	blocked	Rva000427195 bucket copy needs mixed BfmeVec erase plus vector reserve plus fill-insert ambiguity and private _M_fill_insert vs bfmeInsert at 0x29CA0 t=15 model=muse-02
