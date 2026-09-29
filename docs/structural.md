@@ -19,6 +19,18 @@ compiles to a different shape. Expect 30-60 minutes per function.
       tail (`ret`/`int3` within a few bytes) mean the drift vote shifted. Find
       the true start in `reverse/ghidra_functions.csv`; trust a `ret` boundary
       plus export evidence where Ghidra merged functions.
+
+      Do this BEFORE anything else, because it is the usual case rather than
+      the exception. Measured 2026-09-29: of the 3,782 `structural` rows in
+      `reverse/zh_sweep/drift_report.csv`, only **28** have a `candidate_rva`
+      that is a function start in the inventory -- 99.3% do not. Mean alignment
+      is ~20% either way, so a low score does not tell you which kind you have.
+      Confirming the boundary costs one query; not confirming it costs the
+      30-60 minutes this loop warns about. `0x00758338` is the worked example:
+      it is mid-instruction inside a function at `0x00758310`, decodes as
+      `or al,0x98`, and reached `next_work --tier structural` as a served
+      candidate carrying the correct byte count -- which is why the count alone
+      is not evidence.
    c. **field-offset diffs** (`[reg+0xNN]` vs `[reg+0xMM]`, same shape): BFME
       relaid a struct, or retail has a real bug. Change the member access — the
       header only when verified siblings permit — then byte-verify the file.
