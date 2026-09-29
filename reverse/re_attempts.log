@@ -3153,3 +3153,5 @@ FUN_0098FE15	0x0058FE15	400	blocked	same ebx edi framework wall as banked 0058F7
 ??0Rva005D36D1@@QAE@HABVAsciiString@@@Z	0x005D36D1	96	blocked	ctor EH AsciiString Outer reinterpret plus OCL12 layout t=15 model=muse-07
 FUN_008fa738	0x004FA738	109	blocked	EH plus interface-virtual loop over raw vectors; single_variant far 68B no-prolog vs 109B prolog plus interface layout unknown; needs donor plus vector-interface identity t=10 model=muse-12
 FUN_008fb0c7	0x004FB0C7	97	blocked	search-plus-assign with idiv-0x58 count and imul-0x58 found; 2 variants far 77B frameless and 88B volatile-base-frame vs 97B 10 regions; interface-vector layout plus cdq-vs-xor plus frame-slot needs donor t=15 model=muse-12
+FUN_004A49F5	0x000A49F5	248	blocked	eax plus ecx entry convention unprovable callers all over 200B t=5 model=muse-11
+?rva00308325@Rva00308325@@QAEXPAMMH@Z	0x00308325	242	partial	xmm assignment plus out0 tail merge plus count rem regs t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x00308325.cpp

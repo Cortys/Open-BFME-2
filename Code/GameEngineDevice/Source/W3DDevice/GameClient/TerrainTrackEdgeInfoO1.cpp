@@ -42,6 +42,7 @@ class Rva00083CB2
 {
 public:
 	void rva00083CB2();
+	friend void __stdcall Rva00083CD7Clear(Rva00083CB2 *p);
 private:
 	char _pad00[0x30];
 	int m_30;
@@ -51,7 +52,8 @@ private:
 	int m_1308;
 	int m_130C;
 	unsigned char m_1310;
-	char _pad1311[0x131D - 0x1311];
+	unsigned char m_1311;
+	char _pad1312[0x131D - 0x1312];
 	unsigned char m_131D;
 };
 // ?rva00083CB2@Rva00083CB2@@QAEXXZ retail 0x00083CB2 37B reset of scattered
@@ -115,4 +117,12 @@ void Rva00083CE9Host::rva00084002()
 		rva00083CE9(cur);
 		cur = next;
 	}
+}
+// ?Rva00083CD7Clear@@YGXPAVRva00083CB2@@@Z retail 0x00083CD7 18B clear
+// m_38 and m_1311 of the edge info. Evidence: gap between 0x00083CB2 and
+// 0x00083CE9; caller at 0x000C7A2C.
+void __stdcall Rva00083CD7Clear(Rva00083CB2 *p)
+{
+	p->m_38 = 0;
+	p->m_1311 = 0;
 }
