@@ -155,6 +155,7 @@ public:
 	Int getStrategicScenario(void);
 	void setStrategicScenario(Int scenario);
 	Int rva0054F5A4(void);
+	void rva0054F7C0(Int val);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -251,6 +252,18 @@ Int GameModePreferences::rva0054F5A4(void)
 	if (it == end())
 		return 0;
 	return atoi(it->second.str());
+}
+
+// ?rva0054F7C0@GameModePreferences@@QAEXH@Z retail 0x0054F7C0 101B.
+// LobbyRoomID setter: format "%d" then map makeKey("LobbyRoomID") slot assign.
+// Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
+// AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; caller 0x005A3899.
+void GameModePreferences::rva0054F7C0(Int val)
+{
+	AsciiString tmp;
+	tmp.format("%d", val);
+	AsciiString &slot = (*this)[makeKey("LobbyRoomID")];
+	slot = tmp;
 }
 
 // Zero Hour's LANPreferences on the mode-keyed base (vtable 0x00C3EF04).
