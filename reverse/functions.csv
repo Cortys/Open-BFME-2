@@ -41138,3 +41138,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??1Rva0050A7AD@@UAE@XZ,,0x0050A7AD,56,Code/GameEngine/Source/GameLogic/Object/Rva0050A7ADDtor.cpp,matched,dtor filter at 0x160 base 0x00507823 caller 0x0050A791
 ??_GRva0025EF18@@UAEPAXI@Z,,0x0025EFF1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-25EFF1.cpp,matched,deleting dtor calls rowed 0x25EF18 plus delete
 ??$_M_allocate_and_copy@PAVRva000BB4AC@@@?$vector@VRva000BB4AC@@V?$allocator@VRva000BB4AC@@@_STL@@@_STL@@IAEPAVRva000BB4AC@@IPAV2@0@Z,,0x000BC6D1,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb4ac_allocate_copy.cpp,matched,chain from 0x000BBB12 plus caller 0x000C21CE
+?rva0025EB36@Rva0025EB36@@QAEXXZ,,0x0025EB36,13,Code/GameEngine/Source/GameClient/ViewRva0025EB36.cpp,matched,thiscall copies 48 to 28 and 4C to 2C caller 0x8D256
