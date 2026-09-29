@@ -14,7 +14,7 @@ struct Rva007EB810Diag
 	virtual void fail( const char *expr, const char *file, int line );
 };
 
-extern Rva007EB810Diag *Rva007EB810Get();
+extern int Rva007EB810Get();
 
 struct Rva00803080;
 
@@ -54,7 +54,7 @@ void Rva00803080::removePendingRequest( int index )
 {
 	if( index < 0 || index >= m_10 )
 	{
-		Rva007EB810Get()->fail(
+		((Rva007EB810Diag *)Rva007EB810Get())->fail(
 			"index >= 0 && index < mNumPendingRequests",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserpinger.cpp",
 			0x11F );
