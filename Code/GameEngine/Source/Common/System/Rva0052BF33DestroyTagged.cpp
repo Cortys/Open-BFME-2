@@ -4,6 +4,7 @@
 // virtual dtor (scalar-deleting slot with zero flag); caller 0x005A6EDA is the
 // tag-dispatch DestroyRange. Same shape as Rva0052BF81_DestroyTagged in
 // LivingWorldRegionConnectionHelpers.cpp but stride 8. Next is that TU.
+void free(void *block);
 namespace _STL
 {
 struct __false_type
@@ -142,4 +143,21 @@ void Rva0052C3BFDestroyRange(Rva0052BF67Elem *first, Rva0052BF67Elem *last)
 {
 	_STL::__false_type tag;
 	Rva0052BF67DestroyTagged(first, last, tag);
+}
+
+// ?rva0052CAAB@Rva0052CAABVec@@QAEXXZ retail 0x0052CAAB 30B. Chain lane: calls
+// this TU's 0x0052C24E then frees storage via pinned C++ free; caller at
+// 0x0052D7E0.
+struct Rva0052CAABVec
+{
+	void rva0052CAAB();
+	Rva0052BCE7Elem *m_start;
+	Rva0052BCE7Elem *m_finish;
+};
+void Rva0052CAABVec::rva0052CAAB()
+{
+	Rva0052C24EDestroyRange(m_start, m_finish);
+	Rva0052BCE7Elem *start = m_start;
+	if (start != 0)
+		free(start);
 }
