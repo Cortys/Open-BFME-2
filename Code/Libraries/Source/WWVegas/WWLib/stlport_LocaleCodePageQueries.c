@@ -272,3 +272,43 @@ char *Rva0084EF00(LocaleCodePageObject_0084EED0 *object)
         return buffer;
     }
 }
+
+// Rva000219C0LocaleName (retail 0x000219C0, 23B): the donor's five
+// Rva0084E7B0/7D0/7F0/810/830LocaleName twins, which lotrbfme.exe ICF-folded
+// onto one body. Retail keeps a single identity here, so the name stays
+// address-derived rather than borrowing one twin's. The argument slots are
+// read off the callee (0x000215B0): it keeps its destination in eax and its
+// appended code-page string on the stack, so retail's caller puts the object's
+// codePage field on the stack and the caller's buffer in eax.
+char *Rva000219C0LocaleName(LocaleCodePageObject_0084EED0 *object, char *buf)
+{
+    return __GetLocaleName(object->locale, object->codePage, buf);
+}
+
+// Rva0084EF30 (retail 0x000220C0, 227B): time-format builder, last of the
+// locale-buffer getters in this file-unit. GetLocaleInfoA fills a 4-byte
+// separator (type 0x1e), the rowed ___ConvertFromACP (0x00021740) re-codes it,
+// then the donor composes "%H<sep>%M<sep>%S %p" with strcpy/strcat into the
+// static format buffer. Retail reads the three literals from the .rdata pool
+// at 0x00BBD3F4/0x00BBD3FC/0x00BBD400 and writes the format at 0x00DDEFA8; the
+// buffer stays the donor's unresolved extern (a new root symbol, so its DIR32
+// slots are masked like the donor's own, unlike the GetLocaleInfoA argument
+// buffers above where retail's operand is a bare immediate).
+extern char locale_format_0084EF30[];
+
+char *Rva0084EF30(LocaleCodePageObject_0084EED0 *object)
+{
+    LCID locale = object->locale;
+    char separator[4];
+    GetLocaleInfoA(locale, 0x1e, separator, 4);
+    __ConvertFromACP(separator, 4, object->codePage);
+    {
+        char *format = locale_format_0084EF30;
+        strcpy(format, "%H");
+        strcat(format, separator);
+        strcat(format, "%M");
+        strcat(format, separator);
+        strcat(format, "%S %p");
+        return format;
+    }
+}
