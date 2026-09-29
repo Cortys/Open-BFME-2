@@ -255,3 +255,9 @@ template class SubsystemSlot<GameState>;
 // ParticleSystemManager 0xbe72d0 by 0x0022A3EC, Radar 0xbe7384 by 0x0022B888.
 template class SubsystemSlot<ParticleSystemManager>;
 template class SubsystemSlot<Radar>;
+// GameClient: registration site 0x0022F35B pushes "TheGameClient", ZH declares
+// extern GameClient *TheGameClient; initSubsystem at 0x0022B217 installs 0xbe734c.
+// GameResultsInterface: site 0x0022FB5A pushes "TheGameResultsQueue", ZH declares
+// extern GameResultsInterface *TheGameResultsQueue; 0x0022C058 installs 0xbe73c8.
+template class SubsystemSlot<GameClient>;
+template class SubsystemSlot<GameResultsInterface>;
