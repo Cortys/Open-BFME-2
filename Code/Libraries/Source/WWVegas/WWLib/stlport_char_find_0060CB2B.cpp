@@ -20,6 +20,17 @@ struct Rva0060CB2BNode
 	const char *m_key;
 };
 
+struct Rva0060CB2BIterator
+{
+	Rva0060CB2BNode *m_cur;
+	const void *m_ht;
+
+	Rva0060CB2BIterator(Rva0060CB2BNode *cur, const void *ht)
+		: m_cur(cur), m_ht(ht)
+	{
+	}
+};
+
 struct Rva0060CB2BBuckets
 {
 	void **_M_start;
@@ -40,6 +51,7 @@ class Rva0060CB2B
 {
 public:
 	Rva0060CB2BNode *rva0060CB2B(const char * const &key) const;
+	Rva0060CB2BIterator rva0060CB7C(const char * const &key);
 
 private:
 	int m_00;
@@ -56,4 +68,9 @@ Rva0060CB2BNode *Rva0060CB2B::rva0060CB2B(const char * const &key) const
 	{
 	}
 	return first;
+}
+
+Rva0060CB2BIterator Rva0060CB2B::rva0060CB7C(const char * const &key)
+{
+	return Rva0060CB2BIterator(rva0060CB2B(key), this);
 }
