@@ -80,3 +80,17 @@ Rva0056EF65 *Rva0056EF65::rva0056EF65(void *a1, void *a2)
 	m_1c ^= e;
 	return this;
 }
+// ?Rva0056ED34Pick@@YAXPAH0@Z @0x0056ED34 44B gap between 0x0056ECDA and 0x0056EDBA
+extern int g_Va00DD29FC[4];
+extern int g_Va00DD2A0C[4];
+void __cdecl Rva0056ED34Pick(int *out1, int *out2);
+void __cdecl Rva0056ED34Pick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, esp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DD2A0C[i];
+	*out2 = g_Va00DD29FC[i];
+}
