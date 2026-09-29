@@ -1,0 +1,77 @@
+// cl: /O1 /MD /EHsc
+// ?rva005ED445@Rva005ED445@@QAEXABVUnicodeString@@@Z, retail 0x005ED445, 103 bytes.
+// APT RegionName setter via level and outer name; true bool.
+// Evidence: format APT:_level%u.%s_RegionName via 0x00038150; bfmeSetText pin 0x00225301; releaseBuffer 0x00036410; globals 0x009FE4CC 0x007BAC1C; callers 0x005ED8D1 0x005EDB74; precedent Rva005FDF1CApt.cpp Rva005D2FD0Apt.cpp.
+template <typename T> struct BfmeStringData
+{
+	int refCount;
+	unsigned short length;
+	unsigned short capacity;
+	T text[1];
+};
+
+template <typename T> class StringBase
+{
+	friend class AsciiString;
+	friend class UnicodeString;
+public:
+	StringBase() : m_data(0) {}
+	void format_va(const T *format, char *args);
+private:
+	~StringBase() { releaseBuffer(); }
+	void releaseBuffer();
+	BfmeStringData<T> *m_data;
+};
+
+class AsciiString : private StringBase<char>
+{
+public:
+	AsciiString() {}
+	~AsciiString() {}
+	void __cdecl format(const char *format, ...);
+};
+
+class UnicodeString : private StringBase<unsigned short>
+{
+public:
+	UnicodeString() {}
+	~UnicodeString() {}
+};
+
+struct Rva005ED445Inner
+{
+	char m_pad8[8];
+	char m_name[1];
+};
+
+struct Rva005ED445Outer
+{
+	Rva005ED445Inner *m_ptr;
+};
+
+class BfmeAptWindowManager
+{
+public:
+	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
+};
+
+extern BfmeAptWindowManager *g_Va009FE4CC;
+extern char g_Va007BAC1C;
+
+class Rva005ED445
+{
+public:
+	void rva005ED445(const UnicodeString &text);
+private:
+	int m_pad0;
+	int m_level;
+	Rva005ED445Outer m_outer;
+};
+
+void Rva005ED445::rva005ED445(const UnicodeString &text)
+{
+	AsciiString key;
+	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : &g_Va007BAC1C;
+	key.format("APT:_level%u.%s_RegionName", m_level, mid);
+	g_Va009FE4CC->bfmeSetText(key, text, true);
+}
