@@ -54,3 +54,11 @@ void Rva00441974Sort(void **begin, void **end, void *unused, Rva0043FE9A comp)
 	for (void **p = begin; p != end; ++p)
 		Rva00440B64Insert(p, *p, comp);
 }
+
+// ?Rva00441DA4Sort@@YAXPAPAX0VRva0043FE9A@@@Z @0x00441DA4 27B.
+// Wrapper passing zero unused through to reinsert sweep. Evidence: caller
+// 0x00442856; callee rowed 0x00441974.
+void Rva00441DA4Sort(void **begin, void **end, Rva0043FE9A comp)
+{
+	Rva00441974Sort(begin, end, 0, comp);
+}
