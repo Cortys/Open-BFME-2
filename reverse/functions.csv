@@ -41059,3 +41059,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva0057A24A@Rva0057A24A@@QBEMXZ,,0x0057A24A,22,Code/GameEngine/Source/Common/Rva0057A24AFlt.cpp,matched,float via global slot15 times m_20 callers 0x57ABF4 0x57AC05
 ??0Rva000B9074@@QAE@ABV0@@Z,,0x000B9074,47,Code/GameEngine/Source/Common/Rva000B9074Copy.cpp,matched,copy ctor pod plus string via pinned copy
 ??1Rva004E1A04@@QAE@XZ,,0x004E1A04,47,Code/GameEngine/Source/Common/Rva004E1A04Dtor.cpp,matched,unlock dtor double releaseBuffer state0 then -1 callers 3
+?rva0030BBE5@Rva0030BBE5@@QAEXH@Z,,0x0030BBE5,20,Code/GameEngine/Source/Common/Rva0030BBE5Set.cpp,matched,guarded setter plus vcall slot11
