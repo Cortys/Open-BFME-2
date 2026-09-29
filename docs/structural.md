@@ -23,14 +23,24 @@ compiles to a different shape. Expect 30-60 minutes per function.
       Do this BEFORE anything else, because it is the usual case rather than
       the exception. Measured 2026-09-29: of the 3,782 `structural` rows in
       `reverse/zh_sweep/drift_report.csv`, only **28** have a `candidate_rva`
-      that is a function start in the inventory -- 99.3% do not. Mean alignment
-      is ~20% either way, so a low score does not tell you which kind you have.
-      Confirming the boundary costs one query; not confirming it costs the
-      30-60 minutes this loop warns about. `0x00758338` is the worked example:
-      it is mid-instruction inside a function at `0x00758310`, decodes as
-      `or al,0x98`, and reached `next_work --tier structural` as a served
+      that appears as a function start in the inventory -- 99.3% do not. Mean
+      alignment is ~20% either way, so a low score does not tell you which kind
+      you have. Confirming the boundary costs one query; not confirming it costs
+      the 30-60 minutes this loop warns about. `0x00758338` is the worked
+      example: it is mid-instruction inside a function at `0x00758310`, decodes
+      as `or al,0x98`, and reached `next_work --tier structural` as a served
       candidate carrying the correct byte count -- which is why the count alone
       is not evidence.
+
+      Then check the inventory ENTRY, not just its presence. Two of those 28
+      point at `Unwind@` records -- 11-byte unwind tables that sit inside real
+      functions and look like small bodies -- which leaves 26 genuine starts.
+      That mattered here: the best-looking row in the whole tier, a 117B
+      destructor at 54% alignment, is `0x007690E1,11,Unwind@00b690e1`. Once
+      unwind records are excluded the best genuine alignment in the tier is
+      35%, on `??0FileSystem@@QAE@XZ` at `0x007398D0`, so nothing in this tier
+      is close enough to be worth the loop's budget before the reference lanes
+      have been tried.
    c. **field-offset diffs** (`[reg+0xNN]` vs `[reg+0xMM]`, same shape): BFME
       relaid a struct, or retail has a real bug. Change the member access — the
       header only when verified siblings permit — then byte-verify the file.
