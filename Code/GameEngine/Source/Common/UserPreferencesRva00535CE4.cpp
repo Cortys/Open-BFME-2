@@ -8,6 +8,10 @@
 // UserPreferences Points path: append Points, slot 0x2C virtual with (arg, x), void ret 8.
 // Evidence: concat Points 0x00868E24, slot 0x2C, releaseBuffer, unblocks 2, callers 2,
 // sibling 0x00535CE4 same TU(flags pins).
+// ?rva00535BAF@UserPreferences@@QAEXVAsciiString@@H@Z @0x00535BAF 71B
+// UserPreferences Wins path: append Wins, slot 0x2C with (arg, x), void ret 8.
+// Evidence: concat Wins 0x00868E7C, slot 0x2C, releaseBuffer, gap between 0x0053587C
+// and 0x00535CE4 same TU, unblocks 2 callers 2.
 template <typename T>
 class StringBase
 {
@@ -56,6 +60,7 @@ public:
 	virtual void v11(const AsciiString &s, int x);
 	int rva00535CE4(AsciiString arg);
 	void rva0053587C(AsciiString arg, int x);
+	void rva00535BAF(AsciiString arg, int x);
 };
 
 int UserPreferences::rva00535CE4(AsciiString arg)
@@ -68,5 +73,11 @@ int UserPreferences::rva00535CE4(AsciiString arg)
 void UserPreferences::rva0053587C(AsciiString arg, int x)
 {
 	arg.concat("Points");
+	v11(arg, x);
+}
+
+void UserPreferences::rva00535BAF(AsciiString arg, int x)
+{
+	arg.concat("Wins");
 	v11(arg, x);
 }
