@@ -41312,3 +41312,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??_GRva006F8460@@UAEPAXI@Z,,0x006F8490,35,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva006F8460.cpp,matched,pooled deleting dtor calls rowed dtor 0x006F8460
 ?rva0059B3E9@Rva0059B3E9@@QAEHPAD@Z,,0x0059B3E9,55,Code/GameEngine/Source/Common/Rva0059B3E9Write.cpp,matched,three-part write via rowed Pair and AsciiStringRef returns total
 ?rva00503E17@Rva00503E17@@QAEMXZ,,0x00503E17,56,Code/GameEngine/Source/Common/Rva00503E17BezierCall.cpp,matched,chain Bezier Evaluate with SSE t caller 0x005043DF
+??_ERva002E5791@@QAEPAXI@Z,,0x002E5E5A,75,Code/GameEngine/Source/GameClient/Rva002E5791VectorDeletingDtor.cpp,matched,chain from 0x002E5791 landing size 8 cookie
