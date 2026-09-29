@@ -7,6 +7,9 @@
 // slot12. Caller 0x30817D (jmp). Abuts 0x30B2E (tail jmp ends FF 60 30).
 // ?rva0030817A@Rva0030817A@@QAEXH@Z, retail 0x0030817A, 8 bytes.
 // Chain: add ecx,0x30 + jmp to Rva00330B2E::rva00330B41. Caller 0x308FDC.
+// ?rva003081C7@Rva003081C7@@QAEEXZ, retail 0x003081C7, 24 bytes.
+// Null-checked word at +4 of object at +0x80, returns (word > 0).
+// Caller 0x308C44. Same page/flags.
 struct Rva0030B9CA
 {
 	void rva0030B9CA();
@@ -64,4 +67,27 @@ private:
 void Rva0030817A::rva0030817A(int v)
 {
 	m_30.rva00330B41(v);
+}
+
+//
+// ?rva003081C7@Rva003081C7@@QAE_NXZ retail 0x003081C7 24 bytes.
+struct Rva003081C7Aux
+{
+	char m_pad00[4];
+	unsigned short m_word04;
+};
+
+class Rva003081C7
+{
+public:
+	unsigned char rva003081C7();
+private:
+	char m_pad00[0x80];
+	Rva003081C7Aux *m_ptr80;
+};
+
+unsigned char Rva003081C7::rva003081C7()
+{
+	int v = m_ptr80 ? m_ptr80->m_word04 : 0;
+	return (unsigned char)(v > 0);
 }
