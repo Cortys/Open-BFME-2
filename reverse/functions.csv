@@ -42282,3 +42282,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$copy@PAUBfmeNarrowRecord00079C23@@PAU1@@_STL@@YAPAUBfmeNarrowRecord00079C23@@PAU1@00@Z,,0x000C47B2,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_narrowrecord_79c23_copy.cpp,matched,BfmeNarrowRecord copy wrapper via rowed __copy
 ??$reverse@PAH@_STL@@YAXPAH0@Z,,0x00233A26,24,Code/Libraries/Source/WWVegas/WWLib/stlport_int_reverse.cpp,matched,STLport int reverse wrapper calls rowed __reverse caller 0x00233B85
 ?rva003148A2@GameWindow@@QAEXVUnicodeString@@@Z,,0x003148A2,68,Code/GameEngine/Source/GameClient/GUI/GameWindow_winSetText.cpp,matched,GameWindow plus0x30 tooltip forward of rowed setTooltipText
+?reloadAllAmmo@WeaponSet@@QAEXPBVObject@@_N@Z,,0x002C739E,48,Code/GameEngine/Source/GameLogic/Object/WeaponSetIsOutOfAmmo.cpp,matched,WeaponSet reloadAllAmmo via ZH donor with 6 slots

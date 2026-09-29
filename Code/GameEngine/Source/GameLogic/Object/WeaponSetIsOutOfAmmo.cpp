@@ -31,12 +31,15 @@ class Weapon
 public:
 	WeaponStatus getStatus() const;
 	bool isWithinTargetPitch(const Object *obj, const Object *victim) const;
+	void loadAmmoNow(const Object *obj);
+	void reloadAmmo(const Object *obj);
 };
 
 class WeaponSet
 {
 public:
 	bool isOutOfAmmo() const;
+	void reloadAllAmmo(const Object *obj, bool now);
 
 private:
 	bool isAnyWithinTargetPitch(const Object *obj, const Object *victim) const;
@@ -70,4 +73,17 @@ bool WeaponSet::isAnyWithinTargetPitch(const Object *obj, const Object *victim) 
 			return true;
 	}
 	return false;
+}
+
+void WeaponSet::reloadAllAmmo(const Object *obj, bool now)
+{
+	for (int i = 0; i < 6; ++i) {
+		Weapon *weapon = m_weapons[i];
+		if (weapon != 0) {
+			if (now)
+				weapon->loadAmmoNow(obj);
+			else
+				weapon->reloadAmmo(obj);
+		}
+	}
 }
