@@ -2747,3 +2747,8 @@ FUN_00953E47	0x00553E47	232	blocked	340B reset with 26 12B members plus ebp-coun
 FUN_00784A00	0x00384A00	98	blocked	same global 0xA02320 plus vtable slots 0x178 0x17c needs large donor interface t=5 model=muse-10
 ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z	0x00248D9D	146	partial	single SIB byte lea base-index order ours 0x38 vs retail 0x07; tried ptr-plus-off off-plus-ptr int-cast paren-regroup subscript spellings plus do-while; all else exact incl relocs t=30 model=muse-03 score=0.99 stash=reverse/attempts/0x00248d9d.cpp
 ?rva0010953E@Rva0010959E@@QAEXXZ	0x0010953E	96	partial	96B 24insns 0mem 0reg only xorps placement retail first ours fourth tried Os archSSE barriers cached ptrs t=30 model=muse-01 score=0.96 stash=reverse/attempts/0x0010953e.cpp
+FUN_00947430	0x00547430	73	blocked	hashtable insert with div plus folded Armor resize needs table layout t=10 model=muse-04
+FUN_009472F8	0x005472F8	112	blocked	same hashtable find-or-insert as 0x00547430 needs table layout t=5 model=muse-04
+FUN_006D02C1	0x002D02C1	30	blocked	pushes args to 0-arg folded dup plus free needs arity wall t=8 model=muse-04
+FUN_008D0198	0x004D0198	61	blocked	Unicode StringBase copy with EH plus large table needs friend plus empty string t=8 model=muse-04
+?rva003B8BC8@Rva003B8BAA@@QAEHH@Z	0x003B8BC8	49	blocked	linear int search recomputes count each iteration needs volatile reload shape t=15 model=muse-04
