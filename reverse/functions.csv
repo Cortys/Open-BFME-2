@@ -42665,3 +42665,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??_GRva00131BE5@@UAEPAXI@Z,,0x001320B4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-01.cpp,matched,scalar deleting dtor over rowed dtor vtable slot 9
 ?rva00559782@GameSpyMiscPreferences@@QAEHXZ,,0x00559782,73,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,gap after ctor 0x559711 getInt Locale 0 via slot 0x18
 ?rva005597CB@GameSpyMiscPreferences@@QAEXH@Z,,0x005597CB,72,Code/GameEngine/Source/GameNetwork/GameSpy/OnlinePreferences.cpp,matched,chain sibling setter setInt Locale val via slot 0x2C
+?Rva00584F6B@Rva00586D8E@@UAE_NH@Z,,0x00584F6B,84,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EVSlot9.cpp,matched,slot9 of vtable 0x0086FD90 via rowed ctor TU and vec84 plus Held188
