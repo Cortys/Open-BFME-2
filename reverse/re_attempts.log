@@ -2935,3 +2935,4 @@ FUN_005ddcc5	0x001DDCC5	192	blocked	Rva000427195 bucket copy needs mixed BfmeVec
 ?Rva0027D3D9Forward@@YGXHHPAVMatrix3D@@M@Z	0x0027D3D9	50	partial	48B vs 50B 16/16 insns vtable-temp esi-vs-eax plus early fld-mov order t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0027d3d9.cpp
 ?rva0014F454@Rva0014F454@@QAEPAURva0014F699@@H@Z	0x0014F454	44	blocked	bounds index stride 0x4C fallback +0x10 keeps begin in esi vs retail reload plus edi-esi wall unsigned-compare fixed jae t=18 model=muse-09
 ?rva0052CC25@Rva0052CC25@@QAEXXZ	0x0052CC25	63	blocked	EH tidy destroy-plus-free needs EH_prolog handler 0xb9723a plus states O1-EHsc-EHs give 30B frameless t=10 model=muse-09
+??0Rva004EEADE@@QAE@HH@Z	0x004EEADE	542	blocked	491B vs 542B 14 regions base ctor call not inlined needs forceinline plus _Vector_base members not vector plus singleton lea vs mov-add plus time IAT 0 t=15 model=muse-04
