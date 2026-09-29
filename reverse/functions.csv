@@ -41118,3 +41118,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__uninitialized_copy@PAVRva000BB491@@PAV1@@_STL@@YAPAVRva000BB491@@PAV1@00ABU__false_type@0@@Z,,0x000BBAC7,38,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000bb491_allocate_copy.cpp,matched,chain from 0x000BB993 plus 5 callers
 ??$_Construct@VRva000BB4AC@@V1@@_STL@@YAXPAVRva000BB4AC@@ABV1@@Z,,0x000BB9C0,45,Code/GameEngine/Source/Common/StringRecordCopyBFME2.cpp,matched,chain from 0x000BB4AC plus 4 callers plus same 45B shape
 ?rva00330A37@Rva00330A37@@QAEXHHHHHHHH@Z,,0x00330A37,103,Code/GameEngine/Source/GameClient/Rva00330A37Frames.cpp,matched,8-int frame init via slot-7c global sentinel -1
+??0Rva00584C42@@QAE@XZ,,0x00584C42,39,Code/Libraries/Source/WWVegas/WWLib/Rva00584C42Ctor.cpp,matched,ctor vtable 0x86FCDC plus bool plus floats 40 and 15
