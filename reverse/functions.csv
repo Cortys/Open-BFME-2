@@ -42528,3 +42528,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 __dup_0084EBC0,,0x00021D50,224,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleCtypeCase.c,matched,BFME1 byte-identical donor game/stlport/LocaleCtypeCase.c (a38d345e); tier T1 clean transfer; identity not recovered so the name keeps the donor address token
 ??0Rva00271826@@QAE@XZ,,0x00271826,108,Code/GameEngine/Source/GameClient/Rva00271826.cpp,matched,finish banked 0.98 via barrier plus vtable global
 ??1Rva003FAFB9@@UAE@XZ,,0x003FAFB9,82,Code/GameEngine/Source/Common/Rva003FAFB9Dtor.cpp,matched,chain dtor calls FAC3F ReleaseRef releaseBuffer BBB554
+??_GRva003FD4DA@@UAEPAXI@Z,,0x002B5972,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003FD4DA.cpp,matched,chain deleting dtor vtable FE1B0 rowed base
