@@ -62,8 +62,13 @@ template <> struct less<AsciiString>
 class MapMetaData
 {
 public:
-	char m_pad[0x2C];
+	MapMetaData(const MapMetaData &other);
+	~MapMetaData();
+	char m_pad00[0x20];
+	Int m_numPlayers;
+	char m_pad24[0x08];
 	UnsignedInt m_CRC;
+	char m_rest[0x100 - 0x30];
 };
 
 class MapCache : public _STL::map<AsciiString, MapMetaData>
@@ -101,6 +106,7 @@ public:
 	virtual Int getLocalSlotNum() const = 0;
 	GameSlot *getSlot(Int slotNum);
 	void setMapSize(UnsignedInt mapSize);
+	Int rva0040203C();
 private:
 	char m_pad0C[0x0C];
 	Bool m_inGame;
@@ -109,6 +115,21 @@ private:
 	UnsignedInt m_mapCRC;
 	UnsignedInt m_mapSize;
 };
+
+Int GameInfo::rva0040203C()
+{
+	if (!TheMapCache)
+		return -1;
+	AsciiString lowerMap = m_mapName;
+	lowerMap.toLower();
+	_STL::map<AsciiString, MapMetaData>::iterator it = TheMapCache->find(lowerMap);
+	if (it != TheMapCache->end()) {
+		MapMetaData tmp(it->second);
+		Int n = tmp.m_numPlayers;
+		return n;
+	}
+	return -1;
+}
 
 void GameInfo::setMapSize(UnsignedInt mapSize)
 {

@@ -1,0 +1,52 @@
+// ?processItems@LivingWorldEyeTower@@AAEXXZ
+// partial score=0.95 date=2026-09-29
+// ?processItems@LivingWorldEyeTower@@AAEXXZ
+// partial score=0.95 date=2026-09-29
+// ?processItems@LivingWorldEyeTower@@AAEXXZ @0x003F9A99 193B
+// Chain from just-landed getPair 0x003F9A2B in same TU. BFME1 donor
+// LivingWorldEyeTowerState.cpp processItems with LivingWorld path lines 366/374.
+// Layout 0x74 proven by retail offsets. Globals g_Va007BB8D8 (1.0f) and g_009BA4E8.
+// Best probe chain2: 193B same size 0 branch 0 layout; only 2 xmm reg swaps in
+// second rate block (ours xmm1=g xmm0=frames vs retail xmm0 xmm1) plus the
+// +0x6c store register. First block loop and stores all match.
+// cl: /O1 /DNDEBUG /MD /GX- /arch:SSE2
+int GetGameLogicRandomValue(int low, int high, char *file, int line);
+extern float g_Va007BB8D8;
+extern int g_009BA4E8;
+struct EyeTowerPair {
+  EyeTowerPair(float x, float y) : first(x), second(y) {}
+  ~EyeTowerPair() {}
+  float first;
+  float second;
+};
+class LivingWorldEyeTower {
+  char m_head[0x3C];
+  EyeTowerPair *m_begin;
+  EyeTowerPair *m_end;
+  EyeTowerPair *m_capacity;
+  void *getPair();
+  void processItems();
+  unsigned int m_state;
+  EyeTowerPair m_to;
+  EyeTowerPair m_from;
+  EyeTowerPair m_current;
+  float m_rate64;
+  float m_progress68;
+  float m_rate6C;
+  float m_progress70;
+};
+// ?processItems@LivingWorldEyeTower@@AAEXXZ present-unmatched
+void LivingWorldEyeTower::processItems() {
+  m_from = m_current;
+  int frames = (GetGameLogicRandomValue(0, 2, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameClient\\LivingWorld\\LivingWorldEyeTower.cpp", 366) + 4) * g_009BA4E8;
+  m_rate64 = g_Va007BB8D8 / (float)frames;
+  m_progress68 = 0.0f;
+  do {
+    EyeTowerPair *pair = (EyeTowerPair *)getPair();
+    m_to = *pair;
+  } while (m_to.first == m_current.first && m_to.second == m_current.second);
+  frames = (GetGameLogicRandomValue(0, 8, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameClient\\LivingWorld\\LivingWorldEyeTower.cpp", 374) + 4) * g_009BA4E8;
+  m_rate6C = g_Va007BB8D8 / (float)frames;
+  m_progress70 = 0.0f;
+  m_state = 1;
+}
