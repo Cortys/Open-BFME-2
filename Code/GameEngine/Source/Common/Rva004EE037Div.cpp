@@ -26,6 +26,7 @@ public:
 	int rva004EE043();
 	void rva004EE072(const class Rva004E06FBPtrChase32Field *a, int b);
 	void rva004EE0A6(int a, int b);
+	int rva004EE057(int i);
 private:
 	char m_pad[0x5C];
 	int m_5C;
@@ -33,9 +34,8 @@ private:
 	char m_low[0x10];
 	unsigned m_74;
 	int m_78;
-	char m_mid[0x10];
-	int m_8C;
-	int m_90;
+	char m_mid0[0x04];
+	int m_80[5];
 	char m_high[0x58];
 	int m_EC;
 };
@@ -57,9 +57,9 @@ void Rva004EE037::rva004EE072(const Rva004E06FBPtrChase32Field *a, int b)
 	if (a->m_20 == -1)
 		return;
 	if (a->get() == m_EC)
-		++m_8C;
+		++m_80[3];
 	if (b == m_EC)
-		++m_90;
+		++m_80[4];
 }
 
 void Rva004EE037::rva004EE0A6(int a, int b)
@@ -69,4 +69,11 @@ void Rva004EE037::rva004EE0A6(int a, int b)
 	int now = time(0);
 	m_5C += now - m_60;
 	m_60 = 0;
+}
+
+int Rva004EE037::rva004EE057(int i)
+{
+	if (i < 0 || (unsigned)i >= 5)
+		return 0;
+	return m_80[i];
 }

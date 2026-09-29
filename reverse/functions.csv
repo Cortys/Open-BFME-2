@@ -41234,3 +41234,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva004EE0A6@Rva004EE037@@QAEXHH@Z,,0x004EE0A6,32,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,sibling time accumulate m5C m60 via IAT time
 ?rva003081C7@Rva003081C7@@QAEEXZ,,0x003081C7,24,Code/GameEngine/Source/GameClient/Rva00330B2EMemberCall.cpp,matched,null word plus4 gt0 uchar caller 0x308C44
 ??_GRva0029B816@@UAEPAXI@Z,,0x0029E1EF,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0029B816.cpp,matched,chain slot0 calls rowed dtor plus delete
+?rva004EE057@Rva004EE037@@QAEHH@Z,,0x004EE057,27,Code/GameEngine/Source/Common/Rva004EE037Div.cpp,matched,array bound check 5 else m80 callers 5 sites
