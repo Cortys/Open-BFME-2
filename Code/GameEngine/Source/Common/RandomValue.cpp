@@ -411,6 +411,7 @@ Real GameClientRandomVariable::getValue( void ) const
 /**
 	define the range of random values, and the distribution of values
 */
+// ?GameLogicRandomVariable::setRange present-unmatched
 void GameLogicRandomVariable::setRange( Real low, Real high, DistributionType type )
 {
 	DEBUG_ASSERTCRASH(!(m_type == CONSTANT && m_low != m_high), ("CONSTANT GameLogicRandomVariables should have low == high"));
