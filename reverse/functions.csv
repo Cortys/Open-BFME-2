@@ -42610,3 +42610,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ??1Rva003F8ED6@@UAE@XZ,,0x003F8ED6,85,Code/GameEngine/Source/Common/Rva003F8ED6.cpp,matched,unlock lane virtual dtor via rowed Release releaseBuffer vector-dtor unblocks 0x003F905F
 ??_GRva003F8ED6@@UAEPAXI@Z,,0x003F905F,28,Code/GameEngine/Source/Common/Rva003F8ED6.cpp,matched,chain lane scalar deleting via anchor new-delete vtable slot 0 0x00837358
 ?rva0070DF80@Rva006DE2B0@@UAEXXZ,,0x0070DF80,45,Code/GameEngine/Source/Common/Rva0070DF80Slot13.cpp,matched,slot13 forwarder plus mark tail jmp
+?rva0070DFF0@Rva0070DFF0@@QAEXPAVRva8D0D80Value@@E@Z,,0x0070DFF0,107,Code/GameEngine/Source/Common/Rva0070DFF0Reg.cpp,matched,EH interfaces table add plus flag
