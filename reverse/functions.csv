@@ -42501,3 +42501,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ??1Rva003FD4DA@@UAE@XZ,,0x003FD4DA,72,Code/GameEngine/Source/GameLogic/Object/Rva003FD4DADtor.cpp,matched,unlock dtor vtable FE1B0 double release plus0C Snapshot base
 ?Rva003BF813Do@@YGXABVAsciiString@@00@Z,,0x003BF813,161,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF813.cpp,matched,via team trigger waypoint group precedent
 ?Rva003BF8B4Hunt@@YGXABVAsciiString@@@Z,,0x003BF8B4,79,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF8B4.cpp,matched,via team hunt group precedent
+?Rva003BFFECDo@@YGXABVAsciiString@@H@Z,,0x003BFFEC,97,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BFFEC.cpp,matched,via display fullscreen trigger precedent
