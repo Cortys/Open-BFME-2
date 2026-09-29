@@ -29,3 +29,9 @@ void famgenDelete(Rva00596F18 *p) { delete p; }
 namespace FXParticleSystem { class RenderObjectDrawModuleInfo { public: __declspec(noinline) virtual ~RenderObjectDrawModuleInfo(); private: int m_famgen; }; }
 FXParticleSystem::RenderObjectDrawModuleInfo::~RenderObjectDrawModuleInfo() { m_famgen = 0; }
 void famgenDelete(FXParticleSystem::RenderObjectDrawModuleInfo *p) { delete p; }
+// ??_GLifeEventModuleInfo@FXParticleSystem@@UAEPAXI@Z @0x003AA011 28B
+// Deleting dtor calls rowed ??1LifeEventModuleInfo@FXParticleSystem@@UAE@XZ at 0x003A9F8A then rowed operator delete at 0x0002FD60.
+// Evidence: chain lane after landing 0x003A9F8A; retail push esi call ??1 test flag delete ret 4.
+namespace FXParticleSystem { class LifeEventModuleInfo { public: __declspec(noinline) virtual ~LifeEventModuleInfo(); private: int m_famgen; }; }
+FXParticleSystem::LifeEventModuleInfo::~LifeEventModuleInfo() { m_famgen = 0; }
+void famgenDelete(FXParticleSystem::LifeEventModuleInfo *p) { delete p; }
