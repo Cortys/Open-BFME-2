@@ -41732,3 +41732,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?xfer@Rva00340461@@MAEXPAVXfer@@@Z,,0x00340461,42,Code/GameEngine/Source/Common/Rva00340461Xfer.cpp,matched,chain xfer Version1 bool base
 ?xfer@Rva00340411@@MAEXPAVXfer@@@Z,,0x00340411,27,Code/GameEngine/Source/Common/Rva00340461Xfer.cpp,matched,chain xfer Version1 base
 ??$make_heap@PAHVRva00422CA8@@@_STL@@YAXPAH0VRva00422CA8@@@Z,,0x0042461E,25,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain make heap via pinned 5-arg make heap
+?rva00439920@Rva00439920@@QAEXXZ,,0x00439920,30,Code/GameEngine/Source/Common/RTS/Rva00439920Reset.cpp,matched,chain lane reset via clear plus 1.0f plus zero
