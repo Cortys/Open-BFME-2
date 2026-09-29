@@ -3514,3 +3514,5 @@ FUN_0066DF80	0x0066DF80	523	blocked	523B GameNetwork leaf too big for quick lane
 ?FindIndex@BFME2Encoding0MotionChannel@@QAEHIPAPAH@Z	0x001B2EFC	215	partial	two operand-order diffs at 0xB1-0xB3 mov edx eax vs mem t=15 model=muse-12 score=0.9907 stash=reverse/attempts/0x001b2efc.cpp
 ??0Rva0040E3EE@@QAE@XZ	0x0040E3EE	165	partial	finish retry: real-vptr plus G6 plus refcount-addr still early vtable; keep 0.97 stash t=12 model=muse-spark score=0.97 stash=reverse/attempts/0x0040e3ee.cpp
 ?rva005DDE33@Rva005DDE33@@QAEMIII@Z	0x005DDE33	54	partial	54of54B 20of20insns push-before-imul scheduling only plus fld reloc t=20 model=muse-08 score=0.97 stash=reverse/attempts/0x005dde33.cpp
+?rva00584405@Rva00584405@@QAEXPAVRva002337F0@@IPBURva002337F0Blk@@@Z	0x00584405	225	blocked	chain fill-insert needs mixed Rva plus Bfme callees with empty-Tag at plus0xB t=20 model=muse-07
+?rva0006AB49@Rva0006AB49@@QAE_NHH@Z	0x0006AB49	79	blocked	unlock bit test bool-local gives 78vs79 t=25 model=muse-07
