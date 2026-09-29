@@ -6293,3 +6293,5 @@ _atan2,0x0062992E,atan2 double import thunk for float adapter 0x422A0
 ?get_allocator@?$vector@VRva000BB4AC@@V?$allocator@VRva000BB4AC@@@_STL@@@_STL@@QBE?AV?$allocator@VRva000BB4AC@@@2@XZ,0x0021983A,address read from the REL32 displacement at byte-matched body 0x000BCE96
 ??0?$_Vector_base@VRva000BB4AC@@V?$allocator@VRva000BB4AC@@@_STL@@@_STL@@QAE@IABV?$allocator@VRva000BB4AC@@@1@@Z,0x000B63B2,address read from the REL32 displacement at byte-matched body 0x000BCE96
 ??$__uninitialized_copy@PBVRva000BB4AC@@PAV1@@_STL@@YAPAVRva000BB4AC@@PBV1@0PAV1@ABU__false_type@0@@Z,0x000BBB12,ICF twin of rowed PAV worker via call at 0x000BCE96 same 24B stride
+?allocate@?$allocator@PAUBfmePod20@@@_STL@@QBEPAPAUBfmePod20@@IPBX@Z,0x00068E15,ICF twin of rowed BfmeE12 allocate same bytes call site 0x0054FB0B in Pod20 initmap 0x0054FAD4
+?_M_create_nodes@?$_Deque_base@UBfmePod20@@V?$allocator@UBfmePod20@@@_STL@@@_STL@@IAEXPAPAUBfmePod20@@0@Z,0x00421918,ICF twin of rowed BfmeE12 create_nodes same 120B node call site 0x0054FB2D in Pod20 initmap 0x0054FAD4
