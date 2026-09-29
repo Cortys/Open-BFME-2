@@ -41755,3 +41755,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva001DE8E9Fill@@YAXPAVRva001DE727@@0ABV1@@Z,,0x001DE8E9,29,Code/Libraries/Source/WWVegas/WWLib/Rva001DE906Copy.cpp,matched,chain fill via rowed assign stride 0x30 two callers clean caller
 ?Rva005FDF1CSet@@YAXHPAURva005FDF1COuter@@ABVUnicodeString@@@Z,,0x005FDF1C,103,Code/GameEngine/Source/Common/Rva005FDF1CApt.cpp,matched,APT PlayerName via format bfmeSetText releaseBuffer precedent Rva005D2FD0
 ?Rva005FDF83Set@@YAXHPAURva005FDF1COuter@@ABVUnicodeString@@@Z,,0x005FDF83,103,Code/GameEngine/Source/Common/Rva005FDF1CApt.cpp,matched,APT LocalPlayerName sibling of 0x005FDF1C same recipe
+?rva004DF725@ObjectDefectionHelper@@QAEXI_N@Z,,0x004DF725,73,Code/GameEngine/Source/GameLogic/Object/Helper/ObjectDefectionHelperRva004DF725.cpp,matched,ObjectDefectionHelper method via setWakeFrame plus TheGameLogic frame
