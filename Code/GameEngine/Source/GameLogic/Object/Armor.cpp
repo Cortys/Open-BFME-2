@@ -68,6 +68,7 @@ void ArmorTemplate::clear()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?ArmorTemplate::adjustDamage present-unmatched
 Real ArmorTemplate::adjustDamage(DamageType t, Real damage) const 
 { 
 	if (t == DAMAGE_UNRESISTABLE)

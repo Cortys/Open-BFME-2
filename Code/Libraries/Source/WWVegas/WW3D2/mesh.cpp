@@ -454,6 +454,7 @@ MeshModelClass * MeshClass::Get_Model(void)
  * HISTORY:                                                                                    *
  *=============================================================================================*/
 // ?MeshClass::Scale
+// ?MeshClass::Scale present-unmatched
 void MeshClass::Scale(float scale)
 {
 	if (scale==1.0f) return;

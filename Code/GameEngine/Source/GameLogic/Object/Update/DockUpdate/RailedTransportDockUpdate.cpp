@@ -213,6 +213,7 @@ Bool RailedTransportDockUpdate::isClearToEnter( Object const *docker ) const
 // ------------------------------------------------------------------------------------------------
 /** Is anything currently loading or unloading */
 // ------------------------------------------------------------------------------------------------
+// ?RailedTransportDockUpdate::isLoadingOrUnloading present-unmatched
 Bool RailedTransportDockUpdate::isLoadingOrUnloading( void )
 {
 
@@ -226,6 +227,7 @@ Bool RailedTransportDockUpdate::isLoadingOrUnloading( void )
 // ------------------------------------------------------------------------------------------------
 /** Start the unload process */
 // ------------------------------------------------------------------------------------------------
+// ?RailedTransportDockUpdate::unloadAll present-unmatched
 void RailedTransportDockUpdate::unloadAll( void )
 {
 
@@ -242,6 +244,7 @@ void RailedTransportDockUpdate::unloadAll( void )
 // ------------------------------------------------------------------------------------------------
 /** Unload a single individual only */
 // ------------------------------------------------------------------------------------------------
+// ?RailedTransportDockUpdate::unloadSingleObject present-unmatched
 void RailedTransportDockUpdate::unloadSingleObject( Object *obj )
 {
 

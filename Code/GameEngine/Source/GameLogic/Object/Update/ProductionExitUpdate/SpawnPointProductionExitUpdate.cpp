@@ -93,6 +93,7 @@ SpawnPointProductionExitUpdate::~SpawnPointProductionExitUpdate()
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?SpawnPointProductionExitUpdate::exitObjectViaDoor present-unmatched
 void SpawnPointProductionExitUpdate::exitObjectViaDoor( Object *newObj, ExitDoorType exitDoor )
 {
 	DEBUG_ASSERTCRASH(exitDoor == DOOR_1, ("multiple exit doors not supported here"));

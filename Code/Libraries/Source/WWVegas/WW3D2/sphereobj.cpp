@@ -563,6 +563,7 @@ void SphereRenderObjClass::render_sphere()
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?SphereRenderObjClass::vis_render_sphere present-unmatched
 void SphereRenderObjClass::vis_render_sphere(SpecialRenderInfoClass & rinfo,const Vector3 & center,const Vector3 & extent)
 {
 }	// vis_render_sphere
@@ -853,6 +854,7 @@ void SphereRenderObjClass::Decrement_LOD(void)
 	if (CurrentLOD > 0) CurrentLOD--;
 }
 
+// ?SphereRenderObjClass::Get_Cost present-unmatched
 float SphereRenderObjClass::Get_Cost(void) const
 {
 	return Get_Num_Polys();	// Currently cost == polys

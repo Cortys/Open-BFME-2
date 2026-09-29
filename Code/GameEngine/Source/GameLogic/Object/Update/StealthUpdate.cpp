@@ -600,6 +600,7 @@ Object* StealthUpdate::calcStealthOwner()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?StealthUpdate::calcSleepTime present-unmatched
 UpdateSleepTime StealthUpdate::calcSleepTime() const
 {
 	return m_enabled ? UPDATE_SLEEP_NONE : UPDATE_SLEEP_FOREVER;

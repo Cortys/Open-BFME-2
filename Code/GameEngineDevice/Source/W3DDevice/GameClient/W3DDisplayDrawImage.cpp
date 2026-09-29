@@ -135,6 +135,7 @@ public:
 };
 
 // ?drawImage@W3DDisplay@@UAEXPAVImage@@MMMMH@Z
+// ?W3DDisplay::drawImage present-unmatched
 void W3DDisplay::drawImage(Image *image, Real x0, Real y0, Real x1, Real y1, Int color)
 {
 	if (!image->ready)

@@ -37,6 +37,7 @@ public:
 	bool VectorClassPad[2];
 };
 
+// ?VectorClassDummy::VectorClassDummy present-unmatched
 inline VectorClassDummy::VectorClassDummy(int size, void *const *array) :
 	Vector(0),
 	VectorMax(size),
@@ -62,6 +63,7 @@ public:
 	int GrowthStep;
 };
 
+// ?DynamicVectorDummy::DynamicVectorDummy present-unmatched
 inline DynamicVectorDummy::DynamicVectorDummy(int size, void *const *array)
 	: VectorClassDummy(size, array)
 {

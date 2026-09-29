@@ -220,6 +220,7 @@ TextureClass * MaterialPassClass::Get_Texture(int stage) const
  * HISTORY:                                                                                    *
  *   12/9/99    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?MaterialPassClass::Get_Material present-unmatched
 VertexMaterialClass * MaterialPassClass::Get_Material(void) const
 {
 	if (Material) {

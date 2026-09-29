@@ -462,6 +462,7 @@ bool ParticleEmitterClass::Is_Stopped(void)
 }
 
 
+// ?ParticleEmitterClass::Set_Position_Randomizer present-unmatched
 void ParticleEmitterClass::Set_Position_Randomizer(Vector3Randomizer *rand)
 {
 	if (PosRand) {
@@ -472,6 +473,7 @@ void ParticleEmitterClass::Set_Position_Randomizer(Vector3Randomizer *rand)
 }
 
 
+// ?ParticleEmitterClass::Set_Velocity_Randomizer present-unmatched
 void ParticleEmitterClass::Set_Velocity_Randomizer(Vector3Randomizer *rand)
 {
 	if (VelRand) {

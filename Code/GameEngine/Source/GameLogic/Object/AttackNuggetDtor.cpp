@@ -13,6 +13,7 @@ public:
 	virtual ~Rva001F0622Base();
 };
 
+// ?Rva001F0622Base::~Rva001F0622Base present-unmatched
 inline Rva001F0622Base::~Rva001F0622Base()
 {
 	*(const void **)this = reinterpret_cast<const void *>(0x00BE09D0);

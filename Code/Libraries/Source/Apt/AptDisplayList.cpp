@@ -70,6 +70,7 @@ private:
 };
 
 // ?bfmeQuery1279@BfmeQuery1279@@QAEXHHPAPAXPAPAX@Z
+// ?BfmeQuery1279::bfmeQuery1279 present-unmatched
 void BfmeQuery1279::bfmeQuery1279(int nDepth, int name, void **ppPrev, void **ppItem)
 {
 	if (ppPrev == 0) {

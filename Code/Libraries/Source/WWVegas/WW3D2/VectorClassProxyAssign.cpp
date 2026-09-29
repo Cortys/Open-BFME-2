@@ -42,11 +42,13 @@ private:
 	ProxyData *m_Data;
 };
 
+// ?ProxyClass::ProxyClass present-unmatched
 inline ProxyClass::ProxyClass() :
 	m_Data(0)
 {
 }
 
+// ?ProxyClass::~ProxyClass present-unmatched
 inline ProxyClass::~ProxyClass()
 {
 	if (m_Data != 0) {

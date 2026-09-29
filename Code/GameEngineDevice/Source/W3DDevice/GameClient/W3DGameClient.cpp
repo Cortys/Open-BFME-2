@@ -306,6 +306,7 @@ Drawable *W3DGameClient::friend_createDrawable( const ThingTemplate *tmplate,
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?W3DGameClient::addScorch present-unmatched
 void W3DGameClient::addScorch(const Coord3D *pos, Real radius, Scorches type)
 {
 	if (TheTerrainRenderObject) 
@@ -324,6 +325,7 @@ public:
 	Drawable *newDrawable(const ThingTemplate *tmplate, DrawableStatus statusBits, Int drawableID);
 };
 
+// ?W3DGameClient::createRayEffectByTemplate present-unmatched
 void W3DGameClient::createRayEffectByTemplate( const Coord3D *start, 
 																		 const Coord3D *end, 
 																		 const ThingTemplate* tmpl )

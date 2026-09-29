@@ -215,6 +215,7 @@ __declspec(noinline) void _Construct<Coord3D, Coord3D>(Coord3D *destination, con
 }
 _STLP_END_NAMESPACE
 
+// ?ObjectIDVector::resize present-unmatched
 void ObjectIDVector::resize(unsigned int newSize, ObjectID value)
 {
 	if (newSize < size())
@@ -223,6 +224,7 @@ void ObjectIDVector::resize(unsigned int newSize, ObjectID value)
 		insert(_M_finish, newSize - size(), value);
 }
 
+// ?ObjectIDVector::erase present-unmatched
 ObjectID *ObjectIDVector::erase(ObjectID *first, ObjectID *last)
 {
 	ObjectID *pos = _STL::__copy_ptrs(last, _M_finish, first, _TrivialAss());

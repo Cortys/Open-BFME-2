@@ -32,6 +32,7 @@ protected:
 	unsigned char m_pad2[0x88 - 0x24];
 };
 
+// ?Rva0044EF5E::~Rva0044EF5E present-unmatched
 Rva0044EF5E::~Rva0044EF5E()
 {
 }
@@ -51,6 +52,7 @@ Rva00490D3F::Rva00490D3F(Thing *thing, const ModuleData *moduleData)
 	m_p20 = &s_dummy20;
 }
 
+// ?Rva00490D3F::~Rva00490D3F present-unmatched
 Rva00490D3F::~Rva00490D3F()
 {
 }

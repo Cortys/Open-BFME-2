@@ -13,6 +13,7 @@ public:
 	void d_00885960( void );
 };
 
+// ?Rva00885980Class::d_00885980 present-unmatched
 int Rva00885980Class::d_00885980( void )
 {
 	closesocket( m_socket );

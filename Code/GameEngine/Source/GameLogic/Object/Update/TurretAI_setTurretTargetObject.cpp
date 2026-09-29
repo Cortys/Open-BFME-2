@@ -60,6 +60,7 @@ public:
 	TurretState* m_state;
 };
 
+// ?TurretStateMachine::getCurrentStateID present-unmatched
 inline int TurretStateMachine::getCurrentStateID() const
 {
 	if (m_state)

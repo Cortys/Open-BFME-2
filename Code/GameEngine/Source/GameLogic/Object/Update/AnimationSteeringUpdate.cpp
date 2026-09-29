@@ -46,6 +46,7 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?AnimationSteeringUpdateModuleData::AnimationSteeringUpdateModuleData present-unmatched
 AnimationSteeringUpdateModuleData::AnimationSteeringUpdateModuleData( void )
 {
 	m_transitionFrames = 0;

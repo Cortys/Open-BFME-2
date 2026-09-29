@@ -33,6 +33,7 @@ protected:
 	unsigned char m_pad2[0x88 - 0x24];
 };
 
+// ?Rva0044EF5E::~Rva0044EF5E present-unmatched
 Rva0044EF5E::~Rva0044EF5E()
 {
 }
@@ -52,6 +53,7 @@ RailedTransportDockUpdate::RailedTransportDockUpdate(Thing *thing, const ModuleD
 	m_p20 = &s_dummy20;
 }
 
+// ?RailedTransportDockUpdate::~RailedTransportDockUpdate present-unmatched
 RailedTransportDockUpdate::~RailedTransportDockUpdate()
 {
 }

@@ -123,6 +123,7 @@ private:
 };
 
 // ?ConnectToServer@Cftp@@QAEJPBD@Z
+// ?Rva00884Ftp::ConnectToServer present-unmatched
 HRESULT Rva00884Ftp::ConnectToServer(LPCSTR serverName)
 {
 	unsigned long uTemp;

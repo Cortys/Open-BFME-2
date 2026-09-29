@@ -163,6 +163,7 @@ AIFreeToExitType DeliverPayloadAIUpdate::getAiFreeToExit(const Object* exiter) c
 }
 
 //-------------------------------------------------------------------------------------------------
+// ?DeliverPayloadAIUpdate::killDeliveryDecal present-unmatched
 void DeliverPayloadAIUpdate::killDeliveryDecal()
 {
 	m_deliveryDecal.clear();

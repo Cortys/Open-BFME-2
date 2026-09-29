@@ -149,6 +149,7 @@ done:
 }
 #pragma optimize("s", off)
 
+// ?MultiplayerSettings::findMultiplayerColorDefinitionByName present-unmatched
 MultiplayerColorDefinition * MultiplayerSettings::findMultiplayerColorDefinitionByName(AsciiString name)
 {
 	MultiplayerColorIter iter = m_colorList.begin();
@@ -170,6 +171,7 @@ MultiplayerColorDefinition * MultiplayerSettings::findMultiplayerColorDefinition
 // inline numColors refills; a same-TU definition would capture those REL32
 // locally). Declared via the shim header.
 
+// ?MultiplayerSettings::addStartingMoneyChoice present-unmatched
 void MultiplayerSettings::addStartingMoneyChoice( const Money & money, Bool isDefault )
 {
   m_startingMoneyList.push_back( money );

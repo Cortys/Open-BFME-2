@@ -340,6 +340,7 @@ static void calcRandomForce(Real minMag, Real maxMag, Real minPitch, Real maxPit
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SlowDeathBehavior::beginSlowDeath present-unmatched
 void SlowDeathBehavior::beginSlowDeath(const DamageInfo *damageInfo)
 {
 	if (!isSlowDeathActivated())
@@ -464,6 +465,7 @@ void SlowDeathBehavior::beginSlowDeath(const DamageInfo *damageInfo)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?SlowDeathBehavior::doPhaseStuff present-unmatched
 void SlowDeathBehavior::doPhaseStuff(SlowDeathPhaseType sdphase)
 {
 	const SlowDeathBehaviorModuleData* d = getSlowDeathBehaviorModuleData();

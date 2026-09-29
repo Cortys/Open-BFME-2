@@ -68,6 +68,7 @@ class DX8Wrapper
 };
 
 // ?Get_Render_Target_Resolution@DX8Wrapper@@KAXAAH00AA_N@Z
+// ?DX8Wrapper::Get_Render_Target_Resolution present-unmatched
 void DX8Wrapper::Get_Render_Target_Resolution(Int &width, Int &height, Int &bitDepth, Bool &windowed)
 {
 	if (TheBfmeRenderDevice != NULL)

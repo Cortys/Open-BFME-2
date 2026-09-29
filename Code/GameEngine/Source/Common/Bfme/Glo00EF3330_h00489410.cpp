@@ -54,6 +54,7 @@ private:
 	BfmeCriticalSection m_section;
 };
 
+// ?Glo00EF3330::h00489410 present-unmatched
 void Glo00EF3330::h00489410(void)
 {
 	CriticalSectionLock lockGuard(&m_section);

@@ -128,6 +128,7 @@ private:
 };
 
 // ??0StealthUpdateModuleData@@QAE@XZ @0x37588B
+// ?Rva004CEE6EMemberTracked::~Rva004CEE6EMemberTracked present-unmatched
 Rva004CEE6EMemberTracked::~Rva004CEE6EMemberTracked()
 {
 	m_minusOne = 0;

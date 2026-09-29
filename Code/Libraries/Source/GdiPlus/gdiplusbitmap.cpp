@@ -182,6 +182,7 @@ Image::Image(GpImage *nativeImage, Status status)
     lastResult = status;
 }
 
+// ?Image::SetNativeImage present-unmatched
 void Image::SetNativeImage(GpImage *nativeImage)
 {
     this->nativeImage = nativeImage;

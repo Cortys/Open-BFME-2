@@ -116,6 +116,7 @@ uint32 ChunkLoadClass::Read(void *buffer, uint32 byte_count)
 // difference is how the skip is proven to have happened, since neither Seek
 // interface reports a byte count -- both branches take a position before and
 // after and require the delta to be exactly what was asked for.
+// ?ChunkLoadClass::Seek present-unmatched
 uint32 ChunkLoadClass::Seek(uint32 byte_count)
 {
 	BFMEChunkLoadLayout *layout = (BFMEChunkLoadLayout *)this;
@@ -163,6 +164,7 @@ uint32 ChunkLoadClass::Cur_Chunk_Length()
 }
 
 
+// ?ChunkLoadClass::Cur_Chunk_Depth present-unmatched
 int ChunkLoadClass::Cur_Chunk_Depth()
 {
 	return *(int *)((char *)this + 0x08);

@@ -60,6 +60,7 @@
 */
 
 
+// ?NamedPivotMapClass::~NamedPivotMapClass present-unmatched
 NamedPivotMapClass::~NamedPivotMapClass(void)
 {
 }
@@ -247,6 +248,7 @@ HAnimComboClass::HAnimComboClass(void)
 // without it (Set_HAnim needs inc). See hanim_weight_vector_add.cpp.
 
 
+// ?HAnimComboClass::~HAnimComboClass present-unmatched
 HAnimComboClass::~HAnimComboClass(void)
 {
 	Reset();

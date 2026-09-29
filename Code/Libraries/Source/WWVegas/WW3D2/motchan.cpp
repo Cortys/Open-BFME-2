@@ -923,6 +923,7 @@ bool AdaptiveDeltaMotionChannelClass::Load_W3D(ChunkLoadClass & cload)
  *   02/23/2000 JGA  : Created.                                                                * 
  *=============================================================================================*/
 #define PACKET_SIZE (9)
+// ?AdaptiveDeltaMotionChannelClass::decompress present-unmatched
 void AdaptiveDeltaMotionChannelClass::decompress(uint32 frame_idx, float *outdata)
 {	  
 	// Start Over from the beginning
@@ -1167,6 +1168,7 @@ float AdaptiveDeltaMotionChannelClass::getframe(uint32 frame_idx, uint32 vector_
  * HISTORY:                                                                                    * 
  *   02/18/2000 JGA  : Created.                                                                 * 
  *=============================================================================================*/
+// ?AdaptiveDeltaMotionChannelClass::Get_Vector present-unmatched
 void	AdaptiveDeltaMotionChannelClass::Get_Vector(float32 frame,float * setvec)
 {		
 
@@ -1186,6 +1188,7 @@ void	AdaptiveDeltaMotionChannelClass::Get_Vector(float32 frame,float * setvec)
 //
 //  Special Case Quats, so we can use Slerp
 //
+// ?AdaptiveDeltaMotionChannelClass::Get_QuatVector present-unmatched
 Quaternion AdaptiveDeltaMotionChannelClass::Get_QuatVector(float32 frame)
 {
 

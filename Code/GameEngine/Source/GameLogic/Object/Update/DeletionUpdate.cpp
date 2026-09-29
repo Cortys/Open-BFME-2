@@ -59,6 +59,7 @@ DeletionUpdate::DeletionUpdate( Thing *thing, const ModuleData* moduleData ) : U
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+// ?DeletionUpdate::~DeletionUpdate present-unmatched
 DeletionUpdate::~DeletionUpdate( void )
 {
 }
@@ -121,6 +122,7 @@ UpdateSleepTime DeletionUpdate::update( void )
 // ------------------------------------------------------------------------------------------------
 /** CRC */
 // ------------------------------------------------------------------------------------------------
+// ?DeletionUpdate::crc present-unmatched
 void DeletionUpdate::crc( Xfer *xfer )
 {
 
@@ -132,6 +134,7 @@ void DeletionUpdate::crc( Xfer *xfer )
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
 // ------------------------------------------------------------------------------------------------
+// ?DeletionUpdate::loadPostProcess present-unmatched
 void DeletionUpdate::loadPostProcess( void )
 {
 

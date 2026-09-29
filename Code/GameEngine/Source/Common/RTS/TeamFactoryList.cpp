@@ -17,6 +17,7 @@
 #include "Common/NameKeyGenerator.h"
 
 // ?removeTeamPrototypeFromList@TeamFactory@@QAEXPAVTeamPrototype@@@Z
+// ?TeamFactory::removeTeamPrototypeFromList present-unmatched
 void TeamFactory::removeTeamPrototypeFromList(TeamPrototype* team)
 {
 	struct BfmeAsciiString {

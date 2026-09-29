@@ -631,6 +631,7 @@ void RingRenderObjClass::render_ring(RenderInfoClass & rinfo,const Vector3 & cen
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
+// ?RingRenderObjClass::vis_render_ring present-unmatched
 void RingRenderObjClass::vis_render_ring(SpecialRenderInfoClass & rinfo,const Vector3 & center,const Vector3 & extent)
 {
 	WWASSERT(0);
@@ -1016,6 +1017,7 @@ void RingRenderObjClass::Decrement_LOD(void)
 	if (CurrentLOD > 0) CurrentLOD--;
 }
 
+// ?RingRenderObjClass::Get_Cost present-unmatched
 float RingRenderObjClass::Get_Cost(void) const
 {
 	return Get_Num_Polys();	// Currently cost == polys

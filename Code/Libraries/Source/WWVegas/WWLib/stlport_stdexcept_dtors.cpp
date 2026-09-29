@@ -14,6 +14,7 @@
 namespace _STL
 {
 
+// ?__Named_exception::~__Named_exception present-unmatched
 __Named_exception::~__Named_exception() _STLP_NOTHROW_INHERENTLY
 {
 }

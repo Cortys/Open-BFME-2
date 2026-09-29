@@ -267,6 +267,7 @@ void ThingFactory::update( void )
 /** Return the template with the matching database name */
 //-------------------------------------------------------------------------------------------------
 // BFME ThingTemplate: m_nextTemplate @+0x38c, m_templateID @+0x478 (ZH headers differ).
+// ?ThingFactory::findByTemplateID present-unmatched
 const ThingTemplate *ThingFactory::findByTemplateID( UnsignedShort id )
 {
 	struct BFMEThingTemplateLinks {
