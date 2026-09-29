@@ -14,4 +14,5 @@ struct PodPayload20
 namespace _STL
 {
 template void __destroy_aux<_Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> > >(_Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> >, _Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> >, const __false_type &);
+template void __destroy<_Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> >, PodPayload20>(_Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> >, _Deque_iterator<PodPayload20, _Nonconst_traits<PodPayload20> >, PodPayload20 *);
 }
