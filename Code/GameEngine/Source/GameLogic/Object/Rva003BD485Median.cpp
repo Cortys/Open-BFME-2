@@ -111,3 +111,14 @@ void Rva003C3AC7PopHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, Rva00
 	*result = *first;
 	Rva003BE553AdjustHeap(first, 0, last - first, value, extra);
 }
+
+// ?Rva003C3B2CPopHeap@@YAXPAPAURva003BD485Keyed@@0HH@Z @0x003C3B2C 30B.
+// Heap pop-aux over the same keyed array: shrinks last by one slot then pops
+// the top into that slot via the 6-push PopHeap at 0x003C3AC7. Chain lane on
+// 0x003C3AC7; caller 0x003C4B8E; cdecl with caller cleanup like siblings.
+void Rva003C3B2CPopHeap(Rva003BD485Keyed **first, Rva003BD485Keyed **last, int, int extra)
+{
+	typedef void (__cdecl *PopHeap6)(Rva003BD485Keyed **, Rva003BD485Keyed **, Rva003BD485Keyed **, Rva003BD485Keyed *, int, int);
+	Rva003BD485Keyed **newLast = last - 1;
+	((PopHeap6)Rva003C3AC7PopHeap)(first, newLast, newLast, *newLast, extra, 0);
+}
