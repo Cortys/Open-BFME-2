@@ -37,10 +37,23 @@ struct Slot18Holder
     virtual bool slot18(Rva00271C8A *a, int b, int c, int d, int e, int f, int g);
 };
 
+class Rva00270644
+{
+public:
+    void rva00270644(float a, float b);
+};
+
+class Drawable
+{
+public:
+    void rva00272BE7();
+};
+
 class Rva00275376
 {
 public:
     bool rva00275376(int a0, int a1, int a2, int a3, int a4, int a5);
+    void rva002752F8();
 private:
     char m_pad0[0x14C];
     SlotA8Holder **m_14C;
@@ -53,6 +66,9 @@ private:
     int m_2F0[19];
     char m_pad33C[0x107];
     bool m_443;
+    char m_pad444;
+    bool m_445;
+    bool m_446;
 };
 
 bool Rva00275376::rva00275376(int a0, int a1, int a2, int a3, int a4, int a5)
@@ -83,5 +99,15 @@ bool Rva00275376::rva00275376(int a0, int a1, int a2, int a3, int a4, int a5)
         } else {
             return false;
         }
+    }
+}
+
+void Rva00275376::rva002752F8()
+{
+    ((Rva00270644 *)this)->rva00270644(0.0f, *(const float *)0x00BC6598);
+    ((Drawable *)this)->rva00272BE7();
+    if (m_445) {
+        m_445 = false;
+        m_446 = true;
     }
 }
