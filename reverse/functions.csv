@@ -41148,3 +41148,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva0027D960@Rva0062AF7@@QAEXPAXPAM@Z,,0x0027D960,248,Code/GameEngine/Source/Common/Rva0062AF7Rva0027D815.cpp,matched,follows 0x27D88E same TU slot08 box plus water poly via 0x7E016
 ??$__uninitialized_copy@PAVRva00585B16@@PAV1@@_STL@@YAPAVRva00585B16@@PAV1@00ABU__false_type@0@@Z,,0x00585CE0,38,Code/Libraries/Source/WWVegas/WWLib/Rva00585CE0Copy.cpp,matched,copy loop calls rowed Construct 0x5859C6 stride 0x54
 ??4Rva005E7198@@QAEAAV0@ABV0@@Z,,0x005E7198,46,Code/GameEngine/Source/Common/Bfme/Rva005E7198Assign.cpp,matched,assign self-check plus AddRef plus Release 0x7DEEF plus reload
+?Rva0027D3CBForward@@YGXPAXHHH@Z,,0x0027D3CB,14,Code/GameEngine/Source/Common/Rva0027D3CBForward.cpp,matched,global 0x9FF080 to slot32 0x80 ints stand for floats for tail jmp
