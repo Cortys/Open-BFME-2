@@ -46,6 +46,11 @@ static __forceinline unsigned VecSize(const Vec216 *v) { return v->m_finish - v-
 static __forceinline Elem216 &VecAt(Vec216 *v, unsigned i) { return v->m_start[i]; }
 static __forceinline unsigned Vec32Size(const Vec32 *v) { return v->m_finish - v->m_start; }
 static __forceinline OuterElem32 &Vec32At(Vec32 *v, unsigned i) { return v->m_start[i]; }
+struct IdxPair {
+    char m_00[0x0C];
+    unsigned m_o;
+    unsigned m_i;
+};
 class Rva00219B9E {
     char m_pad[0x14];
     Vec216 m_vec;
@@ -78,6 +83,7 @@ public:
     void *rva0021B05A(unsigned int index);
     void *rva0021B0CA(unsigned int index);
     void *rva0021B22E(unsigned int o, unsigned int i);
+    void *rva0021B670(const IdxPair *p);
 };
 void *Rva00219B9E::rva00219B9E(unsigned int index)
 {
@@ -250,6 +256,16 @@ void *Rva00219B9E::rva0021B22E(unsigned int o, unsigned int i)
         return ((Rva00219B9E *)&base[o])->rva00219CAB(i);
     }
     return &err;
+}
+// ?rva0021B670@Rva00219B9E@@QAEPAXPBUIdxPair@@@Z @0x0021B670 29B
+// Null-guarded forward into rowed 0x0021B22E: null yields TheEmptyString,
+// else the +0xC/+0x10 pair selects outer and inner indices on the same this.
+// Callers 0x002E1C02/0x0037ED4B/0x004AF339/0x004E24AD/0x004E257E/0x005F0447.
+void *Rva00219B9E::rva0021B670(const IdxPair *p)
+{
+    if (!p)
+        return &AsciiString::TheEmptyString;
+    return rva0021B22E(p->m_o, p->m_i);
 }
 // ?rva0021B1B4@Rva00219B9E@@QAEPAXII@Z @0x0021B1B4 122B
 // Two-level lookup: outer 32B vector at +0x14C selects the element, then the
