@@ -41791,3 +41791,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva006E3580@Rva006E34D0@@QAEXHH@Z,,0x006E3580,31,Code/Libraries/Source/Apt/Rva006E34D0.cpp,matched,chain lane Apt two-arg packer via rva006E34D0
 ?rva00548800@Rva00548800@@QAE_NPBV?$list@PAVCreateAHeroData@@V?$allocator@PAVCreateAHeroData@@@_STL@@@_STL@@@Z,,0x00548800,59,Code/Libraries/Source/WWVegas/WWLib/Rva00548800Contains.cpp,matched,contains-check list nodes via rowed find same vector range callers prove
 ?xferAsciiStringVector@@YAPAVXfer@@PAV1@PAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@@Z,,0x0005A170,241,Code/GameEngine/Source/Common/System/XferAsciiStringVector.cpp,matched,Ascii vector Xfer via Unicode donor plus reserve pushback throw
+?rva0056EE5F@Rva0056EE5F@@QAEEXZ,,0x0056EE5F,121,Code/GameEngine/Source/Common/Rva0056EE5FRegistry.cpp,matched,Registry Registered true check via GetString compareNoCase
