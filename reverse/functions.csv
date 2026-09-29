@@ -42033,3 +42033,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$_Destroy@PAVRva001ED0DE@@@_STL@@YAXPAVRva001ED0DE@@0@Z,,0x001ED34A,25,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva001ed0de_destroy.cpp,matched,range destroy stride 0x24 via rowed dtor
 ??1?$vector@VRva001ED0DE@@V?$allocator@VRva001ED0DE@@@_STL@@@_STL@@QAE@XZ,,0x001ED363,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy plus free
 ?find@Rva002E1904Lookup@@QAEPAURva002E1904Entry@@ABVAsciiString@@@Z,,0x002E1904,68,Code/GameEngine/Source/GameLogic/System/LivingWorld/Rva002BA8F1Lookups.cpp,matched,unlock lane vector plus4 string find
+?parseMetaMap@MetaMap@@SAXPAVINI@@@Z,,0x001DB5A2,109,Code/GameEngine/Source/GameClient/MessageStream/MetaMapParseMetaMap.cpp,matched,ZH donor parseMetaMap body plus throw family pattern plus rowed callees
