@@ -41311,3 +41311,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva005A6EDADestroyRange@@YAXPAURva0052BF33Elem@@0@Z,,0x005A6EDA,24,Code/GameEngine/Source/Common/System/Rva0052BF33DestroyTagged.cpp,matched,chain destroy range via 0052BF33 callers 7
 ??_GRva006F8460@@UAEPAXI@Z,,0x006F8490,35,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva006F8460.cpp,matched,pooled deleting dtor calls rowed dtor 0x006F8460
 ?rva0059B3E9@Rva0059B3E9@@QAEHPAD@Z,,0x0059B3E9,55,Code/GameEngine/Source/Common/Rva0059B3E9Write.cpp,matched,three-part write via rowed Pair and AsciiStringRef returns total
+?rva00503E17@Rva00503E17@@QAEMXZ,,0x00503E17,56,Code/GameEngine/Source/Common/Rva00503E17BezierCall.cpp,matched,chain Bezier Evaluate with SSE t caller 0x005043DF
