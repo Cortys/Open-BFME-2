@@ -41520,3 +41520,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?Rva00248E98Enable@@YAXXZ,,0x00248E98,43,Code/GameEngine/Source/Common/Rva00446A77Enable.cpp,matched,chain via virtual Get global tail to 0x00444462
 ??0Rva005734EB@@QAE@XZ,,0x005734D7,20,Code/GameEngine/Source/Common/Rva005734EBCtor.cpp,matched,holder base ctor with NULL plus own vtable
 ??1Rva0033BD50@@QAE@XZ,,0x0033BD50,56,Code/GameEngine/Source/Common/Rva0033BD50Free.cpp,matched,chain via rowed clear 0x002CF7B5 and rowed free 0x00030830 same shape as rowed 0x0033C3F3
+??1Rva0033BD88@@QAE@XZ,,0x0033BD88,56,Code/GameEngine/Source/Common/Rva0033BD88Free.cpp,matched,chain via rowed clear 0x002CF7DE and rowed free 0x00030830 same shape as rowed 0x0033C3F3
