@@ -2926,3 +2926,4 @@ FUN_00b398d0	0x007398D0	143	blocked	EH ctor dual vtable plus interim 0xBBB554 st
 ?Rva002C787FGet@@YAHXZ	0x002C787F	136	blocked	free-func regargs edx-based multi-ret bit tests callers 1020B 1477B over 200B cannot prove signature t=8 model=muse-spark
 ?rva0039C151@Rva0039C151@@QAEXXZ	0x0039C151	63	blocked	EH vector clear DestroyRange 0x22C8E3 plus free needs EH prolog with unwind t=10 model=muse-spark
 ?getAllPoints@ProjectileStreamUpdate@@QAEXPAVVector3@@PAH@Z	0x0033F090	143	partial	float copies via integer not movss plus delayed X store t=25 model=muse-spark score=0.93 stash=reverse/attempts/0x0033f090.cpp
+FUN_0073d3e8	0x0033D3E8	75	blocked	map-find plus Upgrades-default vs Rva-copy branches need parent map at 0x388 and Upgrades-Rva identity; time-box t=10 model=muse-03
