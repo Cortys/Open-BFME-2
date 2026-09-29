@@ -42492,3 +42492,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva00325388Send@@YAXPAVGameWindow@@HHH@Z,,0x00325388,54,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetMsg00325388.cpp,matched,WindowManager slot E8 sender via TheWindowManager
 ?Rva003C60E8Do@@YGXPAVParameter@@PAURva003C60E8Arg@@@Z,,0x003C60E8,169,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C60E8Do.cpp,matched,leaf script unit status via getUnitNamed list fill
 ?Rva003C75C2PartialSort@@YAXPAPAURva003BD485Keyed@@00H@Z,,0x003C75C2,27,Code/GameEngine/Source/GameLogic/Object/Rva003BD485Median.cpp,matched,chain on 0x003C69B7 caller 0x003CA315 cdecl adapter
+?Rva003C2A29Do@@YGXABVAsciiString@@0@Z,,0x003C2A29,118,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C2A29Script.cpp,matched,team group via getTeamNamed createGroup rva00370451
