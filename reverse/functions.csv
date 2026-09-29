@@ -42686,3 +42686,4 @@ _Rva000219C0LocaleName,,0x000219C0,23,Code/Libraries/Source/WWVegas/WWLib/stlpor
 ?updateCountsAndFlags@W3DRoadBuffer@@IAEXXZ,,0x000D52EA,487,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DRoadBuffer.cpp,matched,gap updateCountsAndFlags via init guard like insertTee
 ?rva0037EACC@Rva0037EACC@@QAEXPAX@Z,,0x0037EACC,81,Code/GameEngine/Source/Common/Rva0037EACCCopy.cpp,matched,copy-to with AsciiString Rva assign and rep movsd
 ?rva0028FB6F@Object@@QAEXPAX@Z,,0x0028FB6F,79,Code/GameEngine/Source/GameLogic/Object/Object_Rva0028FB6F.cpp,matched,Object helper mask via slot44 plus status clear
+?bfmeDropVGO@@YAXPAX@Z,,0x006D0440,32,Code/GameEngine/Source/Common/BfmeDropVGO.cpp,matched,leaf LINK BONUS drop via teardown and pool freeBlock

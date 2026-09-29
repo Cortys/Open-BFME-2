@@ -3497,3 +3497,4 @@ FUN_007007A8	0x003007A8	211	blocked	entry mov eax,[eax] with no eax set implies 
 ?Rva003014D6Less@@YG_NPAVMapMetaData@@0@Z	0x003014D6	94	partial	size-exact 94B 30 vs 32 insns; retail keeps first temp ptr in esi push esi plus mov esi eax where ours lea eax plus push eax; mov ecx eax vs lea ecx; t=25 model=muse-04 score=0.94 stash=reverse/attempts/0x003014d6.cpp
 ??0LargeGroupBonusUpdateModuleData@@QAE@XZ	0x004901BD	104	partial	104/104 size-exact 30/30 insns 0 reg 0 mem; walls int-global load before EH-state plus byte-18 store after vector lea-push plus push-vs-lea for vector alloc; t=20 model=muse-04 score=0.985 stash=reverse/attempts/0x004901bd.cpp
 FUN_007F0588	0x003F0588	70	blocked	array-search loop shape wall 51vs70B compact indexed vs retail ptr-plus-index with pre-loop check and per-iter bound reload t=15 model=muse-04
+?rva004C108B@Rva004C108B@@QAEMXZ	0x004C108B	49	blocked	same float-zero wall as 0x004C10F0 stash t=1 model=muse-spark
