@@ -64,6 +64,7 @@ public:
     virtual ~CreateAHeroData();
 };
 struct BfmeSaveElement002295D7 : Snapshot {
+    BfmeSaveElement002295D7();
     unsigned int word04;
     unsigned char flag08, flag09, flag0A;
     unsigned int word0C, word10, word14, word18, word1C, word20, word24, word28, word2C;
@@ -80,6 +81,8 @@ struct BfmeSaveElement002295D7 : Snapshot {
 struct BfmeSaveBlock4 { unsigned int values[4]; };
 struct BfmeSaveBlock10 { unsigned int values[10]; };
 struct BfmeSubobject00229875 : Snapshot {
+    BfmeSubobject00229875();
+    void rva002DBA6A();
     virtual ~BfmeSubobject00229875();
     virtual void crc(Xfer *);
     virtual const char *typeName() const;
@@ -117,3 +120,8 @@ BfmeSubobject0022CE19::BfmeSubobject0022CE19(const BfmeSubobject0022CE19 &o)
 BfmeSubobject0022CE19::~BfmeSubobject0022CE19() {}
 
 BfmeSubobject00229875::~BfmeSubobject00229875() {}
+
+BfmeSubobject00229875::BfmeSubobject00229875()
+{
+	rva002DBA6A();
+}
