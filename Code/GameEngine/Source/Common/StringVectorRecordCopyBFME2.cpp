@@ -39,8 +39,10 @@ template void _STL::_Construct<BfmeVectorRecord000BDF17,BfmeVectorRecord000BDF17
 struct BfmeVectorRecord001B4A39 {
     AsciiString text0; _STL::vector<AsciiString> names0, names1, names2, names3, names4; unsigned int word40; AsciiString text1;
     BfmeVectorRecord001B4A39(const BfmeVectorRecord001B4A39 &o);
+    ~BfmeVectorRecord001B4A39();
 };
 BfmeVectorRecord001B4A39::BfmeVectorRecord001B4A39(const BfmeVectorRecord001B4A39 &o) : text0(o.text0), names0(o.names0), names1(o.names1), names2(o.names2), names3(o.names3), names4(o.names4), word40(o.word40), text1(o.text1) {}
+BfmeVectorRecord001B4A39::~BfmeVectorRecord001B4A39() {}
 template void _STL::_Construct<BfmeVectorRecord001B4A39,BfmeVectorRecord001B4A39>(BfmeVectorRecord001B4A39*,const BfmeVectorRecord001B4A39&);
 
 // Complete retail record copy at 0x000C0BEC.

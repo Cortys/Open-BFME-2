@@ -3064,3 +3064,4 @@ FUN_005dec48	0x001DEC48	227	blocked	Eva Xfer helper with EH virtuals 0xc 0x28 0x
 ?rva0054D858@Rva0054D858@@QAE@XZ	0x0054D858	128	blocked	ctor with 2 int List_base plus Unicode Ascii nulls plus m38 -1 needs full layout vs AsciiString dtor type mismatch t=10 model=muse-10
 ??4?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x005BAB0B	115	partial	115B exact size 54 insns ebx edi swap plus add ecx 8 scheduling t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x005bab0b.cpp
 ?rva0005A3FA@Rva0005A3FA@@QAEXABVAsciiString@@M@Z	0x0005A3FA	87	partial	89/87B 27 vs 25 insns; 0 mem 0 reg; extra float spill pair plus integer mov vs movss t=20 model=muse-05 score=0.92 stash=reverse/attempts/0x0005a3fa.cpp
+?rva003815AB@Rva003815AB@@QAE@XZ	0x003815AB	109	blocked	vector plus virtual functor with EH needs donor t=5 model=muse-10
