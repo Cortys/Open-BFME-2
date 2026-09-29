@@ -41079,3 +41079,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva005382A6@Rva005382A6@@QAEPAXHH@Z,,0x005382A6,16,Code/GameEngine/Source/Common/Rva005382A6Getter.cpp,matched,indexed address base plus i16 plus off
 ?rva005DB98E@Rva005DB98E@@QAEPAXGG@Z,,0x005DB98E,46,Code/GameEngine/Source/Common/Rva005DB98EGet.cpp,matched,2D index 20B at 218 via G7 imul
 ?clear@Rva0009990D@@QAEXXZ,,0x0009990D,26,Code/GameEngine/Source/Common/Rva0009990DSet.cpp,matched,clear via dtor plus delete
+?rva000B980E@Rva000B980E@@QAEXPADHH@Z,,0x000B980E,44,Code/GameEngine/Source/Common/Rva000B980ECopy.cpp,matched,string data memcpy via empty default
