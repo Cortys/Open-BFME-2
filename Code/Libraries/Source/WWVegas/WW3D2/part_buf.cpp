@@ -1180,13 +1180,44 @@ void ParticleBufferClass::Scale(float scale)
 // the cached bounding volumes will not be invalidated unless we do
 // it elsewhere (such as here). We also need to call the particle
 // emitter's Emit() function (done here to avoid order dependence).
+// Retail calls Emit at vtable +0x204 (slot 129); donor part_emt.h lays it at
+// +0x208 (slot 130) because BFME2 RenderObjClass has one fewer slot before
+// Set_Visible (visibility-wrappers precedent). TU-local view places Emit at
+// +0x204 without touching the shared donor header.
+#define BFME_EMIT_VIEW_EIGHT(a, b, c, d, e, f, g, h) \
+	virtual void Dummy##a(); virtual void Dummy##b(); \
+	virtual void Dummy##c(); virtual void Dummy##d(); \
+	virtual void Dummy##e(); virtual void Dummy##f(); \
+	virtual void Dummy##g(); virtual void Dummy##h();
+struct ParticleEmitterEmitView
+{
+	BFME_EMIT_VIEW_EIGHT(0, 1, 2, 3, 4, 5, 6, 7)
+	BFME_EMIT_VIEW_EIGHT(8, 9, 10, 11, 12, 13, 14, 15)
+	BFME_EMIT_VIEW_EIGHT(16, 17, 18, 19, 20, 21, 22, 23)
+	BFME_EMIT_VIEW_EIGHT(24, 25, 26, 27, 28, 29, 30, 31)
+	BFME_EMIT_VIEW_EIGHT(32, 33, 34, 35, 36, 37, 38, 39)
+	BFME_EMIT_VIEW_EIGHT(40, 41, 42, 43, 44, 45, 46, 47)
+	BFME_EMIT_VIEW_EIGHT(48, 49, 50, 51, 52, 53, 54, 55)
+	BFME_EMIT_VIEW_EIGHT(56, 57, 58, 59, 60, 61, 62, 63)
+	BFME_EMIT_VIEW_EIGHT(64, 65, 66, 67, 68, 69, 70, 71)
+	BFME_EMIT_VIEW_EIGHT(72, 73, 74, 75, 76, 77, 78, 79)
+	BFME_EMIT_VIEW_EIGHT(80, 81, 82, 83, 84, 85, 86, 87)
+	BFME_EMIT_VIEW_EIGHT(88, 89, 90, 91, 92, 93, 94, 95)
+	BFME_EMIT_VIEW_EIGHT(96, 97, 98, 99, 100, 101, 102, 103)
+	BFME_EMIT_VIEW_EIGHT(104, 105, 106, 107, 108, 109, 110, 111)
+	BFME_EMIT_VIEW_EIGHT(112, 113, 114, 115, 116, 117, 118, 119)
+	BFME_EMIT_VIEW_EIGHT(120, 121, 122, 123, 124, 125, 126, 127)
+	virtual void Dummy128();
+	virtual void Emit();
+};
+#undef BFME_EMIT_VIEW_EIGHT
 // ?ParticleBufferClass::On_Frame_Update present-unmatched
 void ParticleBufferClass::On_Frame_Update(void)
 {
 	WWPROFILE("ParticleBufferClass::On_Frame_Update");
 	Invalidate_Cached_Bounding_Volumes();
 	if (Emitter) {
-		Emitter->Emit();
+		((ParticleEmitterEmitView *)Emitter)->Emit();
 	}
 	
 	if (Is_Complete()) {
