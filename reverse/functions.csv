@@ -41031,3 +41031,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__copy@PBVRva000C24EA@@PAV1@H@_STL@@YAPAVRva000C24EA@@PBV1@0PAV1@ABUrandom_access_iterator_tag@0@PAH@Z,,0x000C376C,47,Code/Libraries/Source/WWVegas/WWLib/Rva000C24EACopy.cpp,matched,STL copy stride 0x20 via rowed assign 0xC24EA caller 0xC47A8
 ??$copy@PBVRva000C24EA@@PAV1@@_STL@@YAPAVRva000C24EA@@PBV1@0PAV1@@Z,,0x000C4795,29,Code/Libraries/Source/WWVegas/WWLib/Rva000C24EACopy.cpp,matched,copy wrapper over __copy 0xC376C tag plus NULL distance
 ?rva001FF6AE@Rva001FF6D7@@QAEXXZ,,0x001FF6AE,41,Code/GameEngine/Source/Common/Rva001FF6AEClear.cpp,matched,chain clear via rowed teardown 0x001FF55F caller 0x001FF755
+?rva002A9BBD@Rva002A9BBD@@QAEPAXXZ,,0x002A9BBD,23,Code/GameEngine/Source/Common/Rva002A9BBDGet.cpp,matched,ptr chase plus virtual slot 12 tail call

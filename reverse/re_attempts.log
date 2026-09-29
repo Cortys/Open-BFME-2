@@ -2736,3 +2736,5 @@ FUN_00483F0F	0x00083F0F	243	blocked	big track update with x87 plus SSE plus glob
 FUN_00484206	0x00084206	107	blocked	EH particle texture plus RefCountPtr needs handle layout t=8 model=muse-04
 FUN_004C2CBF	0x000C2CBF	379	blocked	379B hash distribution idiv div min-max clamps plus compareNoCase plus pin-only push_back exceeds quick box t=3 model=muse-spark
 FUN_004C781E	0x000C781E	183	blocked	vector _M_insert_overflow over BfmeVectorRecord000C0BEC needs sibling allocate pin at 0x395960 plus whole-class instantiation plus cross-type _M_clear BEDF0Record call t=12 model=muse-spark
+?Rva00423262PushHeap@@YAXPAHHVRva00422CA8@@@Z	0x00423262	49	blocked	EBP frame plus Oy-minus plus by-value comp got 48B vs 49B but ebx holds value not hole plus parent-val in eax not edi t=20 model=muse-spark
+?Rva003F2BEBDeleteRange@@YA_NPAPAV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@0_N@Z	0x003F2BEB	33	partial	30B exact except missing lea ecx ebp+10 before call needs thiscall ICF twin of 0x00423FBD t=20 model=muse-spark score=0.91 stash=reverse/attempts/0x003f2beb.cpp
