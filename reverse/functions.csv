@@ -42464,3 +42464,4 @@ _io_flush,,0x0074AE00,194,Code/Libraries/Source/Lua/liolib.c,matched,BFME1 byte-
 ?Rva00564C7DFill@@YAPAVRva003A6360Record@@PAV1@IABV1@@Z,,0x00564C7D,40,Code/GameEngine/Source/Common/Bfme/Rva00564C7DFill.cpp,matched,counted copy-construct loop via rowed copy ctor 0x0052BB9A caller 0x0056602F
 ?rva002EDEAB@Rva002EDEAB@@QAEXPAURva002EDEABArg@@@Z,,0x002EDEAB,153,Code/GameEngine/Source/GameLogic/AI/Rva002EDEAB.cpp,matched,Path rebuild via GameInfo slot plus GlobalData flag plus new Path plus append
 ?invoke@Rva00352F2FOpaque@@QAEXPBVWaypoint@@HW4CommandSourceType@@@Z,,0x00352F2F,110,Code/GameEngine/Source/Common/Rva00352F2FOpaqueInvoke.cpp,matched,AICommandParms 0x10 waypoint intValue via 0x00351BD0 slot0 free 0x00030830
+?rva0036FAF8@Rva0036FAF8@@QAEXPBVWaypoint@@W4CommandSourceType@@H@Z,,0x0036FAF8,95,Code/GameEngine/Source/GameLogic/AI/Rva0036FAF8Group.cpp,matched,AIGroup forward m_410 mode via 0x00352F9D 0x0036ED4C
