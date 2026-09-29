@@ -252,7 +252,10 @@ class StreamingArchiveFile : public RAMFile
 {
 public:
 	virtual ~StreamingArchiveFile();
+	virtual bool open( const char *filename, int access );
+	virtual bool open( File *file );
 	virtual void close( void );
+	virtual int seek( int pos, seekMode mode );
 	virtual bool openFromArchive(File *archiveFile, const AsciiString &filename, int offset, int size);
 	virtual int read(void *buffer, int bytes);
 
@@ -261,6 +264,14 @@ protected:
 	int m_startingPos;	// +0x24
 	int m_curPos;		// +0x28
 };
+
+class FileSystem
+{
+public:
+	File *openFile( const char *filename, int access, int flags );
+};
+
+extern FileSystem *TheFileSystem;
 
 class Debug
 {
@@ -336,6 +347,60 @@ StreamingArchiveFile::~StreamingArchiveFile()
 void LocalFile::close( void )
 {
 	File::close();
+}
+
+// ?open@StreamingArchiveFile@@UAE_NPBDH@Z, retail 0x00605B36, 50 bytes: slot 1 of
+// the StreamingArchiveFile vtable 0x0087AA50. ZH StreamingArchiveFile::open
+// verbatim (BFME1 matched it at 0x009D2190) through BFME 2's three-argument
+// FileSystem::openFile (rowed 0x00600C34); open(File*) is slot 17, whose
+// return-TRUE body is ICF-folded into a stub shared by many vtables.
+bool StreamingArchiveFile::open( const char *filename, int access )
+{
+	File *file = TheFileSystem->openFile( filename, access, 0 );
+
+	if ( file == NULL )
+	{
+		return false;
+	}
+
+	return (open( file ) != NULL);
+}
+
+// ?seek@StreamingArchiveFile@@UAEHHW4seekMode@File@@@Z, retail 0x00605ADD, 61
+// bytes: slot 5 of vtable 0x0087AA50. ZH StreamingArchiveFile::seek verbatim
+// over m_curPos (+0x28) and the inherited RAMFile m_size (+0x1c).
+int StreamingArchiveFile::seek( int pos, seekMode mode )
+{
+	int newPos;
+
+	switch( mode )
+	{
+		case START:
+			newPos = pos;
+			break;
+		case CURRENT:
+			newPos = m_curPos + pos;
+			break;
+		case END:
+			newPos = m_size + pos;
+			break;
+		default:
+			// bad seek mode
+			return -1;
+	}
+
+	if ( newPos < 0 )
+	{
+		newPos = 0;
+	}
+	else if ( newPos > m_size )
+	{
+		newPos = m_size;
+	}
+
+	m_curPos = newPos;
+
+	return m_curPos;
 }
 
 // Zero Hour StreamingArchiveFile::close verbatim. Slot 2 of the
