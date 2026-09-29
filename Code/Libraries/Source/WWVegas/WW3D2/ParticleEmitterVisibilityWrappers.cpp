@@ -81,4 +81,10 @@ void ParticleEmitterClass::Set_Visible(int onoff, int sceneToken)
 	Update_On_Visibilty();
 }
 
+void ParticleEmitterClass::Set_Force_Visible(int onoff)
+{
+	RenderObjClass::Set_Force_Visible(onoff);
+	Update_On_Visibilty();
+}
+
 #undef BFME_VIRTUAL_EIGHT
