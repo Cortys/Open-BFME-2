@@ -41637,3 +41637,4 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ??$__unguarded_partition@PAHHVRva00422CA8@@@_STL@@YAPAHPAH0HVRva00422CA8@@@Z,,0x004231A0,73,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva00422ca8.cpp,matched,unlock quicksort partition via rowed comparator
 ??$__push_heap@PAHHHVRva00422CA8@@@_STL@@YAXPAHHHHVRva00422CA8@@@Z,,0x00423349,77,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,unlock heap sift-up via rowed comparator
 ??$__adjust_heap@PAHHHVRva00422CA8@@@_STL@@YAXPAHHHHVRva00422CA8@@@Z,,0x004239BF,94,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap sift-down via landed push heap
+??$__pop_heap@PAHHVRva00422CA8@@@_STL@@YAXPAH00HVRva00422CA8@@@Z,,0x00423EF7,41,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain heap pop via landed adjust heap

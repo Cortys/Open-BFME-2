@@ -64,4 +64,15 @@ void __adjust_heap(RandomAccessIterator first, Distance holeIndex,
 template void __adjust_heap<int *, int, int,
 	Rva00422CA8>(int *, int, int, int, Rva00422CA8);
 
+template <class RandomAccessIter, class Tp, class Compare>
+void __pop_heap(RandomAccessIter first, RandomAccessIter last,
+	RandomAccessIter result, Tp val, Compare comp)
+{
+	*result = *first;
+	__adjust_heap(first, 0, (int)(last - first), val, comp);
+}
+
+template void __pop_heap<int *, int,
+	Rva00422CA8>(int *, int *, int *, int, Rva00422CA8);
+
 }
