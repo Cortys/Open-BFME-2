@@ -9,8 +9,13 @@
 typedef void(__cdecl *GameFreeFunction)(void *, int);
 typedef void *(__cdecl *GameAllocateFunction)(unsigned int, int, const void *);
 
-extern "C" GameFreeFunction __gameMemFreePtr;
-extern "C" GameAllocateFunction __gameMemAllocatePtr;
+// Six matched wrappers independently locate these runtime binding slots.
+// Both four-byte pointers start at zero in BFME2; their types follow the
+// existing wrapper call contracts rather than an allocator implementation.
+extern "C" {
+GameFreeFunction __gameMemFreePtr = 0;             // VA 0x00DE03FC
+GameAllocateFunction __gameMemAllocatePtr = 0;    // VA 0x00DE0404
+}
 
 void __cdecl operator delete(void *block)
 {
