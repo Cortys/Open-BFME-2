@@ -43791,3 +43791,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva001F8E45@Rva001F8E45@@QAEXPAX0@Z,,0x001F8E45,78,Code/GameEngine/Source/Common/Thing/Rva001F8E45.cpp,matched,callers 0x001FA529 and 0x001F9487; rowed erase 0x31BD55 and pushback 0x4DFCB0
 ??0Rva001F8C5B@@QAE@ABV?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@@Z,,0x001F8C5B,103,Code/GameEngine/Source/Common/Thing/Rva001F8C5BCtor.cpp,matched,callers 0x001F90B8 and 0x001F9CA1; base 0x211E58 reserve 0x2B712E pushback 0x4DFCB0
 ?Rva0060BC53Xfer3@@YAPAVXfer@@PAV1@PAH@Z,,0x0060BC53,88,Code/GameEngine/Source/Common/System/Rva0060BC53.cpp,matched,Xfer uint int slots plus throw via caller 0x0060BD31
+?getHeightAboveTerrainOrWater@Thing@@QBEMXZ,,0x0030A4D0,88,Code/GameEngine/Source/Common/Thing/ThingGetHeightAboveTerrainOrWater.cpp,matched,ZH donor Thing OrWater via isUnderwater; callers at 0x000854F9 and 0x001E551C
