@@ -43956,3 +43956,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva000F0AF7@@QAE@XZ,,0x000F0AF7,110,Code/GameEngine/Source/Common/Rva000F0AF7Ctor.cpp,matched,ctor two HashTableClass 0x800 caller 0x000F1A32
 ?rva000F0803@Rva000F26DC@@QAEXH@Z,,0x000F0803,47,Code/GameEngine/Source/Common/Rva000F26DCFree.cpp,matched,slot free via dtor 0x000F26DC loop 160 caller 0x000F16B4
 ?rva0043821C@Rva0043821C@@QAEXXZ,,0x0043821C,18,Code/GameEngine/Source/Common/Rva0043821C.cpp,matched,leaf movss 1.0f plus and-zero caller 0x00244120
+?scan_is@?$ctype@D@_STL@@QBEPBDW4mask@ctype_base@2@PBD1@Z,,0x00017270,35,Code/stlport/CtypeCharFindIf.cpp,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); ambiguous by bytes (2 candidate placements); resolved by cross-game callee agreement: only this placement calls the BFME2 __find_if<const char * _Ctype_c_is_mask> row 0x00016EA0
