@@ -190,7 +190,6 @@ int BufferedFileClass::Read(void * buffer, int size)
  * HISTORY:                                                                                    *
  *   10/18/1994 JLB : Created.                                                                 *
  *=============================================================================================*/
-// ?Write@BufferedFileClass@@UAEHPBXH@Z present-unmatched
 int BufferedFileClass::Write(void const * buffer, int size)
 {
 	if ( BufferSize != 0 ) {
