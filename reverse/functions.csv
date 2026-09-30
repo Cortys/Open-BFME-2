@@ -43043,3 +43043,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva00136794@@QAE@PBD0MPBVRva0013101E@@ABV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@22@Z,,0x00136794,145,Code/Libraries/Source/WWVegas/WWLib/Rva00136794Ctor.cpp,matched,chain ctor GenBase vtable StringBase vector Rva via EH vector-dtor plus throw Rva
 ?rva002D2457@Rva002D22CA@@UAE_NXZ,,0x002D2457,135,Code/GameEngine/Source/Common/Rva002D22CAInit.cpp,matched,vtable slot1 of 0x00802A20 registers 9 tables then tail-jmps validator
 ?rva0039AF76@Rva0039AF76@@QAEXABVAsciiString@@@Z,,0x0039AF76,37,Code/GameEngine/Source/Common/Rva0039AF76Method.cpp,matched,unlock 37B AsciiString assign plus TheNameKeyGenerator nameToKey
+?rva00131259@Rva00131259@@QAEXPBD@Z,,0x00131259,212,Code/Libraries/Source/WWVegas/WW3D2/Rva00131259Load.cpp,matched,chain via 0x000787BA dds tga jpg png

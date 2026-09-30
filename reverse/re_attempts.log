@@ -3637,3 +3637,4 @@ FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 mo
 ?rva003B11D2@Rva003B11D2@@QAEPAVOverridable@@VAsciiString@@@Z	0x003B11D2	114	partial	110B vs 114B 9 structural; count end-first plus add-not-lea plus reg roles; ptr-arith variant worse 108B t=15 model=muse-07 score=0.9 stash=reverse/attempts/0x003b11d2.cpp
 ??4Rva0027C36A@@QAEAAV0@ABV0@@Z	0x00085420	175	partial	int-float-int middle float uses integer mov vs retail fld-fstp t=25 model=muse-07 score=0.94 stash=reverse/attempts/0x00085420.cpp
 ??0Rva0027C36A@@QAE@ABV0@@Z	0x0027C410	228	partial	loop setup lea order remains; /Op fixes fld vs mov t=30 model=muse-07 score=0.985 stash=reverse/attempts/0x0027c410.cpp
+?Rva00180CCBRegister@@YAXPBD PAX@Z	0x00180CCB	127	blocked	chain register via 0x00180B94 has virtual-delete plus new-add paths beyond twin 0x17FD2F 92B pattern t=12 model=muse-04
