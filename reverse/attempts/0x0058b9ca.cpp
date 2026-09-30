@@ -1,0 +1,98 @@
+// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z
+// partial score=0.97 date=2026-09-30
+// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z
+// partial score=0.97 date=2026-09-30
+// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /arch:SSE
+//
+// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z @0x0058B9CA (177B):
+// Connection ack retire: walks the pending list at +0x18 via +4 links,
+// matches id word at +0x10, player byte at +0x0C, frame at +8 vs arg +0x14,
+// timestamp at +4 vs arg +0x10, updates RTT average at +0x20 with per-id
+// sample at +0x24[idx] (idx = id % 200) scaled by g_00C1B4F0, stamps
+// timeGetTime, handles 32-bit wrap via g_00BC26EC, removes the message via
+// rowed removeMessage and returns it (null if none). Evidence: unlock lane,
+// BFME1 donor Connection_processAck.cpp 3-arg processAck plus timestamp,
+// neighbours setQuitting/doRetryMetrics, sole callee rowed plus IAT
+// timeGetTime, caller 0x0058BD71 forwards +0x1C/+0x1E/+0x20/+0x24.
+typedef unsigned char UnsignedByte;
+typedef unsigned short UnsignedShort;
+typedef unsigned int UnsignedInt;
+typedef int Int;
+typedef float Real;
+
+extern "C" __declspec(dllimport) UnsignedInt __stdcall timeGetTime(void);
+
+extern const float g_00C1B4F0;
+extern const float g_00BC26EC;
+
+class NetCommandMsg
+{
+public:
+	void *m_vptr; // +0x00
+	UnsignedInt m_timestamp; // +0x04
+	UnsignedInt m_executionFrame; // +0x08
+	UnsignedInt m_playerID; // +0x0C
+	UnsignedShort m_id; // +0x10
+	Int m_commandType; // +0x14
+	Int m_referenceCount; // +0x18
+};
+
+class NetCommandRef
+{
+public:
+	NetCommandMsg *getCommand() { return m_msg; }
+	NetCommandRef *getNext() { return m_next; }
+	UnsignedInt getTimeLastSent() { return m_timeLastSent; }
+
+	NetCommandMsg *m_msg; // +0x00
+	NetCommandRef *m_next; // +0x04
+	NetCommandRef *m_prev; // +0x08
+	UnsignedInt m_retryCount; // +0x0C
+	UnsignedInt m_timeLastSent; // +0x10
+};
+
+class NetCommandList
+{
+public:
+	NetCommandRef *getFirstMessage() { return m_first; }
+	void removeMessage(NetCommandRef *msg);
+
+	void *m_vptr; // +0x00
+	NetCommandRef *m_first; // +0x04
+};
+
+enum { CONNECTION_LATENCY_HISTORY_LENGTH = 200 };
+
+class Connection
+{
+public:
+	NetCommandRef *rva0058B9CA(UnsignedShort commandID, UnsignedByte playerID, UnsignedInt timestamp, UnsignedInt executionFrame);
+
+	char m_beforeCommandList[0x18]; // +0x00
+	NetCommandList *m_netCommandList; // +0x18
+	UnsignedInt m_betweenListAndLatency; // +0x1C
+	Real m_averageLatency; // +0x20
+	Real m_latencies[CONNECTION_LATENCY_HISTORY_LENGTH]; // +0x24
+};
+
+// ?rva0058B9CA@Connection@@QAEPAVNetCommandRef@@GEII@Z present-unmatched
+NetCommandRef *Connection::rva0058B9CA(UnsignedShort commandID, UnsignedByte playerID, UnsignedInt timestamp, UnsignedInt executionFrame)
+{
+	NetCommandRef *pendingCommandRef = m_netCommandList->getFirstMessage();
+	while ((pendingCommandRef != 0) && ((pendingCommandRef->getCommand()->m_id != commandID) ||
+		(pendingCommandRef->getCommand()->m_playerID != playerID) ||
+		(pendingCommandRef->getCommand()->m_executionFrame != executionFrame) ||
+		(pendingCommandRef->getCommand()->m_timestamp != timestamp))) {
+		pendingCommandRef = pendingCommandRef->getNext();
+	}
+	if (pendingCommandRef == 0) {
+		return 0;
+	}
+	Int latencyHistoryIndex = pendingCommandRef->getCommand()->m_id % CONNECTION_LATENCY_HISTORY_LENGTH;
+	m_averageLatency -= m_latencies[latencyHistoryIndex] * g_00C1B4F0;
+	Real roundTripMilliseconds = (Real)(timeGetTime() - pendingCommandRef->getTimeLastSent());
+	m_averageLatency += roundTripMilliseconds * g_00C1B4F0;
+	m_latencies[latencyHistoryIndex] = roundTripMilliseconds;
+	m_netCommandList->removeMessage(pendingCommandRef);
+	return pendingCommandRef;
+}
