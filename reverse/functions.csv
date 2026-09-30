@@ -43506,3 +43506,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?Rva0042818FSwap@@YAXPAX0@Z,,0x0042818F,75,Code/GameEngine/Source/Common/Rva0042818FSwap.cpp,matched,swap via narrow copy prereq assign version dtor caller 0x00428558
 ?Rva00327C61SetChecked@@YAXPAVGameWindow@@_N@Z,,0x00327C61,58,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetCheckButtonSetChecked.cpp,matched,sibling GadgetCheckLikeButtonIsChecked bit2 via lea 0x314046 and winGetStatus pin 0x30F45F
 ?Rva002E37E5Write@@YAXPAUTriggerArea002E37E5@@PAVDataChunkOutput@@PAVTriggerFilter002E37E5@@@Z,,0x002E37E5,145,Code/GameEngine/Source/Common/Rva002E37E5Write.cpp,matched,chain from 0x0030B2FE TriggerAreas filtered write
+?rva0055B8CD@Rva0055B8CD@@UAEXPAVXfer@@@Z,,0x0055B8CD,70,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B8CD.cpp,matched,DoXfer slot3 vtable 0x0081BA90 slot7 0x0081BF20 Version1 rowed xferRandomVariable rowed caller 0x0055B951
