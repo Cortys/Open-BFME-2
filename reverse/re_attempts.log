@@ -3943,3 +3943,6 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?Rva002629EACheck@@YA_NPBVThing@@0@Z	0x002629EA	122	blocked	SSE movaps scheduling plus sub-esp-C frame plus al return shape; high-level bool version 111B 8 regions; t=10 model=muse-02
 ?Rva002D43EFFire@@YAXPAVRva00222A8BTarget@@PAXPBDPAHPAUAsciiHolder@@@Z	0x002D43EF	117	partial	retail uses esi-zero for 3 pushes plus cmp plus EH state; ours pushes literals; needs enregister lever t=18 model=muse-03 score=0.93 stash=reverse/attempts/0x002d43ef.cpp
 ?rva006F7C10@Rva006F7C10@@QAEXXZ	0x006F7C10	83	partial	O2 gives 83B exact size but swaps next-data loads; needs scheduling lever t=22 model=muse-03 score=0.93 stash=reverse/attempts/0x006f7c10.cpp
+?Rva0054A9ABAdjustHeap@@YAXU?$_Deque_iterator@UBfmeE8@@U?$_Const_traits@UBfmeE8@@@_STL@@@_STL@@HHHMUComp0054A9AB@@@Z	0x0054A9AB	219	partial	tail value fill via placeholders vs named temp plus push eax vs ecx t=30 model=muse-06 score=0.99 stash=reverse/attempts/0x0054a9ab.cpp
+??0Rva002DAB18@@QAE@XZ	0x002DAB18	70	partial	mov ecx restore late vs early plus stores order t=30 model=muse-06 score=0.97 stash=reverse/attempts/0x002dab18.cpp
+??0Rva0035D74A@@QAE@XZ	0x0035D789	72	partial	or 0x30 hoisted early vs late plus vtable sinks late vs early; 72/72B 22/22ins 0reg t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x0035d789.cpp
