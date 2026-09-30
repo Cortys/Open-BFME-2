@@ -44157,3 +44157,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??$__uninitialized_fill_n@PAVSaveMapPreview@@IV1@@_STL@@YAPAVSaveMapPreview@@PAV1@IABV1@ABU__false_type@0@@Z,,0x002DBF28,40,Code/GameEngine/Source/Common/System/SaveGame/SaveMapPreviewFillN.cpp,matched,unlock lane via caller 0x002DDDB9 copy ctor stride 0x14
 ?rva0031AE13@ControlBar@@QAEXXZ,,0x0031AE13,128,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AE13.cpp,matched,ControlBar button-large via window manager and name key and gadget helpers
 ?rva006FDDB0@AptBasePtrStack@@QAEXH@Z,,0x006FDDB0,151,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,same TU class flags triple as neighbors capacity init via pool alloc
+?Rva00564CA5Copy@@YAPAVDynamicAudioEventRTS@@PAV1@00@Z,,0x00564CA5,47,Code/GameEngine/Source/Common/Bfme/Rva00564CA5Copy.cpp,matched,range copy 8B elements via rowed operator assign
