@@ -20,8 +20,9 @@
 // open, hence the address-token name. Was briefly misnamed Blit_Char
 // (retracted with tombstone); one body per address.
 
-struct FontCharsClassCharDataStruct
+class FontCharsClassCharDataStruct
 {
+	public:
 	unsigned short Value;
 	short Width;
 	short ExtraSpacing;
