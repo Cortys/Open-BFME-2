@@ -43202,3 +43202,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva001EB0FB@Rva001EB0FB@@QAE_NAAVRva00376A62@@@Z,,0x001EB0FB,17,Code/GameEngine/Source/Common/Rva001EB0FBHas.cpp,matched,null-checked tail-forward to contains
 ??1StructureToppleUpdateModuleData@@UAE@XZ,,0x00257C88,48,Code/GameEngine/Source/GameLogic/Object/Update/StructureToppleUpdateModuleDataDtor.cpp,matched,unlock via vector 0x00257583 base 0x00BBB554 caller 0x00257C6C
 ??0Rva00180B94_Prototype@@QAE@PBDHH@Z,,0x00180B2B,77,Code/GameEngine/Source/Common/Rva00180B94Ctor.cpp,matched,twin of Rva0017FB41 PBDHH via 0x00180CAB caller
+??_GStructureToppleUpdateModuleData@@UAEPAXI@Z,,0x00257C6C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_StructureTopple.cpp,matched,chain via rowed 0x00257C88 plus delete 0x0002FD60
