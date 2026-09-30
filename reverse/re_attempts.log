@@ -4275,3 +4275,4 @@ FUN_002B5739	0x002B5739	115	blocked	same array-visit EH functor wall as 0x005C99
 ?Rva00595C04Format@@YAXPAVAsciiString@@HG@Z	0x00595C04	117	blocked	ip formatter varargs plus copy-release needs placement t=10 model=muse-spark
 ??4Rva006ECE30@@QAEAAV0@ABV0@@Z	0x006ECE30	133	blocked	Apt op SEH needs EHa scope table t=12 model=muse-spark
 ?rva000A89E3@Rva000A89E3@@QAE?AVUnicodeString@@XZ	0x000A89E3	60	blocked	handle string RVO plus dup type mismatch t=12 model=muse-spark
+?Rva0054AA86Get@@YAHXZ	0x0054AA86	219	blocked	deque heap sift-down ending in SiftUp call takes 36B six params per 82B caller but tail pushes dead 4B and value halves split across p4-p6 t=15 model=muse-03
