@@ -43258,3 +43258,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva0053FDE6@@QAE@XZ,,0x0053FDE6,68,Code/Libraries/Source/WWVegas/WW3D2/Rva0053FDE6Init.cpp,matched,ctor int2 zeros shared 1.0f plus global via full init list
 ??4Rva0026F684@@QAEAAV0@ABV0@@Z,,0x0026F767,339,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Assign.cpp,matched,same vtable 0x007FABF0 class as ctor and dtor
 ??0Made002CC711@@QAE@XZ,,0x00508F51,59,Code/GameEngine/Source/GameLogic/Object/Made002CC711Ctor.cpp,matched,paralyze nugget ctor base plus pi plus zeroes
+?rva002E8B9B@Rva002E8B9B@@QAEPAVMixFileInfoBuffer@@PAUIn002E6BA1@@@Z,,0x002E8B9B,52,Code/GameEngine/Source/Common/Rva002E8B9B.cpp,matched,chain from 0x002E8B7A global 0x00A049D0 pool init
