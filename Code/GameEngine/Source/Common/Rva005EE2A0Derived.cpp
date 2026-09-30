@@ -35,8 +35,15 @@ Rva005D719C::~Rva005D719C()
 class Rva005D724B : public Rva005EE2A0
 {
 public:
+	Rva005D724B();
 	virtual ~Rva005D724B();
 };
+
+// ??0Rva005D724B@@QAE@XZ @0x005D7239 18B: base ctor 0x005EE28C then vtable
+// 0x00875CA4. Evidence: vtable store at [this]; caller 0x0058AC78.
+Rva005D724B::Rva005D724B()
+{
+}
 
 Rva005D724B::~Rva005D724B()
 {
