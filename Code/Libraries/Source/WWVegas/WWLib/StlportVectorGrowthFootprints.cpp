@@ -149,6 +149,8 @@ template BfmeStringRecord00404BF3 *_STL::__uninitialized_fill_n<BfmeStringRecord
 // Retail 0x0040542A.
 template void _STL::vector<BfmeStringRecord00404BF3>::_M_insert_overflow(
     BfmeStringRecord00404BF3 *, const BfmeStringRecord00404BF3 &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x004055BB.
+template void _STL::vector<BfmeStringRecord00404BF3>::push_back(const BfmeStringRecord00404BF3 &);
 // Retail 0x005EDABD.
 template void _STL::vector<BfmeStringRecord005ED5F3>::_M_insert_overflow(
     BfmeStringRecord005ED5F3 *, const BfmeStringRecord005ED5F3 &, const _STL::__false_type &, unsigned int, bool);
