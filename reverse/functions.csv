@@ -43647,3 +43647,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??_GRva00283081@@UAEPAXI@Z,,0x00283246,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00283081.cpp,matched,deleting dtor via rowed dtor chain
 ??0Rva001E7087@@QAE@XZ,,0x001E7087,53,Code/GameEngine/Source/GameLogic/Object/Rva001E7087Ctor.cpp,matched,ctor vtable plus BfmeE16 vector plus zero members plus float 0
 ?rva005DD88A@Rva005DD88A@@QAEHPAVGameWindow@@HHM@Z,,0x005DD88A,86,Code/GameEngine/Source/Common/Rva005DD772Ctor.cpp,matched,unlock caller 0x005DDC2D same record plus color compare
+??4Rva000B419E@@QAEAAU0@ABU0@@Z,,0x000B419E,81,Code/Libraries/Source/WWVegas/WWLib/StlportFixedObject32Assign.cpp,matched,copy assign 32B struct via AsciiString op plus tail
