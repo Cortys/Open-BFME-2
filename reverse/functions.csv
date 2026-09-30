@@ -10143,7 +10143,6 @@ _luaO_equalObj,,0x0074E0C0,92,Code/Libraries/Source/Lua/lobject.c,matched,BFME1 
 ?initFromMessage@Rva0080A940Owner@@QAEXPAVRva007E8810Message@@@Z,,0x00676840,103,Code/GameEngine/Source/GameNetwork/Y4FeslFavGameInit.cpp,matched,BFME1 byte-identical donor; b1 favgame init; finish pin only
 ??0Rva00803890Owner@@QAE@EPAUBfmeOwnerUNC@@@Z,,0x0066F860,104,Code/GameEngine/Source/GameNetwork/FeslBrowserFactory_ctor.cpp,matched,BFME1 byte-identical donor; b1 0x00803820; vtable-literal repair to sacrificial anchors
 _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/FreeGameBfme.cpp,matched,BFME1 byte-identical donor; b1 0x009D2B70
-_EnumLocalesProcA@4,,0x00021470,242,Code/Libraries/Source/WWVegas/WWLib/stlport_EnumLocalesProcA.cpp,matched,STLport donor in distinct TU; undecorated lstrcmpi import repair for IAT 0x00BBA150; b1 0x0084E210
 ?LogRegisters@DebugExceptionhandler@@CAXAAVDebug@@PAU_EXCEPTION_POINTERS@@@Z,,0x0003DA20,678,Code/Libraries/Source/WWVegas/WWDebug/DebugExceptionhandler_LogRegisters.cpp,matched,BFME1 donor; b1 0x0088E340; windows-shim plus literal repairs
 ?bfmeOpenVIF@@YAHPAUBfmeLuaVHR@@@Z,,0x0074A490,133,Code/GameEngine/Source/Common/BfmeConv1373.cpp,matched,BFME1 byte-identical donor; b1 0x00993330; 1 DIR32 string literal(s) agree
 ?bfmeGoBFG@BfmeThingBFG@@QAEXXZ,,0x0025F00D,19,Code/GameEngine/Source/Common/BfmeConv455.cpp,matched,BFME1 byte-identical donor; b1 0x0045C470
@@ -44762,3 +44761,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?push_back@?$vector@UBfmeStringRecord000B950F@@V?$allocator@UBfmeStringRecord000B950F@@@_STL@@@_STL@@QAEXABUBfmeStringRecord000B950F@@@Z,,0x000C33DA,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_b950f_allocate_copy.cpp,matched,push_back fast Construct else overflow 0xC1CE1
 ?rva005EEA20@Rva005EEA20@@QAEPAVObject@@PAVPlayer@@_N1@Z,,0x005EEA20,166,Code/GameEngine/Source/Common/Rva005EEA20Find.cpp,matched,first-match finder variant of Rva005EEB7BCollect via rowed callees and globals
 ??$__find@PAVAsciiString@@PBD@_STL@@YAPAVAsciiString@@PAV1@0ABQBDABUrandom_access_iterator_tag@0@@Z,,0x00136401,171,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_find.cpp,matched,STLport 4.5.3 __find over AsciiString for const char key via rowed compare 0x000069B1
+_EnumLocalesProcA@4,,0x00021470,242,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleFacets.cpp,matched,STLport c_locale_win32 donor; one definition beside its rowed LocaleFromHex 0x00021430 (the former distinct TU duplicated it and its search state)

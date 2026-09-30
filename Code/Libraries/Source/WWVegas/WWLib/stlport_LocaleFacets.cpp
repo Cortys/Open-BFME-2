@@ -75,7 +75,7 @@ typedef unsigned long LCID;
 __declspec(dllimport) int __stdcall GetLocaleInfoA(
     LCID locale, unsigned long type, char *data, int count);
 // Retail imports this name with no A/W suffix (IAT slot 0x00BBA150); the
-// donor's lstrcmpiA spelling cannot resolve there (see EnumLocalesProcA TU).
+// donor's lstrcmpiA spelling cannot resolve there.
 __declspec(dllimport) int __stdcall lstrcmpi(const char *left, const char *right);
 __declspec(dllimport) char *__cdecl strcpy(char *destination, const char *source);
 __declspec(dllimport) char *__cdecl strcat(char *destination, const char *source);
