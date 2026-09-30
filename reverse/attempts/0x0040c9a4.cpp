@@ -1,4 +1,6 @@
 // ?rva0040C9A4@Rva0040C985@@QAEMXZ
+// partial score=0.94 date=2026-09-29
+// ?rva0040C9A4@Rva0040C985@@QAEMXZ
 // partial score=0.93 date=2026-09-29
 // ?rva0040C9A4@Rva0040C985@@QAEMXZ
 // partial score=0.93 date=2026-09-29
@@ -20,6 +22,7 @@ public:
 	int m_134;
 };
 #define TheGlobalData (*(Rva00DFE758 *const *)0x00DFE758)
+extern float g_Va00BBB8D8;
 class Rva0040C985
 {
 public:
@@ -57,7 +60,7 @@ float Rva0040C985::rva0040C9A4()
 	float fd = (float)denom;
 	float f = fn / fd;
 	if (f > 1.0f)
-		f = 1.0f;
+		f = g_Va00BBB8D8;
 	return f;
 }
 int Rva0040C985::rva0040C9F4()
