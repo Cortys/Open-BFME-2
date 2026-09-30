@@ -90,3 +90,16 @@ MixFileCreator::FileInfoStruct *__cdecl Rva00217AB0Partition(
 		++first;
 	}
 }
+
+void __cdecl Rva002176F1Insert(MixFileCreator::FileInfoStruct *last, MixFileCreator::FileInfoStruct value)
+{
+	MixFileCreator::FileInfoStruct *next = last;
+	--next;
+	while ((int)value.CRC < (int)next->CRC)
+	{
+		*last = *next;
+		last = next;
+		--next;
+	}
+	*last = value;
+}
