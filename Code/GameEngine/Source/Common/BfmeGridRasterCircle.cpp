@@ -94,6 +94,12 @@ public:
 typedef void (__cdecl *BfmeCellVisitorFC)(int x, int y,
 	unsigned char kind);
 
+struct BfmePointFC
+{
+	Real x;
+	Real y;
+};
+
 class Gen_008812D0
 {
 public:
@@ -103,6 +109,7 @@ public:
 		int x1, int x2, int y);
 	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
 	BfmeCellFC *bfmeCellAtWorld(Real worldX, Real worldY) const;
+	int rva006C0E40(const BfmePointFC *point, int *extra);
 
 	friend class BfmeRangeUpdaterFC;
 
@@ -317,4 +324,21 @@ BfmeCellFC *Gen_008812D0::bfmeCellAtWorld(Real worldX, Real worldY) const
 	if (y < 0 || y >= m_bfmeHeight)
 		return 0;
 	return &m_bfmeCells[y * m_bfmeWidth + x];
+}
+
+// ?rva006C0E40@Gen_008812D0@@QAEHPBUBfmePointFC@@PAH@Z @ 0x006C0E40 40B
+// Honest address name: thiscall forwards ECX to bfmeCellAtWorld, so the
+// owner is Gen_008812D0. Takes world XY plus out-word; returns m_bfmeValue
+// and stores m_bfmeExtra, 0 when outside. Evidence: ECX passthrough call to
+// rowed bfmeCellAtWorld 0x006C0BD0, +8/+4 cell reads, ret 8, tail-jmp thunk
+// at 0x006C0850 via +0x10 grid member.
+int Gen_008812D0::rva006C0E40(const BfmePointFC *point, int *extra)
+{
+	BfmeCellFC *cell = bfmeCellAtWorld(point->x, point->y);
+	if (cell != 0)
+	{
+		*extra = cell->m_bfmeExtra;
+		return cell->m_bfmeValue;
+	}
+	return 0;
 }
