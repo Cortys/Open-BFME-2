@@ -44934,3 +44934,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva003F28DB@Rva003F287F@@QAEXAAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x003F28DB,103,Code/GameEngine/Source/Common/System/LivingWorldRegionConnectionRva003F287F.cpp,matched,same filter as siblings plus rowed getter 0x004E0632 callers 0x002B6E17 0x002B6ECA 0x002E2DB6
 ?rva0005710F@MilesAudioManager@@QAEXXZ,,0x0005710F,66,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva0005710F.cpp,matched,guarded vector clear via empty barrier and ref alias
 ?rva00052917@MilesAudioManager@@QAEHXZ,,0x00052917,51,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052917.cpp,matched,guarded postincrement counter at D0
+?rva000B2EB5@Rva000B2EB5@@QAEMXZ,,0x000B2EB5,131,Code/GameEngine/Source/Common/Rva000B2EB5.cpp,matched,iface plus0x50 slot3 vs 0x19 slot0x208 4-outparam double-zero x87 check SSE int-float vs g_Va00BBB8D8
