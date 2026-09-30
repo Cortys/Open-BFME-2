@@ -4381,3 +4381,4 @@ FUN_008137C6	0x004137C6	165	blocked	Rb_tree copy ctor duplicate of 0x00413EE6 sa
 ?rva0040952C@Rva0040952C@@QAEHXZ	0x0040952C	169	blocked	STL vector AsciiString strtok tokenize with pin-only push_back plus mbscpy plus StackProbe plus EH needs stlport recipe t=8 model=muse-03
 ?rva0037AE4E@RecorderClass@@QAEXXZ	0x0037AE4E	148	partial	exact size-insns with 2 stack offsets plus IAT-global relocs t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x0037ae4e.cpp
 ?Rva004291C8Check@@YAHXZ	0x004291C8	174	blocked	edi-esi register inputs plus pin-only getAbleToAttackSpecificObject needs calling-convention investigation t=8 model=muse-03
+?rva003683EA@Rva003683EA@@QAEXPBUCoord3D@@H@Z	0x003683EA	73	partial	exact bytes gate unresolved dup_003e3bfb YAXXZ vs thiscall int t=20 model=muse-spark score=0.99 stash=reverse/attempts/0x003683ea.cpp
