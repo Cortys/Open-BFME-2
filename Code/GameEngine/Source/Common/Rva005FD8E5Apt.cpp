@@ -72,3 +72,15 @@ void Rva005FD788::rva005FD8E5(int index, int a, int b)
 	entry->m_a16 = a;
 	entry->m_b20 = b;
 }
+
+struct Rva005FD956
+{
+	char m_pad0[4];
+	Rva005FD788 *m_p4;
+	void rva005FD956(int index, int a, int b);
+};
+
+void Rva005FD956::rva005FD956(int index, int a, int b)
+{
+	m_p4->rva005FD8E5(index, a, b);
+}
