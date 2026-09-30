@@ -10,14 +10,23 @@ class StringBase
 public:
 	~StringBase() { releaseBuffer(); }
 	void releaseBuffer();
+	int compare(const StringBase &other) const;
+	void set(const StringBase &other);
 private:
 	T *m_data;
 };
 class GameFont;
+class UnicodeString : public StringBase<unsigned short>
+{
+};
 class DisplayString
 {
 public:
 	virtual ~DisplayString();
+	virtual void setText(UnicodeString text);
+	virtual void pad02();
+	virtual void pad03();
+	virtual void notifyTextChanged();
 	virtual void reset();
 private:
 	StringBase<unsigned short> m_text;
@@ -29,4 +38,13 @@ private:
 DisplayString::~DisplayString()
 {
 	DisplayString::reset();
+}
+
+void DisplayString::setText(UnicodeString text)
+{
+	if (text.compare(m_text) != 0)
+	{
+		m_text.set(text);
+		notifyTextChanged();
+	}
 }

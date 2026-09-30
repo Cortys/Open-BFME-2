@@ -4251,3 +4251,9 @@ FUN_002B5739	0x002B5739	115	blocked	same array-visit EH functor wall as 0x005C99
 ??0Rva0025EDE6@@QAE@XZ	0x0025EDE6	271	blocked	ctor needs xorps-first plus dl-zero plus lea-8C plus second-global wall after 1 variant t=10 model=muse-02
 ??0Rva002DD173@@QAE@XZ	0x002DD173	118	blocked	ctor needs vector-base alloc-temp ebp-D plus huge subobject plus EH 8-9 wall after 1 variant t=10 model=muse-02
 ??0Rva0040AF66@@QAE@ABV0@@Z	0x0040AF66	141	partial	lea ecx 0x54 order wall 141vs141 2 regions t=12 model=muse-02 score=0.98 stash=reverse/attempts/0x0040af66.cpp
+?rva0050FED4@Rva0050F0AB@@QAEHIPAVGameWindow@@I@Z	0x0050FED4	72	partial	return-1 xor-inc placement middle vs end; 6 variants closest shared-return range-first t=20 model=muse-01 score=0.95 stash=reverse/attempts/0x0050fed4.cpp
+?rva0050EBC5@Rva0050EBC5@@QAEHHHH@Z	0x0050EBC5	95	blocked	virt slot0C plus predicate shared-call placement plus add-vs-sub for bb-14; 6 variants closest shared-return 95B t=20 model=muse-01
+?rva0050F4D0@Rva0050F5A6@@QAEXXZ	0x0050F4D0	214	blocked	Rva0050F5A6 dual-array with PlayerList plus bfmeAskRV plus F2AF chain; needs PlayerList 0x10-0x90 layout plus array24 model t=10 model=muse-01
+?Rva005DDA57@Rva005DDA57@@YAHPAVGameWindow@@H@Z	0x005DDA57	271	blocked	GameText UnicodeString 271B with 6 EH states; signature needs caller pushes but callers 388B over 200B budget rule forbids show; slot 0x38 plus 3 args unclear t=10 model=muse-01
+?rva003F0CB9@Rva003F0CB9@@QAEHXZ	0x003F0CB9	115	blocked	BFB1CC dead-store wall same as 0x5C99D3 plus 0x38153B memory plus 5 prior BFB1CC logs; no NEW donor idea t=5 model=muse-01
+?rva00232DB4@Rva00232DB4@@QAEXXZ	0x00232DB4	77	blocked	vslot slot15 with ji-thunk pushes around YAXXZ void rows same wall as 0x50F1F0 import-thunk arg mismatch; no NEW idea t=5 model=muse-01
