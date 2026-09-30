@@ -44507,3 +44507,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva001F51DC@Rva001F51DC@@QAEXPAUVec2001F51DC@@@Z,,0x001F51DC,47,Code/GameEngine/Source/Common/Rva001F51DC.cpp,matched,null-checked helper+0x1B4 slot6 copies +4/+8 caller 0x001F7B68
 ?rva001F520B@Rva001F520B@@QAEXPAUVec2001F520B@@@Z,,0x001F520B,47,Code/GameEngine/Source/Common/Rva001F520B.cpp,matched,null-checked helper+0x1B4 slot7 copies +4/+8 caller 0x001F7C55
 ?rva001F526E@Rva001F526E@@QAEXPAUVec2001F526E@@@Z,,0x001F526E,47,Code/GameEngine/Source/Common/Rva001F526E.cpp,matched,null-checked helper+0x1B4 slot9 copies +4/+8 caller 0x001F7E2F
+?rva00098BD4@DirectInputKeyboard@@QAEXXZ,,0x00098BD4,188,Code/GameEngine/Source/GameLogic/AI/DirectInputKeyboardOpen.cpp,matched,donor BFME1 Win32DIKeyboard openKeyboard 5 FAILED checks DIPROPDWORD Acquire tail
