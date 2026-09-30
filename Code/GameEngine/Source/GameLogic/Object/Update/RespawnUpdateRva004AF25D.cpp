@@ -1,13 +1,10 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva004AF25D@RespawnUpdate@@QAEPAXXZ, retail 0x004AF25D, 50 bytes.
 // Lazy RespawnUpdate getter: cached void at +0x28 (init -1 per ctor
 // 0x004AF096) else lookup ModuleData string at +0x11C through global
 // 0x00DFF000 via rowed 0x002D06CA else Object+4 fallback. Caller at
 // 0x0029111F finds RespawnUpdate module then adds 0x64 for AsciiString.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva002D06CA
 {

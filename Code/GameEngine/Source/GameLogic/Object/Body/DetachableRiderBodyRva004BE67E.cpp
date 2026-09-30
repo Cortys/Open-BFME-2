@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX
 //
 // ?Rva004BE67E@DetachableRiderBody@@UBE?AVAsciiString@@XZ, retail 0x004BE67E,
 // 30 bytes. Honest-address virtual returning the +0x2C AsciiString of the
@@ -18,25 +18,8 @@
 // 0 here). Method name is an honest address name; slot index is the proof
 // (SiegeDeployHordeSpecialPowerRva004C63DE.cpp precedent).
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-
-private:
-	StringBase(const StringBase<T> &that);
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-};
 
 struct ActiveBodyModuleData
 {

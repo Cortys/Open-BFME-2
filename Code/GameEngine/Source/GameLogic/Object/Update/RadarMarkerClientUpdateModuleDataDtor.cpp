@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 // ??1RadarMarkerClientUpdateModuleData@@UAE@XZ, retail 0x004C9CA5, 54 bytes.
 // Explicit dtor reinstalling derived vtable 0x00C5EDF8 then tearing down
 // MarkerType at +0x08 via 0x00036410 then restoring Snapshot base vtable
@@ -6,14 +6,7 @@
 // string +0x08, factory news 0x0C) and INI table 0x00C5ED98 (parseAsciiString
 // at +0x08). Vtable 0x00C5EDF8 slot 0 is ??_G 0x004C9D77.
 // StrafeAreaUpdateModuleDataDtor precedent.
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class Snapshot
 {
 public:

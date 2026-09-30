@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
 //
 // ??0RiderChangeContainModuleData@@QAE@XZ, retail 0x0047EABC, 94 bytes.
 // RiderChangeContain ModuleData default ctor over the pinned SiegeEngine
@@ -10,18 +10,7 @@
 // (+0x278 frames, +0x27C state TOPPLED=0, +0x280 byte) are zeroed; size
 // 0x284 matches the 0x24BD63 factory news. Row supersedes the ctor pin.
 
-class AsciiString
-{
-public:
-	AsciiString()
-	{
-		m_str = 0;
-	}
-	~AsciiString();
-
-private:
-	char *m_str;
-};
+#include "ascii_string.h"
 
 struct RiderInfo
 {

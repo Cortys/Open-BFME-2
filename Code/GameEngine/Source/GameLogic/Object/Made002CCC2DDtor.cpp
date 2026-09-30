@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1Made002CCC2D@@UAE@XZ retail 0x0050BB82 74B
 // Novtable derived of Rva00507823 base rowed at 0x00507823. Destroys
@@ -8,13 +8,7 @@
 // Rva00508CF7 precedent. Evidence: pinned ctor ??0Made002CCC2D at
 // 0x0050BB0E builds filter at +0x128 plus nulls +0x12C plus floats
 // plus vtable 0x00864EB0 plus caller deleting 0x0050BB66 calls here.
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00360D26Member
 {

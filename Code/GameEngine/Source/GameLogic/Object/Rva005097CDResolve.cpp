@@ -1,22 +1,10 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva005097CD@Rva005097CD@@QAEXXZ @0x005097CD 71B: resolve helper over base
 // Rva00507823 slot 8 plus WeaponStore find by +0x130 name into +0x128 plus
 // FX lookup by +0x134 name into +0x12c when non-empty. All callees rowed.
 
-template <typename T>
-class StringBase
-{
-public:
-	bool isEmpty() const;
-	int compare(const StringBase<T> &other) const;
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class WeaponTemplate
 {

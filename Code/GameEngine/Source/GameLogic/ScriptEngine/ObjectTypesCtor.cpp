@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0ObjectTypes@@QAE@XZ @0x003769F9 32B: ObjectTypes default ctor.
 // ??4ObjectTypes@@QAEAAV0@ABV0@@Z @0x00376A9C 39B: ObjectTypes copy-assign.
@@ -19,20 +19,8 @@
 
 template <typename T> struct BfmeStringData;
 
-template <typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-protected:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class ObjectTypes
 {

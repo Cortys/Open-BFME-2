@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??1GettingBuiltBehaviorModuleData@@UAE@XZ, retail 0x00453315, 129 bytes.
 // Virtual dtor over vtable 0x00C40090 (slot 0 deleting dtor at 0x004534D9).
@@ -26,14 +26,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class OpaqueRefCounted
 {

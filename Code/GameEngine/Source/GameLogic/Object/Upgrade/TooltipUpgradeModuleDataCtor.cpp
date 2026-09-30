@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /DNDEBUG /Oy-
 //
 // ??0TooltipUpgradeModuleData@@QAE@XZ, retail 0x0025588E, 91 bytes.
 // EH ctor over the rowed OpenContainModuleData base (0x253487): the
@@ -22,16 +22,7 @@ private:
 	unsigned char m_pad[0x118 - 4];
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 extern AsciiString g_emptyAsciiString;
 

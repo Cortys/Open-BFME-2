@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
 //
 // ??1AutoAbilityBehavior@@UAE@XZ, retail 0x0045A37F, 73 bytes.
 // AutoAbilityBehavior dtor over the rowed UpdateModule base 0x0024A797.
@@ -49,14 +49,7 @@ public:
 	virtual ~Rva0024A797();
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class AutoAbilityBehavior : public Rva0024A797
 {

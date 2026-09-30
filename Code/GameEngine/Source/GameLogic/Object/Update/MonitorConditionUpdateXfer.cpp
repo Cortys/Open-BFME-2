@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ?xfer@MonitorConditionUpdate@@UAEXPAVXfer@@@Z, retail 0x004915C6, 55 bytes.
 // Slot 3 (offset 0x0C) of vtable 0x0084DAD8. Xfers Version(1,1) through the
@@ -92,14 +92,7 @@ public:
 	unsigned char m_minimum;
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class BehaviorModuleBase
 {

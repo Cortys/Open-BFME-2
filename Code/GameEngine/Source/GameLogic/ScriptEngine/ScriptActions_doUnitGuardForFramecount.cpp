@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // Retail RVA 0x003C9298, 121 bytes.
 // ?doUnitGuardForFramecount@ScriptActions@@IAEXABVAsciiString@@H_N@Z
 // BFME1 donor reference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsUnitGuardForFramecount.cpp
@@ -6,23 +6,7 @@
 // BFME2 deltas: float Coord3D with SSE movss order x y z (no barrier) plus the 0xC0 block via opaque 0x351BD0 ctor.
 // Factor at 0x00DBA4E4 is 5 from the data image; TheScriptEngine at 0x00DFE16C.
 // Callers at 0x003CE24E. Prev doNamedFollowWaypointsExact / next doNamedFaceNamed. Honest GuardMode Int layout.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString();
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 struct Coord3D { float x, y, z; };
 class Object;

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // ?rva004BADC1@EvacuateDamage@@QAEMXZ @ 0x004BADC1 92B
@@ -18,13 +18,7 @@ struct EvacuationRecord
 	int m_frame;
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class EvacuateDamageModuleData
 {

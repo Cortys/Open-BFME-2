@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?rva00205D5D@ScriptEngine@@QAEPAURva00205D5DEntry@@ABVAsciiString@@_N@Z, retail 0x00205D5D, 128 bytes.
 // ScriptEngine attack-priority-set table: 256 entries of 0x10 at 0x19100 with
@@ -9,14 +9,7 @@
 // AppendDebugMessage (same this) and names the "***Error allocating attack
 // priority set" limit; callees are rowed StringBase::compare and pinned
 // AsciiString::operator=.
-class AsciiString
-{
-public:
-	int compare(const AsciiString &other) const;
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 struct Rva00205D5DEntry
 {
 	int m_00;

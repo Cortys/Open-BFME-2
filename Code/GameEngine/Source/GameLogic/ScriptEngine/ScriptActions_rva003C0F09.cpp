@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail RVA 0x003C0F09, 59 bytes.
 // ?rva003C0F09@ScriptActions@@IAEXABVAsciiString@@H@Z
 // Honest address name: ScriptActions team method dispatched from FUN_007ca4be
@@ -7,23 +7,7 @@
 // by-value AsciiString temp pattern, then two flag bytes on Team at +0x110
 // (set to 1) and +0x111 (set to (param != 0)).
 // Prev doTeamExitAll / next doTeamSpinForFramecount share flags and patterns.
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 
 class Team

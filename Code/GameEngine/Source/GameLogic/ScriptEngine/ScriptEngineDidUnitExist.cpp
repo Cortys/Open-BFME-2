@@ -1,22 +1,12 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // ?didUnitExist@ScriptEngine@@QAE_NABVAsciiString@@@Z, retail 0x0035743F, 54 bytes.
 // Donor: BFME1 ScriptEngine::didUnitExist (reference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngine_didUnitExist.cpp).
 // Target evidence: ScriptEngine named-object vector at +0x1A120/+0x1A124 (8-byte AsciiString+Object* entries, Rva0032C0CADestroyPairs);
 // callers at 0x003C502A 0x003CA0EA 0x003E3E21 0x0049ED87 0x0049EE6E test al then bind via 0x00357960 or add via 0x0020A5FF (BFME1 doCreateObject pattern).
 
-template <typename T>
-class StringBase
-{
-public:
-    int compare(const StringBase<T> &other) const;
-private:
-    T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class Object;
 

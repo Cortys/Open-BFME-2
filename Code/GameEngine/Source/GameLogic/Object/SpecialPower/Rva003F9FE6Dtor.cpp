@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1Rva003F9FE6@@QAE@XZ @0x003FA0C7 81B
 // Gap dtor between copy ctors in Rva003F9FE6CopyCtor.cpp: destroys AsciiString
@@ -7,21 +7,8 @@
 // 2/1/0/-1, no vptr store, no base call. Evidence: same TU layout (vptr +0,
 // m_04 +4, m_08 +8/12B, m_14 +0x14, m_18 +0x18), caller thunk at 0x00402F23,
 // novtable suppresses vptr store while copy ctor TU keeps it.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString();
-	~AsciiString() { releaseBuffer(); }
-};
 
 namespace _STL
 {

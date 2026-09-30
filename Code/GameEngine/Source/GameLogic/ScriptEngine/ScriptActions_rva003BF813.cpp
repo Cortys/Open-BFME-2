@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?Rva003BF813Do@@YGXABVAsciiString@@00@Z @0x003BF813 161B
 // Script team trigger waypoint order via getQualifiedTriggerAreaByName pin
 // 0x0035768D plus getTeamNamed pin 0x003584E9 with false, TerrainLogic slot
@@ -8,23 +8,7 @@
 // Evidence: TheScriptEngine 0x009FE16C, TheTerrainLogic 0x009FEC50,
 // TheAI 0x009FF0F8; callers 0x003CB61F 0x003CB654; precedents Rva003C2A29
 // team/group plus doTeamAttackArea trigger sequence.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString() {}
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 
 class PolygonTrigger;

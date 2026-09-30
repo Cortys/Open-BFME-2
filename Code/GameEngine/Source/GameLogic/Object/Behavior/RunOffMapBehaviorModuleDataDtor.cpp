@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ??1RunOffMapBehaviorModuleData@@UAE@XZ at retail 0x00255EA8 (48B).
 // Virtual dtor over vtable 0x00BF3298 (slot 0 deleting dtor at 0x00255E8C).
@@ -19,13 +19,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) RunOffMapBehaviorModuleData : public Snapshot
 {

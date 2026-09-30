@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /arch:SSE
 // stlport
 //
 // ??0Made002CC5E1@@QAE@XZ retail 0x00507C2D 343B
@@ -52,21 +52,8 @@ private:
 	unsigned char m_data[0x1C];
 };
 
-template <typename Char>
-class StringBase
-{
-protected:
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 struct BfmeE16 { float x, y, z, w; };
 

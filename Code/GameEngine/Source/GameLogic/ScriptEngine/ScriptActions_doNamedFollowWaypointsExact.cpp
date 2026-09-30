@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // Target identity: action-template index 0x11E is NAMED_FOLLOW_WAYPOINTS_EXACT;
 // executeAction dispatches it to VA 0x007C8773 (RVA 0x003C8773), a 126-byte
 // body. Target evidence shows named-unit lookup, Coord3D at Object+0x38,
@@ -7,23 +7,7 @@
 // handler's purpose and command semantics; the target body does not perform
 // the donor's debug path-purpose check or locomotor-set selection.
 
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 struct Coord3D { float x, y, z; };
 class Object;

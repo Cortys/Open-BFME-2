@@ -1,5 +1,5 @@
 // ?doTeamFaceNamed@ScriptActions@@IAEXABVAsciiString@@0@Z
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Target identity: action-template index 0x135 is TEAM_FACE_NAMED and
 // executeAction case 0x135 calls VA 0x007C9A80 (RVA 0x003C9A80), 153 bytes.
 // Target body resolves the team, resolves the face target through the opaque
@@ -9,23 +9,7 @@
 // its linked-list traversal; target-specific helper identities remain pinned
 // only where target call evidence supports them.
 
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 class Object;
 class AIUpdateInterface;

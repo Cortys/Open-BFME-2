@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Target identity: action-template index 0x133 is NAMED_FACE_NAMED and
 // executeAction case 0x133 calls VA 0x007C99C1 (RVA 0x003C99C1), 99 bytes.
 // The body resolves a named unit, resolves a second by-value name through the
@@ -7,23 +7,7 @@
 // calls aiFaceObject with source 1. BFME1 donor maps that operation to
 // doNamedFaceNamed. The second resolver remains deliberately opaque.
 
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 class Object;
 enum CommandSourceType { CMD_FROM_SCRIPT = 1 };

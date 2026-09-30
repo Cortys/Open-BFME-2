@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1WeaponChangeSpecialPowerModuleData@@UAE@XZ, retail 0x004C42EE, 74 bytes.
 // Target evidence: the audited scalar deleting dtor 0x004C42D2 (vtable
@@ -6,14 +6,7 @@
 // +0x94 (0x00036410), then calls the rowed base dtor 0x0049334F
 // (Rva004930A0, 0x94 bytes). No derived vptr store (novtable).
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva004930A0
 {

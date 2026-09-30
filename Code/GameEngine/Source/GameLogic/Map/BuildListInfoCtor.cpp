@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ??0BuildListInfo@@QAE@XZ @0x0032A0CE 184B
 // BuildListInfo default ctor (0x80 bytes).
@@ -15,24 +15,8 @@
 // EH state 0 before the first copy comes from the empty base with declared-only
 // dtor (AIUpdateModuleDataCtor precedent); /arch:SSE for the xorps/movss float zeroes.
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-	static AsciiString TheEmptyString;
-};
 
 struct Coord3D
 {

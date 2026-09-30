@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?Rva003C4570Do@@YGXABVAsciiString@@0@Z @0x003C4570 100B.
 // Team-plus-ExperienceLevel script helper: getTeamNamed kir teamizmi level find
@@ -12,27 +12,8 @@ typedef bool Bool;
 class Object;
 class Team;
 
-template<class T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-public:
-	int compare(const T *) const;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString();
-private:
-	char *m_text;
-};
 
 class ScriptEngine
 {

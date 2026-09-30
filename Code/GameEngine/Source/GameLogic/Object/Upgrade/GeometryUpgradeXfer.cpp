@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?xfer@GeometryUpgrade@@MAEXPAVXfer@@@Z, retail 0x004B6C02, 55 bytes.
 // Virtual slot 3 (offset 0x0C) of vtable 0x008589C0 (class of rowed ctor
@@ -12,11 +12,7 @@
 // xfer shape (Version plus base) plus the string before base that retail
 // shows here.
 
-class AsciiString
-{
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class UnicodeString;
 class PooledString;
 struct XferUnknown11;

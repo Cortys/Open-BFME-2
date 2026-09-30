@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 //
 // ScriptActions::doNamedAttackArea, retail 0x003C8351, 92 bytes.
 // Target identity: initActionTemplates index 0x2F (47) is NAMED_ATTACK_AREA;
@@ -15,25 +15,8 @@
 // The donor AsciiString stores one StringBase<char> pointer. The inline copy
 // constructor is carried locally so this handler uses the matched retail
 // StringBase copy routine without depending on broader headers.
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    void *m_text;
-};
 
 class PolygonTrigger;
 class Object;

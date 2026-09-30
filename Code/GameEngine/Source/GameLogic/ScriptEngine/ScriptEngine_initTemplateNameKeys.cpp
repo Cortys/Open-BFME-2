@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ScriptEngine template finishing pass, retail 0x00204D87 (221 bytes).
 // ScriptEngine::init calls it right after the action (0x003D46DB) and
@@ -12,23 +12,8 @@
 // order here. The record layout is the one the two table initializers
 // establish from retail store offsets.
 
-template <typename T>
-class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	void concat(const StringBase<T> &that);
+#include "ascii_string.h"
 
-private:
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	void format(const char *fmt, ...);
-};
 
 enum NameKeyType
 {

@@ -1,22 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva00290E67@Object@@QBEPBVAsciiString@@XZ retail 0x00290E67 68B.
 // Object display-string selector: first non-empty among +0x41C +0x424 +0x420 else template+0x70.
 // Evidence: same-this Object via findObjectByID callers 0x00267EB3 (ecx+0x258 AI) 0x003794E0 (Object*);
 // AsciiString emptiness via rowed ?isEmpty@?$StringBase@D@@QBE_NXZ at 0x00001E2F x3;
 // abuts ?findSpecialPowerModuleInterface@Object (0x00290E22+69); callee 0x0031D5F8 takes PBVAsciiString.
-template <typename T>
-class StringBase
-{
-public:
-	bool isEmpty() const;
+#include "ascii_string.h"
 
-private:
-	char *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 struct ThingTemplate
 {
