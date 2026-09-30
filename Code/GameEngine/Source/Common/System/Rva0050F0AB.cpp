@@ -88,3 +88,46 @@ void Rva0050F0AB::rva0050F290()
 	if (win)
 		Rva0050E776Send(win, 0);
 }
+
+class GameWindowManager {
+public:
+#define V(n) virtual void pad##n() = 0;
+	V(0) V(1) V(2) V(3) V(4) V(5) V(6) V(7)
+	V(8) V(9) V(10) V(11) V(12) V(13) V(14) V(15)
+	V(16) V(17) V(18) V(19) V(20) V(21) V(22) V(23)
+	V(24) V(25) V(26) V(27) V(28) V(29) V(30) V(31)
+	V(32) V(33) V(34) V(35) V(36) V(37) V(38) V(39)
+	V(40) V(41) V(42) V(43) V(44) V(45) V(46) V(47)
+	virtual void *winGetFocus();
+#undef V
+	virtual int winSetFocus(GameWindow *window);
+#define W(n) virtual void pad##n() = 0;
+	W(50) W(51) W(52) W(53) W(54) W(55) W(56) W(57)
+#undef W
+	virtual int winSendSystemMsg(GameWindow *window, unsigned int msg, unsigned int mData1, unsigned int mData2);
+};
+
+extern GameWindowManager *TheWindowManager;
+
+class Rva0050F5A6
+{
+public:
+	void rva0050F5A6(int unused);
+private:
+	char m_pad00[0x20];
+	int m_20;
+	char m_pad24[0x28 - 0x24];
+	Rva0050F0AB *m_array28[1];
+};
+
+void Rva0050F5A6::rva0050F5A6(int unused)
+{
+	(void)unused;
+	TheWindowManager->winSetFocus(0);
+	for (int i = 0; i < m_20; ++i)
+	{
+		Rva0050F0AB *entry = *(Rva0050F0AB **)((char *)m_array28 + i * 8);
+		if (entry)
+			entry->rva0050F290();
+	}
+}
