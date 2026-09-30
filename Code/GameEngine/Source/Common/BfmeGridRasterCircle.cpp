@@ -101,6 +101,7 @@ public:
 	void bfmeConfigure(Region3D region, Real cellSize);
 	void bfmeGetCellRange(BfmeCellFC **first, BfmeCellFC **last,
 		int x1, int x2, int y);
+	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
 
 	friend class BfmeRangeUpdaterFC;
 
@@ -118,6 +119,8 @@ class BfmeRangeUpdaterFC
 {
 public:
 	__declspec(noinline) void operator()(int firstX, int lastX, int y);
+
+	friend class Gen_008812D0;
 
 private:
 	// BFME2 carries a fourth paint-mode word after the amount; the flag stays
@@ -283,4 +286,20 @@ void Gen_008812D0::bfmeConfigure(Region3D region, Real cellSize)
 	m_bfmeWidth = width;
 	m_bfmeHeight = height;
 	m_bfmeCellSize = cellSize;
+}
+
+// Retail 0x006C1580 86B: circle paint via bfmeRasterCircleFC; early-out on
+// radius<0 and on (amount==0 && !absolute). BFME2 adds trailing mode word.
+void Gen_008812D0::bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode)
+{
+	if (radius < 0)
+		return;
+	if (amount == 0 && !absolute)
+		return;
+	BfmeRangeUpdaterFC updater;
+	updater.m_bfmeGrid = this;
+	updater.m_bfmeAmount = amount;
+	updater.m_bfmeMode = mode;
+	updater.m_bfmeAbsolute = absolute;
+	bfmeRasterCircleFC(x, y, radius, updater);
 }

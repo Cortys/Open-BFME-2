@@ -43692,3 +43692,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0031AEFF@Rva0031AEFF@@QAEXXZ,,0x0031AEFF,85,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarBlink0031AEFF.cpp,matched,blink countdown 0x294 flag 0x290 window 0x298 modulo 15 toggles winEnable via winGetStatus
 ?getMaximumVisibleBox@BaseHeightMapRenderObjClass@@QAE_NABVFrustumClass@@PAVAABoxClass@@_N@Z,,0x0006B1FA,505,Code/GameEngineDevice/Source/W3DDevice/GameClient/BaseHeightMapGetMaximumVisibleBox.cpp,matched,BFME1 donor getMaximumVisibleBox with this+0x37D8
 ?rva0037E09A@Rva0037E09A@@QAE_NABV1@@Z,,0x0037E09A,82,Code/GameEngine/Source/Common/Rva0037E09A.cpp,matched,caller 0x0037E0EC plus rowed wide narrow compares
+?bfmeApplyCircle@Gen_008812D0@@QAEXHHHH_NH@Z,,0x006C1580,86,Code/GameEngine/Source/Common/BfmeGridRasterCircle.cpp,matched,BFME1 taintmanager_impl donor plus BFME2 mode word

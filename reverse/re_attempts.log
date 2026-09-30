@@ -3994,3 +3994,5 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?Rva006C1580Raster@@YGXHH_NHHH@Z	0x006C1580	86	blocked	register wall ebx vs edx updater order needs new idea t=10 model=muse-09
 ?rva001B51C0@Rva001B51C0@@QAEXXZ	0x001B51C0	71	blocked	vector clear with virtual Get plus erase wall needs new idea t=10 model=muse-09
 ?rva004E9B70@Rva004E9B70@@QAEXXZ	0x004E9B70	86	partial	first erase fixed via local ptr; loop entry jmp vs cmp-je 4B and pop ecx before add vs after cmp t=25 model=muse-10 score=0.93 stash=reverse/attempts/0x004e9b70.cpp
+?rva000AE44B@BfmeGridWM@@QAEXHHPAX@Z	0x000AE44B	69	partial	imul-vs-2lea for v36 t=22 model=muse-08 score=0.97 stash=reverse/attempts/0x000ae44b.cpp
+?rva00067225@Rva00067225@@QAEEMM@Z	0x00067225	115	blocked	SSE float lea-plus-movss shape t=16 model=muse-08
