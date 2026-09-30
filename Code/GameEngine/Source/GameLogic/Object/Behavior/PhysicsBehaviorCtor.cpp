@@ -1,15 +1,20 @@
-// ??0PhysicsBehavior@@QAE@PAVThing@@PBVModuleData@@@Z
-// partial score=0.99 date=2026-09-26
 // cl: /O1 /arch:SSE /GX /Oy- /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
-// Identity: sole raw caller is the rowed PhysicsBehavior instance factory
-// 0x24E73C (news 0x34); Dumb pin at this address superseded.
-// 182/182B 52/52insns; vtables are gate-filled relocs. Sole wall: EH state1
-// store placement (ours 0x45 eager after vector-ctor, retail 0x98 sunk below
-// the setWakeFrame pushes to just before the MD store). Refuted: barrier
-// removal (MD-load hoists), empty asm (no barrier), volatile load (hoists),
-// /EHsc + /EHs (same wall). Retry needs a non-flushing order lever, not flags.
 // stlport
+
+// PhysicsBehavior constructor @0x3907A6 (182B). Identity: the sole raw caller
+// is the rowed PhysicsBehavior instance factory 0x24E73C. Retail: UpdateModule
+// base (rowed 0x253390), the three vtables, an empty BfmeE16 vector at +0x20
+// (rowed _Vector_base 0x211E58; the state-1 unwind funclet destroys this+0x20),
+// then body zeroing in retail store order, the module-data byte at +0x58
+// copied to +0x5D, and setWakeFrame(m_object, UPDATE_SLEEP_FOREVER) through
+// the rowed 0x44DF71.
 //
+// The two float triples at +0x2C and +0x38 are Coord3D::zero() calls, as in
+// the Zero Hour ctor's m_accel.zero()/m_vel.zero(): stores made through the
+// inlined member pointer keep the m_moduleData/m_object loads below them, which
+// is what the earlier attempts' _ReadWriteBarrier tried to force and what put
+// the EH state-1 store back just before the call. Layout honest-address only.
+
 #include <vector>
 
 struct BfmeE16
@@ -17,12 +22,23 @@ struct BfmeE16
 	unsigned char m_pad[16];
 };
 
+struct Coord3D
+{
+	float x;
+	float y;
+	float z;
+	void zero() { x = 0.0f; y = 0.0f; z = 0.0f; }
+};
+
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3fffffff
+};
+
 class Thing;
 class ModuleData;
 class Object;
-
-extern "C" void _ReadWriteBarrier(void);
-#pragma intrinsic(_ReadWriteBarrier)
 
 class BehaviorModuleBase
 {
@@ -56,7 +72,7 @@ public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
 	virtual ~UpdateModule();
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime wakeDelay);
 private:
 	unsigned m_nextCallFrameAndPhase;
 	int m_indexInLogic;
@@ -77,12 +93,8 @@ public:
 	virtual ~PhysicsBehavior();
 private:
 	_STL::vector<BfmeE16> m_elements;
-	float m_bfme2C;
-	float m_bfme30;
-	float m_bfme34;
-	float m_bfme38;
-	float m_bfme3C;
-	float m_bfme40;
+	Coord3D m_bfme2C;
+	Coord3D m_bfme38;
 	float m_bfme44;
 	float m_bfme48;
 	int m_bfme4C;
@@ -112,13 +124,8 @@ PhysicsBehavior::PhysicsBehavior(Thing *thing, const ModuleData *moduleData) :
 	m_bfme5F = false;
 	m_bfme60 = 0;
 	m_bfme64 = 0;
-	m_bfme2C = 0.0f;
-	m_bfme30 = 0.0f;
-	m_bfme34 = 0.0f;
-	m_bfme38 = 0.0f;
-	m_bfme3C = 0.0f;
-	m_bfme40 = 0.0f;
-	_ReadWriteBarrier();
+	m_bfme2C.zero();
+	m_bfme38.zero();
 	m_bfme5D = reinterpret_cast<const PhysicsBehaviorModuleData *>(m_moduleData)->m_bfme58;
-	setWakeFrame(m_object, 0x3fffffff);
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }
