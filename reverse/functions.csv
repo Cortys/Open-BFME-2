@@ -43611,3 +43611,4 @@ _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSp
 ??$__partial_sort@PAHHVRva00204BB8@@@_STL@@YAXPAH000VRva00204BB8@@@Z,,0x00209A62,92,Code/Libraries/Source/WWVegas/WWLib/stlport_partial_sort_rva00204bb8.cpp,matched,chain partial sort via landed heap helpers same flags
 ??$partial_sort@PAHVRva00204BB8@@@_STL@@YAXPAH00VRva00204BB8@@@Z,,0x0020A295,27,Code/Libraries/Source/WWVegas/WWLib/stlport_partial_sort_pub_rva00204bb8.cpp,matched,public partial_sort via landed __partial_sort same pattern
 ?rva0036E2A7@Rva0036E2A7@@QAEXPAVSequentialScript@@H@Z,,0x0036E2A7,59,Code/GameEngine/Source/Common/Rva0036E346Count.cpp,matched,chain from 0x00262453 list holder plus script slot
+?xfer@Rva00367647@@MAEXPAVXfer@@@Z,,0x00367675,45,Code/GameEngine/Source/Common/Rva00367647Xfer.cpp,matched,slot 3 vtable 0x00817478 Version1 plus int at 0x20 plus bool at 0x24
