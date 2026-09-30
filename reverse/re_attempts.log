@@ -3917,3 +3917,5 @@ FUN_00731A46	0x00331A46	75	blocked	sorted insert with EH scopetable needs Rva002
 ?target_0009322D@W3DSnowManager@@AAEXXZ	0x0009322D	14	blocked	packet disassembly truncated at cmp no ret t=5 model=muse-spark
 ?rva0056C01E@Rva0056C01E@@QAE_PAXI@Z	0x0056C01E	71	blocked	vector deleting dtor 0xA8 eh-vector plus validate needs element class t=8 model=muse-spark
 ?rva000AE13E@BfmeGridWM@@QAE_NHH@Z	0x000AE13E	79	blocked	grid bit test register wall this-in-esi vs x-in-ecx t=12 model=muse-spark
+?rva0006AB98@Rva0006AB98@@QAEEHH@Z	0x0006AB98	79	partial	this-in-ecx-vs-esi regalloc; base kept vs reloaded; tail mask-setne now exact t=20 model=muse-05 score=0.93 stash=reverse/attempts/0x0006ab98.cpp
+??0Rva002DAB18@@QAE@XZ	0x002DAB18	70	partial	first vtable sinks below state+lea; m_10 hoisted above reload+vtables; 70/70B 22/22ins 0reg t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x002dab18.cpp

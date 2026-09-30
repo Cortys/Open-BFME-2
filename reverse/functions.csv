@@ -43557,3 +43557,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ??0Rva0055436A@@QAE@PAX@Z,,0x0055436A,79,Code/GameEngine/Source/Common/Rva0055436ACtor.cpp,matched,unlock Thread plus map ctor via caller 0x0055443F
 ??1Rva0026AF86@@UAE@XZ,,0x0026AF86,75,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva0026AF86Dtor.cpp,matched,unlock dtor frees two strings restores Snapshot BBB554
 ?rva003F4921@Rva003F498A@@QAEHHHH@Z,,0x003F4921,35,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,gap triple-index 0x1C 0x30 0x68 same TU
+??0Rva00526275@@QAE@XZ,,0x00526275,74,Code/Libraries/Source/WWVegas/WWLib/Rva00526275Ctor.cpp,matched,member 0x00330757 size 0x10 lists via 0x00280A8D zero 0x18 factory 0x00526F46 alloc 0x1c
