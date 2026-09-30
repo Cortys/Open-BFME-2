@@ -71,3 +71,22 @@ void __cdecl Rva002176A6Swap(MixFileCreator::FileInfoStruct *a, MixFileCreator::
 	*a = *b;
 	*b = tmp;
 }
+
+MixFileCreator::FileInfoStruct *__cdecl Rva00217AB0Partition(
+	MixFileCreator::FileInfoStruct *first,
+	MixFileCreator::FileInfoStruct *last,
+	MixFileCreator::FileInfoStruct pivot)
+{
+	for (;;)
+	{
+		while ((int)first->CRC < (int)pivot.CRC)
+			++first;
+		--last;
+		while ((int)pivot.CRC < (int)last->CRC)
+			--last;
+		if (!(first < last))
+			return first;
+		Rva002176A6Swap(first, last);
+		++first;
+	}
+}
