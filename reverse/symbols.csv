@@ -6466,3 +6466,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??1Rva00539926Base@@UAE@XZ,0x004E84A4,ICF twin of rowed apply identical 7B mov plus ret via dtor 0x00539926 call
 ??0?$_STLP_alloc_proxy@IUBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod8@@@1@I@Z,0x0014F3C4,ICF twin of AllocProxyIntCtor_dupB 11B body at same address; call site in Pod8 Deque_base ctor 0x0054A1B7; precedent Pod28 proxy pinned here
 ??0?$_STLP_alloc_proxy@PAPAUBfmePod8@@PAU1@V?$allocator@PAUBfmePod8@@@_STL@@@_STL@@QAE@ABV?$allocator@PAUBfmePod8@@@1@PAPAUBfmePod8@@@Z,0x0014F3C4,ICF twin of AllocProxyIntCtor_dupB 11B body at same address; call site in Pod8 Deque_base ctor 0x0054A1B7; precedent Pod28 PAPA proxy pinned here
+?set@Rva003600D6Holder@@QAEXPAVRva0035FF76@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0036011B in factory 0x003600D6 matches retail

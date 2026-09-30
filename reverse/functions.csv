@@ -43510,3 +43510,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva00327C1B@Rva00327C1B@@QBE_NXZ,,0x00327C1B,20,Code/GameEngine/Source/Common/Rva00327C1BGetter.cpp,matched,two-value disp8 bool getter 1-or-3 callers walk lists
 ??$__median@PAHVRva00204BB8@@@_STL@@YAPAHPAH00VRva00204BB8@@@Z,,0x002057D5,107,Code/Libraries/Source/WWVegas/WWLib/stlport_median_rva00204bb8.cpp,matched,median of three via rowed 0x204BB8 caller 0x20C04C
 ??0Rva0035FF76@@QAE@XZ,,0x0036006F,75,Code/GameEngine/Source/Common/Rva0035FF76Ctor.cpp,matched,vtable 0x0081670C base 0x001DBAA4 caller 0x003600F8
+?Rva003600D6Parse@@YAXPAVINI@@PAVRva003600D6Holder@@@Z,,0x003600D6,87,Code/GameEngine/Source/Common/Rva003600D6Parse.cpp,matched,factory news 0x40 ctor 0x0036006F table 0x00816738 setter 0x005F69CE
