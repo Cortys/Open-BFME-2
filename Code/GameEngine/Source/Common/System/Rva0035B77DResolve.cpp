@@ -1,0 +1,70 @@
+// cl: /O1 /DNDEBUG /MD /EHsc
+// stlport
+// ?rva0035B77D@Rva0035B77D@@QAEXXZ @0x0035B77D 92B: image-name array resolve loop
+// over AsciiString slots [+0xB4,+0xB8) pushing found Images into the ModuleData
+// vector at +0xEC then clearing each slot. Skips empty names and misses via
+// rowed isEmpty 0x00001E2F plus rowed findImageByName 0x002D92F6 plus rowed
+// push_back plus rowed releaseBuffer 0x00036410 plus global 0x00DFF078.
+// Evidence: ECX=this plus void ret plus same four callees plus global as
+// sibling Rva0026F216ImageResolve; caller 0x0031AC39 walks +0x18 list calling this.
+#include <vector>
+
+template <typename T>
+class StringBase
+{
+public:
+	bool isEmpty() const;
+	void clear() { releaseBuffer(); }
+private:
+	void releaseBuffer();
+	void *m_data;
+};
+
+class AsciiString : public StringBase<char>
+{
+};
+
+class ModuleData
+{
+};
+
+class Image : public ModuleData
+{
+};
+
+class ImageCollection
+{
+public:
+	const Image *findImageByName(const AsciiString &name);
+};
+
+extern ImageCollection *g_00DFF078;
+
+class Rva0035B77D
+{
+public:
+	void rva0035B77D();
+private:
+	char m_pad00[0xB4];
+	AsciiString *m_b4begin;
+	AsciiString *m_b8end;
+	char m_padBC[0xEC - 0xBC];
+	_STL::vector<const ModuleData *, _STL::allocator<const ModuleData *> > m_ec;
+};
+
+void Rva0035B77D::rva0035B77D()
+{
+	if (g_00DFF078 != 0)
+	{
+		for (AsciiString *it = m_b4begin; it != m_b8end; ++it)
+		{
+			if (!it->isEmpty())
+			{
+				const ModuleData *found = g_00DFF078->findImageByName(*it);
+				if (found != 0)
+					m_ec.push_back(found);
+				it->clear();
+			}
+		}
+	}
+}
