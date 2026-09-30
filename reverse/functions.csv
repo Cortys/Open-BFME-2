@@ -43153,3 +43153,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00256F39@ModuleFactory@@QAEHABVAsciiString@@W4ModuleType@@@Z,,0x00256F39,46,Code/GameEngine/Source/Common/ModuleFactoryRva00256F39.cpp,matched,unlock ModuleFactory tag lookup rowed isempty findtemplate
 ?rva0059E2FD@Rva0059E2FD@@QAE_NABV?$StringBase@D@@@Z,,0x0059E2FD,34,Code/GameEngine/Source/Common/Rva0059E2FDContains.cpp,matched,vector contains via rowed Find with last-first locals
 ?rva0007BB4B@Rva0007BB4B@@QAE?AVAssetReference@@XZ,,0x0007BB4B,46,Code/GameEngine/Source/Common/Rva0007BB4BGet.cpp,matched,by-value AssetReference getter plus0x14 or plus0x18 via flag byte 0x009E1FFC; shape per sibling 0x000F5D1B
+?rva0028B31A@Object@@QAEXH@Z,,0x0028B31A,65,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B31A.cpp,matched,Object entry clear plus compact caller 0x0023D670 chain from 0x0028B2BF
