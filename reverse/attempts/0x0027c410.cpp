@@ -1,8 +1,6 @@
 // ??0Rva0027C36A@@QAE@ABV0@@Z
-// partial score=0.98 date=2026-09-29
-// ??0Rva0027C36A@@QAE@ABV0@@Z
-// partial score=0.98 date=2026-09-29
-// cl: /O1 /MD /Oi /Oy-
+// partial score=0.985 date=2026-09-30
+// cl: /O1 /MD /Oi /Oy- /Op
 // ??0Rva0027C36A@@QAE@ABV0@@Z @0x0027C410 228B
 // Evidence: copy ctor of Rva0027C36A (default ctor 0x0027C36A); head 0x58 via 22 int moves; m_58 via movsd x4; m_68 byte; 4x12B loop int-int-float (fld); m_9c via movsd x3; caller 0x0027F8B0.
 #include <cstring>
