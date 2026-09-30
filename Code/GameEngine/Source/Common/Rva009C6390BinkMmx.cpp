@@ -6,7 +6,11 @@
 
 // The MMX paths read their own copy of the 8 x 0x0040 rounding table at
 // 0x00DB81A0; the SSE paths read a separate identical copy at 0x00DB84D0.
-extern const unsigned short g_bfmeBinkRoundMmx[8];
+// Twelve matched BFME2 references across six filters place this vector at VA 0x00DB81A0.
+// All 16 initialized bytes match retail; MMX operands read its first four words.
+extern __declspec(align(8)) const unsigned short g_bfmeBinkRoundMmx[8] = {
+    64, 64, 64, 64, 64, 64, 64, 64
+};
 
 // ?rva009C6390BinkMmx@@YAXPBXPAXHHHH0@Z
 void __cdecl rva009C6390BinkMmx(const void *source, void *destination,

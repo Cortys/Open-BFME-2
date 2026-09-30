@@ -4,10 +4,9 @@
 // filter (taps at -stride, 0, +stride, +stride*2), but each MMX register
 // only holds four pixels, so the eight-pixel-wide strip is done as two
 // four-pixel passes with their own qword store, and the rounding table is
-// the MMX-sized entry at 0x012D88D0 rather than the SSE2 family's
-// g_bfmeBinkRoundMmx.  Retail 0x009C6470, 196 bytes.
+// the shared MMX vector at BFME2 VA 0x00DB81A0.  Retail 0x009C6470, 196 bytes.
 
-extern const unsigned short Rva012D88D0Round[4];	// retail 0x012D88D0
+extern const unsigned short g_bfmeBinkRoundMmx[8];	// retail 0x00DB81A0
 
 // ?rva009C6470BinkMmx@@YAXPBXPAXHHHH0@Z
 void __cdecl rva009C6470BinkMmx(const void *source, void *destination,
@@ -45,7 +44,7 @@ void __cdecl rva009C6470BinkMmx(const void *source, void *destination,
 		punpcklbw mm4, mm0
 		pmullw mm4, mm6
 		paddsw mm3, mm4
-		paddsw mm3, qword ptr Rva012D88D0Round
+		paddsw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi], mm3
@@ -66,7 +65,7 @@ void __cdecl rva009C6470BinkMmx(const void *source, void *destination,
 		punpcklbw mm4, mm0
 		pmullw mm4, mm6
 		paddsw mm3, mm4
-		paddsw mm3, qword ptr Rva012D88D0Round
+		paddsw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi + 4], mm3

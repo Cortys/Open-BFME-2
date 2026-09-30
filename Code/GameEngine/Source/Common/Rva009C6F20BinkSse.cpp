@@ -7,7 +7,11 @@
 // rva009C6FC0BinkSse's four-tap vertical sibling.  Retail 0x009C6F20,
 // 159 bytes.
 
-extern const unsigned short g_bfmeBinkRound[8];
+// Twelve matched BFME2 filter references place this vector at VA 0x00DB84D0.
+// All 16 initialized bytes match retail. SSE2 memory operands require 16-byte alignment.
+extern __declspec(align(16)) const unsigned short g_bfmeBinkRound[8] = {
+    64, 64, 64, 64, 64, 64, 64, 64
+};
 
 // ?rva009C6F20BinkSse@@YAXPBXPAXHHHH0@Z
 void __cdecl rva009C6F20BinkSse(const void *source, void *destination,

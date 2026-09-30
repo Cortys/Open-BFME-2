@@ -1,13 +1,13 @@
 // cl: /DNDEBUG /MD /O2
 //
-// Second MMX four-tap vertical Bink filter sharing the 0x012D88D0 round
+// Second MMX four-tap vertical Bink filter sharing the 0x00DB81A0 round
 // table with rva009C6470BinkMmx: same four rows (-stride, 0, +stride,
 // +stride*2) and two four-pixel passes, but reads each tap through a
 // stride-relative offset from a single base register instead of
 // re-deriving the base, and combines taps with plain (non-saturating)
 // paddw.  Retail 0x009C6620, 198 bytes.
 
-extern const unsigned short Rva012D88D0Round[4];	// retail 0x012D88D0
+extern const unsigned short g_bfmeBinkRoundMmx[8];	// retail 0x00DB81A0
 
 // ?rva009C6620BinkMmx@@YAXPBXPAXHHHH0@Z
 void __cdecl rva009C6620BinkMmx(const void *source, void *destination,
@@ -45,7 +45,7 @@ void __cdecl rva009C6620BinkMmx(const void *source, void *destination,
 		punpcklbw mm4, mm0
 		pmullw mm4, mm7
 		paddw mm3, mm4
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi], mm3
@@ -66,7 +66,7 @@ void __cdecl rva009C6620BinkMmx(const void *source, void *destination,
 		punpcklbw mm4, mm0
 		pmullw mm4, mm7
 		paddw mm3, mm4
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi + 4], mm3

@@ -4,11 +4,11 @@
 // source, source+1, source+2) out of a single unaligned qword load via
 // repeated one-byte right shifts, matching rva009C6F20BinkSse's shift
 // technique but four pixels at a time, so the eight-pixel strip needs two
-// passes like the family's other MMX siblings; shares the 0x012D88D0
+// passes like the family's other MMX siblings; shares the 0x00DB81A0
 // round table with rva009C6470BinkMmx and rva009C6620BinkMmx.  Retail
 // 0x009C6540, 211 bytes.
 
-extern const unsigned short Rva012D88D0Round[4];	// retail 0x012D88D0
+extern const unsigned short g_bfmeBinkRoundMmx[8];	// retail 0x00DB81A0
 
 // ?rva009C6540BinkMmx@@YAXPBXPAXHHHH0@Z
 void __cdecl rva009C6540BinkMmx(const void *source, void *destination,
@@ -48,7 +48,7 @@ void __cdecl rva009C6540BinkMmx(const void *source, void *destination,
 		punpcklbw mm5, mm0
 		pmullw mm5, mm7
 		paddw mm3, mm5
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi], mm3
@@ -71,7 +71,7 @@ void __cdecl rva009C6540BinkMmx(const void *source, void *destination,
 		punpcklbw mm5, mm0
 		pmullw mm5, mm7
 		paddw mm3, mm5
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
 		packuswb mm3, mm0
 		movd dword ptr [edi + 4], mm3
