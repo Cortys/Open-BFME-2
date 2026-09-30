@@ -43374,3 +43374,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva005386F5@@QAE@ABV0@@Z,,0x005386F5,68,Code/GameEngine/Source/Common/Rva005386F5Copy.cpp,matched,Vector copy via rowed Vector_base E16 get_allocator AsciiString uninit-copy Float4Record caller 0x005388C2
 ?rva004EE0C6@Rva004EE0C6@@QAEXHPAVRva003F498A@@@Z,,0x004EE0C6,77,Code/GameEngine/Source/Common/Rva004EE0C6.cpp,matched,time plus Rva003F498A loops
 ?rva004D5046@Transport@@QBEMXZ,,0x004D5046,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,transport stats5 average skipping 40E6C
+?rva004D5002@Transport@@QBEMXZ,,0x004D5002,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,transport stats2 average skipping 40E6C

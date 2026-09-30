@@ -13,11 +13,12 @@ class Transport
 	char m_pad40E6C[0x40E6C];
 	int m_skip40E6C;
 	int m_40E70;
-	int m_dummy[30 * 5];
+	unsigned int m_dummy[30 * 5];
 	unsigned int m_vals410CC[30];
 
 public:
 	float rva004D5046() const;
+	float rva004D5002() const;
 };
 
 float Transport::rva004D5046() const
@@ -28,6 +29,18 @@ float Transport::rva004D5046() const
 		if (i == m_skip40E6C)
 			continue;
 		sum += (float)m_vals410CC[i];
+	}
+	return sum * g_008601E0;
+}
+
+float Transport::rva004D5002() const
+{
+	float sum = 0.0f;
+	for (int i = 0; i < 30; ++i)
+	{
+		if (i == m_skip40E6C)
+			continue;
+		sum += (float)m_dummy[60 + i];
 	}
 	return sum * g_008601E0;
 }
