@@ -19,11 +19,14 @@ class Rva000EB08C
 {
 public:
 	void rva000EB08C(int index, bool flag);
+	bool rva000EB2AC(int id, bool flag);
 private:
 	struct Elem1
 	{
-		int id;
-		char m_pad04[0xA4 - 4];
+		int id1;
+		char m_pad04[0x18 - 4];
+		int id2;
+		char m_pad1C[0xA4 - 0x18 - 4];
 		int value;
 		char m_padA8[0xE8 - 0xA4 - 4];
 	};
@@ -53,7 +56,7 @@ void Rva000EB08C::rva000EB08C(int index, bool flag)
 		return;
 	if (index >= m_count)
 		return;
-	int id = m_elems[index].id;
+	int id = m_elems[index].id1;
 	if (id < 0)
 		return;
 	if (flag) {
@@ -63,4 +66,18 @@ void Rva000EB08C::rva000EB08C(int index, bool flag)
 		m_elems[index].value = 0xFF;
 	}
 	m_dirty = 1;
+}
+
+bool Rva000EB08C::rva000EB2AC(int id, bool flag)
+{
+	if (id == 0)
+		return false;
+	int n = m_count;
+	for (int i = 0; i < n; ++i) {
+		if (m_elems[i].id2 == id) {
+			rva000EB08C(i, flag);
+			return true;
+		}
+	}
+	return false;
 }
