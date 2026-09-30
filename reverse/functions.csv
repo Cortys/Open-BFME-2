@@ -44659,3 +44659,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva001FC42D@Rva001FC42D@@QAEXPAX0@Z,,0x001FC42D,36,Code/GameEngine/Source/GameLogic/Object/Rva001FC42DForward.cpp,matched,chain via 0x001FC333 rowed callees PAX __thiscall ret 8
 ?get@Rva001F5DC0Slot@@QAEPAXPAX@Z,,0x001F5DC0,20,Code/GameEngine/Source/Common/Rva001F5DC0Get.cpp,matched,null-checked virtual tail-jmp slot 8 offset AC
 ?get@Rva001F5DD4Slot@@QAEPAXPAX@Z,,0x001F5DD4,20,Code/GameEngine/Source/Common/Rva001F5DD4Get.cpp,matched,null-checked holder at AC-adjacent B0 via slot 8 tail jmp one arg
+?get@Rva001F5E24Slot@@QAEPAXPAX@Z,,0x001F5E24,20,Code/GameEngine/Source/Common/Rva001F5E24Get.cpp,matched,null-checked holder at C0 via slot 8 tail jmp one arg
