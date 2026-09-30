@@ -42986,3 +42986,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ??0Rva001EC311@@QAE@ABV?$StringBase@D@@@Z,,0x001EC311,56,Code/Libraries/Source/WWVegas/WWLib/Rva001EC311Ctor.cpp,matched,ctor string plus ints plus id plus Vector_base E16
 ?rva005FBB68@Rva005FBB68@@QAEXH@Z,,0x005FBB68,8,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt count forwarder tail jmp via landed wrapper
 ??0Rva005DA831@@QAE@PAX@Z,,0x005DA831,35,Code/GameEngine/Source/Common/Rva005DA831Ctor.cpp,matched,derived holder ctor via base row cross-TU esi save
+??1Rva005DAC85@@UAE@XZ,,0x005DAC85,59,Code/GameEngine/Source/Common/Rva005DAC85Dtor.cpp,matched,derived dtor with StringBase via base pin
