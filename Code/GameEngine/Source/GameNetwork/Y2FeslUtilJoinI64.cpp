@@ -67,3 +67,27 @@ void Rva00800040JoinI64(const __int64 *parts, unsigned count, char *dest, unsign
 		used += len;
 	}
 }
+
+// BFME2 0x0066C460; body from Open-BFME-1 5cae4bdff (BFME1 0x007FFFB0), unchanged.
+// 0x007FFFB0 -- length of a present C string including its NUL, 0 for null.
+// Same jabba util.cpp neighbourhood as the joins below the DirtySock text
+// helpers. The goto-loop spelling selects retail's EDX cursor register; the
+// while form mirrors into ECX. Identity is address-derived: no caller,
+// string, or vtable names it.
+unsigned int Rva007FFFB0Span( const char *text )
+{
+	const char *cursor;
+	const char *afterStart;
+	if( text == 0 )
+		return 0;
+	cursor = text;
+	afterStart = text + 1;
+loop:
+	{
+		char c = *cursor;
+		++cursor;
+		if( c != 0 )
+			goto loop;
+	}
+	return (unsigned int)( cursor - afterStart ) + 1;
+}

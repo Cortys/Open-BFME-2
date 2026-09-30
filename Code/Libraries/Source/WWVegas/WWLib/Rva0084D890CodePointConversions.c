@@ -46,3 +46,11 @@ unsigned short Rva00020AC0(Rva0084D890CodePage *owner, int character)
         (const unsigned short *)&character, 1, &converted, 1);
     return converted;
 }
+
+/* BFME2 0x00020E30; Open-BFME-1 5cae4bdff Rva0084DB70 (BFME1 0x0084DB70), written
+   against this file's code-page record: the LCID is its first dword. */
+int Rva0084DB70(Rva0084D890CodePage *owner, unsigned short *to, int count,
+    const unsigned short *from, int fromCount)
+{
+    return LCMapStringW(owner->locale, 0x400, from, fromCount, to, count);
+}
