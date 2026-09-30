@@ -7,13 +7,21 @@
 // address-derived name: identity unproven from 160 bytes.
 extern "C" __declspec(dllimport) unsigned long __stdcall WaitForMultipleObjects(unsigned long nCount, const void *lpHandles, int bWaitAll, unsigned long dwMilliseconds);
 
+class Rva00041118Obj
+{
+public:
+    virtual void vf0();
+    virtual unsigned char vf1();
+};
+
 class Rva00041078
 {
 public:
     bool rva00041078(unsigned long timeout, int single, int *out);
+    bool rva00041118();
 private:
     void *m_handles; // +0
-    int m_pad04; // +4
+    Rva00041118Obj **m_objs; // +4: parallel object array (0x00041118)
     unsigned char *m_done; // +8
     int m_count; // +0xc
 };
@@ -46,4 +54,20 @@ bool Rva00041078::rva00041078(unsigned long timeout, int single, int *out)
         }
         return true;
     }
+}
+
+// ?rva00041118@Rva00041078@@QAE_NXZ @0x00041118 54B
+// Re-query pass over the wait set: for each set m_done entry, refresh it
+// from slot-1 virtual of the +4 object array (uchar, neg/sbb/inc
+// normalized), always returns true. Evidence: same +8/+0xC layout as
+// rva00041078 above, sits between 0x00041078 and 0x00041168, single caller
+// at 0x0004135C; indirect slot call needs no row/pin. Honest
+// address-derived method name on the proven Rva00041078 class.
+bool Rva00041078::rva00041118()
+{
+    for (int i = 0; i < m_count; ++i) {
+        if (m_done[i])
+            m_done[i] = !m_objs[i]->vf1();
+    }
+    return true;
 }
