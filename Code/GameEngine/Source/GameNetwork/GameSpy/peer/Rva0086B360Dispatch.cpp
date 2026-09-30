@@ -239,18 +239,6 @@ extern "C" void __declspec(noinline) __cdecl Rva0086B360Dispatch(
 	}
 }
 
-extern "C" __declspec(noinline) void piProcessUTM_anchor(PEER peer, piPlayer *player)
-{
-	piProcessUTM(peer, player, PEERFalse, TitleRoom);
-}
-
-// absent-from-retail: This caller makes MSVC pass both pointers in registers.
-void Rva0086B2F0PrivateCallAnchor(char *text, piPlayer *player, int enabled)
-{
-	if (enabled)
-		Rva0086B2F0(text, player);
-}
-
 // 0x0086B430, 305 bytes: channelMessage slot in piSetChannelCallbacks.
 extern "C" {
 	PEERBool piRoomToType(PEER peer, const char *channel, RoomType *roomType);
