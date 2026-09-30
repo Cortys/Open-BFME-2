@@ -44221,3 +44221,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva002DB311@@UAE@XZ,,0x002DB311,318,Code/GameEngine/Source/Common/Rva002DB311Dtor.cpp,matched,unlock lane dtor vtable 0x00803E24 11 singles 7 arrays
 ?rva0031AA4B@BfmeWorldRV@@QAEXH@Z,,0x0031AA4B,59,Code/GameEngine/Source/GameClient/GUI/ControlBar/BfmeWorldRva0031AA4B.cpp,matched,BfmeWorldRV flag via InGameUI slots
 ?rva0031AD48@ControlBar@@QAEX_N@Z,,0x0031AD48,18,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AD48.cpp,matched,ControlBar hide via winHide tail
+?rva00383AFF@Rva00383AFF@@QAEXXZ,,0x00383AFF,49,Code/GameEngine/Source/Common/System/Rva00383AFFClear.cpp,matched,unlock makes 0x00383F3C ready callers 0x00383F3F and 0x00385D6C
