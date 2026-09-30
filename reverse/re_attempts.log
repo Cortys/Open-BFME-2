@@ -4289,3 +4289,4 @@ FUN_005BAF30	0x001BAF30	600	blocked	600B image scaler big render t=1 model=muse-
 FUN_00963D22	0x00563D22	12	blocked	needs ConcreteModuleClass GpuDraw template for getInstance t=3 model=muse-04
 ?rva004FD37F@Rva004FD37F@@QAEXPAX@Z	0x004FD37F	99	blocked	101B vs 99B same 43 insns plus multimap insert_equal plus vector ModuleData push_back shape right but frame 0xC vs 0x10 from incoming-arg reuse for iterator ret plus size in eax vs edx plus begin-end order plus extra restore mov plus O2 286B worse plus GX- same t=20 model=muse-04
 ?_M_insert_overflow@?$vector@DV?$allocator@D@_STL@@@_STL@@IAEXPADABDABU__true_type@2@I_N@Z	0x000AFB2E	136	blocked	char codegen exact 136B but name duplicates 0x0007EA1F plus retail fill_n is unsigned char 0x000AD829 plus uchar codegen 135B ebx-edi swap t=20 model=muse-04
+FUN_008e0988	0x004E0988	115	blocked	EH guard with indirect functor call plus SEH scope table; no donor for finally restore shape t=12 model=muse-03
