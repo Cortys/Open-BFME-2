@@ -103,3 +103,14 @@ Rva0036105B &Rva0036105B::operator=(const Rva0036105B &other)
     m_90 = other.m_90;
     return *this;
 }
+
+// ?Rva003614F4Copy@@YAPAVRva0036105B@@PAV1@00Urandom_access_iterator_tag@_STL@@PAH@Z, retail 0x003614F4, 54 bytes.
+// __copy random-access for Rva0036105B: count via (last-first) idiv 0x94 then
+// loop *result = *first via rowed operator=. Evidence: chain from 0x0036112C;
+// 5-arg caller at 0x00361594 pushes tag plus distance; prev/next STL TUs.
+Rva0036105B *Rva003614F4Copy(Rva0036105B *first, Rva0036105B *last, Rva0036105B *result, _STL::random_access_iterator_tag, int *)
+{
+    for (int n = last - first; n > 0; --n, ++first, ++result)
+        *result = *first;
+    return result;
+}
