@@ -43353,3 +43353,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0050F041@Rva0050F041@@QAEXHABVUnicodeString@@@Z,,0x0050F041,106,Code/GameEngine/Source/Common/System/Rva0050F041.cpp,matched,Apt level field via format SetText
 ?rva0028B595@Object@@QAEXPAPAV1@0@Z,,0x0028B595,89,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B595.cpp,matched,intrusive prev next unlink with head tail outs
 ?rva00460175@SpawnBehavior@@QAEXH@Z,,0x00460175,87,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_rva00460175.cpp,matched,SpawnBehavior primary plus0x4C list plus0x54 count via caller 0x004604D5 and onDelete layout
+?Rva0033331BCopy@@YAPAVRva00332EC8@@PAV1@00PBX@Z,,0x0033331B,38,Code/Libraries/Source/WWVegas/WWLib/Rva0033331BCopy.cpp,matched,chain copy via src-first increments
