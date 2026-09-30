@@ -105,3 +105,8 @@ void *Rva005DE5B5::rva005DE782(unsigned int flags)
 		::operator delete(this);
 	return this;
 }
+
+// __uninitialized_fill_n<Rva005DE5B5> (retail 0x005DE7A3, 37B): byte-identical
+// fill loop through the rowed _Construct 0x005DE755.
+template Rva005DE5B5 *_STL::__uninitialized_fill_n<Rva005DE5B5 *, unsigned int, Rva005DE5B5>(
+	Rva005DE5B5 *, unsigned int, const Rva005DE5B5 &, const _STL::__false_type &);

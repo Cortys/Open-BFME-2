@@ -18,3 +18,7 @@ struct Rva00079554Record
 };
 
 template void _STL::_Destroy<Rva00079554Record *>(Rva00079554Record *, Rva00079554Record *);
+
+// vector dtor (retail 0x000C1C6A): byte-identical explicit member
+// instantiation calling the _Destroy above and _free.
+template _STL::vector<Rva00079554Record>::~vector();

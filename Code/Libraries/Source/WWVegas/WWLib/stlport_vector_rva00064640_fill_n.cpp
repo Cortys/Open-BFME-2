@@ -24,4 +24,6 @@ template Rva00064640Record *__uninitialized_copy<const Rva00064640Record *, Rva0
 template Rva00064640Record *vector<Rva00064640Record, allocator<Rva00064640Record> >::_M_allocate_and_copy<const Rva00064640Record *>(unsigned int, const Rva00064640Record *, const Rva00064640Record *);
 // ?_M_insert_overflow@?$vector@VRva00064640Record@@V?$allocator@VRva00064640Record@@@_STL@@@_STL@@IAEXPAVRva00064640Record@@ABV3@ABU__false_type@2@I_N@Z 0x00470148 189B evidence: growth path whose calls read rowed _Construct 0x469C73, fill_n 0x469CC8 and copy 0x469CA2 (twice), ICF allocate 0xB40EA and _free
 template void vector<Rva00064640Record, allocator<Rva00064640Record> >::_M_insert_overflow(Rva00064640Record *, const Rva00064640Record &, const __false_type &, unsigned int, bool);
+// ?push_back@?$vector@VRva00064640Record@@V?$allocator@VRva00064640Record@@@_STL@@@_STL@@QAEXABVRva00064640Record@@@Z 0x00473F4A 55B evidence: calls rowed _Construct 0x469C73 and _M_insert_overflow 0x470148
+template void vector<Rva00064640Record, allocator<Rva00064640Record> >::push_back(const Rva00064640Record &);
 }

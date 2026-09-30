@@ -15,3 +15,7 @@ struct Rva0027EA49
 };
 
 template void _STL::_Destroy<Rva0027EA49 *>(Rva0027EA49 *, Rva0027EA49 *);
+
+// vector dtor (retail 0x002830D5): byte-identical explicit member
+// instantiation calling the _Destroy above and _free.
+template _STL::vector<Rva0027EA49>::~vector();

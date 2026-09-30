@@ -8,3 +8,8 @@ struct Rva00255D17
     unsigned char m_data[0x24];
 };
 template void _STL::_Destroy<Rva00255D17 *>(Rva00255D17 *, Rva00255D17 *);
+
+// vector dtor (retail 0x00050A79) and _M_clear (0x0006445F): byte-identical
+// explicit member instantiations; both call the _Destroy above and _free.
+template _STL::vector<Rva00255D17>::~vector();
+template void _STL::vector<Rva00255D17>::_M_clear();

@@ -28,3 +28,11 @@ template _STL::vector<BfmeStringRecord00568CE0>::~vector();
 // not a vector dtor, so the vector emission stays unclaimed)
 class Rva00297360Element { public: ~Rva00297360Element(); char m_pad[16]; };
 template _STL::vector<Rva00297360Element>::~vector();
+
+// _M_clear bodies (byte-identical explicit member instantiations calling
+// each element's rowed _Destroy and _free): BfmeStringTailRecord156 at
+// retail 0x001D9D57, Rva002390CB at 0x0031C81A, Rva00297360Element at
+// 0x0040399F.
+template void _STL::vector<BfmeStringTailRecord156>::_M_clear();
+template void _STL::vector<Rva002390CB>::_M_clear();
+template void _STL::vector<Rva00297360Element>::_M_clear();
