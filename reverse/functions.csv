@@ -43976,3 +43976,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0059BD58@Rva0059BD58@@QAEXPAURva0059BD58Node@@@Z,,0x0059BD58,45,Code/GameEngine/Source/Common/Rva0059BD58Free.cpp,matched,recursive list free child plus 0xC free node via 0x00030830 next plus 0x8
 ??0Rva0020D583@@QAE@XZ,,0x0020D4E3,132,Code/GameEngine/Source/Common/Rva0020D583Dtor.cpp,matched,unlock ctor vptr plus 5 StringBase set
 ?Rva0020D613Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0020D613,37,Code/GameEngine/Source/Common/Rva0020D613Alloc.cpp,matched,unlock hash node alloc via rowed allocate plus Construct
+?rva00491EE6@Rva00491DD3@@QAEXXZ,,0x00491EE6,50,Code/GameEngine/Source/Common/Rva00491DD3Method.cpp,matched,UpdateModule base plus AI slot 0x1B8 and rowed 0x26331C
