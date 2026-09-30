@@ -60,10 +60,13 @@ class Rva005F9364
 {
 public:
     void rva005F9364(const UnicodeString &regionName);
+    void rva005F960C(const UnicodeString &regionName);
 private:
     char m_pad[4];
     unsigned int m_level;
     TeamNameHolder *m_team;
+    char m_pad0C[0x1C - 0x0C];
+    UnicodeString m_cachedName;
 };
 void Rva005F9364::rva005F9364(const UnicodeString &regionName)
 {
@@ -75,4 +78,12 @@ void Rva005F9364::rva005F9364(const UnicodeString &regionName)
         teamName = g_Rva0107301CEmptyString;
     key.format("APT:_level%u.%s_RegionName", m_level, teamName);
     ((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, regionName, true);
+}
+void Rva005F9364::rva005F960C(const UnicodeString &regionName)
+{
+    if (regionName.compare(m_cachedName) != 0)
+    {
+        rva005F9364(regionName);
+        m_cachedName.set(regionName);
+    }
 }
