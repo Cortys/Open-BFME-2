@@ -43579,3 +43579,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva00561527@Rva00561527@@QAEXPAVXfer@@@Z,,0x00561527,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00561527.cpp,matched,Version1 then Lightning base xfer at plus0x18 caller jmp 0x003ABBC6
 ??1Rva0036783F@@UAE@XZ,,0x0036783F,79,Code/GameEngine/Source/Common/Rva0036783FDtor.cpp,matched,unlock dtor via base WindModuleInfo plus slot00 delete
 ?Rva003BC259Remove@@YGXPAVParameter@@@Z,,0x003BC259,34,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC259Remove.cpp,matched,script remove unit scripts via rowed getUnitNamed and 0x20517D
+?Rva003BC421Do@@YGXPAVParameter@@H@Z,,0x003BC421,69,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC421Do.cpp,matched,script unit iface slots via rowed getUnitNamed and bfmeGoBGB
