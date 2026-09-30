@@ -44871,3 +44871,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0025C829@Rva0025C6E2Elem@@QAEXPAVW3DDisplay@@H@Z,,0x0025C829,170,Code/GameEngine/Source/Common/Rva0025C8D3.cpp,matched,twin of rva0025C8D3 with constant color -1 mode 2 same unsigned virtuals
 ?rva000B4E23@Rva000B4E23@@QAEMXZ,,0x000B4E23,32,Code/GameEngine/Source/Common/Rva000B4E23.cpp,matched,stride-64 float via mid table fallback BfmeZeroRange caller 0xB708C
 ??$copy_backward@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,,0x000B6631,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_backward_asciistring_o1.cpp,matched,tag dispatch to rowed copy_backward worker 0xB4460 caller 0xC070C
+??$__copy@PAURva000B435F@@PAU1@H@_STL@@YAPAURva000B435F@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B6830,50,Code/Libraries/Source/WWVegas/WWLib/Rva000B435F.cpp,matched,stride-12 copy via rowed Rva000B435F assign caller 0x2CF843
