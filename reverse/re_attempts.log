@@ -4041,3 +4041,5 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?Rva0038190FSendChat@@YA_NABVUnicodeString@@ABV?$vector@IV?$allocator@I@_STL@@@_STL@@@Z	0x0038190F	440	partial	esi-edi swap plus push-selected caching plus missing or-EH-minus1; 437/440B t=28 model=muse-06 score=0.9 stash=reverse/attempts/0x0038190f.cpp
 ?rva004210F8@Rva004210F8@@QAEHPBVOverridable@@@Z	0x004210F8	126	blocked	nested vector size-recompute loops plus per-outer friend_getFinalOverride plus Overridable-plus14 ptr compare 76B vs 126B EBP frame plus index-plus-pointer hybrid needs donor t=15 model=muse-08
 FUN_0073CE30	0x0073CE30	96	blocked	ctor 96B dual vtable plus x87 ftol2 x4 plus struct-by-value Fill needs strong model t=8 model=muse-12
+FUN_004b4f91	0x004B4F91	143	blocked	EH prolog FuncInfo 0x0078EC92 unclaimed plus STL vector base/dtor and indirect 0xA8/0x84 walk t=5 model=muse-03
+FUN_00409457	0x00409457	213	blocked	EH plus STL vector erase pushback plus contested StringBase 0x365F0 pin and globals UpgradeCenter WorldRV t=5 model=muse-03
