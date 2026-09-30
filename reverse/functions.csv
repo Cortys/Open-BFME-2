@@ -44417,3 +44417,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z,,0x006CBDE0,200,Code/GameEngine/Source/Common/Rva006CBDE0Ctor.cpp,matched,Apt value ctor via EAStringC inline ctor same as Rva006D6D20
 ??4Rva0036105B@@QAEAAV0@ABV0@@Z,,0x0036112C,167,Code/GameEngine/Source/GameLogic/Object/Rva0036105BCopyCtor.cpp,matched,copy-assign twin of copy ctor same layout
 ??0Rva0035D47B@@QAE@XZ,,0x0035D45A,33,Code/GameEngine/Source/Common/Rva0035D47BCtor.cpp,matched,ctor via base 0x001DBAA4 with vtable 0x008164F0
+?Rva004E5CB0Delete@@YGXPAX@Z,,0x004E5CB0,27,Code/GameEngine/Source/Common/Bfme/Rva004E5CB0Delete.cpp,matched,chain lane deleter for 0x004E5A78 caller 0x004E5D4D
