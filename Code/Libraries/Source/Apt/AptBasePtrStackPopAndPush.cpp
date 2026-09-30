@@ -46,6 +46,7 @@ public:
     void rva006FDE50();
     void rva006FDDB0(int nCapacity);
     void rva006FDF30(BfmeAptValue006DCD20 *pValue);
+    void rva006FDEE0(BfmeAptValue006DCD20 *pValue);
     ~AptBasePtrStack();
 
     int m_nElements;
@@ -177,4 +178,16 @@ void AptBasePtrStack::rva006FDF30(BfmeAptValue006DCD20 *pValue)
     }
     m_aElements[m_nElements] = pValue;
     ++m_nElements;
+}
+
+void AptBasePtrStack::rva006FDEE0(BfmeAptValue006DCD20 *pValue)
+{
+    if (m_nElements >= m_nCapacity) {
+        g_bfmeAptAssertAtE17734("m_nElements < m_nCapacity", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x80);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    m_aElements[m_nElements] = pValue;
+    ++m_nElements;
+    pValue->AddRef();
 }
