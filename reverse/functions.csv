@@ -44380,3 +44380,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ??1Rva005F918D@@QAE@XZ,,0x005F918D,57,Code/GameEngine/Source/Common/Rva005F918DDtor.cpp,matched,dtor releases wide string then TargetRef via 36E70 7DEEF
 ?push_back@?$vector@UBfmeStringRecord005F93E3@@V?$allocator@UBfmeStringRecord005F93E3@@@_STL@@@_STL@@QAEXABUBfmeStringRecord005F93E3@@@Z,,0x005FA160,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmestringrecord005f93e3_pushback.cpp,matched,vector push_back via rowed Construct 5F944A overflow 5F9B4E callers 5FA230 5FA2F7
 ?rva005FA8F5@Rva005FA8F5@@QAEPAURva005FA8F5Entry@@H@Z,,0x005FA8F5,39,Code/GameEngine/Source/Common/Rva005FA8F5Find.cpp,matched,stride-8 key search count 4C array 34 callers 5FA9AE 5FA9B8
+?rva005FA91C@Rva005FA91C@@QAEXH@Z,,0x005FA91C,96,Code/GameEngine/Source/Common/Rva005FA91CMessage.cpp,matched,message 6B4 via MessageStreamSubsystem five appendIntegerArgument
