@@ -44545,3 +44545,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva00057C5C@KeyToBucketMap@NameKeyGenerator@@QAE?AUequal_result@12@ABUvalue_type@12@@Z,,0x00057C5C,36,Code/GameEngine/Source/Common/NameKeyGeneratorMapInsert.cpp,matched,chain from 0x0005559F resize then insert_equal via insert pattern
 ?rva003611EFResolveNames@ObjectFilter@@SAXPAV1@@Z,,0x003611EF,585,Code/GameEngine/Source/Common/ObjectFilterResolveNames.cpp,matched,ObjectFilter resolveNames via BFME1 donor with manual throw
 ?rva002CF1C9@Rva002CF1C9@@QAEXXZ,,0x002CF1C9,25,Code/GameEngine/Source/Common/Rva002CF1C9Iterate.cpp,matched,same head next layout as sibling Rva002CF1FB caller 0x001E3943 callee 0x0033B9D1 row
+??1Rva0056C996@@QAE@XZ,,0x0056C996,155,Code/GameEngine/Source/Common/Rva0056C996Dtor.cpp,matched,dtor frees 5 display strings then 4 wide strings EH states callers 0x0056D2D0 0x0056D3EF
