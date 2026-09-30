@@ -14,9 +14,20 @@ struct Rva004393D6 : public _STL::list<BfmePod196>
 	int m_08;
 	int m_0c;
 	Rva004393D6(const Rva004393D6 &o);
+	Rva004393D6 &operator=(const Rva004393D6 &o);
 };
 Rva004393D6::Rva004393D6(const Rva004393D6 &o) : _STL::list<BfmePod196>(o), m_04(o.m_04), m_08(o.m_08), m_0c(o.m_0c)
 {
+}
+Rva004393D6 &Rva004393D6::operator=(const Rva004393D6 &o)
+{
+	if (&o == this)
+		return *this;
+	_STL::list<BfmePod196>::operator=(o);
+	m_04 = o.m_04;
+	m_08 = o.m_08;
+	m_0c = o.m_0c;
+	return *this;
 }
 struct Rva004395EC
 {
