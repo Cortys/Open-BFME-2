@@ -3760,3 +3760,4 @@ FUN_004c2483	0x000C2483	29	blocked	five-push wrapper for 3-arg copy with ebp-1 b
 FUN_004c24cd	0x000C24CD	29	blocked	five-push wrapper for 3-arg copy with ebp-1 byte temp needs donor t=5 model=muse-02
 FUN_007977f6	0x003977F6	309	blocked	large predicate over tree plus four vectors via findObjectByID and contains needs donor t=8 model=muse-02
 FUN_009657fe	0x005657FE	103	blocked	search over 0x58 stride via compare plus contains with recomputed size needs donor t=8 model=muse-02
+??1Rva000E6387@@UAE@XZ	0x000E6387	57	blocked	dtor with EH_prolog scope 0x76347B plus Vegetation erase plus vtable stores; SEH machinery like Apt wall t=6 model=muse-spark
