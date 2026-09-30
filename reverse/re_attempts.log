@@ -4068,3 +4068,7 @@ FUN_0068D680	0x0028D680	107	blocked	Object upgrade loop with Player storage plus
 FUN_003F652E	0x003F652E	127	blocked	STL EH ctor with Pod48 temp via Rva003F5970 arg types unclear t=12 model=muse-08
 FUN_00157C70	0x00157C70	347	blocked	Render2DSentence dtor 347B with 3 array destroys via MM plus string vtable stores t=10 model=muse-08
 ?rva00156FA0@Rva001553C0@@QAEXXZ	0x00156FA0	121	blocked	needs EH frame for holder unknown t=15 model=muse-08
+??0Rva003AF076@@QAE@ABV0@@Z	0x003AF076	149	blocked	3-base MI word at 0x1c plus TerrainCollision at 0x20 plus dword 0x3c byte 0x40 needs real Base1 layout plus Middle identity plus EH flags t=10 model=muse-09
+?Rva002E5CE9PushHeap@@YAXPAUStringLookUp@@HHU1@H@Z	0x002E5CE9	93	blocked	STL push_heap sift-up 6-arg cdecl with dead lea ecx ebp+0x1c plus esi edi swap needs donor plus shape levers t=20 model=muse-09
+?rva005801F6@Rva005801F6@@QAEHH@Z	0x005801F6	109	blocked	thiscall idiv loop with two virtual slot6 bool calls needs class plus callee identities plus donor t=5 model=muse-09
+?rva0057BB4E@Rva0057BB4E@@QAEH@Z	0x0057BB4E	109	blocked	thiscall EH functor loop with virtual call needs FunctorBinding plus vector plus EH donor t=8 model=muse-09
