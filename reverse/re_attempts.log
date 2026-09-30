@@ -3947,3 +3947,6 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ??0Rva002DAB18@@QAE@XZ	0x002DAB18	70	partial	mov ecx restore late vs early plus stores order t=30 model=muse-06 score=0.97 stash=reverse/attempts/0x002dab18.cpp
 ??0Rva0035D74A@@QAE@XZ	0x0035D789	72	partial	or 0x30 hoisted early vs late plus vtable sinks late vs early; 72/72B 22/22ins 0reg t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x0035d789.cpp
 ?rva004C31A8@Rva004C31A8@@QAEPAXXZ	0x004C31A8	68	blocked	science-gated array push-pop order wall 0 mem 5 reg t=15 model=muse-spark
+?initMember@Rva0026AFDAMember@@QAEPAV1@XZ	0x0026AFDA	99	partial	vector-setup scheduling lea eax esp+b at 0x25 vs 0x28 size exact t=8 model=muse-04 score=0.9 stash=reverse/attempts/0x0026afda.cpp
+?rva0025C3AA@Display@@QAEXXZ	0x0025C3AA	196	blocked	display layout with device virtuals 0x2c 0x30 plus own 0x40 0x44; mixed x87 arithmetic plus SSE zero needs flags; nullcheck cmp vs test plus float const relocs plus scheduling; 191B vs 196B 7 regions t=22 model=muse-04
+?Rva00568830Push@@YAXPAPAXHHPBXPAH@Z	0x00568830	77	partial	dead lea ecx ebp+18 before Less 74B vs 77B single region no memory-register t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x00568830.cpp

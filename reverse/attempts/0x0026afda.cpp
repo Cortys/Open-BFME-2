@@ -1,4 +1,6 @@
 // ?initMember@Rva0026AFDAMember@@QAEPAV1@XZ
+// partial score=0.9 date=2026-09-30
+// ?initMember@Rva0026AFDAMember@@QAEPAV1@XZ
 // partial score=0.9 date=2026-09-24
 // cl: /O1 /DNDEBUG /MD /arch:SSE /D_STLP_USE_STATIC_LIB
 // stlport
