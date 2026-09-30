@@ -27,6 +27,7 @@ class Rva001EB023 {
 	struct Rva001EB023Elem *m_end;
 public:
 	struct Rva001EB023Elem *rva001EB023(Rva00376A62 &val);
+	bool rva001EB094(Rva00376A62 &val);
 };
 
 struct Rva001EB023Elem *Rva001EB023::rva001EB023(Rva00376A62 &val)
@@ -38,4 +39,10 @@ struct Rva001EB023Elem *Rva001EB023::rva001EB023(Rva00376A62 &val)
 			return first;
 	}
 	return last;
+}
+
+bool Rva001EB023::rva001EB094(Rva00376A62 &val)
+{
+	struct Rva001EB023Elem *last = m_end;
+	return rva001EB023(val) != last;
 }
