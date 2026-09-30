@@ -43748,3 +43748,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00566527@Rva00566527@@QAEXABVFXList@@@Z,,0x00566527,8,Code/GameEngine/Source/Common/Rva00566527Thunk.cpp,matched,unlocks 0x004E1579 tail-jump to FXList push_back
 ?rva006C0840@BfmeTaintManager@@QAEHHH@Z,,0x006C0840,8,Code/GameEngine/Source/Common/Bfme5SeventySix.cpp,matched,tail jmp via plus10 grid to rowed rva006C0E70 chain
 ??_GRva0039225E@@UAEPAXI@Z,,0x00392DA4,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-39225E.cpp,matched,slot 0 of vtable 0x0081A088 calls rowed 0x0039225E plus delete 0x0002FD60
+??0Rva00220CD4@@QAE@XZ,,0x00220C74,96,Code/GameEngine/Source/GameLogic/Object/Rva00220CD4Ctor.cpp,matched,vtable 0x007E6A84 base 0x001B4E63 member 0x003623E5 vector 0x00211E58 setName ArmySummaryDescription new 0x1C in 0x00220DCD
