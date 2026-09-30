@@ -43093,3 +43093,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1RespawnUpdateModuleData@@UAE@XZ,,0x004AFBFF,96,Code/GameEngine/Source/GameLogic/Object/Update/RespawnUpdateModuleDataDtor.cpp,matched,Snapshot BBB554 plus filter tree strings
 ??_GRespawnUpdateModuleData@@UAEPAXI@Z,,0x004AFBE3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04-4AFBE3.cpp,matched,slot0 deleting dtor calls rowed dtor
 ?Rva0049CEFCScan@@YAXPAX@Z,,0x0049CEFC,41,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049CEFCScan.cpp,matched,leaf free scan null array at 0x244 slot 0x70 tail barriers
+?Rva005046B0ScanTangentAngle@@YANPAVINI@@PBD@Z,,0x005046B0,111,Code/GameEngine/Source/Common/System/Rva005046B0ScanTangent.cpp,matched,BFME1 donor Rva000697B0ScanTangentAngle same messages same range check; BFME2 member scanReal plus double tan import; callers 0x00505159 0x00505184
