@@ -204,6 +204,20 @@ private:
 	char m_pad[8];
 };
 
+class GameLogic
+{
+public:
+	bool rva00085124();
+};
+extern GameLogic *TheGameLogic;
+
+struct GlobalA01E48
+{
+	char pad[0x5d];
+	unsigned char flag;
+};
+extern GlobalA01E48 *g_Va00A01E48;
+
 struct Rva0025C18BCoord
 {
 	float x;
@@ -251,7 +265,7 @@ public:
 	virtual void v35();
 	virtual void v36();
 	virtual void v37();
-	virtual void v38();
+	virtual void rva0025C14D();
 	virtual void rva0025C18B(Rva0025C18BCoord *a, Rva0025C18BCoord *b);
 	virtual void v40();
 	virtual void v41();
@@ -365,6 +379,28 @@ void BfmeStrVM0::rva0025D9E3()
 	}
 	m_fC8 = 0.0f;
 	m_fCC = 0.0f;
+}
+
+// ?rva0025C14D@BfmeStrVM0@@UAEXXZ, retail 0x0025C14D, 62 bytes.
+// Slot-38 virtual of BfmeStrVM0: unless the GameLogic mode predicate says
+// otherwise with the global 0xA01E48 byte at +0x5D set, walks the +0x1C
+// node list calling slot-94 on each node and advancing via getNext.
+// Evidence: vtable slot 38 of 0x7F5DA0; same +0x1C list as rva0025D9E3 and
+// rva0025C18B in this TU; callees rowed rva00085124 0x00085124 plus node
+// slots 94/152 predeclared in this TU; no callers.
+void BfmeStrVM0::rva0025C14D()
+{
+	if (TheGameLogic->rva00085124())
+	{
+		if (g_Va00A01E48->flag != 0)
+			return;
+	}
+	ListNode0025D9E3 *node = m_head1C;
+	while (node != 0)
+	{
+		node->s094();
+		node = node->getNext();
+	}
 }
 
 // ?rva0025C18B@BfmeStrVM0@@UAEXPAURva0025C18BCoord@@0@Z, retail 0x0025C18B, 173 bytes.

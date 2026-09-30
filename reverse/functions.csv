@@ -44854,3 +44854,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B4AB5@Rva000B4AB5@@QAEPBVAsciiString@@I@Z,,0x000B4AB5,47,Code/GameEngine/Source/Common/System/Rva000B4AB5.cpp,matched,modulo index into vector AsciiString at 0x4C empty returns TheEmptyString
 ?rva000B4AE4@Rva000B4BED@@QAEXXZ,,0x000B4AE4,23,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,clears entry byte 0xF4 over same table caller 0x2D0667
 ?rva0025C18B@BfmeStrVM0@@UAEXPAURva0025C18BCoord@@0@Z,,0x0025C18B,173,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,slot39 list walk with int rounds via node slots
+?rva0025C14D@BfmeStrVM0@@UAEXXZ,,0x0025C14D,62,Code/GameEngine/Source/Common/BfmeStrVM0Dtor.cpp,matched,slot38 list walk via node slots 94 and getNext with GameLogic mode gate
