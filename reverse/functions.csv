@@ -44231,3 +44231,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??_GRva002DB311@@UAEPAXI@Z,,0x002DB47A,28,Code/GameEngine/Source/Common/Rva002DB311Dtor.cpp,matched,chain lane deleting dtor calls rowed dtor then delete
 ??1Rva00383AFF@@QAE@XZ,,0x00383F3C,23,Code/GameEngine/Source/Common/System/Rva00383AFFClear.cpp,matched,chain calls 0x00383AFF clear plus free
 ??0Rva0055F9B4@@QAE@ABVRvaSmartPtr12@@H@Z,,0x0055F9B4,171,Code/GameEngine/Source/Common/Rva0055F9B4Ctor.cpp,matched,unlock base 0x0055F98A plus DefaultUpdate eight vars
+??0Rva0055F72C@@QAE@XZ,,0x0055F72C,64,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055F72CCtor.cpp,matched,gap nine floats plus one via SSE zeros
