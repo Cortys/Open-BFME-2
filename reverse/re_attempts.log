@@ -3766,3 +3766,6 @@ FUN_007ea076	0x003EA076	180	blocked	EH ScriptConditions with virtuals plus temp 
 FUN_007e95ff	0x003E95FF	246	blocked	EH Script Team iteration with virtuals plus temp plus delete needs donor t=6 model=muse-02
 ?rva004D4BA7@Transport@@QAE_NXZ	0x004D4BA7	353	partial	353B exact size-count 107insns flag fixed now only sent-branch order retail jle plus clear-before-fail vs ours jg plus fail-before-clear t=25 model=muse-09 score=0.99 stash=reverse/attempts/0x004d4ba7.cpp
 ??0TerrainCollisionModuleInfo@FXParticleSystem@@QAE@XZ	0x0056459E	96	blocked	reproduced stash 96B 34insns exact size-count scheduler wall xorps-lea early vs late plus fstp-vs-movss same as LifeEvent 0x564001 no new lever t=15 model=muse-09
+?rva004CBE66@Rva004CBE66@@QAEXPAVRva0036CA00Str@@PBVRva001DFE56@@@Z	0x004CBE66	74	blocked	dead push-ecx-and-ebp-4 slot plus esi-edi swap throw Oy- tried t=15 model=muse-spark
+?rva006BE220@Rva0087E900Shape@@QAEXPBURva0087E900Coord@@MPAU2@@Z	0x006BE220	50	blocked	needs central retype 0x006BE190 YAX void to YAPAU pointer-return verified YAPAU 132B exact wrapper 50B exact t=15 model=muse-spark
+?rva000A94F9@Rva000A94F9@@QAEHHH@Z	0x000A94F9	66	blocked	custom reg ABI ecx eax edx triple-pointer min-max no stack plain ret no MSVC convention t=10 model=muse-spark
