@@ -3810,3 +3810,6 @@ FUN_000EFC45	0x000EFC45	53	blocked	pin UAE virtual vs body no vtable store needs
 ?rva003FAE68@Rva003FAE68@@QAEXXZ	0x003FAE68	171	blocked	far EH handler plus pin-only StringBase 12 pins plus memset after BitFlags t=5 model=muse-10
 ??$lower_bound@PAUBfmePod28@@U1@@_STL@@YAPAUBfmePod28@@PAU1@0ABU1@@Z	0x005414C2	35	partial	public wrapper missing comp value-init stosb plus edi save ours28 vs retail35 t=25 model=muse-12 score=0.75 stash=reverse/attempts/0x005414c2.cpp
 _Rva0084ED20Tail	0x00021EB0	308	blocked	time-format jump-table switch no donor definition only decls t=10 model=muse-08
+?rva0010F557@Rva0010F557@@QAEXXZ	0x0010F557	81	partial	pop esi early vs late retail keeps late; tried reuse-inner extra-reg unnamed-temp same decl-order same barrier noop t=15 model=muse-05 score=0.97 stash=reverse/attempts/0x0010f557.cpp
+?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z	0x0044D47F	142	partial	141/142 home-swap plus edi-hold wall persists; tried sret-temp broke-frame inner-scope broke-frame slot-ref same t=18 model=muse-05 score=0.99 stash=reverse/attempts/0x0044d47f.cpp
+?rva002AA04C@Rva002AA04C@@QAEHXZ	0x002AA04C	66	partial	66/66 sole wall xor-ecx-before-test vs after; int-return and and-chain fixed tails and order t=20 model=muse-05 score=0.97 stash=reverse/attempts/0x002aa04c.cpp

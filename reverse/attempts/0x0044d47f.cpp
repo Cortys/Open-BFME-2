@@ -1,4 +1,6 @@
 // ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
+// partial score=0.99 date=2026-09-30
+// ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
 // partial score=0.99 date=2026-09-26
 // ?setUserName@LanLobbyUserNamePrefs@@QAEXVUnicodeString@@@Z
 // partial score=0.99 date=2026-09-26
