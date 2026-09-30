@@ -29,14 +29,14 @@ void piAddListGroupRoomsCallback(PEER peer, int success, int groupID,
 	const char *name, int maxWaiting, int numWaiting, int numGames,
 	int numPlaying, int numRooms, void *callback, void *param, int opID);
 void msleep(unsigned int milliseconds);
-void bfmePiThinkFromEsi(int opID);
-int piIsOperationFinished(PEER peer, int opID);
+void piThink(int opID);
+int PeerOperationsComplete(PEER peer, int opID);
 int piIsCallbackFinished(PEER peer, int opID);
 void peerShutdown(PEER peer);
 
 static int piCheckBlockingID(PEER peer, int opID)
 {
-	return piIsOperationFinished(peer, opID) &&
+	return PeerOperationsComplete(peer, opID) &&
 		piIsCallbackFinished(peer, opID);
 }
 
@@ -81,7 +81,7 @@ void peerListGroupRoomsA(PEER peer, const char *fields, void *callback,
 		do
 		{
 			msleep(1);
-			bfmePiThinkFromEsi(opID);
+			piThink(opID);
 		}
 		while (!piCheckBlockingID(peer, opID));
 

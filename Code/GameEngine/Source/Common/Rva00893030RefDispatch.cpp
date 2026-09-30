@@ -12,7 +12,7 @@ public:
 	static unsigned int decrement(unsigned int *value);
 };
 
-void bfmeDropA(void *value);
+void bfmeDropVGO(void *value);
 
 class Rva00893030Ref
 {
@@ -26,7 +26,7 @@ public:
 	~Rva00893030Ref()
 	{
 		if (m_value && Rva00894D90Accessor::decrement((unsigned int *)m_value) == 0)
-			bfmeDropA(m_value);
+			bfmeDropVGO(m_value);
 	}
 
 	void *m_value;

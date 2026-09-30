@@ -3,7 +3,7 @@
 // single-vtable shape, chaining to the base destructor already landed as
 // ??1Gen_008AC620@@QAE@XZ, but the owned member here is a plain refcounted
 // pointer decremented via Rva00894D90Accessor::decrement and dropped via
-// bfmeDropA when the count reaches zero (instead of a two-vcall release).
+// bfmeDropVGO when the count reaches zero (instead of a two-vcall release).
 
 class Rva00894D90Accessor
 {
@@ -11,7 +11,7 @@ public:
 	static unsigned int decrement(int *p);
 };
 
-void bfmeDropA(void *p);
+void bfmeDropVGO(void *p);
 
 class Gen_008AC620
 {
@@ -35,6 +35,6 @@ Rva008A2C80::~Rva008A2C80()
 	if (m_ptr)
 	{
 		if (Rva00894D90Accessor::decrement(m_ptr) == 0)
-			bfmeDropA(m_ptr);
+			bfmeDropVGO(m_ptr);
 	}
 }

@@ -12,13 +12,13 @@
 
 typedef int Int;
 
-void W3DRadarResetLock(void);					// retail 0x00903090
+void BFME_DX8_Thread_Lock(void);					// retail 0x00903090
 void W3DRadarResetUnlock(void);					// retail 0x00905B10
 
 class BfmeRadarResetLock
 {
 public:
-	BfmeRadarResetLock() { W3DRadarResetLock(); }
+	BfmeRadarResetLock() { BFME_DX8_Thread_Lock(); }
 	~BfmeRadarResetLock() { W3DRadarResetUnlock(); }
 };
 

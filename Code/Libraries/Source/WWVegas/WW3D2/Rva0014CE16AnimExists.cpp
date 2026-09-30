@@ -10,7 +10,7 @@ extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
 
 // Registry contains-check (retail 0x0061F0D0, 28B): null name or null
 // registry answers false, else tail-calls the registry lookup 0xA21170.
-extern bool __cdecl Rva0061F0D0_Contains(const char *name);
+extern bool __cdecl Render_Obj_Exists(const char *name);
 
 // ?Rva0014CE16_AnimExists@@YA_NPBD@Z
 bool Rva0014CE16_AnimExists(const char *name)
@@ -22,5 +22,5 @@ bool Rva0014CE16_AnimExists(const char *name)
 	_mbscpy(lookup, "a*");
 	_mbscpy(lookup + 2, name);
 	_strlwr(lookup);
-	return Rva0061F0D0_Contains(lookup);
+	return Render_Obj_Exists(lookup);
 }
