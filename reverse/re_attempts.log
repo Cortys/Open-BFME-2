@@ -4046,3 +4046,10 @@ FUN_00409457	0x00409457	213	blocked	EH plus STL vector erase pushback plus conte
 ?rva0023611A@GlobalData@@QBE?AVAsciiString@@XZ	0x0023611A	304	blocked	GlobalData plus 0x1248 method with GameText fetch plus shell imports plus wide temps; first shape used wrong WCHAR plus incomplete label append; needs exact GameText slot plus UnicodeString plus import decls plus g_BED0F0 type t=15 model=muse-01
 ?rva001DC01C@Rva001DC01C@@QAEPAXV?$StringBase@D@@@Z	0x001DC01C	98	partial	ebx edi swapped throughout size exact 98B t=25 model=muse-spark score=0.95 stash=reverse/attempts/0x001dc01c.cpp
 ?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z	0x004C20D5	82	partial	loads subs stores grouped vs interleaved size exact 82B t=20 model=muse-spark score=0.93 stash=reverse/attempts/0x004c20d5.cpp
+?Rva004E1579Parse@@YAXPAX0@Z	0x004E1579	129	blocked	EH INI parser with FXList thunk needs full INI donor t=5 model=muse-07
+?Rva0030682AGet@@YAHXZ	0x0030682A	230	blocked	Buff draw EH with virtuals needs ModuleInfo donor t=5 model=muse-07
+??0Rva004D5609@@QAE@XZ	0x004D5609	84	blocked	two-vtable EH ctor with delete loop needs owner donor t=5 model=muse-07
+?rva005DDCE5@Rva005DDC6B@@QAEMII@Z	0x005DDCE5	91	partial	0 reg diffs; xorps moved; extra else jmp+xorps+movss needs shared zero-store t=22 model=muse-07 score=0.91 stash=reverse/attempts/0x005ddce5.cpp
+?rva004E594E@Rva004E594E@@QAEPAV1@ABV?$StringBase@G@@PBURva004E594ESource@@H@Z	0x004E594E	96	partial	exact size 96B 39insns; 0 branch 0 reloc; vtable preload in edi vs reload needs temp-first order t=18 model=muse-07 score=0.93 stash=reverse/attempts/0x004e594e.cpp
+?Rva00602740Init@@YAXXZ	0x00602740	105	blocked	strstreambuf init needs non-destructive diff via ebx plus mov+lea strlen start plus push-ebx frame t=18 model=muse-07
+??0Rva002E0906@@QAE@XZ	0x002E0906	100	partial	96B vs 100B -4B frame -0x4 plus 1 reg; init-list m_24 first vs retail middle needs body-order without extra frame t=20 model=muse-07 score=0.9 stash=reverse/attempts/0x002e0906.cpp

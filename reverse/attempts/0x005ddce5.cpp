@@ -1,0 +1,62 @@
+// ?rva005DDCE5@Rva005DDC6B@@QAEMII@Z
+// partial score=0.91 date=2026-09-30
+// ?rva005DDCE5@Rva005DDC6B@@QAEMII@Z
+// partial score=0.91 date=2026-09-30
+// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /arch:SSE
+
+// ?rva005DDC6B@Rva005DDC6B@@QAEMII@Z, RVA 0x005DDC6B, 58B. Unlock lane: float
+// range-sum method over 8-byte elements; base pointer at +4 has a 4-byte
+// header, elements hold the summed float at +0. Unsigned lo/hi give the jae
+// early-out; do-while with dec/jne; x87 fld return. One caller at 0x005DDE60
+// in 0x005DDE33. Owner unknown so honest address-derived method name. Flags
+// copy the prev neighbour Rva005DD772Ctor.cpp for the SSE float idioms.
+class Rva005DDC6B
+{
+public:
+	float rva005DDC6B(unsigned lo, unsigned hi);
+	float rva005DDCE5(unsigned lo, unsigned hi);
+private:
+	int m_00;
+	char *m_04;
+};
+
+extern float g_Va00BBB8E0;
+
+float Rva005DDC6B::rva005DDC6B(unsigned lo, unsigned hi)
+{
+	float sum = 0.0f;
+	if (lo < hi) {
+		float *p = (float *)(m_04 + lo * 8 + 4);
+		unsigned n = hi - lo;
+		do {
+			sum += *p;
+			p = (float *)((char *)p + 8);
+		} while (--n != 0);
+	}
+	return sum;
+}
+
+// ?rva005DDCE5@Rva005DDC6B@@QAEMII@Z present-unmatched
+float Rva005DDC6B::rva005DDCE5(unsigned lo, unsigned hi)
+{
+	float best = g_Va00BBB8E0;
+	float ret;
+	if (lo < hi) {
+		float *p = (float *)(m_04 + lo * 8 + 4);
+		unsigned n = hi - lo;
+		do {
+			float v = *p;
+			if (v != 0.0f) {
+				if (v < best)
+					best = v;
+			}
+			p = (float *)((char *)p + 8);
+		} while (--n != 0);
+		ret = best;
+		if (ret == g_Va00BBB8E0)
+			ret = 0.0f;
+	} else {
+		ret = 0.0f;
+	}
+	return ret;
+}
