@@ -26,17 +26,17 @@ enum CommandSourceType
 
 class Object;
 
-class Rva0026C347Commands
+class AICommandInterface
 {
 public:
-	void Rva0026C347Command(void *target, int source);
+	void rva0026C347(Object *target, CommandSourceType source);
 };
 
 class AIUpdateInterface
 {
 public:
 	char m_pad00[0x20];
-	Rva0026C347Commands m_commands;
+	AICommandInterface m_commands;
 };
 
 class Object
@@ -66,7 +66,7 @@ void AIGroup::groupEnter(Object *obj, CommandSourceType cmdSource)
 		Object *member = (Object *)(*it);
 		AIUpdateInterface *ai = member->m_ai;
 		if (ai) {
-			ai->m_commands.Rva0026C347Command(obj, (int)cmdSource);
+			ai->m_commands.rva0026C347(obj, cmdSource);
 		}
 	}
 }
