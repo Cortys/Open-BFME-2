@@ -3704,3 +3704,5 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva006FD5B0@Rva006FD5B0@@QAEHXZ	0x006FD5B0	117	blocked	hex-pair isxdigit-strtoul assert file Apt-prefix line 0xBED truncated no donor string_xrefs silent signature unclear t=12 model=muse-03
 ?Rva002D4464Invoke@@YAXXZ	0x002D4464	205	blocked	pin-only invoke callee PBDH10000 synthetic digits not C++-mangleable no declaration can bind t=10 model=muse-03
 ?rva006FE9C0@Rva006FE9C0@@QAEXXZ	0x006FE9C0	298	blocked	chain from dtor 0x6FDD40 owner-dtor 2 arrays plus embedded BasePtrStack needs packet head and owner-header filename 0x8EAE80 line 0x52 t=8 model=muse-03
+?set@?$StringBase@G@@QAEXABV1@@Z	0x00037150	132	partial	ebx edi swap for lock src plus sub esp8 vs push ecx push ebx plus push edi mov byte t=18 model=muse-08 score=0.91 stash=reverse/attempts/0x00037150.cpp
+?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z	0x00418EEB	146	partial	0 reg 0 mem only tail check layout je vs jne plus found copy placement t=25 model=muse-08 score=0.97 stash=reverse/attempts/0x00418eeb.cpp

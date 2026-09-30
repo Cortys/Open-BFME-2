@@ -1,7 +1,7 @@
 // ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z
-// partial score=0.93 date=2026-09-28
+// partial score=0.97 date=2026-09-30
 // ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z
-// partial score=0.93 date=2026-09-28
+// partial score=0.97 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ?rva00418EEB@Rva00418EEB@@QAE_NPAXPBX@Z @ 0x00418EEB 146B: map lower_bound plus bit search
 // calls rowed 0x00418BFB lower_bound and rowed 0x000242C0 decrement.
@@ -47,8 +47,8 @@ struct Rva00418EEB {
 bool Rva00418EEB::rva00418EEB(void *outKey, const void *inKey)
 {
 	Rva00418BFB *mp = &_map;
+	Rva00418BFBNode *lb = (Rva00418BFBNode *)mp->rva00418BFB(inKey);
 	const Rva00418BFBKey *in = (const Rva00418BFBKey *)inKey;
-	Rva00418BFBNode *lb = (Rva00418BFBNode *)mp->rva00418BFB(in);
 	Rva00418BFBNode *head = mp->_head;
 	bool atBegin;
 	if (lb != head->_left) {
@@ -65,23 +65,14 @@ bool Rva00418EEB::rva00418EEB(void *outKey, const void *inKey)
 		return true;
 	}
 	{
-		unsigned i;
-		if (hi > 0) {
-			i = 0;
-			goto loopTop;
-		} else {
-			i = (unsigned)in->lo;
-			goto loopInc;
+		int i = (hi > 0) ? 0 : in->lo + 1;
+		for (; i < 8; ++i) {
+			if (_bits[(unsigned)i >> 5] & (1u << (i & 31))) {
+				((Rva00418BFBKey *)outKey)->lo = i;
+				((Rva00418BFBKey *)outKey)->hi = 0;
+				return true;
+			}
 		}
-loopTop:
-		if (_bits[i >> 5] & (1u << (i & 31))) {
-			((Rva00418BFBKey *)outKey)->lo = (int)i;
-			((Rva00418BFBKey *)outKey)->hi = 0;
-			return true;
-		}
-loopInc:
-		if (++i < 8)
-			goto loopTop;
 	}
 check:
 	if (atBegin)
