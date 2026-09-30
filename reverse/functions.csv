@@ -44873,3 +44873,5 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??$__copy@PAURva000B435F@@PAU1@H@_STL@@YAPAURva000B435F@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B6830,50,Code/Libraries/Source/WWVegas/WWLib/Rva000B435F.cpp,matched,stride-12 copy via rowed Rva000B435F assign caller 0x2CF843
 ?winGetStatus@GameWindow@@QAEIXZ,,0x0030F45F,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,GameWindow::winGetStatus: m_status +0x08; ICF alias of the identical getter
 ?winSetUserData@GameWindow@@QAEXPAX@Z,,0x002B2210,10,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,GameWindow::winSetUserData: m_userData +0x2C; GUI callers pin this name
+??1Rva005E21EB@@UAE@XZ,,0x005E21EB,59,Code/GameEngine/Source/Common/Rva005E21EBDtor.cpp,matched,virtual dtor (was banked as a ctor) clear +0x0C then base dtor 0x004E84A4 pinned Rva00539926Base by vtable 0x007C6F20
+??_GRva005E21EB@@UAEPAXI@Z,,0x005E25B1,26,Code/GameEngine/Source/Common/Rva005E21EBDtor.cpp,matched,scalar deleting dtor of Rva005E21EB
