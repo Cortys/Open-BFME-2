@@ -43449,3 +43449,4 @@ __Locale_unshift,,0x00020DB0,63,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwcmp.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0084DB30; bfme1_sweep T1 clean transfer; follows _Locale_unshift as in BFME1
 ??0Rva00546F61@@QAE@ABV0@@Z,,0x00546F2F,50,Code/GameEngine/Source/Common/Rva00546F61Ctor.cpp,matched,copy base rowed 0x005488E9 clears ObjectID bool floats sibling 0x00546F03
 ??1Rva0022958D@@UAE@XZ,,0x0022958D,74,Code/GameEngine/Source/Common/System/SaveGame/SaveGameInfoCopyBFME2.cpp,matched,dtor two AsciiStrings plus deleting base
+??_GRva0022958D@@UAEPAXI@Z,,0x00229571,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04b.cpp,matched,chain deleting dtor calls rowed 0x0022958D
