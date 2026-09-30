@@ -43503,3 +43503,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva002D317C@Rva002D317C@@QAEXPBM0HH@Z,,0x002D317C,295,Code/GameEngine/Source/Common/Rva002D317CCalls.cpp,matched,chain Radar window pos size via TheRadar
 ?Rva0030BF0CEqual@@YA_NPBM00@Z,,0x0030BF0C,90,Code/GameEngine/Source/Common/Rva0030BF0CEqual.cpp,matched,float array equal NaN fail
 ??0BfmePod60@@QAE@XZ,,0x00587500,72,Code/GameEngine/Source/Common/BfmePod60Ctor.cpp,matched,caller 0x00588A81 stack temp to rowed vector resize plus rowed Region3D empty ctor immediate plus Rva00587375 copy shape
+?Rva0042818FSwap@@YAXPAX0@Z,,0x0042818F,75,Code/GameEngine/Source/Common/Rva0042818FSwap.cpp,matched,swap via narrow copy prereq assign version dtor caller 0x00428558

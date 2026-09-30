@@ -3905,3 +3905,4 @@ FUN_000578B3	0x000578B3	149	blocked	Armor dual-hashtable erase with 0x104 plus 0
 FUN_00320291	0x00320291	584	blocked	unlock 584B ControlBar ctor-like with 2 StringBases plus 6x4 array via _L plus list at 170 plus 70 stores needs layout plus STL sizing t=10 model=muse-03
 FUN_00293D3B	0x00293D3B	113	blocked	unlock 113B Object list via 0x108 needs 2-arg Rva0028CDEB but pin is 1-arg arity mismatch t=10 model=muse-11
 ?Rva00599466HeapSiftUp@@YAXPAUKeyframe@@HHMIH@Z	0x00599466	69	partial	69B net0 value hoisted to xmm0 vs stack plus lea vs indexed plus movss vs mov t=25 model=muse-11 score=0.9 stash=reverse/attempts/0x00599466.cpp
+??0Rva00126350@@QAE@ABV0@@Z	0x001263B7	104	partial	mov ecx esi plus state 5B early vs late t=25 model=muse-08 score=0.95 stash=reverse/attempts/0x001263b7.cpp
