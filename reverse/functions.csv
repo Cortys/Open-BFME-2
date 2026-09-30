@@ -44460,3 +44460,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva0059188C@NetPacket@@QAEEPAVNetCommandRef@@@Z,,0x0059188C,158,Code/GameEngine/Source/GameNetwork/NetPacket_rva0059188C.cpp,matched,NetPacket room check via CDDrive getPath rowed callee and sibling tail layout
 ?rva00591D0D@NetPacket@@QAEEPAVNetCommandRef@@@Z,,0x00591D0D,158,Code/GameEngine/Source/GameNetwork/NetPacket_rva00591D0D.cpp,matched,NetPacket room check via CDDrive getPath rowed callee and sibling tail layout
 ?rva001F5C60@Rva001F5C60@@QAEXPAXPAUHolder001F5C60@@@Z,,0x001F5C60,39,Code/GameEngine/Source/Common/Rva001F5C60.cpp,matched,null-checked fetch holder+0x1B0 vslot0 at +0x14 caller 0x001FC33E sibling 0x001F5C39
+?rva001F5CA9@Rva001F5CA9@@QAEXPAXPAUHolder001F5CA9@@@Z,,0x001F5CA9,39,Code/GameEngine/Source/Common/Rva001F5CA9.cpp,matched,null-checked vslot fetch holder+0x1B4 sibling of 0x001F5C39
