@@ -43464,3 +43464,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva0030B2FE@Rva0030B2FE@@QAEXPAVDataChunkOutput@@@Z,,0x0030B2FE,28,Code/GameEngine/Source/Common/Rva0030B2B6Write.cpp,matched,chain writer plus int ICF same addr
 ?Rva003201A9Parse@@YAXPAVINI@@PAX@Z,,0x003201A9,92,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva003201A9.cpp,matched,chain factory sibling via new ctor initFromINI
 ?xfer@ObjectTypes@@MAEXPAVXfer@@@Z,,0x00376B70,224,Code/GameEngine/Source/GameLogic/ScriptEngine/ObjectTypesXfer.cpp,matched,slot 3 ObjectTypes xfer via IsLightCRC Version1 vector AsciiString pushback
+?Get_Double@INIClass@@QBENPBD0N@Z,,0x00616F20,131,Code/Libraries/Source/WWVegas/WWLib/ini.cpp,matched,BFME1 byte-identical donor body (Open-BFME-1 5cae4bdff ini.cpp); b1 0x009E3B40; bfme1_sweep T1 with 1 DIR32 string literal agreeing; follows rowed Get_Float 0x00616E90; replaces the Westwood body wrongly marked absent-from-retail
