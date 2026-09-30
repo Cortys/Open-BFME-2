@@ -3828,3 +3828,9 @@ FUN_004EFB99	0x000EFB99	172	blocked	two-array new[] with Region3D ctor plus 6B P
 ?rva0052CC64@Rva0052CC64@@QAE@ABV0@@Z	0x0052CC64	96	blocked	same wall as 0x0052CE7D: vector copy 96B idiv-0x14 via AsciiString get_allocator row plus SaveMapPreview base pin plus 3-arg Get 0x52C961 row but caller pushes 4 args add-esp-0x10; needs twin plus tag convention decision t=10 model=muse-07
 ?_M_insert_overflow@?$vector@VRva0052BE33@@V?$allocator@VRva0052BE33@@@_STL@@@_STL@@IAEXPAUV1@ABV1@ABU__false_type@2@I_N@Z	0x00565CEB	183	blocked	same wall as 0x52CE7D/0x52CC64: overflow 183B needs manual TU with twin allocate plus typed-vs-void copy plus tidy rows; template emits typed copy plus own allocate names t=12 model=muse-07
 FUN_00a00a40	0x00600A40	165	blocked	mixed AsciiString base plus int-int copy suggests ICF-folded callees need pin analysis t=12 model=muse-03
+?rva002AA04C@Rva002AA04C@@QAEHXZ	0x002AA04C	66	partial	xor ecx early at +0x0f vs late +0x13 2B order-only t=20 model=muse-11 score=0.96 stash=reverse/attempts/0x002aa04c.cpp
+FUN_000B3094	0x000B3094	159	blocked	esi uninitialized at entry plus ghidra 159 vs 180 boundary suspect t=5 model=muse-11
+FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of blocked 215B parseRemoveModule same ThingTemplate.cpp wrong-body duplicate plus offsets t=5 model=muse-11
+?Rva005ACDD2Distance@@YGMPBVCoord3D@@0@Z	0x005ACDD2	67	partial	stdcall ret8 fixed size exact spill early vs regs order-only t=20 model=muse-11 score=0.92 stash=reverse/attempts/0x005acdd2.cpp
+?rva004D50CE@Rva004D50CE@@QAEMXZ	0x004D50CE	68	partial	faddp at +0x31 vs +0x30 1B order-only t=15 model=muse-11 score=0.96 stash=reverse/attempts/0x004d50ce.cpp
+?rva005613A6@Rva005613A6@@QAEPAXXZ	0x005613A6	12	blocked	template getInstance return backref V1 vs row V12 no landed caller precedent t=30 model=muse-11
