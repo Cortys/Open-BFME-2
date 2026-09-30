@@ -277,3 +277,22 @@ void Rva00809E40Owner::rva00809E40( Rva007E8810Message *input )
 		m_sender->send( &request );
 	}
 }
+
+// BFME2 0x00674BB0 (25 B), from Open-BFME-1 5cae4bdff (BFME1 0x00808C60): forward
+// one message on the admission route. Reads the route owner at +0x10 and sends
+// the caller's message through Rva007F93E0 with the route operand this TU maps to
+// bfmeRdata00CE3F98 (retail pushes 0x00CE3F98 here too). Identity of the owning
+// forwarder is not recovered, so the name is address-derived as in the donor.
+class Rva00808C60Owner
+{
+public:
+	void rva00808C60( void *message );
+	char m_pad00[ 0x10 ];
+	void *m_routeOwner;
+};
+
+// ?rva00808C60@Rva00808C60Owner@@QAEXPAX@Z
+void Rva00808C60Owner::rva00808C60( void *message )
+{
+	Rva007F93E0( message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+}
