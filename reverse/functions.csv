@@ -43317,3 +43317,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva0052C9D3Get@@YAPAXPAX00@Z,,0x0052C9D3,38,Code/GameEngine/Source/Common/Rva0052C9D3UninitCopy.cpp,matched,Uninit copy stride 12 via rowed Construct 0x0052C431 caller 0x0052CEC0 unlocks 0x0052CE7D
 ??1Radar@@UAE@XZ,,0x002D7CED,98,Code/GameEngine/Source/Common/System/RadarDtor.cpp,matched,Radar MI dtor via Snapshot plus GameEngineDeletingBase with deleteListResources and 64 events
 ?rva0033269B@Rva0033269B@@QAEXABUBfmeStringRecord000331962@@@Z,,0x0033269B,115,Code/GameEngine/Source/Common/Rva0033269B.cpp,matched,unlock word-search update-or-append via G7 for imul
+?xfer@SpecialPowerModuleData@@UAEXPAVXfer@@@Z,,0x00548AC2,70,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDataXfer.cpp,matched,slot 3 of 0x0086A520 calls rowed Rva00398280Xfer vector plus 2 uints
