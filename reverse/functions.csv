@@ -43380,3 +43380,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva005388C2@@QAE@ABV0@@Z,,0x005388C2,53,Code/GameEngine/Source/Common/Rva005388C2Copy.cpp,matched,Holder copy via rowed Rva005386F5 vector byte conditional region float
 ?rva004D508A@Transport@@QBEMXZ,,0x004D508A,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,transport stats1 average skipping 40E6C
 ?rva004EE260@Rva004EE260@@QAEXHPAVRva003F498A@@PAX@Z,,0x004EE260,219,Code/GameEngine/Source/Common/Rva004EE260.cpp,matched,chain via 0x003F486C same head as 0x004EE0C6 plus pair scan
+?_M_insert_overflow@?$vector@VRva0052BEF0@@V?$allocator@VRva0052BEF0@@@_STL@@@_STL@@IAEXPAVRva0052BEF0@@ABV3@ABU__false_type@2@I_N@Z,,0x00566078,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bef0_overflow.cpp,matched,STLport vector Rva0052BEF0 overflow false_type sibling
