@@ -4180,3 +4180,5 @@ FUN_0070F2E0	0x0030F2E0	109	blocked	third twin of blocked 0x0038153B and 0x00319
 ??1Rva00161220@@QAE@XZ	0x004F05F0	102	partial	102B 0-reg-diffs; guard-store-head vs guard-head-store scheduling with vptr store between test and je t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x004f05f0.cpp
 FUN_0093f97f	0x0053F97F	109	blocked	twin of blocked 0x0038153B; same g_00BFB1CC frame store never read plus unclaimed scopetable 0x00797D06; same wall no repeat per shared-delta rule t=5 model=muse-01
 FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; same g_00BFB1CC frame store never read plus unclaimed scopetable 0x007933FC; same wall no repeat per shared-delta rule t=3 model=muse-01
+?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z	0x004182F8	124	partial	align exact 124B 0 structural but Alloc row free vs thiscall needs central retype t=25 model=muse-03 score=0.97 stash=reverse/attempts/0x004182f8.cpp
+?Rva0037B9D4Get@@YA?AVUnicodeString@@XZ	0x0037B9D4	116	partial	115B vs 116B xor-inc vs lea order plus state store t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x0037b9d4.cpp
