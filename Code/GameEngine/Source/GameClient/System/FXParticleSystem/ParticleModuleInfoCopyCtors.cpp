@@ -189,3 +189,18 @@ Rva003AF738::Rva003AF738(const Rva003AF738 &other)
 	, FXParticleSystem::SphereEmissionVolumeInfo((const FXParticleSystem::SphereEmissionVolumeInfo &)other)
 {
 }
+
+// ??0Rva003AF70B@@QAE@ABV0@@Z @0x003AF70B 45B: derived copy calling rowed 0x003AF738 then own 4 vptrs.
+// Evidence: calls 0x003AF738 (landed this session) then stores at +0/+0x14/+0x18/+0x1c DIR32;
+// same 45B shape as rowed 0x003AF57F; caller 0x003AF6D4 calls this; unlocks 0x003AF6D4.
+class Rva003AF70B : public Rva003AF738
+{
+public:
+	Rva003AF70B(const Rva003AF70B &other);
+	virtual ~Rva003AF70B();
+};
+
+Rva003AF70B::Rva003AF70B(const Rva003AF70B &other)
+	: Rva003AF738(other)
+{
+}
