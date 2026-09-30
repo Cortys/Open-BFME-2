@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail 0x0024955E, 55 bytes.
 // ?rva0024955E@Rva0024955E@@QAEXVAsciiString@@@Z
 // Honest address name: __thiscall (ret 4: one by-value AsciiString,
@@ -11,19 +11,8 @@
 typedef unsigned short WideChar;
 typedef bool Bool;
 
-template<typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString : public StringBase<WideChar>
 {

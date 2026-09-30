@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?getSlotNum@GameInfo@@QBEHVAsciiString@@@Z @0x40009A (140B):
 // GameInfo::getSlotNum, AsciiString by-value overload. BFME1
 // GameInfo_getSlotNum_Thunk.cpp donor
@@ -25,37 +25,8 @@ enum
 	MAX_SLOTS = 8
 };
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	~StringBase() { releaseBuffer(); }
-
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
 
 class UnicodeString
 {

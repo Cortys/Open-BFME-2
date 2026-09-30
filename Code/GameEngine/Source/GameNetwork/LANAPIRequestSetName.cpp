@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // Retail 0x0044B7A9, 364 bytes. The body trims the by-value name, updates
 // LANAPI state, emits a type-2 lobby message, and updates the local LANPlayer.
@@ -14,23 +14,8 @@ typedef bool Bool;
 
 extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
 
-template <typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer(void);
-	void set(const StringBase<T> &other);
-	void trim(void);
+#include "ascii_string.h"
 
-protected:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString : public StringBase<WideChar>
 {

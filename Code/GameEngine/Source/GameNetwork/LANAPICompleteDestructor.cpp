@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // Retail 0x0044B992, 124 bytes. The body calls the matched LANAPI::reset,
 // deletes the optional Transport at +0x50, destroys host/login/name at
@@ -12,21 +12,8 @@ typedef unsigned short WideChar;
 typedef unsigned char UnsignedByte;
 typedef bool Bool;
 
-template <typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
+#include "ascii_string.h"
 
-private:
-	void releaseBuffer(void);
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString : public StringBase<WideChar>
 {

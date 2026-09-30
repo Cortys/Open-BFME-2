@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ??1Rva004D64F5@@UAE@XZ @0x004D65A6 54B
 // Dtor: vptr 0x86050C then releaseBuffer at +0x1c then vptr 0x860130; caller 0x004D6AF4 for ??_G.
 // Same recipe as Rva004D62A9 dtor at 0x004D62F7 (AsiiString at +0x1c, base NetCommandMsg, no base call).
@@ -23,14 +23,7 @@ protected:
 	NetCommandType m_commandType;
 	Int m_referenceCount;
 };
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class Rva004D64F5 : public NetCommandMsg
 {
 public:

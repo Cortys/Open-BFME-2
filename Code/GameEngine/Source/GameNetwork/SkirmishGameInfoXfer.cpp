@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 
 // ?xfer@SkirmishGameInfo@@UAEXPAVXfer@@@Z
 // Retail 0x003FFA3C (272B): persists the skirmish setup through the Xfer
@@ -101,15 +101,7 @@ struct XferUnknown11;
 // Minimal string handle: one pointer field, so by-value temporaries take one
 // stack slot. Only the shape matters here; construction and teardown happen
 // in the string-unit bodies these declarations pin.
-class AsciiString
-{
-public:
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class GameState
 {

@@ -1,25 +1,9 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva00382234@Rva00382234@@QAEXVAsciiString@@@Z 0x00382234 55B
 // Sets AsciiString at +0xFE8 from by-value param; temp destroyed via releaseBuffer.
 // Evidence: calls 0x000366F0 AsciiString assign and 0x00036410 releaseBuffer; callers 0x382710 0x383929.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase();
-	StringBase(const StringBase<T>& other);
-	~StringBase();
-	void releaseBuffer();
-	int* m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString& other);
-	~AsciiString() { releaseBuffer(); }
-	AsciiString& operator=(const AsciiString& other);
-};
 
 class Rva00382234
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc
 // ??0Rva004D6208@@QAE@XZ retail 0x004D61BB 77B.
 // Ctor: base NetCommandMsg plus vptr 0x860484 plus Ascii +0x1c plus array ptr +0x20 plus int +0x24 plus type 0x13 plus clear via 0x36410 pin.
 // Evidence: vtable 0x860484 plus dtor 0x004D6208 plus callers 0x004D19A1 0x00592324 plus Image clear-after-null precedent.
@@ -23,15 +23,7 @@ protected:
 	NetCommandType m_commandType;
 	Int m_referenceCount;
 };
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class Rva004D6208 : public NetCommandMsg
 {
 public:

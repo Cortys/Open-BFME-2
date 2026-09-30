@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // PeerResponse::operator= at 0x0038B383 (340B), called once from
@@ -17,14 +17,7 @@
 #include <string>
 #include <vector>
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class PeerResponse
 {

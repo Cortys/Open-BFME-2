@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // Open-BFME7: AsciiComparator::operator()(AsciiString, AsciiString) const,
 // retail 0x00631350, 126 bytes -- the case-insensitive less-than of
@@ -19,16 +19,7 @@ struct AsciiStringData
 	char m_text[ 1 ];
 };
 
-class AsciiString
-{
-public:
-	AsciiString( const AsciiString &other );
-	~AsciiString() { releaseBuffer(); }
-	const char *str( void ) const { return m_data ? m_data->m_text : g_bfmeEmptyAscii; }
-private:
-	void releaseBuffer( void );
-	AsciiStringData *m_data;
-};
+#include "ascii_string.h"
 
 struct AsciiComparator
 {

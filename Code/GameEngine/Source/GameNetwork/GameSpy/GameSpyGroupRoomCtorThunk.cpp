@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // Open-BFME5: GameSpyGroupRoom default ctor. AsciiString @+0 then
 // UnicodeString @+4 (no gap between them in this ctor's own evidence -- the
 // UnicodeString::set() call below runs with this==&m_name+4), then five
@@ -6,20 +6,7 @@
 #include "string_base.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-	AsciiString() { m_data = 0; }
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->set(*(const StringBase<char> *)&that);
-		return *this;
-	}
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/UnicodeString.h
 class UnicodeString
