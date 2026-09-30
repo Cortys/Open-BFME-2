@@ -36,7 +36,7 @@ AggregateDefClass::Find_Subobject
 {
 	RenderObjClass *parent_model = &model;
 	parent_model->Add_Ref ();
-	
+
 	// Loop through all the models in our "path" until we've either failed
 	// or found the exact mesh we were looking for...
 	for (int index = 1;
@@ -48,13 +48,13 @@ AggregateDefClass::Find_Subobject
 		if (bone_path[index][0] == 0) {
 			sub_obj = parent_model->Get_Sub_Object_By_Name (mesh_path[index]);
 		} else {
-			
+
 			int bone_index = parent_model->Get_Bone_Index (bone_path[index]);
 			int subobj_count = parent_model->Get_Num_Sub_Objects_On_Bone (bone_index);
-			
+
 			// Loop through all the subobjects on this bone
-			for (int subobj_index = 0; (subobj_index < subobj_count) && (sub_obj == NULL); subobj_index ++) {				
-				
+			for (int subobj_index = 0; (subobj_index < subobj_count) && (sub_obj == NULL); subobj_index ++) {
+
 				// Is this the subobject we were looking for?
 				RenderObjClass *ptemp_obj = parent_model->Get_Sub_Object_On_Bone (subobj_index, bone_index);
 				if (::lstrcmpi (ptemp_obj->Get_Name (), mesh_path[index]) == 0) {

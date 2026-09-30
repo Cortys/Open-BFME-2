@@ -35,7 +35,7 @@ AggregateDefClass::Attach_Subobjects (RenderObjClass &base_model)
 	for (int index = 0; index < m_SubobjectList.Count (); index ++) {
 		W3dAggregateSubobjectStruct *psubobj_info = m_SubobjectList[index];
 		if (psubobj_info != NULL) {
-			
+
 			// Now create this subobject and attach it to its bone.
 			RenderObjClass *prender_obj = ::Create_Render_Obj (psubobj_info->SubobjectName);
 			if (prender_obj != NULL) {
@@ -52,6 +52,6 @@ AggregateDefClass::Attach_Subobjects (RenderObjClass &base_model)
 			}
 		}
 	}
-	
+
 	return ;
 }
