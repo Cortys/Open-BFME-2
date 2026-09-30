@@ -42975,3 +42975,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?rva005FB770@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FB770,103,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt PlayerName key via rowed format and setText
 ?rva005FBBC0@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FBBC0,46,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt cached PlayerName compare update via landed setter
 ?Rva00216787Free@@YGXPAURva00216787Node@@@Z,,0x00216787,28,Code/GameEngine/Source/Common/Rva00216787Free.cpp,matched,custom stdcall free destroys rowed dtor at plus4 then free chain
+??1Rva003EF728@@QAE@XZ,,0x003EF728,86,Code/GameEngine/Source/Common/Rva003EF728Dtor.cpp,matched,nonvirtual dtor three frees EHs states reverse order deleting caller
