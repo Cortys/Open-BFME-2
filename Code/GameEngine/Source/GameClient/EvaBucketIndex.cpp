@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?bucketIndex@Rva000427195@@QAEHPBVAsciiString@@@Z, retail 0x00223149 (29B).
 // Shard TU: hash-mod-count leaf over the Eva bucket vector. The hash comes
 // from the rowed EvaAsciiHash helper (chars-or-empty into the STLport
@@ -6,10 +6,7 @@
 // Separate from that helper's TU so neither captures the other's call site
 // (same-TU visibility law).
 
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva000427195
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail RVA 0x00300C7E, 142 bytes (the reloc size 10 is stale).
 // MapMetaData::bfme_getDisplayName, the player-count-suffixed display-name
 // getter called by AptMapPreview::bfmeSetMapTitle. The base name comes from
@@ -11,19 +11,7 @@
 
 typedef unsigned short WideChar;
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
-	friend class MapMetaData;
-public:
-	void concat(const StringBase<T> &other);
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class UnicodeString : private StringBase<unsigned short>
 {
@@ -35,10 +23,6 @@ public:
 	void __cdecl format(const WideChar *format, ...);
 };
 
-class AsciiString
-{
-	void *m_data;
-};
 
 class MapMetaData
 {

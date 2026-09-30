@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // ??1GlobalLanguage@@UAE@XZ retail 0x001EABAB 446 bytes.
 // GlobalLanguage destructor: vtable 0x007DEFC8 then list at +0x138 via rowed
@@ -13,23 +13,8 @@
 // rule. Base size 0xC from GameEngineDeletingBaseDtor.cpp row.
 #include <list>
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-	void releaseBuffer();
-public:
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &o);
-	~AsciiString();
-};
 
 struct FontDesc
 {

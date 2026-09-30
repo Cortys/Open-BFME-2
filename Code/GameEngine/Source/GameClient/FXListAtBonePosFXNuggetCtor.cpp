@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE /GX
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /arch:SSE /GX
 //
 // ??0FXListAtBonePosFXNugget@@QAE@XZ 78B @0x1E0A57: no-arg ctor called by
 // FXListAtBonePosFXNugget::parse (0x001E1814) for the FXListAtBonePos FXList
@@ -17,15 +17,7 @@ protected:
 	unsigned char m_pad[0x148 - 8];
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class FXListAtBonePosFXNugget : public Rva001DFEAABase
 {

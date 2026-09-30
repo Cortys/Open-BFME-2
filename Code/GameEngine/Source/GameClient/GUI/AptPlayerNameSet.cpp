@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva005FB770@Rva005FB770@@QAEXABVUnicodeString@@@Z @ 0x005FB770 103B
 // Honest address name: __thiscall Apt PlayerName key setter beside AptMapPreview.
 // Target evidence: 103B retail, EH_prolog, format string
@@ -12,29 +12,7 @@ template <typename T> struct BfmeStringData
     unsigned short capacity;
     T text[1];
 };
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-    friend class UnicodeString;
-public:
-    StringBase() : m_data(0) {}
-    int compare(const StringBase<T> &other) const;
-    void set(const StringBase<T> &other);
-private:
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &other);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-    void format(const char *fmt, ...);
-};
+#include "ascii_string.h"
 class UnicodeString : public StringBase<unsigned short>
 {
 public:

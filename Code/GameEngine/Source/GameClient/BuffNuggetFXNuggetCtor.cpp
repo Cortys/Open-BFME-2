@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??0BuffNuggetFXNugget@@QAE@XZ 295B @0x001E2FCE: no-arg ctor called by
@@ -16,26 +16,8 @@
 
 #include <vector>
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-protected:
-	~StringBase();
-
-	void *m_data;
-
-private:
-	StringBase(const char *str);
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *str) : StringBase<char>(str) {}
-	~AsciiString();
-};
 
 class Rva001DFEAABase
 {

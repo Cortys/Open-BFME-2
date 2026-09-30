@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /DNDEBUG /MD /EHsc
 // ?rva00212A5A@Rva000427195@@QAE?AUInsertRet00212A5A@@PBX@Z, retail 0x00212A5A 124B.
 // Hashtable insert_unique for the AsciiString-keyed 12-byte node family
 // (next+pair) shared with new_node 0x00212354 and resize 0x00212858.
@@ -9,17 +9,8 @@
 // links it; fills the 9-byte pair<iterator,bool> out-param (node+table+found)
 // and returns it in eax. Caller at 0x0021393C. Evidence: ret-8 thiscall with
 // hidden return at +8 and key at +0xC (pair* doubling as AsciiString*).
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-};
 
 #pragma pack(push, 1)
 struct InsertRet00212A5A

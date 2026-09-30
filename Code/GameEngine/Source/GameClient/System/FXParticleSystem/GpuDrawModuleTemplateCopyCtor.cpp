@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1 /Ob2
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1 /Ob2
 
 // GpuDrawModuleTemplate copy constructor.
 //
@@ -12,22 +12,8 @@
 // folder; the base model mirrors GpuDrawModuleTemplateCtorThunk.cpp and
 // the info members mirror GpuDrawModuleInfoCopyCtor.cpp.
 
-template <typename Character>
-class StringBase
-{
-public:
-	StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &that)
-		: StringBase<char>(that)
-	{
-	}
-	~AsciiString();
-};
 
 namespace FXParticleSystem
 {

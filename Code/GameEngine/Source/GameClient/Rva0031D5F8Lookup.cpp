@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva0031D5F8@Rva0031D5F8@@QAEPAXPBVAsciiString@@@Z, retail 0x0031D5F8 (38B).
 // Lookup AsciiString key in the Rva00056F61 bucket table at this+0x30 via
 // rowed ?rva0041534B@Rva00056F61@@QAE?AURva0041534BIter@@PBVAsciiString@@@Z,
@@ -9,12 +9,7 @@
 // Guarded lookup on the same table: arg+0x34 base must be non-null, variant
 // AsciiString at base+0x138 or base+0x13c via TheBfmeGlob 0x00DFE78C gate,
 // empty check via rowed StringBase isEmpty, then same-table rva0031D5F8.
-class AsciiString
-{
-public:
-	bool isEmpty() const;
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva00056F61;
 struct Rva0041534BIter

@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?findMap@MapCache@@QAEPBVMapMetaData@@VAsciiString@@@Z @0x003024BC 76B.
 // Evidence: BFME1 donor MapUtil.cpp findMap plus ZH MapUtil.h MapCache decl
@@ -21,38 +21,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	Int compare(const char *other) const;
-	void set(const T *text);
-	void trim(void);
-
-protected:
-	BfmeStringData<T> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-
-	const char *str() const { return m_data ? &m_data->text[0] : ""; }
-	void toLower();
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

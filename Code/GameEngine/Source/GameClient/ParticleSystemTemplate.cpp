@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 
 // The template's string accessors. Each returns an AsciiString by value, so the
 // copy constructor runs into the caller's slot inside an unwind region - the
@@ -15,46 +15,8 @@
 
 class INI;
 
-template <typename T>
-class StringBase
-{
-private:
-    friend class AsciiString;
+#include "ascii_string.h"
 
-    StringBase(const StringBase<T> &that);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
-
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-
-    // Declared, never defined: the return object needs cleanup for MSVC to open
-    // an unwind region at all, and that state store is the first thing retail
-    // does after the frame.
-    ~AsciiString();
-
-    // Declared, never defined: setTextureFilename tail-jumps to it, and the
-    // call resolves through its own ledger row.
-    AsciiString &operator=(const AsciiString &that);
-
-private:
-    char *m_text;
-};
 
 struct Region2D
 {

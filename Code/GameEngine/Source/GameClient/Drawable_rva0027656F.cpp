@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0027656F@Drawable@@QAEXHVAsciiString@@@Z, retail 0x0027656F, 101 bytes.
 // Drawable broadcaster over draw modules at this+0x14C via slot 0xA8
@@ -16,29 +16,8 @@ struct StringInlineData
 	T m_text[1];
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-
-	StringInlineData<T> *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class BfmeObjectDrawFor27656F
 {

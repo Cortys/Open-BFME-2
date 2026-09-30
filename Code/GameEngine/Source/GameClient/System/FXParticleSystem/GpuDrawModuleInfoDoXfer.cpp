@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 
 // GpuDrawModuleInfo::DoXfer, retail 0x0056390A (64B). BFME2-new class (no
 // BFME1 donor). Member semantics from the writeINI field strings at
@@ -83,15 +83,7 @@ protected:
 // AsciiString with its inline nulling default, as retail's TU sees it: the
 // default ctor (rowed 6B at 0x326BE6, `m_text = 0`) folds into the member
 // slot with no out-of-line call, and the member transfers via ==AsciiString.
-class AsciiString
-{
-public:
-    AsciiString() { m_text = 0; }
-    ~AsciiString();
-
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 namespace FXParticleSystem
 {

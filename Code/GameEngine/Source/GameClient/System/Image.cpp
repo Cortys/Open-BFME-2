@@ -1,18 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 
 // Image::clearStatus, retail 0x002D8E72 (17B).
 // Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/System/Image.cpp
 // (BFME1 0x005D1C30). Member offsets follow the proven ImageCtor TU in this
 // directory (m_status at +0x30).
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct ICoord2D
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 
 // The default module key and name tables. Each of these ten accessors builds
 // its string once into a function-local static and hands back the text, which
@@ -8,56 +8,11 @@
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-public:
-    void concat(const T *text);
-
-private:
-    friend class AsciiString;
-
-    StringBase(const T *text);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
+#include "ascii_string.h"
 
 // Inline throughout: retail reaches StringBase's private constructor directly
 // from the accessor rather than through a wrapper, which is what an inlined
 // AsciiString constructor looks like.
-class AsciiString
-{
-public:
-    AsciiString(const char *text)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(text);
-    }
-
-    ~AsciiString();
-
-    void concat(const char *text)
-    {
-        ((StringBase<char> *)this)->concat(text);
-    }
-
-    // The header's text starts eight bytes in - past the reference count and
-    // the two shorts - and a null header reads as the empty string.
-    const char *str() const
-    {
-        return m_text ? m_text + 8 : "";
-    }
-
-private:
-    char *m_text;
-};
 
 namespace FXParticleSystem
 {

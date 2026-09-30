@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // Substantial BFME1-guided reconstruction (not a byte-cp: BFME1 addresses,
 // pools and string globals differ).
@@ -15,18 +15,7 @@
 // this pin). Shard (not a graft into RadiusDecal_ctor.cpp) so that TU's
 // frameless /EHsc-off shape stays green.
 
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-	static AsciiString TheEmptyString;
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class RadiusDecalTemplate
 {

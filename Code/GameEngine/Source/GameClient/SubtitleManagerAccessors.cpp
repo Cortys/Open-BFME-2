@@ -1,4 +1,4 @@
-// cl: /EHsc /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /EHsc /MD /D_STLP_USE_STATIC_LIB
 // stlport
 // ?addSubtitle@SubtitleManager@@QAEXABVAsciiString@@IHHHHH@Z, retail 0x00688AA0 (105B).
 // Ported from Open-BFME-1 Code/GameEngine/Source/GameClient/SubtitleManagerAccessors.cpp
@@ -12,40 +12,8 @@
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	StringBase(const StringBase<T> &src);
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	AsciiString(const AsciiString &other)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&other);
-	}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &that);
-
-private:
-	void *m_data;
-};
 
 union SubtitleEntryBulk
 {
