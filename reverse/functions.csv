@@ -43269,3 +43269,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1Rva005E8EA1@@QAE@XZ,,0x005E8EA1,8,Code/GameEngine/Source/Common/Bfme/Rva005E8EA1Dtor.cpp,matched,nonvirtual dtor tail-jmp to rowed member dtor at plus8
 ??0Rva0054000B@@QAE@XZ,,0x0054000B,16,Code/Libraries/Source/WWVegas/WW3D2/Rva0053FDE6Init.cpp,matched,outer ctor int0 plus inner via rowed ctor
 ??$__lower_bound@PAUBfmePod28@@U1@U?$less@UBfmePod28@@@_STL@@H@_STL@@YAPAUBfmePod28@@PAU1@0ABU1@U?$less@UBfmePod28@@@0@PAH@Z,,0x005413B0,66,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod28_allocate_copy.cpp,matched,unlock lower bound Pod28 via less a0
+??_GRva005E8EA1@@QAEPAXI@Z,,0x005E8EA9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E8EA9.cpp,matched,deleting dtor via rowed dtor plus rowed delete
