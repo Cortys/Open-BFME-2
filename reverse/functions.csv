@@ -44922,3 +44922,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva006F7C10@Rva006F7C10@@QAEXXZ,,0x006F7C10,83,Code/Libraries/Source/Apt/Rva006F7C10Clear.cpp,matched,pooled list clear walks Holder+8 freeing 0x1C data then 0x14 node; callers 0x006E2644 0x006E2A05
 ?rva006CE860@Rva006CE860@@QAEXXZ,,0x006CE860,41,Code/GameEngine/Source/Common/Thing/Rva006CE860Pop.cpp,matched,pop-front via rowed detach 0x006CD530 plus pool free 8 via rowed 0x006DB270
 ?rva000B2F38@Rva000B2F38@@QAE_NM@Z,,0x000B2F38,131,Code/GameEngine/Source/Common/Rva000B2F38.cpp,matched,iface slot3 vs 0x19 slot47 with x87 SSE float and ZeroRange callers 0xB3770
+??0Rva00403927@@QAE@ABV0@@Z,,0x004039BD,35,Code/Libraries/Source/WWVegas/WWLib/Rva00403927Assign.cpp,matched,copy ctor same layout as operator equals via rowed vector copy ctor
