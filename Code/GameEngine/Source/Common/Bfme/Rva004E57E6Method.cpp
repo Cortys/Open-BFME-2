@@ -15,11 +15,27 @@ class Rva004E57E6 {
 	float m_30;
 public:
 	void rva004E57E6(Rva004E57E6Pair *p, float f);
+	void rva004E5803();
 };
+
+extern int g_00DD00A8;
+extern int g_00DD00AC;
+extern float g_00C623C8;
 
 void Rva004E57E6::rva004E57E6(Rva004E57E6Pair *p, float f)
 {
 	m_28 = p->m_0;
 	m_2c = p->m_4;
 	m_30 = f;
+}
+// ?rva004E5803@Rva004E57E6@@QAEXXZ @0x004E5803 (30B)
+// __thiscall loads defaults from globals into +0x28/+0x2c/+0x30, same layout as 0x004E57E6.
+// Evidence: unlock lane, adjacent to 0x004E57E6, same offsets and /arch:SSE movss idiom; unblocks 0x0029B1A1.
+void Rva004E57E6::rva004E5803()
+{
+	int t0 = g_00DD00A8;
+	float tf = g_00C623C8;
+	m_28 = t0;
+	m_2c = g_00DD00AC;
+	m_30 = tf;
 }

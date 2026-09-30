@@ -44538,3 +44538,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva0010EC4D@Rva0010EC4D@@QAEXHPAHH_N@Z,,0x0010EC4D,104,Code/GameEngine/Source/Common/Rva0010EC4DGuard.cpp,matched,chain guarded 9 dword copy with event signal
 ?rva004FD9CF@GameSlot@@QBEHXZ,,0x004FD9CF,27,Code/GameEngine/Source/GameNetwork/GameSlotRva004FD9CF.cpp,matched,unlock lane isHuman plus flag48 evidence
 ?Rva0023C7F5Get@@YGHHH@Z,,0x0023C7F5,70,Code/GameEngine/Source/Common/Rva0023C7F5Get.cpp,matched,GameLogic mode 1or5 plus Network null-or-virtual plus 0x40 ge 6
+?rva004E5803@Rva004E57E6@@QAEXXZ,,0x004E5803,30,Code/GameEngine/Source/Common/Bfme/Rva004E57E6Method.cpp,matched,same layout as 0x004E57E6 defaults from globals unblocks 0x0029B1A1
