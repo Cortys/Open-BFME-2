@@ -222,3 +222,18 @@ Rva003AF7FE::Rva003AF7FE(const Rva003AF7FE &other)
 	, FXParticleSystem::LineEmissionVolumeInfo((const FXParticleSystem::LineEmissionVolumeInfo &)other)
 {
 }
+
+// ??0Rva003AF7D1@@QAE@ABV0@@Z @0x003AF7D1 45B: derived copy calling rowed 0x003AF7FE then own 4 vptrs.
+// Evidence: calls 0x003AF7FE (landed this session) then stores at +0/+0x14/+0x18/+0x1c DIR32;
+// same 45B shape as rowed 0x003AF70B and 0x003AF57F; caller 0x003AF79A calls this; unlocks 0x003AF79A.
+class Rva003AF7D1 : public Rva003AF7FE
+{
+public:
+	Rva003AF7D1(const Rva003AF7D1 &other);
+	virtual ~Rva003AF7D1();
+};
+
+Rva003AF7D1::Rva003AF7D1(const Rva003AF7D1 &other)
+	: Rva003AF7FE(other)
+{
+}
