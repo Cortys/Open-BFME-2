@@ -2,14 +2,16 @@
 // stlport
 //
 // ?LookupFocusChannelVolume@@YAMH@Z @0x0035D20C 166B.
-// Per-channel focus volume: start from 1.0f, gate on TheAudio, guarded list
+// Per-channel focus volume: start from 1.0f, gate on the WM_ACTIVATE focus
+// singleton at 0x00DFDC14 (theBfmeDfdc14, defined in WinMain.cpp; not TheAudio,
+// which is 0x00DFE6E8), guarded list
 // copy via Rva001DC57C then multiply by each matching factor.
 // Evidence: pin LookupFocusChannelVolume, caller 0x0035D2F7 regainFocus,
 // callee 0x001DC57C rowed, float 1.0f via g_Va00BBB8D8.
 #include <list>
 
 class AudioManager;
-extern AudioManager *TheAudio;
+extern AudioManager *theBfmeDfdc14;
 extern float g_Va00BBB8D8;
 
 class Rva001DC57C
@@ -50,10 +52,10 @@ float LookupFocusChannelVolume(int channel)
 {
 	float volume = g_Va00BBB8D8;
 	int mask = 1 << channel;
-	if (TheAudio == 0)
+	if (theBfmeDfdc14 == 0)
 		return volume;
 	_STL::list<int> ids;
-	((Rva001DC57C *)TheAudio)->rva001DC57C(&ids);
+	((Rva001DC57C *)theBfmeDfdc14)->rva001DC57C(&ids);
 	for (_STL::list<int>::iterator it = ids.begin(); it != ids.end(); ++it) {
 		FocusHandle *h = (FocusHandle *)(*it);
 		if (h == 0)

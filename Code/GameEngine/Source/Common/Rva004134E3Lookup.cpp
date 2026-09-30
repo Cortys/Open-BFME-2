@@ -4,7 +4,8 @@
 // Map lookup with lazy static defaults: tree root at map+4 set goes straight
 // to _M_lower_bound on the map<int,int> at +0x0C (rowed 0x00382A92); empty
 // once-flags the single statics block (int 0 plus three 1.0f from shared
-// literal 0x7BB8D8 plus dword flag plus default int at +20). End result
+// literal 0x7BB8D8 plus dword flag) and returns the block itself: retail
+// loads 0x00E03044, the block start, not a field past the flag. End result
 // decrements to predecessor (rowed 0x000242C0); both paths return value
 // pointer at node+0x14. Evidence: unlock lane; caller 0x002BC971; statics
 // 0x00A03044-58; sibling map recipe.
@@ -16,7 +17,6 @@ struct Rva004134E3Statics
 	float m_f1;
 	float m_f2;
 	int m_flag;
-	int m_default;
 };
 static Rva004134E3Statics s_block;
 class Rva004134E3
@@ -40,7 +40,7 @@ int *Rva004134E3::rva004134E3(int key)
 			s_block.m_f1 = 1.0f;
 			s_block.m_f2 = 1.0f;
 		}
-		return &s_block.m_default;
+		return &s_block.m_count;
 	}
 	_STL::map<int, int>::iterator it = m_map0C.lower_bound(key);
 	if (it == m_map0C.end())

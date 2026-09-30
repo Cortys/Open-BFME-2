@@ -18,7 +18,9 @@ public:
 };
 
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern void *TheRva00222A8BOwner;
+// 0x00DC1A0C, the owner setUiCallbackOwner stores (UiCallbackFirers.cpp); the
+// tooltip firers read a different global at 0x00DC06A0.
+extern void *TheRva009C1A0COwner;
 
 void __cdecl Rva003FED66MoveButtonFlash(void **pp, float f1, float f2)
 {
@@ -32,5 +34,5 @@ void __cdecl Rva003FED66MoveButtonFlash(void **pp, float f1, float f2)
 		s = (const char *)p + 8;
 	else
 		s = g_Rva0107301CEmptyString;
-	TheRva00222A8BTarget->invoke(TheRva00222A8BOwner, "MoveButtonFlash", 3, s, buf1, buf2, 0, 0);
+	TheRva00222A8BTarget->invoke(TheRva009C1A0COwner, "MoveButtonFlash", 3, s, buf1, buf2, 0, 0);
 }
