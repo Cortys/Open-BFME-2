@@ -3853,3 +3853,5 @@ FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of b
 ?Rva004A425CGet@@YAHXZ	0x004A425C	67	blocked	unlock 67B random unique via inList packet omits mov eax ebp8 before dec plus mov ebx ebpC plus push esi save t=5 model=muse-04
 ??1Rva0039EAED@@UAE@XZ	0x0039EAED	236	blocked	unlock 236B ModuleData dtor 10 StringBase plus 2 _M vectors needs ctor layout plus unclaimed FUN 0x39EAB7 dtor t=8 model=muse-04
 FUN_002413DF	0x002413DF	330	blocked	GameLogic 330B needs rbtree 108 plus arrays f8 fc c8 plus heads ac b0 plus pathfinder plus lookup layout unrecovered t=5 model=muse-11
+FUN_008138C7	0x004138C7	120	blocked	chain INI float throw needs map header modeling single variant failed compile t=15 model=muse-06
+FUN_00814009	0x00414009	120	blocked	same wall as 0x004138C7 chain INI float throw needs map header modeling t=5 model=muse-06

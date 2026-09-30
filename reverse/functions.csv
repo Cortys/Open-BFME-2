@@ -43383,3 +43383,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?_M_insert_overflow@?$vector@VRva0052BEF0@@V?$allocator@VRva0052BEF0@@@_STL@@@_STL@@IAEXPAVRva0052BEF0@@ABV3@ABU__false_type@2@I_N@Z,,0x00566078,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bef0_overflow.cpp,matched,STLport vector Rva0052BEF0 overflow false_type sibling
 ?rva0053850B@Rva0053850B@@QAEXPAVDataChunkOutput@@@Z,,0x0053850B,100,Code/GameEngine/Source/Common/Rva0053850BSave.cpp,matched,Vector Float4 save via rowed writeInt writeReal loop caller 0x0030C3C9
 ?rva002D7BB7@Radar@@QAEXPBX@Z,,0x002D7BB7,28,Code/GameEngine/Source/Common/System/RadarRva002D7BB7.cpp,matched,Radar draw rect copy via 4x movsd plus dirty flag caller 0x002D3275
+??0Rva00414093@@QAE@ABV0@@Z,,0x00414093,61,Code/GameEngine/Source/Common/Rva00414093Copy.cpp,matched,chain copy ctor calls rowed vector 0x002CFAB9 and just-landed tree copy 0x00413EE6 at plus 0xC
