@@ -11,6 +11,36 @@
 
 typedef float Real;
 
+extern "C" __declspec(dllimport) double __cdecl floor(double value);
+extern "C" __declspec(dllimport) double __cdecl ceil(double value);
+
+__forceinline Real bfmeFloatFloorFC(Real value)
+{
+	return (Real)floor((double)value);
+}
+
+__forceinline Real bfmeFloatCeilFC(Real value)
+{
+	return (Real)ceil((double)value);
+}
+
+__forceinline long bfmeFloatToLongFC(Real value)
+{
+	long result;
+	__asm
+	{
+		fld [value]
+		fistp [result]
+	}
+	return result;
+}
+
+struct BfmePointFC
+{
+	Real x;
+	Real y;
+};
+
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include/Lib/BaseType.h
 struct Coord3D
 {
@@ -79,7 +109,10 @@ public:
 	void bfmeReset();
 	void bfmeSetRegion(const Region3D *region, Real cellSize);
 	void bfmeConfigure(Region3D region, Real cellSize);
+	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
 	~Gen_008812D0();
+
+	friend class BfmeTaintManager;
 
 private:
 	Region3D m_bfmeRegion;					// +0x00
@@ -95,6 +128,7 @@ class BfmeTaintManager
 {
 public:
 	void bfmeResetGrid();
+	void bfmeApplyCircleWorld(const BfmePointFC *point, Real radius, int amount, bool absolute, int mode);
 
 private:
 	unsigned char m_bfmeHead[0x10];				// +0x00
@@ -132,4 +166,14 @@ void Gen_008812D0::bfmeSetRegion(const Region3D *region, Real cellSize)
 Gen_008812D0::~Gen_008812D0()
 {
 	delete[] m_bfmeCells;
+}
+
+// Retail 0x006C0AB0 170B, chain from bfmeApplyCircle: world-to-cell via
+// ceil/floor and cellSizeInv, then grid paint with trailing mode word.
+void BfmeTaintManager::bfmeApplyCircleWorld(const BfmePointFC *point, Real radius, int amount, bool absolute, int mode)
+{
+	int cellRadius = bfmeFloatToLongFC(bfmeFloatCeilFC(radius * m_bfmeGrid->m_bfmeCellSizeInv));
+	int y = bfmeFloatToLongFC(bfmeFloatFloorFC((point->y - m_bfmeGrid->m_bfmeRegion.lo.y) * m_bfmeGrid->m_bfmeCellSizeInv));
+	int x = bfmeFloatToLongFC(bfmeFloatFloorFC((point->x - m_bfmeGrid->m_bfmeRegion.lo.x) * m_bfmeGrid->m_bfmeCellSizeInv));
+	m_bfmeGrid->bfmeApplyCircle(x, y, cellRadius, amount, absolute, mode);
 }
