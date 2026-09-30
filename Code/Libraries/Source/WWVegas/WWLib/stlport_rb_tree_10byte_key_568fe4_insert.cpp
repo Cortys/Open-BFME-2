@@ -36,3 +36,14 @@ template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_unique(Rva00568FE4Tre
 template Rva00568FE4Tree::iterator Rva00568FE4Tree::insert_equal(const Rva00568FE4Tree::value_type &);
 typedef _STL::multiset<Rva00568FE4Key, Rva00568FE4Less, _STL::allocator<Rva00568FE4Key> > Rva00568FE4Multi;
 template Rva00568FE4Multi::iterator Rva00568FE4Multi::insert(const Rva00568FE4Multi::value_type &);
+
+// ??$_M_find@URva00568FE4Key@@@?$_Rb_tree@... @0x00568A41 92B (key search
+// with the two out-of-line comparator calls), ?_M_erase@... @0x00568F2E 45B,
+// ?clear@... @0x0056926C 41B and ??1?$_Rb_tree@... @0x005693D4 56B (clear,
+// then free the header): the lookup and teardown members of the same tree,
+// each placed uniquely by masked search in 0x568000-0x56A400. The 20B find
+// wrapper at 0x00568F7E is not rowed: const find, non-const find and the
+// bound wrappers are byte-identical there.
+template Rva00568FE4Tree::iterator Rva00568FE4Tree::find(const Rva00568FE4Key &);
+template void Rva00568FE4Tree::clear();
+template Rva00568FE4Tree::~_Rb_tree();
