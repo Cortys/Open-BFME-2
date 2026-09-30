@@ -44529,3 +44529,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva0033B9D1@Rva0033B9D1@@QAEXXZ,,0x0033B9D1,117,Code/GameEngine/Source/Common/Thing/Rva0033B9D1.cpp,matched,map vector locomotor resolve via TheLocomotorStore caller 0x002CF1D1
 ?rva004FD4C1@Rva004FD4C1@@QAEXPBVModuleData@@@Z,,0x004FD4C1,19,Code/GameEngine/Source/Common/Rva004FD4C1.cpp,matched,vector at this+0xa4 via rowed push_back 0x004DFCB0 abuts 0x004FD4AE
 ??0AISkirmishPlayer@@QAE@XZ,,0x00098B55,54,Code/GameEngine/Source/GameLogic/AI/AISkirmishPlayerCtor.cpp,matched,ctor calls rowed AIPlayer base zeroes E20 E24 CapsLock GetKeyState toggles 0x0200
+?rva00041037@MilesMutexGuard@@QAE_NH@Z,,0x00041037,30,Code/GameEngine/Source/Common/Rva00041037Acquire.cpp,matched,ctor 0x4120E calls with -1 dtor pin proves MilesMutexGuard
