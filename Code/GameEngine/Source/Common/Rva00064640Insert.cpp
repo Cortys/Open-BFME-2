@@ -19,3 +19,5 @@ template VRva00064640RecordSetTree::iterator VRva00064640RecordSetTree::insert_e
 template VRva00064640RecordSetTree::iterator VRva00064640RecordSetTree::insert_equal(VRva00064640RecordSetTree::iterator, const VRva00064640RecordSetTree::value_type &);
 template _STL::pair<VRva00064640RecordSetTree::iterator, bool> VRva00064640RecordSetTree::insert_unique(const VRva00064640RecordSetTree::value_type &);
 template VRva00064640RecordSetTree::iterator VRva00064640RecordSetTree::insert_unique(VRva00064640RecordSetTree::iterator, const VRva00064640RecordSetTree::value_type &);
+typedef _STL::set<Rva00064640Record, _STL::less<Rva00064640Record>, _STL::allocator<Rva00064640Record> > Rva00064640Set;
+template _STL::pair<Rva00064640Set::iterator, bool> Rva00064640Set::insert(const Rva00064640Set::value_type &);
