@@ -1,4 +1,4 @@
-// cl: /O1 /MD /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /arch:SSE
 // ?rva0025D19E@BfmeStrVM0@@QAEXXZ, retail 0x0025D19E, 103 bytes.
 // Field reset of BfmeStrVM0: clears flags at +0x64/+0x10C, and when a timer is
 // present runs the predicate-guarded release (rowed rva0025D10F), polls the
@@ -7,20 +7,8 @@
 // (0x009E0878, via the pinned operator=), and stamps -1 at +0xE0/+0xE4.
 // Evidence: sole caller at 0x0025D6A4 (unclaimed dtor, same this); rowed
 // StringBase<char>::isEmpty (AsciiString.cpp) and slot-7 BfmeVM0Timer virtual.
-template <typename T> class StringBase
-{
-public:
-	bool isEmpty() const;
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &o);
-	static AsciiString TheEmptyString;
-};
 
 class BfmeVM0Timer
 {

@@ -1,31 +1,11 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ??1Rva00410688@@QAE@XZ at 0x00410688 (57B).
 // Dtor with AsciiString at +0 plus TargetRef at +4 released via rowed
 // fastcall 0x7DEEF. Evidence: releaseBuffer row 0x36410, 5 callers,
 // unblocks 0x410792/0x410AAB/0x41112B.
 
-template <typename T>
-class StringBase
-{
-private:
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-public:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 struct TargetRef00217D4C
 {

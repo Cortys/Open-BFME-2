@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // Non-virtual record destructors built from string members (0x00036410 is
 // the folded AsciiString/StringBase<char> teardown, 0x00036E70 the wide one,
@@ -20,14 +20,7 @@
 // ??1Rva000BEDF0Record@@QAE@XZ         @0x000BEDF0 53B: vector +0x04, string +0x00
 // ??1Rva0033B352Record@@QAE@XZ         @0x0033B352 53B: wide +0x04, narrow +0x00
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class BfmeWideString000543F5
 {

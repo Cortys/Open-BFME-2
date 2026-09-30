@@ -1,22 +1,10 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0059F2EB@Rva0059F2EB@@QAEXVAsciiString@@@Z @ 0x0059F2EB (55B).
 // Thiscall by-value AsciiString assign to member at this-4 via pin-only
 // operator= 0x000366F0, param destroyed via rowed releaseBuffer 0x00036410
 // with EH states 0/-1. Callers 0x005A2B24/0x005A2CDF/0x005AF5D9.
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString()
-	{
-		releaseBuffer();
-	}
-
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva0059F2EB
 {

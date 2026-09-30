@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // DataChunkTableOfContents::getName, retail 0x003070F1, 53 bytes.
 //
@@ -12,17 +12,7 @@
 
 typedef unsigned int UnsignedInt;
 
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 struct Mapping
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD
 //
 // ?Rva00202BB2Parse@@YAXPAVINI@@@Z, retail 0x00202BB2, 126 bytes.
 // Chain lane: calls 0x00202B6C (Rva00202B6C::rva00202B6C, landed just before),
@@ -27,22 +27,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase &);
-	void set(const char *text);
-	Int compareNoCase(const char *other) const throw();
-	~StringBase();
-private:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-};
 
 struct FieldParse;
 

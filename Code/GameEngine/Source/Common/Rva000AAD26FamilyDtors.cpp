@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /DNDEBUG
 // stlport
 //
 // Opaque virtual destructors reached from scalar deleting dtors (pins at
@@ -36,14 +36,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) Rva00AAD26 : public Rva000BC93DCBase
 {

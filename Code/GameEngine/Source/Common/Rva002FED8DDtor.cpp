@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1Rva002FED8D@@UAE@XZ @0x002FEDEC 64B virtual dtor via vptr plus List_base AsciiString plus releaseBuffer
 // Evidence: vtable 0x00807408; List_base dtor 0x002FECBC; releaseBuffer 0x00036410; caller deleting dtor 0x002FFCEA; ctor sibling Rva002FED8DCtor same flags.
@@ -10,21 +10,7 @@ template <typename T> struct BfmeStringData
 	unsigned short capacity;
 	T text[1];
 };
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class Rva002FED8D;
-	StringBase(const StringBase &);
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-	friend class Rva002FED8D;
-};
+#include "ascii_string.h"
 class Rva002FED8D
 {
 public:

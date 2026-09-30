@@ -1,4 +1,4 @@
-// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // MultiplayerSettings destructor (retail 0x00381293, 83B): tears down the
@@ -9,14 +9,7 @@
 // Definition bodies (+0x34 list, +0x44 observer, +0x84 random, 0x88 total).
 #include <map>
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class GameEngineDeletingBase
 {

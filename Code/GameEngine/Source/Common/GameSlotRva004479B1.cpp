@@ -1,4 +1,4 @@
-// cl: /O1 /MD /Oi-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /Oi-
 //
 // ?rva004479B1@GameSlot@@QAEPAXXZ @0x004479B1 76B.
 // If GameSlot::isHuman, copy connectInfo +0x38/+0x3C to +0x1C0/+0x1C4, copy
@@ -9,37 +9,8 @@ typedef int Int;
 typedef bool Bool;
 typedef unsigned short WideChar;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class GameSlot;
+#include "ascii_string.h"
 
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-public:
-	void set(const StringBase<T> &other);
-};
-
-class AsciiString
-{
-private:
-	void *m_data;
-};
 
 class UnicodeString
 {

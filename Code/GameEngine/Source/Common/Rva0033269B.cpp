@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva0033269B@Rva0033269B@@QAEXABUBfmeStringRecord000331962@@@Z @0x0033269B 115B
@@ -11,14 +11,7 @@
 
 #include <vector>
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct BfmeStringRecord000331962
 {

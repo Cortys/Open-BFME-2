@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 
 // A text-dumping Xfer, vtable 0x00C7B388 (constructor 0x0060DEB1, destructor
 // 0x0060DED5).  Every typed transfer prints its value with a labelled format --
@@ -117,14 +117,7 @@ public:
 // the shared empty literals when the pointer is null; the pooled string reads
 // through it unchecked.
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h
-class AsciiString
-{
-    struct Data { int unexamined0; int unexamined4; };
-    Data *m_data;
-
-public:
-    const char *str() const { return m_data ? reinterpret_cast<const char *>(m_data + 1) : ""; }
-};
+#include "ascii_string.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/UnicodeString.h
 class UnicodeString

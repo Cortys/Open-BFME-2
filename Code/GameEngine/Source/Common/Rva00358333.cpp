@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /O1 /Ob2
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /O1 /Ob2
 // stlport
 // ?rva00358333@Rva0034C5E0@@QAEXPAVOverridable@@PAVImage@@@Z @ 0x00358333 (116B).
 // Lazy-init map at +0x0C then subscript-assign second arg keyed by final override of first arg.
@@ -24,14 +24,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = g_00BBB554;
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Image;
 

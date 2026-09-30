@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // Online-Files MiscPref stat accumulator (retail 0x00384A62, 887B).
@@ -35,30 +35,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-
-protected:
-	BfmeStringData<T> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	void __cdecl format(const char *format, ...);
-
-	const char *str() const { return m_data ? &m_data->text[0] : ""; }
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

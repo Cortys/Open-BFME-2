@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva001EB3A6@Rva001EB3A6@@QAEPAUBfmeAssignRecord36@@H@Z @0x001EB3A6 43B:
@@ -8,13 +8,7 @@
 // Callers at 0x001EB3FE etc plus 0x001EB435/0x001EB6A5/0x001EC63D/0x001EB456.
 // No donor; honest Rva outer.
 #include <vector>
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 struct BfmeAssignRecord36
 {
 	AsciiString s;

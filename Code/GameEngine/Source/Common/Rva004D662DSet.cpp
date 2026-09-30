@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc
 // ?rva004D662D@Rva004D65DC@@QAEXVAsciiString@@@Z @0x004D662D (52B):
 // AsciiString setter on Rva004D65DC: copies the by-value argument into the
 // +0x20 member via pin-only operator= 0x000366F0, then destroys the parameter
@@ -6,20 +6,8 @@
 // Evidence: caller 0x00592520 builds its object with Rva004D65DC ctor
 // 0x004D65DC then calls this with an AsciiString temp; caller 0x004D12B2.
 
-template <typename T> class StringBase
-{
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class Rva004D65DC
 {

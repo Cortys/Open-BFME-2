@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 
 // FXBoneInfo::operator=, retail 0x001D9990 (27 bytes).
 // Identity is call-proven: the EightByteVectorCopyLoop copy pair
@@ -11,14 +11,7 @@
 // The string call folds to the ledger's AsciiString assignment at
 // 0x000366F0, so this TU needs zero new pins.
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct FXBoneInfo
 {

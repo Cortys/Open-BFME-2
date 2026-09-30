@@ -1,16 +1,10 @@
-// cl: /O2 /Ob0 /G6
+// cl: /Ireference/shims/bfme2_ascii /O2 /Ob0 /G6
 // ?Rva006BE2E0Copy@@YAPAUBfmeElem60@@PAU1@00@Z @0x006BE2E0 129B
 // Forward copy of 0x24-byte BfmeElem60 elements, same layout and flags as
 // sibling Rva0087EAA0Fill/Copy TUs. AsciiString at +0x1C via rowed op=
 // 0x000366F0 plus trailing bytes at +0x20/+0x21. Called by BfmeVec60::erase
 // 0x006BF5AB. Returns dest+n.
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct BfmeCoord60
 {

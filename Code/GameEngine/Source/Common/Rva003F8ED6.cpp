@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1Rva003F8ED6@@UAE@XZ @0x003F8ED6 85B.
@@ -9,17 +9,8 @@
 // 0x003F9062; unblocks 0x003F905F; same 3-call EH shape as Rva001EC349.
 #include <vector>
 
-template <typename T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString() {}
-};
 
 struct TargetRef00217D4C
 {

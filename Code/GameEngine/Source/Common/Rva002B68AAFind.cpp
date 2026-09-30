@@ -1,20 +1,11 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva002B68AA@Rva002B68AA@@QAEPAUFindElem002B68AA@@ABVAsciiString@@@Z @0x002B68AA 86B
 // Linear find over pointer vector at +0xBC/+0xC0 with key StringBase at +0x10
 // via rowed compare 0x000069D6; caller at 0x002B7791.
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-};
 
 struct FindElem002B68AA
 {

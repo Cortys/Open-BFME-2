@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // PlayerTemplate image getters via TheMappedImageCollection (0x00DFF078).
 // ?rva001FD1FB@PlayerTemplate@@QBEPBVImage@@XZ @0x001FD1FB 19B (AsciiString at +0x170)
 // ?rva001FD221@PlayerTemplate@@QBEPBVImage@@XZ @0x001FD221 19B (AsciiString at +0x174)
@@ -9,10 +9,7 @@
 // GadgetButtonSetEnabledImage at 0x0050E135/0x0050E321, 0x001FD1FB by winSetEnabledImage at
 // 0x0050E66B, 0x001FD23F on PlayerTemplate from getControllingPlayer at 0x005294C7.
 // Sibling offsets 0x170/0x174 are adjacent AsciiStrings and 0x1D8 closes the 0x1DC object.
-class AsciiString
-{
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Image;
 

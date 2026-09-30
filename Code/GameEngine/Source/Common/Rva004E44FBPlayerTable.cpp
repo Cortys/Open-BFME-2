@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva004E44FBSet@@YGXHHABVUnicodeString@@@Z @0x004E44FB 88B
 // Free __stdcall setter formatting "PlayerTable:%d:%d" via rowed AsciiString::format
 // 0x00038150 then pinned BfmeAptWindowManager::bfmeSetText 0x00225301 with false.
@@ -13,27 +13,7 @@ template <typename T> struct BfmeStringData
     unsigned short capacity;
     T text[1];
 };
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-    friend class UnicodeString;
-public:
-    StringBase() : m_data(0) {}
-private:
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &other);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-    void format(const char *fmt, ...);
-};
+#include "ascii_string.h"
 class UnicodeString : public StringBase<unsigned short>
 {
 public:

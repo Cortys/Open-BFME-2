@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ??4Rva0021915B@@QAEAAV0@ABV0@@Z @0x0021915B 31B
 // ??RRva0021B753@@QBE_NABVRva0021915B@@0@Z @0x0021B753 34B
 // Honest-address copy-assignment for an 8-byte AsciiString-plus-bool entry.
@@ -19,20 +19,8 @@
 // at +0 via rowed StringBase<char>::compareNoCase 0x00006A00 <0. Empty
 // comparator struct (this unused, ecx dead) proven by lea ecx at every caller.
 
-template <typename T> class StringBase
-{
-public:
-	int compareNoCase(const StringBase<T> &that) const;
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class Rva0021915B
 {

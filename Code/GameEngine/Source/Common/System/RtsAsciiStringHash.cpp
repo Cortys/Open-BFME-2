@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ??R?$hash@VAsciiString@@@rts@@QBEIABVAsciiString@@@Z, retail 0x0002BF8C, 89 bytes.
 // rts::hash<AsciiString> case-insensitive hash: copy the key through the pinned
@@ -21,25 +21,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-public:
-	void toLower();
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)0x00BBAC1C; }
-protected:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 namespace _STL
 {

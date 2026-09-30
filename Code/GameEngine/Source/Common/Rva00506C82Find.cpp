@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?Rva00506C82Find@@YAPAVGameSlot@@PBURva00506C82Arg@@@Z @0x00506C82 65B:
 // search 8 GameSlots via TheGameInfo->getSlot(i) for slot whose m_ip key
 // (NameKeyGenerator->nameToKey at +0x34) equals arg key at +0x50; return slot
@@ -6,10 +6,7 @@
 // 0x005ADD7E. Prev Rva00506B74 /O1 /MD. Honest free-function Find plus Arg
 // view; GameSlot m_ip +0x34 from GameSlotSetState, globals g_Rva00E02EEC
 // and TheNameKeyGenerator DIR32 from retail.
-class AsciiString
-{
-	void *m_data;
-};
+#include "ascii_string.h"
 
 enum NameKeyType
 {

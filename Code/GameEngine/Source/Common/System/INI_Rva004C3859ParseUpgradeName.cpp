@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Rva004C3859_ParseUpgradeName (retail 0x004C3859, 63 bytes). Reads one
 // AsciiString through the rowed getNextAsciiString at 0x002EA4F by value
 // (hidden-pointer construction into a stack temp, no zero-init store),
@@ -8,15 +8,7 @@
 // (sibling UpgradeOCL). The callback name stays address-derived; the owning
 // struct is BFME2-new (no BFME1 donor).
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

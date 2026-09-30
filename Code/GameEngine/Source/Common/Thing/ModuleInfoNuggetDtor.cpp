@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 //
 // ModuleInfo::Nugget destructor, retail 0x002CF51B, 53 bytes. Nugget opens
 // with two AsciiStrings (name at +0, module tag at +4, Zero Hour
@@ -7,14 +7,7 @@
 // the folded narrow-string dtor at 0x00364110 with one EH state. Called from
 // vector<ModuleInfo::Nugget>::erase at 0x0033C3E6.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class ModuleInfo
 {

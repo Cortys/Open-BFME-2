@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?Rva003B3371Call@@YAXH@Z @0x003B3371 81B. Free cdecl void(int): if global
 // ScriptEngine at 0x009FE16C is set, builds AsciiString temp from table
 // 0x009C1050[index] via pinned AsciiString(PBD) at 0x00037BA0, calls rowed
@@ -12,26 +12,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)""; }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text);
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 class ScriptEngine
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??0Rva004E2382@@QAE@XZ @ 0x004E2382 (63B).
@@ -10,22 +10,8 @@
 #include <set>
 #include <vector>
 
-template <typename T> class StringBase {
-    friend class AsciiString;
-public:
-    StringBase() : m_data(0) {}
-    StringBase(const StringBase &);
-    ~StringBase();
-protected:
-    void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char> {
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other);
-    ~AsciiString();
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 
