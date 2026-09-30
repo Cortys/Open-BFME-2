@@ -11,6 +11,9 @@
 // rowed 16B allocator at 0x002226BE (Rva spelling pinned). Caller is the push_back at
 // 0x00403E3B; landing this makes it ready. Sits between the PoolKey row at 0x00403A61
 // and the AttributeModifierPoolUpdate ctor at 0x00403BEF whose member is this vector.
+//
+// Retail 0x00403E3B, 55 bytes: vector<Rva00297360Element>::push_back, the fast-path
+// caller of the overflow above (slow path) and of the pinned Rva _Construct.
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
 
@@ -34,3 +37,5 @@ template void _STL::vector<Rva00297360Element>::_M_insert_overflow(
 	const _STL::__false_type &,
 	unsigned int,
 	bool);
+
+template void _STL::vector<Rva00297360Element>::push_back(const Rva00297360Element &);
