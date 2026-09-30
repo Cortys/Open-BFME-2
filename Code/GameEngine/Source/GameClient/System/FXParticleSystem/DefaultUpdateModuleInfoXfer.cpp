@@ -17,6 +17,24 @@ public:
 	virtual void r8();
 	virtual void r9();
 	virtual void xferVersion(unsigned char *version);
+	virtual void r11();
+	virtual void r12();
+	virtual void r13();
+	virtual void r14();
+	virtual void r15();
+	virtual void r16();
+	virtual void r17();
+	virtual void r18();
+	virtual void r19();
+	virtual void r20();
+	virtual void r21();
+	virtual void r22();
+	virtual void r23();
+	virtual void r24();
+	virtual void r25();
+	virtual void r26();
+	virtual void r27();
+	virtual void xferReal(float *value);
 	void Version1();
 };
 
@@ -97,4 +115,50 @@ void Rva0055F710::rva0055F710(Xfer *xfer)
 {
 	xfer->Version1();
 	m_info.FXParticleSystem::DefaultUpdateModuleInfo::xfer(xfer);
+}
+
+namespace FXParticleSystem
+{
+class DefaultPhysicsModuleInfoX
+{
+public:
+	virtual void xfer(Xfer *xfer);
+};
+}
+
+class Rva0055F76C
+{
+public:
+	virtual void rva0055F76C(Xfer *xfer);
+private:
+	float m_04;
+	float m_08;
+	float m_0c;
+	float m_10;
+	float m_14;
+	float m_18;
+	int m_1c;
+	float m_20;
+	float m_24;
+	float m_28;
+};
+
+void Rva0055F76C::rva0055F76C(Xfer *xfer)
+{
+	union Ver { int i; unsigned char b[4]; } ver;
+	ver.b[0] = 1;
+	ver.b[1] = 2;
+	xfer->xferVersion(&ver.b[0]);
+	xfer->xferReal(&m_04);
+	xfer->xferReal(&m_08);
+	xfer->xferReal(&m_0c);
+	xfer->xferReal(&m_10);
+	xfer->xferReal(&m_14);
+	xfer->xferReal(&m_18);
+	XferRotationType(xfer, &m_1c);
+	if (ver.b[1] < 2)
+		return;
+	xfer->xferReal(&m_20);
+	xfer->xferReal(&m_24);
+	xfer->xferReal(&m_28);
 }
