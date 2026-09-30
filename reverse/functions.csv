@@ -44382,3 +44382,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva005FA8F5@Rva005FA8F5@@QAEPAURva005FA8F5Entry@@H@Z,,0x005FA8F5,39,Code/GameEngine/Source/Common/Rva005FA8F5Find.cpp,matched,stride-8 key search count 4C array 34 callers 5FA9AE 5FA9B8
 ?rva005FA91C@Rva005FA91C@@QAEXH@Z,,0x005FA91C,96,Code/GameEngine/Source/Common/Rva005FA91CMessage.cpp,matched,message 6B4 via MessageStreamSubsystem five appendIntegerArgument
 ?rva005FA97C@Rva005FA97C@@QAEXH@Z,,0x005FA97C,16,Code/GameEngine/Source/Common/Rva005FA97CClear.cpp,matched,clear 50 to minus-one on equal caller 5FAA28
+??0Rva005FAB16@@QAE@ABUPayload005FAB16@@@Z,,0x005FAB16,30,Code/GameEngine/Source/Common/Rva005FAB16Ctor.cpp,matched,ctor vtable 879EB4 zero 4 copy 16B caller 5FAC76
