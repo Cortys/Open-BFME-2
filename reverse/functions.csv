@@ -43295,3 +43295,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva0052BDE6@@QAE@ABV0@@Z,,0x0052BDE6,77,Code/GameEngine/Source/Common/System/Rva0052BDE6CopyCtor.cpp,matched,Copy ctor two strings via pinned StringBase copy 0x000365F0 caller 0x0052C369 unlocks 0x0052C34D
 ?rva0052DC97@Rva0052DC97@@QAEHPBVRva002E6C79@@@Z,,0x0052DC97,170,Code/GameEngine/Source/Common/Rva0052DC97.cpp,matched,unlock cost dot cast int ptr
 ?rva005622A6@Rva005622A6@@QAEXPAVXfer@@@Z,,0x005622A6,164,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005622A6Xfer.cpp,matched,xfer twelve floats plus rotation enum
+?rva0056234A@Rva0056234A@@QAEXPAVXfer@@@Z,,0x0056234A,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0056234AXfer.cpp,matched,containing xfer via member at 0xC
