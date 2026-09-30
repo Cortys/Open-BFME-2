@@ -3866,3 +3866,6 @@ FUN_007f4be9	0x003F4BE9	109	blocked	EH-prolog SEH frame virtual-callback loop ov
 ?rva003F0614@Rva003F0614@@QAEHH@Z	0x003F0614	87	blocked	index plus cursor loop with per-iter bound reload and triple chase not reproduced t=25 model=muse-spark
 ?rva005DDB66@Rva005DDB66@@QAEXIABUBfmeStringRecord005DDD40@@_N@Z	0x005DDB66	69	partial	68B register load order plus lea base-index swap t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x005ddb66.cpp
 ?Rva003FCD04Compare@@YAHPAX0H@Z	0x003FCD04	84	partial	78B exact except retail redundant mov eax ebp8 plus mov ebp8 eax 6B before second-object init t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x003fcd04.cpp
+FUN_00AC1680	0x006C1680	79	blocked	four virtuals need donor vtable layout no donor t=10 model=muse-06
+?rva002D3C5F@Rva002D3C5F@@QAEXXZ	0x002D3C5F	70	blocked	clear with SSE float and deletes xor and byte order off after 5 variants t=20 model=muse-06
+FUN_009874BA	0x005874BA	70	blocked	same heap SSE insertion wall as 0x005A9178 imul C movsd x3 div t=5 model=muse-06

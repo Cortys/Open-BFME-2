@@ -43403,3 +43403,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0020E8DB@Rva0020E8DB@@QAEPAURva0020E8DBEntry@@H@Z,,0x0020E8DB,52,Code/Libraries/Source/WWVegas/WWLib/Rva0020E8DBFetch.cpp,matched,leaf scan vector at 5C via caller at 0x002E2016 same flags
 ??0Rva00546C26@@QAE@PAVRva0036E346@@H@Z,,0x00546C26,49,Code/GameEngine/Source/Common/Rva00546C26Ctor.cpp,matched,holder base rowed 0x00548A25 vtable 0x00C6A3C4 caller 0x00355A32
 ?rva005392C2@Rva005392C2@@QAEXXZ,,0x005392C2,42,Code/GameEngine/Source/Common/Rva005391FD.cpp,matched,chain after 0x003FC3E4 via slots 0x34 0x3c same TU shape
+??$__lower_bound@PAUBfmePod20@@U1@U?$less@UBfmePod20@@@_STL@@H@_STL@@YAPAUBfmePod20@@PAU1@0ABU1@U?$less@UBfmePod20@@@0@PAH@Z,,0x005413F2,66,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod20_allocate_copy.cpp,matched,unlock lower bound Pod20 via less a0 stride 0x14
