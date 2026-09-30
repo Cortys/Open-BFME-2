@@ -43239,3 +43239,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva0026F684@@QAE@XZ,,0x0026F5B3,209,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Ctor.cpp,matched,same vtable 0x7FABF0 as dtor 0x0026F684
 ??0BfmeResetTextureRef@@QAE@ABUBfmeResetAnyRef@@@Z,,0x00180649,49,Code/Libraries/Source/WWVegas/WW3D2/Rva00180649Ctor.cpp,matched,ctor zeroes then delegates to 0x001805AE
 ??1Rva0054080A@@UAE@XZ,,0x0054080A,59,Code/GameEngine/Source/Common/Rva0054080ADtor.cpp,matched,chain outer dtor via inner 0x005407C9 plus base Rva0053FB33 plus vtable 0x008694F8
+??_GRva0054080A@@UAEPAXI@Z,,0x00540A6C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0054080A.cpp,matched,chain deleting dtor via rowed dtor plus delete
