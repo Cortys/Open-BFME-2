@@ -65,10 +65,34 @@ struct GlobalData
 
 extern GlobalData *TheGlobalData;
 
-class AsciiString
+class ShellMenuSchemeManager;
+
+template <typename T> struct BfmeStringData
 {
-private:
-	char *m_text;
+	int refCount;
+	unsigned short length;
+	unsigned short capacity;
+	T text[1];
+};
+
+template <typename T> class StringBase
+{
+	friend class AsciiString;
+	StringBase(const T *text);
+	StringBase(const StringBase<T> &other);
+	void releaseBuffer();
+	BfmeStringData<T> *m_data;
+public:
+	StringBase() : m_data(0) {}
+	~StringBase() { releaseBuffer(); }
+};
+
+class AsciiString : public StringBase<char>
+{
+public:
+	AsciiString() {}
+	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	~AsciiString() {}
 };
 
 class Shell
@@ -87,6 +111,7 @@ private:
 	Bool m_shellMapOn;
 	unsigned char _pad5E5F[2];
 	AnimateWindowManager *m_animateWindowManager;
+	ShellMenuSchemeManager *m_schemeManager; // +0x64
 protected:
 	void linkScreen(WindowLayout *screen);
 	void unlinkScreen(WindowLayout *screen);
@@ -94,6 +119,13 @@ protected:
 public:
 	WindowLayout *top();
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
+	void loadScheme(AsciiString name);
+};
+
+class ShellMenuSchemeManager
+{
+public:
+	void setShellMenuScheme(AsciiString name);
 };
 
 WindowLayout *Shell::top()
@@ -146,4 +178,12 @@ void Shell::registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool
 	if (!TheGlobalData->m_animateWindows)
 		return;
 	m_animateWindowManager->registerGameWindow(win, animType, needsToFinish, 500, delayMS);
+}
+
+// ?loadScheme@Shell@@QAEXVAsciiString@@@Z @0x0035C49C 74B donor BFME1 Shell.cpp loadScheme forwards by-value name to m_schemeManager+0x64 setShellMenuScheme; callers none; chain via 0x002005DE.
+void Shell::loadScheme(AsciiString name)
+{
+	if (!m_schemeManager)
+		return;
+	m_schemeManager->setShellMenuScheme(name);
 }

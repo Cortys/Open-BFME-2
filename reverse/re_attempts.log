@@ -4297,3 +4297,6 @@ FUN_003F0CB9	0x003F0CB9	115	blocked	same array-visit EH functor wall as 0x005C99
 ??0Rva0055F840@@QAE@IAAUSrc0055F840@@@Z	0x0055F840	330	blocked	full template 9 vars plus 4 Makes plus dtor plus SSE needs staged build t=15 model=muse-spark
 ?rva00562366@Rva00562366@@QAEHH@Z	0x00562366	376	blocked	sibling of 0x55F840 full template larger needs staged build t=2 model=muse-spark
 ??0?$hashtable@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@W4NameKeyType@@U?$hash@W4NameKeyType@@@rts@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@2@U?$equal_to@W4NameKeyType@@@5@V?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@2@@_STL@@QAE@IABU?$hash@W4NameKeyType@@@rts@@ABU?$equal_to@W4NameKeyType@@@3@ABV?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@1@@Z	0x001DCB64	64	blocked	identical to 0x002896AA and 0x00360B59 except scope table VA needs equal-type donor proof t=15 model=muse-15
+FUN_00600280	0x00200280	143	blocked	dtor loop virtual-push-0 plus separate delete not delete-single; need donor for vtable BE2704 elem type t=12 model=muse-16
+FUN_00603B0A	0x00603B0A	146	blocked	rb-tree insert_unique mixed NameKeyType plus CStrLess needs exact map instantiation t=10 model=muse-16
+FUN_004b2e4c	0x000B2E4C	105	blocked	custom-ecx-esi-stack-convention-t12-model-muse-spark
