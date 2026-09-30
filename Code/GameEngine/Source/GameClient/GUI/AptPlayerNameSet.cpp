@@ -111,3 +111,15 @@ void Rva005FB770::rva005FB903(int count)
     rva005FB7D7(tmp);
     m_cachedCount = count;
 }
+class Rva005FBB68
+{
+public:
+    void rva005FBB68(int count);
+private:
+    char m_pad[4];
+    Rva005FB770 *m_member;
+};
+void Rva005FBB68::rva005FBB68(int count)
+{
+    return m_member->rva005FB903(count);
+}
