@@ -3731,3 +3731,6 @@ FUN_0092C119	0x0052C119	72	blocked	clamp 0xB8 vector register wall 9 regdiffs 5 
 FUN_0099e920	0x0059E920	113	blocked	EH default ctor with vtable 0x871138 plus two BfmeE16 vectors plus new PlayerPosition needs donor t=8 model=muse-02
 ?isPosDifferent@@YA_NPBUCoord3D@@0@Z	0x0028B0A8	113	blocked	pop fxch order wall after 6 variants G7 SSE needed for fcompi t=15 model=muse-08
 ?get@Rva002000D7Store@@QAEPAURva002000D7Config@@H@Z	0x002000D7	52	blocked	54vs52 cfg in esi vs eax across dup ICF alias call needs dup body t=15 model=muse-09
+?Rva0020E354Cast@@YG_NPAVRenderObjClass@@ABVVector3@@1@Z	0x0020E354	32	partial	dead mov ecx global 0x00DFEF18 vs volatile mov eax 1B size diff t=20 model=muse-spark score=0.94 stash=reverse/attempts/0x0020e354.cpp
+?rva002910B7@Object@@QAEXPAUParam002910B7@@@Z	0x002910B7	225	blocked	EH prolog plus lazy NameKey plus rep movsd 12 structural diffs needs Object copy precedent t=15 model=muse-spark
+?rva0020F0EE@Rva0020F0EE@@QAEPAVRva0020E9D0@@PAUArg0020F0EE@@@Z	0x0020F0EE	85	blocked	vector scan index-on-stack plus pointer strength reduction STL vs manual both miss regs t=18 model=muse-spark
