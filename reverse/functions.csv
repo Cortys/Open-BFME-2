@@ -44859,3 +44859,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?push_back@?$vector@UBfmeStringRecord00404BF3@@V?$allocator@UBfmeStringRecord00404BF3@@@_STL@@@_STL@@QAEXABUBfmeStringRecord00404BF3@@@Z,,0x004055BB,55,Code/Libraries/Source/WWVegas/WWLib/StlportVectorGrowthFootprints.cpp,matched,STL vector push_back via explicit instantiation chain
 ?rva0004C662@Rva004C743@@QAEPAVRva00984EF@@XZ,,0x0004C662,50,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva0004C662Factory.cpp,matched,vtable slot 48 class Rva004C743 new Rva00984EF via rowed ctor
 ?rva001364F7@Rva001364F7@@QAEXAAPAURvaNode1364F7@@PAU2@1PBUTreeKey00242F5E@@1@Z,,0x001364F7,136,Code/Libraries/Source/WWVegas/WWLib/Rva001364F7Insert.cpp,matched,tree insert worker over TreeKey set via rowed factory plus Rebalance
+??0Rva00405A45@@QAE@H@Z,,0x00405A45,11,Code/GameEngine/Source/Common/Rva00405A45Ctor.cpp,matched,vtable-store ctor base of 0x00405B60 caller
