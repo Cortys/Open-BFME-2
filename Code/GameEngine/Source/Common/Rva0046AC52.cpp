@@ -61,8 +61,8 @@ struct Rva0046AC52 {
 	Rva0046AC52Node *_head;
 	unsigned int _size;
 	Rva0046AC52Iter rva0046AC52(Rva0046AC52Node *x, Rva0046AC52Node *y, const Rva0046AC52Key &v, Rva0046AC52Node *w);
-	Rva0046AC52Pair rva00407668(const Rva0046AC52Key &v);
-	Rva0046AC52Iter rva00407C7F(Rva0046AC52Iter position, const Rva0046AC52Key &v);
+	Rva0046AC52Pair rva002D563D(const Rva0046AC52Key &v);
+	Rva0046AC52Iter rva0046E563(Rva0046AC52Iter position, const Rva0046AC52Key &v);
 };
 typedef _STL::_Rb_tree<unsigned int, _STL::pair<const unsigned int, bool>, _STL::_Select1st<_STL::pair<const unsigned int, bool> >, _STL::less<unsigned int>, _STL::allocator<_STL::pair<const unsigned int, bool> > > UIntBoolTree075E0;
 Rva0046AC52Iter Rva0046AC52::rva0046AC52(Rva0046AC52Node *x, Rva0046AC52Node *y, const Rva0046AC52Key &v, Rva0046AC52Node *w)
@@ -90,4 +90,27 @@ Rva0046AC52Iter Rva0046AC52::rva0046AC52(Rva0046AC52Node *x, Rva0046AC52Node *y,
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)_head->_parent);
 	++_size;
 	return Rva0046AC52Iter(z);
+}
+// ?rva002D563D@Rva0046AC52@@QAE?AURva0046AC52Pair@@ABURva0046AC52Key@@@Z @0x002D563D 134B
+// Evidence: chain lane calls rowed 0x0046AC52 plus rowed _M_decrement 0x000242C0 plus inlined less int; callers 0x002D6454 0x002D6586 0x0046E676.
+Rva0046AC52Pair Rva0046AC52::rva002D563D(const Rva0046AC52Key &v)
+{
+	Rva0046AC52Node *header = _head;
+	Rva0046AC52Node *x = header->_parent;
+	Rva0046AC52Node *y = header;
+	bool comp = true;
+	while (x != 0) {
+		y = x;
+		comp = v.key < x->_key10;
+		x = comp ? x->_left : x->_right;
+	}
+	Rva0046AC52Node *j = y;
+	if (comp) {
+		if (j == header->_left)
+			return Rva0046AC52Pair(rva0046AC52(y, y, v, 0), true);
+		j = (Rva0046AC52Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)y);
+	}
+	if (j->_key10 < v.key)
+		return Rva0046AC52Pair(rva0046AC52(x, y, v, 0), true);
+	return Rva0046AC52Pair(j, false);
 }
