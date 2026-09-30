@@ -33,9 +33,26 @@ public:
 	void rva003AFB2A(Coord3D *out, float a, float b, unsigned int c, unsigned int d);
 };
 
+class Rva001F534CHelper
+{
+public:
+	virtual void f00();
+	virtual void f01();
+	virtual void f02();
+	virtual void f03();
+	virtual void f04();
+	virtual void f05();
+	virtual void f06();
+	virtual void f07();
+	virtual void f08();
+	virtual void f09();
+	virtual float f10();
+};
+
 class Rva001F553F
 {
 public:
+	float rva001F534C();
 	float rva001F5445();
 	Coord3D *rva001F553F(Coord3D *out, unsigned int a, unsigned int b);
 
@@ -44,7 +61,17 @@ private:
 	float m_17C;
 	char m_pad180[0x40];
 	Rva003AFB2A *m_1C0;
+	Rva001F534CHelper *m_1C4;
 };
+
+float Rva001F553F::rva001F534C()
+{
+	Rva001F534CHelper *p = m_1C4;
+	float v = g_Va00BBB8D8;
+	if (p != 0)
+		v = p->f10();
+	return v;
+}
 
 float Rva001F553F::rva001F5445()
 {
