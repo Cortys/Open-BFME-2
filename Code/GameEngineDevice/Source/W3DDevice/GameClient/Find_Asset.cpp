@@ -61,6 +61,12 @@ public:
 	void Release_Ref();
 };
 
+class TextureBaseClass
+{
+public:
+	void Release_Ref();
+};
+
 class AssetReference
 {
 public:
@@ -80,7 +86,9 @@ public:
 	{
 		if ( m_object )
 		{
-			m_object->Release_Ref();
+			// CountedAsset's +4 word count is measured above; this is the
+			// matched 36-byte refcount/virtual-disposal body at 0x0061ED10.
+			((TextureBaseClass *)m_object)->Release_Ref();
 		}
 	}
 
