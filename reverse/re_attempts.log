@@ -4032,3 +4032,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?Rva005B28F3PushHeap@@YAXPAUBfmeE16@@HHU1@@Z	0x005B28F3	94	partial	extra lea ecx ebp+24 before Less call 91vs94 t=10 model=muse-12 score=0.97 stash=reverse/attempts/0x005b28f3.cpp
 ?Rva003F0F48Erase@@YGXPAV?$vector@V?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@V?$allocator@V?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@@2@@_STL@@PAX@Z	0x003F0F48	91	blocked	vector-vector voidptr erase outer12 inner4 via rowed erase reg wall esi-ecx 3 shapes best 92vs91 t=15 model=muse-12
 ?rva005F3F9A@Rva005F3F9A@@QAEXXZ	0x005F3F9A	90	blocked	treehint method flag15 virt12 operator Release plus forwarder mistyped needs layout pad14 plus EH order t=12 model=muse-12
+?rva0031FA9A@Rva0031FA9A@@QAEXHH@Z	0x0031FA9A	43	blocked	x87 fld-fstp vs retail integer mov plus missing dead store mov ebp+C esp needs new idea t=20 model=muse-09
