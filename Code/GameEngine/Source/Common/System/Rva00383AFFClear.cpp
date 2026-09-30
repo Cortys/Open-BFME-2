@@ -21,6 +21,7 @@ struct Rva00383AFF
 	BuddyListNode *m_head;
 
 	void rva00383AFF();
+	~Rva00383AFF();
 };
 
 extern "C" void __cdecl free(void *block);
@@ -39,4 +40,11 @@ void Rva00383AFF::rva00383AFF()
 empty:
 	m_head->m_next = m_head;
 	m_head->m_prev = m_head;
+}
+
+Rva00383AFF::~Rva00383AFF()
+{
+	rva00383AFF();
+	if (m_head)
+		free(m_head);
 }

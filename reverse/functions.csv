@@ -44229,3 +44229,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0031AE01@ControlBar@@QAEXXZ,,0x0031AE01,18,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AE01.cpp,matched,ControlBar set flag via winHide
 ?rva0031AEAE@ControlBar@@QAEXPAH0@Z,,0x0031AEAE,27,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AEAE.cpp,matched,ControlBar two-out copy
 ??_GRva002DB311@@UAEPAXI@Z,,0x002DB47A,28,Code/GameEngine/Source/Common/Rva002DB311Dtor.cpp,matched,chain lane deleting dtor calls rowed dtor then delete
+??1Rva00383AFF@@QAE@XZ,,0x00383F3C,23,Code/GameEngine/Source/Common/System/Rva00383AFFClear.cpp,matched,chain calls 0x00383AFF clear plus free
