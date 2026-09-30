@@ -3,6 +3,9 @@
 // AIUpdate slot 0x1B8 (110) shared by Siege/Transport/Wander/HordeWorker vtables.
 // Evidence: vtable slot 110 of 0x00847B98 0x0084D330 0x008505F8 0x008508C8 0x00853AA8 0x00853D30;
 // callers 0x003681E8 0x0048E643 0x0048F46D tail-jump here; callee rowed 0x0004E536 testStatus.
+// ?rva00264F3D@Rva00264F3D@@QAEHXZ retail 0x00264F3D 33B.
+// Neighbour of 0x002645FF same TU same flags. Returns +0x38 field or 0 with 0x0A status gate.
+// Evidence: caller 0x0034BDBD; callee rowed 0x0004E536 testStatus.
 enum ObjectStatusTypes;
 
 class Slot110
@@ -75,6 +78,23 @@ public:
 	StateMachine *m_machine; // +0x30
 };
 
+class Inner00264F3D
+{
+public:
+	char m_pad00[0x38];
+	int m_val38; // +0x38
+	unsigned char m_flag3C; // +0x3C
+};
+
+class Rva00264F3D
+{
+public:
+	int rva00264F3D();
+	char m_pad00[4];
+	Inner00264F3D *m_inner; // +4
+	Object *m_object; // +8
+};
+
 bool Rva002645FF::rva002645FF()
 {
 	Object *obj = m_object;
@@ -94,4 +114,15 @@ bool Rva002645FF::rva002645FF()
 	if (sm->m_next != 0)
 		return sm->m_next->getResult();
 	return true;
+}
+
+int Rva00264F3D::rva00264F3D()
+{
+	Inner00264F3D *inner = m_inner;
+	if (inner->m_flag3C != 0) {
+		Object *obj = m_object;
+		if (!obj->testStatus((ObjectStatusTypes)0x0A))
+			return 0;
+	}
+	return inner->m_val38;
 }

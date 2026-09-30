@@ -44983,3 +44983,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??1Rva001E3624@@UAE@XZ,,0x001E3624,35,Code/GameEngine/Source/Common/Rva001E3624Dtor.cpp,matched,opaque holder dtor: vptr reset then ::delete of the +4 polymorphic member
 ??0Rva005D724B@@QAE@XZ,,0x005D7239,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,vtable 0x00875CA4 via base ctor row caller 0x0058AC78
 ??0Rva005D72FA@@QAE@XZ,,0x005D72E8,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,vtable 0x00875CC8 via base ctor row caller 0x0058AC59
+?rva00264F3D@Rva00264F3D@@QAEHXZ,,0x00264F3D,33,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,neighbour of 0x002645FF same TU status 0x0A gate
