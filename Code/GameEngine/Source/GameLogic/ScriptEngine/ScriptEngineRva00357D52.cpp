@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // ?rva00357D52@ScriptEngine@@QAEXABVAsciiString@@@Z, retail 0x00357D52, 52 bytes.
 // Removes the BfmeStringRecord00204A30 entry whose word0 equals the CRC of the name.
@@ -6,11 +6,7 @@
 // callee CRC at 0x003ECA13 (rowed realcrc_one_arg) and single erase at 0x00357CA2 (rowed BfmeStringRecord erase 55B);
 // tail-called after 0x0035789D by 0x003BCA43.
 
-class AsciiString
-{
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 
 unsigned long Rva003ECA13Get(const AsciiString &s);
 

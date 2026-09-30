@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ??1AISpecialPowerUpdateModuleData@@UAE@XZ @0x004B300F, 48B.
 // Virtual dtor slot evidence: ??_G at 0x004B2FF3 (rowed, slot 0 of vtable
 // 0x00C4A298? caller) calls here. Destroys AsciiString at +0x08 via pinned
@@ -17,14 +17,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) AISpecialPowerUpdateModuleData : public Snapshot
 {

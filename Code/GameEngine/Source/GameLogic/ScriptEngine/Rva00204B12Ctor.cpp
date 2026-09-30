@@ -1,13 +1,10 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ??0Rva00204B12@@QAE@ABU0@@Z @0x00204B12 33B: pair plus two-int copy ctor.
 // Evidence: same pair-copy shape as siblings via rowed pair 0x0020492B;
 // dwords at +8 and +0xC from same struct; callers 0x00205889 and 0x0020874B.
 
-class AsciiString
-{
-    void *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

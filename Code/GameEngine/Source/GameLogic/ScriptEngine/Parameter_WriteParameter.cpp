@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // Parameter::WriteParameter, retail 0x003B3A38, 129 bytes.
 //
@@ -21,16 +21,8 @@ public:
 	static const char *getNameFromSingleBit(int bitIndex);
 };
 
-template <class CharType>
-class StringBase
-{
-public:
-	void set(const char *sourceText);
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 struct Coord3D
 {

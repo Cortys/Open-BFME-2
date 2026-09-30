@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1Rva00414932@@UAE@XZ @ 0x00414932 75B: novtable dtor restoring Snapshot vtable 0x007BB554,
 // calls vector<BfmeAssignRecord44> dtor at +0x1C, Rva00360D26Member dtor at +0x14,
@@ -6,23 +6,7 @@
 // stlport_asciistring_record_bodies layout; callers include ??_G at 0x00414AEE.
 #include <vector>
 
-template<class T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-public:
-    StringBase();
-    StringBase(const StringBase &);
-    StringBase &operator=(const StringBase &);
-protected:
-    __forceinline ~StringBase() { releaseBuffer(); }
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString() {}
-    __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &);
-};
+#include "ascii_string.h"
 
 struct BfmeAssignRecord44 { AsciiString s; int a[10]; };
 

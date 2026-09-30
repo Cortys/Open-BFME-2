@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 // stlport
 //
 // ??1CitadelSlaughterHordeContainModuleData@@UAE@XZ, retail 0x004811E6, 74 bytes.
@@ -15,14 +15,7 @@
 // rowed Garrison family; direct-Slaughter precedent unblocked by 0x004810D5.
 #include <vector>
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

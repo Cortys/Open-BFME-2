@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ?getUiStrings@Template@@QBEHQAVAsciiString@@@Z, retail 0x003B276B, 56 bytes.
 // Template::getUiStrings copies m_numUiStrings AsciiStrings from +0x18 to the
@@ -7,13 +7,7 @@
 // Condition::getUiStrings 0x003B39B2 and ScriptAction::getUiStrings 0x003B2843.
 // Callee ??4AsciiString@@QAEAAV0@ABV0@@Z pinned at 0x000366F0.
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &o);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Template
 {

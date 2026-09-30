@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /arch:SSE
 // ?Rva003BF71EDo@@YGXABVAsciiString@@0@Z @0x003BF71E 142B
 // Script team guard via TerrainLogic slot 0x88 getWaypointByName plus
 // getTeamNamed pin 0x003584E9 with false, createGroup pin 0x002FEC4B,
@@ -7,23 +7,7 @@
 // Evidence: TheTerrainLogic 0x009FEC50, TheScriptEngine 0x009FE16C,
 // TheAI 0x009FF0F8; caller 0x003CB5C2; precedents Rva003C2A29Script.cpp
 // team/group plus doUnitGuardPosition movss x y z order.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString() {}
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 
 struct Coord3D { float x, y, z; };

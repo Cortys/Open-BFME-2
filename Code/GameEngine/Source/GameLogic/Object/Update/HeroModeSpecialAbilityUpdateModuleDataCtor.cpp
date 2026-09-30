@@ -1,4 +1,4 @@
-// cl: /O1 /MD /DNDEBUG /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /DNDEBUG /EHsc
 //
 // ??0HeroModeSpecialAbilityUpdateModuleData@@QAE@XZ, retail 0x0049227B
 // (90 bytes). EH ModuleData ctor over the pinned Rva0044EB54 intermediate
@@ -11,16 +11,7 @@
 // 0x250 base and the member at +0x254; BFME2 shrinks the base to 0xC8 with
 // the member at +0xC8 and calls the one-arg set).
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void set(const char *text);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) Rva0044EB54
 {

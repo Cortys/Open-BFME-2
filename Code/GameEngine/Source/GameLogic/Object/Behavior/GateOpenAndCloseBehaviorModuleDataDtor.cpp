@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1GateOpenAndCloseBehaviorModuleData@@UAE@XZ, retail 0x00498D46, 145 bytes.
 // Target evidence: the pinned ctor 0x00498E2E installs vtable 0x00C501B0,
@@ -21,14 +21,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class OpaqueRefCounted
 {

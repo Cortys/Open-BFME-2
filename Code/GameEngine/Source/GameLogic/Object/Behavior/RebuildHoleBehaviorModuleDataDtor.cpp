@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
 //
 // ??1RebuildHoleBehaviorModuleData@@UAE@XZ, retail 0x0048334A, 48 bytes.
 // RebuildHole ModuleData dtor over the pinned base vtable 0x00BBB554: destroys
@@ -25,14 +25,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) RebuildHoleBehaviorModuleData : public Snapshot
 {

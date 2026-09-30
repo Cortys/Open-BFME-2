@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doTeamEnterNamed, retail 0x003BEF8D, 109 bytes.
 // Target identity: initActionTemplates index 0x36 (54) is TEAM_ENTER_NAMED;
@@ -12,25 +12,8 @@
 // unresolved; the group-enter identity is supported independently by target
 // ABI and donor semantics.
 
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
 
 class Object;
 class Team;

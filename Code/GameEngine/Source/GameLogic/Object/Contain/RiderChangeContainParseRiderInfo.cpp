@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ?parseRiderInfo@RiderChangeContainModuleData@@SAXPAVINI@@PAX1PBX@Z,
 // retail 0x0047E3E1, 150 bytes. INI parse callback for one Rider entry.
@@ -20,13 +20,7 @@ public:
 	int scanIndexList(const char *token, const char *const *names);
 };
 
-class AsciiString
-{
-	char *m_str;
-
-public:
-	void format(const char *format, ...);
-};
+#include "ascii_string.h"
 
 struct RiderInfo
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
 //
 // ??0BuildingBehaviorModuleData@@QAE@XZ, retail 0x00456489, 65 bytes.
 // ModuleData default ctor: vtable 0xC40798 plus a four-element window-name
@@ -22,15 +22,7 @@
 
 // TU-local string with inline null init; the declared teardown resolves
 // through the existing folded AsciiString pin at 0x36410.
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 // A window-name entry: 12 bytes (retail element size).
 class BuildingWindowName

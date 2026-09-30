@@ -1,27 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ?doTeamGuardForFramecount@ScriptActions@@IAEXABVAsciiString@@H_N@Z @0x003C9363 161B.
 // Team guard for framecount: resolve team by name, guard each member at its
 // position via rowed aiGuardPosition, then set sequential timer on the team.
 // Evidence: rowed iterate 0x00263864, rowed advance 0x00263526, rowed guard
 // 0x0036F46A, rowed setSequentialTimer Team overload 0x00204002, pin getTeamNamed
 // 0x003584E9, factor 0x00DBA4E4, TheScriptEngine 0x00DFE16C; unblocks none.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString();
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 struct Coord3D { float x, y, z; };
 class Object;

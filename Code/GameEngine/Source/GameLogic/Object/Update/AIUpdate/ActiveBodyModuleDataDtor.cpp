@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??1ActiveBodyModuleData@@UAE@XZ, retail 0x00256CB0, 93 bytes. Virtual
 // dtor over vtable 0x0085AFB8 (slot 0 deleting dtor at 0x004BF9B8 calls
@@ -30,14 +30,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct DamageCreationVec
 {

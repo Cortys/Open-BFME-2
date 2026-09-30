@@ -1,14 +1,6 @@
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // BFME1 donor: ScriptConditionsTriggerAreas.cpp.
-template <class T> class StringBase
-{ friend class AsciiString; private: StringBase(const StringBase &); ~StringBase(); };
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that) { ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that); }
-    ~AsciiString();
-private: char *m_text;
-};
+#include "ascii_string.h"
 class Parameter
 {
 public:

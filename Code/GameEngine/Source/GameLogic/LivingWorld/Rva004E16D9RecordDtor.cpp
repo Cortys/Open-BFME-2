@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /DWIN32 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /DWIN32 /MD /EHsc
 //
 // ??1Rva004E16D9Record@@QAE@XZ, retail 0x004E1682, 87 bytes.
 // Target evidence: ParseForceBattle 0x004E16D9 constructs a stack record
@@ -9,14 +9,7 @@
 // (pin spelling QAE; size 0x28 from ParseForceBattle.cpp). Its virtual
 // slots are unrecovered; anchor() is a stand-in.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva004E16D9Record
 {

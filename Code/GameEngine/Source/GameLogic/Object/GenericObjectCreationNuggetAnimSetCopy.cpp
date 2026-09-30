@@ -1,19 +1,8 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP=
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP=
 // GenericObjectCreationNugget::AnimSet from ObjectCreationList.cpp.
 // Existing STLport placement copy 0x1F06B9 calls this 77-byte copy at0x1F0558.
 // The reference fields are initial, flying and final animation names.
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    void releaseBuffer();
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-};
+#include "ascii_string.h"
 class GenericObjectCreationNugget {
 public:
     struct AnimSet {

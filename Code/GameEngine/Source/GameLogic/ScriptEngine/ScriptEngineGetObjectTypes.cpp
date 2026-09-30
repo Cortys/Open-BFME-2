@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?getObjectTypes@ScriptEngine@@QAEPAVObjectTypes@@ABVAsciiString@@@Z @0x00357651 60B
 // ScriptEngine::getObjectTypes: search m_allObjectTypeLists (+0x1A4C8 vector) by list name.
 // Donor: ZH ScriptEngine::getObjectTypes (ScriptEngine.cpp:5860) loop with null skip and
@@ -13,16 +13,8 @@ public:
 	void *get() const;
 };
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase &other) const;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class ObjectTypes;
 

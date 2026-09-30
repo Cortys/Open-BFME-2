@@ -1,14 +1,10 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /arch:SSE
 // ?Rva004B4F11@@YG_NPAVDrawable@@PAXMM@Z @0x004B4F11 86B: drawable conditional broadcast.
 // Iterates AsciiString range at +0xC, calls rowed 0x00278689 with (elem,0,1);
 // if false calls rowed 0x002724FD with (elem,0,1,-c,d) where c at +0x10
 // d at +0x14 via rowed Drawable this at +0x8. Returns true if second call ran.
 // Frees 0x10. Callers 0x004B5088 0x004B5183. Sibling of 0x004B4EC3.
-class AsciiString
-{
-public:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Drawable
 {

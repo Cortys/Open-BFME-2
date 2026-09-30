@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1Made002CC774@@UAE@XZ @0x00509564 (56B).
 // DamageFieldNugget dtor: novtable derived of Rva00507823 base rowed at
@@ -6,21 +6,8 @@
 // 0x00036410 (StringBase<char> inline dtor) EH state 0 then base dtor. No
 // derived vptr store novtable same as Rva00508CF7 precedent. Size 0x134
 // from WeaponNuggetParse news. Unblocks deleting dtor 0x00509548.
-template <typename T>
-class StringBase
-{
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 class Rva00507823
 {

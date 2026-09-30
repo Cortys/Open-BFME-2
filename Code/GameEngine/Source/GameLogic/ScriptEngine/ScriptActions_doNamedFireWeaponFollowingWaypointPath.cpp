@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // Retail RVA 0x003C9206, 146 bytes.
 // ?doNamedFireWeaponFollowingWaypointPath@ScriptActions@@IAEXABVAsciiString@@0@Z
 // BFME1 donor reference/open-bfme-1/game/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_doNamedFireWeaponFollowingWaypointPath.cpp
@@ -6,23 +6,7 @@
 // terrain vtable slot +0x90 via TheTerrainLogic 0x00DFEC50, rowed rva0028AEEA 0x0028AEEA,
 // rowed forceFireWeapon 0x002CE76F, rowed leaveGroup 0x0028C01F, rowed aiFollowWaypointPath 0x0036EC82.
 // Caller at 0x003CCA56. Prev Rva003C90B1Exit / next doUnitGuardForFramecount share flags.
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 struct Coord3D { float x, y, z; };
 class Object;

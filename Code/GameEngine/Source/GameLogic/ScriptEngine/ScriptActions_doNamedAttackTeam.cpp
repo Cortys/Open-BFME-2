@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doNamedAttackTeam, retail 0x003C841F, 99 bytes.
 // Target identity: initActionTemplates index 0x31 (49) is NAMED_ATTACK_TEAM;
@@ -13,25 +13,8 @@
 // The donor AsciiString stores one StringBase<char> pointer. The inline copy
 // constructor is carried locally so this handler uses the matched retail
 // StringBase copy routine without depending on broader headers.
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    void *m_text;
-};
 
 class Team;
 class Object;

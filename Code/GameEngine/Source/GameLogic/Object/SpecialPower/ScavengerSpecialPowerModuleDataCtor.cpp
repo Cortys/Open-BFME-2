@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /Oy- /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /Oy- /DNDEBUG /DWIN32 /D_WINDOWS
 // Identity: ModuleFactory registers this data class under "WeaponChangeSpecialPowerModule" (addModule
 // pairs the name with this factory); formerly misnamed ScavengerSpecialPowerModuleData.
 // stlport
@@ -41,15 +41,7 @@ private:
 	unsigned char m_pad[0x7C - 4];
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_text(0) {}
-	~AsciiString();
-	void clear();
-
-	char *m_text;
-};
+#include "ascii_string.h"
 
 struct ToggleFlags
 {

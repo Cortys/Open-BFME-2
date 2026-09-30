@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
 //
 // ??1DamageFieldUpdateModuleData@@UAE@XZ, retail 0x0049116A, 68 bytes.
 // ModuleData dtor: tears down the RequiredUpgrade string at +0x18 through
@@ -31,15 +31,7 @@ private:
 	unsigned char m_data[4];
 };
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) DamageFieldUpdateModuleData : public FireWeaponUpdateModuleData
 {

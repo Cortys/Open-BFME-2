@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // stlport
 // ??0Rva00220CD4@@QAE@XZ @0x00220C74 96B: ctor of Rva00220CD4 (vtable 0x007E6A84).
 // Base via rowed baseConstruct 0x001B4E63, member +0xC via pinned 0x003623E5,
@@ -19,26 +19,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)""; }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other);
-	~AsciiString() {}
-};
 
 struct BfmeE16 { float x; float y; float z; float w; };
 

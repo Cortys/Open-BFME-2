@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD
 // stlport
 //
 // ?parseLocomotorSet@AIUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z
@@ -59,14 +59,7 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-class AsciiString
-{
-public:
-	const char *str() const { return m_data ? m_data + 8 : ""; }
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class INI
 {
