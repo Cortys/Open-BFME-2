@@ -42,6 +42,7 @@ public:
     int* rva003F46F2(int outerIdx, int innerIdx);
     int rva003F48FE(int outerIdx, int middleIdx, int innerIdx);
     bool rva003F486C(int id);
+    bool rva003F48EF(void *p);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -99,4 +100,12 @@ bool Rva003F498A::rva003F486C(int id)
         }
     }
     return false;
+}
+
+// ?rva003F48EF@Rva003F498A@@QAE_NPAX@Z, retail 0x003F48EF, 15 bytes.
+// Chain via 0x003F486C: pushes ID at arg+0x14 into rowed find. Evidence: chain
+// lane, callers 0x0020E745 0x0020EC3E 0x0020FC8D 0x005766E8, same file/flags.
+bool Rva003F498A::rva003F48EF(void *p)
+{
+    return rva003F486C(*(int *)((char *)p + 0x14));
 }
