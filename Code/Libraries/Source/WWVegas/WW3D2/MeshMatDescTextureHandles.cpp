@@ -7,13 +7,10 @@
 // BFME2 owning-handle type follows matched MeshMatDescClass::Get_Single_Texture
 // and MeshModelClass texture accessors; target Remap_Mesh 0x16F35C proves the
 // hidden return ABI. Target TextureArray +0xC8, single texture handles +0x78.
-class TextureClass {
+class TextureBaseClass { public: void Release_Ref(); };
+class TextureClass : public TextureBaseClass {
 public:
-    void Add_Ref() { ++RefCount; }
-    void Release_Ref();
-private:
-    void *VTable;
-    unsigned short RefCount; // target +4
+    void Add_Ref() { ++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this)+4); }
 };
 template<class T> class RefCountPtr {
 public:
