@@ -4133,3 +4133,7 @@ FUN_008E0918	0x004E0918	112	blocked	same wall as 0x0027F519: iteration template 
 ??0Rva0044EB54@@QAE@XZ	0x0044EB54	378	partial	386B 89insns vs 378B 88insns 0 reg 5 mem only float-int grouping kF7C early plus g_ reuse; layout EH exact after Opaque34 AsciiBC fixes t=30 model=muse-05 score=0.93 stash=reverse/attempts/0x0044eb54.cpp
 ??0Rva003AEE16@@QAE@ABV0@@Z	0x003AEE16	149	partial	align exact 149B 0 structural but gate swaps word vs pre-vptr order t=20 model=muse-03 score=0.95 stash=reverse/attempts/0x003aee16.cpp
 ?rva0030C9E6@Rva0030C9E6@@QAEXPAUApplyArg0030C9E6@@@Z	0x0030C9E6	109	partial	same guard-loop wall as 0x005D49F9 107B vs 109B esi-edi plus push-vs-sub test-vs-sar lea-vs-mov-inc t=8 model=muse-03 score=0.91 stash=reverse/attempts/0x0030c9e6.cpp
+FUN_004b7e8b	0x000B7E8B	121	blocked	free compare with edi ebx inputs and no stack args plus 0xD0 vectors and 0xF5 flag needs ABI plus caller t=5 model=muse-02
+FUN_0070f2e0	0x0030F2E0	109	blocked	same vector div4 callback g_BFB1CC EH family needs donor t=3 model=muse-02
+FUN_00acdbf0	0x006CDBF0	313	blocked	large Apt array-new EH with pins needs time t=3 model=muse-02
+FUN_0086f543	0x0046F543	624	blocked	large HordeContain ctor with STL set map vector list and pin-only base needs time t=3 model=muse-02

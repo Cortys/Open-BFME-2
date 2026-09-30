@@ -44027,3 +44027,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva004181A6@@QAE@ABV0@@Z,,0x004181A6,79,Code/GameEngine/Source/GameClient/Rva004181A6CopyCtor.cpp,matched,copy ctor via pinned StringBase plus rowed FixedStorage Rb_tree
 ??0Rva00418232@@QAE@ABVAsciiString@@ABVRva004181A6@@@Z,,0x00418232,57,Code/GameEngine/Source/GameClient/Rva00418232Ctor.cpp,matched,ctor via pinned StringBase plus rowed Rva copy
 ?rva000F11C0@Rva000EFDA0@@QAEXXZ,,0x000F11C0,82,Code/GameEngine/Source/Common/Rva000EFDA0Clear.cpp,matched,chain from 0x000EFDA0 plus array deletes plus ref releases
+?xfer@RebuildHoleExposeDie@@MAEXPAVXfer@@@Z,,0x004866F3,44,Code/GameEngine/Source/GameLogic/Object/Die/RebuildHoleExposeDieXfer.cpp,matched,Vslot3 xfer Version11 plus rowed base Rva004CE56D
