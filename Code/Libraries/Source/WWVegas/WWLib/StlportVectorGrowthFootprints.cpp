@@ -126,6 +126,8 @@ template void _STL::vector<BfmeVectorRecord002AF478>::_M_insert_overflow(
     BfmeVectorRecord002AF478 *, const BfmeVectorRecord002AF478 &, const _STL::__false_type &, unsigned int, bool);
 // Retail 0x002B0F1E.
 template void _STL::vector<BfmeVectorRecord002AF478>::_M_clear();
+// Retail 0x002B0EDF.
+template _STL::vector<BfmeVectorRecord002AF478>::~vector();
 // Retail 0x00337B57.
 template void _STL::vector<Rva003371B1>::_M_insert_overflow(
     Rva003371B1 *, const Rva003371B1 &, const _STL::__false_type &, unsigned int, bool);
