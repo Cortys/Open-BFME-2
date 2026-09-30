@@ -44655,3 +44655,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva0056D3E3@Rva0056D3E3@@QAEXXZ,,0x0056D3E3,26,Code/GameEngine/Source/Common/Rva0056D3E3.cpp,matched,caller 0x0056D3FD lea ecx esi+8 then call. callees rowed dtor 0x0056C996 and delete 0x0002FD60
 ?rva001FBC1F@Rva001FBC1F@@QAEXPAX0@Z,,0x001FBC1F,36,Code/GameEngine/Source/GameLogic/Object/Rva001FBC1FForward.cpp,matched,chain via 0x001FA529 forwards to rowed callees
 ?rva001FBFC6@Rva001FBFC6@@QAEXPAX0@Z,,0x001FBFC6,36,Code/GameEngine/Source/GameLogic/Object/Rva001FBFC6Forward.cpp,matched,chain via 0x001FBC1F forwards to rowed callees with this-plus-4
+?rva001FC333@Rva001FC333@@QAEXPAX0@Z,,0x001FC333,36,Code/GameEngine/Source/GameLogic/Object/Rva001FC333Forward.cpp,matched,chain via 0x001FBFC6 forwards to rowed callees with this-plus-4
