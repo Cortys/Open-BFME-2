@@ -20,6 +20,7 @@ class AsciiString : private StringBase<char> {
 public:
     __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
     __forceinline ~AsciiString() {}
+    AsciiString &operator=(const AsciiString &other);
 };
 class UnicodeString : private StringBase<unsigned short> {
 public:
@@ -60,6 +61,20 @@ struct BfmeVectorRecord002154F3 {
 };
 BfmeVectorRecord002154F3::BfmeVectorRecord002154F3(const BfmeVectorRecord002154F3 &o) : text(o.text), names(o.names) {}
 template void _STL::_Construct<BfmeVectorRecord002154F3,BfmeVectorRecord002154F3>(BfmeVectorRecord002154F3*,const BfmeVectorRecord002154F3&);
+
+// Retail 0x00215530: assignment for the 0x002154F3 record shape (pin spells
+// it 0002154F3); text via pinned AsciiString assign 0x366F0, names via rowed
+// vector assign 0xBDB46. Callers in 0x00215572 0x0021566B 0x00215696 dup.
+struct BfmeVectorRecord0002154F3 {
+    AsciiString text; _STL::vector<AsciiString> names;
+    BfmeVectorRecord0002154F3 &operator=(const BfmeVectorRecord0002154F3 &o);
+};
+BfmeVectorRecord0002154F3 &BfmeVectorRecord0002154F3::operator=(const BfmeVectorRecord0002154F3 &o)
+{
+    text = o.text;
+    names = o.names;
+    return *this;
+}
 
 // Retail0x2AF478: a string and two owning vectors with verified element copies.
 struct BfmeVectorRecord002AF478 {

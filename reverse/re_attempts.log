@@ -3746,3 +3746,4 @@ FUN_00979B17	0x00579B17	106	blocked	Apt EH_prolog with scope table 0x79BBB0 plus
 ?rva000AE234@Rva000AE234@@QAEEHH@Z	0x000AE234	65	blocked	grid get 64vs65 1B scheduling wall 4 regions; unsigned plus direct best; lea-vs-add plus tail order remain t=20 model=muse-spark
 ?rva00180AB5@Rva00180B94_Prototype@@QAEXXZ	0x00180AB5	33	blocked	vslot6 clearTree delete-flag wall ours22 vs retail33 deleting-dtor0 plus explicit delete vs delete1; needs flag0 model t=10 model=muse-spark
 ?rva0023D3AF@Rva0023D3AF@@QAEXH@Z	0x0023D3AF	184	blocked	hist lea plus push esi wall after 6 variants O2 Os G6 barrier register all sunk tail order m_1A4 before m_188 found t=25 model=muse-08
+?Rva0048BDF8Helper@FireWeaponUpdate@@QAEXXZ	0x0048BDF8	240	blocked	manual list worse 214B vs 226B STL iterator frame and GameLogic pad fixed but still 24 mem diffs t=25 model=muse-05
