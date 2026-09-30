@@ -5,8 +5,8 @@
 // retail calls them direct), and the BFME1 function-pointer callback triple is
 // the unconditional OutputDebugStringA "-->" + command pair in retail
 // (same pattern as CftpRecvReply.cpp; "-->" verified at 0xCE89FC).
-// d_00885530 resolves through an alias pin at 0x006CA040 (rowed as
-// SendCommand@Rva00884Ftp); every other member callee is rowed under the
+// SendCommand is the private Cftp member rowed at 0x006CA040
+// (CftpLoginToServer.cpp); every other member callee is rowed under the
 // spelling declared here.
 
 typedef char FILE;
@@ -67,7 +67,6 @@ public:
 class Rva00885920Class
 {
 public:
-	int d_00885530(const char *, int);
 	int d_00885920(void);
 };
 
@@ -94,6 +93,7 @@ public:
 	HRESULT GetNextFileBlock(LPCSTR, int *);
 
 private:
+	HRESULT SendCommand(LPCSTR command, int size);
 	int m_iCommandSocket;
 	int m_iDataSocket;
 	unsigned char m_CommandSockAddr[16];
@@ -175,7 +175,7 @@ HRESULT Cftp::GetNextFileBlock(LPCSTR szLocalFileName, int *piTotalRead)
 		else
 		{
 			sprintf(command, "REST %d\r\n", m_iFilePos);
-			if (((Rva00885920Class *)this)->d_00885530(command, strlen(command)) < 0)
+			if (SendCommand(command, strlen(command)) < 0)
 				return FTP_TRYING;
 			m_iStatus = FTPSTAT_SENDINGREST;
 		}
@@ -198,7 +198,7 @@ HRESULT Cftp::GetNextFileBlock(LPCSTR szLocalFileName, int *piTotalRead)
 	if (m_iStatus == FTPSTAT_SENTREST)
 	{
 		sprintf(command, "RETR %s\r\n", m_szRemoteFileName);
-		if (((Rva00885920Class *)this)->d_00885530(command, strlen(command)) < 0)
+		if (SendCommand(command, strlen(command)) < 0)
 			return FTP_TRYING;
 		m_iStatus = FTPSTAT_SENDINGRETR;
 	}
@@ -274,7 +274,7 @@ HRESULT Cftp::GetNextFileBlock(LPCSTR szLocalFileName, int *piTotalRead)
 				return FTP_FAILED;
 		}
 
-		((Rva00885920Class *)this)->d_00885530("BOGUSCOMMAND\r\n", strlen("BOGUSCOMMAND\r\n"));
+		SendCommand("BOGUSCOMMAND\r\n", strlen("BOGUSCOMMAND\r\n"));
 		OutputDebugStringA("File closed, waiting for response.\n");
 		m_iStatus = FTPSTAT_TRANSFERREPLY;
 	}

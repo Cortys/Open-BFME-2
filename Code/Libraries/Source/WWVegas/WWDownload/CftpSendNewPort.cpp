@@ -3,8 +3,8 @@
 // BFME1 donor (same file) with BFME2 repairs: self-contained TU in the
 // CftpRecvReply.cpp style (no PreRTS.h, no vptr: retail's Cftp lays
 // m_iCommandSocket at +4); the PORT format is retail's own .rdata string;
-// SendCommand helper rides the existing d_00885530 pin at 0x6CA040 via the
-// same cast trick the donor used; socket-family imports ride the ILT
+// SendCommand is the private Cftp member rowed at 0x6CA040
+// (CftpLoginToServer.cpp); socket-family imports ride the ILT
 // (plain extern) while sprintf goes through the IAT.
 
 #include <cstdio>
@@ -38,15 +38,6 @@ enum
 	FTPREPLY_PORTOK = 200
 };
 
-class Rva00885920Class
-{
-public:
-	// BFME1 donor name for the SendCommand helper; pinned at 0x6CA040.
-	// (The row there carries the Rva00884Ftp reconstruction name for the
-	// same body; this TU keeps the donor's own label via the existing pin.)
-	int d_00885530(const char *command, int size);
-};
-
 class Cftp
 {
 public:
@@ -54,6 +45,7 @@ public:
 	int SendNewPort(void);
 
 private:
+	HRESULT SendCommand(const char *command, int size);
 	int m_pad0;
 	int m_iCommandSocket;
 	int m_iDataSocket;
@@ -134,7 +126,7 @@ int Cftp::SendNewPort(void)
 				m_DataSockAddr.sin_port & 0xFF,
 				m_DataSockAddr.sin_port >> 8);
 
-		if (((Rva00885920Class *)this)->d_00885530(command, strlen(command)) < 0)
+		if (SendCommand(command, strlen(command)) < 0)
 		{
 			return (FTP_TRYING);
 		}

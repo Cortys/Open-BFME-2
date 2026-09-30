@@ -31,15 +31,10 @@ extern "C" __declspec(dllimport) void __stdcall OutputDebugStringA(const char *t
 class Cftp
 {
 public:
-	HRESULT RecvReply(const char *reply, int size, int *replyCode);
-};
-
-class Rva00884Ftp
-{
-public:
-	virtual ~Rva00884Ftp();
+	virtual ~Cftp();
 
 	HRESULT LoginToServer(LPCSTR user, LPCSTR pass);
+	HRESULT RecvReply(const char *reply, int size, int *replyCode);
 
 private:
 	int m_iCommandSocket;
@@ -86,8 +81,8 @@ private:
 	}
 };
 
-// ?LoginToServer@Rva00884Ftp@@QAEJPBD0@Z
-HRESULT Rva00884Ftp::LoginToServer(LPCSTR user, LPCSTR pass)
+// ?LoginToServer@Cftp@@QAEJPBD0@Z
+HRESULT Cftp::LoginToServer(LPCSTR user, LPCSTR pass)
 {
 	char command[256];
 	int reply;
