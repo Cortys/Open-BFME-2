@@ -1,7 +1,3 @@
-// ??1Rva002E66F2@@UAE@XZ
-// partial score=0.93 date=2026-09-29
-// ??1Rva002E66F2@@UAE@XZ
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /DNDEBUG /DWIN32 /MD /D_STLP_USE_STATIC_LIB /D_CRTIMP= /EHsc
 // stlport
 // ??1Rva002E66F2@@UAE@XZ 0x002E66F2 89B
@@ -38,13 +34,21 @@ private:
 	AsciiStringMember m_member08;
 };
 
+extern const void *const g_00804E90[];
+
+class Rva002E66F2Mid : public GameEngineDeletingBase
+{
+public:
+	virtual ~Rva002E66F2Mid() { *(const void **)this = g_00804E90; }
+};
+
 class Rva002E6551
 {
 public:
 	void rva002E6551();
 };
 
-class Rva002E66F2 : public GameEngineDeletingBase
+class Rva002E66F2 : public Rva002E66F2Mid
 {
 public:
 	virtual ~Rva002E66F2();

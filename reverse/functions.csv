@@ -43227,3 +43227,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRva00180B94_Prototype@@UAEPAXI@Z,,0x00180B78,28,Code/GameEngine/Source/Common/Rva00180A46Dtor.cpp,matched,deleting dtor via rowed 0x00180A46 plus delete
 ?Rva00173A60MakeHeap@@YAXPAUBfmeAssignRecord32@@0P6A_NABU1@1@Z@Z,,0x00173A60,83,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_make_heap.cpp,matched,chain from adjust_heap 0x001738C3 caller 0x00173BE4 make_heap loop
 ??1Rva0044ECCE@@UAE@XZ,,0x0044ECCE,199,Code/GameEngine/Source/Common/Rva0044ECCEDtor.cpp,matched,module-data base dtor with strings and refs via snapshot
+??1Rva002E66F2@@UAE@XZ,,0x002E66F2,89,Code/GameEngine/Source/GameClient/Rva002E66F2Dtor.cpp,matched,chain 0x002E6551 clear plus vector 0x0002CC70 plus wide 0x00036E70 plus base 0x001B4E74 vtables 0x00804FA8 0x00804E90 caller 0x002E67D1 mid inline restores 0x00804E90
