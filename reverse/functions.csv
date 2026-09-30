@@ -43350,3 +43350,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0033E06A@Rva0033E06A@@QAEXPAURva0033E06AArg@@@Z,,0x0033E06A,22,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva0033E06A.cpp,matched,push AsciiString at 0x64 into vector at 0x33C via pinned push_back
 ?rva003F4FAA@Rva003F498A@@QAEHHPAX@Z,,0x003F4FAA,19,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain wrapper outerIdx arg+0x14 into rowed 0x003F4798 same file
 ?rva003F47E6@Rva003F498A@@QAEHH@Z,,0x003F47E6,75,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock count one outer inners obj+0x44 zero same file
+?rva0050F041@Rva0050F041@@QAEXHABVUnicodeString@@@Z,,0x0050F041,106,Code/GameEngine/Source/Common/System/Rva0050F041.cpp,matched,Apt level field via format SetText
