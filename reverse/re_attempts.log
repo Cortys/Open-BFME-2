@@ -4276,3 +4276,16 @@ FUN_002B5739	0x002B5739	115	blocked	same array-visit EH functor wall as 0x005C99
 ??4Rva006ECE30@@QAEAAV0@ABV0@@Z	0x006ECE30	133	blocked	Apt op SEH needs EHa scope table t=12 model=muse-spark
 ?rva000A89E3@Rva000A89E3@@QAE?AVUnicodeString@@XZ	0x000A89E3	60	blocked	handle string RVO plus dup type mismatch t=12 model=muse-spark
 ?Rva0054AA86Get@@YAHXZ	0x0054AA86	219	blocked	deque heap sift-down ending in SiftUp call takes 36B six params per 82B caller but tail pushes dead 4B and value halves split across p4-p6 t=15 model=muse-03
+??0Rva005641ED@@QAE@ABVRvaSmartPtr12@@AAUSrc005641ED@@@Z	0x005641ED	151	blocked	chain ctor twin of 0x005646BC needs base-int-from-src plus LifeEvent order and EH state t=25 model=muse-04
+FUN_009648FE	0x005648FE	157	blocked	twin of 0x005641ED same base-int-from-src plus order plus EH wall t=2 model=muse-04
+FUN_00965601	0x00565601	29	blocked	wrapper calls 0x00564CA5 with 5 pushes vs 3-arg callee plus STL tag confusion t=5 model=muse-04
+FUN_009656C7	0x005656C7	29	blocked	same 5v3 STL wrapper wall as 0x00565601 t=1 model=muse-04
+FUN_008160BE	0x004160BE	133	blocked	host formatter needs AsciiString format static-vs-member plus private StringBase copy plus contested 0x365F0 t=8 model=muse-04
+FUN_00632DB4	0x00232DB4	77	blocked	vslot15 needs donor virtual count for slot16 call plus 3 Win32 imports t=3 model=muse-04
+FUN_0090F450	0x0050F450	128	blocked	text-entry clamp needs Unicode str global plus format plus _wtoi plus EH t=6 model=muse-04
+?rva0050F2AF@Rva0050F0AB@@QAEXI@Z	0x0050F2AF	87	partial	cmova vs jbe-plus-mov for 99999 clamp only diff t=12 model=muse-04 score=0.96 stash=reverse/attempts/0x0050f2af.cpp
+FUN_00984E0E	0x00584E0E	73	blocked	STL deque uninit-copy needs caller trait choice plus 4.5-vs-4.6 version plus by-value hidden ptr t=4 model=muse-04
+FUN_005BAF30	0x001BAF30	600	blocked	600B image scaler big render t=1 model=muse-04
+FUN_00963D22	0x00563D22	12	blocked	needs ConcreteModuleClass GpuDraw template for getInstance t=3 model=muse-04
+?rva004FD37F@Rva004FD37F@@QAEXPAX@Z	0x004FD37F	99	blocked	101B vs 99B same 43 insns plus multimap insert_equal plus vector ModuleData push_back shape right but frame 0xC vs 0x10 from incoming-arg reuse for iterator ret plus size in eax vs edx plus begin-end order plus extra restore mov plus O2 286B worse plus GX- same t=20 model=muse-04
+?_M_insert_overflow@?$vector@DV?$allocator@D@_STL@@@_STL@@IAEXPADABDABU__true_type@2@I_N@Z	0x000AFB2E	136	blocked	char codegen exact 136B but name duplicates 0x0007EA1F plus retail fill_n is unsigned char 0x000AD829 plus uchar codegen 135B ebx-edi swap t=20 model=muse-04
