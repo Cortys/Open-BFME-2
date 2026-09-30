@@ -4300,3 +4300,4 @@ FUN_003F0CB9	0x003F0CB9	115	blocked	same array-visit EH functor wall as 0x005C99
 FUN_00600280	0x00200280	143	blocked	dtor loop virtual-push-0 plus separate delete not delete-single; need donor for vtable BE2704 elem type t=12 model=muse-16
 FUN_00603B0A	0x00603B0A	146	blocked	rb-tree insert_unique mixed NameKeyType plus CStrLess needs exact map instantiation t=10 model=muse-16
 FUN_004b2e4c	0x000B2E4C	105	blocked	custom-ecx-esi-stack-convention-t12-model-muse-spark
+?rva00358FEE@Rva00358DC2@@QAEXPAURva00358DC2Node@@0@Z	0x00358FEE	68	blocked	range erase 66B frameless vs 68B EBP plus spill plus reserve-store 6 variants tried O1 O2 Os Oy- t=22 model=muse-01
