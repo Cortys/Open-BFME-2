@@ -14,11 +14,18 @@ public:
 class MilesMutexGuard
 {
 public:
+    MilesMutexGuard(void *m, int x);
     bool rva00041037(int x);
 private:
     Rva00041037Mutex *m_mutex; // +0
     bool m_flag; // +4
 };
+
+MilesMutexGuard::MilesMutexGuard(void *m, int x) : m_mutex((Rva00041037Mutex *)m), m_flag(0)
+{
+    if (x == 0)
+        rva00041037(-1);
+}
 
 bool MilesMutexGuard::rva00041037(int x)
 {
