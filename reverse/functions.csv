@@ -43002,3 +43002,4 @@ _piChannelUserPartedA,,0x006AAF90,243,Code/GameEngine/Source/GameNetwork/GameSpy
 ?bfmeCheckJX@@YAHPAUCodecState@@@Z,,0x001B9410,616,Code/GameEngine/Source/Common/BfmeCheckJX.cpp,matched,
 ?rva006D0320@Rva006D0280@@QAEPAV1@E@Z,,0x006D0320,35,Code/GameEngine/Source/Common/Rva006D0320Release.cpp,matched,Conditional pool free via pinned teardown
 ??0Rva0059F479@@QAE@ABV0@@Z,,0x0059F479,29,Code/GameEngine/Source/Common/Rva0059F479Copy.cpp,matched,copy ctor int plus Open2Rec via rowed copy
+?rva002AE475@Player@@QAEXPAX@Z,,0x002AE475,17,Code/GameEngine/Source/Common/RTS/PlayerRva002AE252.cpp,matched,Player iterateObjects wrapper

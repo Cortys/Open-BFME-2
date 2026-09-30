@@ -3584,3 +3584,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva005AA740@Rva005AA735@@QAE	0x005AA740	131	blocked	opaque vslot-3 with Setter plus Player plus hashmap plus ftol 131B; needs Setter-Src donor t=5 model=muse-spark
 ?rva005FB29A@@YAPAPAVRva005FB22B@@PAPAV1@PBX@Z	0x005FB29A	50	blocked	factory needs EBP frame without EH prolog t=12 model=muse-08
 ?rva005AA740@Rva005AA735@@UAE_NXZ	0x005AA740	131	blocked	vslot 3 needs 2 placeholder virtuals t=8 model=muse-08
+??1Rva001EE3DE@@UAE@XZ	0x001EE3DE	165	partial	je disp 0x0C vs 0x0F 1B t=25 model=muse-06 score=0.9939 stash=reverse/attempts/0x001ee3de.cpp

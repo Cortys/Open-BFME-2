@@ -72,6 +72,8 @@ public:
 	void rva002AE252();
 	void rva002AC673();
 	void rva002AE2ED(Player *other);
+	void rva002AE475(void *userData);
+	void iterateObjects(void (*func)(class Object *, void *), void *userData) const;
 private:
 	bool addScience(ScienceType science);
 	char m_pad00[0x1C];
@@ -112,4 +114,10 @@ void Player::rva002AE2ED(Player *other)
 	int *finish = vec->m_finish;
 	for (int *it = start; it != finish; ++it)
 		addScience((ScienceType)*it);
+}
+
+void callback_002AE435(class Object *obj, void *userData);
+void Player::rva002AE475(void *userData)
+{
+	iterateObjects(callback_002AE435, userData);
 }
