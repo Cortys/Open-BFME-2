@@ -43421,3 +43421,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva007397C0@Rva007397C0@@QAEXH@Z,,0x007397C0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk to rowed 0073D860 like 00739780
 ?rva005469FD@Rva00546982@@QAEPAV1@XZ,,0x005469FD,55,Code/GameEngine/Source/Common/Rva00546982Ctor.cpp,matched,clone via new plus copy rowed 0x005469BD slot 13 of 0x0086A314
 ??1Rva00539926@@UAE@XZ,,0x00539926,59,Code/GameEngine/Source/Common/Rva005396E6Dtor.cpp,matched,dtor vtable 0x00869268 member rva005398B3 base pin 0x004E84A4
+??0FireWeaponPowerModuleData@@QAE@PAVRva0036E346@@H@Z,,0x00546AD0,31,Code/GameEngine/Source/GameLogic/Object/SpecialPower/FireWeaponPowerModuleDataHolderCtor.cpp,matched,holder base rowed 0x00548A25 vtable 0x0086A36C int at 0x18 sibling 0x00546AEF
