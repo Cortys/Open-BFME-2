@@ -43886,3 +43886,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva002CECAEAppend@@YAXPAURva002CECAETarget@@PBDZZ,,0x002CECAE,120,Code/GameEngine/Source/Common/Rva002CECAELog.cpp,matched,guarded vsnprintf append sibling of fprintf with callers in 0x006F477E
 ?rva0030A3E4@Rva0030A3E4@@QAEXPBVMatrix3D@@@Z,,0x0030A3E4,200,Code/GameEngine/Source/Common/Thing/ThingRva0030A3E4.cpp,matched,Thing layout conditional transform update vslot 0x18
 ?rva0030A92C@Rva0030A92C@@QAEXM@Z,,0x0030A92C,340,Code/GameEngine/Source/Common/Thing/ThingRva0030A92C.cpp,matched,Thing layout setZ-like TerrainLogic react
+?clone@Rva003AF70B@@QBEPAV1@XZ,,0x003AF6D4,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF70BClone.cpp,matched,vslot2 clone via new plus rowed copy 0x003AF70B
