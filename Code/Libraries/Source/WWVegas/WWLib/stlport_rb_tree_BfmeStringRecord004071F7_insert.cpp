@@ -15,5 +15,4 @@ public:
     static char *allocate(unsigned int bytes, const void *hint);
 };
 }
-// ?insert_unique@?$_Rb_tree@UBfmeStringRecord004071F7@@U1@U?$_Identity@UBfmeStringRecord004071F7@@@_STL@@URecordNocaseLess@@V?$allocator@UBfmeStringRecord004071F7@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@UBfmeStringRecord004071F7@@U?$_Nonconst_traits@UBfmeStringRecord004071F7@@@_STL@@@_STL@@_N@2@ABUBfmeStringRecord004071F7@@@Z present-unmatched
 template _STL::pair<TestTree::iterator, bool> TestTree::insert_unique(const TestTree::value_type &);
