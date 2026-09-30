@@ -41,6 +41,7 @@ public:
     int rva003F46A8(int idx);
     int rva003F46C1(int outerIdx, int innerIdx);
     int* rva003F46F2(int outerIdx, int innerIdx);
+    void rva003F470E(int outerIdx, int innerIdx, void *p);
     int rva003F48FE(int outerIdx, int middleIdx, int innerIdx);
     int rva003F4921(int outerIdx, int middleIdx, int innerIdx);
     bool rva003F486C(int id);
@@ -241,4 +242,26 @@ void Rva003F498A::rva003F4944(Rva003F498ACallback *cb)
         if (!m_outers[i].rva003F4342(cb))
             return;
     }
+}
+
+class ScoreKeeper
+{
+public:
+    int getTotalUnitsDestroyed();
+private:
+    char m_pad00[0x74];
+    int m_74; // +0x74
+    char m_pad78[0x5C];
+    int m_D4; // +0xD4
+};
+
+// ?rva003F470E@Rva003F498A@@QAEXHHPAX@Z @0x003F470E 68B gap fill tail stats from ScoreKeeper total plus +0x74 +0xD4 plus 12345; callers 0x0023D9B7; same file sizes flags as rva003F46F2
+void Rva003F498A::rva003F470E(int outerIdx, int innerIdx, void *p)
+{
+    ScoreKeeper *sk = (ScoreKeeper *)p;
+    int *tail = m_outers[outerIdx].inners[innerIdx].tail;
+    tail[3] = sk->getTotalUnitsDestroyed();
+    tail[2] = *(int *)((char *)sk + 0x74);
+    tail[1] = *(int *)((char *)sk + 0xD4);
+    tail[4] = 12345;
 }
