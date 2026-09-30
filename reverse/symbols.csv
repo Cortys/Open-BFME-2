@@ -6615,3 +6615,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?d_009a8410@@YAXXZ,0x001B8E70
 ?d_009acb60@@YAXXZ,0x001BD550
 ?swap@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEXAAV12@@Z,0x0032AC92,ICF alias of the rowed map<int int> tree swap at this address; set<AsciiString> swap compiled with that TU's flags is byte-identical (34B relocs masked) and retail parseAllowedFactions 0x00534FFB calls it
+??$__copy@PAVProductionPrerequisite@@PAV1@H@_STL@@YAPAVProductionPrerequisite@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x0033E9DE,ICF twin of rowed Rva0033E9DECopy 50B loop via assign; call site 0x002D0F36 passes tag plus null
