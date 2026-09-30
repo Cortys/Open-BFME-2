@@ -43979,3 +43979,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00491EE6@Rva00491DD3@@QAEXXZ,,0x00491EE6,50,Code/GameEngine/Source/Common/Rva00491DD3Method.cpp,matched,UpdateModule base plus AI slot 0x1B8 and rowed 0x26331C
 ??4Rva0031804D@@QAEAAV0@ABV0@@Z,,0x0031804D,81,Code/GameEngine/Source/Common/Rva0031804DAssign.cpp,matched,same offsets as Rva00317F6F via pinned Ascii plus int pin plus rowed NoCase plus caller 0x003181C1
 ??0Rva000F1A32@@QAE@XZ,,0x000F1A32,166,Code/GameEngine/Source/Common/Rva000F1A32Ctor.cpp,matched,ctor via Rva000F0AF7 W3DBufferManager TCB resize caller 0x0009A710
+??1Rva003F7EC7@@UAE@XZ,,0x003F7EC7,105,Code/Libraries/Source/WWVegas/WW3D2/Rva003F7EC7Dtor.cpp,matched,Derived base vtables with holder08 string and deleteinner
