@@ -43876,3 +43876,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva002CE7A4@Weapon@@QAEPAVObject@@PBV2@0@Z,,0x002CE7A4,56,Code/GameEngine/Source/GameLogic/Object/WeaponPrivateFireWrappers_O1.cpp,matched,object-target sibling of forceFireWeapon with callers in 0x004911AE
 ?rva004DD73B@Rva004DD73B@@QAEPAXXZ,,0x004DD73B,137,Code/Libraries/Source/WWVegas/WWLib/Rva004DD73BObjectPoolAllocate.cpp,matched,pool allocate 16x1024 via Lock plus rowed allocator precedent 002635C2
 ?rva0073CE30@Gen_008F7CD0@@QAEXPAUFloatRect0073CE30@@HI@Z,,0x0073CE30,96,Code/GameEngine/Source/Common/RTS/Rva0073CE30.cpp,matched,dual vtable updater plus 4 ftol2 plus rowed Fill
+?Rva001F8810Put@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@ABUVec001F8810@@@Z,,0x001F8810,110,Code/Libraries/Source/WWVegas/WWLib/Rva001F8810Put.cpp,matched,ostream XYZ triple via rowed put nowiden float op and put char caller 0x001F8A11
