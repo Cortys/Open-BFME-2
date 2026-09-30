@@ -1,0 +1,61 @@
+// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z
+// partial score=0.95 date=2026-09-30
+// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z
+// partial score=0.95 date=2026-09-30
+// cl: /O1 /DNDEBUG /DWIN32 /MD /D_STLP_USE_STATIC_LIB /D_CRTIMP= /EHsc
+// stlport
+//
+// ?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z, retail 0x002E674B, 104 bytes.
+// Filter LUT by label prefix using strstr, pushing matches into out vector.
+// Evidence: retail count at +0 plus LUT at +8 with stride 8, strstr via IAT,
+// empty string g_Rva0107301CEmptyString, pin push_back 0x0002DBE6,
+// caller at 0x002E6809/0x002E681A, donor GameTextManager::getStringsWithLabelPrefix.
+#include <vector>
+#include <string.h>
+
+extern const char g_Rva0107301CEmptyString[];
+
+struct AsciiStringHeader
+{
+	int m_ref;
+	unsigned short m_len;
+	unsigned short m_cap;
+	char m_data[1];
+};
+
+class AsciiString
+{
+public:
+	const char *str() const { return m_data ? m_data->m_data : g_Rva0107301CEmptyString; }
+private:
+	AsciiStringHeader *m_data;
+};
+
+typedef _STL::vector<AsciiString> AsciiStringVec;
+
+struct StringLookUp
+{
+	AsciiString *label;
+	void *info;
+};
+
+class Rva002E674B
+{
+public:
+	void rva002E674B(AsciiStringVec &out, const AsciiString &filter);
+	unsigned int m_count;
+	int m_pad;
+	StringLookUp *m_lut;
+};
+
+void Rva002E674B::rva002E674B(AsciiStringVec &out, const AsciiString &filter)
+{
+	if (!m_lut)
+		return;
+	if (m_count == 0)
+		return;
+	for (unsigned int i = 0; i < m_count; ++i) {
+		if (strstr(m_lut[i].label->str(), filter.str()) == m_lut[i].label->str())
+			out.push_back(*m_lut[i].label);
+	}
+}
