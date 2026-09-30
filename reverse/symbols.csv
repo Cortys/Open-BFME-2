@@ -6596,3 +6596,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?handle@Gen0083E8F0@@QAEXXZ,0x0001BC50
 ??0?$_Rb_tree@UGen_t_009ee8e0_k4@@U1@U?$_Identity@UGen_t_009ee8e0_k4@@@_STL@@U?$less@UGen_t_009ee8e0_k4@@@3@V?$allocator@UGen_t_009ee8e0_k4@@@3@@_STL@@QAE@ABV01@@Z,0x00620CA0
 ?rva0053444F@Rva004FFC96@@QAEPAURva004FFC96Node@@PAU2@@Z,0x0053444F,thiscall twin of rowed int-int _M_clone_node via copy call sites 0x004FFCA3 0x004FFCD3
+?_M_copy@?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@URva004FFF54Less@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@AAEPAU?$_Rb_tree_node@U?$pair@$$CBHPAX@_STL@@@2@PAU32@0@Z,0x004FFC96,fold twin of Rva004FFC96 copy same 115B node shape via copy ctor call site 0x004FFFAF
