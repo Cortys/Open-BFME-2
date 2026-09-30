@@ -43028,3 +43028,4 @@ _Rva0086B360Dispatch,,0x006AABE0,203,Code/GameEngine/Source/GameNetwork/GameSpy/
 _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/peer/Rva0086B360Dispatch.cpp,matched,
 ?replaceRange@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z,,0x0002B050,501,Code/Libraries/Source/STLport/Rva008314E0StringReplace.cpp,matched,
 ?request@Rva007F62F0ConnectRequest@@QAEXHPAXPAH@Z,,0x00662A80,215,Code/GameEngine/Source/GameNetwork/Rva007F62F0ConnectRequest.cpp,matched,
+??_GRva003EF728@@QAEPAXI@Z,,0x0020E32A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05-003EF728.cpp,matched,scalar deleting dtor over rowed 0x003EF728
