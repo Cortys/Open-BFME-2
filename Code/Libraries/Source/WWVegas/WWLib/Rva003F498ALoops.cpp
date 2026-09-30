@@ -52,6 +52,7 @@ public:
     Rva003F498AOuter *rva003F4634(void *p);
     void *rva003F4DEE(void *p);
     void *rva003F4FBD(void *p);
+    void rva003F4944(Rva003F498ACallback *cb);
 };
 
 struct Rva003F4CC0Inner;
@@ -222,4 +223,13 @@ bool Rva003F498AOuter::rva003F4342(Rva003F498ACallback *cb)
             return false;
     }
     return true;
+}
+
+// ?rva003F4944@Rva003F498A@@QAEXPAVRva003F498ACallback@@@Z @0x003F4944 70B chain scan outers via rowed 0x003F4342 returning early on false; same file flags
+void Rva003F498A::rva003F4944(Rva003F498ACallback *cb)
+{
+    for (unsigned i = 0; i < m_outers.size(); ++i) {
+        if (!m_outers[i].rva003F4342(cb))
+            return;
+    }
 }
