@@ -43592,3 +43592,4 @@ _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSp
 ??1LookupTablePostEffect@@UAE@XZ,,0x00111B9A,79,Code/GameEngineDevice/Source/W3DDevice/GameClient/LookupTablePostEffectDtor.cpp,matched,dtor vtable 0x00BCFAC8 calls row 0x00116496 Field08 release then base dtor
 ?Rva00207BAAWrap@@YAXPAH0VRva00204BB8@@@Z,,0x00207BAA,25,Code/Libraries/Source/WWVegas/WWLib/stlport_make_heap_fwd_rva00204bb8.cpp,matched,make_heap forwarder two trailing zeros via landed make_heap
 ?Rva00207539Pop@@YAXPAH0HVRva00204BB8@@@Z,,0x00207539,30,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_wrapper_rva00204bb8.cpp,matched,pop wrapper last-1 trailing zero via landed pop
+?Rva003BCCC6Do@@YGXPAVParameter@@0@Z,,0x003BCCC6,85,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCCC6Do.cpp,matched,script action special power 0x2d via getUnitNamed and iface slots 1 and 11
