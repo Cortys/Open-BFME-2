@@ -43086,3 +43086,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1ActiveBody@@UAE@XZ,,0x004BF951,100,Code/GameEngine/Source/GameLogic/Object/Body/BodyModuleDeletingDtors.cpp,matched,ActiveBody dtor 3 vptrs string free base via EHs states callers linkNode handle
 ??1Rva002FED8D@@UAE@XZ,,0x002FEDEC,64,Code/GameEngine/Source/Common/Rva002FED8DDtor.cpp,matched,virtual dtor via vptr plus List_base AsciiString plus releaseBuffer
 ?rva004BFD27@Rva004BFD27@@QAEXW4CommandSourceType@@@Z,,0x004BFD27,92,Code/GameEngine/Source/GameLogic/Object/Body/Rva004BFD27Command.cpp,matched,AICommandParms 0x53 slot0 coords-free via 0x00351BD0 0x00030830 caller 0x004C0602
+?rva0030AE42@Rva00985E4@@UAEXXZ,,0x0030AE42,100,Code/GameEngine/Source/Common/Rva0030AE42Slot.cpp,matched,vslot14 copies AsciiStrings S12s byte float from globals

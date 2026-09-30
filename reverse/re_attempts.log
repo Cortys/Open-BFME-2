@@ -3682,3 +3682,10 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva004D4BA7@Transport@@QAE_NXZ	0x004D4BA7	353	partial	353B exact size-count 107insns only je-vs-jne plus clear-vs-ok order t=30 model=muse-03 score=0.98 stash=reverse/attempts/0x004d4ba7.cpp
 ?rva0050549A@Rva0050549A@@QAEXXZ	0x0050549A	170	blocked	124vs170 missing EH-prolog plus second-erase shape STL pair-vector decl t=12 model=muse-03
 ??1BfmeOpaqueOwnedRecord1432@@QAE@XZ	0x0038A1F2	150	blocked	97vs150 missing EH-prolog plus 5 unwind states plus uw-dtor call needs shared OwnedRecord EH delta t=10 model=muse-03
+??1BfmeOpaqueOwnedRecord1432@@QAE@XZ	0x0038A1F2	150	blocked	5x if-free plus member dtor 131vs150B 19B 5 EH states 4..0 missing persists across GX EHs EHsc EHa t=12 model=muse-05
+?rva001FD4A2@Rva001FDB55@@QAEXXZ	0x001FD4A2	63	blocked	vslot9 476B loop deleteOverrides 73vs63B 10B stack spill for i-off persists across int unsigned offset-explicit cached-direct O1 O2 t=15 model=muse-05
+?rva00293E64@Object@@QAEXPAVDict@@@Z	0x00293E64	155	partial	155B exact size early-eax vs late-ecx lea-push for bool exists persists across direct and pExists-temp t=18 model=muse-05 score=0.99 stash=reverse/attempts/0x00293e64.cpp
+?rva004AF5AC@BFME2RespawnRuleTree@@QAEHH@Z	0x004AF5AC	146	blocked	map find twice plus float fallback 95vs146B missing EBP frame movss temps second-find stores STL find inlines frameless t=10 model=muse-05
+?rva006FBC10@Rva006FBC90Owner@@UAEXXZ	0x006FBC10	25	partial	25B exact size cmp-mem vs mov-test-eax plus mov-ecx-mem vs mov-ecx-eax t=12 model=muse-05 score=0.92 stash=reverse/attempts/0x006fbc10.cpp
+?Rva00498725Get@@YAPAXPAUObject@@@Z	0x00498725	115	blocked	static NameKey guard plus Object array loop 81vs115B missing EH prolog and states and second-find stores t=10 model=muse-05
+?rva00563F34@Rva003AE0AF@@UAEXXZ	0x00563F34	84	blocked	vslot1 FX doFXPos Rit 87vs84B fldz-x87 vs push-ebx for 0.0f plus lea-vs-add plus m58-offset persists across h-local unsigned 0-int t=15 model=muse-05
