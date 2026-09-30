@@ -43331,3 +43331,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva00332F5B@@QAE@ABVWeaponTemplateSetHead@@0@Z,,0x00332F5B,38,Code/GameEngine/Source/Common/Rva00332F5BCtor.cpp,matched,unlock ctor UnicodeString plus two WeaponHeads
 ??0Rva00332FC1@@QAE@ABVBfmeObject872Header@@0@Z,,0x00332FC1,38,Code/GameEngine/Source/Common/Rva00332FC1Ctor.cpp,matched,chain ctor UnicodeString plus two 872Headers
 ?xfer@Rva00546CAD@@UAEXPAVXfer@@@Z,,0x00546D15,65,Code/GameEngine/Source/Common/Rva00546CADXfer.cpp,matched,slot 3 base plus version plus ObjectID plus slot60
+?xfer@Rva00546F61@@UAEXPAVXfer@@@Z,,0x00546FC9,79,Code/GameEngine/Source/Common/Rva00546F61Xfer.cpp,matched,slot 3 base plus version plus ObjectID plus slot90 plus slot60
