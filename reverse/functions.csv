@@ -44052,3 +44052,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva000F1BC5@Rva000F1BC5@@QAEXPBD@Z,,0x000F1BC5,72,Code/GameEngine/Source/Common/Rva000F1BC5Method.cpp,matched,chain new Rva000F1B8F plus Add to table
 ??0Rva004181F5@@QAE@ABV0@@Z,,0x004181F5,61,Code/GameEngine/Source/GameClient/Rva004181F5CopyCtor.cpp,matched,copy ctor via pinned StringBase plus rowed Rva
 ?Rva0041826BConstruct@@YAXPAVRva004181F5@@PBV1@@Z,,0x0041826B,45,Code/GameEngine/Source/GameClient/Rva0041826BConstruct.cpp,matched,placement new via rowed copy unlocks 0x004182D3
+?_M_clear@?$vector@UBfmeVectorRecord002AF478@@V?$allocator@UBfmeVectorRecord002AF478@@@_STL@@@_STL@@IAEXXZ,,0x002B0F1E,30,Code/Libraries/Source/WWVegas/WWLib/StlportVectorGrowthFootprints.cpp,matched,vector clear via dup plus free caller insert_overflow
