@@ -43875,3 +43875,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva003AF70B@@QAE@ABV0@@Z,,0x003AF70B,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AF738 then own 4 vptrs
 ?rva002CE7A4@Weapon@@QAEPAVObject@@PBV2@0@Z,,0x002CE7A4,56,Code/GameEngine/Source/GameLogic/Object/WeaponPrivateFireWrappers_O1.cpp,matched,object-target sibling of forceFireWeapon with callers in 0x004911AE
 ?rva004DD73B@Rva004DD73B@@QAEPAXXZ,,0x004DD73B,137,Code/Libraries/Source/WWVegas/WWLib/Rva004DD73BObjectPoolAllocate.cpp,matched,pool allocate 16x1024 via Lock plus rowed allocator precedent 002635C2
+?rva0073CE30@Gen_008F7CD0@@QAEXPAUFloatRect0073CE30@@HI@Z,,0x0073CE30,96,Code/GameEngine/Source/Common/RTS/Rva0073CE30.cpp,matched,dual vtable updater plus 4 ftol2 plus rowed Fill
