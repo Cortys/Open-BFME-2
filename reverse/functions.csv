@@ -44810,3 +44810,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?reset@Rva007E8810Message@@QAEXXZ,,0x00655B50,21,Code/GameEngine/Source/GameNetwork/FeslMessageAccessors.cpp,matched,Rva007E8810Message accessor; ICF alias of the rowed identical body
 ?setError@Rva007E8810Message@@QAEXH@Z,,0x0065D7E0,10,Code/GameEngine/Source/GameNetwork/FeslMessageAccessors.cpp,matched,Rva007E8810Message::setError: error slot +0x24; FESL callers pin this name
 ?getError@Rva007E8810Message@@QAEHXZ,,0x0066DD00,4,Code/GameEngine/Source/GameNetwork/FeslMessageAccessors.cpp,matched,Rva007E8810Message accessor; ICF alias of the rowed identical body
+?Release_Ref@TextureClass@@QAEXXZ,,0x0061ED10,36,Code/Libraries/Source/WWVegas/WW3D2/TextureClassReleaseRef.cpp,matched,TextureClass::Release_Ref; ICF alias of the identical TextureBaseClass body; Open-BFME-1 rows this name
