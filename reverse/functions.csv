@@ -43570,3 +43570,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?clear@SidesInfo@@QAEXXZ,,0x0032D4AD,8,Code/GameEngine/Source/GameLogic/Map/SidesList_sidesInfo.cpp,matched,Zero Hour SidesInfo::clear (init(NULL)); 60 masked placements resolved to one unowned hit by call target = rowed SidesInfo::init 0x0032CDAA; directly precedes rowed ~SidesInfo in this TU
 ??_GRva002D3573@@UAEPAXI@Z,,0x002D40D8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva002D3573.cpp,matched,deleting dtor via rowed base 0x002D3573 plus vtable 0x00802AA8
 ?rva003F470E@Rva003F498A@@QAEXHHPAX@Z,,0x003F470E,68,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,gap tail stats via ScoreKeeper total plus 74 D4 12345
+??_GRva00205224@@UAEPAXI@Z,,0x00205208,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00205224.cpp,matched,deleting dtor via rowed 0x205224
