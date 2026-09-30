@@ -26,6 +26,7 @@ class Rva002CEE1B : public GameEngineDeletingBase002CED84
 {
 public:
 	void rva002CED84(void *p1, void *p2, void *p3);
+	Elem002CED84 *rva002CED59(void *key);
 
 private:
 	char m_pad04[0x0C - 4];
@@ -55,4 +56,26 @@ fill:
 	slot->ptr = p1;
 	slot->second = *(Twelve002CED84 *)p2;
 	slot->third = *(Twelve002CED84 *)p3;
+}
+
+// 0x002CED59 43B: find-by-key twin of the empty-slot search inlined in
+// rva002CED84 above: scan the same 128 x 0x1C array at +0x0C for the first
+// entry whose ptr equals key, returning its address, or NULL. Called twice
+// from inside rva002CED84 past the row end, which with the identical base
+// and constants proves the Rva002CEE1B thiscall class.
+Elem002CED84 *Rva002CEE1B::rva002CED59(void *key)
+{
+	Elem002CED84 *result = 0;
+	int i = 0;
+check:
+	if (m_arr0C[i].ptr == key)
+	{
+		result = &m_arr0C[i];
+		goto done;
+	}
+	i++;
+	if (i < 128)
+		goto check;
+done:
+	return result;
 }
