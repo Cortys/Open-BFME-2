@@ -4083,3 +4083,7 @@ FUN_00537EE9	0x00537EE9	109	blocked	same EH vector callback plus g_00BFB1CC as 0
 ?rva005779A0@Rva005779A0@@QAEPAVAsciiString@@PAV2@@Z	0x005779A0	110	blocked	format plus copy plus release needs EH state plus placement-new null-check removal t=18 model=muse-07
 FUN_006D6500	0x006D6500	104	blocked	Apt SEH ctor with AptValue AptNativeHash plus vtables plus unclaimed handler 0x007A8838 needs Apt donor t=3 model=muse-07
 ?rva000D4F4F@Rva000D4F4F@@QAEXXZ	0x000D4F4F	108	blocked	W3D dtor mixed ref plus TextureBase needs donor plus EH t=12 model=muse-07
+?rva0050EEDC@Rva0050EEDC@@QAEXXZ	0x0050EEDC	166	blocked	loop idx ebx-vs-mem plus imul-c-vs-lea plus push order; 173B vs 166B 7 regions; GameSlot 34 plus NameKey plus PlayerList reused from Rva004161F1 t=12 model=muse-06
+?rva0052A53B@Rva0052A53B@@QAEXXZ	0x0052A53B	165	blocked	shared clear goto plus rep stosd via sub-edx-shr vs push8-lea-pop plus missing push edi; GameLogic gate plus pickRV plus lookup reused t=14 model=muse-06
+?rva005801F6@Rva005801F6@@QAEHHH@Z	0x005801F6	109	blocked	idiv plus dual virtual slot18 plus setne-sbb-and bit tricks with ret8; FX-adjacent needs donor t=5 model=muse-06
+?rva005253A0@Rva005253A0@@QAEXABVCallback@@@Z	0x005253A0	103	blocked	vector begin-end-div4 plus virtual callback via ecx-element vs arg-vtable plus g_BFB1CC; STL neighbours need donor t=5 model=muse-06

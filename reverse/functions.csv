@@ -43965,3 +43965,5 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00438268@Rva002542F3Member@@QBEHABV1@@Z,,0x00438268,148,Code/GameEngine/Source/GameLogic/Object/Update/Rva00438268Equal.cpp,matched,finish equality via shared fail goto caller 0x00439DB5
 ?rva0035EDA1@Rva0035EE66@@UAEXPAVGameWindow@@@Z,,0x0035EDA1,68,Code/GameEngine/Source/Common/Rva0035EDA1Init.cpp,matched,vtable 0x0081661C slot 1 plus rowed winGetSize Position
 ?rva000F07C3@Rva000F26DC@@QAE_NHH@Z,,0x000F07C3,64,Code/GameEngine/Source/Common/Rva000F26DCAlloc.cpp,matched,alloc slot via caller 0x000F16B4 same class as 0x000F0803
+??1Rva0027FBAC@@UAE@XZ,,0x0027FBAC,82,Code/GameEngine/Source/GameLogic/Map/Rva0027FBACDtor.cpp,matched,vtable 0x00BFB1E0 AsciiString at +8 virtual delete at +0xC8 caller 0x00280C05
+??_GRva0027FBAC@@UAEPAXI@Z,,0x00280C05,28,Code/GameEngine/Source/GameLogic/Map/Rva0027FBACDtor.cpp,matched,deleting dtor for 0x0027FBAC auto-emitted with dtor
