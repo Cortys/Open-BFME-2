@@ -1,7 +1,7 @@
 // ??0Rva0035E00F@@QAE@XZ
-// partial score=0.9 date=2026-09-30
+// partial score=0.93 date=2026-09-30
 // ??0Rva0035E00F@@QAE@XZ
-// partial score=0.90 date=2026-09-30
+// partial score=0.93 date=2026-09-30
 // cl: /O1 /MD
 // ??0Rva0035E00F@@QAE@XZ @ 0x0035E206 86B: derived ctor calling base ??0Rva001DBAA4
 // at 0x001DBAA4. Layout from FamilyTailDtors1DBAC3.cpp (Rva0035E00F: base
@@ -44,23 +44,9 @@ public:
 	int m_4C;
 };
 // ??0Rva0035E00F@@QAE@XZ present-unmatched
-Rva0035E00F::Rva0035E00F() : m_10(0), m_14(5)
+Rva0035E00F::Rva0035E00F() : m_10(0), m_14(5), m_18(0), m_1C(0), m_20(0), m_24(0), m_28(-1), m_2C(0), m_30(0), m_34(0), m_38(0), m_3C(0), m_40(0), m_44(0), m_48(0), m_4C(0)
 {
 	_ReadWriteBarrier();
-	m_18 = 0;
-	m_1C = 0;
-	m_20 = 0;
-	m_24 = 0;
-	m_28 = -1;
-	m_2C = 0;
-	m_30 = 0;
-	m_34 = 0;
-	m_38 = 0;
-	m_3C = 0;
-	m_40 = 0;
-	m_44 = 0;
-	m_48 = 0;
-	m_4C = 0;
 	m_C = 0;
 	m_4 = m_14;
 	m_9 = true;

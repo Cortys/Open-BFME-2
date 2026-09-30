@@ -4093,3 +4093,4 @@ FUN_006D6500	0x006D6500	104	blocked	Apt SEH ctor with AptValue AptNativeHash plu
 ?rva000F074E@Rva000F26DC@@QAEXHH@Z	0x000F074E	117	partial	idx lea vs add+mov 1B t=20 model=muse-09 score=0.97 stash=reverse/attempts/0x000f074e.cpp
 ??1Rva000F26DC@@UAE@XZ	0x000F26DC	179	blocked	dtor EH vptr layout wall 41B diff missing prolog stores t=10 model=muse-09
 FUN_0067F519	0x0027F519	112	blocked	callback via struct fn needs __thiscall fnptr rejected C4234 plus unknown stack vtable g_00BFB1CC with EH t=15 model=muse-06
+??0Rva0035E00F@@QAE@XZ	0x0035E206	86	partial	vtable before m10/m14 vs retail after plus or hoisted to top vs after m24 plus final eax vs ecx t=20 model=muse-07 score=0.93 stash=reverse/attempts/0x0035e206.cpp
