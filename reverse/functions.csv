@@ -42987,3 +42987,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?rva005FBB68@Rva005FBB68@@QAEXH@Z,,0x005FBB68,8,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt count forwarder tail jmp via landed wrapper
 ??0Rva005DA831@@QAE@PAX@Z,,0x005DA831,35,Code/GameEngine/Source/Common/Rva005DA831Ctor.cpp,matched,derived holder ctor via base row cross-TU esi save
 ??1Rva005DAC85@@UAE@XZ,,0x005DAC85,59,Code/GameEngine/Source/Common/Rva005DAC85Dtor.cpp,matched,derived dtor with StringBase via base pin
+??0Rva005FB22B@@QAE@PBX@Z,,0x005FB22B,24,Code/GameEngine/Source/Common/Rva005FB22BCtor.cpp,matched,Vtable ctor via novtable extern全局
