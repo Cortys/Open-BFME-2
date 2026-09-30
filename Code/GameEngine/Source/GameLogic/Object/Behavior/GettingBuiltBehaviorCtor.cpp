@@ -57,13 +57,19 @@ public:
 	virtual void update();
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
 	virtual ~UpdateModule();
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 	Object *getObject(void) const { return m_object; }
 private:
 	unsigned m_nextCallFrameAndPhase;
@@ -121,5 +127,5 @@ GettingBuiltBehavior::GettingBuiltBehavior(Thing *thing, const ModuleData *modul
 	m_b32 = 0;
 	m_b33 = 0;
 	m_b3E = 0;
-	setWakeFrame(const_cast<Object*>(getObject()), 1);
+	setWakeFrame(const_cast<Object*>(getObject()), UPDATE_SLEEP_NONE);
 }

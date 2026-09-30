@@ -42,6 +42,12 @@ private:
 	unsigned int m_executed;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -49,7 +55,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -83,10 +89,10 @@ ReplenishUnitsBehavior::ReplenishUnitsBehavior(Thing *thing, const ModuleData *m
 	{
 		m_20.giveSelfUpgrade();
 		int hi = ((const ReplenishUnitsModuleData *)m_moduleData)->m_134;
-		setWakeFrame(obj, GetGameLogicRandomValue(1, hi, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\Object\\Behavior\\ReplenishUnitsBehavior.cpp", 0x74));
+		setWakeFrame(obj, (UpdateSleepTime)(GetGameLogicRandomValue(1, hi, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\Object\\Behavior\\ReplenishUnitsBehavior.cpp", 0x74)));
 	}
 	else
 	{
-		setWakeFrame(obj, 0x3FFFFFFF);
+		setWakeFrame(obj, UPDATE_SLEEP_FOREVER);
 	}
 }

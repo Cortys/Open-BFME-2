@@ -31,11 +31,13 @@ public:
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameLogic/Module/UpdateModule.h
+enum UpdateSleepTime {};
+
 class UpdateModule
 {
 protected:
 	Object *getObject() const { return m_object; }
-	void setWakeFrame(Object *, unsigned int);
+	void setWakeFrame(Object *, UpdateSleepTime);
 
 private:
 	char m_header[8];
@@ -59,12 +61,12 @@ void RadiusDecalUpdate::createRadiusDecal(const RadiusDecalTemplate &tmpl, float
 {
 	m_deliveryDecal.clear();
 	tmpl.createRadiusDecal(pos, radius, getObject()->getControllingPlayer(), m_deliveryDecal);
-	setWakeFrame(getObject(), m_killWhenNoLongerAttacking ? 0x3FFFFFFF : 1);
+	setWakeFrame(getObject(), (UpdateSleepTime)(m_killWhenNoLongerAttacking ? 0x3FFFFFFF : 1));
 }
 
 // ?killRadiusDecal@RadiusDecalUpdate@@QAEXXZ
 void RadiusDecalUpdate::killRadiusDecal()
 {
 	m_deliveryDecal.clear();
-	setWakeFrame(getObject(), 0x3FFFFFFF);	// UPDATE_SLEEP_FOREVER
+	setWakeFrame(getObject(), (UpdateSleepTime)0x3FFFFFFF);	// UPDATE_SLEEP_FOREVER
 }

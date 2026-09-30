@@ -98,7 +98,7 @@ public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
 	virtual ~UpdateModule();
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 	Object *getObject(void) const { return m_object; }
 private:
 	unsigned m_nextCallFrameAndPhase;
@@ -154,7 +154,7 @@ StructureToppleUpdate::StructureToppleUpdate(Thing *thing, const ModuleData *mod
 	m_lastCrushedLocation = 0.0f;
 	m_delayBurstLocation.zero();
 	m_toppleDirection.x = m_toppleDirection.y = 0;
-	setWakeFrame(const_cast<Object*>(getObject()), UPDATE_SLEEP_FOREVER);
+	setWakeFrame(const_cast<Object*>(getObject()), (UpdateSleepTime)UPDATE_SLEEP_FOREVER);
 	Object *building = const_cast<Object*>(getObject());
 	m_buildingHeight = building->getGeometryInfo().getMaxHeightAbovePosition();
 }

@@ -24,6 +24,12 @@ class Thing;
 class ModuleData;
 class Object;
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -31,7 +37,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -73,5 +79,5 @@ DefaultProductionExitUpdate::DefaultProductionExitUpdate(Thing *thing, const Mod
 	m_doorDelay24 = fzero;
 	m_queueDelay28 = fzero;
 	m_idleDelay2C = fzero;
-	setWakeFrame(*objSlot, 0x3FFFFFFF);
+	setWakeFrame(*objSlot, UPDATE_SLEEP_FOREVER);
 }

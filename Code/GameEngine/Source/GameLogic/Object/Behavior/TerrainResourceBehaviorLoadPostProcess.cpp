@@ -37,6 +37,12 @@ public:
 	virtual void update() = 0;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 	unsigned m_nextCallFrameAndPhase;
@@ -48,7 +54,7 @@ public:
 
 protected:
 	virtual void loadPostProcess();
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 };
 
 class TerrainResourceBehavior : public UpdateModule
@@ -68,6 +74,6 @@ void TerrainResourceBehavior::loadPostProcess()
 {
 	UpdateModule::loadPostProcess();
 	if (!m_28) {
-		setWakeFrame(m_object, 1);
+		setWakeFrame(m_object, UPDATE_SLEEP_NONE);
 	}
 }

@@ -36,6 +36,12 @@ private:
 	unsigned int m_executed;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -43,7 +49,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -72,7 +78,7 @@ RadiateFearUpdate::RadiateFearUpdate(Thing *thing, const ModuleData *moduleData)
 	m_secondary0C = (const void *)0x00C49F78;
 	m_secondary10 = (const void *)0x00C50FB0;
 	*(void **)&m_20 = (void *)0x00C50F68;
-	setWakeFrame(m_object, 1);
+	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
 	const RadiateFearUpdateModuleData *data = (const RadiateFearUpdateModuleData *)m_moduleData;
 	if (data->m_08)
 		m_20.giveSelfUpgrade();

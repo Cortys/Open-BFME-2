@@ -18,6 +18,12 @@ class Thing;
 class ModuleData;
 class Object;
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -25,7 +31,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -75,5 +81,5 @@ RespawnUpdate::RespawnUpdate(Thing *thing, const ModuleData *moduleData)
 	m_20 = negOne;
 	m_41 = zero;
 	m_24 = zero;
-	setWakeFrame(m_object, 0x3FFFFFFF);
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }

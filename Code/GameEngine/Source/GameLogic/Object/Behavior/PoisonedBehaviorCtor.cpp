@@ -48,13 +48,19 @@ public:
 	virtual void update();
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
 	virtual ~UpdateModule();
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 private:
 	unsigned m_nextCallFrameAndPhase;
 	int m_indexInLogic;
@@ -89,5 +95,5 @@ PoisonedBehavior::PoisonedBehavior(Thing *thing, const ModuleData *moduleData) :
 	m_poisonDamageAmount(0.0f),
 	m_deathType(5)
 {
-	setWakeFrame(const_cast<Object*>(getObject()), 0x3fffffff);
+	setWakeFrame(const_cast<Object*>(getObject()), UPDATE_SLEEP_FOREVER);
 }

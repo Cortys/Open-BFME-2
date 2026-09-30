@@ -30,6 +30,12 @@ class Thing;
 class ModuleData;
 class Object;
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -37,7 +43,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 };
 
 class FireWeaponUpdate : public UpdateModule
@@ -71,5 +77,5 @@ FireWeaponUpdate::FireWeaponUpdate(Thing *thing, const ModuleData *moduleData)
 {
 	Rva0048BDF8Helper();
 	Object **objSlot = &m_object;
-	setWakeFrame(*objSlot, 1);
+	setWakeFrame(*objSlot, UPDATE_SLEEP_NONE);
 }

@@ -51,6 +51,12 @@ public:
 	virtual void slot2() = 0;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public UpdateModuleBase,
 		     public UpdateModuleInterface1,
 		     public UpdateModuleInterface2
@@ -60,7 +66,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	unsigned int m_nextCallFrameAndPhase;
 	int m_indexInLogic;
@@ -94,7 +100,7 @@ private:
 DelayedLuaEventUpdate::DelayedLuaEventUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData), m_events()
 {
-	setWakeFrame(m_object, 0x3FFFFFFF);
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 	m_f20 = 0;
 	m_f70 = 0.0f;
 	m_f74 = false;

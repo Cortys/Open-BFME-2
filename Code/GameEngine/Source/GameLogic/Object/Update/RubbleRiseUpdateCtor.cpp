@@ -27,6 +27,12 @@ class Thing;
 class ModuleData;
 class Object;
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -34,7 +40,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -87,5 +93,5 @@ RubbleRiseUpdate::RubbleRiseUpdate(Thing *thing, const ModuleData *moduleData)
 	m_fade3C = fzero;
 	m_settle40 = fzero;
 	m_cooldown44 = fzero;
-	setWakeFrame(*objSlot, 0x3FFFFFFF);
+	setWakeFrame(*objSlot, UPDATE_SLEEP_FOREVER);
 }

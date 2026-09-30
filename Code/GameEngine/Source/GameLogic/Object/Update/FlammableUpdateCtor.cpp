@@ -23,6 +23,12 @@ struct FlammableUpdateModuleData
 	int m_1C;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -30,7 +36,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -85,5 +91,5 @@ FlammableUpdate::FlammableUpdate(Thing *thing, const ModuleData *moduleData)
 	m_secondary10 = (const void *)0x00C4C3C8;
 	m_20 = (const void *)0x00C4C3BC;
 	m_38 = data->m_1C;
-	setWakeFrame(m_object, 0x3FFFFFFF);
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }

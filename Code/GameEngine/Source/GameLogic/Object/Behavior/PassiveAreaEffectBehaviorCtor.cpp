@@ -46,6 +46,12 @@ public:
 	virtual void update() = 0;
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 	unsigned m_nextCallFrameAndPhase;
@@ -57,7 +63,7 @@ public:
 	virtual ~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 };
 
 class PassiveAreaEffectBehavior : public UpdateModule
@@ -77,5 +83,5 @@ PassiveAreaEffectBehavior::PassiveAreaEffectBehavior(Thing *thing, const ModuleD
 	, m_20(0)
 {
 	m_trackedIds.clear();
-	setWakeFrame(*(Object **)((char *)this + 8), 1);
+	setWakeFrame(*(Object **)((char *)this + 8), UPDATE_SLEEP_NONE);
 }

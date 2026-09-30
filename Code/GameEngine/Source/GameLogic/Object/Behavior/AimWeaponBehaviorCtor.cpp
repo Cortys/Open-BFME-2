@@ -43,13 +43,19 @@ public:
 	virtual void update();
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
 	virtual ~UpdateModule();
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 private:
 	unsigned m_nextCallFrameAndPhase;
 	int m_indexInLogic;
@@ -71,5 +77,5 @@ AimWeaponBehavior::AimWeaponBehavior(Thing *thing, const ModuleData *moduleData)
 	UpdateModule(thing, moduleData)
 {
 	m_bfme20 = false;
-	setWakeFrame(const_cast<Object*>(getObject()), 1);
+	setWakeFrame(const_cast<Object*>(getObject()), UPDATE_SLEEP_NONE);
 }

@@ -26,6 +26,12 @@ private:
 	char m_pad[0x80];
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -33,7 +39,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -64,5 +70,5 @@ SlaveWatcherBehavior::SlaveWatcherBehavior(Thing *thing, const ModuleData *modul
 	m_secondary10 = (const void *)0x00C4A258;
 	m_24.clear80();
 	m_20 &= 0;
-	setWakeFrame(m_object, 1);
+	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
 }

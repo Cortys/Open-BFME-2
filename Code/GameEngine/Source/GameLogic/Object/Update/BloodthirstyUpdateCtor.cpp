@@ -36,7 +36,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -73,5 +73,5 @@ BloodthirstyUpdate::BloodthirstyUpdate(Thing *thing, const ModuleData *moduleDat
 	m_bestTargetID = 0;
 	m_inRange = 0;
 	m_nextScanFrames = 0;
-	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
+	setWakeFrame(m_object, (UpdateSleepTime)UPDATE_SLEEP_NONE);
 }

@@ -39,7 +39,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -83,5 +83,5 @@ WallUpgradeUpdate::WallUpgradeUpdate(Thing *thing, const ModuleData *moduleData)
 	m_2C = 0;
 	m_30 = 1;
 	m_31 = 0;
-	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
+	setWakeFrame(m_object, (UpdateSleepTime)UPDATE_SLEEP_NONE);
 }

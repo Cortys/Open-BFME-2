@@ -38,6 +38,8 @@ int __cdecl GetGameLogicRandomValue(int low, int high, char *file, int line);
 
 // Opaque UpdateModule base; ctor resolves to its row. The hidden vptr sits at
 // +0 so m_owner lands at +4; +0x0C/+0x10 are the re-stored inherited slots.
+enum UpdateSleepTime {};
+
 class UpdateModule
 {
 public:
@@ -49,7 +51,7 @@ protected:
 	int m_pad08;
 	const void *m_p0C;
 	const void *m_p10;
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 };
 
 class StealthDetectorUpdate : public UpdateModule
@@ -71,5 +73,5 @@ StealthDetectorUpdate::StealthDetectorUpdate(Thing *thing, const ModuleData *mod
 		wake = GetGameLogicRandomValue(1, owner->m_maxRange, const_cast<char *>(s_file), 79);
 	else
 		wake = UPDATE_SLEEP_FOREVER;
-	setWakeFrame(*(Object **)((char *)this + 8), wake);
+	setWakeFrame(*(Object **)((char *)this + 8), (UpdateSleepTime)wake);
 }

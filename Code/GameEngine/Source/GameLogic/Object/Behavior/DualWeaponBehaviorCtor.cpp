@@ -25,6 +25,12 @@ static int s_dualWeapon10;
 
 // Opaque UpdateModule (0x20 bytes); ctor resolves to the matched row at
 // 0x00253390, setWakeFrame to the pin at 0x0044DF71.
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -32,7 +38,7 @@ public:
 	virtual ~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 	unsigned char m_pad0[8];
 	const void *m_p0C;
 	const void *m_p10;
@@ -59,5 +65,5 @@ DualWeaponBehavior::DualWeaponBehavior(Thing *thing, const ModuleData *moduleDat
 	m_p10 = &s_dualWeapon10;
 	m_closeRangeActive = (unsigned char)zero;
 	m_switchTimer = zero;
-	setWakeFrame(*(Object **)((char *)this + 8), 1);
+	setWakeFrame(*(Object **)((char *)this + 8), UPDATE_SLEEP_NONE);
 }

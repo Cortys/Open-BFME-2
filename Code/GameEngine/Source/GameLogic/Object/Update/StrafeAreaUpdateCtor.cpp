@@ -26,6 +26,12 @@ class Thing;
 class ModuleData;
 class Object;
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule
 {
 public:
@@ -33,7 +39,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -84,5 +90,5 @@ StrafeAreaUpdate::StrafeAreaUpdate(Thing *thing, const ModuleData *moduleData)
 	m_strafeToY = fzero;
 	m_strafeToX = fzero;
 	Object **objSlot = &m_object;
-	setWakeFrame(*objSlot, 1);
+	setWakeFrame(*objSlot, UPDATE_SLEEP_NONE);
 }

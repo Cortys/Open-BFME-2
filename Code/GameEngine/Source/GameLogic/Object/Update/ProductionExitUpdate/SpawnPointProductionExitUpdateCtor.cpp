@@ -52,6 +52,12 @@ protected:
 	char m_pad[0x0C];
 };
 
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1,
+	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
+};
+
 class UpdateModule : public SpawnB1, public SpawnB2, public SpawnB3
 {
 public:
@@ -59,7 +65,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 };
 
 class SpawnB4
@@ -115,5 +121,5 @@ SpawnPointProductionExitUpdate::SpawnPointProductionExitUpdate(Thing *thing, con
 		*pointCount = 0;
 		((float *)pointCount)[-10] = fzero;
 	}
-	setWakeFrame(m_object, 0x3FFFFFFF);
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }

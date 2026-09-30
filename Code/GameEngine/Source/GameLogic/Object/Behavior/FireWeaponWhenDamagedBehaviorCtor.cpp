@@ -81,6 +81,8 @@ public:
 	virtual void update();
 };
 
+enum UpdateSleepTime {};
+
 class UpdateModule : public BehaviorModule, public UpdateModuleInterface
 {
 public:
@@ -88,7 +90,7 @@ public:
 	virtual ~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *obj, unsigned int frame);
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
 
 private:
 	unsigned m_nextCallFrameAndPhase;
@@ -244,10 +246,10 @@ FireWeaponWhenDamagedBehavior::FireWeaponWhenDamagedBehavior(Thing *thing, const
 		d->m_continuousWeaponReallyDamaged != NULL ||
 		d->m_continuousWeaponRubble != NULL))
 	{
-		setWakeFrame(const_cast<Object *>(getObject()), UPDATE_SLEEP_NONE);
+		setWakeFrame(const_cast<Object *>(getObject()), (UpdateSleepTime)UPDATE_SLEEP_NONE);
 	}
 	else
 	{
-		setWakeFrame(const_cast<Object *>(getObject()), UPDATE_SLEEP_FOREVER);
+		setWakeFrame(const_cast<Object *>(getObject()), (UpdateSleepTime)UPDATE_SLEEP_FOREVER);
 	}
 }

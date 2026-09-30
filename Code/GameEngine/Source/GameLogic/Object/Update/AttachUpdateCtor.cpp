@@ -33,7 +33,7 @@ public:
 	~UpdateModule();
 
 protected:
-	void setWakeFrame(Object *object, unsigned int frame);
+	void setWakeFrame(Object *object, UpdateSleepTime frame);
 
 	const void *m_vtable;
 	const ModuleData *m_moduleData;
@@ -64,5 +64,5 @@ AttachUpdate::AttachUpdate(Thing *thing, const ModuleData *moduleData)
 	m_vtable = (const void *)0x00C4DB20;
 	m_secondary0C = (const void *)0x00BEFF90;
 	m_secondary10 = (const void *)0x00C4DB14;
-	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
+	setWakeFrame(m_object, (UpdateSleepTime)UPDATE_SLEEP_NONE);
 }
