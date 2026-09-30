@@ -43088,3 +43088,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva004BFD27@Rva004BFD27@@QAEXW4CommandSourceType@@@Z,,0x004BFD27,92,Code/GameEngine/Source/GameLogic/Object/Body/Rva004BFD27Command.cpp,matched,AICommandParms 0x53 slot0 coords-free via 0x00351BD0 0x00030830 caller 0x004C0602
 ?rva0030AE42@Rva00985E4@@UAEXXZ,,0x0030AE42,100,Code/GameEngine/Source/Common/Rva0030AE42Slot.cpp,matched,vslot14 copies AsciiStrings S12s byte float from globals
 ?xfer@GiveUpgradeUpdate@@MAEXPAVXfer@@@Z,,0x0049C41C,85,Code/GameEngine/Source/GameLogic/Object/Update/GiveUpgradeUpdateXfer.cpp,matched,slot 3 of vtable 0x00851220 base SpecialAbilityUpdate xfer IsLightCRC Version1
+??4BfmeAssignRecord84@@QAEAAU0@ABU0@@Z,,0x00586BC9,78,Code/Libraries/Source/WWVegas/WWLib/stlport_assign_record84_00586BC9.cpp,matched,assign 84B via struct12 movsd deque pin
