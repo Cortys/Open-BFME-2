@@ -22,36 +22,31 @@ class MultiListNodeClass
 	char m_bfmeBody[20];
 };
 
-// upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/mutex.h
-class FastCriticalSectionClass
+// The one-word lock is the measured BFME pool lock at 0x0006577F.
+class BFMEPoolCriticalSection
 {
-	unsigned Flag;
-
 public:
-	FastCriticalSectionClass() : Flag(0) {}
+	void Lock();
+	volatile unsigned int m_locked;
 
 	class LockClass
 	{
-		FastCriticalSectionClass& cs;
+		BFMEPoolCriticalSection &m_cs;
 	public:
-		LockClass(FastCriticalSectionClass& critical_section) : cs(critical_section)
+		LockClass(BFMEPoolCriticalSection &cs) : m_cs(cs)
 		{
-			spin(&cs.Flag);
+			m_cs.Lock();
 		}
 
 		~LockClass()
 		{
-			cs.Flag=0;
+			m_cs.m_locked=0;
 		}
 
 	private:
-		static void __fastcall spin(unsigned *flag);
-
 		LockClass &operator=(const LockClass&);
 		LockClass(const LockClass&);
 	};
-
-	friend class LockClass;
 };
 
 template<class T,int BLOCK_SIZE = 64>
@@ -66,14 +61,14 @@ protected:
 	uint32 *	BlockListHead;
 	int		FreeObjectCount;
 	int		TotalObjectCount;
-	FastCriticalSectionClass ObjectPoolCS;
+	BFMEPoolCriticalSection ObjectPoolCS;
 
 };
 
 template<class T,int BLOCK_SIZE>
 T * ObjectPoolClass<T,BLOCK_SIZE>::Allocate_Object_Memory(void)
 {
-	FastCriticalSectionClass::LockClass lock(ObjectPoolCS);
+	BFMEPoolCriticalSection::LockClass lock(ObjectPoolCS);
 
 	if ( FreeListHead == 0 ) {
 
