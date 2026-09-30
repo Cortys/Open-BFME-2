@@ -27,12 +27,12 @@
 
 typedef unsigned long LCID;
 
-// BFME2 pointer VA 0x00DA71A0; donor address retained only in the name.
-const char *g_Rva012C83A8 = "LC_NUMERIC";
-// BFME2 pointer VA 0x00DA719C; donor address retained only in the name.
-const char *g_Rva012C83A4 = "LC_MONETARY";
-// BFME2 pointer VA 0x00DA71A4; donor address retained only in the name.
-const char *g_Rva012C83AC = "LC_TIME";
+// BFME2 pointer VA 0x00DA71A0; referenced category string verified in retail.
+const char *g_localeNumericCategoryName = "LC_NUMERIC";
+// BFME2 pointer VA 0x00DA719C; referenced category string verified in retail.
+const char *g_localeMonetaryCategoryName = "LC_MONETARY";
+// BFME2 pointer VA 0x00DA71A4; referenced category string verified in retail.
+const char *g_localeTimeCategoryName = "LC_TIME";
 
 extern "C" {
 
@@ -478,7 +478,7 @@ void *_Locale_numeric_create(const char *name)
 
     if (name[0] == 'L' && name[1] == 'C' && name[2] == '_')
     {
-        char *p = strstr(name, g_Rva012C83A8);
+        char *p = strstr(name, g_localeNumericCategoryName);
         if (p != 0)
         {
             char *q = strchr(p, '=');
@@ -553,7 +553,7 @@ void *_Locale_time_create(const char *name)
 
     if (name[0] == 'L' && name[1] == 'C' && name[2] == '_')
     {
-        char *p = strstr(name, g_Rva012C83AC);
+        char *p = strstr(name, g_localeTimeCategoryName);
         if (p != 0)
         {
             char *q = strchr(p, '=');
@@ -672,7 +672,7 @@ void *_Locale_monetary_create(const char *name)
 
     if (name[0] == 'L' && name[1] == 'C' && name[2] == '_')
     {
-        char *p = strstr(name, g_Rva012C83A4);
+        char *p = strstr(name, g_localeMonetaryCategoryName);
         if (p != 0)
         {
             char *q = strchr(p, '=');
@@ -738,8 +738,8 @@ void *_Locale_monetary_create(const char *name)
 
 }
 
-// BFME2 pointer VA 0x00DA7194; donor address retained only in the name.
-const char *g_Rva012C839C = "LC_COLLATE";
+// BFME2 pointer VA 0x00DA7194; referenced category string verified in retail.
+const char *g_localeCollateCategoryName = "LC_COLLATE";
 typedef struct
 {
     LCID lcid;
@@ -759,7 +759,7 @@ extern "C" void *_Locale_collate_create(const char *name)
 
     if (name[0] == 'L' && name[1] == 'C' && name[2] == '_')
     {
-        char *p = strstr(name, g_Rva012C839C);
+        char *p = strstr(name, g_localeCollateCategoryName);
         if (p != 0)
         {
             char *q = strchr(p, '=');
