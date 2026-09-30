@@ -60,3 +60,51 @@ void Rva00383A28::rva00383A28()
 		m_count = 0;
 	}
 }
+
+namespace _STL
+{
+typedef bool _Rb_tree_Color_type;
+struct _Rb_tree_node_base
+{
+	typedef _Rb_tree_Color_type _Color_type;
+	typedef _Rb_tree_node_base* _Base_ptr;
+	_Color_type _M_color;
+	_Base_ptr _M_parent;
+	_Base_ptr _M_left;
+	_Base_ptr _M_right;
+};
+template <class _Dummy> class _Rb_global
+{
+public:
+	static _Rb_tree_node_base* __cdecl _Rebalance_for_erase(
+		_Rb_tree_node_base* __z, _Rb_tree_node_base*& __root,
+		_Rb_tree_node_base*& __leftmost, _Rb_tree_node_base*& __rightmost);
+};
+}
+
+struct Rva00383380Node : public _STL::_Rb_tree_node_base
+{
+};
+
+// ?rva00383380@Rva00383380@@QAEXPAURva00383380Node@@@Z 0x00383380 59B
+// Rb erase-one: rebalance-for-erase then destroy CameraMarker value at +16 and free.
+// Evidence: calls 0x00025620 rebalance-erase plus 0x0029D7C2 CameraMarker dtor
+// plus free 0x00030830; callers at 0xA79C6 0xA7A2A 0xA81F5 0x383A84 0x463E3C;
+// same 59B shape as 0x383F9C in Rva00383F9CErase.cpp.
+class Rva00383380
+{
+	_STL::_Rb_tree_node_base* m_header;
+	int m_count;
+public:
+	void rva00383380(Rva00383380Node* pos);
+};
+
+void Rva00383380::rva00383380(Rva00383380Node* pos)
+{
+	_STL::_Rb_tree_node_base* toDelete = _STL::_Rb_global<bool>::_Rebalance_for_erase(
+		pos, m_header->_M_parent, m_header->_M_left, m_header->_M_right);
+	((CameraMarker*)(toDelete + 1))->~CameraMarker();
+	if (toDelete)
+		free(toDelete);
+	--m_count;
+}
