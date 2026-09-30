@@ -3612,3 +3612,5 @@ FUN_0099FD3A	0x0059FD3A	241	blocked	combo-box RB population 11 callees plus boun
 FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 model=muse-05
 ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z	0x003C4E28	155	blocked	movss-reg muls vs movaps-mem persists across direct locals reversed G7 O2 t=15 model=muse-08
 ?bfmeInitD70@@YAXPAX0@Z	0x001B67E0	176	blocked	t-st coloring persists after st-t def swap 170-176 t=10 model=muse-08
+?Rva0054A086Shift@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@UFoo00549DCB@@URva00549DCB@@@Z	0x0054A086	82	blocked	deque Foo shift via Decrement plus FooCmp 82B; ref-temp frame wall sub18 vs sub10 t=16 model=muse-spark
+?Rva007FCF80@@YAPAVRva007FCF80Object@@PAX@Z	0x00669480	45	blocked	nothrow factory 12B with twin second-vptr redundant plus dead null check; volatile and pragma miss t=14 model=muse-spark

@@ -43031,3 +43031,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRva003EF728@@QAEPAXI@Z,,0x0020E32A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-05-003EF728.cpp,matched,scalar deleting dtor over rowed 0x003EF728
 ?rva00135E86@Rva00136001@@QAEAAV1@ABVHierarchyPrototype@@@Z,,0x00135E86,134,Code/Libraries/Source/WWVegas/WW3D2/Rva00135E86Assign.cpp,matched,unlock via 0x136001 caller texture adopt 7 chunk ids
 ?rva00135E00@Rva00135E00@@QAEXIII@Z,,0x00135E00,35,Code/Libraries/Source/WWVegas/WW3D2/Rva00135E00Set.cpp,matched,unlock flag plus three G7 or-al
+??0Rva001F20D6@@QAE@IABV?$allocator@H@_STL@@@Z,,0x001F20D6,69,Code/GameEngine/Source/GameLogic/Object/Rva001F20D6Ctor.cpp,matched,unlock caller 0x001F206E via proxy 0x0014F3C4 and byte allocator 0x000307F0
