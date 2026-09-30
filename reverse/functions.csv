@@ -43252,3 +43252,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0033C807@Rva0033C807@@QAE_NABVAsciiString@@AAV2@@Z,,0x0033C807,67,Code/GameEngine/Source/Common/Thing/Rva0033C807FindErase.cpp,matched,tag compare plus out-copy plus vector erase stride 0x14
 ??$sort_heap@U?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@UBfmeE12Cmp00422291@@@_STL@@YAXU?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@0@0UBfmeE12Cmp00422291@@@Z,,0x00423F20,67,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_e12_partition.cpp,matched,chain sort heap via landed pop heap
 ??1Rva005E8908@@QAE@XZ,,0x005E8908,54,Code/GameEngine/Source/Common/Bfme/Rva005E8908Dtor.cpp,matched,nonvirtual dtor two wide strings via rowed releaseBuffer EHstates
+??0Rva00253A78@@QAE@XZ,,0x00253A78,26,Code/GameEngine/Source/GameLogic/Object/Die/Rva00253A78Ctor.cpp,matched,leaf ctor via base Rva00253510 plus explicit vtable plus members
