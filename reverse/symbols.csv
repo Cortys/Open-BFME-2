@@ -6446,3 +6446,4 @@ _Rva00850560,0x000236F0,STLport locale long-date-time-format getter: same shape 
 ?_M_create_node@?$_Rb_tree@UBfmeStringRecord004071F7@@U1@U?$_Identity@UBfmeStringRecord004071F7@@@_STL@@URecordNocaseLess@@V?$allocator@UBfmeStringRecord004071F7@@@3@@_STL@@IAEPAU?$_Rb_tree_node@UBfmeStringRecord004071F7@@@2@ABUBfmeStringRecord004071F7@@@Z,0x003ED6C2,finish 003ED70D twin of rowed less version same 12B value same allocate
 _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0ScanTangentAngle
 ??$__uninitialized_copy@PAUBfmePod24@@PAU1@@_STL@@YAPAUBfmePod24@@PAU1@00ABU__false_type@0@@Z,0x000B4153,ICF twin of const row via Pod24 G7 overflow caller
+?allocate@?$allocator@VRva0054103E@@@_STL@@QBEPAVRva0054103E@@IPBX@Z,0x00395960,typed 20-byte Rva0054103E vector allocator fold to rowed 2CF4C6 via caller 0x005417F5
