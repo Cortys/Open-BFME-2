@@ -3796,3 +3796,4 @@ FUN_0033CD41	0x0033CD41	215	blocked	parseRemoveModule EH throw donor exists but 
 FUN_000EFC45	0x000EFC45	53	blocked	pin UAE virtual vs body no vtable store needs QAE nonvirtual or clear-method rename t=5 model=muse-11
 ?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z	0x0046F179	270	partial	single slot diff new-temp -0x14 vs -0x10 nested-pos plus swapped-errors fixed pos and exceptions t=25 model=muse-03 score=0.99 stash=reverse/attempts/0x0046f179.cpp
 ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z	0x00271108	190	blocked	extra movss xmm1 global plus addss reg-reg vs direct mem persists across 5 variants t=15 model=muse-03
+?rva00512DB1@Rva00512CE9@@QAEHXZ	0x00512DB1	48	blocked	bool m286 extra xor eax vs byte swaps regs esi edi 5 variants t=20 model=muse-10
