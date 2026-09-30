@@ -1,7 +1,3 @@
-// ?rva006F7C10@Rva006F7C10@@QAEXXZ
-// partial score=0.93 date=2026-09-30
-// ?rva006F7C10@Rva006F7C10@@QAEXXZ
-// partial score=0.93 date=2026-09-30
 // cl: /O2 /MD
 //
 // ?rva006F7C10@Rva006F7C10@@QAEXXZ retail 0x006F7C10 83B.
@@ -18,6 +14,8 @@ public:
 };
 
 extern Rva006DB270 *g_pChainBlockAllocator;
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 struct Rva006F7C10Data
 {
@@ -60,6 +58,7 @@ void Rva006F7C10::rva006F7C10()
 	{
 		Rva006F7C10Node *next = node->m08;
 		Rva006F7C10Data *data = node->m04;
+		_ReadWriteBarrier();
 		node->m00 = 0;
 		node->m08 = 0;
 		node->m0C = 0;
