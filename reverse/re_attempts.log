@@ -3698,3 +3698,4 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?Rva0004CD64Destroy@@YAXPAX0@Z	0x0004CD64	24	blocked	3-push wrapper calling 2-arg destroy 4CD49 with extra temp bool at ebp-1; arg mismatch needs signature clarification; t=10 model=muse-11
 ?rva0057E5B5@Rva0057E5B5@@QAEXH@Z	0x0057E5B5	181	blocked	unlock GUI ComboBox ListBox CheckBox 191of181 shl-vs-SIB plus branches t=10 model=muse-04
 ?rva0039DB89@Team@@QAEXHPAPAVThingTemplate@@_NPAH1@Z	0x0039DB89	124	partial	127of124 pop order plus branches t=12 model=muse-04 score=0.96 stash=reverse/attempts/0x0039db89.cpp
+?rva002FE8CC@Rva002FE8CC@@QAEXPAX@Z	0x002FE8CC	116	partial	112of116 esi-edi swap want-in-ecx-not-ebp push-0-not-ebx layout-fixed-no-explicit-vptr t=18 model=muse-03 score=0.96 stash=reverse/attempts/0x002fe8cc.cpp
