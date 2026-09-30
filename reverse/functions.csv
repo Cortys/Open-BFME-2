@@ -42977,3 +42977,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva00216787Free@@YGXPAURva00216787Node@@@Z,,0x00216787,28,Code/GameEngine/Source/Common/Rva00216787Free.cpp,matched,custom stdcall free destroys rowed dtor at plus4 then free chain
 ??1Rva003EF728@@QAE@XZ,,0x003EF728,86,Code/GameEngine/Source/Common/Rva003EF728Dtor.cpp,matched,nonvirtual dtor three frees EHs states reverse order deleting caller
 ?rva005DABD5@Rva005DAAB6@@QAE_N_N@Z,,0x005DABD5,94,Code/GameEngine/Source/Common/Rva005DAAB6Slot15.cpp,matched,vslot15 via dtor class layout and slot14 five args
+?rva005FB7D7@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FB7D7,103,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt UnitCount key via same format setText recipe

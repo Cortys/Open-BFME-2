@@ -58,6 +58,7 @@ class Rva005FB770
 public:
     void rva005FB770(const UnicodeString &playerName);
     void rva005FBBC0(const UnicodeString &playerName);
+    void rva005FB7D7(const UnicodeString &value);
 private:
     char m_pad[4];
     unsigned int m_level;
@@ -83,4 +84,15 @@ void Rva005FB770::rva005FBBC0(const UnicodeString &playerName)
         rva005FB770(playerName);
         m_cachedName.set(playerName);
     }
+}
+void Rva005FB770::rva005FB7D7(const UnicodeString &value)
+{
+    AsciiString key;
+    const char *teamName;
+    if (m_team)
+        teamName = (const char *)((char *)m_team + 8);
+    else
+        teamName = g_007BAC1C;
+    key.format("APT:_level%u.%s_UnitCount", m_level, teamName);
+    g_bfmeAptWindowManager->bfmeSetText(key, value, true);
 }
