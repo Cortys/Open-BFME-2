@@ -17,3 +17,10 @@ struct Rva0048130E
 };
 
 template void _STL::_Destroy<Rva0048130E *>(Rva0048130E *, Rva0048130E *);
+
+// vector<Rva0048130E> growth path: _M_insert_overflow (retail 0x0048160B),
+// _M_clear (0x004815ED) and push_back (0x004816BD) are byte-identical from
+// this whole-class instantiation. Their calls read the rowed _Construct,
+// __uninitialized_fill_n and __uninitialized_copy of this element, the
+// _Destroy above and the ICF 8-byte allocate.
+template class _STL::vector<Rva0048130E, _STL::allocator<Rva0048130E> >;
