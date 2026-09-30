@@ -1,12 +1,7 @@
-// ?rva0052DA1C@Rva0052DA1C@@QAE_NH@Z
-// partial score=0.97 date=2026-09-29
-// ?rva0052DA1C@Rva0052DA1C@@QAE_NH@Z
-// partial score=0.97 date=2026-09-29
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /G7 /DNDEBUG /MD
 // ?rva0052DA1C@Rva0052DA1C@@QAE_NH@Z, retail 0x0052DA1C, 71 bytes.
 // Low-nibble type setter with owner guard at +0x0/+0x28.
 // Evidence: unlock lane unblocking 6 callers; same /O1 shape as Common neighbour.
-// ?rva0052DA1C@Rva0052DA1C@@QAE_NH@Z present-unmatched
 class Rva0052DA1C {
     struct Aux {
         int _pad[10];
@@ -14,7 +9,7 @@ class Rva0052DA1C {
     };
     Aux *m_0;
     int _pad4[2];
-    int m_c;
+    unsigned int m_c;
 public:
     bool rva0052DA1C(int arg);
 };
