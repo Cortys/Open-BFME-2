@@ -15,6 +15,16 @@
 // with unconditional _M_decrement, 12B element shifts, final value store.
 // Evidence: unlock lane, callee _M_decrement rowed, callers 0x00422B4C (76B
 // __unguarded_insertion_sort_aux shape) and 0x0042390E, unblocks both.
+// ??$sort@... @0x00424D17 (117B), ??$__introsort_loop@... @0x00424AE0 (276B),
+// ??$partial_sort@... @0x00424732 (58B), ??$__partial_sort@... @0x0042454E
+// (208B) and ??$make_heap@... @0x00423990 (47B): the quicksort half of the
+// same family, emitted by the explicit sort instantiation at the end. sort
+// calls __introsort_loop then the rowed __final_insertion_sort 0x00424418;
+// the loop calls the rowed __unguarded_partition 0x00422217 and partial_sort,
+// whose __partial_sort calls make_heap, the rowed __pop_heap 0x00423293 and
+// sort_heap 0x00423F20. The loop's __median call lands on 0x005A9215, a body
+// with two other callers outside this family (0x0054C083, 0x005A9798): it is
+// pinned as a folded alias, not rowed.
 #include <algorithm>
 #include <deque>
 struct BfmeE12 { float x, y, z; };
@@ -28,3 +38,4 @@ template void _STL::__unguarded_insertion_sort_aux<_STL::_Deque_iterator<BfmeE12
 template void _STL::__insertion_sort<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
 template void _STL::__unguarded_insertion_sort<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
 template void _STL::__final_insertion_sort<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
+template void _STL::sort<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
