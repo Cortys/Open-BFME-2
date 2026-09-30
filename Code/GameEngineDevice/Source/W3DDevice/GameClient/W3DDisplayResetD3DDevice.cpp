@@ -60,7 +60,9 @@ public:
 	virtual bool getWindowed();
 };
 
-extern Display *TheDisplay;
+// Matched DIR32 sites establish TheDisplay at VA 0x00DFE9D8. This is in the
+// PE .data zero-fill tail, so the retail startup value is null.
+Display *TheDisplay = 0;
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/w3derr.h
 enum WW3DErrorType

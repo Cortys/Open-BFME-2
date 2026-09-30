@@ -170,7 +170,9 @@ extern Radar *TheRadar;
 extern PartitionManager *ThePartitionManager;
 extern PartitionManager *TheShroudManager;
 extern Rva00DFE758Holder *TheRva00DFE758;
-extern TerrainLogic *TheTerrainLogic;
+// Matched DIR32 sites establish TheTerrainLogic at VA 0x00DFEC50. This is in
+// the PE .data zero-fill tail, so the retail startup value is null.
+TerrainLogic *TheTerrainLogic = 0;
 extern GameLogic *TheGameLogic;
 extern View *TheTacticalView;
 

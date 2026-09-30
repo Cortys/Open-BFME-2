@@ -98,6 +98,10 @@
 /// The GameClient singleton instance
 GameClient *TheGameClient = NULL;
 
+// Matched DIR32 sites establish TheWritableGlobalData at VA 0x00DFE758.
+// That address is in the PE .data zero-fill tail, so retail starts it null.
+GlobalData *TheWritableGlobalData = NULL;
+
 //-------------------------------------------------------------------------------------------------
 // ?GameClient::GameClient present-unmatched
 GameClient::GameClient()
