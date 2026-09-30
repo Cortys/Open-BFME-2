@@ -43122,3 +43122,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003FD1C5@Rva003FD1C5@@MAEXPAVXfer@@@Z,,0x003FD1C5,38,Code/GameEngine/Source/Common/Rva003FD1C5Xfer.cpp,matched,unlock uint at 0x04 bool at 0x08
 ?rva003FD2C2@Rva003FD2C2@@MAEXPAVXfer@@@Z,,0x003FD2C2,52,Code/GameEngine/Source/Common/Rva003FD2C2Xfer.cpp,matched,chain via 0x3FD1C5 Coord float uint
 ?rva0020E7E8@Rva0020E7E8@@QAEXPAVRva0020E7E8Callback@@@Z,,0x0020E7E8,43,Code/Libraries/Source/WWVegas/WWLib/Rva0020E7E8Loop.cpp,matched,pointer scan callback break false
+?push_back@?$vector@VRva0054103E@@V?$allocator@VRva0054103E@@@_STL@@@_STL@@QAEXABVRva0054103E@@@Z,,0x00541DA8,55,Code/Libraries/Source/WWVegas/WWLib/Rva0054103EVectorInsertOverflow.cpp,matched,vector push_back via same TU overflow caller 0x541DD5
