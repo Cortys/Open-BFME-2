@@ -34,6 +34,11 @@
 // pop_heap over deque<BfmeE12> with comparator; copies iterators plus null
 // tag feeding rowed __pop_heap_aux. Caller 0x00423F46.
 // Evidence: chain lane, callee just landed.
+//
+// ??$sort_heap@U?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@UBfmeE12Cmp00422291@@@_STL@@YAXU?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@0@0UBfmeE12Cmp00422291@@@Z @0x00423F20 (67B):
+// sort_heap over deque<BfmeE12>; subtract-gated loop of post-decrement plus
+// rowed pop_heap. Caller 0x00424612.
+// Evidence: chain lane, callee just landed.
 #include <algorithm>
 #include <deque>
 struct BfmeE12 { float x, y, z; };
@@ -48,3 +53,4 @@ template void _STL::__make_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_t
 template void _STL::__pop_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12, BfmeE12Cmp00422291, int>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12, BfmeE12Cmp00422291, int *);
 template void _STL::__pop_heap_aux<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12 *, BfmeE12Cmp00422291);
 template void _STL::pop_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
+template void _STL::sort_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291);
