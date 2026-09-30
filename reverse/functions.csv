@@ -43389,3 +43389,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?push_back@?$vector@VRva0052BEF0@@V?$allocator@VRva0052BEF0@@@_STL@@@_STL@@QAEXABVRva0052BEF0@@@Z,,0x00566417,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bef0_pushback.cpp,matched,STLport vector Rva0052BEF0 pushback chain from overflow
 ??_GRva005DB100@@UAEPAXI@Z,,0x005DB1E8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005DB100.cpp,matched,scalar deleting dtor via rowed dtor plus delete
 ?rva004EE3AB@Rva004EE3AB@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE3AB,78,Code/GameEngine/Source/Common/Rva004EE3AB.cpp,matched,RB sum BitFlags filter tree C0 sibling EE35D
+?rva004EE3F9@Rva004EE3F9@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE3F9,78,Code/GameEngine/Source/Common/Rva004EE3F9.cpp,matched,RB sum BitFlags filter tree CC sibling EE3AB
