@@ -44239,3 +44239,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0050EE23@Rva0050EE23@@QAEHPBDHUCharCompare@@@Z,,0x0050EE23,53,Code/Libraries/Source/WWVegas/WWLib/Rva0050EE23Compare.cpp,matched,split null checks plus compareRangeNoCase
 ?rva0050F2AF@Rva0050F0AB@@QAEXI@Z,,0x0050F2AF,87,Code/GameEngine/Source/Common/System/Rva0050F2AF.cpp,matched,chain clamp 99999 plus focus Send
 ??4Rva0031AB7F@@QAEAAV0@ABV0@@Z,,0x0031AB7F,80,Code/GameEngine/Source/GameClient/GUI/ControlBar/Rva0031AB7FCopy.cpp,matched,Copy assign via base and AsciiString plus array
+?rva0031AA34@BfmeWorldRV@@QAEXH@Z,,0x0031AA34,23,Code/GameEngine/Source/GameClient/GUI/ControlBar/BfmeWorldRva0031AA34.cpp,matched,BfmeWorldRV flag via InGameUI slot47
