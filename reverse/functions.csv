@@ -44321,3 +44321,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?LookupFocusChannelVolume@@YAMH@Z,,0x0035D20C,166,Code/GameEngine/Source/Main/AudioManagerFocusVolume.cpp,matched,pin LookupFocusChannelVolume via regainFocus caller and 0x001DC57C row
 ?loadScheme@Shell@@QAEXVAsciiString@@@Z,,0x0035C49C,74,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,donor BFME1 Shell.cpp loadScheme via chain 0x002005DE
 ?rva006CDBD0@Rva006CDBD0@@QAEXXZ,,0x006CDBD0,32,Code/GameEngine/Source/Common/Rva006CDBD0Pop.cpp,matched,pop head plus freeBlock size 8 via chain allocator
+?Rva006CD460Free@@YAXPAX@Z,,0x006CD460,27,Code/GameEngine/Source/Common/Rva006CD460Free.cpp,matched,array free via pool stored size plus 4
