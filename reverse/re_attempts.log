@@ -4017,3 +4017,6 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva005BEA22@Rva005BEA22@@QAEXXZ	0x005BEA22	78	blocked	EH clear virt-plus-delete plus free needs prolog plus states plus fs0 45B vs 78B -33B no unwindable object in raw-ptr model t=8 model=muse-04
 ?Rva004DD6CFGet@@YAHM@Z	0x004DD6CF	83	blocked	xmm1-vs-xmm0 scheduling plus late-load duplication 98B vs 83B 4 regions 6 variants incl O1 O2 Os G7 SSE seq-assign t=20 model=muse-04
 ?rva001D9781@Rva001D98BD@@QAEHXZ	0x001D9781	88	partial	82B vs 88B tail-merge wall je-mov-jmp vs jne plus xor-al vs shared-xor only scheduling left t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x001d9781.cpp
+?Rva000540A7Load@@YAXPAX@Z	0x000540A7	121	blocked	four INI loads via AsciiString temps needs donor pattern t=5 model=muse-07
+?rva0005818B@Rva00699180Owner@@QAEXPBUHolderPtr@@H@Z	0x0005818B	96	partial	last in ecx vs eax cmp esi ecx vs eax t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x0005818b.cpp
+?rva003AF8C7@Rva003AF8C7@@QAE@XZ	0x003AF8C7	98	blocked	derived copy needs Lightning vptr two-phase plus sbb mask donor t=8 model=muse-07
