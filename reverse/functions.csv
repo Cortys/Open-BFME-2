@@ -43016,3 +43016,4 @@ _Rva0084DE40Tail,,0x000210C0,433,Code/Libraries/Source/STLport/Rva0084DE40DateFo
 ?rva00492FC2@Rva00492FC2@@QAEX_N@Z,,0x00492FC2,71,Code/GameEngine/Source/GameLogic/Object/SpecialPower/Rva00492FC2.cpp,matched,SpecialPower count init via GameLogic frame
 ?Rva0054A037Insert@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@UBfmeE8@@@Z,,0x0054A037,79,Code/Libraries/Source/WWVegas/WWLib/Rva0054A037Insert.cpp,matched,deque insert float-key via uchar temp callers 0x0054A4C6 0x0054ADCB
 ?rva0059FC9F@Rva0059FC9F@@QAEHXZ,,0x0059FC9F,155,Code/GameEngine/Source/Common/Rva0059FC9FFind.cpp,matched,copy 0x0059F479 map slot 0xA4 via linear RB search
+?rva002D23ED@Rva002D22CA@@QAEXPAXH@Z,,0x002D23ED,106,Code/GameEngine/Source/Common/Rva002D22CARegister.cpp,matched,vtable slot1 caller 0x002D2457 proves Rva002D22CA owner and TheNameKeyGenerator table register
