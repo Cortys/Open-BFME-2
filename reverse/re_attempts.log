@@ -4076,3 +4076,10 @@ FUN_00157C70	0x00157C70	347	blocked	Render2DSentence dtor 347B with 3 array dest
 ?rva001F9C73@Rva001F9C73@@QAEAAV1@PBURva001F9C73Src@@@Z	0x001F9C73	69	blocked	placement new null check test ecx je remains vs retail lea push call direct; 0 mem reg but +7B structural; need clean idiom without check t=20 model=muse-spark
 ?rva004EA33A@Rva004EA33A@@QAEXXZ	0x004EA33A	106	partial	this iter esi edi swap plus loop jmp vs je and pop ecx timing; 0 layout 104 vs 106B t=25 model=muse-spark score=0.91 stash=reverse/attempts/0x004ea33a.cpp
 ?rva005C4845@Rva005C4845@@QAE_NXZ	0x005C4845	109	blocked	EH save restore this+0xc with scope tables ba0ae2 bfb1cc; this+0+4 array sar2 with virtual slot0 on arg ebx+4; class arg and global g_00BFB1CC unknown no donor vtable or string t=10 model=muse-spark
+?rva005158A7@Rva005158A7@@QAEXXZ	0x005158A7	27	blocked	caller passes this via mov ecx esi to Delete free row 0x00515633 needs method retype t=10 model=muse-07
+FUN_00280B1A	0x00280B1A	109	blocked	same EH vector callback plus g_00BFB1CC as 0x002B55F2 needs donor t=3 model=muse-07
+??0Rva001F9C73@@QAE@PBURva001F9C73Src@@@Z	0x001F9C73	69	blocked	branchless neg-sbb-and null-plus-4 vs ternary branch plus placement new overhead t=15 model=muse-07
+FUN_00537EE9	0x00537EE9	109	blocked	same EH vector callback plus g_00BFB1CC as 0x002B55F2 0x00280B1A needs donor t=2 model=muse-07
+?rva005779A0@Rva005779A0@@QAEPAVAsciiString@@PAV2@@Z	0x005779A0	110	blocked	format plus copy plus release needs EH state plus placement-new null-check removal t=18 model=muse-07
+FUN_006D6500	0x006D6500	104	blocked	Apt SEH ctor with AptValue AptNativeHash plus vtables plus unclaimed handler 0x007A8838 needs Apt donor t=3 model=muse-07
+?rva000D4F4F@Rva000D4F4F@@QAEXXZ	0x000D4F4F	108	blocked	W3D dtor mixed ref plus TextureBase needs donor plus EH t=12 model=muse-07

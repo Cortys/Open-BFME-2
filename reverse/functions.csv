@@ -43963,3 +43963,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva004381B0@Rva004381B0@@QAEXM@Z,,0x004381B0,20,Code/GameEngine/Source/Common/Rva004381B0.cpp,matched,leaf max-float store caller 0x00299C43
 ?Rva0043822ESet@@YGXPAURva0043822EParam@@I@Z,,0x0043822E,27,Code/GameEngine/Source/Common/Rva0043822E.cpp,matched,leaf unsigned max via TheGameLogic callers 0x00439809 0x00439ED9
 ?rva00438268@Rva002542F3Member@@QBEHABV1@@Z,,0x00438268,148,Code/GameEngine/Source/GameLogic/Object/Update/Rva00438268Equal.cpp,matched,finish equality via shared fail goto caller 0x00439DB5
+?rva0035EDA1@Rva0035EE66@@UAEXPAVGameWindow@@@Z,,0x0035EDA1,68,Code/GameEngine/Source/Common/Rva0035EDA1Init.cpp,matched,vtable 0x0081661C slot 1 plus rowed winGetSize Position
