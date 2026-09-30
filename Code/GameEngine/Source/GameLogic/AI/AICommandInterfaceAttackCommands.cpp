@@ -151,6 +151,7 @@ public:
 	void rva003C76B8(Int value, CommandSourceType cmdSource);
 	void rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void rva003C75DD(const Coord3D *position, CommandSourceType cmdSource);
+	void rva0036EA01(const Coord3D *position, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -652,5 +653,18 @@ void AICommandInterface::rva003C75DD(const Coord3D *position, CommandSourceType 
 	AICommandParms parms((AICommandType)0x52, cmdSource);
 	parms.m_pos = *position;
 	parms.m_intValue = 1;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036EA01@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z @0x0036EA01 115B
+// Evidence: AICMD 0x52 plus m_pos at +0x08 plus m_intValue 0 at +0x34 plus slot-0 aiDoCommand.
+// Same shape as rva003C75DD in this TU (118B with mov [ebp-0x98],1); the 3B delta is the
+// /O1 and [ebp-0x98],0 zero encoding. Caller at 0x003C7ADD via lea ecx [edi+0x20]
+// (AICommandInterface subobject of AIUpdateInterface) with coord plus source 1.
+void AICommandInterface::rva0036EA01(const Coord3D *position, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x52, cmdSource);
+	parms.m_pos = *position;
+	parms.m_intValue = 0;
 	aiDoCommand(&parms);
 }

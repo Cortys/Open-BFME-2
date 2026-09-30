@@ -4314,3 +4314,6 @@ FUN_004b2e4c	0x000B2E4C	105	blocked	custom-ecx-esi-stack-convention-t12-model-mu
 FUN_0010E604	0x0010E604	96	blocked	three vector types in one body: AsciiString get_allocator plus GeometryShape Vector_base plus Rva0007BB16Record uninitialized_copy with EH; needs shared STL version investigation t=5 model=muse-09
 FUN_005DD8E0	0x005DD8E0	281	blocked	two-float UnicodeString ratio ctor with fabs plus snprintf percent2f plus locale decimal split via format-translate; needs donor shape investigation t=8 model=muse-09
 ?rva001DD604@Eva@@QAE_NHPAH@Z	0x001DD604	108	blocked	3 idiv no-CSE plus push-edi-before-jl wall; /O1 CSEs to 2 idivs 96B, volatile gives 3 idivs 115B with extra movs, /O2 magic-mul, /Os same as /O1; t=30 model=muse-17
+FUN_008ff910	0x004FF910	125	blocked	game-logic random-pick via int-int map find plus 0x58-table t=12 model=muse-19
+FUN_0099904a	0x0059904A	149	blocked	two-vector virtual-delete plus erase cleanup unknown class t=10 model=muse-19
+??1Rva0014A5B0@@UAE@XZ	0x0014A5B0	127	blocked	ww3d dtor two vptrs plus refcount at C4 plus StringBase at CC over RenderObj base t=10 model=muse-19
