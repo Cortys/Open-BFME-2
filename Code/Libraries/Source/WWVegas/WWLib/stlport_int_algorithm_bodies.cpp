@@ -31,3 +31,11 @@ void bfmeEmitIntPartialSort(int *first, int *last)
 {
 	_STL::partial_sort(first, last, last, _STL::less<int>());
 }
+
+// ??$push_heap@PAHU?$greater@H@_STL@@@_STL@@YAXPAH0U?$greater@H@0@@Z @0x003B02B8 25B
+// and ??$__push_heap_aux@PAHU?$greater@H@_STL@@HH@_STL@@YAXPAH0U?$greater@H@0@00@Z
+// @0x003B01A0 35B: the push side of the greater<int> heap whose __push_heap
+// 0x003B002A is rowed above; push_heap forwards two null type tags to the aux,
+// which passes *(last-1), 0 and (last-first)-1. Caller of push_heap 0x003B0448
+// (priority_queue<int, vector<int>, greater<int> > push site).
+template void _STL::push_heap<int *, _STL::greater<int> >(int *, int *, _STL::greater<int>);
