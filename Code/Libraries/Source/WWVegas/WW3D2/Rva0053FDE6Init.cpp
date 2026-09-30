@@ -28,3 +28,19 @@ public:
 Rva0053FDE6::Rva0053FDE6() : m_00(2), m_04(0.0f), m_08(0.0f), m_0c(0.0f), m_10(0.0f), m_14(0.0f), m_18(0.0f), m_1c(g_Va00BBB8D8), m_20(g_Va00BC74F0)
 {
 }
+
+// ??0Rva0054000B@@QAE@XZ, retail 0x0054000B, 16 bytes.
+// Outer ctor with int at +0 = 0 and inner Rva0053FDE6 at +4 via rowed ctor.
+// /Ob0 keeps the inner call from inlining so retail keeps lea ecx [edx+4] call.
+// Evidence: calls landed 0x0053FDE6; caller at 0x00540A54; unblocks 0x00540A26.
+class Rva0054000B
+{
+public:
+	Rva0054000B();
+	int m_00;
+	Rva0053FDE6 m_04;
+};
+
+Rva0054000B::Rva0054000B() : m_00(0)
+{
+}

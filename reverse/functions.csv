@@ -43267,3 +43267,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00512CE9@Rva00512CE9@@QAEXH_N@Z,,0x00512CE9,94,Code/GameEngine/Source/Common/Rva00512CE9Kick.cpp,matched,kick button sprintf plus apt invoke via g_Va009FE4CC
 ??_GRva005E888A@@QAEPAXI@Z,,0x005E88C1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E88C1.cpp,matched,deleting dtor via rowed dtor plus rowed delete
 ??1Rva005E8EA1@@QAE@XZ,,0x005E8EA1,8,Code/GameEngine/Source/Common/Bfme/Rva005E8EA1Dtor.cpp,matched,nonvirtual dtor tail-jmp to rowed member dtor at plus8
+??0Rva0054000B@@QAE@XZ,,0x0054000B,16,Code/Libraries/Source/WWVegas/WW3D2/Rva0053FDE6Init.cpp,matched,outer ctor int0 plus inner via rowed ctor
