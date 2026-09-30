@@ -4330,3 +4330,5 @@ FUN_00a03b0a	0x00603B0A	146	blocked	STL Rb_tree 146B needs map donor t=2 model=m
 FUN_009390ae	0x005390AE	147	blocked	free plus EH 147B needs dtor work t=2 model=muse-spark
 FUN_006febb7	0x002FEBB7	148	blocked	STL ctor 148B with EH plus 2 vtables t=2 model=muse-spark
 FUN_0059ef70	0x0019EF70	151	blocked	WW3D SEH 151B needs hlod donor t=2 model=muse-spark
+?rva00383A51@Rva00383A51@@QAEXPAURva00383A51Node@@0@Z	0x00383A51	68	partial	66B vs 68B with Oy- frame: retail spills this to [ebp-4] plus reuses slot via mov edi esp and mov [edi] ebx; ours keeps this in edi plus pushes erase arg after increment via push ebx; needs slot-before plus this-spill lever t=25 model=muse-11 score=0.9 stash=reverse/attempts/0x00383a51.cpp
+??0Rva00562366@@QAE@IAAUSrc00562366@@@Z	0x00562366	376	partial	378B vs 376B plus2 from lea edi plus mov ecx edi for member plus reorder of lea eax and mov state1 vs state2; needs member-address in ecx preserved plus state2 lever t=30 model=muse-11 score=0.93 stash=reverse/attempts/0x00562366.cpp
