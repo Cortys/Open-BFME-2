@@ -63,6 +63,7 @@ struct Rva0046AC52 {
 	Rva0046AC52Iter rva0046AC52(Rva0046AC52Node *x, Rva0046AC52Node *y, const Rva0046AC52Key &v, Rva0046AC52Node *w);
 	Rva0046AC52Pair rva002D563D(const Rva0046AC52Key &v);
 	Rva0046AC52Iter rva0046E563(Rva0046AC52Iter position, const Rva0046AC52Key &v);
+	Rva0046AC52Iter rva0046F0A5(Rva0046AC52Node *position, const Rva0046AC52Key &v);
 };
 typedef _STL::_Rb_tree<unsigned int, _STL::pair<const unsigned int, bool>, _STL::_Select1st<_STL::pair<const unsigned int, bool> >, _STL::less<unsigned int>, _STL::allocator<_STL::pair<const unsigned int, bool> > > UIntBoolTree075E0;
 Rva0046AC52Iter Rva0046AC52::rva0046AC52(Rva0046AC52Node *x, Rva0046AC52Node *y, const Rva0046AC52Key &v, Rva0046AC52Node *w)
@@ -113,6 +114,12 @@ Rva0046AC52Pair Rva0046AC52::rva002D563D(const Rva0046AC52Key &v)
 	if (j->_key10 < v.key)
 		return Rva0046AC52Pair(rva0046AC52(x, y, v, 0), true);
 	return Rva0046AC52Pair(j, false);
+}
+// ?rva0046F0A5@Rva0046AC52@@QAE?AURva0046AC52Iter@@PAURva0046AC52Node@@ABURva0046AC52Key@@@Z @0x0046F0A5 29B
+// Evidence: chain lane calls rowed 0x0046E563; same TU same flags; caller 0x00470388.
+Rva0046AC52Iter Rva0046AC52::rva0046F0A5(Rva0046AC52Node *position, const Rva0046AC52Key &v)
+{
+	return rva0046E563(position, v);
 }
 // ?rva0046E563@Rva0046AC52@@QAE?AURva0046AC52Iter@@U2@ABURva0046AC52Key@@@Z @0x0046E563 294B
 // Evidence: chain lane calls rowed 0x0046AC52 plus rowed 0x002D563D plus rowed _M_increment plus _M_decrement; same TU same flags.
