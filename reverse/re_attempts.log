@@ -4195,3 +4195,7 @@ FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; s
 ?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z	0x004036B1	92	partial	test-eax-fffffffc-vs-sar-2-only-diff-plus-barrier-fixed-CSE t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x004036b1.cpp
 ??1Rva0034B178@@UAE@XZ	0x0034B178	113	blocked	EH-dtor-dual-vtable-plus-virtual-delete-pair-plus-StringBase-needs-base-layout t=10 model=muse-12
 ?rva002B565F@Rva002B565F@@QAEXPAUApply002B565F@@@Z	0x002B565F	112	blocked	functor-thiscall-via-funcptr-needs-thjscall-typedef-C4234-memberptr-bloats-plus-EH-guard t=15 model=muse-12
+?rva0045F9D8@SpawnBehavior@@QAE_NXZ	0x0045F9D8	127	blocked	ebx this plus virtual 0x68 plus lea0c wall after 3 variants t=15 model=muse-spark
+?Rva004786F8Calc@@YGXPBVArg004786F8@@M@Z	0x004786F8	114	blocked	x87 fcompi vs fcomp plus mov order wall after 3 variants t=12 model=muse-spark
+?rva0030C09F@Rva0030C09F@@QAEHXZ	0x0030C09F	112	blocked	same bfb1cc wall as 0x003F8646 0x00319714 0x003F0D2C: EH this+c save restore plus sar2 plus virtual slot0 plus g_BFB1CC t=2 model=muse-spark
+?Rva00511C3AFire@@YAXPAVRva00222A8BTarget@@PAXPBDPBHPB_N@Z	0x00511C3A	122	blocked	AsciiString hidden plus bool movzx plus invoke order wall after 3 variants t=15 model=muse-spark
