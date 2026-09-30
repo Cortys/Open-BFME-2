@@ -12,6 +12,8 @@
 // load-bearing (defaults give mov eax plus test while /O1 gives pop-pop for
 // the 8-byte cleanup; /G7 gives cmp plus add exact).
 extern unsigned int g_Va00DEC4A8;
+// g_Va00DEC4A8: matched references place it at VA 0xdec4a8 (zero-filled .bss).
+unsigned int g_Va00DEC4A8;
 
 class DX8Wrapper
 {

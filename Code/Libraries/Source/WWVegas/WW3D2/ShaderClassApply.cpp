@@ -886,8 +886,14 @@ struct ShaderD3D9Device {
 #undef DX8CALL
 #define DX8CALL(x) reinterpret_cast<ShaderD3D9Device*>(DX8Wrapper::_Get_D3D_Device8())->x; number_of_DX8_calls++;
 extern bool ShaderAlphaReferenceOverride;
+// ShaderAlphaReferenceOverride: matched references place it at VA 0xdf29c4 (zero-filled .bss).
+bool ShaderAlphaReferenceOverride;
 extern unsigned char ShaderAlphaReference;
+// ShaderAlphaReference: matched references place it at VA 0xdb6224 (retail .data initial value 96).
+unsigned char ShaderAlphaReference = 96;
 extern bool ShaderOverbrightEnabled;
+// ShaderOverbrightEnabled: matched references place it at VA 0xdb5f84 (retail .data initial value true).
+bool ShaderOverbrightEnabled = true;
 
 
 bool ShaderClass::ShaderDirty=true;

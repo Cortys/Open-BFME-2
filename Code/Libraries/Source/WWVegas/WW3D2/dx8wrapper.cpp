@@ -5244,6 +5244,8 @@ void bfmeSetProjectionDepthBias(float bias)
 // Recovered primitive-drawing ABI and state offsets; see
 // docs/reconstruction/dx8wrapper-draw.md.
 extern bool bfmeOnlyEmissiveDraws;
+// bfmeOnlyEmissiveDraws: matched references place it at VA 0xdec3d8 (zero-filled .bss).
+bool bfmeOnlyEmissiveDraws;
 void bfmeDrawSortingPrimitive(unsigned,unsigned,unsigned,unsigned,unsigned);
 struct BfmeDrawOps:DX8Wrapper {
  static void Draw(unsigned primitive_type,unsigned start_index,unsigned polygon_count,unsigned min_vertex_index,unsigned vertex_count,bool indexed);

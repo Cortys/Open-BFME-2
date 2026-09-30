@@ -13,6 +13,8 @@ template<int N> struct _STLP_mutex_spin
 
 extern volatile long indexLockRva0083F090;
 extern int nextIndexRva0083F090;
+// nextIndexRva0083F090: matched references place it at VA 0xddef44 (zero-filled .bss).
+int nextIndexRva0083F090;
 
 int __cdecl rva0083F090()
 {
