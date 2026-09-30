@@ -86,7 +86,19 @@ public:
 			}
 		};
 
+		struct equal_result
+		{
+			Bucket *first;
+			KeyToBucketMap *second;
+
+			equal_result(Bucket *f, KeyToBucketMap *s)
+				: first(f), second(s)
+			{
+			}
+		};
+
 		insert_result insert(const value_type &value);
+		equal_result rva0005559F(const value_type &value);
 
 	private:
 		NameKeyHashInt m_hash;
@@ -155,4 +167,36 @@ int *NameKeyGenerator::KeyToBucketMap::insertNode(const value_type &value)
 	tableAt(n) = node;
 	++m_count;
 	return &node->key;
+}
+
+// KeyToBucketMap::rva0005559F, retail 0x0005559F, 115 bytes: the
+// insert_equal_noresize half beside do_insert: bucket walk with splice-after
+// on a key hit, else head-link; ++count and a {node, this} result either way.
+// Evidence: two calls to rowed KeyToBucketMap::allocateNode 0x003ED191, same
+// bucket/table/counter layout as do_insert, sits just before it. Caller
+// 0x00057C5C does resize-then-this like insert.
+NameKeyGenerator::KeyToBucketMap::equal_result
+NameKeyGenerator::KeyToBucketMap::rva0005559F(const value_type &value)
+{
+	const unsigned n = bkt_num(value);
+	Bucket *first = (Bucket *)tableAt(n);
+
+	for (Bucket *cur = first; cur != 0; cur = cur->next)
+	{
+		if (keysEqual(cur->key, lookupKey(value)))
+		{
+			Bucket *tmp = (Bucket *)allocateNode(value);
+			tmp->next = cur->next;
+			cur->next = tmp;
+			++m_count;
+			return equal_result(tmp, this);
+		}
+	}
+
+	Bucket *tmp = (Bucket *)allocateNode(value);
+	tmp->next = first;
+	tableAt(n) = tmp;
+	++m_count;
+
+	return equal_result(tmp, this);
 }
