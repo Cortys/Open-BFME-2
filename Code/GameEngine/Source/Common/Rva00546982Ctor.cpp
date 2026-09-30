@@ -35,6 +35,7 @@ class SpecialPowerModuleData
 {
 public:
 	SpecialPowerModuleData();
+	SpecialPowerModuleData(const SpecialPowerModuleData &other);
 	virtual ~SpecialPowerModuleData();
 private:
 	unsigned char m_pad04[0x18 - 4];
@@ -44,6 +45,7 @@ class Rva00546982 : public SpecialPowerModuleData
 {
 public:
 	Rva00546982();
+	Rva00546982(const Rva00546982 &other);
 	virtual ~Rva00546982();
 private:
 	_STL::set<AsciiString> m_18;
@@ -52,6 +54,13 @@ private:
 
 Rva00546982::Rva00546982()
 	: SpecialPowerModuleData()
+	, m_18()
+{
+	m_24 = false;
+}
+
+Rva00546982::Rva00546982(const Rva00546982 &other)
+	: SpecialPowerModuleData(other)
 	, m_18()
 {
 	m_24 = false;
