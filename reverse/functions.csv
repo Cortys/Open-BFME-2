@@ -44265,3 +44265,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0054A67BSiftUp@@YAXU?$_Deque_iterator@UBfmeE8@@U?$_Const_traits@UBfmeE8@@@_STL@@@_STL@@HHUBfmeE8@@@Z,,0x0054A67B,141,Code/Libraries/Source/WWVegas/WWLib/Rva0054A67BSiftUp.cpp,matched,unlock deque sift-up twin of PushHeap with above comparison
 ?setShellMenuScheme@ShellMenuSchemeManager@@QAEXVAsciiString@@@Z,,0x002005DE,124,Code/GameEngine/Source/GameClient/GUI/Shell/ShellMenuSchemeSet.cpp,matched,BFME1 ShellMenuScheme donor empty guard toLower list search compare
 ??1Rva00358B65@@QAE@XZ,,0x00358B65,57,Code/GameEngine/Source/Common/Rva00358B65Dtor.cpp,matched,holder TargetRef Release plus StringBase
+?rva001DC57C@Rva001DC57C@@QAEXPAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x001DC57C,112,Code/GameEngine/Source/GameLogic/Object/Rva001DC57C.cpp,matched,guarded 4-list copy via rowed 0x001DC1B3 Enter Leave
