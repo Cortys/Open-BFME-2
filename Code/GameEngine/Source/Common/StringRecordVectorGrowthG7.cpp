@@ -99,3 +99,6 @@ template void _STL::vector<BfmeStringRecord005F93E3>::_M_insert_overflow(
 // Retail 0x0021E69C (55B) push_back via rowed Construct 0x0021A95D plus rowed overflow 0x0021E1EB.
 template void _STL::vector<BfmeStringRecord002199C8>::push_back(
     const BfmeStringRecord002199C8 &);
+// Retail 0x0021E6D3 (55B) push_back via rowed Construct 0x0021A98A plus rowed overflow 0x0021E29F.
+template void _STL::vector<BfmeStringRecord00219A68>::push_back(
+    const BfmeStringRecord00219A68 &);
