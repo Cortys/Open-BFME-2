@@ -43307,3 +43307,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00562233@Rva00562233@@QAEXPAVXfer@@@Z,,0x00562233,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00562233Xfer.cpp,matched,containing xfer via member at 0x1C
 ??0Rva0052BD59@@QAE@ABV0@@Z,,0x0052BD59,141,Code/GameEngine/Source/Common/System/Rva0052BD59CopyCtor.cpp,matched,Copy ctor four strings via pinned StringBase copy 0x000365F0 caller 0x0052C33C unlocks 0x0052C320
 ??1Rva00216094@@UAE@XZ,,0x00216094,48,Code/GameEngine/Source/Common/Rva00216094Dtor.cpp,matched,virtual dtor string plus4 via base vptr store
+?Rva00460216XferList@@YAPAVXfer@@PAV1@PAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x00460216,194,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00460216XferList.cpp,matched,unlock xferListInt twin via xferInt slot31
