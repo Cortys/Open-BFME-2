@@ -49,6 +49,13 @@ public:
     int rva003F47E6(int outerIdx);
     int rva003F4831();
     Rva003F498AOuter *rva003F4634(void *p);
+    void *rva003F4DEE(void *p);
+};
+
+struct Rva003F4CC0Inner;
+class Rva003F4CC0 {
+public:
+    Rva003F4CC0Inner *rva003F4CC0(int id);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -181,4 +188,11 @@ Rva003F498AOuter *Rva003F498A::rva003F4634(void *p)
             return &m_outers[i];
     }
     return 0;
+}
+
+// ?rva003F4DEE@Rva003F498A@@QAEPAXPAX@Z @0x003F4DEE 25B chain find outer via rowed 0x003F4634 then tail-jmp to rowed 0x003F4CC0; callers 0x003F4FC1 0x003F5082 0x003F5BF6; same file flags
+void *Rva003F498A::rva003F4DEE(void *p)
+{
+    Rva003F498AOuter *o = rva003F4634(p);
+    return o ? ((Rva003F4CC0 *)o)->rva003F4CC0((int)p) : 0;
 }

@@ -43359,3 +43359,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003F4634@Rva003F498A@@QAEPAURva003F498AOuter@@PAX@Z,,0x003F4634,84,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock search outers unk0 vs arg+0x34 ptr same file
 ??$__uninitialized_fill_n@PAVRva0052BDE6@@IV1@@_STL@@YAPAVRva0052BDE6@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00565643,37,Code/GameEngine/Source/Common/Rva00565643FillN.cpp,matched,loop calls rowed _Construct 0x0052C34D stride 12 caller 0x00565CA2
 ?rva0028B9F6@Object@@QAEXPAV1@@Z,,0x0028B9F6,143,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B9F6.cpp,matched,module exchange dual slot2 scan plus face plus owner
+?rva003F4DEE@Rva003F498A@@QAEPAXPAX@Z,,0x003F4DEE,25,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain outer via 0x003F4634 tail-jmp 0x003F4CC0 same file
