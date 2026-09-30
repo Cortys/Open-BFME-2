@@ -43173,3 +43173,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva004E2CD5@Rva004E2CD5@@QAE_NABV?$StringBase@D@@@Z,,0x004E2CD5,34,Code/GameEngine/Source/Common/Rva004E2CD5Contains.cpp,matched,vector contains via rowed Find with last-first locals
 ?Rva000C0CE1Copy@@YAPAUBfmeVectorRecord000C0BEC@@PAU1@00@Z,,0x000C0CE1,50,Code/GameEngine/Source/Common/Rva000C0CE1Copy.cpp,matched,array copy via rowed operator equals with lazy esi
 ?xfer@Rva004AD9B0@@MAEXPAVXfer@@@Z,,0x004ADA2D,67,Code/GameEngine/Source/GameLogic/Object/Update/Rva004AD9B0Xfer.cpp,matched,slot3 Version12 base SpecialAbilityUpdate gated bool 0x8C
+?fillInLANMessage@LANAPI@@UAEXPAULANMessage@@@Z,,0x0044A966,128,Code/GameEngine/Source/GameNetwork/LANAPIFillInLANMessage.cpp,matched,vslot 57 LANAPI fill message via wcsncpy strncpy

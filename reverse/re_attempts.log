@@ -3739,3 +3739,5 @@ FUN_0099e920	0x0059E920	113	blocked	EH default ctor with vtable 0x871138 plus tw
 FUN_00776c50	0x00376C50	82	blocked	loop over AsciiString vector via global Get plus ModuleData push_back plus Drawable resize needs donor class t=8 model=muse-02
 ?_M_insert_overflow@?$vector@UBfmePod900@@V?$allocator@UBfmePod900@@@_STL@@@_STL@@IAEXPAUBfmePod900@@ABU3@ABU__false_type@2@I_N@Z	0x004CBA0F	191	partial	shape exact 191B 75ins 0diffs but gate wants PB copy and RecordOwner900 clear-construct not Pod900 t=15 model=muse-01 score=0.99 stash=reverse/attempts/0x004cba0f.cpp
 FUN_004c2bd1	0x000C2BD1	142	blocked	EH INI token plus lowercased add plus NameKey with unclear edi and globals needs donor t=10 model=muse-02
+??0Rva006FE380@@QAE@PAVAptValue@@@Z	0x006FE380	120	partial	and-via-reg plus early p load vs retail memory-and late load t=20 model=muse-03 score=0.93 stash=reverse/attempts/0x006fe380.cpp
+?Rva002162CFFire@@YAPAXPAX0PBDPBI@Z	0x002162CF	99	partial	eax-ecx mirror plus mov-ecx-target scheduling t=25 model=muse-03 score=0.94 stash=reverse/attempts/0x002162cf.cpp
