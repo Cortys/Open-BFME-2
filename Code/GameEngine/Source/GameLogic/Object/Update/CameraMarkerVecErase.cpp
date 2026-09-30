@@ -1,8 +1,6 @@
-// ?erase@CameraMarkerVec@@QAEPAVCameraMarker@@PAV2@0@Z
-// partial score=0.98 date=2026-09-26
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /Oy- /DNDEBUG /MD
 //
-// ?erase@CameraMarkerVec@@QAEXPAVCameraMarker@@0@Z, retail 0x0048D042,
+// ?erase@CameraMarkerVec@@QAEPAVCameraMarker@@PAV2@0@Z, retail 0x0048D042,
 // 51 bytes. CameraMarker vector erase(first, last): copies [last, finish)
 // down to first through the 0x00288A5C assign wrapper, destroys the
 // stale tail through the rowed 0x0048CE25 _Destroy, updates finish. All
@@ -26,7 +24,7 @@ struct random_access_iterator_tag
 };
 
 template <class _Tp>
-void _Destroy(_Tp *first, _Tp *last);
+void _Destroy(_Tp first, _Tp last);
 
 }
 
@@ -41,11 +39,7 @@ struct CameraMarkerVec
 
 CameraMarker *CameraMarkerVec::erase(CameraMarker *first, CameraMarker *last)
 {
-	CameraMarker *newFinish;
-	{
-		_STL::random_access_iterator_tag tag;
-		newFinish = Rva00288A5CAssign(last, m_finish, first, &tag);
-	}
+	CameraMarker *newFinish = Rva00288A5CAssign(last, m_finish, first, (void *)((char *)&first + 3));
 	_STL::_Destroy(newFinish, m_finish);
 	m_finish = newFinish;
 	return first;

@@ -6451,3 +6451,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__uninitialized_fill_n@PAUBfmeRecordOwner900@@IU1@@_STL@@YAPAUBfmeRecordOwner900@@PAU1@IABU1@ABU__false_type@0@@Z,0x004CB93A,ICF Pod900 row same bytes
 ?allocate@?$allocator@UBfmeRecordOwner900@@@_STL@@QBEPAUBfmeRecordOwner900@@IPBX@Z,0x004CB148,ICF Pod900 row same bytes
 ?_M_lower_bound@?$_Rb_tree@HU?$pair@$$CBHUBfmePod16@@@_STL@@U?$_Select1st@U?$pair@$$CBHUBfmePod16@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUBfmePod16@@@_STL@@@2@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBHUBfmePod16@@@_STL@@@2@ABH@Z,0x00382A92,alias of rowed map int int lower_bound at same addr key-only logic shared per Pod8 precedent
+?Rva00288A5CAssign@@YAPAVCameraMarker@@PAV1@00PAX@Z,0x00288A5C,CameraMarker erase 0x48D042 mov edi eax proves pointer return same addr as rowed void spelling
