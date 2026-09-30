@@ -25,10 +25,12 @@ class Rva00376A62 {
 	StringBase<char> *m_begin;
 	StringBase<char> *m_end;
 	void *m_end_of_storage;
+	StringBase<char> m_14;
 public:
 	bool rva00376A62(const StringBase<char> &val);
 	bool rva00376A84(const void *o);
 	void rva00376B50(const AsciiString &val);
+	bool rva0059E872(const Rva00376A62 &o);
 };
 
 bool Rva00376A62::rva00376A62(const StringBase<char> &val)
@@ -49,4 +51,9 @@ void Rva00376A62::rva00376B50(const AsciiString &val)
 {
 	if (!rva00376A62(val))
 		((_STL::vector<AsciiString> *)((char *)this + 8))->push_back(val);
+}
+
+bool Rva00376A62::rva0059E872(const Rva00376A62 &o)
+{
+	return rva00376A62(o.m_14);
 }
