@@ -44756,3 +44756,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva003B1853@Rva003B1853@@QAEXPBDH@Z,,0x003B1853,38,Code/GameEngine/Source/Common/Rva003B1853Set.cpp,matched,entry setter clears vector sets name stores int
 ?rva003B1879@Rva003B1820@@QAEXXZ,,0x003B1879,123,Code/GameEngine/Source/Common/Rva003B1879Init.cpp,matched,river texture table init via entry setter with literals
 ?Rva0012C99DRun@@YA_NXZ,,0x0012C99D,148,Code/Libraries/Source/WWVegas/WW3D2/Rva0012C99DRun.cpp,matched,wide CreateProcessW wait exit-code-0 via IAT with g_00BD2354
+?Rva0012C907Run@@YA_NPBG@Z,,0x0012C907,150,Code/Libraries/Source/WWVegas/WW3D2/Rva0012C99DRun.cpp,matched,wide CreateProcessW with curdir wait exit-code-0 via IAT

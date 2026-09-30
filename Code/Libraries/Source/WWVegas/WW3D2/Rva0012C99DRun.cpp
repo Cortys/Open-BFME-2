@@ -37,6 +37,7 @@ extern "C" __declspec(dllimport) int __stdcall GetExitCodeProcess(void *process,
 extern "C" __declspec(dllimport) int __stdcall CloseHandle(void *handle);
 
 extern const unsigned short g_00BD2354[];
+extern const unsigned short g_00BD2324[];
 
 bool __cdecl Rva0012C99DRun()
 {
@@ -50,6 +51,28 @@ bool __cdecl Rva0012C99DRun()
 	startup.cb = sizeof(startup);
 	wcscpy(command, g_00BD2354);
 	if (CreateProcessW(0, command, 0, 0, 0, 0x8000000, 0, 0, &startup, &info)) {
+		WaitForSingleObject(info.hProcess, 0xFFFFFFFF);
+		if (!GetExitCodeProcess(info.hProcess, &exitCode) || exitCode == 0)
+			ok = true;
+		CloseHandle(info.hProcess);
+		CloseHandle(info.hThread);
+		return ok;
+	}
+	return false;
+}
+
+bool __cdecl Rva0012C907Run(const unsigned short *currentDirectory)
+{
+	STARTUPINFOW startup;
+	unsigned short command[260];
+	PROCESS_INFORMATION info;
+	DWORD exitCode;
+	bool ok = false;
+
+	ji_006291ae(&startup, 0, sizeof(startup));
+	startup.cb = sizeof(startup);
+	wcscpy(command, g_00BD2324);
+	if (CreateProcessW(0, command, 0, 0, 0, 0x8000000, 0, currentDirectory, &startup, &info)) {
 		WaitForSingleObject(info.hProcess, 0xFFFFFFFF);
 		if (!GetExitCodeProcess(info.hProcess, &exitCode) || exitCode == 0)
 			ok = true;
