@@ -98,3 +98,9 @@ Xfer *__cdecl Rva0060BC53Xfer3(Xfer *xfer, int *data)
 	} while (--n != 0);
 	return xfer;
 }
+
+Xfer *__cdecl Rva0060BD31Xfer(Xfer *xfer)
+{
+	int tmp[3];
+	return Rva0060BC53Xfer3(xfer, tmp);
+}
