@@ -43192,3 +43192,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00257252@Rva00257252@@QAEAAUBfmePod16@@ABH@Z,,0x00257252,92,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_pod16_subscript.cpp,matched,chain via 0x00256F67 insert caller 0x0025740B
 ?rva0027C208@Rva0027C208@@QAEPAXPAX@Z,,0x0027C208,16,Code/GameEngine/Source/Common/Rva0027C208.cpp,matched,thiscall wrapper pushes arg then virtual slot 0x18 then returns arg
 ?rva004FCA5A@Rva004FCA5A@@QAEPAXABVRva00376A62@@@Z,,0x004FCA5A,54,Code/GameEngine/Source/Common/Rva004FCA5ASearch.cpp,matched,pointer-array search via forward with field return
+?Rva001806D8Create@@YAXPBDHH@Z,,0x001806D8,92,Code/GameEngine/Source/Common/Rva001806D8Create.cpp,matched,chain of Rva001805E0 via plain new null-tolerant
