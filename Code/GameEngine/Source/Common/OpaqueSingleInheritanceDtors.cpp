@@ -11,14 +11,29 @@
 class Rva0098477
 {
 public:
+	Rva0098477();
 	virtual ~Rva0098477();
 };
 
 class Rva00984EF : public Rva0098477
 {
 public:
+	Rva00984EF();
 	virtual ~Rva00984EF();
+
+private:
+	unsigned char m_pad04[0xC];
+	int m_10;
+	int m_14;
+	int m_18;
 };
+
+Rva00984EF::Rva00984EF()
+{
+	m_10 = 0;
+	m_14 = 0;
+	m_18 = 0xFF;
+}
 
 Rva00984EF::~Rva00984EF()
 {

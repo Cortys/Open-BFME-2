@@ -44514,3 +44514,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva004FD533@Rva004FD3E2@@QBEXHHPAH@Z,,0x004FD533,62,Code/GameEngine/Source/Common/Rva004FD3E2.cpp,matched,map at this+0x5c via rowed equal_range 0x004FCD6D max field at ptr+0x10
 ?rva00267DF1@Rva00267DF1@@QAEXPAXPBUCoord3D@@HH@Z,,0x00267DF1,85,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva00267DF1.cpp,matched,chain slot66 AIUpdate vtable layout plus this-call into rowed 0x00265667
 ?rva004FD4AE@Rva004FD4AE@@QAEXPBVModuleData@@@Z,,0x004FD4AE,19,Code/GameEngine/Source/Common/Rva004FD4AE.cpp,matched,vector at this+0x98 via rowed push_back 0x004DFCB0 abuts 0x004FD448
+??0Rva00984EF@@QAE@XZ,,0x000984CE,33,Code/GameEngine/Source/Common/OpaqueSingleInheritanceDtors.cpp,matched,ctor beside rowed dtor base Rva0098477 vtable 0x7C82D4 zeroes plus 0xFF
