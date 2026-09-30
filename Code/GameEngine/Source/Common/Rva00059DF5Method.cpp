@@ -63,6 +63,7 @@ public:
 	virtual void f25();
 	virtual void vf26(const AsciiString &a, int idx);
 	void rva00059DF5(const AsciiString &a, int idx);
+	void rva00059E5C(int idx);
 private:
 	char m_pad4[0x9D4 - 4];
 	void *m_mutex;
@@ -75,4 +76,13 @@ void Rva00059DF5::rva00059DF5(const AsciiString &a, int idx)
 	MilesMutexGuard guard(&m_mutex, 0);
 	vf26(a, idx);
 	m_sets[idx].insert(a);
+}
+
+// ?rva00059E5C@Rva00059DF5@@QAEXH@Z at 0x00059E5C (82B).
+// Sibling of 0x00059DF5: guard over +0x9D4 then tree clear 0x57B4B at +0xA14.
+// Evidence: same mutex/sets layout, add 0xD7 imul 0xC needs /G7, ret 4 single int.
+void Rva00059DF5::rva00059E5C(int idx)
+{
+	MilesMutexGuard guard(&m_mutex, 0);
+	m_sets[idx].clear();
 }
