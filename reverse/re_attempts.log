@@ -4161,3 +4161,6 @@ FUN_007F0D2C	0x003F0D2C	112	blocked	same bfb1cc wall as 0x005C4845 t=2 model=mus
 ?rva004FA7A5@Rva004FA7A5	0x004FA7A5	112	blocked	EH callback loop over vector plus counter plus virtual free t=8 model=muse-spark
 FUN_009401e3	0x005401E3	112	blocked	EH vector visitor 112B 2-arg twin of 0x0027F519 wall needs scope store 0x7FB1CC plus sub-esp frame plus member-ptr call via ebx 6 probes RAII gives lea but no scope try gives scope but wrong regs t=20 model=muse-10
 FUN_0078153b	0x0038153B	112	blocked	twin of 0x005401E3 112B 2-arg EH visitor wall same scope 0x7FB1CC same bytes except handler 6 probes on twin show RAII-vs-scope incompatibility no new idea t=2 model=muse-10
+?Rva000ADF1BWrapper@@YAPAHPAF00@Z	0x000ADF1B	29	blocked	wrapper passes 5 args to 3-arg 0xAD8EB copy extra 0 plus local ignored; cannot express fixed-arg call with extra args honestly t=10 model=muse-05
+??0Rva00431FB5@@QAE@XZ	0x00431FB5	61	partial	63B vs 61B 0 reg only scheduling second vptr vs ecx load order plus first vptr pos; layout EH exact via vptr placeholder plus nontrivial Rva dtor t=20 model=muse-05 score=0.95 stash=reverse/attempts/0x00431fb5.cpp
+??0Rva005E21EB@@QAE@XZ	0x005E21EB	59	partial	57B vs 59B 0 mem 1 reg only scheduling or-minus1 vs mov-eax return-this plus ecx-FS order t=15 model=muse-05 score=0.95 stash=reverse/attempts/0x005e21eb.cpp

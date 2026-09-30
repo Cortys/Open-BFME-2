@@ -58,3 +58,39 @@ Rva005F83DF::~Rva005F83DF()
 {
 	m_member04.clear();
 }
+
+// ?rva00577914@Rva00577914@@QAEXXZ @0x00577914 26B: virt slot4 on [m08+0x3C] with m0C then tail clear on +0x14; caller 0x00577E53 45B; prev Release next dtor; no donor.
+class Rva00577914Virt
+{
+public:
+	virtual void d0();
+	virtual void d1();
+	virtual void d2();
+	virtual void d3();
+	virtual void virt4(int);
+};
+
+struct Rva00577914Mid
+{
+	char m_pad[0x3C];
+	Rva00577914Virt *m_obj;
+};
+
+class Rva00577914
+{
+public:
+	void rva00577914();
+private:
+	int m_00;
+	int m_04;
+	Rva00577914Mid *m_08;
+	int m_0C;
+	int m_10;
+	Rva000AD6F4 m_14;
+};
+
+void Rva00577914::rva00577914()
+{
+	m_08->m_obj->virt4(m_0C);
+	m_14.clear();
+}
