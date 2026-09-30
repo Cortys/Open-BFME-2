@@ -44025,3 +44025,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?readUntilSemicolon@@YAXPAVFile@@PADH@Z,,0x00314DE8,90,Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScript_parseLayoutBlock.cpp,matched,incidental placement: the parseLayoutBlock TU already emits this file-static helper; 90B body occurs exactly once in .text at the Ghidra row 0x314DE8; name carried from the reference source
 ?clear@Rva000AD6F4@@QAEXXZ,,0x000AD6F4,29,Code/GameEngine/Source/Common/Disp8DivAvgDwordGetters.cpp,matched,owning-pointer clear via virtual slot0 plus delete 40 callers
 ??0Rva004181A6@@QAE@ABV0@@Z,,0x004181A6,79,Code/GameEngine/Source/GameClient/Rva004181A6CopyCtor.cpp,matched,copy ctor via pinned StringBase plus rowed FixedStorage Rb_tree
+??0Rva00418232@@QAE@ABVAsciiString@@ABVRva004181A6@@@Z,,0x00418232,57,Code/GameEngine/Source/GameClient/Rva00418232Ctor.cpp,matched,ctor via pinned StringBase plus rowed Rva copy
