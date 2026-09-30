@@ -44050,3 +44050,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva000AD8EBCopy@@YAPAHPAF0PAH@Z,,0x000AD8EB,41,Code/GameEngine/Source/Common/Rva000AD8EBCopy.cpp,matched,sign-extending word to dword copy three pointers
 ??0Rva000F1B8F@@QAE@PBD@Z,,0x000F1B37,60,Code/GameEngine/Source/Common/Rva000F1B8FCtor.cpp,matched,ctor vtable plus m04 zero plus String from arg
 ?rva000F1BC5@Rva000F1BC5@@QAEXPBD@Z,,0x000F1BC5,72,Code/GameEngine/Source/Common/Rva000F1BC5Method.cpp,matched,chain new Rva000F1B8F plus Add to table
+??0Rva004181F5@@QAE@ABV0@@Z,,0x004181F5,61,Code/GameEngine/Source/GameClient/Rva004181F5CopyCtor.cpp,matched,copy ctor via pinned StringBase plus rowed Rva
