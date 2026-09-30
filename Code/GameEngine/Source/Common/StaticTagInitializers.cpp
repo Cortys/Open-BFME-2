@@ -193,9 +193,19 @@ void bfmeRva00C6D370InitializeTag()
     bfmeRva0130A8FCTagSlot.set(bfmeRva012C3B38TagValue, 0x41444D4E);
 }
 
+void bfmeRva00C6D390InitializeTag()
+{
+    bfmeRva0130A8A8TagSlot.set(bfmeRva012C3B38TagValue, 0x50494E47);
+}
+
 void bfmeRva00C6D3C0InitializeTag()
 {
     bfmeRva0130A9C8TagSlot.set(bfmeRva012C3BC0TagValue, 0x434F4E4E);
+}
+
+void bfmeRva00C6D3E0InitializeTag()
+{
+    bfmeRva0130AA1CTagSlot.set(bfmeRva012C3BC0TagValue, 0x55534552);
 }
 
 void bfmeRva00C6D400InitializeTag()
@@ -303,6 +313,11 @@ void bfmeRva00C6D6A0InitializeTag()
     bfmeRva0130AA04TagSlot.set(bfmeRva012C3BC0TagValue, 0x5247414D);
 }
 
+void bfmeRva00C6D6C0InitializeTag()
+{
+    bfmeRva0130AA88TagSlot.set(bfmeRva012C3BC0TagValue, 0x50494E47);
+}
+
 void bfmeRva00C6D6E0InitializeTag()
 {
     bfmeRva0130AB0CTagSlot.set(bfmeRva012C3BC0TagValue, 0x484F4D47);
@@ -333,6 +348,11 @@ void bfmeRva00C6D780InitializeTag()
     bfmeRva0130AA40TagSlot.set(bfmeRva012C3BC0TagValue, 0x41425553);
 }
 
+void bfmeRva00C6D7A0InitializeTag()
+{
+    bfmeRva0130AA70TagSlot.set(bfmeRva012C3BC0TagValue, 0x44495343);
+}
+
 void bfmeRva00C6D7C0InitializeTag()
 {
     bfmeRva0130AAD0TagSlot.set(bfmeRva012C3BC0TagValue, 0x52455356);
@@ -347,4 +367,3 @@ void bfmeRva00C6D800InitializeTag()
 {
     bfmeRva0130A9E0TagSlot.set(bfmeRva012C3BC0TagValue, 0x4847414D);
 }
-
