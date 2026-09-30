@@ -162,3 +162,18 @@ void Rva0055F76C::rva0055F76C(Xfer *xfer)
 	xfer->xferReal(&m_24);
 	xfer->xferReal(&m_28);
 }
+
+class Rva0055F805
+{
+public:
+	virtual void rva0055F805(Xfer *xfer);
+private:
+	unsigned char m_pad[0x08];
+	Rva0055F76C m_info;
+};
+
+void Rva0055F805::rva0055F805(Xfer *xfer)
+{
+	xfer->Version1();
+	m_info.Rva0055F76C::rva0055F76C(xfer);
+}
