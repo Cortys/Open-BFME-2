@@ -6437,3 +6437,8 @@ _Rva00850560,0x000236F0,STLport locale long-date-time-format getter: same shape 
 ?Rva009A86F0Allocate@@YAHPAX@Z,0x001B9140,BFME1-donor declaration Rva009A86F0Allocate(void*) in BfmeCheckJX.cpp; its call site at body+0x1D6 pushes the state pointer only; address is the retail call target
 ?Rva009B60E0BuildTree@@YAXPAI0H@Z,0x001C69E0,BFME1-donor declaration Rva009B60E0BuildTree(unsigned* unsigned* int) in Rva009AB320BuildTables.cpp; the three retail call sites +0x4F +0xD8 +0x17F all land here and only the call displacement differed
 ?Rva009C6800@@YAXPBEPAEHPBX2@Z,0x001D7100,call site +0x1BF of Rva009C6A30 agrees with the sweep's own verified placement of this 254B body at 0x001D7100
+?a_007ea650@@YAXXZ,0x0066D7D0,1st call of donor Rva007F62F0ConnectRequest (void*(__fastcall*)(void*))a_007ea650(m_field08) maps to retail call site +0x67; the row at this address is get@Rva00657650LeaGetter
+?getAt80@Rva007EA6B0Accessor@@QAEPAXXZ,0x00657650,2nd call of donor Rva007F62F0ConnectRequest ->m_field08->getAt80() maps to retail call site +0x70; the row at this address is get@Rva0066D7D0LeaField
+?erase@Rva008314E0String@@QAEPADPAD0@Z,0x00012150,donor Rva008314E0StringReplace calls its out-of-line erase; retail site +0xB3 lands on 0x00012150 where the ledger row is basic_string erase (folded thunk)
+?insertRange@Rva008314E0String@@QAEXPAD00ABUBfmeRangeTag@@@Z,0x00028820,donor Rva008314E0StringReplace insertRange call site +0x126 lands here (already a pinned address)
+?replaceBase@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z,0x0002A730,last call of donor Rva008314E0StringReplace (return replaceBase(...)) lands on retail site +0x1E8

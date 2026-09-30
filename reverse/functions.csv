@@ -43019,3 +43019,12 @@ _Rva0084DE40Tail,,0x000210C0,433,Code/Libraries/Source/STLport/Rva0084DE40DateFo
 ?rva002D23ED@Rva002D22CA@@QAEXPAXH@Z,,0x002D23ED,106,Code/GameEngine/Source/Common/Rva002D22CARegister.cpp,matched,vtable slot1 caller 0x002D2457 proves Rva002D22CA owner and TheNameKeyGenerator table register
 ?ReAcquireResources@Rva00108660ResourceManager@@QAE_NXZ,,0x00108660,140,Code/GameEngine/Source/Common/Rva00108660ReAcquire.cpp,matched,caller W3DShadowManager new DX8IB BfmeVB stores 0x254 0x258
 ?Rva0059F260Set@@YGXHVUnicodeString@@@Z,,0x0059F260,54,Code/GameEngine/Source/Common/Rva0059F20BSet.cpp,matched,stdcall wrapper over 0x0059F20B with by-value UnicodeString
+?send@Rva007F49E0VtableSlot3@@UAEHPAURva007F49E0Packet@@@Z,,0x00661490,372,Code/GameEngine/Source/GameNetwork/Rva007F49E0UdpPacketSend.cpp,matched,
+?Rva009C5360@@YAXPAF0PAEH@Z,,0x001D5C60,308,Code/GameEngine/Source/Common/Rva009C5360.cpp,matched,
+?bfmeMeshHitTest1290@BfmePicker1284@@QAE_NPAUBfmeMesh1290@@PBUBfmeTransform2_1290@@HH@Z,,0x006F9DE0,272,Code/GameEngine/Source/Common/BfmePicker1284.cpp,matched,
+?Rva009C6800@@YAXPBEPAEHPBX2@Z,,0x001D7100,254,Code/GameEngine/Source/Common/Rva009C6800.cpp,matched,
+?removePair@Rva009A3540PairOwner@@QAEXPAURva009A3540OpaqueOwner@@0@Z,,0x00759130,236,Code/GameEngine/Source/Common/Rva009A3540TwoKeyHashRemove.cpp,matched,
+_Rva0086B360Dispatch,,0x006AABE0,203,Code/GameEngine/Source/GameNetwork/GameSpy/peer/Rva0086B360Dispatch.cpp,matched,
+_piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/peer/Rva0086B360Dispatch.cpp,matched,
+?replaceRange@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z,,0x0002B050,501,Code/Libraries/Source/STLport/Rva008314E0StringReplace.cpp,matched,
+?request@Rva007F62F0ConnectRequest@@QAEXHPAXPAH@Z,,0x00662A80,215,Code/GameEngine/Source/GameNetwork/Rva007F62F0ConnectRequest.cpp,matched,
