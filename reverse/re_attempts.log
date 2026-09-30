@@ -4500,3 +4500,6 @@ FUN_002CCD56	0x002CCD56	225	blocked	225B dtor with vtable 0x802114 plus two vect
 ?Rva003F005FParse@@YAXPAX0PAX@Z	0x003F005F	208	blocked	INI PlayerWorldToMapMatchingData parser needs INIException QAA varargs plus TI1 plus CxxThrow form plus second-arg type from 202B caller over budget t=10 model=muse-09
 ?Rva006D55B0Get@@YAHXZ	0x006D55B0	211	blocked	EAStringC Mid-Left 2-arg with ChangeBuffer offset0 needs exact StringDataC layout plus EH beyond 4-lookup budget t=10 model=muse-09
 ?Rva009B60E0BuildTree@@YAXPAI0H@Z	0x001C69E0	435	blocked	VP6 Huffman BuildTree no BFME1 donor body only decl plus 3 callers in BuildTables second loop sorted-list via parent plus third loop prob div idiv plus byte store best 479B vs 441B plus 38B with 25 mem 39 reg diffs needs On2 VP6 reference beyond 4-lookup budget t=20 model=muse-09
+?rva00513040@Rva00513040@@QAEXHH@Z	0x00513040	162	partial	161vs162B late-manager-mov plus eax-vs-ecx str regs 6 variants O1 Os G7 inline owner-local t=25 model=muse-01 score=0.92 stash=reverse/attempts/0x00513040.cpp
+?rva006DAFE0@Rva006DB090@@QAEPAXI@Z	0x006DAFE0	172	blocked	Dogma alloc wall 181vs172B 7 structural count-reg plus slot-order plus ebp-nsize 2 variants t=15 model=muse-01
+?Rva004F6789Heap@@YAXHHH_N@Z	0x004F6789	237	blocked	heap sift-up 237B with dual EH ref temps needs honest Rva004F64FC 12B model placeholder 51B t=10 model=muse-01
