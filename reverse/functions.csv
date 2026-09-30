@@ -43158,3 +43158,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00032A20@GeneralAllocator@Allocator@EA@@QAEIPBX@Z,,0x00032A20,146,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,caller _GetBlockSize lock 0x4E4 count 0x18 size mask 0x7FFFFFF8
 ?rva0007BAD6@Rva0007BAD6@@QAEXXZ,,0x0007BAD6,64,Code/GameEngine/Source/Common/Rva0007BAD6Clear.cpp,matched,release-all clear over plus0x14 to plus0x24 via rowed holder and texture-ref clears
 ?rva0059E31F@Rva0059E2FD@@QAE_NABV1@@Z,,0x0059E31F,16,Code/GameEngine/Source/Common/Rva0059E2FDContains.cpp,matched,same-class forward to contains via string at 0x14
+?rva002567B9@ModuleFactory@@QAEXABVAsciiString@@HW4ModuleType@@HH@Z,,0x002567B9,49,Code/GameEngine/Source/Common/Thing/ModuleFactoryRva002567B9.cpp,matched,unlock ModuleFactory create via template rowed findtemplate
