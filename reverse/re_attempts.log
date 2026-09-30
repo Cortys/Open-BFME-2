@@ -3720,3 +3720,6 @@ FUN_004bde85	0x000BDE85	146	blocked	EH SSE ctor with unknown float at 0xBC9A0C a
 ?rva005DB145@Rva005DB145@@QAEXABURva0039B2E6Input@@H@Z	0x005DB145	163	partial	169B outer cmp order plus inner test-mask vs sar plus begin staged in ecx vs mem sub t=28 model=muse-07 score=0.92 stash=reverse/attempts/0x005db145.cpp
 ?rva00057FC1@Rva00057FC1@@QAEXXZ	0x00057FC1	73	blocked	begin-first eval plus mask-test vs sar plus dead mov ecx esi before stdcall free persists across ptr int namedtemp O1 O2; member-call alias forbidden t=30 model=muse-07
 ?rva00032DF0@GeneralAllocator@Allocator@EA@@QAEPAXI@Z	0x00032DF0	194	partial	esi-edi swap whole body plus push order plus extra add-mov vs mov-sub 197vs194 shape-lever-26 tried t=20 model=muse-07 score=0.92 stash=reverse/attempts/0x00032df0.cpp
+FUN_00904112	0x00504112	38	blocked	STL _M_find 58B vs retail 38B single-unsigned-compare walk; set-find emits 58B not 38B; needs hand-rolled lower_bound model t=18 model=muse-spark
+FUN_0092C119	0x0052C119	72	blocked	clamp 0xB8 vector register wall 9 regdiffs 5 regions; unsigned fix got jae but push-ebx plus edi-vs-ebx remain; needs live-range rethink t=15 model=muse-spark
+?appendChar@DisplayString@@UAEXG@Z	0x00358957	38	blocked	vslot22 appendChar frameless29 vs frame38; EBP plus esi plus arg-copy missing with O1 MD; needs frame-pointer plus esi-live model t=12 model=muse-spark
