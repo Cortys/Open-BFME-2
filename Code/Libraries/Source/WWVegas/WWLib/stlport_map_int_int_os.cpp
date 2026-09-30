@@ -60,3 +60,7 @@ IntIntNode * __stdcall Rva003834EFClone(IntIntNode *src)
 
 
 
+
+// Whole-class instantiation of this tree: insert_equal (retail 0x004FF876) come byte-identical
+// from it; their calls read the tree's matched STL helpers.
+template class _STL::_Rb_tree<int,_STL::pair<int const ,int>,_STL::_Select1st<_STL::pair<int const ,int> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,int> > >;

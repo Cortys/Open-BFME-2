@@ -18,3 +18,7 @@ typedef _STL::pair<const int, Rva00462D08Mapped> Rva00462D08Pair;
 typedef _STL::_Rb_tree<int, Rva00462D08Pair, _STL::_Select1st<Rva00462D08Pair>, _STL::less<int>, _STL::allocator<Rva00462D08Pair> > Rva00462D08Tree;
 
 template void Rva00462D08Tree::_M_erase(Rva00462D08Tree::_Link_type);
+
+// Whole-class instantiation of this tree: clear (retail 0x004633D3) come byte-identical
+// from it; their calls read the tree's matched STL helpers.
+template class _STL::_Rb_tree<int,_STL::pair<int const ,Rva00462D08Mapped>,_STL::_Select1st<_STL::pair<int const ,Rva00462D08Mapped> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,Rva00462D08Mapped> > >;
