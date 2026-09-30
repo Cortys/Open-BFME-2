@@ -568,6 +568,32 @@ def library_import_thunks(path):
     return thunks
 
 
+def retail_import_dlls():
+    """DLL names retail's import table lists (wsock32.dll, kernel32.dll...)."""
+    import pefile
+    pe = pefile.PE(data=build.EXE.read_bytes(), fast_load=True)
+    pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_IMPORT"]])
+    return {dll.dll.decode("latin-1").lower() for dll in pe.DIRECTORY_ENTRY_IMPORT}
+
+
+def sdk_import_thunks():
+    """Call stubs the toolchain's Platform SDK import libraries define for the
+    DLLs retail imports: wsock32.lib's `_bind@12` forwards to WSOCK32's bind
+    exactly as msvcrt.lib's `_strcpy` does to MSVCR71's strcpy. A C unit that
+    declares a Win32 API without dllimport references the stub, and the real
+    link resolves it from the import library; excused() still requires retail
+    to import the name behind it. DLLs whose import library the toolchain does
+    not ship (mss32, d3dx9_27) contribute nothing."""
+    lib_dir = build.vc71_root() / "Vc7" / "PlatformSDK" / "Lib"
+    libs = {path.name.lower(): path for path in lib_dir.iterdir() if path.suffix.lower() == ".lib"}
+    thunks = set()
+    for dll in sorted(retail_import_dlls()):
+        lib = libs.get(dll[:-len(".dll")] + ".lib" if dll.endswith(".dll") else dll + ".lib")
+        if lib is not None:
+            thunks |= library_import_thunks(lib)
+    return thunks
+
+
 def excused(symbol, runtime, imported, thunks=frozenset()):
     """True for a name the real link resolves without this tree defining it.
 
@@ -575,8 +601,9 @@ def excused(symbol, runtime, imported, thunks=frozenset()):
     one decoration underscore and a stdcall @N (__imp__GetModuleFileNameA@12,
     __imp___iob); MSVCR71 exports a few C++ names mangled, so a ?name must
     match as is (??1exception@@UAE@XZ). An address-named slot or a name
-    retail does not import is a declaration defect. A call stub msvcrt.lib
-    defines (`_strcpy`) counts as its import. Any other name only when msvcrt.lib
+    retail does not import is a declaration defect. A call stub msvcrt.lib or
+    a retail DLL's SDK import library defines (`_strcpy`, `_bind@12`) counts as
+    its import. Any other name only when msvcrt.lib
     (MSVCR71's import library and CRT statics: __except_list, __fltused)
     defines it.
     """
@@ -607,7 +634,7 @@ def write_status(log, rows, present=None):
     """
     import link_debt
     crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
-    runtime, thunks = library_symbols(crt), library_import_thunks(crt)
+    runtime, thunks = library_symbols(crt), library_import_thunks(crt) | sdk_import_thunks()
     imported = retail_imports()
     if present is None:
         present, _ = objects(rows)
