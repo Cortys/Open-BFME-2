@@ -1,12 +1,9 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva00223A94@Rva00223A94@@QAEHPBVAsciiString@@@Z @0x00223A94 11B
 // Tail-jmp thunk into rowed erase-all 0x00223429: add ecx 0x90 then jmp.
 // The table lives at +0x90 of an otherwise unknown owner, so the owner is
 // an honest address class. Returns erase count. Callers include 0x002D3B71.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva000427195
 {

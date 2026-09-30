@@ -1,14 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva0021311F@Rva0021311F@@QAEPAXPBVAsciiString@@@Z, retail 0x0021311F (41B).
 // Lookup in the embedded Rva00056F61 bucket table at +0x280 via rowed
 // iterator find 0x0041534B. Returns payload at node+8 or null. Same shape as
 // rowed Eva lookups 0x00411112. Caller at 0x004E065B. Chain over just-landed
 // 0x0041534B. Owner unproven so honest-address class Rva0021311F. True path
 // inline via if != 0 per codegen.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 class Rva00056F61;
 struct Rva0041534BIter
 {

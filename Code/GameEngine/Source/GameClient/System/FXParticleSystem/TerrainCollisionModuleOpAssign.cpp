@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 
 // TerrainCollision module assignment operators.
 //
@@ -11,22 +11,8 @@
 // info subobject at +0xc to 0x003A81AE. Layouts mirror the landed copy ctor
 // thunk TerrainCollisionModuleTemplateCopyCtorThunk.cpp in this folder.
 
-template <typename Character>
-class StringBase
-{
-public:
-	StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &that)
-		: StringBase<char>(that)
-	{
-	}
-	AsciiString &operator=(const AsciiString &that);
-};
 
 namespace FXParticleSystem
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // ?write@Rva00300912Holder@@QAEXPAVDataChunkOutput@@@Z,
@@ -15,31 +15,8 @@
 
 #include <map>
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	int getLength() const { return m_data ? m_data->length : 0; }
-	const T *str() const { return m_data ? (const T *)((const char *)m_data + 8) : (const T *)""; }
-private:
-	StringBase() { m_data = 0; }
-	~StringBase() {}
-	struct Header
-	{
-		int refCount;
-		unsigned short length;
-		unsigned short capacity;
-		T text[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-};
 
 class DataChunkOutput
 {

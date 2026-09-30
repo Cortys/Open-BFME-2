@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /D_STLP_USE_STATIC_LIB
 // stlport
 // Trimmed from Open-BFME-1
 // (Code/GameEngine/Source/GameClient/AssetListOperatorInsert.cpp): only the
@@ -11,17 +11,7 @@
 #include <set>
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h
-class AsciiString
-{
-public:
-	const char *str() const
-	{
-		return m_data ? m_data + 8 : (const char *)0x0107388B;
-	}
-
-private:
-	const char *m_data;
-};
+#include "ascii_string.h"
 
 struct Rva001408C0Target;
 

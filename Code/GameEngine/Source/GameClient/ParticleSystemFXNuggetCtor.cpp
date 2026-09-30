@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE /GX
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /arch:SSE /GX
 //
 // ??0ParticleSystemFXNugget@@QAE@XZ 392B @0x001E0AEF: no-arg ctor called by
 // ParticleSystemFXNugget::parse (0x001E2679) for the ParticleSystem FXList
@@ -25,15 +25,7 @@ protected:
 	unsigned char m_pad[0x148 - 8];
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct Coord3D
 {

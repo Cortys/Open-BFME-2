@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail RVA 0x0057C8D1, 205 bytes. AptMapPreview is anchored by its
 // registered callback names; member and APT manager names describe recovered
 // behavior because their original spellings are unknown.
@@ -13,27 +13,8 @@ template <typename T> struct BfmeStringData
     T text[1];
 };
 
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-    friend class UnicodeString;
-public:
-    StringBase() : m_data(0) {}
-private:
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &other);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-    AsciiString(const char *text) : StringBase<char>(text) {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

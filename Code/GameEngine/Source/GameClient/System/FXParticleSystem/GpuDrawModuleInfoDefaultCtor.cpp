@@ -1,4 +1,4 @@
-// cl: /O1 /GX- /DNDEBUG /MD /arch:SSE2
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX- /DNDEBUG /MD /arch:SSE2
 
 // GpuDrawModuleInfo default constructor.
 //
@@ -10,15 +10,7 @@
 // folder; the frame counts ride the init list so the string null keeps its
 // retail position after them.
 
-class AsciiString
-{
-public:
-	AsciiString() { m_text = 0; }
-	~AsciiString();
-
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 namespace FXParticleSystem
 {

@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc
 // Retail 0x00689B10 (338B). VideoPlayer::getVideo linear scan over the
 // 28-byte Video table: copy/compare each internal name case-insensitively.
 // Transferred from the BFME1 reconstruction (VideoPlayerQueries.cpp); only
@@ -10,21 +10,8 @@
 extern "C" __declspec(dllimport) int __cdecl _memicmp(const void *, const void *, unsigned int);
 extern const char Rva006A16B0Empty[];
 
-template <typename T> class StringBase
-{
-public:
-	StringBase(const StringBase &other);
-	~StringBase();
+#include "ascii_string.h"
 
-private:
-	char *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	void trim();
-};
 
 struct Video
 {

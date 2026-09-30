@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /arch:SSE /GX
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /arch:SSE /GX
 //
 // ??0RayEffectFXNugget@@QAE@XZ 123B @0x1E01B2: no-arg ctor called by
 // RayEffectFXNugget::parse (0x001E13A5) for the RayEffect FXList keyword;
@@ -18,15 +18,7 @@ protected:
 	unsigned char m_pad[0x148 - 8];
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct Coord3D
 {

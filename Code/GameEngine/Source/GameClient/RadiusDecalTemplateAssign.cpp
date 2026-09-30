@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?rva00330CDD@RadiusDecalTemplate@@QAEXABV1@@Z @0x00330CDD 97B
 // RadiusDecalTemplate copy-assign shaped method: copies scalars +8..+1C,
@@ -6,17 +6,7 @@
 // then fields +20..+30 with +24 before +20 per retail order.
 // Layout verbatim from RadiusDecalTemplateRva00330D3E.cpp (next row 0x00330D3E).
 // Callers 0x000B3287 0x000B50A4 0x00289951 0x00289983 0x002A4607.
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other) throw();
-	static AsciiString TheEmptyString;
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class RadiusDecalTemplate
 {
 public:
