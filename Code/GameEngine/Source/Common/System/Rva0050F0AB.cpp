@@ -46,6 +46,7 @@ class Rva0050F0AB
 public:
 	void rva0050F0AB();
 	void rva0050F420(unsigned int val);
+	void rva0050F290();
 private:
 	char m_pad00[0x68];
 	unsigned int m_68;
@@ -77,4 +78,13 @@ void Rva0050F0AB::rva0050F420(unsigned int val)
 	}
 	m_6c = val;
 	rva0050F0AB();
+}
+
+void Rva0050F0AB::rva0050F290()
+{
+	m_6c = 0;
+	rva0050F0AB();
+	GameWindow *win = m_78;
+	if (win)
+		Rva0050E776Send(win, 0);
 }
