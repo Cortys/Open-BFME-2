@@ -43,6 +43,7 @@ public:
     int rva006E0300() const;
     int rva006E0350() const;
     int rva006E03A0() const;
+    int rva006CBEE0(bool bUndefOK) const;
     void *rva006E04A0() const;
 };
 
@@ -474,6 +475,25 @@ int BfmeAptValue006DCD20::rva006E03A0() const
     }
     if (((const Rva006DBB30SarDwordField *)this)->get() == 19 && !isUndefined())
         return 1;
+    return 0;
+}
+
+// ?rva006CBEE0@BfmeAptValue006DCD20@@QBEH_N@Z, retail 0x006CBEE0, 87 bytes.
+// Predicate for type 18, "this" assert at AptCIH.h:211 (0xD3) via the same
+// file string at 0x008E8C60 as siblings. Evidence: rowed
+// get@Rva006DBB30SarDwordField equals 0x12 plus bUndefOK/isUndefined path;
+// callers at 0x006E2831/0x006EF240/0x006FF194/0x00702A78; same /O2 shape as
+// rva006E01A0 sibling in this TU.
+int BfmeAptValue006DCD20::rva006CBEE0(bool bUndefOK) const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xD3);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() == 18) {
+        if (bUndefOK) return 1;
+        if (!isUndefined()) return 1;
+    }
     return 0;
 }
 
