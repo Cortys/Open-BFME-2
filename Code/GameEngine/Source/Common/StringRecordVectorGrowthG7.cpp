@@ -63,6 +63,10 @@ struct BfmeStringRecord005EC43C {
     UnicodeString text; unsigned int word0, word1, word2, word3, word4;
     BfmeStringRecord005EC43C(const BfmeStringRecord005EC43C &o);
 };
+struct BfmeStringRecord005F93E3 {
+    unsigned int word0, word1; UnicodeString text;
+    BfmeStringRecord005F93E3(const BfmeStringRecord005F93E3 &o);
+};
 
 namespace _STL
 {
@@ -71,6 +75,7 @@ template <> void _Construct<BfmeStringRecord00219A68, BfmeStringRecord00219A68>(
 template <> void _Construct<BfmeStringRecord0022074B, BfmeStringRecord0022074B>(BfmeStringRecord0022074B *, const BfmeStringRecord0022074B &);
 template <> void _Construct<BfmeStringRecord005D511F, BfmeStringRecord005D511F>(BfmeStringRecord005D511F *, const BfmeStringRecord005D511F &);
 template <> void _Construct<BfmeStringRecord005EC43C, BfmeStringRecord005EC43C>(BfmeStringRecord005EC43C *, const BfmeStringRecord005EC43C &);
+template <> void _Construct<BfmeStringRecord005F93E3, BfmeStringRecord005F93E3>(BfmeStringRecord005F93E3 *, const BfmeStringRecord005F93E3 &);
 }
 
 // Retail 0x0021E1EB (180B).
@@ -88,3 +93,6 @@ template void _STL::vector<BfmeStringRecord005D511F>::_M_insert_overflow(
 // Retail 0x005ECB28 (183B).
 template void _STL::vector<BfmeStringRecord005EC43C>::_M_insert_overflow(
     BfmeStringRecord005EC43C *, const BfmeStringRecord005EC43C &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x005F9B4E (183B) vector<BfmeStringRecord005F93E3>::_M_insert_overflow via rowed copy 0x005F9477 Construct 0x005F944A fill_n 0x005F949D.
+template void _STL::vector<BfmeStringRecord005F93E3>::_M_insert_overflow(
+    BfmeStringRecord005F93E3 *, const BfmeStringRecord005F93E3 &, const _STL::__false_type &, unsigned int, bool);
