@@ -43447,3 +43447,4 @@ _ZNAME,,0x00756290,10,Code/Libraries/Source/Lua/lundump.c,matched,Lua 5.0 lundum
 _posrelat,,0x00748AE0,9,Code/Libraries/Source/Lua/lstrlib.c,matched,Lua 5.0 lstrlib.c; unique masked placement (place_bodies --min 8); between rowed str_len and str_sub exactly as defined in source
 __Locale_unshift,,0x00020DB0,63,Code/Libraries/Source/STLport/LocaleUnshiftStrwcmp.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0084DAF0; bfme1_sweep T1 clean transfer; follows rowed _Locale_wctomb as in BFME1
 __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwcmp.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0084DB30; bfme1_sweep T1 clean transfer; follows _Locale_unshift as in BFME1
+??0Rva00546F61@@QAE@ABV0@@Z,,0x00546F2F,50,Code/GameEngine/Source/Common/Rva00546F61Ctor.cpp,matched,copy base rowed 0x005488E9 clears ObjectID bool floats sibling 0x00546F03

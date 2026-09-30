@@ -12,6 +12,7 @@ class SpecialPowerModuleData
 {
 public:
 	SpecialPowerModuleData();
+	SpecialPowerModuleData(const SpecialPowerModuleData &other);
 	SpecialPowerModuleData(Rva0036E346 *holder);
 
 protected:
@@ -29,6 +30,7 @@ class Rva00546F61 : public SpecialPowerModuleData
 public:
 	Rva00546F61();
 	Rva00546F61(Rva0036E346 *holder, int val);
+	Rva00546F61(const Rva00546F61 &other);
 private:
 	enum ObjectID m_18;
 	bool m_1c;
@@ -50,6 +52,18 @@ Rva00546F61::Rva00546F61(Rva0036E346 *holder, int val)
 	: SpecialPowerModuleData(holder)
 {
 	m_18 = (enum ObjectID)val;
+	*(const void **)this = g_0086A420;
+	m_1c = false;
+	m_20[0] = 0.0f;
+	m_20[1] = 0.0f;
+	m_20[2] = 0.0f;
+}
+
+Rva00546F61::Rva00546F61(const Rva00546F61 &other)
+	: SpecialPowerModuleData(other)
+{
+	m_18 = OBJECTID_0;
+	_ReadWriteBarrier();
 	*(const void **)this = g_0086A420;
 	m_1c = false;
 	m_20[0] = 0.0f;
