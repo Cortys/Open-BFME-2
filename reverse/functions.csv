@@ -43101,3 +43101,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?_M_insert_overflow@?$vector@UBfmePod24@@V?$allocator@UBfmePod24@@@_STL@@@_STL@@IAEXPAUBfmePod24@@ABU3@ABU__false_type@2@I_N@Z,,0x000BCFF9,189,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod24_overflow.cpp,matched,Pod24 overflow via G7 imul callers rowed
 ?PopAndPush@AptBasePtrStack@@QAEXHPAVBfmeAptValue006DCD20@@@Z,,0x006FDFA0,162,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,unlock PopAndPush asserts 201 205 shared triple sibling Push
 ?rva004AF25D@RespawnUpdate@@QAEPAXXZ,,0x004AF25D,50,Code/GameEngine/Source/GameLogic/Object/Update/RespawnUpdateRva004AF25D.cpp,matched,RespawnUpdate lazy getter via global lookup
+?rva0050492F@Rva0050492F@@QAEXPAU1@@Z,,0x0050492F,117,Code/GameEngine/Source/Common/Rva0050492FSwap.cpp,matched,unlock swap via rowed vector BfmeE12 swap 0x00567ECD; caller 0x00504E52 unblocks 0x00504E38; siblings Rva005386B7Swap same flags
