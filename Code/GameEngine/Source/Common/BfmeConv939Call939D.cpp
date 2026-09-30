@@ -36,6 +36,8 @@ struct Bfme939Helper
 };
 
 extern Bfme939Helper *g_bfme939Helper;
+// g_bfme939Helper: matched references place it at VA 0xe02290 (zero-filled .bss).
+Bfme939Helper * g_bfme939Helper;
 
 char BfmeGlob939D::bfmeCall939D()
 {

@@ -53,6 +53,8 @@ __int64 Profile::GetClockCyclesPerSecond(void)
 }
 
 extern ProfileCmdInterface *cmd;
+// cmd: matched references place it at VA 0xe0c1f8 (zero-filled .bss).
+ProfileCmdInterface * cmd;
 
 // ?ProfileShutdown@@YAXXZ
 void ProfileShutdown(void)

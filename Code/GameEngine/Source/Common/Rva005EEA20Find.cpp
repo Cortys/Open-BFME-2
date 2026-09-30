@@ -32,6 +32,8 @@ public:
 };
 
 extern Rva002A8F24 *g_00DFEEF8;
+// g_00DFEEF8: matched references place it at VA 0xdfeef8 (zero-filled .bss).
+Rva002A8F24 * g_00DFEEF8;
 
 class Rva005C4AD1LeaField
 {

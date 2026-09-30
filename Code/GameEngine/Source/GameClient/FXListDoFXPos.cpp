@@ -41,6 +41,8 @@ public:
 };
 
 extern PartitionManager *TheShroudManager;
+// TheShroudManager: matched references place it at VA 0xdfe74c (zero-filled .bss).
+PartitionManager * TheShroudManager;
 
 class AsciiString
 {

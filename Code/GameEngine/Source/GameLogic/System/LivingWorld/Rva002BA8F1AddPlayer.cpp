@@ -76,3 +76,6 @@ void Rva002BA8F1Logic::addPlayer(Rva002BA8F1Input *input, bool local, int kind, 
     if (Va00DFE78CStatePointer->at114 != 3) player->initialize();
     player->listeners.append(this);
 }
+
+// Va00E03140Lookup: matched references place it at VA 0xe03140 (zero-filled .bss).
+Rva002E18C3Lookup *Va00DFF0B0Lookup, * Va00E03140Lookup;

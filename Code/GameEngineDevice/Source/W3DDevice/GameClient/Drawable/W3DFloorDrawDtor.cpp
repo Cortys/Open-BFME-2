@@ -42,6 +42,8 @@ public:
 };
 
 extern BaseHeightMapRenderObjClass *TheTerrainRenderObject;
+// TheTerrainRenderObject: matched references place it at VA 0xde1eac (zero-filled .bss).
+BaseHeightMapRenderObjClass * TheTerrainRenderObject;
 
 class Rva000CEB6F
 {

@@ -39,6 +39,8 @@ public:
 };
 
 extern Rva00893030Manager *g_rva00893030Manager;
+// g_rva00893030Manager: matched references place it at VA 0xe176cc (zero-filled .bss).
+Rva00893030Manager * g_rva00893030Manager;
 
 void Rva00893030(Rva00893030Ref value, void *first, void *second, void *third)
 {

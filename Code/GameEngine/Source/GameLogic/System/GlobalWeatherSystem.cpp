@@ -46,6 +46,8 @@ private:
 };
 
 extern GlobalWeatherSystem *TheGlobalWeatherSystem;
+// TheGlobalWeatherSystem: matched references place it at VA 0xe01ce4 (zero-filled .bss).
+GlobalWeatherSystem * TheGlobalWeatherSystem;
 
 static const char *TheWeatherNames[] =
 {

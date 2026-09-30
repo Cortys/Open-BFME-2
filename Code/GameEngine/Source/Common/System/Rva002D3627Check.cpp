@@ -19,6 +19,8 @@ private:
 };
 
 extern Rva002D3627Host *g_00DFEF18;
+// g_00DFEF18: matched references place it at VA 0xdfef18 (zero-filled .bss).
+Rva002D3627Host * g_00DFEF18;
 
 bool Rva002D3627Host::check()
 {

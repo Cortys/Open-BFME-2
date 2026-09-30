@@ -18,6 +18,8 @@ struct Rva009C2170Ctx
 };
 
 extern int *g_rva01356A9C;
+// g_rva01356A9C: matched references place it at VA 0xe22cec (zero-filled .bss).
+int * g_rva01356A9C;
 
 extern const unsigned char Rva01143860Mask[8];		// retail 0x01143860 ({0xFF} x8)
 extern const unsigned short Rva01143870Round[4];	// retail 0x01143870 ({4} x4)

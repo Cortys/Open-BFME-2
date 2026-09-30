@@ -56,6 +56,8 @@ public:
 };
 
 extern SidesList *TheSidesList;
+// TheSidesList: matched references place it at VA 0xe01d58 (zero-filled .bss).
+SidesList * TheSidesList;
 
 ScriptList * __stdcall Rva00204E64Find(const AsciiString &name)
 {

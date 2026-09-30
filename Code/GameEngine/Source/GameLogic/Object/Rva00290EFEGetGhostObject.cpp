@@ -66,6 +66,8 @@ public:
 };
 
 extern GhostObjectManager *TheGhostObjectManager;
+// TheGhostObjectManager: matched references place it at VA 0xdff188 (zero-filled .bss).
+GhostObjectManager * TheGhostObjectManager;
 
 class GlobalData
 {

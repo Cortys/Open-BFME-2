@@ -70,6 +70,8 @@ bool bfmeRva000387C0();
 
 // The device mutex and its recursion bookkeeping.
 extern void *bfmeDX8DeviceMutex;				// 0x00DEC598
+// bfmeDX8DeviceMutex: matched references place it at VA 0xdec598 (zero-filled .bss).
+void * bfmeDX8DeviceMutex;
 extern unsigned char bfmeDX8DeviceSection[24];		// 0x00DEC540
 // Volatile like the count: the try-lock stores the owner before it reads the
 // count, where a plain store is scheduled after the volatile read.

@@ -18,8 +18,14 @@ public:
 };
 
 extern void *g_bfmeVIT;
+// g_bfmeVIT: matched references place it at VA 0xe09f7c (zero-filled .bss).
+void * g_bfmeVIT;
 extern void *g_bfmeVIV;
+// g_bfmeVIV: matched references place it at VA 0xe09f4c (zero-filled .bss).
+void * g_bfmeVIV;
 extern void *g_bfmeVIU;
+// g_bfmeVIU: matched references place it at VA 0xe0a07c (zero-filled .bss).
+void * g_bfmeVIU;
 
 void __stdcall bfmeGoVIT(BfmeMsgVIT *m, void *a, void *b)
 {

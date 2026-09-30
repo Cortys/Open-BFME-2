@@ -31,6 +31,8 @@ struct Rva007F3980Pair
 
 extern "C" int __cdecl sprintf(char *buffer, const char *format, ...);
 extern void *g_bfme0130A714;
+// g_bfme0130A714: matched references place it at VA 0xe0a130 (zero-filled .bss).
+void * g_bfme0130A714;
 
 void __stdcall rva007F3980Serialize(Rva007F3980Msg *msg, __int64 clubId,
 	__int64 userId, Rva007F3980Pair *pairs, int count)

@@ -64,6 +64,8 @@ public:
 };
 
 extern Rva00DFF024Registry *TheRva00DFF024Registry;
+// TheRva00DFF024Registry: matched references place it at VA 0xdff024 (zero-filled .bss).
+Rva00DFF024Registry * TheRva00DFF024Registry;
 extern AsciiString g_drawCallbackName;
 extern void *g_drawCallback;
 

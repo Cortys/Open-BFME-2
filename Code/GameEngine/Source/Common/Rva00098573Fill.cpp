@@ -10,6 +10,8 @@ public:
 };
 
 extern Rva00285D34 *g_00DFEC68;
+// g_00DFEC68: matched references place it at VA 0xdfec68 (zero-filled .bss).
+Rva00285D34 * g_00DFEC68;
 
 struct Rva00098573Vec
 {

@@ -28,6 +28,8 @@ private:
 
 extern const AsciiString g_emptyName;
 extern Rva003ED2A3Manager *g_manager;
+// g_manager: matched references place it at VA 0xe02e48 (zero-filled .bss).
+Rva003ED2A3Manager * g_manager;
 
 Rva003ECDB7Object::~Rva003ECDB7Object()
 {

@@ -148,6 +148,8 @@ public:
 };
 
 extern PlayerTemplateStore *ThePlayerTemplateStore;
+// ThePlayerTemplateStore: matched references place it at VA 0xdfe0d0 (zero-filled .bss).
+PlayerTemplateStore * ThePlayerTemplateStore;
 
 class GameInfo;
 

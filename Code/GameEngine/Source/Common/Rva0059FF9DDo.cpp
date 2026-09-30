@@ -62,6 +62,8 @@ extern int g_009C075C;
 // g_009C075C: matched references place it at VA 0xdc075c (retail .data initial value -1).
 int g_009C075C = -1;
 extern Global003EF728V6 *g_00A02340;
+// g_00A02340: matched references place it at VA 0xe02340 (zero-filled .bss).
+Global003EF728V6 * g_00A02340;
 
 void __cdecl Rva0059FF9DDo()
 {

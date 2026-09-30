@@ -4,6 +4,8 @@
 extern class Rva002D06CA *g_009FF000;
 extern class GameLogic *g_009FE78C;
 extern class Rva00A027B8 *g_00A027B8;
+// g_00A027B8: matched references place it at VA 0xe027b8 (zero-filled .bss).
+class Rva00A027B8 * g_00A027B8;
 
 enum ObjectID
 {

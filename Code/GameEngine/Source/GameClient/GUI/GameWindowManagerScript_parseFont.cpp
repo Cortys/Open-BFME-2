@@ -76,6 +76,8 @@ public:
 };
 
 extern FontLibrary *TheFontLibrary;
+// TheFontLibrary: matched references place it at VA 0xdfe33c (zero-filled .bss).
+FontLibrary * TheFontLibrary;
 
 class WinInstanceData
 {

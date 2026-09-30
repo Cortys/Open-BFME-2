@@ -13,7 +13,11 @@ public:
 };
 
 extern void *g_bfmeFVIX;
+// g_bfmeFVIX: matched references place it at VA 0xe09ec8 (zero-filled .bss).
+void * g_bfmeFVIX;
 extern void *g_bfmeGVIY;
+// g_bfmeGVIY: matched references place it at VA 0xe0a028 (zero-filled .bss).
+void * g_bfmeGVIY;
 
 void __stdcall bfmeGoVIX(BfmeMsgVIX *m, void *email, void *parentalEmail, void *countryCode, void *eaMail, void *thirdPartyMail)
 {

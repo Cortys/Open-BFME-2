@@ -36,6 +36,8 @@ public:
         const char *encryptedInfo);
 };
 extern const char *g_Rva0130A50CTxn;
+// g_Rva0130A50CTxn: matched references place it at VA 0xe09f28 (zero-filled .bss).
+const char * g_Rva0130A50CTxn;
 
 void Rva007E9310AccountWriter::write(Rva007E8810Message *message,
     const char *name, const char *password, unsigned char returnEncryptedInfo,

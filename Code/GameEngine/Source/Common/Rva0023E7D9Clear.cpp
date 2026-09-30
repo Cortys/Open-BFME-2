@@ -76,6 +76,8 @@ public:
 };
 
 extern Rva00A00958Obj *g_Rva00A00958;
+// g_Rva00A00958: matched references place it at VA 0xe00958 (zero-filled .bss).
+Rva00A00958Obj * g_Rva00A00958;
 extern unsigned char g_Rva00A02D86;
 // g_Rva00A02D86: matched references place it at VA 0xe02d86 (zero-filled .bss).
 unsigned char g_Rva00A02D86;

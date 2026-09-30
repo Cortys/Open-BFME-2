@@ -8,6 +8,8 @@ struct Rva0023D607Holder
 	int m_10;
 };
 extern Rva0023D607Holder *g_Rva0023D607Holder;
+// g_Rva0023D607Holder: matched references place it at VA 0xdfdc8c (zero-filled .bss).
+Rva0023D607Holder * g_Rva0023D607Holder;
 unsigned char Rva0023D607Get()
 {
 	return g_Rva0023D607Holder->m_10 != 0;

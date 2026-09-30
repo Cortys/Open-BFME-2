@@ -11,6 +11,8 @@ struct BfmeWorldRV
 };
 
 extern BfmeWorldRV *g_bfmeWorldRV;
+// g_bfmeWorldRV: matched references place it at VA 0xe01cfc (zero-filled .bss).
+BfmeWorldRV * g_bfmeWorldRV;
 
 class BfmeThingRV
 {

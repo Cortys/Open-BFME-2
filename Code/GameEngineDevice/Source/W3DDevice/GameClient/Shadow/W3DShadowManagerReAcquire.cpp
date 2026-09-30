@@ -34,9 +34,15 @@ public:
 };
 
 extern W3DVolumetricShadowManager *TheW3DVolumetricShadowManager;
+// TheW3DVolumetricShadowManager: matched references place it at VA 0xdebcd8 (zero-filled .bss).
+W3DVolumetricShadowManager * TheW3DVolumetricShadowManager;
 extern W3DProjectedShadowManager *TheW3DProjectedShadowManager;
+// TheW3DProjectedShadowManager: matched references place it at VA 0xdec2cc (zero-filled .bss).
+W3DProjectedShadowManager * TheW3DProjectedShadowManager;
 extern Rva00108660ResourceManager *Rva00DEC2D8Manager;
 extern Rva0007DA23ResourceManager *Rva00DE1FF8Manager;
+// Rva00DE1FF8Manager: matched references place it at VA 0xde1ff8 (zero-filled .bss).
+Rva0007DA23ResourceManager * Rva00DE1FF8Manager;
 
 class W3DShadowManager
 {

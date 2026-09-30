@@ -117,6 +117,8 @@ void Rva00444040Enable(void)
 // 0x005CD6C4 0x005CD6EF plus jmp 0x0052359B. Unlock lane.
 struct GlobalA04934 { char pad[0x278]; unsigned char flag; };
 extern GlobalA04934 *g_Va00A04934;
+// g_Va00A04934: matched references place it at VA 0xe04934 (zero-filled .bss).
+GlobalA04934 * g_Va00A04934;
 void Rva0052340DEnable(void)
 {
 	GlobalA04934 *p = g_Va00A04934;

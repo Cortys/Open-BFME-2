@@ -15,6 +15,8 @@ public:
 };
 
 extern const char *g_Rva0130A4F4Txn;
+// g_Rva0130A4F4Txn: matched references place it at VA 0xe09f10 (zero-filled .bss).
+const char * g_Rva0130A4F4Txn;
 
 void __stdcall Rva007E93C0(Rva007E8810Message *msg, const char *name,
 	const char *password, const char *email, int dobDay, int dobMonth,

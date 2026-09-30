@@ -130,9 +130,13 @@ private:
 
 extern GameLogic *TheGameLogic;
 extern ClientFrameSubsystem *TheGameClient;
+// TheGameClient: matched references place it at VA 0xdfe77c (zero-filled .bss).
+ClientFrameSubsystem * TheGameClient;
 extern ClientSubsystem *WindowManagerSubsystem;
 extern RadarSubsystem *Radar;
 extern MessageStream *MessageStreamSubsystem;
+// MessageStreamSubsystem: matched references place it at VA 0xe00950 (zero-filled .bss).
+MessageStream * MessageStreamSubsystem;
 extern ClientSubsystem *InputLockSubsystem;
 extern class InGameUI *InGameUISubsystem;
 extern class Mouse *MouseSubsystem;

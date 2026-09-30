@@ -10,6 +10,8 @@ public:
 
 extern Rva00898D60Target *g_Rva013379BC;
 extern Rva00898D60Target *g_Rva01337A20;
+// g_Rva01337A20: matched references place it at VA 0xe180dc (zero-filled .bss).
+Rva00898D60Target * g_Rva01337A20;
 
 void Rva00898D60Invoke(void)
 {

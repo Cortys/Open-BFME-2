@@ -33,6 +33,8 @@ public:
 };
 
 extern FilePathGate *TheFilePathGate;
+// TheFilePathGate: matched references place it at VA 0xe06a4c (zero-filled .bss).
+FilePathGate * TheFilePathGate;
 extern LocalFileSystem *TheLocalFileSystem;
 extern ArchiveFileSystem *TheArchiveFileSystem;
 extern char TheLangDir[];

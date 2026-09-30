@@ -17,7 +17,11 @@ struct ValidityRecord148
 };
 
 extern unsigned char *g_validityBegin;
+// g_validityBegin: matched references place it at VA 0xe01e68 (zero-filled .bss).
+unsigned char * g_validityBegin;
 extern unsigned char *g_validityEnd;
+// g_validityEnd: matched references place it at VA 0xe01e6c (zero-filled .bss).
+unsigned char * g_validityEnd;
 
 void Rva00360CB0Release(int *indexHolder)
 {

@@ -2,6 +2,8 @@
 
 extern int g_bfmeLeft1221;
 extern unsigned int *g_bfmeNext1221;
+// g_bfmeNext1221: matched references place it at VA 0xe1901c (zero-filled .bss).
+unsigned int * g_bfmeNext1221;
 
 extern "C" unsigned int bfmeReload1221(void);
 

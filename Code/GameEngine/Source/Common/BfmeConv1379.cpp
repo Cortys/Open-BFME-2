@@ -25,10 +25,20 @@ public:
 };
 
 extern void *g_bfmeAVIW;
+// g_bfmeAVIW: matched references place it at VA 0xe0a004 (zero-filled .bss).
+void * g_bfmeAVIW;
 extern void *g_bfmeBVIW;
+// g_bfmeBVIW: matched references place it at VA 0xe0a01c (zero-filled .bss).
+void * g_bfmeBVIW;
 extern void *g_bfmeCVIW;
+// g_bfmeCVIW: matched references place it at VA 0xe0a040 (zero-filled .bss).
+void * g_bfmeCVIW;
 extern void *g_bfmeDVIW;
+// g_bfmeDVIW: matched references place it at VA 0xe09fe0 (zero-filled .bss).
+void * g_bfmeDVIW;
 extern void *g_bfmeEVIW;
+// g_bfmeEVIW: matched references place it at VA 0xe09f04 (zero-filled .bss).
+void * g_bfmeEVIW;
 
 void __stdcall bfmeGoAVIW(BfmeMsgVIW *m, void *a, void *b)
 {

@@ -11,6 +11,8 @@ public:
 };
 
 extern void *g_bfmeVJC;
+// g_bfmeVJC: matched references place it at VA 0xe09ff8 (zero-filled .bss).
+void * g_bfmeVJC;
 
 class BfmeThingVJC
 {
@@ -37,6 +39,8 @@ void BfmeThingVJC::bfmeGoVJC(BfmeMsgVJC *m, int ratingMin, int ratingMax, int do
 }
 
 extern void *g_bfmeVJD;
+// g_bfmeVJD: matched references place it at VA 0xe0a034 (zero-filled .bss).
+void * g_bfmeVJD;
 
 class BfmeThingVJD
 {

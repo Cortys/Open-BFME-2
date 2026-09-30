@@ -15,6 +15,8 @@ public:
 	Rva0054D8D8 *rva0054D6C8(int id);
 };
 extern Rva0054D974 *G00A05FB0;
+// G00A05FB0: matched references place it at VA 0xe05fb0 (zero-filled .bss).
+Rva0054D974 * G00A05FB0;
 
 class Rva005BA36D
 {

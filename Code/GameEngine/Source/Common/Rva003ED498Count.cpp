@@ -35,6 +35,8 @@ struct TreeNode
 	unsigned m_18;
 };
 extern _STL::_Rb_tree_node_base *g_00A02E50;
+// g_00A02E50: matched references place it at VA 0xe02e50 (zero-filled .bss).
+_STL::_Rb_tree_node_base * g_00A02E50;
 void __cdecl Rva003ED498Count(void const *arg)
 {
 	_STL::_Rb_tree_node_base *n = g_00A02E50->_M_left;

@@ -46,6 +46,8 @@ class NetworkInterface;
 extern NetworkInterface *TheNetwork;
 
 extern GameInfo *TheSkirmishGameInfo;
+// TheSkirmishGameInfo: matched references place it at VA 0xe02ef0 (zero-filled .bss).
+GameInfo * TheSkirmishGameInfo;
 
 class RecorderClass
 {
