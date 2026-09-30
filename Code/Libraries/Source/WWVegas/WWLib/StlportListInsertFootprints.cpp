@@ -81,3 +81,19 @@ template _STL::list<BfmePod60>::iterator _STL::list<BfmePod60>::insert(_STL::lis
 template _STL::list<BfmePod12>::iterator _STL::list<BfmePod12>::insert(_STL::list<BfmePod12>::iterator, const BfmePod12 &);
 // Retail 0x005BC6FE (37B).
 template _STL::list<BfmeStringRecord005BC576>::iterator _STL::list<BfmeStringRecord005BC576>::insert(_STL::list<BfmeStringRecord005BC576>::iterator, const BfmeStringRecord005BC576 &);
+// Retail 0x001B4CEF (26B).
+template void _STL::list<BfmePod72>::push_back(const BfmePod72 &);
+// Retail 0x001F81D2 (26B).
+template void _STL::list<RvaSmartPtr12>::push_back(const RvaSmartPtr12 &);
+// Retail 0x002947D6 (26B).
+template void _STL::list<BfmePod124>::push_back(const BfmePod124 &);
+// Retail 0x00359BCC (28B).
+template void _STL::list<BfmePod12>::push_front(const BfmePod12 &);
+// Retail 0x00420DF3 (26B).
+template void _STL::list<BfmePod12>::push_back(const BfmePod12 &);
+// Retail 0x00436701 (26B).
+template void _STL::list<TreeHintOpaque0043671B>::push_back(const TreeHintOpaque0043671B &);
+// Retail 0x004643CE (26B).
+template void _STL::list<BfmeContainerRecord00462D62>::push_back(const BfmeContainerRecord00462D62 &);
+// Retail 0x004E5526 (28B).
+template void _STL::list<BfmePod60>::push_front(const BfmePod60 &);
