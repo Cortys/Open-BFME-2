@@ -19,12 +19,38 @@ private:
 	int m_14;
 	int m_18;
 };
+class AISkirmishPlayer;
 class Rva004C743
 {
 public:
 	Rva00984EF *rva0004C662();
+	AISkirmishPlayer *rva0004C6D4();
+};
+class AIPlayer
+{
+public:
+	AIPlayer() throw();
+protected:
+	virtual ~AIPlayer() throw();
+protected:
+	char m_pad04[8];
+	unsigned short m_flags0C;
+	char m_pad0E[0xE20 - 0x0E];
+};
+class AISkirmishPlayer : public AIPlayer
+{
+public:
+	AISkirmishPlayer();
+	virtual ~AISkirmishPlayer();
+private:
+	void *m_slotE20;
+	void *m_slotE24;
 };
 Rva00984EF *Rva004C743::rva0004C662()
 {
 	return new Rva00984EF;
+}
+AISkirmishPlayer *Rva004C743::rva0004C6D4()
+{
+	return new AISkirmishPlayer;
 }
