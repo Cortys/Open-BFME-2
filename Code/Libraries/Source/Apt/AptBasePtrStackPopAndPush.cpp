@@ -1,15 +1,26 @@
 // cl: /O2 /MD
-// ?PopAndPush@AptBasePtrStack@@QAEXHPAVBfmeAptValue006DCD20@@@Z @0x006FDFA0 157B
+// ?PopAndPush@AptBasePtrStack@@QAEXHPAVBfmeAptValue006DCD20@@@Z @0x006FDFA0 162B
 // Pop-and-push single value: asserts nItems >= 0 (_AptBasePtrStack.h:201),
 // returns early when popping more than contained (:205 via shared Apt assert
 // triple), else AddRefs the new value, Releases the top nItems in order,
 // stores the value and nets the count. Evidence: unlock lane; callers
 // 0x006FE910 0x007066AD; layout/flags/assert file shared with
 // AptBasePtrStackPush.cpp; Bitwise PopAndPush decl names the method.
+// ??1AptBasePtrStack@@QAE@XZ @0x006FDD40 110B dtor: asserts empty (:78),
+// asserts pfnMemFreeSize (:84), frees backing array via pool freeBlock.
+// Evidence: same TU/class/flags/triple; unwind caller; unblocks 0x006FE9C0.
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
+extern void (__cdecl *g_bfmeAptFreeSizeAtE17730)(void *, unsigned int);
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
+
+class Rva006DB270
+{
+public:
+    void freeBlock(void *p, int bytes);
+};
+extern Rva006DB270 *g_pChainBlockAllocator; // 0x00E176E8
 
 class BfmeAptValue006DCD20
 {
@@ -24,6 +35,7 @@ class AptBasePtrStack
 {
 public:
     void PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue);
+    ~AptBasePtrStack();
 
     int m_nElements;
     int m_nCapacity;
@@ -49,4 +61,21 @@ void AptBasePtrStack::PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue)
     }
     m_aElements[m_nElements - nItems] = pValue;
     m_nElements = m_nElements + 1 - nItems;
+}
+
+AptBasePtrStack::~AptBasePtrStack()
+{
+    if (m_nElements != 0) {
+        g_bfmeAptAssertAtE17734("m_nElements == 0", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x4E);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (m_aElements) {
+        if (!g_bfmeAptFreeSizeAtE17730) {
+            g_bfmeAptAssertAtE17734("gAptFuncs.pfnMemFreeSize", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x54);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+        g_pChainBlockAllocator->freeBlock(m_aElements, m_nCapacity * 4);
+    }
 }
