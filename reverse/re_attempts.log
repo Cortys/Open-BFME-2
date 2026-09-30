@@ -3882,3 +3882,4 @@ FUN_009cc788	0x005CC788	84	blocked	virtual-base dtor with vbtable indirection pl
 ??$lower_bound@PAUBfmePod20@@U1@@_STL@@YAPAUBfmePod20@@PAU1@0ABU1@@Z	0x0054150A	35	blocked	wrapper 28 vs 35 same wall as Pod28 0x005414C2 comp stosb version mismatch t=15 model=muse-06
 ?Rva006CDE00Copy@@YAPAURva006CDE00Item@@PAU1@00@Z	0x006CDE00	74	blocked	5-arg EAStringC array copy needs donor signature 56 vs 74 7 regions t=15 model=muse-06
 ??1Rva005F0584@@UAE@XZ	0x005F0584	75	blocked	dual-vtable EH dtor with virtual call on member+14 needs donor layout t=15 model=muse-06
+??0BfmeThingCDE@@QAE@PAX00@Z	0x00739E60	227	partial	ctor constant-store order plus push edi late t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x00739e60.cpp

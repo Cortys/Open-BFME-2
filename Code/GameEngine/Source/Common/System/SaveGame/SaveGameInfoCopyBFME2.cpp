@@ -125,3 +125,25 @@ BfmeSubobject00229875::BfmeSubobject00229875()
 {
 	rva002DBA6A();
 }
+
+class GameEngineDeletingBase
+{
+public:
+	virtual ~GameEngineDeletingBase();
+private:
+	int m_pad04;
+	int m_pad08;
+};
+
+class Rva0022958D : public GameEngineDeletingBase
+{
+public:
+	virtual ~Rva0022958D();
+private:
+	AsciiString m_0c;
+	AsciiString m_10;
+};
+
+Rva0022958D::~Rva0022958D()
+{
+}
