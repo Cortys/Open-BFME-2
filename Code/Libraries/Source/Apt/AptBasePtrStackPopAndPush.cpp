@@ -12,6 +12,7 @@
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 extern void (__cdecl *g_bfmeAptFreeSizeAtE17730)(void *, unsigned int);
+extern void *(__cdecl *g_bfmeAptAllocAtE17728)(unsigned int);
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 
@@ -19,6 +20,11 @@ class Rva006DB270
 {
 public:
     void freeBlock(void *p, int bytes);
+};
+class Rva006DB160
+{
+public:
+    void *allocBlock(int blockSize);
 };
 extern Rva006DB270 *g_pChainBlockAllocator; // 0x00E176E8
 
@@ -38,6 +44,7 @@ public:
     void rva006FE050(int nItems);
     void rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue);
     void rva006FDE50();
+    void rva006FDDB0(int nCapacity);
     ~AptBasePtrStack();
 
     int m_nElements;
@@ -137,4 +144,25 @@ void AptBasePtrStack::rva006FDE50()
     m_nCapacity = 0;
     m_nElements = 0;
     m_aElements = 0;
+}
+
+void AptBasePtrStack::rva006FDDB0(int nCapacity)
+{
+    if (m_nCapacity != 0) {
+        g_bfmeAptAssertAtE17734("m_nCapacity == 0", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x5C);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    m_nCapacity = nCapacity;
+    if (!g_bfmeAptAllocAtE17728) {
+        g_bfmeAptAssertAtE17734("gAptFuncs.pfnMemAlloc", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x5F);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    m_aElements = (BfmeAptValue006DCD20 **)((Rva006DB160 *)g_pChainBlockAllocator)->allocBlock(nCapacity * 4);
+    if (!m_aElements) {
+        g_bfmeAptAssertAtE17734("m_aElements != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x63);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
 }
