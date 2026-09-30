@@ -1419,3 +1419,6 @@ void PostToLanGameOptions( PostToLanGameType post )
 			return;
 	}
 }
+
+// chatSystemColor: matched references place it at VA 0xdba760 (retail .data initial value -1).
+extern const int chatSystemColor = -1;

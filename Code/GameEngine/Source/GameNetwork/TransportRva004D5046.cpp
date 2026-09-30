@@ -7,6 +7,8 @@
 // 30-int stats with target at +0x410CC; caller at 0x0025DDE9.
 extern float g_007C26EC;
 extern float g_008601E0;
+// g_008601E0: matched references place it at VA 0xc601e0 (retail .rdata value 0.03448276f).
+float g_008601E0 = 0.03448276f;
 
 class Transport
 {

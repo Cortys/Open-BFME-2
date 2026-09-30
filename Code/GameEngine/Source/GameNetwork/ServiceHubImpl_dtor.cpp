@@ -20,6 +20,8 @@ struct Gen_007e86c0
 
 extern int vftable_01129CB0;
 extern int vftable_01129AF4;
+// vftable_01129AF4: matched references place it at VA 0xce1354 (retail .rdata value 10843760).
+int vftable_01129AF4 = 10843760;
 
 class ServiceHubImpl
 {

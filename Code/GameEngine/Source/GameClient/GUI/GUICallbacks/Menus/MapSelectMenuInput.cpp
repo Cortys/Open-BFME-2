@@ -23,6 +23,8 @@
 
 
 extern Bool Rva00E045C6; // address-derived target byte referenced by retail handler
+// Rva00E045C6: matched references place it at VA 0xe045c6 (zero-filled .bss).
+bool Rva00E045C6;
 WindowMsgHandledType MapSelectMenuInput( GameWindow *window, UnsignedInt msg,
 																				 WindowMsgData mData1, WindowMsgData mData2 )
 {

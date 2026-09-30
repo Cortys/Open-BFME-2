@@ -12,6 +12,8 @@
 int GetGameLogicRandomValue(int low, int high, char *file, int line);
 
 extern int g_009BA4E8;
+// g_009BA4E8: matched references place it at VA 0xdba4e8 (retail .data initial value 30).
+int g_009BA4E8 = 30;
 struct EyeTowerPair {
   EyeTowerPair(float x, float y) : first(x), second(y) {}
   ~EyeTowerPair() {}

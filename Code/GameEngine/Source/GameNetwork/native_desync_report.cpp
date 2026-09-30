@@ -22,6 +22,8 @@ private:
 };
 
 extern unsigned char BfmeClientCRCCheckEnabled;
+// BfmeClientCRCCheckEnabled: matched references place it at VA 0xe02d85 (zero-filled .bss).
+unsigned char BfmeClientCRCCheckEnabled;
 extern GameLogic *TheGameLogic;
 
 // ??0BFMEDesyncCheck@@QAE@XZ
