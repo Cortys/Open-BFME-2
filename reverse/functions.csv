@@ -44852,3 +44852,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva0059A85C@@QAE@PAX@Z,,0x0059A85C,123,Code/GameEngine/Source/Common/Rva0059A85CCtor.cpp,matched,ctor over the polymorphic Rva00506B1B base (virtual dtor per unwind state 0) plus BfmeE16 vector plus AsciiString set; walks the outer list calling rowed 0x0059A71C; banked 0.97 attempt fixed
 ?rva006F7600@Rva006F7600@@QAEXH@Z,,0x006F7600,95,Code/Libraries/Source/Apt/Rva006F7600Remove.cpp,matched,AptDisplayList assert plus array shift with count at +0x80
 ?rva000B4AB5@Rva000B4AB5@@QAEPBVAsciiString@@I@Z,,0x000B4AB5,47,Code/GameEngine/Source/Common/System/Rva000B4AB5.cpp,matched,modulo index into vector AsciiString at 0x4C empty returns TheEmptyString
+?rva000B4AE4@Rva000B4BED@@QAEXXZ,,0x000B4AE4,23,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,clears entry byte 0xF4 over same table caller 0x2D0667

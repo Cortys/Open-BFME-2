@@ -19,7 +19,9 @@ struct Rva000B4BEDEntry
 {
 	char _pad[4];
 	WeaponTemplateSetHead head;
-	char _rest[0xF8 - 4 - 0x4C];
+	char _rest[0xF4 - 4 - 0x4C];
+	unsigned char m_00F4;
+	char _tail[0xF8 - 0xF4 - 1];
 };
 
 class Rva000B4BED
@@ -31,6 +33,7 @@ public:
 	void *rva000B4BED(const void *query);
 	void *rva000B4C9D(const void *entry);
 	void *rva000B4CBE(const void *entry);
+	void rva000B4AE4();
 };
 
 void *Rva000B4BED::rva000B4BED(const void *query)
@@ -102,4 +105,13 @@ void *Rva000B4BED::rva000B4CBE(const void *entry)
 			found = true;
 	}
 	return 0;
+}
+
+// ?rva000B4AE4@Rva000B4BED@@QAEXXZ @0x000B4AE4 23B. Clears the byte at
+// entry+0xF4 for every entry in the same +0x24/+0x28 table, stride 0xF8.
+// Evidence: caller at 0x002D0667, neighbours 0x000B4AB5/0x000B4BED.
+void Rva000B4BED::rva000B4AE4()
+{
+	for (Rva000B4BEDEntry *p = m_begin; p != m_end; ++p)
+		p->m_00F4 = 0;
 }
