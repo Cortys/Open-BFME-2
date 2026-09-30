@@ -3895,3 +3895,4 @@ FUN_00629427	0x00229427	78	blocked	vtable pair with virtual-call delete holder p
 ?rva0033EC93@Rva0033EC93@@QAE_NPBXPAM@Z	0x0033EC93	402	partial	407B 14 regions sub-imm-vs-reg and-vs-mov comiss-order ja-vs-jb shared-return t=25 model=muse-03 score=0.93 stash=reverse/attempts/0x0033ec93.cpp
 ?rva002D7E68@Radar@@QAEXPAX@Z	0x002D7E68	326	partial	329B vs 326B inner-outer callee-saved swap ebx-edi plus xor-eax-vs-xor-edi zeroing t=20 model=muse-03 score=0.96 stash=reverse/attempts/0x002d7e68.cpp
 ??0Radar@@QAE@XZ	0x002D87B9	207	partial	209B vs 207B extra mov-ecx-esi before m1460 store t=15 model=muse-03 score=0.98 stash=reverse/attempts/0x002d87b9.cpp
+FUN_00399EBE	0x00399EBE	178	blocked	STL deque-vector insert 5 callees BfmeE8 plus StringRecord ret-0x14 beyond trivial t=5 model=muse-05
