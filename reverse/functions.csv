@@ -43514,3 +43514,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ??1Rva002D3573@@UAE@XZ,,0x002D3573,76,Code/GameEngine/Source/Common/System/Rva002D3573Dtor.cpp,matched,MI dtor via vtables 0x00802AA8 0x00802A94 plus clear 0x000AD6F4 plus base 0x001B4E74 plus Snapshot base 0x007BB554
 ?Rva00327DD8Get@@YAPAXPAVGameWindow@@@Z,,0x00327DD8,30,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetCheckButtonGet.cpp,matched,null-guarded user-data 0x28 flag 0x2C ptr via winGetUserData
 ?rva0055B951@Rva0055B951@@UAEXPAVXfer@@@Z,,0x0055B951,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B951.cpp,matched,DoXfer slot3 vtable 0x0081CDF0 0x0081D60C Version1 rowed inner 0x0055B8CD at plus0x1C
+?rva005189CF@Rva005189CF@@QAEXXZ,,0x005189CF,282,Code/GameEngine/Source/Common/Rva005189CFText.cpp,matched,unlock TheGameText fetch plus bfmeSetText via pin 0x00225301
