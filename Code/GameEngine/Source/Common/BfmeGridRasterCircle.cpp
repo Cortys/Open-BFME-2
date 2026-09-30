@@ -110,6 +110,7 @@ public:
 	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
 	BfmeCellFC *bfmeCellAtWorld(Real worldX, Real worldY) const;
 	int rva006C0E40(const BfmePointFC *point, int *extra);
+	int rva006C0E70(int x, int y);
 
 	friend class BfmeRangeUpdaterFC;
 
@@ -341,4 +342,22 @@ int Gen_008812D0::rva006C0E40(const BfmePointFC *point, int *extra)
 		return cell->m_bfmeValue;
 	}
 	return 0;
+}
+
+// ?rva006C0E70@Gen_008812D0@@QAEHHH@Z @ 0x006C0E70 63B
+// Honest address name: thiscall reads width/height/cells at +0x20/+0x24/+0x28
+// so owner is Gen_008812D0. Returns cell kind byte or 0x80 default when out
+// of bounds. Evidence: gap between rowed 0x006C0E40 and range updater in same
+// /GX TU, imul width*y plus x3 x4 lea for 12B cells, tail-jmp thunk at
+// 0x006C0840 via grid member.
+int Gen_008812D0::rva006C0E70(int x, int y)
+{
+	if (x < 0 || x >= m_bfmeWidth)
+		return 0x80;
+	if (y < 0 || y >= m_bfmeHeight)
+		return 0x80;
+	BfmeCellFC *cell = &m_bfmeCells[y * m_bfmeWidth + x];
+	if (cell == 0)
+		return 0x80;
+	return cell->m_bfmeKind;
 }
