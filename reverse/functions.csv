@@ -43457,3 +43457,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ??$__lower_bound@PAUBfmePod40@@U1@U?$less@UBfmePod40@@@_STL@@H@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@U?$less@UBfmePod40@@@0@PAH@Z,,0x00540253,66,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod40_lower_bound.cpp,matched,unlock lower_bound Pod40 via less on a0 plus G7
 ??$__push_heap@PAHHHVRva00204BB8@@@_STL@@YAXPAHHHHVRva00204BB8@@@Z,,0x002059CF,76,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00204bb8.cpp,matched,heap sift-up via rowed comparator 0x204BB8 same spelling as rva00422ca8
 ?rva0030B2B6@Rva0030B2B6@@QAEXPAVDataChunkOutput@@@Z,,0x0030B2B6,72,Code/GameEngine/Source/Common/Rva0030B2B6Write.cpp,matched,array count plus real pair loop
+?rva00205A2B@Rva00205A2B@@QAEXPAUArg205A2B@@@Z,,0x00205A2B,98,Code/Libraries/Source/WWVegas/WWLib/StringSearch205A2B.cpp,matched,string search 0x257 stride 0x80 via rowed compare 0x69D6 and pinned assign 0x366F0
