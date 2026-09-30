@@ -43148,3 +43148,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??4BfmeVectorRecord000C0BEC@@QAEAAU0@ABU0@@Z,,0x000BDD21,39,Code/GameEngine/Source/Common/StringVectorRecordAssignC0BEC.cpp,matched,record assign via text vector word10 without self-check
 ??1Rva002560E3@@UAE@XZ,,0x002560E3,84,Code/GameEngine/Source/GameLogic/Object/Rva002560E3ModuleDataDtor.cpp,matched,unlock ModuleData dtor strings filter Snapshot BBB554
 ?rva006FE0B0@AptBasePtrStack@@QAEXH@Z,,0x006FE0B0,105,Code/Libraries/Source/Apt/AptBasePtrStackInit.cpp,matched,unlock AptBasePtrStack capacity init via pool allocBlock asserts
+?rva0028B2BF@Object@@QAEXXZ,,0x0028B2BF,91,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B2BF.cpp,matched,Object compaction caller 0x0028B352 0x0029208A neighbours share flags
