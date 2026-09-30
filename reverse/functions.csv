@@ -44876,3 +44876,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??1Rva005E21EB@@UAE@XZ,,0x005E21EB,59,Code/GameEngine/Source/Common/Rva005E21EBDtor.cpp,matched,virtual dtor (was banked as a ctor) clear +0x0C then base dtor 0x004E84A4 pinned Rva00539926Base by vtable 0x007C6F20
 ??_GRva005E21EB@@UAEPAXI@Z,,0x005E25B1,26,Code/GameEngine/Source/Common/Rva005E21EBDtor.cpp,matched,scalar deleting dtor of Rva005E21EB
 ??1Rva0056F43E@@QAE@XZ,,0x0056F9D4,56,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056F43EDtor.cpp,matched,table dtor: rva0056F503 then inline free of the +0 holder; /EHs keeps the or -1 disarm before the extern C free
+?Rva0025E46DReset@@YAXXZ,,0x0025E46D,96,Code/GameEngine/Source/Common/Rva0025E46DReset.cpp,matched,network reset: ::delete TheNetwork then new BFME2NativeNetwork (ctor pin 0x0025DB6D) and init slot +4
