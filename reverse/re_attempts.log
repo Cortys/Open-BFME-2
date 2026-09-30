@@ -4087,3 +4087,5 @@ FUN_006D6500	0x006D6500	104	blocked	Apt SEH ctor with AptValue AptNativeHash plu
 ?rva0052A53B@Rva0052A53B@@QAEXXZ	0x0052A53B	165	blocked	shared clear goto plus rep stosd via sub-edx-shr vs push8-lea-pop plus missing push edi; GameLogic gate plus pickRV plus lookup reused t=14 model=muse-06
 ?rva005801F6@Rva005801F6@@QAEHHH@Z	0x005801F6	109	blocked	idiv plus dual virtual slot18 plus setne-sbb-and bit tricks with ret8; FX-adjacent needs donor t=5 model=muse-06
 ?rva005253A0@Rva005253A0@@QAEXABVCallback@@@Z	0x005253A0	103	blocked	vector begin-end-div4 plus virtual callback via ecx-element vs arg-vtable plus g_BFB1CC; STL neighbours need donor t=5 model=muse-06
+?rva004DD658@Rva004DD658@@QAEX PAVXfer@@@Z	0x004DD658	90	blocked	slot 0x4c 3-arg Xfer virtual unknown plus 1-push vs 2-arg Footprint mismatch t=20 model=muse-12
+??1Rva0035FD0A@@UAE@XZ	0x0035FD0A	105	blocked	dtor with 2 wide strings plus manager slot3c free plus base apply restore needs full TU reconstruction t=15 model=muse-12
