@@ -1,9 +1,8 @@
-// ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z
-// partial score=0.93 date=2026-09-29
-// ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
-// ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z @0x003C4E28 155B. Free stdcall
+// Built from the banked attempt reverse/attempts/0x003c4e28.cpp; fix: the
+// 1000.0f scale is a compiler literal (retail constant at RVA 0x007BE358), not
+// an extern global, which is what keeps retail's operand order.
+// Rva003C4E28Find @0x003C4E28 155B. Free stdcall
 // lookup by name then scaled place via two singletons. Evidence: leaf lane,
 // ret 0x10 four args, StringBase<char>::compare row 0x69D6, virtual head at
 // +0x84 from dword 0x009FEC50, virtual place at +0xC8 on 0x009FEA3C with
@@ -123,8 +122,7 @@ public:
 };
 extern Rva003C4E28ListMgr *g_009FEC50;
 extern Rva003C4E28PlaceMgr *g_009FEA3C;
-extern float g_007BE358;
-// ?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z present-unmatched
+
 void __stdcall Rva003C4E28Find(const AsciiString &name, float x, float y, float z)
 {
 	Rva003C4E28Entry *p = g_009FEC50->GetHead();
@@ -143,9 +141,9 @@ found:
 	pos[0] = p->m_x;
 	pos[1] = p->m_y;
 	pos[2] = p->m_z;
-	int ix = (int)(x * g_007BE358);
-	float fy = y * g_007BE358;
-	float fz = tz * g_007BE358;
+	int ix = (int)(x * 1000.0f);
+	float fy = y * 1000.0f;
+	float fz = tz * 1000.0f;
 	g_009FEA3C->Place(pos, ix, fy, fz);
 end:;
 }

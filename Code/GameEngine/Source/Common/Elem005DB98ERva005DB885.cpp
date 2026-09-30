@@ -1,14 +1,12 @@
-// ?rva005DB885@Elem005DB98E@@QAEXH@Z
-// partial score=0.9 date=2026-09-30
-// ?rva005DB885@Elem005DB98E@@QAEXH@Z
-// partial score=0.9 date=2026-09-30
 // cl: /O1 /arch:SSE /MD /DNDEBUG /Oy-
-// ?rva005DB885@Elem005DB98E@@QAEXH@Z @0x005DB885 95B
+// Built from the banked attempt reverse/attempts/0x005db885.cpp; fix: 0.5 and
+// 1.0f are compiler literals (retail constants at VA 0x00BC26F8 and
+// 0x00BBB8D8), not extern globals, which is what gives retail's early
+// addss and store.
+// Elem005DB98E::rva005DB885 @0x005DB885 95B
 // Elem time smoothing: delta from timeGetTime, 0<delta<10000 gates float update of m_04/m_0C then m_10 stamp.
 // Evidence: caller 0x005DBF09 passes eax from rva005DB98E as this with dword arg; same Elem005DB98E layout and IAT timeGetTime as next 0x005DB8F7.
 extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
-extern float g_00BBB8D8;
-extern double g_00BC26F8;
 
 struct Elem005DB98E
 {
@@ -30,8 +28,8 @@ void Elem005DB98E::rva005DB885(int a)
 		return;
 	if (a <= 0)
 		return;
-	m_04 = (float)((double)(m_0C * m_04) + (double)a * g_00BC26F8);
-	m_0C += g_00BBB8D8;
+	m_04 = (float)((double)(m_0C * m_04) + (double)a * 0.5);
+	m_0C += 1.0f;
 	m_04 /= m_0C;
 	m_10 = timeGetTime();
 }
