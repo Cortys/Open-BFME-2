@@ -76,3 +76,13 @@ void Rva004C73C5Insert(void *a, void *b, Rva004C6FD0Val v, Rva004C6F77Pred pred)
 		Rva004C6FD0Insert(b, v, pred);
 	}
 }
+
+void Rva004C7449Sort(void *first, void *last, Rva004C6F77Pred pred)
+{
+	if (first == last)
+		return;
+	for (char *esi = (char *)first + 8; esi != last; esi += 8) {
+		Rva004C6FD0Val v = *(Rva004C6FD0Val *)esi;
+		Rva004C73C5Insert(first, esi, v, pred);
+	}
+}
