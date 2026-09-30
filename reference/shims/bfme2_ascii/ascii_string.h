@@ -1,16 +1,29 @@
 #pragma once
 
+// BFME2's shared AsciiString: include this instead of declaring a TU-local
+// `class AsciiString` (2026-09-30: 941 TUs carried private copies in 341
+// versions, and the link census counted their differing inline copies against
+// ~500 files). Put /Ireference/shims/bfme2_ascii FIRST among a TU's /I flags so
+// this header and the string_base.h beside it win over Open-BFME-1's.
+//
 // BFME2 compatibility view of Open-BFME-1's WWLib AsciiString. Upstream's
 // current class derives from StringBase<char>, so scope exits call the private
 // StringBase destructor thunk at 0x0048BA39. BFME2 retail calls the shared
 // releaseBuffer worker directly at 0x00036410. Keep the same one-pointer
 // layout, but make this wrapper own cleanup so callers emit that verified
 // worker call. The method surface follows the BFME1 header; only the class
-// relationship and destructor placement differ for the BFME2 target.
+// relationship, the destructor placement and the format/translate overloads
+// (BFME2's rows in WWLib/string_inline.cpp and StringUtf8Translation.cpp)
+// differ for the BFME2 target.
+//
+// string_base.h beside this file is Open-BFME-1's WWLib string_base.h as of
+// 77db49c3d, frozen here: the submodule copy keeps changing (aa3e918c4 moved
+// five members inline on 2026-09-30) and would change BFME2 codegen with it.
 #include <string.h>
 #include "string_base.h"
 
 class UnicodeString;
+class PooledString;
 
 class AsciiString
 {
@@ -26,6 +39,7 @@ public:
 		((StringBase<char> *)this)->StringBase<char>::StringBase(s);
 	}
 	AsciiString(const char *s, int len);
+	AsciiString(const char *s, int start, int len);
 	AsciiString(const AsciiString &that, int start, int len);
 	AsciiString(const UnicodeString &that);
 	~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
@@ -36,9 +50,11 @@ public:
 		return *this;
 	}
 	AsciiString &operator=(char c);
+	// Retail's out-of-line copy (0x000065B8) calls StringBase<char>::set(const char *)
+	// (0x000055F5), which does the strlen.
 	AsciiString &operator=(const char *s)
 	{
-		((StringBase<char> *)this)->set(s, s ? (int)strlen(s) : 0);
+		((StringBase<char> *)this)->set(s);
 		return *this;
 	}
 	AsciiString &operator=(const UnicodeString &that);
@@ -46,9 +62,12 @@ public:
 	AsciiString &operator+=(char c);
 	AsciiString &operator+=(const char *s);
 	AsciiString &operator+=(const UnicodeString &that);
+	AsciiString &operator+=(const PooledString &that);
 
-	void __cdecl format(AsciiString fmt, ...);
+	void __cdecl format(const char *fmt, ...);
+	void __cdecl format(const AsciiString *fmt, ...);
 	void translate(const UnicodeString &that);
+	void translate(const unsigned short *that);
 	const char *str() const { return m_text ? m_text + 8 : ""; }
 	int getLength() const { return ((const StringBase<char> *)this)->getLength(); }
 	char getCharAt(int i) const { return ((const StringBase<char> *)this)->getCharAt(i); }
@@ -86,7 +105,7 @@ public:
 	int compare(const AsciiString &s) const { return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&s); }
 	int compareNoCase(const AsciiString &s) const { return ((const StringBase<char> *)this)->compareNoCase(*(const StringBase<char> *)&s); }
 
-	static AsciiString TheEmptyString;
+	static const AsciiString TheEmptyString;
 
 private:
 	char *m_text;

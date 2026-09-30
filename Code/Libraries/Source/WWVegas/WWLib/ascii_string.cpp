@@ -1,67 +1,7 @@
-// cl: /O1
+// cl: /O1 /Ireference/shims/bfme2_ascii
 // Upstream implementation and layout: Open-BFME-1 ascii_string.h.
 
-class AsciiString;
-class PooledString;
-class UnicodeString;
-
-typedef unsigned short wchar_t;
-
-template <typename T>
-class StringBase
-{
-public:
-    void set(const StringBase<T> &that);
-    void set(const T *text);
-    void set(const T *text, int length);
-    void concat(const StringBase<T> &that);
-    void concat(const T *text);
-    void concat(const T *text, int length);
-
-private:
-    friend class AsciiString;
-
-    void releaseBuffer();
-    StringBase(const StringBase<T> &that);
-    StringBase(T character);
-    StringBase(const T *text);
-    StringBase(const T *text, int length);
-    StringBase(const T *text, int start, int length);
-    StringBase(const StringBase<T> &that, int start, int length);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
-
-class AsciiString
-{
-public:
-    AsciiString &operator+=(const PooledString &that);
-    AsciiString();
-    AsciiString(const AsciiString &that);
-    AsciiString(char character);
-    AsciiString(const char *text);
-    AsciiString(const char *text, int length);
-    AsciiString(const char *text, int start, int length);
-    AsciiString(const AsciiString &that, int start, int length);
-    ~AsciiString();
-    AsciiString &operator=(const AsciiString &that);
-    AsciiString &operator=(char character);
-    AsciiString &operator=(const char *text);
-    AsciiString &operator+=(const AsciiString &that);
-    AsciiString &operator+=(char character);
-    AsciiString &operator+=(const char *text);
-
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 // A PooledString is one pointer to a shared entry whose text starts at +8, and
 // the entry is never null, so there is no empty-string fallback here.
@@ -81,24 +21,9 @@ AsciiString &AsciiString::operator+=(const PooledString &that)
     return *this;
 }
 
-AsciiString::AsciiString(const AsciiString &that)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that);
-}
-
-AsciiString::AsciiString()
-{
-    m_text = 0;
-}
-
 AsciiString::AsciiString(char character)
 {
     ((StringBase<char> *)this)->StringBase<char>::StringBase(character);
-}
-
-AsciiString::AsciiString(const char *text)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(text);
 }
 
 AsciiString::AsciiString(const char *text, int length)
@@ -117,27 +42,10 @@ AsciiString::AsciiString(const AsciiString &that, int start, int length)
         *(const StringBase<char> *)&that, start, length);
 }
 
-AsciiString::~AsciiString()
-{
-    ((StringBase<char> *)this)->releaseBuffer();
-}
-
-AsciiString &AsciiString::operator=(const AsciiString &that)
-{
-    ((StringBase<char> *)this)->set(*(const StringBase<char> *)&that);
-    return *this;
-}
-
 AsciiString &AsciiString::operator=(char character)
 {
     char text = character;
     ((StringBase<char> *)this)->set(&text, 1);
-    return *this;
-}
-
-AsciiString &AsciiString::operator=(const char *text)
-{
-    ((StringBase<char> *)this)->set(text);
     return *this;
 }
 
@@ -159,3 +67,22 @@ AsciiString &AsciiString::operator+=(const char *text)
     ((StringBase<char> *)this)->concat(text);
     return *this;
 }
+
+// The default, copy and C-string constructors, the destructor and both
+// assignments are inline in ascii_string.h, and retail still keeps an
+// out-of-line copy of each (0x00326BE6, 0x001D8F56, 0x0000654A, 0x0048BA39,
+// 0x00001733, 0x000065B8): the COMDATs of calls MSVC did not inline. With
+// inlining off, these calls emit the same COMDATs here, where their rows live,
+// as selectany copies rather than strong definitions that collide with every
+// other TU's inline copy in the linked build.
+#pragma inline_depth(0)
+// ?bfmeEmitAsciiStringInlines@@YAXPAVAsciiString@@ABV1@PBD@Z present-unmatched
+void bfmeEmitAsciiStringInlines(AsciiString *out, const AsciiString &that, const char *text)
+{
+    AsciiString empty;
+    AsciiString copy(that);
+    AsciiString fromText(text);
+    *out = that;
+    *out = text;
+}
+#pragma inline_depth()
