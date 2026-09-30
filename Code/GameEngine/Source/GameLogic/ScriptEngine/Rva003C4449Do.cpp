@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva003C4449Do@@YGXABVAsciiString@@0@Z @0x003C4449 83B.
 // Script free function finding Team named then Player by name key and
 // calling rowed armor remove 0x003A28ED. Evidence: chain lane via 0x003A28ED
@@ -8,26 +8,7 @@
 class Object;
 class Team;
 class Player;
-template<class T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-public:
-	int compare(const T *) const;
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString();
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 class ScriptEngine
 {
 public:

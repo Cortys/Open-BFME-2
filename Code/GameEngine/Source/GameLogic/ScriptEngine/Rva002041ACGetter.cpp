@@ -1,38 +1,12 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ?rva002041AC@Rva002041AC@@QBE?AVAsciiString@@I@Z @0x002041AC 53B: bounds-checked
 // AsciiString getter over the pointer pair at +8/+0xc; out of range yields the
 // exported AsciiString::TheEmptyString at 0x009E0878. Evidence: StringBase copy pin
 // 0x000365F0; callers 0x00206011 0x003A17E6 0x003C2532 0x003C7511 0x003E826D 0x003E8351.
 
-template <typename T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase<T> &that);
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-    Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-    static AsciiString TheEmptyString;
-private:
-    char *m_text;
-};
 
 struct Rva002041AC
 {

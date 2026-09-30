@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // GettingBuiltBehaviorModuleData ctor shard (retail 0x0045324E, 199 bytes).
 // File-unit with GettingBuiltBehaviorModuleDataCtor.cpp (parse proc there).
@@ -14,15 +14,7 @@
 // The +0x40 member builds through the pinned nullary Rva003623E5Member ctor.
 // Bytes and ints nulled in retail order.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-	void set(const char *s);
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 extern "C" __declspec(dllimport) long __stdcall InterlockedDecrement(long volatile *lpAddend);
 

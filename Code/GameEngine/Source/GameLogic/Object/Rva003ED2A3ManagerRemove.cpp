@@ -1,5 +1,5 @@
 // stlport
-// cl: /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
+// cl: /Ireference/shims/bfme2_ascii /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
 // ?remove@Rva003ED2A3Manager@@QAEXABVAsciiString@@PAX@Z @0x003ED2A3 (62B):
 // manager remove-by-name (erases hash_map entry when _M_find hits; second
 // arg ignored but kept for ret-8 parity with the add twin 0x003ED265).
@@ -34,14 +34,7 @@ public:
 	float m_damageCoefficient[38];
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class NameKeyGenerator
 {

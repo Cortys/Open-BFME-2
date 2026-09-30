@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??1GenericObjectCreationNugget@@MAE@XZ at retail 0x001F31C6 (169B).
 // Dedicated TU (the parseObject caller lives in the sibling
@@ -15,18 +15,7 @@
 // padding; the ctor stash (reverse/attempts/0x001f0e32.cpp) carries the
 // full scalar map.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_text(0) {}
-	__forceinline ~AsciiString() { releaseBuffer(); }
-
-protected:
-	void releaseBuffer();
-
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class PoolMember
 {

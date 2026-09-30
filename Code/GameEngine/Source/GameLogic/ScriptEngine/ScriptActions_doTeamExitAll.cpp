@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doTeamExitAll, retail 0x003BEFFA, 75 bytes.
 // Target identity: initActionTemplates index 0x38 (56) is TEAM_EXIT_ALL;
@@ -9,25 +9,8 @@
 // Donor facts: BFME1 ScriptActions.cpp maps TEAM_EXIT_ALL to doTeamExitAll and
 // performs the same team/group evacuation sequence.
 
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
 
 class Team;
 enum CommandSourceType { CMD_FROM_SCRIPT = 1 };

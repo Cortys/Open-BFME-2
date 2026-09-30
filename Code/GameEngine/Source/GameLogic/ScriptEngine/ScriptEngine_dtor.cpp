@@ -1,4 +1,4 @@
-// cl: /O1 /EHs
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs
 //
 // ScriptEngine::~ScriptEngine, retail 0x0020A2B0 (726 bytes). Its scalar
 // deleting destructor (0x0020C0C7) is slot 0 of the vtable at 0x007E3D70.
@@ -200,19 +200,8 @@ private:
 	char m_body[16];
 };
 
-template <typename T>
-class StringBase
-{
-public:
-	~StringBase();
+#include "ascii_string.h"
 
-private:
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class Template
 {

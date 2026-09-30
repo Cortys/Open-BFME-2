@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
 // Rva0044ECCE is an address-derived base stand-in; its target class name is unproven.
 //
 // ??1SpecialDisguiseUpdateModuleData@@UAE@XZ, retail 0x004B0468, 74 bytes.
@@ -23,14 +23,7 @@ private:
 	unsigned char m_pad[0xC8 - 4];
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) SpecialDisguiseUpdateModuleData : public Rva0044ECCE
 {

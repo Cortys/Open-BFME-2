@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /Ireference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /G7 /arch:SSE /Ireference/shims/bfmecamera /Ireference/open-bfme-1/Code/GameEngine/Source/GameLogic/ScriptEngine /DNDEBUG /MD /EHsc
 // ?ParseAction@ScriptAction@@KAPAV1@AAVDataChunkInput@@PAUDataChunkInfo@@PAX@Z
 // readable ZH body: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source/GameLogic/ScriptEngine/Scripts.cpp
 //
@@ -29,11 +29,7 @@ enum NameKeyType { NAMEKEY_INVALID = 0 };
 
 extern "C" __declspec(dllimport) void __stdcall Sleep(unsigned long milliseconds);
 
-template <class T> class StringBase
-{
-public:
-	int compare(const T *str) const throw();
-};
+#include "ascii_string.h"
 
 class BFMERetailAsciiString
 {
@@ -47,20 +43,6 @@ private:
 	char *m_data;
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	AsciiString(const char *text)
-	{
-		((BFMERetailAsciiString *)this)->BFMERetailAsciiString::BFMERetailAsciiString(text);
-	}
-	~AsciiString() { ((BFMERetailAsciiString *)this)->releaseBuffer(); }
-	int compare(const char *text) const { return ((const StringBase<char> *)this)->compare(text); }
-
-private:
-	char *m_data;
-};
 
 AsciiString KEYNAME(NameKeyType key);
 

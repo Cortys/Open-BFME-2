@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ??0RunOffMapBehaviorModuleData@@QAE@XZ, retail 0x00254ECE (86 bytes).
 // The module-data half of RunOffMapBehavior: vtable 0x00BF3298,
@@ -12,18 +12,7 @@
 // is load-bearing for the EH state machine (SpawnUnit precedent). /arch:SSE
 // for movss float stores; /EHsc for the __EH_prolog frame.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0)
-	{
-	}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class UpdateModuleData
 {

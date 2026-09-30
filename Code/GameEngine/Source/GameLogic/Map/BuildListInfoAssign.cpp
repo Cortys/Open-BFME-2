@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??4BuildListInfo@@QAEAAV0@ABV0@@Z @0x003299AD 211B
 // BuildListInfo copy assignment (memberwise, 0x80 bytes).
@@ -12,21 +12,8 @@
 // Coord3D+Coord2D+Real, 9 bools, ObjectID/timestamp, 10 gatherers); retail
 // groups the 4 tail bools at +0x44-0x47 (supply at +0x46 per AIPlayer).
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString();
-};
 
 struct Coord3D
 {

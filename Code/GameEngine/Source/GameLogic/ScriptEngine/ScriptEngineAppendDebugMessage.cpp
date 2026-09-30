@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?AppendDebugMessage@ScriptEngine@@QAEXABVAsciiString@@_N@Z @0x00205263 171B
 // Retail ScriptEngine debug-window append: disabled/DLL guards, AppendMessage
 // proc via GetProcAddress, frame from TheGameLogic+0x40 or TheRva00DFEF10+0xFC
@@ -24,29 +24,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-protected:
-	BfmeStringData<T> *m_data;
-
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	void concat(const StringBase<T> &other);
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *fmt, ...);
-	const char *str() const { return m_data ? (const char *)m_data->text : ""; }
-};
 
 class GameLogic
 {

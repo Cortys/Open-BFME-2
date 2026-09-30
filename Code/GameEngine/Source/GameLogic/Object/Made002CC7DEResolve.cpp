@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ?rva005095FB@Made002CC7DE@@UAEXXZ @0x005095FB (48B).
 // WeaponOCLNugget resolve slot 8 of vtable 0x00864588: base resolve
@@ -13,17 +13,7 @@ public:
 	const ObjectCreationList *findObjectCreationList(const char *name) const;
 };
 
-class AsciiString
-{
-public:
-	const char *str() const
-	{
-		const char *data = *reinterpret_cast<const char *const *>(this);
-		return data ? data + 8 : reinterpret_cast<const char *>(0x00BBAC1C);
-	}
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00507823
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1CivilianSpawnUpdateModuleData@@UAE@XZ @ 0x0047FABF 63B
 // Two-member dtor restoring Snapshot base vtable 0x00BBB554: vector at +0x14
@@ -21,13 +21,7 @@ inline Snapshot::~Snapshot()
 {
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class Rva003623E5Filter
 {
 public:

@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ??1SlaveWatcherBehaviorModuleData@@UAE@XZ @0x004846FA, 63B.
 // Virtual dtor slot evidence: ??_G at 0x004846DE (rowed, slot 0 of vtable
 // 0x00C4A298) calls here. Destroys AsciiStrings at +0x0C then +0x08 via
@@ -20,14 +20,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) SlaveWatcherBehaviorModuleData : public Snapshot
 {

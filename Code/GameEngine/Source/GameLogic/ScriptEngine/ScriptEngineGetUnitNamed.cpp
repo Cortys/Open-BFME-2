@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?getUnitNamed@ScriptEngine@@QAEPAVObject@@PAVParameter@@@Z
 // Retail 0x003588E7, 76 bytes.
@@ -10,28 +10,8 @@
 // 0x49DC5 then string at +0x10 for isEmpty and by-value lookupUnitByValue
 // at 0x358752. 40+ script callers pass Parameter* through this slot.
 //
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-public:
-    bool isEmpty() const;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-    bool isEmpty() const { return ((const StringBase<char> *)this)->isEmpty(); }
-private:
-    char *m_text;
-};
 
 class Object;
 enum ObjectID

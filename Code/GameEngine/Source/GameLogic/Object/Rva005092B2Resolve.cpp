@@ -1,22 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva005092B2@Rva005092B2@@QAEXXZ @0x005092B2 34B: resolve helper over base
 // Rva00507823 slot 8 plus WeaponStore findWeaponTemplate by +0x130 name into
 // +0x128 slot. No callers rowed; address sits between Made002CC711Ctor and
 // Made002CC774Parse.
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class WeaponTemplate
 {

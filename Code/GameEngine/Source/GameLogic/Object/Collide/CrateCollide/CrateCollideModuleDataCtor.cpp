@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0CrateCollideModuleData@@QAE@XZ, retail 0x004BC657, 107 bytes.
 // The module-data half of CrateCollide: vtable immediate 0x00C5A660 modelled
@@ -31,15 +31,7 @@ private:
 	unsigned char m_data[0x1C];
 };
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 extern AsciiString g_emptyAsciiString;
 

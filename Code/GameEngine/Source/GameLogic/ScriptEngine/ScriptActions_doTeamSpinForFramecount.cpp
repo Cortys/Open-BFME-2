@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail RVA 0x003C0FEA, 54 bytes.
 // ?doTeamSpinForFramecount@ScriptActions@@IAEXABVAsciiString@@H@Z
 // BFME1 donor reference/open-bfme-1/game/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions.cpp
@@ -6,23 +6,7 @@
 // Evidence: getTeamNamed pin 0x003584E9 (by-value AsciiString temp pattern),
 // rowed setSequentialTimer Team overload 0x00204002, TheScriptEngine 0x00DFE16C.
 // Caller at 0x003CD447. Prev doTeamExitAll / next doTeamAttackNamed share flags.
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 
 class Team

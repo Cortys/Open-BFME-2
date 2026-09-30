@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1HordeSiegeEngineContainModuleData@@UAE@XZ, retail 0x0047DA99, 74 bytes.
 // Target evidence: audited scalar deleting dtor 0x0047DA7D (vtable
@@ -11,14 +11,7 @@
 // dtor inlines away. Retail stores no vptr (novtable). Member layout from the
 // matched ctors 0x0047C927 / 0x0047DA08.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva003623E5Member
 {

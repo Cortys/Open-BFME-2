@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doNamedEnterNamed, retail 0x003C8669, 92 bytes.
 // Target identity: initActionTemplates index 0x35 (53) is NAMED_ENTER_NAMED;
@@ -13,25 +13,8 @@
 // 0x26C347 has an address-derived name because its semantic API identity is
 // not independently proven; target behavior establishes its use here.
 
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
 
 class Object;
 

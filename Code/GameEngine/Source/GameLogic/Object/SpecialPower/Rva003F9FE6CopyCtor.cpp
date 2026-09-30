@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??0Rva003F9FE6@@QAE@ABV0@@Z @0x003F9FE6 225B
@@ -8,22 +8,8 @@
 // then 13 dwords +0x1C..+0x4C and 7 bytes +0x50..+0x56.
 // Evidence: unlock lane, callees all rowed or pinned, callers 0x003FA121
 // 0x00402C18 0x00402F31, landing unblocks 0x003FA118 and 0x00402C0F.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString();
-	~AsciiString();
-};
 
 namespace _STL
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doTeamAttackNamed, retail 0x003C3B7D, 141 bytes.
 // Target identity: initActionTemplates index 0x33 (51) is TEAM_ATTACK_NAMED;
@@ -23,31 +23,8 @@ public:
     int compare(const char *) const;
 };
 
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-public:
-    int compare(const T *) const;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-    int compare(const char *s) const
-    {
-        return ((const StringBase<char> *)this)->compare(s);
-    }
-private:
-    char *m_text;
-};
 
 enum CommandSourceType
 {

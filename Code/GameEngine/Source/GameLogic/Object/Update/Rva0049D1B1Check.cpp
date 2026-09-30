@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /DNDEBUG /MD
 //
 // ?Check@Rva0049D1B1@@UAE_NH@Z, retail 0x0049CDF9, 47 bytes. Dedicated TU.
 //
@@ -14,13 +14,7 @@
 // never constructed here, so no vtable is emitted. The dtor lives in
 // Rva0049D1B1.cpp. Virtual calls need no pins.
 
-class AsciiString
-{
-public:
-	~AsciiString() throw();
-
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva0049D1B1
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
 //
 // ??1BuildingBehaviorModuleData@@UAE@XZ, retail 0x004564E6, 58 bytes.
 // ModuleData dtor: four-element window-name array at +0x08 torn down via
@@ -9,15 +9,7 @@
 // ModuleData dtors (TU-local Snapshot with inline BBB554 restore plus
 // novtable derived suppressing the entry store retail lacks).
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class BuildingWindowName
 {

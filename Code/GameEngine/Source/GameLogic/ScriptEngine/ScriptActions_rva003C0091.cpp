@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Retail RVA 0x003C0091, 61 bytes.
 // ?rva003C0091@ScriptActions@@IAEXABVAsciiString@@@Z
 // Honest address name: ScriptActions area method dispatched from FUN_007ca4be
@@ -7,23 +7,7 @@
 // pin 0x0035768D with the by-value AsciiString temp pattern, then audio vtable
 // slot +0x178 fed with the trigger. TheScriptEngine at 0x00DFE16C.
 // Prev doTeamExitAll shares flags.
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 class PolygonTrigger
 {
