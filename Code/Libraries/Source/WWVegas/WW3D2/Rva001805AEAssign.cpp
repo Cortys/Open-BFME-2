@@ -42,11 +42,21 @@ struct BfmeResetTextureRef
 	void *pointer;
 	void clear();
 	BfmeResetTextureRef &rva001805AE(const BfmeResetAnyRef &rhs);
+	BfmeResetTextureRef &rva00180815(const BfmeResetAnyRef &rhs);
 };
 
 BfmeResetTextureRef &BfmeResetTextureRef::rva001805AE(const BfmeResetAnyRef &rhs)
 {
 	if (rhs.pointer && rhs.pointer->GetClassId() != 0x50415254)
+		clear();
+	else
+		*(RefCountPtr<TextureClass> *)this = *(const RefCountPtr<TextureClass> *)&rhs;
+	return *this;
+}
+
+BfmeResetTextureRef &BfmeResetTextureRef::rva00180815(const BfmeResetAnyRef &rhs)
+{
+	if (rhs.pointer && rhs.pointer->GetClassId() != 0x424F58)
 		clear();
 	else
 		*(RefCountPtr<TextureClass> *)this = *(const RefCountPtr<TextureClass> *)&rhs;
