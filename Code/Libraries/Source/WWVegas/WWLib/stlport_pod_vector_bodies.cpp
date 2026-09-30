@@ -213,3 +213,7 @@ BfmePod40 *Rva0040AAD5::rva0040AAD5(int key)
     BfmePod40 *found = _STL::find(_first, _last, (const BfmePod40 &)key);
     return found == _last ? 0 : found;
 }
+// ??$__find@PAUBfmePod104@@U1@@_STL@@YAPAUBfmePod104@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z @0x0040A705 118B
+// Unrolled random-access __find over 104-byte elements comparing a[0]; stride
+// 0x68 in retail; caller 0x0040A8AC is the 27B find wrapper it unlocks.
+template BfmePod104* _STL::__find(BfmePod104*, BfmePod104*, const BfmePod104&, const _STL::random_access_iterator_tag&);
