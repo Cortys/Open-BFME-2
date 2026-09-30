@@ -693,6 +693,7 @@ class ShroudManager : public ShroudManagerImpl008FBA40
 {
 public:
 	void undoRevealMapForPlayerPermanently(int playerIndex);
+	void updatePlayerCells450_Rva0073D860(int playerIndex);
 };
 
 // ?undoRevealMapForPlayerPermanently@ShroudManager@@QAEXH@Z
@@ -707,6 +708,21 @@ void ShroudManager::undoRevealMapForPlayerPermanently(int playerIndex)
 			element != end; ++element)
 		{
 			element->updatePlayerCells008FC3B0(this, playerIndex);
+		}
+	}
+}
+
+void ShroudManager::updatePlayerCells450_Rva0073D860(int playerIndex)
+{
+	if (playerIndex >= 0 && playerIndex < 20)
+	{
+		processPending(false);
+
+		ShroudManagerImpl008FBA40Element *end = elements + height * width;
+		for (ShroudManagerImpl008FBA40Element *element = elements;
+			element != end; ++element)
+		{
+			element->updatePlayerCells008FC450(this, playerIndex);
 		}
 	}
 }

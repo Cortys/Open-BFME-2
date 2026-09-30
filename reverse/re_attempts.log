@@ -3878,3 +3878,4 @@ FUN_009380a8	0x005380A8	139	blocked	EH ctor with vtable List SSE needs donor t=8
 FUN_00685778	0x00285778	232	blocked	virtual slot 24 doubles bitfields needs donor vslot t=5 model=muse-08
 ?Rva005874BAInsert@@YAXPAURec12@@HHU1@PBX@Z	0x005874BA	70	partial	movss order comiss mem jbe vs jae t=25 model=muse-08 score=0.93 stash=reverse/attempts/0x005874ba.cpp
 ??1Rva0011172A@@UAE@XZ	0x0011172A	72	blocked	dtor via deleting-dtor caller 0x00111867 two vptr stores 0x7CFAC0 then 0x7C650C plus Release member at +0x2AB4; minimal novtable and implicit models give 53B frameless no EH no vtable relocs vs retail 72B EH; needs real 11KB class layout plus live-vtable reason t=10 model=muse-07
+FUN_009cc788	0x005CC788	84	blocked	virtual-base dtor with vbtable indirection plus pin-only clear needs donor t=8 model=muse-04
