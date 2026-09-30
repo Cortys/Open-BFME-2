@@ -40,7 +40,7 @@ private:
 	void *m_data;
 };
 
-void free(void *block);
+extern "C" void free(void *block);
 
 struct DetourPoints
 {

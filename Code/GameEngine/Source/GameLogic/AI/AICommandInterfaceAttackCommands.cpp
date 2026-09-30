@@ -67,7 +67,7 @@ enum GuardMode
 	GUARDMODE_NORMAL = 0
 };
 
-void free(void *block);
+extern "C" void free(void *block);
 
 class Rva003427DD
 {

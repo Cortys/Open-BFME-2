@@ -48,7 +48,7 @@ public:
 Rva002337F0* __cdecl Rva00583B11Copy(Rva002337F0* first, Rva002337F0* last, Rva002337F0* result, const Tag& tag);
 void __cdecl Rva00583A72Set(Rva002337F0* a, const Rva002337F0Blk* b);
 Rva002337F0* __cdecl Rva00583A84FillN(Rva002337F0* result, unsigned int count, const Rva002337F0Blk& value, const Tag& tag);
-void __cdecl free(void* p);
+extern "C" void __cdecl free(void* p);
 
 class Rva0058431D
 {

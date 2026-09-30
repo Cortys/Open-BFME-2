@@ -157,7 +157,7 @@ extern "C" char * __cdecl strdup(const char *);
 // stlport_ios_base_dtor.cpp, which carries both forms in one body).
 namespace _STL
 {
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block);
 }
 
 #if defined(__WATCOMC__)

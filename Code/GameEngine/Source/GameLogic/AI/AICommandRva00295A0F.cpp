@@ -31,7 +31,7 @@ enum CommandSourceType
 	CMD_FROM_AI = 2
 };
 
-void free(void *block);
+extern "C" void free(void *block);
 
 class Rva003427DD
 {

@@ -7,7 +7,7 @@
 class LocomotorStore;
 void __cdecl Rva00220AEBDestroy(LocomotorStore *first, LocomotorStore *last);
 
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block);
 
 template <class T> struct RvaVectorBuffer
 {
