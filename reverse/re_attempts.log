@@ -3782,3 +3782,4 @@ FUN_007f5a72	0x003F5A72	204	blocked	Xfer ScienceType vector needs BFME2 Xfer slo
 ??1Rva002DFAD1@@QAE@XZ	0x002DFAD1	207	blocked	EH 9-8 missing plus edx-eax-push-reg mirror t=15 model=muse-03
 ?rva003E70AC@ScriptConditions@@QAE_NPAVParameter@@_N@Z	0x003E70AC	126	blocked	frame-temp-iterator model mismatch t=12 model=muse-03
 ?Rva001F2EABRotate@@YAXPAVVector3@@PAVMatrix3D@@@Z	0x001F2EAB	99	blocked	esi-edi mirror plus sret-eax vs local temp t=20 model=muse-03
+?rva00595213@Rva00595213@@QAE_NPAVUDP@@PBDGKI@Z	0x00595213	177	blocked	chain UDP packet 7 callees plus IAT htonl plus Msg layout plus multi-class this needs donor t=10 model=muse-03
