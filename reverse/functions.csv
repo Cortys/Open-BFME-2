@@ -43344,3 +43344,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003F4CC0@Rva003F4CC0@@QAEPAURva003F4CC0Inner@@H@Z,,0x003F4CC0,73,Code/Libraries/Source/WWVegas/WWLib/Rva003F4CC0Find.cpp,matched,unlock search inners unk0 vs int arg same dir flags siblings
 ?rva0059D74B@Rva0059D74B@@QAEXPAVRva0042094D@@@Z,,0x0059D74B,102,Code/GameEngine/Source/Common/Rva0059D74BNormalize.cpp,matched,sum 7 ints via 0x0042094D scale by 1.0f at 0xBBB8D8 caller 0x004FB249
 ?rva0050F0AB@Rva0050F0AB@@QAEXXZ,,0x0050F0AB,96,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,UnicodeString format SetText via RegistryAsciiPath
+?rva003F4798@Rva003F498A@@QAEHHH@Z,,0x003F4798,78,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock search one outer inners obj id same file flags siblings

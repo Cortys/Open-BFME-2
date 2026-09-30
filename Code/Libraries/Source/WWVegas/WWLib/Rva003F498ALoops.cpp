@@ -44,6 +44,7 @@ public:
     bool rva003F486C(int id);
     bool rva003F48EF(void *p);
     int rva003F4752(void *p);
+    int rva003F4798(int outerIdx, int id);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -116,6 +117,19 @@ int Rva003F498A::rva003F4752(void *p)
 {
     for (unsigned i = 0; i < m_outers.size(); ++i) {
         if (m_outers[i].unk0 == *(int *)((char *)p + 0x34))
+            return (int)i;
+    }
+    return -1;
+}
+
+// ?rva003F4798@Rva003F498A@@QAEHHH@Z @0x003F4798 78B unlock search one outer inners for unk0-obj id at +0x14 matching int arg returning index else -1; callers 0x003F4FB5 0x004EE0F6 0x004EE287; same file sizes flags as rva003F486C
+int Rva003F498A::rva003F4798(int outerIdx, int id)
+{
+    Rva003F498AOuter &o = m_outers[outerIdx];
+    for (unsigned i = 0; i < o.inners.size(); ++i) {
+        Rva003F498AInner &in = o.inners[i];
+        void *obj = *(void **)&in;
+        if (*(int *)((char *)obj + 0x14) == id)
             return (int)i;
     }
     return -1;
