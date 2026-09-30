@@ -44152,3 +44152,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva002DB9CB@Rva002DB9CB@@QAEPAV1@XZ,,0x002DB9CB,36,Code/GameEngine/Source/Common/Rva002DB9CBClear.cpp,matched,unlock lane via caller 0x002DD173 lea ecx esi+0x10 return this clears 16B
 ?rva000E5EE5@Rva000E5EE5@@QAEXPBVRva0055A88BDwordField@@V?$StringBase@D@@@Z,,0x000E5EE5,123,Code/GameEngine/Source/Common/Rva000E5EE5Method.cpp,matched,list-find via get 0x55A88B and matcher 0xE5EC1 clears 0x2C sets 0x9C
 ??0Rva005646BC@@QAE@IAAUSrc005646BC@@@Z,,0x005646BC,135,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005646BC.cpp,matched,copy-template ctor twin via rowed base uint ctor and FX cache
+?removeObjectFromGarrisonPoint@GarrisonContain@@IAEXPAVObject@@H@Z,,0x00477E82,132,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainRemoveObject.cpp,matched,BFME1 donor TrackTargets plus Thing setPosition row
