@@ -43398,3 +43398,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva005186E1Format@@YAXPAVOptionPreferences@@PAVAsciiString@@@Z,,0x005186E1,117,Code/GameEngine/Source/Common/Rva005186E1Format.cpp,matched,9-int list via rowed dispatch format concat
 ?rva0020E794@Rva0020E794@@QAEPAVRva003F498A@@XZ,,0x0020E794,41,Code/Libraries/Source/WWVegas/WWLib/Rva0020E794Loop.cpp,matched,chain via rowed 0x003F4831 same file flags as neighbours
 ??0Rva00171024@@QAE@HH@Z,,0x00171024,67,Code/Libraries/Source/WWVegas/WWLib/Rva00171024Ctor.cpp,matched,unlock ctor clamp 0x800 via rowed map 0x00242F01
+?rva0025DDA4@Rva0025DDD2@@QBEMXZ,,0x0025DDA4,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,float wrapper over Transport average via 0C 12024 sibling of 0x0025DDD2

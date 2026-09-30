@@ -8,6 +8,7 @@ class Transport
 {
 public:
 	float rva004D5046() const;
+	float rva004D5002() const;
 };
 
 class BFMEConnectionManager
@@ -24,6 +25,7 @@ class Rva0025DDD2
 
 public:
 	float rva0025DDD2() const;
+	float rva0025DDA4() const;
 };
 
 float Rva0025DDD2::rva0025DDD2() const
@@ -35,6 +37,20 @@ float Rva0025DDD2::rva0025DDD2() const
 		t = mgr->m_transport12024;
 	if (t != 0)
 		result = t->rva004D5046();
+	else
+		result = 0.0f;
+	return result;
+}
+
+float Rva0025DDD2::rva0025DDA4() const
+{
+	volatile float result;
+	BFMEConnectionManager *mgr = m_mgr0C;
+	Transport *t = 0;
+	if (mgr != 0)
+		t = mgr->m_transport12024;
+	if (t != 0)
+		result = t->rva004D5002();
 	else
 		result = 0.0f;
 	return result;
