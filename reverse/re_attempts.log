@@ -4090,3 +4090,5 @@ FUN_006D6500	0x006D6500	104	blocked	Apt SEH ctor with AptValue AptNativeHash plu
 ?rva004DD658@Rva004DD658@@QAEX PAVXfer@@@Z	0x004DD658	90	blocked	slot 0x4c 3-arg Xfer virtual unknown plus 1-push vs 2-arg Footprint mismatch t=20 model=muse-12
 ??1Rva0035FD0A@@UAE@XZ	0x0035FD0A	105	blocked	dtor with 2 wide strings plus manager slot3c free plus base apply restore needs full TU reconstruction t=15 model=muse-12
 ??0Rva0035FCD6@@QAE@XZ	0x0035FCD6	52	partial	or-first vs xor-vtable-mov-mov and vtable-late vs early; 52B 19insns exact size t=25 model=muse-spark score=0.9 stash=reverse/attempts/0x0035fcd6.cpp
+?rva000F074E@Rva000F26DC@@QAEXHH@Z	0x000F074E	117	partial	idx lea vs add+mov 1B t=20 model=muse-09 score=0.97 stash=reverse/attempts/0x000f074e.cpp
+??1Rva000F26DC@@UAE@XZ	0x000F26DC	179	blocked	dtor EH vptr layout wall 41B diff missing prolog stores t=10 model=muse-09

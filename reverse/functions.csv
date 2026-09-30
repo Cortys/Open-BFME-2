@@ -43978,3 +43978,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0020D613Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0020D613,37,Code/GameEngine/Source/Common/Rva0020D613Alloc.cpp,matched,unlock hash node alloc via rowed allocate plus Construct
 ?rva00491EE6@Rva00491DD3@@QAEXXZ,,0x00491EE6,50,Code/GameEngine/Source/Common/Rva00491DD3Method.cpp,matched,UpdateModule base plus AI slot 0x1B8 and rowed 0x26331C
 ??4Rva0031804D@@QAEAAV0@ABV0@@Z,,0x0031804D,81,Code/GameEngine/Source/Common/Rva0031804DAssign.cpp,matched,same offsets as Rva00317F6F via pinned Ascii plus int pin plus rowed NoCase plus caller 0x003181C1
+??0Rva000F1A32@@QAE@XZ,,0x000F1A32,166,Code/GameEngine/Source/Common/Rva000F1A32Ctor.cpp,matched,ctor via Rva000F0AF7 W3DBufferManager TCB resize caller 0x0009A710
