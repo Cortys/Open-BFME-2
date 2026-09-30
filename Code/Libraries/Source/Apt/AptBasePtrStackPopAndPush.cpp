@@ -47,6 +47,7 @@ public:
     void rva006FDDB0(int nCapacity);
     void rva006FDF30(BfmeAptValue006DCD20 *pValue);
     void rva006FDEE0(BfmeAptValue006DCD20 *pValue);
+    void rva006FE920();
     ~AptBasePtrStack();
 
     int m_nElements;
@@ -190,4 +191,16 @@ void AptBasePtrStack::rva006FDEE0(BfmeAptValue006DCD20 *pValue)
     m_aElements[m_nElements] = pValue;
     ++m_nElements;
     pValue->AddRef();
+}
+
+void AptBasePtrStack::rva006FE920()
+{
+    if (m_nElements <= 0) {
+        g_bfmeAptAssertAtE17734("false && \"[APT] Error, Popping from Stack with 0 elements. Please contact the Apt Team for Support.\"", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x98);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+        return;
+    }
+    m_aElements[m_nElements - 1]->Release();
+    --m_nElements;
 }
