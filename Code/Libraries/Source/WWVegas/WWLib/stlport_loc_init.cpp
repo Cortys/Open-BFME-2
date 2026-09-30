@@ -42,6 +42,7 @@ public:
 	virtual ~_Locale_impl();
 	virtual void _M_incr();
 	virtual void _M_decr();
+	static _Locale_impl *make_classic_locale();
 
 	locale::facet **_M_facets;
 	unsigned int _M_count;
@@ -63,7 +64,6 @@ public:
 // The facet tables the classic locale is built out of, and the builder that
 // returns the impl itself.
 void _Stl_loc_init_facets();
-_Locale_impl *_Stl_make_classic_locale();
 
 _Locale_impl *_Stl_classic_locale_impl;
 long ios_base::_Loc_init::_S_count;
@@ -73,7 +73,7 @@ ios_base::_Loc_init::_Loc_init()
 	if (_S_count == 0)
 	{
 		_Stl_loc_init_facets();
-		_Stl_classic_locale_impl = _Stl_make_classic_locale();
+		_Stl_classic_locale_impl = _Locale_impl::make_classic_locale();
 		++_S_count;
 	}
 }
@@ -92,7 +92,7 @@ void locale::_S_initialize()
 	if (ios_base::_Loc_init::_S_count <= 0)
 	{
 		_Stl_loc_init_facets();
-		_Stl_classic_locale_impl = _Stl_make_classic_locale();
+		_Stl_classic_locale_impl = _Locale_impl::make_classic_locale();
 		++ios_base::_Loc_init::_S_count;
 	}
 }
