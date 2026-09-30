@@ -53,3 +53,47 @@ void Rva005391FD::rva00539227()
 		p->rva005C4CD4();
 	}
 }
+
+// ?rva005392C2@Rva005392C2@@QAEXXZ @0x005392C2 42B:
+// Honest address-derived loop: count via virtual slot 0x34 then for each
+// index call virtual slot 0x3C to get Rva003FC3E4 object then call its rowed
+// rva003FC3E4 reset. Same shape as Rva005391FD methods above, same // cl:
+// /O1 /MD, new container class since element type differs. Chain lane after
+// 0x003FC3E4. Callers 0x0031929B 0x004E06F2 0x004FC26C unclaimed.
+class Rva003FC3E4
+{
+public:
+	void rva003FC3E4();
+};
+
+class Rva005392C2
+{
+public:
+	virtual ~Rva005392C2();
+	virtual void t01();
+	virtual void t02();
+	virtual void t03();
+	virtual void t04();
+	virtual void t05();
+	virtual void t06();
+	virtual void t07();
+	virtual void t08();
+	virtual void t09();
+	virtual void t10();
+	virtual void t11();
+	virtual void t12();
+	virtual int t13();
+	virtual void t14();
+	virtual Rva003FC3E4 *t15(int i);
+	void rva005392C2();
+};
+
+void Rva005392C2::rva005392C2()
+{
+	int count = t13();
+	for (int i = 0; i < count; ++i)
+	{
+		Rva003FC3E4 *p = t15(i);
+		p->rva003FC3E4();
+	}
+}

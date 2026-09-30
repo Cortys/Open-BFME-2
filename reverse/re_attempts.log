@@ -3865,3 +3865,4 @@ FUN_004138C7	0x004138C7	120	blocked	free INI parse 120B zero callers plus EH thr
 FUN_007f4be9	0x003F4BE9	109	blocked	EH-prolog SEH frame virtual-callback loop over vector<int> at +0 with counter at +0xc unlike frameless family t=5 model=muse-09
 ?rva003F0614@Rva003F0614@@QAEHH@Z	0x003F0614	87	blocked	index plus cursor loop with per-iter bound reload and triple chase not reproduced t=25 model=muse-spark
 ?rva005DDB66@Rva005DDB66@@QAEXIABUBfmeStringRecord005DDD40@@_N@Z	0x005DDB66	69	partial	68B register load order plus lea base-index swap t=20 model=muse-spark score=0.95 stash=reverse/attempts/0x005ddb66.cpp
+?Rva003FCD04Compare@@YAHPAX0H@Z	0x003FCD04	84	partial	78B exact except retail redundant mov eax ebp8 plus mov ebp8 eax 6B before second-object init t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x003fcd04.cpp
