@@ -3751,3 +3751,5 @@ FUN_004c055c	0x000C055C	63	blocked	EH clear plus free via Destroy needs guard lo
 ?rva002B2E31@GameMessage@@QAE_NPAHHPAVRva003F4DCA@@HH@Z	0x002B2E31	70	blocked	QAE ret14 vs retail plain ret plus caller add esp14 ecx plus caller cleanup no clean MSVC fixed-arg ABI t=25 model=muse-spark
 ?Rva0070B590Cleanup@@YAXXZ	0x0070B590	55	blocked	store via esi not ecx persists after void-next split swap while-next t=20 model=muse-spark
 FUN_0099e0c1	0x0059E0C1	54	blocked	EH temp with vtable 0x870F6C plus virtual slot 1 needs donor class t=6 model=muse-02
+?rva000F1AD8@Rva000F1AD8@@QAEXXZ	0x000F1AD8	95	partial	ternary minus8 gives branchless plus virtual dtor gives EH remaining push0 extra plus store order t=20 model=muse-10 score=0.97 stash=reverse/attempts/0x000f1ad8.cpp
+?rva006BE220@Rva0087E900Shape@@QAEXPBURva0087E900Coord@@MPAU2@@Z	0x006BE220	50	blocked	callee 0x006BE190 rowed YAX void but body derefs eax return; YAPAU exact 50B 18insns only reloc gate unresolved; void decl gives 54B 7mem diff; needs central retype t=12 model=muse-10

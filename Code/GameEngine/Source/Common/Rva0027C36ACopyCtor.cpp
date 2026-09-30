@@ -1,8 +1,6 @@
-// ??0Rva0027C36A@@QAE@ABV0@@Z
-// partial score=0.99 date=2026-09-30
 // cl: /O1 /MD /Op /Oi /Oy-
 // ??0Rva0027C36A@@QAE@ABV0@@Z @0x0027C410 228B
-// Evidence: copy ctor of Rva0027C36A (default ctor 0x0027C36A); head 0x58 via 22 int moves; m_58 via movsd x4; m_68 byte; 4x12B loop int-int-float (fld); m_9c via movsd x3; caller 0x0027F8B0.
+// Evidence: probe pointer increment
 #include <cstring>
 
 struct Region12
@@ -50,7 +48,6 @@ public:
 	Six12 m_9c[2];
 };
 
-// ??0Rva0027C36A@@QAE@ABV0@@Z present-unmatched
 Rva0027C36A::Rva0027C36A(const Rva0027C36A &other)
 {
 	m_00 = other.m_00;
@@ -77,10 +74,12 @@ Rva0027C36A::Rva0027C36A(const Rva0027C36A &other)
 	m_54 = other.m_54;
 	memcpy(m_58, other.m_58, sizeof(m_58));
 	m_68 = other.m_68;
-	for (int i = 0; i < 4; ++i) {
-		m_6c[i].m_0 = other.m_6c[i].m_0;
-		m_6c[i].m_4 = other.m_6c[i].m_4;
-		m_6c[i].m_8 = other.m_6c[i].m_8;
+	Region12 *d = m_6c;
+	const Region12 *s = other.m_6c;
+	for (int i = 0; i < 4; ++i, ++d, ++s) {
+		d->m_0 = s->m_0;
+		d->m_4 = s->m_4;
+		d->m_8 = s->m_8;
 	}
 	memcpy(m_9c, other.m_9c, sizeof(m_9c));
 }
