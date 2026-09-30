@@ -6,10 +6,15 @@
 // early-out; do-while with dec/jne; x87 fld return. One caller at 0x005DDE60
 // in 0x005DDE33. Owner unknown so honest address-derived method name. Flags
 // copy the prev neighbour Rva005DD772Ctor.cpp for the SSE float idioms.
+// ?rva005DDCA5@Rva005DDC6B@@QAEMII@Z @0x005DDCA5 64B. Float range-max with
+// init from 0x00BBB8DC, comiss/jbe keep-largest, same stride. Caller 0x005DDE96.
+extern float g_00BBB8DC;
+
 class Rva005DDC6B
 {
 public:
 	float rva005DDC6B(unsigned lo, unsigned hi);
+	float rva005DDCA5(unsigned lo, unsigned hi);
 private:
 	int m_00;
 	char *m_04;
@@ -27,4 +32,20 @@ float Rva005DDC6B::rva005DDC6B(unsigned lo, unsigned hi)
 		} while (--n != 0);
 	}
 	return sum;
+}
+
+float Rva005DDC6B::rva005DDCA5(unsigned lo, unsigned hi)
+{
+	float cur = g_00BBB8DC;
+	if (lo < hi) {
+		float *p = (float *)(m_04 + lo * 8 + 4);
+		unsigned n = hi - lo;
+		do {
+			float v = *p;
+			if (v > cur)
+				cur = v;
+			p = (float *)((char *)p + 8);
+		} while (--n != 0);
+	}
+	return cur;
 }
