@@ -44869,3 +44869,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva003F2C0CXfer@@YAPAVXfer@@PAV1@PAV?$vector@UBfmeE8@@V?$allocator@UBfmeE8@@@_STL@@@_STL@@@Z,,0x003F2C0C,202,Code/GameEngine/Source/Common/System/Rva003F2C0CXfer.cpp,matched,Xfer vector E8 helper via Bool and Ascii precedents
 ?rva0025C4A4@BfmeStrVM0@@QAEHH@Z,,0x0025C4A4,79,Code/GameEngine/Source/Common/BfmeStrVM0Rva0025C4A4.cpp,matched,same class BfmeStrVM0 as neighbours with mutexes at 0x40 0x44 guarded virtual slot 0x18c via RAII lock
 ?rva0025C829@Rva0025C6E2Elem@@QAEXPAVW3DDisplay@@H@Z,,0x0025C829,170,Code/GameEngine/Source/Common/Rva0025C8D3.cpp,matched,twin of rva0025C8D3 with constant color -1 mode 2 same unsigned virtuals
+?rva000B4E23@Rva000B4E23@@QAEMXZ,,0x000B4E23,32,Code/GameEngine/Source/Common/Rva000B4E23.cpp,matched,stride-64 float via mid table fallback BfmeZeroRange caller 0xB708C
