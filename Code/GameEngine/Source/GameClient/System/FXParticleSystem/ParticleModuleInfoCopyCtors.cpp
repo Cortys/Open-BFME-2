@@ -135,3 +135,18 @@ Rva003AF5AC::Rva003AF5AC(const Rva003AF5AC &other)
 	, FXParticleSystem::LineEmissionVolumeInfo((const FXParticleSystem::LineEmissionVolumeInfo &)other)
 {
 }
+
+// ??0Rva003AF57F@@QAE@ABV0@@Z @0x003AF57F 45B: derived copy calling rowed 0x003AF5AC then own 4 vptrs.
+// Evidence: calls 0x003AF5AC (landed this session) then stores at +0/+0x14/+0x18/+0x1c DIR32;
+// third 0x00C1D788 shared with base; caller 0x003AF548 calls this; unlocks 0x003AF548.
+class Rva003AF57F : public Rva003AF5AC
+{
+public:
+	Rva003AF57F(const Rva003AF57F &other);
+	virtual ~Rva003AF57F();
+};
+
+Rva003AF57F::Rva003AF57F(const Rva003AF57F &other)
+	: Rva003AF5AC(other)
+{
+}
