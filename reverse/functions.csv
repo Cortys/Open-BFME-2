@@ -43391,3 +43391,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva004EE3AB@Rva004EE3AB@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE3AB,78,Code/GameEngine/Source/Common/Rva004EE3AB.cpp,matched,RB sum BitFlags filter tree C0 sibling EE35D
 ?rva004EE3F9@Rva004EE3F9@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE3F9,78,Code/GameEngine/Source/Common/Rva004EE3F9.cpp,matched,RB sum BitFlags filter tree CC sibling EE3AB
 ?rva006C1850@Rva006C1850@@QAE_NIPAPAX@Z,,0x006C1850,70,Code/GameEngine/Source/Common/Rva006C1850Find.cpp,matched,unlock hash find bucket shr 3 div walks next at plus 8 stores node plus 4
+?_M_insert_overflow@?$vector@VRva0052BDE6@@V?$allocator@VRva0052BDE6@@@_STL@@@_STL@@IAEXPAVRva0052BDE6@@ABV3@ABU__false_type@2@I_N@Z,,0x00565C34,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bde6_overflow.cpp,matched,overflow 183B via G7 SSE flags rowed Construct FillN pinned allocate copy clear
