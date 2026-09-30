@@ -7,3 +7,7 @@
 // these containers different bodies survive the link from different units.
 #include <map>
 template class _STL::map<int, void *, _STL::less<int>, _STL::allocator<_STL::pair<const int, void *> > >;
+
+// Whole-class instantiation of this tree: count (retail 0x004FF8B1) come byte-identical
+// from it; their calls read the tree's matched STL helpers.
+template class _STL::_Rb_tree<int,_STL::pair<int const ,void *>,_STL::_Select1st<_STL::pair<int const ,void *> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,void *> > >;
