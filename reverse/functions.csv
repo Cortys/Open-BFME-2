@@ -43818,3 +43818,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??_GRva00317BBB@@UAEPAXI@Z,,0x00317C18,28,Code/GameEngine/Source/Common/Rva00317BBBDtor.cpp,matched,deleting dtor for rowed 0x00317BBB via vtable slot0 plus operator delete
 ??1Rva004211CA@@UAE@XZ,,0x004211CA,92,Code/GameEngine/Source/Common/Rva004211CADtor.cpp,matched,vtable plus free plus wide plus narrow plus pinned base dtor chain
 ??_GRva004211CA@@UAEPAXI@Z,,0x00421226,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004211CA.cpp,matched,chain deleting dtor calls rowed 0x004211CA plus delete
+?rva004B4E56@Rva004B4E56@@QAEEXZ,,0x004B4E56,109,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004B4E56Check.cpp,matched,chain from 0x00406F9C via intersect and player mask
