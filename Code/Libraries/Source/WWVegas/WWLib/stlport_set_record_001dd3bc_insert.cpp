@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 //
 // STLport 4.5.3 set<BfmeRecord001DD3BC> _M_insert (retail 0x001DDE2A, 148B)
@@ -41,3 +41,8 @@ template <> DD3BCTree::_Link_type DD3BCTree::_M_create_node(const BfmeRecord001D
 
 template DD3BCTree::iterator DD3BCTree::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const BfmeRecord001DD3BC &, _STL::_Rb_tree_node_base *);
 template bool _STL::less<BfmeRecord001DD3BC>::operator()(const BfmeRecord001DD3BC &, const BfmeRecord001DD3BC &) const;
+
+// insert_unique(value) (retail 0x001DE4BF, 151B) is the unowned caller of the
+// _M_insert above; /D_BFME_RETAIL_TREE_INSERT_LAYOUT selects the vendored
+// STLport's retail insert_unique layout.
+template _STL::pair<DD3BCTree::iterator, bool> DD3BCTree::insert_unique(const BfmeRecord001DD3BC &);

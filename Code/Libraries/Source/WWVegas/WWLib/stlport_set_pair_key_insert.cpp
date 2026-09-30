@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 //
 // STLport 4.5.3 _M_insert for three sets whose elements lead with a
@@ -33,3 +33,11 @@ template <> TreeC::_Link_type TreeC::_M_create_node(const BfmeStringRecord002049
 template TreeA::iterator TreeA::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const Rva00204B12 &, _STL::_Rb_tree_node_base *);
 template TreeB::iterator TreeB::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const Rva0033A4F0 &, _STL::_Rb_tree_node_base *);
 template TreeC::iterator TreeC::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const BfmeStringRecord002049D6 &, _STL::_Rb_tree_node_base *);
+
+// insert_unique(value) for the same three sets (retail 0x0020783F, 0x002078D6,
+// 0x00207A9B, 151B each) are the unowned callers of the _M_insert bodies
+// above; /D_BFME_RETAIL_TREE_INSERT_LAYOUT selects the vendored STLport's
+// retail insert_unique layout.
+template _STL::pair<TreeA::iterator, bool> TreeA::insert_unique(const Rva00204B12 &);
+template _STL::pair<TreeB::iterator, bool> TreeB::insert_unique(const Rva0033A4F0 &);
+template _STL::pair<TreeC::iterator, bool> TreeC::insert_unique(const BfmeStringRecord002049D6 &);

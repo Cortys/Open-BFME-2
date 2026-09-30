@@ -33,3 +33,7 @@ template <> TreeN::_Link_type TreeN::_M_create_node(const TreeN::value_type &);
 template TreeR::iterator TreeR::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const TreeR::value_type &, _STL::_Rb_tree_node_base *);
 template TreeN::iterator TreeN::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const TreeN::value_type &, _STL::_Rb_tree_node_base *);
 template _STL::pair<TreeN::iterator, bool> TreeN::insert_unique(const TreeN::value_type &);
+
+// insert_unique(value) for the record set (retail 0x0033D1F3, 151B) is the
+// unowned caller of its _M_insert above.
+template _STL::pair<TreeR::iterator, bool> TreeR::insert_unique(const TreeR::value_type &);
