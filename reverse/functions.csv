@@ -43679,3 +43679,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?setVolumes@Rva00699180Owner@@QAEXME@Z,,0x000523A0,137,Code/GameEngine/Source/Common/Rva00699180Volume_Refresh.cpp,matched,donor setVolumes via helpers plus loop stores
 ?rva000AE18D@BfmeGridWM@@QAEEHH@Z,,0x000AE18D,79,Code/GameEngine/Source/Common/BfmeGrokGrid.cpp,matched,grid bit test via walk TU barrier for CSE
 ??0Rva0042D8D4@@QAE@XZ,,0x0042D8D4,90,Code/GameEngine/Source/Common/Rva0042D8D4Ctor.cpp,matched,ctor via Apt load recipe with Apt backslash plus StrategicHUD plus zeros
+?rva001F4882@Rva001F4882@@QAEXPAUNode001F4882@@@Z,,0x001F4882,93,Code/GameEngine/Source/Common/Rva001F4882Unlink.cpp,matched,unlock lane unlink prev next slot row caller 0x001F4C67 ret4

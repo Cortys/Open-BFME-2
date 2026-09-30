@@ -3980,3 +3980,5 @@ FUN_009680F9	0x005680F9	74	blocked	static list init with EH_prolog plus guard; p
 ??0Rva0035E00F@@QAE@XZ	0x0035E206	86	partial	vtable early before m10/m14 vs retail after plus or hoisted before m18 plus final eax vs ecx t=25 model=muse-05 score=0.9 stash=reverse/attempts/0x0035e206.cpp
 ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z	0x0056C7F1	170	partial	170B 56insns exact size; only cmovbe vs cmovae plus movss/comiss load order swapped (b-first vs a-first) t=30 model=muse-05 score=0.96 stash=reverse/attempts/0x0056c7f1.cpp
 ?rva000ADA1A@Rva000ADA1A@@QAEXHH_N@Z	0x000ADA1A	83	blocked	register wall this-edx x-ecx y-esi vs ours this-eax x-ecx y-edx; 6 variants incl int-ptr unsigned plus G7 plus recompute; size exact 83 on recompute but 8 reg diffs remain t=20 model=muse-05
+??0Rva0059A85C@@QAE@PAX@Z	0x0059A85C	123	partial	missing and0 plus mov1 EH states 119/123B 38/39ins t=20 model=muse-06 score=0.97 stash=reverse/attempts/0x0059a85c.cpp
+?rva001EB6A5@Rva001EB6A5@@QAE_NPAURva001EB6A5Out@@@Z	0x001EB6A5	89	partial	eax edx swap for add base idx 89/89B 35ins t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x001eb6a5.cpp
