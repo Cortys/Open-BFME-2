@@ -43265,3 +43265,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?freeSockets@NameKeyGenerator@@AAEXXZ,,0x00148B42,66,Code/GameEngine/Source/Common/NameKeyGenerator.cpp,matched,NameKeyGenerator freeSockets 45007 buckets plus aux map clear via ZH donor
 ?reset@NameKeyGenerator@@UAEXXZ,,0x00148C41,84,Code/GameEngine/Source/Common/NameKeyGenerator.cpp,matched,NameKeyGenerator reset lock freeSockets plus nextID via chain
 ?rva00512CE9@Rva00512CE9@@QAEXH_N@Z,,0x00512CE9,94,Code/GameEngine/Source/Common/Rva00512CE9Kick.cpp,matched,kick button sprintf plus apt invoke via g_Va009FE4CC
+??_GRva005E888A@@QAEPAXI@Z,,0x005E88C1,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E88C1.cpp,matched,deleting dtor via rowed dtor plus rowed delete
