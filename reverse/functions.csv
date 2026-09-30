@@ -43576,3 +43576,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ??1Rva000D1E88@@UAE@XZ,,0x000D1E88,26,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtorsB01.cpp,matched,dtor deletes array at 8 restores vft BVJS via rowed delete array
 ??$__pop_heap@PAHHVRva00204BB8@@@_STL@@YAXPAH00HVRva00204BB8@@@Z,,0x002074D4,41,Code/Libraries/Source/WWVegas/WWLib/stlport_pop_heap_rva00204bb8.cpp,matched,chain heap pop via landed adjust heap same flags
 ?xfer@LightningDrawModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x005614D9,78,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LightningDrawModuleInfoXfer.cpp,matched,slot3 Version1 3x xferRandomVariable float plus28 flag plus2c
+?rva00561527@Rva00561527@@QAEXPAVXfer@@@Z,,0x00561527,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00561527.cpp,matched,Version1 then Lightning base xfer at plus0x18 caller jmp 0x003ABBC6
