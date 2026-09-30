@@ -4339,3 +4339,4 @@ FUN_0059ef70	0x0019EF70	151	blocked	WW3D SEH 151B needs hlod donor t=2 model=mus
 ?rva0059192A@NetPacket@@IAE_NPAVNetCommandRef@@@Z	0x0059192A	133	partial	cmov vs branch for type plus return setle cl-mov vs al; string fixed t=28 model=muse-03 score=0.86 stash=reverse/attempts/0x0059192a.cpp
 FUN_009f2188	0x005F2188	112	blocked	same SEH guard plus indirect functor wall as 0x004E0988; scope table g_00BFB1CC plus finally restore has no donor t=5 model=muse-03
 FUN_006d0b5a	0x002D0B5A	64	blocked	identical 64B to Armor hashtable ctors 0x002896AA 0x00360B59 0x0053F7E1 mod scope-table plus same callees 0x00025100 0x00148DDF; same mangling cannot re-row duplicate name; distinct type unproven without outer Rva002D0588 map identity t=25 model=muse-spark
+?rva006D01D0@Rva006D01D0@@QAEXPAX@Z	0x006D01D0	100	partial	loop tail emits test ecx then mov eax ecx vs retail mov eax ecx then test eax t=22 model=muse-20 score=0.98 stash=reverse/attempts/0x006d01d0.cpp
