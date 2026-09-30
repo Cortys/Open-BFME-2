@@ -25,6 +25,7 @@ class Rva00180B94_Prototype : public GenBase009EB7D0
 {
 public:
 	Rva00180B94_Prototype(const char *name, void *tree);
+	Rva00180B94_Prototype(const char *name, int arg1, int arg2);
 
 	char m_pad04[0x10];
 	void *m_tree;
@@ -38,4 +39,11 @@ Rva00180B94_Prototype::Rva00180B94_Prototype(const char *name, void *tree)
 {
 	m_arg1C = 0;
 	m_arg20 = 0;
+}
+
+Rva00180B94_Prototype::Rva00180B94_Prototype(const char *name, int arg1, int arg2)
+	: m_tree(0), m_name(name, false)
+{
+	m_arg1C = arg1;
+	m_arg20 = arg2;
 }
