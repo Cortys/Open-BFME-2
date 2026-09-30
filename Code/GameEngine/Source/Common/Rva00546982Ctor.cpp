@@ -47,6 +47,7 @@ public:
 	Rva00546982();
 	Rva00546982(const Rva00546982 &other);
 	virtual ~Rva00546982();
+	Rva00546982 *rva005469FD();
 private:
 	_STL::set<AsciiString> m_18;
 	bool m_24;
@@ -64,4 +65,9 @@ Rva00546982::Rva00546982(const Rva00546982 &other)
 	, m_18()
 {
 	m_24 = false;
+}
+
+Rva00546982 *Rva00546982::rva005469FD()
+{
+	return new Rva00546982(*this);
 }

@@ -43419,3 +43419,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00057151@Rva00057151@@QAEXHHH@Z,,0x00057151,127,Code/Libraries/Source/WWVegas/WWLib/OpaqueRefDequePop57151.cpp,matched,deque back alias 0x3B5603 and assignment 0x239099 and pop_back 0x5555F via OpaqueRef group
 ?updatePlayerCells450_Rva0073D860@ShroudManager@@QAEXH@Z,,0x0073D860,74,Code/GameEngine/Source/Common/RTS/ShroudManagerImpl008FBA40.cpp,matched,sweep with 008FC450 like undo twin with 008FC3B0
 ?rva007397C0@Rva007397C0@@QAEXH@Z,,0x007397C0,8,Code/GameEngine/Source/GameLogic/Object/PartitionManagerShroudThunks.cpp,matched,thunk to rowed 0073D860 like 00739780
+?rva005469FD@Rva00546982@@QAEPAV1@XZ,,0x005469FD,55,Code/GameEngine/Source/Common/Rva00546982Ctor.cpp,matched,clone via new plus copy rowed 0x005469BD slot 13 of 0x0086A314
