@@ -19,6 +19,7 @@ class Object
 {
 public:
 	float rva002C97E8(const Coord3D *a, const Coord3D *b) const;
+	float rva00263763(const void *other) const;
 
 private:
 	char m_pad00[0x38];
@@ -45,6 +46,7 @@ class Weapon
 {
 public:
 	bool isTooClose(const Object *source, const Coord3D *pos) const;
+	bool rva002C9AFE(const Object *source, const void *other) const;
 	float rva002C957E() const;
 	bool rva002C95F0() const;
 	void rva002C95DE(int offset);
@@ -62,6 +64,17 @@ bool Weapon::isTooClose(const Object *source, const Coord3D *pos) const
 	if (minRange == 0.0f)
 		return false;
 	float distSqr = source->rva002C97E8(&source->m_position, pos);
+	if (distSqr < minRange * minRange)
+		return true;
+	return false;
+}
+
+bool Weapon::rva002C9AFE(const Object *source, const void *other) const
+{
+	float minRange = m_template->getMinimumAttackRange();
+	if (minRange == 0.0f)
+		return false;
+	float distSqr = source->rva00263763(other);
 	if (distSqr < minRange * minRange)
 		return true;
 	return false;
