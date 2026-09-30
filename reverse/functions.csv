@@ -43688,3 +43688,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0006B7BF@BaseHeightMapRenderObjClass@@QAEXPBVRva0055A88BDwordField@@V?$StringBase@D@@M@Z,,0x0006B7BF,69,Code/GameEngine/Source/Common/Rva0006B7BFMethod.cpp,matched,wrapper over rowed 0x000E6135 via this+0x3860 with by-value name
 ?rva0031AFDE@Rva0031AFDE@@QAEHXZ,,0x0031AFDE,83,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarToggle0031AFDE.cpp,matched,switch toggle at 0x29c MSG 0x3ec via MessageStreamSubsystem and InGameUI slot 0x110
 ?rva001F5BBE@Rva001F58D4@@QAEXPAURva001F5BBEArg@@@Z,,0x001F5BBE,123,Code/GameEngine/Source/Common/Rva001F5BBE.cpp,matched,list at 0x4C handle copy 0x4CC19 destroy 0x1F462C dtor 0x4CBC0 caller 0x48FF56
+?setScienceAvailability@Player@@QAEXW4ScienceType@@W4ScienceAvailabilityType@@@Z,,0x002AD8C9,113,Code/GameEngine/Source/Common/RTS/PlayerSetScienceAvailability.cpp,matched,ZH donor Player setScienceAvailability Disabled Hidden vecs

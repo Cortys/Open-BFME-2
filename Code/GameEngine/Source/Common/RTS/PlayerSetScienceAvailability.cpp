@@ -1,0 +1,87 @@
+// cl: /O1 /DNDEBUG /MD
+// ?setScienceAvailability@Player@@QAEXW4ScienceType@@W4ScienceAvailabilityType@@@Z @ 0x002AD8C9 113B: Player science availability move
+// Evidence: caller 0x003BC785 pushes ScienceAvailabilityType (from rowed getScienceAvailabilityTypeFromString) and ScienceType (from rowed Rva001FF725Get) with this=Player; ZH Player.cpp setScienceAvailability donor removes from Disabled then Hidden then pushes by type; retail vectors at +0x2FC/+0x308 are Disabled/Hidden under +0x2F0 m_sciences layout.
+enum ScienceType
+{
+	SCIENCE_INVALID = -1
+};
+
+enum ScienceAvailabilityType
+{
+	SCIENCE_AVAILABILITY_INVALID = -1,
+	SCIENCE_AVAILABLE,
+	SCIENCE_DISABLED,
+	SCIENCE_HIDDEN,
+	SCIENCE_AVAILABILITY_COUNT
+};
+
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+typedef int Bool;
+
+namespace _STL
+{
+template <class T> class allocator
+{
+};
+
+template <class T, class A = allocator<T> > class vector
+{
+public:
+	T *erase(T *pos);
+	void push_back(const T &val);
+	T *m_start;
+	T *m_finish;
+	T *m_end;
+};
+}
+
+class Player
+{
+public:
+	void setScienceAvailability(ScienceType science, ScienceAvailabilityType type);
+private:
+	char m_pad[0x2F0];
+	_STL::vector<ScienceType> m_sciences;
+	_STL::vector<ScienceType> m_sciencesDisabled;
+	_STL::vector<ScienceType> m_sciencesHidden;
+};
+
+void Player::setScienceAvailability(ScienceType science, ScienceAvailabilityType type)
+{
+	Bool found = false;
+
+	for (ScienceType *it = m_sciencesDisabled.m_start; it != m_sciencesDisabled.m_finish; ++it)
+	{
+		if (*it == science)
+		{
+			((_STL::vector<ObjectID> *)&m_sciencesDisabled)->erase((ObjectID *)it);
+			found = true;
+			break;
+		}
+	}
+	if (!found)
+	{
+		for (ScienceType *it = m_sciencesHidden.m_start; it != m_sciencesHidden.m_finish; ++it)
+		{
+			if (*it == science)
+			{
+				((_STL::vector<ObjectID> *)&m_sciencesHidden)->erase((ObjectID *)it);
+				found = true;
+				break;
+			}
+		}
+	}
+
+	if (type == SCIENCE_DISABLED)
+	{
+		m_sciencesDisabled.push_back(science);
+	}
+	else if (type == SCIENCE_HIDDEN)
+	{
+		m_sciencesHidden.push_back(science);
+	}
+}
