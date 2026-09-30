@@ -3689,3 +3689,9 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva006FBC10@Rva006FBC90Owner@@UAEXXZ	0x006FBC10	25	partial	25B exact size cmp-mem vs mov-test-eax plus mov-ecx-mem vs mov-ecx-eax t=12 model=muse-05 score=0.92 stash=reverse/attempts/0x006fbc10.cpp
 ?Rva00498725Get@@YAPAXPAUObject@@@Z	0x00498725	115	blocked	static NameKey guard plus Object array loop 81vs115B missing EH prolog and states and second-find stores t=10 model=muse-05
 ?rva00563F34@Rva003AE0AF@@UAEXXZ	0x00563F34	84	blocked	vslot1 FX doFXPos Rit 87vs84B fldz-x87 vs push-ebx for 0.0f plus lea-vs-add plus m58-offset persists across h-local unsigned 0-int t=15 model=muse-05
+?rva003FDAEB@Rva003FDAEB@@QAEXXZ	0x003FDAEB	165	blocked	SmartPtr 4 Makes plus 2 gets plus 2 disables EH t=15 model=muse-01
+??_GRva005AFE3F@@UAEPAXI@Z	0x005AFEDB	28	blocked	pin-only base dtor no vtable emission without capturing pin t=10 model=muse-01
+?xfer@RespawnUpdate@@MAEXPAVXfer@@@Z	0x004AF00B	139	partial	slots off by one plus first call overload unclear t=18 model=muse-01 score=0.93 stash=reverse/attempts/0x004af00b.cpp
+?Rva006D0460Copy@@YAPAXPAX000@Z	0x006D0460	100	blocked	frameless esp plus ebx esi edi ebp swap t=12 model=muse-01
+?Rva005CB46AGet@@YAHXZ	0x005CB46A	93	blocked	esi uninit free vs method plus no push pop t=8 model=muse-01
+?rva002036CC@Rva002036CC@@QAEXXZ	0x002036CC	171	blocked	total esi vs edx plus missing preload across 4 spellings t=15 model=muse-01
