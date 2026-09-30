@@ -44978,3 +44978,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B5916@Rva000B5916@@QAEXM@Z,,0x000B5916,73,Code/GameEngine/Source/Common/Rva000B5916.cpp,matched,chain via 0x000B2FBB rowed; slot0x50 then Rva at this-0xc
 ?Rva002DC081@@YA?AVUnicodeString@@USYSTEMTIME@@H@Z,,0x002DC081,233,Code/GameEngine/Source/Common/System/Rva002DC081Format.cpp,matched,GetVersionExA GetTimeFormatA-W IAT UnicodeString translate copy set release rowed callers 4
 ?rva004F60AA@Rva004F60AA@@QAEXXZ,,0x004F60AA,66,Code/GameEngine/Source/Common/Rva004F60AAReserve.cpp,matched,malloc retry halve with max clamp
+?findTemplate@ParticleSystemManager@@QBEPAVParticleSystemTemplate@@ABVAsciiString@@@Z,,0x001F90DA,43,Code/GameEngine/Source/GameClient/System/ParticleSystemManagerFindTemplate.cpp,matched,ZH ParticleSystemManager::findTemplate over the +0x88 bucket table via rowed find 0x0041534B
