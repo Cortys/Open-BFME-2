@@ -4232,3 +4232,6 @@ FUN_00afd4c0	0x006FD4C0	233	blocked	EH EAString percent-encode needs shared ji i
 ?rva0036276F@Rva0036276F@@QAEXXZ	0x0036276F	73	blocked	loop needs callee-visible edx-edi alloc plus dead add ecx 0x44 wall after 2 variants t=12 model=muse-02
 ?Rva0012C889Launch@@YA_NPB_W@Z	0x0012C889	126	blocked	Win32 CreateProcessW plus Wait plus Close needs IAT dllimport plus memset jitter plus string g_00BD22F8 wall with no landed precedent t=8 model=muse-02
 ??1Rva00421312@@UAE@XZ	0x00421312	128	blocked	vector vtable base dtor needs edi-this plus dword-1 plus byte-0 EH states plus erase arg shape wall after 2 variants t=15 model=muse-02
+FUN_00782ab7	0x00382AB7	108	blocked	map AsciiString lower_bound with by-value comparator and retail tree layout needs STL work t=15 model=muse-11
+?Rva0038353AConstruct@@YAXPAURva00382BF0@@ABU1@@Z	0x0038353A	45	partial	homed this and EH state before null check vs after t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x0038353a.cpp
+??0Rva003835F4@@QAE@ABU0@@Z	0x003835F4	345	blocked	large copy with 8x0x1e0 array via vector-copy helper plus 4 strings needs element copy 0x7830EA rowed first t=20 model=muse-11
