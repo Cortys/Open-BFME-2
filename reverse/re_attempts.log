@@ -4237,3 +4237,5 @@ FUN_00782ab7	0x00382AB7	108	blocked	map AsciiString lower_bound with by-value co
 ??0Rva003835F4@@QAE@ABU0@@Z	0x003835F4	345	blocked	large copy with 8x0x1e0 array via vector-copy helper plus 4 strings needs element copy 0x7830EA rowed first t=20 model=muse-11
 ?rva00359AEC@Rva00359AEC@@QAEXPAUApplyArg00359AEC@@@Z	0x00359AEC	109	partial	guard-loop vector-apply 107B vs 109B; this in esi vs edi; push2 vs sub esp; test vs sar; lea vs mov-inc; jl vs jb; same family as 0x0030C9E6 t=18 model=muse-05 score=0.91 stash=reverse/attempts/0x00359aec.cpp
 ?Rva002E5BCBPartition@@YAPAUStringLookUp@@PAU1@0U1@H@Z	0x002E5BCB	74	blocked	Hoare partition 68B vs 74B; 2x dead lea ecx ebp+18 missing; O1 close O2 worse; needs comp-address lever t=15 model=muse-01
+?Rva005D6687Wrap@@YAXPAVRva005D5A7E@@0H@Z	0x005D6687	25	blocked	wrapper pushes 5 to 3-arg MakeHeap needs 5-arg retype after publish t=10 model=muse-02
+??0Rva0021F876@@QAE@ABV0@@Z	0x0021F876	125	partial	lea ecx push order wall 125vs125 8 regions t=15 model=muse-02 score=0.93 stash=reverse/attempts/0x0021f876.cpp

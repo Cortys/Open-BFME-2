@@ -44235,3 +44235,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0005800A@Rva0005800A@@QAEXABVRva0036CA00Str@@@Z,,0x0005800A,132,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_str_aux.cpp,matched,deque Str push_back aux via rowed copyCtor reserve allocate Release_Ref caller 0x58BB4
 ?rva0050F450@Rva0050F0AB@@QAEXXZ,,0x0050F450,128,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,chain GetText wtoi clamp Send
 ?rva00058B90@Rva00058B90@@QAEXABVRva0036CA00Str@@@Z,,0x00058B90,45,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_str_pushback.cpp,matched,deque Str push_back fast path via rowed Construct and aux caller chain
+?rva0025ECFC@Rva0025ECFC@@QAEXPAUBigIface0025ECFC@@@Z,,0x0025ECFC,129,Code/GameEngine/Source/GameClient/Rva0025ECFCGet.cpp,matched,callers 0x25F240 and 0x25F26B ten virtual gets
