@@ -96,3 +96,6 @@ template void _STL::vector<BfmeStringRecord005EC43C>::_M_insert_overflow(
 // Retail 0x005F9B4E (183B) vector<BfmeStringRecord005F93E3>::_M_insert_overflow via rowed copy 0x005F9477 Construct 0x005F944A fill_n 0x005F949D.
 template void _STL::vector<BfmeStringRecord005F93E3>::_M_insert_overflow(
     BfmeStringRecord005F93E3 *, const BfmeStringRecord005F93E3 &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x0021E69C (55B) push_back via rowed Construct 0x0021A95D plus rowed overflow 0x0021E1EB.
+template void _STL::vector<BfmeStringRecord002199C8>::push_back(
+    const BfmeStringRecord002199C8 &);
