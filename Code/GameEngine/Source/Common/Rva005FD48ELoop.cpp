@@ -27,3 +27,15 @@ void Rva005FD48E::rva005FD48E()
 			e->m_p->Rva001FF3A9::rva001FF3A9();
 	}
 }
+// ?rva005FD4F7@Rva005FD4F7@@QAEXXZ retail 0x005FD4F7 8B
+// Evidence: chain from 0x005FD48E; this+4 tail-jmp wrapper; caller 0x005F55CE
+struct Rva005FD4F7
+{
+	char m_pad0[4];
+	Rva005FD48E *m_p4;
+	void rva005FD4F7();
+};
+void Rva005FD4F7::rva005FD4F7()
+{
+	m_p4->rva005FD48E();
+}
