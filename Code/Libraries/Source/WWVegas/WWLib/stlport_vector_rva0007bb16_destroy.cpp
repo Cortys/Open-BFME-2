@@ -41,3 +41,7 @@ __declspec(noinline) void _Destroy<Rva0007BB16Record *>(Rva0007BB16Record *__fir
 }
 
 template void _STL::vector<Rva0007BB16Record>::_M_clear();
+
+// Whole-class instantiation: its members that are rowed were placed at retail
+// by masked search of this TU's emitted bodies plus REL32 callee agreement.
+template class _STL::vector<Rva0007BB16Record,_STL::allocator<Rva0007BB16Record> >;

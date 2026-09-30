@@ -10,3 +10,7 @@ struct Rva00153729
 	unsigned char m_data[0x4C];
 };
 template void _STL::vector<Rva00153729>::_M_clear();
+
+// Whole-class instantiation: its members that are rowed were placed at retail
+// by masked search of this TU's emitted bodies plus REL32 callee agreement.
+template class _STL::vector<Rva00153729,_STL::allocator<Rva00153729> >;

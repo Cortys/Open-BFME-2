@@ -36,3 +36,7 @@ template _STL::vector<Rva00297360Element>::~vector();
 template void _STL::vector<BfmeStringTailRecord156>::_M_clear();
 template void _STL::vector<Rva002390CB>::_M_clear();
 template void _STL::vector<Rva00297360Element>::_M_clear();
+
+// Whole-class instantiation: its members that are rowed were placed at retail
+// by masked search of this TU's emitted bodies plus REL32 callee agreement.
+template class _STL::vector<Rva002390CB,_STL::allocator<Rva002390CB> >;
