@@ -44323,3 +44323,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?rva006CDBD0@Rva006CDBD0@@QAEXXZ,,0x006CDBD0,32,Code/GameEngine/Source/Common/Rva006CDBD0Pop.cpp,matched,pop head plus freeBlock size 8 via chain allocator
 ?Rva006CD460Free@@YAXPAX@Z,,0x006CD460,27,Code/GameEngine/Source/Common/Rva006CD460Free.cpp,matched,array free via pool stored size plus 4
 ?rva00285A3B@Rva00065964ObjectPool@@QAEPAXXZ,,0x00285A3B,137,Code/Libraries/Source/WWVegas/WWLib/Rva00285A3BObjectPoolAllocate.cpp,matched,pool allocate 16B nodes via sibling recipe
+?rva00285AC4@Rva00065964ObjectPool@@QAEPAXXZ,,0x00285AC4,137,Code/Libraries/Source/WWVegas/WWLib/Rva00285AC4ObjectPoolAllocate.cpp,matched,pool allocate 8B nodes via sibling recipe
