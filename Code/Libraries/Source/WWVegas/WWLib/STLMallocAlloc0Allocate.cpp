@@ -10,13 +10,23 @@
 // __result lives on the stack ([ebp-4]) rather than in a register.
 
 extern "C" __declspec(dllimport) void* __cdecl malloc(unsigned int);
-extern "C" void* __cdecl bfme_MallocAlloc0OomMalloc_82B820(unsigned int);
+extern "C" void* __cdecl bfme_MallocAlloc0Allocate_82C580(unsigned int);
+
+namespace _STL {
+template <int _Inst> class __malloc_alloc;
+template <> class __malloc_alloc<0>
+{
+private:
+	static void *_S_oom_malloc(unsigned int);
+	friend void *::bfme_MallocAlloc0Allocate_82C580(unsigned int);
+};
+}
 
 extern "C" void* __cdecl
 bfme_MallocAlloc0Allocate_82C580(unsigned int __n)
 {
   void* __result = malloc(__n);
   if (0 == __result)
-    __result = bfme_MallocAlloc0OomMalloc_82B820(__n);
+    __result = _STL::__malloc_alloc<0>::_S_oom_malloc(__n);
   return __result;
 }
