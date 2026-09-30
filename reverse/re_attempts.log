@@ -4239,3 +4239,4 @@ FUN_00782ab7	0x00382AB7	108	blocked	map AsciiString lower_bound with by-value co
 ?Rva002E5BCBPartition@@YAPAUStringLookUp@@PAU1@0U1@H@Z	0x002E5BCB	74	blocked	Hoare partition 68B vs 74B; 2x dead lea ecx ebp+18 missing; O1 close O2 worse; needs comp-address lever t=15 model=muse-01
 ?Rva005D6687Wrap@@YAXPAVRva005D5A7E@@0H@Z	0x005D6687	25	blocked	wrapper pushes 5 to 3-arg MakeHeap needs 5-arg retype after publish t=10 model=muse-02
 ??0Rva0021F876@@QAE@ABV0@@Z	0x0021F876	125	partial	lea ecx push order wall 125vs125 8 regions t=15 model=muse-02 score=0.93 stash=reverse/attempts/0x0021f876.cpp
+?rva0050F1F0@Rva0050F1F0@@QAEXH@Z	0x0050F1F0	41	blocked	calls rowed 0x50EE23 plus ji-thunk 0x629170 with push-pop around void signature plus ret8; import-thunk arg mismatch needs new idea t=10 model=muse-01
