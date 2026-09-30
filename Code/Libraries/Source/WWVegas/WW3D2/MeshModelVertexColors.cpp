@@ -113,21 +113,23 @@ public:
 
 protected:
     bool read_texture_ids(ChunkLoadClass &cload,MeshLoadContextClass *context);
-    bool read_per_face_texcoord_ids(ChunkLoadClass &cload,MeshLoadContextClass *context)
-    {
-        unsigned size = sizeof(Vector3i) * PolyCount;
-        if (cload.Cur_Chunk_Length() == size) {
-            cload.Seek(size);
-            return true;
-        }
-        return false;
-    }
+    bool read_per_face_texcoord_ids(ChunkLoadClass &cload,MeshLoadContextClass *context);
     bool read_texture_stage(ChunkLoadClass &cload,MeshLoadContextClass *context);
 	bool read_stage_texcoords(ChunkLoadClass &cload,MeshLoadContextClass *context);
 	bool read_dig(ChunkLoadClass &cload,MeshLoadContextClass *context);
 	bool read_dcg(ChunkLoadClass &cload,MeshLoadContextClass *context);
 	bool read_vertex_colors(ChunkLoadClass &cload,MeshLoadContextClass *context);
 };
+
+bool MeshModelClass::read_per_face_texcoord_ids(ChunkLoadClass &cload,MeshLoadContextClass *context)
+{
+    unsigned size = sizeof(Vector3i) * PolyCount;
+    if (cload.Cur_Chunk_Length() == size) {
+        cload.Seek(size);
+        return true;
+    }
+    return false;
+}
 
 // ?read_vertex_colors@MeshModelClass@@ present-unmatched
 bool MeshModelClass::read_vertex_colors(ChunkLoadClass &cload,MeshLoadContextClass *context)
@@ -146,131 +148,5 @@ bool MeshModelClass::read_vertex_colors(ChunkLoadClass &cload,MeshLoadContextCla
 		}
 	}
 	CurMatDesc->Set_DCG_Source(context->CurPass,VertexMaterialClass::COLOR1);
-	return true;
-}
-
-bool MeshModelClass::read_dcg(ChunkLoadClass &cload,MeshLoadContextClass *context)
-{
-	MeshMatDescClass *matdesc = DefMatDesc;
-	if (DefMatDesc->Get_DCG_Source(context->CurPass) != VertexMaterialClass::MATERIAL) {
-		matdesc = &context->AlternateMatDesc;
-	}
-
-	if (matdesc->Has_Color_Array(0) == 0) {
-		W3dRGBAStruct color;
-		unsigned *dcg = matdesc->Get_Color_Array(0);
-		for (int i=0; i<VertexCount; i++) {
-			cload.Read(&color,sizeof(color));
-			Vector4 col;
-			col.Set((float)color.R / 255.0f,(float)color.G / 255.0f,
-				(float)color.B / 255.0f,(float)color.A / 255.0f);
-			dcg[i] = DX8Wrapper::Convert_Color(col);
-		}
-	} else if (context->PrelitChunkID == W3D_CHUNK_PRELIT_VERTEX) {
-		W3dRGBAStruct color;
-		unsigned *dcg = matdesc->Get_Color_Array(0);
-		for (int i=0; i<VertexCount; i++) {
-			cload.Read(&color,sizeof(color));
-			Vector4 col = DX8Wrapper::Convert_Color(dcg[i]);
-			col.W = (float)color.A / 255.0f;
-			dcg[i] = DX8Wrapper::Convert_Color(col);
-		}
-	}
-
-	matdesc->Set_DCG_Source(context->CurPass,VertexMaterialClass::COLOR1);
-	return true;
-}
-
-bool MeshModelClass::read_dig(ChunkLoadClass &cload,MeshLoadContextClass *context)
-{
-	MeshMatDescClass *matdesc = DefMatDesc;
-	if (context->Already_Loaded_DIG()) {
-		matdesc = &context->AlternateMatDesc;
-	}
-	context->Notify_Loaded_DIG_Chunk(true);
-
-	W3dRGBAStruct color;
-	if (matdesc->Has_Color_Array(0) == false) {
-		unsigned *dcg = matdesc->Get_Color_Array(0);
-		for (int i=0; i<VertexCount; i++) {
-			cload.Read(&color,sizeof(color));
-			Vector4 col;
-			col.X = (float)color.R / 255.0f;
-			col.Y = (float)color.G / 255.0f;
-			col.Z = (float)color.B / 255.0f;
-			col.W = 1.0f;
-			dcg[i] = DX8Wrapper::Convert_Color(col);
-		}
-	} else {
-		unsigned *dcg = matdesc->Get_Color_Array(0);
-		for (int i=0; i<VertexCount; i++) {
-			cload.Read(&color,sizeof(color));
-			Vector4 col = DX8Wrapper::Convert_Color(dcg[i]);
-			col.X *= (float)color.R / 255.0f;
-			col.Y *= (float)color.G / 255.0f;
-			col.Z *= (float)color.B / 255.0f;
-			dcg[i] = DX8Wrapper::Convert_Color(col);
-		}
-	}
-
-	matdesc->Set_DCG_Source(context->CurPass,VertexMaterialClass::COLOR1);
-	return true;
-}
-
-bool MeshModelClass::read_stage_texcoords(ChunkLoadClass &cload, MeshLoadContextClass *context)
-{
-    unsigned elementcount;
-    Vector2 *uvs;
-    W3dTexCoordStruct texcoord;
-    MeshMatDescClass *matdesc = DefMatDesc;
-
-    if (DefMatDesc->Has_UV(context->CurPass, context->CurTexStage)) {
-        matdesc = &(context->AlternateMatDesc);
-    }
-
-    elementcount = cload.Cur_Chunk_Length() / sizeof(W3dTexCoordStruct);
-    uvs = context->Get_Temporary_UV_Array(elementcount);
-
-    if (uvs != NULL) {
-        for (unsigned i = 0; i < elementcount; i++) {
-            cload.Read(&texcoord, sizeof(texcoord));
-            uvs[i].X = texcoord.U;
-            uvs[i].Y = 1.0f - texcoord.V;
-        }
-    }
-
-    matdesc->Install_UV_Array(context->CurPass, context->CurTexStage, uvs, elementcount);
-    return true;
-}
-
-bool MeshModelClass::read_texture_stage(ChunkLoadClass &cload,MeshLoadContextClass *context)
-{
-	while (cload.Open_Chunk()) {
-		bool error = true;
-		switch (cload.Cur_Chunk_ID()) {
-			case W3D_CHUNK_TEXTURE_IDS:
-				error = read_texture_ids(cload,context);
-				break;
-
-			case W3D_CHUNK_STAGE_TEXCOORDS:
-			case W3D_CHUNK_TEXCOORDS:
-				error = read_stage_texcoords(cload,context);
-				break;
-
-			case W3D_CHUNK_PER_FACE_TEXCOORD_IDS:
-				error = read_per_face_texcoord_ids(cload,context);
-				break;
-		}
-
-		if (error != true) {
-			return error;
-		}
-		cload.Close_Chunk();
-	}
-
-	context->CurTexStage++;
-	// Reconstruction shaping: retain the direct memory increment at the tail.
-	// The compiler barrier emits no instruction.
-	_ReadWriteBarrier();
 	return true;
 }
