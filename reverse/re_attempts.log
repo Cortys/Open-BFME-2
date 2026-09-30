@@ -3958,3 +3958,6 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?Rva003BC1B2Do@@YGXPAVParameter@@_NM@Z	0x003BC1B2	124	partial	vtable cached in edi plus hoisted load vs ours edx reload; bool plus float shape exact; /O1 direct t=25 model=muse-07 score=0.9 stash=reverse/attempts/0x003bc1b2.cpp
 ??1Rva001FFE93@@UAE@XZ	0x001FFE93	86	blocked	vector dtor twin wall: retail calls dup 0x001FFD2C but _STL vector resolves to true 0x004613EB; second twin pin refused by pin_consistency divergent scopetable vs 0x0032E7A3; align exact 86B 24insns t=15 model=muse-07
 ??$equal@U?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@_STL@@U12@@_STL@@YA_NU?$_Bit_iter@U_Bit_reference@_STL@@PAU12@@0@00@Z	0x0043EAC9	84	partial	4.5.3 vs 4.6 eval order: retail tests third iterator bit first then first; ours opposite; 84B 38insns structural 0 t=20 model=muse-07 score=0.93 stash=reverse/attempts/0x0043eac9.cpp
+?Rva001117E3Downsample@@YAXPAGH0@Z	0x001117E3	109	blocked	2x2 word avg with idiv ebx reuse and frame 0x0c needs new idea t=15 model=muse-09
+?rva001F5300@Rva001F5300@@QAEXPAM@Z	0x001F5300	76	partial	missing one push ecx frame 75 vs 76 slot -8 vs -4 t=15 model=muse-09 score=0.95 stash=reverse/attempts/0x001f5300.cpp
+?rva000AE1DC@BfmeGridWM@@QBE_NHH@Z	0x000AE1DC	88	blocked	register wall 10 diffs this in esi vs ecx needs new idea t=10 model=muse-09
