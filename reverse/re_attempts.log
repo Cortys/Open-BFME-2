@@ -3931,3 +3931,4 @@ FUN_006d84f6	0x002D84F6	225	blocked	register entry via edi-eax plus xfer throw n
 ??1Rva001F4B01@@UAE@XZ	0x001F4B01	70	blocked	ctor-dtor with EH state 3 plus Erase Particle plus 4x global stores ours55 vs retail70 missing EH prolog plus multi-load t=15 model=muse-12
 ?Rva004A4C3FBuildNonDup@@YAXHHQAH@Z	0x004A4C3F	67	blocked	donor buildNonDup ours75 vs retail67 missing mov eax range plus mov ebx idxList suggests reg args t=20 model=muse-12
 ?Rva00331A46Copy@@YAXPAXHH@Z	0x00331A46	75	blocked	complex EH copy loop with Rva002DFC30 ctors plus StringBase release unclear 3-arg types t=12 model=muse-12
+?Rva00526E8B@@YGXXZ	0x00526E8B	128	blocked	S_sort row is list<short> but loop loads ObjectID at node+8 and stores float dist at value+16 via findObjectByID; same arg pushed twice to S_sort; TacticalView slot70 1-arg vs screenToTerrain 3-arg; t=10 model=muse-05
