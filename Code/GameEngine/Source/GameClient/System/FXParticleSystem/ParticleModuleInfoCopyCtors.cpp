@@ -204,3 +204,21 @@ Rva003AF70B::Rva003AF70B(const Rva003AF70B &other)
 	: Rva003AF738(other)
 {
 }
+
+// ??0Rva003AF7FE@@QAE@ABV0@@Z @0x003AF7FE 98B: copy ctor with LineEmissionVolumeInfo base at +0x1c.
+// Evidence: calls rowed base 0x003AF50D then rowed Line copy 0x003A653B; neg/sbb/and null-guarded
+// adjustment of source to +0x1c for the Line base; vptrs at +0/+0x14/+0x18/+0x1c DIR32;
+// same Intermediate3AFC6FC pre-Line stores as rowed 0x003AF5AC and 0x003AF738 Sphere version;
+// unlocks 0x003AF7D1.
+class Rva003AF7FE : public Intermediate3AFC6FC, public FXParticleSystem::LineEmissionVolumeInfo
+{
+public:
+	Rva003AF7FE(const Rva003AF7FE &other);
+	virtual ~Rva003AF7FE();
+};
+
+Rva003AF7FE::Rva003AF7FE(const Rva003AF7FE &other)
+	: Intermediate3AFC6FC(other)
+	, FXParticleSystem::LineEmissionVolumeInfo((const FXParticleSystem::LineEmissionVolumeInfo &)other)
+{
+}
