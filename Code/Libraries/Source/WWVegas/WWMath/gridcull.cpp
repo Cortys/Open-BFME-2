@@ -68,15 +68,6 @@ GridCullSystemClass::GridCullSystemClass(void) :
 }
 
 
-GridCullSystemClass::~GridCullSystemClass(void)
-{
-	if (Cells != NULL) {
-		delete Cells;
-		Cells = NULL;
-	}
-}
-
-
 void GridCullSystemClass::Collect_Objects(const Vector3 & point)
 {
 	/*
