@@ -43991,3 +43991,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva003560ED@@UAE@XZ,,0x003560ED,112,Code/GameEngine/Source/Common/Rva003560EDDtor.cpp,matched,derived dtor clears TheGameLogic plus Display slot68 plus W3D plus strings plus base
 ??_GRva003560ED@@UAEPAXI@Z,,0x00356708,28,Code/GameEngine/Source/Common/Rva003560EDDtor.cpp,matched,deleting dtor via auto-generated G plus caller 0x003560ED
 ??0Rva003AE683@@QAE@ABV0@@Z,,0x003AE683,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE683CopyCtor.cpp,matched,derived copy via rowed base unlocks 0x003AE64C
+?rva000EFDA0@Rva000EFDA0@@QAEXXZ,,0x000EFDA0,27,Code/GameEngine/Source/Common/Rva000EFDA0Free.cpp,matched,free array 0x24 zero 0x24 0x28 callers 0x000F11C0
