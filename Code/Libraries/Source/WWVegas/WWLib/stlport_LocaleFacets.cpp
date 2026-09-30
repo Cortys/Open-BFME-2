@@ -27,9 +27,12 @@
 
 typedef unsigned long LCID;
 
-extern const char *g_Rva012C83A8;
-extern const char *g_Rva012C83A4;
-extern const char *g_Rva012C83AC;
+// BFME2 pointer VA 0x00DA71A0; donor address retained only in the name.
+const char *g_Rva012C83A8 = "LC_NUMERIC";
+// BFME2 pointer VA 0x00DA719C; donor address retained only in the name.
+const char *g_Rva012C83A4 = "LC_MONETARY";
+// BFME2 pointer VA 0x00DA71A4; donor address retained only in the name.
+const char *g_Rva012C83AC = "LC_TIME";
 
 extern "C" {
 
@@ -89,9 +92,102 @@ typedef struct _LOCALECONV {
     const char *abbrev;
 } LOCALECONV;
 
-/* Retail tables at 0x012C80D0 (65) and 0x012C82D8 (23). */
-extern LOCALECONV __rg_language[];
-extern LOCALECONV __rg_country[];
+// Donor entry type and symbols retained. Matched BFME2 DIR32 references
+// establish the tables' locations; their pointer payloads match retail.
+// BFME2 VA 0x00DA6EC8: all 65 pairs read from the referenced retail table.
+LOCALECONV __rg_language[65] = {
+    {"american", "ENU"},
+    {"american english", "ENU"},
+    {"american-english", "ENU"},
+    {"australian", "ENA"},
+    {"belgian", "NLB"},
+    {"canadian", "ENC"},
+    {"chh", "ZHH"},
+    {"chi", "ZHI"},
+    {"chinese", "CHS"},
+    {"chinese-hongkong", "ZHH"},
+    {"chinese-simplified", "CHS"},
+    {"chinese-singapore", "ZHI"},
+    {"chinese-traditional", "CHT"},
+    {"dutch-belgian", "NLB"},
+    {"english-american", "ENU"},
+    {"english-aus", "ENA"},
+    {"english-belize", "ENL"},
+    {"english-can", "ENC"},
+    {"english-caribbean", "ENB"},
+    {"english-ire", "ENI"},
+    {"english-jamaica", "ENJ"},
+    {"english-nz", "ENZ"},
+    {"english-south africa", "ENS"},
+    {"english-trinidad y tobago", "ENT"},
+    {"english-uk", "ENG"},
+    {"english-us", "ENU"},
+    {"english-usa", "ENU"},
+    {"french-belgian", "FRB"},
+    {"french-canadian", "FRC"},
+    {"french-luxembourg", "FRL"},
+    {"french-swiss", "FRS"},
+    {"german-austrian", "DEA"},
+    {"german-lichtenstein", "DEC"},
+    {"german-luxembourg", "DEL"},
+    {"german-swiss", "DES"},
+    {"irish-english", "ENI"},
+    {"italian-swiss", "ITS"},
+    {"norwegian", "NOR"},
+    {"norwegian-bokmal", "NOR"},
+    {"norwegian-nynorsk", "NON"},
+    {"portuguese-brazilian", "PTB"},
+    {"spanish-argentina", "ESS"},
+    {"spanish-bolivia", "ESB"},
+    {"spanish-chile", "ESL"},
+    {"spanish-colombia", "ESO"},
+    {"spanish-costa rica", "ESC"},
+    {"spanish-dominican republic", "ESD"},
+    {"spanish-ecuador", "ESF"},
+    {"spanish-el salvador", "ESE"},
+    {"spanish-guatemala", "ESG"},
+    {"spanish-honduras", "ESH"},
+    {"spanish-mexican", "ESM"},
+    {"spanish-modern", "ESN"},
+    {"spanish-nicaragua", "ESI"},
+    {"spanish-panama", "ESA"},
+    {"spanish-paraguay", "ESZ"},
+    {"spanish-peru", "ESR"},
+    {"spanish-puerto rico", "ESU"},
+    {"spanish-uruguay", "ESY"},
+    {"spanish-venezuela", "ESV"},
+    {"swedish-finland", "SVF"},
+    {"swiss", "DES"},
+    {"uk", "ENG"},
+    {"us", "ENU"},
+    {"usa", "ENU"}
+};
+// BFME2 VA 0x00DA70D0: all 23 pairs read from the referenced retail table.
+LOCALECONV __rg_country[23] = {
+    {"america", "USA"},
+    {"britain", "GBR"},
+    {"china", "CHN"},
+    {"czech", "CZE"},
+    {"england", "GBR"},
+    {"great britain", "GBR"},
+    {"holland", "NLD"},
+    {"hong-kong", "HKG"},
+    {"new-zealand", "NZL"},
+    {"nz", "NZL"},
+    {"pr china", "CHN"},
+    {"pr-china", "CHN"},
+    {"puerto-rico", "PRI"},
+    {"slovak", "SVK"},
+    {"south africa", "ZAF"},
+    {"south korea", "KOR"},
+    {"south-africa", "ZAF"},
+    {"south-korea", "KOR"},
+    {"trinidad & tobago", "TTO"},
+    {"uk", "GBR"},
+    {"united-kingdom", "GBR"},
+    {"united-states", "USA"},
+    {"us", "USA"}
+};
 
 static int __FindFlag;
 static LCID __FndLCID;
@@ -642,7 +738,8 @@ void *_Locale_monetary_create(const char *name)
 
 }
 
-extern const char *g_Rva012C839C;
+// BFME2 pointer VA 0x00DA7194; donor address retained only in the name.
+const char *g_Rva012C839C = "LC_COLLATE";
 typedef struct
 {
     LCID lcid;
