@@ -43236,3 +43236,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva005E8044@Rva005E8044@@QAEPAXPAX0@Z,,0x005E8044,51,Code/GameEngine/Source/Common/Bfme/Rva005E8044Erase.cpp,matched,Vector range erase via rowed Forward plus Destroy tag slot via first-plus-3 Oy-
 ??1Rva005407C9@@QAE@XZ,,0x005407C9,65,Code/GameEngine/Source/Common/Rva005407C9Dtor.cpp,matched,unlock inner dtor via caller 0x0054080A plus base Rva0053FB33 pattern plus free row
 ??0BfmeModuleDataSnapshotBase@@QAE@XZ,,0x0011646E,13,Code/GameEngineDevice/Source/W3DDevice/GameClient/BfmeModuleDataSnapshotBaseCtor.cpp,matched,base ctor vtable plus byte zero via caller
+??0Rva0026F684@@QAE@XZ,,0x0026F5B3,209,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Ctor.cpp,matched,same vtable 0x7FABF0 as dtor 0x0026F684
