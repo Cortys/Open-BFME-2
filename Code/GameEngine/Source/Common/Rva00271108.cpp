@@ -1,8 +1,7 @@
-// ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z
-// partial score=0.98 date=2026-09-29
-// ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z
-// partial score=0.98 date=2026-09-29
 // cl: /O1 /G7 /arch:SSE /MD
+// Built from the banked attempt reverse/attempts/0x00271108.cpp; fix: the floats
+// read through g_Va00BBAEAC, g_Va00BC7468 are compiler literals holding the retail
+// values, not extern globals, which is what gives retail's operand order.
 
 // ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z retail 0x00271108 190B.
 // Unlock lane: float guard vs pooled 0.0 at 0x00BBAEAC, adjust angle at
@@ -10,9 +9,6 @@
 // [ebp+0x18] into [esi+0x13c]+0x1c/+0x24, then null-terminated list at
 // [esi+0x14c] calling slot 0xA8 then slot 0x58. Caller 0x002CBBF5.
 // Evidence: callees rowed Cos 0x0002FBC0 Sin 0x0002FBB0, prev/next /O1 /MD.
-
-extern float g_Va00BBAEAC;
-extern float g_Va00BC7468;
 
 float Cos(float);
 float Sin(float);
@@ -121,13 +117,12 @@ private:
 	Node **m_list;
 };
 
-// ?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z present-unmatched
 bool Rva00271108::rva00271108(int a0, int a1, int a2, float a3, float a4, float a5, int a6)
 {
-	if (a4 != g_Va00BBAEAC) {
+	if (a4 != 0.0f) {
 		if (m_fc != 0)
 			a5 -= m_fc->m_44;
-		a5 = a5 + g_Va00BC7468;
+		a5 = a5 + 3.1415927410125732f;
 		if (m_acc != 0) {
 			float c = Cos(a5);
 			m_acc->m_1c += c * a4;

@@ -1,14 +1,13 @@
-// ??0Rva002DB311@@QAE@XZ
-// partial score=0.95 date=2026-09-30
-// ??0Rva002DB311@@QAE@XZ
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /MD /EHsc /arch:SSE
+// Built from the banked attempt reverse/attempts/0x002db1ca.cpp; fix: the float
+// read through g_Va00BBB8D8 is a compiler literals holding the retail
+// values, not extern globals, which is what gives retail's operand order.
 // ??1Rva002DB311@@UAE@XZ @0x002DB311 318B
 // Evidence: unlock lane; vtable g_00C03E24; callees clear 0x0048BA39 releaseBuffer 0x00036410 TailRecord dtor 0x0010F149 and ??_M CRT; 11 singles + 7 arrays to 0x144.
 // ??0Rva002DB311@@QAE@XZ @0x002DB1CA 327B
-// Evidence: unlock lane ctor of same class; vtable 0x00803E24; callees UnicodeString ctor 0x00326BE6 clear TailRecord dtor and ??_L CRT; POD floats/ints incl g_Va00BBB8D8.
+// Evidence: unlock lane ctor of same class; vtable 0x00803E24; callees UnicodeString ctor 0x00326BE6 clear TailRecord dtor and ??_L CRT; POD floats/ints incl 1.0f.
 extern const void *const g_00C03E24[];
-extern float g_Va00BBB8D8;
+
 template <typename T> class StringBase
 {
 public:
@@ -79,11 +78,10 @@ public:
 Rva002DB311::~Rva002DB311()
 {
 }
-// ??0Rva002DB311@@QAE@XZ present-unmatched
 Rva002DB311::Rva002DB311()
 {
 	float v0 = 0.0f;
-	float v1C = g_Va00BBB8D8;
+	float v1C = 1.0f;
 	m_08 = 0;
 	m_0C = 0;
 	m_10 = 0;

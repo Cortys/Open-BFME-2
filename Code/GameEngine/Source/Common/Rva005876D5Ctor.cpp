@@ -1,8 +1,7 @@
-// ??0Rva005876D5@@QAE@XZ
-// partial score=0.9 date=2026-09-30
-// ??0Rva005876D5@@QAE@XZ
-// partial score=0.9 date=2026-09-30
 // cl: /O1 /MD /arch:SSE2 /G7
+// Built from the banked attempt reverse/attempts/0x005876d5.cpp; fix: the floats
+// read through g_00BC5CD4, g_00BC6258, g_00BE2B94, g_00C6FF34, g_Va00BC2428 are compiler literals holding the retail
+// values, not extern globals, which is what gives retail's operand order.
 // ??0Rva005876D5@@QAE@XZ @0x005876D5 125B: constructor. Floats +0x04..+0x14
 // from float globals, pointer +0x00 from g_00C6FF28, member +0x18 built by
 // the rowed ??0Rva0042526Member@@QAE@XZ in declaration order, ints +0x64/+0x68
@@ -15,11 +14,6 @@
 // declared extern int like the cold getters. Neighbours 0x005875DC
 // 0x0058814C.
 
-extern float g_Va00BC2428;
-extern float g_00C6FF34;
-extern float g_00BC6258;
-extern float g_00BC5CD4;
-extern float g_00BE2B94;
 extern int g_00C6FF28;
 extern int g_Va00DBA4E4;
 
@@ -52,14 +46,13 @@ private:
 	int m_i6C;
 };
 
-// ??0Rva005876D5@@QAE@XZ present-unmatched
 Rva005876D5::Rva005876D5()
-	: m_f04(g_Va00BC2428)
-	, m_f08(g_00C6FF34)
-	, m_f0C(g_00BC6258)
-	, m_f10(g_00BC5CD4)
+	: m_f04(10.0f)
+	, m_f08(-0.17000000178813934f)
+	, m_f0C(60.0f)
+	, m_f10(90.0f)
 	, m_p00(&g_00C6FF28)
-	, m_f14(g_00BE2B94)
+	, m_f14(140.0f)
 	, m_i64(g_Va00DBA4E4 + g_Va00DBA4E4)
 	, m_i68(g_Va00DBA4E4 + g_Va00DBA4E4)
 	, m_i6C(g_Va00DBA4E4 * 3)
