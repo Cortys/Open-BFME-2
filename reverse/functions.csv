@@ -44861,3 +44861,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva001364F7@Rva001364F7@@QAEXAAPAURvaNode1364F7@@PAU2@1PBUTreeKey00242F5E@@1@Z,,0x001364F7,136,Code/Libraries/Source/WWVegas/WWLib/Rva001364F7Insert.cpp,matched,tree insert worker over TreeKey set via rowed factory plus Rebalance
 ??0Rva00405A45@@QAE@H@Z,,0x00405A45,11,Code/GameEngine/Source/Common/Rva00405A45Ctor.cpp,matched,vtable-store ctor base of 0x00405B60 caller
 ??0Rva00405B60@@QAE@ABV0@@Z,,0x00405B60,45,Code/GameEngine/Source/Common/Rva00405B60Ctor.cpp,matched,derived copy ctor calls base 0x00405A45 plus vtable copy
+?findParticleSystemByID@ParticleSystemManager@@AAE?AVBfmeParticleSystemHandle@@W4ParticleSystemID@@@Z,,0x001F5B0A,111,Code/GameEngine/Source/Common/ParticleSystemManagerFindByID.cpp,matched,BFME1 donor ParticleSystemManager_findByID with BFME2 list at +0x4C and ID at +0xA8 via rowed RvaSmartPtr12 copy and declare-only dtor EH slot
