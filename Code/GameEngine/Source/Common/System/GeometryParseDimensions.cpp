@@ -21,7 +21,9 @@ public:
     static void parseGeometryHeight(INI *, void *, void *, const void *);
     static void parseGeometryIsSmall(INI *, void *, void *, const void *);
     static void parseGeometryUsedForHealthBox(INI *, void *, void *, const void *);
+private:
     void calcBoundingStuff();
+public:
     char unmodelled00[4]; bool isSmall; char unmodelled05[0x27];
     std::vector<GeometryShape> shapes;
 };
