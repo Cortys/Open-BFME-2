@@ -44309,3 +44309,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?rva0053FBFE@Rva0053FBFE@@QAEXPAVDataChunkOutput@@@Z,,0x0053FBFE,131,Code/GameEngine/Source/Common/Rva0053FBFEWrite.cpp,matched,Keyframe writer via rowed 0x005C706A plus eight writeReal caller 0x0053FF4C
 ??_GRva0070A840@@QAEPAXI@Z,,0x006DB3C0,35,Code/GameEngine/Source/Common/Rva006DB3C0DeletingDtor.cpp,matched,pooled deleting dtor via freeBlock size 0x14
 ?rva00358DC2@Rva00358DC2@@QAEXPAURva00358DC2Node@@@Z,,0x00358DC2,59,Code/GameEngine/Source/GameClient/Rva00358DC2Erase.cpp,matched,rb erase via rowed rebalance plus dtor plus free
+?rva004FFC96@Rva004FFC96@@QAEPAURva004FFC96Node@@PAU2@0@Z,,0x004FFC96,115,Code/Libraries/Source/WWVegas/WWLib/Rva004FFC96Copy.cpp,matched,115B tree copy via twin of rowed clone 0x0053444F same shape as 0x004FFC23
