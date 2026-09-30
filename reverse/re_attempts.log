@@ -3816,3 +3816,6 @@ _Rva0084ED20Tail	0x00021EB0	308	blocked	time-format jump-table switch no donor d
 ?rva00216AF6@Rva00216AF6@@QAEXXZ	0x00216AF6	73	blocked	dead mov ecx esi needs thiscall decl but callee genuinely stdcall per Rva00216787Free.cpp so alias pin forbidden t=10 model=muse-10
 ?rva0052B685@Rva0052B685@@QAEXAAPAX@Z	0x0052B685	39	blocked	EH prolog with no calls plus dead and ebp-10 zero and move this-to-param plus zero this; 5 probes with EHsc try guard autoptr EmptyBase all emit no prolog t=15 model=muse-07
 ?Rva0031F743	0x0031F743	86	blocked	eax-register arg private convention needs static-plus-local-caller lever t=5 model=muse-03
+FUN_0058067A	0x0018067A	94	blocked	GetPrototype plus ctor plus Release with hidden-pointer reuse needs different tmp lifetime t=15 model=muse-01
+FUN_004EFB99	0x000EFB99	172	blocked	two-array new[] with Region3D ctor plus 6B POD needs different scheduling t=12 model=muse-01
+?rva0045FE4A@SpawnBehavior@@UAEHP6AHPAVObject@@PAX@Z1@Z	0x0045FE4A	80	partial	ebx-edi swap for this-obj plus eager vs lazy pushes persists after self-split definition-order plus G7 which is neutral plus O2 which worsens to 94B t=20 model=muse-01 score=0.9 stash=reverse/attempts/0x0045fe4a.cpp

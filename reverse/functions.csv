@@ -43316,3 +43316,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??$_Construct@VRva0052BEF0@@V1@@_STL@@YAXPAVRva0052BEF0@@ABV1@@Z,,0x0052C431,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_game_structs.cpp,matched,STL Construct for Rva0052BEF0 calls rowed copy ctor 0x0052BEF0
 ?Rva0052C9D3Get@@YAPAXPAX00@Z,,0x0052C9D3,38,Code/GameEngine/Source/Common/Rva0052C9D3UninitCopy.cpp,matched,Uninit copy stride 12 via rowed Construct 0x0052C431 caller 0x0052CEC0 unlocks 0x0052CE7D
 ??1Radar@@UAE@XZ,,0x002D7CED,98,Code/GameEngine/Source/Common/System/RadarDtor.cpp,matched,Radar MI dtor via Snapshot plus GameEngineDeletingBase with deleteListResources and 64 events
+?rva0033269B@Rva0033269B@@QAEXABUBfmeStringRecord000331962@@@Z,,0x0033269B,115,Code/GameEngine/Source/Common/Rva0033269B.cpp,matched,unlock word-search update-or-append via G7 for imul
