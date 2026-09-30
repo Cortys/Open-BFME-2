@@ -1,7 +1,8 @@
-// ?rva002DBDB4@Rva002DBDB4@@QAEXPAVRva002DBD05@@@Z
-// partial score=0.99 date=2026-09-30
 // cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP=
-// ?rva002DBDB4@Rva002DBDB4@@QAEXPAVRva002DBD05@@@Z @0x002DBDB4 174B: chain after Rva002DBD05Get; version bytes via +0x28 then 8x loop via +0x7c and +0xc then Get then 10x via +0x7c then +0x90/+0x7c gated. Evidence: packet disasm with rowed Rva002DBD05Get 0x002DBD05 and vtable slot 3 class BfmeSubobject.
+// Rva002DBDB4::rva002DBDB4, retail 0x002DBDB4 (174 bytes). Built from the banked
+// attempt reverse/attempts/0x002dbdb4.cpp; fix: the eight 0x1AC-stride
+// subobjects at this+4 are embedded (retail lea then vtable load), not
+// pointers the loop dereferences.
 class Rva002DBD05
 {
 public:
@@ -67,7 +68,6 @@ public:
 	char m_dataDA0[0x4];
 };
 
-// ?rva002DBDB4@Rva002DBDB4@@QAEXPAVRva002DBD05@@@Z present-unmatched
 void Rva002DBDB4::rva002DBDB4(Rva002DBD05 *obj)
 {
 	struct TwoBytes { unsigned char b1; unsigned char b2; } ver;
@@ -80,8 +80,7 @@ void Rva002DBDB4::rva002DBDB4(Rva002DBD05 *obj)
 	counter = 0;
 	for (; counter < bound; ++counter) {
 		int off = counter * 0x1AC;
-		BfmeSubobject **ppSub = (BfmeSubobject **)((char *)this + off + 4);
-		BfmeSubobject *sub = *ppSub;
+		BfmeSubobject *sub = (BfmeSubobject *)((char *)this + off + 4);
 		sub->unk0c(obj);
 	}
 	Rva002DBD05Get(obj, (char *)this + 0xD64);

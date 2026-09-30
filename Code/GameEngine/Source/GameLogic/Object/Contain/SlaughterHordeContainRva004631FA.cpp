@@ -1,9 +1,8 @@
-// ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z
-// partial score=0.96 date=2026-09-30
-// ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z
-// partial score=0.96 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD
-// ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z @0x004631FA 50B evidence: vslot 96 of 00848AA0; layout via HordeGarrisonContain; callee rva0046247D rowed; 1-reg CSE wall mov-eax-ecx-vs-mem
+// SlaughterHordeContain::rva004631FA, retail 0x004631FA (50 bytes). Built from
+// the banked attempt reverse/attempts/0x004631fa.cpp; fix: the list walk
+// starts at the node after the head (end = *m04, cur = *end), which is
+// retail's second load.
 
 struct Rva0046247DPair { void *m00; void *m04; };
 
@@ -109,14 +108,12 @@ class SlaughterHordeContain { public:
   virtual bool rva004631FA(int arg);
 };
 
-// ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z present-unmatched
 bool SlaughterHordeContain::rva004631FA(int arg)
 {
   Rva0046247DPair p;
   ((Rva0046247D *)((char *)this - 0x20))->rva0046247D(p);
-  void *cur = p.m04;
-  void *end = *(void * *)cur;
-  cur = *(void * *)cur;
+  void *end = *(void * *)p.m04;
+  void *cur = *(void * *)end;
   for (; cur != end; cur = *(void * *)cur) {
     if (*(int *)((char *)cur + 8) == arg)
       return true;
