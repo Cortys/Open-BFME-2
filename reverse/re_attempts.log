@@ -4265,3 +4265,5 @@ FUN_002B5739	0x002B5739	115	blocked	same array-visit EH functor wall as 0x005C99
 ?Rva000AFB2EGet@@YAHXZ	0x000AFB2E	136	blocked	stlport string realloc append-fill with bool suffix flag needs 4.6-style fill member plus 5-arg signature t=12 model=muse-03
 ?rva004160BE@Rva004160BE@@QAEPAV?$StringBase@D@@PAV2@@Z	0x004160BE	133	blocked	slot formatter close at 130B but placement copy into out draws extra and-0 and or--1 states vs retail t=18 model=muse-03
 ?rva0015326D@Rva0015326D@@QAEXHH@Z	0x0015326D	116	blocked	functor dispatch shape right but n needs reg-homed push6-pop not mem plus imul needs reg idx plus folding index+1-idx to 1 breaks runtime lea-sub t=25 model=muse-03
+?rva0031B0CE@ControlBar@@QAEXXZ	0x0031B0CE	102	blocked	float-unsigned global vs __real plus tv-vtable edi-vs-ebx reload t=30 model=muse-07
+??4Rva006ECE30@@QAEAAV0@ABV0@@Z	0x006ECE30	133	blocked	no EH frame without donor; needs Apt donor t=12 model=muse-07
