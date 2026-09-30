@@ -57,7 +57,6 @@ private:
 	int m_eventTrailer; // +0x142C
 };
 
-// ??1RadarEvent@@QAE@XZ present-unmatched
 RadarEvent::~RadarEvent()
 {
 	if (m_ref)
