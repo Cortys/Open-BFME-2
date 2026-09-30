@@ -22,6 +22,7 @@ public:
 	void rva00051FFE(int b);
 	void rva00052015(int b);
 	void rva00052048(int idx);
+	void rva00052098(int b);
 	void setVolumes(float volume, unsigned char flags);
 
 	char m_pad0[4];
@@ -130,4 +131,10 @@ void Rva00699180Owner::rva00052048(int idx)
 	else if (v > 1.0f)
 		v = 1.0f;
 	r = v;
+}
+
+void Rva00699180Owner::rva00052098(int b)
+{
+	rva00052048(b);
+	rva00051FFE(b);
 }
