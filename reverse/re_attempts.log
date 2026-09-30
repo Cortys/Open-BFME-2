@@ -3838,3 +3838,7 @@ FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of b
 ??_GRva00216094@@UAEPAXI@Z	0x00406CB7	28	blocked	slot0 of 0x838BA4 suggests Rva00406BB0 not Rva00216094 needs retype merge plus no co-emitted GDtor t=10 model=muse-10
 ??1Rva003321D8@@QAE@XZ	0x003321D8	63	blocked	EH prolog plus Destroy plus free needs vector inline manual gives 30B vs 63B t=12 model=muse-01
 ?computeNormalRadialOffset@@YAXABUCoord3D@@AAU1@0PAVObject@@M@Z	0x002E7A62	160	partial	fastcall edx vs eax for to plus dest stack vs ebx plus ret 0xc vs ret t=25 model=muse-02 score=0.9 stash=reverse/attempts/0x002e7a62.cpp
+?rva0052DD75@Rva0052DD75@@QAEMMHM@Z	0x0052DD75	230	partial	222of230B 65of67insns push-before-fmul vs after plus xmm2 acc vs mem plus dx-inv slot swap t=15 model=muse-04 score=0.93 stash=reverse/attempts/0x0052dd75.cpp
+?Rva0052E4C9Do@@YA_NXZ	0x0052E4C9	541	blocked	541B chain multi-loop Cos Sin ceil floor IAT plus SSE x87 plus 3 rowed callees needs more than 6-variant box t=5 model=muse-04
+?rva00396A5C@Rva00396A5C@@QAEHXZ	0x00396A5C	177	blocked	unlock EH StringBase private copy plus map _M_find plus NameKeyGenerator 2 StringBase locals state machine needs alternatename plus STL tree beyond box t=10 model=muse-04
+?Rva000B3094Do@@YA_XZ	0x000B3094	159	blocked	unlock 159B uses esi uninit no mov esi ecx in packet plus ret void vs ret 0x10 plus ebx-edi swap caller shows cdecl 4 pushes no ecx t=10 model=muse-04
