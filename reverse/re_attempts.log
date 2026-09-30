@@ -3902,3 +3902,4 @@ FUN_000578B3	0x000578B3	149	blocked	Armor dual-hashtable erase with 0x104 plus 0
 ?rva00285F43@Rva00285F43Mgr@@QAEXHHPAURva00285F43Src@@@Z	0x00285F43	102	partial	103B vs 102B esi-edx swap for arrIdx-src plus extra mov from cached dst load t=25 model=muse-02 score=0.94 stash=reverse/attempts/0x00285f43.cpp
 ?rva002F1BD5@Rva002F1BD5@@QAEHHPAURva002F1BD5Arg@@HH@Z	0x002F1BD5	80	partial	76B vs 80B threads null-id check straight to join where retail keeps jmp plus xor per shape lever 1352 Drawable-getObject t=22 model=muse-02 score=0.93 stash=reverse/attempts/0x002f1bd5.cpp
 ??0Rva0054B7B7@@QAE@XZ	0x0054B7B7	69	partial	vptr store early retail vs late ours t=30 model=muse-06 score=0.95 stash=reverse/attempts/0x0054b7b7.cpp
+FUN_00320291	0x00320291	584	blocked	unlock 584B ControlBar ctor-like with 2 StringBases plus 6x4 array via _L plus list at 170 plus 70 stores needs layout plus STL sizing t=10 model=muse-03
