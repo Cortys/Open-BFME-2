@@ -4217,3 +4217,4 @@ FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; s
 ?rva00463C6E@Rva00463C6E@@QAEHXZ	0x00463C6E	234	blocked	complex OpenContain loadPostProcess list throw 234B t=4 model=muse-07
 ??0Rva0053FB33@@QAE@ABV0@@Z	0x0053FADE	85	blocked	vtable early before member vs retail after plus 1 branch t=20 model=muse-07
 ??1Rva004A69BF@@UAE@XZ	0x004A69BF	123	partial	123B exact size 33 insns only and-ebp-4-0 4B early before 3E4 store vs retail after load t=25 model=muse-07 score=0.96 stash=reverse/attempts/0x004a69bf.cpp
+FUN_00762ADE	0x00362ADE	68	blocked	STL map erase range needs EH frame plus iterator helpers t=12 model=muse-02
