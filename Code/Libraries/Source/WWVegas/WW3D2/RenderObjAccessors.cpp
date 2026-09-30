@@ -17,6 +17,12 @@
 **	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "rendobj.h"
+#include <float.h>
+
+// rendobj.cpp's LOD sentinels (Zero Hour source; retail .rdata 0x00BD2F58 holds
+// FLT_MAX and 0x00BD2F5C holds -1.0f), which every LOD-aware render object reads.
+const float	RenderObjClass::AT_MIN_LOD = FLT_MAX;
+const float	RenderObjClass::AT_MAX_LOD = -1.0f;
 
 // The primary RenderObj vtable and hierarchy aggregation establish the
 // BFME2 additive flag as 0x00400000. Retail compiles this with a shared return.
