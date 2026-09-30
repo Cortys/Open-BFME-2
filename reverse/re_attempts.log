@@ -3791,3 +3791,6 @@ FUN_0048619A	0x0048619A	327	blocked	eax-ebx reg args plus x87-SSE mix crushdie f
 ?rva003F4ABB@Rva003F498A@@QAEPAXHH@Z	0x003F4ABB	29	blocked	eax-edx swap for base-outer plus SIB base-index swap exact size 29B 0 structural t=20 model=muse-09
 ?rva00358F44@Rva00358D62@@QAEXXZ	0x00358F44	56	blocked	EH prolog far handler 0x77D8AF auto_ptr adds delete and keeps m00 not this t=15 model=muse-10
 ?rva006D28D0@Rva006D28D0@@QAEXH_N@Z	0x006D28D0	92	blocked	eax-edx mirror spelling-proof plus symmetric inner-operand swap changed nothing plus switch-form untried t=15 model=muse-12
+FUN_0033CD41	0x0033CD41	215	blocked	parseRemoveModule EH throw donor exists but ThingTemplate.cpp already defines wrong-body present-unmatched duplicate plus BFME2 offsets 0x5f8-0x64 vs 0x498-0x20 need new TU t=12 model=muse-11
+??0Made002CC64B@@QAE@XZ	0x00508BE5	97	partial	and-zero 0128 at +0x09 vs +0x15 6B early plus mov-vs-movecx at +0x1c pi fixed from 1.0f t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x00508be5.cpp
+FUN_000EFC45	0x000EFC45	53	blocked	pin UAE virtual vs body no vtable store needs QAE nonvirtual or clear-method rename t=5 model=muse-11
