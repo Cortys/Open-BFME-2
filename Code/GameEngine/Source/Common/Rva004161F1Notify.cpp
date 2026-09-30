@@ -14,6 +14,7 @@ template <typename T> class StringBase
 	friend class UnicodeString;
 	StringBase() : m_data(0) {}
 	StringBase(const StringBase<T> &that);
+	StringBase(const T *s);
 	void releaseBuffer();
 public:
 	void set(const StringBase<T> &other);
@@ -40,12 +41,18 @@ class UnicodeString
 public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
+	UnicodeString(const wchar_t *s) : m_data(s) {}
 	~UnicodeString() { m_data.releaseBuffer(); }
 	void __cdecl format(const UnicodeString *fmt, ...);
 	UnicodeString &operator=(const UnicodeString &other)
 	{
 		m_data.set(other.m_data);
 		return *this;
+	}
+	const wchar_t *str() const
+	{
+		static const wchar_t TheNullChr = 0;
+		return m_data.m_data ? &m_data.m_data->data[0] : &TheNullChr;
 	}
 	StringBase<wchar_t> m_data;
 };
@@ -107,5 +114,144 @@ void __cdecl Rva004161F1Notify(AsciiString a, UnicodeString u)
 		G_BuddyTime98 = (int)(t + 0xBB8);
 		G_BuddyFlag94 = 1;
 		TheBuddy00517048Owner->rva00517048(u);
+	}
+}
+
+class BfmeMemberRV
+{
+public:
+	bool bfmeAskRV();
+};
+
+class Player
+{
+public:
+	char m_pad[0x280];
+	int m_color280;
+};
+
+enum NameKeyType
+{
+	NAMEKEY_INVALID = 0
+};
+
+class PlayerList
+{
+public:
+	Player *findPlayerWithNameKey(NameKeyType key);
+};
+
+class NameKeyGenerator
+{
+public:
+	NameKeyType nameToKey(const AsciiString &s);
+};
+
+class GameSlot
+{
+public:
+	void *m_vtable;
+	int m_state;
+	bool m_isAccepted;
+	bool m_hasMap;
+	bool m_isMuted;
+	char m_pad0B;
+	int m_color;
+	int m_startPos;
+	int m_bfme14;
+	int m_playerTemplate;
+	int m_teamNumber;
+	int m_bfme20;
+	int m_origColor;
+	int m_origStartPos;
+	int m_origPlayerTemplate;
+	UnicodeString m_name30;
+public:
+	AsciiString m_name34;
+};
+
+class GameInfo
+{
+public:
+	virtual int slot00();
+	virtual int slot04();
+	virtual int slot08();
+	virtual int slot0c();
+	virtual int slot10();
+	virtual int slot14();
+	virtual int slot18();
+	virtual int slot1c();
+	virtual int slot20();
+	virtual int slot24();
+	virtual int slot28();
+	virtual int slot2c();
+	virtual int slot30();
+	virtual int getLocalSlot();
+	GameSlot *getSlot(int i);
+};
+
+class RGBColor
+{
+public:
+	void setFromInt(int v);
+	int m00;
+	int m04;
+	int m08;
+};
+
+class InGameUI
+{
+public:
+	virtual ~InGameUI() {}
+	virtual void i00() = 0;
+	virtual void i04() = 0;
+	virtual void i08() = 0;
+	virtual void i0c() = 0;
+	virtual void i10() = 0;
+	virtual void i14() = 0;
+	virtual void i18() = 0;
+	virtual void i1c() = 0;
+	virtual void i20() = 0;
+	virtual void i24() = 0;
+	virtual void i28() = 0;
+	virtual void i2c() = 0;
+	virtual void i30() = 0;
+	virtual void i34() = 0;
+	virtual void i38() = 0;
+	virtual void i3c() = 0;
+	virtual void __cdecl slot44(const RGBColor *color, UnicodeString fmt, const wchar_t *txt) = 0;
+	virtual void i48() = 0;
+	virtual void __cdecl slot4c(UnicodeString fmt, const wchar_t *txt) = 0;
+};
+
+extern GameInfo *TheGameInfo;
+extern NameKeyGenerator *TheNameKeyGenerator;
+extern PlayerList *ThePlayerList;
+extern InGameUI *TheInGameUI;
+extern const wchar_t g_00C3A458[];
+
+void __cdecl Rva004162B7Notify(AsciiString a, UnicodeString u)
+{
+	int localSlot = TheGameInfo->getLocalSlot();
+	GameSlot *slot = TheGameInfo->getSlot(localSlot);
+	AsciiString tmp(slot->m_name34);
+	NameKeyType key = TheNameKeyGenerator->nameToKey(tmp);
+	Player *player = ThePlayerList->findPlayerWithNameKey(key);
+	if (player == 0)
+	{
+		TheInGameUI->slot4c(UnicodeString(g_00C3A458), u.str());
+	}
+	else
+	{
+		bool skip = !((BfmeMemberRV *)player)->bfmeAskRV();
+		if (skip)
+			goto done;
+		GameSlot *lslot = TheGameInfo->getSlot(localSlot);
+		if (*(const unsigned char *)((const char *)lslot + 0xa) != 0)
+			goto done;
+		RGBColor color;
+		color.setFromInt(player->m_color280);
+		TheInGameUI->slot44(&color, UnicodeString(g_00C3A458), u.str());
+	done:;
 	}
 }
