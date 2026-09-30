@@ -43355,3 +43355,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00460175@SpawnBehavior@@QAEXH@Z,,0x00460175,87,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_rva00460175.cpp,matched,SpawnBehavior primary plus0x4C list plus0x54 count via caller 0x004604D5 and onDelete layout
 ?Rva0033331BCopy@@YAPAVRva00332EC8@@PAV1@00PBX@Z,,0x0033331B,38,Code/Libraries/Source/WWVegas/WWLib/Rva0033331BCopy.cpp,matched,chain copy via src-first increments
 ?rva003F4831@Rva003F498A@@QAEHXZ,,0x003F4831,59,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain sum over outers of rowed 0x003F47E6 same file
+??1Rva005DB100@@UAE@XZ,,0x005DB100,69,Code/GameEngine/Source/Common/Rva005DB100Dtor.cpp,matched,unlock dtor vtable plus Release plus base

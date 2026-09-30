@@ -3843,3 +3843,4 @@ FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of b
 ?rva00396A5C@Rva00396A5C@@QAEHXZ	0x00396A5C	177	blocked	unlock EH StringBase private copy plus map _M_find plus NameKeyGenerator 2 StringBase locals state machine needs alternatename plus STL tree beyond box t=10 model=muse-04
 ?Rva000B3094Do@@YA_XZ	0x000B3094	159	blocked	unlock 159B uses esi uninit no mov esi ecx in packet plus ret void vs ret 0x10 plus ebx-edi swap caller shows cdecl 4 pushes no ecx t=10 model=muse-04
 ?Rva00333341Fill@@YAPAVRva00332EC8@@PAV1@IABV1@@Z	0x00333341	37	partial	jbe vs je single opcode while-count loop t=18 model=muse-01 score=0.97 stash=reverse/attempts/0x00333341.cpp
+?rva00333F37@Rva00333F37@@QAEXPBURva00333374IdOwner@@@Z	0x00333F37	204	blocked	Lua setglobal needs RVO plus two-state layout 12 structural regions t=10 model=muse-01
