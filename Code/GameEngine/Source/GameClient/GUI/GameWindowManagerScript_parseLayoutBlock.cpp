@@ -1,0 +1,223 @@
+// cl: /O1 /DNDEBUG /MD /EHsc
+//
+// ?parseLayoutBlock@@YA_NPAVFile@@PADIPAVWindowLayoutInfo@@@Z, retail
+// 0x0031732D, 255 bytes. Dedicated TU.
+//
+// Battle for Middle-earth reference
+// (reference/open-bfme-1/Code/GameEngine/Source/GameClient/GUI/GameWindowManagerScript.cpp,
+// parseLayoutBlock): read the opening STARTLAYOUTBLOCK string, then walk
+// LAYOUTINIT/UPDATE/SHUTDOWN entries from layoutScriptTable until
+// ENDLAYOUTBLOCK, dispatching each through the table's parse pointer.
+// BFME2 facts (all retail-measured):
+// - File's own vtable has scanString at slot 9 (offset 0x24); the sweep shim's
+//   MemoryPoolObject adds one virtual ahead of File's, so this TU carries a
+//   TU-local 17-slot File view copied from RAMFileRead.cpp.
+// - strtok rides the msvcr71 import at 0xBBA5EC (dllimport decl -> the 6-byte
+//   ff 15 indirect call).
+// - strcpy is a plain extern decl (5-byte E8 to the 0x629176 slot).
+// - AsciiString::compare is the out-of-line StringBase<char>::compare(const
+//   char *) row at 0x000069B1; releaseBuffer is the row at 0x00036410.
+// - __EH_prolog is pinned at 0x00629188.
+// - readUntilSemicolon is the file-static at 0x00314DE8 (defined here verbatim
+//   so MSVC keeps its register convention; its own bytes are not compared).
+// - layoutScriptTable lives at 0x00DBE318 (DIR32, masked by the byte gate).
+
+typedef int Int;
+typedef unsigned int UnsignedInt;
+typedef bool Bool;
+
+#ifndef NULL
+#define NULL 0
+#endif
+
+#ifndef TRUE
+#define TRUE true
+#endif
+
+#ifndef FALSE
+#define FALSE false
+#endif
+
+class WindowLayoutInfo;
+class File;
+
+enum
+{
+	WIN_BUFFER_LENGTH = 2048
+};
+
+struct LayoutScriptParse
+{
+	char *name;
+	Bool (*parse)(char *token, char *buffer, UnsignedInt version, WindowLayoutInfo *info);
+};
+
+// layoutScriptTable lives in GameWindowManagerScript.cpp; its address is a
+// DIR32 site the byte gate masks.
+extern LayoutScriptParse layoutScriptTable[];
+
+class File
+{
+public:
+	enum seekMode { START, CURRENT, END };
+
+	virtual ~File();								// slot 0
+	virtual bool open(const char *filename, int access = 0);	// slot 1
+	virtual void close(void);						// slot 2
+	virtual int read(void *buffer, int bytes);			// slot 3
+	virtual int write(const void *buffer, int bytes);		// slot 4
+	virtual int seek(int pos, seekMode mode);			// slot 5
+	virtual void nextLine(char *buf, int bufSize);			// slot 6
+	virtual bool scanInt(int &newInt);				// slot 7
+	virtual bool scanReal(float &newReal);				// slot 8
+	virtual bool scanString(void *newString);			// slot 9
+	virtual bool print(const char *format, ...);			// slot 10
+	virtual int size(void);						// slot 11
+	virtual int position(void);					// slot 12
+	virtual char *readEntireAndClose(void);				// slot 13
+	virtual File *convertToRAMFile(void);				// slot 14
+	virtual void lock(void);					// slot 15
+	virtual void unlock(void);					// slot 16
+};
+
+template <typename T>
+class StringBase
+{
+	friend class AsciiString;
+
+private:
+	struct Header
+	{
+		int ref_count;
+		unsigned short length;
+		unsigned short capacity;
+		T data[1];
+	};
+
+	Header *m_data;
+
+	void releaseBuffer();
+
+public:
+	StringBase() : m_data(0) {}
+	int compare(const T *str) const;
+
+	const T *str() const
+	{
+		return m_data ? m_data->data : "";
+	}
+};
+
+class AsciiString : private StringBase<char>
+{
+public:
+	AsciiString() : StringBase<char>() {}
+	~AsciiString() { releaseBuffer(); }
+
+	const char *str() const
+	{
+		return StringBase<char>::str();
+	}
+
+	int compare(const char *s) const
+	{
+		return StringBase<char>::compare(s);
+	}
+};
+
+extern "C" __declspec(dllimport) int __cdecl isspace(int c);
+extern "C" char *__cdecl strcpy(char *dst, const char *src);
+extern "C" __declspec(dllimport) char *__cdecl strtok(char *str, const char *delimiters);
+
+// readUntilSemicolon =========================================================
+static void readUntilSemicolon(File *fp, char *buffer, int maxBufLen)
+{
+	int i = 0;
+	Bool start = TRUE;
+
+	while (i < maxBufLen)
+	{
+		// get next character
+		fp->read(buffer + i, 1);
+
+		// make all whitespace characters spaces
+		if (isspace(buffer[i]))
+		{
+			if (start == FALSE)
+				buffer[i++] = ' ';
+		}
+		else
+		{
+			start = FALSE;
+
+			if (buffer[i] == ';')
+			{
+				// found end of data chunk
+				buffer[i] = '\000';
+				return;
+			}
+
+			i++;
+		}
+	}
+
+	buffer[maxBufLen - 1] = '\000';
+}
+
+// ?parseLayoutBlock@@YA_NPAVFile@@PADIPAVWindowLayoutInfo@@@Z
+Bool parseLayoutBlock(File *inFile, char *buffer, UnsignedInt version, WindowLayoutInfo *info)
+{
+	LayoutScriptParse *parse;
+	char token[256];
+
+	AsciiString asciitoken;
+	if (inFile->scanString(&asciitoken) == FALSE)
+	{
+		return FALSE;
+	}
+
+	// better be the layout block
+	if (asciitoken.compare("STARTLAYOUTBLOCK") != 0)
+	{
+		return FALSE;
+	}
+
+	while (TRUE)
+	{
+		// get next token
+		inFile->scanString(&asciitoken);
+
+		// check for end
+		if (asciitoken.compare("ENDLAYOUTBLOCK") == 0)
+		{
+			break;
+		}
+
+		// search for token in the table
+		for (parse = layoutScriptTable; parse && parse->name; parse++)
+		{
+			if (asciitoken.compare(parse->name) == 0)
+			{
+				char *c;
+
+				// read from file
+				readUntilSemicolon(inFile, buffer, WIN_BUFFER_LENGTH);
+
+				// eat equals separator " = "
+				c = strtok(buffer, " =");
+
+				strcpy(token, asciitoken.str());
+
+				// parse it
+				if (parse->parse(token, c, version, info) == FALSE)
+					return FALSE;
+
+				break;	// exit for
+			}
+		}
+	}
+
+	return TRUE;
+}
+
+static const void *s_parseLayoutBlockAnchor = (const void *)parseLayoutBlock;
