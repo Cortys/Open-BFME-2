@@ -43305,3 +43305,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?xfer@RenderObjectUpdateModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x00562182,177,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectUpdateModuleInfoXfer.cpp,matched,slot3 xfer CRC Version1 plus 12 vars plus mode
 ??0Rva0052BE33@@QAE@ABV0@@Z,,0x0052BE33,99,Code/GameEngine/Source/Common/System/Rva0052BE33CopyCtor.cpp,matched,Copy ctor three strings via pinned StringBase copy 0x000365F0 caller 0x0052C3AE unlocks 0x0052C392
 ?rva00562233@Rva00562233@@QAEXPAVXfer@@@Z,,0x00562233,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00562233Xfer.cpp,matched,containing xfer via member at 0x1C
+??0Rva0052BD59@@QAE@ABV0@@Z,,0x0052BD59,141,Code/GameEngine/Source/Common/System/Rva0052BD59CopyCtor.cpp,matched,Copy ctor four strings via pinned StringBase copy 0x000365F0 caller 0x0052C33C unlocks 0x0052C320
