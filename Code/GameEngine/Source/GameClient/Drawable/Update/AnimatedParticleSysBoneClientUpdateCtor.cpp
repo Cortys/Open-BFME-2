@@ -14,6 +14,19 @@
 class Thing;
 class ModuleData;
 
+struct Coord3D
+{
+	float x;
+	float y;
+	float z;
+};
+
+class BFMERopeDrawable
+{
+public:
+	const Coord3D *getPosition() const;
+};
+
 // Opaque 12-byte ClientUpdate-derived intermediate; ctor resolves to the
 // opaque pin at 0x000B19A1. Single vptr plus pad to the list at +0x0C.
 class Rva000B19A1
@@ -22,8 +35,9 @@ public:
 	Rva000B19A1(Thing *thing, const ModuleData *moduleData);
 	virtual ~Rva000B19A1();
 
-private:
-	unsigned char m_pad04[8];
+protected:
+	unsigned char m_pad04[4];
+	BFMERopeDrawable *m_ropeDrawable;
 };
 
 // ??1Rva000B19A1@@ present-unmatched
@@ -35,6 +49,7 @@ class RadiusDecal
 {
 public:
 	~RadiusDecal();
+	void setPosition(const Coord3D &pos);
 };
 
 class W3DTornadoDraw : public Rva000B19A1
@@ -45,6 +60,9 @@ public:
 
 private:
 	void rva000D1743();
+
+public:
+	void rva000D17EF(int a, int b, int c);
 
 private:
 	_STL::list<int> m_boneIndices;
@@ -68,4 +86,12 @@ void W3DTornadoDraw::rva000D1743()
 			delete decal;
 	}
 	m_boneIndices.clear();
+}
+
+void W3DTornadoDraw::rva000D17EF(int a, int b, int c)
+{
+	for (_STL::list<int>::iterator it = m_boneIndices.begin(); it != m_boneIndices.end(); ++it) {
+		RadiusDecal *decal = reinterpret_cast<RadiusDecal *>(*it);
+		decal->setPosition(*m_ropeDrawable->getPosition());
+	}
 }
