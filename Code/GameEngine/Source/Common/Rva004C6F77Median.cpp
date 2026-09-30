@@ -23,3 +23,27 @@ void *Rva004C6F77Median(void *a, void *b, void *c, Rva004C6F77Pred pred)
 		return b;
 	}
 }
+
+struct Rva004C6FD0Val
+{
+	int m0;
+	int m4;
+};
+
+// ?Rva004C6FD0Insert@@YAXPAXURva004C6FD0Val@@P6A_N00@Z@Z @0x004C6FD0 57B:
+// linear insert of 8-byte value via __cdecl bool predicate (call [ebp+0x14]).
+// Shifts [pos-8..] while pred(&value, elem) then stores value. Evidence:
+// caller 0x004C70D4 pushes 4 and caller-cleans; predicate takes 2 pointers.
+void Rva004C6FD0Insert(void *pos, Rva004C6FD0Val value, Rva004C6F77Pred pred)
+{
+	char *edi = (char *)pos;
+	char *esi = edi - 8;
+	while (pred(&value, esi)) {
+		((Rva004C6FD0Val *)edi)->m0 = ((Rva004C6FD0Val *)esi)->m0;
+		((Rva004C6FD0Val *)edi)->m4 = ((Rva004C6FD0Val *)esi)->m4;
+		edi = esi;
+		esi -= 8;
+	}
+	((Rva004C6FD0Val *)edi)->m0 = value.m0;
+	((Rva004C6FD0Val *)edi)->m4 = value.m4;
+}
