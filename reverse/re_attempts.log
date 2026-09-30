@@ -3724,3 +3724,7 @@ FUN_00904112	0x00504112	38	blocked	STL _M_find 58B vs retail 38B single-unsigned
 FUN_0092C119	0x0052C119	72	blocked	clamp 0xB8 vector register wall 9 regdiffs 5 regions; unsigned fix got jae but push-ebx plus edi-vs-ebx remain; needs live-range rethink t=15 model=muse-spark
 ?appendChar@DisplayString@@UAEXG@Z	0x00358957	38	blocked	vslot22 appendChar frameless29 vs frame38; EBP plus esi plus arg-copy missing with O1 MD; needs frame-pointer plus esi-live model t=12 model=muse-spark
 ?rva003FD398@Rva003FD398@@QAEXXZ	0x003FD398	47	partial	single global load but second store via integer mov and this in ecx not eax t=25 model=muse-01 score=0.92 stash=reverse/attempts/0x003fd398.cpp
+?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z	0x0046F179	270	partial	goto slot-reuse cut nine stack bytes to four displacements slot -0x10 vs -0x14 plus pos -0x18/-0x14 vs -0x20/-0x1c t=15 model=muse-10 score=0.985 stash=reverse/attempts/0x0046f179.cpp
+?rva00470353@Rva0046AC52@@QAEAA_NABH@Z	0x00470353	69	partial	middle push direct eax vs placeholder ecx plus esp lea plus fill needs implicit iter conversion t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x00470353.cpp
+??4BfmeStringHeadRecord184@@QAEAAU0@ABU0@@Z	0x00311537	118	blocked	movsd-string 15-insn second loop missing plus ebx dst vs edi src register wall t=15 model=muse-10
+??0Rva0014F4E3@@QAE@ABU0@@Z	0x0014F4E3	182	blocked	EH prolog missing plus Region3D AssetReference layout plus unrolled movs need O2 plus empty-base states t=15 model=muse-10
