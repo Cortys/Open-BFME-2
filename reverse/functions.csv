@@ -43143,3 +43143,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??4BfmeVectorRecord000BDF17@@QAEAAU0@ABU0@@Z,,0x000BDFAC,123,Code/GameEngine/Source/Common/StringVectorRecordAssignBFME2.cpp,matched,record assign via text vector scalar order with 0x40 stride caller
 ?bfmeTotalVNQ@BfmeThingVNQ@@QAEHXZ,,0x0016EEE0,63,Code/Libraries/Source/WWVegas/WW3D2/BfmeThingVNQ.cpp,matched,BFME1 donor BfmeConv1517 same layout same total; callee rowed rva0013D250; caller 0x00188117 link bonus
 ??4Rva004393D6@@QAEAAU0@ABU0@@Z,,0x004393FD,43,Code/Libraries/Source/WWVegas/WWLib/Rva004393D6Copy.cpp,matched,Rva004393D6 assign list base plus 3 ints same TU
+?rva003FD690@Rva003FD690@@QAEXPBUCoord@@@Z,,0x003FD690,45,Code/GameEngine/Source/GameLogic/Object/Rva003FD690.cpp,matched,callers 0x00212196 0x00212222 copy 12B to +0x20 v0x1C with arg then v0x0C
