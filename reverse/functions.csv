@@ -4093,7 +4093,6 @@ _g_crc32,,0x006071F0,37,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gstats
 ??0OBBoxClass@@QAE@ABV0@@Z,,0x000B4384,97,Code/Libraries/Source/WWVegas/WW3D2/coltest.cpp,matched,gen-alias;object-symbol=??0OBBoxClass@@QAE@ABV0@@Z;C++ alias
 ?dup_002ca82c@@YAXXZ,,0x002CA82C,29,Code/GameEngine/Source/Common/Thing/ThingFactory.cpp,matched,gen-alias;object-symbol=??$_Construct@VArmorTemplateSet@@V1@@_STL@@YAXPAVArmorTemplateSet@@ABV1@@Z;C++ alias
 ?_M_is_any@?$_Base_bitset@$03@_STL@@QBE_NXZ,,0x000454BA,20,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,gen-alias;object-symbol=?_M_is_any@?$_Base_bitset@$03@_STL@@QBE_NXZ;C++ alias
-?Set_Z_Translation@Matrix3D@@QAEXM@Z,,0x002B2210,10,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,gen-alias;object-symbol=?Set_Z_Translation@Matrix3D@@QAEXM@Z;C++ alias
 ?Set_Y_Translation@Matrix3D@@QAEXM@Z,,0x00665600,10,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,gen-alias;object-symbol=?Set_Y_Translation@Matrix3D@@QAEXM@Z;C++ alias
 ?dup_003e3bfb@@YAXXZ,,0x003E3BFB,10,Code/Libraries/Source/WWVegas/WW3D2/nullrobj.cpp,matched,gen-alias;object-symbol=?Set_ObjectScale@RenderObjClass@@UAEXM@Z;C++ alias
 ?dup_000657d0@@YAXXZ,,0x000657D0,9,Code/Libraries/Source/WWVegas/WWLib/multilist.cpp,matched,gen-alias;object-symbol=??1BFMEPoolLock@@QAE@XZ;C++ alias
@@ -44872,3 +44871,5 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B4E23@Rva000B4E23@@QAEMXZ,,0x000B4E23,32,Code/GameEngine/Source/Common/Rva000B4E23.cpp,matched,stride-64 float via mid table fallback BfmeZeroRange caller 0xB708C
 ??$copy_backward@PAVAsciiString@@PAV1@@_STL@@YAPAVAsciiString@@PAV1@00@Z,,0x000B6631,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_backward_asciistring_o1.cpp,matched,tag dispatch to rowed copy_backward worker 0xB4460 caller 0xC070C
 ??$__copy@PAURva000B435F@@PAU1@H@_STL@@YAPAURva000B435F@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B6830,50,Code/Libraries/Source/WWVegas/WWLib/Rva000B435F.cpp,matched,stride-12 copy via rowed Rva000B435F assign caller 0x2CF843
+?winGetStatus@GameWindow@@QAEIXZ,,0x0030F45F,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,GameWindow::winGetStatus: m_status +0x08; ICF alias of the identical getter
+?winSetUserData@GameWindow@@QAEXPAX@Z,,0x002B2210,10,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,GameWindow::winSetUserData: m_userData +0x2C; GUI callers pin this name

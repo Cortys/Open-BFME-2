@@ -12,7 +12,7 @@ class GameWindow
 public:
 	void *winGetUserData(void);
 	void winSetUserData(void *data);
-	void winSetStatus(unsigned int status);
+	unsigned int winSetStatus(unsigned int status);
 	int winGetSize(int *width, int *height);
 };
 
