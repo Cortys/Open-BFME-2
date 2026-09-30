@@ -44516,3 +44516,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva004FD4AE@Rva004FD4AE@@QAEXPBVModuleData@@@Z,,0x004FD4AE,19,Code/GameEngine/Source/Common/Rva004FD4AE.cpp,matched,vector at this+0x98 via rowed push_back 0x004DFCB0 abuts 0x004FD448
 ??0Rva00984EF@@QAE@XZ,,0x000984CE,33,Code/GameEngine/Source/Common/OpaqueSingleInheritanceDtors.cpp,matched,ctor beside rowed dtor base Rva0098477 vtable 0x7C82D4 zeroes plus 0xFF
 ?rva001F529D@Rva001F529D@@QAEXPAUVec2001F529D@@@Z,,0x001F529D,47,Code/GameEngine/Source/Common/Rva001F529D.cpp,matched,null-checked helper+0x1B4 slot10 copies +4/+8 caller 0x001F7F1C
+?rva001F5467@Rva001F5467@@QAEXABVRvaSmartPtr12@@@Z,,0x001F5467,47,Code/GameEngine/Source/Common/Rva001F5467.cpp,matched,smart assign +0x16C then pointee+0xA8 to +0x178 callers 0x001FBD17 0x001FC701
