@@ -42969,3 +42969,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva0032B389Join@@YA?AVAsciiString@@ABV1@0@Z,,0x0032B389,98,Code/GameEngine/Source/GameLogic/Map/Rva0032B389Join.cpp,matched,path join tmp slash concat sret 12 callers SidesList neighbour
 ??4Rva002AF6C5Element@@QAEAAU0@ABU0@@Z,,0x002AF505,57,Code/GameEngine/Source/Common/System/Rva002AF6C5ElementAssign.cpp,matched,copy-loop caller 0x002AF6E1 link bonus
 ??_GRva00216108@@QAEPAXI@Z,,0x002161C2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00216108.cpp,matched,deleting dtor calls rowed inner dtor chain from 0x00216108
+?rva00295927@Rva00295927@@QAEXIPAVImage@@@Z,,0x00295927,66,Code/GameEngine/Source/Common/Rva00295927.cpp,matched,Map insert-if-absent via void and Image views unlocks 0x00452E27
