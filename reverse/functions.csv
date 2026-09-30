@@ -44238,3 +44238,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0025ECFC@Rva0025ECFC@@QAEXPAUBigIface0025ECFC@@@Z,,0x0025ECFC,129,Code/GameEngine/Source/GameClient/Rva0025ECFCGet.cpp,matched,callers 0x25F240 and 0x25F26B ten virtual gets
 ?rva0050EE23@Rva0050EE23@@QAEHPBDHUCharCompare@@@Z,,0x0050EE23,53,Code/Libraries/Source/WWVegas/WWLib/Rva0050EE23Compare.cpp,matched,split null checks plus compareRangeNoCase
 ?rva0050F2AF@Rva0050F0AB@@QAEXI@Z,,0x0050F2AF,87,Code/GameEngine/Source/Common/System/Rva0050F2AF.cpp,matched,chain clamp 99999 plus focus Send
+??4Rva0031AB7F@@QAEAAV0@ABV0@@Z,,0x0031AB7F,80,Code/GameEngine/Source/GameClient/GUI/ControlBar/Rva0031AB7FCopy.cpp,matched,Copy assign via base and AsciiString plus array
