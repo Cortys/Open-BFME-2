@@ -50,6 +50,7 @@ class RadiusDecal
 public:
 	~RadiusDecal();
 	void setPosition(const Coord3D &pos);
+	void update();
 };
 
 class W3DTornadoDraw : public Rva000B19A1
@@ -60,6 +61,7 @@ public:
 
 private:
 	void rva000D1743();
+	void rva000D17BA(int dummy);
 
 public:
 	void rva000D17EF(int a, int b, int c);
@@ -93,5 +95,14 @@ void W3DTornadoDraw::rva000D17EF(int a, int b, int c)
 	for (_STL::list<int>::iterator it = m_boneIndices.begin(); it != m_boneIndices.end(); ++it) {
 		RadiusDecal *decal = reinterpret_cast<RadiusDecal *>(*it);
 		decal->setPosition(*m_ropeDrawable->getPosition());
+	}
+}
+
+void W3DTornadoDraw::rva000D17BA(int dummy)
+{
+	for (_STL::list<int>::iterator it = m_boneIndices.begin(); it != m_boneIndices.end(); ++it) {
+		RadiusDecal *decal = reinterpret_cast<RadiusDecal *>(*it);
+		decal->setPosition(*m_ropeDrawable->getPosition());
+		decal->update();
 	}
 }
