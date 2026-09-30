@@ -147,6 +147,7 @@ public:
 	void rva0036F5BB(const PolygonTrigger *area, Int value, CommandSourceType cmdSource);
 	void rva0036F629(const PolygonTrigger *area, Int value, CommandSourceType cmdSource, const Coord3D *pos);
 	void rva0036F6A7(float value, CommandSourceType cmdSource);
+	void rva0036E906(const Coord3D *position, CommandSourceType cmdSource, float value);
 	void rva003C77EE(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void rva003C76B8(Int value, CommandSourceType cmdSource);
 	void rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource);
@@ -611,6 +612,19 @@ void AICommandInterface::rva0036F629(const PolygonTrigger *area, Int value, Comm
 void AICommandInterface::rva0036F6A7(float value, CommandSourceType cmdSource)
 {
 	AICommandParms parms((AICommandType)0x50, cmdSource);
+	parms.m_float38 = value;
+	aiDoCommand(&parms);
+}
+
+// ?rva0036E906@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@M@Z @0x0036E906 121B
+// Evidence: AICMD 0x4E plus m_pos at +0x08 plus m_float38 at +0x38 plus slot-0 aiDoCommand.
+// Same TU pos-plus-float shape (aiGuardPosition pos-first order); class proven by slot-0
+// aiDoCommand virtual call plus opaque 0x351BD0 ctor plus inline free at 0x30830.
+// Callers at 0x00372ABF 0x00379946 0x00547F2B.
+void AICommandInterface::rva0036E906(const Coord3D *position, CommandSourceType cmdSource, float value)
+{
+	AICommandParms parms((AICommandType)0x4E, cmdSource);
+	parms.m_pos = *position;
 	parms.m_float38 = value;
 	aiDoCommand(&parms);
 }
