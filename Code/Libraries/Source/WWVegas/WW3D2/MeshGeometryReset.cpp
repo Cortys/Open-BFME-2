@@ -15,6 +15,12 @@
 #include "wwdebug.h"
 #include "wwmemlog.h"
 
+// Their byte-matched specializations live in MeshGeometryShareBufferInstantiations.cpp.
+// Do not implicitly re-emit their virtual destructors in this reset TU.
+template <> ShareBufferClass<unsigned char>::~ShareBufferClass();
+template <> ShareBufferClass<Vector3>::~ShareBufferClass();
+template <> ShareBufferClass<Vector3i16>::~ShareBufferClass();
+
 // The +0x5C slot's source element identity is unknown. Retail construction,
 // vtable and allocation establish only a ShareBuffer specialization with
 // 16-byte elements and the raw-array lifecycle implemented here.
