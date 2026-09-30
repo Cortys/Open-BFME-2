@@ -34,6 +34,7 @@ public:
 	void loadAmmoNow(const Object *source);
 	bool fireWeapon(const Object *source, const Coord3D *pos, int *projectileID);
 	bool rva002CE72B(const Object *source, const Coord3D *pos1, const Coord3D *pos2, int x);
+	bool rva002CE6C5(const Object *source, int targetID, const Object *target, int *projectileID);
 	const WeaponTemplate *m_template; // +4
 	unsigned int m_ownerID; // +8
 	char m_pad0C[0x50 - 0x0C]; // +0x0C..0x50
@@ -55,6 +56,7 @@ public:
 	Weapon *allocateNewWeapon(const WeaponTemplate *tmpl, WeaponSlotType slot) const;
 	void createAndFireTempWeapon(const WeaponTemplate *wt, const Object *source, const Coord3D *pos);
 	void rva002CE8AA(const WeaponTemplate *wt, const Coord3D *pos1, const Object *source, const Coord3D *pos2, int x);
+	void rva002CE964(const WeaponTemplate *wt, const Object *source, const Object *victim);
 };
 
 #define TheWeaponStore (*(WeaponStore **)0x00DFEFDC)
@@ -86,4 +88,23 @@ void WeaponStore::rva002CE8AA(const WeaponTemplate *wt, const Coord3D *pos1, con
 	w->loadAmmoNow(source);
 	w->rva002CE72B(source, pos1, pos2, x);
 	::operator delete(w != 0 ? w->deleteInstance(0) : 0);
+}
+
+// 0x002CE964: victim-target overload of the same family: wt null check, ownerID
+// from source+0x74, loadAmmoNow, frame+1 at +0x50, fire via rowed 0x002CE6C5
+// with victim ID plus victim, then unconditional virtual deleteInstance(0) fed
+// to operator delete. Caller at 0x004C2224 sets ecx to TheWeaponStore and
+// pushes template plus source plus victim from findObjectByID, which proves
+// the WeaponStore thiscall class and the 3-arg order.
+void WeaponStore::rva002CE964(const WeaponTemplate *wt, const Object *source, const Object *victim)
+{
+	if (wt == 0)
+		return;
+	Weapon *w = TheWeaponStore->allocateNewWeapon(wt, WEAPON_SLOT_PRIMARY);
+	if (source != 0)
+		w->m_ownerID = (unsigned int)source->m_id;
+	w->loadAmmoNow(source);
+	w->m_50 = TheGameLogic->m_frame + 1;
+	w->rva002CE6C5(source, victim->m_id, victim, 0);
+	::operator delete(w->deleteInstance(0));
 }
