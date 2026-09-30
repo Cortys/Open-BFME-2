@@ -4213,3 +4213,7 @@ FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; s
 ?rva001B5018@SubsystemInterfaceList@@QAEXPAVCreateAHeroData@@@Z	0x001B5018	71	blocked	77B vs 71B; ebp-frame plus ebx-vs-esi wall from derived-to-base temporary for push_back plus find const-ref spill; t=10 model=muse-01
 ?insert@?$map@HM@_STL@@QAE_NXZ	0x005C6AFD	134	blocked	STL version wall: vendored 4.5.3 map insert is 20B wrapper calling tree insert_unique but retail 134B has tree walk inlined plus _M_decrement plus pair out; needs 4.6-style headers t=12 model=muse-09
 ??1Rva0036B8E6@@UAE@XZ	0x0036B8E6	123	blocked	Helper-family dtor with m_p0C s_secondary0C pattern; data offsets 0C102024 correct; member Rva0026AFDAMember 0xC4 at 3F0 correct; list at 4B4 needs size 0x14 but vendored list is 4 with bfmelist config; pin-only base Rva0026E836 plus member Rva008B77D; t=15 model=muse-09
+?rva0035D83E@Rva0035D83E@@QAEHXZ	0x0035D83E	230	blocked	complex ControlBar init floats windows no donor t=4 model=muse-07
+?rva00463C6E@Rva00463C6E@@QAEHXZ	0x00463C6E	234	blocked	complex OpenContain loadPostProcess list throw 234B t=4 model=muse-07
+??0Rva0053FB33@@QAE@ABV0@@Z	0x0053FADE	85	blocked	vtable early before member vs retail after plus 1 branch t=20 model=muse-07
+??1Rva004A69BF@@UAE@XZ	0x004A69BF	123	partial	123B exact size 33 insns only and-ebp-4-0 4B early before 3E4 store vs retail after load t=25 model=muse-07 score=0.96 stash=reverse/attempts/0x004a69bf.cpp
