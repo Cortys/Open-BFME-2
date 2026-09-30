@@ -4021,3 +4021,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva0005818B@Rva00699180Owner@@QAEXPBUHolderPtr@@H@Z	0x0005818B	96	partial	last in ecx vs eax cmp esi ecx vs eax t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x0005818b.cpp
 ?rva003AF8C7@Rva003AF8C7@@QAE@XZ	0x003AF8C7	98	blocked	derived copy needs Lightning vptr two-phase plus sbb mask donor t=8 model=muse-07
 ?rva00220AA6@Rva00220AA6@@QAE@@	0x00220AA6	69	blocked	vtable store at end plus EH states t=15 model= Muse
+??0Rva004E4F82@@QAE@XZ	0x004E4F82	144	partial	or dword esi+0x30 first in retail plus late in ours; 144B 38ins exact size; 3 float loads gate-filled relocs; tried O1 plus G7 plus O2 plus init-reorder; shape levers ctor-store-order 720 plus volatile-barrier 55 checked t=20 model=muse-01 score=0.97 stash=reverse/attempts/0x004e4f82.cpp
