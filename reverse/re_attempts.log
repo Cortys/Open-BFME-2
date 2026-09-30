@@ -3885,3 +3885,7 @@ FUN_009cc788	0x005CC788	84	blocked	virtual-base dtor with vbtable indirection pl
 ??0BfmeThingCDE@@QAE@PAX00@Z	0x00739E60	227	partial	ctor constant-store order plus push edi late t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x00739e60.cpp
 FUN_00539386	0x00539386	109	blocked	EH vector visitor 109B guard vtable 0x7FB1CC typed catch plus member fn ptr six prior blocks twins 0x002E16C0 0x004FC2B3 0x003F85D9 0x0045EE57 0x005C98F6 0x0032AE25 no new idea t=5 model=muse-10
 ?Rva0042AF97Handle@@YGXPAUGameMessage@@@Z	0x0042AF97	161	blocked	161B GameMessage pixelRegion plus holder slot9 plus GameLogic find plus Object status plus dead mov ecx global 0x00E01CFC plus InGameUI byte 0x8B8 too many unknowns for chain t=10 model=muse-10
+?rva00171720@MeshModelClass@@QAE_NXZ	0x00171720	55	partial	extra xor eax before cmp bc plus cmp reg vs imm t=20 model=muse-12 score=0.96 stash=reverse/attempts/0x00171720.cpp
+??0Rva000E6AC0@@QAE@XZ	0x000E6AC0	211	partial	vptr save plus EH state early vs late plus states 7-9 vs 3-5 t=25 model=muse-12 score=0.95 stash=reverse/attempts/0x000e6ac0.cpp
+FUN_0039F5FE	0x0039F5FE	148	blocked	mixed ArmorTemplateSet create plus Rva0039D8FBKey free Less plus Rebalance needs custom insert identity t=10 model=muse-12
+FUN_004F69D6	0x004F69D6	68	blocked	Vector_base plus get_allocator inlining wall needs Ob0 split t=20 model=muse-12
