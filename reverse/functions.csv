@@ -44169,3 +44169,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0036265E@Rva0036265E@@QAEX_N@Z,,0x0036265E,23,Code/GameEngine/Source/Common/Bfme/Rva0036265ESet.cpp,matched,caller 0x3627A7 pushes bool guarded store plus 0x45
 ??0Rva005641BB@@QAE@ABVRvaSmartPtr12@@H@Z,,0x005641BB,50,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005641BBCtor.cpp,matched,derived ctor via rowed base and bool pair
 ??0Rva0055F197@@QAE@ABVRvaSmartPtr12@@H@Z,,0x0055F197,129,Code/GameEngine/Source/Common/Rva0055F197Ctor.cpp,matched,unlock base 0x0055BF21 plus DefaultPhysicsModuleInfo pin
+??1Rva0050EA74@@UAE@XZ,,0x0050EA22,54,Code/GameEngine/Source/Common/Rva0050EA74Ctor.cpp,matched,dual-vtable via empty inline base plus AsciiString release

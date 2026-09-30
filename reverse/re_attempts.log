@@ -4218,3 +4218,6 @@ FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; s
 ??0Rva0053FB33@@QAE@ABV0@@Z	0x0053FADE	85	blocked	vtable early before member vs retail after plus 1 branch t=20 model=muse-07
 ??1Rva004A69BF@@UAE@XZ	0x004A69BF	123	partial	123B exact size 33 insns only and-ebp-4-0 4B early before 3E4 store vs retail after load t=25 model=muse-07 score=0.96 stash=reverse/attempts/0x004a69bf.cpp
 FUN_00762ADE	0x00362ADE	68	blocked	STL map erase range needs EH frame plus iterator helpers t=12 model=muse-02
+?rva0047748E@Rva0047748E@@QAEHXZ	0x0047748E	133	blocked	EBP-frame list loop over CondPair second plus stdcall 0x588B8A with dead this+0x11d plus virtuals 0x108/0x3c plus BuildListInfo gatherers; needs donor or strong TransportContain model t=10 model=muse-01
+??1Rva0041E4C4@@UAE@XZ	0x0041E4C4	129	blocked	EH dtor with vtable 0x83AEA8 plus vector voidptr at +0xc plus per-element virtual slot0 with 0 plus erase plus free plus base 0x1B4E74; element virtual identity unclear t=10 model=muse-01
+?rva00375AF7@Rva00375AF7@@QAEMMM@Z	0x00375AF7	131	blocked	SSE float max over trigger list at +0x10 via pinned pointInTrigger; frame 0x18 vs 0x14 plus list-empty plus best-init shape wall; 1 probe t=10 model=muse-01

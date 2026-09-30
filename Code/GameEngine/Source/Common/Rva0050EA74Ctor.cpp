@@ -33,7 +33,8 @@ class Rva0050EA74Base
 {
 public:
 	Rva0050EA74Base() : m_04(0) {}
-	~Rva0050EA74Base();
+	__forceinline ~Rva0050EA74Base() {}
+	virtual void keep() {}
 	int m_04;
 };
 
@@ -50,4 +51,8 @@ public:
 Rva0050EA74::Rva0050EA74(int a, const AsciiString &b) : m_08(a), m_0c(b)
 {
 	m_10 = 0;
+}
+
+Rva0050EA74::~Rva0050EA74()
+{
 }
