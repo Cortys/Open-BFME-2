@@ -44975,3 +44975,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva005D791C@@QAE@XZ,,0x005D791C,55,Code/GameEngine/Source/Common/Rva005D791CCtor.cpp,matched,opaque Rva005EE30C-derived ctor vtable 0x00875DFC set member at +0x28 via rowed set ctor
 ??0Rva005D719C@@QAE@XZ,,0x005D718A,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,opaque Rva005EE2A0-derived ctor vtable 0x00875C80 via rowed base ctor
 ?rva002645FF@Rva002645FF@@QAE_NXZ,,0x002645FF,87,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,vtable slot 110 shared AIUpdate testStatus rowed tail slot 8
+?rva000B5916@Rva000B5916@@QAEXM@Z,,0x000B5916,73,Code/GameEngine/Source/Common/Rva000B5916.cpp,matched,chain via 0x000B2FBB rowed; slot0x50 then Rva at this-0xc
