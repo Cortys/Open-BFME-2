@@ -26,6 +26,12 @@
 
 extern void *__cdecl operator new[](unsigned int size);
 
+class TextureBaseClass
+{
+public:
+	void Release_Ref();
+};
+
 class ProxyClass
 {
 public:
@@ -34,12 +40,7 @@ public:
 	ProxyClass &operator=(ProxyClass const &src);
 
 private:
-	struct ProxyData
-	{
-		void Release();
-	};
-
-	ProxyData *m_Data;
+	TextureBaseClass *m_Data;
 };
 
 // ?ProxyClass::ProxyClass present-unmatched
@@ -52,7 +53,7 @@ inline ProxyClass::ProxyClass() :
 inline ProxyClass::~ProxyClass()
 {
 	if (m_Data != 0) {
-		m_Data->Release();
+		m_Data->Release_Ref();
 	}
 }
 
@@ -63,7 +64,7 @@ inline ProxyClass &ProxyClass::operator=(ProxyClass const &src)
 			*(unsigned short *)((unsigned char *)src.m_Data + 4) + 1;
 	}
 	if (m_Data != 0) {
-		m_Data->Release();
+		m_Data->Release_Ref();
 	}
 	m_Data = src.m_Data;
 	return *this;

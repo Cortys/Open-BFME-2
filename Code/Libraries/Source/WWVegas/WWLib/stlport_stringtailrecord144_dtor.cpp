@@ -17,29 +17,29 @@
 // +0x84/+0x20/+0x1C/+0x10/+0x08/+0x04, plain reverse declaration order under
 // an empty dtor body. Zero new pins.
 #include "ascii_string.h"
-class PoolMember
+class OpaqueRefCounted
 {
 public:
-    void Rva0050ED3();
+	void Release_Ref();
 };
 typedef long Long;
 extern "C" __declspec(dllimport) Long __stdcall InterlockedIncrement(Long volatile *addend);
 struct BfmePoolHolder88
 {
     unsigned char m_pad[0x88];
-    PoolMember m_ref;
+	OpaqueRefCounted m_ref;
 };
 class BfmePoolRef08
 {
-    PoolMember *m_target;
+	OpaqueRefCounted *m_target;
 public:
-    __forceinline ~BfmePoolRef08() { if (m_target != 0) m_target->Rva0050ED3(); }
+	__forceinline ~BfmePoolRef08() { if (m_target != 0) m_target->Release_Ref(); }
 };
 class BfmePoolRef10
 {
     BfmePoolHolder88 *m_target;
 public:
-    __forceinline ~BfmePoolRef10() { if (m_target != 0) m_target->m_ref.Rva0050ED3(); }
+	__forceinline ~BfmePoolRef10() { if (m_target != 0) m_target->m_ref.Release_Ref(); }
     BfmePoolRef10(BfmePoolHolder88 *p);
     BfmePoolRef10(const BfmePoolRef10 &other);
     BfmePoolRef10 &operator=(const BfmePoolRef10 &other);
@@ -84,7 +84,7 @@ BfmePoolRef10 &BfmePoolRef10::operator=(const BfmePoolRef10 &other)
         if (other.m_target)
             InterlockedIncrement((Long *)((char *)other.m_target + 0x8c));
         if (m_target)
-            m_target->m_ref.Rva0050ED3();
+			m_target->m_ref.Release_Ref();
         m_target = other.m_target;
     }
     return *this;
@@ -93,7 +93,7 @@ BfmePoolRef10 &BfmePoolRef10::operator=(const BfmePoolRef10 &other)
 void BfmePoolRef10::rva000519BD()
 {
     if (m_target) {
-        m_target->m_ref.Rva0050ED3();
+			m_target->m_ref.Release_Ref();
         m_target = 0;
     }
 }
