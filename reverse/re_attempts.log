@@ -4172,3 +4172,11 @@ FUN_0078153b	0x0038153B	112	blocked	twin of 0x005401E3 112B 2-arg EH visitor wal
 ?rva00481C0C@Rva00481C0C@@QAEHXZ	0x00481C0C	320	blocked	complex PropagandaTower bitflags Object GameLogic 320B t=3 model=muse-07
 ?rva0054FDA4@Rva0054FDA4@@QAEHXZ	0x0054FDA4	163	blocked	complex STL map mutex LockClass EH t=3 model=muse-07
 ?Rva00331A91Get@@YAHXZ	0x00331A91	116	blocked	free EH copy binary search Rva002DFC30 no donor t=3 model=muse-07
+?rva00108895@Rva00108895@@QAEXXZ	0x00108895	97	partial	98B 0-reg-diffs; left stosd-pair vs movs and lea-eax/push-10 scheduling t=30 model=muse-01 score=0.9 stash=reverse/attempts/0x00108895.cpp
+FUN_0078153b	0x0038153B	112	blocked	frame stores data-global g_00BFB1CC at ebp-18h never read in body; custom EH handler 0x0077F387; try-catch guess mismatches frame with 12mem 7reg diffs; callback struct is 12B fn-plus-2-params built by caller 0x0038188B; t=25 model=muse-01
+?rva00142E30@Rva00142E30@@QAEXXZ	0x00142E30	112	blocked	AsciiString release idiom confirmed via sibling; manual-esp SEH comes from guard object not try (try and __try force ebp); guard adds 15B (127B) so unwind object identity unprovable without handler 0x007661A8; caller +0x13C; t=35 model=muse-01
+FUN_00719714	0x00319714	112	blocked	twin of blocked 0x0038153B: same EH plus g_00BFB1CC frame store plus 12B callback loop; same wall, no repeat per shared-delta rule t=5 model=muse-01
+FUN_0070F2E0	0x0030F2E0	109	blocked	third twin of blocked 0x0038153B and 0x00319714: same EH plus g_00BFB1CC store plus counter loop; same wall t=3 model=muse-01
+??1Rva00161220@@QAE@XZ	0x004F05F0	102	partial	102B 0-reg-diffs; guard-store-head vs guard-head-store scheduling with vptr store between test and je t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x004f05f0.cpp
+FUN_0093f97f	0x0053F97F	109	blocked	twin of blocked 0x0038153B; same g_00BFB1CC frame store never read plus unclaimed scopetable 0x00797D06; same wall no repeat per shared-delta rule t=5 model=muse-01
+FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; same g_00BFB1CC frame store never read plus unclaimed scopetable 0x007933FC; same wall no repeat per shared-delta rule t=3 model=muse-01

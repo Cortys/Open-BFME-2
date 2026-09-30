@@ -1,0 +1,36 @@
+// cl: /DNDEBUG /MD /O1
+//
+// ?Rva003FED66MoveButtonFlash@@YAXPAPAXMM@Z @0x003FED66 117B. Free __cdecl UI
+// firer (same pattern as UiCallbackFirers.cpp): formats two floats with "%g"
+// via rowed _snprintf into 16B stack buffers, selects the label from *(pp)
+// (+8) or the rowed empty string, and invokes MoveButtonFlash with (3, s,
+// buf1, buf2, 0, 0) through the pinned target/owner. Evidence: caller
+// 0x005C65D0 pushes (ptr, float, float) __cdecl; IAT snprintf cached in esi;
+// literals link; invoke declared to the landed UiCallbackFirers shape.
+extern "C" __declspec(dllimport) int __cdecl _snprintf(char *buffer, unsigned int count, const char *fmt, ...);
+
+extern const char g_Rva0107301CEmptyString[];
+
+class Rva00222A8BTarget
+{
+public:
+	void invoke(void *owner, const char *name, int flag, const char *value, void *a4, void *a5, void *a6, void *a7);
+};
+
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern void *TheRva00222A8BOwner;
+
+void __cdecl Rva003FED66MoveButtonFlash(void **pp, float f1, float f2)
+{
+	char buf1[16];
+	char buf2[16];
+	_snprintf(buf1, 16, "%g", f1);
+	_snprintf(buf2, 16, "%g", f2);
+	void *p = *pp;
+	const char *s;
+	if (p)
+		s = (const char *)p + 8;
+	else
+		s = g_Rva0107301CEmptyString;
+	TheRva00222A8BTarget->invoke(TheRva00222A8BOwner, "MoveButtonFlash", 3, s, buf1, buf2, 0, 0);
+}
