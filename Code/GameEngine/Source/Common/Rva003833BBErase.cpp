@@ -34,3 +34,29 @@ void Rva003833BB::rva003833BB(Rva003833BBNode *node)
 		node = left;
 	}
 }
+
+// ?rva00383A28@Rva00383A28@@QAEXXZ 0x00383A28 41B
+// _Tree::clear counterpart to erase 0x003833BB: if count at +4 nonzero erase
+// root at header+4 then reset left/parent/right and count.
+// Evidence: sole callee 0x003833BB rowed in this TU; callers at 0x383A51
+// 0x383EB2 0x38407F 0x385B78; same 41B shape as clear 0x383EEA in BfmeConv802.cpp.
+class Rva00383A28
+{
+public:
+	void rva00383A28();
+private:
+	Rva003833BBNode *m_header;
+	unsigned int m_count;
+};
+
+void Rva00383A28::rva00383A28()
+{
+	if (m_count != 0)
+	{
+		((Rva003833BB *)this)->rva003833BB(m_header->m_parent);
+		m_header->m_left = m_header;
+		m_header->m_parent = 0;
+		m_header->m_right = m_header;
+		m_count = 0;
+	}
+}

@@ -44260,3 +44260,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?setText@DisplayString@@UAEXVUnicodeString@@@Z,,0x00358A03,80,Code/GameEngine/Source/Common/DisplayStringDtor.cpp,matched,BFME1 donor setText compare set notify
 ??0Rva001DC0EC@@QAE@XZ,,0x001DC0C7,37,Code/GameEngine/Source/GameLogic/Object/Rva001DC0ECCtor.cpp,matched,ctor adjacent to dtor 0x001DC0EC via rowed listbase 0x004EC36C
 ?rva001DC1B3@Rva001DC0EC@@QAEXPAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x001DC1B3,46,Code/GameEngine/Source/GameLogic/Object/Rva001DC1B3.cpp,matched,list copy via rowed push_back 0x0005548F caller 0x001DC57C
+?rva00383A28@Rva00383A28@@QAEXXZ,,0x00383A28,41,Code/GameEngine/Source/Common/Rva003833BBErase.cpp,matched,clear counterpart to erase 0x003833BB in same TU; 41B shape as clear 0x383EEA
