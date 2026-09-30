@@ -11,6 +11,7 @@
 class Rva002D22CA
 {
 public:
+	Rva002D22CA();
 	virtual ~Rva002D22CA();
 	virtual bool rva002D2457();
 	void rva002D23ED(void *table, int index);
@@ -19,11 +20,16 @@ public:
 class Rva0004CA4C : public Rva002D22CA
 {
 public:
+	Rva0004CA4C();
 	virtual ~Rva0004CA4C();
 	virtual void rva0004CA57();
 };
 
 Rva0004CA4C::~Rva0004CA4C()
+{
+}
+
+Rva0004CA4C::Rva0004CA4C()
 {
 }
 
