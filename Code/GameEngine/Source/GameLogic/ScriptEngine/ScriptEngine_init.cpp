@@ -131,10 +131,8 @@ private:
 	double m_maxUpdateTime;    // +0x1A4F0
 };
 
-// Matched DIR32 sites in ScriptEngine and action/condition bodies place this
-// singleton pointer at VA 0x00DFE16C; the retail image's zero-filled slot
-// starts null.
-ScriptEngine *TheScriptEngine = 0;
+// TheScriptEngine (VA 0x00DFE16C) is defined in ScriptEngine_setSequentialTimer.cpp.
+extern ScriptEngine *TheScriptEngine;
 
 void ScriptEngine::init()
 {
