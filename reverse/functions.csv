@@ -43337,3 +43337,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva00332EC8@@QAE@ABV0@@Z,,0x00332EC8,43,Code/Libraries/Source/WWVegas/WWLib/Rva00332EC8Copy.cpp,matched,chain copy dword plus two 872Headers
 ?rva003F4752@Rva003F498A@@QAEHPAX@Z,,0x003F4752,70,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock linear search outers unk0 vs arg+0x34 same file flags siblings
 ??$_Construct@VRva0052BDE6@@V1@@_STL@@YAXPAVRva0052BDE6@@ABV1@@Z,,0x0052C34D,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_game_structs.cpp,matched,STL Construct for Rva0052BDE6 calls rowed copy ctor 0x0052BDE6
+?rva002D782C@Radar@@QAE_NPBUCoord3D@@PAUCoord2D@@@Z,,0x002D782C,120,Code/GameEngine/Source/Common/System/RadarRva002D782C.cpp,matched,Radar float radar from world via samples plus float clamp
