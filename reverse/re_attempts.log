@@ -3913,3 +3913,7 @@ FUN_00293D3B	0x00293D3B	113	blocked	unlock 113B Object list via 0x108 needs 2-ar
 ?rva005183A0@Rva005183A0@@QAE_NXZ	0x005183A0	90	partial	mov ecx eax vs lea for forward this 91vs90B t=12 model=muse-01 score=0.99 stash=reverse/attempts/0x005183a0.cpp
 ?get@Rva002E3A8DHolder@@QAEXPAURva002E3A8DPair@@H@Z	0x002E3A8D	27	partial	slot EAX vs ECX out ECX vs EAX only register swap size exact 6 variants tried t=14 model=muse-04 score=0.92 stash=reverse/attempts/0x002e3a8d.cpp
 FUN_00731A46	0x00331A46	75	blocked	sorted insert with EH scopetable needs Rva002DFC30 by-value plus AsciiString member release at +0x10 but BfmeStringRecord temp in callers confuses identity; 98B vs 75B extra EH states with non-throw copy t=20 model=muse-04
+?rva002C1A88@Rva002C1A88@@QAEHXZ	0x002C1A88	224	blocked	chain 224B EH calls contested 0x365F0 plus 10 callees t=5 model=muse-spark
+?target_0009322D@W3DSnowManager@@AAEXXZ	0x0009322D	14	blocked	packet disassembly truncated at cmp no ret t=5 model=muse-spark
+?rva0056C01E@Rva0056C01E@@QAE_PAXI@Z	0x0056C01E	71	blocked	vector deleting dtor 0xA8 eh-vector plus validate needs element class t=8 model=muse-spark
+?rva000AE13E@BfmeGridWM@@QAE_NHH@Z	0x000AE13E	79	blocked	grid bit test register wall this-in-esi vs x-in-ecx t=12 model=muse-spark

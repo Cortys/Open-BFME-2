@@ -42,6 +42,7 @@ public:
     int rva003F46C1(int outerIdx, int innerIdx);
     int* rva003F46F2(int outerIdx, int innerIdx);
     int rva003F48FE(int outerIdx, int middleIdx, int innerIdx);
+    int rva003F4921(int outerIdx, int middleIdx, int innerIdx);
     bool rva003F486C(int id);
     bool rva003F48EF(void *p);
     int rva003F4752(void *p);
@@ -101,6 +102,14 @@ int* Rva003F498A::rva003F46F2(int outerIdx, int innerIdx)
 int Rva003F498A::rva003F48FE(int outerIdx, int middleIdx, int innerIdx)
 {
     return m_outers[outerIdx].inners[middleIdx].vals[innerIdx];
+}
+
+int Rva003F498A::rva003F4921(int outerIdx, int middleIdx, int innerIdx)
+{
+    Rva003F498AOuter &o = m_outers[outerIdx];
+    Rva003F498AInner &in = o.inners[middleIdx];
+    int base = *(int *)((char *)&in + 0x10);
+    return base + innerIdx * 0x68;
 }
 
 // ?rva003F486C@Rva003F498A@@QAE_NH@Z, retail 0x003F486C, 131 bytes.
