@@ -43805,3 +43805,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0060BD31Xfer@@YAPAVXfer@@PAV1@@Z,,0x0060BD31,22,Code/GameEngine/Source/Common/System/Rva0060BC53.cpp,matched,chain caller of 0x0060BC53 via stack array
 ??0Rva003AF5AC@@QAE@ABV0@@Z,,0x003AF5AC,98,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy ctor via forceinline intermediate plus rowed base 0x3AF50D plus rowed Line 0x3A653B unlocks 0x3AF57F
 ??0Rva003AF57F@@QAE@ABV0@@Z,,0x003AF57F,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x3AF5AC then own 4 vptrs unlocks 0x3AF548
+??1Rva00317BBB@@UAE@XZ,,0x00317BBB,93,Code/GameEngine/Source/Common/Rva00317BBBDtor.cpp,matched,virtual dtor draining plus0xC list via slot0 destroy plus delete then base 0x001B4E74
