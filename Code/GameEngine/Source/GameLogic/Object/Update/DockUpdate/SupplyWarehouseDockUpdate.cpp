@@ -58,21 +58,8 @@ SupplyWarehouseDockUpdateModuleData::SupplyWarehouseDockUpdateModuleData( void )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-/*static*/ void SupplyWarehouseDockUpdateModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-
-	DockUpdateModuleData::buildFieldParse( p );
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "StartingBoxes",	INI::parseInt,	NULL, offsetof( SupplyWarehouseDockUpdateModuleData, m_startingBoxesData ) },
-		{ "DeleteWhenEmpty",	INI::parseBool,	NULL, offsetof( SupplyWarehouseDockUpdateModuleData, m_deleteWhenEmpty ) },
-		{ 0, 0, 0, 0 }
-	};
-
-  p.add(dataFieldParse);
-
-}  // end buildFieldParse
+// SupplyWarehouseDockUpdateModuleData::buildFieldParse: defined in ModuleDataBuildFieldParseChained.cpp (its row's unit).
+  // end buildFieldParse
 
 
 // ------------------------------------------------------------------------------------------------

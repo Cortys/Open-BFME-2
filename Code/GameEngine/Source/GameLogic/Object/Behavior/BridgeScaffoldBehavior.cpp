@@ -195,40 +195,8 @@ void BridgeScaffoldBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@BridgeScaffoldBehavior@@MAEXPAVXfer@@@Z present-unmatched
-void BridgeScaffoldBehavior::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// target motion
-	xfer->xferUser( &m_targetMotion, sizeof( ScaffoldTargetMotion ) );
-
-	// create pos
-	xfer->xferCoord3D( &m_createPos );
-
-	// rise to pos
-	xfer->xferCoord3D( &m_riseToPos );
-
-	// build pos
-	xfer->xferCoord3D( &m_buildPos );
-
-	// lateral speed
-	xfer->xferReal( &m_lateralSpeed );
-
-	// vertical speed
-	xfer->xferReal( &m_verticalSpeed );
-
-	// current target pos
-	xfer->xferCoord3D( &m_targetPos );
-
-}  // end xfer
+// BridgeScaffoldBehavior::xfer: defined in BridgeScaffoldBehaviorXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

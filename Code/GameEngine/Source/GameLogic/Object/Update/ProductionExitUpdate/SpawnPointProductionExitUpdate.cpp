@@ -87,10 +87,7 @@ SpawnPointProductionExitUpdate::SpawnPointProductionExitUpdate( Thing *thing, co
 }
 
 //-------------------------------------------------------------------------------------------------
-// ??1SpawnPointProductionExitUpdate@@MAE@XZ present-unmatched
-SpawnPointProductionExitUpdate::~SpawnPointProductionExitUpdate()
-{
-}
+// SpawnPointProductionExitUpdate::~SpawnPointProductionExitUpdate: defined in SpawnPointProductionExitUpdateDtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?SpawnPointProductionExitUpdate::exitObjectViaDoor present-unmatched
@@ -176,40 +173,7 @@ void SpawnPointProductionExitUpdate::unreserveDoorForExit( ExitDoorType exitDoor
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/SpawnPointProductionExitUpdateInitializeBonePositionsThunk.cpp
-// ?initializeBonePositions@SpawnPointProductionExitUpdate@@AAEXXZ present-unmatched
-void SpawnPointProductionExitUpdate::initializeBonePositions()
-{
-	Object *me = getObject();
-	Drawable *myDrawable = me->getDrawable();
-
-	// This fundamental failure will result in this never ever thinking it is free
-	if( myDrawable == NULL )
-		return;
-
-	Matrix3D boneTransforms[MAX_SPAWN_POINTS];
-	for( Int matrixIndex = 0; matrixIndex < MAX_SPAWN_POINTS; matrixIndex++ )
-		boneTransforms[matrixIndex].Make_Identity();
-
-	// Get all the bones of the right name
-	const SpawnPointProductionExitUpdateModuleData* md = getSpawnPointProductionExitUpdateModuleData();
-	m_spawnPointCount = myDrawable->getPristineBonePositions( md->m_spawnPointBoneNameData.str(), 1, NULL, boneTransforms, MAX_SPAWN_POINTS );
-
-	for( matrixIndex = 0; matrixIndex < m_spawnPointCount; matrixIndex++ )
-	{
-		Matrix3D *currentTransform = &(boneTransforms[matrixIndex]);
-		// Convert their matrix one by one
-		me->convertBonePosToWorldPos( NULL, currentTransform, NULL, currentTransform );
-
-		// Then save the world coord and angle
-		m_worldCoordSpawnPoints[matrixIndex].x = currentTransform->Get_X_Translation();
-		m_worldCoordSpawnPoints[matrixIndex].y = currentTransform->Get_Y_Translation();
-		m_worldCoordSpawnPoints[matrixIndex].z = 0; //set at creation time
-
-		m_worldAngleSpawnPoints[matrixIndex] = currentTransform->Get_Z_Rotation();
-	}
-
-	m_bonesInitialized = TRUE;
-}
+// SpawnPointProductionExitUpdate::initializeBonePositions: defined in SpawnPointInitializeBonePositions.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/SpawnPointRevalidateOccupiers.cpp

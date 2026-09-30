@@ -91,7 +91,7 @@ private:
 	unsigned char m_flag48;
 };
 
-GettingBuiltBehaviorModuleData::~GettingBuiltBehaviorModuleData() {}
+// GettingBuiltBehaviorModuleData::~GettingBuiltBehaviorModuleData: defined in GettingBuiltBehaviorModuleDataDtor.cpp (its row's unit).
 
 // ??0GettingBuiltBehaviorModuleData@@QAE@XZ @0x0045324E
 GettingBuiltBehaviorModuleData::GettingBuiltBehaviorModuleData()

@@ -364,31 +364,8 @@ void AutoHealBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@AutoHealBehavior@@ present-unmatched
-void AutoHealBehavior::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// extend base class
-	UpgradeMux::upgradeMuxXfer( xfer );
-
-	// particle system id
-	xfer->xferUser( &m_radiusParticleSystemID, sizeof( ParticleSystemID ) );
-
-	// Timer safety
-	xfer->xferUnsignedInt( &m_soonestHealFrame );
-
-	// stopped
-	xfer->xferBool( &m_stopped );
-
-}  // end xfer
+// AutoHealBehavior::xfer: defined in AutoHealBehaviorXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

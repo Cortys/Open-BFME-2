@@ -275,29 +275,8 @@ void BridgeTowerBehavior::onDie( const DamageInfo *damageInfo )
 // ------------------------------------------------------------------------------------------------
 /** Given an object, return a bridge tower interface if that object has one */
 // ------------------------------------------------------------------------------------------------
-// ?getBridgeTowerBehaviorInterfaceFromObject@BridgeTowerBehavior@@ present-unmatched
-BridgeTowerBehaviorInterface *BridgeTowerBehavior::getBridgeTowerBehaviorInterfaceFromObject( Object *obj )
-{
-
-	// sanity
-	if( obj == NULL || obj->isKindOf( KINDOF_BRIDGE_TOWER ) == FALSE )
-		return NULL;
-
-	BehaviorModule **bmi;
-	BridgeTowerBehaviorInterface *bridgeTowerInterface = NULL;
-	for( bmi = obj->getBehaviorModules(); *bmi; ++bmi )
-	{
-
-		bridgeTowerInterface = (*bmi)->getBridgeTowerBehaviorInterface();
-		if( bridgeTowerInterface )
-			return bridgeTowerInterface;
-
-	}  // end for bmi
-
-	// interface not found
-	return NULL;
-
-}  // getBridgeTowerBehaviorInterfaceFromObject
+// BridgeTowerBehavior::getBridgeTowerBehaviorInterfaceFromObject: defined in BridgeTowerBehaviorGetInterfaceFromObject.cpp (its row's unit).
+  // getBridgeTowerBehaviorInterfaceFromObject
 
 // ------------------------------------------------------------------------------------------------
 /** CRC */
@@ -316,24 +295,8 @@ void BridgeTowerBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-void BridgeTowerBehavior::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	BehaviorModule::xfer( xfer );
-
-	// xfer bridge object ID
-	xfer->xferObjectID( &m_bridgeID );
-
-	// xfer tower type
-	xfer->xferUser( &m_type, sizeof( BridgeTowerType ) );
-
-}  // end xfer
+// BridgeTowerBehavior::xfer: defined in BridgeTowerBehaviorXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

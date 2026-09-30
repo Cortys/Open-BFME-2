@@ -444,21 +444,7 @@ void WeaponSet::weaponSetOnWeaponBonusChange(const Object *source)
 }
 
 //-------------------------------------------------------------------------------------------------
-Bool WeaponSet::isAnyWithinTargetPitch(const Object* obj, const Object* victim) const
-{
-	if (!m_hasPitchLimit)
-		return true;
-
-	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
-	{
-		const Weapon* weapon = m_weapons[ i ];
-		if (weapon && weapon->isWithinTargetPitch(obj, victim))
-		{
-			return true;
-		}
-	}
-	return false;
-}
+// WeaponSet::isAnyWithinTargetPitch: defined in WeaponSetIsOutOfAmmo.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?WeaponSet::getAbleToAttackSpecificObject present-unmatched
@@ -993,36 +979,10 @@ Bool WeaponSet::chooseBestWeaponForTarget(const Object* obj, const Object* victi
 
 
 //-------------------------------------------------------------------------------------------------
-void WeaponSet::reloadAllAmmo(const Object *obj, Bool now)
-{
-	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
-	{
-		Weapon* weapon = m_weapons[i];
-		if (weapon != NULL)
-		{
-			if (now)
-				weapon->loadAmmoNow(obj);
-			else
-				weapon->reloadAmmo(obj);
-		}
-	}
-}
+// WeaponSet::reloadAllAmmo: defined in WeaponSetIsOutOfAmmo.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-Bool WeaponSet::isOutOfAmmo() const
-{
-	for( Int i = 0; i < WEAPONSLOT_COUNT;	i++ )
-	{
-		const Weapon* weapon = m_weapons[i];
-		if (weapon == NULL)
-			continue;
-		if (weapon->getStatus() != OUT_OF_AMMO)
-		{
-			return false;
-		}
-	}
-	return true;
-}
+// WeaponSet::isOutOfAmmo: defined in WeaponSetIsOutOfAmmo.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?WeaponSet::findAmmoPipShowingWeapon present-unmatched

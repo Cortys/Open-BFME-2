@@ -484,19 +484,7 @@ Real WeaponTemplate::getAttackRange(const WeaponBonus& bonus) const
 }
 
 //-------------------------------------------------------------------------------------------------
-Real WeaponTemplate::getMinimumAttackRange() const 
-{ 
-#ifdef RATIONALIZE_ATTACK_RANGE
-	// Note - undersize by 1/4 of a pathfind cell, so that the goal is not teetering on the edge
-	// of firing range.  jba.
-	const Real UNDERSIZE = PATHFIND_CELL_SIZE_F*0.25f;
-	Real r = m_minimumAttackRange - UNDERSIZE; 
-	if (r < 0.0f) r = 0.0f;
-	return r;
-#else
-	return m_minimumAttackRange; 
-#endif
-}
+// WeaponTemplate::getMinimumAttackRange: defined in WeaponTemplateMinimumRange.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?getUnmodifiedAttackRange@WeaponTemplate@@ present-unmatched
@@ -525,12 +513,7 @@ Int WeaponTemplate::getDelayBetweenShots(const WeaponBonus& bonus) const
 }
 
 //-------------------------------------------------------------------------------------------------
-Int WeaponTemplate::getClipReloadTime(const WeaponBonus& bonus) const 
-{
-	// yes, divide, not multiply; the larger the rate-of-fire bonus, the shorter
-	// we want the reload time to be.
-	return REAL_TO_INT_FLOOR(m_clipReloadTime / bonus.getField(WeaponBonus::RATE_OF_FIRE));	
-}
+// WeaponTemplate::getClipReloadTime: defined in WeaponTemplateClipReloadTime.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?getPreAttackDelay@WeaponTemplate@@ present-unmatched
@@ -1847,49 +1830,16 @@ Weapon& Weapon::operator=(const Weapon& that)
 }
 
 //-------------------------------------------------------------------------------------------------
-Weapon::~Weapon()
-{
-}
+// Weapon::~Weapon: defined in WeaponDtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-void Weapon::computeBonus(const Object *source, WeaponBonusConditionFlags extraBonusFlags, WeaponBonus& bonus) const
-{
-	bonus.clear();
-	WeaponBonusConditionFlags flags = source->getWeaponBonusCondition();
-	//CRCDEBUG_LOG(("Weapon::computeBonus() - flags are %X for %s\n", flags, DescribeObject(source).str()));
-	flags |= extraBonusFlags;
-	
-	if( source->getContainedBy() )
-	{
-		// We may be able to add in our container's flags
-		const ContainModuleInterface *theirContain = source->getContainedBy()->getContain();
-		if( theirContain && theirContain->isWeaponBonusPassedToPassengers() )
-			flags |= theirContain->getWeaponBonusPassedToPassengers();
-	}
-
-	if (TheGlobalData->m_weaponBonusSet)
-		TheGlobalData->m_weaponBonusSet->appendBonuses(flags, bonus);
-	const WeaponBonusSet* extra = m_template->getExtraBonus();
-	if (extra)
-		extra->appendBonuses(flags, bonus);
-}
+// Weapon::computeBonus: defined in WeaponComputeBonus.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-void Weapon::loadAmmoNow(const Object *sourceObj)
-{
-	WeaponBonus bonus;
-	computeBonus(sourceObj, 0, bonus);
-	reloadWithBonus(sourceObj, bonus, true);
-}
+// Weapon::loadAmmoNow: defined in WeaponLoadAmmoNow.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-void Weapon::reloadAmmo(const Object *sourceObj)
-{
-
-	WeaponBonus bonus;
-	computeBonus(sourceObj, 0, bonus);
-	reloadWithBonus(sourceObj, bonus, false);
-}
+// Weapon::reloadAmmo: defined in WeaponReloadAmmo.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?getClipReloadTime@Weapon@@ present-unmatched
@@ -1921,56 +1871,10 @@ void Weapon::setClipPercentFull(Real percent, Bool allowReduction)
 }
 
 //-------------------------------------------------------------------------------------------------
-void Weapon::rebuildScatterTargets()
-{
-	m_scatterTargetsUnused.clear();
-	Int scatterTargetsCount = m_template->getScatterTargetsVector().size();
-	if (scatterTargetsCount)
-	{
-		// When I reload, I need to rebuild the list of ScatterTargets to shoot at.
-		for (Int targetIndex = 0; targetIndex < scatterTargetsCount; targetIndex++)
-			m_scatterTargetsUnused.push_back( targetIndex );
-	}
-}
+// Weapon::rebuildScatterTargets: defined in WeaponRebuildScatterTargets.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-void Weapon::reloadWithBonus(const Object *sourceObj, const WeaponBonus& bonus, Bool loadInstantly)
-{
-	if (m_template->getClipSize() > 0 
-			&& m_ammoInClip == m_template->getClipSize()
-			&& !sourceObj->isReloadTimeShared())
-		return;	// don't restart our reload delay.
-
-	m_ammoInClip = m_template->getClipSize();
-	if (m_ammoInClip <= 0)
-		m_ammoInClip = 0x7fffffff;	// 0 == unlimited (or effectively so)
-
-	m_status = RELOADING_CLIP;
-	Real reloadTime = loadInstantly ? 0 : m_template->getClipReloadTime(bonus);
-	m_whenLastReloadStarted = TheGameLogic->getFrame();
-	m_whenWeCanFireAgain = m_whenLastReloadStarted + reloadTime;			
-	//CRCDEBUG_LOG(("Just set m_whenWeCanFireAgain to %d in Weapon::reloadWithBonus 1\n", m_whenWeCanFireAgain));
-
-			// if we are sharing reload times
-			// go through other weapons in weapon set
-			// set their m_whenWeCanFireAgain to this guy's delay	
-			// set their m_status to this guy's status
-	if (sourceObj->isReloadTimeShared())
-	{	
-		for (Int wt = 0; wt<WEAPONSLOT_COUNT; wt++)
-		{
-			Weapon *weapon = sourceObj->getWeaponInWeaponSlot((WeaponSlotType)wt);
-			if (weapon)
-			{
-				weapon->setPossibleNextShotFrame(m_whenWeCanFireAgain);
-				//CRCDEBUG_LOG(("Just set m_whenWeCanFireAgain to %d in Weapon::reloadWithBonus 2\n", m_whenWeCanFireAgain));
-				weapon->setStatus(RELOADING_CLIP);
-			}
-		}
-	}
-
-	rebuildScatterTargets();
-}
+// Weapon::reloadWithBonus: defined in WeaponReloadWithBonus.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 #pragma optimize("s", on)
@@ -2798,62 +2702,13 @@ void Weapon::fireProjectileDetonationWeapon(const Object *source, const Coord3D*
 //-------------------------------------------------------------------------------------------------
 //Currently, this function was added to allow a script to force fire a weapon,
 //and immediately gain control of the weapon that was fired to give it special orders...
-Object* Weapon::forceFireWeapon( const Object *source, const Coord3D *pos)
-{
-	//CRCDEBUG_LOG(("Weapon::forceFireWeapon() for %s\n", DescribeObject(source).str()));
-	//Force the ammo to load instantly.
-	//loadAmmoNow( source );
-	//Fire the weapon at the position. Internally, it'll store the weapon projectile ID if so created.
-	ObjectID projectileID = INVALID_ID;
-	const Bool ignoreRange = true;
-	privateFireWeapon(source, NULL, pos, false, ignoreRange, NULL, &projectileID, TRUE );
-	return TheGameLogic->findObjectByID( projectileID );
-}
+// Weapon::forceFireWeapon: defined in WeaponPrivateFireWrappers_O1.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-WeaponStatus Weapon::getStatus() const
-{
-	UnsignedInt now = TheGameLogic->getFrame();
-	if( now < m_whenPreAttackFinished )
-	{
-		return PRE_ATTACK;
-	}
-	if( now >= m_whenWeCanFireAgain )
-	{
-		if (m_ammoInClip > 0)
-			m_status = READY_TO_FIRE;
-		else
-			m_status = OUT_OF_AMMO;
-		//CRCDEBUG_LOG(("Weapon::getStatus() just set m_status to %d (ammo in clip is %d)\n", m_status, m_ammoInClip));
-	}
-	return m_status;
-}
+// Weapon::getStatus: defined in WeaponGetStatus.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-Bool Weapon::isWithinTargetPitch(const Object *source, const Object *victim) const
-{
-	if (isContactWeapon() || !isPitchLimited())
-		return true;
-
-	const Coord3D* src = source->getPosition();
-	const Coord3D* dst = victim->getPosition();
-
-	const Real ACCCEPTABLE_DZ = 10.0f;
-	if (fabs(dst->z - src->z) < ACCCEPTABLE_DZ)
-		return true;	// always good enough if dz is small, regardless of pitch
-
-	Real minPitch, maxPitch;
-	source->getGeometryInfo().calcPitches(*src, victim->getGeometryInfo(), *dst, minPitch, maxPitch);
-
-	// if there's any intersection between the the two pitch ranges, we're good to go.
-	if ((minPitch >= m_template->getMinTargetPitch() && minPitch <= m_template->getMaxTargetPitch()) ||
-			(maxPitch >= m_template->getMinTargetPitch() && maxPitch <= m_template->getMaxTargetPitch()) ||
-			(minPitch <= m_template->getMinTargetPitch() && maxPitch >= m_template->getMaxTargetPitch()))
-		return true;
-
-	//DEBUG_LOG(("pitch %f-%f is out of range\n",rad2deg(minPitch),rad2deg(maxPitch),rad2deg(m_template->getMinTargetPitch()),rad2deg(m_template->getMaxTargetPitch())));
-	return false;
-}
+// Weapon::isWithinTargetPitch: defined in WeaponIsWithinTargetPitch.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?getPrimaryDamageRadius@Weapon@@ present-unmatched
@@ -3551,13 +3406,7 @@ void Weapon::loadPostProcess( void )
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
-void WeaponBonus::appendBonuses(WeaponBonus& bonus) const
-{
-	for (int f = 0; f < WeaponBonus::FIELD_COUNT; ++f)
-	{
-		bonus.m_field[f] += this->m_field[f] - 1.0f;
-	}
-}
+// WeaponBonus::appendBonuses: defined in WeaponBonusAppend.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /*static*/ void WeaponBonusSet::parseWeaponBonusSet(INI* ini, void* /*instance*/, void* store, const void* /*userData*/)
@@ -3582,17 +3431,5 @@ void WeaponBonusSet::parseWeaponBonusSet(INI* ini)
 }
 
 //-------------------------------------------------------------------------------------------------
-void WeaponBonusSet::appendBonuses(WeaponBonusConditionFlags flags, WeaponBonus& bonus) const
-{
-	if (flags == 0)
-		return;	// my, that was easy
-
-	for (int i = 0; i < WEAPONBONUSCONDITION_COUNT; ++i)
-	{
-		if ((flags & (1 << i)) == 0)
-			continue;
-		
-		this->m_bonus[i].appendBonuses(bonus);
-	}
-}
+// WeaponBonusSet::appendBonuses: defined in WeaponBonusAppend.cpp (its row's unit).
 

@@ -250,37 +250,8 @@ void ProjectileStreamUpdate::crc( Xfer *xfer )
 	* 2: Target tracking for line breaking
 */
 // ------------------------------------------------------------------------------------------------
-// ?ProjectileStreamUpdate::xfer present-unmatched
-void ProjectileStreamUpdate::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 2;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// projectile ids
-	xfer->xferUser( m_projectileIDs, sizeof( ObjectID ) * MAX_PROJECTILE_STREAM );
-
-	// next free index
-	xfer->xferInt( &m_nextFreeIndex );
-
-	// first valid index
-	xfer->xferInt( &m_firstValidIndex );
-
-	// owning object
-	xfer->xferObjectID( &m_owningObject );
-
-	if( version >= 2 )
-	{
-		xfer->xferObjectID( &m_targetObject );
-		xfer->xferCoord3D( &m_targetPosition );
-	}
-
-}  // end xfer
+// ProjectileStreamUpdate::xfer: defined in ProjectileStreamUpdateXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

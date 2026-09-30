@@ -76,23 +76,7 @@ FlammableUpdateModuleData::FlammableUpdateModuleData()
 }
 
 //-------------------------------------------------------------------------------------------------
-/*static*/ void FlammableUpdateModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "BurnedDelay",						INI::parseDurationUnsignedInt,	NULL, offsetof( FlammableUpdateModuleData, m_burnedDelay ) },
-		{ "AflameDuration",					INI::parseDurationUnsignedInt,	NULL, offsetof( FlammableUpdateModuleData, m_aflameDuration ) },
-		{ "AflameDamageDelay",			INI::parseDurationUnsignedInt,	NULL, offsetof( FlammableUpdateModuleData, m_aflameDamageDelay ) },
-		{ "AflameDamageAmount",			INI::parseInt,									NULL, offsetof( FlammableUpdateModuleData, m_aflameDamageAmount ) },
-		{ "BurningSoundName",				INI::parseAsciiString,					NULL,	offsetof( FlammableUpdateModuleData, m_burningSoundName) },
-		{ "FlameDamageLimit",				INI::parseReal,									NULL,	offsetof( FlammableUpdateModuleData, m_flameDamageLimitData ) },
-		{ "FlameDamageExpiration",	INI::parseDurationUnsignedInt,	NULL,	offsetof( FlammableUpdateModuleData, m_flameDamageExpirationDelay ) },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
+// FlammableUpdateModuleData::buildFieldParse: defined in ModuleDataBuildFieldParse.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -314,37 +298,8 @@ void FlammableUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@FlammableUpdate@@MAEXPAVXfer@@@Z present-unmatched
-void FlammableUpdate::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// flammability status
-	xfer->xferUser( &m_status, sizeof( FlammabilityStatusType ) );
-
-	// aflame end frame
-	xfer->xferUnsignedInt( &m_aflameEndFrame );
-
-	// burned end frame
-	xfer->xferUnsignedInt( &m_burnedEndFrame );
-
-	// damage end frame
-	xfer->xferUnsignedInt( &m_damageEndFrame );
-
-	// flame damage limit
-	xfer->xferReal( &m_flameDamageLimit );
-
-	// last flame damage dealt
-	xfer->xferUnsignedInt( &m_lastFlameDamageDealt );
-
-}  // end xfer
+// FlammableUpdate::xfer: defined in FlammableUpdateXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

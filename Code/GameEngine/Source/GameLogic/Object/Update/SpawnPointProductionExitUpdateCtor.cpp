@@ -55,7 +55,4 @@ CurseSpecialPower::CurseSpecialPower(Thing *thing, const ModuleData *moduleData)
 	m_p20 = &s_dummy20;
 }
 
-// ??1CurseSpecialPower@@ present-unmatched
-CurseSpecialPower::~CurseSpecialPower()
-{
-}
+// CurseSpecialPower::~CurseSpecialPower: defined in ModuleUpdateDtors.cpp (its row's unit).

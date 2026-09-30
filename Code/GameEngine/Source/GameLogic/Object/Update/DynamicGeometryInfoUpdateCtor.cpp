@@ -29,7 +29,4 @@ CritterEmitterUpdateModuleData::CritterEmitterUpdateModuleData()
 	m_i20 = 0;
 }
 
-// ??1CritterEmitterUpdateModuleData@@ present-unmatched
-CritterEmitterUpdateModuleData::~CritterEmitterUpdateModuleData()
-{
-}
+// CritterEmitterUpdateModuleData::~CritterEmitterUpdateModuleData: defined in CritterEmitterUpdateModuleDataDtor.cpp (its row's unit).

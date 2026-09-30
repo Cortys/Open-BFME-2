@@ -67,9 +67,7 @@ private:
 	Rva003623E5Member m_objectFilter; // +0xF4
 };
 
-RousingSpeechUpdateModuleData::~RousingSpeechUpdateModuleData()
-{
-}
+// RousingSpeechUpdateModuleData::~RousingSpeechUpdateModuleData: defined in RousingSpeechUpdateModuleDataDtor.cpp (its row's unit).
 
 // ??0RousingSpeechUpdateModuleData@@QAE@XZ @0x4AD0EE
 RousingSpeechUpdateModuleData::RousingSpeechUpdateModuleData()

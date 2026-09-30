@@ -82,13 +82,7 @@ void DeletionUpdate::setLifetimeRange( UnsignedInt minFrames, UnsignedInt maxFra
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-UnsignedInt DeletionUpdate::calcSleepDelay(UnsignedInt minFrames, UnsignedInt maxFrames)
-{
-	UnsignedInt delay = GameLogicRandomValue( minFrames, maxFrames );
-	if (delay < 1) delay = 1;
-	m_dieFrame = TheGameLogic->getFrame() + delay;
-	return delay;
-}
+// DeletionUpdate::calcSleepDelay: defined in DeletionUpdate_calcSleepDelay.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------

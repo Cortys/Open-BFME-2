@@ -107,24 +107,8 @@ void SpecialPowerCompletionDie::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-void SpecialPowerCompletionDie::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	DieModule::xfer( xfer );
-
-	// creator id
-	xfer->xferObjectID( &m_creatorID );
-
-	// creator set
-	xfer->xferBool( &m_creatorSet );
-
-}  // end xfer
+// SpecialPowerCompletionDie::xfer: defined in SpecialPowerCompletionDieXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

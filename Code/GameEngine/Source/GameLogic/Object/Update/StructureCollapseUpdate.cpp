@@ -111,26 +111,7 @@ static void parseOCL( INI* ini, void *instance, void * /*store*/, const void* /*
 }
 
 //-------------------------------------------------------------------------------------------------
-/*static*/ void StructureCollapseUpdateModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  UpdateModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "MinCollapseDelay",						INI::parseDurationUnsignedInt,		NULL, offsetof( StructureCollapseUpdateModuleData, m_minCollapseDelay ) },
-		{ "MaxCollapseDelay",						INI::parseDurationUnsignedInt,		NULL, offsetof( StructureCollapseUpdateModuleData, m_maxCollapseDelay ) },
-		{ "MinBurstDelay",							INI::parseDurationUnsignedInt,		NULL, offsetof( StructureCollapseUpdateModuleData, m_minBurstDelay ) },
-		{ "MaxBurstDelay",							INI::parseDurationUnsignedInt,		NULL, offsetof( StructureCollapseUpdateModuleData, m_maxBurstDelay ) },
-		{ "CollapseDamping",						INI::parseReal,										NULL, offsetof( StructureCollapseUpdateModuleData, m_collapseDamping ) },
-		{ "MaxShudder",									INI::parseReal,										NULL, offsetof( StructureCollapseUpdateModuleData, m_maxShudder ) },
-		{ "BigBurstFrequency",					INI::parseInt,										NULL, offsetof( StructureCollapseUpdateModuleData, m_bigBurstFrequency ) },
-		{ "OCL",												parseOCL,													NULL, 0 },
-		{ "FXList",											parseFX,													NULL, 0 },
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-	p.add(DieMuxData::getFieldParse(), offsetof( StructureCollapseUpdateModuleData, m_dieMuxData ));
-}
+// StructureCollapseUpdateModuleData::buildFieldParse: defined in StructureCollapseUpdateModuleDataParse.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------

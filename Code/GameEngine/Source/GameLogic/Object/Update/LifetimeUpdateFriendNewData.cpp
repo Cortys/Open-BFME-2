@@ -33,10 +33,7 @@ private:
 	char m_pad[0x18];
 };
 
-// ?buildFieldParse@LifetimeUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z present-unmatched
-void LifetimeUpdateModuleData::buildFieldParse(MultiIniFieldParse &)
-{
-}
+// LifetimeUpdateModuleData::buildFieldParse: defined in ModuleDataBuildFieldParse.cpp (its row's unit).
 
 class LifetimeUpdate
 {

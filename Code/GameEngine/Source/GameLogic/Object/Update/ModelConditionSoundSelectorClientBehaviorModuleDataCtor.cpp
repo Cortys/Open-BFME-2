@@ -33,6 +33,4 @@ ModelConditionSoundSelectorClientBehaviorModuleData::ModelConditionSoundSelector
 {
 }
 
-ModelConditionSoundSelectorClientBehaviorModuleData::~ModelConditionSoundSelectorClientBehaviorModuleData()
-{
-}
+// ModelConditionSoundSelectorClientBehaviorModuleData::~ModelConditionSoundSelectorClientBehaviorModuleData: defined in ModelConditionSoundSelectorClientBehaviorModuleDataDtor.cpp (its row's unit).

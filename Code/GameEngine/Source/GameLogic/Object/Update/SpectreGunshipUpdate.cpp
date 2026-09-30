@@ -780,21 +780,7 @@ Bool SpectreGunshipUpdate::isFairDistanceFromShip( Object *target )
 
 
 //-------------------------------------------------------------------------------------------------
-// ?cleanUp@SpectreGunshipUpdate@@ present-unmatched
-void SpectreGunshipUpdate::cleanUp()
-{
-  m_attackAreaDecal.clear();
-  m_targetingReticleDecal.clear();
-
-
-  Object *gattling = TheGameLogic->findObjectByID( m_gattlingID );
-  if ( gattling )
-    TheGameLogic->destroyObject( gattling );
-
-#if defined TRACKERS
-	 m_howitzerTrackerDecal.clear();
-#endif
-}
+// SpectreGunshipUpdate::cleanUp: defined in SpectreGunshipUpdateCleanUp.cpp (its row's unit).
 
 
 

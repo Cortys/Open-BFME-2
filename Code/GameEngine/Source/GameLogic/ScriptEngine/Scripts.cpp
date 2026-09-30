@@ -397,47 +397,7 @@ void ScriptList::loadPostProcess( void )
 /**
   ScriptList::duplicate - Creates a full, "deep" copy of scriptlist. 
 */
-// ?duplicate@ScriptList@@QBEPAV1@XZ present-unmatched
-ScriptList *ScriptList::duplicate(void) const 
-{
-	ScriptList *pNew = newInstance(ScriptList);
-
-	{
-		const ScriptGroup *src = this->m_firstGroup;
-		ScriptGroup *dst = NULL;
-		while (src)
-		{
-			ScriptGroup *tmp = src->duplicate();
-
-			if (dst)
-				dst->setNextGroup(tmp);
-			else
-				pNew->m_firstGroup = tmp;
-
-			src = src->getNext();
-			dst = tmp;
-		}
-	}
-
-	{
-		const Script *src = this->m_firstScript;
-		Script *dst = NULL;
-		while (src)
-		{
-			Script *tmp = src->duplicate();
-
-			if (dst)
-				dst->setNextScript(tmp);
-			else
-				pNew->m_firstScript = tmp;
-
-			src = src->getNext();
-			dst = tmp;
-		}
-	}
-
-	return pNew;
-}
+// ScriptList::duplicate: defined in ScriptListDuplicate.cpp (its row's unit).
 
 /**
   ScriptList::duplicateAndQualify - Creates a full, "deep" copy of scriptlist,
@@ -688,21 +648,7 @@ struct BfmeScriptListHeads
 // The body itself is authored and the finding stands: BFME inlines the per-list
 // writes here rather than calling WriteScriptListDataChunk, and writes the group
 // chunk before the script chunk where the reference does the reverse.
-void ScriptList::WriteScriptsDataChunk(DataChunkOutput &chunkWriter, ScriptList *scriptLists[], Int numLists )
-{
-	/**********SCRIPTS DATA ***********************/
-	chunkWriter.openDataChunk("PlayerScriptsList", K_SCRIPTS_DATA_VERSION_1);	
-		Int i;
-		for (i=0; i<numLists; i++) {
-			chunkWriter.openDataChunk("ScriptList", K_SCRIPT_LIST_DATA_VERSION_1);
-
-			if (scriptLists[i]) scriptLists[i]->WriteScriptListDataChunk(chunkWriter);
-
-			chunkWriter.closeDataChunk();
-		}
-	chunkWriter.closeDataChunk();
-	
-}
+// ScriptList::WriteScriptsDataChunk: defined in ScriptList_WriteScriptsDataChunk.cpp (its row's unit).
 
 
 
@@ -714,14 +660,7 @@ void ScriptList::WriteScriptsDataChunk(DataChunkOutput &chunkWriter, ScriptList 
 */
 
 // ?WriteScriptListDataChunk@ScriptList@@QAEXAAVDataChunkOutput@@@Z
-void ScriptList::WriteScriptListDataChunk(DataChunkOutput &chunkWriter)
-{
-	BfmeScriptListHeads *self = (BfmeScriptListHeads *)this;
-
-	/**********SCRIPTS DATA ***********************/
-		if (self->m_firstGroup) WriteGroupDataChunk(chunkWriter, this, self->m_firstGroup);
-		if (self->m_firstScript) WriteScriptDataChunk(chunkWriter, this, self->m_firstScript);
-}
+// ScriptList::WriteScriptListDataChunk: defined in ScriptList_WriteScriptsDataChunk.cpp (its row's unit).
 
 
 /**
@@ -1578,17 +1517,7 @@ void OrCondition::deleteCondition(Condition *pCond)
 *	Input: DataChunkInput 
 *		
 */
-void OrCondition::WriteOrConditionDataChunk(DataChunkOutput &chunkWriter, OrCondition	*pOrCondition)
-{
-	/**********OR CONDITION DATA ***********************/
-	while (pOrCondition) {
-		chunkWriter.openDataChunk("OrCondition", K_SCRIPT_OR_CONDITION_DATA_VERSION_1);
-		if (pOrCondition->m_firstAnd) Condition::WriteConditionDataChunk(chunkWriter, pOrCondition->m_firstAnd);
-		chunkWriter.closeDataChunk();
-		pOrCondition = pOrCondition->getNextOrCondition();
-	}
-	
-}
+// OrCondition::WriteOrConditionDataChunk: defined in OrConditionWriteOrConditionDataChunk.cpp (its row's unit).
 
 /**
 * OrCondition::ParseOrConditionDataChunk - read a Or condition chunk.
@@ -1767,12 +1696,7 @@ Condition::~Condition(void)
 
 
 
-// ?getUiStrings@Condition@@QAEHQAVAsciiString@@@Z present-unmatched
-Int Condition::getUiStrings(AsciiString strings[MAX_PARMS])
-{
-	const ConditionTemplate *pTemplate = TheScriptEngine->getConditionTemplate(m_conditionType);
-	return pTemplate->getUiStrings(strings);
-}
+// Condition::getUiStrings: defined in ConditionGetUiStrings.cpp (its row's unit).
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/Condition_getUiText_Thunk.cpp
 AsciiString Condition::getUiText(void)
@@ -1805,29 +1729,7 @@ AsciiString Condition::getUiText(void)
 *	Input: DataChunkInput 
 *		
 */
-// ?WriteConditionDataChunk@Condition@@SAXAAVDataChunkOutput@@PAV1@@Z present-unmatched
-void Condition::WriteConditionDataChunk(DataChunkOutput &chunkWriter, Condition	*pCondition)
-{
-	/**********Condition  DATA ***********************/
-	while (pCondition) {
-		chunkWriter.openDataChunk("Condition", K_SCRIPT_CONDITION_VERSION_4);
-			chunkWriter.writeInt(pCondition->m_conditionType);
-			const ConditionTemplate* ct = TheScriptEngine->getConditionTemplate(pCondition->m_conditionType);
-			if (ct) {
-				chunkWriter.writeNameKey(ct->m_internalNameKey);
-			}	else {
-				DEBUG_CRASH(("Invalid condition."));
-				chunkWriter.writeNameKey(NAMEKEY("Bogus"));
-			}
-			chunkWriter.writeInt(pCondition->m_numParms);
-			Int i;
-			for (i=0; i<pCondition->m_numParms; i++) {
-				pCondition->m_parms[i]->WriteParameter(chunkWriter);
-			}
-		chunkWriter.closeDataChunk();
-		pCondition = pCondition->getNext();
-	}	
-}
+// Condition::WriteConditionDataChunk: defined in ConditionWriteDataChunk.cpp (its row's unit).
 /**
 * Condition::ParseConditionDataChunk - read a condition.
 * Format is the newer CHUNKY format.
@@ -1926,34 +1828,11 @@ Bool Condition::ParseConditionDataChunk(DataChunkInput &file, DataChunkInfo *inf
 //-------------------------------------------------------------------------------------------------
 // ******************************** class Parameter ***********************************************
 //-------------------------------------------------------------------------------------------------
-// ?getParameterType@Template@@QBE?AW4ParameterType@Parameter@@H@Z present-unmatched
-enum Parameter::ParameterType Template::getParameterType(Int ndx) const 
-{
-	if (ndx >= 0 && ndx < m_numParameters) {
-		return m_parameters[ndx];
-	}
-	DEBUG_CRASH(("Index out of range."));
-	return Parameter::INT;
-}
+// Template::getParameterType: defined in TemplateGetParameterType.cpp (its row's unit).
 
-// ?getCoord3D@Parameter@@QBEXPAUCoord3D@@@Z present-unmatched
-void Parameter::getCoord3D(Coord3D *pLoc) const
-{
-	DEBUG_ASSERTCRASH(m_paramType==COORD3D, ("Wrong parameter type."));
-	pLoc->x = pLoc->y = pLoc->z = 0;
-	if (m_paramType==COORD3D) {
-		*pLoc = m_coord;
-	}
-}
+// Parameter::getCoord3D: defined in ParameterGetCoord3D.cpp (its row's unit).
 
-// ?setCoord3D@Parameter@@IAEXPBUCoord3D@@@Z present-unmatched
-void Parameter::setCoord3D(const Coord3D *pLoc)
-{
-	DEBUG_ASSERTCRASH(m_paramType==COORD3D, ("Wrong parameter type."));
-	if (m_paramType==COORD3D) {
-		m_coord= *pLoc ;
-	}
-}
+// Parameter::setCoord3D: defined in ParameterSetCoord3D.cpp (its row's unit).
 
 // ?qualify@Parameter@@QAEXABVAsciiString@@00@Z present-unmatched
 void Parameter::qualify(const AsciiString& qualifier, 
@@ -2249,25 +2128,7 @@ AsciiString Parameter::getUiText(void) const
 *	Input: DataChunkInput 
 *		
 */
-void Parameter::WriteParameter(DataChunkOutput &chunkWriter)
-{
-
-	/**********Parameter  DATA ***********************/
-	chunkWriter.writeInt(m_paramType);
-	if (m_paramType == KIND_OF_PARAM) {
-		// To get the proper kindof string stored.
-		m_string = KindOfMaskType::getNameFromSingleBit(m_int);
-	}
-	if (m_paramType == COORD3D) {
-		chunkWriter.writeReal(m_coord.x);
-		chunkWriter.writeReal(m_coord.y);
-		chunkWriter.writeReal(m_coord.z);
-	} else {
-		chunkWriter.writeInt(m_int);
-		chunkWriter.writeReal(m_real);
-		chunkWriter.writeAsciiString(m_string);
-	}
-}
+// Parameter::WriteParameter: defined in Parameter_WriteParameter.cpp (its row's unit).
 
 /**
 * Parameter::ReadParameter - read a parameter.
@@ -2398,37 +2259,10 @@ ScriptAction::~ScriptAction(void)
 
 
 
-// ?getUiStrings@ScriptAction@@QAEHQAVAsciiString@@@Z present-unmatched
-Int ScriptAction::getUiStrings(AsciiString strings[MAX_PARMS])
-{
-	const ActionTemplate *pTemplate = TheScriptEngine->getActionTemplate(m_actionType);
-	return pTemplate->getUiStrings(strings);
-}
+// ScriptAction::getUiStrings: defined in ScriptActionGetUiStrings.cpp (its row's unit).
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_getUiText_Thunk.cpp
-// ?getUiText@ScriptAction@@QAE?AVAsciiString@@XZ present-unmatched
-AsciiString ScriptAction::getUiText(void)
-{
-	AsciiString uiText;
-	AsciiString strings[MAX_PARMS];
-	Int numStrings = getUiStrings(strings);
-	Int i;
-
-	if (m_hasWarnings) {
-		uiText = "[???]";
-	}
-
-	for (i=0; i<MAX_PARMS; i++) {
-		if (i<numStrings) {
-			uiText.concat(strings[i]);
-		}
-		if (i<m_numParms) {
-			uiText.concat(m_parms[i]->getUiText());
-		}
-	}
-
-	return uiText;
-}
+// ScriptAction::getUiText: defined in ScriptActionGetUiText.cpp (its row's unit).
 
 /**
 * ScriptAction::WriteActionDataChunk - Writes an Action chunk.

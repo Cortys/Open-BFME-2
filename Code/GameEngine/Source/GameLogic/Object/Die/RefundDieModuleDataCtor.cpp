@@ -60,7 +60,4 @@ RefundDieModuleData::RefundDieModuleData()
 	m_upgradeRequired = 0;
 }
 
-// ??1RefundDieModuleData@@UAE@XZ present-unmatched
-RefundDieModuleData::~RefundDieModuleData()
-{
-}
+// RefundDieModuleData::~RefundDieModuleData: defined in RefundDieModuleDataDtor.cpp (its row's unit).

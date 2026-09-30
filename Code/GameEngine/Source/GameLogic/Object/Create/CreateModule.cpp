@@ -70,21 +70,8 @@ void CreateModule::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-void CreateModule::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	BehaviorModule::xfer( xfer );
-
-	// need to run on build complete
-	xfer->xferBool( &m_needToRunOnBuildComplete );
-
-}  // end xfer
+// CreateModule::xfer: defined in CreateModuleXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
