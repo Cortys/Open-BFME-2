@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??0SubsystemInterface@@QAE@ABV0@@Z @0x00329F5E 37B plus ??4SubsystemInterface@@QAEAAV0@ABV0@@Z @0x00329880 31B
 // SubsystemInterface copy ctor and copy assign.
@@ -9,21 +9,8 @@
 // Callers: copy ctor from 0x0032EF55 and assign from 0x0032E989 (unclaimed copy loops).
 // Donor: BFME1 SubsystemInterface.cpp copy semantics (retail layout proven by base ctor plus setName).
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString();
-};
 
 class SubsystemInterface
 {

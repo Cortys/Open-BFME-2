@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?xfer@W3DDebrisDraw@@MAEXPAVXfer@@@Z @0x000B1DC3 268B
 // Slot 3 (offset 0x0C) of vtable 0x007C97A8 (class of ??0W3DDebrisDraw@@QAE@PAVThing@@PBVModuleData@@@Z).
 // Donor: reference/open-bfme-1/Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DDebrisDrawXfer.cpp
@@ -14,20 +14,7 @@ typedef bool Bool;
 enum ShadowType { SHADOW_NONE = 0 };
 class FXList;
 template <typename T> struct StringInlineData { int m_refCount; int m_length; T m_text[1]; };
-template <typename T> class StringBase {
-public:
-	StringBase();
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-	StringInlineData<T> *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-};
+#include "ascii_string.h"
 class UnicodeString;
 class PooledString;
 struct XferUnknown11;

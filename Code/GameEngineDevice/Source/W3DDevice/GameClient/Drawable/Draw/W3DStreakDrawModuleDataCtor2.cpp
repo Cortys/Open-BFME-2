@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 // stlport
 //
 // ??0W3DStreakDrawModuleData@@QAE@XZ, retail 0x000D0520, 92 bytes.
@@ -20,15 +20,7 @@
 
 struct BfmeE16 { float x, y, z, w; };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	const char *m_data;
-};
+#include "ascii_string.h"
 
 class W3DStreakDrawModuleDataBase
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 
 // ?loadD3DCursorTextures@W3DMouse@@AAE_NW4MouseCursor@@@Z, retail 0x000999CE,
 // 417 bytes. BFME2's cursor-texture loader: same algorithm as BFME1
@@ -60,13 +60,7 @@ struct CursorTextureSlot
 	W3DRadarResetSurface Get_Surface_Level();
 };
 
-class AsciiString
-{
-	char *m_data;
-
-public:
-	const char *str() const { return m_data ? (const char *)(m_data + 8) : (const char *)""; }
-};
+#include "ascii_string.h"
 
 enum MouseCursor
 {

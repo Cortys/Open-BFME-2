@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG
 //
 // ??0W3DLightDrawModuleData@@QAE@XZ, retail 0x000CFB3E, 107 bytes.
 // Frameless SSE ModuleData ctor: installs the vtable 0x00BCD820, inlines the
@@ -26,15 +26,7 @@ struct LightColorRGB
 	float m_blue; // +0x08
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	const char *m_data;
-};
+#include "ascii_string.h"
 
 class W3DLightDrawModuleData
 {

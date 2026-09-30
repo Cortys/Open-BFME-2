@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva00111D65@LookupTablePostEffect@@UAEXXZ, retail 0x00111D65, 53 bytes.
 // Virtual slot 3 (offset 0xC) of vtable 0x007CFAC8 (class of
@@ -29,45 +29,8 @@ private:
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-private:
-	friend class AsciiString;
+#include "ascii_string.h"
 
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &that);
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const char *text)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(text);
-	}
-
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			(const StringBase<char> &)that);
-	}
-
-	~AsciiString();
-
-private:
-	char *m_text;
-};
 
 class LookupTablePostEffect
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /Oi- /Ob1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oi- /Ob1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 //
 // Donor: Open-BFME-1 Zero Hour MilesAudioManager.cpp::getProviderIndex.
 // Target identity: Ghidra boundary 0x56634/60B is called by the retail helper
@@ -8,15 +8,8 @@
 // +0x9CC. The method name/loop semantics come from the donor; layout claims
 // come from target accesses and the verified buildProviderList sibling.
 
-template <typename T> class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 struct ProviderInfo
 {

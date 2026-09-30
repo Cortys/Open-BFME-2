@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG
 //
 // W3DTreeDrawModuleData file-unit (retail 0x000CEBBF..0x000CED02): the empty
 // virtual base brackets the EH states with no emitted code (its vtable store
@@ -11,16 +11,7 @@
 
 #define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-	void clear();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class W3DTreeDrawModuleDataBase
 {

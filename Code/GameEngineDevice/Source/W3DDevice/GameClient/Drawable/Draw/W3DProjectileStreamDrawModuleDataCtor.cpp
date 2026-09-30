@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // W3DProjectileStreamDrawModuleData file-unit (parse first; the ctor at
 // 0xD11D2 remains pinned for a follow-up).
@@ -18,16 +18,7 @@
 // arms state 1. Field identity is the own table at 0x00BCDFB0. The rowed
 // factory at 0x650E8 news 0x1C. Row supersedes the ctor pin.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-	void set(const char *str);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class UpdateModuleData
 {

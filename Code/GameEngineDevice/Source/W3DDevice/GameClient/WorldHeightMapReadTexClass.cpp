@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc /DNDEBUG /DWIN32 /D_WINDOWS
 // stlport
 
 // BFME2 terrain texture-class loading. Retail builds this family with /O1
@@ -15,15 +15,7 @@
 typedef int Int;
 typedef bool Bool;
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that);
-	~AsciiString() throw();
-	const char *str() const { return m_data ? m_data + 8 : ""; }
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class TerrainType
 {

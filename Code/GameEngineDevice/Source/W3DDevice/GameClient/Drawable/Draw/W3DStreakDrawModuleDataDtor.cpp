@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG
 //
 // ??1W3DStreakDrawModuleData@@UAE@XZ, retail 0x000D057C, 69 bytes.
 // W3DStreakDraw ModuleData dtor: reinstalls the vtable 0x00BCDAB0, tears
@@ -27,15 +27,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct W3DStreakWeatherVec
 {

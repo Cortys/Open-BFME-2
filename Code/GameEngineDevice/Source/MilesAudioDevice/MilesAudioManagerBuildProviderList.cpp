@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /Oi- /Ob1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /Oi- /Ob1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 //
 // Donor: Open-BFME-1 Zero Hour MilesAudioManager.cpp::buildProviderList.
 // Target identity: openDevice at 0x61680 calls the provider enumerator in its
@@ -12,17 +12,8 @@
 extern "C" __declspec(dllimport) int __stdcall AIL_enumerate_3D_providers(
 	void **next, unsigned int *provider, char **name);
 
-template <typename T> class StringBase
-{
-public:
-	void set(const T *text);
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	void set(const char *text) { StringBase<char>::set(text); }
-};
 
 struct ProviderInfo
 {

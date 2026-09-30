@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG
 //
 // ??0W3DTruckDrawModuleData@@QAE@XZ, retail 0x000CB1C9, 197 bytes.
 // W3DTruckDraw ModuleData ctor: calls the W3DModelDrawModuleData base ctor
@@ -18,15 +18,7 @@
 // the only out-of-line call is the base ctor and the body stays frameless
 // with no EH states despite the 21 dtor-needing members.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	const char *m_data;
-};
+#include "ascii_string.h"
 
 class W3DModelDrawModuleData
 {

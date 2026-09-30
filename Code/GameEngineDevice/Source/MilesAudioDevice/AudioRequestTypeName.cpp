@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?Rva000A870EGet@@YA?AVAsciiString@@H@Z, retail 0x000A870E, 206 bytes.
 // AudioRequest type to AsciiString: 8 dense cases (AR_Play 0, AR_StopHandle 1,
@@ -12,59 +12,8 @@
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-public:
-	void concat(const T *text);
+#include "ascii_string.h"
 
-private:
-	friend class AsciiString;
-
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString()
-	{
-		m_text = 0;
-	}
-
-	AsciiString(const char *text)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(text);
-	}
-
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			(const StringBase<char> &)that);
-	}
-
-	~AsciiString()
-	{
-		((StringBase<char> *)this)->releaseBuffer();
-	}
-
-	void __cdecl format(const char *format, ...);
-
-private:
-	char *m_text;
-};
 
 AsciiString Rva000A870EGet(int type)
 {

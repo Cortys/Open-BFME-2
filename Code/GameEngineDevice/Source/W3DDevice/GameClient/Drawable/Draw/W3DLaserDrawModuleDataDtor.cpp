@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 // stlport
 //
 // ??1W3DLaserDrawModuleData@@UAE@XZ, retail 0x000C9AE7, 54 bytes.
@@ -25,14 +25,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class W3DLaserDrawModuleData : public Snapshot
 {

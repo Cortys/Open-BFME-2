@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG
 //
 // ??1W3DLightDrawModuleData@@UAE@XZ, retail 0x000CFBA9, 54 bytes.
 // W3DLightDraw ModuleData dtor: reinstalls the vtable 0x00BCD820, tears
@@ -22,14 +22,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class W3DLightDrawModuleData : public Snapshot
 {
