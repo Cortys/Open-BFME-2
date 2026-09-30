@@ -43319,3 +43319,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0033269B@Rva0033269B@@QAEXABUBfmeStringRecord000331962@@@Z,,0x0033269B,115,Code/GameEngine/Source/Common/Rva0033269B.cpp,matched,unlock word-search update-or-append via G7 for imul
 ?xfer@SpecialPowerModuleData@@UAEXPAVXfer@@@Z,,0x00548AC2,70,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDataXfer.cpp,matched,slot 3 of 0x0086A520 calls rowed Rva00398280Xfer vector plus 2 uints
 ??$_Construct@VRva0052BD59@@V1@@_STL@@YAXPAVRva0052BD59@@ABV1@@Z,,0x0052C320,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_game_structs.cpp,matched,STL Construct for Rva0052BD59 calls rowed copy ctor 0x0052BD59
+??0?$_Vector_base@UBfmePod48@@V?$allocator@UBfmePod48@@@_STL@@@_STL@@QAE@IABV?$allocator@UBfmePod48@@@1@@Z,,0x003F4443,60,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_base_pod48.cpp,matched,Vector_base Pod48 ctor via G7 imul plus allocate
