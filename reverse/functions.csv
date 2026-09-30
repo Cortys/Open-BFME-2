@@ -43232,3 +43232,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1Rva0026F684@@UAE@XZ,,0x0026F684,227,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Dtor.cpp,matched,vtable 0x7FABF0 deleting dtor 0x0026F8BA
 ??_GRva0026F684@@UAEPAXI@Z,,0x0026F8BA,28,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Dtor.cpp,matched,deleting dtor for 0x0026F684
 ?rva001805AE@BfmeResetTextureRef@@QAEAAU1@ABUBfmeResetAnyRef@@@Z,,0x001805AE,50,Code/Libraries/Source/WWVegas/WW3D2/Rva001805AEAssign.cpp,matched,twin of 0x00131D99 via TRAP plus Texture assign
+?xfer@ToggleHiddenSpecialAbilityUpdate@@MAEXPAVXfer@@@Z,,0x004AE25C,42,Code/GameEngine/Source/GameLogic/Object/Update/ToggleHiddenSpecialAbilityUpdateXfer.cpp,matched,vslot slot3 of 0x008552D8 via rowed ctor plus donor m_hidden plus Version1 row
