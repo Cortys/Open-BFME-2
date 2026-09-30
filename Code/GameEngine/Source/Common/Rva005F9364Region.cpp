@@ -87,3 +87,15 @@ void Rva005F9364::rva005F960C(const UnicodeString &regionName)
         m_cachedName.set(regionName);
     }
 }
+class Rva005F9775
+{
+public:
+    void rva005F9775(const UnicodeString &regionName);
+private:
+    char m_pad[4];
+    Rva005F9364 *m_member;
+};
+void Rva005F9775::rva005F9775(const UnicodeString &regionName)
+{
+    m_member->rva005F960C(regionName);
+}

@@ -44313,3 +44313,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ??$__find@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z,,0x0040A68F,118,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_vector_bodies.cpp,matched,unrolled find over 40B elements via Pod20 precedent
 ??$find@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@@Z,,0x0040A891,27,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_vector_bodies.cpp,matched,find wrapper over rowed __find 0x0040A68F
 ?rva0053FF1D@Rva0053FF1D@@QAEXPAVDataChunkOutput@@@Z,,0x0053FF1D,66,Code/GameEngine/Source/Common/Rva0053FF1DWrite.cpp,matched,Track writer chain on 0x0053FBFE count plus per-key writeInt caller 0x00540144
+?rva005F9775@Rva005F9775@@QAEXABVUnicodeString@@@Z,,0x005F9775,8,Code/GameEngine/Source/Common/Rva005F9364Region.cpp,matched,chain forwarder to 0x005F960C via member at plus4
