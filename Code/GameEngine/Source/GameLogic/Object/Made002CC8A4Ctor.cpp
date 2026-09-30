@@ -1,10 +1,8 @@
-// ??0Made002CC8A4@@QAE@XZ
-// partial score=0.97 date=2026-09-29
-// ??0Made002CC8A4@@QAE@XZ
-// partial score=0.97 date=2026-09-29
 // cl: /O1 /MD /EHsc /DNDEBUG /arch:SSE
+// Made002CC8A4 ctor, retail 0x0050A39B (263 bytes). Built from the banked
+// attempt reverse/attempts/0x0050a39b.cpp; fix: m_150 is assigned before
+// m_144, which is the order retail stores the two zeroed floats.
 //
-// ??0Made002CC8A4@@QAE@XZ retail 0x0050A39B 263B MetaImpact ctor.
 // Evidence: pin; base Rva00507823 0x0050775B; vtable 0x008649A0; pi via 0x007C7468;
 // 1.0 via 0x007BB8D8; 2.0 via 0x007C28F4; 100.0 via 0x007C292C; filter at +0x160
 // via 0x003623E5 plus FixedStorage from 0x009FEFA4 via 0x0004543D to 0x00362087;
@@ -17,6 +15,9 @@ public:
 private:
 	unsigned char m_bytes[28];
 };
+
+// Retail's shared fixed-storage object at RVA 0x009FEFA4 (pinned).
+extern const BfmeFixedStorage0004543D g_009FEFA4;
 
 class Rva003623E5Member
 {
@@ -73,16 +74,16 @@ Made002CC8A4::Made002CC8A4()
 	m_138 = 0.0f;
 	m_13C = 0.0f;
 	m_140 = 1.0f;
+	m_150 = 0.0f;
 	m_144 = 0.0f;
 	m_148 = 0;
 	m_14C = false;
 	m_14D = false;
-	m_150 = 0.0f;
 	m_154 = false;
 	m_155 = false;
 	m_158 = 2.0f;
 	m_15C = 100.0f;
 	m_160.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(g_009FEFA4),
+		BfmeFixedStorage0004543D(g_009FEFA4));
 }

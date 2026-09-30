@@ -44422,3 +44422,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva001F553F@Rva001F553F@@QAEPAUCoord3D@@PAU2@II@Z,,0x001F553F,105,Code/GameEngine/Source/Common/Rva001F553F.cpp,matched,chain via rowed 0x003AFB2A SSE scale globals ret Coord3D ptr
 ?rva00263910@Rva00263910@@QAEXPBUCoord3D@@MH@Z,,0x00263910,297,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva00263910Goal.cpp,matched,AIUpdate goal helper via max helper and extents clamp
 ?Rva00263569Xfer@@YAPAVXfer@@PAV1@PAH@Z,,0x00263569,89,Code/GameEngine/Source/Common/Rva00263569Xfer.cpp,matched,Xfer GuardTargetType pair via version check
+??0Made002CC8A4@@QAE@XZ,,0x0050A39B,263,Code/GameEngine/Source/GameLogic/Object/Made002CC8A4Ctor.cpp,matched,banked attempt fixed: m_150 is assigned before m_144 which gives retail's order of the two zeroed float stores
