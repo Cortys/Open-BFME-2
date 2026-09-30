@@ -65,6 +65,12 @@ struct Rva00520211Element { char m_pad[80]; public: Rva00520211Element(const Rva
 // 84-byte element; layout owner stlport_construct_rva585B16.cpp.
 class Rva00585B16 { char m_pad[84]; public: Rva00585B16(const Rva00585B16 &); ~Rva00585B16(); };
 
+// 8-byte element; layout owner stlport_vector_rva00151dab_clear.cpp.
+class Rva00151DAB { char m_pad[8]; public: Rva00151DAB(const Rva00151DAB &); ~Rva00151DAB(); };
+// 76-byte element; layout owner Rva00153729Dtor.cpp.
+struct Rva00153729 { char m_pad[76]; public: Rva00153729(const Rva00153729 &); ~Rva00153729(); };
+// 8-byte element; layout owner StlportVectorDtorChains.cpp.
+class BfmeStringTailRecord156 { char m_pad[8]; public: BfmeStringTailRecord156(const BfmeStringTailRecord156 &); ~BfmeStringTailRecord156(); };
 namespace _STL
 {
 template <> void _Construct<BfmeAssignRecord32, BfmeAssignRecord32>(BfmeAssignRecord32 *, const BfmeAssignRecord32 &);
@@ -90,6 +96,9 @@ template <> void _Construct<Rva003F610FElement, Rva003F610FElement>(Rva003F610FE
 template <> void _Construct<Rva004F6352, Rva004F6352>(Rva004F6352 *, const Rva004F6352 &);
 template <> void _Construct<Rva00520211Element, Rva00520211Element>(Rva00520211Element *, const Rva00520211Element &);
 template <> void _Construct<Rva00585B16, Rva00585B16>(Rva00585B16 *, const Rva00585B16 &);
+template <> void _Construct<Rva00151DAB, Rva00151DAB>(Rva00151DAB *, const Rva00151DAB &);
+template <> void _Construct<Rva00153729, Rva00153729>(Rva00153729 *, const Rva00153729 &);
+template <> void _Construct<BfmeStringTailRecord156, BfmeStringTailRecord156>(BfmeStringTailRecord156 *, const BfmeStringTailRecord156 &);
 }
 
 // Retail 0x0015239D.
@@ -176,3 +185,22 @@ template void _STL::vector<Rva00520211Element>::reserve(unsigned int);
 // Retail 0x00586C56.
 template void _STL::vector<Rva00585B16>::_M_insert_overflow(
     Rva00585B16 *, const Rva00585B16 &, const _STL::__false_type &, unsigned int, bool);
+
+// The next four growth paths call _Construct rows that are not landed: each
+// _Construct address is read from the REL32 sites of these byte-identical
+// bodies and pinned; its retail body is the element's null-guarded
+// placement copy (EH frame for Rva0007BB16Record and Rva00153729, throw()
+// tail call for Rva00151DAB and BfmeStringTailRecord156). Each overflow also
+// emits the element's __uninitialized_copy and __uninitialized_fill_n.
+// Retail 0x0007D8FE.
+template void _STL::vector<Rva0007BB16Record>::_M_insert_overflow(
+    Rva0007BB16Record *, const Rva0007BB16Record &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x001521B3.
+template void _STL::vector<Rva00151DAB>::_M_insert_overflow(
+    Rva00151DAB *, const Rva00151DAB &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x00153C5F.
+template void _STL::vector<Rva00153729>::_M_insert_overflow(
+    Rva00153729 *, const Rva00153729 &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x001D9FAC.
+template void _STL::vector<BfmeStringTailRecord156>::_M_insert_overflow(
+    BfmeStringTailRecord156 *, const BfmeStringTailRecord156 &, const _STL::__false_type &, unsigned int, bool);
