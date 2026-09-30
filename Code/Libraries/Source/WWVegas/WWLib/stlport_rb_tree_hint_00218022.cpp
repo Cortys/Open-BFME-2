@@ -15,7 +15,7 @@
 #undef _STLP_DEFAULT_CONSTRUCTED
 #define _STLP_DEFAULT_CONSTRUCTED(_TTp) _TTp()
 #include <map>
-class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 bool operator<(const AsciiString &, const AsciiString &);
 // Retail map temporary destruction0x2175CE releases its non-null mapped
 // pointer through0x7DEEF before destroying the AsciiString key. The pointee
