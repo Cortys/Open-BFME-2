@@ -1,11 +1,15 @@
-// ?rva005C1AE4@Rva005C1A36@@QAEHH@Z
-// partial score=0.9 date=2026-09-29
-// ?rva005C1AE4@Rva005C1A36@@QAEHH@Z
-// partial score=0.90 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHs
 // ?rva005C1AE4@Rva005C1A36@@QAEHH@Z @0x005C1AE4 73B
-// Rva005C1A36 slot2 Points-by-faction-index path: faction table 0x009BE9B0 via index, held UserPreferences via slot 0x08, Points-getter 0x005358C3.
-// Evidence: table 0x009BE9B0 PBD 0x00037BA0 held +0x2C slot 0x08 Points 0x005358C3 vtable 0x008743DC slot2 chain.
+// Slot 2 of Rva005C1A36's vtable 0x008743DC: the Points value for a faction
+// index. Builds a by-value AsciiString from the faction table 0x009BE9B0,
+// fetches the UserPreferences from the object held at +0x2C through its
+// slot 2 (0x08), and calls the rowed Points getter 0x005358C3.
+// Retail keeps the argument temporary live (state 0) across the slot-2 call
+// and disarms it only before the final call. A direct `m_held->v2()->...`
+// disarms before the slot-2 call (the banked 0.90 attempt); an inline
+// accessor gives retail's order. Retail also keeps that accessor out of line
+// at 0x005C1A85 (8B, `mov ecx,[ecx+0x2c]; mov eax,[ecx]; jmp [eax+8]`, no
+// references).
 template <typename T>
 class StringBase
 {
@@ -60,6 +64,7 @@ public:
 	virtual void v1();
 	virtual int v2(int idx);
 	int rva005C1AE4(int idx);
+	UserPreferences *prefs() { return m_held->v2(); }
 private:
 	char m_pad[0x28];
 	Holder *m_held;
@@ -69,5 +74,5 @@ static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordo
 
 int Rva005C1A36::rva005C1AE4(int idx)
 {
-	return m_held->v2()->rva005358C3(AsciiString(kFactions[idx]));
+	return prefs()->rva005358C3(AsciiString(kFactions[idx]));
 }
