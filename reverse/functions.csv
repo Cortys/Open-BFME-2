@@ -43326,3 +43326,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva0052C961Get@@YAPAXPAX00@Z,,0x0052C961,38,Code/GameEngine/Source/Common/Rva0052C961UninitCopy.cpp,matched,Uninit copy stride 20 via rowed Construct 0x0052C392 caller 0x0052CCA7 unlocks 0x0052CC64
 ?rva00332E60@Rva00332E60@@QAEPAXH@Z,,0x00332E60,35,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00332E60.cpp,matched,unlock 17-entry search via O1 table at plus20
 ??0Rva003323AD@@QAE@ABV?$StringBase@D@@@Z,,0x003323AD,37,Code/GameEngine/Source/Common/Rva003323ADCtor.cpp,matched,unlock ctor StringBase plus flag plus Vector_base E16
+?rva002D78A4@Radar@@QAEPAVObject@@PAVRadarObject@@PAUICoord2D@@@Z,,0x002D78A4,102,Code/GameEngine/Source/Common/System/RadarRva002D78A4.cpp,matched,Radar list search via worldToRadar within one cell
