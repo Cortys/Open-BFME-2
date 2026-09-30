@@ -3585,3 +3585,6 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva005FB29A@@YAPAPAVRva005FB22B@@PAPAV1@PBX@Z	0x005FB29A	50	blocked	factory needs EBP frame without EH prolog t=12 model=muse-08
 ?rva005AA740@Rva005AA735@@UAE_NXZ	0x005AA740	131	blocked	vslot 3 needs 2 placeholder virtuals t=8 model=muse-08
 ??1Rva001EE3DE@@UAE@XZ	0x001EE3DE	165	partial	je disp 0x0C vs 0x0F 1B t=25 model=muse-06 score=0.9939 stash=reverse/attempts/0x001ee3de.cpp
+??0WallHubBehavior@@QAE@PAVThing@@PBVModuleData@@@Z	0x00452E27	154	blocked	chain ctor multi-vtable at 0xC-0x10-0x20 map-insert-this-vs-Object-plus-8 confusion float-ucomiss t=15 model=muse-03
+?bfmeUpdate@BfmeCellFC@@QAEXH_NH@Z	0x006C15E0	101	blocked	or-esi-needs-O1-ternary-needs-no-O1-asm-moves-mode-to-edi-plus-push-pop best-equals-stash-102B t=15 model=muse-03
+?rva00449522@Rva00447773@@QAEPAXH@Z	0x00449522	43	blocked	imul-off-in-esi-vs-eax-plus-push-lea unsigned-same-as-stash best-equals-42B t=10 model=muse-03
