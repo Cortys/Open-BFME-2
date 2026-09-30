@@ -85,33 +85,7 @@ void Transport::Rva004D5496(void)
 
 // ??0Transport@@QAE@XZ
 // retail 0x004D4AF2, 153 bytes.
-Transport::Transport(void)
-{
-	m_flag40E00 = true;
-	m_ptr40E04 = NULL;
-	m_winsockActive = false;
-	m_int40E6C = 0;
-	m_int40E70 = 0;
-	m_badPackets = 0;
-	Message *out = m_outBuffer;
-	int n = 128;
-	do {
-		((Transport*)out)->clearBuffer_Rva004D4A59();
-		((Transport*)(out + 128))->clearBuffer_Rva004D4A59();
-		++out;
-	} while (--n != 0);
-	int *p = m_stats1;
-	int m = 30;
-	do {
-		p[-30] = 0;
-		p[0] = 0;
-		p[30] = 0;
-		p[60] = 0;
-		p[90] = 0;
-		p[120] = 0;
-		++p;
-	} while (--m != 0);
-}
+// Transport::Transport: defined in TransportCtor.cpp (its row's unit).
 
 // ??1Transport@@QAE@XZ
 // retail 0x004494BA, 64 bytes. Runs the slot clearer, then the eight

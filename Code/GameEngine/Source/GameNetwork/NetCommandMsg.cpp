@@ -181,10 +181,7 @@ UnsignedByte NetAckStage2CommandMsg::getOriginalPlayerID()
 	return m_originalPlayerID;
 }
 
-UnsignedByte NetProgressCommandMsg::getPercentage()
-{
-	return m_percent;
-}
+// NetProgressCommandMsg::getPercentage: defined in NetProgressCommandMsgGetPercentage.cpp (its row's unit).
 
 // ?setPercentage@NetProgressCommandMsg@@QAEXE@Z present-unmatched
 void NetProgressCommandMsg::setPercentage(UnsignedByte percent)

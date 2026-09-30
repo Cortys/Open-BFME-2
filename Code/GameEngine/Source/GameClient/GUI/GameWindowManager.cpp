@@ -527,38 +527,8 @@ void GameWindowManager::addWindowToParent( GameWindow *window,
 /** Add a child window to the parent, put place it at the end of the 
 	* parent window child list */
 //-------------------------------------------------------------------------------------------------
-void GameWindowManager::addWindowToParentAtEnd( GameWindow *window,	
-																								GameWindow *parent )
-{
-
-	if( parent )
-	{
-
-		window->m_prev = NULL;
-		window->m_next = NULL;
-		if( parent->m_child )
-		{
-			GameWindow *last;
-
-			// wind down to last child in list
-			last = parent->m_child;
-			while( last->m_next != NULL )
-				last = last->m_next;
-
-			// tie to list
-			last->m_next = window;
-			window->m_prev = last;
-
-		}  // end if
-		else
-			parent->m_child = window;
-
-		// assign the parent to the window
-		window->m_parent = parent;
-
-	}  // end if
-
-}  // end addWindowToParentAtEnd
+// GameWindowManager::addWindowToParentAtEnd: defined in GameWindowManager_enableWindowsInRange.cpp (its row's unit).
+  // end addWindowToParentAtEnd
 
 //-------------------------------------------------------------------------------------------------
 /** this gets called from winHide() when a window hides itself */
@@ -593,44 +563,14 @@ void GameWindowManager::windowHiding( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Hide all windows in a certain range of id's (inclusive) */
 //-------------------------------------------------------------------------------------------------
-void GameWindowManager::hideWindowsInRange( GameWindow *baseWindow, 
-																						Int first, Int last, 
-																						Bool hideFlag )
-{
-	Int i;
-	GameWindow *window;
-
-	for( i = first; i <= last; i++ ) 
-	{
-
-		window = winGetWindowFromId( baseWindow, i );
-		if( window )
-			window->winHide( hideFlag );
-
-	}  // end for i
-
-}  // end hideWindowsInRange
+// GameWindowManager::hideWindowsInRange: defined in GameWindowManager_enableWindowsInRange.cpp (its row's unit).
+  // end hideWindowsInRange
 
 //-------------------------------------------------------------------------------------------------
 // Enable all windows in a certain range of id's (inclusive)
 //-------------------------------------------------------------------------------------------------
-void GameWindowManager::enableWindowsInRange( GameWindow *baseWindow, 
-																							Int first, Int last, 
-																							Bool enableFlag )
-{
-	Int i;
-	GameWindow *window;
-
-	for( i =first; i <= last; i++ ) 
-	{
-
-		window = winGetWindowFromId( baseWindow, i );
-		if( window )
-			window->winEnable( enableFlag );
-
-	}  // end for i
-
-}  // end enableWindowsInRange
+// GameWindowManager::enableWindowsInRange: defined in GameWindowManager_enableWindowsInRange.cpp (its row's unit).
+  // end enableWindowsInRange
 
 //-------------------------------------------------------------------------------------------------
 /** Captures the mouse capture. */
@@ -676,31 +616,8 @@ GameWindow *GameWindowManager::winGetCapture( void )
 //-------------------------------------------------------------------------------------------------
 /** Gets the window pointer from its id */
 //-------------------------------------------------------------------------------------------------
-GameWindow *GameWindowManager::winGetWindowFromId( GameWindow *window, Int id )
-{
-
-	if( window == NULL )
-		window = m_windowList;
-
-	for( ; window; window = window->m_next ) 
-	{
-
-		if( window->winGetWindowId() == id)
-			return window;
-		else if( window->m_child ) 
-		{
-			GameWindow *child = winGetWindowFromId( window->m_child, id );
-
-			if( child )
-				return child;
-
-		}  // end else if
-
-	}  // end for
-
-	return NULL;
-
-}  // end WinGetWindowFromId
+// GameWindowManager::winGetWindowFromId: defined in GameWindowManager_enableWindowsInRange.cpp (its row's unit).
+  // end WinGetWindowFromId
 
 //-------------------------------------------------------------------------------------------------
 /** Gets the Window List Pointer */
@@ -767,52 +684,8 @@ GameWindow *GameWindowManager::winGetFocus( void )
 //-------------------------------------------------------------------------------------------------
 /** Set the current input focus */
 //-------------------------------------------------------------------------------------------------
-Int GameWindowManager::winSetFocus( GameWindow *window )
-{
-	Bool wantsFocus = FALSE;
-
-	// if a window doesn't want keyboard focus don't give it
-	if( window )
-		if( BitTest( window->winGetStatus(), WIN_STATUS_NO_FOCUS) )
-			return 0;
-
-	//
-	// Tell current focus window that it's losing focus
-	// unless we are trying to give focus to the current focus window
-	//
-	if( (m_keyboardFocus) && (m_keyboardFocus != window) )
-	{
-		Bool wf;	// dummy var, ignored, but must be passed
-		winSendSystemMsg( m_keyboardFocus, GWM_INPUT_FOCUS, FALSE, (WindowMsgData)&wf );
-	}
-
-	// Set focus to new window
-	m_keyboardFocus = window;
-
-	// Tell new focus window that it has focus
-	if( m_keyboardFocus ) 
-	{
-
-		for (;;)
-		{
-			winSendSystemMsg( window, GWM_INPUT_FOCUS, TRUE, (WindowMsgData)&wantsFocus );
-			if (wantsFocus)
-				break;
-
-			window = window->winGetParent();
-			if( window == NULL )
-				break;
-		}
-
-	}  // end if
-
-	// If new window doesn't want focus, set focus to NULL
-	if( wantsFocus == FALSE )
-		m_keyboardFocus = NULL;
-
-	return WIN_ERR_OK;
-
-}  // end WinSetFocus
+// GameWindowManager::winSetFocus: defined in GameWindowManager_winSetFocus.cpp (its row's unit).
+  // end WinSetFocus
 
 //-------------------------------------------------------------------------------------------------
 /** Process key press through the GUI. */
@@ -1311,48 +1184,8 @@ WinInputReturnCode GameWindowManager::winProcessMouseEvent( GameWindowMessage ms
 	* draw themselves, but will give their children an
 	* opportunity to draw */
 //-------------------------------------------------------------------------------------------------
-Int GameWindowManager::drawWindow( GameWindow *window )
-{
-	GameWindow *child;
-
-	if( window == NULL )
-		return WIN_ERR_INVALID_WINDOW;
-
-	if( BitTest( window->m_status, WIN_STATUS_HIDDEN ) == FALSE )
-	{
-
-		if( !BitTest( window->m_status, WIN_STATUS_SEE_THRU ) && window->m_draw )
-			window->m_draw( window, &window->m_instData );
-
-		/// @todo visit list boxes and borders, this is stupid!
-		// for list boxes only draw the borders BEFORE the children
-		if( BitTest( window->winGetStyle(), GWS_SCROLL_LISTBOX ) )
-			if( BitTest( window->m_status, WIN_STATUS_BORDER ) == TRUE &&
-					!BitTest( window->m_status, WIN_STATUS_SEE_THRU ) )
-				window->winDrawBorder();
-
-		// draw children in reverse order just like the window list
-		child = window->m_child;
-		while( child && child->m_next )
-			child = child->m_next;
-
-		for( ; child; child = child->m_prev )
-				drawWindow( child );
-
-		//
-		// draw the border for the window AFTER the window contents AND the
-		// children contents have drawn
-		//
-		if( !BitTest( window->winGetStyle(), GWS_SCROLL_LISTBOX ) )
-			if( BitTest( window->m_status, WIN_STATUS_BORDER ) == TRUE &&
-					!BitTest( window->m_status, WIN_STATUS_SEE_THRU ) )
-				window->winDrawBorder();
-
-	}  // end if
-
-	return WIN_ERR_OK;
-
-}  // end drawWindow
+// GameWindowManager::drawWindow: defined in GameWindowManager_drawWindow_Thunk.cpp (its row's unit).
+  // end drawWindow
 
 //-------------------------------------------------------------------------------------------------
 /** Draw the GUI in reverse order to correlate with clicking priority */
@@ -1397,23 +1230,8 @@ void GameWindowManager::winRepaint( void )
 //-------------------------------------------------------------------------------------------------
 /** Dump information about all the windows for resource problems */
 //-------------------------------------------------------------------------------------------------
-void GameWindowManager::dumpWindow( GameWindow *window )
-{
-#ifndef FINAL
-	GameWindow *child;
-
-	if( window == NULL )
-		return;
-
-	DEBUG_LOG(( "ID: %d\tRedraw: 0x%08X\tUser Data: %d\n",
-				 	 window->winGetWindowId(), window->m_draw, window->m_userData ));
-	
-	for( child = window->m_child; child; child = child->m_next )
-		dumpWindow( child );
-
-	return;
-#endif
-}  // end dumpWindow
+// GameWindowManager::dumpWindow: defined in GameWindowManager_dumpWindow.cpp (its row's unit).
+  // end dumpWindow
 
 //-------------------------------------------------------------------------------------------------
 /** Create a new window by setting up its parameters and callbacks. */
@@ -1678,16 +1496,8 @@ void GameWindowManager::winSetGrabWindow( GameWindow *window )
 //-------------------------------------------------------------------------------------------------
 /** Explicitly set the grab window */
 //-------------------------------------------------------------------------------------------------
-void GameWindowManager::winSetLoneWindow( GameWindow *window )
-{
-	// ignore if we're trying to set the same window
-	if( m_loneWindow == window )
-		return;
-	if( m_loneWindow )
-		TheWindowManager->winSendSystemMsg( m_loneWindow, GGM_CLOSE, 0, 0 );
-	m_loneWindow = window;
-
-}  // end winSetGrabWindow
+// GameWindowManager::winSetLoneWindow: defined in GameWindowManager_winSetLoneWindow.cpp (its row's unit).
+  // end winSetGrabWindow
 
 //-------------------------------------------------------------------------------------------------
 /** Create a Modal Message Box */
@@ -3629,19 +3439,8 @@ void GameWindowManager::assignDefaultGadgetLook( GameWindow *gadget,
 /** Given a text label, retreive the real localized text associated
 	* with that label */
 //-------------------------------------------------------------------------------------------------
-UnicodeString GameWindowManager::winTextLabelToText( AsciiString label )
-{
-	
-	// sanity
-	if( label.isEmpty() )
-		return UnicodeString::TheEmptyString;
-
-	/// @todo we need to write the string manager here, this is TEMPORARY!!!
-	UnicodeString tmp;
-	tmp.translate(label);
-	return tmp;
-
-}  // end winTextLabelToText
+// GameWindowManager::winTextLabelToText: defined in GameWindowManager_winTextLabelToText.cpp (its row's unit).
+  // end winTextLabelToText
 
 //-------------------------------------------------------------------------------------------------
 /** find the top window at the given coordinates */
@@ -4087,59 +3886,11 @@ Bool GameWindowManager::initTestGUI( void )
 }  // end initTestGUI
 
 
-void GameWindowManager::winNextTab( GameWindow *window )
-{
-	if(m_tabList.size() == 0|| m_modalHead)
-		return;
+// GameWindowManager::winNextTab: defined in GameWindowManager_winPrevTab.cpp (its row's unit).
 
-	GameWindowList::iterator it = m_tabList.begin();
-	while( it != m_tabList.end())
-	{
-		if(*it == window)
-		{
-			it++;
-			break;
-		}
-		it++;
-	}
-	if(it != m_tabList.end())
-		winSetFocus(*it);
-	else
-	{
-		winSetFocus(*m_tabList.begin());
-	}
-	winSetLoneWindow(NULL);
-}
+// GameWindowManager::winPrevTab: defined in GameWindowManager_winPrevTab.cpp (its row's unit).
 
-void GameWindowManager::winPrevTab( GameWindow *window )
-{
-	if(m_tabList.size() == 0 || m_modalHead)
-		return;
-
-	GameWindowList::reverse_iterator it = m_tabList.rbegin();
-	while( it != m_tabList.rend())
-	{
-		if(*it == window)
-		{
-			it++;
-			break;
-		}
-		it++;
-	}
-	if(it != m_tabList.rend())
-		winSetFocus(*it);
-	else
-	{
-		winSetFocus(*m_tabList.rbegin());
-	}	
-	winSetLoneWindow(NULL);
-}
-
-void GameWindowManager::registerTabList( GameWindowList tabList )
-{
-	m_tabList.clear();
-	m_tabList = tabList;
-}
+// GameWindowManager::registerTabList: defined in GameWindowManager_registerTabList.cpp (its row's unit).
 
 // ?GameWindowManager::clearTabList present-unmatched
 void GameWindowManager::clearTabList( void )

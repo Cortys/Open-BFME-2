@@ -75,10 +75,7 @@ W3DTornadoDraw::W3DTornadoDraw(Thing *thing, const ModuleData *moduleData)
 {
 }
 
-// ??1W3DTornadoDraw@@ present-unmatched
-W3DTornadoDraw::~W3DTornadoDraw()
-{
-}
+// W3DTornadoDraw::~W3DTornadoDraw: defined in W3DTornadoDrawDtor.cpp (its row's unit).
 
 void W3DTornadoDraw::rva000D1743()
 {

@@ -490,17 +490,8 @@ void Anim2D::clearStatus( UnsignedByte statusBits )
 // ------------------------------------------------------------------------------------------------
 /** Return the "natural" width of the image for our current frame */
 // ------------------------------------------------------------------------------------------------
-// ?getCurrentFrameWidth@Anim2D@@QBEIXZ present-unmatched
-UnsignedInt Anim2D::getCurrentFrameWidth( void ) const
-{
-	const Image *currentFrameImage = m_template->getFrame( m_currentFrame );
-
-	if( currentFrameImage )
-		return currentFrameImage->getImageWidth();
-	
-	return 0;
-
-}  // end getCurrentFrameWidth
+// Anim2D::getCurrentFrameWidth: defined in Anim2DCurrentFrameWidth.cpp (its row's unit).
+  // end getCurrentFrameWidth
 
 // ------------------------------------------------------------------------------------------------
 /** Return the "natural" height of the image for our current frame */

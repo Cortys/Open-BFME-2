@@ -436,8 +436,5 @@ void GadgetCheckBoxToggle( GameWindow *g)
 // GadgetCheckBoxIsChecked ======================================================
 /** Check the check state */
 //=============================================================================
-Bool GadgetCheckBoxIsChecked( GameWindow *g )
-{
-	WinInstanceData *instData = g->winGetInstanceData();
-	return (BitTest(instData->m_state, WIN_STATE_SELECTED));
-}
+// GadgetCheckBoxIsChecked: defined in GadgetCheckBoxIsChecked.cpp (its row's unit).
+Bool GadgetCheckBoxIsChecked( GameWindow *g );

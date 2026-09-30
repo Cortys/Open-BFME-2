@@ -1041,74 +1041,12 @@ void chatSendRawW(CHAT chat,
 }
 #endif
 
+// chatChangeNickA: defined in ChatSdkBodies.cpp (its row's unit).
 void chatChangeNickA(CHAT chat,
 					const char * newNick,
 					chatChangeNickCallback callback,
 					void * param,
-					CHATBool blocking)
-{
-	int ID;
-	CHATBool success = CHATTrue;
-	
-	CONNECTION;
-	CONNECTED;
-
-	assert(newNick);
-	assert(newNick[0]);
-	assert(strlen(newNick) < MAX_NICK);
-	assert(callback);
-	assert(connection->connected);
-
-	// chatRetryWithNick should be called while connecting.
-	///////////////////////////////////////////////////////
-	if(!connection->connected)
-		return;
-
-	// No nick.
-	///////////
-	if(!newNick || !newNick[0])
-		success = CHATFalse;
-	
-	// 10-13-2004: Added By Saad Nader
-	// check for long or invalid chars in new nick.
-	///////////////////////////////////////////////
-	if (ciNickIsValid(newNick) != CHAT_NICK_OK)
-	{
-		success = CHATFalse;
-	}
-
-	// Check for same nick.
-	///////////////////////
-	if(success && (strcasecmp(newNick, connection->nick) == 0))
-		success = CHATFalse;
-
-	// Call the callback?
-	/////////////////////
-	if(!success)
-	{
-		if(callback)
-		{
-			ciCallbackChangeNickParams params;
-			params.success = success;
-			params.oldNick = connection->nick;
-			params.newNick = (char *)newNick;
-			ID = ciGetNextID(chat);
-			ciAddCallback(chat, CALLBACK_CHANGE_NICK, (void*)callback, &params, param, ID, NULL);
-
-			CI_DO_BLOCKING;
-		}
-
-		return;
-	}
-
-	// Send the request.
-	////////////////////
-	ciSocketSendf(&connection->chatSocket, "NICK :%s", newNick);
-
-	ID = ciAddNICKFilter(chat, connection->nick, newNick, callback, param);
-
-	CI_DO_BLOCKING;
-}
+					CHATBool blocking);
 #ifdef GSI_UNICODE
 void chatChangeNickW(CHAT chat,
 					const unsigned short * newNick,
@@ -1858,25 +1796,12 @@ void chatSetChannelLimitW(CHAT chat,
 }
 #endif
 
+// chatEnumChannelBansA: defined in ChatMessagePump.c (its row's unit).
 void chatEnumChannelBansA(CHAT chat,
 						 const char * channel,
 						 chatEnumChannelBansCallback callback,
 						 void * param,
-						 CHATBool blocking)
-{
-	int ID;
-	CONNECTION;
-	CONNECTED;
-
-	ASSERT_CHANNEL();
-	assert(callback != NULL);
-
-	ciSocketSendf(&connection->chatSocket, "MODE %s +b", channel);
-
-	ID = ciAddGETBANFilter(chat, channel, callback, param);
-
-	CI_DO_BLOCKING;
-}
+						 CHATBool blocking);
 #ifdef GSI_UNICODE
 void chatEnumChannelBansW(CHAT chat,
 						 const unsigned short * channel,
@@ -2185,25 +2110,12 @@ void chatSendUserMessageW(CHAT chat,
 }
 #endif
 
+// chatGetUserInfoA: defined in ChatMessagePump.c (its row's unit).
 void chatGetUserInfoA(CHAT chat,
 					 const char * user,
 					 chatGetUserInfoCallback callback,
 					 void * param,
-					 CHATBool blocking)
-{
-	int ID;
-	CONNECTION;
-	CONNECTED;
-
-	ASSERT_USER(user);
-	assert(callback != NULL);
-
-	ciSocketSendf(&connection->chatSocket, "WHOIS %s", user);
-
-	ID = ciAddWHOISFilter(chat, user, callback, param);
-
-	CI_DO_BLOCKING;
-}
+					 CHATBool blocking);
 #ifdef GSI_UNICODE
 void chatGetUserInfoW(CHAT chat,
 					 const unsigned short * user,
@@ -2307,25 +2219,12 @@ CHATBool chatGetBasicUserInfoNoWaitW(CHAT chat,
 }
 #endif
 
+// chatGetChannelBasicUserInfoA: defined in ChatMessagePump.c (its row's unit).
 void chatGetChannelBasicUserInfoA(CHAT chat,
 								 const char * channel,
 								 chatGetChannelBasicUserInfoCallback callback,
 								 void * param,
-								 CHATBool blocking)
-{
-	int ID;
-	CONNECTION;
-	CONNECTED;
-
-	ASSERT_CHANNEL();
-	assert(callback != NULL);
-
-	ciSocketSendf(&connection->chatSocket, "WHO %s", channel);
-
-	ID = ciAddCWHOFilter(chat, channel, callback, param);
-
-	CI_DO_BLOCKING;
-}
+								 CHATBool blocking);
 #ifdef GSI_UNICODE
 void chatGetChannelBasicUserInfoW(CHAT chat,
 								 const unsigned short * channel,

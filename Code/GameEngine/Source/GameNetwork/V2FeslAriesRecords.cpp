@@ -78,17 +78,7 @@ public:
 	char m_locale[ 8 ];
 };
 
-Rva007F4EF0Lobby::Rva007F4EF0Lobby( Rva007E8810Message *msg )
-{
-	m_lid = msg->getInt( "LID", 0 );
-	msg->getString( "NAME", m_name, 0x80 );
-	m_passing = msg->getInt( "PASSING", 0 );
-	m_favoriteGames = msg->getInt( "FAVORITE-GAMES", 0 );
-	m_favoritePlayers = msg->getInt( "FAVORITE-PLAYERS", 0 );
-	msg->getString( "LOCALE", m_locale, 8 );
-	m_maxGames = msg->getInt( "MAX-GAMES", 0 );
-	m_numGames = msg->getInt( "NUM-GAMES", 0 );
-}
+// Rva007F4EF0Lobby::Rva007F4EF0Lobby: defined in V2FeslAriesLobby.cpp (its row's unit).
 
 class Rva007F4F90LobbyCounts
 {

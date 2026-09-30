@@ -188,9 +188,7 @@ SkirmishPreferences::SkirmishPreferences( void )
 	load("Skirmish.ini");
 }
 
-SkirmishPreferences::~SkirmishPreferences()
-{
-}
+// SkirmishPreferences::~SkirmishPreferences: defined in SkirmishPreferences.cpp (its row's unit).
 
 // ?getSlotList@SkirmishPreferences@@ present-unmatched
 AsciiString SkirmishPreferences::getSlotList(void)
@@ -354,35 +352,7 @@ void SkirmishPreferences::setStartingCash( const Money & startingCash )
 
 
 
-Bool SkirmishPreferences::write(void)
-{
-	if (!TheSkirmishGameInfo)
-		return FALSE;
-
-	AsciiString tmp;
-
-	tmp.format("%d", TheSkirmishGameInfo->getConstSlot(0)->getColor());
-	(*this)["Color"] = tmp;
-
-	tmp.format("%d", TheSkirmishGameInfo->getConstSlot(0)->getPlayerTemplate());
-	(*this)["PlayerTemplate"] = tmp;
-
-	(*this)["Map"] = TheSkirmishGameInfo->getMap();
-
-	(*this)["UserName"] = UnicodeStringToQuotedPrintable(TheSkirmishGameInfo->getConstSlot(0)->getName());
-
-  setStartingCash( TheSkirmishGameInfo->getStartingCash() );
-  setSuperweaponRestricted( TheSkirmishGameInfo->getSuperweaponRestriction() != 0 );
-
-	setSlotList();
-
-//	NameKeyType sliderGameSpeedID = TheNameKeyGenerator->nameToKey( AsciiString( "SkirmishGameOptionsMenu.wnd:SliderGameSpeed" ) );
-	GameWindow *sliderGameSpeed = TheWindowManager->winGetWindowFromId( parentSkirmishGameOptions, sliderGameSpeedID );
-	Int maxFPS = GadgetSliderGetPosition( sliderGameSpeed );
-	setInt("FPS", maxFPS);
-
-	return UserPreferences::write();
-}
+// SkirmishPreferences::write: defined in SkirmishPreferences.cpp (its row's unit).
 
 /*
 static void playerTooltip(GameWindow *window,

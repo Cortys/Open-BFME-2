@@ -174,134 +174,38 @@ static __forceinline int ciCheckForID(CHAT chat, int ID)
 // asked for is worth repeating back.
 
 // _ciErrErroneusNicknameHandler, retail 0x0086FC10
-extern "C" void ciErrErroneusNicknameHandler(CHAT chat, const ciServerMessage *message)
-{
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (connection->connecting)
-		ciNickError(chat, 1, connection->nick, 0, 0);
-}
+// ciErrErroneusNicknameHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciErrErroneusNicknameHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciErrUniqueNickExpiredHandler, retail 0x0086FC90
-extern "C" void ciErrUniqueNickExpiredHandler(CHAT chat, const ciServerMessage *message)
-{
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (connection->connecting)
-		ciNickError(chat, 2, "", 0, 0);
-}
+// ciErrUniqueNickExpiredHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciErrUniqueNickExpiredHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciErrNoUniqueNickHandler, retail 0x0086FC70
-extern "C" void ciErrNoUniqueNickHandler(CHAT chat, const ciServerMessage *message)
-{
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (connection->connecting)
-		ciNickError(chat, 3, "", 0, 0);
-}
+// ciErrNoUniqueNickHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciErrNoUniqueNickHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciQuitHandler, retail 0x0086D820
-extern "C" void ciQuitHandler(CHAT chat, const ciServerMessage *message)
-{
-	if (message->numParams != 1)
-		return;
-
-	ciUserEnumChannels(chat, message->nick, ciQuitEnumChannelsCallback,
-		message->params[0]);
-}
+// ciQuitHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciQuitHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciKillHandler, retail 0x0086D900
-extern "C" void ciKillHandler(CHAT chat, const ciServerMessage *message)
-{
-	if (message->numParams != 2)
-		return;
-
-	ciUserEnumChannels(chat, message->params[0], ciKillEnumChannelsCallback,
-		message->params[1]);
-}
+// ciKillHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciKillHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciRplWelcomeHandler, retail 0x0086F5D0 -- the server accepted us, so the
 // connection is up and the caller's connect callback finally fires.
-extern "C" void ciRplWelcomeHandler(CHAT chat, const ciServerMessage *message)
-{
-	char *nick;
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (message->numParams != 2)
-		return;
-
-	nick = message->params[0];
-
-	if (strcmp(connection->nick, nick) != 0)
-	{
-		strncpy(connection->nick, nick, 64);
-		connection->nick[63] = '\0';
-	}
-
-	connection->connecting = CHATFalse;
-	connection->connected = CHATTrue;
-
-	if (connection->connectCallback != 0)
-		connection->connectCallback(chat, CHATTrue, 0,
-			connection->connectParam);
-}
+// ciRplWelcomeHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciRplWelcomeHandler(CHAT chat, const ciServerMessage *message);
 
 // _ciRplLoginHandler, retail 0x0086F7C0
-extern "C" void ciRplLoginHandler(void *chat, const ciServerMessage *message)
-{
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (message->numParams < 3)
-		return;
-
-	connection->userID = atoi(message->params[1]);
-	connection->profileID = atoi(message->params[2]);
-
-	if (connection->fillInUserCallback)
-	{
-		ciSocketSend(&connection->chatSocket, "USRIP");
-	}
-	else
-	{
-		ciSendNickAndUser(chat);
-	}
-}
+// ciRplLoginHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciRplLoginHandler(void *chat, const ciServerMessage *message);
 
 // _ciRplSecureKeyHandler, retail 0x0086F660 -- both halves of the stream key
 // arrive in one message, xcoded with the secret key we were built with.
-extern "C" void ciRplSecureKeyHandler(void *chat, const ciServerMessage *message)
-{
-	char *outKeyRand;
-	char *inKeyRand;
-	int outKeyLen;
-	int inKeyLen;
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (message->numParams != 3)
-		return;
-
-	outKeyRand = message->params[1];
-	inKeyRand = message->params[2];
-	outKeyLen = (int)strlen(outKeyRand);
-	inKeyLen = (int)strlen(inKeyRand);
-	gs_xcode_buf(outKeyRand, outKeyLen, connection->secretKey);
-	gs_xcode_buf(inKeyRand, inKeyLen, connection->secretKey);
-	gs_prepare_key((const byte *)outKeyRand, outKeyLen, &connection->chatSocket.outKey);
-	gs_prepare_key((const byte *)inKeyRand, inKeyLen, &connection->chatSocket.inKey);
-	connection->chatSocket.secure = 1;
-	if (connection->loginType != 0)
-	{
-		ciSendLogin(chat);
-	}
-	else if (connection->fillInUserCallback)
-	{
-		ciSocketSend(&connection->chatSocket, "USRIP");
-	}
-	else
-	{
-		ciSendNickAndUser(chat);
-	}
-}
+// ciRplSecureKeyHandler: defined in chatHandlers.c (its row's unit).
+extern "C" void ciRplSecureKeyHandler(void *chat, const ciServerMessage *message);
 
 // The outgoing half: everything below formats a line onto the chat socket at
 // +0x1c, and the two that can fail locally report it through the same callback
@@ -319,15 +223,8 @@ extern "C" void chatBanUserSimpleA(CHAT chat, const char *channel, const char *u
 }
 
 // _chatInviteUserA, retail 0x008614E0
-extern "C" void chatInviteUserA(CHAT chat, const char *channel, const char *user)
-{
-	ciConnection *connection = (ciConnection *)chat;
-
-	if (!chat || !connection->connected)
-		return;
-
-	ciSocketSendf(&connection->chatSocket, "INVITE %s %s", user, channel);
-}
+// chatInviteUserA: defined in chatMain.c (its row's unit).
+extern "C" void chatInviteUserA(CHAT chat, const char *channel, const char *user);
 
 // _ciSendUserA, retail 0x00860280 -- the IRC USER registration line.
 extern "C" void ciSendUserA(CHAT chat)
@@ -339,43 +236,9 @@ extern "C" void ciSendUserA(CHAT chat)
 }
 
 // _chatSendChannelMessageA, retail 0x008609F0
+// chatSendChannelMessageA: defined in chatMain.c (its row's unit).
 extern "C" void chatSendChannelMessageA(CHAT chat, const char *channel,
-	const char *message, int type)
-{
-	ciConnection *connection = (ciConnection *)chat;
-	chatChannelCallbacks *callbacks;
-
-	if (!chat || !connection->connected || !message || !message[0])
-		return;
-
-	if (type == 0)
-		ciSocketSendf(&connection->chatSocket, "PRIVMSG %s :%s", channel, message);
-	else if (type == 1)
-		ciSocketSendf(&connection->chatSocket,
-			"PRIVMSG %s :\001ACTION %s\001", channel, message);
-	else if (type == 2)
-		ciSocketSendf(&connection->chatSocket, "NOTICE %s :%s", channel, message);
-	else if (type == 3)
-		ciSocketSendf(&connection->chatSocket, "UTM %s :%s", channel, message);
-	else if (type == 4)
-		ciSocketSendf(&connection->chatSocket, "ATM %s :%s", channel, message);
-	else
-		return;
-
-	callbacks = ciGetChannelCallbacks(chat, channel);
-	if (callbacks)
-	{
-		void *callbackParam = callbacks->param;
-		void *callback = callbacks->channelMessage;
-		ciCallbackChannelMessageParams callbackParams;
-		callbackParams.channel = channel;
-		callbackParams.user = connection->nick;
-		callbackParams.message = message;
-		callbackParams.type = type;
-		ciAddCallback_(chat, 4, callback, &callbackParams,
-			callbackParam, 0, channel, sizeof(callbackParams));
-	}
-}
+	const char *message, int type);
 
 // _chatChangeNickA, retail 0x008604C0
 extern "C" void chatChangeNickA(CHAT chat, const char *newNick,

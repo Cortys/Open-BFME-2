@@ -856,18 +856,7 @@ FXListStore::~FXListStore()
 }
 
 //-------------------------------------------------------------------------------------------------
-const FXList *FXListStore::findFXList(const char* name) const
-{
-	if (stricmp(name, "None") == 0)
-		return NULL;
-
-  FXListMap::const_iterator it = m_fxmap.find(NAMEKEY(name));
-  if (it != m_fxmap.end()) 
-	{
-		return &(*it).second;
-	}
-	return NULL;
-}
+// FXListStore::findFXList: defined in FXListStoreFindFXList.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /*static */ void FXListStore::parseFXListDefinition(INI *ini)

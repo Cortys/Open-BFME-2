@@ -51,31 +51,7 @@ private:
 	bool m_isWinsockInitialized;
 };
 
-AsciiString IPEnumeration::getMachineName(void)
-{
-	if (!m_isWinsockInitialized)
-	{
-		WORD version = 0x0202;
-		WSADATA data;
-		if (WSAStartup(version, &data) != 0)
-			return AsciiString::TheEmptyString;
-
-		if ((unsigned char)data.wVersion != 2 ||
-			(unsigned char)(data.wVersion >> 8) != 2)
-		{
-			WSACleanup();
-			return AsciiString::TheEmptyString;
-		}
-
-		m_isWinsockInitialized = true;
-	}
-
-	char hostname[256];
-	if (gethostname(hostname, sizeof(hostname)) != 0)
-		return AsciiString::TheEmptyString;
-
-	return AsciiString(hostname);
-}
+// IPEnumeration::getMachineName: defined in IPEnumerationGetMachineName.cpp (its row's unit).
 
 IPEnumeration::~IPEnumeration()
 {

@@ -2589,63 +2589,9 @@ static LayoutScriptParse layoutScriptTable[] =
 //-------------------------------------------------------------------------------------------------
 /** Parse the layout block which MUST be present in every window file */
 //-------------------------------------------------------------------------------------------------
-Bool parseLayoutBlock( File *inFile, char *buffer, UnsignedInt version, WindowLayoutInfo *info )
-{
-	LayoutScriptParse *parse;
-	char token[ 256 ];
-
-	AsciiString asciitoken;
-	if (inFile->scanString(asciitoken) == FALSE) {
-		return FALSE;
-	}
-
-	// better be the layout block
-	if (asciitoken.compare("STARTLAYOUTBLOCK") != 0) {
-		return FALSE;
-	}
-
-	while( TRUE )
-	{
-
-		// get next token
-		inFile->scanString(asciitoken);
-
-		// check for end
-		if (asciitoken.compare("ENDLAYOUTBLOCK") == 0) {
-			break;
-		}
-
-		// search for token in the table
-		for( parse = layoutScriptTable; parse && parse->name; parse++ )
-		{
-
-			if (asciitoken.compare(parse->name) == 0)
-			{
-				char *c;
-
-				// read from file
-				readUntilSemicolon( inFile, buffer, WIN_BUFFER_LENGTH );
-
-				// eat equals separator " = "
-				c = strtok( buffer, " =" );
-
-				strcpy(token, asciitoken.str());
-				
-				// parse it
-				if( parse->parse( token, c, version, info ) == FALSE )	
-					return FALSE;
-
-				break;  // exit for
-
-			}  // end if
-
-		}  // end for parse
-
-	}  // end while
-
-	return TRUE;
-
-}  // end parseLayoutBlock
+// parseLayoutBlock: defined in GameWindowManagerScript_parseLayoutBlock.cpp (its row's unit).
+Bool parseLayoutBlock( File *inFile, char *buffer, UnsignedInt version, WindowLayoutInfo *info );
+  // end parseLayoutBlock
 
 ///////////////////////////////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////

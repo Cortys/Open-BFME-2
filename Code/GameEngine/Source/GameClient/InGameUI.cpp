@@ -233,35 +233,18 @@ static Bool similarUnitSelection( Drawable *test, void *userData )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-void showReplayControls( void )
-{
-	if (m_replayWindow)
-	{
-		Bool show = TheGameLogic->isInReplayGame();
-		m_replayWindow->winHide(!show);
-	}
-}
+// showReplayControls: defined in ReplayControls.cpp (its row's unit).
+void showReplayControls( void );
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-void hideReplayControls( void )
-{
-	if (m_replayWindow)
-	{
-		m_replayWindow->winHide(TRUE);
-	}
-}
+// hideReplayControls: defined in ReplayControls.cpp (its row's unit).
+void hideReplayControls( void );
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-void toggleReplayControls( void )
-{
-	if (m_replayWindow)
-	{
-		Bool show = TheGameLogic->isInReplayGame() && m_replayWindow->winIsHidden();
-		m_replayWindow->winHide(!show);
-	}
-}
+// toggleReplayControls: defined in ReplayControls.cpp (its row's unit).
+void toggleReplayControls( void );
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -318,36 +301,16 @@ SuperweaponInfo::~SuperweaponInfo()
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::setFont(const AsciiString& superweaponNormalFont, Int superweaponNormalPointSize, Bool superweaponNormalBold)
-{
-	m_nameDisplayString->setFont( TheFontLibrary->getFont( superweaponNormalFont, 
-		TheGlobalLanguageData->adjustFontSize(superweaponNormalPointSize), superweaponNormalBold ) );
-	m_timeDisplayString->setFont( TheFontLibrary->getFont( superweaponNormalFont, 
-		TheGlobalLanguageData->adjustFontSize(superweaponNormalPointSize), superweaponNormalBold ) );
-}
+// SuperweaponInfo::setFont: defined in SuperweaponInfo.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::setText(const UnicodeString& name, const UnicodeString& time)
-{
-	m_nameDisplayString->setText(name);
-	m_timeDisplayString->setText(time);
-}
+// SuperweaponInfo::setText: defined in SuperweaponInfoSetText.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::drawName(Int x, Int y, Color color, Color dropColor)
-{
-	if (color == 0)
-		color = m_color;
- 	m_nameDisplayString->draw(x - m_nameDisplayString->getWidth(), y, color, dropColor);
-}
+// SuperweaponInfo::drawName: defined in SuperweaponInfo.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
-void SuperweaponInfo::drawTime(Int x, Int y, Color color, Color dropColor)
-{
-	if (color == 0)
-		color = m_color;
- 	m_timeDisplayString->draw(x, y, color, dropColor);
-}
+// SuperweaponInfo::drawTime: defined in SuperweaponInfo.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -1328,43 +1291,7 @@ void InGameUI::setRadiusCursor(RadiusCursorType cursorType, const SpecialPowerTe
 //-------------------------------------------------------------------------------------------------
 /** handle updating of "radius cursors" that follow the mouse pos */
 //-------------------------------------------------------------------------------------------------
-void InGameUI::handleRadiusCursor()
-{
-	if (!m_curRadiusCursor.isEmpty())
-	{
-		const MouseIO* mouseIO = TheMouse->getMouseStatus();
-		Coord3D pos;
-
-		//
-		// if the mouse is in the radar window, the position in the world is that which is
-		// represented by the radar, otherwise we use the mouse position itself transformed
-		// from screen to world
-		// But only if the radar is on.
-		//
-		Bool radarOn = TheRadar->isRadarForced() 
-									|| ( !TheRadar->isRadarHidden() 
-												&& ThePlayerList->getLocalPlayer() 
-												&& ThePlayerList->getLocalPlayer()->hasRadar()
-											);
-
-		if( !radarOn  ||  (TheRadar->screenPixelToWorld( &mouseIO->pos, &pos ) == FALSE) )// if radar off, or point not on radar
-			TheTacticalView->screenToTerrain( &mouseIO->pos, &pos );
-
-
-    if ( TheGlobalData->m_doubleClickAttackMove && m_duringDoubleClickAttackMoveGuardHintTimer > 0 )
-    {
-      m_curRadiusCursor.setOpacity( m_duringDoubleClickAttackMoveGuardHintTimer * 0.1f );
-  		m_curRadiusCursor.setPosition( m_duringDoubleClickAttackMoveGuardHintStashedPosition );	//world space position of center of decal
-
-    }
-    else
-    {
-  		m_curRadiusCursor.setPosition(pos);	//world space position of center of decal
-      m_curRadiusCursor.update();
-    }
-
-  }
-}
+// InGameUI::handleRadiusCursor: defined in InGameUI_handleRadiusCursor.cpp (its row's unit).
 
 
 // ?InGameUI::triggerDoubleClickAttackMoveGuardHint present-unmatched
@@ -3962,19 +3889,8 @@ void InGameUI::createControlBar( void )
 //-------------------------------------------------------------------------------------------------
 /** Create the replay control GUI */
 //-------------------------------------------------------------------------------------------------
-void InGameUI::createReplayControl( void )
-{
-
-	m_replayWindow = TheWindowManager->winCreateFromScript( AsciiString("ReplayControl.wnd") );
-
-/*	
-	// hide all windows created from this layout
-	GameWindow *window = TheWindowManager->winGetWindowList();
-	for( ; window; window = window->winGetPrev() )
-		window->winHide( TRUE );
-*/
-
-}  // end createReplayControl
+// InGameUI::createReplayControl: defined in InGameUICreateReplayControl.cpp (its row's unit).
+  // end createReplayControl
 
 // ------------------------------------------------------------------------------------------------
 // InGameUI::playMovie
@@ -4913,36 +4829,7 @@ Int InGameUI::selectAllUnitsByTypeAcrossScreen(KindOfMaskType mustBeSet, KindOfM
 // ------------------------------------------------------------------------------------------------
 /** Selects maching units on the screen */
 // ------------------------------------------------------------------------------------------------
-Int InGameUI::selectMatchingAcrossScreen( void )
-{
-	/// When implementing this, obey TheInGameUI->getMaxSelectCount() if it is > 0
-			
-	IRegion2D region;
-	ICoord2D origin;
-	ICoord2D size;
- 
-	TheTacticalView->getOrigin( &origin.x, &origin.y );
-	size.x = TheTacticalView->getWidth();
-	size.y = TheTacticalView->getHeight();
- 
-	buildRegion( &origin, &size, &region );
-
-	Int numSelected = selectMatchingAcrossRegion(&region);
-	if (numSelected == -1)
-	{
-		UnicodeString message = TheGameText->fetch( "GUI:NothingSelected" );
-		TheInGameUI->message( message );
-	}
-	else if (numSelected == 0)
-	{
-	}
-	else
-	{
-		UnicodeString message = TheGameText->fetch( "GUI:SelectedAcrossScreen" );
-		TheInGameUI->message( message );
-	}
-	return numSelected;
-}
+// InGameUI::selectMatchingAcrossScreen: defined in InGameUI_selectMatchingAcrossScreen.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?InGameUI::selectAllUnitsByTypeAcrossMap present-unmatched
@@ -4975,31 +4862,7 @@ Int InGameUI::selectAllUnitsByTypeAcrossMap(KindOfMaskType mustBeSet, KindOfMask
 //-------------------------------------------------------------------------------------------------
 /** Selects matching units across map */
 //-------------------------------------------------------------------------------------------------
-Int InGameUI::selectMatchingAcrossMap()
-{
-	/// When implementing this, obey TheInGameUI->getMaxSelectCount() if it is > 0
-	Int numSelected = selectMatchingAcrossRegion(NULL);
-	if (numSelected == -1)
-	{
-		UnicodeString message = TheGameText->fetch( "GUI:NothingSelected" );
-		TheInGameUI->message( message );
-	}
-	else if (numSelected == 0)
-	{
-		Drawable *draw = TheInGameUI->getFirstSelectedDrawable();
-		if( !draw || !draw->getObject() || !draw->getObject()->isKindOf( KINDOF_STRUCTURE ) )
-		{
-			UnicodeString message = TheGameText->fetch( "GUI:SelectedAcrossMap" );
-			TheInGameUI->message( message );
-		}
-	}
-	else
-	{
-		UnicodeString message = TheGameText->fetch( "GUI:SelectedAcrossMap" );
-		TheInGameUI->message( message );
-	}
-	return numSelected;
-}
+// InGameUI::selectMatchingAcrossMap: defined in InGameUI_selectMatchingAcrossMap.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?InGameUI::selectAllUnitsByType present-unmatched
@@ -5213,41 +5076,7 @@ void InGameUI::updateFloatingText( void )
 //-------------------------------------------------------------------------------------------------
 /** Itterates through and draws each floating text */
 //-------------------------------------------------------------------------------------------------
-void InGameUI::drawFloatingText( void )
-{
-	FloatingTextData *ftd;
-	// loop through and draw all the texts
-	for(FloatingTextListIt it = m_floatingTextList.begin(); it != m_floatingTextList.end(); ++it)
-	{
-		ftd = *it;
-		ICoord2D pos;
-		// get the local player's index
-		Int playerNdx = ThePlayerList->getLocalPlayer()->getPlayerIndex();
-
-		// which PartitionManager cells are we looking at?
-		Int pCX, pCY;
-		ThePartitionManager->worldToCell(ftd->m_pos3D.x, ftd->m_pos3D.y, &pCX, &pCY);
-
-		// translate it's 3d pos into a 2d screen pos
-		if( TheTacticalView->worldToScreen(&ftd->m_pos3D, &pos) 
-			&& ftd->m_dString 
-			&& ThePartitionManager->getShroudStatusForPlayer(playerNdx, pCX, pCY) == CELLSHROUD_CLEAR )
-		{
-			pos.y -= ftd->m_frameCount * m_floatingTextMoveUpSpeed;
-			Color dropColor;
-			UnsignedByte r, g, b, a;
-			Int width;
-
-			// make drop color black, but use the alpha setting of the fill color specified (for fading)
-			GameGetColorComponents( ftd->m_color, &r, &g, &b, &a );
-			dropColor = GameMakeColor( 0, 0, 0, a );
-			ftd->m_dString->getSize(&width, NULL);
-			// draw it!
-			ftd->m_dString->draw(pos.x - (width / 2), pos.y, ftd->m_color,dropColor);
-		}
-
-	}
-}
+// InGameUI::drawFloatingText: defined in InGameUI_drawFloatingText.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /** ittereate through and clear out the list of floating text */

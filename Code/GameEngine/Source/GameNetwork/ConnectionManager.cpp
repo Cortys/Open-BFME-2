@@ -1010,9 +1010,7 @@ UnsignedInt ConnectionManager::getPacketRouterFallbackSlot(Int packetRouterNumbe
 	return MAX_SLOTS;
 }
 
-UnsignedInt ConnectionManager::getPacketRouterSlot() {
-	return m_packetRouterSlot;
-}
+// ConnectionManager::getPacketRouterSlot: defined in ConnectionManagerLocalSlot.cpp (its row's unit).
 
 // ?areAllQueuesEmpty@ConnectionManager@@ present-unmatched
 Bool ConnectionManager::areAllQueuesEmpty(void) {
@@ -1854,15 +1852,7 @@ void ConnectionManager::quitGame() {
 	disconnectLocalPlayer();
 }
 
-void ConnectionManager::disconnectLocalPlayer() {
-	// kill the frame data and the connections for all the other players.
-	DEBUG_LOG(("ConnectionManager::disconnectLocalPlayer()\n"));
-	for (Int i = 0; i < MAX_SLOTS; ++i) {
-		if (i != m_localSlot) {
-			disconnectPlayer(i);
-		}
-	}
-}
+// ConnectionManager::disconnectLocalPlayer: defined in Network_update.cpp (its row's unit).
 
 /**
  * Takes all the commands that are ready to send and sends them right now.
@@ -1901,9 +1891,7 @@ void ConnectionManager::resendPendingCommands() {
 	}
 }
 
-UnsignedInt ConnectionManager::getLocalPlayerID() {
-	return m_localSlot;
-}
+// ConnectionManager::getLocalPlayerID: defined in ConnectionManagerLocalSlot.cpp (its row's unit).
 
 // ?getPlayerName@ConnectionManager@@ present-unmatched
 UnicodeString ConnectionManager::getPlayerName(Int playerNum) {

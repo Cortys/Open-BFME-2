@@ -234,11 +234,7 @@ enum Detail
 };
 
 
-OptionPreferences::OptionPreferences( void )
-{
-	// note, the superclass will put this in the right dir automatically, this is just a leaf name
-	load("Options.ini");
-}
+// OptionPreferences::OptionPreferences: defined in OptionPreferences_ctor.cpp (its row's unit).
 
 // ?OptionPreferences::~OptionPreferences present-unmatched
 OptionPreferences::~OptionPreferences()
@@ -246,43 +242,11 @@ OptionPreferences::~OptionPreferences()
 }
 
 
-Int OptionPreferences::getCampaignDifficulty(void)
-{
-	OptionPreferences::const_iterator it = find("CampaignDifficulty");
-	if (it == end())
-		return TheScriptEngine->getGlobalDifficulty();
+// OptionPreferences::getCampaignDifficulty: defined in OptionPreferences_getCampaignDifficulty.cpp (its row's unit).
 
-	Int factor = atoi(it->second.str());
-	if (factor < DIFFICULTY_EASY)
-		factor = DIFFICULTY_EASY;
-	if (factor > DIFFICULTY_HARD)
-		factor = DIFFICULTY_HARD;
-	
-	return factor;
-}
+// OptionPreferences::setCampaignDifficulty: defined in OptionPreferences_setCampaignDifficulty.cpp (its row's unit).
 
-void OptionPreferences::setCampaignDifficulty( Int diff )
-{
-	AsciiString prefString;
-	prefString.format("%d", diff );
-	(*this)["CampaignDifficulty"] = prefString;
-}
-
-UnsignedInt OptionPreferences::getLANIPAddress(void)
-{
-	AsciiString selectedIP = (*this)["IPAddress"];
-	IPEnumeration IPs;
-	EnumeratedIP *IPlist = IPs.getAddresses();
-	while (IPlist)
-	{
-		if (selectedIP.compareNoCase(IPlist->getIPstring()) == 0)
-		{
-			return IPlist->getIP();
-		}
-		IPlist = IPlist->getNext();
-	}
-	return TheGlobalData->m_defaultIP;
-}
+// OptionPreferences::getLANIPAddress: defined in OptionPreferences_getLANIPAddress.cpp (its row's unit).
 
 void OptionPreferences::setLANIPAddress( AsciiString IP )
 {
@@ -364,139 +328,27 @@ Bool OptionPreferences::getDoubleClickAttackMoveEnabled(void)
 	return FALSE;
 }
 
-Real OptionPreferences::getScrollFactor(void)
-{
-	OptionPreferences::const_iterator it = find("ScrollFactor");
-	if (it == end())
-		return TheGlobalData->m_keyboardDefaultScrollFactor;
+// OptionPreferences::getScrollFactor: defined in OptionPreferences_getScrollFactor.cpp (its row's unit).
 
-	Int factor = atoi(it->second.str());
-	if (factor < 0)
-		factor = 0;
-	if (factor > 100)
-		factor = 100;
-	
-	return factor/100.0f;
-}
+// OptionPreferences::usesSystemMapDir: defined in OptionPreferences_usesSystemMapDir.cpp (its row's unit).
 
-Bool OptionPreferences::usesSystemMapDir(void)
-{
-	OptionPreferences::const_iterator it = find("UseSystemMapDir");
-	if (it == end())
-		return TRUE;
+// OptionPreferences::saveCameraInReplays: defined in OptionPreferences_saveCameraInReplays.cpp (its row's unit).
 
-	if (stricmp(it->second.str(), "yes") == 0) {
-		return TRUE;
-	}
-	return FALSE;
-}
+// OptionPreferences::useCameraInReplays: defined in OptionPreferences_useCameraInReplays.cpp (its row's unit).
 
-Bool OptionPreferences::saveCameraInReplays(void)
-{
-	OptionPreferences::const_iterator it = find("SaveCameraInReplays");
-	if (it == end())
-		return TRUE;
+// OptionPreferences::getIdealStaticGameDetail: defined in OptionPreferences_getStaticGameDetail.cpp (its row's unit).
 
-	if (stricmp(it->second.str(), "yes") == 0) {
-		return TRUE;
-	}
-	return FALSE;
-}
+// OptionPreferences::getStaticGameDetail: defined in OptionPreferences_getStaticGameDetail.cpp (its row's unit).
 
-Bool OptionPreferences::useCameraInReplays(void)
-{
-	OptionPreferences::const_iterator it = find("UseCameraInReplays");
-	if (it == end())
-		return TRUE;
+// OptionPreferences::getSendDelay: defined in OptionPreferences_getSendDelay.cpp (its row's unit).
 
-	if (stricmp(it->second.str(), "yes") == 0) {
-		return TRUE;
-	}
-	return FALSE;
-}
+// OptionPreferences::getFirewallBehavior: defined in OptionPreferences_getFirewallBehavior.cpp (its row's unit).
 
-Int OptionPreferences::getIdealStaticGameDetail(void)
-{
-	OptionPreferences::const_iterator it = find("IdealStaticGameLOD");
-	if (it == end())
-		return STATIC_GAME_LOD_UNKNOWN;
+// OptionPreferences::getFirewallPortAllocationDelta: defined in OptionPreferences_getFirewallPortAllocationDelta.cpp (its row's unit).
 
-	return TheGameLODManager->getStaticGameLODIndex(it->second);
-}
+// OptionPreferences::getFirewallPortOverride: defined in OptionPreferences_getFirewallPortOverride.cpp (its row's unit).
 
-Int OptionPreferences::getStaticGameDetail(void)
-{
-	OptionPreferences::const_iterator it = find("StaticGameLOD");
-	if (it == end())
-		return TheGameLODManager->getStaticLODLevel();
-
-	return TheGameLODManager->getStaticGameLODIndex(it->second);
-}
-
-Bool OptionPreferences::getSendDelay(void)
-{
-	OptionPreferences::const_iterator it = find("SendDelay");
-	if (it == end())
-		return TheGlobalData->m_firewallSendDelay;
-
-	if (stricmp(it->second.str(), "yes") == 0) {
-		return TRUE;
-	}
-	return FALSE;
-}
-
-Int OptionPreferences::getFirewallBehavior()
-{
-	OptionPreferences::const_iterator it = find("FirewallBehavior");
-	if (it == end())
-		return TheGlobalData->m_firewallBehavior;
-
-	Int behavior = atoi(it->second.str());
-	if (behavior < 0)
-	{
-		behavior = 0;
-	}
-	return behavior;
-}
-
-Short OptionPreferences::getFirewallPortAllocationDelta()
-{
-	OptionPreferences::const_iterator it = find("FirewallPortAllocationDelta");
-	if (it == end()) {
-		return TheGlobalData->m_firewallPortAllocationDelta;
-	}
-
-	Short delta = atoi(it->second.str());
-	return delta;
-}
-
-UnsignedShort OptionPreferences::getFirewallPortOverride()
-{
-	OptionPreferences::const_iterator it = find("FirewallPortOverride");
-	if (it == end()) {
-		return TheGlobalData->m_firewallPortOverride;
-	}
-
-	Int override = atoi(it->second.str());
-	if (override < 0 || override > 65535)
-		override = 0;
-	return override;
-}
-
-Bool OptionPreferences::getFirewallNeedToRefresh()
-{
-	OptionPreferences::const_iterator it = find("FirewallNeedToRefresh");
-	if (it == end()) {
-		return FALSE;
-	}
-
-	Bool retval = FALSE;
-	AsciiString str = it->second;
-	if (str.compareNoCase("TRUE") == 0) {
-		retval = TRUE;
-	}
-	return retval;
-}
+// OptionPreferences::getFirewallNeedToRefresh: defined in OptionPreferences_getFirewallNeedToRefresh.cpp (its row's unit).
 
 // ?OptionPreferences::getPreferred3DProvider present-unmatched
 AsciiString OptionPreferences::getPreferred3DProvider(void)
@@ -758,22 +610,7 @@ Real OptionPreferences::getGammaValue(void)
  	return gamma;
 }
 
-void OptionPreferences::getResolution(Int *xres, Int *yres)
-{
-	*xres = TheGlobalData->m_xResolution;
-	*yres = TheGlobalData->m_yResolution;
-
-	OptionPreferences::const_iterator it = find("Resolution");
-	if (it == end())
-		return;
-
-	Int selectedXRes,selectedYRes;
-	if (sscanf(it->second.str(),"%d%d", &selectedXRes, &selectedYRes) != 2)
-		return;
-
-	*xres=selectedXRes;
-	*yres=selectedYRes;
-}
+// OptionPreferences::getResolution: defined in OptionPreferences_getResolution.cpp (its row's unit).
 
 // ?OptionPreferences::getMusicVolume present-unmatched
 Real OptionPreferences::getMusicVolume(void)

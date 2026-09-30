@@ -194,37 +194,15 @@ void WinInstanceData::init( void )
 // WinInstanceData::setTooltipText ============================================
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngine/Source/GameClient/GUI/WinInstanceDataDisplayStrings.cpp
-// ?setTooltipText@WinInstanceData@@QAEXVUnicodeString@@@Z present-unmatched
-void WinInstanceData::setTooltipText( UnicodeString tip )
-{
-
-	// allocate a text tooltip string if needed
-	if( m_tooltip == NULL )
-		m_tooltip = TheDisplayStringManager->newDisplayString();
-	DEBUG_ASSERTCRASH( m_tooltip, ("no tooltip") );
-
-	// set text
-	m_tooltip->setText( tip );
-
-}  // end setTooltipText
+// WinInstanceData::setTooltipText: defined in WinInstanceDataDisplayStrings.cpp (its row's unit).
+  // end setTooltipText
 
 // WinInstanceData:setText ====================================================
 /** Set the text for this window instance data */
 //=============================================================================
 // byte-exact reconstruction: Code/GameEngine/Source/GameClient/GUI/WinInstanceDataDisplayStrings.cpp
-// ?setText@WinInstanceData@@QAEXVUnicodeString@@@Z present-unmatched
-void WinInstanceData::setText( UnicodeString text )
-{
-
-	// allocate a text instance if needed
-	if( m_text == NULL )
-		m_text = TheDisplayStringManager->newDisplayString();
-	DEBUG_ASSERTCRASH( m_text, ("no text") );
-
-	// set the text
-	m_text->setText( text );
-
-}  // end set text
+// WinInstanceData::setText: defined in WinInstanceDataDisplayStrings.cpp (its row's unit).
+  // end set text
 
 // WinInstanceData:setText ====================================================
 /** Set the text for this window instance data */

@@ -118,7 +118,5 @@ void chatGetChannelBasicUserInfoA(CHAT chat, const char *channel,
 	}
 }
 
-void chatThink(CHAT chat)
-{
-	ciThink(chat, 0);
-}
+// chatThink: defined in chatMain.c (its row's unit).
+void chatThink(CHAT chat);
