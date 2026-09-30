@@ -43395,3 +43395,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRadar@@UAEPAXI@Z,,0x002D8888,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva002D8888.cpp,matched,scalar deleting dtor via rowed Radar dtor plus delete
 ?rva00518359@Rva00518359@@QAEXXZ,,0x00518359,71,Code/GameEngine/Source/Common/Rva00518359Combo.cpp,matched,combo restore via rowed Gadget calls plus offsets
 ?rva0025DDD2@Rva0025DDD2@@QBEMXZ,,0x0025DDD2,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,float wrapper over Transport average via 0C 12024
+?Rva005186E1Format@@YAXPAVOptionPreferences@@PAVAsciiString@@@Z,,0x005186E1,117,Code/GameEngine/Source/Common/Rva005186E1Format.cpp,matched,9-int list via rowed dispatch format concat
