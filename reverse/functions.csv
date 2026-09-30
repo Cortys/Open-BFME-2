@@ -43066,3 +43066,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva002B6900@Rva002B6900@@QAEXXZ,,0x002B6900,63,Code/GameEngine/Source/Common/Rva002B6900Clear.cpp,matched,chain via rowed increment 0x24250 delete 0x2FD60 clear 0x2B54F9 plus130 map
 ??0Rva002B644A@@QAE@XZ,,0x002B644A,44,Code/GameEngine/Source/Common/Rva002B644ACtor.cpp,matched,unlock ctor via rowed Vector_base 0x211E58 vtable 0x7FE280 plus4 minus1
 ?rva0046E563@Rva0046AC52@@QAE?AURva0046AC52Iter@@U2@ABURva0046AC52Key@@@Z,,0x0046E563,294,Code/GameEngine/Source/Common/Rva0046AC52.cpp,matched,chain insert_hint via rowed insert pair and increment
+?xfer@FellBeastSwoopPower@@MAEXPAVXfer@@@Z,,0x004C6CE2,45,Code/GameEngine/Source/GameLogic/Object/FellBeastSwoopPowerXfer.cpp,matched,slot 3 of 0x0085DF80 via Version1 plus base 0x44F996 plus bool 0x88
