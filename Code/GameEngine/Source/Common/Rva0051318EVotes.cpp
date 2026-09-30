@@ -1,0 +1,32 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
+// ?Rva0051318ESet@@YGXHH@Z @0x0051318E 140B: DisconnectScreen VotesReceived update via AsciiString format plus Unicode wide space plus conditional format plus bfmeSetText.
+// Evidence: literal DisconnectScreen::VotesReceived%d plus rowed AsciiString format 0x00038150 plus StringBase PBG 0x00037E30 plus UnicodeString format 0x006CB5D0 plus bfmeSetText pin 0x00225301 plus releaseBuffers 0x00036E70 0x00036410; callers 0x004D3C81 0x004D3D20 0x004D414E; donor DisconnectMenuVotes.cpp updateVotes.
+// Uses shared ascii header for AsciiString and StringBase; UnicodeString minimal with PBG ctor forwarding to the rowed base.
+#include "ascii_string.h"
+
+class UnicodeString : private StringBase<unsigned short>
+{
+public:
+	UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
+	~UnicodeString() {}
+	void __cdecl format(const unsigned short *format, ...);
+};
+
+class BfmeAptWindowManager
+{
+public:
+	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
+};
+
+extern BfmeAptWindowManager *g_Va009FE4CC;
+extern const unsigned short g_Va007C9260[];
+
+void __stdcall Rva0051318ESet(int slot, int votes)
+{
+	AsciiString key;
+	key.format("DisconnectScreen::VotesReceived%d", slot);
+	UnicodeString value(L" ");
+	if (votes)
+		value.format(g_Va007C9260, votes);
+	g_Va009FE4CC->bfmeSetText(key, value, false);
+}
