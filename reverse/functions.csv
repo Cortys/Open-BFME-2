@@ -43385,3 +43385,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva002D7BB7@Radar@@QAEXPBX@Z,,0x002D7BB7,28,Code/GameEngine/Source/Common/System/RadarRva002D7BB7.cpp,matched,Radar draw rect copy via 4x movsd plus dirty flag caller 0x002D3275
 ??0Rva00414093@@QAE@ABV0@@Z,,0x00414093,61,Code/GameEngine/Source/Common/Rva00414093Copy.cpp,matched,chain copy ctor calls rowed vector 0x002CFAB9 and just-landed tree copy 0x00413EE6 at plus 0xC
 ?rva003F4944@Rva003F498A@@QAEXPAVRva003F498ACallback@@@Z,,0x003F4944,70,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain scan outers via rowed 0x003F4342 same file
+?rva004EE35D@Rva004EE35D@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE35D,78,Code/GameEngine/Source/Common/Rva004EE35D.cpp,matched,unlock RB sum with BitFlags filter via rowed callees
