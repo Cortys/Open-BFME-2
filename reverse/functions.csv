@@ -43382,3 +43382,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva004EE260@Rva004EE260@@QAEXHPAVRva003F498A@@PAX@Z,,0x004EE260,219,Code/GameEngine/Source/Common/Rva004EE260.cpp,matched,chain via 0x003F486C same head as 0x004EE0C6 plus pair scan
 ?_M_insert_overflow@?$vector@VRva0052BEF0@@V?$allocator@VRva0052BEF0@@@_STL@@@_STL@@IAEXPAVRva0052BEF0@@ABV3@ABU__false_type@2@I_N@Z,,0x00566078,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bef0_overflow.cpp,matched,STLport vector Rva0052BEF0 overflow false_type sibling
 ?rva0053850B@Rva0053850B@@QAEXPAVDataChunkOutput@@@Z,,0x0053850B,100,Code/GameEngine/Source/Common/Rva0053850BSave.cpp,matched,Vector Float4 save via rowed writeInt writeReal loop caller 0x0030C3C9
+?rva002D7BB7@Radar@@QAEXPBX@Z,,0x002D7BB7,28,Code/GameEngine/Source/Common/System/RadarRva002D7BB7.cpp,matched,Radar draw rect copy via 4x movsd plus dirty flag caller 0x002D3275
