@@ -43719,3 +43719,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0031B4D6Load@@YGEPAVINI@@H@Z,,0x0031B4D6,103,Code/GameEngine/Source/Common/Rva0031B4D6Load.cpp,matched,caller 0x0031B57D three INI literals ControlBarScheme pattern uchar return
 ?rva006C0E40@Gen_008812D0@@QAEHPBUBfmePointFC@@PAH@Z,,0x006C0E40,40,Code/GameEngine/Source/Common/BfmeGridRasterCircle.cpp,matched,ECX passthrough to rowed bfmeCellAtWorld plus 8 plus4 reads plus thunk 0x006C0850
 ?rva0031F89E@Rva0031F89E@@QAEXMMHH@Z,,0x0031F89E,209,Code/GameEngine/Source/Common/Rva0031F89E.cpp,matched,triple list draw via TheDisplay plus rowed W3DDisplay draw
+?Rva000E1D51Forward@@YAPAVRva00072A94@@PAV1@00PAX@Z,,0x000E1D51,29,Code/GameEngine/Source/Common/Rva000E1D51Forward.cpp,matched,forwarder via local tag to rowed copy 0xE1860 callers 0xE3AEF 0xE3B0D same shape as Rva00219947Forward

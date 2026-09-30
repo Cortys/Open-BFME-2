@@ -4005,3 +4005,6 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ??1Rva001F4C67@@UAE@XZ	0x001F4C67	159	partial	missing outer cmp-je plus first Make call for m_19c; 149/159B 49/52ins 0 reg diffs; EH state2 plus base store plus pushes exact via Wrap throw plus Base dtor plus Ptr forceinline t=25 model=muse-06 score=0.94 stash=reverse/attempts/0x001f4c67.cpp
 ?rva003AF672@Rva003AF672@@QAE@PBV0@@Z	0x003AF672	98	blocked	copy ctor with Box at +0x1c plus 3 vtable bases; base 0x3AF50D plus Box 0x3A6669 rowed; ours 68/98B missing Box vtable plus derived overwrites plus ebx-vs-edi; needs correct ThirdBase identity and store order t=15 model=muse-06
 ??0Rva0023A128@@QAE@PAX0H@Z	0x0023A128	130	partial	second vtable plus m10 before member ctor vs after plus missing state4 t=28 model=muse-05 score=0.92 stash=reverse/attempts/0x0023a128.cpp
+?rva001F510D@Rva001F510D@@QAEMXZ	0x001F510D	34	partial	xorps-movss hoisted before branch vs retail null-path only t=25 model=muse-02 score=0.93 stash=reverse/attempts/0x001f510d.cpp
+?rva001F8167@Rva001F8167@@QAEXXZ	0x001F8167	88	blocked	missing EH prolog and unwind states; loop-delete-free shape needs unwound model t=10 model=muse-02
+?Rva002EBB9BSiftDown@@YAXPAPAU_Rva002EBB53Wrap@@HHHPAU2@H@Z	0x002EBB9B	96	blocked	5-push call vs 4-param SiftUp row; heap adjust needs donor STL sig t=12 model=muse-02
