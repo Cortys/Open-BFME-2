@@ -44,10 +44,17 @@ typedef _STL::hash_map<int, int, _STL::hash<int>, _STL::equal_to<int>,
 // case-insensitively (tolower fold, times 33), buckets via div 0xAFCF,
 // compares with strcmp and allocates 12-byte nodes via operator new;
 // it returns the interned integer ID, or 0 for a null name.
-class BfmePrototypeNameTable
+enum NameKeyType
+{
+    NAMEKEY_INVALID = 0,
+    NAMEKEY_MAX = 1 << 23,
+    FORCE_NAMEKEYTYPE_LONG = 0x7fffffff
+};
+
+class NameKeyGenerator
 {
 public:
-	int FindOrCreatePrototypeId(const char *prototypeName);
+	NameKeyType nameToLowercaseKey(const char *prototypeName);
 };
 
 // Prototype template handed to Add_Prototype_Impl. The allocating caller
@@ -98,7 +105,7 @@ private:
 	unsigned char m_unknown68[0x1F0 - 0x68];
 	unsigned m_tag; // +0x1F0
 	unsigned char m_unknownF4[0x1F8 - 0x1F4];
-	BfmePrototypeNameTable *m_nameTable; // +0x1F8
+	NameKeyGenerator *m_nameTable; // +0x1F8
 };
 
 extern BfmeResourceEnumerator *TheResourceEnumerator;
@@ -128,7 +135,7 @@ void BfmeResourceEnumerator::Add_Prototype_Impl(void *prototype)
 		return;
 	BfmeCriticalSectionGuard registryGuard(&m_lock);
 	const char *prototypeName = addedPrototype->GetPrototypeName();
-	int prototypeId = m_nameTable->FindOrCreatePrototypeId(prototypeName);
+	int prototypeId = m_nameTable->nameToLowercaseKey(prototypeName);
 	if (prototypeId == 0)
 		return;
 	BfmePrototypeTable::iterator foundIter = m_prototypes.find(prototypeId);
