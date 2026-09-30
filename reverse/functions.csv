@@ -43413,3 +43413,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRva005CCC69@@UAEPAXI@Z,,0x005CCC98,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04a.cpp,matched,chain deleting dtor calls rowed 0x005CCC69
 ??0Rva00546982@@QAE@XZ,,0x00546982,59,Code/GameEngine/Source/Common/Rva00546982Ctor.cpp,matched,vtable 0x0086A314 base rowed 0x005488C5 set rowed 0x000D3A71 bool plus caller 0x00355060
 ??0Rva00546982@@QAE@ABV0@@Z,,0x005469BD,64,Code/GameEngine/Source/Common/Rva00546982Ctor.cpp,matched,copy base rowed 0x005488E9 vtable 0x0086A314 set default bool false caller 0x00546A22
+??4Rva00126350@@QAEAAV0@ABV0@@Z,,0x00126350,73,Code/Libraries/Source/WWVegas/WW3D2/Rva00126350Assign.cpp,matched,callee 0x000424D0 row RefCountPtr Texture caller 0x00126409

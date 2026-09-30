@@ -3874,3 +3874,6 @@ FUN_009ddb66	0x005DDB66	69	blocked	idx src flag order fixed but idx stays in ecx
 FUN_0042d1cf	0x0002D1CF	178	blocked	deque AsciiString assign 5 args EBP frame needs STLport exact t=8 model=muse-04
 FUN_0051172a	0x0011172A	72	blocked	TileData dtor needs vtable order plus member release t=15 model=muse-04
 FUN_0025DA8D	0x0025DA8D	160	blocked	vslot slot72 160B EH GetVersionExA plus contested copy 0x000365F0 12 pins plus 16B temp unclear t=10 model=muse-11
+FUN_009380a8	0x005380A8	139	blocked	EH ctor with vtable List SSE needs donor t=8 model=muse-08
+FUN_00685778	0x00285778	232	blocked	virtual slot 24 doubles bitfields needs donor vslot t=5 model=muse-08
+?Rva005874BAInsert@@YAXPAURec12@@HHU1@PBX@Z	0x005874BA	70	partial	movss order comiss mem jbe vs jae t=25 model=muse-08 score=0.93 stash=reverse/attempts/0x005874ba.cpp
