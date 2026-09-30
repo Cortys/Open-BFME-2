@@ -43262,3 +43262,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0026F216@Rva0026F216@@QAEXXZ,,0x0026F216,87,Code/GameEngine/Source/Common/System/Rva0026F216ImageResolve.cpp,matched,two image slots via rowed isEmpty findImageByName releaseBuffer
 ??_GRva005E8AAF@@UAEPAXI@Z,,0x005E8A93,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E8A93.cpp,matched,deleting dtor via rowed dtor plus rowed delete
 ??1Rva005E888A@@QAE@XZ,,0x005E888A,8,Code/GameEngine/Source/Common/Bfme/Rva005E888ADtor.cpp,matched,nonvirtual dtor tail-jmp to rowed member dtor at plus4
+?freeSockets@NameKeyGenerator@@AAEXXZ,,0x00148B42,66,Code/GameEngine/Source/Common/NameKeyGenerator.cpp,matched,NameKeyGenerator freeSockets 45007 buckets plus aux map clear via ZH donor

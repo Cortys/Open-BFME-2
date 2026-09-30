@@ -88,3 +88,25 @@ NameKeyType NameKeyGenerator::nameToKey(const char* nameString)
 	return result;
 
 }  // end nameToKey
+
+// ?freeSockets@NameKeyGenerator@@AAEXXZ 0x00148B42 66B donor ZH NameKeyGenerator.cpp freeSockets plus BFME aux KeyToBucketMap clear; callers 0x00148BFB 0x00148C6B; tail clear at this+0x2bf4c rowed as Armor hashtable clear via ICF fold
+#include "GameLogic/Armor.h"
+void NameKeyGenerator::freeSockets()
+{
+	for (Int i = 0; i < SOCKET_COUNT; ++i)
+	{
+		Bucket *next;
+		for (Bucket *b = m_sockets[i]; b; b = next)
+		{
+			next = b->m_nextInSocket;
+			struct FakeBucket { virtual void *del(int flag); };
+			void *mem = ((FakeBucket *)b)->del(0);
+			::operator delete(mem);
+		}
+		m_sockets[i] = NULL;
+	}
+	// Tail clears the aux key->Bucket index at this+0x2bf4c. Retail folds its
+	// hashtable::clear body onto the ArmorTemplate instantiation at 0x1DBCDC,
+	// so call through that rowed spelling; same lea+jmp shape as the donor.
+	((std::hash_map<NameKeyType, ArmorTemplate, rts::hash<NameKeyType>, rts::equal_to<NameKeyType> > &)keyToBucketMap()).clear();
+}  // end freeSockets

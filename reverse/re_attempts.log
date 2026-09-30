@@ -3788,3 +3788,4 @@ FUN_0082245F	0x0042245F	229	blocked	thiscall float SSE x87 loop needs owner layo
 ?rva002E6F92@Rva002E6F92@@QAEHHPAUIn002E6F92@@HH@Z	0x002E6F92	77	partial	77B exact size scheduling xmm store order early vs late t=20 model=muse-04 score=0.9 stash=reverse/attempts/0x002e6f92.cpp
 FUN_0048619A	0x0048619A	327	blocked	eax-ebx reg args plus x87-SSE mix crushdie fam t=8 model=muse-11
 ?rva00109129@Rva00109129@@QAE_NPAVW3DProjectedShadow@@PAUShadowList@@@Z	0x00109129	127	blocked	list unlink plus type dec-sub chain register allocation wall t=25 model=muse-spark
+?rva003F4ABB@Rva003F498A@@QAEPAXHH@Z	0x003F4ABB	29	blocked	eax-edx swap for base-outer plus SIB base-index swap exact size 29B 0 structural t=20 model=muse-09
