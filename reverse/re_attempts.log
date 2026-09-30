@@ -3567,3 +3567,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva0025C776@BfmeStrVM0@@QAEXHMMMMHH@Z	0x0025C776	131	partial	131B-exact 0reg 1pos-diff 1.0-load early-vs-late only t_a1c-m138-order fixed t=25 model=muse-09 score=0.94 stash=reverse/attempts/0x0025c776.cpp
 ?rva00288AF2@Rva00288AF2@@QAEPAUCameraMarker@@ABV?$StringBase@D@@@Z	0x00288AF2	67	blocked	find loop needs CameraMarker layout plus count sar plus reg order t=12 model=muse-12
 ?rva00392092@Rva00392092@@QAEXXZ	0x00392092	101	blocked	array-new EH hub needs UU LL plus FuncInfo plus global plus base dtor t=10 model=muse-12
+?rva00216AF6@Rva00216AF6@@QAEXXZ	0x00216AF6	73	partial	71B vs 73B only missing mov ecx esi before free call; retail calls 0x00216787 as member thiscall with caller this but row is YGX stdcall needs retype t=10 model=muse-07 score=0.97 stash=reverse/attempts/0x00216af6.cpp

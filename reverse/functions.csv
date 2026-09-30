@@ -42982,3 +42982,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?rva005FB903@Rva005FB770@@QAEXH@Z,,0x005FB903,94,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt UnitCount int wrapper via landed UnitCount setter
 ??1Rva004E179A@@UAE@XZ,,0x004E179A,81,Code/GameEngine/Source/Common/Rva004E179ADtor.cpp,matched,ModuleData dtor via StringBases plus Snapshot
 ??_GRva004E179A@@UAEPAXI@Z,,0x004E1CFA,28,Code/GameEngine/Source/Common/Rva004E179ADtor.cpp,matched,scalar deleting dtor via delete helper
+?readNameKey@DataChunkInput@@QAE?AW4NameKeyType@@XZ,,0x003077E0,83,Code/GameEngine/Source/Common/System/DataChunkReadNameKey.cpp,matched,readInt sar8 getName nameToKey AsciiString overload unblocks 5

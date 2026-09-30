@@ -381,18 +381,9 @@ AsciiString DataChunkInput::readAsciiString(void)
 	return theString;
 }
 
-// ?readNameKey@DataChunkInput@@QAE?AW4NameKeyType@@XZ
-// ?readNameKey@DataChunkInput@@QAE?AW4NameKeyType@@XZ present-unmatched
-NameKeyType DataChunkInput::readNameKey(void)
-{
-	bfmeDataChunkYieldToOS();
-	Int keyAndType = readInt();
-	keyAndType >>= 8;
-
-	AsciiString kname = m_contents.getName(keyAndType);
-	NameKeyType k = TheNameKeyGenerator->nameToKey(kname.str());
-	return k;
-}
+// readNameKey lives in DataChunkReadNameKey.cpp (declared-only callees keep
+// the out-of-line readInt call; this TU's inline readInt would fold it).
+// See 0x003077E0.
 
 // ?parse@DataChunkInput@@QAE_NPAX@Z
 // ?parse@DataChunkInput@@QAE_NPAX@Z present-unmatched
