@@ -1,14 +1,7 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ??0Rva005C3975@@QAE@HHABVAsciiString@@@Z retail 0x005C3975 35B
 // Evidence: calls base 0x00528B06 (int AsciiString); stores +0x10; vtable 0x00874490; ret 0xC; caller 0x005C3D0E
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva005C31FB
 {

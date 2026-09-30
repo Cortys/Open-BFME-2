@@ -1,4 +1,4 @@
-// cl: /O1 /GX-
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX-
 // stlport
 // ?rva0059A71C@Rva0059A71C@@QAEXPAUArg@@@Z @0x0059A71C (90B)
 // Thiscall takes one pointer arg with AsciiString at +0x14. Loads chain
@@ -10,16 +10,7 @@
 // push_back rows plus TheEmptyString extern plus ret N thiscall.
 #include <vector>
 #include <algorithm>
-template <class C> class StringBase
-{
-public:
-	int compare(const StringBase &) const;
-};
-class AsciiString : public StringBase<char>
-{
-public:
-	static AsciiString TheEmptyString;
-};
+#include "ascii_string.h"
 class CreateAHeroData;
 class ModuleData;
 struct Leaf

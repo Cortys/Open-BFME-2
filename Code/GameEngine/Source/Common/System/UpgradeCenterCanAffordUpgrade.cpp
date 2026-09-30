@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /EHsc
 // UpgradeCenter::canAffordUpgrade from the Upgrade.cpp reference, isolated
 // so its BFME 2 money and UI layouts can be checked against retail.
 
@@ -13,20 +13,8 @@ public:
     unsigned calcCostToBuild(Player *, unsigned) const;
 };
 
-template <class T> class StringBase {
-public:
-    StringBase(const T *);
-    StringBase(const StringBase &);
-    ~StringBase();
-    T *m_text;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char> {
-public:
-    AsciiString(const char *text) : StringBase<char>(text) {}
-    AsciiString(const AsciiString &);
-    ~AsciiString();
-};
 
 class InGameUI {
 public:

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ?Rva00333374Get@@YA?AVAsciiString@@PBURva00333374IdOwner@@@Z, retail 0x00333374, 93B.
 // Free AsciiString(Object id) via "ObjID#%08x": stack temp format through rowed
@@ -8,25 +8,8 @@
 // plus 3B for the +0x74 id load; callers 0x00333E5B/0x00333F37/0x00334003 prove
 // hidden-return RVO shape. Object m_id at +0x74 (Object_setID.cpp). Honest
 // free-function name; donor Rva00222834Get.cpp.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	T *m_data;
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-	void __cdecl format(const char *fmt, ...);
-};
 
 struct Rva00333374IdOwner
 {

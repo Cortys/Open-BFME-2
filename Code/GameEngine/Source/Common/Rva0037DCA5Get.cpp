@@ -1,14 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva0037DCA5@Rva0037DCA5@@QAEHXZ, retail 0x0037DCA5 (39B).
 // Lookup via TheThingFactory global 0x00DFF000 plus AsciiString at +0x4 through
 // rowed 0x002D06CA. Returns 0 when lookup misses else template dword at +0x618
 // times int at +0x90. Sibling of rowed 0x0037E270 (same global and callee via
 // Rva0037E270Lookup.cpp) and unclaimed 0x0037DC52 (same +0x4 lookup shape).
 // Callers at 0x002B369C 0x002B36A5 0x002B6C58 0x0031906A 0x0040CFAC.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 class Rva002D06CA
 {
 public:

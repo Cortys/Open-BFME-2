@@ -1,25 +1,11 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0Rva00546982@@QAE@XZ @0x00546982 59B evidence: stores vtable 0x0086A314; base SpecialPowerModuleData default rowed 0x005488C5; set<AsciiString> at +0x18 via rowed 0x000D3A71; bool at +0x24 false; caller 0x00355060.
 // Honest-address ctor via vtable store (naming rule).
 #include <set>
 
-template <typename T> class StringBase {
-	friend class AsciiString;
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase &);
-	~StringBase();
-protected:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char> {
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

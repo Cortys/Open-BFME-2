@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // ??1Rva002AF1EC@@QAE@XZ, retail 0x002AF1EC, 74 bytes.
@@ -9,17 +9,8 @@
 
 extern "C" void __cdecl free(void *block);
 
-template <typename T> class StringBase {
-	friend class AsciiString;
-	friend class UnicodeString;
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString() { releaseBuffer(); }
-};
 
 struct FreePtr {
 	~FreePtr() { if (m_ptr != 0) free(m_ptr); }

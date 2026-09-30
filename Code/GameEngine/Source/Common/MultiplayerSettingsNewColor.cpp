@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ?newMultiplayerColorDefinition@MultiplayerSettings@@QAEPAVMultiplayerColorDefinition@@VAsciiString@@@Z,
 // retail 0x003813B7, 137 bytes. Dedicated TU (the shared
@@ -16,26 +16,8 @@
 // ignored on the value path (ZH does the same) and only torn down.
 // The list address stays in edi across both lookups via a named reference.
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-
-private:
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	__forceinline ~AsciiString() { releaseBuffer(); }
-
-protected:
-	void releaseBuffer();
-};
 
 struct RGBColor
 {

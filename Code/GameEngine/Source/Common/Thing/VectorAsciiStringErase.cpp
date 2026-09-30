@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // stlport
 //
 // vector<AsciiString>::erase(first, last), retail 0x002CCFC, 51 bytes.
@@ -10,14 +10,7 @@
 // The four-argument wrapper is defined here (Nugget-erase idiom): it
 // forwards to the five-argument __copy worker rowed at 0x000B4431 under
 // this TU's spelling. Both bodies are verified below.
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

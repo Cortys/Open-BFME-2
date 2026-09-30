@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // Opaque single-member destructors that tail-call the folded AsciiString
 // member destructor at 0x0036410, the same shape as Bucket::~Bucket (vtable
@@ -95,14 +95,7 @@ Rva00538C5F::~Rva00538C5F()
 {
 }
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva005C31FB
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /Oi
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /Oi
 //
 // ?parseAudioLODDefinition@INI@@SAXPAV1@@Z, retail 0x00202F8A,
 // 153 bytes. Dedicated TU.
@@ -42,29 +42,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	void set(const char *text);
-protected:
-	StringBase() : m_data(0) {}
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const char *text) { set(text); return *this; }
-	~AsciiString() {}
-};
 
 struct FieldParse
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ??4GeometryShape@@QAEAAU0@ABU0@@Z retail 0x00063627 75 bytes.
 // GeometryShape value assignment: seven scalar words then the AsciiString
 // name at +0x1C through the folded assign pin at 0x000366F0 plus the two
@@ -7,13 +7,7 @@
 // and the shape scan at 0x6BD9C0. Layout matches the rowed shape vector
 // base imul 0x24 and the matched copy ctor twin at 0x63BE4.
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct Coord3D
 {

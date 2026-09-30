@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 // stlport
 //
 // ??0Rva00507823@@QAE@XZ retail 0x0050775B 172B
@@ -41,21 +41,8 @@ private:
 	int m_x;
 };
 
-template <typename Char>
-class StringBase
-{
-protected:
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 class Rva00507823
 {

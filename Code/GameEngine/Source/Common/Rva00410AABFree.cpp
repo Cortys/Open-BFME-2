@@ -1,31 +1,11 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?Rva00410AABFree@@YGXPAX@Z at 0x00410AAB (28B).
 // Free helper: destroys Rva00410688 at +4 via rowed dtor then frees via
 // rowed operator delete 0x30830. Evidence: 3 callers in 0x410D05/0x410D96,
 // unblocks 2.
 
-template <typename T>
-class StringBase
-{
-private:
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-public:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 struct TargetRef00217D4C
 {

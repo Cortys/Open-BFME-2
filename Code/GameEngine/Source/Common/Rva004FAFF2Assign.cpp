@@ -1,14 +1,9 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC
 // stlport
 // ?rva004FAFF2@Rva004FAFF2@@QAEAAU1@ABU1@@Z, retail 0x004FAFF2, 213 bytes.
 // Copy-assign over twelve AsciiStrings plus string vector plus int/byte tail.
 // Evidence: thirteen AsciiString assigns via pin 0x366F0 plus vector assign rowed 0xBDB46; ret-4 one-arg thiscall; callers 4 incl 951B/1050B; unblocks 3.
-class AsciiString {
-public:
-    AsciiString &operator=(const AsciiString &other);
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 namespace _STL {
 template <typename T> class allocator {};
 template <typename T, typename A> class vector {

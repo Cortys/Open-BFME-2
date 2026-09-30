@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // Opaque subsystem destructors ending in ~SubsystemInterface 0x001B4E74
 // (pinned; 12-byte base: vptr plus the name string at +0x08). Each installs
@@ -12,14 +12,7 @@
 // ??1Rva009519B@@UAE@XZ @0x0009519B 113B: vtable 0x00BC81A8, strings +0xAC,
 //   +0x24, +0x14, +0x10, +0x0C.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class SubsystemInterface
 {

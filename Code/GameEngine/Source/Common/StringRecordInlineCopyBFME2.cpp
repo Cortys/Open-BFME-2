@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // BFME2 record copies with verified StringBase member operations.
 // Layouts are read from the complete retail constructors and their STLport
@@ -7,23 +7,7 @@
 // copies call StringBase<char>0x365F0 or StringBase<unsigned short>0x37050.
 #include <memory>
 #include <utility>
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-public:
-    void set(const StringBase &);
-private:
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 class UnicodeString : private StringBase<unsigned short> {
 public:
     __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}

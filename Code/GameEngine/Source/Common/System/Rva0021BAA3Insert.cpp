@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?Rva0021BAA3Insert@@YAXPAVRva0021915B@@V1@URva0021B753@@@Z @0x0021BAA3 89B
 // __unguarded_linear_insert for 8-byte AsciiString-plus-bool entries with empty
 // comparator Rva0021B753 (rowed 0x0021B753). Shifts while comp(val next) then
@@ -7,24 +7,8 @@
 // Evidence: same loop as Rva005B6324Insert 47B free-function precedent but with
 // EH (val by value needs dtor) and per-element assign; stride 8 via lea/sub 8.
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	int compareNoCase(const StringBase<T> &that) const;
-
-private:
-	void releaseBuffer();
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
 
 class Rva0021915B
 {

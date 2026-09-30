@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva005ED445@Rva005ED445@@QAEXABVUnicodeString@@@Z, retail 0x005ED445, 103 bytes.
 // APT RegionName setter via level and outer name; true bool.
 // Evidence: format APT:_level%u.%s_RegionName via 0x00038150; bfmeSetText pin 0x00225301; releaseBuffer 0x00036410; globals 0x009FE4CC 0x007BAC1C; callers 0x005ED8D1 0x005EDB74; precedent Rva005FDF1CApt.cpp Rva005D2FD0Apt.cpp.
@@ -10,28 +10,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	void format_va(const T *format, char *args);
-	int compare(const StringBase<T> &other) const;
-	void set(const StringBase<T> &other);
-private:
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *format, ...);
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

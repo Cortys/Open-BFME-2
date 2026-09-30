@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // stlport
 //
 // ?rva00210749@Rva00210749@@QAEXXZ, retail 0x00210749, 38 bytes.
@@ -10,15 +10,7 @@
 // none (structural clear). No fallback paths.
 #include <vector>
 
-class AsciiString
-{
-public:
-	AsciiString();
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00210749
 {

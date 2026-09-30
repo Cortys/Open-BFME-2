@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?Rva002195B7CopyBackward@@YAPAVRva0021915B@@PAV1@00PAXH@Z @0x002195B7 47B
 // copy_backward for Rva0021915B 8-byte entries using rowed assignment 0x0021915B.
 // Same 47B shape as Rva0040D251CopyBackward (backwards --last/--dest loop with
@@ -8,14 +8,7 @@
 // Evidence: stride 8 (sar 3) proves 8B entries; per-element call folds to rowed
 // ??4Rva0021915B at 0x0021915B; forwarder at 0x00219947.
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva0021915B
 {

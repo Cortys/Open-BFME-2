@@ -1,19 +1,9 @@
-// cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB
 // stlport
 // ??0BfmeStringRecord002CF4C6@@QAE@ABVAsciiString@@0IIE@Z @0x0033B13B 79B
 // Evidence: vector element type BfmeStringRecord002CF4C6 via rowed push_back 0x0033D433 caller 0x0033D751;
 // layout text0 text1 word0 word1 flag0 flag1 matches copy ctor 0x002CF4C6; 2 StringBase copies via pinned 0x000365F0.
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const AsciiString &other);
-	__forceinline ~AsciiString() { releaseBuffer(); }
-protected:
-	void releaseBuffer();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct BfmeStringRecord002CF4C6
 {

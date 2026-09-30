@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?Rva003FF02EPowerCap@@YAXH@Z @0x003FF02E 134B
 // Static AsciiString key APT:PlayerPowerCap via rowed StringBase ctor 0x00037BA0 plus atexit,
 // Unicode value via format 0x006CB5D0 on extern format string 0x007C9260,
@@ -13,26 +13,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-private:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	~AsciiString() {}
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

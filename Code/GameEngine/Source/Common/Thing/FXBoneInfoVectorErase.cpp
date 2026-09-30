@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // stlport
 //
 // vector<FXBoneInfo>::erase(first, last), retail 0x00207F0D, 51 bytes,
@@ -32,14 +32,7 @@
 // with a zeroed [ebp-1] temp instead (six probed spellings). The destroy
 // call takes reinterpreted pair pointers (free casts) so it resolves to
 // the rowed range destroy with no new pins.
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct FXBoneInfo
 {

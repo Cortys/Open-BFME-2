@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva0050EE72Set@@YAXHABVAsciiString@@HABVUnicodeString@@@Z @0x0050EE72 106B
 // APT field setter: key.format APT:_level%u.%s_field%d via rowed 0x00038150
 // plus pinned bfmeSetText 0x00225301 plus releaseBuffer 0x00036410;
@@ -10,28 +10,7 @@ template <typename T> struct BfmeStringData
 	unsigned short capacity;
 	T text[1];
 };
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	void set(const StringBase<T> &other);
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-	void __cdecl format(const char *fmt, ...);
-};
+#include "ascii_string.h"
 class UnicodeString : public StringBase<unsigned short>
 {
 public:

@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // vector<ModuleInfo::Nugget>::erase, retail 0x0033C3BC, 55 bytes.
 //
@@ -15,14 +15,7 @@
 // Nugget* all fold there; the loop calls the 0x002CF51B dtor with a 0x14
 // stride, which fixes the element type).
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class ModuleData
 {

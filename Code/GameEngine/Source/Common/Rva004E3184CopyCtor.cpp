@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // ??0Rva004E3184@@QAE@ABV0@@Z @ 0x004E2F9F (295B).
@@ -12,17 +12,8 @@
 #include <memory>
 #include <vector>
 
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString();
-};
 
 class Snapshot {
 public:
