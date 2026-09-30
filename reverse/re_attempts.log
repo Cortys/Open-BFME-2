@@ -4151,3 +4151,7 @@ FUN_005ee4dc	0x001EE4DC	10	blocked	no ret in 10B boundary wrong needs rescan t=3
 ?rva0035DDBD@Rva0035DCF9@@QAEXXZ	0x0035DDBD	152	blocked	W3D draw interpolation with imul-div float SSE no donor t=6 model=muse-07
 ?rva0045EEC4@Rva0045EEC4@@QAEHXZ	0x0045EEC4	115	blocked	same EH vector functor wall as 0x003F0D2C scopetable 0xBFB1CC t=3 model=muse-07
 ?rva0054FCA5@Rva0054FCA5@@QAEHXZ	0x0054FCA5	202	blocked	complex STL deque mutex map format EH t=4 model=muse-07
+?rva0031816C@TerrainTypeCollection@@QAEPAVRva00317F6F@@ABVAsciiString@@@Z	0x0031816C	151	blocked	EH temp lifetimes plus new plus 3-way cast same-layout plus head-next union; 134 vs 151B -17 10 regions t=20 model=muse-spark
+?rva003F8646@Rva003F8646@@QAEHH@Z	0x003F8646	112	blocked	same wall as 0x005C4845: EH save restore this+0xc with scope table bfb1cc plus array sar2 plus virtual slot0 on arg plus g_00BFB1CC unknown no donor t=5 model=muse-spark
+FUN_00719714	0x00319714	112	blocked	same wall as 0x005C4845 and 0x003F8646: EH bfb1cc plus this+c save restore plus sar2 plus virtual on arg t=3 model=muse-spark
+FUN_007F0D2C	0x003F0D2C	112	blocked	same bfb1cc wall as 0x005C4845 t=2 model=muse-spark
