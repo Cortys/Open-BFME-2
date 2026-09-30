@@ -3869,3 +3869,7 @@ FUN_007f4be9	0x003F4BE9	109	blocked	EH-prolog SEH frame virtual-callback loop ov
 FUN_00AC1680	0x006C1680	79	blocked	four virtuals need donor vtable layout no donor t=10 model=muse-06
 ?rva002D3C5F@Rva002D3C5F@@QAEXXZ	0x002D3C5F	70	blocked	clear with SSE float and deletes xor and byte order off after 5 variants t=20 model=muse-06
 FUN_009874BA	0x005874BA	70	blocked	same heap SSE insertion wall as 0x005A9178 imul C movsd x3 div t=5 model=muse-06
+FUN_008ee8b8	0x004EE8B8	152	blocked	EH AsciiString temp plus map uint Image insert plus global DFF000 t=12 model=muse-04
+FUN_009ddb66	0x005DDB66	69	blocked	idx src flag order fixed but idx stays in ecx not eax plus base reload wall t=18 model=muse-04
+FUN_0042d1cf	0x0002D1CF	178	blocked	deque AsciiString assign 5 args EBP frame needs STLport exact t=8 model=muse-04
+FUN_0051172a	0x0011172A	72	blocked	TileData dtor needs vtable order plus member release t=15 model=muse-04
