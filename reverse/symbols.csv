@@ -6469,3 +6469,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?set@Rva003600D6Holder@@QAEXPAVRva0035FF76@@@Z,0x005F69CE,ICF twin of rowed dup_005f69ce 10B setter stores holder+0x10; call site 0x0036011B in factory 0x003600D6 matches retail
 ??1BfmeModuleDataSnapshotBase@@UAE@XZ,0x0011647B,base dtor ICF with setter called by LookupTablePostEffect dtor 0x00111B9A
 ??RRva00568721Cmp@@QBE_NPBX0@Z,0x00568721,ICF twin of rowed YG Less 53B body at same address; partition 0x00568DB7 thiscall lea ecx plus two pushes
+?_M_clear@?$vector@VFXList@@V?$allocator@VFXList@@@_STL@@@_STL@@IAEXXZ,0x005659CA,"vector<FXList>::_M_clear as emitted by FXListVectorInsertOverflow.cpp is byte-identical (30B; relocs masked) to the matched Rva005659CA row at this address; retail REL32 target of the placed _M_insert_overflow at 0x00565B61"
+?allocate@?$allocator@VFXList@@@_STL@@QBEPAVFXList@@IPBX@Z,0x00523D6C,"ICF 8-byte allocate: the bfmealloc allocator<FXList>::allocate body is byte-identical (28B) to the matched BfmeE8 allocate at this address; retail REL32 target of the placed _M_insert_overflow at 0x00565AF7"
