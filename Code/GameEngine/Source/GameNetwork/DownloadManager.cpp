@@ -144,38 +144,7 @@ AsciiString DownloadManager::getLastLocalFile( void )
 	return buf;
 }
 
-HRESULT DownloadManager::OnError( Int error )
-{
-	m_wasError = true;
-	AsciiString s = "FTP:UnknownError";
-	switch (error)
-	{
-		case DOWNLOADEVENT_NOSUCHSERVER:
-			s = "FTP:NoSuchServer";
-			break;
-		case DOWNLOADEVENT_COULDNOTCONNECT:
-			s = "FTP:CouldNotConnect";
-			break;
-		case DOWNLOADEVENT_LOGINFAILED:
-			s = "FTP:LoginFailed";
-			break;
-		case DOWNLOADEVENT_NOSUCHFILE:
-			s = "FTP:NoSuchFile";
-			break;
-		case DOWNLOADEVENT_LOCALFILEOPENFAILED:
-			s = "FTP:LocalFileOpenFailed";
-			break;
-		case DOWNLOADEVENT_TCPERROR:
-			s = "FTP:TCPError";
-			break;
-		case DOWNLOADEVENT_DISCONNECTERROR:
-			s = "FTP:DisconnectError";
-			break;
-	}
-	m_errorString = TheGameText->fetch(s);
-	DEBUG_LOG(("DownloadManager::OnError(): %s(%d)\n", s.str(), error));
-	return S_OK;
-}
+// DownloadManager::OnError: defined in DownloadManagerOnStatusUpdate.cpp (its row's unit).
 
 HRESULT DownloadManager::OnEnd()
 {
@@ -199,37 +168,4 @@ HRESULT DownloadManager::OnProgressUpdate( Int bytesread, Int totalsize, Int tim
 	return S_OK;
 }
 
-HRESULT DownloadManager::OnStatusUpdate( Int status )
-{
-	AsciiString s = "FTP:StatusNone";
-	switch (status)
-	{
-		case DOWNLOADSTATUS_CONNECTING:
-			s = "FTP:StatusConnecting";
-			break;
-		case DOWNLOADSTATUS_LOGGINGIN:
-			s = "FTP:StatusLoggingIn";
-			break;
-		case DOWNLOADSTATUS_FINDINGFILE:
-			s = "FTP:StatusFindingFile";
-			break;
-		case DOWNLOADSTATUS_QUERYINGRESUME:
-			s = "FTP:StatusQueryingResume";
-			break;
-		case DOWNLOADSTATUS_DOWNLOADING:
-			s = "FTP:StatusDownloading";
-			break;
-		case DOWNLOADSTATUS_DISCONNECTING:
-			s = "FTP:StatusDisconnecting";
-			break;
-		case DOWNLOADSTATUS_FINISHING:
-			s = "FTP:StatusFinishing";
-			break;
-		case DOWNLOADSTATUS_DONE:
-			s = "FTP:StatusDone";
-			break;
-	}
-	m_statusString = TheGameText->fetch(s);
-	DEBUG_LOG(("DownloadManager::OnStatusUpdate(): %s(%d)\n", s.str(), status));
-	return S_OK;
-}
+// DownloadManager::OnStatusUpdate: defined in DownloadManagerOnStatusUpdate.cpp (its row's unit).

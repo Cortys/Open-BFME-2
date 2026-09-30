@@ -145,17 +145,11 @@ static void seedRandom(UnsignedInt SEED, UnsignedInt *seed)
 // of the effects displayed on the GameClient.
 //
 
-UnsignedInt GetGameLogicRandomSeed( void )
-{
-	return theGameLogicBaseSeed;
-}
+// GetGameLogicRandomSeed: defined in GameLogicRandomSeed_get.cpp (its row's unit).
+UnsignedInt GetGameLogicRandomSeed( void );
 
-UnsignedInt GetGameLogicRandomSeedCRC( void )
-{
-	CRC c;
-	c.computeCRC(theGameLogicSeed, 6*sizeof(UnsignedInt));
-	return c.get();
-}
+// GetGameLogicRandomSeedCRC: defined in GameLogicRandomSeedCRC_get.cpp (its row's unit).
+UnsignedInt GetGameLogicRandomSeedCRC( void );
 
 void InitRandom( void )
 {
@@ -186,174 +180,44 @@ DEBUG_LOG(( "InitRandom %08lx\n",seed));
 #endif
 }
 
-void InitGameLogicRandom( UnsignedInt seed )
-{
-#ifdef DETERMINISTIC
-	// needs to be the same every time
-	seedRandom(0, theGameLogicSeed);
-	theGameLogicBaseSeed = 0;
-#else
-	seedRandom(seed, theGameLogicSeed);
-	theGameLogicBaseSeed = seed;
-#endif
-#ifdef DEBUG_RANDOM_LOGIC
-DEBUG_LOG(( "InitRandom Logic %08lx\n",seed));
-#endif
-}
+// InitGameLogicRandom: defined in GameLogicRandomInit.cpp (its row's unit).
+void InitGameLogicRandom( UnsignedInt seed );
 
 //
 // Integer random value
 //
-Int GetGameLogicRandomValue( int lo, int hi, char *file, int line )
-{
-	//Int delta = hi - lo + 1;
-	//Int rval;
-
-	//if (delta == 0)
-		//return hi;
-
-	//rval = ((Int)(randomValue(theGameLogicSeed) % delta)) + lo;
-
-	UnsignedInt delta = hi - lo + 1;
-	//UnsignedInt temp;
-	Int rval;
-
-	if (delta == 0)
-		return hi;
-
-	rval = ((Int)(randomValue(theGameLogicSeed) % delta)) + lo;
-	//temp = randomValue(theGameLogicSeed);
-	//temp = temp % delta;
-
-	//rval = temp + lo;
-
-/**/
-#ifdef DEBUG_RANDOM_LOGIC
-DEBUG_LOG(( "%d: GetGameLogicRandomValue = %d (%d - %d), %s line %d\n",
-				 TheGameLogic->getFrame(), rval, lo, hi, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameLogicRandomValue: defined in GameLogicRandomValue_getValueInt.cpp (its row's unit).
+Int GetGameLogicRandomValue( int lo, int hi, char *file, int line );
 
 //
 // Integer random value
 //
-Int GetGameClientRandomValue( int lo, int hi, char *file, int line )
-{
-	UnsignedInt delta = hi - lo + 1;
-	Int rval;
-
-	if (delta == 0)
-		return hi;
-
-	rval = ((Int)(randomValue(theGameClientSeed) % delta)) + lo;
-
-/**/
-#ifdef DEBUG_RANDOM_CLIENT
-DEBUG_LOG(( "%d: GetGameClientRandomValue = %d (%d - %d), %s line %d\n",
-				TheGameLogic->getFrame(), rval, lo, hi, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameClientRandomValue: defined in GameClientAudioRandomValue_getValueInt.cpp (its row's unit).
+Int GetGameClientRandomValue( int lo, int hi, char *file, int line );
 
 //
 // Integer random value
 //
-Int GetGameAudioRandomValue( int lo, int hi, char *file, int line )
-{
-	UnsignedInt delta = hi - lo + 1;
-	Int rval;
-
-	if (delta == 0)
-		return hi;
-
-	rval = ((Int)(randomValue(theGameAudioSeed) % delta)) + lo;
-
-/**/
-#ifdef DEBUG_RANDOM_AUDIO
-DEBUG_LOG(( "%d: GetGameAudioRandomValue = %d (%d - %d), %s line %d\n",
-				TheGameLogic->getFrame(), rval, lo, hi, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameAudioRandomValue: defined in GameClientAudioRandomValue_getValueInt.cpp (its row's unit).
+Int GetGameAudioRandomValue( int lo, int hi, char *file, int line );
 
 //
 // Real valued random value
 //
-Real GetGameLogicRandomValueReal( Real lo, Real hi, char *file, int line )
-{
-	Real delta = hi - lo;
-	Real rval;
-
-	if (delta <= 0.0f)
-		return hi;
-
-	rval = ((Real)(randomValue(theGameLogicSeed)) * theMultFactor ) * delta + lo;
-
-	DEBUG_ASSERTCRASH( rval >= lo && rval <= hi, ("Bad random val"));
-/**/
-#ifdef DEBUG_RANDOM_LOGIC
-DEBUG_LOG(( "%d: GetGameLogicRandomValueReal = %f, %s line %d\n",
-					TheGameLogic->getFrame(), rval, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameLogicRandomValueReal: defined in GameLogicRandomValue_getValueReal.cpp (its row's unit).
+Real GetGameLogicRandomValueReal( Real lo, Real hi, char *file, int line );
 
 //
 // Real valued random value
 //
-Real GetGameClientRandomValueReal( Real lo, Real hi, char *file, int line )
-{
-	Real delta = hi - lo;
-	Real rval;
-
-	if (delta <= 0.0f)
-		return hi;
-
-	rval = ((Real)(randomValue(theGameClientSeed)) * theMultFactor ) * delta + lo;
-
-	DEBUG_ASSERTCRASH( rval >= lo && rval <= hi, ("Bad random val"));
-/**/
-#ifdef DEBUG_RANDOM_CLIENT
-DEBUG_LOG(( "%d: GetGameClientRandomValueReal = %f, %s line %d\n",
-					TheGameLogic->getFrame(), rval, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameClientRandomValueReal: defined in ClientRandomValue_getValueReal.cpp (its row's unit).
+Real GetGameClientRandomValueReal( Real lo, Real hi, char *file, int line );
 
 //
 // Real valued random value
 //
-Real GetGameAudioRandomValueReal( Real lo, Real hi, char *file, int line )
-{
-	Real delta = hi - lo;
-	Real rval;
-
-	if (delta <= 0.0f)
-		return hi;
-
-	rval = ((Real)(randomValue(theGameAudioSeed)) * theMultFactor ) * delta + lo;
-
-	DEBUG_ASSERTCRASH( rval >= lo && rval <= hi, ("Bad random val"));
-/**/
-#ifdef DEBUG_RANDOM_AUDIO
-DEBUG_LOG(( "%d: GetGameAudioRandomValueReal = %f, %s line %d\n",
-					TheGameLogic->getFrame(), rval, file, line ));
-#endif
-/**/
-
-	return rval;
-}
+// GetGameAudioRandomValueReal: defined in GameAudioRandomValue_getValueReal.cpp (its row's unit).
+Real GetGameAudioRandomValueReal( Real lo, Real hi, char *file, int line );
 
 //--------------------------------------------------------------------------------------------------------------
 // GameClientRandomVariable
@@ -367,36 +231,12 @@ DEBUG_LOG(( "%d: GetGameAudioRandomValueReal = %f, %s line %d\n",
 /**
 	define the range of random values, and the distribution of values
 */
-void GameClientRandomVariable::setRange( Real low, Real high, DistributionType type )
-{
-	DEBUG_ASSERTCRASH(!(m_type == CONSTANT && m_low != m_high), ("CONSTANT GameClientRandomVariables should have low == high"));
-	m_low = low;
-	m_high = high;
-	m_type = type;
-}
+// GameClientRandomVariable::setRange: defined in ClientRandomValue.cpp (its row's unit).
 
 /**
  * Return a value from the random distribution
  */
-Real GameClientRandomVariable::getValue( void ) const
-{
-	switch( m_type )
-	{
-		case CONSTANT:
-			DEBUG_ASSERTLOG(m_low == m_high, ("m_low != m_high for a CONSTANT GameClientRandomVariable\n"));
-			if (m_low == m_high) {
-				return m_low;
-			} // else return as though a UNIFORM.
-
-		case UNIFORM:
-			return GameClientRandomValueReal( m_low, m_high );
-
-		default:
-			/// @todo fill in support for nonuniform GameClientRandomVariables.
-			DEBUG_CRASH(("unsupported DistributionType in GameClientRandomVariable::getValue\n"));
-			return 0.0f;
-	}
-}
+// GameClientRandomVariable::getValue: defined in ClientRandomValue_getValue.cpp (its row's unit).
 
 
 //--------------------------------------------------------------------------------------------------------------
@@ -423,24 +263,6 @@ void GameLogicRandomVariable::setRange( Real low, Real high, DistributionType ty
 /**
  * Return a value from the random distribution
  */
-Real GameLogicRandomVariable::getValue( void ) const
-{
-	switch( m_type )
-	{
-		case CONSTANT:
-			DEBUG_ASSERTLOG(m_low == m_high, ("m_low != m_high for a CONSTANT GameLogicRandomVariable"));
-			if (m_low == m_high) {
-				return m_low;
-			} // else return as though a UNIFORM.
-
-		case UNIFORM:
-			return GameLogicRandomValueReal( m_low, m_high );
-
-		default:
-			/// @todo fill in support for nonuniform GameLogicRandomVariables.
-			DEBUG_CRASH(("unsupported DistributionType in GameLogicRandomVariable::getValue\n"));
-			return 0.0f;
-	}
-}
+// GameLogicRandomVariable::getValue: defined in GameLogicRandomValue_getValue.cpp (its row's unit).
 
 
