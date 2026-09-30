@@ -4104,3 +4104,4 @@ FUN_007f75ec	0x003F75EC	136	blocked	STL rb-tree insert 5-arg thiscall calling _M
 ?rva003667D4@Rva003667D4@@QAEXXZ	0x003667D4	105	blocked	nested loop reg permute plus array cookie t=12 model=muse-09
 ?Rva00215F83Find@@YAXXZ	0x00215F83	108	blocked	STL find 4-arg caller vs 3-arg body tag dispatch unclear t=8 model=muse-09
 ?Rva006CD230Append@@YAXPAX0@Z	0x006CD230	112	blocked	true139 not112 tail global plus strcpy shape t=15 model=muse-09
+?rva00340FCD@Rva00340FCD@@QAEMXZ	0x00340FCD	110	blocked	push edi before push5 vs after plus loop top test-jle-jmp vs bottom jg persists across reorder postdec goto next-uninit O2 t=15 model=muse-07
