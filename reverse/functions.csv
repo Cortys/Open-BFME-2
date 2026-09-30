@@ -43772,3 +43772,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva00406F51Find@@YG_NPBVRva002B224BDwordField@@PAX1@Z,,0x00406F51,75,Code/GameEngine/Source/Common/Rva00406F51Find.cpp,matched,array via get 0x002B224B virtual A8 plus38 stdcall bool
 ?rva00406F9C@Rva00406F9C@@QAE_NPBX@Z,,0x00406F9C,35,Code/GameEngine/Source/Common/Rva00406F9CCheck.cpp,matched,32 dword intersect abuts 0x00406F51 unblocks 11
 ??1Rva002362B4@@QAE@XZ,,0x002362B4,104,Code/GameEngine/Source/Common/System/Rva002362B4Dtor.cpp,matched,unlock lane dtor via rowed vector plus releaseBuffer
+??1Rva000E19A3@@UAE@XZ,,0x000E19A3,122,Code/GameEngine/Source/Common/Rva000E19A3Dtor.cpp,matched,deleting dtor 0xE1A1D calls it plus rowed erase 0x1532E1 plus Release_Ref 0x61ED10 plus Terrain string
