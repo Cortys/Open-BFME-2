@@ -1,6 +1,4 @@
 // ?rva000550A0@Rva00699180Owner@@QAEXH@Z
-// partial score=0.9 date=2026-09-30
-// ?rva000550A0@Rva00699180Owner@@QAEXH@Z
 // partial score=0.90 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /arch:SSE2 /Oi /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
@@ -32,24 +30,20 @@ public:
 	float m_slot[12][4];
 };
 
-// ?rva000550A0@Rva00699180Owner@@QAEXH@Z present-unmatched
 void Rva00699180Owner::rva000550A0(int key)
 {
-	_STL::vector<BfmePod8> *v = m_vecs;
-	int idx = 0;
-	for (; idx < 6; ++idx, ++v)
+	for (int idx = 0; idx < 6; ++idx)
 	{
+		_STL::vector<BfmePod8> *v = &m_vecs[idx];
 		BfmePod8 *p = v->begin();
-		BfmePod8 *e = v->end();
-		if (p == e)
-			continue;
 		unsigned char erased = 0;
-		for (; p != e;)
+		if (p == v->end())
+			continue;
+		for (; p != v->end();)
 		{
 			if (p->a[1] == key)
 			{
 				p = v->erase(p);
-				e = v->end();
 				erased = 1;
 			}
 			else
