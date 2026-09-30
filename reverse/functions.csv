@@ -43445,3 +43445,5 @@ ___isleadbyte,,0x00020BD0,14,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleM
 _expr,,0x007559B0,13,Code/Libraries/Source/Lua/lparser.c,matched,Lua 5.0 lparser.c; unique masked placement (place_bodies --min 8); call reads rowed subexpr 0x007558A0; between rowed subexpr and assignment in this TU block
 _ZNAME,,0x00756290,10,Code/Libraries/Source/Lua/lundump.c,matched,Lua 5.0 lundump.c; unique masked placement (place_bodies --min 8); first definition in source and immediately precedes rowed unexpectedEOZ
 _posrelat,,0x00748AE0,9,Code/Libraries/Source/Lua/lstrlib.c,matched,Lua 5.0 lstrlib.c; unique masked placement (place_bodies --min 8); between rowed str_len and str_sub exactly as defined in source
+__Locale_unshift,,0x00020DB0,63,Code/Libraries/Source/STLport/LocaleUnshiftStrwcmp.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0084DAF0; bfme1_sweep T1 clean transfer; follows rowed _Locale_wctomb as in BFME1
+__Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwcmp.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0084DB30; bfme1_sweep T1 clean transfer; follows _Locale_unshift as in BFME1
