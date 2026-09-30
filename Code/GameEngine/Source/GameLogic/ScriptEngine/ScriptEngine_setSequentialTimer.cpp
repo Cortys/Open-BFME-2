@@ -50,6 +50,10 @@ public:
 	void setSequentialTimer(Team *team, int frameCount);
 };
 
+// ScriptEngine.cpp's singleton (Zero Hour: `ScriptEngine *TheScriptEngine = NULL;`).
+// Matched references in 31 units place it at VA 0x00DFE16C, zero-filled .bss.
+ScriptEngine *TheScriptEngine = NULL;
+
 void ScriptEngine::setSequentialTimer(Object *obj, int frameCount)
 {
 	if (!obj)
