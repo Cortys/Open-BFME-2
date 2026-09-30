@@ -3711,3 +3711,4 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?release@Rva0020453CHolderBase@@QAEXXZ	0x0020453C	111	blocked	by-value handle temp auto-dtor adds unconditional cleanup plus ebx zero reuse needs trivial-wrapper idiom t=10 model=muse-11
 ?rva001EEFD2@Mouse@@QAEXH@Z	0x001EEFD2	137	blocked	159vs137 skeleton only empty path missing virtual slot3C and payload ממצ t=20 model=muse-09
 ?rva002112A9@Rva002112A9@@QAEXXZ	0x002112A9	237	blocked	complex 237B float cvttss2si format translate dual rva001EEBD5 paths needs donor t=10 model=muse-09
+?insert@?$list@UBfmePod32@@V?$allocator@UBfmePod32@@@_STL@@@_STL@@QAE?AU?$_List_iterator@UBfmePod32@@U?$_Nonconst_traits@UBfmePod32@@@_STL@@@2@U32@ABUBfmePod32@@@Z	0x000BC180	37	blocked	whole-class inlines create_node 55B vs 37B need explicit Out-of-line t=15 model=muse-02
