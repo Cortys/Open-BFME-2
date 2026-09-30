@@ -43618,3 +43618,4 @@ _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSp
 ??$__unguarded_partition@PAPAXPAXURva00568721Cmp@@@_STL@@YAPAPAXPAPAX0PAXURva00568721Cmp@@@Z,,0x00568DB7,73,Code/Libraries/Source/WWVegas/WWLib/stlport_unguarded_partition_rva00568721.cpp,matched,73B partition via rowed Less ICF twin plus 0x004231A0 shape
 ??0Rva00367539@@QAE@PAVStateMachine@@_N1@Z,,0x00367539,43,Code/GameEngine/Source/Common/Rva00367539Ctor.cpp,matched,State hash 0x815D9F7C vtable 0x00817300 plus two bools
 ?Rva0040D11CSwap@@YAXPAVRva0040D0A4Entry@@0@Z,,0x0040D11C,84,Code/GameEngine/Source/Common/Rva0040D11CSwap.cpp,matched,unlock lane EH swap via tmp copy plus assigns plus release
+??_GPushButtonData@@QAEPAXI@Z,,0x00328338,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_PushButtonData.cpp,matched,deleting dtor via rowed dtor and delete QAE

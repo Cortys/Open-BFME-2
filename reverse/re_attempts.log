@@ -3946,3 +3946,4 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?Rva0054A9ABAdjustHeap@@YAXU?$_Deque_iterator@UBfmeE8@@U?$_Const_traits@UBfmeE8@@@_STL@@@_STL@@HHHMUComp0054A9AB@@@Z	0x0054A9AB	219	partial	tail value fill via placeholders vs named temp plus push eax vs ecx t=30 model=muse-06 score=0.99 stash=reverse/attempts/0x0054a9ab.cpp
 ??0Rva002DAB18@@QAE@XZ	0x002DAB18	70	partial	mov ecx restore late vs early plus stores order t=30 model=muse-06 score=0.97 stash=reverse/attempts/0x002dab18.cpp
 ??0Rva0035D74A@@QAE@XZ	0x0035D789	72	partial	or 0x30 hoisted early vs late plus vtable sinks late vs early; 72/72B 22/22ins 0reg t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x0035d789.cpp
+?rva004C31A8@Rva004C31A8@@QAEPAXXZ	0x004C31A8	68	blocked	science-gated array push-pop order wall 0 mem 5 reg t=15 model=muse-spark
