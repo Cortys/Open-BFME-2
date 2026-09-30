@@ -12,14 +12,29 @@ class Rva002D22CA
 {
 public:
 	virtual ~Rva002D22CA();
+	virtual bool rva002D2457();
+	void rva002D23ED(void *table, int index);
 };
 
 class Rva0004CA4C : public Rva002D22CA
 {
 public:
 	virtual ~Rva0004CA4C();
+	virtual void rva0004CA57();
 };
 
 Rva0004CA4C::~Rva0004CA4C()
 {
+}
+
+extern char g_00DB3D18[];
+extern char g_00DE1CD8[];
+extern char g_00DE1CE4[];
+
+void Rva0004CA4C::rva0004CA57()
+{
+	Rva002D22CA::rva002D2457();
+	rva002D23ED(g_00DB3D18, 3);
+	rva002D23ED(g_00DE1CD8, 8);
+	rva002D23ED(g_00DE1CE4, 5);
 }
