@@ -3907,3 +3907,4 @@ FUN_00293D3B	0x00293D3B	113	blocked	unlock 113B Object list via 0x108 needs 2-ar
 ?Rva00599466HeapSiftUp@@YAXPAUKeyframe@@HHMIH@Z	0x00599466	69	partial	69B net0 value hoisted to xmm0 vs stack plus lea vs indexed plus movss vs mov t=25 model=muse-11 score=0.9 stash=reverse/attempts/0x00599466.cpp
 ??0Rva00126350@@QAE@ABV0@@Z	0x001263B7	104	partial	mov ecx esi plus state 5B early vs late t=25 model=muse-08 score=0.95 stash=reverse/attempts/0x001263b7.cpp
 ?Rva0030BFE8Equal@@YAHPBURva0030BFE8Range@@0@Z	0x0030BFE8	61	partial	branchy bool-int tail plus jne vs je t=30 model=muse-04 score=0.93 stash=reverse/attempts/0x0030bfe8.cpp
+??0CountUpTransition@@QAE@XZ	0x0035F64A	74	blocked	vtable late plus or-vs-mov plus ordering plus eax-vs-ecx t=20 model=muse-spark

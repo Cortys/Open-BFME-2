@@ -43509,3 +43509,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva0055B8CD@Rva0055B8CD@@UAEXPAVXfer@@@Z,,0x0055B8CD,70,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055B8CD.cpp,matched,DoXfer slot3 vtable 0x0081BA90 slot7 0x0081BF20 Version1 rowed xferRandomVariable rowed caller 0x0055B951
 ?rva00327C1B@Rva00327C1B@@QBE_NXZ,,0x00327C1B,20,Code/GameEngine/Source/Common/Rva00327C1BGetter.cpp,matched,two-value disp8 bool getter 1-or-3 callers walk lists
 ??$__median@PAHVRva00204BB8@@@_STL@@YAPAHPAH00VRva00204BB8@@@Z,,0x002057D5,107,Code/Libraries/Source/WWVegas/WWLib/stlport_median_rva00204bb8.cpp,matched,median of three via rowed 0x204BB8 caller 0x20C04C
+??0Rva0035FF76@@QAE@XZ,,0x0036006F,75,Code/GameEngine/Source/Common/Rva0035FF76Ctor.cpp,matched,vtable 0x0081670C base 0x001DBAA4 caller 0x003600F8
