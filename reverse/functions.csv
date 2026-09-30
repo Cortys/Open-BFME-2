@@ -43416,3 +43416,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??4Rva00126350@@QAEAAV0@ABV0@@Z,,0x00126350,73,Code/Libraries/Source/WWVegas/WW3D2/Rva00126350Assign.cpp,matched,callee 0x000424D0 row RefCountPtr Texture caller 0x00126409
 ??1Rva005396E6@@QAE@XZ,,0x005396E6,89,Code/GameEngine/Source/Common/Rva005396E6Dtor.cpp,matched,dtor frees ptrs via DisplayManager slot3C then wide strings
 ?rva005398B3@Rva005398B3@@QAEXXZ,,0x005398B3,26,Code/GameEngine/Source/Common/Rva005396E6Dtor.cpp,matched,chain frees owned Rva005396E6 via delete
+?rva00057151@Rva00057151@@QAEXHHH@Z,,0x00057151,127,Code/Libraries/Source/WWVegas/WWLib/OpaqueRefDequePop57151.cpp,matched,deque back alias 0x3B5603 and assignment 0x239099 and pop_back 0x5555F via OpaqueRef group
