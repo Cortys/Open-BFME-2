@@ -43581,3 +43581,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?Rva003BC259Remove@@YGXPAVParameter@@@Z,,0x003BC259,34,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC259Remove.cpp,matched,script remove unit scripts via rowed getUnitNamed and 0x20517D
 ?Rva003BC421Do@@YGXPAVParameter@@H@Z,,0x003BC421,69,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BC421Do.cpp,matched,script unit iface slots via rowed getUnitNamed and bfmeGoBGB
 ?rva00262453@Rva00262453@@QAEXPAVSequentialScript@@_NH@Z,,0x00262453,74,Code/GameEngine/Source/Common/Rva00262453.cpp,matched,setter layout as Rva00262436 ScriptEngine rva00205140 via g_Va009FE16C callers 0x0036E2D1 0x003B3DAF
+??$__make_heap@PAHVRva00204BB8@@@_STL@@YAXPAH0VRva00204BB8@@@Z,,0x002074FD,60,Code/Libraries/Source/WWVegas/WWLib/stlport_make_heap_rva00204bb8.cpp,matched,chain heap make via landed adjust heap same flags
