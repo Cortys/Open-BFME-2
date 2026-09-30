@@ -43300,3 +43300,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva002D7AA6@Radar@@QAEXH@Z,,0x002D7AA6,10,Code/GameEngine/Source/Common/System/RadarRva002D7AA6.cpp,matched,leaf clearer via Radar neighbours plus and-zero
 ?rva00028C70@Rva00028C70@@QAEHDH@Z,,0x00028C70,29,Code/GameEngine/Source/Common/Rva00028C70Forward.cpp,matched,Rva forwarder to bfmeFwdOneSUA via BfmeThingSUA cast
 ?rva006003A5@Rva006003FC@@QAEXPAVObject@@@Z,,0x006003A5,8,Code/GameEngine/Source/Common/Rva006003A5.cpp,matched,vslot via slot2 plus pinned performUpgradeFX
+?rva0033EF86@Rva0033EEC9@@QAEXPBUCoord3D@@@Z,,0x0033EF86,8,Code/GameEngine/Source/Common/Rva0033EF86.cpp,matched,leaf forward via member plus rowed setPosition
