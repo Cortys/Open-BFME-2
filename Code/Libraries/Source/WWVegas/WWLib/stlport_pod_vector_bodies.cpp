@@ -198,3 +198,18 @@ template BfmePod40* _STL::__find(BfmePod40*, BfmePod40*, const BfmePod40&, const
 // ??$find@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@@Z @0x0040A891 27B
 // find wrapper over __find 0x0040A68F via tag local.
 template BfmePod40* _STL::find(BfmePod40*, BfmePod40*, const BfmePod40&);
+// ?rva0040AAD5@Rva0040AAD5@@QAEPAUBfmePod40@@H@Z @0x0040AAD5 35B
+// Searches vector<BfmePod40> at +0xC by first-field key via rowed find
+// 0x0040A891; caller 0x0040C0FE passes [edi] int key and tests for null.
+class Rva0040AAD5 {
+    int _pad[3];
+    BfmePod40 *_first;
+    BfmePod40 *_last;
+public:
+    BfmePod40 *rva0040AAD5(int key);
+};
+BfmePod40 *Rva0040AAD5::rva0040AAD5(int key)
+{
+    BfmePod40 *found = _STL::find(_first, _last, (const BfmePod40 &)key);
+    return found == _last ? 0 : found;
+}
