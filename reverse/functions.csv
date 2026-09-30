@@ -43987,3 +43987,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??_GRva003F7EC7@@UAEPAXI@Z,,0x003F845C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003F7EC7.cpp,matched,Chain deleting dtor calling rowed 0x003F7EC7
 ?xfer@Rva00345CAB@@MAEXPAVXfer@@@Z,,0x00340E97,142,Code/GameEngine/Source/Common/Rva00340E97Xfer.cpp,matched,vtable 0x00813548 slot 3 plus rowed base xfer plus Xfer slots
 ??0Rva003AE6A9@@QAE@ABV0@@Z,,0x003AE6A9,111,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE6A9CopyCtor.cpp,matched,copy ctor via rowed bases plus 0x58 int unlocks 0x003AE683
+?rva00108DBC@Rva00108DBC@@QAE_NXZ,,0x00108DBC,108,Code/GameEngine/Source/Common/Rva00108DBCInit.cpp,matched,init allocating Rva00108A0B and CameraClass via rowed new
