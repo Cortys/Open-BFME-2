@@ -43410,3 +43410,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva00518262Enable@@YAXXZ,,0x00518262,21,Code/GameEngine/Source/Common/Rva00518262Enable.cpp,matched,guarded enabler via rowed enable 0x00222479 precedent Rva00444040Enable
 ?Rva005399D0Check@@YGHPAVObject@@@Z,,0x005399D0,67,Code/GameEngine/Source/Common/Rva005399D0Check.cpp,matched,unlock via Object preds plus InGameUI slot98 stdcall predicate
 ?rva00293105@Object@@QAEXXZ,,0x00293105,181,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293105.cpp,matched,Object array plus list recursion via rowed virt and list_base
+??_GRva005CCC69@@UAEPAXI@Z,,0x005CCC98,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04a.cpp,matched,chain deleting dtor calls rowed 0x005CCC69
