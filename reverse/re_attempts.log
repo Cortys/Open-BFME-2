@@ -3937,3 +3937,4 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ??1Rva003908C2@@UAE@XZ	0x003908C2	79	partial	and-ebp-4-0 early before stores vs retail late after load; otherwise exact 79B 24insns t=22 model=muse-02 score=0.96 stash=reverse/attempts/0x003908c2.cpp
 ??0Rva004147CF@@QAE@ABV0@@Z	0x004147CF	125	partial	EH state 1 vs 2 before vector copy vtable is reloc t=20 model=muse-09 score=0.95 stash=reverse/attempts/0x004147cf.cpp
 ?Rva002053FA@@YAXXZ	0x002053FA	261	blocked	261B debug-filter helper needs GlobalData 0x10F4 vector plus 6 extern globals plus IAT; donor AppendDebugMessage 171B covers frame-proc shape but filter loop and Run-script prefixes need fresh layout; deferring for smaller siblings t=8 model=muse-spark
+?rva000D18F8@Rva000D18F8@@QAEHHHMM@Z	0x000D18F8	229	blocked	complex 229B W3D Tornado RadiusDecal with x87 SSE EH 6 callees needs strong model t=5 model=muse-12
