@@ -44836,3 +44836,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00059A7C@Rva00059A25@@QAEXH@Z,,0x00059A7C,84,Code/GameEngine/Source/Common/Rva00059A25Method.cpp,matched,chain guard plus array stride calls row 0x591EF
 ?Rva000C3B6EParse@INI@@SAXPAV1@PAX1PBX@Z,,0x000C3B6E,235,Code/GameEngine/Source/Common/System/INI_Rva000C3B6EParse.cpp,matched,chain from C33DA via neighbour C3824 pattern m_sepsColon vector B950F
 ?rva000B4BED@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4BED,176,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,subset search via WeaponTemplateSetHead copy and memcmp wrapper
+?rva000B4C9D@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4C9D,33,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,prev entry search via begin end stride F8
