@@ -43906,3 +43906,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva003AF97C@@QAE@ABV0@@Z,,0x003AF97C,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AF9A9 then own 4 vptrs
 ?clone@Rva003AF97C@@QBEPAV1@XZ,,0x003AF945,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF97CClone.cpp,matched,vslot2 clone via new plus rowed copy 0x003AF97C
 ??0Rva003AF4AA@@QAE@ABV0@@Z,,0x003AF4AA,99,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy ctor via rowed base plus inline Emission base
+?xfer@Rva004CE0BE@@MAEXPAVXfer@@@Z,,0x004CE0BE,27,Code/GameEngine/Source/GameLogic/Object/Update/Rva004CE0BEXfer.cpp,matched,chain xfer Version1 plus base
