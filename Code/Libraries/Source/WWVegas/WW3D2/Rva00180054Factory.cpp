@@ -50,3 +50,54 @@ Rva00180023 Rva00180054_MakeOwner(const char *name)
 	}
 	return Rva00180023(Rva0061F230_GetPrototype(name));
 }
+
+extern "C" char GenBase009EB7D0_vtbl;
+class __declspec(novtable) GenBase009EB7D0
+{
+public:
+	__declspec(noinline) GenBase009EB7D0();
+	virtual void handle();
+private:
+	unsigned int m_flags;
+	unsigned int m_zero08;
+	unsigned int m_zero0c;
+	unsigned int m_zero10;
+};
+class EmptyBase0017FF77
+{
+public:
+	EmptyBase0017FF77() {}
+	~EmptyBase0017FF77();
+};
+class StringClass
+{
+public:
+	StringClass(const char *name, bool flag);
+	~StringClass() { Free_String(); }
+private:
+	void Free_String();
+	char *m_Buffer;
+};
+class Rva0017FF77 : public GenBase009EB7D0, public EmptyBase0017FF77
+{
+public:
+	Rva0017FF77(const char *name, int a, int b);
+private:
+	int m_14;
+	StringClass m_str18;
+	int m_1c;
+	int m_20;
+};
+bool __cdecl Render_Obj_Exists(const char *name);
+void *__cdecl operator new(unsigned int size);
+void __cdecl Add_Prototype(void *p);
+
+void __cdecl Rva001800B2Create(const char *name, int a, int b)
+{
+	if (name == 0)
+		return;
+	if (Render_Obj_Exists(name))
+		return;
+	Rva0017FF77 *p = new Rva0017FF77(name, a, b);
+	Add_Prototype(p);
+}

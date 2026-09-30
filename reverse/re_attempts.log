@@ -3961,3 +3961,4 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?Rva001117E3Downsample@@YAXPAGH0@Z	0x001117E3	109	blocked	2x2 word avg with idiv ebx reuse and frame 0x0c needs new idea t=15 model=muse-09
 ?rva001F5300@Rva001F5300@@QAEXPAM@Z	0x001F5300	76	partial	missing one push ecx frame 75 vs 76 slot -8 vs -4 t=15 model=muse-09 score=0.95 stash=reverse/attempts/0x001f5300.cpp
 ?rva000AE1DC@BfmeGridWM@@QBE_NHH@Z	0x000AE1DC	88	blocked	register wall 10 diffs this in esi vs ecx needs new idea t=10 model=muse-09
+??1Rva0017FF77@@UAE@XZ	0x0017FFCA	89	blocked	dtor 100B vs 89B extra ebx plus Empty base call needs different Empty for ctor 77B t=25 model=muse-12
