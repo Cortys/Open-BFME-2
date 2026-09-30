@@ -15,6 +15,10 @@
 // call its matched body, and explicit member instantiation keeps the other
 // vector members out of this TU. FXList is reduced to its 8-byte footprint
 // with the out-of-line copy ctor and dtor.
+//
+// push_back (retail 0x0056625E) and the copy ctor (retail 0x0052CAC9) are
+// instantiated here too: they are the only unowned callers of the
+// _M_insert_overflow and __uninitialized_copy bodies this TU places.
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
 
@@ -38,3 +42,6 @@ template void _STL::vector<FXList>::_M_insert_overflow(
 	const _STL::__false_type &,
 	unsigned int,
 	bool);
+
+template void _STL::vector<FXList>::push_back(const FXList &);
+template _STL::vector<FXList>::vector(const _STL::vector<FXList> &);
