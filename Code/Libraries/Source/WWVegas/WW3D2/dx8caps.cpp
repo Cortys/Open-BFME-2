@@ -474,28 +474,6 @@ DX8Caps::DeviceTypeIntel DX8Caps::Get_Intel_Device(unsigned device_id)
 // Body in DX8Caps_ctor_device.asm (exact 233B retail @ 0x0091CB00).
 // C++ blocked: BFME class layout (DriverDLL@+0x29c) vs ZH header (+0x144).
 
-// byte-exact reconstruction: Code/Libraries/Source/WWVegas/WW3D2/DX8Caps_ctor_device_Thunk.cpp
-// ??0DX8Caps@@ present-unmatched
-DX8Caps::DX8Caps(
-	IDirect3D8* direct3d,
-	const D3DCAPS8& caps, 
-	WW3DFormat display_format, 
-	const D3DADAPTER_IDENTIFIER8& adapter_id)
-	:
-	Direct3D(direct3d),
-	Caps(caps),
-	MaxDisplayWidth(0),
-	MaxDisplayHeight(0)
-{
-	if ((Caps.DevCaps&D3DDEVCAPS_HWTRANSFORMANDLIGHT)==D3DDEVCAPS_HWTRANSFORMANDLIGHT) {
-		SupportTnL=true;
-	} else {
-		SupportTnL=false;			
-	}
-
-	Compute_Caps(display_format,adapter_id);
-}
-
 //Don't really need this but I added this function to free static variables so
 //they don't show up in our memory manager as a leak. -MW 7-22-03
 // ?Shutdown@DX8Caps@@SAXXZ present-unmatched
