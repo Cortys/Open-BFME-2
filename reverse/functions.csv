@@ -43695,3 +43695,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?bfmeApplyCircle@Gen_008812D0@@QAEXHHHH_NH@Z,,0x006C1580,86,Code/GameEngine/Source/Common/BfmeGridRasterCircle.cpp,matched,BFME1 taintmanager_impl donor plus BFME2 mode word
 ?rva0042C1F9@Rva0042C1F9@@QAEPAV1@UHolder0042C1F9@@@Z,,0x0042C1F9,65,Code/GameEngine/Source/Common/Rva0042C1F9.cpp,matched,setter holder virt0 delete via rowed delete caller 0x42C342
 ?rva0042C936@Rva0042C936@@QAEPAV1@UHolder0042C936@@@Z,,0x0042C936,65,Code/GameEngine/Source/Common/Rva0042C936.cpp,matched,chain setter holder virt0 delete via rowed delete caller 0x42CA4B
+?rva00053CE1@Rva00053CE1@@QAEXMHH@Z,,0x00053CE1,69,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00053CE1.cpp,matched,chain from 0x000523A0 guard over 0x9D4 array 0x12C stride 0x1C4

@@ -3997,3 +3997,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva000AE44B@BfmeGridWM@@QAEXHHPAX@Z	0x000AE44B	69	partial	imul-vs-2lea for v36 t=22 model=muse-08 score=0.97 stash=reverse/attempts/0x000ae44b.cpp
 ?rva00067225@Rva00067225@@QAEEMM@Z	0x00067225	115	blocked	SSE float lea-plus-movss shape t=16 model=muse-08
 ?rva0018095B@Rva0018095B@@QAEAAV1@ABUBfmeResetAnyRef@@@Z	0x0018095B	49	blocked	chain setter 21B vs 49B missing 28B EH needs local with dtor t=15 model=muse-12
+?rva000550A0@Rva00699180Owner@@QAEXH@Z	0x000550A0	87	partial	six-vector erase plus refresh shape 90B vs 87B; outer ptr bump plus cl flag vs dl; t=25 model=muse-07 score=0.9 stash=reverse/attempts/0x000550a0.cpp
