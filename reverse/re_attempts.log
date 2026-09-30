@@ -3667,3 +3667,5 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva003B11D2@Rva003B11D2@@QAEPAVOverridable@@V?$StringBase@D@@@Z	0x003B11D2	114	blocked	find-by-value loop needs Overridable layout plus byte count plus reg order t=10 model=muse-12
 ?ReAcquireResources@W3DSnowManager@@QAE_NXZ	0x0009390F	444	blocked	RefCountPtr-op plus gVa-globals fix leaves only lea-push order; 6 variants explicit-op plus G7-drop same 444B t=20 model=muse-12
 ?Rva0070B590Cleanup@@YAXXZ	0x0070B590	52	blocked	store via esi not ecx; split plus block-scope plus while-next same 55B t=12 model=muse-12
+?rva00547223@Rva00547223@@QAEXPAH0@Z	0x00547223	34	partial	32of34 missing mov eax ecx store-only scratch swap t=10 model=muse-04 score=0.94 stash=reverse/attempts/0x00547223.cpp
+?rva005183A0@Rva005183A0@@QAE_NXZ	0x005183A0	90	partial	89of90 frame 0x20 vs 0x14 plus branch plus esi-eax t=10 model=muse-04 score=0.96 stash=reverse/attempts/0x005183a0.cpp

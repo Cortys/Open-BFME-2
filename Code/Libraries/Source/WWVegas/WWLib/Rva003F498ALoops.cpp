@@ -41,6 +41,7 @@ public:
     int rva003F46C1(int outerIdx, int innerIdx);
     int* rva003F46F2(int outerIdx, int innerIdx);
     int rva003F48FE(int outerIdx, int middleIdx, int innerIdx);
+    bool rva003F486C(int id);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -78,4 +79,24 @@ int* Rva003F498A::rva003F46F2(int outerIdx, int innerIdx)
 int Rva003F498A::rva003F48FE(int outerIdx, int middleIdx, int innerIdx)
 {
     return m_outers[outerIdx].inners[middleIdx].vals[innerIdx];
+}
+
+// ?rva003F486C@Rva003F498A@@QAE_NH@Z, retail 0x003F486C, 131 bytes.
+// Unlock: scans outer/inner vectors for unk0-pointer object with ID at +0x14
+// matching int arg via 0x1C/0x30 push-const idiv loops. Evidence: unlock lane,
+// callers 0x00249BF3 0x003F354B 0x003F48F6 0x004EE0E5 0x004EE272 0x004FE057,
+// wrapper 0x003F48EF pushes [arg+0x14], same file/sizes/flags as rva003F498A.
+bool Rva003F498A::rva003F486C(int id)
+{
+    for (unsigned i = 0; i < m_outers.size(); ++i) {
+        Rva003F498AOuter &o = m_outers[i];
+        for (unsigned j = 0; j < o.inners.size(); ++j) {
+            Rva003F498AInner &in = o.inners[j];
+            void *obj = *(void **)&in;
+            int cur = *(int *)((char *)obj + 0x14);
+            if (cur == id)
+                return true;
+        }
+    }
+    return false;
 }
