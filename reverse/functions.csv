@@ -43671,3 +43671,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00052098@Rva00699180Owner@@QAEXH@Z,,0x00052098,27,Code/GameEngine/Source/Common/Rva00699180Volume_Refresh.cpp,matched,chain from 0x52048 plus sibling rva00051FFE
 ?rva0035B77D@Rva0035B77D@@QAEXXZ,,0x0035B77D,92,Code/GameEngine/Source/Common/System/Rva0035B77DResolve.cpp,matched,92B image array resolve via rowed isEmpty findImage push_back releaseBuffer plus global
 ?rva00180815@BfmeResetTextureRef@@QAEAAU1@ABUBfmeResetAnyRef@@@Z,,0x00180815,50,Code/Libraries/Source/WWVegas/WW3D2/Rva001805AEAssign.cpp,matched,twin of 0x001805AE with BOX not TRAP via rowed clear assign
+?rva00052F4C@MilesAudioManager@@QAEMXZ,,0x00052F4C,84,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052F4C.cpp,matched,provider room type with reverb table plus bounds
