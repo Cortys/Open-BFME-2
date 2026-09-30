@@ -43099,3 +43099,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0021294A@Rva0021294A@@QAEPAVRva003FD789@@ABV?$StringBase@D@@@Z,,0x0021294A,87,Code/Libraries/Source/WWVegas/WWLib/Rva0021294ACreate.cpp,matched,chain via Rva003FD789 ctor plus vector push_back at 0x24C
 ?xfer@RespawnUpdate@@MAEXPAVXfer@@@Z,,0x004AF00B,139,Code/GameEngine/Source/GameLogic/Object/Update/RespawnUpdateXfer.cpp,matched,slot3 Version base helpers int bool float
 ?_M_insert_overflow@?$vector@UBfmePod24@@V?$allocator@UBfmePod24@@@_STL@@@_STL@@IAEXPAUBfmePod24@@ABU3@ABU__false_type@2@I_N@Z,,0x000BCFF9,189,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod24_overflow.cpp,matched,Pod24 overflow via G7 imul callers rowed
+?PopAndPush@AptBasePtrStack@@QAEXHPAVBfmeAptValue006DCD20@@@Z,,0x006FDFA0,162,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,unlock PopAndPush asserts 201 205 shared triple sibling Push
