@@ -44077,3 +44077,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva003F07E5@Rva003F07E5@@QAE_NPAVCreateAHeroData@@PAH@Z,,0x003F07E5,85,Code/GameEngine/Source/Common/System/Rva003F07E5Check.cpp,matched,unlock sibling of Rva003F1093Check via callers 0x003F1B7C 0x002B3416
 ?Rva003FED66MoveButtonFlash@@YAXPAPAXMM@Z,,0x003FED66,117,Code/GameEngine/Source/GameClient/Rva003FED66MoveButtonFlash.cpp,matched,caller 0x005C65D0 cdecl ptr float float via UiCallbackFirers pattern with rowed snprintf and pinned invoke
 ??1?$vector@UBfmeVectorRecord002AF478@@V?$allocator@UBfmeVectorRecord002AF478@@@_STL@@@_STL@@QAE@XZ,,0x002B0EDF,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorGrowthFootprints.cpp,matched,vector dtor via rowed Destroy plus free adjacent to _M_clear
+?rva003628A6@Rva003628A6@@QAEXPAX@Z,,0x003628A6,45,Code/GameEngine/Source/Common/Bfme/Rva003628A6Free.cpp,matched,caller 0x00362AB5 frees child then next via rowed free
