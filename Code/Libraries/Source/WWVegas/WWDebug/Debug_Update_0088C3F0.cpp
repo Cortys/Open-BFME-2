@@ -32,7 +32,7 @@ class Debug
     char m_prefix[0x0C];
     IOFactoryListEntry *firstIOFactory;
 
-    void ExecCommand(const char *, const char *);
+    bool ExecCommand(const char *, const char *);
 
 public:
     void Update(void);
