@@ -30,3 +30,10 @@ _STL::_List_node<_STL::vector<unsigned int> > *_STL::list<_STL::vector<unsigned 
 	return __p;
 }
 template _STL::_List_node<_STL::vector<unsigned int> > *_STL::list<_STL::vector<unsigned int>, _STL::allocator<_STL::vector<unsigned int> > >::_M_create_node(const _STL::vector<unsigned int> &);
+
+// Retail 0x000799E7 (37 bytes): insert(pos, x) of the same list. Its only
+// callee is the _M_create_node above (call-proven vector value), which is
+// what separates it from the masked-identical inserts of other lists.
+template _STL::list<_STL::vector<unsigned int>, _STL::allocator<_STL::vector<unsigned int> > >::iterator
+_STL::list<_STL::vector<unsigned int>, _STL::allocator<_STL::vector<unsigned int> > >::insert(
+    _STL::list<_STL::vector<unsigned int>, _STL::allocator<_STL::vector<unsigned int> > >::iterator, const _STL::vector<unsigned int> &);
