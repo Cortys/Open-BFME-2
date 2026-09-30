@@ -44754,3 +44754,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ??4Rva003B1101@@QAEAAV0@ABV0@@Z,,0x003B1337,215,Code/GameEngine/Source/Common/Rva003B1101Assign.cpp,matched,copy assign via Overridable base plus StringBase set vector Opaque workers
 ?rva003B1820@Rva003B1820@@QAEPAXABV?$StringBase@D@@@Z,,0x003B1820,51,Code/GameEngine/Source/Common/Rva003B1820Find.cpp,matched,fixed 6-entry table lookup via compareNoCase returning entry or null
 ?rva003B1853@Rva003B1853@@QAEXPBDH@Z,,0x003B1853,38,Code/GameEngine/Source/Common/Rva003B1853Set.cpp,matched,entry setter clears vector sets name stores int
+?rva003B1879@Rva003B1820@@QAEXXZ,,0x003B1879,123,Code/GameEngine/Source/Common/Rva003B1879Init.cpp,matched,river texture table init via entry setter with literals
