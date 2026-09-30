@@ -56,6 +56,12 @@ public:
 	Rva0052BEF0(const Rva0052BEF0 &other);
 };
 
+class Rva0052BD59
+{
+public:
+	Rva0052BD59(const Rva0052BD59 &other);
+};
+
 template void _STL::_Construct<TreeKey00242F5E, TreeKey00242F5E>(TreeKey00242F5E *, const TreeKey00242F5E &);
 template void _STL::_Construct<GeometryInfo, GeometryInfo>(GeometryInfo *, const GeometryInfo &);
 template void _STL::_Construct<FXList, FXList>(FXList *, const FXList &);
@@ -63,3 +69,4 @@ template void _STL::_Construct<BfmeStringRecord00239B46, BfmeStringRecord00239B4
 template void _STL::_Construct<BfmeStringRecord005DDD40, BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40 *, const BfmeStringRecord005DDD40 &);
 template void _STL::_Construct<Rva0033A4F0, Rva0033A4F0>(Rva0033A4F0 *, const Rva0033A4F0 &);
 template void _STL::_Construct<Rva0052BEF0, Rva0052BEF0>(Rva0052BEF0 *, const Rva0052BEF0 &);
+template void _STL::_Construct<Rva0052BD59, Rva0052BD59>(Rva0052BD59 *, const Rva0052BD59 &);
