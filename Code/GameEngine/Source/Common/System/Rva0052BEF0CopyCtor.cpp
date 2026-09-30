@@ -1,0 +1,50 @@
+// cl: /O1 /MD /EHsc
+// ??0Rva0052BEF0@@QAE@ABV0@@Z, retail 0x0052BEF0, 67 bytes.
+// Copy ctor for an address-named value type holding a string at +4 and a
+// byte at +8 with vtable 0x00C61DC4. Evidence: StringBase<char> copy via
+// pinned 0x000365F0 from param+4 to this+4, byte from param+8, sole caller
+// 0x0052C431 placement construct, unlocks 0x0052C431.
+template <typename T> class StringBase
+{
+	friend class AsciiString;
+private:
+	StringBase() { m_data = 0; }
+	StringBase(const StringBase<T> &other);
+	void *m_data;
+};
+
+class AsciiString : private StringBase<char>
+{
+public:
+	AsciiString() {}
+	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	~AsciiString();
+	AsciiString &operator=(const AsciiString &other);
+};
+
+extern const void *const g_00C61DC4[];
+
+class EmptyBase
+{
+public:
+	EmptyBase() {}
+	~EmptyBase();
+};
+
+class Rva0052BEF0 : public EmptyBase
+{
+public:
+	Rva0052BEF0(const Rva0052BEF0 &other);
+
+private:
+	const void *m_vtable; // +0
+	AsciiString m_str; // +4
+	unsigned char m_b; // +8
+};
+
+Rva0052BEF0::Rva0052BEF0(const Rva0052BEF0 &other)
+	: m_vtable(g_00C61DC4)
+	, m_str(other.m_str)
+	, m_b(other.m_b)
+{
+}
