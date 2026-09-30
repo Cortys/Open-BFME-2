@@ -12,3 +12,4 @@ struct TreeOpaqueMapped00372FF4 { unsigned int m_bits; };
 typedef _STL::pair<const float, TreeOpaqueMapped00372FF4> TreeValue00372FF4;
 typedef _STL::_Rb_tree<float, TreeValue00372FF4, _STL::_Select1st<TreeValue00372FF4>, _STL::less<float>, _STL::allocator<TreeValue00372FF4> > Tree00372FF4;
 template Tree00372FF4::iterator Tree00372FF4::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const TreeValue00372FF4 &, _STL::_Rb_tree_node_base *);
+template void Tree00372FF4::_M_erase(Tree00372FF4::_Link_type);
