@@ -3805,3 +3805,5 @@ FUN_000EFC45	0x000EFC45	53	blocked	pin UAE virtual vs body no vtable store needs
 ?rva0051211C@Rva0051211C@@QAEXXZ	0x0051211C	63	blocked	holder-less EH far handler 0x794D60 unwind funclet no frame without holder t=8 model=muse-10
 ?rva0026F8D6@Rva0026F8D6@@QAEXXZ	0x0026F8D6	102	partial	104B vs 102B register allocation names-count-index-mods spill choice t=25 model=muse-08 score=0.93 stash=reverse/attempts/0x0026f8d6.cpp
 ?Rva004495A2@LANAPI@@QAEXPAULANMessage@@I@Z	0x004495A2	13	blocked	packet disassembly 13B ends with cmp no ret size wrong need true boundary t=5 model=muse-08
+?rva00148F7E@Rva00148F7E@@QAE...	0x00148F7E	64	blocked	Armor-family hashtable ctor 64B ret10 calls vector plus Armor _M_initialize_buckets 0x148DDF; same bytes as 0x2896AA twin but name taken; Bucket-star overload emits no 64B body; needs overload disambiguation t=25 model=muse-spark
+??1RvaVec002B80CE@@QAE@XZ	0x002B80CE	56	blocked	RvaVec dtor needs Rb_tree map<int AsciiString> clear plus _free header; minimal-flags TU cannot include AsciiString STL without full-I which breaks sibling alloc; needs full-STL TU placement t=20 model=muse-spark
