@@ -3974,3 +3974,5 @@ FUN_009680F9	0x005680F9	74	blocked	static list init with EH_prolog plus guard; p
 ?rva0073CC60@Gen_008F7CD0@@QAEXPAMHI@Z	0x0073CC60	96	blocked	chain updater temp two vtables plus ftol rect plus 458B true size vs 96B ghidra needs derived 16B vs base 12B t=15 model=muse-01
 ?rva00053FD2@Rva00053FD2@@QAEPAUNode00053FD2@@PAPAUKey00053FD2@@@Z	0x00053FD2	75	blocked	hashtable div plus list walk plus lea ebx ecx+1 plus mov ecx ebx dead for stdcall Equal needs this+1 model t=10 model=muse-01
 ?rva000ADB2F@Rva000ADB2F@@QAEXHH_N@Z	0x000ADB2F	90	partial	size calc order base-end vs end-base plus lea vs add for slot t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x000adb2f.cpp
+?rva00283C76@Rva00283C76@@QAEPAPAURva00283401Node@@PBX@Z	0x00283C76	28	blocked	chain of Insert push-ecx placeholder 5B diff t=18 model=muse-08
+?rva00053FD2@Rva00053FD2@@QAEPAXPBQBX@Z	0x00053FD2	75	blocked	hashtable find ebx-thisplus1 placeholder 10B diff t=15 model=muse-08
