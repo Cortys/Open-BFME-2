@@ -204,3 +204,7 @@ template void _STL::vector<Rva00153729>::_M_insert_overflow(
 // Retail 0x001D9FAC.
 template void _STL::vector<BfmeStringTailRecord156>::_M_insert_overflow(
     BfmeStringTailRecord156 *, const BfmeStringTailRecord156 &, const _STL::__false_type &, unsigned int, bool);
+// push_back over the growth paths above: retail 0x0007D9EC, 0x00152265 and 0x001DA655.
+template void _STL::vector<Rva0007BB16Record>::push_back(const Rva0007BB16Record &);
+template void _STL::vector<Rva00151DAB>::push_back(const Rva00151DAB &);
+template void _STL::vector<BfmeStringTailRecord156>::push_back(const BfmeStringTailRecord156 &);
