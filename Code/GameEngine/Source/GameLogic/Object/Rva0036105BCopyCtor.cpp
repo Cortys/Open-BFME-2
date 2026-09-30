@@ -45,6 +45,7 @@ class Rva0036105B
 {
 public:
     Rva0036105B(const Rva0036105B &other);
+    Rva0036105B &operator=(const Rva0036105B &other);
 
 private:
     _STL::vector<AsciiString, _STL::allocator<AsciiString> > m_00;
@@ -78,4 +79,27 @@ Rva0036105B::Rva0036105B(const Rva0036105B &other)
     , m_8C(other.m_8C)
     , m_90(other.m_90)
 {
+}
+
+// ??4Rva0036105B@@QAEAAV0@ABV0@@Z, retail 0x0036112C, 167 bytes.
+// Copy-assign twin of the copy ctor above: two AsciiString vectors via rowed
+// assign, four int vectors via rowed dup assign, two fixed storages via
+// rep movsd, then scalars. Evidence: same layout and //cl as copy ctor;
+// callees rowed; caller at 0x00361515; ret 4 returns this.
+Rva0036105B &Rva0036105B::operator=(const Rva0036105B &other)
+{
+    m_00 = other.m_00;
+    m_0C = other.m_0C;
+    m_18 = other.m_18;
+    m_24 = other.m_24;
+    m_30 = other.m_30;
+    m_3C = other.m_3C;
+    m_48 = other.m_48;
+    m_64 = other.m_64;
+    m_80 = other.m_80;
+    m_84 = other.m_84;
+    m_88 = other.m_88;
+    m_8C = other.m_8C;
+    m_90 = other.m_90;
+    return *this;
 }
