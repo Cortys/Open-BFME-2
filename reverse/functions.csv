@@ -43364,3 +43364,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva0052C93BGet@@YAPAXPAX00@Z,,0x0052C93B,38,Code/GameEngine/Source/Common/Rva0052C93BCopy.cpp,matched,uninit copy stride 12 via rowed _Construct 0x0052C34D callers 0x0052CC08 0x00565C75
 ??$__uninitialized_copy@PBV?$vector@IV?$allocator@I@_STL@@@_STL@@PAV12@@_STL@@YAPAV?$vector@IV?$allocator@I@_STL@@@0@PBV10@0PAV10@ABU__false_type@0@@Z,,0x00460F45,38,Code/Libraries/Source/WWVegas/WWLib/stlport_uninitialized_copy_vector.cpp,matched,STLport vector uint copy stride 12 via Construct dupe 0x00460F18
 ?rva0028B3A6@Object@@QBE_NXZ,,0x0028B3A6,49,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B3A6.cpp,matched,module scan slot1 plus slot5 bool
+?rva0028B72A@Object@@QBEXXZ,,0x0028B72A,31,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B72A.cpp,matched,module broadcast slot44
