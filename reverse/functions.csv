@@ -44930,3 +44930,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva002CF830Copy@@YAPAURva000B435F@@PAU1@00@Z,,0x002CF830,29,Code/Libraries/Source/WWVegas/WWLib/Rva002CF830Copy.cpp,matched,3-ptr dispatcher to rowed __copy 0x000B6830 callers 0x000C05AF 0x002D0D07
 ?rva00406FBF@Rva00406FBF@@QAEXPAE@Z,,0x00406FBF,29,Code/GameEngine/Source/Common/Rva00406FBFCrc.cpp,matched,CRC updater flag 0x4 callers 0x00407093 0x004070B0
 ?rva00406FDC@Rva00406FBF@@QAEXPAE@Z,,0x00406FDC,29,Code/GameEngine/Source/Common/Rva00406FBFCrc.cpp,matched,same class len1 sibling of 0x00406FBF caller 0x004070CE
+??4?$vector@VProductionPrerequisite@@V?$allocator@VProductionPrerequisite@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x002D1033,206,Code/GameEngine/Source/Common/Thing/ProductionPrerequisiteVectorAssign.cpp,matched,chain lane rowed CopyRange forwarder plus same 3-path shape as StringRecord assign 0x002D0726 with idiv 0x24 stride
