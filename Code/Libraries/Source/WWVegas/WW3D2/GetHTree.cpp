@@ -7,11 +7,10 @@
 // documents the same lookup with a 512-byte key buffer, a hidden-return
 // registry reference, and a 4-byte owner holding the prototype at +0 with
 // the tree at +0x14). BFME2 differences carried here: the "h*" prefix goes
-// through strcpy (retail calls the static strcpy twice) and _strlwr arrives
+// through _mbscpy (retail calls the static strcpy twice) and _strlwr arrives
 // via the msvcr71 import, so neither is intrinsic.
 
-extern "C" char *strcpy(char *destination, const char *source);
-#pragma function(strcpy)
+extern "C" char *_mbscpy(char *destination, const char *source);
 extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
 
 class HTreeClass;
@@ -80,8 +79,8 @@ HTreeClass *Get_HTree(const char *name)
 		return 0;
 
 	char lookup[512];
-	strcpy(lookup, "h*");
-	strcpy(lookup + 2, name);
+	_mbscpy(lookup, "h*");
+	_mbscpy(lookup + 2, name);
 	_strlwr(lookup);
 
 	HTreePrototypeOwner owner(Rva0061F230_GetPrototype(lookup));

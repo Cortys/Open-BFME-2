@@ -1115,7 +1115,7 @@ __declspec(dllimport) int __cdecl _strcmpi(const char *, const char *);
 __declspec(dllimport) long __cdecl atol(const char *);
 __declspec(dllimport) int __cdecl sprintf(char *, const char *, ...);
 unsigned int __cdecl strlen(const char *);
-char *__cdecl strcpy(char *, const char *);
+extern "C" char *__cdecl _mbscpy(char *, const char *);
 int __cdecl strcmp(const char *, const char *);
 }
 
@@ -1264,7 +1264,7 @@ static inline char *trimArgument(char *buffer)
 	while (*source != 0 && (unsigned char)*source <= ' ')
 		source++;
 	if (source != buffer)
-		strcpy(buffer, source);
+		_mbscpy(buffer, source);
 	for (int index = strlen(buffer) - 1; index >= 0; index--)
 	{
 		if (*source != 0 && (unsigned char)buffer[index] <= ' ')

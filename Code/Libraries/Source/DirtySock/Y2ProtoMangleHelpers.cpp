@@ -27,6 +27,7 @@
 extern "C" int sprintf( char *buffer, const char *format, ... );
 
 #include <string.h>
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 
 struct Rva008042B0Http;
 
@@ -175,7 +176,7 @@ int Rva008046E0HttpRequest( Rva008042B0Http *http, const char *host, int port,
 		http->m_state = 0;
 	}
 
-	strcpy( http->m_buffer, request );
+	_mbscpy( http->m_buffer, request );
 	Rva007FE780Printf( "HTTP request:\n%s\n", http->m_buffer );
 	http->m_field144 = 3;
 
@@ -186,7 +187,7 @@ int Rva008046E0HttpRequest( Rva008042B0Http *http, const char *host, int port,
 	}
 	else
 	{
-		strcpy( http->m_host, host );
+		_mbscpy( http->m_host, host );
 		http->m_port = port;
 		http->m_conn = Rva007FDFF0Connect( http->m_host, 0x1E );
 		http->m_field10C = 0;

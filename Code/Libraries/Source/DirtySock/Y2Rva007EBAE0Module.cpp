@@ -23,7 +23,7 @@ char *Rva007EBCA0( const char *text, const char *tag );   // 0x007EBCA0
 
 // Reached by a direct rel32 to the import stub, so this TU never saw <stdio.h>.
 extern "C" int sprintf( char *buffer, const char *format, ... );
-extern "C" char *strcpy( char *dest, const char *src );
+extern "C" char *_mbscpy( char *dest, const char *src );
 extern "C" char *strcat( char *dest, const char *src );
 
 char Rva007EBAE0( char value )
@@ -168,7 +168,7 @@ char *Rva007EBE20( const char *text, const char *prefix, const char *suffix )
 	}
 	else
 	{
-		strcpy( name, prefix );
+		_mbscpy( name, prefix );
 		strcat( name, suffix );
 		result = Rva007EBCA0( text, name );
 	}

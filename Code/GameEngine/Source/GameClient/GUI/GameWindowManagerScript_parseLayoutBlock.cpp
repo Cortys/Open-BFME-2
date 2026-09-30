@@ -126,7 +126,7 @@ public:
 };
 
 extern "C" __declspec(dllimport) int __cdecl isspace(int c);
-extern "C" char *__cdecl strcpy(char *dst, const char *src);
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 extern "C" __declspec(dllimport) char *__cdecl strtok(char *str, const char *delimiters);
 
 // readUntilSemicolon =========================================================
@@ -206,7 +206,7 @@ Bool parseLayoutBlock(File *inFile, char *buffer, UnsignedInt version, WindowLay
 				// eat equals separator " = "
 				c = strtok(buffer, " =");
 
-				strcpy(token, asciitoken.str());
+				_mbscpy(token, asciitoken.str());
 
 				// parse it
 				if (parse->parse(token, c, version, info) == FALSE)

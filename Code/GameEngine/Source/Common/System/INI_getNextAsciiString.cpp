@@ -19,7 +19,7 @@ typedef int Int;
 #define NULL 0
 
 extern "C" unsigned int strlen(const char *s);
-extern "C" char *strcpy(char *dst, const char *src);
+extern "C" char *_mbscpy(char *dst, const char *src);
 extern "C" char *strcat(char *dst, const char *src);
 
 template <typename T>
@@ -80,7 +80,7 @@ AsciiString INI::getNextAsciiString()
 			buff[0] = 0;
 			if (strlen(token) > 1)
 			{
-				strcpy(buff, &token[1]);
+				_mbscpy(buff, &token[1]);
 			}
 
 			token = getNextTokenOrNull(getSepsQuote());

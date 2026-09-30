@@ -4,7 +4,7 @@
 // Dedicated TU. Prefixes the AsciiString text with '0'+type then nameToKey.
 
 #include <string.h>
-#pragma function(strcpy)
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 
 enum NameKeyType
 {
@@ -49,6 +49,6 @@ NameKeyType ModuleFactory::makeDecoratedNameKey(const AsciiString &name, ModuleT
 {
 	char tmp[256];
 	tmp[0] = (char)('0' + (int)type);
-	strcpy(&tmp[1], name.str());
+	_mbscpy(&tmp[1], name.str());
 	return TheNameKeyGenerator->nameToKey(tmp);
 }

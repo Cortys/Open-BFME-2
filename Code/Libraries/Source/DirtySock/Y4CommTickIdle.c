@@ -426,7 +426,7 @@ struct Rva00813E50Comm
 };
 
 char *strchr( const char *text, int value );
-char *strcpy( char *dest, const char *source );
+char *_mbscpy( char *dest, const char *source );
 int strcmp( const char *left, const char *right );
 int _strcmpi( const char *left, const char *right );
 unsigned int strlen( const char *text );
@@ -461,7 +461,7 @@ int Rva00813E50( struct Rva00813E50Comm *comm, char *text )
 	if ( text == 0 )
 		return -3;
 
-	strcpy( comm->m_host, text + 1 );
+	_mbscpy( comm->m_host, text + 1 );
 	comm->m_state = 3;
 	Rva00813100( comm->m_port, 2, comm, 0x4000, 0, 0 );
 	return 0;
@@ -517,7 +517,7 @@ int Rva00813A50( struct Rva00813E50Comm *comm, const char *text,
 				output++;
 				size--;
 			}
-			strcpy( output, name );
+			_mbscpy( output, name );
 			output += strlen( name );
 			size -= strlen( name );
 		}
@@ -1115,7 +1115,7 @@ struct Rva008140D0Comm *Rva008140D0( int payloadSize, int countA,
 	comm->m_ops[ 11 ] = (void *)Rva00814540;
 	comm->m_ops[ 12 ] = (void *)Rva00814EA0;
 	comm->m_ops[ 13 ] = (void *)Rva00814F70;
-	strcpy( comm->m_name, Rva012C4AAC );
+	_mbscpy( comm->m_name, Rva012C4AAC );
 	Rva007FEA20( comm->m_lock );
 
 	comm->m_recordSizeA = payloadSize + 8;
@@ -1256,7 +1256,7 @@ int Rva00813890( int line, int address, const char *destination,
 	*(int *)( callParameters + 0x18 ) = 1;
 	*(int *)( callParameters + 0x1C ) = 0;
 	*(int *)( callParameters + 0x3C ) = 0x70;
-	strcpy( (char *)callParameters + 0x70, destination );
+	_mbscpy( (char *)callParameters + 0x70, destination );
 	*(int *)( callParameters + 0x38 ) = strlen( (char *)callParameters + 0x70 );
 
 	return Rva0081BDC6( line, address, (char *)callParameters + 0x70,

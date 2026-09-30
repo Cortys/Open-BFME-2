@@ -5,7 +5,7 @@ void *memset(void *dest, int value, unsigned int count);
 int memcmp(const void *first, const void *second, unsigned int count);
 int sprintf(char *buffer, const char *format, ...);
 unsigned int strlen(const char *text);
-char *strcpy(char *dest, const char *src);
+char *_mbscpy(char *dest, const char *src);
 
 int Rva008118D0(void)
 {
@@ -119,7 +119,7 @@ void Rva0080EEF0(char **slot, const char *text)
 	if (*slot != 0)
 		Rva007F0030(*slot);
 	*slot = (char *)Rva007F0000(strlen(text) + 1);
-	strcpy(*slot, text);
+	_mbscpy(*slot, text);
 }
 
 int Rva007FDB60(void *socket, int selector, void *buffer, int bufferSize);
@@ -234,7 +234,7 @@ int Rva0080E6C0(unsigned char *object, int flags, const char *value)
 		Rva007FE780(Rva012C4890);
 		return -1;
 	}
-	strcpy((char *)object + 0x24, value);
+	_mbscpy((char *)object + 0x24, value);
 	*(int *)(object + 0x6C) = (flags & 2) != 0;
 	*(int *)(object + 0x7C) = flags & ~3;
 	Rva007FE780(Rva012C48B4, flags, value);
@@ -758,12 +758,12 @@ int Rva008119A0(struct Rva008119A0Table *table, const char *name,
 			{
 				if ( Rva00811CE0( templates, entry->templates ) != 0 )
 				{
-					strcpy( entry->templates, templates );
+					_mbscpy( entry->templates, templates );
 					entry->timestamp = Rva007FEA00() - 1;
 				}
 				if ( Rva00811CE0( detail, entry->detail ) != 0 )
 				{
-					strcpy( entry->detail, detail );
+					_mbscpy( entry->detail, detail );
 					entry->timestamp = Rva007FEA00() - 1;
 				}
 				return 0;
@@ -780,10 +780,10 @@ int Rva008119A0(struct Rva008119A0Table *table, const char *name,
 	newEntry->header[ 5 ] = (unsigned char)( newEntry->timestamp >> 16 );
 	newEntry->header[ 6 ] = (unsigned char)( newEntry->timestamp >> 8 );
 	newEntry->header[ 7 ] = (unsigned char)newEntry->timestamp;
-	strcpy( newEntry->name, name );
-	strcpy( newEntry->alias, alias );
-	strcpy( newEntry->templates, templates );
-	strcpy( newEntry->detail, detail );
+	_mbscpy( newEntry->name, name );
+	_mbscpy( newEntry->alias, alias );
+	_mbscpy( newEntry->templates, templates );
+	_mbscpy( newEntry->detail, detail );
 	Rva007FD920( table->socket, (const char *)newEntry, 0x180, 0,
 		table->peer, 0x10 );
 	newEntry->timestamp = Rva007FEA00() + 0xFA;
@@ -823,7 +823,7 @@ void Rva0080EF50(unsigned char *object, const char *name, char *alias,
 		}
 		alias = defaultName;
 	}
-	strcpy((char *)object + 4, name);
+	_mbscpy((char *)object + 4, name);
 	Rva008119A0(*(struct Rva008119A0Table **)(object + 0x64), name, alias, detail,
 		"TCP:~1:1024\tUDP:~1:1024", *(int *)(object + 0x8C));
 }

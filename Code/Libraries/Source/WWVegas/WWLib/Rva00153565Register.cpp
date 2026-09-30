@@ -18,7 +18,7 @@ struct BfmePod68 { int a[17]; };
 extern _STL::vector<BfmePod68> *g_Rva00153565Vec;
 extern "C" {
 unsigned __cdecl strlen(const char *s);
-char *__cdecl strcpy(char *d, const char *s);
+extern "C" char *__cdecl _mbscpy(char *d, const char *s);
 __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 }
 void *__cdecl operator new(unsigned int s);
@@ -33,7 +33,7 @@ void __cdecl Rva00153565Register(const char *name, void *obj)
 	if (!g_Rva00153565Vec)
 		g_Rva00153565Vec = new _STL::vector<BfmePod68>;
 	BfmePod68 tmp;
-	strcpy((char *)&tmp, name);
+	_mbscpy((char *)&tmp, name);
 	tmp.a[16] = (int)obj;
 	for (BfmePod68 *it = g_Rva00153565Vec->begin(); it != g_Rva00153565Vec->end(); ++it) {
 		if (!_strcmpi((char *)it, name))

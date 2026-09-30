@@ -2,6 +2,7 @@
 
 #define _DLL
 #include <string.h>
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 
 // EA's DirtySock middleware -- see commudp.cpp for why this directory name is an
 // inference. The existing CommSRP bodies retain their retail names from logs;
@@ -100,7 +101,7 @@ struct CommSRPRef *Rva00815300( int maxPacket, int recvCount,
 	comm->m_op[ 12 ] = (void *)Rva00816520;
 	comm->m_op[ 13 ] = (void *)Rva008165F0;
 
-	strcpy( comm->m_name, "SRP" );
+	_mbscpy( comm->m_name, "SRP" );
 	Rva007FEA20( comm->m_lock );
 
 	comm->m_recvRecordSize = maxPacket + 0x0B;

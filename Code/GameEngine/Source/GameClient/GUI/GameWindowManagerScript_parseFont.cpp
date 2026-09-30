@@ -90,7 +90,7 @@ public:
 Int scanInt(const char *source, Int &val);
 
 extern "C" __declspec(dllimport) char *__cdecl strtok(char *str, const char *delimiters);
-extern "C" char *__cdecl strcpy(char *dst, const char *src);
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 
 // ?parseFont@@YA_NPADPAVWinInstanceData@@0PAX@Z
 static Bool parseFont(char *token, WinInstanceData *instData, char *buffer, void *data)
@@ -110,7 +110,7 @@ static Bool parseFont(char *token, WinInstanceData *instData, char *buffer, void
 		ptr++;
 	ptr++;  // skip the "
 	c = strtok(ptr, stringSeps);  // value
-	strcpy(fontName, c);
+	_mbscpy(fontName, c);
 
 	// "SIZE"
 	c = strtok(NULL, seps);  // label

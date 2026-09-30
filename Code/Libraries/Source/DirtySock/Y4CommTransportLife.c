@@ -25,7 +25,7 @@ unsigned int Rva007FEA00( void );
 void *__cdecl memset( void *destination, int value, unsigned int count );
 void *__cdecl memcpy( void *destination, const void *source,
 	unsigned int count );
-char *__cdecl strcpy( char *destination, const char *source );
+char *__cdecl _mbscpy( char *destination, const char *source );
 
 extern unsigned int g_Rva012C4DF4;
 
@@ -199,7 +199,7 @@ struct Rva00816BF0Comm *Rva00816BF0( int maxPacket, int recvCount,
 	comm->m_op[ 12 ] = (void *)Rva00818BF0Op;
 	comm->m_op[ 13 ] = (void *)Rva00818D20Op;
 
-	strcpy( comm->m_name, g_Rva012C4F88Name );
+	_mbscpy( comm->m_name, g_Rva012C4F88Name );
 	Rva007FEA20( comm->m_lock );
 
 	comm->m_recvRecordSize = maxPacket + 0x10;

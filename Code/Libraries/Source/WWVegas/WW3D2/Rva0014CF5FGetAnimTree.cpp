@@ -9,8 +9,7 @@
 // increment at +4 of the returned object after a null check, then the
 // object is re-read for the return).
 
-extern "C" char *strcpy(char *destination, const char *source);
-#pragma function(strcpy)
+extern "C" char *_mbscpy(char *destination, const char *source);
 extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
 
 class HTreeClass
@@ -84,8 +83,8 @@ HTreeClass *Rva0014CF5F_GetAnimTree(const char *name)
 		return 0;
 
 	char lookup[512];
-	strcpy(lookup, "a*");
-	strcpy(lookup + 2, name);
+	_mbscpy(lookup, "a*");
+	_mbscpy(lookup + 2, name);
 	_strlwr(lookup);
 
 	HAnimPrototypeOwner owner(Rva0061F230_GetPrototype(lookup));

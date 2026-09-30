@@ -32,6 +32,7 @@
 #include <list>
 #include <stdlib.h>
 #include <string.h>
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 
 void *operator new[](unsigned size);
 void operator delete[](void *p);
@@ -380,7 +381,7 @@ void GameSpyLoginPreferences::rva005CABF9(AsciiString email)
 AsciiString obfuscate( AsciiString in )
 {
 	char *buf = new char[in.getLength() + 1];
-	strcpy(buf, in.str());
+	_mbscpy(buf, in.str());
 	static const char *xor = "1337Munkee";
 	char *c = buf;
 	const char *c2 = xor;

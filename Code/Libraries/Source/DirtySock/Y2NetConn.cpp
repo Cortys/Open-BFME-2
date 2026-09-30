@@ -133,7 +133,7 @@ struct NCB
 };
 
 extern "C" unsigned char __stdcall Netbios( NCB *ncb );
-extern "C" char *strcpy( char *dest, const char *src );
+extern "C" char *_mbscpy( char *dest, const char *src );
 extern "C" void *memset( void *dest, int value, unsigned int count );
 
 // 0x007EB520 IS NetConnMAC and it says so twice, in "NetConnMAC: The NCBRESET
@@ -188,7 +188,7 @@ unsigned int Rva007EB520NetConnMAC( void *adapter )
 		memset( &ncb, 0, 0x40 );
 		ncb.ncb_command = 0x33;
 		ncb.ncb_lana_num = (unsigned char)lana;
-		strcpy( ncb.ncb_callname, "*               " );
+		_mbscpy( ncb.ncb_callname, "*               " );
 		ncb.ncb_buffer = adapter;
 		ncb.ncb_length = 0xF0;
 

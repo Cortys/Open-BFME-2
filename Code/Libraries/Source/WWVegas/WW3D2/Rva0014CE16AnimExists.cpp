@@ -5,8 +5,7 @@
 // a 512-byte buffer and returns the registry contains-check. No SEH (no
 // object lifetimes); the checker address is pinned.
 
-extern "C" char *strcpy(char *destination, const char *source);
-#pragma function(strcpy)
+extern "C" char *_mbscpy(char *destination, const char *source);
 extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
 
 // Registry contains-check (retail 0x0061F0D0, 28B): null name or null
@@ -20,8 +19,8 @@ bool Rva0014CE16_AnimExists(const char *name)
 		return false;
 
 	char lookup[512];
-	strcpy(lookup, "a*");
-	strcpy(lookup + 2, name);
+	_mbscpy(lookup, "a*");
+	_mbscpy(lookup + 2, name);
 	_strlwr(lookup);
 	return Rva0061F0D0_Contains(lookup);
 }

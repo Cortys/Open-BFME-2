@@ -32,7 +32,7 @@ typedef bool Bool;
 extern "C" __declspec(dllimport) int __cdecl strncmp(const char *, const char *, unsigned int);
 extern "C" __declspec(dllimport) char *__cdecl strtok(char *, const char *);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *, const char *);
-extern "C" char *strcpy(char *, const char *);
+extern "C" char *_mbscpy(char *, const char *);
 
 class WinInstanceData
 {
@@ -81,7 +81,7 @@ static void parseBitString(const char *inBuffer, UnsignedInt *bits, const char *
 	int count;
 
 	// do not modify the inBuffer argument
-	strcpy(buffer, inBuffer);
+	_mbscpy(buffer, inBuffer);
 
 	if (strncmp(buffer, "NULL", 4)) {
 		for (tok = strtok(buffer, "+"); tok; tok = strtok(NULL, "+")) {

@@ -51,7 +51,7 @@ struct Rva00819630Comm
 extern "C"
 {
 	void *memset( void *destination, int value, unsigned int count );
-	char *strcpy( char *destination, const char *source );
+	extern "C" char *_mbscpy( char *destination, const char *source );
 	int __cdecl strcmp( const char *left, const char *right );
 	unsigned int __cdecl strlen( const char *text );
 	__declspec( dllimport ) int __cdecl wsprintfA( char *output,
@@ -171,7 +171,7 @@ extern "C" void *Rva00819630( int first, int second, int third )
 	comm->m_ops[ 11 ] = (void *)Rva0081BA60;
 	comm->m_ops[ 12 ] = (void *)Rva0081BC80;
 	comm->m_ops[ 13 ] = (void *)Rva0081BD40;
-	strcpy( comm->m_name, "SERIAL" );
+	_mbscpy( comm->m_name, "SERIAL" );
 	InitializeCriticalSection( comm->m_lock );
 
 	comm->m_recvRecordSize = first + 0x10;

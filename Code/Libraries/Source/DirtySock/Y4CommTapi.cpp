@@ -29,7 +29,7 @@ extern "C"
 	// Rva00812FD0 is the retail cdecl worker entry and returns its status in EAX.
 	int Rva00812FD0( void *comm );
 	void *memset( void *dest, int value, unsigned int size );
-	char *strcpy( char *dest, const char *source );
+	extern "C" char *_mbscpy( char *dest, const char *source );
 	// Retail reaches the six KERNEL32 APIs below through import thunks this
 	// repo names Rva01358* (GetProcessHeap HeapAlloc HeapFree CreateThread
 	// CloseHandle Sleep, in IAT-slot order); the declarations use the real
@@ -76,7 +76,7 @@ extern "C" CommTAPIRef *Rva00812DD0( int first, int second, int third )
 	comm->m_ops[ 11 ] = (void *)Rva00814040;
 	comm->m_ops[ 12 ] = (void *)Rva00814070;
 	comm->m_ops[ 13 ] = (void *)Rva008140A0;
-	strcpy( comm->m_name, "TAPI" );
+	_mbscpy( comm->m_name, "TAPI" );
 	comm->m_state = 0;
 	threadHandle = CreateThread(
 		0, 0, (void *)Rva00812FD0, comm, 0, &comm->m_workerId );

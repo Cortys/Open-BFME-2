@@ -422,7 +422,7 @@ void Rva00812CD0( void *object )
 	Rva007F0030( object );}
 
 unsigned int __cdecl strlen( const char *text );
-char * __cdecl strcpy( char *dest, const char *src );
+char * __cdecl _mbscpy( char *dest, const char *src );
 char * __cdecl strstr( const char *haystack, const char *needle );
 
 /* 0x00811E20 FORMATS MATCHING ENTRIES INTO A TEXT LISTING, one line per
@@ -531,7 +531,7 @@ int Rva00811E20( struct Rva00812320Module *module, const char *keyA,
 
 			addr[ 3 ] = ':';
 
-			strcpy( record, pEntry->m_nameB );
+			_mbscpy( record, pEntry->m_nameB );
 
 			/* AN EMPTY-BODIED FOR, unlike the two advances below it.  This
 			 * one carries an initialiser and retail steps the cursor in the
@@ -545,7 +545,7 @@ int Rva00811E20( struct Rva00812320Module *module, const char *keyA,
 			*pOut = 9;
 			pOut++;
 
-			strcpy( pOut, pEntry->m_detail );
+			_mbscpy( pOut, pEntry->m_detail );
 
 			while ( *pOut != 0 )
 			{
@@ -564,7 +564,7 @@ int Rva00811E20( struct Rva00812320Module *module, const char *keyA,
 						break;
 					}
 
-					strcpy( pOut, pEntry->m_substitution );
+					_mbscpy( pOut, pEntry->m_substitution );
 
 					while ( *pOut != 0 )
 					{
@@ -607,7 +607,7 @@ int Rva00811E20( struct Rva00812320Module *module, const char *keyA,
 				return iCount;
 			}
 
-			strcpy( out, record );
+			_mbscpy( out, record );
 			out += strlen( record );
 			outSize -= strlen( record );
 			iCount++;
