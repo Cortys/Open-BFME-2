@@ -23,6 +23,8 @@
 #include <string.h>
 
 extern "C" __declspec(dllimport) void *__stdcall TlsGetValue(unsigned long index);
+extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(void *section);
+extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(void *section);
 
 namespace EA
 {
@@ -95,6 +97,15 @@ private:
 	};
 	unsigned char m_pad0[0x448];
 	ListNode m_sentinel;
+	// Lock wrapper proven by 0x00032A20: Enter/Leave on the pointer at
+	// +0x4E4 with a use count at +0x18 of the wrapper.
+	struct Lock
+	{
+		unsigned char m_pad[0x18];
+		int volatile m_count;
+	};
+	unsigned char m_pad468[0x4E4 - (0x448 + sizeof(ListNode))];
+	Lock *m_4E4;
 };
 
 GeneralAllocator::Snapshot::Snapshot(unsigned int size, void *context)
@@ -202,6 +213,53 @@ bool GeneralAllocator::rva00031BB0(const void *block)
 		}
 	}
 	return false;
+}
+
+// ?rva00032A20@GeneralAllocator@Allocator@EA@@QAEIPBX@Z @0x00032A20 146B
+// GetUsableSize-like: lock at +0x4E4 with count at +0x18, header at block-4
+// masked with 0x7FFFFFF8, bit1 set returns size-8, else bit0 at
+// [masked+block-4] gates size-4, else 0. Caller _GetBlockSize at 0x0003061D.
+unsigned int GeneralAllocator::rva00032A20(const void *block)
+{
+	Lock *lock = m_4E4;
+	if (lock != 0)
+	{
+		EnterCriticalSection(lock);
+		++lock->m_count;
+	}
+	if (block != 0)
+	{
+		unsigned int header = *(const unsigned int *)((const char *)block - 4);
+		unsigned int size = header & 0x7FFFFFF8;
+		if ((header & 2) != 0)
+		{
+			unsigned int usable = size - 8;
+			if (lock != 0)
+			{
+				--lock->m_count;
+				LeaveCriticalSection(lock);
+			}
+			return usable;
+		}
+		unsigned int header2 = *(const volatile unsigned int *)((const char *)block - 4);
+		unsigned int masked = header2 & 0x7FFFFFF8;
+		if ((*(const unsigned char *)(void *)(masked + (unsigned int)block - 4) & 1) != 0)
+		{
+			unsigned int usable = size - 4;
+			if (lock != 0)
+			{
+				--lock->m_count;
+				LeaveCriticalSection(lock);
+			}
+			return usable;
+		}
+	}
+	if (lock != 0)
+	{
+		--lock->m_count;
+		LeaveCriticalSection(lock);
+	}
+	return 0;
 }
 
 }
