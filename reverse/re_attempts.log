@@ -4105,3 +4105,9 @@ FUN_007f75ec	0x003F75EC	136	blocked	STL rb-tree insert 5-arg thiscall calling _M
 ?Rva00215F83Find@@YAXXZ	0x00215F83	108	blocked	STL find 4-arg caller vs 3-arg body tag dispatch unclear t=8 model=muse-09
 ?Rva006CD230Append@@YAXPAX0@Z	0x006CD230	112	blocked	true139 not112 tail global plus strcpy shape t=15 model=muse-09
 ?rva00340FCD@Rva00340FCD@@QAEMXZ	0x00340FCD	110	blocked	push edi before push5 vs after plus loop top test-jle-jmp vs bottom jg persists across reorder postdec goto next-uninit O2 t=15 model=muse-07
+FUN_007f8646	0x003F8646	112	blocked	vector begin-end div4 plus virtual callback via ebx with g_BFB1CC and EH frame needs donor t=5 model=muse-02
+?rva0028F44C@Object@@QAE_NPAV1@@Z	0x0028F44C	112	blocked	Object containedBy 0x2000 walks plus provider slot 0x24C register wall edx-eax swap needs shape lever t=20 model=muse-02
+?Rva005AE6F8Find@@YAPAXPAX0HPAE@Z	0x005AE6F8	107	partial	ebx vs edi temp plus end spilled vs edi-kept 108 vs 107 t=25 model=muse-02 score=0.92 stash=reverse/attempts/0x005ae6f8.cpp
+?rva00474431@Rva00474431@@QAEHPAUPair8@@H@Z	0x00474431	82	blocked	vector pushback record plus idiv index register wall eax-ecx plus vector esi-add vs edi-lea t=15 model=muse-02
+FUN_00941340	0x00541340	112	blocked	same vector div4 callback g_BFB1CC EH family as 0x003F8646 needs donor t=3 model=muse-02
+FUN_00925407	0x00525407	114	blocked	same vector div4 callback g_BFB1CC EH family needs donor t=3 model=muse-02
