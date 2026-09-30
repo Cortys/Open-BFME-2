@@ -44368,3 +44368,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva00285672@Rva00285672@@QBE_NABV1@@Z,,0x00285672,42,Code/GameEngine/Source/Common/Rva00285672Compare.cpp,matched,lexicographic two-dword less via caller context and signed jumps
 ?rva005FD956@Rva005FD956@@QAEXHHH@Z,,0x005FD956,8,Code/GameEngine/Source/Common/Rva005FD8E5Apt.cpp,matched,chain from 005FD8E5 via tail jmp with this plus 4
 ?rva005FD034@Rva005FD034@@QAEXH@Z,,0x005FD034,19,Code/GameEngine/Source/Common/Rva005FD034Setter.cpp,matched,setter for 0x34 clears flag 0x39 via caller 005F44B0
+?xfer@Rva003AFDAA@@UAEXPAVXfer@@@Z,,0x003AFDAA,71,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFDAAXfer.cpp,matched,slot3 of 0x0081D950 0x0081DA10 Version11 uint plus0x10
