@@ -1,10 +1,9 @@
-// ?Rva00545239Get@@YAMPAX@Z
-// partial score=0.95 date=2026-09-29
-// ?Rva00545239Get@@YAMPAX@Z
-// partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /arch:SSE /G7
-// ?Rva00545239Get@@YAMPAX@Z @0x00545239 84B. Free float getter: base rate from
-// TheAI 0x009FF0F8 (+0x18 +0xC8) scaled by global 0x007FC15C when the object's
+// Built from the banked attempt reverse/attempts/0x00545239.cpp; fix: the
+// scale is the compiler literal 1.15f (retail __real@3f933333 at 0x007FC15C),
+// not a global, which is what keeps retail's load-local-then-mulss order.
+// Rva00545239Get @0x00545239 84B. Free float getter: base rate from
+// TheAI 0x009FF0F8 (+0x18 +0xC8) scaled by 1.15f when the object's
 // current weapon (rowed getCurrentWeapon 0x0028AEBD twice with slot 0) has its
 // +4 ByteField set (rowed get 0x002C9400). Evidence: two getCurrentWeapon calls
 // with test-je, ByteField test-je, mulss plus fld return, callers 0x0054544F
@@ -35,8 +34,7 @@ struct AIMid
 	AIInner *m_ptr;
 };
 extern AIMid *TheAI;
-extern float g_007FC15C;
-// ?Rva00545239Get@@YAMPAX@Z present-unmatched
+
 float __cdecl Rva00545239Get(void *objPtr)
 {
 	Object *obj = (Object *)objPtr;
@@ -46,7 +44,7 @@ float __cdecl Rva00545239Get(void *objPtr)
 		const Weapon *w2 = obj->getCurrentWeapon((WeaponSlotType *)0);
 		Rva002C9400ByteField *field = *(Rva002C9400ByteField **)((char *)w2 + 4);
 		if (field->get())
-			val = g_007FC15C * val;
+			val *= 1.15f;
 	}
 	return val;
 }
