@@ -175,9 +175,10 @@ public:
 	float m_creationChance;
 	int m_veterancyLevel;
 	KindOfMaskType m_killedByTypeKindof;
-	ScienceType m_killerScience;					///< retail this+0x30
+	unsigned char m_unreconstructed_30[8];		///< two kind-of words retail keeps before the science
+	ScienceType m_killerScience;					///< retail this+0x38 (testKillerScience push)
 	AsciiStringList m_possibleCrates;
-	unsigned char m_isOwnedByMaker;				///< retail this+0x38
+	unsigned char m_isOwnedByMaker;
 };
 
 class DieMuxData
@@ -301,7 +302,6 @@ bool CreateCrateDie::testKillerType( CrateTemplate const *currentCrateData, Obje
 // Retail 0x00253DB0. A member that never touches `this` -- ecx is overwritten
 // with the killer on the first instruction -- which is exactly what the Zero
 // Hour body is.
-// ?testKillerScience@CreateCrateDie@@AAE_NPBVCrateTemplate@@PAVObject@@@Z present-unmatched
 bool CreateCrateDie::testKillerScience( CrateTemplate const *currentCrateData, Object *killer )
 {
 	if( killer == 0 )
