@@ -43583,3 +43583,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva00262453@Rva00262453@@QAEXPAVSequentialScript@@_NH@Z,,0x00262453,74,Code/GameEngine/Source/Common/Rva00262453.cpp,matched,setter layout as Rva00262436 ScriptEngine rva00205140 via g_Va009FE16C callers 0x0036E2D1 0x003B3DAF
 ??$__make_heap@PAHVRva00204BB8@@@_STL@@YAXPAH0VRva00204BB8@@@Z,,0x002074FD,60,Code/Libraries/Source/WWVegas/WWLib/stlport_make_heap_rva00204bb8.cpp,matched,chain heap make via landed adjust heap same flags
 ??0Rva00367647@@QAE@PAVStateMachine@@_N@Z,,0x00367647,40,Code/GameEngine/Source/Common/Rva00367647Ctor.cpp,matched,leaf State ctor hash 0xA3ED2B68 via I twin
+?rva009C77C0@@YAXPBX0PAX@Z,,0x001D80C0,1272,Code/GameEngine/Source/Common/Rva009C77C0.cpp,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x009C77C0; bfme1_sweep T1 clean transfer; directly precedes rowed sibling rva009C7CC0 0x001D85C0
