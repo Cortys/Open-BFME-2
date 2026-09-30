@@ -43356,3 +43356,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva0033331BCopy@@YAPAVRva00332EC8@@PAV1@00PBX@Z,,0x0033331B,38,Code/Libraries/Source/WWVegas/WWLib/Rva0033331BCopy.cpp,matched,chain copy via src-first increments
 ?rva003F4831@Rva003F498A@@QAEHXZ,,0x003F4831,59,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain sum over outers of rowed 0x003F47E6 same file
 ??1Rva005DB100@@UAE@XZ,,0x005DB100,69,Code/GameEngine/Source/Common/Rva005DB100Dtor.cpp,matched,unlock dtor vtable plus Release plus base
+?rva003F4634@Rva003F498A@@QAEPAURva003F498AOuter@@PAX@Z,,0x003F4634,84,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock search outers unk0 vs arg+0x34 ptr same file

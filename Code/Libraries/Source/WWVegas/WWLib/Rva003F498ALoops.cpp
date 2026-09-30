@@ -48,6 +48,7 @@ public:
     int rva003F4FAA(int outerIdx, void *p);
     int rva003F47E6(int outerIdx);
     int rva003F4831();
+    Rva003F498AOuter *rva003F4634(void *p);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -170,4 +171,14 @@ int Rva003F498A::rva003F4831()
         } while (i < n);
     }
     return total;
+}
+
+// ?rva003F4634@Rva003F498A@@QAEPAURva003F498AOuter@@PAX@Z @0x003F4634 84B unlock search outers for unk0 matching arg+0x34 returning element pointer else NULL; callers 0x003F4DF2 0x003F6740; same file sizes flags
+Rva003F498AOuter *Rva003F498A::rva003F4634(void *p)
+{
+    for (unsigned i = 0; i < m_outers.size(); ++i) {
+        if (m_outers[i].unk0 == *(int *)((char *)p + 0x34))
+            return &m_outers[i];
+    }
+    return 0;
 }
