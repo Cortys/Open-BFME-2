@@ -3738,3 +3738,4 @@ FUN_0099e920	0x0059E920	113	blocked	EH default ctor with vtable 0x871138 plus tw
 ??0Rva00419035@@QAE@ABU0@@Z	0x00419035	165	partial	159B vs 165B same wall as 004186F2 missing push ecx and frame offsets t=15 model=muse-05 score=0.93 stash=reverse/attempts/0x00419035.cpp
 FUN_00776c50	0x00376C50	82	blocked	loop over AsciiString vector via global Get plus ModuleData push_back plus Drawable resize needs donor class t=8 model=muse-02
 ?_M_insert_overflow@?$vector@UBfmePod900@@V?$allocator@UBfmePod900@@@_STL@@@_STL@@IAEXPAUBfmePod900@@ABU3@ABU__false_type@2@I_N@Z	0x004CBA0F	191	partial	shape exact 191B 75ins 0diffs but gate wants PB copy and RecordOwner900 clear-construct not Pod900 t=15 model=muse-01 score=0.99 stash=reverse/attempts/0x004cba0f.cpp
+FUN_004c2bd1	0x000C2BD1	142	blocked	EH INI token plus lowercased add plus NameKey with unclear edi and globals needs donor t=10 model=muse-02
