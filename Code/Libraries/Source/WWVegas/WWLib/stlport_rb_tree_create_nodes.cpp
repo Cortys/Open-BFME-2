@@ -254,10 +254,10 @@ URva00204B12SetTree::_Link_type URva00204B12SetTree::_M_create_node(const URva00
 }
 template URva00204B12SetTree::_Link_type URva00204B12SetTree::_M_create_node(const URva00204B12SetTree::value_type &);
 
-// Whole-class instantiation of this tree: _M_insert (retail 0x00417B9B), _M_clone_node (retail 0x00417DDD) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces _M_insert (retail 0x00417B9B), _M_clone_node (retail 0x00417DDD)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<int,_STL::pair<int const ,BfmePod24>,_STL::_Select1st<_STL::pair<int const ,BfmePod24> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,BfmePod24> > >;
 
-// Whole-class instantiation of this tree: _M_insert (retail 0x00426016) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces _M_insert (retail 0x00426016)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<int,_STL::pair<int const ,BfmePod52>,_STL::_Select1st<_STL::pair<int const ,BfmePod52> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,BfmePod52> > >;

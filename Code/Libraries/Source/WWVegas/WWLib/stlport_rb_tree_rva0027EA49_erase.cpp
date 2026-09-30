@@ -19,6 +19,6 @@ template void Rva0027EA49Tree::_M_erase(Rva0027EA49Tree::_Link_type);
 
 template void Rva0027EA49Tree::clear();
 
-// Whole-class instantiation of this tree: erase (retail 0x005C6BAC) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces erase (retail 0x005C6BAC)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<Rva0027EA49,Rva0027EA49,_STL::_Identity<Rva0027EA49>,_STL::less<Rva0027EA49>,_STL::allocator<Rva0027EA49> >;

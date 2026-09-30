@@ -14,6 +14,6 @@ template HeroTree::_Rb_tree(const HeroTree &);
 // Retail21DD0E calls the held typed clear21DB91 and copy21DC9B.
 template HeroTree &HeroTree::operator=(const HeroTree &);
 
-// Whole-class instantiation of this tree: _M_insert (retail 0x0021D17B) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces _M_insert (retail 0x0021D17B)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<int,_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > >,_STL::_Select1st<_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > > >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > > > >;

@@ -16,6 +16,6 @@ struct BfmeStringNoCaseLess
 typedef _STL::_Rb_tree<AsciiString, _STL::pair<const AsciiString, NoCaseTreeValue4>, _STL::_Select1st<_STL::pair<const AsciiString, NoCaseTreeValue4> >, BfmeStringNoCaseLess, _STL::allocator<_STL::pair<const AsciiString, NoCaseTreeValue4> > > NoCaseTree4CF550;
 template NoCaseTree4CF550::_Link_type NoCaseTree4CF550::_M_copy(NoCaseTree4CF550::_Link_type, NoCaseTree4CF550::_Link_type);
 
-// Whole-class instantiation of this tree: operator= (retail 0x002D0867) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces operator= (retail 0x002D0867)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<AsciiString,_STL::pair<AsciiString const ,NoCaseTreeValue4>,_STL::_Select1st<_STL::pair<AsciiString const ,NoCaseTreeValue4> >,BfmeStringNoCaseLess,_STL::allocator<_STL::pair<AsciiString const ,NoCaseTreeValue4> > >;

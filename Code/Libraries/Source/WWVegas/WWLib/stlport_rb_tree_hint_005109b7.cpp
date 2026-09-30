@@ -55,6 +55,6 @@ template TreeHint0051030C::~_Rb_tree();
 
 template void TreeHint0051030C::erase(TreeHint0051030C::iterator);
 
-// Whole-class instantiation of this tree: clear (retail 0x0051024F) come byte-identical
-// from it; their calls read the tree's matched STL helpers.
+// Whole-class instantiation of this tree. It reproduces clear (retail 0x0051024F)
+// byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<AsciiString,_STL::pair<AsciiString const ,TreeHintRef0051030C>,_STL::_Select1st<_STL::pair<AsciiString const ,TreeHintRef0051030C> >,_STL::less<AsciiString>,_STL::allocator<_STL::pair<AsciiString const ,TreeHintRef0051030C> > >;
