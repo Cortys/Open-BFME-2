@@ -44403,3 +44403,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?draw@Rva0035D53C@@UAEXXZ,,0x0035D62E,138,Code/GameEngine/Source/Common/Rva0035D53CDraw.cpp,matched,chain draw slot4 plus landed init layout plus rowed W3DDisplay plus TheDisplay
 ?rva002BE833@Rva002BE833@@QAEXPAVXfer@@@Z,,0x002BE833,155,Code/GameEngine/Source/Common/Rva002BE833Xfer.cpp,matched,Version IsCRC Coord float bool order via caller 0x0009AAFB and Xfer reverse slots
 ?rva0009AAFB@Rva0009AAFB@@QAEXPAVXfer@@@Z,,0x0009AAFB,112,Code/GameEngine/Source/Common/Rva0009AAFBXfer.cpp,matched,Version IsCRC base Rva002BE833 triple floats via rowed helper
+??1Rva004E5A78@@QAE@XZ,,0x004E5A78,118,Code/GameEngine/Source/Common/Bfme/Rva004E5A78Method.cpp,matched,unlock lane dtor vector erase via EHs callers 0x004E5AEE 0x004E5CB0
