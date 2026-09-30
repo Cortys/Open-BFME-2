@@ -8,8 +8,14 @@ public:
 };
 typedef void (__stdcall *Rva0073F96ARel)(void *obj);
 extern int g_bfmeCountAtE1F290;
+// g_bfmeCountAtE1F290: matched references place it at VA 0xe1f290 (zero-filled .bss).
+int g_bfmeCountAtE1F290;
 extern void *g_bfmeObj1AtE1F294;
+// g_bfmeObj1AtE1F294: matched references place it at VA 0xe1f294 (zero-filled .bss).
+void * g_bfmeObj1AtE1F294;
 extern void *g_bfmeObj2AtE1F298;
+// g_bfmeObj2AtE1F298: matched references place it at VA 0xe1f298 (zero-filled .bss).
+void * g_bfmeObj2AtE1F298;
 class Rva0073F96A : public MaterialPassClass {
 public:
     virtual ~Rva0073F96A();

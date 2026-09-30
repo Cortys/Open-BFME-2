@@ -46,6 +46,8 @@ public:
 };
 
 extern Rva00512C88ObjA *g_Va00A048CC;
+// g_Va00A048CC: matched references place it at VA 0xe048cc (zero-filled .bss).
+Rva00512C88ObjA * g_Va00A048CC;
 extern Rva00512C88ObjB *g_Va009FEDF0;
 
 void Rva00512C88Shutdown()

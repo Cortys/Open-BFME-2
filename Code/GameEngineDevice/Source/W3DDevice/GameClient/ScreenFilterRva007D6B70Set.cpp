@@ -24,6 +24,8 @@ struct Device;
 struct DeviceVtable {char pad[0xe4]; int (__stdcall *SetRenderState)(Device*,unsigned long,unsigned);};
 struct Device{DeviceVtable *v;};
 extern VertexMaterialClass *ScreenMaterial;
+// ScreenMaterial: matched references place it at VA 0xdee5dc (zero-filled .bss).
+VertexMaterialClass * ScreenMaterial;
 extern unsigned TheBoxTextureDirtyMask;
 extern bool ScreenShaderDirty;
 extern unsigned ScreenOpaqueShader, ScreenCurrentShader;

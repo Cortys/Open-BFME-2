@@ -74,6 +74,8 @@ unsigned int Rva007FEA00Tick( void );                       // 0x007FEA00
 
 // The tick this module first ran at, filled in once and never again.
 extern unsigned int g_Rva0130ACDCEpoch;
+// g_Rva0130ACDCEpoch: matched references place it at VA 0xe0a6f4 (zero-filled .bss).
+unsigned int g_Rva0130ACDCEpoch;
 
 // Declared here rather than included: retail reaches WSAStartup by a direct
 // rel32 to the stub at 0x0081BDF6, which a <winsock2.h> declaration's dllimport

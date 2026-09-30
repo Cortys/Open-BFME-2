@@ -14,10 +14,20 @@
 // the size-optimal triple reuse per the HasFlag shard precedent).
 extern unsigned int g_Va00DEC4A8;
 extern unsigned int g_Va00DEC4A4;
+// g_Va00DEC4A4: matched references place it at VA 0xdec4a4 (zero-filled .bss).
+unsigned int g_Va00DEC4A4;
 extern unsigned int g_Va00DEC4A0;
+// g_Va00DEC4A0: matched references place it at VA 0xdec4a0 (zero-filled .bss).
+unsigned int g_Va00DEC4A0;
 extern int g_Va00DB5FBC;
+// g_Va00DB5FBC: matched references place it at VA 0xdb5fbc (retail .data initial value 7).
+int g_Va00DB5FBC = 7;
 extern int g_Va00DB5FC0;
+// g_Va00DB5FC0: matched references place it at VA 0xdb5fc0 (retail .data initial value 2).
+int g_Va00DB5FC0 = 2;
 extern int g_Va00DB5FC4;
+// g_Va00DB5FC4: matched references place it at VA 0xdb5fc4 (retail .data initial value 5).
+int g_Va00DB5FC4 = 5;
 
 void Rva00118990(void)
 {

@@ -67,7 +67,11 @@ void __stdcall Rva004E40A6Enable(int unused)
 // 0x004E4312; caller 0x004E432A uses +4 as flag byte.
 extern "C" int __cdecl atexit(void (__cdecl *routine)(void));
 extern void *g_Va00A0445C;
+// g_Va00A0445C: matched references place it at VA 0xe0445c (zero-filled .bss).
+void * g_Va00A0445C;
 extern unsigned char g_Va00A04460;
+// g_Va00A04460: matched references place it at VA 0xe04460 (zero-filled .bss).
+unsigned char g_Va00A04460;
 extern int g_Va00A04464;
 // g_Va00A04464: matched references place it at VA 0xe04464 (zero-filled .bss).
 int g_Va00A04464;
@@ -158,7 +162,11 @@ void Rva0043C96FEnable(void)
 // 0x007B83E1 (encoded 0x00BB83E1) via rowed _atexit, then return address of
 // 0x00A03318. Caller 0x0043CCD1 uses +4 as flag byte. Unlock lane.
 extern void *g_Va00A03318;
+// g_Va00A03318: matched references place it at VA 0xe03318 (zero-filled .bss).
+void * g_Va00A03318;
 extern unsigned char g_Va00A0331C;
+// g_Va00A0331C: matched references place it at VA 0xe0331c (zero-filled .bss).
+unsigned char g_Va00A0331C;
 extern int g_Va00A03320;
 // g_Va00A03320: matched references place it at VA 0xe03320 (zero-filled .bss).
 int g_Va00A03320;

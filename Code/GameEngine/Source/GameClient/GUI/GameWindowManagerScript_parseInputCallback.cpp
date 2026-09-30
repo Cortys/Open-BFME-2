@@ -63,6 +63,8 @@ public:
 extern Rva00DFF024Registry *TheRva00DFF024Registry;
 extern AsciiString g_inputCallbackName;
 extern void *g_inputCallback;
+// g_inputCallback: matched references place it at VA 0xe012f4 (zero-filled .bss).
+void * g_inputCallback;
 
 class WinInstanceData;
 

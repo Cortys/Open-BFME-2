@@ -75,6 +75,8 @@ public:
 extern Rva00DFF024Registry *TheRva00DFF024Registry;
 extern AsciiString g_systemCallbackName;
 extern void *g_winClassCallback;
+// g_winClassCallback: matched references place it at VA 0xe012ec (zero-filled .bss).
+void * g_winClassCallback;
 
 class WinInstanceData;
 

@@ -76,7 +76,11 @@ public:
 
 extern InGameUI *TheInGameUI;
 extern bool g_flag1;
+// g_flag1: matched references place it at VA 0xdfeffc (zero-filled .bss).
+bool g_flag1;
 extern bool g_flag2;
+// g_flag2: matched references place it at VA 0xdff005 (zero-filled .bss).
+bool g_flag2;
 
 class Rva004CA13
 {

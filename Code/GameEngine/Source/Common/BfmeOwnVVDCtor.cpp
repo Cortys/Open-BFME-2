@@ -82,6 +82,8 @@ private:
 };
 
 extern BfmeOwnVVD *g_bfmeSingletonVVD;
+// g_bfmeSingletonVVD: matched references place it at VA 0xe03214 (zero-filled .bss).
+BfmeOwnVVD * g_bfmeSingletonVVD;
 
 struct BfmeRva42E8C1Limit { char m_pad[0x40]; unsigned int m_40; };
 extern BfmeRva42E8C1Limit *g_bfmeRva42E8C1Holder;

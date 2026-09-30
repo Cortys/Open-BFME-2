@@ -63,6 +63,8 @@ public:
 extern Rva00DFF024Registry *TheRva00DFF024Registry;
 extern AsciiString g_tooltipCallbackName;
 extern void *g_tooltipCallback;
+// g_tooltipCallback: matched references place it at VA 0xe012fc (zero-filled .bss).
+void * g_tooltipCallback;
 
 class WinInstanceData;
 

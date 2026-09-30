@@ -14,8 +14,14 @@ typedef void (__cdecl *Rva009A5AA0TierInstaller)(int);
 
 extern const unsigned char g_bfmeClampTable[];	// retail 0x01356FE0 (zero point)
 extern const unsigned int *g_rva01356AA0;
+// g_rva01356AA0: matched references place it at VA 0xe22cf0 (zero-filled .bss).
+const unsigned int * g_rva01356AA0;
 extern const unsigned int *g_rva01356A98;
+// g_rva01356A98: matched references place it at VA 0xe22ce8 (zero-filled .bss).
+const unsigned int * g_rva01356A98;
 extern const void *g_rva01356A88;
+// g_rva01356A88: matched references place it at VA 0xe22ce4 (zero-filled .bss).
+const void * g_rva01356A88;
 extern int g_rva01356940[64];
 extern unsigned short *Rva009C0D10Src;			// retail 0x01356A7C
 extern int *g_rva01356A9C;

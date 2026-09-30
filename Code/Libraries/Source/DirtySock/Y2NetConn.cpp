@@ -8,8 +8,14 @@
 // The three module words it reports are address-derived; nothing names them but
 // the selectors they answer.
 extern int g_Rva0130A590State;   // 'open'
+// g_Rva0130A590State: matched references place it at VA 0xe09fac (zero-filled .bss).
+int g_Rva0130A590State;
 extern int g_Rva0130A594Conn;    // 'conn'
+// g_Rva0130A594Conn: matched references place it at VA 0xe09fb0 (zero-filled .bss).
+int g_Rva0130A594Conn;
 extern int g_Rva0130A598Online;  // 'onln'
+// g_Rva0130A598Online: matched references place it at VA 0xe09fb4 (zero-filled .bss).
+int g_Rva0130A598Online;
 
 int  Rva007FE780Printf( const char *format, ... );    // 0x007FE780
 int  Rva007FDEE0( void );                             // 0x007FDEE0
@@ -34,6 +40,8 @@ extern IdleHandlerSlot g_Rva0130A7B0Idle[ 16 ];
 
 // The tick the pump at 0x007F8C90 will next run at.
 extern unsigned int g_Rva0130A850Next;
+// g_Rva0130A850Next: matched references place it at VA 0xe0a268 (zero-filled .bss).
+unsigned int g_Rva0130A850Next;
 
 unsigned int Rva007FEA00Tick( void );                 // 0x007FEA00
 

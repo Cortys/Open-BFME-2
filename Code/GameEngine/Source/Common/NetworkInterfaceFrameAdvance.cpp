@@ -100,6 +100,8 @@ private:
 // global with the one-byte `inc [absolute]` encoding.  The byte verifier binds
 // this relocation to the fixed BFME2 address 0x00DFEA34.
 extern int NetworkTimingOverruns;
+// NetworkTimingOverruns: matched references place it at VA 0xdfea34 (zero-filled .bss).
+int NetworkTimingOverruns;
 
 int NetworkInterface::getFrameAdvanceCount(void)
 {

@@ -8,6 +8,8 @@
 
 extern const void *const g_00BCE50C[];
 extern int g_00DEBC60;
+// g_00DEBC60: matched references place it at VA 0xdebc60 (zero-filled .bss).
+int g_00DEBC60;
 
 void __cdecl Rva001532E1Erase(const char *name);
 

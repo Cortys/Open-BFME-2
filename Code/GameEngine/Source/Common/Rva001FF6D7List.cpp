@@ -5,6 +5,8 @@
 // 0x009B9448 (node->next = global; global = node). Caller 0x001FF75D.
 // Unwind funclet 0x0076C22E jmps here.
 extern void *Global_009B9448;
+// Global_009B9448: matched references place it at VA 0xdb9448 (retail .data initial value 0).
+void * Global_009B9448 = 0;
 
 struct Rva001FF6D7Node
 {

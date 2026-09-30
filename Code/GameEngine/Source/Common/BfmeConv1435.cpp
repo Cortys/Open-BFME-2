@@ -19,6 +19,8 @@ unsigned long __stdcall bfmeVM0WorkerThread(void *param);
 extern __int64 g_bfmeVM0Total;
 extern __int64 g_bfmeVM0Quotient;
 extern double g_bfmeVM0Scale;
+// g_bfmeVM0Scale: matched references place it at VA 0xdfea10 (zero-filled .bss).
+double g_bfmeVM0Scale;
 extern const double g_bfmeVM0Factor;
 // g_bfmeVM0Factor: matched references place it at VA 0xbf5d50 (retail .rdata value 0.03333333333333333).
 extern const double g_bfmeVM0Factor = 0.03333333333333333;

@@ -66,7 +66,11 @@ private:
 };
 
 extern ScriptActions *TheScriptActions;
+// TheScriptActions: matched references place it at VA 0xe02d98 (zero-filled .bss).
+ScriptActions * TheScriptActions;
 extern ScriptConditions *TheScriptConditions;
+// TheScriptConditions: matched references place it at VA 0xe02e04 (zero-filled .bss).
+ScriptConditions * TheScriptConditions;
 
 template <class T>
 inline void swapValues(T &a, T &b)

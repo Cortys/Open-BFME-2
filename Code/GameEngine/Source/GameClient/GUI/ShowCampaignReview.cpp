@@ -18,6 +18,8 @@ public:
 
 extern Shell *TheShell;
 extern void *g_obj12F495C;
+// g_obj12F495C: matched references place it at VA 0xe048c8 (zero-filled .bss).
+void * g_obj12F495C;
 
 // ?_bfme_showCampaignReview@@YA_NXZ
 bool _bfme_showCampaignReview( void )

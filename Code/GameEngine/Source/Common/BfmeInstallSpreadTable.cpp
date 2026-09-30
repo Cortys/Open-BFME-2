@@ -19,17 +19,37 @@ extern int g_bfmeTableJX;
 // Individually named blob cells (not part of either 65-slot array); no real
 // identity yet, address-derived names, pinned in reverse/symbols.csv.
 extern void *g_bfmeSlotABC;
+// g_bfmeSlotABC: matched references place it at VA 0xe22d00 (zero-filled .bss).
+void * g_bfmeSlotABC;
 extern void *g_bfmeSlotB40;
 extern void *g_bfmeSlotB44;
+// g_bfmeSlotB44: matched references place it at VA 0xe22d0c (zero-filled .bss).
+void * g_bfmeSlotB44;
 extern void *g_bfmeSlotB48;
 extern void *g_bfmeSlotB4C;
+// g_bfmeSlotB4C: matched references place it at VA 0xe22d14 (zero-filled .bss).
+void * g_bfmeSlotB4C;
 extern void *g_bfmeSlotB50;
+// g_bfmeSlotB50: matched references place it at VA 0xe22d18 (zero-filled .bss).
+void * g_bfmeSlotB50;
 extern void *g_bfmeSlotB54;
+// g_bfmeSlotB54: matched references place it at VA 0xe22d1c (zero-filled .bss).
+void * g_bfmeSlotB54;
 extern void *g_bfmeSlotB58;
+// g_bfmeSlotB58: matched references place it at VA 0xe22d20 (zero-filled .bss).
+void * g_bfmeSlotB58;
 extern void *g_bfmeSlotB5C;
+// g_bfmeSlotB5C: matched references place it at VA 0xe22d24 (zero-filled .bss).
+void * g_bfmeSlotB5C;
 extern void *g_bfmeSlotD84;
+// g_bfmeSlotD84: matched references place it at VA 0xe22f64 (zero-filled .bss).
+void * g_bfmeSlotD84;
 extern void *g_bfmeSlotD88;
+// g_bfmeSlotD88: matched references place it at VA 0xe22f68 (zero-filled .bss).
+void * g_bfmeSlotD88;
 extern void *g_bfmeSlotD8C;
+// g_bfmeSlotD8C: matched references place it at VA 0xe22f6c (zero-filled .bss).
+void * g_bfmeSlotD8C;
 
 // Landed callees, declared with their real signatures so the mangled name
 // matches their existing row.

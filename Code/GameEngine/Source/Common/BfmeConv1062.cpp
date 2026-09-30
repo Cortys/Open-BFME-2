@@ -31,7 +31,11 @@ public:
 };
 
 extern BfmeC1062 *g_bfmeC1062;
+// g_bfmeC1062: matched references place it at VA 0xe1816c (zero-filled .bss).
+BfmeC1062 * g_bfmeC1062;
 extern BfmeC1062 *g_bfmeD1062;
+// g_bfmeD1062: matched references place it at VA 0xe18170 (zero-filled .bss).
+BfmeC1062 * g_bfmeD1062;
 
 void bfmeGo1062B(void)
 {

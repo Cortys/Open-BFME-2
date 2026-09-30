@@ -5,6 +5,8 @@
 // Callers: none; callees: 0x000F630C only.
 // Not established: owning TU/class and global identities; names are address-derived.
 extern unsigned int g_Va00DE1F50;
+// g_Va00DE1F50: matched references place it at VA 0xde1f50 (zero-filled .bss).
+unsigned int g_Va00DE1F50;
 int Rva000F630CGet(void);
 
 int Rva000FDCD7Get(void)

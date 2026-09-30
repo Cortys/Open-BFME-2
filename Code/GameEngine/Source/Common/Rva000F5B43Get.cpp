@@ -5,7 +5,11 @@
 // Callers: none; callees: none.
 // Not established: owning TU/class and global identities; names are address-derived.
 extern unsigned int g_Va00DE1F28;
+// g_Va00DE1F28: matched references place it at VA 0xde1f28 (zero-filled .bss).
+unsigned int g_Va00DE1F28;
 extern unsigned int g_Va00DE1F20;
+// g_Va00DE1F20: matched references place it at VA 0xde1f20 (zero-filled .bss).
+unsigned int g_Va00DE1F20;
 
 int Rva000F5B43Get(void)
 {

@@ -11,7 +11,11 @@
 // unproven so the function keeps an honest Rva name. Flags: /O1 is load-bearing
 // for the cmp-byte guard (defaults give mov al plus test).
 extern unsigned char g_Va00DB5FB8;
+// g_Va00DB5FB8: matched references place it at VA 0xdb5fb8 (retail .data initial value 1).
+unsigned char g_Va00DB5FB8 = 1;
 extern int g_Va00DB5FB4;
+// g_Va00DB5FB4: matched references place it at VA 0xdb5fb4 (retail .data initial value 256).
+int g_Va00DB5FB4 = 256;
 
 class DX8Wrapper
 {

@@ -146,7 +146,11 @@ extern int SkippedClientFrames;
 // SkippedClientFrames: matched references place it at VA 0xdfe6f0 (zero-filled .bss).
 int SkippedClientFrames;
 extern int SavedClientFrame;
+// SavedClientFrame: matched references place it at VA 0xdfe6f4 (zero-filled .bss).
+int SavedClientFrame;
 extern int TimedOpInputLocked;
+// TimedOpInputLocked: matched references place it at VA 0xdfe71c (zero-filled .bss).
+int TimedOpInputLocked;
 
 class InGameUI
 {

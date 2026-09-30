@@ -46,6 +46,8 @@ void Rva006CD1F0Set(int value)
 	g_bfmeAptBreakOnAssertAtDDC01C = value;
 }
 extern int g_Va00E17724;
+// g_Va00E17724: matched references place it at VA 0xe17724 (zero-filled .bss).
+int g_Va00E17724;
 
 // ?Rva006CD210Set@@YAXH@Z @ 0x006cd210 (10B) over 0x00E17724.
 // Int3-padded both sides (prev CC next CC), live E8 caller at 0x006d198a.
@@ -56,6 +58,8 @@ void Rva006CD210Set(int value)
 	g_Va00E17724 = value;
 }
 extern int g_Va00E177EC;
+// g_Va00E177EC: matched references place it at VA 0xe177ec (zero-filled .bss).
+int g_Va00E177EC;
 
 // ?Rva006D37E0Set@@YAXH@Z @ 0x006d37e0 (10B) over 0x00E177EC.
 // Int3-padded both sides (prev CC next CC), live E8 caller at 0x006cf85c.

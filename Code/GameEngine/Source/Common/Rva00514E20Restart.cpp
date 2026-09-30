@@ -27,6 +27,8 @@ inline void *ThreadRestartObj::unused0() { return 0; }
 // ?stop@ThreadRestartObj@@UAEPAXH@Z present-unmatched
 inline void *ThreadRestartObj::stop(int code) { return 0; }
 extern ThreadRestartObj *g_bfmeThreadAtE048E0;
+// g_bfmeThreadAtE048E0: matched references place it at VA 0xe048e0 (zero-filled .bss).
+ThreadRestartObj * g_bfmeThreadAtE048E0;
 void *Rva00514E20RestartHelper();
 void Rva00514E20Restart()
 {

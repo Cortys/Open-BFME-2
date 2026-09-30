@@ -14,6 +14,8 @@ private:
     char _s[0x4265c];
 };
 extern W3DBufferManager *g_00DEC3C0;
+// g_00DEC3C0: matched references place it at VA 0xdec3c0 (zero-filled .bss).
+W3DBufferManager * g_00DEC3C0;
 class TCBSpline3DClass {
 public:
     class TCBClass;

@@ -82,6 +82,8 @@ extern unsigned char g_Rva00A02D86;
 // g_Rva00A02D86: matched references place it at VA 0xe02d86 (zero-filled .bss).
 unsigned char g_Rva00A02D86;
 extern unsigned char g_Rva00A02D87;
+// g_Rva00A02D87: matched references place it at VA 0xe02d87 (zero-filled .bss).
+unsigned char g_Rva00A02D87;
 
 struct Rva009FE758Obj
 {

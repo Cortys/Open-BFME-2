@@ -5,6 +5,8 @@
 // Callers: none; callees: 0x000F630C only. Owner unknown so class is address-derived.
 // Not established: owning class identity beyond this-pointer store; global identity.
 extern unsigned int g_Va00DE1F34;
+// g_Va00DE1F34: matched references place it at VA 0xde1f34 (zero-filled .bss).
+unsigned int g_Va00DE1F34;
 int Rva000F630CGet(void);
 class Rva000FD4B3
 {

@@ -121,6 +121,8 @@ extern DX8CapsSnapshot g_dx8CapsSnapshot;
 extern TextureFilterClass::TextureFilterMode g_dx8FilterMode;
 extern DX8MeshRendererClass *TheDX8MeshRenderer;
 extern Rva00DF6F94GapFillerContext *TheMeshGapFillerContext;
+// TheMeshGapFillerContext: matched references place it at VA 0xdf6f94 (zero-filled .bss).
+Rva00DF6F94GapFillerContext * TheMeshGapFillerContext;
 
 // ?Do_Onetime_Device_Dependent_Inits@DX8Wrapper@@SAXXZ
 void DX8Wrapper::Do_Onetime_Device_Dependent_Inits( void )

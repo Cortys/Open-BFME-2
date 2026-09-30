@@ -40,6 +40,8 @@ public:
 };
 
 extern TimedOp *g_timedOperationHead;
+// g_timedOperationHead: matched references place it at VA 0xe02ec0 (zero-filled .bss).
+TimedOp * g_timedOperationHead;
 
 // ?update@TimedOp@@QAEIXZ
 unsigned int TimedOp::update(void)

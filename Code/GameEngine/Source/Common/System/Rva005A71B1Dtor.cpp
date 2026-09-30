@@ -48,6 +48,8 @@ struct Rva00A063B0Obj
 };
 
 extern Rva00A063B0Obj *g_a063b0;
+// g_a063b0: matched references place it at VA 0xe063b0 (zero-filled .bss).
+Rva00A063B0Obj * g_a063b0;
 
 class Rva005A734B
 {

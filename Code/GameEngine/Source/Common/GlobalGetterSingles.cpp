@@ -114,6 +114,8 @@ int Rva000B29C3Get(void)
 // address-derived naming as the getters above.
 
 extern int g_Va00DB3BDC;
+// g_Va00DB3BDC: matched references place it at VA 0xdb3bdc (retail .data initial value -1).
+int g_Va00DB3BDC = -1;
 
 void Rva000B29C9Set(int value)
 {

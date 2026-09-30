@@ -68,6 +68,8 @@ extern Rva00DFF024Registry *TheRva00DFF024Registry;
 Rva00DFF024Registry * TheRva00DFF024Registry;
 extern AsciiString g_drawCallbackName;
 extern void *g_drawCallback;
+// g_drawCallback: matched references place it at VA 0xe012f8 (zero-filled .bss).
+void * g_drawCallback;
 
 class WinInstanceData;
 

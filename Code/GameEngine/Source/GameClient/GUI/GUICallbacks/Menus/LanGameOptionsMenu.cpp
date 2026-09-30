@@ -73,6 +73,8 @@
 extern char *LANnextScreen;
 extern Bool LANisShuttingDown;
 extern Bool LANbuttonPushed;
+// LANbuttonPushed: matched references place it at VA 0xe03364 (zero-filled .bss).
+bool LANbuttonPushed;
 extern void MapSelectorTooltip(GameWindow *window, WinInstanceData *instData,	UnsignedInt mouse);
 extern void gameAcceptTooltip(GameWindow *window, WinInstanceData *instData, UnsignedInt mouse);
 Color white = GameMakeColor( 255, 255, 255, 255 );

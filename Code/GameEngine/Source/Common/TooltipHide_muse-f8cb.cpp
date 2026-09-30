@@ -40,6 +40,8 @@ public:
 
 extern DisplayStringManager *TheDisplayStringManager;
 extern DisplayString *TheTooltipString;
+// TheTooltipString: matched references place it at VA 0xe022e4 (zero-filled .bss).
+DisplayString * TheTooltipString;
 
 void Rva003807B7Hide()
 {
