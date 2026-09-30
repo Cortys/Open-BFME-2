@@ -51,6 +51,7 @@ public:
 
 extern GlobalData *TheWritableGlobalData;
 extern float g_Va007C26F0;
+extern float g_Va00BBB8E0;
 
 struct Extents
 {
@@ -83,6 +84,7 @@ class Rva00263910
 {
 public:
 	void rva00263910(const Coord3D *pos, float range, int flag);
+	void rva00265667(const Coord3D *pos, int flag);
 	char m_pad00[8];
 	Object *m_object; // +8
 	char m_pad0C[0x30 - 0x0C];
@@ -130,4 +132,13 @@ void Rva00263910::rva00263910(const Coord3D *pos, float range, int flag)
 	} else {
 		m_machine->setGoalPosition(0, range);
 	}
+}
+
+// ?rva00265667@Rva00263910@@QAEXPBUCoord3D@@H@Z @0x00265667 (26B).
+// Forwards this plus own args to rva00263910 with range from g_Va00BBB8E0.
+// Evidence: retail pushes flag then fld g_Va00BBB8E0 then pos and calls rowed
+// 0x00263910 with unchanged ecx; ret 8 matches (pos flag); 15 callers pass pos plus flag.
+void Rva00263910::rva00265667(const Coord3D *pos, int flag)
+{
+	rva00263910(pos, g_Va00BBB8E0, flag);
 }

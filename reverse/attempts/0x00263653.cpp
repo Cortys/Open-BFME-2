@@ -1,11 +1,11 @@
 // ??0Rva00263653@@QAE@XZ
-// partial score=0.93 date=2026-09-30
+// partial score=0.96 date=2026-09-30
 // ??0Rva00263653@@QAE@XZ
-// partial score=0.93 date=2026-09-30
-// cl: /O1 /arch:SSE /DNDEBUG /MD /EHs-c-
+// partial score=0.96 date=2026-09-30
+// cl: /O2 /arch:SSE /DNDEBUG /MD /EHs-c-
 // ??0Rva00263653@@QAE@XZ @0x00263653 (147B).
 // Ctor storing vtable 0x007F91FC at [this]; constants +0xC=0x16 +0x10=0x1D
-// +0x21=1, floats +0x48/+0x50=1.0 via g_Va00BBB8D8, +0x54 via kF7C, rest 0.
+// +0x21=1, floats +0x48/+0x50 via g_Va00BBB8D8, +0x54 via kF7C, rest 0.
 // Evidence: call site at 0x002638A1 (lea ecx,[esi+4]); no callees.
 extern float g_Va00BBB8D8;
 extern "C" float kF7C;
@@ -49,26 +49,26 @@ private:
 
 // ??0Rva00263653@@QAE@XZ present-unmatched
 Rva00263653::Rva00263653()
-	: m_04(0)
-	, m_08(0)
-	, m_0C(0x16)
-	, m_10(0x1D)
-	, m_14(0)
-	, m_18(0)
-	, m_1C(0.0f)
-	, m_20(0)
-	, m_21(1)
-	, m_24(0.0f)
-	, m_28(0)
-	, m_2C(0)
-	, m_30(0.0f)
-	, m_34(0.0f)
-	, m_38(0.0f)
 {
-	float tmp = g_Va00BBB8D8;
+	const float tmp = g_Va00BBB8D8;
+	m_04 = 0;
+	m_08 = 0;
+	m_0C = 0x16;
+	m_10 = 0x1D;
+	m_14 = 0;
+	m_18 = 0;
+	m_1C = 0.0f;
+	m_20 = 0;
+	m_21 = 1;
+	m_24 = 0.0f;
+	m_28 = 0;
+	m_2C = 0;
+	m_30 = 0.0f;
+	m_34 = 0.0f;
+	m_38 = 0.0f;
 	m_48 = tmp;
 	m_50 = tmp;
-	float tmp2 = kF7C;
+	const float tmp2 = kF7C;
 	m_3C = 0.0f;
 	m_40 = 0.0f;
 	m_44 = 0.0f;
