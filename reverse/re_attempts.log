@@ -4484,3 +4484,4 @@ FUN_00405AC9	0x00405AC9	65	blocked	EH-prolog with UNCLAIMED scopetable 0x00784F0
 ?rva000521F4@Rva00699180Owner@@QAEXM@Z	0x000521F4	235	blocked	SSE envelope shared tails and int-copy paths need donor t=15 model=muse-04
 ?rva0073F170@Rva0073F170@@QAEHHH@Z	0x0073F170	193	blocked	193B EH multi-callee list str refcount needs donor t=10 model=muse-04
 FUN_0052D84C	0x0052D84C	464	blocked	464B xfer with XferObjectID loops plus bitfields needs parent ctor offsets t=8 model=muse-spark
+?rva003F3FFE@Rva003F3FFE@@QAEXAAVXfer@@@Z	0x003F3FFE	152	partial	pid in eax vs edi plus or-mem vs or-reg; 151B 67ins vs 152B 68ins t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x003f3ffe.cpp
