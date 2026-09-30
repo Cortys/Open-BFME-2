@@ -43341,3 +43341,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0028BD92@Object@@QAEPAXH@Z,,0x0028BD92,69,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028BD92.cpp,matched,same 244 array 0C slot25 plus slot1 bool plus rowed 44EF2C compare
 ?rva003FC3E4@Rva003FC3E4@@QAEXXZ,,0x003FC3E4,68,Code/GameEngine/Source/Common/Rva003FC3E4Reset.cpp,matched,rowed Reset_Texture_Mappers 0x00184010 caller 0x005392DE unblocks 0x005392C2 neighbours use /O1 /DNDEBUG /MD
 ?Rva00333295Construct@@YAXPAVRva00332EC8@@ABV1@@Z,,0x00333295,18,Code/Libraries/Source/WWVegas/WWLib/Rva00333295Construct.cpp,matched,chain Construct wrapper via throw plus copy
+?rva003F4CC0@Rva003F4CC0@@QAEPAURva003F4CC0Inner@@H@Z,,0x003F4CC0,73,Code/Libraries/Source/WWVegas/WWLib/Rva003F4CC0Find.cpp,matched,unlock search inners unk0 vs int arg same dir flags siblings
