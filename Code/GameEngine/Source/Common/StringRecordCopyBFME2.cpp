@@ -5,7 +5,7 @@
 // The36-byte layout and memberwise copy are read directly from the complete
 // retail body. Its string member calls the established copy at0x365F0.
 // The placement-copy caller at0x63C8F independently links the same value.
-class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 struct BfmeStringRecord00063BE4 {
     unsigned int word0, word1, word2, word3, word4, word5, word6;
     AsciiString text;
