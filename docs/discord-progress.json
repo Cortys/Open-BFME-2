@@ -1,6 +1,5 @@
 {
   "total": 7978500,
-  "linked": 572353,
   "census": {
     "date": "2026-09-29 11:03",
     "commit": "c4d3910546",
@@ -22,16 +21,18 @@
     "files_linked": "3552",
     "blocking_names": "8342",
     "addresses": "2228",
-    "linked_bytes": "572353"
+    "linked_bytes": "572353",
+    "linked_authored": "402941",
+    "game_code": "7516589"
   },
-  "authored": 1890493,
-  "vendored": 284873,
+  "linked": 572353,
+  "linked_authored": 402941,
+  "linked_game_code": 7516589,
+  "authored": 2046847,
+  "vendored": 285996,
   "generated": 168035,
   "library": 177539,
-  "linked_total": 572353,
-  "matched_total": 2520940,
-  "whole_total": 1546646.5,
-  "updated_at": "2026-09-29T18:13:25.703094+00:00",
-  "message_id": "1554556724948508683",
-  "run_id": "36610481355"
+  "updated_at": "2026-09-30T18:06:08.133118+00:00",
+  "message_id": "1554917277349191731",
+  "run_id": "36756120555"
 }
