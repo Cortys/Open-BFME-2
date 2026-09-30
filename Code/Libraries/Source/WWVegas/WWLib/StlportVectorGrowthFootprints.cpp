@@ -181,6 +181,8 @@ template void _STL::vector<Rva003F610FElement>::reserve(unsigned int);
 // Retail 0x0042843E.
 template void _STL::vector<BfmeNarrowRecord00427F75>::_M_insert_overflow(
     BfmeNarrowRecord00427F75 *, const BfmeNarrowRecord00427F75 &, const _STL::__false_type &, unsigned int, bool);
+// Retail 0x004282EF.
+template void _STL::vector<BfmeNarrowRecord00427F75>::_M_clear();
 // Retail 0x004F8F61.
 template void _STL::vector<Rva004F6352>::_M_insert_overflow(
     Rva004F6352 *, const Rva004F6352 &, const _STL::__false_type &, unsigned int, bool);

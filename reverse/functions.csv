@@ -44555,3 +44555,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ??_GRva003B1546@@UAEPAXI@Z,,0x003B17F3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003B1546.cpp,matched,deleting dtor for rowed Rva003B1546
 ?get@Rva001F53AASlot@@QBEPBURGBColor@@XZ,,0x001F53AA,18,Code/GameEngine/Source/Common/Rva001F53AAGet.cpp,matched,null-checked helper at 0x1AC via slot 0x14 tail-jmp sibling shape
 ?get@Rva001F53BCSlot@@QBEPBURGBColor@@XZ,,0x001F53BC,18,Code/GameEngine/Source/Common/Rva001F53BCGet.cpp,matched,null-checked helper at 0x1B0 via slot 0x10 tail-jmp sibling shape
+?_M_clear@?$vector@UBfmeNarrowRecord00427F75@@V?$allocator@UBfmeNarrowRecord00427F75@@@_STL@@@_STL@@IAEXXZ,,0x004282EF,30,Code/Libraries/Source/WWVegas/WWLib/StlportVectorGrowthFootprints.cpp,matched,vector clear via destroyVersionRecords plus free per pin 0x004282EF
