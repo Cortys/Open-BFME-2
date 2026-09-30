@@ -4008,3 +4008,5 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva001F510D@Rva001F510D@@QAEMXZ	0x001F510D	34	partial	xorps-movss hoisted before branch vs retail null-path only t=25 model=muse-02 score=0.93 stash=reverse/attempts/0x001f510d.cpp
 ?rva001F8167@Rva001F8167@@QAEXXZ	0x001F8167	88	blocked	missing EH prolog and unwind states; loop-delete-free shape needs unwound model t=10 model=muse-02
 ?Rva002EBB9BSiftDown@@YAXPAPAU_Rva002EBB53Wrap@@HHHPAU2@H@Z	0x002EBB9B	96	blocked	5-push call vs 4-param SiftUp row; heap adjust needs donor STL sig t=12 model=muse-02
+?rva0002BC27@Rva0002BC27@@QAEHXZ	0x0002BC27	71	blocked	custom static reg ABI eax ebx edi plus stack plus strcmp import stub needs static plus TU-local caller per lever439 t=15 model=muse-01
+??0Rva0035DCF9@@QAE@XZ	0x0035DE55	80	partial	80B exact size 26 insns; or m_28 hoisted early plus m_14 3 plus vtable sunk late plus eax vs ecx reload; tried novtable explicit plus volatile m_14 plus O1 O2 Os; shape levers 21 55 suggest full-volatile plus barrier next t=25 model=muse-01 score=0.9 stash=reverse/attempts/0x0035de55.cpp
