@@ -44256,3 +44256,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva003ABD20@@QAE@ABVRvaSmartPtr12@@H@Z,,0x003ABD20,49,Code/GameEngine/Source/Common/Rva003ABD20Ctor.cpp,matched,empty derived via rowed base 0x0055F197 plus four vtables caller 0x003ACFDA
 ??0Rva003ABD81@@QAE@ABVRvaSmartPtr12@@H@Z,,0x003ABD81,49,Code/GameEngine/Source/Common/Rva003ABD81Ctor.cpp,matched,empty derived via rowed base 0x0055F9B4 plus four vtables caller 0x003AD010
 ?rva003833BB@Rva003833BB@@QAEXPAURva003833BBNode@@@Z,,0x003833BB,53,Code/GameEngine/Source/Common/Rva003833BBErase.cpp,matched,Rb erase via CameraMarker dtor plus free
+?rva00372CA8@Rva00372CA8@@QAEXH@Z,,0x00372CA8,68,Code/GameEngine/Source/GameLogic/AI/Rva00372CA8Remove.cpp,matched,honest-address 8-slot remove via callers 0x373193 0x37319D 0x373238 and unsigned loop shape
