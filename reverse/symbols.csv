@@ -6588,3 +6588,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??RRva005B26CECmp@@QBE_NPBX0@Z,0x005B26CE,ICF twin of rowed YG Less 53B body at same address; partition 0x005B2FDC thiscall lea ecx plus two pushes
 ?rva0053444F@Rva004FFC23@@QAEPAURva004FFC23Node@@PAU2@@Z,0x0053444F,thiscall twin of rowed int-int _M_clone_node via copy call sites 0x004FFC30 0x004FFC60
 ?_M_copy@?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@URva004FFEAFLess@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@AAEPAU?$_Rb_tree_node@U?$pair@$$CBHPAX@_STL@@@2@PAU32@0@Z,0x004FFC23,fold twin of Rva004FFC23 copy same 115B node shape via copy ctor call site 0x004FFF0A
+?d_009a5620@@YAXXZ,0x001B60E0
