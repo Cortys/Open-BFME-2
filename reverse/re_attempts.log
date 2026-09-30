@@ -3614,3 +3614,16 @@ FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 mo
 ?bfmeInitD70@@YAXPAX0@Z	0x001B67E0	176	blocked	t-st coloring persists after st-t def swap 170-176 t=10 model=muse-08
 ?Rva0054A086Shift@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@UFoo00549DCB@@URva00549DCB@@@Z	0x0054A086	82	blocked	deque Foo shift via Decrement plus FooCmp 82B; ref-temp frame wall sub18 vs sub10 t=16 model=muse-spark
 ?Rva007FCF80@@YAPAVRva007FCF80Object@@PAX@Z	0x00669480	45	blocked	nothrow factory 12B with twin second-vptr redundant plus dead null check; volatile and pragma miss t=14 model=muse-spark
+?rva0051E354@Rva0051E354@@QAEXPAMPAVVObj@@H@Z	0x0051E354	79	blocked	mixed-x87-SSE float interp wall SSE-only gives 99vs79B t-u need x87 fld-fadd-fstp plus v needs SSE t=12 model=muse-11
+?rva005996FF@Rva005996FF@@QAEXPAURva005996FFArg@@_N@Z	0x005996FF	85	partial	value-in-edx-vs-ecx plus 3 branch consequences t=20 model=muse-11 score=0.94 stash=reverse/attempts/0x005996ff.cpp
+??0Rva002FED8D@@QAE@ABV?$StringBase@D@@@Z	0x002FED8D	95	blocked	ctor order wall 78vs95B vptr-plus-StringBase-plus-ListBase-plus-stores needs decl-order plus empty-alloc-tail t=12 model=muse-11
+?rva001FF47D@ScienceStore@@QBE_NPAVChecker@@W4ScienceType@@@Z	0x001FF47D	86	blocked	nested-req-chunk loops plus virtual check need shape t=10 model=muse-11
+?rva006D28D0@Rva006D28D0@@QAEXHE@Z	0x006D28D0	92	partial	eax-edx scratch mirror for bit logic t=15 model=muse-11 score=0.92 stash=reverse/attempts/0x006d28d0.cpp
+?rva005AA740@Rva005AA735@@QBE_NHPAVRva0039D7A6Setter@@@Z	0x005AA740	131	blocked	gap xfer-like switch plus hashmap-float-ftol2 needs scale const plus sub-dec form t=12 model=muse-11
+??0?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@QAE@PBDIABV?$allocator@D@1@@Z	0x00027150	129	blocked	exact-129B-but-duplicate-name-rowed-at-0x00028B10-123B-needs-central-alias t=15 model=muse-11
+?Rva002E0D02Get@@YAHPAURva002E0D02Arg@@@Z	0x002E0D02	100	partial	add-eax-1B8-plus-deref-vs-folded-mov plus 5 branch consequences t=15 model=muse-11 score=0.93 stash=reverse/attempts/0x002e0d02.cpp
+?setColor@Rva002E2903Player@@QAEXH@Z	0x002E0F91	112	blocked	leaf setColor global-lazy plus movsd copies need push-lea order t=12 model=muse-11
+??0Rva006DE1A0@@QAE@XZ	0x006DE1A0	107	partial	missing second vptr 0xceb150 101vs107B only 6B scheduling exact t=25 model=muse-11 score=0.94 stash=reverse/attempts/0x006de1a0.cpp
+?rva005E8044@Rva005E8044@@QAEPAXPAX0@Z	0x005E8044	51	partial	lea ebp+0xf vs retail ebp+0xb single dummy byte 6 variants t=18 model=muse-11 score=0.98 stash=reverse/attempts/0x005e8044.cpp
+?Rva00204032Update@@YAXXZ	0x00204032	98	blocked	push eax before store vs store before push at slot3 persists across 6 variants incl /Os /G7 /O2 and arg-form store-as-arg t=22 model=muse-11
+?Rva0070B590Cleanup@@YAXXZ	0x0070B590	55	blocked	store via esi not ecx persists after split-assign and head-local toggle; true size 55 not 52; stash global g_00E18370 should be g_00A18370 t=15 model=muse-11
