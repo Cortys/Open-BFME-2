@@ -13,3 +13,5 @@ template void _STL::vector<struct _STL::pair<const AsciiString, char> >::_M_inse
 	const _STL::__false_type &,
 	unsigned int,
 	bool);
+template void _STL::vector<struct _STL::pair<const AsciiString, char> >::push_back(
+	const struct _STL::pair<const AsciiString, char> &);
