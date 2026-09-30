@@ -4057,3 +4057,8 @@ FUN_00409457	0x00409457	213	blocked	EH plus STL vector erase pushback plus conte
 FUN_002B55F2	0x002B55F2	109	blocked	EH vector plus callback via funcptr plus global g_00BFB1CC needs donor t=8 model=muse-07
 ?Rva00416589Buddy@@YAXVBuddyMessage@@@Z	0x00416589	338	partial	fmt-copy-out stack slots permuted fmt-0x10-vs-0x18 copy-0x18-vs-0x14 out-0x14-vs-0x10; 338B exact size 0 structural; shape_levers local-definition-order plus two-param-loads tried t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x00416589.cpp
 ?Rva004E8258Chat@@YAXH@Z	0x004E8258	403	blocked	95-slot InGameUI 0x17c plus GameInfo 0x4c plus WindowManager 0x80 plus GlobalData a44 plus g_E04478 int-vs-ptr plus 6 chat literals; needs donor TU with proven vtables t=10 model=muse-06
+FUN_009BD1F1	0x005BD1F1	564	blocked	EH AsciiString URL parse with 7 tokens plus list insert needs donor t=5 model=muse-10
+??0Rva0030AEB6@@QAE@XZ	0x0030AEB6	217	blocked	EH ctor with 2 GameClientRandomVariable plus 8 float globals needs literal values donor t=12 model=muse-10
+?rva00358E26@Rva00358D62@@QAEXPAURva00358D62Node@@0@Z	0x00358E26	68	partial	EBP frame plus this-on-stack vs EBX plus 6B short t=12 model=muse-10 score=0.88 stash=reverse/attempts/0x00358e26.cpp
+?reserve@?$vector@VRva0040CB11Entry@@V?$allocator@VRva0040CB11Entry@@@_STL@@@_STL@@QAEXI@Z	0x0040E135	104	partial	_M_clear for Rva0040CB11Entry unresolved needs Rva004F69C3 ICF or retype t=15 model=muse-10 score=0.99 stash=reverse/attempts/0x0040e135.cpp
+FUN_0068D680	0x0028D680	107	blocked	Object upgrade loop with Player storage plus bitset do_or plus 3 virtuals needs layout donor t=8 model=muse-10
