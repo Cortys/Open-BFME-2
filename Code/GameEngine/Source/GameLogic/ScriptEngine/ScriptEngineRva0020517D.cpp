@@ -6,6 +6,10 @@ class SequentialScript
 public:
 	char m_pad[8];
 	int m_8; // +0x08 match key
+	char m_padC[4]; // +0x0C..0x0F
+	bool m_10; // +0x10 gate
+	char m_pad11[3]; // +0x11..0x13
+	SequentialScript *m_14; // +0x14 link
 };
 
 class Object
@@ -21,6 +25,7 @@ protected:
 	SequentialScript **cleanupSequentialScript(SequentialScript **it, bool cleanDanglers, bool removeEntry);
 public:
 	void rva0020517D(Object *obj);
+	void rva00205140(SequentialScript *arg);
 private:
 	char m_pre[0x10];
 	SequentialScript **m_begin; // +0x10
@@ -36,6 +41,22 @@ void ScriptEngine::rva0020517D(Object *obj)
 	while (it != m_end) {
 		SequentialScript *s = *it;
 		if (!s || s->m_8 == id)
+			it = cleanupSequentialScript(it, true, true);
+		else
+			++it;
+	}
+}
+
+void ScriptEngine::rva00205140(SequentialScript *arg)
+{
+	if (!arg)
+		return;
+	if (!arg->m_10)
+		return;
+	SequentialScript **it = m_begin;
+	while (it != m_end) {
+		SequentialScript *s = *it;
+		if (s && s->m_14 == arg)
 			it = cleanupSequentialScript(it, true, true);
 		else
 			++it;
