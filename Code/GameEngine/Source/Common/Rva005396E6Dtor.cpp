@@ -54,3 +54,22 @@ Rva005396E6::~Rva005396E6()
 	g_009FEAD8->FreeEntry(m_0C);
 	g_009FEAD8->FreeEntry(m_10);
 }
+
+// ?rva005398B3@Rva005398B3@@QAEXXZ @0x005398B3 26B:
+// Frees owned Rva005396E6: take ptr at +0, clear slot, delete it (dtor row
+// 0x005396E6 plus operator delete 0x0002FD60). Caller 0x00539944.
+// Evidence: chain after 0x005396E6; and [ecx],0 plus test-je-delete shape.
+class Rva005398B3
+{
+public:
+	void rva005398B3();
+private:
+	Rva005396E6 *m_00;
+};
+
+void Rva005398B3::rva005398B3()
+{
+	Rva005396E6 *p = m_00;
+	m_00 = 0;
+	delete p;
+}
