@@ -43375,3 +43375,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva004EE0C6@Rva004EE0C6@@QAEXHPAVRva003F498A@@@Z,,0x004EE0C6,77,Code/GameEngine/Source/Common/Rva004EE0C6.cpp,matched,time plus Rva003F498A loops
 ?rva004D5046@Transport@@QBEMXZ,,0x004D5046,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,transport stats5 average skipping 40E6C
 ?rva004D5002@Transport@@QBEMXZ,,0x004D5002,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,transport stats2 average skipping 40E6C
+?rva003F4342@Rva003F498AOuter@@QAE_NPAVRva003F498ACallback@@@Z,,0x003F4342,86,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock outer predicate scan inners same file

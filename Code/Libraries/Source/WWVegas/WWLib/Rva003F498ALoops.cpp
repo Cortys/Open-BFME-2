@@ -30,6 +30,7 @@ struct Rva003F498AOuter {
     int unk0;
     _STL::vector<Rva003F498AInner> inners;
     _STL::vector<int> ints;
+    bool rva003F4342(Rva003F498ACallback *cb);
 };
 
 class Rva003F498A {
@@ -210,4 +211,15 @@ void *Rva003F498A::rva003F4FBD(void *p)
     if (q)
         q = ((Rva003F44A9 *)q)->rva003F44A9();
     return q;
+}
+
+// ?rva003F4342@Rva003F498AOuter@@QAE_NPAVRva003F498ACallback@@@Z @0x003F4342 86B unlock scan inners invoking virtual predicate on unk0 returning false on first false else true; caller 0x003F4967; same file family flags
+bool Rva003F498AOuter::rva003F4342(Rva003F498ACallback *cb)
+{
+    for (unsigned i = 0; i < inners.size(); ++i) {
+        int v = inners[i].unk0;
+        if (!cb->invoke(v))
+            return false;
+    }
+    return true;
 }
