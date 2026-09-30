@@ -3982,3 +3982,5 @@ FUN_009680F9	0x005680F9	74	blocked	static list init with EH_prolog plus guard; p
 ?rva000ADA1A@Rva000ADA1A@@QAEXHH_N@Z	0x000ADA1A	83	blocked	register wall this-edx x-ecx y-esi vs ours this-eax x-ecx y-edx; 6 variants incl int-ptr unsigned plus G7 plus recompute; size exact 83 on recompute but 8 reg diffs remain t=20 model=muse-05
 ??0Rva0059A85C@@QAE@PAX@Z	0x0059A85C	123	partial	missing and0 plus mov1 EH states 119/123B 38/39ins t=20 model=muse-06 score=0.97 stash=reverse/attempts/0x0059a85c.cpp
 ?rva001EB6A5@Rva001EB6A5@@QAE_NPAURva001EB6A5Out@@@Z	0x001EB6A5	89	partial	eax edx swap for add base idx 89/89B 35ins t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x001eb6a5.cpp
+?Rva000526C5Get@@YAHXZ	0x000526C5	140	blocked	switch on indirect type tag plus manager table 0xBD4 stride 0x48; owner unknown and 3-arg thiscall vs free unclear; t=8 model=muse-07
+?rva000550F7@Rva00699180Owner@@QAEXPAUHolder@@H@Z	0x000550F7	120	partial	lea folding vs add plus mov: ours lea ecx base+index+0x4c 121B vs retail add plus mov 120B; outer vector plus inner erase plus refresh shape exact otherwise t=30 model=muse-07 score=0.95 stash=reverse/attempts/0x000550f7.cpp
