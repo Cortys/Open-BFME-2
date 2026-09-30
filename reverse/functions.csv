@@ -43045,3 +43045,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0039AF76@Rva0039AF76@@QAEXABVAsciiString@@@Z,,0x0039AF76,37,Code/GameEngine/Source/Common/Rva0039AF76Method.cpp,matched,unlock 37B AsciiString assign plus TheNameKeyGenerator nameToKey
 ?rva00131259@Rva00131259@@QAEXPBD@Z,,0x00131259,212,Code/Libraries/Source/WWVegas/WW3D2/Rva00131259Load.cpp,matched,chain via 0x000787BA dds tga jpg png
 ?rva003F03C9@Rva003F03C9@@QAE?AVUnicodeString@@XZ,,0x003F03C9,58,Code/GameEngine/Source/Common/System/Rva003F03C9Fetch.cpp,matched,chain wrapper forwards index plus0x5c to holder plus0xB0 at 0x00DFEF10 else empty
+?rva00131D7D@Rva00131D7D@@QAEXI@Z,,0x00131D7D,28,Code/Libraries/Source/WWVegas/WW3D2/Rva00131D7DSet.cpp,matched,unlock dword to three bytes
