@@ -214,6 +214,8 @@ template void _STL::vector<BfmeStringTailRecord156>::_M_insert_overflow(
 template void _STL::vector<Rva0007BB16Record>::push_back(const Rva0007BB16Record &);
 template void _STL::vector<Rva00151DAB>::push_back(const Rva00151DAB &);
 template void _STL::vector<BfmeStringTailRecord156>::push_back(const BfmeStringTailRecord156 &);
+// Retail 0x00428678.
+template void _STL::vector<BfmeNarrowRecord00427F75>::push_back(const BfmeNarrowRecord00427F75 &);
 // Retail 0x0010E604: copy ctor; its get_allocator, _Vector_base(n) and const
 // __uninitialized_copy callees are ICF aliases pinned at the rowed bodies.
 template _STL::vector<Rva0007BB16Record>::vector(const _STL::vector<Rva0007BB16Record> &);
