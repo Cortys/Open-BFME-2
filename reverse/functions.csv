@@ -43725,3 +43725,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva006C0850@BfmeTaintManager@@QAEHPBUBfmePointFC@@PAH@Z,,0x006C0850,8,Code/GameEngine/Source/Common/Bfme5SeventySix.cpp,matched,tail jmp via plus10 grid to rowed rva006C0E40 chain
 ?rva006C0E70@Gen_008812D0@@QAEHHH@Z,,0x006C0E70,63,Code/GameEngine/Source/Common/BfmeGridRasterCircle.cpp,matched,gap grid kind getter plus20 plus24 plus28 default 0x80 plus thunk 0x006C0840
 ?Rva004E44FBSet@@YGXHHABVUnicodeString@@@Z,,0x004E44FB,88,Code/GameEngine/Source/Common/Rva004E44FBPlayerTable.cpp,matched,PlayerTable format plus bfmeSetText via AptPlayerNameSet pattern
+??1Rva0039225E@@UAE@XZ,,0x0039225E,89,Code/GameEngine/Source/Common/Rva0039225EDtor.cpp,matched,vtable 0x0081A088 plus rowed callees plus deleting-dtor caller at 0x00392DA4
