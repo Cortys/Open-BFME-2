@@ -870,6 +870,7 @@ name,address,notes
 ??4?$vector@UPrereqUnitRec@ProductionPrerequisite@@V?$allocator@UPrereqUnitRec@ProductionPrerequisite@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,0x000120C0,address read from the REL32 displacement at a placed body; folded onto the body held there under another instantiation's name; stlport 4.5.3
 ??4?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,0x000120C0,address read from the REL32 displacement at a placed body; folded onto the body held there under another instantiation's name; stlport 4.5.3
 ??4AggregateDefClass@@QAEABV0@ABV0@@Z,0x001A3D10,Identity audited across full264B: free and strdup name58; virtual Free_Subobject_List slot34; copy info20/36B and misc44/20B; version4 and deep64B subobject copies; returns this; not RenderObj Initialize1A32A0
+??1AggregateDefClass@@UAE@XZ,0x001A3C90
 ??4AsciiString@@QAEAAV0@ABV0@@Z,0x000366F0,AsciiString copy assignment for OptionPreferences setter shape probe; same folded address as StringBase-set pins
 ??4AudioEventRTS@@QAEAAV0@ABV0@@Z,0x000366F0,address read from the REL32 displacement at a placed body; stlport 4.5.3
 ??4BfmeEnumerationDesc@@QAEAAV0@ABV0@@Z,0x00122450,Recovered BFME2 descriptor view; complete 188-byte assignment copies nine strings 304-byte caps 1100-byte adapter and resolution vector
