@@ -44276,3 +44276,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva004FFC23@Rva004FFC23@@QAEPAURva004FFC23Node@@PAU2@0@Z,,0x004FFC23,115,Code/Libraries/Source/WWVegas/WWLib/Rva004FFC23Copy.cpp,matched,115B tree copy via twin of rowed clone 0x0053444F same shape as 0x002CF6CF
 ?get@Rva0055DDB6SmartField@@QBE?AVRvaSmartPtr12@@XZ,,0x0055DDB6,27,Code/GameEngine/Source/Common/System/SmartPtrRvoGetter0055DDB6.cpp,matched,RVO SmartPtr getter member plus4 via rowed copy 0x4CC19 unblocks 3
 ?rva004E09FB@Rva004E0790Inner@@QAEAAU1@ABU1@@Z,,0x004E09FB,93,Code/GameEngine/Source/Common/Rva004E09FBAssign.cpp,matched,Inner copy-assign via rowed 0x001EB20E plus tail caller 0x004E0C29
+?rva006DB090@Rva006DB090@@QAEXPAXI@Z,,0x006DB090,136,Code/Libraries/Source/Apt/DogmaPoolFree.cpp,matched,DogmaAllocator.cpp file plus pNowFree assert plus caller freeBlock same-this
