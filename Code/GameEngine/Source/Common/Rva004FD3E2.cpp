@@ -23,6 +23,7 @@ struct Rva004FCD49Vec {
 class Rva004FD3E2 {
 public:
     void rva004FD3E2(const ModuleData *p);
+    void rva004FD533(int key, int unused, int *out) const;
 private:
     char m_pad00[0x5c];
     _STL::multimap<int, int> m_map;
@@ -40,4 +41,17 @@ void Rva004FD3E2::rva004FD3E2(const ModuleData *p)
         m_map.insert(_STL::multimap<int, int>::value_type(v, (int)p));
     }
     m_vec.push_back(p);
+}
+
+void Rva004FD3E2::rva004FD533(int key, int unused, int *out) const
+{
+    (void)unused;
+    *out = 0;
+    _STL::pair<_STL::multimap<int, int>::const_iterator, _STL::multimap<int, int>::const_iterator> r = m_map.equal_range(key);
+    for (_STL::multimap<int, int>::const_iterator it = r.first; it != r.second; ++it) {
+        int ptr = (*it).second;
+        int v = *(int *)(ptr + 0x10);
+        if (*out < v)
+            *out = v;
+    }
 }
