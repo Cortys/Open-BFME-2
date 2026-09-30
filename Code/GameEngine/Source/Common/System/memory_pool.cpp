@@ -72,6 +72,7 @@ public:
 	bool rva00032920(const void *block);			// owns-address test
 	bool rva000329E0(int level);				// ValidateHeap-like
 	unsigned int rva00032A20(const void *block);		// GetUsableSize-like
+	unsigned int rva006C1D10(const void *block);		// fast usable-size with tail call to 0x32A20 caller 0x6C36FD
 	void *rva00031680(const void *block);	// intrusive-list search unblocking 0x31BB0 0x31D00 0x32920
 	bool rva00031BB0(const void *block);	// small-block fencepost check via 0x31680 caller 0x3324E
 	void rva000338F0(void *block);				// Free-like
@@ -260,6 +261,28 @@ unsigned int GeneralAllocator::rva00032A20(const void *block)
 		LeaveCriticalSection(lock);
 	}
 	return 0;
+}
+
+// ?rva006C1D10@GeneralAllocator@Allocator@EA@@QAEIPBX@Z @0x006C1D10 59B
+// Fast usable-size: header at block-4, sign check tail-calls 0x32A20,
+// bit1 selects masked size else masked+4, then short at [size+block-0xA]
+// bounds-checks against block, returning the offset or tail-calling 0x32A20.
+// Caller at 0x006C36FD. Same GeneralAllocator this as 0x32A20 (ecx pass-through).
+unsigned int GeneralAllocator::rva006C1D10(const void *block)
+{
+	unsigned int header = *(const unsigned int *)((const char *)block - 4);
+	if ((header & 0x80000000) != 0)
+		return rva00032A20(block);
+	unsigned int size;
+	if ((header & 2) == 0)
+		size = (header & 0x7FFFFFF8) + 4;
+	else
+		size = header & 0x7FFFFFF8;
+	const unsigned short *field = (const unsigned short *)(size + (unsigned int)block - 0xA);
+	unsigned int base = (unsigned int)field - *field;
+	if (base >= (unsigned int)block)
+		return base - (unsigned int)block;
+	return rva00032A20(block);
 }
 
 }
