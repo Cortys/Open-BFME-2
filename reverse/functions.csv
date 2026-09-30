@@ -43256,3 +43256,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0033C8E8@Rva0033C8E8@@QAE_NABVAsciiString@@AAV2@@Z,,0x0033C8E8,113,Code/GameEngine/Source/Common/Thing/Rva0033C8E8Chain.cpp,matched,four vector find-erase chain via rowed 0x33C807
 ??1Rva005E8AAF@@UAE@XZ,,0x005E8AAF,48,Code/GameEngine/Source/Common/Bfme/Rva005E8AAFDtor.cpp,matched,virtual dtor member 0x005E8908 then base vtable via inline base
 ??0Rva0053FDE6@@QAE@XZ,,0x0053FDE6,68,Code/Libraries/Source/WWVegas/WW3D2/Rva0053FDE6Init.cpp,matched,ctor int2 zeros shared 1.0f plus global via full init list
+??4Rva0026F684@@QAEAAV0@ABV0@@Z,,0x0026F767,339,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Assign.cpp,matched,same vtable 0x007FABF0 class as ctor and dtor
