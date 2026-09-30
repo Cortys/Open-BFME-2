@@ -1,7 +1,3 @@
-// ??1Rva001EE3DE@@UAE@XZ
-// partial score=0.9939 date=2026-09-30
-// ??1Rva001EE3DE@@UAE@XZ
-// partial score=0.9939 date=2026-09-30
 // cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 //
 // ??1Rva001EE3DE@@UAE@XZ, retail 0x001EE3DE, 165 bytes.
@@ -82,8 +78,7 @@ private:
 
 Rva001EE3DE::~Rva001EE3DE()
 {
-	if (m_ptr4FA8 != 0) {
+	if (m_ptr4FA8 != 0)
 		g_009FEAD8->FreeEntry(m_ptr4FA8);
-		m_ptr4FA8 = 0;
-	}
+	m_ptr4FA8 = 0;
 }
