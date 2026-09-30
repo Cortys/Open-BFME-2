@@ -52,6 +52,7 @@ class ShroudManager
 public:
 	void revealMapForPlayerPermanently(int playerIndex);
 	void undoRevealMapForPlayerPermanently(int playerIndex);
+	void updatePlayerCells450_Rva0073D860(int playerIndex);
 	CellShroudStatus getShroudStatusForPlayer(int playerIndex, const Coord3D *pos) const;
 	void setRegion(const Region3D *region, float cellSize);
 	// Opaque ShroudManager methods behind the 0x625300/10/20 run (targets
@@ -357,4 +358,22 @@ private:
 void Rva00739720::rva00739720(int flavor)
 {
 	m_cell->SetFlavor(flavor);
+}
+
+//
+// ?rva007397C0@Rva007397C0@@QAEXH@Z retail 0x007397C0 8B.
+// Thunk via +0x10 pointer tail-jumping to rowed 0x0073D860.
+// Evidence: retail mov ecx [ecx+0x10] jmp; chain from 0x0073D860 same TU family as 0x00739780.
+class Rva007397C0
+{
+public:
+	void rva007397C0(int playerIndex);
+private:
+	char m_pad[0x10];
+	ShroudManager *m_cell; // +0x10
+};
+
+void Rva007397C0::rva007397C0(int playerIndex)
+{
+	m_cell->updatePlayerCells450_Rva0073D860(playerIndex);
 }
