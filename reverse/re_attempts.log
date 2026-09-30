@@ -4445,3 +4445,4 @@ FUN_009e818e	0x005E818E	178	blocked	STL vector insert 5 args ret 0x14 signature 
 FUN_0061ED9C	0x0021ED9C	154	blocked	mid-function start byte-before-90 not ret-int3-jmp plus EH INIException CxxThrow plus caller insertTee mismatch t=8 model=muse-03
 ?rva0005442A@Rva0005442A@@QAEPAXPAPAXHHH@Z	0x0005442A	161	blocked	MilesAudioManager stream lookup manual list plus EH plus cmove vs branch plus 12 structural t=18 model=muse-03
 ?rva001F2155@Rva001F2155@@QAEXPAHABHABU__true_type@_STL@@I_N@Z	0x001F2155	147	partial	new_len in ebx vs edi and new_start spilled vs ebx and fill dest edi vs eax t=35 model=muse-spark score=0.93 stash=reverse/attempts/0x001f2155.cpp
+?rva000551C2@Rva000551C2@@QAEXH@Z	0x000551C2	106	partial	manual vector gives EH prolog but extra and ebp-4-0 plus cmp-je vs jmp and lazy push edi 112B vs 106B 0 mem 3 reg t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x000551c2.cpp
