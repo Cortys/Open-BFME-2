@@ -9,7 +9,7 @@ extern "C" void __cdecl free(void *block);
 struct Rva003628A6Node
 {
 	int m_00;
-	int m_04;
+	void *m_04;
 	Rva003628A6Node *m_08;
 	Rva003628A6Node *m_0C;
 };
@@ -18,6 +18,15 @@ class Rva003628A6
 {
 public:
 	void rva003628A6(void *head);
+};
+
+class Rva00362AB5
+{
+public:
+	void rva00362AB5();
+private:
+	Rva003628A6Node *m_00;
+	int m_04;
 };
 
 void Rva003628A6::rva003628A6(void *head)
@@ -32,4 +41,15 @@ void Rva003628A6::rva003628A6(void *head)
 		free(cur);
 		cur = next;
 	} while (cur != 0);
+}
+
+void Rva00362AB5::rva00362AB5()
+{
+	if (m_04 == 0)
+		return;
+	((Rva003628A6 *)this)->rva003628A6(m_00->m_04);
+	m_00->m_08 = m_00;
+	m_00->m_04 = 0;
+	m_00->m_0C = m_00;
+	m_04 = 0;
 }
