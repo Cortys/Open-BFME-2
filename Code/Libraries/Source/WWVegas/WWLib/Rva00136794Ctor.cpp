@@ -70,10 +70,16 @@ public:
 	unsigned m_d3;
 };
 
+struct RefM54 {
+    virtual void vf0();
+    int m_ref;
+};
+
 class Rva00136794 : public GenBase009EB7D0
 {
 public:
 	Rva00136794(const char *s1, const char *s2, float f, const Rva0013101E *r, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v1, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v2, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v3);
+	void rva00135E6D();
 private:
 	StringBase<char> m_s1;
 	StringBase<char> m_s2;
@@ -82,7 +88,7 @@ private:
 	_STL::vector<AsciiString, _STL::allocator<AsciiString> > m_v3;
 	float m_f40;
 	Rva0013101E m_r44;
-	int m_54;
+	struct RefM54 *m_54;
 };
 
 Rva00136794::Rva00136794(const char *s1, const char *s2, float f, const Rva0013101E *r, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v1, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v2, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &v3)
@@ -95,4 +101,15 @@ Rva00136794::Rva00136794(const char *s1, const char *s2, float f, const Rva00131
 	m_f40 = f;
 	m_r44.rva0013101E(r);
 	m_54 = 0;
+}
+
+// ?rva00135E6D@Rva00136794@@QAEXXZ @ 0x00135E6D (25B). Vslot 7 of vtable 0x007D2970 via release of refcounted m_54.
+void Rva00136794::rva00135E6D()
+{
+    RefM54 *p = m_54;
+    if (p) {
+        if (--p->m_ref == 0)
+            p->vf0();
+        m_54 = 0;
+    }
 }
