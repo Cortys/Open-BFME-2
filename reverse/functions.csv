@@ -44359,3 +44359,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?clone@Rva003AF329@@QBEPAV1@XZ,,0x003AF2F2,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF329Clone.cpp,matched,vslot2 of 0x0081CFD4 EH new 0x34 plus rowed copy
 ??0Rva003AF3D3@@QAE@ABV0@@Z,,0x003AF3D3,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleTemplateCopyCtors.cpp,matched,unlock via base 0x3AF3F9 vtbls g_00C1CFF8 g_00C1C078 g_00C1CFE8
 ?rva0036E906@AICommandInterface@@QAEXPBUCoord3D@@W4CommandSourceType@@M@Z,,0x0036E906,121,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,AICommandInterface slot0 pos plus float38 AICMD 0x4E
+?rva0036E97F@AICommandInterface@@QAEXPBUCoord3D@@HW4CommandSourceType@@M@Z,,0x0036E97F,130,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,AICommandInterface slot0 pos int float38 AICMD 0x51
