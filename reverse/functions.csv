@@ -43971,3 +43971,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva0059B072@@UAE@XZ,,0x0059B072,107,Code/GameEngine/Source/Common/Rva0059B072Dtor.cpp,matched,dual vtable dtor via forceinline slot0 plus rowed Release 0x0007DEEF plus deleting caller 0x0059B132
 ??_GRva0059B072@@UAEPAXI@Z,,0x0059B132,28,Code/GameEngine/Source/Common/Rva0059B072Dtor.cpp,matched,deleting dtor via auto-generated G plus rowed delete plus caller 0x0059B072
 ?rva0059BD2D@Rva0059BD2D@@QAEXPBX@Z,,0x0059BD2D,43,Code/GameEngine/Source/Common/Rva0059BD2DCopy.cpp,matched,thiscall copies six dwords src plus 0x34 to this plus 0x0C caller 0x004FB261
+?rva0020DEB0@Rva0020DEB0@@QAEPAVOverridable@@XZ,,0x0020DEB0,91,Code/GameEngine/Source/Common/Rva0020DEB0.cpp,matched,unlock cleanup two vectors tail deleteOverrides
