@@ -43074,3 +43074,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva004C6F77Median@@YAPAXPAX00P6A_N00@Z@Z,,0x004C6F77,89,Code/GameEngine/Source/Common/Rva004C6F77Median.cpp,matched,median of three via pred callers 0x174705 0x4C7595
 ?Rva004C6FD0Insert@@YAXPAXURva004C6FD0Val@@P6A_N00@Z@Z,,0x004C6FD0,57,Code/GameEngine/Source/Common/Rva004C6F77Median.cpp,matched,linear insert 8B via pred caller 0x4C70D4
 ?xfer@WoundArrowUpdate@@MAEXPAVXfer@@@Z,,0x004C6963,54,Code/GameEngine/Source/GameLogic/Object/Update/WoundArrowUpdateXfer.cpp,matched,slot 3 of 0x0085DF10 via base 0x44F996 CRC Version1 bool 0x88
+?Rva004C73C5Insert@@YAXPAX0URva004C6FD0Val@@P6A_N00@Z@Z,,0x004C73C5,74,Code/GameEngine/Source/Common/Rva004C6F77Median.cpp,matched,chain via insert 0x4C6FD0 plus copy_backward

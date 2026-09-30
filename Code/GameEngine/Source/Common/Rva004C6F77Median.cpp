@@ -47,3 +47,32 @@ void Rva004C6FD0Insert(void *pos, Rva004C6FD0Val value, Rva004C6F77Pred pred)
 	((Rva004C6FD0Val *)edi)->m0 = value.m0;
 	((Rva004C6FD0Val *)edi)->m4 = value.m4;
 }
+
+enum ObjectID
+{
+	INVALID_ID = 0
+};
+
+namespace _STL
+{
+template <class T1, class T2>
+struct pair
+{
+	T1 first;
+	T2 second;
+};
+
+template <class It1, class It2>
+It2 copy_backward(It1 first, It1 last, It2 dest);
+}
+
+void Rva004C73C5Insert(void *a, void *b, Rva004C6FD0Val v, Rva004C6F77Pred pred)
+{
+	if (pred(&v, a)) {
+		_STL::copy_backward((_STL::pair<ObjectID, unsigned int> *)a, (_STL::pair<ObjectID, unsigned int> *)b, (_STL::pair<ObjectID, unsigned int> *)((char *)b + 8));
+		((Rva004C6FD0Val *)a)->m0 = v.m0;
+		((Rva004C6FD0Val *)a)->m4 = v.m4;
+	} else {
+		Rva004C6FD0Insert(b, v, pred);
+	}
+}
