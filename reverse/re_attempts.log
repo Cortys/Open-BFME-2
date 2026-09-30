@@ -3862,3 +3862,4 @@ FUN_009A9178	0x005A9178	70	blocked	heap float insertion with SSE int stores inve
 ?rva005DB885@Elem005DB98E@@QAEXH@Z	0x005DB885	95	partial	addss plus movss store early in retail vs late in ours t=30 model=muse-01 score=0.9 stash=reverse/attempts/0x005db885.cpp
 ?rva004D51A7@Transport@@QAEXPAXGPAH@Z	0x004D51A7	70	partial	extra add eax esi plus imul ecx eax order vs indexed t=15 model=muse-11 score=0.96 stash=reverse/attempts/0x004d51a7.cpp
 FUN_004138C7	0x004138C7	120	blocked	free INI parse 120B zero callers plus EH throw plus STL map plus 3 floats needs signature plus ModuleFactory context t=5 model=muse-11
+FUN_007f4be9	0x003F4BE9	109	blocked	EH-prolog SEH frame virtual-callback loop over vector<int> at +0 with counter at +0xc unlike frameless family t=5 model=muse-09

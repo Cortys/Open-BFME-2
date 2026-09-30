@@ -43396,3 +43396,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00518359@Rva00518359@@QAEXXZ,,0x00518359,71,Code/GameEngine/Source/Common/Rva00518359Combo.cpp,matched,combo restore via rowed Gadget calls plus offsets
 ?rva0025DDD2@Rva0025DDD2@@QBEMXZ,,0x0025DDD2,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,float wrapper over Transport average via 0C 12024
 ?Rva005186E1Format@@YAXPAVOptionPreferences@@PAVAsciiString@@@Z,,0x005186E1,117,Code/GameEngine/Source/Common/Rva005186E1Format.cpp,matched,9-int list via rowed dispatch format concat
+?rva0020E794@Rva0020E794@@QAEPAVRva003F498A@@XZ,,0x0020E794,41,Code/Libraries/Source/WWVegas/WWLib/Rva0020E794Loop.cpp,matched,chain via rowed 0x003F4831 same file flags as neighbours
