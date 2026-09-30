@@ -134,12 +134,11 @@ template int Pick_Random_Number<Random2Class>(Random2Class &, int, int);
 template int Pick_Random_Number<Random3Class>(Random3Class &, int, int);
 template int Pick_Random_Number<Random4Class>(Random4Class &, int, int);
 
-// BFME2 0x006197B0, 0x00619820 and 0x00619840 (from the Open-BFME-1 5cae4bdff
-// donor): the member (minval, maxval) operators retail keeps. Each is identified
-// by its call target, the rowed Pick_Random_Number instantiation of its own
-// class (the address map guessed Random4Class for 0x00619840, but its call
-// reads the Random3Class instantiation); the Random4Class one has no placement
-// and stays out.
+// BFME2 0x006197B0, 0x00619820, 0x00619840 and 0x00619860 (from the Open-BFME-1
+// 5cae4bdff donor): the member (minval, maxval) operators of all four classes.
+// Each is identified by its call target, the rowed Pick_Random_Number
+// instantiation of its own class (the address map guessed Random4Class for
+// 0x00619840, but its call reads the Random3Class instantiation).
 int RandomClass::operator()(int minval, int maxval)
 {
 	return Pick_Random_Number(*this, minval, maxval);
@@ -151,6 +150,11 @@ int Random2Class::operator()(int minval, int maxval)
 }
 
 int Random3Class::operator()(int minval, int maxval)
+{
+	return Pick_Random_Number(*this, minval, maxval);
+}
+
+int Random4Class::operator()(int minval, int maxval)
 {
 	return Pick_Random_Number(*this, minval, maxval);
 }
