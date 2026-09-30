@@ -36,6 +36,7 @@ class Rva0025C6E2Elem
 {
 public:
 	void rva0025C8D3(W3DDisplay *disp, int id, int color);
+	void rva0025C829(W3DDisplay *disp, int id);
 private:
 	Image *m_00;
 	float m_04;
@@ -56,4 +57,18 @@ void Rva0025C6E2Elem::rva0025C8D3(W3DDisplay *disp, int id, int color)
 		(float)(unsigned)disp->unused16() * m_0c,
 		(float)(unsigned)disp->unused17() * m_10,
 		color, 2);
+}
+
+void Rva0025C6E2Elem::rva0025C829(W3DDisplay *disp, int id)
+{
+	if (m_00 == 0)
+		return;
+	if (id != m_14)
+		return;
+	disp->rva0004D6B3(m_00,
+		(float)(unsigned)disp->unused16() * m_04,
+		(float)(unsigned)disp->unused17() * m_08,
+		(float)(unsigned)disp->unused16() * m_0c,
+		(float)(unsigned)disp->unused17() * m_10,
+		-1, 2);
 }
