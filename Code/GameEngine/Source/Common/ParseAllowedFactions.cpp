@@ -1,6 +1,8 @@
-// ?parseAllowedFactions@@YAXPAVINI@@PAX1PBX@Z
-// partial score=0.8357142857142857 date=2026-09-21
 // cl: /O1 /Oy- /EHs /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP=
+// parseAllowedFactions, retail 0x00534FFB (140 bytes). Built from the banked
+// attempt reverse/attempts/0x00534ffb.cpp, which was already byte-exact; its
+// set<AsciiString> swap callee is the ICF-folded tree swap at 0x0032AC92,
+// now pinned as an alias.
 // stlport
 #include <vector>
 #include <set>

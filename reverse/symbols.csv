@@ -6614,3 +6614,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?_M_create_node@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@UBfmeStringNoCaseLess@@V?$allocator@VAsciiString@@@3@@_STL@@IAEPAU?$_Rb_tree_node@VAsciiString@@@2@ABVAsciiString@@@Z,0x0002C552,twin of rowed less version same 20B node plus AsciiString via call sites in 0002C686
 ?d_009a8410@@YAXXZ,0x001B8E70
 ?d_009acb60@@YAXXZ,0x001BD550
+?swap@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEXAAV12@@Z,0x0032AC92,ICF alias of the rowed map<int int> tree swap at this address; set<AsciiString> swap compiled with that TU's flags is byte-identical (34B relocs masked) and retail parseAllowedFactions 0x00534FFB calls it
