@@ -291,3 +291,30 @@ Rva003AF97C::Rva003AF97C(const Rva003AF97C &other)
 	: Rva003AF9A9(other)
 {
 }
+
+// ??0Rva003AF4AA@@QAE@ABV0@@Z @0x003AF4AA 99B: copy ctor with inline EmissionVolumeInfo base at +0x1c.
+// Evidence: calls rowed base 0x003AF50D; second base inlined as base vtable DIR32 plus byte copy
+// from other+0x20 to this+0x20 (neg/sbb/and null-guarded adjustment to +0x1c then al from +4);
+// vptrs at +0/+0x14/+0x18/+0x1c DIR32; same Intermediate3AFC6FC pre-stores; unlocks 0x003AF47D.
+namespace FXParticleSystem
+{
+class EmissionVolumeInfo4AA
+{
+public:
+	virtual ~EmissionVolumeInfo4AA();
+	bool m_flag;
+};
+}
+
+class Rva003AF4AA : public Intermediate3AFC6FC, public FXParticleSystem::EmissionVolumeInfo4AA
+{
+public:
+	Rva003AF4AA(const Rva003AF4AA &other);
+	virtual ~Rva003AF4AA();
+};
+
+Rva003AF4AA::Rva003AF4AA(const Rva003AF4AA &other)
+	: Intermediate3AFC6FC(other)
+	, FXParticleSystem::EmissionVolumeInfo4AA((const FXParticleSystem::EmissionVolumeInfo4AA &)other)
+{
+}
