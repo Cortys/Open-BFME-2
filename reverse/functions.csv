@@ -44436,3 +44436,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva001F5445@Rva001F553F@@QAEMXZ,,0x001F5445,34,Code/GameEngine/Source/Common/Rva001F553F.cpp,matched,unlock float getter via slot6 with 0.0f else same class
 ?rva001F534C@Rva001F553F@@QAEMXZ,,0x001F534C,39,Code/GameEngine/Source/Common/Rva001F553F.cpp,matched,unlock float getter via slot10 default g_Va00BBB8D8 same class
 ?rva006E0F40@BfmeAptValue006DCD20@@QBEPAXXZ,,0x006E0F40,103,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,rowed get equals 0xf plus rowed isUndefined fast path barrier keeps load late
+?rva006FE120@AptBasePtrStack@@QAEXXZ,,0x006FE120,51,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,same TU class layout as rva006FDE50 minus asserts chain via freeBlock

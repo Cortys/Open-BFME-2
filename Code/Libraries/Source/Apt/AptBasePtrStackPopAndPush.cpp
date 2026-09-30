@@ -44,6 +44,7 @@ public:
     void rva006FE050(int nItems);
     void rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue);
     void rva006FDE50();
+    void rva006FE120();
     void rva006FDDB0(int nCapacity);
     void rva006FDF30(BfmeAptValue006DCD20 *pValue);
     void rva006FDEE0(BfmeAptValue006DCD20 *pValue);
@@ -142,6 +143,22 @@ void AptBasePtrStack::rva006FDE50()
             if (g_bfmeAptBreakOnAssertAtDDC01C)
                 __debugbreak();
         }
+        g_pChainBlockAllocator->freeBlock(m_aElements, m_nCapacity * 4);
+    }
+    m_nCapacity = 0;
+    m_nElements = 0;
+    m_aElements = 0;
+}
+
+// ?rva006FE120@AptBasePtrStack@@QAEXXZ, retail 0x006FE120, 51 bytes.
+// No-assert teardown of AptBasePtrStack: frees backing array via rowed
+// freeBlock 0x006DB270 through g_pChainBlockAllocator 0x00E176E8 then zeroes
+// +4/+0/+8. Evidence: same TU/class/flags/layout as rva006FDE50 Shutdown
+// sibling minus its two asserts; chain lane via 0x006DB270; prev/next
+// 0x006FE0B0/0x006FE160 same /O2 Apt stack family.
+void AptBasePtrStack::rva006FE120()
+{
+    if (m_aElements) {
         g_pChainBlockAllocator->freeBlock(m_aElements, m_nCapacity * 4);
     }
     m_nCapacity = 0;
