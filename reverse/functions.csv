@@ -43213,3 +43213,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva003F5970@@QAE@HPBVModuleData@@@Z,,0x003F5970,142,Code/Libraries/Source/WWVegas/WWLib/Rva003F5970Ctor.cpp,matched,caller 0x003F652E dtor 0x003F535B vectors ModuleData Pod104
 ??4BfmeAssignRecord32@@QAEAAU0@ABU0@@Z,,0x00173499,56,Code/GameEngine/Source/Common/BfmeAssignRecord32Assign.cpp,matched,record assign via member plus loop six
 ?rva000D17EF@W3DTornadoDraw@@QAEXHHH@Z,,0x000D17EF,46,Code/GameEngine/Source/GameClient/Drawable/Update/AnimatedParticleSysBoneClientUpdateCtor.cpp,matched,vslot 38 of W3DTornadoDraw syncs RadiusDecals to rope position
+??1Rva00257464@@QAE@XZ,,0x00257464,5,Code/Libraries/Source/WWVegas/WWLib/Rva00257464Dtor.cpp,matched,5B jmp to pinned 0x002572D7 novtable empty dtor
