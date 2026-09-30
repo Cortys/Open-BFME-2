@@ -1,6 +1,16 @@
 // cl: /Od
 
-int bfmeMakeOX(void *one);
+namespace _STL {
+
+template<class _CharT> struct char_traits;
+
+template<> struct char_traits<char>
+{
+	static unsigned int length(const char *text);
+	static int compare(const char *first, const char *otherFirst, unsigned int count);
+};
+
+}
 
 int bfmeDoPW(char *first, char *last, char *otherFirst, char *otherLast);
 
@@ -16,18 +26,7 @@ void BfmeThingPW::bfmeGoPW(char *at)
 {
 	unsigned char spare[0x10];
 
-	bfmeDoPW(m_bfmeAt, m_bfmeEnd, at, at + bfmeMakeOX(at));
-}
-
-namespace _STL {
-
-template<class _CharT> struct char_traits;
-
-template<> struct char_traits<char>
-{
-	static int compare(const char *first, const char *otherFirst, unsigned int count);
-};
-
+	bfmeDoPW(m_bfmeAt, m_bfmeEnd, at, at + _STL::char_traits<char>::length(at));
 }
 
 // Lexicographical range compare used by the PW table: memcmp over the shared
