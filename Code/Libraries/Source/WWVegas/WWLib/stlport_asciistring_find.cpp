@@ -17,3 +17,4 @@ protected:
 class AsciiString : public StringBase<char> {};
 inline bool operator==(const AsciiString &a, const char *b) { return a.compare(b) == 0; }
 template AsciiString *_STL::__find(AsciiString *, AsciiString *, const char *const &, const _STL::random_access_iterator_tag &);
+template AsciiString *_STL::find(AsciiString *, AsciiString *, const char *const &);
