@@ -44936,3 +44936,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00052917@MilesAudioManager@@QAEHXZ,,0x00052917,51,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052917.cpp,matched,guarded postincrement counter at D0
 ?rva000B2EB5@Rva000B2EB5@@QAEMXZ,,0x000B2EB5,131,Code/GameEngine/Source/Common/Rva000B2EB5.cpp,matched,iface plus0x50 slot3 vs 0x19 slot0x208 4-outparam double-zero x87 check SSE int-float vs g_Va00BBB8D8
 ?rva000B2FBB@Rva000B2FBB@@QAEXMPBVMatrix3D@@@Z,,0x000B2FBB,144,Code/GameEngine/Source/Common/Rva000B2FBB.cpp,matched,float plus Matrix3D copy Thing setTransformMatrix TheGameClient slot0x7c
+??$_Construct@VRva00403927@@V1@@_STL@@YAXPAVRva00403927@@ABV1@@Z,,0x00403B5A,45,Code/Libraries/Source/WWVegas/WWLib/Rva00403927Construct.cpp,matched,chain via rowed copy ctor 0x004039BD filln-copy callers stride 0x14
