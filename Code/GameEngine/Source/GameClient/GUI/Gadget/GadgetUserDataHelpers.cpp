@@ -279,3 +279,20 @@ void Rva003284B9(GameWindow *window, int a, int b)
 	data->m_byte00 = 2;
 	window->winSetUserData(data);
 }
+
+// ?GadgetButtonSetBorder@@YAXPAVGameWindow@@I_N@Z @0x00328454 49B
+// Ported from Open-BFME-1 GadgetPushButton.cpp GadgetButtonSetBorder
+// (donor drawBorder at +0x0C and colorBorder at +0x10 match _PushButtonData
+// m_byte0C/m_int10 here); null-guarded create via getNewPushButtonData and
+// winSetUserData like Rva003284B9 siblings in this TU.
+void GadgetButtonSetBorder(GameWindow *g, unsigned int color, bool drawBorder)
+{
+	if (g == 0)
+		return;
+	_PushButtonData *pData = (_PushButtonData *)g->winGetUserData();
+	if (pData == 0)
+		pData = getNewPushButtonData();
+	pData->m_byte0C = (char)drawBorder;
+	pData->m_int10 = (int)color;
+	g->winSetUserData(pData);
+}
