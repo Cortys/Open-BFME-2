@@ -43281,3 +43281,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z,,0x002B6498,32,Code/GameEngine/Source/Common/Rva002B6498Find.cpp,matched,Hashtable find via rowed _M_find 0x002888D4 callers 0x002B6F42 0x002B933F
 ?Rva00512CCDShutdown@@YAXXZ,,0x00512CCD,18,Code/GameEngine/Source/Common/Rva00512C88Shutdown.cpp,matched,guarded slot2 via g_Va00A048CC
 ??0Rva0031F7AB@@QAE@XZ,,0x0031F7AB,64,Code/GameEngine/Source/Common/Rva0031F7ABCtor.cpp,matched,finish ctor via base init plus releaseBuffer plus members
+?xfer@RenderObjectDrawModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x00562871,194,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectDrawModuleInfoXfer.cpp,matched,slot3 xfer Version1 plus members plus enum helper
