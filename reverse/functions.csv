@@ -43283,3 +43283,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva0031F7AB@@QAE@XZ,,0x0031F7AB,64,Code/GameEngine/Source/Common/Rva0031F7ABCtor.cpp,matched,finish ctor via base init plus releaseBuffer plus members
 ?xfer@RenderObjectDrawModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x00562871,194,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectDrawModuleInfoXfer.cpp,matched,slot3 xfer Version1 plus members plus enum helper
 ?rva0052DC3F@Rva0052DC3F@@QAEHPBURva0052DC3FArg@@@Z,,0x0052DC3F,88,Code/GameEngine/Source/Common/Rva0052DC3F.cpp,matched,unlock distance sqrt scale floor fistp
+?rva004D3906@Rva004D3906@@QAEXH@Z,,0x004D3906,52,Code/GameEngine/Source/Common/Rva004D3906Clear.cpp,matched,flag guarded shutdown plus strided column clear
