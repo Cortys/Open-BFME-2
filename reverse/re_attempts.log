@@ -4267,3 +4267,11 @@ FUN_002B5739	0x002B5739	115	blocked	same array-visit EH functor wall as 0x005C99
 ?rva0015326D@Rva0015326D@@QAEXHH@Z	0x0015326D	116	blocked	functor dispatch shape right but n needs reg-homed push6-pop not mem plus imul needs reg idx plus folding index+1-idx to 1 breaks runtime lea-sub t=25 model=muse-03
 ?rva0031B0CE@ControlBar@@QAEXXZ	0x0031B0CE	102	blocked	float-unsigned global vs __real plus tv-vtable edi-vs-ebx reload t=30 model=muse-07
 ??4Rva006ECE30@@QAEAAV0@ABV0@@Z	0x006ECE30	133	blocked	no EH frame without donor; needs Apt donor t=12 model=muse-07
+?rva003EEDD6@Rva003EEDD6@@QAEXH@Z	0x003EEDD6	142	blocked	loop 5-callee mov-cl vs movzx plus lea scheduling t=12 model=muse-spark
+?rva0030715D@Rva0030715D@@QAEXH@Z	0x0030715D	140	blocked	virtual parser loop 7 regions CkMp plus list walk t=10 model=muse-spark
+?rva004E0988@Rva004E0988@@QAEXH@Z	0x004E0988	115	blocked	callback loop with EH restore plus thiscall fnptr t=8 model=muse-spark
+?bfmeAskBJA@BfmeThingBJA@@QAE_NXZ	0x00256996	134	blocked	bool ask with EH scope plus lazy key needs scope table t=14 model=muse-spark
+?rva00285860@Rva00285860@@QAEHPBUXY00285860@@@Z	0x00285860	133	blocked	tile floor x87 double-float roundtrip plus layout t=10 model=muse-spark
+?Rva00595C04Format@@YAXPAVAsciiString@@HG@Z	0x00595C04	117	blocked	ip formatter varargs plus copy-release needs placement t=10 model=muse-spark
+??4Rva006ECE30@@QAEAAV0@ABV0@@Z	0x006ECE30	133	blocked	Apt op SEH needs EHa scope table t=12 model=muse-spark
+?rva000A89E3@Rva000A89E3@@QAE?AVUnicodeString@@XZ	0x000A89E3	60	blocked	handle string RVO plus dup type mismatch t=12 model=muse-spark
