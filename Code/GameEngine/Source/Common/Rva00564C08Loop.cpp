@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD
 // ?rva00564C08@Rva00564C08@@QAEXXZ @0x00564C08 56B.
 // Applies the singleton finder to a 12-byte record range: for each record
 // from +0xA8 to +0xAC, looks up the AsciiString at +0x4 through the rowed
@@ -6,10 +6,7 @@
 // record byte at +0x8 through the rowed byte-slot set 0x00318D14.
 // Caller at 0x005669AA; unblocks 0x0056696F.
 // TU-local honest-address views; offsets prove operations not type names.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 struct Rva002E1948Entry;
 

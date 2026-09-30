@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0AudioEventRTS@@QAE@XZ, retail 0x00079514, 64 bytes. Dedicated TU.
 //
@@ -10,14 +10,7 @@ typedef int Int;
 
 #define NULL 0
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class AudioEventRTS
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva0033B580@ThingTemplate@@QAEPBVImage@@XZ @0x0033B580 56B.
 // ThingTemplate button-image resolver (ButtonImage slot +0x78/+0x48c).
 // BFME1 donor Code/GameEngine/Source/Common/Thing/ThingTemplate.cpp resolveNames
@@ -11,20 +11,8 @@
 // Fallback tail-jmp caller 0x0033B634 and LivingWorld caller 0x002E1C2B agree.
 // Callees rowed: isEmpty 0x1E2F findImageByName 0x2D92F6 releaseBuffer 0x36410.
 // Global TheMappedImageCollection at 0x00DFF078.
-template <typename T>
-class StringBase
-{
-public:
-    bool isEmpty() const;
-    void clear() { releaseBuffer(); }
-private:
-    void releaseBuffer();
-    void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class Image;
 

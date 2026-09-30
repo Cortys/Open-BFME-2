@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?rva004FDB57@Rva004FDB57@@QAEXVAsciiString@@@Z, retail 0x004FDB57, 83 bytes.
 // Assigns the by-value AsciiString arg into the member at +0x1000 via the
 // pinned AsciiString::operator= at 0x000366F0, resolves an int through the
@@ -7,18 +7,8 @@
 // the by-value arg via the rowed StringBase releaseBuffer at 0x00036410.
 // Evidence: EH-prolog + state 0/-1 shape; caller 0x005AF5BF; AsciiString is
 // 4 bytes here (single-word StringBase) so the arg fits ret 4.
-template <typename T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString() {}
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class GameSpyInfoInterface
 {

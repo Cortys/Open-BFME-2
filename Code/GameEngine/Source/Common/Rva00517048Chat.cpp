@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva00517048@Rva00517048@@QAEXABVUnicodeString@@@Z @0x00517048 108B
 // Chat login APT text plus ChatMessageOpen invoke. AsciiString temp from
 // "APT:ChatFriendLogInMessage" via rowed 0x00037BA0; bfmeSetText via pin
@@ -12,26 +12,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-private:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	~AsciiString() {}
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

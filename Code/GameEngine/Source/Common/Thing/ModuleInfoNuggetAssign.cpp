@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // ??4Nugget@ModuleInfo@@QAEAAU01@ABU01@@Z @0x002CEFCD 57B.
 // ModuleInfo::Nugget copy assignment. Layout is the BFME1 donor
@@ -8,14 +8,7 @@
 // Identity is pin-proven: per-element callee of the rowed 5-arg
 // _STL::__copy_ptrs worker at 0x002CF0BE (ModuleInfoNuggetCopyPtrs.cpp).
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class ModuleData
 {

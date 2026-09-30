@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 
 // ?Rva00412DD8Get@@YA?AVAsciiString@@PBD@Z, retail 0x00412DD8 158B.
 // Free AsciiString(const char*) normalizer: null uses g_bfmeEmptyF9 at
@@ -11,26 +11,8 @@ extern "C" __declspec(dllimport) char *__cdecl strncpy(char *dest, const char *s
 
 extern char g_bfmeEmptyF9[];
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *str);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	T *m_data;
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *s) : StringBase<char>(s) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 AsciiString Rva00412DD8Get(const char *path)
 {

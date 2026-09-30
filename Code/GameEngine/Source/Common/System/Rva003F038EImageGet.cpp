@@ -1,20 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /GX-
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX-
 // ?rva003F038E@Rva003F038E@@QAEPBVImage@@XZ, retail 0x003F038E, 43 bytes.
 // __thiscall cached image load via AsciiString at +0x70: returns NULL when empty
 // else TheMappedImageCollection->findImageByName stores to +0x19C and returns it.
 // Evidence: rowed isEmpty 0x00001E2F rowed findImageByName 0x002D92F6 global
 // 0x00DFF078 wrapper 0x003F03B9 cache check plus store.
-template <typename T> class StringBase
-{
-public:
-	bool isEmpty() const;
-private:
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class Image;
 class ImageCollection

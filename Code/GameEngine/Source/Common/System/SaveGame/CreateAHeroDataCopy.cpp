@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // CreateAHeroData is identified by retail typeName0x409353 and vtable0xC38D88.
 // Its copy and destructor establish this0x140-byte Snapshot-derived layout.
@@ -9,20 +9,7 @@
 #include <vector>
 #include <map>
 
-template<class T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-public:
-    StringBase(const StringBase &);
-protected:
-    __forceinline ~StringBase() { releaseBuffer(); }
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-    __forceinline ~AsciiString() {}
-    bool isEmpty() const;
-};
+#include "ascii_string.h"
 class UnicodeString : private StringBase<unsigned short> {
 public:
     __forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {}

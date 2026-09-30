@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // NameKeyGenerator::nameToKey(const AsciiString&), retail 0x0009FA65, 29 bytes.
 // Thin wrapper over the landed char* overload at 0x00148E1A. Header text
@@ -9,20 +9,7 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-class AsciiString
-{
-	struct Header
-	{
-		int refCount;
-		unsigned short length;
-		unsigned short capacity;
-		char text[1];
-	};
-	Header *m_data;
-
-public:
-	const char *str() const { return m_data ? m_data->text : ""; }
-};
+#include "ascii_string.h"
 
 class NameKeyGenerator
 {

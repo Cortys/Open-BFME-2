@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ?DoXfer@Rva004E3184@@UAEXAAVXfer@@@Z @0x004E3991 221B
 // Slot 3 of vtable 0x00861F28 (Rva004E3184 ModuleData). Layout from
@@ -8,17 +8,8 @@
 #include <memory>
 #include <vector>
 
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString();
-};
 
 class UnicodeString;
 class PooledString;

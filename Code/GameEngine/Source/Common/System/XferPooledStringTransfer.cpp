@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 #define _DLL
 #include <string.h>
 
@@ -106,50 +106,8 @@ class UnicodeString;
 class PooledString;
 struct XferUnknown11;
 
-template <typename T>
-class StringBase
-{
-public:
-    int getLength() const
-    {
-        return m_data ? m_data->length : 0;
-    }
-    const T *str() const
-    {
-        return m_data ? m_data->data : (const T *)"";
-    }
-    void clear()
-    {
-        releaseBuffer();
-    }
-    T *getBufferForRead(int len);
+#include "ascii_string.h"
 
-private:
-    void releaseBuffer();
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
-
-class AsciiString
-{
-public:
-    AsciiString() { m_text = 0; }
-    ~AsciiString() { clear(); }
-    int getLength() const { return ((const StringBase<char> *)this)->getLength(); }
-    const char *str() const { return ((const StringBase<char> *)this)->str(); }
-    void clear() { ((StringBase<char> *)this)->clear(); }
-
-private:
-    char *m_text;
-};
 
 class UnicodeString
 {

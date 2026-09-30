@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // DataChunkInput::getChunkLabel, retail 0x003074D7, 51 bytes.
 //
@@ -11,16 +11,7 @@
 
 typedef unsigned int UnsignedInt;
 
-class AsciiString
-{
-public:
-	AsciiString(const char *text);
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 struct InputChunk
 {

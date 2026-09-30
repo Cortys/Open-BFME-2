@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // Retail 0x001EF291 58B:
 // ?Rva001EF291Find@@YAHABVAsciiString@@@Z
@@ -7,30 +7,8 @@
 // returns index or -1. Callers at 0x002A344F 0x004023A6 0x0042AB2B.
 //
 
-template <typename T>
-class StringBase
-{
-public:
-	bool isEmpty() const;
-	int compareNoCase(const T *str) const;
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *text);
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 extern const char *g_00DB9058[];
 

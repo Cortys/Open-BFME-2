@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?Rva0021B9A0Median@@YAABVRva0021915B@@ABV1@00URva0021B753@@@Z @0x0021B9A0 101B
 // __median for 8-byte AsciiString-plus-bool entries with empty comparator
 // Rva0021B753 (rowed 0x0021B753). Returns median of three const refs.
@@ -7,22 +7,8 @@
 // bool primary plus nocase secondary proven by 0x0021B753; empty comp (lea ecx
 // dead) proven by callers passing comp by value at [ebp+0x14].
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	int compareNoCase(const StringBase<T> &that) const;
-
-private:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class Rva0021915B
 {

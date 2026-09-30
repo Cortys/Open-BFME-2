@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva00583202Set@@YGXH@Z @0x00583202 206B
 // File-transfer loading time setter: clamps a seconds count at zero, splits
 // minutes/seconds, formats via TheGameText "MapTransfer:Timeout" fetch into a
@@ -14,30 +14,7 @@ template <typename T> class StringBase;
 class UnicodeString;
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)0x00BBB5C4; }
-
-private:
-	struct Header
-	{
-		int refCount;
-		unsigned short length;
-		unsigned short capacity;
-		T text[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
 class UnicodeString : public StringBase<wchar_t>
 {
@@ -47,13 +24,6 @@ public:
 	~UnicodeString() {}
 };
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 class BfmeAptWindowManager
 {

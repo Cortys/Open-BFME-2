@@ -1,30 +1,10 @@
-// cl: /O1 /G7 /DNDEBUG /MD /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /DNDEBUG /MD /arch:SSE
 // Dict::setReal plus float movss shape.
 // Reference basis is ZH Dict.cpp setReal via rowed setPrep at 0x0031369D
 // and rowed sortPairs at 0x00313299. Retail moves float via xmm.
 
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
+#include "ascii_string.h"
 
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	char *m_data;
-};
-
-template <typename T> class StringBase
-{
-public:
-	StringBase(const StringBase &other);
-	void set(const StringBase &other);
-
-private:
-	void *m_data;
-};
 
 enum NameKeyType
 {

@@ -1,20 +1,7 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?Rva0021C811InsertionSort@@YAXPAVRva0021915B@@0HURva0021B753@@@Z @0x0021C811 45B insertion sort via rowed linear insert 0x0021BAA3 and pair-pinned Rva copy.
 // Evidence: unlock lane all callees rowed; stride 8 plus insert callers 0x0021C798/0x0021C811 prove Rva0021915B family; same loop as STL __unguarded_insertion_sort with non-trivial value copy; 4-arg shape with unused third proven by caller 0x0021D305 passing 0.
-template <typename T> class StringBase {
-	friend class AsciiString;
-	StringBase(const StringBase &);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-private:
-	void *m_data;
-};
-class AsciiString : public StringBase<char> {
-public:
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 class Rva0021915B {
 public:
 	Rva0021915B(const Rva0021915B &other);

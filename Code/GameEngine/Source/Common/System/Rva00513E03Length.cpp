@@ -1,37 +1,7 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?length@Rva00513E03@@QBEHXZ @0x00513E03 34B: four-part narrow concat length (Text+String+Text+String); base TextPlusString length at 0x00513B94 plus third pair len at +0x10 plus fourth string len at +0x14; chain from 0x00513B94 landing; callers 0x00513E6F 0x005E3693 0x005E36EA.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *text);
-	StringBase(const StringBase &src);
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	T *getBufferForRead(int len);
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-protected:
-	Header *m_data;
-};
+#include "ascii_string.h"
 class UnicodeString;
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &src) : StringBase<char>(src) {}
-	AsciiString &operator=(const AsciiString &src);
-	int getLength() const { return m_data ? m_data->length : 0; }
-	const char *str() const { return m_data ? m_data->data : ""; }
-	void translate(const UnicodeString &src);
-};
 class Rva000B3F84Pair
 {
 public:

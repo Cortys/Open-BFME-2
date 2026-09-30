@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0Rva00151632@@QAE@PBD@Z, retail 0x001515CA, 98 bytes. Prototype ctor for
 // the vtable at 0x007D3A6C (rowed ??1Rva00151632 at 0x00151632 plus deleting
@@ -9,30 +9,8 @@
 // "fxShader_%08x" and the object address. Called from 0x001516C1. Layout
 // mirrors the rowed dtor TU; twin precedent Rva0017FB41Ctor.
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	bool isEmpty() const;
-
-protected:
-	~StringBase();
-
-	void *m_data;
-
-private:
-	StringBase(const char *str);
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *str) : StringBase<char>(str) {}
-	~AsciiString();
-	void __cdecl format(const char *format, ...);
-};
 
 class GenBase009EB7D0
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ??0Rva0037DF2C@@QAE@XZ @0x0037DF2C (97B).
 // Ctor with vtable 0x00BDF158 at +0x0, AsciiString at +0x4 from TheEmptyString
 // 0x00DE0878 via pinned StringBase copy 0x000365F0, float 0 at +0x8 via xorps
@@ -9,22 +9,7 @@
 // /EHsc for EH prolog plus /arch:SSE for movss to sibling /O1 /DNDEBUG /MD.
 // Callers at 0x001EC15F 0x001EC3FA 0x001EC491 0x001ECD05 0x0040C354.
 #include <string.h>
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	static AsciiString TheEmptyString;
-};
+#include "ascii_string.h"
 class EmptyBase
 {
 public:
