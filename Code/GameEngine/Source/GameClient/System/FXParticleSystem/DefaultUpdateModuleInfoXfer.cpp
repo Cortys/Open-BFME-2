@@ -17,6 +17,7 @@ public:
 	virtual void r8();
 	virtual void r9();
 	virtual void xferVersion(unsigned char *version);
+	void Version1();
 };
 
 class GameClientRandomVariable
@@ -81,4 +82,19 @@ void FXParticleSystem::DefaultUpdateModuleInfo::xfer(Xfer *xfer)
 	xferRandomVariable(*xfer, m_var5);
 	xferRandomVariable(*xfer, m_var6);
 	xferRandomVariable(*xfer, m_var7);
+}
+
+class Rva0055F710
+{
+public:
+	virtual void rva0055F710(Xfer *xfer);
+private:
+	unsigned char m_pad[0x18];
+	FXParticleSystem::DefaultUpdateModuleInfo m_info;
+};
+
+void Rva0055F710::rva0055F710(Xfer *xfer)
+{
+	xfer->Version1();
+	m_info.FXParticleSystem::DefaultUpdateModuleInfo::xfer(xfer);
 }

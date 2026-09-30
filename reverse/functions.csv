@@ -44198,3 +44198,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00362693@Rva00362693@@QAE_NXZ,,0x00362693,26,Code/GameEngine/Source/Common/Bfme/Rva00362693Check.cpp,matched,caller 0x36277D triple check unblocks 0x36276F
 ??1W3DFloorDraw@@UAE@XZ,,0x000CF1A6,102,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/W3DFloorDrawDtor.cpp,matched,chain dtor via BFME1 donor and terrain global
 ?xfer@DefaultUpdateModuleInfo@FXParticleSystem@@UAEXPAVXfer@@@Z,,0x0055F67C,148,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultUpdateModuleInfoXfer.cpp,matched,unlock slot3 DoXfer eight vars plus rotation
+?rva0055F710@Rva0055F710@@UAEXPAVXfer@@@Z,,0x0055F710,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultUpdateModuleInfoXfer.cpp,matched,chain from 0x0055F67C wrapper at plus 0x1c
