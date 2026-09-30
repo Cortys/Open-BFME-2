@@ -1,0 +1,90 @@
+// ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z
+// partial score=0.95 date=2026-09-30
+// ?Rva0007894EGet@@YG_NPAVRva0007894EOuter@@@Z
+// partial score=0.95 date=2026-09-29
+// cl: /O1 /DNDEBUG /MD
+//
+// ?Rva0007894EGet@@YG_NPAX@Z @0x0007894E 61B probe v1
+// Free stdcall bool tester: Outer+8 Rva with flags 0x440/0x441 plus rowed
+// rva bool plus Outer vslot 0xC4 int to bool.
+
+class Rva00270260
+{
+public:
+	bool rva00270260();
+private:
+	char m_pad00[0x440];
+public:
+	unsigned char m_440;
+	unsigned char m_441;
+};
+
+class Rva0007894EOuter
+{
+public:
+	virtual int v00() = 0;
+	virtual int v01() = 0;
+	virtual int v02() = 0;
+	virtual int v03() = 0;
+	virtual int v04() = 0;
+	virtual int v05() = 0;
+	virtual int v06() = 0;
+	virtual int v07() = 0;
+	virtual int v08() = 0;
+	virtual int v09() = 0;
+	virtual int v10() = 0;
+	virtual int v11() = 0;
+	virtual int v12() = 0;
+	virtual int v13() = 0;
+	virtual int v14() = 0;
+	virtual int v15() = 0;
+	virtual int v16() = 0;
+	virtual int v17() = 0;
+	virtual int v18() = 0;
+	virtual int v19() = 0;
+	virtual int v20() = 0;
+	virtual int v21() = 0;
+	virtual int v22() = 0;
+	virtual int v23() = 0;
+	virtual int v24() = 0;
+	virtual int v25() = 0;
+	virtual int v26() = 0;
+	virtual int v27() = 0;
+	virtual int v28() = 0;
+	virtual int v29() = 0;
+	virtual int v30() = 0;
+	virtual int v31() = 0;
+	virtual int v32() = 0;
+	virtual int v33() = 0;
+	virtual int v34() = 0;
+	virtual int v35() = 0;
+	virtual int v36() = 0;
+	virtual int v37() = 0;
+	virtual int v38() = 0;
+	virtual int v39() = 0;
+	virtual int v40() = 0;
+	virtual int v41() = 0;
+	virtual int v42() = 0;
+	virtual int v43() = 0;
+	virtual int v44() = 0;
+	virtual int v45() = 0;
+	virtual int v46() = 0;
+	virtual int v47() = 0;
+	virtual int v48() = 0;
+	virtual int v49();
+	int m_04;
+	Rva00270260 *m_08;
+};
+
+// ?Rva0007894EGet@@YG_NPAX@Z present-unmatched
+bool __stdcall Rva0007894EGet(Rva0007894EOuter *p)
+{
+	Rva00270260 *s = p->m_08;
+	if (s->m_441 == 0)
+		return false;
+	if (s->rva00270260())
+		return false;
+	if (s->m_440 != 0)
+		return false;
+	return p->v49() != 0;
+}
