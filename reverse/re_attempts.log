@@ -3610,3 +3610,5 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?removeVideo@VideoPlayer@@UAEXPAUVideo@@@Z	0x00689CE0	195	blocked	add_match_batch exit 29 before byte comparison (no Functions line) then row reverted; the file then reports ZERO matched rows so the commit gate refuses it; cause not established t=35min model=deepseek-flash
 FUN_0099FD3A	0x0059FD3A	241	blocked	combo-box RB population 11 callees plus boundary WARN DE plus 2 vtable slots t=15 model=muse-05
 FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 model=muse-05
+?Rva003C4E28Find@@YGXABVAsciiString@@MMM@Z	0x003C4E28	155	blocked	movss-reg muls vs movaps-mem persists across direct locals reversed G7 O2 t=15 model=muse-08
+?bfmeInitD70@@YAXPAX0@Z	0x001B67E0	176	blocked	t-st coloring persists after st-t def swap 170-176 t=10 model=muse-08
