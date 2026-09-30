@@ -44190,3 +44190,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva004E5821@Rva004E5821@@QAEXXZ,,0x004E5821,28,Code/GameEngine/Source/Common/Bfme/Rva004E5821Method.cpp,matched,unlock lane displaystring free slot 0x3c via manager global callers 0x004E58F8 0x004E5AA5
 ?rva006FEAF0@AptActionInterpreter@@QAEXABUAptInitParmsT@@@Z,,0x006FEAF0,87,Code/Libraries/Source/Apt/AptInterpreterCtor.cpp,matched,chain from 0x006FDDB0 inits four stacks plus debug plus static
 ?rva006FE920@AptBasePtrStack@@QAEXXZ,,0x006FE920,61,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,same TU pop releases top dec
+?Rva002DBC97Get@@YGPAXH@Z,,0x002DBC97,51,Code/GameEngine/Source/Common/Rva002DBC97Get.cpp,matched,unlock lane via 8 callers stdcall int to pointer globals
