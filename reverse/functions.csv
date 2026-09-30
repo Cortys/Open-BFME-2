@@ -44362,3 +44362,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva0036E97F@AICommandInterface@@QAEXPBUCoord3D@@HW4CommandSourceType@@M@Z,,0x0036E97F,130,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,AICommandInterface slot0 pos int float38 AICMD 0x51
 ?clone@Rva003AF3D3@@QBEPAV1@XZ,,0x003AF39C,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AF3D3Clone.cpp,matched,vslot2 of 0x0081CFF8 EH new 0x34 plus rowed copy
 ?rva006D0790@Rva006D0790@@QAEPAV1@PAURva006D0280@@PAX@Z,,0x006D0790,70,Code/GameEngine/Source/Common/Rva006D0790Init.cpp,matched,list init plus Rva006D0280 acquire-release via chain allocator
+?rva0044E655@Rva0044E655@@QAE_NXZ,,0x0044E655,52,Code/GameEngine/Source/Common/Rva0044E655Check.cpp,matched,unlock lane callers 0x0045224C 0x00452269 AI slot 0x1b8 isIdle
