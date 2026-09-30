@@ -479,7 +479,6 @@ void Anim2D::setStatus( UnsignedByte statusBits )
 // ------------------------------------------------------------------------------------------------
 /** Clear status bit */
 // ------------------------------------------------------------------------------------------------
-// ?clearStatus@Anim2D@@QAEXE@Z present-unmatched
 void Anim2D::clearStatus( UnsignedByte statusBits )
 {
 
@@ -657,7 +656,7 @@ void Anim2DCollection::update( void )
 // Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCollectionTemplates.cpp.
 
 //-------------------------------------------------------------------------------------------------
-// ?getNextTemplate@Anim2DCollection@@QBEPAVAnim2DTemplate@@PAV2@@Z present-unmatched
+// ?getNextTemplate@Anim2DCollection@@QBEPAVAnim2DTemplate@@PAV2@@Z
 Anim2DTemplate* Anim2DCollection::getNextTemplate( Anim2DTemplate *animTemplate ) const
 {
 	if( animTemplate )
