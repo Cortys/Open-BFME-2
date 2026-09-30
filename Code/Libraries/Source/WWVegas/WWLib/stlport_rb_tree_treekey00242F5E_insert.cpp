@@ -24,3 +24,5 @@ public:
 };
 }
 template _STL::pair<TreeKey00242F5ESetTree::iterator, bool> TreeKey00242F5ESetTree::insert_unique(const TreeKey00242F5ESetTree::value_type &);
+typedef _STL::set<TreeKey00242F5E, Rva000A7AA7Less, _STL::allocator<TreeKey00242F5E> > TreeKey00242F5ESet;
+template _STL::pair<TreeKey00242F5ESet::iterator, bool> TreeKey00242F5ESet::insert(const TreeKey00242F5ESet::value_type &);
