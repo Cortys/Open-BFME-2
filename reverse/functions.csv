@@ -44971,3 +44971,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0052DB11@Rva0052DB11@@QAE_NH@Z,,0x0052DB11,60,Code/GameEngine/Source/Common/Rva0052DB11.cpp,matched,unlock outer inner search with id skip
 ?rva0052DB4D@Rva0052DB4D@@QAE_NH@Z,,0x0052DB4D,38,Code/GameEngine/Source/Common/Rva0052DB4D.cpp,matched,unlock mismatch search via plus74
 ?rva0052DB73@Rva0052DB73@@QAE_NH@Z,,0x0052DB73,38,Code/GameEngine/Source/Common/Rva0052DB73.cpp,matched,unlock all-match check via plus74
+??$__uninitialized_fill_n@PAVRva004E32F2@@IV1@@_STL@@YAPAVRva004E32F2@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00566A75,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva004e32f2_allocate_copy.cpp,matched,chain calls 0x0052D4A2 same 37B shape

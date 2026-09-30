@@ -4483,3 +4483,4 @@ FUN_00607162	0x00207162	37	blocked	37B list freelist insert via protected _M_cre
 FUN_00405AC9	0x00405AC9	65	blocked	EH-prolog with UNCLAIMED scopetable 0x00784F02 plus virtual slot0 call on old ptr at +0 plus operator delete; class unknown prev-next are Rva00405A45-60 ctors but +0 store overwrites vtable so not that class; caller 0x00405CFB 371B over 200B lookup budget; needs donor t=8 model=muse-spark
 ?rva000521F4@Rva00699180Owner@@QAEXM@Z	0x000521F4	235	blocked	SSE envelope shared tails and int-copy paths need donor t=15 model=muse-04
 ?rva0073F170@Rva0073F170@@QAEHHH@Z	0x0073F170	193	blocked	193B EH multi-callee list str refcount needs donor t=10 model=muse-04
+FUN_0052D84C	0x0052D84C	464	blocked	464B xfer with XferObjectID loops plus bitfields needs parent ctor offsets t=8 model=muse-spark
