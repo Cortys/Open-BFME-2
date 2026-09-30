@@ -7,13 +7,28 @@ template <typename T> class StringBase {
 };
 StringBase<char> *Rva000BD22FFind(StringBase<char> *first, StringBase<char> *last, const StringBase<char> &val);
 
+class AsciiString : public StringBase<char> {
+};
+
+namespace _STL {
+template <typename T> class allocator {
+};
+template <typename T, typename A = allocator<T> > class vector {
+	unsigned char m_data[12];
+public:
+	void push_back(const T &val);
+};
+}
+
 class Rva00376A62 {
 	unsigned char m_pad[8];
 	StringBase<char> *m_begin;
 	StringBase<char> *m_end;
+	void *m_end_of_storage;
 public:
 	bool rva00376A62(const StringBase<char> &val);
 	bool rva00376A84(const void *o);
+	void rva00376B50(const AsciiString &val);
 };
 
 bool Rva00376A62::rva00376A62(const StringBase<char> &val)
@@ -28,4 +43,10 @@ bool Rva00376A62::rva00376A84(const void *o)
 	if (!o)
 		return false;
 	return rva00376A62(*(const StringBase<char> *)((const char *)o + 0x64));
+}
+
+void Rva00376A62::rva00376B50(const AsciiString &val)
+{
+	if (!rva00376A62(val))
+		((_STL::vector<AsciiString> *)((char *)this + 8))->push_back(val);
 }
