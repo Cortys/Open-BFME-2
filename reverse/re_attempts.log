@@ -4141,3 +4141,5 @@ FUN_00886015	0x00486015	212	blocked	large vslot34 DieModule with GameLogic find 
 FUN_0084a75d	0x0044A75D	171	blocked	large vslot22 LANAPI Unicode with 0x1E0 frame needs time t=3 model=muse-02
 ?rva00262CBE@Rva00262CBE@@QAEEXZ	0x00262CBE	52	blocked	needs 91-virtual base for slot 0x168 plus +0x1F0 layout t=8 model=muse-06
 ?_M_insert_overflow@?$vector@UBfmePod172@@V?$allocator@UBfmePod172@@@_STL@@@_STL@@IAEXPAUBfmePod172@@ABU3@ABU__false_type@2@I_N@Z	0x001EBD3B	191	partial	extra test-je-push-pop before imul vs mov ecx edi t=10 model=muse-06 score=0.97 stash=reverse/attempts/0x001ebd3b.cpp
+?rva00180AD6@Rva00180B94_Prototype@@UAEHXZ	0x00180AD6	35	blocked	ghidra 35B vs gate 866B boundary wrong needs rescan t=5 model=muse-02
+FUN_005ee4dc	0x001EE4DC	10	blocked	no ret in 10B boundary wrong needs rescan t=3 model=muse-02
