@@ -97,3 +97,7 @@ template void _STL::list<TreeHintOpaque0043671B>::push_back(const TreeHintOpaque
 template void _STL::list<BfmeContainerRecord00462D62>::push_back(const BfmeContainerRecord00462D62 &);
 // Retail 0x004E5526 (28B).
 template void _STL::list<BfmePod60>::push_front(const BfmePod60 &);
+
+// Retail 0x001F6852 (48B): range insert dispatch looping over the insert above.
+template void _STL::list<RvaSmartPtr12>::_M_insert_dispatch<_STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> > >(
+    _STL::list<RvaSmartPtr12>::iterator, _STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> >, _STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> >, const _STL::__false_type &);
