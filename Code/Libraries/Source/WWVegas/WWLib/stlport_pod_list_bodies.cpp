@@ -47,6 +47,7 @@ inline bool operator<(const BfmePod124 &x, const BfmePod124 &y) { return x.a[0] 
 struct BfmePod196 { int a[49]; };
 inline bool operator==(const BfmePod196 &x, const BfmePod196 &y) { return x.a[0] == y.a[0]; }
 inline bool operator<(const BfmePod196 &x, const BfmePod196 &y) { return x.a[0] < y.a[0]; }
+namespace _STL { template<> void _Construct<BfmePod196, BfmePod196>(BfmePod196 *, const BfmePod196 &) throw(); }
 struct BfmePod264 { int a[66]; };
 inline bool operator==(const BfmePod264 &x, const BfmePod264 &y) { return x.a[0] == y.a[0]; }
 inline bool operator<(const BfmePod264 &x, const BfmePod264 &y) { return x.a[0] < y.a[0]; }
