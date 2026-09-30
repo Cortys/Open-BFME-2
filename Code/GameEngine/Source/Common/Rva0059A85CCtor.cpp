@@ -1,8 +1,8 @@
-// ??0Rva0059A85C@@QAE@PAX@Z
-// partial score=0.97 date=2026-09-30
-// ??0Rva0059A85C@@QAE@PAX@Z
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// Fix over the banked 0.97 attempt, from the retail unwind map: state 0
+// destroys the Rva00506B1B base through its 7-byte vptr setter 0x00506B28, so
+// the base declares a virtual destructor; that restores the missing state-0
+// store and the state numbering of the vector (+0x08) and set (+0x18).
 // stlport
 // ??0Rva0059A85C@@QAE@PAX@Z @0x0059A85C (123B)
 // Derived ctor calls base Rva00506B1B then vector BfmeE16 at +8 then sets
@@ -16,6 +16,7 @@ class Rva00506B1B
 {
 public:
 	Rva00506B1B();
+	virtual ~Rva00506B1B();
 	virtual void v0();
 	virtual void v1();
 	bool m_04;
@@ -50,7 +51,7 @@ private:
 	void *m_outer;
 	_STL::set<AsciiString, _STL::less<AsciiString>, _STL::allocator<AsciiString> > m_set;
 };
-// ??0Rva0059A85C@@QAE@PAX@Z present-unmatched
+// ??0Rva0059A85C@@QAE@PAX@Z @0x0059A85C
 Rva0059A85C::Rva0059A85C(void *outer) : m_vec(), m_outer(outer), m_set()
 {
 	Node *sent = ((OuterLayout *)m_outer)->m_head;
