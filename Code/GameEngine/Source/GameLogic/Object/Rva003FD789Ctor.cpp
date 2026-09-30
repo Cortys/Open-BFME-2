@@ -1,7 +1,3 @@
-// ??0Rva003FD789@@QAE@ABV?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-29
-// ??0Rva003FD789@@QAE@ABV?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ??0Rva003FD789@@QAE@ABV?$StringBase@D@@@Z @0x003FD716 109B
 // Ctor of Rva003FD789 (vtable 0x00837D78): empty unwindable base arms EH 0,
@@ -11,6 +7,8 @@
 // 0x000365F0, EH 1), then tail floats at +0x20/+0x24/+0x28 and words at
 // +0x04/+0x08 zeroed. Same ModuleData EH recipe as ProductionUpdateModuleDataCtor.
 // Unblocks 0x0021294A and 0x0021219E.
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 template <typename T> class StringBase
 {
 public:
@@ -34,17 +32,17 @@ public:
 	virtual ~Rva003FD789();
 	Rva003FD789(const StringBase<char> &src);
 private:
-	int m_04;
-	float m_08;
+	int volatile m_04;
+	float volatile m_08;
 	StringBase<char> m_0c;
 	bool m_10;
 	bool m_11;
 	float m_14;
 	short m_18;
 	StringBase<char> m_1c;
-	float m_20;
-	float m_24;
-	float m_28;
+	float volatile m_20;
+	float volatile m_24;
+	float volatile m_28;
 };
 
 Rva003FD789::Rva003FD789(const StringBase<char> &src)

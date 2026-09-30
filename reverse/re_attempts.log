@@ -3649,3 +3649,5 @@ FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 mo
 ?Rva0054A4C6Sort@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@0@Z	0x0054A4C6	77	blocked	outer insertion-sort calls 0x0054A037 plus increment; retail pushes [ebp+0x2c] extra 4B for 28B call vs 24B 2-arg inner; needs 40B signature from caller 0x0054A8E5 (pushes 0 plus [esp+2c] plus 2 iterators); t=15 model=muse-06
 ?clearSlot_Rva004D5133@Transport@@QAEXG@Z	0x004D5133	116	blocked	frame-temp wall push-ecx2 vs none plus leave vs pops plus short-temp clearing; 109vs116B 3 regions t=10 model=muse-11
 ?rva00500BF5@Rva00500BF5@@QAEHHHHPAXH@Z	0x00500BF5	136	blocked	complex 136B insert-like with 5 stack args ret14 calling Create 500BA6 and Rebalance; signature unclear vs _M_insert 4-arg; deferred for small unlocks t=10 model=muse-11
+?Rva00136090Get@@YAPAXPAX0@Z	0x00136090	90	blocked	HAnimCombo temp 8B zeroed vs donor 20B layout unclear t=12 model=muse-01
+?Rva002FFD03Parse@@YAXPAVINI@@PAX@Z	0x002FFD03	192	blocked	INI list new compare order plus stack reuse unclear t=15 model=muse-01
