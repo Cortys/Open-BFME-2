@@ -151,6 +151,12 @@ extern PlayerTemplateStore *ThePlayerTemplateStore;
 
 class GameInfo;
 
+struct BfmeNetAddress
+{
+    unsigned int m_ip;
+    unsigned short m_port;
+};
+
 class GameSlot
 {
 public:
@@ -166,6 +172,7 @@ public:
     Int getApparentColor() const;
     Int getApparentStartPos() const;
     UnicodeString getApparentPlayerTemplateDisplayName() const;
+    Int rva003FF145(const BfmeNetAddress *other) const;
 
     void unAccept();
     void setMapAvailability(Bool hasMap);
@@ -220,8 +227,12 @@ public:
 
 private:
     // vfptr (+0x00) then pads so the slot array lands at +0x18.
-    char m_pad[0x14];
-    GameSlot *m_slot[MAX_SLOTS];
+    // +0x10 is the in-game flag retail tests, +0x38 holds the local address.
+    char m_pad00[0x0C];
+    Bool m_inGame;                  // +0x10
+    char m_pad01[0x07];
+    GameSlot *m_slot[MAX_SLOTS];    // +0x18
+    BfmeNetAddress m_localAddr;     // +0x38
 };
 
 extern GameInfo *TheGameInfo;
@@ -406,5 +417,25 @@ Bool GameInfo::rva003FF3B5()
             return true;
     }
     return false;
+}
+
+// GameInfo slot 13 (+0x34) of vtable 0x008193C8. BFME1 GameInfo.cpp donor
+// GameInfo::getLocalSlotNum verbatim shape: if not in game (+0x10) return -1,
+// else scan 8 slots via rowed getConstSlot and return the first whose
+// rowed GameSlot::rva003FF145 matches the local address at +0x38. Retail
+// tests only AL of that Int result, so the call is narrowed to byte.
+Int GameInfo::getLocalSlotNum() const
+{
+    if (!m_inGame)
+        return -1;
+    for (Int i = 0; i < MAX_SLOTS; ++i)
+    {
+        const GameSlot *slot = getConstSlot(i);
+        if (slot == 0)
+            continue;
+        if ((unsigned char)slot->rva003FF145(&m_localAddr))
+            return i;
+    }
+    return -1;
 }
 

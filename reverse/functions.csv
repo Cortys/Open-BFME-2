@@ -44393,3 +44393,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?do_tolower@?$ctype@D@_STL@@MBEPBDPADPBD@Z,,0x00016BE0,35,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_ctype_virtuals.cpp,matched,stlport-4.5.3 ctype<char> range do_tolower this TU emits; retail body is 35B including the lea esp npad; reads the same _S_lower table 0x00BBC2E0 as the rowed single-char overload
 ?rva0044EECA@Rva0044EECA@@QAE_NPAURva0044EECAParam@@@Z,,0x0044EECA,98,Code/GameEngine/Source/GameLogic/Object/Update/Rva0044EECACheck.cpp,matched,vtable slot 37 ModuleData family via ArrowStorm HeroMode WeaponFire callers rowed 0x288609
 ?rva006E0EB0@Rva006E0EB0@@QAEPAXI@Z,,0x006E0EB0,74,Code/Libraries/Source/Apt/Rva006E0EB0DeletingDtor.cpp,matched,teardown plus conditional pool free via rowed freeBlock
+?getLocalSlotNum@GameInfo@@UBEHXZ,,0x003FF2D6,60,Code/GameEngine/Source/GameNetwork/GameSlotApparent.cpp,matched,slot13 vtable 008193C8 BFME1 GameInfo donor
