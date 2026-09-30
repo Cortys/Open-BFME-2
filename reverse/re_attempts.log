@@ -3976,3 +3976,7 @@ FUN_009680F9	0x005680F9	74	blocked	static list init with EH_prolog plus guard; p
 ?rva000ADB2F@Rva000ADB2F@@QAEXHH_N@Z	0x000ADB2F	90	partial	size calc order base-end vs end-base plus lea vs add for slot t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x000adb2f.cpp
 ?rva00283C76@Rva00283C76@@QAEPAPAURva00283401Node@@PBX@Z	0x00283C76	28	blocked	chain of Insert push-ecx placeholder 5B diff t=18 model=muse-08
 ?rva00053FD2@Rva00053FD2@@QAEPAXPBQBX@Z	0x00053FD2	75	blocked	hashtable find ebx-thisplus1 placeholder 10B diff t=15 model=muse-08
+?rva002173FA@Rva002173FA@@QAEXPAURva002173FANode@@@Z	0x002173FA	79	blocked	dual-traversal list remove; 4 variants; head lands edx not eax plus loop-exit jmp vs shared-test fusion; honest Rva class and WWLib placement unproven t=20 model=muse-05
+??0Rva0035E00F@@QAE@XZ	0x0035E206	86	partial	vtable early before m10/m14 vs retail after plus or hoisted before m18 plus final eax vs ecx t=25 model=muse-05 score=0.9 stash=reverse/attempts/0x0035e206.cpp
+?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z	0x0056C7F1	170	partial	170B 56insns exact size; only cmovbe vs cmovae plus movss/comiss load order swapped (b-first vs a-first) t=30 model=muse-05 score=0.96 stash=reverse/attempts/0x0056c7f1.cpp
+?rva000ADA1A@Rva000ADA1A@@QAEXHH_N@Z	0x000ADA1A	83	blocked	register wall this-edx x-ecx y-esi vs ours this-eax x-ecx y-edx; 6 variants incl int-ptr unsigned plus G7 plus recompute; size exact 83 on recompute but 8 reg diffs remain t=20 model=muse-05
