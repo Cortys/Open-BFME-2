@@ -1,7 +1,3 @@
-// ??1W3DTankDraw@@UAE@XZ
-// partial score=0.97 date=2026-09-27
-// ??1W3DTankDraw@@UAE@XZ
-// partial score=0.97 date=2026-09-27
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ??1W3DTankDraw@@UAE@XZ, retail 0x000CE960, 142 bytes.
@@ -14,7 +10,13 @@
 // MiBase1 plus per-class B2 gives +0/+0xC/+0x10; pad to 0x2E8 covers the true
 // W3DScriptedModelDraw members (ctor at 0xC0DD8 proves 0x2E8); handles and
 // treads match ctor 0xCEA6C (handles zeroed at 0x2E8/0x2F4, TreadObjectInfo
-// ctor 0xCDFB1 for 4x0x14 at 0x304, prevRenderObj at 0x300). Donor BFME1
+// ctor 0xCDFB1 for 4x0x14 at 0x304, prevRenderObj at 0x300).
+// Retail's unwind map (base 0xC79C9 in state 0, +0x2E8 and +0x2F4 in states
+// 1 and 2 through the out-of-line conditional destroy 0x002115C5) makes the
+// two handles members with that destructor, not explicit calls in the body.
+// Retail keeps no state stores between them: with the handle dtor's body
+// visible (inline here, not expanded at /O1) the compiler treats the call
+// as non-throwing and drops those stores. Donor BFME1
 // W3DTankDrawDestructor.cpp/W3DTankDraw.cpp treads loop; BFME2 deltas:
 // handles are 12-byte intrusive (not ParticleSystem*) with caller-side guard
 // (DefaultModuleHeadBaseDtor precedent: trivial store plus explicit
@@ -43,16 +45,42 @@ struct TreadObjectInfo
 	unsigned char m_rest[0x10];
 };
 
+class ParticleSystem;
 struct BfmeParticleSystemHandle
 {
 	~BfmeParticleSystemHandle();
-	void *m_system;
-	void *m_previous;
-	void *m_next;
+	ParticleSystem *m_system;
+	BfmeParticleSystemHandle *m_previous;
+	BfmeParticleSystemHandle *m_next;
 };
-
-struct HandleStore
+class ParticleSystem
 {
+public:
+	unsigned char m_pad[0x9C];
+	BfmeParticleSystemHandle *m_firstHandle;
+	BfmeParticleSystemHandle *m_lastHandle;
+};
+inline BfmeParticleSystemHandle::~BfmeParticleSystemHandle()
+{
+	if (m_previous)
+		m_previous->m_next = m_next;
+	else
+		m_system->m_firstHandle = m_next;
+	if (m_next)
+		m_next->m_previous = m_previous;
+	else
+		m_system->m_lastHandle = m_previous;
+	m_previous = 0;
+	m_next = 0;
+}
+
+struct W3DTankDrawDebrisHandle
+{
+	~W3DTankDrawDebrisHandle()
+	{
+		if (m_ptr0 != 0)
+			((BfmeParticleSystemHandle *)this)->~BfmeParticleSystemHandle();
+	}
 	void *m_ptr0;
 	void *m_ptr1;
 	void *m_ptr2;
@@ -86,13 +114,12 @@ public:
 
 private:
 	unsigned char m_pad14[0x2E8 - 0x14];
-	HandleStore m_treadDebrisLeft;
-	HandleStore m_treadDebrisRight;
+	W3DTankDrawDebrisHandle m_treadDebrisLeft;
+	W3DTankDrawDebrisHandle m_treadDebrisRight;
 	void *m_prevRenderObj;
 	TreadObjectInfo m_treads[4];
 };
 
-// ??1W3DTankDraw@@UAE@XZ present-unmatched
 W3DTankDraw::~W3DTankDraw()
 {
 	for (int i = 0; i < 4; ++i)
@@ -104,10 +131,4 @@ W3DTankDraw::~W3DTankDraw()
 			m_treads[i].m_robj = 0;
 		}
 	}
-	BfmeParticleSystemHandle *pRight = (BfmeParticleSystemHandle *)&m_treadDebrisRight;
-	if (pRight->m_system != 0)
-		pRight->~BfmeParticleSystemHandle();
-	BfmeParticleSystemHandle *pLeft = (BfmeParticleSystemHandle *)&m_treadDebrisLeft;
-	if (pLeft->m_system != 0)
-		pLeft->~BfmeParticleSystemHandle();
 }
