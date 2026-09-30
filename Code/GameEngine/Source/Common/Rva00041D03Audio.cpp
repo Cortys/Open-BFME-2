@@ -118,6 +118,7 @@ class Rva00041D03
 {
 public:
     void rva00041D03();
+    void rva00041D22();
 private:
     bool m_flag; // +0
 };
@@ -130,4 +131,14 @@ void Rva00041D03::rva00041D03()
         return;
     TheAudio->vf102();
     m_flag = 0;
+}
+
+void Rva00041D03::rva00041D22()
+{
+    if (m_flag)
+        return;
+    if (TheAudio == 0)
+        return;
+    TheAudio->vf101();
+    m_flag = 1;
 }
