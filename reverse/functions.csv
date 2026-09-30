@@ -43459,3 +43459,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva0030B2B6@Rva0030B2B6@@QAEXPAVDataChunkOutput@@@Z,,0x0030B2B6,72,Code/GameEngine/Source/Common/Rva0030B2B6Write.cpp,matched,array count plus real pair loop
 ?rva00205A2B@Rva00205A2B@@QAEXPAUArg205A2B@@@Z,,0x00205A2B,98,Code/Libraries/Source/WWVegas/WWLib/StringSearch205A2B.cpp,matched,string search 0x257 stride 0x80 via rowed compare 0x69D6 and pinned assign 0x366F0
 ?rva004D4FBE@Transport@@QBEMXZ,,0x004D4FBE,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,unsigned average m_dummy90 skip 40E6C fmul sibling 004D5046
+?Rva00320158Parse@@YAXPAVINI@@PAVRva003200BC@@@Z,,0x00320158,81,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva00320158.cpp,matched,chain factory via new ctor initFromINI rva003200BC
