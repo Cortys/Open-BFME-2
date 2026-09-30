@@ -36,14 +36,14 @@ void Rva0069BD40Set(int value)
 {
 	g_Va00E0BE00 = value;
 }
-extern int g_Va00DDC01C;
+extern int g_bfmeAptBreakOnAssertAtDDC01C; // Apt.cpp break-on-assert flag
 
 // ?Rva006CD1F0Set@@YAXH@Z @ 0x006cd1f0 (10B) over 0x00DDC01C.
 // Int3-padded both sides (prev CC next CC), live E8 caller. Opaque
 // address-derived name.
 void Rva006CD1F0Set(int value)
 {
-	g_Va00DDC01C = value;
+	g_bfmeAptBreakOnAssertAtDDC01C = value;
 }
 extern int g_Va00E17724;
 
