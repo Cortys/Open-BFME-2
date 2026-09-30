@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Target identity: action-template index 0x136 is TEAM_FACE_WAYPOINT and
 // executeAction case 0x136 calls VA 0x007C9B19 (RVA 0x003C9B19), 148 bytes.
 // Target body resolves the team and named waypoint, obtains the team member
@@ -7,23 +7,7 @@
 // the action semantics and linked-list traversal; target iterator ABI is
 // represented with an opaque 24-byte local matching the helper at 0x263864.
 
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 typedef bool Bool;
 class Object;
 class AIUpdateInterface;

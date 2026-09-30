@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
 //
 // ??1ObjectCreationUpgradeModuleData@@UAE@XZ, retail 0x004B45E8, 84 bytes.
 // ModuleData dtor: destroys the three AsciiStrings at +0x128 (state 2) then
@@ -29,15 +29,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	AsciiString();
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) ObjectCreationUpgradeModuleData : public Snapshot
 {

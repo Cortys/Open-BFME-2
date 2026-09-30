@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1ObjectTypes@@UAE@XZ @0x00376ADF 63B: ObjectTypes dtor.
 // Evidence: destroys vector<AsciiString> m_objectTypes at +8 through rowed
@@ -27,17 +27,8 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-template <typename T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString() {}
-};
 
 class __declspec(novtable) ObjectTypes : public Snapshot
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 // stlport
 // ?rva00357340@ScriptEngine@@QAEXPAXPAVCoord3D@@@Z, retail 0x00357340 132B unlock.
 // Evidence: list at +0x1A498 from ScriptEngine_dtor; StringBase isEmpty rowed
@@ -8,19 +8,8 @@
 #include <list>
 #include <algorithm>
 
-template <typename T>
-class StringBase
-{
-public:
-	bool isEmpty() const;
+#include "ascii_string.h"
 
-private:
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 unsigned long __cdecl Rva003ECA13Get(const AsciiString &s);
 

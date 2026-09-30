@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?xfer@Rva003FD789@@MAEXPAVXfer@@@Z, retail 0x003FD6BD, 35 bytes.
 // Slot 3 (offset 0x0C) of vtable 0x00837D78 (class of ??0Rva003FD789
@@ -86,14 +86,7 @@ protected:
 	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 struct Coord3DBase
 {
@@ -102,15 +95,6 @@ struct Coord3DBase
 	float z;
 };
 
-template <typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase &other);
-	~StringBase();
-private:
-	T *m_data;
-};
 
 class EmptyBase
 {

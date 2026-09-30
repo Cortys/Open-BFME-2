@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ??1LaserUpdateModuleData@@UAE@XZ @0x003631E8, 75B.
 // Virtual dtor slot evidence: ??_G at 0x003631CC (rowed, slot 0 of vtable 0x00C17120) calls here. Destroys AsciiStrings at +0x14 then +0x0C then +0x08 via pinned 0x00036410 then restores base Snapshot vtable 0x00BBB554 with trivial base inlined (no base call). Layout from rowed ctor 0x00363147 (MuzzleParticleSystem +0x08 ParentFireBoneName +0x0C TargetParticleSystem +0x14 inline-ctor AsciiStrings, bool +0x10 float +0x18 trivial, factory news 0x1C at 0x0024D55A). Donor BFME1 LaserUpdateModuleDataDestructorThunk.
 class Snapshot
@@ -12,14 +12,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) LaserUpdateModuleData : public Snapshot
 {

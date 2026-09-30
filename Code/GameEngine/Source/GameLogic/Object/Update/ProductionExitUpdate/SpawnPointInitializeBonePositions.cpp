@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /arch:SSE /G6 /DNDEBUG /MD /GX-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /arch:SSE /G6 /DNDEBUG /MD /GX-
 
 enum { MAX_SPAWN_POINTS = 10 };
 
@@ -17,17 +17,7 @@ struct BfmeAsciiStringData
 	unsigned short m_pad;
 };
 
-class AsciiString
-{
-public:
-	const char *str() const
-	{
-		return m_data ? reinterpret_cast<const char *>(m_data + 1) : "";
-	}
-
-private:
-	BfmeAsciiStringData *m_data;
-};
+#include "ascii_string.h"
 
 class SpawnBoneRow
 {

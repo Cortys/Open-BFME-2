@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
 // stlport
 // ??1RampageBehaviorModuleData@@UAE@XZ, RVA 0x00458C9B, size 48.
 // Virtual dtor destroying RequiredUpgrade vector at +8 then restoring
@@ -8,14 +8,7 @@
 // 0x458C7F calls here, ctor 0x458C0F owns class and table 0xC40E78.
 #include <vector>
 
-class AsciiString
-{
-public:
-    AsciiString();
-    ~AsciiString();
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 
 class ModuleDataBase
 {

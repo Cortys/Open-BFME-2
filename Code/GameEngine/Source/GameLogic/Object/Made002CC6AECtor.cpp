@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 // stlport
 //
 // ??0Made002CC6AE@@QAE@XZ @0x00508E11 (90B).
@@ -9,13 +9,7 @@
 // Same vector-erase-in-ctor idiom as Rva004E364F precedent.
 #include <vector>
 
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00507823
 {

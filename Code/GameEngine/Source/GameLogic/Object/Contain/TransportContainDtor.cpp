@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1TransportContain@@UAE@XZ, retail 0x00467E61, 128 bytes.
@@ -18,14 +18,7 @@ class Thing;
 class ModuleData;
 class Object;
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class B0 { public: virtual void b0(); private: unsigned char m_pad[8]; };
 class B1 { public: virtual void b1(); };

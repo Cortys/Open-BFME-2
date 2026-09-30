@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /arch:SSE /DNDEBUG /Oy-
 //
 // ??0DamageFieldUpdateModuleData@@QAE@XZ, retail 0x00491102, 76 bytes.
 // DamageField behavior's module data: the rowed chained proc 0x004910E7
@@ -37,15 +37,7 @@ private:
 	unsigned char m_data[4];
 };
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 extern AsciiString g_emptyAsciiString;
 

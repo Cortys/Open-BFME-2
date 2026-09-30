@@ -1,15 +1,9 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?Rva00205655Make@@YA?AURva00204A83@@ABU?$pair@VAsciiString@@V1@@_STL@@AB_J@Z @0x00205655 27B
 // Hidden-dest forwarder over rowed Rva00204A83 pair-plus-int64 ctor 0x00204A83.
 // Same 27B shape as rowed make_pair 0x0032ACCF and sibling 0x002056A6.
 // Callers at 0x0020879B 0x0020AACD.
-class AsciiString
-{
-    void *m_data;
-public:
-    AsciiString(const AsciiString &other);
-    ~AsciiString();
-};
+#include "ascii_string.h"
 
 namespace _STL {
 template <class T1, class T2> struct pair

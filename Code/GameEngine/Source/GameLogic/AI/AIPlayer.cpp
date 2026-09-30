@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX
 //
 // BFME2 BuildListInfo desired-gatherers getter, transferred from the exact
 // BFME1 reconstruction (Code/GameEngine/Source/GameLogic/AI/AIPlayer.cpp).
@@ -46,17 +46,8 @@ enum GameDifficulty
 	DIFFICULTY_HARD
 };
 
-template <typename T> class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	Bool operator==(const AsciiString &other) const { return compare(other) == 0; }
-};
 
 class NameKeyGenerator
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG
 // stlport
 //
 // ??1FloodUpdateModuleData@@UAE@XZ, retail 0x0048DFB1, 113 bytes. Virtual dtor for
@@ -24,14 +24,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class FloodUpdateModuleData : public Snapshot
 {

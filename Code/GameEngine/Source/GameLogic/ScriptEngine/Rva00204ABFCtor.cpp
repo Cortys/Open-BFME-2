@@ -1,13 +1,10 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // ??0Rva00204ABF@@QAE@ABU?$pair@VAsciiString@@V1@@_STL@@ABH@Z @0x00204ABF 27B: pair plus int ctor.
 // Evidence: same pair-copy shape as Rva00204AA4 0x00204AA4 via rowed pair 0x0020492B;
 // dword at +8 from second arg; caller 0x002056A6 wrapper.
 
-class AsciiString
-{
-    void *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

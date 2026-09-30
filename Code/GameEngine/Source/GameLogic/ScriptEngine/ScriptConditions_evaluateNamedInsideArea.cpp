@@ -1,30 +1,12 @@
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // ScriptConditions::evaluateNamedInsideArea, target 0x003E5EFF (116 bytes).
 // Identity: target retrieves the named unit and trigger, converts the unit's
 // three position coordinates to ints, then calls the trigger point test.
 
 typedef bool Bool;
 
-template <class T> class StringBase
-{
-    friend class AsciiString;
-private:
-    StringBase(const StringBase &);
-    ~StringBase();
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
 
 class Parameter
 {

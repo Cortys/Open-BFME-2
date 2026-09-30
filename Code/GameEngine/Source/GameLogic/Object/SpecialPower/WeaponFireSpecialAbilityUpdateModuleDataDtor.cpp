@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /arch:SSE /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /arch:SSE /DNDEBUG
 //
 // ??1WeaponFireSpecialAbilityUpdateModuleData@@UAE@XZ, retail 0x00492806, 56 bytes.
 // WeaponFireSpecialAbilityUpdate ModuleData dtor over the pinned Rva0044ECCE
@@ -12,14 +12,7 @@
 // WeaponFireSpecialAbilityUpdateModuleDataDestructorThunk.cpp:36 proves the
 // string-plus-base shape; retail followed.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva0044ECCE
 {

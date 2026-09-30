@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX-
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX-
 //
 // WeaponStore::findWeaponTemplate, retail 0x002CB8BF, 67 bytes.
 //
@@ -19,14 +19,7 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-class AsciiString
-{
-public:
-	const char *str() const { return m_data ? (const char *)m_data + 8 : ""; }
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class NameKeyGenerator
 {

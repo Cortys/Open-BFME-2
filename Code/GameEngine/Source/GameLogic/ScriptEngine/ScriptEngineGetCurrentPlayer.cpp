@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?getCurrentPlayer@ScriptEngine@@QAEPAVPlayer@@XZ @0x00205C93 84B
 // ScriptEngine::getCurrentPlayer: null-check m_currentPlayer+0x1A130,
 // AppendDebugMessage("***Unexpected NULL player:***", false) when null,
@@ -18,27 +18,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	StringBase(const T *text);
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 class Player;
 

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ScriptActions::doNamedAttackAreaForSeconds, retail 0x003C83AD, 114 bytes.
 // Target identity: initActionTemplates index 0x30 (48) is
@@ -12,25 +12,8 @@
 // ScriptActions.cpp identify this action and the sequence of area attack then
 // sequential timer; the target global factor is established from retail data.
 
-template<class T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    void *m_text;
-};
 
 class Object;
 class PolygonTrigger;

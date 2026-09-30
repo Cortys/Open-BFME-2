@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1CreateObjectDieModuleData@@UAE@XZ, retail 0x00485DDA, 63 bytes.
@@ -30,13 +30,7 @@ inline Snapshot::~Snapshot()
 {
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class __declspec(novtable) CreateObjectDieModuleData : public Snapshot
 {
 public:

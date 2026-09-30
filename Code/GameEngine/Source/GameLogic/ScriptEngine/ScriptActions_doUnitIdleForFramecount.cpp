@@ -1,27 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // Retail RVA 0x003C9311, 82 bytes.
 // ?doUnitIdleForFramecount@ScriptActions@@IAEXABVAsciiString@@H_N@Z
 // BFME1 donor reference/open-bfme-1/game/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions.cpp doUnitIdleForFramecount
 // BFME2 deltas: bool seconds param with factor at 0x00DBA4E4 selecting setSequentialTimer frames like doUnitGuardForFramecount sibling.
 // Evidence: rowed getUnitNamed 0x003588E7 plus AsciiString pin, rowed aiIdle 0x001E8A38, rowed setSequentialTimer Object overload 0x00203FCF.
 // TheScriptEngine at 0x00DFE16C. AIUpdateInterface at Object+0x258 with command at +0x20. Caller at 0x003CE271.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString();
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 enum CommandSourceType { CMD_FROM_SCRIPT = 1 };
 

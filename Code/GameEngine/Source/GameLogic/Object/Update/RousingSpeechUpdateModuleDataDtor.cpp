@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // Rva0044ECCE is an address-derived base stand-in; its target class name is unproven.
 // stlport
 //
@@ -18,14 +18,7 @@
 // plus LevelGrantSpecialPowerModuleDataDtor (novtable plus 0x44ECCE base).
 #include <vector>
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00360D26Member
 {

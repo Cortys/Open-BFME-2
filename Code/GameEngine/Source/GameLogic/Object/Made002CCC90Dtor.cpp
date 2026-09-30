@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1Made002CCC90@@UAE@XZ retail 0x0050BD9D 56B
 // Novtable derived of Rva00507823 base rowed at 0x00507823. Destroys
@@ -8,13 +8,7 @@
 // ??0Made002CCC90 at 0x0050BD45 stores vtable 0x00864F78 plus caller
 // deleting 0x0050BD81 calls here plus same 56B EH shape as rowed
 // CloudBreak 0x004C47F3.
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00507823
 {

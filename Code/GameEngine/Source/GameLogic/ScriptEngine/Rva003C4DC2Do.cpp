@@ -1,20 +1,10 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 // ?Rva003C4DC2Do@@YGXABVAsciiString@@@Z @0x003C4DC2 102B.
 // Script free function walking TerrainLogic list at 0xDFEC50 comparing
 // name at +8 via rowed StringBase compare then calling holder at 0xDFEA3C
 // slot 0x98 with position at +0xC. Evidence: manual loop with next at +0x1C
 // plus movss x y z plus single AsciiString stdcall shape ret 4.
-class AsciiString
-{
-public:
-	char *m_text;
-};
-template<class T>
-class StringBase
-{
-public:
-	int compare(const StringBase &other) const;
-};
+#include "ascii_string.h"
 struct Coord3D
 {
 	float x;

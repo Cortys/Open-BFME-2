@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??1DynamicPortalBehaviourModuleData@@UAE@XZ, retail 0x00461602 (120 bytes).
 // ??_GDynamicPortalBehaviourModuleData@@UAEPAXI@Z, retail 0x004615E6 (28 bytes).
@@ -33,17 +33,7 @@ private:
 	unsigned char m_pad[0x118 - 4]; // +0x04..+0x117
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	AsciiString &operator=(const char *str);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 // TU-local throwing free spelling for the WayPoint inline teardown
 // (pinned at 0x00030830; see header note).

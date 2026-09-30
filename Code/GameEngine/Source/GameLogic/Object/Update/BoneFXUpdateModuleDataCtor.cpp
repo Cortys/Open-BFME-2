@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
 //
 // ??0BoneFXUpdateModuleData@@QAE@XZ, retail 0x00487797, 196 bytes.
 //
@@ -27,16 +27,7 @@ typedef int Int;
 
 #define NULL 0
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	void clear();
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class GameClientRandomVariable
 {

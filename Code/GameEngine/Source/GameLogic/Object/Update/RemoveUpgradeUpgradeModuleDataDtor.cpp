@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
 // stlport
 //
 // ??1RemoveUpgradeUpgradeModuleData@@UAE@XZ, retail 0x004B8050, 69 bytes.
@@ -33,15 +33,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	AsciiString();
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class __declspec(novtable) RemoveUpgradeUpgradeModuleData : public Snapshot
 {

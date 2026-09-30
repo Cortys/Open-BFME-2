@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
 //
 // ??1RiderChangeContainModuleData@@UAE@XZ, retail 0x0047EB36, 66 bytes.
 // RiderChangeContain ModuleData dtor over the pinned SiegeEngine base
@@ -12,11 +12,7 @@
 // BFME1 donor RiderChangeContainModuleDataDestructorThunk.cpp:68 diverges in
 // layout; retail followed.
 
-class AsciiString
-{
-private:
-	char *m_str;
-};
+#include "ascii_string.h"
 
 struct RiderInfo
 {

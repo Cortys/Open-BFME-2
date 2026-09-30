@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?xfer@AutoAbilityBehavior@@MAEXPAVXfer@@@Z, retail 0x0045A291, 86 bytes.
 // Virtual slot 3 (offset 0x0C) of vtable 0x0084175C (class of rowed dtor
@@ -12,11 +12,7 @@
 // Identity is slot 3 plus the UpdateModule base call; shape follows the rowed
 // Rva0045ADC1 xfer at 0x0045AEC9 (same Version(1,2) plus add edi,0x24 tail).
 
-class AsciiString
-{
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class UnicodeString;
 class PooledString;
 struct XferUnknown11;

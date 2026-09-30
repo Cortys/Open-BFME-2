@@ -1,27 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?Rva003BFFECDo@@YGXABVAsciiString@@H@Z @0x003BFFEC 97B
 // Display fullscreen plus trigger via Display virtual 0x114 check, rowed
 // rva002B2466 0x002B2466 with 0 0 1 1, StringBase pin 0x000365F0 temp,
 // Display virtual 0x108 with AsciiString plus 0x40 -1 -1.
 // Evidence: TheDisplay 0x009FE9D8; caller 0x003CBBB6;
 // precedent DisplayRva002B2466 fullscreen 0 0 1 1.
-template<class T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			*(const StringBase<char> *)&that);
-	}
-	~AsciiString() {}
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Display
 {

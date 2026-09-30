@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /DNDEBUG /MD /EHsc
 // ?rva00293275@Object@@QAEXVAsciiString@@@Z @0x00293275 187B
 // Honest Object method tokenizing AsciiString upgrades via rowed nextToken
 // 0x00036D90 and UpgradeCenter findUpgrade 0x0026F26D, granting via rowed
@@ -6,23 +6,8 @@
 // loop over tokens, [ebx+4]+0x115 bit 0x20 selects path, callers unblock.
 typedef bool Bool;
 
-template <typename T>
-class StringBase
-{
-public:
-	Bool nextToken(StringBase<T> *out, const char *seps);
-	StringBase() { m_data = 0; }
-private:
-	void releaseBuffer();
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class UpgradeTemplate;
 class UpgradeCenter

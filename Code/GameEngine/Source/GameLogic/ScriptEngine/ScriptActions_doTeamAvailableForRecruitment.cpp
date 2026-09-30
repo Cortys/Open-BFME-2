@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1
 //
 // ScriptActions::doTeamAvailableForRecruitment, retail 0x003C01AB, 55 bytes.
 // Target evidence: action template 0x5E is TEAM_AVAILABLE_FOR_RECRUITMENT and
@@ -12,22 +12,8 @@
 
 typedef bool Bool;
 
-template <class T>
-class StringBase
-{
-    friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-    StringBase(const StringBase &);
-    ~StringBase();
-    void *m_buffer;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-    AsciiString &operator=(const AsciiString &);
-};
 
 class Team
 {

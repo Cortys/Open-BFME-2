@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Target identity: action-template index 0x134 is NAMED_FACE_WAYPOINT and
 // executeAction case 0x134 calls VA 0x007C9A24 (RVA 0x003C9A24), 92 bytes.
 // Target body resolves the named Object, obtains a Waypoint through
@@ -7,23 +7,7 @@
 // at 0x3C7782 with Waypoint+0x0C and source 1. BFME1 donor maps this behavior
 // to doNamedFaceWaypoint and aiFacePosition.
 
-template<class T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &);
-};
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            *(const StringBase<char> *)&that);
-    }
-    ~AsciiString();
-private:
-    char *m_text;
-};
+#include "ascii_string.h"
 
 struct Coord3D { float x, y, z; };
 class Object;

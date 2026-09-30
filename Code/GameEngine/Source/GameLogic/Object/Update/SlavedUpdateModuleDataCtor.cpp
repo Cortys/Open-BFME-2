@@ -1,4 +1,4 @@
-// cl: /O1 /MD /DNDEBUG /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /DNDEBUG /arch:SSE
 //
 // ??0SlavedUpdateModuleData@@QAE@XZ, retail 0x002552D7, 105 bytes
 // (frameless): compiler vtable store at +0 (pinned ??_7 at 0xBF34C0, slot0
@@ -9,14 +9,7 @@
 // ride as bfme-named members). The owning factory at 0x00255340 (news 0x70)
 // is the sole caller; the pool key at 0x4A1875 names the class. Row
 // supersedes the ctor pin.
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class SlavedUpdateModuleData
 {
