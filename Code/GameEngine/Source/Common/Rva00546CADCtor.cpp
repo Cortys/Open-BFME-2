@@ -10,6 +10,7 @@ class SpecialPowerModuleData
 {
 public:
 	SpecialPowerModuleData();
+	SpecialPowerModuleData(const SpecialPowerModuleData &other);
 
 protected:
 	void *m_vtable; // +0
@@ -25,12 +26,24 @@ class Rva00546CAD : public SpecialPowerModuleData
 {
 public:
 	Rva00546CAD();
+	Rva00546CAD(const Rva00546CAD &other);
 private:
 	enum ObjectID m_18;
 	float m_1c[3];
 };
 
 Rva00546CAD::Rva00546CAD()
+{
+	m_18 = OBJECTID_0;
+	_ReadWriteBarrier();
+	*(const void **)this = g_0086A3C4;
+	m_1c[0] = 0.0f;
+	m_1c[1] = 0.0f;
+	m_1c[2] = 0.0f;
+}
+
+Rva00546CAD::Rva00546CAD(const Rva00546CAD &other)
+	: SpecialPowerModuleData(other)
 {
 	m_18 = OBJECTID_0;
 	_ReadWriteBarrier();

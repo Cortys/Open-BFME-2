@@ -43424,3 +43424,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0FireWeaponPowerModuleData@@QAE@PAVRva0036E346@@H@Z,,0x00546AD0,31,Code/GameEngine/Source/GameLogic/Object/SpecialPower/FireWeaponPowerModuleDataHolderCtor.cpp,matched,holder base rowed 0x00548A25 vtable 0x0086A36C int at 0x18 sibling 0x00546AEF
 ?rva00546DD4@Rva00546CAD@@QAEXW4ObjectID@@@Z,,0x00546DD4,90,Code/GameEngine/Source/Common/Rva00546DD4.cpp,matched,slot 4 of 0x0086A3C4 findObjectByID thrice plus attack plus clear
 ??0?$_Deque_base@UBfmePod8@@V?$allocator@UBfmePod8@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod8@@@1@I@Z,,0x0054A1B7,75,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_pod8_base.cpp,matched,unlock Deque_base Pod8 via Pod16 pattern
+??0Rva00546CAD@@QAE@ABV0@@Z,,0x00546C7F,46,Code/GameEngine/Source/Common/Rva00546CADCtor.cpp,matched,copy base rowed 0x005488E9 clears ObjectID plus floats sibling 0x00546C57
