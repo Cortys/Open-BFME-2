@@ -4096,3 +4096,4 @@ FUN_0067F519	0x0027F519	112	blocked	callback via struct fn needs __thiscall fnpt
 ??0Rva0035E00F@@QAE@XZ	0x0035E206	86	partial	vtable before m10/m14 vs retail after plus or hoisted to top vs after m24 plus final eax vs ecx t=20 model=muse-07 score=0.93 stash=reverse/attempts/0x0035e206.cpp
 ?rva005DDE69@Rva005DDE69@@QAEMIII@Z	0x005DDE69	54	partial	imul fixed via /O1 /G7; left push-esi scheduling and this-in-esi vs m_begin-in-esi (sub/add via mem vs reg, 53B vs 54B) t=20 model=muse-01 score=0.93 stash=reverse/attempts/0x005dde69.cpp
 ??4Rva001F9C73@@QAEAAV0@ABURva001F9C73Src@@@Z	0x001F9C73	69	partial	operator-writeup matches order-calls-EH with 0 reg diffs (68B); left retail branchless src guard vs placement-new branch t=30 model=muse-01 score=0.9 stash=reverse/attempts/0x001f9c73.cpp
+FUN_007f75ec	0x003F75EC	136	blocked	STL rb-tree insert 5-arg thiscall calling _M_create_node and _Rebalance needs donor layout t=5 model=muse-02
