@@ -43588,3 +43588,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSpy/Rva0085A660TimeString.c,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x0085A660; bfme1_sweep T1 5 DIR32 string literal(s) agree
 ?request@Rva007F7030@@QAEXHH@Z,,0x00663720,158,Code/GameEngine/Source/GameNetwork/Rva007F7030Request.cpp,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x007F7030; bfme1_sweep T1 clean transfer
 ?Rva009A78E0@@YAXPBEPAHHHHHPBH@Z,,0x001B8340,110,Code/GameEngine/Source/Common/Rva009A78E0.cpp,matched,BFME1 byte-identical donor (Open-BFME-1 5cae4bdff); b1 0x009A78E0; bfme1_sweep T1 clean transfer
+??0Rva00891CA0Zeroed@@QAE@XZ,,0x006CC250,160,Code/GameEngine/Source/Common/Rva00891CA0ZeroCtor.cpp,matched,BFME1 donor (Open-BFME-1 5cae4bdff); b1 0x00891CA0; bfme1_sweep T1 masked match; one store reordered: BFME2 zeroes +0x88 after +0xA4
