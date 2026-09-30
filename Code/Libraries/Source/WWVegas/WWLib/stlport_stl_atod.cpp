@@ -8,6 +8,12 @@
 
 _STLP_BEGIN_NAMESPACE
 
+// The vendor representation is four/eight little-endian 16-bit words.
+// Matched DIR32 references establish BFME2's double (VA 0x00BBCC48)
+// and long-double (VA 0x00BBCC50) constants; all object bytes match retail.
+template <> const _D_rep _LimG<bool>::_D_inf = {{0, 0, 0, 0x7ff0}};
+template <> const _L_rep _LimG<bool>::_L_inf = {{0, 0, 0, 0x7ff0, 0, 0, 0, 0}};
+
 typedef unsigned int uint32;
 typedef unsigned __int64 uint64;
 #define ULL(x) x##Ui64
