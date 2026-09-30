@@ -6625,3 +6625,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??_7PhysicsBehaviorModuleData@@6B@,0x0084ED70,PhysicsBehaviorModuleData vtable installed by ctor 0x390119 (mov [eax] imm); slot 0 is the deleting-dtor thunk 0x4A10FD
 ?g_009BA4E4@@3HB,0x009BA4E4,int logic frame rate (5) read three times by the PhysicsBehaviorModuleData ctor 0x390119 and by frame timing 0x225D68; address-derived name
 ??$_Destroy@PAUBfmeNarrowRecord00427F75@@@_STL@@YAXPAUBfmeNarrowRecord00427F75@@0@Z,0x002385E6,twin of destroyVersionRecords for 0x18 records per call site 0x004282EF
+??$swap@URva00599435Keyframe@@@_STL@@YAXAAURva00599435Keyframe@@0@Z,0x005A9125,ICF alias: swap over the 8-byte Rva00599435Keyframe compiled under the sort-family TU flags is byte-identical to the rowed 33B swap body at this address; called by __unguarded_partition 0x0059960B
+??$copy_backward@PAURva00599435Keyframe@@PAU1@@_STL@@YAPAURva00599435Keyframe@@PAU1@00@Z,0x004C72FE,ICF alias: copy_backward over Rva00599435Keyframe pointers compiled under the sort-family TU flags is byte-identical to the rowed 27B body at this address; called by __linear_insert 0x005999DB
