@@ -43184,3 +43184,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??4BfmeVectorRecord0002154F3@@QAEAAU0@ABU0@@Z,,0x00215530,33,Code/GameEngine/Source/Common/StringVectorRecordCopyBFME2.cpp,matched,Record assign via pinned AsciiString and rowed vector assign
 ?rva0059EF62@Rva0059EF62@@QAEXIIABVAsciiString@@0I@Z,,0x0059EF62,51,Code/GameEngine/Source/Common/Rva0059EF62Set.cpp,matched,five-arg setter via dword moves and string assigns
 ??0Rva003F610FElement@@QAE@ABU0@@Z,,0x003F54DC,84,Code/Libraries/Source/WWVegas/WWLib/StlportCopyRva003F610F.cpp,matched,copy ctor int plus 2 vectors plus tail20 chain from Construct
+?_M_insert_overflow@?$vector@UBfmeRecordOwner900@@V?$allocator@UBfmeRecordOwner900@@@_STL@@@_STL@@IAEXPAUBfmeRecordOwner900@@ABU3@ABU__false_type@2@I_N@Z,,0x004CBA0F,191,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod900_overflow.cpp,matched,STLport vector RecordOwner900 insert overflow via Pod900 ICF

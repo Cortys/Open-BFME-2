@@ -3748,3 +3748,5 @@ FUN_00979B17	0x00579B17	106	blocked	Apt EH_prolog with scope table 0x79BBB0 plus
 ?rva0023D3AF@Rva0023D3AF@@QAEXH@Z	0x0023D3AF	184	blocked	hist lea plus push esi wall after 6 variants O2 Os G6 barrier register all sunk tail order m_1A4 before m_188 found t=25 model=muse-08
 ?Rva0048BDF8Helper@FireWeaponUpdate@@QAEXXZ	0x0048BDF8	240	blocked	manual list worse 214B vs 226B STL iterator frame and GameLogic pad fixed but still 24 mem diffs t=25 model=muse-05
 FUN_004c055c	0x000C055C	63	blocked	EH clear plus free via Destroy needs guard local for prolog plus unwind t=10 model=muse-02
+?rva002B2E31@GameMessage@@QAE_NPAHHPAVRva003F4DCA@@HH@Z	0x002B2E31	70	blocked	QAE ret14 vs retail plain ret plus caller add esp14 ecx plus caller cleanup no clean MSVC fixed-arg ABI t=25 model=muse-spark
+?Rva0070B590Cleanup@@YAXXZ	0x0070B590	55	blocked	store via esi not ecx persists after void-next split swap while-next t=20 model=muse-spark
