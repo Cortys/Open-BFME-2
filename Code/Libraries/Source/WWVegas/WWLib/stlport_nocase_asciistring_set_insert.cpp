@@ -27,3 +27,4 @@ typedef _STL::_Rb_tree<AsciiString, AsciiString, _STL::_Identity<AsciiString>, B
 template <> NoCaseSetTree::_Link_type NoCaseSetTree::_M_create_node(const AsciiString &);
 
 template NoCaseSetTree::iterator NoCaseSetTree::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const AsciiString &, _STL::_Rb_tree_node_base *);
+template _STL::pair<NoCaseSetTree::iterator, bool> NoCaseSetTree::insert_unique(const AsciiString &);
