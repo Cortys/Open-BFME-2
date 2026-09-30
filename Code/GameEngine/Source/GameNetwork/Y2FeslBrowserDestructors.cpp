@@ -83,7 +83,7 @@ public:
 	int m_count;
 };
 
-class Rva00800630Owner
+class Rva008003C0Owner
 {
 public:
 	void clear();                       // 0x0066CA50
@@ -165,7 +165,7 @@ public:
 	virtual ~Rva00802380Owner();
 
 	char              m_pad00C[ 0x0C ];
-	Rva00800630Owner  m_owner;      // +0x18
+	Rva008003C0Owner  m_owner;      // +0x18
 	int               m_field24;
 	int               m_field28;
 };
