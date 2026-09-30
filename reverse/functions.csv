@@ -43502,3 +43502,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?Rva0054A5EEPushHeap@@YAXU?$_Deque_iterator@UBfmeE8@@U?$_Const_traits@UBfmeE8@@@_STL@@@_STL@@HHUBfmeE8@@@Z,,0x0054A5EE,141,Code/Libraries/Source/WWVegas/WWLib/Rva0054A5EEPushHeap.cpp,matched,unlock deque E8 push heap via float b
 ?rva002D317C@Rva002D317C@@QAEXPBM0HH@Z,,0x002D317C,295,Code/GameEngine/Source/Common/Rva002D317CCalls.cpp,matched,chain Radar window pos size via TheRadar
 ?Rva0030BF0CEqual@@YA_NPBM00@Z,,0x0030BF0C,90,Code/GameEngine/Source/Common/Rva0030BF0CEqual.cpp,matched,float array equal NaN fail
+??0BfmePod60@@QAE@XZ,,0x00587500,72,Code/GameEngine/Source/Common/BfmePod60Ctor.cpp,matched,caller 0x00588A81 stack temp to rowed vector resize plus rowed Region3D empty ctor immediate plus Rva00587375 copy shape
