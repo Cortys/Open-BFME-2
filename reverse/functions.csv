@@ -43452,3 +43452,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ??_GRva0022958D@@UAEPAXI@Z,,0x00229571,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-04b.cpp,matched,chain deleting dtor calls rowed 0x0022958D
 ?rva0051847B@Rva0051847B@@QAEXH@Z,,0x0051847B,220,Code/GameEngine/Source/Common/Rva0051847BAudio.cpp,matched,audio apply via Display slot64 volume loop UseEAX3 plus enable
 ?rva0039922D@CastleBehavior@@QAEXPAURva00398E4AArg@@@Z,,0x0039922D,70,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039922D.cpp,matched,float gate plus find plus key plus module plus call sibling 0x00398E4A
+?Rva003278F1Set@@YAXPAVGameWindow@@VUnicodeString@@@Z,,0x003278F1,71,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetButtonSetText.cpp,matched,unlock same shape as ButtonSetText via WindowManager slot58

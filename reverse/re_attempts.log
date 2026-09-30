@@ -3883,3 +3883,5 @@ FUN_009cc788	0x005CC788	84	blocked	virtual-base dtor with vbtable indirection pl
 ?Rva006CDE00Copy@@YAPAURva006CDE00Item@@PAU1@00@Z	0x006CDE00	74	blocked	5-arg EAStringC array copy needs donor signature 56 vs 74 7 regions t=15 model=muse-06
 ??1Rva005F0584@@UAE@XZ	0x005F0584	75	blocked	dual-vtable EH dtor with virtual call on member+14 needs donor layout t=15 model=muse-06
 ??0BfmeThingCDE@@QAE@PAX00@Z	0x00739E60	227	partial	ctor constant-store order plus push edi late t=25 model=muse-04 score=0.92 stash=reverse/attempts/0x00739e60.cpp
+FUN_00539386	0x00539386	109	blocked	EH vector visitor 109B guard vtable 0x7FB1CC typed catch plus member fn ptr six prior blocks twins 0x002E16C0 0x004FC2B3 0x003F85D9 0x0045EE57 0x005C98F6 0x0032AE25 no new idea t=5 model=muse-10
+?Rva0042AF97Handle@@YGXPAUGameMessage@@@Z	0x0042AF97	161	blocked	161B GameMessage pixelRegion plus holder slot9 plus GameLogic find plus Object status plus dead mov ecx global 0x00E01CFC plus InGameUI byte 0x8B8 too many unknowns for chain t=10 model=muse-10
