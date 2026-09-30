@@ -33,6 +33,11 @@ public:
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() { m_data.releaseBuffer(); }
 	void __cdecl format(const wchar_t *format, ...);
+	const wchar_t *str() const
+	{
+		static const wchar_t TheNullChr = 0;
+		return m_data.m_data ? &m_data.m_data->data[0] : &TheNullChr;
+	}
 private:
 	StringBase<wchar_t> m_data;
 };
@@ -40,6 +45,8 @@ private:
 class GameWindow;
 
 void GadgetTextEntrySetText(GameWindow *g, UnicodeString text);
+UnicodeString __cdecl GadgetTextEntryGetText(GameWindow *g);
+extern "C" __declspec(dllimport) int __cdecl _wtoi(const wchar_t *s);
 
 class Rva0050F0AB
 {
@@ -47,6 +54,7 @@ public:
 	void rva0050F0AB();
 	void rva0050F420(unsigned int val);
 	void rva0050F290();
+	void rva0050F450();
 private:
 	char m_pad00[0x68];
 	unsigned int m_68;
@@ -87,6 +95,21 @@ void Rva0050F0AB::rva0050F290()
 	GameWindow *win = m_78;
 	if (win)
 		Rva0050E776Send(win, 0);
+}
+
+void Rva0050F0AB::rva0050F450()
+{
+	UnicodeString tmp = GadgetTextEntryGetText(m_7c);
+	int v = _wtoi(tmp.str());
+	if (v < 0 || (unsigned int)v > m_68)
+	{
+		m_6c = (v < 0) ? 0 : m_68;
+		rva0050F0AB();
+	}
+	else
+		m_6c = (unsigned int)v;
+	if (m_78)
+		Rva0050E776Send(m_78, (int)m_6c);
 }
 
 class GameWindowManager {
