@@ -138,3 +138,39 @@ void Rva00699180Owner::rva00052098(int b)
 	rva00052048(b);
 	rva00051FFE(b);
 }
+
+void Rva00699180Owner::setVolumes(float volume, unsigned char flags)
+{
+	if (flags & 1)
+	{
+		for (int i = 4; i < 6; ++i)
+			m_base[i] = volume;
+		rva00051FFE(2);
+	}
+	if (flags & 2)
+	{
+		m_base[0] = volume;
+		refreshPair(0, 0);
+	}
+	if (flags & 4)
+	{
+		m_base[1] = volume;
+		refreshPair(0, 1);
+	}
+	if (flags & 8)
+	{
+		for (int i = 0; i < 2; ++i)
+		{
+			m_base[2 + i] = volume;
+			m_base[8 + i] = volume;
+		}
+		rva00051FFE(1);
+		rva00051FFE(4);
+	}
+	if (flags & 16)
+	{
+		for (int i = 6; i < 8; ++i)
+			m_base[i] = volume;
+		rva00051FFE(3);
+	}
+}
