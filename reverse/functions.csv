@@ -44967,3 +44967,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?loadPostProcess@UpdateModule@@MAEXXZ,,0x0058B03E,5,Code/GameEngine/Source/GameLogic/Object/Update/UpdateModuleLoadPostProcess.cpp,matched,ZH UpdateModule::loadPostProcess: tail jump to BehaviorModule::loadPostProcess (shared empty ret 0x000B3FD0)
 ?bfmeBigAllocPR@@YAPAXI@Z,,0x00023790,5,Code/GameEngine/Source/Common/BfmeBigNewDeleteForwarders.cpp,matched,tail jump to rowed operator new; pinned name of 7 calling units
 ?bfmeBigFreePM@@YAXPAX@Z,,0x000237A0,5,Code/GameEngine/Source/Common/BfmeBigNewDeleteForwarders.cpp,matched,tail jump to rowed operator delete; pinned name of 4 calling units
+?rva00403415@AttributeModifierPoolUpdate@@QAEXPAHH@Z,,0x00403415,51,Code/GameEngine/Source/GameLogic/Object/Update/AttributeModifierPoolUpdateRva03415.cpp,matched,unlock pool mask fill via pool this at 0x00484A49 15 dwords
