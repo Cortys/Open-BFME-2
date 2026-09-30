@@ -43323,3 +43323,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0025C134@BfmeStrVM0@@UAEXPAV1@@Z,,0x0025C134,25,Code/GameEngine/Source/Common/BfmeStrVM0Rva0025C134.cpp,matched,vslot 35 of 0x007F5DA0 plus member 0x1c via slot 0x25c
 ?xfer@FireWeaponPowerModuleData@@UAEXPAVXfer@@@Z,,0x00546B91,54,Code/GameEngine/Source/GameLogic/Object/SpecialPower/FireWeaponPowerModuleDataXfer.cpp,matched,slot 3 base plus version plus stances for 0x18
 ??$_Construct@VRva0052BE33@@V1@@_STL@@YAXPAVRva0052BE33@@ABV1@@Z,,0x0052C392,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_game_structs.cpp,matched,STL Construct for Rva0052BE33 calls rowed copy ctor 0x0052BE33
+?Rva0052C961Get@@YAPAXPAX00@Z,,0x0052C961,38,Code/GameEngine/Source/Common/Rva0052C961UninitCopy.cpp,matched,Uninit copy stride 20 via rowed Construct 0x0052C392 caller 0x0052CCA7 unlocks 0x0052CC64
