@@ -11,6 +11,7 @@ class Rva00DFF024Registry
 public:
     void *lookup(int a, int b);
     void *lookup56(int a, int b);
+    void *lookup34(int a, int b);
 };
 
 void *Rva00DFF024Registry::lookup56(int a, int b)
@@ -20,6 +21,17 @@ void *Rva00DFF024Registry::lookup56(int a, int b)
         if (r)
             return r;
         return lookup(a, 6);
+    }
+    return lookup(a, b);
+}
+
+void *Rva00DFF024Registry::lookup34(int a, int b)
+{
+    if (b == -1) {
+        void *r = lookup(a, 3);
+        if (r)
+            return r;
+        return lookup(a, 4);
     }
     return lookup(a, b);
 }

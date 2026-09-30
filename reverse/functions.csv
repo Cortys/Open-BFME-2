@@ -43004,3 +43004,4 @@ _piChannelUserPartedA,,0x006AAF90,243,Code/GameEngine/Source/GameNetwork/GameSpy
 ??0Rva0059F479@@QAE@ABV0@@Z,,0x0059F479,29,Code/GameEngine/Source/Common/Rva0059F479Copy.cpp,matched,copy ctor int plus Open2Rec via rowed copy
 ?rva002AE475@Player@@QAEXPAX@Z,,0x002AE475,17,Code/GameEngine/Source/Common/RTS/PlayerRva002AE252.cpp,matched,Player iterateObjects wrapper
 ?rva001D98BD@Rva001D98BD@@QAE_NH@Z,,0x001D98BD,79,Code/GameEngine/Source/Common/Thing/Rva001D98BD.cpp,matched,caller 0x0005AF27 self-call 0x001D98E4 vector 0x80-0x84 type 0xB0
+?lookup34@Rva00DFF024Registry@@QAEPAXHH@Z,,0x002D2341,48,Code/GameEngine/Source/Common/Rva00DFF024RegistryLookup56.cpp,matched,fallback lookup tries 3 then 4 when b is minus 1 else b via pinned lookup
