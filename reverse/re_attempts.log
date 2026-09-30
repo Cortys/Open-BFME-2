@@ -4368,3 +4368,4 @@ FUN_00772f00	0x00372F00	45	blocked	twin 45B POD _M_erase shape identical to rowe
 ?rva0044770F@GameSlot@@QBE_NXZ	0x0044770F	100	attempted	the 8B address copy is the only diff (retail loads ip and port before storing either); field-wise copy through named temps and a qword copy through the struct both miss (17 and 6 byte diffs vs the banked 2); the struct copy scheduling stays the wall t=6 model=claude-opus-5-5
 FUN_007808F0	0x003808F0	365	blocked	ShowToolTip with 7 DisplayString slots plus font scale-min and snprintf needs full layout t=12 model=muse-03
 FUN_008137C6	0x004137C6	165	blocked	Rb_tree copy ctor duplicate of 0x00413EE6 same mangled name one-name-one-address wall needs Rva-rename recipe t=15 model=muse-03
+?Rva004E5D4DRange@@YAEPAPAX0E@Z	0x004E5D4D	33	partial	exact bytes via thiscall-ignores-this plus Oy- but rowed deleter is stdcall so gate unresolved t=25 model=muse-12 score=0.99 stash=reverse/attempts/0x004e5d4d.cpp
