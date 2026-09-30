@@ -54,7 +54,6 @@ public:
 	Gen0002857E *m_target;
 };
 
-// ??0Rva00691110Handle@@QAE@ABV0@@Z present-unmatched (masked body has 2 identical retail copies; address ambiguous)
 Rva00691110Handle::Rva00691110Handle(const Rva00691110Handle &other)
 {
 	Gen0002857E *target = other.m_target;
