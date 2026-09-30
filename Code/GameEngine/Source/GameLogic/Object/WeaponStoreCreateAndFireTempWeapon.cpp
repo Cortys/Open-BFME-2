@@ -33,6 +33,7 @@ public:
 	virtual void *deleteInstance(int flags);
 	void loadAmmoNow(const Object *source);
 	bool fireWeapon(const Object *source, const Coord3D *pos, int *projectileID);
+	bool rva002CE72B(const Object *source, const Coord3D *pos1, const Coord3D *pos2, int x);
 	const WeaponTemplate *m_template; // +4
 	unsigned int m_ownerID; // +8
 	char m_pad0C[0x50 - 0x0C]; // +0x0C..0x50
@@ -53,6 +54,7 @@ class WeaponStore
 public:
 	Weapon *allocateNewWeapon(const WeaponTemplate *tmpl, WeaponSlotType slot) const;
 	void createAndFireTempWeapon(const WeaponTemplate *wt, const Object *source, const Coord3D *pos);
+	void rva002CE8AA(const WeaponTemplate *wt, const Coord3D *pos1, const Object *source, const Coord3D *pos2, int x);
 };
 
 #define TheWeaponStore (*(WeaponStore **)0x00DFEFDC)
@@ -68,4 +70,20 @@ void WeaponStore::createAndFireTempWeapon(const WeaponTemplate *wt, const Object
 	w->m_50 = TheGameLogic->m_frame + 1;
 	w->fireWeapon(source, pos, 0);
 	::operator delete(w->deleteInstance(0));
+}
+
+// 0x002CE8AA 90B: same allocate plus loadAmmoNow plus deleteInstance family as
+// the pos sibling above, but firing via rowed 0x002CE72B with an explicit
+// source position plus target position plus int, and with no wt null check
+// and no frame+1 store. Caller at 0x0045C833 sets ecx to TheWeaponStore and
+// pushes template plus source-pos plus source plus target-pos plus int, which
+// proves the WeaponStore thiscall class and the 5-arg order.
+void WeaponStore::rva002CE8AA(const WeaponTemplate *wt, const Coord3D *pos1, const Object *source, const Coord3D *pos2, int x)
+{
+	Weapon *w = TheWeaponStore->allocateNewWeapon(wt, WEAPON_SLOT_PRIMARY);
+	if (source != 0)
+		w->m_ownerID = (unsigned int)source->m_id;
+	w->loadAmmoNow(source);
+	w->rva002CE72B(source, pos1, pos2, x);
+	::operator delete(w != 0 ? w->deleteInstance(0) : 0);
 }
