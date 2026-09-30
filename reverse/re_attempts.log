@@ -4313,3 +4313,4 @@ FUN_004b2e4c	0x000B2E4C	105	blocked	custom-ecx-esi-stack-convention-t12-model-mu
 ??1Rva0035CB07@@UAE@XZ	0x0035CB07	134	blocked	EH dtor with vector at +0x0C plus base 0x001B4E74; push0-virtual plus operator-delete element pattern unclear plus erase-free shape needs shared investigation t=15 model=muse-09
 FUN_0010E604	0x0010E604	96	blocked	three vector types in one body: AsciiString get_allocator plus GeometryShape Vector_base plus Rva0007BB16Record uninitialized_copy with EH; needs shared STL version investigation t=5 model=muse-09
 FUN_005DD8E0	0x005DD8E0	281	blocked	two-float UnicodeString ratio ctor with fabs plus snprintf percent2f plus locale decimal split via format-translate; needs donor shape investigation t=8 model=muse-09
+?rva001DD604@Eva@@QAE_NHPAH@Z	0x001DD604	108	blocked	3 idiv no-CSE plus push-edi-before-jl wall; /O1 CSEs to 2 idivs 96B, volatile gives 3 idivs 115B with extra movs, /O2 magic-mul, /Os same as /O1; t=30 model=muse-17
