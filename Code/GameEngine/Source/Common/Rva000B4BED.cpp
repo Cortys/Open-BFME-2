@@ -30,6 +30,7 @@ class Rva000B4BED
 public:
 	void *rva000B4BED(const void *query);
 	void *rva000B4C9D(const void *entry);
+	void *rva000B4CBE(const void *entry);
 };
 
 void *Rva000B4BED::rva000B4BED(const void *query)
@@ -86,6 +87,19 @@ void *Rva000B4BED::rva000B4C9D(const void *entry)
 		if (p == entry)
 			return prev;
 		prev = p;
+	}
+	return 0;
+}
+
+void *Rva000B4BED::rva000B4CBE(const void *entry)
+{
+	bool found = false;
+	for (Rva000B4BEDEntry *p = m_begin; p != m_end; ++p)
+	{
+		if (found)
+			return p;
+		if (p == entry)
+			found = true;
 	}
 	return 0;
 }
