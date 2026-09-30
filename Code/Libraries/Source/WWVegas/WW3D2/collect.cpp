@@ -272,10 +272,7 @@ CollectionClass & CollectionClass::operator = (const CollectionClass & that)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-CollectionClass::~CollectionClass(void)
-{
-	Free();
-}
+// CollectionClass::~CollectionClass: defined in CollectionClassCopyCtor.cpp (its row's unit).
 
 
 /***********************************************************************************************

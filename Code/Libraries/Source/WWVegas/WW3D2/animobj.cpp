@@ -247,40 +247,7 @@ Animatable3DObjClass & Animatable3DObjClass::operator = (const Animatable3DObjCl
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?Animatable3DObjClass::Release present-unmatched
-void Animatable3DObjClass::Release( void ) 
-{
-	switch (CurMotionMode) {
-
-		case BASE_POSE:
-			break;
-
-		case SINGLE_ANIM:
-			if ( ModeAnim.Motion != NULL ) {
-				ModeAnim.Motion->Release_Ref();
-				ModeAnim.Motion = NULL;
-			}
-			break;
-
-		case DOUBLE_ANIM:
-			if ( ModeInterp.Motion0 != NULL ) {
-				ModeInterp.Motion0->Release_Ref();
-				ModeInterp.Motion0 = NULL;
-			}
-
-			if ( ModeInterp.Motion1 != NULL ) {
-				ModeInterp.Motion1->Release_Ref();
-				ModeInterp.Motion1 = NULL;
-			}
-			break;
-
-		case MULTIPLE_ANIM:
-			break;
-
-		default:
-			break;
-	}
-}
+// Animatable3DObjClass::Release: defined in Animatable3DObjRelease.cpp (its row's unit).
 
 /***********************************************************************************************
  * Animatable3DObjClass::Render -- Update this object for rendering                            *
@@ -1000,38 +967,12 @@ void Animatable3DObjClass::Single_Anim_Progress(void)
  * HISTORY:                                                                                    *
  *   4/13/99    BMG : Created.                                                                 *
  *=============================================================================================*/
-// ?Animatable3DObjClass::Is_Animation_Complete present-unmatched
-bool	Animatable3DObjClass::Is_Animation_Complete( void ) const
-{
-	if (CurMotionMode == SINGLE_ANIM) {
-	
-		if ( ModeAnim.AnimMode == ANIM_MODE_ONCE ) {
-			return ( ModeAnim.Frame == ModeAnim.Motion->Get_Num_Frames() - 1 );
-		}
-		else
-		if ( ModeAnim.AnimMode == ANIM_MODE_ONCE_BACKWARDS)
-		{	return ( ModeAnim.Frame == 0);
-		}
-	}
-	return false;
-}
+// Animatable3DObjClass::Is_Animation_Complete: defined in Animatable3DObjIsAnimationComplete.cpp (its row's unit).
 
 /***********************************************************************************************
  * Animatable3DObjClass::Peek_Animation_And_Info *
  *=============================================================================================*/
-// ?Animatable3DObjClass::Peek_Animation_And_Info present-unmatched
-HAnimClass * Animatable3DObjClass::Peek_Animation_And_Info(float& frame, int& numFrames, int& mode, float& mult)
-{
-	if ( CurMotionMode == SINGLE_ANIM ) {
-		frame = ModeAnim.Frame;
-		numFrames = ModeAnim.Motion ? ModeAnim.Motion->Get_Num_Frames() : 0;
-		mode = ModeAnim.AnimMode;
-		mult = ModeAnim.frameRateMultiplier;
-		return ModeAnim.Motion;
-	} else {
-		return NULL;
-	}
-}
+// Animatable3DObjClass::Peek_Animation_And_Info: defined in Animatable3DObjPeekAnimationAndInfo.cpp (its row's unit).
 
 /***********************************************************************************************
  * Animatable3DObjClass::Set_Animation_Frame_Rate_Multiplier *

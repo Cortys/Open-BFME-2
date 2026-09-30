@@ -31,10 +31,7 @@ public:
 	ParticleBufferClass::TextureHandleClass Get_Texture() const;
 };
 
-ParticleBufferClass::TextureHandleClass BFMELineRendererTexture::Get_Texture() const
-{
-	return ParticleBufferClass::TextureHandleClass( m_texture );
-}
+// BFMELineRendererTexture::Get_Texture: defined in BfmeLineRendererTextureGet.cpp (its row's unit).
 
 class ParticleBufferClass::LineRendererShim
 {

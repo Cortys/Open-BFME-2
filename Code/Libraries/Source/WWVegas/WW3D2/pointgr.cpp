@@ -192,38 +192,7 @@ PointGroupClass::PointGroupClass(void) :
  * HISTORY:                                                               * 
  *   11/17/1998 NH  : Created.                                            * 
  *========================================================================*/
-// ?PointGroupClass::~PointGroupClass present-unmatched
-PointGroupClass::~PointGroupClass(void)
-{
-	if (PointLoc) {
-		PointLoc->Release_Ref();
-		PointLoc = NULL;
-	}
-	if (PointDiffuse) {
-		PointDiffuse->Release_Ref();
-		PointDiffuse=NULL;
-	}
-	if (APT) {
-		APT->Release_Ref();
-		APT = NULL;
-	}
-	if (PointSize) {
-		PointSize->Release_Ref();
-		PointSize = NULL;
-	}
-	if (PointOrientation) {
-		PointOrientation->Release_Ref();
-		PointOrientation = NULL;
-	}
-	if (PointFrame) {
-		PointFrame->Release_Ref();
-		PointFrame = NULL;
-	}
-	if (Texture) {
-		REF_PTR_RELEASE(Texture);		
-		Texture = NULL;
-	}
-}
+// PointGroupClass::~PointGroupClass: defined in PointGroupClassDestructor.cpp (its row's unit).
 
 /************************************************************************** 
  * PointGroupClass::operator = -- PointGroupClass assignment operator.    * 

@@ -545,37 +545,8 @@ void Slerp(Quaternion& res, const Quaternion & p,const Quaternion & q,float alph
  * HISTORY:                                                                                    *
  *   2/27/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-void Slerp_Setup(const Quaternion & p,const Quaternion & q,SlerpInfoStruct * slerpinfo)
-{
-	float cos_t;
-	
-	assert(slerpinfo != NULL);
-
-	// cos theta = dot product of p and q
-	cos_t = p.X * q.X + p.Y * q.Y + p.Z * q.Z + p.W * q.W;
-
-	// if q is on opposite hemisphere from A, use -B instead
-	if (cos_t < 0.0f) {
-		cos_t = -cos_t;
-		slerpinfo->Flip = true;
-	} else {
-		slerpinfo->Flip = false;
-	}
-
-	if (1.0f - cos_t < SLERP_EPSILON) {
-
-		slerpinfo->Linear = true;
-		slerpinfo->Theta = 0.0f;
-		slerpinfo->SinT = 0.0f;
-
-	} else {
-
-		slerpinfo->Linear = false;
-		slerpinfo->Theta = WWMath::Acos(cos_t);
-		slerpinfo->SinT = WWMath::Sin(slerpinfo->Theta);
-	
-	}
-}
+// Slerp_Setup: defined in slerp_setup.cpp (its row's unit).
+void Slerp_Setup(const Quaternion & p,const Quaternion & q,SlerpInfoStruct * slerpinfo);
 
 /***********************************************************************************************
  * Cached_Slerp -- Quaternion slerping, optimized with cached values                           *

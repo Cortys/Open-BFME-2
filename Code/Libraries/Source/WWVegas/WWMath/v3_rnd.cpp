@@ -91,11 +91,7 @@ void Vector3SolidSphereRandomizer::Get_Vector(Vector3 &vector)
 	}
 }
 
-// ?Vector3SolidSphereRandomizer::Get_Maximum_Extent present-unmatched
-float Vector3SolidSphereRandomizer::Get_Maximum_Extent(void)
-{
-	return Radius;
-}
+// Vector3SolidSphereRandomizer::Get_Maximum_Extent: defined in Vector3SolidSphereRandomizerExtent.cpp (its row's unit).
 
 // ?Vector3SolidSphereRandomizer::Scale present-unmatched
 void Vector3SolidSphereRandomizer::Scale(float scale)

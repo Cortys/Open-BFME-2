@@ -108,44 +108,12 @@ void W3DRopeDraw::buildSegments()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/W3DRopeDrawDestructorThunk.cpp
-// ?tossSegments@W3DRopeDraw@@AAEXXZ present-unmatched
-void W3DRopeDraw::tossSegments()
-{
-	// remove tracer from the scene and delete
-	for (std::vector<SegInfo>::iterator it = m_segments.begin(); it != m_segments.end(); ++it)
-	{
-		if (it->line)
-		{
-			W3DDisplay::m_3DScene->Remove_Render_Object(it->line);
-			REF_PTR_RELEASE((it->line));
-		}
-		if (it->softLine)
-		{
-			W3DDisplay::m_3DScene->Remove_Render_Object(it->softLine);
-			REF_PTR_RELEASE((it->softLine));
-		}
-	}
-	m_segments.clear();
-}
+// W3DRopeDraw::tossSegments: defined in W3DRopeDrawTossSegments.cpp (its row's unit).
 
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ?initRopeParms@W3DRopeDraw@@UAEXMMABURGBColor@@MMM@Z present-unmatched
-void W3DRopeDraw::initRopeParms(Real length, Real width, const RGBColor& color, Real wobbleLen, Real wobbleAmp, Real wobbleRate)
-{ 
-	m_maxLen = max(1.0f, length);
-	m_curLen = 0.0f;
-	m_width = width;
-	m_color = color;
-	m_wobbleLen = min(m_maxLen, wobbleLen);
-	m_wobbleAmp = wobbleAmp;
-	m_wobbleRate = wobbleRate;
-	m_curZOffset = 0.0f;
-
-	tossSegments();
-	buildSegments();
-}
+// W3DRopeDraw::initRopeParms: defined in W3DRopeDrawInitRopeParms.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -229,61 +197,8 @@ void W3DRopeDraw::crc( Xfer *xfer )
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/W3DRopeDrawDestructorThunk.cpp
-// ?xfer@W3DRopeDraw@@MAEXPAVXfer@@@Z present-unmatched
-void W3DRopeDraw::xfer( Xfer *xfer )
-{
-
-	// version
-	const XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	DrawModule::xfer( xfer );
-
-	// m_segments is not saved
-
-	// cur len
-	xfer->xferReal( &m_curLen );
-
-	// max len
-	xfer->xferReal( &m_maxLen );
-
-	// width
-	xfer->xferReal( &m_width );
-
-	// color
-	xfer->xferRGBColor( &m_color );
-
-	// cur speed
-	xfer->xferReal( &m_curSpeed );
-
-	// max speed
-	xfer->xferReal( &m_maxSpeed );
-
-	// acceleration
-	xfer->xferReal( &m_accel );
-
-	// wobble len
-	xfer->xferReal( &m_wobbleLen );
-
-	// wobble amp
-	xfer->xferReal( &m_wobbleAmp );
-
-	// wobble rate
-	xfer->xferReal( &m_wobbleRate );
-
-	// current wobble phase
-	xfer->xferReal( &m_curWobblePhase );
-
-	// cur Z offset
-	xfer->xferReal( &m_curZOffset );
-
-	if (xfer->getXferMode() == XFER_LOAD)
-		tossSegments();
-
-
-}  // end xfer
+// W3DRopeDraw::xfer: defined in W3DRopeDrawXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

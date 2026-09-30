@@ -163,11 +163,7 @@ void StreakRendererClass::Init(const W3dEmitterLinePropertiesStruct & props)
 }
 
 
-// ?Set_Texture@StreakRendererClass@@QAEXPAVTextureClass@@@Z present-unmatched
-void StreakRendererClass::Set_Texture(TextureClass *texture)
-{ 
-	Texture = Create_Peek(texture); 
-}
+// StreakRendererClass::Set_Texture: defined in StreakRendererSetTextureBFME1.cpp (its row's unit).
 
 // ?Get_Texture@StreakRendererClass@@QBEPAVTextureClass@@XZ present-unmatched
 TextureClass * StreakRendererClass::Get_Texture(void) const

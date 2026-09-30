@@ -94,27 +94,7 @@ HTreeClass::HTreeClass(void) :
 	Name[0] = 0;
 }
 
-// ?Init_Default@HTreeClass@@ present-unmatched
-void HTreeClass::Init_Default(void)
-{
-	Free ();
-
-	NumPivots = 1;
-	Pivot = MSGW3DNEWARRAY("HTreeClass::Pivot") PivotClass[NumPivots];
-
-	Pivot[0].Index = 0;
-	Pivot[0].Parent = NULL;
-	Pivot[0].BaseTransform.Make_Identity();
-	Pivot[0].Transform.Make_Identity();
-	Pivot[0].IsVisible = true;
-	strcpy(Pivot[0].Name,"RootTransform");
-	//::strcpy (Name, "Default");
-	Name[0] = 0;
-	return ;
-
-
-
-}
+// HTreeClass::Init_Default: defined in HTreeClassInitDefault.cpp (its row's unit).
 
 /*********************************************************************************************** 
  * HTreeClass::~HTreeClass -- destructor                                                       * 
@@ -128,13 +108,7 @@ void HTreeClass::Init_Default(void)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
-HTreeClass::~HTreeClass(void)
-{
-	Free();
-
-
-
-}
+// HTreeClass::~HTreeClass: defined in HTreeClassDestructor.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -938,16 +912,7 @@ void HTreeClass::Combo_Update
  * HISTORY:                                                                                    *
  *   11/4/97    GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?Get_Bone_Index@HTreeClass@@ present-unmatched
-int HTreeClass::Get_Bone_Index(const char * name) const
-{
-	for (int i=0; i < NumPivots; i++) {
-		if (stricmp(Pivot[i].Name,name) == 0) {
-			return i;
-		}
-	}
-	return 0;
-}
+// HTreeClass::Get_Bone_Index: defined in HTreeClassBoneLookup.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -962,14 +927,7 @@ int HTreeClass::Get_Bone_Index(const char * name) const
  * HISTORY:                                                                                    *
  *   11/4/97    GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?Get_Bone_Name@HTreeClass@@ present-unmatched
-const char * HTreeClass::Get_Bone_Name(int boneidx) const
-{
-	assert(boneidx >= 0);
-	assert(boneidx < NumPivots);
-
-	return Pivot[boneidx].Name;
-}
+// HTreeClass::Get_Bone_Name: defined in HTreeClassBoneLookup.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -986,38 +944,11 @@ const char * HTreeClass::Get_Bone_Name(int boneidx) const
  * HISTORY:                                                                                    *
  *   4/12/2000  gth : Created.                                                                 *
  *=============================================================================================*/
-// ?Get_Parent_Index@HTreeClass@@ present-unmatched
-int HTreeClass::Get_Parent_Index(int boneidx) const
-{
-	assert(boneidx >= 0);
-	assert(boneidx < NumPivots);
-
-	if (Pivot[boneidx].Parent != NULL) {
-		return Pivot[boneidx].Parent->Index;
-	} else {
-		return 0;
-	}
-}
+// HTreeClass::Get_Parent_Index: defined in HTreeClassBoneLookup.cpp (its row's unit).
 
 
 // Scale this HTree by a constant factor:
-// ?Scale@HTreeClass@@ present-unmatched
-void HTreeClass::Scale(float factor)
-{
-	if (factor == 1.0f) return;
-
-	// Scale pivot translations
-	for (int i = 0; i < NumPivots; i++) {
-		Matrix3D &pivot_transform = Pivot[i].BaseTransform;
-		Vector3 pivot_translation;
-		pivot_transform.Get_Translation(&pivot_translation);
-		pivot_translation *= factor;
-		pivot_transform.Set_Translation(pivot_translation);
-	}
-
-	// Set state used later to scale animations:
-	ScaleFactor *= factor;
-}
+// HTreeClass::Scale: defined in HTreeClassScale.cpp (its row's unit).
 
 
 
@@ -1037,46 +968,11 @@ void HTreeClass::Capture_Bone(int boneindex)
 #endif
 }
 
-// ?Release_Bone@HTreeClass@@ present-unmatched
-void HTreeClass::Release_Bone(int boneindex)
-{
-	assert(boneindex >= 0);
-	assert(boneindex < NumPivots);
-#ifdef LAZY_CAP_MTX_ALLOC
-	if (Pivot[boneindex].CapTransformPtr) 
-	{
-		delete Pivot[boneindex].CapTransformPtr;
-		Pivot[boneindex].CapTransformPtr = NULL;
-	}
-#else
-	Pivot[boneindex].IsCaptured = false;
-#endif
-}
+// HTreeClass::Release_Bone: defined in HTreeClassReleaseBone.cpp (its row's unit).
 
-// ?Is_Bone_Captured@HTreeClass@@ present-unmatched
-bool HTreeClass::Is_Bone_Captured(int boneindex) const
-{
-	assert(boneindex >= 0);
-	assert(boneindex < NumPivots);
-	return Pivot[boneindex].Is_Captured();
-}
+// HTreeClass::Is_Bone_Captured: defined in HTreeClassIsBoneCaptured.cpp (its row's unit).
 
-void HTreeClass::Control_Bone(int boneindex,const Matrix3D & relative_tm,bool world_space_translation)
-{
-	assert(boneindex >= 0);
-	assert(boneindex < NumPivots);
-	assert(Pivot[boneindex].Is_Captured());
-
-#ifdef LAZY_CAP_MTX_ALLOC
-	if (Pivot[boneindex].CapTransformPtr == NULL)
-		return;
-	Pivot[boneindex].WorldSpaceTranslation = world_space_translation;
-	Pivot[boneindex].CapTransformPtr->Mat = relative_tm;
-#else
-	Pivot[boneindex].WorldSpaceTranslation = world_space_translation;
-	Pivot[boneindex].CapTransform = relative_tm;
-#endif
-}
+// HTreeClass::Control_Bone: defined in htree_control.cpp (its row's unit).
 
 // ?Get_Bone_Control@HTreeClass@@ present-unmatched
 void HTreeClass::Get_Bone_Control(int boneindex, Matrix3D & relative_tm) const

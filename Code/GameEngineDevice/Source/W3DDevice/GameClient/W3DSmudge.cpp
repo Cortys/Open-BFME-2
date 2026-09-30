@@ -53,9 +53,7 @@
 
 SmudgeManager *TheSmudgeManager=NULL;
 
-W3DSmudgeManager::W3DSmudgeManager(void)
-{
-}
+// W3DSmudgeManager::W3DSmudgeManager: defined in W3DSmudgeManagerConstructor.cpp (its row's unit).
 
 // ?W3DSmudgeManager::~W3DSmudgeManager present-unmatched
 W3DSmudgeManager::~W3DSmudgeManager()
@@ -75,13 +73,7 @@ void W3DSmudgeManager::reset (void)
 	SmudgeManager::reset();	//base
 }
 
-void W3DSmudgeManager::ReleaseResources(void)
-{
-#ifdef USE_COPY_RECTS
-	REF_PTR_RELEASE(m_backgroundTexture);
-#endif
-	REF_PTR_RELEASE(m_indexBuffer);
-}
+// W3DSmudgeManager::ReleaseResources: defined in W3DSmudgeManagerReleaseResources.cpp (its row's unit).
 
 //Make sure (SMUDGE_DRAW_SIZE * 12) < 65535 because that's the max index buffer size.
 #define SMUDGE_DRAW_SIZE	500	//draw at most 50 smudges per call. Tweak value to improve CPU/GPU parallelism.

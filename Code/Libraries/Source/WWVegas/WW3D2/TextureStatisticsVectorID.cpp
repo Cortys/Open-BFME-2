@@ -291,16 +291,5 @@ static int texture_change_count;
 static RefCountPtr<TextureClass> latest_texture;
 static DynamicVectorClass<TextureStatisticsStruct> texture_statistics;
 
-void Record_Texture_Begin()
-{
-	texture_memory = 0;
-	texture_count = 0;
-	lightmap_texture_memory = 0;
-	lightmap_texture_count = 0;
-	procedural_texture_memory = 0;
-	procedural_texture_count = 0;
-	record_count = 0;
-	texture_change_count = 0;
-	latest_texture.Clear();
-	texture_statistics.Resize(0);
-}
+// Record_Texture_Begin: defined in TextureStatisticsVector.cpp (its row's unit).
+void Record_Texture_Begin();

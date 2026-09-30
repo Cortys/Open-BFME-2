@@ -308,15 +308,7 @@ HAnimClass * HAnimManagerClass::Peek_Anim(const char * name)
  * HISTORY:                                                                                    * 
  *   08/11/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
-// ?Get_Anim@HAnimManagerClass@@ present-unmatched
-HAnimClass * HAnimManagerClass::Get_Anim(const char * name)
-{	
-	HAnimClass * anim = Peek_Anim( name );
-	if ( anim != NULL ) {
-		anim->Add_Ref();
-	}
-	return anim;
-}
+// HAnimManagerClass::Get_Anim: defined in hanimmgr_GetAnim.cpp (its row's unit).
 
 
 /*********************************************************************************************** 

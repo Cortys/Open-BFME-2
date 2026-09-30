@@ -873,41 +873,8 @@ void AdaptiveDeltaMotionChannelClass::Free(void)
  * HISTORY:                                                                                    * 
  *   02/18/2000 JGA : Created.                                                                 * 
  *=============================================================================================*/
-bool AdaptiveDeltaMotionChannelClass::Load_W3D(ChunkLoadClass & cload)
-{
-	int size = cload.Cur_Chunk_Length();
-	unsigned int datasize = size - sizeof(W3dAdaptiveDeltaAnimChannelStruct);
-	unsigned int numInts  = (datasize / sizeof(uint32)) + 1;
-
-	W3dAdaptiveDeltaAnimChannelStruct chan;
-	if (cload.Read(&chan,sizeof(W3dAdaptiveDeltaAnimChannelStruct)) != sizeof(W3dAdaptiveDeltaAnimChannelStruct)) {
-		return false;
-	}
-						
-	VectorLen   = chan.VectorLen;
-	Type 		   = chan.Flags;
-	PivotIdx    = chan.Pivot;
-	NumFrames	= chan.NumFrames;
-	Scale			= chan.Scale;
-	CacheFrame	= 0x7FFFFFFF;	// a big number, so we know its not valid
-	CacheData   = MSGW3DNEWARRAY("AdaptiveDeltaMotionChannelClass::CacheData") float[VectorLen * 2]; // cacheframe & cachedframe+1 by VectorLen
-
-	Data = MSGW3DNEWARRAY("AdaptiveDeltaMotionChannelClass::Data") uint32[numInts];
-	// BFME stores the byte size of the Data allocation in the dword that this
-	// header spells _bfme_adm_scale2 (this+0x10): retail reuses the very
-	// register it just passed to operator new[] and stores it here at
-	// 0x00977D3E, between the Data assignment and the Data[0] copy.  Written
-	// through a pun so no header change is required.
-	*(uint32 *)&_bfme_adm_scale2 = numInts * sizeof(uint32);
-	Data[0] = chan.Data[0];
-	
-	if (cload.Read(&(Data[1]), datasize) != datasize) {
-		Free();
-		return false;
-	}	
-	return true;
-
-}	// Load_W3D
+// AdaptiveDeltaMotionChannelClass::Load_W3D: defined in AdaptiveDeltaLoadW3D.cpp (its row's unit).
+	// Load_W3D
 
 
 /*********************************************************************************************** 

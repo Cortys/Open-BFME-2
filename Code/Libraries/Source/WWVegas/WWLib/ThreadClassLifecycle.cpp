@@ -27,16 +27,7 @@ private:
     int m_priority;
 };
 
-ThreadClass::ThreadClass(const char *name)
-{
-    m_handle = 0;
-    m_priority = 0;
-    m_threadId = 0;
-    if (name)
-        strcpy(m_name, name);
-    else
-        memcpy(m_name, "No name", 8);
-}
+// ThreadClass::ThreadClass: defined in ThreadClassCtor.cpp (its row's unit).
 
 void ThreadClass::Set_Priority(int priority)
 {

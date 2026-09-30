@@ -41,10 +41,4 @@ void Straw::Get_From(Straw * straw)
 }
 
 
-int Straw::Get(void * source, int slen)
-{
-	if (ChainTo != NULL) {
-		return(ChainTo->Get(source, slen));
-	}
-	return(0);
-}
+// Straw::Get: defined in straw_get.cpp (its row's unit).

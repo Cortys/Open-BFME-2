@@ -97,17 +97,7 @@ void ThreadClass::Execute()
 }
 
 // byte-exact reconstruction: Code/Libraries/Source/WWVegas/WWLib/ThreadClassLifecycle.cpp
-// ?Set_Priority@ThreadClass@@ present-unmatched
-void ThreadClass::Set_Priority(int priority)
-{
-	#ifdef _UNIX
-		// assert(0);
-		return;
-	#else
-		thread_priority=priority;
-		if (handle) SetThreadPriority((HANDLE)handle,THREAD_PRIORITY_NORMAL+thread_priority);
-	#endif
-}
+// ThreadClass::Set_Priority: defined in ThreadClassLifecycle.cpp (its row's unit).
 
 void ThreadClass::Stop(unsigned ms)
 {
@@ -167,8 +157,4 @@ unsigned ThreadClass::_Get_Current_Thread_ID()
 }
 
 // byte-exact reconstruction: Code/Libraries/Source/WWVegas/WWLib/ThreadClassLifecycle.cpp
-// ?Is_Running@ThreadClass@@ present-unmatched
-bool ThreadClass::Is_Running()
-{
-	return !!handle;
-}
+// ThreadClass::Is_Running: defined in ThreadClassLifecycle.cpp (its row's unit).

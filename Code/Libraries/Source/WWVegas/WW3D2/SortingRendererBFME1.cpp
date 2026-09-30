@@ -122,12 +122,7 @@ bool SortingRendererClass::_EnableTriangleDraw=true;
 static unsigned DEFAULT_SORTING_POLY_COUNT = 16384;	// (count * 3) must be less than 65536
 static unsigned DEFAULT_SORTING_VERTEX_COUNT = 32768;	// count must be less than 65536
 
-// ?SetMinVertexBufferSize@SortingRendererClass@@SAXI@Z present-unmatched
-void SortingRendererClass::SetMinVertexBufferSize( unsigned val )
-{
-	DEFAULT_SORTING_VERTEX_COUNT = val;
-	DEFAULT_SORTING_POLY_COUNT = val/2;	//typically have 2:1 vertex:triangle ratio.
-}
+// SortingRendererClass::SetMinVertexBufferSize: defined in sortingrenderer.cpp (its row's unit).
 
 struct ShortVectorIStruct
 {
@@ -722,31 +717,7 @@ void SortingRendererClass::Flush_Sorting_Pool()
 
 // ----------------------------------------------------------------------------
 
-// ?Deinit@SortingRendererClass@@ present-unmatched
-void SortingRendererClass::Deinit()
-{
-	SortingNodeStruct *head = NULL;
-
-	//
-	//	Flush the sorted list
-	//
-	while ((head = sorted_list.Head ()) != NULL) {
-		sorted_list.Remove_Head ();
-		delete head;
-	}
-
-	//
-	//	Flush the clean list
-	//
-	while ((head = clean_list.Head ()) != NULL) {
-		clean_list.Remove_Head ();
-		delete head;
-	}
-
-	delete[] temp_index_array;
-	temp_index_array=NULL;
-	temp_index_array_count=0;
-}
+// SortingRendererClass::Deinit: defined in sortingrenderer.cpp (its row's unit).
 
 
 // ----------------------------------------------------------------------------

@@ -88,13 +88,7 @@ MatBufferClass::MatBufferClass(const MatBufferClass & that) :
 	}
 }
 
-// ??1MatBufferClass@@UAE@XZ present-unmatched
-MatBufferClass::~MatBufferClass(void)
-{
-	for (int i=0; i<Count; i++) {
-		REF_PTR_RELEASE(Array[i]);
-	}
-}
+// MatBufferClass::~MatBufferClass: defined in MatBufferCleanup.cpp (its row's unit).
 
 // ShareBufferClass keeps its Array at +0x08 in BFME and at +0x0C here -- the same
 // four bytes the MeshMatDescClass comment above records as an empty W3DMPO base
@@ -121,11 +115,7 @@ VertexMaterialClass * MatBufferClass::Get_Element(int index)
 	return Array[index];
 }
 
-// ?Peek_Element@MatBufferClass@@ present-unmatched
-VertexMaterialClass * MatBufferClass::Peek_Element(int index)
-{
-	return Array[index];
-}
+// MatBufferClass::Peek_Element: defined in MeshMatDescBufferAccessors.cpp (its row's unit).
 
 
 /**************************************************************************************************
@@ -545,49 +535,7 @@ void MeshMatDescClass::Make_Color_Array_Unique(int array)
 	}
 }
 
-void MeshMatDescClass::Install_UV_Array(int pass,int stage,Vector2 * uvs,int count)
-{
-	/*
-	** Compute the crc of this uv array
-	*/
-	unsigned int crc = CRC_Memory((unsigned char *)uvs,count * sizeof(Vector2));
-
-	/*
-	** See if there is an existing uv-array that matches the one just loaded
-	*/
-	bool found = false;
-
-	for (int i=0; i<Get_UV_Array_Count(); i++) {
-		if (UV[i]->Get_CRC() == crc) {
-			found = true;
-			Set_UV_Source(pass,stage,i);
-			break;
-		}
-	}
-
-	/*
-	** If there was no existing uv array, install this one
-	*/
-	if (found == false) {
-
-		/*
-		** Find the first empty UV-array slot
-		*/
-		int new_index = 0;
-		while ((UV[new_index] != NULL) && (new_index < MAX_UV_ARRAYS)) {
-			new_index++;
-		}
-
-		if (new_index < MAX_UV_ARRAYS) {
-
-			WWASSERT(UV[new_index] == NULL);
-			UV[new_index] = NEW_REF(UVBufferClass,(count, "MeshMatDescClass::UV"));
-			memcpy(UV[new_index]->Get_Array(),uvs,count * sizeof(Vector2));
-			UV[new_index]->Update_CRC();  // update the crc for future comparision
-			Set_UV_Source(pass,stage,new_index);
-		}
-	}
-}
+// MeshMatDescClass::Install_UV_Array: defined in MeshMatDescInstallUVArray.cpp (its row's unit).
 
 
 // ?Post_Load_Process@MeshMatDescClass@@ present-unmatched

@@ -128,21 +128,7 @@ void StreakLineClass::Reset_Line(void)
 ////////////////////////////////////////////////////////////////////////////
 // These are segment points, and include the start and end point of the
 // entire line. Therefore there must be at least two.
-// ?Set_Locs@StreakLineClass@@ present-unmatched
-void StreakLineClass::Set_Locs( unsigned int num_points, Vector3 *locs )
-{
-	if (num_points < 2 || !locs) {
-		WWASSERT(0);
-		return;
-	}
-
-	PointLocations.Delete_All();
-	for (unsigned int i=0; i<num_points; i++) {
-		PointLocations.Add(locs[i],num_points);
-	}
-
-	Invalidate_Cached_Bounding_Volumes();
-}
+// StreakLineClass::Set_Locs: defined in StreakLineSetPoints.cpp (its row's unit).
 
 void StreakLineClass::Set_Widths( unsigned int num_points, float *widths )
 {
@@ -172,43 +158,7 @@ void StreakLineClass::Set_Colors( unsigned int num_points, Vector4 *colors )
 
 }
 
-// ?Set_LocsWidthsColors@StreakLineClass@@ present-unmatched
-void StreakLineClass::Set_LocsWidthsColors( unsigned int num_points, 
-																					 Vector3 *locs, 
-																					 float *widths, 
-																					 Vector4 *colors,
-																					 unsigned int *personalities)
-{
-
-	Personalities = personalities;
-
-	Set_Locs( num_points, locs );
-
-	if (widths)
-	{
-		Set_Widths( num_points, widths );
-
-		//sanity check
-		int locCount = PointLocations.Count();
-		int widCount = PointWidths.Count();
-		WWASSERT(locCount == widCount);
-
-	}
-
-	if (colors)
-	{
-		Set_Colors( num_points, colors );
-
-		//sanity check
-		int locCount = PointLocations.Count();
-		int colCount = PointColors.Count();
-		WWASSERT(locCount == colCount);
-
-	}
-
-
-	Invalidate_Cached_Bounding_Volumes();
-}
+// StreakLineClass::Set_LocsWidthsColors: defined in StreakLineSetPoints.cpp (its row's unit).
 
 
 

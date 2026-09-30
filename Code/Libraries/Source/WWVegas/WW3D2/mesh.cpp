@@ -645,11 +645,7 @@ void MeshClass::Render(RenderInfoClass & rinfo)
  * HISTORY:                                                                                    *
  *   3/4/2001   gth : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshClass::Render_Material_Pass present-unmatched
-void MeshClass::Render_Material_Pass(MaterialPassClass * pass,IndexBufferClass * ib)
-{
-	// BFME: DX8 render path stubbed.
-}
+// MeshClass::Render_Material_Pass: defined in bfme2_mesh_material_pass.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -754,19 +750,7 @@ void MeshClass::Replace_VertexMaterial(VertexMaterialClass* vmat,VertexMaterialC
  * HISTORY:                                                                                    *
  *   4/2/2001   hy : Created.                                                                  *
  *=============================================================================================*/
-// ?MeshClass::Make_Unique present-unmatched
-void MeshClass::Make_Unique(bool force_meshmdl_clone)
-{
-	// Usually we will not clone the mesh model if it is already unique - force_meshmdl_clone will
-	// force it to be cloned in any case. This is used in some special situations, for example if we
-	// want to change this mesh and it may have already been rendered, we need to clone the mesh
-	// model regardless of whether there is another mesh using it.
-	if (Model->Num_Refs()==1 && !force_meshmdl_clone) return;
-
-	MeshModelClass *newmesh=NEW_REF(MeshModelClass,(*Model));
-	REF_PTR_SET(Model,newmesh);
-	REF_PTR_RELEASE(newmesh);
-}
+// MeshClass::Make_Unique: defined in MeshClassMakeUnique.cpp (its row's unit).
 
 /*********************************************************************************************** 
  * MeshClass::Load -- creates a mesh out of a mesh chunk in a .w3d file                        * 

@@ -1662,11 +1662,7 @@ void RTS3DScene::flushTranslucentObjects(RenderInfoClass & rinfo)
 //=============================================================================
 /** Returns an iterator of the lights in the scene. */
 //=============================================================================
-RefRenderObjListIterator * RTS3DScene::createLightsIterator(void)
-{
-	RefRenderObjListIterator * it = NEW RefRenderObjListIterator(&LightList);	// poolify
-	return it;
-}
+// RTS3DScene::createLightsIterator: defined in RTS3DScene_createLightsIterator.cpp (its row's unit).
 
 
 //=============================================================================

@@ -195,28 +195,7 @@ void W3DTankTruckDraw::stopMoveDebris( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ?tossEmitters@W3DTankTruckDraw@@ present-unmatched
-void W3DTankTruckDraw::tossEmitters()
-{
-	if (m_dustEffect)
-	{
-		m_dustEffect->attachToObject(NULL);
-		m_dustEffect->destroy();
-		m_dustEffect = NULL;
-	}
-	if (m_dirtEffect)
-	{
-		m_dirtEffect->attachToObject(NULL);
-		m_dirtEffect->destroy();
-		m_dirtEffect = NULL;
-	}
-	if (m_powerslideEffect)
-	{
-		m_powerslideEffect->attachToObject(NULL);
-		m_powerslideEffect->destroy();
-		m_powerslideEffect = NULL;
-	}
-}
+// W3DTankTruckDraw::tossEmitters: defined in W3DTankTruckDrawTossEmitters.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 #pragma optimize("s", on)
@@ -304,36 +283,7 @@ void W3DTankTruckDraw::createEmitters( void )
 /**
  * Stop creating debris from the tank treads
  */
-// ?enableEmitters@W3DTankTruckDraw@@ present-unmatched
-void W3DTankTruckDraw::enableEmitters( Bool enable  )
-{
-	// don't check... if we are hidden the first time thru, then we'll never create the emitters.
-	// eg, if we are loading a game and the unit is in a tunnel, he'll never get emitteres even when he exits.
-	//if (!m_effectsInitialized) 
-	{
-		createEmitters();
-		m_effectsInitialized=true;
-	}
-	if (m_dustEffect)
-	{
-		if (enable) 
-			m_dustEffect->start();
-		else
-			m_dustEffect->stop();
-	}
-	if (m_dirtEffect)
-	{
-		if (enable) 
-			m_dirtEffect->start();
-		else
-			m_dirtEffect->stop();
-	}
-	if (m_powerslideEffect)
-	{
-		if (!enable) 
-			m_powerslideEffect->stop();
-	}
-}
+// W3DTankTruckDraw::enableEmitters: defined in W3DTankTruckDrawTossEmitters.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?updateBones@W3DTankTruckDraw@@ present-unmatched
 void W3DTankTruckDraw::updateBones( void ) {
@@ -417,28 +367,7 @@ void W3DTankTruckDraw::setHidden(Bool h)
 }
 
 /**Update uv coordinates on each tread object to simulate movement*/
-void W3DTankTruckDraw::updateTreadPositions(Real uvDelta)
-{
-	Real offset_u;
-	TreadObjectInfo *pTread=m_treads;
-
-	for (Int i=0; i<m_treadCount; i++)
-	{
-		if (pTread->m_type == TREAD_MIDDLE)	//this tread needs to scroll backwards
-			offset_u = pTread->m_materialSettings.customUVOffset.X + uvDelta;
-		else
-		if (pTread->m_type == TREAD_LEFT)	//this tread needs to scroll forwards
-			offset_u = pTread->m_materialSettings.customUVOffset.X + uvDelta;
-		else
-		if (pTread->m_type == TREAD_RIGHT)	//this tread needs to scroll backwards
-			offset_u = pTread->m_materialSettings.customUVOffset.X - uvDelta;
-				
-		// ensure coordinates of offset are in [0, 1] range:
-		offset_u = offset_u - WWMath::Floor(offset_u);
-		pTread->m_materialSettings.customUVOffset.Set(offset_u,0);
-		pTread++;
-	}
-}
+// W3DTankTruckDraw::updateTreadPositions: defined in W3DTankTruckDrawUpdateTreadPositions.cpp (its row's unit).
 
 /**Grab pointers to the sub-meshes for each tread*/ 
 // ?updateTreadObjects@W3DTankTruckDraw@@ present-unmatched

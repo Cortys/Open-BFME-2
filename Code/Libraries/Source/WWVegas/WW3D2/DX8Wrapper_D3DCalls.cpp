@@ -137,39 +137,12 @@ private:
 
 // ?Create_Additional_Swap_Chain@DX8Wrapper@@SAPAUIDirect3DSwapChain8@@PAX@Z
 // Zero Hour's windowed present-parameter fill, then CreateAdditionalSwapChain.
-IDirect3DSwapChain8 *DX8Wrapper::Create_Additional_Swap_Chain(void *render_window)
-{
-	D3DPRESENT_PARAMETERS params = { 0 };
-	params.BackBufferFormat = _PresentParameters.BackBufferFormat;
-	params.BackBufferCount = 1;
-	params.MultiSampleType = 0;
-	params.hDeviceWindow = render_window;
-	params.SwapEffect = D3DSWAPEFFECT_COPY;
-	params.Windowed = 1;
-	params.EnableAutoDepthStencil = 1;
-	params.AutoDepthStencilFormat = _PresentParameters.AutoDepthStencilFormat;
-	params.Flags = 0;
-	params.FullScreen_RefreshRateInHz = 0;
-	params.PresentationInterval = 0;
-
-	IDirect3DSwapChain8 *swap_chain = 0;
-	D3DDevice->lpVtbl->CreateAdditionalSwapChain(D3DDevice, &params, &swap_chain);
-	++D3DCallCount;
-	return swap_chain;
-}
+// DX8Wrapper::Create_Additional_Swap_Chain: defined in dx8wrapper.cpp (its row's unit).
 
 // ?_Create_DX8_Surface@DX8Wrapper@@SAPAVIDirect3DSurface9@@IIW4WW3DFormat@@W4_D3DPOOL@@@Z
 // BFME wraps D3D9's CreateOffscreenPlainSurface on the D3D8-typed device
 // pointer where Zero Hour called CreateImageSurface.
-IDirect3DSurface9 *DX8Wrapper::_Create_DX8_Surface(
-	unsigned width, unsigned height, WW3DFormat format, D3DPOOL pool)
-{
-	IDirect3DSurface9 *surface = 0;
-	D3DDevice->lpVtbl->CreateOffscreenPlainSurface(
-		D3DDevice, width, height, format, pool, &surface, 0);
-	++D3DCallCount;
-	return surface;
-}
+// DX8Wrapper::_Create_DX8_Surface: defined in DX8Wrapper_Create_DX8_Surface.cpp (its row's unit).
 
 // ?_Get_DX8_Front_Buffer@DX8Wrapper@@SAPAVIDirect3DSurface9@@XZ
 // ZH CreateImageSurface/GetFrontBuffer, BFME D3D9 GetDisplayMode(0),

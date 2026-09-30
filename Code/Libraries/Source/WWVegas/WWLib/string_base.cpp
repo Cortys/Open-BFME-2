@@ -69,35 +69,11 @@ struct CharCompare
     char m_unused;
 };
 
-int compareRange(const char *a, int alen, const char *b, int blen, CharCompare tag)
-{
-    // Retail selects the shorter length with cmovge; MSVC 7.1 will only emit
-    // cmp/jl here, which is the one instruction keeping 0x00005816 and
-    // 0x00005841 unclaimed. The ternary is not cosmetic: written as an if
-    // statement cl also picks the other length for esi, so three more bytes
-    // move. As written, the only difference from retail is the select -
-    // 42 of 43 bytes and 43 of 44. See reverse/attempts/0x00005816.cpp.
-    const int len = alen < blen ? alen : blen;
-    const int result = memcmp(a, b, len);
-    if (result != 0)
-        return result;
-    return alen - blen;
-}
+// compareRange: defined in string_base_compare_range.cpp (its row's unit).
+int compareRange(const char *a, int alen, const char *b, int blen, CharCompare tag);
 
-int compareRangeNoCase(const char *a, int alen, const char *b, int blen, CharCompare tag)
-{
-    // Retail selects the shorter length with cmovge; MSVC 7.1 will only emit
-    // cmp/jl here, which is the one instruction keeping 0x00005816 and
-    // 0x00005841 unclaimed. The ternary is not cosmetic: written as an if
-    // statement cl also picks the other length for esi, so three more bytes
-    // move. As written, the only difference from retail is the select -
-    // 42 of 43 bytes and 43 of 44. See reverse/attempts/0x00005816.cpp.
-    const int len = alen < blen ? alen : blen;
-    const int result = _memicmp(a, b, len);
-    if (result != 0)
-        return result;
-    return alen - blen;
-}
+// compareRangeNoCase: defined in string_base_compare_range.cpp (its row's unit).
+int compareRangeNoCase(const char *a, int alen, const char *b, int blen, CharCompare tag);
 
 template <>
 int StringBase<char>::compare(const char *str, int len) const

@@ -758,7 +758,5 @@ static void openwithcontrol (lua_State *L) {
 }
 
 
-LUALIB_API void lua_iolibopen (lua_State *L) {
-  luaL_openl(L, iolib);
-  openwithcontrol(L);
-}
+// lua_iolibopen: defined in liolib_bfme1.c (its row's unit).
+LUALIB_API void lua_iolibopen (lua_State *L);

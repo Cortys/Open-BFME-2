@@ -307,18 +307,7 @@ void HRawAnimClass::add_channel(MotionChannelClass * newchan)
  * HISTORY:                                                                                    *
  *   1/19/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-// ?read_bit_channel@HRawAnimClass@@AAE_NAAVChunkLoadClass@@PAPAVBitChannelClass@@_N@Z present-unmatched
-bool HRawAnimClass::read_bit_channel(ChunkLoadClass & cload,BitChannelClass * * newchan,bool pre30)
-{
-	*newchan = W3DNEW BitChannelClass;
-	bool result = (*newchan)->Load_W3D(cload);	
-
-	if (result && pre30) {
-		(*newchan)->PivotIdx += 1;
-	}
-	
-	return result;
-}
+// HRawAnimClass::read_bit_channel: defined in HRawReadBitChannel.cpp (its row's unit).
 
 
 /***********************************************************************************************

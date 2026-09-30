@@ -351,26 +351,7 @@ void BoxRenderObjClass::Set_Color(const Vector3 & color)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void BoxRenderObjClass::Init(void)
-{
-	WWASSERT(IsInitted == false);
-
-	/*
-	** Set up the materials
-	*/
-	WWASSERT(_BoxMaterial == NULL);
-	_BoxMaterial = NEW_REF(VertexMaterialClass,());
-	_BoxMaterial->Set_Ambient(0,0,0);
-	_BoxMaterial->Set_Diffuse(0,0,0);
-	_BoxMaterial->Set_Specular(0,0,0);
-	_BoxMaterial->Set_Emissive(1,1,1);
-	_BoxMaterial->Set_Opacity(1.0f);		// uses vertex alpha...
-	_BoxMaterial->Set_Shininess(0.0f);
-
-	_BoxShader = ShaderClass::_PresetAlphaSolidShader; //_PresetAdditiveSolidShader;
-
-	IsInitted = true;
-}
+// BoxRenderObjClass::Init: defined in BoxRenderObjInit.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -388,13 +369,7 @@ void BoxRenderObjClass::Init(void)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void BoxRenderObjClass::Shutdown(void)
-{
-	WWASSERT(IsInitted == true);
-	REF_PTR_RELEASE(_BoxMaterial);
-	
-	IsInitted = false;
-}
+// BoxRenderObjClass::Shutdown: defined in BoxRenderObjInit.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -675,10 +650,7 @@ AABoxRenderObjClass & AABoxRenderObjClass::operator = (const AABoxRenderObjClass
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-RenderObjClass * AABoxRenderObjClass::Clone(void) const
-{
-	return W3DNEW AABoxRenderObjClass(*this);
-}
+// AABoxRenderObjClass::Clone: defined in AABoxRenderObjClone.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -797,11 +769,7 @@ void AABoxRenderObjClass::Set_Position(const Vector3 &v)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void AABoxRenderObjClass::update_cached_box(void)
-{
-	CachedBox.Center = Transform.Get_Translation() + ObjSpaceCenter;
-	CachedBox.Extent = ObjSpaceExtent;
-}
+// AABoxRenderObjClass::update_cached_box: defined in AABoxUpdateCachedBox.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -934,10 +902,7 @@ bool AABoxRenderObjClass::Intersect_OBBox(OBBoxIntersectionTestClass & boxtest)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void AABoxRenderObjClass::Get_Obj_Space_Bounding_Sphere(SphereClass & sphere) const
-{
-	sphere.Init(ObjSpaceCenter,ObjSpaceExtent.Length());
-}
+// AABoxRenderObjClass::Get_Obj_Space_Bounding_Sphere: defined in AABoxBoundingSphere.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -1068,10 +1033,7 @@ OBBoxRenderObjClass & OBBoxRenderObjClass::operator = (const OBBoxRenderObjClass
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-RenderObjClass * OBBoxRenderObjClass::Clone(void) const
-{
-	return W3DNEW OBBoxRenderObjClass(*this);
-}
+// OBBoxRenderObjClass::Clone: defined in OBBoxRenderObjClone.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -1188,12 +1150,7 @@ void OBBoxRenderObjClass::Set_Position(const Vector3 &v)
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void OBBoxRenderObjClass::update_cached_box(void)
-{
-	Matrix3D::Transform_Vector(Transform,ObjSpaceCenter,&CachedBox.Center);
-	CachedBox.Extent.Set(ObjSpaceExtent);
-	CachedBox.Basis.Set(Transform);
-}
+// OBBoxRenderObjClass::update_cached_box: defined in OBBoxUpdateCachedBox.cpp (its row's unit).
 
 
 /***********************************************************************************************

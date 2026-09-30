@@ -32,10 +32,7 @@
 #include "_pch.h"
 #include <new>      // needed for placement new prototype
 
-// ??0DebugIONet@@QAE@XZ present-unmatched
-DebugIONet::DebugIONet(void)
-{
-}
+// DebugIONet::DebugIONet: defined in DebugIONetConstructorThunk.cpp (its row's unit).
 
 // byte-exact reconstruction: Code/GameEngine/Source/Common/DebugIONetDestructorThunk.cpp
 // ??1DebugIONet@@UAE@XZ present-unmatched
@@ -142,11 +139,7 @@ void DebugIONet::Execute(class Debug& dbg, const char *cmd, bool structuredCmd,
   }
 }
 
-// ?Create@DebugIONet@@SAPAVDebugIOInterface@@XZ present-unmatched
-DebugIOInterface *DebugIONet::Create(void)
-{
-  return new (DebugAllocMemory(sizeof(DebugIONet))) DebugIONet();
-}
+// DebugIONet::Create: defined in DebugIONet_Create.cpp (its row's unit).
 
 // ?DebugIONet::Delete present-unmatched
 void DebugIONet::Delete(void)

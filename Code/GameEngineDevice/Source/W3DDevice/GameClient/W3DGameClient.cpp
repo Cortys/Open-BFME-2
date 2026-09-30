@@ -407,17 +407,8 @@ public:
 	virtual void setTimeOfDay(TimeOfDay tod) = 0;
 };
 
-void W3DGameClient::setTimeOfDay( TimeOfDay tod )
-{
-	void *water = *(void **)0x01306D7C;
-	if (water)
-		((W3DGameClientWaterShim *)water)->setTimeOfDay(tod);
-	void *shadow = *(void **)0x01306EEC;
-	if (shadow)
-		((W3DGameClientShadowShim *)shadow)->setTimeOfDay(tod);
-	void *display = *(void **)0x012F1270;
-	((W3DGameClientDisplayShim *)display)->setTimeOfDay(tod);
-}  // end setTimeOfDay
+// W3DGameClient::setTimeOfDay: defined in W3DGameClient_setTimeOfDay.cpp (its row's unit).
+  // end setTimeOfDay
 
 
 //-------------------------------------------------------------------------------------------------

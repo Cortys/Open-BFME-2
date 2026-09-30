@@ -67,24 +67,10 @@ W3DPropDrawModuleData::W3DPropDrawModuleData()
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/W3DPropDrawModuleDataDestructorThunk.cpp
-// ??1W3DPropDrawModuleData@@ present-unmatched
-W3DPropDrawModuleData::~W3DPropDrawModuleData()
-{
-}
+// W3DPropDrawModuleData::~W3DPropDrawModuleData: defined in W3DPropDrawModuleDataDtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
-// ?buildFieldParse@W3DPropDrawModuleData@@ present-unmatched
-void W3DPropDrawModuleData::buildFieldParse(MultiIniFieldParse& p) 
-{
-  ModuleData::buildFieldParse(p);
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "ModelName", INI::parseAsciiString, NULL, offsetof(W3DPropDrawModuleData, m_modelName) },
-		
-		{ 0, 0, 0, 0 }
-	};
-  p.add(dataFieldParse);
-}
+// W3DPropDrawModuleData::buildFieldParse: defined in W3DPropDrawModuleDataCtor.cpp (its row's unit).
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS ///////////////////////////////////////////////////////////////////////////////
@@ -163,21 +149,8 @@ void W3DPropDraw::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@W3DPropDraw@@ present-unmatched
-void W3DPropDraw::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	DrawModule::xfer( xfer );
-
-	// no data to save here, nobody will ever notice
-
-}  // end xfer
+// W3DPropDraw::xfer: defined in W3DPropDrawXfer.cpp (its row's unit).
+  // end xfer
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */

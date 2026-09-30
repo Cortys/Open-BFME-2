@@ -249,14 +249,7 @@ void WW3D::Set_NPatches_Gap_Filling_Mode(NPatchesGapFillingModeEnum mode)
 	}
 }
 
-void WW3D::Set_NPatches_Level(unsigned level)
-{
-	if (level>8) level=8;
-	if (level<1) level=1;
-	if (NPatchesLevel==1 && level>1) TheDX8MeshRenderer.Invalidate();
-	if (NPatchesLevel>1 && level==1) TheDX8MeshRenderer.Invalidate();
-	NPatchesLevel = level;
-}
+// WW3D::Set_NPatches_Level: defined in WW3D_SetNPatchesLevelThunk.cpp (its row's unit).
 
 /***********************************************************************************************
  * WW3D::Init -- Initialize the WW3D Library                                                   *
@@ -765,10 +758,7 @@ bool WW3D::Registry_Load_Render_Device( const char * sub_key, char *device, int 
 	return DX8Wrapper::Registry_Load_Render_Device(sub_key,device,device_len,width,height,depth,windowed,texture_depth);
 }
 
-void WW3D::_Invalidate_Mesh_Cache()
-{
-	TheDX8MeshRenderer.Invalidate();
-}
+// WW3D::_Invalidate_Mesh_Cache: defined in bfmedynamicvertexbuffer.cpp (its row's unit).
 
 // ?_Invalidate_Textures@WW3D@@ present-unmatched
 void WW3D::_Invalidate_Textures()
@@ -2077,14 +2067,7 @@ void WW3D::Render_And_Clear_Static_Sort_Lists(RenderInfoClass & rinfo)
 	AreStaticSortListsEnabled = old_enable;
 }
 
-// ?Enable_Sorting@WW3D@@ present-unmatched
-void WW3D::Enable_Sorting(bool onoff)
-{
-	IsSortingEnabled = onoff;
-	// Have to invalidate mesh rendering system because
-	// meshes are put into different fvfs depending on their sort state
-	TheDX8MeshRenderer.Invalidate();
-}
+// WW3D::Enable_Sorting: defined in WW3D_EnableSorting.cpp (its row's unit).
 
 // ?Override_Current_Static_Sort_Lists@WW3D@@ present-unmatched
 void WW3D::Override_Current_Static_Sort_Lists(StaticSortListClass * sort_list)

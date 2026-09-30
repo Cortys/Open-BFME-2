@@ -329,19 +329,8 @@ void SortingRendererClass::Insert_Triangles(
 //
 // ----------------------------------------------------------------------------
 
-void Release_Refs(SortingNodeStruct* state)
-{
-	int i;
-	for (i=0;i<MAX_VERTEX_STREAMS;++i) {
-		REF_PTR_RELEASE(state->sorting_state.vertex_buffers[i]);
-	}
-	REF_PTR_RELEASE(state->sorting_state.index_buffer);
-	REF_PTR_RELEASE(state->sorting_state.material);
-	for (i=0;i<DX8Wrapper::Get_Current_Caps()->Get_Max_Textures_Per_Pass();++i) 
-	{
-		REF_PTR_RELEASE(state->sorting_state.Textures[i]);
-	}
-}
+// Release_Refs: defined in SortingRendererBFME1.cpp (its row's unit).
+void Release_Refs(SortingNodeStruct* state);
 
 static unsigned overlapping_node_count;
 static unsigned overlapping_polygon_count;
@@ -351,20 +340,7 @@ static SortingNodeStruct* overlapping_nodes[MAX_OVERLAPPING_NODES];
 
 // ----------------------------------------------------------------------------
 
-// ?Insert_To_Sorting_Pool@SortingRendererClass@@CAXPAVSortingNodeStruct@@@Z present-unmatched
-void SortingRendererClass::Insert_To_Sorting_Pool(SortingNodeStruct* state)
-{
-	if (overlapping_node_count>=MAX_OVERLAPPING_NODES) {
-		Release_Refs(state);
-		WWASSERT(0);
-		return;
-	}
-
-	overlapping_nodes[overlapping_node_count]=state;
-	overlapping_vertex_count+=state->vertex_count;
-	overlapping_polygon_count+=state->polygon_count;
-	overlapping_node_count++;
-}
+// SortingRendererClass::Insert_To_Sorting_Pool: defined in SortingRendererBFME1.cpp (its row's unit).
 
 // ----------------------------------------------------------------------------
 //static unsigned prevLight = 0xffffffff;
