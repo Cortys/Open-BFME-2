@@ -6583,3 +6583,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?rva009148C0@PointGroupClass@@QAEXPAVVector3@@PAMPAEH@Z,0x0017A890,PointGroupClass vertex-location fill; address read from the REL32 site of the BFME1-donor rva00917B10 body at 0x0017F3A0 (bfme1_sweep T2 transfer b1 0x00917B10)
 ?rva00916CD0@PointGroupClass@@QAEXPAEHH@Z,0x0017D770,PointGroupClass UV fill; address read from the REL32 site of the BFME1-donor rva00917B10 body at 0x0017F3A0 (bfme1_sweep T2 transfer b1 0x00917B10)
 ?updatePoolSizes@Rva00914860Sizer@@QAEXHHPAH@Z,0x0017F150,PointGroupClass sizing prologue; address read from the REL32 site of the BFME1-donor rva00917B10 body at 0x0017F3A0 (bfme1_sweep T2 transfer b1 0x00917B10)
+?bfmeIntersects@GeometryInfo@@QBE_NABUCoord3D@@MABV1@0M@Z,0x006BEB80,address read from the REL32 site of the BFME1-donor Rva009F66F0 body at 0x00628A60 (bfme1_sweep T2 transfer b1 0x009F66F0; BFME1 ledger name)
