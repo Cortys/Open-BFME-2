@@ -43222,3 +43222,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva000D17BA@W3DTornadoDraw@@AAEXH@Z,,0x000D17BA,53,Code/GameEngine/Source/GameClient/Drawable/Update/AnimatedParticleSysBoneClientUpdateCtor.cpp,matched,vslot 11 via rope decal update
 ?Rva00173572PushHeap@@YAXPAUBfmeAssignRecord32@@HHU1@P6A_NABU1@2@Z@Z,,0x00173572,135,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_push_heap.cpp,matched,chain from assign 0x00173499 caller adjust_heap 0x001738C3 push_heap percolate
 ?Rva001738C3AdjustHeap@@YAXPAUBfmeAssignRecord32@@HHU1@P6A_NABU1@2@Z@Z,,0x001738C3,172,Code/Libraries/Source/WWVegas/WWLib/stlport_bfmeassignrecord32_adjust_heap.cpp,matched,chain from push_heap 0x00173572 callers 0x00173A25 0x00173A9C adjust sift
+??1Rva00180B94_Prototype@@UAE@XZ,,0x00180A46,90,Code/GameEngine/Source/Common/Rva00180A46Dtor.cpp,matched,dtor twin Rva001805E0 via virtual get plus delete
