@@ -44333,3 +44333,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?rva003AFB2A@Rva003AFB2A@@QAEXPAUCoord3D@@MMII@Z,,0x003AFB2A,151,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFB2A.cpp,matched,unlock via virtual slot 0x1c caller 0x1F5586 globals TheWritableGlobalData g_Va00BBB8D8 g_Va007C26F0 ret14
 ??0Rva003AF329@@QAE@ABV0@@Z,,0x003AF329,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleTemplateCopyCtors.cpp,matched,unlock via base 0x3AF34F vtbls g_00C1CFD4 g_00C1C054 g_00C1CFC4 ret4
 ??$__find@PAUBfmePod104@@U1@@_STL@@YAPAUBfmePod104@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z,,0x0040A705,118,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_vector_bodies.cpp,matched,unlock stride 0x68 Pod104 unrolled find
+?rva0044EAF3@Rva0044EAF3@@QAEPAV1@HIII@Z,,0x0044EAF3,88,Code/GameEngine/Source/Common/Rva0044EAF3Init.cpp,matched,unlock lane memset bitfield init returning this
