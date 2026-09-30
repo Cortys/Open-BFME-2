@@ -4,7 +4,8 @@
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
-#pragma intrinsic(__debugbreak)
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(__debugbreak, _ReadWriteBarrier)
 class BfmeAptValue006DCD20 {
     virtual void vtableSlot0();
     struct { unsigned int unknown : 25; int type : 7; } flags;
@@ -45,6 +46,7 @@ public:
     int rva006E03A0() const;
     int rva006CBEE0(bool bUndefOK) const;
     void *rva006E04A0() const;
+    void *rva006E0F40() const;
 };
 
 class Rva006DBB30SarDwordField
@@ -516,4 +518,27 @@ void *BfmeAptValue006DCD20::rva006E04A0() const
     if (!p || p == (struct Rva006E04A0Target *)0xbaadf00d)
         return 0;
     return p->field10;
+}
+
+// ?rva006E0F40@BfmeAptValue006DCD20@@QBEPAXXZ, retail 0x006E0F40, 103 bytes.
+// Type-15 checked cast to the +0x4c display object, "this" assert at
+// AptCIH.h:196 (0xC4) plus "isTextInst()" assert at AptCIH.h:130 (0x82), both
+// via the file string at 0x008E8C60. Evidence: rowed
+// get@Rva006DBB30SarDwordField equals 0xf plus rowed isUndefined fast path
+// skipping the second assert; 30 callers use the result as an object;
+// same /O2 shape as rva006E04A0 sibling in this TU. Barrier keeps the +0x4c
+// load late (retail test-je-int3-mov, no hoist) like rva006E0FB0 neighbour;
+// emits no bytes.
+void *BfmeAptValue006DCD20::rva006E0F40() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0xC4);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() != 15 || isUndefined()) {
+        g_bfmeAptAssertAtE17734("isTextInst()","c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h",0x82);
+        if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+    }
+    _ReadWriteBarrier();
+    return m_p;
 }
