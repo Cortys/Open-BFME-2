@@ -44920,3 +44920,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva006F7D80@@QAE@XZ,,0x006F7D80,27,Code/Libraries/Source/Apt/Rva006F7D80Ctor.cpp,matched,stores vtable 0x008ED358 at +0 plus -1 at +4 and zeros at +0xC +0x10 +0x14; callers 0x006F8808 0x006F883F
 ??0Rva006F7DA0@@QAE@XZ,,0x006F7DA0,27,Code/Libraries/Source/Apt/Rva006F7DA0Ctor.cpp,matched,stores vtable 0x008ED364 at +0 plus -1 at +4 and zeros at +0xC +0x10 +0x14; caller 0x006F8870
 ?rva006F7C10@Rva006F7C10@@QAEXXZ,,0x006F7C10,83,Code/Libraries/Source/Apt/Rva006F7C10Clear.cpp,matched,pooled list clear walks Holder+8 freeing 0x1C data then 0x14 node; callers 0x006E2644 0x006E2A05
+?rva006CE860@Rva006CE860@@QAEXXZ,,0x006CE860,41,Code/GameEngine/Source/Common/Thing/Rva006CE860Pop.cpp,matched,pop-front via rowed detach 0x006CD530 plus pool free 8 via rowed 0x006DB270
