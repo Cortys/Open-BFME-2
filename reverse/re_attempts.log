@@ -3879,3 +3879,6 @@ FUN_00685778	0x00285778	232	blocked	virtual slot 24 doubles bitfields needs dono
 ?Rva005874BAInsert@@YAXPAURec12@@HHU1@PBX@Z	0x005874BA	70	partial	movss order comiss mem jbe vs jae t=25 model=muse-08 score=0.93 stash=reverse/attempts/0x005874ba.cpp
 ??1Rva0011172A@@UAE@XZ	0x0011172A	72	blocked	dtor via deleting-dtor caller 0x00111867 two vptr stores 0x7CFAC0 then 0x7C650C plus Release member at +0x2AB4; minimal novtable and implicit models give 53B frameless no EH no vtable relocs vs retail 72B EH; needs real 11KB class layout plus live-vtable reason t=10 model=muse-07
 FUN_009cc788	0x005CC788	84	blocked	virtual-base dtor with vbtable indirection plus pin-only clear needs donor t=8 model=muse-04
+??$lower_bound@PAUBfmePod20@@U1@@_STL@@YAPAUBfmePod20@@PAU1@0ABU1@@Z	0x0054150A	35	blocked	wrapper 28 vs 35 same wall as Pod28 0x005414C2 comp stosb version mismatch t=15 model=muse-06
+?Rva006CDE00Copy@@YAPAURva006CDE00Item@@PAU1@00@Z	0x006CDE00	74	blocked	5-arg EAStringC array copy needs donor signature 56 vs 74 7 regions t=15 model=muse-06
+??1Rva005F0584@@UAE@XZ	0x005F0584	75	blocked	dual-vtable EH dtor with virtual call on member+14 needs donor layout t=15 model=muse-06
