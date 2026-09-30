@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /O1 /MD /EHs
 //
 // Scalar deleting-destructor wrappers with audited owner attributions.
 // Target facts: 28-byte flag-test wrappers, their call destinations, and the
@@ -7,14 +7,80 @@
 // class spellings. A named slot alone does not establish the complete owner.
 // See docs/reconstruction/deleting-destructor-identity-audit.md.
 //
-// These minimal declarations emit the wrappers, not complete class layouts.
-// No bases, member layout, or destructor implementation are claimed here.
-// The noinline empty destructor is an unmatched compilation scaffold; the
-// verified wrapper call resolves to the retail destructor through its pin.
+// ActiveBody now carries its complete verified layout (three vptr bases plus
+// the +0xE0 pointer and +0xF8 string proven by ??1 at 0x004BF951); the
+// deleting-destructor anchor below still emits the ??_G COMDAT from the
+// visible destructor, and the wrapper call resolves through the ledger row.
 
 // ??_GActiveBody@@UAEPAXI@Z @0x004BF9D1 28B: slot 0 of vtable 0x00C5B038; calls ??1 at 0x004BF951.
 // Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x004BF848 uses class-name string "ActiveBody".
-class ActiveBody { public: __declspec(noinline) virtual ~ActiveBody(); };
-// ??1ActiveBody@@UAE@XZ present-unmatched
-ActiveBody::~ActiveBody() {}
+// ?releaseBuffer@?$StringBase@D@@AAEXXZ is rowed in StringBaseWideReleaseBuffer.cpp
+extern "C" void free(void *block);
+
+template <typename T>
+class StringBase
+{
+public:
+// ??1?$StringBase@D@@QAE@XZ present-unmatched
+	~StringBase() { releaseBuffer(); }
+
+private:
+	void releaseBuffer();
+	T *m_data;
+};
+
+struct FreePtr
+{
+// ??1FreePtr@@QAE@XZ present-unmatched
+	~FreePtr()
+	{
+		if (m_ptr != 0)
+			free(m_ptr);
+	}
+	void *m_ptr;
+};
+
+class Rva004BD763
+{
+public:
+	virtual ~Rva004BD763();
+
+private:
+	char m_pad04[8];
+};
+
+class ActiveBodyB1
+{
+public:
+	virtual void f1() {}
+};
+
+class ActiveBodyB2
+{
+public:
+	virtual void f2() {}
+};
+
+// ??1ActiveBody@@UAE@XZ @0x004BF951 (100B): three vptr stores (+0/+0xC/+0x10
+// over two trivial MI bases), AsciiString member release at +0xF8 (EH state 1
+// via rowed releaseBuffer), conditional free of the +0xE0 pointer (EH state 0
+// via rowed _free under /EHs: extern-C callees need /EHs), then the rowed
+// ??1Rva004BD763 base (EH state -1). Callers linkNode/handle prove the class;
+// member order ptr-then-string proven by EH states 0-then-1.
+class ActiveBody : public Rva004BD763, public ActiveBodyB1, public ActiveBodyB2
+{
+public:
+	virtual ~ActiveBody();
+
+private:
+	char m_pad14[0xE0 - 0x14];
+	FreePtr m_ptrE0;
+	char m_padE4[0xF8 - 0xE4];
+	StringBase<char> m_strF8;
+};
+
+ActiveBody::~ActiveBody()
+{
+}
+
 void ActiveBody_Delete(ActiveBody *p) { delete p; }
