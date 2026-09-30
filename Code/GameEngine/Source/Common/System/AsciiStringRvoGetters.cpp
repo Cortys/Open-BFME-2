@@ -175,6 +175,7 @@ class Rva004FDCE1AsciiField
 {
 public:
 	AsciiString get() const;
+	void rva004FDCFF(AsciiString value);
 
 private:
 	char m_pad[0x1B0];
@@ -185,6 +186,16 @@ private:
 AsciiString Rva004FDCE1AsciiField::get() const
 {
 	return m_value;
+}
+
+// Setter for the same +0x1B0 member the getter above returns: abuts it
+// (0x004FDCE1+30=0x004FDCFF), same class and offset. Takes AsciiString by value
+// (lea eax,[ebp+8]; ret 4), assigns via rowed operator= then destroys the copy
+// via rowed releaseBuffer with EH unwind (mov eax,scope; call __EH_prolog).
+void Rva004FDCE1AsciiField::rva004FDCFF(AsciiString value)
+{
+	AsciiString &slot = m_value;
+	slot = value;
 }
 
 class Rva004FDD6DAsciiField
