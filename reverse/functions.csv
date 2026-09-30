@@ -43156,3 +43156,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0028B31A@Object@@QAEXH@Z,,0x0028B31A,65,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B31A.cpp,matched,Object entry clear plus compact caller 0x0023D670 chain from 0x0028B2BF
 ?xfer@Rva00492C59@@MAEXPAVXfer@@@Z,,0x00492E10,51,Code/GameEngine/Source/GameLogic/Object/Update/Rva00492E10Xfer.cpp,matched,slot 3 vtable 0x0084E1A8 Version 1 1 plus base SpecialAbilityUpdate plus IsCRC
 ?rva00032A20@GeneralAllocator@Allocator@EA@@QAEIPBX@Z,,0x00032A20,146,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,caller _GetBlockSize lock 0x4E4 count 0x18 size mask 0x7FFFFFF8
+?rva0007BAD6@Rva0007BAD6@@QAEXXZ,,0x0007BAD6,64,Code/GameEngine/Source/Common/Rva0007BAD6Clear.cpp,matched,release-all clear over plus0x14 to plus0x24 via rowed holder and texture-ref clears
