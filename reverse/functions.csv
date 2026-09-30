@@ -44195,3 +44195,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0050F1D2@BFME2WideConcatPair@@QBEHXZ,,0x0050F1D2,13,Code/GameEngine/Source/Common/System/Rva0050F1D2.cpp,matched,totalLength pin plus int at plus12
 ?Rva0050E776Send@@YAHPAVGameWindow@@H@Z,,0x0050E776,30,Code/GameEngine/Source/GameClient/GUI/Rva0050E776Send.cpp,matched,TheWindowManager slot 58 winSendSystemMsg 0x400D
 ?rva0050F420@Rva0050F0AB@@QAEXI@Z,,0x0050F420,48,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,chain from Send plus clamp to m68 plus rva0050F0AB
+?rva00362693@Rva00362693@@QAE_NXZ,,0x00362693,26,Code/GameEngine/Source/Common/Bfme/Rva00362693Check.cpp,matched,caller 0x36277D triple check unblocks 0x36276F
