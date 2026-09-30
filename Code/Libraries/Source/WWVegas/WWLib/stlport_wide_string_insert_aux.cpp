@@ -83,7 +83,7 @@ class _STLP_alloc_proxy : public Alloc
 public:
     Value *allocate(size_t count)
     {
-        return count != 0 ? Alloc::allocate(count * sizeof(Value), 0) : 0;
+        return count != 0 ? (Value *)allocator<char>::allocate(count * sizeof(Value), 0) : 0;
     }
     void deallocate(Value *block, size_t)
     {
