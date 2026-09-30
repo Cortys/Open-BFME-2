@@ -43146,3 +43146,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003FD690@Rva003FD690@@QAEXPBUCoord@@@Z,,0x003FD690,45,Code/GameEngine/Source/GameLogic/Object/Rva003FD690.cpp,matched,callers 0x00212196 0x00212222 copy 12B to +0x20 v0x1C with arg then v0x0C
 ?rva0020E493@Rva0020E493@@QAEPAUOut0020E493@@PAU2@@Z,,0x0020E493,23,Code/Libraries/Source/WWVegas/WWLib/Rva0020E493Copy.cpp,matched,eight-byte copy from this+B0 float first via fld caller 0x0020F2C9 uses eax
 ??4BfmeVectorRecord000C0BEC@@QAEAAU0@ABU0@@Z,,0x000BDD21,39,Code/GameEngine/Source/Common/StringVectorRecordAssignC0BEC.cpp,matched,record assign via text vector word10 without self-check
+??1Rva002560E3@@UAE@XZ,,0x002560E3,84,Code/GameEngine/Source/GameLogic/Object/Rva002560E3ModuleDataDtor.cpp,matched,unlock ModuleData dtor strings filter Snapshot BBB554
