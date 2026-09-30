@@ -51,3 +51,9 @@ private:
 Rva004E179A::~Rva004E179A()
 {
 }
+
+// ?Rva004E179ADelete@@YAXPAVRva004E179A@@@Z absent-from-retail
+void Rva004E179ADelete(Rva004E179A *p)
+{
+	delete p;
+}
