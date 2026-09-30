@@ -276,3 +276,18 @@ Rva003AF9A9::Rva003AF9A9(const Rva003AF9A9 &other)
 	, FXParticleSystem::TerrainFireEmissionInfo((const FXParticleSystem::TerrainFireEmissionInfo &)other)
 {
 }
+
+// ??0Rva003AF97C@@QAE@ABV0@@Z @0x003AF97C 45B: derived copy calling rowed 0x003AF9A9 then own 4 vptrs.
+// Evidence: calls 0x003AF9A9 (landed this session) then stores at +0/+0x14/+0x18/+0x1c DIR32;
+// same 45B shape as rowed 0x003AF7D1; caller 0x003AF945 calls this; unlocks 0x003AF945.
+class Rva003AF97C : public Rva003AF9A9
+{
+public:
+	Rva003AF97C(const Rva003AF97C &other);
+	virtual ~Rva003AF97C();
+};
+
+Rva003AF97C::Rva003AF97C(const Rva003AF97C &other)
+	: Rva003AF9A9(other)
+{
+}
