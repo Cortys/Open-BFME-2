@@ -44204,3 +44204,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0050F290@Rva0050F0AB@@QAEXXZ,,0x0050F290,31,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,chain clear m6c plus Send zero
 ?rva0050F5A6@Rva0050F5A6@@QAEXH@Z,,0x0050F5A6,57,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,chain winSetFocus plus array rva0050F290
 ?rva0031AEC9@ControlBar@@QAEXXZ,,0x0031AEC9,54,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AEC9.cpp,matched,ControlBar blink start via winGetStatus and winEnable
+?Rva005D64D9MakeHeap@@YAXPAVRva005D5A7E@@0H@Z,,0x005D64D9,128,Code/GameEngine/Source/Common/Rva005D64D9MakeHeap.cpp,matched,caller 0x5D6697 heap family via AdjustHeap G7
