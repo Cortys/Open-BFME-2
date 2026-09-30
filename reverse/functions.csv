@@ -43946,3 +43946,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva000EB08C@@QAE@XZ,,0x000EB27F,45,Code/GameEngine/Source/Common/Rva000EB08CCheck.cpp,matched,default ctor Region2D arrays at 0x10 and 0x90 caller 0x000ED667
 ?rva005DDCA5@Rva005DDC6B@@QAEMII@Z,,0x005DDCA5,64,Code/GameEngine/Source/Common/Rva005DDC6BSum.cpp,matched,float range max init 0x00BBB8DC caller 0x005DDE96
 ??0Rva002CEC0A@@QAE@XZ,,0x002CEBEE,28,Code/GameEngine/Source/Common/Rva002CEC0ACtor.cpp,matched,vtable plus vector member plus4 same class as dtor 0x002CEC0A
+?rva004911AE@DamageFieldUpdate@@QAEXPAVObject@@@Z,,0x004911AE,126,Code/GameEngine/Source/GameLogic/Object/Update/DamageFieldUpdateRva004911AE.cpp,matched,fires weapon slot or victim list via TheGameLogic frame
