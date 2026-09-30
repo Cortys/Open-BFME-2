@@ -44822,3 +44822,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva0049FDF9Parse@@YAXPAVINI@@PAVProductionUpdateModuleData@@@Z,,0x0049FDF9,113,Code/GameEngine/Source/GameLogic/Object/Update/ProductionUpdateQuantityModifierParse.cpp,matched,INI QuantityModifier parse via getNextToken scanInt set push_back 0x49FDC2
 ?erasePrereqVec@Rva0033EB77Vec@@QAEPAXPAX0@Z,,0x0033EB77,51,Code/GameEngine/Source/Common/Thing/ThingTemplatePrereqVectorErase.cpp,matched,caller parsePrerequisites 0x33EBB5 at plus0x324 shape twin of AsciiString erase 0x2CCFC
 ?readDict@DataChunkInput@@QAE?AVDict@@XZ,,0x00307833,397,Code/GameEngine/Source/Common/System/DataChunkReadDict.cpp,matched,chain DataChunkInput readDict via BFME1 donor plus inlined Dict copy
+?rva00059DF5@Rva00059DF5@@QAEXABVAsciiString@@H@Z,,0x00059DF5,103,Code/GameEngine/Source/Common/Rva00059DF5Method.cpp,matched,guard 0x4120E over 0x9D4 plus virtual slot 0x68 plus set insert 0x5897D at 0xA14 via G7 imul
