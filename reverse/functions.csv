@@ -43912,3 +43912,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva000EB2AC@Rva000EB08C@@QAE_NH_N@Z,,0x000EB2AC,67,Code/GameEngine/Source/Common/Rva000EB08CCheck.cpp,matched,find index by id2 then call 0x000EB08C
 ?Rva002D342AXfer20@@YAPAVXfer@@PAV1@PA_N@Z,,0x002D342A,95,Code/GameEngine/Source/Common/System/Rva002D342AXfer20.cpp,matched,Xfer uint20 plus 20 bools via Rva0060BC53 slot map plus caller 0x002D64A8
 ?Rva004DD619Footprint@@YAPAVXfer@@PAV1@PAH@Z,,0x004DD619,30,Code/GameEngine/Source/Common/System/Rva004DD619Footprint.cpp,matched,XferEnum PathfinderFootprintAngle slot37 plus chain return
+?Reset@Render2DSentenceClass@@UAEXXZ,,0x00155A20,173,Code/Libraries/Source/WWVegas/WW3D2/Render2DSentenceClass_Reset.cpp,matched,BFME1 render2dsentence Reset donor with thread guard
