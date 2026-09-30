@@ -4192,3 +4192,6 @@ FUN_008fa7a5	0x004FA7A5	112	blocked	twin of blocked 0x0038153B and 0x0053F97F; s
 ?rva0030C032@Rva0030C032@@QAEXXZ	0x0030C032	109	blocked	EH vector div4 callback with stack guard vtable g_00BFB1CC same family as 0x002B55F2 0x005C4845 0x0030F2E0 all blocked needs donor no new idea t=5 model=muse-09
 ?rva0043F1A4@Rva0043F1A4@@QAEEXZ	0x0043F1A4	104	blocked	pin-only invoke mangling PAXPBDH10000 not declarable as C++ types plus AsciiString RVO plus EH plus 4 args no donor t=10 model=muse-09
 ?Rva004786F8Get@@YAHXZ	0x004786F8	114	blocked	FPU fild fadd fdiv plus float g_00BC26EC literal unknown no other user plus pin-only init plus TheGameLogic no donor t=5 model=muse-09
+?rva004036B1@Rva004036B1@@QAE_NPAXPAMPBV?$StringBase@D@@@Z	0x004036B1	92	partial	test-eax-fffffffc-vs-sar-2-only-diff-plus-barrier-fixed-CSE t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x004036b1.cpp
+??1Rva0034B178@@UAE@XZ	0x0034B178	113	blocked	EH-dtor-dual-vtable-plus-virtual-delete-pair-plus-StringBase-needs-base-layout t=10 model=muse-12
+?rva002B565F@Rva002B565F@@QAEXPAUApply002B565F@@@Z	0x002B565F	112	blocked	functor-thiscall-via-funcptr-needs-thjscall-typedef-C4234-memberptr-bloats-plus-EH-guard t=15 model=muse-12
