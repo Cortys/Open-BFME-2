@@ -3602,3 +3602,6 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ??1Rva005DA7F5@@UAE@XZ	0x005DA7F5	60	blocked	two vtable stores 876510 then 870B80 at +0 with no base call plus EH prolog plus free; invented base has no row and bases unidentified t=10 model=muse-09
 ?Rva00549FE8@@YAXU?$_Deque_iterator_base@UBfmeE8@@@_STL@@HM@Z	0x00549FE8	79	blocked	deque float-compare jb-vs-jbe plus mov-vs-movsd for first-equals-tmp 3 variants t=15 model=muse-09
 ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z	0x004631FA	50	partial	50B-exact 0struct 1reg CSE mov-eax-ecx-vs-mem t=15 model=muse-09 score=0.96 stash=reverse/attempts/0x004631fa.cpp
+?rva001D9A00@Rva001D9A00@@QAE_NXZ	0x001D9A00	79	partial	dec-dec-je-vs-jne plus sub3-vs-addNeg3 plus string-first-vs-triple-first layout t=25 model=muse-03 score=0.93 stash=reverse/attempts/0x001d9a00.cpp
+?rva006FBD40@Rva006FBD40@@QAEHHH@Z	0x006FBD40	110	blocked	EH Apt EAStringC 3-arg wall no donor callers all >200B t=5 model=muse-03
+?rva00232B7B@Keyboard@@AAEXXZ	0x00232B7B	76	blocked	virtual slot 0x40 plus dual Pod8-E8 vector plus EBP frame needs vtable layout t=5 model=muse-03
