@@ -37,47 +37,29 @@ unsigned int Rva00773046ClearFlag(void)
 	return g_Va00DFEB54 &= 0xFFFFFFFEu;
 }
 
-unsigned int Rva007735C6ClearFlag(void)
-{
-	return g_Va00DFEC4C &= 0xFFFFFFFEu;
-}
+// Rva007735C6ClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva007735C6ClearFlag(void);
 
-unsigned int Rva0077388BClearFlag(void)
-{
-	return g_Va00DFEC60 &= 0xFFFFFFFEu;
-}
+// Rva0077388BClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva0077388BClearFlag(void);
 
-unsigned int Rva00773EB8ClearFlag(void)
-{
-	return g_Va00DFEC80 &= 0xFFFFFFFEu;
-}
+// Rva00773EB8ClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva00773EB8ClearFlag(void);
 
-unsigned int Rva007742BCClearFlag(void)
-{
-	return g_Va00DFECE0 &= 0xFFFFFFFEu;
-}
+// Rva007742BCClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva007742BCClearFlag(void);
 
-unsigned int Rva007742D3ClearFlag(void)
-{
-	return g_Va00DFECE8 &= 0xFFFFFFFEu;
-}
+// Rva007742D3ClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva007742D3ClearFlag(void);
 
-unsigned int Rva007742EAClearFlag(void)
-{
-	return g_Va00DFECF0 &= 0xFFFFFFFEu;
-}
+// Rva007742EAClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva007742EAClearFlag(void);
 
-unsigned int Rva00774313ClearFlag(void)
-{
-	return g_Va00DFECF8 &= 0xFFFFFFFEu;
-}
+// Rva00774313ClearFlag: defined in GlobalFlagClearers_DFECxx.cpp (its row's unit).
+unsigned int Rva00774313ClearFlag(void);
 
-unsigned int Rva0077433CClearFlag(void)
-{
-	return g_Va00DFED00 &= 0xFFFFFFFEu;
-}
+// Rva0077433CClearFlag: defined in GlobalFlagClearers_DFEDxx.cpp (its row's unit).
+unsigned int Rva0077433CClearFlag(void);
 
-unsigned int Rva0077444AClearFlag(void)
-{
-	return g_Va00DFED40 &= 0xFFFFFFFEu;
-}
+// Rva0077444AClearFlag: defined in GlobalFlagClearers_DFEDxx.cpp (its row's unit).
+unsigned int Rva0077444AClearFlag(void);

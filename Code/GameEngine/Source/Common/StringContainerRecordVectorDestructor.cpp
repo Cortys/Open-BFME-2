@@ -24,9 +24,7 @@ struct BfmeContainerRecord00048139 {
 	~BfmeContainerRecord00048139();
 };
 
-BfmeContainerRecord00048139::~BfmeContainerRecord00048139()
-{
-}
+// BfmeContainerRecord00048139::~BfmeContainerRecord00048139: defined in StringContainerRecordVector.cpp (its row's unit).
 
 // ??1?$vector@UBfmeContainerRecord00048139@@V?$allocator@UBfmeContainerRecord00048139@@@_STL@@@_STL@@QAE@XZ @0x004B193
 template class _STL::vector<BfmeContainerRecord00048139, _STL::allocator<BfmeContainerRecord00048139> >;

@@ -86,42 +86,13 @@ PlayerList::PlayerList() :
 }
 
 //-----------------------------------------------------------------------------
-PlayerList::~PlayerList() 
-{
-	try {
-		// the world is happier if we reinit things before destroying them,
-		// to avoid debug warnings
-		init();
-	} catch (...) {
-		// nothing
-	}
-	for( Int i = 0; i < MAX_PLAYER_COUNT; ++i )
-		delete m_players[ i ];
-}
+// PlayerList::~PlayerList: defined in PlayerListDtor.cpp (its row's unit).
 
 //-----------------------------------------------------------------------------
-Player *PlayerList::getNthPlayer(Int i) 
-{ 
-	if( i < 0 || i >= MAX_PLAYER_COUNT )
-	{
-//		DEBUG_CRASH( ("Illegal player index\n") );
-		return NULL;
-	}
-	return m_players[i]; 
-}
+// PlayerList::getNthPlayer: defined in PlayerList_getNthPlayer.cpp (its row's unit).
 
 //-----------------------------------------------------------------------------
-Player *PlayerList::findPlayerWithNameKey(NameKeyType key)
-{
-	for (Int i = 0; i < m_playerCount; i++)
-	{
-		if (m_players[i]->getPlayerNameKey() == key)
-		{
-			return m_players[i];
-		}
-	}
-	return NULL;
-}
+// PlayerList::findPlayerWithNameKey: defined in PlayerList_findPlayerWithNameKey.cpp (its row's unit).
 
 //-----------------------------------------------------------------------------
 void PlayerList::reset()

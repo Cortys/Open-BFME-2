@@ -204,18 +204,7 @@ static AsciiString getVetUpgradeName(VeterancyLevel v)
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ?friend_makeVeterancyUpgrade@UpgradeTemplate@@ present-unmatched
-void UpgradeTemplate::friend_makeVeterancyUpgrade(VeterancyLevel v)
-{
-	m_type = UPGRADE_TYPE_OBJECT;	// veterancy "upgrades" are always per-object, not per-player
-	m_name = getVetUpgradeName(v);
-	m_nameKey = TheNameKeyGenerator->nameToKey( m_name );
-	m_displayNameLabel.clear();	// should never be displayed
-	m_buildTime = 0.0f;
-	m_cost = 0.0f;
-	// leave this alone.
-	//m_upgradeMask = ???;
-}
+// UpgradeTemplate::friend_makeVeterancyUpgrade: defined in Rva0026F1A5Veterancy.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -354,28 +343,13 @@ UpgradeTemplate *UpgradeCenter::firstUpgradeTemplate( void )
 //-------------------------------------------------------------------------------------------------
 /** Find upgrade matching name key */
 //-------------------------------------------------------------------------------------------------
-const UpgradeTemplate *UpgradeCenter::findUpgradeByKey( NameKeyType key ) const
-{
-	const UpgradeTemplate *upgrade;
-
-	// search list
-	for( upgrade = m_upgradeList; upgrade; upgrade = upgrade->friend_getNext() )
-		if( upgrade->getUpgradeNameKey() == key )
-			return upgrade;
-
-	// item not found
-	return NULL;
-}
+// UpgradeCenter::findUpgradeByKey: defined in UpgradeCenterFindUpgradeByKey.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /** Find upgrade matching name */
 //-------------------------------------------------------------------------------------------------
-const UpgradeTemplate *UpgradeCenter::findUpgrade( const AsciiString& name ) const
-{
-
-	return findUpgradeByKey( TheNameKeyGenerator->nameToKey( name ) );
-
-}  // end findUpgrade
+// UpgradeCenter::findUpgrade: defined in UpgradeCenterFindUpgrade.cpp (its row's unit).
+  // end findUpgrade
 
 //-------------------------------------------------------------------------------------------------
 /** Allocate a new upgrade template */
@@ -434,21 +408,8 @@ void UpgradeCenter::linkUpgrade( UpgradeTemplate *upgrade )
 //-------------------------------------------------------------------------------------------------
 /** Unlink an upgrade from our list */
 //-------------------------------------------------------------------------------------------------
-void UpgradeCenter::unlinkUpgrade( UpgradeTemplate *upgrade )
-{
-
-	// sanity
-	if( upgrade == NULL )
-		return;
-
-	if( upgrade->friend_getNext() )
-		upgrade->friend_getNext()->friend_setPrev( upgrade->friend_getPrev() );
-	if( upgrade->friend_getPrev() )
-		upgrade->friend_getPrev()->friend_setNext( upgrade->friend_getNext() );
-	else
-		m_upgradeList = upgrade->friend_getNext();
-
-}  // end unlinkUpgrade
+// UpgradeCenter::unlinkUpgrade: defined in UpgradeCenterFindUpgradeByKey.cpp (its row's unit).
+  // end unlinkUpgrade
 
 //-------------------------------------------------------------------------------------------------
 /** does this player have all the necessary things to make this upgrade */

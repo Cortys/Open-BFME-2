@@ -75,9 +75,7 @@ public:
 	float m_144;
 	int m_148;
 };
-Rva002DB311::~Rva002DB311()
-{
-}
+// Rva002DB311::~Rva002DB311: defined in Rva002DB311Dtor.cpp (its row's unit).
 Rva002DB311::Rva002DB311()
 {
 	float v0 = 0.0f;

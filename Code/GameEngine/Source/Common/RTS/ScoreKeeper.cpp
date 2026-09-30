@@ -374,39 +374,8 @@ Int ScoreKeeper::calculateScore( void )
 // PRIVATE FUNCTIONS //////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
 
-Int ScoreKeeper::getTotalBuildingsDestroyed( void )
-{
-	int count = 0;
-	for (int i = 0; i< MAX_PLAYER_COUNT; ++i)
-	{
-	// Design change, display even if we killed our own
-//		if(i == m_myPlayerIdx)
-//			continue;
-		count += m_totalBuildingsDestroyed[i];
-		//for (ObjectCountMapIt it = m_objectsDestroyed[i].begin(); it != m_objectsDestroyed[i].end(); ++it) 
-		//		{
-		//			
-		//			count += it->second;
-		//		}
-		
-	}
-	return count;
-}
-Int ScoreKeeper::getTotalUnitsDestroyed( void )
-{
-	int count = 0;
-	for (int i = 0; i< MAX_PLAYER_COUNT; ++i)
-	{
-	// Design change, display even if we killed our own
-//		if(i == m_myPlayerIdx)
-//			continue;
-		count += m_totalUnitsDestroyed[i];
-//		for (ObjectCountMapIt it = m_objectsDestroyed[i].begin(); it != m_objectsDestroyed[i].end(); ++it) 
-//		{
-//		}
-	}
-	return count;
-}
+// ScoreKeeper::getTotalBuildingsDestroyed: defined in ScoreKeeperTotalDestroyedBfme2.cpp (its row's unit).
+// ScoreKeeper::getTotalUnitsDestroyed: defined in ScoreKeeperTotalDestroyedBfme2.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
 /** CRC */

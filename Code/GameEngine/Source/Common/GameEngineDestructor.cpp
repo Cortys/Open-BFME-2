@@ -16,7 +16,7 @@ public:
 	virtual ~GameEngineDeletingBase();
 };
 
-GameEngineDeletingBase::~GameEngineDeletingBase() {}
+// GameEngineDeletingBase::~GameEngineDeletingBase: defined in GameEngineDeletingBaseDtor.cpp (its row's unit).
 
 class GameEngine : public GameEngineDeletingBase
 {
@@ -24,7 +24,7 @@ public:
 	virtual ~GameEngine();
 };
 
-GameEngine::~GameEngine() {}
+// GameEngine::~GameEngine: defined in GameEngineCompleteDestructor.cpp (its row's unit).
 
 // A construction use makes MSVC emit GameEngine's scalar deleting wrapper in
 // this translation unit.  The helper itself is intentionally not a ledger

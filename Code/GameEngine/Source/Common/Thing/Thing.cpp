@@ -249,10 +249,7 @@ struct Thing_BFME_Retail_ThingTemplateKindOf
 };
 static Bool (*volatile _bfme_force_test_kindof_any)(const KindOfMaskType&, const KindOfMaskType&) = &TEST_KINDOFMASK_ANY;
 
-Bool Thing::isKindOfMulti(const KindOfMaskType& mustBeSet, const KindOfMaskType& mustBeClear) const 
-{ 
-	return reinterpret_cast<const Thing_BFME_Retail_ThingTemplateKindOf *>(getTemplate())->kindof.testSetAndClear(mustBeSet, mustBeClear);
-}
+// Thing::isKindOfMulti: defined in ThingIsAnyKindOf.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
 Bool Thing::isAnyKindOf( const KindOfMaskType& anyKindOf ) const
@@ -285,26 +282,7 @@ Real Thing::getHeightAboveTerrain() const
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?getHeightAboveTerrainOrWater@Thing@@ present-unmatched
-Real Thing::getHeightAboveTerrainOrWater() const
-{
-	//USE_PERF_TIMER(ThingMatrixStuff)
-	if (!(m_cacheFlags & VALID_ALTITUDE_SEALEVEL))
-	{
-		const Coord3D* pos = getPosition();
-		Real waterZ;
-		if (reinterpret_cast<BFMERetailTerrainLogicVTable *>(TheTerrainLogic)->isUnderwater(pos->x, pos->y, &waterZ, 0))
-		{
-			m_cachedAltitudeAboveTerrainOrWater = pos->z - waterZ;
-		} 
-		else
-		{
-			m_cachedAltitudeAboveTerrainOrWater = getHeightAboveTerrain();
-		}
-		m_cacheFlags |= VALID_ALTITUDE_SEALEVEL;
-	}
-	return m_cachedAltitudeAboveTerrainOrWater;
-}
+// Thing::getHeightAboveTerrainOrWater: defined in ThingGetHeightAboveTerrainOrWater.cpp (its row's unit).
 
 //=============================================================================
 /** If we treat this as airborne, then they slide down slopes.  This checks whether

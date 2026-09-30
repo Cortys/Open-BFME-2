@@ -64,10 +64,7 @@
 
 //-----------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/ProductionPrerequisiteDestructorThunk.cpp
-// ??1ProductionPrerequisite@@QAE@XZ present-unmatched
-ProductionPrerequisite::~ProductionPrerequisite()
-{
-}
+// ProductionPrerequisite::~ProductionPrerequisite: defined in ProductionPrerequisiteCtor.cpp (its row's unit).
 
 //-----------------------------------------------------------------------------
 // ?init@ProductionPrerequisite@@QAEXXZ present-unmatched

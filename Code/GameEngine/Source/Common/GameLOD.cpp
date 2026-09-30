@@ -376,18 +376,7 @@ void GameLODManager::refreshCustomStaticLODLevel(void)
 
 /**Convert LOD name to an index*/
 // byte-exact reconstruction: Code/GameEngine/Source/Common/GameLODManagerGetStaticGameLODIndex.cpp
-// ?getStaticGameLODIndex@GameLODManager@@QAEHVAsciiString@@@Z present-unmatched
-Int GameLODManager::getStaticGameLODIndex(AsciiString name)
-{
-	for (Int i=0; i<STATIC_GAME_LOD_COUNT; ++i)
-	{
-		if (name.compareNoCase(StaticGameLODNames[i]) == 0)
-			return i;
-	}
-
-	DEBUG_CRASH(( "GameLODManager::getGameLODIndex - Invalid LOD name '%s'\n", name.str() ));
-	return STATIC_GAME_LOD_UNKNOWN;
-}
+// GameLODManager::getStaticGameLODIndex: defined in GameLODManagerGetStaticGameLODIndex.cpp (its row's unit).
 
 /**Parse a description of all the LOD settings for a given detail level*/
 // ?parseStaticGameLODDefinition@INI@@SAXPAV1@@Z
@@ -843,24 +832,4 @@ static const FieldParse TheBFMEAudioLODFieldParseTable[] =
 	{ 0, 0, 0, 0 }
 };
 
-/*static*/ void INI::parseAudioLODDefinition( INI* ini )
-{
-	AsciiString name;
-
-	const char *token = ini->getNextToken();
-	name = token;
-
-	if( TheGameLODManager )
-	{
-		Int index = TheGameLODManager->getAudioLODIndex( name );
-		if( index == -1 )
-		{
-			// the raw token, not name.str(): retail keeps the pointer in esi across
-			// the lookup precisely so it can hand it to the exception.
-			throw INIException( 8, "Unknown Audio LOD level '%s'", token );
-		}
-
-		void *lodInfo = (char *)TheGameLODManager + index * 8 + 0x170;
-		ini->initFromINI( lodInfo, TheBFMEAudioLODFieldParseTable );
-	}
-}
+// INI::parseAudioLODDefinition: defined in INIParseAudioLODDefinition.cpp (its row's unit).

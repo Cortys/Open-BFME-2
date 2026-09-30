@@ -175,10 +175,4 @@ void Watchdog::start(void)
 	ThreadClass::Execute();
 }
 
-// ?stop@Watchdog@@QAEXXZ present-unmatched
-void Watchdog::stop(void)
-{
-	delete m_ownedLock;
-	m_ownedLock = 0;
-	ThreadClass::Stop();
-}
+// Watchdog::stop: defined in WatchdogThreadFunction.cpp (its row's unit).

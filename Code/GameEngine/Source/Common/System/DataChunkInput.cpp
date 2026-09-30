@@ -347,17 +347,7 @@ DataChunkInput::~DataChunkInput()
 }
 
 // ?readArrayOfBytes@DataChunkInput@@QAEXPADH@Z
-// ?readArrayOfBytes@DataChunkInput@@QAEXPADH@Z present-unmatched
-void DataChunkInput::readArrayOfBytes(char *ptr, Int len)
-{
-	InputChunk *c;
-
-	bfmeDataChunkYieldToOS();
-	m_file->read(ptr, len);
-
-	for (c = m_chunkStack; c; c = c->next)
-		c->dataLeft -= len;
-}
+// DataChunkInput::readArrayOfBytes: defined in DataChunkInputReadScalars.cpp (its row's unit).
 
 // ?readAsciiString@DataChunkInput@@QAE?AVAsciiString@@XZ
 // ?readAsciiString@DataChunkInput@@QAE?AVAsciiString@@XZ present-unmatched

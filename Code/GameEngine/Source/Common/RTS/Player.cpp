@@ -633,43 +633,7 @@ static RetailPlayerRelationMap *playerRelationsOf( const Player *p ) { return *(
 static TeamID getRetailTeamID( const Team *that ) { return *(const TeamID *)((const char *)that + 0x08); }
 
 //DECLARE_PERF_TIMER(Player_getRelationship)
-Relationship Player::getRelationship(const Team *that) const
-{
-	//USE_PERF_TIMER(Player_getRelationship)
-	// getPlayerIndex needs no adjustment: retail reads +0x24 too.
-	if (that)
-	{
-		// do we have an override for that particular team? if so, return it.
-		if (!teamRelationsOf(this)->m_map.empty())
-		{
-			TeamRelationMapType::const_iterator it = teamRelationsOf(this)->m_map.find(getRetailTeamID(that));
-			if (it != teamRelationsOf(this)->m_map.end())
-			{
-				return (*it).second;
-			}
-		}
-
-		// hummm... well, do we have something for that team's player?
-		if (!playerRelationsOf(this)->m_map.empty())
-		{
-			const Player* thatPlayer = that->getControllingPlayer();
-			if (thatPlayer != NULL)
-			{
-				// Spelled out rather than through playerRelationsOf: as a call
-				// the reload gets scheduled ahead of the key store and lands in
-				// eax, where retail stores the key first and reloads into ecx.
-				const PlayerIndex thatIndex = thatPlayer->getPlayerIndex();
-				PlayerRelationMapType::const_iterator it =
-					(*(RetailPlayerRelationMap **)((char *)this + 0x28c))->m_map.find(thatIndex);
-				if (it != playerRelationsOf(this)->m_map.end())
-				{
-					return (*it).second;
-				}
-			}
-		}
-	}
-	return NEUTRAL;
-}
+// Player::getRelationship: defined in PlayerGetRelationship.cpp (its row's unit).
 
 //=============================================================================
 // ?Player::setPlayerRelationship present-unmatched
@@ -1623,19 +1587,7 @@ static void doFindExistingObjectWithThingTemplate( Object *obj, void *userData )
 }
 
 //-------------------------------------------------------------------------------------------------
-Object* Player::findNaturalCommandCenter()
-{
-	// BFME allocates only eight bytes here -- retail opens with `sub esp,8` --
-	// so this finder pairs with a two-field block, not the seven-field
-	// PlayerObjectFindInfo the other finders in this file share.
-	// doFindCommandCenter reads only .player and .obj, which are the two
-	// that overlay.
-	struct { Player* player; Object* obj; } info;
-	info.player = this;
-	info.obj = NULL;
-	iterateObjects(doFindCommandCenter, &info);
-	return info.obj;
-}
+// Player::findNaturalCommandCenter: defined in PlayerO1Shard.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?findMostReadyShortcutSpecialPowerOfType@Player@@QAEPAVObject@@W4SpecialPowerType@@@Z present-unmatched
@@ -2190,10 +2142,7 @@ void Player::updateTeamStates(void)
 }
 
 //=============================================================================
-Bool Player::isLocalPlayer() const
-{
-	return this == ThePlayerList->getLocalPlayer();
-}
+// Player::isLocalPlayer: defined in PlayerIsLocalPlayer.cpp (its row's unit).
 
 //=============================================================================
 // ?setListInScoreScreen@Player@@QAEX_N@Z present-unmatched
@@ -2946,16 +2895,7 @@ Bool Player::attemptToPurchaseScience(ScienceType science)
 }
 
 //=============================================================================
-Bool Player::grantScience(ScienceType science)
-{
-	if (!TheScienceStore->isScienceGrantable(science))
-	{
-		DEBUG_CRASH(("Cannot grant science %s, since it is marked as nonGrantable.\n",TheScienceStore->getInternalNameForScience(science).str()));
-		return false;	// it's not grantable, so tough, can't have it, even via this method.
-	}
-
-	return addScience(science);
-}
+// Player::grantScience: defined in PlayerO1Shard.cpp (its row's unit).
 
 //=============================================================================
 
@@ -3001,11 +2941,7 @@ Bool Player::isCapableOfPurchasingScience(ScienceType science) const
 
 //=============================================================================
 // ?hasScience@Player@@QBE_NW4ScienceType@@@Z
-Bool Player::hasScience(ScienceType t) const
-{
-	const BfmePlayerScienceFields *self = (const BfmePlayerScienceFields *)this;
-	return std::find(self->m_sciences.begin(), self->m_sciences.end(), t) != self->m_sciences.end();
-}
+// Player::hasScience: defined in PlayerHasScience.cpp (its row's unit).
 
 //=============================================================================
 // ?isScienceDisabled@Player@@QBE_NW4ScienceType@@@Z present-unmatched
@@ -3036,18 +2972,7 @@ ScienceType *(*bfme_force_ScienceVec_erase_anchor)(ScienceVec *, ScienceType *) 
 	&bfme_force_ScienceVec_erase;
 
 //=============================================================================
-// ?getScienceAvailabilityTypeFromString@Player@@QAE?AW4ScienceAvailabilityType@@ABVAsciiString@@@Z present-unmatched
-ScienceAvailabilityType Player::getScienceAvailabilityTypeFromString( const AsciiString& name )
-{
-	for( Int i = 0; i < SCIENCE_AVAILABILITY_COUNT; i++ )
-	{
-		if( !name.compareNoCase( ScienceAvailabilityNames[ i ] ) )
-		{
-			return (ScienceAvailabilityType)i;
-		}
-	}
-	return SCIENCE_AVAILABILITY_INVALID;
-}
+// Player::getScienceAvailabilityTypeFromString: defined in PlayerGetScienceAvailabilityTypeFromString.cpp (its row's unit).
 
 namespace
 {
@@ -3536,15 +3461,7 @@ void Player::enableRadar()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // ?hasRadar@Player@@QBE_NXZ
-Bool Player::hasRadar() const
-{
-	const BfmePlayerRadarFields *self = (const BfmePlayerRadarFields *)this;
-	if( self->m_radarDisabled  && (self->m_disableProofRadarCount == 0) )
-		return FALSE;// Nope, no matter how many you have, if I say no, you don't have it
-
-	// Otherwise, check if I actually do have it.
-	return self->m_radarCount > 0;
-}
+// Player::hasRadar: defined in Player_hasRadar.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------
@@ -3562,16 +3479,7 @@ static void doPowerDisable( Object *obj, void *userData )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-void Player::onPowerBrownOutChange( Bool brownOut )
-{
-	// Everything that changes due to Player's power supply goes in here.
-	if( brownOut )
-		disableRadar();
-	else
-		enableRadar(); //This doesn't give radar necessarily, it just removes the restriction
-
-	iterateObjects( doPowerDisable, &brownOut );// This function is so cool.
-}
+// Player::onPowerBrownOutChange: defined in PlayerO1Shard.cpp (its row's unit).
 
 
 

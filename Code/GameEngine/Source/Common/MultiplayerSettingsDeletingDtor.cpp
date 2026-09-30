@@ -15,10 +15,7 @@ private:
 	int m_famgen;
 };
 
-MultiplayerSettings::~MultiplayerSettings()
-{
-	m_famgen = 0;
-}
+// MultiplayerSettings::~MultiplayerSettings: defined in MultiplayerSettingsDtor.cpp (its row's unit).
 
 void deleteMultiplayerSettings(MultiplayerSettings *p)
 {
