@@ -44259,3 +44259,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00372CA8@Rva00372CA8@@QAEXH@Z,,0x00372CA8,68,Code/GameEngine/Source/GameLogic/AI/Rva00372CA8Remove.cpp,matched,honest-address 8-slot remove via callers 0x373193 0x37319D 0x373238 and unsigned loop shape
 ?setText@DisplayString@@UAEXVUnicodeString@@@Z,,0x00358A03,80,Code/GameEngine/Source/Common/DisplayStringDtor.cpp,matched,BFME1 donor setText compare set notify
 ??0Rva001DC0EC@@QAE@XZ,,0x001DC0C7,37,Code/GameEngine/Source/GameLogic/Object/Rva001DC0ECCtor.cpp,matched,ctor adjacent to dtor 0x001DC0EC via rowed listbase 0x004EC36C
+?rva001DC1B3@Rva001DC0EC@@QAEXPAV?$list@HV?$allocator@H@_STL@@@_STL@@@Z,,0x001DC1B3,46,Code/GameEngine/Source/GameLogic/Object/Rva001DC1B3.cpp,matched,list copy via rowed push_back 0x0005548F caller 0x001DC57C
