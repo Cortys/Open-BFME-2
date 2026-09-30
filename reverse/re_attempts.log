@@ -3773,3 +3773,4 @@ FUN_007b8e2b	0x003B8E2B	65	blocked	index search via compare with recomputed sar 
 FUN_004636df	0x000636DF	209	blocked	WW3D material mesh iteration with many virtuals needs donor t=6 model=muse-02
 FUN_00720737	0x00320737	190	blocked	Gadget GUI with GameWindow plus many virtuals needs donor t=6 model=muse-02
 ?m@T_009f59d0@@QAEXXZ	0x00627E40	263	blocked	ShroudManager SEH with vectors plus linkNode needs donor t=6 model=muse-02
+??0Rva00588FFA@@QAE@PAVThing@@PBVModuleData@@@Z	0x00588FFA	53	partial	53B 13 insns exact size but first two stores swapped retail mov-reloc then and-zero vs ours and-zero then mov-reloc volatile-unsigned cast keeps both per shape-lever base-overwrite lever t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x00588ffa.cpp
