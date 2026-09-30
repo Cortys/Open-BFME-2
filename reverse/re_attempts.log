@@ -4001,3 +4001,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva0031AF54@Rva0031AF54@@QAEX_N@Z	0x0031AF54	120	partial	edi-ebx swap with jle before push; size exact 120B t=25 model=muse-03 score=0.92 stash=reverse/attempts/0x0031af54.cpp
 ?rva002AD027@Rva002AD027@@QAE...	0x002AD027	48	blocked	freelist range insert loop via rowed Insert 0x2ACF9C needs this-via-ecx plus dummy-push plus frame mapping plus 4th arg use t=15 model=muse-09
 ?rva006C1D60@Rva006C1D60@@QAE_NI_N@Z	0x006C1D60	93	partial	flag-check layout and shared false exit differ t=25 model=muse-08 score=0.9 stash=reverse/attempts/0x006c1d60.cpp
+?Rva00053606Check@@YG_NPAX@Z	0x00053606	64	blocked	tail setne vs xor-mov plus jne-je inversion needs new idea t=12 model=muse-07

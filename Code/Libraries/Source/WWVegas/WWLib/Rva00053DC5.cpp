@@ -12,10 +12,22 @@ struct Node53DC5
     void *m_nextC;
 };
 
+struct Sentinel54
+{
+    char m_pad0[4];
+    void *m_p4;
+    void *m_p8;
+    void *m_pC;
+};
+
 class Rva00053DC5
 {
 public:
     void rva00053DC5(void *node);
+    void rva00054B9A();
+private:
+    Sentinel54 *m_head;
+    int m_size;
 };
 
 void Rva00053DC5::rva00053DC5(void *node)
@@ -30,4 +42,15 @@ void Rva00053DC5::rva00053DC5(void *node)
         free(n);
         n = next;
     } while (n != 0);
+}
+
+void Rva00053DC5::rva00054B9A()
+{
+    if (m_size == 0)
+        return;
+    rva00053DC5(m_head->m_p4);
+    m_head->m_p8 = m_head;
+    m_head->m_p4 = 0;
+    m_head->m_pC = m_head;
+    m_size = 0;
 }
