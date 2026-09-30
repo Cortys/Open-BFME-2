@@ -191,3 +191,10 @@ template BfmePod20* _STL::__find(BfmePod20*, BfmePod20*, const BfmePod20&, const
 // find wrapper over the rowed __find 0x002194CC via tag local; callers
 // 0x0021EAA6 0x004EDD71.
 template BfmePod20* _STL::find(BfmePod20*, BfmePod20*, const BfmePod20&);
+// ??$__find@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z @0x0040A68F 118B
+// Unrolled random-access __find over 40-byte elements comparing a[0]; caller
+// 0x0040A891 is the 27B find wrapper that becomes ready on landing.
+template BfmePod40* _STL::__find(BfmePod40*, BfmePod40*, const BfmePod40&, const _STL::random_access_iterator_tag&);
+// ??$find@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@@Z @0x0040A891 27B
+// find wrapper over __find 0x0040A68F via tag local.
+template BfmePod40* _STL::find(BfmePod40*, BfmePod40*, const BfmePod40&);
