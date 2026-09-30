@@ -43961,3 +43961,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva0035FD0A@@UAE@XZ,,0x0035FD0A,105,Code/GameEngine/Source/Common/Rva0035FD0ADtor.cpp,matched,vtable 0x008166BC plus TheDisplayStringManager plus rowed releaseBuffer plus pinned base 0x001DBAC3 plus caller 0x0035FF59
 ??_GRva0035FD0A@@UAEPAXI@Z,,0x0035FF56,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0035FD0A.cpp,matched,slot 0 vtable 0x008166BC calls rowed 0x0035FD0A plus delete
 ?rva004381B0@Rva004381B0@@QAEXM@Z,,0x004381B0,20,Code/GameEngine/Source/Common/Rva004381B0.cpp,matched,leaf max-float store caller 0x00299C43
+?Rva0043822ESet@@YGXPAURva0043822EParam@@I@Z,,0x0043822E,27,Code/GameEngine/Source/Common/Rva0043822E.cpp,matched,leaf unsigned max via TheGameLogic callers 0x00439809 0x00439ED9
