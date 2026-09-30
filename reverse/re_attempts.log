@@ -3664,3 +3664,6 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?Rva00498725Find@@YAPAXPAX@Z	0x00498725	115	blocked	unlock Gate finder 87of115 missing 28B EH prolog plus states with no local object t=10 model=muse-04
 ?rva0048BA3E@Rva0048BA3E@@QAEHXZ	0x0048BA3E	105	blocked	unlock intrusive list min with GameLogic frame 80of105 wrong loop plus value at plus18 t=10 model=muse-04
 ?rva002FE8CC@Rva002FE8CC@@QAEXPAX@Z	0x002FE8CC	116	partial	112of116 want in eax not ebp plus push order t=12 model=muse-04 score=0.96 stash=reverse/attempts/0x002fe8cc.cpp
+?rva003B11D2@Rva003B11D2@@QAEPAVOverridable@@V?$StringBase@D@@@Z	0x003B11D2	114	blocked	find-by-value loop needs Overridable layout plus byte count plus reg order t=10 model=muse-12
+?ReAcquireResources@W3DSnowManager@@QAE_NXZ	0x0009390F	444	blocked	RefCountPtr-op plus gVa-globals fix leaves only lea-push order; 6 variants explicit-op plus G7-drop same 444B t=20 model=muse-12
+?Rva0070B590Cleanup@@YAXXZ	0x0070B590	52	blocked	store via esi not ecx; split plus block-scope plus while-next same 55B t=12 model=muse-12
