@@ -44535,3 +44535,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ??0MilesMutexGuard@@QAE@PAXH@Z,,0x0004120E,33,Code/GameEngine/Source/Common/Rva00041037Acquire.cpp,matched,LINK BONUS ctor inits guard calls 0x41037
 ?rva00041D03@Rva00041D03@@QAEXXZ,,0x00041D03,31,Code/GameEngine/Source/Common/Rva00041D03Audio.cpp,matched,flag gated TheAudio slot 0x198 notify then clear
 ?rva00041D22@Rva00041D03@@QAEXXZ,,0x00041D22,31,Code/GameEngine/Source/Common/Rva00041D03Audio.cpp,matched,sibling set flag gated TheAudio slot 0x194
+?rva0010EC4D@Rva0010EC4D@@QAEXHPAHH_N@Z,,0x0010EC4D,104,Code/GameEngine/Source/Common/Rva0010EC4DGuard.cpp,matched,chain guarded 9 dword copy with event signal
