@@ -44015,3 +44015,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva000B7539@@QAE@XZ,,0x000B7539,68,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000B7539Dtor.cpp,matched,Triple StringBase dtor via rowed releaseBuffer
 ??1BfmeStringTailRecord156@@QAE@XZ,,0x0010F149,12,Code/GameEngine/Source/Common/BfmeStringTailRecord156Dtor.cpp,matched,non-virtual dtor tail-jmp Release_Ref callers include deleting dtor
 ?rva00262C53@Rva00262C53@@UAEXABUCoord3D@@@Z,,0x00262C53,72,Code/GameEngine/Source/GameLogic/Object/Update/Rva00262C53Set.cpp,matched,slot 133 AIUpdate Path delete plus Coord copy
+?clone@Rva003AE683@@QBEPAV1@XZ,,0x003AE64C,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE683Clone.cpp,matched,clone via new plus rowed copy vslot 2
