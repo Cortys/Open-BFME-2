@@ -105,3 +105,6 @@ template void _STL::list<RvaSmartPtr12>::_M_insert_dispatch<_STL::_List_iterator
 // Retail 0x001F8347 (30B): the range insert that forwards to the dispatch above.
 template void _STL::list<RvaSmartPtr12>::insert<_STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> > >(
     _STL::list<RvaSmartPtr12>::iterator, _STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> >, _STL::_List_iterator<RvaSmartPtr12, _STL::_Const_traits<RvaSmartPtr12> >);
+
+// Retail 0x001F88CA (88B): the list copy ctor built on the range insert above.
+template _STL::list<RvaSmartPtr12>::list(const _STL::list<RvaSmartPtr12> &);
