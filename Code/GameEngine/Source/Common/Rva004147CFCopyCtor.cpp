@@ -1,9 +1,9 @@
-// ??0Rva004147CF@@QAE@ABV0@@Z
-// partial score=0.95 date=2026-09-30
-// ??0Rva004147CF@@QAE@ABV0@@Z
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
+// Fix over the banked 0.95 attempt, from the retail unwind map: state 2
+// destroys the member at +0x14 through the rowed pool-aware member dtor
+// 0x00360D26, so that member is a Rva00360D26Member (trivially copied, own
+// destructor), not an int; the vector copied last needs no state of its own.
 // ??0Rva004147CF@@QAE@ABV0@@Z @ 0x004147CF 125B: copy ctor with vtable 0x0083A09C,
 // StringBase copy at +0x04 via pin 0x000365F0, ints/bytes at +0x08..+0x19,
 // vector<BfmePod44> copy at +0x1C via row 0x00414490, ints at +0x28/+0x2C.
@@ -30,6 +30,13 @@ public:
 
 struct BfmePod44 { int a[11]; };
 
+class Rva00360D26Member
+{
+public:
+    ~Rva00360D26Member();
+private:
+    int m_x;
+};
 class EmptyBase
 {
 public:
@@ -47,7 +54,7 @@ private:
     int m_08;
     int m_0C;
     int m_10;
-    int m_14;
+    Rva00360D26Member m_14;
     unsigned char m_18;
     unsigned char m_19;
     char m_pad1A[2];
@@ -56,7 +63,7 @@ private:
     int m_2C;
 };
 
-// ??0Rva004147CF@@QAE@ABV0@@Z present-unmatched
+// ??0Rva004147CF@@QAE@ABV0@@Z @0x004147CF
 Rva004147CF::Rva004147CF(const Rva004147CF &other)
     : m_str04(other.m_str04),
       m_08(other.m_08),
