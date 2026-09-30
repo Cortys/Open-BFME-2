@@ -24,11 +24,11 @@ private:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
@@ -43,8 +43,7 @@ const char *INI::getNextSubToken(const char *expected)
 {
 	const char *token = getNextToken(m_sepsColon);
 	if (_strcmpi(token, expected) != 0) {
-		INIException e;
-		rva002f681_fill(&e, 3, "Expected '%s' but found '%s'", expected, token);
+		INIException e(3, "Expected '%s' but found '%s'", expected, token);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&getNextSubTokenThrowInfoAnchor); __assume(0);
 	}
 	return getNextToken(m_sepsColon);

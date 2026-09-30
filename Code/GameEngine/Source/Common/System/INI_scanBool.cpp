@@ -21,11 +21,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
@@ -43,7 +43,6 @@ bool INI::scanBool(const char *token)
 		return true;
 	if (_strcmpi(text, "no") == 0)
 		return false;
-	INIException e;
-	rva002f681_fill(&e, 3, "invalid boolean token %s -- expected Yes or No", token);
+	INIException e(3, "invalid boolean token %s -- expected Yes or No", token);
 	_CxxThrowException(&e, (const _s__ThrowInfo *)&scanBoolThrowInfoAnchor); __assume(0);
 }

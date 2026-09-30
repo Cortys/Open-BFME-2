@@ -13,7 +13,12 @@ public:
 	void initFromINI(void *what, const FieldParse *table);
 };
 extern const FieldParse g_00839A78;
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
+struct INIException
+{
+	char *mFailureMessage;
+	int mErrorCode;
+	INIException(int argCount, const char *format, ...);
+};
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct Rva004135CDThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva004135CDThrowInfoAnchor rva004135CDThrowInfoAnchor = { 0, 0, 0, 0 };
@@ -30,8 +35,7 @@ void Rva004135CD::rva004135CD(INI *ini)
 	ini->initFromINI(this, &g_00839A78);
 	if (m_value00 < 0)
 	{
-		char exc[8];
-		rva002f681_fill(exc, 3, "Must provide a MinSciencePurchasePointsForBonus, and it must be >= 0");
-		_CxxThrowException(exc, (const _s__ThrowInfo *)&rva004135CDThrowInfoAnchor); __assume(0);
+		INIException exc(3, "Must provide a MinSciencePurchasePointsForBonus, and it must be >= 0");
+		_CxxThrowException(&exc, (const _s__ThrowInfo *)&rva004135CDThrowInfoAnchor); __assume(0);
 	}
 }

@@ -39,11 +39,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -57,14 +57,12 @@ void MetaMap::parseMetaMap(INI *ini)
 	const char *token = ini->getNextToken(0);
 	GameMessage::Type t = TheMetaMap->findGameMessageMetaType(token);
 	if (t == GameMessage::MSG_INVALID) {
-		INIException e;
-		rva002f681_fill(&e, 3, "Game message meta type for '%s' not found", token);
+		INIException e(3, "Game message meta type for '%s' not found", token);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseMetaMapThrowInfoAnchor); __assume(0);
 	}
 	MetaMapRec *map = TheMetaMap->getMetaMapRec(t);
 	if (map == 0) {
-		INIException e;
-		rva002f681_fill(&e, 3, "Meta map entry for '%s' not found", token);
+		INIException e(3, "Meta map entry for '%s' not found", token);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseMetaMapThrowInfoAnchor); __assume(0);
 	}
 	ini->initFromINI(map, TheMetaMapFieldParseTable);

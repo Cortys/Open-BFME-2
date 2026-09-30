@@ -17,8 +17,7 @@ public:
 extern const char * const BFME2DamageTypeNames[];
 extern const char * const BFME2DeathTypeNames[];
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *, const char *);
-struct INIException { char *message; int code; };
-extern "C" void rva002f681_fill(void *, int, const char *, ...);
+struct INIException { char *message; int code; INIException(int argCount, const char *format, ...); };
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct FlagsThrowInfoAnchor { int a,b,c,d; };
 static const FlagsThrowInfoAnchor flagsThrowInfoAnchor = {0,0,0,0};
@@ -39,8 +38,7 @@ void INI::parseDamageTypeFlags(INI *ini, void *, void *store, const void *)
             flags &= ~(1 << (bit-1));
             continue;
         }
-        INIException e;
-        rva002f681_fill(&e,5,"ALL, NONE, + or - expected");
+        INIException e(5,"ALL, NONE, + or - expected");
         _CxxThrowException(&e, (const _s__ThrowInfo *)&flagsThrowInfoAnchor); __assume(0);
     }
     *(unsigned int *)store=flags;
@@ -63,8 +61,7 @@ void INI::parseDeathTypeFlags(INI *ini, void *, void *store, const void *)
             flags &= ~(1 << (bit-1));
             continue;
         }
-        INIException e;
-        rva002f681_fill(&e,5,"ALL, NONE, +, or - expected");
+        INIException e(5,"ALL, NONE, +, or - expected");
         _CxxThrowException(&e, (const _s__ThrowInfo *)&flagsThrowInfoAnchor); __assume(0);
     }
     *(unsigned int *)store=flags;

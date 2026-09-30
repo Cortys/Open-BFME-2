@@ -13,7 +13,12 @@ public:
 	void initFromINI(void *what, const FieldParse *table);
 };
 extern const FieldParse g_00839E58;
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
+struct INIException
+{
+	char *mFailureMessage;
+	int mErrorCode;
+	INIException(int argCount, const char *format, ...);
+};
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct Rva00413DCCThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva00413DCCThrowInfoAnchor rva00413DCCThrowInfoAnchor = { 0, 0, 0, 0 };
@@ -30,8 +35,7 @@ void Rva00413DCC::rva00413DCC(INI *ini)
 	ini->initFromINI(this, &g_00839E58);
 	if (m_value00 < 0)
 	{
-		char exc[8];
-		rva002f681_fill(exc, 3, "Must provide a MinResourceBonus, and it must be >= 0");
-		_CxxThrowException(exc, (const _s__ThrowInfo *)&rva00413DCCThrowInfoAnchor); __assume(0);
+		INIException exc(3, "Must provide a MinResourceBonus, and it must be >= 0");
+		_CxxThrowException(&exc, (const _s__ThrowInfo *)&rva00413DCCThrowInfoAnchor); __assume(0);
 	}
 }

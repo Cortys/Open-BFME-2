@@ -22,11 +22,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
 
@@ -45,8 +45,7 @@ float INI::scanReal(const char *token)
 		return parseMathExpression(text, &INI::scanReal);
 	float value;
 	if (sscanf(text, "%f", &value) != 1) {
-		INIException e;
-		rva002f681_fill(&e, 3, "Expected floating point value, math op, or predefined macro, but found '%s'", text);
+		INIException e(3, "Expected floating point value, math op, or predefined macro, but found '%s'", text);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanRealThrowInfoAnchor); __assume(0);
 	}
 	return value;

@@ -20,11 +20,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -38,8 +38,7 @@ void INI::dup_002EF72(INI *ini, void *instance, void *store, const void *userDat
 {
 	unsigned value = ini->scanUnsignedInt(ini->getNextToken(0));
 	if ((unsigned)userData != 0 && value > (unsigned)userData) {
-		INIException e;
-		rva002f681_fill(&e, 3, "value out of range, expected 0..%d", (int)userData);
+		INIException e(3, "value out of range, expected 0..%d", (int)userData);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&dup002EF72ThrowInfoAnchor); __assume(0);
 	}
 	*(unsigned *)store = value;

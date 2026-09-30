@@ -59,11 +59,11 @@ private:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -76,8 +76,7 @@ ObjectModule::ObjectModule(Thing *thing, const ModuleData *moduleData)
 	: Module(moduleData)
 {
 	if (!moduleData) {
-		INIException e;
-		rva002f681_fill(&e, 3, "module data may not be null\n");
+		INIException e(3, "module data may not be null\n");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&gThrowInfoAnchor); __assume(0);
 	}
 	m_object = AsObject(thing);

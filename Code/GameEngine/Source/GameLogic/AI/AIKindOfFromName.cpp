@@ -71,11 +71,11 @@ extern const char *AIKindOfNames[16]; ///< retail table at 0x009D0288
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -105,8 +105,7 @@ found:
 		goto done;
 fail:
 	{
-		INIException e;
-		rva002f681_fill(&e, 2, "invalid AI_KINDOF\n");
+		INIException e(2, "invalid AI_KINDOF\n");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&aikindThrowInfoAnchor);
 	}
 done:

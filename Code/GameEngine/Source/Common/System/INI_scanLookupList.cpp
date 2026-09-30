@@ -29,11 +29,12 @@ public:
 
 struct INIException
 {
+	INIException() {}
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
@@ -49,7 +50,7 @@ int INI::scanLookupList(const char *token, const LookupListRec *lookupList)
 	INIException e;
 
 	if (lookupList == NULL || lookupList[0].name == NULL) {
-		rva002f681_fill(&e, 2, "INTERNAL ERROR! scanLookupList: No name list provided!");
+		e.INIException::INIException(2, "INTERNAL ERROR! scanLookupList: No name list provided!");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanLookupListThrowInfoAnchor); __assume(0);
 	}
 
@@ -60,6 +61,6 @@ int INI::scanLookupList(const char *token, const LookupListRec *lookupList)
 		}
 	}
 
-	rva002f681_fill(&e, 3, "Token '%s' is not a valid member of the lookup list", token);
+	e.INIException::INIException(3, "Token '%s' is not a valid member of the lookup list", token);
 	_CxxThrowException(&e, (const _s__ThrowInfo *)&scanLookupListThrowInfoAnchor); __assume(0);
 }

@@ -33,7 +33,12 @@ public:
 };
 
 extern const FieldParse g_00C63640;
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
+struct INIException
+{
+	char *mFailureMessage;
+	int mErrorCode;
+	INIException(int argCount, const char *format, ...);
+};
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct Rva004FD77CThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva004FD77CThrowInfoAnchor rva004FD77CThrowInfoAnchor = { 0, 0, 0, 0 };
@@ -42,9 +47,8 @@ void Rva004FD77CParse(INI *ini, Rva004FD3E2 *holder)
 {
 	if (!ini || !holder)
 	{
-		char exc[8];
-		rva002f681_fill(exc, 3, "Invalid data in TeamDefeatCondition::ParseINI");
-		_CxxThrowException(exc, (const _s__ThrowInfo *)&rva004FD77CThrowInfoAnchor); __assume(0);
+		INIException exc(3, "Invalid data in TeamDefeatCondition::ParseINI");
+		_CxxThrowException(&exc, (const _s__ThrowInfo *)&rva004FD77CThrowInfoAnchor); __assume(0);
 	}
 	Rva004FCD49 *p = new Rva004FCD49;
 	ini->initFromINI(p, &g_00C63640);

@@ -105,11 +105,11 @@ static UpgradeCenter *TheUpgradeCenter;
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 __declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -148,8 +148,7 @@ void UpgradeMuxData::getUpgradeActivationMasks(
 				TheUpgradeCenter->findUpgrade(*it);
 			if (!theTemplate && !it->isEmpty() && !it->isNone())
 			{
-				INIException e;
-				rva002f681_fill(&e, 3,
+				INIException e(3,
 					"An upgrade module references %s, which is not an Upgrade",
 					it->str());
 				_CxxThrowException(&e, (void *)&upgradeMuxThrowInfoAnchor);
@@ -165,8 +164,7 @@ void UpgradeMuxData::getUpgradeActivationMasks(
 				TheUpgradeCenter->findUpgrade(*it);
 			if (!theTemplate && !it->isEmpty() && !it->isNone())
 			{
-				INIException e;
-				rva002f681_fill(&e, 3,
+				INIException e(3,
 					"An upgrade module references %s, which is not an Upgrade",
 					it->str());
 				_CxxThrowException(&e, (void *)&upgradeMuxThrowInfoAnchor);

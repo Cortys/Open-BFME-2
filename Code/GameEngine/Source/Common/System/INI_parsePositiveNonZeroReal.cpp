@@ -20,11 +20,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -39,8 +39,7 @@ void INI::parsePositiveNonZeroReal(INI *ini, void *instance, void *store, const 
 	float value = ini->scanReal(ini->getNextToken(0));
 	*(float *)store = value;
 	if (value <= 0.0f) {
-		INIException e;
-		rva002f681_fill(&e, 3, "invalid Real value %1.7f -- expected > 0", value);
+		INIException e(3, "invalid Real value %1.7f -- expected > 0", value);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&parsePositiveNonZeroRealThrowInfoAnchor); __assume(0);
 	}
 }

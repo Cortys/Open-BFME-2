@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /GX-
 // Emotion kind parsers (retail 0x004DC702 66 bytes and 0x004DC745 66 bytes).
 // Both read a token through the rowed getNextToken at 0x002DF97; a null
-// token fills an INIException through the pinned rva002f681_fill at
+// token fills an INIException through the INIException(int, const char *, ...) constructor at
 // 0x002F681 (AIKindOfFromName precedent: local plus code plus literal) and
 // throws through the pinned _CxxThrowException at 0x00629094 with the shared
 // INI throwinfo at 0xCFE2FC (parseColorInt anchor precedent). Otherwise the
@@ -14,11 +14,11 @@
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 struct EmotionThrowInfoAnchor { int a; int b; int c; int d; };
@@ -46,8 +46,7 @@ void INI::Rva004DC702_ParseEmotionType(INI *ini, void *instance, void *store, co
 		*(int *)store = BitFlags<12>::getSingleBitFromName(token);
 		return;
 	}
-	INIException e;
-	rva002f681_fill(&e, 3, "Emotion type expected.");
+	INIException e(3, "Emotion type expected.");
 	_CxxThrowException(&e, (const _s__ThrowInfo *)&emotionThrowInfoAnchor); __assume(0);
 }
 
@@ -59,7 +58,6 @@ void INI::Rva004DC745_ParseAIState(INI *ini, void *instance, void *store, const 
 		*(int *)store = BitFlags<6>::getSingleBitFromName(token);
 		return;
 	}
-	INIException e;
-	rva002f681_fill(&e, 3, "Emotion AI type expected.");
+	INIException e(3, "Emotion AI type expected.");
 	_CxxThrowException(&e, (const _s__ThrowInfo *)&emotionThrowInfoAnchor); __assume(0);
 }

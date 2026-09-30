@@ -24,12 +24,13 @@ public:
 
 struct INIException
 {
+	INIException() {}
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -52,7 +53,7 @@ extern "C" int rva002bcab_scanIndex(const char *token, ConstCharPtrArray nameLis
 
 	*found = false;
 	if (nameList == 0 || nameList[0] == 0) {
-		rva002f681_fill(&e, 2, "INTERNAL ERROR! scanIndexList: No name list provided!");
+		e.INIException::INIException(2, "INTERNAL ERROR! scanIndexList: No name list provided!");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanIndexListThrowInfoAnchor); __assume(0);
 	}
 	cursor = nameList;
@@ -66,7 +67,7 @@ extern "C" int rva002bcab_scanIndex(const char *token, ConstCharPtrArray nameLis
 		++index;
 	} while (*cursor != 0);
 	if (doThrow) {
-		rva002f681_fill(&e, 3, "Token '%s' is not a valid member of the index list", token);
+		e.INIException::INIException(3, "Token '%s' is not a valid member of the index list", token);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanIndexListThrowInfoAnchor); __assume(0);
 	} else {
 		return 0;
@@ -81,8 +82,7 @@ int INI::scanIndexList(const char *token, ConstCharPtrArray nameList)
 	bool found = false;
 	int index = rva002bcab_scanIndex(token, nameList, &found, 0);
 	if (!found) {
-		INIException e;
-		rva002f681_fill(&e, 3, "Token '%s' is not a valid member of the index list", token);
+		INIException e(3, "Token '%s' is not a valid member of the index list", token);
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanIndexListThrowInfoAnchor); __assume(0);
 	}
 	return index;

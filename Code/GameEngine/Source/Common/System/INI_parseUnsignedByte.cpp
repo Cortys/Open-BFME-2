@@ -17,11 +17,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -35,8 +35,7 @@ void INI::parseUnsignedByte(INI *ini, void *instance, void *store, const void *u
 {
 	int value = ini->scanInt(ini->getNextToken(0));
 	if (value < 0 || value > 0xFF) {
-		INIException e;
-		rva002f681_fill(&e, 3, "value out of range, expected 0..255");
+		INIException e(3, "value out of range, expected 0..255");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseUnsignedByteThrowInfoAnchor); __assume(0);
 	}
 	*(unsigned char *)store = (unsigned char)value;

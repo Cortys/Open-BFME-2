@@ -32,11 +32,11 @@ public:
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
@@ -53,8 +53,7 @@ void INI::parseBitString32(INI *ini, void * /*instance*/, void *store, const voi
 	UnsignedInt *bits = (UnsignedInt *)store;
 
 	if (flagList == NULL || flagList[0] == NULL) {
-		INIException e;
-		rva002f681_fill(&e, 2, "INTERNAL ERROR! parseBitString32: No flag list provided!");
+		INIException e(2, "INTERNAL ERROR! parseBitString32: No flag list provided!");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseBitString32ThrowInfoAnchor); __assume(0);
 	}
 
@@ -65,8 +64,7 @@ void INI::parseBitString32(INI *ini, void * /*instance*/, void *store, const voi
 	for (const char *token = ini->getNextTokenOrNull(NULL); token != NULL; token = ini->getNextTokenOrNull(NULL)) {
 		if (_strcmpi(token, "NONE") == 0) {
 			if (foundNormal || foundAddOrSub) {
-				INIException e;
-				rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
+				INIException e(2, "you may not mix normal and +- ops in bitstring lists");
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseBitString32ThrowInfoAnchor); __assume(0);
 			}
 			*bits = 0;
@@ -75,8 +73,7 @@ void INI::parseBitString32(INI *ini, void * /*instance*/, void *store, const voi
 
 		if (token[0] == '+') {
 			if (foundNormal) {
-				INIException e;
-				rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
+				INIException e(2, "you may not mix normal and +- ops in bitstring lists");
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseBitString32ThrowInfoAnchor); __assume(0);
 			}
 			Int bitIndex = ini->scanIndexList(token + 1, flagList);
@@ -84,8 +81,7 @@ void INI::parseBitString32(INI *ini, void * /*instance*/, void *store, const voi
 			foundAddOrSub = true;
 		} else if (token[0] == '-') {
 			if (foundNormal) {
-				INIException e;
-				rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
+				INIException e(2, "you may not mix normal and +- ops in bitstring lists");
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseBitString32ThrowInfoAnchor); __assume(0);
 			}
 			Int bitIndex = ini->scanIndexList(token + 1, flagList);
@@ -93,8 +89,7 @@ void INI::parseBitString32(INI *ini, void * /*instance*/, void *store, const voi
 			foundAddOrSub = true;
 		} else {
 			if (foundAddOrSub) {
-				INIException e;
-				rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
+				INIException e(2, "you may not mix normal and +- ops in bitstring lists");
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseBitString32ThrowInfoAnchor); __assume(0);
 			}
 

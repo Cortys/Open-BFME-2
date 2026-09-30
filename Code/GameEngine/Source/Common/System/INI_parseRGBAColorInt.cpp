@@ -40,11 +40,11 @@ struct RGBAColorInt
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
@@ -63,8 +63,7 @@ void INI::parseRGBAColorInt(INI *ini, void * /*instance*/, void *store, const vo
 		const char *token = ini->getNextTokenOrNull(ini->getSepsColon());
 		if (token == NULL) {
 			if (i < 3) {
-				INIException e;
-				rva002f681_fill(&e, 3, "can't omit value for color %s", names[i]);
+				INIException e(3, "can't omit value for color %s", names[i]);
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseRGBAColorIntThrowInfoAnchor); __assume(0);
 			} else {
 				// it's ok for A to be omitted.
@@ -73,15 +72,13 @@ void INI::parseRGBAColorInt(INI *ini, void * /*instance*/, void *store, const vo
 		} else {
 			// if present, the token must match.
 			if (_strcmpi(token, names[i]) != 0) {
-				INIException e;
-				rva002f681_fill(&e, 3, "expected '%s'", names[i]);
+				INIException e(3, "expected '%s'", names[i]);
 				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseRGBAColorIntThrowInfoAnchor); __assume(0);
 			}
 			colors[i] = ini->scanInt(ini->getNextToken(ini->getSepsColon()));
 		}
 		if (colors[i] < 0 || colors[i] > 255) {
-			INIException e;
-			rva002f681_fill(&e, 3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
+			INIException e(3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
 			_CxxThrowException(&e, (const _s__ThrowInfo *)&parseRGBAColorIntThrowInfoAnchor); __assume(0);
 		}
 	}

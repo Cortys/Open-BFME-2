@@ -31,11 +31,11 @@ int getAIKindOfFromName(const char *name);
 
 struct INIException
 {
+	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
 };
 
-extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -59,8 +59,7 @@ void parseAIKindOfList(INI *ini, const char * /*seps*/, int *out)
 	return;
 fail:
 	{
-		INIException e;
-		rva002f681_fill(&e, 2, "In an AIKINDOF list, each type may only appear once\n");
+		INIException e(2, "In an AIKINDOF list, each type may only appear once\n");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&aikindThrowInfoAnchor); __assume(0);
 	}
 }
