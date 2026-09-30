@@ -102,6 +102,7 @@ public:
 	void bfmeGetCellRange(BfmeCellFC **first, BfmeCellFC **last,
 		int x1, int x2, int y);
 	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
+	BfmeCellFC *bfmeCellAtWorld(Real worldX, Real worldY) const;
 
 	friend class BfmeRangeUpdaterFC;
 
@@ -302,4 +303,18 @@ void Gen_008812D0::bfmeApplyCircle(int x, int y, int radius, int amount, bool ab
 	updater.m_bfmeMode = mode;
 	updater.m_bfmeAbsolute = absolute;
 	bfmeRasterCircleFC(x, y, radius, updater);
+}
+
+// Retail 0x006C0BD0 135B: world-to-cell via floor/inv, null when outside.
+// Evidence: same lo.x/lo.y at +0x00/+0x04 and inv at +0x1C as ApplyWorld,
+// 12-byte cells via x3/x4 lea pair, unlock callers 0x006C0E40/0x006C0E70.
+BfmeCellFC *Gen_008812D0::bfmeCellAtWorld(Real worldX, Real worldY) const
+{
+	int x = bfmeFloatToLongFC(bfmeFloatFloorFC((worldX - m_bfmeRegion.lo.x) * m_bfmeCellSizeInv));
+	if (x < 0 || x >= m_bfmeWidth)
+		return 0;
+	int y = bfmeFloatToLongFC(bfmeFloatFloorFC((worldY - m_bfmeRegion.lo.y) * m_bfmeCellSizeInv));
+	if (y < 0 || y >= m_bfmeHeight)
+		return 0;
+	return &m_bfmeCells[y * m_bfmeWidth + x];
 }

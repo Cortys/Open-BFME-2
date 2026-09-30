@@ -43709,3 +43709,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva000535CC@Rva000535CC@@QAEXPAX@Z,,0x000535CC,58,Code/GameEngineDevice/Source/MilesAudioDevice/Rva000535CC.cpp,matched,unlocks 0x0005C23C gate plus float via table 0x10
 ?rva0031FC08@Rva0031FC08@@QAEPAUEntry@@V?$StringBase@D@@@Z,,0x0031FC08,98,Code/GameEngine/Source/Common/Rva0031FC08.cpp,matched,EH list find via lowered name plus rowed toLower compareNoCase
 ?bfmeApplyCircleWorld@BfmeTaintManager@@QAEXPBUBfmePointFC@@MH_NH@Z,,0x006C0AB0,170,Code/GameEngine/Source/Common/Bfme5SeventySix.cpp,matched,BFME1 donor plus BFME2 mode word chain from bfmeApplyCircle
+?bfmeCellAtWorld@Gen_008812D0@@QBEPAVBfmeCellFC@@MM@Z,,0x006C0BD0,135,Code/GameEngine/Source/Common/BfmeGridRasterCircle.cpp,matched,BFME1 donor unlock callers 0x006C0E40 0x006C0E70
