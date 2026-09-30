@@ -42990,3 +42990,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ??0Rva005FB22B@@QAE@PBX@Z,,0x005FB22B,24,Code/GameEngine/Source/Common/Rva005FB22BCtor.cpp,matched,Vtable ctor via novtable extern全局
 ??_GRva005DAC85@@UAEPAXI@Z,,0x005DADD1,28,Code/GameEngine/Source/Common/Rva005DAC85Dtor.cpp,matched,deleting dtor via rowed dtor chain slot 0
 ?Rva0059F20BSet@@YAXHABVUnicodeString@@@Z,,0x0059F20B,85,Code/GameEngine/Source/Common/Rva0059F20BSet.cpp,matched,Apt connecting name format plus settext via global
+?Rva0059F296Set@@YAXHABVUnicodeString@@@Z,,0x0059F296,85,Code/GameEngine/Source/Common/Rva0059F20BSet.cpp,matched,sibling status setter same rows global

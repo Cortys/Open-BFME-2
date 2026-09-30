@@ -3578,3 +3578,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ??0Rva006D91B0@@QAE@XZ	0x006D91B0	103	blocked	Apt ctor with twin vptrs CEA228 then CEA778 plus BfmeAptValue 0x16 and NativeHash 8; needs 2-vtable hierarchy t=12 model=muse-spark
 ?Rva006CE3D0Cleanup@@YAXPAXHH@Z	0x006CE3D0	388	blocked	Apt pool allocBlock plus mutex plus array-new 388B chain; needs Apt donor t=3 model=muse-spark
 ?rva003B8E89@Rva003B8E89@@QAEPAUBfmeAssignRecord104@@ABV?$StringBase@D@@@Z	0x003B8E89	83	blocked	vector104 find via idiv68 and StringBase compare; EBP-plus-stack vs frameless-register wall 101B t=14 model=muse-spark
+?Rva003EF80FInsert@@YGXPAX0@Z	0x003EF80F	80	blocked	frameless stdcall with EBP frame plus ebx-esi-edi swap t=12 model=muse-spark
