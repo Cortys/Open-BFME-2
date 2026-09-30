@@ -43193,3 +43193,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0027C208@Rva0027C208@@QAEPAXPAX@Z,,0x0027C208,16,Code/GameEngine/Source/Common/Rva0027C208.cpp,matched,thiscall wrapper pushes arg then virtual slot 0x18 then returns arg
 ?rva004FCA5A@Rva004FCA5A@@QAEPAXABVRva00376A62@@@Z,,0x004FCA5A,54,Code/GameEngine/Source/Common/Rva004FCA5ASearch.cpp,matched,pointer-array search via forward with field return
 ?Rva001806D8Create@@YAXPBDHH@Z,,0x001806D8,92,Code/GameEngine/Source/Common/Rva001806D8Create.cpp,matched,chain of Rva001805E0 via plain new null-tolerant
+??0Rva00180847@@QAE@PBDHH@Z,,0x00180847,77,Code/GameEngine/Source/Common/Rva00180847Ctor.cpp,matched,twin of Rva001805E0 ctor unlocks 0x001809EA
