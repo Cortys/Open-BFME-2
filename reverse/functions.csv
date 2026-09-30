@@ -43078,3 +43078,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003F486C@Rva003F498A@@QAE_NH@Z,,0x003F486C,131,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,unlock nested loops via same file
 ?rva003F48EF@Rva003F498A@@QAE_NPAX@Z,,0x003F48EF,15,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain via 0x003F486C same file
 ?rva00135E6D@Rva00136794@@QAEXXZ,,0x00135E6D,25,Code/Libraries/Source/WWVegas/WWLib/Rva00136794Ctor.cpp,matched,vslot 7 release m54 via named local exact
+??4Rva00381F04@@QAEAAV0@ABV0@@Z,,0x00381F04,265,Code/GameEngine/Source/Common/Rva00381F04Assign.cpp,matched,copy assign StringBase ints bytes loops AsciiString Rva235A37 via pins unblocks 82E73
