@@ -43215,3 +43215,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva000D17EF@W3DTornadoDraw@@QAEXHHH@Z,,0x000D17EF,46,Code/GameEngine/Source/GameClient/Drawable/Update/AnimatedParticleSysBoneClientUpdateCtor.cpp,matched,vslot 38 of W3DTornadoDraw syncs RadiusDecals to rope position
 ??1Rva00257464@@QAE@XZ,,0x00257464,5,Code/Libraries/Source/WWVegas/WWLib/Rva00257464Dtor.cpp,matched,5B jmp to pinned 0x002572D7 novtable empty dtor
 ??1Rva0025753F@@QAE@XZ,,0x0025753F,5,Code/Libraries/Source/WWVegas/WWLib/Rva0025753FDtor.cpp,matched,5B jmp to rowed 0x0025742C novtable empty dtor
+??$__adjust_heap@U?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@HUBfmeE12@@UBfmeE12Cmp00422291@@@_STL@@YAXU?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@0@HHUBfmeE12@@UBfmeE12Cmp00422291@@@Z,,0x00422B98,207,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_e12_partition.cpp,matched,chain adjust heap via landed push heap
