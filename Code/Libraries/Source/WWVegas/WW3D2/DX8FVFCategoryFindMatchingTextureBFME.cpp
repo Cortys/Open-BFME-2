@@ -51,10 +51,10 @@ inline bool operator==(TextureClass *left, const BfmeHandleCX &right)
 	return left == right.p;
 }
 
-struct BFME2TextureResource { unsigned Vtable; unsigned short Refs; void Release_Ref(); };
+struct TextureBaseClass { unsigned Vtable; unsigned short Refs; void Release_Ref(); };
 struct BFME2TextureRef {
- BFME2TextureResource* Ptr;
- BFME2TextureRef(BFME2TextureResource* p):Ptr(p) { if(Ptr) ++Ptr->Refs; }
+ TextureBaseClass* Ptr;
+ BFME2TextureRef(TextureBaseClass* p):Ptr(p) { if(Ptr) ++Ptr->Refs; }
  BFME2TextureRef(const BFME2TextureRef& p):Ptr(p.Ptr) { if(Ptr) ++Ptr->Refs; }
  ~BFME2TextureRef() { if(Ptr) Ptr->Release_Ref(); }
 };
