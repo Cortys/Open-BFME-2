@@ -43000,3 +43000,4 @@ _piChannelUserJoinedA,,0x006AAE60,290,Code/GameEngine/Source/GameNetwork/GameSpy
 _piChannelUserPartedA,,0x006AAF90,243,Code/GameEngine/Source/GameNetwork/GameSpy/peer/peerChannelUserJoined.cpp,matched,
 ?rva00809E40@Rva00809E40Owner@@QAEXPAVRva007E8810Message@@@Z,,0x00675D40,705,Code/GameEngine/Source/GameNetwork/Rva00809E40FeslAdmission.cpp,matched,
 ?bfmeCheckJX@@YAHPAUCodecState@@@Z,,0x001B9410,616,Code/GameEngine/Source/Common/BfmeCheckJX.cpp,matched,
+?rva006D0320@Rva006D0280@@QAEPAV1@E@Z,,0x006D0320,35,Code/GameEngine/Source/Common/Rva006D0320Release.cpp,matched,Conditional pool free via pinned teardown

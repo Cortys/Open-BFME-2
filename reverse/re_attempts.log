@@ -3582,3 +3582,5 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva004B9DA9@Rva004B9DA9@@QAE	0x004B9DA9	367	blocked	FDE Gatherers plus findObjectByID plus Drawable 367B unlock; needs FDE donor t=4 model=muse-spark
 ?Rva006016C9Init@@YAXXZ	0x006016C9	113	blocked	ctype-table once-init 113B with gen-wrong-types ji 3-push vs 0-arg row plus contested StringBase pin plus 5 globals; needs central gen retype t=6 model=muse-spark
 ?rva005AA740@Rva005AA735@@QAE	0x005AA740	131	blocked	opaque vslot-3 with Setter plus Player plus hashmap plus ftol 131B; needs Setter-Src donor t=5 model=muse-spark
+?rva005FB29A@@YAPAPAVRva005FB22B@@PAPAV1@PBX@Z	0x005FB29A	50	blocked	factory needs EBP frame without EH prolog t=12 model=muse-08
+?rva005AA740@Rva005AA735@@UAE_NXZ	0x005AA740	131	blocked	vslot 3 needs 2 placeholder virtuals t=8 model=muse-08
