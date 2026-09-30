@@ -99,6 +99,7 @@ public:
 
 		insert_result insert(const value_type &value);
 		equal_result rva0005559F(const value_type &value);
+		equal_result rva00057C5C(const value_type &value);
 
 	private:
 		NameKeyHashInt m_hash;
@@ -199,4 +200,15 @@ NameKeyGenerator::KeyToBucketMap::rva0005559F(const value_type &value)
 	++m_count;
 
 	return equal_result(tmp, this);
+}
+
+// ?rva00057C5C@KeyToBucketMap@NameKeyGenerator@@QAE?AUequal_result@12@ABUvalue_type@12@@Z @0x00057C5C 36B.
+// Chain from 0x0005559F: resize-then-insert_equal like insert does resize-then-do_insert.
+// Evidence: calls rowed hashtable resize 0x0053F1EC and rowed rva0005559F 0x0005559F,
+// count at +0x10, callers at 0x00058A75 0x0005949A 0x000594FB.
+NameKeyGenerator::KeyToBucketMap::equal_result
+NameKeyGenerator::KeyToBucketMap::rva00057C5C(const value_type &value)
+{
+	resize(m_count + 1);
+	return rva0005559F(value);
 }
