@@ -3729,3 +3729,4 @@ FUN_0092C119	0x0052C119	72	blocked	clamp 0xB8 vector register wall 9 regdiffs 5 
 ??4BfmeStringHeadRecord184@@QAEAAU0@ABU0@@Z	0x00311537	118	blocked	movsd-string 15-insn second loop missing plus ebx dst vs edi src register wall t=15 model=muse-10
 ??0Rva0014F4E3@@QAE@ABU0@@Z	0x0014F4E3	182	blocked	EH prolog missing plus Region3D AssetReference layout plus unrolled movs need O2 plus empty-base states t=15 model=muse-10
 FUN_0099e920	0x0059E920	113	blocked	EH default ctor with vtable 0x871138 plus two BfmeE16 vectors plus new PlayerPosition needs donor t=8 model=muse-02
+?isPosDifferent@@YA_NPBUCoord3D@@0@Z	0x0028B0A8	113	blocked	pop fxch order wall after 6 variants G7 SSE needed for fcompi t=15 model=muse-08
