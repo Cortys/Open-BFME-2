@@ -44905,3 +44905,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva004FACD0Xfer@@YAPAVXfer@@PAV1@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x004FACD0,204,Code/GameEngine/Source/Common/System/Rva004FACD0Xfer.cpp,matched,same 204B shape as XferScienceTypeVector 0x00398280 via Rva004E12D7Parse reserve push_back FormatText Throw
 ?rva004FAF73@Rva004FAF73@@QAEXPAVXfer@@@Z,,0x004FAF73,67,Code/GameEngine/Source/Common/System/Rva004FAF73Xfer.cpp,matched,chain via Rva004FACD0Xfer base rva004CE6E4 slots 0x28 0x7c vector at 0x20
 ?rva0031F96F@Rva0031F96F@@QAEXMMHH@Z,,0x0031F96F,209,Code/GameEngine/Source/Common/Rva0031F96F.cpp,matched,twin of rva0031F89E 209B three lists via TheDisplay draw base 0x164
+??1DestroyEnvironmentUpdate@@UAE@XZ,,0x004AC767,70,Code/GameEngine/Source/GameLogic/Object/Update/DestroyEnvironmentUpdateDtor.cpp,matched,dtor: three vtables then helper 0x004AC722 (pinned) in state 0 then base 0x0024A797
