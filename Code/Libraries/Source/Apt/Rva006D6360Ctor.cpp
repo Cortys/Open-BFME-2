@@ -45,6 +45,14 @@ public:
     Rva006D6470Owner(int a0, int a1);
     virtual ~Rva006D6470Owner();
 };
+class Rva006D6500 : public Rva006D6360
+{
+    unsigned int m_bits;
+    int m_arg;
+public:
+    Rva006D6500(int a0);
+    virtual ~Rva006D6500();
+};
 Rva006D6360::Rva006D6360(int type, int size) : BfmeAptValue006DCD20(type), m_hash(size)
 {
 }
@@ -52,4 +60,10 @@ Rva006D6470Owner::Rva006D6470Owner(int a0, int a1) : Rva006D6360(a0, a1)
 {
     *(unsigned char *)&m_bits = 0;
     m_bits &= 0xFFFFFCFF;
+}
+Rva006D6500::Rva006D6500(int a0) : Rva006D6360(9, 8)
+{
+    *(unsigned char *)&m_bits = 0;
+    m_bits &= 0xFFFFFCFF;
+    m_arg = a0;
 }
