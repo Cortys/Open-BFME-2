@@ -43,8 +43,8 @@ private:
     // array base, so the count -- not the base -- is the true return).
     unsigned ScheduleFrameCommand(int frame, const char *command);
 
-    // Resolves via the existing ExecCommand pin (private non-virtual AAEX).
-    void ExecCommand(const char *, const char *);
+    // Resolves via the existing ExecCommand pin (private non-virtual bool).
+    bool ExecCommand(const char *, const char *);
 };
 
 // ?ScheduleFrameCommand@Debug@@AAEIHPBD@Z
