@@ -11,6 +11,8 @@
 
 extern unsigned int g_Va00DFEAE0;
 extern unsigned int g_Va00DFEAE8;
+// g_Va00DFEAE8: matched references place it at VA 0xdfeae8 (zero-filled .bss).
+unsigned int g_Va00DFEAE8;
 extern unsigned int g_Va00DFEB54;
 extern unsigned int g_Va00DFEC4C;
 extern unsigned int g_Va00DFEC60;

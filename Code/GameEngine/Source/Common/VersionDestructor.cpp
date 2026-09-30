@@ -111,9 +111,17 @@ private:
 };
 
 extern int g_versionMajor;
+// g_versionMajor: matched references place it at VA 0xdfe760 (zero-filled .bss).
+int g_versionMajor;
 extern int g_versionMinor;
+// g_versionMinor: matched references place it at VA 0xdfe764 (zero-filled .bss).
+int g_versionMinor;
 extern int g_versionBuildNum;
+// g_versionBuildNum: matched references place it at VA 0xdfe768 (zero-filled .bss).
+int g_versionBuildNum;
 extern int g_versionLocalBuildNum;
+// g_versionLocalBuildNum: matched references place it at VA 0xdfe76c (zero-filled .bss).
+int g_versionLocalBuildNum;
 extern const char g_versionBlock[];
 int initVersionGlobals();
 

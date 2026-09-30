@@ -29,6 +29,8 @@ public:
 };
 
 extern int g_Va00DFDC64;
+// g_Va00DFDC64: matched references place it at VA 0xdfdc64 (zero-filled .bss).
+int g_Va00DFDC64;
 
 Rva001E3E43::~Rva001E3E43()
 {

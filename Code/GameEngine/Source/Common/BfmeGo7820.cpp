@@ -1,7 +1,11 @@
 // cl: /DNDEBUG /MD /O2
 
 extern int g_bfmeTableC7E0;
+// g_bfmeTableC7E0: matched references place it at VA 0xdfda58 (zero-filled .bss).
+int g_bfmeTableC7E0;
 extern int g_bfmeTableC800;
+// g_bfmeTableC800: matched references place it at VA 0xdfda78 (zero-filled .bss).
+int g_bfmeTableC800;
 
 void __cdecl bfmeGo76A0(int delta, int *table, void *p2, int a, int b, int c, void *p3);
 void __cdecl bfmeGo7760(int *table, void *p1, int a, int b, int c, int d, void *p5);

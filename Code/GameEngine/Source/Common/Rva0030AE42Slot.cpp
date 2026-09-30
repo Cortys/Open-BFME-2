@@ -21,7 +21,11 @@ extern S12 g_00DFF50C;
 extern S12 g_00DFF51C;
 extern S12 g_00DFF528;
 extern unsigned char g_00DFF518;
+// g_00DFF518: matched references place it at VA 0xdff518 (zero-filled .bss).
+unsigned char g_00DFF518;
 extern float g_00DFF534;
+// g_00DFF534: matched references place it at VA 0xdff534 (zero-filled .bss).
+float g_00DFF534;
 
 class Rva00985E4
 {

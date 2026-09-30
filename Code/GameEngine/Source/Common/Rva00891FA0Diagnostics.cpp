@@ -9,7 +9,11 @@ struct Rva00891FA0Record
 };
 
 extern int g_rva00891FA0Ready;
+// g_rva00891FA0Ready: matched references place it at VA 0xe17708 (zero-filled .bss).
+int g_rva00891FA0Ready;
 extern int g_rva00891FA0Value;
+// g_rva00891FA0Value: matched references place it at VA 0xe176f0 (zero-filled .bss).
+int g_rva00891FA0Value;
 // Retail slots 0x00E17740/44 are not PE imports (no import-table entry), so
 // these are .data function pointers, not dllimport functions. Both emit an
 // indirect call through the slot; only the symbol identity differs.

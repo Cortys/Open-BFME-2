@@ -2,6 +2,8 @@
 // 0x010EC760. No evidence proves the semantic class name, so the type keeps the address.
 
 extern int R2Data010EC760;
+// R2Data010EC760: matched references place it at VA 0xc619a0 (retail .rdata value 9312743).
+int R2Data010EC760 = 9312743;
 
 class Rva003A6360Record
 {

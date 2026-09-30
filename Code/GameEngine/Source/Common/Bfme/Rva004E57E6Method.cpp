@@ -19,8 +19,14 @@ public:
 };
 
 extern int g_00DD00A8;
+// g_00DD00A8: matched references place it at VA 0xdd00a8 (retail .data initial value 1017118720).
+int g_00DD00A8 = 1017118720;
 extern int g_00DD00AC;
+// g_00DD00AC: matched references place it at VA 0xdd00ac (retail .data initial value 1042721451).
+int g_00DD00AC = 1042721451;
 extern float g_00C623C8;
+// g_00C623C8: matched references place it at VA 0xc623c8 (retail .rdata value 0.9609375f).
+float g_00C623C8 = 0.9609375f;
 
 void Rva004E57E6::rva004E57E6(Rva004E57E6Pair *p, float f)
 {

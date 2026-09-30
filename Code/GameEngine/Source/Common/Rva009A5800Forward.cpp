@@ -21,6 +21,8 @@ extern "C" void VP6_DecodeFrameMbs(FramePB *pbi);
 void __cdecl d_009a8c50(void);
 extern void (__cdecl *g_bfmeToneReady)();
 extern int g_0134C7D8;
+// g_0134C7D8: matched references place it at VA 0xdfda50 (zero-filled .bss).
+int g_0134C7D8;
 extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
 #pragma intrinsic(memcpy)
 

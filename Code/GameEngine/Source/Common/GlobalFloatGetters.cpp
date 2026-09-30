@@ -42,6 +42,8 @@ float Rva00167F60Get(void)
 }
 
 extern float g_Va00BC93F0;
+// g_Va00BC93F0: matched references place it at VA 0xbc93f0 (retail .rdata value 1024.0f).
+float g_Va00BC93F0 = 1024.0f;
 
 // ?Rva000A92A2Get@@YAMXZ @ 0x000a92a2 (7B) over 0x00BC93F0 (1024.0f).
 // Follows a ret (prev C3); address stored to global 0x00E177C8,
@@ -52,6 +54,8 @@ float Rva000A92A2Get(void)
 }
 
 extern float g_Va00BC93F4;
+// g_Va00BC93F4: matched references place it at VA 0xbc93f4 (retail .rdata value 768.0f).
+float g_Va00BC93F4 = 768.0f;
 
 // ?Rva000A92A9Get@@YAMXZ @ 0x000a92a9 (7B) over 0x00BC93F4 (768.0f).
 // Adjacent after Rva000A92A2Get (pair proves both boundaries); address
@@ -111,6 +115,8 @@ float Rva00154310Get(void)
 }
 
 extern float g_Va00DEDA2C;
+// g_Va00DEDA2C: matched references place it at VA 0xdeda2c (zero-filled .bss).
+float g_Va00DEDA2C;
 
 // ?Rva0018BD82Get@@YAMXZ @ 0x0018bd82 (7B) over 0x00DEDA2C (0.0f).
 // Follows another float getter (adjacent); no direct callers, no branch sources.

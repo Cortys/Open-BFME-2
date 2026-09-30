@@ -85,6 +85,8 @@ Rva00540E9D::Rva00540E9D(const Rva00540E9DSrc &src, int v) : m_00(v)
 }
 
 extern float g_Va00BC74F0;
+// g_Va00BC74F0: matched references place it at VA 0xbc74f0 (retail .rdata value 0.87266463f).
+float g_Va00BC74F0 = 0.87266463f;
 
 class Rva00540D67
 {

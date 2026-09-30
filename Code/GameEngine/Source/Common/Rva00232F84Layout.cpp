@@ -26,6 +26,8 @@ public:
 };
 
 extern int unknownGlobal009C8630;
+// unknownGlobal009C8630: matched references place it at VA 0xdc8630 (retail .data initial value 2).
+int unknownGlobal009C8630 = 2;
 
 class Rva00232F84
 {

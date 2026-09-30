@@ -6,6 +6,8 @@ extern int g_Rva01142008[],g_Rva01141E08[],g_Rva01141B08[],g_Rva01141908[];
 extern int g_Rva01142108[],g_Rva01141F08[],g_Rva01141C08[],g_Rva01141A08[];
 extern int g_Rva01142208[64];
 extern double g_Rva01142610;
+// g_Rva01142610: matched references place it at VA 0xbd8768 (retail .rdata value 65536.0).
+double g_Rva01142610 = 65536.0;
 extern unsigned char g_Rva01142608[];
 extern int g_rva01142308[];
 struct Rva009A6780State {

@@ -69,6 +69,8 @@ extern "C" int __cdecl atexit(void (__cdecl *routine)(void));
 extern void *g_Va00A0445C;
 extern unsigned char g_Va00A04460;
 extern int g_Va00A04464;
+// g_Va00A04464: matched references place it at VA 0xe04464 (zero-filled .bss).
+int g_Va00A04464;
 void *Rva004E4179Get(void)
 {
 	if ((g_Va00A04464 & 1) == 0)
@@ -156,6 +158,8 @@ void Rva0043C96FEnable(void)
 extern void *g_Va00A03318;
 extern unsigned char g_Va00A0331C;
 extern int g_Va00A03320;
+// g_Va00A03320: matched references place it at VA 0xe03320 (zero-filled .bss).
+int g_Va00A03320;
 void *Rva0043C9B3Get(void)
 {
 	if ((g_Va00A03320 & 1) == 0)

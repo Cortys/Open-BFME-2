@@ -10,6 +10,8 @@ struct Rva008A4570Owner {
 };
 
 extern int g_00E18064;
+// g_00E18064: matched references place it at VA 0xe18064 (zero-filled .bss).
+int g_00E18064;
 
 class Rva006D6470Owner {
     virtual void f0();

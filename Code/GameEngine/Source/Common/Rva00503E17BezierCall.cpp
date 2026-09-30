@@ -5,6 +5,8 @@
 // Evidence: movss global minus [ecx+0x14] then fldz fld globals pattern, caller 0x005043DF.
 float __cdecl Rva00503D26Evaluate(float a, float b, float c, float t);
 extern float g_Va00863BFC;
+// g_Va00863BFC: matched references place it at VA 0xc63bfc (retail .rdata value 0.41666666f).
+float g_Va00863BFC = 0.41666666f;
 struct Rva00503E17
 {
 	char m_pad[0x14];

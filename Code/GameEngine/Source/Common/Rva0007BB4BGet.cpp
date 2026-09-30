@@ -26,6 +26,8 @@ public:
 };
 
 extern unsigned char g_009E1FFC;
+// g_009E1FFC: matched references place it at VA 0xde1ffc (zero-filled .bss).
+unsigned char g_009E1FFC;
 
 class Rva0007BB4B
 {

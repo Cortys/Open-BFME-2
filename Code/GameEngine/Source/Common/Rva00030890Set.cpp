@@ -5,6 +5,8 @@
 // clear at 0x000308B0 writes 0, getter at 0x000308D0 reads 0x00DE0818.
 // Honest address-derived name. No STL.
 extern unsigned char g_Va00DE0821;
+// g_Va00DE0821: matched references place it at VA 0xde0821 (zero-filled .bss).
+unsigned char g_Va00DE0821;
 extern unsigned char g_Va00DE0818;
 
 void Rva00030890Set(void)

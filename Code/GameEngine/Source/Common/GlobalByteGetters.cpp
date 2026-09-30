@@ -8,6 +8,8 @@
 // ?Rva0004CAB1GetByte@@YAEXZ @ 0x0004CAB1 (6B) over 0x00DB5F7D.
 
 extern unsigned char g_Va00DB5F7D;
+// g_Va00DB5F7D: matched references place it at VA 0xdb5f7d (retail .data initial value 1).
+unsigned char g_Va00DB5F7D = 1;
 
 unsigned char Rva0004CAB1GetByte(void)
 {
@@ -62,6 +64,8 @@ unsigned char Rva0006E1A1GetByte(void)
 // ?Rva00110094GetByte@@YAEXZ @ 0x00110094 (6B) over 0x00DEC3D7.
 
 extern unsigned char g_Va00DEC3D7;
+// g_Va00DEC3D7: matched references place it at VA 0xdec3d7 (zero-filled .bss).
+unsigned char g_Va00DEC3D7;
 
 unsigned char Rva00110094GetByte(void)
 {
@@ -71,6 +75,8 @@ unsigned char Rva00110094GetByte(void)
 // ?Rva000308D0GetByte@@YAEXZ @ 0x000308D0 (6B) over 0x00DE0818.
 
 extern unsigned char g_Va00DE0818;
+// g_Va00DE0818: matched references place it at VA 0xde0818 (zero-filled .bss).
+unsigned char g_Va00DE0818;
 
 unsigned char Rva000308D0GetByte(void)
 {
@@ -98,6 +104,8 @@ unsigned char Rva00116F70GetByte(void)
 // ?Rva00171650GetByte@@YAEXZ @ 0x00171650 (6B) over 0x00DEC410.
 
 extern unsigned char g_Va00DEC410;
+// g_Va00DEC410: matched references place it at VA 0xdec410 (zero-filled .bss).
+unsigned char g_Va00DEC410;
 
 unsigned char Rva00171650GetByte(void)
 {

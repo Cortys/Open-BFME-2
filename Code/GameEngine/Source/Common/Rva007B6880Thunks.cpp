@@ -22,6 +22,8 @@ public:
 };
 
 extern unsigned g_Va009E5DF8;
+// g_Va009E5DF8: matched references place it at VA 0xde5df8 (zero-filled .bss).
+unsigned int g_Va009E5DF8;
 
 // ?rva007B6C9B@@YAXXZ @ 0x007B6C9B (10B). Global clear thunk: ecx=&g_Va009E5DF8 then tail-jmp to pinned ?clear@Rva0009990D@@QAEXXZ (0x0009990D). No callers. Prev is our 0x007B6880 row in this TU. Honest address name.
 void __cdecl rva007B6C9B()
@@ -98,6 +100,8 @@ public:
 };
 
 extern unsigned g_Va00DEDC80;
+// g_Va00DEDC80: matched references place it at VA 0xdedc80 (zero-filled .bss).
+unsigned int g_Va00DEDC80;
 extern unsigned g_Va00DEE5D8;
 
 // ?rva007B6FC0@@YAXXZ @ 0x007B6FC0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&g_Va00DEDC80 then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same page. Honest address name.
@@ -122,6 +126,8 @@ public:
 };
 
 extern unsigned g_Va009F6F30;
+// g_Va009F6F30: matched references place it at VA 0xdf6f30 (zero-filled .bss).
+unsigned int g_Va009F6F30;
 
 // ?rva007B71C0@@YAXXZ @ 0x007B71C0 (10B). Global SegLineRenderer dtor thunk: ecx=&g_Va009F6F30 then tail-jmp to rowed ??1SegLineRendererClass@@QAE@XZ (0x001911C0). No callers. Prev is our 0x007B6FD0 row in this TU (same page). Honest address name.
 void __cdecl rva007B71C0()

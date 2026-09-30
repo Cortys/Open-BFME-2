@@ -87,9 +87,17 @@ struct Rva00517048
 
 extern Rva00517048 *g_Va00A04904;
 extern unsigned char g_Va00A0308C;
+// g_Va00A0308C: matched references place it at VA 0xe0308c (zero-filled .bss).
+unsigned char g_Va00A0308C;
 extern int g_Va00A03090;
+// g_Va00A03090: matched references place it at VA 0xe03090 (zero-filled .bss).
+int g_Va00A03090;
 extern int g_Va00A03098;
+// g_Va00A03098: matched references place it at VA 0xe03098 (zero-filled .bss).
+int g_Va00A03098;
 extern unsigned char g_Va00A03094;
+// g_Va00A03094: matched references place it at VA 0xe03094 (zero-filled .bss).
+unsigned char g_Va00A03094;
 #define TheBuddy00517048Owner g_Va00A04904
 #define G_BuddyFlag8C g_Va00A0308C
 #define G_BuddyCount90 g_Va00A03090

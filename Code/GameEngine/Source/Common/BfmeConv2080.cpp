@@ -25,6 +25,8 @@ struct CodecState
 };
 
 extern int g_bfmeSharedJX;
+// g_bfmeSharedJX: matched references place it at VA 0xe23300 (zero-filled .bss).
+int g_bfmeSharedJX;
 
 class BfmeThingJT;
 
@@ -36,6 +38,8 @@ struct CodecState;
 CodecState *bfmeAllocJX();
 
 extern int g_bfmeTableJX;
+// g_bfmeTableJX: matched references place it at VA 0xe22d40 (zero-filled .bss).
+int g_bfmeTableJX;
 
 int bfmeAllocJT(BfmeThingJT *q);
 void bfmeFreeOneJT(void *q);

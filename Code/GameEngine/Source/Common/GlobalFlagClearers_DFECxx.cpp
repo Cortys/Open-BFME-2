@@ -10,9 +10,17 @@
 // cl: /G7 /MD /EHsc /DNDEBUG
 
 extern unsigned int g_Va00DFEC4C;
+// g_Va00DFEC4C: matched references place it at VA 0xdfec4c (zero-filled .bss).
+unsigned int g_Va00DFEC4C;
 extern unsigned int g_Va00DFEC60;
+// g_Va00DFEC60: matched references place it at VA 0xdfec60 (zero-filled .bss).
+unsigned int g_Va00DFEC60;
 extern unsigned int g_Va00DFEC80;
+// g_Va00DFEC80: matched references place it at VA 0xdfec80 (zero-filled .bss).
+unsigned int g_Va00DFEC80;
 extern unsigned int g_Va00DFECE0;
+// g_Va00DFECE0: matched references place it at VA 0xdfece0 (zero-filled .bss).
+unsigned int g_Va00DFECE0;
 extern unsigned int g_Va00DFECE8;
 extern unsigned int g_Va00DFECF0;
 extern unsigned int g_Va00DFECF8;

@@ -41,6 +41,8 @@ int Rva00139470Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G009ED5EC;
+// G009ED5EC: matched references place it at VA 0xded5ec (zero-filled .bss).
+int G009ED5EC;
 int Rva0011CDB0Get(void)
 {
 	return G009ED5EC;
@@ -50,6 +52,8 @@ int Rva0011CDB0Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G009EE5D0;
+// G009EE5D0: matched references place it at VA 0xdee5d0 (zero-filled .bss).
+int G009EE5D0;
 int Rva00120130Get(void)
 {
 	return G009EE5D0;
@@ -131,6 +135,8 @@ int Rva001432A0Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G00DEDA78;
+// G00DEDA78: matched references place it at VA 0xdeda78 (zero-filled .bss).
+int G00DEDA78;
 int Rva00143300Get(void)
 {
 	return G00DEDA78;
@@ -140,6 +146,8 @@ int Rva00143300Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G00DB5F88;
+// G00DB5F88: matched references place it at VA 0xdb5f88 (retail .data initial value 1).
+int G00DB5F88 = 1;
 int Rva00187F30Get(void)
 {
 	return G00DB5F88;

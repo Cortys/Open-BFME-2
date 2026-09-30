@@ -20,6 +20,8 @@ public:
 
 extern SaveDate g_00DDF5B8;
 extern int g_00DDF5AC;
+// g_00DDF5AC: matched references place it at VA 0xddf5ac (zero-filled .bss).
+int g_00DDF5AC;
 extern int g_00DDF5B0;
 
 void Rva0002BBC9Update()

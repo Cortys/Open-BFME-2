@@ -77,6 +77,8 @@ public:
 
 extern Rva00A00958Obj *g_Rva00A00958;
 extern unsigned char g_Rva00A02D86;
+// g_Rva00A02D86: matched references place it at VA 0xe02d86 (zero-filled .bss).
+unsigned char g_Rva00A02D86;
 extern unsigned char g_Rva00A02D87;
 
 struct Rva009FE758Obj

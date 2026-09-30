@@ -139,6 +139,8 @@ extern class Mouse *MouseSubsystem;
 extern ClientSubsystem *AudioSubsystem;
 extern NetworkInterface *TheNetwork;
 extern int SkippedClientFrames;
+// SkippedClientFrames: matched references place it at VA 0xdfe6f0 (zero-filled .bss).
+int SkippedClientFrames;
 extern int SavedClientFrame;
 extern int TimedOpInputLocked;
 

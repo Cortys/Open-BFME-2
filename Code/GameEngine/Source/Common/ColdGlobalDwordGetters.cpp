@@ -18,6 +18,8 @@ int Rva00083B7BGet(void)
 }
 
 extern int g_Va00DB47EC;
+// g_Va00DB47EC: matched references place it at VA 0xdb47ec (retail .data initial value 2).
+int g_Va00DB47EC = 2;
 
 // ?Rva00094B87Get@@YAHXZ @ 0x00094b87 (6B) over 0x00DB47EC.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -38,6 +40,8 @@ int Rva0014D241Get(void)
 }
 
 extern int g_Va00DFE348;
+// g_Va00DFE348: matched references place it at VA 0xdfe348 (zero-filled .bss).
+int g_Va00DFE348;
 
 // ?Rva0021913AGet@@YAHXZ @ 0x0021913a (6B) over 0x00DFE348.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -48,6 +52,8 @@ int Rva0021913AGet(void)
 }
 
 extern int g_Va00E032E0;
+// g_Va00E032E0: matched references place it at VA 0xe032e0 (zero-filled .bss).
+int g_Va00E032E0;
 
 // ?Rva0023C54CGet@@YAHXZ @ 0x0023c54c (6B) over 0x00E032E0.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -58,6 +64,8 @@ int Rva0023C54CGet(void)
 }
 
 extern int g_Va00E0333C;
+// g_Va00E0333C: matched references place it at VA 0xe0333c (zero-filled .bss).
+int g_Va00E0333C;
 
 // ?Rva00248D60Get@@YAHXZ @ 0x00248d60 (6B) over 0x00E0333C.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -78,6 +86,8 @@ int Rva00248D66Get(void)
 }
 
 extern int g_Va00DBB708;
+// g_Va00DBB708: matched references place it at VA 0xdbb708 (retail .data initial value 1073741824).
+int g_Va00DBB708 = 1073741824;
 
 // ?Rva0027C220Get@@YAHXZ @ 0x0027c220 (6B) over 0x00DBB708.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -98,6 +108,8 @@ int Rva0029A26FGet(void)
 }
 
 extern int g_Va00E04478;
+// g_Va00E04478: matched references place it at VA 0xe04478 (zero-filled .bss).
+int g_Va00E04478;
 
 // ?Rva0031AA00Get@@YAHXZ @ 0x0031aa00 (6B) over 0x00E04478.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -108,6 +120,8 @@ int Rva0031AA00Get(void)
 }
 
 extern int g_Va00E032C8;
+// g_Va00E032C8: matched references place it at VA 0xe032c8 (zero-filled .bss).
+int g_Va00E032C8;
 
 // ?Rva00320607Get@@YAHXZ @ 0x00320607 (6B) over 0x00E032C8.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -118,6 +132,8 @@ int Rva00320607Get(void)
 }
 
 extern int g_Va00DBD0F0;
+// g_Va00DBD0F0: matched references place it at VA 0xdbd0f0 (retail .data initial value 1).
+int g_Va00DBD0F0 = 1;
 
 // ?Rva00328A65Get@@YAHXZ @ 0x00328a65 (6B) over 0x00DBD0F0.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -148,6 +164,8 @@ int Rva00376D1DGet(void)
 }
 
 extern int g_Va00E05FAC;
+// g_Va00E05FAC: matched references place it at VA 0xe05fac (zero-filled .bss).
+int g_Va00E05FAC;
 
 // ?Rva00376D23Get@@YAHXZ @ 0x00376d23 (6B) over 0x00E05FAC.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -158,6 +176,8 @@ int Rva00376D23Get(void)
 }
 
 extern int g_Va00E032FC;
+// g_Va00E032FC: matched references place it at VA 0xe032fc (zero-filled .bss).
+int g_Va00E032FC;
 
 // ?Rva0038071EGet@@YAHXZ @ 0x0038071e (6B) over 0x00E032FC.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -178,6 +198,8 @@ int Rva00380724Get(void)
 }
 
 extern int g_Va00E048D0;
+// g_Va00E048D0: matched references place it at VA 0xe048d0 (zero-filled .bss).
+int g_Va00E048D0;
 
 // ?Rva0040596CGet@@YAHXZ @ 0x0040596c (6B) over 0x00E048D0.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -197,6 +219,8 @@ int Rva00415E8AGet(void)
 }
 
 extern int g_Va00E0330C;
+// g_Va00E0330C: matched references place it at VA 0xe0330c (zero-filled .bss).
+int g_Va00E0330C;
 
 // ?Rva0043C6E4Get@@YAHXZ @ 0x0043c6e4 (6B) over 0x00E0330C.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -227,6 +251,8 @@ int Rva004B879DGet(void)
 }
 
 extern int g_Va00E063EC;
+// g_Va00E063EC: matched references place it at VA 0xe063ec (zero-filled .bss).
+int g_Va00E063EC;
 
 // ?Rva004FDA11Get@@YAHXZ @ 0x004fda11 (6B) over 0x00E063EC.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -237,6 +263,8 @@ int Rva004FDA11Get(void)
 }
 
 extern int g_Va00DFEFD8;
+// g_Va00DFEFD8: matched references place it at VA 0xdfefd8 (zero-filled .bss).
+int g_Va00DFEFD8;
 
 // ?Rva0050B426Get@@YAHXZ @ 0x0050b426 (6B) over 0x00DFEFD8.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -247,6 +275,8 @@ int Rva0050B426Get(void)
 }
 
 extern int g_Va00E06394;
+// g_Va00E06394: matched references place it at VA 0xe06394 (zero-filled .bss).
+int g_Va00E06394;
 
 // ?Rva005114B7Get@@YAHXZ @ 0x005114b7 (6B) over 0x00E06394.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -257,6 +287,8 @@ int Rva005114B7Get(void)
 }
 
 extern int g_Va00E06544;
+// g_Va00E06544: matched references place it at VA 0xe06544 (zero-filled .bss).
+int g_Va00E06544;
 
 // ?Rva00516E0AGet@@YAHXZ @ 0x00516e0a (6B) over 0x00E06544.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -267,6 +299,8 @@ int Rva00516E0AGet(void)
 }
 
 extern int g_Va00E06548;
+// g_Va00E06548: matched references place it at VA 0xe06548 (zero-filled .bss).
+int g_Va00E06548;
 
 // ?Rva00516E48Get@@YAHXZ @ 0x00516e48 (6B) over 0x00E06548.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -277,6 +311,8 @@ int Rva00516E48Get(void)
 }
 
 extern int g_Va00E0492C;
+// g_Va00E0492C: matched references place it at VA 0xe0492c (zero-filled .bss).
+int g_Va00E0492C;
 
 // ?Rva0051AEE9Get@@YAHXZ @ 0x0051aee9 (6B) over 0x00E0492C.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -287,6 +323,8 @@ int Rva0051AEE9Get(void)
 }
 
 extern int g_Va00E046BC;
+// g_Va00E046BC: matched references place it at VA 0xe046bc (zero-filled .bss).
+int g_Va00E046BC;
 
 // ?Rva005AE5E8Get@@YAHXZ @ 0x005ae5e8 (6B) over 0x00E046BC.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -297,6 +335,8 @@ int Rva005AE5E8Get(void)
 }
 
 extern int g_Va00E06480;
+// g_Va00E06480: matched references place it at VA 0xe06480 (zero-filled .bss).
+int g_Va00E06480;
 
 // ?Rva005B901EGet@@YAHXZ @ 0x005b901e (6B) over 0x00E06480.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,
@@ -307,6 +347,8 @@ int Rva005B901EGet(void)
 }
 
 extern int g_Va00E06550;
+// g_Va00E06550: matched references place it at VA 0xe06550 (zero-filled .bss).
+int g_Va00E06550;
 
 // ?Rva005BA33EGet@@YAHXZ @ 0x005ba33e (6B) over 0x00E06550.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
@@ -337,6 +379,8 @@ int Rva006F5100Get(void)
 }
 
 extern int g_Va00DF6FD0;
+// g_Va00DF6FD0: matched references place it at VA 0xdf6fd0 (zero-filled .bss).
+int g_Va00DF6FD0;
 
 // ?Rva00174F30Get@@YAHXZ @ 0x00174f30 (6B) over 0x00DF6FD0.
 // Follows padding (prev CC), no .rdata vtable slot, no direct callers,
@@ -347,6 +391,8 @@ int Rva00174F30Get(void)
 }
 
 extern int g_Va00E062EC;
+// g_Va00E062EC: matched references place it at VA 0xe062ec (zero-filled .bss).
+int g_Va00E062EC;
 
 // ?Rva00415E90Get@@YAHXZ @ 0x00415e90 (6B) over 0x00E062EC.
 // Follows a ret (prev C3); next is a frameless fn start; no direct callers,

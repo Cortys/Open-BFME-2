@@ -15,6 +15,8 @@
 // 0x0058814C.
 
 extern int g_00C6FF28;
+// g_00C6FF28: matched references place it at VA 0xc6ff28 (retail .rdata value 9992018).
+int g_00C6FF28 = 9992018;
 extern int g_Va00DBA4E4;
 
 class Rva0042526Member

@@ -25,6 +25,8 @@ public:
 };
 extern Rva006DB270 *g_pChainBlockAllocator;
 extern char g_00DDC2E0;
+// g_00DDC2E0: matched references place it at VA 0xddc2e0 (retail .data initial value -1).
+char g_00DDC2E0 = -1;
 extern void (__cdecl *g_00E17774)(void *p, int v);
 class Rva006ED2A0Base
 {

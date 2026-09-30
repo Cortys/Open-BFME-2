@@ -6,6 +6,8 @@
 // Not established: owning TU/class and global identities; names are address-derived.
 extern unsigned int g_Va009E1F64;
 extern unsigned int g_Va009E1F6C;
+// g_Va009E1F6C: matched references place it at VA 0xde1f6c (zero-filled .bss).
+unsigned int g_Va009E1F6C;
 
 int Rva000F630CGet(void)
 {

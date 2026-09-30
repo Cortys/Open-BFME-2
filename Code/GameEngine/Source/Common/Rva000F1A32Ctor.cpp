@@ -26,7 +26,11 @@ public:
     virtual bool Resize(int len, const T *items);
 };
 extern int g_00DEBE14;
+// g_00DEBE14: matched references place it at VA 0xdebe14 (zero-filled .bss).
+int g_00DEBE14;
 extern int g_00DEBE2C;
+// g_00DEBE2C: matched references place it at VA 0xdebe2c (zero-filled .bss).
+int g_00DEBE2C;
 extern DynamicVectorClass<TCBSpline3DClass::TCBClass> g_00DEBE0C;
 extern DynamicVectorClass<TCBSpline3DClass::TCBClass> g_00DEBE24;
 class Rva000F1A32 {

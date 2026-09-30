@@ -16,7 +16,11 @@ extern const char TheBfmeSetupFirstText[];
 extern const char TheBfmeSetupSecondText007E9860[];
 extern const char TheBfmeSetupSecondText007F26A0[];
 extern int TheBfmeSetupGlobal007E9860;
+// TheBfmeSetupGlobal007E9860: matched references place it at VA 0xe09ebc (zero-filled .bss).
+int TheBfmeSetupGlobal007E9860;
 extern int TheBfmeSetupGlobal007F26A0;
+// TheBfmeSetupGlobal007F26A0: matched references place it at VA 0xe0a0d0 (zero-filled .bss).
+int TheBfmeSetupGlobal007F26A0;
 
 // ?bfmeSetupPair_007E9860@@YGXPAUBfmeSetupRecord@@H@Z
 void __stdcall bfmeSetupPair_007E9860(BfmeSetupRecord *record, int second)

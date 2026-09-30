@@ -56,7 +56,11 @@ struct Global003EF728V6
 };
 
 extern int g_009C0758;
+// g_009C0758: matched references place it at VA 0xdc0758 (retail .data initial value -1).
+int g_009C0758 = -1;
 extern int g_009C075C;
+// g_009C075C: matched references place it at VA 0xdc075c (retail .data initial value -1).
+int g_009C075C = -1;
 extern Global003EF728V6 *g_00A02340;
 
 void __cdecl Rva0059FF9DDo()

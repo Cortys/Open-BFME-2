@@ -21,6 +21,8 @@ unsigned short Rva00139090Get(void)
 }
 
 extern unsigned short g_Va00DFA2E6;
+// g_Va00DFA2E6: matched references place it at VA 0xdf2a6e (zero-filled .bss).
+unsigned short g_Va00DFA2E6;
 
 // ?Rva0013ABB0Get@@YAGXZ @ 0x0013ABB0 (7B) over 0x00DFA2E6.
 // CC-island (8xCC before and after), Ghidra-7, direct E8 caller at

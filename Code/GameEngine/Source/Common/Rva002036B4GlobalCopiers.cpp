@@ -14,6 +14,8 @@
 // Copies g_Va00DFE18C to +0x1A108. Caller: call at 0x003BE8CB. No donor;
 // retail-shaped.
 extern int g_Va00DFE18C;
+// g_Va00DFE18C: matched references place it at VA 0xdfe18c (zero-filled .bss).
+int g_Va00DFE18C;
 
 class Rva002036B4GlobalCopier
 {

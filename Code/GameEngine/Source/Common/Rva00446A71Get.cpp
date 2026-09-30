@@ -4,6 +4,8 @@
 // Evidence: retail mov al [0x00A0335C] ret; caller @0x00248EAA tests al al;
 // neighbour ?Rva00446A77Enable@@YAXXZ gates on the same byte.
 extern unsigned char g_Va00A0335C;
+// g_Va00A0335C: matched references place it at VA 0xe0335c (zero-filled .bss).
+unsigned char g_Va00A0335C;
 
 unsigned char Rva00446A71Get(void)
 {

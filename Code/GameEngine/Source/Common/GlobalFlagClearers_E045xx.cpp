@@ -10,15 +10,35 @@
 // cl: /G7 /MD /EHsc /DNDEBUG
 
 extern unsigned int g_Va00E04554;
+// g_Va00E04554: matched references place it at VA 0xe04554 (zero-filled .bss).
+unsigned int g_Va00E04554;
 extern unsigned int g_Va00E0456C;
+// g_Va00E0456C: matched references place it at VA 0xe0456c (zero-filled .bss).
+unsigned int g_Va00E0456C;
 extern unsigned int g_Va00E04578;
+// g_Va00E04578: matched references place it at VA 0xe04578 (zero-filled .bss).
+unsigned int g_Va00E04578;
 extern unsigned int g_Va00E04584;
+// g_Va00E04584: matched references place it at VA 0xe04584 (zero-filled .bss).
+unsigned int g_Va00E04584;
 extern unsigned int g_Va00E0458C;
+// g_Va00E0458C: matched references place it at VA 0xe0458c (zero-filled .bss).
+unsigned int g_Va00E0458C;
 extern unsigned int g_Va00E04594;
+// g_Va00E04594: matched references place it at VA 0xe04594 (zero-filled .bss).
+unsigned int g_Va00E04594;
 extern unsigned int g_Va00E0459C;
+// g_Va00E0459C: matched references place it at VA 0xe0459c (zero-filled .bss).
+unsigned int g_Va00E0459C;
 extern unsigned int g_Va00E045A8;
+// g_Va00E045A8: matched references place it at VA 0xe045a8 (zero-filled .bss).
+unsigned int g_Va00E045A8;
 extern unsigned int g_Va00E045E8;
+// g_Va00E045E8: matched references place it at VA 0xe045e8 (zero-filled .bss).
+unsigned int g_Va00E045E8;
 extern unsigned int g_Va00E045FC;
+// g_Va00E045FC: matched references place it at VA 0xe045fc (zero-filled .bss).
+unsigned int g_Va00E045FC;
 
 unsigned int Rva007941ACClearFlag(void)
 {

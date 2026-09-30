@@ -10,7 +10,11 @@ public:
     void rva006E3580(int x, int y);
 };
 extern int g_bfmeAptInitAtE17700;
+// g_bfmeAptInitAtE17700: matched references place it at VA 0xe17700 (zero-filled .bss).
+int g_bfmeAptInitAtE17700;
 extern int g_bfmeAptFlagAtE176D4;
+// g_bfmeAptFlagAtE176D4: matched references place it at VA 0xe176d4 (zero-filled .bss).
+int g_bfmeAptFlagAtE176D4;
 extern Rva006E34D0 *g_bfmeAptPtrAtE176D0;
 void __cdecl Rva006CC950SetMousePos(int x, int y)
 {

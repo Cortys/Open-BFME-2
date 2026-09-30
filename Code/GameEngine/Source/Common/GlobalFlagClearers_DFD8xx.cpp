@@ -11,11 +11,23 @@
 
 extern unsigned int g_Va00DFD8E4;
 extern unsigned int g_Va00DFDC48;
+// g_Va00DFDC48: matched references place it at VA 0xdfdc48 (zero-filled .bss).
+unsigned int g_Va00DFDC48;
 extern unsigned int g_Va00DFDC50;
+// g_Va00DFDC50: matched references place it at VA 0xdfdc50 (zero-filled .bss).
+unsigned int g_Va00DFDC50;
 extern unsigned int g_Va00DFDCD8;
+// g_Va00DFDCD8: matched references place it at VA 0xdfdcd8 (zero-filled .bss).
+unsigned int g_Va00DFDCD8;
 extern unsigned int g_Va00DFDCF4;
+// g_Va00DFDCF4: matched references place it at VA 0xdfdcf4 (zero-filled .bss).
+unsigned int g_Va00DFDCF4;
 extern unsigned int g_Va00DFDCFC;
+// g_Va00DFDCFC: matched references place it at VA 0xdfdcfc (zero-filled .bss).
+unsigned int g_Va00DFDCFC;
 extern unsigned int g_Va00DFE014;
+// g_Va00DFE014: matched references place it at VA 0xdfe014 (zero-filled .bss).
+unsigned int g_Va00DFE014;
 
 unsigned int Rva0076929DClearFlag(void)
 {

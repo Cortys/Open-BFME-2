@@ -11,6 +11,8 @@ public:
 };
 extern GlobalData *TheWritableGlobalData;
 extern unsigned BFME2CommandFlags;
+// BFME2CommandFlags: matched references place it at VA 0xdc1170 (retail .data initial value 0u).
+unsigned int BFME2CommandFlags = 0u;
 int parseNoAudio(char *args[],int) {
     BFME2CommandFlags|=2;
     if(TheWritableGlobalData) {

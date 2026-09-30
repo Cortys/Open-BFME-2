@@ -12,6 +12,8 @@ float __cdecl Rva00503D26Evaluate(float a, float b, float c, float t)
 	return s;
 }
 extern float g_Va00863BF8;
+// g_Va00863BF8: matched references place it at VA 0xc63bf8 (retail .rdata value 0.5833333f).
+float g_Va00863BF8 = 0.5833333f;
 struct Rva00503DEB
 {
 	char m_pad[0x10];

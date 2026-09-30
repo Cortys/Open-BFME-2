@@ -30,6 +30,8 @@ extern unsigned int g_Va00E03FAC;
 extern unsigned int g_Va00E03FB4;
 extern unsigned int g_Va00E03FBC;
 extern unsigned int g_Va00E03FC8;
+// g_Va00E03FC8: matched references place it at VA 0xe03fc8 (zero-filled .bss).
+unsigned int g_Va00E03FC8;
 extern unsigned int g_Va00E03FD0;
 extern unsigned int g_Va00E03FDC;
 extern unsigned int g_Va00E03FE8;

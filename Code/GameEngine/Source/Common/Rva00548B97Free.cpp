@@ -20,6 +20,8 @@ public:
 
 extern Rva00548B97Helper *G00A05F88[];
 extern int G00A05FA8;
+// G00A05FA8: matched references place it at VA 0xe05fa8 (zero-filled .bss).
+int G00A05FA8;
 
 void __cdecl Rva003B3371Call(int index);
 void operator delete(void *p);
