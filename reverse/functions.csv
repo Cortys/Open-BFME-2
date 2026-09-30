@@ -43231,3 +43231,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRva002E66F2@@UAEPAXI@Z,,0x002E67CE,28,Code/GameEngine/Source/GameClient/FamilyDeletingDtors_Rva002E66F2.cpp,matched,slot 0 vtable 0x00804FA8 calls rowed 0x002E66F2 plus delete 0x0002FD60
 ??1Rva0026F684@@UAE@XZ,,0x0026F684,227,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Dtor.cpp,matched,vtable 0x7FABF0 deleting dtor 0x0026F8BA
 ??_GRva0026F684@@UAEPAXI@Z,,0x0026F8BA,28,Code/Libraries/Source/WWVegas/WWLib/Rva0026F684Dtor.cpp,matched,deleting dtor for 0x0026F684
+?rva001805AE@BfmeResetTextureRef@@QAEAAU1@ABUBfmeResetAnyRef@@@Z,,0x001805AE,50,Code/Libraries/Source/WWVegas/WW3D2/Rva001805AEAssign.cpp,matched,twin of 0x00131D99 via TRAP plus Texture assign
