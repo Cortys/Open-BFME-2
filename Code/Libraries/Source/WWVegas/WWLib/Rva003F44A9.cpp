@@ -1,7 +1,5 @@
 // ?rva003F44A9@Rva003F44A9@@QAEPAXXZ
 // partial score=0.98 date=2026-09-29
-// ?rva003F44A9@Rva003F44A9@@QAEPAXXZ
-// partial score=0.98 date=2026-09-29
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
@@ -23,16 +21,19 @@ class Rva003F44A9 {
 public:
     void *rva003F44A9();
 };
-// ?rva003F44A9@Rva003F44A9@@QAEPAXXZ present-unmatched
 void *Rva003F44A9::rva003F44A9()
 {
-    Rva003F44A9Element **base = m_list.begin();
-    Rva003F44A9Element **cur = base;
-    _ReadWriteBarrier();
-    for (unsigned i = 0; i < m_list.size(); ++i) {
-        if ((*cur)->m_str.isEmpty())
-            return base[i];
-        ++cur;
+    unsigned i = 0;
+    if (i < m_list.size()) {
+        Rva003F44A9Element **base = m_list.begin();
+        Rva003F44A9Element **cur = base;
+        _ReadWriteBarrier();
+        do {
+            if ((*cur)->m_str.isEmpty())
+                return base[i];
+            ++i;
+            ++cur;
+        } while (i < m_list.size());
     }
     return 0;
 }

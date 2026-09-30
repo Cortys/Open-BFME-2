@@ -3764,3 +3764,5 @@ FUN_009657fe	0x005657FE	103	blocked	search over 0x58 stride via compare plus con
 FUN_008fc8b3	0x004FC8B3	35	blocked	virtual slot0 with 0 plus operator delete setter needs donor class t=6 model=muse-02
 FUN_007ea076	0x003EA076	180	blocked	EH ScriptConditions with virtuals plus temp ObjectTypes plus delete needs donor t=6 model=muse-02
 FUN_007e95ff	0x003E95FF	246	blocked	EH Script Team iteration with virtuals plus temp plus delete needs donor t=6 model=muse-02
+?rva004D4BA7@Transport@@QAE_NXZ	0x004D4BA7	353	partial	353B exact size-count 107insns flag fixed now only sent-branch order retail jle plus clear-before-fail vs ours jg plus fail-before-clear t=25 model=muse-09 score=0.99 stash=reverse/attempts/0x004d4ba7.cpp
+??0TerrainCollisionModuleInfo@FXParticleSystem@@QAE@XZ	0x0056459E	96	blocked	reproduced stash 96B 34insns exact size-count scheduler wall xorps-lea early vs late plus fstp-vs-movss same as LifeEvent 0x564001 no new lever t=15 model=muse-09
