@@ -4137,3 +4137,5 @@ FUN_004b7e8b	0x000B7E8B	121	blocked	free compare with edi ebx inputs and no stac
 FUN_0070f2e0	0x0030F2E0	109	blocked	same vector div4 callback g_BFB1CC EH family needs donor t=3 model=muse-02
 FUN_00acdbf0	0x006CDBF0	313	blocked	large Apt array-new EH with pins needs time t=3 model=muse-02
 FUN_0086f543	0x0046F543	624	blocked	large HordeContain ctor with STL set map vector list and pin-only base needs time t=3 model=muse-02
+FUN_00886015	0x00486015	212	blocked	large vslot34 DieModule with GameLogic find destroy needs time t=3 model=muse-02
+FUN_0084a75d	0x0044A75D	171	blocked	large vslot22 LANAPI Unicode with 0x1E0 frame needs time t=3 model=muse-02
