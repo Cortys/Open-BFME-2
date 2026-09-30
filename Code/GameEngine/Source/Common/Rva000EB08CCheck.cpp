@@ -6,6 +6,9 @@
 // id at +0 plus value at +0xA4, second array at +0x44578 stride 0x5C holding
 // pointer plus target int at +0x5C, dirty flag at +0x45C64. Caller 0x000EB2AC.
 // Honest address name.
+// ?rva000EB21D@Rva000EB08C@@QAEXXZ @0x000EB21D 98B. Loop over E8 array with
+// checker at +0x44548, flag byte at elem +4, arg at elem +8, step at +0x45C60,
+// set +0x44544 on change, clear +0x44546. Caller 0x000EDB60. Honest name.
 class GlobalData
 {
 public:
@@ -15,16 +18,28 @@ public:
 
 extern GlobalData *TheWritableGlobalData;
 
+class Rva000E488F
+{
+public:
+	bool rva000E488F(void *arg);
+	void *m_begin;
+	void *m_end;
+};
+
 class Rva000EB08C
 {
 public:
 	void rva000EB08C(int index, bool flag);
 	bool rva000EB2AC(int id, bool flag);
+	void rva000EB21D();
 private:
 	struct Elem1
 	{
 		int id1;
-		char m_pad04[0x18 - 4];
+		unsigned char flag04;
+		char m_pad05[3];
+		int m_08;
+		char m_pad0C[0x18 - 0x0C];
 		int id2;
 		char m_pad1C[0xA4 - 0x18 - 4];
 		int value;
@@ -44,9 +59,15 @@ private:
 	Elem1 m_elems[1];
 	char m_pad01[0x44540 - 0x600 - 0xE8];
 	int m_count;
-	char m_pad02[0x44578 - 0x44540 - 4];
+	unsigned char m_44544;
+	char m_pad44545;
+	unsigned char m_44546;
+	char m_pad44547;
+	Rva000E488F m_checker;
+	char m_pad44550[0x44578 - 0x44548 - 8];
 	Elem2 m_array2[1];
-	char m_pad03[0x45C64 - 0x44578 - 0x5C];
+	char m_pad03[0x45C60 - 0x44578 - 0x5C];
+	int m_step;
 	unsigned char m_dirty;
 };
 
@@ -80,4 +101,17 @@ bool Rva000EB08C::rva000EB2AC(int id, bool flag)
 		}
 	}
 	return false;
+}
+
+void Rva000EB08C::rva000EB21D()
+{
+	for (int i = 0; i < m_count; i += m_step) {
+		bool v = !m_checker.rva000E488F(&m_elems[i].m_08);
+		unsigned char *pf = &m_elems[i].flag04;
+		if (v != *pf) {
+			*pf = v;
+			m_44544 = 1;
+		}
+	}
+	m_44546 = 0;
 }
