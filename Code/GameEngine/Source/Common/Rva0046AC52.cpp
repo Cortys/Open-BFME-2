@@ -114,3 +114,63 @@ Rva0046AC52Pair Rva0046AC52::rva002D563D(const Rva0046AC52Key &v)
 		return Rva0046AC52Pair(rva0046AC52(x, y, v, 0), true);
 	return Rva0046AC52Pair(j, false);
 }
+// ?rva0046E563@Rva0046AC52@@QAE?AURva0046AC52Iter@@U2@ABURva0046AC52Key@@@Z @0x0046E563 294B
+// Evidence: chain lane calls rowed 0x0046AC52 plus rowed 0x002D563D plus rowed _M_increment plus _M_decrement; same TU same flags.
+Rva0046AC52Iter Rva0046AC52::rva0046E563(Rva0046AC52Iter position, const Rva0046AC52Key &v)
+{
+	if (position.node == _head->_left) {
+		if (_size <= 0)
+			return rva002D563D(v).first;
+		if (v.key < position.node->_key10)
+			return rva0046AC52(position.node, position.node, v, 0);
+		else {
+			bool comp_pos_v = position.node->_key10 < v.key;
+			if (comp_pos_v == false)
+				return position;
+			Rva0046AC52Iter after = position;
+			after.node = (Rva0046AC52Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			if (after.node == _head)
+				return rva0046AC52(0, position.node, v, position.node);
+			if (v.key < after.node->_key10) {
+				if (position.node->_right == 0)
+					return rva0046AC52(0, position.node, v, position.node);
+				else
+					return rva0046AC52(after.node, after.node, v, 0);
+			} else {
+				return rva002D563D(v).first;
+			}
+		}
+	} else if (position.node == _head) {
+		if (_head->_right->_key10 < v.key)
+			return rva0046AC52(0, _head->_right, v, position.node);
+		else
+			return rva002D563D(v).first;
+	} else {
+		Rva0046AC52Iter before = position;
+		before.node = (Rva0046AC52Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)before.node);
+		bool comp_v_pos = v.key < position.node->_key10;
+		if (comp_v_pos && before.node->_key10 < v.key) {
+			if (before.node->_right == 0)
+				return rva0046AC52(0, before.node, v, before.node);
+			else
+				return rva0046AC52(position.node, position.node, v, 0);
+		} else {
+			Rva0046AC52Iter after = position;
+			after.node = (Rva0046AC52Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			bool comp_pos_v = !comp_v_pos;
+			if (!comp_v_pos)
+				comp_pos_v = position.node->_key10 < v.key;
+			if (!comp_v_pos && comp_pos_v && (after.node == _head || v.key < after.node->_key10)) {
+				if (position.node->_right == 0)
+					return rva0046AC52(0, position.node, v, position.node);
+				else
+					return rva0046AC52(after.node, after.node, v, 0);
+			} else {
+				if (comp_v_pos == comp_pos_v)
+					return position;
+				else
+					return rva002D563D(v).first;
+			}
+		}
+	}
+}
