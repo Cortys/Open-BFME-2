@@ -110,6 +110,7 @@ public:
 	void bfmeSetRegion(const Region3D *region, Real cellSize);
 	void bfmeConfigure(Region3D region, Real cellSize);
 	void bfmeApplyCircle(int x, int y, int radius, int amount, bool absolute, int mode);
+	int rva006C0E40(const BfmePointFC *point, int *extra);
 	~Gen_008812D0();
 
 	friend class BfmeTaintManager;
@@ -129,6 +130,7 @@ class BfmeTaintManager
 public:
 	void bfmeResetGrid();
 	void bfmeApplyCircleWorld(const BfmePointFC *point, Real radius, int amount, bool absolute, int mode);
+	int rva006C0850(const BfmePointFC *point, int *extra);
 
 private:
 	unsigned char m_bfmeHead[0x10];				// +0x00
@@ -176,4 +178,14 @@ void BfmeTaintManager::bfmeApplyCircleWorld(const BfmePointFC *point, Real radiu
 	int y = bfmeFloatToLongFC(bfmeFloatFloorFC((point->y - m_bfmeGrid->m_bfmeRegion.lo.y) * m_bfmeGrid->m_bfmeCellSizeInv));
 	int x = bfmeFloatToLongFC(bfmeFloatFloorFC((point->x - m_bfmeGrid->m_bfmeRegion.lo.x) * m_bfmeGrid->m_bfmeCellSizeInv));
 	m_bfmeGrid->bfmeApplyCircle(x, y, cellRadius, amount, absolute, mode);
+}
+
+// ?rva006C0850@BfmeTaintManager@@QAEHPBUBfmePointFC@@PAH@Z @ 0x006C0850 8B
+// Honest address name: tail-jmp thunk loading grid at +0x10 then jumping to
+// rowed Gen_008812D0::rva006C0E40. Same (point extra) signature forwards.
+// Evidence: chain from 0x006C0E40 landing, mov ecx [ecx+0x10] plus jmp shape,
+// BfmeTaintManager grid at +0x10, callers in 0x0049B98A.
+int BfmeTaintManager::rva006C0850(const BfmePointFC *point, int *extra)
+{
+	return m_bfmeGrid->rva006C0E40(point, extra);
 }
