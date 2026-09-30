@@ -45,10 +45,13 @@ class Rva0050F0AB
 {
 public:
 	void rva0050F0AB();
+	void rva0050F420(unsigned int val);
 private:
-	char m_pad00[0x6c];
-	int m_6c;
-	char m_pad70[0x7c - 0x70];
+	char m_pad00[0x68];
+	unsigned int m_68;
+	unsigned int m_6c;
+	char m_pad70[0x78 - 0x70];
+	GameWindow *m_78;
 	GameWindow *m_7c;
 };
 
@@ -59,4 +62,19 @@ void Rva0050F0AB::rva0050F0AB()
 	UnicodeString buf;
 	buf.format(L"%u", m_6c);
 	GadgetTextEntrySetText(m_7c, buf);
+}
+
+int __cdecl Rva0050E776Send(GameWindow *window, int data);
+
+void Rva0050F0AB::rva0050F420(unsigned int val)
+{
+	if (val == m_6c)
+		return;
+	if (val > m_68)
+	{
+		val = m_68;
+		Rva0050E776Send(m_78, val);
+	}
+	m_6c = val;
+	rva0050F0AB();
 }

@@ -44194,3 +44194,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva002DBD80Make@@YA?AURva002DBD80Val@@HPBG@Z,,0x002DBD80,52,Code/GameEngine/Source/Common/Rva002DBD80Make.cpp,matched,unlock lane via initWide row hidden-pointer int-pair struct
 ?rva0050F1D2@BFME2WideConcatPair@@QBEHXZ,,0x0050F1D2,13,Code/GameEngine/Source/Common/System/Rva0050F1D2.cpp,matched,totalLength pin plus int at plus12
 ?Rva0050E776Send@@YAHPAVGameWindow@@H@Z,,0x0050E776,30,Code/GameEngine/Source/GameClient/GUI/Rva0050E776Send.cpp,matched,TheWindowManager slot 58 winSendSystemMsg 0x400D
+?rva0050F420@Rva0050F0AB@@QAEXI@Z,,0x0050F420,48,Code/GameEngine/Source/Common/System/Rva0050F0AB.cpp,matched,chain from Send plus clamp to m68 plus rva0050F0AB
