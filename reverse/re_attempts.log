@@ -3787,3 +3787,4 @@ FUN_007f5a72	0x003F5A72	204	blocked	Xfer ScienceType vector needs BFME2 Xfer slo
 FUN_0082245F	0x0042245F	229	blocked	thiscall float SSE x87 loop needs owner layout divergent from STL streak t=5 model=muse-spark
 ?rva002E6F92@Rva002E6F92@@QAEHHPAUIn002E6F92@@HH@Z	0x002E6F92	77	partial	77B exact size scheduling xmm store order early vs late t=20 model=muse-04 score=0.9 stash=reverse/attempts/0x002e6f92.cpp
 FUN_0048619A	0x0048619A	327	blocked	eax-ebx reg args plus x87-SSE mix crushdie fam t=8 model=muse-11
+?rva00109129@Rva00109129@@QAE_NPAVW3DProjectedShadow@@PAUShadowList@@@Z	0x00109129	127	blocked	list unlink plus type dec-sub chain register allocation wall t=25 model=muse-spark
