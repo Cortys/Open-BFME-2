@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD
 //
 // Image::~Image, retail 0x002D91CC (94B) plus its scalar deleting
 // destructor 0x002D9262 (28B).
@@ -22,14 +22,7 @@ typedef unsigned int size_t;
 void *__cdecl operator new(size_t);
 void __cdecl operator delete(void *);
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct ICoord2D
 {

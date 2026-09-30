@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfmelist /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // ??0Rva001E2747@@QAE@ABVAsciiString@@@Z @0x001E2747 127B ctor taking name.
@@ -10,23 +10,8 @@
 
 #include <list>
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-};
 
 class Rva001E2747
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 
 // Eva::messageToName with BFME2's mod-extended fallback.
 //
@@ -14,51 +14,11 @@
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-public:
-    void concat(const T *text);
-
-private:
-    friend class AsciiString;
-
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &that);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
+#include "ascii_string.h"
 
 // Inline throughout: retail reaches StringBase's private constructors directly
 // from the caller rather than through a wrapper, which is what an inlined
 // AsciiString constructor looks like.
-class AsciiString
-{
-public:
-    AsciiString(const char *text)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(text);
-    }
-
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            (const StringBase<char> &)that);
-    }
-
-    ~AsciiString();
-
-private:
-    char *m_text;
-};
 
 // Iterator home for the event-name walk. The helpers below are the banked
 // Rva000427195/Rva000411084 pins, so the class names spell those pins.

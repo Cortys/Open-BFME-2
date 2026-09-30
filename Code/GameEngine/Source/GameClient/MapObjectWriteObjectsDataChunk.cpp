@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 //
 // Shared BFME map-object chunk writer, retail 0x0030D526, 196 bytes.
 // Dedicated TU (B2 has no MapUtil writer unit). Ported from the BFME1 twin
@@ -22,11 +22,7 @@ struct Coord3D
 	Real z;
 };
 
-class AsciiString
-{
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Dict
 {

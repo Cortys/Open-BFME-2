@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva00055041AsciiHash@@YGIPBVAsciiString@@@Z, retail 0x00055041 (28B).
 // Shard TU: AsciiString chars-or-empty forwarder into the STLport string
 // hash. The chars live 8 past the StringBase header (ref_count plus
@@ -8,48 +8,8 @@
 // loop over signed chars), which is inline in its header and therefore
 // never rowed itself. Stdcall per ret-4 with an unused ecx.
 
-template <typename T>
-class StringBase
-{
-public:
-    void concat(const T *text);
+#include "ascii_string.h"
 
-private:
-    friend class AsciiString;
-
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &that);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
-
-class AsciiString
-{
-public:
-    AsciiString(const char *text)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(text);
-    }
-
-    AsciiString(const AsciiString &that)
-    {
-        ((StringBase<char> *)this)->StringBase<char>::StringBase(
-            (const StringBase<char> &)that);
-    }
-
-    ~AsciiString();
-
-private:
-    char *m_text;
-};
 
 namespace _STL
 {

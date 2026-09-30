@@ -1,19 +1,10 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?rva00330D3E@RadiusDecalTemplate@@QAEMI@Z @0x00330D3E 83B
 // Unlock lane: lerp between +0x20/+0x24 over count +0x28 with clamp to max.
 // (max-min)/count step, t=(index-1)*step+min, if t>max return max.
 // Callers 0x00330E3E 0x003312B3.
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-	static AsciiString TheEmptyString;
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class RadiusDecalTemplate
 {
 public:

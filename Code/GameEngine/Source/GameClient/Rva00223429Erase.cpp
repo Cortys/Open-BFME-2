@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva00223429@Rva000427195@@QAEHPBVAsciiString@@@Z @0x00223429 145B
 // Erase-all by AsciiString key over the Eva bucket vector. Buckets at +4,
 // count at +0x10 (proven by rowed bucketIndex 0x00223149 and inserts
@@ -6,17 +6,8 @@
 // compare 0x000069D6, unlinks via prev node, frees via rowed 0x001FD9EF
 // (ignores this, called with table this like Clear 0x003A2A41), head last
 // via saved byte offset. Returns removed count. Callers 0x000A810D 0x00224BB6.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-};
 
 class Rva001FD9EF
 {

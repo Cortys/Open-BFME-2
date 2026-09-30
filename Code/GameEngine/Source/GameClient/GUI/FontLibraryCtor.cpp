@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD
 //
 // ??0FontLibrary@@QAE@XZ, retail 0x00218942, 103 bytes.
 // FontLibrary subsystem ctor: base SubsystemInterface (0x001B4E63), vtable
@@ -16,26 +16,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)""; }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other);
-	~AsciiString() {}
-};
 
 namespace _STL
 {

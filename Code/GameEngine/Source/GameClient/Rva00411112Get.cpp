@@ -1,13 +1,10 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva00411112Get@@YAPAXPBVAsciiString@@@Z, retail 0x00411112 (25B).
 // Chain over rowed ?rva00056F61@Rva00056F61@@QAEPAXPBVAsciiString@@@Z: lookup
 // AsciiString key in the global bucket table at 0x00E0300C, returning the
 // dword at node+8 or null. Caller at 0x00412140 tests for null.
 
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva00056F61
 {

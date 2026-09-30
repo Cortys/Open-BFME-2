@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // ?onGameEngineExit@GlobalLanguage@@QAEXXZ retail 0x001EA77F 473 bytes.
 // GlobalLanguage local-font and temp-dir cleanup: counts m_localFonts at
@@ -38,38 +38,13 @@ extern "C" __declspec(dllimport) Bool __stdcall FindClose(HANDLE);
 extern "C" __declspec(dllimport) Bool __stdcall DeleteFileA(LPCSTR);
 extern "C" __declspec(dllimport) Bool __stdcall RemoveDirectoryA(LPCSTR);
 
-template <typename T> class StringBase
-{
-public:
-	bool isEmpty() const;
-	void set(const StringBase<T> &source);
-private:
-	void releaseBuffer();
-	char *m_data;
-	friend class AsciiString;
-};
+#include "ascii_string.h"
 
 struct BfmeStringView
 {
 	char *m_data;
 };
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() { m_data = NULL; }
-	~AsciiString() { releaseBuffer(); }
-	AsciiString(const AsciiString &o);
-	AsciiString &operator=(const AsciiString &o);
-	const char *str() const
-	{
-		static const char TheNullChr = 0;
-		char *data = ((const BfmeStringView *)this)->m_data;
-		return data ? data + 8 : &TheNullChr;
-	}
-	void format(const char *fmt, ...);
-	static AsciiString TheEmptyString;
-};
 
 struct Rva001EA443
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD
 //
 // ??0Rva002186EB@@QAE@XZ, retail 0x002186EB, 61 bytes.
 // Constructor with vtable 0x7E5B10 plus two empty AsciiStrings at +4/+8 plus
@@ -16,26 +16,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-public:
-	StringBase() : m_data(0) {}
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other);
-	~AsciiString() {}
-};
 
 namespace _STL
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva003023B8@PlayerPosition@@QAEXABVAsciiString@@@Z @0x003023B8 114B.
 // Evidence: PlayerPosition layout (three uchars plus int plus set at +8) proven
@@ -19,31 +19,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	bool startsWith(const char *str) const;
-	void set(const char *str);
-	void concat(const StringBase<T> &other);
-
-protected:
-	BfmeStringData<T> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

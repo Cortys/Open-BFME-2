@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?xfer@RenderObjectDrawModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z
 // @0x00562871 194B: slot 3 xfer over vtable 0x81C1B8; Version1 then bool
 // +0xC, AsciiString/uint/float/int-enum triples at +0x10/+0x20/+0x30, header
@@ -84,14 +84,7 @@ protected:
 
 void XferParticleShaderType(Xfer *xfer, int *value);
 
-class AsciiString
-{
-public:
-	AsciiString() { m_text = 0; }
-
-private:
-	char *m_text;
-};
+#include "ascii_string.h"
 
 namespace FXParticleSystem
 {

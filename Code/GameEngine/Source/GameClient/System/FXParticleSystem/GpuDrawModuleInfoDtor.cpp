@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ??1GpuDrawModuleInfo@FXParticleSystem@@UAE@XZ, retail 0x003A9D43, 48 bytes.
 // GpuDrawModuleInfo destructor: destroys the detail-texture AsciiString at
 // +0x0C through the pinned StringBase<char> dtor at 0x00036410 (the implicit
@@ -10,19 +10,8 @@
 // (novtable plus trivial base) and W3DProjectileStreamDrawModuleDataDtor
 // (single string plus EH base).
 
-template <typename T> class StringBase
-{
-public:
-	~StringBase();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	__forceinline ~AsciiString() {}
-};
 
 namespace FXParticleSystem
 {

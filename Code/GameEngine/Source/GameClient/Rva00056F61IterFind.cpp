@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva0041534B@Rva00056F61@@QAE?AURva0041534BIter@@PBVAsciiString@@@Z, retail 0x0041534B (27B).
 // Find returning iterator over the AsciiString-keyed bucket table owned by
 // Rva00056F61 (rowed find 0x00056F61). Same this plus AsciiString key in then
@@ -6,10 +6,7 @@
 // (add ecx 0x48) and 0x002AE98B (add ecx 0x294) read node at out+0 and use
 // payload at node+8. Shape matches STLport hashtable find 0x00620DD0 and the
 // InsertRet00212A5A hidden-pointer precedent via user ctor.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 
 class Rva00056F61;
 struct Rva0041534BIter
