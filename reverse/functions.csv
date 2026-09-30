@@ -44074,3 +44074,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00577914@Rva00577914@@QAEXXZ,,0x00577914,26,Code/GameEngine/Source/Common/Rva000AD6F4Members.cpp,matched,virt slot4 on mid plus tail clear
 ?rva0053F8E9@Rva0053FB33@@UAEXPAVDataChunkOutput@@@Z,,0x0053F8E9,44,Code/GameEngine/Source/Common/Rva0053F8E9Write.cpp,matched,vtable 0x008694DC slot 5 plus rowed writers
 ?Rva003625C3Glow@@YGDHHHHHH@Z,,0x003625C3,70,Code/GameEngine/Source/Common/Rva003625C3Glow.cpp,matched,donor BfmeConv1362 bfmeGoVHK caller 0x003627F9 string GlowOutline vslot Debug
+?rva003F07E5@Rva003F07E5@@QAE_NPAVCreateAHeroData@@PAH@Z,,0x003F07E5,85,Code/GameEngine/Source/Common/System/Rva003F07E5Check.cpp,matched,unlock sibling of Rva003F1093Check via callers 0x003F1B7C 0x002B3416
