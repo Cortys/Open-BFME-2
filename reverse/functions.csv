@@ -43542,3 +43542,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?Rva002D3489Find@@YAPADPAD0ABD@Z,,0x002D3489,89,Code/GameEngine/Source/Common/System/Rva002D3489Find.cpp,matched,free byte search via caller 0x002D3978 plus unrolled 4x plus switch tail
 ??1Rva00414932@@UAE@XZ,,0x00414932,75,Code/GameEngine/Source/GameLogic/Object/Rva00414932Dtor.cpp,matched,novtable Snapshot BBB554 vector plus Rva plus String
 ?Rva004281DAInsert@@YAXPAUVersionBlockEntry@@UPivot24@@VVersionBlockKeyCompare@@@Z,,0x004281DA,89,Code/GameEngine/Source/Common/Rva004281DAInsert.cpp,matched,unguarded linear insert via lessEntries prereq-assign version-dtor
+??$_Construct@URva00204B12@@U1@@_STL@@YAXPAURva00204B12@@ABU1@@Z,,0x00205889,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_game_structs.cpp,matched,Construct Rva00204B12 via rowed copy ctor caller 0x206C10
