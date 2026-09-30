@@ -24,6 +24,7 @@ public:
 	Coord3D m_position; // +0x38
 	char m_pad44[0x438 - 0x44];
 	unsigned char m_flags438; // +0x438 bit0
+	bool isUsingAirborneLocomotor() const;
 };
 class GameLogic
 {
@@ -31,6 +32,11 @@ public:
 	Object* findObjectByID(ObjectID id);
 };
 extern GameLogic* TheGameLogic;
+class BuildListInfo
+{
+public:
+	int getDesiredGatherers();
+};
 class Rva00546F61
 {
 public:
@@ -43,6 +49,9 @@ public:
 	virtual void slot06();
 	virtual void slot07();
 	virtual Coord3D* Rva00547070(int dummy);
+	virtual void slot09();
+	virtual void slot10();
+	virtual bool rva00547099(int *outID, void *out);
 private:
 	char m_pad04[0x18 - 4];
 	ObjectID m_targetID; // +0x18
@@ -80,5 +89,26 @@ bool Rva00546F61::Rva0054703E(int dummy)
 		return false;
 	}
 	m_b1C = true;
+	return true;
+}
+
+// ?rva00547099@Rva00546F61@@UAE_NPAHPAX@Z, retail 0x00547099 95B.
+// Virtual slot 11 (offset 0x2C) of vtable 0x0086A420 (same class/vtable/flags
+// as slots 5/8 above). Sets *outID to 0x425, finds Object via m_targetID,
+// copies found position+0x38 or own m_pos to out+0x14 via 3x movsd, gatherers
+// to out+4, airborne to out+0. Returns true. Evidence: vslot, donor layout,
+// callers none.
+bool Rva00546F61::rva00547099(int *outID, void *out)
+{
+	*outID = 0x425;
+	Object *found = TheGameLogic->findObjectByID(m_targetID);
+	if (found) {
+		int gatherers = ((BuildListInfo *)found)->getDesiredGatherers();
+		*(int *)((char *)out + 4) = gatherers;
+		*(Coord3D *)((char *)out + 0x14) = found->m_position;
+		*(bool *)out = found->isUsingAirborneLocomotor();
+	} else {
+		*(Coord3D *)((char *)out + 0x14) = m_pos;
+	}
 	return true;
 }

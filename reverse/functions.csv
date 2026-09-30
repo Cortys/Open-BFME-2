@@ -43068,3 +43068,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0046E563@Rva0046AC52@@QAE?AURva0046AC52Iter@@U2@ABURva0046AC52Key@@@Z,,0x0046E563,294,Code/GameEngine/Source/Common/Rva0046AC52.cpp,matched,chain insert_hint via rowed insert pair and increment
 ?xfer@FellBeastSwoopPower@@MAEXPAVXfer@@@Z,,0x004C6CE2,45,Code/GameEngine/Source/GameLogic/Object/FellBeastSwoopPowerXfer.cpp,matched,slot 3 of 0x0085DF80 via Version1 plus base 0x44F996 plus bool 0x88
 ?Rva002CA88BParse@@YAXPAX0@Z,,0x002CA88B,93,Code/GameEngine/Source/GameLogic/Object/Rva002CA88BParse.cpp,matched,lazy-init Rva235A21 at E0 via new ctor parse unblocks CDAF CD7C
+?rva00547099@Rva00546F61@@UAE_NPAHPAX@Z,,0x00547099,95,Code/GameEngine/Source/Common/Rva00546F61Slot8.cpp,matched,vslot 11 via donor file GameLogic

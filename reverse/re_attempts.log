@@ -3655,3 +3655,12 @@ FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 mo
 ?rva004C4430@Rva004C4430@@QAEX_N@Z	0x004C4430	77	partial	77of77B 0operand 0branch 0mem 0reg only fstp-push-call scheduling retail fld-push-fstp-call-get vs ours call-fld-push-fstp G7-G6-Os tried t=25 model=muse-09 score=0.96 stash=reverse/attempts/0x004c4430.cpp
 ??1Rva00427C88@@QAE@XZ	0x00427C88	19	blocked	implicit-direct vs explicit-virtual wall plus overlapping-subobject layout unprovable with vendored 4.5.3 vbase ostrstream vs retail 4.6-style direct E8-E9 ostringstream version wall per 4.4 t=15 model=muse-09
 ?Rva00356724Get@@QAEHXZ	0x00356724	329	blocked	329B chain 11 callees plus EH plus x87 float pre-scheduling plus findImage 2-push vs 1-arg row mismatch plus Display-Bfme shared global plus SmallRing StringBase EH temporaries t=10 model=muse-09
+FUN_00531378	0x00131378	467	blocked	unlock 467B D3D texture lock-copy with 5 D3D imports plus COM virtuals beyond trivial pattern t=5 model=muse-04
+FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String compare 3 variants best 102of114 EH plus sar plus add-lea plus ebx wall t=15 model=muse-04
+?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z	0x00363BC7	170	partial	170B exact size 47insns fld st0 vs fld mem plus 1.0f xmm swap t=20 model=muse-04 score=0.96 stash=reverse/attempts/0x00363bc7.cpp
+?rva0053F915@Rva0053FB33@@UAE_NPAVDataChunkInput@@PAX@Z	0x0053F915	106	partial	106B exact 33insns lea-push order swap for op= t=20 model=muse-04 score=0.96 stash=reverse/attempts/0x0053f915.cpp
+?rva005DA663@Rva005DA663@@QAEXXZ	0x005DA663	28	blocked	vslot slot1 calls setter 0x5970E6 imm C62A14 not vptr 876518 plus delete; ??1 missing; identity unprovable t=10 model=muse-04
+?rva0028B2BF@Object@@QAEXXZ	0x0028B2BF	91	partial	91B exact 36insns push-pop ebx-edi order swapped t=15 model=muse-04 score=0.98 stash=reverse/attempts/0x0028b2bf.cpp
+?Rva00498725Find@@YAPAXPAX@Z	0x00498725	115	blocked	unlock Gate finder 87of115 missing 28B EH prolog plus states with no local object t=10 model=muse-04
+?rva0048BA3E@Rva0048BA3E@@QAEHXZ	0x0048BA3E	105	blocked	unlock intrusive list min with GameLogic frame 80of105 wrong loop plus value at plus18 t=10 model=muse-04
+?rva002FE8CC@Rva002FE8CC@@QAEXPAX@Z	0x002FE8CC	116	partial	112of116 want in eax not ebp plus push order t=12 model=muse-04 score=0.96 stash=reverse/attempts/0x002fe8cc.cpp
