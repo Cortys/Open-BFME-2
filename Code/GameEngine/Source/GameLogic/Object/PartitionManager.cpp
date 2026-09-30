@@ -5298,7 +5298,6 @@ Bool PartitionFilterValidCommandButtonTarget::allow( Object *other )
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// ?allow@PartitionFilterIsFlying@@ present-unmatched
 Bool PartitionFilterIsFlying::allow(Object *objOther)
 {
 	return objOther->isUsingAirborneLocomotor();
