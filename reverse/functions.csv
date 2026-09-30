@@ -44330,3 +44330,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?Rva006CD3F0Get@@YAHPAX@Z,,0x006CD3F0,75,Code/GameEngine/Source/Common/Rva006CD3F0Get.cpp,matched,Apt.cpp eType assert plus table plus type 0x25
 ??0Rva0035D53C@@QAE@XZ,,0x0035D6B8,37,Code/GameEngine/Source/Common/Rva0035D53CCtor.cpp,matched,ctor via base 0x001DBAA4 with vtable 0x00816510
 ?Rva0035D6F9Parse@@YAXPAVINI@@PAVRva0035D6F9Holder@@@Z,,0x0035D6F9,81,Code/GameEngine/Source/Common/Rva0035D6F9Parse.cpp,matched,factory news 0x34 ctor 0x35D6B8 SlaveAttack table setter 0x5F69CE
+?rva003AFB2A@Rva003AFB2A@@QAEXPAUCoord3D@@MMII@Z,,0x003AFB2A,151,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFB2A.cpp,matched,unlock via virtual slot 0x1c caller 0x1F5586 globals TheWritableGlobalData g_Va00BBB8D8 g_Va007C26F0 ret14
