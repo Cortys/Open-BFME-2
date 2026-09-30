@@ -44414,3 +44414,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva002DBDB4@Rva002DBDB4@@QAEXPAVRva002DBD05@@@Z,,0x002DBDB4,174,Code/Libraries/Source/WWVegas/WWLib/Rva002DBDB4.cpp,matched,banked attempt fixed: the eight 0x1AC-stride subobjects at this+4 are embedded objects whose slot 3 is called (retail lea then vtable load)
 ?rva004631FA@SlaughterHordeContain@@UAE_NH@Z,,0x004631FA,50,Code/GameEngine/Source/GameLogic/Object/Contain/SlaughterHordeContainRva004631FA.cpp,matched,banked attempt fixed: the list walk starts at the node after the head (end = *m04 then cur = *end)
 ?rva006CBEE0@BfmeAptValue006DCD20@@QBEH_N@Z,,0x006CBEE0,87,Code/Libraries/Source/Apt/AptValue/AptValueTypePredicatesBFME2.cpp,matched,type18 predicate AptCIH 211 same shape as rva006E01A0
+??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z,,0x006CBDE0,200,Code/GameEngine/Source/Common/Rva006CBDE0Ctor.cpp,matched,Apt value ctor via EAStringC inline ctor same as Rva006D6D20

@@ -1,7 +1,5 @@
 // ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z
 // partial score=0.95 date=2026-09-30
-// ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z
-// partial score=0.95 date=2026-09-30
 // cl: /O2 /DNDEBUG /MD /EHsc
 // ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z @0x006CBDE0 200B Apt value ctor.
 // Retail calls base BfmeAptValue(type,0), clears EAStringC at +8, stores vtable
@@ -23,7 +21,9 @@ public:
 class EAStringC
 {
 public:
+	EAStringC() { clear(); }
 	EAStringC &clear();
+	~EAStringC();
 };
 
 class AptValue
@@ -61,10 +61,8 @@ public:
 	virtual ~Rva006CBDE0();
 };
 
-// ??0Rva006CBDE0@@QAE@HPAXPAVAptValue@@@Z present-unmatched
 Rva006CBDE0::Rva006CBDE0(int type, void *p1, AptValue *p2) : BfmeAptValue006DCD20(type, 0)
 {
-	m_str.clear();
 	m_4c = p1;
 	m_0c = 0x3F800000;
 	m_10 = 0;
