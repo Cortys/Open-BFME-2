@@ -3672,3 +3672,4 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva003EDA43@Rva003EDA43@@QAEXABVAsciiString@@@Z	0x003EDA43	168	blocked	chain 168B EH pair plus bitset register swap ebx edi and zero idiom stosd vs mov need sibling pattern t=15 model=muse-08
 ?rva00041403@Rva00041403@@QAEXH@Z	0x00041403	84	blocked	x87 fld fstp plus SSE movss xorps plus isnan IAT via edi plus ecx-eax register args unclear from 46B caller; deferred t=5 model=muse-11
 ?rva004C6D35@Rva004C6D35@@QAEXXZ	0x004C6D35	101	blocked	EH AICommandParms 0x3F plus virtual slot0 plus free owner unknown no vtable donor caller unclaimed t=10 model=muse-09
+??0Rva00136001@@QAE@ABVHierarchyPrototypeRef@@@Z	0x00136001	49	blocked	ctor 49B EH plus base needs Ref by value vs const ref plus EH prolog 1 variant t=12 model=muse-08
