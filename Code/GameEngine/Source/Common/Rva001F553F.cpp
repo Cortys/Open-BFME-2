@@ -23,12 +23,20 @@ extern float g_Va007C26F0;
 class Rva003AFB2A
 {
 public:
+	virtual void vf00();
+	virtual void vf01();
+	virtual void vf02();
+	virtual void vf03();
+	virtual void vf04();
+	virtual void vf05();
+	virtual float vf06();
 	void rva003AFB2A(Coord3D *out, float a, float b, unsigned int c, unsigned int d);
 };
 
 class Rva001F553F
 {
 public:
+	float rva001F5445();
 	Coord3D *rva001F553F(Coord3D *out, unsigned int a, unsigned int b);
 
 private:
@@ -37,6 +45,17 @@ private:
 	char m_pad180[0x40];
 	Rva003AFB2A *m_1C0;
 };
+
+float Rva001F553F::rva001F5445()
+{
+	Rva003AFB2A *p = m_1C0;
+	float v;
+	if (p != 0)
+		v = p->vf06();
+	else
+		v = 0.0f;
+	return v;
+}
 
 Coord3D *Rva001F553F::rva001F553F(Coord3D *out, unsigned int a, unsigned int b)
 {

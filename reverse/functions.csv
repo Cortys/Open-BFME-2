@@ -44433,3 +44433,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva00098573@Rva00098573@@QAEPAMPAMHH@Z,,0x00098573,95,Code/GameEngine/Source/Common/Rva00098573Fill.cpp,matched,grid cell vec3 fill via Rva00285D34 row and SSE globals
 ?rva005D1FD3@Rva005D1F45@@QAEHPAVGameMessage@@@Z,,0x005D1FD3,51,Code/GameEngine/Source/Common/Rva005D1FD3.cpp,matched,chain lane caller type 0x1b to rva005D1F45 via getArgument
 ?rva005D124D@Rva005D124D@@QAEHXZ,,0x005D124D,8,Code/GameEngine/Source/Common/Rva005D124D.cpp,matched,unlock lane forwarding thunk to slot1 via plus8
+?rva001F5445@Rva001F553F@@QAEMXZ,,0x001F5445,34,Code/GameEngine/Source/Common/Rva001F553F.cpp,matched,unlock float getter via slot6 with 0.0f else same class
