@@ -42972,3 +42972,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?rva00295927@Rva00295927@@QAEXIPAVImage@@@Z,,0x00295927,66,Code/GameEngine/Source/Common/Rva00295927.cpp,matched,Map insert-if-absent via void and Image views unlocks 0x00452E27
 ?Rva000787BAOpen@@YAPAVFile@@PBD@Z,,0x000787BA,117,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000787BAOpen.cpp,matched,Free File opener via GameFileClass 0x214 plus rowed openFile zero ebx
 ??1Rva002AF1EC@@QAE@XZ,,0x002AF1EC,74,Code/GameEngine/Source/Common/System/Rva002AF1ECDtor.cpp,matched,dtor vector free releaseBuffer EHs
+?rva005FB770@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FB770,103,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt PlayerName key via rowed format and setText

@@ -3562,3 +3562,4 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ??0Rva000EFA4E@@QAE@XZ	0x000EFA4E	132	blocked	eax-this-plus-mov-2B persists m3C-early-worse-5-regions best-equals-stash t=12 model=muse-03
 ?rva0040C9A4@Rva0040C985@@QAEMXZ	0x0040C9A4	80	partial	fcom-fnstsw vs retail fld-fld1-fxch-fcompi 81B vs 80B single compare region t=15 model=muse-05 score=0.94 stash=reverse/attempts/0x0040c9a4.cpp
 ??0PhysicsBehaviorModuleData@@QAE@XZ	0x00390119	176	partial	stores exact via volatile plus retail order; wall 0.33 not hoisted plus xor after 8 plus 1.0 late t=35 model=muse-spark score=0.99 stash=reverse/attempts/0x00390119.cpp
+??0?$_Rb_tree@HU?$pair@$$CBHUBfmePod8@@@_STL@@U?$_Select1st@U?$pair@$$CBHUBfmePod8@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUBfmePod8@@@_STL@@@2@@_STL@@QAE@ABV01@@Z	0x003A299C	165	blocked	unrowed Pod8 base and get_allocator need pins t=15 model=muse-08
