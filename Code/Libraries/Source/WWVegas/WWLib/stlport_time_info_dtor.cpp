@@ -15,7 +15,7 @@
 // declared with C++ linkage: as extern "C" the compiler treats it as nothrow
 // and drops the same states again.
 
-void __cdecl free(void *);
+extern "C" void __cdecl free(void *block) throw(...);
 
 namespace _STL
 {

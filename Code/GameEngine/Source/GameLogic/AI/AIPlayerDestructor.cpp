@@ -26,7 +26,7 @@
 
 // ??0?$allocator@UBfmeE16@@@_STL@@QAE@XZ present-unmatched
 extern "C" void *memset(void *s, int c, unsigned n) throw();
-void free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 
 class AsciiStringMember
 {

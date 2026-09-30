@@ -9,7 +9,7 @@
 // C++-linkage free (?free@@YAXPAX@Z, pinned at 0x00030830): the C++
 // decoration is what makes the caller emit the unwind state store retail
 // carries; same body as the extern C _free at that address.
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 
 struct Node002B43BA
 {

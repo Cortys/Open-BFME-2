@@ -11,7 +11,7 @@
 
 // C++-linkage free (pinned ?free@@YAXPAX@Z) as STLport compiles against: a
 // direct call that may throw, so the member teardown gets its EH state.
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 
 struct Rva002571A7Elem
 {

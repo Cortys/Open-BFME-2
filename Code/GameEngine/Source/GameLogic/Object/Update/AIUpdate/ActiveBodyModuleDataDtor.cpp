@@ -12,7 +12,7 @@
 // the SupplyTruck precedent. Unblocks SymbioticStructuresBody 0x002570F9
 // plus deleting dtor 0x004BF9B8.
 
-void free(void *p);
+extern "C" void __cdecl free(void *block) throw(...);
 
 class Xfer;
 

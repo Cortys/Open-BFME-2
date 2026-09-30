@@ -30,7 +30,7 @@
 //   * the destructor out of line. Inlined into a caller it is the 13-byte
 //     sequence that appears all over the readers instead.
 
-void __cdecl free(void *);
+extern "C" void __cdecl free(void *block) throw(...);
 
 namespace _STL
 {

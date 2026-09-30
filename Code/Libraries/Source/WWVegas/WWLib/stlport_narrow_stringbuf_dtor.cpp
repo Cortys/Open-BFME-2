@@ -17,7 +17,7 @@
 //   * the streambuf base declared-only, so the trailing call stays a direct
 //     E8 to the rowed 0x0001C6E0 destructor.
 
-void __cdecl free(void *);
+extern "C" void __cdecl free(void *block) throw(...);
 
 namespace _STL
 {

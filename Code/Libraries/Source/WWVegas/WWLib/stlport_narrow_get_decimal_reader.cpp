@@ -5,7 +5,7 @@
 // body from vendor/stlport/stl/_num_get.c: it hands a default-constructed
 // (empty) grouping string to the base-10 accumulator.
 
-void __cdecl free(void *);
+extern "C" void __cdecl free(void *block) throw(...);
 
 namespace _STL
 {

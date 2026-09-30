@@ -14,7 +14,7 @@
 
 typedef int Int;
 
-void free(void *p);
+extern "C" void __cdecl free(void *block) throw(...);
 
 class Rva001E3624
 {

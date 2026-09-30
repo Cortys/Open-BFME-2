@@ -5,7 +5,7 @@
 // the same locale; otherwise the names decide, and a nameless locale is
 // never equal to anything.
 
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 
 namespace _STL
 {
