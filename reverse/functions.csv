@@ -43707,3 +43707,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva002DBD05Get@@YAPAVRva002DBD05@@PAV1@PAD@Z,,0x002DBD05,95,Code/Libraries/Source/WWVegas/WWLib/Rva002DBD05Get.cpp,matched,guard index 0x10 via vtable 0x78 throw formatted else loop 16x via 0x88
 ?rva00053DC5@Rva00053DC5@@QAEXPAX@Z,,0x00053DC5,45,Code/Libraries/Source/WWVegas/WWLib/Rva00053DC5.cpp,matched,unlocks 0x00054B9A recurses on plusC frees plus8 loop
 ?rva000535CC@Rva000535CC@@QAEXPAX@Z,,0x000535CC,58,Code/GameEngineDevice/Source/MilesAudioDevice/Rva000535CC.cpp,matched,unlocks 0x0005C23C gate plus float via table 0x10
+?rva0031FC08@Rva0031FC08@@QAEPAUEntry@@V?$StringBase@D@@@Z,,0x0031FC08,98,Code/GameEngine/Source/Common/Rva0031FC08.cpp,matched,EH list find via lowered name plus rowed toLower compareNoCase

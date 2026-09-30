@@ -3999,3 +3999,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?rva0018095B@Rva0018095B@@QAEAAV1@ABUBfmeResetAnyRef@@@Z	0x0018095B	49	blocked	chain setter 21B vs 49B missing 28B EH needs local with dtor t=15 model=muse-12
 ?rva000550A0@Rva00699180Owner@@QAEXH@Z	0x000550A0	87	partial	six-vector erase plus refresh shape 90B vs 87B; outer ptr bump plus cl flag vs dl; t=25 model=muse-07 score=0.9 stash=reverse/attempts/0x000550a0.cpp
 ?rva0031AF54@Rva0031AF54@@QAEX_N@Z	0x0031AF54	120	partial	edi-ebx swap with jle before push; size exact 120B t=25 model=muse-03 score=0.92 stash=reverse/attempts/0x0031af54.cpp
+?rva002AD027@Rva002AD027@@QAE...	0x002AD027	48	blocked	freelist range insert loop via rowed Insert 0x2ACF9C needs this-via-ecx plus dummy-push plus frame mapping plus 4th arg use t=15 model=muse-09
