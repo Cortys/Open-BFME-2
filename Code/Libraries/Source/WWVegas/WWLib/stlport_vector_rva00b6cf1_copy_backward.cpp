@@ -17,4 +17,6 @@ struct Rva00B6CF1
 	AsciiString m_s1;
 };
 
+template Rva00B6CF1 *_STL::copy_backward<Rva00B6CF1 *, Rva00B6CF1 *>(Rva00B6CF1 *, Rva00B6CF1 *, Rva00B6CF1 *);
+
 template class _STL::vector<Rva00B6CF1, _STL::allocator<Rva00B6CF1> >;
