@@ -86,3 +86,17 @@ void Rva004C7449Sort(void *first, void *last, Rva004C6F77Pred pred)
 		Rva004C73C5Insert(first, esi, v, pred);
 	}
 }
+
+void Rva004C7009SiftUp(void *base, int hole, int first, Rva004C6FD0Val value, Rva004C6F77Pred pred)
+{
+	Rva004C6FD0Val *arr = (Rva004C6FD0Val *)base;
+	int parent = (hole - 1) / 2;
+	while (hole > first) {
+		if (!pred(&arr[parent], &value))
+			break;
+		arr[hole] = arr[parent];
+		hole = parent;
+		parent = (hole - 1) / 2;
+	}
+	arr[hole] = value;
+}
