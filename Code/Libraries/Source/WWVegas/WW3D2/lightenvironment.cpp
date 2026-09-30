@@ -222,17 +222,6 @@ void LightEnvironmentClass::OutputLightStruct::Init
 **
 ************************************************************************************************/
 
-// ??0LightEnvironmentClass@@QAE@XZ present-unmatched
-LightEnvironmentClass::LightEnvironmentClass(void) :
-	LightCount(0),
-	ObjectCenter(0,0,0),
-	OutputAmbient(0,0,0),
-	FillLight(),
-	FillIntensity(0.0f)
-{
-}
-
-
 // ??1LightEnvironmentClass@@QAE@XZ present-unmatched
 LightEnvironmentClass::~LightEnvironmentClass(void)
 {
