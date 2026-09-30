@@ -37,3 +37,22 @@ Rva005B2FDCItem *Rva005B2FDCPartition(Rva005B2FDCItem *first, Rva005B2FDCItem *l
         ++first;
     }
 }
+
+Rva005B2FDCItem *Rva005B282EMedian(Rva005B2FDCItem *a, Rva005B2FDCItem *b, Rva005B2FDCItem *c, Rva005B26CECmp comp)
+{
+    if (comp(a, b)) {
+        if (comp(b, c))
+            return b;
+        else if (comp(a, c))
+            return c;
+        else
+            return a;
+    } else {
+        if (comp(a, c))
+            return a;
+        else if (comp(b, c))
+            return c;
+        else
+            return b;
+    }
+}
