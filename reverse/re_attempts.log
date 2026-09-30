@@ -4164,3 +4164,11 @@ FUN_0078153b	0x0038153B	112	blocked	twin of 0x005401E3 112B 2-arg EH visitor wal
 ?Rva000ADF1BWrapper@@YAPAHPAF00@Z	0x000ADF1B	29	blocked	wrapper passes 5 args to 3-arg 0xAD8EB copy extra 0 plus local ignored; cannot express fixed-arg call with extra args honestly t=10 model=muse-05
 ??0Rva00431FB5@@QAE@XZ	0x00431FB5	61	partial	63B vs 61B 0 reg only scheduling second vptr vs ecx load order plus first vptr pos; layout EH exact via vptr placeholder plus nontrivial Rva dtor t=20 model=muse-05 score=0.95 stash=reverse/attempts/0x00431fb5.cpp
 ??0Rva005E21EB@@QAE@XZ	0x005E21EB	59	partial	57B vs 59B 0 mem 1 reg only scheduling or-minus1 vs mov-eax return-this plus ecx-FS order t=15 model=muse-05 score=0.95 stash=reverse/attempts/0x005e21eb.cpp
+?rva0044A652@Rva0044A652@@QAEHXZ	0x0044A652	267	blocked	complex LANAPI network EH wide wcsncpy 267B t=4 model=muse-07
+?Rva001EE483Get@@YAHXZ	0x001EE483	89	blocked	large-frame INI Mouse.ini EH free function t=3 model=muse-07
+?rva005DBDF7@Rva005DBDF7@@QAEHXZ	0x005DBDF7	115	blocked	same EH vector functor wall scopetable 0xBFB1CC t=2 model=muse-07
+?rva004B41A9@Rva004B41A9@@QAEHXZ	0x004B41A9	91	blocked	custom Upgrade bitset giveSelfUpgrade weak donor no body t=4 model=muse-07
+?rva0057F3A9@Rva0057F3A9@@QAEHXZ	0x0057F3A9	113	blocked	custom GUI Unicode combo trim EH t=3 model=muse-07
+?rva00481C0C@Rva00481C0C@@QAEHXZ	0x00481C0C	320	blocked	complex PropagandaTower bitflags Object GameLogic 320B t=3 model=muse-07
+?rva0054FDA4@Rva0054FDA4@@QAEHXZ	0x0054FDA4	163	blocked	complex STL map mutex LockClass EH t=3 model=muse-07
+?Rva00331A91Get@@YAHXZ	0x00331A91	116	blocked	free EH copy binary search Rva002DFC30 no donor t=3 model=muse-07
