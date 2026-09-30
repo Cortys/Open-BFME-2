@@ -42,3 +42,10 @@ StringBase<char> *Rva000BC758Find(
         return last;
     }
 }
+
+StringBase<char> *Rva000BD22FFind(
+    StringBase<char> *first, StringBase<char> *last, const StringBase<char> &val)
+{
+    char dummy;
+    return Rva000BC758Find(first, last, val, (int)&dummy);
+}
