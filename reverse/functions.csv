@@ -44240,3 +44240,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0050F2AF@Rva0050F0AB@@QAEXI@Z,,0x0050F2AF,87,Code/GameEngine/Source/Common/System/Rva0050F2AF.cpp,matched,chain clamp 99999 plus focus Send
 ??4Rva0031AB7F@@QAEAAV0@ABV0@@Z,,0x0031AB7F,80,Code/GameEngine/Source/GameClient/GUI/ControlBar/Rva0031AB7FCopy.cpp,matched,Copy assign via base and AsciiString plus array
 ?rva0031AA34@BfmeWorldRV@@QAEXH@Z,,0x0031AA34,23,Code/GameEngine/Source/GameClient/GUI/ControlBar/BfmeWorldRva0031AA34.cpp,matched,BfmeWorldRV flag via InGameUI slot47
+??1Rva002DAC58@@UAE@XZ,,0x002DAC58,128,Code/GameEngine/Source/Common/Rva002DAC58Dtor.cpp,matched,dtor two lists plus base row via vptr
