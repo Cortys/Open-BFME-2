@@ -87,3 +87,30 @@ Rva005DD822::Rva005DD822(unsigned int v) {
     m04 = (float)v;
     ((UnicodeString*)this)->format(g_007C9260, v);
 }
+
+// ?rva005DD88A@Rva005DD88A@@QAEHPAVGameWindow@@HHM@Z, retail 0x005DD88A, 86 bytes.
+// Same 8B UnicodeString+float record (m04 at +4). Color is (m04==f) green
+// 0xFF64FF64 else white -1 via ucomiss+lahf+test+jp. Then rowed
+// GadgetListBoxAddEntryText with *this base plus (color a b true) returning
+// idx in esi, then rowed Rva0032434ASet(win idx b 2). Caller 0x005DDC2D.
+// Unblocks 0x005DDBAB.
+
+class GameWindow;
+
+int GadgetListBoxAddEntryText(GameWindow *win, UnicodeString txt, int c, int a, int b, bool flag);
+void Rva0032434ASet(GameWindow *win, int x, int y, int z);
+
+class Rva005DD88A : public UnicodeString
+{
+public:
+	float m04;
+	int rva005DD88A(GameWindow *win, int a, int b, float f);
+};
+
+int Rva005DD88A::rva005DD88A(GameWindow *win, int a, int b, float f)
+{
+	int color = (m04 == f) ? 0xFF64FF64 : -1;
+	int idx = GadgetListBoxAddEntryText(win, *(UnicodeString *)this, color, a, b, true);
+	Rva0032434ASet(win, idx, b, 2);
+	return idx;
+}

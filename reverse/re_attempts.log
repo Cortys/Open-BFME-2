@@ -3954,3 +3954,4 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?assign@Rva00332217Vec@@QAEXABV1@@Z	0x00332217	206	blocked	vector assign 206B needs 5 helper typings allocate-copy clear copy destroy uninit t=10 model=muse-08
 ??4?$vector@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x004BF4CE	209	partial	extra push 0 before size compare t=25 model=muse-08 score=0.99 stash=reverse/attempts/0x004bf4ce.cpp
 ?handle@Rva008091C0Owner@@QAEXPAVBfmeC994@@HPAD@Z	0x006750C0	361	partial	missing push ebx index in edi not ebx t=30 model=muse-08 score=0.99 stash=reverse/attempts/0x006750c0.cpp
+?rva0036E357@Rva0036E357@@QAE_NXZ	0x0036E357	111	blocked	EBP frame plus 21B larger plus register allocation wall plus this spilled plus flag in bl vs cl t=15 model=muse-02
