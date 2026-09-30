@@ -44232,3 +44232,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??1Rva00383AFF@@QAE@XZ,,0x00383F3C,23,Code/GameEngine/Source/Common/System/Rva00383AFFClear.cpp,matched,chain calls 0x00383AFF clear plus free
 ??0Rva0055F9B4@@QAE@ABVRvaSmartPtr12@@H@Z,,0x0055F9B4,171,Code/GameEngine/Source/Common/Rva0055F9B4Ctor.cpp,matched,unlock base 0x0055F98A plus DefaultUpdate eight vars
 ??0Rva0055F72C@@QAE@XZ,,0x0055F72C,64,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055F72CCtor.cpp,matched,gap nine floats plus one via SSE zeros
+?rva0005800A@Rva0005800A@@QAEXABVRva0036CA00Str@@@Z,,0x0005800A,132,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_str_aux.cpp,matched,deque Str push_back aux via rowed copyCtor reserve allocate Release_Ref caller 0x58BB4
