@@ -3568,3 +3568,13 @@ FUN_0055325C	0x0055325C	122	blocked	frameless custom-convention hex-decode mov-e
 ?rva00288AF2@Rva00288AF2@@QAEPAUCameraMarker@@ABV?$StringBase@D@@@Z	0x00288AF2	67	blocked	find loop needs CameraMarker layout plus count sar plus reg order t=12 model=muse-12
 ?rva00392092@Rva00392092@@QAEXXZ	0x00392092	101	blocked	array-new EH hub needs UU LL plus FuncInfo plus global plus base dtor t=10 model=muse-12
 ?rva00216AF6@Rva00216AF6@@QAEXXZ	0x00216AF6	73	partial	71B vs 73B only missing mov ecx esi before free call; retail calls 0x00216787 as member thiscall with caller this but row is YGX stdcall needs retype t=10 model=muse-07 score=0.97 stash=reverse/attempts/0x00216af6.cpp
+??0Rva001EB15A@@QAE@ABU0@@Z	0x001EB15A	89	partial	push-lea order before wide call; retail lea ecx then push ours push then lea; 89B 32ins exact size t=15 model=muse-spark score=0.96 stash=reverse/attempts/0x001eb15a.cpp
+?rva004C1028@Rva004C1028@@QAEMH@Z	0x004C1028	50	partial	SSE zero via xorps-movss to ebp+8 then fld; ours fld literal; tail jmp correct EBP frame correct t=18 model=muse-spark score=0.9 stash=reverse/attempts/0x004c1028.cpp
+?rva006CDE50@Rva006CDE50@@QAE	0x006CDE50	261	blocked	Apt refcount list with j-nMaxSize assert; no BFME1 donor in 4 lookups; 261B EH with increment DecRef dropVGO t=8 model=muse-spark
+?Rva006CE1C0ZombieCheck@@YAXXZ	0x006CE1C0	437	blocked	Apt zombie-sprite GC sweep 437B with CullSystem AptValue EAStringC; needs BFME1 Apt donor; beyond budget t=5 model=muse-spark
+?updateSegLighting@RoadSegment@@QAEXXZ	0x000D4613	187	blocked	BFME2 retail needs 36B verts diffuse+0x18 stride0x24 3-arg diffuse and ESP frame; ZH donor has 24B verts 2-arg; 5 variants best 157B t=25 model=muse-spark
+?rva002CEE63@Rva002CEE1B@@QAEXXZ	0x002CEE63	51	blocked	vslot clear 128x28B via and-movss; 6 variants best 51B structural-0 base-shift -4 (lea 0x14 vs 0x18); needs base-pad2 anchor t=20 model=muse-spark
+?rva0041A9E8@Rva0041A9E8@@QAEXABUBfmeNarrowRecord0041A617@@@Z	0x0041A9E8	135	partial	deque 16B slow path 0x80/+8 via PAX reserve; missing or-minus1 and pop-ecx order before free; 146B vs 135B t=22 model=muse-spark score=0.92 stash=reverse/attempts/0x0041a9e8.cpp
+??0Rva006D91B0@@QAE@XZ	0x006D91B0	103	blocked	Apt ctor with twin vptrs CEA228 then CEA778 plus BfmeAptValue 0x16 and NativeHash 8; needs 2-vtable hierarchy t=12 model=muse-spark
+?Rva006CE3D0Cleanup@@YAXPAXHH@Z	0x006CE3D0	388	blocked	Apt pool allocBlock plus mutex plus array-new 388B chain; needs Apt donor t=3 model=muse-spark
+?rva003B8E89@Rva003B8E89@@QAEPAUBfmeAssignRecord104@@ABV?$StringBase@D@@@Z	0x003B8E89	83	blocked	vector104 find via idiv68 and StringBase compare; EBP-plus-stack vs frameless-register wall 101B t=14 model=muse-spark
