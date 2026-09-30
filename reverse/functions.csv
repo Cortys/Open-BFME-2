@@ -44228,3 +44228,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0?$pair@$$CBW4NameKeyType@@UPristineBoneInfo@@@_STL@@QAE@ABU01@@Z,,0x000B4414,29,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/W3DModelDrawO1Inlines.cpp,matched,masked search of this TU's emitted body hits several unowned places; exactly one reads every rowed or pinned REL32 callee at its call sites and that callee carries no other name
 ?rva0031AE01@ControlBar@@QAEXXZ,,0x0031AE01,18,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AE01.cpp,matched,ControlBar set flag via winHide
 ?rva0031AEAE@ControlBar@@QAEXPAH0@Z,,0x0031AEAE,27,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AEAE.cpp,matched,ControlBar two-out copy
+??_GRva002DB311@@UAEPAXI@Z,,0x002DB47A,28,Code/GameEngine/Source/Common/Rva002DB311Dtor.cpp,matched,chain lane deleting dtor calls rowed dtor then delete
