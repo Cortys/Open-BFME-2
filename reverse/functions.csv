@@ -44317,3 +44317,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ??0?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@URva004FFF54Less@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QAE@ABV01@@Z,,0x004FFF54,165,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_ptr_tree_copy4.cpp,matched,chain via Rva004FFC96 copy pin HPAX base 0x001F0534 get_allocator fold
 ?rva00285D34@Rva00285D34@@QAEHHH@Z,,0x00285D34,145,Code/GameEngine/Source/Common/Rva00285D34Cell.cpp,matched,grid cell lookup via tile floor and rowed bias
 ?rva006DBFA0@BfmeAptValue006DCD20@@QBEHXZ,,0x006DBFA0,110,Code/Libraries/Source/Apt/AptValue/AptValuePredicate006DBFA0.cpp,matched,Xml family TU plus AptValue.inl 1407-1408 plus type 3
+?rva0055E697@Rva0055E697@@QAEXHHHHH@Z,,0x0055E697,61,Code/GameEngine/Source/Common/Rva0055E697Get.cpp,matched,vslot 3-float getter via rowed getValue frame array
