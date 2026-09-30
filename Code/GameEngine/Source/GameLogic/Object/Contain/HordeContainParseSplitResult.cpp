@@ -3,7 +3,8 @@
 // descriptive, not recovered PC symbols. PC table C45530 has SplitHorde at
 // member +1A4 and callback 46F288. Target allocates 12 bytes; string handles
 // are +0/+4 and rank +8. StringBase<char>::set is the matched body at 55F5.
-// HordeSplitEntrySlot is a local 4-byte POD ABI wrapper, not a claimed EA type.
+// The append is a 4-byte pointer slot; ModuleData below is only the matched
+// vector row's spelling, not a claim about the pointed-to record's identity.
 // The called vector push_back at 4DFCB0 is independently verified over all
 // 49 bytes: three-pointer vector layout, dword construct, +4 end increment,
 // overflow 2DFCF6 (140 bytes; dword-distance sizing and copying).
@@ -37,9 +38,9 @@ public:
     StringBase<char> unitType;
     int rankNumber;
 };
-struct HordeSplitEntrySlot { HordeContainSplitEntry *entry; };
+class ModuleData;
 namespace _STL {
-template <> void vector<HordeSplitEntrySlot>::push_back(const HordeSplitEntrySlot &);
+template <> void vector<const ModuleData *>::push_back(const ModuleData * const &);
 }
 struct INIException { char *message; int code; INIException(int argCount, const char *format, ...); };
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
@@ -49,8 +50,7 @@ void parseHordeContainSplitResult(INI *ini, void *instance, void *store, const v
 {
   {
     HordeContainSplitEntry *entry = new HordeContainSplitEntry;
-    HordeSplitEntrySlot slot;
-    slot.entry = entry;
+    const ModuleData *slot = (const ModuleData *)entry;
     const char *token = ini->getNextTokenOrNull(ini->sepsColon);
     if (!token || strcmp(token, "SplitResult") != 0) goto invalidTarget;
     entry->splitResult.set(ini->getNextToken(ini->sepsColon));
@@ -62,7 +62,7 @@ void parseHordeContainSplitResult(INI *ini, void *instance, void *store, const v
         entry->rankNumber = atoi(ini->getNextToken(ini->sepsColon));
     else
         entry->rankNumber = 0;
-    ((_STL::vector<HordeSplitEntrySlot> *)store)->push_back(slot);
+    ((_STL::vector<const ModuleData *> *)store)->push_back(slot);
     return;
   }
 invalidResult:
