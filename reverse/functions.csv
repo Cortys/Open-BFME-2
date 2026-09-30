@@ -44154,3 +44154,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva005646BC@@QAE@IAAUSrc005646BC@@@Z,,0x005646BC,135,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005646BC.cpp,matched,copy-template ctor twin via rowed base uint ctor and FX cache
 ?removeObjectFromGarrisonPoint@GarrisonContain@@IAEXPAVObject@@H@Z,,0x00477E82,132,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainRemoveObject.cpp,matched,BFME1 donor TrackTargets plus Thing setPosition row
 ?rva006FDE50@AptBasePtrStack@@QAEXXZ,,0x006FDE50,130,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,same TU class flags triple as dtor 0x006FDD40 frees via pool then zeroes members
+??$__uninitialized_fill_n@PAVSaveMapPreview@@IV1@@_STL@@YAPAVSaveMapPreview@@PAV1@IABV1@ABU__false_type@0@@Z,,0x002DBF28,40,Code/GameEngine/Source/Common/System/SaveGame/SaveMapPreviewFillN.cpp,matched,unlock lane via caller 0x002DDDB9 copy ctor stride 0x14
