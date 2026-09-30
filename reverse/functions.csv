@@ -42929,3 +42929,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?rva000783A1@FileSystem@@QAEPAVFile@@PBDHHH@Z,,0x000783A1,36,Code/GameEngineDevice/Source/W3DDevice/GameClient/FileSystemRva000783A1.cpp,matched,FileSystem 4-arg wrapper packs 2 ints for rowed openFile via TheFileSystem caller 0x7882F
 ??1Rva0039205C@@QAE@XZ,,0x0039205C,26,Code/GameEngine/Source/Common/Rva0039205CDtor.cpp,matched,outer dtor via vector delete plus zeroing
 ?Rva00295A0FCommand@Rva00295A0FCommands@@QAEXPAXHH@Z,,0x00295A0F,117,Code/GameEngine/Source/GameLogic/AI/AICommandRva00295A0F.cpp,matched,Position command via AICommandParms slot-0 aiDoCommand LINK bonus
+?Rva0007882FGet@@YAPAVFile@@PBDHH@Z,,0x0007882F,128,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva0007882FGet.cpp,matched,Chain File opener via GameFileClass 0x214 plus rowed wrapper via TheFileSystem
