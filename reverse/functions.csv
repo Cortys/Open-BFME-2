@@ -44974,3 +44974,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??$__uninitialized_fill_n@PAVRva004E32F2@@IV1@@_STL@@YAPAVRva004E32F2@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00566A75,37,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva004e32f2_allocate_copy.cpp,matched,chain calls 0x0052D4A2 same 37B shape
 ??0Rva005D791C@@QAE@XZ,,0x005D791C,55,Code/GameEngine/Source/Common/Rva005D791CCtor.cpp,matched,opaque Rva005EE30C-derived ctor vtable 0x00875DFC set member at +0x28 via rowed set ctor
 ??0Rva005D719C@@QAE@XZ,,0x005D718A,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,opaque Rva005EE2A0-derived ctor vtable 0x00875C80 via rowed base ctor
+?rva002645FF@Rva002645FF@@QAE_NXZ,,0x002645FF,87,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,vtable slot 110 shared AIUpdate testStatus rowed tail slot 8
