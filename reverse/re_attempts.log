@@ -3709,3 +3709,5 @@ FUN_007B11D2	0x003B11D2	114	blocked	unlock Overridable name lookup via String co
 ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z	0x002B6498	32	partial	32B exact via tmp plus Oy- direct _M_find; gate unresolved equal_to scope std-explicit vs row backref-5 needs twin pin or std typedef t=30 model=muse-06 score=0.99 stash=reverse/attempts/0x002b6498.cpp
 ?rva002B9CFC@Rva002B9CFC@@QAEXPAVOther002B9CFC@@@Z	0x002B9CFC	203	partial	204B vs 203B 83 vs 83insns; wall test edi vs eax plus mov edi eax unconditional vs test eax plus mov plus jmp plus xor; count cmp jbe extra; t=30 model=muse-06 score=0.97 stash=reverse/attempts/0x002b9cfc.cpp
 ?release@Rva0020453CHolderBase@@QAEXXZ	0x0020453C	111	blocked	by-value handle temp auto-dtor adds unconditional cleanup plus ebx zero reuse needs trivial-wrapper idiom t=10 model=muse-11
+?rva001EEFD2@Mouse@@QAEXH@Z	0x001EEFD2	137	blocked	159vs137 skeleton only empty path missing virtual slot3C and payload ממצ t=20 model=muse-09
+?rva002112A9@Rva002112A9@@QAEXXZ	0x002112A9	237	blocked	complex 237B float cvttss2si format translate dual rva001EEBD5 paths needs donor t=10 model=muse-09
