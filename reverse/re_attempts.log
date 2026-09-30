@@ -3950,3 +3950,7 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?initMember@Rva0026AFDAMember@@QAEPAV1@XZ	0x0026AFDA	99	partial	vector-setup scheduling lea eax esp+b at 0x25 vs 0x28 size exact t=8 model=muse-04 score=0.9 stash=reverse/attempts/0x0026afda.cpp
 ?rva0025C3AA@Display@@QAEXXZ	0x0025C3AA	196	blocked	display layout with device virtuals 0x2c 0x30 plus own 0x40 0x44; mixed x87 arithmetic plus SSE zero needs flags; nullcheck cmp vs test plus float const relocs plus scheduling; 191B vs 196B 7 regions t=22 model=muse-04
 ?Rva00568830Push@@YAXPAPAXHHPBXPAH@Z	0x00568830	77	partial	dead lea ecx ebp+18 before Less 74B vs 77B single region no memory-register t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x00568830.cpp
+?rva003F4D09@Rva003F498A@@QAEPAURva003F498AInner@@XZ	0x003F4D09	160	blocked	nested idiv loops need manual pointer-index locals plus minus1 early exit t=15 model=muse-08
+?assign@Rva00332217Vec@@QAEXABV1@@Z	0x00332217	206	blocked	vector assign 206B needs 5 helper typings allocate-copy clear copy destroy uninit t=10 model=muse-08
+??4?$vector@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x004BF4CE	209	partial	extra push 0 before size compare t=25 model=muse-08 score=0.99 stash=reverse/attempts/0x004bf4ce.cpp
+?handle@Rva008091C0Owner@@QAEXPAVBfmeC994@@HPAD@Z	0x006750C0	361	partial	missing push ebx index in edi not ebx t=30 model=muse-08 score=0.99 stash=reverse/attempts/0x006750c0.cpp

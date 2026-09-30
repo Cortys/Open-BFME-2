@@ -43620,3 +43620,4 @@ _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva0040D11CSwap@@YAXPAVRva0040D0A4Entry@@0@Z,,0x0040D11C,84,Code/GameEngine/Source/Common/Rva0040D11CSwap.cpp,matched,unlock lane EH swap via tmp copy plus assigns plus release
 ??_GPushButtonData@@QAEPAXI@Z,,0x00328338,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_PushButtonData.cpp,matched,deleting dtor via rowed dtor and delete QAE
 ?rva001E7E25@Rva001E7E25@@QAEXXZ,,0x001E7E25,83,Code/Libraries/Source/WWVegas/WWLib/Rva001E7E25Clear.cpp,matched,frameless thiscall vector clear via slot0 plus delete plus erase plus flag clears
+??1Rva00283081@@UAE@XZ,,0x00283081,84,Code/GameEngine/Source/Common/Rva00283081Dtor.cpp,matched,twin of 0x004DFED8 via vtable and clear
