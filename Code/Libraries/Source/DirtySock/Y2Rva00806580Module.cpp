@@ -25,8 +25,8 @@ unsigned short Rva007FFA60Swap16( unsigned short value );   // 0x007FFA60
 unsigned int   Rva007FFAD0( unsigned int value );           // 0x007FFAD0
 // The second argument is a KEY POINTER, not a flag: 0x00806710 passes the
 // 0x20-byte Secret it just derived, and 0x00806A90 passes null.
-void Rva0080DFC0( void *object, const void *secret );        // 0x0080DFC0
-int  Rva0080DF70( const char *key, char *secret, char *ticket ); // 0x0080DF70
+extern "C" void Rva0080DFC0( void *object, const void *secret );        // 0x0080DFC0
+extern "C" int  Rva0080DF70( const char *key, char *secret, char *ticket ); // 0x0080DF70
 extern "C" char *strncpy( char *dest, const char *src, unsigned int count );
 extern "C" void *memcpy( void *dest, const void *src, unsigned int count );
 extern "C" void *memset( void *dest, int value, unsigned int count );
@@ -34,8 +34,8 @@ void *Rva007F0000Alloc( int size );                         // 0x007F0000
 int Rva007FF990Swap16( unsigned short value );   // 0x007FF990
 unsigned int   Rva007FF9F0Swap32( unsigned int value );     // 0x007FF9F0
 void *Rva0080B000Create( void );                            // 0x0080B000
-int   Rva0080B150( void *object, void *addr, int addrLen );  // 0x0080B150
-int   Rva0080B460( void *object, int mode );                // 0x0080B460
+extern "C" int   Rva0080B150( void *object, void *addr, int addrLen );  // 0x0080B150
+extern "C" int   Rva0080B460( void *object, int mode );                // 0x0080B460
 extern "C" int Rva0080ADE0( void *object, int releaseState );
 extern "C" void *Rva007FD2D0( int family, int type, int protocol );
 extern "C" int Rva007FF790( char *address, const char *text );  // 0x0066BC60
@@ -48,7 +48,7 @@ int   Rva00807370( Rva00806580Record *record, int selector, int flag,
 int   Rva008076E0( Rva00806580Record *record, unsigned int *outA,
 		unsigned int *outB, char **outText );               // 0x008076E0
 void  Rva00806B10( Rva00806580Record *record );             // 0x00806B10
-int   Rva0080E330( void *crypto, int length );              // 0x0080E330
+extern "C" int   Rva0080E330( void *crypto, int length );              // 0x0080E330
 // Accept at 0x0080B0A0, connect at 0x0080B1B0, the comm pump at 0x0080B4B0,
 // send/recv/info through the comm object, and the three crypto helpers the
 // packet path uses after a complete header has arrived.
@@ -64,8 +64,8 @@ extern "C" int   Rva0080E200( void *crypto, const unsigned char *data,
 		int length );
 extern "C" int   Rva0080E300( void *crypto, int length );
 int   Rva00807520( Rva00806580Record *record, int length, int limit ); // 0x00807520
-void  Rva0080E350( void *crypto, char *packet, int length );  // 0x0080E350
-void  Rva0080E410( void *crypto, char *packet, int length );  // 0x0080E410
+extern "C" void  Rva0080E350( void *crypto, char *packet, int length );  // 0x0080E350
+extern "C" void  Rva0080E410( void *crypto, char *packet, int length );  // 0x0080E410
 extern "C" unsigned int strlen( const char *text );
 
 // The empty string this module hands back for a block with no payload.

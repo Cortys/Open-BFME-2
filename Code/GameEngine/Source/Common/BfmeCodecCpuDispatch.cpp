@@ -72,7 +72,7 @@ struct Rva009B6D40Context;
 extern int * __cdecl Rva009B6D40(Rva009B6D40Context *, int);
 extern void __cdecl Rva009B6D80(void);
 extern void __cdecl Rva009BD570(void);
-extern void __cdecl Rva009BA790(void);
+extern "C" void __cdecl Rva009BA790(void);
 extern void __cdecl Rva009B18D0(void);
 extern void __cdecl Rva009B10E0(void);
 extern void __cdecl Rva009ACF90(void);
