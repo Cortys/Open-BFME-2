@@ -4097,3 +4097,5 @@ FUN_0067F519	0x0027F519	112	blocked	callback via struct fn needs __thiscall fnpt
 ?rva005DDE69@Rva005DDE69@@QAEMIII@Z	0x005DDE69	54	partial	imul fixed via /O1 /G7; left push-esi scheduling and this-in-esi vs m_begin-in-esi (sub/add via mem vs reg, 53B vs 54B) t=20 model=muse-01 score=0.93 stash=reverse/attempts/0x005dde69.cpp
 ??4Rva001F9C73@@QAEAAV0@ABURva001F9C73Src@@@Z	0x001F9C73	69	partial	operator-writeup matches order-calls-EH with 0 reg diffs (68B); left retail branchless src guard vs placement-new branch t=30 model=muse-01 score=0.9 stash=reverse/attempts/0x001f9c73.cpp
 FUN_007f75ec	0x003F75EC	136	blocked	STL rb-tree insert 5-arg thiscall calling _M_create_node and _Rebalance needs donor layout t=5 model=muse-02
+?Rva001C4FE0Get@@YAIPAUVp6RawBits@@I@Z	0x001C4FE0	94	blocked	eax-ecx static Vp6 read-n-bits; value-bits load order swapped plus ebx-edi-extra allocation wall t=20 model=muse-03
+?rva005D49F9@Rva005D49F9@@QAEXPAUApplyArg005D49F9@@@Z	0x005D49F9	109	partial	guard-loop 107B vs 109B esi-edi swap plus push-vs-sub test-vs-sar lea-vs-mov-inc jl-vs-jb t=25 model=muse-03 score=0.91 stash=reverse/attempts/0x005d49f9.cpp
