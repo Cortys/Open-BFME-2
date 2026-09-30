@@ -44543,3 +44543,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva002C9AFE@Weapon@@QBE_NPBVObject@@PBX@Z,,0x002C9AFE,63,Code/GameEngine/Source/GameLogic/Object/WeaponIsTooClose.cpp,matched,Weapon minRange wrapper via rowed 0x002C92FA and 0x00263763 same TU as isTooClose
 ?get@Rva001F512FSlot@@QBEPBURGBColor@@XZ,,0x001F512F,18,Code/GameEngine/Source/Common/Rva001F512FGet.cpp,matched,null-checked helper at 0x1B8 via slot 0x14 tail-jmp sibling shape
 ?rva00057C5C@KeyToBucketMap@NameKeyGenerator@@QAE?AUequal_result@12@ABUvalue_type@12@@Z,,0x00057C5C,36,Code/GameEngine/Source/Common/NameKeyGeneratorMapInsert.cpp,matched,chain from 0x0005559F resize then insert_equal via insert pattern
+?rva003611EFResolveNames@ObjectFilter@@SAXPAV1@@Z,,0x003611EF,585,Code/GameEngine/Source/Common/ObjectFilterResolveNames.cpp,matched,ObjectFilter resolveNames via BFME1 donor with manual throw
