@@ -296,3 +296,21 @@ void GadgetButtonSetBorder(GameWindow *g, unsigned int color, bool drawBorder)
 	pData->m_int10 = (int)color;
 	g->winSetUserData(pData);
 }
+
+// ?GadgetButtonDrawClock@@YAXPAVGameWindow@@HI@Z @0x00328485 52B
+// Ported from Open-BFME-1 GadgetPushButton.cpp GadgetButtonDrawClock
+// (donor drawClock NORMAL_CLOCK=1 at +0x00 plus percentClock at +0x04 and
+// colorClock at +0x08 match _PushButtonData m_byte00/m_int04/m_int08);
+// same create and winSetUserData shape as SetBorder above.
+void GadgetButtonDrawClock(GameWindow *g, int percent, unsigned int color)
+{
+	if (g == 0)
+		return;
+	_PushButtonData *pData = (_PushButtonData *)g->winGetUserData();
+	if (pData == 0)
+		pData = getNewPushButtonData();
+	pData->m_byte00 = 1;
+	pData->m_int04 = percent;
+	pData->m_int08 = (int)color;
+	g->winSetUserData(pData);
+}

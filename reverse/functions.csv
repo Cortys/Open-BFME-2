@@ -43652,3 +43652,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??_GRva0036783F@@UAEPAXI@Z,,0x003689A8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0036783F.cpp,matched,slot 0 vtable 0x00817548 calls rowed 0x0036783F plus delete
 ??0Rva002834C4@@QAE@XZ,,0x002834C4,34,Code/GameEngine/Source/Common/Rva002834C4Ctor.cpp,matched,ctor via base member and vector
 ?GadgetButtonSetBorder@@YAXPAVGameWindow@@I_N@Z,,0x00328454,49,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetUserDataHelpers.cpp,matched,BFME1 donor GadgetButtonSetBorder verbatim via _PushButtonData
+?GadgetButtonDrawClock@@YAXPAVGameWindow@@HI@Z,,0x00328485,52,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetUserDataHelpers.cpp,matched,BFME1 donor DrawClock verbatim via _PushButtonData
