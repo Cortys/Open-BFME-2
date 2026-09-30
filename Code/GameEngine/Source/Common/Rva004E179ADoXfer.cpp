@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?DoXfer@Rva004E179A@@UAEXAAVXfer@@@Z retail 0x004E1398 83B: virtual slot 3
 // (offset 0x0C) of vtable 0x00C61B78 (class of unrowed dtor ??1 at 0x004E179A
 // tearing down AsciiStrings at +0x0C then +0x08 then +0x04 before restoring
@@ -12,14 +12,7 @@
 // for retail vtable 0x00BBB910. Layout is three AsciiStrings at +4/+8/+0x0C
 // plus bool at +0x10.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class UnicodeString;
 class PooledString;

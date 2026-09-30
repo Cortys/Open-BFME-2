@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 
 // ?Rva002228E8Get@@YA?AVAsciiString@@M@Z, retail 0x002228E8, 95 bytes.
 // Free AsciiString(float) via "%g": stack temp format through rowed
@@ -6,25 +6,8 @@
 // copy 0x000365F0 and temp teardown through rowed releaseBuffer 0x00036410.
 // Sibling of rowed ?Rva0022288EGet@@YA?AVAsciiString@@I@Z @0x0022288E ("%u");
 // callers at 0x00216447 0x00216532 0x002D4480 prove the hidden-return RVO shape.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	T *m_data;
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-	void __cdecl format(const char *fmt, ...);
-};
 
 AsciiString Rva002228E8Get(float val)
 {

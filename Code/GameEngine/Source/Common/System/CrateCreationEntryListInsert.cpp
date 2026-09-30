@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // Dedicated unit without the bfmelist __forceinline _M_create_node shim so
@@ -10,16 +10,7 @@
 // crate _Construct twin pin at 0x0035CA02.
 #include <list>
 
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct crateCreationEntry
 {

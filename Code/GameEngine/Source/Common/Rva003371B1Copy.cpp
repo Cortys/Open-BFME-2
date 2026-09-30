@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ??0Rva003371B1@@QAE@ABV0@@Z @ 0x003371B1 (67B): copy ctor over 20-byte record
 // with AsciiString at +0 via pinned StringBase<char> copy 0x365F0, flag byte
@@ -8,18 +8,7 @@
 // the 67B StringBase+vector copy at 0x000C0BEC in StringVectorRecordCopyBFME2.
 #include <memory>
 #include <vector>
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-};
+#include "ascii_string.h"
 struct BfmeStringRecord000331962 {
     unsigned int word;
     AsciiString text;

@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1Rva004E3184@@UAE@XZ @ 0x004E3184 (201B).
 // ModuleData-style dtor: stores vtable 0x00861F28 at +0 then tears down
@@ -20,14 +20,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class RvaVecAscii
 {

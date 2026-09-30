@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?rva0035B77D@Rva0035B77D@@QAEXXZ @0x0035B77D 92B: image-name array resolve loop
 // over AsciiString slots [+0xB4,+0xB8) pushing found Images into the ModuleData
@@ -9,20 +9,8 @@
 // sibling Rva0026F216ImageResolve; caller 0x0031AC39 walks +0x18 list calling this.
 #include <vector>
 
-template <typename T>
-class StringBase
-{
-public:
-	bool isEmpty() const;
-	void clear() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 class ModuleData
 {

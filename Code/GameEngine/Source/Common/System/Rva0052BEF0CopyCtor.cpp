@@ -1,26 +1,11 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ??0Rva0052BEF0@@QAE@ABV0@@Z, retail 0x0052BEF0, 67 bytes.
 // Copy ctor for an address-named value type holding a string at +4 and a
 // byte at +8 with vtable 0x00C61DC4. Evidence: StringBase<char> copy via
 // pinned 0x000365F0 from param+4 to this+4, byte from param+8, sole caller
 // 0x0052C431 placement construct, unlocks 0x0052C431.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-};
 
 extern const void *const g_00C61DC4[];
 

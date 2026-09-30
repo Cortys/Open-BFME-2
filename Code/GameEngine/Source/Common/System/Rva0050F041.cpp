@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva0050F041@Rva0050F041@@QAEXHABVUnicodeString@@@Z, retail 0x0050F041, 106 bytes.
 // If m_60 null use empty at 0x007BAC1C else +8 name; format m_5c plus mid plus
 // field via AsciiString::format APT:_level%u.%s_field%d into local key and
@@ -14,26 +14,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	void format_va(const T *format, char *args);
-private:
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *format, ...);
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

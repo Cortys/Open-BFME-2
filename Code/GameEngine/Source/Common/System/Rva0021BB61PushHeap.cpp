@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?Rva0021BB61PushHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z @0x0021BB61 123B
 // __push_heap for 8-byte AsciiString-plus-bool entries with empty comparator
 // Rva0021B753 (rowed 0x0021B753). Bubbles val up while parent < val.
@@ -7,24 +7,8 @@
 // Evidence: parent (hole-1)/2 via lea/cdq/sub/sar; same loop as STL push_heap
 // with 8B stride (esi*8); true-first bool plus nocase secondary ordering.
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	int compareNoCase(const StringBase<T> &that) const;
-
-private:
-	void releaseBuffer();
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
 
 class Rva0021915B
 {

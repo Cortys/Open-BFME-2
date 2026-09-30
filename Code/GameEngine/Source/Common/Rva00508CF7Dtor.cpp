@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
 //
 // ??1Rva00508CF7@@UAE@XZ retail 0x00508CF7 56B
 // Novtable derived of Rva00507823 base rowed at 0x00507823. Destroys
@@ -7,13 +7,7 @@
 // WeaponChangeSpecialPowerModuleData precedent. Evidence: chain from
 // base 0x00507823 plus caller deleting 0x00508CDB plus same 56B EH
 // shape as rowed CloudBreak 0x004C47F3.
-class AsciiString
-{
-public:
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00507823
 {

@@ -1,24 +1,11 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva0033C8E8@Rva0033C8E8@@QAE_NABVAsciiString@@AAV2@@Z @0x0033C8E8 113B:
 // chain over four 12B vectors at +0x2e4/+0x2f0/+0x2fc/+0x308 via the rowed
 // 0x33C807 tag find-erase; ORs the four bool results. Caller passes the same
 // two AsciiString params through; ret 8 matches.
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class Rva0033C807
 {

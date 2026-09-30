@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 //
 // UserPreferences WinsVs/LossesVs helpers (retail 0x0053740C/82, 0x0053745E/85,
 // 0x005374B3/82, 0x00537505/85, plus max-finders 0x0053755A/188 and
@@ -32,30 +32,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	void concat(const T *text);
-	void concat(const StringBase<T> &other);
-	void set(const T *text);
-protected:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class UnicodeString;
 

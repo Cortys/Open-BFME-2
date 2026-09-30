@@ -1,17 +1,9 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 // ?getTooltipName@MultiplayerColorDefinition@@QBE?AVAsciiString@@XZ @0x002E4336
 // Shard TU: the ctor/op= TU calls this out-of-line; defining it there
 // inlines and breaks op=, so it lives here.
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class MultiplayerColorDefinition
 {

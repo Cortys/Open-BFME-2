@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?rva002567B9@ModuleFactory@@QAEXABVAsciiString@@HW4ModuleType@@HH@Z @0x002567B9 49B
 // ModuleFactory create helper: null first arg returns; else findModuleTemplate
 // (rowed 0x0025674F); null template or null create fn at +8 returns; else call
@@ -6,12 +6,7 @@
 // caller 0x0033B604 in 0x0033B5B8; protected-method this-call proves
 // ModuleFactory membership; AsciiString inherits StringBase<char> for the
 // dual isEmpty/ABVAsciiString manglings.
-template <typename T> class StringBase {
-public: bool isEmpty() const;
-};
-class AsciiString : public StringBase<char>
-{
-};
+#include "ascii_string.h"
 enum ModuleType
 {
 	MODULE_TYPE_INVALID = 0

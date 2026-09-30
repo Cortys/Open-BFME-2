@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // stlport
 
 // Give VC7.1 a declared pair destructor that explicit instantiation can emit.
@@ -11,12 +11,7 @@ class UnicodeString;
 #include "string_base.h"
 
 // Retail copies each string through its matching narrow or wide StringBase body.
-class AsciiString : private StringBase<char>
-{
-public:
-    __forceinline AsciiString(const AsciiString &source) : StringBase<char>(source) {}
-    ~AsciiString();
-};
+#include "ascii_string.h"
 
 class UnicodeString : private StringBase<unsigned short>
 {

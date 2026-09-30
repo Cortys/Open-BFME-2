@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ??0Rva0029E067@@QAE@ABU0@@Z @0x0029E067 127B
 // Copy ctor: StringBase<char> at +0/+4 via pin 0x000365F0 plus int/byte tail
 // +8..+30. Unblocks 0x0029FB63; caller 0x0029E14E.
@@ -10,25 +10,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-private:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &that) : StringBase<char>(that) {}
-	~AsciiString() {}
-};
 
 struct Rva0029E067
 {

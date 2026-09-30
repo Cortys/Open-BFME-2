@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc
 // ?rva004D6119@Rva004D6119@@QBE?AVUnicodeString@@XZ @0x004D6119 (27B):
 // Value-returning wide-string getter, same shape as PlayerTemplate::getDisplayName
 // @0x00449B8F (27B) and GlobalData::rva002360FC @0x002360FC (30B, 3B larger for
@@ -13,26 +13,8 @@ typedef unsigned short WideChar;
 
 #define NULL 0
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-
-private:
-	StringBase(const StringBase<T> &that);
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-};
 
 class UnicodeString : public StringBase<WideChar>
 {

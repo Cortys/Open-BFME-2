@@ -1,14 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /Oi
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /Oi
 // ?rva0037DE0E@Rva0037DE0E@@QAEEPAX@Z @0x0037DE0E 85B. Copy-to via rowed
 // 0x0037E3D9 plus dwords +8 +C, 128B block +0x10 to dest +0x14 via rep movsd,
 // Rva001EAFC1 +0x94 to dest +0xB0 via rowed operator= 0x001EAFC1, zero +0xB4
 // and byte +0xC4, return 1. Evidence: two rowed calls, ret 4, test al in
 // caller 0x0040C4D9, neighbours Rva0037DCA5Get and Rva0037DF2CCtor.
 #include <string.h>
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 class Rva0037E270
 {
 public:

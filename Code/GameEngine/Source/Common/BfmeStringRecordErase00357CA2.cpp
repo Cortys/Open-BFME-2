@@ -1,16 +1,9 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // ?erase@?$vector@UBfmeStringRecord00204A30@@V?$allocator@UBfmeStringRecord00204A30@@@_STL@@@_STL@@QAEPAUBfmeStringRecord00204A30@@PAU3@@Z @ 0x00357CA2 (55B).
 // Single-element vector erase over 20-byte BfmeStringRecord00204A30 (word AsciiString word AsciiString word).
 // Evidence: shift tail via rowed __copy_ptrs 0x00204A13 then pop finish and destroy via rowed dtor 0x00204848;
 // shape-identical to rowed ModuleInfo Nugget single erase 0x0033C3BC (55B ret 4); caller is 0x00357D7D.
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct BfmeStringRecord00204A30
 {

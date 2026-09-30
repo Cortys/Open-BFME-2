@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 
 // ?rva000E5725@Rva000E5725@@QAEXPAVXfer@@@Z, RVA 0x000E5725, 218B.
 // Chain lane: every callee is rowed (XferDrawableID 0x003060CA,
@@ -101,15 +101,7 @@ struct RGBAColorInt
 	int alpha;
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Snapshot
 {

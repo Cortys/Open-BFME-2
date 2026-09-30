@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 
 // Labelled-enum transfer helpers: each one moves a 4-byte enum through the
 // text-mode Xfer's slot-37 XferEnum virtual with its field-name label (the
@@ -592,18 +592,8 @@ typedef bool Bool;
 
 // TU-scoped strings: 4-byte ref-counted handles, the MapMetaData TU pattern
 // stripped to the layout (no methods, so no extra literals or code).
-template <typename T> class StringBase
-{
-public:
-	~StringBase() {}
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

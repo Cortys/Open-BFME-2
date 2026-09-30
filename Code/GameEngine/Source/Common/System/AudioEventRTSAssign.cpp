@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??4AudioEventRTS@@QAEAAV0@ABV0@@Z @0x0009A41B (93B).
 // BFME2 AudioEventRTS copy-assign matching the ctor TU layout: two
@@ -9,13 +9,7 @@
 
 typedef int Int;
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &right);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class AudioEventRTS
 {

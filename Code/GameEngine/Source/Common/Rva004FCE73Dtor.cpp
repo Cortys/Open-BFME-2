@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1Rva004FCE73@@UAE@XZ @0x004FCE73 66B.
@@ -10,17 +10,8 @@
 // siblings; neighbours carry /O1 /MD.
 #include <vector>
 
-template <typename T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-protected:
-    ~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-    ~AsciiString() {}
-};
 
 extern "C" void free(void *ptr);
 
