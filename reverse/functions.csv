@@ -43111,3 +43111,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva000BC559Xfer@@YAPAVXfer@@PAV1@PAV?$set@HU?$less@H@_STL@@V?$allocator@H@2@@_STL@@@Z,,0x000BC559,196,Code/GameEngine/Source/Common/System/XferSetDrawableID.cpp,matched,Set DrawableID xfer via list precedent callers rowed
 ?rva006FE880@AptBasePtrStack@@QAEXHPAVBfmeAptValue006DCD20@@@Z,,0x006FE880,154,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,chain validated PopAndPush wrapper Bitwise callers same TU
 ?rva0020E3AD@Rva0020E3AD@@QAEHH@Z,,0x0020E3AD,41,Code/GameEngine/Source/Common/Rva0020E3ADLevel.cpp,matched,three threshold level 0 to 3
+?rva001EEBD5@Mouse@@QAEXVUnicodeString@@PBU_MouseSixteen@@1@Z,,0x001EEBD5,118,Code/GameEngine/Source/GameClient/MouseRva001EEBD5.cpp,matched,Mouse wide-text two payloads virtual slot1 UnicodeString
