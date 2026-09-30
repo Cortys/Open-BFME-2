@@ -33,6 +33,45 @@ struct Rva0052DE5BNode
 	void *m_link;
 };
 
+struct In002E6BA1
+{
+	int m_00;
+	int m_04;
+};
+
+void Rva0052DBCDInit(void);
+MixFileInfoBuffer *Rva002E8B7AInit(MixFileInfoBuffer **pp, int a, In002E6BA1 *in);
+
+class Rva0052DEEFView
+{
+public:
+	virtual int v0();
+	virtual int v1();
+	virtual int v2();
+	virtual int v3();
+	virtual int v4();
+	virtual int v5();
+	virtual int v6();
+	virtual int v7();
+	virtual int v8();
+};
+
+struct Rva0052DEEFInner04
+{
+	unsigned int _00[0x44];
+	unsigned int m_110;
+};
+
+struct Rva0052DEEFArg
+{
+	char _00[4];
+	Rva0052DEEFInner04 *m_04;
+	char _08[0x6C];
+	int m_74;
+	char _78[0x1DC];
+	Rva0052DEEFView *m_254;
+};
+
 struct Rva0052DFB1Arg
 {
 	unsigned char m_pad[0x74];
@@ -46,6 +85,7 @@ public:
 	void rva0052DED3();
 	Rva0052DE5B *rva0052DFF2();
 	bool rva0052DFB1(const Rva0052DFB1Arg *arg);
+	bool rva0052DEEF(const Rva0052DEEFArg *a, bool b, In002E6BA1 *c);
 	void rva0052DAE9(bool flag);
 	void rva0052DC29(MixFileInfoBuffer **head);
 	void rva0052DAFF();
@@ -133,4 +173,40 @@ void Rva0052DE5B::rva0052DAFF()
 {
 	((MixFileInfoBuffer *)m_node)->bfmeUnlink();
 	m_node->m_nodeFlags &= ~0x10u;
+}
+
+bool Rva0052DE5B::rva0052DEEF(const Rva0052DEEFArg *a, bool b, In002E6BA1 *c)
+{
+	unsigned int low = m_flags & 0xFu;
+	if (low != 0 && low != 5)
+		return false;
+	Rva0052DEEFView *view = a->m_254;
+	if (view != 0 && view->v8() == 3) {
+		m_flags = (m_flags & ~0xCU) | 3U;
+		Rva0052DE5BNode *node = m_node;
+		if (node == 0)
+			return true;
+		node->m_value &= 0;
+		rva0052DE5B();
+		return true;
+	}
+	m_flags = (m_flags & ~0xBU) | 4U;
+	Rva0052DE5BNode *node = m_node;
+	if (node == 0) {
+		if (*(Rva0052DE5BNode **)&TheMixFileInfoPool == m_node)
+			Rva0052DBCDInit();
+		node = (Rva0052DE5BNode *)Rva002E8B7AInit((MixFileInfoBuffer **)&TheMixFileInfoPool, (int)this, c);
+		m_node = node;
+	} else {
+		*(int *)((char *)node + 0x0C) &= 0;
+	}
+	m_node->m_value = a->m_74;
+	unsigned int nb = (unsigned int)b << 1;
+	m_node->m_nodeFlags ^= ((nb ^ m_node->m_nodeFlags) & 2u);
+	unsigned int v = a->m_04->m_110;
+	unsigned int t1 = v >> 10;
+	unsigned char c1 = (unsigned char)t1;
+	unsigned int t2 = (unsigned int)c1 << 2;
+	m_node->m_nodeFlags ^= ((t2 ^ m_node->m_nodeFlags) & 4u);
+	return true;
 }

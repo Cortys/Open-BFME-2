@@ -43271,3 +43271,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??$__lower_bound@PAUBfmePod28@@U1@U?$less@UBfmePod28@@@_STL@@H@_STL@@YAPAUBfmePod28@@PAU1@0ABU1@U?$less@UBfmePod28@@@0@PAH@Z,,0x005413B0,66,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_pod28_allocate_copy.cpp,matched,unlock lower bound Pod28 via less a0
 ??_GRva005E8EA1@@QAEPAXI@Z,,0x005E8EA9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E8EA9.cpp,matched,deleting dtor via rowed dtor plus rowed delete
 ?rva005092B2@Rva005092B2@@QAEXXZ,,0x005092B2,34,Code/GameEngine/Source/GameLogic/Object/Rva005092B2Resolve.cpp,matched,base resolve plus weapon template lookup
+?rva0052DEEF@Rva0052DE5B@@QAE_NPBURva0052DEEFArg@@_NPAUIn002E6BA1@@@Z,,0x0052DEEF,194,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,chain from 0x002E8B7A pool reuse plus bit1 bit2
