@@ -18,6 +18,9 @@ class StringBase
 	friend class AsciiString;
 
 	StringBase(const StringBase &other);
+	~StringBase() { releaseBuffer(); }
+
+	void releaseBuffer();
 
 	T *m_data;
 };
@@ -60,4 +63,11 @@ MixFileCreator::FileInfoStruct &MixFileCreator::FileInfoStruct::operator=(const 
 	Size = src.Size;
 	Filename = src.Filename;
 	return *this;
+}
+
+void __cdecl Rva002176A6Swap(MixFileCreator::FileInfoStruct *a, MixFileCreator::FileInfoStruct *b)
+{
+	MixFileCreator::FileInfoStruct tmp(*a);
+	*a = *b;
+	*b = tmp;
 }
