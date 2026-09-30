@@ -47,6 +47,7 @@ public:
     int rva003F4798(int outerIdx, int id);
     int rva003F4FAA(int outerIdx, void *p);
     int rva003F47E6(int outerIdx);
+    int rva003F4831();
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -155,4 +156,18 @@ int Rva003F498A::rva003F47E6(int outerIdx)
             ++n;
     }
     return n;
+}
+
+// ?rva003F4831@Rva003F498A@@QAEHXZ @0x003F4831 59B chain sum over outers of rowed 0x003F47E6; callers 0x0020E4D9 0x0020E7A3 0x0020EC0D 0x003F517D; same file flags
+int Rva003F498A::rva003F4831()
+{
+    int total = 0;
+    int i = 0;
+    if ((int)m_outers.size() > 0) {
+        int n = (int)m_outers.size();
+        do {
+            total += rva003F47E6(i++);
+        } while (i < n);
+    }
+    return total;
 }
