@@ -44902,3 +44902,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??4Rva00403927@@QAEAAV0@ABV0@@Z,,0x00403927,35,Code/Libraries/Source/WWVegas/WWLib/Rva00403927Assign.cpp,matched,20B record assign via rowed vector AsciiString operator=; serves copy loop 0x004039E0
 ?rva00042121@Win32GameEngine@@UAEXXZ,,0x00042121,163,Code/GameEngine/Source/Main/Win32GameEngineServiceWindowsOS.cpp,matched,vtable slot23 Win32GameEngine donor BFME1 serviceWindowsOS plus WM_TIMER audio guard
 ?rva0030BB87@Rva0030BB87@@QAEXAAVDataChunkInput@@H@Z,,0x0030BB87,30,Code/GameEngine/Source/Common/Rva0030BB87Parse.cpp,matched,chain from 0x0030BAF8 prev same flags callees rowed
+?Rva004FACD0Xfer@@YAPAVXfer@@PAV1@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x004FACD0,204,Code/GameEngine/Source/Common/System/Rva004FACD0Xfer.cpp,matched,same 204B shape as XferScienceTypeVector 0x00398280 via Rva004E12D7Parse reserve push_back FormatText Throw
