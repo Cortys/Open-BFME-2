@@ -44523,3 +44523,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva001F5373@Rva001F5373@@QAEXPAUVec2001F5373@@@Z,,0x001F5373,55,Code/GameEngine/Source/Common/Rva001F5373.cpp,matched,null-checked helper+0x1AC slot6 via temp copies +0/+4 caller 0x001F72E8
 ??1Rva003B1101@@UAE@XZ,,0x003B1101,172,Code/GameEngine/Source/Common/Rva003B1101Dtor.cpp,matched,virtual dtor via nine members plus base
 ?rva0023C666@Rva0023C666@@QAEHXZ,,0x0023C666,62,Code/GameEngine/Source/Common/Rva0023C666Check.cpp,matched,mode-helper predicate same offsets as bfmeCall939D
+??1Rva00041078@@QAE@XZ,,0x00041344,69,Code/GameEngine/Source/Common/Rva00041078Dtor.cpp,matched,chain lane same this as rva00041118 three holders at 0x58 0x5c 0x60 unwind callers
