@@ -3639,3 +3639,4 @@ FUN_00545C30	0x00145C30	600	blocked	WW3D dx8renderer gap 600B render wall t=2 mo
 ??0Rva0027C36A@@QAE@ABV0@@Z	0x0027C410	228	partial	loop setup lea order remains; /Op fixes fld vs mov t=30 model=muse-07 score=0.985 stash=reverse/attempts/0x0027c410.cpp
 ?Rva00180CCBRegister@@YAXPBD PAX@Z	0x00180CCB	127	blocked	chain register via 0x00180B94 has virtual-delete plus new-add paths beyond twin 0x17FD2F 92B pattern t=12 model=muse-04
 ?rva0020E90F@Rva0020E90F@@QAEPAVEntry@@H@Z	0x0020E90F	146	blocked	two-phase id search 115vs146B 11 insns missing count reloads and ebp-4 frame persists across O1 Os and unsigned clamp variants t=12 model=muse-05
+?rva0039AE92@Rva0039AE92@@QAEHH@Z	0x0039AE92	42	blocked	CSE reuses count via lea vs retail reload plus desc reg swap persists across O1 O2 Os and spelling variants t=12 model=muse-07
