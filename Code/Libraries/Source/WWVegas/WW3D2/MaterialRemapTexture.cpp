@@ -13,7 +13,7 @@
 
 class VertexMaterialClass;
 
-class TextureClass
+class TextureBaseClass
 {
 public:
 	void Add_Ref(void)
@@ -21,6 +21,10 @@ public:
 		++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
 	}
 	void Release_Ref(void);
+};
+
+class TextureClass : public TextureBaseClass
+{
 };
 
 class MaterialInfoClass
