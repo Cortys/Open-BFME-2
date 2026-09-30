@@ -43990,3 +43990,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00108DBC@Rva00108DBC@@QAE_NXZ,,0x00108DBC,108,Code/GameEngine/Source/Common/Rva00108DBCInit.cpp,matched,init allocating Rva00108A0B and CameraClass via rowed new
 ??1Rva003560ED@@UAE@XZ,,0x003560ED,112,Code/GameEngine/Source/Common/Rva003560EDDtor.cpp,matched,derived dtor clears TheGameLogic plus Display slot68 plus W3D plus strings plus base
 ??_GRva003560ED@@UAEPAXI@Z,,0x00356708,28,Code/GameEngine/Source/Common/Rva003560EDDtor.cpp,matched,deleting dtor via auto-generated G plus caller 0x003560ED
+??0Rva003AE683@@QAE@ABV0@@Z,,0x003AE683,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE683CopyCtor.cpp,matched,derived copy via rowed base unlocks 0x003AE64C
