@@ -43297,3 +43297,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva005622A6@Rva005622A6@@QAEXPAVXfer@@@Z,,0x005622A6,164,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005622A6Xfer.cpp,matched,xfer twelve floats plus rotation enum
 ?rva0056234A@Rva0056234A@@QAEXPAVXfer@@@Z,,0x0056234A,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0056234AXfer.cpp,matched,containing xfer via member at 0xC
 ??_GRva004209CC@@UAEPAXI@Z,,0x00420A0D,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004209CC.cpp,matched,chain deleting dtor via rowed dtor plus delete
+?rva002D7AA6@Radar@@QAEXH@Z,,0x002D7AA6,10,Code/GameEngine/Source/Common/System/RadarRva002D7AA6.cpp,matched,leaf clearer via Radar neighbours plus and-zero
