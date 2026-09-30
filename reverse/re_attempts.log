@@ -4321,3 +4321,12 @@ FUN_00458DC6	0x00058DC6	231	blocked	complex 231B set-Xfer-throw with virtuals pl
 FUN_004685D34	0x00285D34	145	blocked	x87 grid lookup 133B vs 145B plus O2 165B; floor plus fild-fadd-fstp shape plus frame wall; 2 shapes no convergence t=12 model=muse-05
 ?rva00416143@Rva00416143@@QAEXABVAsciiString@@@Z	0x00416143	174	partial	172B vs 174B 69 vs 70 insns; ebx-ecx swap for lea plus temps in eax vs ecx plus strstr ptr in ebp vs ebx plus pw-host swap; missing add-eax-8 plus jmp 2B; single-var 165B two-var-if 169B O2 folds strlen two-ternary best t=25 model=muse-05 score=0.91 stash=reverse/attempts/0x00416143.cpp
 ?rva000443BA@Rva000443BA@@QAEXMPAPAUObj000443BA@@@Z	0x000443BA	132	blocked	SSE 4-slot scaler; thiscall ret8 vs retail ret plus direct-disps vs add-eax-d4-e0-ec reloads plus edx-index vs esi-push; cdecl ret ok but needs ebp frame plus th load; fastcall ret8; 5 variants no convergence t=15 model=muse-05
+??1Rva004F5BB0@@UAE@XZ	0x004F5BB0	148	blocked	list dtor erase plus 2 vtables needs vtable layout t=10 model=muse-spark
+FUN_008f66f0	0x004F66F0	153	blocked	container loop 153B with EH needs vector work t=2 model=muse-spark
+?rva0055CFC3@Rva0055CFC3@@QAEXH@Z	0x0055CFC3	45	blocked	xfer Version1 plus slots 24 36 need 37-entry vtable t=5 model=muse-spark
+FUN_0080d1ce	0x0040D1CE	131	blocked	heap parent plus SSE needs heap donor t=2 model=muse-spark
+FUN_00a00854	0x00600854	146	blocked	STL map 146B needs tree donor t=2 model=muse-spark
+FUN_00a03b0a	0x00603B0A	146	blocked	STL Rb_tree 146B needs map donor t=2 model=muse-spark
+FUN_009390ae	0x005390AE	147	blocked	free plus EH 147B needs dtor work t=2 model=muse-spark
+FUN_006febb7	0x002FEBB7	148	blocked	STL ctor 148B with EH plus 2 vtables t=2 model=muse-spark
+FUN_0059ef70	0x0019EF70	151	blocked	WW3D SEH 151B needs hlod donor t=2 model=muse-spark
