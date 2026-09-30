@@ -35,6 +35,7 @@ class AptBasePtrStack
 {
 public:
     void PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue);
+    void rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue);
     ~AptBasePtrStack();
 
     int m_nElements;
@@ -61,6 +62,26 @@ void AptBasePtrStack::PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue)
     }
     m_aElements[m_nElements - nItems] = pValue;
     m_nElements = m_nElements + 1 - nItems;
+}
+
+void AptBasePtrStack::rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue)
+{
+    if (!pValue) {
+        g_bfmeAptAssertAtE17734("pValue", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptActionInterpreter.inl", 200);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (static_cast<unsigned char>(pValue->isLookup())) {
+        g_bfmeAptAssertAtE17734("pValue->isLookup() == false", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptActionInterpreter.inl", 201);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (static_cast<unsigned char>(pValue->isRegister())) {
+        g_bfmeAptAssertAtE17734("pValue->isRegister() == false", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptActionInterpreter.inl", 202);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    PopAndPush(nItems, pValue);
 }
 
 AptBasePtrStack::~AptBasePtrStack()
