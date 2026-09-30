@@ -43089,3 +43089,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0030AE42@Rva00985E4@@UAEXXZ,,0x0030AE42,100,Code/GameEngine/Source/Common/Rva0030AE42Slot.cpp,matched,vslot14 copies AsciiStrings S12s byte float from globals
 ?xfer@GiveUpgradeUpdate@@MAEXPAVXfer@@@Z,,0x0049C41C,85,Code/GameEngine/Source/GameLogic/Object/Update/GiveUpgradeUpdateXfer.cpp,matched,slot 3 of vtable 0x00851220 base SpecialAbilityUpdate xfer IsLightCRC Version1
 ??4BfmeAssignRecord84@@QAEAAU0@ABU0@@Z,,0x00586BC9,78,Code/Libraries/Source/WWVegas/WWLib/stlport_assign_record84_00586BC9.cpp,matched,assign 84B via struct12 movsd deque pin
+?Rva000BC758Find@@YAPAV?$StringBase@D@@PAV1@0ABV1@H@Z,,0x000BC758,172,Code/Libraries/Source/WWVegas/WWLib/stlport_find_asciistring.cpp,matched,STL find Duff 4x via rowed compare caller BD22F
