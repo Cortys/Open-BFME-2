@@ -43054,3 +43054,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva0004CA4C@@QAE@XZ,,0x0004CA3A,18,Code/GameEngine/Source/Common/Rva002D22CADerived.cpp,matched,ctor via base ctor plus vtable 7C4C20 unblocks 41DC9
 ?rva00293275@Object@@QAEXVAsciiString@@@Z,,0x00293275,187,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293275.cpp,matched,Object tokenizes upgrades via nextToken findUpgrade grants via 0x28C197 slots
 ?Rva0004CB5FSet@@YAXH@Z,,0x0004CB5F,20,Code/GameEngine/Source/Common/Rva0004CB5FSet.cpp,matched,null-guarded manager slot44 dispatch via TheParticleSystemManager unblocks E2FBD
+?Rva0004CD49Destroy@@YAXPAVRva0004CCFF@@0@Z,,0x0004CD49,27,Code/GameEngine/Source/Common/System/Rva0004CD49RangeDestroy.cpp,matched,range destroy 12B handles via destroyDelete 4CCFF unblocks 4CD64
