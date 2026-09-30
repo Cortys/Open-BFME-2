@@ -44838,3 +44838,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B4BED@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4BED,176,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,subset search via WeaponTemplateSetHead copy and memcmp wrapper
 ?rva000B4C9D@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4C9D,33,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,prev entry search via begin end stride F8
 ?rva000B4CBE@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4CBE,36,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,get-next sibling of rva000B4C9D same table stride 0xF8
+??4Rva000B435F@@QAEAAU0@ABU0@@Z,,0x000B435F,37,Code/Libraries/Source/WWVegas/WWLib/Rva000B435F.cpp,matched,12B struct copy int string int caller 0xB684C stride 0xC
