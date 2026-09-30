@@ -44315,3 +44315,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?rva0053FF1D@Rva0053FF1D@@QAEXPAVDataChunkOutput@@@Z,,0x0053FF1D,66,Code/GameEngine/Source/Common/Rva0053FF1DWrite.cpp,matched,Track writer chain on 0x0053FBFE count plus per-key writeInt caller 0x00540144
 ?rva005F9775@Rva005F9775@@QAEXABVUnicodeString@@@Z,,0x005F9775,8,Code/GameEngine/Source/Common/Rva005F9364Region.cpp,matched,chain forwarder to 0x005F960C via member at plus4
 ??0?$_Rb_tree@HU?$pair@$$CBHPAX@_STL@@U?$_Select1st@U?$pair@$$CBHPAX@_STL@@@2@URva004FFF54Less@@V?$allocator@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@QAE@ABV01@@Z,,0x004FFF54,165,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_ptr_tree_copy4.cpp,matched,chain via Rva004FFC96 copy pin HPAX base 0x001F0534 get_allocator fold
+?rva00285D34@Rva00285D34@@QAEHHH@Z,,0x00285D34,145,Code/GameEngine/Source/Common/Rva00285D34Cell.cpp,matched,grid cell lookup via tile floor and rowed bias
