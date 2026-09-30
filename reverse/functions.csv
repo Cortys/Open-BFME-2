@@ -42973,3 +42973,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva000787BAOpen@@YAPAVFile@@PBD@Z,,0x000787BA,117,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva000787BAOpen.cpp,matched,Free File opener via GameFileClass 0x214 plus rowed openFile zero ebx
 ??1Rva002AF1EC@@QAE@XZ,,0x002AF1EC,74,Code/GameEngine/Source/Common/System/Rva002AF1ECDtor.cpp,matched,dtor vector free releaseBuffer EHs
 ?rva005FB770@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FB770,103,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt PlayerName key via rowed format and setText
+?rva005FBBC0@Rva005FB770@@QAEXABVUnicodeString@@@Z,,0x005FBBC0,46,Code/GameEngine/Source/GameClient/GUI/AptPlayerNameSet.cpp,matched,Apt cached PlayerName compare update via landed setter
