@@ -46,6 +46,7 @@ public:
     int rva003F4752(void *p);
     int rva003F4798(int outerIdx, int id);
     int rva003F4FAA(int outerIdx, void *p);
+    int rva003F47E6(int outerIdx);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -140,4 +141,18 @@ int Rva003F498A::rva003F4798(int outerIdx, int id)
 int Rva003F498A::rva003F4FAA(int outerIdx, void *p)
 {
     return rva003F4798(outerIdx, *(int *)((char *)p + 0x14));
+}
+
+// ?rva003F47E6@Rva003F498A@@QAEHH@Z @0x003F47E6 75B unlock count one outer inners where unk0-obj dword at +0x44 is zero; callers 0x002BB0E7 0x003F4859; same file sizes flags
+int Rva003F498A::rva003F47E6(int outerIdx)
+{
+    Rva003F498AOuter &o = m_outers[outerIdx];
+    int n = 0;
+    for (unsigned i = 0; i < o.inners.size(); ++i) {
+        Rva003F498AInner &in = o.inners[i];
+        void *obj = *(void **)&in;
+        if (*(int *)((char *)obj + 0x44) == 0)
+            ++n;
+    }
+    return n;
 }
