@@ -8,7 +8,7 @@
 // the temporary destroys only its key's AsciiString through releaseBuffer36410.
 #include <map>
 template<class T> class StringBase { void *m_data; void releaseBuffer(); protected: __forceinline ~StringBase() { releaseBuffer(); } };
-class AsciiString : private StringBase<char> { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() {} };
+class AsciiString : private StringBase<char> { public: AsciiString(const AsciiString &); ~AsciiString(); };
 bool operator<(const AsciiString &, const AsciiString &);
 struct TreeKey00242F5E { int m_id; AsciiString m_name; };
 inline bool operator<(const TreeKey00242F5E &a, const TreeKey00242F5E &b) { return a.m_id < b.m_id || (!(b.m_id < a.m_id) && a.m_name < b.m_name); }
