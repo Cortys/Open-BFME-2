@@ -44954,3 +44954,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva00326DE9Disable@@YAXPAVGameWindow@@@Z,,0x00326DE9,56,Code/GameEngine/Source/GameClient/GUI/GadgetListBoxDisableInput.cpp,matched,listbox teardown frees array restores input func
 ??$__copy@PAVRva00403927@@PAV1@H@_STL@@YAPAVRva00403927@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x004039E0,50,Code/Libraries/Source/WWVegas/WWLib/Rva00403927Copy.cpp,matched,unlock via rowed operator= 0x00403927 idiv stride 0x14
 ??$copy@PAVRva00403927@@PAV1@@_STL@@YAPAVRva00403927@@PAV1@00@Z,,0x00403BD2,29,Code/Libraries/Source/WWVegas/WWLib/Rva00403927CopyWrapper.cpp,matched,chain via rowed __copy 0x004039E0 tag plus NULL
+?rva0005168C@MilesAudioManager@@QAEXEE@Z,,0x0005168C,99,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva0005168C.cpp,matched,guarded flag gated byte stores
