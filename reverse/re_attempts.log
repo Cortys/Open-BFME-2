@@ -4155,3 +4155,9 @@ FUN_005ee4dc	0x001EE4DC	10	blocked	no ret in 10B boundary wrong needs rescan t=3
 ?rva003F8646@Rva003F8646@@QAEHH@Z	0x003F8646	112	blocked	same wall as 0x005C4845: EH save restore this+0xc with scope table bfb1cc plus array sar2 plus virtual slot0 on arg plus g_00BFB1CC unknown no donor t=5 model=muse-spark
 FUN_00719714	0x00319714	112	blocked	same wall as 0x005C4845 and 0x003F8646: EH bfb1cc plus this+c save restore plus sar2 plus virtual on arg t=3 model=muse-spark
 FUN_007F0D2C	0x003F0D2C	112	blocked	same bfb1cc wall as 0x005C4845 t=2 model=muse-spark
+?rva0020DB09@Rva0020DB09	0x0020DB09	136	blocked	needs callee 0xDA21 uchar repoint plus EH INI virtual TheInGameUI t=25 model=muse-spark
+?rva00142E30@Rva00142E30	0x00142E30	112	blocked	vector dtor EH refcount virtual plus _free not AsciiString TU t=10 model=muse-spark
+?rva0034B178@Rva0034B178	0x0034B178	113	blocked	dtor 2 vptrs plus m24 dual virtual slot15 plus flag0 delete plus StringBase plus WindModuleInfo base needs 16-virtual model t=12 model=muse-spark
+?rva004FA7A5@Rva004FA7A5	0x004FA7A5	112	blocked	EH callback loop over vector plus counter plus virtual free t=8 model=muse-spark
+FUN_009401e3	0x005401E3	112	blocked	EH vector visitor 112B 2-arg twin of 0x0027F519 wall needs scope store 0x7FB1CC plus sub-esp frame plus member-ptr call via ebx 6 probes RAII gives lea but no scope try gives scope but wrong regs t=20 model=muse-10
+FUN_0078153b	0x0038153B	112	blocked	twin of 0x005401E3 112B 2-arg EH visitor wall same scope 0x7FB1CC same bytes except handler 6 probes on twin show RAII-vs-scope incompatibility no new idea t=2 model=muse-10

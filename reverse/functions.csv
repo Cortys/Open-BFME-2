@@ -44070,3 +44070,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva000F1AD8@Rva000F1AD8@@QAEXXZ,,0x000F1AD8,95,Code/GameEngine/Source/Common/Rva000F1AD8Clear.cpp,matched,finish iterate table minus8 branchless plus release plus Reset
 ?rva000F278F@Rva000F278F@@QAEXXZ,,0x000F278F,8,Code/GameEngine/Source/Common/Rva000F278FForward.cpp,matched,chain forward to plus8 rva000F1AD8
 ?rva0045F4D7@SpawnBehavior@@QAEPAVObject@@XZ,,0x0045F4D7,170,Code/GameEngine/Source/GameLogic/Object/Behavior/SpawnBehavior_rva0045F4D7.cpp,matched,SpawnBehavior via caller 0x0045F9D8 setProducer and Ctor layout
+?rva003F0FD1@Rva003F0FD1@@QAEXXZ,,0x003F0FD1,115,Code/GameEngine/Source/Common/Rva003F0FD1MapCheck.cpp,matched,unlock via caller 0x003EEDD6 plus format string plus FileSystem row plus EmptyString
