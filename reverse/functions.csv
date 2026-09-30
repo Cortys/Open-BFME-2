@@ -43287,3 +43287,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?invoke@Rva0038BDEEReceiver@@QAEXPAX@Z,,0x0038BDEE,41,Code/GameEngine/Source/GameNetwork/GameSpy/Thread/Rva0038BDEEInvoke.cpp,matched,called by stopHostingAlready via rowed peerStopGame and string assign
 ?Rva0031FA40Create@@YAXPAVINI@@PAURva0031FA40Out@@@Z,,0x0031FA40,78,Code/GameEngine/Source/Common/Rva0031FA40Create.cpp,matched,chain factory via new ctor initFromINI plus store
 ??0Rva0052BEF0@@QAE@ABV0@@Z,,0x0052BEF0,67,Code/GameEngine/Source/Common/System/Rva0052BEF0CopyCtor.cpp,matched,Copy ctor string plus byte via pinned StringBase copy 0x000365F0 caller 0x0052C431 unlocks 0x0052C431
+?rva00562945@Rva00562945@@QAEXPAVXfer@@@Z,,0x00562945,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00562945Xfer.cpp,matched,containing xfer via member at 0x18
