@@ -43278,3 +43278,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva005097CD@Rva005097CD@@QAEXXZ,,0x005097CD,71,Code/GameEngine/Source/GameLogic/Object/Rva005097CDResolve.cpp,matched,base resolve plus weapon plus fx lookups
 ?Rva00512C88Shutdown@@YAXXZ,,0x00512C88,69,Code/GameEngine/Source/Common/Rva00512C88Shutdown.cpp,matched,global teardown slot calls plus delete via g_Va globals
 ?Rva006BE2E0Copy@@YAPAUBfmeElem60@@PAU1@00@Z,,0x006BE2E0,129,Code/GameEngine/Source/Common/Rva006BE2E0Copy.cpp,matched,forward copy BfmeElem60 via rowed AsciiString op same flags siblings
+?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z,,0x002B6498,32,Code/GameEngine/Source/Common/Rva002B6498Find.cpp,matched,Hashtable find via rowed _M_find 0x002888D4 callers 0x002B6F42 0x002B933F

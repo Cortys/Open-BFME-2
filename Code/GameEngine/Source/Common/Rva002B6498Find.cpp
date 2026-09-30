@@ -1,7 +1,3 @@
-// ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z
-// partial score=0.99 date=2026-09-30
-// ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z
-// partial score=0.99 date=2026-09-30
 // cl: /O1 /MD /Oy-
 //
 // ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z @0x002B6498 32B
@@ -47,6 +43,9 @@ template <class T1, class T2> struct pair
 template <class P> struct _Select1st
 {
 };
+template <class T> struct equal_to
+{
+};
 template <class T> struct less
 {
 };
@@ -67,15 +66,8 @@ private:
 };
 }
 
-namespace std
-{
-template <class T> struct equal_to
-{
-};
-}
-
 class Rva002B6498;
-typedef _STL::hashtable<_STL::pair<const NameKeyType, ArmorTemplate>, NameKeyType, rts::hash<NameKeyType>, _STL::_Select1st<_STL::pair<const NameKeyType, ArmorTemplate> >, std::equal_to<NameKeyType>, _STL::allocator<_STL::pair<const NameKeyType, ArmorTemplate> > > ArmorHashtable;
+typedef _STL::hashtable<_STL::pair<const NameKeyType, ArmorTemplate>, NameKeyType, rts::hash<NameKeyType>, _STL::_Select1st<_STL::pair<const NameKeyType, ArmorTemplate> >, _STL::equal_to<NameKeyType>, _STL::allocator<_STL::pair<const NameKeyType, ArmorTemplate> > > ArmorHashtable;
 
 class Rva002B6498
 {
@@ -85,7 +77,6 @@ public:
 	ArmorTemplate *rva002B6498(NameKeyType key);
 };
 
-// ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z present-unmatched
 ArmorTemplate *Rva002B6498::rva002B6498(NameKeyType key)
 {
 	NameKeyType tmp = key;
