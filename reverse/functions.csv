@@ -44884,3 +44884,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0030BAF8@Rva0030BAF8@@QAEXAAVDataChunkInput@@H@Z,,0x0030BAF8,143,Code/GameEngine/Source/Common/Rva0030BAF8Parse.cpp,matched,prev 0x0030BAA0 same holder same flags caller 0x0030BB87 callees rowed
 ??$copy_backward@PAURva00B6CF1@@PAU1@@_STL@@YAPAURva00B6CF1@@PAU1@00@Z,,0x000B67D9,29,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_copy_backward.cpp,matched,tag dispatch to rowed copy_backward worker 0xB44C1 caller 0xC22D4
 ??0Rva002E0906@@QAE@XZ,,0x002E0906,100,Code/GameEngine/Source/Common/Rva002E0906Ctor.cpp,matched,ctor: three null StringBase members at +0 +4 +0x20 from the unwind map plus +0x24 from DefaultGoodArmyIcon
+??0Rva003B39C7@@QAE@XZ,,0x003B39C7,113,Code/GameEngine/Source/Common/Rva003B39C7Ctor.cpp,matched,ctor: three narrow strings from the unwind map plus AsciiString[12] via ??_L count 12 size 4
