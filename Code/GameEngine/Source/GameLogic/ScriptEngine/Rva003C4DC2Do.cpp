@@ -1,7 +1,3 @@
-// ?Rva003C4DC2Do@@YGXABVAsciiString@@@Z
-// partial score=0.95 date=2026-09-29
-// ?Rva003C4DC2Do@@YGXABVAsciiString@@@Z
-// partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 // ?Rva003C4DC2Do@@YGXABVAsciiString@@@Z @0x003C4DC2 102B.
 // Script free function walking TerrainLogic list at 0xDFEC50 comparing
@@ -116,11 +112,11 @@ public:
 	virtual void _37() = 0;
 	virtual void rva0098(const Coord3D *pos) = 0;
 };
-#define TheTerrainLogic (*(TerrainLogic **)0x00DFEC50)
-#define TheHolder (*(Rva003C4DC2Holder **)0x00DFEA3C)
+extern TerrainLogic *g_Va009FEC50;
+extern Rva003C4DC2Holder *g_Va009FEA3C;
 void __stdcall Rva003C4DC2Do(const AsciiString &name)
 {
-	TerrainLogic *logic = TheTerrainLogic;
+	TerrainLogic *logic = g_Va009FEC50;
 	Rva003C4DC2Node *cur = logic->getHead();
 	while (cur) {
 		if (((const StringBase<char> *)&cur->m_name)->compare(*(const StringBase<char> *)&name) == 0)
@@ -131,7 +127,7 @@ void __stdcall Rva003C4DC2Do(const AsciiString &name)
 found:
 	{
 		float x = cur->m_x;
-		Rva003C4DC2Holder *holder = TheHolder;
+		Rva003C4DC2Holder *holder = g_Va009FEA3C;
 		Coord3D pos;
 		pos.x = x;
 		pos.y = cur->m_y;

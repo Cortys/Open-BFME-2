@@ -43012,3 +43012,4 @@ _Rva0084DE40Tail,,0x000210C0,433,Code/Libraries/Source/STLport/Rva0084DE40DateFo
 ?Rva009AB320BuildTables@@YAXPAURva009AB320Tables@@@Z,,0x001BBD60,521,Code/GameEngine/Source/Common/Rva009AB320BuildTables.cpp,matched,
 ?Rva009C6A30@@YAXPAX00HHHH@Z,,0x001D7330,486,Code/GameEngine/Source/Common/Rva009C6A30.cpp,matched,
 ?Rva003C4449Do@@YGXABVAsciiString@@0@Z,,0x003C4449,83,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C4449Do.cpp,matched,chain via 0x003A28ED prev next same shape globals
+?Rva003C4DC2Do@@YGXABVAsciiString@@@Z,,0x003C4DC2,102,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003C4DC2Do.cpp,matched,finish stash 0.95 holder between movss extern globals
