@@ -44843,3 +44843,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??$__copy_backward@PAURva00B6CF1@@PAU1@H@_STL@@YAPAURva00B6CF1@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B44C1,47,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_copy_backward.cpp,matched,copy_backward for 8B two-string element via rowed assign at 0xB433E
 ?Rva006F7C70Free@@YGXPAURva006F7C70Item@@@Z,,0x006F7C70,215,Code/Libraries/Source/Apt/Rva006F7C70Free.cpp,matched,AptDisplayList unlink asserts plus 0x1C/0x14 pool free via rowed 0x006DB270
 ??_GRva00136794@@UAEPAXI@Z,,0x00136F3F,28,Code/Libraries/Source/WWVegas/WWLib/Rva00136794DeletingDtor.cpp,matched,scalar deleting dtor via famgenDelete pattern calls rowed dtor plus delete
+?rva001364AC@Rva001364AC@@QAEPAXPBUTreeKey00242F5E@@@Z,,0x001364AC,34,Code/Libraries/Source/WWVegas/WWLib/Rva001364ACCreateNode.cpp,matched,RB create_node for TreeKey set via dup-cast construct per Rva002CF9DCCreate
