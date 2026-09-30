@@ -13,6 +13,7 @@ class Rva00376A62 {
 	StringBase<char> *m_end;
 public:
 	bool rva00376A62(const StringBase<char> &val);
+	bool rva00376A84(const void *o);
 };
 
 bool Rva00376A62::rva00376A62(const StringBase<char> &val)
@@ -20,4 +21,11 @@ bool Rva00376A62::rva00376A62(const StringBase<char> &val)
 	StringBase<char> *last = m_end;
 	StringBase<char> *first = m_begin;
 	return Rva000BD22FFind(first, last, val) != last;
+}
+
+bool Rva00376A62::rva00376A84(const void *o)
+{
+	if (!o)
+		return false;
+	return rva00376A62(*(const StringBase<char> *)((const char *)o + 0x64));
 }
