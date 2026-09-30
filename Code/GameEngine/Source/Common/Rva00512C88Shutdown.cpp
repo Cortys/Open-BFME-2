@@ -62,3 +62,12 @@ void Rva00512C88Shutdown()
 	g_Va00A048CC = 0;
 	g_Va009FEDF0->v94(0);
 }
+
+// ?Rva00512CCDShutdown@@YAXXZ @0x00512CCD (18B):
+// Guarded slot2(0) on 0x00A048CC; same globals and ObjA as rowed 0x00512C88.
+// Evidence: caller 0x004D470E; unblocks 0x004D46FC.
+void Rva00512CCDShutdown()
+{
+	if (g_Va00A048CC != 0)
+		g_Va00A048CC->v2(0);
+}
