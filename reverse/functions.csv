@@ -43284,3 +43284,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?xfer@RenderObjectDrawModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x00562871,194,Code/GameEngine/Source/GameClient/System/FXParticleSystem/RenderObjectDrawModuleInfoXfer.cpp,matched,slot3 xfer Version1 plus members plus enum helper
 ?rva0052DC3F@Rva0052DC3F@@QAEHPBURva0052DC3FArg@@@Z,,0x0052DC3F,88,Code/GameEngine/Source/Common/Rva0052DC3F.cpp,matched,unlock distance sqrt scale floor fistp
 ?rva004D3906@Rva004D3906@@QAEXH@Z,,0x004D3906,52,Code/GameEngine/Source/Common/Rva004D3906Clear.cpp,matched,flag guarded shutdown plus strided column clear
+?invoke@Rva0038BDEEReceiver@@QAEXPAX@Z,,0x0038BDEE,41,Code/GameEngine/Source/GameNetwork/GameSpy/Thread/Rva0038BDEEInvoke.cpp,matched,called by stopHostingAlready via rowed peerStopGame and string assign
