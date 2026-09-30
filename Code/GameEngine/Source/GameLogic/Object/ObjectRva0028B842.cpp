@@ -6,7 +6,6 @@
 // as ObjectRva0028C197 and Weapon_getRemainingAmmo document; slot 0xD4 is the
 // retail jmp immediate; 1.0f literal proven by BuffNuggetFXNuggetCtor and
 // GlobalFloatGetters. Name stays address-derived; true method name unproven.
-extern float g_Va00BBB8D8;
 
 class Rva0028B842Provider
 {
@@ -41,6 +40,6 @@ float Object::rva0028B842() const
 {
 	Rva0028B842Provider *provider = m_provider250;
 	if (provider == 0)
-		return g_Va00BBB8D8;
+		return 1.0f;
 	return provider->slot53();
 }

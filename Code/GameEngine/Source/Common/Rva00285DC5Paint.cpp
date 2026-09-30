@@ -1,7 +1,7 @@
 // cl: /O1 /G7 /DNDEBUG /MD
 // ?rva00285DC5@Rva00285DC5@@QAEXHHHHHHH_N@Z @ 0x00285DC5 382B
 // Grid row-range paint over fixed column: bounds-checks row/col against +0x78/+0x7C,
-// clamps ranges, converts coords via g_00BC26F8/g_00BFB6E8 floats, skips cells where
+// clamps ranges, converts coords via 0.5/10.0 floats, skips cells where
 // TheTerrainLogic slot 0x4C returns true, saturating word add plus 12/10/8-bit packed
 // field max/max/min updates. Evidence: same +0x70/+0x78/+0x7C layout and 0x14 stride
 // as Rva00285D34Cell, TheTerrainLogic 0x009FEC50, callers at 0x002865C5/0x002865EB.
@@ -17,8 +17,6 @@ public:
 };
 
 extern TerrainLogic *TheTerrainLogic;
-extern double g_00BC26F8;
-extern double g_00BFB6E8;
 
 class Rva00285DC5
 {
@@ -62,9 +60,9 @@ void Rva00285DC5::rva00285DC5(int r0, int r1, int col, int add, int f12, int f10
 		f8 = 0;
 	if (r0 > r1)
 		return;
-	float colF = (float)(((double)col + g_00BC26F8) * g_00BFB6E8);
+	float colF = (float)(((double)col + 0.5) * 10.0);
 	for (; r0 <= r1; r0++) {
-		if (TheTerrainLogic->IsBlocked((float)(((double)r0 + g_00BC26F8) * g_00BFB6E8), colF, 0, 0, 0))
+		if (TheTerrainLogic->IsBlocked((float)(((double)r0 + 0.5) * 10.0), colF, 0, 0, 0))
 			continue;
 		Cell *cell = (Cell *)((char *)m_cells[r0] + col * 20);
 		if (flag != false && cell->m_check < 1)

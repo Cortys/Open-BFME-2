@@ -8,7 +8,6 @@
 // copy the prev neighbour Rva005DD772Ctor.cpp for the SSE float idioms.
 // ?rva005DDCA5@Rva005DDC6B@@QAEMII@Z @0x005DDCA5 64B. Float range-max with
 // init from 0x00BBB8DC, comiss/jbe keep-largest, same stride. Caller 0x005DDE96.
-extern float g_00BBB8DC;
 
 class Rva005DDC6B
 {
@@ -36,7 +35,7 @@ float Rva005DDC6B::rva005DDC6B(unsigned lo, unsigned hi)
 
 float Rva005DDC6B::rva005DDCA5(unsigned lo, unsigned hi)
 {
-	float cur = g_00BBB8DC;
+	float cur = (-3.4028235e+38f);
 	if (lo < hi) {
 		float *p = (float *)(m_04 + lo * 8 + 4);
 		unsigned n = hi - lo;

@@ -13,7 +13,6 @@
 // pointer anchors the and-zero below the vtable store (RebuildHoleExposeDie
 // precedent: else it hoists above it); the temp splits the global load above
 // the vtable store (else the health store sinks below it).
-extern float g_oneTenth;
 
 class RebuildHoleBehaviorModuleData
 {
@@ -33,7 +32,7 @@ RebuildHoleBehaviorModuleData::RebuildHoleBehaviorModuleData()
 {
 	int *workerName = &m_workerObjectName;
 	m_workerRespawnDelay = 0.0f;
-	float holeHealth = g_oneTenth;
+	float holeHealth = 0.1f;
 	m_vtable = reinterpret_cast<const void *>(0x00C49950);
 	m_holeHealthRegen = holeHealth;
 	*workerName &= 0;

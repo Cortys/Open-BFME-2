@@ -2,10 +2,9 @@
 //
 // ?rva001F523A@Rva001F523A@@QAEXPAUVec2001F523A@@@Z, retail 0x001F523A, 52 bytes.
 // Null-checked helper at +0x1B4 via virtual slot8, copies floats at +4/+8
-// to 2-float out else global g_Va00BBB8D8. Caller at 0x001F7D42.
+// to 2-float out else global 1.0f. Caller at 0x001F7D42.
 // Sibling of 0x001F517E family with default 0.0f; default here is global.
 
-extern float g_Va00BBB8D8;
 
 struct Vec2001F523A
 {
@@ -45,8 +44,8 @@ private:
 
 void Rva001F523A::rva001F523A(Vec2001F523A *out)
 {
-	float a = g_Va00BBB8D8;
-	float b = g_Va00BBB8D8;
+	float a = 1.0f;
+	float b = 1.0f;
 	Provider001F523A *p = m_ptr;
 	if (p != 0)
 	{

@@ -21,7 +21,6 @@ public:
 	unsigned char m_pad[0x7C - 4]; // +4..0x7B
 };
 
-extern float g_darknessRadiusDefault; // 0x00BC2428, 10.0f
 
 class DarknessSpecialPowerModuleData : public Rva004930A0
 {
@@ -37,7 +36,7 @@ private:
 DarknessSpecialPowerModuleData::DarknessSpecialPowerModuleData()
 	: Rva004930A0()
 {
-	float radius = g_darknessRadiusDefault;
+	float radius = 10.0f;
 	m_darknessFX = 0;
 	m_vtable = reinterpret_cast<void *>(0x00C5E7A8);
 	m_darknessRadius = radius;

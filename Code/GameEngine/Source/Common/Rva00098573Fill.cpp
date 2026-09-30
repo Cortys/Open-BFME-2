@@ -1,8 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva00098573@Rva00098573@@QAEPAMPAMHH@Z @ 0x00098573 95B
-// Fill out vec3: init to g_Va00BBB8D8, query grid cell via rowed Rva00285D34
+// Fill out vec3: init to 1.0f, query grid cell via rowed Rva00285D34
 // at g_00DFEC68, copy this+0x20 on 1 and this+0x14 on 2, then copy to out.
-extern float g_Va00BBB8D8;
 
 class Rva00285D34
 {
@@ -30,9 +29,9 @@ private:
 float *Rva00098573::rva00098573(float *out, int a, int b)
 {
 	Rva00098573Vec tmp;
-	tmp.x = g_Va00BBB8D8;
-	tmp.y = g_Va00BBB8D8;
-	tmp.z = g_Va00BBB8D8;
+	tmp.x = 1.0f;
+	tmp.y = 1.0f;
+	tmp.z = 1.0f;
 	float *f = (float *)this;
 	Rva00285D34 *grid = g_00DFEC68;
 	if (grid != 0) {

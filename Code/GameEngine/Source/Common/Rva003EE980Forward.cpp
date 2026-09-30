@@ -3,7 +3,7 @@
 //
 // ?rva003EE980@Rva003EE980@@QAEXH@Z @0x003EE980 87B. Unlock lane: three-call
 // forward with string g_Rva00E02E84 and triple-float struct from
-// g_Va00BC4DD4; arg+0x44; caller at 0x004FF21E. Prev/next are the
+// 0.95f; arg+0x44; caller at 0x004FF21E. Prev/next are the
 // Rva003EE966/A1A family (// cl: /O1 /MD) plus /arch:SSE for movss.
 #include <map>
 
@@ -58,7 +58,6 @@ private:
 };
 
 extern AsciiString g_Rva00E02E84;
-extern float g_Va00BC4DD4;
 
 class Rva003EE980
 {
@@ -71,7 +70,7 @@ private:
 void Rva003EE980::rva003EE980(Int a)
 {
 	char *p = (char *)a + 0x44;
-	float f = g_Va00BC4DD4;
+	float f = 0.95f;
 	float tmp[3];
 	tmp[0] = f;
 	tmp[1] = f;

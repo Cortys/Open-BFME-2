@@ -10,8 +10,6 @@
 // Caller at 0x00508784. Layout from retail immediates only; helper, template
 // and arg holder keep address tokens so no identity is invented.
 
-extern float g_Va00BBB8D8;
-extern float g_Va00BBAEAC;
 
 struct Rva0028D2C5Template
 {
@@ -49,11 +47,11 @@ float Object::rva0028D2C5(void *a) const
 {
 	if ((m_template->m_byte113 & 0x40) != 0) {
 		if (((Rva0028D2C5Arg *)a)->m_valC == 6)
-			return g_Va00BBB8D8;
+			return 1.0f;
 	} else {
 		Rva0028D2C5Helper *helper = m_helper254;
 		if (helper)
 			return helper->slot2(a);
 	}
-	return g_Va00BBAEAC;
+	return 0.0f;
 }

@@ -13,8 +13,6 @@
 // 0x3623E5 (body-phase call, so its lea setup hoists above the vtable
 // store while the call itself stays after the float store).
 
-extern float g_bfmePickupScanRange;
-extern float g_bfmeK1253;
 
 class Rva003623E5Member
 {
@@ -46,10 +44,10 @@ private:
 // ??0PickupStuffUpdateModuleData@@QAE@XZ @0x491E37
 PickupStuffUpdateModuleData::PickupStuffUpdateModuleData()
 {
-	float scanRange = g_bfmePickupScanRange;
+	float scanRange = 200.0f;
 	m_vtable = reinterpret_cast<const void *>(0x00C4DDE0);
 	m_skirmishAIOnly = true;
 	m_scanRange = scanRange;
 	m_stuffToPickUp.construct();
-	m_scanIntervalSeconds = g_bfmeK1253;
+	m_scanIntervalSeconds = 0.5f;
 }

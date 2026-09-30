@@ -11,7 +11,6 @@ float __cdecl Rva00503D26Evaluate(float a, float b, float c, float t)
 	s = s * u + c * t * t;
 	return s;
 }
-extern float g_Va007C26F0;
 extern float g_Va00863BF8;
 struct Rva00503DEB
 {
@@ -21,7 +20,7 @@ struct Rva00503DEB
 };
 float Rva00503DEB::rva00503DEB()
 {
-	return Rva00503D26Evaluate(g_Va007C26F0, g_Va00863BF8, 1.0f, m_10);
+	return Rva00503D26Evaluate(0.5f, g_Va00863BF8, 1.0f, m_10);
 }
 float __cdecl Rva00503D4ECubic(float a, float b, float c, float d, float t);
 float __cdecl Rva00503D4ECubic(float a, float b, float c, float d, float t)

@@ -17,7 +17,6 @@ struct BrutalDifficultyCheats
 	float buildTimeReduction;
 };
 
-extern const float kBrutalDifficultySecondDefault;
 
 class INI
 {
@@ -31,7 +30,7 @@ void INI::Rva002A898A_ParseBrutalDifficultyCheats(INI *ini, void *instance, void
 {
 	BrutalDifficultyCheats cheats;
 	cheats.buildCostReduction = 0.0f;
-	cheats.buildTimeReduction = kBrutalDifficultySecondDefault;
+	cheats.buildTimeReduction = 0.1f;
 	ini->initFromINI(&cheats, reinterpret_cast<const FieldParse *>(0x00BFD85C));
 	float *slot = (float *)((char *)instance + 0x840);
 	slot[0] = cheats.buildCostReduction;

@@ -4,7 +4,7 @@
 // Chain (calls 0x002D7BB7 ready). Evidence: TheRadar virtual [0x1C] with 5
 // ints plus rowed ?rva002D7BB7@Radar@@QAEXPBX@Z and ?rva002D7BD3@Radar@@QAEXXZ;
 // GameWindow winGetPosition/winSetPosition/winGetSize/winSetSize rowed;
-// float global g_Va007C26F0; cvttss2si float-to-int Erin shape; ret 0x10 =
+// float global 0.5f; cvttss2si float-to-int Erin shape; ret 0x10 =
 // this + 4 args (2 float pairs + 2 unused ints); this+0x64 GameWindow* and
 // this+0x68 rect. Honest owner-unknown method name.
 
@@ -35,7 +35,6 @@ public:
 };
 
 extern Radar *TheRadar;
-extern float g_Va007C26F0;
 
 class Rva002D317C
 {
@@ -51,10 +50,10 @@ void Rva002D317C::rva002D317C(const float *a, const float *b, int c, int d)
 {
 	(void)c;
 	(void)d;
-	int ix0 = (int)(a[0] + g_Va007C26F0);
-	int iy0 = (int)(a[1] + g_Va007C26F0);
-	int ix1 = (int)(b[0] + g_Va007C26F0);
-	int iy1 = (int)(b[1] + g_Va007C26F0);
+	int ix0 = (int)(a[0] + 0.5f);
+	int iy0 = (int)(a[1] + 0.5f);
+	int ix1 = (int)(b[0] + 0.5f);
+	int iy1 = (int)(b[1] + 0.5f);
 	int posX;
 	int posY;
 	int sizeW;

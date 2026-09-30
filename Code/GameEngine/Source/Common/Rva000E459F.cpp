@@ -1,7 +1,6 @@
 // cl: /O1 /MD /arch:SSE
 // ?rva000E459F@Rva000E459F@@QAE_NXZ retail 0x000E459F 315B
 // Evidence: chain from 0x00272C9E Drawable::rva00272C9E plus pin getTransformMatrix; callers 0x000E5B57; matrix at +0x50 floats +0x84 +0x88 flag +0x98 Drawable +0x2C
-extern float g_Va00BBB8D8;
 class Matrix3D
 {
 public:
@@ -63,8 +62,8 @@ bool Rva000E459F::rva000E459F()
 		v = m_84 + m_88;
 		if (v < 0.0f)
 			v = 0.0f;
-		if (v > g_Va00BBB8D8)
-			v = g_Va00BBB8D8;
+		if (v > 1.0f)
+			v = 1.0f;
 	} else {
 		v = m_2C->rva00272C9E(0);
 		const Matrix3D *m1 = m_2C->getTransformMatrix();

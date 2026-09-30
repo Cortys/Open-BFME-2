@@ -2,10 +2,9 @@
 // ?rva0039DA2A@Team@@QBEXPAUCoord3D@@@Z @ 0x0039DA2A 202B (ours 202B exact size/count, 0 structural, 0 register)
 // Team centroid: averages live member positions. Walks via rowed iterate_TeamMemberList 0x263864 + DLINK advance pin 0x263526 (pin 5911),
 // skips Object+0x438 bit0 dead + Object+0x94 bit0 status (TeamHasAnyObjects precedent), sums Object+0x38/0x3C/0x40 Coord3D,
-// divides by count via shared 1.0f at 0xBBB8D8 (g_Va00BBB8D8). Neighbours rva0039D9E3/rva0039DC63 share /O1 flags + 24B iterator.
+// divides by count via the 1.0f literal at 0xBBB8D8. Neighbours rva0039D9E3/rva0039DC63 share /O1 flags + 24B iterator.
 // Near miss: X accumulation operand order (retail movss sum/addss pos vs ours movss pos/addss sum, 2 insns) + global reloc;
 // Y/Z, frame, dec-chain-free SSE arithmetic, empty/average shared write tail (ox=x oz=z oy=y order) all exact.
-extern float g_Va00BBB8D8;
 
 struct Coord3D
 {
@@ -72,7 +71,7 @@ void Team::rva0039DA2A(Coord3D *out) const
     float oy;
     float oz;
     if (count > 0) {
-        float inv = g_Va00BBB8D8 / (float)count;
+        float inv = 1.0f / (float)count;
         ox = sum.x * inv;
         oy = sum.y * inv;
         oz = sum.z * inv;

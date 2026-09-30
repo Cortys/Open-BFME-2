@@ -14,7 +14,6 @@
 // with LogicFrames 0xDBA4E4; 0x00275894 calls fadeIn when mode reaches 5;
 // ObjectCreationList debris calls fadeIn/fadeOut with m_fadeFrames.
 
-extern float g_Va00BBB8D8;
 
 class Rva00DFE77CHolder
 {
@@ -85,7 +84,7 @@ void Drawable::fadeIn(unsigned int frames)
 {
 	float opacity;
 	if (frames == 0) {
-		opacity = g_Va00BBB8D8;
+		opacity = 1.0f;
 		m_fadeMode &= frames;
 	} else {
 		opacity = 0.0f;
@@ -104,7 +103,7 @@ void Drawable::fadeOut(unsigned int frames)
 		opacity = 0.0f;
 		m_fadeMode &= frames;
 	} else {
-		opacity = g_Va00BBB8D8;
+		opacity = 1.0f;
 		m_fadeMode = 2;
 	}
 	m_timeElapsedFade = 0;
@@ -136,7 +135,7 @@ float Drawable::rva00272C9E(int key)
 			if ((*p)->slotC4() == key)
 			{
 				if (!(*p)->slotF0())
-					v = g_Va00BBB8D8;
+					v = 1.0f;
 				break;
 			}
 		}

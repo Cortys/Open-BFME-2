@@ -1,7 +1,7 @@
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ??0Rva0037E270@@QAE@XZ @0x0037E352 135B
 // Default ctor over Rva0037E270: zeros plus ones plus clear80 0x001EAE6F plus
-// Rva004E04FD ctor plus float global g_Va00BBB8D8 plus AsciiString null.
+// Rva004E04FD ctor plus float global 1.0f plus AsciiString null.
 // Neighbours in Rva0037E270Lookup.cpp share /O1 /DNDEBUG /MD; /arch:SSE for
 // retail xorps plus movss float zero and global float moves.
 class AsciiString
@@ -22,7 +22,6 @@ class Rva004E04FD
 public:
 	Rva004E04FD() throw();
 };
-extern float g_Va00BBB8D8;
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 class Rva0037E270 {
@@ -67,7 +66,7 @@ Rva0037E270::Rva0037E270()
 	Rva004E04FD *pB0 = (Rva004E04FD *)m_B0_raw;
 	__assume(pB0 != 0);
 	new (pB0) Rva004E04FD();
-	float fCC = g_Va00BBB8D8;
+	float fCC = 1.0f;
 	m_C8 = 0;
 	m_CC = fCC;
 	_ReadWriteBarrier();

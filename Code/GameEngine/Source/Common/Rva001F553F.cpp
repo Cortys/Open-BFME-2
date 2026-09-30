@@ -1,6 +1,6 @@
 // cl: /O1 /MD /arch:SSE
 // ?rva001F553F@Rva001F553F@@QAEPAUCoord3D@@PAU2@II@Z @0x001F553F 105B
-// Evidence: chain lane; calls rowed 0x003AFB2A Rva003AFB2A::rva003AFB2A; SSE scale via TheWritableGlobalData+0x9ec g_Va00BBB8D8 g_Va007C26F0; null member at +0x1c0 zeroes Coord3D out; ret 0xc with out in eax on both paths so returns Coord3D*.
+// Evidence: chain lane; calls rowed 0x003AFB2A Rva003AFB2A::rva003AFB2A; SSE scale via TheWritableGlobalData+0x9ec 1.0f 0.5f; null member at +0x1c0 zeroes Coord3D out; ret 0xc with out in eax on both paths so returns Coord3D*.
 
 struct Coord3D
 {
@@ -17,8 +17,6 @@ public:
 };
 
 extern GlobalData *TheWritableGlobalData;
-extern float g_Va00BBB8D8;
-extern float g_Va007C26F0;
 
 class Rva003AFB2A
 {
@@ -67,7 +65,7 @@ private:
 float Rva001F553F::rva001F534C()
 {
 	Rva001F534CHelper *p = m_1C4;
-	float v = g_Va00BBB8D8;
+	float v = 1.0f;
 	if (p != 0)
 		v = p->f10();
 	return v;
@@ -89,7 +87,7 @@ Coord3D *Rva001F553F::rva001F553F(Coord3D *out, unsigned int a, unsigned int b)
 	Rva003AFB2A *p = m_1C0;
 	if (p != 0)
 	{
-		p->rva003AFB2A(out, m_17C, (TheWritableGlobalData->m_09EC + g_Va00BBB8D8) * g_Va007C26F0, a, b);
+		p->rva003AFB2A(out, m_17C, (TheWritableGlobalData->m_09EC + 1.0f) * 0.5f, a, b);
 		return out;
 	}
 	else

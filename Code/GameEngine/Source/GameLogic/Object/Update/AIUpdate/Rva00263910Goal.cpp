@@ -3,12 +3,12 @@
 //
 // retail 0x00263910 (297 bytes). AIUpdate goal-position helper: copy pos to
 // local, when flag==0 adjust height from TheWritableGlobalData+0xD4 scaled by
-// g_Va007C26F0 and max with [1F0]+0x48 when Object flag 0x10 plus
+// 0.5f and max with [1F0]+0x48 when Object flag 0x10 plus
 // isSignificantlyAboveTerrain, clamp local x/y into TerrainLogic extents
 // (slot 0x20) expanded by height, then StateMachine::setGoalPosition.
 // Evidence: callees rowed 0x004D745C plus pin 0x0030ADDC; callers 0x00265667
 // (26B) and 0x0026C04E (136B slot 14 of AIUpdate derivatives) pass this+own
-// args; globals TheWritableGlobalData TheTerrainLogic g_Va007C26F0 in use.
+// args; globals TheWritableGlobalData TheTerrainLogic 0.5f in use.
 struct Coord3D
 {
 	float x;
@@ -50,8 +50,6 @@ public:
 };
 
 extern GlobalData *TheWritableGlobalData;
-extern float g_Va007C26F0;
-extern float g_Va00BBB8E0;
 
 struct Extents
 {
@@ -102,7 +100,7 @@ void Rva00263910::rva00263910(const Coord3D *pos, float range, int flag)
 		local.y = pos->y;
 		local.z = pos->z;
 		if (flag == 0) {
-			h = TheWritableGlobalData->m_val * g_Va007C26F0;
+			h = TheWritableGlobalData->m_val * 0.5f;
 			if ((m_object->m_flags109->m_flags & 0x10) != 0) {
 				if (m_object->isSignificantlyAboveTerrain()) {
 					if (m_height != 0) {
@@ -135,10 +133,10 @@ void Rva00263910::rva00263910(const Coord3D *pos, float range, int flag)
 }
 
 // ?rva00265667@Rva00263910@@QAEXPBUCoord3D@@H@Z @0x00265667 (26B).
-// Forwards this plus own args to rva00263910 with range from g_Va00BBB8E0.
-// Evidence: retail pushes flag then fld g_Va00BBB8E0 then pos and calls rowed
+// Forwards this plus own args to rva00263910 with range from 3.4028235e+38f.
+// Evidence: retail pushes flag then fld 3.4028235e+38f then pos and calls rowed
 // 0x00263910 with unchanged ecx; ret 8 matches (pos flag); 15 callers pass pos plus flag.
 void Rva00263910::rva00265667(const Coord3D *pos, int flag)
 {
-	rva00263910(pos, g_Va00BBB8E0, flag);
+	rva00263910(pos, 3.4028235e+38f, flag);
 }

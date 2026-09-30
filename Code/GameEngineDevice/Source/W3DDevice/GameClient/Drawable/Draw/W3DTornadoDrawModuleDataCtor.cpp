@@ -18,7 +18,6 @@
 class MultiIniFieldParse;
 struct FieldParse;
 
-extern const float g_Va00BCE190;
 
 class MultiIniFieldParse
 {
@@ -69,7 +68,7 @@ W3DTornadoDrawModuleData::W3DTornadoDrawModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00BCE198))
 {
 	m_decalCount &= 0;
-	m_decalMaxRadius = g_Va00BCE190;
+	m_decalMaxRadius = 200.0f;
 }
 
 // ?buildFieldParse@W3DTornadoDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x000D16A3

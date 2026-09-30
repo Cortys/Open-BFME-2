@@ -153,7 +153,6 @@ bool AptCIH::rva006E0C50(const AptCIH *other) const
 // Ancestor float-threshold walk with !isUndefined() guard, +0x44/+0x2C check.
 // Evidence: gap between 0x6E0B80 and 0x6E0C50; rowed isUndefined 0x6DC010;
 // caller at 0x006FB1CD; same /O2 AptCIH layout as neighbours.
-extern float g_Va007C26F0;
 struct Rva006E0BF0Aux {
     unsigned char _pad[0x2C];
     float m_2C;
@@ -167,7 +166,7 @@ bool AptCIH::rva006E0BF0() const
     }
     for (const AptCIH *node = this; node; node = node->m_parent) {
         const Rva006E0BF0Aux *aux = (const Rva006E0BF0Aux *)node->m_44;
-        if (aux && aux->m_2C < g_Va007C26F0)
+        if (aux && aux->m_2C < 0.5f)
             return false;
     }
     return true;

@@ -114,7 +114,6 @@ private:
 
 // Shared speed default both speeds are copied from. Nothing in the image
 // names it; it is reached by what this body reads from it.
-extern float TheBridgeScaffoldSpeedDefault;	// 0x00BBB8D8
 
 // ??0BridgeScaffoldBehavior@@QAE@PAVThing@@PBVModuleData@@@Z @0x0045831C
 BridgeScaffoldBehavior::BridgeScaffoldBehavior(Thing *thing, const ModuleData *moduleData) :
@@ -129,7 +128,7 @@ BridgeScaffoldBehavior::BridgeScaffoldBehavior(Thing *thing, const ModuleData *m
 	m_riseToPos.zero();
 	m_buildPos.zero();
 	m_targetPos.zero();
-	float defaultSpeed = TheBridgeScaffoldSpeedDefault;
+	float defaultSpeed = 1.0f;
 	m_lateralSpeed = defaultSpeed;
 	m_verticalSpeed = defaultSpeed;
 }

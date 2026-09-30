@@ -34,7 +34,6 @@
 
 #include <string.h>
 
-extern float g_healRadiusDefault; // 0x00BC292C, 100.0f
 
 class Rva004930A0
 {
@@ -74,7 +73,7 @@ PlayerHealSpecialPowerModuleData::PlayerHealSpecialPowerModuleData()
 	, m_filter()
 {
 	m_healAmount = 0.0f;
-	float healRadius = g_healRadiusDefault;
+	float healRadius = 100.0f;
 	m_healAsPercent = 1;
 	m_healRadius = healRadius;
 	memset(&m_filter, 0, 0x1C);

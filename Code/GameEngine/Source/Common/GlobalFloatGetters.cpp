@@ -12,14 +12,13 @@
 // not recovered beyond the global: every name is derived from its address
 // (Rva<RVA>Get over g_Va<VA>). The /GX- line matches the sibling TUs
 // (verified frameless seven-byte shape).
-extern float g_Va00BBB8D8;
 
 // ?Rva004647D1Get@@YAMXZ @ 0x004647d1 (7B) over 0x00BBB8D8 (1.0f).
 // Follows a ret (prev C3); carried by 33 .rdata vtable slots, no direct
 // callers, no branch sources. Opaque address-derived name.
 float Rva004647D1Get(void)
 {
-	return g_Va00BBB8D8;
+	return 1.0f;
 }
 
 extern float g_Va00BD2F58;
@@ -62,7 +61,6 @@ float Rva000A92A9Get(void)
 	return g_Va00BC93F4;
 }
 
-extern float g_Va00BBB8E0;
 
 // ?Rva00050EA0Get@@YAMXZ @ 0x00050ea0 (7B) over 0x00BBB8E0 (FLT_MAX).
 // Adjacent before Rva00050EA7Get below (pair proves both boundaries);
@@ -70,7 +68,7 @@ extern float g_Va00BBB8E0;
 // Opaque address-derived name.
 float Rva00050EA0Get(void)
 {
-	return g_Va00BBB8E0;
+	return 3.4028235e+38f;
 }
 
 extern float g_Va00BBDA30;
@@ -109,7 +107,7 @@ float Rva000D1A9AGet(void)
 // Opaque address-derived name.
 float Rva00154310Get(void)
 {
-	return g_Va00BBB8D8;
+	return 1.0f;
 }
 
 extern float g_Va00DEDA2C;
@@ -122,22 +120,20 @@ float Rva0018BD82Get(void)
 	return g_Va00DEDA2C;
 }
 
-extern float g_Va00BBAEAC;
 
 // ?Rva002BFBF0Get@@YAMXZ @ 0x002bfbf0 (7B) over 0x00BBAEAC (0.0f).
 // Follows a ret (prev C3); carried by 28 .rdata vtable slots, no direct callers,
 // no branch sources. Opaque address-derived name.
 float Rva002BFBF0Get(void)
 {
-	return g_Va00BBAEAC;
+	return 0.0f;
 }
 
-extern float g_Va00BC28F4;
 
 // ?Rva006CBC10Get@@YAMXZ @ 0x006cbc10 (7B) over 0x00BC28F4 (2.0f).
 // CC-padded both sides (isolated); no direct callers, no branch sources.
 // Opaque address-derived name.
 float Rva006CBC10Get(void)
 {
-	return g_Va00BC28F4;
+	return 2.0f;
 }

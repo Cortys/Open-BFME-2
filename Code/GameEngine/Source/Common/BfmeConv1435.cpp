@@ -19,7 +19,6 @@ unsigned long __stdcall bfmeVM0WorkerThread(void *param);
 extern __int64 g_bfmeVM0Total;
 extern __int64 g_bfmeVM0Quotient;
 extern double g_bfmeVM0Scale;
-extern const double g_bfmeVM0Frequency;
 extern const double g_bfmeVM0Factor;
 
 class BfmeVM0Timer
@@ -148,7 +147,7 @@ void BfmeStrVM0::bfmeGoVM0(int mode)
 			--span;
 			--span;
 			g_bfmeVM0Quotient = g_bfmeVM0Total / span;
-			g_bfmeVM0Scale = g_bfmeVM0Frequency / (double)g_bfmeVM0Total * g_bfmeVM0Factor;
+			g_bfmeVM0Scale = 1000.0 / (double)g_bfmeVM0Total * g_bfmeVM0Factor;
 		}
 		m_firstMutex = CreateMutexA(0, 0, 0);
 		m_secondMutex = CreateMutexA(0, 1, 0);

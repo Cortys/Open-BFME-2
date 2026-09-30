@@ -6,7 +6,6 @@
 // fild [ecx+0x14]; fidiv [ebp-4]; leave; ret). Callers at 0x00359AD8/
 // 0x00359FB7 pass this as lea [ebp-0x30]/[ebp-0x38] (thiscall, no args,
 // ST(0) return). Identity stays honest rva (owner unproven local struct).
-extern float g_Va00BBAEAC;
 class Rva00359835
 {
 public:
@@ -19,6 +18,6 @@ private:
 float Rva00359835::rva00359835() const
 {
 	if (m_10 == 0)
-		return g_Va00BBAEAC;
+		return 0.0f;
 	return (float)m_14 / (float)m_10;
 }

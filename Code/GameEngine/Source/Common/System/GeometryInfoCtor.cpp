@@ -60,7 +60,6 @@ public:
 	virtual void DoXfer(Xfer &xfer);
 };
 
-extern Real g_geometryHeightScale;
 
 class GeometryInfo : public Snapshot
 {
@@ -98,7 +97,7 @@ GeometryInfo::GeometryInfo(GeometryType type, Bool isSmall, Real height,
 	m_scalar0c = 0;
 	std::vector<GeometryRecord> *records = &m_records;
 	set(type, isSmall, height, majorRadius, minorRadius);
-	Real scaledHeight = *(volatile Real *)&height * g_geometryHeightScale;
+	Real scaledHeight = *(volatile Real *)&height * 0.5f;
 	m_cached44 = 0;
 	m_cached48 = 0;
 	m_cached4c = scaledHeight;

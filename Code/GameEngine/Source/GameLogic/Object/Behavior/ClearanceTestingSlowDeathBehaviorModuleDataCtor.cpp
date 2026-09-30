@@ -29,8 +29,6 @@ public:
 	unsigned char m_data[0x5C];
 };
 
-extern const float g_bfmeClearA;
-extern const float g_bfmeClearB;
 
 class ClearanceTestingSlowDeathBehaviorModuleData : public SlowDeathBehaviorModuleData
 {
@@ -58,8 +56,8 @@ ClearanceTestingSlowDeathBehaviorModuleData::ClearanceTestingSlowDeathBehaviorMo
 	offset[0] = 0.0f;
 	offset[1] = 0.0f;
 	offset[2] = 0.0f;
-	m_1F8 = g_bfmeClearA;
-	float b = g_bfmeClearB;
+	m_1F8 = 20.0f;
+	float b = 1.1f;
 	m_1FC = b;
 	m_200 = c;
 	m_204 = b;

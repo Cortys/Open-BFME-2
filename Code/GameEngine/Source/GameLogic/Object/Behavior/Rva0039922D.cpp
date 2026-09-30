@@ -27,7 +27,6 @@ public:
 };
 
 extern GameLogic *TheGameLogic;
-extern float g_Va00BBAEAC;
 
 class Object
 {
@@ -63,7 +62,7 @@ private:
 
 void CastleBehavior::rva0039922D(Rva00398E4AArg *arg)
 {
-	if (arg->m_70 > g_Va00BBAEAC)
+	if (arg->m_70 > 0.0f)
 	{
 		Object *obj = TheGameLogic->findObjectByID(m_08);
 		if (obj == 0)

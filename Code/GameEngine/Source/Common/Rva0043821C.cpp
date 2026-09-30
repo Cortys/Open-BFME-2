@@ -5,7 +5,6 @@
 // storing shared 1.0f from 0xBBB8D8 at +0x10 via movss. Owner unproven,
 // honest Rva name. Own TU because it needs /arch:SSE for movss, which the
 // neighbour Rva00438144Update.cpp (/O1) does not use. Caller 0x00244120.
-extern float g_Va00BBB8D8;
 
 class Rva0043821C
 {
@@ -19,7 +18,7 @@ private:
 
 void Rva0043821C::rva0043821C()
 {
-	float v = g_Va00BBB8D8;
+	float v = 1.0f;
 	m_14 = 0;
 	m_10 = v;
 }

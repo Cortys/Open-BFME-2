@@ -5,7 +5,7 @@
 // Framed Upgrade ctor over the rowed OpenContainModuleData base (0x253487):
 // folded vtable 0x00BF41A8, four AsciiString vectors at +0x118/+0x124/
 // +0x130/+0x13C through the rowed Vector_base (0x211E58, AsciiString
-// spelling alias pin), float from g_bfmeK1253 at +0x148, zero bytes at
+// spelling alias pin), float from 0.5f at +0x148, zero bytes at
 // +0x150..+0x153, zero float at +0x14C. Own table 0x00857D38 holds
 // ShowSubObjects/HideSubObjects/UpgradeTexture/FadeTimeInSeconds/
 // WaitBeforeFadeInSeconds/RecolorHouse; the SubObjectsUpgrade pool key at
@@ -32,7 +32,6 @@ public:
 	OpenContainModuleData();
 };
 
-extern const float g_bfmeK1253;
 
 class SubObjectsUpgradeModuleData : public OpenContainModuleData
 {
@@ -58,7 +57,7 @@ private:
 SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData()
 	: m_vtable(reinterpret_cast<volatile const void *>(0x00BF41A8))
 {
-	m_148 = g_bfmeK1253;
+	m_148 = 0.5f;
 	m_f150 = 0;
 	m_f151 = 0;
 	m_f152 = 0;

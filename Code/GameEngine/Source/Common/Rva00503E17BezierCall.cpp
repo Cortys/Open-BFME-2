@@ -4,8 +4,6 @@
 // SSE for t computation, x87 for args. Unlocks 0x005042F2.
 // Evidence: movss global minus [ecx+0x14] then fldz fld globals pattern, caller 0x005043DF.
 float __cdecl Rva00503D26Evaluate(float a, float b, float c, float t);
-extern float g_Va007BB8D8;
-extern float g_Va007C26F0;
 extern float g_Va00863BFC;
 struct Rva00503E17
 {
@@ -15,5 +13,5 @@ struct Rva00503E17
 };
 float Rva00503E17::rva00503E17()
 {
-	return Rva00503D26Evaluate(0.0f, g_Va00863BFC, g_Va007C26F0, g_Va007BB8D8 - m_14);
+	return Rva00503D26Evaluate(0.0f, g_Va00863BFC, 0.5f, 1.0f - m_14);
 }

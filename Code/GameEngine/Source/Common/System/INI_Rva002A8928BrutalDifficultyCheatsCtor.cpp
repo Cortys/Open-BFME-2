@@ -3,7 +3,7 @@
 // bytes). Builds the {0.0, default} float pair the BrutalDifficultyCheats
 // parser (rowed 0x002A898A) fills through initFromINI: buildCostReduction
 // is 0.0, buildTimeReduction comes from the float global at 0xBC2424 (same
-// default the rowed parser TU names kBrutalDifficultySecondDefault). The
+// default the rowed parser TU names 0.1f). The
 // struct name mirrors the sibling parser TU; the owning struct is BFME2-new
 // (no BFME1 donor).
 
@@ -14,11 +14,10 @@ struct BrutalDifficultyCheats
 	float buildTimeReduction;
 };
 
-extern const float kBrutalDifficultySecondDefault;
 
 // ??0BrutalDifficultyCheats@@QAE@XZ
 BrutalDifficultyCheats::BrutalDifficultyCheats()
 {
 	buildCostReduction = 0.0f;
-	buildTimeReduction = kBrutalDifficultySecondDefault;
+	buildTimeReduction = 0.1f;
 }

@@ -6,7 +6,6 @@
 // needs /arch:SSE per ObjectRva0028AC4EAccessors; 0.1f at 0x7C2424 proven by
 // PathfindShimWorldToCell; callers at 0x00458DA5 0x00458DD6 0x004AE3FB test al
 // with Object this. Name stays address-derived; true method name unproven.
-extern float g_Va00BC2424;
 
 class Object
 {
@@ -17,7 +16,7 @@ public:
 
 int Object::rva0028B7C8() const
 {
-	if (rva0028AC7D() > g_Va00BC2424)
+	if (rva0028AC7D() > 0.1f)
 		return 1;
 	return 0;
 }

@@ -22,7 +22,6 @@ public:
 	unsigned char m_pad[0x7C - 4]; // +4..0x7B
 };
 
-extern float g_freezingRainRadiusDefault; // 0x00BC2428, 10.0f
 
 class FreezingRainSpecialPowerModuleData : public Rva004930A0
 {
@@ -39,7 +38,7 @@ private:
 FreezingRainSpecialPowerModuleData::FreezingRainSpecialPowerModuleData()
 	: Rva004930A0()
 {
-	float radius = g_freezingRainRadiusDefault;
+	float radius = 10.0f;
 	m_freezingRainFX = 0;
 	m_burnRateModifier = 0;
 	m_vtable = reinterpret_cast<void *>(0x00C5E7A8);

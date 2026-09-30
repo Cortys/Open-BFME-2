@@ -9,8 +9,6 @@
 // free per the DieMuxData precedent): emitter height at 0x00BC292C, darkness
 // level at 0x00BBB8D4. The 1.0f defaults stay literals: the compiler folds
 // them onto the shared literal at 0x00BBB8D8 per the Prone precedent.
-extern float g_defaultRainEmitterHeight;
-extern float g_defaultDarknessLevel;
 
 class RainOfFireUpdateModuleData
 {
@@ -35,8 +33,8 @@ private:
 // ??0RainOfFireUpdateModuleData@@QAE@XZ
 RainOfFireUpdateModuleData::RainOfFireUpdateModuleData()
 {
-	m_rainEmitterHeight = g_defaultRainEmitterHeight;
-	m_darknessLevel = g_defaultDarknessLevel;
+	m_rainEmitterHeight = 100.0f;
+	m_darknessLevel = 0.25f;
 	m_vtable = reinterpret_cast<void *>(0x00C4ED70);
 	m_startRainTime = 150;
 	m_darknessFadeTime = 120;

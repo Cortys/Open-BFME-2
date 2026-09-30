@@ -1,7 +1,6 @@
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva0029B132@Rva0029B132@@QAEXXZ @0x0029B132 56B.
 // Init: zeroes +0 +4 +8 +0xC +0x10 +0x14 +0x18, 1.0f from 0xBBB8D8 to +0x1C, 0x20 to +0x20. Caller 0x002A0FA4.
-extern float g_Va00BBB8D8;
 class Rva0029B132 {
 public:
 	Rva0029B132 *rva0029B132();
@@ -22,7 +21,7 @@ Rva0029B132 *Rva0029B132::rva0029B132()
 	m_8 = 0.0f;
 	m_14 = 0.0f;
 	m_18 = 0.0f;
-	float one = g_Va00BBB8D8;
+	float one = 1.0f;
 	m_0 = 0;
 	m_C = 0;
 	m_1C = one;

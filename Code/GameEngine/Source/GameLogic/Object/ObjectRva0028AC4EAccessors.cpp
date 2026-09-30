@@ -19,7 +19,6 @@ public:
 	float get() const;
 };
 
-extern float g_Va00BBAEAC;
 
 struct Rva0028AC4EQ
 {
@@ -72,9 +71,9 @@ float Object::rva0028AC7D() const
 {
 	const Rva0028AC4EEntry *entry = rva0028AC4E();
 	if (entry == 0)
-		return g_Va00BBAEAC;
+		return 0.0f;
 	float m = ((const Rva0008BB38FloatField *)entry)->get();
 	if (m > 0.0f)
 		return m;
-	return g_Va00BBAEAC;
+	return 0.0f;
 }
