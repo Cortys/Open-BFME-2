@@ -44191,3 +44191,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva006FEAF0@AptActionInterpreter@@QAEXABUAptInitParmsT@@@Z,,0x006FEAF0,87,Code/Libraries/Source/Apt/AptInterpreterCtor.cpp,matched,chain from 0x006FDDB0 inits four stacks plus debug plus static
 ?rva006FE920@AptBasePtrStack@@QAEXXZ,,0x006FE920,61,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,same TU pop releases top dec
 ?Rva002DBC97Get@@YGPAXH@Z,,0x002DBC97,51,Code/GameEngine/Source/Common/Rva002DBC97Get.cpp,matched,unlock lane via 8 callers stdcall int to pointer globals
+?Rva002DBD80Make@@YA?AURva002DBD80Val@@HPBG@Z,,0x002DBD80,52,Code/GameEngine/Source/Common/Rva002DBD80Make.cpp,matched,unlock lane via initWide row hidden-pointer int-pair struct
