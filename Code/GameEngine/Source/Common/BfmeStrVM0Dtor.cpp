@@ -55,12 +55,12 @@ public:
 	virtual void s011();
 	virtual void s012();
 	virtual void s013();
-	virtual void s014();
-	virtual void s015();
-	virtual void s016();
-	virtual void s017();
-	virtual void s018();
-	virtual void s019();
+	virtual void s014(int x);
+	virtual int s015();
+	virtual void s016(int y);
+	virtual int s017();
+	virtual void s018(int x, int y);
+	virtual void s019(int *a, int *b);
 	virtual void s020();
 	virtual void s021();
 	virtual void s022();
@@ -204,6 +204,12 @@ private:
 	char m_pad[8];
 };
 
+struct Rva0025C18BCoord
+{
+	float x;
+	float y;
+};
+
 class BfmeStrVM0 : public GameEngineDeletingBase
 {
 public:
@@ -246,7 +252,7 @@ public:
 	virtual void v36();
 	virtual void v37();
 	virtual void v38();
-	virtual void v39();
+	virtual void rva0025C18B(Rva0025C18BCoord *a, Rva0025C18BCoord *b);
 	virtual void v40();
 	virtual void v41();
 	virtual void v42();
@@ -359,6 +365,34 @@ void BfmeStrVM0::rva0025D9E3()
 	}
 	m_fC8 = 0.0f;
 	m_fCC = 0.0f;
+}
+
+// ?rva0025C18B@BfmeStrVM0@@UAEXPAURva0025C18BCoord@@0@Z, retail 0x0025C18B, 173 bytes.
+// Slot-39 virtual of BfmeStrVM0: walks the +0x1C node list; per node it takes
+// two no-arg ints plus an out-pair, converts both float args to int for the
+// first round of node slots, then replays the saved values through the same
+// slots and advances via getNext.
+// Evidence: vtable slot 39 of 0x7F5DA0; same +0x1C list as rva0025D9E3 in this
+// TU; node slots 14-19/94/152 predeclared in this TU; no callers.
+void BfmeStrVM0::rva0025C18B(Rva0025C18BCoord *a, Rva0025C18BCoord *b)
+{
+	ListNode0025D9E3 *node = m_head1C;
+	while (node != 0)
+	{
+		int t15 = node->s015();
+		int t17 = node->s017();
+		int t8;
+		int t4;
+		node->s019(&t8, &t4);
+		node->s014((int)b->x);
+		node->s016((int)b->y);
+		node->s018((int)a->x, (int)a->y);
+		node->s094();
+		node->s014(t15);
+		node->s016(t17);
+		node->s018(t8, t4);
+		node = node->getNext();
+	}
 }
 
 // ?rva00049F94@BfmeStrVM0@@QAEXVAsciiString@@@Z, retail 0x00049F94, 55 bytes.
