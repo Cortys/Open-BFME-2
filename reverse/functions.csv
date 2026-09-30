@@ -44247,3 +44247,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00058D4A@Rva00058D4A@@QAEPAUPair00058D4A@@PAU2@ABUBfmeStringRecord00054F57@@@Z,,0x00058D4A,124,Code/Libraries/Source/WWVegas/WWLib/stlport_hashtable_str_insert.cpp,matched,hashtable find-or-create via rowed bucketIndex compare and pinned New ICF twin caller 0x5A105
 ?rva0031AE93@ControlBar@@QAEXPAH0@Z,,0x0031AE93,27,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AE93.cpp,matched,ControlBar two-out copy
 ?rva0031AF54@Rva0031AF54@@QAEX_N@Z,,0x0031AF54,120,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva0031AF54.cpp,matched,ControlBar animate via window list
+??_GRva002DAC58@@UAEPAXI@Z,,0x002DACD8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva002DAC58.cpp,matched,deleting dtor via rowed dtor
