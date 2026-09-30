@@ -3736,3 +3736,4 @@ FUN_0099e920	0x0059E920	113	blocked	EH default ctor with vtable 0x871138 plus tw
 ?rva0020F0EE@Rva0020F0EE@@QAEPAVRva0020E9D0@@PAUArg0020F0EE@@@Z	0x0020F0EE	85	blocked	vector scan index-on-stack plus pointer strength reduction STL vs manual both miss regs t=18 model=muse-spark
 ??0Rva004186F2@@QAE@ABU0@@Z	0x004186F2	165	partial	159B vs 165B missing push ecx and lea frame offset and copy arg setup t=50 model=muse-05 score=0.93 stash=reverse/attempts/0x004186f2.cpp
 ??0Rva00419035@@QAE@ABU0@@Z	0x00419035	165	partial	159B vs 165B same wall as 004186F2 missing push ecx and frame offsets t=15 model=muse-05 score=0.93 stash=reverse/attempts/0x00419035.cpp
+FUN_00776c50	0x00376C50	82	blocked	loop over AsciiString vector via global Get plus ModuleData push_back plus Drawable resize needs donor class t=8 model=muse-02
