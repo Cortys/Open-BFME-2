@@ -21,3 +21,6 @@ template void _STL::vector<QuantityModifier>::_M_insert_overflow(
 	const _STL::__false_type &,
 	unsigned int,
 	bool);
+
+// ?push_back@?$vector@UQuantityModifier@@V?$allocator@UQuantityModifier@@@_STL@@@_STL@@QAEXABUQuantityModifier@@@Z @0x0049FDC2 55B: vector<QuantityModifier>::push_back fast path via Construct 0x49DD0B else overflow 0x0049F729; caller INI parse 0x0049FDF9 to vector +0x1C.
+template void _STL::vector<QuantityModifier>::push_back(const QuantityModifier &);
