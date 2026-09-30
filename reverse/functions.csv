@@ -44352,3 +44352,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?_M_insert_overflow@?$vector@UBfmeStringRecord005F93E3@@V?$allocator@UBfmeStringRecord005F93E3@@@_STL@@@_STL@@IAEXPAUBfmeStringRecord005F93E3@@ABU3@ABU__false_type@2@I_N@Z,,0x005F9B4E,183,Code/GameEngine/Source/Common/StringRecordVectorGrowthG7.cpp,matched,STLport vector growth path via rowed copy Construct fill_n and ICF pins
 ?rva003FF3B5@GameInfo@@UAE_NXZ,,0x003FF3B5,46,Code/GameEngine/Source/GameNetwork/GameSlotApparent.cpp,matched,GameInfo slot19 scan skips local via getLocalSlotNum inline isHuman
 ?Rva000A7976Create@@YGPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x000A7976,37,Code/Libraries/Source/WWVegas/WWLib/Rva000A7976Create.cpp,matched,12B node via rowed allocator plus rowed Construct
+?rva000A77D9@Rva000A77D9@@QAEXPAX@Z,,0x000A77D9,40,Code/GameEngine/Source/Common/Rva000A77D9Method.cpp,matched,guarded pointer setter via rowed MilesMutexGuard
