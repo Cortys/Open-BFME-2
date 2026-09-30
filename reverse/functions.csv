@@ -44906,3 +44906,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva004FAF73@Rva004FAF73@@QAEXPAVXfer@@@Z,,0x004FAF73,67,Code/GameEngine/Source/Common/System/Rva004FAF73Xfer.cpp,matched,chain via Rva004FACD0Xfer base rva004CE6E4 slots 0x28 0x7c vector at 0x20
 ?rva0031F96F@Rva0031F96F@@QAEXMMHH@Z,,0x0031F96F,209,Code/GameEngine/Source/Common/Rva0031F96F.cpp,matched,twin of rva0031F89E 209B three lists via TheDisplay draw base 0x164
 ??1DestroyEnvironmentUpdate@@UAE@XZ,,0x004AC767,70,Code/GameEngine/Source/GameLogic/Object/Update/DestroyEnvironmentUpdateDtor.cpp,matched,dtor: three vtables then helper 0x004AC722 (pinned) in state 0 then base 0x0024A797
+??1FakePathfindPortalBehaviour@@UAE@XZ,,0x004619F2,84,Code/GameEngine/Source/GameLogic/Object/Behavior/FakePathfindPortalBehaviourDtor.cpp,matched,dtor: five vtables then helper 0x0046183B (pinned) in state 0 then base 0x0024A797
