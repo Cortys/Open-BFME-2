@@ -3784,3 +3784,4 @@ FUN_007f5a72	0x003F5A72	204	blocked	Xfer ScienceType vector needs BFME2 Xfer slo
 ?Rva001F2EABRotate@@YAXPAVVector3@@PAVMatrix3D@@@Z	0x001F2EAB	99	blocked	esi-edi mirror plus sret-eax vs local temp t=20 model=muse-03
 ?rva00595213@Rva00595213@@QAE_NPAVUDP@@PBDGKI@Z	0x00595213	177	blocked	chain UDP packet 7 callees plus IAT htonl plus Msg layout plus multi-class this needs donor t=10 model=muse-03
 ?Rva00173BD4MakeHeap@@YAXPAUBfmeAssignRecord32@@0P6A_NABU1@1@Z@Z	0x00173BD4	25	blocked	forwarder pushes 0 0 plus 3 args to 5-arg __make_heap at 0x00173A60 currently rowed 3-arg Rva; needs internal arity fix to 5-arg t=10 model=muse-spark
+FUN_0082245F	0x0042245F	229	blocked	thiscall float SSE x87 loop needs owner layout divergent from STL streak t=5 model=muse-spark

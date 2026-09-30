@@ -20,6 +20,10 @@
 // ??$__make_heap@U?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@UBfmeE12Cmp00422291@@UBfmeE12@@H@_STL@@YAXU?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@0@0UBfmeE12Cmp00422291@@PAUBfmeE12@@PAH@Z @0x004232D6 (115B):
 // __make_heap build loop calling adjust_heap; (len-2)/2 down to 0.
 // Caller 0x004239B4. Evidence: chain lane, callee just landed.
+//
+// ??$__pop_heap@U?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@_STL@@UBfmeE12@@UBfmeE12Cmp00422291@@H@_STL@@YAXU?$_Deque_iterator@UBfmeE12@@U?$_Nonconst_traits@UBfmeE12@@@_STL@@@0@00UBfmeE12@@UBfmeE12Cmp00422291@@PAH@Z @0x00423293 (67B):
+// __pop_heap result store plus adjust_heap tail; callers 0x004233E9 0x004245D4.
+// Evidence: chain lane, callee just landed.
 #include <algorithm>
 #include <deque>
 struct BfmeE12 { float x, y, z; };
@@ -31,3 +35,4 @@ template _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> > _STL::
 template void _STL::__push_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, int, BfmeE12, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, int, int, BfmeE12, BfmeE12Cmp00422291);
 template void _STL::__adjust_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, int, BfmeE12, BfmeE12Cmp00422291>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, int, int, BfmeE12, BfmeE12Cmp00422291);
 template void _STL::__make_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291, BfmeE12, int>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12Cmp00422291, BfmeE12 *, int *);
+template void _STL::__pop_heap<_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12, BfmeE12Cmp00422291, int>(_STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, _STL::_Deque_iterator<BfmeE12, _STL::_Nonconst_traits<BfmeE12> >, BfmeE12, BfmeE12Cmp00422291, int *);
