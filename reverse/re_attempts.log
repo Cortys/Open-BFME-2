@@ -4503,3 +4503,10 @@ FUN_002CCD56	0x002CCD56	225	blocked	225B dtor with vtable 0x802114 plus two vect
 ?rva00513040@Rva00513040@@QAEXHH@Z	0x00513040	162	partial	161vs162B late-manager-mov plus eax-vs-ecx str regs 6 variants O1 Os G7 inline owner-local t=25 model=muse-01 score=0.92 stash=reverse/attempts/0x00513040.cpp
 ?rva006DAFE0@Rva006DB090@@QAEPAXI@Z	0x006DAFE0	172	blocked	Dogma alloc wall 181vs172B 7 structural count-reg plus slot-order plus ebp-nsize 2 variants t=15 model=muse-01
 ?Rva004F6789Heap@@YAXHHH_N@Z	0x004F6789	237	blocked	heap sift-up 237B with dual EH ref temps needs honest Rva004F64FC 12B model placeholder 51B t=10 model=muse-01
+FUN_00723e95	0x00323E95	218	blocked	likely getListboxEntryBasedOnCoord behind GadgetListBoxGetEntryBasedOnXY needs donor static plus font virtual 0x120 t=8 model=muse-16
+FUN_006ac9bf	0x002AC9BF	199	blocked	Player bonuses merge with SSE plus callback push 0x2AC7E6 unclaimed needs pin t=5 model=muse-16
+FUN_0072c0e3	0x0032C0E3	186	blocked	vector128 assignment with mixed helpers copy-BuildListInfo Destroy-Rva uninit-BfmePod128 needs hand-rolled caller t=6 model=muse-16
+FUN_00558ba0	0x00158BA0	192	blocked	FontCharsClass extent with Thai ranges needs SSE register tuning plus sub-esp prologue t=10 model=muse-16
+FUN_00adafe0	0x006DAFE0	172	blocked	Apt Dogma pool alloc with dual asserts plus int3 no BFME1 donor t=6 model=muse-16
+FUN_00456e14	0x00056E14	63	blocked	deque copy dispatch extra push0 vendored 4.5 vs retail 4.6 wall t=12 model=muse-16
+?Rva0041B94ACheck@@YA_NPAVObject@@0H@Z	0x0041B94A	102	partial	duplicated false epilogues vs shared plus mov al1 vs mov edx t=14 model=muse-16 score=0.95 stash=reverse/attempts/0x0041b94a.cpp

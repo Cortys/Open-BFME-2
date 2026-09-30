@@ -44985,3 +44985,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva005D72FA@@QAE@XZ,,0x005D72E8,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,vtable 0x00875CC8 via base ctor row caller 0x0058AC59
 ?rva00264F3D@Rva00264F3D@@QAEHXZ,,0x00264F3D,33,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,neighbour of 0x002645FF same TU status 0x0A gate
 ?rva00264E93@Rva00264E93@@QAEPAXXZ,,0x00264E93,35,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,same TU status 0x16 gate ptr30 plus 0x24
+?rva0039BF67@Rva0039BF67@@QAEHV?$BitFlags@$0HE@@@0@Z,,0x0039BF67,94,Code/GameEngine/Source/Common/Rva0039BF67Sum.cpp,matched,20-map sum at +0x1FC via rowed testSetAndClear and increment
