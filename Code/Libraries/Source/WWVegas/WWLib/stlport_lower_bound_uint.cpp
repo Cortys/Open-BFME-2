@@ -63,4 +63,17 @@ _ForwardIter __lower_bound(_ForwardIter __first, _ForwardIter __last,
 template const unsigned int* __lower_bound<const unsigned int*, unsigned int, less<unsigned int>, int>(
 	const unsigned int*, const unsigned int*, const unsigned int&, less<unsigned int>, int*);
 
+// lower_bound<const unsigned int*, unsigned int> @0x00568F5B 35B: the public
+// wrapper, building the empty less<unsigned int> temporary (xor/stosb into the
+// frame slot) and passing a null distance-type pointer to the rowed worker
+// 0x00568D2F above. Evidence: sole callee is that worker; unique masked hit.
+template <class _ForwardIter, class _Tp>
+_ForwardIter lower_bound(_ForwardIter __first, _ForwardIter __last, const _Tp& __val)
+{
+	return __lower_bound(__first, __last, __val, less<_Tp>(), (int*)0);
+}
+
+template const unsigned int* lower_bound<const unsigned int*, unsigned int>(
+	const unsigned int*, const unsigned int*, const unsigned int&);
+
 }
