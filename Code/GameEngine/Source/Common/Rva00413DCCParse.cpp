@@ -1,0 +1,37 @@
+// cl: /O1 /Oy- /DNDEBUG /MD /GX-
+// ?rva00413DCC@Rva00413DCC@@QAEXPAVINI@@@Z @0x00413DCC 65B
+// INI parse validator: initFromINI(this) through table 0x00839E58 (rowed
+// 0x0002DE78), then throw INIException code 3 with the retail message when
+// the int at +0 is negative. Same recipe as Rva004135CDParse (filler
+// 0x0002F681 plus CxxThrow 0x00629094 plus throwinfo anchor 0x00CFE2FC).
+// Evidence: unlock lane; caller 0x00414009; packet message; drain sibling of
+// 0x004135CD.
+struct FieldParse;
+class INI
+{
+public:
+	void initFromINI(void *what, const FieldParse *table);
+};
+extern const FieldParse g_00839E58;
+extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
+__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+struct Rva00413DCCThrowInfoAnchor { int a; int b; int c; int d; };
+static const Rva00413DCCThrowInfoAnchor rva00413DCCThrowInfoAnchor = { 0, 0, 0, 0 };
+class Rva00413DCC
+{
+public:
+	void rva00413DCC(INI *ini);
+private:
+	int m_value00;
+};
+// ?rva00413DCC@Rva00413DCC@@QAEXPAVINI@@@Z
+void Rva00413DCC::rva00413DCC(INI *ini)
+{
+	ini->initFromINI(this, &g_00839E58);
+	if (m_value00 < 0)
+	{
+		char exc[8];
+		rva002f681_fill(exc, 3, "Must provide a MinResourceBonus, and it must be >= 0");
+		_CxxThrowException(exc, (void *)&rva00413DCCThrowInfoAnchor);
+	}
+}
