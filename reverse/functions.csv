@@ -44269,3 +44269,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00358E6A@Rva00358E6A@@QAEXPAUNode00358E6A@@@Z,,0x00358E6A,53,Code/GameEngine/Source/GameClient/Rva00358E6AClear.cpp,matched,rb-tree clear via dtor free
 ??4Rva00200CB1@@QAEAAV0@ABV0@@Z,,0x00200CB1,135,Code/GameEngine/Source/Common/Thing/Rva00200CB1Assign.cpp,matched,dual-base operator assign with AsciiString and movsd pairs
 ?Rva00372D3AFind@@YAPAXPAX@Z,,0x00372D3A,108,Code/GameEngine/Source/GameLogic/Object/Behavior/MineshaftPortalBehaviourFind.cpp,matched,finder via static MineshaftPortalBehaviour key plus 0x244 list and 0x10 slot
+?Rva005B2FDCPartition@@YAPAURva005B2FDCItem@@PAU1@0U1@URva005B26CECmp@@@Z,,0x005B2FDC,74,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_e16_partition.cpp,matched,unlock partition via rowed comparator twin and deque swap
