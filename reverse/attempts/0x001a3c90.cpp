@@ -1,5 +1,9 @@
 // ??1AggregateDefClass@@UAE@XZ
-// partial score=0.93 date=2026-09-26
+// partial score=0.93 date=2026-09-30
+// Follow-up: current agg_def.cpp reproduces the same 130-byte body.
+// /EHs also emits 130 bytes with the same extra EH-state store.
+// /EHa emits 105 bytes and changes the prologue; neither resolves the blocker.
+// The five newly matched aggregate siblings do not change this EH issue.
 // Partial 0.93 for ??1AggregateDefClass@@UAE@XZ @0x1A3C90 (122B).
 // Donor is AggregateDefClass::~AggregateDefClass in
 // Code/Libraries/Source/WWVegas/WW3D2/agg_def.cpp (ZH verbatim: free the
