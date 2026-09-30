@@ -44377,3 +44377,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ??0Rva00380AB1@@QAE@PAX@Z,,0x00380AB1,53,Code/GameEngine/Source/Common/Rva00380AB1Ctor.cpp,matched,twin of Rva0023E8D8 via caller 0x00380BE7 and vtable 0x00C18F08
 ?rva00380200@Rva00380200@@QAEPAVAsciiString@@XZ,,0x00380200,13,Code/GameEngine/Source/Common/Rva00380200Getter.cpp,matched,getter plus4 or TheEmptyString via callers 0x00380230 and 0x00380265
 ?rva000A79CE@Rva000A79CE@@QAEXXZ,,0x000A79CE,41,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_treekey00242F5E_clear.cpp,matched,TreeKey00242F5E set clear via rowed erase plus header reset
+??1Rva005F918D@@QAE@XZ,,0x005F918D,57,Code/GameEngine/Source/Common/Rva005F918DDtor.cpp,matched,dtor releases wide string then TargetRef via 36E70 7DEEF
