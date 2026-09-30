@@ -43595,3 +43595,4 @@ _Rva0085A660TimeString,,0x0069BB50,160,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003BCCC6Do@@YGXPAVParameter@@0@Z,,0x003BCCC6,85,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva003BCCC6Do.cpp,matched,script action special power 0x2d via getUnitNamed and iface slots 1 and 11
 ?Rva002176A6Swap@@YAXPAUFileInfoStruct@MixFileCreator@@0@Z,,0x002176A6,75,Code/Libraries/Source/WWVegas/WWLib/MixFileCreatorFileInfoStructAssign.cpp,matched,swap via tmp with rowed copy ctor and assign and releaseBuffer
 ??0Rva0017FF77@@QAE@PBDHH@Z,,0x0017FF77,77,Code/GameEngine/Source/Common/Rva0017FF77Ctor.cpp,matched,ModuleData ctor with GenBase plus StringClass at 18 via empty base EH
+??_GLookupTablePostEffect@@UAEPAXI@Z,,0x00111D9A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09.cpp,matched,chain deleting dtor via rowed dtor plus delete

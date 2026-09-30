@@ -48,3 +48,13 @@ class Rva005C1980 { public: __declspec(noinline) virtual ~Rva005C1980(); private
   friend void famgenDelete(Rva005C1980 *p); };
 Rva005C1980::~Rva005C1980() { m_famgen = 0; }
 void famgenDelete(Rva005C1980 *p) { delete p; }
+
+// ??_GLookupTablePostEffect@@UAEPAXI@Z, RVA 0x00111D9A, 28B. Chain lane: deleting dtor
+// calling rowed ??1LookupTablePostEffect@@UAE@XZ at 0x00111B9A then rowed operator
+// delete 0x0002FD60; test flags, ret 4. Vtable slot 1 of 0x007CFAC8 proves
+// virtual public dtor (UAE). Same pattern as above.
+
+class LookupTablePostEffect { public: __declspec(noinline) virtual ~LookupTablePostEffect(); private: int m_famgen;
+  friend void famgenDelete(LookupTablePostEffect *p); };
+LookupTablePostEffect::~LookupTablePostEffect() { m_famgen = 0; }
+void famgenDelete(LookupTablePostEffect *p) { delete p; }
