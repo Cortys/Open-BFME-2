@@ -193,3 +193,57 @@ void Rva006F6AC0::rva006F6AC0(int nDepth, void **ppPrev, void **ppItem)
 		*ppItem = 0;
 	*ppPrev = prev;
 }
+
+// ?rva006F6D30@Rva006F6D30@@QAEXPAX@Z, retail 0x006F6D30 (45 bytes).
+// GC-mark walk over the m_next chain (next at +0x54, same as BfmeQueryNode1279):
+// get/setGCMark(true)/virtual 0x34 triple per node. Takes one ignored dword
+// (ret 4) like the AptNativeHashMark precedent.
+class Rva006DBB40ShrAndField
+{
+public:
+	bool get() const;
+};
+
+class AptValue
+{
+public:
+	virtual void AddRef();
+	virtual void Release();
+	virtual void unused2();
+	virtual void unused3();
+	virtual void unused4();
+	virtual void unused5();
+	virtual void unused6();
+	virtual void unused7();
+	virtual void unused8();
+	virtual void unused9();
+	virtual void unused10();
+	virtual void unused11();
+	virtual void unused12();
+	virtual void unused13();
+	void setGCMark(bool value);
+};
+
+class Rva006F6D30
+{
+public:
+	void rva006F6D30(void *arg);
+
+private:
+	BfmeQueryNode1279 *m_root;
+};
+
+void Rva006F6D30::rva006F6D30(void *arg)
+{
+	(void)arg;
+	BfmeQueryNode1279 *node = m_root;
+	if (node == 0)
+		return;
+	do {
+		if (!((const Rva006DBB40ShrAndField *)node)->get()) {
+			((AptValue *)node)->setGCMark(true);
+			((AptValue *)node)->unused13();
+		}
+		node = node->m_next;
+	} while (node != 0);
+}
