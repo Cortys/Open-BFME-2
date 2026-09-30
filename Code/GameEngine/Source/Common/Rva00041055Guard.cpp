@@ -17,6 +17,7 @@ public:
 class MilesMutexGuard
 {
 public:
+    ~MilesMutexGuard();
     bool rva00041055();
 private:
     Rva00041055Mutex *m_mutex; // +0
@@ -28,4 +29,12 @@ bool MilesMutexGuard::rva00041055()
     if (m_flag)
         m_flag = !m_mutex->vf1();
     return m_flag == 0;
+}
+
+// @0x0004122F 12B: LINK BONUS name; 40+ callers including MilesAudioManager
+// sites; tail-jmps to rva00041055 when the flag is set.
+MilesMutexGuard::~MilesMutexGuard()
+{
+    if (m_flag)
+        rva00041055();
 }
