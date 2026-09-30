@@ -54,6 +54,32 @@
 
 #include <io.h>
 
+// BFME's File vtable, which the vendored Zero Hour header does not describe:
+// BFME's File is not a MemoryPoolObject, so every slot sits one earlier than
+// Common/File.h puts it (read 3, seek 5, size 11 -- the numbering the matched
+// File / LocalFile / RAMFile rows prove from their own vtables). Calls through
+// m_theFile go through this TU-local view instead of editing the shared header.
+class BfmeFileSlots
+{
+public:
+	virtual ~BfmeFileSlots();								// slot 0
+	virtual Bool open( const char *filename, Int access );	// slot 1
+	virtual void close( void );								// slot 2
+	virtual Int read( void *buffer, Int bytes );			// slot 3
+	virtual Int write( const void *buffer, Int bytes );		// slot 4
+	virtual Int seek( Int bytes, File::seekMode mode );		// slot 5
+	virtual void nextLine( char *buf, Int bufSize );		// slot 6
+	virtual Bool scanInt( Int &newInt );					// slot 7
+	virtual Bool scanReal( Real &newReal );					// slot 8
+	virtual Bool scanString( AsciiString &newString );		// slot 9
+	virtual Bool print( const char *format, ... );			// slot 10
+	virtual Int size( void );								// slot 11
+};
+
+// A cast at the call site, not a helper: retail re-reads m_theFile after the
+// null test, which the plain member expression gives and a helper call folds.
+#define BFME_FILE(file) reinterpret_cast<BfmeFileSlots *>(file)
+
 //-------------------------------------------------------------------------------------------------
 /** Game file access.  At present this allows us to access test assets, assets from
 	* legacy GDI assets, and the current flat directory access for textures, models etc */
@@ -350,7 +376,6 @@ bool GameFileClass::Is_Available( int forced )
 //-------------------------------------------------------------------------------------------------
 /** Is the file open. */
 //-------------------------------------------------------------------------------------------------
-// ?Is_Open@GameFileClass@@UBE_NXZ present-unmatched
 bool GameFileClass::Is_Open(void) const
 {
 	return m_theFile != NULL;
@@ -371,6 +396,9 @@ int  GameFileClass::Open(char const *filename, int rights)
 //-------------------------------------------------------------------------------------------------
 /** Open the file using the current file name. */
 //-------------------------------------------------------------------------------------------------
+// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/GameFileClassOpen.cpp
+// (retail calls BFME 2's three-argument FileSystem::openFile, which the
+// vendored header in this unit cannot declare)
 // ?Open@GameFileClass@@UAEHH@Z present-unmatched
 int  GameFileClass::Open(int rights) 
 {
@@ -389,11 +417,10 @@ int  GameFileClass::Open(int rights)
 //-------------------------------------------------------------------------------------------------
 /** Read. */
 //-------------------------------------------------------------------------------------------------
-// ?Read@GameFileClass@@UAEHPAXH@Z present-unmatched
 int GameFileClass::Read(void *buffer, int len) 
 {
 	if (m_theFile) {
-		return m_theFile->read(buffer, len);
+		return BFME_FILE(m_theFile)->read(buffer, len);
 	}
 	return(0);
 }
@@ -401,8 +428,6 @@ int GameFileClass::Read(void *buffer, int len)
 //-------------------------------------------------------------------------------------------------
 /** Seek. */
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/GameFileClassSeek.cpp
-// ?Seek@GameFileClass@@UAEHHH@Z present-unmatched
 int GameFileClass::Seek(int pos, int dir) 
 {
 	File::seekMode mode = File::CURRENT;
@@ -413,7 +438,7 @@ int GameFileClass::Seek(int pos, int dir)
 		case SEEK_END: mode = File::END; break;
 	}
 	if (m_theFile) {
-		return m_theFile->seek(pos, mode);
+		return BFME_FILE(m_theFile)->seek(pos, mode);
 	}
 	return 0xFFFFFFFF;
 }
@@ -421,11 +446,10 @@ int GameFileClass::Seek(int pos, int dir)
 //-------------------------------------------------------------------------------------------------
 /** Size. */
 //-------------------------------------------------------------------------------------------------
-// ?Size@GameFileClass@@UAEHXZ present-unmatched
 int GameFileClass::Size(void) 
 {
 	if (m_theFile) {
-		return m_theFile->size();
+		return BFME_FILE(m_theFile)->size();
 	}
 	return 0xFFFFFFFF;
 }
@@ -499,8 +523,10 @@ FileClass * W3DFileSystem::Get_File( char const *filename )
 //-------------------------------------------------------------------------------------------------
 /** Releases a file returned by Get_File. */
 //-------------------------------------------------------------------------------------------------
-// ?Return_File@W3DFileSystem@@UAEXPAVFileClass@@@Z present-unmatched
+// Slot 2 of the W3DFileSystem vtable 0x007C67D0. Retail destroys through the
+// virtual destructor with a zero flag and then frees with the global operator
+// delete -- the ::delete form, as the matched File::close spells it.
 void W3DFileSystem::Return_File( FileClass *file )
 {
-	delete file;
+	::delete file;
 }

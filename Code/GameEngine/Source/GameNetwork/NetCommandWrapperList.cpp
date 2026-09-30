@@ -175,7 +175,6 @@ struct NetWrapperListNodeDeleterSlot {
 	virtual void *slot0(int flags);
 };
 
-// ??0NetCommandWrapperList@@QAE@XZ present-unmatched
 NetCommandWrapperList::NetCommandWrapperList() {
 	m_list = NULL;
 }
