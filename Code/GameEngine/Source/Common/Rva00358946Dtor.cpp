@@ -6,11 +6,12 @@
 // 0x001061C1. Prev/next are BfmeConv454 and rb_tree_hint pair ctor. True
 // element name unproven so honest Rva address name stands in.
 
+struct Rva00358946;
 template <typename T>
 class StringBase
 {
-public:
 	void releaseBuffer();
+	friend struct Rva00358946;
 
 private:
 	T *m_data;
