@@ -480,14 +480,20 @@ static void Apply_Render_State(RenderStateStruct& render_state)
 // ----------------------------------------------------------------------------
 
 // BFME-only, no Zero Hour twin.  Flush_Sorting_Pool (0x00939FC0) inlines this
-// test before each Apply_Render_State; retail also keeps an out-of-line copy at
-// 0x00939370 with MSVC's private static convention (b in EAX, a on the stack),
-// which only reproduces while that caller shares this TU.
-static bool RenderStatesDifferRva00939370(RenderStateStruct& a, RenderStateStruct& b)
+// test before each Apply_Render_State, and retail also keeps out-of-line copies
+// of it.  This body byte-matches the copy at 0x0012D660, 181 bytes, under
+// MSVC's private static convention (b in EAX, a on the stack), so the name
+// carries that address.  The copy at 0x00939370 uses the same convention but
+// does NOT reproduce from this TU -- its first byte is 0x19 where this body has
+// the 0x55 prologue -- so it is left to the caller that owns its register state.
+// The constant read at the top of the texture loop is BfmeCurrentCaps+0x2b0;
+// the 0x278 in the first version of this body was the one byte the drift report
+// still scored as different.
+static bool RenderStatesDifferRva0012D660(RenderStateStruct& a, RenderStateStruct& b)
 {
 	if (a.shader != b.shader) return true;
 	if (a.material != b.material) return true;
-	for (int i=0;i<*(const int *)(BfmeCurrentCaps+0x278);++i) {
+	for (int i=0;i<*(const int *)(BfmeCurrentCaps+0x2b0);++i) {
 		if (a.Textures[i] != b.Textures[i]) return true;
 	}
 	if (a.material->Get_Lighting()) {
@@ -661,7 +667,7 @@ void SortingRendererClass::Flush_Sorting_Pool()
 	unsigned node_id=tis[0].idx;
 	for (unsigned i=1;i<overlapping_polygon_count;++i) {
 		if (node_id!=tis[i].idx) {
-			if (RenderStatesDifferRva00939370(
+			if (RenderStatesDifferRva0012D660(
 				reinterpret_cast<RenderStateStruct &>(overlapping_nodes[node_id]->sorting_state),
 				reinterpret_cast<RenderStateStruct &>(overlapping_nodes[tis[i].idx]->sorting_state))) {
 				SortingNodeStruct* state=overlapping_nodes[node_id];
