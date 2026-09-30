@@ -45,6 +45,7 @@ public:
     bool rva003F48EF(void *p);
     int rva003F4752(void *p);
     int rva003F4798(int outerIdx, int id);
+    int rva003F4FAA(int outerIdx, void *p);
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -133,4 +134,10 @@ int Rva003F498A::rva003F4798(int outerIdx, int id)
             return (int)i;
     }
     return -1;
+}
+
+// ?rva003F4FAA@Rva003F498A@@QAEHHPAX@Z @0x003F4FAA 19B chain wrapper pushing outerIdx and arg+0x14 into rowed 0x003F4798; callers 0x0023D9A6 0x002BBD74 0x003F6D9C 0x005980A5 0x005E9A8E; same file flags
+int Rva003F498A::rva003F4FAA(int outerIdx, void *p)
+{
+    return rva003F4798(outerIdx, *(int *)((char *)p + 0x14));
 }

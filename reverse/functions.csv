@@ -43348,3 +43348,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0028B141@Object@@QAEXW4WhichTurretType@@MH@Z,,0x0028B141,82,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B141.cpp,matched,turret rot pitch rowed callee plus 250 slot3 on float differ
 ?rva002D7BD3@Radar@@QAEXXZ,,0x002D7BD3,42,Code/GameEngine/Source/Common/System/RadarRva002D7BD3.cpp,matched,Radar invalidate draw cache via four stores plus byte
 ?rva0033E06A@Rva0033E06A@@QAEXPAURva0033E06AArg@@@Z,,0x0033E06A,22,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva0033E06A.cpp,matched,push AsciiString at 0x64 into vector at 0x33C via pinned push_back
+?rva003F4FAA@Rva003F498A@@QAEHHPAX@Z,,0x003F4FAA,19,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain wrapper outerIdx arg+0x14 into rowed 0x003F4798 same file
