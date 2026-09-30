@@ -44056,3 +44056,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00261B7E@Rva002611F2@@UAE_NPAVObject@@@Z,,0x00261B7E,125,Code/GameEngine/Source/Common/Rva00261B7E.cpp,matched,Vslot1 filter via template player provider attack
 ?Rva004182D3Alloc@@YGPAXPBVRva004181F5@@@Z,,0x004182D3,37,Code/GameEngine/Source/GameClient/Rva004182D3Alloc.cpp,matched,alloc plus rowed Construct unlocks 0x004182F8
 ?xfer@WeaponFireSpecialAbilityUpdate@@MAEXPAVXfer@@@Z,,0x004925E5,160,Code/GameEngine/Source/GameLogic/Object/Update/WeaponFireSpecialAbilityUpdateXfer.cpp,matched,BFME1 donor reuse plus vtable 0x0084E090 slot 3 plus string
+??0Rva0039205C@@QAE@XZ,,0x0029A205,26,Code/GameEngine/Source/Common/Rva0039225ECtor.cpp,matched,out-of-line copy of the Rva0039205C ctor this TU already inlines into the Rva0039225E ctor; place_bodies masked search places the emitted body once in .text; same class as the rowed dtor 0x0039205C
