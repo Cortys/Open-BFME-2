@@ -43699,3 +43699,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0037E0ECEqual@@YA_NPBX0@Z,,0x0037E0EC,114,Code/GameEngine/Source/Common/Rva0037E0ECEqual.cpp,matched,chain of 0x0037E09A plus float string helper compares
 ?rva0002BB1C@SaveDate@@QAEXXZ,,0x0002BB1C,85,Code/GameEngine/Source/Common/System/SaveGame/SaveDateRva0002BB1C.cpp,matched,refresh SaveDate from GetLocalTime swapping day and dayOfWeek
 ?Rva0002BBC9Update@@YAXXZ,,0x0002BBC9,21,Code/GameEngine/Source/Common/System/SaveGame/Rva0002BBC9Update.cpp,matched,refresh global SaveDate and copy tick globals
+?rva006C18A0@Rva006C1850@@QAE_NI_N@Z,,0x006C18A0,125,Code/GameEngine/Source/Common/Rva006C1850Find.cpp,matched,same hash table as find unlock caller 0x006C1D60
