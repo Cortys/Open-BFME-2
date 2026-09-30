@@ -35,6 +35,7 @@ class AptBasePtrStack
 {
 public:
     void PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue);
+    void rva006FE050(int nItems);
     void rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue);
     ~AptBasePtrStack();
 
@@ -82,6 +83,22 @@ void AptBasePtrStack::rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue)
             __debugbreak();
     }
     PopAndPush(nItems, pValue);
+}
+
+void AptBasePtrStack::rva006FE050(int nItems)
+{
+    if (nItems > 0) {
+        if (m_nElements < nItems) {
+            g_bfmeAptAssertAtE17734("false && \"[APT] Error, Popping more elements than the stack contains. Please contact the Apt Team for Support.\"", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 240);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __asm int 3
+            return;
+        }
+        for (int i = 1; i <= nItems; ++i) {
+            m_aElements[m_nElements - i]->Release();
+        }
+        m_nElements -= nItems;
+    }
 }
 
 AptBasePtrStack::~AptBasePtrStack()
