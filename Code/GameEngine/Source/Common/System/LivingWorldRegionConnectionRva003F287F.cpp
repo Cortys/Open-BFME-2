@@ -5,7 +5,16 @@
 // Evidence: callees rowed push_back 0x004DFCB0; callers 0x002B7717 0x004EEFBD 0x005037B1; neighbours LivingWorldRegionConnection dtor/construct give TU and flags.
 #include <vector>
 
-class ModuleData;
+class ModuleData
+{
+public:
+	char _pad[0x28];
+	struct Key
+	{
+		char _pad[0x2c];
+		int m_key; // +0x2c
+	} *m_keyPtr; // +0x28
+};
 
 struct Rva003F287FEntry
 {
@@ -19,6 +28,7 @@ class Rva003F287F
 {
 public:
 	void rva003F287F(_STL::vector<const ModuleData *> &out);
+	void rva003F2818(int filter, _STL::vector<const ModuleData *> &out);
 
 private:
 	unsigned char m_pad[0x170];
@@ -32,6 +42,19 @@ void Rva003F287F::rva003F287F(_STL::vector<const ModuleData *> &out)
 		if (e->m_data != 0 && e->m_flag == 0) {
 			const ModuleData *tmp = e->m_data;
 			out.push_back(tmp);
+		}
+	}
+}
+
+void Rva003F287F::rva003F2818(int filter, _STL::vector<const ModuleData *> &out)
+{
+	for (unsigned i = 0; i < m_items.size(); ++i) {
+		Rva003F287FEntry *e = m_items[i];
+		if (e->m_data != 0 && e->m_flag == 0) {
+			const ModuleData *tmp = e->m_data;
+			if (tmp->m_keyPtr->m_key == filter) {
+				out.push_back(tmp);
+			}
 		}
 	}
 }
