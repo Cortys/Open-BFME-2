@@ -1,25 +1,12 @@
-// cl: /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva00205A2B@Rva00205A2B@@QAEXPAUArg205A2B@@@Z @0x00205A2B 98B
 // String search over 0x257 entries stride 0x80 at +0x2c via rowed
 // StringBase compare 0x69D6; on hit copies three AsciiStrings via pinned
 // operator= 0x366F0 from arg+4/+8/+0x7c to entry+0x24/+0x28/+0x9c.
 // Evidence: caller 0x206E43; callees rowed/pinned; unblocks 0x206DFF.
-template <typename T> class StringBase
-{
-public:
-    int compare(const StringBase<T> &that) const;
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-    AsciiString &operator=(const AsciiString &that);
-private:
-    void *m_data;
-};
 
 struct Arg205A2B
 {

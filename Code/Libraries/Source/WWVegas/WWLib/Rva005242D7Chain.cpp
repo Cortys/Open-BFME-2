@@ -1,21 +1,12 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??1Rva005242D7@@QAE@XZ @0x005242D7 47B
 // Evidence: chain via rowed 0x00524021 and vector<AsciiString> dtor 0x0002CC70;
 // dtor body does UI-erase loop then vector member dtor; 40+ callers
 #include <vector>
 
-template <typename T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString() {}
-};
 
 class Rva00524021
 {

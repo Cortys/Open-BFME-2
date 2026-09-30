@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // One-argument CRC-32 string hash at retail 0x003EC922 (49 bytes). Same
 // table-driven accumulation as the two-argument family in realcrc.cpp, but a
 // standalone one-shot wrapper: a null or empty input
@@ -60,13 +60,7 @@ template <typename T> struct BfmeStringData
   T text[1];
 };
 
-class AsciiString
-{
-  BfmeStringData<char> *m_data;
-
-public:
-  const char *str() const { return m_data ? &m_data->text[0] : (const char *)""; }
-};
+#include "ascii_string.h"
 
 unsigned long Rva003ECA13Get(const AsciiString &s)
 {

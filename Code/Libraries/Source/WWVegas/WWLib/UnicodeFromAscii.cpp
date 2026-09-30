@@ -3,20 +3,8 @@
 // Export ??0UnicodeString@@QAE@ABVAsciiString@@@Z identifies6CB6D0 (91B).
 // Masked code also matches the reverse conversion at38250; the export and
 // callee translate(const char*)6CB5F0 prove this identity independently.
-// cl: /O2 /DNDEBUG /MD /EHsc
-template<class T> class StringBase {
-    T *data;
-public:
-    StringBase():data(0){}
-    void releaseBuffer();
-    ~StringBase(){releaseBuffer();}
-};
-class AsciiString {
-    struct Header { int refs; unsigned short length,capacity; char data[1]; };
-    Header *data;
-public:
-    const char *str()const {return data?data->data:"";}
-};
+// cl: /Ireference/shims/bfme2_ascii /O2 /DNDEBUG /MD /EHsc
+#include "ascii_string.h"
 class UnicodeString:public StringBase<unsigned short> {
 public:
     UnicodeString(const AsciiString&);

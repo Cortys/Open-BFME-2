@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ?reserve@?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEXI@Z retail 0x00057E02 104B.
 // Real STLport 4.5.3 vector<AsciiString> reserve. Same 104B shape as the landed
@@ -8,16 +8,7 @@
 // 0x0032D775 0x0057A0C8 operate on AsciiString vectors.
 #include <vector>
 
-class AsciiString
-{
-public:
-    AsciiString();
-    AsciiString(const AsciiString &);
-    ~AsciiString();
-    AsciiString &operator=(const AsciiString &);
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 
 // Already rowed at 0x00142CC0 in AsciiStringConstruct.cpp; declaration prevents
 // a different local copy-constructor view from replacing that established helper.

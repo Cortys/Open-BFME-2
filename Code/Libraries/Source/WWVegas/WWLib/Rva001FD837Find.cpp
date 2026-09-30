@@ -1,18 +1,10 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?Rva001FD837Find@@YAXPAPAXPAURva001FD837Node@@1ABVAsciiString@@@Z @0x001FD837 39B
 // List find: iterates nodes from first to last (next at +0x00), compares the
 // AsciiString at +0x08 via rowed StringBase compare at 0x000069D6, stores the
 // match (or last) through the out pointer. Callers at 0x001FD9E2 and 0x005BAA96.
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase &that) const;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-};
 
 struct Rva001FD837Node
 {

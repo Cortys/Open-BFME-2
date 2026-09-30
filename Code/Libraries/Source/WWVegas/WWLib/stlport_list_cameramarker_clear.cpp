@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?clear@?$_List_base@UCameraMarker@@V?$allocator@UCameraMarker@@@_STL@@@_STL@@QAEXXZ, retail 0x002934A8, 49 bytes.
 // List_base clear for CameraMarker via rowed dtor 0x0029D7C2 and _free 0x00030830.
@@ -7,16 +7,7 @@
 // Callers at 0x00297BAC 0x002A1B49 0x002A1BEE 0x002A4337 0x002DE5BC; unblocks 0x002A42D8 0x002A1BEB 0x002A1B1D.
 #include <list>
 
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct CameraMarker
 {

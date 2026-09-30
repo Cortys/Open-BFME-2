@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // Pristine STLport 4.5.3 members, each placed by a single masked whole-.text
@@ -19,23 +19,7 @@
 #include <vector>
 #include <map>
 
-template<class T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-public:
-    StringBase();
-    StringBase(const StringBase &);
-    StringBase &operator=(const StringBase &);
-protected:
-    __forceinline ~StringBase() { releaseBuffer(); }
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString() {}
-    __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &);
-};
+#include "ascii_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
 bool operator==(const AsciiString &, const AsciiString &);
 struct BfmeAssignRecord24 { AsciiString s; int a[5]; };

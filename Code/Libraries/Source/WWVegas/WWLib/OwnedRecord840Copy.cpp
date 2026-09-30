@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // Target copy and cleanup of an 840-byte owning record.
 // Offsets and copy operations come from retail disassembly; record identity and
@@ -8,18 +8,7 @@
 #include <vector>
 #include <stddef.h>
 
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-};
+#include "ascii_string.h"
 
 struct BfmeOpaqueOwnedRecord840 {
     BfmeOpaqueOwnedRecord840();

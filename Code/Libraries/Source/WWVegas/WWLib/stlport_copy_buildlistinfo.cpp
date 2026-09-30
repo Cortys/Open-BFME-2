@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // ??$__copy@PAVBuildListInfo@@PAV1@H@_STL@@YAPAVBuildListInfo@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z @0x00329D64 52B
@@ -11,21 +11,8 @@
 
 #include <algorithm>
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString();
-};
 
 struct Coord3D
 {

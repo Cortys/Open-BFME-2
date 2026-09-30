@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // Range-erase over the stride-0x10 Rva00297360Element vector at retail
 // 0x002983DA (51B): copy [last, finish) down to first through the rowed
@@ -8,13 +8,7 @@
 // dummy arrives as pop-slot address [ebp+0xb].
 #include <algorithm>
 
-class AsciiString {
-public:
-  AsciiString() {}
-  AsciiString &operator=(const AsciiString &other);
-private:
-  void *m_data;
-};
+#include "ascii_string.h"
 
 class Rva00297360Element {
 public:

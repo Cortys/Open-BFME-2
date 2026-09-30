@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??4BfmeAssignRecord172@@QAEAAU0@ABU0@@Z @0x001EB20E 84B: honest 172B record
@@ -8,13 +8,7 @@
 // copies; possibly vptr/ID); returns *this (ret 4). Callers in
 // stlport_asciistring_record_bodies.cpp (copy_backward/fill/dup) plus
 // 0x004E0A04. Same // cl: as sibling.
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 class Rva001EAFC1
 {
 public:

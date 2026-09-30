@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 //
 // STLport 4.5.3 set<BfmeRecord001DD3BC> _M_insert (retail 0x001DDE2A, 148B)
@@ -17,14 +17,7 @@
 #define _STLP_NO_EXCEPTIONS 1
 #include <set>
 
-class AsciiString
-{
-	void *m_data;
-
-public:
-	AsciiString(const AsciiString &);
-	~AsciiString();
-};
+#include "ascii_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
 
 struct BfmeRecord001DD3BC

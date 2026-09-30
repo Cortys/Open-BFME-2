@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 //
 // STLport 4.5.3 map<AsciiString, NoCaseTreeValue4> _M_insert (retail
@@ -15,14 +15,7 @@
 #define _STLP_NO_EXCEPTIONS 1
 #include <map>
 
-class AsciiString
-{
-	void *m_data;
-
-public:
-	AsciiString(const AsciiString &);
-	~AsciiString();
-};
+#include "ascii_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
 
 struct NoCaseTreeValue4 { public: unsigned char m_data[4]; };

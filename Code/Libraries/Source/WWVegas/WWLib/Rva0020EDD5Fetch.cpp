@@ -1,4 +1,4 @@
-// cl: /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
 // ?rva0020EDD5@Rva0020EDD5@@QAE?AVUnicodeString@@H@Z @0x0020EDD5 84B
 // Honest-address __thiscall returning UnicodeString selected by int index:
 // switch 1/2/3 fetches Ascii labels at *(this+8)+8/+4/+12 via TheGameText
@@ -9,35 +9,8 @@
 typedef unsigned short wchar_t;
 typedef bool Bool;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class Rva0020EDD5;
+#include "ascii_string.h"
 
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-public:
-	Bool isEmpty() const;
-	StringBase() { m_data = 0; }
-	~StringBase() { releaseBuffer(); }
-
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString
 {

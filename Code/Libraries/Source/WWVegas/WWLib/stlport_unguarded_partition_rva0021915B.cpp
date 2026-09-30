@@ -1,20 +1,8 @@
-// cl: /O1 /D_STLP_NO_EXCEPTIONS /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /D_STLP_NO_EXCEPTIONS /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/bfmealloc
 // stlport
 // ??$__unguarded_partition@PAURva0021915B@@U1@URva0021B753@@@_STL@@ @0x0021C6CB 107B partition with rowed comparator 0x0021B753 and rowed swap 0x0021ACB9 plus pivot release via 0x00036410.
 // Evidence: chain lane all callees rowed; first/last stride 8 plus bool-first comparator plus swap callers prove Rva0021915B family; same partition shape as rowed 0x004231A0 with EH for non-trivial pivot. Donor vendor/stlport/stl/_algo.c:__unguarded_partition.
-template <typename T> class StringBase {
-	friend class AsciiString;
-	StringBase(const StringBase &);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-private:
-	void *m_data;
-};
-class AsciiString : public StringBase<char> {
-public:
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 class Rva0021915B {
 public:
 	Rva0021915B &operator=(const Rva0021915B &other);
