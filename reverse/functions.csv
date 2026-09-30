@@ -44328,3 +44328,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ?rva0040AAD5@Rva0040AAD5@@QAEPAUBfmePod40@@H@Z,,0x0040AAD5,35,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_vector_bodies.cpp,matched,chain caller 0x0040C0FE passes int key via lea
 ?rva003592E6@Rva003592E6@@QAEXXZ,,0x003592E6,20,Code/GameEngine/Source/GameClient/Rva003592E6Clear.cpp,matched,twin clear via rowed clear plus tail jmp
 ?Rva006CD3F0Get@@YAHPAX@Z,,0x006CD3F0,75,Code/GameEngine/Source/Common/Rva006CD3F0Get.cpp,matched,Apt.cpp eType assert plus table plus type 0x25
+??0Rva0035D53C@@QAE@XZ,,0x0035D6B8,37,Code/GameEngine/Source/Common/Rva0035D53CCtor.cpp,matched,ctor via base 0x001DBAA4 with vtable 0x00816510
