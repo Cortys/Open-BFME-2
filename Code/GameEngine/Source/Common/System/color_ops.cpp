@@ -19,3 +19,17 @@ void GameGetColorComponents(Color color, UnsignedByte *red, UnsignedByte *green,
 	*green = (color & 0x0000FF00) >> 8;
 	*blue = (color & 0x000000FF);
 }
+
+int __cdecl Rva002D2B9ADarken(int color, int amount)
+{
+	if (amount < 90 && amount > 0)
+	{
+		UnsignedByte red, green, blue, alpha;
+		GameGetColorComponents(color, &red, &green, &blue, &alpha);
+		red += (red * amount) / -100;
+		green += (green * amount) / -100;
+		blue += (blue * amount) / -100;
+		return (alpha << 24) | (red << 16) | (green << 8) | blue;
+	}
+	return color;
+}

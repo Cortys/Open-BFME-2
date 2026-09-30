@@ -43047,3 +43047,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva003F03C9@Rva003F03C9@@QAE?AVUnicodeString@@XZ,,0x003F03C9,58,Code/GameEngine/Source/Common/System/Rva003F03C9Fetch.cpp,matched,chain wrapper forwards index plus0x5c to holder plus0xB0 at 0x00DFEF10 else empty
 ?rva00131D7D@Rva00131D7D@@QAEXI@Z,,0x00131D7D,28,Code/Libraries/Source/WWVegas/WW3D2/Rva00131D7DSet.cpp,matched,unlock dword to three bytes
 ?Rva002D2ACAGet@@YAXHPAM000@Z,,0x002D2ACA,114,Code/GameEngine/Source/Common/System/color_ops_float.cpp,matched,float GameGetColorComponents 5 callers reciprocal 0x7BB8F0 unsigned alpha x87 path
+?Rva002D2B9ADarken@@YAHHH@Z,,0x002D2B9A,120,Code/GameEngine/Source/Common/System/color_ops.cpp,matched,darkens RGB by percent via byte unpack caller 0x00322450
