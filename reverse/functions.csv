@@ -43983,3 +43983,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva006D6500@@QAE@H@Z,,0x006D6500,104,Code/Libraries/Source/Apt/Rva006D6360Ctor.cpp,matched,derived from Rva006D6360 with 9 8 bits at 0x1C arg at 0x20 vtable 0x008EA2A0
 ?xfer@Rva00340D1F@@MAEXPAVXfer@@@Z,,0x00340CB0,111,Code/GameEngine/Source/Common/Rva00340CB0Xfer.cpp,matched,rowed base xfer plus Xfer slots 0x28 0x10 0x7C 0x90 plus caller
 ?Rva0020DA21Load@@YGXPAVINI@@@Z,,0x0020DA21,40,Code/GameEngine/Source/Common/Rva0020DA21Load.cpp,matched,unlock INI loader LargeGroupAudio via rowed ctor plus loadFile
+??0Rva00108A0B@@QAE@XZ,,0x00108A0B,110,Code/GameEngine/Source/Common/Rva00108A0BCtor.cpp,matched,default ctor with two HashTableClass 0x800 tables via rowed new
