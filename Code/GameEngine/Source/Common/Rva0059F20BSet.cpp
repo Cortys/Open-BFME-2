@@ -51,3 +51,26 @@ void __cdecl Rva0059F296Set(int id, const UnicodeString &u)
 	tmp.format("APT:ConnectingPlayer%dStatus", id + 1);
 	g_009FE4CC->bfmeSetText(tmp, u, false);
 }
+
+template <typename T>
+class StringBase
+{
+	friend class UnicodeString;
+	StringBase();
+	StringBase(const StringBase<T> &other);
+	__forceinline ~StringBase() { releaseBuffer(); }
+	void releaseBuffer();
+	void *m_data;
+};
+
+class UnicodeString : public StringBase<unsigned short>
+{
+public:
+	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
+	~UnicodeString() {}
+};
+
+void __stdcall Rva0059F260Set(int id, UnicodeString u)
+{
+	Rva0059F20BSet(id, u);
+}
