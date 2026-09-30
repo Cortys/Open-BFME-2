@@ -44402,3 +44402,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?init@Rva0035D53C@@UAEXPAVGameWindow@@@Z,,0x0035D54B,121,Code/GameEngine/Source/Common/Rva0035D53CInit.cpp,matched,vslot init slot1 plus rowed winGetSize winGetScreenPosition plus virtual update plus center size6
 ?draw@Rva0035D53C@@UAEXXZ,,0x0035D62E,138,Code/GameEngine/Source/Common/Rva0035D53CDraw.cpp,matched,chain draw slot4 plus landed init layout plus rowed W3DDisplay plus TheDisplay
 ?rva002BE833@Rva002BE833@@QAEXPAVXfer@@@Z,,0x002BE833,155,Code/GameEngine/Source/Common/Rva002BE833Xfer.cpp,matched,Version IsCRC Coord float bool order via caller 0x0009AAFB and Xfer reverse slots
+?rva0009AAFB@Rva0009AAFB@@QAEXPAVXfer@@@Z,,0x0009AAFB,112,Code/GameEngine/Source/Common/Rva0009AAFBXfer.cpp,matched,Version IsCRC base Rva002BE833 triple floats via rowed helper
