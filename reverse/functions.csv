@@ -43179,3 +43179,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00180AB5@Rva00180B94_Prototype@@QAEXXZ,,0x00180AB5,33,Code/GameEngine/Source/Common/Rva00180AB5.cpp,matched,vslot6 clear tree via virt0 delete caller none
 ??0Rva001803D3@@QAE@PBDHH@Z,,0x001803D3,77,Code/GameEngine/Source/Common/Rva001803D3Ctor.cpp,matched,twin of prototype ctor vtable 0x7D4F90 caller 0x180507
 ??$_Construct@URva003F610FElement@@U1@@_STL@@YAXPAURva003F610FElement@@ABU1@@Z,,0x003F5822,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructRva003F610F.cpp,matched,true Construct via pinned copy ctor 4 matched callers
+?rva00594A06@UDP@@QAEHXZ,,0x00594A06,118,Code/GameEngine/Source/GameNetwork/UDPErrorMap.cpp,matched,unlock UDP WSA error map via push-pop returns
