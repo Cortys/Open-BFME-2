@@ -61,6 +61,8 @@ public:
 
 extern Rva002D06CA *g_009FF000;
 extern float g_00C4254C;
+// g_00C4254C: matched references place it at VA 0xc4254c (retail .rdata value 1e+08f).
+float g_00C4254C = 1e+08f;
 
 class ModuleData
 {

@@ -31,6 +31,8 @@ private:
 };
 
 extern float g_bfmeGiveUpgrade0025;	// 0.025 at retail 0xC5127C (DIR32-masked)
+// g_bfmeGiveUpgrade0025: matched references place it at VA 0xc5127c (retail .rdata value 0.025f).
+float g_bfmeGiveUpgrade0025 = 0.025f;
 
 class GiveUpgradeUpdateModuleData : public Rva0044EB54
 {

@@ -10,6 +10,8 @@
 // Caller at 0x0039DCFD iterates a Team member list and heals each entry.
 
 extern float g_Va00BFBC84;
+// g_Va00BFBC84: matched references place it at VA 0xbfbc84 (retail .rdata value 999999.0f).
+float g_Va00BFBC84 = 999999.0f;
 
 class Object
 {

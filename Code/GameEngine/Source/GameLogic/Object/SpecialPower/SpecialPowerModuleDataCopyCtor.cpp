@@ -23,6 +23,8 @@ enum ScienceType
 
 // Absolute counter at 0x00E05F74; the copy hands out a fresh nonzero id.
 extern int g_Va00E05F74;
+// g_Va00E05F74: matched references place it at VA 0xe05f74 (zero-filled .bss).
+int g_Va00E05F74;
 
 class EmptyBase
 {

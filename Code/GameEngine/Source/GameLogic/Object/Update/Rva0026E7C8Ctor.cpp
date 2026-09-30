@@ -29,6 +29,8 @@ private:
 };
 
 extern unsigned char Rva0026E7C8DataAnchor;
+// Rva0026E7C8DataAnchor: matched references place it at VA 0xbfa3a4 (retail .rdata value 26).
+unsigned char Rva0026E7C8DataAnchor = 26;
 
 // ??0Rva0026E7C8Ctor@@QAE@XZ @0x0026E7C8
 Rva0026E7C8Ctor::Rva0026E7C8Ctor() :
