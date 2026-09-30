@@ -18,7 +18,7 @@
 extern void DX8_Assert();
 extern void Log_DX8_ErrorCode(unsigned);
 extern void BFME_DX8_Thread_Lock(void);
-extern void BFME_DX8_Thread_Assert(void);
+extern bool BFME_DX8_Thread_Assert(void);
 
 class BFMEDX8DeviceLock
 {
