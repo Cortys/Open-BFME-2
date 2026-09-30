@@ -7,14 +7,14 @@
 // the PM sibling reaches its own PM pair. The true instance name is not
 // proven by these bytes, so this row rides under an Rva owner.
 
-void bfmeBigFreeVLX(void *at);
+void bfmeBigFreePM(void *at);
 void bfmeSmallFreeVLX(void *at, unsigned int bytes);
 
 // ?Rva00028DC0FreeSized@@YAXPAXI@Z
 void Rva00028DC0FreeSized(void *at, unsigned int bytes)
 {
 	if (bytes > 0x80)
-		bfmeBigFreeVLX(at);
+		bfmeBigFreePM(at);
 	else
 		bfmeSmallFreeVLX(at, bytes);
 }

@@ -3,7 +3,7 @@
 extern "C" void *memset(void *d, int c, unsigned n);
 #pragma intrinsic(memset)
 
-void bfmeBigFreeVLX(void *p);
+void bfmeBigFreePM(void *p);
 void bfmeSmallFreeVLX(void *p, unsigned n);
 
 struct BfmeHdrVLX
@@ -32,7 +32,7 @@ void bfmeFreeVLX(void *p, unsigned n)
 	n1->m_bfmeTag = 0xdebd;
 	memset(p, 0xa3, n);
 	if (n3 > 0x80)
-		bfmeBigFreeVLX(n1);
+		bfmeBigFreePM(n1);
 	else
 		bfmeSmallFreeVLX(n1, n3);
 }

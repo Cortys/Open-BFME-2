@@ -3,7 +3,7 @@
 extern "C" void *memset(void *d, int c, unsigned n);
 #pragma intrinsic(memset)
 
-void *bfmeBigVLV(unsigned n);
+void *bfmeBigAllocPR(unsigned n);
 void *bfmeSmallVLV(unsigned n);
 
 struct BfmeHdrVLV
@@ -23,7 +23,7 @@ void *bfmeAllocVLV(unsigned n)
 
 	n3 = n + 0x18;
 	if (n3 > 0x80)
-		n2 = (unsigned)bfmeBigVLV(n3);
+		n2 = (unsigned)bfmeBigAllocPR(n3);
 	else
 		n2 = (unsigned)bfmeSmallVLV(n3);
 	n1 = (BfmeHdrVLV *)n2;
