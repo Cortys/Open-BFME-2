@@ -4459,3 +4459,7 @@ FUN_006d05cf	0x002D05CF	219	blocked	EH ThingTemplate Overridable ModuleInfo mult
 FUN_0077b648	0x0037B648	194	blocked	fgetwc wide loop needs rep-stosd buffer zero plus IAT reg alloc and EH temp states t=20 model=muse-10
 FUN_00476790	0x00076790	186	blocked	unclaimed EH handler 0xB5EF7F plus 7 globals and AssetReference RefCountPtr loop needs WW3D headers t=10 model=muse-10
 FUN_00562BF7	0x00562BF7	484	blocked	vslot FXParticleSystem with unclaimed EH handler 0xB99C97 and ghidra boundary 484 vs 2304 needs donor class layout t=8 model=muse-10
+?rva003079ED@Rva003079ED@@QAEXXZ	0x003079ED	63	partial	swap resolves to 0x567ECD not 0x3079C1 dup alias; base 0x7FAEA fixed via BfmeE12 t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x003079ed.cpp
+?rva006D9500@Rva006D9500@@QAEXH@Z	0x006D9500	210	partial	ebx-ebp mirror plus edx early load vs mem cmp; 210B 76/76 exact size rep stos-movs match t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x006d9500.cpp
+?rva006DCB20@BfmeAptValue006DCD20@@EAEXXZ	0x006DCB20	216	blocked	ebx/extra-push plus eax-ecx mirror plus shr-test vs test-imm plus mov-0fff vs load-flags; best 208B 72ins vs 216B 75ins t=30 model=muse-05
+?rva0039BDB8@Rva0039BDB8@@QAEXPBV?$BitFlags@$0EF@@@PAV?$StringBase@G@@PBUMapRoot@@@Z	0x0039BDB8	221	blocked	frame wider by 0x14 plus push-ebx vs push-ebp plus StringBase size; best 226B 83/83 vs 221B t=25 model=muse-05
