@@ -43105,3 +43105,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1AptBasePtrStack@@QAE@XZ,,0x006FDD40,110,Code/Libraries/Source/Apt/AptBasePtrStackPopAndPush.cpp,matched,dtor asserts empty 78 pfnMemFreeSize 84 pool freeBlock same TU
 ??1Rva001EE3DE@@UAE@XZ,,0x001EE3DE,165,Code/GameEngine/Source/GameClient/Input/Rva001EE3DEDtor.cpp,matched,vtable 0x007E0358 FreeEntry releaseBuffer CursorInfo
 ?rva0020E72A@Rva0020E72A@@QAE_NPAX@Z,,0x0020E72A,61,Code/Libraries/Source/WWVegas/WWLib/Rva0020E72ALoop.cpp,matched,vector scan via rowed predicate
+?rva0020E9D0@Rva0020E9D0@@QAE_NPAVCreateAHeroData@@@Z,,0x0020E9D0,34,Code/Libraries/Source/WWVegas/WWLib/Rva0020E9D0Contains.cpp,matched,vector contains via rowed find
