@@ -44896,3 +44896,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00406EFD@Rva00406EFD@@QAE_NH@Z,,0x00406EFD,21,Code/GameEngine/Source/Common/Rva00406EFDSetter.cpp,matched,conditional setter cmp +0x10 or bit2 at +0x38 caller 0x00407012
 ?rva00406F12@Rva00406F12@@QAE_NH@Z,,0x00406F12,21,Code/GameEngine/Source/Common/Rva00406F12Setter.cpp,matched,conditional setter cmp +0x2C or bit8 at +0x38 sibling of 0x00406EFD
 ?rva00406F27@Rva00406F27@@QAE_NH@Z,,0x00406F27,21,Code/GameEngine/Source/Common/Rva00406F27Setter.cpp,matched,conditional setter cmp +0x30 or bit8 at +0x38 sibling of 0x00406F12
+?rva00406F3C@Rva00406F3C@@QAE_NH@Z,,0x00406F3C,21,Code/GameEngine/Source/Common/Rva00406F3CSetter.cpp,matched,conditional setter cmp +0x34 or bit8 at +0x38 sibling of 0x00406F27
