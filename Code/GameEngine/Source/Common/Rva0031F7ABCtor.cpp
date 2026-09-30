@@ -1,7 +1,5 @@
 // ??0Rva0031F7AB@@QAE@XZ
 // partial score=0.93 date=2026-09-29
-// ??0Rva0031F7AB@@QAE@XZ
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /EHsc /MD
 // ??0Rva0031F7AB@@QAE@XZ @0x0031F7AB 64B.
 // Honest-address default ctor zeroing 28 bytes with an AsciiString at +0.
@@ -48,7 +46,6 @@ private:
 
 Rva0031F7AB::Rva0031F7AB()
 {
-	((StringBase<char> &)m_str).m_data = 0;
 	((StringBase<char> &)m_str).releaseBuffer();
 	m_b = 0;
 	m_a = 0;
