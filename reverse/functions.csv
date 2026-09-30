@@ -44374,3 +44374,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ??0Rva005F91F3@@QAE@ABURva005F91F3Src@@@Z,,0x005F91F3,36,Code/GameEngine/Source/Common/Rva005F91F3Copy.cpp,matched,converting copy word word wide-string via 37050 callers 5FA205 5FA2CC
 ?Set_Name@DefinitionClass@@UAEXPBD@Z,,0x0011FBB0,8,Code/Libraries/Source/WWVegas/WWSaveLoad/twiddler.cpp,matched,masked search of this TU emitted body hits several unowned places; exactly one reads every rowed or pinned REL32 callee and that callee carries no other name
 ??_GRva00358B65@@QAEPAXI@Z,,0x00358C84,28,Code/GameEngine/Source/GameClient/Rva00358E6AClear.cpp,matched,masked search of this TU emitted body hits several unowned places; exactly one reads every rowed or pinned REL32 callee and that callee carries no other name
+??0Rva00380AB1@@QAE@PAX@Z,,0x00380AB1,53,Code/GameEngine/Source/Common/Rva00380AB1Ctor.cpp,matched,twin of Rva0023E8D8 via caller 0x00380BE7 and vtable 0x00C18F08
