@@ -44963,3 +44963,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0?$vector@VRva004E32F2@@V?$allocator@VRva004E32F2@@@_STL@@@_STL@@QAE@ABV01@@Z,,0x0052D4F5,96,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva004e32f2_allocate_copy.cpp,matched,chain calls 0x0052D4CF via base 0x000B63B2 same 96B shape
 ?rva0052DA95@Rva0052DA95@@QAE_NH@Z,,0x0052DA95,47,Code/GameEngine/Source/Common/Rva0052DA95.cpp,matched,unlock via unlink 0x002E6BE2 clears plus words plus bits
 ?rva0052DA63@Rva0052DA63@@QAEXPAX@Z,,0x0052DA63,50,Code/GameEngine/Source/Common/Rva0052DA63.cpp,matched,unlock via set 0x0027C306 link clear pattern
+?Rva009A7870@@YAXPBEPAGIIIIPBH@Z,,0x001B82D0,107,Code/GameEngine/Source/Common/Rva009A7870.cpp,matched,BFME1 byte-identical donor; b1 0x009A7870
