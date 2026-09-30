@@ -4111,3 +4111,9 @@ FUN_007f8646	0x003F8646	112	blocked	vector begin-end div4 plus virtual callback 
 ?rva00474431@Rva00474431@@QAEHPAUPair8@@H@Z	0x00474431	82	blocked	vector pushback record plus idiv index register wall eax-ecx plus vector esi-add vs edi-lea t=15 model=muse-02
 FUN_00941340	0x00541340	112	blocked	same vector div4 callback g_BFB1CC EH family as 0x003F8646 needs donor t=3 model=muse-02
 FUN_00925407	0x00525407	114	blocked	same vector div4 callback g_BFB1CC EH family needs donor t=3 model=muse-02
+FUN_009D49F9	0x005D49F9	109	blocked	same wall as 0x0027F519: callback via struct fn needs __thiscall fnptr C4234 plus stack vtable g_00BFB1CC with EH t=8 model=muse-06
+FUN_009C9963	0x005C9963	112	blocked	same wall as 0x0027F519 0x005D49F9: 2-arg callback via struct fn plus stack vtable g_00BFB1CC t=3 model=muse-06
+FUN_0085FD9F	0x0045FD9F	84	blocked	needs stlport list node type at +0x2C plus containment +0x244 layout plus -0x18 interior this t=10 model=muse-06
+??0Rva004E16D9Record@@QAE@XZ	0x004E15FB	135	partial	scheduling: mov ecx ebx plus state3 ordered before bytes 1C 1D vs after t=25 model=muse-06 score=0.95 stash=reverse/attempts/0x004e15fb.cpp
+FUN_008E0918	0x004E0918	112	blocked	same wall as 0x0027F519: iteration template with stack vtable g_00BFB1CC plus struct fnptr callback with add t=3 model=muse-06
+?rva00264EF2@Rva00264EF2@@QAEPAVObject@@XZ	0x00264EF2	75	blocked	register wall: goal in ecx vs eax costs 16B plus branchless tail t=12 model=muse-06
