@@ -4020,3 +4020,4 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 ?Rva000540A7Load@@YAXPAX@Z	0x000540A7	121	blocked	four INI loads via AsciiString temps needs donor pattern t=5 model=muse-07
 ?rva0005818B@Rva00699180Owner@@QAEXPBUHolderPtr@@H@Z	0x0005818B	96	partial	last in ecx vs eax cmp esi ecx vs eax t=20 model=muse-07 score=0.95 stash=reverse/attempts/0x0005818b.cpp
 ?rva003AF8C7@Rva003AF8C7@@QAE@XZ	0x003AF8C7	98	blocked	derived copy needs Lightning vptr two-phase plus sbb mask donor t=8 model=muse-07
+?rva00220AA6@Rva00220AA6@@QAE@@	0x00220AA6	69	blocked	vtable store at end plus EH states t=15 model= Muse
