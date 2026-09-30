@@ -15,5 +15,6 @@ template HeroTree::_Rb_tree(const HeroTree &);
 template HeroTree &HeroTree::operator=(const HeroTree &);
 
 // Whole-class instantiation of this tree. It reproduces _M_insert (retail 0x0021D17B)
+// and the hinted insert_unique (retail 0x0021D6A9)
 // byte for byte; their calls read the tree's matched STL helpers.
 template class _STL::_Rb_tree<int,_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > >,_STL::_Select1st<_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > > >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,_STL::vector<unsigned int,_STL::allocator<unsigned int> > > > >;
