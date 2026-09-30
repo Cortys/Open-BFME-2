@@ -4406,3 +4406,4 @@ FUN_004CF76E	0x000CF76E	178	blocked	STL 8B vector reassign unknown 5-arg signatu
 FUN_0058f910	0x0018F910	173	blocked	WW3D SSE channel eval with unannotated float table and bit unpack needs donor triangulation t=5 model=muse-05
 ??0Rva0055B182@@QAE@ABV0@@Z	0x0055B182	166	partial	lea ecx push eax order at StringBase copy only t=15 model=muse-05 score=0.99 stash=reverse/attempts/0x0055b182.cpp
 ?Rva0012CAC3Run@@YA_NXZ	0x0012CAC3	82	blocked	chain Run-OR helper t=5 model=muse-10
+??1Rva001976F0@@UAE@XZ	0x001976F0	168	blocked	EH dtor with WeightInfo array delete via MM plus V and char array delete via V plus 3 vtable stores; caller 0x1977B0 is deleting dtor; class unknown needs donor layout and EH states t=10 model=muse-16
