@@ -44394,3 +44394,4 @@ _io_write,,0x0074ABA0,320,Code/Libraries/Source/Lua/liolib_bfme1.c,matched,Lua 4
 ?rva0044EECA@Rva0044EECA@@QAE_NPAURva0044EECAParam@@@Z,,0x0044EECA,98,Code/GameEngine/Source/GameLogic/Object/Update/Rva0044EECACheck.cpp,matched,vtable slot 37 ModuleData family via ArrowStorm HeroMode WeaponFire callers rowed 0x288609
 ?rva006E0EB0@Rva006E0EB0@@QAEPAXI@Z,,0x006E0EB0,74,Code/Libraries/Source/Apt/Rva006E0EB0DeletingDtor.cpp,matched,teardown plus conditional pool free via rowed freeBlock
 ?getLocalSlotNum@GameInfo@@UBEHXZ,,0x003FF2D6,60,Code/GameEngine/Source/GameNetwork/GameSlotApparent.cpp,matched,slot13 vtable 008193C8 BFME1 GameInfo donor
+?rva005D1F45@Rva005D1F45@@QAEHPAUIRegion2D@@H@Z,,0x005D1F45,142,Code/GameEngine/Source/Common/Rva005D1F45.cpp,matched,unlock lane caller 0x005D1FD3 rowed appends globals g_009FEF10 MessageStreamSubsystem
