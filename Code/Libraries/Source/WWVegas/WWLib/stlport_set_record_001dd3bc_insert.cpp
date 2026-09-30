@@ -46,3 +46,6 @@ template bool _STL::less<BfmeRecord001DD3BC>::operator()(const BfmeRecord001DD3B
 // _M_insert above; /D_BFME_RETAIL_TREE_INSERT_LAYOUT selects the vendored
 // STLport's retail insert_unique layout.
 template _STL::pair<DD3BCTree::iterator, bool> DD3BCTree::insert_unique(const BfmeRecord001DD3BC &);
+
+// set::insert(value) (retail 0x001DE7B5, 35B) forwards to the insert_unique above.
+template _STL::pair<_STL::set<BfmeRecord001DD3BC>::iterator, bool> _STL::set<BfmeRecord001DD3BC>::insert(const BfmeRecord001DD3BC &);
