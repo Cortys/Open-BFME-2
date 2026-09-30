@@ -4358,3 +4358,4 @@ FUN_0075cb07	0x0035CB07	134	blocked	vector-dtor-regalloc-wall-t18-model-muse-spa
 FUN_00a00854	0x00600854	146	blocked	five-arg-rbtree-insert-needs-donor-t10-model-muse-spark
 FUN_0044457c	0x0004457C	268	blocked	custom EAX EBX STACK convention no MSVC shape: entry mov esi eax plus test ebx ebx without save; callers mov eax esi plus mov-xor ebx before call; cannot express in clean C++ t=12 model=muse-16
 FUN_00772f00	0x00372F00	45	blocked	twin 45B POD _M_erase shape identical to rowed 0x00372ED3 modulo self-call; second tree key-mapped unknown without its insert t=12 model=muse-spark
+??0AIGroup@@QAE@XZ	0x0036E4C7	151	partial	and-vs-xorps order swapped t=45 model=muse-19 score=0.95 stash=reverse/attempts/0x0036e4c7.cpp
