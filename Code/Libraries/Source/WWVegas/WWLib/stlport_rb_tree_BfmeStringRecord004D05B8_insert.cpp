@@ -13,5 +13,4 @@ public:
     static char *allocate(unsigned int bytes, const void *hint);
 };
 }
-// ?insert_unique@?$_Rb_tree@UBfmeStringRecord004D05B8@@U1@U?$_Identity@UBfmeStringRecord004D05B8@@@_STL@@U?$less@UBfmeStringRecord004D05B8@@@3@V?$allocator@UBfmeStringRecord004D05B8@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@UBfmeStringRecord004D05B8@@U?$_Nonconst_traits@UBfmeStringRecord004D05B8@@@_STL@@@_STL@@_N@2@ABUBfmeStringRecord004D05B8@@@Z present-unmatched
 template _STL::pair<UBfmeStringRecord004D05B8SetTree::iterator, bool> UBfmeStringRecord004D05B8SetTree::insert_unique(const UBfmeStringRecord004D05B8SetTree::value_type &);
