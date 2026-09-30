@@ -150,3 +150,42 @@ Rva003AF57F::Rva003AF57F(const Rva003AF57F &other)
 	: Rva003AF5AC(other)
 {
 }
+
+// ??0Rva003AF738@@QAE@ABV0@@Z @0x003AF738 98B: copy ctor with SphereEmissionVolumeInfo base at +0x1c.
+// Evidence: calls rowed base 0x003AF50D then rowed Sphere copy 0x003A67FD; neg/sbb/and null-guarded
+// adjustment of source to +0x1c for the Sphere base; vptrs at +0/+0x14/+0x18/+0x1c DIR32;
+// same Intermediate3AFC6FC pre-Sphere stores as rowed 0x003AF5AC Line version; unlocks 0x003AF70B.
+namespace FXParticleSystem
+{
+class Snapshot738
+{
+public:
+	virtual ~Snapshot738();
+};
+class EmissionVolumeInfo738 : public Snapshot738
+{
+public:
+	virtual ~EmissionVolumeInfo738();
+	bool m_flag;
+};
+class SphereEmissionVolumeInfo : public EmissionVolumeInfo738
+{
+public:
+	SphereEmissionVolumeInfo(const SphereEmissionVolumeInfo &that) throw();
+private:
+	float m_radius;
+};
+}
+
+class Rva003AF738 : public Intermediate3AFC6FC, public FXParticleSystem::SphereEmissionVolumeInfo
+{
+public:
+	Rva003AF738(const Rva003AF738 &other);
+	virtual ~Rva003AF738();
+};
+
+Rva003AF738::Rva003AF738(const Rva003AF738 &other)
+	: Intermediate3AFC6FC(other)
+	, FXParticleSystem::SphereEmissionVolumeInfo((const FXParticleSystem::SphereEmissionVolumeInfo &)other)
+{
+}
