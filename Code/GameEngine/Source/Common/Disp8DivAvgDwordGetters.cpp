@@ -60,3 +60,31 @@ BFME_DISP8_DIV_AVG_DWORD_GETTER(Rva00587305DivAvgField, 0x04, 0x00, 0x3C)
 BFME_DISP8_DIV_AVG_DWORD_GETTER(Rva005C8091DivAvgField, 0x04, 0x00, 0x48)
 BFME_DISP8_DIV_AVG_DWORD_GETTER(Rva005C80A9DivAvgField, 0x08, 0x00, 0x48)
 BFME_DISP8_DIV_AVG_DWORD_GETTER(Rva005D50F7DivAvgField, 0x04, 0x00, 0x14)
+
+// ?clear@Rva000AD6F4@@QAEXXZ @0x000AD6F4 29B: owning-pointer clear via virtual slot0 with 0 plus operator delete; callers 40+ incl Rva002D3573 dtor; no donor.
+void __cdecl operator delete(void *);
+
+struct Rva000AD6F4Base
+{
+	virtual void *virt0(unsigned int);
+};
+
+class Rva000AD6F4
+{
+public:
+	void clear();
+private:
+	Rva000AD6F4Base *m_ptr;
+};
+
+void Rva000AD6F4::clear()
+{
+	Rva000AD6F4Base *p = m_ptr;
+	m_ptr = 0;
+	void *q;
+	if (p)
+		q = p->virt0(0);
+	else
+		q = 0;
+	::operator delete(q);
+}
