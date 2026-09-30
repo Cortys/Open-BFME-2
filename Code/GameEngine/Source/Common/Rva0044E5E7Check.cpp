@@ -9,7 +9,8 @@ class Sub0044E5E7
 public:
 	char m_pad00[0x84];
 	int m_84;
-	char m_pad88[0xA8 - 0x88];
+	int m_88;
+	char m_pad8C[0xA8 - 0x8C];
 	unsigned char m_a8;
 };
 
@@ -17,6 +18,7 @@ class Rva0044E5E7
 {
 public:
 	bool rva0044E5E7();
+	bool rva0044E60D();
 private:
 	char m_pad00[4];
 	Sub0044E5E7 *m_ptr04;
@@ -37,6 +39,26 @@ bool Rva0044E5E7::rva0044E5E7()
 			goto fail;
 	}
 	if (sub->m_84 != 0)
+		return true;
+fail:
+	return false;
+}
+
+// ?rva0044E60D@Rva0044E5E7@@QAE_NXZ @0x0044E60D 38B
+// Sibling of 0x0044E5E7 in the same TU: +0x30==3 (vs 4) and sub +0x88!=0
+// (vs +0x84); same +0x7D gate and +0xA8 check. Evidence: unlock lane;
+// caller at 0x0045227F in 0x00451FA2; abuts prev 0x0044E5E7.
+bool Rva0044E5E7::rva0044E60D()
+{
+	Sub0044E5E7 *sub = m_ptr04;
+	if (m_30 != 3)
+		goto fail;
+	if (sub->m_a8 != 0)
+	{
+		if (m_7D != 0)
+			goto fail;
+	}
+	if (sub->m_88 != 0)
 		return true;
 fail:
 	return false;

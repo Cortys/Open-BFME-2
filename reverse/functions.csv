@@ -44335,3 +44335,4 @@ _LoadSize,,0x007564B0,25,Code/Libraries/Source/Lua/lundump.c,matched,carried fro
 ??$__find@PAUBfmePod104@@U1@@_STL@@YAPAUBfmePod104@@PAU1@0ABU1@ABUrandom_access_iterator_tag@0@@Z,,0x0040A705,118,Code/Libraries/Source/WWVegas/WWLib/stlport_pod_vector_bodies.cpp,matched,unlock stride 0x68 Pod104 unrolled find
 ?rva0044EAF3@Rva0044EAF3@@QAEPAV1@HIII@Z,,0x0044EAF3,88,Code/GameEngine/Source/Common/Rva0044EAF3Init.cpp,matched,unlock lane memset bitfield init returning this
 ?rva0044E5E7@Rva0044E5E7@@QAE_NXZ,,0x0044E5E7,38,Code/GameEngine/Source/Common/Rva0044E5E7Check.cpp,matched,unlock lane predicate over 0x30 and sub 0x84
+?rva0044E60D@Rva0044E5E7@@QAE_NXZ,,0x0044E60D,38,Code/GameEngine/Source/Common/Rva0044E5E7Check.cpp,matched,unlock lane sibling predicate 0x30is3 sub 0x88
