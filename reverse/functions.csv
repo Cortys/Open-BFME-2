@@ -43290,3 +43290,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva00562945@Rva00562945@@QAEXPAVXfer@@@Z,,0x00562945,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00562945Xfer.cpp,matched,containing xfer via member at 0x18
 ??0Rva0056224F@@QAE@XZ,,0x0056224F,87,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0056224FCtor.cpp,matched,frameless ctor 1.0f plus zeroes plus vtable
 ??0Rva00406BB0@@QAE@ABV0@@Z,,0x00406BB0,67,Code/GameEngine/Source/Common/Rva00406BB0CopyCtor.cpp,matched,copy ctor vtable via inline base member string via rowed copy
+??1Rva004209CC@@UAE@XZ,,0x004209CC,65,Code/GameEngine/Source/Common/Rva004209CCDtor.cpp,matched,dtor vtable free plus base GameEngineDeletingBase
