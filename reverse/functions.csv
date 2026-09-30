@@ -44452,3 +44452,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva005977D3@Rva005977D3@@QAEXXZ,,0x005977D3,74,Code/GameEngine/Source/GameLogic/Object/Die/Rva005977D3.cpp,matched,prune vector at 0x18 via TheGameLogic erase and slot0 caller 0x00597FC5
 ?rva0023CF8B@GameLogic@@QAEXXZ,,0x0023CF8B,67,Code/GameEngine/Source/GameLogic/System/GameLogicRva0023CF8B.cpp,matched,GameLogic timeouts at 0x130 via TheNetwork count and timeGetTime
 ??0Rva005D1A6C@@QAE@XZ,,0x005D1A6C,13,Code/GameEngine/Source/Common/Rva005D1A6C.cpp,matched,unlock lane ctor vtable g_00C42518 plus zero
+?rva005D1F14@Rva005D1F14@@QAEHHH@Z,,0x005D1F14,14,Code/GameEngine/Source/Common/Rva005D1F14.cpp,matched,unlock lane flag byte plus8 ret selects 5 vs minus1
