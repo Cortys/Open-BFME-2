@@ -3926,3 +3926,8 @@ FUN_006d84f6	0x002D84F6	225	blocked	register entry via edi-eax plus xfer throw n
 ?Rva002F1CDDSetXfer@@YAXPAVXfer@@PAV?$set@HU?$less@H@_STL@@V?$allocator@H@2@@_STL@@@Z	0x002F1CDD	196	blocked	set-Xfer 196B needs Xfer vtable slots 0x28 0x2C 0x78 0x08 mapping plus version throw RB вторым t=10 model=muse-08
 ?rva0025C3AA@Rva0025C3AA@@QAEXXZ	0x0025C3AA	196	blocked	Display layout 196B x87 SSE 4 virtuals plus 2 float globals needs full Display vtable mapping t=10 model=muse-08
 ?rva003F4D09@Rva003F498A@@QAEPAXXZ	0x003F4D09	160	blocked	nested idiv finder shared-NULL shape 14B short t=15 model=muse-spark
+??$lower_bound@PAUBfmePod40@@U1@@_STL@@YAPAUBfmePod40@@PAU1@0ABU1@@Z	0x00540301	35	blocked	wrapper 28 vs 35 same wall as Pod28 0x005414C2 comp stosb plus edi save version mismatch t=18 model=muse-12
+?rva0038AD81@Rva0038AD81@@QAEXPADHH@Z	0x0038AD81	69	blocked	missing EH prolog plus state stores ours44 vs retail69 IAT free vs rowed free t=20 model=muse-12
+??1Rva001F4B01@@UAE@XZ	0x001F4B01	70	blocked	ctor-dtor with EH state 3 plus Erase Particle plus 4x global stores ours55 vs retail70 missing EH prolog plus multi-load t=15 model=muse-12
+?Rva004A4C3FBuildNonDup@@YAXHHQAH@Z	0x004A4C3F	67	blocked	donor buildNonDup ours75 vs retail67 missing mov eax range plus mov ebx idxList suggests reg args t=20 model=muse-12
+?Rva00331A46Copy@@YAXPAXHH@Z	0x00331A46	75	blocked	complex EH copy loop with Rva002DFC30 ctors plus StringBase release unclear 3-arg types t=12 model=muse-12

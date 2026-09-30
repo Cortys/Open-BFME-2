@@ -26,9 +26,10 @@ Rva000C2980::~Rva000C2980() {}
 void Rva000C2980_Delete(Rva000C2980 *p) { delete p; }
 
 // ??_GRva000D1E88@@UAEPAXI@Z @0x000D1E6C 28B; calls pinned ??1 at 0x000D1E88
-class Rva000D1E88 { public: __declspec(noinline) virtual ~Rva000D1E88(); };
-// ??1Rva000D1E88@@UAE@XZ present-unmatched
-Rva000D1E88::~Rva000D1E88() {}
+void __cdecl operator delete[](void *p) throw();
+extern int g_bfmeVftBVJS[];
+class Rva000D1E88 { public: __declspec(noinline) virtual ~Rva000D1E88(); private: int _pad04; void *m_arr08; };
+Rva000D1E88::~Rva000D1E88() { delete[] (char *)m_arr08; *(int **)this = g_bfmeVftBVJS; }
 void Rva000D1E88_Delete(Rva000D1E88 *p) { delete p; }
 
 // ??_GRva000D1BA6@@UAEPAXI@Z @0x000D208D 28B; calls pinned ??1 at 0x000D1BA6
