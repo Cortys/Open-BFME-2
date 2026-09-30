@@ -37,6 +37,7 @@ public:
     void PopAndPush(int nItems, BfmeAptValue006DCD20 *pValue);
     void rva006FE050(int nItems);
     void rva006FE880(int nItems, BfmeAptValue006DCD20 *pValue);
+    void rva006FDE50();
     ~AptBasePtrStack();
 
     int m_nElements;
@@ -116,4 +117,24 @@ AptBasePtrStack::~AptBasePtrStack()
         }
         g_pChainBlockAllocator->freeBlock(m_aElements, m_nCapacity * 4);
     }
+}
+
+void AptBasePtrStack::rva006FDE50()
+{
+    if (m_nElements != 0) {
+        g_bfmeAptAssertAtE17734("m_nElements == 0", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x68);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (m_aElements) {
+        if (!g_bfmeAptFreeSizeAtE17730) {
+            g_bfmeAptAssertAtE17734("gAptFuncs.pfnMemFreeSize", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_AptBasePtrStack.h", 0x6B);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+        g_pChainBlockAllocator->freeBlock(m_aElements, m_nCapacity * 4);
+    }
+    m_nCapacity = 0;
+    m_nElements = 0;
+    m_aElements = 0;
 }
