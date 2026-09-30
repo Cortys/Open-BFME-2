@@ -1,7 +1,3 @@
-// ?rva00512CE9@Rva00512CE9@@QAEXH_N@Z
-// partial score=0.98 date=2026-09-30
-// ?rva00512CE9@Rva00512CE9@@QAEXH_N@Z
-// partial score=0.98 date=2026-09-29
 // cl: /O1 /MD
 //
 // ?rva00512CE9@Rva00512CE9@@QAEXH_N@Z, retail 0x00512CE9, 94 bytes.
@@ -11,7 +7,7 @@
 // and stores bool to +0x286 indexed array. Callers at 0x4D45F6 etc.
 // Flags /O1 /MD (EBP frame, sprintf IAT, no EH, no STL).
 
-extern "C" int __cdecl sprintf(char *buffer, const char *format, ...) __declspec(dllimport);
+extern "C" __declspec(dllimport) int __cdecl sprintf(char *buffer, const char *format, ...);
 
 class Rva00222A8BTarget
 {
@@ -19,7 +15,7 @@ public:
 	void invoke(void *owner, const char *name, int flag, const char *value, void *a4, void *a5, void *a6, void *a7);
 };
 
-extern Rva00222A8BTarget *TheAptPlayer;
+extern Rva00222A8BTarget *g_Va009FE4CC;
 
 class Rva00512CE9
 {
@@ -37,6 +33,6 @@ void Rva00512CE9::rva00512CE9(int player, bool show)
 	char buf[32];
 	sprintf(buf, "%d", player);
 	const char *which = show ? "ShowKickButton" : "HideKickButton";
-	TheAptPlayer->invoke(m_274, which, 1, buf, 0, 0, 0, 0);
+	g_Va009FE4CC->invoke(m_274, which, 1, buf, 0, 0, 0, 0);
 	m_286[player] = show;
 }
