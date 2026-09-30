@@ -43189,3 +43189,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?Rva001804CBCreate@@YAXPBDHH@Z,,0x001804CB,92,Code/GameEngine/Source/Common/Rva001804CBCreate.cpp,matched,chain of Rva001803D3 via plain new null-tolerant
 ??0Rva001805E0@@QAE@PBDHH@Z,,0x001805E0,77,Code/GameEngine/Source/Common/Rva001805E0Ctor.cpp,matched,twin of Rva001803D3 ctor unlocks 0x001806D8
 ??0Rva0027C36A@@QAE@ABV0@@Z,,0x0027C410,228,Code/GameEngine/Source/Common/Rva0027C36ACopyCtor.cpp,matched,copy ctor of Rva0027C36A via pointer-increment loop with fld float
+?rva00257252@Rva00257252@@QAEAAUBfmePod16@@ABH@Z,,0x00257252,92,Code/Libraries/Source/WWVegas/WWLib/stlport_map_int_pod16_subscript.cpp,matched,chain via 0x00256F67 insert caller 0x0025740B
