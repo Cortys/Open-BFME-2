@@ -43386,3 +43386,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Rva00414093@@QAE@ABV0@@Z,,0x00414093,61,Code/GameEngine/Source/Common/Rva00414093Copy.cpp,matched,chain copy ctor calls rowed vector 0x002CFAB9 and just-landed tree copy 0x00413EE6 at plus 0xC
 ?rva003F4944@Rva003F498A@@QAEXPAVRva003F498ACallback@@@Z,,0x003F4944,70,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain scan outers via rowed 0x003F4342 same file
 ?rva004EE35D@Rva004EE35D@@QAEHABV?$BitFlags@$0HE@@@0@Z,,0x004EE35D,78,Code/GameEngine/Source/Common/Rva004EE35D.cpp,matched,unlock RB sum with BitFlags filter via rowed callees
+?push_back@?$vector@VRva0052BEF0@@V?$allocator@VRva0052BEF0@@@_STL@@@_STL@@QAEXABVRva0052BEF0@@@Z,,0x00566417,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0052bef0_pushback.cpp,matched,STLport vector Rva0052BEF0 pushback chain from overflow
