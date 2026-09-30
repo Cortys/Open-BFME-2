@@ -44925,3 +44925,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva00403927@@QAE@ABV0@@Z,,0x004039BD,35,Code/Libraries/Source/WWVegas/WWLib/Rva00403927Assign.cpp,matched,copy ctor same layout as operator equals via rowed vector copy ctor
 ?DoXfer@LivingWorldRegionConnection@@UAEXAAVXfer@@@Z,,0x003F3054,70,Code/GameEngine/Source/Common/System/LivingWorldRegionConnectionXfer.cpp,matched,Snapshot DoXfer Version plusAscii plus int plus vector helpers
 ??0Rva004FADF4@@QAE@II@Z,,0x004FADF4,64,Code/GameEngine/Source/Common/System/Rva004FADF4Ctor.cpp,matched,base II ctor 0x0059B7CB plus base 0x004FAC6B plus BfmeE16 Vector_base 0x00211E58 vptrs caller 0x004FAFB6
+?rva004FAFB6@Rva004FAC21@@QAEPAVRva004FADF4@@I@Z,,0x004FAFB6,60,Code/GameEngine/Source/Common/System/Rva004FAFB6Factory.cpp,matched,chain via Rva004FADF4 0x004FADF4 new 0x30 EH vtable 0x008633B0 slot1
