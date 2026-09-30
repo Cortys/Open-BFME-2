@@ -43293,3 +43293,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??1Rva004209CC@@UAE@XZ,,0x004209CC,65,Code/GameEngine/Source/Common/Rva004209CCDtor.cpp,matched,dtor vtable free plus base GameEngineDeletingBase
 ??0Rva0031F7EB@@QAE@XZ,,0x0031F7EB,70,Code/GameEngine/Source/Common/Rva0031F7EBCtor.cpp,matched,unlock ctor via sibling 0x0031F7AB pattern plus split stores
 ??0Rva0052BDE6@@QAE@ABV0@@Z,,0x0052BDE6,77,Code/GameEngine/Source/Common/System/Rva0052BDE6CopyCtor.cpp,matched,Copy ctor two strings via pinned StringBase copy 0x000365F0 caller 0x0052C369 unlocks 0x0052C34D
+?rva0052DC97@Rva0052DC97@@QAEHPBVRva002E6C79@@@Z,,0x0052DC97,170,Code/GameEngine/Source/Common/Rva0052DC97.cpp,matched,unlock cost dot cast int ptr
