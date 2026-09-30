@@ -42968,3 +42968,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva0007882FGet@@YAPAVFile@@PBDHH@Z,,0x0007882F,128,Code/GameEngineDevice/Source/W3DDevice/GameClient/Rva0007882FGet.cpp,matched,Chain File opener via GameFileClass 0x214 plus rowed wrapper via TheFileSystem
 ?Rva0032B389Join@@YA?AVAsciiString@@ABV1@0@Z,,0x0032B389,98,Code/GameEngine/Source/GameLogic/Map/Rva0032B389Join.cpp,matched,path join tmp slash concat sret 12 callers SidesList neighbour
 ??4Rva002AF6C5Element@@QAEAAU0@ABU0@@Z,,0x002AF505,57,Code/GameEngine/Source/Common/System/Rva002AF6C5ElementAssign.cpp,matched,copy-loop caller 0x002AF6E1 link bonus
+??_GRva00216108@@QAEPAXI@Z,,0x002161C2,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00216108.cpp,matched,deleting dtor calls rowed inner dtor chain from 0x00216108
