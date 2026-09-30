@@ -35,7 +35,9 @@ public:
 	bool m_scriptDebug;     // +0x9C1
 	bool m_particleEdit;    // +0x9C2
 };
-extern GlobalData *TheGlobalData;
+// Matched DIR32 sites for TheGlobalData resolve to VA 0x00DFE758, whose retail
+// zero-filled slot starts null.
+GlobalData *TheGlobalData = 0;
 extern bool TheDebugWindowLite;
 
 class SubsystemInterface
@@ -128,6 +130,11 @@ private:
 	double m_totalUpdateTime;  // +0x1A4E8
 	double m_maxUpdateTime;    // +0x1A4F0
 };
+
+// Matched DIR32 sites in ScriptEngine and action/condition bodies place this
+// singleton pointer at VA 0x00DFE16C; the retail image's zero-filled slot
+// starts null.
+ScriptEngine *TheScriptEngine = 0;
 
 void ScriptEngine::init()
 {

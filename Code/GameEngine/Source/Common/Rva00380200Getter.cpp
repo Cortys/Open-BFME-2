@@ -4,7 +4,14 @@ class AsciiString
 {
 public:
 	static AsciiString TheEmptyString;
+
+private:
+	void *m_data;
 };
+
+// Matched DIR32 references place this static object at VA 0x00DE0878. Its
+// four retail bytes are zero, the null StringBase buffer of an empty string.
+AsciiString AsciiString::TheEmptyString;
 
 class Rva00380200
 {

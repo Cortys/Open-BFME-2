@@ -19,7 +19,9 @@ public:
 	ParticleSystemTemplate *findTemplate(const AsciiString &name) const;
 };
 
-extern ParticleSystemManager *TheParticleSystemManager;
+// Matched DIR32 sites in particle/manager users place this singleton pointer
+// at VA 0x00DFDD04; retail's zero-filled slot starts null.
+ParticleSystemManager *TheParticleSystemManager = 0;
 
 class INI
 {

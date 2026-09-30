@@ -96,7 +96,9 @@ private:
 	TAiData *m_aiData;			// +0x18
 };
 
-extern AI *TheAI;
+// Matched DIR32 references in AIPlayer, Object and GettingBuiltBehavior place
+// TheAI at VA 0x00DFF0F8; the retail image's zero-filled slot starts null.
+AI *TheAI = 0;
 
 class Player;
 
