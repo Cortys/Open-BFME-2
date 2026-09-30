@@ -44824,3 +44824,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?readDict@DataChunkInput@@QAE?AVDict@@XZ,,0x00307833,397,Code/GameEngine/Source/Common/System/DataChunkReadDict.cpp,matched,chain DataChunkInput readDict via BFME1 donor plus inlined Dict copy
 ?rva00059DF5@Rva00059DF5@@QAEXABVAsciiString@@H@Z,,0x00059DF5,103,Code/GameEngine/Source/Common/Rva00059DF5Method.cpp,matched,guard 0x4120E over 0x9D4 plus virtual slot 0x68 plus set insert 0x5897D at 0xA14 via G7 imul
 ?rva00059E5C@Rva00059DF5@@QAEXH@Z,,0x00059E5C,82,Code/GameEngine/Source/Common/Rva00059DF5Method.cpp,matched,sibling of 0x59DF5 same guard plus tree clear 0x57B4B at 0xA14
+?rva000591EF@Rva000591A3@@QAEXXZ,,0x000591EF,62,Code/GameEngine/Source/Common/Rva000591A3Method.cpp,matched,sibling of 0x591A3 empty plus float vs global plus fill plus tree clear 0x57B4B

@@ -37,6 +37,7 @@ class Rva000591A3
 {
 public:
     void rva000591A3(const AsciiString &name);
+    void rva000591EF();
 private:
     char m_pad[0x9C];
     float m_9C;
@@ -54,4 +55,20 @@ void Rva000591A3::rva000591A3(const AsciiString &name)
         for (int i = 0; i < 12; ++i)
             ((int *)m_188)[i] = 0x02020202;
     }
+}
+
+// ?rva000591EF@Rva000591A3@@QAEXXZ at 0x000591EF (62B).
+// Sibling of 0x000591A3: if set empty return else if float != global fill 48B
+// then tail-jmp tree clear. Evidence: cmp [edx+0xA4] via empty() plus movss/
+// ucomiss vs g_Va00BBB8D8 plus rep stosd 0xC then lea+jmp 0x57B4B. Caller 0x59AB0.
+void Rva000591A3::rva000591EF()
+{
+    if (m_A0.empty())
+        return;
+    if (m_9C != g_Va00BBB8D8)
+    {
+        for (int i = 0; i < 12; ++i)
+            ((int *)m_188)[i] = 0x02020202;
+    }
+    m_A0.clear();
 }
