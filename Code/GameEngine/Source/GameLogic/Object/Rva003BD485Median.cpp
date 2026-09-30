@@ -59,7 +59,7 @@ void Rva003BD4E8SiftUp(Rva003BD485Keyed **base, int idx, int top, Rva003BD485Key
 // larger child, drops the last slot in when the child runs even with len,
 // then tail-calls the 5-push sift-up at 0x003BD4E8. Chain lane on 0x003BD4E8;
 // callers 0x003C3AC7/0x003C3AF0 push 5 args (cdecl, ret with caller cleanup).
-void Rva003BD4E8SiftUp(Rva003BD485Keyed **base, int idx, int top, Rva003BD485Keyed *pivot, int extra);
+typedef void (__cdecl *Rva003BD4E8SiftUp5)(Rva003BD485Keyed **, int, int, Rva003BD485Keyed *, int);
 
 void Rva003BE553AdjustHeap(Rva003BD485Keyed **base, int hole, int len, Rva003BD485Keyed *value, int extra)
 {
@@ -78,7 +78,7 @@ void Rva003BE553AdjustHeap(Rva003BD485Keyed **base, int hole, int len, Rva003BD4
 		base[hole] = base[child - 1];
 		hole = child - 1;
 	}
-	Rva003BD4E8SiftUp(base, hole, top, value, extra);
+	((Rva003BD4E8SiftUp5)Rva003BD4E8SiftUp)(base, hole, top, value, extra);
 }
 
 // ?Rva003C3AF0MakeHeap@@YAXPAPAURva003BD485Keyed@@0H@Z @0x003C3AF0 60B.
