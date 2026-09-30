@@ -159,6 +159,7 @@ static Bool parseScreenRect(char *token, char *buffer, Int *x, Int *y, Int *widt
 // Codegen scaffold: MSVC only drops the two unused char* parameters for a
 // file-static with a visible caller, and parseScreenRect's only caller is
 // parseWindow at 0x00316E8F. External linkage keeps the scaffold emitted.
+// ?parseScreenRectCaller absent-from-retail
 Bool parseScreenRectCaller(Int *x, Int *y, Int *w, Int *h)
 {
 	return parseScreenRect(0, 0, x, y, w, h);

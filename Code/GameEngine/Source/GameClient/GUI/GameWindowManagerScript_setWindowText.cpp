@@ -177,6 +177,7 @@ static void setWindowText(GameWindow *window, AsciiString textLabel)
 // Codegen scaffold: MSVC only assigns the private parser ABI to a static with a
 // visible caller, and setWindowText's only caller is createWindow (0x00316BD2).
 // External linkage keeps the scaffold emitted.
+// ?setWindowTextCaller absent-from-retail
 GameWindow *setWindowTextCaller(GameWindow *w, AsciiString textLabel)
 {
 	GameWindow *window = w;
