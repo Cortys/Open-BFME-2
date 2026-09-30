@@ -19,10 +19,14 @@ struct Coord3D
 class BfmeBoundaryGeometry3D
 {
 public:
-	float bfmeZDeltaToCenter(void) const;
-
 	char m_prefix[0x14];
 	float m_radius;
+};
+
+class Rva0073A1C0FloatField
+{
+public:
+	float get(void) const;
 };
 
 class Object
@@ -48,7 +52,7 @@ float distCalcProc_BoundaryAndBoundary_3D(
 	delta.z -= position->z;
 
 	BfmeBoundaryGeometry3D *geometry = candidate->getGeometry();
-	delta.z += geometry->bfmeZDeltaToCenter();
+	delta.z += ((Rva0073A1C0FloatField *)geometry)->get();
 
 	BfmeBoundaryGeometry3D *geometry2 = candidate->getGeometry();
 	float distanceSquared = delta.y * delta.y + delta.x * delta.x;
