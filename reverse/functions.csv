@@ -43954,3 +43954,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva00317C68Append@@YAAAVAsciiString@@AAV1@PBD@Z,,0x00317C68,56,Code/GameEngine/Source/Common/Rva00317C68Concat.cpp,matched,free concat helper via global CharSource plus concat row; same EH shape as setter
 ?rva00156640@Rva001553C0@@QAEXXZ,,0x00156640,50,Code/Libraries/Source/WWVegas/WW3D2/Rva001553C0Clear.cpp,matched,chain from 0x001553C0 rowed callee prev Reset same dir
 ??0Rva000F0AF7@@QAE@XZ,,0x000F0AF7,110,Code/GameEngine/Source/Common/Rva000F0AF7Ctor.cpp,matched,ctor two HashTableClass 0x800 caller 0x000F1A32
+?rva000F0803@Rva000F26DC@@QAEXH@Z,,0x000F0803,47,Code/GameEngine/Source/Common/Rva000F26DCFree.cpp,matched,slot free via dtor 0x000F26DC loop 160 caller 0x000F16B4
