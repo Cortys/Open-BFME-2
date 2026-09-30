@@ -43770,3 +43770,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva006C0810@Rva006C0810@@QAEXPBURegion3D@@M@Z,,0x006C0810,8,Code/GameEngine/Source/Common/Rva006C0810.cpp,matched,tail jmp via plus10 grid to rowed bfmeSetRegion chain
 ??0Rva00406BB0@@QAE@ABV?$StringBase@G@@H@Z,,0x00406B6A,70,Code/GameEngine/Source/Common/Rva00406BB0Ctor.cpp,matched,layout from copy ctor 0x00406BB0 wide copy 0x00037050 int plus8 Init 0x00220DCD
 ?Rva00406F51Find@@YG_NPBVRva002B224BDwordField@@PAX1@Z,,0x00406F51,75,Code/GameEngine/Source/Common/Rva00406F51Find.cpp,matched,array via get 0x002B224B virtual A8 plus38 stdcall bool
+?rva00406F9C@Rva00406F9C@@QAE_NPBX@Z,,0x00406F9C,35,Code/GameEngine/Source/Common/Rva00406F9CCheck.cpp,matched,32 dword intersect abuts 0x00406F51 unblocks 11
