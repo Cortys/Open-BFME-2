@@ -110,3 +110,11 @@ void NameKeyGenerator::freeSockets()
 	// so call through that rowed spelling; same lea+jmp shape as the donor.
 	((std::hash_map<NameKeyType, ArmorTemplate, rts::hash<NameKeyType>, rts::equal_to<NameKeyType> > &)keyToBucketMap()).clear();
 }  // end freeSockets
+
+// ?reset@NameKeyGenerator@@UAEXXZ 0x00148C41 84B chain from freeSockets 0x00148B42; ZH reset plus BFME lock; sets m_nextID at this+0x2bf48
+void NameKeyGenerator::reset()
+{
+	ScopedCriticalSection scopedCriticalSection(&m_mutex);
+	freeSockets();
+	m_nextID = 1;
+}  // end reset
