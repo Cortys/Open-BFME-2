@@ -3786,3 +3786,4 @@ FUN_007f5a72	0x003F5A72	204	blocked	Xfer ScienceType vector needs BFME2 Xfer slo
 ?Rva00173BD4MakeHeap@@YAXPAUBfmeAssignRecord32@@0P6A_NABU1@1@Z@Z	0x00173BD4	25	blocked	forwarder pushes 0 0 plus 3 args to 5-arg __make_heap at 0x00173A60 currently rowed 3-arg Rva; needs internal arity fix to 5-arg t=10 model=muse-spark
 FUN_0082245F	0x0042245F	229	blocked	thiscall float SSE x87 loop needs owner layout divergent from STL streak t=5 model=muse-spark
 ?rva002E6F92@Rva002E6F92@@QAEHHPAUIn002E6F92@@HH@Z	0x002E6F92	77	partial	77B exact size scheduling xmm store order early vs late t=20 model=muse-04 score=0.9 stash=reverse/attempts/0x002e6f92.cpp
+FUN_0048619A	0x0048619A	327	blocked	eax-ebx reg args plus x87-SSE mix crushdie fam t=8 model=muse-11
