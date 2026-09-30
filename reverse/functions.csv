@@ -44958,3 +44958,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva006F6AC0@Rva006F6AC0@@QAEXHPAPAX0@Z,,0x006F6AC0,188,Code/Libraries/Source/Apt/AptDisplayList.cpp,matched,AptDisplayList depth lookup ppPrev ppItem nDepth
 ?rva006F6D30@Rva006F6D30@@QAEXPAX@Z,,0x006F6D30,45,Code/Libraries/Source/Apt/AptDisplayList.cpp,matched,GC mark walk next 0x54 triple get setGCMark slot34
 ?Rva0051318ESet@@YGXHH@Z,,0x0051318E,140,Code/GameEngine/Source/Common/Rva0051318EVotes.cpp,matched,Disconnect votes update via Apt format and bfmeSetText
+??$_Construct@VRva004E32F2@@V1@@_STL@@YAXPAVRva004E32F2@@ABV1@@Z,,0x0052D4A2,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_rva004e32f2.cpp,matched,chain calls 0x0052D477 same 45B EH shape as rowed Construct
