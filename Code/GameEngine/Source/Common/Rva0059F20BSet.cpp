@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?Rva0059F20BSet@@YAXHABVUnicodeString@@@Z @ 0x0059F20B (85B).
 // Free Apt connecting-player name setter: formats local AsciiString with
@@ -12,23 +12,7 @@
 // and global. Callers 0x0059F3EA/0x0059FB2D.
 class UnicodeString;
 
-class AsciiString
-{
-public:
-	AsciiString()
-	{
-		m_data = 0;
-	}
-	void __cdecl format(const char *format, ...);
-	~AsciiString()
-	{
-		releaseBuffer();
-	}
-
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class BfmeAptWindowManager
 {
@@ -52,16 +36,6 @@ void __cdecl Rva0059F296Set(int id, const UnicodeString &u)
 	g_009FE4CC->bfmeSetText(tmp, u, false);
 }
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	StringBase();
-	StringBase(const StringBase<T> &other);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	void *m_data;
-};
 
 class UnicodeString : public StringBase<unsigned short>
 {

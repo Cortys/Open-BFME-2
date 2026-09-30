@@ -1,14 +1,10 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?rva003F8443@Rva003F8443@@QAEPAURva002E1948Entry@@H@Z @0x003F8443 25B.
 // Index AsciiString array at +0xC and find via rowed Rva002B48E1.
 // Evidence: chain lane; callee rowed 0x002B48E1; global 0x009FEF10;
 // callers at 0x003F8A65 0x003F8AC3 0x003F8C93; unblocks 0x003F88BC.
-class AsciiString
-{
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct Rva002E1948Entry;
 

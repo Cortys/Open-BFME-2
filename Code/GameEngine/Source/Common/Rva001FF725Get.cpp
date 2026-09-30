@@ -1,15 +1,10 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?Rva001FF725Get@@YG?AW4ScienceType@@ABVAsciiString@@@Z @0x001FF725 30B
 // Unlock lane: if AsciiString empty return SCIENCE_INVALID (-1) else tail-jmp
 // to NameKeyGenerator::nameToKey via TheNameKeyGenerator. Callers include
 // 0x003062B6 0x003BC6E6 grantScience path. Via rowed isEmpty 0x00001E2F.
-template <class T> class StringBase {
-public:
-	bool isEmpty() const;
-};
-class AsciiString : public StringBase<char> {
-};
+#include "ascii_string.h"
 enum ScienceType { SCIENCE_INVALID = -1 };
 enum NameKeyType { NAMEKEY_INVALID = -1 };
 class NameKeyGenerator {

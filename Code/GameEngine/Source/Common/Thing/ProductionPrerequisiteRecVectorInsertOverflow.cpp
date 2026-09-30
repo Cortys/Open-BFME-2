@@ -1,4 +1,4 @@
-// cl: /G7 /arch:SSE /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /G7 /arch:SSE /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // ?_M_insert_overflow@?$vector@UPrereqUnitRec@ProductionPrerequisite@@V?$allocator@UPrereqUnitRec@ProductionPrerequisite@@@_STL@@@_STL@@IAEXPAUPrereqUnitRec@ProductionPrerequisite@@ABU34@ABU__false_type@2@I_N@Z,
@@ -28,17 +28,7 @@
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
 
-class AsciiString
-{
-	void *m_data;
-
-protected:
-	void releaseBuffer();
-
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
 class ProductionPrerequisite
 {

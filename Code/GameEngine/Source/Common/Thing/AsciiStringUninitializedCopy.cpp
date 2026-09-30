@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // _STL::__uninitialized_copy<AsciiString*, AsciiString*>, retail
 // 0x0002C4B2, 38 bytes. Dedicated TU so the AsciiString _Construct helper
@@ -13,26 +13,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
+#include "ascii_string.h"
 
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)""; }
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text);
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 // Opaque helper pinned at 0x0002C485 (StringBase _Construct flavor, whose
 // true _STL mangling is spent at 0x00142CC0). Declared with copy-construct

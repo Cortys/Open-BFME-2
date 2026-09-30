@@ -1,23 +1,8 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ??0Rva0042D8D4@@QAE@XZ @ 0x0042D8D4 90B: ctor with no args (ret, returns this)
 // setting m_0=-1 then m_0=TheRva00222A8BTarget virtual at +0x50 with
 // "Apt\\" and "StrategicHUD.apt" plus two zero args. Caller at 0x0023A16C proves shape.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-	void *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
+#include "ascii_string.h"
 class Rva00222A8BTarget
 {
 public:

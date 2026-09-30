@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // Owning vector teardown for BfmeContainerRecord00048139 at 0x004B193.
@@ -12,16 +12,8 @@
 // stays /EHsc green, this shard takes /GX.
 #include <vector>
 
-template <typename T> class StringBase {
-	StringBase(const StringBase &);
-	~StringBase();
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	~AsciiString();
-};
 
 struct BfmeContainerRecord00048139 {
 	AsciiString text0;

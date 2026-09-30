@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Destructor and scalar deleting destructor of an unidentified class with
 // vtable 0x00C61DC4: one string member at +4, then an empty base whose vtable
 // is 0x00BBB554. These bodies were first claimed as AttackNugget's, but the
@@ -17,14 +17,7 @@
 
 // Fold-shared string member teardown (never defined; resolves through the
 // symbols.csv pin at 0x00036410).
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class UnicodeString;
 class PooledString;

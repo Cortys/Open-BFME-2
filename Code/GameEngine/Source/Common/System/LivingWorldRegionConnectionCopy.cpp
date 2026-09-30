@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // LivingWorldRegionConnection copy ctor.
@@ -29,21 +29,8 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-template <typename T> class StringBase
-{
-public:
-	StringBase(const StringBase &that);
+#include "ascii_string.h"
 
-protected:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &that) : StringBase<char>(that) {}
-	~AsciiString();
-};
 
 struct BfmeE8
 {

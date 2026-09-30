@@ -1,20 +1,7 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ?Rva0021C8D7AdjustHeap@@YAXPAVRva0021915B@@HHV1@URva0021B753@@@Z @0x0021C8D7 153B adjust-heap with rowed comparator assign pushheap.
 // Evidence: unlock lane all callees rowed; stride 8 plus bool-first comparator plus pushheap caller prove Rva0021915B family; same adjust shape as STL __adjust_heap with EH for non-trivial value.
-template <typename T> class StringBase {
-	friend class AsciiString;
-	StringBase(const StringBase &);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-private:
-	void *m_data;
-};
-class AsciiString : public StringBase<char> {
-public:
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 class Rva0021915B {
 public:
 	Rva0021915B(const Rva0021915B &other);

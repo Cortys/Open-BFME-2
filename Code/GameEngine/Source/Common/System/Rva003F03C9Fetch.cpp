@@ -1,4 +1,4 @@
-// cl: /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
 // ?rva003F03C9@Rva003F03C9@@QAE?AVUnicodeString@@XZ @0x003F03C9 58B
 // Honest-address thiscall returning UnicodeString via holder at
 // singleton 0x00DFEF10 +0xB0 method 0x0020EDD5 with index at this+0x5c,
@@ -8,35 +8,8 @@
 typedef unsigned short wchar_t;
 typedef bool Bool;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class Rva003F03C9;
+#include "ascii_string.h"
 
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-public:
-	Bool isEmpty() const;
-	StringBase() { m_data = 0; }
-	~StringBase() { releaseBuffer(); }
-
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString
 {

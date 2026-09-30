@@ -1,4 +1,4 @@
-// cl: /O1 /Oi /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oi /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT /arch:SSE
 // stlport
 // ?rva000591A3@Rva000591A3@@QAEXABVAsciiString@@@Z @ 0x000591A3 76B: thiscall
 // inserts AsciiString into set at +0xA0 via row 0x0005897D then if inserted
@@ -17,28 +17,8 @@ template <typename T> struct BfmeStringData
     T text[1];
 };
 
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &other);
-    void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-    StringBase() : m_data(0) {}
-    ~StringBase() { releaseBuffer(); }
-
-protected:
-    BfmeStringData<T> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

@@ -1,6 +1,6 @@
 // ??1Rva0034C5E0@@UAE@XZ
 // partial score=0.94 date=2026-09-27
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /O1 /Ob2
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /O1 /Ob2
 // stlport
 // ??1Rva0034C5E0@@UAE@XZ @ 0x0035822E (88B).
 // Dtor of small Snapshot-derived class owning an unsigned-void* RB-tree at +0x0C and AsciiString at +0x04.
@@ -24,14 +24,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = g_00BBB554;
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva005832D0Set@@YGXABVAsciiString@@@Z @0x005832D0 137B
 // Free file-transfer loading map-name setter: filename after last backslash
 // via rowed reverseFind 0x00035930, fallback to inlined str() with empty at
@@ -13,27 +13,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	const T *reverseFind(T c) const;
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)0x00BBAC1C; }
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 class BfmeAptWindowManager
 {

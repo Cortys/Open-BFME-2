@@ -1,21 +1,9 @@
-// cl: /Ireference/shims/bfmelist /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??_G?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@QAEPAXI@Z @0x004348AE 28B: deleting dtor calls rowed pair dtor 0x00434513 then operator delete 0x0002FD60 on flag; public QAE like AudioEventRTS precedent.
 // ??_GTreeHintOpaque0043671B@@QAEPAXI@Z @0x002DDE27 28B: deleting dtor calls rowed TreeHintOpaque dtor 0x00229840 then operator delete; same shape.
 #include <map>
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    void releaseBuffer();
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-};
+#include "ascii_string.h"
 class UnicodeString : private StringBase<unsigned short> {
 public:
     __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}

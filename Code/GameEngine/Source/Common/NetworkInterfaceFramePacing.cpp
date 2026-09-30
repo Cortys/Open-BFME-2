@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /GX /arch:SSE
 //
 // BFME2's native network vtable stores the concrete pacing query at +0x58.
 // The fields below are deliberately laid out from the constructor and the
@@ -113,14 +113,7 @@ int NetworkInterface::getFramePacingStatus(void)
 // Player+0x54, virtual send at +0x38 on global 0xA00954. Evidence: caller
 // 0x0025E5F4 push edi + mov ecx,esi, all callees rowed/pinned, ret 4.
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 enum NameKeyType
 {

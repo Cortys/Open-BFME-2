@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /arch:SSE /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /arch:SSE /MD /EHsc /DNDEBUG
 // ?friend_makeVeterancyUpgrade@UpgradeTemplate@@QAEXW4VeterancyLevel@@@Z @0x0026F1A5 113B
 // ZH Upgrade.cpp friend_makeVeterancyUpgrade: m_type=OBJECT m_name=getVet(v)
 // m_nameKey=NameKey m_display.clear m_buildTime=0 m_cost=0. Unlocks 0x0026FAFE.
@@ -6,24 +6,7 @@
 enum VeterancyLevel { LEVEL_REGULAR, LEVEL_VETERAN, LEVEL_ELITE, LEVEL_HEROIC };
 enum UpgradeType { UPGRADE_TYPE_OBJECT = 1 };
 enum NameKeyType { NAMEKEY_INVALID = 0 };
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	T *m_data;
-};
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &o);
-	~AsciiString() {}
-	AsciiString &operator=(const AsciiString &o);
-	void clear() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 class NameKeyGenerator
 {
 public:

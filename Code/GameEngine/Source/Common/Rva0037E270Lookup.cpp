@@ -1,16 +1,11 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ?rva0037E270@Rva0037E270@@QAEPAXXZ retail 0x0037E270 25 bytes.
 // Null-checked global lookup via 0x00DFF000 plus AsciiString at +0xd4.
 // Returns 0 when global null else rowed 0x002D06CA result. Callers
 // 0x002E1A25 0x0037E3F6 0x0037E7B4 0x0037E93E 0x0037EB8C 0x0037EFB9
 // 0x004067DD. Flags from sibling Rva002D06CAGet without EHsc.
-class AsciiString
-{
-	char *m_text;
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 class Rva002D06CA { public: void *rva002D06CA(const AsciiString *key); };
 #define TheRva00DFF000 (*(Rva002D06CA **)0x00DFF000)
 struct Rva0037E3D9Def

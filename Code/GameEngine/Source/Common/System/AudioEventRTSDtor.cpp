@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??1AudioEventRTS@@QAE@XZ, retail 0x000793FA, 53 bytes. Dedicated TU.
 //
@@ -6,18 +6,7 @@
 // teardown (0x36410 pin). The retail body follows that shape with the usual
 // cookie and state transitions; the class view matches the constructor TU.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	__forceinline ~AsciiString() { releaseBuffer(); }
-
-protected:
-	void releaseBuffer();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class AudioEventRTS
 {

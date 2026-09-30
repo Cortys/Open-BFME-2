@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0MultiplayerColorDefinition@@QAE@XZ, retail 0x00380C4E, 90 bytes.
 // Dedicated TU (the shared MultiplayerSettings.cpp TU carries the ZH-shaped
@@ -20,35 +20,8 @@
 // setFromInt calls. Called from the color-list miss path (lookup 0x3812E6)
 // and the new-color path (0x3813B7), which is the identity proof.
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-
-private:
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	void clear();
-	AsciiString(const AsciiString &other);
-	AsciiString &operator=(const AsciiString &other);
-	// Inline teardown to the 0x36410 fold (writeNameKey/openDataChunk
-	// precedent): temp destruction emits a direct releaseBuffer call, which
-	// is what retail does here. A declare-only dtor instead resolves via the
-	// evidence-free 0x6CEAD0 pin (re_log proves that address is a 57B
-	// list-destroy, not the scalar dtor) and mismatches.
-	__forceinline ~AsciiString() { releaseBuffer(); }
-
-protected:
-	void releaseBuffer();
-};
 
 struct RGBColor
 {

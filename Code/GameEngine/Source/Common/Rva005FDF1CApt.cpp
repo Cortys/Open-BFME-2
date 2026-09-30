@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?Rva005FDF1CSet@@YAXHPAURva005FDF1COuter@@ABVUnicodeString@@@Z retail 0x005FDF1C 103B
 // Evidence: format APT:_level%u.%s_PlayerName via 0x00038150; bfmeSetText via pin 0x00225301; releaseBuffer 0x00036410; globals 0x009FE4CC 0x007BAC1C; callers 0x005FE1C8 0x005FE350 0x005FE6B2; precedent Rva005D2FD0Apt.cpp
 template <typename T> struct BfmeStringData
@@ -9,26 +9,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	void format_va(const T *format, char *args);
-private:
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *format, ...);
-};
 
 class UnicodeString : private StringBase<unsigned short>
 {

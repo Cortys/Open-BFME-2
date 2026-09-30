@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ??0Rva0052BD59@@QAE@ABV0@@Z, retail 0x0052BD59, 141 bytes.
 // Copy ctor for an address-named value type holding strings at +4/+8/+0xC/+0x18,
 // dwords at +0x10/+0x14/+0x20/+0x24 and bytes at +0x1C/+0x1D with vtable
@@ -6,23 +6,8 @@
 // states 0 then 1 then 2, sole caller 0x0052C33C placement construct, unlocks
 // 0x0052C320. Sibling of Rva0052BDE6/Rva0052BE33/Rva0052BEF0 copy ctors (same
 // manual vtable recipe, no base: first string unprotected then states 0-2).
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-};
 
 extern const void *const g_00861A70[];
 
