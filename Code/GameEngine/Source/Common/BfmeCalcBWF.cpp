@@ -22,3 +22,9 @@ bool BfmeCalcBWF::bfmeCalcBWF(BfmeRetBWF *one, float angle, BfmeRetBWF *two)
 	return true;
 }
 
+
+// Shared read-only zero, following BFME1's data-provider fix (e07a7b29f).
+// Six matched BFME2 references across five sources place this scalar at
+// VA 0x00BBAEAC, whose four initialized bytes are zero. BfmeZeroRange is
+// the existing project alias; this placement does not establish a retail owner.
+extern const float BfmeZeroRange = 0.0f;
