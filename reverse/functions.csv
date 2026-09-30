@@ -43504,3 +43504,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?Rva0030BF0CEqual@@YA_NPBM00@Z,,0x0030BF0C,90,Code/GameEngine/Source/Common/Rva0030BF0CEqual.cpp,matched,float array equal NaN fail
 ??0BfmePod60@@QAE@XZ,,0x00587500,72,Code/GameEngine/Source/Common/BfmePod60Ctor.cpp,matched,caller 0x00588A81 stack temp to rowed vector resize plus rowed Region3D empty ctor immediate plus Rva00587375 copy shape
 ?Rva0042818FSwap@@YAXPAX0@Z,,0x0042818F,75,Code/GameEngine/Source/Common/Rva0042818FSwap.cpp,matched,swap via narrow copy prereq assign version dtor caller 0x00428558
+?Rva00327C61SetChecked@@YAXPAVGameWindow@@_N@Z,,0x00327C61,58,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetCheckButtonSetChecked.cpp,matched,sibling GadgetCheckLikeButtonIsChecked bit2 via lea 0x314046 and winGetStatus pin 0x30F45F
