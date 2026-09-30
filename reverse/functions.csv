@@ -44840,3 +44840,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B4CBE@Rva000B4BED@@QAEPAXPBX@Z,,0x000B4CBE,36,Code/GameEngine/Source/Common/Rva000B4BED.cpp,matched,get-next sibling of rva000B4C9D same table stride 0xF8
 ??4Rva000B435F@@QAEAAU0@ABU0@@Z,,0x000B435F,37,Code/Libraries/Source/WWVegas/WWLib/Rva000B435F.cpp,matched,12B struct copy int string int caller 0xB684C stride 0xC
 ??$__copy_backward@PAVAsciiString@@PAV1@H@_STL@@YAPAVAsciiString@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B4460,47,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_asciistring_copy_backward.cpp,matched,backward twin of forward copy at 0xB4431 via StringBase set
+??$__copy_backward@PAURva00B6CF1@@PAU1@H@_STL@@YAPAURva00B6CF1@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B44C1,47,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_copy_backward.cpp,matched,copy_backward for 8B two-string element via rowed assign at 0xB433E
