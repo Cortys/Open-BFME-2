@@ -255,3 +255,20 @@ void __cdecl Rva004162B7Notify(AsciiString a, UnicodeString u)
 	done:;
 	}
 }
+
+class GameLogic
+{
+public:
+	char m_pad[0x110];
+	int m_110;
+};
+
+extern GameLogic *TheGameLogic;
+
+void __cdecl Rva004163E1Notify(AsciiString a, UnicodeString u)
+{
+	if (TheGameLogic->m_110 != 5)
+		Rva004161F1Notify(a, u);
+	else
+		Rva004162B7Notify(a, u);
+}
