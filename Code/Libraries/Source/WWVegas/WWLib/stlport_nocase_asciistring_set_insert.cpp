@@ -28,3 +28,5 @@ template <> NoCaseSetTree::_Link_type NoCaseSetTree::_M_create_node(const AsciiS
 
 template NoCaseSetTree::iterator NoCaseSetTree::_M_insert(_STL::_Rb_tree_node_base *, _STL::_Rb_tree_node_base *, const AsciiString &, _STL::_Rb_tree_node_base *);
 template _STL::pair<NoCaseSetTree::iterator, bool> NoCaseSetTree::insert_unique(const AsciiString &);
+typedef _STL::set<AsciiString, BfmeStringNoCaseLess, _STL::allocator<AsciiString> > NoCaseStringSet;
+template _STL::pair<NoCaseStringSet::iterator, bool> NoCaseStringSet::insert(const AsciiString &);
