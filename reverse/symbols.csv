@@ -6568,3 +6568,6 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??0Rva00221635@@QAE@H@Z,0x00221635,base ctor of 0x005E16DA from its decayed call 0x5E16E1+5-3932337; body writes a vptr at +0 and a word at +4
 ?readUntilSemicolon@@YAXPAVFile@@PADH@Z,0x00314DE8,"readUntilSemicolon callee: retail REL32 target of GameWindowManagerScript parseLayoutBlock 0x0031739D (args File* and 0x800; buffer in ebx); 90B body at the Ghidra row 0x314DE8,90; reference source name readUntilSemicolon"
 ??$_Destroy@PAUBfmeVectorRecord002AF478@@@_STL@@YAXPAUBfmeVectorRecord002AF478@@0@Z,0x002B0CE7,Destroy range ICF twin of dup row call site matched in _M_clear
+?GadgetRadioSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,0x003278F1,target REL32 at the setWindowText RADIO branch 0x00316293; 71B body at 0x3278F1; name carried from the reference source GadgetRadioSetText
+?GadgetCheckBoxSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,0x00327BD4,target REL32 at the setWindowText CHECK branch 0x003162B5; 71B body begins where GadgetCheckBoxSystem 0x327B46+142 ends; name carried from the reference source GadgetCheckBoxSetText
+?winSetText@GameWindow@@QAEHVUnicodeString@@@Z,0x0031484A,non-virtual spelling for the BFME2 setWindowText direct call at 0x00316320; same 88B body rowed as the virtual ?winSetText@GameWindow@@UAEHVUnicodeString@@@Z at 0x31484A
