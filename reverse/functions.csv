@@ -42995,3 +42995,8 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva0059FF9DDo@@YAXXZ,,0x0059FF9D,108,Code/GameEngine/Source/Common/Rva0059FF9DDo.cpp,matched,record dispatch via globals plus vslot6
 ??_GRva006D6D20@@UAEPAXI@Z,,0x006D7320,35,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva006D6D20.cpp,matched,pooled deleting dtor via rowed 0x6D6D20 plus freeBlock 0x6DB270
 ?rva0059F2EB@Rva0059F2EB@@QAEXVAsciiString@@@Z,,0x0059F2EB,55,Code/GameEngine/Source/Common/Rva0059F2EBAssign.cpp,matched,byvalue assign to plusFFC via slot then release
+?Rva009A7040Average8x8@@YAXPBE0PAGH@Z,,0x001B7AA0,582,Code/GameEngine/Source/Common/SmallGaps/Rva009A7040Average8x8.cpp,matched,
+_piChannelUserJoinedA,,0x006AAE60,290,Code/GameEngine/Source/GameNetwork/GameSpy/peer/peerChannelUserJoined.cpp,matched,
+_piChannelUserPartedA,,0x006AAF90,243,Code/GameEngine/Source/GameNetwork/GameSpy/peer/peerChannelUserJoined.cpp,matched,
+?rva00809E40@Rva00809E40Owner@@QAEXPAVRva007E8810Message@@@Z,,0x00675D40,705,Code/GameEngine/Source/GameNetwork/Rva00809E40FeslAdmission.cpp,matched,
+?bfmeCheckJX@@YAHPAUCodecState@@@Z,,0x001B9410,616,Code/GameEngine/Source/Common/BfmeCheckJX.cpp,matched,
