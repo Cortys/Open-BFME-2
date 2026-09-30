@@ -3925,3 +3925,4 @@ FUN_006d84f6	0x002D84F6	225	blocked	register entry via edi-eax plus xfer throw n
 ?Rva00428372AdjustHeap@@YAXPAUVersionBlockEntry@@HHUPivot24@@VVersionBlockKeyCompare@@@Z	0x00428372	175	partial	mov ecx-esp vs mov ebp10-esp order swapped only 2 reg diffs t=15 model=muse-08 score=0.97 stash=reverse/attempts/0x00428372.cpp
 ?Rva002F1CDDSetXfer@@YAXPAVXfer@@PAV?$set@HU?$less@H@_STL@@V?$allocator@H@2@@_STL@@@Z	0x002F1CDD	196	blocked	set-Xfer 196B needs Xfer vtable slots 0x28 0x2C 0x78 0x08 mapping plus version throw RB вторым t=10 model=muse-08
 ?rva0025C3AA@Rva0025C3AA@@QAEXXZ	0x0025C3AA	196	blocked	Display layout 196B x87 SSE 4 virtuals plus 2 float globals needs full Display vtable mapping t=10 model=muse-08
+?rva003F4D09@Rva003F498A@@QAEPAXXZ	0x003F4D09	160	blocked	nested idiv finder shared-NULL shape 14B short t=15 model=muse-spark
