@@ -8,6 +8,7 @@ class Rva006F7600
 {
 public:
     void rva006F7600(int i);
+    void rva006F7570(struct Rva006F7570Item *pItem);
 private:
     void *m_items[32];
     int m_nElements;
@@ -27,4 +28,38 @@ void Rva006F7600::rva006F7600(int i)
         } while (i < m_nElements - 1);
     }
     --m_nElements;
+}
+// ?rva006F7570@Rva006F7600@@QAEXPAURva006F7570Item@@@Z @0x006F7570 134B evidence AptDisplayList APT_ARRAYSIZE assert plus sorted insert with count at +0x80; caller 0x006F77E4
+struct Rva006F7570Key {
+    int m_00;
+    int m_key;
+};
+struct Rva006F7570Item {
+    char m_pad[0x4C];
+    Rva006F7570Key *m_p;
+};
+void Rva006F7600::rva006F7570(Rva006F7570Item *pItem)
+{
+    int i = 0;
+    if (m_nElements > 0) {
+        for (; i < m_nElements; ++i) {
+            Rva006F7570Item *cur = (Rva006F7570Item *)m_items[i];
+            if (cur->m_p->m_key < pItem->m_p->m_key)
+                break;
+        }
+        if (i >= 0x20) {
+            g_bfmeAptAssertAtE17734("i < APT_ARRAYSIZE(aMasks)", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0x53D);
+            if (g_bfmeAptBreakOnAssertAtDDC01C)
+                __debugbreak();
+        }
+    }
+    int j = m_nElements;
+    if (j > i) {
+        do {
+            m_items[j] = m_items[j - 1];
+            --j;
+        } while (j > i);
+    }
+    m_items[i] = pItem;
+    ++m_nElements;
 }

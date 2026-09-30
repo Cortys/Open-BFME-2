@@ -44916,3 +44916,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?getPowerName@SpecialPowerModule@@UBE?AVAsciiString@@XZ,,0x004934B8,38,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDtor.cpp,matched,ZH getPowerName: template final-override name at +0x10 via the +0x10 interface this
 ??1SpecialPowerModule@@UAE@XZ,,0x00493DEF,184,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SpecialPowerModuleDtor.cpp,matched,ZH dtor: removeSuperweapon slot 0x8C when public timer and controlling player; inline BehaviorModule base
 ?Rva00328A8AParse@@YAXAAVDataChunkInput@@HPAX@Z,,0x00328A8A,272,Code/GameEngine/Source/Common/Rva00328A8AParse.cpp,matched,chain from 0x0030BB87 caller 0x003295B4 callees rowed
+?rva006F7570@Rva006F7600@@QAEXPAURva006F7570Item@@@Z,,0x006F7570,134,Code/Libraries/Source/Apt/Rva006F7600Remove.cpp,matched,AptDisplayList APT_ARRAYSIZE assert plus sorted insert with count at +0x80; caller 0x006F77E4
