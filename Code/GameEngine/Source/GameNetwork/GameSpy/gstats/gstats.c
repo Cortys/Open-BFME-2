@@ -577,9 +577,11 @@ statsgame_t NewGame(int usebuckets)
 /****************************************************************************/
 void FreeGame(statsgame_t game)
 {
-	if (!game)
+	/* BFME2 retail: passing the global game (not only NULL) also clears it. */
+	statsgame_t globalGame = g_statsgame;
+	if (!game || game == globalGame)
 	{
-		game = g_statsgame;
+		game = globalGame;
 		g_statsgame = NULL;
 	}
 	if (!game)
