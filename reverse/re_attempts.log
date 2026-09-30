@@ -4510,3 +4510,6 @@ FUN_00558ba0	0x00158BA0	192	blocked	FontCharsClass extent with Thai ranges needs
 FUN_00adafe0	0x006DAFE0	172	blocked	Apt Dogma pool alloc with dual asserts plus int3 no BFME1 donor t=6 model=muse-16
 FUN_00456e14	0x00056E14	63	blocked	deque copy dispatch extra push0 vendored 4.5 vs retail 4.6 wall t=12 model=muse-16
 ?Rva0041B94ACheck@@YA_NPAVObject@@0H@Z	0x0041B94A	102	partial	duplicated false epilogues vs shared plus mov al1 vs mov edx t=14 model=muse-16 score=0.95 stash=reverse/attempts/0x0041b94a.cpp
+?rva001F53CE@Rva001F53CE@@QAEMXZ	0x001F53CE	34	blocked	frameless x87 fld plus float-global under /O1 /arch:SSE|SSE2 with and without /Oy- while retail is framed SSE movss-xorps-temp-fld; /Od proves flags are read; same flags give fresh-exact SSE for BuildListInfo stores so shape-specific; offsets and branch shape verified exact; /G7 /O2 untried t=30 model=muse-spark
+FUN_005f7233	0x001F7233	181	blocked	chain double-handle Make fallback plus vtable slot 0x78; 6 probes best 189B vs 181B missing EH_prolog esi-zero branchy-bool single-slot-reuse; t=25 model=muse-06
+FUN_005f7c55	0x001F7C55	237	blocked	same wall as 0x001F7233 chain Manager-handle-Make plus vtable 0x88 and Vec4 copy; sibling needs EH_prolog esi-zero branchy-bool single-slot reuse; t=5 model=muse-06

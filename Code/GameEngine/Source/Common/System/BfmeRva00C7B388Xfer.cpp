@@ -250,6 +250,7 @@ public:
     virtual Xfer &operator==(Xfer::Version &value);
     virtual Xfer &XferRawBytes(void *data, unsigned int size);
     virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+    int rva0060DF27(const char *s);
 
 private:
     bool m_bfme04;				// +0x04: skip the indent once, after a label
@@ -585,22 +586,31 @@ Xfer &BfmeRva00C7B388::XferEnum(const char *name, void *data, unsigned int size)
 // narrow-string vector at +0x0C (rowed 0x000C0399), then stores base vtable
 // 0x00BBB910 with no base call (empty inline base). EH prolog arms state 0
 // around the vector call. Caller 0x0060DF0E.
+extern "C" void __cdecl free(void *block);
 namespace _STL
 {
 template <class T> class allocator
 {
+public:
+	allocator() {}
 };
 template <class T> class char_traits
 {
 };
 template <class C, class Tr, class A> class basic_string
 {
-	char m_pad[12];
+public:
+	basic_string(const C *s, const A &a = A());
+	~basic_string() { if (_M_start != 0) free(_M_start); }
+	char *_M_start;
+	char *_M_finish;
+	char *_M_end;
 };
 template <class T, class A> class vector
 {
 public:
 	~vector();
+	void push_back(const T &x);
 };
 }
 
@@ -609,4 +619,26 @@ BfmeRva00C7B388::~BfmeRva00C7B388()
 	typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > NarrowString;
 	typedef _STL::vector<NarrowString, _STL::allocator<NarrowString> > NarrowStringVec;
 	((NarrowStringVec *)&m_bfme0C)->~NarrowStringVec();
+}
+
+// 0x0060DF27 142B: vslot 5 of 0x00C7B388. Open-block with a label: if the
+// pending-label flag is set print the newline, always print the indent,
+// print the label format with the name (empty string when null), then push a
+// copy of the name onto the narrow-string vector at +0x0C. Returns 0.
+extern const char g_00C7B424[];
+extern const char g_Rva0107301CEmptyString[];
+int BfmeRva00C7B388::rva0060DF27(const char *s)
+{
+	if (m_bfme04) {
+		Print(this, g_00BBE498);
+		m_bfme04 = false;
+	}
+	Print(this, (const char *)0);
+	const char *t = s != 0 ? s : g_Rva0107301CEmptyString;
+	Print(this, g_00C7B424, t);
+	typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > NarrowString;
+	typedef _STL::vector<NarrowString, _STL::allocator<NarrowString> > NarrowStringVec;
+	NarrowString tmp(t);
+	((NarrowStringVec *)&m_bfme0C)->push_back(tmp);
+	return 0;
 }
