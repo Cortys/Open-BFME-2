@@ -43952,3 +43952,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?Rva0050EE72Set@@YAXHABVAsciiString@@HABVUnicodeString@@@Z,,0x0050EE72,106,Code/GameEngine/Source/Common/System/Rva0050EE72Field.cpp,matched,APT field setter via rowed format pinned bfmeSetText
 ?rva00317C34@Rva00317C34@@QAEXVAsciiString@@@Z,,0x00317C34,52,Code/GameEngine/Source/Common/Rva00317C34Set.cpp,matched,AsciiString setter at plus4 via operator pin plus releaseBuffer; same 52B shape as 0x4D65F9
 ?Rva00317C68Append@@YAAAVAsciiString@@AAV1@PBD@Z,,0x00317C68,56,Code/GameEngine/Source/Common/Rva00317C68Concat.cpp,matched,free concat helper via global CharSource plus concat row; same EH shape as setter
+?rva00156640@Rva001553C0@@QAEXXZ,,0x00156640,50,Code/Libraries/Source/WWVegas/WW3D2/Rva001553C0Clear.cpp,matched,chain from 0x001553C0 rowed callee prev Reset same dir
