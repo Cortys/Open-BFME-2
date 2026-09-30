@@ -25,6 +25,7 @@ class Rva002D06CA
 {
 public:
 	void *rva002D06CA(const AsciiString *key);
+	bool rva002D06AA(const AsciiString *key);
 private:
 	char m_pad[0x14];
 	Rva00056F61 m_table;
@@ -35,4 +36,9 @@ void *Rva002D06CA::rva002D06CA(const AsciiString *key)
 	if (it.m_node != 0)
 		return *(void **)((char *)it.m_node + 8);
 	return 0;
+}
+bool Rva002D06CA::rva002D06AA(const AsciiString *key)
+{
+	Rva0041534BIter it = m_table.rva0041534B(key);
+	return it.m_node != 0;
 }
