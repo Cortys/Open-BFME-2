@@ -3741,3 +3741,7 @@ FUN_00776c50	0x00376C50	82	blocked	loop over AsciiString vector via global Get p
 FUN_004c2bd1	0x000C2BD1	142	blocked	EH INI token plus lowercased add plus NameKey with unclear edi and globals needs donor t=10 model=muse-02
 ??0Rva006FE380@@QAE@PAVAptValue@@@Z	0x006FE380	120	partial	and-via-reg plus early p load vs retail memory-and late load t=20 model=muse-03 score=0.93 stash=reverse/attempts/0x006fe380.cpp
 ?Rva002162CFFire@@YAPAXPAX0PBDPBI@Z	0x002162CF	99	partial	eax-ecx mirror plus mov-ecx-target scheduling t=25 model=muse-03 score=0.94 stash=reverse/attempts/0x002162cf.cpp
+?handle@Gen0002857E@@QAEXXZ	0x0010ECBD	39	blocked	MilesMutexGuard ctor pin plus Gen_uw dtor pin mismatch; RAII with different ctor-dtor classes needs alternatename; EH funclet involvement t=10 model=muse-spark
+FUN_00979B17	0x00579B17	106	blocked	Apt EH_prolog with scope table 0x79BBB0 plus AsciiString format plus bfmeSetText pin; SEH machinery needs proven blocker model t=8 model=muse-spark
+?rva000AE234@Rva000AE234@@QAEEHH@Z	0x000AE234	65	blocked	grid get 64vs65 1B scheduling wall 4 regions; unsigned plus direct best; lea-vs-add plus tail order remain t=20 model=muse-spark
+?rva00180AB5@Rva00180B94_Prototype@@QAEXXZ	0x00180AB5	33	blocked	vslot6 clearTree delete-flag wall ours22 vs retail33 deleting-dtor0 plus explicit delete vs delete1; needs flag0 model t=10 model=muse-spark
