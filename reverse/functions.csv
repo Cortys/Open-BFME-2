@@ -43536,3 +43536,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?clear@DFX@DamageFX@@QAEXXZ,,0x0036059C,19,Code/GameEngine/Source/Common/DamageFX.cpp,matched,Zero Hour DamageFX::DFX::clear (zero amount then three pointer/time fields); unique masked placement (place_bodies --min 12) directly before the DamageFX parse helpers
 ?rva00205A8D@Rva00205A8D@@QAEXPAUArg205A8D@@@Z,,0x00205A8D,107,Code/Libraries/Source/WWVegas/WWLib/StringSearch205A8D.cpp,matched,string search 0xCA stride 0x80 via rowed compare caller 0x206E63
 ?Rva00327C39Get@@YA_NPAVGameWindow@@@Z,,0x00327C39,40,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetCheckButtonState.cpp,matched,bit25 or 0x80000 via two winGetStatus pins 5 callers in push input
+??0Rva0055BC8B@@QAE@XZ,,0x0055BC8B,71,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0055BC8B.cpp,matched,ctor eight RGBColorKeyframe at plus4 via rowed 0x1E67 float at plus0x84 vtable 0x0081D1A4
