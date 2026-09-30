@@ -3908,3 +3908,4 @@ FUN_00293D3B	0x00293D3B	113	blocked	unlock 113B Object list via 0x108 needs 2-ar
 ??0Rva00126350@@QAE@ABV0@@Z	0x001263B7	104	partial	mov ecx esi plus state 5B early vs late t=25 model=muse-08 score=0.95 stash=reverse/attempts/0x001263b7.cpp
 ?Rva0030BFE8Equal@@YAHPBURva0030BFE8Range@@0@Z	0x0030BFE8	61	partial	branchy bool-int tail plus jne vs je t=30 model=muse-04 score=0.93 stash=reverse/attempts/0x0030bfe8.cpp
 ??0CountUpTransition@@QAE@XZ	0x0035F64A	74	blocked	vtable late plus or-vs-mov plus ordering plus eax-vs-ecx t=20 model=muse-spark
+?Rva00360DB9Do@@YGXPAVIface00360DB9@@PAUVec00360DB9@@1@Z	0x00360DB9	171	blocked	private StringBase ctor plus releaseBuffer plus 32 virtuals plus idiv-vs-sar t=15 model=muse-spark
