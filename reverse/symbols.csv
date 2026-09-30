@@ -6675,3 +6675,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?get_allocator@?$vector@VRva004E32F2@@V?$allocator@VRva004E32F2@@@_STL@@@_STL@@QBE?AV?$allocator@VRva004E32F2@@@2@XZ,0x0021983A,address read from the REL32 displacement at byte-matched body 0x0052D4F5
 ??0?$_Vector_base@VRva004E32F2@@V?$allocator@VRva004E32F2@@@_STL@@@_STL@@QAE@IABV?$allocator@VRva004E32F2@@@1@@Z,0x000B63B2,address read from the REL32 displacement at byte-matched body 0x0052D4F5
 ??$__uninitialized_copy@PBVRva004E32F2@@PAV1@@_STL@@YAPAVRva004E32F2@@PBV1@0PAV1@ABU__false_type@0@@Z,0x0052D4CF,ICF twin of rowed PAV worker via call at 0x0052D4F5 same 24B stride
+?loadPostProcess@BehaviorModule@@MAEXXZ,0x000B3FD0,BehaviorModule::loadPostProcess only forwards to empty bases and folds into the shared empty ret at 0x000B3FD0; UpdateModule::loadPostProcess (0x0058B03E) tail-jumps there
