@@ -43367,3 +43367,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ?rva0028B72A@Object@@QBEXXZ,,0x0028B72A,31,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028B72A.cpp,matched,module broadcast slot44
 ??0Rva00546CAD@@QAE@XZ,,0x00546C57,40,Code/GameEngine/Source/Common/Rva00546CADCtor.cpp,matched,stores vtable 0x0086A3C4 base rowed 0x005488C5 clears plus 3 floats via xorps-movss caller 0x00354FFA
 ??0Rva00546F61@@QAE@XZ,,0x00546F03,44,Code/GameEngine/Source/Common/Rva00546F61Ctor.cpp,matched,stores vtable 0x0086A420 base rowed 0x005488C5 byte plus 3 floats via xorps-movss caller 0x00354FCC
+?rva003F4FBD@Rva003F498A@@QAEPAXPAX@Z,,0x003F4FBD,23,Code/Libraries/Source/WWVegas/WWLib/Rva003F498ALoops.cpp,matched,chain via 0x003F4DEE then 0x003F44A9 same file

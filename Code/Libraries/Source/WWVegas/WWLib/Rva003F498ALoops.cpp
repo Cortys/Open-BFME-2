@@ -50,12 +50,18 @@ public:
     int rva003F4831();
     Rva003F498AOuter *rva003F4634(void *p);
     void *rva003F4DEE(void *p);
+    void *rva003F4FBD(void *p);
 };
 
 struct Rva003F4CC0Inner;
 class Rva003F4CC0 {
 public:
     Rva003F4CC0Inner *rva003F4CC0(int id);
+};
+
+class Rva003F44A9 {
+public:
+    void *rva003F44A9();
 };
 
 void Rva003F498A::rva003F498A(Rva003F498ACallback* cb)
@@ -195,4 +201,13 @@ void *Rva003F498A::rva003F4DEE(void *p)
 {
     Rva003F498AOuter *o = rva003F4634(p);
     return o ? ((Rva003F4CC0 *)o)->rva003F4CC0((int)p) : 0;
+}
+
+// ?rva003F4FBD@Rva003F498A@@QAEPAXPAX@Z @0x003F4FBD 23B chain via rowed 0x003F4DEE then rowed 0x003F44A9; callers 0x0020FC99 0x002410B5; same file flags
+void *Rva003F498A::rva003F4FBD(void *p)
+{
+    void *q = rva003F4DEE(p);
+    if (q)
+        q = ((Rva003F44A9 *)q)->rva003F44A9();
+    return q;
 }
