@@ -27,7 +27,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -47,7 +47,7 @@ float INI::scanReal(const char *token)
 	if (sscanf(text, "%f", &value) != 1) {
 		INIException e;
 		rva002f681_fill(&e, 3, "Expected floating point value, math op, or predefined macro, but found '%s'", text);
-		_CxxThrowException(&e, (void *)&scanRealThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanRealThrowInfoAnchor); __assume(0);
 	}
 	return value;
 }

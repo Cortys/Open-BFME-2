@@ -64,7 +64,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail); content never compared.
@@ -78,7 +78,7 @@ ObjectModule::ObjectModule(Thing *thing, const ModuleData *moduleData)
 	if (!moduleData) {
 		INIException e;
 		rva002f681_fill(&e, 3, "module data may not be null\n");
-		_CxxThrowException(&e, (void *)&gThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&gThrowInfoAnchor); __assume(0);
 	}
 	m_object = AsObject(thing);
 }

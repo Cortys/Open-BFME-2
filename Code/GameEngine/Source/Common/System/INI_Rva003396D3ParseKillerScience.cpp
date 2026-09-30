@@ -24,7 +24,7 @@ public:
 	static void Rva003396D3_ParseKillerScience(INI *ini, void *instance, void *store, const void *userData);
 };
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // ?Rva003396D3_ParseKillerScience@INI@@SAXPAV1@PAX1PBX@Z
 void INI::Rva003396D3_ParseKillerScience(INI *ini, void *instance, void *store, const void *userData)
@@ -32,7 +32,7 @@ void INI::Rva003396D3_ParseKillerScience(INI *ini, void *instance, void *store, 
 	const char *token = ini->getNextToken(0);
 	if (g_scienceStoreLoaded == 0) {
 		int marker = 0xDEAD0001;
-		_CxxThrowException(&marker, (void *)0xCFEEE4);
+		_CxxThrowException(&marker, (const _s__ThrowInfo *)0xCFEEE4); __assume(0);
 	}
 	*(int *)store = INI::scanScience(token);
 }

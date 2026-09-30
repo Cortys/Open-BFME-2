@@ -33,7 +33,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
@@ -51,7 +51,7 @@ void INI::parseRGBColor(INI *ini, void * /*instance*/, void *store, const void *
 		if (colors[i] < 0 || colors[i] > 255) {
 			INIException e;
 			rva002f681_fill(&e, 3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
-			_CxxThrowException(&e, (void *)&parseRGBColorThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&parseRGBColorThrowInfoAnchor); __assume(0);
 		}
 	}
 

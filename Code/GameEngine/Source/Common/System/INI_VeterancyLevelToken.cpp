@@ -33,7 +33,7 @@ private:
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 extern "C" int rva002bcab_scanIndex(const char *token, ConstCharPtrArray nameList, Bool *found, Bool doThrow);
 extern "C" void *memset(void *dst, Int val, unsigned n);
@@ -52,7 +52,7 @@ Bool Rva0033AFBB::rva0033AFBB(const char *token, Bool *foundNormal, Bool *foundA
 		if (*foundNormal || *foundAddOrSub) {
 			INIException e;
 			rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
-			_CxxThrowException(&e, (void *)&rva0033AFBBThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&rva0033AFBBThrowInfoAnchor); __assume(0);
 		}
 		memset(m_words, 0, sizeof(m_words));
 		return false;
@@ -62,7 +62,7 @@ Bool Rva0033AFBB::rva0033AFBB(const char *token, Bool *foundNormal, Bool *foundA
 		if (*foundNormal) {
 			INIException e;
 			rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
-			_CxxThrowException(&e, (void *)&rva0033AFBBThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&rva0033AFBBThrowInfoAnchor); __assume(0);
 		}
 		UnsignedInt bitIndex = rva002bcab_scanIndex(token + 1, VeterancyLevelNames, &found, true);
 		m_words[bitIndex >> 5] |= (1u << (bitIndex & 31));
@@ -71,7 +71,7 @@ Bool Rva0033AFBB::rva0033AFBB(const char *token, Bool *foundNormal, Bool *foundA
 		if (*foundNormal) {
 			INIException e;
 			rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
-			_CxxThrowException(&e, (void *)&rva0033AFBBThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&rva0033AFBBThrowInfoAnchor); __assume(0);
 		}
 		UnsignedInt bitIndex = rva002bcab_scanIndex(token + 1, VeterancyLevelNames, &found, true);
 		m_words[bitIndex >> 5] &= ~(1u << (bitIndex & 31));
@@ -80,7 +80,7 @@ Bool Rva0033AFBB::rva0033AFBB(const char *token, Bool *foundNormal, Bool *foundA
 		if (*foundAddOrSub) {
 			INIException e;
 			rva002f681_fill(&e, 2, "you may not mix normal and +- ops in bitstring lists");
-			_CxxThrowException(&e, (void *)&rva0033AFBBThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&rva0033AFBBThrowInfoAnchor); __assume(0);
 		}
 
 		if (!*foundNormal)

@@ -60,8 +60,7 @@ struct XferException
 extern "C" XferException *__cdecl bfmeFormatText(
 	XferException *result, int tag, const char *format, ...);
 extern int g_guardTargetTypeThrowInfo;
-extern void __declspec(noreturn) __stdcall _CxxThrowException(
-	void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 typedef _STL::list<int> ListInt;
 
@@ -91,7 +90,7 @@ Xfer *xferListInt(Xfer *xfer, ListInt *list)
 		{
 			XferException error;
 			bfmeFormatText(&error, 4, "List must be empty on load");
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 
 		int value;

@@ -10,7 +10,7 @@ struct XferException
 
 extern "C" XferException *__cdecl bfmeFormatText(
 	XferException *result, int tag, const char *format, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_guardTargetTypeThrowInfo;
 
 class BfmeByteStream
@@ -71,7 +71,7 @@ void XferSave::XferEnum(void *context, const void *bytes, unsigned int count)
 		{
 			XferException error;
 			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 	}
 
@@ -81,7 +81,7 @@ void XferSave::XferEnum(void *context, const void *bytes, unsigned int count)
 		{
 			XferException error;
 			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 	}
 }
@@ -100,7 +100,7 @@ void XferSave::endBlock()
 		{
 			XferException error;
 			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 	}
 
@@ -112,27 +112,27 @@ void XferSave::endBlock()
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_stream->skip(blockSize, 0) != blockSize)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_stream->write(&position, 4) != 4)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_stream->skip(position, 0) != position)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 }

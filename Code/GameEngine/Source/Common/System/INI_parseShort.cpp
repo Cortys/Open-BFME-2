@@ -22,7 +22,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
@@ -37,7 +37,7 @@ void INI::parseShort(INI *ini, void *instance, void *store, const void *userData
 	if (value < -32768 || value > 32767) {
 		INIException e;
 		rva002f681_fill(&e, 3, "value out of range, expected -32768..32767");
-		_CxxThrowException(&e, (void *)&parseShortThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseShortThrowInfoAnchor); __assume(0);
 	}
 	*(unsigned short *)store = (unsigned short)value;
 }

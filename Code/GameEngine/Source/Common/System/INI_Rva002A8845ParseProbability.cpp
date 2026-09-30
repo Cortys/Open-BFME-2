@@ -29,7 +29,7 @@ public:
 	int m_argumentCount;
 };
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, filled from retail by the gate). Its content is never
@@ -52,7 +52,7 @@ void INI::Rva002A8845_ParseProbability(INI *ini, void *, void *store, const void
 			slot[1] = denominator;
 			if (denominator < 1) {
 				INIException e(3, "invalid Probability Denominator must be greater than zero (%d)", denominator);
-				_CxxThrowException(&e, (void *)&parseProbabilityThrowInfoAnchor);
+				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseProbabilityThrowInfoAnchor); __assume(0);
 			}
 			break;
 		}

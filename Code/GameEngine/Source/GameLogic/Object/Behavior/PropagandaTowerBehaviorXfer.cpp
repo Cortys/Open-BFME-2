@@ -107,8 +107,7 @@ struct XferException
 
 extern "C" XferException *__cdecl bfmeFormatText(
 	XferException *result, int tag, const char *format, ...);
-extern void __declspec(noreturn) __stdcall _CxxThrowException(
-	void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_rva005c5100ThrowInfo;
 
 enum ObjectID
@@ -205,7 +204,7 @@ void PropagandaTowerBehavior::xfer(Xfer *xfer)
 		if (m_insideList != 0)
 		{
 			bfmeFormatText(&local.error, 5, 0);
-			_CxxThrowException(&local.error, &g_rva005c5100ThrowInfo);
+			_CxxThrowException(&local.error, (const _s__ThrowInfo *)&g_rva005c5100ThrowInfo); __assume(0);
 		}
 
 		for (UnsignedShort i = 0; i < insideCount; ++i)

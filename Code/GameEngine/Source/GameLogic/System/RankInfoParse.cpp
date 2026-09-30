@@ -84,7 +84,7 @@ private:
 extern RankInfoStore *TheRankInfoStore;
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: each throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Its content
@@ -107,7 +107,7 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 			{
 				char exc[8];
 				rva002f681_fill(exc, 3, "Rank not found in map.ini");
-				_CxxThrowException(exc, (void *)&rankInfoThrowInfoAnchor);
+				_CxxThrowException(exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
 			}
 
 			RankInfo *info = TheRankInfoStore->m_rankInfos[rank - 1];
@@ -115,7 +115,7 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 			{
 				char exc[8];
 				rva002f681_fill(exc, 3, "Rank not found in map.ini");
-				_CxxThrowException(exc, (void *)&rankInfoThrowInfoAnchor);
+				_CxxThrowException(exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
 			}
 
 			RankInfo *newInfo = new RankInfo;
@@ -138,7 +138,7 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 			{
 				char exc[8];
 				rva002f681_fill(exc, 3, "Ranks must increase monotonically");
-				_CxxThrowException(exc, (void *)&rankInfoThrowInfoAnchor);
+				_CxxThrowException(exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
 			}
 			// NOTE: the push_back argument rides a copy, not `info` itself.
 			// `info` stays register-held (push eax, xor-eax null path) while

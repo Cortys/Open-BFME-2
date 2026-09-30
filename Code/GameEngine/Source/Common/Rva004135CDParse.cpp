@@ -14,7 +14,7 @@ public:
 };
 extern const FieldParse g_00839A78;
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct Rva004135CDThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva004135CDThrowInfoAnchor rva004135CDThrowInfoAnchor = { 0, 0, 0, 0 };
 class Rva004135CD
@@ -32,6 +32,6 @@ void Rva004135CD::rva004135CD(INI *ini)
 	{
 		char exc[8];
 		rva002f681_fill(exc, 3, "Must provide a MinSciencePurchasePointsForBonus, and it must be >= 0");
-		_CxxThrowException(exc, (void *)&rva004135CDThrowInfoAnchor);
+		_CxxThrowException(exc, (const _s__ThrowInfo *)&rva004135CDThrowInfoAnchor); __assume(0);
 	}
 }

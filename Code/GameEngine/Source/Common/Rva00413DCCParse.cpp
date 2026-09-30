@@ -14,7 +14,7 @@ public:
 };
 extern const FieldParse g_00839E58;
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct Rva00413DCCThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva00413DCCThrowInfoAnchor rva00413DCCThrowInfoAnchor = { 0, 0, 0, 0 };
 class Rva00413DCC
@@ -32,6 +32,6 @@ void Rva00413DCC::rva00413DCC(INI *ini)
 	{
 		char exc[8];
 		rva002f681_fill(exc, 3, "Must provide a MinResourceBonus, and it must be >= 0");
-		_CxxThrowException(exc, (void *)&rva00413DCCThrowInfoAnchor);
+		_CxxThrowException(exc, (const _s__ThrowInfo *)&rva00413DCCThrowInfoAnchor); __assume(0);
 	}
 }

@@ -47,7 +47,7 @@ struct XferException
 };
 
 extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_guardTargetTypeThrowInfo;
 
 Rva002DBD05 * __cdecl Rva002DBD05Get(Rva002DBD05 *obj, char *base)
@@ -57,7 +57,7 @@ Rva002DBD05 * __cdecl Rva002DBD05Get(Rva002DBD05 *obj, char *base)
 	if (idx != 0x10) {
 		XferException err;
 		bfmeFormatText(&err, 0, 0);
-		_CxxThrowException(&err, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&err, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 	for (unsigned int i = 0; i < 0x10; ++i) {
 		obj->unk88(base + i);

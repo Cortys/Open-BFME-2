@@ -36,7 +36,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0x8FE2FC). Its content
@@ -61,6 +61,6 @@ fail:
 	{
 		INIException e;
 		rva002f681_fill(&e, 2, "In an AIKINDOF list, each type may only appear once\n");
-		_CxxThrowException(&e, (void *)&aikindThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&aikindThrowInfoAnchor); __assume(0);
 	}
 }

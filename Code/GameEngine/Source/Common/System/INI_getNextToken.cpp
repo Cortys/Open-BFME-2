@@ -28,7 +28,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's INIException throwinfo at
@@ -44,7 +44,7 @@ const char *INI::getNextToken(const char *seps)
 	if (token == 0) {
 		INIException e;
 		rva002f681_fill(&e, 3, "Expected additional data after '%s'", (seps == 0) ? m_seps : seps);
-		_CxxThrowException(&e, (void *)&gntThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&gntThrowInfoAnchor); __assume(0);
 	}
 	return token;
 }

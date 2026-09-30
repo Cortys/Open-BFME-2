@@ -71,7 +71,7 @@ public:
 	int m_argumentCount;
 };
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -92,7 +92,7 @@ void CrateTemplate::parseCrateCreationEntry(INI *ini, void *instance, void *, co
 	float crateValue;
 	if (sscanf(token, "%f", &crateValue) != 1) {
 		INIException e(3, "Floating point value expected instead of '%s'", token);
-		_CxxThrowException(&e, (void *)&parseCrateThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseCrateThrowInfoAnchor); __assume(0);
 	}
 
 	crateCreationEntry newEntry;

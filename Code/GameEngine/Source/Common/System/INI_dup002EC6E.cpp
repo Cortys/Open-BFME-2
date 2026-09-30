@@ -28,7 +28,7 @@ public:
 	static void dup_002EC6E(INI *ini, void *instance, void *store, const void *userData);
 };
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's int throwinfo at 0x8FE2C8). Content
@@ -45,7 +45,7 @@ void INI::dup_002EC6E(INI *ini, void * /*instance*/, void *store, const void *us
 		// the thrown int homes to its stack slot ([ebp+0x14]) instead of a
 		// fresh reserve (retail has no push-ecx).
 		userData = (const void *)1;
-		_CxxThrowException((void *)&userData, (void *)&dup002EC6EThrowInfoAnchor);
+		_CxxThrowException((void *)&userData, (const _s__ThrowInfo *)&dup002EC6EThrowInfoAnchor); __assume(0);
 	}
 	*(unsigned char *)store = (unsigned char)value;
 }

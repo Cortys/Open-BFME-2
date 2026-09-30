@@ -19,7 +19,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 struct EmotionThrowInfoAnchor { int a; int b; int c; int d; };
 static const EmotionThrowInfoAnchor emotionThrowInfoAnchor = { 0, 0, 0, 0 };
@@ -48,7 +48,7 @@ void INI::Rva004DC702_ParseEmotionType(INI *ini, void *instance, void *store, co
 	}
 	INIException e;
 	rva002f681_fill(&e, 3, "Emotion type expected.");
-	_CxxThrowException(&e, (void *)&emotionThrowInfoAnchor);
+	_CxxThrowException(&e, (const _s__ThrowInfo *)&emotionThrowInfoAnchor); __assume(0);
 }
 
 // ?Rva004DC745_ParseAIState@INI@@SAXPAV1@PAX1PBX@Z
@@ -61,5 +61,5 @@ void INI::Rva004DC745_ParseAIState(INI *ini, void *instance, void *store, const 
 	}
 	INIException e;
 	rva002f681_fill(&e, 3, "Emotion AI type expected.");
-	_CxxThrowException(&e, (void *)&emotionThrowInfoAnchor);
+	_CxxThrowException(&e, (const _s__ThrowInfo *)&emotionThrowInfoAnchor); __assume(0);
 }

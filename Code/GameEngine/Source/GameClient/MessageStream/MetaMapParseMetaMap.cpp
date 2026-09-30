@@ -44,7 +44,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0x8FE2FC). Content is
@@ -59,13 +59,13 @@ void MetaMap::parseMetaMap(INI *ini)
 	if (t == GameMessage::MSG_INVALID) {
 		INIException e;
 		rva002f681_fill(&e, 3, "Game message meta type for '%s' not found", token);
-		_CxxThrowException(&e, (void *)&parseMetaMapThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseMetaMapThrowInfoAnchor); __assume(0);
 	}
 	MetaMapRec *map = TheMetaMap->getMetaMapRec(t);
 	if (map == 0) {
 		INIException e;
 		rva002f681_fill(&e, 3, "Meta map entry for '%s' not found", token);
-		_CxxThrowException(&e, (void *)&parseMetaMapThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseMetaMapThrowInfoAnchor); __assume(0);
 	}
 	ini->initFromINI(map, TheMetaMapFieldParseTable);
 }

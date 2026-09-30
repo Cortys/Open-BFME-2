@@ -28,7 +28,7 @@ struct XferException
 };
 
 extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_guardTargetTypeThrowInfo;
 
 class Xfer
@@ -87,7 +87,7 @@ Xfer *__cdecl Rva002D342AXfer20(Xfer *xfer, bool *data)
 	{
 		XferException err;
 		bfmeFormatText(&err, 0, 0);
-		_CxxThrowException(&err, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&err, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 	for (unsigned int i = 0; i < 20; ++i)
 	{

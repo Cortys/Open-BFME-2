@@ -111,8 +111,7 @@ public:
 
 extern "C" XferException *__cdecl bfmeFormatText(
 	XferException *result, int tag, const char *format, ...);
-extern void __declspec(noreturn) __stdcall _CxxThrowException(
-	void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_rva008ffd18ThrowInfo;
 
 class Thing;
@@ -268,7 +267,7 @@ void SpawnBehavior::xfer(Xfer *xfer)
 			m_spawnTemplate = (const ThingTemplate *)TheThingFactory->rva002D06CA(&tmp);
 			if (m_spawnTemplate == NULL) {
 				bfmeFormatText(&error, 5, 0);
-				_CxxThrowException(&error, &g_rva008ffd18ThrowInfo);
+				_CxxThrowException(&error, (const _s__ThrowInfo *)&g_rva008ffd18ThrowInfo); __assume(0);
 			}
 		}
 	}

@@ -25,7 +25,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // Address anchor only: the throw site pushes this object's address as an
 // immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
@@ -41,6 +41,6 @@ void INI::parsePositiveNonZeroReal(INI *ini, void *instance, void *store, const 
 	if (value <= 0.0f) {
 		INIException e;
 		rva002f681_fill(&e, 3, "invalid Real value %1.7f -- expected > 0", value);
-		_CxxThrowException(&e, (void *)&parsePositiveNonZeroRealThrowInfoAnchor);
+		_CxxThrowException(&e, (const _s__ThrowInfo *)&parsePositiveNonZeroRealThrowInfoAnchor); __assume(0);
 	}
 }

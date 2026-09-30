@@ -61,7 +61,7 @@ public:
 extern NameKeyGenerator *TheNameKeyGenerator;
 extern UpgradeCenter *TheUpgradeCenter;
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 // ?Rva003F2033_ParseOnVictoryGiveUpgrade@INI@@SAXPAV1@PAX1PBX@Z
 void INI::Rva003F2033_ParseOnVictoryGiveUpgrade(INI *ini, void *instance, void *store, const void *userData)
@@ -69,7 +69,7 @@ void INI::Rva003F2033_ParseOnVictoryGiveUpgrade(INI *ini, void *instance, void *
 	if (TheUpgradeCenter == 0) {
 		int &marker = (int &)store;
 		marker = 0xDEAD0001;
-		_CxxThrowException(&marker, (void *)0xCFEEE4);
+		_CxxThrowException(&marker, (const _s__ThrowInfo *)0xCFEEE4); __assume(0);
 	}
 	for (;;) {
 		const char *token = ini->getNextTokenOrNull(0);

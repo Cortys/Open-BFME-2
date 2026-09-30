@@ -41,7 +41,7 @@ struct INIException
 };
 
 extern "C" void rva002f681_fill(void *dst, int code, const char *fmt, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
 // Address anchor only: the throw site pushes this object's address as an
@@ -61,7 +61,7 @@ void INI::parseColorInt(INI *ini, void * /*instance*/, void *store, const void *
 			if (i < 3) {
 				INIException e;
 				rva002f681_fill(&e, 3, "can't omit value for color %s", names[i]);
-				_CxxThrowException(&e, (void *)&parseColorIntThrowInfoAnchor);
+				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
 			} else {
 				// it's ok for A to be omitted.
 				colors[i] = 255;
@@ -71,14 +71,14 @@ void INI::parseColorInt(INI *ini, void * /*instance*/, void *store, const void *
 			if (_strcmpi(token, names[i]) != 0) {
 				INIException e;
 				rva002f681_fill(&e, 3, "expected '%s'", names[i]);
-				_CxxThrowException(&e, (void *)&parseColorIntThrowInfoAnchor);
+				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
 			}
 			colors[i] = ini->scanInt(ini->getNextToken(ini->getSepsColon()));
 		}
 		if (colors[i] < 0 || colors[i] > 255) {
 			INIException e;
 			rva002f681_fill(&e, 3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
-			_CxxThrowException(&e, (void *)&parseColorIntThrowInfoAnchor);
+			_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
 		}
 	}
 

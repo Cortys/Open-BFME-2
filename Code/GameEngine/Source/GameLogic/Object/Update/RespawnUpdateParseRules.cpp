@@ -26,7 +26,7 @@ public:
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *, const char *);
 struct INIException { char *message; int code; };
 extern "C" void rva002f681_fill(void *, int, const char *, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *, void *);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 struct RespawnThrowInfoAnchor { int a,b,c,d; };
 static const RespawnThrowInfoAnchor respawnThrowInfoAnchor = {0,0,0,0};
 struct RespawnRule {
@@ -44,8 +44,8 @@ public:
     static void iniParseNewRuleForLevel(INI *, void *, void *, const void *);
     static void iniParseDefaultRule(INI *, void *, void *, const void *);
 };
-#define THROW0(message) { INIException e; rva002f681_fill(&e,3,message); _CxxThrowException(&e,(void *)&respawnThrowInfoAnchor); }
-#define THROW1(message,token) { INIException e; rva002f681_fill(&e,3,message,token); _CxxThrowException(&e,(void *)&respawnThrowInfoAnchor); }
+#define THROW0(message) { INIException e; rva002f681_fill(&e,3,message); _CxxThrowException(&e, (const _s__ThrowInfo *)&respawnThrowInfoAnchor); __assume(0); }
+#define THROW1(message,token) { INIException e; rva002f681_fill(&e,3,message,token); _CxxThrowException(&e, (const _s__ThrowInfo *)&respawnThrowInfoAnchor); __assume(0); }
 #define FIELD(key,diagnostic,parser,member) \
     token=ini->getNextToken(ini->getSepsColon()); \
     if(!token || _strcmpi(token,key)!=0) \
@@ -70,7 +70,7 @@ void RespawnUpdate::iniParseDefaultRule(INI *ini, void *instance, void *store, c
 // Preserve literal/logic quirks: only AutoSpawn uses case-insensitive dispatch;
 // Health repeats the Cost duplicate error; the Time duplicate format has two
 // %d conversions but retail supplies one value. Unknown keys are skipped.
-#define THROW2(message,a,b) { INIException e; rva002f681_fill(&e,3,message,a,b); _CxxThrowException(&e,(void *)&respawnThrowInfoAnchor); }
+#define THROW2(message,a,b) { INIException e; rva002f681_fill(&e,3,message,a,b); _CxxThrowException(&e, (const _s__ThrowInfo *)&respawnThrowInfoAnchor); __assume(0); }
 void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *store, const void *) {
     RespawnRule defaultRule;
     BFME2RespawnRuleTree *rules=(BFME2RespawnRuleTree *)store;

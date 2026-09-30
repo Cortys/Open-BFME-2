@@ -11,7 +11,7 @@ struct XferException
 
 extern "C" XferException *__cdecl bfmeFormatText(
 	XferException *result, int tag, const char *format, ...);
-__declspec(noreturn) void __stdcall _CxxThrowException(void *object, void *throwInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern int g_guardTargetTypeThrowInfo;
 
 class BfmeByteStream
@@ -72,7 +72,7 @@ int Xfer::beginBlock(const char *name)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (marker == 0x44534352)
@@ -82,7 +82,7 @@ int Xfer::beginBlock(const char *name)
 		{
 			XferException error;
 			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 	}
 
@@ -92,7 +92,7 @@ int Xfer::beginBlock(const char *name)
 		XferException error;
 		bfmeFormatText(&error, 0,
 			"Block '%s' expected but BLOK ID was not found at %i", name, position);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_isLoading)
@@ -102,7 +102,7 @@ int Xfer::beginBlock(const char *name)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	m_currentBlock = m_stream->current();
@@ -122,7 +122,7 @@ void Xfer::endBlock()
 		{
 			XferException error;
 			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 
 		if (marker != 0x45424c4b)
@@ -131,7 +131,7 @@ void Xfer::endBlock()
 			XferException error;
 			bfmeFormatText(&error, 0,
 				"Block end expected but EBLK ID was not found at %i", position);
-			_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 		}
 	}
 
@@ -149,7 +149,7 @@ void Xfer::skipBlock(const char *name)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (marker != 0x424c4f4b)
@@ -158,7 +158,7 @@ void Xfer::skipBlock(const char *name)
 		XferException error;
 		bfmeFormatText(&error, 0,
 			"Block '%s' expected but BLOK ID was not found at %i", name, position);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_isLoading)
@@ -168,7 +168,7 @@ void Xfer::skipBlock(const char *name)
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_stream->skip(marker) != marker)
@@ -176,7 +176,7 @@ void Xfer::skipBlock(const char *name)
 		XferException error;
 		bfmeFormatText(&error, 0,
 			"Could not skip over block '%s' to %i", name, marker);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 }
 
@@ -203,7 +203,7 @@ void BlockStreamReader::skipBadBlock(void *snapshot, int size)
 	{
 		XferException error;
 		bfmeFormatText(&error, 0, "Could not skip over BAD block to %i", size);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 
 	if (m_callback)
@@ -222,7 +222,7 @@ void Gen009D8C30::bfmeSkipPrefixed()
 	{
 		XferException error;
 		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, &g_guardTargetTypeThrowInfo);
+		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
 	}
 	if (prefix == 0)
 		return;

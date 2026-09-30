@@ -34,7 +34,7 @@ extern "C" void *memset(void *dst, int value, unsigned int size);
 
 namespace _STL { template <class _Tp> class allocator; template <> class allocator<char> { public: static char *allocate(unsigned int bytes, const void *hint); }; }
 
-__declspec(noreturn) void __stdcall _CxxThrowException(void *pExc, void *pInfo);
+extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 enum NameKeyType
 {
@@ -205,7 +205,7 @@ Dict::DictPair *Dict::ensureUnique(int numPairsNeeded, bool preserveData, DictPa
 	if (numPairsNeeded > 32767)
 	{
 		int marker = 0xdead0002;
-		_CxxThrowException(&marker, (void *)0xCFEEE4);
+		_CxxThrowException(&marker, (const _s__ThrowInfo *)0xCFEEE4); __assume(0);
 	}
 	DictPairData *newData = 0;
 	if (numPairsNeeded > 0)
