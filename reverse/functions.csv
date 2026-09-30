@@ -44263,3 +44263,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00383A28@Rva00383A28@@QAEXXZ,,0x00383A28,41,Code/GameEngine/Source/Common/Rva003833BBErase.cpp,matched,clear counterpart to erase 0x003833BB in same TU; 41B shape as clear 0x383EEA
 ?rva00383380@Rva00383380@@QAEXPAURva00383380Node@@@Z,,0x00383380,59,Code/GameEngine/Source/Common/Rva003833BBErase.cpp,matched,erase-one via rebalance plus CameraMarker dtor plus free; shape as 0x383F9C
 ?Rva0054A67BSiftUp@@YAXU?$_Deque_iterator@UBfmeE8@@U?$_Const_traits@UBfmeE8@@@_STL@@@_STL@@HHUBfmeE8@@@Z,,0x0054A67B,141,Code/Libraries/Source/WWVegas/WWLib/Rva0054A67BSiftUp.cpp,matched,unlock deque sift-up twin of PushHeap with above comparison
+?setShellMenuScheme@ShellMenuSchemeManager@@QAEXVAsciiString@@@Z,,0x002005DE,124,Code/GameEngine/Source/GameClient/GUI/Shell/ShellMenuSchemeSet.cpp,matched,BFME1 ShellMenuScheme donor empty guard toLower list search compare
