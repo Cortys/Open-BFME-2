@@ -20,10 +20,22 @@ struct Node00358E6A
 	Rva00358B65 m_value;
 };
 
+struct Header00358E6A
+{
+	char m_00[4];
+	Node00358E6A *m_04;
+	Header00358E6A *m_08;
+	Header00358E6A *m_0c;
+};
+
 class Rva00358E6A
 {
 public:
 	void rva00358E6A(Node00358E6A *head);
+	void rva00358F7C();
+private:
+	Header00358E6A *m_00;
+	int m_04;
 };
 
 void Rva00358E6A::rva00358E6A(Node00358E6A *head)
@@ -38,4 +50,17 @@ void Rva00358E6A::rva00358E6A(Node00358E6A *head)
 		free(n);
 		n = r;
 	}
+}
+// ?rva00358F7C@Rva00358E6A@@QAEXXZ @0x00358F7C (41B):
+// Guarded reset: if count nonzero clear via rowed 0x00358E6A then self-link header and zero counts.
+// Evidence: caller of rowed 0x00358E6A; same shape as Rva00358D62::rva00358DFD 41B.
+void Rva00358E6A::rva00358F7C()
+{
+	if (m_04 == 0)
+		return;
+	rva00358E6A(m_00->m_04);
+	m_00->m_08 = m_00;
+	m_00->m_04 = 0;
+	m_00->m_0c = m_00;
+	m_04 = 0;
 }
