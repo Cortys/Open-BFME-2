@@ -43260,3 +43260,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??0Made002CC711@@QAE@XZ,,0x00508F51,59,Code/GameEngine/Source/GameLogic/Object/Made002CC711Ctor.cpp,matched,paralyze nugget ctor base plus pi plus zeroes
 ?rva002E8B9B@Rva002E8B9B@@QAEPAVMixFileInfoBuffer@@PAUIn002E6BA1@@@Z,,0x002E8B9B,52,Code/GameEngine/Source/Common/Rva002E8B9B.cpp,matched,chain from 0x002E8B7A global 0x00A049D0 pool init
 ?rva0026F216@Rva0026F216@@QAEXXZ,,0x0026F216,87,Code/GameEngine/Source/Common/System/Rva0026F216ImageResolve.cpp,matched,two image slots via rowed isEmpty findImageByName releaseBuffer
+??_GRva005E8AAF@@UAEPAXI@Z,,0x005E8A93,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E8A93.cpp,matched,deleting dtor via rowed dtor plus rowed delete
