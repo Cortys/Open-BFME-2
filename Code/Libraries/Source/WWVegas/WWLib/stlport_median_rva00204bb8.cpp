@@ -33,4 +33,39 @@ RandomAccessIter __median(RandomAccessIter a, RandomAccessIter b, RandomAccessIt
 
 template int *__median<int *, Rva00204BB8>(int *, int *, int *, Rva00204BB8);
 
+template <class RandomAccessIter, class Tp, class Compare>
+RandomAccessIter __unguarded_partition(RandomAccessIter first,
+	RandomAccessIter last, Tp pivot, Compare comp);
+
+template <class RandomAccessIter, class Compare>
+void partial_sort(RandomAccessIter first, RandomAccessIter middle,
+	RandomAccessIter last, Compare comp);
+
+// ??$__introsort_loop@PAHHHVRva00204BB8@@@_STL@@YAXPAH00HVRva00204BB8@@@Z @0x0020C04C 123B: the
+// quicksort loop calling this pointer median, the vendored partition 0x00205840
+// (stlport_sort_rva00204bb8.cpp) and the rowed partial_sort 0x0020A295, then
+// itself; sort 0x0020CE84 is its only other caller. Written here, not taken
+// from the vendored header, because that loop calls the value median.
+template <class RandomAccessIter, class Tp, class Size, class Compare>
+void __introsort_loop(RandomAccessIter first, RandomAccessIter last,
+	Tp *, Size depth_limit, Compare comp)
+{
+	while (last - first > 16)
+	{
+		if (depth_limit == 0)
+		{
+			partial_sort(first, last, last, comp);
+			return;
+		}
+		--depth_limit;
+		RandomAccessIter cut = __unguarded_partition(first, last,
+			*__median(first, first + (last - first) / 2, last - 1, comp),
+			comp);
+		__introsort_loop(cut, last, (Tp *)0, depth_limit, comp);
+		last = cut;
+	}
+}
+
+template void __introsort_loop<int *, int, int, Rva00204BB8>(int *, int *, int *, int, Rva00204BB8);
+
 }
