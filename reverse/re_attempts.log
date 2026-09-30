@@ -3855,3 +3855,6 @@ FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of b
 FUN_002413DF	0x002413DF	330	blocked	GameLogic 330B needs rbtree 108 plus arrays f8 fc c8 plus heads ac b0 plus pathfinder plus lookup layout unrecovered t=5 model=muse-11
 FUN_008138C7	0x004138C7	120	blocked	chain INI float throw needs map header modeling single variant failed compile t=15 model=muse-06
 FUN_00814009	0x00414009	120	blocked	same wall as 0x004138C7 chain INI float throw needs map header modeling t=5 model=muse-06
+?Rva004140D0Construct@@YAXPAVINI@@HPAU?$_Rb_tree@W4NameKeyType@@U?$pair@$$CBW4NameKeyType@@VModuleTemplate@ModuleFactory@@@_STL@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@VModuleTemplate@ModuleFactory@@@_STL@@@3@U?$less@W4NameKeyType@@@3@V?$allocator@U?$pair@$$CBW4NameKeyType@@VModuleTemplate@ModuleFactory@@@_STL@@@3@@_STL@@@Z	0x004140D0	45	partial	EH stores before test in retail vs after in ours t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x004140d0.cpp
+?Rva004140D0Construct@@YAXPAXABVRva00414093@@@Z	0x004140D0	45	partial	EH stores before test in retail vs after in ours t=25 model=muse-06 score=0.93 stash=reverse/attempts/0x004140d0.cpp
+FUN_009A9178	0x005A9178	70	blocked	heap float insertion with SSE int stores inverted compare needs donor t=15 model=muse-06
