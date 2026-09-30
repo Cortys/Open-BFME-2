@@ -144,3 +144,52 @@ BfmeNestedBE *bfmeUnlinkNestedBE(BfmeNestedBE *pItem)
 	pItem->pNext = 0;
 	return pItem;
 }
+
+// ?rva006F6AC0@Rva006F6AC0@@QAEXHPAPAX0@Z, retail 0x006F6AC0 (188 bytes).
+// Depth-ordered AptDisplayList lookup in the same TU: asserts ppPrev/ppItem/
+// nDepth at lines 0xB0-0xB2, then walks m_root->m_next (next at +8) while
+// node depth at +0x10 is below nDepth, returning the equal node or 0 with
+// its predecessor. Mirrors the key-walk tail of bfmeQuery1279 above.
+struct AptDepthNode006F6AC0
+{
+	char m_pad00[8];
+	AptDepthNode006F6AC0 *m_next;
+	char m_pad0C[4];
+	int m_depth;
+};
+
+class Rva006F6AC0
+{
+public:
+	void rva006F6AC0(int nDepth, void **ppPrev, void **ppItem);
+
+private:
+	AptDepthNode006F6AC0 *m_root;
+};
+
+void Rva006F6AC0::rva006F6AC0(int nDepth, void **ppPrev, void **ppItem)
+{
+	if (ppPrev == 0) {
+		g_bfmeAptAssertAtE17734("ppPrev", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0xB0);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	if (ppItem == 0) {
+		g_bfmeAptAssertAtE17734("ppItem", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0xB1);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	if (!(nDepth >= 0)) {
+		g_bfmeAptAssertAtE17734("nDepth >= 0", "C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptDisplayList.cpp", 0xB2);
+		if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak();
+	}
+	AptDepthNode006F6AC0 *prev = m_root;
+	AptDepthNode006F6AC0 *node = m_root->m_next;
+	while (node != 0 && node->m_depth < nDepth) {
+		prev = node;
+		node = node->m_next;
+	}
+	if (node != 0 && node->m_depth == nDepth)
+		*ppItem = node;
+	else
+		*ppItem = 0;
+	*ppPrev = prev;
+}
