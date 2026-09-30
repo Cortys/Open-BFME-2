@@ -1,7 +1,7 @@
 // ?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z
-// partial score=0.985 date=2026-09-30
+// partial score=0.99 date=2026-09-30
 // ?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z
-// partial score=0.985 date=2026-09-30
+// partial score=0.99 date=2026-09-30
 // cl: /O1 /Oy- /MD /EHs /Oi- /D_STLP_USE_STATIC_LIB
 // stlport
 // ?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z @0x0046F179 270B
@@ -50,23 +50,25 @@ void parseBannerCarrierPosition(INI *ini, void *instance, void *store, const voi
     slot->unitType.set(ini->getNextToken(ini->sepsColon));
     token = ini->getNextTokenOrNull(ini->sepsColon);
     if (!token || strcmp(token,"Pos") != 0) goto badPos;
-    Coord2D pos;
-    INI::parseCoord2D(ini,0,&pos,0);
-    slot->pos.x = pos.x;
-    slot->pos.y = pos.y;
+    {
+      Coord2D pos;
+      INI::parseCoord2D(ini,0,&pos,0);
+      slot->pos.x = pos.x;
+      slot->pos.y = pos.y;
+    }
     ((_STL::vector<HordeBannerSlot> *)store)->push_back(value);
     return;
-  }
-badPos:
-  {
-    INIException e;
-    rva002f681_fill(&e,3,"'Pos' expected");
-    _CxxThrowException(&e,(void *)&bannerThrowInfoAnchor);
   }
 badUnit:
   {
     INIException e;
     rva002f681_fill(&e,3,"UnitType expected");
+    _CxxThrowException(&e,(void *)&bannerThrowInfoAnchor);
+  }
+badPos:
+  {
+    INIException e;
+    rva002f681_fill(&e,3,"'Pos' expected");
     _CxxThrowException(&e,(void *)&bannerThrowInfoAnchor);
   }
 }

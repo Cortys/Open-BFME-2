@@ -43272,3 +43272,4 @@ _piChannelMessageA,,0x006AACB0,305,Code/GameEngine/Source/GameNetwork/GameSpy/pe
 ??_GRva005E8EA1@@QAEPAXI@Z,,0x005E8EA9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-06-5E8EA9.cpp,matched,deleting dtor via rowed dtor plus rowed delete
 ?rva005092B2@Rva005092B2@@QAEXXZ,,0x005092B2,34,Code/GameEngine/Source/GameLogic/Object/Rva005092B2Resolve.cpp,matched,base resolve plus weapon template lookup
 ?rva0052DEEF@Rva0052DE5B@@QAE_NPBURva0052DEEFArg@@_NPAUIn002E6BA1@@@Z,,0x0052DEEF,194,Code/GameEngine/Source/Common/Rva0052DE5BState.cpp,matched,chain from 0x002E8B7A pool reuse plus bit1 bit2
+??1Rva0031F831@@QAE@XZ,,0x0031F831,9,Code/GameEngine/Source/Common/Rva0031F831Dtor.cpp,matched,unlock dtor via caller 0x0031F856 plus rowed releaseBuffer

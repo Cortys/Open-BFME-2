@@ -3794,3 +3794,5 @@ FUN_0048619A	0x0048619A	327	blocked	eax-ebx reg args plus x87-SSE mix crushdie f
 FUN_0033CD41	0x0033CD41	215	blocked	parseRemoveModule EH throw donor exists but ThingTemplate.cpp already defines wrong-body present-unmatched duplicate plus BFME2 offsets 0x5f8-0x64 vs 0x498-0x20 need new TU t=12 model=muse-11
 ??0Made002CC64B@@QAE@XZ	0x00508BE5	97	partial	and-zero 0128 at +0x09 vs +0x15 6B early plus mov-vs-movecx at +0x1c pi fixed from 1.0f t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x00508be5.cpp
 FUN_000EFC45	0x000EFC45	53	blocked	pin UAE virtual vs body no vtable store needs QAE nonvirtual or clear-method rename t=5 model=muse-11
+?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z	0x0046F179	270	partial	single slot diff new-temp -0x14 vs -0x10 nested-pos plus swapped-errors fixed pos and exceptions t=25 model=muse-03 score=0.99 stash=reverse/attempts/0x0046f179.cpp
+?rva00271108@Rva00271108@@QAE_NHHHMMMH@Z	0x00271108	190	blocked	extra movss xmm1 global plus addss reg-reg vs direct mem persists across 5 variants t=15 model=muse-03
