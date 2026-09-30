@@ -44521,3 +44521,4 @@ _piConnectNickErrorCallbackA,,0x006A0180,44,Code/GameEngine/Source/GameNetwork/G
 ?rva001F523A@Rva001F523A@@QAEXPAUVec2001F523A@@@Z,,0x001F523A,52,Code/GameEngine/Source/Common/Rva001F523A.cpp,matched,null-checked helper+0x1B4 slot8 copies +4/+8 else g_Va00BBB8D8 caller 0x001F7D42
 ?rva001F52CC@Rva001F52CC@@QAEXPAUVec2001F52CC@@@Z,,0x001F52CC,52,Code/GameEngine/Source/Common/Rva001F52CC.cpp,matched,null-checked helper+0x1B4 slot11 copies +4/+8 else g_Va00BBB8D8 caller 0x001F8009
 ?rva001F5373@Rva001F5373@@QAEXPAUVec2001F5373@@@Z,,0x001F5373,55,Code/GameEngine/Source/Common/Rva001F5373.cpp,matched,null-checked helper+0x1AC slot6 via temp copies +0/+4 caller 0x001F72E8
+??1Rva003B1101@@UAE@XZ,,0x003B1101,172,Code/GameEngine/Source/Common/Rva003B1101Dtor.cpp,matched,virtual dtor via nine members plus base
