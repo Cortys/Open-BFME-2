@@ -44886,3 +44886,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva002E0906@@QAE@XZ,,0x002E0906,100,Code/GameEngine/Source/Common/Rva002E0906Ctor.cpp,matched,ctor: three null StringBase members at +0 +4 +0x20 from the unwind map plus +0x24 from DefaultGoodArmyIcon
 ??0Rva003B39C7@@QAE@XZ,,0x003B39C7,113,Code/GameEngine/Source/Common/Rva003B39C7Ctor.cpp,matched,ctor: three narrow strings from the unwind map plus AsciiString[12] via ??_L count 12 size 4
 ??0Rva0073F708@@QAE@PAXH@Z,,0x0073F708,112,Code/GameEngine/Source/Common/Rva0073F708Ctor.cpp,matched,ctor: owning thread holder at +4 and event at +8 from the unwind map; thread handle in a non-virtual base
+??0Rva004E16D9Record@@QAE@XZ,,0x004E15FB,135,Code/GameEngine/Source/GameLogic/LivingWorld/Rva004E16D9RecordCtor.cpp,matched,record ctor: four strings per the unwind map and two float pairs at +0x10/+0x20
