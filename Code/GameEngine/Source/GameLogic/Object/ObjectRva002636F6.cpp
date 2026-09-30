@@ -33,6 +33,7 @@ class Object
 {
 public:
 	float rva002636F6(const Coord3D *a, const void *other, const Coord3D *b) const;
+	float rva00263763(const void *other) const;
 
 private:
 	char m_pad00[0x38];
@@ -40,6 +41,14 @@ private:
 	char m_pad44[0xB8 - 0x38 - 12];
 	float m_majorRadius; // +0xB8
 };
+
+// retail 0x00263763 (21B). Object wrapper forwarding to rowed 0x002636F6
+// with this+0x38 and other+0x38 as Coord3D args. Evidence: callee rowed
+// in this TU; callers at 0x002C9B22 and 0x002CB3EA among 32.
+float Object::rva00263763(const void *other) const
+{
+	return rva002636F6(&m_position, other, (const Coord3D *)((const char *)other + 0x38));
+}
 
 float Object::rva002636F6(const Coord3D *a, const void *other, const Coord3D *b) const
 {
