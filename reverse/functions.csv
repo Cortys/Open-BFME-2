@@ -43674,3 +43674,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva00052F4C@MilesAudioManager@@QAEMXZ,,0x00052F4C,84,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva00052F4C.cpp,matched,provider room type with reverb table plus bounds
 ?rva001F58D4@Rva001F58D4@@QAEXXZ,,0x001F58D4,79,Code/GameEngine/Source/Common/Rva001F58D4.cpp,matched,list drain via rowed rva001F4206 plus zeroing proven by callers
 ?rva0059A71C@Rva0059A71C@@QAEXPAUArg@@@Z,,0x0059A71C,90,Code/GameEngine/Source/Common/Rva0059A71CMethod.cpp,matched,unlock lane compare find pushback EmptyString caller 0x0059A85C ret4 thiscall
+?rva0031AC39@Rva0031AC39@@QAEXXZ,,0x0031AC39,22,Code/GameEngine/Source/GameClient/GUI/ControlBar/Rva0031AC39Loop.cpp,matched,22B chain walk via rowed 0x0035B77D plus 0x18 next

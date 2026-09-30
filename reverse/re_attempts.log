@@ -3970,3 +3970,4 @@ FUN_009680F9	0x005680F9	74	blocked	static list init with EH_prolog plus guard; p
 ?rva005DDBAB@Rva005DDBAB@@QAEXPAVGameWindow@@PAPAH@Z	0x005DDBAB	192	partial	191B same 69 insns plus esi-eax plus ebx-esi swap plus sub-mem vs sub-reg plus lea CSE t=25 model=muse-02 score=0.93 stash=reverse/attempts/0x005ddbab.cpp
 ?Rva0040D918Partition@@YAPAVRva0040D0A4Entry@@PAV1@0VRva0040CB11Entry@@@Z	0x0040D918	118	blocked	pivot by-value vs ptr ABI plus x87 vs SSE plus esi edi wall; 131/118B 49/40ins t=18 model=muse-06
 ?rva003AFA0B@Rva003AFA0B@@QAEXPAVCoord3D@@PAX0M1@Z	0x003AFA0B	89	partial	xmm rotation yzx vs xyz 9 mem operands size-exact 25ins t=15 model=muse-06 score=0.9 stash=reverse/attempts/0x003afa0b.cpp
+?rva0035B7D9@Rva0035B77D@@QAEXPBV1@_N@Z	0x0035B7D9	76	blocked	erase via voidptr cast plus copy loop plus flag; first probe 80B vs 76B with 9 reg diffs plus 3 regions; needs sibling erase-copy recipe t=10 model=muse-03
