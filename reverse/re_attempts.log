@@ -4043,3 +4043,6 @@ FUN_004e6b99	0x000E6B99	214	blocked	EH prolog plus FuncInfo 0x00763540 unclaimed
 FUN_0073CE30	0x0073CE30	96	blocked	ctor 96B dual vtable plus x87 ftol2 x4 plus struct-by-value Fill needs strong model t=8 model=muse-12
 FUN_004b4f91	0x004B4F91	143	blocked	EH prolog FuncInfo 0x0078EC92 unclaimed plus STL vector base/dtor and indirect 0xA8/0x84 walk t=5 model=muse-03
 FUN_00409457	0x00409457	213	blocked	EH plus STL vector erase pushback plus contested StringBase 0x365F0 pin and globals UpgradeCenter WorldRV t=5 model=muse-03
+?rva0023611A@GlobalData@@QBE?AVAsciiString@@XZ	0x0023611A	304	blocked	GlobalData plus 0x1248 method with GameText fetch plus shell imports plus wide temps; first shape used wrong WCHAR plus incomplete label append; needs exact GameText slot plus UnicodeString plus import decls plus g_BED0F0 type t=15 model=muse-01
+?rva001DC01C@Rva001DC01C@@QAEPAXV?$StringBase@D@@@Z	0x001DC01C	98	partial	ebx edi swapped throughout size exact 98B t=25 model=muse-spark score=0.95 stash=reverse/attempts/0x001dc01c.cpp
+?Rva004C20D5IsWithin@@YG_NMPBUCoord3D@@0@Z	0x004C20D5	82	partial	loads subs stores grouped vs interleaved size exact 82B t=20 model=muse-spark score=0.93 stash=reverse/attempts/0x004c20d5.cpp

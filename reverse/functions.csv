@@ -43908,3 +43908,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva003AF4AA@@QAE@ABV0@@Z,,0x003AF4AA,99,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy ctor via rowed base plus inline Emission base
 ?xfer@Rva004CE0BE@@MAEXPAVXfer@@@Z,,0x004CE0BE,27,Code/GameEngine/Source/GameLogic/Object/Update/Rva004CE0BEXfer.cpp,matched,chain xfer Version1 plus base
 ?rva0043852C@Rva0043852C@@QAE_NPAVRva00406F9C@@@Z,,0x0043852C,13,Code/GameEngine/Source/GameLogic/Object/Update/Rva0043852CCheck.cpp,matched,chain swapped intersect forwarder
+?rva000EB08C@Rva000EB08C@@QAEXH_N@Z,,0x000EB08C,90,Code/GameEngine/Source/Common/Rva000EB08CCheck.cpp,matched,index flag store via TheWritableGlobalData plus 0xE8 plus 0x5C arrays
