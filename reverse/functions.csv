@@ -43967,3 +43967,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva000F07C3@Rva000F26DC@@QAE_NHH@Z,,0x000F07C3,64,Code/GameEngine/Source/Common/Rva000F26DCAlloc.cpp,matched,alloc slot via caller 0x000F16B4 same class as 0x000F0803
 ??1Rva0027FBAC@@UAE@XZ,,0x0027FBAC,82,Code/GameEngine/Source/GameLogic/Map/Rva0027FBACDtor.cpp,matched,vtable 0x00BFB1E0 AsciiString at +8 virtual delete at +0xC8 caller 0x00280C05
 ??_GRva0027FBAC@@UAEPAXI@Z,,0x00280C05,28,Code/GameEngine/Source/GameLogic/Map/Rva0027FBACDtor.cpp,matched,deleting dtor for 0x0027FBAC auto-emitted with dtor
+?rva0027F4F8@Rva0027F4F8@@QAEPAXH@Z,,0x0027F4F8,33,Code/GameEngine/Source/GameLogic/Map/Rva0027F4F8Find.cpp,matched,linear search 8B entries caller 0x00283845
