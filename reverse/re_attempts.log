@@ -3769,3 +3769,7 @@ FUN_007e95ff	0x003E95FF	246	blocked	EH Script Team iteration with virtuals plus 
 ?rva004CBE66@Rva004CBE66@@QAEXPAVRva0036CA00Str@@PBVRva001DFE56@@@Z	0x004CBE66	74	blocked	dead push-ecx-and-ebp-4 slot plus esi-edi swap throw Oy- tried t=15 model=muse-spark
 ?rva006BE220@Rva0087E900Shape@@QAEXPBURva0087E900Coord@@MPAU2@@Z	0x006BE220	50	blocked	needs central retype 0x006BE190 YAX void to YAPAU pointer-return verified YAPAU 132B exact wrapper 50B exact t=15 model=muse-spark
 ?rva000A94F9@Rva000A94F9@@QAEHHH@Z	0x000A94F9	66	blocked	custom reg ABI ecx eax edx triple-pointer min-max no stack plain ret no MSVC convention t=10 model=muse-spark
+FUN_007b8e2b	0x003B8E2B	65	blocked	index search via compare with recomputed sar needs frame donor t=8 model=muse-02
+FUN_004636df	0x000636DF	209	blocked	WW3D material mesh iteration with many virtuals needs donor t=6 model=muse-02
+FUN_00720737	0x00320737	190	blocked	Gadget GUI with GameWindow plus many virtuals needs donor t=6 model=muse-02
+?m@T_009f59d0@@QAEXXZ	0x00627E40	263	blocked	ShroudManager SEH with vectors plus linkNode needs donor t=6 model=muse-02
