@@ -43974,3 +43974,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ?rva0020DEB0@Rva0020DEB0@@QAEPAVOverridable@@XZ,,0x0020DEB0,91,Code/GameEngine/Source/Common/Rva0020DEB0.cpp,matched,unlock cleanup two vectors tail deleteOverrides
 ?Rva0059B0DDConcat@@YAPAV?$StringBase@D@@PAV1@PBD@Z,,0x0059B0DD,56,Code/GameEngine/Source/Common/Rva0059B0DDConcat.cpp,matched,concat helper wraps src as CharSource then rowed concat 0x00036A30 returns dst
 ?rva0059BD58@Rva0059BD58@@QAEXPAURva0059BD58Node@@@Z,,0x0059BD58,45,Code/GameEngine/Source/Common/Rva0059BD58Free.cpp,matched,recursive list free child plus 0xC free node via 0x00030830 next plus 0x8
+??0Rva0020D583@@QAE@XZ,,0x0020D4E3,132,Code/GameEngine/Source/Common/Rva0020D583Dtor.cpp,matched,unlock ctor vptr plus 5 StringBase set
