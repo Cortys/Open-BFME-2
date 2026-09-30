@@ -42992,3 +42992,4 @@ _Rva009BA790,,0x001CB090,11476,Code/GameEngine/Source/Common/Rva009BA790.cpp,mat
 ?Rva0059F20BSet@@YAXHABVUnicodeString@@@Z,,0x0059F20B,85,Code/GameEngine/Source/Common/Rva0059F20BSet.cpp,matched,Apt connecting name format plus settext via global
 ?Rva0059F296Set@@YAXHABVUnicodeString@@@Z,,0x0059F296,85,Code/GameEngine/Source/Common/Rva0059F20BSet.cpp,matched,sibling status setter same rows global
 ?rva00374AE8@StealthUpdate@@QAEXXZ,,0x00374AE8,26,Code/GameEngine/Source/GameLogic/Object/Update/StealthUpdateLoadPost.cpp,matched,vslot1 base loadPostProcess flag plus tail to rowed sibling
+?Rva0059FF9DDo@@YAXXZ,,0x0059FF9D,108,Code/GameEngine/Source/Common/Rva0059FF9DDo.cpp,matched,record dispatch via globals plus vslot6
