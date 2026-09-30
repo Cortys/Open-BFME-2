@@ -4143,3 +4143,11 @@ FUN_0084a75d	0x0044A75D	171	blocked	large vslot22 LANAPI Unicode with 0x1E0 fram
 ?_M_insert_overflow@?$vector@UBfmePod172@@V?$allocator@UBfmePod172@@@_STL@@@_STL@@IAEXPAUBfmePod172@@ABU3@ABU__false_type@2@I_N@Z	0x001EBD3B	191	partial	extra test-je-push-pop before imul vs mov ecx edi t=10 model=muse-06 score=0.97 stash=reverse/attempts/0x001ebd3b.cpp
 ?rva00180AD6@Rva00180B94_Prototype@@UAEHXZ	0x00180AD6	35	blocked	ghidra 35B vs gate 866B boundary wrong needs rescan t=5 model=muse-02
 FUN_005ee4dc	0x001EE4DC	10	blocked	no ret in 10B boundary wrong needs rescan t=3 model=muse-02
+?xfer@Rva00342FCD@@MAEXPAVXfer@@@Z	0x0034236F	55	blocked	esi edi swapped persists across self xfer-local order swaps t=12 model=muse-07
+?rva003F0D2C@Rva003F0D2C@@QAEHXZ	0x003F0D2C	112	blocked	EH vector callback with functor struct plus scopetable 0xBFB1CC no vtable no donor class unproven caller 0x3F11C7 unclaimed t=8 model=muse-07
+?rva002E674B@Rva002E674B@@QAEXAAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABVAsciiString@@@Z	0x002E674B	104	blocked	STL prefix filter frame ebp vs frameless plus reg wall t=12 model=muse-07
+?rva0040D4F4@Rva0040D4F4@@QAEHXZ	0x0040D4F4	112	blocked	same EH vector callback wall as 0x003F0D2C scopetable 0xBFB1CC no vtable t=5 model=muse-07
+?WriteNamedHeroAtRva004074CF@CreateAHeroData@@QAE_NXZ	0x004074CF	212	blocked	complex fileIO map Unicode EH 212B needs strong model t=5 model=muse-07
+?rva0035DDBD@Rva0035DCF9@@QAEXXZ	0x0035DDBD	152	blocked	W3D draw interpolation with imul-div float SSE no donor t=6 model=muse-07
+?rva0045EEC4@Rva0045EEC4@@QAEHXZ	0x0045EEC4	115	blocked	same EH vector functor wall as 0x003F0D2C scopetable 0xBFB1CC t=3 model=muse-07
+?rva0054FCA5@Rva0054FCA5@@QAEHXZ	0x0054FCA5	202	blocked	complex STL deque mutex map format EH t=4 model=muse-07
