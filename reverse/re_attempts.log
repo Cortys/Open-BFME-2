@@ -3963,3 +3963,5 @@ FUN_0056C01E	0x0056C01E	71	blocked	vector deleting dtor shape with ??_M size 0xA
 ?rva000AE1DC@BfmeGridWM@@QBE_NHH@Z	0x000AE1DC	88	blocked	register wall 10 diffs this in esi vs ecx needs new idea t=10 model=muse-09
 ??1Rva0017FF77@@UAE@XZ	0x0017FFCA	89	blocked	dtor 100B vs 89B extra ebx plus Empty base call needs different Empty for ctor 77B t=25 model=muse-12
 ?rva00368271@Rva00368271@@QAE_NXZ	0x00368271	113	blocked	SSE x87 EBP frame float compare member-first vs global-first plus stack slot swap plus branch shape t=12 model=muse-01
+FUN_000B4A1C	0x000B4A1C	131	blocked	weighted random pick with cmov plus GetGameClientRandomValue; string literal at 0x007C9C40 truncated in packet need full GameEngineDevice path; t=10 model=muse-07
+FUN_000BDBFA	0x000BDBFA	115	blocked	list splice-merge calling Rva000B419E assign plus list AsciiString erase plus list BfmePod32 insert; 115B EBP mixed-type needs longer layout work; deferring for trivial batch t=8 model=muse-07

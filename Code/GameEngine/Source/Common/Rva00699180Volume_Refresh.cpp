@@ -21,6 +21,7 @@ public:
 	void refreshAll();
 	void rva00051FFE(int b);
 	void rva00052015(int b);
+	void rva00052048(int idx);
 	void setVolumes(float volume, unsigned char flags);
 
 	char m_pad0[4];
@@ -106,4 +107,27 @@ void Rva00699180Owner::rva00052015(int b)
 {
 	for (int i = 0; i < 6; ++i)
 		refreshPair(i, b);
+}
+
+void Rva00699180Owner::rva00052048(int idx)
+{
+	struct Factor
+	{
+		float v;
+		float w;
+	};
+	float *slot = (float *)((char *)this + 0x34 + idx * 4);
+	char *base = (char *)this + idx * 12;
+	Factor *begin = *(Factor **)(base + 0x4c);
+	Factor *end = *(Factor **)(base + 0x50);
+	*slot = 1.0f;
+	float &r = *slot;
+	for (Factor *p = begin; p != end; ++p)
+		r = r * p->v;
+	float v = r;
+	if (v < 0.0f)
+		v = 0.0f;
+	else if (v > 1.0f)
+		v = 1.0f;
+	r = v;
 }
