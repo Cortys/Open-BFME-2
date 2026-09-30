@@ -1,8 +1,10 @@
-// ??0Rva002105A6@@QAE@H@Z
-// partial score=0.93 date=2026-09-29
-// ??0Rva002105A6@@QAE@H@Z
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /arch:SSE
+// Fix over the banked 0.93 attempt, from the retail unwind map: state 0
+// destroys the member at +4 through the folded 7-byte virtual dtor 0x0049B47C,
+// so Rva000D1930 has a virtual destructor; state 1 destroys +0x20 through the
+// vector<AsciiString> dtor 0x0042CC70 and state 2 destroys +0x2C through the
+// BfmeE16 vector dtor 0x0047FAB3, so the first vector holds AsciiStrings.
+// The 0.3 default at +0x54 is a compiler literal (retail pool 0x007CCB3C).
 // stlport
 //
 // ??0Rva002105A6@@QAE@H@Z @ 0x00210973 133B
@@ -39,7 +41,7 @@ class Rva000D1930
 {
 public:
 	Rva000D1930();
-	~Rva000D1930() {}
+	virtual ~Rva000D1930();
 };
 
 class Rva00210749
@@ -48,7 +50,6 @@ public:
 	void rva00210749();
 };
 
-extern const float g_007CCB3C;
 
 class Rva002105A6
 {
@@ -63,7 +64,7 @@ private:
 	int m_14;
 	int m_18;
 	int m_1C;
-	_STL::vector<BfmeE16> m_vec20;
+	_STL::vector<AsciiString> m_vec20;
 	_STL::vector<BfmeE16> m_vec2C;
 	StringBase<char> m_str38;
 	int m_3C;
@@ -75,7 +76,7 @@ private:
 	float m_54;
 };
 
-// ??0Rva002105A6@@QAE@H@Z present-unmatched
+// ??0Rva002105A6@@QAE@H@Z @0x00210973
 Rva002105A6::Rva002105A6(int id)
 	: m_id(id)
 	, m_3C(-1)
@@ -84,6 +85,6 @@ Rva002105A6::Rva002105A6(int id)
 	m_48 = 0.0f;
 	m_4C = 0.0f;
 	m_50 = 0.0f;
-	m_54 = g_007CCB3C;
+	m_54 = 0.3f;
 	((Rva00210749 *)this)->rva00210749();
 }
