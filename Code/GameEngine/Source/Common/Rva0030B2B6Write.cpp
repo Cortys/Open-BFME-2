@@ -36,3 +36,19 @@ void Rva0030B2B6::rva0030B2B6(DataChunkOutput *out)
 		++elem;
 	}
 }
+
+class Rva0030B2FE
+{
+public:
+	void rva0030B2FE(DataChunkOutput *out);
+private:
+	Rva0030B2B6 m_00;
+	char m_pad08[0x20];
+	int m_28;
+};
+
+void Rva0030B2FE::rva0030B2FE(DataChunkOutput *out)
+{
+	m_00.rva0030B2B6(out);
+	out->writeInt(m_28);
+}

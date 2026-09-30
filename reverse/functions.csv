@@ -43461,3 +43461,4 @@ __Locale_strwcmp,,0x00020DF0,58,Code/Libraries/Source/STLport/LocaleUnshiftStrwc
 ?rva004D4FBE@Transport@@QBEMXZ,,0x004D4FBE,68,Code/GameEngine/Source/GameNetwork/TransportRva004D5046.cpp,matched,unsigned average m_dummy90 skip 40E6C fmul sibling 004D5046
 ?Rva00320158Parse@@YAXPAVINI@@PAVRva003200BC@@@Z,,0x00320158,81,Code/GameEngine/Source/GameClient/GUI/ControlBar/ControlBarRva00320158.cpp,matched,chain factory via new ctor initFromINI rva003200BC
 ?rva0025DD76@Rva0025DDD2@@QBEMXZ,,0x0025DD76,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,wrapper over Transport rva004D4FBE sibling DDA4
+?rva0030B2FE@Rva0030B2FE@@QAEXPAVDataChunkOutput@@@Z,,0x0030B2FE,28,Code/GameEngine/Source/Common/Rva0030B2B6Write.cpp,matched,chain writer plus int ICF same addr
