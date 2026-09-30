@@ -6571,3 +6571,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?GadgetRadioSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,0x003278F1,target REL32 at the setWindowText RADIO branch 0x00316293; 71B body at 0x3278F1; name carried from the reference source GadgetRadioSetText
 ?GadgetCheckBoxSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z,0x00327BD4,target REL32 at the setWindowText CHECK branch 0x003162B5; 71B body begins where GadgetCheckBoxSystem 0x327B46+142 ends; name carried from the reference source GadgetCheckBoxSetText
 ?winSetText@GameWindow@@QAEHVUnicodeString@@@Z,0x0031484A,non-virtual spelling for the BFME2 setWindowText direct call at 0x00316320; same 88B body rowed as the virtual ?winSetText@GameWindow@@UAEHVUnicodeString@@@Z at 0x31484A
+?rva000E5EE5@Rva000E5EE5@@QAEXPBVRva0055A88BDwordField@@VAsciiString@@@Z,0x000E5EE5,twin of rowed StringBase spelling for AsciiString caller 0x0006B76C

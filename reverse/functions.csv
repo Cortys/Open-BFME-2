@@ -44171,3 +44171,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??0Rva0055F197@@QAE@ABVRvaSmartPtr12@@H@Z,,0x0055F197,129,Code/GameEngine/Source/Common/Rva0055F197Ctor.cpp,matched,unlock base 0x0055BF21 plus DefaultPhysicsModuleInfo pin
 ??1Rva0050EA74@@UAE@XZ,,0x0050EA22,54,Code/GameEngine/Source/Common/Rva0050EA74Ctor.cpp,matched,dual-vtable via empty inline base plus AsciiString release
 ??_GRva0050EA74@@UAEPAXI@Z,,0x0050EA58,28,Code/GameEngine/Source/Common/Rva0050EA74Ctor.cpp,matched,auto-emitted deleting dtor over rowed 0x0050EA22
+?rva0006B76C@BaseHeightMapRenderObjClass@@QAEXPBVRva0055A88BDwordField@@VAsciiString@@@Z,,0x0006B76C,83,Code/GameEngine/Source/Common/Rva0006B76CMethod.cpp,matched,chain wrapper over 0x000E5EE5 via AsciiString inline forwarder shape
