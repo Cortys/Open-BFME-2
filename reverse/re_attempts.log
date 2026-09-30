@@ -3836,3 +3836,4 @@ FUN_0033CE18	0x0033CE18	279	blocked	parseReplaceModule EH throw larger twin of b
 ?rva005613A6@Rva005613A6@@QAEPAXXZ	0x005613A6	12	blocked	template getInstance return backref V1 vs row V12 no landed caller precedent t=30 model=muse-11
 ?rva0007BEDA@Rva007C454@@UAE_NABUVecArg@@@Z	0x0007BEDA	128	blocked	float loop reg alloc wall 5 variants frame saves branches diverge t=25 model=muse-10
 ??_GRva00216094@@UAEPAXI@Z	0x00406CB7	28	blocked	slot0 of 0x838BA4 suggests Rva00406BB0 not Rva00216094 needs retype merge plus no co-emitted GDtor t=10 model=muse-10
+??1Rva003321D8@@QAE@XZ	0x003321D8	63	blocked	EH prolog plus Destroy plus free needs vector inline manual gives 30B vs 63B t=12 model=muse-01
