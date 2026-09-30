@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1BfmeStringTailRecord144@@UAE@XZ: 128B EH destructor of the 144-byte
@@ -16,23 +16,7 @@
 // layout past the release slot is unproven. Destruction runs
 // +0x84/+0x20/+0x1C/+0x10/+0x08/+0x04, plain reverse declaration order under
 // an empty dtor body. Zero new pins.
-template<class T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-public:
-    StringBase();
-    StringBase(const StringBase &);
-    StringBase &operator=(const StringBase &);
-protected:
-    __forceinline ~StringBase() { releaseBuffer(); }
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString() {}
-    __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-    ~AsciiString();
-    AsciiString &operator=(const AsciiString &);
-};
+#include "ascii_string.h"
 class PoolMember
 {
 public:

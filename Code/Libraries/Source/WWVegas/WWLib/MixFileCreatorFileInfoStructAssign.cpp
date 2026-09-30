@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??4FileInfoStruct@MixFileCreator@@QAEAAU01@ABU01@@Z, retail 0x002174DF,
 // 41 bytes.
@@ -12,24 +12,8 @@
 // 002174df.md). A sibling 41B body at 0x217624 is the same shape with the
 // name copy-constructed instead of assigned (the copy constructor).
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-	StringBase(const StringBase &other);
-	~StringBase() { releaseBuffer(); }
-
-	void releaseBuffer();
-
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class MixFileCreator
 {

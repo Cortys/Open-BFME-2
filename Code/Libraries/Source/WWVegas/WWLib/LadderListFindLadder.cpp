@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?findLadder@LadderList@@QAEPBVLadderInfo@@ABVAsciiString@@G@Z, retail 0x0054D74B, 151 bytes.
@@ -12,21 +12,8 @@
 // GUI:JoinFailedUnknownLadder caller at 0x005A59CE plus TheLadderList global
 // at 0x00A05FB0; class name is the real donor name.
 
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString();
-	~AsciiString();
-};
 
 struct LadderListNode
 {

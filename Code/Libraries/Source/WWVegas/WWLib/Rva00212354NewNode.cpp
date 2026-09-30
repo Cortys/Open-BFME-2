@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ?Rva00212354NewNode@@YGPAXPBX@Z, retail 0x00212354 37B. Hashtable node
 // allocator for the AsciiString-keyed 12-byte node family (next+pair) that
@@ -20,11 +20,7 @@ public:
 };
 }
 
-class AsciiString
-{
-public:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct NoCaseTreeValue4
 {

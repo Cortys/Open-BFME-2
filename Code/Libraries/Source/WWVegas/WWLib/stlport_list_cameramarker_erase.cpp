@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?erase@?$list@UCameraMarker@@V?$allocator@UCameraMarker@@@_STL@@@_STL@@QAE?AU?$_List_iterator@UCameraMarker@@U?$_Nonconst_traits@UCameraMarker@@@_STL@@@2@U32@@Z retail 0x002A12B7 42B
@@ -7,16 +7,7 @@
 // caller 0x00293FA7; CameraMarker layout 8B proven by rowed dtor and copy assignment 0x0028876F.
 #include <list>
 
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct CameraMarker
 {

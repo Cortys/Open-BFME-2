@@ -1,4 +1,4 @@
-// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // Nocase AsciiString set cleanup trio for the INI macro map family:
@@ -17,15 +17,7 @@
 #include <map>
 #include <set>
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &);
-    ~AsciiString();
-
-private:
-    void *m_data;
-};
+#include "ascii_string.h"
 
 bool operator<(const AsciiString &, const AsciiString &);
 

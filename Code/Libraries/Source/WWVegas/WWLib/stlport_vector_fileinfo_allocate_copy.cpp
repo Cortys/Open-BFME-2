@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // Typed STLport vector helper.  The element identity is established by the
@@ -7,21 +7,8 @@
 // three dwords followed by an AsciiString, hence the proven 16-byte stride.
 #include <vector>
 
-template <typename T>
-class StringBase
-{
-    friend class AsciiString;
-    StringBase(const StringBase &other);
-    T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-    AsciiString();
-    AsciiString(const AsciiString &other);
-    AsciiString &operator=(const AsciiString &other);
-};
 
 class MixFileCreator
 {

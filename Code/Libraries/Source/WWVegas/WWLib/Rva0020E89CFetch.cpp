@@ -1,4 +1,4 @@
-// cl: /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
 // ?rva0020E89C@Rva0020E89C@@QAE?AVUnicodeString@@XZ @0x0020E89C 63B
 // Honest-address method returning the translated label at this+0x38:
 // empty AsciiString returns UnicodeString::TheEmptyString (data 0x00A0C898
@@ -10,35 +10,8 @@
 typedef unsigned short wchar_t;
 typedef bool Bool;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class Rva0020E89C;
+#include "ascii_string.h"
 
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-public:
-	Bool isEmpty() const;
-	StringBase() { m_data = 0; }
-	~StringBase() { releaseBuffer(); }
-
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 class UnicodeString
 {

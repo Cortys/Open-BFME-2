@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // Dedicated unit without the bfmelist __forceinline _M_create_node shim so
@@ -18,28 +18,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
+#include "ascii_string.h"
 
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)""; }
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString();
-	AsciiString(const char *text);
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 bool operator==(const AsciiString &a, const AsciiString &b);
 bool operator<(const AsciiString &a, const AsciiString &b);

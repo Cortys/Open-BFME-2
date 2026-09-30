@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // List-valued string-map insertion support for GameSpyLoginPreferences'
 // nick and clan maps (+0x2c/+0x38). Retail's list-map operator[] 0x5CAC49
@@ -15,23 +15,8 @@
 #include <list>
 #include <new>
 
-template <typename T> class StringBase
-{
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	~StringBase();
-
-protected:
-	void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 

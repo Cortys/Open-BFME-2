@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ??$_Destroy@PAURva00B6CF1@@@_STL@@YAXPAURva00B6CF1@@0@Z, retail 0x000BDCD6, 25 bytes.
 // Range destroy for the 8-byte Rva00B6CF1 element (two StringBase releases
@@ -12,14 +12,7 @@
 // dtor; callers at 0xC03F2/0xC05D6/0xC0647/0xC0804/0xC0986 unblock C03D8.
 #include <vector>
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &o);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct Rva00B6CF1
 {

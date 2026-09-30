@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // STLport __uninitialized_copy<T> helpers (38 bytes), same-shape siblings of
@@ -15,15 +15,7 @@
 #include <memory>
 #include <vector>
 
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 struct NoCaseTreeValue4
 {

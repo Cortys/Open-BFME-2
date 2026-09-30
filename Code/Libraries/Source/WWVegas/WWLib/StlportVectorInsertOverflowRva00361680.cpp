@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // STLport 4.5.3 vector::_M_insert_overflow at target boundary 0x00361680/191.
@@ -13,24 +13,8 @@
 // not claim the retail record layout.
 #include <vector>
 
-template<class T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-public:
-	StringBase();
-	StringBase(const StringBase &);
-	StringBase &operator=(const StringBase &);
-protected:
-	__forceinline ~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char> {
-public:
-	__forceinline AsciiString() {}
-	__forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-	__forceinline ~AsciiString() {}
-	AsciiString &operator=(const AsciiString &);
-};
 
 struct BfmeStringHeadRecord148 { AsciiString s; int a[36]; };
 

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // ?rva00056CF8@Rva00056CF8@@QAEXPAUHashNode00056CF8@@@Z, retail 0x00056CF8 (53B).
 // Honest-address twin of the rowed ?_M_erase at 0x00056CC3 (identical bytes
 // through div-free tail; only the self-call reloc differs). Rb-tree node with
@@ -6,14 +6,7 @@
 // AsciiString dtor at 0x0048BA39, free via rowed _free, loop left+0x08.
 // Caller at 0x00057B82 clears the same way; owner unproven.
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 extern "C" void __cdecl free(void *block);
 

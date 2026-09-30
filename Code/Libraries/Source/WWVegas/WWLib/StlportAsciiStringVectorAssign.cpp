@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC
 // stlport
 //
 // STLport vector<AsciiString>::operator= at 0x000BDB46, the copy path
@@ -20,22 +20,7 @@
 #include <vector>
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h
-class AsciiString
-{
-	struct AsciiStringData
-	{
-		virtual void _M_slot_00();
-		int m_refCount;
-	};
-
-	AsciiStringData *m_data;
-
-public:
-	AsciiString();
-	AsciiString(const AsciiString &that);
-	AsciiString &operator=(const AsciiString &that);
-	~AsciiString();
-};
+#include "ascii_string.h"
 
 namespace _STL
 {

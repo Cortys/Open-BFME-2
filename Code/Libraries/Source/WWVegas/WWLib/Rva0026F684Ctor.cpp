@@ -1,25 +1,11 @@
-// cl: /O1 /EHs /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0Rva0026F684@@QAE@XZ @0x0026F5B3 209B
 // Evidence: same vtable 0x7FABF0 as dtor 0x0026F684 in Rva0026F684Dtor.cpp; prev stlport_vector_4b_assign; next is own dtor; Rva003623E5Member pin 0x003623E5 at +0x80; vectors E16 bases via 0x00211E58
 #include <vector>
 
-template <class T> class StringBase
-{
-	void *m_data;
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-protected:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-};
 
 struct BfmeE16
 {
