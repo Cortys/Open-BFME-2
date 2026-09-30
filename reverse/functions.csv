@@ -43650,3 +43650,4 @@ _piRemoveXpingRva00862EF0,,0x006A3DE0,17,Code/GameEngine/Source/GameNetwork/Game
 ??4Rva000B419E@@QAEAAU0@ABU0@@Z,,0x000B419E,81,Code/Libraries/Source/WWVegas/WWLib/StlportFixedObject32Assign.cpp,matched,copy assign 32B struct via AsciiString op plus tail
 ??0Rva003678F7@@QAE@PAVStateMachine@@@Z,,0x003678F7,29,Code/GameEngine/Source/Common/Rva003678F7Ctor.cpp,matched,State hash 0xA36413A3 vtable 0x008175A8 caller 0x00367DDF
 ??_GRva0036783F@@UAEPAXI@Z,,0x003689A8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0036783F.cpp,matched,slot 0 vtable 0x00817548 calls rowed 0x0036783F plus delete
+??0Rva002834C4@@QAE@XZ,,0x002834C4,34,Code/GameEngine/Source/Common/Rva002834C4Ctor.cpp,matched,ctor via base member and vector
