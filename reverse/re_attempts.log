@@ -3889,3 +3889,5 @@ FUN_00539386	0x00539386	109	blocked	EH vector visitor 109B guard vtable 0x7FB1CC
 ??0Rva000E6AC0@@QAE@XZ	0x000E6AC0	211	partial	vptr save plus EH state early vs late plus states 7-9 vs 3-5 t=25 model=muse-12 score=0.95 stash=reverse/attempts/0x000e6ac0.cpp
 FUN_0039F5FE	0x0039F5FE	148	blocked	mixed ArmorTemplateSet create plus Rva0039D8FBKey free Less plus Rebalance needs custom insert identity t=10 model=muse-12
 FUN_004F69D6	0x004F69D6	68	blocked	Vector_base plus get_allocator inlining wall needs Ob0 split t=20 model=muse-12
+?rva000578B3@Rva000578B3@@QAEXW4NameKeyType@@@Z	0x000578B3	149	partial	same size 149B same 62 insns callee-saved rotation this-map-key2 plus lea vs add and missing mov ebp-4 ebx t=25 model=muse-07 score=0.9 stash=reverse/attempts/0x000578b3.cpp
+??0Rva0035DA01@@QAE@XZ	0x0035DB3F	71	partial	same 71B 23 insns or early vs middle at 0x20 and vtable late vs early t=20 model=muse-07 score=0.9 stash=reverse/attempts/0x0035db3f.cpp
