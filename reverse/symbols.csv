@@ -6687,3 +6687,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__copy_backward_ptrs@PAUBfmePod36@@PAU1@@_STL@@YAPAUBfmePod36@@PAU1@00ABU__false_type@0@@Z,0x000ADECE,ICF twin of StringRecord wrapper 0x000ADECE via fill-insert 0x000B0478 same 29B wrapper
 ??$fill@PAUBfmePod36@@U1@@_STL@@YAXPAUBfmePod36@@0ABU1@@Z,0x000AD806,ICF twin of StringRecord fill 0x000AD806 via fill-insert 0x000B0478 same 35B rep-movsd
 ??1Rva0035A18D@@QAE@XZ,0x0007FAB3,icf-twin-of-BasicStringCharDtor-vec-elem-0x10
+?_M_lower_bound@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@@3@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@@2@ABVAsciiString@@@Z,0x00221B8D,key-only lower_bound shared with 00217D4C row used by 6B map subscript 0x002221F7
+??0?$pair@$$CBVAsciiString@@UTreeHintRef00221D6B@@@_STL@@QAE@ABVAsciiString@@ABUTreeHintRef00221D6B@@@Z,0x0050EDB3,shared pair temp shared with 00217D4C row used by 6B map subscript 0x002221F7
