@@ -4,14 +4,12 @@
 // body at 0x366F0 (NOT the 0x365F0 ctor family), then the bytes and dwords
 // copy inline. Transferred from the BFME1 reconstruction
 // (Rva000C3380Copy.cpp); member layout and call shape match retail exactly.
-// The trivial default ctor below exists only so the members can default
-// before the body assignments; retail never calls it.
+// Members use the implicit trivial default ctor (no AsciiString() defined,
+// so this TU emits no ??0AsciiString copy); retail never calls it.
 
-// ??0AsciiString@@QAE@XZ absent-from-retail
 class AsciiString
 {
 public:
-	AsciiString() {}
 	AsciiString &operator=(const AsciiString &other);
 
 private:
