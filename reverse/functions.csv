@@ -45833,3 +45833,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva005D839BCheck@@YI_NHPAURva005D839BParam@@@Z,,0x005D839B,168,Code/GameEngine/Source/Common/Rva005D839BCheck.cpp,matched,fastcall frame window check over the BfmeE8 vector globals and TheGameLogic frame; correct AISpellBookAssistBattle __FILE__ literal fixes the banked string mismatch
 ?rva004182D3@Rva004182F8@@QAEPAXPBVRva004181F5@@@Z,,0x004182D3,37,Code/GameEngine/Source/GameClient/Rva004182D3Alloc.cpp,matched,thiscall node alloc retyped from stdcall: sole caller 0x004182F8 passes this in ecx
 ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z,,0x004182F8,124,Code/GameEngine/Source/GameClient/Rva004182F8Insert.cpp,matched,hashed unique insert via rowed bucketIndex and thiscall allocator 0x004182D3
+?Rva00433D27Enable@@YAXXZ,,0x00433D27,21,Code/GameEngine/Source/Common/Rva00433D27Enable.cpp,matched,guarded tail-jmp to rowed enable via globals
