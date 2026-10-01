@@ -45695,3 +45695,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva0057A3B2Get@@YAHH@Z,,0x0057A3B2,33,Code/GameEngine/Source/Common/Rva0057A3B2Lookup.cpp,matched,table search callers 0x0057AB2B 0x0057AB36
 ??0Rva0057ACEB@@QAE@PBURva0057ACEBData@@@Z,,0x0057ACEB,59,Code/GameEngine/Source/Common/Rva0057ACEBCtor.cpp,matched,refcounted holder ctor with vtable 0x0086F090 and 8B copy
 ?Rva0057A272Get@@YAPAGXZ,,0x0057A272,62,Code/GameEngine/Source/Common/Rva0057A272Get.cpp,matched,time separator init via GetLocaleInfoW with colon fallback
+?Rva0057A5A8Set@@YAXHPAPAURva0057A5A8Team@@H@Z,,0x0057A5A8,221,Code/GameEngine/Source/Common/Rva0057A5A8Apt.cpp,matched,chain lane caller 0x0057A861 precedents Rva0057A51CApt Rva0057A685Apt globals TheGameText TheRva00222A8BTarget
