@@ -874,12 +874,10 @@ __convert_float_buffer(const char* first, const char* last, wchar_t* out,
 
 # endif
 
-void _STLP_CALL
-__adjust_float_buffer(char* first, char* last, char dot)
-{
-  if ('.' != dot)
-    replace(first, last, '.', dot);
-}
+// __adjust_float_buffer is stlport_adjust_float_buffer.cpp's row (0x0001B3B0); a second
+// definition here was a duplicate symbol in the linked build.
+// Its body was this unit's only use of replace<char *, char>, whose row lives here.
+template void _STLP_CALL replace<char *, char>(char *, char *, const char &, const char &);
 
 _STLP_END_NAMESPACE
 
