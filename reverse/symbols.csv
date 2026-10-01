@@ -3331,6 +3331,7 @@ _assignment,0x007559C0,address read from the REL32 call at 0x00755EDE in the _na
 _atan2f,0x000422CD,Statically linked CRT atan2f float adapter (fld/fst shuffle into the double atan2 import chain at 0x00422A0); 35+ float-atan2 callers; no atan2f import in the IAT
 _atexit,0x006291F8,CRT atexit - forwards to _onexit at 0x006291D2 and folds its return to 0 or -1; the local-static destructor thunks register through it
 _atoi,0x00629838,address read from the REL32 displacement in DirtySock Y2ProtoMangleHelpers at 0x006718B0; static CRT callee; body not yet converted
+_strtol,0x00629ABA,target import thunk for strtol; direct REL32 call from AptValue::toInteger at 0x006DD3CE; import row at 0x00629ABA
 _bfmeCiThinkFromEsi,0x006A10F0,address read from the REL32 displacement at placed _chatChangeNickA 0x006A13C0
 _bfmeCopy1152,0x00024FC0
 _bfmeCopy1153,0x00024FC0
@@ -5893,6 +5894,8 @@ _ConvertBoolTrees,0x001BBD60
 ?dateIsYearLeap@AptDate@@QAE_NH@Z,0x006F4080
 ?Create@AptString@@SAPAV1@XZ,0x006D7210,Target date toString callback calls pooled string factory; assertions name AptString.inl and pNewString; Godfather QA MAP and corresponding donor callback supply original Create spelling and ABI; evidence=godfather_disk_evidence.json apt_date_string_callback
 ?rva00620090@EAStringC@@QBEPBDXZ,0x00620090,Target date toString callback passes live EAStringC to six-byte data-plus-eight accessor before SetString; address name retained because donor GetBuffer/c_str/ConstRawPtr aliases do not distinguish original spelling; evidence=godfather_disk_evidence.json apt_date_string_callback
+?rva006DCE50@Rva006DCE50Opaque@@QAEPAXXZ,0x006DCE50,Direct call from AptValue::toInteger at 0x006DD390; Ghidra boundary 68B; caller uses returned pointer plus 8 as EAStringC storage; callee identity and layout remain unknown
+?rva00144010@Rva00144010Opaque@@QAEHXZ,0x00144010,Direct tail call from AptValue::toInteger at 0x006DD3F9; Ghidra boundary 4B; thiscall with no args and int return observed; identity unknown
 ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z,0x003584E9,BFME2 retail body resolves named teams; dispatcher caller passes team name; BFME1 donor identifies getTeamNamed
 ?getUnitNamed@ScriptEngine@@QAEPAVObject@@ABVAsciiString@@@Z,0x003588E7,BFME2 retail named-object lookup called by NAMED_SET_REPULSOR; BFME1 donor signature is const AsciiString ref
 ?createGroup@AI@@QAEPAVAIGroup@@XZ,0x002FEC4B,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E loads TheAI then calls this; BFME1 updateTeamSetAttitude donor identifies AI::createGroup
