@@ -46164,3 +46164,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002A9F17@Rva002A9F17@@QAEXPBV?$StringBase@D@@@Z,,0x002A9F17,30,Code/GameEngine/Source/Common/Rva002A9F17Fwd.cpp,matched,forward via holder +0x318 when global present caller 0x003BC86E
 ?rva002A9ACC@Rva002A9ACC@@QAEXPBVDict@@@Z,,0x002A9ACC,105,Code/GameEngine/Source/Common/Rva002A9ACCDict.cpp,matched,rowed cache get and Dict getInt via g_00DBDE64 g_00DBDE6C caller 0x002AFCDF
 ??0Rva002A996F@@QAE@XZ,,0x002A996F,37,Code/GameEngine/Source/Common/Rva002A996FMethod.cpp,matched,ctor zeroes plus FLT_MAX via g_Va00BBB8E0 caller 0x002AB22A
+??$__copy@PAUBfmeContainerRecord005FDEC7@@PAU1@@_STL@@YAPAUBfmeContainerRecord005FDEC7@@PAU1@00ABUrandom_access_iterator_tag@0@@Z,,0x005FE209,29,Code/Libraries/Source/WWVegas/WWLib/Rva005FE209Copy.cpp,matched,unlock 29B tag-local plus zero into 5-arg worker 0x005FE0C3
