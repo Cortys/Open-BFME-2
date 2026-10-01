@@ -5257,3 +5257,10 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00459B68@SiegeDockingBehavior@@QAEXXZ	0x00459B68	191	blocked	no EH prologue without try scope plus iface slot 0x50 identity unproven t=15 model=muse-11
 ?rva0045992F@SiegeDockingBehavior@@QAEXPAUDockPos@1@H@Z	0x0045992F	61	partial	src-ecx-vs-eax single scratch-reg choice only all 22 insns same t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x0045992f.cpp
 ?rva00459E05@SiegeDockingBehavior@@QAEXXZ	0x00459E05	554	partial	stack-temp slot swap plus lea-mov and movss scheduling shifts same 554B 168insns 0 reg 6 mem t=8 model=muse-11 score=0.93 stash=reverse/attempts/0x00459e05.cpp
+?Rva003BB05FSet@@YGXHMMMH@Z	0x003BB05F	104	blocked	xmm allocation scale in xmm3 vs xmm0 products in xmm0 xmm1 xmm2 vs reuse xmm1 t=12 model=muse-09 (stash 0.93 kept)
+?Rva003BB0C7Set@@YGXHMHMMMH@Z	0x003BB0C7	122	blocked	xmm allocation scale in xmm4 vs xmm0 sequential reuse vs early loads t=8 model=muse-09 (stash 0.94 kept)
+?Rva003BB7FESet@@YGXH_N@Z	0x003BB7FE	154	blocked	call sharing push7 shared s45 jne vs je polarity t=10 model=muse-09 (stash 0.95 kept)
+?Rva003BBB51Set@@YGX_N@Z	0x003BBB51	45	blocked	register allocation edx vs eax plus movzx vs mov dl if-else symmetric movzx size 46B ternary asymmetric size exact t=15 model=muse-09 (stash 0.92 kept)
+?Rva003BBCB3Set@@YGX_N@Z	0x003BBCB3	31	blocked	eax-edx swap only size exact 0 structural tried polarity local bool-param int-local O2 all retain swap t=18 model=muse-09 (stash 0.95 kept)
+?Rva0040A092Parse@@YAXPAVINI@@PAXPAPBVCommandButton@@H@Z	0x0040A092	173	partial	mov eax,[ebp-0x14] vs [eax] (+1B) t=18 model=muse-09 score=0.99 stash=reverse/attempts/0x0040a092.cpp
+?rva0040A86C@Rva0040A86C@@QBEPAXH@Z	0x0040A86C	37	partial	base kept in esi vs memory; divisor ecx vs esi; jb vs jae; esp+8 vs esp+4 (+1B) t=22 model=muse-09 score=0.85 stash=reverse/attempts/0x0040a86c.cpp
