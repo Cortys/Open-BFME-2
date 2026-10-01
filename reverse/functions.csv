@@ -46294,3 +46294,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??$__copy@PAVUnicodeString@@PAV1@H@_STL@@YAPAVUnicodeString@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00051BE1,47,Code/Libraries/Source/WWVegas/WWLib/Rva00051C10Copy.cpp,matched,random-access copy loop assigning UnicodeString through rowed UnicodeString::set 0x00037150
 ?rva0052493F@Rva0052493F@@QAEXXZ,,0x0052493F,52,Code/Libraries/Source/WWVegas/WWLib/Rva0052493FClear.cpp,matched,chain via six Rva00524021 clears with tail jmp
 ?rva00291298@Object@@QAEXVAsciiString@@H@Z,,0x00291298,68,Code/GameEngine/Source/GameLogic/Object/ObjectRva00291298.cpp,matched,Object AsciiString plus int setter via rowed set
+?rva0029161A@Rva0029161A@@QAEXPAVRva0029161AArg@@@Z,,0x0029161A,95,Code/GameEngine/Source/Common/System/Rva0029161ABits.cpp,matched,memset rowed loop 11 virt 0x24 caller 0x00292449
