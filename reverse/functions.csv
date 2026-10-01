@@ -46738,3 +46738,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva0041B80FCheck@@YA_NPAVObject@@0@Z,,0x0041B80F,78,Code/GameEngine/Source/Common/Rva0041B80FCheck.cpp,matched,vis team check slots 0x114 0x4c caller 0x0041C95C single-expr EBX
 ??BRva0002C9C2@@QAE?AVAsciiString@@XZ,,0x0002CB02,98,Code/GameEngine/Source/Common/System/Rva0002CB02Operator.cpp,matched,materializer via rowed length write and shared stringbase
 ?add@AIGroup@@QAEXPAVObject@@@Z,,0x0036E5F1,103,Code/GameEngine/Source/GameLogic/AI/AIGroupAdd.cpp,matched,LINK BONUS Team::getTeamAsAIGroup caller plus BFME1 add donor plus rowed callees
+?rva0006F219@Rva0006F219@@QAE_NPAVRenderObjClass@@@Z,,0x0006F219,38,Code/GameEngine/Source/Common/Rva0006F219Add.cpp,matched,LINK BONUS via 0x0006F94A plus rowed Add twice plus lists plus0x74 plus0x114
