@@ -154,6 +154,7 @@ public:
 	void rva003C78AF(const Waypoint *waypoint, CommandSourceType cmdSource);
 	void rva003C75DD(const Coord3D *position, CommandSourceType cmdSource);
 	void rva0036EA01(const Coord3D *position, CommandSourceType cmdSource);
+	void rva0037379B(Object *target, CommandSourceType cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -695,5 +696,16 @@ void AICommandInterface::rva0036EA01(const Coord3D *position, CommandSourceType 
 	AICommandParms parms((AICommandType)0x52, cmdSource);
 	parms.m_pos = *position;
 	parms.m_intValue = 0;
+	aiDoCommand(&parms);
+}
+
+// ?rva0037379B@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z @0x0037379B 101B:
+// Same 101B object shape as rva0026C3AC rva0026C486 rva0026C347 in this TU:
+// AICMD 0x3E plus m_obj at +0x14 plus slot-0 aiDoCommand plus inline free 0x30830.
+// Callers 6 unclaimed; landing unblocks 3.
+void AICommandInterface::rva0037379B(Object *target, CommandSourceType cmdSource)
+{
+	AICommandParms parms((AICommandType)0x3E, cmdSource);
+	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
