@@ -46790,3 +46790,4 @@ _Rva00819920,,0x00685820,1536,Code/Libraries/Source/DirtySock/Rva00819920Comm.cp
 ??1Rva00409FFA@@UAE@XZ,,0x0040A057,59,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FCC.cpp,matched,unlock lane dtor vptr plus str10 plus base Rva001E3624
 ?Rva00564D67Copy@@YAPAVRva003AD0A0@@PAV1@00@Z,,0x00564D67,50,Code/GameEngine/Source/Common/Bfme/Rva00564D67Copy.cpp,matched,uninit copy 0x14 via rowed copy ctor unblocks 00565709
 ?Rva00564D99Copy@@YAPAVRva003AD070@@PAV1@00@Z,,0x00564D99,50,Code/GameEngine/Source/Common/Bfme/Rva00564D99Copy.cpp,matched,uninit copy 0xC via rowed copy ctor unblocks 00565795
+??_GRva00409FFA@@UAEPAXI@Z,,0x0040A13F,28,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FCC.cpp,matched,chain lane deleting dtor from own dtor unit vtable slot0
