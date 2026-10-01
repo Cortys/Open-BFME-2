@@ -76,4 +76,10 @@ __forceinline void _Destroy<AsciiString *>(AsciiString *__first, AsciiString *__
 }
 }
 
-template class _STL::vector<AsciiString, _STL::allocator<AsciiString> >;
+template void _STL::vector<AsciiString, _STL::allocator<AsciiString> >::_M_clear();
+template void _STL::vector<AsciiString, _STL::allocator<AsciiString> >::_M_insert_overflow(
+	AsciiString *,
+	const AsciiString &,
+	const _STL::__false_type &,
+	unsigned int,
+	bool);
