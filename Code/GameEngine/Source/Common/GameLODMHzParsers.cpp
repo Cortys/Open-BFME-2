@@ -17,3 +17,13 @@ void parseReallyLowMHz(INI *ini)
     if (TheGameLODManager)
         *reinterpret_cast<Int *>(reinterpret_cast<char *>(TheGameLODManager) + 0x17EC) = mhz;
 }
+
+// Retail registration 0x00DB9750 pairs "AudioLowMHz" with 0x00601E81.
+// Its complete 43B body stores to +0x17F0, immediately after ReallyLowMHz.
+void parseAudioLowMHz(INI *ini)
+{
+    Int mhz;
+    INI::parseInt(ini, NULL, &mhz, NULL);
+    if (TheGameLODManager)
+        *reinterpret_cast<Int *>(reinterpret_cast<char *>(TheGameLODManager) + 0x17F0) = mhz;
+}

@@ -168,22 +168,7 @@ static char *VideoNames[] =
 
 // parseReallyLowMHz lives in GameLODMHzParsers.cpp with the verified BFME 2 offset.
 
-void parseAudioLowMHz(INI* ini)
-{
-	// m_audioLowMHz sits immediately after m_reallyLowMHz above; the two INI
-	// keywords are a pair ("ReallyLowMHz" / "AudioLowMHz") and so are the fields.
-	struct RetailGameLODManager
-	{
-		char m_pad[0x1738];
-		Int m_audioLowMHz;
-	};
-	Int mhz;
-	INI::parseInt(ini,NULL,&mhz,NULL);
-	if (TheGameLODManager)
-	{
-		reinterpret_cast<RetailGameLODManager *>(TheGameLODManager)->m_audioLowMHz = mhz;
-	}
-}
+// parseAudioLowMHz lives in GameLODMHzParsers.cpp with the verified BFME 2 offset.
 
 // ABI shim for target helper 0x0020200D; this type name is inferred.
 // Retail bounds/increments count at +0x17C0 and returns a 20-byte profile.
