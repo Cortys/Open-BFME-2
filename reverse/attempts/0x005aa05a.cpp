@@ -1,7 +1,5 @@
 // ?Rva005AA05APick@@YGXPAURva005AA05AVec@@PAURva005AA05AArg@@H0@Z
-// partial score=0.83 date=2026-09-29
-// ?Rva005AA05APick@@YGXPAURva005AA05AVec@@PAURva005AA05AArg@@H0@Z
-// partial score=0.83 date=2026-09-29
+// partial score=0.83 date=2026-10-01
 // cl: /O1 /MD /arch:SSE
 // ?Rva005AA05APick@@YGXPAURva005AA05AVec@@PAURva005AA05AArg@@H0@Z @0x005AA05A 112B: free __stdcall
 // picker over two 12-byte float vectors. dx = sub+0x558 minus a+0x10 and
