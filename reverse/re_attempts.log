@@ -4625,3 +4625,4 @@ FUN_0071809E	0x0031809E	178	blocked	PAU-vs-PBU copy-fill divergence at 0x00317CF
 ??__Eg_00E02934@@YAXXZ	0x003A8454	64	blocked	static-init needs global pattern t=15 model=muse-02 no initializer emitted only _E1 _E2 handler 0x781CE2 unclaimed atexit 0x7B7E99 unclaimed
 ??__Eg_00E02914@@YAXXZ	0x003A8354	64	blocked	same static-init wall as 0x3A8454 t=2 model=muse-02 no initializer emitted handler unclaimed
 FUN_002D9686	0x002D9686	77	blocked	static EAX-count ECX-range custom convention from donor AudioEventRTSWeightedChoice; needs BFME2 AudioEventRTS.cpp full path at 0x008038B0 line 58; test-eax-first prolog needs static noinline TU copy t=10 model=muse-03
+?rva0035A8D7@Rva0035A8D7@@QAEXHHH@Z	0x0035A8D7	167	partial	xor-ebx zero plus sub-je-je state0-1 missing and mov-vs-and stores t=25 model=muse-18 score=0.9 stash=reverse/attempts/0x0035a8d7.cpp
