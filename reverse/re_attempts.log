@@ -5128,3 +5128,4 @@ FUN_0091ec31	0x0051EC31	29	blocked	wrapper pushes 5 args to 3-arg row plus lea e
 ??0Rva003AE7B8@@QAE@ABV0@@Z	0x003AE7B8	285	blocked	large Lightning copy with 2x90 loops gives rep-movsd not fld t=18 model=muse-06
 ?rva00390CCA@PhysicsBehavior@@QAEX_N@Z	0x00390CCA	134	partial	flag 0x4000000 via lea eax edi+0x118 and test-or via eax-ecx vs retail mov eax imm and test-or via edi+0x118-eax t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x00390cca.cpp
 ?rva00390533@Rva00390533@@QAE_NXZ	0x00390533	36	blocked	dword shr plus jne-true vs byte test plus and-return t=15 model=muse-05
+?rva0039051E@PhysicsBehavior@@QAEHXZ	0x0039051E	21	partial	nonempty via xor ecx cmp vs neg eax only sbb neg remains t=15 model=muse-05 score=0.91 stash=reverse/attempts/0x0039051e.cpp
