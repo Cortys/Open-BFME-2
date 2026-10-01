@@ -71,6 +71,7 @@ struct Rva004D1C81 {
 	unsigned int _size;
 	Rva004D1C81Iter rva004D1C81(Rva004D1C81Node *x, Rva004D1C81Node *y, const Rva004D1C81Key &v, Rva004D1C81Node *w);
 	Rva004D1C81Pair rva0046ABA6(const Rva004D1C81Key &v);
+	Rva004D1C81Iter rva0046E31F(Rva004D1C81Iter position, const Rva004D1C81Key &v);
 };
 Rva004D1C81Iter Rva004D1C81::rva004D1C81(Rva004D1C81Node *x, Rva004D1C81Node *y, const Rva004D1C81Key &v, Rva004D1C81Node *w)
 {
@@ -122,4 +123,62 @@ Rva004D1C81Pair Rva004D1C81::rva0046ABA6(const Rva004D1C81Key &v)
 	if (j->_key10 < v.key)
 		return Rva004D1C81Pair(rva004D1C81(x, y, v, 0), true);
 	return Rva004D1C81Pair(j, false);
+}
+Rva004D1C81Iter Rva004D1C81::rva0046E31F(Rva004D1C81Iter position, const Rva004D1C81Key &v)
+{
+	if (position.node == _head->_left) {
+		if (_size <= 0)
+			return rva0046ABA6(v).first;
+		if (v.key < position.node->_key10)
+			return rva004D1C81(position.node, position.node, v, 0);
+		else {
+			bool comp_pos_v = position.node->_key10 < v.key;
+			if (comp_pos_v == false)
+				return position;
+			Rva004D1C81Iter after = position;
+			after.node = (Rva004D1C81Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			if (after.node == _head)
+				return rva004D1C81(0, position.node, v, position.node);
+			if (v.key < after.node->_key10) {
+				if (position.node->_right == 0)
+					return rva004D1C81(0, position.node, v, position.node);
+				else
+					return rva004D1C81(after.node, after.node, v, 0);
+			} else {
+				return rva0046ABA6(v).first;
+			}
+		}
+	} else if (position.node == _head) {
+		if (_head->_right->_key10 < v.key)
+			return rva004D1C81(0, _head->_right, v, position.node);
+		else
+			return rva0046ABA6(v).first;
+	} else {
+		Rva004D1C81Iter before = position;
+		before.node = (Rva004D1C81Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)before.node);
+		bool comp_v_pos = v.key < position.node->_key10;
+		if (comp_v_pos && before.node->_key10 < v.key) {
+			if (before.node->_right == 0)
+				return rva004D1C81(0, before.node, v, before.node);
+			else
+				return rva004D1C81(position.node, position.node, v, 0);
+		} else {
+			Rva004D1C81Iter after = position;
+			after.node = (Rva004D1C81Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			bool comp_pos_v = !comp_v_pos;
+			if (!comp_v_pos)
+				comp_pos_v = position.node->_key10 < v.key;
+			if (!comp_v_pos && comp_pos_v && (after.node == _head || v.key < after.node->_key10)) {
+				if (position.node->_right == 0)
+					return rva004D1C81(0, position.node, v, position.node);
+				else
+					return rva004D1C81(after.node, after.node, v, 0);
+			} else {
+				if (comp_v_pos == comp_pos_v)
+					return position;
+				else
+					return rva0046ABA6(v).first;
+			}
+		}
+	}
 }
