@@ -4858,3 +4858,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva005FEE09@Rva005FEE09@@QAEHXZ	0x005FEE09	131	partial	extra push-edi mov-edi-ecx pop-edi as this arrives in edi not ecx t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x005fee09.cpp
 ?rva004E6328@Rva004E6328@@QAEXPAUICoord2D@@@Z	0x004E6328	179	partial	stack-slot rotation h-t1-zero only t=35 model=muse-10 score=0.93 stash=reverse/attempts/0x004e6328.cpp
 ?rva00599870@Rva005997CD@@QAE?AW4ObjectID@@PBUVec2@@_N@Z	0x00599870	186	partial	xmm swap missing 2 movaps accumulator xmm1 not xmm0 bestDist load hoisted early t=20 model=muse-10 score=0.94 stash=reverse/attempts/0x00599870.cpp
+?rva0005818B@Rva00699180Owner@@QAEXPBUHolderPtr@@H@Z	0x0005818B	96	blocked	last in ecx vs eax cmp esi ecx vs eax t=5 model=muse-15 (stash 0.95 kept)
+?rva0005824D@MilesAudioManager@@QAEXPAXM@Z	0x0005824D	199	blocked	xmm0-xmm1 mirror throughout clamp and vector update; only register choice left t=15 model=muse-15 (stash 0.95 kept)
