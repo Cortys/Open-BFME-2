@@ -284,6 +284,7 @@ public:
 	void rva005368F0(AsciiString arg, int x);
 	int rva00536937(AsciiString arg);
 	void rva00536981(AsciiString arg, float x);
+	float rva005369CC(AsciiString arg);
 	void rva00536A1D(AsciiString arg, int x);
 	int rva00536A64(AsciiString arg);
 	void rva00536AAE(AsciiString arg, int x);
@@ -897,6 +898,17 @@ void UserPreferences::rva00536981(AsciiString arg, float x)
 {
 	arg.concat("AverageGameTurns");
 	v10(arg, x);
+}
+
+// ?rva005369CC@UserPreferences@@QAEMVAsciiString@@@Z @0x005369CC 72B
+// UserPreferences AverageGameTurns getter: same string 0x00C6901C as the
+// setter above, slot 0x14 float read with 0.0f default (fldz), caller
+// 0x005378E9 (turn stats). Same shape as the TimePlayed getter 0x0053590D.
+float UserPreferences::rva005369CC(AsciiString arg)
+{
+	arg.concat("AverageGameTurns");
+	float ret = v5(arg, 0.0f);
+	return ret;
 }
 
 void UserPreferences::rva00536A1D(AsciiString arg, int x)

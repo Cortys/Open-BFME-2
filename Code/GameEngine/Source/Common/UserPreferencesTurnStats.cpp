@@ -1,14 +1,12 @@
-// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z
-// partial score=0.96 date=2026-10-01
-// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z
-// partial score=0.96 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 // ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z @0x005378E9 355B
 // UserPreferences turn-stats path: append TurnsPlayed to faction copy, bump it,
 // track Longest/ShortestGameTurns, recompute AverageGameTurns.
 // Evidence: concat TurnsPlayed 0x00868FE8 slot 0x2C calls 0x00536815 0x005368A6
 // 0x0053685F 0x00536937 0x005368F0 0x0053734E 0x005369CC 0x00536981 float
-// g_Va00BBB8D8 0x007BB8D8 ret 8 chain same TU unlock.
+// 1.0f 0x007BB8D8 ret 8 chain same TU unlock.
+// The running-average denominator adds the 1.0f literal (pooled at
+// 0x00BBB8D8), not a float global standing in for it.
 template <typename T>
 class StringBase
 {
@@ -44,7 +42,6 @@ private:
 	StringBase<char> m_data;
 };
 
-extern float g_Va00BBB8D8;
 
 class UserPreferences
 {
@@ -73,7 +70,6 @@ public:
 	void rva005378E9(AsciiString faction, int turns);
 };
 
-// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z present-unmatched
 void UserPreferences::rva005378E9(AsciiString faction, int turns)
 {
 	AsciiString key(faction);
@@ -91,6 +87,6 @@ void UserPreferences::rva005378E9(AsciiString faction, int turns)
 	float totalF;
 	totalF = (float)total;
 	avg = rva005369CC(faction);
-	float newAvg = (totalF * avg + (float)turns) / (totalF + g_Va00BBB8D8);
+	float newAvg = (totalF * avg + (float)turns) / (totalF + 1.0f);
 	rva00536981(faction, newAvg);
 }
