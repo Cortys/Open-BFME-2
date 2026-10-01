@@ -60,3 +60,13 @@ void rva007B9A0F()
 {
     g_rva00E06918.~Rva005E16DA();
 }
+
+// Complete startup7B5343..7B538F followed by a different initializer7B5390.
+void rva007B5343()
+{
+    {
+        AsciiString label("DisbandArmyMemberButton");
+        g_rva00E06918.Rva005E16DA::Rva005E16DA(reinterpret_cast<int>(&label));
+    }
+    atexit(rva007B9A0F);
+}
