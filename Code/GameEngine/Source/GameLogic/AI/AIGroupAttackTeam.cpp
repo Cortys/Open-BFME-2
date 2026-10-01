@@ -17,6 +17,15 @@
 // AIGroup broadcast: forward one int arg to rva0028C20F on every member.
 // Evidence: same begin/end loop shape as setAttitude just above in this TU,
 // callee rva0028C20F row, caller 0x003790B4, ret 4 single-int forward.
+//
+// AIGroup::setWeaponLockForGroup, retail 0x0036DD45 (136 bytes), between
+// setAttitude and rva0036DDCD as in retail. Zero Hour AIGroup.cpp plus the BFME1
+// donor AIGroup_setWeaponLockForGroup.cpp (same member-list walk over the
+// matched Object::setWeaponLock 0x00290B24 returning whether any member locked;
+// the BFME addition refreshes the current weapon when the template flag is set
+// and its status computes non-zero). BFME2 deltas: the template flag sits at
+// +0x16A and the refresh goes through the matched Weapon::computeStatus /
+// cacheStatus; callers 0x00377EC3..0x00379094.
 
 #include <list>
 
@@ -49,10 +58,45 @@ public:
 	AICommandInterface m_commands;
 };
 
+enum WeaponSlotType
+{
+	PRIMARY_WEAPON = 0
+};
+
+enum WeaponLockType
+{
+	NOT_LOCKED = 0
+};
+
+enum WeaponStatus
+{
+	READY_TO_FIRE = 0
+};
+
+class WeaponTemplate
+{
+public:
+	char m_pad[0x16A];
+	bool m_16A;
+};
+
+class Weapon
+{
+public:
+	WeaponStatus computeStatus(bool *valid) const;
+	void cacheStatus(WeaponStatus status) const;
+	char m_pad00[4];
+	const WeaponTemplate *m_template;
+	char m_pad08[0x18 - 8];
+	unsigned int m_18;
+};
+
 class Object
 {
 public:
 	void rva0028C20F(int x);
+	const Weapon *getCurrentWeapon(WeaponSlotType *slot) const;
+	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
 	char m_pad[0x258];
 	AIUpdateInterface *m_ai;
 };
@@ -63,6 +107,7 @@ public:
 	void groupAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void groupHunt(CommandSourceType cmdSource);
 	void setAttitude(AttitudeType tude);
+	bool setWeaponLockForGroup(WeaponSlotType weaponSlot, WeaponLockType lockType);
 	void rva0036DDCD(int x);
 
 private:
@@ -101,6 +146,27 @@ void AIGroup::setAttitude(AttitudeType tude)
 			ai->rva0026DE3B(tude);
 		}
 	}
+}
+
+bool AIGroup::setWeaponLockForGroup(WeaponSlotType weaponSlot, WeaponLockType lockType)
+{
+	bool any = false;
+	for (std::list<Object *>::iterator i = m_memberList.begin(); i != m_memberList.end(); ++i) {
+		Object *object = *i;
+		if (object) {
+			const Weapon *weapon = object->getCurrentWeapon(0);
+			if (object->setWeaponLock(weaponSlot, lockType))
+				any = true;
+			if (weapon && weapon->m_template->m_16A) {
+				if (weapon->computeStatus(0)) {
+					Weapon *current = const_cast<Weapon *>(object->getCurrentWeapon(0));
+					current->m_18 = weapon->m_18;
+					current->cacheStatus((WeaponStatus)1);
+				}
+			}
+		}
+	}
+	return any;
 }
 
 void AIGroup::rva0036DDCD(int x)
