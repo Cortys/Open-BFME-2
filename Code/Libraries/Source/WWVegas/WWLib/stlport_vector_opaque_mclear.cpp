@@ -6,12 +6,21 @@
 // rowed _Destroy at 0x00054F94 in StlportOwnedDeque.cpp then _free at 0x00030830.
 // Four callers 0x00058B74 0x00058C53 0x00239F13 0x0023A10C operate on Opaque vectors.
 #include <vector>
-
+extern "C" __declspec(dllimport) long __stdcall InterlockedIncrement(long volatile *);
+class OpaqueRefCounted
+{
+public:
+    virtual ~OpaqueRefCounted();
+    void Add_Ref() { InterlockedIncrement(&refs); }
+    void Release_Ref();
+private:
+    long refs;
+};
 struct OpaqueRefElement4
 {
-    int m_ref;
-public:
-    ~OpaqueRefElement4();
+    OpaqueRefCounted *referent;
+    ~OpaqueRefElement4() { if (referent) referent->Release_Ref(); }
+    OpaqueRefElement4 &operator=(const OpaqueRefElement4 &);
 };
 
 template void _STL::vector<OpaqueRefElement4>::_M_clear();
