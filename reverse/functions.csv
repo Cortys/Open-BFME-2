@@ -46638,3 +46638,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva0041B8D2Check@@YGEPAVRva0041B8D2Obj@@0H@Z,,0x0041B8D2,70,Code/GameEngine/Source/Common/Rva0041B8D2.cpp,matched,caller 0x0029C8B9 in 0x0029C823 unblocks 0x0029C823 offsets +4 +0x5ec +0x258 slots +0x178 +0x18
 ?Rva003BBAD3Set@@YAXXZ,,0x003BBAD3,99,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBAD3.cpp,matched,unlock disables UI mouse posts 0x3EC clears 0x8B0 tail clearFlags
 ?Rva003BB4F7Kill@@YGXPAVParameter@@@Z,,0x003BB4F7,33,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB4F7.cpp,matched,leaf getUnitNamed then kill 8 0
+??0Rva0020D98D@@QAE@ABV0@@Z,,0x0020D98D,67,Code/GameEngine/Source/Common/Rva0020D98D.cpp,matched,copy ctor via base Rva001E3624 and member Rva003ED658

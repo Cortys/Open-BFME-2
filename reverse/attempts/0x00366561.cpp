@@ -1,5 +1,5 @@
 // ?rva00366561@Rva00366561@@QAE_NHH@Z
-// partial score=0.92 date=2026-10-01
+// partial score=0.93 date=2026-10-01
 // cl: /O1 /MD
 // ?rva00366561@Rva00366561@@QAE_NHH@Z 0x00366561 42B via two dword guards at +0x34/+0x38
 // Evidence: retail checks [ecx+0x34]==0 and [ecx+0x38]==0 then sets [0x2c]=-1 and stores args at +0x34/+0x28; no callees; caller FUN_006e71bf
@@ -15,6 +15,8 @@ public:
 	int m_38;
 	bool rva00366561(int a, int b);
 };
+extern "C" void _WriteBarrier(void);
+#pragma intrinsic(_WriteBarrier)
 
 // ?rva00366561@Rva00366561@@QAE_NHH@Z present-unmatched
 bool Rva00366561::rva00366561(int a, int b)
@@ -23,7 +25,10 @@ bool Rva00366561::rva00366561(int a, int b)
 		return false;
 	m_2c = -1;
 	m_34 = a;
+	_WriteBarrier();
+	int tb = b;
+	_WriteBarrier();
 	m_30 = 0;
-	m_28 = b;
+	m_28 = tb;
 	return true;
 }
