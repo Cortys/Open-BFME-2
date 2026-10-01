@@ -1,6 +1,6 @@
 // ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z
-// partial score=0.9 date=2026-10-01
-// cl: /O1 /DNDEBUG /MD /G6
+// partial score=0.95 date=2026-10-01
+// cl: /O1 /DNDEBUG /MD
 //
 // ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z @0x0048F64E 66B
 // __thiscall predicate on AssaultTransportAIUpdate: arg+0x254 slave provides
@@ -37,10 +37,12 @@ bool AssaultTransportAIUpdate::rva0048F64E(void *arg)
 {
 	Rva0048F64ESlave *slave = *(Rva0048F64ESlave **)((char *)arg + 0x254);
 	Rva0048F64EMaster *master = m04;
-	if (slave == 0)
-		return false;
-	float a = slave->GetA();
-	float b = slave->GetB();
-	float ratio = a / b;
-	return master->m64 > ratio;
+	if (slave != 0) {
+		float a = slave->GetA();
+		float b = slave->GetB();
+		float ratio = a / b;
+		if (ratio < master->m64)
+			return true;
+	}
+	return false;
 }

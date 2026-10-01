@@ -1,7 +1,5 @@
 // ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z
 // partial score=0.93 date=2026-10-01
-// ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z
-// partial score=0.93 date=2026-10-01
 // cl: /O1 /MD
 // ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z @0x001E468F 82B unlock lane Object status/kind predicate.
 // Evidence: calls rowed Object::testStatus 0x0004E536 with 0x16 0x1E plus rowed Object::rva00293926 0x00293926 with 0x84; byte guards +0x108 via +4 and +0x249; caller 0x001E4742.
@@ -29,20 +27,10 @@ private:
 	Rva001E468FInner *m_04;
 };
 
-// ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z present-unmatched
 bool Rva001E468F::rva001E468F(Object *obj)
 {
-	if (m_04->m_108 != 0) {
-		if (obj->testStatus(OBJECT_STATUS_16))
-			return true;
-		if (obj->testStatus(OBJECT_STATUS_1E))
-			return true;
-	}
-	if (obj == 0)
-		return false;
-	if (((unsigned char *)obj)[0x249] == 0)
-		return false;
-	if (!obj->rva00293926(KINDOF_84))
-		return false;
-	return true;
+	if ((m_04->m_108 != 0 && (obj->testStatus(OBJECT_STATUS_16) || obj->testStatus(OBJECT_STATUS_1E))) ||
+		(obj != 0 && ((unsigned char *)obj)[0x249] != 0 && obj->rva00293926(KINDOF_84)))
+		return true;
+	return false;
 }
