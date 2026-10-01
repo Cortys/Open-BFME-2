@@ -21,7 +21,7 @@ class StringBase
 {
 public:
 	__forceinline ~StringBase() { releaseBuffer(); }
-protected:
+private:
 	void releaseBuffer();
 private:
 	StringBase(const StringBase &);
