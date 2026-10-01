@@ -4676,3 +4676,6 @@ FUN_006cced3	0x002CCED3	244	blocked	244B EH Weapon-vs-Texture ownership conflict
 FUN_004bb4ce	0x000BB4CE	393	blocked	vslot56 Draw Perm loops no BFME1 donor needs Draw base layout at 0x68 plus 0x74 plus 0x18 stride t=8 model=muse-06
 FUN_005f705a	0x001F705A	228	blocked	chain ParticleSystemManager plus SmartField double-get plus RGB fild-unsigned plus virtual 0x88 needs manager and slot layout t=12 model=muse-06
 ?Rva001F7F1CGet@@YAXPAXH@Z	0x001F7F1C	237	partial	has-in-bl vs mem plus esi-vs-ebx zero plus movss hoist above dtor plus extra push esi; try Bool-hit lever #19 with split decl above guard t=22 model=muse-06 score=0.92 stash=reverse/attempts/0x001f7f1c.cpp
+?rva00107865@Rva00107865@@QAEXH@Z	0x00107865	252	blocked	WW3D shadow render allocator wall 9reg 7mem add-vs-pop dword-test-vs-byte plus ebx-ebp swap t=25 model=muse-12
+?rva000A273F@Rva000A273F@@QAEHH@Z	0x000A273F	254	blocked	GUI 254B cdecl-vs-thiscall wall ecx-edx-plus-4stack plain-ret 4 virtuals t=10 model=muse-12
+?framesUntilNext@ObjectSMCHelper@@AAEHXZ	0x004DE700	77	partial	cmovb-vs-jae-plus-mov plus head-in-edx-vs-eax plus best-in-ecx-vs-edx plus missing-reload-and-second-je 72v77 t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x004de700.cpp
