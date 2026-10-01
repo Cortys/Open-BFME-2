@@ -25,7 +25,7 @@ private:
 	UnsignedInt m_type;
 };
 
-void Shadow::setOpacity(Int value)
+inline void Shadow::setOpacity(Int value)
 {
 	m_opacity = value;
 
@@ -41,3 +41,9 @@ void Shadow::setOpacity(Int value)
 			| ((Int)((Real)((m_color >> 16) & 0xff) * fvalue) << 16);
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (Shadow::*_bfmeInlineAnchor_Shadow_setOpacity_0)(Int value) = &Shadow::setOpacity;

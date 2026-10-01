@@ -23,7 +23,13 @@ struct SidesInfo
 	ScriptList m_scriptList; // +0x08
 };
 
-void SidesInfo::setScriptList(ScriptList *list)
+inline void SidesInfo::setScriptList(ScriptList *list)
 {
 	m_scriptList.swap(list);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (SidesInfo::*_bfmeInlineAnchor_SidesInfoSetScriptList_0)(ScriptList *list) = &SidesInfo::setScriptList;

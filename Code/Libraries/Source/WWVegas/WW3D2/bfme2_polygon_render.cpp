@@ -30,7 +30,7 @@ class DX8PolygonRendererClass {
  bool Strip; unsigned Pass;
  public: void Render(int base_vertex_offset);
 };
-void DX8PolygonRendererClass::Render(int base_vertex_offset) {
+inline void DX8PolygonRendererClass::Render(int base_vertex_offset) {
  char label[256];
  strcpy(label,"Rendering mesh\tDX8Render\t");
  strcat(label,Model && Model->Get_Name() ? Model->Get_Name() : "(unnamed)");
@@ -39,3 +39,9 @@ void DX8PolygonRendererClass::Render(int base_vertex_offset) {
  if (Strip) DX8Wrapper::Draw_Strip(IndexOffset,IndexCount-2,MinVertex,VertexRange);
  else DX8Wrapper::Draw_Triangles(IndexOffset,IndexCount/3,MinVertex,VertexRange);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (DX8PolygonRendererClass::*_bfmeInlineAnchor_bfme2_polygon_render_0)(int base_vertex_offset) = &DX8PolygonRendererClass::Render;

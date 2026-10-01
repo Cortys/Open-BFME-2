@@ -59,7 +59,7 @@ public:
     }
     void Add_Sphere(const SphereClass& s);
 };
-void SphereClass::Add_Sphere(const SphereClass& s)
+inline void SphereClass::Add_Sphere(const SphereClass& s)
 {
     if (s.Radius == 0.0f) return;
 
@@ -92,3 +92,9 @@ void SphereClass::Add_Sphere(const SphereClass& s)
         }
     }
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (SphereClass::*_bfmeInlineAnchor_SphereClassAddSphere_0)(const SphereClass& s) = &SphereClass::Add_Sphere;

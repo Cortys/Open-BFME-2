@@ -34,7 +34,13 @@ public:
 };
 
 // ?newLocomotor@LocomotorStore@@QBEPAVLocomotor@@PBVLocomotorTemplate@@@Z
-Locomotor *LocomotorStore::newLocomotor(const LocomotorTemplate *tmpl) const
+inline Locomotor *LocomotorStore::newLocomotor(const LocomotorTemplate *tmpl) const
 {
 	return new Locomotor(tmpl);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Locomotor * (LocomotorStore::*_bfmeInlineAnchor_LocomotorStore_newLocomotor_0)(const LocomotorTemplate *tmpl) const = &LocomotorStore::newLocomotor;

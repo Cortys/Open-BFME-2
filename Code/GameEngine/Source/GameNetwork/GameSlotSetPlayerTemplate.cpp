@@ -52,7 +52,7 @@ public:
 
 extern GlobalData *TheGlobalData;
 
-void GameSlot::setPlayerTemplate(Int playerTemplate)
+inline void GameSlot::setPlayerTemplate(Int playerTemplate)
 {
 	_STL::map<int, int> &map = ThePlayerTemplateStore->m_map;
 	if (!map.empty()) {
@@ -70,3 +70,9 @@ void GameSlot::setPlayerTemplate(Int playerTemplate)
 		}
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (GameSlot::*_bfmeInlineAnchor_GameSlotSetPlayerTemplate_0)(Int playerTemplate) = &GameSlot::setPlayerTemplate;

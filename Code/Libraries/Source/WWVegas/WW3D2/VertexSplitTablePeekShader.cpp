@@ -49,7 +49,7 @@ class Vertex_Split_Table {
 public:
 	ShaderClass Peek_Shader(unsigned int index,unsigned int pass);
 };
-ShaderClass Vertex_Split_Table::Peek_Shader(unsigned int index,unsigned int pass)
+inline ShaderClass Vertex_Split_Table::Peek_Shader(unsigned int index,unsigned int pass)
 {
 	char *model = reinterpret_cast<char *>(mmc);
 	char *desc = *reinterpret_cast<char **>(model + 0x94);
@@ -68,3 +68,9 @@ ShaderClass Vertex_Split_Table::Peek_Shader(unsigned int index,unsigned int pass
 	shader.Set_NPatch_Enable();
 	return shader;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+ShaderClass (Vertex_Split_Table::*_bfmeInlineAnchor_VertexSplitTablePeekShader_0)(unsigned int index,unsigned int pass) = &Vertex_Split_Table::Peek_Shader;

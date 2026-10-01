@@ -32,7 +32,7 @@ public:
 	Vector2 *Get_UV_Array(int pass, int stage);
 };
 
-Vector2 *MeshMatDescClass::Get_UV_Array(int pass, int stage)
+inline Vector2 *MeshMatDescClass::Get_UV_Array(int pass, int stage)
 {
 	if (UVSource[pass][stage] == -1) {
 		return NULL;
@@ -42,3 +42,9 @@ Vector2 *MeshMatDescClass::Get_UV_Array(int pass, int stage)
 	}
 	return NULL;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Vector2 * (MeshMatDescClass::*_bfmeInlineAnchor_MeshMatDescGetUVArrayRva000D1F1A_0)(int pass, int stage) = &MeshMatDescClass::Get_UV_Array;

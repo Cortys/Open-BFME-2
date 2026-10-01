@@ -59,7 +59,7 @@ private:
 	UVBufferClass *m_uv[8]; // +0x10
 };
 
-Vector2 *MeshMatDescClass::Get_UV_Array_By_Index(int index, bool create)
+inline Vector2 *MeshMatDescClass::Get_UV_Array_By_Index(int index, bool create)
 {
 	if (create && !m_uv[index])
 		m_uv[index] = new UVBufferClass(m_vertexCount, "MeshMatDescClass::UV");
@@ -69,3 +69,9 @@ Vector2 *MeshMatDescClass::Get_UV_Array_By_Index(int index, bool create)
 		return m_uv[index]->Get_Array();
 	return 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Vector2 * (MeshMatDescClass::*_bfmeInlineAnchor_MeshMatDescGetUVArrayByIndex_0)(int index, bool create) = &MeshMatDescClass::Get_UV_Array_By_Index;

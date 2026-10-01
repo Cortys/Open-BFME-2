@@ -18,7 +18,13 @@ public:
 	NameKeyType nameToKey(const AsciiString &nameString);
 };
 
-NameKeyType NameKeyGenerator::nameToKey(const AsciiString &nameString)
+inline NameKeyType NameKeyGenerator::nameToKey(const AsciiString &nameString)
 {
 	return nameToKey(nameString.str());
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+static NameKeyType (NameKeyGenerator::*const _bfmeInlineAnchor0_nameToKey)(const AsciiString &nameString) = &NameKeyGenerator::nameToKey;

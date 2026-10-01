@@ -19,7 +19,7 @@ private:
 };
 
 // ?getLink@Waypoint@@QBEPAV1@H@Z
-Waypoint *Waypoint::getLink(int index) const
+inline Waypoint *Waypoint::getLink(int index) const
 {
 	return (index < 0 || index >= 8) ? 0 : m_links[index];
 }
@@ -35,3 +35,9 @@ void Waypoint::addLink(Waypoint *other)
 	}
 	target->m_linkSource = this;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Waypoint * (Waypoint::*_bfmeInlineAnchor_WaypointLinks_0)(int index) const = &Waypoint::getLink;

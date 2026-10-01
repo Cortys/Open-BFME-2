@@ -23,6 +23,12 @@ public:
 RefCountPtr<TextureClass> MaterialInfoClass::Peek_Texture(int index) {
     return Textures[index];
 }
-void MaterialInfoClass::Replace_Texture(int index,const RefCountPtr<TextureClass>& texture) {
+inline void MaterialInfoClass::Replace_Texture(int index,const RefCountPtr<TextureClass>& texture) {
     Textures[index]=texture;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (MaterialInfoClass::*_bfmeInlineAnchor_MaterialInfoTextureHandles_0)(int index,const RefCountPtr<TextureClass>& texture) = &MaterialInfoClass::Replace_Texture;

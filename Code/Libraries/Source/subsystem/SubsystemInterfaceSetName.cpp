@@ -28,8 +28,14 @@ private:
 	AsciiString m_name;
 };
 
-void SubsystemInterface::setName(AsciiString name)
+inline void SubsystemInterface::setName(AsciiString name)
 {
 	AsciiString& nameSlot = m_name;
 	nameSlot = name;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (SubsystemInterface::*_bfmeInlineAnchor_SubsystemInterfaceSetName_0)(AsciiString name) = &SubsystemInterface::setName;

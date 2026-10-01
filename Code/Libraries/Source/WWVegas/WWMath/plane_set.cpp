@@ -18,7 +18,7 @@
 */
 
 #include "../../../../../reference/shims/bfmefrustum/plane.h"
-void PlaneClass::Set(const Vector3 & point1, const Vector3 & point2, const Vector3 & point3) 
+inline void PlaneClass::Set(const Vector3 & point1, const Vector3 & point2, const Vector3 & point3) 
 {
 #ifdef ALLOW_TEMPORARIES
 	N = Vector3::Cross_Product((point2 - point1), (point3 - point1));
@@ -35,3 +35,9 @@ void PlaneClass::Set(const Vector3 & point1, const Vector3 & point2, const Vecto
 		D = 0.0f;
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+static void (PlaneClass::*const _bfmeInlineAnchor0_Set)(const Vector3 & point1, const Vector3 & point2, const Vector3 & point3) = &PlaneClass::Set;

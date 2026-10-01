@@ -32,7 +32,13 @@ public:
 	Weapon *allocateNewWeapon(const WeaponTemplate *tmpl, WeaponSlotType slot) const;
 };
 
-Weapon *WeaponStore::allocateNewWeapon(const WeaponTemplate *tmpl, WeaponSlotType slot) const
+inline Weapon *WeaponStore::allocateNewWeapon(const WeaponTemplate *tmpl, WeaponSlotType slot) const
 {
 	return new Weapon(tmpl, slot);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Weapon * (WeaponStore::*_bfmeInlineAnchor_WeaponStoreAllocateNewWeapon_0)(const WeaponTemplate *tmpl, WeaponSlotType slot) const = &WeaponStore::allocateNewWeapon;

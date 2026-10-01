@@ -45,7 +45,7 @@ public:
 	AIUpdateModuleData *friend_getAIModuleInfo();
 };
 
-const ModuleData *ModuleInfo::getNthData(int i) const
+inline const ModuleData *ModuleInfo::getNthData(int i) const
 {
 	if (i >= 0)
 	{
@@ -68,3 +68,9 @@ AIUpdateModuleData *ThingTemplate::friend_getAIModuleInfo()
 	}
 	return 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+static const ModuleData * (ModuleInfo::*const _bfmeInlineAnchor0_getNthData)(int i) const = &ModuleInfo::getNthData;

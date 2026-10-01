@@ -32,7 +32,7 @@ public:
 	Object *findObjectByID(ObjectID id);
 };
 
-Object *GameLogic::findObjectByID(ObjectID id)
+inline Object *GameLogic::findObjectByID(ObjectID id)
 {
 	if (id == INVALID_OBJECT_ID)
 		return 0;
@@ -41,3 +41,9 @@ Object *GameLogic::findObjectByID(ObjectID id)
 		return 0;
 	return node->object;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+Object * (GameLogic::*_bfmeInlineAnchor_GameLogicFindObjectByID_0)(ObjectID id) = &GameLogic::findObjectByID;

@@ -52,7 +52,13 @@ unsigned int Image::clearStatus(unsigned int bit)
 }
 
 // ?setImageSize@Image@@QAEXPAUICoord2D@@@Z, retail 0x0004D717 (18B).
-void Image::setImageSize(ICoord2D *size)
+inline void Image::setImageSize(ICoord2D *size)
 {
 	m_imageSize = *size;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (Image::*_bfmeInlineAnchor_Image_0)(ICoord2D *size) = &Image::setImageSize;

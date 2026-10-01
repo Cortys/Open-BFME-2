@@ -158,7 +158,7 @@ public:
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
-void AICommandInterface::aiIdle(CommandSourceType cmdSource)
+inline void AICommandInterface::aiIdle(CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_IDLE, cmdSource);
 	aiDoCommand(&parms);
@@ -169,14 +169,14 @@ void AICommandInterface::aiIdle(CommandSourceType cmdSource)
 // aiHunt at AICMD 0x12 with no field store plus slot-0 aiDoCommand.
 // BFME2 same id 0x12 plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
 // Callers at 0x002AEA5C 0x00353968 0x003700AF 0x003C8AB7 plus 4 more.
-void AICommandInterface::aiHunt(CommandSourceType cmdSource)
+inline void AICommandInterface::aiHunt(CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_HUNT, cmdSource);
 	aiDoCommand(&parms);
 }
 
 // ?aiForceAttackObject@AICommandInterface@@QAEXPAVObject@@HW4CommandSourceType@@@Z @0x36F05A
-void AICommandInterface::aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource)
+inline void AICommandInterface::aiForceAttackObject(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_FORCE_ATTACK_OBJECT, cmdSource);
 	parms.m_obj = victim;
@@ -197,7 +197,7 @@ void AICommandInterface::rva0026C2D9(Object *victim, Int maxShotsToFire, Command
 }
 
 // ?aiAttackPosition@AICommandInterface@@QAEXPBUCoord3D@@HW4CommandSourceType@@@Z @0x29599A
-void AICommandInterface::aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource)
+inline void AICommandInterface::aiAttackPosition(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_ATTACK_POSITION, cmdSource);
 	parms.m_pos = *pos;
@@ -346,7 +346,7 @@ void AICommandInterface::rva0036EFF5(Object *target, CommandSourceType cmdSource
 // BFME2 same id 0x1A plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
 // Class proven by caller at 0x003702A8 via lea ecx,[eax+0x20] (AICommandInterface subobject).
 // Callers at 0x003702A8 0x00373C54 0x003787A9 0x003C8E72 0x003C90D5 plus 9 more.
-void AICommandInterface::aiExit(Object *objectToExit, CommandSourceType cmdSource)
+inline void AICommandInterface::aiExit(Object *objectToExit, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_EXIT, cmdSource);
 	parms.m_obj = objectToExit;
@@ -443,7 +443,7 @@ void AICommandInterface::aiAttackTeam(const Team *team, Int maxShotsToFire, Comm
 // aiEvacuate at AICMD 0x1B plus m_intValue at +0x34 plus slot-0 aiDoCommand.
 // BFME2 same id 0x1B plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
 // Caller at 0x003C86F1 in ScriptActions::doNamedExitAll plus 5 more.
-void AICommandInterface::aiEvacuate(bool exposeStealthUnits, CommandSourceType cmdSource)
+inline void AICommandInterface::aiEvacuate(bool exposeStealthUnits, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_EVACUATE, cmdSource);
 	if (exposeStealthUnits)
@@ -458,7 +458,7 @@ void AICommandInterface::aiEvacuate(bool exposeStealthUnits, CommandSourceType c
 // aiGuardPosition at AICMD 0x1E plus m_pos at +0x08 plus m_intValue at +0x34 plus slot-0 aiDoCommand.
 // BFME2 same id 0x1E plus the 0xC0 block via opaque 0x351BD0 ctor plus inline free at 0x30830.
 // Callers at 0x003703FF 0x003C88C0 0x003C894B 0x003C89C7 0x003C92E6 0x003C93CB.
-void AICommandInterface::aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource)
+inline void AICommandInterface::aiGuardPosition(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource)
 {
 	AICommandParms parms(AICMD_GUARD_POSITION, cmdSource);
 	parms.m_pos = *position;
@@ -709,3 +709,15 @@ void AICommandInterface::rva0037379B(Object *target, CommandSourceType cmdSource
 	parms.m_obj = target;
 	aiDoCommand(&parms);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_0)(CommandSourceType cmdSource) = &AICommandInterface::aiIdle;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_1)(CommandSourceType cmdSource) = &AICommandInterface::aiHunt;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_2)(Object *victim, Int maxShotsToFire, CommandSourceType cmdSource) = &AICommandInterface::aiForceAttackObject;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_3)(const Coord3D *pos, Int maxShotsToFire, CommandSourceType cmdSource) = &AICommandInterface::aiAttackPosition;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_4)(Object *objectToExit, CommandSourceType cmdSource) = &AICommandInterface::aiExit;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_5)(bool exposeStealthUnits, CommandSourceType cmdSource) = &AICommandInterface::aiEvacuate;
+void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_6)(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource) = &AICommandInterface::aiGuardPosition;

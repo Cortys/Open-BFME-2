@@ -71,7 +71,7 @@ public:
 	void Render_Sorted(int base_vertex_offset,const SphereClass &bounding_sphere);
 };
 
-void DX8PolygonRendererClass::Render_Sorted(
+inline void DX8PolygonRendererClass::Render_Sorted(
 	int base_vertex_offset,const SphereClass &bounding_sphere)
 {
 	char label[256];
@@ -88,3 +88,10 @@ void DX8PolygonRendererClass::Render_Sorted(
 		Insert_Triangles(
 		bounding_sphere,index_offset,polygon_count,min_vertex,vertex_range);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (DX8PolygonRendererClass::*_bfmeInlineAnchor_bfme2_polygon_render_sorted_0)(
+	int base_vertex_offset,const SphereClass &bounding_sphere) = &DX8PolygonRendererClass::Render_Sorted;
