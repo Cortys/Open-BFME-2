@@ -46037,3 +46037,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?Rva002ABAC0Free@@YGXPAPAXPAUPoolNode002ABAC0@@@Z,,0x002ABAC0,36,Code/Libraries/Source/WWVegas/WWLib/Rva002ABAC0Free.cpp,matched,unlock same pool-free shape as 0x002ABB20 global g_00DBBD34
 ?rva002AB82D@Player@@QBE_NPAVCreateAHeroData@@@Z,,0x002AB82D,40,Code/GameEngine/Source/Common/RTS/PlayerRva002AB82D.cpp,matched,same 40B shape as hasScience via rowed find 0x0020E873 neighbours Player
 ?rva002AB855@Player@@QBE_NPAVCreateAHeroData@@@Z,,0x002AB855,40,Code/GameEngine/Source/Common/RTS/PlayerRva002AB855.cpp,matched,same shape as 0x002AB82D via rowed find 0x0020E873 neighbours Player
+?rva002ABD1D@Player@@QAEHHH@Z,,0x002ABD1D,43,Code/GameEngine/Source/Common/RTS/PlayerRva002ABD1D.cpp,matched,Player count KindOf via iterateObjects pinned 0x002AB08B
