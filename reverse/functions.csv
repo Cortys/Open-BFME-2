@@ -45831,3 +45831,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva0039EA9C@@QAE@XZ,,0x0039EAB7,54,Code/GameEngine/Source/Common/Rva0039EAB7Dtor.cpp,matched,dtor with two AsciiStrings via releaseBuffer
 ?Rva0043289DClassify@@YAHH@Z,,0x0043289D,59,Code/GameEngine/Source/Common/Rva0043289DClassify.cpp,matched,retail dispatch classify 4-18 map evidence from callers
 ?rva004334AF@Rva004334AF@@QAEXM@Z,,0x004334AF,12,Code/Libraries/Source/WWVegas/WW3D2/LineGroupClassRva004334AF.cpp,matched,or byte ECX+C4 0x80 then tail-jmp rowed Set_Line_UCoord
+?Rva005D839BCheck@@YI_NHPAURva005D839BParam@@@Z,,0x005D839B,168,Code/GameEngine/Source/Common/Rva005D839BCheck.cpp,matched,fastcall frame window check over the BfmeE8 vector globals and TheGameLogic frame; correct AISpellBookAssistBattle __FILE__ literal fixes the banked string mismatch
