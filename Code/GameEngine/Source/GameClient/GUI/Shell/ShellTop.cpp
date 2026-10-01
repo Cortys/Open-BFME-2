@@ -231,7 +231,7 @@ void Shell::rva0035BF0E()
 }
 
 // ??1Shell@@UAE@XZ @ 0x0035C087 (227B). Shell dtor: pops screens via top/rva0035BF0E loop then animate deleteInstance+delete scheme delete layouts destroy+deleteInstance+delete audio string base. Evidence: vtable 0x00816208 callers 0x0035C54A deleting dtor callees top rva0035BF0E scheme 0x002007D5 releaseBuffer 0x00036410 base 0x001B4E74 audio 0x0035BD3F BFME1 ShellDestructor donor.
-Shell::~Shell()
+inline Shell::~Shell()
 {
 	WindowLayout *cur = top();
 	while (cur != 0) {
@@ -271,3 +271,10 @@ Shell::~Shell()
 #pragma comment(linker, "/alternatename:?TheGameLogic@@3PAUGameLogicMirror@@A=?TheGlobalData@@3PAVGlobalData@@A")
 // ?TheGlobalData@@3PAUGlobalData@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
 #pragma comment(linker, "/alternatename:?TheGlobalData@@3PAUGlobalData@@A=?TheGlobalData@@3PAVGlobalData@@A")
+#pragma inline_depth(0)
+// ?bfmeEmitShellTop@@YAXPAVShell@@@Z present-unmatched
+void bfmeEmitShellTop(Shell *p)
+{
+	p->Shell::~Shell();
+}
+#pragma inline_depth()
