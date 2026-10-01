@@ -22,7 +22,9 @@ public:
 	void rva00225375(const AsciiString &, const AsciiString &, bool);
 };
 
-extern BfmeAptWindowManager *g_bfmeAptWindowManager;
+// Matched DIR32 references place this BFME Apt manager slot at VA 0x00DFE4CC.
+// The retail bytes there are zero, so the pointer starts null.
+BfmeAptWindowManager *g_bfmeAptWindowManager = 0;
 
 void __stdcall Rva005832D0Set(const AsciiString &path)
 {
