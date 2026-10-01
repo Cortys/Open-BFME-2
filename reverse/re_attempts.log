@@ -5194,3 +5194,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva003BBB51Set@@YGX_N@Z	0x003BBB51	45	partial	register allocation edx vs eax plus movzx vs mov dl size exact 45B t=22 model=muse-09 score=0.92 stash=reverse/attempts/0x003bbb51.cpp
 ?rva00459109@Rva00459109@@QAEHXZ	0x00459109	75	partial	fxch st(1) extra and jbe-to-zero vs retail jb-to-g2 float part exact t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x00459109.cpp
 ?Rva0041B80FCheck@@YA_NPAVObject@@0@Z	0x0041B80F	78	partial	vtable for +0x4c in EBX with push-pop vs EDX reload after call; 76B vs 78B; CheckActive unsigned jbe and shared false epilogue match; private static EAX-EDI convention via same-TU dummy proven t=24 model=muse-02 score=0.93 stash=reverse/attempts/0x0041b80f.cpp
+??0Locomotor@@QAE@PBVLocomotorTemplate@@@Z	0x005C96EB	104	partial	zero-block via lea-eax plus OR scheduling t=25 model=muse-01 score=0.93 stash=reverse/attempts/0x005c96eb.cpp

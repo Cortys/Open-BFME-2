@@ -134,6 +134,7 @@ public:
 	void rva005CADD3(const AsciiString &email, const AsciiString &nick);
 	// Erases one email key from nick/pass/date maps at +0x2c/+0x14/+0x20 (retail 0x005CABF9).
 	void rva005CABF9(AsciiString email);
+	AsciiString rva005C9FC4(void);
 
 private:
 	PassMap m_emailPasswordMap;
@@ -302,6 +303,47 @@ void GameSpyLoginPreferences::rva005CABF9(AsciiString email)
 	m_emailNickMap.erase(email);
 	m_emailPasswordMap.erase(email);
 	m_emailDateMap.erase(email);
+}
+
+// ?rva005C9FC4@GameSpyLoginPreferences@@QAE?AVAsciiString@@XZ @0x005C9FC4 185B
+// Evidence: caller 0x0057F486 constructs GameSpyLoginPreferences at +0x58 and
+// calls this for its +0xAC member; finds lastEmail else registry MemberName;
+// donor BfmeAptScreenOnlineLoginRefreshState find-lastEmail-else-MemberName;
+// lookup via throw() shim (shape-lever: no EH state across find) pinned to
+// shared _M_find worker 0x001F8437 like SkirmishPreferences.
+bool GetStringFromRegistry(AsciiString path, AsciiString key, AsciiString &val);
+extern const char g_Rva0107301CEmptyString[];
+struct SkirmishFindNode
+{
+	unsigned char m_pad[0x14];
+	AsciiString m_value;
+};
+class SkirmishFindMap
+{
+public:
+	SkirmishFindNode *find(const AsciiString &key) const throw();
+	SkirmishFindNode *end() const { return m_end; }
+
+private:
+	SkirmishFindNode *m_end;
+	unsigned char m_unreconstructed[8];
+};
+AsciiString GameSpyLoginPreferences::rva005C9FC4(void)
+{
+	AsciiString result;
+	const SkirmishFindMap *map;
+	SkirmishFindNode *rawIt;
+	{
+		AsciiString key("lastEmail");
+		map = (const SkirmishFindMap *)((const char *)this + 4);
+		rawIt = map->find(key);
+	}
+	PreferenceMap::iterator it = *(PreferenceMap::iterator *)&rawIt;
+	if (it == this->end())
+		GetStringFromRegistry(g_Rva0107301CEmptyString, "MemberName", result);
+	else
+		result = it->second;
+	return result;
 }
 
 // FUN @0x5C9CDE: retail copy of Zero Hour's WOLLoginMenu obfuscate()

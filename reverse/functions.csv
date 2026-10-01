@@ -46714,3 +46714,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00364A37@Rva00364A37@@QAEXXZ,,0x00364A37,41,Code/GameEngine/Source/GameLogic/AI/PathRva00364A37.cpp,matched,clearer via rowed free helper with sentinel reinit
 ?rva0036429B@Rva0036429B@@QAEXPAUFreeNode@@@Z,,0x0036429B,45,Code/GameEngine/Source/GameLogic/AI/PathRva0036429B.cpp,matched,twin free-list via plus8 plus12 with rowed free
 ?rva00364A60@Rva00364A60@@QAEXXZ,,0x00364A60,41,Code/GameEngine/Source/GameLogic/AI/PathRva00364A60.cpp,matched,twin clearer via rowed free helper
+?rva005C9FC4@GameSpyLoginPreferences@@QAE?AVAsciiString@@XZ,,0x005C9FC4,185,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,caller 0x0057F486 plus donor BfmeAptScreenOnlineLoginRefreshState plus throw shim pinned to 0x001F8437
