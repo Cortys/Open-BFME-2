@@ -23,10 +23,29 @@ public:
     ~Rva003EF14ABase() { *(const void **)this = g_vtableAtBFDF68; }
 };
 
+class Rva004E2E58Value;
+struct Rva004E2E58Node {
+    unsigned unknown00;
+    Rva004E2E58Node *parent04;
+    Rva004E2E58Node *left08;
+    Rva004E2E58Node *right0C;
+    void *unknown10;
+    Rva004E2E58Value *value14;
+};
+namespace _STL {
+    struct _Rb_tree_node_base;
+    template <class T> class _Rb_global {
+    public:
+        static _Rb_tree_node_base *_M_increment(_Rb_tree_node_base *);
+    };
+}
+
 class Rva004E2E58 {
     // Opaque span between the independently observed member at +8 and
     // string at +18. Its exact container extent is not yet established.
-    char unknown[0x10];
+    Rva004E2E58Node *header00;
+    unsigned count04;
+    char unknown08[8];
 public:
     ~Rva004E2E58();
     void rva004E21D5();
@@ -135,4 +154,16 @@ void Rva004E2E58Value::rva004E2199()
         record->container08.rva00072FE6();
     }
     flag20 = false;
+}
+
+// Complete 41B body at 0x004E21D5. Tree nodes survive this pass: each
+// non-null payload at node+14 is reset, then the matched iterator advances.
+void Rva004E2E58::rva004E21D5()
+{
+    for (Rva004E2E58Node *node = header00->left08; node != header00;
+         node = (Rva004E2E58Node *)_STL::_Rb_global<bool>::_M_increment(
+             (_STL::_Rb_tree_node_base *)node)) {
+        if (node->value14)
+            node->value14->rva004E2199();
+    }
 }
