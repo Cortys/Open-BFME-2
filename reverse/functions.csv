@@ -46291,3 +46291,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00524056@Rva00524021@@QAEXXZ,,0x00524056,53,Code/Libraries/Source/WWVegas/WWLib/Rva00524056Loop.cpp,matched,chain via rowed 0x00224705 plus StringBase clear 0x0048BA39
 ??1Rva00524349@@QAE@XZ,,0x00524349,47,Code/Libraries/Source/WWVegas/WWLib/Rva00524349Dtor.cpp,matched,chain via rowed 0x00524056 plus vector dtor 0x0002CC70
 ?rva002A7D30@PlayerList@@QAEHXZ,,0x002A7D30,51,Code/GameEngine/Source/Common/RTS/PlayerList_getNthPlayer.cpp,matched,PlayerList mask via getNthPlayer and getPlayerMask
+??0Rva0073EE21@@QAE@XZ,,0x0073EE21,44,Code/GameEngine/Source/Common/RTS/Rva0073EE21Ctor.cpp,matched,Ctor base Rva0040F9D plus member twin of FXList pattern
