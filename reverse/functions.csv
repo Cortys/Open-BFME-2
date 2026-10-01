@@ -45010,3 +45010,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?erase@?$vector@URva000B435F@@V?$allocator@URva000B435F@@@_STL@@@_STL@@QAEPAURva000B435F@@PAU3@0@Z,,0x000C059B,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000b435f_erase.cpp,matched,vector Rva000B435F range erase via pinned copy_ptrs plus rowed destroy same shape as FXBoneInfo 207F0D
 ??0Rva0040394A@@QAE@XZ,,0x0040394A,22,Code/Libraries/Source/WWVegas/WWLib/Rva0040394ADefaultCtor.cpp,matched,default ctor vector at plus8 via rowed base 0x00211E58 caller 0x004045B4
 ?rva00537208@UserPreferences@@QAEXVAsciiString@@@Z,,0x00537208,89,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,gap UserPreferences LastHouse v12 pair
+??0Rva0037307F@@QAE@XZ,,0x0037307F,23,Code/Libraries/Source/WWVegas/WWLib/Rva0037307FCtor.cpp,matched,default ctor vector BfmeE16 plus bool clear via rowed base
