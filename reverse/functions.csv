@@ -45484,3 +45484,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002D9893@Rva002D9893@@QAEXABV1@@Z,,0x002D9893,336,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,honest Copy void const ref Strings Opaque Pool10 movsd cond 2 unlocked
 ??4Rva002D9893@@QAEAAV0@ABV0@@Z,,0x002D9A31,18,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,chain operator equals calls Copy returns this 1 caller
 ?Rva00220808Get@@YA?AVUnicodeString@@PAVRva00220808@@@Z,,0x00220808,131,Code/GameEngine/Source/Common/System/Rva00220808.cpp,matched,Free cdecl UnicodeString helper via Ascii at +0x64 and TheGameText slot 0x38
+?push_back@?$vector@UBfmeStringRecord0022074B@@V?$allocator@UBfmeStringRecord0022074B@@@_STL@@@_STL@@QAEXABUBfmeStringRecord0022074B@@@Z,,0x00220F8D,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmestringrecord0022074b_pushback.cpp,matched,vector push_back fast Construct else overflow same 55B shape
