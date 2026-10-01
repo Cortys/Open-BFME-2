@@ -45364,3 +45364,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1?$vector@URvaPair0039973B@@V?$allocator@URvaPair0039973B@@@_STL@@@_STL@@QAE@XZ,,0x0039973B,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,unlock 8-byte pair vector dtor via pinned Destroy 0x32C0CA plus free
 ?Rva0051B09BEnable@@YAXXZ,,0x0051B09B,129,Code/GameEngine/Source/Common/Rva0051AF0BEnable.cpp,matched,chain via rowed 0x002B2B66 selection-locked GameMessage 0x6b8 plus fallback 0x448
 ?rva003A1C3A@Team@@QAEX_N@Z,,0x003A1C3A,224,Code/GameEngine/Source/Common/RTS/TeamRva003A1C3A.cpp,matched,Team method via rowed iterate 0x263864 and rowed list insert
+?rva0044F633@Rva0044F633@@QAEPAXXZ,,0x0044F633,70,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateRva0044F633.cpp,matched,leaf via TheGameLogic findObjectByID and finalOverride kind check
