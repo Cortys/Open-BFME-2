@@ -36,7 +36,7 @@ public:
         Referent = that.Referent;
         return *this;
     }
-    ~RefCountPtr() { if (Referent) { Referent->Release_Ref(); Referent = 0; } }
+    ~RefCountPtr();
 private:
     T *Referent;
 };
