@@ -46318,3 +46318,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??$_Construct@URva002B72C9@@U1@@_STL@@YAXPAURva002B72C9@@ABU1@@Z,,0x002B8226,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructEhSiblings.cpp,matched,EH-framed placement copy calling the defined Rva002B72C9 copy ctor
 ?Rva003E514FCheck@@YG_NPAVParameter@@PAUCondA003E514F@@PAUCondB003E514F@@@Z,,0x003E514F,138,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E514F.cpp,matched,leaf via rowed getUnitNamed plus op switch plus late boolize
 ?rva004ECDC8@Rva004ECDC8@@QAEXPAVXfer@@@Z,,0x004ECDC8,66,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECDC8Xfer.cpp,matched,Xfer Version 1 1 via slot 0x28 uint Coord int via 0x78 0x60 0x7C callers 0x004EDB95 0x004EDBC7
+?rva00395A19@Rva00395A19@@QAEPAXI@Z,,0x00395A19,28,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395A19.cpp,matched,vtable slot 0 calls rowed apply and delete
