@@ -1,10 +1,7 @@
-// ?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z
-// partial score=0.91 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc
 // ?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z @0x004E0BDC 109B ensure Inner at +0x3c via new plus copy ctor 0x0040D688 or assign 0x004E09FB then store +0x18 to +0xB4; chain via 0x0040D688
 void *__cdecl operator new(unsigned int size);
-inline void *__cdecl operator new(unsigned int, void *p) { return p; }
-inline void __cdecl operator delete(void *, void *) {}
+void __cdecl operator delete(void *p);
 
 struct BfmeAssignRecord172
 {
@@ -57,17 +54,11 @@ private:
 	Rva004E0790 m_3c;
 };
 
-// ?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z present-unmatched
 void Rva004E0BDC::rva004E0BDC(const Rva004E0790Inner &arg)
 {
 	if (!m_3c.m_ptr) {
-		void *mem = ::operator new(0xC8);
-		if (!mem)
-			m_3c.rva004E08F6(0);
-		else {
-			Rva0040C351 *p = new (mem) Rva0040C351(*reinterpret_cast<const Rva0040C351 *>(&arg));
-			m_3c.rva004E08F6(reinterpret_cast<Rva004E0790Inner *>(p));
-		}
+		Rva0040C351 *p = new Rva0040C351(*reinterpret_cast<const Rva0040C351 *>(&arg));
+		m_3c.rva004E08F6(reinterpret_cast<Rva004E0790Inner *>(p));
 	}
 	else {
 		m_3c.m_ptr->rva004E09FB(arg);
