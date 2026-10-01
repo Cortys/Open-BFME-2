@@ -339,3 +339,22 @@ void __stdcall Rva003BB274Ai(Parameter *p, int v)
 		return;
 	ai->rva0026DE3B(v);
 }
+
+// ?Rva003BBF23Disable@@YGXPAVParameter@@_N@Z @0x003BBF23 46B leaf caller 0x003CC4CC globals 0xDFE16C callees getUnitNamed setDisabledUntil
+// Evidence: push [esp+4] getUnitNamed test je then mov cl,[esp+8] neg cl sbb ecx,ecx and ecx,0x3FFFFFFF push ecx push 3 mov ecx,eax call setDisabledUntil ret 8.
+enum DisabledType
+{
+	DISABLED_TYPE_3 = 3
+};
+class Object
+{
+public:
+	void setDisabledUntil(DisabledType, unsigned int);
+};
+void __stdcall Rva003BBF23Disable(Parameter *p, bool b)
+{
+	Object *o = g_Va009FE16C->getUnitNamed(p);
+	if (!o)
+		return;
+	o->setDisabledUntil(DISABLED_TYPE_3, b ? 0x3FFFFFFF : 0);
+}
