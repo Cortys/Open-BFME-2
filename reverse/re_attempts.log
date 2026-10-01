@@ -4741,3 +4741,6 @@ FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont 
 ?rva002AB5C7@Rva002AB5C7@@QAEXXZ	0x002AB5C7	118	blocked	Team-scan chain with disp8 getter via stack indirect plus 0x68 virtual on g_00A027B8 needs donor pattern; t=12 model=muse-05
 ?Rva002D9622Get@@YAPAVAsciiString@@H@Z	0x002D9622	100	partial	1 missing dec before empty; TheAudio addrs gate-filled; 99B vs 100B t=18 model=muse-05 score=0.95 stash=reverse/attempts/0x002d9622.cpp
 ?rva0020F685@Rva0020F685@@QAEXXZ	0x0020F685	141	blocked	two vector<void*> clears with push0 virtual plus separate delete needs donor for element dtor; t=10 model=muse-05
+?rva00466D50@Rva00466D50@@QAE_NI@Z	0x00466D50	67	blocked	ebx-edi mirror plus add-ebx-arg vs add-edi-arg and mov-ecx-esi order; 6 variants local-order plus expr-assoc plus G7 t=20 model=muse-02
+?Rva004F53C3Cb@@YAXPAX0@Z	0x004F53C3	115	partial	mov ecx-esi 2B scheduling only fcomi-fstp-jb ok t=30 model=muse-02 score=0.97 stash=reverse/attempts/0x004f53c3.cpp
+?rva004A12B6@Rva004A12B6@@QAE_NPAVObject@@0@Z	0x004A12B6	201	blocked	MI negative this-0x1C-0x18 plus body edi vs eax and 33B over after 3 variants t=15 model=muse-02
