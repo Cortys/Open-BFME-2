@@ -1,11 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 // ??1Rva002560E3@@UAE@XZ @0x002560E3 84B
 // ModuleData dtor: releases StringBase<char> at +0x1D8 (state 2) and +0x1D4
 // (state 1) through rowed releaseBuffer 0x00036410, runs the member dtor at
 // +0x1C8 (state 0) through rowed Rva00360D26Member 0x00360D26, then restores
 // the Snapshot base vtable 0x00BBB554. Shape follows PillageModuleDataDtor
-// (TU-local Snapshot with inline BBB554-restoring dtor, novtable derived to
-// suppress own store, empty virtual body). Owner unproven so honest address
+// (shared Snapshot base dtor, novtable derived to suppress own store, empty
+// virtual body). Owner unproven so honest address
 // name; caller is the 28B 0x002560C7.
 template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); }
@@ -14,20 +14,8 @@ class Rva00360D26Member
 {
 public: ~Rva00360D26Member();
 };
-class Xfer;
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-extern const void *const g_00BBB554[];
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
+#include "Common/Snapshot.h"
+
 class __declspec(novtable) Rva002560E3 : public Snapshot
 {
 public:

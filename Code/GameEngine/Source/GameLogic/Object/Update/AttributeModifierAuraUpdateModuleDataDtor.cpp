@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP=
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/moduledata
 // stlport
 //
 // ??1AttributeModifierAuraUpdateModuleData@@UAE@XZ, retail 0x0049BF6C,
@@ -10,29 +10,14 @@
 // 0x0049BBD5 (vtable 0x00C50EE8 plus string +0x08 plus vector +0x0C via
 // 0x211E58 plus filter +0x24 via 0x3623E5 plus member +0x28 plus table
 // 0x00C50DC8 plus factory 0x24E65C news 0x154) and the slot-0 ??_G at
-// 0x0049BF50. Shape follows LargeGroupBonusUpdateModuleDataDtor (TU-local
-// Snapshot with inline BBB554-restoring dtor plus novtable derived
+// 0x0049BF50. Shape follows LargeGroupBonusUpdateModuleDataDtor (shared
+// Snapshot base dtor plus novtable derived
 // suppressing the entry store retail lacks plus filter plus vector plus
 // string members). Donor is BFME1
 // AttributeModifierAuraUpdateModuleDataDestructorThunk.cpp:59.
 
 #include <vector>
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 
