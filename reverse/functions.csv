@@ -46342,3 +46342,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004ECE1C@Rva004ECE1C@@QAEXXZ,,0x004ECE1C,69,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECE1C.cpp,matched,TheGameLogic m_40 vs plus 0x54 threshold g_00E044B0 vslots 0x18 0x1c
 ??1Rva003E3C39@@UAE@XZ,,0x003E3C39,27,Code/GameEngine/Source/Common/Rva003E3C39Dtor.cpp,matched,vtable 0x00835B34 member +4 slot0 plus operator delete
 ?Rva003E3FFECheck@@YG_NPAVParameter@@0@Z,,0x003E3FFE,123,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateRva003E3FFE.cpp,matched,neighbours same flags unit mask plus player mask loop
+?Rva003E5D95Check@@YGEPAVParameter@@PAUCond003E5D95@@@Z,,0x003E5D95,56,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E5D95.cpp,matched,leaf via rowed getUnitNamed plus g_Va009FE16C plus Object+4 inner +0x118 bit27
