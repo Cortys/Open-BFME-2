@@ -35,6 +35,12 @@ public:
 	int rva002244CA(const AsciiString *key);
 };
 
+class Rva00224455
+{
+public:
+	int rva00224455(const AsciiString *key);
+};
+
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 
@@ -50,6 +56,7 @@ public:
 	void rva00523F8C();
 	void rva00523FEC();
 	void rva00523F57();
+	void rva00523F22();
 private:
 	StringBase<char> *m_begin1;
 	StringBase<char> *m_end1;
@@ -91,6 +98,17 @@ void Rva00524021::rva00523F57()
 		return;
 	while (m_begin1 != m_end1) {
 		((Rva002244CA *)TheRva00222A8BTarget)->rva002244CA((const AsciiString *)(m_end1 - 1));
+		--m_end1;
+		m_end1->clear();
+	}
+}
+
+void Rva00524021::rva00523F22()
+{
+	if (TheRva00222A8BTarget == 0)
+		return;
+	while (m_begin1 != m_end1) {
+		((Rva00224455 *)TheRva00222A8BTarget)->rva00224455((const AsciiString *)(m_end1 - 1));
 		--m_end1;
 		m_end1->clear();
 	}
