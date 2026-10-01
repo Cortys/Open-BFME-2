@@ -46,22 +46,13 @@ private:
 	Header *m_data;
 };
 
-class UnicodeString
+class UnicodeString : public StringBase<unsigned short>
 {
 public:
-	int compareNoCase(const UnicodeString &that) const
-	{
-		return ((const StringBase<unsigned short> *)this)->compareNoCase(
-			*(const StringBase<unsigned short> *)&that);
-	}
-
 	void releaseBuffer()
 	{
-		m_data.releaseBuffer();
+		((StringBase<unsigned short> *)this)->releaseBuffer();
 	}
-
-private:
-	StringBase<unsigned short> m_data;
 };
 
 class GameSlot
