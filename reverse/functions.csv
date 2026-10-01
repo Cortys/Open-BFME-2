@@ -46652,3 +46652,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?onObjectCreated@AIUpdateInterface@@UAEXXZ,,0x002632EE,46,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,creates state machine and initializes default state
 ?rva004AE988@Rva004AE988@@QAEXXZ,,0x004AE988,114,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004AE988.cpp,matched,chain via 0x001E431E random pick plus wake
 ?Rva003BB49BDestroy@@YGXPAVParameter@@@Z,,0x003BB49B,34,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB49B.cpp,matched,leaf getUnitNamed then destroyObject
+?rva0020DB91@Rva0020DB91@@QAEPAXABVAsciiString@@@Z,,0x0020DB91,46,Code/GameEngine/Source/Common/Rva0020DB91.cpp,matched,scan ptr array with StringBase compareNoCase
