@@ -45449,3 +45449,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002AD5ED@Rva002AD5ED@@QAEMABVAsciiString@@@Z,,0x002AD5ED,60,Code/GameEngine/Source/Common/RTS/Rva002AD5ED.cpp,matched,unlock lane nameToKey and map find via TheNameKeyGenerator BfmeZeroRange
 ?Rva00222CCBBuild@@YA?AVUnicodeString@@PAPAVRva00222CCB@@0V1@@Z,,0x00222CCB,91,Code/GameEngine/Source/Common/Rva00222CCBLeaf.cpp,matched,EH loop slot1 accumulator RVO via StringBaseG copy release callers 2252EB 22535F
 ??0Rva0024B9BA@@QAE@XZ,,0x0024B9BA,18,Code/GameEngine/Source/GameLogic/Object/Contain/Rva0024B9BACtor.cpp,matched,chain over rowed HordeContain base plus vtable 0x00C465F8
+?Rva00579900Get@@YA?AVUnicodeString@@H@Z,,0x00579900,149,Code/GameEngine/Source/Common/Rva00579900Fetch.cpp,matched,unlock TheGameText StatsBonus format single-int precedent Rva005D38C8
