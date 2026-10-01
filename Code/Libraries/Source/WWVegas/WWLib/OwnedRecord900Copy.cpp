@@ -2,6 +2,9 @@
 // stlport
 // Target member copy; original application record identity is unknown.
 #include "OwnedRecord900.h"
+extern template _STL::vector<AsciiString, _STL::allocator<AsciiString> >::vector(
+    const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &);
+extern template _STL::vector<AsciiString, _STL::allocator<AsciiString> >::~vector();
 extern template BfmeStringRecordTree900::_Rb_tree(const BfmeStringRecordTree900 &);
 extern template BfmeStringRecordTree900::~_Rb_tree();
 extern template void BfmeStringRecordTree900::clear();
