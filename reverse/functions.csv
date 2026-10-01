@@ -45702,3 +45702,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva0057A4E7@@QAEPAXI@Z,,0x0057AAD5,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-19-57AAD5.cpp,matched,chain from 0x0057A4E7 landing QAE nonvirtual deleting dtor
 ?Rva004312E5Emit@@YAHPAXPAUICoord2D@@@Z,,0x004312E5,72,Code/GameEngine/Source/Common/Rva004312E5Message.cpp,matched,unlock lane screenToTerrain slot 0x168 MSG 0x444
 ??$__copy@PAURva00B6CF1@@PAU1@H@_STL@@YAPAURva00B6CF1@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x000B6894,47,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00b6cf1_destroy.cpp,matched,8B copy via rowed assign at B433E wrapper at B67BC same shape as 40D564
+?rva000B69A1@Rva000B69A1@@QAE?AVAsciiString@@H@Z,,0x000B69A1,28,Code/GameEngine/Source/Common/Rva000B69A1.cpp,matched,slot 14 of many ModuleData vtables returns TheEmptyString via rowed copy 0x000365F0
