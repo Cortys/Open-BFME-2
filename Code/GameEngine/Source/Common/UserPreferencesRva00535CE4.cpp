@@ -275,6 +275,7 @@ public:
 	int rva0053673A(AsciiString arg);
 	void rva00536784(AsciiString arg, int x);
 	int rva005367CB(AsciiString arg);
+	int rva00536815(AsciiString arg);
 	void rva0053685F(AsciiString arg, int x);
 	void rva005368F0(AsciiString arg, int x);
 	void rva00536A1D(AsciiString arg, int x);
@@ -811,6 +812,16 @@ void UserPreferences::rva00536784(AsciiString arg, int x)
 int UserPreferences::rva005367CB(AsciiString arg)
 {
 	arg.concat("HeroesLostRTS");
+	int ret = v6(arg, 0);
+	return ret;
+}
+
+// ?rva00536815@UserPreferences@@QAEHVAsciiString@@@Z @0x00536815 74B
+// UserPreferences TurnsPlayed-getter path: append TurnsPlayed to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat TurnsPlayed 0x00868FE8 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536815(AsciiString arg)
+{
+	arg.concat("TurnsPlayed");
 	int ret = v6(arg, 0);
 	return ret;
 }

@@ -45188,3 +45188,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4Rva002E0D93@@QAEAAV0@ABV0@@Z,,0x002E0D93,233,Code/GameEngine/Source/Common/Rva002E0D93Assign.cpp,matched,honest copy-assign 0xD8 via rep movsd caller 0x002E17A0 rowed callees
 ?rva0057D10F@AptMapPreview@@QAEXPAVMapMetaData@@@Z,,0x0057D10F,139,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewPicture.cpp,matched,caller 0x0057E058 MapMetaData+0x50 via bfmeCreateMapPictureImage MissingMap fallback
 ?rva005367CB@UserPreferences@@QAEHVAsciiString@@@Z,,0x005367CB,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat HeroesLostRTS 0x00868FD8 slot 0x18 releaseBuffer gap same TU unlock
+?rva00536815@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536815,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat TurnsPlayedRTS 0x00868FE8 slot 0x18 releaseBuffer gap same TU unlock
