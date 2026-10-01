@@ -38,7 +38,7 @@ struct TriangleSide
 	bool operator== (const TriangleSide& s);
 };
 
-TriangleSide::TriangleSide(const Vector3& l1,const Vector3& l2)
+inline TriangleSide::TriangleSide(const Vector3& l1,const Vector3& l2)
 {
 	int i1=*(int*)&l1[0];
 	i1=37*i1+*(int*)&l1[1];
@@ -56,7 +56,7 @@ TriangleSide::TriangleSide(const Vector3& l1,const Vector3& l2)
 	}
 }
 
-bool TriangleSide::operator== (const TriangleSide& s)
+inline bool TriangleSide::operator== (const TriangleSide& s)
 {
 	unsigned i=*(unsigned*)&loc1[0]^*(unsigned*)&s.loc1[0];
 	i|=*(unsigned*)&loc1[1]^*(unsigned*)&s.loc1[1];
@@ -115,3 +115,15 @@ template void HashTemplateClass<TriangleSide,SideIndexInfo>::Remove_All(void);
 template SideIndexInfo HashTemplateClass<TriangleSide,SideIndexInfo>::Get(const TriangleSide&) const;
 
 unsigned int (*const Vector3_Hash_Address)(const Vector3&) = &HashTemplateKeyClass<Vector3>::Get_Hash_Value;
+
+// TriangleSide's constructor and operator== are header inlines elsewhere: other units emit
+// select-any copies, so a strong definition here was a duplicate in the linked build. This
+// anchor only makes this unit emit its copies for the ledger rows; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitTriangleSide@@YAXPAUTriangleSide@@ABVVector3@@@Z present-unmatched
+void bfmeEmitTriangleSide(TriangleSide *side, const Vector3 &location)
+{
+	side->TriangleSide::TriangleSide(location, location);
+	*side == *side;
+}
+#pragma inline_depth()
