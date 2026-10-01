@@ -1,10 +1,14 @@
 // cl: /O1 /EHsc
-// ?Rva002DCB9C@@YG?AVAsciiString@@ABV1@@Z, retail 0x002DCB9C, 351 bytes.
+// ?rva002DCB9C@GameState@@QBE?AVAsciiString@@ABV2@@Z, retail 0x002DCB9C, 351 bytes.
+// Retyped 2026-10-01 from the stdcall free function ?Rva002DCB9C@@YG?AVAsciiString@@ABV1@@Z:
+// its caller 0x004007B4 (Rva00400783PortableMapPath.cpp) loads TheGameState
+// into ecx before the call, so it is a GameState method that never touches
+// this (thiscall with an unused this is byte-identical to stdcall here).
 // AsciiString path remap: startsWithNoCase against g_00DBD054/58/5C/60 then
 // set g_00DBD064/68/6C/70 plus suffix after prefix, else set g_00DBD074 plus
 // whole input; toLower; return. Evidence: startsWith/set/concat/toLower rows,
 // strlen via ji_00629170 thunk, str null-check to g_Rva0107301CEmptyString,
-// ret 8 stdcall with hidden return at ebp+8 and ref at ebp+0xC, caller
+// ret 8 with hidden return at ebp+8 and ref at ebp+0xC (ecx unused), caller
 // 0x004007C2. Neighbours Rva002DC802BaseName and rva002DCCFB same flags.
 typedef unsigned int UInt;
 
@@ -52,7 +56,13 @@ extern const char *g_00DBD074;
 extern const char g_Rva0107301CEmptyString[];
 extern "C" unsigned int strlen(const char *s);
 
-AsciiString __stdcall Rva002DCB9C(const AsciiString &in)
+class GameState
+{
+public:
+	AsciiString rva002DCB9C(const AsciiString &in) const;
+};
+
+AsciiString GameState::rva002DCB9C(const AsciiString &in) const
 {
 	AsciiString out;
 	if (((const StringBase<char> &)in).startsWithNoCase(g_00DBD054)) {
