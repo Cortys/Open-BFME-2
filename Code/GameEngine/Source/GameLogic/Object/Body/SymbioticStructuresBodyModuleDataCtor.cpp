@@ -26,6 +26,7 @@ class SymbioticStructuresBodyModuleData : public ActiveBodyModuleData
 {
 public:
 	SymbioticStructuresBodyModuleData();
+	virtual ~SymbioticStructuresBodyModuleData();
 
 private:
 	AsciiString m_string64;	// +0x64
@@ -35,4 +36,12 @@ SymbioticStructuresBodyModuleData::SymbioticStructuresBodyModuleData()
 	: ActiveBodyModuleData()
 {
 	m_string64.set("Not likely to duplicate this name, is he, Fred?");
+}
+
+// LINK-DUP: inline copy (owner SymbioticStructuresBodyModuleDataDtor.cpp
+// holds the ??1 row, FamilyDeletingDtors holds ??_G); select-any so the
+// linked build keeps the owners' copies.
+// ??1SymbioticStructuresBodyModuleData@@UAE@XZ present-unmatched
+inline SymbioticStructuresBodyModuleData::~SymbioticStructuresBodyModuleData()
+{
 }
