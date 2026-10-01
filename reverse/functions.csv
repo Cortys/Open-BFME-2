@@ -45269,3 +45269,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0040475C@Rva00404781@@QAEXXZ,,0x0040475C,37,Code/GameEngine/Source/Common/Rva00404781Method.cpp,matched,same layout as 0x00404781 zero m_a m_b flags
 ?rva00404AA5@Rva00404781@@QAEPAV1@XZ,,0x00404AA5,12,Code/GameEngine/Source/Common/Rva00404AA5Method.cpp,matched,chain wrapper calls rowed 0x0040475C returns this
 ??0BfmeStringRecord00404BF3@@QAE@ABVAsciiString@@@Z,,0x00404BC5,46,Code/GameEngine/Source/Common/BfmeStringRecord00404BC5Ctor.cpp,matched,ctor from AsciiString zeroes 5 floats callers build vector
+?rva00404927@Rva00404927@@QAEHPAVRva00404781@@H@Z,,0x00404927,54,Code/GameEngine/Source/Common/Rva00404927Method.cpp,matched,unlock float compare vs Rva00404781 arrays callers 0x404D14 0x56C1D2
