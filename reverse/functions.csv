@@ -45734,3 +45734,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva00574499@@QAE@XZ,,0x00574499,68,Code/GameEngine/Source/Common/Rva00574499Dtor.cpp,matched,dtor two strings via release plus base via pin caller deleting dtor sibling precedent
 ??_GRva00574499@@QAEPAXI@Z,,0x00574B4C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00574499.cpp,matched,chain deleting dtor via rowed dtor plus delete sibling precedent
 ??0Rva005746AF@@QAE@H@Z,,0x005746AF,35,Code/GameEngine/Source/Common/Rva005746AFCtor.cpp,matched,ctor vtable plus arg plus timeGetTime plus zero via barrier
+??0Rva005747DA@@QAE@HH@Z,,0x005747DA,31,Code/GameEngine/Source/Common/Rva005747DACtor.cpp,matched,derived ctor via rowed base plus member plus vtable
