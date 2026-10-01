@@ -4518,3 +4518,4 @@ FUN_00723e95	0x00323E95	218	blocked	218B GadgetListBox hit-test free with 5 args
 FUN_00577923	0x00177923	287	blocked	287B WW3D DX8 index-buffer init with new plus globals g_00DF7044; prefer small leaf-unlock siblings per coverage-first; t=5 model=muse-14
 FUN_00ac1920	0x006C1920	201	blocked	201B unlock with Rva006C1850Find plus GeneralAllocator; prefer draining proven 00207xxx STL siblings (63B plus 8x5B landed) per work-the-file rule t=5 model=muse-14
 ?rva003F26AA@LivingWorldRegionConnection@@QAE_NPBVModuleData@@PAURva003F26AAPair@@@Z	0x003F26AA	143	partial	137B vs 143B missing load-store pair around imul for push arg addr plus one reg diff t=25 model=muse-02 score=0.94 stash=reverse/attempts/0x003f26aa.cpp
+?rva000B5FE6@Rva000B5FE6@@QAEXXZ	0x000B5FE6	453	blocked	complex flag virtual logic 453B edi-ebx wall best 467B 153ins vs 147ins 18 structural t=15 model=muse-10
