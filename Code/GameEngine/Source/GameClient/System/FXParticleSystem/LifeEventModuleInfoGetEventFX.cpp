@@ -25,7 +25,6 @@ public:
 };
 
 extern FXListStore *TheFXListStore;
-extern char g_Va007BAC1C;
 
 namespace FXParticleSystem
 {
@@ -47,7 +46,7 @@ const FXList *FXParticleSystem::LifeEventModuleInfo::getEventFX()
 {
 	if (m_cached == 0)
 	{
-		const char *name = m_eventName.m_data != 0 ? (const char *)m_eventName.m_data + 8 : &g_Va007BAC1C;
+		const char *name = m_eventName.m_data != 0 ? (const char *)m_eventName.m_data + 8 : "";
 		m_cached = TheFXListStore->findFXList(name);
 	}
 	return m_cached;

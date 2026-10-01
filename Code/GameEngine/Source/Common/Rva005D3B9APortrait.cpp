@@ -53,7 +53,6 @@ public:
 };
 
 extern Rva00223A94 *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 
 class Rva005D3B9A
 {
@@ -74,7 +73,7 @@ void Rva005D3B9A::rva005D3B9A()
 	if (m_flag20 == 0)
 		return;
 	AsciiString tmp;
-	const char *name = m_inner ? m_inner->m_name : &g_Va007BAC1C;
+	const char *name = m_inner ? m_inner->m_name : "";
 	tmp.format("_level%u.%s_Portrait", m_level, name);
 	g_Va009FE4CC->rva00223A94(&tmp);
 }

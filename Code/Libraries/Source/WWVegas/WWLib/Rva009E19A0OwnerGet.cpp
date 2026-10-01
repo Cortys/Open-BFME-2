@@ -5,7 +5,6 @@
 // though BFME1 ICF-folded it across six addresses. The name is the carried
 // donor name; the empty-string data reference keeps its donor address token.
 
-extern char Rva006A16B0Empty[];
 
 struct Rva009E19A0Owner {
 	int unknown_00;
@@ -25,5 +24,5 @@ char *Rva009E19A0Owner::get()
 	if (value != 0) {
 		return value + 8;
 	}
-	return Rva006A16B0Empty;
+	return (char *)"";
 }

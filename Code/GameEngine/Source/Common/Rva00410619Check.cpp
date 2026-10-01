@@ -7,7 +7,6 @@
 
 extern "C" __declspec(dllimport) int __cdecl strncmp(const char *s1, const char *s2, unsigned int n);
 
-extern char g_bfmeEmptyF9[];
 
 struct AsciiHeader
 {
@@ -59,12 +58,12 @@ void Rva00410619::rva00410619(Rva00410619Arg *arg)
 	if (p2 != 0)
 		b = p2->data;
 	else
-		b = g_bfmeEmptyF9;
+		b = (char *)"";
 	const char *a;
 	if (arg->m_10.m_data != 0)
 		a = arg->m_10.m_data->data;
 	else
-		a = g_bfmeEmptyF9;
+		a = (char *)"";
 	if (strncmp(a, b, len) != 0)
 		return;
 	GameWindow *win = arg->m_14;

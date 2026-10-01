@@ -53,7 +53,6 @@ char BfmeThingVFC::bfmeGoVFC(BfmeChunkVFC *c)
 	return r;
 }
 
-extern char g_bfmeEmptyVFD[];
 
 class BfmeBufVFD
 {
@@ -85,7 +84,7 @@ void __stdcall bfmeGoVFD(BfmeThingVFD *p)
 	p->m_bfme10 = 0;
 	p->m_bfme14 = 0;
 	p->m_bfme18 = 0;
-	p->m_bfmeBuf.bfmeAppendVFD(g_bfmeEmptyVFD);
+	p->m_bfmeBuf.bfmeAppendVFD((char *)"");
 	p->m_bfme24 = 0;
 	p->m_bfme28 = 0;
 	p->m_bfme6c = 0;

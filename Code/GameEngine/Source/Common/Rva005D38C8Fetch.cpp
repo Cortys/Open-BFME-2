@@ -73,7 +73,6 @@ public:
 };
 
 extern BfmeAptWindowManager *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 
 class GameTextInterface
 {
@@ -118,7 +117,7 @@ UnicodeString Rva005D38C8Get(int a, int b)
 void __cdecl Rva005D3966Set(int level, Rva005D2FD0Outer *outer, int a, int b)
 {
 	AsciiString key;
-	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_CP", level, mid);
 	g_Va009FE4CC->bfmeSetText(key, Rva005D38C8Get(a, b), true);
 }

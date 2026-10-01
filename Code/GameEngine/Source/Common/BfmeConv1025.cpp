@@ -13,7 +13,6 @@ public:
 };
 
 extern BfmeP1025 *g_bfmeP1025;
-extern char g_bfmeLit1025[];
 
 struct BfmeR1025
 {
@@ -29,7 +28,7 @@ char bfmeGo1025F(BfmeR1025 *p)
 		if (p->m_bfmeName != 0)
 			t = p->m_bfmeName + 8;
 		else
-			t = g_bfmeLit1025;
+			t = (char *)"";
 
 		return g_bfmeP1025->bfmeSay1025(t);
 	}

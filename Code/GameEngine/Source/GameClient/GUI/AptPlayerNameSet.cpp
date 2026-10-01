@@ -27,7 +27,6 @@ public:
     void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 extern BfmeAptWindowManager *g_bfmeAptWindowManager;
-extern const char g_007BAC1C[];
 struct TeamNameHolder
 {
     char m_pad[8];
@@ -56,7 +55,7 @@ void Rva005FB770::rva005FB770(const UnicodeString &playerName)
     if (m_team)
         teamName = (const char *)((char *)m_team + 8);
     else
-        teamName = g_007BAC1C;
+        teamName = "";
     key.format("APT:_level%u.%s_PlayerName", m_level, teamName);
     g_bfmeAptWindowManager->bfmeSetText(key, playerName, true);
 }
@@ -75,7 +74,7 @@ void Rva005FB770::rva005FB7D7(const UnicodeString &value)
     if (m_team)
         teamName = (const char *)((char *)m_team + 8);
     else
-        teamName = g_007BAC1C;
+        teamName = "";
     key.format("APT:_level%u.%s_UnitCount", m_level, teamName);
     g_bfmeAptWindowManager->bfmeSetText(key, value, true);
 }

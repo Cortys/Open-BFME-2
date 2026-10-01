@@ -37,12 +37,11 @@ public:
 };
 
 extern BfmeAptWindowManager *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 
 void __cdecl Rva005FDF1CSet(int level, Rva005FDF1COuter *outer, const UnicodeString &text)
 {
 	AsciiString key;
-	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_PlayerName", level, mid);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }
@@ -52,7 +51,7 @@ void __cdecl Rva005FDF1CSet(int level, Rva005FDF1COuter *outer, const UnicodeStr
 void __cdecl Rva005FDF83Set(int level, Rva005FDF1COuter *outer, const UnicodeString &text)
 {
 	AsciiString key;
-	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : &g_Va007BAC1C;
+	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_LocalPlayerName", level, mid);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }

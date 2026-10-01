@@ -37,7 +37,6 @@ public:
 };
 
 extern BfmeAptWindowManager *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 
 class Rva0050F041
 {
@@ -52,7 +51,7 @@ private:
 void Rva0050F041::rva0050F041(int field, const UnicodeString &text)
 {
 	AsciiString key;
-	const char *mid = m_60 ? m_60->m_name : &g_Va007BAC1C;
+	const char *mid = m_60 ? m_60->m_name : "";
 	key.format("APT:_level%u.%s_field%d", m_5c, mid, field);
 	g_Va009FE4CC->bfmeSetText(key, text, false);
 }

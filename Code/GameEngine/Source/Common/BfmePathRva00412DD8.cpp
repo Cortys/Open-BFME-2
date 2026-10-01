@@ -1,7 +1,7 @@
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 
 // ?Rva00412DD8Get@@YA?AVAsciiString@@PBD@Z, retail 0x00412DD8 158B.
-// Free AsciiString(const char*) normalizer: null uses g_bfmeEmptyF9 at
+// Free AsciiString(const char*) normalizer: null uses the "" literal at
 // 0x00BBAC1C, skips one leading '/', strncpy 0x7fff into 32k stack buffer,
 // rewrites '/' to '.', then RVO via StringBase copy 0x365F0 and temp
 // teardown via releaseBuffer 0x36410. Caller at 0x0041196E passes hidden
@@ -9,7 +9,6 @@
 
 extern "C" __declspec(dllimport) char *__cdecl strncpy(char *dest, const char *source, unsigned int count);
 
-extern char g_bfmeEmptyF9[];
 
 #include "ascii_string.h"
 
@@ -18,7 +17,7 @@ AsciiString Rva00412DD8Get(const char *path)
 {
 	char buf[32768];
 	if (path == 0)
-		path = g_bfmeEmptyF9;
+		path = (char *)"";
 	if (*path == '/')
 		path++;
 	strncpy(buf, path, 0x7fff);
@@ -39,7 +38,7 @@ AsciiString Rva00412E76Get(const char *path)
 {
 	char buf[32768];
 	if (path == 0)
-		path = g_bfmeEmptyF9;
+		path = (char *)"";
 	if (*path == '.')
 		path++;
 	strncpy(buf, path, 0x7fff);

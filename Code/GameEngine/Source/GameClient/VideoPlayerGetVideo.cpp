@@ -8,7 +8,6 @@
 // resolves to 0x37CF0.
 
 extern "C" __declspec(dllimport) int __cdecl _memicmp(const void *, const void *, unsigned int);
-extern const char Rva006A16B0Empty[];
 
 #include "ascii_string.h"
 
@@ -44,9 +43,9 @@ inline int compareVideoNames(const AsciiString &left, const AsciiString &right)
     const VideoStringStorageView *self = (const VideoStringStorageView *)&left;
     const VideoStringStorageView *that = (const VideoStringStorageView *)&right;
     int thatLength = that->m_data ? that->m_data->m_length : 0;
-    const char *thatText = that->m_data ? that->m_data->m_text : Rva006A16B0Empty;
+    const char *thatText = that->m_data ? that->m_data->m_text : "";
     int selfLength = self->m_data ? self->m_data->m_length : 0;
-    const char *selfText = self->m_data ? self->m_data->m_text : Rva006A16B0Empty;
+    const char *selfText = self->m_data ? self->m_data->m_text : "";
     int count = selfLength < thatLength ? selfLength : thatLength;
     int result = _memicmp(selfText, thatText, count);
     if (result != 0)

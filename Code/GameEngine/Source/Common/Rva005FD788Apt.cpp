@@ -37,7 +37,6 @@ public:
 };
 
 extern BfmeAptWindowManager *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 extern const char *g_Va0087A290[];
 
 struct Rva005FD788
@@ -52,7 +51,7 @@ void Rva005FD788::rva005FD788(int index, const char *suffix, const UnicodeString
 {
 	const char *table = g_Va0087A290[index];
 	AsciiString key;
-	const char *mid = m_inner8 ? m_inner8->m_name : &g_Va007BAC1C;
+	const char *mid = m_inner8 ? m_inner8->m_name : "";
 	key.format("APT:_level%u.%s_%s%s", m_level4, mid, table, suffix);
 	g_Va009FE4CC->bfmeSetText(key, text, true);
 }

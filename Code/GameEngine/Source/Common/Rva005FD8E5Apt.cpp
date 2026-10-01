@@ -45,7 +45,6 @@ public:
 };
 UnicodeString Rva005FD53EGet(int a, int b);
 extern BfmeAptWindowManager *g_Va009FE4CC;
-extern char g_Va007BAC1C;
 extern const char *g_Va0087A290[];
 struct Rva005FD8E5Entry
 {

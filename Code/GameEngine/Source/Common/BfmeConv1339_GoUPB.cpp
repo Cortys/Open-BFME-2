@@ -5,7 +5,6 @@
 // body the sweep places. Lives in its own TU because BfmeConv1339.cpp is
 // already occupied by the landed GoUPC body.
 
-extern char g_bfmeFmtUPB[];
 
 void *bfmeFindUPB(void *table, void *a);
 void bfmeFormatUPB(void *r, char *out, void *c, const char *fmt);
@@ -25,6 +24,6 @@ char BfmeThingUPB::bfmeGoUPB(void *a, char *out, void *c)
 		*out = 0;
 		return 0;
 	}
-	bfmeFormatUPB(r, out, c, g_bfmeFmtUPB);
+	bfmeFormatUPB(r, out, c, (char *)"");
 	return 1;
 }
