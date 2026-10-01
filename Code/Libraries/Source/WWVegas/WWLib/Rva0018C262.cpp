@@ -6,6 +6,7 @@ struct Rva0018C262Node {
 	int m_04;
 	Rva0018C262Node *m_08;
 	Rva0018C262Node *m_0C;
+	unsigned short m_10;
 };
 struct Rva0018C262Head {
 	int m_00;
@@ -17,9 +18,16 @@ class Rva0018C262 {
 public:
 	void rva0018C262(Rva0018C262Node *p);
 	void rva0018C316();
+	Rva0018C262Node *rva0018C28F(const unsigned short *key);
 	Rva0018C262Head *m_head;
 	int m_size;
 };
+namespace _STL {
+template <class T> class allocator {
+public:
+	static char *allocate(unsigned int n, const void *hint);
+};
+}
 void Rva0018C262::rva0018C262(Rva0018C262Node *p)
 {
 	if (!p)
@@ -40,4 +48,12 @@ void Rva0018C262::rva0018C316()
 	m_head->m_04 = 0;
 	m_head->m_0C = m_head;
 	m_size = 0;
+}
+Rva0018C262Node *Rva0018C262::rva0018C28F(const unsigned short *key)
+{
+	char *mem = _STL::allocator<char>::allocate(0x14, 0);
+	unsigned short *dst = (unsigned short *)(mem + 0x10);
+	if (dst)
+		*dst = *key;
+	return (Rva0018C262Node *)mem;
 }
