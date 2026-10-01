@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 //
 // ??1Rva0044ECCE@@UAE@XZ, retail 0x0044ECCE, 199 bytes.
 // ModuleData base dtor (size 0xC8) over Snapshot BBB554: and-zeroes +0x38
@@ -8,23 +8,7 @@
 // BBB554. Evidence: 14 matched caller dtors call this base; derived
 // WeaponFire TU proves base size 0xC8; vtable 0x0083F2A8.
 
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-extern const void *const g_007BB554[];
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_007BB554;
-}
+#include "Common/Snapshot.h"
 
 template <typename T> class StringBase
 {

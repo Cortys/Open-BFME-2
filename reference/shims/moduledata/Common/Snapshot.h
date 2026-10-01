@@ -23,19 +23,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // FILE: Snapshot.h ///////////////////////////////////////////////////////////////////////////////
-// Desc:   Private shim for ModuleData-derived ctor TUs where the retail binary
-//         compiles the base chain's ctor inline (no `call ??0Snapshot`), e.g.
-//         FloatUpdateModuleData@0x294F60 (13B). Only these TUs reference this
-//         dir via a private `/I` in their `// cl:` line.
+// Desc:   Canonical BFME2 Snapshot base. Retail vtable 0x00BBB554 has a
+//         deleting destructor followed by three pure virtual slots.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
 #ifndef __SNAPSHOT_H_
 #define __SNAPSHOT_H_
-
-// USER INCLUDES //////////////////////////////////////////////////////////////////////////////////
-#include "Common/AsciiString.h"
 
 // FORWARD REFERENCES /////////////////////////////////////////////////////////////////////////////
 class Xfer;
@@ -53,7 +48,8 @@ friend class XferCRC;
 public:
 	
 	Snapshot() {}
-	~Snapshot( void );
+	Snapshot( const Snapshot &that ) {}
+	virtual ~Snapshot( void ) {}
 
 protected:
 

@@ -1,5 +1,5 @@
 // ??0Rva0044EB54@@QAE@XZ
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /O1 /DNDEBUG /MD /GX /arch:SSE /Ireference/shims/moduledata
 // ??0Rva0044EB54@@QAE@XZ at 0x0044EB54 (378 bytes).
 // Address-derived opaque intermediate default ctor. Target evidence: vtable
 // immediate 0x00C3F2A8, 26 this-only module-data ctor callers, a 0xC8 prefix
@@ -7,6 +7,7 @@
 // Ghidra boundary is 378 bytes. Association with the SpecialAbility family
 // is structural inference; exact semantic identity is unproven.
 #include <stddef.h>
+#include "Common/Snapshot.h"
 
 extern const char g_Rva0107301CEmptyString[];
 
@@ -50,17 +51,6 @@ public:
 	~OpaqueRefPtr() { if (m_p) m_p->Release_Ref(); }
 private:
 	OpaqueRefCounted *m_p;
-};
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
 };
 
 // The four dwords form one layout-only group so the +1C/+20 zero stores precede

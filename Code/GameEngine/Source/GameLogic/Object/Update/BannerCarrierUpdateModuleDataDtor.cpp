@@ -1,8 +1,9 @@
-// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 // ??1BannerCarrierUpdateModuleData@@UAE@XZ retail 0x00497056 249B
 // Evidence: pin BannerCarrierUpdateModuleData dtor at 0x00497056; donor open-bfme-1 BannerCarrierUpdateModuleDataDestructors.cpp:97; ctor layout BannerCarrierUpdateModuleDataCtor.cpp size 0x44 vectors +0x18 +0x24 FX +0x30 +0x34 flags +0x38 +0x39 range +0x3C upgrade string +0x40; callees rowed element dtors 0x00496A63 0x00496F30 plus typed erase twins 0x0031BD55 plus releaseBuffer 0x00036410 plus free 0x00030830 plus operator delete 0x0002FD60
 #include <vector>
+#include "Common/Snapshot.h"
 
 struct BfmeMorphCondition;
 struct BfmeExpLevelDraw;
@@ -28,22 +29,6 @@ private:
 	void releaseBuffer();
 	T *m_data;
 };
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
 
 class BannerCarrierUpdateModuleData : public Snapshot
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /Ireference/shims/bfme2_ascii /Ireference/shims/ini_bfme2 /Ireference/shims/subsystem_bfme2 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Include /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /O1 /Ireference/shims/bfme2_ascii /Ireference/shims/ini_bfme2 /Ireference/shims/subsystem_bfme2 /Ireference/shims/moduledata /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/Code/GameEngine/Source/Common/System /Ireference/open-bfme-1/Code/GameEngine/Include /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
 // stlport
 //
 // BFME's SubsystemInterface, built against the native headers. The ZH-tree port
@@ -17,6 +17,7 @@
 #include "subsystem_legend.h"
 #include "Common/INI/INI.h"
 #include "game_engine_subsystems.h"
+#include "Common/Snapshot.h"
 
 SubsystemInterfaceList *TheSubsystemList;		// BFME1 0x0134C6C8
 
@@ -163,11 +164,6 @@ template void initSubsystem<VictoryConditionsInterface>(VictoryConditionsInterfa
 // slot vtable 0x007E7384 sits between RecorderClass 0x007E7380 and VictoryConditionsInterface 0x007E7388;
 // donor reference/open-bfme-1 Radar.h declares class Radar : public Snapshot, public SubsystemInterface.
 // The second-base conversion emits sys ? sys+4 : 0, the 11-byte excess over the 117-byte single-base bodies.
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
 class Radar : public Snapshot, public SubsystemInterface
 {
 };

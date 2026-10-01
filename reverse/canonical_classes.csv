@@ -2,3 +2,4 @@ class,header,notes
 AsciiString,reference/shims/bfme2_ascii/ascii_string.h,BFME2 string model; include path /Ireference/shims/bfme2_ascii first
 StringBase,reference/shims/bfme2_ascii/string_base.h,frozen Open-BFME-1 WWLib string_base.h (77db49c3d)
 UnicodeString,reference/shims/bfme2_ascii/unicode_string.h,shared since d930928ea
+Snapshot,reference/shims/moduledata/Common/Snapshot.h,BFME2 Snapshot base at vtable 0x00BBB554; virtual destructor then crc xfer loadPostProcess; slots 1-3 are purecall
