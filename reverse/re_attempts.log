@@ -5215,3 +5215,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva004264F4@Rva004264F4@@QAEPAVMultiplayerColorDefinition@@ABVAsciiString@@@Z	0x004264F4	98	blocked	tooltip find 6 variants best 103B vs 98B top test vs sar plus je plus esi edi swapped plus tried G7 plus int vs ptr plus unsigned for jb still far t=25 model=muse-14
 ?Rva0037BA97Init@@YAXPAUTriple12@@PBUPair8@@H@Z	0x0037BA97	43	partial	41 vs 43 dest via edi not eax plus loads b-first not a-first plus lea late t=15 model=muse-14 score=0.91 stash=reverse/attempts/0x0037ba97.cpp
 ?Rva001040AESub@@YAXPAMMMPBM@Z	0x001040AE	39	partial	39 vs 39 exact size 0 structural dx dy swapped xmm0 xmm1 plus src0 src1 plus x y t=12 model=muse-14 score=0.93 stash=reverse/attempts/0x001040ae.cpp
+?rva00106715@Rva00106715@@QAE_NPAXPAIPA_N@Z	0x00106715	108	blocked	avail in edx vs esi plus v in ecx vs eax only register choice t=15 model=muse-07 (stash 0.95 kept)
+?Rva005116C2Load@@YAXXZ	0x005116C2	110	blocked	private StringBase forbidden by class-gate plus push order wall t=5 model=muse-07
+?rva0070A910@AptNativeHash@@QAEXXZ	0x0070A910	148	blocked	pp lever worsened to 149B with ebp edi swap plus g_pChainBlockAllocator zero t=12 model=muse-07 (stash 0.97 kept)
