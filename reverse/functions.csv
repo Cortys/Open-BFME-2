@@ -45374,3 +45374,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4Rva002E077F@@QAEAAV0@ABV0@@Z,,0x002E077F,45,Code/GameEngine/Source/Common/Rva002E077FAssign.cpp,matched,operator= copying 6 dwords plus return this
 ?rva002E0BEB@Rva002E0BEB@@QAEXPAX@Z,,0x002E0BEB,64,Code/GameEngine/Source/Common/Rva002E0BEBMethod.cpp,matched,copy two-wide then conditional add callees rowed
 ?rva002E0D66@Rva002E0D66@@QAEXPAX@Z,,0x002E0D66,45,Code/GameEngine/Source/Common/Rva002E0D66Method.cpp,matched,recursive free two-link list self plus free rowed
+?rva002E00F9@Rva002E00F9@@QAEXPAX0@Z,,0x002E00F9,52,Code/GameEngine/Source/Common/Rva002E00F9Method.cpp,matched,iterate ptr range virtual then push_back rowed
