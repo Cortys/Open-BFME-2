@@ -45722,3 +45722,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva001F63C9Erase@@YGXPAPAXPAURva001F63C9Node@@@Z,,0x001F63C9,44,Code/Libraries/Source/WWVegas/WWLib/Rva001F63C9Erase.cpp,matched,list unlink destroyDelete free store next
 ?rva001F65AF@Rva001F65AF@@QAEXXZ,,0x001F65AF,51,Code/Libraries/Source/WWVegas/WWLib/Rva001F65AFClear.cpp,matched,same node layout as rowed erase 0x001F63C9 via rowed destroyDelete 0x0004CCFF and free 0x00030830
 ?rva001F81EC@Rva001F81EC@@QAEXXZ,,0x001F81EC,23,Code/Libraries/Source/WWVegas/WWLib/Rva001F81ECFree.cpp,matched,clear via rowed 0x001F65AF then null-checked free via rowed _free
+?Rva001F6991Put@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@_N@Z,,0x001F6991,32,Code/Libraries/Source/WWVegas/WWLib/Rva001F6991Put.cpp,matched,ostream Yes-No via rowed _M_put_nowiden caller 0x001F8384
