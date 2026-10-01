@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char RenderObjectUpdateModuleTemplate_cvtbl0;
+// RenderObjectUpdateModuleTemplate_cvtbl0: matched references place it at VA 0xc1bdc0 (retail .rdata value 96).
+extern "C" char RenderObjectUpdateModuleTemplate_cvtbl0 = 96;
 extern "C" char RenderObjectUpdateModuleTemplate_cvtbl4;
-extern "C" char RenderObjectUpdateModuleTemplate_csub_vtbl;
+// RenderObjectUpdateModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bdd0 (retail .rdata value 13).
+extern "C" char RenderObjectUpdateModuleTemplate_csub_vtbl = 13;
 
 class RenderObjectUpdateModuleTemplate
 {

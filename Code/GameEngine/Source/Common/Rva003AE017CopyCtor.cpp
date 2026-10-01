@@ -11,9 +11,12 @@ public:
 	Rva003AE03D(const Rva003AE03D &other);
 };
 
-extern "C" char Rva003AE017_v0;
-extern "C" char Rva003AE017_v8;
-extern "C" char Rva003AE017_v0C;
+// Rva003AE017_v0: matched references place it at VA 0xc1ced8 (retail .rdata value 112).
+extern "C" char Rva003AE017_v0 = 112;
+// Rva003AE017_v8: matched references place it at VA 0xc1bfb4 (retail .rdata value -59).
+extern "C" char Rva003AE017_v8 = -59;
+// Rva003AE017_v0C: matched references place it at VA 0xc1cec8 (retail .rdata value 72).
+extern "C" char Rva003AE017_v0C = 72;
 
 class Rva003AE017
 {

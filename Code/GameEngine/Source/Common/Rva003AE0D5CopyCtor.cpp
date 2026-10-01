@@ -15,9 +15,11 @@ class Rva003AE11B {
 public: Rva003AE11B(const Rva003AE11B &that);
 };
 
-extern "C" char Rva003AE0D5_v0;
+// Rva003AE0D5_v0: matched references place it at VA 0xc1d2e0 (retail .rdata value 60).
+extern "C" char Rva003AE0D5_v0 = 60;
 extern "C" char Rva003AE0D5_v8;
-extern "C" char Rva003AE0D5_v10;
+// Rva003AE0D5_v10: matched references place it at VA 0xc1d2d0 (retail .rdata value -117).
+extern "C" char Rva003AE0D5_v10 = -117;
 
 class Rva003AE0D5 : public Rva003AE13C {
 public: __declspec(noinline) Rva003AE0D5(const Rva003AE0D5 &that);

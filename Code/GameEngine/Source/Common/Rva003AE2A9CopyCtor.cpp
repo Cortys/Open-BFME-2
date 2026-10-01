@@ -8,9 +8,12 @@ public: Rva003AE2CF(const Rva003AE2CF &that);
 private: char m_pad[0x24 - 4];
 };
 
-extern "C" char Rva003AE2A9_v0;
-extern "C" char Rva003AE2A9_v8;
-extern "C" char Rva003AE2A9_v10;
+// Rva003AE2A9_v0: matched references place it at VA 0xc1caa4 (retail .rdata value 60).
+extern "C" char Rva003AE2A9_v0 = 60;
+// Rva003AE2A9_v8: matched references place it at VA 0xc1caa0 (retail .rdata value 103).
+extern "C" char Rva003AE2A9_v8 = 103;
+// Rva003AE2A9_v10: matched references place it at VA 0xc1ca90 (retail .rdata value -117).
+extern "C" char Rva003AE2A9_v10 = -117;
 
 class Rva003AE2A9 : public Rva003AE2CF {
 public: __declspec(noinline) Rva003AE2A9(const Rva003AE2A9 &that);

@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char OrthoEmissionVelocityModuleTemplate_cvtbl0;
+// OrthoEmissionVelocityModuleTemplate_cvtbl0: matched references place it at VA 0xc1bc10 (retail .rdata value -44).
+extern "C" char OrthoEmissionVelocityModuleTemplate_cvtbl0 = -44;
 extern "C" char OrthoEmissionVelocityModuleTemplate_cvtbl4;
-extern "C" char OrthoEmissionVelocityModuleTemplate_csub_vtbl;
+// OrthoEmissionVelocityModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bc20 (retail .rdata value -35).
+extern "C" char OrthoEmissionVelocityModuleTemplate_csub_vtbl = -35;
 
 class OrthoEmissionVelocityModuleTemplate
 {

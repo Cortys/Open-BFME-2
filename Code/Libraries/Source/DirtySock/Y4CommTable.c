@@ -220,8 +220,10 @@ void Rva007FD3F0( void *socket );
 void __cdecl Rva00812690( struct Rva007FD4E0Socket *socket, int reason,
 	void *data );
 
-extern struct Rva00812320Module *g_Rva0130AD00Module;
-extern int g_Rva0130ACFCRefCount;
+// g_Rva0130AD00Module: matched references place it at VA 0xe0a718 (retail .data initial value 0).
+struct Rva00812320Module *g_Rva0130AD00Module = 0;
+// g_Rva0130ACFCRefCount: matched references place it at VA 0xe0a714 (zero-filled .bss).
+int g_Rva0130ACFCRefCount = 0;
 
 struct Rva00811D70Entry
 {

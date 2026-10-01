@@ -27,7 +27,8 @@ void *__cdecl memcpy( void *destination, const void *source,
 	unsigned int count );
 char *__cdecl _mbscpy( char *destination, const char *source );
 
-extern unsigned int g_Rva012C4DF4;
+// g_Rva012C4DF4: matched references place it at VA 0xdd954c (retail .data initial value 0x20000000u).
+unsigned int g_Rva012C4DF4 = 0x20000000u;
 
 /* Lock construct and destruct; the acquire and release live in the socket
  * unit and are already named there. */
@@ -148,7 +149,8 @@ struct Rva007FD4E0Socket;
 int Rva007FD3F0( struct Rva007FD4E0Socket *socket );
 
 extern char g_Rva012C4F88Name[];
-extern struct Rva00816BF0Comm *g_Rva0130B188List;
+// g_Rva0130B188List: matched references place it at VA 0xe0aba0 (retail .data initial value 0).
+struct Rva00816BF0Comm *g_Rva0130B188List = 0;
 
 struct Rva00816BF0Comm *Rva00816BF0( int maxPacket, int recvCount,
 	int sendCount );

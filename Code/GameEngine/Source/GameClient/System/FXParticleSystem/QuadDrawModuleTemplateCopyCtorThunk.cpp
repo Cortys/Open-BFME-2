@@ -21,7 +21,8 @@ public:
 
 extern "C" char QuadDrawModuleTemplate_cvtbl0;
 extern "C" char QuadDrawModuleTemplate_cvtbl4;
-extern "C" char QuadDrawModuleTemplate_csub_vtbl;
+// QuadDrawModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bd40 (retail .rdata value 109).
+extern "C" char QuadDrawModuleTemplate_csub_vtbl = 109;
 
 class QuadDrawModuleTemplate
 {

@@ -19,8 +19,10 @@ private:
 	char m_pad1C[12]; // +0x1C..0x27: makes sizeof 0x28 for new
 };
 
-extern "C" char Rva003AF27B_v0;
-extern "C" char Rva003AF27B_v14;
+// Rva003AF27B_v0: matched references place it at VA 0xc1cfb0 (retail .rdata value 87).
+extern "C" char Rva003AF27B_v0 = 87;
+// Rva003AF27B_v14: matched references place it at VA 0xc1c030 (retail .rdata value -12).
+extern "C" char Rva003AF27B_v14 = -12;
 extern "C" char Rva003AF27B_v18;
 
 class Rva003AF27B : public Rva003AF2CC

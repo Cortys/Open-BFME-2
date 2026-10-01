@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char DefaultModuleTemplate00_vtbl0;
+// DefaultModuleTemplate00_vtbl0: matched references place it at VA 0xc1ba70 (retail .rdata value -117).
+extern "C" char DefaultModuleTemplate00_vtbl0 = -117;
 extern "C" char DefaultModuleTemplate00_vtbl4;
-extern "C" char DefaultModuleTemplate00_sub_vtbl;
+// DefaultModuleTemplate00_sub_vtbl: matched references place it at VA 0xc1ba80 (retail .rdata value 61).
+extern "C" char DefaultModuleTemplate00_sub_vtbl = 61;
 
 template <int N>
 class DefaultModuleTemplate

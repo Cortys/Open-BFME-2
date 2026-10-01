@@ -112,7 +112,8 @@ public:
 	unsigned char m_minimum;
 };
 
-extern "C" char Rva0033FE65_vftable;
+// Rva0033FE65_vftable: matched references place it at VA 0xc11e08 (retail .rdata value 7).
+extern "C" char Rva0033FE65_vftable = 7;
 
 class __declspec(novtable) Rva0033FE65 : public State
 {

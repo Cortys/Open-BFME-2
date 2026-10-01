@@ -67,9 +67,12 @@ extern "C"
 	extern const char *g_rva0088E000MessageText;
 	extern const char *g_rva0088E000WindowText;
 	extern unsigned char g_Rva012D4FD0AssertCrashTemplate[];
-	extern long g_Rva013373BCTimerTicks;
-	extern unsigned char g_Rva013373C0DialogClosed;
-	extern long g_Rva013373C4DialogGeneration;
+	// g_Rva013373BCTimerTicks: matched references place it at VA 0xde0df8 (zero-filled .bss).
+	long g_Rva013373BCTimerTicks = 0;
+	// g_Rva013373C0DialogClosed: matched references place it at VA 0xde0dfc (zero-filled .bss).
+	unsigned char g_Rva013373C0DialogClosed = 0;
+	// g_Rva013373C4DialogGeneration: matched references place it at VA 0xde0e00 (zero-filled .bss).
+	long g_Rva013373C4DialogGeneration = 0;
 
 	RvaDword __stdcall Rva0088E100WatchdogThread(void *parameter);
 	void __stdcall Rva0088E190TimerTick(RvaHandle, unsigned int, unsigned int, RvaDword);

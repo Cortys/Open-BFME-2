@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char TerrainFireEmissionModuleTemplate_cvtbl0;
+// TerrainFireEmissionModuleTemplate_cvtbl0: matched references place it at VA 0xc1bbe0 (retail .rdata value -123).
+extern "C" char TerrainFireEmissionModuleTemplate_cvtbl0 = -123;
 extern "C" char TerrainFireEmissionModuleTemplate_cvtbl4;
-extern "C" char TerrainFireEmissionModuleTemplate_csub_vtbl;
+// TerrainFireEmissionModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bbf0 (retail .rdata value 77).
+extern "C" char TerrainFireEmissionModuleTemplate_csub_vtbl = 77;
 
 class TerrainFireEmissionModuleTemplate
 {

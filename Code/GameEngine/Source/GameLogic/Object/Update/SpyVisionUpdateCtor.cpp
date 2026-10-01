@@ -19,7 +19,8 @@ Rva0044EB54::~Rva0044EB54()
 {
 }
 
-extern "C" char SpyVisionUpdate_vftable;
+// SpyVisionUpdate_vftable: matched references place it at VA 0xc5f778 (retail .rdata value 56).
+extern "C" char SpyVisionUpdate_vftable = 56;
 
 class __declspec(novtable) CurseSpecialPowerModuleData : public Rva0044EB54
 {

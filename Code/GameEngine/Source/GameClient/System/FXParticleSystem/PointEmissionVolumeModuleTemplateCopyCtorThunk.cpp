@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char PointEmissionVolumeModuleTemplate_cvtbl0;
+// PointEmissionVolumeModuleTemplate_cvtbl0: matched references place it at VA 0xc1baf0 (retail .rdata value -16).
+extern "C" char PointEmissionVolumeModuleTemplate_cvtbl0 = -16;
 extern "C" char PointEmissionVolumeModuleTemplate_cvtbl4;
-extern "C" char PointEmissionVolumeModuleTemplate_csub_vtbl;
+// PointEmissionVolumeModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bae0 (retail .rdata value -91).
+extern "C" char PointEmissionVolumeModuleTemplate_csub_vtbl = -91;
 
 class PointEmissionVolumeModuleTemplate
 {

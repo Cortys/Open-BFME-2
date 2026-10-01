@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char BoxEmissionVolumeModuleTemplate_cvtbl0;
+// BoxEmissionVolumeModuleTemplate_cvtbl0: matched references place it at VA 0xc1bb50 (retail .rdata value -99).
+extern "C" char BoxEmissionVolumeModuleTemplate_cvtbl0 = -99;
 extern "C" char BoxEmissionVolumeModuleTemplate_cvtbl4;
-extern "C" char BoxEmissionVolumeModuleTemplate_csub_vtbl;
+// BoxEmissionVolumeModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bb40 (retail .rdata value -115).
+extern "C" char BoxEmissionVolumeModuleTemplate_csub_vtbl = -115;
 
 class BoxEmissionVolumeModuleTemplate
 {

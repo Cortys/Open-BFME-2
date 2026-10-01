@@ -20,12 +20,18 @@ public:
 	virtual ~State();
 };
 
-extern "C" char Rva004A6933_vftable;
-extern "C" char Rva004A6BCA_vftable;
-extern "C" char Rva004A6C13_vftable;
-extern "C" char Rva004A6956_vftable;
-extern "C" char Rva004A6979_vftable;
-extern "C" char Rva004A699C_vftable;
+// Rva004A6933_vftable: matched references place it at VA 0xc52d70 (retail .rdata value 7).
+extern "C" char Rva004A6933_vftable = 7;
+// Rva004A6BCA_vftable: matched references place it at VA 0xc53218 (retail .rdata value 7).
+extern "C" char Rva004A6BCA_vftable = 7;
+// Rva004A6C13_vftable: matched references place it at VA 0xc53260 (retail .rdata value 7).
+extern "C" char Rva004A6C13_vftable = 7;
+// Rva004A6956_vftable: matched references place it at VA 0xc52de0 (retail .rdata value 7).
+extern "C" char Rva004A6956_vftable = 7;
+// Rva004A6979_vftable: matched references place it at VA 0xc52e38 (retail .rdata value 7).
+extern "C" char Rva004A6979_vftable = 7;
+// Rva004A699C_vftable: matched references place it at VA 0xc52e90 (retail .rdata value 7).
+extern "C" char Rva004A699C_vftable = 7;
 
 class __declspec(novtable) Rva004A6933 : public State
 {

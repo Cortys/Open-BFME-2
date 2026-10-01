@@ -20,7 +20,8 @@ private:
 	char m_pad04[0x28 - 0x04];
 };
 
-extern "C" char Rva00342FCD_vftable;
+// Rva00342FCD_vftable: matched references place it at VA 0xc12fa0 (retail .rdata value 7).
+extern "C" char Rva00342FCD_vftable = 7;
 
 class __declspec(novtable) Rva00342FCD : public Rva0033FE65
 {

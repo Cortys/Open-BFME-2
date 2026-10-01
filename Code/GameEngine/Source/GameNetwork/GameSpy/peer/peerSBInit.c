@@ -23,7 +23,8 @@ typedef struct PEERConnection
 
 typedef PEERConnection *PEER;
 
-extern int piSBQueryVersion;
+// piSBQueryVersion: matched references place it at VA 0xddbc2c (retail .data initial value 1).
+int piSBQueryVersion = 1;
 
 void piSBGamesListCallback(void);
 void piSBGamesEngineCallback(void);

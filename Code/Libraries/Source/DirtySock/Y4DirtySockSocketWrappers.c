@@ -197,7 +197,8 @@ void Rva007FEA20(struct Rva0130AB68List *list)
 	InitializeCriticalSection(node->m_body);
 }
 
-extern int g_Rva0130AC90;
+// g_Rva0130AC90: matched references place it at VA 0xe0a6a8 (zero-filled .bss).
+int g_Rva0130AC90 = 0;
 
 void Rva007FEE10(void)
 {
@@ -205,8 +206,10 @@ void Rva007FEE10(void)
 	Rva007FECB0(&g_Rva0130AC90);
 }
 
-extern void *g_Rva0130AB58Head;
-extern struct Rva007FD4E0Socket *g_Rva0130AB5CKillList;
+// g_Rva0130AB58Head: matched references place it at VA 0xe0a570 (retail .data initial value 0).
+void *g_Rva0130AB58Head = 0;
+// g_Rva0130AB5CKillList: matched references place it at VA 0xe0a574 (retail .data initial value 0).
+struct Rva007FD4E0Socket *g_Rva0130AB5CKillList = 0;
 extern char g_Rva012C3C88Format[];
 int Rva007FE780(const char *format, ...);
 int __stdcall closesocket(unsigned int socket);
@@ -475,7 +478,8 @@ struct Rva007FD4E0Socket *Rva007FD7D0(struct Rva007FD4E0Socket *listenSocket,
 	return acceptedSocket;
 }
 
-extern int g_Rva0130AB54Version;
+// g_Rva0130AB54Version: matched references place it at VA 0xe0a56c (zero-filled .bss).
+int g_Rva0130AB54Version = 0;
 
 void *__cdecl memcpy(void *destination, const void *source,
 	unsigned int count);
@@ -712,8 +716,10 @@ void Rva007FEE40(void)
 	}
 }
 
-extern int g_Rva012C3CDCDraining;
-extern int g_Rva0130ACB8Thread;
+// g_Rva012C3CDCDraining: matched references place it at VA 0xdd8434 (retail .data initial value -1).
+int g_Rva012C3CDCDraining = -1;
+// g_Rva0130ACB8Thread: matched references place it at VA 0xe0a6d0 (zero-filled .bss).
+int g_Rva0130ACB8Thread = 0;
 
 void Rva007FE620(void)
 {
@@ -919,7 +925,8 @@ int __cdecl Rva007FF080(const char *text)
 }
 
 int __cdecl sprintf(char *buffer, const char *format, ...);
-extern int g_Rva0130ACBCGroupMask;
+// g_Rva0130ACBCGroupMask: matched references place it at VA 0xe0a6d4 (zero-filled .bss).
+int g_Rva0130ACBCGroupMask = 0;
 extern char g_Rva012C3D04Format[];
 extern char g_Rva012C3D0CFormat[];
 extern char g_Rva012C3D14Format[];
@@ -981,7 +988,8 @@ struct Rva007FEF80Tm
 
 struct Rva007FEF80Tm *__cdecl gmtime(const long *timer);
 struct Rva007FEF80Tm *__cdecl localtime(const long *timer);
-extern int g_Rva012C3D24Offset;
+// g_Rva012C3D24Offset: matched references place it at VA 0xdd847c (retail .data initial value -1).
+int g_Rva012C3D24Offset = -1;
 
 int Rva007FEF80(void)
 {

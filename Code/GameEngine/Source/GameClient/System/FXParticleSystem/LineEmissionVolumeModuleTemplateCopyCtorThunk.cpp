@@ -19,7 +19,8 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char LineEmissionVolumeModuleTemplate_cvtbl0;
+// LineEmissionVolumeModuleTemplate_cvtbl0: matched references place it at VA 0xc1bb20 (retail .rdata value -86).
+extern "C" char LineEmissionVolumeModuleTemplate_cvtbl0 = -86;
 extern "C" char LineEmissionVolumeModuleTemplate_cvtbl4;
 extern "C" char LineEmissionVolumeModuleTemplate_csub_vtbl;
 

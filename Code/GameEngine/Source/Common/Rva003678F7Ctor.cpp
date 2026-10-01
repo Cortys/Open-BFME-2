@@ -21,7 +21,8 @@ public:
 	char m_pad1D[0x20 - 0x1D];
 };
 
-extern "C" char Rva003678F7_vftable;
+// Rva003678F7_vftable: matched references place it at VA 0xc175a8 (retail .rdata value 7).
+extern "C" char Rva003678F7_vftable = 7;
 
 class __declspec(novtable) Rva003678F7 : public State
 {

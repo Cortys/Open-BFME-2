@@ -18,7 +18,8 @@
 class Thing;
 class ModuleData;
 
-extern "C" char Rva004C908B_vftable;
+// Rva004C908B_vftable: matched references place it at VA 0xc5ea8c (retail .rdata value -26).
+extern "C" char Rva004C908B_vftable = -26;
 
 // Opaque intermediate; ctor resolves to the opaque row at 0x00362EC7.
 class Rva00362EC7

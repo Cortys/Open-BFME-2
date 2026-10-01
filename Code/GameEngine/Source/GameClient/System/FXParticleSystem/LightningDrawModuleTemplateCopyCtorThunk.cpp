@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char LightningDrawModuleTemplate_cvtbl0;
+// LightningDrawModuleTemplate_cvtbl0: matched references place it at VA 0xc1bd90 (retail .rdata value -123).
+extern "C" char LightningDrawModuleTemplate_cvtbl0 = -123;
 extern "C" char LightningDrawModuleTemplate_cvtbl4;
-extern "C" char LightningDrawModuleTemplate_csub_vtbl;
+// LightningDrawModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bda0 (retail .rdata value 77).
+extern "C" char LightningDrawModuleTemplate_csub_vtbl = 77;
 
 class LightningDrawModuleTemplate
 {

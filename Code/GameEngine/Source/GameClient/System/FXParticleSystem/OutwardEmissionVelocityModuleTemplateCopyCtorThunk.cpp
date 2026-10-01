@@ -19,7 +19,8 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char OutwardEmissionVelocityModuleTemplate_cvtbl0;
+// OutwardEmissionVelocityModuleTemplate_cvtbl0: matched references place it at VA 0xc1bca0 (retail .rdata value 20).
+extern "C" char OutwardEmissionVelocityModuleTemplate_cvtbl0 = 20;
 extern "C" char OutwardEmissionVelocityModuleTemplate_cvtbl4;
 extern "C" char OutwardEmissionVelocityModuleTemplate_csub_vtbl;
 

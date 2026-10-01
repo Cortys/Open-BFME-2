@@ -3,9 +3,12 @@
 
 extern "C" void *__cdecl bfmeMalloc1150(unsigned int n);
 
-extern "C" unsigned int g_bfmeHeapSize1150;
-extern "C" char *g_bfmeHeapEnd1150;
-extern "C" char *g_bfmeHeapCur1150;
+// g_bfmeHeapSize1150: matched references place it at VA 0xddf4d0 (zero-filled .bss).
+extern "C" unsigned int g_bfmeHeapSize1150 = 0;
+// g_bfmeHeapEnd1150: matched references place it at VA 0xddf4d4 (retail .data initial value 0).
+extern "C" char *g_bfmeHeapEnd1150 = 0;
+// g_bfmeHeapCur1150: matched references place it at VA 0xddf4d8 (retail .data initial value 0).
+extern "C" char *g_bfmeHeapCur1150 = 0;
 extern "C" char *g_bfmeFreeList1150[];
 
 char *bfmeChunk1150(unsigned int size, int *nobjs)

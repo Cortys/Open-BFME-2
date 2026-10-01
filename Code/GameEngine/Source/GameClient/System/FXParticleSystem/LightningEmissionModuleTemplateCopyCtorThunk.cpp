@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char LightningEmissionModuleTemplate_cvtbl0;
+// LightningEmissionModuleTemplate_cvtbl0: matched references place it at VA 0xc1bbb0 (retail .rdata value 17).
+extern "C" char LightningEmissionModuleTemplate_cvtbl0 = 17;
 extern "C" char LightningEmissionModuleTemplate_cvtbl4;
-extern "C" char LightningEmissionModuleTemplate_csub_vtbl;
+// LightningEmissionModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bbc0 (retail .rdata value 53).
+extern "C" char LightningEmissionModuleTemplate_csub_vtbl = 53;
 
 class LightningEmissionModuleTemplate
 {

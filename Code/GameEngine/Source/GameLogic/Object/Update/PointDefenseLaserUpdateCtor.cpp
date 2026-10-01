@@ -7,7 +7,8 @@
 class Thing;
 class ModuleData;
 
-extern "C" char PointDefenseLaserUpdate_vftable;
+// PointDefenseLaserUpdate_vftable: matched references place it at VA 0xc5eb30 (retail .rdata value -26).
+extern "C" char PointDefenseLaserUpdate_vftable = -26;
 
 struct OpaqueGlobal
 {

@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char SphereEmissionVolumeModuleTemplate_cvtbl0;
+// SphereEmissionVolumeModuleTemplate_cvtbl0: matched references place it at VA 0xc1bb80 (retail .rdata value 13).
+extern "C" char SphereEmissionVolumeModuleTemplate_cvtbl0 = 13;
 extern "C" char SphereEmissionVolumeModuleTemplate_cvtbl4;
-extern "C" char SphereEmissionVolumeModuleTemplate_csub_vtbl;
+// SphereEmissionVolumeModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bb70 (retail .rdata value 37).
+extern "C" char SphereEmissionVolumeModuleTemplate_csub_vtbl = 37;
 
 class SphereEmissionVolumeModuleTemplate
 {

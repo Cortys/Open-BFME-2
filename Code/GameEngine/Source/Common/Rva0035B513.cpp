@@ -23,7 +23,8 @@ public:
 	const UpgradeTemplate *findUpgrade(const AsciiString &name) const;
 };
 
-extern "C" UpgradeCenter *TheUpgradeCenter;
+// TheUpgradeCenter: matched references place it at VA 0xdfeb60 (retail .data initial value 0).
+extern "C" UpgradeCenter *TheUpgradeCenter = 0;
 
 class Rva001EAE6FHelper
 {

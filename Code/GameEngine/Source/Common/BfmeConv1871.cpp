@@ -1,5 +1,7 @@
-extern "C" int g_bfmeNameAZC;
-extern "C" int g_bfmeNameBZC;
+// g_bfmeNameAZC: matched references place it at VA 0xe0a1bc (zero-filled .bss).
+extern "C" int g_bfmeNameAZC = 0;
+// g_bfmeNameBZC: matched references place it at VA 0xe0a198 (zero-filled .bss).
+extern "C" int g_bfmeNameBZC = 0;
 extern "C" void __cdecl bfmeCbAZC();
 extern "C" void __cdecl bfmeCbBZC();
 

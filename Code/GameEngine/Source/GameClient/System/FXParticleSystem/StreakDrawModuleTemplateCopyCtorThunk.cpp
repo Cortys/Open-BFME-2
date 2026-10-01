@@ -21,7 +21,8 @@ public:
 
 extern "C" char StreakDrawModuleTemplate_cvtbl0;
 extern "C" char StreakDrawModuleTemplate_cvtbl4;
-extern "C" char StreakDrawModuleTemplate_csub_vtbl;
+// StreakDrawModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bd20 (retail .rdata value 109).
+extern "C" char StreakDrawModuleTemplate_csub_vtbl = 109;
 
 class StreakDrawModuleTemplate
 {

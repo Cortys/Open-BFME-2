@@ -15,7 +15,8 @@ public:
 	virtual ~State();
 };
 
-extern "C" char Rva0048896B_vftable;
+// Rva0048896B_vftable: matched references place it at VA 0xc4b620 (retail .rdata value 7).
+extern "C" char Rva0048896B_vftable = 7;
 
 class __declspec(novtable) Rva0048896B : public State
 {

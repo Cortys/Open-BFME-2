@@ -7,7 +7,8 @@
 class Thing;
 class ModuleData;
 
-extern "C" char FirestormDynamicGeometryInfoUpdate_vftable;
+// FirestormDynamicGeometryInfoUpdate_vftable: matched references place it at VA 0xc5ea50 (retail .rdata value -26).
+extern "C" char FirestormDynamicGeometryInfoUpdate_vftable = -26;
 
 // Opaque intermediate; ctor resolves to the opaque pin at 0x00362EC7.
 class Rva00362EC7

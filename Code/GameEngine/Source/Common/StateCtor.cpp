@@ -25,7 +25,8 @@ public:
 	void *m_data;
 };
 
-extern "C" char State_vftable;
+// State_vftable: matched references place it at VA 0xc605d8 (retail .rdata value -3).
+extern "C" char State_vftable = -3;
 
 class __declspec(novtable) State
 {

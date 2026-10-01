@@ -21,7 +21,8 @@ public:
 
 extern "C" char DefaultModuleTemplate05_vtbl0;
 extern "C" char DefaultModuleTemplate05_vtbl4;
-extern "C" char DefaultModuleTemplate05_sub_vtbl;
+// DefaultModuleTemplate05_sub_vtbl: matched references place it at VA 0xc1bad0 (retail .rdata value 109).
+extern "C" char DefaultModuleTemplate05_sub_vtbl = 109;
 
 template <int N>
 class DefaultModuleTemplate

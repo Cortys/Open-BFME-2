@@ -19,9 +19,11 @@ public:
 	virtual void dummy();
 };
 
-extern "C" char SphericalEmissionVelocityModuleTemplate_cvtbl0;
+// SphericalEmissionVelocityModuleTemplate_cvtbl0: matched references place it at VA 0xc1bc40 (retail .rdata value -83).
+extern "C" char SphericalEmissionVelocityModuleTemplate_cvtbl0 = -83;
 extern "C" char SphericalEmissionVelocityModuleTemplate_cvtbl4;
-extern "C" char SphericalEmissionVelocityModuleTemplate_csub_vtbl;
+// SphericalEmissionVelocityModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bc50 (retail .rdata value 125).
+extern "C" char SphericalEmissionVelocityModuleTemplate_csub_vtbl = 125;
 
 class SphericalEmissionVelocityModuleTemplate
 {

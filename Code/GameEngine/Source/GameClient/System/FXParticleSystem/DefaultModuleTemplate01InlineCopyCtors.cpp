@@ -32,7 +32,8 @@ struct AlphaKeys
 	FXKeyframe m_keys[8];
 };
 
-extern "C" char DefaultAlphaModuleInfo_vtbl;
+// DefaultAlphaModuleInfo_vtbl: matched references place it at VA 0xc1ba60 (retail .rdata value -77).
+extern "C" char DefaultAlphaModuleInfo_vtbl = -77;
 
 class DefaultAlphaModuleInfo
 {
@@ -51,13 +52,16 @@ private:
 
 }
 
-extern "C" char Rva003AEA42_v0a;
+// Rva003AEA42_v0a: matched references place it at VA 0xc1d5e8 (retail .rdata value 24).
+extern "C" char Rva003AEA42_v0a = 24;
 extern "C" char Rva003AEA42_v14a;
 extern "C" char Rva003AEA42_v18a;
-extern "C" char Rva003AEA42_v0b;
+// Rva003AEA42_v0b: matched references place it at VA 0xc1d5d4 (retail .rdata value -10).
+extern "C" char Rva003AEA42_v0b = -10;
 extern "C" char Rva003AEA42_v14b;
 extern "C" char Rva003AEA42_v18b;
-extern "C" char Rva003AEA42_vsub;
+// Rva003AEA42_vsub: matched references place it at VA 0xc1d5c4 (retail .rdata value -114).
+extern "C" char Rva003AEA42_vsub = -114;
 
 class Rva003AEA42
 {

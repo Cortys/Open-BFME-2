@@ -21,7 +21,8 @@ public:
 
 extern "C" char ButterflyDrawModuleTemplate_cvtbl0;
 extern "C" char ButterflyDrawModuleTemplate_cvtbl4;
-extern "C" char ButterflyDrawModuleTemplate_csub_vtbl;
+// ButterflyDrawModuleTemplate_csub_vtbl: matched references place it at VA 0xc1bd70 (retail .rdata value 109).
+extern "C" char ButterflyDrawModuleTemplate_csub_vtbl = 109;
 
 class ButterflyDrawModuleTemplate
 {

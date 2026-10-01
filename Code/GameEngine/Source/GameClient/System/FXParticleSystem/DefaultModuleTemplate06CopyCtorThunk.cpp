@@ -12,9 +12,11 @@ public:
 	void construct_from(const void *src);
 };
 
-extern "C" char DefaultModuleTemplate6_vtbl0;
+// DefaultModuleTemplate6_vtbl0: matched references place it at VA 0xc1bfa4 (retail .rdata value -44).
+extern "C" char DefaultModuleTemplate6_vtbl0 = -44;
 extern "C" char DefaultModuleTemplate6_vtbl4;
-extern "C" char DefaultModuleTemplate6_vtbl8;
+// DefaultModuleTemplate6_vtbl8: matched references place it at VA 0xc1bf94 (retail .rdata value -107).
+extern "C" char DefaultModuleTemplate6_vtbl8 = -107;
 
 template <int N>
 class DefaultModuleTemplate

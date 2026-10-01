@@ -30,25 +30,39 @@ public:
 	Rva003AED6B(const Rva003AED6B &other);
 };
 
-extern "C" char Rva003AEB9C_v0;
-extern "C" char Rva003AEB9C_v14;
-extern "C" char Rva003AEB9C_v18;
-extern "C" char Rva003AEB9C_v1c;
+// Rva003AEB9C_v0: matched references place it at VA 0xc1ce64 (retail .rdata value -9).
+extern "C" char Rva003AEB9C_v0 = -9;
+// Rva003AEB9C_v14: matched references place it at VA 0xc1c574 (retail .rdata value 104).
+extern "C" char Rva003AEB9C_v14 = 104;
+// Rva003AEB9C_v18: matched references place it at VA 0xc1ce1c (retail .rdata value 0).
+extern "C" char Rva003AEB9C_v18 = 0;
+// Rva003AEB9C_v1c: matched references place it at VA 0xc1ce54 (retail .rdata value 91).
+extern "C" char Rva003AEB9C_v1c = 91;
 
-extern "C" char Rva003AEC5E_v0;
-extern "C" char Rva003AEC5E_v14;
-extern "C" char Rva003AEC5E_v18;
-extern "C" char Rva003AEC5E_v1c;
+// Rva003AEC5E_v0: matched references place it at VA 0xc1ce98 (retail .rdata value -9).
+extern "C" char Rva003AEC5E_v0 = -9;
+// Rva003AEC5E_v14: matched references place it at VA 0xc1c5b8 (retail .rdata value -81).
+extern "C" char Rva003AEC5E_v14 = -81;
+// Rva003AEC5E_v18: matched references place it at VA 0xc1bf80 (retail .rdata value 54).
+extern "C" char Rva003AEC5E_v18 = 54;
+// Rva003AEC5E_v1c: matched references place it at VA 0xc1ce88 (retail .rdata value -64).
+extern "C" char Rva003AEC5E_v1c = -64;
 
-extern "C" char Rva003AEF6E_v0;
-extern "C" char Rva003AEF6E_v14;
+// Rva003AEF6E_v0: matched references place it at VA 0xc1cf38 (retail .rdata value -9).
+extern "C" char Rva003AEF6E_v0 = -9;
+// Rva003AEF6E_v14: matched references place it at VA 0xc1c640 (retail .rdata value -109).
+extern "C" char Rva003AEF6E_v14 = -109;
 extern "C" char Rva003AEF6E_v18;
-extern "C" char Rva003AEF6E_v1c;
+// Rva003AEF6E_v1c: matched references place it at VA 0xc1cf28 (retail .rdata value -64).
+extern "C" char Rva003AEF6E_v1c = -64;
 
-extern "C" char Rva003AED3E_v0;
-extern "C" char Rva003AED3E_v14;
+// Rva003AED3E_v0: matched references place it at VA 0xc1c60c (retail .rdata value -9).
+extern "C" char Rva003AED3E_v0 = -9;
+// Rva003AED3E_v14: matched references place it at VA 0xc1c608 (retail .rdata value 59).
+extern "C" char Rva003AED3E_v14 = 59;
 extern "C" char Rva003AED3E_v18;
-extern "C" char Rva003AED3E_v1c;
+// Rva003AED3E_v1c: matched references place it at VA 0xc1cee8 (retail .rdata value -77).
+extern "C" char Rva003AED3E_v1c = -77;
 
 class Rva003AEB9C
 {
