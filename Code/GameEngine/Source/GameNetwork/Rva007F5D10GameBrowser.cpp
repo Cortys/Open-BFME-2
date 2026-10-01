@@ -4,7 +4,6 @@
 
 #include <string.h>
 
-extern "C" unsigned char bfmeInfoDFI[];
 
 // The complete retail destructor at 0x007E86C0 has an address-derived
 // ledger identity; use that existing declaration for the scoped cleanup.
@@ -154,7 +153,7 @@ void Rva007F5D10GameBrowser::handlePendingActiveReply( Rva007E8810Message *messa
 		return;
 
 	int id = (int)((Rva00803620Getter *)message)->getPtr(
-		(void *)bfmeInfoDFI, 0 );
+		(void *)(char *)"PID", 0 );
 	Rva008022A0Owner *player = m_hosts->find( id );
 	if ( player == 0 )
 	{

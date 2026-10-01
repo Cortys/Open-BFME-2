@@ -22,21 +22,6 @@
 //   bfmeRdata00CE408C -> 0x00CE408C  "lan game full\n"
 // Declared, never defined: the DIR32 slot is a relocation the comparison masks,
 // which is how an absolute-address operand is reproduced (AGENTS.md).
-extern "C" const char bfmeRdata00BBFD88[];
-extern "C" const char bfmeRdata00C0C048[];
-extern "C" const char bfmeRdata00C6AC00[];
-extern "C" const char bfmeRdata00C71658[];
-extern "C" const char bfmeRdata00CE2D70[];
-extern "C" const char bfmeRdata00CE2D84[];
-extern "C" const char bfmeRdata00CE2DA4[];
-extern "C" const char bfmeRdata00CE2DAC[];
-extern "C" const char bfmeRdata00CE3F98[];
-extern "C" const char bfmeRdata00CE3FB0[];
-extern "C" const char bfmeRdata00CE4050[];
-extern "C" const char bfmeRdata00CE4064[];
-extern "C" const char bfmeRdata00CE4074[];
-extern "C" const char bfmeRdata00CE4088[];
-extern "C" const char bfmeRdata00CE408C[];
 
 char *__cdecl ji_009f70ba( char *destination, const char *source,
 	unsigned int count );
@@ -208,41 +193,41 @@ void Rva00809E40Owner::rva00809E40( Rva007E8810Message *input )
 	if( manager == 0 )
 	{
 		message.m_field20 = 'ngam';
-		Rva007F93E0( &message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+		Rva007F93E0( &message, (void *)"->L", m_routeOwner );
 		return;
 	}
 
 	Rva00802680Owner *slot = manager->findFree();
 	if( slot == 0 )
 	{
-		Rva007EB810Get()->report( (const char *)bfmeRdata00CE408C );
+		Rva007EB810Get()->report( (const char *)"lan game full\n" );
 		message.m_field20 = 'jden';
 		message.addString(
-			(const char *)bfmeRdata00CE2DA4, (const char *)bfmeRdata00CE4088 );
-		Rva007F93E0( &message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+			(const char *)"REASON", (const char *)"f" );
+		Rva007F93E0( &message, (void *)"->L", m_routeOwner );
 		return;
 	}
 	if( manager->rva00801460() != 0 )
 	{
-		Rva007EB810Get()->report( (const char *)bfmeRdata00CE4074 );
+		Rva007EB810Get()->report( (const char *)"lan game closed\n" );
 		message.m_field20 = 'jden';
 		message.addString(
-			(const char *)bfmeRdata00CE2DA4, (const char *)bfmeRdata00BBFD88 );
-		Rva007F93E0( &message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+			(const char *)"REASON", (const char *)"c" );
+		Rva007F93E0( &message, (void *)"->L", m_routeOwner );
 		return;
 	}
 
 	int index = slot->getIndex();
 	if( m_game == 0 )
 		Rva007EB810Get()->fail(
-			(const char *)bfmeRdata00CE4064,
-			(const char *)bfmeRdata00CE3FB0,
+			(const char *)"mHostedLanGame",
+			(const char *)"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\lantheateremulator.cpp",
 			0x307 );
 	Rva00809E40Record **players = m_game->m_players;
 	if( players[ index ] != 0 )
 		Rva007EB810Get()->fail(
-			(const char *)bfmeRdata00CE4050,
-			(const char *)bfmeRdata00CE3FB0,
+			(const char *)"!players[pindex]",
+			(const char *)"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\lantheateremulator.cpp",
 			0x309 );
 
 	void *raw = Gen007F0130::operator new( 0x38 );
@@ -257,23 +242,23 @@ void Rva00809E40Owner::rva00809E40( Rva007E8810Message *input )
 	++m_game->m_state;
 	record->m_powerSabotagedTillFrame = state;
 	record->m_field14 = reinterpret_cast< Rva007E8810Message * >( input )->getInt(
-		(const char *)bfmeRdata00CE2D84, 0 );
-	Rva007F93E0( &message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+		(const char *)"GID", 0 );
+	Rva007F93E0( &message, (void *)"->L", m_routeOwner );
 
 	{
 		char first[ 0x20 ];
-		input->getString( (const char *)bfmeRdata00C0C048, first, 0x20 );
+		input->getString( (const char *)"NAME", first, 0x20 );
 		{
 			char second[ 0x20 ];
-			input->getString( (const char *)bfmeRdata00C71658, second, 0x20 );
+			input->getString( (const char *)"IP", second, 0x20 );
 			ji_009f70ba( record->m_field18, second, 0x20 );
 		}
 
 		BfmeC994 request( buffer, 0x40 );
 		request.m_category = 'EGRQ';
-		request.addString( (const char *)bfmeRdata00C0C048, first );
-		request.addInt( (const char *)bfmeRdata00CE2D70, record->m_powerSabotagedTillFrame );
-		request.addString( (const char *)bfmeRdata00CE2DAC, (const char *)bfmeRdata00C6AC00 );
+		request.addString( (const char *)"NAME", first );
+		request.addInt( (const char *)"PID", record->m_powerSabotagedTillFrame );
+		request.addString( (const char *)"TICKET", (const char *)"ticket" );
 		m_sender->send( &request );
 	}
 }
@@ -294,5 +279,5 @@ public:
 // ?rva00808C60@Rva00808C60Owner@@QAEXPAX@Z
 void Rva00808C60Owner::rva00808C60( void *message )
 {
-	Rva007F93E0( message, (void *)bfmeRdata00CE3F98, m_routeOwner );
+	Rva007F93E0( message, (void *)"->L", m_routeOwner );
 }

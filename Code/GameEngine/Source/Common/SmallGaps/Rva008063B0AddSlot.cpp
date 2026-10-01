@@ -5,7 +5,6 @@ struct Rva008063B0Diag {
 };
 struct Rva007EB810Diag;
 Rva007EB810Diag *__cdecl Rva007EB810Get();
-extern char g_bfmeMsgUVB[];
 struct Rva008063B0Slot { int m_a; int m_b; };
 struct Rva008063B0Owner {
 	int m_0;
@@ -22,5 +21,5 @@ void Rva008063B0Owner::addSlot(int a, int b)
 			return;
 		}
 	}
-	((Rva008063B0Diag *)Rva007EB810Get())->report(g_bfmeMsgUVB, "\\views\\feslbuild_main\\jabba\\fesl\\source\\statemachine.cpp", 0x6b);
+	((Rva008063B0Diag *)Rva007EB810Get())->report((char *)"false", "\\views\\feslbuild_main\\jabba\\fesl\\source\\statemachine.cpp", 0x6b);
 }

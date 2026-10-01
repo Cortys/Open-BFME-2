@@ -1,4 +1,3 @@
-extern "C" unsigned char bfmeInfoDFC[];
 
 class BfmeOtherDFC
 {
@@ -15,6 +14,6 @@ public:
 
 BfmeThingDFC *BfmeThingDFC::bfmeGoDFC(BfmeOtherDFC *other)
 {
-	m_bfmeVal = other->bfmeMakeDFC(bfmeInfoDFC, 0);
+	m_bfmeVal = other->bfmeMakeDFC((char *)"NUM-LOBBIES", 0);
 	return this;
 }

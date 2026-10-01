@@ -14,7 +14,6 @@ public:
 
 extern "C" __declspec(dllimport) unsigned long __stdcall WaitForSingleObject(void *, unsigned long);
 BfmeLog1037 *bfmeGetLog1037(void);
-extern char g_bfmeMsg1037[];
 
 class BfmeH1037
 {
@@ -28,5 +27,5 @@ public:
 void BfmeH1037::bfmeGo1037H(void)
 {
 	if (WaitForSingleObject(m_bfmeHandle, (unsigned long)-1) != 0)
-		bfmeGetLog1037()->bfmeSay1037(g_bfmeMsg1037);
+		bfmeGetLog1037()->bfmeSay1037((char *)"Error entering critical section\n");
 }

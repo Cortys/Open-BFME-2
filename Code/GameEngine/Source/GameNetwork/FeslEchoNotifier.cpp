@@ -39,11 +39,6 @@ private:
 	int m_transactionId;
 };
 
-extern char g_feslTransactionIdKey[];
-extern char g_feslTypeKey[];
-extern char g_feslUserIdKey[];
-extern char g_feslSecretKey[];
-extern char g_feslDirectRoute[];
 
 // ?notifyEcho@FeslEchoNotifier@@QAEXXZ
 void FeslEchoNotifier::notifyEcho()
@@ -58,12 +53,12 @@ void FeslEchoNotifier::notifyEcho()
 	message.m_type = 'ECHO';
 	message.m_20 = 0;
 	message.m_ready = 1;
-	message.addInt( g_feslTransactionIdKey, m_transactionId );
-	message.addInt( g_feslTypeKey, 1 );
+	message.addInt( (char *)"TID", m_transactionId );
+	message.addInt( (char *)"TYPE", 1 );
 	if( m_userId[ 0 ] )
 	{
-		message.addString( g_feslUserIdKey, m_userId );
-		message.addString( g_feslSecretKey, m_secret );
+		message.addString( (char *)"UGID", m_userId );
+		message.addString( (char *)"SECRET", m_secret );
 	}
-	sendFeslMessage( &message, g_feslDirectRoute, m_connection );
+	sendFeslMessage( &message, (char *)"->D", m_connection );
 }

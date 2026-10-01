@@ -11,8 +11,6 @@ public:
 	int Rva002E42AFDispatch(int idx);
 };
 
-extern char const g_00BBE164[];
-extern char const g_00BBFB20[];
 
 void Rva005186E1Format(class OptionPreferences *prefs, class AsciiString *out)
 {
@@ -21,9 +19,9 @@ void Rva005186E1Format(class OptionPreferences *prefs, class AsciiString *out)
 	for (int i = 0; i < 9; ++i)
 	{
 		int v = prefs->Rva002E42AFDispatch(i);
-		tmp.format(g_00BBE164, v);
+		tmp.format((char *)"%d", v);
 		if (i != 0)
-			out->concat(g_00BBFB20);
+			out->concat((char *)",");
 		out->concat(tmp);
 	}
 }

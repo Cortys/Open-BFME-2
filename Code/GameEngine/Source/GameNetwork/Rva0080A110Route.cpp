@@ -64,8 +64,6 @@ public:
 
 void sendFeslMessage( void *message, const char *route, void *owner );
 extern int g_bfmeKeyVHE;
-extern char g_bfmeLidKey[];
-extern "C" char bfmeInfoDFI[];
 
 struct Rva0080A110Message
 {
@@ -118,7 +116,7 @@ void Rva0080A110Owner::route( Rva0080A110Message *input )
 	message.m_field08 = input->m_field08;
 	message.m_field0c = input->m_field0c;
 	reinterpret_cast< BfmeThingCIB * >( &message )->bfmeGoCIB(
-		g_bfmeLidKey, (void *)-2 );
+		(char *)"LID", (void *)-2 );
 
 	value = reinterpret_cast< BfmeThingRF * >( input )->bfmeGoRF(
 		(void *)"GID", 0 );
@@ -147,7 +145,7 @@ void Rva0080A110Owner::route( Rva0080A110Message *input )
 			kick.m_category = 0x4b49434b;
 			_ReadWriteBarrier();
 			reinterpret_cast< BfmeThingCIB * >( &kick )->bfmeGoCIB(
-				bfmeInfoDFI, found->m_field10 );
+				(char *)"PID", found->m_field10 );
 			m_sender->send( &kick );
 			return;
 		}

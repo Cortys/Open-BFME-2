@@ -28,18 +28,16 @@ public:
 	void bfmeGoVJH(int a) throw();
 };
 
-extern char g_bfmeName1052[];
-extern char g_bfmeNumLobbies803BF0[];
 
 void BfmeOwner803BF0::go(BfmeSrc803BF0 *src)
 {
 	char buf[0x40];
 	BfmeMsg803BF0 msg(buf, 0x40);
 	msg.m_category = 'LLST';
-	msg.addInt(g_bfmeNumLobbies803BF0, 1);
-	int tid = src->getInt(g_bfmeName1052, -1);
+	msg.addInt((char *)"NUM-LOBBIES", 1);
+	int tid = src->getInt((char *)"TID", -1);
 	if (tid != -1)
-		msg.addInt(g_bfmeName1052, tid);
+		msg.addInt((char *)"TID", tid);
 	send(&msg);
-	bfmeGoVJH(src->getInt(g_bfmeName1052, 0));
+	bfmeGoVJH(src->getInt((char *)"TID", 0));
 }

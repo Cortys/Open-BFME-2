@@ -1,4 +1,3 @@
-extern "C" unsigned char bfmeTagBNH[];
 
 class BfmeThingBNH;
 
@@ -12,6 +11,6 @@ public:
 
 BfmeThingBNH *BfmeThingBNH::bfmeGoBNH(void *what)
 {
-	bfmeDoBNH(this, bfmeTagBNH, 0, 0);
+	bfmeDoBNH(this, (char *)"exscorch01.tga", 0, 0);
 	return this;
 }

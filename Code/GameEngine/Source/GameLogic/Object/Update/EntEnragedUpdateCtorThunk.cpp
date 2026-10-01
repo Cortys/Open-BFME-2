@@ -14,7 +14,6 @@ public:
 	unsigned int m_initialValue;
 };
 
-extern "C" char EntEnragedInitialValueData;
 int __cdecl entEnragedInitialValue(int, unsigned int, const void *, int);
 
 class PB_DeepBase
@@ -70,7 +69,7 @@ EntEnragedUpdate::EntEnragedUpdate(Thing *thing, const ModuleData *moduleData)
 	const ModuleData *data = m_moduleData;
 	m_value = 0;
 	m_value += entEnragedInitialValue(0, data->m_initialValue,
-		&EntEnragedInitialValueData, 0x4c);
+		(char *)"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\Object\\Update\\EntEnraged.cpp", 0x4c);
 	m_field2C = false;
 	m_field2E = false;
 	m_field2F = false;

@@ -127,7 +127,6 @@ public:
 	int bfmeFind1052(char *n, int f);
 };
 
-extern char g_bfmeName1052[];
 
 class BfmeH1052
 {
@@ -138,7 +137,7 @@ public:
 
 void BfmeH1052::bfmeGo1052H(BfmeI1052 *p)
 {
-	bfmeDo1052(0, p, p->bfmeFind1052(g_bfmeName1052, 0));
+	bfmeDo1052(0, p, p->bfmeFind1052((char *)"TID", 0));
 }
 
 class BfmeK1052

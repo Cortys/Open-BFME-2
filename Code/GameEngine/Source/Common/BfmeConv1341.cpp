@@ -17,7 +17,6 @@ int BfmeThingURB::bfmeGoURB(void)
 	return (m_bfmeFlags & 0xff0000) == 0x30000;
 }
 
-extern char g_bfmeNameURC[];
 
 class BfmeSrcURC
 {
@@ -37,7 +36,7 @@ public:
 BfmeThingURC::BfmeThingURC(BfmeSrcURC *p)
 {
 	m_bfmeOwner = p;
-	p->bfmeFillURC(g_bfmeNameURC, m_bfmeText, (void *)0x40);
+	p->bfmeFillURC((char *)"sessionId", m_bfmeText, (void *)0x40);
 }
 
 class BfmeThingURD

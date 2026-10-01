@@ -11,7 +11,6 @@
 
 extern int g_Va00DBA4E4;
 extern float g_Va00BBB8D8;
-extern const char g_00BBD3EC[];
 class Rva00238B90
 {
 public:
@@ -31,7 +30,7 @@ private:
 	int m_4C;
 	AsciiString m_50;
 };
-Rva00238B90::Rva00238B90() : m_04("Sounds"), m_08("Music"), m_0C("Streams"), m_10("AmbientStreams"), m_14("wav"), m_18(AsciiString::TheEmptyString), m_44(0), m_48(5), m_4C(g_Va00DBA4E4 * 5), m_50(g_00BBD3EC)
+Rva00238B90::Rva00238B90() : m_04("Sounds"), m_08("Music"), m_0C("Streams"), m_10("AmbientStreams"), m_14("wav"), m_18(AsciiString::TheEmptyString), m_44(0), m_48(5), m_4C(g_Va00DBA4E4 * 5), m_50(".")
 {
 	float v = g_Va00BBB8D8;
 	for (int i = 0; i < 5; ++i)

@@ -285,12 +285,11 @@ Xfer &BfmeRva00C7B388::operator==(bool &value)
     return *this;
 }
 
-extern const char g_00C7B0D4[];
 Xfer &BfmeRva00C7B388::operator==(Xfer::Version &value)
 {
     if (!m_bfme04)
         Print(this, 0);
-    Print(this, g_00C7B0D4, value.m_minimum);
+    Print(this, "version: %i\n", value.m_minimum);
     m_bfme04 = false;
     return *this;
 }
@@ -510,14 +509,6 @@ Xfer &BfmeRva00C7B388::operator==(RGBAColorInt &value)
 // 0x0060DD1B 124B: vtable slot 37 (offset 0x94) of 0x00C7B388, the XferEnum
 // override. Base Xfer::XferEnum at 0x0060BBD5 is slot 37 of 0x00BBB910.
 // Prints the integer value selected by size, then " [name]", then newline.
-extern const char g_00BBE498[];
-extern const char g_00C7B0C0[];
-extern const char g_00C7B0B8[];
-extern const char g_00BBD40C[];
-extern const char g_00C7B0B0[];
-extern const char g_00BD8864[];
-extern const char g_00BBE8F8[];
-extern const char g_00C7B0AC[];
 Xfer &BfmeRva00C7B388::XferRawBytes(void *data, unsigned int size)
 {
     if (size != 0) {
@@ -525,36 +516,36 @@ Xfer &BfmeRva00C7B388::XferRawBytes(void *data, unsigned int size)
             return *this;
     }
     if (m_bfme04) {
-        Print(this, g_00BBE498);
+        Print(this, "\n");
         m_bfme04 = false;
     }
     if (size == 0) {
         Print(this, (const char *)0);
-        Print(this, g_00C7B0C0);
+        Print(this, "--- 0 raw bytes\n");
         return *this;
     }
     unsigned int off;
     for (off = 0; off < size; off += 0x10) {
         unsigned int col = 0;
         Print(this, (const char *)col);
-        Print(this, g_00C7B0B8, off);
+        Print(this, "%04x", off);
         for (col = 0; col < 0x10; ++col) {
             if ((col & 7) == 0)
-                Print(this, g_00BBD40C);
+                Print(this, " ");
             if (col + off < size)
-                Print(this, g_00C7B0B0, ((unsigned char *)data)[col + off]);
+                Print(this, " %02x", ((unsigned char *)data)[col + off]);
             else
-                Print(this, g_00BD8864);
+                Print(this, "   ");
         }
-        Print(this, g_00BBE8F8);
+        Print(this, "  ");
         for (col = 0; col < 0x10; ++col) {
             if (col + off >= size)
                 break;
             unsigned char c = ((unsigned char *)data)[col + off];
             int ch = (c > 0x20) ? (int)c : '.';
-            Print(this, g_00C7B0AC, ch);
+            Print(this, "%c", ch);
         }
-        Print(this, g_00BBE498);
+        Print(this, "\n");
     }
     return *this;
 }
@@ -625,16 +616,15 @@ BfmeRva00C7B388::~BfmeRva00C7B388()
 // pending-label flag is set print the newline, always print the indent,
 // print the label format with the name (empty string when null), then push a
 // copy of the name onto the narrow-string vector at +0x0C. Returns 0.
-extern const char g_00C7B424[];
 int BfmeRva00C7B388::rva0060DF27(const char *s)
 {
 	if (m_bfme04) {
-		Print(this, g_00BBE498);
+		Print(this, "\n");
 		m_bfme04 = false;
 	}
 	Print(this, (const char *)0);
 	const char *t = s != 0 ? s : "";
-	Print(this, g_00C7B424, t);
+	Print(this, "<%s>\n", t);
 	typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > NarrowString;
 	typedef _STL::vector<NarrowString, _STL::allocator<NarrowString> > NarrowStringVec;
 	NarrowString tmp(t);

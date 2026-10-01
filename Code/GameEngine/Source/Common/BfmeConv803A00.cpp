@@ -27,19 +27,16 @@ public:
 	void send(BfmeMsg803A00 *m) throw();
 };
 
-extern char g_bfmeName1052[];
-extern char g_bfmeKey803A00A[];
-extern char g_bfmeKey803A00B[];
 
 void BfmeOwner803A00::go(BfmeSrc803A00 *src)
 {
 	char buf[0x40];
 	BfmeMsg803A00 msg(buf, 0x40);
 	msg.m_category = 'CONN';
-	msg.addInt(g_bfmeKey803A00A, 2);
-	msg.addInt(g_bfmeKey803A00B, 0);
-	int tid = src->getInt(g_bfmeName1052, -1);
+	msg.addInt((char *)"PROT", 2);
+	msg.addInt((char *)"TIME", 0);
+	int tid = src->getInt((char *)"TID", -1);
 	if (tid != -1)
-		msg.addInt(g_bfmeName1052, tid);
+		msg.addInt((char *)"TID", tid);
 	send(&msg);
 }

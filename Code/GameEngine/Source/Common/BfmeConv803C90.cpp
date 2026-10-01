@@ -28,7 +28,6 @@ public:
 	void send(BfmeMsg803C90 *m) throw();
 };
 
-extern char g_bfmeName1052[];
 
 void BfmeOwner803C90::go(BfmeSrc803C90 *src)
 {
@@ -36,8 +35,8 @@ void BfmeOwner803C90::go(BfmeSrc803C90 *src)
 	BfmeMsg803C90 msg(buf, 0x40);
 	msg.m_category = 'HGAM';
 	msg.m_sub = 'unsp';
-	int tid = src->getInt(g_bfmeName1052, -1);
+	int tid = src->getInt((char *)"TID", -1);
 	if (tid != -1)
-		msg.addInt(g_bfmeName1052, tid);
+		msg.addInt((char *)"TID", tid);
 	send(&msg);
 }
