@@ -45736,3 +45736,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005746AF@@QAE@H@Z,,0x005746AF,35,Code/GameEngine/Source/Common/Rva005746AFCtor.cpp,matched,ctor vtable plus arg plus timeGetTime plus zero via barrier
 ??0Rva005747DA@@QAE@HH@Z,,0x005747DA,31,Code/GameEngine/Source/Common/Rva005747DACtor.cpp,matched,derived ctor via rowed base plus member plus vtable
 ?rva0057473A@Rva005746AF@@UAEXXZ,,0x0057473A,120,Code/GameEngine/Source/Common/Rva0057473AMethod.cpp,matched,vtable slot1 of 0x0086E3B0 and 0x0086E3CC time throttle 1000ms TreeHintRef hidden-pointer slot6 plus get and forwarder
+??0Rva00575125@@QAE@HPAX@Z,,0x00575125,86,Code/GameEngine/Source/Common/Rva00575125Ctor.cpp,matched,MI ctor base 0x005746AF second base at 0x10 member 0x14 append 0x005A0B4C
