@@ -72,7 +72,7 @@ OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result, const
 template <class InputIter, class OutputIter>
 OutputIter __uninitialized_copy(InputIter first, InputIter last, OutputIter result, const __false_type &tag);
 }
-_STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> > &_STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> >::operator=(const vector &x)
+inline _STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> > &_STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> >::operator=(const vector &x)
 {
 	if (&x != this)
 	{
@@ -98,3 +98,15 @@ _STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> > &_S
 	}
 	return *this;
 }
+
+// vector<BfmeAsciiScalarValue8>::operator= is a header inline in STLport: one
+// other unit emits a select-any copy of it, so a strong definition here was a
+// duplicate symbol in the linked build. This anchor only makes this unit emit
+// its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitstlport_vector_scalar8_assign@@YAXPAV?$vector@UBfmeAsciiScalarValue8@@V?$allocator@UBfmeAsciiScalarValue8@@@_STL@@@_STL@@ABV12@@Z present-unmatched
+void bfmeEmitstlport_vector_scalar8_assign(_STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> > *p, const _STL::vector<BfmeAsciiScalarValue8, _STL::allocator<BfmeAsciiScalarValue8> > &x)
+{
+  p->operator=(x);
+}
+#pragma inline_depth()
