@@ -1,7 +1,5 @@
 // ??0Rva0035FCD6@@QAE@XZ
-// partial score=0.9 date=2026-09-30
-// ??0Rva0035FCD6@@QAE@XZ
-// partial score=0.9 date=2026-09-30
+// partial score=0.95 date=2026-10-01
 // cl: /O1 /MD
 // ??0Rva0035FCD6@@QAE@XZ @0x0035FCD6 (52B): ctor storing vtable 0x008166BC,
 // same vtable as dtor ??1Rva0035FD0A at 0x0035FD0A. Calls base ??0Rva001DBAA4
@@ -19,6 +17,14 @@ public:
 	bool m_A;
 	int m_C;
 };
+struct Rva0035FCD6Slot
+{
+	int m_index;
+	int m_a;
+	int m_b;
+	Rva0035FCD6Slot() : m_index(-1), m_a(0), m_b(0) {}
+};
+
 class Rva0035FCD6 : public Rva001DBAA4
 {
 public:
@@ -27,17 +33,12 @@ public:
 	int m_10;
 	int m_14;
 	char m_pad18[0x28 - 0x18];
-	int m_28;
-	int m_2C;
-	int m_30;
+	Rva0035FCD6Slot m_28;
 	int m_34;
 };
 // ??0Rva0035FCD6@@QAE@XZ present-unmatched
 Rva0035FCD6::Rva0035FCD6()
 {
-	m_2C = 0;
-	m_30 = 0;
-	m_28 = -1;
 	m_14 = 0x1E;
 	m_4 = 0x1E;
 	m_10 = 0;
