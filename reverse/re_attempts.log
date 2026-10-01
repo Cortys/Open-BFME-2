@@ -4984,3 +4984,5 @@ FUN_008e007a	0x004E007A	64	blocked	STL EH ctor vector-uint at +4 plus hashtable 
 ?rva0055C263@Rva0055C263@@QAEXPAVFile@@I@Z	0x0055C263	433	blocked	loop SSE register wall 2 variants SSE2 fixed floats but ptr-plus12 and stack-index remain t=15 model=muse-06
 ?rva002B7B71@Rva002B7B71@@QAEXXZ	0x002B7B71	74	blocked	size-in-ecx-not-eax element-in-eax-not-ecx vtable-in-edx-not-eax extra-mov-ecx-eax plus pop-before-reload t=18 model=muse-07 (stash 0.9 kept)
 ??0Rva005CC287@@QAE@XZ	0x005CC287	62	partial	vtable store sunk below holder load plus extra mov eax esi 64 vs 62B lever440 escaped helper next t=15 model=muse-07 score=0.93 stash=reverse/attempts/0x005cc287.cpp
+?rva002AF0C5@Player@@QAEX_N@Z	0x002AF0C5	214	partial	ebx edi swap plus xor call lea test idioms t=20 model=muse-02 score=0.92 stash=reverse/attempts/0x002af0c5.cpp
+?rva002AF438@Rva002AF438@@QAE@IIII@Z	0x002AF438	64	partial	missing push ecx plus ebp layout offsets 63B vs 64B t=5 model=muse-02 score=0.92 stash=reverse/attempts/0x002af438.cpp
