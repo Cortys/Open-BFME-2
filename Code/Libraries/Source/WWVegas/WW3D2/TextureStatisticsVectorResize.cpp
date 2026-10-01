@@ -25,10 +25,8 @@ class TextureClass : public TextureBaseClass
 {
 };
 
-void TextureBaseClass::Add_Ref()
-{
-	++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
-}
+// TextureBaseClass::Add_Ref lives in ringobj.cpp (row at 0x000424B6);
+// the in-class declaration above stays so this TU's calls keep the same name.
 
 template<class T>
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/ref_ptr.h
@@ -39,7 +37,7 @@ public:
 	RefCountPtr(RefCountPtr const &other) : Referent(other.Referent)
 	{
 		if (Referent != 0)
-			Referent->Add_Ref();
+			++*(unsigned short *)((char *)Referent + 4);
 	}
 	// BFME's destructor does not null the pointer (see TextureStatisticsVector.cpp).
 	~RefCountPtr()
@@ -52,7 +50,7 @@ public:
 	RefCountPtr const &operator=(RefCountPtr const &other)
 	{
 		if (other.Referent != 0)
-			other.Referent->Add_Ref();
+			++*(unsigned short *)((char *)other.Referent + 4);
 		if (Referent != 0)
 			Referent->Release_Ref();
 		Referent = other.Referent;
