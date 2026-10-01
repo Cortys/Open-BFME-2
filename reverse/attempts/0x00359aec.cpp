@@ -1,7 +1,5 @@
 // ?rva00359AEC@Rva00359AEC@@QAEXPAUApplyArg00359AEC@@@Z
-// partial score=0.91 date=2026-09-30
-// ?rva00359AEC@Rva00359AEC@@QAEXPAUApplyArg00359AEC@@@Z
-// partial score=0.91 date=2026-09-30
+// partial score=0.92 date=2026-10-01
 // cl: /O1 /EHsc
 // ?rva00359AEC@Rva00359AEC@@QAEXPAUApplyArg00359AEC@@@Z @0x00359AEC 109B: guard-loop vector-apply over pointer vector at +0/+4 with +0xC index save-zero-restore; per-iter member-pointer functor via bundle; caller 0x00359BFD in 0x00359BE8; prev Rva003598D3Ctor next ListInsert; same 109B family as 0x0030C9E6 stash.
 struct ElemThunk00359AEC { void Call(void *ctx); };
@@ -30,14 +28,14 @@ void Rva00359AEC::rva00359AEC(ApplyArg00359AEC *arg)
 	g.m_ptr = &m_idx;
 	g.m_saved = m_idx;
 	m_idx = 0;
-	int n = (int)((char *)m_end - (char *)m_begin) >> 2;
+	unsigned n = ((char *)m_end - (char *)m_begin) >> 2;
 	if (n != 0) {
-		int i = 0;
+		unsigned i = 0;
 		do {
 			m_idx = i + 1;
 			(((ElemThunk00359AEC *)((void **)m_begin)[i])->*arg->m_fn)(arg->m_ctx);
 			i = m_idx;
-			n = (int)((char *)m_end - (char *)m_begin) >> 2;
+			n = ((char *)m_end - (char *)m_begin) >> 2;
 		} while (i < n);
 	}
 }

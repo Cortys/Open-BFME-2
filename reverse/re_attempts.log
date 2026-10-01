@@ -5208,3 +5208,7 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00759490@Rva009A3540PairOwner@@QAEXPAURva009A3540OpaqueOwner@@0@Z	0x00759490	363	partial	register allocation this-in-ebx vs ecx plus slot hoist vs bucket spill t=25 model=muse-10 score=0.91 stash=reverse/attempts/0x00759490.cpp
 ?Rva003BBCB3Set@@YGX_N@Z	0x003BBCB3	31	partial	eax-edx swap only size exact 0 structural t=18 model=muse-09 score=0.95 stash=reverse/attempts/0x003bbcb3.cpp
 ?rva003642DF@Path@@QAEPAURegion2D@@PAU2@M@Z	0x003642DF	578	blocked	578B Path Region Unicode float x87 SSE mix no donor best-effort 186 vs 578 minus392 missing loop Region math t=18 model=muse-16
+?rva00359AEC@Rva00359AEC@@QAEXPAUApplyArg00359AEC@@@Z	0x00359AEC	109	partial	unsigned fixed jb but this in esi vs edi push2 vs sub esp sar vs test remain t=12 model=muse-03 score=0.92 stash=reverse/attempts/0x00359aec.cpp
+??0Rva00359E13@@QAE@XZ	0x00359E13	122	blocked	mov ecx ebp-0c early vs late only G7 same t=15 model=muse-03 (stash 0.97 kept)
+?rva00359032@Rva00358E6A@@QAE?AUInsertResult00359032@@ABUValue00359032@@@Z	0x00359032	151	blocked	private AsciiString wall class-gate refuses new copy shared header inlines compare not rowed operatorLess t=5 model=muse-03
+?insert@?$vector@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@QAEXPAUCoord3D@@IABU3@@Z	0x000CA1EE	256	blocked	STL version wall vendored insert forwards 5B retail contains 256B logic use _M_fill_insert instead t=8 model=muse-03
