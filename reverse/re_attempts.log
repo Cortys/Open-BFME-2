@@ -5135,3 +5135,4 @@ FUN_0081553a	0x0041553A	64	blocked	stl hashtable 64B fourth copy vector plus Arm
 FUN_0091e31a	0x0051E31A	58	blocked	struct float copies via int mov vs retail movss t=12 model=muse-10
 FUN_0091e471	0x0051E471	63	blocked	EH dtor-like with StringBase array no donor class t=5 model=muse-10
 ?rva00468B5B@HordeContain@@UAEMM@Z	0x00468B5B	129	partial	HordeContain +0x11C slot 144 float scaler: cl folds the Object +0xB8 float as a subss memory operand where retail loads it into xmm0 first (125 vs 129 bytes); float local, negated sum and swapped compares tried t=6 model=claude-opus-5-5 score=0.6 stash=reverse/attempts/0x00468b5b.cpp
+?rva004DEC88@FiringTracker@@QAEX_N@Z	0x004DEC88	179	blocked	bit-test-collapsed-OR-vs-retail-shr-test-jne-plus-shr-test-je plus x87-fldz-fstp-vs-xorps-movss 158-vs-179B 6-regions t=8 model=muse-04
