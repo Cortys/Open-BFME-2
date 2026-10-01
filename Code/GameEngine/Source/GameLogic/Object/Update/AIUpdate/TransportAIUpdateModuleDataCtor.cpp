@@ -46,11 +46,18 @@ class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
-	StringBase(const T *str);
 	~StringBase();
 
 private:
 	void *m_data;
+private:
+	StringBase(const T *str);
+	friend class AsciiString;
+	friend class BfmeE16;
+	friend class ModuleFactory;
+	friend class ModuleTemplate;
+	friend class TransportAIUpdateModuleData;
+	friend class UpdateModuleData;
 };
 
 class AsciiString : public StringBase<char>

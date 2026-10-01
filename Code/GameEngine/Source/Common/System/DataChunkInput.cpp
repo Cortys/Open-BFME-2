@@ -82,7 +82,6 @@ class StringBase
 {
 public:
 	StringBase(void) : m_data(0) {}
-	StringBase(const StringBase &other);
 	T *getBufferForRead(Int len);
 	// ?set@?$StringBase@D@@QAEXABV1@@Z aliases the retail
 	// ?set@UnicodeString@@QAEXABV1@@Z pin (see symbols.csv) -- both types
@@ -91,6 +90,18 @@ public:
 
 protected:
 	void *m_data;
+private:
+	StringBase(const StringBase &other);
+	friend class AsciiString;
+	friend class BFME_GameEngineServiceWindowsOS;
+	friend class ChunkInputStream;
+	friend class DataChunkInfo;
+	friend class DataChunkInput;
+	friend class DataChunkTableOfContents;
+	friend class InputChunk;
+	friend class Mapping;
+	friend class NameKeyGenerator;
+	friend class UserParser;
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h

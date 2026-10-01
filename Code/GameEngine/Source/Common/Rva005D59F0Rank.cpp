@@ -15,7 +15,6 @@ class StringBase
 public:
 	void set(const StringBase<T> &other);
 	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
 private:
 	struct Header
 	{
@@ -25,6 +24,10 @@ private:
 		T data[1];
 	};
 	Header *m_data;
+private:
+	void releaseBuffer();
+	friend class GameTextInterface;
+	friend class UnicodeString;
 };
 
 class UnicodeString : public StringBase<WideChar>

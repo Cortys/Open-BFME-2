@@ -10,9 +10,12 @@
 template <class T> class StringBase
 {
 public:
-	StringBase(const StringBase &other);
 private:
 	void *m_data;
+private:
+	StringBase(const StringBase &other);
+	friend class BfmeE16;
+	friend class Rva003323AD;
 };
 
 struct BfmeE16 { float x; float y; float z; float w; };

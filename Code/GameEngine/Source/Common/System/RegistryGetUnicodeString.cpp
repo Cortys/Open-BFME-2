@@ -63,8 +63,11 @@ public:
 		T data[1];
 	};
 
-	void releaseBuffer();
 	Header *m_data;
+private:
+	void releaseBuffer();
+	friend class HKEY__;
+	friend class UnicodeString;
 };
 
 class UnicodeString

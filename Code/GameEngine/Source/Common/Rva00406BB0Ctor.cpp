@@ -8,12 +8,15 @@ template <typename T>
 class StringBase
 {
 public:
-	StringBase(const StringBase &other);
 	~StringBase() { releaseBuffer(); }
 
 private:
 	void releaseBuffer();
 	void *m_data;
+private:
+	StringBase(const StringBase &other);
+	friend class Rva00406BB0;
+	friend class Rva00406BB0Base;
 };
 
 class Rva00406BB0Base

@@ -9,11 +9,14 @@ class StringBase
 {
 public:
 	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
 	int compare(const StringBase &other) const;
 	void set(const StringBase &other);
 private:
 	T *m_data;
+private:
+	void releaseBuffer();
+	friend class DisplayString;
+	friend class UnicodeString;
 };
 class GameFont;
 class UnicodeString : public StringBase<unsigned short>

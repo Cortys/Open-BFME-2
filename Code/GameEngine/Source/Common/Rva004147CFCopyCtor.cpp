@@ -15,10 +15,16 @@ template<class T> class StringBase {
     void releaseBuffer();
 public:
     StringBase();
-    StringBase(const StringBase &);
     StringBase &operator=(const StringBase &);
 protected:
     __forceinline ~StringBase() { releaseBuffer(); }
+private:
+	StringBase(const StringBase &);
+	friend class AsciiString;
+	friend class BfmePod44;
+	friend class EmptyBase;
+	friend class Rva00360D26Member;
+	friend class Rva004147CF;
 };
 class AsciiString : private StringBase<char> {
 public:

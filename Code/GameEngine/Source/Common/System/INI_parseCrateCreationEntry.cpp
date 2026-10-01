@@ -16,11 +16,18 @@ template <typename T> class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
-	StringBase(const T *str);
 	~StringBase();
 
 private:
 	void *m_data;
+private:
+	StringBase(const T *str);
+	friend class AsciiString;
+	friend class CrateTemplate;
+	friend class INI;
+	friend class INIException;
+	friend class ParseCrateThrowInfoAnchor;
+	friend class crateCreationEntry;
 };
 
 class AsciiString : public StringBase<char>

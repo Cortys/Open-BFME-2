@@ -8,8 +8,11 @@ template<class T> class StringBase {
     T *data;
 public:
     StringBase():data(0){}
-    void releaseBuffer();
     ~StringBase(){releaseBuffer();}
+private:
+	void releaseBuffer();
+	friend class AsciiString;
+	friend class UnicodeString;
 };
 class UnicodeString {
     struct Header { int refs; unsigned short length,capacity; Wide data[1]; };

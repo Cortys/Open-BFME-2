@@ -20,11 +20,17 @@ private:
 template <typename T> class StringBase
 {
 public:
-	StringBase(const StringBase &other);
 	void set(const StringBase &other);
 
 private:
 	void *m_data;
+private:
+	StringBase(const StringBase &other);
+	friend class AsciiString;
+	friend class Dict;
+	friend class DictPair;
+	friend class DictPairData;
+	friend class UnicodeString;
 };
 
 extern "C" void free(void *);

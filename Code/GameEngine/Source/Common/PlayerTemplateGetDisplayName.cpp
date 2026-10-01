@@ -16,10 +16,13 @@ template <typename T>
 class StringBase
 {
 public:
-	StringBase(const StringBase<T> &that);
 	~StringBase();
 
 private:
+	friend class UnicodeString;
+private:
+	StringBase(const StringBase<T> &that);
+	friend class PlayerTemplate;
 	friend class UnicodeString;
 };
 

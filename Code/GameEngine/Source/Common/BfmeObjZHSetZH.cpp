@@ -19,7 +19,6 @@ template <typename T> class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
-	StringBase(const StringBase &other);
 	void set(const StringBase &other);
 
 private:
@@ -29,6 +28,14 @@ private:
 
 private:
 	void *m_data;
+private:
+	StringBase(const StringBase &other);
+	friend class BFMERetailAsciiString;
+	friend class BfmeElemCD;
+	friend class BfmeFalseCD;
+	friend class BfmeObjZH;
+	friend class BfmeVecCD;
+	friend class BfmeVecZH;
 };
 
 #pragma comment(linker, "/alternatename:??0AsciiString@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
