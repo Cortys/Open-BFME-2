@@ -14,6 +14,18 @@ struct BfmeStringRecord00063BE4 {
       : word0(o.word0), word1(o.word1), word2(o.word2), word3(o.word3), word4(o.word4), word5(o.word5), word6(o.word6), text(o.text), tail0(o.tail0), tail1(o.tail1) {}
 };
 #include <memory>
+// Codegen view of BFME2 AsciiString's one-pointer StringBase<char> base. Its
+// copy operation calls retail 0x000365F0 without changing other record views.
+struct BfmeStringRecord00404BF3;
+template <typename T> class StringBase
+{
+public:
+	~StringBase();
+private:
+	StringBase(const StringBase<T> &);
+	friend struct BfmeStringRecord00404BF3;
+	void *m_data;
+};
 template void _STL::_Construct<BfmeStringRecord00063BE4,BfmeStringRecord00063BE4>(BfmeStringRecord00063BE4*,const BfmeStringRecord00063BE4&);
 
 
@@ -97,11 +109,12 @@ struct BfmeStringRecord0040360E {
 };
 template void _STL::_Construct<BfmeStringRecord0040360E,BfmeStringRecord0040360E>(BfmeStringRecord0040360E*,const BfmeStringRecord0040360E&);
 
-// Retail copy 0x00404BF3: observed scalar fields and string member.
-// Original application type and scalar meanings are unknown.
+// Retail copy 0x00404BF3: the 0x00404BC5 sibling ctor establishes an
+// AsciiString at +0 and five floats at +4..+0x14; their meanings are unknown.
+// StringBase<char> below is the layout-equivalent codegen view for the copy.
 struct BfmeStringRecord00404BF3 {
-    AsciiString text; unsigned int word0, word1, word2, word3, word4;
-    BfmeStringRecord00404BF3(const BfmeStringRecord00404BF3 &o) : text(o.text), word0(o.word0), word1(o.word1), word2(o.word2), word3(o.word3), word4(o.word4) {}
+    StringBase<char> text; float f0, f1, f2, f3, f4;
+    BfmeStringRecord00404BF3(const BfmeStringRecord00404BF3 &o) : text(o.text), f0(o.f0), f1(o.f1), f2(o.f2), f3(o.f3), f4(o.f4) {}
 };
 template void _STL::_Construct<BfmeStringRecord00404BF3,BfmeStringRecord00404BF3>(BfmeStringRecord00404BF3*,const BfmeStringRecord00404BF3&);
 
@@ -185,13 +198,6 @@ template void _STL::_Construct<BfmeStringRecord00239B46,BfmeStringRecord00239B46
 // pinned StringBase dtor at 0x36410, with /EHsc states. Identity unproven
 // beyond the string-pair layout shared with BfmeStringRecord001EA478, so
 // both land under an honest Rva address name in this TU (same flags).
-template <typename T> class StringBase
-{
-public:
-	~StringBase();
-private:
-	void *m_data;
-};
 class Rva001EA443
 {
 public:
