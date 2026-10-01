@@ -45572,3 +45572,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?clearItems@Rva00403055@@QAEXXZ,,0x00402C4E,60,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,deletes each owned item then erases the range; end hoisted before the loop
 ??0Rva00402F28Item@@QAE@ABV0@@Z,,0x00402F28,45,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,chain base Rva003F9FE6 copy then vtable 0xC37898 and three byte extras
 ?rva002230FF@Rva002230FF@@QAEPAXPBX@Z,,0x002230FF,37,Code/GameEngine/Source/GameClient/Rva002230FFNewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and 0x00222DBF twin of 0x000A7849
+?rva00223124@Rva00223124@@QAEPAXPBX@Z,,0x00223124,37,Code/GameEngine/Source/GameClient/Rva00223124NewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and true 0x0002C71B unlocks 0x0002CA72
