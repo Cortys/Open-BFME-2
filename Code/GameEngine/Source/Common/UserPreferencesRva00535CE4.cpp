@@ -260,6 +260,7 @@ public:
 	void rva00536662(AsciiString arg, int x);
 	void rva005366F3(AsciiString arg, int x);
 	void rva00536784(AsciiString arg, int x);
+	void rva0053685F(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -657,5 +658,14 @@ void UserPreferences::rva005366F3(AsciiString arg, int x)
 void UserPreferences::rva00536784(AsciiString arg, int x)
 {
 	arg.concat("HeroesLostRTS");
+	v11(arg, x);
+}
+
+// ?rva0053685F@UserPreferences@@QAEXVAsciiString@@H@Z @0x0053685F 71B
+// UserPreferences LongestGameTurns-void path: append LongestGameTurns slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat LongestGameTurns 0x00868FF4 slot 0x2C releaseBuffer gap same TU unlock.
+void UserPreferences::rva0053685F(AsciiString arg, int x)
+{
+	arg.concat("LongestGameTurns");
 	v11(arg, x);
 }
