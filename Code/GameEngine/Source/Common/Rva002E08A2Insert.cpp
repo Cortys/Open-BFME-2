@@ -150,3 +150,12 @@ void Rva002E1889Reinsert(void **base, void **end, void *unused, void *extra)
 	void **last = end - 1;
 	((Reinsert6)Rva002E1824Reinsert)(base, last, last, *last, extra, 0);
 }
+
+// ?Rva002E1F0AReinsert@@YAXPAPAX0PAX@Z @0x002E1F0A 23B.
+// Pass-through adapter to rowed 0x002E1889 as (first last 0 extra).
+// Evidence: frameless 4-push with 0 third like 0x002E180D precedent;
+// caller 0x002E219A; abuts MakeHeap aux sharing /O1.
+void Rva002E1F0AReinsert(void **first, void **last, void *extra)
+{
+	Rva002E1889Reinsert(first, last, 0, extra);
+}
