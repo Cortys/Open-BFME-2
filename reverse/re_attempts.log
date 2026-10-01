@@ -4878,3 +4878,4 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z	0x004E0BDC	109	partial	EH new frame extra push and branch order 112vs109 t=15 model=muse-09 score=0.91 stash=reverse/attempts/0x004e0bdc.cpp
 ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z	0x00421520	82	partial	count in ecx plus extra mov vs retail eax mem-sub t=25 model=muse-09 score=0.93 stash=reverse/attempts/0x00421520.cpp
 ?rva00421A16@Rva00421A16@@QAE_NPBM0@Z	0x00421A16	53	blocked	fcomp-fnstsw vs fld-fxch-fcompi wall under O1-G7 and O2-G7 plus d2gt-d1 same t=12 model=muse-09
+??0Rva004211CA@@QAE@XZ	0x004212E4	46	blocked	frame plus stosb plus late vtable t=12 model=muse-09

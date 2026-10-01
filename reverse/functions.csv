@@ -45996,3 +45996,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00421F13@Rva00421C24@@QAEXXZ,,0x00421F13,41,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,chain lane calls 0x00421C24
 ?rva00421CE9@Rva00421CE9@@QAEXPAX@Z,,0x00421CE9,45,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,unlock lane self-call free 0x30830
 ?rva00421FDE@Rva00421CE9@@QAEXXZ,,0x00421FDE,41,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,chain lane caller 0x0042272C neighbours share O1
+?Rva00421263Find@@YGPBVModuleData@@PBURva00421263Vec@@ABV?$StringBase@D@@@Z,,0x00421263,47,Code/GameEngine/Source/Common/Rva00421263Find.cpp,matched,unlock lane linear search vec ModuleData name compare rowed 0x000069D6
