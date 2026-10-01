@@ -45622,3 +45622,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??$__uninitialized_fill_n@PAVRva0036CA00Str@@IV1@@_STL@@YAPAVRva0036CA00Str@@PAV1@IABV1@ABU__false_type@0@@Z,,0x00051AF9,37,Code/Libraries/Source/WWVegas/WWLib/Rva00051AF9FillN.cpp,matched,unsigned count fill loop through rowed out-of-line _Construct 0x002393AA
 ??$__copy@PAUTreeHintRef00217D4C@@PAU1@H@_STL@@YAPAUTreeHintRef00217D4C@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x005E1A87,47,Code/Libraries/Source/WWVegas/WWLib/Rva00051C10Copy.cpp,matched,random-access copy loop assigning 4-byte handles through rowed 0x002174A4
 ??$__uninitialized_fill_n@PAVAssetReference@@IV1@@_STL@@YAPAVAssetReference@@PAV1@IABV1@ABU__false_type@0@@Z,,0x000C932E,37,Code/Libraries/Source/WWVegas/WWLib/Rva00051AF9FillN.cpp,matched,unsigned count fill loop through rowed out-of-line _Construct 0x000C92F6
+?getDrawable@Thing@@QBEPAVDrawable@@XZ,,0x005508E2,7,Code/GameEngine/Source/Common/Thing/ThingGetDrawable.cpp,matched,
+?getCommandCount@FrameData@@QAEIXZ,,0x005801F2,4,Code/GameEngine/Source/GameNetwork/FrameDataGetters.cpp,matched,
+?getCommandList@FrameData@@QAEPAVNetCommandList@@XZ,,0x0030F45F,4,Code/GameEngine/Source/GameNetwork/FrameDataGetters.cpp,matched,
