@@ -1,7 +1,17 @@
-// ?rva00390CCA@PhysicsBehavior@@QAEX_N@Z
-// partial score=0.95 date=2026-10-01
 // cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
+//
+// Retail 0x00390CCA (134 bytes): PhysicsBehavior::rva00390CCA(bool), the
+// PhysicsBehavior method beside its matched ctor 0x003907A6 (callers 0x00390E61
+// and 0x00390FAF; same layout and flags as the ctor TU). Clears the +0x20
+// vector, zeroes +0x50/+0x54; when the +0x5F flag or module data +0x59 is set,
+// sets model condition 3*32+26 and kills the Object (DAMAGE_FALLING), otherwise
+// unless the argument is true sleeps forever (setWakeFrame); then hands the
+// +0x64 weapon template to the matched WeaponStore 0x002CE964 and clears
+// +0x60/+0x64. Body banked by an earlier attempt (0x00390cca stash, 0.95); the
+// remaining diff was the condition update, which the masked-word accessors
+// (word array at Object+0x10C, free __forceinline helper, pinned notifier
+// 0x0028AE6D) reproduce in place of the volatile field.
 // ?rva00390CCA@PhysicsBehavior@@QAEX_N@Z @0x00390CCA 134B. Identity: PhysicsBehavior method beside ctor 0x3907A6; clears vector at +0x20, zeroes +0x50/+0x54, checks +0x5F and moduleData+0x59, setWakeFrame FOREVER via 0x44DF71 or kill via Object::kill, weapon cleanup via WeaponStore 0x2CE964 and TheWeaponStore.
 // Evidence: callers 0x390E61/0x390FAF; callees rowed/pinned in packet; neighbours 0x3908A1/0x3913E4; same layout/flags as PhysicsBehaviorCtor.
 #include <vector>
@@ -48,14 +58,36 @@ public:
 	unsigned char m_59;
 };
 
+class Rva0010CBits
+{
+public:
+	unsigned int test(int bit) const
+	{
+		return m_words[bit >> 5] & (1U << (bit & 0x1f));
+	}
+	void set(int bit)
+	{
+		m_words[bit >> 5] |= 1U << (bit & 0x1f);
+	}
+private:
+	unsigned int m_words[19];
+};
 class Object
 {
 public:
 	void rva0028AE6D();
 	void kill(DamageType damage, DeathType death);
-	unsigned char m_pad[0x118];
-	volatile unsigned int m_118;
+	unsigned char m_pad[0x10C];
+	Rva0010CBits m_conditionBits; // +0x10C
 };
+static __forceinline void setModelConditionBit(Object *object, int bit)
+{
+	if (object->m_conditionBits.test(bit) == 0)
+	{
+		object->m_conditionBits.set(bit);
+		object->rva0028AE6D();
+	}
+}
 
 class WeaponStore
 {
@@ -128,7 +160,6 @@ private:
 	const WeaponTemplate *m_bfme64;
 };
 
-// ?rva00390CCA@PhysicsBehavior@@QAEX_N@Z present-unmatched
 void PhysicsBehavior::rva00390CCA(bool arg)
 {
 	Object *obj = m_object;
@@ -137,12 +168,7 @@ void PhysicsBehavior::rva00390CCA(bool arg)
 	m_bfme54 = 0;
 	if (m_bfme5F || m_moduleData->m_59 != 0)
 	{
-		if ((obj->m_118 & 0x4000000) == 0)
-		{
-			_ReadWriteBarrier();
-			obj->m_118 |= 0x4000000;
-			obj->rva0028AE6D();
-		}
+		setModelConditionBit(obj, 3 * 32 + 26);
 		obj->kill(DAMAGE_FALLING, DEATH_NORMAL);
 	}
 	else if (!arg)

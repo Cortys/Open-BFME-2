@@ -46474,3 +46474,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0046A893@HordeContain@@QAEXPAVObject@@@Z,,0x0046A893,130,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainRva0046A893.cpp,matched,HordeContain rider toggle between condition bits 7*32+30 and 7*32+31 driven by slot 59 of its +0x11C interface
 ?rva005537EB@Rva005537EB@@QAEGXZ,,0x005537EB,49,Code/Libraries/Source/WWVegas/WWLib/Rva005537EB.cpp,matched,unlock lane Rb sum via rowed increment 0x00024250 header plus word
 ??1Rva0041573F@@QAE@XZ,,0x004156BC,64,Code/GameEngine/Source/Common/Rva0041573FDtor.cpp,matched,dtor Array56 via eh vector plus rowed tree900
+?rva00390CCA@PhysicsBehavior@@QAEX_N@Z,,0x00390CCA,134,Code/GameEngine/Source/GameLogic/Object/Behavior/PhysicsBehaviorRva00390CCA.cpp,matched,PhysicsBehavior landing/kill helper; the banked 0.95 body with the condition bit 3*32+26 set through the masked-word accessors instead of a volatile field
