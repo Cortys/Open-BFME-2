@@ -45922,3 +45922,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004E63E2@Rva004E63E2@@QAEXXZ,,0x004E63E2,26,Code/GameEngine/Source/Common/Bfme/Rva004E63E2Method.cpp,matched,chain clears holder at +0 then guarded cleanup via rowed callees
 ?rva004E630C@Rva004E630C@@QAEPAXI@Z,,0x004E630C,28,Code/GameEngine/Source/Common/Bfme/Rva004E630CMethod.cpp,matched,chain calls rowed 0x004E624D then flag-guarded delete returns this
 ?push_back@?$vector@VRva0036CA00Str@@V?$allocator@VRva0036CA00Str@@@_STL@@@_STL@@QAEXABVRva0036CA00Str@@@Z,,0x0005A048,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0036ca00_pushback.cpp,matched,chain lane calls overflow 0x00058ADE and Construct 0x002393AA caller 0x0005AC80
+?rva0029B4C4@Rva0029B4C4@@QAEXXZ,,0x0029B4C4,53,Code/GameEngine/Source/GameClient/Rva0029B4C4.cpp,matched,leaf called from 0x002A5BE9 AsciiString at +0x1c ptr at +0x5c4 slot 0x1c
