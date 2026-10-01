@@ -11,6 +11,10 @@ extern void *DebugAllocMemory(unsigned int size);
 
 #pragma optimize("y", off)
 
+// The used FrameHashEntry fields match the pinned provider's layout; both are
+// thiscall void updates with one reference argument at retail 0x00039A60.
+#pragma comment(linker, "/alternatename:?UpdateFrameStatus@Debug@@AAEXAAUFrameHashEntry@1@@Z=?UpdateFrameStatus@Rva0088A7E0Debug@@QAEXAAURva0088A7E0FrameHashEntry@@@Z")
+
 class Debug
 {
 private:
