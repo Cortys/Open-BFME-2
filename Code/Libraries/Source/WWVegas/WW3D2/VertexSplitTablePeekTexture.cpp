@@ -40,7 +40,7 @@ template<class T> class RefCountPtr {
 public:
 	RefCountPtr() : Referent(0) {}
 	RefCountPtr(RefCountPtr const &other) : Referent(other.Referent) { if (Referent) Referent->Add_Ref(); }
-	~RefCountPtr() { if (Referent) Referent->Release_Ref(); }
+	~RefCountPtr();
 	T *Referent;
 };
 class MeshModelClass {
