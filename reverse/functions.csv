@@ -46041,3 +46041,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva002ABCF0@Player@@QAEHEPAH@Z,,0x002ABCF0,45,Code/GameEngine/Source/Common/RTS/PlayerRva002ABCF0.cpp,matched,ecx passthrough to pinned iterateObjects with callback 0x002AB01C
 ?rva002ABAB3@Player@@QAEXXZ,,0x002ABAB3,13,Code/GameEngine/Source/Common/RTS/PlayerRva002ABAB3.cpp,matched,ecx pass-through to pinned iterateObjects with callback 0x002AA27A and NULL
 ?rva0043C754@Rva0043D16F@@QAEXPAVCreateAHeroData@@PA_N@Z,,0x0043C754,30,Code/GameEngine/Source/Common/Rva0043C754Check.cpp,matched,vtable slot2 Rva0043D16F via Player at plus4 and rowed rva002AB855
+?rva0043C7C9@Rva0043D3DA@@QAEXH@Z,,0x0043C7C9,105,Code/GameEngine/Source/Common/Rva0043C7C9Close.cpp,matched,same gating and flag as sibling 0x0043D3DA via invoke Close
