@@ -1,23 +1,17 @@
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /arch:SSE2 /O1
 // ?evaluateTeamExitedAreaEntirely@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// partial score=0.88 date=2026-09-27
-// ?evaluateTeamExitedAreaEntirely@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// partial score=0.86 date=2026-09-26
-// ?evaluateTeamExitedAreaEntirely@ScriptConditions@@IAE_NPAVParameter@@00@Z
-// cl: /DNDEBUG /MD /EHsc /arch:SSE2 /Oy-
-// BFME1 donor: ScriptConditionsTriggerAreas.cpp.
-template <class T> class StringBase
-{ friend class AsciiString; private: StringBase(const StringBase &); ~StringBase(); };
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that) { ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that); }
-    ~AsciiString();
-private: char *m_text;
-};
+// @0x003E6E6E.
+// Donor: ZH ScriptConditions.cpp evaluateTeamExitedAreaEntirely; unlike the
+// matched evaluateTeamInsideAreaEntirely sibling, retail tests the team
+// before looking up the trigger, in donor order. TheScriptEngine is the
+// global at 0x00DFE16C; getTeamNamed 0x003584E9, trigger lookup 0x0035768D,
+// Team::didAllExit 0x0039E15D.
+#include "ascii_string.h"
 class Parameter
 {
 public:
     const AsciiString &getString() const { return m_string; }
+    int getInt() const { return m_int; }
     unsigned char m_beforeInt[8]; int m_int; float m_real; AsciiString m_string;
     unsigned char m_afterString[8];
 };
@@ -29,14 +23,16 @@ public:
     Team *getTeamNamed(AsciiString, bool);
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString);
 };
+extern ScriptEngine *TheScriptEngine;
 class ScriptConditions
 { protected: bool evaluateTeamExitedAreaEntirely(Parameter *, Parameter *, Parameter *); };
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 bool ScriptConditions::evaluateTeamExitedAreaEntirely(Parameter *teamParm, Parameter *triggerParm, Parameter *typeParm)
 {
     Team *team = TheScriptEngine->getTeamNamed(teamParm->getString(), false);
+    if (!team)
+        return false;
     PolygonTrigger *trigger = TheScriptEngine->getQualifiedTriggerAreaByName(triggerParm->getString());
-    if (trigger == 0) return false;
-    if (team) return team->didAllExit(trigger, (unsigned int)typeParm->m_int);
-    return false;
+    if (!trigger)
+        return false;
+    return team->didAllExit(trigger, (unsigned int)typeParm->getInt());
 }
