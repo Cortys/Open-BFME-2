@@ -28,10 +28,6 @@ protected:
 	unsigned char m_pad[0x7C - 4];
 };
 
-Rva004930A0::~Rva004930A0()
-{
-}
-
 class ElvenWoodSpecialPowerModuleData : public Rva004930A0
 {
 public:
@@ -46,10 +42,6 @@ private:
 	int m_elvenWoodFX; // +0x94
 	int m_elvenWoodOCL; // +0x98
 };
-
-ElvenWoodSpecialPowerModuleData::~ElvenWoodSpecialPowerModuleData()
-{
-}
 
 // ??0ElvenWoodSpecialPowerModuleData@@QAE@XZ @0x4C3DA9
 ElvenWoodSpecialPowerModuleData::ElvenWoodSpecialPowerModuleData()
