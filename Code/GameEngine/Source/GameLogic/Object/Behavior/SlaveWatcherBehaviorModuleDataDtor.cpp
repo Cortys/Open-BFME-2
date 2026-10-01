@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /Ireference/shims/moduledata
 // ??1SlaveWatcherBehaviorModuleData@@UAE@XZ @0x004846FA, 63B.
 // Virtual dtor slot evidence: ??_G at 0x004846DE (rowed, slot 0 of vtable
 // 0x00C4A298) calls here. Destroys AsciiStrings at +0x0C then +0x08 via
@@ -9,16 +9,7 @@
 // parseAsciiString). Donor BFME1 SlaveWatcherBehaviorModuleDataConstructor
 // dtor. SlavedUpdateModuleDataDtor precedent (novtable suppresses derived
 // store).
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 

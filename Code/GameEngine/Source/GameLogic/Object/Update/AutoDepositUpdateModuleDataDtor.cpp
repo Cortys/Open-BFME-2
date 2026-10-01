@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /Ireference/shims/moduledata
 //
 // ??1AutoDepositUpdateModuleData@@UAE@XZ at retail 0x002552A7 (48B).
 // Virtual dtor over vtable 0x00BF1BC8 (slot 0 deleting dtor at 0x0025528B).
@@ -8,16 +8,7 @@
 // via the pinned 0x00360D26 teardown then the Snapshot base vtable 0x00BBB554
 // restored inline with no base call (RunOffMap/Building precedent).
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class Rva00360D26Member
 {
