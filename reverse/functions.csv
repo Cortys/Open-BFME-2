@@ -45072,3 +45072,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000B95B1@Rva000B95B1@@QAEXPAX@Z,,0x000B95B1,100,Code/Libraries/Source/WWVegas/WWLib/Rva000B95B1.cpp,matched,unlock contiguous bitfield dword-to-byte vcall slot36
 ?Rva00422544Find@@YGHPAURva00422544List@@@Z,,0x00422544,244,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_e12_findnode.cpp,matched,stdcall ring-count plus global deque max-key two-phase scan via rowed _M_increment
 ??_GRva001E3624@@UAEPAXI@Z,,0x001E4445,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva001E3624.cpp,matched,dtor lane scalar deleting dtor via rowed Rva001E3624 base
+?rva005368F0@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005368F0,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,ShortestGameTurns setter slot 0x2C same TU
