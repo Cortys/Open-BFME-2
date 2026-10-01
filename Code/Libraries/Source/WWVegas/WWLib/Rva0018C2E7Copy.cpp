@@ -1,5 +1,3 @@
-// ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAFPAXH@Z
-// partial score=0.95 date=2026-10-01
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAF0H@Z @ 0x0018C2E7 39B unlock: tree-to-short copy via rowed _M_increment. Caller 0x0018C3C9 passes 5 args.
@@ -22,15 +20,14 @@ struct Rva0018C2E7Node {
 	short m_10;
 };
 short *__cdecl Rva0018C2E7Copy(Rva0018C2E7Node *first, Rva0018C2E7Node *last, short *result, void *tag1, int tag2);
-// ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAF0H@Z present-unmatched
 short *__cdecl Rva0018C2E7Copy(Rva0018C2E7Node *first, Rva0018C2E7Node *last, short *result, void *tag1, int tag2)
 {
 	(void)tag1;
 	(void)tag2;
 	for (; first != last;) {
-		short *dst = result;
+		short v = first->m_10;
+		*result = v;
 		++result;
-		*dst = first->m_10;
 		first = (Rva0018C2E7Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)first);
 	}
 	return result;
