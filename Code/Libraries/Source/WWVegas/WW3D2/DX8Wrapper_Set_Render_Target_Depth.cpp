@@ -39,12 +39,24 @@ public:
 	static void Set_Render_Target(IDirect3DSurface8 *renderTarget, IDirect3DSurface8 *depthBuffer);
 
 private:
+protected:
 	static IDirect3DDevice8 *D3DDevice;
+private:
+protected:
 	static IDirect3DSurface8 *CurrentRenderTarget;
+private:
+protected:
 	static IDirect3DSurface8 *CurrentDepthBuffer;
+private:
+protected:
 	static IDirect3DSurface8 *DefaultRenderTarget;
+private:
+protected:
 	static IDirect3DSurface8 *DefaultDepthBuffer;
+private:
+protected:
 	static bool IsRenderToTexture;
+private:
 	static unsigned int D3DCallCount;
 };
 

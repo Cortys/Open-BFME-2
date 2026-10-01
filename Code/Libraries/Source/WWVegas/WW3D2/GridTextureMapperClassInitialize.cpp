@@ -9,7 +9,9 @@
 class WW3D
 {
 public:
+private:
 	static unsigned int SyncTime;
+public:
 	static unsigned int Get_Sync_Time() { return SyncTime; }
 };
 

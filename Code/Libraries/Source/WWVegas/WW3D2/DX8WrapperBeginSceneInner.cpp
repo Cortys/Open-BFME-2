@@ -96,7 +96,9 @@ public:
 	static void Begin_Scene_Inner(void);
 
 private:
+protected:
 	static IDirect3DDevice8 *D3DDevice;
+private:
 	static unsigned D3DCallCount;
 };
 

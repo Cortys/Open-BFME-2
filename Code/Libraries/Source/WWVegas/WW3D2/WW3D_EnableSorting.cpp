@@ -14,7 +14,9 @@ extern DX8MeshRendererClass *TheDX8MeshRenderer;
 class WW3D
 {
 public:
+private:
 	static bool IsSortingEnabled;
+public:
 	static void Enable_Sorting(bool enabled);
 };
 

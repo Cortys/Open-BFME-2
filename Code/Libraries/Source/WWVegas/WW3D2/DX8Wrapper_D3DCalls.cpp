@@ -130,7 +130,9 @@ protected:
 	static bool __cdecl Find_Color_Mode(_D3DFORMAT colorbuffer, int resx, int resy, UINT *mode);
 
 private:
+protected:
 	static IDirect3DDevice8 *D3DDevice;
+private:
 	static unsigned D3DCallCount;
 	static D3DPRESENT_PARAMETERS _PresentParameters;
 };

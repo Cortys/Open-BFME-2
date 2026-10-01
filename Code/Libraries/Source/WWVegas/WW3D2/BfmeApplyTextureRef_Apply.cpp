@@ -106,7 +106,9 @@ public:
 	static IDirect3DBaseTexture8 *Textures[MAX_TEXTURE_STAGES];
 	static BfmeApplyDevice9 *D3DDevice;
 	static unsigned int number_of_DX8_calls;
+protected:
 	static unsigned int texture_changes;
+public:
 	static __forceinline void Set_DX8_Texture(unsigned int stage, IDirect3DBaseTexture8 *texture)
 	{
 		typedef long (__stdcall *BfmeSetTextureFn)(BfmeApplyDevice9 *, unsigned int, IDirect3DBaseTexture8 *);
