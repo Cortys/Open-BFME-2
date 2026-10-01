@@ -1,3 +1,4 @@
+// cl: /O1 /MD
 // 6-slot aggregate managing subobjects with position and flag updates
 
 struct Block3
@@ -138,4 +139,30 @@ void Rva00409930::setPositions( const Block3 &pos )
 			m_slots[i].m_subObject.m_target->setPos( pos );
 		}
 	}
+}
+
+struct Rva003626CESlot
+{
+	char m_lead[0x8];
+	Rva00409850SubObject m_sub;
+};
+
+class Rva003626CE
+{
+public:
+	void rva003626CE(unsigned char value);
+
+private:
+	Rva003626CESlot m_slots[9];
+};
+
+void Rva003626CE::rva003626CE(unsigned char value)
+{
+	Rva00409850SubObject *slot = &m_slots[0].m_sub;
+	int count = 9;
+	do
+	{
+		slot->rva_004097F0(value);
+		slot = (Rva00409850SubObject *)((char *)slot + 0x44);
+	} while (--count != 0);
 }
