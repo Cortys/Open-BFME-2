@@ -46236,3 +46236,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005CCD36@Rva005CCD36@@QAEXPAUVisitor005CCCD0@@@Z,,0x005CCD36,8,Code/Libraries/Source/WWVegas/WWLib/stlport_list_rva005F8F96_visit.cpp,matched,forwarder to 0x005CCCD0 via m_04 chain unblocks 3
 ?Rva0055D50DWrite@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABM@Z,,0x0055D50D,24,Code/GameEngine/Source/GameClient/Rva0055D50DWrite.cpp,matched,chain via 0x003A5D34 cond float write precedent VecWrite
 ?rva0055D815@CylinderEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0055D815,339,Code/GameEngine/Source/GameClient/Rva0055D815Write.cpp,matched,chain via 0x003A5D34 vslot 3 CylinderEmissionVolume
+?rva00599825@Rva00599825@@QAEXH@Z,,0x00599825,75,Code/GameEngine/Source/Common/Rva00599825ListAdd.cpp,matched,finish guarded list add via findObject push_back TheGameLogic

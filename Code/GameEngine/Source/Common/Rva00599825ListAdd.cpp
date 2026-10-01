@@ -1,7 +1,5 @@
 // ?rva00599825@Rva00599825@@QAEXH@Z
 // partial score=0.92 date=2026-09-29
-// ?rva00599825@Rva00599825@@QAEXH@Z
-// partial score=0.92 date=2026-09-29
 // cl: /O1 /GX- /MD
 //
 // ?rva00599825@Rva00599825@@QAEXH@Z, retail 0x00599825, 75 bytes.
@@ -33,7 +31,7 @@ public:
 	Object *findObjectByID(ObjectID id);
 };
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+extern GameLogic *TheGameLogic;
 
 namespace _STL
 {
@@ -66,6 +64,7 @@ private:
 
 void Rva00599825::rva00599825(int id)
 {
+	int myId = id;
 	Object *obj = TheGameLogic->findObjectByID((ObjectID)id);
 	if (obj == 0)
 		return;
@@ -73,7 +72,7 @@ void Rva00599825::rva00599825(int id)
 		return;
 	Rva599825Node *head = *(Rva599825Node **)&m_ids;
 	for (Rva599825Node *cur = head->m_next; cur != head; cur = cur->m_next) {
-		if (cur->m_value == id)
+		if (cur->m_value == myId)
 			return;
 	}
 	m_ids.push_back(id);
