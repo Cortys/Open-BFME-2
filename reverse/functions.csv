@@ -45205,3 +45205,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005B027F@Rva005B02B5@@QAEXXZ,,0x005B027F,54,Code/GameEngine/Source/Common/Rva005B02B5.cpp,matched,sibling increment at plus0x168 via pointer lea same callers
 ?Rva005B0E60Get@@YGHPAX@Z,,0x005B0E60,63,Code/Libraries/Source/WWVegas/WWLib/Rva005B0E60.cpp,matched,caller 0x005B1ACB AsciiString plus0x88 strstr needle plus atoi plus1
 ?rva005B045D@Rva005B045D@@QAEPAXXZ,,0x005B045D,22,Code/GameEngine/Source/Common/Rva005B045D.cpp,matched,caller 0x005B54A7 flag plus0x14c ptr plus0x144 else this
+?rva005B04B6@Rva005B045D@@QAEXXZ,,0x005B04B6,29,Code/GameEngine/Source/Common/Rva005B045D.cpp,matched,caller 0x005B1730 guard plus0x158 plus global g_00E06450 init 0x14
