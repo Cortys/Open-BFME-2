@@ -169,7 +169,8 @@ void * __cdecl memcpy( void *dest, const void *src, unsigned int count );
  * the same three characters the run already contains contiguously, so this
  * buys nothing against a strings dump; it only makes the literal invisible to
  * a reader of the code. */
-extern char g_Rva012C499CTag[];
+/* Target VA 0x00DD90F4 contains "gEA\0" repeated five times (20 bytes). */
+char g_Rva012C499CTag[] = "gEA\0gEA\0gEA\0gEA\0gEA";
 
 /* 0x008125C0 SENDS THE MODULE'S ANNOUNCE PACKET.  Retail's own name for the
  * buffer, from the /GZ frame descriptor, is Packet.
@@ -201,6 +202,8 @@ int Rva008125C0( struct Rva00812320Module *context )
 /* The FESL allocator pair at 0x007F0000 and 0x007F0030 -- vtable slots 2 and 3
  * of the same lazily-fetched global.  Optimised code, so both are pinned
  * rather than converted. */
+/* The C entry at 0x007F0000 is the rowed allocator body in the C++ TU. */
+#pragma comment(linker, "/alternatename:_Rva007F0000=?Rva007F0000Alloc@@YAPAXH@Z")
 void *Rva007F0000( unsigned int size );
 void Rva007F0030( void *block );
 
