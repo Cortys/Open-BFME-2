@@ -11,6 +11,19 @@ public:
 };
 
 extern int bfmeRva012C3B38TagValue;
+// Donor Open-BFME-1 10af19f44a89ab7ecc23195bb9a842ceafbc02c9,
+// StaticTagInitializers.cpp b1 0x00C6D050: constructor initialization wrapper.
+// Target [0x007B5E30,0x007B5E46) calls verified set at 0x0065D090,
+// using VA 0x00DD8290, tag 0x55534348 and receiver VA 0x00E0A2FC.
+// The address label avoids claiming an original compiler-generated name;
+// the existing three-word slot view follows the verified setter's accesses.
+Rva007F0210 bfmeRva0130A8E4TagSlot;
+
+void Rva007B5E30InitializeTag()
+{
+    bfmeRva0130A8E4TagSlot.set(bfmeRva012C3B38TagValue, 0x55534348);
+}
+
 // bfmeRva0130A938TagSlot: matched references place it at VA 0xe0a350 (zero-filled; a plain-data view).
 Rva007F0210 bfmeRva0130A938TagSlot;
 extern int bfmeRva012C3BC0TagValue;
