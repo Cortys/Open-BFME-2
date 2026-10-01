@@ -4559,3 +4559,4 @@ FUN_00773871	0x00373871	133	blocked	map int-int plus new Rva0037307F plus Scienc
 ?rva0028F791@Rva0028F791@@QBEHXZ	0x0028F791	72	partial	72B size-exact 30v30 insns 0 struct esi-edx swap second half t=20 model=muse-09 score=0.9 stash=reverse/attempts/0x0028f791.cpp
 ?rva006F8380@Rva006F6AC0@@QAEXPAURva006F8380Param@@@Z	0x006F8380	101	blocked	displaylist remove 101B dual rva6AC0 plus Free plus 8-c-10 link ops needs list layout beyond 4-lookup budget t=10 model=muse-20
 ??1AptIntervalTimer@@QAE@XZ	0x006E4F60	135	blocked	intervaltimer dtor 135B EH plus cleanParams row plus FreeSize assert file literal truncated _Ap line 0x52 needs full string plus funclet 0x7A914B beyond 4-lookup budget t=12 model=muse-20
+FUN_006df8cf	0x002DF8CF	110	blocked	complex push_back loop with 3-arg method plus manual esi bound updates t=12 model=muse-spark

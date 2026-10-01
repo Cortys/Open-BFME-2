@@ -45057,3 +45057,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched,
 ?rva006CE630@Rva006CE630@@QAEPAXI@Z,,0x006CE630,35,Code/GameEngine/Source/Common/Rva006CE630Delete.cpp,matched,chain via detach plus pool free 8B flag
 ?rva006D1100@Rva006D0F20@@QAEPAXI@Z,,0x006D1100,35,Code/GameEngine/Source/Common/Thing/Rva006D0F20Delete.cpp,matched,chain via rowed release 0x006D0F20 plus pool free 0x10
+?rva002CA9CA@Rva002CA9CA@@QAE_NHPBX@Z,,0x002CA9CA,143,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane recursive contains list 0x17C precedent parse flags
