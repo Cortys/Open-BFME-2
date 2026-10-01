@@ -8,7 +8,7 @@
 // Render 0x0008E7A4 (vtable slot 12 of 0x007C7850, the dtor's vtable) consumes them via
 // Set_Index_Buffer/Set_Vertex_Buffer with the same displacements. Callers: 0x0008E20B in the
 // creator and 0x0008E50E in ??1TerrainTracksRenderObjClass 0x0008E4EC. Returns 0, no scalar resets.
-class RefCountClass
+class Rva0008E187RefCount
 {
 public:
 	virtual void Delete_This() = 0;
@@ -26,11 +26,11 @@ public:
 	int freeTerrainTracksResources();
 private:
 	char _pad[0xD4];
-	RefCountClass *m_indexBuffer;
+	Rva0008E187RefCount *m_indexBuffer;
 	char _padD8[4];
-	RefCountClass *m_vertexMaterial;
-	RefCountClass *m_vertexBuffer;
-	RefCountClass *m_vertexBuffer2;
+	Rva0008E187RefCount *m_vertexMaterial;
+	Rva0008E187RefCount *m_vertexBuffer;
+	Rva0008E187RefCount *m_vertexBuffer2;
 };
 int TerrainTracksRenderObjClass::freeTerrainTracksResources()
 {
