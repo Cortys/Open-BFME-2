@@ -1,4 +1,4 @@
-// cl: /O1 /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7
 //
 // DataChunkOutput::writeUnicodeString, retail 0x0030708E, 99 bytes.
 //
@@ -16,43 +16,7 @@ typedef unsigned short WideChar;
 extern "C" __declspec(dllimport) unsigned int __cdecl fwrite(
 	const void *chunkBuffer, unsigned int elementSize, unsigned int elementCount, void *outputFile) throw();
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-
-private:
-	void releaseBuffer() throw();
-
-	struct Header
-	{
-		int headerRefCount;
-		UnsignedShort headerLength; ///< retail +0x04
-		UnsignedShort headerCapacity;
-		T headerData[1]; ///< retail +0x08
-	};
-
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	int getLength() const
-	{
-		return m_data.m_data ? m_data.m_data->headerLength : 0;
-	}
-
-	const WideChar *getStringData() const
-	{
-		return m_data.m_data ? &m_data.m_data->headerData[0] : (const WideChar *)L"";
-	}
-
-	~UnicodeString() { m_data.releaseBuffer(); }
-
-private:
-	StringBase<WideChar> m_data;
-};
+#include "unicode_string.h"
 
 class DataChunkOutput
 {
@@ -68,5 +32,5 @@ void DataChunkOutput::writeUnicodeString(UnicodeString textValue)
 {
 	UnsignedShort textLength = (UnsignedShort)textValue.getLength();
 	::fwrite((const char *)&textLength, sizeof(UnsignedShort), 1, tempFile);
-	::fwrite(textValue.getStringData(), textLength * sizeof(WideChar), 1, tempFile);
+	::fwrite(textValue.str(), textLength * sizeof(WideChar), 1, tempFile);
 }
