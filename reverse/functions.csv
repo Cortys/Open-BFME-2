@@ -46329,3 +46329,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003E5F73Check@@YG_NPAVParameter@@PAUCondA003E5F73@@PAUCondB003E5F73@@PAUCondC003E5F73@@@Z,,0x003E5F73,191,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E5F73.cpp,matched,leaf via pin plus rowed bitname plus rowed counts plus direct return switch
 ?rva00524A2D@Rva00524A2D@@QAEXHHHH@Z,,0x00524A2D,31,Code/GameEngine/Source/Common/Rva00524A2D.cpp,matched,leaf four-dword setter at 0x10 ret 0x10 two callers
 ?Rva00380705Free@@YAXXZ,,0x00380705,25,Code/GameEngine/Source/Common/Rva00380705Free.cpp,matched,Free virtual result via global g_Va00E032FC plus rowed delete
+?rva005CC9F8@Rva005CC9F8@@QAEXXZ,,0x005CC9F8,19,Code/GameEngine/Source/Common/Rva005CC9F8Clear.cpp,matched,calls rowed Release_Ref tail-jmp target of 0x005CCA57
