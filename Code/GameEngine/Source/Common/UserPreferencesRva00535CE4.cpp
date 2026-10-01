@@ -148,6 +148,7 @@ private:
 class AsciiString
 {
 public:
+	static const AsciiString TheEmptyString;
 	AsciiString() {}
 	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
 	AsciiString(const char *s) : m_data(s) {}
@@ -199,7 +200,7 @@ public:
 	virtual float v5(const AsciiString &s, float x);
 	virtual int v6(const AsciiString &s, int x);
 	virtual void v7();
-	virtual void v8();
+	virtual AsciiString v8(const AsciiString &key, const AsciiString &def);
 	virtual void v9();
 	virtual void v10(const AsciiString &s, float x);
 	virtual void v11(const AsciiString &s, int x);
@@ -220,6 +221,7 @@ public:
 	int rva005360DC();
 	int rva0053616D();
 	void rva005361B6(AsciiString arg);
+	AsciiString rva0053620F();
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
@@ -391,6 +393,15 @@ void UserPreferences::rva005361B6(AsciiString arg)
 {
 	AsciiString tmp("FavoriteSide");
 	v12(tmp, arg);
+}
+
+// ?rva0053620F@UserPreferences@@QAE?AVAsciiString@@XZ @0x0053620F 92B
+// UserPreferences FavoriteSide path: local AsciiString FavoriteSide getAsciiString with (tmp, Empty) hidden-ptr ret 4.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x20 releaseBuffer gap same TU unlock.
+AsciiString UserPreferences::rva0053620F()
+{
+	AsciiString tmp("FavoriteSide");
+	return v8(tmp, AsciiString::TheEmptyString);
 }
 
 int UserPreferences::rva00535FBA()
