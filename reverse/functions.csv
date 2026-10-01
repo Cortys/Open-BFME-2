@@ -46063,3 +46063,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva005F6A30@Rva005F6A30@@QAEXXZ,,0x005F6A30,20,Code/GameEngine/Source/Common/Rva005F6A30Method.cpp,matched,leaf conditional virtual slot 0x08 on member +4 with outer this plus caller 0x005F6A90
 ??1Rva003AEEB3@@UAE@XZ,,0x003A5817,39,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003A5817Dtor.cpp,matched,derived dtor two guarded vptr stores plus tail-jmp to head base
 ?Rva003A5572@Rva003AED3E@@UAEXXZ,,0x003A5572,485,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003A5572Update.cpp,matched,vslot1 wind update via BFME1 donor with extern float globals
+?tryNextFrame@Anim2D@@IAEXXZ,,0x002D6E26,203,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,ZH body; frame read through the TU-local 0x00DFE77C holder slot 0x7C as setCurrentFrame; /G7 TU

@@ -330,7 +330,6 @@ void Anim2D::reset( void )
 /** This is called after we are drawn ... if sufficient time has passed since our last
 	* frame update we will update our current frame */
 // ------------------------------------------------------------------------------------------------
-// ?tryNextFrame@Anim2D@@IAEXXZ present-unmatched
 void Anim2D::tryNextFrame( void )
 {
 
@@ -340,7 +339,10 @@ void Anim2D::tryNextFrame( void )
 										  m_template->getName().str()) );
 
 	// how many frames have passed since our last update
-	if( TheGameClient->getFrame() - m_lastUpdateFrame >= m_framesBetweenUpdates )
+	// BFME2 reads the frame through the 0x00DFE77C holder's slot 0x7C (see
+	// setCurrentFrame above); the ZH header's TheGameClient->getFrame() is
+	// slot 0x68.
+	if( TheRva00DFE77C->slot1F() - m_lastUpdateFrame >= m_framesBetweenUpdates )
 	{
 
 		switch( m_template->getAnimMode() )
