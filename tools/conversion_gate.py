@@ -46,7 +46,8 @@ LEDGER = "reverse/functions.csv"
 
 
 def run(*argv):
-    proc = subprocess.run(argv, capture_output=True, text=True)
+    # errors="replace": a diff of a Latin-1 source (debug_internal.cpp's (c) sign) must not crash the hook
+    proc = subprocess.run(argv, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if proc.returncode != 0:
         raise SystemExit("conversion_gate: %s failed: %s" % (" ".join(argv), proc.stderr.strip()))
     return proc.stdout
