@@ -147,11 +147,11 @@ Coord3DBase &Coord3DBase::operator=(const Coord3DBase &that)
     return *this;
 }
 
-Coord3D::Coord3D()
+inline Coord3D::Coord3D()
 {
 }
 
-Coord3D::~Coord3D()
+inline Coord3D::~Coord3D()
 {
 }
 
@@ -360,7 +360,7 @@ float Coord3D::GetLengthSqrd2D() const
     return x_value * x_value + y_value * y_value;
 }
 
-float Coord3D::length() const
+inline float Coord3D::length() const
 {
     return (float)sqrt(x * x + y * y + z * z);
 }
@@ -386,7 +386,7 @@ void Coord3D::add(const Coord3DBase *that)
     z += that->z;
 }
 
-float Coord3D::lengthSqr() const
+inline float Coord3D::lengthSqr() const
 {
     return (float)((double)x * x + (double)y * y + (double)z * z);
 }
@@ -406,7 +406,7 @@ Coord3D &Coord3D::Negate()
     return *this;
 }
 
-void Coord3D::normalize()
+inline void Coord3D::normalize()
 {
     float len = length();
     if (len != 0.0f) {
@@ -550,7 +550,7 @@ Coord3D &Coord3D::SetZero()
     return *this;
 }
 
-void Coord3D::set(float x, float y, float z)
+inline void Coord3D::set(float x, float y, float z)
 {
     this->x = x;
     this->y = y;
@@ -564,7 +564,7 @@ void Coord3D::sub(const Coord3DBase *that)
     z -= that->z;
 }
 
-void Coord3D::zero()
+inline void Coord3D::zero()
 {
     x = 0.0f;
     y = 0.0f;
@@ -651,3 +651,18 @@ bool Coord3D::equals(const Coord3DBase &that) const
 typedef Coord3D &(Coord3D::*Coord3DAssign)(const Coord3D &);
 
 Coord3DAssign g_coord3dAssign = &Coord3D::operator=;
+
+// These seven are header inlines: the units that include Coord3D's header
+// emit them as select-any copies, which plain definitions here collided with.
+// The anchor keeps this unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCoord3DInlineAnchor@@YAXPAVCoord3D@@@Z absent-from-retail
+void _bfmeCoord3DInlineAnchor(Coord3D *c)
+{
+    c->Coord3D::Coord3D();
+    c->zero();
+    c->set(c->length(), c->lengthSqr(), 0.0f);
+    c->normalize();
+    c->Coord3D::~Coord3D();
+}
+#pragma inline_depth()
