@@ -45429,3 +45429,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0058DEF7@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DEF7,50,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DEF7.cpp,matched,unlock sibling 0x0058DEC5 new-0x1c DisconnectKeepAlive no fields
 ?rva00222F55@Rva00222A8BTarget@@QAEX_N@Z,,0x00222F55,186,Code/Libraries/Source/WWVegas/WWLib/Rva00222F55Background.cpp,matched,switch on 0x31C invoke Hide via 0x00222A8B pin with g_00BBFDE0 selection
 ?rva003530F3@Rva00352F9D@@QAEXPBXABUCoord3D@@W4CommandSourceType@@@Z,,0x003530F3,117,Code/GameEngine/Source/Common/Rva00352F9DAICommand.cpp,matched,unlock AICommand 0x4A pos obj via virtual and free
+?rva003531DB@Rva00352F9D@@QAEXPBXABUCoord3D@@W4CommandSourceType@@@Z,,0x003531DB,127,Code/GameEngine/Source/Common/Rva00352F9DAICommand.cpp,matched,AICommand 0x54 pos obj maxint via slot0 free
