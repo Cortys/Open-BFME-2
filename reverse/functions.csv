@@ -45217,3 +45217,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0035AFE4@Rva0035AFE4@@QAE_NH@Z,,0x0035AFE4,44,Code/GameEngine/Source/Common/Rva0035AFE4Pred.cpp,matched,bool pred on mask m_1c via sibling pattern
 ?rva0035ABC0@Rva0035ABC0@@QAEXI@Z,,0x0035ABC0,32,Code/GameEngine/Source/Common/Rva0035ABC0Resize.cpp,matched,pod8 resize wrapper with zeroed fill via intrinsic memset
 ?rva0031475A@GameWindow@@QAEHXZ,,0x0031475A,128,Code/GameEngine/Source/GameClient/GUI/GameWindowRva0031475A.cpp,matched,GameWindow parent 0x200 next 0x1F8 gadget 0x210 via rowed B92 A89 Remove and manager slots
+?xfer@LifeEventModuleInfo@FXParticleSystem@@MAEXPAVXfer@@@Z,,0x00563E72,54,Code/GameEngine/Source/GameClient/System/FXParticleSystem/LifeEventModuleInfoXfer.cpp,matched,slot3 vtable 0081C188 IsLightCRC Version1 xferRandomVariable AsciiString
