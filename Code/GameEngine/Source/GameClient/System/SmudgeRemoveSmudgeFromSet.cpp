@@ -27,7 +27,7 @@ class DLListClass
 	DLNodeClass<T> *tail;
 
 public:
-	DLListClass() : head(0), tail(0) {}
+	DLListClass();
 	virtual ~DLListClass() { }
 
 	void Add_Head(DLNodeClass<T> *node);
