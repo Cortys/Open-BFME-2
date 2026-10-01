@@ -20,6 +20,7 @@ public:
     void remove(Rva00432F23Node *node);
     void rva00432F7D(Rva00432F23Node *node);
     void rva00432EC0(Rva00432F23Node *node);
+    void rva00432E5D(Rva00432F23Node *node);
 
 private:
     char m_pad[0xC];
@@ -83,4 +84,26 @@ void Rva00432F23::rva00432EC0(Rva00432F23Node *node)
     node->m_prev = 0;
     if (!m_tail2)
         m_tail2 = node;
+}
+void Rva00432F23::rva00432E5D(Rva00432F23Node *node)
+{
+    if (m_head1 == node)
+        return;
+    if (m_tail1 == node)
+        return;
+    if (m_head2 == node)
+        m_head2 = node->m_next;
+    if (m_tail2 == node)
+        m_tail2 = node->m_prev;
+    if (node->m_next)
+        node->m_next->m_prev = node->m_prev;
+    if (node->m_prev)
+        node->m_prev->m_next = node->m_next;
+    if (m_head1)
+        m_head1->m_prev = node;
+    node->m_next = m_head1;
+    m_head1 = node;
+    node->m_prev = 0;
+    if (!m_tail1)
+        m_tail1 = node;
 }
