@@ -45020,3 +45020,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva0039BA85FillN@@YAXPAVRva0039B893@@IABV1@@Z,,0x0039BA85,27,Code/GameEngine/Source/Common/Rva0039BA85FillN.cpp,matched,fill_n wrapper over rowed 0x0039B8D8 with false_type tag
 ?getFullUnicodeVersion@Version@@QAE?AVUnicodeString@@XZ,,0x0023809E,253,Code/GameEngine/Source/Common/VersionUnicode.cpp,matched,BFME1 version.cpp Format3 Format4 with getCharAt
 ?rva00237E28@Rva00237E28@@QAEXPAV1@@Z,,0x00237E28,29,Code/GameEngine/Source/Main/Rva00237E28.cpp,matched,unlock 16B this-to-dest copy ret 4 fieldwise
+??1Rva00001E13@@QAE@XZ,,0x00001E13,8,Code/Libraries/Source/ATL/Rva00001E13Dtor.cpp,matched,leaf wrapper dtor add ecx 4 jmp rowed W3DRadarResetSurface dtor
