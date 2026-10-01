@@ -46252,3 +46252,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002AB22A@Player@@QBEPAVObject@@PBX@Z,,0x002AB22A,54,Code/GameEngine/Source/Common/RTS/PlayerRva002AB22A.cpp,matched,caller 0x003956C3 plus callback 0x002AA41A plus rowed ctor
 ?rva00523F8C@Rva00524021@@QAEXXZ,,0x00523F8C,96,Code/GameEngine/Source/GameClient/Rva00523F8CClear.cpp,matched,Two-vector clear via 0x22453E plus clear plus 0x2245FF plus CameraMarker dtor
 ?rva00523FEC@Rva00524021@@QAEXXZ,,0x00523FEC,53,Code/GameEngine/Source/GameClient/Rva00523F8CClear.cpp,matched,Single-vector clear via 0x2246B1 plus clear
+?rva00523F57@Rva00524021@@QAEXXZ,,0x00523F57,53,Code/GameEngine/Source/GameClient/Rva00523F8CClear.cpp,matched,Single-vector clear via 0x2244CA plus clear
