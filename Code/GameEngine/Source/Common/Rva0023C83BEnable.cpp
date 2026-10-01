@@ -10,7 +10,7 @@
 // ?Rva0023C85EDisable@@YAXXZ at 0x0023C85E (flags 0 vs 1). Imports are IAT
 // so dllimport. Owner unproven so Rva class returning own pointer.
 
-extern void *Rva00DDE024;
+extern void *ApplicationHWnd;
 
 extern "C" __declspec(dllimport) void *__stdcall GetSystemMenu(void *wnd, int revert);
 extern "C" __declspec(dllimport) int __stdcall EnableMenuItem(void *menu, unsigned id, unsigned flags);
@@ -23,7 +23,7 @@ public:
 
 Rva0023C83B *Rva0023C83B::rva0023C83B()
 {
-	void *menu = GetSystemMenu(Rva00DDE024, 0);
+	void *menu = GetSystemMenu(ApplicationHWnd, 0);
 	EnableMenuItem(menu, 0xF060, 1);
 	return this;
 }

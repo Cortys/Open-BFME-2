@@ -11,7 +11,7 @@
 // shape (Keyboard plus 8 tail bytes, BFME2 +4 to 0xE28).
 
 extern void *ApplicationHInstance;
-extern void *Rva00DDE024;
+extern void *ApplicationHWnd;
 extern const unsigned char g_00CDF7E8[];
 extern const unsigned char g_00CDF678[];
 extern const unsigned char g_00C7C9A4[];
@@ -109,7 +109,7 @@ void DirectInputKeyboard::rva00098BD4()
 		((Rva00098A6F *)this)->releaseDevices();
 		return;
 	}
-	hr = m_pKeyboardDevice->m_table->setCooperativeLevel(m_pKeyboardDevice, Rva00DDE024, 6);
+	hr = m_pKeyboardDevice->m_table->setCooperativeLevel(m_pKeyboardDevice, ApplicationHWnd, 6);
 	if (hr < 0)
 	{
 		((Rva00098A6F *)this)->releaseDevices();

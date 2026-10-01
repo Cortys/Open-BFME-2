@@ -49,7 +49,7 @@ public:
 	float m_BCC;
 };
 extern Global9FE758 *g_Va009FE758;
-extern Display *g_Va009FE9D8;
+extern Display *TheDisplay;
 class AudioManager
 {
 public:
@@ -81,7 +81,7 @@ public:
 	virtual void a95(); virtual void a96();
 	virtual void slot184(bool useEAX);
 };
-extern AudioManager *g_Va009FE6E8;
+extern AudioManager *TheAudio;
 class Rva0051847B
 {
 	char m_pad[0x27C];
@@ -100,12 +100,12 @@ void Rva0051847B::rva0051847B(int unused)
 		return;
 	}
 	OptionPreferences prefs;
-	g_Va009FE9D8->v64(g_Va009FE758->m_BCC, 0.0f, 1.0f, 0);
+	TheDisplay->v64(g_Va009FE758->m_BCC, 0.0f, 1.0f, 0);
 	for (int i = 0; i < 5; ++i)
 	{
 		int iv = (int)prefs.getVolume(i);
-		g_Va009FE6E8->slotE8(i, (float)iv * 0.01f);
+		TheAudio->slotE8(i, (float)iv * 0.01f);
 	}
-	g_Va009FE6E8->slot184(prefs.getUseEAX3());
+	TheAudio->slot184(prefs.getUseEAX3());
 	Rva00518262Enable();
 }

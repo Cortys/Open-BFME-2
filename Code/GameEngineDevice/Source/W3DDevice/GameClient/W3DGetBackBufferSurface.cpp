@@ -56,7 +56,7 @@ public:
 };
 
 extern BfmeD3DDevice *g_bfmeD3DDevice;
-extern unsigned g_bfmeD3DCallCount;
+extern unsigned number_of_DX8_calls;
 
 class W3DRadarResetSurface
 {
@@ -85,7 +85,7 @@ W3DRadarResetSurface getBackBufferSurface006e(Int index)
 {
 	SurfaceResource *surface = 0;
 	g_bfmeD3DDevice->getBackBuffer(0, index, 0, &surface);
-	++g_bfmeD3DCallCount;
+	++number_of_DX8_calls;
 
 	if (surface)
 	{
@@ -103,5 +103,5 @@ void copySurfaceRects006e(W3DRadarResetSurface source, const BfmeRect *sourceRec
 {
 	g_bfmeD3DDevice->copySurfaceRects(
 		source.getSurface(), sourceRect, destination.getSurface(), destinationRect, mode);
-	++g_bfmeD3DCallCount;
+	++number_of_DX8_calls;
 }

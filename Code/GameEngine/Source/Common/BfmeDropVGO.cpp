@@ -13,13 +13,13 @@ public:
 	void freeBlock(void *p, int size);
 };
 
-extern Rva006DB270 *g_00A176E8;
+extern Rva006DB270 *g_pChainBlockAllocator;
 
 void __cdecl bfmeDropVGO(void *p)
 {
 	if (p != 0)
 	{
 		((Rva006D0280 *)p)->teardown();
-		g_00A176E8->freeBlock(p, 0x1C);
+		g_pChainBlockAllocator->freeBlock(p, 0x1C);
 	}
 }

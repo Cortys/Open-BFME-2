@@ -26,7 +26,7 @@
 //   check resolves via the _bfme_debugReportingEnabled alias pin at
 //   0x000387C0; the record call reuses the established Debug::SkipNext pin
 //   at 0x00038790. Shape mirrors GameLODManagerGetAudioLODIndex.cpp.
-// - TheDebug is extern-undefined (its DIR32 patches from retail, as in
+// - theDebug is extern-undefined (its DIR32 patches from retail, as in
 //   Debug_recordCallsite.cpp).
 
 class Thing;
@@ -95,7 +95,7 @@ public:
 
 template <typename T> Debug &operator<<(Debug &debug, const StringBase<T> &text);
 
-extern Debug *TheDebug;
+extern Debug *theDebug;
 
 bool _bfme_debugReportingEnabled(void);
 
@@ -174,8 +174,8 @@ KeepObjectDie::KeepObjectDie(Thing *thing, const ModuleData *moduleData) :
 		if (_bfme_debugReportingEnabled())
 		{
 			Debug::SkipNext(true);
-			TheDebug->slot60();
-			operator<<(TheDebug->slot6C(0, 0, 0), thing->getTemplate()->m_nameString).slot38(": Objects with KeepObjectDie should be KindOf SELECTABLE\n").slot4C(2);
+			theDebug->slot60();
+			operator<<(theDebug->slot6C(0, 0, 0), thing->getTemplate()->m_nameString).slot38(": Objects with KeepObjectDie should be KindOf SELECTABLE\n").slot4C(2);
 		}
 	}
 }

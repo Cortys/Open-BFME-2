@@ -26,7 +26,7 @@ public:
 	const Image *findImageByName(const AsciiString &name);
 };
 
-extern ImageCollection *g_00DFF078;
+extern ImageCollection *TheMappedImageCollection;
 
 class Rva0035B77D
 {
@@ -42,13 +42,13 @@ private:
 
 void Rva0035B77D::rva0035B77D()
 {
-	if (g_00DFF078 != 0)
+	if (TheMappedImageCollection != 0)
 	{
 		for (AsciiString *it = m_b4begin; it != m_b8end; ++it)
 		{
 			if (!it->isEmpty())
 			{
-				const ModuleData *found = g_00DFF078->findImageByName(*it);
+				const ModuleData *found = TheMappedImageCollection->findImageByName(*it);
 				if (found != 0)
 					m_ec.push_back(found);
 				it->clear();

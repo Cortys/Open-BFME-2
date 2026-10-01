@@ -40,11 +40,11 @@ public:
 	Team *getTeamNamed(AsciiString, Bool);
 	void AppendDebugMessage(const AsciiString &, Bool);
 };
-extern ScriptEngine *g_Va009FE16C;
+extern ScriptEngine *TheScriptEngine;
 
 void __stdcall Rva003BFC27Do(const AsciiString &teamName)
 {
-	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (team == 0)
 		return;
 	TeamPrototype *proto = team->m_proto30;
@@ -53,5 +53,5 @@ void __stdcall Rva003BFC27Do(const AsciiString &teamName)
 	proto->rva0039D73A();
 	AsciiString msg;
 	msg.format("Team '%s' priority decreased to %d for failure.", teamName.str(), proto->m_priority21C);
-	g_Va009FE16C->AppendDebugMessage(msg, false);
+	TheScriptEngine->AppendDebugMessage(msg, false);
 }

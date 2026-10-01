@@ -41,16 +41,16 @@ public:
 	void rva00370451(const Team *team, int x, CommandSourceType src);
 };
 
-extern ScriptEngine *g_Va009FE16C;
-extern AI *g_Va009FF0F8;
+extern ScriptEngine *TheScriptEngine;
+extern AI *TheAI;
 
 void __stdcall Rva003C2A29Do(const AsciiString &team1, const AsciiString &team2)
 {
-	Team *t1 = g_Va009FE16C->getTeamNamed((AsciiString &)team1, false);
-	Team *t2 = g_Va009FE16C->getTeamNamed((AsciiString &)team2, false);
+	Team *t1 = TheScriptEngine->getTeamNamed((AsciiString &)team1, false);
+	Team *t2 = TheScriptEngine->getTeamNamed((AsciiString &)team2, false);
 	if (t1 == 0 || t2 == 0)
 		return;
-	AIGroup *g = g_Va009FF0F8->createGroup();
+	AIGroup *g = TheAI->createGroup();
 	if (g == 0)
 		return;
 	t1->getTeamAsAIGroup(g);

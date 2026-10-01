@@ -102,11 +102,11 @@ public:
 	virtual void _37() = 0;
 	virtual void rva0098(const Coord3D *pos) = 0;
 };
-extern TerrainLogic *g_Va009FEC50;
+extern TerrainLogic *TheTerrainLogic;
 extern Rva003C4DC2Holder *g_Va009FEA3C;
 void __stdcall Rva003C4DC2Do(const AsciiString &name)
 {
-	TerrainLogic *logic = g_Va009FEC50;
+	TerrainLogic *logic = TheTerrainLogic;
 	Rva003C4DC2Node *cur = logic->getHead();
 	while (cur) {
 		if (((const StringBase<char> *)&cur->m_name)->compare(*(const StringBase<char> *)&name) == 0)

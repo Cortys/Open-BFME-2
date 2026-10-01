@@ -1,6 +1,6 @@
 // cl: /DNDEBUG /MD /O2
 
-extern const unsigned short Rva012D88D0Round[4];
+extern const unsigned short g_bfmeBinkRoundMmx[4];
 
 // Address-derived identity. The optimized MMX schedule does not reproduce
 // from MSVC 7.1 intrinsics, so the filter core stays as typed inline assembly.
@@ -32,9 +32,9 @@ void __cdecl Rva009C6800(const unsigned char *source, unsigned char *destination
 		pmullw mm6, mm2
 		paddw mm3, mm5
 		paddw mm4, mm6
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
-		paddw mm4, qword ptr Rva012D88D0Round
+		paddw mm4, qword ptr g_bfmeBinkRoundMmx
 		psraw mm4, 7
 		movq mm7, mm3
 		packuswb mm7, mm4
@@ -60,9 +60,9 @@ void __cdecl Rva009C6800(const unsigned char *source, unsigned char *destination
 		punpckhbw mm6, mm0
 		pmullw mm5, qword ptr [eax]
 		pmullw mm6, qword ptr [eax]
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
-		paddw mm4, qword ptr Rva012D88D0Round
+		paddw mm4, qword ptr g_bfmeBinkRoundMmx
 		psraw mm4, 7
 		movq mm7, mm3
 		packuswb mm7, mm4
@@ -70,9 +70,9 @@ void __cdecl Rva009C6800(const unsigned char *source, unsigned char *destination
 		pmullw mm4, qword ptr [eax + 10h]
 		paddw mm3, mm5
 		paddw mm4, mm6
-		paddw mm3, qword ptr Rva012D88D0Round
+		paddw mm3, qword ptr g_bfmeBinkRoundMmx
 		psraw mm3, 7
-		paddw mm4, qword ptr Rva012D88D0Round
+		paddw mm4, qword ptr g_bfmeBinkRoundMmx
 		psraw mm4, 7
 		packuswb mm3, mm4
 		movq qword ptr [edi], mm3

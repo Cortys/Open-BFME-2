@@ -39,7 +39,7 @@ public:
 	void destroyObject(Object *obj);
 };
 
-extern GameLogic *g_bfmeStore1026;
+extern GameLogic *TheGameLogic;
 
 class BfmeF1026
 {
@@ -56,5 +56,5 @@ void BfmeF1026::bfmeGo1026F(int h, int u1, int u2)
 	Object *p = *(Object **)((char *)this - 8);
 
 	if (o->m_bfmeTab.bfmeHas1026(h, (int)p->getControllingPlayer()) != 0)
-		g_bfmeStore1026->destroyObject((Object *)h);
+		TheGameLogic->destroyObject((Object *)h);
 }

@@ -52,7 +52,7 @@ public:
 	virtual UnicodeString fetch(const AsciiString &label, Bool *exists = 0) = 0;
 };
 
-extern GameTextInterface *g_Va009FF0BC;
+extern GameTextInterface *TheGameText;
 extern BfmeAptWindowManager *g_Va009FE4CC;
 
 extern "C" __declspec(dllimport) int __cdecl swprintf(wchar_t *buffer, const wchar_t *format, ...);
@@ -64,7 +64,7 @@ void __stdcall Rva00583202Set(int totalSeconds)
 	int minutes = totalSeconds / 60;
 	int seconds = totalSeconds - minutes * 60;
 	wchar_t buf[260];
-	swprintf(buf, g_Va009FF0BC->fetch("MapTransfer:Timeout", 0).str(), minutes, seconds);
+	swprintf(buf, TheGameText->fetch("MapTransfer:Timeout", 0).str(), minutes, seconds);
 	UnicodeString value(buf);
 	AsciiString key("APT:FileTransferLoadingTime");
 	g_Va009FE4CC->bfmeSetText(key, value, false);

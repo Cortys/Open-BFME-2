@@ -9,13 +9,13 @@
 // imports GetSystemMenu/EnableMenuItem are IAT (FF 15) so dllimport.
 // No // stlport, no EH frame.
 
-extern void *Rva00DDE024;
+extern void *ApplicationHWnd;
 
 extern "C" __declspec(dllimport) void *__stdcall GetSystemMenu(void *wnd, int revert);
 extern "C" __declspec(dllimport) int __stdcall EnableMenuItem(void *menu, unsigned id, unsigned flags);
 
 void Rva0023C85EDisable()
 {
-	void *menu = GetSystemMenu(Rva00DDE024, 0);
+	void *menu = GetSystemMenu(ApplicationHWnd, 0);
 	EnableMenuItem(menu, 0xF060, 0);
 }

@@ -226,27 +226,27 @@ int Rva0011F1B0Get(void)
 
 // ?Rva00129590Get@@YAHXZ @ 0x00129590 (6B) over 0x00DEE8E4.
 
-extern int g_Va00DEE8E4;
+extern int g_last4;
 
 int Rva00129590Get(void)
 {
-	return g_Va00DEE8E4;
+	return g_last4;
 }
 
 // ?Rva00129660Get@@YAHXZ @ 0x00129660 (6B) over 0x00DEE894.
 
-extern int g_Va00DEE894;
+extern int g_stat10;
 
 int Rva00129660Get(void)
 {
-	return g_Va00DEE894;
+	return g_stat10;
 }
 
 // ?Rva00129680Get@@YAHXZ @ 0x00129680 (6B) over 0x00DEE8A0.
 
-extern int g_Va00DEE8A0;
+extern int g_last9;
 
 int Rva00129680Get(void)
 {
-	return g_Va00DEE8A0;
+	return g_last9;
 }

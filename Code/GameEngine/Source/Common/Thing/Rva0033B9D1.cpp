@@ -5,7 +5,7 @@
 // Map/vector locomotor resolution: if m_3b0 is set walk the map at m_3ac via
 // _M_increment; for each node walk the void* vector at +0x14; entries with
 // cond >= 1 at +0xc resolve name at +0x10 through TheLocomotorStore
-// (g_00DFDC5C); missing templates erase the slot. Unlocks 0x002CF1C9.
+// (TheLocomotorStore); missing templates erase the slot. Unlocks 0x002CF1C9.
 // Evidence: callees 0x001E7010 0x00024250 0x001FF51F rows caller 0x002CF1D1 prev/next flags.
 class AsciiString
 {
@@ -21,7 +21,7 @@ public:
     LocomotorTemplate *findLocomotorTemplate(const AsciiString &name);
 };
 
-extern LocomotorStore *g_00DFDC5C;
+extern LocomotorStore *TheLocomotorStore;
 
 namespace _STL
 {
@@ -86,7 +86,7 @@ void Rva0033B9D1::rva0033B9D1()
         while (slot != vec->m_end) {
             Elem0033B9D1 *elem = (Elem0033B9D1 *)*slot;
             if (elem != 0 && elem->m_cond >= 1) {
-                LocomotorTemplate *t = g_00DFDC5C->findLocomotorTemplate(elem->m_name);
+                LocomotorTemplate *t = TheLocomotorStore->findLocomotorTemplate(elem->m_name);
                 if (t != 0) {
                     *slot = t;
                     ++slot;

@@ -44,16 +44,16 @@ public:
 	void rva00370410(Object *obj, int x, CommandSourceType src);
 };
 
-extern ScriptEngine *g_Va009FE16C;
-extern AI *g_Va009FF0F8;
+extern ScriptEngine *TheScriptEngine;
+extern AI *TheAI;
 
 void __stdcall Rva003BF7ACDo(const AsciiString &teamName, Parameter *param)
 {
-	Object *unit = g_Va009FE16C->getUnitNamed(param);
-	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
+	Object *unit = TheScriptEngine->getUnitNamed(param);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (team == 0 || unit == 0)
 		return;
-	AIGroup *group = g_Va009FF0F8->createGroup();
+	AIGroup *group = TheAI->createGroup();
 	if (group == 0)
 		return;
 	team->getTeamAsAIGroup(group);

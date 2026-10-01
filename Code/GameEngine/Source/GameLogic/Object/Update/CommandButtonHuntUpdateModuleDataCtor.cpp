@@ -10,7 +10,7 @@
 // (news 0x10, sole caller at 0x24DFA8). Row supersedes the ctor pin.
 
 // Global word copied into +8 (absolute VA 0x00DBA4E4, DIR32-masked).
-extern int g_dword00DBA4E4;
+extern int g_Va00DBA4E4;
 
 class MultiIniFieldParse;
 struct FieldParse;
@@ -43,7 +43,7 @@ CommandButtonHuntUpdateModuleData::CommandButtonHuntUpdateModuleData()
 {
 	float cap = 9999.0f;
 	*(unsigned int *)this = 0x00C4ED70;
-	m_08 = g_dword00DBA4E4;
+	m_08 = g_Va00DBA4E4;
 	m_cap = cap;
 }
 

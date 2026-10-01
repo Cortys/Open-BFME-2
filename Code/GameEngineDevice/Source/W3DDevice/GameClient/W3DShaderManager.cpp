@@ -46,7 +46,7 @@ private:
 	static IDirect3DDevice8 *D3DDevice;
 };
 
-extern unsigned g_numberOfDX8Calls;
+extern unsigned number_of_DX8_calls;
 extern unsigned g_d3dCallCount;
 
 class ScreenMotionBlurFilter
@@ -77,22 +77,22 @@ IDirect3DTexture8 *W3DShaderManager::endRenderToTexture()
 		return 0;
 	DX8Wrapper::Set_Render_Target(m_oldRenderSurface, true);
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 1, 3);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 2, 3);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 3, 3);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 5, 2);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 6, 2);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	DX8Wrapper::_Get_D3D_Device8()->m_vtable->m_setSamplerState(DX8Wrapper::_Get_D3D_Device8(), 0, 7, 0);
-	++g_numberOfDX8Calls;
+	++number_of_DX8_calls;
 	++g_d3dCallCount;
 	m_renderingToTexture = false;
 	return m_renderTexture;

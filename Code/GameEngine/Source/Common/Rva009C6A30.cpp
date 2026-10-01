@@ -1,5 +1,5 @@
 // cl: /DNDEBUG /MD /O2
-extern const unsigned short Rva012D88D0Round[4];
+extern const unsigned short g_bfmeBinkRoundMmx[4];
 extern void __cdecl rva009C6390BinkMmx(const void *, void *, int, int, int, int, const void *);
 extern void __cdecl rva009C66F0BinkMmx(const void *, void *, int, int, int, int, const void *);
 extern void __cdecl rva009C6470BinkMmx(const void *, void *, int, int, int, int, const void *);
@@ -27,41 +27,41 @@ void __cdecl Rva009C6A30(void *arg1, void *arg2, void *arg3,
     {
         if (mode != 0)
             rva009C6390BinkMmx(arg1, scratch, stride, distance, 8, 8,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsA << 6)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsA << 6)));
         else
             rva009C66F0BinkMmx(arg1, scratch, stride, 1, 8, 8,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsA << 5)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsA << 5)));
     }
     else if (distance == stride)
     {
         if (mode != 0)
             rva009C6470BinkMmx(arg1, scratch, stride, stride, 8, 8,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsB << 6)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsB << 6)));
         else
             rva009C6780BinkMmx(arg1, scratch, stride, stride, 8, 8,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsB << 5)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsB << 5)));
     }
     else if (distance == stride - 1)
     {
         if (mode != 0)
             rva009C69D0BinkMmx((const unsigned char *)arg1 - 1, scratch, stride,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsA << 6)),
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsB << 6)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsA << 6)),
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsB << 6)));
         else
             Rva009C6800((const unsigned char *)arg1 - 1, scratch, stride,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsA << 5)),
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsB << 5)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsA << 5)),
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsB << 5)));
     }
     else if (distance == stride + 1)
     {
         if (mode != 0)
             rva009C69D0BinkMmx(arg1, scratch, stride,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsA << 6)),
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x110 + (weightsB << 6)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsA << 6)),
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x110 + (weightsB << 6)));
         else
             Rva009C6800((const unsigned char *)arg1, scratch, stride,
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsA << 5)),
-                (const void *)((const unsigned char *)Rva012D88D0Round + 0x10 + (weightsB << 5)));
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsA << 5)),
+                (const void *)((const unsigned char *)g_bfmeBinkRoundMmx + 0x10 + (weightsB << 5)));
     }
     bfmeUnpack8to16Mmx(scratch, arg3, 8);
 }

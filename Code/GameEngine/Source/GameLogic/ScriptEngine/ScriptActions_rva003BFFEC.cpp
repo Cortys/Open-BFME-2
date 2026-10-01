@@ -33,13 +33,13 @@ public:
 	void rva002B2466(float a, float b, float c, float d);
 };
 
-extern Display *g_Va009FE9D8;
+extern Display *TheDisplay;
 
 void __stdcall Rva003BFFECDo(const AsciiString &name, int unused)
 {
 	(void)unused;
-	if (g_Va009FE9D8->v114())
+	if (TheDisplay->v114())
 		return;
-	g_Va009FE9D8->rva002B2466(0.0f, 0.0f, 1.0f, 1.0f);
-	g_Va009FE9D8->v108((AsciiString &)name, 0x40, -1, -1);
+	TheDisplay->rva002B2466(0.0f, 0.0f, 1.0f, 1.0f);
+	TheDisplay->v108((AsciiString &)name, 0x40, -1, -1);
 }

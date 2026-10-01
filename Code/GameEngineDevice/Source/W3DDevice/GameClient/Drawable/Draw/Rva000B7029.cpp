@@ -3,7 +3,7 @@
 // ?rva000B7029@Rva000B7029@@QAEPBVImage@@XZ retail 0x000B7029 75 bytes.
 // Vslot 51 (0xCC) of Draw family sharing dirty flag at +0x2D9 with cached
 // Image at +0x2DC recomputed via Sub at +0x14 AsciiString at +0x60 isEmpty
-// plus rowed findImageByName through global g_00DFF078. Evidence is 5
+// plus rowed findImageByName through global TheMappedImageCollection. Evidence is 5
 // Draw vtables plus rowed callees plus neighbour flags.
 
 class Image;
@@ -25,7 +25,7 @@ public:
 	const Image *findImageByName(const AsciiString &name);
 };
 
-extern ImageCollection *g_00DFF078;
+extern ImageCollection *TheMappedImageCollection;
 
 struct DrawSub
 {
@@ -104,7 +104,7 @@ const Image *Rva000B7029::rva000B7029()
 		DrawSub *sub = m_14;
 		if (sub != 0) {
 			if (!sub->m_str60.isEmpty())
-				m_2DC = g_00DFF078->findImageByName(sub->m_str60);
+				m_2DC = TheMappedImageCollection->findImageByName(sub->m_str60);
 			else
 				m_2DC = 0;
 		}

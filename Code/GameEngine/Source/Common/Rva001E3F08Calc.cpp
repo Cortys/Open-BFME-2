@@ -5,7 +5,7 @@
 // global 0x00DBA4F8. x87 fld/fmul shape. Called at 0x001E407C etc.
 // Owner identity unproven, honest Rva name.
 
-extern float g_Va00DBA4F8;
+extern float g_secondsPerLogicFrame;
 
 struct Rva001E3F08MidA
 {
@@ -36,5 +36,5 @@ private:
 
 float Rva001E3F08::rva001E3F08(Rva001E3F08Arg *p)
 {
-	return p->m_p258->m_val1F8 * m_p04->m_val28 * g_Va00DBA4F8;
+	return p->m_p258->m_val1F8 * m_p04->m_val28 * g_secondsPerLogicFrame;
 }

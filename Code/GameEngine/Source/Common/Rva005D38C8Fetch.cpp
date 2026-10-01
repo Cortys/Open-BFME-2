@@ -95,7 +95,7 @@ public:
 	virtual UnicodeString fetch(const class AsciiString &label, Bool *exists = 0) = 0;
 };
 
-extern GameTextInterface *g_Va009FF0BC;
+extern GameTextInterface *TheGameText;
 extern unsigned short g_Va007BB5C4;
 
 UnicodeString Rva005D38C8Get(int a, int b)
@@ -103,7 +103,7 @@ UnicodeString Rva005D38C8Get(int a, int b)
 	UnicodeString tmp;
 	if (b >= 0) {
 		Bool exists;
-		UnicodeString fetched = g_Va009FF0BC->fetch("STRATEGICHUD:ArmyUnitSwapperCP", &exists);
+		UnicodeString fetched = TheGameText->fetch("STRATEGICHUD:ArmyUnitSwapperCP", &exists);
 		if (exists) {
 			const wchar_t *fmt = fetched.m_data.m_data ? fetched.m_data.m_data->data : (const wchar_t *)&g_Va007BB5C4;
 			tmp.format(fmt, a, b);

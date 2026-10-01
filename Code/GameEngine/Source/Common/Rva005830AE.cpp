@@ -58,7 +58,7 @@ public:
 };
 
 extern Dummy24 *g_Va009FEA28;
-extern Mouse *g_Va009FDCA0;
+extern Mouse *TheMouse;
 extern Dummy24 *g_Va009FE710;
 extern Dummy24 *g_Va009FEF1C;
 extern Dummy24 *g_Va009FE4CC;
@@ -74,7 +74,7 @@ void Rva005830AE::rva005830AE(int x)
 	(void)x;
 	if (g_Va009FEA28 != 0)
 		g_Va009FEA28->v16(0);
-	g_Va009FDCA0->rva001EEA6D(UnicodeString::TheEmptyString, -1, 0, 1.0f);
+	TheMouse->rva001EEA6D(UnicodeString::TheEmptyString, -1, 0, 1.0f);
 	g_Va009FE710->v23();
 	g_Va009FEF1C->v10();
 	g_Va009FE4CC->v10();

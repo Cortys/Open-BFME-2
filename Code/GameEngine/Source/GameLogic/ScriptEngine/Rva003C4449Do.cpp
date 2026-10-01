@@ -41,13 +41,13 @@ public:
 	bool rva003A28ED(NameKeyType key);
 };
 extern ScriptEngine *TheScriptEngine;
-extern NameKeyGenerator *g_009F36A4;
-extern PlayerList *g_009FEEE8;
+extern NameKeyGenerator *TheNameKeyGenerator;
+extern PlayerList *ThePlayerList;
 void __stdcall Rva003C4449Do(const AsciiString &teamName, const AsciiString &playerName)
 {
 	Team *team = TheScriptEngine->getTeamNamed(teamName, false);
-	NameKeyType key = g_009F36A4->nameToKey(playerName);
-	Player *player = g_009FEEE8->findPlayerWithNameKey(key);
+	NameKeyType key = TheNameKeyGenerator->nameToKey(playerName);
+	Player *player = ThePlayerList->findPlayerWithNameKey(key);
 	if (team == 0)
 		return;
 	if (player == 0)

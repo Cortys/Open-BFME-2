@@ -30,15 +30,15 @@ class AIGroup
 public:
 	void groupHunt(CommandSourceType src);
 };
-extern ScriptEngine *g_Va009FE16C;
-extern AI *g_Va009FF0F8;
+extern ScriptEngine *TheScriptEngine;
+extern AI *TheAI;
 
 void __stdcall Rva003BF8B4Hunt(const AsciiString &teamName)
 {
-	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (team == 0)
 		return;
-	AIGroup *group = g_Va009FF0F8->createGroup();
+	AIGroup *group = TheAI->createGroup();
 	if (group == 0)
 		return;
 	team->getTeamAsAIGroup(group);

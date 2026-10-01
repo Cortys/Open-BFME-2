@@ -16,7 +16,7 @@ public:
 	const UpgradeTemplate *findUpgrade(const AsciiString &name) const;
 };
 
-extern UpgradeCenter *g_00DFEB60;
+extern UpgradeCenter *TheUpgradeCenter;
 
 class Provider
 {
@@ -58,7 +58,7 @@ void Object::rva00293275(AsciiString upgrades)
 {
 	AsciiString token;
 	while (upgrades.nextToken(&token, 0)) {
-		const UpgradeTemplate *t = g_00DFEB60->findUpgrade(token);
+		const UpgradeTemplate *t = TheUpgradeCenter->findUpgrade(token);
 		if (t == 0)
 			continue;
 		if ((m_holder->m_flags & 0x20) != 0) {

@@ -14,7 +14,7 @@
 //   xor-before-mov-cl and orders mov-cl before mov-eax like retail;
 //   /O1 without /G7 uses two LEAs/xor and mismatches by 2B.
 
-extern bool g_Va00DDE02A;
+extern bool isWinMainActive;
 
 class GameEngine
 {
@@ -57,6 +57,6 @@ public:
 GameEngine* CreateGameEngine()
 {
 	Win32GameEngine* engine = new Win32GameEngine;
-	engine->setIsActive(g_Va00DDE02A);
+	engine->setIsActive(isWinMainActive);
 	return engine;
 }

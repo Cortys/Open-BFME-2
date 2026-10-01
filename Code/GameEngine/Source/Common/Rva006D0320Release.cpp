@@ -9,7 +9,7 @@ class Rva006DB270
 public:
     void freeBlock(void *block, int blockSize);
 };
-extern Rva006DB270 *g_00E176E8;
+extern Rva006DB270 *g_pChainBlockAllocator;
 class Rva006D0280
 {
 public:
@@ -20,6 +20,6 @@ Rva006D0280 *Rva006D0280::rva006D0320(unsigned char doFree)
 {
     teardown();
     if (doFree & 1)
-        g_00E176E8->freeBlock(this, 0x1C);
+        g_pChainBlockAllocator->freeBlock(this, 0x1C);
     return this;
 }

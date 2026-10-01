@@ -12,7 +12,7 @@ public:
 	const Image *findImageByName(const AsciiString &name);
 };
 
-extern ImageCollection *g_00DFF078;
+extern ImageCollection *TheMappedImageCollection;
 
 class Rva0026F216
 {
@@ -31,12 +31,12 @@ void Rva0026F216::rva0026F216()
 {
 	if (!m_6c.isEmpty())
 	{
-		m_70 = g_00DFF078->findImageByName(m_6c);
+		m_70 = TheMappedImageCollection->findImageByName(m_6c);
 		m_6c.clear();
 	}
 	if (!m_8c.isEmpty())
 	{
-		m_90 = g_00DFF078->findImageByName(m_8c);
+		m_90 = TheMappedImageCollection->findImageByName(m_8c);
 		m_8c.clear();
 	}
 }

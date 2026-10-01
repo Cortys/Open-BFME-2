@@ -4,7 +4,7 @@
 // (NameKeyGenerator->nameToKey at +0x34) equals arg key at +0x50; return slot
 // else 0. Callers 0x00506D41 0x00598CDE 0x005AA0FF 0x005AD967 0x005ADAC5
 // 0x005ADD7E. Prev Rva00506B74 /O1 /MD. Honest free-function Find plus Arg
-// view; GameSlot m_ip +0x34 from GameSlotSetState, globals g_Rva00E02EEC
+// view; GameSlot m_ip +0x34 from GameSlotSetState, globals TheGameInfo
 // and TheNameKeyGenerator DIR32 from retail.
 #include "ascii_string.h"
 
@@ -32,7 +32,7 @@ public:
 	NameKeyType nameToKey(const AsciiString &nameString);
 };
 
-extern GameInfo *g_Rva00E02EEC;
+extern GameInfo *TheGameInfo;
 extern NameKeyGenerator *TheNameKeyGenerator;
 
 struct Rva00506C82Arg
@@ -43,9 +43,9 @@ struct Rva00506C82Arg
 
 GameSlot *__cdecl Rva00506C82Find(const Rva00506C82Arg *arg)
 {
-	if (g_Rva00E02EEC != 0) {
+	if (TheGameInfo != 0) {
 		for (int i = 0; i < 8; ++i) {
-			GameSlot *slot = g_Rva00E02EEC->getSlot(i);
+			GameSlot *slot = TheGameInfo->getSlot(i);
 			NameKeyType key = TheNameKeyGenerator->nameToKey(slot->m_ip);
 			if (key == arg->m_50)
 				return slot;

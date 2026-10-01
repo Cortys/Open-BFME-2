@@ -2,7 +2,7 @@
 // ?rva005DABD5@Rva005DAAB6@@QAE_N_N@Z @0x005DABD5 94B evidence: vslot 15 of 008765A8 class Rva005DAAB6 via dtor row; layout from Rva0055AED6Xfer base+derived m_2C/m_30/m_3C; callees rva002D06CA findObjectByID rowed plus global slot14 virtual; globals VA 0xDFF000 0xDFE78C 0xE027B8
 
 extern class Rva002D06CA *g_009FF000;
-extern class GameLogic *g_009FE78C;
+extern class GameLogic *TheGameLogic;
 extern class Rva00A027B8 *g_00A027B8;
 // g_00A027B8: matched references place it at VA 0xe027b8 (zero-filled .bss).
 class Rva00A027B8 * g_00A027B8;
@@ -98,7 +98,7 @@ private:
 bool Rva005DAAB6::rva005DABD5(bool arg)
 {
 	void *p1 = g_009FF000->rva002D06CA((const AsciiString *)&m_0C);
-	Object *o2 = g_009FE78C->findObjectByID(m_08);
+	Object *o2 = TheGameLogic->findObjectByID(m_08);
 	if (p1 == 0 || o2 == 0)
 		return false;
 	float f = m_3C;

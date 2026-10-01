@@ -103,10 +103,10 @@ public:
 	virtual void v66();
 	virtual void fillList(_STL::list<int> *lst);
 };
-extern ScriptEngine *g_009FE16C;
+extern ScriptEngine *TheScriptEngine;
 void __stdcall Rva003C60E8Do(Parameter *p, Rva003C60E8Arg *a)
 {
-	Object *obj = g_009FE16C->getUnitNamed(p);
+	Object *obj = TheScriptEngine->getUnitNamed(p);
 	if (!obj)
 		return;
 	obj->setStatus(OBJECT_STATUS_44, a->m_08 != 0);

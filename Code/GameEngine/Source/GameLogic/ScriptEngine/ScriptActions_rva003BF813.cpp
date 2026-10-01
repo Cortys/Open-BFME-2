@@ -64,18 +64,18 @@ public:
 	void rva00370492(const PolygonTrigger *trigger, int x, CommandSourceType src);
 };
 
-extern ScriptEngine *g_Va009FE16C;
-extern TerrainLogic *g_Va009FEC50;
-extern AI *g_Va009FF0F8;
+extern ScriptEngine *TheScriptEngine;
+extern TerrainLogic *TheTerrainLogic;
+extern AI *TheAI;
 
 void __stdcall Rva003BF813Do(const AsciiString &teamName, const AsciiString &areaName, const AsciiString &waypointName)
 {
-	PolygonTrigger *trigger = g_Va009FE16C->getQualifiedTriggerAreaByName((AsciiString &)areaName);
-	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
+	PolygonTrigger *trigger = TheScriptEngine->getQualifiedTriggerAreaByName((AsciiString &)areaName);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (team == 0 || trigger == 0)
 		return;
-	Waypoint *way = g_Va009FEC50->getWaypointByName(waypointName);
-	AIGroup *group = g_Va009FF0F8->createGroup();
+	Waypoint *way = TheTerrainLogic->getWaypointByName(waypointName);
+	AIGroup *group = TheAI->createGroup();
 	if (group == 0)
 		return;
 	team->getTeamAsAIGroup(group);

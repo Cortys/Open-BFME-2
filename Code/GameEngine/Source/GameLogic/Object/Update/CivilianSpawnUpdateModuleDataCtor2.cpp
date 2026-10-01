@@ -24,7 +24,7 @@ public:
 	Rva003623E5Filter();
 };
 
-extern int g_bfmeScaleBase;	// retail 0xDBA4E4, value 5 (DIR32-masked)
+extern int g_Va00DBA4E4;	// retail 0xDBA4E4, value 5 (DIR32-masked)
 
 class CivilianSpawnBase
 {
@@ -50,6 +50,6 @@ private:
 CivilianSpawnUpdateModuleData::CivilianSpawnUpdateModuleData()
 	: m_vec14(_STL::allocator<int>())
 {
-	m_int08 = g_bfmeScaleBase;
+	m_int08 = g_Va00DBA4E4;
 	m_int10 = 300;
 }

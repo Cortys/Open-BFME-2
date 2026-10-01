@@ -138,8 +138,8 @@ extern MessageStream *MessageStreamSubsystem;
 // MessageStreamSubsystem: matched references place it at VA 0xe00950 (zero-filled .bss).
 MessageStream * MessageStreamSubsystem;
 extern ClientSubsystem *InputLockSubsystem;
-extern class InGameUI *InGameUISubsystem;
-extern class Mouse *MouseSubsystem;
+extern class InGameUI *TheInGameUI;
+extern class Mouse *TheMouse;
 extern ClientSubsystem *AudioSubsystem;
 extern NetworkInterface *TheNetwork;
 // TheNetwork: matched references place it at VA 0xdfea28 (zero-filled .bss).
@@ -202,14 +202,14 @@ void GameEngine::_bfme_updateClientSubsystems(void)
     {
         if (inputLocked)
         {
-            InGameUISubsystem->setEngineInputEnabled(false);
-            MouseSubsystem->_bfme_setEngineVisibility(false);
+            TheInGameUI->setEngineInputEnabled(false);
+            TheMouse->_bfme_setEngineVisibility(false);
         }
         else
         {
-            InGameUISubsystem->setEngineInputEnabled(true);
+            TheInGameUI->setEngineInputEnabled(true);
             if ((timedOps & 4) == 0)
-                MouseSubsystem->_bfme_setEngineVisibility(true);
+                TheMouse->_bfme_setEngineVisibility(true);
         }
     }
 

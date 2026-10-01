@@ -61,17 +61,17 @@ public:
 	void rva003703CF(const Coord3D *pos, GuardMode mode, CommandSourceType src);
 };
 
-extern TerrainLogic *g_Va009FEC50;
-extern ScriptEngine *g_Va009FE16C;
-extern AI *g_Va009FF0F8;
+extern TerrainLogic *TheTerrainLogic;
+extern ScriptEngine *TheScriptEngine;
+extern AI *TheAI;
 
 void __stdcall Rva003BF71EDo(const AsciiString &teamName, const AsciiString &waypointName)
 {
-	Waypoint *way = g_Va009FEC50->getWaypointByName(waypointName);
-	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
+	Waypoint *way = TheTerrainLogic->getWaypointByName(waypointName);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (team == 0 || way == 0)
 		return;
-	AIGroup *group = g_Va009FF0F8->createGroup();
+	AIGroup *group = TheAI->createGroup();
 	if (group == 0)
 		return;
 	team->getTeamAsAIGroup(group);

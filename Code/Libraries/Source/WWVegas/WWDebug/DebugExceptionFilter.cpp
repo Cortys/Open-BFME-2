@@ -295,7 +295,7 @@ static char g_exceptionRegisterInfo[1024];                // 0x00DE09E8
 static char g_exceptionVersionInfo[256];                  // 0x00DE08E8
 static DebugStackwalk::Signature g_exceptionStackSignature; // 0x00DE0E08
 extern CrashAttachment *g_crashAttachments;              // 0x00DE0DEC
-extern unsigned g_numCrashAttachments;                   // 0x00DE0DF0
+extern unsigned g_debugTypedLogCount;                   // 0x00DE0DF0
 extern char g_crashMailerCommand[512];                   // 0x00DE1210
 extern unsigned char g_exceptionDialogTemplate[];        // 0x00DB35D0
 
@@ -477,14 +477,14 @@ long __stdcall DebugExceptionhandler::ExceptionFilter(_EXCEPTION_POINTERS *pExPt
 
 	// pack the crash attachments for the dump
 	unsigned size = 8;
-	for (unsigned k = 0; k < g_numCrashAttachments; k++)
+	for (unsigned k = 0; k < g_debugTypedLogCount; k++)
 		size += g_crashAttachments[k].size + 8;
 	char *blob = (char *)_alloca(size);
 	if (blob)
 	{
 		*(DWORD *)blob = 0x5F5F5F5F; // "____"
 		blob += 4;
-		for (unsigned i = 0; i < g_numCrashAttachments; i++)
+		for (unsigned i = 0; i < g_debugTypedLogCount; i++)
 		{
 			*(DWORD *)blob = g_crashAttachments[i].id;
 			blob += 4;
