@@ -25,19 +25,19 @@ public:
 	~StringClass(void) { Free_String(); }
 	const StringClass &operator=(const char *string);
 
-	static char *m_EmptyString;
 
 private:
+	static char *m_EmptyString;
 	void Get_String(int new_len, bool flag);
 	void Free_String(void);
 
 	char *m_Buffer;
 };
 
-char *StringClass::m_EmptyString;
+// StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
 
 // ??0StringClass@@QAE@PBD_N@Z
-StringClass::StringClass(const char *name, bool flag)
+inline StringClass::StringClass(const char *name, bool flag)
 {
 	int len;
 

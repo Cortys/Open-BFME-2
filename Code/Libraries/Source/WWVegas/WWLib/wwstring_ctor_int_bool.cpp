@@ -20,7 +20,7 @@ private:
 	char *m_Buffer;
 };
 
-char *StringClass::m_EmptyString;
+// StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
 char StringClass::m_LeadByte;
 
 // ??0StringClass@@QAE@H_N@Z

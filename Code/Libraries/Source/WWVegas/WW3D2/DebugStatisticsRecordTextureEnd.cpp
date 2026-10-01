@@ -64,9 +64,9 @@ public:
 		return m_Buffer;
 	}
 
-	static char *m_EmptyString;
 
 private:
+	static char *m_EmptyString;
 	struct HEADER
 	{
 		int allocated_length;
@@ -87,7 +87,7 @@ private:
 	static char m_NullChar;
 };
 
-char *StringClass::m_EmptyString;
+// StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
 char StringClass::m_NullChar;
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/texture.h

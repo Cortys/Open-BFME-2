@@ -20,7 +20,7 @@ private:
 	char *m_Buffer;
 };
 
-char *StringClass::m_EmptyString;
+// StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
 
 const StringClass &StringClass::operator=(const char *string)
 {
