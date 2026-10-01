@@ -1,29 +1,13 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 // ??1Rva003FD3EF@@UAE@XZ @0x003FD3EF 76B
 // ModuleData dtor: vtable 0x007FE024, opaque clear of the holder at +0x0C via
 // rowed ?clear@Rva000A8C9B@@QAEXXZ, null-test of its referent plus rowed
 // ?Release_Ref@OpaqueRefCounted@@QAEXXZ, then Snapshot base vtable 0x00BBB554.
-// Same recipe as Rva003FD789Dtor (TU-local Snapshot with extern BBB554);
+// Same recipe as Rva003FD789Dtor, using the shared Snapshot base header;
 // Rva000A8C9B carries an inline dtor (null-test plus Release_Ref) so unwind
 // states are emitted while the body carries the opaque clear call.
 // Unblocks ??_G at 0x002B30AE.
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-extern const void *const g_00BBB554[];
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
+#include "Common/Snapshot.h"
 
 class OpaqueRefCounted
 {

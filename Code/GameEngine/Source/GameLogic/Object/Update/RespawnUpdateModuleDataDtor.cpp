@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/moduledata /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1RespawnUpdateModuleData@@UAE@XZ, retail 0x004AFBFF, 96 bytes.
@@ -13,24 +13,7 @@
 // and MissileUpdateModuleDataDtor (0x120 class with exhaust string at
 // +0x11C plus BBB554, novtable suppressing the entry store).
 #include <set>
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-extern const void *const g_00BBB554[];
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 

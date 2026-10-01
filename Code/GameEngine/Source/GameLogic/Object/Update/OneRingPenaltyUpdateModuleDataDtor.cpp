@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/moduledata /O1 /GX /DNDEBUG /MD
 //
 // ??1OneRingPenaltyUpdateModuleData@@UAE@XZ, retail 0x00499A16, 73 bytes.
 // OneRingPenaltyUpdate ModuleData dtor over Snapshot base (0x00BBB554).
@@ -9,26 +9,12 @@
 // OneRingPenaltyUpdateModuleDataCtor.cpp (vptr +0, unused +0x04, string +0x08,
 // scalars +0x0C..+0x1C, holder +0x20, size 0x24 from factory 0x0024E42C).
 // Called by the audited ??_G wrapper at 0x00499C19 (slot 0 of 0x00C50298).
-// Shape follows FlammableUpdateModuleDataDtor (TU-local Snapshot with inline
+// Shape follows FlammableUpdateModuleDataDtor (shared Snapshot base with its
 // BBB554 restore, entry derived store, empty derived body). BFME1 donor
 // OneRingPenaltyUpdateModuleDataDestructorThunk.cpp:82 proves the member
 // order and Snapshot base; retail followed.
 
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 
