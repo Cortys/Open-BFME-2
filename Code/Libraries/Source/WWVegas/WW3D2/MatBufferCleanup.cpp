@@ -15,7 +15,7 @@ extern void __cdecl operator delete[](void *) throw();
 // Only the established RefCountClass prefix is used here.
 class VertexMaterialClass : public RefCountClass {};
 
-template <>
+template <> inline
 ShareBufferClass<VertexMaterialClass *>::~ShareBufferClass()
 {
     ::operator delete[](RawBuffer);
@@ -37,3 +37,11 @@ MatBufferClass::~MatBufferClass()
 
 // ?ForceDelete_MatBuffer@@YAXPAVMatBufferClass@@@Z absent-from-retail
 void ForceDelete_MatBuffer(MatBufferClass *p) { delete p; }
+
+#pragma inline_depth(0)
+// ?bfmeEmitMatBufferCleanup@@YAXPAV?$ShareBufferClass@PAVVertexMaterialClass@@@@@Z present-unmatched
+void bfmeEmitMatBufferCleanup(ShareBufferClass<VertexMaterialClass *> *p)
+{
+	p->ShareBufferClass<VertexMaterialClass *>::~ShareBufferClass();
+}
+#pragma inline_depth()
