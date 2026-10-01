@@ -45180,3 +45180,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0XferException@@QAE@ABV0@@Z,,0x000588C5,19,Code/GameEngine/Source/Common/System/XferException.cpp,matched,
 ??0XferException@@QAA@HPBDZZ,,0x0060C36E,85,Code/GameEngine/Source/Common/System/XferException.cpp,matched,
 ??1XferException@@QAE@XZ,,0x0002BD30,9,Code/GameEngine/Source/Common/System/XferException.cpp,matched,
+?Rva0070D9F0Shutdown@@YAXXZ,,0x0070D9F0,435,Code/Libraries/Source/EA/Apt/Rva0070D9F0Shutdown.cpp,matched,StringPool shutdown via StringPool asserts and pool free
