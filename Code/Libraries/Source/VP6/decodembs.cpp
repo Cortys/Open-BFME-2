@@ -44,7 +44,19 @@ struct FramePB {
     int UseHuffman;
     unsigned CurrentDcRunLen[2], CurrentAc1RunLen[2];
 };
-extern unsigned char defaultModeProbs[80];
+// defaultModeProbs: matched references place it at VA 0xbd98b8 (retail .rdata contents).
+unsigned char defaultModeProbs[80] = {
+	0x2au, 2u, 7u, 0x2au, 0x16u, 3u, 2u, 5u,
+	1u, 0u, 0x45u, 1u, 1u, 0x2cu, 6u, 1u,
+	0u, 1u, 0u, 0u, 8u, 1u, 8u, 0u,
+	0u, 2u, 1u, 0u, 1u, 0u, 0xe5u, 1u,
+	0u, 0u, 0u, 1u, 0u, 0u, 1u, 0u,
+	0x23u, 1u, 6u, 0x22u, 0u, 2u, 1u, 1u,
+	1u, 0u, 0x7au, 1u, 1u, 0x2eu, 0u, 1u,
+	0u, 0u, 1u, 0u, 0x40u, 0u, 0x40u, 0x40u,
+	0x40u, 0u, 0u, 0u, 0u, 0u, 0x40u, 0u,
+	0x40u, 0x40u, 0x40u, 0u, 0u, 0u, 0u, 0u,
+};
 extern unsigned char defaultIsMvShort[2], defaultMvShort[14];
 extern unsigned char defaultMvSign[2], defaultMvSize[16];
 extern unsigned char DefaultInterlacedScanBands[64], DefaultNonInterlacedScanBands[64];

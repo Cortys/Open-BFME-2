@@ -22,16 +22,101 @@ const unsigned int * g_rva01356A98;
 extern const void *g_rva01356A88;
 // g_rva01356A88: matched references place it at VA 0xe22ce4 (zero-filled .bss).
 const void * g_rva01356A88;
-extern int g_rva01356940[64];
+// g_rva01356940: matched references place it at VA 0xe22be0 (zero-filled).
+int g_rva01356940[64] = { 0 };
 unsigned short *Rva009C0D10Src;			// .bss VA 0x00E22CE0 (BFME1 0x01356A7C); set here
 extern int *g_rva01356A9C;
 
-extern unsigned short g_rva012D7C58[128];
-extern unsigned short g_rva012D7D58[128];
-extern unsigned short g_rva012D7E58[128];
-extern int g_rva012D7858[64];
-extern int g_rva012D7958[64];
-extern int g_rva012D7A58[64];
+// g_rva012D7C58: matched references place it at VA 0xdb7528 (retail .data contents).
+unsigned short g_rva012D7C58[128] = {
+	0x1eu, 0u, 0x19u, 0u, 0x14u, 0u, 0x14u, 0u,
+	0xfu, 0u, 0xfu, 0u, 0xeu, 0u, 0xeu, 0u,
+	0xdu, 0u, 0xdu, 0u, 0xcu, 0u, 0xcu, 0u,
+	0xbu, 0u, 0xbu, 0u, 0xau, 0u, 0xau, 0u,
+	9u, 0u, 9u, 0u, 8u, 0u, 8u, 0u,
+	7u, 0u, 7u, 0u, 7u, 0u, 7u, 0u,
+	6u, 0u, 6u, 0u, 6u, 0u, 6u, 0u,
+	5u, 0u, 5u, 0u, 5u, 0u, 5u, 0u,
+	4u, 0u, 4u, 0u, 4u, 0u, 4u, 0u,
+	3u, 0u, 3u, 0u, 3u, 0u, 3u, 0u,
+	2u, 0u, 2u, 0u, 2u, 0u, 2u, 0u,
+	2u, 0u, 2u, 0u, 2u, 0u, 2u, 0u,
+	2u, 0u, 2u, 0u, 2u, 0u, 2u, 0u,
+	2u, 0u, 2u, 0u, 2u, 0u, 2u, 0u,
+	1u, 0u, 1u, 0u, 1u, 0u, 1u, 0u,
+	1u, 0u, 1u, 0u, 1u, 0u, 1u, 0u,
+};
+// g_rva012D7D58: matched references place it at VA 0xdb7628 (retail .data contents).
+unsigned short g_rva012D7D58[128] = {
+	0xeu, 0u, 0xeu, 0u, 0xdu, 0u, 0xdu, 0u,
+	0xcu, 0u, 0xcu, 0u, 0xau, 0u, 0xau, 0u,
+	0xau, 0u, 0xau, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	7u, 0u, 7u, 0u, 7u, 0u, 7u, 0u,
+	7u, 0u, 7u, 0u, 6u, 0u, 6u, 0u,
+	6u, 0u, 6u, 0u, 6u, 0u, 6u, 0u,
+	5u, 0u, 5u, 0u, 5u, 0u, 5u, 0u,
+	4u, 0u, 4u, 0u, 4u, 0u, 4u, 0u,
+	4u, 0u, 4u, 0u, 4u, 0u, 3u, 0u,
+	3u, 0u, 3u, 0u, 3u, 0u, 2u, 0u,
+};
+// g_rva012D7E58: matched references place it at VA 0xdb7728 (retail .data contents).
+unsigned short g_rva012D7E58[128] = {
+	0xeu, 0u, 0xeu, 0u, 0xdu, 0u, 0xdu, 0u,
+	0xcu, 0u, 0xcu, 0u, 0xau, 0u, 0xau, 0u,
+	0xau, 0u, 0xau, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	8u, 0u, 8u, 0u, 8u, 0u, 8u, 0u,
+	7u, 0u, 7u, 0u, 7u, 0u, 7u, 0u,
+	7u, 0u, 7u, 0u, 6u, 0u, 6u, 0u,
+	6u, 0u, 6u, 0u, 6u, 0u, 6u, 0u,
+	5u, 0u, 5u, 0u, 5u, 0u, 5u, 0u,
+	4u, 0u, 4u, 0u, 4u, 0u, 4u, 0u,
+	4u, 0u, 4u, 0u, 4u, 0u, 3u, 0u,
+	3u, 0u, 3u, 0u, 3u, 0u, 2u, 0u,
+};
+// g_rva012D7858: matched references place it at VA 0xdb7128 (retail .data contents).
+int g_rva012D7858[64] = {
+	0x1e, 0x19, 0x14, 0x14, 0xf, 0xf, 0xe, 0xe,
+	0xd, 0xd, 0xc, 0xc, 0xb, 0xb, 0xa, 0xa,
+	9, 9, 8, 8, 7, 7, 7, 7,
+	6, 6, 6, 6, 5, 5, 5, 5,
+	4, 4, 4, 4, 3, 3, 3, 3,
+	2, 2, 2, 2, 2, 2, 2, 2,
+	2, 2, 2, 2, 2, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 1,
+};
+// g_rva012D7958: matched references place it at VA 0xdb7228 (retail .data contents).
+int g_rva012D7958[64] = {
+	0xf, 0xf, 0xf, 0xf, 0xa, 0xa, 0xa, 0xa,
+	0xa, 0xa, 0xa, 0xa, 0xa, 9, 8, 8,
+	8, 8, 8, 8, 8, 8, 8, 8,
+	8, 7, 7, 7, 7, 7, 7, 7,
+	6, 6, 6, 6, 5, 5, 5, 5,
+	5, 4, 4, 4, 4, 4, 4, 3,
+	3, 3, 3, 3, 3, 2, 2, 2,
+	2, 2, 1, 1, 1, 0, 0, 0,
+};
+// g_rva012D7A58: matched references place it at VA 0xdb7328 (retail .data contents).
+int g_rva012D7A58[64] = {
+	0xf, 0xf, 0xf, 0xf, 0xa, 0xa, 0xa, 0xa,
+	0xa, 0xa, 0xa, 0xa, 0xa, 9, 8, 8,
+	8, 8, 8, 8, 8, 8, 8, 8,
+	8, 7, 7, 7, 7, 7, 7, 7,
+	6, 6, 6, 6, 5, 5, 5, 5,
+	5, 4, 4, 4, 4, 4, 4, 3,
+	3, 3, 3, 3, 3, 2, 2, 2,
+	2, 2, 1, 1, 1, 0, 0, 0,
+};
 
 void __cdecl Rva009A5AA0InstallFilter(void *firstTable, void *secondTable, void *sourceTable, int tier)
 {

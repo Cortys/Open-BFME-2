@@ -8,7 +8,10 @@ void bfmeInitD70(void*,void*);
 int Rva009A86F0Allocate(void*);
 int Rva009A8910Initialize(Rva009A8910Context*,int);
 void bfmeStepJW(void*);
-extern int g_Rva01142620[24];
+// g_Rva01142620: matched references place it at VA 0xbd8778 (retail .rdata contents).
+int g_Rva01142620[24] = {
+	-1, 0, 0, -1, -1, -1, -1, 1, -2, 0, 0, -2, -1, -2, -2, -1, -2, 1, -1, 2, -2, -2, -2, 2
+};
 struct CodecState {
     unsigned char pad0000[0x1a8];
     unsigned at01a8;

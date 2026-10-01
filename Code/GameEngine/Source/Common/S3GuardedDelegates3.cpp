@@ -55,8 +55,12 @@ struct FourWords { unsigned short a,b,c,d; };
 // Initializes the 16-bit codec spread table before the second-stage
 // installer.  These arrays are fixed retail data locations, represented as
 // externs so the normal relocation verifier can validate their operands.
-extern unsigned short Rva009B3A00Table[48];
-extern unsigned short Rva009B3A00Source[7];
+// Rva009B3A00Table: matched references place it at VA 0xe22980 (zero-filled).
+unsigned short Rva009B3A00Table[48] = { 0 };
+// Rva009B3A00Source: matched references place it at VA 0xdb8188 (retail .data contents).
+unsigned short Rva009B3A00Source[7] = {
+	0xfb15u, 0xec83u, 0xd4dbu, 0xb505u, 0x8e3au, 0x61f8u, 0x31f1u
+};
 
 void bfmeStep1_009A75E0(void)
 {

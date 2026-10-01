@@ -102,7 +102,11 @@ typedef char BfmeDynamicNativeVBSize[(sizeof(BfmeDynamicNativeVB)==32)?1:-1];
 extern bool bfmeDynamicVBInUse[15];
 extern BfmeDynamicNativeVB *bfmeDynamicVBs[15];
 extern unsigned short bfmeDynamicVBSizes[15],bfmeDynamicVBOffsets[15];
-extern unsigned bfmeDynamicFVFs[15];
+// bfmeDynamicFVFs: matched references place it at VA 0xbd2f04 (retail .rdata contents).
+unsigned bfmeDynamicFVFs[15] = {
+	2u, 0x12u, 0x112u, 0x212u, 0x152u, 0x252u, 0x142u, 0x242u,
+	0x102u, 0x202u, 0x540452u, 0xb0312u, 0x52u, 0x344u, 0x444u,
+};
 static bool bfmeSortingVBInUse;
 static BfmeDynamicSortingVB *bfmeSortingVB;
 static unsigned short bfmeSortingVBSize,bfmeSortingVBOffset;

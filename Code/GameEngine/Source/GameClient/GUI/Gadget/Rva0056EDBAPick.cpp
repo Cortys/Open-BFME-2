@@ -5,8 +5,14 @@
 // only way to emit 0F 31; the surrounding movs are plain C assignments.
 // Unlocks 0x0056F32B 0x0056F2A5.
 // Evidence: and [ebp-4]0 rdtsc mov [ebp-4]eax and-3 shl-2 two indexed loads.
-extern int g_Va00DD2A5C[4];
-extern int g_Va00DD2A6C[4];
+// g_Va00DD2A5C: matched references place it at VA 0xdd2a5c (retail .data contents).
+int g_Va00DD2A5C[4] = {
+	0x17c6e74f, 0x6e41c34f, 0x1a84b34f, -1103415473
+};
+// g_Va00DD2A6C: matched references place it at VA 0xdd2a6c (retail .data contents).
+int g_Va00DD2A6C[4] = {
+	0x5bc6af4b, 0x6a41934b, 0x5204e34b, -1430552757
+};
 void __cdecl Rva0056EDBAPick(int *out1, int *out2);
 void __cdecl Rva0056EDBAPick(int *out1, int *out2)
 {
@@ -19,8 +25,14 @@ void __cdecl Rva0056EDBAPick(int *out1, int *out2)
 	*out1 = g_Va00DD2A6C[i];
 	*out2 = g_Va00DD2A5C[i];
 }
-extern int g_Va00DD29BC[4];
-extern int g_Va00DD29CC[4];
+// g_Va00DD29BC: matched references place it at VA 0xdd29bc (retail .data contents).
+int g_Va00DD29BC[4] = {
+	-273905649, 0x9e6cf, -1157274225, 0x42b61c4f
+};
+// g_Va00DD29CC: matched references place it at VA 0xdd29cc (retail .data contents).
+int g_Va00DD29CC[4] = {
+	-1291022325, 0x48deecb, -1482610805, 0x4e9a144b
+};
 void __cdecl Rva0056ECDAPick(int *out1, int *out2);
 void __cdecl Rva0056ECDAPick(int *out1, int *out2)
 {
@@ -81,8 +93,14 @@ Rva0056EF65 *Rva0056EF65::rva0056EF65(void *a1, void *a2)
 	return this;
 }
 // ?Rva0056ED34Pick@@YAXPAH0@Z @0x0056ED34 44B gap between 0x0056ECDA and 0x0056EDBA
-extern int g_Va00DD29FC[4];
-extern int g_Va00DD2A0C[4];
+// g_Va00DD29FC: matched references place it at VA 0xdd29fc (retail .data contents).
+int g_Va00DD29FC[4] = {
+	0x5539048a, -660880950, -1441106294, -1412547510
+};
+// g_Va00DD2A0C: matched references place it at VA 0xdd2a0c (retail .data contents).
+int g_Va00DD2A0C[4] = {
+	0x119148b, -996441141, -1575606645, -203264949
+};
 void __cdecl Rva0056ED34Pick(int *out1, int *out2);
 void __cdecl Rva0056ED34Pick(int *out1, int *out2)
 {
@@ -95,8 +113,14 @@ void __cdecl Rva0056ED34Pick(int *out1, int *out2)
 	*out2 = g_Va00DD29FC[i];
 }
 // ?Rva0056ED60Pick@@YAXPAH0@Z @0x0056ED60 44B gap between 0x0056ED34 and 0x0056EDBA
-extern int g_Va00DD2A1C[4];
-extern int g_Va00DD2A2C[4];
+// g_Va00DD2A1C: matched references place it at VA 0xdd2a1c (retail .data contents).
+int g_Va00DD2A1C[4] = {
+	-1869448881, -384734897, -1223762673, 0x1d80d14f
+};
+// g_Va00DD2A2C: matched references place it at VA 0xdd2a2c (retail .data contents).
+int g_Va00DD2A2C[4] = {
+	-860474549, -451861685, -1548820725, 0x5d049b4b
+};
 void __cdecl Rva0056ED60Pick(int *out1, int *out2);
 void __cdecl Rva0056ED60Pick(int *out1, int *out2)
 {
@@ -109,8 +133,14 @@ void __cdecl Rva0056ED60Pick(int *out1, int *out2)
 	*out2 = g_Va00DD2A1C[i];
 }
 // ?Rva0056ED8CPick@@YAXPAH0@Z @0x0056ED8C 46B gap rdtsc pick
-extern int g_Va00DD2A3C[4];
-extern int g_Va00DD2A4C[4];
+// g_Va00DD2A3C: matched references place it at VA 0xdd2a3c (retail .data contents).
+int g_Va00DD2A3C[4] = {
+	-277978033, -1869448881, -384734897, -1223762673
+};
+// g_Va00DD2A4C: matched references place it at VA 0xdd2a4c (retail .data contents).
+int g_Va00DD2A4C[4] = {
+	-203264949, -860474549, -451861685, -1548820725
+};
 void __cdecl Rva0056ED8CPick(int *out1, int *out2);
 void __cdecl Rva0056ED8CPick(int *out1, int *out2)
 {
@@ -124,8 +154,14 @@ void __cdecl Rva0056ED8CPick(int *out1, int *out2)
 	*out2 = g_Va00DD2A3C[i];
 }
 // ?Rva0056EDE8Pick@@YAXPAH0@Z @0x0056EDE8 46B gap rdtsc pick
-extern int g_Va00DD2A7C[4];
-extern int g_Va00DD2A8C[4];
+// g_Va00DD2A7C: matched references place it at VA 0xdd2a7c (retail .data contents).
+int g_Va00DD2A7C[4] = {
+	0x34cbf74f, -273905649, 0x9e6cf, -1157274225
+};
+// g_Va00DD2A8C: matched references place it at VA 0xdd2a8c (retail .data contents).
+int g_Va00DD2A8C[4] = {
+	0x2443b54b, -1291022325, 0x48deecb, -1482610805
+};
 void __cdecl Rva0056EDE8Pick(int *out1, int *out2);
 void __cdecl Rva0056EDE8Pick(int *out1, int *out2)
 {

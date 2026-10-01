@@ -49,8 +49,10 @@ unsigned int Rva007FEA00Tick( void );                 // 0x007FEA00
 // the 0x10-byte buffer handed to the 'macx' selector, 0x0130A840 the fourteen
 // bytes of text written over it.  They are 0x10 apart, so the buffer is exactly
 // the size the call declares.
-extern unsigned char g_Rva0130A830Mac[ 0x10 ];
-extern char g_Rva0130A840Text[ 0x10 ];
+// g_Rva0130A830Mac: matched references place it at VA 0xe0a248 (zero-filled).
+unsigned char g_Rva0130A830Mac[0x10] = { 0 };
+// g_Rva0130A840Text: matched references place it at VA 0xe0a258 (zero-filled).
+char g_Rva0130A840Text[0x10] = { 0 };
 
 // "0123456789abcdef" at 0x0112B918, sixteen bytes with NO terminator -- the
 // next literal in .rdata starts immediately after it.  An extern is the only

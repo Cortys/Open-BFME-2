@@ -297,7 +297,8 @@ static DebugStackwalk::Signature g_exceptionStackSignature; // 0x00DE0E08
 // g_crashAttachments: matched references place it at VA 0xde0dec (retail .data initial value 0).
 CrashAttachment * g_crashAttachments = 0;
 extern unsigned g_debugTypedLogCount;                   // 0x00DE0DF0
-extern char g_crashMailerCommand[512];                   // 0x00DE1210
+// g_crashMailerCommand: matched references place it at VA 0xde1210 (zero-filled).
+char g_crashMailerCommand[512] = { 0 };
 extern unsigned char g_exceptionDialogTemplate[];        // 0x00DB35D0
 
 typedef int(__stdcall *IsDebuggerPresentProc)(void);

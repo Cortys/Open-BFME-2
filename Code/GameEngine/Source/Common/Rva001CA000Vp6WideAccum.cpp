@@ -13,9 +13,18 @@
 
 extern int *g_rva01356A9C;
 
-extern "C" unsigned char Vp6WideAccumConst86D0[8]; // retail VA 0x012D86D0
-extern "C" unsigned char Vp6WideAccumConst86E0[8]; // retail VA 0x012D86E0
-extern "C" unsigned char Vp6WideAccumConst86F0[8]; // retail VA 0x012D86F0
+// Vp6WideAccumConst86D0: matched references place it at VA 0xdb7fa0 (retail .data contents).
+extern "C" unsigned char Vp6WideAccumConst86D0[8] = {
+	4u, 0u, 4u, 0u, 4u, 0u, 4u, 0u
+};
+// Vp6WideAccumConst86E0: matched references place it at VA 0xdb7fb0 (retail .data contents).
+extern "C" unsigned char Vp6WideAccumConst86E0[8] = {
+	1u, 0u, 1u, 0u, 1u, 0u, 1u, 0u
+};
+// Vp6WideAccumConst86F0: matched references place it at VA 0xdb7fc0 (retail .data contents).
+extern "C" unsigned char Vp6WideAccumConst86F0[8] = {
+	0x80u, 0x80u, 0x80u, 0x80u, 0x80u, 0x80u, 0x80u, 0x80u
+};
 
 struct Rva009B9700Vp6Context
 {

@@ -11,7 +11,8 @@ struct BFME2TextureRef {
  ~BFME2TextureRef() { if(Ptr) Ptr->Release_Ref(); }
 };
 
-extern BFME2TextureResource* BFME2CurrentTextures[16];
+// BFME2CurrentTextures: matched references place it at VA 0xdee5e0 (zero-filled).
+BFME2TextureResource *BFME2CurrentTextures[16] = { 0 };
 extern unsigned BFME2RenderStateChanged;
 void BFME2Set_Texture(unsigned stage,const BFME2TextureRef& texture) {
  if(texture.Ptr==BFME2CurrentTextures[stage]) return;
