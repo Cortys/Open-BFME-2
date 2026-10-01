@@ -45001,3 +45001,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00394191@Rva00394191@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x00394191,108,Code/GameEngine/Source/Common/Rva00394191.cpp,matched,AICommandParms stack via rowed ctor plus m_pos copy plus slot0 plus inlined free per Rva00352ECA precedent
 ?Rva005C7889Init@@YAXXZ,,0x005C7889,64,Code/GameEngine/Source/Common/Rva005C7889Init.cpp,matched,EH guard plus ctor row plus atexit void init 8 callers
 ?rva00537190@UserPreferences@@QAEHVAsciiString@@H@Z,,0x00537190,120,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,gap UserPreferences format pct-s-d v6 slot-0x18 twin-getter
+?rva005372BD@UserPreferences@@QAEXH@Z,,0x005372BD,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,gap UserPreferences LoyalGames v11 slot-0x2C setter

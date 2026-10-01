@@ -247,6 +247,7 @@ public:
 	void rva00535A96(AsciiString arg, float x);
 	void rva00535781();
 	int rva00537190(AsciiString arg, int x);
+	void rva005372BD(int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -536,4 +537,10 @@ int UserPreferences::rva00537190(AsciiString arg, int x)
 	tmp.format("%s_%d", s, x);
 	int ret = v6(tmp, 0);
 	return ret;
+}
+
+void UserPreferences::rva005372BD(int x)
+{
+	AsciiString tmp("LoyalGames");
+	v11(tmp, x);
 }
