@@ -34,7 +34,7 @@ class UnicodeString : public StringBase<wchar_t>
 {
 public:
 	UnicodeString(const UnicodeString &);
-	__forceinline ~UnicodeString() { releaseBuffer(); }
+	~UnicodeString();
 };
 #include <vector>
 struct BfmeStringRecord005DDD40 {
@@ -43,6 +43,7 @@ struct BfmeStringRecord005DDD40 {
     BfmeStringRecord005DDD40();
     BfmeStringRecord005DDD40(const BfmeStringRecord005DDD40 &);
     BfmeStringRecord005DDD40 &operator=(const BfmeStringRecord005DDD40 &);
+    ~BfmeStringRecord005DDD40();
 };
 namespace _STL {
 template <> void _Construct<BfmeStringRecord005DDD40, BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40 *, const BfmeStringRecord005DDD40 &);
