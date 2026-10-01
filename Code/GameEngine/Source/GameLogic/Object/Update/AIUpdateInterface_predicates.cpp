@@ -6,6 +6,7 @@
 // ?rva00262DA3@AIUpdateInterface@@UBE_NXZ, retail 0x00262DA3, 8 bytes.
 // ?rva00262DAB@AIUpdateInterface@@UBE_NXZ, retail 0x00262DAB, 20 bytes.
 // ?rva00262DBF@AIUpdateInterface@@UBE_NXZ, retail 0x00262DBF, 20 bytes.
+// ?rva00262DD3@AIUpdateInterface@@QBE_NPBVObject@@@Z, retail 0x00262DD3, 81 bytes.
 
 struct Coord3D
 {
@@ -18,6 +19,8 @@ public:
 	char m_pad00[0x38];
 	Coord3D m_position; // +0x38
 	float m_angle; // +0x44
+	char m_pad48[0x74 - 0x48];
+	unsigned int m_id; // +0x74
 };
 
 class State
@@ -31,6 +34,8 @@ public:
 	virtual bool pred11() const;
 	virtual bool pred12() const;
 	virtual bool pred13() const;
+
+	int m_id; // +4
 };
 
 class StateMachine
@@ -43,6 +48,8 @@ public:
 	virtual bool pred12() const;
 
 	State *m_currentState; // +0x04
+	char m_pad08[0x50 - 8];
+	State *m_state50; // +0x50
 
 	bool isInPred9() const { return m_currentState ? m_currentState->pred9() : true; }
 	bool isInPred11() const { return m_currentState ? m_currentState->pred11() : true; }
@@ -88,7 +95,9 @@ class AIUpdateInterface : public AIUpdateInterfaceBase
 	char m_pad50[0x54 - 0x50];
 	int m_guardTargetType; // +0x54
 	Coord3D m_guardPos; // +0x58
-	char m_pad64[0x1A0 - 0x64];
+	char m_pad64[0x198 - 0x64];
+	unsigned int m_field198; // +0x198
+	unsigned int m_field19C; // +0x19C
 	float m_guardAngle; // +0x1A0
 public:
 	void rva00262D40(int mode);
@@ -97,6 +106,7 @@ public:
 	virtual bool rva00262DA3() const;
 	virtual bool rva00262DAB() const;
 	virtual bool rva00262DBF() const;
+	bool rva00262DD3(const Object *obj) const;
 };
 
 void AIUpdateInterface::rva00262D40(int mode)
@@ -135,4 +145,18 @@ bool AIUpdateInterface::rva00262DAB() const
 bool AIUpdateInterface::rva00262DBF() const
 {
 	return m_machine->isInPred12();
+}
+
+bool AIUpdateInterface::rva00262DD3(const Object *obj) const
+{
+	unsigned int id = obj->m_id;
+	int state = m_machine->m_state50 ? m_machine->m_state50->m_id : 0xF423F;
+	if (state == 0x1A || (m_machine->m_currentState ? m_machine->m_currentState->m_id : 0xF423F) == 0x1A)
+	{
+		if (m_field198 == id)
+			return true;
+		if (m_field19C == id)
+			return true;
+	}
+	return false;
 }
