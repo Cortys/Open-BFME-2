@@ -1,0 +1,53 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ??1Rva00414B40@@UAE@XZ, retail 0x00414B40, 73 bytes.
+// ModuleData-style dtor: vector<Rva00414BDBElement> at +0x10 via rowed 0x00414721,
+// restores Snapshot secondary vtable 0x00BBB554 at +0x0C, then base GameEngineDeletingBase 0x001B4E74.
+// Precedent Rva00414932Dtor (novtable Snapshot BBB554 plus vector); caller is ??_G at 0x00414B24.
+#include <vector>
+
+#include "ascii_string.h"
+
+struct Rva00414BDBElement { ~Rva00414BDBElement(); };
+
+class AsciiStringMember
+{
+public:
+	~AsciiStringMember();
+};
+
+class GameEngineDeletingBase
+{
+public:
+	virtual ~GameEngineDeletingBase();
+private:
+	char m_pad04[4];
+	AsciiStringMember m_member08;
+};
+
+class Xfer;
+class Snapshot
+{
+public:
+	virtual ~Snapshot();
+	virtual void crc(Xfer *xfer);
+	virtual void loadPostProcess();
+	virtual void xfer(Xfer *xfer);
+};
+extern const void *const g_00BBB554[];
+inline Snapshot::~Snapshot()
+{
+	*(const void **)this = g_00BBB554;
+}
+
+class __declspec(novtable) Rva00414B40 : public GameEngineDeletingBase, public Snapshot
+{
+public:
+	virtual ~Rva00414B40();
+private:
+	_STL::vector<Rva00414BDBElement, _STL::allocator<Rva00414BDBElement> > m_vec10;
+};
+
+Rva00414B40::~Rva00414B40()
+{
+}
