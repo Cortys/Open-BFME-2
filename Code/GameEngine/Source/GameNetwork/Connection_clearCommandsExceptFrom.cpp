@@ -2,6 +2,9 @@
 
 typedef int Int;
 
+// NetCommandRef's release body is the address-pinned, byte-identical node detach.
+#pragma comment(linker, "/alternatename:??1NetCommandRef@@QAE@XZ=?detach@NetCommandNode@@QAEXXZ")
+
 class NetCommandMsg
 {
 public:
