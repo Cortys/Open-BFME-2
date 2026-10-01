@@ -86,36 +86,4 @@ int basic_streambuf<char, char_traits<char> >::xsgetn(char_type *s, int n)
 	return result;
 }
 
-int basic_streambuf<char, char_traits<char> >::xsputn(const char_type *s, int n)
-{
-	int result = 0;
-	const int eofv = -1;
-
-	while (result < n)
-	{
-		BfmeFileBuf *put = _M_put;
-		int cnt = put->_cnt;
-		if (cnt > 0)
-		{
-			size_t chunk = (min)((size_t)(n - result), (size_t)cnt);
-			if (chunk != 0)
-				memcpy(put->_ptr, s, chunk);
-			result += (int)chunk;
-			s += chunk;
-			put = _M_put;
-			put->_ptr += chunk;
-			put->_cnt -= (int)chunk;
-		}
-		else
-		{
-			int_type c = overflow((unsigned char)*s);
-			if (c == eofv)
-				break;
-			++result;
-			++s;
-		}
-	}
-	return result;
-}
-
 } // namespace _STL
