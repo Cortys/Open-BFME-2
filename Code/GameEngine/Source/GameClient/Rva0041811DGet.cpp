@@ -38,7 +38,6 @@ public:
 	{
 		((StringBase<char> *)this)->StringBase<char>::StringBase(text);
 	}
-	~AsciiString() {}
 private:
 	char *m_text;
 };
