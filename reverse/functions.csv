@@ -46525,3 +46525,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0030A8EE@Rva0030A8EE@@QAEXPAVCoord3D@@@Z,,0x0030A8EE,62,Code/GameEngine/Source/Common/Thing/Rva0030A8EECopy.cpp,matched,unlock Coord3D build from this plus Normalize via 0x5A70
 ?Rva003BB556Set@@YGXABVAsciiString@@H@Z,,0x003BB556,64,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB556.cpp,matched,chain via 0x0031BE3C caller 0x003CBAEC globals 0xE01CFC 0xDBA4E8
 ??4Rva003B32E5@@QAEAAV0@ABV0@@Z,,0x003B32E5,57,Code/GameEngine/Source/Common/Rva003B32E5Assign.cpp,matched,copy-assign two ints AsciiString set plus tail bytes callers 0x3B7FE0 0x3B825F linkbody
+?rva0011604D@W3DBufferManager@@QAE_NXZ,,0x0011604D,198,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DBufferManagerRva0011604D.cpp,matched,W3DBufferManager create VB plus IB lists table 0xDB5F30 callers 0xF0A50 linkbody
