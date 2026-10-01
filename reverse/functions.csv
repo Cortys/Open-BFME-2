@@ -44991,3 +44991,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00238A61@Rva00238A61@@QAEXXZ,,0x00238A61,85,Code/GameEngine/Source/Common/Rva00238A61Volume.cpp,matched,rowed ctor getVolume Rva002E4272 dtor and g_Va00BCF628 via Rva0051847B precedent
 ?rva0023851C@Rva0023851C@@QAE?AVAsciiString@@XZ,,0x0023851C,100,Code/GameEngine/Source/Common/Rva0023851CFormat.cpp,matched,100B format four dwords via Rva0038901D precedent
 ??0Rva005C7792@@QAE@XZ,,0x005C7792,247,Code/GameEngine/Source/Common/Rva005C7792.cpp,matched,FX draw buffers ctor via new and rowed ShareBuffer ctors
+?bfmeFreeOneJT@@YAXPAX@Z,,0x001B6410,5,Code/GameEngine/Source/Common/BfmeFreeOneJT.cpp,matched,tail jump to rowed bfmeTwoBZB 0x001B63A0
