@@ -142,6 +142,8 @@ extern class InGameUI *InGameUISubsystem;
 extern class Mouse *MouseSubsystem;
 extern ClientSubsystem *AudioSubsystem;
 extern NetworkInterface *TheNetwork;
+// TheNetwork: matched references place it at VA 0xdfea28 (zero-filled .bss).
+NetworkInterface * TheNetwork;
 extern int SkippedClientFrames;
 // SkippedClientFrames: matched references place it at VA 0xdfe6f0 (zero-filled .bss).
 int SkippedClientFrames;

@@ -233,6 +233,8 @@ public:
 };
 
 extern GameInfo *TheGameInfo;
+// TheGameInfo: matched references place it at VA 0xe02eec (zero-filled .bss).
+GameInfo * TheGameInfo;
 extern NameKeyGenerator *TheNameKeyGenerator;
 extern PlayerList *ThePlayerList;
 extern InGameUI *TheInGameUI;

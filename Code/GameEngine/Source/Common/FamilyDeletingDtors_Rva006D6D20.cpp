@@ -10,6 +10,8 @@ public:
 };
 
 extern Rva006DB270 *g_pChainBlockAllocator; // 0x00E176E8
+// g_pChainBlockAllocator: matched references place it at VA 0xe176e8 (zero-filled .bss).
+Rva006DB270 * g_pChainBlockAllocator;
 
 class Rva006D6D20
 {

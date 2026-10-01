@@ -210,6 +210,8 @@ public:
 };
 
 extern GameSpyInfoInterface *TheGameSpyInfo;
+// TheGameSpyInfo: matched references place it at VA 0xe02320 (zero-filled .bss).
+GameSpyInfoInterface * TheGameSpyInfo;
 
 Int sumOnlineMiscPrefs(Int profileIndex);
 

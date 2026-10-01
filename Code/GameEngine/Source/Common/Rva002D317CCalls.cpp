@@ -35,6 +35,8 @@ public:
 };
 
 extern Radar *TheRadar;
+// TheRadar: matched references place it at VA 0xdff070 (zero-filled .bss).
+Radar * TheRadar;
 
 class Rva002D317C
 {

@@ -76,6 +76,8 @@ extern Rva00432F23 *g_004CA05AContainer;
 
 class AudioManager;
 extern AudioManager *TheAudio;
+// TheAudio: matched references place it at VA 0xdfe6e8 (zero-filled .bss).
+AudioManager * TheAudio;
 
 class AnimationSoundClientBehavior : public Rva00252B68
 {

@@ -29,6 +29,8 @@ public:
 };
 
 extern DisplayStringManager *TheDisplayStringManager;
+// TheDisplayStringManager: matched references place it at VA 0xdfead8 (zero-filled .bss).
+DisplayStringManager * TheDisplayStringManager;
 
 class Rva004E5821 {
 	int m_00;

@@ -31,6 +31,8 @@ public:
 	Rva005A0B4CList list;
 };
 extern Rva002BA8F1Logic *g_009FEF10;
+// g_009FEF10: matched references place it at VA 0xdfef10 (zero-filled .bss).
+Rva002BA8F1Logic * g_009FEF10;
 class Rva0042D8D4
 {
 public:

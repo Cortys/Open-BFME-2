@@ -241,6 +241,8 @@ int Rva0044C5C1Get(void)
 }
 
 extern int g_Va00DBA4E4;
+// g_Va00DBA4E4: matched references place it at VA 0xdba4e4 (retail .data initial value 5).
+int g_Va00DBA4E4 = 5;
 
 // ?Rva004B879DGet@@YAHXZ @ 0x004b879d (6B) over 0x00DBA4E4.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,

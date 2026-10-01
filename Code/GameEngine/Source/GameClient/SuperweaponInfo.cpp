@@ -86,6 +86,8 @@ public:
 
 extern DisplayStringManager *TheDisplayStringManager;
 extern GlobalLanguage *TheGlobalLanguageData;
+// TheGlobalLanguageData: matched references place it at VA 0xdfdc84 (zero-filled .bss).
+GlobalLanguage * TheGlobalLanguageData;
 extern FontLibrary *TheFontLibrary;
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameClient/InGameUI.h

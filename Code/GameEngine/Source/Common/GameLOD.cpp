@@ -527,6 +527,8 @@ public:
 };
 
 extern Shell *TheShell;
+// TheShell: matched references place it at VA 0xe01e48 (zero-filled .bss).
+Shell * TheShell;
 
 // ?setStaticLODLevel@GameLODManager@@QAE_NW4StaticGameLODLevel@@@Z
 // ?setStaticLODLevel@GameLODManager@@QAE_NW4StaticGameLODLevel@@@Z present-unmatched

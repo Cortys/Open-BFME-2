@@ -132,6 +132,8 @@ public:
 };
 
 extern DX8MeshRendererClass *TheDX8MeshRenderer;
+// TheDX8MeshRenderer: matched references place it at VA 0xdf363c (zero-filled .bss).
+DX8MeshRendererClass * TheDX8MeshRenderer;
 
 class DX8TextureCategoryClass : public MultiListObjectClass
 {

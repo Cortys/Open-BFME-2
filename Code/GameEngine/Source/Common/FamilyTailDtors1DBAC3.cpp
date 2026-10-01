@@ -238,6 +238,8 @@ public:
 };
 
 extern ImageCollection *TheMappedImageCollection;
+// TheMappedImageCollection: matched references place it at VA 0xdff078 (zero-filled .bss).
+ImageCollection * TheMappedImageCollection;
 
 class Transition
 {
