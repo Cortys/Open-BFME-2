@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/bfme2_ascii
+// cl: /O1 /MD /EHs /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/bfme2_ascii
 // stlport
 //
 // ??0Rva00403055@@QAE@ABV0@@Z retail 0x00403055 97B.
@@ -17,18 +17,29 @@
 
 #include "ascii_string.h"
 
+class PoolMember
+{
+public:
+	void Rva0050ED3();
+};
+
 class Rva0036CA00Str
 {
-	void *m_item;
+	PoolMember *m_item;
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
-	~Rva0036CA00Str();
+	~Rva0036CA00Str()
+	{
+		if (m_item)
+			m_item->Rva0050ED3();
+	}
 };
 
 class Rva00402F28Item
 {
 public:
 	Rva00402F28Item(const Rva00402F28Item &other);
+	~Rva00402F28Item();
 private:
 	char m_bytes[0x5C];
 };
@@ -37,6 +48,7 @@ class Rva00403055
 {
 public:
 	Rva00403055(const Rva00403055 &other);
+	~Rva00403055();
 	void clearItems();
 	void copyItems(const Rva00403055 &other);
 
@@ -61,4 +73,18 @@ void Rva00403055::copyItems(const Rva00403055 &other)
 	_STL::vector<Rva00402F28Item *>::const_iterator end = other.m_items.end();
 	for (; it != end; ++it)
 		m_items.push_back(new Rva00402F28Item(**it));
+}
+
+Rva00403055::~Rva00403055()
+{
+	clearItems();
+}
+
+void Rva00403055::clearItems()
+{
+	_STL::vector<Rva00402F28Item *>::iterator it = m_items.begin();
+	_STL::vector<Rva00402F28Item *>::iterator end = m_items.end();
+	for (; it != end; ++it)
+		delete *it;
+	m_items.clear();
 }

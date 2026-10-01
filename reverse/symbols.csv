@@ -6744,3 +6744,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?reserve@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEXI@Z,0x002B712E,address read from the REL32 displacement at byte-matched body 0x00402FD8
 ??0Rva00402F28Item@@QAE@ABV0@@Z,0x00402F28,address read from the REL32 displacement at byte-matched body 0x00402FD8
 ?push_back@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEXABQAVRva00402F28Item@@@Z,0x004DFCB0,address read from the REL32 displacement at byte-matched body 0x00402FD8
+??1Rva00402F28Item@@QAE@XZ,0x00402F23,address read from the REL32 displacement at byte-matched body 0x00402C4E
+?erase@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEPAPAVRva00402F28Item@@PAPAV3@0@Z,0x0031BD55,address read from the REL32 displacement at byte-matched body 0x00402C4E
