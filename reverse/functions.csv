@@ -45426,3 +45426,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0058DFB8@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DFB8,143,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DFB8.cpp,matched,unlock sibling 0x0058E047 new-0x24 Rva004D580E memcpy-1-4 dup setters
 ?rva0058DCEB@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DCEB,158,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DCEB.cpp,matched,unlock sibling 0x0058E047 new-0x28 Rva004CEEC3 triple memcpy-4
 ?rva0058DEC5@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DEC5,50,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DEC5.cpp,matched,unlock sibling 0x0058E047 new-0x1c KeepAlive no fields
+?rva0058DEF7@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DEF7,50,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DEF7.cpp,matched,unlock sibling 0x0058DEC5 new-0x1c DisconnectKeepAlive no fields
