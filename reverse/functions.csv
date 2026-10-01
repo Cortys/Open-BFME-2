@@ -46651,3 +46651,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00262EFF@AIUpdateInterface@@UAEXPAX00@Z,,0x00262EFF,26,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot71 m_obj ptr250 vslot42 call with 0
 ?onObjectCreated@AIUpdateInterface@@UAEXXZ,,0x002632EE,46,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,creates state machine and initializes default state
 ?rva004AE988@Rva004AE988@@QAEXXZ,,0x004AE988,114,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004AE988.cpp,matched,chain via 0x001E431E random pick plus wake
+?Rva003BB49BDestroy@@YGXPAVParameter@@@Z,,0x003BB49B,34,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB49B.cpp,matched,leaf getUnitNamed then destroyObject
