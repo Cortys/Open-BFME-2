@@ -45151,3 +45151,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva002043F5Get@@YGPAVParticleSystemTemplate@@PBD@Z,,0x002043F5,72,Code/GameEngine/Source/GameClient/System/Rva002043F5Find.cpp,matched,wrapper AsciiString then ParticleSystemManager findTemplate via global
 ?rva002B2EA0@Rva002B2EA0@@QAEXXZ,,0x002B2EA0,39,Code/GameEngine/Source/Common/Rva002B2EA0Release.cpp,matched,caller 0x002B7529 lea ecx plus 8 thiscall virtual slot0 with 2 prefix delete
 ?rva002B2F49@Rva002B2F49@@QAEPAXI@Z,,0x002B2F49,40,Code/GameEngine/Source/Common/Rva002B2F49Release.cpp,matched,caller flag ret4 thiscall embedded TargetRef plus0xAC via 0x7DEEF
+?rva002B2EC7@Rva002B2EC7@@QAEXPAUItem002B2EC7@@@Z,,0x002B2EC7,57,Code/GameEngine/Source/Common/Rva002B2EC7Set.cpp,matched,setter same release as 0x002B2EA0 then store new ret4
