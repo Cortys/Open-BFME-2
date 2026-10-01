@@ -45948,3 +45948,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001DBE51@Rva001DBDA4@@QAEXXZ,,0x001DBE51,29,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,applies rva001DBB33 to every element; same TU as its callee
 ?Rva000A8C2BInit@@YGXPAVRva000A8C2BObj@@PAH@Z,,0x000A8C2B,67,Code/GameEngine/Source/Common/Rva000A8C2BFunc.cpp,matched,vtable slots 0x28 0x70 0x7C caller 0x0005B351
 ?rva000A8B6D@Rva000A8B6D@@QAEXXZ,,0x000A8B6D,12,Code/GameEngine/Source/Common/Rva000A8B6DFunc.cpp,matched,null-guarded forward to rowed wait via caller ecx pattern
+?rva000A8A98@Rva000A8A98@@QAEHXZ,,0x000A8A98,14,Code/GameEngine/Source/Common/Rva000A8A98Func.cpp,matched,null-guarded plus20 deref else plus04 fallback unlock
