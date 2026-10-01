@@ -171,7 +171,7 @@ __forceinline _MoneyOut __money_copy_symbol(
     const _MoneySignPolicy& policy) {
   return __copy(first, last, out, policy, (ptrdiff_t*)0);
 }
-template <> _MoneyOut money_put<char, _MoneyOut>::do_put(
+template <> inline _MoneyOut money_put<char, _MoneyOut>::do_put(
     _MoneyOut __s, bool __intl, ios_base& __str,
     char_type __fill, const string_type& __digits) const
 {
@@ -349,4 +349,23 @@ template <> _MoneyOut money_put<char, _MoneyOut>::do_put(
 
   return __s;
 }
+
+// do_put is a header inline in STLport (another unit emits a select-any
+// copy), so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+struct bfmeNarrowMoneyPutEmitter : money_put<char, _MoneyOut>
+{
+	static void emit(const bfmeNarrowMoneyPutEmitter *p, _MoneyOut a, bool b, ios_base &s,
+		char f, const string &d);
+};
+#pragma inline_depth(0)
+// ?emit@bfmeNarrowMoneyPutEmitter@_STL@@SAXPBU12@V?$ostreambuf_iterator@DV?$char_traits@D@_STL@@@2@_NAAVios_base@2@DABV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@2@@Z present-unmatched
+void bfmeNarrowMoneyPutEmitter::emit(const bfmeNarrowMoneyPutEmitter *p, _MoneyOut a, bool b, ios_base &s,
+	char f, const string &d)
+{
+	p->money_put<char, _MoneyOut>::do_put(a, b, s, f, d);
+}
+#pragma inline_depth()
+
 }
