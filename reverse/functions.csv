@@ -46099,3 +46099,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva00421764@@QAE@PBXH0@Z,,0x00421764,49,Code/GameEngine/Source/Common/Rva00421764Init.cpp,matched,ctor init list floats-first unlock caller 0x0042513A
 ?rva004233F5@Rva004233F5@@QAEHPAURva00422544List@@M@Z,,0x004233F5,144,Code/GameEngine/Source/Common/Rva004233F5Lookup.cpp,matched,deque lower_bound lookup; assignment and end() comparison in one full expression give the three-slot frame
 ?Rva0055CE92Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABUVec001F8810@@@Z,,0x0055CE92,24,Code/GameEngine/Source/GameClient/FXParticleSystemVecWrite.cpp,matched,chain via 0x001F89E2 conditional Vec write skipping zero
+?rva0055CD70@Rva0055CD70@@QAEXMMM@Z,,0x0055CD70,124,Code/GameEngine/Source/GameClient/FXParticleSystemLineDraw.cpp,matched,vslot slot4 Line info two points plus xyz to TacticalView slot11
