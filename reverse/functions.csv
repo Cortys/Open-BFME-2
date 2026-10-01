@@ -46316,3 +46316,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002ABAA6@Player@@QAEXXZ,,0x002ABAA6,13,Code/GameEngine/Source/Common/RTS/PlayerRva002ABAA6.cpp,matched,Player ecx pass-through to iterateObjects
 ??$_Construct@VRva0021F876@@V1@@_STL@@YAXPAVRva0021F876@@ABV1@@Z,,0x0021FA1A,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructEhSiblings.cpp,matched,EH-framed placement copy calling the defined Rva0021F876 copy ctor
 ??$_Construct@URva002B72C9@@U1@@_STL@@YAXPAURva002B72C9@@ABU1@@Z,,0x002B8226,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructEhSiblings.cpp,matched,EH-framed placement copy calling the defined Rva002B72C9 copy ctor
+?Rva003E514FCheck@@YG_NPAVParameter@@PAUCondA003E514F@@PAUCondB003E514F@@@Z,,0x003E514F,138,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E514F.cpp,matched,leaf via rowed getUnitNamed plus op switch plus late boolize
