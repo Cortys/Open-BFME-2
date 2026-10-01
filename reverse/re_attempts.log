@@ -5250,3 +5250,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva002AAD52Find@@YAXPAPAXPAX1PAG@Z	0x002AAD52	37	blocked	37B stash has eax-ecx swap exact size structure plus order swap to k-first loses initial cmp je for jmp 34B wall t=8 model=muse-06
 ?Rva002AA41A@@YAHPAVObject@@PAX@Z	0x002AA41A	64	blocked	fstp plus extra fld vs fst single fld plus jae vs jbe same as stash no improvement t=8 model=muse-06 (stash 0.93 kept)
 ?rva00273C47@Drawable@@QAEXXZ	0x00273C47	392	blocked	28 vs 392B stub only early find part full Drawable update with 10plus virtuals plus SSE plus 2 globals needs full donor plus time exceeds box t=8 model=muse-06
+?rva00473ADF@Rva00473ADF@@QAEXXZ	0x00473ADF	87	blocked	extra mov second via eax then edi vs direct edi t=15 model=muse-02 (stash 0.93 kept)
+?rva0029D948@Rva0029D948@@QAEPAVRva0043FC20@@PAV2@@Z	0x0029D948	130	blocked	EH frame with StringBase copy and placement null check differs t=18 model=muse-02
+?rva0029D8C6@Rva0029D8C6@@QAEPAVRva0043FC20@@PAV2@@Z	0x0029D8C6	130	blocked	same shared wall as 0x0029D948 placement null check plus EH frame t=5 model=muse-02

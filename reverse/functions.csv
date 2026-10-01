@@ -46764,3 +46764,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ??0FreelistPool@@QAE@HHHHHH@Z,,0x001EB1CB,67,Code/GameEngine/Source/GameLogic/Object/Update/FreelistPoolCtor.cpp,matched,FreelistPool ctor via defaults plus init 0x002AA35C chain
 ?rva00273648@Drawable@@QAEXPAX@Z,,0x00273648,34,Code/GameEngine/Source/GameClient/Drawable_rva00273648.cpp,matched,Drawable module walk at 0x14c calling slot 0xEC callers 0x00275F24
 ?rva00273686@Drawable@@QAEXPAX@Z,,0x00273686,34,Code/GameEngine/Source/GameClient/Drawable_rva00273648.cpp,matched,Drawable module walk at 0x14c calling slot 0xE8 sibling of 0x00273648
+?rva0029D30A@Rva0029D30A@@QAEXXZ,,0x0029D30A,72,Code/GameEngine/Source/GameClient/Rva0029D30AClear.cpp,matched,InGameUI list clearer via rowed erase and delete
