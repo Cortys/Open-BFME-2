@@ -45421,3 +45421,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0HordeContainModuleData@@QAE@XZ,,0x00475C9A,492,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainModuleDataCtor.cpp,matched,vtable 0x00C457B0 INI 0x00C45530 donor BFME1 HordeUpdate plus Production precedent
 ?rva001FA48D@Rva001FA48D@@QAEXXZ,,0x001FA48D,23,Code/GameEngine/Source/Common/Thing/Rva001FA48D.cpp,matched,chain via rowed 0x001F93EB null-checked virtual slot plus4 then tail-jmp
 ?rva001FA4A4@Rva001FA4A4@@QAEXH@Z,,0x001FA4A4,34,Code/GameEngine/Source/Common/Thing/Rva001FA4A4.cpp,matched,chain via rowed 0x001F9402 null-checked slot C with int then forward
+?rva001FA795@Rva001FA795@@QAEXXZ,,0x001FA795,23,Code/GameEngine/Source/Common/Thing/Rva001FA795.cpp,matched,chain via rowed 0x001FA48D null-checked virtual slot plus4 then tail-jmp
