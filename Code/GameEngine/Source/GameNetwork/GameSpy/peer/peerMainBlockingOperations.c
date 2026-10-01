@@ -1830,7 +1830,6 @@ void Rva0069A130JoinServer(PEER peer, void *server, const char *password,
     Rva00699F20Join(peer, server, 0, password, callback, param, blocking);
 }
 
-// _Rva0069A160JoinChannel present-unmatched
 void Rva0069A160JoinChannel(PEER peer, const char *channel, const char *password,
     void *callback, void *param, int blocking)
 {
