@@ -45360,3 +45360,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00475EA2@Rva00475EA2@@QAEXXZ,,0x00475EA2,136,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00475EA2.cpp,matched,chain list plus RB map via TheGameLogic plus pool clear
 ?rva0039834C@Rva0039834C@@QAEXAAPAURvaNode0039834C@@PAU2@1PBURva0039627D@@1@Z,,0x0039834C,136,Code/GameEngine/Source/Common/System/Rva0039834CInsert.cpp,matched,chain lane calls twin alloc 0x00397CC9 plus Rebalance plus signed key
 ?Rva00396260Copy@@YAPAVRva0039597C@@PAV1@00PAX@Z,,0x00396260,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00396260Copy.cpp,matched,unlock wrapper over rowed 0x00395D45 copy via twin 5-arg decl plus local byte and 0
+?rva003997CD@Rva00399800@@QAEPAVRva0039597C@@PAV2@0@Z,,0x003997CD,51,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003997CDErase.cpp,matched,chain erase shift via rowed copy 0x00396260 plus Destroy 0x00399336 Oy- frame
