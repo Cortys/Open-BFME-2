@@ -1868,3 +1868,39 @@ void Rva0069A960RoomGlobalKeys(PEER peer, int roomType, int num,
             peerShutdown(peer);
     }
 }
+
+int piNewAuthenticateCDKeyOperation(PEER peer, const char *cdkey,
+    void *callback, void *param, int opID);
+void piAddAuthenticateCDKeyCallback(PEER peer, int result,
+    const char *message, void *callback, void *param, int opID);
+
+// Same BFME1 revision, peerAuthenticateCDKey. Target identity is supported
+// by the rowed CD-key operation/callback and the checked error literal.
+// Extent is 146 bytes: ret at 0x00699C41, then int3 padding. The older
+// 144-byte banked attempt truncated this boundary.
+void peerAuthenticateCDKey(PEER peer, const char *cdkey, void *callback,
+    void *param, int blocking)
+{
+    piConnection *connection = (piConnection *)peer;
+    int success = 1;
+    int opID = piGetNextID(peer);
+
+    if (!piNewAuthenticateCDKeyOperation(peer, cdkey, callback, param, opID))
+        success = 0;
+    if (!success)
+        piAddAuthenticateCDKeyCallback(peer, 0,
+            "Error starting CD Key check", callback, param, opID);
+
+    if (blocking)
+    {
+        do
+        {
+            msleep(1);
+            piThink(peer, opID);
+        }
+        while (!PeerOperationsComplete(peer, opID) || !piIsCallbackFinished(peer, opID));
+
+        if (connection->shutdown && connection->callbackDepth == 0)
+            peerShutdown(peer);
+    }
+}
