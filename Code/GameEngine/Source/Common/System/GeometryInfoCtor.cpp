@@ -12,6 +12,8 @@
 
 #include <vector>
 
+extern "C" float INV;
+
 typedef bool Bool;
 typedef float Real;
 
@@ -64,6 +66,7 @@ public:
 class GeometryInfo : public Snapshot
 {
 public:
+	GeometryInfo();
 	GeometryInfo(GeometryType type, Bool isSmall, Real height,
 		Real majorRadius, Real minorRadius);
 	void set(GeometryType type, Bool isSmall, Real height,
@@ -105,4 +108,12 @@ GeometryInfo::GeometryInfo(GeometryType type, Bool isSmall, Real height,
 	m_cached54 = 0;
 	m_cached58 = 0;
 	records->erase(records->begin(), records->end());
+}
+
+GeometryInfo::GeometryInfo()
+{
+	Real dim = *(volatile Real *)&INV;
+	m_scalar08 = 0;
+	m_scalar0c = 0;
+	set(GEOMETRY_SPHERE, true, dim, dim, dim);
 }
