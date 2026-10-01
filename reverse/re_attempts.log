@@ -5095,3 +5095,5 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva0029041B@Object@@QAEXPAVPlayer@@@Z	0x0029041B	123	blocked	mov-shr-test-al-1-vs-test-byte-mem-for-186-301-tried-test-locals-volatile-O2 t=18 model=muse-11 (stash 0.93 kept)
 ?Rva001C5D20Find@@YAXPAURva001C5D20Ctx@@HHEPAH@Z	0x001C5D20	265	blocked	complex-codec-265B-prologue-register-wall-no-progress t=12 model=muse-11
 ?rva003AFA0B@Rva003AFA0B@@QAEXPAVCoord3D@@PAX0M1@Z	0x003AFA0B	89	blocked	xmm rotation yzx vs xyz 9 mem operands size-exact 25ins t=3 model=muse-06 (stash 0.9 kept)
+?Rva003E5587Check@@YG_NPAVParameter@@PAUCondA003E5587@@PAUCondB003E5587@@@Z	0x003E5587	318	blocked	complex float virtual body with 19 regions t=20 model=muse-03
+?Rva003E5C04Check@@YG_NPAVParameter@@PAUCondA003E5C04@@PAUCondB003E5C04@@@Z	0x003E5C04	173	blocked	r-in-edi-vs-esi plus local-xor-jmp-vs-shared-je t=15 model=muse-03 (stash 0.97 kept)

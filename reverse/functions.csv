@@ -46348,3 +46348,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva001FA507@Rva001FA507@@QAEXH@Z,,0x001FA507,34,Code/GameEngine/Source/Common/Thing/Rva001FA507.cpp,matched,chain via rowed 0x001F9465 null-checked slot3 plus rowed call
 ?rva005CCB90@Rva005CCB90@@QAEXPBX@Z,,0x005CCB90,24,Code/GameEngine/Source/Common/Rva005CCB90Copy.cpp,matched,no calls copies 12B then sets flag
 ?rva004ECE61@Rva004ECE61@@QAE_NPAXH@Z,,0x004ECE61,50,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECE61.cpp,matched,slot3 callers forwarding rowed GetGameLogicRandomValue
+??_GRva003E3C39@@UAEPAXI@Z,,0x003E54F7,28,Code/GameEngine/Source/Common/Rva003E3C39Dtor.cpp,matched,vtable 0x00835B34 slot0 calls rowed ??1 and delete
