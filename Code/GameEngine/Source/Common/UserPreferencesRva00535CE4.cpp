@@ -283,6 +283,7 @@ public:
 	void rva00536A1D(AsciiString arg, int x);
 	int rva00536A64(AsciiString arg);
 	void rva00536AAE(AsciiString arg, int x);
+	int rva00536AF5(AsciiString arg);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -887,4 +888,14 @@ void UserPreferences::rva00536AAE(AsciiString arg, int x)
 {
 	arg.concat("StructuresKilledNonRTS");
 	v11(arg, x);
+}
+
+// ?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z @0x00536AF5 74B
+// UserPreferences StructuresKilledNonRTS-getter path: append StructuresKilledNonRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536AF5(AsciiString arg)
+{
+	arg.concat("StructuresKilledNonRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
