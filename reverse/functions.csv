@@ -46074,3 +46074,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva004E5A24@@QAE@XZ,,0x004E5A24,84,Code/GameEngine/Source/Common/Bfme/Rva004E5A24Ctor.cpp,matched,ctor via baseConstruct and vector base with vtable and floats per retail and caller
 ?Rva0028C5CCGet@@YAPAVRva0028C5CC@@PAV1@PAD@Z,,0x0028C5CC,95,Code/Libraries/Source/WWVegas/WWLib/Rva0028C5CCGet.cpp,matched,same 95B shape as rowed Rva002DBD05Get plus rowed bfmeFormatText plus pin CxxThrow
 ?rva0028C58B@Rva0028C58B@@QAEPAV1@XZ,,0x0028C58B,20,Code/Libraries/Source/WWVegas/WWLib/Rva0028C58B.cpp,matched,memset this 0x14 via rowed memset thunk plus caller 0x0029915A
+?Rva004DF8D8Test@@YA_NPBUVec2@@00MMMM@Z,,0x004DF8D8,133,Code/GameEngine/Source/Common/Rva004DF8D8Test.cpp,matched,EBP-frame SSE dot cross sum-squared test plus caller 0x0028F38A
