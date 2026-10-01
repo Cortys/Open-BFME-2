@@ -166,22 +166,7 @@ static char *VideoNames[] =
 	"XX","V2","V3","V4","V5","TNT","TNT2","GF2","R100","PS11","GF3","GF4","PS14","R200","PS20","R300", NULL
 };
 
-void parseReallyLowMHz(INI* ini)
-{
-	// BFME GameLODManager layout: m_reallyLowMHz @ +0x1734 (ZH header has it @ +0xa60).
-	// Local retail view keeps this leaf matchable without a class-wide layout rewrite.
-	struct RetailGameLODManager
-	{
-		char m_pad[0x1734];
-		Int m_reallyLowMHz;
-	};
-	Int mhz;
-	INI::parseInt(ini,NULL,&mhz,NULL);
-	if (TheGameLODManager)
-	{
-		reinterpret_cast<RetailGameLODManager *>(TheGameLODManager)->m_reallyLowMHz = mhz;
-	}
-}
+// parseReallyLowMHz lives in GameLODMHzParsers.cpp with the verified BFME 2 offset.
 
 void parseAudioLowMHz(INI* ini)
 {
