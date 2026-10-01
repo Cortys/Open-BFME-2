@@ -14,6 +14,7 @@ typedef unsigned int UnsignedInt;
 typedef int Int;
 typedef int Color;
 class GameFont;
+class WinInstanceData;
 
 class GameWindow
 {
@@ -31,22 +32,31 @@ public:
 	Color winGetHiliteTextColor(void);
 	Color winGetHiliteTextBorderColor(void);
 	GameFont *winGetFont(void);
+	WinInstanceData *winGetInstanceData(void);
+	GameWindow *winGetNext(void);
+	GameWindow *winGetOwner(void);
 
 private:
 	char m_pad00[0x08];
 	UnsignedInt m_status;	// +0x08
 	char m_pad0C[0x20];
 	void *m_userData;		// +0x2C
-	char m_pad30[0x04];
+	// m_instData (WinInstanceData) begins at +0x30; the id, style and owner
+	// below are its fields.
+	char m_instData30[0x04];
 	Int m_id;				// +0x34
 	char m_pad38[0x04];
 	UnsignedInt m_style;	// +0x3C
-	char m_pad40[0x14C];
+	char m_pad40[0x04];
+	GameWindow *m_owner;	// +0x44
+	char m_pad48[0x144];
 	Color m_textColor[6];	// +0x18C enabled, enabled border, disabled,
 							//        disabled border, hilite, hilite border
 	char m_pad1A4[0x10];
 	GameFont *m_font;		// +0x1B4
-	char m_pad1B8[0x48];
+	char m_pad1B8[0x40];
+	GameWindow *m_next;		// +0x1F8
+	GameWindow *m_prev;		// +0x1FC
 	GameWindow *m_parent;	// +0x200
 	GameWindow *m_child;	// +0x204
 };
@@ -91,3 +101,11 @@ Color GameWindow::winGetDisabledTextBorderColor(void) { return m_textColor[3]; }
 Color GameWindow::winGetHiliteTextColor(void) { return m_textColor[4]; }
 Color GameWindow::winGetHiliteTextBorderColor(void) { return m_textColor[5]; }
 GameFont *GameWindow::winGetFont(void) { return m_font; }
+
+// winGetInstanceData (0x00314046, lea +0x30), winGetNext (0x003140F1,
+// +0x1F8, just before m_prev/m_parent/m_child as in Zero Hour) and
+// winGetOwner (0x005C4AF9, +0x44): pinned by their callers at one-instruction
+// getters retail folded with identical rowed ones.
+WinInstanceData *GameWindow::winGetInstanceData(void) { return reinterpret_cast<WinInstanceData *>(m_instData30); }
+GameWindow *GameWindow::winGetNext(void) { return m_next; }
+GameWindow *GameWindow::winGetOwner(void) { return m_owner; }

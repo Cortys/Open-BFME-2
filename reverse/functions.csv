@@ -45625,3 +45625,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?getDrawable@Thing@@QBEPAVDrawable@@XZ,,0x005508E2,7,Code/GameEngine/Source/Common/Thing/ThingGetDrawable.cpp,matched,
 ?getCommandCount@FrameData@@QAEIXZ,,0x005801F2,4,Code/GameEngine/Source/GameNetwork/FrameDataGetters.cpp,matched,
 ?getCommandList@FrameData@@QAEPAVNetCommandList@@XZ,,0x0030F45F,4,Code/GameEngine/Source/GameNetwork/FrameDataGetters.cpp,matched,
+?winGetInstanceData@GameWindow@@QAEPAVWinInstanceData@@XZ,,0x00314046,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?winGetNext@GameWindow@@QAEPAV1@XZ,,0x003140F1,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?winGetOwner@GameWindow@@QAEPAV1@XZ,,0x005C4AF9,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
