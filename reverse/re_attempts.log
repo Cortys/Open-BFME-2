@@ -5010,3 +5010,8 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva0018C4A9@Rva0018C262@@QAEPAURva0018C4A9Pair@@PAU2@ABF@Z	0x0018C4A9	138	blocked	insert_unique logic matches but tmp reuses param slot and header in ecx vs eax and single call needs tail merge t=20 model=muse-10
 ?Rva0018C131Blocked@@YAXXZ	0x0018C131	305	blocked	free function with 3 virtual calls plus large 0x224 stack array plus 4 args needs unknown vtable layouts and donor t=5 model=muse-10
 ?Rva004E697DBlocked@@YAXXZ	0x004E697D	132	blocked	free function with EH plus AsciiString float plus 8-arg invoke plus 0x224 array needs unknown layouts t=8 model=muse-10
+?Rva001E40D9Get@@YGMMM@Z	0x001E40D9	89	blocked	movss-at-0x32-vs-0x2f-plus-fld-out-vs-fld-y tried plain drops store barrier drops store volatile-load gives int mov t=15 model=muse-11 (stash 0.9 kept)
+?rva001E4015@Rva001E4015@@QAE_NPAVThing@@PAURva001E4015Vec2@@@Z	0x001E4015	94	blocked	xmm0-xmm1 swapped dy-first vs dx-first tried dot-order def-order inline addr-lever t=12 model=muse-11 (stash 0.93 kept)
+?rva001E4073@Rva001E4073@@QAEMPAVObject@@PAM@Z	0x001E4073	102	blocked	this-save in esi vs edx tried direct-this O2 volatile-obj t=12 model=muse-11 (stash 0.96 kept)
+?rva001E41D3@Rva001E41D3@@QAEXPAM@Z	0x001E41D3	39	blocked	first float via fld-fstp not movss tried direct ptr-temps SSE2 t=10 model=muse-11 (stash 0.9 kept)
+?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z	0x001E438B	54	blocked	xmm rotation tried O1 direct zxy-order t=10 model=muse-11 (stash 0.93 kept)
