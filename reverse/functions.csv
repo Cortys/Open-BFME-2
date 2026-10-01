@@ -45987,3 +45987,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva00420E67@@UAEPAXI@Z,,0x00421084,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-421084.cpp,matched,slot 0 vtable 0083BDC4 rowed ??1Rva00420E67
 ?rva004E0513@Rva004E0513@@QAEXPAVXfer@@@Z,,0x004E0513,204,Code/GameEngine/Source/Common/Rva004E0513Xfer.cpp,matched,unlock lane versioned Xfer 1-5 with Ascii upgrade
 ?rva004213DB@Rva004210B0@@QAEXPBVModuleData@@@Z,,0x004213DB,33,Code/GameEngine/Source/Common/Rva004213DBAdd.cpp,matched,unlock lane add-if-absent via contains and push_back
+?Rva004219F4DistSquared@@YAMPBM0@Z,,0x004219F4,34,Code/Libraries/Source/WWVegas/WWLib/Rva004219F4Dist.cpp,matched,unlock lane squared 2D distance via x87
