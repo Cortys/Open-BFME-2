@@ -46013,3 +46013,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00434969Get@@YAXPAI0@Z,,0x00434969,44,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_00434969.cpp,matched,stack-seeded two-out table fetch unblocks 0x00434C67
 ??0Rva00434C67@@QAE@PAI0@Z,,0x00434C67,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434C67.cpp,matched,chain from 0x00434969 ctor obfuscates 8 dwords via imul-xor
 ?CPUID@CPUDetectClass@@SA_NAAI000I@Z,,0x006118C0,103,Code/Libraries/Source/WWVegas/WWLib/cpudetect.cpp,matched,Westwood/ZH cpudetect.cpp CPUID in its own TU; the callers Init_Processor_String/Features and Process_Extended_Cache_Info only match with this definition visible
+?rva00232D38@CopyProtect@@SA_NXZ,,0x00232D38,43,Code/GameEngine/Source/Common/System/CopyProtectRva00232D38.cpp,matched,CopyProtect full-string gate beside validate; G4 plus tail-call validate; prev-next plus WinMain caller
