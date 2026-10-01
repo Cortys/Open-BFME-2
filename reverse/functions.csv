@@ -45937,3 +45937,12 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000FE188@Rva000FE001@@QAEXXZ,,0x000FE188,36,Code/GameEngine/Source/Common/Rva000FE001Move.cpp,matched,list drain compiled after its callee rva000FE001 so this stays in ecx
 ?rva003FF496@GameInfo@@QBE_NG@Z,,0x003FF496,62,Code/GameEngine/Source/GameNetwork/GameInfoPlayerCounts.cpp,matched,slot predicate compiled after GameSlot::isOccupied in the same TU so the slot stays in ecx
 ?rva001DBDA4@Rva001DBDA4@@QBEHXZ,,0x001DBDA4,34,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,list max of get() compiled after get in the same TU so the node stays in edx
+?rva001DBAF6@Rva00489360@@QBE_NXZ,,0x001DBAF6,14,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,inner +0x08 flag or true; caller 0x001DBD8D
+?rva001DBB04@Rva00489360@@QAEXH@Z,,0x001DBB04,17,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,forwards to inner vslot 0x0C ignoring its int; caller 0x001DBE01
+?rva001DBB15@Rva00489360@@QAEXXZ,,0x001DBB15,15,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,tail call to inner vslot 0x14; caller 0x001DBE26
+?rva001DBB24@Rva00489360@@QAEXXZ,,0x001DBB24,15,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,tail call to inner vslot 0x18; caller 0x001DBE43
+?rva001DBB33@Rva00489360@@QAEXXZ,,0x001DBB33,15,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,tail call to inner vslot 0x10; caller 0x001DBE60
+?rva001DBD83@Rva001DBDA4@@QBE_NXZ,,0x001DBD83,33,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,all-of rva001DBAF6 over the list; same TU as its callee
+?rva001DBE17@Rva001DBDA4@@QAEXXZ,,0x001DBE17,29,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,applies rva001DBB15 to every element; same TU as its callee
+?rva001DBE34@Rva001DBDA4@@QAEXXZ,,0x001DBE34,29,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,applies rva001DBB24 to every element; same TU as its callee
+?rva001DBE51@Rva001DBDA4@@QAEXXZ,,0x001DBE51,29,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,applies rva001DBB33 to every element; same TU as its callee

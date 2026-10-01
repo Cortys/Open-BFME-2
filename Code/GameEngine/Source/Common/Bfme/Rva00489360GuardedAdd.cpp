@@ -7,17 +7,40 @@
 // keeps the node in edx across the get() call, which cl only does when get()
 // was compiled earlier in the same TU, so it joins this file; its cmovg and
 // jump-to-test loop need /O1 /arch:SSE, which leave get() unchanged.
+//
+// The rest of the same cluster, all honest-address names: element methods
+// rva001DBAF6 (14B, the +0x08 flag of the +0x10 inner object, true when
+// absent) and the forwarders rva001DBB04 (17B, ignores its int and calls inner
+// vslot +0x0C), rva001DBB15/24/33 (15B each, tail calls to vslots +0x14,
+// +0x18, +0x10); container methods rva001DBD83 (33B, all of rva001DBAF6) and
+// rva001DBE17/34/51 (29B each, apply rva001DBB15/24/33 to every element).
+// Each list walk sits after its callee here, as retail keeps the node or the
+// container in a volatile register or reloads exactly what that knowledge
+// allows. Callers: 0x001DBD8D, 0x001DBE01, 0x001DBE26, 0x001DBE43,
+// 0x001DBE60, 0x001DBF0C, 0x001DBE7B, 0x001DC2C7, 0x001DBFDB.
 
 class Inner00489360
 {
 public:
-	int m_pad0;
-	int m_val;
+	virtual void v00();
+	virtual void v04();
+	virtual void v08();
+	virtual void v0C(); // +0x0C
+	virtual void v10(); // +0x10
+	virtual void v14(); // +0x14
+	virtual void v18(); // +0x18
+	int m_val; // +0x04
+	bool m_flag; // +0x08
 };
 
 class Rva00489360
 {
 public:
+	bool rva001DBAF6() const;
+	void rva001DBB04(int value);
+	void rva001DBB15();
+	void rva001DBB24();
+	void rva001DBB33();
 	int get() const;
 
 	char            m_pad00[ 0x4 ];
@@ -25,6 +48,37 @@ public:
 	char            m_pad08[ 0x8 ];
 	Inner00489360 * m_inner;
 };
+
+bool Rva00489360::rva001DBAF6() const
+{
+	if( m_inner )
+		return m_inner->m_flag;
+	return true;
+}
+
+void Rva00489360::rva001DBB04(int)
+{
+	if( m_inner )
+		m_inner->v0C();
+}
+
+void Rva00489360::rva001DBB15()
+{
+	if( m_inner )
+		m_inner->v14();
+}
+
+void Rva00489360::rva001DBB24()
+{
+	if( m_inner )
+		m_inner->v18();
+}
+
+void Rva00489360::rva001DBB33()
+{
+	if( m_inner )
+		m_inner->v10();
+}
 
 int Rva00489360::get() const
 {
@@ -43,10 +97,26 @@ struct Node001DBDA4
 class Rva001DBDA4
 {
 public:
+	bool rva001DBD83() const;
 	int rva001DBDA4() const;
+	void rva001DBE17();
+	void rva001DBE34();
+	void rva001DBE51();
 
 	Node001DBDA4 *m_head;
+	int m_04;
+	int m_08;
 };
+
+bool Rva001DBDA4::rva001DBD83() const
+{
+	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
+	{
+		if( !n->m_value->rva001DBAF6() )
+			return false;
+	}
+	return true;
+}
 
 int Rva001DBDA4::rva001DBDA4() const
 {
@@ -58,4 +128,22 @@ int Rva001DBDA4::rva001DBDA4() const
 			best = v;
 	}
 	return best;
+}
+
+void Rva001DBDA4::rva001DBE17()
+{
+	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
+		n->m_value->rva001DBB15();
+}
+
+void Rva001DBDA4::rva001DBE34()
+{
+	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
+		n->m_value->rva001DBB24();
+}
+
+void Rva001DBDA4::rva001DBE51()
+{
+	for( Node001DBDA4 *n = m_head->m_next; n != m_head; n = n->m_next )
+		n->m_value->rva001DBB33();
 }
