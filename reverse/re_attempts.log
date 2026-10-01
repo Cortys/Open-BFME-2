@@ -4709,3 +4709,5 @@ FUN_006b4410	0x002B4410	29	blocked	5-push wrapper calls 3-arg rowed 0x002B442D n
 ?Rva006C8980Set@@YA_NPAXV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@1I@Z	0x006C8980	178	blocked	STL DWORD setter HKEY+2 strings+uint 32B caller-cleanup matches but ESP SEH prologue vs EBP call prologue t=25 model=muse-spark
 ?rva004A438B@Rva004A438B@@QBEMXZ	0x004A438B	94	partial	frameless vs EBP frame 3B plus edi-vs-esi regs and lea-vs-stack-temp and movss-vs-int t=30 model=muse-spark score=0.93 stash=reverse/attempts/0x004a438b.cpp
 ?Rva0004DE72Blend@@YAXPAHHE@Z	0x0004DE72	253	blocked	alpha-composite free func: 6 variants best 246B vs 253B; out ptr cached vs reload; divisor edi vs esi; stack layout differs despite decl reorder; t=25 model=muse-05
+?rva006E44F0@Rva006E44F0@@QAEHXZ	0x006E44F0	276	blocked	chain AptIntervalTimer array 0x20 stride cleanParams virtual needs layout t=10 model=muse-16
+?rva00240167@Rva00240167@@QAEPAXVAsciiString@@@Z	0x00240167	89	partial	extra EH and plus lea scheduling t=20 model=muse-16 score=0.9 stash=reverse/attempts/0x00240167.cpp

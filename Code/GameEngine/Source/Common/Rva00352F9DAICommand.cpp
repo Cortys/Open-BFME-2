@@ -64,6 +64,7 @@ class Rva00352F9D
 public:
 	virtual void rvaVirtual(AICommandParms *parms) = 0;
 	void rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src);
+	void rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src);
 };
 
 void Rva00352F9D::rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src)
@@ -71,5 +72,15 @@ void Rva00352F9D::rva00352F9D(const void *waypoint, Int intVal, CommandSourceTyp
 	AICommandParms parms((AICommandType)0x11, src);
 	parms.m_waypoint = waypoint;
 	parms.m_intValue = intVal;
+	rvaVirtual(&parms);
+}
+
+// ?rva0035300B@Rva00352F9D@@QAEXPBXABUCoord3D@@W4CommandSourceType@@@Z @0x0035300B 117B
+// Evidence: unlock same TU as 0x00352F9D; AICommandParms 0xC0 via rowed ctor 0x00351BD0 with 0x4B and src; m_pos from pos param (12B via 3x movsd) plus m_obj from obj; virtual slot 0 call then RvaCoords free via rowed free 0x00030830; callers 0x003533A8 0x00547929.
+void Rva00352F9D::rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src)
+{
+	AICommandParms parms((AICommandType)0x4B, src);
+	parms.m_pos = pos;
+	parms.m_obj = (void *)obj;
 	rvaVirtual(&parms);
 }
