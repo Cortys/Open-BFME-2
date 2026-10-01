@@ -44980,3 +44980,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva004F60AA@Rva004F60AA@@QAEXXZ,,0x004F60AA,66,Code/GameEngine/Source/Common/Rva004F60AAReserve.cpp,matched,malloc retry halve with max clamp
 ?findTemplate@ParticleSystemManager@@QBEPAVParticleSystemTemplate@@ABVAsciiString@@@Z,,0x001F90DA,43,Code/GameEngine/Source/GameClient/System/ParticleSystemManagerFindTemplate.cpp,matched,ZH ParticleSystemManager::findTemplate over the +0x88 bucket table via rowed find 0x0041534B
 ?Rva00268902@PoolMember@@QAEXXZ,,0x00268902,29,Code/GameEngine/Source/GameLogic/Object/Update/PoolMemberRelease.cpp,matched,free-list member teardown: rowed reset 0x0026549E then head back to the free list
+??1Rva001E3624@@UAE@XZ,,0x001E3624,35,Code/GameEngine/Source/Common/Rva001E3624Dtor.cpp,matched,opaque holder dtor: vptr reset then ::delete of the +4 polymorphic member
