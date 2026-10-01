@@ -6684,3 +6684,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__uninitialized_fill_n@PAVCameraMarker@@IV1@@_STL@@YAPAVCameraMarker@@PAV1@IABV1@ABU__false_type@0@@Z,0x000D04BC,ICF twin of dupe 0x000D04BC via CameraMarker overflow 0x000D05C1 same 37B fill_n
 ?allocate@?$allocator@VCameraMarker@@@_STL@@QBEPAVCameraMarker@@IPBX@Z,0x00523D6C,ICF twin of BfmeE8 allocate 0x00523D6C via CameraMarker overflow 0x000D05C1 same 28B
 ??0?$_Vector_base@JV?$allocator@J@_STL@@@_STL@@QAE@ABV?$allocator@J@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as matched BfmeE16 row; Rva0035CAD6Ctor TU vector<long> member
+??$__copy_backward_ptrs@PAUBfmePod36@@PAU1@@_STL@@YAPAUBfmePod36@@PAU1@00ABU__false_type@0@@Z,0x000ADECE,ICF twin of StringRecord wrapper 0x000ADECE via fill-insert 0x000B0478 same 29B wrapper
+??$fill@PAUBfmePod36@@U1@@_STL@@YAXPAUBfmePod36@@0ABU1@@Z,0x000AD806,ICF twin of StringRecord fill 0x000AD806 via fill-insert 0x000B0478 same 35B rep-movsd
