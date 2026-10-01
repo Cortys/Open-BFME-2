@@ -54,6 +54,24 @@ Rva003623E5Member::Rva003623E5Member()
 	m_record = Rva00361790(&defaultRecord);
 }
 
+class Rva00360D26Member
+{
+public:
+	Rva00360D26Member();
+
+private:
+	unsigned int m_record;
+};
+
+// The 4-byte filter handle's constructor folds with the address-derived member
+// constructor above. Its 0x94-byte default record is a temporary, not its size.
+Rva00360D26Member::Rva00360D26Member()
+	: m_record(-1)
+{
+	Rva00360F55 defaultRecord;
+	m_record = Rva00361790(&defaultRecord);
+}
+
 // 0x362087 (153B): release the previous pool index, then register a rebuilt
 // 0x94-byte record. Target merges the two 28-byte inputs at +0x48/+0x64 and
 // sets +0x88 when any dword in the first input is nonzero; these field labels

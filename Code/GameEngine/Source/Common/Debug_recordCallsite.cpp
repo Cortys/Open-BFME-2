@@ -29,3 +29,30 @@ void _bfme_debugRecordCallsite(int kind)
 	}
 	TheGen001336E5C->slot5C(reinterpret_cast<void *>(returnAddress), kind);
 }
+
+class Debug
+{
+public:
+#define V(n) virtual void slot##n();
+	V(00) V(04) V(08) V(0C) V(10) V(14) V(18) V(1C)
+	V(20) V(24) V(28) V(2C) V(30) V(34) V(38) V(3C)
+	V(40) V(44) V(48) V(4C) V(50) V(54) V(58)
+#undef V
+	virtual void SetCrashAddress(void *returnAddress, bool set);
+	static bool SkipNext(bool set);
+};
+
+extern Debug * volatile theDebug;
+
+// The matched ProfileAllocMemory caller uses this spelling before the
+// separate virtual SkipNext call. The static body records the caller address.
+bool Debug::SkipNext(bool set)
+{
+	unsigned returnAddress;
+	__asm
+	{
+		mov eax, [ebp + 4]
+		mov returnAddress, eax
+	}
+	theDebug->SetCrashAddress(reinterpret_cast<void *>(returnAddress), set);
+}

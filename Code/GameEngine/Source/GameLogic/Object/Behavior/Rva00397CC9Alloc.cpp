@@ -22,3 +22,17 @@ void *__stdcall Rva00397CC9Alloc(const Rva0039627D &src)
 	_STL::_Construct((Rva0039627D *)(p + 0x10), src);
 	return p;
 }
+
+struct Rva0039834C
+{
+	void *rva00397CC9(const Rva0039627D &src);
+};
+
+// Retail tree insertion calls this member with the tree in ECX; the body does
+// not inspect that receiver and folds with the free allocation helper above.
+void *Rva0039834C::rva00397CC9(const Rva0039627D &src)
+{
+	char *p = _STL::allocator<char>::allocate(0x20, 0);
+	_STL::_Construct((Rva0039627D *)(p + 0x10), src);
+	return p;
+}
