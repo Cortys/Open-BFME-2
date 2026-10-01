@@ -11,6 +11,8 @@
 // (the Iter precedent). The typed record pointers give the 0x14 stride
 // (sub for the local, add-to-memory for the range update); the loop
 // condition reads start first. Same /EHsc scheduling as the drains.
+// Both names reach the same +0x08 AsciiString adjust-and-tail destructor.
+#pragma comment(linker, "/alternatename:??1ScriptListElementName@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
 
 void __cdecl operator delete(void *block);
 
