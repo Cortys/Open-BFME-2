@@ -1,4 +1,6 @@
 // cl: /O2 /G7
+// The target pin identifies the shared 36B dec-word-at-+4 release body.
+#pragma comment(linker, "/alternatename:?Release_Ref@TaggedRefObject@@QAEXXZ=?Release_Ref@TextureBaseClass@@QAEXXZ")
 
 #define NULL 0
 //
