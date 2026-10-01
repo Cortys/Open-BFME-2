@@ -6,6 +6,8 @@
 // BFME2 deltas: float Coord3D with SSE movss order x y z (no barrier) plus the 0xC0 block via opaque 0x351BD0 ctor.
 // Factor at 0x00DBA4E4 is 5 from the data image; TheScriptEngine at 0x00DFE16C.
 // Callers at 0x003CE24E. Prev doNamedFollowWaypointsExact / next doNamedFaceNamed. Honest GuardMode Int layout.
+extern class TerrainLogic *TheTerrainLogic;
+
 extern int g_Va00DBA4E4;
 
 #include "ascii_string.h"
@@ -127,7 +129,7 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 // Caller at 0x003CB676. Prev doNamedFollowWaypointsExact / next doUnitGuardForFramecount.
 void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName)
 {
-	Waypoint *way = (*(TerrainLogicByValue **)0x00DFEC50)->getWaypointByName(waypointName);
+	Waypoint *way = (*(TerrainLogicByValue **)&TheTerrainLogic)->getWaypointByName(waypointName);
 	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;

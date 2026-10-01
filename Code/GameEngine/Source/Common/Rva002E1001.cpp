@@ -6,6 +6,7 @@
 // five callers pass this in ecx with no stack args and ret 0; same
 // sub-sar-2 count plus inc-eax loop shape as pool counters; neighbours carry
 // /O1.
+
 class Rva002E1001
 {
 public:
@@ -40,7 +41,7 @@ extern Rva002BA8F1Logic *g_009FEF10;
 int Rva002E1001::rva002E1001()
 {
 	int c = 0;
-	void **pp = *(void ***)0x00DFEF10;
+	void **pp = *(void ***)&g_009FEF10;
 	pp = *(void ***)((char *)pp + 0xB0);
 	pp = *(void ***)((char *)pp + 8);
 	char *p;
@@ -79,7 +80,7 @@ done:
 // same sub-sar-2 plus inc loop shape as 0x002E1001; neighbours carry /O1.
 bool Rva002E1001::rva004FC970(int id)
 {
-	Rva002BA8F1Logic *logic = *(Rva002BA8F1Logic **)0x00DFEF10;
+	Rva002BA8F1Logic *logic = *(Rva002BA8F1Logic **)&g_009FEF10;
 	char *pp = (char *)logic + 0x8c;
 	int n = (*(int *)(pp + 4) - *(int *)pp) >> 2;
 	int sum = 0;

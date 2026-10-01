@@ -8,6 +8,8 @@
 // Evidence: pinned name, callers at 0x00205CC3 0x00205F67 0x00206168,
 // rowed callees format 0x38150 concat 0x6987 releaseBuffer 0x36410 gate 0x1DCD1C.
 
+extern class Rva002BA8F1Logic *g_009FEF10;
+
 extern bool BFME2ScriptDebugLiteMode;
 
 typedef bool Bool;
@@ -42,7 +44,7 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define TheRva00DFEF10 (*(void **)0x00DFEF10)
+#define TheRva00DFEF10 (*(void **)&g_009FEF10)
 #define TheScriptDebugWindowDLL (*(HMODULE *)0x00DFE158)
 #define ScriptDebugMessagesDisabled BFME2ScriptDebugLiteMode
 

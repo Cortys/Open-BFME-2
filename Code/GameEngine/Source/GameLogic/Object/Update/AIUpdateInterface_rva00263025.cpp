@@ -6,6 +6,9 @@
 // inner+0x14, keeps the max in +0x21C, then sets +0x3BC to 1.
 // Callers at 0x346FEA 0x4D83E7. No direct callees.
 
+extern class AI *TheAI;
+extern class GameLogic *TheGameLogic;
+
 struct Rva00DFF0F8Inner
 {
 	char m_pad00[0x14];
@@ -24,8 +27,8 @@ struct GameLogicFrame
 	unsigned int m_frame;
 };
 
-#define Rva00DFF0F8 (*(Rva00DFF0F8Outer **)0x00DFF0F8)
-#define TheGameLogic (*(GameLogicFrame **)0x00DFE78C)
+#define Rva00DFF0F8 (*(Rva00DFF0F8Outer **)&TheAI)
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
 
 class AIUpdateInterface
 {

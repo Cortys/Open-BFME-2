@@ -3,7 +3,9 @@
 // member at +0xF4 divided by LogicFramesPerSecond at 0x00DBA4E4. Evidence:
 // sole caller 0x005BEF34 moves edi to ecx with no stack args and pushes eax.
 
-#define LogicFramesPerSecond (*(const unsigned int *)0x00DBA4E4)
+extern int g_Va00DBA4E4;
+
+#define LogicFramesPerSecond (*(const unsigned int *)&g_Va00DBA4E4)
 
 class Rva0039B709
 {

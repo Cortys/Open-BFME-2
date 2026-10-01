@@ -14,6 +14,8 @@
 // (frame - m_34) / m_38 with unsigned frame conversion (fild plus 2^32
 // fixup) and jle zero guard. Honest address name; identity is class plus slot.
 
+extern class GameLogic *TheGameLogic;
+
 class Thing;
 class ModuleData;
 class Object;
@@ -50,7 +52,7 @@ struct GameLogicFrame
 	unsigned int getFrame() const { return m_frame; }
 };
 
-#define TheGameLogic (*(GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
 
 class RespawnUpdate : public UpdateModule
 {

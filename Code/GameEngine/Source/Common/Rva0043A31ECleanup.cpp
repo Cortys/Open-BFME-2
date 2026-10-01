@@ -5,13 +5,15 @@
 // Evidence: rowed callee 0x0025D9CB (BfmeStrVM0::rva0025D9CB bool) with push 0;
 // TheAudio data 0x009FE6E8 precedent Rva0033FF2BDtor slot 0x6c; first global
 // 0x009FE9D8; caller 0x0043A351 ctor calls here; chain lane.
+extern class Display *TheDisplay;
+
 class BfmeStrVM0
 {
 public:
 	void rva0025D9CB(bool flag);
 };
 
-#define g_bfmeVM0 (*(BfmeStrVM0 **)0x00DFE9D8)
+#define g_bfmeVM0 (*(BfmeStrVM0 **)&TheDisplay)
 
 class AudioManager
 {

@@ -15,6 +15,8 @@
 // ObjectCreationList debris calls fadeIn/fadeOut with m_fadeFrames.
 
 
+extern class ClientFrameSubsystem *TheGameClient;
+
 class Rva00DFE77CHolder
 {
 public:
@@ -28,7 +30,7 @@ public:
 	virtual void slot1C(); virtual void slot1D(); virtual void slot1E(); virtual int slot1F();
 };
 
-#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)&TheGameClient)
 
 class Rva002716Holder
 {

@@ -9,6 +9,8 @@
 // TheGameLogic->getFrame ([0x00DFE78C]+0x40). Single callee setState 0x004D7ACD
 // already rowed in StateMachineGoal.cpp.
 
+extern class GameLogic *TheGameLogic;
+
 enum StateReturnType
 {
 	STATE_CONTINUE = 0,
@@ -33,7 +35,7 @@ struct GameLogicFrame
 	unsigned int getFrame() const { return m_frame; }
 };
 
-#define TheGameLogic (*(GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
 
 class TurretAI
 {

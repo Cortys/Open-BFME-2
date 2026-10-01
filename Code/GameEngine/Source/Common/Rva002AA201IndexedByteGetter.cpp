@@ -7,6 +7,8 @@
 // precedent (m_flags[index] shape).
 // ?set@Rva002AA201IndexedByteField@@QAEXH@Z @ 0x002AA1E4 (29B): indexed byte set
 // plus frame (mov byte [eax+ecx+0x340],1 then TheGameLogic+0x40 to +0x354).
+extern class GameLogic *TheGameLogic;
+
 class Rva002AA201IndexedByteField
 {
 public:
@@ -27,7 +29,7 @@ struct Rva002AA1E4GameLogic
 	char m_pad[0x40];
 	int m_frame;
 };
-#define TheGameLogic (*(Rva002AA1E4GameLogic **)0x00DFE78C)
+#define TheGameLogic (*(Rva002AA1E4GameLogic **)&TheGameLogic)
 void Rva002AA201IndexedByteField::set(int index)
 {
 	m_flags[index] = 1;

@@ -10,6 +10,8 @@
 // constructor is the pinned 0x001B4E63. Only the final vtable store (0xC1FE48)
 // survives /O1.
 
+extern class TerrainLogic *TheTerrainLogic;
+
 class SubsystemInterface
 {
 public:
@@ -45,7 +47,7 @@ private:
 	bool m_suppressNewWindows; // +0x0C
 };
 
-#define Rva00DFEC50 (*(void **)0x00DFEC50)
+#define Rva00DFEC50 (*(void **)&TheTerrainLogic)
 
 struct Rva00DFEC50Obj
 {

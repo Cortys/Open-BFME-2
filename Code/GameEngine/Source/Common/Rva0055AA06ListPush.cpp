@@ -3,6 +3,8 @@
 // ?rva0055AA06@Rva0055AA06@@QAEXPBUCoord3D@@@Z @ 0x0055AA06, 49 bytes.
 // Push TheGameLogic+0x40 onto list at +0x18 inc count at +0x1C copy 12B to +0x20.
 // Evidence: retail lea-push-call push_back 0x5548F inc [esi+0x1C] lea edi [esi+0x20] movsd x3; caller 0x39CF0A.
+extern class GameLogic *TheGameLogic;
+
 #include <list>
 
 struct Coord3D
@@ -17,7 +19,7 @@ struct GameLogic0055AA06
 	char m_pad[0x40];
 	unsigned int m_val;
 };
-#define TheGameLogic (*(GameLogic0055AA06 **)0x00DFE78C)
+#define TheGameLogic (*(GameLogic0055AA06 **)&TheGameLogic)
 
 class Rva0055AA06
 {

@@ -9,6 +9,8 @@
 // Guarded lookup on the same table: arg+0x34 base must be non-null, variant
 // AsciiString at base+0x138 or base+0x13c via TheBfmeGlob 0x00DFE78C gate,
 // empty check via rowed StringBase isEmpty, then same-table rva0031D5F8.
+extern class GameLogic *TheGameLogic;
+
 #include "ascii_string.h"
 
 class Rva00056F61;
@@ -32,7 +34,7 @@ public:
 	char bfmeCall939D();
 };
 
-#define TheBfmeGlob (*(BfmeGlob939D **)0x00DFE78C)
+#define TheBfmeGlob (*(BfmeGlob939D **)&TheGameLogic)
 
 class Rva0031D5F8
 {

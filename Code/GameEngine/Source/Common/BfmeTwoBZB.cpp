@@ -7,6 +7,8 @@
 // slot 1 when present, otherwise falls back to a shared free() helper
 // (tail-jumped at 0x00030830) — same shape as the other Bfme*BZB release
 // helpers in this pass.
+extern int G00DFDA54;
+
 class BfmeTwoBZBHost
 {
 public:
@@ -14,7 +16,7 @@ public:
 	virtual void release(void *what, int flag);
 };
 
-#define TheBfmeTwoBZBHost (*(BfmeTwoBZBHost **)0x00DFDA54)
+#define TheBfmeTwoBZBHost (*(BfmeTwoBZBHost **)&G00DFDA54)
 
 extern "C" void __cdecl free(void *block);
 

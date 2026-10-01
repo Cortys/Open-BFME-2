@@ -9,6 +9,8 @@
 // the ctor); donor is BFME1 RandomSoundSelectorClientBehavior (float m_randomSelection
 // plus uint m_lastFrame) which reroll 0x004CBCF2 and getSelectedValue 0x004CBD44 prove.
 
+extern class ClientFrameSubsystem *TheGameClient;
+
 class AsciiString;
 class UnicodeString;
 class PooledString;
@@ -46,7 +48,7 @@ public:
 	virtual void slot1C(); virtual void slot1D(); virtual void slot1E(); virtual int slot1F();
 };
 
-#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)&TheGameClient)
 
 struct RandomSoundSelectorClientBehaviorModuleDataView
 {

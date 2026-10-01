@@ -4,6 +4,8 @@
 // Dict at 0x00E00944 via rowed getBool 0x00313198, host bool at
 // 0x00DFE16C via rowed rva00203688 0x00203688; returns dict-flag equality;
 // caller 0x003B7951.
+extern class ScriptEngine *TheScriptEngine;
+
 enum NameKeyType
 {
 	NAMEKEY_INVALID = 0
@@ -35,7 +37,7 @@ public:
 	bool rva00203688();
 };
 
-#define TheRva00203688Host (*(Rva00203688Host **)0x00DFE16C)
+#define TheRva00203688Host (*(Rva00203688Host **)&TheScriptEngine)
 
 unsigned char Rva003B242CGet()
 {

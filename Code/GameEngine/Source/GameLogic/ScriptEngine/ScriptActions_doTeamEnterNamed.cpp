@@ -12,6 +12,7 @@
 // unresolved; the group-enter identity is supported independently by target
 // ABI and donor semantics.
 
+
 #include "ascii_string.h"
 
 
@@ -64,7 +65,7 @@ void ScriptActions::doTeamEnterNamed(const AsciiString &teamName,
     if (!theSrcTeam) {
         return;
     }
-    Object *theTransport = ((Rva00358752Opaque *)*(ScriptEngine **)0x00DFE16C)
+    Object *theTransport = ((Rva00358752Opaque *)*(ScriptEngine **)&TheScriptEngine)
         ->lookupUnitByValue(unitDestName);
     if (!theTransport) {
         return;

@@ -9,6 +9,8 @@
 // keeps smallest +0x18 above threshold.
 // Evidence: chain lane (calls 0x28951F just landed); caller 0x289BE0 passes
 // ecx through plus pushes list ptr and int key (thiscall with ret 8).
+extern class GameLogic *TheGameLogic;
+
 class Overridable
 {
 public:
@@ -42,7 +44,7 @@ public:
 	char bfmeCall939D();
 };
 
-#define TheBfmeGlob (*(BfmeGlob939D **)0x00DFE78C)
+#define TheBfmeGlob (*(BfmeGlob939D **)&TheGameLogic)
 
 struct Rva0028867DData
 {

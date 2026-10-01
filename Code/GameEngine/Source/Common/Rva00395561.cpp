@@ -4,13 +4,15 @@
 // Chain: calls 0x000421FD; drains int at +0 while calling global counter.
 // Global 0x00DFE78C is TheGameLogic counter owner. Prev stlport list, next disp8.
 
+extern class GameLogic *TheGameLogic;
+
 class Rva000421FD
 {
 public:
 	void rva000421FD();
 };
 
-#define TheCounter (*(Rva000421FD **)0x00DFE78C)
+#define TheCounter (*(Rva000421FD **)&TheGameLogic)
 
 class Rva00395561
 {

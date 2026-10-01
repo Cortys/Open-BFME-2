@@ -8,6 +8,8 @@
 // Donor facts: BFME1 ScriptActions.cpp maps this action to doNamedSetRepulsor,
 // which resolves the named object and toggles OBJECT_STATUS_REPULSOR.
 
+extern class ScriptEngine *TheScriptEngine;
+
 class AsciiString;
 class Object;
 
@@ -36,7 +38,7 @@ protected:
 
 void ScriptActions::doNamedSetRepulsor(const AsciiString &unitName, bool repulsor)
 {
-    ScriptEngine *scriptEngine = *(ScriptEngine **)0x00DFE16C;
+    ScriptEngine *scriptEngine = *(ScriptEngine **)&TheScriptEngine;
     Object *theSrcUnit = scriptEngine->getUnitNamed(unitName);
     if (!theSrcUnit) {
         return;

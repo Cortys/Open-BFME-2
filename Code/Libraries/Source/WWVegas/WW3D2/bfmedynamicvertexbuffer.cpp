@@ -4,6 +4,8 @@
 // Reconstructed from BFME2 and the GPL-3.0-or-later EA reference
 // Code/Libraries/Source/WWVegas/WW3D2/dx8vertexbuffer.cpp.
 // Recovered role names and independent identities: docs/reconstruction/dynamic-vertex-buffer.md.
+extern class MeshModelClass *MeshModelListHead;
+
 #include <d3d8.h>
 #include <string.h>
 typedef unsigned long ULONG;
@@ -767,7 +769,7 @@ void BfmeDynamicNativeVB::Copy(const Vector3 *loc, const Vector3 *norm, const Ve
 class MeshModelClass { public: char m_pad00[0xB8]; MeshModelClass *m_next; void rva001716E0UnregisterMeshModel(); };
 __declspec(noinline) MeshModelClass *rva001718E0GetNextMeshModel(MeshModelClass *model)
 {
- if(!model) return *(MeshModelClass**)0x00DF6F90;
+ if(!model) return *(MeshModelClass **)&MeshModelListHead;
  return model->m_next;
 }
 

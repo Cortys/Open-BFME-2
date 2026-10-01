@@ -13,6 +13,7 @@
 // 0x26C347 has an address-derived name because its semantic API identity is
 // not independently proven; target behavior establishes its use here.
 
+
 #include "ascii_string.h"
 
 
@@ -67,7 +68,7 @@ void ScriptActions::doNamedEnterNamed(const AsciiString &unitSrcName,
     if (!theSrcUnit) {
         return;
     }
-    Object *theTransport = ((Rva00358752Opaque *)*(ScriptEngine **)0x00DFE16C)
+    Object *theTransport = ((Rva00358752Opaque *)*(ScriptEngine **)&TheScriptEngine)
         ->lookupUnitByValue(unitDestName);
     if (!theTransport) {
         return;

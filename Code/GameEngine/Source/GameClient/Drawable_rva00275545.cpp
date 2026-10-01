@@ -5,6 +5,8 @@
 // clears TheRva00DFE77C+0xB8 then rva0028C197 tail slot 0xE0 else tail to
 // rva00272BE7. Evidence: rowed isLocallyControlled 0x0028B07A and rva0028C197
 // 0x0028C197 plus DIR32 global 0x00DFE77C plus chain callee 0x00272BE7.
+extern class ClientFrameSubsystem *TheGameClient;
+
 class Object
 {
 public:
@@ -17,7 +19,7 @@ public:
     char m_pad[0xB8];
     int m_b8;
 };
-#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)&TheGameClient)
 class SlotE0Holder
 {
 public:

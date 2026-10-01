@@ -11,6 +11,8 @@
 // owner unproven so class Rva002DC267. Donor shape is GameState
 // getSaveDirectory in BFME1 GameState.cpp and BFME2 GameState.cpp.
 
+extern class FileSystem *TheFileSystem;
+
 typedef int Int;
 typedef unsigned short WideChar;
 
@@ -53,7 +55,7 @@ public:
 	bool doesWideFileExist(const WideChar *path);
 };
 
-#define TheFileSystem (*(BFME2FileSystemFacade **)0x00E06A48)
+#define TheFileSystem (*(BFME2FileSystemFacade **)&TheFileSystem)
 
 class Rva002DCCFB
 {

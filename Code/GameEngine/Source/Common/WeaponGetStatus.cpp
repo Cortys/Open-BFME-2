@@ -1,5 +1,7 @@
 // cl: /O1 /DNDEBUG /MD
 // BFME1's cached status query, adapted to BFME2's out-of-line cache setter.
+extern class GameLogic *TheGameLogic;
+
 enum WeaponStatus
 {
     READY_TO_FIRE,
@@ -31,7 +33,7 @@ struct GameLogicFrame
     unsigned int m_frame;
 };
 
-#define TheGameLogic (*(GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
 
 class Weapon
 {

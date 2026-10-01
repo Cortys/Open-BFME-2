@@ -4,6 +4,8 @@
 // ThePlayerList local at +0x10 TheInGameUI slot 0x10C GameMessage 0x3ED.
 // Evidence: caller 0x00271601 sets +0x43d then calls this; callees rowed getControllingPlayer appendObjectIDArgument.
 
+extern class MessageStream *MessageStreamSubsystem;
+
 class Player;
 
 class Object
@@ -44,7 +46,7 @@ struct MsgFactory
 	virtual GameMessage *create(int id);
 };
 
-#define TheMsgFactory (*(MsgFactory **)0x00E00950)
+#define TheMsgFactory (*(MsgFactory **)&MessageStreamSubsystem)
 
 struct Rva00271547Entry
 {

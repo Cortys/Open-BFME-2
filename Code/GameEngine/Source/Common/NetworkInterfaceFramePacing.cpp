@@ -4,6 +4,9 @@
 // The fields below are deliberately laid out from the constructor and the
 // retail body; no network policy is changed by exposing this query.
 
+extern class CommandList *TheCommandList;
+extern class GameLogic *TheGameLogic;
+
 extern int g_Va00DBA4E4;
 
 extern "C" __declspec(dllimport) int __stdcall QueryPerformanceCounter(__int64 *counter);
@@ -81,7 +84,7 @@ private:
 	__int64 m_accumulator;
 };
 
-#define TheGameLogic (*(volatile GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
 #define LogicFramesPerSecond g_Va00DBA4E4
 #define OneAndHalf (*(const float *)0x00BC8980)
 
@@ -204,7 +207,7 @@ public:
 	virtual void s14(Rva0030F47A *m);
 };
 
-#define TheMessageTarget (*(MessageTarget **)0x00E00954)
+#define TheMessageTarget (*(MessageTarget **)&TheCommandList)
 
 void NetworkInterface::rva0025E539(NetWrapperCommandMsg *msg)
 {

@@ -11,6 +11,8 @@
 // precedent) else zero. The rowed instance factory 0x252D2A (news 0x18)
 // is the sole raw caller. Row supersedes the ctor pin.
 
+extern class ClientFrameSubsystem *TheGameClient;
+
 class Thing;
 class ModuleData;
 
@@ -41,7 +43,7 @@ public:
 	virtual void slot1C(); virtual void slot1D(); virtual void slot1E(); virtual int slot1F();
 };
 
-#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)&TheGameClient)
 
 class RandomSoundSelectorClientBehavior : public Rva00252B68
 {

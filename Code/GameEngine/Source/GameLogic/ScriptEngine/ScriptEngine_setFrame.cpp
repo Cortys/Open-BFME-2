@@ -8,6 +8,9 @@
 // - App module at [0xDFE158]; latch-free early outs.
 // Human-readable names; opaque free function (no this, standard ret).
 
+extern class ClientFrameSubsystem *TheGameClient;
+extern class Rva002BA8F1Logic *g_009FEF10;
+
 typedef int HMODULE;
 
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
@@ -36,8 +39,8 @@ public:
 	virtual void slot1C(); virtual void slot1D(); virtual void slot1E(); virtual int slot1F();
 };
 
-#define TheRva00DFE77C (*(Rva00DFE77CHolder **)0x00DFE77C)
-#define TheRva00DFEF10 (*(void **)0x00DFEF10)
+#define TheRva00DFE77C (*(Rva00DFE77CHolder **)&TheGameClient)
+#define TheRva00DFEF10 (*(void **)&g_009FEF10)
 
 void rva00204094()
 {

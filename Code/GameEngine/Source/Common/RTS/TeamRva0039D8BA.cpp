@@ -5,6 +5,8 @@
 // ScriptEngine frame cache via rowed Rva002039C5Host::rva002039C5 on the
 // 0xDFE16C global. Callers at 0x2920D6 and 0x2921EB pass Team from Object+0x304
 // with the Object as arg. Neighbours share /O1.
+extern class ScriptEngine *TheScriptEngine;
+
 class Object;
 
 class Rva002039C5Host
@@ -13,7 +15,7 @@ public:
 	void rva002039C5();
 };
 
-#define TheRvaHostPtr (*(Rva002039C5Host **)0x00DFE16C)
+#define TheRvaHostPtr (*(Rva002039C5Host **)&TheScriptEngine)
 
 class Team
 {

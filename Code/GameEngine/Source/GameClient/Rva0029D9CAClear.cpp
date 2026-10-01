@@ -2,6 +2,8 @@
 // ?rva0029D9CA@Rva0029D9CA@@QAEXXZ @0x0029D9CA 47B.
 // Chain from 0x0029A407: if m_0 free via global 0xDFE77C slot 0x74 then clear m_4 via that row plus operator delete 0x2FD60.
 // Caller 0x002A3E3F. Unlocks 0x002A3E24.
+extern class ClientFrameSubsystem *TheGameClient;
+
 class Rva0029A407 {
 public: void rva0029A407();
 };
@@ -27,7 +29,7 @@ private:
 void Rva0029D9CA::rva0029D9CA()
 {
 	if (m_0 != 0) {
-		(*(Rva0029D9CAHolder **)0x00DFE77C)->s29(m_0);
+		(*(Rva0029D9CAHolder **)&TheGameClient)->s29(m_0);
 		m_0 = 0;
 	}
 	Rva0029A407 *p = m_4;

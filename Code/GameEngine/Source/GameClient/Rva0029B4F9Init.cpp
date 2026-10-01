@@ -2,6 +2,8 @@
 // ?Rva0029B4F9Init@@YAXXZ @0x0029B4F9 67B.
 // Chain from 0x0029B2E7: local 0x20 zeroed via that row, then two virtuals on global 0xDFEA3C slots 0x170 and 0xC8.
 // Caller at 0x0042BBF9. Free function void().
+extern class View *TheTacticalView;
+
 class Rva0029B2E7 {
 public:
 	Rva0029B2E7 *rva0029B2E7();
@@ -115,6 +117,6 @@ void Rva0029B4F9Init()
 {
 	Rva0029B2E7 tmp;
 	tmp.rva0029B2E7();
-	(*(Rva0029B4F9Holder **)0x00DFEA3C)->s092(&tmp);
-	(*(Rva0029B4F9Holder **)0x00DFEA3C)->s050(&tmp.m_4, 1, 0.0f, 0.0f);
+	(*(Rva0029B4F9Holder **)&TheTacticalView)->s092(&tmp);
+	(*(Rva0029B4F9Holder **)&TheTacticalView)->s050(&tmp.m_4, 1, 0.0f, 0.0f);
 }

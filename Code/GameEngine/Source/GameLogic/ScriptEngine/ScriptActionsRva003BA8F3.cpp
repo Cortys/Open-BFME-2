@@ -6,6 +6,9 @@
 // 0x42235 test al je false test esi je false cmp [esi+0x2A4],0 je true;
 // false xor al,al ret true mov al,1 ret. Callers 0x3BE652 0x3BE736.
 
+extern class PlayerList *ThePlayerList;
+extern class ScriptEngine *TheScriptEngine;
+
 class Rva002A7DD0
 {
 public:
@@ -27,8 +30,8 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define Rva00DFEEE8 (*(Rva002A7DD0 **)0x00DFEEE8)
-#define Rva00DFE16C (*(Rva00203BDAByteField **)0x00DFE16C)
+#define Rva00DFEEE8 (*(Rva002A7DD0 **)&ThePlayerList)
+#define Rva00DFE16C (*(Rva00203BDAByteField **)&TheScriptEngine)
 
 unsigned char Rva003BA8F3Get()
 {

@@ -6,13 +6,15 @@
 // load TheGameLogic+0x40 into +0x21C and set +0x3BC to 1. Honest
 // address-derived name; slot identity unproven. No other callees.
 
+extern class GameLogic *TheGameLogic;
+
 struct GameLogicFrame
 {
 	char m_pad00[0x40];
 	unsigned int m_frame;
 };
 
-#define TheGameLogic (*(GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(GameLogicFrame **)&TheGameLogic)
 
 class AIUpdateInterface
 {

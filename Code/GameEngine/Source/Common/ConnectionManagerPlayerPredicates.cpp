@@ -5,6 +5,8 @@
 // predicate treats the local slot as connected and otherwise requires the
 // peer's open-state sentinel.
 
+extern class GameLogic *TheGameLogic;
+
 struct Connection
 {
 	int m_openState;
@@ -22,7 +24,7 @@ struct GlobalData
 	unsigned int networkRunAheadSlack;
 };
 
-#define TheGameLogic (*(volatile GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
 #define TheGlobalData (*(volatile GlobalData **)0x00DFE758)
 #define LastPacketRouterStallFrame (*(volatile unsigned int *)0x00E043F4)
 

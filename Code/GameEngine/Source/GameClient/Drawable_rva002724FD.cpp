@@ -8,6 +8,8 @@
 // 0x0027248A, 0x0027257B; callers pass AsciiString plus ints plus floats
 // (lua 0x00333424/0x003334EA/0x003335AF, vector 0x0045628C, 0x00496CA8).
 
+extern class GameLogic *TheGameLogic;
+
 class AsciiString;
 
 class BfmeObjectDrawForRva2724FD
@@ -110,7 +112,7 @@ public:
 	bool rva00200084();
 };
 
-#define TheGameLogic (*(Rva0023C6A4 **)0x00DFE78C)
+#define TheGameLogic (*(Rva0023C6A4 **)&TheGameLogic)
 
 class BfmeObjectDrawForRva272414
 {

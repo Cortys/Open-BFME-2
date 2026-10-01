@@ -2,6 +2,8 @@
 // ??1Rva0029B816@@UAE@XZ @0x0029B816 98B.
 // Dtor vtable 0x7FD028: free ptrs +4 +8 via global 0xDFEAD8 slot 0x3C then narrow StringBase +0x14 via 0x36410 with EH scope 0xB74AC4.
 // Unlocks 0x0029E1EF. Caller 0x0029E1F2.
+extern class DisplayStringManager *TheDisplayStringManager;
+
 template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); }
 private: void releaseBuffer();
@@ -24,9 +26,9 @@ private:
 Rva0029B816::~Rva0029B816()
 {
 	if (m_4 != 0)
-		(*(Rva0029B816Holder **)0x00DFEAD8)->s15(m_4);
+		(*(Rva0029B816Holder **)&TheDisplayStringManager)->s15(m_4);
 	m_4 = 0;
 	if (m_8 != 0)
-		(*(Rva0029B816Holder **)0x00DFEAD8)->s15(m_8);
+		(*(Rva0029B816Holder **)&TheDisplayStringManager)->s15(m_8);
 	m_8 = 0;
 }

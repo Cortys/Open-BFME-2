@@ -5,6 +5,8 @@
 // Caller 0x002BD9B4. TU-local honest-address class.
 // ?rva002B41F4@Rva002B41F4@@QAEXXZ @0x002B41F4 140B.
 // ?rva002B4280@Rva002B4280@@QAEXXZ @0x002B4280 140B.
+extern class Rva002D3627Host *g_00DFEF18;
+
 class Rva002B41F4 {
 public:
     void rva002B41F4();
@@ -27,7 +29,7 @@ public:
     virtual bool cond8C();
     virtual bool cond90();
 };
-#define TheGlobal002B4FEB (*(Rva002B4FEBGlobal **)0x00DFEF18)
+#define TheGlobal002B4FEB (*(Rva002B4FEBGlobal **)&g_00DFEF18)
 class Rva002B4FEB {
 public:
     void rva002B4FEB();

@@ -2,6 +2,8 @@
 // ?rva0029B380@Rva0029B380@@QAEXH@Z @0x0029B380 65B.
 // Array at +0x5D0 elem 16B: release wide StringBase at +0 then virtual slot 0x3C on global 0xDFEAD8 with ptr at +4 then zero +4 +8.
 // Caller 0x002A1684. Unlocks 0x002A1582.
+extern class DisplayStringManager *TheDisplayStringManager;
+
 template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); }
 private: void releaseBuffer();
@@ -31,7 +33,7 @@ void Rva0029B380::rva0029B380(int idx)
 	m_items[idx].m_0.~StringBase<unsigned short>();
 	void *p = m_items[idx].m_4;
 	if (p != 0)
-		(*(Rva0029B380Holder **)0x00DFEAD8)->s15(p);
+		(*(Rva0029B380Holder **)&TheDisplayStringManager)->s15(p);
 	m_items[idx].m_4 = 0;
 	m_items[idx].m_8 = 0;
 }

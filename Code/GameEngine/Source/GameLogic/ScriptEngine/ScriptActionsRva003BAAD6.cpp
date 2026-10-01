@@ -3,6 +3,9 @@
 // ?Rva003BAAD6@@YAXXZ @0x003BAAD6 14B: free forwarder to virtual slot 0x1A0 via global 0xDFEA3C.
 // Evidence: mov ecx,[0xDFEA3C] mov eax,[ecx] jmp [eax+0x1A0]; callers 0x3CAD41 0x3CC8DF in ScriptActions dispatch with mov ecx,edi no pushes.
 
+extern class InGameUI *TheInGameUI;
+extern class View *TheTacticalView;
+
 template <class T> class StringBase;
 struct Rva0033070EEntry;
 class Rva0033070E
@@ -123,8 +126,8 @@ public:
     virtual void target();
 };
 
-#define Rva00DFEA3C (*(Rva003BAAD6Holder **)0x00DFEA3C)
-#define Rva00DFEDF0 (*(Rva003BAAD6Holder **)0x00DFEDF0)
+#define Rva00DFEA3C (*(Rva003BAAD6Holder **)&TheTacticalView)
+#define Rva00DFEDF0 (*(Rva003BAAD6Holder **)&TheInGameUI)
 #define Rva00DFE6E8 (*(Rva003BAAD6Holder **)0x00DFE6E8)
 
 void Rva003BAAD6()

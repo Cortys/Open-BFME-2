@@ -5,13 +5,15 @@
 // adjacent byte getters at 0x002885EC (+0x102) and 0x002885F3 (+0x101) prove the offsets;
 // same-gate donor Rva0031DF89 selects offsets via TheBfmeGlob; static ESI-arg convention per Rva008B8F80 precedent.
 
+extern class GameLogic *TheGameLogic;
+
 class BfmeGlob939D
 {
 public:
 	char bfmeCall939D();
 };
 
-#define TheBfmeGlob (*(BfmeGlob939D **)0x00DFE78C)
+#define TheBfmeGlob (*(BfmeGlob939D **)&TheGameLogic)
 
 struct Rva0028867DData
 {

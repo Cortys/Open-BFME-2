@@ -5,6 +5,8 @@
 // vector assign dup 0x0021C21B), grants starting sciences from Store configs
 // via pinned get 0x002000D7 and pinned addScience 0x002AD661, then notifies
 // ScriptEngine via rowed notify 0x00357F43. Callers at 0x001EC6DA 0x0040F90D.
+extern class GameLogic *TheGameLogic;
+
 enum ScienceType
 {
 	SCIENCE_INVALID = -1
@@ -34,7 +36,7 @@ public:
 	char bfmeCall939D();
 };
 
-#define TheBfmeGlob (*(BfmeGlob939D **)0x00DFE78C)
+#define TheBfmeGlob (*(BfmeGlob939D **)&TheGameLogic)
 
 struct PlayerTemplate
 {

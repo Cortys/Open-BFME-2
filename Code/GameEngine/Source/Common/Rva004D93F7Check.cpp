@@ -5,6 +5,8 @@
 // Evidence: TheAudio 0x00DFE6E8; TheShroudManager 0x00DFE74C precedent
 // Rva000D1BEA; rowed rva00739830; sbb-inc unsigned char per §4.6;
 // caller 0x004DA8C4.
+extern class PartitionManager *TheShroudManager;
+
 struct BfmePointFD;
 struct AudioBounds
 {
@@ -43,7 +45,7 @@ class Rva00739830
 public:
 	int rva00739830(const BfmePointFD *pt, int a, unsigned int b) const;
 };
-#define TheShroudManager (*(Rva00739830 **)0x00DFE74C)
+#define TheShroudManager (*(Rva00739830 **)&TheShroudManager)
 unsigned char __cdecl Rva004D93F7Check(unsigned int a, const BfmePointFD *pt1, const BfmePointFD *pt2)
 {
 	AudioManager *audio = TheAudio;

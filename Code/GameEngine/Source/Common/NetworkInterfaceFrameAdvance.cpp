@@ -7,6 +7,8 @@
 // router uses a QPC accumulator and the same logic-frame quantum as the pacing
 // query at slot +0x58.
 
+extern class GameLogic *TheGameLogic;
+
 extern int g_Va00DBA4E4;
 
 extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
@@ -92,7 +94,7 @@ private:
 	int m_lastValue;
 };
 
-#define TheGameLogic (*(volatile GameLogicFrame **)0x00DFE78C)
+#define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
 #define LogicFramesPerSecond g_Va00DBA4E4
 #define StallStartTime (*(unsigned long *)0x00DFEA2C)
 #define LastAdvanceTime (*(unsigned long *)0x00DFEA30)

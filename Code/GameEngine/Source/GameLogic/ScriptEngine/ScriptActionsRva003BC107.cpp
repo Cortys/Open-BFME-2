@@ -5,13 +5,15 @@
 // TheInGameUI per GameLogicSetGamePaused; callee sets [ecx+0x779]=al;
 // caller 0x003CC62E in ScriptActions dispatch.
 
+extern class InGameUI *TheInGameUI;
+
 class Rva0029A61AByteSlot
 {
 public:
 	void set(unsigned char value);
 };
 
-#define Rva00DFEDF0 (*(Rva0029A61AByteSlot **)0x00DFEDF0)
+#define Rva00DFEDF0 (*(Rva0029A61AByteSlot **)&TheInGameUI)
 
 void Rva003BC107()
 {
