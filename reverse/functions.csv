@@ -45459,3 +45459,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0035BF0E@Shell@@QAEXXZ,,0x0035BF0E,62,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell top WindowLayout slot0xC pendingPop doPop TheIMEManager
 ??1Shell@@UAE@XZ,,0x0035C087,227,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell dtor via BFME1 donor top loop layouts audio string base
 ??_GShell@@UAEPAXI@Z,,0x0035C54A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Shell.cpp,matched,vtable 0x00816208 slot0 calls rowed dtor 0x0035C087 and delete 0x0002FD60
+?Rva002E1889Reinsert@@YAXPAPAX0PAX1@Z,,0x002E1889,30,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,heap push-tail adapter via Reinsert caller 0x002E1F0A

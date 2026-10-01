@@ -138,3 +138,15 @@ void Rva002E1EF1MakeHeap(void **first, void **last, void *extra)
 	typedef void (__cdecl *MakeHeap5)(void **, void **, void *, int, int);
 	((MakeHeap5)Rva002E184DMakeHeap)(first, last, extra, 0, 0);
 }
+
+// ?Rva002E1889Reinsert@@YAXPAPAX0PAX1@Z @0x002E1889 30B.
+// Heap push-tail adapter: last=end-1 then 6-push cdecl call to rowed Reinsert
+// 0x002E1824 as (base last last *last extra 0). Evidence: frameless 6-push
+// with trailing 0 like MakeHeap5 above; third arg dead; caller 0x002E1F0A;
+// abuts MakeHeap sharing /O1.
+void Rva002E1889Reinsert(void **base, void **end, void *unused, void *extra)
+{
+	typedef void (__cdecl *Reinsert6)(void **, void **, void **, void *, void *, int);
+	void **last = end - 1;
+	((Reinsert6)Rva002E1824Reinsert)(base, last, last, *last, extra, 0);
+}
