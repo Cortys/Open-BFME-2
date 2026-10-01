@@ -1983,7 +1983,23 @@ def verify_functions(only=None):
     patches = []
     renumbered = []
     for row in rows:
-        patch = compile_function(row, symbol_map, row_object(row))
+        try:
+            patch = compile_function(row, symbol_map, row_object(row))
+        except ValueError as unreadable:
+            # A row whose body cannot be read is a RED row, not a dead gate.
+            # read_funclet raises exactly this when a funclet pin names no label
+            # in the object and cannot be re-identified from its parent's group
+            # (a renumbered pin with no parent= is the measured case), and
+            # read_object_symbol_bytes raises it for any row whose symbol the
+            # object no longer emits. Letting it escape aborts the whole gate on a
+            # traceback before a single FAIL is printed, which is how one stale
+            # pin hid every other row's verdict and blocked unrelated commits.
+            # The row still counts as a failure, so the gate still exits non-zero:
+            # only the reporting changes, never the verdict.
+            failures += 1
+            print(f"  FAIL {row['name']} ({row['source']})")
+            print(f"    unverifiable: {unreadable}")
+            continue
         target = patch["target"]
         compiled = patch["bytes"]
 
@@ -2091,8 +2107,12 @@ def verify_string_refs(rows):
         target_size = int(row["target_size"])
         target = read_target_bytes(target_rva, target_size)
         try:
-            fn_bytes, relocs = read_object_symbol_bytes(
-                obj, ledger_object_symbol(row), target_size)
+            if is_funclet_row(row, ledger_object_symbol(row)):
+                fn_bytes, relocs, _ = read_funclet(
+                    row, ledger_object_symbol(row), obj, target)
+            else:
+                fn_bytes, relocs = read_object_symbol_bytes(
+                    obj, ledger_object_symbol(row), target_size)
         except ValueError:
             continue
         for offset, rtype, sym in relocs:
@@ -2160,7 +2180,10 @@ def verify_float_refs(rows):
         size = int(row["target_size"])
         target = read_target_bytes(int(row["target_rva"], 16), size)
         try:
-            body, relocs = read_object_symbol_bytes(obj, ledger_object_symbol(row), size)
+            if is_funclet_row(row, ledger_object_symbol(row)):
+                body, relocs, _ = read_funclet(row, ledger_object_symbol(row), obj, target)
+            else:
+                body, relocs = read_object_symbol_bytes(obj, ledger_object_symbol(row), size)
         except ValueError as exc:
             mismatches.append((row["name"], "<body>", f"unverifiable: {exc}"))
             continue
