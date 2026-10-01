@@ -11,14 +11,20 @@
 class Rva005EEDAA
 {
 public:
+	Rva005EEDAA();
 	virtual ~Rva005EEDAA();
 };
 
 class Rva005D8723 : public Rva005EEDAA
 {
 public:
+	Rva005D8723();
 	virtual ~Rva005D8723();
 };
+
+Rva005D8723::Rva005D8723()
+{
+}
 
 Rva005D8723::~Rva005D8723()
 {
