@@ -251,6 +251,7 @@ public:
 	int rva00537305();
 	void rva00537208(AsciiString arg);
 	void rva0053626B(AsciiString arg, int x);
+	void rva005362FC(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -567,5 +568,14 @@ void UserPreferences::rva00537208(AsciiString arg)
 void UserPreferences::rva0053626B(AsciiString arg, int x)
 {
 	arg.concat("StructuresCreatedRTS");
+	v11(arg, x);
+}
+
+// ?rva005362FC@UserPreferences@@QAEXVAsciiString@@H@Z @0x005362FC 71B
+// UserPreferences StructuresLostRTS-void path: append StructuresLostRTS slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat StructuresLostRTS 0x00868F44 slot 0x2C releaseBuffer gap same TU unlock.
+void UserPreferences::rva005362FC(AsciiString arg, int x)
+{
+	arg.concat("StructuresLostRTS");
 	v11(arg, x);
 }
