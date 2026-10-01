@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /Ireference/shims/moduledata
 //
 // W3DPropDrawModuleData file-unit: parse proc and constructor.
 //
@@ -25,11 +25,7 @@ public:
 
 #include "ascii_string.h"
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
+#include "Common/Snapshot.h"
 
 class W3DPropDrawModuleData : public Snapshot
 {

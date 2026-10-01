@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE /Ireference/shims/moduledata
 //
 // ??1W3DProjectileStreamDrawModuleData@@UAE@XZ, retail 0x000D1226, 54 bytes.
 // W3DProjectileStreamDraw ModuleData dtor: reinstalls vtable 0x00BCDF18,
@@ -8,18 +8,7 @@
 
 #include "ascii_string.h"
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-extern const void *const g_00BBB554[];
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
+#include "Common/Snapshot.h"
 
 class W3DProjectileStreamDrawModuleData : public Snapshot
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/shims/moduledata
 // ??1LifeEventModuleInfo@FXParticleSystem@@UAE@XZ @0x003A9F8A 48B
 // Dtor releasing StringBase<char> at +4 via rowed releaseBuffer 0x00036410
 // plus Snapshot base BBB554. Evidence: EH_prolog with handler 0x00781D33
@@ -8,14 +8,7 @@ template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); }
 private: void releaseBuffer(); void *m_data; };
 
-class Snapshot {
-public: virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = (const void *)0x00BBB554;
-}
+#include "Common/Snapshot.h"
 
 namespace FXParticleSystem
 {

@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE /Ireference/shims/moduledata
 //
 // ??1PropagandaTowerBehaviorModuleData@@UAE@XZ retail 0x00481BCE 48 bytes.
 // Virtual dtor over vtable 0x00C49288 (slot 0 deleting dtor at 0x00481BB2).
@@ -9,16 +9,7 @@
 // with no base call. Shape follows RunOffMapBehaviorModuleDataDtor 48B precedent
 // (single AsciiString plus BBB554; offset 0x18 vs 0x14).
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 

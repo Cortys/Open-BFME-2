@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ??1UpgradeSoundSelectorClientBehaviorModuleData@@UAE@XZ, retail 0x004CBAEA, 48 bytes.
 // Target evidence: the audited scalar deleting dtor 0x004CBACE calls this
@@ -7,16 +7,7 @@
 // vector<BfmeRecordOwner900> dtor 0x004CB996), then the inlined trivial
 // Snapshot base stores 0x00BBB554. No derived vptr store (novtable).
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 struct BfmeRecordOwner900;
 

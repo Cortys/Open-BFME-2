@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ??1W3DTornadoDrawModuleData@@UAE@XZ, retail 0x000D1713, 48 bytes.
 // Target evidence: the audited scalar deleting dtor 0x000D16F7 calls this
@@ -7,16 +7,7 @@
 // the inlined trivial Snapshot base stores vtable 0x00BBB554. No derived vptr
 // store (novtable). The +0x04 slot holds no destructible member.
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class BfmeStringRecord000B94D2
 {
