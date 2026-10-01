@@ -46323,3 +46323,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00363DF9@Path@@QAEPAUCoord3D@@PAU2@@Z,,0x00363DF9,199,Code/GameEngine/Source/GameLogic/AI/PathRva00363DF9.cpp,matched,Path layout via neighbours EAX holds out so returns pointer single-exit tmp form
 ?rva00291793@Rva00291793@@QAEHXZ,,0x00291793,19,Code/GameEngine/Source/Common/System/Rva00291793.cpp,matched,unlock circular list count via plus4 holder
 ?rva0038027B@Rva00380200@@QAEXH@Z,,0x0038027B,16,Code/GameEngine/Source/Common/Rva0038028BMethod.cpp,matched,Unlock add clamp via same class Rva00380200 plus offset 0x1C
+?rva00524FA7@Rva00524FA7@@QAEXXZ,,0x00524FA7,70,Code/GameEngine/Source/Common/Rva00524FA7.cpp,matched,leaf InGameUI 0x988 scaled by g_00DBA500 with TheGameClient slot31 into 0x1DC via x87 single caller 0x005270EB
