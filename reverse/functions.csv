@@ -45370,3 +45370,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva005F69F5@@UAE@XZ,,0x005F69F5,59,Code/GameEngine/Source/Common/Rva005F69F5Dtor.cpp,matched,virtual dtor with conditional slot 0x18 call plus EH sibling of 0x005F6941
 ?rva005F697C@Rva005F697C@@QAEXXZ,,0x005F697C,18,Code/GameEngine/Source/Common/Rva005F697CMethod.cpp,matched,conditional slot 0x18 helper via callers 0x005F6A58 0x005F6AB0
 ??1Rva005F6A58@@UAE@XZ,,0x005F6A58,56,Code/GameEngine/Source/Common/Rva005F6A58Dtor.cpp,matched,chain dtor via helper 0x005F697C plus base 0x005F6941
+??1Rva005F6AB0@@UAE@XZ,,0x005F6AB0,56,Code/GameEngine/Source/Common/Rva005F6AB0Dtor.cpp,matched,chain dtor via helper 0x005F697C plus base 0x005F69F5
