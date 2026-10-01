@@ -5249,3 +5249,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002AA0DE@Rva002AA0DE@@QAE_NPAVThing@@@Z	0x002AA0DE	69	blocked	second isAnyKindOf plus return true still neg sbb vs retail test jne after removing second local plus uchar outer both same 69B t=10 model=muse-06 (stash 0.93 kept)
 ?Rva002AAD52Find@@YAXPAPAXPAX1PAG@Z	0x002AAD52	37	blocked	37B stash has eax-ecx swap exact size structure plus order swap to k-first loses initial cmp je for jmp 34B wall t=8 model=muse-06
 ?Rva002AA41A@@YAHPAVObject@@PAX@Z	0x002AA41A	64	blocked	fstp plus extra fld vs fst single fld plus jae vs jbe same as stash no improvement t=8 model=muse-06 (stash 0.93 kept)
+?rva00273C47@Drawable@@QAEXXZ	0x00273C47	392	blocked	28 vs 392B stub only early find part full Drawable update with 10plus virtuals plus SSE plus 2 globals needs full donor plus time exceeds box t=8 model=muse-06
