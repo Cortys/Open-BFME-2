@@ -16,3 +16,4 @@ template <> void _Construct<BfmeStringTailRecord156, BfmeStringTailRecord156>(Bf
 }
 
 template BfmeStringTailRecord156 *_STL::vector<BfmeStringTailRecord156, _STL::allocator<BfmeStringTailRecord156> >::_M_allocate_and_copy(unsigned int, BfmeStringTailRecord156 *, BfmeStringTailRecord156 *);
+template void _STL::vector<BfmeStringTailRecord156>::reserve(unsigned int);
