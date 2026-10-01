@@ -46648,3 +46648,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00262DBF@AIUpdateInterface@@UBE_NXZ,,0x00262DBF,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot115 state pred12 or true
 ?rva00262D40@AIUpdateInterface@@QAEXH@Z,,0x00262D40,59,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,sets guard mode pos angle and enters AI_GUARD
 ?rva00262DD3@AIUpdateInterface@@QBE_NPBVObject@@@Z,,0x00262DD3,81,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,checks state 0x1A and m_field198 or m_field19c matches obj id
+?rva00262EFF@AIUpdateInterface@@UAEXPAX00@Z,,0x00262EFF,26,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot71 m_obj ptr250 vslot42 call with 0

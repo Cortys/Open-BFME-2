@@ -7,10 +7,27 @@
 // ?rva00262DAB@AIUpdateInterface@@UBE_NXZ, retail 0x00262DAB, 20 bytes.
 // ?rva00262DBF@AIUpdateInterface@@UBE_NXZ, retail 0x00262DBF, 20 bytes.
 // ?rva00262DD3@AIUpdateInterface@@QBE_NPBVObject@@@Z, retail 0x00262DD3, 81 bytes.
+// ?rva00262EFF@AIUpdateInterface@@UAEXPAX00@Z, retail 0x00262EFF, 26 bytes.
 
 struct Coord3D
 {
 	float x, y, z;
+};
+
+#define VM10(p) \
+	virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class Slot42Target
+{
+public:
+	VM10(t0_)
+	VM10(t1_)
+	VM10(t2_)
+	VM10(t3_)
+	virtual void t40();
+	virtual void t41();
+	virtual void vslot42(int zero); // slot 42 -> offset 0xA8
 };
 
 class Object
@@ -21,6 +38,8 @@ public:
 	float m_angle; // +0x44
 	char m_pad48[0x74 - 0x48];
 	unsigned int m_id; // +0x74
+	char m_pad78[0x250 - 0x78];
+	Slot42Target *m_ptr250; // +0x250
 };
 
 class State
@@ -57,10 +76,6 @@ public:
 	bool isInPred13() const { return m_currentState ? m_currentState->pred13() : true; }
 };
 
-#define VM10(p) \
-	virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
-	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
-
 class AIUpdateInterfaceBase
 {
 public:
@@ -71,7 +86,10 @@ public:
 	VM10(v4_)
 	VM10(v5_)
 	VM10(v6_)
-	VM10(v7_)
+	virtual void v70();
+	virtual void rva00262EFF(void *a, void *b, void *c); // slot 71
+	virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
 	VM10(v8_)
 	VM10(v9_)
 	VM10(v10_)
@@ -107,6 +125,7 @@ public:
 	virtual bool rva00262DAB() const;
 	virtual bool rva00262DBF() const;
 	bool rva00262DD3(const Object *obj) const;
+	virtual void rva00262EFF(void *a, void *b, void *c);
 };
 
 void AIUpdateInterface::rva00262D40(int mode)
@@ -159,4 +178,12 @@ bool AIUpdateInterface::rva00262DD3(const Object *obj) const
 			return true;
 	}
 	return false;
+}
+
+void AIUpdateInterface::rva00262EFF(void *a, void *b, void *c)
+{
+	Object *obj = m_obj;
+	Slot42Target *target = obj->m_ptr250;
+	if (target)
+		target->vslot42(0);
 }
