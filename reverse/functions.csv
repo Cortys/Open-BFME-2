@@ -45260,3 +45260,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002B2AFD@Rva002B2AFD@@QAEHXZ,,0x002B2AFD,48,Code/GameEngine/Source/Common/Rva002B2AFDSelect.cpp,matched,selector via isSelectionLocked and 0x002034E9 caller 0x0038030D
 ?Rva002B44C1Destroy@@YAXPAVRva002B2F49@@0@Z,,0x002B44C1,27,Code/GameEngine/Source/Common/Rva002B44C1Destroy.cpp,matched,chain via rowed 0x002B2F49 same flags as neighbours unblocks 0x002B61C5
 ?Rva002B47B1Get@@YAPAXXZ,,0x002B47B1,18,Code/GameEngine/Source/Common/Rva002B47B1Get.cpp,matched,unlock chase via global 0x00E02D6C same shape as rowed Rva003B8BAA
+?rva00214801@Rva002147D1@@QAEPAXPAXH@Z,,0x00214801,97,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,same container as siblings via copy ctor row 0x00045455 callers at 0x004037B2 0x00403D2E 0x00403FBF
