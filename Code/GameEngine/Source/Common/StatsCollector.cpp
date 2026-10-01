@@ -489,3 +489,20 @@ void StatsCollector::writeStatInfo()
 	fprintf( f, "\n" );
 	fclose( f );
 }
+
+// ?TheGameLogic@@3PAXA: matched references place it at VA 0xdfe78c; also referenced as ?g_Va009FE78C@@3PAUGlobal9FE78C@@A, ?Va00DFE78CStatePointer@@3PAUVa00DFE78CState@@A, ?g_bfmeRva42E8C1Holder@@3PAUBfmeRva42E8C1Limit@@A, ?g_00DFE78C@@3PAUSingletonDFE78C@@A, ?g_009FE78C@@3PAVRva0023D661@@A, ?g_00DFE78C@@3PAURva00DFE78CHolder@@A, ?g_00DFE78C@@3PAUGameLogicFrame@@A, ?g_009FE78C@@3PAUGameLogic@@A, ?g_Va009FE78C@@3HA, ?TheGameLogic@@3PAUGameLogic@@A, ?g_updateGlobal@@3PAUOpaqueGlobal@@A, ?g_Rva0023D229Global@@3PAURva0023D229Global@@A, ?g_Rva0023D339B@@3PAURva0023D339B@@A, ?g_bfme939GlobD@@3PAVBfmeGlob939D@@A.
+void * TheGameLogic = 0;
+#pragma comment(linker, "/alternatename:?g_Va009FE78C@@3PAUGlobal9FE78C@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?Va00DFE78CStatePointer@@3PAUVa00DFE78CState@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_bfmeRva42E8C1Holder@@3PAUBfmeRva42E8C1Limit@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAUSingletonDFE78C@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_009FE78C@@3PAVRva0023D661@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAURva00DFE78CHolder@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAUGameLogicFrame@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_009FE78C@@3PAUGameLogic@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_Va009FE78C@@3HA=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?TheGameLogic@@3PAUGameLogic@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_updateGlobal@@3PAUOpaqueGlobal@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_Rva0023D229Global@@3PAURva0023D229Global@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_Rva0023D339B@@3PAURva0023D339B@@A=?TheGameLogic@@3PAXA")
+#pragma comment(linker, "/alternatename:?g_bfme939GlobD@@3PAVBfmeGlob939D@@A=?TheGameLogic@@3PAXA")

@@ -123,3 +123,7 @@ void AIUpdateInterface::ignoreObstacle(const Object *obj)
 	}
 	m_ignoreObstacleID = obj ? obj->getID() : INVALID_ID;
 }
+
+// ?g_00DFEFF0@@3PAXA: matched references place it at VA 0xdfeff0; also referenced as _theLogicRandomLogFile.
+void * g_00DFEFF0 = 0;
+#pragma comment(linker, "/alternatename:_theLogicRandomLogFile=?g_00DFEFF0@@3PAXA")

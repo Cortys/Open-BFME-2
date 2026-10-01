@@ -136,3 +136,7 @@ void setPlayerMagicProgress(int progress)
 	sprintf((char *)&progress, "%d", progress);
 	TheRva00222A8BTarget->invoke(TheRva009C1A0COwner, "SetPlayerMagicProgress", 1, (char *)&progress, 0, 0, 0, 0);
 }
+
+// ?TheRva002D3627Host@@3PAVRva002D3627Host@@A: matched references place it at VA 0xdff028; also referenced as ?theRadarWindowOverrideSource@@3PAVRadarWindowOverrideSource@@A.
+Rva002D3627Host * TheRva002D3627Host = 0;
+#pragma comment(linker, "/alternatename:?theRadarWindowOverrideSource@@3PAVRadarWindowOverrideSource@@A=?TheRva002D3627Host@@3PAVRva002D3627Host@@A")

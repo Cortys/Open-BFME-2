@@ -117,3 +117,7 @@ Rva000E6AC0::Rva000E6AC0()
     m_540 = -1;
     m_5bc = f;
 }
+
+// ?g_Va009FE710@@3PAUGlobal9FE710@@A: matched references place it at VA 0xdfe710; also referenced as ?g_Va009FE710@@3PAVDummy24@@A.
+Global9FE710 * g_Va009FE710 = 0;
+#pragma comment(linker, "/alternatename:?g_Va009FE710@@3PAVDummy24@@A=?g_Va009FE710@@3PAUGlobal9FE710@@A")

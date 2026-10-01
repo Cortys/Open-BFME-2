@@ -210,3 +210,7 @@ bool Rva0052DE5B::rva0052DEEF(const Rva0052DEEFArg *a, bool b, In002E6BA1 *c)
 	m_node->m_nodeFlags ^= ((t2 ^ m_node->m_nodeFlags) & 4u);
 	return true;
 }
+
+// ?TheMixFileInfoPool@@3HA: matched references place it at VA 0xe049d0; also referenced as ?g_00A049D0@@3PAVMixFileInfoBuffer@@A.
+int TheMixFileInfoPool;
+#pragma comment(linker, "/alternatename:?g_00A049D0@@3PAVMixFileInfoBuffer@@A=?TheMixFileInfoPool@@3HA")

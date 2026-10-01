@@ -75,3 +75,12 @@ const Video *VideoPlayer::getVideo(AsciiString movieTitle)
 	}
 	return 0;
 }
+
+// ?g_bfmeVideoTableBegin@@3PAUVideo@@A: matched references place it at VA 0xe0abb4; also referenced as ?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A, ?g_bfmeBeginJD@@3PAVBfmeRecJD@@A.
+Video * g_bfmeVideoTableBegin = 0;
+#pragma comment(linker, "/alternatename:?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeBeginJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
+// ?g_bfmeVideoTableEnd@@3PAUVideo@@A: matched references place it at VA 0xe0abb8; also referenced as ?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A, ?g_bfmeEndJD@@3PAVBfmeRecJD@@A.
+Video * g_bfmeVideoTableEnd = 0;
+#pragma comment(linker, "/alternatename:?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeEndJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")

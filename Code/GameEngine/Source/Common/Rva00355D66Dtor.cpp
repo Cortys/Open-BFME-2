@@ -178,3 +178,9 @@ void Rva003563A7::rva00355EE1()
 	m_win = 0;
 	m_pad10 = false;
 }
+
+// ?TheDisplay@@3PAVDisplayManager@@A: matched references place it at VA 0xdfe9d8; also referenced as ?TheDisplay@@3PAVDisplayInterface@@A, ?W3DGCData00DFE9D8@@3PAXA, ?g_Va009FE9D8@@3PAVDummy24@@A.
+DisplayManager * TheDisplay = 0;
+#pragma comment(linker, "/alternatename:?TheDisplay@@3PAVDisplayInterface@@A=?TheDisplay@@3PAVDisplayManager@@A")
+#pragma comment(linker, "/alternatename:?W3DGCData00DFE9D8@@3PAXA=?TheDisplay@@3PAVDisplayManager@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FE9D8@@3PAVDummy24@@A=?TheDisplay@@3PAVDisplayManager@@A")

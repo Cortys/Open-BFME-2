@@ -180,3 +180,8 @@ void LANAPI::reset(void)
 		g_Rva00E02EEC = 0;
 	m_currentGame = 0;
 }
+
+// ?g_Rva00E02EEC@@3PAVLANGameInfo@@A: matched references place it at VA 0xe02eec; also referenced as ?g_00E02EEC@@3PAVRva00E02EECObj@@A, ?g_Rva0023D30FFlag@@3HA.
+LANGameInfo * g_Rva00E02EEC = 0;
+#pragma comment(linker, "/alternatename:?g_00E02EEC@@3PAVRva00E02EECObj@@A=?g_Rva00E02EEC@@3PAVLANGameInfo@@A")
+#pragma comment(linker, "/alternatename:?g_Rva0023D30FFlag@@3HA=?g_Rva00E02EEC@@3PAVLANGameInfo@@A")

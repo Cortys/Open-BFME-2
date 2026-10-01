@@ -195,3 +195,8 @@ AptValue *AptDate::sMethod_setYear(AptValue *value,int argc)
         reinterpret_cast<AptDate *>(reinterpret_cast<BfmeAptValue006DCD20 *>(value)->rva006DD160())->timezoneHours);
     return AptInteger::Create(0);
 }
+
+// ?gpUndefinedValue@@3PAVAptValue@@A: matched references place it at VA 0xe18078; also referenced as ?g_Va00E18078@@3HA, ?g_Rva013379BC@@3PAVRva00898D60Target@@A.
+AptValue * gpUndefinedValue = 0;
+#pragma comment(linker, "/alternatename:?g_Va00E18078@@3HA=?gpUndefinedValue@@3PAVAptValue@@A")
+#pragma comment(linker, "/alternatename:?g_Rva013379BC@@3PAVRva00898D60Target@@A=?gpUndefinedValue@@3PAVAptValue@@A")

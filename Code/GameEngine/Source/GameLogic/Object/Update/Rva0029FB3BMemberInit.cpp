@@ -61,3 +61,7 @@ void Rva0029FB3BMember::reset()
 	((void **)m_head)[0] = m_head;
 	((void **)m_head)[1] = m_head;
 }
+
+// ?g_freeList@@3PAXA: matched references place it at VA 0xda60f0; also referenced as ?g_pool009A60F0@@3PAUPoolNode002ABB20@@A.
+void * g_freeList = 0;
+#pragma comment(linker, "/alternatename:?g_pool009A60F0@@3PAUPoolNode002ABB20@@A=?g_freeList@@3PAXA")

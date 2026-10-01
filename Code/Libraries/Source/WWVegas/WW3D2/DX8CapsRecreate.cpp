@@ -55,3 +55,7 @@ void __cdecl Rva001207B0Init(void *device)
 	g_currentCaps = (BfmeEnumerationCaps *)new DX8Caps(g_d3dInterface,
 		g_d3dDevice, (WW3DFormat)(int)device, g_adapterIdentifier);
 }
+
+// ?g_d3dInterface@@3PAUIDirect3D8@@A: matched references place it at VA 0xdeda30; also referenced as ?G009EDA30@@3HA.
+IDirect3D8 * g_d3dInterface = 0;
+#pragma comment(linker, "/alternatename:?G009EDA30@@3HA=?g_d3dInterface@@3PAUIDirect3D8@@A")

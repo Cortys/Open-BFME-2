@@ -90,3 +90,9 @@ Rva0045EF90Object::~Rva0045EF90Object()
 		g_rva00410421Manager->unregister(m_handle);
 	m_handle = 0;
 }
+
+// ?g_rva00410421Manager@@3PAVRva00410421Manager@@A: matched references place it at VA 0xdfef1c; also referenced as ?g_Va009FEF1C@@3PAVDummy24@@A, ?g_bfmeWindowManagerAR@@3PAVBfmeWindowManagerAR@@A, ?g_bfmeN1020@@3PAVBfmeN1020@@A.
+Rva00410421Manager * g_rva00410421Manager = 0;
+#pragma comment(linker, "/alternatename:?g_Va009FEF1C@@3PAVDummy24@@A=?g_rva00410421Manager@@3PAVRva00410421Manager@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeWindowManagerAR@@3PAVBfmeWindowManagerAR@@A=?g_rva00410421Manager@@3PAVRva00410421Manager@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeN1020@@3PAVBfmeN1020@@A=?g_rva00410421Manager@@3PAVRva00410421Manager@@A")

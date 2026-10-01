@@ -270,3 +270,27 @@ int Rva0043C99AGet(void)
 	}
 	return 0;
 }
+
+// ?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A: matched references place it at VA 0xdfe4cc; also referenced as ?WindowManagerSubsystem@@3PAVClientSubsystem@@A, ?g_Va009FE4CC@@3PAVRva00223A94@@A, ?TheGuiScale@@3PAVGuiScale@@A, ?g_Va009FE4CC@@3PAVDummy24@@A, ?g_Va009FE4CC@@3PAVRva00224705@@A.
+Rva00222479ByteOneSetter * g_Va009FE4CC = 0;
+#pragma comment(linker, "/alternatename:?WindowManagerSubsystem@@3PAVClientSubsystem@@A=?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVRva00223A94@@A=?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A")
+#pragma comment(linker, "/alternatename:?TheGuiScale@@3PAVGuiScale@@A=?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVDummy24@@A=?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVRva00224705@@A=?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A")
+// ?g_Va009FEEE8@@3PAURva0043C933Outer@@A: matched references place it at VA 0xdfeee8; also referenced as ?TheShroudKeyBase@@3PAUShroudKeyBase@@A.
+Rva0043C933Outer * g_Va009FEEE8 = 0;
+#pragma comment(linker, "/alternatename:?TheShroudKeyBase@@3PAUShroudKeyBase@@A=?g_Va009FEEE8@@3PAURva0043C933Outer@@A")
+// ?g_Va00A03314@@3PAUGlobalA03314@@A: matched references place it at VA 0xe03314; also referenced as ?g_Va00E03314@@3HA.
+GlobalA03314 * g_Va00A03314 = 0;
+#pragma comment(linker, "/alternatename:?g_Va00E03314@@3HA=?g_Va00A03314@@3PAUGlobalA03314@@A")
+// ?g_Va00A04450@@3PAUGlobalA04450@@A: matched references place it at VA 0xe04450; also referenced as ?g_Va00E04450@@3HA.
+GlobalA04450 * g_Va00A04450 = 0;
+#pragma comment(linker, "/alternatename:?g_Va00E04450@@3HA=?g_Va00A04450@@3PAUGlobalA04450@@A")
+// ?g_Va00A046B4@@3PAUGlobalA046B4@@A: matched references place it at VA 0xe046b4; also referenced as ?g_Va00E046B4@@3HA.
+GlobalA046B4 * g_Va00A046B4 = 0;
+#pragma comment(linker, "/alternatename:?g_Va00E046B4@@3HA=?g_Va00A046B4@@3PAUGlobalA046B4@@A")
+// ?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A: matched references place it at VA 0xdfedf0; also referenced as ?g_Va009FEDF0@@3PAVRva00512C88ObjB@@A, ?g_Va009FEDF0@@3HA.
+Global9FEDF0 * g_Va009FEDF0 = 0;
+#pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3PAVRva00512C88ObjB@@A=?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3HA=?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A")

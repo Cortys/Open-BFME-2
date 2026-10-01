@@ -281,3 +281,7 @@ void __cdecl Rva004163E1Notify(AsciiString a, UnicodeString u)
 	else
 		Rva004162B7Notify(a, u);
 }
+
+// ?g_Va00A04904@@3PAURva00517048@@A: matched references place it at VA 0xe04904; also referenced as ?g_Va00E04904@@3HA.
+Rva00517048 * g_Va00A04904 = 0;
+#pragma comment(linker, "/alternatename:?g_Va00E04904@@3HA=?g_Va00A04904@@3PAURva00517048@@A")

@@ -66,3 +66,7 @@ void Rva005830AE::rva005830AE(int x)
 	g_Va009FE9D8->v10();
 	g_Va009FE9D8->v12();
 }
+
+// ?g_Va009FEA28@@3PAVDummy24@@A: matched references place it at VA 0xdfea28; also referenced as ?g_Rva0023D30FTarget@@3PAVRva0023D30FTarget@@A.
+Dummy24 * g_Va009FEA28 = 0;
+#pragma comment(linker, "/alternatename:?g_Rva0023D30FTarget@@3PAVRva0023D30FTarget@@A=?g_Va009FEA28@@3PAVDummy24@@A")

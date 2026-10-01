@@ -44,3 +44,7 @@ void Rva00404D70::rva004055F2()
 	rec.f2 = b;
 	m_vec.push_back(rec);
 }
+
+// ?g_Va00BC2428@@3MA: matched references place it at VA 0xbc2428; also referenced as ?g_cloudBreakRadiusDefault@@3MA.
+float g_Va00BC2428 = 1e+01f;
+#pragma comment(linker, "/alternatename:?g_cloudBreakRadiusDefault@@3MA=?g_Va00BC2428@@3MA")

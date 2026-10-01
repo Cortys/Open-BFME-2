@@ -90,3 +90,7 @@ bool W3DFontLibrary::loadFontData(GameFont *font)
 
 	return true;
 }
+
+// ?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A: matched references place it at VA 0xdfdc84; also referenced as ?TheGlobalLanguageData@@3PAUGlobalLanguage@@A.
+GlobalLanguageData * TheGlobalLanguageData = 0;
+#pragma comment(linker, "/alternatename:?TheGlobalLanguageData@@3PAUGlobalLanguage@@A=?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A")

@@ -164,3 +164,8 @@ void LANAPI::OnGameCreate( LANAPIInterface::ReturnType ret )
 		}
 	}
 }
+
+// ?g_Va00E03354@@3PAURva004469D1Receiver@@A: matched references place it at VA 0xe03354; also referenced as ?g_Va00A03354@@3PAUGlobalA03354@@A, ?g_Va00A03354@@3PAUOuter00446A77@@A.
+Rva004469D1Receiver * g_Va00E03354 = 0;
+#pragma comment(linker, "/alternatename:?g_Va00A03354@@3PAUGlobalA03354@@A=?g_Va00E03354@@3PAURva004469D1Receiver@@A")
+#pragma comment(linker, "/alternatename:?g_Va00A03354@@3PAUOuter00446A77@@A=?g_Va00E03354@@3PAURva004469D1Receiver@@A")

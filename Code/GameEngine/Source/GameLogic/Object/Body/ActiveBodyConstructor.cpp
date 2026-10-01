@@ -192,3 +192,14 @@ ActiveBody::ActiveBody(Thing *thing, const ModuleData *moduleData)
 	validateArmorAndDamageFX();
 	setCorrectDamageState(false);
 }
+
+// ?g_Va00DE0878@@3IA: matched references place it at VA 0xde0878; also referenced as ?g_009E0878@@3VAsciiString@@A, ?g_emptyAsciiString@@3VAsciiString@@A, ?TheDefaultArmorTemplateName@@3VAsciiString@@A, ?g_emptyName@@3VAsciiString@@B, ?g_bfmeNullAdjustDE0878@@3UBfmeNullAdjustDefault@@A, ?emptyRunOffMapWaypointName@@3VAsciiString@@B, ?g_str009E0878@@3V?$StringBase@D@@A, ?g_emptyModuleName@@3VBFMERetailAsciiString@@A.
+unsigned int g_Va00DE0878;
+#pragma comment(linker, "/alternatename:?g_009E0878@@3VAsciiString@@A=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?g_emptyAsciiString@@3VAsciiString@@A=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?TheDefaultArmorTemplateName@@3VAsciiString@@A=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?g_emptyName@@3VAsciiString@@B=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?g_bfmeNullAdjustDE0878@@3UBfmeNullAdjustDefault@@A=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?emptyRunOffMapWaypointName@@3VAsciiString@@B=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?g_str009E0878@@3V?$StringBase@D@@A=?g_Va00DE0878@@3IA")
+#pragma comment(linker, "/alternatename:?g_emptyModuleName@@3VBFMERetailAsciiString@@A=?g_Va00DE0878@@3IA")

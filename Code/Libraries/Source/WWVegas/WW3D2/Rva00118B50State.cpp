@@ -45,3 +45,7 @@ void Rva00118B50(void)
 	g_Va00DEC4A4 = 0;
 	g_Va00DEC4A0 = 0;
 }
+
+// ?g_Va00DEC49C@@3MA: matched references place it at VA 0xdec49c; also referenced as _g_BfmeRender2DZ.
+float g_Va00DEC49C;
+#pragma comment(linker, "/alternatename:_g_BfmeRender2DZ=?g_Va00DEC49C@@3MA")

@@ -77,3 +77,7 @@ void Rva003AED3E::Rva003A5572()
 		break;
 	}
 }
+
+// ?g_Va007C26F0@@3MA: matched references place it at VA 0xbc26f0; also referenced as ?g_Va00BC26F0@@3MA.
+float g_Va007C26F0 = 0.5f;
+#pragma comment(linker, "/alternatename:?g_Va00BC26F0@@3MA=?g_Va007C26F0@@3MA")

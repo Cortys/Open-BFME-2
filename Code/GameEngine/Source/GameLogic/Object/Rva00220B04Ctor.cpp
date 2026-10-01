@@ -74,3 +74,7 @@ Rva00220B04::Rva00220B04(int a)
 	int count = (int)(p->m_finish - p->m_begin);
 	((_STL::vector<Drawable *, _STL::allocator<Drawable *> > *)&m_vec14raw)->resize((unsigned)count, (Drawable *)0);
 }
+
+// ?g_00DFE490@@3PAXA: matched references place it at VA 0xdfe490; also referenced as ?g_00DFE490@@3VRva00575674@@A.
+void * g_00DFE490 = 0;
+#pragma comment(linker, "/alternatename:?g_00DFE490@@3VRva00575674@@A=?g_00DFE490@@3PAXA")

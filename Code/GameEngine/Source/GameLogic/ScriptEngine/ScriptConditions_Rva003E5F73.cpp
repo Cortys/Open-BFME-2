@@ -99,3 +99,7 @@ bool __stdcall Rva003E5F73Check(Parameter *param, CondA003E5F73 *a, CondB003E5F7
 
 	return false;
 }
+
+// ?g_Va009FE16C@@3PAVScriptEngine@@A: matched references place it at VA 0xdfe16c; also referenced as ?TheDebugWindowInterface@@3PAXA.
+ScriptEngine * g_Va009FE16C = 0;
+#pragma comment(linker, "/alternatename:?TheDebugWindowInterface@@3PAXA=?g_Va009FE16C@@3PAVScriptEngine@@A")

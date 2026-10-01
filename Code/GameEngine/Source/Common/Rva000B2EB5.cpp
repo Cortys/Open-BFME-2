@@ -168,3 +168,7 @@ float Rva000B2EB5::rva000B2EB5()
 		return g_Va00BBB8D8;
 	return f / (fn - g_Va00BBB8D8);
 }
+
+// ?g_00BBB9AC@@3MA: matched references place it at VA 0xbbb9ac; also referenced as ?g_00BBB9AC@@3MB.
+float g_00BBB9AC = -1.0f;
+#pragma comment(linker, "/alternatename:?g_00BBB9AC@@3MB=?g_00BBB9AC@@3MA")

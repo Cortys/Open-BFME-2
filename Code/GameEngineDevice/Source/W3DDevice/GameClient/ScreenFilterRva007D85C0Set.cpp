@@ -69,3 +69,10 @@ unsigned int ScreenOpaqueShader = 0x11581bu;
 
 // ScreenStateChanges: matched references place it at VA 0xdeda64 (zero-filled .bss).
 unsigned int ScreenStateChanges;
+
+// ?ScreenCurrentShader@@3IA: matched references place it at VA 0xdee5d8; also referenced as ?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A.
+unsigned int ScreenCurrentShader;
+#pragma comment(linker, "/alternatename:?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A=?ScreenCurrentShader@@3IA")
+// ?ScreenShaderDirty@@3_NA: matched references place it at VA 0xdb621c; also referenced as ?g_bfmeDoneTDB@@3DA.
+bool ScreenShaderDirty = true;
+#pragma comment(linker, "/alternatename:?g_bfmeDoneTDB@@3DA=?ScreenShaderDirty@@3_NA")

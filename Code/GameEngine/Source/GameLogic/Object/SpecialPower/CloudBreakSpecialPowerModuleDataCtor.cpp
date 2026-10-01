@@ -57,3 +57,7 @@ CloudBreakSpecialPowerModuleData::CloudBreakSpecialPowerModuleData()
 	float spacing = g_objectSpacingDefault;
 	m_objectSpacing = spacing;
 }
+
+// ?g_objectSpacingDefault@@3MA: matched references place it at VA 0xbc292c; also referenced as _kF7C.
+float g_objectSpacingDefault = 1e+02f;
+#pragma comment(linker, "/alternatename:_kF7C=?g_objectSpacingDefault@@3MA")

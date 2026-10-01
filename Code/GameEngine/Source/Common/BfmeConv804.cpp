@@ -94,3 +94,8 @@ bool bfmeGoECI(void)
 		return false;
 	return obj->bfmeAsk54ECI();
 }
+
+// ?g_bfmeObjECF@@3PAUBfmeObjECF@@A: matched references place it at VA 0xdf7040; also referenced as ?Rva00959410Dispatch@@3URva00959410Ptr@@A, ?g_bfmeObjECF@@3VBfmeObjECFPtr@@A.
+BfmeObjECF * g_bfmeObjECF = 0;
+#pragma comment(linker, "/alternatename:?Rva00959410Dispatch@@3URva00959410Ptr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeObjECF@@3VBfmeObjECFPtr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")

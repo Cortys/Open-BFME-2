@@ -148,3 +148,7 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 			TheRankInfoStore->m_rankInfos.push_back(storedInfo);		}
 	}
 }
+
+// ?TheRankInfoStore@@3PAVRankInfoStore@@A: matched references place it at VA 0xdfe0ec; also referenced as ?Va00DFE0ECStore@@3PAVRva002000D7Store@@A.
+RankInfoStore * TheRankInfoStore = 0;
+#pragma comment(linker, "/alternatename:?Va00DFE0ECStore@@3PAVRva002000D7Store@@A=?TheRankInfoStore@@3PAVRankInfoStore@@A")

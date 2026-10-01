@@ -838,3 +838,10 @@ void SortingRendererClass::Insert_VolumeParticle(
 	}
 	if (!node) sorted_list.Add_Tail(state);
 }
+
+// ?TheBoxTextureDirtyMask@@3IA: matched references place it at VA 0xdec4f4; also referenced as ?BFME2RenderStateChanged@@3IA.
+unsigned int TheBoxTextureDirtyMask;
+#pragma comment(linker, "/alternatename:?BFME2RenderStateChanged@@3IA=?TheBoxTextureDirtyMask@@3IA")
+// ?g_00DEDA98@@3IA: matched references place it at VA 0xdeda98; also referenced as ?g_bfmeCountTDB@@3HA.
+unsigned int g_00DEDA98;
+#pragma comment(linker, "/alternatename:?g_bfmeCountTDB@@3HA=?g_00DEDA98@@3IA")

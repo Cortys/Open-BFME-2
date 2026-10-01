@@ -235,3 +235,10 @@ void __cdecl bfmeInstallSpreadTable(void)
 		g_bfmeSlotB40 = (void *)&copyTwelveVec3;
 	}
 }
+
+// ?g_bfmeSlotB40@@3PAXA: matched references place it at VA 0xe22d08; also referenced as ?g_rva01356B40@@3P6AXPAX0HH@ZA.
+void * g_bfmeSlotB40 = 0;
+#pragma comment(linker, "/alternatename:?g_rva01356B40@@3P6AXPAX0HH@ZA=?g_bfmeSlotB40@@3PAXA")
+// ?g_bfmeSlotB48@@3PAXA: matched references place it at VA 0xe22d10; also referenced as ?g_bfmeToneReady@@3P6AXXZA.
+void * g_bfmeSlotB48 = 0;
+#pragma comment(linker, "/alternatename:?g_bfmeToneReady@@3P6AXXZA=?g_bfmeSlotB48@@3PAXA")

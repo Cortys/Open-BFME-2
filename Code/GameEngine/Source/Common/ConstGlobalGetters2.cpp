@@ -348,3 +348,7 @@ int Rva006C5E70Get(void)
 {
 	return G00E0C620;
 }
+
+// ?G009B5F94@@3HA: matched references place it at VA 0xdb5f94; also referenced as ?NPatchesLevel@@3IA.
+int G009B5F94 = 1;
+#pragma comment(linker, "/alternatename:?NPatchesLevel@@3IA=?G009B5F94@@3HA")

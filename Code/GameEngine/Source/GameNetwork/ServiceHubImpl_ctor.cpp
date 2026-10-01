@@ -195,3 +195,7 @@ ServiceHubImpl::ServiceHubImpl(void *a, void *b, void *c, void *d, void *e, void
 	m_2AC = 0;
 	init();
 }
+
+// ?vftable_011296B0@@3HA: matched references place it at VA 0xce0f20; also referenced as ?g_bfmeVftTUA@@3PAPAXA.
+int vftable_011296B0 = 10892336;
+#pragma comment(linker, "/alternatename:?g_bfmeVftTUA@@3PAPAXA=?vftable_011296B0@@3HA")

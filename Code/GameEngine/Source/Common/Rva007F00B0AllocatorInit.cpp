@@ -55,3 +55,8 @@ void Rva007F00B0(void *allocate, void *release)
 clear:
 	g_Rva0130A5B0 = 0;
 }
+
+// ?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A: matched references place it at VA 0xe09fcc; also referenced as ?g_bfmeS1019@@3PAVBfmeS1019@@A, ?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A.
+Rva007F00B0Allocator * g_Rva0130A5B0 = 0;
+#pragma comment(linker, "/alternatename:?g_bfmeS1019@@3PAVBfmeS1019@@A=?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A")
+#pragma comment(linker, "/alternatename:?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A=?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A")

@@ -791,3 +791,21 @@ void WW3D::_Invalidate_Mesh_Cache()
  if(TheDX8MeshRenderer!=0)
   TheDX8MeshRenderer->Invalidate(false);
 }
+
+// ?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A: matched references place it at VA 0xdeda34; also referenced as ?g_d3dDevice@@3PAUIDirect3DDevice8@@A, ?ScreenDevice@@3PAUDevice@@A, ?g_bfmeD3DDevice@@3PAVBfmeD3DDevice@@A, ?Rva01340534Device@@3PAUGen00920BC0Device@@A, ?g_bfmeD3DDevice8@@3PAXA, ?g_bfmeObjTDB@@3PAUBfmeObjTDB@@A, ?g_w3dMouseD3DDevice@@3PAVD3DDeviceInterface@@A, ?g_Va00DEDA34@@3HA.
+BfmeDynamicDevice9 * bfmeDynamicDevice = 0;
+#pragma comment(linker, "/alternatename:?g_d3dDevice@@3PAUIDirect3DDevice8@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?ScreenDevice@@3PAUDevice@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeD3DDevice@@3PAVBfmeD3DDevice@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?Rva01340534Device@@3PAUGen00920BC0Device@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeD3DDevice8@@3PAXA=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeObjTDB@@3PAUBfmeObjTDB@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?g_w3dMouseD3DDevice@@3PAVD3DDeviceInterface@@A=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+#pragma comment(linker, "/alternatename:?g_Va00DEDA34@@3HA=?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A")
+// ?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A: matched references place it at VA 0xdeda7c; also referenced as ?BfmeCurrentCaps@@3PAEA, ?TheW3DRadarFormatCaps@@3PAVW3DRadarFormatCaps@@A, ?g_currentCaps@@3PAVBfmeEnumerationCaps@@A, ?BfmeCurrentCaps@@3PAVBfmeCaps@@A, ?g_Va00DEDA7C@@3HA.
+BfmeDynamicCapsPrefix * bfmeDynamicCaps = 0;
+#pragma comment(linker, "/alternatename:?BfmeCurrentCaps@@3PAEA=?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A")
+#pragma comment(linker, "/alternatename:?TheW3DRadarFormatCaps@@3PAVW3DRadarFormatCaps@@A=?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A")
+#pragma comment(linker, "/alternatename:?g_currentCaps@@3PAVBfmeEnumerationCaps@@A=?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A")
+#pragma comment(linker, "/alternatename:?BfmeCurrentCaps@@3PAVBfmeCaps@@A=?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A")
+#pragma comment(linker, "/alternatename:?g_Va00DEDA7C@@3HA=?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A")

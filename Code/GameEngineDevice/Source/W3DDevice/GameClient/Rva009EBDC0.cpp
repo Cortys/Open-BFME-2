@@ -44,3 +44,10 @@ AssetReference Rva009EBDC0()
 		? g_theAssetRegistry->Get_Current_Asset()
 		: AssetReference();
 }
+
+// ?g_theAssetRegistry@@3PAVAssetRegistry@@A: matched references place it at VA 0xe09c0c; also referenced as ?Rva00F4FAACRegistry@@3PAVRva009EEC60Registry@@A, ?g_bfmeObjEME@@3PAVBfmeObjEME@@A, ?g_bfmeP1025@@3PAVBfmeP1025@@A, ?g_bfmeP1024@@3PAVBfmeP1024@@A.
+AssetRegistry * g_theAssetRegistry = 0;
+#pragma comment(linker, "/alternatename:?Rva00F4FAACRegistry@@3PAVRva009EEC60Registry@@A=?g_theAssetRegistry@@3PAVAssetRegistry@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeObjEME@@3PAVBfmeObjEME@@A=?g_theAssetRegistry@@3PAVAssetRegistry@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeP1025@@3PAVBfmeP1025@@A=?g_theAssetRegistry@@3PAVAssetRegistry@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeP1024@@3PAVBfmeP1024@@A=?g_theAssetRegistry@@3PAVAssetRegistry@@A")

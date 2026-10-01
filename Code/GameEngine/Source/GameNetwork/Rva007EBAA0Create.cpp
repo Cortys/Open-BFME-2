@@ -25,3 +25,8 @@ void Rva007EBAA0(void)
 	else
 		g_Va0130A5A0 = 0;
 }
+
+// ?vftable_01129D30@@3HA: matched references place it at VA 0xce157c; also referenced as ?g_bfmeVftTQD@@3PAPAXA, ?g_bfmeVftTDA@@3PAPAXA.
+int vftable_01129D30 = 10847984;
+#pragma comment(linker, "/alternatename:?g_bfmeVftTQD@@3PAPAXA=?vftable_01129D30@@3HA")
+#pragma comment(linker, "/alternatename:?g_bfmeVftTDA@@3PAPAXA=?vftable_01129D30@@3HA")

@@ -220,3 +220,13 @@ void GameEngine::_bfme_updateClientSubsystems(void)
     if (TheNetwork != 0)
         TheNetwork->liteupdate(0);
 }
+
+// ?AudioSubsystem@@3PAVClientSubsystem@@A: matched references place it at VA 0xdfe6e8; also referenced as ?TheAudio@@3PAVBfmeAudioVtblIndexed@@A, ?g_00DFE6E8@@3PAVGlobalSlotTarget@@A, ?g_audioMixer@@3PAVAudioMixer@@A, ?g_009FE6E8@@3PAVBfmeAudio@@A.
+ClientSubsystem * AudioSubsystem = 0;
+#pragma comment(linker, "/alternatename:?TheAudio@@3PAVBfmeAudioVtblIndexed@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
+#pragma comment(linker, "/alternatename:?g_00DFE6E8@@3PAVGlobalSlotTarget@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
+#pragma comment(linker, "/alternatename:?g_audioMixer@@3PAVAudioMixer@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
+#pragma comment(linker, "/alternatename:?g_009FE6E8@@3PAVBfmeAudio@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
+// ?Radar@@3PAVRadarSubsystem@@A: matched references place it at VA 0xdff070; also referenced as ?TheRadar@@3PAVPartitionManager@@A.
+RadarSubsystem * Radar = 0;
+#pragma comment(linker, "/alternatename:?TheRadar@@3PAVPartitionManager@@A=?Radar@@3PAVRadarSubsystem@@A")

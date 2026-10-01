@@ -54,3 +54,7 @@ void __cdecl Rva003FD7CEParse(INI *ini)
 	}
 	ini->initFromINI(item, &g_00837CD8);
 }
+
+// ?g_009FE1C8@@3PAVRva0021294A@@A: matched references place it at VA 0xdfe1c8; also referenced as ?Rva00DFE1C8@@3PAXA.
+Rva0021294A * g_009FE1C8 = 0;
+#pragma comment(linker, "/alternatename:?Rva00DFE1C8@@3PAXA=?g_009FE1C8@@3PAVRva0021294A@@A")

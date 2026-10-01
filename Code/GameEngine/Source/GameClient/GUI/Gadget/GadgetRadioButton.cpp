@@ -558,3 +558,8 @@ void GadgetRadioSetSelection( GameWindow *g, Bool sendMsg )
 	((Bfme2RadioWindowManager *)TheWindowManager)->winSendSystemMsg( g, GBM_SET_SELECTION, (WindowMsgData)&sendMsg, 0 );
 
 }  // end GadgetRadioSetText
+
+// ?TheBfmeKeyboardModifiers@@3PAVBfmeKeyboardModifiers@@A: matched references place it at VA 0xdfe720; also referenced as ?g_009FE720@@3PAVRva0025CEEFHost@@A, ?InputLockSubsystem@@3PAVClientSubsystem@@A.
+BfmeKeyboardModifiers * TheBfmeKeyboardModifiers = 0;
+#pragma comment(linker, "/alternatename:?g_009FE720@@3PAVRva0025CEEFHost@@A=?TheBfmeKeyboardModifiers@@3PAVBfmeKeyboardModifiers@@A")
+#pragma comment(linker, "/alternatename:?InputLockSubsystem@@3PAVClientSubsystem@@A=?TheBfmeKeyboardModifiers@@3PAVBfmeKeyboardModifiers@@A")

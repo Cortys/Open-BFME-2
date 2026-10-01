@@ -110,3 +110,7 @@ UnicodeString Rva00579995Get(float v)
 	}
 	return tmp;
 }
+
+// ?g_Va007BB5C4@@3GA: matched references place it at VA 0xbbb5c4; also referenced as ?g_bfmeLit1042@@3PADA.
+unsigned short g_Va007BB5C4 = 0u;
+#pragma comment(linker, "/alternatename:?g_bfmeLit1042@@3PADA=?g_Va007BB5C4@@3GA")

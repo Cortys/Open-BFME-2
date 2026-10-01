@@ -94,3 +94,7 @@ void DX8Wrapper::Get_Render_Target_Resolution(Int &width, Int &height, Int &bitD
 		windowed = BfmeRenderWindowed;
 	}
 }
+
+// ?BfmeRenderWindowed@@3_NA: matched references place it at VA 0xdeda06; also referenced as ?g_Va00DEDA06@@3EA.
+bool BfmeRenderWindowed;
+#pragma comment(linker, "/alternatename:?g_Va00DEDA06@@3EA=?BfmeRenderWindowed@@3_NA")

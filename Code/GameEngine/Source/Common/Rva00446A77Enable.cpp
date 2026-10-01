@@ -87,3 +87,8 @@ void Rva00248E98Enable(void)
 		return;
 	return ((Rva00444462 *)p)->rva00444462();
 }
+
+// ?g_Va009FE958@@3PAUGlobal009FE958@@A: matched references place it at VA 0xdfe958; also referenced as ?g_00DFE958@@3PAVLANAPI@@A, ?g_bfmeObjECI@@3PAVBfmeObjECI@@A.
+Global009FE958 * g_Va009FE958 = 0;
+#pragma comment(linker, "/alternatename:?g_00DFE958@@3PAVLANAPI@@A=?g_Va009FE958@@3PAUGlobal009FE958@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeObjECI@@3PAVBfmeObjECI@@A=?g_Va009FE958@@3PAUGlobal009FE958@@A")
