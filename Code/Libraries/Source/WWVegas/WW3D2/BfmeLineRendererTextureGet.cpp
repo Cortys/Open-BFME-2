@@ -21,7 +21,7 @@ public:
 		TextureClass *Ptr;
 		TextureHandleClass( TextureClass *p ) : Ptr( p ) { if ( Ptr ) ++Ptr->Refs; }
 		TextureHandleClass( const TextureHandleClass &p ) : Ptr( p.Ptr ) { if ( Ptr ) ++Ptr->Refs; }
-		~TextureHandleClass() { if ( Ptr ) Ptr->Release_Ref(); }
+		~TextureHandleClass();
 	};
 };
 
