@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0032A46C@Rva0032A46C@@QAEXVAsciiString@@@Z @0x0032A46C 52B.
 // AsciiString by-value setter: copies the by-value AsciiString at [ebp+8]
@@ -9,30 +9,7 @@
 // 0x0032F2B9; recipe twin is Rva0032A438Set.cpp (?rva0032A438, +0x04) and
 // Rva0050BFFDSet.cpp (49B at +0x00); lea/add/push order via AsciiString &slot.
 class AsciiString;
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-private:
-	void releaseBuffer();
-	struct Header
-	{
-		int m_ref;
-		unsigned short m_len;
-		unsigned short m_cap;
-		T m_data[1];
-	};
-	Header *m_data;
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that);
-	~AsciiString() { m_data.releaseBuffer(); }
-	AsciiString &operator=(const AsciiString &that);
-private:
-	StringBase<char> m_data;
-};
+#include "ascii_string.h"
 class Rva0032A46C
 {
 public:

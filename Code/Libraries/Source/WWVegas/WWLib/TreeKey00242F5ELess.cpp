@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?Rva000A78A3Less@@YG_NABUTreeKey00242F5E@@0@Z, retail 0x000A78A3, 46 bytes.
 // TreeKey00242F5E set comparator (unsigned id at +0 then AsciiString at +4 via
@@ -11,9 +11,7 @@
 
 typedef bool Bool;
 
-class AsciiString
-{
-};
+#include "ascii_string.h"
 
 Bool __cdecl operator<(const AsciiString &left, const AsciiString &right);
 

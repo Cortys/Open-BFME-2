@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 //
 // ??0TreeKey00242F5E@@QAE@IVAsciiString@@@Z retail 0x000A780A 63B
 // TreeKey00242F5E 2-arg ctor (unsigned id at +0 plus AsciiString at +4).
@@ -9,52 +9,8 @@
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-public:
-	void concat(const T *text);
+#include "ascii_string.h"
 
-private:
-	friend class AsciiString;
-
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString()
-	{
-		m_text = 0;
-	}
-
-	AsciiString(const AsciiString &that)
-	{
-		((StringBase<char> *)this)->StringBase<char>::StringBase(
-			(const StringBase<char> &)that);
-	}
-
-	~AsciiString()
-	{
-		((StringBase<char> *)this)->releaseBuffer();
-	}
-
-private:
-	char *m_text;
-};
 
 struct TreeKey00242F5E
 {

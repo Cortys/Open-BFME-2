@@ -1,15 +1,7 @@
-// cl: /G7 /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /G7 /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ??4?$vector@UBfmeStringRecord002CF4C6@@V?$allocator@UBfmeStringRecord002CF4C6@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z @0x002D0726 206B: vector BfmeStringRecord002CF4C6 assign via allocate_and_copy 0x002CFC4E plus clear pin 0x002D02C1 plus copy row 0x002CF2B8 plus destroy dup 0x002D028F plus uninitialized_copy 0x0033BF10. Evidence: retail calls rowed allocate_and_copy plus pinned clear plus rowed Nugget copy plus dup destroy plus rowed StringRecord uninitialized_copy; idiv 0x14 stride 20 throughout; same 3-path shape as NoCase pair assign 0x00317EBB.
-class AsciiString
-{
-public:
-	AsciiString();
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 struct BfmeStringRecord002CF4C6
 {
 	AsciiString text0;
