@@ -1,4 +1,4 @@
-// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 //
 // ??1Rva001EBFE5@@UAE@XZ, retail 0x001EBFE5, 87 bytes.
@@ -8,6 +8,7 @@
 // retail vptr store, twin vector-dtor calls, free-if-nonnull, EH states
 // 2/1/0 with __EH_prolog; caller 0x001EBFC9 is the ??_G deleting wrapper.
 #include <vector>
+#include "Common/Snapshot.h"
 
 extern "C" void __cdecl free(void *ptr);
 
@@ -20,24 +21,6 @@ struct AsciiStringLike
 			free(m_str);
 	}
 };
-
-extern const void *const g_00BBB554[];
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
 
 struct BfmeAssignRecord172
 {

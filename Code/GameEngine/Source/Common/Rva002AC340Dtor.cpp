@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /Ob2 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 // ??1Rva002AC340@@MAE@XZ @0x002AC366 (60B): Rva002AC340 dtor.
 // Stores own vtable 0x007FDD6C, frees the BfmeE16 vector buffer at +8 via
@@ -7,24 +7,9 @@
 // 0x007FDD6C int at +4 vector at +8). Callers at 0x002AC3A5 0x002B1323 plus
 // unwinds at 0x00775DE0 0x00775F6C. Follows PillageModuleDataDtor pattern.
 #include <vector>
+#include "Common/Snapshot.h"
 
 struct BfmeE16 { float x, y, z, w; };
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
 
 class Rva002AC340 : public Snapshot
 {

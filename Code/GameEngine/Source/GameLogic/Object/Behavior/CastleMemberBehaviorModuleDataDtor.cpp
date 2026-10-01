@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 //
 // ??1CastleMemberBehaviorModuleData@@UAE@XZ, retail 0x00395B2C, 58 bytes.
 // Virtual dtor over vtable 0x00C1A380 (slot 0 deleting dtor at 0x00396007
@@ -10,25 +10,10 @@
 // at +0x0C defaults 0xA, CampDestroyedAttackerEvaEvent at +0x10 defaults 8,
 // BeingBuiltSound at +0x14 null, StoreUpgradePrice at +0x18 false,
 // CountsForEvaCastleBreached at +0x19 false; factory 0x0024AB26 news 0x1C).
-// Shape follows Bloodthirsty/Flammable ModuleData dtors (TU-local Snapshot
-// with inline BBB554-restoring dtor, empty derived body, entry derived store
-// kept so no novtable).
+// Shape follows Bloodthirsty/Flammable ModuleData dtors (shared Snapshot
+// base dtor, empty derived body, entry derived store kept so no novtable).
 
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class OpaqueRefCounted
 {
