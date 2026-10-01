@@ -46553,3 +46553,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00082EB8@Rva00082EB8@@QAEXABURva00082EB8Rec@@@Z,,0x00082EB8,61,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00082EB8.cpp,matched,linkbody lane plus 20 callers plus compare-assign-push_back shape plus 0x24 stride
 ?rva0056B8F4@Rva0056B8F4@@QAEXI@Z,,0x0056B8F4,53,Code/GameEngine/Source/Common/Rva0056B8F4.cpp,matched,vtable slots 0x30 0x44 member 0xbc caller 0x003FDE1A
 ?rva0056B929@Rva0056B929@@QAEXE@Z,,0x0056B929,53,Code/GameEngine/Source/Common/Rva0056B929.cpp,matched,vtable slots 0x30 0x44 member 0xc0 caller 0x003FDE8C
+?rva0056B95E@Rva0056B95E@@QAEXXZ,,0x0056B95E,18,Code/GameEngine/Source/Common/Rva0056B95E.cpp,matched,vtable slots 0x30 0x44 caller 0x003FDE71
