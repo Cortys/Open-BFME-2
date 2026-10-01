@@ -4886,3 +4886,7 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva0029C163@Rva0029C163@@QAE_NABUICoord2D@@@Z	0x0029C163	219	blocked	point-in-poly SSE list needs layout donor plus float-order work t=22 model=muse-05
 ??1Rva00400A7F@@UAE@XZ	0x00400A7F	121	blocked	and-pop order swapped vs retail plus vtable relocs t=15 model=muse-11 (stash 0.95 kept)
 ?Rva00400783Get@@YA?AVAsciiString@@ABV1@_N@Z	0x00400783	277	partial	sole delta missing dead mov ecx TheGameState at +0x31 6B short 271vs277 0 reg diffs loop slash fixed via StringBase casts t=22 model=muse-11 score=0.98 stash=reverse/attempts/0x00400783.cpp
+?rva001F3A25@Rva001F3A25@@QAEXM@Z	0x001F3A25	247	blocked	SSE scheduling wall interleaved pairs sin fstp early vs late plus nx-ny order t=20 model=muse-16 (stash 0.9 kept)
+??0Rva001F4B63@@QAE@ABVRvaSmartPtr12@@ABVRva001F376E@@@Z	0x001F4B63	260	partial	xorps-push hoisted above smart init; m78 float movss vs int mov via eax; missing EH state 2; helper uses eax-edx vs ecx-eax +extra mov ecx,eax t=28 model=muse-16 score=0.91 stash=reverse/attempts/0x001f4b63.cpp
+?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z	0x001F4696	354	partial	slave lea cmp and Make call missing t=22 model=muse-16 score=0.95 stash=reverse/attempts/0x001f4696.cpp
+?rva001F4D4F@Rva001F4D4F@@QAEMXZ	0x001F4D4F	39	partial	1.0f load hoisted above null test; retail keeps load late in else after call+ret t=20 model=muse-16 score=0.93 stash=reverse/attempts/0x001f4d4f.cpp
