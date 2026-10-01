@@ -45018,3 +45018,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?push_back@?$vector@VRva004E32F2@@V?$allocator@VRva004E32F2@@@_STL@@@_STL@@QAEXABVRva004E32F2@@@Z,,0x00566BB4,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva004e32f2_pushback.cpp,matched,chain lane calls just-landed overflow 0x00566ACA plus rowed _Construct 0x0052D4A2 same 55B shape as rowed 0x005662CC
 ??0Rva0035CC36@@QAE@XZ,,0x0035CC36,148,Code/GameEngine/Source/Common/Rva0035CC36Ctor.cpp,matched,vtable 0x00C16394 dtor 0x0035CCCA base Rva001E3624 member Rva0024C7B3 list BfmePod8 clear AsciiString
 ?Rva0039BA85FillN@@YAXPAVRva0039B893@@IABV1@@Z,,0x0039BA85,27,Code/GameEngine/Source/Common/Rva0039BA85FillN.cpp,matched,fill_n wrapper over rowed 0x0039B8D8 with false_type tag
+?getFullUnicodeVersion@Version@@QAE?AVUnicodeString@@XZ,,0x0023809E,253,Code/GameEngine/Source/Common/VersionUnicode.cpp,matched,BFME1 version.cpp Format3 Format4 with getCharAt

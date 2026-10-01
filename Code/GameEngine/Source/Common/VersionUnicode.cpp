@@ -31,6 +31,10 @@ private:
     Header *m_data;
 
 public:
+    char getCharAt(int index) const
+    {
+        return m_data ? m_data->data[index] : 0;
+    }
     const T *str() const
     {
         static const T TheNullChr = 0;
@@ -43,6 +47,7 @@ class AsciiString
 public:
     AsciiString(const AsciiString &that) : m_data(that.m_data) {}
     ~AsciiString() { m_data.releaseBuffer(); }
+    char getCharAt(int index) const { return m_data.getCharAt(index); }
 private:
     StringBase<char> m_data;
 };
@@ -90,6 +95,7 @@ class Version
 {
 public:
     UnicodeString getUnicodeVersion();
+    UnicodeString getFullUnicodeVersion();
     UnicodeString getUnicodeBuildTime();
     UnicodeString getUnicodeBuildLocation();
     UnicodeString getUnicodeBuildUser();
@@ -113,6 +119,19 @@ UnicodeString Version::getUnicodeVersion()
 {
     UnicodeString version;
     version.format(TheGameText->fetch("Version:Format2").str(), m_major, m_minor);
+    return version;
+}
+
+UnicodeString Version::getFullUnicodeVersion()
+{
+    UnicodeString version;
+
+    if (!m_localBuildNum)
+        version.format(TheGameText->fetch("Version:Format3").str(), m_major, m_minor, m_buildNum);
+    else
+        version.format(TheGameText->fetch("Version:Format4").str(), m_major, m_minor, m_buildNum, m_localBuildNum,
+            m_buildUser.getCharAt(0), m_buildUser.getCharAt(1));
+
     return version;
 }
 
