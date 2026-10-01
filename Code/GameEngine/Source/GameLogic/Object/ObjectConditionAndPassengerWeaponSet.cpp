@@ -12,6 +12,12 @@
 // set (0x00290963) / clear (0x00290A10) the weapon set flag on every listed
 // Object, then on that Object itself. The list is walked through raw nodes
 // (next at +0, Object at +8) with the end reloaded each pass, as retail does.
+// Retail 0x0029130C (114 bytes): by mode, clear both condition bits 17*32+2 and
+// 17*32+3 (mode 2), set the first and clear the second (mode 0), or set the
+// second and clear the first (any other mode). Retail tests the bits through a
+// pointer to the word computed once (lea edi, [esi+0x150]) while the updates
+// address the member directly: the tests go through a const pointer to the
+// bits held in a local, the updates through the member itself.
 // Model-condition bits as in ObjectWeaponSetFlags.cpp (word array at +0x10C,
 // masked-word accessors).
 
@@ -84,6 +90,7 @@ public:
 	void rva00290758(int a, int b);
 	void rva00293DAC(WeaponSetType wst);
 	void rva00293E08(WeaponSetType wst);
+	void rva0029130C(int mode);
 private:
 	unsigned char m_pad000[0x84];
 	Rva002716Holder *m_84; // +0x84
@@ -141,5 +148,24 @@ void Object::rva00293E08(WeaponSetType wst)
 				node->m_object->clearWeaponSetFlag(wst);
 			top->clearWeaponSetFlag(wst);
 		}
+	}
+}
+void Object::rva0029130C(int mode)
+{
+	const Rva0010CBits *bits = &m_conditionBits;
+	if (mode == 2)
+	{
+		if (bits->test(546)) { m_conditionBits.clear(546); rva0028AE6D(); }
+		if (bits->test(547)) { m_conditionBits.clear(547); rva0028AE6D(); }
+	}
+	else if (mode == 0)
+	{
+		if (bits->test(546) == 0) { m_conditionBits.set(546); rva0028AE6D(); }
+		if (bits->test(547)) { m_conditionBits.clear(547); rva0028AE6D(); }
+	}
+	else
+	{
+		if (bits->test(547) == 0) { m_conditionBits.set(547); rva0028AE6D(); }
+		if (bits->test(546)) { m_conditionBits.clear(546); rva0028AE6D(); }
 	}
 }
