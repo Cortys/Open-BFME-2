@@ -128,7 +128,7 @@ static void parseFXLocInfo( INI *ini, void *instance, BoneLocInfo *locInfo )
 //-------------------------------------------------------------------------------------------------
 /** Parse a random delay.  This is a number pair, where the numbers are a min and max time in miliseconds. */
 //-------------------------------------------------------------------------------------------------
-static void parseGameClientRandomDelay( INI *ini, void *instance, GameClientRandomVariable *delay)
+void parseGameClientRandomDelay( INI *ini, void *instance, GameClientRandomVariable *delay)
 {
 	Real min, max;
 	INI::parseDurationReal(ini, instance, &min, NULL);

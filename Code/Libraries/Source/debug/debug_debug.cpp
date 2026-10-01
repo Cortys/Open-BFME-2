@@ -1715,7 +1715,7 @@ void Debug::ExecCommand(const char *cmdstart, const char *cmdend)
 }
 
 // little helper to get app window
-static BOOL CALLBACK EnumThreadWndProc(HWND hwnd, LPARAM lParam)
+BOOL CALLBACK EnumThreadWndProc(HWND hwnd, LPARAM lParam)
 {
   *(HWND *)lParam=hwnd;
   return FALSE;

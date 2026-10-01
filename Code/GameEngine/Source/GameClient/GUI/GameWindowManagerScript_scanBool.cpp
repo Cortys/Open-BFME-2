@@ -15,7 +15,7 @@ typedef bool Bool;
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
 
 // ?scanBool@@YAHPBDAA_N@Z
-static Int scanBool(const char *source, Bool &val)
+Int scanBool(const char *source, Bool &val)
 {
 	Int temp = 0;
 	Int ret = sscanf(source, "%d", &temp);

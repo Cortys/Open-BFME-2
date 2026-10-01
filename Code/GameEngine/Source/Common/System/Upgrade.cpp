@@ -194,7 +194,7 @@ Int UpgradeTemplate::calcCostToBuild( Player *player ) const
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-static AsciiString getVetUpgradeName(VeterancyLevel v)
+AsciiString getVetUpgradeName(VeterancyLevel v)
 {
 	AsciiString tmp;
 	tmp = "Upgrade_Veterancy_";

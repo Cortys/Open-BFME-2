@@ -371,7 +371,7 @@ static void resetWindowDefaults( void )
 
 // peekWindow =================================================================
 //=============================================================================
-static GameWindow *peekWindow( void )
+GameWindow *peekWindow( void )
 {
   if (stackPtr == windowStack)
     return NULL;
