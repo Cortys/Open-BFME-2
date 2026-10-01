@@ -6,6 +6,9 @@
 // module-template destructor onto. Named templates whose destructors share
 // the fold ride in the same TU under the same standalone shape.
 
+extern "C" const void *const vtbl_00BBB52C[];  // ??_7ModuleTemplate@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB52C=??_7ModuleTemplate@FXParticleSystem@@6B@")
+
 namespace FXParticleSystem
 {
 
@@ -28,7 +31,7 @@ DefaultModuleTemplate<1>::~DefaultModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 template <>
@@ -45,7 +48,7 @@ DefaultModuleTemplate<2>::~DefaultModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 template <>
@@ -62,7 +65,7 @@ DefaultModuleTemplate<3>::~DefaultModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 template <>
@@ -79,7 +82,7 @@ DefaultModuleTemplate<0>::~DefaultModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 template <>
@@ -96,7 +99,7 @@ DefaultModuleTemplate<6>::~DefaultModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 // Category 7 delegates: its template destructor is a bare tail call into the
@@ -145,7 +148,7 @@ CylindricalEmissionVelocityModuleTemplate::~CylindricalEmissionVelocityModuleTem
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) OrthoEmissionVelocityModuleTemplate
@@ -161,7 +164,7 @@ OrthoEmissionVelocityModuleTemplate::~OrthoEmissionVelocityModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) LightningDrawModuleTemplate
@@ -177,7 +180,7 @@ LightningDrawModuleTemplate::~LightningDrawModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) LightningEmissionModuleTemplate
@@ -193,7 +196,7 @@ LightningEmissionModuleTemplate::~LightningEmissionModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) RenderObjectUpdateModuleTemplate
@@ -209,7 +212,7 @@ RenderObjectUpdateModuleTemplate::~RenderObjectUpdateModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) TerrainFireEmissionModuleTemplate
@@ -225,7 +228,7 @@ TerrainFireEmissionModuleTemplate::~TerrainFireEmissionModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 class __declspec(novtable) OutwardEmissionVelocityModuleTemplate
@@ -241,7 +244,7 @@ OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate()
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00BBB52C;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00BBB52C);
 }
 
 }

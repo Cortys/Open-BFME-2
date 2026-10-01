@@ -21,7 +21,15 @@ Rewrites, per file:
   (T *)0xADDR                          ->  (T *)&Name      any other cast
 
 and an `extern` declaration of Name with its own decorated type is added
-after the file's leading comment block. Each changed file is rebuilt with
+after the file's leading comment block.
+
+A literal that is the address of exactly one vftable some ledger object
+defines (`*vtab = (int)0x00C5EE80;`, a hand-written vptr store) becomes
+`((unsigned int)vtbl_00C5EE80)`, an `extern "C"` array the linker aliases to
+that vftable (`/alternatename:_vtbl_00C5EE80=??_7...`): the same bytes, but
+the store follows the vftable wherever the linked image puts it. An address
+several folded vftables share is left alone: naming it after one of them
+would invent an identity. Each changed file is rebuilt with
 ./build.sh and restored unchanged unless every row in it still matches.
 
 Usage:
@@ -113,7 +121,7 @@ def build_index():
         for offset, kind, symbol in relocs:
             if kind != 0x0006 or symbol not in defined or offset + 4 > min(size, len(body)):
                 continue
-            if not symbol.startswith("?") or "@@3" not in symbol:
+            if not symbol.startswith("?") or ("@@3" not in symbol and not symbol.startswith("??_7")):
                 continue
             address = (struct.unpack_from("<I", target, offset)[0] - struct.unpack_from("<I", body, offset)[0]) & 0xFFFFFFFF
             bases[address].add(symbol)
@@ -141,6 +149,7 @@ def normalise(kind):
 
 DIRECT = re.compile(r"\(\s*\*\s*\(\s*([\w ]+?)\s*(\*?)\s*\*\s*\)\s*(0x[0-9A-Fa-f]{6,8})\s*\)")
 CAST = re.compile(r"\(\s*([\w ]+?)\s*(\*+)\s*\)\s*(0x[0-9A-Fa-f]{6,8})\b")
+VTABLE = re.compile(r"(?<![\w.])0x([0-9A-Fa-f]{6,8})[uU]?(?![\w.])")
 LEAD = re.compile(r"(?:[ \t]*//[^\n]*\n|[ \t]*\r?\n)*")
 
 
@@ -179,17 +188,33 @@ def rewrite(text, index):
         need[decl[0]] = decl[4]
         return f"({match.group(1)} {match.group(2)})&{decl[0]}"
 
+    def vtable(match):
+        address = int(match.group(1), 16)
+        tables = [s for s in index.get(address, ()) if s.startswith("??_7")]
+        if len(tables) != 1 or any(not s.startswith("??_7") for s in index.get(address, ())):
+            return match.group(0)
+        name = f"vtbl_{address:08X}"
+        need[name] = (f'extern "C" const void *const {name}[];  // {tables[0]}' + "\n" +
+                      f'#pragma comment(linker, "/alternatename:_{name}={tables[0]}")')
+        return f"((unsigned int){name})"
+
     lines = text.split("\n")
     for i, line in enumerate(lines):
-        if line.lstrip().startswith("//"):
+        stripped = line.lstrip()
+        if stripped.startswith("//"):
             continue
         line = DIRECT.sub(direct, line)
-        lines[i] = CAST.sub(cast, line)
+        line = CAST.sub(cast, line)
+        if not stripped.startswith("#"):
+            code, _, comment = line.partition("//")
+            line = VTABLE.sub(vtable, code) + ("//" + comment if _ else "")
+        lines[i] = line
     new = "\n".join(lines)
     if new == text:
         return text, {}
     newline = "\r\n" if "\r\n" in text else "\n"
-    missing = [d for n, d in sorted(need.items()) if not re.search(rf"\bextern\b[^;]*\b{n}\s*;", new)]
+    missing = [d.replace("\n", newline) for n, d in sorted(need.items())
+               if not re.search(rf"\bextern\b[^;]*\b{n}\s*(\[\])?;", new)]
     if missing:
         at = LEAD.match(new).end()
         new = new[:at] + newline.join(missing) + newline + newline + new[at:]

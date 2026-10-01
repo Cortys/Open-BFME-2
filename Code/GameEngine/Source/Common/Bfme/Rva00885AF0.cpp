@@ -1,5 +1,8 @@
 // cl: /DNDEBUG /MD /EHs-c-
 
+extern "C" const void *const vtbl_00CE8A38[];  // ??_7Cftp@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00CE8A38=??_7Cftp@@6B@")
+
 extern "C" int __stdcall closesocket( int );
 extern "C" __declspec(dllimport) int __cdecl fclose( void* );
 
@@ -17,7 +20,7 @@ public:
 
 void Rva00885AF0Class::d_00885af0()
 {
-	*(void**)this = (void*)0x00CE8A38;
+	*(void**)this = (void*)((unsigned int)vtbl_00CE8A38);
 	if ( m_socket8 )
 	{
 		closesocket( m_socket8 );

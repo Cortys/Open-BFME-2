@@ -23,6 +23,9 @@
 // among its subobject vtables. No caller names this body, so the class keeps
 // its address-derived name.
 
+extern "C" const void *const vtbl_00C1D2C0[];  // ??_7Rva005EA430@@6BV3Vt01111D90@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C1D2C0=??_7Rva005EA430@@6BV3Vt01111D90@@@")
+
 class Rva00563FE1
 {
 public:
@@ -44,6 +47,6 @@ Rva00563FE1::Rva00563FE1( unsigned int a )
 	volatile unsigned int *slots = (unsigned int *)this;
 	slots[ 1 ] = a;
 	slots[ 2 ] = 0x00c1c780;
-	slots[ 0 ] = 0x00c1d2c0;
+	slots[ 0 ] = ((unsigned int)vtbl_00C1D2C0);
 	slots[ 2 ] = (unsigned int)&s_sharedSecondaryVtable;
 }

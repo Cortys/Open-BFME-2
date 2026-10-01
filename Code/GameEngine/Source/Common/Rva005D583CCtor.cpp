@@ -4,6 +4,9 @@
 // with same arg, then overwrites base m_vtable slot at +0 with own
 // vtable 0x00875B2C via plain store (non-polymorphic derived, no shift,
 // no lea). Evidence: callers 0x005D5807 0x005D582D do new plus this ctor.
+extern "C" const void *const vtbl_00C75B2C[];  // ??_7Rva005D583C@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C75B2C=??_7Rva005D583C@@6B@")
+
 class EmptyBase005AFE86
 {
 public:
@@ -35,7 +38,7 @@ public:
 
 Rva005D57D3::Rva005D57D3(void *p) : Rva005AFE86(p)
 {
-	*(unsigned *)this = 0x00C75B2C;
+	*(unsigned *)this = ((unsigned int)vtbl_00C75B2C);
 }
 
 class Rva005D5802 : public Rva005D57D3

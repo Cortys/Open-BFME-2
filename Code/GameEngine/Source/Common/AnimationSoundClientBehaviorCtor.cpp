@@ -9,6 +9,11 @@
 // global check plus max loop; BFME2 adds SSE plus 0x98 plus squaring plus
 // container). Caller at 0x00252BB1 in friend_newModuleInstance; vtables
 // C5EE80/C5EE74 DIR32; container 0x00A032D0; TheAudio 0x009FE6E8.
+extern "C" const void *const vtbl_00C5EE74[];  // ??_7AnimationSoundClientBehavior@@6BASCB_Iface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5EE74=??_7AnimationSoundClientBehavior@@6BASCB_Iface@@@")
+extern "C" const void *const vtbl_00C5EE80[];  // ??_7AnimationSoundClientBehavior@@6BPrimaryP@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5EE80=??_7AnimationSoundClientBehavior@@6BPrimaryP@@@")
+
 extern "C" void _ReadWriteBarrier();
 #pragma intrinsic(_ReadWriteBarrier)
 
@@ -99,9 +104,9 @@ AnimationSoundClientBehavior::AnimationSoundClientBehavior(Thing *thing, const M
 	m_next14 = 0;
 	m_prev18 = 0;
 	int *vtab = (int *)this;
-	*vtab = (int)0x00C5EE80;
+	*vtab = (int)((unsigned int)vtbl_00C5EE80);
 	int *sec0C = (int *)&m_secondary0C;
-	*sec0C = (int)0x00C5EE74;
+	*sec0C = (int)((unsigned int)vtbl_00C5EE74);
 	if (TheAudio == 0)
 	{
 		m_float10 = fzero;

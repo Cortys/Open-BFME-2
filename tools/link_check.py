@@ -35,6 +35,7 @@ Usage:
 import argparse
 import collections
 import json
+import re
 import struct
 import subprocess
 import sys
@@ -78,11 +79,28 @@ def symbols(data):
     return strong, undefined
 
 
+def directives(data):
+    """{alias: target} from the object's /alternatename linker directives."""
+    count = struct.unpack_from("<H", data, 2)[0]
+    optional = struct.unpack_from("<H", data, 16)[0]
+    out = {}
+    for i in range(count):
+        header = 20 + optional + i * 40
+        if data[header:header + 8].rstrip(b"\0") != b".drectve":
+            continue
+        size, pointer = struct.unpack_from("<II", data, header + 16)
+        text = data[pointer:pointer + size].decode("latin-1")
+        for alias, target in re.findall(r"/alternatename:([^=\s]+)=(\S+)", text, re.I):
+            out[alias.strip('"')] = target.strip('"')
+    return out
+
+
 def describe(obj, retail):
     data = obj.read_bytes()
     strong, undefined = symbols(data)
     comdats = {name: digest for name, digest, _ in lc.comdat_bodies(obj, retail)}
-    return {"strong": sorted(strong), "undefined": sorted(undefined), "comdat": comdats}
+    return {"strong": sorted(strong), "undefined": sorted(undefined), "comdat": comdats,
+            "aliases": directives(data)}
 
 
 def load_index(objects):
@@ -94,8 +112,8 @@ def load_index(objects):
             cached = {}
     retail = lc.retail_addresses()
     stamp_ledger = (ROOT / "reverse" / "symbols.csv").stat().st_mtime + (ROOT / "reverse" / "functions.csv").stat().st_mtime
-    if cached.get("ledger") != stamp_ledger:
-        cached = {"ledger": stamp_ledger, "objects": {}}  # retail addresses changed: COMDAT digests may too
+    if cached.get("ledger") != stamp_ledger or cached.get("format") != 2:
+        cached = {"ledger": stamp_ledger, "format": 2, "objects": {}}  # retail addresses changed: COMDAT digests may too
     entries = cached.setdefault("objects", {})
     fresh = 0
     for obj in objects:
@@ -150,12 +168,15 @@ def main(argv=None):
     strong_by = collections.defaultdict(set)
     defined = set()
     copies = collections.defaultdict(collections.Counter)
+    aliases = {}
     first = {}
     for key, entry in sorted(index.items(), key=lambda kv: order.get(kv[0], 0)):
         for name in entry["strong"]:
             strong_by[name].add(key)
         defined.update(entry["strong"])
         defined.update(entry["comdat"])
+        for alias, target in entry.get("aliases", {}).items():
+            aliases.setdefault(alias, target)
         for name, digest in entry["comdat"].items():
             copies[name][digest] += 1
             first.setdefault((name, digest), order.get(key, 0))
@@ -172,6 +193,8 @@ def main(argv=None):
             continue
         found = []
         for name in entry["undefined"]:
+            if name in aliases and aliases[name] in defined:
+                continue  # /alternatename: the linker uses the target
             if name not in defined and not lc.excused(name, runtime, imported, thunks):
                 found.append(("U", name))
         for name in entry["strong"]:

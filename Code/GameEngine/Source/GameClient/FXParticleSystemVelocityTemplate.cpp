@@ -3,6 +3,9 @@
 // The three subobjects retain their BFME2 retail vtables after the spherical
 // base constructor runs.
 
+extern "C" const void *const vtbl_00C1BB60[];  // ??_7SphereEmissionVolumeInfo@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C1BB60=??_7SphereEmissionVolumeInfo@FXParticleSystem@@6B@")
+
 namespace FXParticleSystem
 {
 
@@ -49,7 +52,7 @@ HemisphericalEmissionVelocityModuleTemplate::HemisphericalEmissionVelocityModule
 SphereEmissionVolumeInfo::SphereEmissionVolumeInfo(const SphereEmissionVolumeInfo &that)
     : EmissionVolumeInfo(that)
 {
-    *reinterpret_cast<unsigned int *>(this) = 0x00C1BB60;
+    *reinterpret_cast<unsigned int *>(this) = ((unsigned int)vtbl_00C1BB60);
     m_radius = that.m_radius;
 }
 

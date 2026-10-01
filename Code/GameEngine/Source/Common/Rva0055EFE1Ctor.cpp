@@ -7,6 +7,9 @@
 // The class keeps an address-derived name; the tables are DIR32 literals like
 // the base. Base is opaque here so the call never inlines.
 
+extern "C" const void *const vtbl_00C1D2C0[];  // ??_7Rva005EA430@@6BV3Vt01111D90@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C1D2C0=??_7Rva005EA430@@6BV3Vt01111D90@@@")
+
 class Rva00563FE1
 {
 public:
@@ -31,6 +34,6 @@ Rva0055EFE1::Rva0055EFE1( unsigned int a )
 	__assume( this != 0 );
 	new( this ) Rva00563FE1( a );
 	volatile unsigned int *slots = (unsigned int *)this;
-	slots[ 0 ] = 0x00c1d2c0;
+	slots[ 0 ] = ((unsigned int)vtbl_00C1D2C0);
 	slots[ 2 ] = 0x00c1c780;
 }

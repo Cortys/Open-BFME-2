@@ -10,6 +10,9 @@
 // values are DIR32 auto-patches. Owner identities are unproven (opaque Rva
 // names). One ledger row per destructor, landed one commit at a time.
 
+extern "C" const void *const vtbl_00C49D70[];  // ??_7ClearanceTestingSlowDeathBehavior@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C49D70=??_7ClearanceTestingSlowDeathBehavior@@6B@")
+
 class Rva0045D39E_Root
 {
 public:
@@ -84,5 +87,5 @@ private:
 
 Rva00483C35::~Rva00483C35()
 {
-	m_extra0050 = 0xC49D70;
+	m_extra0050 = ((unsigned int)vtbl_00C49D70);
 }

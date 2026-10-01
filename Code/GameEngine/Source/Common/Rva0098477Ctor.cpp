@@ -7,6 +7,9 @@
 // Callee baseConstruct is rowed. Barrier keeps the vptr store before the
 // zero like retail; same recipe as Rva0026201CCtor.cpp.
 
+extern "C" const void *const vtbl_00BC8298[];  // ??_7Rva0098477@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BC8298=??_7Rva0098477@@6B@")
+
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
@@ -27,7 +30,7 @@ public:
 Rva0098477::Rva0098477()
 {
 	((BFME2NativeNetwork *)this)->baseConstruct();
-	*(void **)this = (void *)0x00BC8298;
+	*(void **)this = (void *)((unsigned int)vtbl_00BC8298);
 	_ReadWriteBarrier();
 	m_0C = 0;
 }

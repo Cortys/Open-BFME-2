@@ -6,6 +6,9 @@
 // The text member constructs through the StringBase<wchar_t> copy body at
 // 0x37050 (public-spelling pin, same pattern as the narrow StringBase pins).
 
+extern "C" const void *const vtbl_00CE451C[];  // ??_7SubtitleEntry@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00CE451C=??_7SubtitleEntry@@6B@")
+
 template <typename T> class StringBase
 {
 public:
@@ -41,7 +44,7 @@ private:
 // ??0SubtitleEntry@@QAE@ABVUnicodeString@@IHHHHH@Z
 SubtitleEntry::SubtitleEntry(const UnicodeString &text, unsigned int color,
 	int style, int alignment, int line, int startFrame, int endFrame) :
-	m_vft((void *)0x00CE451C),
+	m_vft((void *)((unsigned int)vtbl_00CE451C)),
 	m_text(text),
 	m_color(color),
 	m_style(style),

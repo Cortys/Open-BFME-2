@@ -6,6 +6,9 @@
 // GameEngineDeletingBaseDerived.cpp proves the class and vtable. Callee
 // baseConstruct is rowed. Honest address-derived class name.
 
+extern "C" const void *const vtbl_00BF9010[];  // ??_7Rva0026201C@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF9010=??_7Rva0026201C@@6B@")
+
 class BFME2NativeNetwork
 {
 public:
@@ -26,5 +29,5 @@ Rva0026201C::Rva0026201C()
 	((BFME2NativeNetwork *)this)->baseConstruct();
 	m_0C = 0;
 	m_10 = 0;
-	*(void **)this = (void *)0x00BF9010;
+	*(void **)this = (void *)((unsigned int)vtbl_00BF9010);
 }

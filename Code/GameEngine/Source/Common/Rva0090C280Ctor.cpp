@@ -29,6 +29,9 @@
 // encoding mismatch at +0x2" to an exact match, with the remaining 16 bytes
 // identical throughout.
 
+extern "C" const void *const vtbl_00BD25C8[];  // ??_7Rva0013107A@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD25C8=??_7Rva0013107A@@6B@")
+
 class Rva0090C280
 {
 	void *m_vptr;
@@ -56,7 +59,7 @@ public:
 
 void Rva0090C280::releaseResource0090C2D0()
 {
-	m_vptr = (void *)0x00BD25C8;
+	m_vptr = (void *)((unsigned int)vtbl_00BD25C8);
 	void *resource = m_08;
 	if (resource) {
 		void (__stdcall *destroy)(void *) = ((void (__stdcall **)(void *))*(void **)resource)[2];

@@ -9,6 +9,9 @@
 // +8 then +0. Vtable 0x0081D2C0 slot 0 is the ??_G at 0x003AE16E which calls
 // here; callers also include Unwind funclets for EH cleanup.
 
+extern "C" const void *const vtbl_00C1B320[];  // ??_7V3Vt01111D90@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C1B320=??_7V3Vt01111D90@@6B@")
+
 class __declspec(novtable) Rva003AE13C
 {
 public:
@@ -24,5 +27,5 @@ Rva003AE13C::~Rva003AE13C()
 {
     unsigned char *b08 = this ? (unsigned char *)this + 8 : 0;
     *(volatile unsigned int *)b08 = 0x00C1C780;
-    *(volatile unsigned int *)this = 0x00C1B320;
+    *(volatile unsigned int *)this = ((unsigned int)vtbl_00C1B320);
 }
