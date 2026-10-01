@@ -149,7 +149,7 @@ public:
 
 // @??0Open2Rec4F1120@@QAE@ABV0@@Z 0x004F1120
 #pragma optimize("s", on)
-Open2Rec4F1120::Open2Rec4F1120( const Open2Rec4F1120 &other )
+inline Open2Rec4F1120::Open2Rec4F1120( const Open2Rec4F1120 &other )
 	: m_at00( other.m_at00 ), m_at04( other.m_at04 ), m_at08( other.m_at08 ), m_at0c( other.m_at0c ), m_at10( other.m_at10 ), m_at14( other.m_at14 ), m_at18( other.m_at18 ), m_at1c( other.m_at1c ), m_at20( other.m_at20 ), m_at24( other.m_at24 ), m_at28( other.m_at28 ), m_at2c( other.m_at2c ), m_at30( other.m_at30 )
 {
 }
@@ -305,3 +305,14 @@ Open2Rec81C6B0::Open2Rec81C6B0( const Open2Rec81C6B0 &other )
 	: m_at00( other.m_at00 ), m_at04( other.m_at04 ), m_at08( other.m_at08 ), m_at0c( other.m_at0c ), m_at10( other.m_at10 ), m_at14( other.m_at14 ), m_at18( other.m_at18 )
 {
 }
+
+// Open2Rec4F1120's copy constructor is a header inline elsewhere: other units emit
+// select-any copies, so a strong definition here was a duplicate in the linked build. This
+// anchor only makes this unit emit its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitOpen2Records@@YAXPAVOpen2Rec4F1120@@ABV1@@Z present-unmatched
+void bfmeEmitOpen2Records(Open2Rec4F1120 *p, const Open2Rec4F1120 &q)
+{
+	p->Open2Rec4F1120::Open2Rec4F1120(q);
+}
+#pragma inline_depth()
