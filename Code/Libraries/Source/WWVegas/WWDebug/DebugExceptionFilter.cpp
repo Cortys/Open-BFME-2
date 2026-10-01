@@ -252,6 +252,8 @@ private:
 };
 
 Debug &operator<<(Debug &dbg, const DebugStackwalk::Signature &sig);
+// This TU spells Signature as a struct; debug_stack.cpp's same-layout type is a class.
+#pragma comment(linker, "/alternatename:??6@YAAAVDebug@@AAV0@ABUSignature@DebugStackwalk@@@Z=??6@YAAAVDebug@@AAV0@ABVSignature@DebugStackwalk@@@Z")
 
 struct Rva0088A1F0Owner
 {
