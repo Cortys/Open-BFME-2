@@ -1,14 +1,14 @@
-// ?rva000E6EF0@Rva000E6EF0@@QAEHPBUFloatPair@@@Z
-// partial score=0.96 date=2026-10-01
-// ?rva000E6EF0@Rva000E6EF0@@QAEHPBUFloatPair@@@Z
-// partial score=0.96 date=2026-10-01
 // cl: /O1 /MD /arch:SSE
 // ?rva000E6EF0@Rva000E6EF0@@QAEHPBUFloatPair@@@Z, retail 0x000E6EF0, 216 bytes.
 // Clamp world XY to +0x1948/+0x194C min and +0x1950/+0x1954 max, scale each
 // axis by 49.9f over its extent, floor via IAT floor and return y*50+x.
 // Evidence: retail movss/comiss clamp plus fld/fsub/fdivr/fmul floor/fistp
 // pair plus imul 0x32; BFME1 donor Rva001A3060::getBucket uses 49.9f for a
-// 50-by-50 grid; neighbours in same Common dir.
+// 50-by-50 grid; neighbours in same Common dir. Caller 0x000E92CD.
+// FloatToLong is WWMath::Float_To_Long's fld/fistp inline asm, as the
+// matched Bfme5CeilCellExtent.cpp helper writes it.
+// Structural inference: each scaled axis is its own float local before the
+// floor call, which pops the argument before the fstp as retail does.
 extern "C" __declspec(dllimport) double __cdecl floor(double);
 
 __forceinline long FloatToLong(float f)
@@ -50,7 +50,9 @@ int Rva000E6EF0::rva000E6EF0(FloatPair const *p)
 		x = m_maxX;
 	if (y > m_maxY)
 		y = m_maxY;
-	int ix = FloatToLong((float)floor((double)(x / (m_maxX - m_minX) * 49.9f)));
-	int iy = FloatToLong((float)floor((double)(y / (m_maxY - m_minY) * 49.9f)));
+	float sx = x / (m_maxX - m_minX) * 49.9f;
+	int ix = FloatToLong((float)floor(sx));
+	float sy = y / (m_maxY - m_minY) * 49.9f;
+	int iy = FloatToLong((float)floor(sy));
 	return iy * 50 + ix;
 }

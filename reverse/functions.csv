@@ -45613,3 +45613,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?copyItems@Rva003FA26F@@QAEXABV1@@Z,,0x003FA1F2,125,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,deep copy of 0x60-byte items through rowed Rva003FA118 copy ctor; end hoisted
 ??0Rva003FA26F@@QAE@ABV0@@Z,,0x003FA26F,157,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,copy ctor: string plus empty vector plus six nothrow handles plus two ints then copyItems
 ??4Rva003FA26F@@QAEAAV0@ABV0@@Z,,0x003FA30C,117,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,operator= : self check then string set plus six handle assigns plus two ints then copyItems
+?rva000E6EF0@Rva000E6EF0@@QAEHPBUFloatPair@@@Z,,0x000E6EF0,216,Code/GameEngine/Source/Common/Rva000E6EF0Bucket.cpp,matched,50x50 grid bucket from clamped XY via floor and FloatToLong; per-axis float locals fix the banked partial; caller 0x000E92CD
