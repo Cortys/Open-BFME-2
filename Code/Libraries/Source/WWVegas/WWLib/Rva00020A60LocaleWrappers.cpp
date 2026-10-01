@@ -19,3 +19,23 @@ int __cdecl Rva00020A60(const void *unused, int character, int mask)
     GetStringTypeW(1, input, -1, result);
     return result[0] & mask;
 }
+
+typedef unsigned long LCID;
+extern "C" __declspec(dllimport) int __stdcall LCMapStringW(
+    LCID, unsigned long, const WCHAR *, int, WCHAR *, int);
+
+// This is only the first-dword view read by this target body; the rest of the
+// owner and its original type are unknown. LCMapStringW consumes that dword
+// as an LCID. The donor carries the same access, not a proven target class name.
+struct Rva00020A90Locale { LCID m_00; };
+
+// Target evidence: [0x00020A90,0x00020AB7), then INT3 padding.
+// IAT 0x00BBA1B4 declares kernel32!LCMapStringW; flag 0x100 maps one WCHAR
+// to lowercase. BFME1 folds this donor with another address, so keep the
+// target's address label rather than spending either donor function name.
+WCHAR __cdecl Rva00020A90(Rva00020A90Locale *locale, int character)
+{
+    WCHAR result;
+    LCMapStringW(locale->m_00, 0x100, (const WCHAR *)&character, 1, &result, 1);
+    return result;
+}
