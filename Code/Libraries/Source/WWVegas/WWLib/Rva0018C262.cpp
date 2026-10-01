@@ -19,6 +19,7 @@ public:
 	void rva0018C262(Rva0018C262Node *p);
 	void rva0018C316();
 	Rva0018C262Node *rva0018C28F(const unsigned short *key);
+	void rva0018C33F(Rva0018C262Node *&out, Rva0018C262Node *a, Rva0018C262Node *b, const unsigned short *v, Rva0018C262Node *c);
 	Rva0018C262Head *m_head;
 	int m_size;
 };
@@ -26,6 +27,11 @@ namespace _STL {
 template <class T> class allocator {
 public:
 	static char *allocate(unsigned int n, const void *hint);
+};
+struct _Rb_tree_node_base {};
+template <typename D> class _Rb_global {
+public:
+	static void _Rebalance(_Rb_tree_node_base *x, _Rb_tree_node_base *&root);
 };
 }
 void Rva0018C262::rva0018C262(Rva0018C262Node *p)
@@ -56,4 +62,31 @@ Rva0018C262Node *Rva0018C262::rva0018C28F(const unsigned short *key)
 	if (dst)
 		*dst = *key;
 	return (Rva0018C262Node *)mem;
+}
+void Rva0018C262::rva0018C33F(Rva0018C262Node *&out, Rva0018C262Node *a, Rva0018C262Node *b, const unsigned short *v, Rva0018C262Node *c)
+{
+	Rva0018C262Node *node;
+	if (b != (Rva0018C262Node *)m_head && (c != 0 || (a == 0 && (short)*v >= (short)b->m_10))) {
+		node = rva0018C28F(v);
+		b->m_0C = node;
+		Rva0018C262Head *root = m_head;
+		if (b == (Rva0018C262Node *)root->m_0C)
+			root->m_0C = (Rva0018C262Head *)node;
+	} else {
+		node = rva0018C28F(v);
+		b->m_08 = node;
+		Rva0018C262Head *root = m_head;
+		if (b == (Rva0018C262Node *)root) {
+			root->m_04 = node;
+			m_head->m_0C = (Rva0018C262Head *)node;
+		} else if (b == (Rva0018C262Node *)root->m_08) {
+			root->m_08 = (Rva0018C262Head *)node;
+		}
+	}
+	node->m_08 = 0;
+	node->m_0C = 0;
+	node->m_04 = (int)b;
+	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)node, (_STL::_Rb_tree_node_base *&)m_head->m_04);
+	++m_size;
+	out = node;
 }
