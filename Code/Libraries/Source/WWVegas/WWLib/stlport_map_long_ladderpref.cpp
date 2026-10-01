@@ -1,7 +1,8 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 
-#include "string_base.h"
+
+#include "unicode_string.h"
 
 // Retail copies each string through its matching narrow or wide StringBase body.
 class AsciiString : private StringBase<char>
@@ -9,13 +10,6 @@ class AsciiString : private StringBase<char>
 public:
     __forceinline AsciiString(const AsciiString &source) : StringBase<char>(source) {}
     ~AsciiString();
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-    __forceinline UnicodeString(const UnicodeString &source) : StringBase<unsigned short>(source) {}
-    ~UnicodeString();
 };
 
 // LadderPreferences::loadProfile fills these same offsets; the names agree

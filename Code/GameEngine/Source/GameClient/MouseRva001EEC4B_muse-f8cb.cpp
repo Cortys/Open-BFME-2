@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva001EEC4B@Rva001EEC4B@@QAEXXZ @ 0x001EEC4B (76B): Mouse tooltip reset with Hide.
 // Retail calls timeGetTime and stores to +0x4FD8 then clears +0x1308. If tooltip string
 // at +0x12F8 is not empty it fires HideToolTip via Rva003807B7Hide (landed 60B) and clears
@@ -8,38 +8,7 @@
 // timeGetTime via winmm IAT needs dllimport for FF15.
 extern "C" __declspec(dllimport) unsigned int __stdcall timeGetTime();
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-public:
-	bool isEmpty() const;
-private:
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	bool isEmpty() const
-	{
-		return ((const StringBase<unsigned short> *)this)->isEmpty();
-	}
-	void releaseBuffer()
-	{
-		((StringBase<unsigned short> *)this)->releaseBuffer();
-	}
-private:
-	StringBase<unsigned short> m_data;
-};
+#include "unicode_string.h"
 
 void Rva003807B7Hide();
 
@@ -64,8 +33,8 @@ void Rva001EEC4B::rva001EEC4B()
 	if (!m_12F8.isEmpty())
 	{
 		Rva003807B7Hide();
-		m_12F8.releaseBuffer();
+		m_12F8.clear();
 	}
-	m_12FC.releaseBuffer();
-	m_1300.releaseBuffer();
+	m_12FC.clear();
+	m_1300.clear();
 }

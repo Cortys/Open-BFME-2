@@ -1,10 +1,10 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0Rva00171024@@QAE@HH@Z retail 0x00171024 67B unlock lane ctor with two ints
 // clamp first to 0x800 and cache map begin. Evidence: calls rowed map<long
 // LadderPref> ctor 0x00242F01 at +8; ret 8 two args; unblocks 0x000E6AC0.
 
-#include "string_base.h"
+#include "unicode_string.h"
 
 // Retail copies each string through its matching narrow or wide StringBase body.
 class AsciiString : private StringBase<char>
@@ -12,13 +12,6 @@ class AsciiString : private StringBase<char>
 public:
     __forceinline AsciiString(const AsciiString &source) : StringBase<char>(source) {}
     ~AsciiString();
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-    __forceinline UnicodeString(const UnicodeString &source) : StringBase<unsigned short>(source) {}
-    ~UnicodeString();
 };
 
 // Names agree with upstream Common/LadderPreferences.h record and its time_t map key.
