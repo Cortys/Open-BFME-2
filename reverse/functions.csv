@@ -45857,3 +45857,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002BF735@Rva002BF735@@QAEPAXPBX@Z,,0x002BF735,37,Code/GameEngine/Source/GameClient/Rva002BF735NewNode.cpp,matched,hashtable new node 12B via rowed allocator 0x307F0 and dup 0x2BF35B unlocks 0x2BFAD6
 ?rva002BFA12@Rva002BFA12@@QAEXPAX@Z,,0x002BFA12,54,Code/GameEngine/Source/GameClient/Rva002BFA12.cpp,matched,hashtable find then findSlot same map caller 0x00539411
 ?rva002BFDAE@Rva002BFDAE@@QAEPAXPAX@Z,,0x002BFDAE,56,Code/GameEngine/Source/GameClient/GUI/Rva002BFDAEFind.cpp,matched,manual WindowVideoMap walk at plus0xac via hashtable begin and Rva next
+??0Rva002BF807@@QAE@XZ,,0x002BF807,58,Code/GameEngine/Source/GameLogic/Object/Update/Rva002BF807Ctor.cpp,matched,44B PartTheHeavens member ctor vector plus end cache plus floats
