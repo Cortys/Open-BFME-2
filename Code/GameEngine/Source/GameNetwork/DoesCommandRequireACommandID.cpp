@@ -123,3 +123,36 @@ Int Rva00581229Get(Rva00581229Msg *msg)
 	}
 	return 0;
 }
+
+// ?Rva005812C4Get@@YAHPAURva005812C4Msg@@@Z, retail 0x005812C4, 84 bytes.
+// Predicate over NetCommandMsg m_commandType at +0x14, same Int xor/inc shape
+// as siblings above. Retail order read off the chain: 27,26,16,17,20,19,21,
+// 22,28,5,6,8,9,7. Callers at 0x004CF4A8 0x004CFF2D; honest-address free function.
+struct Rva005812C4Msg
+{
+	char m_pad[0x14];
+	NetCommandType m_type;
+};
+
+Int Rva005812C4Get(Rva005812C4Msg *msg)
+{
+	NetCommandType type = msg->m_type;
+	if ((type == NETCOMMANDTYPE_DISCONNECTFRAME) ||
+		(type == NETCOMMANDTYPE_DISCONNECTVOTE) ||
+		(type == NETCOMMANDTYPE_LOADCOMPLETE) ||
+		(type == NETCOMMANDTYPE_TIMEOUTSTART) ||
+		(type == NETCOMMANDTYPE_FILEANNOUNCE) ||
+		(type == NETCOMMANDTYPE_FILE) ||
+		(type == NETCOMMANDTYPE_FILEPROGRESS) ||
+		(type == (NetCommandType)22) ||
+		(type == NETCOMMANDTYPE_DISCONNECTSCREENOFF) ||
+		(type == NETCOMMANDTYPE_REQUEST_GAMESPY_STATS_AUTHKEY) ||
+		(type == NETCOMMANDTYPE_GAMESPY_STATS_AUTHKEY) ||
+		(type == NETCOMMANDTYPE_INFORMPLAYERLEAVEFRAME) ||
+		(type == NETCOMMANDTYPE_REQUESTFRAMEDATA) ||
+		(type == NETCOMMANDTYPE_REQUESTPLAYERLEAVE))
+	{
+		return 1;
+	}
+	return 0;
+}
