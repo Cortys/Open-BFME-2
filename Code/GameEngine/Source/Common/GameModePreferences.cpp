@@ -100,6 +100,7 @@ public:
 	void rva0054F7C0(Int val);
 	void rva0044DDFB(int *vals);
 	Int rva0044D836(void);
+	Int rva0044D88C(void);
 	AsciiString rva0044DBA5(void);
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
@@ -232,6 +233,70 @@ Int GameModePreferences::rva0044D836(void)
 	if (v < *limit)
 		return v;
 	return -1;
+}
+
+// ?rva0044D88C@GameModePreferences@@QAEHXZ @0x0044D88C 180B:
+// PlayerTemplate getter over the mode-keyed map: find makeKey(
+// "PlayerTemplate"), -1 when missing unless the writable-global faction
+// flag remaps to the store default, else atoi with -2/over-range plus
+// empty-faction rejection, and -1 remapped through the same flag.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT;
+// getNth 0x001FD3C6; TheWritableGlobalData 0x009FE758 plus 0x9D4 bits 3;
+// ThePlayerTemplateStore 0x009FE0D0 plus count 0x0C/0x10 over 0x1DC plus
+// default map at 0x18 begin-first; PlayerTemplate byte 0x151;
+// callers 0x00249DE4 0x00446861 0x005A22AC 0x005A24F9;
+// prev 0x0044D836 next 0x0044DBA5.
+class PlayerTemplate
+{
+public:
+	char m_pad151[0x151];
+	unsigned char m_151;
+	char m_rest[0x1DC - 0x152];
+};
+
+class PlayerTemplateStore
+{
+public:
+	const PlayerTemplate *getNthPlayerTemplate(int index) const;
+	char m_pad[0x0C];
+	PlayerTemplate *m_first;
+	PlayerTemplate *m_last;
+	PlayerTemplate *m_end;
+	_STL::map<int, int> m_map;
+};
+
+extern PlayerTemplateStore *ThePlayerTemplateStore;
+
+class GlobalData
+{
+public:
+	char m_pad[0x9D4];
+	unsigned char m_flag9D4;
+};
+
+extern GlobalData *TheWritableGlobalData;
+
+Int GameModePreferences::rva0044D88C(void)
+{
+	PreferenceMap::const_iterator it = find(makeKey("PlayerTemplate"));
+	if (it == end()) {
+		if ((TheWritableGlobalData->m_flag9D4 & 3) == 0)
+			return -1;
+		return ThePlayerTemplateStore->m_map.begin()->first;
+	}
+	int v = atoi(it->second.str());
+	if (v == -2 || v < -2 || v >= (ThePlayerTemplateStore->m_last - ThePlayerTemplateStore->m_first))
+		v = -1;
+	if (v >= 0) {
+		const PlayerTemplate *pt = ThePlayerTemplateStore->getNthPlayerTemplate(v);
+		if (!pt)
+			v = -1;
+		else if (pt->m_151 == 0)
+			v = -1;
+	}
+	if (v == -1 && (TheWritableGlobalData->m_flag9D4 & 3) != 0)
+		return ThePlayerTemplateStore->m_map.begin()->first;
+	return v;
 }
 
 // ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ @0x0044DBA5 175B:
