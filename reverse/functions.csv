@@ -46358,3 +46358,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva005CC254@@QAE@PAX@Z,,0x005CC254,26,Code/GameEngine/Source/Common/Rva005CC254Ctor.cpp,matched,stores g_00C74E04 at +0 arg at +4 clears +8 sets +0xC
 ?Rva00516E92Enable@@YAXXZ,,0x00516E92,21,Code/GameEngine/Source/Common/Rva00516E92Enable.cpp,matched,twin of 0x00433D27 via TheRva00222A8BTarget and enable row
 ?Rva00516F21Invoke@@YAXPAVRva00222A8BTarget@@PAXPBD2@Z,,0x00516F21,30,Code/GameEngine/Source/Common/Rva00516F21Invoke.cpp,matched,invoke wrapper target owner name value flag 1 via pin 0x00222A8B
+?Rva00415EF8Close@@YAXXZ,,0x00415EF8,46,Code/GameEngine/Source/Common/Rva00415EF8Close.cpp,matched,conditional close via 0x00516EE9 then clear three globals
