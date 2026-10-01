@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /O1 /MD /EHsc /Ireference/shims/moduledata
 // ??1Rva0036783F@@UAE@XZ @0x0036783F 79B
 // Dtor: vtable 0x00817548 plus delete of heap member at +0x28 via virtual
 // slot 0 plus operator delete 0x0002FD60 plus base WindModuleInfo dtor
@@ -9,11 +9,7 @@ class Rva0036783FMember
 public:
 	virtual void *slot00(int flag);
 };
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
+#include "Common/Snapshot.h"
 namespace FXParticleSystem
 {
 class WindModuleInfo : public Snapshot

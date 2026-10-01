@@ -1,14 +1,10 @@
-// cl: /O1 /MD
+// cl: /O1 /MD /Ireference/shims/moduledata
 //
 // SpecialPowerModuleData is the shared base: matched constructor/xfer TUs
 // identify it for Rva00546CAD and Rva00546F61, whose dtors tail-jump to 0x548948.
 // Rva00546B29 uses the same tail target; keep all derived names opaque.
 // Model only the known 0x18 base extent needed by these destructor bodies.
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
+#include "Common/Snapshot.h"
 
 class SpecialPowerModuleData : public Snapshot
 {
