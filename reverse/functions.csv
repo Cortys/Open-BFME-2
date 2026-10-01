@@ -45115,3 +45115,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva000B992CBuild@@YA?AVAsciiString@@ABV1@0H_NH@Z,,0x000B992C,198,Code/GameEngine/Source/Common/Rva000B992CBuild.cpp,matched,unlock AsciiString build via StringBase rows sprintf dot
 ?rva000B9324@Rva000B6498@@QAEXXZ,,0x000B9324,41,Code/GameEngine/Source/Common/Rva000B6498Free.cpp,matched,unlock same-this free sentinel reset caller 0xBB694
 ?Rva0040E269Xfer@@YAPAVXfer@@PAV1@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x0040E269,202,Code/GameEngine/Source/Common/System/Rva0040E269Xfer.cpp,matched,Free Xfer vector ModuleData ptr helper via Rva003F2C0CXfer recipe
+?resize@BfmeE16Vector@@QAEXI@Z,,0x000B086E,43,Code/Libraries/Source/WWVegas/WWLib/stlport_e16_resize_byvalue_000b0693.cpp,matched,E16 one-arg resize zeroing via loop to by-value resize

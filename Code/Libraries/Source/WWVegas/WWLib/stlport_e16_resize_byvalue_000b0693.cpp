@@ -11,6 +11,7 @@ class BfmeE16Vector : public _STL::vector<BfmeE16, _STL::allocator<BfmeE16 > >
 {
 public:
 	void resize(unsigned int n, BfmeE16 x);
+	void resize(unsigned int n);
 };
 
 void BfmeE16Vector::resize(unsigned int n, BfmeE16 x)
@@ -19,4 +20,12 @@ void BfmeE16Vector::resize(unsigned int n, BfmeE16 x)
 		(( _STL::vector<BfmePod16, _STL::allocator<BfmePod16> >*)this)->erase((BfmePod16*)(begin() + n), (BfmePod16*)end());
 	else
 		_M_fill_insert(end(), n - size(), x);
+}
+
+void BfmeE16Vector::resize(unsigned int n)
+{
+	BfmePod16 z;
+	for (int i = 0; i < 4; ++i)
+		z.a[i] = 0;
+	resize(n, *(BfmeE16*)&z);
 }
