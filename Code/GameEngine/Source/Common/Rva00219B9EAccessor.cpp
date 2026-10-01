@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ?rva00219B9E@Rva00219B9E@@QAEPAXI@Z @0x00219B9E 44B
 // Bounds-checked accessor for the 216-byte (0xD8) element vector at +0x14/+0x18.
@@ -12,9 +12,7 @@
 // at 0x009FE344. Landing unblocks 24 functions (14 fully ready). No donor;
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
-class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static const AsciiString TheEmptyString; };
-template <typename T> class StringBase {
-public: StringBase(const char *s); __forceinline ~StringBase() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+#include "ascii_string.h"
 struct IntVec { int *m_start; int *m_finish; int *m_end; };
 struct Elem216 {
     char m_00[0x0C];
@@ -181,7 +179,7 @@ int Rva00219B9E::rva00219C1F(unsigned int index)
 // Caller 0x0021B215.
 void *Rva00219B9E::rva0021AE56(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid SubCalssIndex");
+    static AsciiString err("ERROR: Invalid SubCalssIndex");
     void *p = rva00219B9E(index);
     if (p)
         return (char *)p + 8;
@@ -192,7 +190,7 @@ void *Rva00219B9E::rva0021AE56(unsigned int index)
 // same rowed callees; caller 0x0021B303.
 void *Rva00219B9E::rva0021AEB9(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid SubCalssIndex");
+    static AsciiString err("ERROR: Invalid SubCalssIndex");
     void *p = rva00219B9E(index);
     if (p)
         return (char *)p + 4;
@@ -203,7 +201,7 @@ void *Rva00219B9E::rva0021AEB9(unsigned int index)
 // fallback; callers 0x0021CB79 0x005B20FB.
 void *Rva00219B9E::rva0021AF7E(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return &Vec32At(&m_outer, index);
@@ -214,7 +212,7 @@ void *Rva00219B9E::rva0021AF7E(unsigned int index)
 // callers 0x0021CB51 0x005B55B4.
 void *Rva00219B9E::rva0021AFEA(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 4;
@@ -225,7 +223,7 @@ void *Rva00219B9E::rva0021AFEA(unsigned int index)
 // and callees; caller 0x0021CBA1.
 void *Rva00219B9E::rva0021B05A(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 8;
@@ -236,7 +234,7 @@ void *Rva00219B9E::rva0021B05A(unsigned int index)
 // caller 0x005B56FC.
 void *Rva00219B9E::rva0021B0CA(unsigned int index)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 0xC;
@@ -249,7 +247,7 @@ void *Rva00219B9E::rva0021B0CA(unsigned int index)
 // 0x0021B1B4/0x0021B2A2. Callers 0x0021B685/0x005B554E.
 void *Rva00219B9E::rva0021B22E(unsigned int o, unsigned int i)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;
@@ -274,7 +272,7 @@ void *Rva00219B9E::rva0021B670(const IdxPair *p)
 // prefix the callee reads, hence the layout-compatible reinterpret cast.
 void *Rva00219B9E::rva0021B1B4(unsigned int o, unsigned int i)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;
@@ -287,7 +285,7 @@ void *Rva00219B9E::rva0021B1B4(unsigned int o, unsigned int i)
 // callers 0x0021CC0C 0x005B561A.
 void *Rva00219B9E::rva0021B2A2(unsigned int o, unsigned int i)
 {
-    static StringBase<char> err("ERROR: Invalid CalssIndex");
+    static AsciiString err("ERROR: Invalid CalssIndex");
     unsigned int count = Vec32Size(&m_outer);
     if (o < count) {
         OuterElem32 *base = m_outer.m_start;

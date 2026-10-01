@@ -5218,3 +5218,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00106715@Rva00106715@@QAE_NPAXPAIPA_N@Z	0x00106715	108	blocked	avail in edx vs esi plus v in ecx vs eax only register choice t=15 model=muse-07 (stash 0.95 kept)
 ?Rva005116C2Load@@YAXXZ	0x005116C2	110	blocked	private StringBase forbidden by class-gate plus push order wall t=5 model=muse-07
 ?rva0070A910@AptNativeHash@@QAEXXZ	0x0070A910	148	blocked	pp lever worsened to 149B with ebp edi swap plus g_pChainBlockAllocator zero t=12 model=muse-07 (stash 0.97 kept)
+??0Rva00463D59@@QAE@XZ	0x00463D59	25	blocked	EBP frame plus two lea ebp-1 same uninit temp reusing saved this for base const-uchar-ref plus dummy unsigned; member declinedup plus Oy- plus EHsc plus unused local all stay frameless 17B vs 25B t=25 model=muse-13
+?Create@AptString@@SAPAV1@XZ	0x006D7210	262	blocked	AptString Create 262B EH handler UNCLAIMED 0x007A887F no donor 40 callers; tried O2 closest plus6 structural EH order plus allocation pushes-vs-sub plus alloc path plus globals unresolved and O1 worse minus46; needs strong-model Apt EH reconstruction with handler pin t=18 model=muse-13
