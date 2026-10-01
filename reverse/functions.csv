@@ -45582,3 +45582,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva000B450B@@QAE@ABV0@@Z,,0x000B450B,33,Code/GameEngine/Source/Common/Rva000B450BCopy.cpp,matched,copy-ctor gslice plus Rva000B3F15 caller 0x000B690B
 ?write@Rva00238C34@@QAEHPAD@Z,,0x00238C34,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow concat base Rva0020F58E plus pair at +0x10 caller 0x00238C59
 ??BRva00238C34@@QAE?AVAsciiString@@XZ,,0x00238C59,105,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow materializer base length plus trailing text caller 0x00238CC2
+??0Rva005F69F5@@QAE@XZ,,0x005F69D8,29,Code/GameEngine/Source/Common/Rva005F69F5Ctor.cpp,matched,ctor stores vtable plus zeroes sibling of 0x005F6924
