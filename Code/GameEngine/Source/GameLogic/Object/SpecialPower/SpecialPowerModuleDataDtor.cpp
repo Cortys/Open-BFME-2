@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHs /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP=
+// cl: /O1 /DNDEBUG /MD /EHs /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /D_CRTIMP= /Ireference/shims/moduledata
 // stlport
 // ??1SpecialPowerModuleData@@UAE@XZ at retail 0x00548948 (60B). Base lineage
 // proven by the two vtable installs (own 0xC6A520 then Snapshot 0xBBB554) and
@@ -15,16 +15,7 @@ enum ScienceType
 	SCIENCE_NONE = 0
 };
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class SpecialPowerModuleData : public Snapshot
 {

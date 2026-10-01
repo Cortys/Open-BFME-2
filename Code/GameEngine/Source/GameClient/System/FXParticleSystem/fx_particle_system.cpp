@@ -1,3 +1,6 @@
+// cl: /Ireference/shims/moduledata
+#include "Common/Snapshot.h"
+
 namespace FXParticleSystem
 {
 class EventModuleInfo
@@ -40,12 +43,6 @@ const char *ParticleSystemInfo::GetSnapshotName()
 // flag byte) then the derived vtable and the six float copies. No
 // out-of-line calls, so no pins. Snapshot is vtable-only here (4 bytes),
 // which seats m_flag at +0x4 and the float block at +0x8 per retail.
-class Snapshot
-{
-public:
-    virtual ~Snapshot();
-};
-
 class EmissionVolumeInfo : public Snapshot
 {
 public:
