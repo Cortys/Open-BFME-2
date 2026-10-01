@@ -45107,3 +45107,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??RRva003014D6Cmp@@QBE_NPAVMapMetaData@@0@Z,,0x003014D6,94,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_mapmetadata.cpp,matched,
 ?rva0053604B@UserPreferences@@QAEHXZ,,0x0053604B,73,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallBestWinStreak getter slot 0x18 same TU
 ?rva005360DC@UserPreferences@@QAEHXZ,,0x005360DC,73,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallLossStreak getter slot 0x18 same TU
+?rva0053616D@UserPreferences@@QAEHXZ,,0x0053616D,73,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallWorstLossStreak getter slot 0x18 same TU
