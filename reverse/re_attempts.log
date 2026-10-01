@@ -4602,3 +4602,6 @@ FUN_001B2210	0x001B2210	250	blocked	stream motion nibble-decode plus SSE interp 
 ?rva002CAAFA@Rva002CAAFA@@QAE_NPAVObject@@PAUCoord3D@@@Z	0x002CAAFA	64	blocked	setne vs mov-al-1 xor shared-false tried polarity-invert plus bool-local still 63v64 t=8 model=muse-spark
 ?rva00293408@Object@@QAE_NXZ	0x00293408	89	partial	89v89 exact size only xor edi placement early vs late plus TheGameLogic reloc t=25 model=muse-spark score=0.95 stash=reverse/attempts/0x00293408.cpp
 ?Rva0070DBB0Intern@@YAPAUStringNode0070DBB0@@PBD@Z	0x0070DBB0	527	blocked	first shape 539B vs 527B but align reads 933B incl next func; EH tail layout with found-path after ret needs donor; bucket short cast fix pending t=12 model=muse-20
+?rva0039C3AC@Rva0039C3AC@@QAEPAUObjectCountMap@@H@Z	0x0039C3AC	94	blocked	94B static empty map with SEH prolog guard g_Va00E02844 ctor atexit needs real STLport map type not minimal trivial struct t=10 model=muse-16
+?Rva000AEC4EGetTerrain@@YAEXAAVAsciiString@@MM@Z	0x000AEC4E	224	blocked	224B terrain x87 floor plus 32KB layout plus contested StringBase 0x000365F0 needs donor t=10 model=muse-16
+?rva002B7D91@Rva002B7D91@@QAEXXZ	0x002B7D91	85	blocked	85B index loop sar plus flag and plus ebx esi edi homing needs shared regalloc delta t=15 model=muse-16
