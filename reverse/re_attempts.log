@@ -4605,3 +4605,6 @@ FUN_001B2210	0x001B2210	250	blocked	stream motion nibble-decode plus SSE interp 
 ?rva0039C3AC@Rva0039C3AC@@QAEPAUObjectCountMap@@H@Z	0x0039C3AC	94	blocked	94B static empty map with SEH prolog guard g_Va00E02844 ctor atexit needs real STLport map type not minimal trivial struct t=10 model=muse-16
 ?Rva000AEC4EGetTerrain@@YAEXAAVAsciiString@@MM@Z	0x000AEC4E	224	blocked	224B terrain x87 floor plus 32KB layout plus contested StringBase 0x000365F0 needs donor t=10 model=muse-16
 ?rva002B7D91@Rva002B7D91@@QAEXXZ	0x002B7D91	85	blocked	85B index loop sar plus flag and plus ebx esi edi homing needs shared regalloc delta t=15 model=muse-16
+FUN_005b2210	0x001B2210	250	blocked	adaptive-delta decompress 5-arg SSE nibble loop needs donor cpp plus float table 0x00DB6C28 t=12 model=muse-11
+?rva0031475A@GameWindow@@QAEHXZ	0x0031475A	128	partial	prologue manager-load order plus tail fail-block order only size-exact 128 0-reg t=25 model=muse-11 score=0.94 stash=reverse/attempts/0x0031475a.cpp
+?rva0029B3C1@Rva0029B3C1@@QAEMPAURva0029B3C1Arg@@@Z	0x0029B3C1	155	blocked	SSE xmm round-robin wall plus shared-fld branch layout; 6 variants tried O1-archSSE G7 suborders ifblock; best ifblock 43-43insns 152B jb-vs-ja g-in-mem t=20 model=muse-11
