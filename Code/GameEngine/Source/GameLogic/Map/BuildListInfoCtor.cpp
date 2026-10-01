@@ -44,6 +44,7 @@ class BuildListInfo : public EmptyBase
 public:
 	BuildListInfo();
 	BuildListInfo *duplicate();
+	BuildListInfo &operator=(const BuildListInfo &);
 
 private:
 	void *m_vtable; // +0x00
