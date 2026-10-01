@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 // ??0Rva004181A6@@QAE@ABV0@@Z @0x004181A6 79B
 // Copy ctor with AsciiString at +0 via pinned StringBase copy 0x000365F0
@@ -9,25 +9,8 @@
 // Evidence: unlock lane; callees rowed/pinned; unblocks 0x00418232 0x004181F5.
 #include <map>
 struct BfmePod24 { int a[6]; };
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &other);
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "ascii_string.h"
+#include "unicode_string.h"
 class BfmeFixedStorage002CF0F0 {
     char m_bytes[4];
 public:

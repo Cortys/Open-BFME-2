@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /G7
 // GadgetListBoxSetBottomVisibleEntry, retail 0x003253FD, 79 bytes: after the null and
 // user-data guards it bounds-checks the requested row against the display height,
 // sets the display position from that row height and refreshes the display through
@@ -10,40 +10,8 @@ typedef bool Bool;
 typedef int Int;
 typedef short Short;
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
-public:
-	int getLength() const { return m_data ? m_data->length : 0; }
-	void set(const StringBase<T> &other);
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	StringBase(const T *text);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	struct Header
-	{
-		int refCount;
-		unsigned short length;
-		unsigned short capacity;
-		T text[1];
-	};
-	Header *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	~UnicodeString() {}
-	UnicodeString &operator=(const UnicodeString &source)
-	{
-		set(*(const StringBase<unsigned short> *)&source);
-		return *this;
-	}
-};
 
 class GameWindow
 {

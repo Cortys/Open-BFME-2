@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 //
 // ?getMetaMapRec@MetaMap@@IAEPAVMetaMapRec@@W4Type@GameMessage@@@Z retail
 // 0x001DB537 107B. Search the m_metaMaps list at +0xC for m_meta == t and
@@ -8,22 +8,8 @@
 // prepend to the list and return the node. Evidence: ZH donor MetaEvent.h
 // MetaMap layout plus MetaEvent.cpp body plus caller 0x001DB5A2 passing
 // GameMessage::Type plus rowed new and releaseBuffer.
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString() { m_data.m_data = 0; }
-	void clear() { m_data.releaseBuffer(); }
-private:
-	StringBase<unsigned short> m_data;
-};
 
 class GameMessage
 {

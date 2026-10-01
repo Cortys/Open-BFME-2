@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?GadgetComboBoxSetText@@YAXPAVGameWindow@@VUnicodeString@@@Z @0x00322D63 98B.
 // BFME1 donor GadgetComboBoxAccessors.cpp GadgetComboBoxSetText: null guard then
 // ListBoxSetSelected(listBox -1) then TextEntrySetText(entry text).
@@ -12,33 +12,8 @@ typedef int Int;
 #define NULL 0
 #endif
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameWindow;
 class BfmeKeyLC;

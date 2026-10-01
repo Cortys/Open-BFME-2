@@ -8,17 +8,7 @@ typedef bool Bool;
 #include "ascii_string.h"
 
 
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-
-	UnicodeString() {}
-	void translate(const AsciiString &source);
-
-private:
-	StringBase<unsigned short> m_data;
-};
+#include "unicode_string.h"
 
 class GameWindowManager
 {

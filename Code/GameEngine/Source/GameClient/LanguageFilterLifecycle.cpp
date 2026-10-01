@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /Ireference/shims/bfmealloc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DNDEBUG /D_CRTIMP=
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /Ireference/shims/bfmealloc /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DNDEBUG /D_CRTIMP=
 // stlport
 /*
 ** Copyright 2025 Electronic Arts Inc.
@@ -17,28 +17,8 @@ template<class T> class StringBase;
 class UnicodeString;
 struct UnicodeStringLessThan;
 
-template<class T>
-class StringBase
-{
-    void *m_data;
-    StringBase(const StringBase& other);
-    StringBase(const T *text);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    friend class UnicodeString;
-public:
-    int compareNoCase(const StringBase& other) const throw();
-};
+#include "unicode_string.h"
 
-class UnicodeString : private StringBase<WideChar>
-{
-    friend struct UnicodeStringLessThan;
-public:
-    __forceinline UnicodeString(const WideChar *text) : StringBase<WideChar>(text) {}
-    __forceinline UnicodeString(const UnicodeString &other)
-        : StringBase<WideChar>(static_cast<const StringBase<WideChar>&>(other)) {}
-    __forceinline ~UnicodeString() {}
-};
 
 struct UnicodeStringLessThan
 {

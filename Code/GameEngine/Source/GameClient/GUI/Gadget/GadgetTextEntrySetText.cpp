@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?GadgetTextEntrySetText@@YAXPAVGameWindow@@VUnicodeString@@@Z @0x002C17EB 66B
 // GadgetTextEntrySetText; ZH donor GadgetTextEntry.h inline verbatim shape
 // (winSendSystemMsg GEM_SET_TEXT 0x4030 with &text and 0); TheWindowManager at
@@ -21,36 +21,8 @@ enum WindowMsgHandledType
 class UnicodeString;
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "unicode_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameWindow;
 

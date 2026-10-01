@@ -13,15 +13,7 @@ typedef unsigned short WideChar;
 
 #include "ascii_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-	friend class MapMetaData;
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	~UnicodeString() {}
-	void __cdecl format(const WideChar *format, ...);
-};
+#include "unicode_string.h"
 
 
 class MapMetaData

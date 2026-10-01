@@ -13,14 +13,7 @@ template <typename T> struct BfmeStringData
     T text[1];
 };
 #include "ascii_string.h"
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString() {}
-    UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    ~UnicodeString() {}
-    void format(const unsigned short *fmt, ...);
-};
+#include "unicode_string.h"
 class BfmeAptWindowManager
 {
 public:

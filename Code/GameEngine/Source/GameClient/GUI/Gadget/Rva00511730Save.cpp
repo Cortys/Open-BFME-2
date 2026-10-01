@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva00511730@@YAXH@Z @0x00511730 135B.
 // Free cdecl helper saving text-entry text into a global UnicodeString.
 // Evidence: 11 retail callers all push 0 and pop ecx (cdecl 1 int arg, always
@@ -16,38 +16,8 @@
 // mov+test/push eax; precedent Debug_FrameCommands.cpp and INIFileTableGetName.cpp.
 typedef unsigned short wchar_t;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	friend class AsciiString;
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-public:
-	void set(const StringBase<T> &that);
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-	void set(const UnicodeString &that) { m_data.set(that.m_data); }
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameWindow
 {

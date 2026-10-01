@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?setWindowText@@YAXPAVGameWindow@@VAsciiString@@@Z, retail 0x003161F2,
 // 355 bytes. Dedicated TU.
@@ -41,62 +41,10 @@ typedef unsigned short wchar_t;
 class AsciiString;
 class UnicodeString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
 
-	Header *m_data;
-
-	StringBase(const StringBase &that);
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	void set(const StringBase &that);
-};
-
-class AsciiString
-{
-public:
-	AsciiString() : m_text(0) {}
-	~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
-	const char *str() const { return m_text ? m_text + 8 : ""; }
-	bool isEmpty() const { return m_text == 0 || *(const unsigned short *)(m_text + 4) == 0; }
-
-private:
-	char *m_text;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() { m_text = 0; }
-	UnicodeString(const UnicodeString &that)
-	{
-		((StringBase<wchar_t> *)this)->StringBase<wchar_t>::StringBase(*(const StringBase<wchar_t> *)&that);
-	}
-	~UnicodeString() { ((StringBase<wchar_t> *)this)->releaseBuffer(); }
-	UnicodeString &operator=(const UnicodeString &that)
-	{
-		((StringBase<wchar_t> *)this)->set(*(const StringBase<wchar_t> *)&that);
-		return *this;
-	}
-	void translate(const AsciiString &that);
-
-private:
-	wchar_t *m_text;
-};
+#include "unicode_string.h"
 
 // Retail fetch call uses vtable offset 0x3c (VersionUnicode.cpp recipe).
 class GameTextInterface

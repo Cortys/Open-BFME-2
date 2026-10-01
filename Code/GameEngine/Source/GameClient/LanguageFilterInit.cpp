@@ -1,4 +1,4 @@
-// cl: /O1 /Ob2 /EHs /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHs /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS
 // stlport
 /*
 ** Copyright 2025 Electronic Arts Inc.
@@ -11,30 +11,8 @@
 
 typedef int Int;
 typedef bool Bool;
-template<class T> class StringBase {
-    struct Header { int refCount; unsigned short length; unsigned short capacity; T data[1]; };
-    Header *m_data;
-    friend class UnicodeString;
-    StringBase(const StringBase &other);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    StringBase(const T *text);
-public:
-    int compareNoCase(const StringBase &other) const throw();
-};
+#include "unicode_string.h"
 
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const unsigned short *text)
-        : StringBase<unsigned short>(text) {}
-    __forceinline UnicodeString(const UnicodeString &other)
-        : StringBase<unsigned short>((const StringBase<unsigned short>&)other) {}
-    __forceinline ~UnicodeString() {}
-    int compareNoCase(const UnicodeString &other) const throw() {
-        return ((const StringBase<unsigned short>&)*this).compareNoCase(
-            (const StringBase<unsigned short>&)other);
-    }
-};
 
 struct UnicodeStringLessThan {
     Bool operator()(UnicodeString a, UnicodeString b) const {

@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva001EEBD5@Mouse@@QAEXVUnicodeString@@PBU_MouseSixteen@@1@Z, retail 0x001EEBD5, 118 bytes.
 // Mouse wide-text plus two 16-byte payload setter. Evidence: Mouse neighbours
 // (same /O1 area, +0x4Fxx offsets near rva001EEA6D); by-value wide-string temp
@@ -6,20 +6,7 @@
 // cleanup (GadgetStaticText/MouseRva001EEC4B friend pattern); virtual slot 1
 // on +0x4FA8; guarded 16-byte copies into +0x4FAC/+0x4FBC.
 class Mouse;
-template <class T> class StringBase {
-    StringBase(const StringBase &other);
-    void releaseBuffer();
-    T *m_data;
-    friend class Mouse;
-    friend class UnicodeString;
-public:
-    ~StringBase() { releaseBuffer(); }
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 struct _MouseSixteen { int v[4]; };
 struct MouseFontThunk {
     virtual void slot0();

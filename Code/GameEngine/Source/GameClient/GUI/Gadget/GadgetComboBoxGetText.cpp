@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?GadgetComboBoxGetText@@YA?AVUnicodeString@@PAVGameWindow@@@Z @0x00322D21 66B.
 // ZH donor GadgetComboBox.cpp GadgetComboBoxGetText: null -> empty,
 // GWS_COMBO_BOX 0x8000 check via winGetStyle, else TextEntryGetText of child.
@@ -11,33 +11,7 @@ typedef unsigned int UnsignedInt;
 #ifndef NULL
 #define NULL 0
 #endif
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<wchar_t> m_data;
-};
+#include "unicode_string.h"
 class GameWindow
 {
 public:

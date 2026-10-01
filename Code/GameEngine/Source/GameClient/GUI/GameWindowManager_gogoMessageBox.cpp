@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?gogoMessageBox@GameWindowManager@@UAEPAVGameWindow@@HHHHGVUnicodeString@@0P6AXXZ111@Z @0x002C187D 137B
 // GameWindowManager::gogoMessageBox 11-arg forwarder to 12-arg with FALSE; BFME1 donor GameWindowManagerMessageBox.cpp; vtable 0x7C7C90 slot 18 calls slot 17 (+0x44); UnicodeString by-value via StringBase<G> pins 0x37050/0x36E70.
 
@@ -13,40 +13,8 @@ typedef bool Bool;
 
 class UnicodeString;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
+#include "unicode_string.h"
 
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-
-public:
-	StringBase() { m_data = NULL; }
-	~StringBase() { releaseBuffer(); }
-
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() {}
-
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameWindow;
 

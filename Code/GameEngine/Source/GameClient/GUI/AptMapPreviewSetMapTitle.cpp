@@ -16,15 +16,7 @@ template <typename T> struct BfmeStringData
 #include "ascii_string.h"
 
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-    UnicodeString() {}
-    UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
-    UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    ~UnicodeString() {}
-    void translate(const AsciiString &that);
-};
+#include "unicode_string.h"
 
 class MapMetaData
 {
