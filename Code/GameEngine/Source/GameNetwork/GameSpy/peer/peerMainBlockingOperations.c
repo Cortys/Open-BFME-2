@@ -1824,7 +1824,6 @@ failed:
     }
 }
 
-// _Rva0069A130JoinServer present-unmatched
 void Rva0069A130JoinServer(PEER peer, void *server, const char *password,
     void *callback, void *param, int blocking)
 {
