@@ -62,7 +62,7 @@ private:
 	int m_currentGatherers; // +0x7C
 };
 
-BuildListInfo &BuildListInfo::operator=(const BuildListInfo &that)
+inline BuildListInfo &BuildListInfo::operator=(const BuildListInfo &that)
 {
 	m_buildingName = that.m_buildingName;
 	m_templateName = that.m_templateName;
@@ -92,3 +92,15 @@ BuildListInfo &BuildListInfo::operator=(const BuildListInfo &that)
 	m_currentGatherers = that.m_currentGatherers;
 	return *this;
 }
+
+// operator= is a header inline in retail: another unit emits a select-any
+// copy of it, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitBuildListInfoAssign@@YAXPAVBuildListInfo@@ABV1@@Z present-unmatched
+void bfmeEmitBuildListInfoAssign(BuildListInfo *p, const BuildListInfo &that)
+{
+	*p = that;
+}
+#pragma inline_depth()
