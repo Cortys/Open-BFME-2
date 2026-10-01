@@ -45867,3 +45867,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0046AC30@Rva0046AC30@@QAEPAXABVRva00469BEA@@@Z,,0x0046AC30,34,Code/GameEngine/Source/Common/Rva0046AC30.cpp,matched,create node alloc 0x24 construct at 0x10 via rowed helpers
 ?rva0046A93E@Rva0046A93E@@QAEXXZ,,0x0046A93E,41,Code/GameEngine/Source/Common/Rva0046A93EClear.cpp,matched,unlock caller 0x46AB1B frees header after clear plus rowed tree-free 0x469C34 at call 0x46A94C
 ??1Rva0046A93E@@QAE@XZ,,0x0046AB1B,56,Code/GameEngine/Source/Common/Rva0046A93EDtor.cpp,matched,chain from rowed clear 0x46A93E plus rowed free 0x30830 header free after clear
+?rva0046A9D2@Rva0046A9D2@@QAEXPAURva0046A9D2Node@@@Z,,0x0046A9D2,45,Code/GameEngine/Source/Common/Rva0046A9D2Free.cpp,matched,unlock frees via rowed free 0x30830 plus self recursion caller 0x46AB8B
