@@ -34,3 +34,29 @@ void Rva002E15E6::rva002E15E6()
 	m_00->m_0C = m_00;
 	m_04 = 0;
 }
+
+// ?Rva002E17A0Copy@@YAPAVRva002E0D93@@PAV1@00@Z @0x002E17A0 54B.
+// Array copy via rowed copy-assign: n = end-src (0xD8 records); if n<=0
+// return dst; else assign n records advancing src/dst, return final dst.
+// Evidence: idiv 0xD8 count plus call rowed 0x002E0D93 op=; caller 0x002E1E9A;
+// prev shares /O1.
+class Rva002E0D93
+{
+public:
+	Rva002E0D93 &operator=(const Rva002E0D93 &other);
+	char m_pad[0xD8];
+};
+Rva002E0D93 *Rva002E17A0Copy(Rva002E0D93 *src, Rva002E0D93 *srcEnd, Rva002E0D93 *dst)
+{
+	int n = (int)(srcEnd - src);
+	if (n <= 0)
+		return dst;
+	int i = n;
+	do {
+		*dst = *src;
+		++src;
+		++dst;
+		--i;
+	} while (i != 0);
+	return dst;
+}

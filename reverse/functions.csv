@@ -45441,3 +45441,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002E0687@Rva002E0687@@QBE_NXZ,,0x002E0687,18,Code/GameEngine/Source/Common/Rva002E0687Method.cpp,matched,global g_009FEF10 holder plus98 equals this 7 callers
 ?rva002E15E6@Rva002E15E6@@QAEXXZ,,0x002E15E6,41,Code/GameEngine/Source/Common/Rva002E15E6Method.cpp,matched,reset after free via rowed 0x002E0D66 self-link inner
 ?Rva002E1824Reinsert@@YAXPAPAX00PAX1@Z,,0x002E1824,41,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,pop-front plus adjust via rowed 0x002E0E9D hole 0
+?Rva002E17A0Copy@@YAPAVRva002E0D93@@PAV1@00@Z,,0x002E17A0,54,Code/GameEngine/Source/Common/Rva002E15E6Method.cpp,matched,array copy via rowed opassign idiv D8 caller 0x002E1E9A
