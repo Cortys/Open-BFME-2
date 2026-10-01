@@ -138,6 +138,19 @@ extern const FieldParse g_00BEF0A8WeaponFireSpecialAbilityFieldParse[] = {
 	{ 0, 0, 0, 0 }
 };
 
+// Retail VA 0x00BEF150 is the TeleportSpecialAbilityUpdateModuleData
+// FieldParse table: BusyForDuration/parseDurationUnsignedInt at +0xC8,
+// DestinationWeaponName and SourceWeaponName/parseAsciiString at +0xCC/+0xD0,
+// MaxDistance/parseReal at +0xD4, then a zero sentinel. The matched caller
+// is independently tied to the TeleportSpecialAbilityUpdate factory.
+extern const FieldParse g_00BEF150TeleportSpecialAbilityFieldParse[] = {
+	{ "BusyForDuration", &INI::parseDurationUnsignedInt, 0, 0xC8 },
+	{ "DestinationWeaponName", &INI::parseAsciiString, 0, 0xCC },
+	{ "SourceWeaponName", &INI::parseAsciiString, 0, 0xD0 },
+	{ "MaxDistance", &INI::parseReal, 0, 0xD4 },
+	{ 0, 0, 0, 0 }
+};
+
 class MultiIniFieldParse
 {
 public:
@@ -1004,7 +1017,7 @@ public:
 void TeleportSpecialAbilityUpdateModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	Rva0044EB54::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00BEF150), 0);
+	parse.add(g_00BEF150TeleportSpecialAbilityFieldParse, 0);
 }
 
 class ToggleMountedSpecialAbilityUpdateModuleData
