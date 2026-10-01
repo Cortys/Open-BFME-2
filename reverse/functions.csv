@@ -45725,3 +45725,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva001F6991Put@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@_N@Z,,0x001F6991,32,Code/Libraries/Source/WWVegas/WWLib/Rva001F6991Put.cpp,matched,ostream Yes-No via rowed _M_put_nowiden caller 0x001F8384
 ??0Rva005AEB2C@@QAE@XZ,,0x005AEB2C,167,Code/GameEngine/Source/Common/Rva005AEB2CVectorFill.cpp,matched,GameSpy maps to vector via virtuals 0x60 0x64
 ??0Rva005D8317@@QAE@H@Z,,0x005D835A,65,Code/GameEngine/Source/Common/Rva005D8317Ctor.cpp,matched,vtable 0x00875FEC base 0x005EE2E6 TheGameLogic vector erase
+??0Rva005D84F6@@QAE@XZ,,0x005D8539,56,Code/GameEngine/Source/Common/Rva005D84F6Ctor.cpp,matched,vtable 0x008760A4 base ctor 0x005EE2E6 TheGameLogic+0x40 erase vector at 0x00E06670
