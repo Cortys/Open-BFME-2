@@ -161,7 +161,7 @@ struct BfmeStringRecord005ED5F3 {
     BfmeStringRecord005ED5F3 &operator=(const BfmeStringRecord005ED5F3 &o);
 };
 BfmeStringRecord005ED5F3::BfmeStringRecord005ED5F3(const BfmeStringRecord005ED5F3 &o) : text(o.text), word0(o.word0), word1(o.word1), word2(o.word2), word3(o.word3) {}
-BfmeStringRecord005ED5F3 &BfmeStringRecord005ED5F3::operator=(const BfmeStringRecord005ED5F3 &o)
+inline BfmeStringRecord005ED5F3 &BfmeStringRecord005ED5F3::operator=(const BfmeStringRecord005ED5F3 &o)
 {
     text.assign(o.text);
     word0 = o.word0;
@@ -261,7 +261,7 @@ struct BfmeStringRecord002CF550 {
     Rva002390CB ref;
     BfmeStringRecord002CF550(const BfmeStringRecord002CF550 &o);
 };
-BfmeStringRecord002CF550::BfmeStringRecord002CF550(const BfmeStringRecord002CF550 &o) : text(o.text), ref(o.ref) {}
+inline BfmeStringRecord002CF550::BfmeStringRecord002CF550(const BfmeStringRecord002CF550 &o) : text(o.text), ref(o.ref) {}
 template void _STL::_Construct<BfmeStringRecord002CF550,BfmeStringRecord002CF550>(BfmeStringRecord002CF550*,const BfmeStringRecord002CF550&);
 
 // ??4BfmeStringRecord002602A6@@QAEAAU0@ABU0@@Z retail 0x002602A6 27B.
@@ -320,3 +320,12 @@ BfmeStringRecord0021A940::BfmeStringRecord0021A940(const unsigned int *p, const 
 BfmeStringRecord0021A940::BfmeStringRecord0021A940(const BfmeStringRecord0021A940 &o) : word0(o.word0), rec(o.rec) {}
 BfmeStringRecord0021A940::~BfmeStringRecord0021A940() {}
 template void _STL::_Construct<BfmeStringRecord0021A940,BfmeStringRecord0021A940>(BfmeStringRecord0021A940*,const BfmeStringRecord0021A940&);
+
+#pragma inline_depth(0)
+// ?bfmeEmitStringRecordInlineCopyBFME2@@YAXPAUBfmeStringRecord002CF550@@PBU1@PAUBfmeStringRecord005ED5F3@@PBU2@@Z present-unmatched
+void bfmeEmitStringRecordInlineCopyBFME2(BfmeStringRecord002CF550 *p0, const BfmeStringRecord002CF550 *q0, BfmeStringRecord005ED5F3 *p1, const BfmeStringRecord005ED5F3 *q1)
+{
+	p0->BfmeStringRecord002CF550::BfmeStringRecord002CF550(*q0);
+	p1->BfmeStringRecord005ED5F3::operator=(*q1);
+}
+#pragma inline_depth()
