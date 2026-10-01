@@ -734,7 +734,9 @@ void CameraClass::Device_To_World_Space(const Vector2 & device_coord,Vector3 * w
  *=============================================================================================*/
 // Retail byte flag at RVA0x9EDA05 selects the stored projection override.
 // Its broader activation policy is not inferred here.
-extern bool bfmeCameraProjectionOverride;
+// bfmeCameraProjectionOverride: retail .data byte at VA 0x00DEDA05, initial value 0;
+// CameraClass::Apply is its only reader in the ledger.
+bool bfmeCameraProjectionOverride = false;
 void CameraClass::Apply(void)
 {
 	Update_Frustum();
