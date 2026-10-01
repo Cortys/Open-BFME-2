@@ -18,7 +18,15 @@ class AsciiString : public StringBase<char>
 {
 };
 
-Bool operator<(const AsciiString &left, const AsciiString &right)
+inline Bool operator<(const AsciiString &left, const AsciiString &right)
 {
     return (left.compare(right) < 0) || false;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitAsciiStringLess@@YAXPBVAsciiString@@0@Z present-unmatched
+void bfmeEmitAsciiStringLess(const AsciiString *a, const AsciiString *b)
+{
+    operator<(*a, *b);
+}
+#pragma inline_depth()
