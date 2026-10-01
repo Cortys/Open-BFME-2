@@ -45951,3 +45951,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000A8A98@Rva000A8A98@@QAEHXZ,,0x000A8A98,14,Code/GameEngine/Source/Common/Rva000A8A98Func.cpp,matched,null-guarded plus20 deref else plus04 fallback unlock
 ?rva000A8A6C@Rva000A8A6C@@QAEXXZ,,0x000A8A6C,19,Code/GameEngine/Source/Common/Rva000A8A6CFunc.cpp,matched,guarded release then null via pin
 ?rva000A8B59@Rva000A8B59@@QAE_NH@Z,,0x000A8B59,20,Code/GameEngine/Source/Common/Rva000A8B59Func.cpp,matched,guarded forward to rowed callee then return true
+??4Rva000A8CAE@@QAEAAV0@ABV0@@Z,,0x000A8CAE,27,Code/GameEngine/Source/Common/Rva000A8CAEAssign.cpp,matched,opaque holder plus int copy assignment via rowed operator
