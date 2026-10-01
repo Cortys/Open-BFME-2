@@ -4,15 +4,17 @@
 // cleared display flag. Transferred from the BFME1 reconstruction
 // (SubtitleEntryConstructorDestructor.cpp); only the ctor is claimed here.
 // The text member constructs through the StringBase<wchar_t> copy body at
-// 0x37050 (public-spelling pin, same pattern as the narrow StringBase pins).
+// 0x37050 (private AAE row, same pattern as the narrow StringBase pins).
 
 extern "C" const void *const vtbl_00CE451C[];  // ??_7SubtitleEntry@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00CE451C=??_7SubtitleEntry@@6B@")
 
 template <typename T> class StringBase
 {
-public:
+private:
 	StringBase(const StringBase &other);
+	friend class SubtitleEntry;
+public:
 	~StringBase();
 
 private:
