@@ -1,7 +1,11 @@
 // ??0Rva0044EB54@@QAE@XZ
-// partial score=0.97 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
-// ??0Rva0044EB54@@QAE@XZ @0x0044EB54 378B: SpecialAbility base ctor over 0xC8 layout; callers 25 ModuleData ctors e.g. ArrowStorm 0x00490639; vtable 0x0083F2A8; dtor Rva0044ECCE proves layout.
+// ??0Rva0044EB54@@QAE@XZ at 0x0044EB54 (378 bytes).
+// Address-derived opaque intermediate default ctor. Target evidence: vtable
+// immediate 0x00C3F2A8, 26 this-only module-data ctor callers, a 0xC8 prefix
+// shared by derived factories, and the rowed chained parser at 0x0044ED95.
+// Ghidra boundary is 378 bytes. Association with the SpecialAbility family
+// is structural inference; exact semantic identity is unproven.
 #include <stddef.h>
 
 extern const char g_Rva0107301CEmptyString[];
@@ -59,6 +63,26 @@ public:
 	virtual void xfer(Xfer *xfer);
 };
 
+// The four dwords form one layout-only group so the +1C/+20 zero stores precede
+// the paired -1 stores, matching the target's schedule without asserting names.
+class Rva0044EB54Fields18
+{
+public:
+	__forceinline Rva0044EB54Fields18()
+	{
+		m_1C = 0;
+		m_20 = 0;
+		m_18 = -1;
+		m_24 = -1;
+	}
+
+private:
+	int m_18;
+	int m_1C;
+	int m_20;
+	int m_24;
+};
+
 class Rva0044EB54 : public Snapshot
 {
 public:
@@ -69,10 +93,7 @@ private:
 	OpaqueRefPtr m_0C;
 	OpaqueRefPtr m_10;
 	OpaqueRefPtr m_14;
-	int m_18;
-	int m_1C;
-	int m_20;
-	int m_24;
+	Rva0044EB54Fields18 m_fields18;
 	int m_28;
 	int m_2C;
 	float m_30;
@@ -129,16 +150,11 @@ private:
 	unsigned char m_C6;
 };
 
-// ??0Rva0044EB54@@QAE@XZ present-unmatched
 Rva0044EB54::Rva0044EB54()
 	: m_08()
 	, m_0C()
 	, m_10()
 	, m_14()
-	, m_18(-1)
-	, m_1C(0)
-	, m_20(0)
-	, m_24(-1)
 	, m_28(0)
 	, m_2C(0)
 	, m_30(100.0f)

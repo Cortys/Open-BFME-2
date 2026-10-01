@@ -4811,3 +4811,5 @@ FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 read
 ?rva0005117B@Rva0005117B@@QAEMM@Z	0x0005117B	72	blocked	xmm1 xmm2 swapped throughout second comiss order fixed but allocation swapped t=12 model=muse-15 (stash 0.96 kept)
 ?rva00051525@Rva00051525@@QAE_NXZ	0x00051525	57	partial	57B exact size flag tail fixed via implicit return left null je vs jne t=15 model=muse-15 score=0.95 stash=reverse/attempts/0x00051525.cpp
 ?rva002E5EA5@Rva002E5EA5@@QAE_NPBD@Z	0x002E5EA5	487	blocked	stub only 48B vs 487B missing CSF header LBL STR loops and large stack buffers t=15 model=muse-07
+??0Rva0044EB54@@QAE@XZ	0x0044EB54	378	void	prior partial attempts point to reverse/attempts/0x0044eb54.cpp, which add_match.py removed after exact landing; retract both stale verdicts
+?attemptDamage@Object@@QAEXPAVDamageInfo@@@Z	0x0029848E	70	blocked	candidate donor dispatch compiles to 17B; target is 70B and tests status 0x48, edits DamageInfo+0x28, branches through list push_back/0x2975AC. Same name already matched at 0x001D0490; add_match rejects duplicate names, so do not displace existing claim without identity review. t=23m model=gpt-6-luna
