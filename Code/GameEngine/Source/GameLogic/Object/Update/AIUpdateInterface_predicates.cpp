@@ -8,7 +8,9 @@
 // ?rva00262DBF@AIUpdateInterface@@UBE_NXZ, retail 0x00262DBF, 20 bytes.
 // ?rva00262DD3@AIUpdateInterface@@QBE_NPBVObject@@@Z, retail 0x00262DD3, 81 bytes.
 // ?rva00262EFF@AIUpdateInterface@@UAEXPAX00@Z, retail 0x00262EFF, 26 bytes.
+// ?rva002632E1@AIUpdateInterface@@QAEXXZ, retail 0x002632E1, 13 bytes.
 // ?onObjectCreated@AIUpdateInterface@@UAEXXZ, retail 0x002632EE, 46 bytes.
+// ?rva0026336D@AIUpdateInterface@@QAEXXZ, retail 0x0026336D, 73 bytes.
 
 struct Coord3D
 {
@@ -67,6 +69,7 @@ public:
 	virtual void setState(int state); // slot 8 -> offset 0x20
 	virtual void sm9(); virtual void sm10(); virtual void sm11();
 	virtual bool pred12() const;
+	virtual void vslot13(); // slot 13 -> offset 0x34
 
 	State *m_currentState; // +0x04
 	char m_pad08[0x50 - 8];
@@ -76,6 +79,12 @@ public:
 	bool isInPred11() const { return m_currentState ? m_currentState->pred11() : true; }
 	bool isInPred12() const { return m_currentState ? m_currentState->pred12() : true; }
 	bool isInPred13() const { return m_currentState ? m_currentState->pred13() : true; }
+};
+
+class AIStateMachine : public StateMachine
+{
+public:
+	void rva0035033F();
 };
 
 class AIUpdateInterfaceBase
@@ -109,7 +118,7 @@ public:
 	VM10(v12_)
 	VM10(v13_)
 	VM10(v14_)
-	virtual StateMachine *makeStateMachine(); // slot 150 -> offset 0x258
+	virtual AIStateMachine *makeStateMachine(); // slot 150 -> offset 0x258
 };
 
 class AIUpdateInterface : public AIUpdateInterfaceBase
@@ -117,9 +126,10 @@ class AIUpdateInterface : public AIUpdateInterfaceBase
 	char m_pad04[4];
 	Object *m_obj; // +0x08
 	char m_pad0C[0x30 - 0x0C];
-	StateMachine *m_machine; // +0x30
+	AIStateMachine *m_machine; // +0x30
 	StateMachine *m_secondaryMachine; // +0x34
-	char m_pad38[0x4C - 0x38];
+	StateMachine *m_tertiaryMachine; // +0x38
+	char m_pad3C[0x4C - 0x3C];
 	int m_guardMode; // +0x4C
 	char m_pad50[0x54 - 0x50];
 	int m_guardTargetType; // +0x54
@@ -137,7 +147,9 @@ public:
 	virtual bool rva00262DBF() const;
 	bool rva00262DD3(const Object *obj) const;
 	virtual void rva00262EFF(void *a, void *b, void *c);
+	void rva002632E1();
 	virtual void onObjectCreated();
+	void rva0026336D();
 };
 
 void AIUpdateInterface::rva00262D40(int mode)
@@ -200,6 +212,12 @@ void AIUpdateInterface::rva00262EFF(void *a, void *b, void *c)
 		target->vslot42(0);
 }
 
+void AIUpdateInterface::rva002632E1()
+{
+	if (m_machine)
+		m_machine->rva0035033F();
+}
+
 void AIUpdateInterface::onObjectCreated()
 {
 	if (!m_secondaryMachine)
@@ -210,3 +228,16 @@ void AIUpdateInterface::onObjectCreated()
 		m_machine->initDefaultState();
 	}
 }
+
+void AIUpdateInterface::rva0026336D()
+{
+	if (!m_tertiaryMachine)
+	{
+		if (m_machine->isInPred9())
+			m_machine->vslot13();
+		m_tertiaryMachine = m_machine;
+		m_machine = makeStateMachine();
+		m_machine->initDefaultState();
+	}
+}
+
