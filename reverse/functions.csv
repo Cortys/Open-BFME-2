@@ -45422,3 +45422,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001FA48D@Rva001FA48D@@QAEXXZ,,0x001FA48D,23,Code/GameEngine/Source/Common/Thing/Rva001FA48D.cpp,matched,chain via rowed 0x001F93EB null-checked virtual slot plus4 then tail-jmp
 ?rva001FA4A4@Rva001FA4A4@@QAEXH@Z,,0x001FA4A4,34,Code/GameEngine/Source/Common/Thing/Rva001FA4A4.cpp,matched,chain via rowed 0x001F9402 null-checked slot C with int then forward
 ?rva001FA795@Rva001FA795@@QAEXXZ,,0x001FA795,23,Code/GameEngine/Source/Common/Thing/Rva001FA795.cpp,matched,chain via rowed 0x001FA48D null-checked virtual slot plus4 then tail-jmp
+?rva001FA7AC@Rva001FA7AC@@QAEXH@Z,,0x001FA7AC,34,Code/GameEngine/Source/Common/Thing/Rva001FA7AC.cpp,matched,chain via rowed 0x001FA4A4 null-checked slot C with int then forward
