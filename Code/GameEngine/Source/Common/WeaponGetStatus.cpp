@@ -1,5 +1,15 @@
 // cl: /O1 /DNDEBUG /MD
 // BFME1's cached status query, adapted to BFME2's out-of-line cache setter.
+//
+// ?rva002CE226@Weapon@@QAEXPBVObject@@PBUSavedWeaponState@@@Z @0x002CE226
+// 90B, caller 0x002C8DC3: looks the weapon template key (+0x0C) up in a
+// six-entry table of 0x14-byte saved states; on a hit restores +0x14, the
+// cached status (through cacheStatus), +0x28 and +0x18 from it, otherwise
+// loadAmmoNow (rowed 0x002CE1AC) when the template byte at +0x16E is set,
+// else reloadAmmo (rowed 0x002CE1E9). BFME2-only; the table entry fields are
+// named by the Weapon fields they restore. Retail keeps the entry pointer in
+// edx across the cacheStatus call, which cl only does because cacheStatus is
+// compiled earlier in this TU.
 extern class GameLogic *TheGameLogic;
 
 enum WeaponStatus
@@ -21,10 +31,25 @@ public:
 class WeaponTemplate
 {
 public:
-    char m_pad00[0x78];
+    char m_pad00[0x0C];
+    int m_key0C;
+    char m_pad10[0x78 - 0x10];
     int m_flag78;
     char m_pad7C[0x120 - 0x78 - 4];
     ObjectFilter m_ammo;
+    char m_pad121[0x16E - 0x121]; // ObjectFilter is one byte here
+    bool m_flag16E;
+};
+
+class Object;
+
+struct SavedWeaponState
+{
+    int m_key;
+    int m_14;
+    WeaponStatus m_status;
+    int m_28;
+    unsigned int m_18;
 };
 
 struct GameLogicFrame
@@ -43,6 +68,9 @@ public:
     __declspec(noinline) void cacheStatus(WeaponStatus status) const;
     unsigned int getRemainingAmmo(bool countReloadingAsEmpty) const;
     bool isAmmoReady() const;
+    void loadAmmoNow(const Object *sourceObj);
+    void reloadAmmo(const Object *sourceObj);
+    void rva002CE226(const Object *sourceObj, const SavedWeaponState *saved);
 private:
     char m_pad00[4];
     WeaponTemplate *m_template;
@@ -52,6 +80,8 @@ private:
     unsigned int m_frame18;
     unsigned int m_frame1C;
     unsigned int m_frame20;
+    int m_pad24;
+    int m_28;
 };
 
 void Weapon::cacheStatus(WeaponStatus status) const
@@ -108,4 +138,26 @@ WeaponStatus Weapon::computeStatus(bool *cacheable) const
             return m_status;
         return (WeaponStatus)(getRemainingAmmo(false) <= 0);
     }
+}
+
+void Weapon::rva002CE226(const Object *sourceObj, const SavedWeaponState *saved)
+{
+    if (saved)
+    {
+        for (int i = 0; i < 6; ++i, ++saved)
+        {
+            if (saved->m_key == m_template->m_key0C)
+            {
+                m_pad14 = saved->m_14;
+                cacheStatus(saved->m_status);
+                m_28 = saved->m_28;
+                m_frame18 = saved->m_18;
+                return;
+            }
+        }
+    }
+    if (m_template->m_flag16E)
+        loadAmmoNow(sourceObj);
+    else
+        reloadAmmo(sourceObj);
 }
