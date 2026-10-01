@@ -46776,3 +46776,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ?Rva0052192DInit@@YAXH@Z,,0x0052192D,74,Code/GameEngine/Source/Common/Rva0052192DInit.cpp,matched,chain via Shell push callers 0x00515C64 string Skirmish apt
 ?rva0028AE6D@Object@@QAEXXZ,,0x0028AE6D,46,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AE6DNotify.cpp,matched,model-condition notifier: Drawable+0x84 pinned 0x2791E7 with flags 0 0 then tail jmp AIUpdateInterface::wakeUpNow on +0x258; BFME1 notifyModelConditionChanged shape
 ?rva0040A441@Rva0040A3F9@@QAE_NPAVCreateAHeroData@@@Z,,0x0040A441,46,Code/Libraries/Source/WWVegas/WWLib/Rva0040A3F9Find.cpp,matched,unlock lane same vector erase via rowed find and voidptr erase
+?rva005F2792@Rva005F2792@@QAEXXZ,,0x005F2792,102,Code/GameEngine/Source/Common/Rva005F2792.cpp,matched,chain via 0x00224455 callers 0x005F27F8 0x005F2B22 format row 0x00038150
