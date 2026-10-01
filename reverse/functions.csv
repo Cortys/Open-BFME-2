@@ -46106,3 +46106,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva0049AE5E@Rva0049AE5E@@QAEXXZ,,0x0049AE5E,70,Code/GameEngine/Source/Common/Rva0049AE5ECheck.cpp,matched,triple findObjectByID clears flag via TheGameLogic
 ?rva001D982B@Rva001D982B@@QAE_NXZ,,0x001D982B,60,Code/GameEngine/Source/Common/Thing/Rva001D982B.cpp,matched,unlock predicate m_B0 type plus m_34 zero plus flag plus 3 pairs callers 0x6204A
 ?rva0018C262@Rva0018C262@@QAEXPAURva0018C262Node@@@Z,,0x0018C262,45,Code/Libraries/Source/WWVegas/WWLib/Rva0018C262.cpp,matched,recursive node free via rowed free caller 0x0018C316
+?rva0018C316@Rva0018C262@@QAEXXZ,,0x0018C316,41,Code/Libraries/Source/WWVegas/WWLib/Rva0018C262.cpp,matched,list clear via rowed 0x0018C262 caller 0x0018C3E6

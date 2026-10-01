@@ -7,9 +7,18 @@ struct Rva0018C262Node {
 	Rva0018C262Node *m_08;
 	Rva0018C262Node *m_0C;
 };
+struct Rva0018C262Head {
+	int m_00;
+	Rva0018C262Node *m_04;
+	Rva0018C262Head *m_08;
+	Rva0018C262Head *m_0C;
+};
 class Rva0018C262 {
 public:
 	void rva0018C262(Rva0018C262Node *p);
+	void rva0018C316();
+	Rva0018C262Head *m_head;
+	int m_size;
 };
 void Rva0018C262::rva0018C262(Rva0018C262Node *p)
 {
@@ -21,4 +30,14 @@ void Rva0018C262::rva0018C262(Rva0018C262Node *p)
 		free(p);
 		p = next;
 	} while (p);
+}
+void Rva0018C262::rva0018C316()
+{
+	if (m_size == 0)
+		return;
+	rva0018C262(m_head->m_04);
+	m_head->m_08 = m_head;
+	m_head->m_04 = 0;
+	m_head->m_0C = m_head;
+	m_size = 0;
 }
