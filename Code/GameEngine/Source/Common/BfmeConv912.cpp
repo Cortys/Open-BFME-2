@@ -8,11 +8,17 @@ struct BfmeNode912C
 	BfmeNode912C *m_bfmeNext;
 };
 
+struct Gen009F5040Node;
+class Gen009F5040
+{
+public:
+	void linkNode(Gen009F5040Node *node);
+};
+
 class BfmeThing912C
 {
 public:
 	void bfmeGo912C();
-	void bfmeDo912C(BfmeNode912C *n);
 	char m_bfmePad[0x114];
 	BfmeNode912C *m_bfmeHead;
 };
@@ -21,7 +27,7 @@ void BfmeThing912C::bfmeGo912C()
 {
 	BfmeNode912C *n = m_bfmeHead;
 	while (n) {
-		bfmeDo912C(n);
+		((Gen009F5040 *)this)->linkNode((Gen009F5040Node *)n);
 		n = n->m_bfmeNext;
 	}
 }
