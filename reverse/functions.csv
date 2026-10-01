@@ -45927,3 +45927,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00232F0C@Rva00232F0C@@QAEXXZ,,0x00232F0C,67,Code/GameEngine/Source/Common/Rva00232F0CImm.cpp,matched,thunk 0x0065561C ImmGetCompositionStringW GCS_RESULTSTR caller 0x00233C97
 ?rva002326AE@AIPlayer@@QAEGEH@Z,,0x002326AE,77,Code/GameEngine/Source/GameLogic/AI/AIPlayerRva002326AE.cpp,matched,same TU as AIPlayer ctor table 0x81C 256 entries callers 0x00325AC6 0x0035962B
 ?rva002329D3@AIPlayer@@QAE_NXZ,,0x002329D3,111,Code/GameEngine/Source/GameLogic/AI/AIPlayerRva002329D3.cpp,matched,prev AIPlayerDestructor same flags caller 0x00232A42 same layout callee push_back rowed
+?rva00232E9A@Rva00232E9A@@QAEXXZ,,0x00232E9A,114,Code/GameEngine/Source/Common/Rva00232E9AImm.cpp,matched,next Rva00232F0C same thunk GCS_COMPSTR 8 plus CURSORPOS 0x80
