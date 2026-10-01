@@ -41728,7 +41728,6 @@ _Rva00020AC0,,0x00020AC0,39,Code/Libraries/Source/WWVegas/WWLib/Rva0084D890CodeP
 ?rva00439920@Rva00439920@@QAEXXZ,,0x00439920,30,Code/GameEngine/Source/Common/RTS/Rva00439920Reset.cpp,matched,chain lane reset via clear plus 1.0f plus zero
 ?rva004EE540@Rva004EE540@@QAEXXZ,,0x004EE540,30,Code/GameEngine/Source/Common/Rva004EE540Clear.cpp,matched,chain lane 5 callers incl 0x004EE5A2 non-EH twin of 0x004EE501
 ??0Rva00261790@@QAE@PAVArg00261790@@_N@Z,,0x00261790,88,Code/GameEngine/Source/Common/Rva00261790Ctor.cpp,matched,caller 0x00272B3E GlobalData DFE758 plus float BF8FFC sibling SSE pattern
-?Rva003E41E3Get@@YG_NPAX@Z,,0x003E41E3,24,Code/GameEngine/Source/Common/Rva003E41E3Get.cpp,matched,chain ScriptEngine wrapper via rowed rva
 ??$__partial_sort@PAHHVRva00422CA8@@@_STL@@YAXPAH000VRva00422CA8@@@Z,,0x00424C21,93,Code/Libraries/Source/WWVegas/WWLib/stlport_push_heap_rva00422ca8.cpp,matched,chain partial sort via rowed heap sorts
 ?rva002618FA@Rva002618A2@@QAEPAV1@HHHHHH@Z,,0x002618FA,129,Code/GameEngine/Source/Common/Rva002618A2.cpp,matched,sibling 0x002618A2 same class 5-bit caller 0x00261CAD pushes 0 8 9 abc
 ?rva00340C5F@Rva00340C5F@@QAEHXZ,,0x00340C5F,81,Code/GameEngine/Source/Common/Rva00340C5FMethod.cpp,matched,unlock turret goal copy flag
@@ -45869,3 +45868,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0046A9D2@Rva0046A9D2@@QAEXPAURva0046A9D2Node@@@Z,,0x0046A9D2,45,Code/GameEngine/Source/Common/Rva0046A9D2Free.cpp,matched,unlock frees via rowed free 0x30830 plus self recursion caller 0x46AB8B
 ?rva0046AB7D@Rva0046AB7D@@QAEXXZ,,0x0046AB7D,41,Code/GameEngine/Source/Common/Rva0046AB7DClear.cpp,matched,chain from rowed free 0x46A9D2 plus same shape as rowed clear 0x46A93E
 ?evaluateTeamIsContained@ScriptConditions@@MAE_NPAVParameter@@_N@Z,,0x003E70AC,126,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateTeamIsContained.cpp,matched,BFME1 donor member walk with containedBy test and allContained switch; virtual slot 16 of the ScriptConditions vtable
+?evaluateVideoHasCompleted@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E41E3,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateHasCompleted.cpp,matched,ZH donor; dispatcher case 48 HAS_FINISHED_VIDEO; replaces the free Rva003E41E3Get row
+?evaluateSpeechHasCompleted@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E41FB,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateHasCompleted.cpp,matched,ZH donor; dispatcher case 49 HAS_FINISHED_SPEECH via pinned 0x00357F5E
+?evaluateAudioHasCompleted@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E4213,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateHasCompleted.cpp,matched,ZH donor; dispatcher case 50 HAS_FINISHED_AUDIO via pinned 0x00358076
