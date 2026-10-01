@@ -9,6 +9,10 @@
 // the tree at +0x14). BFME2 differences carried here: the "h*" prefix goes
 // through _mbscpy (retail calls the static strcpy twice) and _strlwr arrives
 // via the msvcr71 import, so neither is intrinsic.
+// Bind this caller's address-pinned hierarchy ref helpers to the matched
+// release body and the byte-matched generic counted registry lookup.
+#pragma comment(linker, "/alternatename:?Release_Ref@HierarchyPrototype@@QAEXXZ=?Release_Ref@TextureBaseClass@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?Rva0061F230_GetPrototype@@YA?AVHierarchyPrototypeRef@@PBD@Z=?Rva009EBCE0_GetPrototype@@YA?AVRva009EBCE0AssetReference@@PBD@Z")
 
 extern "C" char *_mbscpy(char *destination, const char *source);
 extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
