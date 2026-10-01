@@ -25,6 +25,7 @@ public:
     locale(const locale &that);
     ~locale();
     locale &operator=(const locale &that);
+    facet *_M_get_facet(const id &index) const;
     facet *_M_use_facet(const id &index) const;
     static const locale &classic();
 
@@ -106,6 +107,18 @@ locale &locale::operator=(const locale &that)
         _M_impl = impl;
     }
     return *this;
+}
+
+// STLport 4.5.3 src/locale_impl.cpp: the non-throwing lookup. Built without
+// exceptions, _M_use_facet's runtime_error path is gone and the two bodies are
+// identical, so retail folds them at 0x00007190; basic_ios<char>::imbue at
+// 0x00016110 calls it under this name.
+locale::facet *locale::_M_get_facet(const id &index) const
+{
+    if (index._M_index < _M_impl->_M_count)
+        return _M_impl->_M_facets[index._M_index];
+
+    return 0;
 }
 
 locale::facet *locale::_M_use_facet(const id &index) const
