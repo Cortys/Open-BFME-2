@@ -1,7 +1,3 @@
-// ??0Rva003AEE16@@QAE@ABV0@@Z
-// partial score=0.95 date=2026-09-30
-// ??0Rva003AEE16@@QAE@ABV0@@Z
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /DNDEBUG /MD /EHsc
 // 0x003AEE16 149B unlock: copy ctor with LifeEvent base at +0x20 plus word +0x1c
 // plus int +0x38 plus byte +0x3c. align_diff exact 149B/0 structural (only vtable
@@ -47,19 +43,23 @@ public:
 	Rva003AEEB3(const Rva003AEEB3 &other);
 	virtual ~Rva003AEEB3();
 };
-class Intermediate3AEE16 : public Rva003AEEB3
+class WordHolder3AEE16
+{
+public:
+	__forceinline WordHolder3AEE16(const WordHolder3AEE16 &other)
+		: m_word(other.m_word)
+	{
+	}
+	unsigned short m_word;
+};
+class Intermediate3AEE16 : public Rva003AEEB3, public WordHolder3AEE16
 {
 public:
 	__forceinline Intermediate3AEE16(const Intermediate3AEE16 &other)
 		: Rva003AEEB3(other)
+		, WordHolder3AEE16((const WordHolder3AEE16 &)other)
 	{
-		const void *source = &other;
-		const void *word_source = source ? (const unsigned char *)source + 0x1c : 0;
-		m_word = *(const unsigned short *)word_source;
 	}
-	virtual ~Intermediate3AEE16();
-private:
-	volatile unsigned short m_word;
 };
 namespace FXParticleSystem {
 class LifeEventModuleInfo {
@@ -79,7 +79,6 @@ private:
 	int m_38;
 	unsigned char m_3c;
 };
-// ??0Rva003AEE16@@QAE@ABV0@@Z present-unmatched
 Rva003AEE16::Rva003AEE16(const Rva003AEE16 &other)
 	: Intermediate3AEE16(other)
 	, FXParticleSystem::LifeEventModuleInfo((const FXParticleSystem::LifeEventModuleInfo &)other)

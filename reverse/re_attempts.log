@@ -5125,3 +5125,4 @@ FUN_0091ec31	0x0051EC31	29	blocked	wrapper pushes 5 args to 3-arg row plus lea e
 ??1Rva00575E9C@@UAE@XZ	0x00575E9C	78	blocked	two-base dtor with EH plus 4 vtables plus erase tried real bases got extra base calls t=10 model=muse-07
 ?rva00511087@Rva00511087@@QAEHABVAsciiString@@@Z	0x00511087	129	blocked	unlock STL bridge calls 00217D4C lower_bound plus pair but 0051030C insert plus pair t=8 model=muse-07
 ?rva00106FB6@Rva00106FB6@@QAE_NPAURect00106FB6@@@Z	0x00106FB6	144	blocked	SSE sphere-vs-rect with Get_Position and 4 comiss needs donor for arg layout plus float shape t=10 model=muse-07
+??0Rva003AE7B8@@QAE@ABV0@@Z	0x003AE7B8	285	blocked	large Lightning copy with 2x90 loops gives rep-movsd not fld t=18 model=muse-06
