@@ -4,6 +4,10 @@
 // Code/GameEngine/Source/Common/BfmeConv812.cpp); trimmed to the two T1
 // bodies the sweep places.
 
+// The matched getter at 0x005C4ACD returns the opaque +0x2C pointer that these
+// callers view as BfmeSubEHA; both symbols use a no-argument pointer-return ABI.
+#pragma comment(linker, "/alternatename:?bfmeGetEHA@BfmeObjEHA@@QAEPAUBfmeSubEHA@@XZ=?winGetUserData@GameWindow@@QAEPAXXZ")
+
 struct BfmeSubEHA
 {
 	char m_bfmeFlag;
