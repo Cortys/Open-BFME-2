@@ -18,6 +18,7 @@ class Rva002C0A89
 {
 public:
 	void rva002C0A89(GameWindow *win);
+	void rva002C0B92(GameWindow *win);
 private:
 	unsigned char m_pad0[0xC];
 	GameWindow *m_head;
@@ -56,4 +57,15 @@ void Rva002C0A89::rva002C0A89(GameWindow *win)
 	found->m_next = win;
 	if (win->m_next)
 		win->m_next->m_prev = win;
+}
+void Rva002C0A89::rva002C0B92(GameWindow *win)
+{
+	if (win->m_next)
+		win->m_next->m_prev = win->m_prev;
+	else
+		m_tail = win->m_prev;
+	if (win->m_prev)
+		win->m_prev->m_next = win->m_next;
+	else
+		m_head = win->m_next;
 }

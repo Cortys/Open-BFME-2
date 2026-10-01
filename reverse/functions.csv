@@ -45043,3 +45043,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0037B287@Rva0037B287@@QAEXVUnicodeString@@H@Z,,0x0037B287,159,Code/GameEngine/Source/Common/System/Rva0037B287Write.cpp,matched,file flag write via ftell fseek fwrite rows
 ?rva001F64D2@Rva001F64D2@@QAEXXZ,,0x001F64D2,23,Code/GameEngine/Source/Common/Rva001F64D2.cpp,matched,chain null-checked slot4 at 0 then tail-jmp rowed 0x001F5D38
 ?rva002C0A89@Rva002C0A89@@QAEXPAVGameWindow@@@Z,,0x002C0A89,136,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_rva002C0A89.cpp,matched,neighbours GadgetButtonImageHelpers and GameWindowManager same flags plus GameWindow offsets plus list shape
+?rva002C0B92@Rva002C0A89@@QAEXPAVGameWindow@@@Z,,0x002C0B92,69,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_rva002C0A89.cpp,matched,sibling 0x002C0A89 same TU flags plus GameWindow unlink shape
