@@ -29,3 +29,9 @@ __declspec(noinline) TreeHintRef00217D4C *_STL::__copy_ptrs<TreeHintRef00217D4C 
 	_STL::random_access_iterator_tag tmp;
 	return _STL::__copy(first, last, result, tmp, (int *)0);
 }
+
+TreeHintRef00217D4C *Rva004F6E47Copy(TreeHintRef00217D4C *first, TreeHintRef00217D4C *last, TreeHintRef00217D4C *result)
+{
+	_STL::__false_type tag;
+	return _STL::__copy_ptrs(first, last, result, tag);
+}
