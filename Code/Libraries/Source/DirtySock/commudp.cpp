@@ -39,6 +39,8 @@ extern char g_Rva0130AF38Lock[4];
 extern int g_Rva0130AD08Count;
 
 int Rva007FE780Printf(const char *format, ...);
+// The C++ printf spelling and rowed C printer both resolve to retail VA 0x0066AC50.
+#pragma comment(linker, "/alternatename:?Rva007FE780Printf@@YAHPBDZZ=_Rva007FE780")
 
 // Always fails: it logs "CommUDPResolve: Resolve functionality not supported by
 // CommUDP" and returns the error.
