@@ -45055,3 +45055,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva0055C8BC@@QAE@XZ,,0x0055C8BC,71,Code/GameEngine/Source/GameClient/Rva0055C8BCCtor.cpp,matched,guarded init caller 0x003A8314 plus S4 publisher pattern
 ?rva0044E7A8@Rva0044E7A8@@QAE_NH@Z,,0x0044E7A8,182,Code/GameEngine/Source/Common/Rva0044E7A8Check.cpp,matched,kind validator via isKindOf plus rowed 0x28F4BC plus31
 __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched,
+?rva006CE630@Rva006CE630@@QAEPAXI@Z,,0x006CE630,35,Code/GameEngine/Source/Common/Rva006CE630Delete.cpp,matched,chain via detach plus pool free 8B flag
