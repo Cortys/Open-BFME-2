@@ -10,10 +10,10 @@
 
 extern "C" void __cdecl free(void *block);
 
-class AsciiString
+class Rva001517DEString
 {
 public:
-	~AsciiString() { if (m_data != 0) free(m_data); }
+	~Rva001517DEString() { if (m_data != 0) free(m_data); }
 private:
 	void *m_data;
 };
@@ -21,9 +21,9 @@ private:
 struct Rva0007BB16Record
 {
 	~Rva0007BB16Record();
-	AsciiString m_00;
+	Rva001517DEString m_00;
 	int m_04;
-	AsciiString m_08;
+	Rva001517DEString m_08;
 	int m_tail0C[6];
 };
 
@@ -53,7 +53,7 @@ private:
 	void *m_comPtr; // +4
 	Rva00153D16 *m_holder; // +8
 	_STL::vector<Rva0007BB16Record> m_vec; // +0x0C
-	AsciiString m_str; // +0x18
+	Rva001517DEString m_str; // +0x18
 };
 
 Rva001517DE::~Rva001517DE()
