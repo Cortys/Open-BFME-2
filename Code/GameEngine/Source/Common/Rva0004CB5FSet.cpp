@@ -26,8 +26,9 @@ public:
 	virtual void rva0004CB5FSlot44(int arg) = 0;
 };
 
-// TheParticleSystemManager: matched references place it at VA 0xdfdd04 (retail .data initial value 0).
-ParticleSystemManager002B * TheParticleSystemManager = 0;
+// ?TheParticleSystemManager@@3PAVParticleSystemManager002B@@A: the global at this VA is ?TheParticleSystemManager@@3PAVParticleSystemManager@@A; this name is an alias for it.
+extern ParticleSystemManager002B * TheParticleSystemManager;
+#pragma comment(linker, "/alternatename:?TheParticleSystemManager@@3PAVParticleSystemManager002B@@A=?TheParticleSystemManager@@3PAVParticleSystemManager@@A")
 
 void __cdecl Rva0004CB5FSet(int arg)
 {

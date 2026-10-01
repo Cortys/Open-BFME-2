@@ -138,8 +138,9 @@ public:
 	virtual MapHolder *getMap();
 };
 
-// g_00A02320: matched references place it at VA 0xe02320 (retail .data initial value 0).
-MapProvider * g_00A02320 = 0;
+// ?g_00A02320@@3PAVMapProvider@@A: the global at this VA is ?TheGameSpyInfo@@3PAVGameSpyInfoInterface@@A; this name is an alias for it.
+extern MapProvider * g_00A02320;
+#pragma comment(linker, "/alternatename:?g_00A02320@@3PAVMapProvider@@A=?TheGameSpyInfo@@3PAVGameSpyInfoInterface@@A")
 
 struct Outer58
 {

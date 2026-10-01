@@ -5373,18 +5373,18 @@ void bfmeDrawSortingPrimitive(unsigned primitive_type,unsigned start_index,unsig
  DX8_RECORD_RENDER(polygon_count,vertex_count,bfmeApplyRenderState.shader);
 }
 
-// ?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A: matched references place it at VA 0xde0880; also referenced as ?g_BFMEIndexBufferDebug@@3PAVBFMEIndexBufferDebugClass@@A, ?TheGen001336E5C@@3PAVGen001336E5C@@A, ?theDebug@@3RAVDebug@@A, ?TheBfmeAwakenDebug@@3PAVBfmeAwakenDebug@@A.
-BfmeResetDebug * BfmeResetDebugInstance = 0;
-#pragma comment(linker, "/alternatename:?g_BFMEIndexBufferDebug@@3PAVBFMEIndexBufferDebugClass@@A=?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A")
-#pragma comment(linker, "/alternatename:?TheGen001336E5C@@3PAVGen001336E5C@@A=?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A")
-#pragma comment(linker, "/alternatename:?theDebug@@3RAVDebug@@A=?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A")
-#pragma comment(linker, "/alternatename:?TheBfmeAwakenDebug@@3PAVBfmeAwakenDebug@@A=?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A")
+// ?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A: the global at this VA is ?theDebug@@3PAVDebug@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A=?theDebug@@3PAVDebug@@A")
+#pragma comment(linker, "/alternatename:?g_BFMEIndexBufferDebug@@3PAVBFMEIndexBufferDebugClass@@A=?theDebug@@3PAVDebug@@A")
+#pragma comment(linker, "/alternatename:?TheGen001336E5C@@3PAVGen001336E5C@@A=?theDebug@@3PAVDebug@@A")
+#pragma comment(linker, "/alternatename:?theDebug@@3RAVDebug@@A=?theDebug@@3PAVDebug@@A")
+#pragma comment(linker, "/alternatename:?TheBfmeAwakenDebug@@3PAVBfmeAwakenDebug@@A=?theDebug@@3PAVDebug@@A")
 // ?bfmeSkipFixedFunctionState@@3_NA: matched references place it at VA 0xdeda20; also referenced as ?g_Va00DEDA20@@3EA.
 bool bfmeSkipFixedFunctionState;
 #pragma comment(linker, "/alternatename:?g_Va00DEDA20@@3EA=?bfmeSkipFixedFunctionState@@3_NA")
-// ?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A: matched references place it at VA 0xdf363c; also referenced as ?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A.
-BfmeResetMeshRenderer * BfmeResetMeshRendererInstance = 0;
-#pragma comment(linker, "/alternatename:?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A=?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A")
+// ?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A: the global at this VA is ?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A=?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A")
+#pragma comment(linker, "/alternatename:?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A=?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A")
 // ?bfmeProjectionBias@@3MA: matched references place it at VA 0xdeda74; also referenced as ?g_Va00DEDA74@@3MA.
 float bfmeProjectionBias;
 #pragma comment(linker, "/alternatename:?g_Va00DEDA74@@3MA=?bfmeProjectionBias@@3MA")

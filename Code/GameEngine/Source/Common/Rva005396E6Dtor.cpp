@@ -26,8 +26,9 @@ public:
 	virtual void FreeEntry(void *p);
 };
 
-// g_009FEAD8: matched references place it at VA 0xdfead8 (retail .data initial value 0).
-DisplayManager * g_009FEAD8 = 0;
+// ?g_009FEAD8@@3PAVDisplayManager@@A: the global at this VA is ?TheDisplayStringManager@@3PAVDisplayStringManager@@A; this name is an alias for it.
+extern DisplayManager * g_009FEAD8;
+#pragma comment(linker, "/alternatename:?g_009FEAD8@@3PAVDisplayManager@@A=?TheDisplayStringManager@@3PAVDisplayStringManager@@A")
 
 template <typename T> class StringBase
 {

@@ -11,11 +11,11 @@
 // (GlobalFlagClearers precedent); the slot test uses its proven meaning.
 // No // cl: line (defaults first; split on mismatch).
 extern unsigned char g_Va00DEC3C8;
-// g_Va00DEC3C8: matched references place it at VA 0xdec3c8 (zero-filled .bss).
-unsigned char g_Va00DEC3C8;
+// ?g_Va00DEC3C8@@3EA: the global at this VA is ?RecordNextFrame@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEC3C8@@3EA=?RecordNextFrame@WW3D@@0_NA")
 extern unsigned char g_Va00DEC3C9;
-// g_Va00DEC3C9: matched references place it at VA 0xdec3c9 (zero-filled .bss).
-unsigned char g_Va00DEC3C9;
+// ?g_Va00DEC3C9@@3EA: the global at this VA is ?PauseRecord@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEC3C9@@3EA=?PauseRecord@WW3D@@0_NA")
 
 void Rva00117A60SetFlag(void)
 {

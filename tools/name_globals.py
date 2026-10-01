@@ -121,7 +121,7 @@ def build_index():
         for offset, kind, symbol in relocs:
             if kind != 0x0006 or symbol not in defined or offset + 4 > min(size, len(body)):
                 continue
-            if not symbol.startswith("?") or ("@@3" not in symbol and not symbol.startswith("??_7")):
+            if not symbol.startswith("?") or not (re.search(r"@@[0-3]", symbol) or symbol.startswith("??_7")):
                 continue
             address = (struct.unpack_from("<I", target, offset)[0] - struct.unpack_from("<I", body, offset)[0]) & 0xFFFFFFFF
             bases[address].add(symbol)

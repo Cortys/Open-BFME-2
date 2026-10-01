@@ -196,7 +196,7 @@ AptValue *AptDate::sMethod_setYear(AptValue *value,int argc)
     return AptInteger::Create(0);
 }
 
-// ?gpUndefinedValue@@3PAVAptValue@@A: matched references place it at VA 0xe18078; also referenced as ?g_Va00E18078@@3HA, ?g_Rva013379BC@@3PAVRva00898D60Target@@A.
-AptValue * gpUndefinedValue = 0;
-#pragma comment(linker, "/alternatename:?g_Va00E18078@@3HA=?gpUndefinedValue@@3PAVAptValue@@A")
-#pragma comment(linker, "/alternatename:?g_Rva013379BC@@3PAVRva00898D60Target@@A=?gpUndefinedValue@@3PAVAptValue@@A")
+// ?gpUndefinedValue@@3PAVAptValue@@A: the global at this VA is ?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?gpUndefinedValue@@3PAVAptValue@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")
+#pragma comment(linker, "/alternatename:?g_Va00E18078@@3HA=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")
+#pragma comment(linker, "/alternatename:?g_Rva013379BC@@3PAVRva00898D60Target@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")

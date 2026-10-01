@@ -252,7 +252,7 @@ int InGameUI::selectMatchingAcrossScreen()
 	return numSelected;
 }
 
-// ?TheTacticalView@@3PAVTacticalView@@A: matched references place it at VA 0xdfea3c; also referenced as ?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A, ?g_Va009FEA3C@@3PAVRva003C4DC2Holder@@A.
-TacticalView * TheTacticalView = 0;
-#pragma comment(linker, "/alternatename:?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A=?TheTacticalView@@3PAVTacticalView@@A")
-#pragma comment(linker, "/alternatename:?g_Va009FEA3C@@3PAVRva003C4DC2Holder@@A=?TheTacticalView@@3PAVTacticalView@@A")
+// ?TheTacticalView@@3PAVTacticalView@@A: the global at this VA is ?TheTacticalView@@3PAVView@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?TheTacticalView@@3PAVTacticalView@@A=?TheTacticalView@@3PAVView@@A")
+#pragma comment(linker, "/alternatename:?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A=?TheTacticalView@@3PAVView@@A")
+#pragma comment(linker, "/alternatename:?g_Va009FEA3C@@3PAVRva003C4DC2Holder@@A=?TheTacticalView@@3PAVView@@A")

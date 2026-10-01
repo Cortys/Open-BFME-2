@@ -64,15 +64,15 @@ int Rva007D85C0::set(FilterModes mode) {
  return true;
 }
 
-// ScreenOpaqueShader: matched references place it at VA 0xdb6228 (retail .data initial value 0x11581bu).
-unsigned int ScreenOpaqueShader = 0x11581bu;
+// ?ScreenOpaqueShader@@3IA: the global at this VA is ?_PresetOpaqueShader@ShaderClass@@2V1@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenOpaqueShader@@3IA=?_PresetOpaqueShader@ShaderClass@@2V1@A")
 
-// ScreenStateChanges: matched references place it at VA 0xdeda64 (zero-filled .bss).
-unsigned int ScreenStateChanges;
+// ?ScreenStateChanges@@3IA: the global at this VA is ?render_state_changes@DX8Wrapper@@1IA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenStateChanges@@3IA=?render_state_changes@DX8Wrapper@@1IA")
 
-// ?ScreenCurrentShader@@3IA: matched references place it at VA 0xdee5d8; also referenced as ?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A.
-unsigned int ScreenCurrentShader;
-#pragma comment(linker, "/alternatename:?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A=?ScreenCurrentShader@@3IA")
-// ?ScreenShaderDirty@@3_NA: matched references place it at VA 0xdb621c; also referenced as ?g_bfmeDoneTDB@@3DA.
-bool ScreenShaderDirty = true;
-#pragma comment(linker, "/alternatename:?g_bfmeDoneTDB@@3DA=?ScreenShaderDirty@@3_NA")
+// ?ScreenCurrentShader@@3IA: the global at this VA is ?render_state@DX8Wrapper@@1URenderStateStruct@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenCurrentShader@@3IA=?render_state@DX8Wrapper@@1URenderStateStruct@@A")
+#pragma comment(linker, "/alternatename:?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A=?render_state@DX8Wrapper@@1URenderStateStruct@@A")
+// ?ScreenShaderDirty@@3_NA: the global at this VA is ?ShaderDirty@ShaderClass@@1_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenShaderDirty@@3_NA=?ShaderDirty@ShaderClass@@1_NA")
+#pragma comment(linker, "/alternatename:?g_bfmeDoneTDB@@3DA=?ShaderDirty@ShaderClass@@1_NA")

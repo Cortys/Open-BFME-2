@@ -104,6 +104,6 @@ int Rva0011D240Get(void)
 	return G009EDAAC;
 }
 
-// ?G009B5F9C@@3HA: matched references place it at VA 0xdb5f9c; also referenced as ?g_dx8FilterMode@@3W4TextureFilterMode@TextureFilterClass@@A.
-int G009B5F9C = 1;
-#pragma comment(linker, "/alternatename:?g_dx8FilterMode@@3W4TextureFilterMode@TextureFilterClass@@A=?G009B5F9C@@3HA")
+// ?G009B5F9C@@3HA: the global at this VA is ?TextureFilter@WW3D@@0HA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?G009B5F9C@@3HA=?TextureFilter@WW3D@@0HA")
+#pragma comment(linker, "/alternatename:?g_dx8FilterMode@@3W4TextureFilterMode@TextureFilterClass@@A=?TextureFilter@WW3D@@0HA")

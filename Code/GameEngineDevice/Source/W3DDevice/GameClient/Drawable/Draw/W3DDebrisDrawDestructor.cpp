@@ -56,8 +56,9 @@ public:
 	void handle(void *object);
 };
 
-// g_scene: matched references place it at VA 0xde1b34 (retail .data initial value 0).
-SceneClass * g_scene = 0;
+// ?g_scene@@3PAVSceneClass@@A: the global at this VA is ?m_3DScene@W3DDisplay@@2PAVRTS3DScene@@A; this name is an alias for it.
+extern SceneClass * g_scene;
+#pragma comment(linker, "/alternatename:?g_scene@@3PAVSceneClass@@A=?m_3DScene@W3DDisplay@@2PAVRTS3DScene@@A")
 extern Gen0003AC38 *g_shadowManager;
 // g_shadowManager: VA 0xde5dfc (zero-filled .bss).
 Gen0003AC38 * g_shadowManager;

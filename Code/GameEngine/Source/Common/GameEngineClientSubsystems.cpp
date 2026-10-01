@@ -221,12 +221,12 @@ void GameEngine::_bfme_updateClientSubsystems(void)
         TheNetwork->liteupdate(0);
 }
 
-// ?AudioSubsystem@@3PAVClientSubsystem@@A: matched references place it at VA 0xdfe6e8; also referenced as ?TheAudio@@3PAVBfmeAudioVtblIndexed@@A, ?g_00DFE6E8@@3PAVGlobalSlotTarget@@A, ?g_audioMixer@@3PAVAudioMixer@@A, ?g_009FE6E8@@3PAVBfmeAudio@@A.
-ClientSubsystem * AudioSubsystem = 0;
-#pragma comment(linker, "/alternatename:?TheAudio@@3PAVBfmeAudioVtblIndexed@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
-#pragma comment(linker, "/alternatename:?g_00DFE6E8@@3PAVGlobalSlotTarget@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
-#pragma comment(linker, "/alternatename:?g_audioMixer@@3PAVAudioMixer@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
-#pragma comment(linker, "/alternatename:?g_009FE6E8@@3PAVBfmeAudio@@A=?AudioSubsystem@@3PAVClientSubsystem@@A")
-// ?Radar@@3PAVRadarSubsystem@@A: matched references place it at VA 0xdff070; also referenced as ?TheRadar@@3PAVPartitionManager@@A.
-RadarSubsystem * Radar = 0;
-#pragma comment(linker, "/alternatename:?TheRadar@@3PAVPartitionManager@@A=?Radar@@3PAVRadarSubsystem@@A")
+// ?AudioSubsystem@@3PAVClientSubsystem@@A: the global at this VA is ?TheAudio@@3PAVAudioManager@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?AudioSubsystem@@3PAVClientSubsystem@@A=?TheAudio@@3PAVAudioManager@@A")
+#pragma comment(linker, "/alternatename:?TheAudio@@3PAVBfmeAudioVtblIndexed@@A=?TheAudio@@3PAVAudioManager@@A")
+#pragma comment(linker, "/alternatename:?g_00DFE6E8@@3PAVGlobalSlotTarget@@A=?TheAudio@@3PAVAudioManager@@A")
+#pragma comment(linker, "/alternatename:?g_audioMixer@@3PAVAudioMixer@@A=?TheAudio@@3PAVAudioManager@@A")
+#pragma comment(linker, "/alternatename:?g_009FE6E8@@3PAVBfmeAudio@@A=?TheAudio@@3PAVAudioManager@@A")
+// ?Radar@@3PAVRadarSubsystem@@A: the global at this VA is ?TheRadar@@3PAVRadar@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?Radar@@3PAVRadarSubsystem@@A=?TheRadar@@3PAVRadar@@A")
+#pragma comment(linker, "/alternatename:?TheRadar@@3PAVPartitionManager@@A=?TheRadar@@3PAVRadar@@A")

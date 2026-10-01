@@ -18,8 +18,9 @@ enum TimeOfDay
 extern void *W3DGCData00DE2000;
 // W3DGCData00DE2000: matched references place it at VA 0xde2000 (zero-filled .bss).
 void * W3DGCData00DE2000;
-// W3DGCData00DE5DFC: matched references place it at VA 0xde5dfc (retail .data initial value 0).
-void * W3DGCData00DE5DFC = 0;
+// ?W3DGCData00DE5DFC@@3PAXA: the global at this VA is ?g_shadowManager@@3PAVGen0003AC38@@A; this name is an alias for it.
+extern void * W3DGCData00DE5DFC;
+#pragma comment(linker, "/alternatename:?W3DGCData00DE5DFC@@3PAXA=?g_shadowManager@@3PAVGen0003AC38@@A")
 extern void *W3DGCData00DFE9D8;
 
 #include "vector3.h"

@@ -56,7 +56,7 @@ clear:
 	g_Rva0130A5B0 = 0;
 }
 
-// ?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A: matched references place it at VA 0xe09fcc; also referenced as ?g_bfmeS1019@@3PAVBfmeS1019@@A, ?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A.
-Rva007F00B0Allocator * g_Rva0130A5B0 = 0;
-#pragma comment(linker, "/alternatename:?g_bfmeS1019@@3PAVBfmeS1019@@A=?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A")
-#pragma comment(linker, "/alternatename:?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A=?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A")
+// ?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A: the global at this VA is ?g_genAlloc@@3PAVGenAlloc@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Rva0130A5B0@@3PAURva007F00B0Allocator@@A=?g_genAlloc@@3PAVGenAlloc@@A")
+#pragma comment(linker, "/alternatename:?g_bfmeS1019@@3PAVBfmeS1019@@A=?g_genAlloc@@3PAVGenAlloc@@A")
+#pragma comment(linker, "/alternatename:?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A=?g_genAlloc@@3PAVGenAlloc@@A")

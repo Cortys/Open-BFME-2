@@ -114,8 +114,9 @@ public:
 	void *rva002D06CA(const AsciiString *key);
 };
 
-// g_009FF000: matched references place it at VA 0xdff000 (retail .data initial value 0).
-Rva002D06CA * g_009FF000 = 0;
+// ?g_009FF000@@3PAVRva002D06CA@@A: the global at this VA is ?TheThingFactory@@3PAVRva002D06CA@@A; this name is an alias for it.
+extern Rva002D06CA * g_009FF000;
+#pragma comment(linker, "/alternatename:?g_009FF000@@3PAVRva002D06CA@@A=?TheThingFactory@@3PAVRva002D06CA@@A")
 
 enum ObjectID
 {

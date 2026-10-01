@@ -12,8 +12,8 @@
 // recovered, so the body keeps its Rva name.
 // cl: /O1
 extern unsigned int g_Va00DEC3DC;
-// g_Va00DEC3DC: matched references place it at VA 0xdec3dc (zero-filled .bss).
-unsigned int g_Va00DEC3DC;
+// ?g_Va00DEC3DC@@3IA: the global at this VA is ?Movie@WW3D@@0PAVFrameGrabClass@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEC3DC@@3IA=?Movie@WW3D@@0PAVFrameGrabClass@@A")
 
 bool Rva00117AC0HasFlag(void)
 {

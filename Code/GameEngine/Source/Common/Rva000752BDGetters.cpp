@@ -6,8 +6,8 @@
 // caller inlines the load (Rva007EB810Get precedent).
 
 extern int g_Va00E08D30;
-// g_Va00E08D30: matched references place it at VA 0xe08d30 (zero-filled .bss).
-int g_Va00E08D30;
+// ?g_Va00E08D30@@3HA: the global at this VA is ?ProcessorManufacturer@CPUDetectClass@@0W4ProcessorManufacturerType@1@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00E08D30@@3HA=?ProcessorManufacturer@CPUDetectClass@@0W4ProcessorManufacturerType@1@A")
 
 int Rva000752BDGet(void)
 {
@@ -17,8 +17,8 @@ int Rva000752BDGet(void)
 // ?Rva000752C3Get@@YAHXZ @ 0x000752C3 (6B): same shape over 0x00E08CA8.
 
 extern int g_Va00E08CA8;
-// g_Va00E08CA8: matched references place it at VA 0xe08ca8 (zero-filled .bss).
-int g_Va00E08CA8;
+// ?g_Va00E08CA8@@3HA: the global at this VA is ?IntelProcessor@CPUDetectClass@@0W4IntelProcessorType@1@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00E08CA8@@3HA=?IntelProcessor@CPUDetectClass@@0W4IntelProcessorType@1@A")
 
 int Rva000752C3Get(void)
 {
@@ -28,8 +28,8 @@ int Rva000752C3Get(void)
 // ?Rva000752C9Get@@YAHXZ @ 0x000752C9 (6B): same shape over 0x00E08CF4.
 
 extern int g_Va00E08CF4;
-// g_Va00E08CF4: matched references place it at VA 0xe08cf4 (zero-filled .bss).
-int g_Va00E08CF4;
+// ?g_Va00E08CF4@@3HA: the global at this VA is ?AMDProcessor@CPUDetectClass@@0W4AMDProcessorType@1@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00E08CF4@@3HA=?AMDProcessor@CPUDetectClass@@0W4AMDProcessorType@1@A")
 
 int Rva000752C9Get(void)
 {
@@ -39,8 +39,8 @@ int Rva000752C9Get(void)
 // ?Rva000752CFGet@@YAHXZ @ 0x000752CF (6B): same shape over 0x00E08D20.
 
 extern int g_Va00E08D20;
-// g_Va00E08D20: matched references place it at VA 0xe08d20 (zero-filled .bss).
-int g_Va00E08D20;
+// ?g_Va00E08D20@@3HA: the global at this VA is ?ProcessorSpeed@CPUDetectClass@@0HA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00E08D20@@3HA=?ProcessorSpeed@CPUDetectClass@@0HA")
 
 int Rva000752CFGet(void)
 {

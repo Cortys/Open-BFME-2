@@ -23,8 +23,9 @@ public:
 	const UpgradeTemplate *findUpgrade(const AsciiString &name) const;
 };
 
-// TheUpgradeCenter: matched references place it at VA 0xdfeb60 (retail .data initial value 0).
-extern "C" UpgradeCenter *TheUpgradeCenter = 0;
+// _TheUpgradeCenter: the global at this VA is ?TheUpgradeCenter@@3PAVUpgradeCenter@@A; this name is an alias for it.
+extern "C" UpgradeCenter *TheUpgradeCenter;
+#pragma comment(linker, "/alternatename:_TheUpgradeCenter=?TheUpgradeCenter@@3PAVUpgradeCenter@@A")
 
 class Rva001EAE6FHelper
 {

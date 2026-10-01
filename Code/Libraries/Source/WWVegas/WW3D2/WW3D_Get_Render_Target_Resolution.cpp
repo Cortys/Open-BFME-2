@@ -52,14 +52,16 @@ public:
 	virtual long __stdcall bfmeGetModeInfo(BfmeDisplayModeInfo *info) = 0; // +0x30
 };
 
-// TheBfmeRenderDevice: matched references place it at VA 0xdeda38 (retail .data initial value 0).
-BfmeRenderDevice * TheBfmeRenderDevice = 0;
+// ?TheBfmeRenderDevice@@3PAVBfmeRenderDevice@@A: the global at this VA is ?CurrentRenderTarget@DX8Wrapper@@1PAUIDirect3DSurface8@@A; this name is an alias for it.
+extern BfmeRenderDevice * TheBfmeRenderDevice;
+#pragma comment(linker, "/alternatename:?TheBfmeRenderDevice@@3PAVBfmeRenderDevice@@A=?CurrentRenderTarget@DX8Wrapper@@1PAUIDirect3DSurface8@@A")
 
 extern Int BfmeRenderWidth; // 0x00DB5FD4
 extern Int BfmeRenderHeight; // 0x00DB5FD8
 extern Int BfmeRenderBitDepth; // 0x00DB5FDC
-// BfmeRenderBitDepth: matched references place it at VA 0xdb5fdc (retail .data initial value 32).
-int BfmeRenderBitDepth = 32;
+// ?BfmeRenderBitDepth@@3HA: the global at this VA is ?BitDepth@DX8Wrapper@@1HA; this name is an alias for it.
+extern int BfmeRenderBitDepth;
+#pragma comment(linker, "/alternatename:?BfmeRenderBitDepth@@3HA=?BitDepth@DX8Wrapper@@1HA")
 extern Bool BfmeRenderWindowed; // 0x00DEDA06
 
 // the WW3D forwarder lives at 0x00116FF0 (5B thunk, already claimed);
@@ -95,6 +97,7 @@ void DX8Wrapper::Get_Render_Target_Resolution(Int &width, Int &height, Int &bitD
 	}
 }
 
-// ?BfmeRenderWindowed@@3_NA: matched references place it at VA 0xdeda06; also referenced as ?g_Va00DEDA06@@3EA.
-bool BfmeRenderWindowed;
-#pragma comment(linker, "/alternatename:?g_Va00DEDA06@@3EA=?BfmeRenderWindowed@@3_NA")
+// ?BfmeRenderWindowed@@3_NA: the global at this VA is ?IsWindowed@DX8Wrapper@@1_NA; this name is an alias for it.
+extern bool BfmeRenderWindowed;
+#pragma comment(linker, "/alternatename:?BfmeRenderWindowed@@3_NA=?IsWindowed@DX8Wrapper@@1_NA")
+#pragma comment(linker, "/alternatename:?g_Va00DEDA06@@3EA=?IsWindowed@DX8Wrapper@@1_NA")

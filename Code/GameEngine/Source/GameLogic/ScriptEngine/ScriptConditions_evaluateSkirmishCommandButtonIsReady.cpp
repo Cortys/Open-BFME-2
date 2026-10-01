@@ -48,8 +48,9 @@ class ControlBar
 public:
     const CommandButton *findCommandButton(const AsciiString &name);
 };
-// TheControlBar: matched references place it at VA 0xe01cfc (retail .data initial value 0).
-ControlBar * TheControlBar = 0;
+// ?TheControlBar@@3PAVControlBar@@A: the global at this VA is ?g_bfmeWorldRV@@3PAUBfmeWorldRV@@A; this name is an alias for it.
+extern ControlBar * TheControlBar;
+#pragma comment(linker, "/alternatename:?TheControlBar@@3PAVControlBar@@A=?g_bfmeWorldRV@@3PAUBfmeWorldRV@@A")
 class Object
 {
 public:

@@ -33,8 +33,9 @@ struct AIMid
 	char m_pad[0x18];
 	AIInner *m_ptr;
 };
-// TheAI: matched references place it at VA 0xdff0f8 (retail .data initial value 0).
-AIMid * TheAI = 0;
+// ?TheAI@@3PAUAIMid@@A: the global at this VA is ?TheAI@@3PAVAI@@A; this name is an alias for it.
+extern AIMid * TheAI;
+#pragma comment(linker, "/alternatename:?TheAI@@3PAUAIMid@@A=?TheAI@@3PAVAI@@A")
 
 float __cdecl Rva00545239Get(void *objPtr)
 {

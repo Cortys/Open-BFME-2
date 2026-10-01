@@ -16,8 +16,9 @@ public:
 
 extern const void *const g_00C3CA30[];
 class Rva00432FA7;
-// g_00E032D0: matched references place it at VA 0xe032d0 (retail .data initial value 0).
-Rva00432FA7 * g_00E032D0 = 0;
+// ?g_00E032D0@@3PAVRva00432FA7@@A: the global at this VA is ?g_004C9DC9Container@@3PAVRva00432F23@@A; this name is an alias for it.
+extern Rva00432FA7 * g_00E032D0;
+#pragma comment(linker, "/alternatename:?g_00E032D0@@3PAVRva00432FA7@@A=?g_004C9DC9Container@@3PAVRva00432F23@@A")
 
 class Rva00432FA7
 {

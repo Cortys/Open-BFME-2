@@ -68,12 +68,12 @@ struct Device
 extern Device *ScreenDevice;
 extern unsigned ScreenTextureStageStates[8][32];
 extern bool ScreenSnapshot;
-// ScreenSnapshot: matched references place it at VA 0xdec3fd (zero-filled .bss).
-bool ScreenSnapshot;
+// ?ScreenSnapshot@@3_NA: the global at this VA is ?SnapshotActivated@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenSnapshot@@3_NA=?SnapshotActivated@WW3D@@0_NA")
 extern unsigned number_of_DX8_calls;
 extern unsigned ScreenTextureStageStateChanges;
-// ScreenTextureStageStateChanges: matched references place it at VA 0xdeda68 (zero-filled .bss).
-unsigned int ScreenTextureStageStateChanges;
+// ?ScreenTextureStageStateChanges@@3IA: the global at this VA is ?texture_stage_state_changes@DX8Wrapper@@1IA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?ScreenTextureStageStateChanges@@3IA=?texture_stage_state_changes@DX8Wrapper@@1IA")
 
 class DX8Wrapper
 {

@@ -181,7 +181,7 @@ void LANAPI::reset(void)
 	m_currentGame = 0;
 }
 
-// ?g_Rva00E02EEC@@3PAVLANGameInfo@@A: matched references place it at VA 0xe02eec; also referenced as ?g_00E02EEC@@3PAVRva00E02EECObj@@A, ?g_Rva0023D30FFlag@@3HA.
-LANGameInfo * g_Rva00E02EEC = 0;
-#pragma comment(linker, "/alternatename:?g_00E02EEC@@3PAVRva00E02EECObj@@A=?g_Rva00E02EEC@@3PAVLANGameInfo@@A")
-#pragma comment(linker, "/alternatename:?g_Rva0023D30FFlag@@3HA=?g_Rva00E02EEC@@3PAVLANGameInfo@@A")
+// ?g_Rva00E02EEC@@3PAVLANGameInfo@@A: the global at this VA is ?TheGameInfo@@3PAVGameInfo@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Rva00E02EEC@@3PAVLANGameInfo@@A=?TheGameInfo@@3PAVGameInfo@@A")
+#pragma comment(linker, "/alternatename:?g_00E02EEC@@3PAVRva00E02EECObj@@A=?TheGameInfo@@3PAVGameInfo@@A")
+#pragma comment(linker, "/alternatename:?g_Rva0023D30FFlag@@3HA=?TheGameInfo@@3PAVGameInfo@@A")

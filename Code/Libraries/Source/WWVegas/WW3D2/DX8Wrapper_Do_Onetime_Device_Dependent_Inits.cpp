@@ -116,8 +116,9 @@ struct DX8CapsSnapshot
 	unsigned Field5;
 };
 
-// g_dx8Device: matched references place it at VA 0xdeda08 (retail .data initial value 0).
-void * g_dx8Device = 0;
+// ?g_dx8Device@@3PAXA: the global at this VA is ?DisplayFormat@DX8Wrapper@@1W4_D3DFORMAT@@A; this name is an alias for it.
+extern void * g_dx8Device;
+#pragma comment(linker, "/alternatename:?g_dx8Device@@3PAXA=?DisplayFormat@DX8Wrapper@@1W4_D3DFORMAT@@A")
 extern DX8CapsSnapshot g_dx8CapsSnapshot;
 extern TextureFilterClass::TextureFilterMode g_dx8FilterMode;
 extern DX8MeshRendererClass *TheDX8MeshRenderer;

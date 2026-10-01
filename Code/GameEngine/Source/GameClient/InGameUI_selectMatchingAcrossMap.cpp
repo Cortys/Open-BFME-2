@@ -232,9 +232,9 @@ int InGameUI::selectMatchingAcrossMap()
 	return numSelected;
 }
 
-// ?g_bfmeStateDO@@3PAVBfmeSelectionState@@A: matched references place it at VA 0xdfef10; also referenced as ?Rva00DFEF10@@3PAVRva002B48E1@@A, ?Rva00DFEF10@@3PAXA, ?g_00DFEF10@@3PAURvaLogicHolder@@A, ?Glo012F1028@@3PAVGlo012F1028Type@@A.
-BfmeSelectionState * g_bfmeStateDO = 0;
-#pragma comment(linker, "/alternatename:?Rva00DFEF10@@3PAVRva002B48E1@@A=?g_bfmeStateDO@@3PAVBfmeSelectionState@@A")
-#pragma comment(linker, "/alternatename:?Rva00DFEF10@@3PAXA=?g_bfmeStateDO@@3PAVBfmeSelectionState@@A")
-#pragma comment(linker, "/alternatename:?g_00DFEF10@@3PAURvaLogicHolder@@A=?g_bfmeStateDO@@3PAVBfmeSelectionState@@A")
-#pragma comment(linker, "/alternatename:?Glo012F1028@@3PAVGlo012F1028Type@@A=?g_bfmeStateDO@@3PAVBfmeSelectionState@@A")
+// ?g_bfmeStateDO@@3PAVBfmeSelectionState@@A: the global at this VA is ?g_009FEF10@@3PAVRva002BA8F1Logic@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_bfmeStateDO@@3PAVBfmeSelectionState@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
+#pragma comment(linker, "/alternatename:?Rva00DFEF10@@3PAVRva002B48E1@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
+#pragma comment(linker, "/alternatename:?Rva00DFEF10@@3PAXA=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
+#pragma comment(linker, "/alternatename:?g_00DFEF10@@3PAURvaLogicHolder@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
+#pragma comment(linker, "/alternatename:?Glo012F1028@@3PAVGlo012F1028Type@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")

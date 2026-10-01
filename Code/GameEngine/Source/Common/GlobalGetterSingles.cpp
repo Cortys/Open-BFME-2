@@ -8,8 +8,8 @@
 // ?Rva0001D1C0Get@@YAHXZ @ 0x0001D1C0 (6B) over 0x00DA6CC8.
 
 extern int g_Va00DA6CC8;
-// g_Va00DA6CC8: matched references place it at VA 0xda6cc8 (retail .data initial value 4096).
-int g_Va00DA6CC8 = 4096;
+// ?g_Va00DA6CC8@@3HA: the global at this VA is ?_M_page_size@_Filebuf_base@_STL@@1KA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DA6CC8@@3HA=?_M_page_size@_Filebuf_base@_STL@@1KA")
 
 int Rva0001D1C0Get(void)
 {
@@ -85,8 +85,8 @@ int Rva000A8F36Get(void)
 // ?Rva000EDF40Get@@YAHXZ @ 0x000EDF40 (6B) over 0x00DEDA24.
 
 extern int g_Va00DEDA24;
-// g_Va00DEDA24: matched references place it at VA 0xdeda24 (zero-filled .bss).
-int g_Va00DEDA24;
+// ?g_Va00DEDA24@@3HA: the global at this VA is ?FogColor@DX8Wrapper@@1KA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA24@@3HA=?FogColor@DX8Wrapper@@1KA")
 
 int Rva000EDF40Get(void)
 {

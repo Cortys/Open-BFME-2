@@ -31,8 +31,9 @@ public:
 	void bfmeInit936G(void);
 };
 
-// g_bfme936GlobG: matched references place it at VA 0xddeba0 (retail .data initial value 0).
-void * g_bfme936GlobG = 0;
+// ?g_bfme936GlobG@@3PAXA: the global at this VA is ?_S_count@Init@ios_base@_STL@@0JA; this name is an alias for it.
+extern void * g_bfme936GlobG;
+#pragma comment(linker, "/alternatename:?g_bfme936GlobG@@3PAXA=?_S_count@Init@ios_base@_STL@@0JA")
 
 // ?bfmeGo936G@BfmeThing936G@@QAEPAV1@XZ, retail 0x00016AA0 (21B).
 BfmeThing936G *BfmeThing936G::bfmeGo936G(void)

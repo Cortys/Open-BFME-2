@@ -33,8 +33,9 @@ public:
 };
 
 extern NameKeyGenerator *TheNameKeyGenerator;
-// Rva00DFDC14Object: matched references place it at VA 0xdfdc14 (retail .data initial value 0).
-void * Rva00DFDC14Object = 0;
+// ?Rva00DFDC14Object@@3PAXA: the global at this VA is ?theBfmeDfdc14@@3PAVAudioManager@@A; this name is an alias for it.
+extern void * Rva00DFDC14Object;
+#pragma comment(linker, "/alternatename:?Rva00DFDC14Object@@3PAXA=?theBfmeDfdc14@@3PAVAudioManager@@A")
 
 class INI
 {

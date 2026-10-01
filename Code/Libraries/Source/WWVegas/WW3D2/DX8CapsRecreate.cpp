@@ -56,6 +56,6 @@ void __cdecl Rva001207B0Init(void *device)
 		g_d3dDevice, (WW3DFormat)(int)device, g_adapterIdentifier);
 }
 
-// ?g_d3dInterface@@3PAUIDirect3D8@@A: matched references place it at VA 0xdeda30; also referenced as ?G009EDA30@@3HA.
-IDirect3D8 * g_d3dInterface = 0;
-#pragma comment(linker, "/alternatename:?G009EDA30@@3HA=?g_d3dInterface@@3PAUIDirect3D8@@A")
+// ?g_d3dInterface@@3PAUIDirect3D8@@A: the global at this VA is ?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_d3dInterface@@3PAUIDirect3D8@@A=?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A")
+#pragma comment(linker, "/alternatename:?G009EDA30@@3HA=?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A")

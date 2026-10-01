@@ -213,8 +213,9 @@ struct Rva00A022F4
 	int m_40;
 };
 
-// g_00A022F4: matched references place it at VA 0xe022f4 (retail .data initial value 0).
-Rva00A022F4 * g_00A022F4 = 0;
+// ?g_00A022F4@@3PAURva00A022F4@@A: the global at this VA is ?TheMultiplayerSettings@@3PAVMultiplayerSettings@@A; this name is an alias for it.
+extern Rva00A022F4 * g_00A022F4;
+#pragma comment(linker, "/alternatename:?g_00A022F4@@3PAURva00A022F4@@A=?TheMultiplayerSettings@@3PAVMultiplayerSettings@@A")
 
 // ?rva0044D836@GameModePreferences@@QAEHXZ @0x0044D836 (86B): Color getter
 // over the mode-keyed map with -1 for missing or out of range plus lazy

@@ -70,8 +70,9 @@ public:
 };
 
 extern BfmeWindowManagerAR *g_bfmeWindowManagerAR;	// retail 0x012F1B40
-// g_bfmeReplayControlAR: matched references place it at VA 0xdfedf4 (retail .data initial value 0).
-void * g_bfmeReplayControlAR = 0;
+// ?g_bfmeReplayControlAR@@3PAXA: the global at this VA is ?m_replayWindow@@3PAVGameWindow@@A; this name is an alias for it.
+extern void * g_bfmeReplayControlAR;
+#pragma comment(linker, "/alternatename:?g_bfmeReplayControlAR@@3PAXA=?m_replayWindow@@3PAVGameWindow@@A")
 
 // ?bfmeLoadReplayControlAR@@YAXXZ
 void bfmeLoadReplayControlAR(void)

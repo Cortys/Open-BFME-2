@@ -133,8 +133,8 @@ void ScriptActions::rva003C9BAD(const AsciiString &teamName)
     }
 }
 
-// ?TheTerrainLogic@@3PAVTerrainLogicByValue@@A: matched references place it at VA 0xdfec50; also referenced as ?TheTerrainLogic@@3PAVBfmeTerrainHeightView@@A, ?g_009FEC50@@3PAVRva003C4E28ListMgr@@A, ?TheTerrainLogic@@3PAUTerrainLogicMirror@@A.
-TerrainLogicByValue * TheTerrainLogic = 0;
-#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAVBfmeTerrainHeightView@@A=?TheTerrainLogic@@3PAVTerrainLogicByValue@@A")
-#pragma comment(linker, "/alternatename:?g_009FEC50@@3PAVRva003C4E28ListMgr@@A=?TheTerrainLogic@@3PAVTerrainLogicByValue@@A")
-#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAUTerrainLogicMirror@@A=?TheTerrainLogic@@3PAVTerrainLogicByValue@@A")
+// ?TheTerrainLogic@@3PAVTerrainLogicByValue@@A: the global at this VA is ?TheTerrainLogic@@3PAVTerrainLogic@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAVTerrainLogicByValue@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")
+#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAVBfmeTerrainHeightView@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")
+#pragma comment(linker, "/alternatename:?g_009FEC50@@3PAVRva003C4E28ListMgr@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")
+#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAUTerrainLogicMirror@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")

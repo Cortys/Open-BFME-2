@@ -482,12 +482,14 @@ static void Apply_Render_State(RenderStateStruct& render_state)
 struct BFME2TextureRef { void *Ptr; };
 void BFME2Set_Texture(unsigned stage, const struct BFME2TextureRef &texture);
 extern unsigned TheBoxTextureDirtyMask;
-// g_00DEE5DC: matched references place it at VA 0xdee5dc (retail .data initial value 0).
-VertexMaterialClass * g_00DEE5DC = 0;
+// ?g_00DEE5DC@@3PAVVertexMaterialClass@@A: the global at this VA is ?ScreenMaterial@@3PAVVertexMaterialClass@@A; this name is an alias for it.
+extern VertexMaterialClass * g_00DEE5DC;
+#pragma comment(linker, "/alternatename:?g_00DEE5DC@@3PAVVertexMaterialClass@@A=?ScreenMaterial@@3PAVVertexMaterialClass@@A")
 extern struct IDirect3DDevice8 *g_d3dDevice;
 extern unsigned g_00DEDA4C;
-// g_00DEDA4C: matched references place it at VA 0xdeda4c (zero-filled .bss).
-unsigned int g_00DEDA4C;
+// ?g_00DEDA4C@@3IA: the global at this VA is ?matrix_changes@DX8Wrapper@@1IA; this name is an alias for it.
+extern unsigned int g_00DEDA4C;
+#pragma comment(linker, "/alternatename:?g_00DEDA4C@@3IA=?matrix_changes@DX8Wrapper@@1IA")
 extern unsigned g_00DEDA98;
 
 void Rva0012D4D0Apply(RenderStateStruct &render_state)
@@ -839,9 +841,11 @@ void SortingRendererClass::Insert_VolumeParticle(
 	if (!node) sorted_list.Add_Tail(state);
 }
 
-// ?TheBoxTextureDirtyMask@@3IA: matched references place it at VA 0xdec4f4; also referenced as ?BFME2RenderStateChanged@@3IA.
-unsigned int TheBoxTextureDirtyMask;
-#pragma comment(linker, "/alternatename:?BFME2RenderStateChanged@@3IA=?TheBoxTextureDirtyMask@@3IA")
-// ?g_00DEDA98@@3IA: matched references place it at VA 0xdeda98; also referenced as ?g_bfmeCountTDB@@3HA.
-unsigned int g_00DEDA98;
-#pragma comment(linker, "/alternatename:?g_bfmeCountTDB@@3HA=?g_00DEDA98@@3IA")
+// ?TheBoxTextureDirtyMask@@3IA: the global at this VA is ?render_state_changed@DX8Wrapper@@1IA; this name is an alias for it.
+extern unsigned int TheBoxTextureDirtyMask;
+#pragma comment(linker, "/alternatename:?TheBoxTextureDirtyMask@@3IA=?render_state_changed@DX8Wrapper@@1IA")
+#pragma comment(linker, "/alternatename:?BFME2RenderStateChanged@@3IA=?render_state_changed@DX8Wrapper@@1IA")
+// ?g_00DEDA98@@3IA: the global at this VA is ?number_of_DX8_calls@@3IA; this name is an alias for it.
+extern unsigned int g_00DEDA98;
+#pragma comment(linker, "/alternatename:?g_00DEDA98@@3IA=?number_of_DX8_calls@@3IA")
+#pragma comment(linker, "/alternatename:?g_bfmeCountTDB@@3HA=?number_of_DX8_calls@@3IA")

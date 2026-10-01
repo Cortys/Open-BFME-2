@@ -195,8 +195,9 @@ int Rva007EFD00( const char *a, const char *b )
  * among the literals, so both are configurable at run time.  The separator is
  * a plain char -- read with movsx where the buffer's own bytes are read with
  * movzx, which is what types the two differently. */
-// g_Rva012C391CSeparator: matched references place it at VA 0xdd8074 (retail .data initial value 10).
-char g_Rva012C391CSeparator = 10;
+// _g_Rva012C391CSeparator: the global at this VA is ?g_Rva012C391CSeparator@@3DA; this name is an alias for it.
+extern char g_Rva012C391CSeparator;
+#pragma comment(linker, "/alternatename:_g_Rva012C391CSeparator=?g_Rva012C391CSeparator@@3DA")
 extern char g_Rva012C392CSuffix[];
 
 /* 0x007EC4D0 APPENDS THE SUFFIX TO A BUFFER, inserting the separator first if

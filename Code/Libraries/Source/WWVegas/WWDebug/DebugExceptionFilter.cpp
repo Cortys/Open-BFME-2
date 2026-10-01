@@ -294,8 +294,9 @@ static const char *g_exceptionReportText;                 // 0x00DE0DF4
 static char g_exceptionRegisterInfo[1024];                // 0x00DE09E8
 static char g_exceptionVersionInfo[256];                  // 0x00DE08E8
 static DebugStackwalk::Signature g_exceptionStackSignature; // 0x00DE0E08
-// g_crashAttachments: matched references place it at VA 0xde0dec (retail .data initial value 0).
-CrashAttachment * g_crashAttachments = 0;
+// ?g_crashAttachments@@3PAUCrashAttachment@@A: the global at this VA is ?g_debugTypedLogs@@3PAUDebugTypedLog@@A; this name is an alias for it.
+extern CrashAttachment * g_crashAttachments;
+#pragma comment(linker, "/alternatename:?g_crashAttachments@@3PAUCrashAttachment@@A=?g_debugTypedLogs@@3PAUDebugTypedLog@@A")
 extern unsigned g_debugTypedLogCount;                   // 0x00DE0DF0
 // g_crashMailerCommand: matched references place it at VA 0xde1210 (zero-filled).
 char g_crashMailerCommand[512] = { 0 };

@@ -17,8 +17,8 @@ public:
 };
 
 extern int g_009E1FAC;
-// g_009E1FAC: matched references place it at VA 0xde1fac (zero-filled .bss).
-int g_009E1FAC;
+// ?g_009E1FAC@@3HA: the global at this VA is ?TheW3DFileSystem@@3PAVW3DFileSystem@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_009E1FAC@@3HA=?TheW3DFileSystem@@3PAVW3DFileSystem@@A")
 extern FileSystem *TheFileSystem;
 
 class GameFileClass

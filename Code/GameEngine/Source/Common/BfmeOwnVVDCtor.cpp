@@ -131,6 +131,6 @@ unsigned char BfmeOwnVVD::Rva0042E8C1()
 	return slot + g_bfmeRva42E8C1Add >= g_bfmeRva42E8C1Holder->m_40;
 }
 
-// ?g_bfmeRva42E8C1Add@@3IA: matched references place it at VA 0xdba4e4; also referenced as ?g_009BA4E4@@3HB.
-unsigned int g_bfmeRva42E8C1Add = 5u;
-#pragma comment(linker, "/alternatename:?g_009BA4E4@@3HB=?g_bfmeRva42E8C1Add@@3IA")
+// ?g_bfmeRva42E8C1Add@@3IA: the global at this VA is ?g_Va00DBA4E4@@3HA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_bfmeRva42E8C1Add@@3IA=?g_Va00DBA4E4@@3HA")
+#pragma comment(linker, "/alternatename:?g_009BA4E4@@3HB=?g_Va00DBA4E4@@3HA")

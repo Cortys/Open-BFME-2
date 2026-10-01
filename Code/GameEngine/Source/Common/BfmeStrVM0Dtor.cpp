@@ -216,8 +216,9 @@ struct GlobalA01E48
 	char pad[0x5d];
 	unsigned char flag;
 };
-// g_Va00A01E48: matched references place it at VA 0xe01e48 (retail .data initial value 0).
-GlobalA01E48 * g_Va00A01E48 = 0;
+// ?g_Va00A01E48@@3PAUGlobalA01E48@@A: the global at this VA is ?TheShell@@3PAVShell@@A; this name is an alias for it.
+extern GlobalA01E48 * g_Va00A01E48;
+#pragma comment(linker, "/alternatename:?g_Va00A01E48@@3PAUGlobalA01E48@@A=?TheShell@@3PAVShell@@A")
 
 struct Rva0025C18BCoord
 {

@@ -14,8 +14,9 @@ public:
 	virtual void *allocate(unsigned int bytes, void *metadata);
 };
 
-// g_bfmeAllocGlobal: matched references place it at VA 0xdfda54 (retail .data initial value 0).
-BfmeAllocGlobal * g_bfmeAllocGlobal = 0;
+// ?g_bfmeAllocGlobal@@3PAVBfmeAllocGlobal@@A: the global at this VA is ?G00DFDA54@@3HA; this name is an alias for it.
+extern BfmeAllocGlobal * g_bfmeAllocGlobal;
+#pragma comment(linker, "/alternatename:?g_bfmeAllocGlobal@@3PAVBfmeAllocGlobal@@A=?G00DFDA54@@3HA")
 
 namespace _STL
 {

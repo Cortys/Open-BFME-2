@@ -19,8 +19,8 @@ unsigned char Rva0004CAB1GetByte(void)
 // ?Rva0004CAB7GetByte@@YAEXZ @ 0x0004CAB7 (6B) over 0x00DEC3D9.
 
 extern unsigned char g_Va00DEC3D9;
-// g_Va00DEC3D9: matched references place it at VA 0xdec3d9 (zero-filled .bss).
-unsigned char g_Va00DEC3D9;
+// ?g_Va00DEC3D9@@3EA: the global at this VA is ?AreStaticSortListsEnabled@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEC3D9@@3EA=?AreStaticSortListsEnabled@WW3D@@0_NA")
 
 unsigned char Rva0004CAB7GetByte(void)
 {
@@ -30,8 +30,8 @@ unsigned char Rva0004CAB7GetByte(void)
 // ?Rva00131062GetByte@@YAEXZ @ 0x00131062 (6B) over 0x00DB5F98.
 
 extern unsigned char g_Va00DB5F98;
-// g_Va00DB5F98: matched references place it at VA 0xdb5f98 (retail .data initial value 1).
-unsigned char g_Va00DB5F98 = 1;
+// ?g_Va00DB5F98@@3EA: the global at this VA is ?IsTexturingEnabled@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DB5F98@@3EA=?IsTexturingEnabled@WW3D@@0_NA")
 
 unsigned char Rva00131062GetByte(void)
 {
@@ -41,8 +41,8 @@ unsigned char Rva00131062GetByte(void)
 // ?Rva00131068GetByte@@YAEXZ @ 0x00131068 (6B) over 0x00DEDA04.
 
 extern unsigned char g_Va00DEDA04;
-// g_Va00DEDA04: matched references place it at VA 0xdeda04 (zero-filled .bss).
-unsigned char g_Va00DEDA04;
+// ?g_Va00DEDA04@@3EA: the global at this VA is ?IsInitted@DX8Wrapper@@1_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA04@@3EA=?IsInitted@DX8Wrapper@@1_NA")
 
 unsigned char Rva00131068GetByte(void)
 {
@@ -52,8 +52,8 @@ unsigned char Rva00131068GetByte(void)
 // ?Rva0006E19BGetByte@@YAEXZ @ 0x0006E19B (6B) over 0x00DB5FCD.
 
 extern unsigned char g_Va00DB5FCD;
-// g_Va00DB5FCD: matched references place it at VA 0xdb5fcd (retail .data initial value 1).
-unsigned char g_Va00DB5FCD = 1;
+// ?g_Va00DB5FCD@@3EA: the global at this VA is ?_EnableTriangleDraw@DX8Wrapper@@1_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DB5FCD@@3EA=?_EnableTriangleDraw@DX8Wrapper@@1_NA")
 
 unsigned char Rva0006E19BGetByte(void)
 {
@@ -63,8 +63,8 @@ unsigned char Rva0006E19BGetByte(void)
 // ?Rva0006E1A1GetByte@@YAEXZ @ 0x0006E1A1 (6B) over 0x00DEDA05.
 
 extern unsigned char g_Va00DEDA05;
-// g_Va00DEDA05: matched references place it at VA 0xdeda05 (zero-filled .bss).
-unsigned char g_Va00DEDA05;
+// ?g_Va00DEDA05@@3EA: the global at this VA is ?bfmeCameraProjectionOverride@@3_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA05@@3EA=?bfmeCameraProjectionOverride@@3_NA")
 
 unsigned char Rva0006E1A1GetByte(void)
 {
@@ -127,8 +127,8 @@ unsigned char Rva00171650GetByte(void)
 // ?Rva00171670GetByte@@YAEXZ @ 0x00171670 (6B) over 0x00DEC3DA.
 
 extern unsigned char g_Va00DEC3DA;
-// g_Va00DEC3DA: matched references place it at VA 0xdec3da (zero-filled .bss).
-unsigned char g_Va00DEC3DA;
+// ?g_Va00DEC3DA@@3EA: the global at this VA is ?MungeSortOnLoad@WW3D@@0_NA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va00DEC3DA@@3EA=?MungeSortOnLoad@WW3D@@0_NA")
 
 unsigned char Rva00171670GetByte(void)
 {

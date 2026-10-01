@@ -44,8 +44,8 @@ private:
 };
 
 extern unsigned g_Va009EE91C;
-// g_Va009EE91C: matched references place it at VA 0xdee91c (zero-filled .bss).
-unsigned int g_Va009EE91C;
+// ?g_Va009EE91C@@3IA: the global at this VA is ?texture_statistics_string@@3VStringClass@@A; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?g_Va009EE91C@@3IA=?texture_statistics_string@@3VStringClass@@A")
 extern unsigned g_Va009EE938;
 // g_Va009EE938: matched references place it at VA 0xdee938 (zero-filled .bss).
 unsigned int g_Va009EE938;

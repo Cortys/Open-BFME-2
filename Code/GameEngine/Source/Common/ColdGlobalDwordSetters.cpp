@@ -10,8 +10,8 @@
 // (g_Va<VA> / Rva<RVA>Set). The /GX- line matches the sibling getter TUs
 // (verified frameless ten-byte shape).
 extern int G009B5FE0;
-// G009B5FE0: matched references place it at VA 0xdb5fe0 (retail .data initial value 16).
-int G009B5FE0 = 16;
+// ?G009B5FE0@@3HA: the global at this VA is ?TextureBitDepth@DX8Wrapper@@1HA; this name is an alias for it.
+#pragma comment(linker, "/alternatename:?G009B5FE0@@3HA=?TextureBitDepth@DX8Wrapper@@1HA")
 
 // ?Rva00116E40Set@@YAXH@Z @ 0x00116e40 (10B) over 0x00DB5FE0.
 // Int3-padded both sides (prev CC next CC), live E8 caller. Opaque
