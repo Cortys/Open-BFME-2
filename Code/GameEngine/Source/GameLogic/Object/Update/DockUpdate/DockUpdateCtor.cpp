@@ -225,7 +225,7 @@ void ObjectIDVector::resize(unsigned int newSize, ObjectID value)
 }
 
 // ?ObjectIDVector::erase present-unmatched
-ObjectID *ObjectIDVector::erase(ObjectID *first, ObjectID *last)
+inline ObjectID *ObjectIDVector::erase(ObjectID *first, ObjectID *last)
 {
 	ObjectID *pos = _STL::__copy_ptrs(last, _M_finish, first, _TrivialAss());
 	_M_finish = pos;
@@ -272,3 +272,11 @@ DockUpdate::DockUpdate(
 		m_approachPositionReached[vectorIndex] = FALSE;
 	}
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitDockUpdateCtor@@YAXPAV?$vector@W4ObjectID@@V?$allocator@W4ObjectID@@@_STL@@@_STL@@@Z present-unmatched
+void bfmeEmitDockUpdateCtor(ObjectIDVector *v)
+{
+	v->erase((ObjectID *)0, (ObjectID *)0);
+}
+#pragma inline_depth()
