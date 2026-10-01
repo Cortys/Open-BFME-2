@@ -45729,3 +45729,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005D8723@@QAE@XZ,,0x005D8711,18,Code/GameEngine/Source/Common/Rva005EEDAADerived.cpp,matched,ctor stores vtable 0x00876168 after base ctor 0x005EED92
 ??0Rva005D8964@@QAE@XZ,,0x005D8952,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,ctor stores vtable 0x008761C4 after base ctor 0x005EE28C
 ?rva001F510D@Rva001F510D@@QAEMXZ,,0x001F510D,34,Code/GameEngine/Source/Common/Rva001F510DGet.cpp,matched,null-checked virtual float getter via +0x1B8; conditional-expression zero fixes the banked partial
+??0Rva0039EA9C@@QAE@XZ,,0x0039EA9C,27,Code/GameEngine/Source/Common/Rva0039EA9CCtor.cpp,matched,record ctor zeros plus 1 plus trailing -1 member; -1 as member sub-object ctor fixes the banked store order
