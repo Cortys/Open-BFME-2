@@ -5,6 +5,11 @@
 // BFME1 STLport tree model (BfmeNodeValueEBD 8B tail plus mapped-value 8B
 // with two 4B members) guides the layout; retail bytes prove the member
 // split (release/dtor on +4 via 0x0036E70, dtor on +0 via 0x0036410).
+// CountUpBuffer is the one-pointer member at mapped-value +4; retail reaches
+// 0x0036E70 at that adjusted this. The matched row is StringBase<unsigned
+// short>::releaseBuffer, the same wide-buffer release operation. Bind the
+// element-dtor spelling without changing the verified caller.
+#pragma comment(linker, "/alternatename:??1CountUpBuffer@@QAE@XZ=?releaseBuffer@?$StringBase@G@@AAEXXZ")
 
 #include "ascii_string.h"
 
