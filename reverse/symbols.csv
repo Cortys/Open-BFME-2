@@ -6699,3 +6699,6 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?invoke@Rva00222A8BTarget@@QAEHPAXPBDH10000@Z,0x00222A8B,int-return twin of void pin same address via 0x00222BCD call site exact except reloc
 ?setCurrentTask@DozerAIUpdate@@UAEXW4DozerTask@@@Z,0x00317B9B,ICF twin of dup 0x00317B9B via NetPacket 0x0058DFB8 same 10B setter
 ?Rva002E17A0Copy@@YAPAVRva002E0D93@@PAV1@00PADH@Z,0x002E17A0,5-arg overload proven by caller 0x002E1E9A 5 pushes same bytes as 3-arg row
+?get_allocator@?$vector@VBfmeStringTailRecord156@@V?$allocator@VBfmeStringTailRecord156@@@_STL@@@_STL@@QBE?AV?$allocator@VBfmeStringTailRecord156@@@2@XZ,0x0021983A,7B ICF twin of rowed AsciiString getter read from retail call at 0x0043351B
+??0?$_Vector_base@VBfmeStringTailRecord156@@V?$allocator@VBfmeStringTailRecord156@@@_STL@@@_STL@@QAE@IABV?$allocator@VBfmeStringTailRecord156@@@1@@Z,0x000B6378,58B ICF twin of rowed E8 base read from retail call at 0x0043351B
+??$__uninitialized_copy@PBVBfmeStringTailRecord156@@PAV1@@_STL@@YAPAVBfmeStringTailRecord156@@PBV1@0PAV1@ABU__false_type@0@@Z,0x001D9A61,38B const-source twin of rowed PAV copy read from our TU emission for 0x0043351B
