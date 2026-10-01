@@ -27,6 +27,7 @@ class HeroModeSpecialAbilityUpdateModuleData : public Rva0044EB54
 {
 public:
 	HeroModeSpecialAbilityUpdateModuleData();
+	virtual ~HeroModeSpecialAbilityUpdateModuleData(); // declared only; defined in HeroModeSpecialAbilityUpdateModuleDataDtor.cpp (0x004922F1)
 
 private:
 	AsciiString m_stringC8;	// +0xC8
