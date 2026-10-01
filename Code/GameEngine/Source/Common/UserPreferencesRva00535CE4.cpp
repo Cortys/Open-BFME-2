@@ -256,6 +256,7 @@ public:
 	int rva00537305();
 	void rva00537208(AsciiString arg);
 	void rva0053626B(AsciiString arg, int x);
+	int rva005362B2(AsciiString arg);
 	void rva005362FC(AsciiString arg, int x);
 	void rva0053638D(AsciiString arg, int x);
 	void rva0053641E(AsciiString arg, int x);
@@ -625,6 +626,13 @@ void UserPreferences::rva0053626B(AsciiString arg, int x)
 {
 	arg.concat("StructuresCreatedRTS");
 	v11(arg, x);
+}
+
+int UserPreferences::rva005362B2(AsciiString arg)
+{
+	arg.concat("StructuresCreatedRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva005362FC@UserPreferences@@QAEXVAsciiString@@H@Z @0x005362FC 71B
