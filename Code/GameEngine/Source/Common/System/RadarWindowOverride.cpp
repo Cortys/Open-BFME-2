@@ -19,6 +19,12 @@ public:
 	unsigned char m_flags;
 };
 
+class Rva005CB260
+{
+public:
+	void rva005CB260();
+};
+
 struct RadarWindowOverrideInner
 {
 	char m_pad[ 0x60 ];
@@ -31,6 +37,8 @@ struct RadarWindowOverrideInner
 	char m_pad68[ 0x10 ];
 	Rva00524A4C *m_78;
 	bool m_7C;
+	char m_pad7D[ 0x4B ];
+	Rva005CB260 *m_C8;
 };
 
 class RadarWindowOverrideSource
@@ -40,6 +48,7 @@ public:
 	GameWindow *getOverrideWindow( void ) const;
 	bool rva002D35E6( void ) const;
 	void rva002D35F2( void );
+	void rva002D370A( void );
 	void rva002D3615( bool value );
 
 private:
@@ -73,4 +82,15 @@ void RadarWindowOverrideSource::rva002D3615( bool value )
 {
 	m_inner->m_7C = value;
 	setHideScroll();
+}
+
+// ?rva002D370A@RadarWindowOverrideSource@@QAEXXZ @0x002D370A 19B, call sites
+// 0x0031E10A 0x0031E36C plus a jmp at 0x00405AC3. Tail-calls the pinned
+// Rva005CB260 method (0x005CB260) on the inner object's +0xC8 pointer when
+// set; retail passes that pointer in ecx, so it is the call's this.
+void RadarWindowOverrideSource::rva002D370A( void )
+{
+	Rva005CB260 *p = m_inner->m_C8;
+	if (p)
+		p->rva005CB260();
 }
