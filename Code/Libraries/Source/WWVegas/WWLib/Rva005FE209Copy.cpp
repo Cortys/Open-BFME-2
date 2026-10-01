@@ -12,6 +12,7 @@ struct BfmeContainerRecord005FDEC7 {
 
 namespace _STL {
 struct random_access_iterator_tag {};
+template <class Type> class allocator {};
 template <class InputIter, class OutputIter, class Distance>
 OutputIter __copy(InputIter first, InputIter last, OutputIter result, const random_access_iterator_tag &tag, Distance *distance);
 template <class InputIter, class OutputIter>
@@ -20,6 +21,27 @@ OutputIter __copy(InputIter first, InputIter last, OutputIter result, const rand
     random_access_iterator_tag local;
     return __copy(first, last, result, local, (int *)0);
 }
+template <class ForwardIter>
+void _Destroy(ForwardIter first, ForwardIter last);
+template <class Type, class Allocator>
+class vector {
+public:
+    typedef Type *iterator;
+    iterator erase(iterator first, iterator last);
+private:
+    iterator m_start;
+    iterator m_finish;
+    iterator m_endOfStorage;
+};
 }
 
 template BfmeContainerRecord005FDEC7 *_STL::__copy<BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *>(BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *, const _STL::random_access_iterator_tag &);
+
+_STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> >::iterator
+_STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> >::erase(iterator first, iterator last)
+{
+    iterator new_finish = _STL::__copy(last, m_finish, first, _STL::random_access_iterator_tag());
+    _STL::_Destroy(new_finish, m_finish);
+    m_finish = new_finish;
+    return first;
+}
