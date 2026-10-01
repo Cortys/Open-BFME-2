@@ -23,6 +23,12 @@ public:
 	void rva002245FF(int idx, const AsciiString &key);
 };
 
+class Rva002246B1
+{
+public:
+	int rva002246B1(const AsciiString *key);
+};
+
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 
@@ -36,6 +42,7 @@ class Rva00524021
 {
 public:
 	void rva00523F8C();
+	void rva00523FEC();
 private:
 	StringBase<char> *m_begin1;
 	StringBase<char> *m_end1;
@@ -57,5 +64,16 @@ void Rva00524021::rva00523F8C()
 		((Rva002245FF *)TheRva00222A8BTarget)->rva002245FF(*(int *)((char *)m_end2 - 8), *(const AsciiString *)((char *)m_end2 - 4));
 		--m_end2;
 		m_end2->~CameraMarker();
+	}
+}
+
+void Rva00524021::rva00523FEC()
+{
+	if (TheRva00222A8BTarget == 0)
+		return;
+	while (m_begin1 != m_end1) {
+		((Rva002246B1 *)TheRva00222A8BTarget)->rva002246B1((const AsciiString *)(m_end1 - 1));
+		--m_end1;
+		m_end1->clear();
 	}
 }
