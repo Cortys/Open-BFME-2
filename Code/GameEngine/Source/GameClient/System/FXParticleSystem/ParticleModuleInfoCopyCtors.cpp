@@ -348,3 +348,18 @@ Rva003AE465::Rva003AE465(const Rva003AE465 &other)
 	: Rva003AF50D(other)
 {
 }
+
+// ??0Rva003AE43F@@QAE@ABV0@@Z @0x003AE43F 38B: derived copy calling rowed 0x003AE465 then own 3 vptrs.
+// Evidence: calls 0x003AE465 then stores at +0/+0x14/+0x18 DIR32; primary 0x00C1CC28 second 0x00C1CC24 third 0x00C1C324; caller staticInitModules 0x003AE42D; unlocks none.
+// ??0Rva003AE43F@@QAE@ABV0@@Z @0x003AE43F present-unmatched
+class Rva003AE43F : public Rva003AE465
+{
+public:
+	Rva003AE43F(const Rva003AE43F &other);
+	virtual ~Rva003AE43F();
+};
+
+Rva003AE43F::Rva003AE43F(const Rva003AE43F &other)
+	: Rva003AE465(other)
+{
+}
