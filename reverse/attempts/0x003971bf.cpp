@@ -1,20 +1,22 @@
 // ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z
-// partial score=0.97 date=2026-09-28
+// partial score=0.98 date=2026-10-01
 // ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z
-// partial score=0.97 date=2026-09-28
+// partial score=0.98 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD
 //
 // ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z, retail 0x003971BF, 121 bytes.
 // Count loop over ObjectID ranges at +0x50/+0x74 via rowed findObjectByID,
-// rowed rva0028BCF4 and slot-3 bool. Near miss: only the alt-range emptiness
-// check differs (ours test ecx,0xFFFFFFFC vs retail sar ecx,2); all registers
-// match and size is 123 vs 121.
+// rowed rva0028BCF4 and slot-3 bool. Evidence: callers 0x003BE400 0x003C677C,
+// TheGameLogic 0x009FE78C, GameLogic::findObjectByID 0x00049DC5.
 
-typedef unsigned int ObjectID;
+enum ObjectID
+{
+	INVALID_OBJECT_ID = 0
+};
 
 class Object;
 class GameLogic;
-extern GameLogic *TheGameLogic;
+extern GameLogic *TheGameLogic; // ?TheGameLogic@@3PAVGameLogic@@A
 
 class Iface3971BF
 {
@@ -35,6 +37,7 @@ class Object
 {
 public:
 	void *rva0028BCF4() const;
+	void *m_pad00;
 	Tmpl3971BF *m_template04;
 };
 
@@ -70,7 +73,7 @@ bool Rva003971BF::rva003971BF(Arg3971BF *arg)
 	if (m_34 != 4)
 		return false;
 	ObjectID **range = reinterpret_cast<ObjectID **>(&m_begin50);
-	if (arg != 0 && (arg->m_flag110 & 1) != 0 && (((char *)m_end78 - (char *)m_begin74) >> 2) != 0)
+	if (arg != 0 && (arg->m_flag110 & 1) != 0 && (m_end78 - m_begin74) != 0)
 		range = reinterpret_cast<ObjectID **>(&m_begin74);
 	for (ObjectID *p = range[0]; p != range[1]; ++p)
 	{

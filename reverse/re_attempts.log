@@ -4679,3 +4679,4 @@ FUN_005f705a	0x001F705A	228	blocked	chain ParticleSystemManager plus SmartField 
 ?rva00107865@Rva00107865@@QAEXH@Z	0x00107865	252	blocked	WW3D shadow render allocator wall 9reg 7mem add-vs-pop dword-test-vs-byte plus ebx-ebp swap t=25 model=muse-12
 ?rva000A273F@Rva000A273F@@QAEHH@Z	0x000A273F	254	blocked	GUI 254B cdecl-vs-thiscall wall ecx-edx-plus-4stack plain-ret 4 virtuals t=10 model=muse-12
 ?framesUntilNext@ObjectSMCHelper@@AAEHXZ	0x004DE700	77	partial	cmovb-vs-jae-plus-mov plus head-in-edx-vs-eax plus best-in-ecx-vs-edx plus missing-reload-and-second-je 72v77 t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x004de700.cpp
+?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z	0x003971BF	121	partial	test-vs-sar-plus-mov-base-124v121-fixes-Object-plus4-and-W4-enum-t=30-model=muse-12 score=0.98 stash=reverse/attempts/0x003971bf.cpp
