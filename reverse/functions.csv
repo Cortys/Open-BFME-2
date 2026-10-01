@@ -45307,3 +45307,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0044FF6D@AICommandInterface@@QAEXPBUCoord3D@@H@Z,,0x0044FF6D,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,108B position shape AICMD 0x47 callers 0x450C92 0x450D82
 ?rva006E2A00@Rva006E2A00@@QAEPAV1@H@Z,,0x006E2A00,101,Code/Libraries/Source/Apt/Rva006E2A00Free.cpp,matched,chain via 0x006F7C10 Clear pool sizes 0x1C 0x14 8 flag bit0
 ?rva006F8060@Rva006F8060@@QAEPAV1@H@Z,,0x006F8060,91,Code/Libraries/Source/Apt/Rva006F8060Assert.cpp,matched,assert head defined then virtual slot 8 plus pooled free size 4
+?Rva005EF02FSet@@YAXHPAURva005EF02FOuter@@ABVUnicodeString@@@Z,,0x005EF02F,103,Code/GameEngine/Source/Common/Rva005EF02FApt.cpp,matched,format ArmyName via rowed plus bfmeSetText pin
