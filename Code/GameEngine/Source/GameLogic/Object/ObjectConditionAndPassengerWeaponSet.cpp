@@ -18,12 +18,20 @@
 // pointer to the word computed once (lea edi, [esi+0x150]) while the updates
 // address the member directly: the tests go through a const pointer to the
 // bits held in a local, the updates through the member itself.
+// Retail 0x00293955 (176 bytes) / 0x00293A05 (166 bytes): the same passenger
+// walk as 0x00293DAC/0x00293E08 clearing / setting the model condition given as
+// argument on every listed Object and on the container (variable index:
+// unsigned shr word index, mask hoisted out of the loop by cl).
 // Model-condition bits as in ObjectWeaponSetFlags.cpp (word array at +0x10C,
 // masked-word accessors).
 
 enum WeaponSetType
 {
 	WEAPONSET_NONE = 0
+};
+enum ModelConditionFlagType
+{
+	MODELCONDITION_INVALID = -1
 };
 class Rva002716Holder
 {
@@ -42,6 +50,18 @@ public:
 		m_words[bit >> 5] |= 1U << (bit & 0x1f);
 	}
 	void clear(int bit)
+	{
+		m_words[bit >> 5] &= ~(1U << (bit & 0x1f));
+	}
+	unsigned int testIndex(unsigned int bit) const
+	{
+		return m_words[bit >> 5] & (1U << (bit & 0x1f));
+	}
+	void setIndex(unsigned int bit)
+	{
+		m_words[bit >> 5] |= 1U << (bit & 0x1f);
+	}
+	void clearIndex(unsigned int bit)
 	{
 		m_words[bit >> 5] &= ~(1U << (bit & 0x1f));
 	}
@@ -91,6 +111,24 @@ public:
 	void rva00293DAC(WeaponSetType wst);
 	void rva00293E08(WeaponSetType wst);
 	void rva0029130C(int mode);
+	void rva00293955(ModelConditionFlagType mc);
+	void rva00293A05(ModelConditionFlagType mc);
+	__forceinline void setConditionIndex(ModelConditionFlagType mc)
+	{
+		if (m_conditionBits.testIndex(mc) == 0)
+		{
+			m_conditionBits.setIndex(mc);
+			rva0028AE6D();
+		}
+	}
+	__forceinline void clearConditionIndex(ModelConditionFlagType mc)
+	{
+		if (m_conditionBits.testIndex(mc) != 0)
+		{
+			m_conditionBits.clearIndex(mc);
+			rva0028AE6D();
+		}
+	}
 private:
 	unsigned char m_pad000[0x84];
 	Rva002716Holder *m_84; // +0x84
@@ -167,5 +205,37 @@ void Object::rva0029130C(int mode)
 	{
 		if (bits->test(547) == 0) { m_conditionBits.set(547); rva0028AE6D(); }
 		if (bits->test(546)) { m_conditionBits.clear(546); rva0028AE6D(); }
+	}
+}
+void Object::rva00293955(ModelConditionFlagType mc)
+{
+	Object *top = rva002931F5(false);
+	if (top)
+	{
+		Rva00293DACIface *iface = (Rva00293DACIface *)top->rva0028C197();
+		if (iface)
+		{
+			Rva00293DACRange range;
+			iface->rva00293DACSlot66(&range);
+			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
+				node->m_object->clearConditionIndex(mc);
+			top->clearConditionIndex(mc);
+		}
+	}
+}
+void Object::rva00293A05(ModelConditionFlagType mc)
+{
+	Object *top = rva002931F5(false);
+	if (top)
+	{
+		Rva00293DACIface *iface = (Rva00293DACIface *)top->rva0028C197();
+		if (iface)
+		{
+			Rva00293DACRange range;
+			iface->rva00293DACSlot66(&range);
+			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
+				node->m_object->setConditionIndex(mc);
+			top->setConditionIndex(mc);
+		}
 	}
 }
