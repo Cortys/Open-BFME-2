@@ -80,6 +80,7 @@ public:
 	Player *getPlayerFromMask(PlayerMaskType mask);
 	Player *getEachPlayerFromMask(PlayerMaskType &maskToAdjust);
 	int rva002A7C0B(bool flag);
+	int rva002A7D30();
 
 private:
 	unsigned char m_pad[0x14];
@@ -158,4 +159,17 @@ int PlayerList::rva002A7C0B(bool flag)
 		count++;
 	}
 	return count;
+}
+
+int PlayerList::rva002A7D30()
+{
+	int mask = 0;
+	for (int i = 0; i < m_playerCount; i++)
+	{
+		Player *player = getNthPlayer(i);
+		if (!player)
+			continue;
+		mask |= player->getPlayerMask();
+	}
+	return mask;
 }
