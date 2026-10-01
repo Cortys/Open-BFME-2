@@ -6850,3 +6850,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??$__copy_ptrs@PAUBfmeStringRecord005DDD40@@PAU1@@_STL@@YAPAUBfmeStringRecord005DDD40@@PAU1@00ABU__false_type@0@@Z,0x0038151E,by-ref spelling of rowed by-value wrapper at same address ICF identical 29B via copy 0x005DD714 called by erase 0x00381B1F
 ?clear@Rva00180023@@QAEXXZ,0x0004D75B,fold twin of BfmeResetTextureRef clear; generic 4B holder Release via 0x61ED10 then zero; called by Rva00180023 assign 0x0017FF45 on type mismatch
 ?rva00262176@Rva003638BA@@QAE_NXZ,0x00262176,pinned for AIUpdateInterface
+?rva0035033F@AIStateMachine@@QAEXXZ,0x0035033F,AIStateMachine temporary-state exit called with the machine as this from slots 5/6 of the AIStateMachine vtable 0x00C14CD0 (clear 0x00352B41 and resetToDefaultState 0x00350392) when +0x50 is set; name by address
