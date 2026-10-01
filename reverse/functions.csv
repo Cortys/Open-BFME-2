@@ -46726,3 +46726,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva_00409810@Rva00409850SubObject@@QAEXABUBlock3@@@Z,,0x00362675,30,Code/GameEngine/Source/Common/Bfme/Rva00409930SlotArray.cpp,matched,inlined Block3 copy via rowed setPos same TU
 ?Rva002AAC9EEqual@@YAHPBURva002AAC9ERange@@0@Z,,0x002AAC9E,61,Code/Libraries/Source/WWVegas/WWLib/Rva002AAC9EEqual.cpp,matched,float-range equal via size xor plus Rva002AA32FEqual caller 0x002ADC03
 ?rva002AA191@Rva002AA191@@QAEHPBVObject@@@Z,,0x002AA191,46,Code/GameEngine/Source/Common/Rva002AA191Find.cpp,matched,10-slot find via Rva004D6BCD caller 0x00273C6C unblocks 0x00273C47
+?rva0056B76D@Rva0056B76D@@QAE_NE@Z,,0x0056B76D,51,Code/GameEngine/Source/Common/Rva0056B76D.cpp,matched,leaf predicate over 0x50-0x53 with flags byte
