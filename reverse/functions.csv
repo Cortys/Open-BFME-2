@@ -45245,3 +45245,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000869CF@Rva000869CF@@QAEPAMXZ,,0x000869CF,79,Code/GameEngine/Source/GameClient/Rva000869CFReset.cpp,matched,zero-init returning vec pointer callers 0x00088D0A 0x00086F56
 ?Rva002B2275Get@@YAHPAURva002B2275Obj@@PAX@Z,,0x002B2275,24,Code/GameEngine/Source/Common/Rva002B2275Get.cpp,matched,slot 0x94 forward DelayedEventType callers 0x002BB4EF 0x002BB5B4
 ?Rva002B2435Get@@YAHPAURva002B2435Obj@@PAX@Z,,0x002B2435,24,Code/GameEngine/Source/Common/Rva002B2435Get.cpp,matched,slot 0x94 forward LivingWorldTurnPhase callers 0x002BB444 0x002BB451
+?Rva002B24F0Get@@YAHPAURva002B24F0Obj@@PAX@Z,,0x002B24F0,24,Code/GameEngine/Source/Common/Rva002B24F0Get.cpp,matched,slot 0x94 forward LivingWorldRegionVictoryFlags callers 0x002B9C35 0x002B9CDF
