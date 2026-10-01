@@ -46381,3 +46381,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003AE56F@@QAE@ABV0@@Z,,0x003AE56F,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE595 plus own 3 vptrs
 ?rva001E431E@Rva001E431E@@QAEXPBH@Z,,0x001E431E,44,Code/GameEngine/Source/Common/Rva001E431EInit.cpp,matched,zero 0x4C local via ji thunk then Object rva0028CFB2
 ??1Rva00415366@@QAE@XZ,,0x00415366,57,Code/GameEngine/Source/GameClient/Rva00415366Dtor.cpp,matched,hash dtor via rowed clear null-guarded free
+?Rva00511F73Run@@YAXXZ,,0x00511F73,141,Code/GameEngine/Source/GameClient/Rva00511F73.cpp,matched,calls Save StringBase rva erase with AptMessenger strings
