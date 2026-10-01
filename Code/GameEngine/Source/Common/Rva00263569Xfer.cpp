@@ -6,21 +6,23 @@
 // then loop 2 via XferGuardTargetType. From banked stash 0x00263569 (score
 // 0.93): register allocation ebx-vs-edi. Evidence: callee 0x0060C36E rowed
 // plus pins 0x00629094 and 0x00305E5A rowed; caller at 0x00268024;
-// globals g_guardTargetTypeThrowInfo in use.
+// XferException's throw information in use.
 class Xfer;
 
 void __cdecl XferGuardTargetType(Xfer *xfer, int *value);
 
-struct BfmeFormattedText
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	char *text;
 	int tag;
 };
 
-extern "C" BfmeFormattedText *__cdecl bfmeFormatText(BfmeFormattedText *result, int tag, const char *format, ...);
-void __stdcall _CxxThrowException(void *obj, void *info);
 
-extern int g_guardTargetTypeThrowInfo;
 
 class Xfer
 {
@@ -64,9 +66,7 @@ Xfer *__cdecl Rva00263569Xfer(Xfer *xfer, int *values)
 	Xfer *x = xfer;
 	x->xferVersion(&version);
 	if (version != 2) {
-		BfmeFormattedText tmp;
-		bfmeFormatText(&tmp, 0, 0);
-		_CxxThrowException(&tmp, &g_guardTargetTypeThrowInfo);
+		throw XferException(0, 0);
 	}
 	int *p = values;
 	int count = 2;

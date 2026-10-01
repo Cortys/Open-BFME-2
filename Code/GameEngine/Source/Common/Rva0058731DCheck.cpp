@@ -5,18 +5,19 @@
 // stride-8 argument and return the host.
 // Evidence: callers 0x00588B51; throw idiom plus slot-N virtual pattern from
 // Code/Libraries/Source/xfer/xfer_load.cpp; rowed _bfmeFormatText 0x0060C36E
-// plus pinned _CxxThrowException 0x00629094 plus g_guardTargetTypeThrowInfo.
+// plus pinned _CxxThrowException 0x00629094 plus XferException's throw information.
 // Neighbours 0x00587311 0x00587375.
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(
-	XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 class Rva0058731DHost
 {
@@ -61,9 +62,7 @@ Rva0058731DHost *Rva0058731DCheck(Rva0058731DHost *host, int base)
 	host->slot30(&count);
 	if (count != 4)
 	{
-		XferException error;
-		bfmeFormatText(&error, 0, 0);
-		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(0, 0);
 	}
 	int value = base;
 	do

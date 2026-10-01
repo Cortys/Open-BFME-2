@@ -1,5 +1,5 @@
 // cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP=
-// ?Rva002DBD05Get@@YAPAVRva002DBD05@@PAV1@PAD@Z @0x002DBD05 95B: guard index via vtable +0x78 then throw formatted on 0x10 else loop 16x via +0x88. Evidence: packet disasm with rowed _bfmeFormatText 0x0060C36E and pin _CxxThrowException 0x00629094 and globals g_guardTargetTypeThrowInfo.
+// ?Rva002DBD05Get@@YAPAVRva002DBD05@@PAV1@PAD@Z @0x002DBD05 95B: guard index via vtable +0x78 then throw formatted on 0x10 else loop 16x via +0x88. Evidence: packet disasm with rowed _bfmeFormatText 0x0060C36E and pin _CxxThrowException 0x00629094 and XferException's throw information.
 class Rva002DBD05
 {
 public:
@@ -40,24 +40,24 @@ public:
 	virtual void unk88(void *p);
 };
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 Rva002DBD05 * __cdecl Rva002DBD05Get(Rva002DBD05 *obj, char *base)
 {
 	int idx = 0x10;
 	obj->unk78(&idx);
 	if (idx != 0x10) {
-		XferException err;
-		bfmeFormatText(&err, 0, 0);
-		_CxxThrowException(&err, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(0, 0);
 	}
 	for (unsigned int i = 0; i < 0x10; ++i) {
 		obj->unk88(base + i);

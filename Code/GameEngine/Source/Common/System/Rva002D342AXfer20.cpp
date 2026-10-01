@@ -1,7 +1,7 @@
 // cl: /O1
 // ?Rva002D342AXfer20@@YAPAVXfer@@PAV1@PA_N@Z @ 0x002D342A 95B
 // Free Xfer helper that checks a uint count of 20 through slot 30 then moves twenty bools through slot 36.
-// Evidence: same shape as rowed Rva0060BC53Xfer3 0x0060BC53 (uint count check plus loop plus XferException plus bfmeFormatText plus g_guardTargetTypeThrowInfo)
+// Evidence: same shape as rowed Rva0060BC53Xfer3 0x0060BC53 (uint count check plus loop plus XferException plus bfmeFormatText plus XferException's throw information)
 // plus slot map from Xfer.cpp reverse order (slot 30 uint slot 36 bool) plus caller 0x002D64A8 plus prev Rva002D337FThunk /O1 plus next Rva002D3489Find.
 class AsciiString;
 class UnicodeString;
@@ -21,15 +21,17 @@ struct RGBAColorInt;
 class Snapshot;
 struct XferUnknown11;
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 class Xfer
 {
@@ -85,9 +87,7 @@ Xfer *__cdecl Rva002D342AXfer20(Xfer *xfer, bool *data)
 	xfer->operator==(count);
 	if (count != 20)
 	{
-		XferException err;
-		bfmeFormatText(&err, 0, 0);
-		_CxxThrowException(&err, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(0, 0);
 	}
 	for (unsigned int i = 0; i < 20; ++i)
 	{

@@ -106,16 +106,17 @@ protected:
 	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
 };
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	char *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(
-	XferException *result, int tag, const char *format, ...);
-extern int g_guardTargetTypeThrowInfo;
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 class ObjectTypes
 {
@@ -139,9 +140,7 @@ void ObjectTypes::xfer(Xfer *xfer)
 			*xfer == *p;
 	} else {
 		if (!m_objectTypes.empty()) {
-			XferException error;
-			bfmeFormatText(&error, 5, (const char *)0);
-			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+			throw XferException(5, (const char *)0);
 		}
 		AsciiString tmp;
 		for (unsigned short i = 0; i < count; ++i) {

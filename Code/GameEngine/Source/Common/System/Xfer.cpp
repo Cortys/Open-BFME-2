@@ -166,15 +166,17 @@ private:
     unsigned short *m_text;
 };
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 // The retail vtable at 0x00BBB910 is 39 slots wide and the primitive transfer
 // operators call slot 38 (0x98) through it, so every preceding slot has to be
@@ -476,9 +478,7 @@ Xfer &Xfer::XferEnum(const char *name, void *data, unsigned int size)
 {
     if (size == 0 || size > 4)
     {
-        XferException error;
-        bfmeFormatText(&error, 4, 0);
-        _CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+        throw XferException(4, 0);
     }
     switch (size)
     {

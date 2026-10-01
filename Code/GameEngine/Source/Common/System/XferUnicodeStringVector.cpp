@@ -70,15 +70,17 @@ public:
 	virtual Xfer &xferUnsignedInt(UnsignedInt &value);
 };
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	char *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-extern int g_guardTargetTypeThrowInfo;
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 namespace _STL {
 template <> void _Construct<UnicodeString, UnicodeString>(UnicodeString *, const UnicodeString &);
@@ -105,9 +107,7 @@ Xfer *xferUnicodeStringVector(Xfer *xfer, UnicodeStringVector *vec)
 		}
 	} else {
 		if (!vec->empty()) {
-			XferException error;
-			bfmeFormatText(&error, 4, "Vector must be empty on load");
-			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+			throw XferException(4, "Vector must be empty on load");
 		}
 		vec->reserve(count);
 		UnicodeString value;

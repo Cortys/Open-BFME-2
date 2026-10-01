@@ -2,16 +2,17 @@
 // Save-side stream transfer and block finalization recovered under their
 // reciprocal WorldBuilder TU.
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(
-	XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 class BfmeByteStream
 {
@@ -69,9 +70,7 @@ void XferSave::XferEnum(void *context, const void *bytes, unsigned int count)
 	{
 		if (m_stream->write(&context, 4) != 4)
 		{
-			XferException error;
-			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+			throw XferException(1, 0);
 		}
 	}
 
@@ -79,9 +78,7 @@ void XferSave::XferEnum(void *context, const void *bytes, unsigned int count)
 	{
 		if (m_stream->write(block, static_cast<int>(n)) != static_cast<int>(n))
 		{
-			XferException error;
-			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+			throw XferException(1, 0);
 		}
 	}
 }
@@ -98,9 +95,7 @@ void XferSave::endBlock()
 		int marker = 0x45424c4b;
 		if (m_stream->write(&marker, 4) != 4)
 		{
-			XferException error;
-			bfmeFormatText(&error, 1, 0);
-			_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+			throw XferException(1, 0);
 		}
 	}
 
@@ -110,29 +105,21 @@ void XferSave::endBlock()
 	int position = m_stream->skip(0, 1);
 	if (position == -1)
 	{
-		XferException error;
-		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(1, 0);
 	}
 
 	if (m_stream->skip(blockSize, 0) != blockSize)
 	{
-		XferException error;
-		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(1, 0);
 	}
 
 	if (m_stream->write(&position, 4) != 4)
 	{
-		XferException error;
-		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(1, 0);
 	}
 
 	if (m_stream->skip(position, 0) != position)
 	{
-		XferException error;
-		bfmeFormatText(&error, 1, 0);
-		_CxxThrowException(&error, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(1, 0);
 	}
 }

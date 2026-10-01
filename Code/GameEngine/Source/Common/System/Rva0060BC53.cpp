@@ -2,7 +2,7 @@
 // ?Rva0060BC53Xfer3@@YAPAVXfer@@PAV1@PAH@Z @0x0060BC53 88B
 // Free Xfer helper that checks a uint count of 3 through slot 30 then moves three ints through slot 31.
 // Evidence: Xfer.cpp vtable with Ascii slot 27 plus Unicode slot 26 proves reverse order so slot 30 is uint plus slot 31 is int
-// plus XferException plus bfmeFormatText plus g_guardTargetTypeThrowInfo from Xfer.cpp plus caller 0x0060BD31 passes 12B stack array
+// plus XferException plus bfmeFormatText plus XferException's throw information from Xfer.cpp plus caller 0x0060BD31 passes 12B stack array
 // plus prev XferEnum 0x0060BBD5 plus next PooledString compare 0x0060BCAB both /O1.
 class AsciiString;
 class UnicodeString;
@@ -22,15 +22,17 @@ struct RGBAColorInt;
 class Snapshot;
 struct XferUnknown11;
 
-struct XferException
+class XferException
 {
+public:
+	XferException(int tag, const char *format, ...);
+	XferException(const XferException &that);
+	~XferException();
+
 	void *text;
 	int tag;
 };
 
-extern "C" XferException *__cdecl bfmeFormatText(XferException *result, int tag, const char *format, ...);
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-extern int g_guardTargetTypeThrowInfo;
 
 class Xfer
 {
@@ -86,9 +88,7 @@ Xfer *__cdecl Rva0060BC53Xfer3(Xfer *xfer, int *data)
 	xfer->operator==(count);
 	if (count != 3)
 	{
-		XferException err;
-		bfmeFormatText(&err, 0, 0);
-		_CxxThrowException(&err, (const _s__ThrowInfo *)&g_guardTargetTypeThrowInfo); __assume(0);
+		throw XferException(0, 0);
 	}
 	int *p = data;
 	int n = 3;
