@@ -5149,3 +5149,5 @@ FUN_0091e471	0x0051E471	63	blocked	EH dtor-like with StringBase array no donor c
 ?rva0031B53D@Rva0031B53D@@QAEEXZ	0x0031B53D	102	blocked	lea to eax not ecx missing mov eax ecx and mov ecx esi tried uchar bool O2 unnamed namedtype t=15 model=muse-09 (stash 0.95 kept)
 ??0Rva00985E4@@QAE@XZ	0x0030AFC4	55	partial	xor eax before vtable vs retail after; grouping fixed via volatile init-list t=18 model=muse-09 score=0.96 stash=reverse/attempts/0x0030afc4.cpp
 ?rva003B372D@Rva003B372D@@QAEXPAVDataChunkOutput@@@Z	0x003B372D	155	blocked	structural wall ours 172 vs retail 155 (+17) with 10 regions; early-return concat loop vs retail pop-ecx plus push-esi xor-esi prologue and shr not sar plus bl-flag shape; register and stack-slot allocation differs throughout t=5 model=muse-spark
+?rva000EF154@Rva000EF154@@QAEXHHM@Z	0x000EF154	278	blocked	EH SSE GeometryInfo loop with unknown owner layout and 3 float globals t=12 model=muse-08
+?rva000EF63F@Rva000EF63F@@QAEHHHHHH@Z	0x000EF63F	354	blocked	D3D COM texture lock copy with 5 vtable calls and unknown owner layout t=8 model=muse-08
