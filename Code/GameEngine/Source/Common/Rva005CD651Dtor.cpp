@@ -22,6 +22,7 @@ struct Rva005CD651 : public CreateAHeroData
 {
 	virtual ~Rva005CD651();
 	Rva005CD651(int v);
+	void rva005CD6EC(int unused);
 	int m_4;
 	Holder005CD6A9 *m_8;
 	bool m_C;
@@ -31,4 +32,11 @@ Rva005CD651::~Rva005CD651()
 	Rva0052340DEnable();
 	if (m_8 != 0)
 		m_8->m_4.rva002B7250(this);
+}
+void Rva005CD651::rva005CD6EC(int unused)
+{
+	(void)unused;
+	Rva0052340DEnable();
+	m_8->m_4.rva002B7250(this);
+	m_8 = 0;
 }
