@@ -10,6 +10,18 @@ public:
         AnimSet(const AnimSet &);
     };
 };
-GenericObjectCreationNugget::AnimSet::AnimSet(const AnimSet &other)
+inline GenericObjectCreationNugget::AnimSet::AnimSet(const AnimSet &other)
     : m_animInitial(other.m_animInitial), m_animFlying(other.m_animFlying),
       m_animFinal(other.m_animFinal) {}
+
+// AnimSet copy is a header inline elsewhere: other units emit select-any
+// copies, so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitGenericObjectCreationNuggetAnimSetCopy@@YAXPAUAnimSet@GenericObjectCreationNugget@@PBU12@@Z present-unmatched
+void bfmeEmitGenericObjectCreationNuggetAnimSetCopy(GenericObjectCreationNugget::AnimSet *p, const GenericObjectCreationNugget::AnimSet *q)
+{
+	p->AnimSet::AnimSet(*q);
+}
+#pragma inline_depth()
