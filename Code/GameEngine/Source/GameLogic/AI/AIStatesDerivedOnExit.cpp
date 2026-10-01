@@ -14,6 +14,13 @@
 // current locomotor's precise-z flag (bit 3 of Locomotor+0x44, the ZH
 // PRECISE_Z_POS position; AI+0x1F0 is the current locomotor). BFME2 drops the
 // ZH setUltraAccurate(false) call.
+// AIAttackFollowWaypointPathState::onEnter/onExit, retail 0x0034F1C4 (29
+// bytes) and 0x0034A19F (28 bytes): slots 4/5 of vtable 0x00C13638 (name getter
+// AIAttackFollowWaypointPathState, a class BFME1 rows by ctor, dtor and
+// update); m_attackFollowMachine at +0x68 (BFME1 +0x6C) is cleared and set to
+// AI_IDLE before the base onEnter (pinned 0x0034ED7B, tail jump), and set to
+// AI_IDLE before the base onExit, as Zero Hour AIAttackMoveToState does with
+// its attack-move machine. Machine slots 5/8 are clear/setState.
 enum StateExitType
 {
 	EXIT_NORMAL = 0
@@ -67,7 +74,9 @@ class StateMachine
 public:
 	virtual ~StateMachine();
 	virtual void slot01(); virtual void slot02(); virtual void slot03();
-	virtual void slot04(); virtual void slot05(); virtual void slot06();
+	virtual void slot04();
+	virtual void clear();
+	virtual void slot06();
 	virtual void slot07();
 	virtual StateReturnType setState(StateID newStateID);
 	Object *getOwner() const { return m_owner; }
@@ -113,6 +122,7 @@ void AIAttackMoveToState::onExit(StateExitType status)
 class AIFollowWaypointPathState : public AIInternalMoveToState
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 };
 void AIFollowWaypointPathState::onExit(StateExitType status)
@@ -123,4 +133,24 @@ void AIFollowWaypointPathState::onExit(StateExitType status)
 	AIUpdateInterface *ai = getMachineOwner()->getAI();
 	if (ai && ai->getCurLocomotor())
 		ai->getCurLocomotor()->setUsePreciseZPos(false);
+}
+class AIAttackFollowWaypointPathState : public AIFollowWaypointPathState
+{
+public:
+	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType status);
+private:
+	unsigned char m_pad1C[0x68 - 0x1C];
+	StateMachine *m_attackFollowMachine; // +0x68
+};
+StateReturnType AIAttackFollowWaypointPathState::onEnter()
+{
+	m_attackFollowMachine->clear();
+	m_attackFollowMachine->setState(AI_IDLE);
+	return AIFollowWaypointPathState::onEnter();
+}
+void AIAttackFollowWaypointPathState::onExit(StateExitType status)
+{
+	m_attackFollowMachine->setState(AI_IDLE);
+	AIFollowWaypointPathState::onExit(status);
 }
