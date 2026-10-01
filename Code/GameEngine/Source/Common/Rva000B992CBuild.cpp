@@ -4,7 +4,9 @@
 
 #include "ascii_string.h"
 
-extern const char g_Rva0107301CEmptyString[];
+// Matched DIR32 references place this empty string at VA 0x00BBAC1C; its
+// retail byte is 0x00. This TU already uses the string in AsciiString code.
+extern const char g_Rva0107301CEmptyString[] = { 0 };
 extern "C" __declspec(dllimport) int __cdecl sprintf(char *buf, const char *fmt, ...);
 
 AsciiString Rva000B992CBuild(const AsciiString &a1, const AsciiString &a2, int dummy, bool flag, int num)
