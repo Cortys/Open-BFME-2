@@ -29,6 +29,7 @@ class Rva000B3C61
 public:
 	void rva000B3C61(int index);
 	void rva000B3BCF(int index, RefCounted *newPtr, unsigned char b19, int i10, float f0C, float f04, float fMid, unsigned char b18, int i14);
+	void rva000B3CCF(int dest, int src);
 private:
 	char m_pad[0x110];
 	Rva000B3C61Elem m_items[32];
@@ -75,4 +76,13 @@ void Rva000B3C61::rva000B3BCF(int index, RefCounted *newPtr, unsigned char b19, 
 	m_items[index].m_f04 = f04;
 	*(float *)((char *)this + (index + 10) * 28) = fMid;
 	m_items[index].m_19 = b19;
+}
+
+// ?rva000B3CCF@Rva000B3C61@@QAEXHH@Z @0x000B3CCF 106B. Chain lane: move item
+// from src slot to dest via setter then clear src. Evidence: calls 0x000B3BCF
+// plus 0x000B3C61, same 0x1c array and middle.
+void Rva000B3C61::rva000B3CCF(int dest, int src)
+{
+	rva000B3BCF(dest, m_items[src].m_ptr, m_items[src].m_19, m_items[src].m_10, m_items[src].m_f0C, m_items[src].m_f04, *(float *)((char *)this + (src + 10) * 28), m_items[src].m_18, m_items[src].m_14);
+	rva000B3C61(src);
 }
