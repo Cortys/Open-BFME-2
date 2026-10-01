@@ -45240,3 +45240,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005361B6@UserPreferences@@QAEXVAsciiString@@@Z,,0x005361B6,89,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StringBase PBD ctor 0x00037BA0 slot 0x30 FavoriteSide v12 gap same TU unlock
 ?rva0053620F@UserPreferences@@QAE?AVAsciiString@@XZ,,0x0053620F,92,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,FavoriteSide getAsciiString slot 0x20 TheEmptyString gap same TU unlock
 ?rva0035B010@Rva0035AFE4@@QAE_NPAVPlayer@@PAVObject@@@Z,,0x0035B010,46,Code/GameEngine/Source/Common/Rva0035B010.cpp,matched,chain via OR-null plus Team 0x304 and mask pred
+?rva0035B513@Rva0035B513@@QAEPAUBfmeFixedStorage128@@PAU2@@Z,,0x0035B513,93,Code/GameEngine/Source/Common/Rva0035B513.cpp,matched,unlock via clear80 plus upgrade bitset plus copy
