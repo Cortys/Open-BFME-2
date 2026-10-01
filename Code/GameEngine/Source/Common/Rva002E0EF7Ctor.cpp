@@ -1,7 +1,3 @@
-// ??0Rva002E0EF7@@QAE@XZ
-// partial score=0.92 date=2026-09-29
-// ??0Rva002E0EF7@@QAE@XZ
-// partial score=0.92 date=2026-09-29
 // cl: /O1
 //
 // ??0Rva002E0EF7@@QAE@XZ @0x002E0EF7 39B.
@@ -23,10 +19,8 @@ struct Rva002E0EF7
 	Rva002E0EF7();
 };
 
-void Rva002E0EF7::anchor()
-{
-}
-
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 Rva002E0EF7::Rva002E0EF7()
 {
 	m_04 = 0;
@@ -34,6 +28,7 @@ Rva002E0EF7::Rva002E0EF7()
 	m_0C = 0;
 	m_10 = 0;
 	m_14 = 0;
+	_ReadWriteBarrier();
 	m_1C = -1;
 	m_18 = 0;
 	m_20 = 0;
