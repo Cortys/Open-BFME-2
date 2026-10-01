@@ -4796,3 +4796,4 @@ FUN_0044E55B	0x0004E55B	71	blocked	custom reg convention: y arrives in ESI with 
 ?rva001FAA8D@Rva001FAA8D@@QAEXPAVXfer@@@Z	0x001FAA8D	145	partial	xor-eax-vs-and-mem-zero plus esi-vs-eax ps load plus missing jmp-mov-eax-esi t=45 model=muse-06 score=0.97 stash=reverse/attempts/0x001faa8d.cpp
 ?rva004BE3EF@Rva004BE3EF@@QAEXXZ	0x004BE3EF	142	partial	extra implicit handle dtor plus or-state before vs after t=40 model=muse-06 score=0.94 stash=reverse/attempts/0x004be3ef.cpp
 ?Rva001F7558Get@@YAXPAX0@Z	0x001F7558	243	blocked	free function no callers plus smartptr handle slot reuse plus slot88 sig unclear t=20 model=muse-06
+FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 ready t=5 model=muse-11
