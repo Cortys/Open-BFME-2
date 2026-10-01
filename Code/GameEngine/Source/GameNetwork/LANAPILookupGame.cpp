@@ -27,16 +27,13 @@ private:
 	void *m_data;
 };
 
-class UnicodeString : private StringBase<WideChar>
+class UnicodeString : public StringBase<WideChar>
 {
 public:
 	__forceinline UnicodeString( const UnicodeString &other )
 		: StringBase<WideChar>( other ) {}
 	~UnicodeString() {}
-	int compare( const UnicodeString &other ) const
-	{
-		return StringBase<WideChar>::compare( other );
-	}
+	int compare( const UnicodeString &other ) const;
 };
 
 class LANGameInfo
@@ -132,7 +129,7 @@ protected:
 LANGameInfo *LANAPI::LookupGame( UnicodeString name )
 {
 	LANGameInfo *game = m_games;
-	while( game && game->getName().compare( name ) != 0 )
+	while( game && ((const StringBase<WideChar> &)game->getName()).compare( (const StringBase<WideChar> &)name ) != 0 )
 		game = game->m_next;
 	return game;
 }
