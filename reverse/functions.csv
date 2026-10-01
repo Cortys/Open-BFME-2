@@ -46576,3 +46576,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ,,0x00589F09,258,Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdateUpdate.cpp,matched,DockUpdate update via vector bool and findObjectByID
 ?Rva00548C1ACleanup@@YAXXZ,,0x00548C1A,22,Code/GameEngine/Source/Common/Rva00548C1ACleanup.cpp,matched,loop Free 0..8 then Close via rowed callees plus caller 0x0035BEDF
 ?rva005F8FCC@Rva005F8FCC@@QAEPAXI@Z,,0x005F8FCC,34,Code/GameEngine/Source/Common/Rva005F8FCCDeleting.cpp,matched,deleting shape Release plus delete callers 6 LINK 1 file
+?rva00419BA5@Rva00419BA5@@QAEXXZ,,0x00419BA5,19,Code/GameEngine/Source/Common/Rva00419BA5.cpp,matched,virtual slot0 plus delete callers 4 LINK 1 file
