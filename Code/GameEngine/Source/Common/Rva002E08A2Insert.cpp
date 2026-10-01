@@ -109,3 +109,21 @@ void Rva002E1824Reinsert(void **base, void **end, void **out, void *value, void 
 	*out = *base;
 	Rva002E0E9DAdjustHeap(base, 0, (int)(end - base), value, extra);
 }
+
+// ?Rva002E184DMakeHeap@@YAXPAPAX0PAX@Z @0x002E184D 60B.
+// Heapify range: len = end-base; if len<2 return; for hole=(len-2)/2 down to
+// 0 call AdjustHeap(base, hole, len, base[hole], extra). Evidence: 5-push
+// cdecl call to rowed 0x002E0E9D; caller 0x002E1EF1; prev shares /O1.
+void Rva002E184DMakeHeap(void **base, void **end, void *extra)
+{
+	int len = (int)(end - base);
+	if (len < 2)
+		return;
+	int hole = (len - 2) / 2;
+	for (;;) {
+		Rva002E0E9DAdjustHeap(base, hole, len, base[hole], extra);
+		if (hole == 0)
+			break;
+		--hole;
+	}
+}
