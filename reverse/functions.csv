@@ -45811,3 +45811,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001EB6A5@Rva001EB6A5@@QAE_NPAURva001EB6A5Out@@@Z,,0x001EB6A5,89,Code/GameEngine/Source/Common/Rva001EB6A5Parse.cpp,matched,finish stash 0.93 direct m_0C plus add caller 0x001EB74B
 ?rva001EB74B@Rva001EB74B@@QAE_NPAURva001EB6A5Out@@@Z,,0x001EB74B,17,Code/GameEngine/Source/Common/Rva001EB74BCheck.cpp,matched,chain 0x001EB6A5 null false else tail caller 0x00521560
 ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z,,0x001EBCD8,62,Code/Libraries/Source/WWVegas/WWLib/Rva001EBCD8Erase.cpp,matched,erase-like 172B records via rowed __copy_ptrs callers 0x001EC63D 0x001EC859 0x001EC8C0
+??0Rva0040C351@@QAE@ABV0@@Z,,0x0040D688,121,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,copy ctor of Rva0040C351 via base copy plus member dual-vtable callers unclaimed

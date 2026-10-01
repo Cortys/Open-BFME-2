@@ -11,6 +11,7 @@ class Rva0037DF2C
 {
 public:
 	Rva0037DF2C();
+	Rva0037DF2C(const Rva0037DF2C &o);
 private:
 	char m_pad[0xac];
 };
@@ -24,6 +25,7 @@ class Rva0040C351 : public Rva0037DF2C
 {
 public:
 	Rva0040C351();
+	Rva0040C351(const Rva0040C351 &o);
 	void rva0040C5FA(class INI *ini);
 	void rva0040C430(const class Rva004E0632 *a);
 private:
@@ -74,6 +76,26 @@ Rva0040C351::Rva0040C351() : Rva0037DF2C()
 	m_c0 = 0;
 	m_c4 = 0;
 	m_c5 = 0;
+}
+
+// ??0Rva0040C351@@QAE@ABV0@@Z retail 0x0040D688 121B. Copy ctor of Rva0040C351:
+// base copy 0x001EB79E then same dual-vtable member pattern as default ctor
+// (m_ac() gives base 0xBC6F20 plus 0 which body overwrites with 0xC3945C,
+// this gets 0xC3944C), ints/bytes copied from source. Callers in unclaimed
+// 0x0040E96D 0x0040EAED 0x0040F34E 0x004E0BDC 0x004F7B6B 0x0059B1EC.
+extern const void *const g_00C3944C[];
+extern const void *const g_00C3945C[];
+Rva0040C351::Rva0040C351(const Rva0040C351 &o) : Rva0037DF2C(o), m_ac()
+{
+	*(const void **)this = g_00C3944C;
+	MemberAC *p = &m_ac;
+	p->m_vtable = (void *)g_00C3945C;
+	m_b4 = o.m_b4;
+	m_b8 = o.m_b8;
+	m_bc = o.m_bc;
+	m_c0 = o.m_c0;
+	m_c4 = o.m_c4;
+	m_c5 = o.m_c5;
 }
 
 void Rva0040C351::rva0040C5FA(INI *ini)
