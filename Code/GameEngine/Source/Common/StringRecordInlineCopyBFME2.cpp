@@ -255,7 +255,9 @@ struct BfmeStringRecord002CF550 {
     Rva002390CB ref;
     BfmeStringRecord002CF550(const BfmeStringRecord002CF550 &o);
 };
+#pragma inline_depth(0)
 inline BfmeStringRecord002CF550::BfmeStringRecord002CF550(const BfmeStringRecord002CF550 &o) : text(o.text), ref(o.ref) {}
+#pragma inline_depth()
 template void _STL::_Construct<BfmeStringRecord002CF550,BfmeStringRecord002CF550>(BfmeStringRecord002CF550*,const BfmeStringRecord002CF550&);
 
 // ??4BfmeStringRecord002602A6@@QAEAAU0@ABU0@@Z retail 0x002602A6 27B.
