@@ -5078,3 +5078,7 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva003E5563@Rva003E5563@@QAEXXZ	0x003E5563	36	partial	O1 34B vs 36B minus2; missing mov-eax-ecx plus this-in-ecx-vs-eax; self-copy plus store-reorder tried t=10 model=muse-03 score=0.94 stash=reverse/attempts/0x003e5563.cpp
 ?rva004EC66A@Rva004EC276@@QAEXXZ	0x004EC66A	150	blocked	EH x87 filter needs ICF triple-type local BfmeE16-base ModuleData-pushback uint-copy plus scope-table 0x00792880 t=10 model=muse-10
 ??0Rva004ECDC8@@QAE@I@Z	0x004ECDA7	33	partial	and-0 early at 0x9 vs retail late at 0x1A only scheduling left t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x004ecda7.cpp
+?rva002ABD93@Rva002ABD93@@QAEXABVAsciiString@@_N@Z	0x002ABD93	145	blocked	finish wall 0.9 no NEW idea t=2 model=muse-09
+?rva00395E53@Rva00395E53@@QAEPAXI@Z	0x00395E53	34	blocked	finish wall register-CSE no NEW idea t=15 model=muse-09
+?Rva003C0CEESet@@YIXHPAVObject@@_N@Z	0x003C0CEE	124	blocked	custom eax-edx-stack convention needs same-TU statics t=12 model=muse-09
+?rva003C0E32@ScriptActions@@IAEXABVAsciiString@@H@Z	0x003C0E32	85	partial	xor-test-je vs jmp plus vtable temp eax vs edx and mov ecx-eax split t=14 model=muse-09 score=0.93 stash=reverse/attempts/0x003c0e32.cpp
