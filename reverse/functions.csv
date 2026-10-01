@@ -45384,3 +45384,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?putObjectAtGarrisonPoint@GarrisonContain@@IAEXPAVObject@@HHH@Z,,0x00477DA1,175,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainPutObjectAtGarrisonPoint.cpp,matched,donor GarrisonContain plus remove layout plus TheGameLogic frame
 ?findConditionIndex@GarrisonContain@@IAEHXZ,,0x00477E50,50,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainFindConditionIndex.cpp,matched,donor findConditionIndex plus body offset and slot
 ??1Rva0057E3DB@@UAE@XZ,,0x0057E3DB,129,Code/GameEngine/Source/Common/Rva0057E3DBDtor.cpp,matched,MI dtor with member dtors via free Release MapMetaData
+?rva0057E9ED@Rva0057E97A@@QAEXIH@Z,,0x0057E9ED,34,Code/GameEngine/Source/Common/Rva0057E9ED.cpp,matched,bounded vector store via barrier reload
