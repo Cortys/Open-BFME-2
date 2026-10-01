@@ -6746,3 +6746,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?push_back@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEXABQAVRva00402F28Item@@@Z,0x004DFCB0,address read from the REL32 displacement at byte-matched body 0x00402FD8
 ??1Rva00402F28Item@@QAE@XZ,0x00402F23,address read from the REL32 displacement at byte-matched body 0x00402C4E
 ?erase@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEPAPAVRva00402F28Item@@PAPAV3@0@Z,0x0031BD55,address read from the REL32 displacement at byte-matched body 0x00402C4E
+?assign@Rva0036CA00Str@@QAEXABV1@@Z,0x00239099,address read from the REL32 displacement at byte-matched body 0x004030B6; named assign because the operator= spelling is already pinned at 0x000366F0

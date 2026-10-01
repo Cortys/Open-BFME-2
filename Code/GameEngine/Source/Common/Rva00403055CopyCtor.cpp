@@ -28,6 +28,7 @@ class Rva0036CA00Str
 	PoolMember *m_item;
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
+	void assign(const Rva0036CA00Str &other);
 	~Rva0036CA00Str()
 	{
 		if (m_item)
@@ -84,6 +85,7 @@ class Rva00403055
 public:
 	Rva00403055(const Rva00403055 &other);
 	~Rva00403055();
+	Rva00403055 &operator=(const Rva00403055 &other);
 	void clearItems();
 	void copyItems(const Rva00403055 &other);
 
@@ -130,4 +132,16 @@ Rva00402F28Item::Rva00402F28Item(const Rva00402F28Item &other)
 	m_58 = other.m_58;
 	m_59 = other.m_59;
 	m_5A = other.m_5A;
+}
+
+Rva00403055 &Rva00403055::operator=(const Rva00403055 &other)
+{
+	if (this != &other)
+	{
+		m_name = other.m_name;
+		m_at10.assign(other.m_at10);
+		m_at14.assign(other.m_at14);
+		copyItems(other);
+	}
+	return *this;
 }
