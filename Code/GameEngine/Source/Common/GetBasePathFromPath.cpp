@@ -45,7 +45,7 @@ class StringBase
 public:
 	const T *reverseFind(T c) const;
 	T *getBufferForRead(int length);
-	const T *str() const { return m_data ? &m_data->data[0] : (const T *)0x00BBAC1C; }
+	const T *str() const { return m_data ? &m_data->data[0] : (const T *)""; }
 
 private:
 	void releaseBuffer();

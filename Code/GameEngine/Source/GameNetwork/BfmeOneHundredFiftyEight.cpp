@@ -195,7 +195,7 @@ void BfmeThingZI::rva007F7DA0( Rva007E8810Message *msg )
 			*(int *)((char *)entry + 0x10) = 0;
 			*(unsigned char *)((char *)entry + 0x14) = 0;
 			*(int *)((char *)entry + 0x18) = 0;
-			((Rva00800290Buffer *)((char *)entry + 0x1c))->append( (const char *)0x00BBAC1C );
+			((Rva00800290Buffer *)((char *)entry + 0x1c))->append( "" );
 			entry->m_bfmeOther = 0;
 			entry->m_bfmeKey = 0;
 			*(char *)((char *)entry + 0x6c) = 0;

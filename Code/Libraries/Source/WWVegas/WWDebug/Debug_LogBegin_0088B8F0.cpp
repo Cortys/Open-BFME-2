@@ -97,7 +97,7 @@ Debug &Debug::LogBegin(const char *fileOrGroup)
     if (curFrameEntry->status==2 || curFrameEntry->status==3 ||
         curFrameEntry->status==0)
     {
-        StartOutput((const char *)0x00BBAC1C,10);
+        StartOutput("",10);
         ++curFrameEntry->hits;
 
         if (curType==1 &&

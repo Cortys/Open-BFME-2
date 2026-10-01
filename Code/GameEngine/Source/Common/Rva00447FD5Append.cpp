@@ -16,7 +16,7 @@ private:
 
 char *__cdecl Rva00447FD5Append(char *src, StringBase<char> *dst, char *limit)
 {
-	dst->set((const char *)0x00BBAC1C);
+	dst->set("");
 	if (limit != 0) {
 		if (src >= limit)
 			return src;

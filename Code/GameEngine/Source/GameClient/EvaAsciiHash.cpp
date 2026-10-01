@@ -20,6 +20,6 @@ namespace _STL
 unsigned int __stdcall Rva00055041AsciiHash(const AsciiString *name)
 {
 	const StringBase<char> *data = *(const StringBase<char> * const *)name;
-	const char *chars = data != 0 ? (const char *)data + 8 : (const char *)0x00BBAC1C;
+	const char *chars = data != 0 ? (const char *)data + 8 : "";
 	return _STL::__stl_hash_string(chars);
 }
