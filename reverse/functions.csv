@@ -46365,3 +46365,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva005CCED5Insert@@YGPAPAURva004F711CObj@@PAPAU1@PAU1@PBVRva00468520@@@Z,,0x005CCED5,37,Code/GameEngine/Source/Common/Rva005CCED5Insert.cpp,matched,calls rowed Create then doubly-linked insert
 ??_GRva003AEEB3@@UAEPAXI@Z,,0x003AEEFC,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003AEEB3.cpp,matched,deleting dtor calls rowed 0x003A5817 plus delete 0x0002FD60
 ??1Rva003AE358@@UAE@XZ,,0x003AE358,41,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE358Dtor.cpp,matched,dtor restores three vptrs via guarded stores plus sibling V3 shape
+?rva000E00C0@Rva000E0123@@QAEXM@Z,,0x000E00C0,99,Code/GameEngine/Source/Common/Rva000E0123Width.cpp,matched,unlock sibling 0x000E0123 4x Set_Opacity rowed plus virt 0x1bc plus virt 0x5c plus callers
