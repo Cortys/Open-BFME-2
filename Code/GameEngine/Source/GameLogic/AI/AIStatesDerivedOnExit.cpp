@@ -114,7 +114,13 @@ public:
 };
 class AIMoveToState : public AIInternalMoveToState
 {
+public:
+	virtual void onExit(StateExitType status);
 };
+void AIMoveToState::onExit(StateExitType status)
+{
+	AIInternalMoveToState::onExit(status);
+}
 class AIAttackMoveToState : public AIMoveToState
 {
 public:
