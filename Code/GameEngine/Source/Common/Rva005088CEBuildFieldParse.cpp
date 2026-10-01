@@ -18,10 +18,7 @@ public:
 	void add(const FieldParse *entry, unsigned int index);
 };
 
-struct Rva00507552
-{
-	static void *opaqueCall();
-};
+int __cdecl Rva00507552Get();
 
 static const FieldParse s_table64180;
 
@@ -33,6 +30,6 @@ public:
 
 void Rva005088CE::buildFieldParse(MultiIniFieldParse &parse)
 {
-	parse.add((const FieldParse *)Rva00507552::opaqueCall(), 0);
+	parse.add((const FieldParse *)Rva00507552Get(), 0);
 	parse.add(&s_table64180, 0);
 }
