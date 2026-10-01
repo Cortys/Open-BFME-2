@@ -47,10 +47,17 @@ public:
 	virtual float f10();
 };
 
+struct Holder001F5401
+{
+	char m_pad[0x24];
+	float m_value;
+};
+
 class Rva001F553F
 {
 public:
 	float rva001F534C();
+	float rva001F5401();
 	float rva001F5445();
 	Coord3D *rva001F553F(Coord3D *out, unsigned int a, unsigned int b);
 
@@ -60,6 +67,7 @@ private:
 	char m_pad180[0x40];
 	Rva003AFB2A *m_1C0;
 	Rva001F534CHelper *m_1C4;
+	Holder001F5401 *m_1C8;
 };
 
 float Rva001F553F::rva001F534C()
@@ -68,6 +76,17 @@ float Rva001F553F::rva001F534C()
 	float v = 1.0f;
 	if (p != 0)
 		v = p->f10();
+	return v;
+}
+
+float Rva001F553F::rva001F5401()
+{
+	Holder001F5401 *p = m_1C8;
+	float v;
+	if (p != 0)
+		v = p->m_value;
+	else
+		v = 0.0f;
 	return v;
 }
 
