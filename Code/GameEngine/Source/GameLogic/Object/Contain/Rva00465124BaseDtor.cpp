@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /DNDEBUG
+// cl: /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ??1Rva00465124Base@@UAE@XZ, retail 0x00257481, 134 bytes.
 // Target evidence: the base ctor 0x00465124 installs vtable 0x00C43658, whose
@@ -8,20 +8,11 @@
 // order: +0x88 AsciiString vector (0x0002CC70), +0x4C (0x00256461), +0x48
 // (0x002572D7), +0x44 and +0x40 filter members (0x00360D26), then inline
 // null-checked Release_Ref (0x00050ED3) on the pointers at +0x3C and +0x38,
-// then the Snapshot vtable 0x00BBB554 store (trivial base inlined). Member
+// then the Snapshot vtable 0x00BBB554 store. Member
 // types other than the pinned callees are unrecovered; the owner class keeps
 // its address-derived name (donor-free).
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class OpaqueRefCounted
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // Identity: ModuleFactory registers this data class under "ModelConditionAudioLoopClientBehaviorModuleData" (addModule
 // pairs the name with this factory); formerly misnamed RepairDockUpdate/RepairDockUpdateModuleData.
 // stlport
@@ -12,17 +12,7 @@
 // at 0x004CC226 calls it); the E16 spelling was a stand-in with identical
 // ctor bytes via the folded base.
 #include <vector>
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 struct BfmeStringTailRecord156 { public: ~BfmeStringTailRecord156(); };
 
