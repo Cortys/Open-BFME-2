@@ -38,6 +38,7 @@ class ShareBufferClass : public RefCountClass
 {
 public:
 	ShareBufferClass(const ShareBufferClass &);
+	~ShareBufferClass();
 
 protected:
 	Type *RawBuffer;
