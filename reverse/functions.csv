@@ -45368,3 +45368,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F6F0C@Rva005F6F0C@@QAEXXZ,,0x005F6F0C,57,Code/GameEngine/Source/Common/Rva005F6F0CTooltip.cpp,matched,ConstructionTurns tooltip via GameText slot 0x3c plus Mouse with 1.0f flag plus 0x28 precedent Rva005F06EF
 ??1Rva005F6941@@UAE@XZ,,0x005F6941,59,Code/GameEngine/Source/Common/Rva005F6941Dtor.cpp,matched,virtual dtor with conditional slot 0x18 call plus EH via caller 0x005F6A58
 ??1Rva005F69F5@@UAE@XZ,,0x005F69F5,59,Code/GameEngine/Source/Common/Rva005F69F5Dtor.cpp,matched,virtual dtor with conditional slot 0x18 call plus EH sibling of 0x005F6941
+?rva005F697C@Rva005F697C@@QAEXXZ,,0x005F697C,18,Code/GameEngine/Source/Common/Rva005F697CMethod.cpp,matched,conditional slot 0x18 helper via callers 0x005F6A58 0x005F6AB0
