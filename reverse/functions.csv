@@ -46383,3 +46383,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??1Rva00415366@@QAE@XZ,,0x00415366,57,Code/GameEngine/Source/GameClient/Rva00415366Dtor.cpp,matched,hash dtor via rowed clear null-guarded free
 ?Rva00511F73Run@@YAXXZ,,0x00511F73,141,Code/GameEngine/Source/GameClient/Rva00511F73.cpp,matched,calls Save StringBase rva erase with AptMessenger strings
 ?rva0031BE07@Rva0031BE07@@QAEPAXABV?$StringBase@D@@@Z,,0x0031BE07,53,Code/Libraries/Source/WWVegas/WWLib/Rva0031BE07Find.cpp,matched,string-keyed search via rowed compare and pinned getFinalOverride
+??0Rva0051ECC3@@QAE@ABV0@@Z,,0x0051ECC3,71,Code/GameEngine/Source/Common/Rva0051ECC3Copy.cpp,matched,caller 0x0051F87B member copy via SaveMapPreview base AsciiString alloc Rva uninit

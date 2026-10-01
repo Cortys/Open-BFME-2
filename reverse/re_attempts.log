@@ -5114,3 +5114,4 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?bfmeUseFDE@BfmeThingFDE@@QAEXPAX@Z	0x004B9B99	173	partial	O1-G7 173B exact size 67insns; add-vs-lea plus idx-table regs plus second cursor ebx-vs-edi t=18 model=muse-09 score=0.96 stash=reverse/attempts/0x004b9b99.cpp
 ?doTeamEnableStealth@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C058A	84	blocked	O1 shared-header 92B vs 84B plus8; push-ebx sete-bl vs al plus jmp vs cmp-je plus extra mov-ecx plus cmp vs mov-test t=22 model=muse-09 (stash 0.91 kept)
 ?rva003C0E32@ScriptActions@@IAEXABVAsciiString@@H@Z	0x003C0E32	85	blocked	finish wall 0.93 no NEW idea t=2 model=muse-09
+?rva004EC16E@Rva004EC16E@@QAEPAXM@Z	0x004EC16E	96	partial	fcomp-fnstsw-test-je vs retail fld-fcomi-fstp-jbe in both float compares t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x004ec16e.cpp
