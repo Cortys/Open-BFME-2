@@ -151,6 +151,7 @@ class Rva003626CE
 {
 public:
 	void rva003626CE(unsigned char value);
+	void rva003626EA(const Block3 &pos);
 
 private:
 	Rva003626CESlot m_slots[9];
@@ -163,6 +164,17 @@ void Rva003626CE::rva003626CE(unsigned char value)
 	do
 	{
 		slot->rva_004097F0(value);
+		slot = (Rva00409850SubObject *)((char *)slot + 0x44);
+	} while (--count != 0);
+}
+
+void Rva003626CE::rva003626EA(const Block3 &pos)
+{
+	Rva00409850SubObject *slot = &m_slots[0].m_sub;
+	int count = 9;
+	do
+	{
+		slot->rva_00409810(pos);
 		slot = (Rva00409850SubObject *)((char *)slot + 0x44);
 	} while (--count != 0);
 }
