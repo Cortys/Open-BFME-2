@@ -6710,3 +6710,8 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$_M_allocate_and_copy@PAURva004F6986@@@?$vector@URva004F6986@@V?$allocator@URva004F6986@@@_STL@@@_STL@@IAEPAURva004F6986@@IPAU2@0@Z,0x004F6BD8,address read from the REL32 displacement at byte-matched body 0x004F8B21
 ?_M_clear@?$vector@URva004F6986@@V?$allocator@URva004F6986@@@_STL@@@_STL@@IAEXXZ,0x004F89DB,address read from the REL32 displacement at byte-matched body 0x004F8B21
 ?allocate@?$allocator@URva004F6986@@@_STL@@QBEPAURva004F6986@@IPBX@Z,0x00523D6C,address read from the REL32 displacement at byte-matched body 0x004F8B21
+??$_M_allocate_and_copy@PBUBfmeRecord0040B61A@@@?$vector@UBfmeRecord0040B61A@@V?$allocator@UBfmeRecord0040B61A@@@_STL@@@_STL@@IAEPAUBfmeRecord0040B61A@@IPBU2@0@Z,0x0040B323,address read from the REL32 displacement at byte-matched body 0x0040B61A
+?_M_clear@?$vector@UBfmeRecord0040B61A@@V?$allocator@UBfmeRecord0040B61A@@@_STL@@@_STL@@IAEXXZ,0x0040B5DE,address read from the REL32 displacement at byte-matched body 0x0040B61A
+??$__copy_ptrs@PBUBfmeRecord0040B61A@@PAU1@@_STL@@YAPAUBfmeRecord0040B61A@@PBU1@0PAU1@ABU__false_type@0@@Z,0x0040B350,address read from the REL32 displacement at byte-matched body 0x0040B61A
+??$_Destroy@PAUBfmeRecord0040B61A@@@_STL@@YAXPAUBfmeRecord0040B61A@@0@Z,0x0040B52E,address read from the REL32 displacement at byte-matched body 0x0040B61A
+??$__uninitialized_copy@PBUBfmeRecord0040B61A@@PAU1@@_STL@@YAPAUBfmeRecord0040B61A@@PBU1@0PAU1@ABU__false_type@0@@Z,0x0040B2FD,address read from the REL32 displacement at byte-matched body 0x0040B61A
