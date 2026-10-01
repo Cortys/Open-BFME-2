@@ -11,7 +11,6 @@
 
 extern char Rva0134D4B8FormatBuffer[2048];
 extern "C" __declspec(dllimport) int __cdecl _vsnprintf(char *, unsigned int, const char *, va_list);
-extern "C" void *__cdecl bfmeArrayNew(unsigned int);
 void *__cdecl operator new[](unsigned int size);
 void __cdecl operator delete[](void *block);
 
@@ -37,7 +36,7 @@ XferException::XferException(int tag, const char *format, ...)
 		va_list args;
 		va_start(args, format);
 		int length = _vsnprintf(Rva0134D4B8FormatBuffer, 2047, format, args);
-		text = static_cast<char *>(bfmeArrayNew(length + 1));
+		text = new char[length + 1];
 		memcpy(text, Rva0134D4B8FormatBuffer, length);
 		text[length] = 0;
 		va_end(args);

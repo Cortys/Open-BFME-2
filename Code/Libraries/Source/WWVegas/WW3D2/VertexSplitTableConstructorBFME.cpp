@@ -7,7 +7,7 @@
 #include <new.h>
 
 extern "C" void *memcpy(void *, const void *, unsigned int);
-extern "C" void *__cdecl bfmeArrayNew(unsigned int size);
+void *__cdecl operator new[](unsigned int size);
 
 typedef unsigned short TriIndex[3];
 
@@ -86,7 +86,7 @@ public:
 
         polygon_count=mmc->Get_Polygon_Count();
         allocated_polygon_array=true;
-        polygon_array=(TriIndex *)bfmeArrayNew(polygon_count*sizeof(TriIndex));
+        polygon_array=new TriIndex[polygon_count];
         memcpy(
             polygon_array,
             mmc->Get_Polygon_Array(),

@@ -5,9 +5,9 @@
 #include <stdarg.h>
 #include <string.h>
 
-extern char g_bfmeFormatBuffer[2048];
+// .bss VA 0x00DDF9D0; the next datum starts 0x800 bytes later.
+char g_bfmeFormatBuffer[2048];
 extern "C" __declspec(dllimport) int __cdecl _vsnprintf(char *, unsigned int, const char *, va_list);
-extern "C" void *__cdecl bfmeArrayNew(unsigned int);
 void __cdecl operator delete[](void *block);
 void *__cdecl operator new[](unsigned int size);
 
@@ -30,7 +30,7 @@ INIException::INIException(int argCount, const char *format, ...)
         va_list args;
         va_start(args, format);
         int length = _vsnprintf(g_bfmeFormatBuffer, 2047, format, args);
-        mFailureMessage = static_cast<char *>(bfmeArrayNew(length + 1));
+        mFailureMessage = new char[length + 1];
         memcpy(mFailureMessage, g_bfmeFormatBuffer, length);
         mFailureMessage[length] = 0;
         va_end(args);
