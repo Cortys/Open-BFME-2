@@ -4,11 +4,7 @@
 // ??_GTreeHintOpaque0043671B@@QAEPAXI@Z @0x002DDE27 28B: deleting dtor calls rowed TreeHintOpaque dtor 0x00229840 then operator delete; same shape.
 #include <map>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 struct BfmeSubobject0022CE19 {
     virtual ~BfmeSubobject0022CE19();
     unsigned char m_opaque[0xDE4];

@@ -12,23 +12,7 @@ typedef unsigned short WideChar;
 #include "ascii_string.h"
 
 
-class UnicodeString
-{
-	friend class GameSlot;
-
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that);
-	~UnicodeString();
-	UnicodeString &operator=(const UnicodeString &other)
-	{
-		m_data.set(other.m_data);
-		return *this;
-	}
-
-private:
-	StringBase<WideChar> m_data;
-};
+#include "unicode_string.h"
 
 struct GameSlotConnectInfo
 {

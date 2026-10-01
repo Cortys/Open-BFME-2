@@ -16,13 +16,7 @@ class AsciiString;
 
 #include "ascii_string.h"
 
-class UnicodeString : public StringBase<wchar_t>
-{
-public:
-	UnicodeString(const wchar_t *text) : StringBase<wchar_t>(text) {}
-	UnicodeString(const UnicodeString &other) : StringBase<wchar_t>(other) {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 
 class BfmeAptWindowManager

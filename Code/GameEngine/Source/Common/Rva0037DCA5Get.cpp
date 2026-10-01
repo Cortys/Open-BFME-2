@@ -29,11 +29,7 @@ public:
 	void *rva0040C64A();
 	void *rva0040C65D(int v);
 };
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-};
+#include "unicode_string.h"
 class Rva002E2903Player;
 class Rva002BA8F1Logic
 {

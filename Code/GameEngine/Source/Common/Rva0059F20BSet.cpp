@@ -37,12 +37,7 @@ void __cdecl Rva0059F296Set(int id, const UnicodeString &u)
 }
 
 
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 void __stdcall Rva0059F260Set(int id, UnicodeString u)
 {

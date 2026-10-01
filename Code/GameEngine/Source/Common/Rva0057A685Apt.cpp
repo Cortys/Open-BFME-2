@@ -16,12 +16,7 @@ class Rva00222A8BTarget
 
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 class GameTextInterface
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /G7
 // ?rva005ED708@Rva005ED445@@QAEXHH@Z, retail 0x005ED708, 98 bytes.
 // NumRegions cached setter via Rva005ED310Get and rva005ED516; imul needs /G7.
 // Evidence: calls 0x005ED310 0x005ED516 0x00036E70; string APT NumRegions via callee; base +0x44 slot size 0x14 field +0xC; caller 0x005ED849.
@@ -10,25 +10,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	int compare(const StringBase<T> &other) const;
-	void set(const StringBase<T> &other);
-private:
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-};
 
 UnicodeString Rva005ED310Get(int val);
 

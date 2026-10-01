@@ -1,26 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva005830AE@Rva005830AE@@QAEXH@Z @0x005830AE 115B
 // Free-standing progress tooltip updater: null-checked slot 0x40 on 0x9FEA28,
 // empty-string Mouse tooltip via 0x37050/0x1EEA6D, then slots 0x5C 0x28 0x28 0x28 0x30.
 // Evidence: callers 0x0044C629 0x0044C828 pass ecx+1 stack arg ret4; empty at 0xA0C898.
 
-template<class T> class StringBase {
-	void *m_data;
-	void releaseBuffer();
-public:
-	StringBase(const StringBase &);
-	void set(const StringBase &);
-protected:
-	__forceinline ~StringBase() { releaseBuffer(); }
-};
+#include "unicode_string.h"
 
-class UnicodeString : private StringBase<unsigned short> {
-public:
-	__forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {}
-	void set(const UnicodeString &o) { StringBase<unsigned short>::set(o); }
-	__forceinline ~UnicodeString() {}
-	static UnicodeString TheEmptyString;
-};
 
 struct RGBColor { float red, green, blue; };
 

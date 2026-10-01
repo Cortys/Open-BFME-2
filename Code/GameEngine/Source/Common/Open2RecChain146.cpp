@@ -24,13 +24,7 @@ struct BfmeStringData
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<RawWChar>
-{
-public:
-	UnicodeString(const RawWChar *text) : StringBase<RawWChar>(text) {}
-	UnicodeString(const UnicodeString &other) : StringBase<RawWChar>(other) {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 struct AsciiComparator
 {

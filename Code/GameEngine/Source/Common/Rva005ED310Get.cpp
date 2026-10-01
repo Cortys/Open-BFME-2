@@ -1,39 +1,11 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // ?Rva005ED310Get@@YA?AVUnicodeString@@H@Z, retail 0x005ED310, 96 bytes.
 // Formats int via 0x007C9260 when >=0 else empty; returns UnicodeString by value.
 // Evidence: same format string and callees as Rva0043A568Get (format 0x006CB5D0 copy 0x00037050 release 0x00036E70); callers 0x005ED708 NumRegions 0x005ED76A NumUnits; prev 0x005ED2DE next 0x005ED5F3 same dir.
 typedef unsigned short WideChar;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	StringBase() {}
-public:
-	void set(const StringBase<T> &other);
-	StringBase(const StringBase<T> &that);
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-private:
-	void releaseBuffer();
-	friend class UnicodeString;
-};
+#include "unicode_string.h"
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	UnicodeString() { m_data = 0; }
-	UnicodeString(const UnicodeString &that) : StringBase<WideChar>(that) {}
-	~UnicodeString() { releaseBuffer(); }
-	void __cdecl format(const WideChar *fmt, ...);
-};
 
 #define RankFmt ((const WideChar *)0x00BC9260)
 

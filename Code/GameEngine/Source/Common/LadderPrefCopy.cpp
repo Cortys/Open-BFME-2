@@ -13,12 +13,7 @@ class UnicodeString;
 // Retail copies each string through its matching narrow or wide StringBase body.
 #include "ascii_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-    __forceinline UnicodeString(const UnicodeString &source) : StringBase<unsigned short>(source) {}
-    ~UnicodeString();
-};
+#include "unicode_string.h"
 
 // LadderPreferences::loadProfile fills these same offsets; the names agree
 // with the upstream Common/LadderPreferences.h record and its time_t map key.

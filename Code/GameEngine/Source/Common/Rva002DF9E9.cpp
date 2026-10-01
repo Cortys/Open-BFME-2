@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva002DF9E9@Rva002DF9E9@@QAE?AVUnicodeString@@XZ, retail 0x002DF9E9, 90 bytes.
 // TheGameText fetch via slot 0x38 into UnicodeString temp at ebp-0x10 then
 // StringBaseWide copy ctor 0x00037050 into hidden return plus release 0x00036E70.
@@ -12,37 +12,7 @@ typedef unsigned short wchar_t;
 typedef bool Bool;
 template <typename T> class StringBase;
 class UnicodeString;
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend UnicodeString Rva002DF9E9Fetch();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-public:
-	StringBase() { m_data = 0; }
-	~StringBase() { releaseBuffer(); }
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-class UnicodeString
-{
-	friend class Rva002DF9E9;
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() {}
-private:
-	StringBase<wchar_t> m_data;
-};
+#include "unicode_string.h"
 class GameTextInterface
 {
 public:

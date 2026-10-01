@@ -4,13 +4,7 @@
 // Uses shared ascii header for AsciiString and StringBase; UnicodeString minimal with PBG ctor forwarding to the rowed base.
 #include "ascii_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
-	~UnicodeString() {}
-	void __cdecl format(const unsigned short *format, ...);
-};
+#include "unicode_string.h"
 
 class BfmeAptWindowManager
 {

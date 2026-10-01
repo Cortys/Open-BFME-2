@@ -16,12 +16,7 @@ typedef unsigned short WideChar;
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
-	~UnicodeString();
-};
+#include "unicode_string.h"
 
 class Rva004D6119
 {

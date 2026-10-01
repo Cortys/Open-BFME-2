@@ -1,4 +1,4 @@
-// cl: /O1 /Oa /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oa /MD
 //
 // ?rva002CF172@Rva004CA13@@UAE_NPA_N@Z, retail 0x002CF172, 87 bytes.
 // Virtual slot 4 (offset 0x10) of vtable 0x007C4858 (class of
@@ -23,34 +23,8 @@
 
 typedef unsigned short wchar_t;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	StringBase(const T *s);
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	void releaseBuffer();
-	Header *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString(const wchar_t *s) : m_data(s) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class InGameUI
 {

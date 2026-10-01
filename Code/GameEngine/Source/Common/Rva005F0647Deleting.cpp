@@ -2,7 +2,7 @@
 // Deleting-dtor shape: releases holder target via rowed fastcall Release at 0x0007DEEF
 // then conditionally deletes this when flag bit0 is set and returns this.
 // Unblocks 0x005F0C39. TU-local honest-address views.
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 struct TargetRef00217D4C { virtual void *destroy(unsigned int); int references; };
 void __fastcall ReleaseTreeHintRef00217D4C(TargetRef00217D4C *);
 void operator delete(void *);
@@ -23,13 +23,7 @@ void Rva005F0C39Destroy(Rva005F0647 *begin, Rva005F0647 *end)
         begin->rva005F0647(0);
 }
 
-class UnicodeString
-{
-public:
-	UnicodeString(const UnicodeString &o) throw() : m_data(o.m_data) {}
-	~UnicodeString() throw() {}
-	void *m_data;
-};
+#include "unicode_string.h"
 
 struct RGBColor { float red, green, blue; };
 

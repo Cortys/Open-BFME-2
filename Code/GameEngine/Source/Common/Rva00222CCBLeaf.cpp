@@ -1,38 +1,10 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?Rva00222CCBBuild@@YA?AVUnicodeString@@PAPAVRva00222CCB@@0V1@@Z @0x00222CCB 91B
 // Free join over pointer range calling slot1 with accumulator then RVO.
 // Evidence: EH_prolog plus loop call [eax+4] plus StringBase<G> copy 0x00037050 plus release 0x00036E70 plus callers 0x002252EB 0x0022535F; shape mirrors TempCtor 0x00222719 usage.
-template <typename T>
-class StringBase
-{
-    StringBase(const T *text);
-    StringBase(const StringBase &src);
-public:
-    StringBase() : m_data(0) {}
-    ~StringBase();
-protected:
-    void *m_data;
-};
+#include "unicode_string.h"
 
-template <>
-class StringBase<unsigned short>
-{
-    friend class UnicodeString;
-    StringBase(const StringBase &src);
-    void releaseBuffer();
-public:
-    StringBase() : m_data(0) {}
-    ~StringBase() { releaseBuffer(); }
-private:
-    void *m_data;
-};
 
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString() {}
-    UnicodeString(const UnicodeString &src) : StringBase<unsigned short>(src) {}
-};
 
 class Rva00222CCB
 {

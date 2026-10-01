@@ -10,16 +10,7 @@
 // caller 0x00529130 passes one int and stores it at +0x10.
 #include "ascii_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString() : m_data(0) {}
-	~UnicodeString() { ((StringBase<unsigned short> *)this)->releaseBuffer(); }
-	void __cdecl format(const UnicodeString *fmt, ...);
-
-private:
-	void *m_data;
-};
+#include "unicode_string.h"
 
 class GameTextInterface
 {

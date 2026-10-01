@@ -11,21 +11,7 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-class UnicodeString
-{
-public:
-	UnicodeString(const UnicodeString &other)
-	{
-		((StringBase<unsigned short> *)this)->StringBase<unsigned short>::StringBase(*(const StringBase<unsigned short> *)&other);
-	}
-	~UnicodeString();
-	void releaseBuffer();
-
-	static UnicodeString TheEmptyString;
-
-private:
-	unsigned short *m_data;
-};
+#include "unicode_string.h"
 
 class Dict
 {

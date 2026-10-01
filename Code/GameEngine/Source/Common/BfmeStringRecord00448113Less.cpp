@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 
 // ??M@YA_NABUBfmeStringRecord00448113@@0@Z @ 0x00448D3C (23B). Free operator< for
 // BfmeStringRecord00448113 (two UnicodeStrings from StringRecordInlineCopyBFME2.cpp).
@@ -7,18 +7,8 @@
 
 typedef bool Bool;
 
-template <typename T> class StringBase
-{
-public:
-    int compare(const StringBase<T> &that) const;
+#include "unicode_string.h"
 
-private:
-    void *m_data;
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-};
 
 struct BfmeStringRecord00448113
 {

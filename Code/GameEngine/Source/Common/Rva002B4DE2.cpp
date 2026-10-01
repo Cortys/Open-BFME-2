@@ -1,26 +1,11 @@
-// cl: /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /arch:SSE
 // stlport
 // ?rva002B4DE2@Rva002B4DE2@@QAEHXZ @0x002B4DE2 139B.
 // Unlock lane; list of BfmeStringRecord002B4DC1 at +0xF0 counted by word1
 // (2 -> ebx, 1 -> count1, total) then float ratios vs threshold at 0x007C6688.
 // Callees rowed 0x002B4DC1 and 0x00036E70; unblocks 0x00512948.
 // TU-local honest-address class; record layout from StringRecordInlineCopyBFME2.cpp.
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &) throw();
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer() throw();
-public:
-    void set(const StringBase &);
-private:
-    void *m_data;
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 struct BfmeStringRecord002B4DC1 {
     UnicodeString text;

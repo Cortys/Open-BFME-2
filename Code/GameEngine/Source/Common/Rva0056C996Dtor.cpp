@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /GX
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /GX
 // ??1Rva0056C996@@QAE@XZ @ 0x0056C996 155B.
 // Dtor: frees 5 DisplayStrings at +0x1c..+0x2c via TheDisplayStringManager
 // slot 0x3c, then 4 wide strings at +0x4..+0x10 via rowed releaseBuffer
@@ -30,22 +30,8 @@ public:
 
 extern DisplayStringManager *TheDisplayStringManager;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-private:
-	void releaseBuffer();
-	void *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<unsigned short> m_data;
-};
 
 class Rva0056C996
 {

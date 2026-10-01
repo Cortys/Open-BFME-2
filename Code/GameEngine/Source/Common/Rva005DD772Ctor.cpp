@@ -11,15 +11,7 @@ typedef unsigned short Wide;
 class AsciiString;
 class UnicodeString;
 #include "ascii_string.h"
-class UnicodeString:public StringBase<Wide> {
-public:
-    UnicodeString(const AsciiString&);
-    UnicodeString(){}
-    UnicodeString(const UnicodeString& o):StringBase<Wide>(o){}
-    ~UnicodeString(){}
-    void __cdecl format(const UnicodeString* fmt, ...);
-    void __cdecl format(const Wide* fmt, ...);
-};
+#include "unicode_string.h"
 class Rva005DD772 : public UnicodeString {
 public:
     float m04;

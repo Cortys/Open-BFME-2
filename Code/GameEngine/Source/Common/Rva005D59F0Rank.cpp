@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva005D59F0Get@@YA?AVUnicodeString@@H@Z retail 0x005D59F0 142B
 // Rank tooltip: if rank<=0 fetch TOOLTIP:LadderRankUnavailable via TheGameText
 // slot 0x3C, else format rank via 0x00BC9260; return as UnicodeString.
@@ -7,38 +7,8 @@
 // 0x00036E70 copy ctor 0x00037050; callers 0x005D6123 0x005D6133.
 typedef unsigned short WideChar;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	StringBase() {}
-public:
-	void set(const StringBase<T> &other);
-	StringBase(const StringBase<T> &that);
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-private:
-	void releaseBuffer();
-	friend class GameTextInterface;
-	friend class UnicodeString;
-};
+#include "unicode_string.h"
 
-class UnicodeString : public StringBase<WideChar>
-{
-	friend class GameTextInterface;
-public:
-	UnicodeString() { m_data = 0; }
-	UnicodeString(const UnicodeString &that) : StringBase<WideChar>(that) {}
-	~UnicodeString() { releaseBuffer(); }
-	void __cdecl format(const WideChar *fmt, ...);
-};
 
 class GameTextInterface
 {
