@@ -23,6 +23,7 @@ enum ScienceType
 };
 
 class UpgradeTemplate;
+class ModuleData;
 
 template <typename T>
 struct StringInlineData
@@ -102,6 +103,10 @@ void __cdecl parsePrerequisiteUpgrade(INI *ini, void *instance, void *, const vo
 		static_cast<_STL::vector<ProductionPrerequisite> *>(instance);
 
 	ProductionPrerequisite prerequisite;
-	prerequisite.m_prereqUpgrades.push_back(bfmeFindUpgradeByName(ini->getNextToken(0)));
+	// 0x004DFCB0 is the ledger-rowed ModuleData* push_back; symbols.csv pins
+	// this UpgradeTemplate* call to the same ICF-folded pointer-vector body.
+	reinterpret_cast<_STL::vector<const ModuleData *> *>(
+		&prerequisite.m_prereqUpgrades)->push_back(
+		reinterpret_cast<const ModuleData *>(bfmeFindUpgradeByName(ini->getNextToken(0))));
 	prerequisites->push_back(prerequisite);
 }
