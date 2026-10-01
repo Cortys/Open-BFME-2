@@ -6692,3 +6692,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?setActive@Script@@QAEX_N@Z,0x0006EDE3,ICF twin of dup 0x0006EDE3 via NetPacket 0x0058E047 same 10B setter
 ?setLeavingPlayerID@BFMENetInformPlayerLeaveFrameCommandMsg@@QAEXH@Z,0x00317B9B,same 10B setter as dup 0x00317B9B via NetPacket 0x0058E367 donor NetPacket_read readInformPlayerLeaveFrameMessage
 ??0?$_List_base@UBfmeStringRecord002B4DC1@@V?$allocator@UBfmeStringRecord002B4DC1@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmeStringRecord002B4DC1@@@1@@Z,0x00280A8D,ICF twin of matched Coord3D List_base ctor at this address; same 41B sentinel 20B body; retail REL32 in fill ctor 0x002B8FF3 at 0x002B900A
+?rva005CB260@Rva005CB260@@QAEXXZ,0x005CB260,method twin of free pin via ecx-this call sites 0x005FFB32

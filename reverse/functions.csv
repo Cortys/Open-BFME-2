@@ -45340,3 +45340,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005FF450@Rva005FF450@@QAEXHPBDABVUnicodeString@@@Z,,0x005FF450,109,Code/GameEngine/Source/Common/Rva005FF450Apt.cpp,matched,Apt Unit text via format and bfmeSetText with empty-string and manager globals
 ?Rva005FF207Format@@YA?AVUnicodeString@@H@Z,,0x005FF207,96,Code/GameEngine/Source/Common/Rva005FF207Unicode.cpp,matched,Apt quantity via conditional Unicode format and return by value
 ?rva005FF3E9@Rva005FF450@@QAEXABVUnicodeString@@@Z,,0x005FF3E9,103,Code/GameEngine/Source/Common/Rva005FF450Apt.cpp,matched,Apt Army name via level team format and bfmeSetText
+?rva005FFB32@Rva005FFB32@@QAEXXZ,,0x005FFB32,51,Code/GameEngine/Source/Common/Rva005FFB32Method.cpp,matched,Reset notifier and entries via ecx-this callback
