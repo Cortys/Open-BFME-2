@@ -1,5 +1,5 @@
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
-// partial score=0.91 date=2026-10-01
+// partial score=0.93 date=2026-10-01
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z
 // partial score=0.91 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /GX
@@ -128,7 +128,8 @@ private:
 // ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z present-unmatched
 void PoisonedBehavior::rva00483011(DamageInfo *damageInfo)
 {
-	UnsignedInt now = TheGameLogic->getFrame();
+	GameLogic *gl = TheGameLogic;
+	UnsignedInt now = gl->getFrame();
 	PoisonedBehaviorModuleData *data = (PoisonedBehaviorModuleData *)m_moduleData;
 	m_poisonDamageAmount = damageInfo->m_0070;
 	m_poisonOverallStopFrame = (UnsignedInt)data->m_poisonDuration + now;
@@ -144,5 +145,7 @@ void PoisonedBehavior::rva00483011(DamageInfo *damageInfo)
 	int v = ((BuildListInfo *)m_object)->getDesiredGatherers();
 	if (v)
 		*(int *)(v + 0x118) |= 4;
-	setWakeFrame(m_object, calcSleepTime());
+	Object *obj = m_object;
+	UpdateSleepTime sleep = calcSleepTime();
+	setWakeFrame(obj, sleep);
 }

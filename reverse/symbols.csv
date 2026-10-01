@@ -6786,3 +6786,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??$__uninitialized_copy@PAUBfmeContainerRecord005FDEC7@@PAU1@@_STL@@YAPAUBfmeContainerRecord005FDEC7@@PAU1@00ABU__false_type@0@@Z,0x005FE226,ICF 38B copy twin of dup 005FE226 at same address retail calls at 0x005FE5CA and 0x005FE615
 ??$_Construct@UBfmeContainerRecord005FDEC7@@U1@@_STL@@YAXPAUBfmeContainerRecord005FDEC7@@ABU1@@Z,0x005FE0F5,ICF 45B construct twin of dup 005FE0F5 at same address retail call at 0x005FE5DF
 ??$__uninitialized_fill_n@PAUBfmeContainerRecord005FDEC7@@IU1@@_STL@@YAPAUBfmeContainerRecord005FDEC7@@PAU1@IABU1@ABU__false_type@0@@Z,0x005FE24C,ICF 37B fill_n twin of dup 005FE24C at same address retail call at 0x005FE5F7
+?ji_0065561c@@YGJPAXK0K@Z,0x0065561C,twin of rowed YAXXZ same 6B jmp thunk call site 0x00232F0C ImmGetCompositionStringW

@@ -4860,3 +4860,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva00599870@Rva005997CD@@QAE?AW4ObjectID@@PBUVec2@@_N@Z	0x00599870	186	partial	xmm swap missing 2 movaps accumulator xmm1 not xmm0 bestDist load hoisted early t=20 model=muse-10 score=0.94 stash=reverse/attempts/0x00599870.cpp
 ?rva0005818B@Rva00699180Owner@@QAEXPBUHolderPtr@@H@Z	0x0005818B	96	blocked	last in ecx vs eax cmp esi ecx vs eax t=5 model=muse-15 (stash 0.95 kept)
 ?rva0005824D@MilesAudioManager@@QAEXPAXM@Z	0x0005824D	199	blocked	xmm0-xmm1 mirror throughout clamp and vector update; only register choice left t=15 model=muse-15 (stash 0.95 kept)
+?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z	0x00483011	114	partial	eax-ecx swap in select plus early arg in edx not edi frame in ecx not edx push-edi late t=22 model=muse-spark score=0.93 stash=reverse/attempts/0x00483011.cpp
+?rva0056AB35@Rva0056ACC5@@QAEXH@Z	0x0056AB35	83	partial	mov byte store early and receiver load before fstp not after t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x0056ab35.cpp
