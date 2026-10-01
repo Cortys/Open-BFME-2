@@ -46326,3 +46326,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00524FA7@Rva00524FA7@@QAEXXZ,,0x00524FA7,70,Code/GameEngine/Source/Common/Rva00524FA7.cpp,matched,leaf InGameUI 0x988 scaled by g_00DBA500 with TheGameClient slot31 into 0x1DC via x87 single caller 0x005270EB
 ?rva004EC276@Rva004EC276@@QAEXPAX@Z,,0x004EC276,94,Code/GameEngine/Source/Common/Rva004EC276Remove.cpp,matched,removes value from vector voidptr at 0x130 and list int at 0x13C caller 0x0055ADBA
 ?rva00291440@Rva00291440@@QAEXPAVSink00291440@@@Z,,0x00291440,111,Code/Libraries/Source/WWVegas/WWLib/Rva00291440.cpp,matched,leaf bitset convert plus virtual sink
+?Rva003E5F73Check@@YG_NPAVParameter@@PAUCondA003E5F73@@PAUCondB003E5F73@@PAUCondC003E5F73@@@Z,,0x003E5F73,191,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E5F73.cpp,matched,leaf via pin plus rowed bitname plus rowed counts plus direct return switch

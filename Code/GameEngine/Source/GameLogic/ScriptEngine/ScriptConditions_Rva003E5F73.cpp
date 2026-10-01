@@ -1,0 +1,101 @@
+// ?Rva003E5F73Check@@YG_NPAVParameter@@PAUCondA003E5F73@@PAUCondB003E5F73@@PAUCondC003E5F73@@@Z
+// retail 0x003E5F73, 191 bytes.
+// Evidence: leaf via pin-only rva00357B82 plus rowed getSingleBitFromName plus rowed getEachPlayerFromMask plus rowed Player::rva002ABD1D; g_Va009FE16C plus ThePlayerList plus empty string fallback; accumulate until sum exceeds limit then op switch.
+// cl: /O1
+
+class Parameter
+{
+};
+
+class ScriptEngine
+{
+public:
+	int rva00357B82(Parameter *p);
+};
+
+extern ScriptEngine *g_Va009FE16C;
+
+class Player
+{
+public:
+	int rva002ABD1D(int kind, int limit);
+};
+
+class PlayerList
+{
+public:
+	Player *getEachPlayerFromMask(int &mask);
+};
+
+extern PlayerList *ThePlayerList;
+
+extern const char g_Rva0107301CEmptyString[];
+
+template <unsigned int N>
+class BitFlags
+{
+public:
+	static int getSingleBitFromName(const char *token);
+};
+
+struct CondA003E5F73
+{
+	char m_pad[0x10];
+	void *m_holder;
+};
+
+struct CondB003E5F73
+{
+	char m_pad[8];
+	int m_op;
+};
+
+struct CondC003E5F73
+{
+	char m_pad[8];
+	int m_limit;
+};
+
+bool __stdcall Rva003E5F73Check(Parameter *param, CondA003E5F73 *a, CondB003E5F73 *b, CondC003E5F73 *c)
+{
+	int mask = g_Va009FE16C->rva00357B82(param);
+	int limit = c->m_limit;
+	int total = 0;
+
+	void *holder = a->m_holder;
+	const char *name = holder ? (const char *)holder + 8 : g_Rva0107301CEmptyString;
+	int bit = BitFlags<304>::getSingleBitFromName(name);
+
+	while (mask != 0)
+	{
+		Player *player = ThePlayerList->getEachPlayerFromMask(mask);
+		if (player)
+		{
+			total += player->rva002ABD1D(bit, limit);
+			if (total > limit)
+				break;
+		}
+	}
+
+	int op = b->m_op;
+
+	switch (op)
+	{
+	case 0:
+		return total < limit;
+	case 1:
+		return total <= limit;
+	case 2:
+		return total == limit;
+	case 3:
+		return total >= limit;
+	case 4:
+		return total > limit;
+	case 5:
+		return total != limit;
+	default:
+		break;
+	}
+
+	return false;
+}
