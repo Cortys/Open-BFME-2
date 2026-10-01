@@ -55,8 +55,11 @@ struct FieldParse
 class INI
 {
 public:
+	static void parseBool(INI *, void *, void *, const void *);
 	static void parseReal(INI *, void *, void *, const void *);
 	static void parseDurationUnsignedInt(INI *, void *, void *, const void *);
+	static void parseWeaponTemplate(INI *, void *, void *, const void *);
+	static void parseCoord3D(INI *, void *, void *, const void *);
 };
 
 // Retail VA 0x00C550C8 is the GloriousChargeUpdateModuleData FieldParse
@@ -76,6 +79,20 @@ extern const FieldParse g_00C550C8GloriousChargeFieldParse[] = {
 // The matched buildFieldParse caller supplies the independent class identity.
 extern const FieldParse g_00C5FB9CStoreObjectsFieldParse[] = {
 	{ "Radius", &INI::parseReal, 0, 0xC8 },
+	{ 0, 0, 0, 0 }
+};
+
+// Retail VA 0x00BF0508 is the FireWeaponWhenDeadBehaviorModuleData
+// FieldParse table: StartsActive/ActiveDuringConstruction use parseBool,
+// DelayTime uses parseDurationUnsignedInt, DeathWeapon uses
+// parseWeaponTemplate, and WeaponOffset uses parseCoord3D at the retail
+// offsets. The matched buildFieldParse row supplies the class identity.
+extern const FieldParse g_00BF0508FireWeaponWhenDeadBehaviorFieldParse[] = {
+	{ "StartsActive", &INI::parseBool, 0, 0x118 },
+	{ "ActiveDuringConstruction", &INI::parseBool, 0, 0x119 },
+	{ "DelayTime", &INI::parseDurationUnsignedInt, 0, 0x11C },
+	{ "DeathWeapon", &INI::parseWeaponTemplate, 0, 0x15C },
+	{ "WeaponOffset", &INI::parseCoord3D, 0, 0x120 },
 	{ 0, 0, 0, 0 }
 };
 
@@ -833,7 +850,7 @@ public:
 // factory and the proc ends where the factory begins. Row supersedes pin.
 void FireWeaponWhenDeadBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
-	parse.add(reinterpret_cast<const FieldParse *>(0x00BF0508), 0);
+	parse.add(g_00BF0508FireWeaponWhenDeadBehaviorFieldParse, 0);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 0x12C);
 }
