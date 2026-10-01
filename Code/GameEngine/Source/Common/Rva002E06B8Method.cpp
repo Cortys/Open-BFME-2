@@ -8,6 +8,8 @@ public:
 	int m_4;
 	char m_pad2[0x4c - 8];
 	int m_4c;
+	char m_pad3[0x60 - 0x50];
+	unsigned char m_60;
 };
 
 class GameInfo
@@ -22,6 +24,7 @@ class Rva002E06B8
 {
 public:
 	GameSlot *rva002E06B8();
+	void *rva002E06EF();
 private:
 	char m_pad[0x14];
 	int m_14;
@@ -41,4 +44,12 @@ GameSlot *Rva002E06B8::rva002E06B8()
 			return slot;
 	}
 	return 0;
+}
+
+void *Rva002E06B8::rva002E06EF()
+{
+	GameSlot *slot = rva002E06B8();
+	if (slot == 0)
+		return 0;
+	return slot->m_60 ? (void *)((char *)slot + 0x64) : 0;
 }
