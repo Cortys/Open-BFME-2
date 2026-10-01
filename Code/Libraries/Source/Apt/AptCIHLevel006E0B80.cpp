@@ -24,6 +24,7 @@ public:
     void *rva006E0FB0() const;
     void *rva006E1020() const;
     void *rva006E1100() const;
+    void *rva006E1170() const;
     const AptCIH *rva006E0CB0() const;
     bool rva006E0C50(const AptCIH *other) const;
     bool rva006E0BF0() const;
@@ -88,6 +89,7 @@ class BfmeAptValue006DCD20
 {
 public:
     bool isUndefined() const;
+    int isCharacterInst() const;
 };
 
 void *AptCIH::rva006E0FB0() const
@@ -211,6 +213,21 @@ void *AptCIH::rva006E1100() const
     }
     if (((const Rva006DBB30SarDwordField *)this)->get() != 0x0C || ((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
         g_bfmeAptAssertAtE17734("isShapeInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xA0);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    _ReadWriteBarrier();
+    return m_4C;
+}
+
+// ?rva006E1170@AptCIH@@QBEPAXXZ, retail 0x006E1170, 51 bytes.
+// Character-inst field accessor at +0x4C guarded by isCharacterInst check
+// at line 0xA5 via AptCIH.h. Evidence: rowed 0x6E0200; unlock lane unblocking
+// 3 callers; same /O2 AptCIH layout as neighbours.
+void *AptCIH::rva006E1170() const
+{
+    if ((unsigned char)((const BfmeAptValue006DCD20 *)this)->isCharacterInst() == 0) {
+        g_bfmeAptAssertAtE17734("isCharacterInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xA5);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __debugbreak();
     }
