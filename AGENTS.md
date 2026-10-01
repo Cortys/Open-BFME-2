@@ -179,7 +179,13 @@ successful or suspend future freshness checks indefinitely.
 ## Make matched code link
 
 A matched row whose unit cannot link is half done. `reverse/link_status.csv`
-and `tools/link_census.py` are the measure; these tools steer the work:
+and `tools/link_census.py` are the measure, under Open-BFME-1's rules: a
+COMDAT copy loses when retail's own bytes prove it wrong (else when it differs
+from the first copy in link order; never by majority, STLport included), and a
+file fails when a name it touches resolves to a kept definition proven not
+retail's (`wrong_selected`). These tools steer the work, reading the census's
+index (`build/link_census/link_index.pkl`; copy the daily census's from
+`build/wt_link/`):
 
 - `python3 tools/link_rank.py` ranks blockers by the matched bytes they hold
   out (sole blockers, blocking names, units within `--near` of linking);

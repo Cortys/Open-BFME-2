@@ -10,7 +10,10 @@ For every ledger unit it collects what holds the unit back:
 
   U name   an unresolved name the unit references
   D name   a name the unit and another unit both define
-  L name   a COMDAT the unit compiled differently from the copy kept
+  L name   a COMDAT copy the unit compiled that is not retail's body
+           (link_census.keep_rule)
+  S name   a name the unit defines or references whose definition the link
+           keeps is proven not retail's (link_census wrong_selected)
   A        a hard-coded image address in the source (tools/link_debt.py)
 
 and reports:
@@ -22,11 +25,11 @@ and reports:
   near     units with at most --near blockers, largest first: the work list
 
 Usage:
-  python3 tools/link_rank.py [--top N] [--near K] [--kind U|D|L|A] [--json PATH]
+  python3 tools/link_rank.py [--top N] [--near K] [--kind U|D|L|S|A] [--json PATH]
   python3 tools/link_rank.py --file SOURCE     one unit's blockers
 
-Run tools/link_census.py first; this reuses its log and objects and never
-links anything itself.
+Run tools/link_census.py --history first; this reads the blockers it
+recorded (build/link_census/link_index.pkl) and never links anything itself.
 """
 import argparse
 import collections
@@ -36,35 +39,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-import build  # noqa: E402
 import link_census as lc  # noqa: E402
-import link_debt  # noqa: E402
 
 
 def blockers():
-    """({source: {(kind, name)}}, {source: matched bytes})."""
+    """({source: {(kind, name)}}, {source: matched bytes}), the blockers the
+    last census itself counted (link_check.census_blockers: its index), so a
+    unit this calls linked is one the census counts as linked."""
+    import link_check
     rows = lc.ledger()
-    log = (lc.OUT / "census.log").read_text(encoding="utf-8", errors="replace")
-    crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
-    runtime, thunks = lc.library_symbols(crt), lc.library_import_thunks(crt) | lc.sdk_import_thunks()
-    imported = lc.retail_imports()
-    present, _ = lc.objects(rows)
-    unresolved, duplicates = collections.defaultdict(set), collections.defaultdict(set)
-    for line in log.splitlines():
-        found = lc.UNRESOLVED.search(line)
-        if found:
-            symbol = found.group(1) or found.group(2)
-            referrer = lc.REFERRER.match(line)
-            if referrer and not lc.excused(symbol, runtime, imported, thunks):
-                unresolved[Path(referrer.group(1)).name].add(symbol)
-            continue
-        found = lc.DUPLICATE.match(line)
-        if found:
-            symbol = found.group(2) or found.group(3)
-            duplicates[Path(found.group(1)).name].add(symbol)
-            duplicates[Path(found.group(4)).name].add(symbol)
-    losers = lc.comdat_losers(present)
-    sizes, objects, seen = collections.Counter(), {}, set()
+    census = link_check.census_blockers()
+    sizes, seen = collections.Counter(), set()
     for row in rows:
         source = row["source"]
         if not source.lower().endswith((".c", ".cpp")):
@@ -73,17 +58,14 @@ def blockers():
         if key not in seen:
             seen.add(key)
             sizes[source] += int(row["target_size"] or 0, 0)
-        objects[source] = build.row_object(row).name
     out = {}
-    for source, obj in objects.items():
-        found = {("U", s) for s in unresolved.get(obj, ())}
-        found |= {("D", s) for s in duplicates.get(obj, ())}
-        found |= {("L", s) for s in losers.get(obj, ())}
-        try:
-            if link_debt.addresses((ROOT / source).read_text(encoding="utf-8", errors="replace")):
-                found.add(("A", ""))
-        except OSError:
-            pass
+    for source, entry in census.items():
+        found = {("U", s) for s in entry["unresolved"]}
+        found |= {("D", s) for s in entry["duplicates"]}
+        found |= {("L", s) for s in entry["losers"]}
+        found |= {("S", s) for s in entry.get("wrong_selected", ())}
+        if entry["addresses"]:
+            found.add(("A", ""))
         out[source] = found
     return out, sizes
 
@@ -96,7 +78,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--top", type=int, default=30)
     parser.add_argument("--near", type=int, default=3)
-    parser.add_argument("--kind", choices="UDLA")
+    parser.add_argument("--kind", choices="UDLSA")
     parser.add_argument("--file")
     parser.add_argument("--json", help="write {source: [[kind, name], ...]} here")
     args = parser.parse_args(argv)

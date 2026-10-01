@@ -23,8 +23,8 @@ Sorted by unlinked bytes: the classes whose reconciliation reaches the
 most code that is matched but not yet linkable.
 
 --blockers ranks instead by what the last link census (build/link_census/)
-holds against each class: the unresolved, duplicate and losing-COMDAT names
-whose scope is the class, each weighted by the matched bytes of the units it
+holds against each class: the unresolved, duplicate, losing-COMDAT and
+wrong_selected names whose scope is the class, each weighted by the matched bytes of the units it
 blocks divided among that unit's blocker names. That is the better guide to
 which reconciliation pays: a class can have many private views that agree
 on everything the linker sees.
@@ -145,35 +145,15 @@ def symbol_class(name):
 
 
 def census_blockers():
-    """{source: set of blocking names} from the last census log, with COMDAT losers."""
+    """{source: set of blocking names} the last census counted (its index,
+    link_check.census_blockers): unresolved names, duplicates, COMDAT losers
+    and wrong_selected names."""
     sys.path.insert(0, str(ROOT / "tools"))
-    import build
-    import link_census as lc
-    rows = lc.ledger()
-    log = (lc.OUT / "census.log").read_text(encoding="utf-8", errors="replace")
-    crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
-    runtime, thunks = lc.library_symbols(crt), lc.library_import_thunks(crt) | lc.sdk_import_thunks()
-    imported = lc.retail_imports()
-    present, _ = lc.objects(rows)
-    by_object = collections.defaultdict(set)
-    for line in log.splitlines():
-        found = lc.UNRESOLVED.search(line)
-        if found:
-            symbol = found.group(1) or found.group(2)
-            referrer = lc.REFERRER.match(line)
-            if referrer and not lc.excused(symbol, runtime, imported, thunks):
-                by_object[Path(referrer.group(1)).name].add(symbol)
-            continue
-        found = lc.DUPLICATE.match(line)
-        if found:
-            symbol = found.group(2) or found.group(3)
-            by_object[Path(found.group(1)).name].add(symbol)
-            by_object[Path(found.group(4)).name].add(symbol)
-    for obj, names in lc.comdat_losers(present).items():
-        by_object[obj] |= names
+    import link_check
     out = collections.defaultdict(set)
-    for row in rows:
-        out[row["source"]] |= by_object.get(build.row_object(row).name, set())
+    for source, entry in link_check.census_blockers().items():
+        out[source] |= (set(entry["unresolved"]) | set(entry["duplicates"]) | set(entry["losers"])
+                        | set(entry.get("wrong_selected", ())))
     return out
 
 

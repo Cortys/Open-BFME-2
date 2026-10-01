@@ -4,7 +4,8 @@
 Every other gate verifies one function at a time. Nothing had ever linked the
 tree, so nobody knew how far "the functions match" is from "the game builds".
 This links the object of every matched ledger row (compiled TUs, MASM dumps,
-generated C++, prebuilt-library members) with MSVC 7.1's own link.exe under
+generated C++, prebuilt-library members), in retail's link order (link_order),
+with MSVC 7.1's own link.exe under
 /FORCE, so it reports every problem instead of stopping at the first, and sorts
 them into the classes the integration work has to clear:
 
@@ -25,21 +26,33 @@ them into the classes the integration work has to clear:
   python3 tools/link_census.py --build --history   # compile what changed first (all cores), then census
   python3 tools/link_census.py --report   # summarise the last census
   python3 tools/link_census.py --status   # redo link_status.csv + LINKED from the last log
+  python3 tools/link_census.py --selected # which COMDAT copy the link selected (/MAP), vs retail truth
 
 `--history` records the census in link_census_history.csv, with LINKED
 (linked_bytes) measured on this tree, and writes
 reverse/link_status.csv: one row per C/C++
 source, `linked=yes` when, in the plain link (no alias scaffold), its object
 has no unresolved reference beyond imports and msvcrt.lib, no duplicate, and
-no COMDAT copy that differs from the majority copy (STLport templates and
-the compiler's array helpers excepted: see comdat_losers), and the file holds no
-hard-coded image address. LINKED is progress.py's DECOMPILED restricted to
+no COMDAT copy that differs from retail's body (comdat_losers), no name it
+defines or references resolves in the link to a kept definition proven not
+retail's (wrong_selected; the /MAP of a second link says which it kept), and
+the file holds no hard-coded image address. LINKED is progress.py's DECOMPILED restricted to
 those sources; progress.py and the README print the last census's figure.
+
+These are Open-BFME-1's rules (its tools/link_census.py), ported function for
+function so the two projects measure LINKING the same way; only paths and the
+retail-truth inputs this repository lacks differ (no data_rows.csv, no
+dir32_addresses.csv, no route= pins: see data_ledger, _dir32_rows and
+validated_import_routes). Before 2026-10-01 this census kept the COMDAT copy
+most objects compiled, exempted STLport and the array helpers, linked in
+ledger row order and had no wrong_selected; link_census_history.csv's
+*_prev_rule columns hold that rule's figures for the re-baseline row.
 
 The census is diagnostic. The image it writes is not expected to run.
 """
 import argparse
 import collections
+import concurrent.futures
 import csv
 import json
 import os
@@ -60,6 +73,10 @@ DUPLICATE = re.compile(r'^(\S+\.obj) : (?:error LNK2005|warning LNK4006): (?:"[^
                        r'already defined in (\S+\.obj)')
 FATAL = re.compile(r"fatal error (LNK(?!1120)\d+).*")  # LNK1120 is only the unresolved count
 REFERRER = re.compile(r"^(\S+\.obj) : error LNK20(?:01|19)")
+# These are compiler inputs, including the headers reached through TU shims
+# (reference/ holds the shims and the open-bfme-1 submodule the toolchain and
+# BFME 1 headers come from).
+CENSUS_INPUTS = ("Code", "reference", "vendor", "reverse/functions.csv", "reverse/symbols.csv")
 
 
 def ledger():
@@ -68,9 +85,49 @@ def ledger():
                 and (r.get("target_rva") or "").startswith("0x")]
 
 
+# Open-BFME-1 links the objects of its byte-verified data rows (data_rows.csv,
+# tools/data_rows.py) too, and lets a data row own its global. This repository
+# has no data ledger yet: no data row exists, so no data-only object is linked
+# and no data row owns a name. The functions keep Open-BFME-1's shape so the
+# rules that read them stay identical.
+def data_sources():
+    """Sources owned by byte-verified data rows; none here (no data_rows.csv)."""
+    return []
+
+
+def compile_sources(rows):
+    return list(dict.fromkeys([ROOT / row["source"] for row in rows] + data_sources()))
+
+
+def data_ledger():
+    """The matched rows of a data ledger: none here (no data_rows.csv)."""
+    return []
+
+
+def data_rva(row):
+    raise SystemExit("link_census: no data ledger in this repository; a data row cannot have an address")
+
+
+def data_object(row):
+    return build.obj_path(ROOT / row["source"])
+
+
+def _dir32_rows():
+    """reverse/dir32_addresses.csv's rows ({name, va}); this repository has no
+    such ledger yet, so every unresolved global is reported as unpinned rather
+    than as data (a label only), and retail truth has no data address for a
+    name no pin places."""
+    path = ROOT / "reverse/dir32_addresses.csv"
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
 def pins(routes=None):
-    """{name: address} from symbols.csv (first pin wins, as the resolver does).
-    `routes`, when given, collects {name: target} from `route=0x...` notes."""
+    """{name: address} from symbols.csv (first pin for diagnostic identity).
+    The byte resolver checks additive candidates. `routes`, when given,
+    collects {name: target} from `route=0x...` notes."""
     found = {}
     with (ROOT / "reverse/symbols.csv").open(newline="", encoding="utf-8") as handle:
         for row in csv.reader(handle):
@@ -80,6 +137,43 @@ def pins(routes=None):
                 if routes is not None and route:
                     routes.setdefault(row[0], int(route.group(1), 16))
     return found
+
+
+ROUTE_NOTE = re.compile(r"(?:^|;)\s*route=([^;]+)")
+
+
+def route_claims():
+    """{(name, address): claim} for symbols.csv rows whose notes carry a
+    `route=` claim (Open-BFME-1's pin_consistency.load_routes)."""
+    routes = {}
+    with (ROOT / "reverse/symbols.csv").open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            found = ROUTE_NOTE.search(row.get("notes") or "")
+            if found:
+                routes[(row["name"], int(row["address"], 16))] = found.group(1).strip()
+    return routes
+
+
+def validated_import_routes(routes=None, scanner=None):
+    """Additional REL32 targets that are proven retail import thunks.
+
+    A second symbols.csv pin is not identity evidence. Only an explicit
+    `route=` claim re-derived by pin_consistency, at a matched FF 25 import
+    thunk, may supplement the first pin when checking a call relocation.
+    These addresses never become function-body homes or DIR32 targets.
+
+    Open-BFME-1 re-derives each claim with pin_consistency.route_verdict.
+    This repository's pin_consistency has no route verdict and symbols.csv
+    carries no route= claim, so there is nothing to add; a claim appearing
+    refuses the census (fail closed) until route_verdict is ported, because an
+    unverified route would let a pin decide where a call lands.
+    """
+    routes = route_claims() if routes is None else routes
+    if not routes:
+        return {}
+    raise SystemExit(f"link_census: symbols.csv carries {len(routes):,} route= claim(s) (e.g. "
+                     f"{next(iter(routes))[0]}) and this repository cannot verify them yet: port "
+                     "Open-BFME-1's pin_consistency.route_verdict before using them as retail truth")
 
 
 BASE = 0x400000
@@ -171,25 +265,38 @@ def alias_scaffold(rows, wanted):
 
 
 def data_names():
-    """Named globals from reverse/dir32_addresses.csv. Open-BFME-2 has no such
-    ledger yet, so every unresolved global is reported as unpinned rather than
-    as data: a label only, it does not change whether a file links."""
-    path = ROOT / "reverse/dir32_addresses.csv"
-    if not path.exists():
-        return set()
-    with path.open(newline="", encoding="utf-8") as handle:
-        return {row["name"] for row in csv.DictReader(handle)}
+    return {row["name"] for row in _dir32_rows()}
 
 
-def objects(rows):
-    """Unique object per matched row; (present, missing)."""
-    build.extract_lib_members([r for r in rows if r["source"].lower().endswith(build.LIB_SUFFIX)])
-    seen, present, missing = set(), [], []
+def link_order(rows, data=()):
+    """Every object of a matched ledger row or a matched data row, in link order.
+
+    Retail's .text follows its link order, so an object goes where its code
+    sits in retail: by the lowest retail RVA among its matched functions.csv
+    rows. Objects that own only data rows (a data-only TU) follow, by the
+    lowest retail RVA of their data. Ties, which only an over-claimed address
+    can produce, go by object path. Neither the ledger's row order nor a file's
+    name decides a place (before 2026-09-30 the first row naming an object
+    did, and functions.csv is not sorted by RVA)."""
+    code, data_only = {}, {}
     for row in rows:
         obj = build.row_object(row)
-        if obj in seen:
-            continue
-        seen.add(obj)
+        code[obj] = min(code.get(obj, int(row["target_rva"], 16)), int(row["target_rva"], 16))
+    for row in data:
+        obj = data_object(row)
+        if obj not in code:
+            data_only[obj] = min(data_only.get(obj, data_rva(row)), data_rva(row))
+    key = {obj: (0, rva, obj.as_posix()) for obj, rva in code.items()}
+    key.update({obj: (1, rva, obj.as_posix()) for obj, rva in data_only.items()})
+    return sorted(key, key=key.__getitem__)
+
+
+def objects(rows, data=None):
+    """Unique object per matched row and per matched data row, in link_order;
+    (present, missing). `data` defaults to data_ledger()."""
+    build.extract_lib_members([r for r in rows if r["source"].lower().endswith(build.LIB_SUFFIX)])
+    present, missing = [], []
+    for obj in link_order(rows, data_ledger() if data is None else data):
         (present if obj.exists() else missing).append(obj)
     return present, missing
 
@@ -229,17 +336,41 @@ def alias_object(table, path):
     return path
 
 
+def stub_object(names, path):
+    """Write a COFF object defining each name at offset 0 of one 16-byte
+    section. It only lets link.exe finish: the census's ~95,000 unresolved
+    names are fatal (LNK1120, even under /FORCE) and a failed link writes an
+    empty /MAP; absolute symbols instead crash link.exe 7.1 (C0000005)."""
+    import struct
+    strings, symbols = bytearray(4), bytearray()
+    for name in sorted(names):
+        raw = name.encode("latin-1")
+        if len(raw) <= 8:
+            field = raw.ljust(8, bytes(1))
+        else:
+            field = struct.pack("<II", 0, len(strings))
+            strings.extend(raw + bytes(1))
+        symbols += field + struct.pack("<IhHBB", 0, 1, 0, EXTERNAL, 0)
+    strings[0:4] = struct.pack("<I", len(strings))
+    body = bytes([0xCC]) * 16
+    table = 20 + 40 + len(body)
+    header = struct.pack("<HHIIIHH", 0x14C, 1, 0, table, len(symbols) // 18, 0, 0)
+    section = b".text".ljust(8, bytes(1)) + struct.pack("<IIIIIIHHI", 0, 0, len(body), 60, 0, 0, 0, 0, 0x60500020)
+    path.write_bytes(header + section + body + bytes(symbols) + bytes(strings))
+    return path
+
+
 def _arg(path):
     """A repo-relative, forward-slash path, as build.py passes cl.exe: under Wine
     an absolute POSIX path (/home/...) would read as a link.exe option."""
     return Path(path).resolve().relative_to(ROOT.resolve()).as_posix()
 
 
-def link(objs, aliases=None, tag="census"):
+def link(objs, aliases=None, tag="census", extra=(), options=()):
     OUT.mkdir(parents=True, exist_ok=True)
     rsp = OUT / "objects.rsp"
     rsp.write_text("\n".join(f'"{_arg(o)}"' for o in objs) + "\n", encoding="utf-8")
-    extra = []
+    extra = [_arg(path) for path in extra] + list(options)
     if aliases:
         extra.append(_arg(alias_object(aliases, OUT / "aliases.obj")))
     root = build.vc71_root()
@@ -262,9 +393,81 @@ def link(objs, aliases=None, tag="census"):
     return result.stdout + result.stderr, time.time() - started, result.returncode
 
 
+def fresh_outputs(*paths):
+    """Delete a link's outputs before it runs, so any that exist afterwards
+    were written by this invocation (a timestamp window cannot prove that)."""
+    for path in paths:
+        try:
+            path.unlink()
+        except FileNotFoundError:
+            pass
+        except OSError as exc:
+            raise SystemExit(f"link_census: cannot remove the previous {path.name} ({exc}); a stale output "
+                             "would read as this link's")
+
+
+def unexplained_exit(code, log, output=None):
+    """Refuse a link that did not complete: a termination by exception or
+    signal (an NTSTATUS such as 0xC0000005, a negative code) whatever the log
+    says before it; a failing exit the linker's own diagnostics do not
+    explain (under /FORCE, the LNK errors and warnings the census counts);
+    and, given `output` (removed by fresh_outputs before the link), no PE
+    image written there by this run. Nothing is ever recorded as a census
+    with nothing wrong."""
+    if code < 0 or code > 0xFFFF:
+        raise SystemExit(f"link_census: link.exe terminated abnormally (exit 0x{code & 0xFFFFFFFF:08X}); "
+                         "no counts recorded")
+    if code and not re.search(r"\b(?:error|warning) LNK\d+", log):
+        raise SystemExit(f"link_census: link.exe exited {code} with no linker diagnostic; no counts recorded")
+    if output is not None:
+        why = pe_defect(output)
+        if why:
+            raise SystemExit(f"link_census: link.exe exited {code} but wrote no image at {output.name} ({why}); "
+                             "no counts recorded")
+
+
+def pe_defect(path):
+    """Why `path` is not a complete PE image, or None: DOS header and
+    e_lfanew, the PE signature, an i386 COFF header, a PE32 optional header
+    whose size covers its fixed fields and every data directory it
+    declares, SizeOfHeaders inside the file and covering all headers and
+    the section table, and every section's raw data inside the file and
+    after the headers."""
+    import struct
+    try:
+        data = path.read_bytes()
+    except OSError as exc:
+        return f"unreadable: {exc}"
+    if len(data) < 0x40 or data[:2] != b"MZ":
+        return "no DOS header"
+    pe = struct.unpack_from("<I", data, 0x3C)[0]
+    if pe + 24 > len(data) or data[pe:pe + 4] != b"PE\0\0":
+        return "no PE signature at e_lfanew"
+    machine, sections, _, _, _, optional, _ = struct.unpack_from("<HHIIIHH", data, pe + 4)
+    if machine != 0x14C or not sections:
+        return f"COFF header: machine 0x{machine:X}, {sections} sections"
+    table = pe + 24 + optional
+    if optional < 96 or table + 40 * sections > len(data) or struct.unpack_from("<H", data, pe + 24)[0] != 0x10B:
+        return "optional header or section table does not fit"
+    directories = struct.unpack_from("<I", data, pe + 24 + 92)[0]
+    if 96 + 8 * directories > optional:
+        return f"the optional header declares {directories} data directories but holds {(optional - 96) // 8}"
+    headers = struct.unpack_from("<I", data, pe + 24 + 60)[0]
+    if headers > len(data) or headers < table + 40 * sections:
+        return f"SizeOfHeaders 0x{headers:X} does not cover the headers and section table inside the file"
+    for index in range(sections):
+        size, pointer = struct.unpack_from("<II", data, table + 40 * index + 16)
+        if size and pointer + size > len(data):
+            return f"section {index + 1}'s raw data runs past the end of the file"
+        if size and pointer < headers:
+            return f"section {index + 1}'s raw data overlaps the headers"
+    return None
+
+
 def classify(log, rows):
     pinned = pins()
     data = data_names()
+    naked = naked_rows()
     by_address = collections.defaultdict(list)
     for row in rows:
         by_address[int(row["target_rva"], 16)].append(row)
@@ -294,9 +497,9 @@ def classify(log, rows):
             kind = "data"
         elif address is not None:
             owners = [r for r in by_address.get(address, []) if not r["name"].startswith("?j_")]
-            if owners and any(not build_dump(r) for r in owners):
+            if owners and any(not build_dump(r, naked) for r in owners):
                 kind = "alias"
-                entry["defined_as"] = sorted(r["name"] for r in owners if not build_dump(r))[:3]
+                entry["defined_as"] = sorted(r["name"] for r in owners if not build_dump(r, naked))[:3]
             elif owners:
                 kind = "dump"
             else:
@@ -321,8 +524,8 @@ WEAK_EXTERNAL = 105  # IMAGE_SYM_CLASS_WEAK_EXTERNAL: a vftable slot's ??_E dele
 
 
 def _coff_symbols(data):
-    """[{index, name, section, storage}] for every symbol record, by raw index
-    (aux records occupy indices too, which relocations count)."""
+    """[{index, name, section, storage, value}] for every symbol record, by raw
+    index (aux records occupy indices too, which relocations count)."""
     import struct
     table, count = struct.unpack_from("<II", data, 8)
     strings = table + 18 * count
@@ -334,31 +537,28 @@ def _coff_symbols(data):
             name = data[strings + offset:data.index(b"\0", strings + offset)]
         else:
             name = record[:8].rstrip(b"\0")
-        section, _, storage, aux = struct.unpack_from("<hHBB", record, 12)
-        out.append({"index": index, "name": name.decode("latin-1"), "section": section, "storage": storage})
+        value, section, _, storage, aux = struct.unpack_from("<IhHBB", record, 8)
+        out.append({"index": index, "name": name.decode("latin-1"), "section": section, "storage": storage,
+                    "value": value})
         index += 1 + aux
     return out
 
 
-def comdat_bodies(obj, retail=None):
-    """[(name, digest, size)] for each external COMDAT symbol an object defines.
+def _comdat_sections(data):
+    """(symbol, body, relocs, digest, size) for each external COMDAT symbol
+    in one COFF object. `body` is the section's raw bytes (None when
+    uninitialized); `relocs` is [(offset, type, referent symbol)], a
+    content-named referent (RetailTruth.CONSTANT) carrying its bytes.
 
     The digest covers the section's bytes AND its relocations (offset, type,
     target, weak externals included): two vftables with identical bytes whose
-    slots point at different functions are different copies. A TU-local target (a string literal, a
-    static) is named per TU, so it counts only as "local"; an anonymous
-    namespace's per-TU hash is normalised. An uninitialized section has no
-    bytes to hash, only a size. With `retail` ({name: retail RVA}), a target
-    the ledger or a pin places is labelled by that address instead of its
-    name, so two spellings of one retail function (AsciiString::set and
-    StringBase<char>::set, both 0x55F5) do not make two copies differ.
+    slots point at different functions are different copies. A TU-local target
+    (a string literal, a static) is named per TU, so it counts only as "local";
+    an anonymous namespace's per-TU hash is normalised. An uninitialized section
+    has no bytes to hash, only a size.
     """
     import hashlib
     import struct
-    try:
-        data = obj.read_bytes()
-    except OSError:
-        return []
     count = struct.unpack_from("<H", data, 2)[0]
     optional = struct.unpack_from("<H", data, 16)[0]
     symbols = _coff_symbols(data)
@@ -370,7 +570,6 @@ def comdat_bodies(obj, retail=None):
         nrelocs = struct.unpack_from("<H", data, offset + 32)[0]
         flags = struct.unpack_from("<I", data, offset + 36)[0]
         sections.append((size, pointer, relocs, nrelocs, flags))
-    found = []
     for symbol in symbols:
         section = symbol["section"]
         if symbol["storage"] != EXTERNAL or section <= 0 or section > count:
@@ -378,19 +577,267 @@ def comdat_bodies(obj, retail=None):
         size, pointer, relocs, nrelocs, flags = sections[section - 1]
         if not flags & COMDAT:
             continue
-        digest = hashlib.sha1(data[pointer:pointer + size] if pointer else b"uninitialized %d" % size)
+        body = data[pointer:pointer + size] if pointer else None
+        digest = hashlib.sha1(body if body is not None else b"uninitialized %d" % size)
+        found = []
         for at in range(relocs, relocs + 10 * nrelocs, 10):
             where, target, kind = struct.unpack_from("<IIH", data, at)
-            referent = by_index.get(target, {"name": "?", "storage": 0})
-            if referent["storage"] not in (EXTERNAL, WEAK_EXTERNAL):
-                label = "local"
-            elif retail and referent["name"] in retail:
-                label = "@0x%X" % retail[referent["name"]]
-            else:
-                label = re.sub(r"\?A0x[0-9A-Fa-f]{8}", "?A0xHASH", referent["name"])
+            referent = by_index.get(target, {"name": "?", "storage": 0, "section": 0, "value": 0})
+            if referent["name"].startswith(RetailTruth.CONSTANT) and 0 < referent["section"] <= count:
+                length, start = sections[referent["section"] - 1][:2]
+                referent = {**referent, "content": data[start + referent["value"]:start + length] if start else None}
+            label = (_normal(referent["name"]) if referent["storage"] in (EXTERNAL, WEAK_EXTERNAL) else "local")
             digest.update(b"%d:%d:" % (where, kind) + label.encode("latin-1") + b";")
-        found.append((symbol["name"], digest.hexdigest()[:12], size))
-    return found
+            found.append((where, kind, referent))
+        yield symbol, body, found, digest.hexdigest()[:12], size
+
+
+def _normal(name):
+    """A name with its anonymous namespace's per-TU hash normalised."""
+    return re.sub(r"\?A0x[0-9A-Fa-f]{8}", "?A0xHASH", name)
+
+
+def comdat_bodies(obj):
+    """[(name, digest, size)] for each external COMDAT symbol an object defines
+    (see _comdat_sections for what the digest covers)."""
+    try:
+        data = obj.read_bytes()
+    except OSError:
+        return []
+    return [(symbol["name"], digest, size) for symbol, _, _, digest, size in _comdat_sections(data)]
+
+
+class RetailTruth:
+    """Is a COMDAT copy the body retail shipped?
+
+    A COMDAT symbol whose ledger row (functions.csv, else a symbols.csv pin)
+    gives a retail address is judged against retail itself: its bytes must
+    equal retail's at that address outside the relocation fields, and every
+    relocation must land where retail's instruction lands. A relocation's
+    target NAME is resolved the way an identity is, not the way the byte gate
+    resolves a call: a ledger row first (never an icf-owner= over-claim:
+    __purecall's row sits on one of many `xor eax,eax; ret` bodies), and a
+    symbols.csv pin only for a name with no row (plus its numeric route=), because
+    symbols.csv is an ADDITIVE candidate list and a pin on the wrong body
+    still byte-matches. That is exactly how
+    ??1AsciiString@@QAE@XZ's owner copy passed the gate: retail 0x5EE90 is
+    `jmp 0x887940` (releaseBuffer), the owner's copy jumps to
+    ??1?$StringBase@D@@AAE@XZ, whose row is 0x5E490, and a pin of that name to
+    0x887940 hid the difference. Data names resolve through
+    dir32_addresses.csv, __imp_ names to retail's import slot, and a label in
+    the copy's own section to the same offset in retail. An incremental-link
+    stub (a `jmp` packed between other `jmp`s) stands for its target on either
+    side; a padded 5-byte `jmp` is a function that tail-jumps (0x5E490 is
+    ~StringBase's own body, not a stub) and is never followed. symbols.csv
+    holds VAs and RVAs alike, so a pin at or above the image base is read both
+    ways. A TU-local referent (a static, `_$E2`, `$S1`) is named per TU, so it
+    has no address to check; a string literal or float constant (`??_C@`,
+    `__real@`) is named by its content and retail holds several copies of
+    some ("" at least twice), so it is checked by content: retail's bytes at
+    the target must be the constant's own. Additional FF 25 import routes
+    independently verified by pin_consistency may match REL32 calls, but
+    never supply body homes or data-pointer targets.
+
+    An address several ledger names claim (0x5E6F0 for ??8 of eight
+    VectorClass instances in Open-BFME-1) proves nothing when it disagrees:
+    one body has one identity, so most of those claims are wrong (or folded),
+    and the mismatch is the ledger's.
+
+    verdict() returns "retail" (every byte and relocation proven), "wrong"
+    (a byte or a resolvable relocation differs from a single-claim address),
+    "unknown" (nothing disproves it, but a relocation names something with no
+    known address, or only a shared claim disagrees) or None (the symbol
+    itself has no retail address: retail truth cannot judge it).
+    """
+
+    DIR32, DIR32NB, REL32 = 0x0006, 0x0007, 0x0014
+    ABSOLUTE = {"__except_list": 0}  # msvcrt.lib's absolute symbols (fs:[0])
+    CONSTANT = ("??_C@", "__real@")  # content-named: retail may hold several copies
+
+    @staticmethod
+    def _rvas(address):
+        """symbols.csv mixes RVAs and VAs: 0x0044A061 is VA 0x0044A061 of
+        RVA 0x4A061. Both readings are candidates; a pin is only a candidate."""
+        return {address, address - BASE} if address >= BASE else {address}
+
+    def __init__(self, rows):
+        routes = {}
+        pinned = pins(routes)
+        self.ledger = collections.defaultdict(set)
+        names_at = collections.defaultdict(set)
+        for row in rows:
+            notes = row.get("notes") or ""
+            if "icf-owner=" in notes:
+                continue  # a second name on an address: an over-claim to retire, not an identity
+            address = int(row["target_rva"], 16)
+            names = {row["name"]} if "gen-alias" in notes else {row["name"], build.ledger_object_symbol(row)}
+            for name in names:  # a gen-alias twin's object symbol names its original, not the twin
+                self.ledger[_normal(name)].add(address)
+            names_at[address].add(row["name"])
+        for row in data_ledger():  # a data row is byte-verified at its address, like a function row
+            self.ledger[_normal(row["name"])].add(data_rva(row))
+        # An address several names claim is an unresolved over-claim (at most
+        # one of them is the body's own identity): a mismatch against it
+        # proves nothing about the copy, only about the ledger.
+        self.shared = {address for address, names in names_at.items() if len(names) > 1}
+        self.pinned = collections.defaultdict(set)
+        for name, address in pinned.items():
+            self.pinned[_normal(name)] |= self._rvas(address)
+        for name, address in routes.items():  # where calls ENCODE the name: an ILT or import stub
+            key = _normal(name)
+            (self.ledger[key] if key in self.ledger else self.pinned[key]).update(self._rvas(address))
+        self.import_routes = validated_import_routes()
+        for row in _dir32_rows():  # a data name: pin or dir32 entry, either may be right
+            self.pinned[_normal(row["name"])].add(int(row["va"], 16) - BASE)
+        self.slots = collections.defaultdict(set)
+        for name, address in retail_import_slots():
+            self.slots[name].add(address)
+        self.image, self.sections = build.exe_image()
+        self._cache = {}
+
+    def addresses(self, name, kind=None):
+        """Retail relocation targets, with proven import routes for REL32 only."""
+        key = _normal(name)
+        if key in self.ledger:
+            return self.ledger[key]
+        if kind == self.REL32 and key in self.import_routes:
+            return set(self.pinned.get(key, ())) | self.import_routes[key]
+        if key in self.pinned:
+            return self.pinned[key]
+        if name.startswith("__imp_"):
+            bare = name[len("__imp_"):]
+            found = self.slots.get(bare) or self.slots.get(_undecorate(bare))
+            return found or None
+        return None
+
+    def _read(self, rva, size):
+        try:
+            offset = build.rva_to_file_offset(self.sections, rva)
+        except ValueError:  # outside every section: nothing there to compare
+            return None
+        chunk = self.image[offset:offset + size]
+        return chunk if len(chunk) == size else None
+
+    def _stub(self, address):
+        """Where an incremental-link stub at `address` jumps, else None. A stub
+        sits in a packed .text table: another `jmp` right before or after it.
+        The same byte pattern in data is not executable and proves no route."""
+        import struct
+        text = next((section for section in self.sections if section["name"] == ".text"), None)
+        if text is None or not text["rva"] <= address < text["rva"] + text["size"]:
+            return None
+        around = self._read(address - 5, 15)
+        if around is None or around[5] != 0xE9 or (around[0] != 0xE9 and around[10] != 0xE9):
+            return None
+        target = address + 5 + struct.unpack_from("<i", around, 6)[0]
+        return target if text["rva"] <= target < text["rva"] + text["size"] else None
+
+    def _lands(self, target, expected):
+        if target in expected or self._stub(target) in expected:
+            return True
+        return any(self._stub(address) == target for address in expected)
+
+    @staticmethod
+    def _verdict_fingerprint(symbol, relocs):
+        """Parts of one copy that can change relocation judgment.
+
+        The COMDAT digest deliberately normalises a TU-local referent to
+        ``local`` so equivalent private labels do not manufacture conflicts.
+        That digest is therefore too coarse for the verdict cache: a label in
+        the COMDAT's own section is checked at its section-relative value, and
+        two copies can have the same digest while those values differ.  Keep
+        section numbering out of this key (it is TU-dependent); only whether
+        the referent is in the symbol's own section affects _judge.
+        """
+        found = []
+        for where, kind, referent in relocs:
+            external = referent["storage"] in (EXTERNAL, WEAK_EXTERNAL)
+            same_section = referent["section"] == symbol["section"]
+            content = referent.get("content")
+            # Mirror _judge's branch order exactly.  In particular, absolute
+            # symbols are recognized by name regardless of storage class, and
+            # a same-section weak external takes the section-relative branch.
+            identity = (("absolute", referent["name"]) if
+                        kind == RetailTruth.DIR32 and referent["name"] in RetailTruth.ABSOLUTE else
+                        ("content", content) if content is not None else
+                        ("self", referent["value"]) if same_section and referent["storage"] != EXTERNAL else
+                        ("external", _normal(referent["name"])) if external else
+                        ("local",))
+            found.append((where, kind, identity))
+        return symbol["value"], tuple(found)
+
+    def verdict(self, symbol, body, relocs, digest, size):
+        home = self.ledger.get(_normal(symbol["name"])) or self.pinned.get(_normal(symbol["name"]))
+        if not home:
+            return None
+        home = set(home) | {self._stub(address) for address in home} - {None}  # a row on an ILT stub
+        key = (symbol["name"], digest, self._verdict_fingerprint(symbol, relocs))
+        if key not in self._cache:
+            results = [self._judge(address - symbol["value"], symbol, body, relocs, size) for address in sorted(home)]
+            if all(address in self.shared for address in home):
+                results = ["unknown" if result == "wrong" else result for result in results]
+            self._cache[key] = ("retail" if "retail" in results else "unknown" if "unknown" in results else "wrong")
+        return self._cache[key]
+
+    def _judge(self, start, symbol, body, relocs, size):
+        import struct
+        if body is None:
+            return "unknown"
+        retail = self._read(start, size)
+        if retail is None:
+            return "wrong"
+        mask = bytearray(body)
+        fields = []
+        for where, kind, referent in relocs:
+            width = 2 if kind == 0x000A else 4  # IMAGE_REL_I386_SECTION is 16-bit
+            if where + width > size:
+                return "wrong"
+            mask[where:where + width] = retail[where:where + width]
+            fields.append((where, kind, referent))
+        if bytes(mask) != retail:
+            return "wrong"
+        result = "retail"
+        for where, kind, referent in fields:
+            addend = struct.unpack_from("<i", body, where)[0] if kind != 0x000A else 0
+            value = struct.unpack_from("<i", retail, where)[0] if kind != 0x000A else 0
+            if kind == self.DIR32 and referent["name"] in self.ABSOLUTE:
+                if (value - addend) & 0xFFFFFFFF != self.ABSOLUTE[referent["name"]]:
+                    return "wrong"
+                continue
+            if kind == self.DIR32:
+                target = (value - addend - BASE) & 0xFFFFFFFF
+            elif kind == self.DIR32NB:
+                target = (value - addend) & 0xFFFFFFFF
+            elif kind == self.REL32:
+                target = start + where + 4 + value - addend
+            else:
+                result = "unknown"
+                continue
+            if referent.get("content") is not None:
+                if self._read(target, len(referent["content"])) != referent["content"]:
+                    return "wrong"
+                continue
+            if referent["section"] == symbol["section"] and referent["storage"] != EXTERNAL:
+                expected = {start + referent["value"]}  # a label in this very section
+            elif referent["storage"] in (EXTERNAL, WEAK_EXTERNAL):
+                expected = self.addresses(referent["name"], kind)
+            else:  # a static's name is per TU (_$E2, $SG1234): no address to check
+                expected = None
+            if not expected:
+                result = "unknown"
+            elif not self._lands(target, expected):
+                if not all(address in self.shared for address in expected):
+                    return "wrong"
+                result = "unknown"
+        return result
+
+
+_TRUTH = None
+
+
+def _truth_init(rows):
+    global _TRUTH
+    _TRUTH = RetailTruth(rows)
 
 
 def comdat_conflicts(objs):
@@ -410,79 +857,468 @@ def comdat_conflicts(objs):
             for name, found in copies.items() if len(found) > 1}
 
 
-# Copies the loser count does not hold against an object. Two kinds of
-# COMDAT come from one token-identical definition however many units compile
-# them, so differing copies are optimisation-level variants, not one-definition
-# violations: STLport 4.5.3's templates (the vendored headers) and the
-# compiler's class-agnostic array helpers (vector constructor/destructor
-# iterators, ??_H ??_I ??_L ??_M). Class-specific compiler output (??_G, ??_E,
-# vftables) still counts: it depends on each unit's own class declaration.
-COMDAT_EXEMPT_PREFIXES = ("??_H@", "??_I@", "??_L@", "??_M@")
+def keep_rule(copies):
+    """({object: loses?}, rule) for one COMDAT symbol's copies [(object, digest,
+    verdict)] in link order.
+
+    `retail` when retail truth can judge the symbol (it has a retail address):
+    a copy proven wrong loses; a proven copy never does; a copy whose bytes
+    match but whose relocations cannot all be resolved loses only when it
+    differs from the kept copy (the first proven one, else the first
+    unresolved one), since nothing shows it is right. `first` when it cannot:
+    link.exe keeps the first copy in link order, so a copy that differs from
+    that one loses. Majority is never used: it would let the most-copied
+    private class decide what retail shipped.
+    """
+    verdicts = [verdict for _, _, verdict in copies]
+    if all(verdict is None for verdict in verdicts):
+        kept = copies[0][1]
+        return {obj: digest != kept for obj, digest, _ in copies}, "first"
+    proven = [digest for _, digest, verdict in copies if verdict == "retail"]
+    unknown = [digest for _, digest, verdict in copies if verdict == "unknown"]
+    kept = proven[0] if proven else unknown[0] if unknown else None
+    loses = {}
+    for obj, digest, verdict in copies:
+        loses[obj] = verdict == "wrong" or (verdict == "unknown" and digest != kept and digest not in proven)
+    return loses, "retail"
 
 
-def comdat_exempt(name):
-    return "_STL@@" in name or name.startswith(COMDAT_EXEMPT_PREFIXES)
+def _comdat_selections(data):
+    """{section number: COMDAT selection} from each section definition's aux
+    record (IMAGE_COMDAT_SELECT_NODUPLICATES = 1, _ANY = 2, ...)."""
+    import struct
+    table, count = struct.unpack_from("<II", data, 8)
+    found, index = {}, 0
+    while index < count:
+        record = table + 18 * index
+        value, section, _, storage, aux = struct.unpack_from("<IhHBB", data, record + 8)
+        if storage == 3 and aux and value == 0 and section > 0:  # IMAGE_SYM_CLASS_STATIC section symbol
+            found.setdefault(section, data[record + 18 + 14])
+        index += 1 + aux
+    return found
 
 
-_RETAIL = None
+class MissingObject(RuntimeError):
+    """An object a check needs cannot be read. Never an empty object: an
+    object with no facts has no blockers and would read as linking."""
 
 
-def retail_addresses():
-    """{name: retail RVA}: matched ledger rows first, then symbols.csv pins."""
-    global _RETAIL
-    if _RETAIL is None:
-        found = {}
-        for row in ledger():
-            found.setdefault(row["name"], int(row["target_rva"], 16))
-        for name, address in pins().items():
-            found.setdefault(name, address)
-        _RETAIL = found
-    return _RETAIL
+def common_definitions(obj):
+    """COFF COMMON data definitions, kept separate from exclusive definitions.
+
+    An external section-zero record with nonzero value allocates that many
+    bytes. Multiple COMMON records merge; a normal definition overrides them.
+    Extraction proves a provider exists, not its retail layout or identity.
+    """
+    import struct
+    try:
+        data = obj.read_bytes()
+        if len(data) < 20:
+            raise ValueError("truncated COFF header")
+        table, count = struct.unpack_from("<II", data, 8)
+        sections, optional = struct.unpack_from("<H", data, 2)[0], struct.unpack_from("<H", data, 16)[0]
+        header_end = 20 + optional + sections * 40
+        if header_end > len(data):
+            raise ValueError("truncated section table")
+        if table == 0 and count == 0:
+            return {}
+        strings = table + count * 18
+        if table < header_end or strings + 4 > len(data):
+            raise ValueError("truncated symbol table")
+        size = struct.unpack_from("<I", data, strings)[0]
+        if size < 4 or strings + size > len(data):
+            raise ValueError("truncated string table")
+        at = 0
+        while at < count:
+            record = table + at * 18
+            aux = data[record + 17]
+            if at + aux >= count:
+                raise ValueError("truncated auxiliary symbol")
+            if data[record:record + 4] == b"\0" * 4:
+                offset = struct.unpack_from("<I", data, record + 4)[0]
+                if offset < 4 or offset >= size or data.find(b"\0", strings + offset, strings + size) < 0:
+                    raise ValueError("invalid symbol name")
+            at += 1 + aux
+        result = {}
+        for symbol in _coff_symbols(data):
+            if symbol["storage"] == EXTERNAL and symbol["section"] == 0 and symbol["value"] > 0:
+                result[symbol["name"]] = max(result.get(symbol["name"], 0), symbol["value"])
+        return result
+    except (OSError, ValueError, struct.error, IndexError) as exc:
+        raise MissingObject(f"{obj}: cannot read COMMON definitions ({exc})") from exc
 
 
-def _retail_bodies(obj):
-    return comdat_bodies(obj, retail_addresses())
+def object_facts(obj, truth=None):
+    """(COMDAT copies [(name, digest, size, verdict)], exclusive definitions,
+    undefined externals, weak externals [(name, default)]) of one object:
+    what a link needs to know about it. An unreadable object raises
+    MissingObject.
+    A definition is exclusive when link.exe refuses a second one (LNK2005):
+    in an ordinary section, or in a COMDAT whose selection is NODUPLICATES,
+    which /Gy gives every non-inline function."""
+    truth = truth or _TRUTH
+    try:
+        data = obj.read_bytes()
+    except OSError as exc:
+        raise MissingObject(f"{obj}: cannot read the object ({exc})") from exc
+    import struct
+    count = struct.unpack_from("<H", data, 2)[0]
+    optional = struct.unpack_from("<H", data, 16)[0]
+    comdat = {index + 1 for index in range(count)
+              if struct.unpack_from("<I", data, 20 + optional + index * 40 + 36)[0] & COMDAT}
+    selections = _comdat_selections(data)
+    strong, undefined = [], []
+    for symbol in _coff_symbols(data):
+        if symbol["storage"] != EXTERNAL:
+            continue
+        if symbol["section"] == 0:
+            if symbol["value"] == 0:  # a nonzero value is a common symbol: a definition that merges
+                undefined.append(symbol["name"])
+        elif symbol["section"] not in comdat or selections.get(symbol["section"]) == 1:
+            strong.append(symbol["name"])
+    copies = [(symbol["name"], digest, size, truth.verdict(symbol, body, relocs, digest, size))
+              for symbol, body, relocs, digest, size in _comdat_sections(data)]
+    return copies, strong, undefined, _weak_externals(data)
 
 
-def comdat_losers(objs):
-    """{object name: {symbol}} for COMDAT copies whose body differs from the
-    copy the census keeps: the copy most objects compiled (ties go to the
-    earliest in link order), so one odd object linked first, such as
-    matrix3d.obj's Vector3 inlines, cannot make a hundred others lose.
-    Copies are compared with relocation targets resolved to retail
-    addresses (comdat_bodies `retail`), so calling one retail function by
-    two spellings is not a difference. Preferring the copy from the name's
-    ledger-row object was measured and rejected: a helper rowed from a
-    split unit built with other flags then counts against every unit that
-    inlined it the usual way. comdat_exempt() names are
-    never held against an object. link.exe itself keeps the first copy in
-    link order, but that order is an artifact of the census, not of the
-    game's build. Objects are read in parallel (BUILD_POOL processes)."""
-    retail_addresses()  # load once, before the pool forks
+def _weak_externals(data):
+    """[(name, default)] for each weak external: the name resolves to
+    `default` when no object defines it (IMAGE_WEAK_EXTERN aux TagIndex)."""
+    import struct
+    names = {symbol["index"]: symbol["name"] for symbol in _coff_symbols(data)}
+    table, count = struct.unpack_from("<II", data, 8)
+    found, index = [], 0
+    while index < count:
+        storage, aux = data[table + 18 * index + 16], data[table + 18 * index + 17]
+        if storage == WEAK_EXTERNAL and aux:
+            tag = struct.unpack_from("<I", data, table + 18 * (index + 1))[0]
+            found.append((names.get(index, "?"), names.get(tag, "?")))
+        index += 1 + aux
+    return found
+
+
+def read_facts(objs, rows):
+    """object_facts for every object, in parallel (BUILD_POOL processes)."""
     workers = build._pool_size()
     if workers > 1:
         import concurrent.futures
-        with concurrent.futures.ProcessPoolExecutor(workers) as pool:
-            bodies = list(pool.map(_retail_bodies, objs, chunksize=64))
-    else:
-        bodies = [_retail_bodies(obj) for obj in objs]
-    counts, first = collections.defaultdict(collections.Counter), {}
-    for order, found in enumerate(bodies):
-        for name, digest, _ in found:
-            counts[name][digest] += 1
-            first.setdefault((name, digest), order)
-    kept = {name: min(c, key=lambda d: (-c[d], first[(name, d)])) for name, c in counts.items()}
+        with concurrent.futures.ProcessPoolExecutor(workers, initializer=_truth_init, initargs=(rows,)) as pool:
+            return list(pool.map(object_facts, objs, chunksize=64))
+    truth = RetailTruth(rows)
+    return [object_facts(obj, truth) for obj in objs]
+
+
+def comdat_losers(objs, rows=None, stats=None, facts=None):
+    """{object name: {symbol}} for COMDAT copies that are not retail's body.
+
+    keep_rule() decides each symbol: by retail truth where the ledger gives it
+    a retail address, else by link order (link.exe keeps the first copy, so an
+    object whose copy differs from that one runs someone else's code). Before
+    2026-09-29 every symbol used link order, so an arbitrary first object
+    decided who lost: for ??1AsciiString@@QAE@XZ the first object held a
+    minority variant, and the retail-true copies were the ones charged.
+    `stats`, when given, collects how many symbols and losing copies each
+    rule decided. `facts` is read_facts(objs), read here when not given."""
+    rows = ledger() if rows is None else rows
+    facts = read_facts(objs, rows) if facts is None else facts
+    copies = collections.defaultdict(list)
+    for obj, (found, _, _, _) in zip(objs, facts):
+        for name, digest, _, verdict in found:
+            copies[name].append((obj.name, digest, verdict))
     losers = collections.defaultdict(set)
-    for obj, found in zip(objs, bodies):
-        for name, digest, _ in found:
-            if kept[name] != digest and not comdat_exempt(name):
-                losers[obj.name].add(name)
+    stats = stats if stats is not None else {}
+    for name, found in copies.items():
+        loses, rule = keep_rule(found)
+        stats[f"symbols_{rule}"] = stats.get(f"symbols_{rule}", 0) + 1
+        for obj, lost in loses.items():
+            if lost:
+                losers[obj].add(name)
+                stats[f"losers_{rule}"] = stats.get(f"losers_{rule}", 0) + 1
     return losers
 
 
-def build_dump(row):
-    """Not a C++ definition: a gen-dump row (349 live in gen_small C++), MASM, or an __emit lift."""
-    return build.is_scaffold_row(row) or row["source"].endswith(".asm") or "__emit" in row.get("notes", "")
+def ledger_owners(rows, data=None):
+    """{name: {object}}: the object of each ledger row naming it (its object
+    symbol too), never an icf-owner over-claim or a scaffold row, and of each
+    matched data row (`data`, default data_ledger()). For a name several
+    objects define, the owner's is retail's definition."""
+    owners = collections.defaultdict(set)
+    for row in rows:
+        if "icf-owner=" not in (row.get("notes") or "") and not build.is_scaffold_row(row):
+            for name in {row["name"], build.ledger_object_symbol(row)}:
+                owners[name].add(build.row_object(row).name)
+    for row in data_ledger() if data is None else data:
+        owners[row["name"]].add(data_object(row).name)
+    return owners
+
+
+def judge_selected(holder, copies, definers, exclusive, owners):
+    """Is the definition the link kept for one name retail's?
+
+    `holder` is the object whose definition the link kept (None when the map
+    does not say); `copies` {object: (digest, verdict)} the name's COMDAT
+    copies with their retail-truth verdicts; `definers` every object defining
+    it; `exclusive` those whose definition is exclusive (an ordinary section or
+    a NODUPLICATES COMDAT); `owners` the ledger owner objects.
+
+    "wrong" when the kept copy is proven not retail's body, or when two or
+    more objects define the name, one exclusively, and the kept definition is
+    not a ledger owner's (operator new/delete kept from GameMemory.obj while
+    the retail body is mem_ops.obj's). Proven bytes decide before ownership.
+    "ok" when it is proven (its bytes, or the owner's matched row); "unknown"
+    when the choice matters (copies differ, or a duplicate) and nothing proves
+    it either way; None when there is nothing to choose between."""
+    if holder is None or holder not in definers:
+        return "unknown" if len(definers) > 1 else None
+    _, verdict = copies.get(holder, (None, None))
+    if verdict == "wrong":
+        return "wrong"
+    if verdict == "retail":
+        return "ok"
+    if len(definers) > 1 and exclusive:
+        mine = owners & definers
+        if mine:
+            return "ok" if holder in mine else "wrong"
+        return "unknown"
+    if len({digest for digest, _ in copies.values()}) > 1:
+        return "unknown"
+    return None
+
+
+def touched_names(fact):
+    """Every name one object's facts define or reference (weak externals and
+    their defaults included)."""
+    copies, strong, undefined, weaks = fact
+    names = {name for name, _, _, _ in copies} | set(strong) | set(undefined)
+    for name, default in weaks:
+        names.update((name, default))
+    return names
+
+
+def selection_verdicts(present, facts, owners, kept):
+    """({name: result}, {name: holder index or None}) for every name the census
+    objects define, judged on the definition the link kept (`kept`, from the
+    /MAP: selected_definitions). The second map lists only the names whose
+    kept definition is NOT the first definer in link order (link.exe keeps the
+    first for all but a handful), so link_check can predict the holder the way
+    the census saw it."""
+    position = {obj.name: index for index, obj in enumerate(present)}
+    copies = collections.defaultdict(dict)
+    definers = collections.defaultdict(set)
+    exclusive = collections.defaultdict(set)
+    for obj, (found, strong, _, _) in zip(present, facts):
+        for name, digest, _, verdict in found:
+            copies[name].setdefault(obj.name, (digest, verdict))
+            definers[name].add(obj.name)
+        for name in strong:
+            definers[name].add(obj.name)
+            exclusive[name].add(obj.name)
+    results, exceptions = {}, {}
+    for name, objs in definers.items():
+        holder = kept.get(name)
+        holder = holder if holder in objs else None
+        first = min(objs, key=position.__getitem__)
+        if holder != first:
+            exceptions[name] = position[holder] if holder is not None else None
+        result = judge_selected(holder, copies[name], objs, exclusive[name], owners.get(name, set()))
+        if result is not None:
+            results[name] = result
+    return results, exceptions
+
+
+MAP_PUBLIC = re.compile(r"^\s*[0-9A-Fa-f]{4}:[0-9A-Fa-f]{8}\s+(\S+)\s+[0-9A-Fa-f]{8}\s+(?:f\s+)?(?:i\s+)?(.+?)\s*$")
+
+
+def selected_definitions(map_text):
+    """{symbol: object} for the definition link.exe put in the image, from
+    the /MAP file's "Publics by Value" (its Lib:Object column)."""
+    found = {}
+    for line in map_text.splitlines():
+        if line.lstrip().startswith("Static symbols"):
+            break
+        match = MAP_PUBLIC.match(line)
+        if match:
+            found.setdefault(match.group(1), match.group(2).split(":")[-1])
+    return found
+
+
+SELECTED = OUT / "selected.csv"
+DUPLICATES = OUT / "duplicates_selected.csv"
+ALIASED = OUT / "aliased.csv"
+SELECTION = OUT / "selection.json"
+
+
+def selection_report(present, facts, rows, clean_objects, map_text, log):
+    """What the link actually put in the image, against retail truth.
+
+    The per-file rule asks whether a file's OWN copy is retail's body. The
+    image holds one copy per COMDAT symbol, the one link.exe selected, so a
+    clean file can still run a wrong copy another object supplied. From the
+    /MAP, for every COMDAT symbol whose copies differ: which object's copy was
+    selected, its verdict, and whether it was the first in link order.
+    `clean_objects` are the objects of files counted as linked; one depends on
+    a symbol when it holds a copy of it or references it. Also every name
+    that only resolves to a DIFFERENT name: a weak external falling back to
+    its default, or an unresolved name the alias scaffold (a pin's address)
+    would point at another definition. And every name with more than one
+    definition at least one of which is exclusive (an ordinary section or a
+    NODUPLICATES COMDAT: LNK2005, a warning LNK4006 under /FORCE): which
+    object's definition the link kept, and whether that object is the ledger
+    row's own (operator new/delete: mem_ops.cpp holds the retail body,
+    GameMemory.cpp another, and link order keeps GameMemory.cpp's). Writes
+    selected.csv, duplicates_selected.csv, aliased.csv and selection.json
+    under build/link_census/; measures, changes no rule."""
+    kept = selected_definitions(map_text)
+    position = {obj.name: index for index, obj in enumerate(present)}
+    copies = collections.defaultdict(list)
+    users = collections.defaultdict(set)
+    defined = set()
+    weak = collections.defaultdict(set)
+    definers, exclusive = collections.defaultdict(set), collections.defaultdict(set)
+    for obj, (found, strong, undefined, weaks) in zip(present, facts):
+        for name, digest, _, verdict in found:
+            copies[name].append((obj.name, digest, verdict))
+            users[name].add(obj.name)
+            defined.add(name)
+            definers[name].add(obj.name)
+        defined.update(strong)
+        for name in strong:
+            definers[name].add(obj.name)
+            exclusive[name].add(obj.name)
+            users[name].add(obj.name)
+        for name in undefined:
+            users[name].add(obj.name)
+        for name, default in weaks:
+            weak[(name, default)].add(obj.name)
+    table, counts = [], collections.Counter()
+    bad = collections.defaultdict(set)  # clean object -> (symbol, verdict of the selected copy)
+    for name, found in copies.items():
+        if len({digest for _, digest, _ in found}) < 2:
+            continue
+        holder = kept.get(name, "")
+        verdicts = {obj: verdict for obj, _, verdict in found}
+        verdict = verdicts[holder] if holder in verdicts else "not-in-map"
+        verdict = verdict or "no-address"
+        first = min(found, key=lambda copy: position[copy[0]])[0]
+        table.append({"symbol": name, "copies": len(found), "digests": len({d for _, d, _ in found}),
+                      "selected_object": holder, "selected_verdict": verdict,
+                      "selected_is_first": "yes" if holder == first else "no",
+                      "retail_true_copies": sum(1 for _, _, v in found if v == "retail")})
+        counts[f"selected_{verdict}"] += 1
+        counts["selected_first" if holder == first else "selected_not_first"] += 1
+        if verdict != "retail":
+            for obj in users[name] & clean_objects:
+                bad[obj].add((name, verdict))
+    with SELECTED.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, ["symbol", "copies", "digests", "selected_object", "selected_verdict",
+                                         "selected_is_first", "retail_true_copies"], lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(sorted(table, key=lambda row: row["symbol"]))
+    owners = ledger_owners(rows)
+    duplicates, owner_misses = [], collections.defaultdict(set)
+    for name, objs in exclusive.items():
+        if len(definers[name]) < 2:
+            continue
+        holder = kept.get(name, "")
+        first = min(definers[name], key=lambda obj: position[obj])
+        mine = owners.get(name, set()) & definers[name]
+        state = "no-owner" if not mine else "owner" if holder in mine else "not-owner"
+        duplicates.append({"symbol": name, "definers": len(definers[name]), "exclusive": len(objs),
+                           "selected_object": holder, "selected_is_first": "yes" if holder == first else "no",
+                           "owner_objects": " ".join(sorted(mine)), "selected": state})
+        counts[f"duplicate_{state}"] += 1
+        if state == "not-owner":
+            for obj in users[name] & clean_objects:
+                owner_misses[obj].add(name)
+    with DUPLICATES.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, ["symbol", "definers", "exclusive", "selected_object", "selected_is_first",
+                                         "owner_objects", "selected"], lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(sorted(duplicates, key=lambda row: row["symbol"]))
+    aliased = []
+    for (name, default), objs in sorted(weak.items()):
+        if name not in defined and default != name:
+            # ??_E (vector deleting dtor) falling back to ??_G (scalar) is how
+            # MSVC emits a class nobody deletes as an array: standard, listed.
+            aliased.append({"name": name, "via": "weak-external", "resolves_to": default, "excused": "no",
+                            "objects": len(objs), "linked_objects": len(objs & clean_objects)})
+    _, detail, _, _ = classify(log, rows)
+    wanted = [name for name, entry in detail.items() if entry["kind"] in ("alias", "dump", "pinned-elsewhere")]
+    referrers = collections.defaultdict(set)
+    for line in log.splitlines():
+        found, referrer = UNRESOLVED.search(line), REFERRER.match(line)
+        if found and referrer:
+            referrers[found.group(1) or found.group(2)].add(Path(referrer.group(1)).name)
+    crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
+    runtime, stubs, imported = library_symbols(crt), import_stubs(), retail_imports()
+    for name, target in sorted(alias_scaffold(rows, wanted).items()):
+        excuse = excused(name, runtime, imported, stubs)  # the real link finds it in an import library
+        aliased.append({"name": name, "via": f"pin ({detail[name]['kind']})", "resolves_to": target,
+                        "excused": "yes" if excuse else "no", "objects": len(referrers[name]),
+                        "linked_objects": len(referrers[name] & clean_objects)})
+    with ALIASED.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, ["name", "via", "resolves_to", "excused", "objects", "linked_objects"],
+                                lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(aliased)
+    wrong = {obj for obj, found in bad.items() if any(v == "wrong" for _, v in found)}
+    weak_rows = [row for row in aliased if row["via"] == "weak-external"]
+    summary = {"conflicted_symbols": len(table), **dict(counts), "linked_files": len(clean_objects),
+               "linked_files_on_wrong_selected_copy": len(wrong),
+               "linked_files_on_unproven_selected_copy": len(bad),
+               "duplicated_symbols": len(duplicates),
+               "linked_files_on_non_owner_duplicate": len(owner_misses),
+               "top_non_owner_duplicates": collections.Counter(
+                   name for found in owner_misses.values() for name in found).most_common(10),
+               "weak_fallbacks": len(weak_rows),
+               "weak_fallbacks_not_deleting_dtor": sum(1 for row in weak_rows if not (
+                   row["name"].startswith("??_E") and row["resolves_to"].startswith("??_G"))),
+               "weak_fallbacks_in_linked_files": sum(1 for row in weak_rows if row["linked_objects"]),
+               "pin_aliases": len(aliased) - len(weak_rows),
+               "pin_aliases_in_linked_files": sum(1 for row in aliased if row["via"] != "weak-external"
+                                                  and row["excused"] == "no" and row["linked_objects"]),
+               "top_wrong_selected": collections.Counter(
+                   name for found in bad.values() for name, v in found if v == "wrong").most_common(10)}
+    return summary, bad, owner_misses
+
+
+def print_selection(summary):
+    print(f"  selected COMDAT copies (the /MAP), {summary['conflicted_symbols']:,} symbols whose copies differ:")
+    for key in ("retail", "unknown", "wrong", "no-address", "not-in-map", "first", "not_first"):
+        print(f"    {key:18} {summary.get('selected_' + key, 0):8,}")
+    print(f"  files counted as linked: {summary['linked_files']:,}; "
+          f"{summary['linked_files_on_wrong_selected_copy']:,} use a symbol whose selected copy is proven wrong, "
+          f"{summary['linked_files_on_unproven_selected_copy']:,} one whose selected copy is not proven retail")
+    print(f"  ... those files' LINKED bytes: {summary.get('linked_bytes_on_wrong_selected_copy', 0):,} "
+          f"(wrong), {summary.get('linked_bytes_on_unproven_selected_copy', 0):,} (not proven)")
+    print(f"  names defined more than once with an exclusive definition: {summary.get('duplicated_symbols', 0):,}; "
+          f"the kept definition is the ledger owner's for {summary.get('duplicate_owner', 0):,}, another object's "
+          f"for {summary.get('duplicate_not-owner', 0):,}, no owner {summary.get('duplicate_no-owner', 0):,}")
+    print(f"  files counted as linked that use a symbol whose kept definition is not its owner's: "
+          f"{summary.get('linked_files_on_non_owner_duplicate', 0):,} "
+          f"({summary.get('linked_bytes_on_non_owner_duplicate', 0):,} LINKED bytes)")
+    print(f"  names resolved only through another name: {summary['weak_fallbacks']:,} weak-external fallbacks "
+          f"({summary['weak_fallbacks_not_deleting_dtor']:,} other than ??_E -> ??_G; "
+          f"{summary['weak_fallbacks_in_linked_files']:,} used by linked files), {summary['pin_aliases']:,} "
+          f"unresolved names a pin would alias ({summary['pin_aliases_in_linked_files']:,} not excused in "
+          "linked files)")
+
+
+def naked_rows():
+    """{(name, target_rva)} of the C/C++ rows whose body is naked or __emit
+    assembly, by progress.py's scan of the source itself (the rows it counts
+    as dumps)."""
+    import progress
+    return set(progress.naked_cpp_rows_at(progress.matched_at(None), None))
+
+
+def build_dump(row, naked=frozenset()):
+    """Not a C++ definition: a gen-dump row (349 live in gen_small C++), MASM,
+    or a naked/__emit body (`naked`, from naked_rows()). Decided from the
+    source, never from the note: "exact C++ __emit thunk converted from MASM
+    dump" is the note of real C++ (STLRbGlobalBoolIncrementThunk.cpp)."""
+    return (build.is_scaffold_row(row) or row["source"].endswith(".asm")
+            or (row["name"], row["target_rva"]) in naked)
 
 
 def report(census):
@@ -523,13 +1359,20 @@ def main(argv=None):
     ap.add_argument("--build", action="store_true",
                     help="first compile every matched source whose object is not current (build.compile_rows, "
                          "BUILD_POOL defaults to all cores but two); no byte verification")
+    ap.add_argument("--selected", action="store_true",
+                    help="relink the last census's objects with /MAP and report which COMDAT copy link.exe selected "
+                         "(selected.csv, aliased.csv); on the census's own commit, records nothing")
     ap.add_argument("--status", action="store_true",
                     help="redo link_status.csv and the last history row's LINKED from the last link log, on the census's own commit")
     args = ap.parse_args(argv)
     path = OUT / "census.json"
     if args.report:
         report(json.loads(path.read_text(encoding="utf-8")))
+        if SELECTION.exists():
+            print_selection(json.loads(SELECTION.read_text(encoding="utf-8")))
         return 0
+    if args.selected:
+        return selected_main()
     if args.status:
         record(json.loads(path.read_text(encoding="utf-8")), ledger(), rerun=True)
         return 0
@@ -541,13 +1384,23 @@ def main(argv=None):
         os.environ.pop("BUILD_RECOMPILE_ONLY", None)
         started = time.time()
         build.ensure_case_shims()
-        build.compile_rows(rows, list(dict.fromkeys(ROOT / row["source"] for row in rows)))
+        build.compile_rows(rows, compile_sources(rows))
         print(f"link_census: compile {time.time() - started:.0f}s", flush=True)
     present, missing = objects(rows)
+    sources = _object_sources(rows)
+    # --build just proved every object current (compile_rows' own test).
+    stale = [] if args.build else stale_objects(present, sources)
+    if stale:
+        raise SystemExit(f"link_census: {len(stale):,} source objects are stale, e.g. {stale[0].name}; rerun with --build")
     if missing:
         print(f"link_census: {len(missing):,} objects missing (run the full ./build.sh first); "
               f"linking the {len(present):,} present", file=sys.stderr)
-    log, seconds, _ = link(present)
+    inputs = census_inputs_state()
+    fresh_outputs(OUT / "census.exe")
+    log, seconds, code = link(present)
+    unexplained_exit(code, log, OUT / "census.exe")
+    if census_inputs_state() != inputs:
+        raise SystemExit("link_census: compiler inputs changed during link; nothing recorded")
     crashed = FATAL.search(log)
     if crashed:
         # A linker that dies prints no per-symbol errors, which would read as
@@ -563,7 +1416,9 @@ def main(argv=None):
         table = alias_scaffold(rows, wanted)
         if args.scaffold_limit:
             table = dict(sorted(table.items())[:args.scaffold_limit])
-        log, seconds, _ = link(present, table, tag="scaffold")
+        fresh_outputs(OUT / "scaffold.exe")
+        log, seconds, code = link(present, table, tag="scaffold")
+        unexplained_exit(code, log, OUT / "scaffold.exe")
         crashed = FATAL.search(log)
         after, after_detail, after_dup_kinds, _ = classify(log, rows)
         census["scaffold"] = {"aliases": len(table), "seconds": seconds,
@@ -575,14 +1430,81 @@ def main(argv=None):
     path.write_text(json.dumps(census, indent=1), encoding="utf-8")
     report(census)
     if args.history:
-        # --build just proved every object current (compile_is_current, the
-        # full gate's own test), so record() need not hash them again.
+        # --build just proved every object current (compile_rows, the full
+        # gate's own test), so record() need not hash them again.
         record(census, rows, fresh=args.build)
     return 0
 
 
+def selected_main():
+    """--selected: the selection report for the last recorded census, on its
+    own tree, from a fresh /MAP link of the same objects."""
+    history = read_history()
+    changed = subprocess.run(["git", "diff", "--quiet", history[-1]["commit"] if history else "HEAD", "--",
+                              *CENSUS_INPUTS],
+                             cwd=ROOT).returncode if history else 1
+    if changed:
+        raise SystemExit("link_census: --selected needs the last census's sources and ledger "
+                         f"({history[-1]['commit'] if history else 'no census'}); this tree differs")
+    rows = ledger()
+    present, missing = objects(rows)
+    if missing:
+        raise SystemExit(f"link_census: {len(missing):,} objects missing")
+    sources = _object_sources(rows)
+    stale = stale_objects(present, sources)
+    if stale:
+        raise SystemExit(f"link_census: {len(stale):,} objects are not current for their source, "
+                         f"e.g. {stale[0].name}")
+    log = final_log(None)  # the census's own link says which names nothing defines
+    map_text = selection_link(present, log)
+    if subprocess.run(["git", "diff", "--quiet", history[-1]["commit"], "--", *CENSUS_INPUTS],
+                      cwd=ROOT).returncode or stale_objects(present, sources):
+        raise SystemExit("link_census: source inputs or objects changed during the selection link; rerun the census")
+    with STATUS.open(newline="", encoding="utf-8") as handle:
+        clean = {row["source"] for row in csv.DictReader(handle) if row["linked"] == "yes"}
+    clean_objects = {build.row_object(row).name for row in rows if row["source"] in clean}
+    summary, bad, owner_misses = selection_report(present, read_facts(present, rows), rows, clean_objects,
+                                    map_text, log)
+    import link_check
+    sizes = link_check.source_bytes(clean)
+    by_object = {build.row_object(row).name: row["source"] for row in rows if row["source"] in clean}
+    wrong = {obj for obj, found in bad.items() if any(verdict == "wrong" for _, verdict in found)}
+    summary["linked_bytes_on_wrong_selected_copy"] = sum(sizes.get(by_object.get(obj), 0) for obj in wrong)
+    summary["linked_bytes_on_unproven_selected_copy"] = sum(sizes.get(by_object.get(obj), 0) for obj in bad)
+    summary["linked_bytes_on_non_owner_duplicate"] = sum(sizes.get(by_object.get(obj), 0) for obj in owner_misses)
+    summary["linked_bytes"] = sum(sizes.values())
+    SELECTION.write_text(json.dumps(summary, indent=1), encoding="utf-8")
+    print_selection(summary)
+    return 0
+
+
+def selection_link(present, log):
+    """The /MAP text of a relink of `present` in which every name the plain
+    link (`log`) left unresolved is defined in one stub section, so the link
+    finishes and the map says which definition it kept for every name.
+    /OPT:NOREF keeps every selected COMDAT in the map."""
+    missing_names = {found.group(1) or found.group(2) for found in map(UNRESOLVED.search, log.splitlines()) if found}
+    stubs = stub_object(missing_names, OUT / "selected_stubs.obj")
+    link_map = OUT / "selected.map"
+    fresh_outputs(link_map, OUT / "selected.exe")  # a failed link leaves an empty map, never last run's
+    relink, _, code = link(present, tag="selected", extra=[stubs],
+                           options=["/OPT:NOREF", f"/MAP:{_arg(link_map)}"])
+    unexplained_exit(code, relink, OUT / "selected.exe")  # a crash can leave a partial map
+    if FATAL.search(relink) or not link_map.exists() or not link_map.stat().st_size:
+        raise SystemExit(f"link_census: the /MAP link failed; see {_arg(OUT / 'selected.log')}")
+    return link_map.read_text(encoding="latin-1")
+
+
+def _object_sources(rows):
+    """{object: source} for every compiled (C/C++/MASM) row."""
+    sources = {build.row_object(row): ROOT / row["source"] for row in rows
+               if Path(row["source"]).suffix.lower() in (".c", ".cpp", ".asm")}
+    sources.update({build.obj_path(source): source for source in data_sources()})
+    return sources
+
+
 STATUS = ROOT / "reverse/link_status.csv"
-STATUS_FIELDS = ["source", "linked", "unresolved", "duplicates", "comdat_losers", "addresses"]
+STATUS_FIELDS = ["source", "linked", "unresolved", "duplicates", "comdat_losers", "addresses", "wrong_selected"]
 
 
 def final_log(census):
@@ -602,71 +1524,101 @@ def library_symbols(path):
     return {name.decode("latin-1") for name in body[4 + 4 * count:].split(b"\0")[:count]}
 
 
-def retail_imports():
-    """Names retail's import table lists (every entry is imported by name)."""
+def _retail_import_entries():
+    """[(dll, name, slot rva)] from retail's import table (every entry is
+    imported by name)."""
     import pefile
     pe = pefile.PE(data=build.EXE.read_bytes(), fast_load=True)
     pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_IMPORT"]])
-    return {entry.name.decode("latin-1") for dll in pe.DIRECTORY_ENTRY_IMPORT for entry in dll.imports if entry.name}
+    return [(dll.dll.decode("latin-1"), entry.name.decode("latin-1"), entry.address - pe.OPTIONAL_HEADER.ImageBase)
+            for dll in pe.DIRECTORY_ENTRY_IMPORT for entry in dll.imports if entry.name]
+
+
+def retail_imports():
+    """{name: {dll, lower case}} for every function retail's import table
+    lists (every entry is imported by name)."""
+    found = collections.defaultdict(set)
+    for dll, name, _ in _retail_import_entries():
+        found[name].add(dll.lower())
+    return dict(found)
+
+
+def retail_import_slots():
+    """[(name, IAT slot rva)]: where retail's `call [__imp_name]` reads."""
+    return [(name, slot) for _, name, slot in _retail_import_entries()]
+
+
+def _undecorate(name):
+    """`_socket@12` -> `socket`: one decoration underscore and a stdcall @N off."""
+    return re.sub(r"@\d+$", "", name[1:] if name.startswith("_") else name)
 
 
 def library_import_thunks(path):
-    """Names an import library defines as call stubs (short import objects of
-    CODE type): `_strcpy` in msvcrt.lib forwards to MSVCR71's strcpy. Such a
-    name resolves in the real link only if the image imports that function."""
+    """{call stub: {(dll, imported name)}} for the short import objects of CODE
+    type an import library holds: `_strcpy` in msvcrt.lib forwards to
+    MSVCR71's strcpy, `_socket@12` in WSock32.Lib to WSOCK32's socket. Such a
+    name resolves in the real link only if the image imports that function.
+    The imported name follows the object's name type (IMPORT_OBJECT_NAME,
+    _NO_PREFIX, _UNDECORATE); an import by ordinal names its function by the
+    undecorated stub name."""
     import struct
-    data, at, thunks = path.read_bytes(), 8, set()
+    data, at, thunks = path.read_bytes(), 8, collections.defaultdict(set)
     while at + 60 <= len(data):
-        size = int(data[at + 48:at + 58].decode("ascii").strip())
+        try:
+            size = int(data[at + 48:at + 58].decode("ascii").strip())
+        except ValueError:
+            break
         body = data[at + 60:at + 60 + size]
         if body[:4] == b"\0\0\xff\xff" and len(body) > 20:
-            if struct.unpack_from("<H", body, 18)[0] & 3 == 0:  # IMPORT_OBJECT_CODE
-                thunks.add(body[20:body.index(b"\0", 20)].decode("latin-1"))
+            kind = struct.unpack_from("<H", body, 18)[0]
+            if kind & 3 == 0:  # IMPORT_OBJECT_CODE
+                end = body.index(b"\0", 20)
+                symbol = body[20:end].decode("latin-1")
+                dll = body[end + 1:body.index(b"\0", end + 1)].decode("latin-1").lower()
+                name_type = (kind >> 2) & 7
+                if name_type == 1:
+                    name = symbol
+                elif name_type == 2:
+                    name = symbol[1:] if symbol[:1] in "?@_" else symbol
+                else:
+                    name = _undecorate(symbol).split("@")[0] if name_type == 3 else _undecorate(symbol)
+                thunks[symbol].add((dll, name))
         at += 60 + size + (size & 1)
     return thunks
 
 
-def retail_import_dlls():
-    """DLL names retail's import table lists (wsock32.dll, kernel32.dll...)."""
-    import pefile
-    pe = pefile.PE(data=build.EXE.read_bytes(), fast_load=True)
-    pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_IMPORT"]])
-    return {dll.dll.decode("latin-1").lower() for dll in pe.DIRECTORY_ENTRY_IMPORT}
+def import_stubs():
+    """Every call stub the committed toolchain's import libraries define:
+    Vc7/lib (msvcrt.lib, kernel32.lib) and Vc7/PlatformSDK/Lib (WSock32.Lib,
+    WS2_32.Lib, User32.Lib, ...). Static libraries in those directories hold
+    no short import objects and add nothing."""
+    root = build.vc71_root() / "Vc7"
+    stubs = collections.defaultdict(set)
+    for directory in (root / "lib", root / "PlatformSDK" / "Lib"):
+        for path in sorted(directory.glob("*")):
+            if path.suffix.lower() == ".lib" and path.read_bytes()[:8] == b"!<arch>\n":
+                for symbol, targets in library_import_thunks(path).items():
+                    stubs[symbol] |= targets
+    return dict(stubs)
 
 
-def sdk_import_thunks():
-    """Call stubs the toolchain's Platform SDK import libraries define for the
-    DLLs retail imports: wsock32.lib's `_bind@12` forwards to WSOCK32's bind
-    exactly as msvcrt.lib's `_strcpy` does to MSVCR71's strcpy. A C unit that
-    declares a Win32 API without dllimport references the stub, and the real
-    link resolves it from the import library; excused() still requires retail
-    to import the name behind it. DLLs whose import library the toolchain does
-    not ship (mss32, d3dx9_27) contribute nothing."""
-    lib_dir = build.vc71_root() / "Vc7" / "PlatformSDK" / "Lib"
-    libs = {path.name.lower(): path for path in lib_dir.iterdir() if path.suffix.lower() == ".lib"}
-    thunks = set()
-    for dll in sorted(retail_import_dlls()):
-        lib = libs.get(dll[:-len(".dll")] + ".lib" if dll.endswith(".dll") else dll + ".lib")
-        if lib is not None:
-            thunks |= library_import_thunks(lib)
-    return thunks
-
-
-def excused(symbol, runtime, imported, thunks=frozenset()):
+def excused(symbol, runtime, imported, thunks=None):
     """True for a name the real link resolves without this tree defining it.
 
     An __imp_ name only when retail imports that function: strip the prefix,
     one decoration underscore and a stdcall @N (__imp__GetModuleFileNameA@12,
     __imp___iob); MSVCR71 exports a few C++ names mangled, so a ?name must
     match as is (??1exception@@UAE@XZ). An address-named slot or a name
-    retail does not import is a declaration defect. A call stub msvcrt.lib or
-    a retail DLL's SDK import library defines (`_strcpy`, `_bind@12`) counts as
-    its import. Any other name only when msvcrt.lib
-    (MSVCR71's import library and CRT statics: __except_list, __fltused)
-    defines it.
+    retail does not import is a declaration defect. A call stub an import
+    library in the toolchain defines (`_strcpy` in msvcrt.lib, `_socket@12` in
+    WSock32.Lib, import_stubs()) counts only when retail imports that function
+    from that DLL: `_htons@4` is a WSock32.Lib stub, but retail imports only
+    htonl and ntohs, so a direct htons call stays a defect. Any other name
+    only when msvcrt.lib (MSVCR71's import library and CRT statics:
+    __except_list, __fltused) defines it. `imported` is retail_imports().
     """
-    if symbol in thunks:  # a call stub: only as good as the import behind it
-        return excused("__imp_" + symbol, runtime, imported)
+    if thunks and symbol in thunks:  # a call stub: only as good as the import behind it
+        return any(dll in imported.get(name, ()) for dll, name in thunks[symbol])
     if symbol.startswith("__imp_"):
         name = symbol[len("__imp_"):]
         if name in imported or name.startswith("?"):
@@ -675,28 +1627,57 @@ def excused(symbol, runtime, imported, thunks=frozenset()):
     return symbol in runtime
 
 
-def write_status(log, rows, present=None):
+def write_status(log, rows, present, meta, kept):
     """One row per C/C++ source: does its object link cleanly on its own terms?
 
     Per file, not per program: a clean file may still call into one that is
     not. Read from the full plain-link log, not census.json, which keeps five
     referrers per name. The census links /NODEFAULTLIB, so two kinds of
-    unresolved name are not held against a file: __imp_ entries, which want
-    the import libraries, and names msvcrt.lib defines (retail imports
+    unresolved name are not held against a file: __imp_ entries and call stubs
+    (`_socket@12`) retail imports, which want the import libraries, and names msvcrt.lib defines (retail imports
     MSVCR71.dll, and the ledger's CRT rows are msvcrt.lib members), which the
     real link searches by default -- __except_list alone is referenced by 3,088
     objects. See excused() for exactly which names. A duplicate counts against both definers, since the log cannot say
-    which copy is wrong. A COMDAT copy that differs from the majority copy
-    counts against its object (comdat_losers). Any hard-coded image address counts too
+    which copy is wrong. A COMDAT copy that is not retail's body counts against
+    its object (comdat_losers: retail truth where the symbol has a retail
+    address, else the copy link.exe keeps, the first in link order). Any hard-coded image address counts too
     (link_debt.addresses): it links, but only while nothing moves.
+
+    And since 2026-09-29 (wrong_selected), a file is not linked when any name
+    it defines or references resolves, in the actual link, to a definition
+    proven not retail's: the COMDAT copy link.exe kept is proven wrong, or the
+    kept one of several definitions is not the ledger owner's
+    (judge_selected). `kept` is the /MAP's {name: object}
+    (selected_definitions of selection_link). A name with no retail address or
+    owner is not held against anyone; the files that depend on such a choice
+    are counted (`unknown_only`).
+
+    Returns (clean, files, blocking names, clean under the rule before
+    wrong_selected, stats). It also writes build/link_census/link_index.pkl, which tools/link_check.py
+    reads to check one file in seconds (`meta` names the census).
     """
     import link_debt
     crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
-    runtime, thunks = library_symbols(crt), library_import_thunks(crt) | sdk_import_thunks()
+    runtime, thunks = library_symbols(crt), import_stubs()
     imported = retail_imports()
     if present is None:
         present, _ = objects(rows)
-    losers = comdat_losers(present)
+    stats = {}
+    facts = read_facts(present, rows)
+    losers = comdat_losers(present, rows, stats, facts)
+    owners = ledger_owners(rows)
+    results, exceptions = selection_verdicts(present, facts, owners, kept)
+    wrong_selected, unknown_selected = {}, {}
+    for obj, fact in zip(present, facts):
+        touched = touched_names(fact)
+        wrong_selected[obj.name] = sorted(name for name in touched if results.get(name) == "wrong")
+        unknown_selected[obj.name] = sum(1 for name in touched if results.get(name) == "unknown")
+    print(f"link_census: selected definitions: {sum(1 for r in results.values() if r == 'wrong'):,} names proven "
+          f"wrong, {sum(1 for r in results.values() if r == 'unknown'):,} unproven, "
+          f"{sum(1 for r in results.values() if r == 'ok'):,} proven; {len(exceptions):,} not the first in link order")
+    print(f"link_census: COMDAT keeper: {stats.get('symbols_retail', 0):,} symbols judged by retail truth "
+          f"({stats.get('losers_retail', 0):,} losing copies), {stats.get('symbols_first', 0):,} with no retail "
+          f"address by link order ({stats.get('losers_first', 0):,} losing copies)")
     unresolved = collections.defaultdict(set)
     duplicates = collections.defaultdict(set)
     for line in log.splitlines():
@@ -712,28 +1693,42 @@ def write_status(log, rows, present=None):
             symbol = found.group(2) or found.group(3)
             duplicates[Path(found.group(1)).name].add(symbol)
             duplicates[Path(found.group(4)).name].add(symbol)
-    out = {}
-    for row in rows:
+    out, blockers, clean_prev, unknown_only = {}, {}, set(), set()
+    # A data-only source is a file like any other; it owns no code, so linking
+    # it adds no LINKED bytes, only the definitions other files resolve to.
+    for row, object_of in [(row, build.row_object) for row in rows] + [(row, data_object) for row in data_ledger()]:
         source = row["source"]
         if source in out or Path(source).suffix.lower() not in (".c", ".cpp"):
             continue
-        obj = build.row_object(row).name
+        obj = object_of(row).name
         try:
             text = (ROOT / source).read_text(encoding="utf-8", errors="replace")
         except OSError:
             continue
         counts = (len(unresolved.get(obj, ())), len(duplicates.get(obj, ())), len(losers.get(obj, ())),
-                  len(link_debt.addresses(text)))
+                  len(link_debt.addresses(text)), len(wrong_selected.get(obj, ())))
         out[source] = {"source": source, "linked": "no" if any(counts) else "yes",
                        **dict(zip(STATUS_FIELDS[2:], counts))}
+        if not any(counts[:4]):
+            clean_prev.add(source)
+        if not any(counts) and unknown_selected.get(obj):
+            unknown_only.add(source)
+        blockers[source] = {"object": obj, "linked": not any(counts), "unresolved": sorted(unresolved.get(obj, ())),
+                            "duplicates": sorted(duplicates.get(obj, ())), "losers": sorted(losers.get(obj, ())),
+                            "addresses": counts[3], "wrong_selected": wrong_selected.get(obj, [])}
     with STATUS.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, STATUS_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(out[s] for s in sorted(out))
     clean = {source for source, r in out.items() if r["linked"] == "yes"}
-    print(f"link_census: wrote {STATUS.relative_to(ROOT).as_posix()} ({len(clean):,} of {len(out):,} sources link cleanly)")
+    import link_check
+    link_check.write_index(present, facts, blockers, {"runtime": runtime, "imported": imported, "stubs": thunks},
+                           meta or {}, {"exceptions": exceptions, "owners": dict(owners)})
+    print(f"link_census: wrote {STATUS.relative_to(ROOT).as_posix()} ({len(clean):,} of {len(out):,} sources link cleanly; "
+          f"{len(clean_prev):,} before wrong_selected; {len(unknown_only):,} of the clean ones use a selected "
+          "definition nothing proves or disproves)")
     blocking = set().union(*unresolved.values()) if unresolved else set()
-    return clean, len(out), len(blocking)
+    return clean, len(out), len(blocking), clean_prev, {"unknown_only": unknown_only}
 
 
 def linked_split(clean):
@@ -788,6 +1783,22 @@ def object_current(source, obj):
     return meta.get("cmd") == build._cmd_fingerprint(command, env)
 
 
+def stale_objects(present, sources):
+    """The objects in `present` that are not current for their source
+    (object_current); objects with no source (library members) are taken
+    as extracted."""
+    return [obj for obj in present if obj in sources and not object_current(sources[obj], obj)]
+
+
+def census_inputs_state():
+    """HEAD and the uncommitted diff of every compiler input: equal before
+    and after a link when nothing changed the tree under it."""
+    commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout
+    diff = subprocess.run(["git", "diff", "HEAD", "--", *CENSUS_INPUTS], cwd=ROOT, capture_output=True,
+                          text=True, errors="replace").stdout
+    return commit, diff
+
+
 def record(census, rows, rerun=False, fresh=False):
     """Write link_status.csv and the census's history row, LINKED included.
 
@@ -798,23 +1809,26 @@ def record(census, rows, rerun=False, fresh=False):
     failed compile leaves last week's object), or when game sources or the
     ledger have uncommitted edits. --status (rerun)
     only runs on the census's own commit, so a log is never paired with
-    another tree's ledger or sources.
+    another tree's ledger or sources. `fresh`: --build just proved every
+    object current, so they are not hashed again.
     """
     if census["missing"]:
         raise SystemExit(f"link_census: {census['missing']:,} objects were missing from the link; "
                          "nothing recorded (build everything and rerun)")
-    dirty = subprocess.run(["git", "status", "--porcelain", "-uno", "--", "Code", "reverse/functions.csv",
-                            "reverse/symbols.csv"], cwd=ROOT, capture_output=True, text=True).stdout
+    dirty = subprocess.run(["git", "status", "--porcelain", "-uno", "--", *CENSUS_INPUTS],
+                           cwd=ROOT, capture_output=True, text=True).stdout
     if dirty.strip():
         raise SystemExit(f"link_census: uncommitted source or ledger edits; the census would not match its commit:\n{dirty}")
     # cl.exe leaves the previous .obj in place when a compile fails, and the
     # full build stops at the first failure: an object that is not current for
     # its source, recorded headers and compile command is last week's code
     # under this week's ledger.
-    present, _ = objects(rows)
-    by_object = {build.row_object(row): ROOT / row["source"] for row in rows
-                 if Path(row["source"]).suffix.lower() in (".c", ".cpp", ".asm")}
-    stale = [] if fresh else [obj for obj in present if obj in by_object and not object_current(by_object[obj], obj)]
+    present, missing = objects(rows)
+    if missing:  # census.json's count is the census's; an object gone since then would read as clean
+        raise SystemExit(f"link_census: {len(missing):,} objects are missing now, e.g. {missing[0].name}; "
+                         "nothing recorded")
+    by_object = _object_sources(rows)
+    stale = [] if fresh else stale_objects(present, by_object)
     if stale:
         raise SystemExit(f"link_census: {len(stale):,} objects are not current for their source (a failed compile?), "
                          f"e.g. {stale[0].name}; nothing recorded")
@@ -834,25 +1848,40 @@ def record(census, rows, rerun=False, fresh=False):
                 or sum(dup_kinds.values()) != sum(census["duplicate_classes"].values())):
             raise SystemExit("link_census: census.log no longer reproduces census.json's counts; rerun the census")
     import link_debt
-    clean, files, blocking = write_status(log, rows, present)
+    kept = selected_definitions(selection_link(present, log))
+    if subprocess.run(["git", "diff", "--quiet", commit, "--", *CENSUS_INPUTS], cwd=ROOT).returncode \
+            or (not fresh and stale_objects(present, by_object)):
+        raise SystemExit("link_census: source inputs or objects changed during the selection link; nothing recorded")
+    clean, files, blocking, clean_prev, _ = write_status(log, rows, present, {"date": census["when"], "commit": commit},
+                                                         kept)
+    before = linked_figures(clean_prev)
     figure = {"files": files, "files_linked": len(clean), "blocking_names": blocking,
               "addresses": sum(count for count, _ in link_debt.per_file(link_debt.addresses)),
-              **linked_figures(clean)}
+              **linked_figures(clean), "files_linked_prev_rule": len(clean_prev),
+              "linked_bytes_prev_rule": before["linked_bytes"], "linked_authored_prev_rule": before["linked_authored"]}
     if rerun:
         history[-1].update(figure)
     else:
         history.append({**history_row(census, commit), **figure})
     write_history(history)
-    print(f"link_census: LINKED {figure['linked_bytes']:,} bytes; "
+    print(f"link_census: LINKED {figure['linked_bytes']:,} bytes ({figure['linked_bytes_prev_rule']:,} before "
+          f"wrong_selected), authored {figure['linked_authored']:,} ({figure['linked_authored_prev_rule']:,}); "
           f"{'updated' if rerun else 'appended'} {HISTORY.relative_to(ROOT).as_posix()}")
 
 
 HISTORY = ROOT / "reverse/link_census_history.csv"
+# *_prev_rule: the same census without wrong_selected, except the re-baseline
+# row of the port of Open-BFME-1's rules (2026-10-01), which holds the figures
+# of the rules before it (majority COMDAT keeper with the STLport and array
+# helper exemption, ledger row link order, SDK stubs excused for any retail
+# DLL, no wrong_selected), measured by the previous link_census.py on the same
+# tree. Rows before it have none.
 HISTORY_FIELDS = ["date", "commit", "objects", "unresolved", "alias", "pinned_elsewhere", "dump", "data",
                   "import", "unpinned", "duplicates", "comdat_conflicts", "comdat_vtables",
                   "scaffold_aliases", "scaffold_unresolved", "scaffold_crashed",
                   "files", "files_linked", "blocking_names", "addresses", "linked_bytes",
-                  "linked_authored", "game_code"]
+                  "linked_authored", "game_code", "files_linked_prev_rule", "linked_bytes_prev_rule",
+                  "linked_authored_prev_rule"]
 
 
 def read_history():
