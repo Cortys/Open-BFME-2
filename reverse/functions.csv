@@ -45049,3 +45049,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva006D8AD0@BfmeAptValue006DCD20@@QAEXHPAV1@@Z,,0x006D8AD0,140,Code/Libraries/Source/Apt/AptValue/AptValueArrayAt.cpp,matched,array set AddRef Release via slots 0 and 4 callers 0x006D9625 0x006D9C2A
 ?Rva0012D4D0Apply@@YAXAAURenderStateStruct@@@Z,,0x0012D4D0,387,Code/Libraries/Source/WWVegas/WW3D2/SortingRendererBFME1.cpp,matched,BFME1 donor Rva009391B0 apply with BFME2 offset 0x2b0 and BFME2Set_Texture
 ?Rva004030EFFind@@YGHPBD@Z,,0x004030EF,58,Code/GameEngine/Source/Common/Rva004030EFFind.cpp,matched,string table index via strcmp thunk caller 0x00404679
+?_M_insert_overflow@?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@IAEXPAVCameraMarker@@ABV3@ABU__false_type@2@I_N@Z,,0x000D05C1,178,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_cameramarker_insert_overflow.cpp,matched,vector CameraMarker overflow false_type growth path caller push_back 0xD068F
