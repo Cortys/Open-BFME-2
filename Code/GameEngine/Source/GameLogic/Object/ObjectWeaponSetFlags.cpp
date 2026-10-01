@@ -16,8 +16,8 @@
 // +0x10C, the base the variable-index test uses here) instead of the
 // Drawable; MODELCONDITION_INVALID (-1) entries are skipped; and the model
 // conditions 0x12D/0x12E/0x12F additionally queue 0x1BD/0x1BE/0x1BF on the
-// helper module at +0x230 for g_Va00DBA4E4 frames (0x004DE85F, which sets that
-// condition and records its expiry frame; pinned by address, class unknown).
+// ObjectSMCHelper at +0x230 for g_Va00DBA4E4 frames (0x004DE85F, which sets
+// that condition and records its expiry frame; pinned by address).
 // Bit indexes are unsigned (shr) as in a bitset; the masked-word test makes cl
 // keep the mask in a register and test/or the word in memory.
 //
@@ -104,10 +104,13 @@ public:
 private:
 	unsigned int m_words[20];
 };
-class Rva004DE85FModule
+// The Object +0x230 helper: ObjectSMCHelper (its update 0x004DE7C2 is slot 0 of
+// the vtable 0x00BFC07C just before the matched ??_GObjectSMCHelper table).
+// 0x004DE85F queues a timed special model condition (pinned by address).
+class ObjectSMCHelper
 {
 public:
-	void rva004DE85F(int condition, int frames);
+	void rva004DE85F(ModelConditionFlagType mc, unsigned int frames);
 };
 template <int N> class Rva00290B24Slots : public Rva00290B24Slots<N - 1>
 {
@@ -134,11 +137,12 @@ public:
 	void rva00290AC1(const WeaponSetFlags &flags);
 	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
 	void setStatus(ObjectStatusTypes status, bool set);
+	void setSpecialModelConditionState(ModelConditionFlagType mc, unsigned int frames);
 private:
 	unsigned char m_pad000[0x10C];
 	Rva0010CConditionBits m_conditionBits; // +0x10C
 	unsigned char m_pad15C[0x230 - 0x15C];
-	Rva004DE85FModule *m_230; // +0x230
+	ObjectSMCHelper *m_smcHelper; // +0x230
 	unsigned char m_pad234[0x250 - 0x234];
 	Rva00290B24Iface *m_250; // +0x250
 	unsigned char m_pad254[0x330 - 0x254];
@@ -159,11 +163,11 @@ void Object::setWeaponSetFlag(WeaponSetType wst)
 		}
 	}
 	if (mc == 0x12D)
-		m_230->rva004DE85F(0x1BD, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BD, g_Va00DBA4E4);
 	else if (mc == 0x12E)
-		m_230->rva004DE85F(0x1BE, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BE, g_Va00DBA4E4);
 	else if (mc == 0x12F)
-		m_230->rva004DE85F(0x1BF, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BF, g_Va00DBA4E4);
 }
 void Object::clearWeaponSetFlag(WeaponSetType wst)
 {
@@ -179,11 +183,11 @@ void Object::clearWeaponSetFlag(WeaponSetType wst)
 		}
 	}
 	if (mc == 0x12D)
-		m_230->rva004DE85F(0x1BD, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BD, g_Va00DBA4E4);
 	else if (mc == 0x12E)
-		m_230->rva004DE85F(0x1BE, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BE, g_Va00DBA4E4);
 	else if (mc == 0x12F)
-		m_230->rva004DE85F(0x1BF, g_Va00DBA4E4);
+		m_smcHelper->rva004DE85F((ModelConditionFlagType)0x1BF, g_Va00DBA4E4);
 }
 void Object::rva00290AC1(const WeaponSetFlags &flags)
 {
@@ -208,4 +212,10 @@ bool Object::setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType)
 	else
 		setStatus((ObjectStatusTypes)0x51, false);
 	return m_weaponSet.setWeaponLock(weaponSlot, lockType);
+}
+// Object::setSpecialModelConditionState, retail 0x0028AEB2 (12 bytes): Zero Hour
+// has it on the Object; BFME2 forwards it to the ObjectSMCHelper (tail jump).
+void Object::setSpecialModelConditionState(ModelConditionFlagType mc, unsigned int frames)
+{
+	m_smcHelper->rva004DE85F(mc, frames);
 }
