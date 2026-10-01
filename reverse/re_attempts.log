@@ -5110,3 +5110,7 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva005CC2DC@Rva005CC2DC@@QAEXXZ	0x005CC2DC	47	blocked	movzx edx vs mov dl for byte arg to virtual slot2 tried unsigned char bool G7 t=15 model=muse-07 (stash 0.97 kept)
 ??0Rva005CCC07@@QAE@XZ	0x005CCBD0	55	blocked	or hoisted before vtable vs after +8 tried barrier fixes or but moves xorps t=15 model=muse-07 (stash 0.95 kept)
 ??0Rva005CC287@@QAE@XZ	0x005CC287	62	blocked	vtable store sunk below holder load plus extra mov eax esi tried void-method dtor t=15 model=muse-07 (stash 0.93 kept)
+?rva003C05DE@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C05DE	79	blocked	loop check cmp-mem plus body reload vs retail mov-ecx test reuse t=20 model=muse-09 (stash 0.97 kept)
+?bfmeUseFDE@BfmeThingFDE@@QAEXPAX@Z	0x004B9B99	173	partial	O1-G7 173B exact size 67insns; add-vs-lea plus idx-table regs plus second cursor ebx-vs-edi t=18 model=muse-09 score=0.96 stash=reverse/attempts/0x004b9b99.cpp
+?doTeamEnableStealth@ScriptActions@@IAEXABVAsciiString@@_N@Z	0x003C058A	84	blocked	O1 shared-header 92B vs 84B plus8; push-ebx sete-bl vs al plus jmp vs cmp-je plus extra mov-ecx plus cmp vs mov-test t=22 model=muse-09 (stash 0.91 kept)
+?rva003C0E32@ScriptActions@@IAEXABVAsciiString@@H@Z	0x003C0E32	85	blocked	finish wall 0.93 no NEW idea t=2 model=muse-09
