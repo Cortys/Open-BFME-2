@@ -256,6 +256,7 @@ public:
 	void rva0053641E(AsciiString arg, int x);
 	void rva005364AF(AsciiString arg, int x);
 	void rva00536540(AsciiString arg, int x);
+	void rva005365D1(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -617,5 +618,14 @@ void UserPreferences::rva005364AF(AsciiString arg, int x)
 void UserPreferences::rva00536540(AsciiString arg, int x)
 {
 	arg.concat("UnitsKilledRTS");
+	v11(arg, x);
+}
+
+// ?rva005365D1@UserPreferences@@QAEXVAsciiString@@H@Z @0x005365D1 71B
+// UserPreferences ResourcesGatheredRTS-void path: append ResourcesGatheredRTS slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat ResourcesGatheredRTS 0x00868F9C slot 0x2C releaseBuffer gap same TU unlock.
+void UserPreferences::rva005365D1(AsciiString arg, int x)
+{
+	arg.concat("ResourcesGatheredRTS");
 	v11(arg, x);
 }
