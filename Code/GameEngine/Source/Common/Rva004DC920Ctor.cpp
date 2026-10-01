@@ -22,6 +22,7 @@ class Rva004DC920
 {
 public:
 	Rva004DC920();
+	void rva004DC788(const Rva004DC920 &other);
 
 private:
 	AsciiString m_00;
@@ -89,4 +90,36 @@ Rva004DC920::Rva004DC920()
 	m_18D = 0;
 	m_24 = 0;
 	m_1C = 0;
+}
+
+void Rva004DC920::rva004DC788(const Rva004DC920 &other)
+{
+	m_04 = other.m_04;
+	m_08 = other.m_08;
+	m_09 = other.m_09;
+	m_0C = other.m_0C;
+	m_10 = other.m_10;
+	m_14 = other.m_14;
+	m_18 = other.m_18;
+	m_1C = other.m_1C;
+	m_20 = other.m_20;
+	m_24 = other.m_24;
+	m_28 = other.m_28;
+	m_2C = other.m_2C;
+	m_2D = other.m_2D;
+	m_30 = other.m_30;
+	m_34 = other.m_34;
+	m_38 = other.m_38;
+	m_3C = other.m_3C;
+	m_40 = other.m_40;
+	m_44 = other.m_44;
+	m_48 = other.m_48;
+	m_4C = other.m_4C;
+	m_50 = other.m_50;
+	m_54[0] = other.m_54[0];
+	m_EC[0] = other.m_EC[0];
+	m_54[1] = other.m_54[1];
+	m_EC[1] = other.m_EC[1];
+	m_184 = other.m_184;
+	m_188 = other.m_188;
 }
