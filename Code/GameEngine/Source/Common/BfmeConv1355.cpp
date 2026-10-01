@@ -2,11 +2,15 @@
 // Ported from Open-BFME-1 Code/GameEngine/Source/Common/BfmeConv1355.cpp
 // (BFME1 0x00892B90). Only the placed ref-counted assign is defined here;
 // the donor's bfmeGoVGM viewport helper stays out (with it goes the donor's
-// __ftol2 declaration), so the unmatched-definition gate passes. The Dec and
-// Drop callees already resolve through the ledger; only the Inc pin is new.
+// __ftol2 declaration), so the unmatched-definition gate passes. The refcount
+// calls use their matched row names; the drop call retains bfmeDropVGO.
 
-unsigned __cdecl bfmeDecVGO(unsigned *p);
-unsigned __cdecl bfmeIncVGO(unsigned *p);
+int __cdecl Rva006CFDF0DecRef(int *p);
+class Rva00894D80Accessor
+{
+public:
+	static unsigned int increment(unsigned int *p);
+};
 void __cdecl bfmeDropVGO(void *p);
 
 class BfmeRefVGO
@@ -21,11 +25,11 @@ BfmeRefVGO &BfmeRefVGO::bfmeAssignVGO(const BfmeRefVGO &o)
 {
 	if (&o != this)
 	{
-		if (m_bfmeP && bfmeDecVGO(m_bfmeP) == 0)
+		if (m_bfmeP && Rva006CFDF0DecRef((int *)m_bfmeP) == 0)
 			bfmeDropVGO(m_bfmeP);
 		m_bfmeP = o.m_bfmeP;
 		if (m_bfmeP)
-			bfmeIncVGO(m_bfmeP);
+			Rva00894D80Accessor::increment(m_bfmeP);
 	}
 	return *this;
 }
