@@ -592,8 +592,14 @@ struct Rva0020F58E
 {
 	AsciiStringPlusText m_first;
 	AsciiStringRef m_second;
+	int length() const;
 	int write(char *dst);
 };
+
+int Rva0020F58E::length() const
+{
+	return m_first.length() + m_second.m_string->getLength();
+}
 
 int Rva0020F58E::write(char *dst)
 {
