@@ -9,6 +9,8 @@
 typedef unsigned char UnsignedByte;
 typedef unsigned short WideChar;
 
+class UnicodeString;
+
 template <typename T> class StringBase
 {
 friend class UnicodeString;
@@ -17,11 +19,11 @@ public:
 	int compare( const StringBase<T> &other ) const throw();
 
 protected:
-	void releaseBuffer( void );
 	~StringBase() { releaseBuffer(); }
 
 private:
 	StringBase( const StringBase<T> &other );
+	void releaseBuffer( void );
 	void *m_data;
 };
 
