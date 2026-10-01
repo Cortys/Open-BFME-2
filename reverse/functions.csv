@@ -45394,3 +45394,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00222F0A@Rva00222F0A@@QAEHXZ,,0x00222F0A,75,Code/GameEngine/Source/Common/Rva00222F0AFinder.cpp,matched,scan 14-entry table for free slot via map find absent
 ?rva0035300B@Rva00352F9D@@QAEXPBXABUCoord3D@@W4CommandSourceType@@@Z,,0x0035300B,117,Code/GameEngine/Source/Common/Rva00352F9DAICommand.cpp,matched,unlock AICommand 0x4B pos obj via virtual and free
 ?rva003649B1@Path@@QAEXPBVPathNode@@@Z,,0x003649B1,134,Code/GameEngine/Source/GameLogic/AI/PathRva003649B1.cpp,matched,Path append from node donor
+??0Rva00263895Member@@QAE@XZ,,0x00263895,45,Code/GameEngine/Source/Common/RTS/Rva00263895Init.cpp,matched,member ctor vtable plus Rva00263653 at plus4 plus float zeros
