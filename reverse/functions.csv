@@ -45897,3 +45897,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00223898@Rva00223898@@QAEXPAX@Z,,0x00223898,28,Code/GameEngine/Source/GameClient/Rva00223898Free.cpp,matched,chain destroys +4 member via rowed 0x0022300F then frees via rowed _free
 ?rva0022356C@Rva0022356C@@QAEPAXPBX@Z,,0x0022356C,37,Code/GameEngine/Source/GameClient/Rva00223547NewNode.cpp,matched,hashtable new-node via rowed 0x307F0 and rowed _Construct 0x00223195
 ?Rva001F6951Pad@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@I@Z,,0x001F6951,29,Code/Libraries/Source/WWVegas/WWLib/Rva001F6951Pad.cpp,matched,free ostream pad writes N spaces via rowed put
+?Rva001F82EEWrite@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABVAsciiString@@@Z,,0x001F82EE,66,Code/Libraries/Source/WWVegas/WWLib/Rva001F82EEWrite.cpp,matched,free INI line via rowed Pad Put nowiden putchar
