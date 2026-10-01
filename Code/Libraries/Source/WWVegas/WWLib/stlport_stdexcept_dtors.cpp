@@ -10,6 +10,7 @@
 // at 0x00024B00..0x00024C00, one every 32 bytes.
 
 #include <stdexcept>
+#include <string>
 
 namespace _STL
 {
@@ -53,6 +54,30 @@ overflow_error::~overflow_error() _STLP_NOTHROW_INHERENTLY
 
 underflow_error::~underflow_error() _STLP_NOTHROW_INHERENTLY
 {
+}
+
+// STLport 4.5.3 builds with _STLP_EXTERN_RANGE_ERRORS, so <stl/_range_errors.h>
+// only declares these and src/dll_main.cpp defines them. Every container's
+// range check references them, but retail never constructs an out_of_range
+// (its vftable at 0x007BDA80 is stored only by the destructor), so the linker
+// dead-stripped all three.
+
+// ?__stl_throw_range_error absent-from-retail
+void _STLP_CALL __stl_throw_range_error(const char *__msg)
+{
+	throw range_error(string(__msg));
+}
+
+// ?__stl_throw_out_of_range absent-from-retail
+void _STLP_CALL __stl_throw_out_of_range(const char *__msg)
+{
+	throw out_of_range(string(__msg));
+}
+
+// ?__stl_throw_length_error absent-from-retail
+void _STLP_CALL __stl_throw_length_error(const char *__msg)
+{
+	throw length_error(string(__msg));
 }
 
 }
