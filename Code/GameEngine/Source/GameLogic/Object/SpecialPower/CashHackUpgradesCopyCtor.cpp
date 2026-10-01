@@ -7,6 +7,9 @@
 // (Rva003B31ADMember convention, same as PassiveAreaEffectBehaviorModuleData
 // and AttributeModifierAuraUpdateModuleData) followed by |= of the source
 // word, which is why the copy calls out instead of plain movs.
+// The opaque member's 4-byte zeroing ctor aliases the matched BitFlags<11>
+// dword-zeroing body; the member's type identity remains unproven.
+#pragma comment(linker, "/alternatename:??0Rva003B31ADMember@@QAE@XZ=??0?$BitFlags@$0L@@@QAE@XZ")
 
 typedef unsigned int size_t;
 
