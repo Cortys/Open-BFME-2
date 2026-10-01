@@ -10,17 +10,19 @@
 
 // Neutral view: target callbacks/copy chain establish these fields and offsets;
 // BFME1 BridgeBehavior names are semantic provenance, not target class proof.
-struct BridgeBehaviorTimeInfo8
+// ABI view only: use the matched 29B copy-constructor name for this
+// delay/AsciiString pair; the bridge's application type remains unknown.
+struct TreeKey00242F5E
 {
     unsigned int delay_00;
     AsciiString boneName_04;
-    BridgeBehaviorTimeInfo8(const BridgeBehaviorTimeInfo8 &other);
+    TreeKey00242F5E(const TreeKey00242F5E &other);
 };
 
 struct BridgeBehaviorListValue12
 {
     void *object_00;
-    BridgeBehaviorTimeInfo8 timeInfo_04;
+    TreeKey00242F5E timeInfo_04;
     BridgeBehaviorListValue12(const BridgeBehaviorListValue12 &other);
 };
 
