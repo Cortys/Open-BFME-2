@@ -22,8 +22,19 @@ public:
 	void Reset_List(void);
 };
 
-void RefMultiListClass<RenderObjClass>::Reset_List(void)
+inline void RefMultiListClass<RenderObjClass>::Reset_List(void)
 {
 	while (Peek_Head() != 0)
 		Release_Head();
 }
+
+// Header inline that other units including the header emit as select-any
+// copies, which the plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRefMultiListRenderObjResetList@@YAXPAV?$RefMultiListClass@VRenderObjClass@@@@@Z present-unmatched
+void bfmeEmitRefMultiListRenderObjResetList(RefMultiListClass<RenderObjClass> *p)
+{
+	p->Reset_List();
+}
+#pragma inline_depth()
