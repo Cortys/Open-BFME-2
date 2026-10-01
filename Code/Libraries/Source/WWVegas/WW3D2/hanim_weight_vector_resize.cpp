@@ -32,7 +32,7 @@ public:
 	};
 };
 
-NamedPivotMapClass::WeightInfoStruct & NamedPivotMapClass::WeightInfoStruct::operator = (WeightInfoStruct const &that)
+inline NamedPivotMapClass::WeightInfoStruct & NamedPivotMapClass::WeightInfoStruct::operator = (WeightInfoStruct const &that)
 {
 	if(Name) delete [] Name;
 	assert(that.Name != 0);
