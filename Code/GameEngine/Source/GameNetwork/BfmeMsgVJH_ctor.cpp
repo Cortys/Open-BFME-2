@@ -9,17 +9,17 @@
 // The base is polymorphic in retail; it is declared without virtuals here
 // because only its ctor address reaches codegen.
 
-class BfmeMsg
+class PrototypeClass
 {
 public:
-	BfmeMsg();
-	virtual ~BfmeMsg();
+	PrototypeClass();
+	virtual ~PrototypeClass();
 
 protected:
 	int m_state;
 };
 
-class BfmeMsgVJH : public BfmeMsg
+class BfmeMsgVJH : public PrototypeClass
 {
 public:
 	BfmeMsgVJH(char *buffer, int size) throw();
