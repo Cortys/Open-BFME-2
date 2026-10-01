@@ -1607,22 +1607,7 @@ m_nextAndCondition(NULL)
 }
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/Condition_setConditionType_Thunk.cpp
-// ?setConditionType@Condition@@QAEXW4ConditionType@1@@Z present-unmatched
-void Condition::setConditionType(enum ConditionType type)
-{
-	Int i;
-	for (i=0; i<m_numParms; i++) {
-		if (m_parms[i]) 
-			m_parms[i]->deleteInstance();
-		m_parms[i] = NULL;
-	}
-	m_conditionType = type;
-	const ConditionTemplate *pTemplate = TheScriptEngine->getConditionTemplate(m_conditionType);
-	m_numParms = pTemplate->getNumParameters();
-	for (i=0; i<m_numParms; i++) {
-		m_parms[i] = newInstance(Parameter)(pTemplate->getParameterType(i));	
-	}
-}
+// Condition::setConditionType: defined in TemplateGetParameterType.cpp (its row's unit).
 
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/ConditionDuplicateThunk.cpp
 // ?duplicate@Condition@@QBEPAV1@XZ present-unmatched
@@ -2166,22 +2151,7 @@ m_numParms(0)
 	setActionType(type);
 }
 
-// ?setActionType@ScriptAction@@QAEXW4ScriptActionType@1@@Z present-unmatched
-void ScriptAction::setActionType(enum ScriptActionType type)
-{
-	Int i;
-	for (i=0; i<m_numParms; i++) {
-		if (m_parms[i]) 
-			m_parms[i]->deleteInstance();
-		m_parms[i] = NULL;
-	}
-	m_actionType = type;
-	const ActionTemplate *pTemplate = TheScriptEngine->getActionTemplate(m_actionType);
-	m_numParms = pTemplate->getNumParameters();
-	for (i=0; i<m_numParms; i++) {
-		m_parms[i] = newInstance(Parameter)(pTemplate->getParameterType(i));
-	}
-}
+// ScriptAction::setActionType: defined in TemplateGetParameterType.cpp (its row's unit).
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_duplicate_Thunk.cpp
 // ?duplicate@ScriptAction@@QBEPAV1@XZ present-unmatched

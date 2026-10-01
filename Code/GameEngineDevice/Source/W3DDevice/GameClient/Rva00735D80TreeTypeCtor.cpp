@@ -31,7 +31,4 @@ Rva00735D80TreeType::Rva00735D80TreeType()
 {
 }
 
-// ??1Rva00735D80TreeType@@QAE@XZ present-unmatched
-Rva00735D80TreeType::~Rva00735D80TreeType()
-{
-}
+// Rva00735D80TreeType::~Rva00735D80TreeType: defined in Rva00735D80TreeTypeDtor.cpp (its row's unit).

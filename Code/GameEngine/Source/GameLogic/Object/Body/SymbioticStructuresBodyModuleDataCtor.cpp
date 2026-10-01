@@ -41,7 +41,4 @@ SymbioticStructuresBodyModuleData::SymbioticStructuresBodyModuleData()
 // LINK-DUP: inline copy (owner SymbioticStructuresBodyModuleDataDtor.cpp
 // holds the ??1 row, FamilyDeletingDtors holds ??_G); select-any so the
 // linked build keeps the owners' copies.
-// ??1SymbioticStructuresBodyModuleData@@UAE@XZ present-unmatched
-inline SymbioticStructuresBodyModuleData::~SymbioticStructuresBodyModuleData()
-{
-}
+// SymbioticStructuresBodyModuleData::~SymbioticStructuresBodyModuleData: defined in SymbioticStructuresBodyModuleDataDtor.cpp (its row's unit).

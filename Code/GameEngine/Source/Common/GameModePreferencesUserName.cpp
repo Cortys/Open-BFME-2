@@ -115,23 +115,10 @@ private:
 };
 
 // ?write@GameModePreferences@@UAE_NXZ @0x44D50D
-Bool GameModePreferences::write(void)
-{
-	return UserPreferences::write();
-}
+// GameModePreferences::write: defined in GameModePreferences.cpp (its row's unit).
 
 // ?makeKey@GameModePreferences@@ABEABVAsciiString@@PBD@Z @0x44D512
-const AsciiString &GameModePreferences::makeKey(const char *key) const
-{
-	const char *prefix = "";
-	switch (m_mode)
-	{
-		case 0: prefix = "Rts"; break;
-		case 1: prefix = "Strat"; break;
-	}
-	m_key.format("%s:%s", prefix, key);
-	return m_key;
-}
+// GameModePreferences::makeKey: defined in GameModePreferences.cpp (its row's unit).
 
 // ??0GameModePreferences@@QAE@H@Z @0x44D54B
 GameModePreferences::GameModePreferences(Int mode) : m_mode(mode)
@@ -139,70 +126,38 @@ GameModePreferences::GameModePreferences(Int mode) : m_mode(mode)
 }
 
 // ??1GameModePreferences@@UAE@XZ @0x44D56A
-GameModePreferences::~GameModePreferences()
-{
-}
+// GameModePreferences::~GameModePreferences: defined in GameModePreferences.cpp (its row's unit).
 
 // ?getStrategicScenario@GameModePreferences@@QAEHXZ @0x44D5A5
-Int GameModePreferences::getStrategicScenario(void)
-{
-	return getInt("StrategicScenario", -1);
-}
+// GameModePreferences::getStrategicScenario: defined in GameModePreferences.cpp (its row's unit).
 
 // ?setStrategicScenario@GameModePreferences@@QAEXH@Z @0x44D5EE
-void GameModePreferences::setStrategicScenario(Int scenario)
-{
-	setInt("StrategicScenario", scenario);
-}
+// GameModePreferences::setStrategicScenario: defined in GameModePreferences.cpp (its row's unit).
 
 // ?setBool@GameModePreferences@@UAEXABVAsciiString@@_N@Z @0x44D636
-void GameModePreferences::setBool(const AsciiString &key, Bool val)
-{
-	UserPreferences::setBool(makeKey(key.str()), val);
-}
+// GameModePreferences::setBool: defined in GameModePreferences.cpp (its row's unit).
 
 // ?setReal@GameModePreferences@@UAEXABVAsciiString@@M@Z @0x44D665
-void GameModePreferences::setReal(const AsciiString &key, Real val)
-{
-	UserPreferences::setReal(makeKey(key.str()), val);
-}
+// GameModePreferences::setReal: defined in GameModePreferences.cpp (its row's unit).
 
 // ?setInt@GameModePreferences@@UAEXABVAsciiString@@H@Z @0x44D698
-void GameModePreferences::setInt(const AsciiString &key, Int val)
-{
-	UserPreferences::setInt(makeKey(key.str()), val);
-}
+// GameModePreferences::setInt: defined in GameModePreferences.cpp (its row's unit).
 
 // ?getBool@GameModePreferences@@UBE_NABVAsciiString@@_N@Z @0x44D6C7
-Bool GameModePreferences::getBool(const AsciiString &key, Bool defaultValue) const
-{
-	return UserPreferences::getBool(makeKey(key.str()), defaultValue);
-}
+// GameModePreferences::getBool: defined in GameModePreferences.cpp (its row's unit).
 
 // ?getReal@GameModePreferences@@UBEMABVAsciiString@@M@Z @0x44D6F6
-Real GameModePreferences::getReal(const AsciiString &key, Real defaultValue) const
-{
-	return UserPreferences::getReal(makeKey(key.str()), defaultValue);
-}
+// GameModePreferences::getReal: defined in GameModePreferences.cpp (its row's unit).
 
 // ?getInt@GameModePreferences@@UBEHABVAsciiString@@H@Z @0x44D729
-Int GameModePreferences::getInt(const AsciiString &key, Int defaultValue) const
-{
-	return UserPreferences::getInt(makeKey(key.str()), defaultValue);
-}
+// GameModePreferences::getInt: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0054F5A4@GameModePreferences@@QAEHXZ retail 0x0054F5A4 58B.
 // LobbyRoomID getter over the mode-keyed map: find makeKey("LobbyRoomID")
 // and atoi the value or 0 when missing/empty.
 // Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT; callers
 // 0x00385595 0x003855B6; prev Rva0054F508 ctor 0x0054F52F.
-Int GameModePreferences::rva0054F5A4(void)
-{
-	PreferenceMap::const_iterator it = find(makeKey("LobbyRoomID"));
-	if (it == end())
-		return 0;
-	return atoi(it->second.str());
-}
+// GameModePreferences::rva0054F5A4: defined in GameModePreferences.cpp (its row's unit).
 
 // Color-limit globals at 0x00A022F4: +0x38 count source plus +0x40 cached limit.
 struct Rva00A022F4
@@ -220,21 +175,7 @@ extern Rva00A022F4 *g_00A022F4;
 // cached limit from 0x00A022F4.
 // Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT; limit
 // 0x00A022F4 plus 0x38 plus 0x40; callers 0x00249E23 0x00446853.
-Int GameModePreferences::rva0044D836(void)
-{
-	PreferenceMap::const_iterator it = find(makeKey("Color"));
-	if (it == end())
-		return -1;
-	int v = atoi(it->second.str());
-	if (v < -1)
-		return -1;
-	int *limit = &g_00A022F4->m_40;
-	if (*limit == 0)
-		*limit = g_00A022F4->m_38;
-	if (v < *limit)
-		return v;
-	return -1;
-}
+// GameModePreferences::rva0044D836: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044D88C@GameModePreferences@@QAEHXZ @0x0044D88C 180B:
 // PlayerTemplate getter over the mode-keyed map: find makeKey(
@@ -277,28 +218,7 @@ public:
 
 extern GlobalData *TheWritableGlobalData;
 
-Int GameModePreferences::rva0044D88C(void)
-{
-	PreferenceMap::const_iterator it = find(makeKey("PlayerTemplate"));
-	if (it == end()) {
-		if ((TheWritableGlobalData->m_flag9D4 & 3) == 0)
-			return -1;
-		return ThePlayerTemplateStore->m_map.begin()->first;
-	}
-	int v = atoi(it->second.str());
-	if (v == -2 || v < -2 || v >= (ThePlayerTemplateStore->m_last - ThePlayerTemplateStore->m_first))
-		v = -1;
-	if (v >= 0) {
-		const PlayerTemplate *pt = ThePlayerTemplateStore->getNthPlayerTemplate(v);
-		if (!pt)
-			v = -1;
-		else if (pt->m_151 == 0)
-			v = -1;
-	}
-	if (v == -1 && (TheWritableGlobalData->m_flag9D4 & 3) != 0)
-		return ThePlayerTemplateStore->m_map.begin()->first;
-	return v;
-}
+// GameModePreferences::rva0044D88C: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ @0x0044DBA5 175B:
 // Password getter over the mode-keyed map: find makeKey("Password"), empty
@@ -307,16 +227,7 @@ Int GameModePreferences::rva0044D88C(void)
 // set 0x000366F0; trim 0x00037CF0; TheEmptyString 0x009E0878; callers
 // 0x005A0E44 0x005A2961; prev 0x0044D836 next 0x0044DC54.
 AsciiString QuotedPrintableToAsciiString(AsciiString original);
-AsciiString GameModePreferences::rva0044DBA5(void)
-{
-	AsciiString ret;
-	PreferenceMap::const_iterator it = find(makeKey("Password"));
-	if (it == end())
-		return AsciiString::TheEmptyString;
-	ret.set(QuotedPrintableToAsciiString(it->second));
-	ret.trim();
-	return ret;
-}
+// GameModePreferences::rva0044DBA5: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ @0x0044D330 335B:
 // UserName getter over the map: find "UserName", machine-name fallback when
@@ -381,52 +292,28 @@ UnicodeString GameModePreferences::rva0044D330(void)
 // LobbyRoomID setter: format "%d" then map makeKey("LobbyRoomID") slot assign.
 // Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
 // AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; caller 0x005A3899.
-void GameModePreferences::rva0054F7C0(Int val)
-{
-	AsciiString tmp;
-	tmp.format("%d", val);
-	AsciiString &slot = (*this)[makeKey("LobbyRoomID")];
-	slot = tmp;
-}
+// GameModePreferences::rva0054F7C0: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044DC54@GameModePreferences@@QAEXH@Z @0x0044DC54 (101B): Hero setter
 // via "%d" format then map makeKey("Hero") slot assign.
 // Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
 // AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; callers
 // 0x0044579D 0x0059F999; prev 0x0044D836 next 0x0044DDFB.
-void GameModePreferences::rva0044DC54(Int val)
-{
-	AsciiString tmp;
-	tmp.format("%d", val);
-	AsciiString &slot = (*this)[makeKey("Hero")];
-	slot = tmp;
-}
+// GameModePreferences::rva0044DC54: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044DCB9@GameModePreferences@@QAEXH@Z @0x0044DCB9 (101B): Color setter
 // via "%d" format then map makeKey("Color") slot assign.
 // Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
 // AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; callers
 // 0x00445593 0x0059F985; prev 0x0044DC54 next 0x0044DDFB.
-void GameModePreferences::rva0044DCB9(Int val)
-{
-	AsciiString tmp;
-	tmp.format("%d", val);
-	AsciiString &slot = (*this)[makeKey("Color")];
-	slot = tmp;
-}
+// GameModePreferences::rva0044DCB9: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044DD1E@GameModePreferences@@QAEXH@Z @0x0044DD1E (101B): PlayerTemplate
 // setter via "%d" format then map makeKey("PlayerTemplate") slot assign.
 // Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
 // AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; prev 0x0044DCB9
 // next 0x0044DDFB.
-void GameModePreferences::rva0044DD1E(Int val)
-{
-	AsciiString tmp;
-	tmp.format("%d", val);
-	AsciiString &slot = (*this)[makeKey("PlayerTemplate")];
-	slot = tmp;
-}
+// GameModePreferences::rva0044DD1E: defined in GameModePreferences.cpp (its row's unit).
 
 // ?rva0044DDFB@GameModePreferences@@QAEXPAH@Z @0x0044DDFB (95B): Rules setter
 // over the mode-keyed map via ten-int array formatter into tmp then slot assign.
@@ -434,13 +321,7 @@ void GameModePreferences::rva0044DD1E(Int val)
 // AsciiString assign pin 0x000366F0; releaseBuffer 0x00036410; callers
 // 0x004442CB 0x0059EC3F; prev GameModePreferences 0x0044D758.
 void __cdecl Rva0055A087Format(int *vals, AsciiString *out);
-void GameModePreferences::rva0044DDFB(int *vals)
-{
-	AsciiString tmp;
-	Rva0055A087Format(vals, &tmp);
-	AsciiString &slot = (*this)[makeKey("Rules")];
-	slot = tmp;
-}
+// GameModePreferences::rva0044DDFB: defined in GameModePreferences.cpp (its row's unit).
 
 // Zero Hour's LANPreferences on the mode-keyed base (vtable 0x00C3EF04).
 // BFME 2 renamed its file NetworkPref.ini and loads it from a separate
@@ -458,10 +339,7 @@ public:
 // under address names in Rva0044D56ADerived.cpp.
 
 // ?loadFromIniFile@LANPreferences@@QAE_NXZ @0x44D2AC
-Bool LANPreferences::loadFromIniFile(void)
-{
-	return UserPreferences::load("NetworkPref.ini");
-}
+// LANPreferences::loadFromIniFile: defined in GameModePreferences.cpp (its row's unit).
 
 // ??0LANPreferences@@QAE@H@Z @0x44D2F5
 LANPreferences::LANPreferences(Int mode) : GameModePreferences(mode)

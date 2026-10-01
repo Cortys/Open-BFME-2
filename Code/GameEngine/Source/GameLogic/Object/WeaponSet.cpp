@@ -186,20 +186,7 @@ Bool WeaponTemplateSet::testWeaponSetFlag( WeaponSetType wst ) const
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
-// ?WeaponSet::WeaponSet present-unmatched
-WeaponSet::WeaponSet()
-{
-	m_curWeapon = PRIMARY_WEAPON;
-	m_curWeaponLockedStatus = NOT_LOCKED;
-	m_curWeaponTemplateSet = NULL;
-	m_filledWeaponSlotMask = 0;
-	m_totalAntiMask = 0;
-	m_totalDamageTypeMask.clear();
-	m_hasPitchLimit = false;
-	m_hasDamageWeapon = false;
-	for (Int i = 0; i < WEAPONSLOT_COUNT; ++i)
-		m_weapons[i] = NULL;
-}
+// WeaponSet::WeaponSet: defined in WeaponSetCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // ?WeaponSet::~WeaponSet present-unmatched
