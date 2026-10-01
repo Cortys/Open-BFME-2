@@ -6,9 +6,10 @@ struct BfmeHeroElement005C39DE
 	AsciiString text;
 	unsigned int word4;
 	unsigned int word8;
-	BfmeHeroElement005C39DE() : text(), word4(0), word8(0) {}
+	BfmeHeroElement005C39DE();
 	BfmeHeroElement005C39DE &operator=(const BfmeHeroElement005C39DE &o);
 };
+inline BfmeHeroElement005C39DE::BfmeHeroElement005C39DE() : text(), word4(0), word8(0) {}
 class Rva004072D2
 {
 	char m_pad[0x80];
