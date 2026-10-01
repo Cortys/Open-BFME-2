@@ -17,6 +17,7 @@
 // body is ICF-folded across three same-size factories (0x24AF5C plus this one
 // plus 0x2509CE, each pushing its own proc); the pin names the SlotToLock use
 // and documents the share.
+#pragma comment(linker, "/alternatename:??0StancesBehaviorModuleData@@QAE@XZ=??0LockWeaponCreateModuleData@@QAE@XZ")
 
 class ModuleData;
 class INI;
