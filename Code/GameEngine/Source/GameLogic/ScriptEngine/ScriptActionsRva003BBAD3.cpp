@@ -136,3 +136,11 @@ void Rva003BBAD3Set()
 	((Rva00405AA7 *)g_bfmeWorldRV)->rva00405AA7();
 	return ((Rva005B5440 *)g_bfmeSingletonVVD)->clearFlags();
 }
+
+// ?Rva003BBB36Enable@@YAXXZ @0x003BBB36 27B leaf caller 0x003CBF3E globals TheInGameUI TheMouse callees setInputEnabled setVisibility
+// Evidence: mov ecx,[TheInGameUI] push 1 call setInputEnabled mov ecx,[TheMouse] push 1 call setVisibility ret.
+void Rva003BBB36Enable()
+{
+	TheInGameUI->setInputEnabled(true);
+	TheMouse->setVisibility(true);
+}

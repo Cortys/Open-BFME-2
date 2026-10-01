@@ -5201,3 +5201,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??0Rva00082329@@QAE@XZ	0x00082329	410	blocked	410B multi-vtable ctor RenderObj+Camera+2xE16vec+6x0x30 array needs donor t=8 model=muse-spark
 ?rva007586F0@Rva007586F0@@QAEXXZ	0x007586F0	460	blocked	bottom-up mergesort with 4 tmp head-tail-count structs and float key at +0x10 t=15 model=muse-spark
 ?method@Rva00409850SubObject@@QAEXE@Z	0x00362609	62	partial	ebx zero reuse only: retail push ebx xor ebx with bl-ebx compares-stores ours immediates with and-test t=20 model=muse-spark score=0.92 stash=reverse/attempts/0x00362609.cpp
+?Rva003BBCD2Set@@YGX_N0@Z	0x003BBCD2	48	blocked	xor-sete-esi-edi vs movzx 33-44B variants tried bool direct ternary uchar int-locals O1 O2 t=25 model=muse-09
+?Rva003BBC81Set@@YGX_N0H@Z	0x003BBC81	50	blocked	same xor-sete-esi-edi wall as 0x003BBCD2 blocked this session movzx vs xor no new idea t=3 model=muse-09
