@@ -7,11 +7,13 @@
 // Neighbours Disp32FloatGetters/Disp8ByteOneSetters carry no // cl: line so defaults apply.
 void *__cdecl ji_006291ae(void *dest, int val, unsigned int count);
 #pragma comment(linker, "/alternatename:?ji_006291ae@@YAPAXPAXHI@Z=?ji_006291ae@@YAXXZ")
+void operator delete[](void *block);
 
 class Rva00530FC5
 {
 public:
 	void rva00530FC5();
+	void rva00530FAE();
 private:
 	unsigned int m_count;
 	int *m_data;
@@ -37,4 +39,13 @@ void Rva00530FC5::rva00530FC5()
 		if (bitsEnd == m_bits)
 			break;
 	}
+}
+
+// ?rva00530FAE@Rva00530FC5@@QAEXXZ, retail 0x00530FAE, 23 bytes.
+// Frees m_data at +4 and m_bits at +8 via array delete; offsets match Rva00530FC5.
+// Callers 0x00533B97 0x00533BA2 in 0x00533B74 plus jmp alias 0x00531235. Callee 0x0002FD80 rowed.
+void Rva00530FC5::rva00530FAE()
+{
+	delete[] m_bits;
+	delete[] m_data;
 }

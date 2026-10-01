@@ -45892,3 +45892,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?setConditionType@Condition@@QAEXW4ConditionType@1@@Z,,0x003B4A94,137,Code/GameEngine/Source/GameLogic/ScriptEngine/TemplateGetParameterType.cpp,matched,BFME1 donor twin of setActionType; same TU as getParameterType
 ?rva005F6A30@Rva005F6A30@@QAEXXZ,,0x005F6A30,20,Code/GameEngine/Source/Common/Rva005F6A30Method.cpp,matched,leaf conditional virtual slot 0x08 on member +4 with outer this plus caller 0x005F6A90
 ?rva002793AF@Rva002793AF@@QAEXABVAsciiString@@@Z,,0x002793AF,65,Code/GameEngine/Source/GameClient/DrawableRva002793AF.cpp,matched,Drawable adjacent AsciiString selector via rowed StringBase compare release isEmpty set plus literal ReferenceDisplayName
+?rva00530FAE@Rva00530FC5@@QAEXXZ,,0x00530FAE,23,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,frees m_data at +4 and m_bits at +8 via array delete
