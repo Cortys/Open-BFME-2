@@ -1835,3 +1835,36 @@ void Rva0069A160JoinChannel(PEER peer, const char *channel, const char *password
 {
     Rva00699F20Join(peer, 0, channel, password, callback, param, blocking);
 }
+
+// Same BFME1 revision, dup_008593A0. Its original API name is unresolved.
+void Rva0069A960RoomGlobalKeys(PEER peer, int roomType, int num,
+    const char **keys, void *callback, void *param, int blocking)
+{
+    piConnection *connection = (piConnection *)peer;
+    int success = 1;
+    int opID = piGetNextID(peer);
+
+    if (!connection->connected)
+        return;
+    if (!connection->enteringRoom[roomType] && !connection->inRoom[roomType])
+        return;
+
+    if (!piNewGetGlobalKeysOperation(peer, connection->room[roomType], num,
+            keys, callback, param, opID))
+        success = 0;
+    if (!success)
+        piAddGetGlobalKeysCallback(peer, 0, "", 0, 0, 0, callback, param, opID);
+
+    if (blocking)
+    {
+        do
+        {
+            msleep(1);
+            piThink(peer, opID);
+        }
+        while (!PeerOperationsComplete(peer, opID) || !piIsCallbackFinished(peer, opID));
+
+        if (connection->shutdown && connection->callbackDepth == 0)
+            peerShutdown(peer);
+    }
+}
