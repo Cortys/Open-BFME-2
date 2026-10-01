@@ -45076,3 +45076,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00536A1D@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536A1D,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresLostNonRTS setter slot 0x2C same TU
 ?rva00536AAE@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536AAE,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresKilledNonRTS setter slot 0x2C same TU
 ?rva00536003@UserPreferences@@QAEXH@Z,,0x00536003,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallBestWinStreak setter slot 0x2C same TU
+?rva002C027B@Rva002C027B@@QAEPAXXZ,,0x002C027B,23,Code/GameEngine/Source/Common/Rva002C027BVirt.cpp,matched,gap 002BFBF0-002C0292 callers 002C235A 002C248E 003149C2 slot3 fwd no callees
