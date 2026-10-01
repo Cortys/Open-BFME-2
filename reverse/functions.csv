@@ -46272,3 +46272,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0028FEA7@Object@@QAE_NMPBV1@I@Z,,0x0028FEA7,247,Code/GameEngine/Source/GameLogic/Object/Object_rva0028FEA7.cpp,matched,Object healing benefactor DamageInfo forward via TheGameLogic frame
 ?rva000AE84A@Rva000AE84A@@QAEXHHPAEH@Z,,0x000AE84A,319,Code/GameEngine/Source/Common/Rva000AE84AGridCellQuery.cpp,matched,grid cell colour query; entry accesses written as m_80B0[slot].field so the single-use byte and int reads fold to a SIB with the scaled index as base (retail) instead of the reloaded pointer; placeholder names
 ?rva002A7C0B@PlayerList@@QAEH_N@Z,,0x002A7C0B,101,Code/GameEngine/Source/Common/RTS/PlayerList_getNthPlayer.cpp,matched,PlayerList loop via getNthPlayer and rowed getters plus m60 sum
+?Rva0073EB00Xfer@@YAPAVXfer@@PAV1@PAG@Z,,0x0073EB00,106,Code/GameEngine/Source/Common/RTS/Rva0073EB00Xfer.cpp,matched,Shroud PlayerState counters3 Xfer helper via caller 0x0073EBB0
