@@ -8,13 +8,7 @@
 #include <memory>
 #include <utility>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-    __forceinline void assign(const UnicodeString &o) { StringBase<unsigned short>::set(o); }
-};
-
+#include "unicode_string.h"
 // Complete retail record copy at0x00054F57.
 struct BfmeStringRecord00054F57 {
     AsciiString ansi; UnicodeString wide;
@@ -163,7 +157,7 @@ struct BfmeStringRecord005ED5F3 {
 BfmeStringRecord005ED5F3::BfmeStringRecord005ED5F3(const BfmeStringRecord005ED5F3 &o) : text(o.text), word0(o.word0), word1(o.word1), word2(o.word2), word3(o.word3) {}
 inline BfmeStringRecord005ED5F3 &BfmeStringRecord005ED5F3::operator=(const BfmeStringRecord005ED5F3 &o)
 {
-    text.assign(o.text);
+    text.set(o.text);
     word0 = o.word0;
     word1 = o.word1;
     word2 = o.word2;
@@ -200,7 +194,7 @@ BfmeStringRecord005DDD40::BfmeStringRecord005DDD40(const BfmeStringRecord005DDD4
 BfmeStringRecord005DDD40 &BfmeStringRecord005DDD40::operator=(const BfmeStringRecord005DDD40 &o)
 {
     if (this != &o) {
-        text.assign(o.text);
+        text.set(o.text);
         word = o.word;
     }
     return *this;
@@ -274,7 +268,7 @@ struct BfmeStringRecord002602A6 {
 };
 BfmeStringRecord002602A6 &BfmeStringRecord002602A6::operator=(const BfmeStringRecord002602A6 &o)
 {
-    text.assign(o.text);
+    text.set(o.text);
     word = o.word;
     return *this;
 }
