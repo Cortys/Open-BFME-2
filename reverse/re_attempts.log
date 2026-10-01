@@ -4657,3 +4657,9 @@ FUN_00959c3d	0x00559C3D	168	blocked	UnicodeString by-value return with TheGameTe
 ?rva001F48DF@Rva001F48DF@@QAEHHH@Z	0x001F48DF	123	blocked	outer shared-dec became or plus esi-edi swap plus test-al vs test-eax t=15 model=muse-17
 ?rva002CCED3@Rva002CCED3@@QAEHHH@Z	0x002CCED3	244	blocked	244B EH-SSE-x87 mix plus 10 callees needs Weapon-Object-Partition layouts t=10 model=muse-17
 FUN_009dcead	0x005DCEAD	10	blocked	EH prolog fragment of 0x005DCEB7 which sets EBP via EH_prolog; not standalone function t=4 model=muse-14
+?rva004233F5@Rva004233F5@@QAEHPAURva00422544List@@M@Z	0x004233F5	144	partial	144B match except sub esp 0x20 vs 0x30 and lea -0x20 vs -0x30 t=25 model=muse-19 score=0.99 stash=reverse/attempts/0x004233f5.cpp
+FUN_004a273f	0x000A273F	254	blocked	drawHiliteBar guess exact size 254B but prologue reg-vs-stack plus cmovl-vs-branch plus layout plus 20 reg diffs identity unproven t=30 model=muse-19
+?Rva002D9686Get@@YIHPBUWeightedSoundRange@@I@Z	0x002D9686	77	partial	77B exact size-count only edx-eax edi-edx rotation plus tail jne-vs-je t=30 model=muse-19 score=0.93 stash=reverse/attempts/0x002d9686.cpp
+?rva004DE700@ObjectSMCHelper@@QAEHXZ	0x004DE700	77	partial	76B exact count 0 reg only missing push-pop plus cmovb-vs-branch t=30 model=muse-19 score=0.95 stash=reverse/attempts/0x004de700.cpp
+??0Rva001525FB@@QAE@XZ	0x001525FB	66	partial	66v66 20v20 exact size and count 0mem 0reg only vptr store late by 2 insns retail at plus0xb before and-8 ours at plus0x12 after lea tried G7 O1 G6 Os plus 2-int base plus explicit base t=25 model=muse-19 score=0.95 stash=reverse/attempts/0x001525fb.cpp
+FUN_006cced3	0x002CCED3	244	blocked	244B EH Weapon-vs-Texture ownership conflict caller 0x41BAD2 passes Texture this but body calls Weapon computeStatus plus unclaimed scopetable 0x777042 plus 10 callees floats bitset fixedstorage needs donor t=15 model=muse-19

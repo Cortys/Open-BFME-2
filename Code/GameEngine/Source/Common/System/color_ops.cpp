@@ -33,3 +33,25 @@ int __cdecl Rva002D2B9ADarken(int color, int amount)
 	}
 	return color;
 }
+
+//-------------------------------------------------------------------------------------------------
+// ?Rva0004D76EBlend@@YAHHH@Z, retail 0x0004D76E, 149 bytes.
+// Channel-wise multiply of two packed ARGB colors via GameGetColorComponents;
+// callers 0x00050125 0x0005053E. TU owns GameGetColorComponents and Darken.
+int __cdecl Rva0004D76EBlend(int color1, int color2)
+{
+	UnsignedByte red1, green1, blue1, alpha1;
+	UnsignedByte red2, green2, blue2, alpha2;
+	GameGetColorComponents(color1, &red1, &green1, &blue1, &alpha1);
+	GameGetColorComponents(color2, &red2, &green2, &blue2, &alpha2);
+	UnsignedByte alpha = (UnsignedByte)((alpha1 * alpha2) / 255);
+	UnsignedByte red = (UnsignedByte)((red1 * red2) / 255);
+	UnsignedByte green = (UnsignedByte)((green1 * green2) / 255);
+	UnsignedByte blue = (UnsignedByte)((blue1 * blue2) / 255);
+	int result = (alpha << 8) | red;
+	result <<= 8;
+	result |= green;
+	result <<= 8;
+	result |= blue;
+	return result;
+}
