@@ -45194,3 +45194,5 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00536A64@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536A64,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresLostNonRTS 0x00869030 slot 0x18 releaseBuffer gap same TU unlock
 ?rva002B2B66@Rva002B2B66@@QAEHXZ,,0x002B2B66,18,Code/GameEngine/Source/Common/Rva002B2B66Get.cpp,matched,24 callers null minus1 else plus0x14 via plus0x98
 ?rva002B2FCB@Rva002B2FCB@@QAEXPAX@Z,,0x002B2FCB,23,Code/GameEngine/Source/Common/Rva002B2FCBInvoke.cpp,matched,forwarder via member-fn ptr caller 0x002B5711
+??4INIException@@QAEAAV0@ABV0@@Z,,0x0002F6D6,68,Code/GameEngine/Source/Common/INI/INIExceptionCtor.cpp,matched,
+??0INIException@@QAE@ABV0@@Z,,0x000588C5,19,Code/GameEngine/Source/Common/INI/INIExceptionCtor.cpp,matched,

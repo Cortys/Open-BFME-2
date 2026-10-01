@@ -9,6 +9,7 @@ extern char g_bfmeFormatBuffer[2048];
 extern "C" __declspec(dllimport) int __cdecl _vsnprintf(char *, unsigned int, const char *, va_list);
 extern "C" void *__cdecl bfmeArrayNew(unsigned int);
 void __cdecl operator delete[](void *block);
+void *__cdecl operator new[](unsigned int size);
 
 class INIException
 {
@@ -16,7 +17,9 @@ public:
     char *mFailureMessage;
     int m_argCount;
     INIException(int argCount, const char *format, ...);
+    INIException(const INIException &that);
     ~INIException();
+    INIException &operator=(const INIException &that);
 };
 
 INIException::INIException(int argCount, const char *format, ...)
@@ -43,4 +46,31 @@ INIException::INIException(int argCount, const char *format, ...)
 INIException::~INIException()
 {
     delete[] mFailureMessage;
+}
+
+// ??0INIException@@QAE@ABV0@@Z and ??4INIException@@QAEAAV0@ABV0@@Z: retail's
+// throw information for INIException (VA 0x00CFE2FC) names the copy
+// constructor at 0x000588C5, the body XferException's shares; it nulls the
+// message and assigns through operator= at 0x0002F6D6.
+INIException::INIException(const INIException &that)
+{
+    mFailureMessage = 0;
+    *this = that;
+}
+
+INIException &INIException::operator=(const INIException &that)
+{
+    if (this != &that)
+    {
+        delete[] mFailureMessage;
+        if (that.mFailureMessage != 0)
+        {
+            mFailureMessage = new char[strlen(that.mFailureMessage) + 1];
+            strcpy(mFailureMessage, that.mFailureMessage);
+        }
+        else
+            mFailureMessage = 0;
+        m_argCount = that.m_argCount;
+    }
+    return *this;
 }
