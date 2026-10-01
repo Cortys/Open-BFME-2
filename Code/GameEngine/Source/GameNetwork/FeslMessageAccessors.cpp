@@ -23,7 +23,8 @@ char *Rva007EBCA0(const char *record, const char *key);
 int Rva007EC5C0(char *record, int capacity, const char *key, int value);
 int Rva007ECE60(char *record, int capacity, const char *key, const char *value);
 extern "C" int Rva007EE720(char *text, int defaultValue);
-void bfmeFormatUPB(void *entry, char *out, void *size, const char *defaultValue);
+extern "C" int __cdecl Rva007EEC30(const char *text, unsigned char *dest,
+	int destSize, const char *defaultText);
 
 class Rva007E8810Message
 {
@@ -100,7 +101,7 @@ bool Rva007E8810Message::getString(const char *key, char *out, int size)
 		*out = 0;
 		return false;
 	}
-	bfmeFormatUPB(text, out, (void *)size, "");
+	Rva007EEC30(text, (unsigned char *)out, size, "");
 	return true;
 }
 
