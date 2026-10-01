@@ -30,6 +30,7 @@ class Rva002D9893
 
 public:
 	void rva002D9893(const Rva002D9893 &other);
+	Rva002D9893 &operator=(const Rva002D9893 &other);
 
 private:
 	StringBase<char> m_04;
@@ -117,4 +118,11 @@ void Rva002D9893::rva002D9893(const Rva002D9893 &other)
 	m_53 = other.m_53;
 	if (m_38 == 1 || m_38 == 2 || m_38 == 3 || m_38 == 4 || m_38 == 5)
 		m_34 = other.m_34;
+}
+
+// ??4Rva002D9893Assign present-unmatched
+Rva002D9893 &Rva002D9893::operator=(const Rva002D9893 &other)
+{
+	rva002D9893(other);
+	return *this;
 }

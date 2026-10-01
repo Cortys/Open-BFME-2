@@ -45482,3 +45482,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?load@ImageCollection@@QAEXH@Z,,0x002D908D,249,Code/GameEngine/Source/GameClient/System/ImageCollectionLoad.cpp,matched,BFME1 donor trimmed no userData 5 dirs INI 0x87C 3 callers ImageCollection
 ?rva002D9BDC@Rva002D9BDC@@QAEXMM@Z,,0x002D9BDC,43,Code/Libraries/Source/WWVegas/WWLib/Rva002D9BDCClamp.cpp,matched,honest method clamp lo val hi member 0x64 2 callers
 ?rva002D9893@Rva002D9893@@QAEXABV1@@Z,,0x002D9893,336,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,honest Copy void const ref Strings Opaque Pool10 movsd cond 2 unlocked
+??4Rva002D9893@@QAEAAV0@ABV0@@Z,,0x002D9A31,18,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,chain operator equals calls Copy returns this 1 caller
