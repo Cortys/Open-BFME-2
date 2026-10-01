@@ -105,7 +105,7 @@ static bool bfmeSortingVBInUse;
 static BfmeDynamicSortingVB *bfmeSortingVB;
 static unsigned short bfmeSortingVBSize,bfmeSortingVBOffset;
 extern void BFME_DX8_Thread_Lock();
-extern void BFME_DX8_Thread_Assert();
+extern bool BFME_DX8_Thread_Assert();
 class BFMEDX8DeviceLock {
 public:
  BFMEDX8DeviceLock() { BFME_DX8_Thread_Lock(); }

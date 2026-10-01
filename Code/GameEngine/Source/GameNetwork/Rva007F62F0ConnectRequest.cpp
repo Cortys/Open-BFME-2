@@ -5,15 +5,14 @@ class Rva007F6260GameBrowser;
 void Rva007F62E0Callback(Rva007E8810Message *, Rva007F6260GameBrowser *);
 void a_007ea650();
 
-int Rva007EB810Get();
-class Rva007EB810Diag
+struct Rva007EB810Diag
 {
-public:
     virtual void v0();
     virtual void v1();
     virtual void v2();
     virtual void fail(const char *, const char *, int);
 };
+Rva007EB810Diag *Rva007EB810Get();
 class BfmeC994
 {
 public:
@@ -80,7 +79,7 @@ void Rva007F62F0ConnectRequest::request(int action, void *, int *status)
     if (action == 3)
     {
         if (m_state != 1)
-            ((Rva007EB810Diag *)Rva007EB810Get())->fail(
+            Rva007EB810Get()->fail(
                 "mState == GameBrowserStateConnectingNetwork",
                 "\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowser.cpp", 0x529);
         m_state = 2;

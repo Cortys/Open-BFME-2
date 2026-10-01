@@ -12,7 +12,7 @@
 // address-derived pin (target proven by REL32, semantic identity unproven).
 
 void __cdecl BFME_DX8_Thread_Lock(void);
-void __cdecl BFME_DX8_Thread_Assert(void);
+bool __cdecl BFME_DX8_Thread_Assert(void);
 void __cdecl Rva001171B0(void);
 void __cdecl clipCursorToClient(void);
 
