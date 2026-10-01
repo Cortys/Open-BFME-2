@@ -12,7 +12,6 @@ class ThreadClass
 {
 public:
     ThreadClass(const char *name);
-    virtual ~ThreadClass();
     virtual void Execute();
     void Set_Priority(int priority);
     __declspec(noinline) bool Is_Running();
