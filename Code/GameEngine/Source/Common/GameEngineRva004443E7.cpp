@@ -6,6 +6,8 @@
 // mov ecx [0xDFE710 TheGameEngine] jmp to rowed _bfme_terminateChildProcesses 0x2260F7;
 // callers at 0x44459D 0x444E7E 0x444EA4 0x444EE5 0x44666D.
 
+extern class BfmeAptWindowManager *g_bfmeAptWindowManager;
+
 extern class GameEngine *TheGameEngine;
 
 class Member004443E7
@@ -47,7 +49,7 @@ public:
 
 #define TheGlobal004443E7958 (*(Global004443E7958View **)0x00DFE958)
 #define TheGameEngine004443E7 (*(class GameEngine **)&TheGameEngine)
-#define TheInvoke00444E8ATarget (*(Rva00222A8BTarget **)0x00DFE4CC)
+#define TheInvoke00444E8ATarget (*(Rva00222A8BTarget **)&g_bfmeAptWindowManager)
 
 class GameEngine
 {

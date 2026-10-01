@@ -5,7 +5,9 @@
 // (global 0x00BBB8D8) to +0x10. Evidence: chain lane (calls just-landed
 // 0x00240C60); same +4 clear as Rva000D3FA0Map dtor neighbours; caller
 // 0x002443C8; float 1.0f proven by re_attempts 0x000C9251 and 0x005DB928.
-#define kOne00439920 (*(const float *)0x00BBB8D8)
+extern float g_Va00BBB8D8;
+
+#define kOne00439920 g_Va00BBB8D8
 
 namespace _STL
 {

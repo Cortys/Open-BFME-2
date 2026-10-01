@@ -1,6 +1,8 @@
 // ?rva0057A24A@Rva0057A24A@@QBEMXZ @0x0057A24A 22B
 // Float getter via global 0x009FE4CC slot 15 then * m_20 at +0x20;
 // callers at 0x0057ABF4 0x0057AC05 0x0057B047 0x0057B2CE; unlock.
+extern class BfmeAptWindowManager *g_bfmeAptWindowManager;
+
 struct RetObj
 {
 	char m_pad[4];
@@ -15,7 +17,7 @@ struct GlobalObj
 	virtual void *d13(); virtual void *d14();
 	virtual RetObj *slot15();
 };
-#define TheGlobal0057A24A (*(GlobalObj **)0x00DFE4CC)
+#define TheGlobal0057A24A (*(GlobalObj **)&g_bfmeAptWindowManager)
 class Rva0057A24A
 {
 public:

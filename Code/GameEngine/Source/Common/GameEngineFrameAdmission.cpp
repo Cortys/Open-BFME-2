@@ -6,11 +6,13 @@
 // body queries the network object's vtable slot +0x58, advances the client
 // frame counter at +0x38, and maintains the headroom limit at +0x44.
 
+extern float g_Va00BBB8D8;
+
 extern class NetworkInterface *TheNetwork;
 
 #define TheNetwork (*(class NetworkInterface **)&TheNetwork)
 #define LogicTimeScale (*(const float *)0x00DBA2F8)
-#define One (*(const float *)0x00BBB8D8)
+#define One g_Va00BBB8D8
 
 class NetworkInterface
 {
