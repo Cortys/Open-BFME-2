@@ -8,6 +8,7 @@
 class AsciiString { void *m_data; public: AsciiString(const AsciiString &o); ~AsciiString(); };
 class Rva002390CB { void *a; void *b; public: __declspec(nothrow) Rva002390CB(const Rva002390CB &o); ~Rva002390CB(); };
 struct BfmeStringRecord002CF550 {
+	~BfmeStringRecord002CF550();
 	AsciiString text;
 	Rva002390CB ref;
 };
