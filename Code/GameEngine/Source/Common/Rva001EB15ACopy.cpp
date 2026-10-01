@@ -34,6 +34,7 @@ class UnicodeString
 {
 public:
 	UnicodeString(const UnicodeString &o) : m_data(o.m_data) {}
+	~UnicodeString();
 private:
 	StringBase<WideChar> m_data;
 };
