@@ -14,10 +14,22 @@ struct Rva000B6498Node
 	struct Rva000B6498Node *m_child;
 };
 
+struct Rva000B6498Head
+{
+	int m00;
+	struct Rva000B6498Node *m04;
+	struct Rva000B6498Head *m08;
+	struct Rva000B6498Head *m0c;
+};
+
 class Rva000B6498
 {
 public:
 	void rva000B6498(struct Rva000B6498Node *n);
+	void rva000B9324();
+private:
+	struct Rva000B6498Head *m_head;
+	int m_count;
 };
 
 void Rva000B6498::rva000B6498(struct Rva000B6498Node *n)
@@ -31,4 +43,17 @@ void Rva000B6498::rva000B6498(struct Rva000B6498Node *n)
 		free(n);
 		n = next;
 	} while (n);
+}
+
+// ?rva000B9324@Rva000B6498@@QAEXXZ 0x000B9324 41B
+// Evidence: unlock lane; same this as rowed 0x000B6498 free call at 0x000B9332; caller 0x000BB694 unclaimed 56B; sentinel reset m08 m0c self m04 m_count zero.
+void Rva000B6498::rva000B9324()
+{
+	if (m_count == 0)
+		return;
+	rva000B6498(m_head->m04);
+	m_head->m08 = m_head;
+	m_head->m04 = 0;
+	m_head->m0c = m_head;
+	m_count = 0;
 }
