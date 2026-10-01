@@ -22,6 +22,7 @@ the address as already claimed.  It accepts scaffold rows only.  This is the sup
 claim with the clean C++ body it jumps to; the original row is restored if the
 new claim does not byte-verify.
 """
+
 import argparse
 import csv
 import io
@@ -54,21 +55,36 @@ def parse_ledger(raw):
         if i == 1 or not r or (len(r) == 1 and not r[0]):
             continue
         if len(r) != 7:
-            fail(f"functions.csv line {i} has {len(r)} fields, expected 7: {r[:3]}...",
-                 "the ledger is corrupt — fix it first: python3 tools/check_csv.py")
+            fail(
+                f"functions.csv line {i} has {len(r)} fields, expected 7: {r[:3]}...",
+                "the ledger is corrupt — fix it first: python3 tools/check_csv.py",
+            )
         name, _export, target_rva, target_size, source, status, notes = r
         try:
             rva = int(target_rva, 16)
         except ValueError:
-            fail(f"functions.csv line {i} ({name}): unparseable target_rva '{target_rva}'",
-                 "the ledger is corrupt — fix it first: python3 tools/check_csv.py")
+            fail(
+                f"functions.csv line {i} ({name}): unparseable target_rva '{target_rva}'",
+                "the ledger is corrupt — fix it first: python3 tools/check_csv.py",
+            )
         try:
             size = int(target_size) if target_size else 0
         except ValueError:
-            fail(f"functions.csv line {i} ({name}): unparseable target_size '{target_size}'",
-                 "the ledger is corrupt — fix it first: python3 tools/check_csv.py")
-        rows.append({"line": i, "name": name, "rva": rva, "size": size,
-                     "source": source, "status": status, "notes": notes})
+            fail(
+                f"functions.csv line {i} ({name}): unparseable target_size '{target_size}'",
+                "the ledger is corrupt — fix it first: python3 tools/check_csv.py",
+            )
+        rows.append(
+            {
+                "line": i,
+                "name": name,
+                "rva": rva,
+                "size": size,
+                "source": source,
+                "status": status,
+                "notes": notes,
+            }
+        )
     return rows
 
 
@@ -104,8 +120,10 @@ def strip_marker(source_path, name):
         return None
     victim = candidates[0]
     stripped = lines[victim].rstrip(b"\r\n").decode("utf-8", errors="replace")
-    print(f"add_match: stripping marker at {source_path.name}:{victim + 1}: {stripped.strip()}")
-    return b"".join(lines[:victim] + lines[victim + 1:])
+    print(
+        f"add_match: stripping marker at {source_path.name}:{victim + 1}: {stripped.strip()}"
+    )
+    return b"".join(lines[:victim] + lines[victim + 1 :])
 
 
 def lookup_export_rva(root, name):
@@ -113,7 +131,9 @@ def lookup_export_rva(root, name):
     if not exports.exists():
         # exports.csv is generated (gitignored); its absence only costs the
         # optional export_rva column, so say so instead of silently omitting
-        print("add_match: note: reverse/exports.csv not present — export_rva left empty")
+        print(
+            "add_match: note: reverse/exports.csv not present — export_rva left empty"
+        )
         return ""
     with exports.open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle):
@@ -133,32 +153,51 @@ def remove_stash(rva, root):
     stash = Path(root) / "reverse" / "attempts" / f"0x{rva:08x}.cpp"
     if stash.exists():
         stash.unlink()
-        print(f"add_match: cleared banked attempt {stash.relative_to(Path(root)).as_posix()}")
+        print(
+            f"add_match: cleared banked attempt {stash.relative_to(Path(root)).as_posix()}"
+        )
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("name", help="decorated (mangled) symbol name")
     parser.add_argument("target_rva", help="RVA of the function body, hex (0x...)")
     parser.add_argument("target_size", help="function size in bytes, decimal")
     parser.add_argument("source", help="repo-relative source path (src/...)")
     parser.add_argument("--notes", default="", help="notes column text (no commas)")
-    parser.add_argument("--icf-owner", help="existing matched symbol at the same RVA and size; "
-                        "allows a verified identical-code-folding alias")
-    parser.add_argument("--replace-existing", action="store_true",
-                        help="replace the symbol's one existing row instead of rejecting it; "
-                             "the old row is restored if verification fails")
-    parser.add_argument("--replace-rva", metavar="RVA",
-                        help="retire the SCAFFOLD row at this address and claim it "
-                             "under the new name (the dump -> C++ conversion path); "
-                             "the old row is restored if verification fails")
-    parser.add_argument("--no-verify", action="store_true",
-                        help="skip ./build.sh verification (row lands UNVERIFIED — "
-                             "verify before committing)")
-    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT,
-                        help="TEST-ONLY: operate on a copy of the repo rooted here "
-                             "instead of the live ledger (default: repo root)")
+    parser.add_argument(
+        "--icf-owner",
+        help="existing matched symbol at the same RVA and size; "
+        "allows a verified identical-code-folding alias",
+    )
+    parser.add_argument(
+        "--replace-existing",
+        action="store_true",
+        help="replace the symbol's one existing row instead of rejecting it; "
+        "the old row is restored if verification fails",
+    )
+    parser.add_argument(
+        "--replace-rva",
+        metavar="RVA",
+        help="retire the SCAFFOLD row at this address and claim it "
+        "under the new name (the dump -> C++ conversion path); "
+        "the old row is restored if verification fails",
+    )
+    parser.add_argument(
+        "--no-verify",
+        action="store_true",
+        help="skip ./build.sh verification (row lands UNVERIFIED — "
+        "verify before committing)",
+    )
+    parser.add_argument(
+        "--root",
+        type=Path,
+        default=DEFAULT_ROOT,
+        help="TEST-ONLY: operate on a copy of the repo rooted here "
+        "instead of the live ledger (default: repo root)",
+    )
     args = parser.parse_args()
 
     root = args.root.resolve()
@@ -178,7 +217,9 @@ def main():
     if size <= 0:
         fail(f"target_size must be positive, got {size}")
 
-    source_rel = args.source.lstrip("./") if not Path(args.source).is_absolute() else None
+    source_rel = (
+        args.source.lstrip("./") if not Path(args.source).is_absolute() else None
+    )
     if source_rel is None:
         try:
             source_rel = Path(args.source).resolve().relative_to(root).as_posix()
@@ -186,26 +227,39 @@ def main():
             fail(f"source {args.source} is not under {root}")
     source_path = root / source_rel
     if not source_path.exists():
-        fail(f"source does not exist: {source_path}",
-             "a ledger row must never point at a missing file")
+        fail(
+            f"source does not exist: {source_path}",
+            "a ledger row must never point at a missing file",
+        )
 
-    for label, value in [("name", name), ("source", source_rel), ("--notes", args.notes)]:
+    for label, value in [
+        ("name", name),
+        ("source", source_rel),
+        ("--notes", args.notes),
+    ]:
         bad = set(value) & set(',"\r\n')
         if bad:
-            fail(f"{label} contains {sorted(bad)} — functions.csv rows are raw "
-                 "comma-joined fields with no quoting, this would corrupt the ledger")
+            fail(
+                f"{label} contains {sorted(bad)} — functions.csv rows are raw "
+                "comma-joined fields with no quoting, this would corrupt the ledger"
+            )
 
     # Exclusive lock across validate->append->verify so concurrent agents cannot
     # interleave appends or double-claim, and so revert-on-failure cannot clobber
     # a row someone else appended meanwhile.
     lock_file = (root / "reverse" / ".add_match.lock").open("a")
-    lock(lock_file, exclusive=True,
-         wait_notice="add_match: waiting for ledger lock (another add_match is running)...")
+    lock(
+        lock_file,
+        exclusive=True,
+        wait_notice="add_match: waiting for ledger lock (another add_match is running)...",
+    )
 
     raw = functions_csv.read_bytes()
     if not raw.endswith(b"\n"):
-        fail("functions.csv does not end with a newline (truncated last row?) — "
-             "fix the ledger before appending")
+        fail(
+            "functions.csv does not end with a newline (truncated last row?) — "
+            "fix the ledger before appending"
+        )
     eol = ledger_io.lf_terminator(raw, "functions.csv")
 
     rows = parse_ledger(raw)
@@ -213,33 +267,48 @@ def main():
     replaced = None
     if args.replace_rva:
         if args.replace_existing:
-            fail("--replace-rva and --replace-existing are alternatives: one keys "
-                 "on the address, the other on the name")
+            fail(
+                "--replace-rva and --replace-existing are alternatives: one keys "
+                "on the address, the other on the name"
+            )
         try:
             old_rva = int(args.replace_rva, 16)
         except ValueError:
             fail(f"--replace-rva '{args.replace_rva}' is not hex")
         at_rva = [row for row in rows if row["rva"] == old_rva]
         if len(at_rva) != 1:
-            fail(f"--replace-rva 0x{old_rva:08X} matches {len(at_rva)} rows; "
-                 "it retires exactly one")
-        if not at_rva[0]["notes"].lstrip().startswith("gen-dump"):
-            fail(f"--replace-rva 0x{old_rva:08X} is {at_rva[0]['name']} "
-                 f"({at_rva[0]['source']}), not a gen-dump scaffold row",
-                 "only scaffolding may be taken over by name; retract a real claim "
-                 "in its own commit so the retraction is reviewable")
+            fail(
+                f"--replace-rva 0x{old_rva:08X} matches {len(at_rva)} rows; "
+                "it retires exactly one"
+            )
+        # gen-dump rows pin bytes with no identity; gen-alias rows (dup_*
+        # names served by another object's identical body) carry no identity
+        # of their own either. AGENTS.md: a gen-* placeholder yields to a real
+        # name. Everything else is a real claim and must be retracted on its own.
+        if not at_rva[0]["notes"].lstrip().startswith(("gen-dump", "gen-alias")):
+            fail(
+                f"--replace-rva 0x{old_rva:08X} is {at_rva[0]['name']} "
+                f"({at_rva[0]['source']}), not a gen-dump or gen-alias scaffold row",
+                "only scaffolding may be taken over by name; retract a real claim "
+                "in its own commit so the retraction is reviewable",
+            )
         replaced = at_rva[0]
     if args.replace_existing:
         if len(claims) != 1:
-            fail(f"--replace-existing requires exactly one existing row for {name}; "
-                 f"found {len(claims)}")
+            fail(
+                f"--replace-existing requires exactly one existing row for {name}; "
+                f"found {len(claims)}"
+            )
         replaced = claims[0]
     elif claims:
-        addresses = ", ".join(f"0x{row['rva']:08X} ({row['source']}, {row['status']})"
-                              for row in claims)
-        fail(f"{name} is already in the ledger at {addresses}",
-             "one name = one address; use --replace-existing only when deliberately "
-             "repointing that claim")
+        addresses = ", ".join(
+            f"0x{row['rva']:08X} ({row['source']}, {row['status']})" for row in claims
+        )
+        fail(
+            f"{name} is already in the ledger at {addresses}",
+            "one name = one address; use --replace-existing only when deliberately "
+            "repointing that claim",
+        )
 
     new_end = rva + size
     icf_owner = None
@@ -248,28 +317,47 @@ def main():
         if len(owners) != 1:
             fail(f"--icf-owner {args.icf_owner} must name exactly one existing row")
         icf_owner = owners[0]
-        if (icf_owner["status"] != "matched" or icf_owner["rva"] != rva or
-                icf_owner["size"] != size):
-            fail(f"--icf-owner {args.icf_owner} is not a matched {size}-byte claim "
-                 f"at 0x{rva:08X}")
+        if (
+            icf_owner["status"] != "matched"
+            or icf_owner["rva"] != rva
+            or icf_owner["size"] != size
+        ):
+            fail(
+                f"--icf-owner {args.icf_owner} is not a matched {size}-byte claim "
+                f"at 0x{rva:08X}"
+            )
     for row in rows:
         if row is replaced:
             continue
-        same_icf_group = (icf_owner is not None and row["status"] == "matched" and
-                          row["rva"] == rva and row["size"] == size)
+        same_icf_group = (
+            icf_owner is not None
+            and row["status"] == "matched"
+            and row["rva"] == rva
+            and row["size"] == size
+        )
         if row["rva"] == rva:
             if same_icf_group:
                 continue
-            fail(f"target_rva 0x{rva:08X} is already claimed by {row['name']} "
-                 f"({row['source']}, {row['status']}, line {row['line']})")
-        if row["status"] == "matched" and row["rva"] < new_end and rva < row["rva"] + row["size"]:
+            fail(
+                f"target_rva 0x{rva:08X} is already claimed by {row['name']} "
+                f"({row['source']}, {row['status']}, line {row['line']})"
+            )
+        if (
+            row["status"] == "matched"
+            and row["rva"] < new_end
+            and rva < row["rva"] + row["size"]
+        ):
             if same_icf_group:
                 continue
-            fail(f"range [0x{rva:08X}, 0x{new_end:08X}) overlaps matched row "
-                 f"{row['name']} [0x{row['rva']:08X}, 0x{row['rva'] + row['size']:08X}) "
-                 f"({row['source']}, line {row['line']})")
+            fail(
+                f"range [0x{rva:08X}, 0x{new_end:08X}) overlaps matched row "
+                f"{row['name']} [0x{row['rva']:08X}, 0x{row['rva'] + row['size']:08X}) "
+                f"({row['source']}, line {row['line']})"
+            )
     export_rva = lookup_export_rva(root, name)
-    ledger_row = f"{name},{export_rva},0x{rva:08X},{size},{source_rel},matched,{args.notes}"
+    ledger_row = (
+        f"{name},{export_rva},0x{rva:08X},{size},{source_rel},matched,{args.notes}"
+    )
 
     saved_source = source_path.read_bytes()
     new_source = strip_marker(source_path, name)
@@ -282,14 +370,17 @@ def main():
         # indexing disagree. ledger_io preserves every retained record byte for
         # byte and the uniform-terminator guard above refuses mixed input.
         key = (replaced["name"], replaced["rva"])
-        new_raw, dropped = ledger_io.rewrite(
-            raw, lambda f: ledger_key(f) != key)
+        new_raw, dropped = ledger_io.rewrite(raw, lambda f: ledger_key(f) != key)
         if dropped != 1:
-            fail(f"internal error: {dropped} ledger rows match {key} — "
-                 "expected exactly one")
+            fail(
+                f"internal error: {dropped} ledger rows match {key} — "
+                "expected exactly one"
+            )
         functions_csv.write_bytes(new_raw + ledger_row.encode("utf-8") + eol)
-        print(f"add_match: replaced row {replaced['line']}: "
-              f"0x{replaced['rva']:08X}/{replaced['size']}B {replaced['source']}")
+        print(
+            f"add_match: replaced row {replaced['line']}: "
+            f"0x{replaced['rva']:08X}/{replaced['size']}B {replaced['source']}"
+        )
         print(f"add_match: with: {ledger_row}")
     else:
         with functions_csv.open("ab") as handle:
@@ -297,8 +388,10 @@ def main():
         print(f"add_match: appended: {ledger_row}")
 
     if args.no_verify:
-        print("add_match: --no-verify: row is UNVERIFIED — run "
-              f"./build.sh {source_rel} before committing")
+        print(
+            "add_match: --no-verify: row is UNVERIFIED — run "
+            f"./build.sh {source_rel} before committing"
+        )
         return
 
     build_sh = root / "build.sh"
@@ -320,13 +413,17 @@ def main():
     except BaseException:
         functions_csv.write_bytes(raw)
         source_path.write_bytes(saved_source)
-        print("add_match: interrupted — append and marker strip REVERTED", file=sys.stderr)
+        print(
+            "add_match: interrupted — append and marker strip REVERTED", file=sys.stderr
+        )
         raise
     if result.returncode != 0:
         functions_csv.write_bytes(raw)
         source_path.write_bytes(saved_source)
-        fail(f"verification failed (exit {result.returncode}) — append and "
-             "marker strip REVERTED; nothing was changed")
+        fail(
+            f"verification failed (exit {result.returncode}) — append and "
+            "marker strip REVERTED; nothing was changed"
+        )
     print("add_match: verified OK — row is live")
     remove_stash(rva, args.root)
     if root == DEFAULT_ROOT.resolve() and os.environ.get("BFME_CLAIMS", "on") != "off":
@@ -334,9 +431,12 @@ def main():
         # shared work claim. A test-only --root must never touch origin.
         try:
             import claims
+
             claims.release([rva], force=True)
         except Exception as error:  # advisory; the ref expires on its own
-            print(f"add_match: could not release shared claim: {error}", file=sys.stderr)
+            print(
+                f"add_match: could not release shared claim: {error}", file=sys.stderr
+            )
 
 
 if __name__ == "__main__":
