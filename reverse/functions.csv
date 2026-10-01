@@ -46379,3 +46379,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?clone@Rva003AE4E5@@QBEPAV1@XZ,,0x003AE4AE,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE4E5Clone.cpp,matched,vslot 2 clone calls rowed copy 0x003AE4E5 via new
 ??0Rva003AE595@@QAE@ABV0@@Z,,0x003AE595,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy calls rowed base 0x003AF50D plus own 3 vptrs
 ??0Rva003AE56F@@QAE@ABV0@@Z,,0x003AE56F,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE595 plus own 3 vptrs
+?rva001E431E@Rva001E431E@@QAEXPBH@Z,,0x001E431E,44,Code/GameEngine/Source/Common/Rva001E431EInit.cpp,matched,zero 0x4C local via ji thunk then Object rva0028CFB2
