@@ -40,7 +40,7 @@ O __copy_ptrs(I first, I last, O result, const __false_type &tag);
 
 }
 
-_STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> >::iterator
+inline _STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> >::iterator
 _STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> >::erase(iterator position)
 {
 	_STL::__false_type tag;
@@ -50,3 +50,11 @@ _STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> >::erase(iterator positio
 	m_finish->~Rva004F69C3();
 	return position;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitRva0040DC1FErase@@YAXPAV?$vector@URva004F69C3@@V?$allocator@URva004F69C3@@@_STL@@@_STL@@@Z present-unmatched
+void bfmeEmitRva0040DC1FErase(_STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> > *p)
+{
+	p->erase((_STL::vector<Rva004F69C3, _STL::allocator<Rva004F69C3> >::iterator)0);
+}
+#pragma inline_depth()
