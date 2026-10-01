@@ -45342,3 +45342,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005FF3E9@Rva005FF450@@QAEXABVUnicodeString@@@Z,,0x005FF3E9,103,Code/GameEngine/Source/Common/Rva005FF450Apt.cpp,matched,Apt Army name via level team format and bfmeSetText
 ?rva005FFB32@Rva005FFB32@@QAEXXZ,,0x005FFB32,51,Code/GameEngine/Source/Common/Rva005FFB32Method.cpp,matched,Reset notifier and entries via ecx-this callback
 ?rva005FFB81@Rva005FFB81@@QAEXXZ,,0x005FFB81,8,Code/GameEngine/Source/Common/Rva005FFB81Thunk.cpp,matched,Forward to inner reset via pointer at plus 4
+??1Rva005FFB89@@QAE@XZ,,0x005FFB89,61,Code/GameEngine/Source/Common/Rva005FFB89Release.cpp,matched,Dtor of two hint-ref holders via forceinline Release
