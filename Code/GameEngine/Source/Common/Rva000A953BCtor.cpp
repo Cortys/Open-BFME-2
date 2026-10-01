@@ -22,3 +22,13 @@ private:
 Rva000A953B::Rva000A953B()
 {
 }
+class Rva000A9551
+{
+public:
+	Rva000A9551();
+private:
+	Coord2D m_arr[2];
+};
+Rva000A9551::Rva000A9551()
+{
+}

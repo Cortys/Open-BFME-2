@@ -46078,3 +46078,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva000A9C39@Rva000A9C39@@QAEXPBVTextureBaseClass@@@Z,,0x000A9C39,142,Code/GameEngine/Source/Common/Rva000A9C39Mapper.cpp,matched,UV scaler u-v pairs via TextureBaseClass width-height callers prove thiscall
 ?Rva000A9F48Get@@YAPAVFile@@PBVAsciiString@@@Z,,0x000A9F48,61,Code/GameEngine/Source/Common/Rva000A9F48FileOpen.cpp,matched,static EAX-arg file-open helper via AsciiString str and TheFileSystem openFile
 ??0Rva000A953B@@QAE@XZ,,0x000A953B,22,Code/GameEngine/Source/Common/Rva000A953BCtor.cpp,matched,3x8 Coord2D array via vector iterator rowed callees
+??0Rva000A9551@@QAE@XZ,,0x000A9551,22,Code/GameEngine/Source/Common/Rva000A953BCtor.cpp,matched,2x8 Coord2D array via vector iterator sibling
