@@ -1,15 +1,14 @@
-// ??0Rva0035D0D1@@QAE@XZ
-// partial score=0.88 date=2026-09-30
-// ??0Rva0035D0D1@@QAE@XZ
-// partial score=0.88 date=2026-09-30
 // cl: /O1 /MD /arch:SSE /G7
 //
 // ??0Rva0035D0D1@@QAE@XZ @ 0x0035D097 58B.
 // Ctor via base ??0Rva001DBAA4 at 0x001DBAA4 plus vtable 0x008163D8 with
 // +4=30 +0x10=0 +0x14=30 +0x18=7 +0x1C=0 +0x20=float +0x24=0.
 // Evidence: vtable store 0x008163D8 same as dtor 0x0035D0D1, callee 0x001DBAA4 row,
-// float from g_Va00BBB8D8, INI StartFrame +0x10 EndFrame +0x14 ViewsToFade +0x18 LeaveSilent +0x1C.
-extern float g_Va00BBB8D8;
+// float from 1.0f, INI StartFrame +0x10 EndFrame +0x14 ViewsToFade +0x18 LeaveSilent +0x1C.
+// Caller 0x0035D0FE. The base ctor is rowed under Rva001DBAA4 while the dtor
+// TU (Rva001DBAC3Derived.cpp) names the base by its dtor, so this ctor stays
+// in its own TU. The +0x20 initial value is the 1.0f literal (pooled at
+// 0x00BBB8D8), not a float global.
 
 class Rva001DBAA4
 {
@@ -38,8 +37,7 @@ public:
     bool m_24;
 };
 
-// ??0Rva0035D0D1@@QAE@XZ present-unmatched
-Rva0035D0D1::Rva0035D0D1() : m_10(0), m_14(30), m_18(7), m_1C(false), m_20(g_Va00BBB8D8), m_24(false)
+Rva0035D0D1::Rva0035D0D1() : m_10(0), m_14(30), m_18(7), m_1C(false), m_20(1.0f), m_24(false)
 {
     m_4 = 30;
 }
