@@ -25,7 +25,7 @@ namespace _STL
 {
 
 template <>
-__declspec(noinline) void _Destroy<Rva0007BB16Record *>(Rva0007BB16Record *__first, Rva0007BB16Record *__last)
+inline void _Destroy<Rva0007BB16Record *>(Rva0007BB16Record *__first, Rva0007BB16Record *__last)
 {
 	for (; __first != __last; ++__first)
 		_Destroy(&*__first);
@@ -38,3 +38,15 @@ template void _STL::vector<Rva0007BB16Record>::_M_clear();
 // Whole-class instantiation: its members that are rowed were placed at retail
 // by masked search of this TU's emitted bodies plus REL32 callee agreement.
 template class _STL::vector<Rva0007BB16Record,_STL::allocator<Rva0007BB16Record> >;
+
+// ??$_Destroy over Rva0007BB16Record* is a header inline in STLport: other
+// units emit select-any copies of it, so a strong definition here was a
+// duplicate symbol in the linked build. This anchor only makes this unit emit
+// its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitstlport_vector_rva0007bb16_destroy@@YAXPAURva0007BB16Record@@@Z present-unmatched
+void bfmeEmitstlport_vector_rva0007bb16_destroy(Rva0007BB16Record *p)
+{
+	_STL::_Destroy(p, p + 1);
+}
+#pragma inline_depth()
