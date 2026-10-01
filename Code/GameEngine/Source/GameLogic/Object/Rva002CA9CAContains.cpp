@@ -61,9 +61,9 @@ public:
 	virtual void v08();
 	virtual void v0c(int a, const void *b);
 	virtual void v10();
-	virtual void v14() = 0;
-	virtual void v18() = 0;
-	virtual void v1c() = 0;
+	virtual void v14(int a, const void *b);
+	virtual void v18();
+	virtual bool v1c();
 	virtual void v20() = 0;
 	virtual void v24() = 0;
 	virtual void v28() = 0;
@@ -80,6 +80,7 @@ public:
 	bool rva002CA9CA(int id, const void *arg);
 	bool rva002CAA59(int a1, const void *a2);
 	void rva002CA970(int a1, int a2, const void *a3, int a4);
+	void rva002CAA9D(int a1, const void *a2, const void *a3, int a4);
 private:
 	char m_pad00[0x58];
 	int m_58;
@@ -149,6 +150,28 @@ void Rva002CA9CA::rva002CA970(int a1, int a2, const void *a3, int a4)
 			if (obj->v04(a1, a3))
 			{
 				obj->v0c(a1, a3);
+			}
+		}
+		cur = cur->m_next;
+	}
+}
+
+void Rva002CA9CA::rva002CAA9D(int a1, const void *a2, const void *a3, int a4)
+{
+	(void)a4;
+	if (a2 == 0)
+		return;
+	if (a3 == 0)
+		return;
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode2 *obj = (VirtNode2 *)cur->m_data;
+		if (obj->v1c())
+		{
+			if (obj->v04(a1, a3))
+			{
+				obj->v14(a1, a3);
 			}
 		}
 		cur = cur->m_next;
