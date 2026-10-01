@@ -34,6 +34,9 @@ public:
 	GameFont *winGetFont(void);
 	WinInstanceData *winGetInstanceData(void);
 	GameWindow *winGetNext(void);
+	GameWindow *winGetPrev(void);
+	Int winNextTab(void);
+	Int winPrevTab(void);
 	GameWindow *winGetOwner(void);
 
 private:
@@ -109,3 +112,14 @@ GameFont *GameWindow::winGetFont(void) { return m_font; }
 WinInstanceData *GameWindow::winGetInstanceData(void) { return reinterpret_cast<WinInstanceData *>(m_instData30); }
 GameWindow *GameWindow::winGetNext(void) { return m_next; }
 GameWindow *GameWindow::winGetOwner(void) { return m_owner; }
+
+// winGetPrev (0x00314105, +0x1FC, between m_next and m_parent): pinned by
+// GadgetTabControlFixupSubPaneList; folded with the identical rowed getter.
+GameWindow *GameWindow::winGetPrev(void) { return m_prev; }
+
+// winNextTab and winPrevTab: GadgetStaticTextInput (0x003213F0) calls both
+// where its donor does, and both sites land on 0x000D43D0, the shared
+// xor eax,eax / ret body. Zero Hour's tab walk is gone from BFME2; both
+// return 0.
+Int GameWindow::winNextTab(void) { return 0; }
+Int GameWindow::winPrevTab(void) { return 0; }
