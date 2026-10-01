@@ -45294,3 +45294,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0035B424@Rva0035B424@@QAEXH@Z,,0x0035B424,37,Code/GameEngine/Source/Common/Rva0035B424Setter.cpp,matched,unlock lane lea-vec index setter
 ?rva0035B750@Rva0035B750@@QAEXPBVModuleData@@@Z,,0x0035B750,45,Code/GameEngine/Source/Common/Rva0035B750Push.cpp,matched,unlock lane empty-or-first ModuleData setter
 ?rva0028F518@Object@@QAE_NXZ,,0x0028F518,16,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028F518.cpp,matched,chain from 0x0028F4EF returns ne2 as bool
+?rva0028F733@Rva0028F733@@QAE_NPBD@Z,,0x0028F733,47,Code/GameEngine/Source/Common/System/Rva0028F733BitSet.cpp,matched,set bit from name via BitFlags104 getSingleBitFromName
