@@ -35,13 +35,48 @@ public:
 	}
 };
 
-class Rva00402F28Item
+class Rva003F9FE6
 {
 public:
+	virtual void v00() = 0;
+	Rva003F9FE6(const Rva003F9FE6 &src);
+private:
+	AsciiString m_04;
+	_STL::vector<AsciiString, _STL::allocator<AsciiString> > m_08;
+	AsciiString m_14;
+	AsciiString m_18;
+	int m_1C;
+	int m_20;
+	int m_24;
+	int m_28;
+	int m_2C;
+	int m_30;
+	int m_34;
+	int m_38;
+	int m_3C;
+	int m_40;
+	int m_44;
+	int m_48;
+	int m_4C;
+	unsigned char m_50;
+	unsigned char m_51;
+	unsigned char m_52;
+	unsigned char m_53;
+	unsigned char m_54;
+	unsigned char m_55;
+	unsigned char m_56;
+};
+
+class Rva00402F28Item : public Rva003F9FE6
+{
+public:
+	virtual void v00();
 	Rva00402F28Item(const Rva00402F28Item &other);
 	~Rva00402F28Item();
 private:
-	char m_bytes[0x5C];
+	unsigned char m_58;
+	unsigned char m_59;
+	unsigned char m_5A;
 };
 
 class Rva00403055
@@ -87,4 +122,12 @@ void Rva00403055::clearItems()
 	for (; it != end; ++it)
 		delete *it;
 	m_items.clear();
+}
+
+Rva00402F28Item::Rva00402F28Item(const Rva00402F28Item &other)
+	: Rva003F9FE6(other)
+{
+	m_58 = other.m_58;
+	m_59 = other.m_59;
+	m_5A = other.m_5A;
 }

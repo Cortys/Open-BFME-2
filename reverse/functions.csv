@@ -45570,3 +45570,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004B4DBF@Rva004B4DBF@@QAEXPAM0@Z,,0x004B4DBF,151,Code/GameEngine/Source/Common/Rva004B4DBFRates.cpp,matched,two reciprocal rates over g_00DBA4E8 with a frame gate; plain 1.0f literal fixes the banked partial; call sites 0x004B506A 0x004B515A
 ??1Rva00403055@@QAE@XZ,,0x00402F71,103,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,dtor: clearItems then inline null-checked member releases via 0x50ED3; /EHs keeps the unwind state around the vector free
 ?clearItems@Rva00403055@@QAEXXZ,,0x00402C4E,60,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,deletes each owned item then erases the range; end hoisted before the loop
+??0Rva00402F28Item@@QAE@ABV0@@Z,,0x00402F28,45,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,chain base Rva003F9FE6 copy then vtable 0xC37898 and three byte extras
