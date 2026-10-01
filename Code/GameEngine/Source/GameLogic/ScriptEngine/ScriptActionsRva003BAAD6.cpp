@@ -321,3 +321,21 @@ void __stdcall Rva003BBFD6Select(Parameter *p)
 	if (o)
 		Rva00DFEDF0_BFD6->s40(o);
 }
+
+// ?Rva003BB274Ai@@YGXPAVParameter@@H@Z @0x003BB274 41B leaf caller 0x003CB376 globals 0xDFE16C callees getUnitNamed rva0026DE3B
+// Evidence: push [esp+4] ScriptEngine getUnitNamed test je then [eax+0x258] test je then push [esp+8] AIUpdateInterface::rva0026DE3B ret 8.
+class AIUpdateInterface
+{
+public:
+	void rva0026DE3B(int);
+};
+void __stdcall Rva003BB274Ai(Parameter *p, int v)
+{
+	Object *o = g_Va009FE16C->getUnitNamed(p);
+	if (!o)
+		return;
+	AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)o + 0x258);
+	if (!ai)
+		return;
+	ai->rva0026DE3B(v);
+}
