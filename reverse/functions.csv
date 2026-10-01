@@ -45066,3 +45066,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0053685F@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053685F,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,LongestGameTurns setter slot 0x2C same TU
 ?rva000A4826@Rva000A4826@@QAEXMMMMMH@Z,,0x000A4826,79,Code/GameEngine/Source/GameLogic/Object/Rva000A4826Call.cpp,matched,virtual forward slots 53 59 64 with floats
 ?rva000A47DE@Rva000A4826@@QAEXMMMMH@Z,,0x000A47DE,72,Code/GameEngine/Source/GameLogic/Object/Rva000A4826Call.cpp,matched,sibling forward slots 53 58 64
+?rva000A4875@Rva000A4826@@QAEXMMMMMH@Z,,0x000A4875,79,Code/GameEngine/Source/GameLogic/Object/Rva000A4826Call.cpp,matched,virtual forward slots 53 60 64 with floats

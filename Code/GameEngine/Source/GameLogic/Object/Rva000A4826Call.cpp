@@ -13,6 +13,7 @@ class Rva000A4826
 public:
 	void rva000A4826(float a, float b, float c, float d, float e, int f);
 	void rva000A47DE(float a, float b, float c, float d, int e);
+	void rva000A4875(float a, float b, float c, float d, float e, int f);
 private:
 	virtual void v000(); virtual void v001(); virtual void v002(); virtual void v003();
 	virtual void v004(); virtual void v005(); virtual void v006(); virtual void v007();
@@ -32,7 +33,8 @@ private:
 	virtual void v054(); virtual void v055(); virtual void v056(); virtual void v057();
 	virtual void v058(float a, float b, float c, float d, int e);
 	virtual void v059(float a, float b, float c, float d, float e, int f);
-	virtual void v060(); virtual void v061(); virtual void v062(); virtual void v063();
+	virtual void v060(float a, float b, float c, float d, float e, int f);
+	virtual void v061(); virtual void v062(); virtual void v063();
 	virtual void v064();
 };
 
@@ -47,5 +49,12 @@ void Rva000A4826::rva000A47DE(float a, float b, float c, float d, int e)
 {
 	v053();
 	v058(a, b, c, d, e);
+	v064();
+}
+
+void Rva000A4826::rva000A4875(float a, float b, float c, float d, float e, int f)
+{
+	v053();
+	v060(a, b, c, d, e, f);
 	v064();
 }
