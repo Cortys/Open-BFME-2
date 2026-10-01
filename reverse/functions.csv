@@ -46182,3 +46182,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0_Time_Info@_STL@@QAE@XZ,,0x00007920,212,Code/Libraries/Source/WWVegas/WWLib/stlport_time_put.cpp,matched,Open-BFME5 clean C++; stlport 4.5.3; row moved home from stlport_time_info_ctor.cpp
 ?Rva003E7F3AGet@@YG_NPAVParameter@@0@Z,,0x003E7F3A,155,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E7F3A.cpp,matched,leaf free ret8 2 Parameter caller 0x003EBEC7 via rowed getUnitNamed plus StringBase
 ?rva005C7636@Rva005C76C0@@QAEXXZ,,0x005C7636,138,Code/GameEngine/Source/Common/Rva005C7636.cpp,matched,accumulator m_38 plus inc from ctor layout and caller 0x0055A853
+?Rva003AFC6BWrite@@YAXPAVFile@@PAI@Z,,0x003AFC6B,159,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFBC1Write.cpp,matched,chain via rowed Pad oss str Write flags-minus-2 g_00C1D838 vtable-DIR32
