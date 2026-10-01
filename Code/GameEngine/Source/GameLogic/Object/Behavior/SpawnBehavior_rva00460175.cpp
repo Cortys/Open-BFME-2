@@ -18,6 +18,16 @@
 
 typedef bool Bool;
 
+enum DamageType
+{
+	DAMAGE_TYPE_UNKNOWN = 8
+};
+
+enum DeathType
+{
+	DEATH_TYPE_UNKNOWN = 0
+};
+
 enum ObjectID
 {
 	INVALID_ID = 0
@@ -30,14 +40,9 @@ class ThingTemplate;
 class Object
 {
 public:
+	void kill(DamageType damageType, DeathType deathType);
 	unsigned char m_pad00[0x438];
 	unsigned char m_status438;
-};
-
-class BfmeSubBGB
-{
-public:
-	void bfmeDoBGB(int a, int b);
 };
 
 class GameLogic
@@ -158,7 +163,7 @@ void SpawnBehavior::rva00460175(int count)
 			continue;
 		if (obj->m_status438 & 1)
 			continue;
-		((BfmeSubBGB *)obj)->bfmeDoBGB(8, 0);
+		obj->kill(DAMAGE_TYPE_UNKNOWN, DEATH_TYPE_UNKNOWN);
 		++done;
 		if (done == count)
 			break;
