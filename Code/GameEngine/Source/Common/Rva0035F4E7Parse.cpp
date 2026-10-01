@@ -7,6 +7,7 @@
 // Same 81B shape as 0x0035E327/0x0035E650; vtable 0x0081665C via ctor; no callers.
 // Opaque address-derived names; base layout from Rva001DBAA4Ctor.cpp.
 struct FieldParse;
+extern const int g_emptyFieldParseTable[4];
 
 class INI
 {
@@ -46,6 +47,6 @@ public:
 void __cdecl Rva0035F4E7Parse(INI *ini, Rva0035F4E7Holder *holder)
 {
 	Rva0035F4A6 *obj = new Rva0035F4A6;
-	ini->initFromINI(obj, reinterpret_cast<const FieldParse *>(0x00C6BB18));
+	ini->initFromINI(obj, reinterpret_cast<const FieldParse *>(g_emptyFieldParseTable));
 	holder->set(obj);
 }

@@ -10,6 +10,7 @@
 
 class MultiIniFieldParse;
 struct FieldParse;
+extern const int g_emptyFieldParseTable[4];
 
 class MultiIniFieldParse
 {
@@ -26,5 +27,5 @@ public:
 // ?buildFieldParse@DelayedWeaponSetUpgradeUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x004882D3
 void DelayedWeaponSetUpgradeUpdateModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C6BB18), 0);
+	parse.add(reinterpret_cast<const FieldParse *>(g_emptyFieldParseTable), 0);
 }

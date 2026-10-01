@@ -4,6 +4,7 @@
 // each exported parser has an independently verifiable boundary.
 
 struct FieldParse;
+extern const int g_emptyFieldParseTable[4];
 
 class INI
 {
@@ -49,9 +50,9 @@ FX_PARTICLE_PARSER(OrthoEmissionVelocityModuleTemplate, 0x00C6C1B0)
 FX_PARTICLE_PARSER(SphericalEmissionVelocityModuleTemplate, 0x00C6C230)
 FX_PARTICLE_PARSER(CylindricalEmissionVelocityModuleTemplate, 0x00C6C294)
 FX_PARTICLE_PARSER(OutwardEmissionVelocityModuleTemplate, 0x00C6C390)
-FX_PARTICLE_PARSER(StreakDrawModuleTemplate, 0x00C6BB18)
-FX_PARTICLE_PARSER(QuadDrawModuleTemplate, 0x00C6BB18)
-FX_PARTICLE_PARSER(ButterflyDrawModuleTemplate, 0x00C6BB18)
+FX_PARTICLE_PARSER(StreakDrawModuleTemplate, g_emptyFieldParseTable)
+FX_PARTICLE_PARSER(QuadDrawModuleTemplate, g_emptyFieldParseTable)
+FX_PARTICLE_PARSER(ButterflyDrawModuleTemplate, g_emptyFieldParseTable)
 FX_PARTICLE_PARSER(LightningDrawModuleTemplate, 0x00C6C608)
 FX_PARTICLE_PARSER(RenderObjectUpdateModuleTemplate, 0x00C6C710)
 FX_PARTICLE_PARSER(RenderObjectDrawModuleTemplate, 0x00C6C8E0)

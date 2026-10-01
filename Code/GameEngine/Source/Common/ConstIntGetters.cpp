@@ -198,9 +198,10 @@ int Rva003EFE9AGet(void)
 // Prev leave/ret with a test-and-style function after. 3 direct E8
 // callers, no Ghidra entry (dead emission), no branch sources.
 // Opaque name.
+extern const int g_emptyFieldParseTable[4];
 int Rva0056B767Get(void)
 {
-	return 0x00C6BB18;
+	return (int)g_emptyFieldParseTable;
 }
 
 // ?Rva000A8F58Get@@YAHXZ @ 0x000A8F58 (6B): returns 0x00DB4CF0. Opens a

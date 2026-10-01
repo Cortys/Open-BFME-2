@@ -9,6 +9,7 @@
 
 class MultiIniFieldParse;
 struct FieldParse;
+extern const int g_emptyFieldParseTable[4];
 
 class MultiIniFieldParse
 {
@@ -47,5 +48,5 @@ ShipSlowDeathBehaviorModuleData::ShipSlowDeathBehaviorModuleData()
 void ShipSlowDeathBehaviorModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	SlowDeathBehaviorModuleData::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C6BB18), 0);
+	parse.add(reinterpret_cast<const FieldParse *>(g_emptyFieldParseTable), 0);
 }
