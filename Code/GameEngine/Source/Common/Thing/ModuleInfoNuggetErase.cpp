@@ -90,7 +90,7 @@ void destroyNuggetRange(ModuleInfo::Nugget *first, ModuleInfo::Nugget *last)
 		first->~Nugget();
 }
 
-_STL::vector<ModuleInfo::Nugget, _STL::allocator<ModuleInfo::Nugget> >::iterator
+inline _STL::vector<ModuleInfo::Nugget, _STL::allocator<ModuleInfo::Nugget> >::iterator
 _STL::vector<ModuleInfo::Nugget, _STL::allocator<ModuleInfo::Nugget> >::erase(
 	iterator position)
 {
@@ -103,3 +103,14 @@ _STL::vector<ModuleInfo::Nugget, _STL::allocator<ModuleInfo::Nugget> >::erase(
 	m_finish->~Nugget();
 	return position;
 }
+
+// vector<ModuleInfo::Nugget>::erase is a header inline elsewhere: other units emit
+// select-any copies, so a strong definition here was a duplicate in the linked build. This
+// anchor only makes this unit emit its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitModuleInfoNuggetErase@@YAXPAV?$vector@UNugget@ModuleInfo@@V?$allocator@UNugget@ModuleInfo@@@_STL@@@_STL@@@Z present-unmatched
+void bfmeEmitModuleInfoNuggetErase(_STL::vector<ModuleInfo::Nugget, _STL::allocator<ModuleInfo::Nugget> > *p)
+{
+	p->erase(0);
+}
+#pragma inline_depth()
