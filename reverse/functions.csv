@@ -45794,3 +45794,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0029B1A1@Rva0029B1A1@@QAEXXZ,,0x0029B1A1,11,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder via TheInGameUI to rowed rva004E5803 same shape as 0x0029B17C
 ?rva0029B187@Rva0029B187@@QAEXPAURva004E57E6Pair@@M@Z,,0x0029B187,26,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder pair float to rowed rva004E57E6 same 0x7F4 subsystem
 ?rva0029BA28@Rva0029BA28@@QAEXH@Z,,0x0029BA28,48,Code/GameEngine/Source/GameClient/Rva0029BA28.cpp,matched,leaf called from 0x0029FEA5 list<int> at +0x18 erase first match
+?evaluateTeamAttackedByPlayer@ScriptConditions@@IAE_NPAVParameter@@0@Z,,0x003E6784,127,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateTeamAttackedByPlayer.cpp,matched,BFME1 donor member walk comparing last damage source mask to the pinned player-mask helper 0x00357B82
