@@ -5188,3 +5188,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00366561@Rva00366561@@QAE_NHH@Z	0x00366561	42	partial	load b into eax after store30 vs edx before store30 with [34] fixed via WriteBarrier t=15 model=muse-03 score=0.93 stash=reverse/attempts/0x00366561.cpp
 ?rva000FE1AC@Rva000FE001@@QAEXXZ	0x000FE1AC	91	partial	extra mov ecx for volatile time base sub mem vs reg t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x000fe1ac.cpp
 ?bfmeSetText@BfmeAptWindowManager@@QAEXABVAsciiString@@ABVUnicodeString@@_N@Z	0x00225301	116	partial	retail-semantic setter candidate; trial12/trial19 114B nonmatches at helper argument register allocation, trial24 161B alias-shape experiment; unresolved final helper call setup; t=51min model=gpt-6-luna score=0.5 stash=reverse/attempts/0x00225301.cpp
+?Rva005C1B2DFind@@YA_NXZ	0x005C1B2D	177	blocked	EH Unicode Ascii GameText fetch slot38 with SIDE concat t=12 model=muse-04

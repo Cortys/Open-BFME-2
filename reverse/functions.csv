@@ -46673,3 +46673,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003598A5@@YGXHHHPAX@Z,,0x003598A5,38,Code/GameEngine/Source/Common/Rva003598A5.cpp,matched,loop virtual slot0 over int range
 ?Rva003BBFD6Select@@YGXPAVParameter@@@Z,,0x003BBFD6,37,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,leaf caller 0x003CC482 globals ScriptEngine InGameUI slot 0xA0 via getUnitNamed
 ?Rva003BB274Ai@@YGXPAVParameter@@H@Z,,0x003BB274,41,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,leaf caller 0x003CB376 ScriptEngine getUnitNamed AIUpdateInterface 0x258
+??0BfmeThingSH@@QAE@XZ,,0x000FE2A3,182,Code/GameEngine/Source/Common/BfmeThingSHCtor.cpp,matched,ctor vtable bfmeVftSH float literals 1p0 m1p0
