@@ -45312,3 +45312,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0035B232@Rva0035B232@@QAEPBVAsciiString@@H@Z,,0x0035B232,61,Code/GameEngine/Source/Common/Rva0035B232Getter.cpp,matched,unlock lane callers 0x0021CB1F 0x0056786B twin Rva0035B29E sar-2
 ?Validate_Texture_Size@TextureLoader@@SAXAAI0@Z,,0x0011E670,81,Code/Libraries/Source/WWVegas/WW3D2/TextureLoaderValidateTextureSize.cpp,matched,BFME1 donor reuse null-caps pow2 clamp
 ??0GeometryInfo@@QAE@XZ,,0x0029840D,115,Code/GameEngine/Source/Common/System/GeometryInfoCtor.cpp,matched,default ctor vectors plus INV set
+?drawAndRelease@BfmeVolumetricShadowBufferLocks@@QAEXH@Z,,0x00107865,252,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/BfmeVolumetricShadowBufferDraw.cpp,matched,BFME1 draw donor with wrapper states
