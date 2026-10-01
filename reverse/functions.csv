@@ -45530,3 +45530,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002C5B46@Rva002C589B@@QAEXPAVXfer@@@Z,,0x002C5B46,217,Code/GameEngine/Source/Common/Rva002C589BXfer.cpp,matched,Version 1-2 plus Xfer slots plus rowed XferObjectID
 ?rva002C5FE8@Rva002C5FE8@@QAEPAXH@Z,,0x002C5FE8,34,Code/GameEngine/Source/Common/Rva002C5FE8Search.cpp,matched,loops begin-end at +0x20 search first dword equals key
 ?rva002C585A@Rva002C585A@@QAEXH@Z,,0x002C585A,45,Code/GameEngine/Source/Common/Rva002C585AAdjust.cpp,matched,rescale +0x20 by +0x30 unless +0x04 is 2
+??4Rva00051C3F@@QAEAAV0@ABV0@@Z,,0x00051C3F,45,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,chain derived operator equals base plus tail 0x88 0x8C

@@ -126,3 +126,21 @@ Rva002D9893 &Rva002D9893::operator=(const Rva002D9893 &other)
 	rva002D9893(other);
 	return *this;
 }
+
+class Rva00051C3F : public Rva002D9893
+{
+	int m_88;
+	unsigned char m_8C;
+
+public:
+	Rva00051C3F &operator=(const Rva00051C3F &other);
+};
+
+// ??4Rva00051C3FAssign present-unmatched
+Rva00051C3F &Rva00051C3F::operator=(const Rva00051C3F &other)
+{
+	Rva002D9893::operator=(other);
+	m_88 = other.m_88;
+	m_8C = other.m_8C;
+	return *this;
+}
