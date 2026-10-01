@@ -32,11 +32,14 @@
 // 0x002B2F97 and are rowed as their ICF aliases; its swap and __copy_backward
 // instantiations are byte-identical to the hand-named rows 0x0040D11C and
 // 0x0040D251, and copy_backward's two 29-byte wrappers fold onto 0x0040D66B
-// (left unrowed: an ICF pair). Structural inference: the two float locals in
-// the comparator are what keep both operands in xmm registers (comiss
-// reg,reg) in the heap bodies, as retail does. Not landed: __unguarded_partition
-// 0x0040D918 and __partial_sort 0x0040E7B2 (exact shape, two registers
-// swapped each) -- pinned by call-site agreement only.
+// (left unrowed: an ICF pair). Structural inference: the comparator reads
+// each side through a pointer local and then a float local; the float locals
+// keep both operands in xmm registers (comiss reg,reg) in the heap bodies,
+// and the pointer locals give __unguarded_partition its pivot pointer in ecx
+// and __partial_sort its middle iterator in ebx, as retail has them (with the
+// float locals alone each of those two bodies came out with one register
+// pair swapped). __unguarded_partition's iter_swap is the swap instantiation
+// at 0x0040D11C, rowed under a hand name and pinned here.
 #include <algorithm>
 
 struct TargetRef00217D4C
@@ -111,8 +114,10 @@ struct Rva0040F454Cmp
 {
 	bool operator()(const Rva0040CB11Entry &a, const Rva0040CB11Entry &b) const
 	{
-		float x = a.m_second.m_ptr->m_value;
-		float y = b.m_second.m_ptr->m_value;
+		const Rva0040F454Target *p = a.m_second.m_ptr;
+		float x = p->m_value;
+		const Rva0040F454Target *q = b.m_second.m_ptr;
+		float y = q->m_value;
 		return x > y;
 	}
 };
