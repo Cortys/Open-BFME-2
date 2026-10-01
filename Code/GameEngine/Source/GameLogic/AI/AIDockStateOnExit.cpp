@@ -14,6 +14,10 @@
 // AIDockState::update, retail 0x00341770 (38 bytes), slot 6: the Zero Hour body
 // (setCanPathThroughUnits(true) on the AI, then the dock machine's
 // updateStateMachine, vslot 4, with sleeps converted to continue).
+// The same address is also slot 6 of the AIHarvestState vtable 0x00C113B8,
+// whose other slots are its own (BFME1 derives AIHarvestState from State), so
+// the two identical update bodies are folded there; the name here is the
+// AIDockState one, whose Zero Hour source this is.
 enum StateReturnType
 {
 	STATE_CONTINUE = 0,
