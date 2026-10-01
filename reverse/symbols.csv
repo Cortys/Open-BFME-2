@@ -6683,3 +6683,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__uninitialized_copy@PAVCameraMarker@@PAV1@@_STL@@YAPAVCameraMarker@@PAV1@00ABU__false_type@0@@Z,0x000D0496,ICF twin of dupe 0x000D0496 via CameraMarker overflow 0x000D05C1 same 38B copy
 ??$__uninitialized_fill_n@PAVCameraMarker@@IV1@@_STL@@YAPAVCameraMarker@@PAV1@IABV1@ABU__false_type@0@@Z,0x000D04BC,ICF twin of dupe 0x000D04BC via CameraMarker overflow 0x000D05C1 same 37B fill_n
 ?allocate@?$allocator@VCameraMarker@@@_STL@@QBEPAVCameraMarker@@IPBX@Z,0x00523D6C,ICF twin of BfmeE8 allocate 0x00523D6C via CameraMarker overflow 0x000D05C1 same 28B
+??0?$_Vector_base@JV?$allocator@J@_STL@@@_STL@@QAE@ABV?$allocator@J@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as matched BfmeE16 row; Rva0035CAD6Ctor TU vector<long> member
