@@ -46067,3 +46067,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?Rva001F9006Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABUTreeHintPayload001F8ACB@@@Z,,0x001F9006,31,Code/Libraries/Source/WWVegas/WWLib/Rva001F9006Write.cpp,matched,guarded forward to rowed Rva001F8BA1Write
 ?rva001F9465@Rva001F9465@@QAEXH@Z,,0x001F9465,34,Code/GameEngine/Source/Common/Thing/Rva001F9465.cpp,matched,null-checked slot3 plus rowed Rva001F8E23 on this plus 4
 ??0Rva001F9060@@QAE@XZ,,0x001F9060,22,Code/Libraries/Source/WWVegas/WWLib/Rva001F9060Ctor.cpp,matched,default ctor zeroing plus rowed ObjectCreationList at plus 8
+??0Rva001F9CB8@@QAE@XZ,,0x001F9CB8,18,Code/Libraries/Source/WWVegas/WWLib/Rva001F9CB8Ctor.cpp,matched,default ctor zeroing plus rowed Rva001F9060 at plus 4
