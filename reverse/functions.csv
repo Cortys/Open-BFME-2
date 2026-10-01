@@ -46197,3 +46197,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva000AAD06@@QAE@XZ,,0x000AAD06,32,Code/GameEngine/Source/Common/Rva000AAD06Ctor.cpp,matched,ctor stores 0x00BC9454 zeroes +4 constructs vector E16 at +8 via rowed Vector_base
 ?Rva0002C237Get@@YAXPAVINI@@@Z,,0x0002C237,144,Code/Libraries/Source/WWVegas/WWLib/Rva0002C237Get.cpp,matched,GetCurrentDirectoryA plus INI filename line format via AsciiString full-expression temp
 ??0Rva00541006@@QAE@HABURegion2D@@@Z,,0x00541006,27,Code/GameEngine/Source/Common/Rva00540E82Init.cpp,matched,same shape as sibling Region3D ctor retail order
+?rva0058DC1C@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DC1C,207,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058DC1C.cpp,matched,static NetAckStage2 factory word byte dword dword
