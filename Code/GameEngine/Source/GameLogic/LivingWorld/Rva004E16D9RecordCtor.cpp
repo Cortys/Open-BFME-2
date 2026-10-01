@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /arch:SSE
 // ??0Rva004E16D9Record@@QAE@XZ @0x004E15FB 135B (pinned; dtor row 0x004E1682
 // in Rva004E16D9RecordDtor.cpp; caller ParseForceBattle 0x004E16D9).
 // Stores vtable 0x00C61A70, copies AsciiString::TheEmptyString into +0x04
@@ -8,25 +8,7 @@
 // Retail's unwind map destroys narrow strings at +4, +8, +0xC and +0x18.
 // The +0x20 floats are a second pair member like +0x10: as two loose floats
 // the byte stores scheduled after the state-3 store (the banked 0.95 attempt).
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() { m_data = 0; }
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	void *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-	void clear() { releaseBuffer(); }
-	static const AsciiString TheEmptyString;
-};
+#include "ascii_string.h"
 struct Rva004E16D9Pair {
 	float x;
 	float y;

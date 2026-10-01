@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /arch:SSE
 //
 // ?rva0045F4D7@SpawnBehavior@@QAEPAVObject@@XZ, retail 0x0045F4D7, 170 bytes.
 // SpawnBehavior helper returning Object*: iterates the ModuleData
@@ -13,33 +13,8 @@ class Object;
 class Player;
 class AsciiString;
 
-template <typename T> class StringBase
-{
-public:
-	int compare(const StringBase<T> &other) const;
+#include "ascii_string.h"
 
-private:
-	friend class AsciiString;
-	StringBase(const T *str);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *str) : StringBase<char>(str) {}
-	~AsciiString() { releaseBuffer(); }
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class Object
 {

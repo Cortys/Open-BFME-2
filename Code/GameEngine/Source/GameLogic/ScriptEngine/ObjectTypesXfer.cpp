@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?xfer@ObjectTypes@@MAEXPAVXfer@@@Z, retail 0x00376B70, 224 bytes.
@@ -15,24 +15,8 @@
 
 template <typename T> struct BfmeStringData;
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	StringBase() : m_data(0) {}
-private:
-	void releaseBuffer();
-protected:
-	BfmeStringData<T> *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() { releaseBuffer(); }
-	AsciiString &operator=(const AsciiString &other);
-};
 
 class UnicodeString;
 class PooledString;

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0045A413@AutoAbilityBehavior@@QAEXXZ, retail 0x0045A413, 14 bytes.
 // Sets the AsciiString at +0x20 to the empty string via the rowed
@@ -8,24 +8,8 @@
 // 0x0045A76C, 0x0045A89B, 0x0045ADA8 consume it to clear the string
 // before setWakeFrame. No EH frame in retail; no locals need unwind.
 
-template <typename T>
-class StringBase
-{
-public:
-	void set(const T *str);
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-};
-
-class AsciiString
-{
-public:
-	void set(const char *s) { m_data.set(s); }
-
-private:
-	StringBase<char> m_data;
-};
 
 class AutoAbilityBehavior
 {

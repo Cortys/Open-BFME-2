@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?xfer@SpawnBehavior@@MAEXPAVXfer@@@Z, retail 0x00460586, 392 bytes.
@@ -36,24 +36,8 @@ struct AsciiBuffer
 	unsigned short m_length;
 };
 
-template <typename T> class StringBase {
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-protected:
-	T *m_data;
-private:
-	void releaseBuffer();
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char> {
-public:
-	AsciiString &operator=(const AsciiString &other);
-	bool isEmpty() const
-	{
-		return m_data == 0 || ((const AsciiBuffer *)m_data)->m_length == 0;
-	}
-};
 
 class Xfer
 {

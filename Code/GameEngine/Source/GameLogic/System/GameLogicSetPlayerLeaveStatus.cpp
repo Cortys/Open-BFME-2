@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?setPlayerLeaveStatus@GameLogic@@QAEXHABVAsciiString@@H@Z @0x23D1A5 (62B):
 // GameLogic player-leave-status slot setter called once per slot from
 // GameLogic::bfmePopulateGameReport at 0x247672. Retail bounds-checks the
@@ -10,11 +10,7 @@
 // with the name at +0x18, so AsciiString is the 4-byte pooled handle here.
 typedef bool Bool;
 
-class AsciiString
-{
-public:
-	void set(const AsciiString &that);
-};
+#include "ascii_string.h"
 
 struct PlayerLeaveStatus
 {

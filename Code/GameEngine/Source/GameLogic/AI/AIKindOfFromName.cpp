@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /GX- /Oi-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /GX- /Oi-
 //
 // ?getAIKindOfFromName@@YAH PBD@Z, retail 0x004E8DE7, 112 bytes.
 // Dedicated TU.
@@ -45,27 +45,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
+#include "ascii_string.h"
 
-public:
-	int compare(const char *other) const;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 extern const char *AIKindOfNames[16]; ///< retail table at 0x009D0288
 

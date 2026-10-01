@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0045A421@AutoAbilityBehavior@@QAEXPAX@Z, retail 0x0045A421, 38 bytes.
 // Copies the AsciiString at src+0x10 to the member at +0x20 via the pinned
@@ -10,21 +10,8 @@
 
 class Object;
 
-template <typename T>
-class StringBase
-{
-public:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	StringBase<char> m_data;
-};
 
 enum UpdateSleepTime
 {

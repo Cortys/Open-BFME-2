@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 //
 // ??0WeaponFireSpecialAbilityUpdate@@QAE@PAVThing@@PBVModuleData@@@Z,
 // retail 0x00492708, 172 bytes. Behavior-side ctor completing the
@@ -30,12 +30,7 @@ class Object;
 class WeaponTemplate;
 class Weapon;
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-};
+#include "ascii_string.h"
 
 enum WeaponSlotType
 {

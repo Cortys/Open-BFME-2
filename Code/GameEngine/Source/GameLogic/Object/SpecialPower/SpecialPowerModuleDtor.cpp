@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??1SpecialPowerModule@@UAE@XZ, retail 0x00493DEF, 184 bytes (pinned; rowed
 // deleting wrapper 0x004941D7), and
@@ -15,23 +15,8 @@
 // base dtor is inline here (vtables 0x00BEEA7C/0x00BEE9C0 restored before
 // ObjectModule's dtor 0x0049B47C). Retail's unwind map destroys that base
 // (0x004607E1) in state 0 and the getPowerName temporary in state 1.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const StringBase<T> &other);
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &other) : m_data(other.m_data) {}
-private:
-	StringBase<char> m_data;
-};
 
 class Overridable
 {
