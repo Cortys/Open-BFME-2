@@ -15,6 +15,7 @@
 
 struct BfmeStringRecord000331962
 {
+	~BfmeStringRecord000331962();
 	unsigned int word;
 	AsciiString text;
 	unsigned char flag;
