@@ -4250,6 +4250,7 @@ _lua_setlocal,0x0074CC40,address read from the REL32 displacement at a placed bo
 ?clear@?$_List_base@UEvacuationRecord@@V?$allocator@UEvacuationRecord@@@_STL@@@_STL@@QAEXXZ,0x0023DAA5,callee of 0EvacuateDamage (0x004BAE1D) at the site its BFME1 donor calls it; may be an ICF alias
 ?setWakeFrame@UpdateModule@@QAEXPAVObject@@I@Z,0x0044DF71,callee of 0SiegeDockingBehavior (0x0045996C) at the site its BFME1 donor calls it; may be an ICF alias
 ??0WeaponModeSpecialPowerUpdateBase@@QAE@PAVThing@@PBVModuleData@@@Z,0x0058959A,callee of 0WeaponModeSpecialPowerUpdate (0x00494B38) at the site its BFME1 donor calls it; may be an ICF alias
+?rva0058943A@Rva005890A6@@QAEXM@Z,0x0058943A,callee of ??0WeaponModeSpecialPowerUpdateBase (0x0058959A) at 0x00589617; ECX is its +0x24 countdown subobject and stack argument is 1.0f; address-derived method until identity is independently established
 ?setWakeFrame@WeaponModeSpecialPowerUpdateBase@@IAEXPAVObject@@W4UpdateSleepTime@@@Z,0x0044DF71,callee of 0WeaponModeSpecialPowerUpdate (0x00494B38) at the site its BFME1 donor calls it; may be an ICF alias
 ??0DrawModule@@QAE@PAVThing@@PBVModuleData@@@Z,0x000B19A1,callee of 0W3DPropDraw (0x000CEEC0) at the site its BFME1 donor calls it; may be an ICF alias
 ??0CritterEmitterUpdateBase@@QAE@PAVThing@@PBVModuleData@@@Z,0x00253390,callee of 0CritterEmitterUpdate (0x004C8D86) at the site its BFME1 donor calls it; may be an ICF alias
