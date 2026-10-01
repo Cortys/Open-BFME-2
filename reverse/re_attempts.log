@@ -5206,3 +5206,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0035C7CF@Shell@@QAEX_N@Z	0x0035C7CF	163	blocked	new file private AsciiString refused by class-gate plus saved-esp temp and push-ebx shape needs shared header migration t=12 model=muse-10
 ?unlinkChain@Rva009A36F0Owner@@QAEXPAVRva009A36F0Thing@@@Z	0x00759220	190	partial	key1 load vs second backlink clear order t=18 model=muse-10 score=0.95 stash=reverse/attempts/0x00759220.cpp
 ?rva00759490@Rva009A3540PairOwner@@QAEXPAURva009A3540OpaqueOwner@@0@Z	0x00759490	363	partial	register allocation this-in-ebx vs ecx plus slot hoist vs bucket spill t=25 model=muse-10 score=0.91 stash=reverse/attempts/0x00759490.cpp
+?Rva003BBCB3Set@@YGX_N@Z	0x003BBCB3	31	partial	eax-edx swap only size exact 0 structural t=18 model=muse-09 score=0.95 stash=reverse/attempts/0x003bbcb3.cpp
