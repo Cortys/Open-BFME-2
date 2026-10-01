@@ -254,12 +254,48 @@ class GameLogic
 {
 public:
 	Object *findObjectByID(ObjectID id);
+	void destroyObject(Object *obj);
 };
 
 extern GameLogic *TheGameLogic;
 
+class Overridable
+{
+public:
+	const Overridable *friend_getFinalOverride() const;
+	char m_pad00[0x1C];
+	int m_val1C;
+};
+class TextureClass;
+class MaterialPassClass
+{
+public:
+	TextureClass *Peek_Texture(int i) const;
+};
+enum WeaponSlotType
+{
+	WEAPONSLOT_PRIMARY = 0
+};
+enum WeaponLockType
+{
+	WEAPONLOCK_LOCKED = 1
+};
+class Object
+{
+public:
+	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
+	char m_pad00[0x330];
+	MaterialPassClass m_pass330;
+};
+struct ModuleDataFull
+{
+	char m_pad00[0x38];
+	Overridable *m_override38;
+};
 class SpecialAbilityUpdate : public UpdateModule, public SpecialTrailing
 {
+public:
+	void rva0044F72E();
 protected:
 	virtual void xfer(Xfer *xfer);
 	void validateSpecialObjects();
@@ -344,4 +380,25 @@ void SpecialAbilityUpdate::validateSpecialObjects()
 			--m_68;
 		}
 	}
+}
+
+void SpecialAbilityUpdate::rva0044F72E()
+{
+	const ModuleDataFull *md = (const ModuleDataFull *)m_moduleData;
+	Overridable *holder = md->m_override38;
+	int zero = 0;
+	for (ListInt::iterator it = m_64.begin(); it != m_64.end(); ++it) {
+		Object *obj = TheGameLogic->findObjectByID((ObjectID)*it);
+		if (obj)
+			TheGameLogic->destroyObject(obj);
+	}
+	m_64.clear();
+	m_68 = zero;
+	const Overridable *ov = holder->friend_getFinalOverride();
+	if (ov->m_val1C != 0x15)
+		return;
+	Object *o = m_object;
+	if (o->m_pass330.Peek_Texture(zero) == 0)
+		return;
+	o->setWeaponLock((WeaponSlotType)zero, (WeaponLockType)1);
 }
