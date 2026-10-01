@@ -46735,3 +46735,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002AA35C@FreelistPool@@QAE_NHHHP6APAXHH@ZHH@Z,,0x002AA35C,63,Code/GameEngine/Source/GameLogic/Object/Update/FreelistPoolInit.cpp,matched,FreelistPool init via m_00 m_alloc m_10 m_14 plus grow caller 0x001EB1CB
 ?xfer@LaserUpdate@@MAEXPAVXfer@@@Z,,0x00362FF8,238,Code/GameEngine/Source/GameLogic/Object/Update/LaserUpdateXfer.cpp,matched,vslot3 LaserUpdate xfer via slot-3 recipe
 ??0Rva0041B8C7@@QAE@XZ,,0x0041B8B5,18,Code/GameEngine/Source/Common/Rva0041B8C7Ctor.cpp,matched,ctor baseConstruct vtable 0x00C3AE60 dtor row 0x0041B8C7 caller 0x0022FA81
+?Rva0041B80FCheck@@YA_NPAVObject@@0@Z,,0x0041B80F,78,Code/GameEngine/Source/Common/Rva0041B80FCheck.cpp,matched,vis team check slots 0x114 0x4c caller 0x0041C95C single-expr EBX

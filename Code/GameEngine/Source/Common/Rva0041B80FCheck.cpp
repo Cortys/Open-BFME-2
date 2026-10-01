@@ -1,5 +1,3 @@
-// ?Rva0041B80FCheck@@YA_NPAVObject@@0@Z
-// partial score=0.93 date=2026-10-01
 // cl: /O1 /MD
 // ?Rva0041B80FCheck@@YA_NPAVObject@@0@Z @0x0041B80F 78B
 // Free static helper at 0x0041B80F (78B): vis/team relationship check with MSVC private static convention (first Object in EAX, second in EDI).
@@ -120,8 +118,7 @@ static __declspec(noinline) bool Rva0041B80FCheck(Object *visObj, Object *teamOb
 	VisIface *vis = visObj->m_vis;
 	if (vis && vis->CheckActive(0) > 0)
 	{
-		Player *p = teamObj->getControllingPlayer();
-		HasTeam2EC *h = vis->GetThing(p);
+		HasTeam2EC *h = vis->GetThing(teamObj->getControllingPlayer());
 		if (h)
 		{
 			Team *t1 = h->m_team2ec;
