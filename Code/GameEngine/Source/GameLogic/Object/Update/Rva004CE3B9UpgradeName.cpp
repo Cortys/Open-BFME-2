@@ -13,7 +13,6 @@ public:
     const UpgradeTemplate *rva0026EEA0(int key) const;
 };
 extern UpgradeCenter *TheUpgradeCenter;
-extern AsciiString TheEmptyString;
 class Rva004CE3B9 {
 public:
     const AsciiString &rva004CE3B9();
@@ -29,5 +28,5 @@ const AsciiString &Rva004CE3B9::rva004CE3B9()
                 return t->m_name;
         }
     }
-    return TheEmptyString;
+    return AsciiString::TheEmptyString;
 }

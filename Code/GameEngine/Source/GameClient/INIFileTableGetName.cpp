@@ -75,7 +75,6 @@ private:
 	INIFileRecordTable m_records;	// +0x04
 };
 
-extern const AsciiString g_emptyAsciiString;
 
 
 // ?getRecordName@INIFileRecordTable@@QBE?AVAsciiString@@H@Z
@@ -103,5 +102,5 @@ AsciiString INIFileTable::getName( int fileIndex ) const
 	int count = ((int)table->m_end - (int)table->m_begin) / (int)sizeof( INIFileRecord );
 	if ( fileIndex < count )
 		return table->getRecordName( fileIndex );
-	return g_emptyAsciiString;
+	return AsciiString::TheEmptyString;
 }
