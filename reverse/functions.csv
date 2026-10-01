@@ -45227,3 +45227,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00432A3B@Rva00432A3B@@QAEXPBVGameMessage@@@Z,,0x00432A3B,103,Code/GameEngine/Source/Common/Rva00432A3BHandler.cpp,matched,handler types 4 6 14 16 pixel int int via getArgument
 ?rva000B3C61@Rva000B3C61@@QAEXH@Z,,0x000B3C61,110,Code/GameEngine/Source/Common/Rva000B3C61.cpp,matched,neighbours 0x000B3A68 array at 0x110 stride 28 release plus float zero fold
 ?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536AF5,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock
+?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00536981,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock

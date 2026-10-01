@@ -280,6 +280,7 @@ public:
 	int rva005368A6(AsciiString arg);
 	void rva005368F0(AsciiString arg, int x);
 	int rva00536937(AsciiString arg);
+	void rva00536981(AsciiString arg, float x);
 	void rva00536A1D(AsciiString arg, int x);
 	int rva00536A64(AsciiString arg);
 	void rva00536AAE(AsciiString arg, int x);
@@ -866,6 +867,15 @@ int UserPreferences::rva00536937(AsciiString arg)
 	arg.concat("ShortestGameTurns");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+// ?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z @0x00536981 75B
+// UserPreferences AverageGameTurns-setter path: append AverageGameTurns to by-value AsciiString slot 0x28 with (arg, float) void ret 8.
+// Evidence: concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock.
+void UserPreferences::rva00536981(AsciiString arg, float x)
+{
+	arg.concat("AverageGameTurns");
+	v10(arg, x);
 }
 
 void UserPreferences::rva00536A1D(AsciiString arg, int x)
