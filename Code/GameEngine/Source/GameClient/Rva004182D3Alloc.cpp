@@ -1,10 +1,12 @@
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
-// ?Rva004182D3Alloc@@YGPAXPBVRva004181F5@@@Z @0x004182D3 37B
+// ?rva004182D3@Rva004182F8@@QAEPAXPBVRva004181F5@@@Z @0x004182D3 37B
 // Allocates 0x20 via byte allocator 0x000307F0, zeroes first dword, constructs
 // Rva004181F5 at +4 via rowed Construct 0x0041826B, returns new wrapper.
-// __stdcall (ret 4, 1 arg). /O1 gives and-zero plus direct push.
-// Evidence: chain lane after landing 0x0041826B; unblocks 0x004182F8.
+// Target evidence: ret 4 with one argument, and its only caller 0x004182F8
+// loads ecx with its own this (mov ecx,esi at 0x0041833C) before the call, so
+// this is a thiscall member of the 0x004182F8 table that ignores this (the
+// earlier row typed it __stdcall). /O1 gives and-zero plus direct push.
 #include <memory>
 class Rva004181F5 {
 public:
@@ -17,7 +19,11 @@ struct Wrapper004182D3 {
     int m_0;
     Rva004181F5 m_4;
 };
-void *__stdcall Rva004182D3Alloc(const Rva004181F5 *src)
+class Rva004182F8 {
+public:
+    void *rva004182D3(const Rva004181F5 *src);
+};
+void *Rva004182F8::rva004182D3(const Rva004181F5 *src)
 {
     char *buf = _STL::allocator<char>::allocate(0x20, 0);
     Wrapper004182D3 *w = (Wrapper004182D3 *)buf;

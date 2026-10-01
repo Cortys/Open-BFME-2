@@ -1,14 +1,14 @@
-// ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z
-// partial score=0.97 date=2026-09-30
-// ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z
-// partial score=0.97 date=2026-09-30
 // cl: /O1 /Ob2 /EHsc /MD
-// 0x004182F8 124B chain: hash insert via bucketIndex rowed + StringBase compare
-// rowed + Alloc. align_diff exact 124B/0 structural (only relocs); gate blocked
-// because Alloc row 0x004182D3 is free YGPAX but caller passes this (mov ecx,esi)
-// so Alloc must be thiscall method (retype centrally, body 37B ignores this so
-// retype still matches). Caller uses thiscall allocNode plus OutIter* return
-// (mov eax,ecx) for exact. t=25 model=muse-03
+// ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z
+// @0x004182F8 124B: hashed unique insert. Hashes the key through the rowed
+// bucketIndex 0x00223149, walks the bucket chain comparing keys with the
+// pinned StringBase compare 0x000069D6, and on a miss links a node from the
+// thiscall allocator 0x004182D3 at the bucket head and bumps the count at
+// +0x10. Returns {node, table, inserted} through the hidden out pointer.
+// Target evidence: ret 8 thiscall with hidden return, bucket array at +4,
+// count at +0x10, mov ecx,esi before the allocator call. Structural
+// inference: the shape is STLport hashtable insert_unique_noresize; the class
+// names stay placeholders because no target evidence names the table.
 template <typename T> class StringBase {
     friend class AsciiString;
     friend class UnicodeString;
@@ -47,7 +47,7 @@ struct OutIter004182F8 {
 };
 class Rva004182F8 {
 public:
-    void *allocNode(const Rva004181F5 *src);
+    void *rva004182D3(const Rva004181F5 *src);
     OutIter004182F8 *rva004182F8(OutIter004182F8 *out, const Rva004181F5 *key);
 private:
     Rva000427195 m_base;
@@ -55,7 +55,6 @@ private:
     char m_pad08[8];
     int m_size;
 };
-// ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z present-unmatched
 OutIter004182F8 *Rva004182F8::rva004182F8(OutIter004182F8 *out, const Rva004181F5 *key)
 {
     int idx = m_base.bucketIndex((const AsciiString *)key);
@@ -73,7 +72,7 @@ OutIter004182F8 *Rva004182F8::rva004182F8(OutIter004182F8 *out, const Rva004181F
             cur = cur->m_next;
         } while (cur != 0);
     }
-    Wrapper004182D3 *fresh = (Wrapper004182D3 *)allocNode(key);
+    Wrapper004182D3 *fresh = (Wrapper004182D3 *)rva004182D3(key);
     fresh->m_next = head;
     m_buckets[idx] = fresh;
     ++m_size;
