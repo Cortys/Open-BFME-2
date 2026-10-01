@@ -91,6 +91,12 @@ NameKeyType NameKeyGenerator::nameToKey(const char* nameString)
 
 // ?freeSockets@NameKeyGenerator@@AAEXXZ 0x00148B42 66B donor ZH NameKeyGenerator.cpp freeSockets plus BFME aux KeyToBucketMap clear; callers 0x00148BFB 0x00148C6B; tail clear at this+0x2bf4c rowed as Armor hashtable clear via ICF fold
 #include "GameLogic/Armor.h"
+
+// The NameKeyGenerator singleton pointer. Matched DIR32 sites (e.g. the
+// Rva00148F5ECache::get row at 0x00148F5E reads it with mov ecx,[0x00DF36A4])
+// place it at VA 0x00DF36A4 in the .data zero-fill tail, so retail starts it
+// null. Upstream 6c58ed268 deleted the split-out unit that used to define it.
+NameKeyGenerator *TheNameKeyGenerator = NULL;
 void NameKeyGenerator::freeSockets()
 {
 	for (Int i = 0; i < SOCKET_COUNT; ++i)
