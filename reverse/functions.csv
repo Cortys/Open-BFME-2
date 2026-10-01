@@ -45454,3 +45454,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00579995Get@@YA?AVUnicodeString@@M@Z,,0x00579995,154,Code/GameEngine/Source/Common/Rva00579900Fetch.cpp,matched,unlock TheGameText StatsResourceMultiplier format float sibling 579900
 ?rva0040C65D@Rva0037DCA5@@QAEPAXH@Z,,0x0040C65D,72,Code/GameEngine/Source/Common/Rva0037DCA5Get.cpp,matched,unlock Rva0037DCA5 template flag 11f find logic plus 58
 ?rva0040C5FA@Rva0040C351@@QAEXPAVINI@@@Z,,0x0040C5FA,80,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,unlock Rva0040C351 INI multi two tables
+?rva0040C430@Rva0040C351@@QAEXPBVRva004E0632@@@Z,,0x0040C430,44,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,unlock Rva0040C351 bc cache plus 18 plus virtual slotC

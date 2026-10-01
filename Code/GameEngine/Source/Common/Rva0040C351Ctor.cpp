@@ -25,6 +25,7 @@ class Rva0040C351 : public Rva0037DF2C
 public:
 	Rva0040C351();
 	void rva0040C5FA(class INI *ini);
+	void rva0040C430(const class Rva004E0632 *a);
 private:
 	MemberAC m_ac;
 	int m_b4;
@@ -50,6 +51,18 @@ class INI
 public:
 	void initFromINIMulti(void *what, const MultiIniFieldParse &parse);
 };
+class Rva004E0632
+{
+public:
+	int rva004E0632() const;
+};
+struct Rva0040C430Ret
+{
+	virtual void f0();
+	virtual void f1();
+	virtual void f2();
+	virtual void slotC(void *p);
+};
 Rva0040C351::Rva0040C351() : Rva0037DF2C()
 {
 	MemberAC *p = &m_ac;
@@ -69,4 +82,15 @@ void Rva0040C351::rva0040C5FA(INI *ini)
 	parse.add(&g_00C39474, 0);
 	parse.add(&g_00C18D18, 0);
 	ini->initFromINIMulti(this, parse);
+}
+
+void Rva0040C351::rva0040C430(const Rva004E0632 *a)
+{
+	if (m_bc != 0)
+		return;
+	m_bc = *(const int *)((const char *)a + 0x18);
+	int raw = a->rva004E0632();
+	if (raw == 0)
+		return;
+	((Rva0040C430Ret *)raw)->slotC(this);
 }
