@@ -45322,3 +45322,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F6287@Rva005F6220@@QAEXABVUnicodeString@@@Z,,0x005F6287,103,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,APT LeaderRank via rowed format and pinned bfmeSetText plus rowed releaseBuffer sibling of 0x005F6220 same class
 ?Rva005F632AFormat@@YA?AVUnicodeString@@H@Z,,0x005F632A,194,Code/GameEngine/Source/Common/Rva005F632AFormat.cpp,matched,RankLabel static via rowed ctor plus GameText slot 0x38 fetch and Unicode format caller 0x005F6407 precedent HeroRank
 ?rva005F63EC@Rva005F6220@@QAEXH@Z,,0x005F63EC,77,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Rank setter with cache check via Format helper and LeaderRank call updates 0x2c
+?rva005F64C0@Rva005F64C0@@QAEXH@Z,,0x005F64C0,8,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Tail forward to member rva005F63EC via plus 8 chain from 0x005F63EC

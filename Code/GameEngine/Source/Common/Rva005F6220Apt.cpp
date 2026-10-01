@@ -67,3 +67,17 @@ void Rva005F6220::rva005F63EC(int rank)
 		m_rank2C = rank;
 	}
 }
+
+class Rva005F64C0
+{
+public:
+	void rva005F64C0(int rank);
+private:
+	char m_pad00[8];
+	Rva005F6220 *m_ptr08;
+};
+
+void Rva005F64C0::rva005F64C0(int rank)
+{
+	return m_ptr08->rva005F63EC(rank);
+}
