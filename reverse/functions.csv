@@ -46022,3 +46022,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00431978@Rva00431978@@QAEHPAUICoord2D@@@Z,,0x00431978,55,Code/GameEngine/Source/Common/Rva00431978.cpp,matched,proximity check abs dx dy lt 5 via abs thunk
 ?rva00431A4D@Rva00431A4D@@QAEXPAVGameMessage@@@Z,,0x00431A4D,23,Code/GameEngine/Source/Common/Rva00431A4D.cpp,matched,unlock lane flag setter GameMessage+0x10 equals 6 neighbours Rva00431AEC
 ?rva00431F0C@Rva00431F0C@@QAEHPAVGameMessage@@@Z,,0x00431F0C,85,Code/GameEngine/Source/Common/Rva00431F0C.cpp,matched,chain lane calls just-landed 0x00431A4D rowed new rva00575674 vtable g_00C3C97C
+?Rva004319D4Get@@YAHXZ,,0x004319D4,30,Code/GameEngine/Source/Common/Rva004319D4.cpp,matched,unlock unblocks 0x00431E5A extern TheMouse caller tests al
