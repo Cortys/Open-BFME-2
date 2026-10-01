@@ -19,6 +19,7 @@
 #include <vector>
 
 extern unsigned char g_00DFEFA4StoragePrototype[28];
+extern const void *const g_00C56530[];
 
 class BfmeFixedStorage0004543D
 {
@@ -46,19 +47,19 @@ class UpdateModuleData
 {
 public:
 	UpdateModuleData() {}
-	virtual ~UpdateModuleData();
+	~UpdateModuleData();
 
 private:
-	unsigned int m_value04;
 };
 
 class EmotionTrackerUpdateModuleData : public UpdateModuleData
 {
 public:
 	EmotionTrackerUpdateModuleData();
-	virtual ~EmotionTrackerUpdateModuleData();
 
 private:
+	const void *m_vtable;						// +0x00 vtable 0x00C56530
+	unsigned int m_unused04;					// +0x04 retail never stores
 	float m_float08;							// +0x08 retail zeroes as float
 	unsigned int m_value0C : 32;				// +0x0C retail zeroes via and
 	Rva003623E5Member m_name0;					// +0x10
@@ -76,7 +77,8 @@ private:
 
 // ??0EmotionTrackerUpdateModuleData@@QAE@XZ @0x4B115A
 EmotionTrackerUpdateModuleData::EmotionTrackerUpdateModuleData()
-	: m_float08( 0.0f )
+	: m_vtable( g_00C56530 )
+	, m_float08( 0.0f )
 	, m_value0C( 0 )
 	, m_value20( 0.0f )
 	, m_value24( 0.0f )
