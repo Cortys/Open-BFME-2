@@ -57,6 +57,8 @@ fi
 python3 tools/conversion_gate.py HEAD : || fail "conversion direction (see above)"
 # A literal image address matches bytes but breaks the linked build; name the global.
 python3 tools/link_debt.py --staged || fail "new hard-coded image address (see above)"
+# A class with a shared header (reverse/canonical_classes.csv) gets no new private copies.
+python3 tools/class_gate.py --staged || fail "new private copy of a class with a shared header (see above)"
 
 staged_sources=()
 ledger_changed=0
