@@ -62,7 +62,7 @@ void _Destroy(ForwardIter first, ForwardIter last);
 }
 
 _STL::vector<AsciiString, _STL::allocator<AsciiString> >::iterator
-_STL::vector<AsciiString, _STL::allocator<AsciiString> >::erase(
+inline _STL::vector<AsciiString, _STL::allocator<AsciiString> >::erase(
 	iterator first, iterator last)
 {
 	iterator result = __copy_ptrs(last, m_finish, first, __false_type());
@@ -70,3 +70,15 @@ _STL::vector<AsciiString, _STL::allocator<AsciiString> >::erase(
 	m_finish = result;
 	return first;
 }
+
+// vector<AsciiString>::erase is a header inline in retail: one other unit
+// emits a select-any copy of it, so a strong definition here was a duplicate
+// symbol in the linked build. This anchor only makes this unit emit its copy
+// for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitVectorAsciiStringErase@@YAXPAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@@Z present-unmatched
+void bfmeEmitVectorAsciiStringErase(_STL::vector<AsciiString, _STL::allocator<AsciiString> > *p)
+{
+	p->erase(0, 0);
+}
+#pragma inline_depth()
