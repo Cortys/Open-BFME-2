@@ -46413,3 +46413,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva0051E3F8Pow@@YAHHH@Z,,0x0051E3F8,51,Code/GameEngine/Source/Common/Rva0051E3F8Pow.cpp,matched,int pow by squaring caller 0x0051E458
 ?Rva0051E458PowFloat@@YAMHH@Z,,0x0051E458,25,Code/GameEngine/Source/Common/Rva0051E458PowFloat.cpp,matched,float wrapper over rowed int pow
 ??0Rva00524B7A@@QAE@XZ,,0x00524B7A,58,Code/GameEngine/Source/Common/Rva00524B7ACtor.cpp,matched,ctor via rowed baseConstruct vtable middle barrier caller 0x005C9716
+??1Rva00575E4E@@UAE@XZ,,0x00575E4E,78,Code/GameEngine/Source/Common/Rva00575E4EDtor.cpp,matched,dtor via deleting-dtor caller at 0x00576041 and rowed erase 0x002B7250
