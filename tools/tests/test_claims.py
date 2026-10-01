@@ -132,3 +132,18 @@ def test_main_pickers_retry_when_a_peer_claimed_the_first_draw(monkeypatch):
                         lambda candidates: (candidates[0], {"pool": len(candidates)}))
     naked = [{"rva": "0x00000100"}, {"rva": "0x00000200"}]
     assert naked_queue.claim_choice(naked) == (naked[1], {"pool": 1}, [0x200])
+
+
+def test_scope_claims_are_exclusive_and_invisible_to_pickers(hosts):
+    hosts("a")
+    got, refused = claims.claim(["class:RenderObjClass", "file:Code/A/B.cpp", "0x100"])
+    assert refused == [] and len(got) == 3
+    hosts("b")
+    live = claims.active()
+    assert "class/RenderObjClass" in live and live["class/RenderObjClass"]["scope"] == "RenderObjClass"
+    assert live[claims.key_of("file:Code/A/B.cpp")]["scope"] == "Code/A/B.cpp"
+    assert claims.busy_rvas() == {0x100}                         # pickers see RVAs only
+    assert claims.claim(["class:RenderObjClass"]) == ([], ["class/RenderObjClass"])
+    hosts("a")
+    assert sorted(claims.release(["class:RenderObjClass", "file:Code/A/B.cpp"])) == \
+        sorted(["class/RenderObjClass", claims.key_of("file:Code/A/B.cpp")])

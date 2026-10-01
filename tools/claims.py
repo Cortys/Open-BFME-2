@@ -24,6 +24,16 @@ the gap between selecting a body and starting its worker.
   python3 tools/claims.py claim 0xRVA [...]    # claim for this host (TTL 4 h)
   python3 tools/claims.py release 0xRVA [...]  # release your own claims
 
+SCOPES. Work bigger than one body - reconciling a class onto a shared header,
+draining a source file, re-homing split rows - is claimed by scope instead:
+
+  python3 tools/claims.py claim file:Code/.../Unit.cpp   # refs/claims/file/<hash>
+  python3 tools/claims.py claim class:RenderObjClass     # refs/claims/class/<name>
+
+Same refs, same TTL, same compare-and-swap; `list` shows them with the path
+or class. Body pickers only consult RVA claims, so a scope claim is a
+convention between workers: check `list` before starting scope-wide work.
+
 Network trouble never blocks work: every entry point warns and carries on
 without claims, which is exactly today's behaviour.
 """
@@ -64,15 +74,42 @@ def owner():
     return f"{name}@{socket.gethostname()}"
 
 
-def ref_of(rva):
-    return f"{NS}0x{int(rva, 16) if isinstance(rva, str) else rva:08X}"
+def key_of(text):
+    """A claim key: an int RVA, or a scope string 'file/<hash>' / 'class/<name>'."""
+    if isinstance(text, int):
+        return text
+    if text.startswith("file:"):
+        import hashlib
+        path = text[5:].replace("\\", "/")
+        return "file/" + hashlib.sha1(path.encode("utf-8")).hexdigest()[:16]
+    if text.startswith("class:"):
+        name = text[6:]
+        if not name.replace("_", "a").isalnum():
+            raise ValueError(f"bad class name {name!r}")
+        return "class/" + name
+    return int(text, 16)
 
 
-def _record(who, ttl_hours, note=""):
+def ref_of(key):
+    if isinstance(key, str) and not key.startswith(("0x", "0X")) and "/" in key:
+        return NS + key
+    return f"{NS}0x{int(key, 16) if isinstance(key, str) else key:08X}"
+
+
+def label(key, info=None):
+    if isinstance(key, int):
+        return f"0x{key:08X}"
+    return key.split("/", 1)[0] + ":" + ((info or {}).get("scope") or key.split("/", 1)[1])
+
+
+def _record(who, ttl_hours, note="", scope=""):
     """A parentless commit carrying the claim JSON; returns its sha."""
     tree = _git("mktree", input_text="").stdout.strip()
-    body = json.dumps({"owner": who, "host": socket.gethostname(), "note": note,
-                       "expires": int(time.time() + ttl_hours * 3600)}, sort_keys=True)
+    fields = {"owner": who, "host": socket.gethostname(), "note": note,
+              "expires": int(time.time() + ttl_hours * 3600)}
+    if scope:
+        fields["scope"] = scope
+    body = json.dumps(fields, sort_keys=True)
     made = _git("-c", "user.name=claims", "-c", "user.email=claims@localhost",
                 "commit-tree", tree, "-m", body)
     if made.returncode:
@@ -91,17 +128,18 @@ def fetch():
 
 
 def _read_local():
-    """{rva: (sha, info)} from the local mirror."""
+    """{key: (sha, info)} from the local mirror: int RVAs and scope strings."""
     out = _git("for-each-ref", "--format=%(refname)%09%(objectname)%09%(contents:subject)", SEEN).stdout
     claims = {}
     for line in out.splitlines():
         name, sha, subject = (line.split("\t") + ["", ""])[:3]
+        rest = name[len(SEEN):]
         try:
-            rva = int(name.rsplit("/", 1)[1], 16)
             info = json.loads(subject)
-        except (ValueError, IndexError):
+            key = rest if rest.startswith(("file/", "class/")) else int(rest, 16)
+        except ValueError:
             continue
-        claims[rva] = (sha, info)
+        claims[key] = (sha, info)
     return claims
 
 
@@ -123,7 +161,9 @@ def active():
 
 def busy_rvas():
     """Addresses a picker should skip; one fetch is cached per process."""
-    return set() if os.environ.get("BFME_CLAIMS", "on") == "off" else set(active())
+    if os.environ.get("BFME_CLAIMS", "on") == "off":
+        return set()
+    return {key for key in active() if isinstance(key, int)}
 
 
 def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
@@ -134,7 +174,8 @@ def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
     taken over by compare-and-swap. Raises nothing on network trouble: the
     bodies come back as claimed=[] and refused=[] with a warning."""
     who = who or owner()
-    rvas = sorted({int(r, 16) if isinstance(r, str) else int(r) for r in rvas})
+    scopes = {key_of(r): r[r.index(":") + 1:] for r in rvas if isinstance(r, str) and ":" in r}
+    rvas = sorted({key_of(r) for r in rvas}, key=str)
     if not rvas:
         return [], []
     if not fetch():
@@ -146,10 +187,17 @@ def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
             and current[r][1].get("owner") != who}
     wanted = [r for r in rvas if r not in held]
     if not wanted:
-        return [], sorted(held)
-    sha = _record(who, ttl_hours, note)
+        return [], sorted(held, key=str)
+    shas = {}
+
+    def record(rva):
+        scope = scopes.get(rva, "")
+        if scope not in shas:
+            shas[scope] = _record(who, ttl_hours, note, scope)
+        return shas[scope]
 
     def spec(rva):
+        sha = record(rva)
         old = current.get(rva)
         return (f"--force-with-lease={ref_of(rva)}:{old[0]}" if old else None,
                 f"{sha}:{ref_of(rva)}" if not old else f"+{sha}:{ref_of(rva)}")
@@ -176,23 +224,23 @@ def claim(rvas, who=None, ttl_hours=TTL_HOURS, note=""):
         print("claims: origin unreachable after claim push; proceeding without "
               "a shared claim for the remaining bodies", file=sys.stderr)
         active.cache_clear()
-        return claimed, sorted(held)
+        return claimed, sorted(held, key=str)
     latest = _read_local() if failed else current
     refused = sorted(set(held) | {r for r in failed if r in latest and
                      latest[r][1].get("expires", 0) > time.time() and
-                     latest[r][1].get("owner") != who})
+                     latest[r][1].get("owner") != who}, key=str)
     unclaimed = failed - set(refused)
     if unclaimed:
         print("claims: could not publish claim for " +
-              " ".join(f"0x{r:08X}" for r in sorted(unclaimed)) +
+              " ".join(label(r) for r in sorted(unclaimed, key=str)) +
               "; proceeding without a shared claim", file=sys.stderr)
     active.cache_clear()
     return claimed, refused
 
 
 def release(rvas, who=None, force=False):
-    """Delete claims we own (or any, with force). Returns released ints."""
-    rvas = sorted({int(r, 16) if isinstance(r, str) else int(r) for r in rvas})
+    """Delete claims we own (or any, with force). Returns released keys."""
+    rvas = sorted({key_of(r) for r in rvas}, key=str)
     if not rvas:
         return []
     who = who or owner()
@@ -239,19 +287,19 @@ def main(argv=None):
     args = ap.parse_args(argv)
     if args.action == "list":
         claims = active()
-        for rva, info in sorted(claims.items()):
+        for rva, info in sorted(claims.items(), key=lambda kv: str(kv[0])):
             left = (info.get("expires", 0) - time.time()) / 3600
-            print(f"0x{rva:08X}  {info.get('owner', '?'):30} {left:5.1f} h left  {info.get('note', '')}")
+            print(f"{label(rva, info)}  {info.get('owner', '?'):30} {left:5.1f} h left  {info.get('note', '')}")
         print(f"{len(claims)} live claim(s)")
         return 0
     if args.action == "claim":
         got, refused = claim(args.rvas, note=args.note)
-        print(f"claimed {len(got)}: {' '.join(f'0x{r:08X}' for r in got)}")
+        print(f"claimed {len(got)}: {' '.join(label(r) for r in got)}")
         if refused:
-            print(f"held by someone else: {' '.join(f'0x{r:08X}' for r in refused)}")
+            print(f"held by someone else: {' '.join(label(r) for r in refused)}")
         return 0 if not refused else 1
     done = release(args.rvas, force=args.force)
-    print(f"released {len(done)}: {' '.join(f'0x{r:08X}' for r in done)}")
+    print(f"released {len(done)}: {' '.join(label(r) for r in done)}")
     return 0
 
 
