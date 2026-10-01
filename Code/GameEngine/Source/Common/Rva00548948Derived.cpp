@@ -1,20 +1,25 @@
 // cl: /O1 /MD
 //
-// Opaque single-inheritance destructors tail-calling Rva00548948::~
-// Rva00548948 at 0x00548948 (pinned opaque base dtor; identity unproven).
-// Each class below stores its own vtable and tail-calls the base destructor;
-// the base itself is only declared here (defined nowhere -- it resolves via
-// the pin), because a same-TU definition would capture the call locally
-// instead of at the ledger address. Owner identities are unproven (opaque
-// Rva names). One ledger row per destructor, landed one commit at a time.
-
-class Rva00548948
+// SpecialPowerModuleData is the shared base: matched constructor/xfer TUs
+// identify it for Rva00546CAD and Rva00546F61, whose dtors tail-jump to 0x548948.
+// Rva00546B29 uses the same tail target; keep all derived names opaque.
+// Model only the known 0x18 base extent needed by these destructor bodies.
+class Snapshot
 {
 public:
-	virtual ~Rva00548948();
+	virtual ~Snapshot();
 };
 
-class Rva00546B29 : public Rva00548948
+class SpecialPowerModuleData : public Snapshot
+{
+public:
+	virtual ~SpecialPowerModuleData();
+
+private:
+	unsigned char m_pad04[0x14];
+};
+
+class Rva00546B29 : public SpecialPowerModuleData
 {
 public:
 	virtual ~Rva00546B29();
@@ -24,7 +29,7 @@ Rva00546B29::~Rva00546B29()
 {
 }
 
-class Rva00546CAD : public Rva00548948
+class Rva00546CAD : public SpecialPowerModuleData
 {
 public:
 	virtual ~Rva00546CAD();
@@ -34,7 +39,7 @@ Rva00546CAD::~Rva00546CAD()
 {
 }
 
-class Rva00546F61 : public Rva00548948
+class Rva00546F61 : public SpecialPowerModuleData
 {
 public:
 	virtual ~Rva00546F61();
