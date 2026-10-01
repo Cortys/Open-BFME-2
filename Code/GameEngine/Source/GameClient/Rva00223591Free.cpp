@@ -31,6 +31,13 @@ class Rva00223591
 {
 public:
 	void rva00223591(void *p);
+	void rva0022380B();
+private:
+	void *m_unused00;
+	void **m_beginBuckets;
+	void **m_endBuckets;
+	void **m_storageEnd;
+	unsigned int m_numElements;
 };
 
 void Rva00223591::rva00223591(void *p)
@@ -38,4 +45,20 @@ void Rva00223591::rva00223591(void *p)
 	((_STL::pair<const AsciiString, TreeHintRef00222C5A> *)((char *)p + 4))->~pair();
 	if (p)
 		free(p);
+}
+
+void Rva00223591::rva0022380B()
+{
+	for (unsigned i = 0; i < (unsigned)(((char *)m_endBuckets - (char *)m_beginBuckets) >> 2); ++i)
+	{
+		void *cur = m_beginBuckets[i];
+		while (cur != 0)
+		{
+			void *next = *(void **)cur;
+			rva00223591(cur);
+			cur = next;
+		}
+		m_beginBuckets[i] = 0;
+	}
+	m_numElements = 0;
 }
