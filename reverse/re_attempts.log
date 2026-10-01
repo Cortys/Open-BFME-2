@@ -4766,3 +4766,4 @@ FUN_007a1201	0x003A1201	59	blocked	ThingTemplate layout plus0x64 compare plus0x3
 ?rva00334003@Rva00334003@@QAEXPAUlua_State@@PBURva00333374IdOwner@@@Z	0x00334003	165	partial	extra and-ebp-4-0 plus late mov-edi and cmp order t=25 model=muse-16 score=0.93 stash=reverse/attempts/0x00334003.cpp
 ?rva0057C7BA@AptMapPreview@@QAEXH@Z	0x0057C7BA	216	blocked	EH Apt string temps need shared-header rework t=15 model=muse-02
 ?Rva004DCEC4Get@@YAHXZ	0x004DCEC4	10	blocked	10B mov eax plus call EH_prolog with no ret falls through to 0x004DCECE boundary split t=10 model=muse-02
+??0Rva002C589B@@QAE@HHH@Z	0x002C5C1F	216	blocked	new size push 1 vs 0x56c empty Rva003ECD60Object needs 0x56c layout plus xor-ebx vs or-2c init order swapped t=15 model=muse-13
