@@ -45256,3 +45256,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00396E4A@Rva00396E4A@@QAEXPAVObject@@@Z,,0x00396E4A,72,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00396E4ARemove.cpp,matched,ret 4 thiscall null check key at 0x74 map at 0x8c via rowed find and erase status 0x55
 ?rva003962E7@Rva003962E7@@QAE_NHH@Z,,0x003962E7,42,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003962E7Check.cpp,matched,ret8 thiscall tree walk header-a0 left-chain value-plus10 vs key via rowed increment
 ?Rva00397CC9Alloc@@YGPAXABURva0039627D@@@Z,,0x00397CC9,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00397CC9Alloc.cpp,matched,alloc 0x20 node via rowed allocate plus rowed Construct at plus10
+?rva002B2B78@Rva002B2B78@@QAEHPAV1@@Z,,0x002B2B78,28,Code/GameEngine/Source/Common/Rva002B2B78Compare.cpp,matched,cross-compare two dwords caller 0x002BCFEE
