@@ -46671,3 +46671,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000FE207@Rva000FE001@@QAEPAUFeNode@@PBM0H@Z,,0x000FE207,137,Code/GameEngine/Source/Common/Rva000FE207Find.cpp,matched,float list find via ternary bool mov dl1 shape
 ?rva0045906E@Rva0045906E@@QAEX_N@Z,,0x0045906E,87,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva0045906E.cpp,matched,unlocks 3 via setStatus plus slot142
 ?Rva003598A5@@YGXHHHPAX@Z,,0x003598A5,38,Code/GameEngine/Source/Common/Rva003598A5.cpp,matched,loop virtual slot0 over int range
+?Rva003BBFD6Select@@YGXPAVParameter@@@Z,,0x003BBFD6,37,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,leaf caller 0x003CC482 globals ScriptEngine InGameUI slot 0xA0 via getUnitNamed
