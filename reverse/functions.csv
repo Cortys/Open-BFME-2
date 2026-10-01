@@ -46172,3 +46172,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0055CD38@Rva0055CD38@@UAEXPAVXfer@@@Z,,0x0055CD38,56,Code/GameEngine/Source/GameClient/FXParticleSystemLineXfer.cpp,matched,vslot slot3 Line info Version1 plus 3 Xfer slots over +0x20 +0x24 +0x30 xfer recipe
 ?rva002B7D03@Glo012F1028Type@@QAEXXZ,,0x002B7D03,77,Code/GameEngine/Source/Common/Glo012F1028TypeSwapClear.cpp,matched,sibling of j_00008c0b swap via BfmeE12 row erase via EntryList pin
 ?rva000CED14@W3DTreeDrawModuleData@@QAE?AVAsciiString@@H@Z,,0x000CED14,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000CED14.cpp,matched,vslot 14 returns m_modelName at plus08 by value via hidden plus int dummy
+?rva00409FA0@Rva00409FFA@@QAEXHH@Z,,0x00409FA0,44,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FA0.cpp,matched,unlock 0x9C array guard plus count update no commas
