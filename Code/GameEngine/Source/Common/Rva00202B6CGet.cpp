@@ -50,6 +50,8 @@ private:
 class AsciiString : private StringBase<char>
 {
 	friend class Rva00202B6C;
+public:
+	~AsciiString();
 };
 
 class Rva00202B6C
