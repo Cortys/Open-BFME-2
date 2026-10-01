@@ -51,11 +51,13 @@ public:
 extern AudioManager *TheAudio;
 
 class Object;
+class AudioLoopUpgrade;
 
 class UpdateModule
 {
-public:
-	void setWakeFrame(Object *obj, unsigned int frame);
+protected:
+	void setWakeFrame(Object *obj, UpdateSleepTime frame);
+	friend class AudioLoopUpgrade;
 };
 
 class AudioLoopUpgrade
