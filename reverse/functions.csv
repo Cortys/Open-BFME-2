@@ -46784,3 +46784,4 @@ _Rva00819920,,0x00685820,1536,Code/Libraries/Source/DirtySock/Rva00819920Comm.cp
 ?rva0040ADFA@Rva0040ADFA@@QBE_NPBX@Z,,0x0040ADFA,50,Code/Libraries/Source/WWVegas/WWLib/Rva0040ADFAContains.cpp,matched,unlock lane sorted int array contains via nameToKey and binary_search
 ?rva0040AE2C@Rva0040AE2C@@QBE_NPBX@Z,,0x0040AE2C,50,Code/Libraries/Source/WWVegas/WWLib/Rva0040ADFAContains.cpp,matched,unlock lane same shape plus 0x10 0x14 via nameToKey and binary_search
 ?rva000FE1AC@Rva000FE001@@QAEXXZ,,0x000FE1AC,91,Code/GameEngine/Source/Common/Rva000FE1ACUpdate.cpp,matched,tail 0x10 next 0xb0 flag 0x3c time globals caller 0x00100068
+?Rva005210ECEnable@@YAX_N@Z,,0x005210EC,37,Code/GameEngine/Source/Common/Rva005210ECEnable.cpp,matched,unlock tail-jmp to rowed enable via extern globals
