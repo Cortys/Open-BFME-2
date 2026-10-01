@@ -28,6 +28,7 @@ struct Rva0031BE07
     unsigned char m_pad[0x2c];
     Rva0031BE07Node *m_head;
     void *rva0031BE07(const StringBase<char> &key);
+    void rva0031BE58(const class ModuleData *data);
 };
 
 void *Rva0031BE07::rva0031BE07(const StringBase<char> &key)
@@ -42,4 +43,37 @@ void *Rva0031BE07::rva0031BE07(const StringBase<char> &key)
         node = node->m_next;
     }
     return 0;
+}
+
+// ?rva0031BE58@Rva0031BE07@@QAEXPBVModuleData@@@Z @0x0031BE58 153B
+// Chain from 0x0031BE07; two StringBase temps from Command_StructureExit and
+// Command_TransportExit literals; each find result pushed via 0x0035B750.
+// Evidence: callers at 0x0031BE85 0x0031BEC0 are this body; caller 0x0031ED9E.
+class ModuleData
+{
+};
+
+class Rva0035B750
+{
+public:
+    void rva0035B750(const ModuleData *arg);
+};
+
+void Rva0031BE07::rva0031BE58(const ModuleData *data)
+{
+    if (data == 0)
+        return;
+    void *found;
+    {
+        AsciiString name1("Command_StructureExit");
+        found = rva0031BE07(*(const StringBase<char> *)&name1);
+    }
+    if (found != 0)
+        ((Rva0035B750 *)found)->rva0035B750(data);
+    {
+        AsciiString name2("Command_TransportExit");
+        found = rva0031BE07(*(const StringBase<char> *)&name2);
+    }
+    if (found != 0)
+        ((Rva0035B750 *)found)->rva0035B750(data);
 }

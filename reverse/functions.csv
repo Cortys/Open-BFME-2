@@ -46393,3 +46393,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003AE61F@@QAE@ABV0@@Z,,0x003AE61F,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy calls rowed base 0x003AF50D plus own 3 vptrs
 ?reserve@?$vector@URva00390729Element@@V?$allocator@URva00390729Element@@@_STL@@@_STL@@QAEXI@Z,,0x00390729,125,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva00390729_reserve.cpp,matched,vector reserve 12B stride via STL instantiation callers 0xE0B3D 0x3909AE 0x48C487
 ??0Rva0051ED0A@@QAE@ABV0@@Z,,0x0051ED0A,71,Code/GameEngine/Source/Common/Rva0051ED0ACopy.cpp,matched,caller 0x0051F87B member copy via PrereqUnitRec base AsciiString alloc nested uninit
+?rva0031BE58@Rva0031BE07@@QAEXPBVModuleData@@@Z,,0x0031BE58,153,Code/Libraries/Source/WWVegas/WWLib/Rva0031BE07Find.cpp,matched,chain from 0x0031BE07 two AsciiString temps Command_StructureExit TransportExit via 0x0035B750
