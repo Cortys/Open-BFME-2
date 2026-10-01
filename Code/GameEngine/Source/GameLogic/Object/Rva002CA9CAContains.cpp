@@ -79,6 +79,7 @@ class Rva002CA9CA
 public:
 	bool rva002CA9CA(int id, const void *arg);
 	bool rva002CAA59(int a1, const void *a2);
+	void rva002CA942();
 	void rva002CA970(int a1, int a2, const void *a3, int a4);
 	void rva002CAA9D(int a1, const void *a2, const void *a3, int a4);
 	float rva002CACD7(const void *arg);
@@ -95,6 +96,14 @@ private:
 };
 
 extern const float BfmeZeroRange;
+
+class Rva002D06CA
+{
+public:
+	void *rva002D06CA(const void *key);
+};
+
+extern Rva002D06CA *g_009FF000;
 
 struct FloatHolder
 {
@@ -238,4 +247,17 @@ bool Rva002CA9CA::rva002CAD8B()
 		cur = cur->m_next;
 	}
 	return false;
+}
+
+void Rva002CA9CA::rva002CA942()
+{
+	if (g_009FF000 == 0)
+		return;
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode2 *obj = (VirtNode2 *)cur->m_data;
+		obj->v20();
+		cur = cur->m_next;
+	}
 }
