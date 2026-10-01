@@ -6,6 +6,10 @@
 // "HeroModeSpecialAbilityUpdate" literal ModuleFactory registers alongside this stub.
 // Recipe: RainOfFireUpdateFriendNew.cpp.
 
+// The matched ctor at 0x492179 calls the SpecialAbilityUpdate base at 0x44EF5E;
+// the adjacent pool-key body at 0x4921D0 independently names HeroModeSpecialAbilityUpdate.
+#pragma comment(linker, "/alternatename:??0HeroModeSpecialAbilityUpdate@@QAE@PAVThing@@PBVModuleData@@@Z=??0Rva00492179@@QAE@PAVThing@@PBVModuleData@@@Z")
+
 class Thing;
 class ModuleData;
 class Module;
