@@ -45665,3 +45665,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004DF231@Rva004DF231@@QAEXPAX@Z,,0x004DF231,42,Code/GameEngine/Source/Common/Rva004DF231Power.cpp,matched,caller 0x0028D99A callee rows 0x004DF1AF 0x004DF18D
 ?rva004DF9E4@Rva004DF9E4@@QAEXPAXH@Z,,0x004DF9E4,42,Code/GameEngine/Source/Common/Rva004DF9E4Loop.cpp,matched,callers 0x004E0449 0x004E0466 0x004E049B pass ptr mask
 ?rva004DF9B9@Rva004DF9B9@@QAEXPAXH@Z,,0x004DF9B9,43,Code/GameEngine/Source/Common/Rva004DF9B9Loop.cpp,matched,sibling of 0x004DF9E4 callers in 0x004E01E3 v0 with 1
+?rva004DF98B@Rva004DF98B@@QAEXPAXH@Z,,0x004DF98B,46,Code/GameEngine/Source/Common/Rva004DF98BLoop.cpp,matched,caller 0x002933C2 sibling layout match
