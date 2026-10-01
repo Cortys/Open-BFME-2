@@ -3,6 +3,8 @@
 // Ctor twin: zeroes pointer then delegates to rowed rva001805AE assign
 // via 0x001805AE. EH prolog with state 0 matches /EHsc. Called from
 // 0x0018067A. Unblocks 0x0018067A.
+// Base renamed Rva00180649Base: invented EmptyBase with pointer member;
+// unrelated empty EmptyBase elsewhere shares mangling, differing COMDAT.
 struct BfmeResetTagged
 {
 	virtual int pad00();
@@ -26,15 +28,15 @@ struct BfmeResetAnyRef
 	BfmeResetTagged *pointer;
 };
 
-class EmptyBase
+class Rva00180649Base
 {
 public:
 	void *pointer;
-	EmptyBase() : pointer(0) {}
-	~EmptyBase();
+	Rva00180649Base() : pointer(0) {}
+	~Rva00180649Base();
 };
 
-struct BfmeResetTextureRef : public EmptyBase
+struct BfmeResetTextureRef : public Rva00180649Base
 {
 	void clear();
 	BfmeResetTextureRef &rva001805AE(const BfmeResetAnyRef &rhs);
