@@ -45148,3 +45148,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00536343@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536343,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresLostRTS 0x00868F44 slot 0x18 releaseBuffer gap same TU unlock
 ?rva005363D4@UserPreferences@@QAEHVAsciiString@@@Z,,0x005363D4,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledRTS 0x00868F58 slot 0x18 releaseBuffer gap same TU unlock
 ??$_Construct@URva00414BDBElement@@U1@@_STL@@YAXPAURva00414BDBElement@@ABU1@@Z,,0x00414A76,45,Code/Libraries/Source/WWVegas/WWLib/StlportVectorConstructRva00414BDB.cpp,matched,true Construct via rowed copy ctor callers vector
+?Rva002043F5Get@@YGPAVParticleSystemTemplate@@PBD@Z,,0x002043F5,72,Code/GameEngine/Source/GameClient/System/Rva002043F5Find.cpp,matched,wrapper AsciiString then ParticleSystemManager findTemplate via global
