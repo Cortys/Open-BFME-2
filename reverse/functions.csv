@@ -45226,8 +45226,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00432EC0@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432EC0,99,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,move node list1 to head list2 honest Rva
 ?rva00432A3B@Rva00432A3B@@QAEXPBVGameMessage@@@Z,,0x00432A3B,103,Code/GameEngine/Source/Common/Rva00432A3BHandler.cpp,matched,handler types 4 6 14 16 pixel int int via getArgument
 ?rva000B3C61@Rva000B3C61@@QAEXH@Z,,0x000B3C61,110,Code/GameEngine/Source/Common/Rva000B3C61.cpp,matched,neighbours 0x000B3A68 array at 0x110 stride 28 release plus float zero fold
-?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536AF5,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock
-?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00536981,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock
 ?Update_Sub_Object_Transforms@RenderObjClass@@UAEXXZ,,0x000B3FD0,1,Code/Libraries/Source/WWVegas/WW3D2/RenderObjUpdateSubObjectTransforms.cpp,matched,Target vftable 0x00BD2F68 slot 41; one-byte RET folds with StringBase validate; BFME1 default is empty
 ?Prepare_LOD@RenderObjClass@@UAEXAAVCameraClass@@@Z,,0x00180FD0,3,Code/Libraries/Source/WWVegas/WW3D2/RenderObjPrepareLOD.cpp,matched,Target vftable 0x00BD2F68 slot 72 is RET 4; folds with wide streambuf imbue; retail no-op diverges from BFME1 LOD work
 ?Get_Obj_Space_Bounding_Box@RenderObjClass@@UBEXAAVAABoxClass@@@Z,,0x001A1420,39,Code/Libraries/Source/WWVegas/WW3D2/RenderObjGetObjSpaceBoundingBox.cpp,matched,Target vftables 0x00BD2F68 and 0x00BD69F8 slot 68 share this 39-byte zero-box body; folds with ParticleEmitter bounding box
@@ -45769,3 +45767,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005997CD@@QAE@H@Z,,0x00599784,73,Code/GameEngine/Source/Common/Rva005997CDCtor.cpp,matched,Ctor of Rva005997CD two lists plus string int bool via EH 1 caller
 ?rva0018C09B@Rva0018C09B@@QAEXG@Z,,0x0018C09B,76,Code/GameEngine/Source/Common/Rva0018C09BRender.cpp,matched,unlock lane rowed Set_Vertex Set_Index extern D3DDevice number_of_DX8_calls ret-4 WORD arg
 ??0Rva004E63FC@@QAE@XZ,,0x004E63FC,89,Code/GameEngine/Source/Common/Bfme/Rva004E63FCInit.cpp,matched,unlock lane rowed StringBase ctor FontDesc ctor set string literals ret this
+?rva0022356C@Rva0022356C@@QAEPAXPBX@Z,,0x0022356C,37,Code/GameEngine/Source/GameClient/Rva0022356CNewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and true 0x00223195 unlocks 0x002237C7
