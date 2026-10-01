@@ -45691,3 +45691,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00220FC4Parse@@YAXPAVINI@@PAXPAV?$vector@UBfmeStringRecord0022074B@@V?$allocator@UBfmeStringRecord0022074B@@@_STL@@@_STL@@@Z,,0x00220FC4,78,Code/GameEngine/Source/GameLogic/Object/LocomotorStoreParse.cpp,matched,chain from push_back via INI table g_00BE6AD0 LocomotorStore ctor dtor
 ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ,,0x0044DBA5,175,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Password getter via makeKey map-find QP-decode trim
 ?rva0044D88C@GameModePreferences@@QAEHXZ,,0x0044D88C,180,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,PlayerTemplate getter via makeKey map-find atoi getNth
+?Rva0057A51CSet@@YAXHPAPAURva0057A51CTeam@@H@Z,,0x0057A51C,140,Code/GameEngine/Source/Common/Rva0057A51CApt.cpp,matched,unlock TurnNumber Apt setter via team table plus Apt format
