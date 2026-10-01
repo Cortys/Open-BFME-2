@@ -45119,3 +45119,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?_M_fill_insert@?$vector@UBfmePod36@@V?$allocator@UBfmePod36@@@_STL@@@_STL@@QAEXPAUBfmePod36@@IABU3@@Z,,0x000B0478,232,Code/Libraries/Source/WWVegas/WWLib/stlport_pod36_fill_insert_000b0478.cpp,matched,vector Pod36 fill-insert false_type via Ob0 G7 no-exceptions
 ?rva0042468D@BfmeE16Vector@@QAEXI@Z,,0x0042468D,48,Code/Libraries/Source/WWVegas/WWLib/stlport_e16_rva0042468d_0042468d.cpp,matched,BfmeE16Vector zero-resize wrapper via int zero to by-value resize
 ?Rva000D06C6Parse@@YAXPAVINI@@PAX1PBX@Z,,0x000D06C6,96,Code/Libraries/Source/WWVegas/WWLib/CameraMarkerParse.cpp,matched,chain from push_back 0xD068F index plus name to vector
+?Rva0052906BUpdate@@YAXH@Z,,0x0052906B,197,Code/GameEngine/Source/Common/Rva0052906BUpdate.cpp,matched,Apt HeroRank label update via GameText rank fetch

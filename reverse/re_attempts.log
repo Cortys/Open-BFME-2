@@ -4575,3 +4575,4 @@ FUN_0097d922	0x0057D922	255	blocked	complex EH AsciiString MapCache strrchr Unic
 ?rva002B7C74@Glo012F1028Type@@QAEXXZ	0x002B7C74	143	blocked	two-list deleteInstance-erase matches sibling 0x002B7D50 shape but indexed vs pointer and push-eax vs push-0 wall after 5 variants t=25 model=muse-18
 ?addPropType@W3DPropBuffer@@QAEHABVAsciiString@@_N@Z	0x000EE822	223	partial	imul-vs-lea for *24 plus mov-vs-movss sphere copy plus ebx-vs-edi arg reg t=30 model=muse-18 score=0.91 stash=reverse/attempts/0x000ee822.cpp
 ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z	0x005917DB	177	partial	single SIB byte lea eax,[ebx+eax+5] vs [eax+ebx+5] (8D440305 vs 8D441805) after 6 variants t=15 model=muse-18 score=0.99 stash=reverse/attempts/0x005917db.cpp
+FUN_0072bd25	0x0032BD25	63	blocked	map<int-int> _M_find node+0x14/0x18 used as 0x80 array bounds; value-type mismatch needs ICF or larger struct; no donor t=25 model=muse-spark
