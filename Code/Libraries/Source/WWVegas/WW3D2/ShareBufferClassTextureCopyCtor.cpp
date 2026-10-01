@@ -55,6 +55,7 @@ class ShareBufferClass : public RefCountClass
 {
 public:
 	ShareBufferClass(const ShareBufferClass &that);
+	virtual ~ShareBufferClass();
 
 protected:
 	T *m_rawBuffer; // +0x08
