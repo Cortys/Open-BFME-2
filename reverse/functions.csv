@@ -45803,3 +45803,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00530FC5@Rva00530FC5@@QAEXXZ,,0x00530FC5,67,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,bitmask guarded 128B clear via memset callers in 0x00533BEC neighbours Disp getters
 ??0Rva001EBAEA@@QAE@HH@Z,,0x001EBAEA,137,Code/Libraries/Source/WWVegas/WWLib/Rva001EBAEACtor.cpp,matched,honest ctor base ints triple E16 vectors clear80 vtable BDF168
 ?erase@?$vector@UBfmeAssignRecord172@@V?$allocator@UBfmeAssignRecord172@@@_STL@@@_STL@@QAEPAUBfmeAssignRecord172@@PAU3@0@Z,,0x001EBDFA,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmeassignrecord172_erase.cpp,matched,range erase via rowed copy_ptrs and Destroy
+??0Rva0037DF2C@@QAE@ABV0@@Z,,0x001EB79E,119,Code/GameEngine/Source/Common/Rva0037DF2CCopy.cpp,matched,copy ctor vtable 00BDF158 plus AsciiString plus 128B plus tail via 3 rowed calls
