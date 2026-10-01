@@ -45099,3 +45099,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004BCF92@Rva004BCF92@@QAEXPBVObject@@H@Z,,0x004BCF92,94,Code/GameEngine/Source/GameLogic/Object/Collide/CrateCollide/Rva004BCF92.cpp,matched,crate pos lift via InGameUI slot1A0 rowed callee
 ?rva004BCEDC@Rva004BCEDC@@QAEHXZ,,0x004BCEDC,20,Code/GameEngine/Source/GameLogic/Object/Collide/CrateCollide/Rva004BCEDC.cpp,matched,null-or-flag helper callers CrateCollide direct shape
 ?rva00536094@UserPreferences@@QAEXH@Z,,0x00536094,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallLossStreak setter slot 0x2C same TU
+?rva00536125@UserPreferences@@QAEXH@Z,,0x00536125,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallWorstLossStreak setter slot 0x2C same TU

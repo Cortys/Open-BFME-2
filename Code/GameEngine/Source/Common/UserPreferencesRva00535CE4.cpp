@@ -215,6 +215,7 @@ public:
 	void rva00535F72(int x);
 	void rva00536003(int x);
 	void rva00536094(int x);
+	void rva00536125(int x);
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
@@ -333,6 +334,12 @@ void UserPreferences::rva00536003(int x)
 void UserPreferences::rva00536094(int x)
 {
 	AsciiString tmp("OverallLossStreak");
+	v11(tmp, x);
+}
+
+void UserPreferences::rva00536125(int x)
+{
+	AsciiString tmp("OverallWorstLossStreak");
 	v11(tmp, x);
 }
 
