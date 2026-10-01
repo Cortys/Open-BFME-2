@@ -45778,7 +45778,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005E18B9@Rva005E18B9@@QAEXXZ,,0x005E18B9,16,Code/GameEngine/Source/Common/Rva005E18B9.cpp,matched,unlock vcall forwarder via member vtables guard 0x005E18D0 caller 0x005E19CA
 ??$__copy_ptrs@PAUTreeHintRef00217D4C@@PAU1@@_STL@@YAPAUTreeHintRef00217D4C@@PAU1@00ABU__false_type@0@@Z,,0x004F6A35,29,Code/GameEngine/Source/Common/Rva004F6A35CopyPtrs.cpp,matched,chain dispatcher via rowed 5-arg copy callers 0x004F6E47 0x004F70D1 0x000819EC
 ?Rva004F6E47Copy@@YAPAUTreeHintRef00217D4C@@PAU1@00@Z,,0x004F6E47,27,Code/GameEngine/Source/Common/Rva004F6A35CopyPtrs.cpp,matched,chain dispatcher via rowed 4-arg copy_ptrs
-?rva005F69B2@Rva005F69B2@@QAEXXZ,,0x005F69B2,18,Code/GameEngine/Source/Common/Rva005F69B2Method.cpp,matched,leaf conditional virtual slot 0x14 on member +4 with outer this plus caller 0x005F6AA8
 ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z,,0x0044DD83,120,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Map setter via QuotedPrintable then makeKey Map slot assign callers 0x0050CFE6 0x0059F9C2
 ??$copy@PAUBfmeStringRecord000B9534@@PAU1@@_STL@@YAPAUBfmeStringRecord000B9534@@PAU1@00@Z,,0x000B6782,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_stringrecord_b9534.cpp,matched,29B 5-push copy wrapper calls rowed __copy 0x000B448F same as 0x0032A40E
 ??$fill@PAURva00B6CF1@@U1@@_STL@@YAXPAURva00B6CF1@@0ABU1@@Z,,0x000B67F6,29,Code/Libraries/Source/WWVegas/WWLib/stlport_fill_rva00b6cf1.cpp,matched,29B fill via rowed assign 0x000B433E same as 0x000B4300
@@ -45891,3 +45890,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0028BFF9@Object@@QAEXI@Z,,0x0028BFF9,38,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AC34Setter.cpp,matched,status bit plus defection helper forward compiled after its callee rva0028AC34 so this stays in ecx
 ?setActionType@ScriptAction@@QAEXW4ScriptActionType@1@@Z,,0x003B4343,137,Code/GameEngine/Source/GameLogic/ScriptEngine/TemplateGetParameterType.cpp,matched,BFME1 donor; same TU as getParameterType so the new pointer stays in edx across the call
 ?setConditionType@Condition@@QAEXW4ConditionType@1@@Z,,0x003B4A94,137,Code/GameEngine/Source/GameLogic/ScriptEngine/TemplateGetParameterType.cpp,matched,BFME1 donor twin of setActionType; same TU as getParameterType
+?rva005F6A30@Rva005F6A30@@QAEXXZ,,0x005F6A30,20,Code/GameEngine/Source/Common/Rva005F6A30Method.cpp,matched,leaf conditional virtual slot 0x08 on member +4 with outer this plus caller 0x005F6A90
