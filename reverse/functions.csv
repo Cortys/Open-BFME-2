@@ -44995,3 +44995,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva007F0120@@YAXPAX0@Z,,0x0065D000,5,Code/GameEngine/Source/Common/Rva007F0120Forward.cpp,matched,tail jump to rowed Rva007F00B0 0x0065CF90
 ?rva004031F3@Rva004031F3@@QAEXPAUObj@@PAUInfo@@@Z,,0x004031F3,64,Code/GameEngine/Source/Common/Rva004031F3.cpp,matched,vtable slots 31 27 30 via callers in 0x0040426D
 ?rva000B7074@Rva000B7074@@QAEXXZ,,0x000B7074,153,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000B7074.cpp,matched,chain via 0x000B4E23 rowed f1-gt0 f2-eq0 comiss-threshold div-mul
+?getUnicodeVersion@Version@@QAE?AVUnicodeString@@XZ,,0x0023800A,148,Code/GameEngine/Source/Common/VersionUnicode.cpp,matched,BFME1 version.cpp Format2 with m_major m_minor via fetch slot 0x3C

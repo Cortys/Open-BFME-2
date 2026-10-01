@@ -89,6 +89,7 @@ extern GameTextInterface *TheGameText;
 class Version
 {
 public:
+    UnicodeString getUnicodeVersion();
     UnicodeString getUnicodeBuildTime();
     UnicodeString getUnicodeBuildLocation();
     UnicodeString getUnicodeBuildUser();
@@ -107,6 +108,13 @@ private:
     AsciiString m_buildConfiguration;
     bool m_showFullVersion;
 };
+
+UnicodeString Version::getUnicodeVersion()
+{
+    UnicodeString version;
+    version.format(TheGameText->fetch("Version:Format2").str(), m_major, m_minor);
+    return version;
+}
 
 UnicodeString Version::getUnicodeBuildTime()
 {
