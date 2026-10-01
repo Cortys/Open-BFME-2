@@ -17,22 +17,46 @@ struct Rva004FFC23Node
 	unsigned char m_value[8];
 };
 
-struct Rva004FFC23
+namespace _STL
 {
-	Rva004FFC23Node *rva0053444F(Rva004FFC23Node *x);
+	template <class T1, class T2> struct pair;
+	template <class T> struct _Select1st;
+	template <class T> struct less;
+	template <class T> class allocator;
+	template <class T> struct _Rb_tree_node;
+	template <class Key, class Value, class KeyOfValue, class Compare, class Alloc>
+	class _Rb_tree
+	{
+	protected:
+		typedef _Rb_tree_node<Value> *_Link_type;
+		_Link_type _M_clone_node(_Link_type x);
+	};
+}
+
+// The opaque map<int,void*> payload is 8 bytes; this matches the helper's
+// map<int,int> value layout and reuses Rva004FFC96Copy's verified facade.
+typedef _STL::pair<const int, int> Rva004FFC23Value;
+typedef _STL::_Rb_tree<int, Rva004FFC23Value,
+	_STL::_Select1st<Rva004FFC23Value>, _STL::less<int>,
+	_STL::allocator<Rva004FFC23Value> > Rva004FFC23Tree;
+
+struct Rva004FFC23 : Rva004FFC23Tree
+{
 	Rva004FFC23Node *rva004FFC23(Rva004FFC23Node *x, Rva004FFC23Node *p);
 };
 
 Rva004FFC23Node *Rva004FFC23::rva004FFC23(Rva004FFC23Node *x, Rva004FFC23Node *p)
 {
-	Rva004FFC23Node *top = rva0053444F(x);
+	Rva004FFC23Node *top = (Rva004FFC23Node *)_M_clone_node(
+		(_STL::_Rb_tree_node<Rva004FFC23Value> *)x);
 	top->m_parent = p;
 	if (x->m_right != 0)
 		top->m_right = rva004FFC23(x->m_right, top);
 	p = top;
 	x = x->m_left;
 	while (x != 0) {
-		Rva004FFC23Node *y = rva0053444F(x);
+		Rva004FFC23Node *y = (Rva004FFC23Node *)_M_clone_node(
+			(_STL::_Rb_tree_node<Rva004FFC23Value> *)x);
 		p->m_left = y;
 		y->m_parent = p;
 		if (x->m_right != 0)
