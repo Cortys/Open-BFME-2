@@ -24,7 +24,7 @@ struct BfmeContainerRecord00048139 {
     BfmeContainerRecord00048139 &operator=(const BfmeContainerRecord00048139 &o);
 };
 BfmeContainerRecord00048139::BfmeContainerRecord00048139(const BfmeContainerRecord00048139 &o) : text0(o.text0), text1(o.text1), head(o.head), word54(o.word54), word58(o.word58) {}
-BfmeContainerRecord00048139 &BfmeContainerRecord00048139::operator=(const BfmeContainerRecord00048139 &o) { text0 = o.text0; text1 = o.text1; head = o.head; word54 = o.word54; word58 = o.word58; return *this; }
+inline BfmeContainerRecord00048139 &BfmeContainerRecord00048139::operator=(const BfmeContainerRecord00048139 &o) { text0 = o.text0; text1 = o.text1; head = o.head; word54 = o.word54; word58 = o.word58; return *this; }
 template void _STL::_Construct<BfmeContainerRecord00048139,BfmeContainerRecord00048139>(BfmeContainerRecord00048139*,const BfmeContainerRecord00048139&);
 
 // Complete retail record copy at 0x003A451B.
@@ -121,3 +121,14 @@ BfmeContainerRecord00048139 *copyRecordRangeWithScratch(const char *first, const
 	char scratch;
 	return copyRecordRange(first, last, dest, &scratch, 0);
 }
+
+// BfmeContainerRecord00048139::operator= is defined inline by the other units that copy this record: they emit
+// select-any copies, so a strong definition here was a duplicate in the linked build. This
+// anchor only makes this unit emit its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitBfmeContainerRecord00048139Assign@@YAXPAUBfmeContainerRecord00048139@@@Z present-unmatched
+void bfmeEmitBfmeContainerRecord00048139Assign(BfmeContainerRecord00048139 *record)
+{
+	*record = *record;
+}
+#pragma inline_depth()
