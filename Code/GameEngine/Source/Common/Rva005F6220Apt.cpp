@@ -25,6 +25,7 @@ class Rva005F6220
 {
 public:
 	void rva005F6220(const UnicodeString &text);
+	void rva005F6287(const UnicodeString &text);
 private:
 	char m_pad00[4];
 	unsigned int m_level04;
@@ -36,5 +37,13 @@ void Rva005F6220::rva005F6220(const UnicodeString &text)
 	AsciiString key;
 	const char *mid = m_team08 ? (const char *)((char *)m_team08 + 8) : "";
 	key.format("APT:_level%u.%s_LeaderQuantity", m_level04, mid);
+	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, text, true);
+}
+
+void Rva005F6220::rva005F6287(const UnicodeString &text)
+{
+	AsciiString key;
+	const char *mid = m_team08 ? (const char *)((char *)m_team08 + 8) : "";
+	key.format("APT:_level%u.%s_LeaderRank", m_level04, mid);
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, text, true);
 }
