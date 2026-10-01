@@ -34,7 +34,7 @@ public:
 class BodyModuleInterface
 {
 public:
-	virtual void bodyAnchor();
+	virtual void bodyAnchor() = 0;
 };
 
 class BodyModule : public BehaviorModule, public BodyModuleInterface

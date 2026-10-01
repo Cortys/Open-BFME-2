@@ -12,7 +12,7 @@ public:
 class Rva007FA990Base4
 {
 public:
-	virtual void v4();
+	virtual void v4() = 0;
 };
 
 struct Rva007FA990Cell

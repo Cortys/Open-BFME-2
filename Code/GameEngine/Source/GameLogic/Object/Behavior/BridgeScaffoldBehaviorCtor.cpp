@@ -88,12 +88,12 @@ class BridgeScaffoldBehaviorInterface
 {
 public:
 	BridgeScaffoldBehaviorInterface() {}
-	virtual void setPositions(const Coord3D *createPos, const Coord3D *riseToPos, const Coord3D *buildPos);
-	virtual void setMotion(ScaffoldTargetMotion targetMotion);
-	virtual ScaffoldTargetMotion getCurrentMotion(void);
-	virtual void reverseMotion(void);
-	virtual void setLateralSpeed(float lateralSpeed);
-	virtual void setVerticalSpeed(float verticalSpeed);
+	virtual void setPositions(const Coord3D *createPos, const Coord3D *riseToPos, const Coord3D *buildPos) = 0;
+	virtual void setMotion(ScaffoldTargetMotion targetMotion) = 0;
+	virtual ScaffoldTargetMotion getCurrentMotion(void) = 0;
+	virtual void reverseMotion(void) = 0;
+	virtual void setLateralSpeed(float lateralSpeed) = 0;
+	virtual void setVerticalSpeed(float verticalSpeed) = 0;
 };
 
 class BridgeScaffoldBehavior : public UpdateModule,

@@ -4,13 +4,13 @@
 class BfmeCtorFirstBase001B3A20
 {
 public:
-	virtual void slot();
+	virtual void slot() = 0;
 };
 
 class BfmeCtorVirtualBase001B3A20
 {
 public:
-	virtual void slot();
+	virtual void slot() = 0;
 };
 
 class BfmeCtor001B3A20 : public BfmeCtorFirstBase001B3A20,

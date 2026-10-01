@@ -25,7 +25,7 @@ public:
 class Rva00589079_S2
 {
 public:
-	virtual void f2();
+	virtual void f2() = 0;
 
 private:
 	char m_pad04[12];

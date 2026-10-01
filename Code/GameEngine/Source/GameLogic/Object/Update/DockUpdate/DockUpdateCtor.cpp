@@ -178,7 +178,7 @@ public:
 
 	virtual void objectModuleAnchor();
 	virtual void behaviorAnchor();
-	virtual void updateAnchor();
+	virtual void updateAnchor() = 0;
 	virtual void dockAnchor();
 
 	Coord3D m_enterPosition;

@@ -27,7 +27,7 @@ public:
     virtual void targetSlot7();
     virtual void targetSlot8();
     virtual void reset();
-    virtual void targetSlot10();
+    virtual void targetSlot10() = 0;
     virtual void targetSlot11();
     virtual void targetSlot12();
     virtual void targetSlot13();

@@ -21,7 +21,7 @@ public:
 class Rva00803080 {
 public:
  Rva00803080() {}
- virtual void slot0(unsigned int);
+ virtual void slot0(unsigned int) = 0;
 };
 class Rva007EAServiceList {
 public: void add(Rva00803080*);
