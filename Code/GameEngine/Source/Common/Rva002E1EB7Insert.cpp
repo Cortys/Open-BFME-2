@@ -51,3 +51,22 @@ void Rva002E22EBSort(void **begin, void **end, void *extra)
 	}
 	Rva002E214ESort(begin, end, extra);
 }
+
+void Rva002E1EF1MakeHeap(void **first, void **last, void *extra);
+void Rva002E1824Reinsert(void **base, void **end, void **out, void *value, void *extra);
+void Rva002E217BSort(void **base, void **end, void *extra);
+
+// ?Rva002E232FSort@@YAXPAPAX00PAX1@Z @0x002E232F 87B.
+// Partial heap sort: heapify [base mid) then selective reinsert from [mid end)
+// where key exceeds base key then pop-sort [base mid). Evidence: same +0xC key
+// and 6-push Reinsert adapter as 0x002E1889; caller 0x002E2771; shares /O1.
+void Rva002E232FSort(void **base, void **mid, void **end, void *unused, void *extra)
+{
+	typedef void (__cdecl *Reinsert6)(void **, void **, void **, void *, void *, int);
+	Rva002E1EF1MakeHeap(base, mid, extra);
+	for (void **p = mid; p < end; ++p) {
+		if (((int *)*p)[3] > ((int *)*base)[3])
+			((Reinsert6)Rva002E1824Reinsert)(base, mid, p, *p, extra, 0);
+	}
+	Rva002E217BSort(base, mid, extra);
+}
