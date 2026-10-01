@@ -45808,3 +45808,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001EB298@Rva001EB298@@QAEXVAsciiString@@@Z,,0x001EB298,52,Code/GameEngine/Source/Common/Rva001EB298Setter.cpp,matched,ecx+0x2C AsciiString set plus param release callers 0x001EB42E and 0x002412CC
 ?rva001EB329@Rva001EB329@@QAEXPAVINI@@@Z,,0x001EB329,89,Code/GameEngine/Source/Common/Rva001EB329Parse.cpp,matched,initFromINI plus map isEmpty throw Campaign Map caller 0x001ED326
 ?rva001EB73C@Rva001EB73C@@QAE_NXZ,,0x001EB73C,15,Code/GameEngine/Source/Common/Rva001EB73CCheck.cpp,matched,null at +0x10 true else tail rowed 0x001EB435 caller 0x00521270
+?rva001EB6A5@Rva001EB6A5@@QAE_NPAURva001EB6A5Out@@@Z,,0x001EB6A5,89,Code/GameEngine/Source/Common/Rva001EB6A5Parse.cpp,matched,finish stash 0.93 direct m_0C plus add caller 0x001EB74B
