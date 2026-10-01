@@ -79,8 +79,20 @@ private:
 	StringBase<char> m_strF8;
 };
 
-ActiveBody::~ActiveBody()
+inline ActiveBody::~ActiveBody()
 {
 }
 
 void ActiveBody_Delete(ActiveBody *p) { delete p; }
+
+// ??1ActiveBody is a header inline elsewhere: other units emit select-any
+// copies, so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitBodyModuleDeletingDtors@@YAXPAVActiveBody@@@Z present-unmatched
+void bfmeEmitBodyModuleDeletingDtors(ActiveBody *p)
+{
+	p->ActiveBody::~ActiveBody();
+}
+#pragma inline_depth()
