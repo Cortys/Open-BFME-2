@@ -1,0 +1,41 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
+// ?rva00223591@Rva00223591@@QAEXPAX@Z @0x00223591 28B
+// Free-node for 12-byte node (4 next + 8 pair<const AsciiString TreeHintRef00222C5A>): destroys pair at +4 via rowed 0x00222C5A then frees node via _free 0x00030830 with null guard.
+// Evidence: caller 0x0022380B sets ecx plus node arg; same shape as rowed ?rva00223898@Rva00223898@@QAEXPAX@Z 0x00223898.
+// Private AsciiString kept not shared header: header inlines AsciiString teardown and the pair call stops resolving to rowed 0x00222C5A.
+extern "C" void __cdecl free(void *);
+
+class AsciiString
+{
+public:
+	~AsciiString();
+private:
+	char m_pad[4];
+};
+
+struct TreeHintRef00222C5A
+{
+	char m_body[4];
+};
+
+namespace _STL {
+template <class T1, class T2> struct pair
+{
+	~pair();
+	T1 first;
+	T2 second;
+};
+}
+
+class Rva00223591
+{
+public:
+	void rva00223591(void *p);
+};
+
+void Rva00223591::rva00223591(void *p)
+{
+	((_STL::pair<const AsciiString, TreeHintRef00222C5A> *)((char *)p + 4))->~pair();
+	if (p)
+		free(p);
+}
