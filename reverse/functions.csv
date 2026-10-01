@@ -45221,3 +45221,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00563ED1@Rva00563ED1@@QAEXPAVXfer@@@Z,,0x00563ED1,82,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00563ED1Xfer.cpp,matched,chain of 00563E72 IsLightCRC Version1 subxfer flags via 0x90
 ?Rva005635DEPut@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@ABURva005635DEPayload@@@Z,,0x005635DE,22,Code/Libraries/Source/WWVegas/WWLib/Rva005635DEPut.cpp,matched,ostream long put via J caller prints key value newline
 ?rva0056394A@Rva0056394A@@QAE?AVAsciiString@@XZ,,0x0056394A,27,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0056394AGetter.cpp,matched,AsciiString at 0x24 via StringBase copy getter
+?Rva004328D8Emit@@YGXPAURva004328D8Payload@@@Z,,0x004328D8,89,Code/GameEngine/Source/Common/Rva004328D8Message.cpp,matched,two messages 0xC3 and type pixel int time via subsystem
