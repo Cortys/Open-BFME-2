@@ -21,6 +21,11 @@
 // AI_IDLE before the base onEnter (pinned 0x0034ED7B, tail jump), and set to
 // AI_IDLE before the base onExit, as Zero Hour AIAttackMoveToState does with
 // its attack-move machine. Machine slots 5/8 are clear/setState.
+// AIFollowWaypointPathStateAndEvacuate::onEnter/onExit, retail 0x0034F004 (23
+// bytes) and 0x0034A105 (28 bytes): slots 4/5 of vtable 0x00C12998 (name getter
+// AIFollowWaypointPathStateAndEvacuate); onEnter calls Rva0033FA64Do(owner)
+// before base onEnter (0x0034ED7B); onExit calls base onExit (0x0034A0D7)
+// before Rva0033FA79Do(owner).
 enum StateExitType
 {
 	EXIT_NORMAL = 0
@@ -69,6 +74,10 @@ private:
 	unsigned char m_pad000[0x258];
 	AIUpdateInterface *m_ai; // +0x258
 };
+class Object0033FA64;
+void Rva0033FA64Do(const Object0033FA64 *obj);
+class Object0033FA79;
+void Rva0033FA79Do(const Object0033FA79 *obj);
 class StateMachine
 {
 public:
@@ -154,3 +163,20 @@ void AIAttackFollowWaypointPathState::onExit(StateExitType status)
 	m_attackFollowMachine->setState(AI_IDLE);
 	AIFollowWaypointPathState::onExit(status);
 }
+class AIFollowWaypointPathStateAndEvacuate : public AIFollowWaypointPathState
+{
+public:
+	virtual StateReturnType onEnter();
+	virtual void onExit(StateExitType status);
+};
+StateReturnType AIFollowWaypointPathStateAndEvacuate::onEnter()
+{
+	Rva0033FA64Do((const Object0033FA64 *)getMachineOwner());
+	return AIFollowWaypointPathState::onEnter();
+}
+void AIFollowWaypointPathStateAndEvacuate::onExit(StateExitType status)
+{
+	AIFollowWaypointPathState::onExit(status);
+	Rva0033FA79Do((const Object0033FA79 *)getMachineOwner());
+}
+
