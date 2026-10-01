@@ -45121,3 +45121,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva000D06C6Parse@@YAXPAVINI@@PAX1PBX@Z,,0x000D06C6,96,Code/Libraries/Source/WWVegas/WWLib/CameraMarkerParse.cpp,matched,chain from push_back 0xD068F index plus name to vector
 ?Rva0052906BUpdate@@YAXH@Z,,0x0052906B,197,Code/GameEngine/Source/Common/Rva0052906BUpdate.cpp,matched,Apt HeroRank label update via GameText rank fetch
 ?rva00529130@Rva00529130@@QAEXH@Z,,0x00529130,27,Code/GameEngine/Source/Common/Rva00529130Setter.cpp,matched,chain on 0x0052906B rank setter flag 0x0C
+?rva002B22AF@Rva002B22AF@@QAEXPAVRva002B22AFArg@@@Z,,0x002B22AF,68,Code/GameEngine/Source/Common/Rva002B22AFMarshal.cpp,matched,virtual forwarder 5 slots
