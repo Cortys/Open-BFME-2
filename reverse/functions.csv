@@ -46522,3 +46522,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0031BEF1@Rva0031BEF1@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0031BEF1,37,Code/Libraries/Source/WWVegas/WWLib/Rva0031BEF1Create.cpp,matched,unlock hashtable node create via 0x307F0 and dup 0x31BDC1 unlocks 0x31C7D6
 ?Rva0031BA18Copy@@YAPAURva002C99FB@@PAU1@00@Z,,0x0031BA18,47,Code/GameEngine/Source/GameLogic/Object/Rva0031BA18Copy.cpp,matched,unlock __copy 8B via rowed assign 0x2C99FB unblocks 0x31BDA4
 ??$__copy_ptrs@PBUBfmeAsciiScalarValue8@@PAU1@@_STL@@YAPAUBfmeAsciiScalarValue8@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x0031BDA4,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_ptrs_scalar8.cpp,matched,chain __copy_ptrs scalar8 via rowed 0x31BA18
+?rva0030A8EE@Rva0030A8EE@@QAEXPAVCoord3D@@@Z,,0x0030A8EE,62,Code/GameEngine/Source/Common/Thing/Rva0030A8EECopy.cpp,matched,unlock Coord3D build from this plus Normalize via 0x5A70
