@@ -5,6 +5,9 @@
 // 0x00007850. Same body, two bytes longer: BFME's allocator takes bytes rather
 // than elements, so the proxy has to double the count and that is the
 // `lea eax,[eax+eax]` retail runs before the call.
+// The wide allocator spelling is an ICF alias of the raw byte allocator at
+// 0x000307F0; both take the byte count and the same hint.
+#pragma comment(linker, "/alternatename:?allocate@?$allocator@G@_STL@@SAPAGIPBX@Z=?allocate@?$allocator@D@_STL@@SAPADIPBX@Z")
 
 namespace _STL
 {
