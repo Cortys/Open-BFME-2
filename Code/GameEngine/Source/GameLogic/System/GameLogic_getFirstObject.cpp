@@ -23,7 +23,18 @@ private:
 };
 
 // ?getFirstObject@GameLogic@@QAEPAVObject@@XZ
-Object *GameLogic::getFirstObject()
+inline Object *GameLogic::getFirstObject()
 {
 	return m_firstObject;
 }
+
+// Header inline that other units including the header emit as select-any
+// copies, which the plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitGameLogic_getFirstObject@@YAXPAVGameLogic@@@Z present-unmatched
+void bfmeEmitGameLogic_getFirstObject(GameLogic *p)
+{
+	p->getFirstObject();
+}
+#pragma inline_depth()
