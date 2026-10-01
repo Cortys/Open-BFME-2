@@ -45292,3 +45292,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0058E511@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E511,106,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E511.cpp,matched,unlock lane NetPacket static factory via new-memcpy-setter
 ?rva0035B29E@Rva0035B29E@@QAEPBVAsciiString@@H@Z,,0x0035B29E,37,Code/GameEngine/Source/Common/Rva0035B29EGetter.cpp,matched,unlock lane sar-2 AsciiString list getter
 ?rva0035B424@Rva0035B424@@QAEXH@Z,,0x0035B424,37,Code/GameEngine/Source/Common/Rva0035B424Setter.cpp,matched,unlock lane lea-vec index setter
+?rva0035B750@Rva0035B750@@QAEXPBVModuleData@@@Z,,0x0035B750,45,Code/GameEngine/Source/Common/Rva0035B750Push.cpp,matched,unlock lane empty-or-first ModuleData setter
