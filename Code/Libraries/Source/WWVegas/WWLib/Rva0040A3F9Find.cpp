@@ -13,6 +13,7 @@ class Rva0040A3F9
 {
 public:
     int findIndex(CreateAHeroData *value) const;
+    bool rva0040A441(CreateAHeroData *value);
 private:
     CreateAHeroData **m_begin;
     CreateAHeroData **m_end;
@@ -23,4 +24,21 @@ int Rva0040A3F9::findIndex(CreateAHeroData *value) const
     if (value == 0)
         return m_end - m_begin;
     return _STL::find(m_begin, m_end, value) - m_begin;
+}
+
+// ?rva0040A441@Rva0040A3F9@@QAE_NPAVCreateAHeroData@@@Z @0x0040A441 46B
+// Evidence: unlock lane; same +0/+4 CreateAHeroData* vector as findIndex above;
+// find via rowed 0x20E873 then rowed vector<void*> erase 0x1FF51F; false if
+// absent else erase and true; caller 0x5B6A1E unclaimed; LINK BONUS none.
+bool Rva0040A3F9::rva0040A441(CreateAHeroData *value)
+{
+    CreateAHeroData **found = _STL::find(m_begin, m_end, value);
+    bool ok;
+    if (found == m_end)
+        ok = false;
+    else {
+        (( _STL::vector<void *, _STL::allocator<void *> > *)this)->erase((void **)found);
+        ok = true;
+    }
+    return ok;
 }
