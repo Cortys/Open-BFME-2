@@ -13,6 +13,7 @@ struct BfmeStringRecord000331962 {
     unsigned int word;
     AsciiString text;
     unsigned char flag;
+    ~BfmeStringRecord000331962();
 };
 class Rva003371B1 {
 public:
