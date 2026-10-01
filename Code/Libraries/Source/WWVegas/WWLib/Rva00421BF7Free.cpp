@@ -13,10 +13,21 @@ struct Rva00421BF7Node
 	Rva00421BF7Node *m_child;
 };
 
+struct Rva00421BF7Header
+{
+	char m_pad0[4];
+	Rva00421BF7Node *m_first;
+	Rva00421BF7Header *m_link8;
+	Rva00421BF7Header *m_linkC;
+};
+
 class Rva00421BF7
 {
 public:
 	void rva00421BF7(void *n);
+	void rva00421EEA();
+	Rva00421BF7Header *m_header;
+	int m_count;
 };
 void Rva00421BF7::rva00421BF7(void *n)
 {
@@ -28,4 +39,14 @@ void Rva00421BF7::rva00421BF7(void *n)
 		free(p);
 		p = next;
 	}
+}
+void Rva00421BF7::rva00421EEA()
+{
+	if (m_count == 0)
+		return;
+	rva00421BF7(m_header->m_first);
+	m_header->m_link8 = m_header;
+	m_header->m_first = 0;
+	m_header->m_linkC = m_header;
+	m_count = 0;
 }

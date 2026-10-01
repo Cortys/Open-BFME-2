@@ -45991,3 +45991,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004E071D@Rva004E071D@@QAEX_N@Z,,0x004E071D,36,Code/GameEngine/Source/Common/Rva004E071DSet.cpp,matched,unlock lane caller 0x002B7740 neighbours share 0x2C vcall
 ?rva00421A57@Rva00421A57@@QAE_NH@Z,,0x00421A57,45,Code/Libraries/Source/WWVegas/WWLib/Rva00421A57Search.cpp,matched,unlock lane caller 0x00424FA1 pin bfmeHas1026
 ?rva00421BF7@Rva00421BF7@@QAEXPAX@Z,,0x00421BF7,45,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,unlock lane self-call free 0x30830 caller 0x00421EF8
+?rva00421EEA@Rva00421BF7@@QAEXXZ,,0x00421EEA,41,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,chain lane caller at 0x00422652
