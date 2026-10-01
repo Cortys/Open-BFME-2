@@ -28,6 +28,7 @@ class Rva000B3C61
 {
 public:
 	void rva000B3C61(int index);
+	void rva000B3BCF(int index, RefCounted *newPtr, unsigned char b19, int i10, float f0C, float f04, float fMid, unsigned char b18, int i14);
 private:
 	char m_pad[0x110];
 	Rva000B3C61Elem m_items[32];
@@ -49,4 +50,29 @@ void Rva000B3C61::rva000B3C61(int index)
 	m_items[index].m_f04 = 0.0f;
 	m_items[index].m_18 = 0;
 	m_items[index].m_14 = 1;
+}
+
+// ?rva000B3BCF@Rva000B3C61@@QAEXHPAURefCounted@@EHM etc @0x000B3BCF 146B. Unlock lane setter
+// counterpart of rva000B3C61 clearer: same 0x1c array, release via dec/call/and,
+// newPtr store plus inc, then fields from params, middle via (index+10)*28.
+// Evidence: callers 0x000B3D27 etc, neighbours Rva000B3A68/Rva000B3C61, SSE floats.
+void Rva000B3C61::rva000B3BCF(int index, RefCounted *newPtr, unsigned char b19, int i10, float f0C, float f04, float fMid, unsigned char b18, int i14)
+{
+	if (m_items[index].m_ptr) {
+		RefCounted *p = m_items[index].m_ptr;
+		if (--p->m_ref == 0)
+			p->rva000B3C61_virt0();
+		m_items[index].m_ptr = 0;
+	}
+	if (!newPtr)
+		return;
+	m_items[index].m_ptr = newPtr;
+	++newPtr->m_ref;
+	m_items[index].m_10 = i10;
+	m_items[index].m_18 = b18;
+	m_items[index].m_f0C = f0C;
+	m_items[index].m_14 = i14;
+	m_items[index].m_f04 = f04;
+	*(float *)((char *)this + (index + 10) * 28) = fMid;
+	m_items[index].m_19 = b19;
 }
