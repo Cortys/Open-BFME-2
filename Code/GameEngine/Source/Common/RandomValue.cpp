@@ -169,16 +169,8 @@ void InitRandom( void )
 #endif
 }
 
-void InitRandom( UnsignedInt seed )
-{
-	seedRandom(seed, theGameAudioSeed);
-	seedRandom(seed, theGameClientSeed);
-	seedRandom(seed, theGameLogicSeed);
-	theGameLogicBaseSeed = seed;
-#ifdef DEBUG_RANDOM_LOGIC
-DEBUG_LOG(( "InitRandom %08lx\n",seed));
-#endif
-}
+// ?InitRandom@@YAXI@Z is owned by GameLogicRandomInit.cpp (its row's unit).
+void InitRandom( UnsignedInt seed );
 
 // InitGameLogicRandom: defined in GameLogicRandomInit.cpp (its row's unit).
 void InitGameLogicRandom( UnsignedInt seed );
