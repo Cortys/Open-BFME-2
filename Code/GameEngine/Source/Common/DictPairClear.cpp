@@ -1,37 +1,10 @@
-// cl: /O1 /G7 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /DNDEBUG /MD
 // Dict pair clear plus releaseData.
 // Reference basis is BFME1 Dict_releaseData.cpp (retail 0x000681C0), which
 // carries the Dict layout, the pair switch and releaseData. BFME2 outlines
 // the pair switch as its own 43B body and frees through the game _free.
 
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString(const AsciiString &other);
-	~AsciiString();
-	AsciiString &operator=(const AsciiString &other);
-
-private:
-	char *m_data;
-};
-
-template <typename T> class StringBase
-{
-public:
-	void set(const StringBase &other);
-
-private:
-	void *m_data;
-private:
-	StringBase(const StringBase &other);
-	friend class AsciiString;
-	friend class Dict;
-	friend class DictPair;
-	friend class DictPairData;
-	friend class UnicodeString;
-};
+#include "ascii_string.h"
 
 extern "C" void free(void *);
 
@@ -46,21 +19,7 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-class UnicodeString
-{
-public:
-	UnicodeString(const UnicodeString &other)
-	{
-		((StringBase<unsigned short> *)this)->StringBase<unsigned short>::StringBase(*(const StringBase<unsigned short> *)&other);
-	}
-	~UnicodeString();
-	void releaseBuffer();
-
-	static UnicodeString TheEmptyString;
-
-private:
-	unsigned short *m_data;
-};
+#include "unicode_string.h"
 
 class Dict
 {
@@ -143,7 +102,7 @@ void Dict::DictPair::clear()
 			((AsciiString *)&m_value)->~AsciiString();
 			break;
 		case DICT_UNICODESTRING:
-			((UnicodeString *)&m_value)->releaseBuffer();
+			((UnicodeString *)&m_value)->clear();	// inline releaseBuffer(): retail tail-jumps to StringBase<unsigned short>::releaseBuffer
 			break;
 	}
 }
