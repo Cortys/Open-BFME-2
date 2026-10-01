@@ -8,6 +8,10 @@
 // distinct owner type (copy ctor 0x0014CED0), and the counted return (dword
 // increment at +4 of the returned object after a null check, then the
 // object is re-read for the return).
+// Both callees are pinned at the address of matched bodies with compatible
+// thiscall / one-pointer hidden-return ABIs; keep these bindings TU-local.
+#pragma comment(linker, "/alternatename:?Release_Ref@HierarchyPrototype@@QAEXXZ=?Release_Ref@TextureBaseClass@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?Rva0061F230_GetPrototype@@YA?AVHierarchyPrototypeRef@@PBD@Z=?Rva009EBCE0_GetPrototype@@YA?AVRva009EBCE0AssetReference@@PBD@Z")
 
 extern "C" char *_mbscpy(char *destination, const char *source);
 extern "C" __declspec(dllimport) char *__cdecl _strlwr(char *string);
