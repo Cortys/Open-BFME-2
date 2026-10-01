@@ -46633,3 +46633,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva0041BB87IsRelated@@YGEPAVObject@@0H@Z,,0x0041BB87,65,Code/GameEngine/Source/Common/Rva0041BB87.cpp,matched,caller 0x0029CB07 rowed rva002931F5 and rva0028C1A9 slot 8
 ?rva002AACDB@Rva002AACDB@@QAEHXZ,,0x002AACDB,72,Code/Libraries/Source/WWVegas/WWLib/Rva002AACDBPopcount.cpp,matched,popcount SWAR 7 dwords caller 0x002AC06A
 ?rva005CB260@Rva005CB260@@QAEXXZ,,0x005CB260,5,Code/GameEngine/Source/Common/Rva005CB260Forwarder.cpp,matched,slot1 forwarder LINK BONUS QAEXXZ via inner C8 this
+?Rva003BBFFBSet@@YGXHM@Z,,0x003BBFFB,77,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBFFB.cpp,matched,leaf caller 0x003CC50F clamp scaled float to TheAudio slot 0xEC
