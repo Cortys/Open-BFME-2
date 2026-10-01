@@ -45854,3 +45854,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?evaluateNamedCreated@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3F41,24,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,ZH donor; dispatcher case 24 NAMED_CREATED
 ?evaluateNamedUnitDying@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3E54,53,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,ZH donor; dispatcher case 56 NAMED_DYING
 ?evaluateNamedUnitTotallyDead@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3E89,49,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,ZH donor; dispatcher case 57 NAMED_TOTALLY_DEAD
+?rva002BF735@Rva002BF735@@QAEPAXPBX@Z,,0x002BF735,37,Code/GameEngine/Source/GameClient/Rva002BF735NewNode.cpp,matched,hashtable new node 12B via rowed allocator 0x307F0 and dup 0x2BF35B unlocks 0x2BFAD6
