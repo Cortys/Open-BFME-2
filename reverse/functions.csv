@@ -45325,3 +45325,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F64C0@Rva005F64C0@@QAEXH@Z,,0x005F64C0,8,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Tail forward to member rva005F63EC via plus 8 chain from 0x005F63EC
 ?rva0058E047@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E047,105,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E047.cpp,matched,unlock lane NetPacket 1-byte factory via new-memcpy-setActive
 ?rva0058E367@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E367,141,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E367.cpp,matched,static new-memcpy factory via donor readInformPlayerLeaveFrameMessage
+?Rva005EF096Set@@YAXHPAURva005EF096Outer@@HH@Z,,0x005EF096,207,Code/GameEngine/Source/Common/Rva005EF096Apt.cpp,matched,fetch StatsCommandPoints plus Army CommandPoints text
