@@ -65,6 +65,7 @@ public:
 	virtual void rvaVirtual(AICommandParms *parms) = 0;
 	void rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src);
 	void rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src);
+	void rva003530F3(const void *obj, const Coord3D &pos, CommandSourceType src);
 };
 
 void Rva00352F9D::rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src)
@@ -80,6 +81,16 @@ void Rva00352F9D::rva00352F9D(const void *waypoint, Int intVal, CommandSourceTyp
 void Rva00352F9D::rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src)
 {
 	AICommandParms parms((AICommandType)0x4B, src);
+	parms.m_pos = pos;
+	parms.m_obj = (void *)obj;
+	rvaVirtual(&parms);
+}
+
+// ?rva003530F3@Rva00352F9D@@QAEXPBXABUCoord3D@@W4CommandSourceType@@@Z @0x003530F3 117B
+// Evidence: unlock same TU as 0x0035300B; AICommandParms 0xC0 via rowed ctor 0x00351BD0 with 0x4A and src; m_pos from pos (12B) plus m_obj from obj; virtual slot 0 then free; caller 0x00353392.
+void Rva00352F9D::rva003530F3(const void *obj, const Coord3D &pos, CommandSourceType src)
+{
+	AICommandParms parms((AICommandType)0x4A, src);
 	parms.m_pos = pos;
 	parms.m_obj = (void *)obj;
 	rvaVirtual(&parms);
