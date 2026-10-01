@@ -45124,3 +45124,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002B22AF@Rva002B22AF@@QAEXPAVRva002B22AFArg@@@Z,,0x002B22AF,68,Code/GameEngine/Source/Common/Rva002B22AFMarshal.cpp,matched,virtual forwarder 5 slots
 ?rva0039C1C3@Rva0039C1C3@@QAEXPAVRva0039B893@@ABV2@ABU__false_type@_STL@@I_N@Z,,0x0039C1C3,186,Code/GameEngine/Source/Common/Rva0039C1C3Insert.cpp,matched,chain lane calls 0x0039B8D8 just landed callers 0x0039C2AB and 0x0039C4EB stride 0x14 ret 0x14 plus /G7 for imul
 ?rva00407020@Rva00407020@@QAE_NXZ,,0x00407020,94,Code/GameEngine/Source/Common/Rva00407020.cpp,matched,chain via 0x406F12 now ready callees rowed callers 0x5B48BC 0x5B4CFB 0x5B56DC
+?Rva0040707EUpdate@@YAXPAX00PAVRva00406FBF@@@Z,,0x0040707E,27,Code/GameEngine/Source/Common/Rva0040707E.cpp,matched,chain via 0x00406FBF caller 0x00407279 4-arg cdecl virtual slot 0x78
