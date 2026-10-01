@@ -7,10 +7,14 @@
 // then the texture pointer at +0x34 (TextureClass::Release_Ref 0x009EB7A0).
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/texture.h
-class TextureClass
+class TextureBaseClass
 {
 public:
 	void Release_Ref(void);
+};
+
+class TextureClass : public TextureBaseClass
+{
 };
 
 class TextureRef
