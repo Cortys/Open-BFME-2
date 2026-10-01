@@ -45740,3 +45740,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005751ED@Rva00574815@@UAEXPAX@Z,,0x005751ED,114,Code/GameEngine/Source/Common/Rva005751EDMethod.cpp,matched,vtable slot 11 class Rva00574815 rowed callees
 ?rva00051017@Rva00051017@@QAEXH@Z,,0x00051017,33,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioSampleLoop.cpp,matched,IAT 3D vs 2D loop count guard plus2 caller 0x5EFE9
 ?rva00051CBA@Rva00051CBA@@QAEHABV1@@Z,,0x00051CBA,38,Code/GameEngine/Source/Common/Rva00051CBAEquals.cpp,matched,Coord3D equals then byte at 0xC via nested ifs unblocks 0x51CF1
+?rva00051CF1@Rva00051CF1@@QAE_NAAV1@@Z,,0x00051CF1,49,Code/GameEngine/Source/Common/Rva00051CF1Equals.cpp,matched,chain via rowed 0x00051CBA 5x0x10 loop caller 0x00052B53
