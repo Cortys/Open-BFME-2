@@ -4735,3 +4735,6 @@ FUN_009e017a	0x005E017A	135	blocked	multi-map lower_bound plus insert same-this 
 FUN_00979900	0x00579900	149	blocked	UnicodeString format varargs GameText slot15 narrow_string wall t=8 model=muse-spark
 FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont edi-esi incoming t=8 model=muse-spark
 ?rva0020F685@Rva0020F685@@QAEXXZ	0x0020F685	141	partial	ebx-edi swap for this-index plus null jmp-xor vs xor t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x0020f685.cpp
+?addScience@Player@@AAE_NW4ScienceType@@@Z	0x002AD661	392	blocked	retail vector-find plus float ReadyFrame plus extra globals diverges from BFME1 and ZH donors t=10 model=muse-17
+?rva005E017A@Rva005E017A@@QAEHXZ	0x005E017A	135	blocked	STL map operator-subscript with mixed rows int-int lowerbound plus long-LadderPref pair plus int-BuddyInfo insert needs exact instantiation t=12 model=muse-17
+?rva0047727E@Rva0047727E@@QAEXPAVThing@@@Z	0x0047727E	58	blocked	scheduling loads-stores plus dead add eax-8 needs lever t=10 model=muse-17
