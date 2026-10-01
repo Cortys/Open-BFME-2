@@ -5167,3 +5167,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00366561@Rva00366561@@QAE_NHH@Z	0x00366561	42	partial	store order [34] before [30] and edx reuse for second arg vs eax with [34] last t=20 model=muse-03 score=0.92 stash=reverse/attempts/0x00366561.cpp
 ?rva00366B77@Rva00366B30@@QAEXXZ	0x00366B77	371	blocked	complex float quad with 4 trigger walks frame 0x4c vs 0x38 extra struct copy and xmm live range t=15 model=muse-03
 ?Rva0060186FCopy@@YAPAVCoord3D@@PBV1@0PAV1@@Z	0x0060186F	29	blocked	passes 5 args to 3-arg rowed 0x00601797 and takes 4 from caller 0x0060194C so arity needs fix t=10 model=muse-18
+??0Rva001DA19E@@QAE@XZ	0x001DA19E	311	blocked	unknown 0xC4 base with vtable 0x7DA270 plus 5 E16 vectors plus floats kF7C; no donor or vtable identity; needs INI table t=12 model=muse-17
+??1Rva005AFE3F@@UAE@XZ	0x005AFE3F	71	blocked	EH dtor with vtable 0xC728B8 plus Get plus manager; EmptyBase gives +4 shift plus base call vs retail no base; needs no-shift unwindable recipe t=15 model=muse-17
