@@ -33,3 +33,23 @@ void Rva002E180DReinsert(void **begin, void **end, void *extra)
 {
 	Rva002E0E7CReinsert(begin, end, 0, extra);
 }
+
+void **Rva002E0864Median(void **a, void **b, void **c)
+{
+	if (((int *)(*a))[3] > ((int *)(*b))[3])
+	{
+		if (((int *)(*b))[3] > ((int *)(*c))[3])
+			return b;
+		if (((int *)(*a))[3] <= ((int *)(*c))[3])
+			return a;
+		return c;
+	}
+	else
+	{
+		if (((int *)(*a))[3] > ((int *)(*c))[3])
+			return a;
+		if (((int *)(*b))[3] > ((int *)(*c))[3])
+			return c;
+		return b;
+	}
+}
