@@ -45266,3 +45266,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?xfer@Rva0036783F@@MAEXPAVXfer@@@Z,,0x0036788E,72,Code/GameEngine/Source/Common/Rva0036783FXfer.cpp,matched,slot 3 xfer via base Version1 IsLightCRC int Snapshot helper
 ?rva00404AB1@Rva00404AB1@@QAEXPAVXfer@@@Z,,0x00404AB1,82,Code/GameEngine/Source/Common/Rva00404AB1Method.cpp,matched,xfer-pattern Version1 plus 20 float pairs plus 2 uints mirrors Rva00404781 layout
 ?rva00404D70@Rva00404D70@@QAEHABVAsciiString@@@Z,,0x00404D70,117,Code/GameEngine/Source/Common/Rva00404D70Find.cpp,matched,vector find via StringBase compareNoCase row 0x00006A00 callers 0x00404FDB 0x0040502F 0x00405697 returns index or 0x7fffffff
+?rva0040475C@Rva00404781@@QAEXXZ,,0x0040475C,37,Code/GameEngine/Source/Common/Rva00404781Method.cpp,matched,same layout as 0x00404781 zero m_a m_b flags
