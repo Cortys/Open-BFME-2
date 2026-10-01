@@ -68,6 +68,12 @@ extern "C" __declspec(dllimport) int __cdecl strncmp(const char *, const char *,
 
 extern void ji_008793a0();
 extern void ji_00879190();
+/* These two names are the addresses the placed body calls: the msvcr71 clock
+ * stub at 0x006B8C30 and the memmove stub at 0x006B8A30, which the ledger rows
+ * ?ji_006b8c30 and ?ji_006b8a30 define (reverse/symbols.csv pins both names to
+ * those addresses). Bind the names so the unit links; bytes are unchanged. */
+#pragma comment(linker, "/alternatename:?ji_008793a0@@YAXXZ=?ji_006b8c30@@YAXXZ")
+#pragma comment(linker, "/alternatename:?ji_00879190@@YAXXZ=?ji_006b8a30@@YAXXZ")
 extern int Rva008793B0(int);
 extern unsigned int rva008793c0(unsigned int);
 extern double bfmeScale(unsigned int);
