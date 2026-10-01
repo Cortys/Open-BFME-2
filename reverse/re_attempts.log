@@ -5063,3 +5063,5 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva0018C705@Rva0018C705@@QAEPAFIPAURva0018C2E7Node@@0@Z	0x0018C705	45	blocked	extra lea ebp-b push for 3-arg copy plus missing ebp frame t=8 model=muse-10
 ?Rva0018C533Copy@@YAPAFPAURva0018C2E7Node@@0PAF@Z	0x0018C533	27	blocked	extra lea ebp-1 push for rowed 3-arg copy; second pin forbidden at rowed address t=5 model=muse-10
 ??1Rva0018C262@@QAE@XZ	0x0018C3E6	56	blocked	missing or ebp-4 -1 before free t=15 model=muse-10 (stash 0.93 kept)
+?rva002A76A0@Rva002A7677@@QAEXHHHH_N@Z	0x002A76A0	193	blocked	needs STL reallocation with 5 args and EBP frame ours 8B vs 193B t=8 model=muse-03
+?getPlayersWithRelationship@PlayerList@@QAEIHI_N@Z	0x002A7C70	192	blocked	O1 190B vs 192B minus2; this-in-esi-vs-edx plus zero-in-edi-vs-esi plus test-vs-cmp for src-null plus and-vs-mov for i-zero; nonvolatile-zero-coalesced plus retVal-after-first-if tried t=15 model=muse-03 (stash 0.93 kept)
