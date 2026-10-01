@@ -85,7 +85,7 @@ public:
     string _M_name;
 };
 typedef char _LocaleImplStorage[(sizeof(_Locale_impl)==24)?1:-1];
-locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
+inline locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
 
 }
 namespace _STL {
