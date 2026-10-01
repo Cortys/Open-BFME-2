@@ -46,10 +46,21 @@ public:
 	char m_pad[0x50 - 0x14];
 	AsciiString m_50;
 	void rva00238CC2(AsciiString *dest);
+	void rva00238D38();
 };
 void Rva00238CC2::rva00238CC2(AsciiString *dest)
 {
 	dest->set((Rva00238C34 &)Rva005D2F96Build(
 		(const Rva005D2F96S16 &)Rva005F17C6Build((const Rva005F17C6S12 &)(m_50 + g_00BBE09C), (int)dest),
 		g_00BBE09C));
+}
+//
+// ?rva00238D38@Rva00238CC2@@QAEXXZ @0x00238D38 47B
+// chain from 0x00238CC2: inits four AsciiStrings at +4 +8 +c +10 via rva00238CC2; caller 0x0004182F.
+void Rva00238CC2::rva00238D38()
+{
+	rva00238CC2(&m_04);
+	rva00238CC2(&m_08);
+	rva00238CC2(&m_0c);
+	rva00238CC2(&m_10);
 }
