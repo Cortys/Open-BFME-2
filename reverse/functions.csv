@@ -46374,3 +46374,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003AE43F@@QAE@ABV0@@Z,,0x003AE43F,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE465 plus own 3 vptrs
 ??0Rva003AE50B@@QAE@ABV0@@Z,,0x003AE50B,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy calls rowed base 0x003AF50D plus own 3 vptrs
 ??0Rva003AE4E5@@QAE@ABV0@@Z,,0x003AE4E5,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE50B plus own 3 vptrs
+?rva001E42F2@Rva001E42F2@@QAEXPBH@Z,,0x001E42F2,44,Code/GameEngine/Source/Common/Rva001E42F2Init.cpp,matched,zero 0x4C local via ji thunk then Object rva0028CFB2
