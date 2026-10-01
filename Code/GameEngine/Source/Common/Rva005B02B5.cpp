@@ -21,6 +21,7 @@ public:
 	void rva005B02B5();
 	void rva005B02FD();
 	void rva005B0249();
+	void rva005B027F();
 private:
 	char m_pad[0x168];
 	float m_val168;
@@ -54,4 +55,12 @@ void Rva005B02B5::rva005B0249()
 	float dec = active ? g_00BC4DD8 : INV;
 	float *p = &m_val168;
 	*p -= dec;
+}
+
+void Rva005B02B5::rva005B027F()
+{
+	bool active = ((AIPlayer *)g_009FE720)->rva00232683();
+	float dec = active ? g_00BC4DD8 : INV;
+	float *p = &m_val168;
+	*p += dec;
 }
