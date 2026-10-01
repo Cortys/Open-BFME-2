@@ -45895,3 +45895,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00530FAE@Rva00530FC5@@QAEXXZ,,0x00530FAE,23,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,frees m_data at +4 and m_bits at +8 via array delete
 ??1Rva0022304A@@QAE@XZ,,0x0022304A,53,Code/GameEngine/Source/GameClient/Rva0022304ADtor.cpp,matched,chain dtor via rowed 0x0022300F and narrow releaseBuffer same EH shape as member
 ?rva00223898@Rva00223898@@QAEXPAX@Z,,0x00223898,28,Code/GameEngine/Source/GameClient/Rva00223898Free.cpp,matched,chain destroys +4 member via rowed 0x0022300F then frees via rowed _free
+?rva0022356C@Rva0022356C@@QAEPAXPBX@Z,,0x0022356C,37,Code/GameEngine/Source/GameClient/Rva00223547NewNode.cpp,matched,hashtable new-node via rowed 0x307F0 and rowed _Construct 0x00223195
