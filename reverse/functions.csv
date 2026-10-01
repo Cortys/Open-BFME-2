@@ -45356,3 +45356,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00483083@PoisonedBehavior@@QAEXXZ,,0x00483083,38,Code/GameEngine/Source/GameLogic/Object/Behavior/PoisonedBehaviorRva00483083.cpp,matched,PoisonedBehavior poison reset via BuildListInfo and Rva00270619Clear
 ?Rva00600777Set@@YAXPAD@Z,,0x00600777,46,Code/GameEngine/Source/Common/Rva00600777.cpp,matched,free cdecl copy to TheLangDir plus v8 call
 ?rva00298893@BfmeSubBGB@@QAE_NXZ,,0x00298893,174,Code/GameEngine/Source/Common/Rva00298893.cpp,matched,BfmeSubBGB loop via slots plus TheGameLogic findObjectByID and report
+?rva00298E6A@Rva00298E6A@@QAEXXZ,,0x00298E6A,63,Code/GameEngine/Source/Common/Rva00298E6A.cpp,matched,unlock slot31 plus tail slot480 via Object pool EraseRange clear
