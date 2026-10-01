@@ -46223,3 +46223,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva00360D26Member@@QAE@XZ,,0x003623E5,82,Code/GameEngine/Source/GameLogic/Object/Rva003623E5MemberCtor.cpp,matched,4-byte pool-index filter ctor folded with member ctor; the 0x94-byte record is a temporary
 ?SkipNext@Debug@@SA_N_N@Z,,0x00038790,33,Code/GameEngine/Source/Common/Debug_recordCallsite.cpp,matched,Static Debug callsite recorder; profile caller sets the flag before the separate virtual SkipNext call
 ?rva00397CC9@Rva0039834C@@QAEPAXABURva0039627D@@@Z,,0x00397CC9,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00397CC9Alloc.cpp,matched,thiscall tree-member factory; target callers pass the tree in ECX but retail body leaves it unused
+?rva00224818@Rva00222A8BTarget@@QAEXXZ,,0x00224818,311,Code/GameEngine/Source/GameClient/Rva00224818.cpp,matched,BFME1 WindowManager_bfmeRva0046E170 adapted to 14 levels
