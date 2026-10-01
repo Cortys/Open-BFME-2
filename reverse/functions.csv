@@ -45765,7 +45765,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005997CD@@QAE@H@Z,,0x00599784,73,Code/GameEngine/Source/Common/Rva005997CDCtor.cpp,matched,Ctor of Rva005997CD two lists plus string int bool via EH 1 caller
 ?rva0018C09B@Rva0018C09B@@QAEXG@Z,,0x0018C09B,76,Code/GameEngine/Source/Common/Rva0018C09BRender.cpp,matched,unlock lane rowed Set_Vertex Set_Index extern D3DDevice number_of_DX8_calls ret-4 WORD arg
 ??0Rva004E63FC@@QAE@XZ,,0x004E63FC,89,Code/GameEngine/Source/Common/Bfme/Rva004E63FCInit.cpp,matched,unlock lane rowed StringBase ctor FontDesc ctor set string literals ret this
-?rva0022356C@Rva0022356C@@QAEPAXPBX@Z,,0x0022356C,37,Code/GameEngine/Source/GameClient/Rva0022356CNewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and true 0x00223195 unlocks 0x002237C7
 ?rva00223A9F@Rva00223A9F@@QAEPAXPBVAsciiString@@@Z,,0x00223A9F,37,Code/GameEngine/Source/GameClient/Rva00223A9F.cpp,matched,Find-payload via 0x0041534B at +0x90 null-checked node+8 unlocks 0x005B2295
 ?rva00223CDB@Rva00223CDB@@QAEHPBVAsciiString@@@Z,,0x00223CDB,39,Code/GameEngine/Source/GameClient/Rva00223CDB.cpp,matched,Find-int over table at +0x5c via rowed Iter find 0x0041534B
 ??1Rva0022366C@@QAE@XZ,,0x0022366C,57,Code/GameEngine/Source/GameClient/Rva0022366CDtor.cpp,matched,Hash-table dtor via rowed clear 0x003A2A41 and free at +4
@@ -45846,3 +45845,5 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00432E5D@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432E5D,99,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,move list2 to head list1 mirror of 0x00432EC0
 ?Rva00433D3CClear@@YAXXZ,,0x00433D3C,17,Code/GameEngine/Source/Common/Rva00433D3CClear.cpp,matched,clear byte 0x29D via g_Va00E032E0 shared with 0x00433D27
 ?rva00433FDD@Rva00433FDD@@QAEXXZ,,0x00433FDD,22,Code/GameEngine/Source/Common/Rva00433FDDSet.cpp,matched,set 0x27C to 3 or 1 from 0x280 callers share layout
+?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536AF5,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock
+?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00536981,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock
