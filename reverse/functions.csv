@@ -46495,3 +46495,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0046D1AC@HordeContain@@UAE?AVAsciiString@@XZ,,0x0046D1AC,75,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainIface11CSlots.cpp,matched,slot 9 of the HordeContain +0x11C interface: the single name of the module data AsciiString list or the empty string
 ??0FiringTracker@@QAE@PAVThing@@PBVModuleData@@@Z,,0x004DEB10,149,Code/GameEngine/Source/GameLogic/Object/FiringTrackerCtor.cpp,matched,FiringTracker ctor via UpdateModule base plus FOREVER donor BFME1 xfer layout
 ?rva00293E64@Object@@QAEXPAVDict@@@Z,,0x00293E64,155,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293E64.cpp,matched,Object +0x244 array virtual 0xB4 and Dict NameKey to AsciiString via rowed 0x00293275
+?rva000E01A3@Rva000E01A3@@QAE_NXZ,,0x000E01A3,13,Code/GameEngine/Source/Common/Rva000E01A3Check.cpp,matched,leaf thiscall self-pointer check via caller 0x3776CC
