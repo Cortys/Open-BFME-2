@@ -34,7 +34,7 @@ private:
 class UnicodeString
 {
 public:
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	~UnicodeString() { m_data.releaseBuffer(); }

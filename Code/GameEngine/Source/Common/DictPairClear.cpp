@@ -51,7 +51,7 @@ public:
 	~UnicodeString();
 	void releaseBuffer();
 
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 
 private:
 	unsigned short *m_data;

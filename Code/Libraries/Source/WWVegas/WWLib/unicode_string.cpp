@@ -56,9 +56,16 @@ public:
     UnicodeString &operator+=(wchar_t character);
     UnicodeString &operator+=(const wchar_t *text);
 
+    static UnicodeString TheEmptyString;
+
 private:
     wchar_t *m_text;
 };
+
+// Zero Hour's UnicodeString.cpp defines the shared empty string here; retail
+// keeps it in .bss at VA 0x00E0C898, the address every reader in the ledger
+// loads (GadgetTextEntryGetText, GameInfo::clearSlotList, ...).
+UnicodeString UnicodeString::TheEmptyString;
 
 inline UnicodeString::UnicodeString(const UnicodeString &that)
 {

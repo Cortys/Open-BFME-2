@@ -93,7 +93,7 @@ public:
 class UnicodeString : public StringBase<unsigned short>
 {
 public:
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}

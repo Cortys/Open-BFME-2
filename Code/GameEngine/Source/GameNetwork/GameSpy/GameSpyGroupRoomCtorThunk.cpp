@@ -12,7 +12,7 @@
 class UnicodeString
 {
 public:
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 	UnicodeString() { m_data = 0; }
 	~UnicodeString();
 	UnicodeString &operator=(const UnicodeString &that)

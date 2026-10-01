@@ -11,7 +11,7 @@ typedef bool Bool;
 class UnicodeString
 {
 public:
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 
 	UnicodeString() {}
 	void translate(const AsciiString &source);

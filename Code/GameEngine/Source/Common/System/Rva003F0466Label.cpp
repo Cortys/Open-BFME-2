@@ -13,7 +13,7 @@
 class UnicodeString
 {
 public:
-	static const UnicodeString TheEmptyString;
+	static UnicodeString TheEmptyString;
 	UnicodeString() : m_text(0) {}
 	UnicodeString(const UnicodeString &that)
 	{
