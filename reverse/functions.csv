@@ -45281,3 +45281,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva00222343@@QAE@XZ,,0x00222343,89,Code/Libraries/Source/WWVegas/WWMath/Rva00222343Ctor.cpp,matched,WWMath param block 14 ints 2 zero bytes gap unlock callers 0x00224296 0x006CF230
 ?rva002227DF@Rva002227DF@@QAEXXZ,,0x002227DF,85,Code/GameEngine/Source/Common/System/Rva002227DFApt.cpp,matched,Apt Background.apt slot 0x50 member 0x324 gap unlock caller 0x0023A1BB
 ?rva003147DA@GameWindow@@QAEHXZ,,0x003147DA,28,Code/GameEngine/Source/GameClient/GUI/GameWindowRva0031475A.cpp,matched,chain of 0x0031475A via winHide status bit0
+?Rva003F2394Xfer@@YAPAVXfer@@PAV1@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x003F2394,204,Code/GameEngine/Source/Common/System/Rva003F2394Xfer.cpp,matched,donor XferScienceTypeVector same 204B shape via rowed LivingWorldArmyID
