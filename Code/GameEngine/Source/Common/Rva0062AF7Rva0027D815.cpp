@@ -20,6 +20,14 @@ struct Rva0027D5E0Box
 	float hiY;
 	float hiZ;
 };
+
+// Result pair of Rva0027D6DF (+0/+4 used, +8 spare keeps retail's frame).
+struct Rva0027D6DFRes
+{
+	float out1;
+	float out2;
+	float m_spare;
+};
 class Rva0062AF7
 {
 public:
@@ -37,7 +45,7 @@ public:
 	virtual void slot11();
 	virtual void slot12();
 	virtual void Rva0027D5E0(float *out, const float *in);
-	virtual void slot14();
+	virtual void Rva0027D6DF(float *out, const float *in);
 	virtual void slot15();
 	virtual void slot16();
 	virtual void slot17();
@@ -314,4 +322,23 @@ void Rva0062AF7::Rva0027DA58()
 {
 	operator delete[](m_arr24);
 	m_arr24 = 0;
+}
+
+// ?Rva0027D6DF@Rva0062AF7@@UAEXPAMPBM@Z @0x0027D6DF 158B, vslot 14 (offset
+// 0x38) next to Rva0027D5E0 at slot 13 with the same signature. Snaps the
+// point to the far or near box edge per axis (half the box extent against
+// the input coordinate), then fills z from the slot-6 height query.
+// Structural inference: the half factor is the 0.5f literal (pooled at
+// 0x00BC26F0); the banked attempt read it through a pointer cast, which
+// hoisted the factor load.
+void Rva0062AF7::Rva0027D6DF(float *out, const float *in)
+{
+	Rva0027D5E0Box box;
+	Rva0027D6DFRes res;
+	slot08(&box);
+	res.out1 = (0.5f * (box.hiX - box.loX) > in[0]) ? box.hiX : box.loX;
+	res.out2 = (0.5f * (box.hiY - box.loY) > in[1]) ? box.hiY : box.loY;
+	out[2] = slot06(res.out1, res.out2, 0);
+	out[0] = res.out1;
+	out[1] = res.out2;
 }
