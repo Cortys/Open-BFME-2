@@ -16,6 +16,7 @@
 // BaseUpgrade pool key and the rowed chained proc. Supersedes the 0.98 bank
 // (its 94B size under-claimed the true 98B body; the full emission matches).
 
+#pragma optimize("sy", on)
 class OpenContainModuleData
 {
 public:
@@ -25,6 +26,7 @@ public:
 private:
 	unsigned char m_pad[0x118 - 4];
 };
+#pragma optimize("", on)
 
 template <typename T> class StringBase
 {
