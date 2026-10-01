@@ -4824,3 +4824,4 @@ FUN_006dc52b	0x002DC52B	104	blocked	intrusive virtual loop plus two List_base cl
 FUN_006dc4b8	0x002DC4B8	115	blocked	same 0xE0C 0xE10 overlapping List_base pair as 0x002DC52B plus list erase with ret 8 needs class layout t=5 model=muse-11
 ?rva002DC681@Rva002DC267@@QBE_NXZ	0x002DC681	201	partial	missing jb for unsigned high vs 0 t=25 model=muse-11 score=0.99 stash=reverse/attempts/0x002dc681.cpp
 ?Rva00400783Get@@YA?AVAsciiString@@ABV1@_N@Z	0x00400783	277	partial	1-in-esi-vs-edi plus missing dead mov ecx TheGameState plus slash immediate vs esi-hoisted push plus loop entry layout t=18 model=muse-11 score=0.94 stash=reverse/attempts/0x00400783.cpp
+?Rva006CD070Atof@@YANPBD@Z	0x006CD070	14	blocked	atof wrapper tail wall 5B jmp frameless under O1 O2 Os Ot Oy GX- EHs-c- plus 17B frame-plus-call under Od Og- Oy need 14B frameless mov-push-call-add-ret t=18 model=muse-16
