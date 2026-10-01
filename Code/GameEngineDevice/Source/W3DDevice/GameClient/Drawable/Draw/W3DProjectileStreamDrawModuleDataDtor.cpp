@@ -8,14 +8,20 @@
 
 #include "ascii_string.h"
 
-class UpdateModuleData
+class Snapshot
 {
 public:
-	UpdateModuleData() {}
-	virtual ~UpdateModuleData() {}
+	virtual ~Snapshot();
 };
 
-class W3DProjectileStreamDrawModuleData : public UpdateModuleData
+extern const void *const g_00BBB554[];
+
+inline Snapshot::~Snapshot()
+{
+	*(const void **)this = g_00BBB554;
+}
+
+class W3DProjectileStreamDrawModuleData : public Snapshot
 {
 public:
 	W3DProjectileStreamDrawModuleData();
