@@ -46486,3 +46486,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva001B6900Set@@YAXPAXH@Z,,0x001B6900,12,Code/GameEngine/Source/Common/Rva001B6900Set.cpp,matched,free setter to plus0x6C via caller 0x001BD050 LINK
 ?Rva001B6910Set@@YAXPAXH@Z,,0x001B6910,15,Code/GameEngine/Source/Common/Rva001B6910Set.cpp,matched,free setter to plus0xC0 via caller 0x001BD050 LINK
 ?rva00524973@Rva00524B7A@@QAEXXZ,,0x00524973,186,Code/GameEngine/Source/Common/Rva00524973Vslot.cpp,matched,vslot 0x30 of 0x00867DFC via TheDisplay slot and broadcast reuse
+?rva002D36F5@RadarWindowOverrideSource@@QAEXABUTreeHintRef00217D4C@@@Z,,0x002D36F5,21,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,caller 0x00405A86 with this theRadarWindowOverrideSource and sibling rva002D370A shape and pin TreeHintRef at 0x001FF3A9
