@@ -45391,3 +45391,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00222A53@Rva00222A8BTarget@@QAEEXZ,,0x00222A53,56,Code/Libraries/Source/WWVegas/WWLib/Rva00222A53Check.cpp,matched,window-modal check via TheWindowManager slot 0xC0 and TheRva00222A8BTarget caller
 ?Rva00222C93Append@@YAAAVAsciiString@@AAV1@PBD@Z,,0x00222C93,56,Code/GameEngine/Source/Common/Rva00222C93Concat.cpp,matched,free concat helper via global CharSource plus concat row same EH shape as precedents
 ?rva00222BCD@Rva00222A8BTarget@@QAEHPAXPBDH10000@Z,,0x00222BCD,69,Code/Libraries/Source/WWVegas/WWLib/Rva00222BCDInvoke.cpp,matched,forward 8 args to invoke plus slot 0x28 fire when 0x312 clear
+?rva00222F0A@Rva00222F0A@@QAEHXZ,,0x00222F0A,75,Code/GameEngine/Source/Common/Rva00222F0AFinder.cpp,matched,scan 14-entry table for free slot via map find absent
