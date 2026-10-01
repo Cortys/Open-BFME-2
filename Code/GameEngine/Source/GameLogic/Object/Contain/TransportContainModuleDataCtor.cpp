@@ -36,6 +36,8 @@ struct BfmeE16
 
 #include "ascii_string.h"
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -136,11 +138,11 @@ TransportContainModuleData::TransportContainModuleData()
 	, m_exitPitchRate(0.0f)
 	, m_healthRegen(0.0f)
 	, m_exitDelay(0)
-	, m_typeOneForWeaponSet(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4))
-	, m_typeTwoForWeaponSet(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4))
-	, m_typeOneForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4))
-	, m_typeTwoForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4))
-	, m_typeThreeForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4))
+	, m_typeOneForWeaponSet(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype))
+	, m_typeTwoForWeaponSet(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype))
+	, m_typeOneForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype))
+	, m_typeTwoForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype))
+	, m_typeThreeForWeaponState(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype))
 	, m_forceOrientationContainer(true)
 	, m_canGrabStructure(false)
 	, m_scatterNearbyOnExit(true)
@@ -163,11 +165,11 @@ TransportContainModuleData::TransportContainModuleData()
 	, m_releaseSnappyness(0.7f)
 {
 	m_filter40.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 	m_filter44.applyFilter(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 	m_fadeFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

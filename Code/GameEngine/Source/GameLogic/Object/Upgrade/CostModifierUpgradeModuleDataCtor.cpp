@@ -49,6 +49,8 @@ private:
 	char *m_data;
 };
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -103,8 +105,8 @@ CostModifierUpgradeModuleData::CostModifierUpgradeModuleData()
 	, m_slaughter(false)
 {
 	m_objectFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 	m_labelForPalantirString.set(">UNSPECIFIED<");
 	m_startsActive = false;
 }

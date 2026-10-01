@@ -30,6 +30,8 @@ template<> bitset<128> &bitset<128>::reset();
 
 #include "ascii_string.h"
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -95,6 +97,6 @@ OCLSpecialPowerModuleData::OCLSpecialPowerModuleData()
 	m_upgradeOCL.clear();
 	m_createLoc = 0;
 	m_nearestSecondaryObjectFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

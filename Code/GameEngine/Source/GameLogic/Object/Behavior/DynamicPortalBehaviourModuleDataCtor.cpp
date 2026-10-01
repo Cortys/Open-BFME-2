@@ -57,6 +57,8 @@ struct DynamicPortalWayPoint
 	int m_second;
 };
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -126,5 +128,5 @@ DynamicPortalBehaviourModuleData::DynamicPortalBehaviourModuleData() :
 	topAttackPos->m_y = 0.0f;
 	topAttackPos->m_z = 0.0f;
 	m_destroyedDamageTimeout.applyFilter(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

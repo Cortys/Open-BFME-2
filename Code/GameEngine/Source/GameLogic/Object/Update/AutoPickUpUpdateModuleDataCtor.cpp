@@ -25,6 +25,8 @@ extern int g_Va00DBA4E4;
 
 struct BfmeE16 { float x, y, z, w; };
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -87,6 +89,6 @@ AutoPickUpUpdateModuleData::AutoPickUpUpdateModuleData()
 	m_runFromButton = 0;
 	m_canScanWhileAttackingOrMoving = 0;
 	m_pickUpFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

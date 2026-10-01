@@ -14,6 +14,8 @@
 // builds through the 0x3623E5 pin and the +0x20 member through the rowed
 // 0x25342C construct.
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -88,5 +90,5 @@ RadiateFearUpdateModuleData::RadiateFearUpdateModuleData()
 {
 	m_20.construct();
 	reinterpret_cast<Rva003623E5Filter *>(&m_victimFilter)->applyFilter(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

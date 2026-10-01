@@ -14,6 +14,16 @@
 // Same EH 0/1/2 shape as EmotionTracker precedent.
 #include <vector>
 
+// Retail VA 0x00DFEFA4: 28-byte prototype copied as BfmeFixedStorage by
+// filter constructors. The consumers establish the copy type; the bytes are
+// preserved verbatim from game.dat, without assigning member semantics.
+unsigned char g_00DFEFA4StoragePrototype[28] = {
+	0xEF, 0x37, 0x01, 0x38, 0x13, 0x38, 0x25, 0x38,
+	0x37, 0x38, 0x49, 0x38, 0x5B, 0x38, 0x6D, 0x38,
+	0x7F, 0x38, 0x91, 0x38, 0xA3, 0x38, 0xB5, 0x38,
+	0xC7, 0x38, 0xD9, 0x38
+};
+
 class Rva001EAE6FHelper
 {
 public:
@@ -64,6 +74,6 @@ Rva00507823::Rva00507823()
 	, m_124(false)
 {
 	m_filter120.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

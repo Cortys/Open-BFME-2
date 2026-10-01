@@ -22,6 +22,8 @@ namespace _STL {
 template<> bitset<128> &bitset<128>::reset();
 }
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -89,6 +91,6 @@ AttachUpdateModuleData::AttachUpdateModuleData()
 	m_parentEnemyDiedEvaEvent = -1;
 	memset(m_parentStatus, 0, sizeof(m_parentStatus));
 	m_objectFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }

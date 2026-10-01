@@ -18,6 +18,8 @@
 
 extern int g_Va00DBA4E4;
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -72,8 +74,8 @@ BoredUpdateModuleData::BoredUpdateModuleData()
 	m_scanDelayTime = LogicFramesPerSecond;
 	m_scanDistance = 300.0f;
 	m_boredFilter.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 	m_specialPowerTemplate = 0;
 	m_canScanWhileAttackingOrMoving = 0;
 }

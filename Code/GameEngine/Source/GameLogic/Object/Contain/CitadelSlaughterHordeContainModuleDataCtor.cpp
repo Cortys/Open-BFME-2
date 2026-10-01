@@ -31,6 +31,8 @@ template<> bitset<128> &bitset<128>::reset();
 
 #include "ascii_string.h"
 
+extern unsigned char g_00DFEFA4StoragePrototype[28];
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -93,6 +95,6 @@ CitadelSlaughterHordeContainModuleData::CitadelSlaughterHordeContainModuleData()
 	m_fxForRingEntry = 0;
 	memset(m_statusForRingEntry.m_words, 0, sizeof(m_statusForRingEntry.m_words));
 	m_objectToDestroy.initFromStorages(
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)),
-		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(0x00DFEFA4)));
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)),
+		BfmeFixedStorage0004543D(*reinterpret_cast<const BfmeFixedStorage0004543D *>(g_00DFEFA4StoragePrototype)));
 }
