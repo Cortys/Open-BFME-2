@@ -364,8 +364,17 @@ def _git(*args, check=False):
 
 
 def staged():
+    """The C/C++ units staged for commit. The check compiles the working
+    tree, so a unit whose working copy differs from what is staged (a
+    partial `git add -p`, an edit after staging) would preview the wrong
+    bytes: refuse it, as the pre-commit hook does."""
     out = _git("diff", "--cached", "--name-only", "--diff-filter=ACMR", "--", "Code/").split()
-    return [p for p in out if p.lower().endswith((".c", ".cpp"))]
+    units = [p for p in out if p.lower().endswith((".c", ".cpp"))]
+    partial = _git("diff", "--name-only", "--", *units).split() if units else []
+    if partial:
+        raise SystemExit("link_check: --staged checks the working tree, but these staged units also have "
+                         f"unstaged edits: {', '.join(partial)}; stage or stash them first")
+    return units
 
 
 def refresh_stale(index, truth):

@@ -43,10 +43,20 @@ These are Open-BFME-1's rules (its tools/link_census.py), ported function for
 function so the two projects measure LINKING the same way; only paths and the
 retail-truth inputs this repository lacks differ (no data_rows.csv, no
 dir32_addresses.csv, no route= pins: see data_ledger, _dir32_rows and
-validated_import_routes). Before 2026-10-01 this census kept the COMDAT copy
-most objects compiled, exempted STLport and the array helpers, linked in
-ledger row order and had no wrong_selected; link_census_history.csv's
-*_prev_rule columns hold that rule's figures for the re-baseline row.
+validated_import_routes; a data_rows.csv refuses the census until its rules
+are ported). Before the port this census kept the COMDAT copy most objects
+compiled, exempted STLport and the array helpers, linked in ledger row order
+and had no wrong_selected: link_census_history.csv names the rules every row
+was measured under (`rules`, `prev_rules`; see HISTORY_FIELDS), and
+tools/census_rebaseline.py records the one row where they change.
+
+An object counts only when it is proven current, as Open-BFME-1 proves it:
+a census-grade compile receipt (build.compile_is_current(strict=True): the
+source, compile command, every included header and the listing of every
+include search directory unchanged) or, for a TU whose sidecar cannot carry
+that, this run's own witnessed compile (census_receipts.py). The objects, the
+compiler inputs and these tools must then hold still from the first check
+to the record (census_state); otherwise nothing is recorded.
 
 The census is diagnostic. The image it writes is not expected to run.
 """
@@ -54,6 +64,7 @@ import argparse
 import collections
 import concurrent.futures
 import csv
+import hashlib
 import json
 import os
 import re
@@ -76,7 +87,23 @@ REFERRER = re.compile(r"^(\S+\.obj) : error LNK20(?:01|19)")
 # These are compiler inputs, including the headers reached through TU shims
 # (reference/ holds the shims and the open-bfme-1 submodule the toolchain and
 # BFME 1 headers come from).
-CENSUS_INPUTS = ("Code", "reference", "vendor", "reverse/functions.csv", "reverse/symbols.csv")
+CENSUS_INPUTS = ("Code", "reference", "vendor", "reverse/functions.csv", "reverse/symbols.csv",
+                 "reverse/dir32_addresses.csv")
+# Retail-truth ledgers Open-BFME-1 reads that this port has no loader for: one
+# appearing here would be silently ignored (its objects unlinked, its rows
+# owning nothing), so the census refuses instead (refuse_unsupported_ledgers).
+UNSUPPORTED_LEDGERS = ("reverse/data_rows.csv", "tools/data_rows.py")
+# The census's own code: a checkout updated under a running census would
+# judge the rest of the run with other rules (census_state).
+TOOL_FILES = ("link_census.py", "link_check.py", "build.py", "census_receipts.py", "progress.py", "link_debt.py")
+
+
+def refuse_unsupported_ledgers():
+    found = [name for name in UNSUPPORTED_LEDGERS if (ROOT / name).exists()]
+    if found:
+        raise SystemExit(f"link_census: {', '.join(found)} exists, but this census has no loader for it "
+                         "(Open-BFME-1's data-row rules are not ported): its objects and owners would be "
+                         "silently ignored; port data_ledger/data_sources first")
 
 
 def ledger():
@@ -1365,6 +1392,7 @@ def main(argv=None):
     ap.add_argument("--status", action="store_true",
                     help="redo link_status.csv and the last history row's LINKED from the last link log, on the census's own commit")
     args = ap.parse_args(argv)
+    global _INPUT_RECEIPTS
     path = OUT / "census.json"
     if args.report:
         report(json.loads(path.read_text(encoding="utf-8")))
@@ -1376,41 +1404,51 @@ def main(argv=None):
     if args.status:
         record(json.loads(path.read_text(encoding="utf-8")), ledger(), rerun=True)
         return 0
+    refuse_unsupported_ledgers()
     rows = ledger()
     if args.build:
         os.environ.setdefault("BUILD_POOL", str(max(1, (os.cpu_count() or 2) - 2)))
         # BUILD_RECOMPILE_ONLY trusts every object it is not told to rebuild;
-        # record(fresh=True) below relies on the full currency check instead.
+        # the full currency check below is what proves them instead.
         os.environ.pop("BUILD_RECOMPILE_ONLY", None)
         started = time.time()
         build.ensure_case_shims()
-        build.compile_rows(rows, compile_sources(rows))
+        import census_receipts
+        _INPUT_RECEIPTS = census_receipts.Receipts(OUT / "compile_inputs.json")
+        _INPUT_RECEIPTS.path.unlink(missing_ok=True)
+        build.compile_rows(rows, compile_sources(rows), input_proof=_INPUT_RECEIPTS, strict=True)
+        _INPUT_RECEIPTS.save()
         print(f"link_census: compile {time.time() - started:.0f}s", flush=True)
     present, missing = objects(rows)
     sources = _object_sources(rows)
-    # --build just proved every object current (compile_rows' own test).
-    stale = [] if args.build else stale_objects(present, sources)
+    # Never trust the compile step: a TU it skipped is only as current as its
+    # receipt, and one it compiled may have been replaced since.
+    state = census_state(present)
+    stale = stale_objects(present, sources)
     if stale:
         raise SystemExit(f"link_census: {len(stale):,} source objects are stale, e.g. {stale[0].name}; rerun with --build")
     if missing:
         print(f"link_census: {len(missing):,} objects missing (run the full ./build.sh first); "
               f"linking the {len(present):,} present", file=sys.stderr)
-    inputs = census_inputs_state()
     fresh_outputs(OUT / "census.exe")
     log, seconds, code = link(present)
     unexplained_exit(code, log, OUT / "census.exe")
-    if census_inputs_state() != inputs:
-        raise SystemExit("link_census: compiler inputs changed during link; nothing recorded")
+    if census_state(present) != state or stale_objects(present, sources):
+        raise SystemExit("link_census: compiler inputs, tools or objects changed during link; nothing recorded")
     crashed = FATAL.search(log)
     if crashed:
         # A linker that dies prints no per-symbol errors, which would read as
         # "0 unresolved": never report counts from a crashed link.
         raise SystemExit(f"link_census: the link died ({crashed.group(0).strip()}); no counts recorded")
     classes, detail, dup_kinds, dups = classify(log, rows)
-    census = {"when": time.strftime("%Y-%m-%d %H:%M"), "objects": len(present), "missing": len(missing),
+    census = {"when": utc_now(), "objects": len(present), "missing": len(missing),
               "seconds": seconds, "unresolved_classes": dict(classes), "duplicate_classes": dict(dup_kinds),
               "unresolved": detail, "duplicates": dups, "comdat_conflicts": comdat_conflicts(present),
-              "missing_objects": [str(p.relative_to(ROOT)) for p in missing[:200]]}
+              "missing_objects": [str(p.relative_to(ROOT)) for p in missing[:200]],
+              "rules": RULES, "commit": head(), "tools": state["tools"], "objects_digest": objects_digest(present)}
+    receipts = input_receipts()
+    if receipts is not None:
+        census["compile_input_run"] = receipts.run
     if args.scaffold:
         wanted = [name for name, entry in detail.items() if entry["kind"] in ("alias", "dump", "pinned-elsewhere")]
         table = alias_scaffold(rows, wanted)
@@ -1429,10 +1467,11 @@ def main(argv=None):
     OUT.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(census, indent=1), encoding="utf-8")
     report(census)
+    if census_state(present) != state:
+        raise SystemExit("link_census: compiler inputs, tools or objects changed after the link; nothing recorded")
     if args.history:
-        # --build just proved every object current (compile_rows, the full
-        # gate's own test), so record() need not hash them again.
-        record(census, rows, fresh=args.build)
+        # record() proves every object current again: the links take minutes.
+        record(census, rows)
     return 0
 
 
@@ -1627,7 +1666,7 @@ def excused(symbol, runtime, imported, thunks=None):
     return symbol in runtime
 
 
-def write_status(log, rows, present, meta, kept):
+def write_status(log, rows, present, meta, kept, publish=True):
     """One row per C/C++ source: does its object link cleanly on its own terms?
 
     Per file, not per program: a clean file may still call into one that is
@@ -1654,7 +1693,10 @@ def write_status(log, rows, present, meta, kept):
 
     Returns (clean, files, blocking names, clean under the rule before
     wrong_selected, stats). It also writes build/link_census/link_index.pkl, which tools/link_check.py
-    reads to check one file in seconds (`meta` names the census).
+    reads to check one file in seconds (`meta` names the census). With
+    publish=False neither file is written until stats["accept"]() is called,
+    so record() can refuse a run whose inputs moved without leaving a status
+    that no history row describes.
     """
     import link_debt
     crt = build.vc71_root() / "Vc7" / "lib" / "msvcrt.lib"
@@ -1716,19 +1758,25 @@ def write_status(log, rows, present, meta, kept):
         blockers[source] = {"object": obj, "linked": not any(counts), "unresolved": sorted(unresolved.get(obj, ())),
                             "duplicates": sorted(duplicates.get(obj, ())), "losers": sorted(losers.get(obj, ())),
                             "addresses": counts[3], "wrong_selected": wrong_selected.get(obj, [])}
-    with STATUS.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, STATUS_FIELDS, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(out[s] for s in sorted(out))
     clean = {source for source, r in out.items() if r["linked"] == "yes"}
-    import link_check
-    link_check.write_index(present, facts, blockers, {"runtime": runtime, "imported": imported, "stubs": thunks},
-                           meta or {}, {"exceptions": exceptions, "owners": dict(owners)})
-    print(f"link_census: wrote {STATUS.relative_to(ROOT).as_posix()} ({len(clean):,} of {len(out):,} sources link cleanly; "
-          f"{len(clean_prev):,} before wrong_selected; {len(unknown_only):,} of the clean ones use a selected "
-          "definition nothing proves or disproves)")
+
+    def accept():
+        temp = STATUS.with_suffix(".csv.tmp")
+        with temp.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, STATUS_FIELDS, lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(out[s] for s in sorted(out))
+        temp.replace(STATUS)
+        import link_check
+        link_check.write_index(present, facts, blockers, {"runtime": runtime, "imported": imported, "stubs": thunks},
+                               meta or {}, {"exceptions": exceptions, "owners": dict(owners)})
+        print(f"link_census: wrote {STATUS.relative_to(ROOT).as_posix()} ({len(clean):,} of {len(out):,} sources "
+              f"link cleanly; {len(clean_prev):,} before wrong_selected; {len(unknown_only):,} of the clean ones use "
+              "a selected definition nothing proves or disproves)")
+    if publish:
+        accept()
     blocking = set().union(*unresolved.values()) if unresolved else set()
-    return clean, len(out), len(blocking), clean_prev, {"unknown_only": unknown_only}
+    return clean, len(out), len(blocking), clean_prev, {"unknown_only": unknown_only, "accept": accept}
 
 
 def linked_split(clean):
@@ -1762,32 +1810,66 @@ def head():
                           capture_output=True, text=True, check=True).stdout.strip()
 
 
-def object_current(source, obj):
-    """The object is what this source, its recorded headers and this compile
-    command produce. This is build.compile_is_current without the include-
-    directory inventory: that fingerprint moves with unrelated files (a scratch
-    file in the repo root, another checkout's build/include) and flipped 18
-    provably identical objects to "stale" and back on 2026-09-28, which would
-    make the census refuse at random. An object with no dependency record must
-    at least be newer than its source."""
-    sidecar = build._deps_sidecar(obj)
-    if not sidecar.exists():
-        return obj.stat().st_mtime >= source.stat().st_mtime
-    meta = json.loads(sidecar.read_text())
-    if meta.get("source") != build._hash_file(str(source)):
+def utc_now():
+    """A census's `date`: UTC, minutes, the format every row uses."""
+    return time.strftime("%Y-%m-%d %H:%M", time.gmtime())
+
+
+_INPUT_RECEIPTS = None
+
+
+def input_receipts():
+    """Only the recorded census's fresh proof, never a reusable build cache."""
+    global _INPUT_RECEIPTS
+    if _INPUT_RECEIPTS is not None:
+        return _INPUT_RECEIPTS
+    import census_receipts
+    try:
+        run = json.loads((OUT / "census.json").read_text()).get("compile_input_run")
+    except (OSError, ValueError, TypeError, AttributeError):
+        return None
+    _INPUT_RECEIPTS = census_receipts.Receipts.load(OUT / "compile_inputs.json", run)
+    return _INPUT_RECEIPTS
+
+
+def object_current(source, obj, *, inventory_cache=None, allow_fresh=True):
+    """Open-BFME-1's proof: the full gate's receipt including the include
+    search inventory (a header newly added to an earlier search directory
+    shadows a recorded one without changing a recorded byte), else this
+    census's own witnessed compile (census_receipts). An object with no
+    receipt is never current, however new it is: its timestamp proves
+    nothing about the source and headers it was compiled from."""
+    if build.compile_is_current(source, obj, strict=True, inventory_cache=inventory_cache):
+        return True
+    if not allow_fresh:
         return False
-    for dep, digest in (meta.get("deps") or {}).items():
-        if build._hash_file(dep if os.path.isabs(dep) else str(ROOT / dep)) != digest:
-            return False
-    command, env = build.compiler_command(source, obj)
-    return meta.get("cmd") == build._cmd_fingerprint(command, env)
+    receipts = input_receipts()
+    return receipts is not None and receipts.current(source, obj)
 
 
 def stale_objects(present, sources):
     """The objects in `present` that are not current for their source
     (object_current); objects with no source (library members) are taken
-    as extracted."""
-    return [obj for obj in present if obj in sources and not object_current(sources[obj], obj)]
+    as extracted. The include inventory is one shared snapshot, which must
+    not move while it is used."""
+    inventory_cache = {}
+    uncached = [obj for obj in present if obj in sources
+                and not object_current(sources[obj], obj, inventory_cache=inventory_cache, allow_fresh=False)]
+    if not build._inventory_cache_still_current(inventory_cache):
+        raise SystemExit("link_census: include search directories changed while checking objects; retry")
+    receipts = input_receipts()
+    if receipts is None or not uncached:
+        return uncached
+
+    def check(obj):
+        return receipts.current(sources[obj], obj)
+    # The fresh proof runs cl /E, so honor BUILD_POOL and bound Wine fanout.
+    workers = min(8, build._pool_size(), max(1, len(uncached)))
+    with concurrent.futures.ThreadPoolExecutor(workers) as pool:
+        stale = [obj for obj, current in zip(uncached, pool.map(check, uncached)) if not current]
+    if not build._inventory_cache_still_current(inventory_cache):
+        raise SystemExit("link_census: include search directories changed while checking objects; retry")
+    return stale
 
 
 def census_inputs_state():
@@ -1799,19 +1881,66 @@ def census_inputs_state():
     return commit, diff
 
 
-def record(census, rows, rerun=False, fresh=False):
+def tools_digest():
+    """The census's own code (TOOL_FILES), as run."""
+    digest = hashlib.sha256()
+    for name in TOOL_FILES:
+        digest.update(name.encode() + b"\0")
+        digest.update((ROOT / "tools" / name).read_bytes())
+    return digest.hexdigest()
+
+
+def object_stamps(present):
+    """Every object's identity: any write, rename over or replacement moves
+    its inode, size, mtime or ctime."""
+    stamps = {}
+    for obj in present:
+        try:
+            st = os.stat(obj)
+        except OSError:
+            stamps[str(obj)] = None
+            continue
+        stamps[str(obj)] = (st.st_dev, st.st_ino, st.st_size, st.st_mtime_ns, st.st_ctime_ns)
+    return stamps
+
+
+def objects_digest(present):
+    """The objects' bytes, one digest (census_rebaseline compares two runs)."""
+    digest = hashlib.sha256()
+    for obj in sorted(present, key=lambda o: Path(o).name):
+        digest.update(Path(obj).name.encode() + b"\0")  # build.obj_path names are unique
+        digest.update(hashlib.sha256(Path(obj).read_bytes()).digest())
+    return digest.hexdigest()
+
+
+def census_state(present):
+    """What must hold still from the first currency check to the record: HEAD
+    and the uncommitted diff of every compiler input, the census tools and
+    every object (object_stamps). Currency is proven at both ends of the run
+    (stale_objects); this proves nothing moved in between, during the links
+    and while object facts were read."""
+    return {"inputs": census_inputs_state(), "tools": tools_digest(), "objects": object_stamps(present)}
+
+
+def record(census, rows, rerun=False, rebaseline=None):
     """Write link_status.csv and the census's history row, LINKED included.
 
     LINKED is stored, not recomputed later: measured on the tree that was
     linked, it stays fixed until the next census instead of decaying with
     every edit made since. Nothing is recorded when an object is missing (a
-    file the link never saw would read as clean) or older than its source (a
-    failed compile leaves last week's object), or when game sources or the
-    ledger have uncommitted edits. --status (rerun)
+    file the link never saw would read as clean) or not proven current (a
+    failed compile leaves last week's object; an object with no receipt proves
+    nothing), when game sources or the ledger have uncommitted edits, or when
+    the objects, compiler inputs or tools moved during the run. --status (rerun)
     only runs on the census's own commit, so a log is never paired with
-    another tree's ledger or sources. `fresh`: --build just proved every
-    object current, so they are not hashed again.
+    another tree's ledger or sources.
+
+    The row carries `rules` (RULES) and `prev_rules`: RULES_NO_WRONG_SELECTED
+    for an ordinary row, whose *_prev_rule figures are this census without
+    wrong_selected. `rebaseline` (census_rebaseline.py only) is the previous
+    rules' figures for the same objects: the one row where the rules change.
     """
+    refuse_unsupported_ledgers()
     if census["missing"]:
         raise SystemExit(f"link_census: {census['missing']:,} objects were missing from the link; "
                          "nothing recorded (build everything and rerun)")
@@ -1827,13 +1956,31 @@ def record(census, rows, rerun=False, fresh=False):
     if missing:  # census.json's count is the census's; an object gone since then would read as clean
         raise SystemExit(f"link_census: {len(missing):,} objects are missing now, e.g. {missing[0].name}; "
                          "nothing recorded")
+    history = read_history()
+    commit = head()
+    check_history_rules(history, census, rerun=rerun, rebaseline=rebaseline)
     by_object = _object_sources(rows)
-    stale = [] if fresh else stale_objects(present, by_object)
+    state = census_state(present)
+    stale = stale_objects(present, by_object)
     if stale:
         raise SystemExit(f"link_census: {len(stale):,} objects are not current for their source (a failed compile?), "
                          f"e.g. {stale[0].name}; nothing recorded")
-    history = read_history()
-    commit = head()
+    if not rerun:
+        # A new row is published only for the commit, tools and objects the
+        # census linked, all re-read now (missing provenance refuses).
+        if census.get("commit") != commit:
+            raise SystemExit(f"link_census: this census linked {census.get('commit')!r} but HEAD is {commit}; "
+                             "rerun it")
+        if census.get("tools") != state["tools"]:
+            raise SystemExit("link_census: the census tools changed since this census linked; rerun it")
+        digest = objects_digest(present)
+        if census.get("objects_digest") != digest:
+            raise SystemExit("link_census: the objects changed since this census linked; rerun it")
+        if rebaseline is not None and (rebaseline.get("commit") != commit
+                                       or rebaseline.get("objects_digest") != digest
+                                       or not str(rebaseline.get("game_code") or "").isdigit()):
+            raise SystemExit("link_census: the previous rules' figures are not for this commit and these "
+                             "objects (commit, objects_digest, game_code); nothing recorded")
     log = final_log(census)
     if rerun:
         if not history or history[-1]["commit"] != commit or history[-1]["date"] != census["when"]:
@@ -1847,55 +1994,187 @@ def record(census, rows, rerun=False, fresh=False):
         if (sum(classes.values()) != sum(census["unresolved_classes"].values())
                 or sum(dup_kinds.values()) != sum(census["duplicate_classes"].values())):
             raise SystemExit("link_census: census.log no longer reproduces census.json's counts; rerun the census")
+
+    def guard(when):
+        if subprocess.run(["git", "diff", "--quiet", commit, "--", *CENSUS_INPUTS], cwd=ROOT).returncode \
+                or census_state(present) != state or stale_objects(present, by_object):
+            raise SystemExit(f"link_census: source inputs, tools or objects changed {when}; nothing recorded")
     import link_debt
+    started = time.time()
     kept = selected_definitions(selection_link(present, log))
-    if subprocess.run(["git", "diff", "--quiet", commit, "--", *CENSUS_INPUTS], cwd=ROOT).returncode \
-            or (not fresh and stale_objects(present, by_object)):
-        raise SystemExit("link_census: source inputs or objects changed during the selection link; nothing recorded")
-    clean, files, blocking, clean_prev, _ = write_status(log, rows, present, {"date": census["when"], "commit": commit},
-                                                         kept)
+    print(f"link_census: selection (/MAP) link {time.time() - started:.0f}s, after the plain link's "
+          f"{census.get('seconds', 0):.0f}s", flush=True)
+    guard("during the selection link")
+    clean, files, blocking, clean_prev, prepared = write_status(
+        log, rows, present, {"date": census["when"], "commit": commit}, kept, publish=False)
     before = linked_figures(clean_prev)
     figure = {"files": files, "files_linked": len(clean), "blocking_names": blocking,
               "addresses": sum(count for count, _ in link_debt.per_file(link_debt.addresses)),
               **linked_figures(clean), "files_linked_prev_rule": len(clean_prev),
-              "linked_bytes_prev_rule": before["linked_bytes"], "linked_authored_prev_rule": before["linked_authored"]}
+              "linked_bytes_prev_rule": before["linked_bytes"], "linked_authored_prev_rule": before["linked_authored"],
+              "rules": RULES, "prev_rules": RULES_NO_WRONG_SELECTED}
+    if rebaseline is not None:
+        if int(rebaseline["game_code"]) != int(figure["game_code"]):
+            raise SystemExit(f"link_census: the previous rules saw game code {rebaseline['game_code']}, these "
+                             f"{figure['game_code']}: not the same tree; nothing recorded")
+        figure.update({"files_linked_prev_rule": rebaseline["files_linked"],
+                       "linked_bytes_prev_rule": rebaseline["linked_bytes"],
+                       "linked_authored_prev_rule": rebaseline["linked_authored"],
+                       "prev_rules": rebaseline["rules"]})
     if rerun:
         history[-1].update(figure)
     else:
         history.append({**history_row(census, commit), **figure})
-    write_history(history)
-    print(f"link_census: LINKED {figure['linked_bytes']:,} bytes ({figure['linked_bytes_prev_rule']:,} before "
-          f"wrong_selected), authored {figure['linked_authored']:,} ({figure['linked_authored_prev_rule']:,}); "
-          f"{'updated' if rerun else 'appended'} {HISTORY.relative_to(ROOT).as_posix()}")
+    rendered = render_history(history)  # validated before anything is written
+    guard("during judgment")
+    prepared["accept"]()
+    write_history(history, rendered)
+    print(f"link_census: LINKED {figure['linked_bytes']:,} bytes ({figure['linked_bytes_prev_rule']:,} under "
+          f"{figure['prev_rules']}), authored {figure['linked_authored']:,} ({figure['linked_authored_prev_rule']:,}); "
+          f"{'updated' if rerun else 'appended'} {HISTORY.name} ({RULES})")
+    return figure
 
 
 HISTORY = ROOT / "reverse/link_census_history.csv"
-# *_prev_rule: the same census without wrong_selected, except the re-baseline
-# row of the port of Open-BFME-1's rules (2026-10-01), which holds the figures
-# of the rules before it (majority COMDAT keeper with the STLport and array
-# helper exemption, ledger row link order, SDK stubs excused for any retail
-# DLL, no wrong_selected), measured by the previous link_census.py on the same
-# tree. Rows before it have none.
+# Every row names the rules its figures were measured under:
+#   rules       the row's own figures (files_linked, linked_bytes, linked_authored)
+#   prev_rules  its *_prev_rule figures, measured on the same objects
+# A row with no `rules` (all rows before the port) is LEGACY_RULES: the majority
+# COMDAT keeper with the STLport and array-helper exemption, ledger row link
+# order, SDK stubs excused for any retail DLL, no wrong_selected. An ordinary
+# row's prev_rules is RULES_NO_WRONG_SELECTED (the same census without
+# wrong_selected); the one re-baseline row (tools/census_rebaseline.py) has
+# prev_rules LEGACY_RULES, measured by the previous link_census.py on the same
+# objects. Dates are UTC from RULES on (rows before it are mostly UTC; their
+# zone is whatever the runner had); rows stay in physical append order, and
+# readers take the last physical row as current.
+RULES = "retail-truth-1"
+RULES_NO_WRONG_SELECTED = "retail-truth-1-no-wrong-selected"
+LEGACY_RULES = "majority-0"
+KNOWN_RULES = (LEGACY_RULES, RULES_NO_WRONG_SELECTED, RULES)
 HISTORY_FIELDS = ["date", "commit", "objects", "unresolved", "alias", "pinned_elsewhere", "dump", "data",
                   "import", "unpinned", "duplicates", "comdat_conflicts", "comdat_vtables",
                   "scaffold_aliases", "scaffold_unresolved", "scaffold_crashed",
                   "files", "files_linked", "blocking_names", "addresses", "linked_bytes",
                   "linked_authored", "game_code", "files_linked_prev_rule", "linked_bytes_prev_rule",
-                  "linked_authored_prev_rule"]
+                  "linked_authored_prev_rule", "rules", "prev_rules"]
+# The pre-port header: HISTORY_FIELDS' first 23 columns. A header this tool
+# reads must be a prefix of HISTORY_FIELDS at least that long.
+_LEGACY_FIELD_COUNT = 23
+_HISTORY_INTS = ("objects", "files", "files_linked", "linked_bytes", "linked_authored", "game_code")
+
+
+class HistoryError(SystemExit):
+    pass
+
+
+def row_rules(row):
+    """The rules a history row's own figures were measured under."""
+    return (row.get("rules") or "").strip() or LEGACY_RULES
 
 
 def read_history():
+    """The rows, refusing a file this tool cannot rewrite faithfully: an
+    unknown column, a row with a missing or extra field, or rules newer than
+    this tool's (KNOWN_RULES)."""
     if not HISTORY.exists():
         return []
     with HISTORY.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        reader = csv.reader(handle)
+        header = next(reader, None)
+        records = list(reader)
+    if header is None:
+        return []
+    if len(header) < _LEGACY_FIELD_COUNT or header != HISTORY_FIELDS[:len(header)]:
+        raise HistoryError(f"link_census: {HISTORY.name} has columns this tool does not know "
+                           f"({', '.join(c for c in header if c not in HISTORY_FIELDS) or 'reordered'}); "
+                           "update the tools (git pull) before recording")
+    rows = []
+    for number, record in enumerate(records, start=2):
+        if len(record) != len(header):
+            raise HistoryError(f"link_census: {HISTORY.name} line {number} has {len(record)} fields where the "
+                               f"header has {len(header)}; refusing to rewrite a malformed history")
+        row = dict(zip(header, record))
+        if row_rules(row) not in KNOWN_RULES or (row.get("prev_rules") or LEGACY_RULES) not in KNOWN_RULES:
+            raise HistoryError(f"link_census: {HISTORY.name} line {number} was measured under rules this tool "
+                               f"does not know ({row.get('rules')!r}); update the tools (git pull) before recording")
+        rows.append(row)
+    return rows
 
 
-def write_history(rows):
-    with HISTORY.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, HISTORY_FIELDS, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+def check_history_rules(history, census, *, rerun=False, rebaseline=None):
+    """A row may only continue its predecessor's rules. The first RULES row
+    is the re-baseline (census_rebaseline.py), which must carry the previous
+    rules' figures for the same objects; an ordinary census refuses until it
+    exists, and the re-baseline refuses once it does. A missing, empty or
+    header-only history refuses both: that is what an old writer's
+    truncation leaves, and appending to it would discard every earlier row
+    (restore it from git). Dates never go back."""
+    last = row_rules(history[-1]) if history else None
+    if census.get("rules") not in (None, RULES):
+        raise HistoryError(f"link_census: this census was measured under {census.get('rules')!r}, not {RULES}")
+    if rerun:
+        if last != RULES:
+            raise HistoryError(f"link_census: --status would restate a {last} row under {RULES}; rerun the census")
+        return
+    if not history:
+        raise HistoryError(f"link_census: {HISTORY.name} is missing or has no rows (an old writer truncates it); "
+                           f"restore it (git checkout -- {HISTORY.relative_to(ROOT).as_posix() if HISTORY.is_relative_to(ROOT) else HISTORY.name}) "
+                           "before recording")
+    if rebaseline is not None:
+        if last == RULES:
+            raise HistoryError(f"link_census: the history already records {RULES}; no re-baseline to do")
+        if rebaseline.get("rules") != (last or LEGACY_RULES):
+            raise HistoryError(f"link_census: the re-baseline's previous figures are {rebaseline.get('rules')!r}, "
+                               f"but the last row is {last}")
+    elif last != RULES:
+        raise HistoryError(f"link_census: the history's last row is {last}; the first {RULES} row must be the "
+                           "re-baseline (tools/census_rebaseline.py), which measures both rules on the same objects")
+    if census["when"] < history[-1]["date"]:
+        raise HistoryError(f"link_census: this census ({census['when']} UTC) is dated before the last row "
+                           f"({history[-1]['date']}); check the clock")
+
+
+def render_history(rows):
+    """The whole file as text, validated: every row serializes under
+    HISTORY_FIELDS (an unknown key refuses), re-reads to the same values,
+    and names known rules."""
+    import io
+    for number, row in enumerate(rows, start=2):
+        unknown = set(row) - set(HISTORY_FIELDS)
+        if unknown:
+            raise HistoryError(f"link_census: history row {number} has unknown fields {sorted(map(str, unknown))}")
+        if row_rules(row) not in KNOWN_RULES:
+            raise HistoryError(f"link_census: history row {number} names unknown rules {row.get('rules')!r}")
+        prev = (row.get("prev_rules") or "").strip()
+        if prev and prev not in KNOWN_RULES:
+            raise HistoryError(f"link_census: history row {number} names unknown prev_rules {prev!r}")
+        for field in _HISTORY_INTS:
+            value = str(row.get(field) or "")
+            if value and not value.isdigit():
+                raise HistoryError(f"link_census: history row {number} has {field}={value!r}")
+    handle = io.StringIO()
+    writer = csv.DictWriter(handle, HISTORY_FIELDS, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    text = handle.getvalue()
+    again = list(csv.DictReader(io.StringIO(text)))
+    if len(again) != len(rows) or any({k: str(v) for k, v in row.items() if v not in (None, "")}
+                                      != {k: v for k, v in back.items() if v} for row, back in zip(rows, again)):
+        raise HistoryError("link_census: the history does not survive a round trip; nothing written")
+    return text
+
+
+def write_history(rows, text=None):
+    """Replace the history atomically: a temporary file in the same
+    directory, renamed over it, so a failure leaves the old file whole."""
+    text = render_history(rows) if text is None else text
+    temp = HISTORY.with_name(HISTORY.name + ".tmp")
+    with temp.open("w", newline="", encoding="utf-8") as handle:
+        handle.write(text)
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temp, HISTORY)
 
 
 def history_row(census, commit):

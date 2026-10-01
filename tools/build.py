@@ -775,19 +775,284 @@ def _case_resolve(path):
     return current
 
 
+# Include search inventory (ported from Open-BFME-1's tools/build.py).
+#
+# Hashing the headers /showIncludes reported proves their bytes, not that the
+# compiler would still pick them: a header added to an earlier search
+# directory shadows a recorded one without changing a recorded byte. A
+# census-grade receipt (compile_is_current(strict=True)) therefore also
+# fingerprints the listing of every directory an include could resolve in.
+# The ordinary gate keeps its dependency-hash receipt (strict=False), which
+# never computed this; only a compile asked for an inventory
+# (compile_source(inventory=True), link_census --build) records one.
+
+def _include_search_roots(source, command, env):
+    if env.get("CL") or env.get("_CL_"):
+        return None  # These implicit compiler options may add include roots.
+    roots = {Path(source).parent}
+    reported = {p for p in env.get("INCLUDE", "").split(";") if p}
+    args = iter(command)
+    for arg in args:
+        if arg in ("-I", "/I"):
+            path = next(args, None)
+            if not path:
+                return None
+            reported.add(path)
+        elif arg.startswith(("-I", "/I")) and len(arg) > 2:
+            reported.add(arg[2:])
+    for raw in reported:
+        host = _host_path(raw)
+        resolved_path = _case_resolve(host) if host is not None else None
+        if resolved_path is None and host is not None and os.name == "nt":
+            resolved_path = host
+        if resolved_path is None and host is not None:
+            # A search directory that does not exist yet: Wine would find it
+            # in any casing once created, so watch its deepest existing
+            # ancestor, whose walk sees that creation (Open-BFME-1 refuses
+            # such a TU outright on POSIX hosts).
+            ancestor = Path(host).parent
+            while _case_resolve(str(ancestor)) is None and ancestor != ancestor.parent:
+                ancestor = ancestor.parent
+            resolved_path = _case_resolve(str(ancestor))
+        if resolved_path is None:
+            return None
+        roots.add(Path(resolved_path))
+    if source_needs_stlport(source):
+        # STLport's native-header macros expand to <../include/HEADER>
+        # (_STLP_NATIVE_INCLUDE_PATH in stl/_config.h), so a root R adds
+        # exactly one searched directory: R/../include.
+        roots.update(root.parent / "include" for root in tuple(roots))
+    roots = {Path(_case_resolve(str(root)) or root) for root in roots}
+    return sorted(roots, key=str)
+
+
+# build/ and .git/ change on every compile, verify and commit; no TU includes
+# from them through a root that contains them (_write_deps_sidecar refuses
+# one that does), so a walk of the checkout or of the Open-BFME-1 submodule
+# skips them.
+_UNWATCHED_ROOT_DIRS = ("build", ".git")
+
+
+def _unwatched_tops():
+    return {ROOT.resolve(), BFME1_ROOT.resolve()}
+
+
+def _directory_inventory(root):
+    def fail(error):
+        raise error
+
+    directories = []
+    root = Path(root)
+    top = root.resolve() in _unwatched_tops()
+    if not os.path.lexists(root):
+        # The compiler finds nothing here, and a directory created here later
+        # changes this digest, so absence is a reusable inventory entry.
+        return "absent"
+    if not root.is_dir():
+        return None
+    try:
+        for directory, subdirs, files in os.walk(root, onerror=fail):
+            if any(os.path.islink(os.path.join(directory, name)) for name in subdirs):
+                return None  # os.walk would miss additions below a symlink.
+            if top and Path(directory).resolve() == root.resolve():
+                subdirs[:] = [name for name in subdirs if name not in _UNWATCHED_ROOT_DIRS]
+            subdirs.sort()
+            # Accepted TUs cannot include .cpp, so sibling source additions do not affect them.
+            directories.append((_root_key(Path(directory)), subdirs[:],
+                                sorted(name for name in files if not name.lower().endswith(".cpp"))))
+    except OSError:
+        return None
+    return hashlib.sha256(json.dumps(directories).encode()).hexdigest()
+
+
+def _inventory_for_roots(roots, cache=None):
+    parts = []
+    for root in roots:
+        root = Path(root)
+        digest = cache.get(root) if cache is not None else None
+        if digest is None:
+            digest = _directory_inventory(root)
+            if cache is not None and digest is not None:
+                cache[root] = digest
+        if digest is None:
+            return None
+        parts.append((_root_key(root), digest))
+    return hashlib.sha256(json.dumps(parts).encode()).hexdigest()
+
+
+def _inventory_cache_still_current(cache):
+    return all(_directory_inventory(root) == digest for root, digest in cache.items())
+
+
+def search_inventory(source, command, env, *, inventory_cache=None):
+    """Fingerprint every directory where an include could take precedence.
+
+    Hashing only /showIncludes dependencies misses a new header in an earlier
+    search directory. A missing or unreadable directory cannot prove reuse.
+    """
+    roots = _include_search_roots(source, command, env)
+    return _inventory_for_roots(roots, inventory_cache) if roots is not None else None
+
+
+def _root_key(root):
+    try:
+        return Path(root).relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(root)
+
+
+def cache_path_is_valid(path):
+    if not isinstance(path, str) or not path or "\0" in path:
+        return False
+    try:
+        os.fsencode(path)
+    except UnicodeError:
+        return False
+    return True
+
+
+_STLPORT_NATIVE_INCLUDE = re.compile(
+    r"^_STLP_NATIVE_(?:C_HEADER|CPP_C_HEADER|CPP_RUNTIME_HEADER|HEADER|OLD_STREAMS_HEADER)\(([^)]*)\)$")
+# A literal ends at its line (splices are joined first): an apostrophe in #error or
+# #pragma text must not pair with a later quote and turn a string's "/*" into a comment.
+_COMMENT_OR_LITERAL = re.compile(r'"(?:\\.|[^"\\\n])*"|\'(?:\\.|[^\'\\\n])*\'|/\*[\s\S]*?\*/|//[^\n]*')
+_INCLUDE_DIRECTIVE = re.compile(r"^[ \t]*#[ \t]*include\b[ \t]*(.+)$", re.MULTILINE)
+
+
+def _directive_text(path):
+    try:
+        text = Path(path).read_text(encoding="utf-8-sig", errors="replace")
+    except OSError:
+        return None
+    if "??/" in text:
+        return None  # A trigraph can splice a directive across lines.
+    text = re.sub(r"\\\r?\n", "", text)
+    return _COMMENT_OR_LITERAL.sub(
+        lambda match: ("".join("\n" if char == "\n" else " " for char in match.group())
+                       if match.group().startswith("/") else match.group()), text)
+
+
+def _stlport_roots():
+    return [Path(p) for p in (ROOT / "vendor" / "stlport", stlport_include_dir()) if p is not None]
+
+
+def _include_escapes_search_roots(path, stlport, roots=None, anchored=None):
+    """True when an include in PATH may resolve outside the inventoried roots.
+    A quoted include is searched first in its includer's own directory, so one
+    that resolves there cannot be shadowed by a header added anywhere else;
+    such targets are added to ANCHORED (they need no enclosing search root)."""
+    text = _directive_text(path)
+    if text is None:
+        return True
+    for match in _INCLUDE_DIRECTIVE.finditer(text):
+        operand = match.group(1).strip()
+        native = _STLPORT_NATIVE_INCLUDE.fullmatch(operand)
+        if (stlport and any(Path(path).is_relative_to(root) for root in _stlport_roots())
+                and native and re.fullmatch(r"[\w./\\-]+", native.group(1))
+                and not native.group(1).lower().endswith(".cpp")
+                and ".." not in native.group(1).replace("\\", "/").split("/")):
+            continue
+        if not operand or operand[0] not in ('"', '<'):
+            return True  # Macro-expanded includes have unknown search paths.
+        end = operand.find('"' if operand[0] == '"' else '>', 1)
+        if end < 0 or operand[1:end].lower().endswith(".cpp"):
+            return True
+        include = operand[1:end].replace("\\", "/")
+        if operand[0] == '"' and anchored is not None:
+            try:
+                local = (Path(path).parent / include).resolve(strict=True)
+            except (OSError, RuntimeError):
+                local = None
+            if local is not None and local.is_file():
+                anchored.add(local)
+                continue
+        if ".." in include.split("/"):
+            if roots is None:
+                return True
+            candidates = [Path(root) / include for root in roots]
+            if operand[0] == '"':
+                candidates.insert(0, Path(path).parent / include)
+            root_paths = [Path(root).resolve() for root in roots]
+            found = False
+            for candidate in candidates:
+                try:
+                    target = candidate.resolve(strict=True)
+                except (OSError, RuntimeError):
+                    continue
+                if not target.is_file():
+                    continue
+                found = True
+                if not any(target.is_relative_to(root) for root in root_paths):
+                    return True
+            if not found:
+                return True
+    return False
+
+
+def _legacy_header_free(source, command, env):
+    if env.get("CL") or env.get("_CL_"):
+        return False
+    if any(arg.lower().startswith(("-fi", "/fi", "-yu", "/yu", "-yc", "/yc", "@"))
+           for arg in command):
+        return False
+    text = _directive_text(source)
+    if text is None:
+        return False
+    return re.search(r"^[ \t]*#[ \t]*(?:include|import|using)\b", text, re.MULTILINE) is None
+
+
+def _inventory_problems(source, command, env, dep_paths, inventory_before):
+    """Why this compile's include search cannot be proven, or []."""
+    problems = []
+    roots = _include_search_roots(source, command, env)
+    if roots is None:
+        return ["(include search roots unknown: CL/_CL_ or an unresolvable /I)"], None, None
+    walked = {Path(root).resolve(): Path(root).resolve() in _unwatched_tops() for root in roots}
+
+    def covered(path):
+        target = Path(path).resolve()
+        for root, top in walked.items():
+            if not target.is_relative_to(root):
+                continue
+            if top and any(target.is_relative_to(root / name) for name in _UNWATCHED_ROOT_DIRS):
+                continue  # this root's walk skips build/ and .git/
+            return True
+        return False
+
+    anchored = set()
+    if any(_include_escapes_search_roots(path, source_needs_stlport(source), roots, anchored)
+           for path in [Path(source), *dep_paths]):
+        problems.append("(macro or parent-traversing include has unknown search roots)")
+    if any(not covered(path) and Path(path).resolve() not in anchored for path in dep_paths):
+        problems.append("(an included header lies outside the inventoried search roots)")
+    if any(Path(path).suffix.lower() == ".cpp" for path in dep_paths):
+        problems.append("(.cpp includes are outside the directory inventory)")
+    inventory = _inventory_for_roots(roots)
+    if inventory_before is None or inventory != inventory_before:
+        problems.append("(include search directories changed during compile or are unreadable)")
+    return problems, roots, inventory
+
+
 _HASH_MEMO = {}
 
 
 def _hash_file(path):
+    # The memo is keyed on the file's full identity (device, inode, size,
+    # mtime and ctime: any write moves ctime), and a file that changes while
+    # it is read hashes to None: a concurrent writer cannot produce a receipt.
     try:
         stat = os.stat(path)
-    except OSError:
+        stamp = (stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns)
+        cached = _HASH_MEMO.get(path)
+        if cached and cached[0] == stamp:
+            return cached[1]
+        digest = hashlib.md5(Path(path).read_bytes()).hexdigest()
+        after = os.stat(path)
+        if stamp != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+            return None
+    except (OSError, ValueError):
         return None
-    cached = _HASH_MEMO.get(path)
-    if cached and cached[0] == (stat.st_mtime_ns, stat.st_size):
-        return cached[1]
-    digest = hashlib.md5(Path(path).read_bytes()).hexdigest()
-    _HASH_MEMO[path] = ((stat.st_mtime_ns, stat.st_size), digest)
+    _HASH_MEMO[path] = (stamp, digest)
     return digest
 
 
@@ -809,12 +1074,20 @@ def _cmd_fingerprint(command, env):
     return hashlib.md5(json.dumps(payload).encode()).hexdigest()
 
 
-def _write_deps_sidecar(source, output, fingerprint, stdout_text, is_cl):
+def _write_deps_sidecar(source, output, fingerprint, stdout_text, is_cl,
+                        command=None, env=None, inventory_before=None, retry_dirs=None):
     """Record the compile's exact inputs so compile_is_current can prove reuse.
     Uncacheable situations (unparseable include note, .asm with an include
     directive) fail LOUD and write no sidecar — that TU then always recompiles,
-    visibly, instead of silently reusing a possibly-stale obj."""
+    visibly, instead of silently reusing a possibly-stale obj.
+
+    `retry_dirs` not None asks for a census-grade (version 2) receipt: the
+    include search inventory taken before the compile (`inventory_before`)
+    must still hold after it and cover every included header. When it cannot,
+    the sidecar stays the ordinary one, which compile_is_current(strict=True)
+    does not accept."""
     deps = {}
+    dep_paths = []
     problems = []
     if is_cl:
         for line in stdout_text.splitlines():
@@ -833,6 +1106,7 @@ def _write_deps_sidecar(source, output, fingerprint, stdout_text, is_cl):
                 problems.append(host)
             else:
                 deps[key] = digest
+                dep_paths.append(Path(host))
         if not deps:
             # A TU with no #include genuinely has no notes — empty deps is
             # correct there. Notes missing DESPITE includes is the broken case.
@@ -849,17 +1123,34 @@ def _write_deps_sidecar(source, output, fingerprint, stdout_text, is_cl):
         _deps_sidecar(output).unlink(missing_ok=True)
         return
     payload = {"cmd": fingerprint, "source": _hash_file(str(source)), "deps": deps}
+    if retry_dirs is not None:
+        if is_cl:
+            unproven, roots, inventory = _inventory_problems(source, command, env, dep_paths, inventory_before)
+        else:
+            unproven, roots, inventory = [], [], None
+        if unproven:
+            print(f"deps-cache: no include inventory for {source.relative_to(ROOT)} — {unproven[:3]}",
+                  file=sys.stderr)
+        else:
+            payload.update({"version": 2, "inventory": inventory, "retry_dirs": list(retry_dirs),
+                            "search_roots": [_root_key(root) for root in roots]})
     tmp = _deps_sidecar(output).with_suffix(".tmp")
     tmp.write_text(json.dumps(payload))
     tmp.replace(_deps_sidecar(output))
 
 
-def compile_is_current(source, output):
+def compile_is_current(source, output, *, strict=False, inventory_cache=None):
     """Sound obj reuse: True iff the obj exists and the source, compile command,
     and EVERY header recorded by /showIncludes at compile time are byte-identical.
     This is what makes skipping a TU in the full gate safe — the old behavior
     (recompile everything / trust BUILD_RECOMPILE_ONLY blindly) either burned
-    ~17 min per gate or could re-verify a stale obj after a header edit."""
+    ~17 min per gate or could re-verify a stale obj after a header edit.
+
+    strict (link_census): Open-BFME-1's receipt. The include search directories
+    must also be unchanged since the compile (a header added to an earlier
+    directory shadows a recorded one), so only a version-2 sidecar with an
+    inventory proves a TU that includes anything; a header-free TU's ordinary
+    sidecar still does."""
     sidecar = _deps_sidecar(output)
     if not output.exists() or not sidecar.exists():
         return False
@@ -867,16 +1158,47 @@ def compile_is_current(source, output):
         meta = json.loads(sidecar.read_text())
     except (OSError, ValueError):
         return False
+    if not isinstance(meta, dict) or not isinstance(meta.get("deps", {}), dict):
+        return False
     command, env = compiler_command(source, output)
     if meta.get("cmd") != _cmd_fingerprint(command, env):
         return False
     if meta.get("source") != _hash_file(str(source)):
         return False
     for dep, digest in meta.get("deps", {}).items():
+        if not cache_path_is_valid(dep):
+            return False
         path = dep if os.path.isabs(dep) else str(ROOT / dep)
         if _hash_file(path) != digest:
             return False
-    return True
+    if not strict:
+        return True
+    is_cl = source.suffix.lower() != ".asm"
+    if meta.get("version") not in (None, 2):
+        return False
+    if meta.get("version") is None:
+        if not is_cl:
+            try:
+                text = source.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                return False
+            # An assembler source with no include directive has no search path.
+            return re.search(r"^\s*include\s", text, re.IGNORECASE | re.MULTILINE) is None
+        return meta.get("deps") == {} and _legacy_header_free(source, command, env)
+    retry_dirs = meta.get("retry_dirs", [])
+    if not isinstance(retry_dirs, list) or not all(isinstance(path, str) for path in retry_dirs):
+        return False
+    if retry_dirs:
+        current = [d.relative_to(ROOT).as_posix() for d in _SWEEP_INCLUDE_DIRS if d.exists()]
+        if retry_dirs != current:
+            return False
+        env = dict(env)
+        env["INCLUDE"] = env["INCLUDE"] + ";" + ";".join(wine_path(ROOT / d) for d in retry_dirs)
+        command = list(command) + [f"-I{wine_path(ROOT / d)}" for d in retry_dirs]
+    if not is_cl:
+        return True
+    inventory = search_inventory(source, command, env, inventory_cache=inventory_cache)
+    return inventory is not None and meta.get("inventory") == inventory
 
 
 def format_bytes(data):
@@ -1022,14 +1344,30 @@ _SWEEP_INCLUDE_DIRS = [
 ]
 
 
-def compile_source(source, output):
+def try_compile_source(source, output, *, input_proof=None, inventory=False):
+    """Compile `source` to `output`. Return (ok, filtered_output, returncode).
+
+    `inventory` (link_census --build) records Open-BFME-1's include search
+    inventory in the sidecar, and `input_proof` (census_receipts.Receipts)
+    witnesses the compile's actual inputs for a TU whose sidecar cannot carry
+    that proof; either asks for a census-grade receipt. The sidecar of the
+    previous compile is dropped first, so a failed compile never leaves it able
+    to bless the old object.
+    """
     output.parent.mkdir(parents=True, exist_ok=True)
+    inventory = inventory or input_proof is not None
+    if inventory:
+        _deps_sidecar(output).unlink(missing_ok=True)
     command, env = compiler_command(source, output)
     is_cl = source.suffix.lower() != ".asm"
     # Fingerprint the BASE command: the sweep-include retry below is a
     # deterministic function of these same inputs, so cache validity holds.
     fingerprint = _cmd_fingerprint(command, env)
+    inventory_before = search_inventory(source, command, env) if inventory and is_cl else None
+    retry_dirs = [] if inventory else None
+    filtered, code = "", 1
     for attempt in range(3):
+        before = input_proof.before(source, output, command, env) if input_proof else None
         result = subprocess.run(
             command + (["-showIncludes"] if is_cl else []),
             cwd=ROOT,
@@ -1038,29 +1376,46 @@ def compile_source(source, output):
             stderr=subprocess.STDOUT,
             text=True,
         )
-        if result.returncode == 0:
-            _write_deps_sidecar(source, output, fingerprint, result.stdout, is_cl)
-            return
+        stdout = result.stdout or ""
+        filtered = "\n".join(l for l in stdout.splitlines() if not l.startswith("Note: including file:"))
+        code = result.returncode
+        if code == 0:
+            _write_deps_sidecar(source, output, fingerprint, stdout, is_cl,
+                                command, env, inventory_before, retry_dirs)
+            if input_proof:
+                input_proof.after(source, output, command, env, before, stdout)
+            return True, filtered, 0
         # Retry once with the sweep include dirs on the path (header resolution
         # only — never affects codegen of already-matched sources).
         if attempt == 0 and any(d.exists() for d in _SWEEP_INCLUDE_DIRS):
-            missing = any("Cannot open include file" in l for l in result.stdout.splitlines())
+            missing = any("Cannot open include file" in l for l in stdout.splitlines())
             if missing:
                 env = dict(env)
                 extra = ";".join(wine_path(d) for d in _SWEEP_INCLUDE_DIRS if d.exists())
                 env["INCLUDE"] = env["INCLUDE"] + ";" + extra
                 command = list(command) + [f"-I{wine_path(d)}" for d in _SWEEP_INCLUDE_DIRS if d.exists()]
+                if inventory:
+                    retry_dirs = [d.relative_to(ROOT).as_posix() for d in _SWEEP_INCLUDE_DIRS if d.exists()]
+                    inventory_before = search_inventory(source, command, env) if is_cl else None
                 continue
-        transient = (not result.stdout.strip()
-                     or "Application could not be started" in result.stdout
-                     or "ShellExecuteEx failed" in result.stdout)
+        transient = (not stdout.strip()
+                     or "Application could not be started" in stdout
+                     or "ShellExecuteEx failed" in stdout)
         if not transient or attempt == 2:
-            print(f"compile failed: {source.relative_to(ROOT)}", file=sys.stderr)
-            print("\n".join(l for l in result.stdout.splitlines()
-                            if not l.startswith("Note: including file:")))
-            raise SystemExit(result.returncode)
+            return False, filtered, code
         print(f"retrying transient Wine launch failure for "
               f"{source.relative_to(ROOT)} ({attempt + 2}/3)", file=sys.stderr)
+    return False, filtered, code
+
+
+def compile_source(source, output, *, input_proof=None, inventory=False):
+    ok, text, code = try_compile_source(source, output, input_proof=input_proof, inventory=inventory)
+    if ok:
+        return
+    print(f"compile failed: {source.relative_to(ROOT)}", file=sys.stderr)
+    if text:
+        print(text)
+    raise SystemExit(code)
 
 
 def is_funclet_row(row, object_symbol):
@@ -1469,11 +1824,20 @@ def _pool_size():
     return max(1, min(int(os.environ.get("BUILD_POOL", "1")), os.cpu_count() or 1))
 
 
-def _stale_chunk(pairs):
-    return [source for source, output in pairs if not compile_is_current(source, output)]
+def _stale_chunk(pairs, strict=False):
+    cache = {}
+    stale = [source for source, output in pairs
+             if not compile_is_current(source, output, strict=strict, inventory_cache=cache)]
+    if strict and not _inventory_cache_still_current(cache):
+        raise SystemExit("include search directories changed during cache selection; rerun build")
+    return stale
 
 
-def stale_sources(sources, source_outputs, workers=1):
+def _strict_stale_chunk(pairs):
+    return _stale_chunk(pairs, strict=True)
+
+
+def stale_sources(sources, source_outputs, workers=1, *, strict=False):
     """Sources whose object is not provably current (compile_is_current).
 
     Hashing every source and recorded header is CPU-bound Python (Open-BFME-1
@@ -1481,16 +1845,20 @@ def stale_sources(sources, source_outputs, workers=1):
     check is split across that many processes; the answer is the same set.
     """
     pairs = [(source, source_outputs[source]) for source in sources]
+    chunk = _strict_stale_chunk if strict else _stale_chunk
     if workers <= 1 or len(pairs) < 200:
-        return _stale_chunk(pairs)
+        return chunk(pairs)
     with concurrent.futures.ProcessPoolExecutor(workers) as pool:
-        return [source for part in pool.map(_stale_chunk, [pairs[i::workers] for i in range(workers)])
+        return [source for part in pool.map(chunk, [pairs[i::workers] for i in range(workers)])
                 for source in part]
 
 
-def compile_rows(rows, sources):
+def compile_rows(rows, sources, *, input_proof=None, strict=False):
     """Compile every source whose object is not current; return {source: object}.
-    The compile phase of verify_functions, callable on its own (link_census)."""
+    The compile phase of verify_functions, callable on its own (link_census).
+    `strict` (link_census --build): currency is compile_is_current(strict=True)
+    and every compile records its include search inventory; `input_proof`
+    witnesses each compile's inputs (census_receipts)."""
     extract_lib_members(rows)
     sources = [s for s in sources if s.suffix.lower() != LIB_SUFFIX]
     source_outputs = {s: obj_path(s) for s in sources}
@@ -1515,7 +1883,7 @@ def compile_rows(rows, sources):
         # no sidecar (first gate after this change, or flagged uncacheable)
         # recompiles. This is what turns a header-edit gate from ~17 min of
         # recompile-the-world into seconds-per-actual-includer.
-        to_compile = stale_sources(sources, source_outputs, _pool_size())
+        to_compile = stale_sources(sources, source_outputs, _pool_size(), strict=strict)
         cached = len(sources) - len(to_compile)
         if cached:
             print(f"Compile: {len(to_compile)} of {len(sources)} TU(s) "
@@ -1542,12 +1910,13 @@ def compile_rows(rows, sources):
         lock(lock_file, exclusive=True,
              wait_notice="waiting for build lock (another clone is running a full build)...")
     try:
+        proof = {"input_proof": input_proof, "inventory": True} if strict or input_proof is not None else {}
         if pool_size == 1 or len(to_compile) <= 1:
             for s in to_compile:
-                compile_source(s, source_outputs[s])
+                compile_source(s, source_outputs[s], **proof)
         else:
             with concurrent.futures.ThreadPoolExecutor(pool_size) as pool:
-                futures = {pool.submit(compile_source, s, source_outputs[s]): s for s in to_compile}
+                futures = {pool.submit(compile_source, s, source_outputs[s], **proof): s for s in to_compile}
                 for future in concurrent.futures.as_completed(futures):
                     future.result()
     finally:
