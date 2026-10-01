@@ -4749,3 +4749,7 @@ FUN_00979C52	0x00579C52	102	blocked	ctor with AsciiString StatsDisplay plus Rva0
 FUN_006e1ca7	0x002E1CA7	123	blocked	complex vector AsciiString TheGameLogic needs header migration 0 ready t=15 model=muse-11
 FUN_009235d5	0x005235D5	357	blocked	large EH Apt Unicode 7 strings 0 ready needs strong model t=10 model=muse-11
 FUN_006a9e36	0x002A9E36	118	blocked	x87 fimul vs fild-fmul shape plus branch inversion 0 ready t=8 model=muse-11
+FUN_007a1201	0x003A1201	59	blocked	ThingTemplate layout plus0x64 compare plus0x330 vector matches isEquivalentTo TU but retail takes arg in eax with ret not ret4 so clean thiscall with stack arg cannot match t=18 model=muse-09
+?rva002943B2@Object@@QAE_NPBVPlayer@@@Z	0x002943B2	191	partial	191B exact size 69insns; final test jne-to-true plus xor fallthrough vs retail je-to-false plus mov fallthrough; true-false block order swapped; barrier stops setne merge t=27 model=muse-09 score=0.97 stash=reverse/attempts/0x002943b2.cpp
+?rva00294471@Object@@QAEEPBVPlayer@@_N@Z	0x00294471	570	blocked	570B EBP-frame uchar gate needs full Mgr250 5-slot plus Slot66 plus list-count modeling; stub 91B proves QAEEPBVPlayer_N signature plus dword-cmp-1 plus edi patterns but not body t=12 model=muse-09
+?rva0036FC23@AIGroup@@QAEXW4CommandSourceType@@@Z	0x0036FC23	321	blocked	AIGroup EBP-frame list loop needs full string at 0x00817D18 truncated in packet plus codeaddr 0x0036FC02 unclaimed for slot 0x110 plus Mgr250 AIUpdate 0x3CC 0x04-0x1C layouts; no donor in packet t=10 model=muse-09

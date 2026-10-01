@@ -1,7 +1,7 @@
 // ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z
-// partial score=0.96 date=2026-10-01
+// partial score=0.97 date=2026-10-01
 // ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z
-// partial score=0.96 date=2026-10-01
+// partial score=0.97 date=2026-10-01
 // cl: /O1 /G7
 // ?rva002931F5@Object@@QAEPAV1@_N@Z, retail 0x002931F5, 84 bytes.
 // Object helper: if own template dword +0x114 carries 0x2000 return this;
@@ -16,6 +16,9 @@
 
 typedef bool Bool;
 
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 enum ObjectID
 {
 	INVALID_ID = 0
@@ -28,14 +31,121 @@ enum KindOfType
 
 enum ObjectStatusTypes
 {
+	STATUS_0F = 0x0F,
+	STATUS_11 = 0x11,
 	STATUS_5F = 0x5F,
 	STATUS_60 = 0x60
+};
+
+enum Relationship
+{
+	ENEMIES = 0,
+	NEUTRAL = 1,
+	ALLIES = 2
 };
 
 struct ThingTemplate
 {
 	unsigned char m_pad[0x114];
 	unsigned int m_flags114;
+};
+
+class Object;
+
+class Rva002B224BDwordField
+{
+public:
+	int get() const;
+};
+
+class Rva00373EC6
+{
+public:
+	char m_pad[0x38];
+	int m_nth;
+	int m_flag3C;
+};
+
+class Player
+{
+public:
+	Relationship getRelationship(const Player *other) const;
+	char m_pad[0x5C];
+	int m_val5C;
+};
+
+class PlayerList
+{
+public:
+	Player *getNthPlayer(int i);
+};
+
+extern PlayerList *ThePlayerList;
+
+class Rva002943B2Elem
+{
+public:
+	virtual bool v00();
+	virtual bool v01();
+	virtual bool v02();
+	virtual bool v03();
+	virtual bool v04();
+	virtual bool v05();
+	virtual bool v06();
+	virtual bool v07();
+	virtual bool v08();
+	virtual bool v09();
+	virtual bool v10();
+	virtual bool v11();
+	virtual bool v12();
+	virtual bool v13();
+	virtual bool v14();
+	virtual bool v15();
+	virtual bool v16();
+	virtual bool v17();
+	virtual bool v18();
+	virtual bool v19();
+	virtual bool v20();
+	virtual bool v21();
+	virtual bool v22();
+	virtual bool v23();
+	virtual bool v24();
+	virtual bool v25();
+	virtual bool v26();
+	virtual bool v27();
+	virtual bool v28();
+	virtual bool v29();
+	virtual bool v30();
+	virtual bool v31();
+	virtual bool v32();
+	virtual bool v33();
+	virtual bool v34();
+	virtual bool v35();
+	virtual bool v36();
+	virtual bool v37();
+	virtual bool v38();
+	virtual bool v39();
+	virtual bool v40();
+	virtual bool v41();
+	virtual bool v42();
+	virtual bool v43();
+	virtual bool v44();
+	virtual bool v45();
+	virtual bool v46();
+	virtual bool v47();
+	virtual bool v48();
+	virtual bool v49();
+	virtual bool v50();
+	virtual bool v51();
+	virtual bool v52();
+	virtual bool v53();
+	virtual bool v54();
+	virtual bool v55();
+	virtual bool v56();
+	virtual bool v57();
+	virtual bool v58();
+	virtual bool v59();
+	virtual bool v60();
 };
 
 class Object;
@@ -55,20 +165,22 @@ public:
 	Bool rva00293926(KindOfType kind);
 	int rva002933CD();
 	void *rva0029439D();
+	bool rva002943B2(const Player *other);
 	Bool isKindOf(KindOfType kind) const;
 	Bool testStatus(ObjectStatusTypes bit) const;
 	void *rva0028C197() const;
-	bool rva0028F518();
-	bool rva0028C1CC() const;
-	class Rva00373EC6 *rva0028F4BC();
-	bool rva002943B2(const class Player *other);
+	Bool rva0028F518();
+	Bool rva0028C1CC() const;
+	Rva00373EC6 *rva0028F4BC();
 
 private:
 	unsigned char m_pad00[4];
 	ThingTemplate *m_template;
 	unsigned char m_pad08[0x78 - 0x08];
 	ObjectID m_producerID;
-	unsigned char m_pad7C[0x274 - 0x7C];
+	unsigned char m_pad7C[0x84 - 0x7C];
+	Rva002B224BDwordField *m_field84;
+	unsigned char m_pad88[0x274 - 0x88];
 	Object *m_containedBy;
 };
 
@@ -128,108 +240,54 @@ void *Object::rva0029439D()
 	return 0;
 }
 
-// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z @ 0x002943B2 191B: chain from
-// 0x0028F518 landed this session; array via rowed get 0x002B224B with virtual
-// +0xF0 gate, then rva002933CD, testStatus 0x11, (rva0028F518 or testStatus
-// 0x0F), optional Player+0x5C/rva0028C1CC gate, template+0x113 bit, then
-// rva0028F4BC/ThePlayerList/getNthPlayer/getRelationship chain. Callers
-// 0x0004E70D 0x002690AF 0x00294FB6 prove Object owner. Same /O1 /G7.
-class Rva002B224BDwordField
-{
-public:
-	int get() const;
-};
-
-class RvaNode002943B2
-{
-public:
-	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
-	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
-	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
-	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
-	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
-	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
-	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
-	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
-	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
-	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
-	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
-	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
-	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
-	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
-	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
-	virtual bool v60();
-};
-
-enum Relationship
-{
-	REL_NONE = 0
-};
-
-class Player
-{
-public:
-	Relationship getRelationship(const Player *other) const;
-};
-
-class PlayerList
-{
-public:
-	Player *getNthPlayer(int index);
-};
-
-extern PlayerList *ThePlayerList;
-
-class Rva00373EC6
-{
-public:
-	unsigned char m_pad[0x38];
-	int m_38;
-	int m_3C;
-};
-
+// ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z, retail 0x002943B2, 191 bytes.
+// Object gate: scan dword-field array at +0x84 via rowed get for slot-60 veto,
+// chain via rva002933CD/testStatus 0x11/rva0028F518/testStatus 0x0F, Player
+// +0x5C gate via rva0028C1CC, template +0x113 flag, then Rva00373EC6 +0x38/+0x3C
+// via ThePlayerList getNthPlayer and Player getRelationship. Evidence: thiscall
+// ret 4 bool al, callees rowed 0x2B224B 0x2933CD 0x4E536 0x28F518 0x28C1CC
+// 0x28F4BC 0x2A7A29 0x2AC3E0, ThePlayerList 0x009FEEE8, chain from 0x28F4BC.
 // ?rva002943B2@Object@@QAE_NPBVPlayer@@@Z present-unmatched
 bool Object::rva002943B2(const Player *other)
 {
-	const Rva002B224BDwordField *field = *(const Rva002B224BDwordField *const *)((const char *)this + 0x84);
+	Rva002B224BDwordField *field = m_field84;
 	if (field != 0)
 	{
-		RvaNode002943B2 **arr = (RvaNode002943B2 **)field->get();
-		for (; *arr != 0; ++arr)
+		Rva002943B2Elem **pp = (Rva002943B2Elem **)field->get();
+		for (;;)
 		{
-			RvaNode002943B2 *e = *arr;
+			Rva002943B2Elem *e = *pp;
+			if (e == 0)
+				break;
 			if (!e->v60())
 				return false;
+			++pp;
 		}
 	}
-	if ((unsigned char)rva002933CD())
+	if ((unsigned char)rva002933CD() != 0)
 		return false;
-	if (testStatus((ObjectStatusTypes)0x11))
+	if (testStatus(STATUS_11))
 		return false;
 	if (!rva0028F518())
 	{
-		if (!testStatus((ObjectStatusTypes)0x0F))
+		if (!testStatus(STATUS_0F))
 			return false;
 	}
-	if (other != 0)
+	if (other != 0 && other->m_val5C == 1)
 	{
-		if (*(const int *)((const char *)other + 0x5C) == 1)
-		{
-			if (rva0028C1CC())
-				return false;
-		}
+		if (rva0028C1CC())
+			return false;
 	}
 	if ((m_template->m_pad[0x113] & 1) == 0)
 		return true;
 	Rva00373EC6 *r = rva0028F4BC();
-	if (r == 0)
+	if (r == 0 || r->m_flag3C == 0)
 		return true;
-	if (r->m_3C == 0)
+	Player *pl = ThePlayerList->getNthPlayer(r->m_nth);
+	if (pl == 0)
 		return true;
-	Player *p = ThePlayerList->getNthPlayer(r->m_38);
-	if (p == 0)
-		return true;
-	if (p->getRelationship(other) != REL_NONE)
-		return true;
-	return false;
+	if (pl->getRelationship(other) == ENEMIES)
+		return false;
+	_ReadWriteBarrier();
+	return true;
 }
