@@ -51,7 +51,7 @@ public:
 	virtual ~Rva00573117();
 };
 
-Rva00573117::~Rva00573117()
+inline Rva00573117::~Rva00573117()
 {
 }
 
@@ -61,7 +61,7 @@ public:
 	virtual ~Rva005734EB();
 };
 
-Rva005734EB::~Rva005734EB()
+inline Rva005734EB::~Rva005734EB()
 {
 }
 
@@ -71,6 +71,20 @@ public:
 	virtual ~Rva005737AF();
 };
 
-Rva005737AF::~Rva005737AF()
+inline Rva005737AF::~Rva005737AF()
 {
 }
+
+// The three destructors above are header inlines other units emit as
+// select-any copies, so strong definitions here were duplicates in the linked
+// build. This anchor only makes this unit emit its copies for the ledger rows;
+// it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRva005CB23CDerived@@YAXPAVRva00573117@@PAVRva005734EB@@PAVRva005737AF@@@Z present-unmatched
+void bfmeEmitRva005CB23CDerived(Rva00573117 *a, Rva005734EB *b, Rva005737AF *c)
+{
+    a->Rva00573117::~Rva00573117();
+    b->Rva005734EB::~Rva005734EB();
+    c->Rva005737AF::~Rva005737AF();
+}
+#pragma inline_depth()
