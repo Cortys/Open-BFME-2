@@ -205,8 +205,10 @@ void Render2DClass::Enable_Texturing(bool b)
 // bound by the matched getter rows over them (GlobalByteGetters.cpp and
 // Rva0011009AGetters.cpp), so these reuse the established spellings.
 extern unsigned char g_Va00DEC3D7;
-extern int BfmeRenderWidth;
-extern int BfmeRenderHeight;
+// Matched DIR32 sites place these screen globals at VA 0x00DB5FD4 and
+// 0x00DB5FD8. Retail stores 0x00000280 (640) and 0x000001E0 (480).
+int BfmeRenderWidth = 640;
+int BfmeRenderHeight = 480;
 
 void	Render2DClass::Set_Coordinate_Range( const RectClass & range )
 {
