@@ -13,9 +13,10 @@ template <typename T> class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
-	StringBase(const StringBase &other);
 	~StringBase();
 private:
+	StringBase(const StringBase &other);
+	friend class Rva003FD789;
 	T *m_data;
 };
 
