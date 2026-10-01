@@ -45186,3 +45186,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0039C0F4@Rva0039C0F4@@QAEHABVAsciiString@@@Z,,0x0039C0F4,93,Code/GameEngine/Source/Common/Rva0039C0F4Sum.cpp,matched,unlock lane twin of 0x0039BF67 sum with name compare callers 0x003C2E61 0x003E82E2 ret 4
 ?rva00404781@Rva00404781@@QAEXMHH@Z,,0x00404781,77,Code/GameEngine/Source/Common/Rva00404781Method.cpp,matched,thiscall float int int via caller 0x0056C4D3 stride 0xA8
 ??4Rva002E0D93@@QAEAAV0@ABV0@@Z,,0x002E0D93,233,Code/GameEngine/Source/Common/Rva002E0D93Assign.cpp,matched,honest copy-assign 0xD8 via rep movsd caller 0x002E17A0 rowed callees
+?rva0057D10F@AptMapPreview@@QAEXPAVMapMetaData@@@Z,,0x0057D10F,139,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewPicture.cpp,matched,caller 0x0057E058 MapMetaData+0x50 via bfmeCreateMapPictureImage MissingMap fallback
