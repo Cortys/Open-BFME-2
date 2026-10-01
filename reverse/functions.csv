@@ -45029,3 +45029,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?get@Rva006DBB60ShrNAndField@@QBE_NXZ,,0x006DBB60,10,Code/Libraries/Source/Apt/AptShrAndFieldBoolGetters.cpp,matched,bool flag getter; ICF alias of the rowed int getter
 ?rva0053626B@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053626B,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresCreatedRTS slot 0x2C v11 same TU
 ?rva005362FC@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005362FC,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresLostRTS slot 0x2C v11 same TU
+?rva0053638D@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053638D,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresKilledRTS slot 0x2C v11 same TU
