@@ -1,8 +1,6 @@
-// ?rva00271B03@Rva00271B03@@QAEXXZ
-// partial score=0.9 date=2026-09-28
-// ?rva00271B03@Rva00271B03@@QAEXXZ
-// partial score=0.90 date=2026-09-28
 // cl: /O1 /MD
+// TheGameLogic is the global at 0x00DFE78C; the banked attempt read it
+// through a literal-address macro, which changed the load order.
 //
 // ?rva00271B03@Rva00271B03@@QAEXXZ retail 0x00271B03 35 bytes.
 // Max tracking via TheGameLogic frame: if m04 then v=m04[0x594]+frame if v>m388
@@ -16,14 +14,14 @@ struct Inner594
 	unsigned int m_value;
 };
 
-struct GameLogic
+class GameLogic
 {
+public:
 	unsigned char m_pre[0x40];
 	unsigned int m_frame;
 };
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
-
+extern GameLogic *TheGameLogic;
 class Rva00271B03
 {
 public:
@@ -36,7 +34,6 @@ private:
 	int m_388;
 };
 
-// ?rva00271B03@Rva00271B03@@QAEXXZ present-unmatched
 void Rva00271B03::rva00271B03()
 {
 	if (m_04 != 0)
