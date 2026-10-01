@@ -31,6 +31,7 @@ public:
 	void *rva00214738(int index);
 	void *rva002148C3(int index);
 	void *rva00214801(void *out, int index);
+	void *rva00214862(void *out, int index);
 private:
 	char _pad[0x0C];
 	int m_begin;
@@ -144,6 +145,30 @@ void *Rva002147D1::rva00214801(void *out, int index)
 		void *slot = *(void **)(m_begin + index * 4);
 		if (slot != 0)
 			new (out) WeaponTemplateSetHead(*(const WeaponTemplateSetHead *)((char *)slot + 0x1C));
+		else
+			new (out) WeaponTemplateSetHead(*(const WeaponTemplateSetHead *)buf);
+	}
+	return out;
+}
+// ?rva00214862@Rva002147D1@@QAEPAXPAXH@Z retail 0x00214862 97B
+// Guarded indexed copy through WeaponTemplateSetHead copy ctor: bounds-check
+// index against (m_end-m_begin)-1, null-check the slot, else copy from zeroed
+// 0x4C buffer; slot payload at +0x68. Evidence: same +0x0c +0x10 layout as
+// sibling 0x00214801; copy ctor row 0x00045455; caller at 0x00403FE3.
+void *Rva002147D1::rva00214862(void *out, int index)
+{
+	char buf[0x4C];
+	memset(buf, 0, 0x4C);
+	memset(buf, 0, 0x4C);
+	__assume(out != 0);
+	if (index < 0 || (unsigned)index > (unsigned)((m_end - m_begin >> 2) - 1))
+		new (out) WeaponTemplateSetHead(*(const WeaponTemplateSetHead *)buf);
+	else
+	{
+		_ReadWriteBarrier();
+		void *slot = *(void **)(m_begin + index * 4);
+		if (slot != 0)
+			new (out) WeaponTemplateSetHead(*(const WeaponTemplateSetHead *)((char *)slot + 0x68));
 		else
 			new (out) WeaponTemplateSetHead(*(const WeaponTemplateSetHead *)buf);
 	}
