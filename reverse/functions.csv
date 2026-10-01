@@ -46458,3 +46458,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?clone@Rva003AEDE9@@QBEPAV1@XZ,,0x003AEDB2,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AEDE9Clone.cpp,matched,vslot 2 of 0x0081CF18 via rowed copy 0x003AEDE9 plus EH new 0x40 same shape as 0x003AF127
 ?rva00390601@PhysicsBehavior@@QAE?AW4UpdateSleepTime@@XZ,,0x00390601,40,Code/GameEngine/Source/GameLogic/Object/Behavior/PhysicsBehaviorRva00390601.cpp,matched,PhysicsBehavior sleep via 12B vector size vs 5C 58 callers 0x3913DA
 ?rva00115FF1@W3DBufferManager@@QAEXXZ,,0x00115FF1,92,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DBufferManagerRva00115FF1.cpp,matched,W3DBufferManager DX8 VB IB Release via Slots layout callers 0xF09BF
+??0Rva00553890@@QAE@II@Z,,0x00553890,42,Code/Libraries/Source/WWVegas/WWLib/Rva00553890.cpp,matched,chain lane base 0x00553395 rowed caller 0x00558D7A unblocks 0x00558D6B
