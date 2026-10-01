@@ -11,6 +11,9 @@
 // placeholder (Matrix3D::Set_Z_Translation's identical bytes).
 
 typedef unsigned int UnsignedInt;
+typedef int Int;
+typedef int Color;
+class GameFont;
 
 class GameWindow
 {
@@ -20,15 +23,30 @@ public:
 	UnsignedInt winGetStyle(void);
 	GameWindow *winGetParent(void);
 	GameWindow *winGetChild(void);
+	Int winGetWindowId(void);
+	Color winGetEnabledTextColor(void);
+	Color winGetEnabledTextBorderColor(void);
+	Color winGetDisabledTextColor(void);
+	Color winGetDisabledTextBorderColor(void);
+	Color winGetHiliteTextColor(void);
+	Color winGetHiliteTextBorderColor(void);
+	GameFont *winGetFont(void);
 
 private:
 	char m_pad00[0x08];
 	UnsignedInt m_status;	// +0x08
 	char m_pad0C[0x20];
 	void *m_userData;		// +0x2C
-	char m_pad30[0x0C];
+	char m_pad30[0x04];
+	Int m_id;				// +0x34
+	char m_pad38[0x04];
 	UnsignedInt m_style;	// +0x3C
-	char m_pad40[0x1C0];
+	char m_pad40[0x14C];
+	Color m_textColor[6];	// +0x18C enabled, enabled border, disabled,
+							//        disabled border, hilite, hilite border
+	char m_pad1A4[0x10];
+	GameFont *m_font;		// +0x1B4
+	char m_pad1B8[0x48];
 	GameWindow *m_parent;	// +0x200
 	GameWindow *m_child;	// +0x204
 };
@@ -61,3 +79,15 @@ GameWindow *GameWindow::winGetChild(void)
 {
 	return m_child;
 }
+
+// The window id (+0x34), the six text colours (+0x18C..+0x1A0) and the font
+// (+0x1B4): each pinned by its GUI callers at a one-load getter that retail
+// folded with an identical one already rowed.
+Int GameWindow::winGetWindowId(void) { return m_id; }
+Color GameWindow::winGetEnabledTextColor(void) { return m_textColor[0]; }
+Color GameWindow::winGetEnabledTextBorderColor(void) { return m_textColor[1]; }
+Color GameWindow::winGetDisabledTextColor(void) { return m_textColor[2]; }
+Color GameWindow::winGetDisabledTextBorderColor(void) { return m_textColor[3]; }
+Color GameWindow::winGetHiliteTextColor(void) { return m_textColor[4]; }
+Color GameWindow::winGetHiliteTextBorderColor(void) { return m_textColor[5]; }
+GameFont *GameWindow::winGetFont(void) { return m_font; }
