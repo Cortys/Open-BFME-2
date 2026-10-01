@@ -39,3 +39,9 @@ void rva007B5410()
 {
     atexit(rva007B9A50);
 }
+
+// Independent 12B registration bounded by int3 and ret at 0x007B67FB.
+void rva007B67F0()
+{
+    atexit(rva007B9C80);
+}
