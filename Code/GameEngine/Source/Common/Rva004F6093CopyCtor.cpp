@@ -16,10 +16,21 @@ private:
 	Rva004F6093Ref *m_ptr;
 };
 
-Rva004F6093Holder::Rva004F6093Holder(const Rva004F6093Holder &other)
+inline Rva004F6093Holder::Rva004F6093Holder(const Rva004F6093Holder &other)
 {
 	Rva004F6093Ref *t = other.m_ptr;
 	m_ptr = t;
 	if (t)
 		++t->m_refCount;
 }
+
+// Copy ctor is a header inline elsewhere: other units emit select-any copies,
+// so a strong definition here was a duplicate in the linked build. This anchor
+// only makes this unit emit its copy for the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRva004F6093CopyCtor@@YAXPAVRva004F6093Holder@@ABV1@@Z present-unmatched
+void bfmeEmitRva004F6093CopyCtor(Rva004F6093Holder *p, const Rva004F6093Holder &other)
+{
+	p->Rva004F6093Holder::Rva004F6093Holder(other);
+}
+#pragma inline_depth()
