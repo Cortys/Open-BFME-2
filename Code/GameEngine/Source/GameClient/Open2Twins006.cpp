@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB
+// cl: /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/shims/moduledata
 // stlport
 // BFME1 donor: reference/open-bfme-1/Code/GameEngine/Source/GameClient/Open2Twins006.cpp
 // Trimmed to the served ??1Open2Store880FC0 dtor only; the donor's
@@ -8,6 +8,7 @@
 // bytes here (one pad word after m_name).
 
 #include <map>
+#include "Common/Snapshot.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/SubsystemInterface.h
 class SubsystemInterface
@@ -22,15 +23,8 @@ private:
 	int m_bfmePad08;
 };
 
-// upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/Snapshot.h
-class Snapshot
-{
-public:
-	~Snapshot() {}
-	virtual void crc() = 0;
-	virtual void xfer() = 0;
-	virtual void loadPostProcess() = 0;
-};
+// Snapshot is the canonical BFME2 base from reference/shims/moduledata/Common/Snapshot.h
+// (virtual dtor then crc/xfer/loadPostProcess, vtable 0x00BBB554).
 
 enum NameKeyType
 {
