@@ -35,7 +35,8 @@ void Thing::setTransformMatrix( const Matrix3D *mx )
 	oldPos.x = cachedPos.x;
 	oldPos.y = cachedPos.y;
 	oldPos.z = cachedPos.z;
-	Matrix3D oldMtx = m_transform;
+	Matrix3D oldMtx;
+	oldMtx = m_transform;
 
 	m_transform = *mx;
 	m_cachedPos.x = m_transform.Get_X_Translation();
