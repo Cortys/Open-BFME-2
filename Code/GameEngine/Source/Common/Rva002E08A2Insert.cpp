@@ -127,3 +127,14 @@ void Rva002E184DMakeHeap(void **base, void **end, void *extra)
 		--hole;
 	}
 }
+
+// ?Rva002E1EF1MakeHeap@@YAXPAPAX0PAX@Z @0x002E1EF1 25B.
+// Heap make-aux over void* elements keyed at +0xC: forwards (first, last,
+// extra) to the 3-arg MakeHeap at 0x002E184D with two trailing zero pushes
+// (5-push cdecl adapter like the 0x003C4B67 precedent). Chain lane on
+// 0x002E184D; caller 0x002E232F; cdecl with caller cleanup.
+void Rva002E1EF1MakeHeap(void **first, void **last, void *extra)
+{
+	typedef void (__cdecl *MakeHeap5)(void **, void **, void *, int, int);
+	((MakeHeap5)Rva002E184DMakeHeap)(first, last, extra, 0, 0);
+}
