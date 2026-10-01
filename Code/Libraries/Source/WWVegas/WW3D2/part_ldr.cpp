@@ -165,7 +165,6 @@ ParticleEmitterDefClass::~ParticleEmitterDefClass (void)
 //	ParticleEmitterDefClass
 //
 const ParticleEmitterDefClass &
-// ??4ParticleEmitterDefClass@@ present-unmatched
 ParticleEmitterDefClass::operator= (const ParticleEmitterDefClass &src)
 {
 	//

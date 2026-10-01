@@ -212,7 +212,6 @@ WideStringClass::Uninitialised_Grow (int new_len)
 //
 ///////////////////////////////////////////////////////////////////
 void
-// ?Free_String@WideStringClass@@ present-unmatched
 WideStringClass::Free_String (void)
 {
 	if (m_Buffer != m_EmptyString) {
