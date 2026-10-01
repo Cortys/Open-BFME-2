@@ -100,6 +100,7 @@ public:
 	void rva0054F7C0(Int val);
 	void rva0044DDFB(int *vals);
 	Int rva0044D836(void);
+	AsciiString rva0044DBA5(void);
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
 	void rva0044DD1E(Int val);
@@ -231,6 +232,24 @@ Int GameModePreferences::rva0044D836(void)
 	if (v < *limit)
 		return v;
 	return -1;
+}
+
+// ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ @0x0044DBA5 175B:
+// Password getter over the mode-keyed map: find makeKey("Password"), empty
+// when missing, else QuotedPrintable decode plus trim.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; quoted 0x005356BF;
+// set 0x000366F0; trim 0x00037CF0; TheEmptyString 0x009E0878; callers
+// 0x005A0E44 0x005A2961; prev 0x0044D836 next 0x0044DC54.
+AsciiString QuotedPrintableToAsciiString(AsciiString original);
+AsciiString GameModePreferences::rva0044DBA5(void)
+{
+	AsciiString ret;
+	PreferenceMap::const_iterator it = find(makeKey("Password"));
+	if (it == end())
+		return AsciiString::TheEmptyString;
+	ret.set(QuotedPrintableToAsciiString(it->second));
+	ret.trim();
+	return ret;
 }
 
 // ?rva0054F7C0@GameModePreferences@@QAEXH@Z retail 0x0054F7C0 101B.
