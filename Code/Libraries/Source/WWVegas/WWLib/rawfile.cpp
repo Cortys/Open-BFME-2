@@ -141,6 +141,12 @@ char const * RawFileClass::Set_Name(char const * filename)
 }
 
 
+// RawFileClass::Error: Zero Hour's empty error hook, vtable slot 18 of
+// RawFileClass (0x00C7C388), retail 0x00619FE0 (ret 0Ch).
+void RawFileClass::Error(int, int, char const *)
+{
+}
+
 int RawFileClass::Open(char const * filename, int rights)
 {
 	Set_Name(filename);
