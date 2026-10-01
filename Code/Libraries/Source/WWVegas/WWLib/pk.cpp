@@ -6,6 +6,14 @@
 #include	"rndstraw.h"
 #include	<string.h>
 
+// ZH WWLib int.cpp defines these Int<64> template statics for bignum. The
+// matched pk.cpp DIR32 sites place them in retail's zero-fill data at
+// 0x00E098F0, 0x00E098F1, 0x00E098F4, and 0x00E098F8 respectively.
+int bignum::Error = 0;
+bool bignum::Carry = false;
+bool bignum::Borrow = false;
+bignum bignum::Remainder;
+
 
 #if defined(__BORLANDC__)
 extern BigInt Generate_Prime<BigInt>(Straw &, int, BigInt const *);
