@@ -46538,3 +46538,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000F0912@Rva000F0912@@QAEXXZ,,0x000F0912,68,Code/GameEngine/Source/Common/Rva000F0912Clear.cpp,matched,clear 160 slots per node over +0x68 list callee 0x000EFB68
 ?rva002EADB4@Rva002EADB4@@QAEXPAU_Rva002EADB4Node@@@Z,,0x002EADB4,45,Code/Libraries/Source/WWVegas/WWLib/Rva002EADB4Release.cpp,matched,recursive release via child next free self-call
 ?rva006016AC@Coord3D@@QAEAAV1@ABV1@@Z,,0x006016AC,29,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,self-checked Coord3D copy with caller 0x00601797 looping 0x0C stride
+?Rva00601797Copy@@YAPAVCoord3D@@PBV1@0PAV1@@Z,,0x00601797,50,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,counted Coord3D range copy via rowed 0x006016AC with caller 0x0060186F

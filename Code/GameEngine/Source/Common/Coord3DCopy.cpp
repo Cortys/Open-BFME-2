@@ -45,3 +45,20 @@ Coord3D &Coord3D::rva006016AC(const Coord3D &that)
     }
     return *this;
 }
+// ?Rva00601797Copy@@YAPAVCoord3D@@PBV1@0PAV1@@Z @0x00601797 50B: counted Coord3D range copy via 0x006016AC, caller 0x0060186F.
+Coord3D *__cdecl Rva00601797Copy(const Coord3D *first, const Coord3D *last, Coord3D *result)
+{
+    int n = ((const char *)last - (const char *)first) / 12;
+    if (n > 0)
+    {
+        int count = n;
+        do
+        {
+            result->rva006016AC(*first);
+            ++first;
+            ++result;
+            --count;
+        } while (count != 0);
+    }
+    return result;
+}
