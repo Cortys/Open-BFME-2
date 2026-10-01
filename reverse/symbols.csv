@@ -6841,3 +6841,5 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?rva001E431E@Object@@QAEXPBH@Z,0x001E431E,pinned for ObjectConditionAndPassengerWeaponSet
 ?rva0028CFF5@Object@@QAEXPBH_N@Z,0x0028CFF5,pinned for ObjectConditionAndPassengerWeaponSet
 ??_7Rva00200D38@@6B@,0x00BE2B78,"row ??0Rva00200D38 at 0x00200D38 stores this vftable at [this]; retail slots 0-2 are __purecall at VA 0x0043B810 (matched RVA 0x0003B810)"
+??0?$_Vector_base@USaveMapPreview@@V?$allocator@USaveMapPreview@@@_STL@@@_STL@@QAE@ABV?$allocator@USaveMapPreview@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as rowed BfmeE16 row Rva0051F87B ctor member
+??0?$_Vector_base@UPrereqUnitRec@@V?$allocator@UPrereqUnitRec@@@_STL@@@_STL@@QAE@ABV?$allocator@UPrereqUnitRec@@@1@@Z,0x00211E58,ICF-folded empty vector base ctor same 29B as rowed BfmeE16 row Rva0051F87B ctor member
