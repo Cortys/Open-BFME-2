@@ -46195,3 +46195,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002A9DCF@Rva002A9DCF@@QAEXPAX@Z,,0x002A9DCF,29,Code/GameEngine/Source/Common/Rva002A9DCFForward.cpp,matched,slot 9 forwarding like sibling Rva002A9DB8 holder 0x2DC caller 0x003BF9C8
 ??0Rva000AAE3D@@QAE@XZ,,0x000AAE3D,28,Code/GameEngine/Source/Common/Rva000AAE3DCtor.cpp,matched,frameless ctor vector at C no EH sibling pattern
 ??0Rva000AAD06@@QAE@XZ,,0x000AAD06,32,Code/GameEngine/Source/Common/Rva000AAD06Ctor.cpp,matched,ctor stores 0x00BC9454 zeroes +4 constructs vector E16 at +8 via rowed Vector_base
+?Rva0002C237Get@@YAXPAVINI@@@Z,,0x0002C237,144,Code/Libraries/Source/WWVegas/WWLib/Rva0002C237Get.cpp,matched,GetCurrentDirectoryA plus INI filename line format via AsciiString full-expression temp

@@ -4973,3 +4973,7 @@ FUN_008e007a	0x004E007A	64	blocked	STL EH ctor vector-uint at +4 plus hashtable 
 ?rva000AA557@Rva000AA557@@QAEPAVFile@@XZ	0x000AA557	91	blocked	EAX convention for callee 0xA9F48 gives lea eax plus call with no push from separate TU normal cdecl gives push plus register edi vs esi plus EH state shape differs t=12 model=muse-04
 ?rva000AA7B2@Rva000AA7B2@@QAEXABVUnicodeString@@@Z	0x000AA7B2	137	blocked	frame 0x10 vs 0xC extra Unicode local layout plus 0x8 second StringBase temp at esp via push ecx plus mov ebp-4 esp not from named local plus register wall t=15 model=muse-04
 ??0Rva000AA83B@@QAE@XZ	0x000AA83B	44	blocked	STLport vector member forces EH prolog plus EBP frame 71B vs frameless 44B 6 variants refute GX-minus plus STLP-NO-EXCEPTIONS plus throw on callee plus throw on ctor plus DNDEBUG t=20 model=muse-04
+?Rva0002C2C7Match@@YA_NVAsciiString@@0PAD@Z	0x0002C2C7	360	blocked	EH-init and-vs-mov plus empty cmp-vs-mov-test plus isspace edi-vs-ebx plus strcmpi via-ebx-vs-direct plus saved stack-vs-bl plus setne-vs-mov t=30 model=muse-05
+?Rva0002C237Get@@YAXPAVINI@@@Z	0x0002C237	144	partial	mov eax [eax] vs [ebp-0x14] 1B larger t=20 model=muse-05 score=0.99 stash=reverse/attempts/0x0002c237.cpp
+?d_009a8410@@YAXXZ	0x001B8E70	29	blocked	pushad-popad-cpuid-rdtsc hand asm no clean C++ t=8 model=muse-05
+?Rva001B8050Filter@@YAXPAEHHHHPBH@Z	0x001B8050	174	blocked	6-arg single-buffer 190B vs 174B still extra push ecx plus spill plus regalloc wall; 7-arg was 201B; src-dst alias unresolved from stack slots t=25 model=muse-05
