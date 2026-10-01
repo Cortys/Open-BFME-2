@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP=
 // Target-only view of the complete 110B destructor at 0x003EF14A.
 // The queue's Rva00382574 name is refuted by this body's different layout.
 // Target facts: primary vptr C363C8; unregister this from global E02E88 via
@@ -40,11 +40,32 @@ namespace _STL {
     };
 }
 
-class Rva004E2E58 {
+namespace _STL { void __cdecl free(void *); }
+struct Rva004E21FE {
+    void rva004E21FE();
+};
+// Local ownership view, not a recovered donor type. Retail frees the
+// header after clearing its nodes; the intermediate EH state proves
+// that ownership must remain live while the clear call can unwind.
+struct Rva004E2990HeaderOwner {
+    Rva004E2E58Node *header00;
+    // ?Rva004E2990HeaderOwner::~Rva004E2990HeaderOwner present-unmatched
+    ~Rva004E2990HeaderOwner() {
+        if (header00)
+            _STL::free(header00);
+    }
+};
+class Rva004E2990 {
+protected:
+    Rva004E2990HeaderOwner owner;
+    unsigned count04;
+public:
+    ~Rva004E2990();
+};
+
+class Rva004E2E58 : public Rva004E2990 {
     // Opaque span between the independently observed member at +8 and
     // string at +18. Its exact container extent is not yet established.
-    Rva004E2E58Node *header00;
-    unsigned count04;
     char unknown08[8];
 public:
     ~Rva004E2E58();
@@ -160,10 +181,17 @@ void Rva004E2E58Value::rva004E2199()
 // non-null payload at node+14 is reset, then the matched iterator advances.
 void Rva004E2E58::rva004E21D5()
 {
-    for (Rva004E2E58Node *node = header00->left08; node != header00;
+    for (Rva004E2E58Node *node = owner.header00->left08; node != owner.header00;
          node = (Rva004E2E58Node *)_STL::_Rb_global<bool>::_M_increment(
              (_STL::_Rb_tree_node_base *)node)) {
         if (node->value14)
             node->value14->rva004E2199();
     }
+}
+
+// Complete 56B Ghidra boundary at 0x004E2990. Caller 4E2EA9 invokes this
+// after its payload destruction and node-clear pass.
+Rva004E2990::~Rva004E2990()
+{
+    ((Rva004E21FE *)this)->rva004E21FE();
 }
