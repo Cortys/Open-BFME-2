@@ -156,6 +156,7 @@ public:
 	void rva0036EA01(const Coord3D *position, CommandSourceType cmdSource);
 	void rva0037379B(Object *target, CommandSourceType cmdSource);
 	void rva0044FFD9(Object *target, CommandSourceType cmdSource);
+	void rva0044FF6D(const Coord3D *pos, Int cmdSource);
 };
 
 // ?aiIdle@AICommandInterface@@QAEXW4CommandSourceType@@@Z @0x1E8A38
@@ -719,6 +720,17 @@ void AICommandInterface::rva0044FFD9(Object *target, CommandSourceType cmdSource
 {
 	AICommandParms parms((AICommandType)0x48, cmdSource);
 	parms.m_obj = target;
+	aiDoCommand(&parms);
+}
+
+// ?rva0044FF6D@AICommandInterface@@QAEXPBUCoord3D@@H@Z @0x0044FF6D 108B:
+// Same 108B position shape as aiFacePosition in this TU:
+// AICMD 0x47 (BFME1 aiFacePosition id) plus m_pos at +0x08 plus slot-0 aiDoCommand.
+// Callers 0x00450C92 0x00450D82.
+void AICommandInterface::rva0044FF6D(const Coord3D *pos, Int cmdSource)
+{
+	AICommandParms parms((AICommandType)0x47, (CommandSourceType)cmdSource);
+	parms.m_pos = *pos;
 	aiDoCommand(&parms);
 }
 

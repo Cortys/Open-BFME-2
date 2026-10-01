@@ -45304,3 +45304,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?invoke@Rva0022297BRef@@QAEXHHHH@Z,,0x0022297B,55,Code/Libraries/Source/WWVegas/WWLib/FunctorRefInvoke0022297B.cpp,matched,FunctorNotSet 4-int dispatch via slot1 caller 23D8D unlock
 ?Rva0004D76EBlend@@YAHHH@Z,,0x0004D76E,149,Code/GameEngine/Source/Common/System/color_ops.cpp,matched,channel multiply via GameGetColorComponents callers 0x50125 0x5053E
 ?rva0044FFD9@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0044FFD9,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,101B object shape AICMD 0x48 callers 0x450D01 0x4519C0
+?rva0044FF6D@AICommandInterface@@QAEXPBUCoord3D@@H@Z,,0x0044FF6D,108,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,108B position shape AICMD 0x47 callers 0x450C92 0x450D82
