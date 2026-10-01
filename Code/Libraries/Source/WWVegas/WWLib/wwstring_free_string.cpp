@@ -12,7 +12,7 @@ void* __cdecl operator new[](unsigned int,unsigned int);
 #include "wwmemlog.h"
 
 
-inline void __cdecl operator delete[](void*p) {::operator delete(p);}
+static inline void __cdecl operator delete[](void*p) {::operator delete(p);}
 void
 StringClass::Free_String (void)
 {

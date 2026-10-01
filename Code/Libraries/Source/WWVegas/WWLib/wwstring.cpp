@@ -70,8 +70,8 @@ extern "C" __declspec(dllimport) int __stdcall WideCharToMultiByte(
 // and ??3@YAXPAX@Z (0x0002FD60) rather than ??_U (0x0002FDE0) / ??_V
 // (0x0002FD80).  Kept here only because every row this unit already holds still
 // byte-verifies with it.
-inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
-inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
+static inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
+static inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
 
 
 ///////////////////////////////////////////////////////////////////

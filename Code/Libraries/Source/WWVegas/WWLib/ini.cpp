@@ -118,8 +118,8 @@
 // away at the call site.  Proven by
 // IndexClass<int,INISection*>::Increase_Table_Size at 0x00616190 and by
 // INIClass::Clear at 0x00616C60.
-inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
-inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
+static inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
+static inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
 
 #include	"b64pipe.h"
 #include	"b64straw.h"

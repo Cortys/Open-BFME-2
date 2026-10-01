@@ -57,8 +57,8 @@ __declspec(dllimport) int __cdecl vswprintf(
 // instead of ??_U (0x0002FDE0).  Proven here by the displacement retail wrote
 // inside WideStringClass::Uninitialised_Grow at 0x00619E30, and independently
 // in ini.cpp.
-inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
-inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
+static inline void * __cdecl operator new[](size_t s) { return ::operator new(s); }
+static inline void __cdecl operator delete[](void * p) { ::operator delete(p); }
 
 
 ///////////////////////////////////////////////////////////////////
