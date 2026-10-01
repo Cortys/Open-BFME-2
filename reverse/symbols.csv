@@ -6761,3 +6761,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??RRva004E5CB0Deleter@@QBEXPAVRva004E5A78@@@Z,0x004E5CB0,"thiscall functor spelling of the body rowed as stdcall Rva004E5CB0Delete (ret 4 and this unused make the bytes identical); retail for_each 0x004E5D4D calls it with lea ecx = &functor"
 ??4BfmeSubobject0022CE19@@QAEAAU0@ABU0@@Z,0x002DDC76,address read from the REL32 displacement at a placed body
 ?attemptDamage@Object@@QAEXPAVDamageInfo@@@Z,0x0029848E,address read from the REL32 at 0x0029850D in Object::kill at 0x002984D4; BFME1 Object::kill calls attemptDamage with its DamageInfo local; target boundary at 0x0029848E consumes its pointer
+?rva001FF3A9@Rva001FF3A9@@QAEXABUTreeHintRef00217D4C@@@Z,0x001FF3A9,forwarder 1-arg TreeHintRef const ref callsite 0x0057479F push edi plus sibling 0x005749B7 push esi same 4B jmp preserves stack target pops
