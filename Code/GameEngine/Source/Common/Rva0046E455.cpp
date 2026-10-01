@@ -43,6 +43,7 @@ struct _Rb_tree_node_base {};
 	public:
 		static void _Rebalance(_Rb_tree_node_base *x, _Rb_tree_node_base *&root);
 		static _Rb_tree_node_base *_M_decrement(_Rb_tree_node_base *x);
+		static _Rb_tree_node_base *_M_increment(_Rb_tree_node_base *x);
 	};
 }
 struct Rva0046E455
@@ -51,6 +52,7 @@ struct Rva0046E455
 	unsigned int _size;
 	Rva0046E455Iter rva0046E455(Rva0046E455Node *x, Rva0046E455Node *y, const Rva00469BEA &v, Rva0046E455Node *w);
 	Rva0046E455Pair rva0046E4DD(const Rva00469BEA &v);
+	Rva0046E455Iter rva0046EEB5(Rva0046E455Iter position, const Rva00469BEA &v);
 };
 Rva0046E455Iter Rva0046E455::rva0046E455(Rva0046E455Node *x, Rva0046E455Node *y, const Rva00469BEA &v, Rva0046E455Node *w)
 {
@@ -98,4 +100,62 @@ Rva0046E455Pair Rva0046E455::rva0046E4DD(const Rva00469BEA &v)
 	if (j->_key10 < v.m_key00)
 		return Rva0046E455Pair(rva0046E455(x, y, v, 0), true);
 	return Rva0046E455Pair(j, false);
+}
+Rva0046E455Iter Rva0046E455::rva0046EEB5(Rva0046E455Iter position, const Rva00469BEA &v)
+{
+	if (position.node == _head->_left) {
+		if (_size <= 0)
+			return rva0046E4DD(v).first;
+		if (v.m_key00 < position.node->_key10)
+			return rva0046E455(position.node, position.node, v, 0);
+		else {
+			bool comp_pos_v = position.node->_key10 < v.m_key00;
+			if (comp_pos_v == false)
+				return position;
+			Rva0046E455Iter after = position;
+			after.node = (Rva0046E455Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			if (after.node == _head)
+				return rva0046E455(0, position.node, v, position.node);
+			if (v.m_key00 < after.node->_key10) {
+				if (position.node->_right == 0)
+					return rva0046E455(0, position.node, v, position.node);
+				else
+					return rva0046E455(after.node, after.node, v, 0);
+			} else {
+				return rva0046E4DD(v).first;
+			}
+		}
+	} else if (position.node == _head) {
+		if (_head->_right->_key10 < v.m_key00)
+			return rva0046E455(0, _head->_right, v, position.node);
+		else
+			return rva0046E4DD(v).first;
+	} else {
+		Rva0046E455Iter before = position;
+		before.node = (Rva0046E455Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)before.node);
+		bool comp_v_pos = v.m_key00 < position.node->_key10;
+		if (comp_v_pos && before.node->_key10 < v.m_key00) {
+			if (before.node->_right == 0)
+				return rva0046E455(0, before.node, v, before.node);
+			else
+				return rva0046E455(position.node, position.node, v, 0);
+		} else {
+			Rva0046E455Iter after = position;
+			after.node = (Rva0046E455Node *)_STL::_Rb_global<bool>::_M_increment((_STL::_Rb_tree_node_base *)after.node);
+			bool comp_pos_v = !comp_v_pos;
+			if (!comp_v_pos)
+				comp_pos_v = position.node->_key10 < v.m_key00;
+			if (!comp_v_pos && comp_pos_v && (after.node == _head || v.m_key00 < after.node->_key10)) {
+				if (position.node->_right == 0)
+					return rva0046E455(0, position.node, v, position.node);
+				else
+					return rva0046E455(after.node, after.node, v, 0);
+			} else {
+				if (comp_v_pos == comp_pos_v)
+					return position;
+				else
+					return rva0046E4DD(v).first;
+			}
+		}
+	}
 }
