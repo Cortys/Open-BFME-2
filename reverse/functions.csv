@@ -46504,3 +46504,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000EFCB7@Rva000EFCB7@@QAEHHPAG@Z,,0x000EFCB7,55,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva000EFCB7.cpp,matched,unlock prev 0x000EFB68 same flags 6 callers 0x000EFDF6 imul6 word triple return3
 ?rva000EFDBB@Rva000EFDBB@@QAEXHGG@Z,,0x000EFDBB,59,Code/GameEngine/Source/Common/Rva000EFDBB.cpp,matched,unlock sibling Rva000F26DCAlloc plus4180 plus4400 2 callers append pair
 ??1Rva0041579E@@QAE@XZ,,0x004156FC,8,Code/GameEngine/Source/Common/Rva0041573FCopy.cpp,matched,tail jmp to rowed Rva0041573F dtor
+?rva004C861E@SplitHordeSpecialPower@@UAEXI@Z,,0x004C861E,123,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SplitHordeSpecialPowerRva004C861E.cpp,matched,slot 10 of the matched ctor vtable 0x00C5E598 at +0x10: disabled check then contain slots 125/126 into a local vector<BfmeE16>
