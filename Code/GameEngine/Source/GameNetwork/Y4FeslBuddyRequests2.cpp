@@ -153,3 +153,35 @@ void __stdcall Rva007FB6D0( Rva007E8810Message *msg, int list, const char *group
 	FESL_ADD_STRING(msg, "PRES", pres ? "Y" : "N");
 	FESL_ADD_STRING(msg, "PEND", pend ? "T" : "F");
 }
+
+// FESL 'RADD' friend-list request with an optional single-letter attribute.
+void __stdcall Rva007FB260( Rva007E8810Message *msg, int list,
+	const char *user, const char *group, const char *lsrc, bool pres,
+	int attribute )
+{
+	FESL_RESET(msg);
+	msg->m_category = 'RADD';
+	msg->m_depth = 3;
+	switch( list )
+	{
+		case 1: FESL_ADD_STRING(msg, "LIST", "B"); break;
+		case 2: FESL_ADD_STRING(msg, "LIST", "I"); break;
+	}
+	FESL_ADD_STRING(msg, "USER", user);
+	if( group )
+		FESL_ADD_STRING(msg, "GROUP", group);
+	if( lsrc )
+		FESL_ADD_STRING(msg, "LSRC", lsrc);
+	FESL_ADD_STRING(msg, "PRES", pres ? "Y" : "N");
+	if( attribute )
+	{
+		char text[ 4 ] = "";
+		if( attribute == 1 )
+			strcat( text, "A" );
+		else if( attribute == 2 )
+			strcat( text, "M" );
+		else if( attribute == 3 )
+			strcat( text, "I" );
+		FESL_ADD_STRING(msg, "ATTR", text);
+	}
+}
