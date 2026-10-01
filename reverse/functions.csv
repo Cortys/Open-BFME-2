@@ -45498,3 +45498,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva003B1101@@QAE@XZ,,0x003B140E,284,Code/GameEngine/Source/Common/Rva003B1101Ctor.cpp,matched,default ctor: polymorphic base plus ten EH states per the unwind map incl ref handles at +0x34/+0x38
 ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z,,0x0032884A,159,Code/GameEngine/Source/Common/Rva0032884ASet.cpp,matched,gadget sound helper: audio slot 0x12C returns a ref handle by value stored at user data +0x1C; unwind map states match
 ??0Rva001EB15A@@QAE@ABU0@@Z,,0x001EB15A,89,Code/GameEngine/Source/Common/Rva001EB15ACopy.cpp,matched,copy ctor: dwords then wide string via inline UnicodeString copy then narrow string then byte
+??0Rva0040AF66@@QAE@ABV0@@Z,,0x0040AF66,141,Code/GameEngine/Source/Common/Rva0040AF66Copy.cpp,matched,copy ctor: int plus two ScienceType vectors plus two FixedStorage plus two AsciiStrings (inline copy) plus ints and byte
