@@ -1,8 +1,8 @@
 // ??4Rva0051F6DF@@QAEAAV0@ABV0@@Z
-// partial score=0.9 date=2026-09-29
+// partial score=0.96 date=2026-10-01
 // ??4Rva0051F6DF@@QAEAAV0@ABV0@@Z
 // partial score=0.9 date=2026-09-29
-// cl: /O1
+// cl: /O1 /G7
 //
 // ??4Rva0051F6DF@@QAEAAV0@ABV0@@Z @0x0051F6DF 206B
 // Vector operator= for 20-byte Rva0039B893: self-check, realloc via rowed
@@ -61,24 +61,25 @@ Rva0051F6DF &Rva0051F6DF::operator=(const Rva0051F6DF &other)
 {
 	if (&other == this)
 		return *this;
-	unsigned otherSize = other.m_finish - other.m_start;
+	Rva0039B893 *otherFinish = other.m_finish;
+	unsigned otherSize = otherFinish - other.m_start;
 	unsigned cap = m_end - m_start;
 	if (otherSize > cap) {
-		Rva0039B893 *newStart = ((Rva0051ED51Holder *)this)->rva0051ED51(otherSize, other.m_start, other.m_finish);
+		Rva0039B893 *newStart = ((Rva0051ED51Holder *)this)->rva0051ED51(otherSize, other.m_start, otherFinish);
 		((Rva00565A42 *)this)->rva00565A42();
 		m_start = newStart;
 		m_end = newStart + otherSize;
 	} else {
 		unsigned thisSize = m_finish - m_start;
 		if (thisSize >= otherSize) {
-			Rva0039B893 *newEnd = (Rva0039B893 *)((Copy4Fn)Rva0039BD9BCopy)(other.m_start, other.m_finish, m_start, (void *)((char *)&otherSize + 3));
+			Rva0039B893 *newEnd = (Rva0039B893 *)((Copy4Fn)Rva0039BD9BCopy)(other.m_start, otherFinish, m_start, (void *)((char *)&otherFinish + 15));
 			Rva0022C8E3DestroyRange((Rva0052BF9BElem *)newEnd, (Rva0052BF9BElem *)m_finish);
 		} else {
 			Rva0039B893 *mid = other.m_start + thisSize;
-			((Copy4Fn)Rva0039BD9BCopy)(other.m_start, mid, m_start, (void *)((char *)&otherSize + 3));
+			((Copy4Fn)Rva0039BD9BCopy)(other.m_start, mid, m_start, (void *)((char *)&otherFinish + 15));
 			unsigned thisSize2 = m_finish - m_start;
 			Rva0039B893 *mid2 = other.m_start + thisSize2;
-			Rva0039BA22UninitCopy(mid2, other.m_finish, m_finish, *(const _STL::__false_type *)((char *)&otherSize + 3));
+			Rva0039BA22UninitCopy(mid2, otherFinish, m_finish, *(const _STL::__false_type *)((char *)&otherFinish + 15));
 		}
 	}
 	m_finish = m_start + otherSize;
