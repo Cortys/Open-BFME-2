@@ -45957,3 +45957,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva001D9BA4Copy@@YAPAVRva000A8CAE@@PAV1@00@Z,,0x001D9BA4,47,Code/GameEngine/Source/Common/Rva000A8CAEAssign.cpp,matched,copy loop for Rva000A8CAE via rowed operator
 ??1Rva002BF6D6@@QAE@XZ,,0x002BF6D6,57,Code/Libraries/Source/WWVegas/WWLib/Rva002BF6D6Dtor.cpp,matched,leaf dtor hashtable clear plus bucket free EHs layout
 ??0Rva00431F61@@QAE@XZ,,0x00431F61,84,Code/GameEngine/Source/Common/Rva00431F61Ctor.cpp,matched,unlock ctor vtable 0x0083C9B8 helper 0x0083C97C global 0x00E0322C caller 0x0023A541
+?rva00431C35@Rva00431C35@@QAEXPAX@Z,,0x00431C35,104,Code/GameEngine/Source/Common/Rva00431C35.cpp,matched,unlock MessageStreamSubsystem v19 GameMessage helpers vtable g_00C3C97C
