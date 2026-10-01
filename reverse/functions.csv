@@ -45763,3 +45763,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00346FA5@Rva00346FA5@@QBEPAXH@Z,,0x00346FA5,43,Code/GameEngine/Source/Common/Rva00346FA5Accessor.cpp,matched,thiscall ret-4 12-byte accessor barrier stops CSE 26 callers
 ?rva00599FAA@Rva00599FAA@@QAEXPAUNode00599FAA@@@Z,,0x00599FAA,45,Code/GameEngine/Source/Common/Rva00599FAAClear.cpp,matched,thiscall ret-4 recursive child plus free list clear 2 callers
 ?rva005FED59@Rva005FED59@@QBEXXZ,,0x005FED59,8,Code/GameEngine/Source/Common/Rva005FED59Validate.cpp,matched,const tail-jmp StringBase validate plus 8 3 callers
+?rva004E63DB@Rva004E63DB@@QAEXXZ,,0x004E63DB,7,Code/GameEngine/Source/Common/Bfme/Rva004E6273Method.cpp,matched,thunk mov ecx deref plus jmp rowed callee 1 caller

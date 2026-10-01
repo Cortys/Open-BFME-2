@@ -35,3 +35,16 @@ void Rva004E6273::rva004E6273()
 		return;
 	m_ptr->meth(idx, m_other, 1, 1);
 }
+
+class Rva004E63DB
+{
+public:
+	void rva004E63DB();
+private:
+	Rva004E6273 *m_ptr;
+};
+
+void Rva004E63DB::rva004E63DB()
+{
+	m_ptr->rva004E6273();
+}
