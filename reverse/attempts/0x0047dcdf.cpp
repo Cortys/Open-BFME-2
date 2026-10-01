@@ -1,8 +1,6 @@
 // ?rva0047DCDF@Rva0047DCDF@@QAEXP6AXPAX0@Z0I@Z
-// partial score=0.94 date=2026-09-29
-// ?rva0047DCDF@Rva0047DCDF@@QAEXP6AXPAX0@Z0I@Z
-// partial score=0.94 date=2026-09-29
-// cl: /O1 /MD
+// partial score=0.99 date=2026-10-01
+// cl: /O1 /MD /G7
 // ?rva0047DCDF@Rva0047DCDF@@QAEXP6AXPAX0@Z0I@Z @0x0047DCDF 48B.
 // Forwards to the Rva004F553F visitor with the controlling player's list.
 // Evidence: chain lane packet; same arg forwarding; Contain neighbours.
