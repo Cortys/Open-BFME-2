@@ -46605,3 +46605,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00262BA9@AIUpdateInterface@@QAE_NXZ,,0x00262BA9,67,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262BEC.cpp,matched,checks m_field1F0 and locomotorGoalType 1 or 4 and path rva001E3591 or rva00262176
 ?setLocomotorGoalPositionOnPath@AIUpdateInterface@@UAEXXZ,,0x00262C13,34,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp,matched,ZH AIUpdate POSITION_ON_PATH plus zero
 ?setLocomotorGoalOrientation@AIUpdateInterface@@UAEXM@Z,,0x00262C9B,27,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp,matched,ZH AIUpdate ANGLE plus angle
+?isBusy@AIUpdateInterface@@UBE_NXZ,,0x00262B39,26,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262BEC.cpp,matched,ZH donor AIUpdate::isBusy queries machine currentState isBusy
