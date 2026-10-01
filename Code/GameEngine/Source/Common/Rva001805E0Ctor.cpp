@@ -23,6 +23,7 @@ class Rva001805E0 : public GenBase009EB7D0
 {
 public:
 	Rva001805E0(const char *name, int a, int b);
+	virtual ~Rva001805E0();
 
 	char m_pad04[0x10];
 	void *m_14;
