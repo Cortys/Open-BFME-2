@@ -46773,3 +46773,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ?rva002D7714@Rva002D7714@@QAEXPAURva002D76C6Owner@@@Z,,0x002D7714,48,Code/GameEngine/Source/Common/Rva002D7714Remove.cpp,matched,dual list remove via ICF twin 0x002D76C6 caller 0x002D772A 0x002D773A
 ?rva00459109@Rva00459109@@QAEHXZ,,0x00459109,75,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva00459109.cpp,matched,chain via 0x0045906E float m10 vs 0 plus double compare
 ?findIndex@Rva0040A3F9@@QBEHPAVCreateAHeroData@@@Z,,0x0040A3F9,43,Code/Libraries/Source/WWVegas/WWLib/Rva0040A3F9Find.cpp,matched,unlock lane vector CreateAHeroData find via rowed 0x20E873
+?Rva0052192DInit@@YAXH@Z,,0x0052192D,74,Code/GameEngine/Source/Common/Rva0052192DInit.cpp,matched,chain via Shell push callers 0x00515C64 string Skirmish apt
