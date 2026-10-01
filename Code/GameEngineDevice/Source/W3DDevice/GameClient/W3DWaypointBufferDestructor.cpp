@@ -20,10 +20,14 @@ public:
 class RenderObjClass : public RefCountClass {};
 class SegmentedLineClass : public RefCountClass {};
 
-class TextureClass
+class TextureBaseClass
 {
 public:
 	void Release_Ref(void);
+};
+
+class TextureClass : public TextureBaseClass
+{
 };
 
 class TextureRef
