@@ -9,6 +9,9 @@
 // rowed Rva0048F365Helper TU (IDs at +0x3E8, count at +0x43C). The bound is
 // checked against the zeroed index up front so the cursor setup stays below
 // the branch, reproducing the retail split prologue.
+// AIUpdateInterface's +0x20 command subobject is the AICommandInterface
+// receiver; the pointer/int thiscall signature and target pin agree.
+#pragma comment(linker, "/alternatename:?Rva0026C347Command@Rva0026C347Commands@@QAEXPAXH@Z=?rva0026C347@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z")
 
 enum ObjectID
 {
