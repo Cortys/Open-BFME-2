@@ -45118,3 +45118,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?resize@BfmeE16Vector@@QAEXI@Z,,0x000B086E,43,Code/Libraries/Source/WWVegas/WWLib/stlport_e16_resize_byvalue_000b0693.cpp,matched,E16 one-arg resize zeroing via loop to by-value resize
 ?_M_fill_insert@?$vector@UBfmePod36@@V?$allocator@UBfmePod36@@@_STL@@@_STL@@QAEXPAUBfmePod36@@IABU3@@Z,,0x000B0478,232,Code/Libraries/Source/WWVegas/WWLib/stlport_pod36_fill_insert_000b0478.cpp,matched,vector Pod36 fill-insert false_type via Ob0 G7 no-exceptions
 ?rva0042468D@BfmeE16Vector@@QAEXI@Z,,0x0042468D,48,Code/Libraries/Source/WWVegas/WWLib/stlport_e16_rva0042468d_0042468d.cpp,matched,BfmeE16Vector zero-resize wrapper via int zero to by-value resize
+?Rva000D06C6Parse@@YAXPAVINI@@PAX1PBX@Z,,0x000D06C6,96,Code/Libraries/Source/WWVegas/WWLib/CameraMarkerParse.cpp,matched,chain from push_back 0xD068F index plus name to vector

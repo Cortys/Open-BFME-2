@@ -1,0 +1,30 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /EHsc
+// stlport
+// ?Rva000D06C6Parse@@YAXPAVINI@@PAX1PBX@Z @0x000D06C6 96B
+// Evidence: chain from push_back 0x000D068F; locals int at [ebp-0x14] plus AsciiString at [ebp-0x10] form 8B CameraMarker; parseIndexList with g_00DBE974 then parseAsciiString with 0 then vector push_back; EH_prolog scope.
+#include <vector>
+#include "ascii_string.h"
+
+class INI
+{
+public:
+	static void parseIndexList(INI *ini, void *instance, void *store, const void *userData);
+	static void parseAsciiString(INI *ini, void *instance, void *store, const void *userData);
+};
+
+class CameraMarker
+{
+public:
+	int m_index;
+	AsciiString m_name;
+};
+
+extern const void *const g_00DBE974[];
+
+void __cdecl Rva000D06C6Parse(INI *ini, void *instance, void *store, const void * /*userData*/)
+{
+	CameraMarker marker;
+	INI::parseIndexList(ini, instance, &marker.m_index, g_00DBE974);
+	INI::parseAsciiString(ini, instance, &marker.m_name, 0);
+	((_STL::vector<CameraMarker> *)store)->push_back(marker);
+}
