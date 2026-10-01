@@ -27,6 +27,7 @@ class AsciiString
 {
 public:
 	AsciiString(const AsciiString &o) : m_data(o.m_data) {}
+	~AsciiString();
 private:
 	StringBase<char> m_data;
 };
