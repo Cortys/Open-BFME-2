@@ -62,6 +62,7 @@ class UnicodeString;
 class AsciiString : public StringBase<char>
 {
 public:
+	~AsciiString();
 	AsciiString() {}
 	AsciiString(const char *text) : StringBase<char>(text) {}
 	AsciiString(const AsciiString &src) : StringBase<char>(src) {}
