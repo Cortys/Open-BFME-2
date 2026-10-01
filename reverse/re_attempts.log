@@ -4656,3 +4656,4 @@ FUN_00959c3d	0x00559C3D	168	blocked	UnicodeString by-value return with TheGameTe
 ?rva002CCE53@Weapon@@QBEMXZ	0x002CCE53	128	partial	126vs128B 0 reg diffs; 2 sites duplicate 0.0-1.0 loads vs retail shared tails at end plus 2 inverted conds jne-vs-je and jae-vs-jb; tried early-return vs goto-shared plus archSSE-drop; Rva000B2EB5 flags t=25 model=muse-17 score=0.93 stash=reverse/attempts/0x002cce53.cpp
 ?rva001F48DF@Rva001F48DF@@QAEHHH@Z	0x001F48DF	123	blocked	outer shared-dec became or plus esi-edi swap plus test-al vs test-eax t=15 model=muse-17
 ?rva002CCED3@Rva002CCED3@@QAEHHH@Z	0x002CCED3	244	blocked	244B EH-SSE-x87 mix plus 10 callees needs Weapon-Object-Partition layouts t=10 model=muse-17
+FUN_009dcead	0x005DCEAD	10	blocked	EH prolog fragment of 0x005DCEB7 which sets EBP via EH_prolog; not standalone function t=4 model=muse-14

@@ -45297,3 +45297,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0028F733@Rva0028F733@@QAE_NPBD@Z,,0x0028F733,47,Code/GameEngine/Source/Common/System/Rva0028F733BitSet.cpp,matched,set bit from name via BitFlags104 getSingleBitFromName
 ?rva0028F762@Rva0028F762@@QAE_NPBD@Z,,0x0028F762,47,Code/GameEngine/Source/Common/System/Rva0028F762BitSet.cpp,matched,twin of 0x0028F733 via BitFlags101 getSingleBitFromName
 ?rva0028F7D9@Rva0028F7D9@@QAE_NPBD@Z,,0x0028F7D9,47,Code/GameEngine/Source/Common/System/Rva0028F7D9BitSet.cpp,matched,twin of 0x0028F733 via BitFlags154 SpecialPower table caller 0x0029268C
+?rva005AD99C@Rva005AD99C@@QAEXABVAsciiString@@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x005AD99C,36,Code/GameEngine/Source/Common/Rva005AD99C.cpp,matched,chain from 0x005DCE72 via rowed inner call
