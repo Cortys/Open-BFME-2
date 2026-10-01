@@ -46141,3 +46141,6 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00589560@Rva00494A97@@UBE?AVRva002390CB@@XZ,,0x00589560,30,Code/GameEngine/Source/Common/Rva00494A97Getters.cpp,matched,by-value Rva002390CB getter over module data +0xC; vtable slot 16 at +0x24; subobject this
 ?rva0049A8FA@Rva0049A64B@@UAEXHPAUCoord3D@@@Z,,0x0049A8FA,65,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva0049A64BRva0049A8FA.cpp,matched,trailing-interface override at +0x3E4 slot 5; Coord3D by value through two vslots; subobject this
 ?rva0047DF44@TunnelContain@@UAE_NH@Z,,0x0047DF44,61,Code/GameEngine/Source/GameLogic/Object/Contain/TunnelContainRva0047DF44.cpp,matched,contain-interface override at +0x20 slot 58; list<int> membership via the rowed 0x00466398 record; subobject this
+?bfmeThrowV54@BfmeStrV54@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1498.cpp,matched,
+?bfmeThrowV55@BfmeStrV55@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1499.cpp,matched,
+?bfmeThrowV37@BfmeStrV37@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1478.cpp,matched,
