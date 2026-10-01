@@ -45040,3 +45040,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?Rva0035CEA6Create@@YGPAVRva0035CC36@@PAVRva0035CE52@@@Z,,0x0035CEA6,106,Code/GameEngine/Source/Common/Rva0035CEA6Factory.cpp,matched,factory for Rva0035CC36 via new ctor assign guard g_00E01EA8
 ??0Rva002DFA7A@@QAE@HABVAsciiString@@@Z,,0x002DFA7A,87,Code/GameEngine/Source/Common/Rva002DFA7ACtor.cpp,matched,unlock lane caller 0x002E048C LivingWorldBuilding parse precedent Rva001ED0A9Ctor
 ?rva006CE380@Rva006CE380@@QAEXXZ,,0x006CE380,49,Code/GameEngine/Source/Common/Rva006CE380Clear.cpp,matched,chain via freeBlock pool 8B next-at-4 list clear
+?rva0037B287@Rva0037B287@@QAEXVUnicodeString@@H@Z,,0x0037B287,159,Code/GameEngine/Source/Common/System/Rva0037B287Write.cpp,matched,file flag write via ftell fseek fwrite rows
