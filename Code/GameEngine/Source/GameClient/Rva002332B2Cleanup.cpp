@@ -8,6 +8,7 @@
 // Evidence: calls rowed ?winHide@GameWindow@@QAEH_N@Z and
 // ??_E?$StringBase@G@@AAEPAXI@Z; global 0x00DFEF1C is TheWindowManager.
 typedef unsigned short wchar_t;
+void operator delete[](void *p);
 
 class GameWindow
 {
