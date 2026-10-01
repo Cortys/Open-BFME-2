@@ -36,12 +36,21 @@ public:
 void Rva00360CB0Release(int *indexHolder);
 int __cdecl Rva00361790(Rva00360F55 *record);
 
+extern const BfmeFixedStorage0004543D g_defaultStorage009FEFA4;
+
+class Rva00045411BitSet
+{
+public:
+	unsigned char m_bytes[28];
+};
+
 class Rva003623E5Member
 {
 public:
 	Rva003623E5Member();
 	void initFromStorages(BfmeFixedStorage0004543D first,
 	                      BfmeFixedStorage0004543D second);
+	void rva00362192(Rva00045411BitSet first, BfmeFixedStorage0004543D second);
 
 private:
 	unsigned int m_record;
@@ -103,4 +112,32 @@ void Rva003623E5Member::initFromStorages(
 		}
 	}
 	m_record = Rva00361790(&record);
+}
+
+void Rva003623E5Member::rva00362192(Rva00045411BitSet first, BfmeFixedStorage0004543D second)
+{
+	Rva00360CB0Release((int *)&m_record);
+	Rva00360F55 record;
+	record.m_flag88 = 0;
+	record.m_value80 = 2;
+	for (unsigned int offset = 0; offset < 28; offset += 4)
+	{
+		*(unsigned int *)((unsigned char *)&record.m_first + offset) |=
+			*(unsigned int *)((unsigned char *)&first + offset);
+	}
+	for (unsigned int offset = 0; offset < 28; offset += 4)
+	{
+		*(unsigned int *)((unsigned char *)&record.m_second + offset) |=
+			*(unsigned int *)((unsigned char *)&second + offset);
+	}
+	for (unsigned int index = 0; index < 7; ++index)
+	{
+		if (((unsigned int *)&first)[index] != 0)
+		{
+			record.m_flag88 = 1;
+			m_record = Rva00361790(&record);
+			return;
+		}
+	}
+	initFromStorages(g_defaultStorage009FEFA4, g_defaultStorage009FEFA4);
 }
