@@ -45670,3 +45670,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004DF7DB@Rva004DF7DB@@QAEXW4UpdateSleepTime@@@Z,,0x004DF7DB,64,Code/GameEngine/Source/Common/Rva004DF7DBWake.cpp,matched,rowed testStatus 0x0004E536 plus rowed setWakeFrame 0x0044DF71 plus TheGameLogic 0x009FE78C
 ?Rva002DA398Get@@YA?AVAsciiString@@H@Z,,0x002DA398,124,Code/Libraries/Source/WWVegas/WWLib/rva002da398_audio_string.cpp,matched,audio string via TheEmptyString plus TheAudio slot77 plus set concat copy
 ??4RadarEventRefSlot@@QAEAAV0@ABV0@@Z,,0x0004E490,45,Code/GameEngine/Source/Common/System/RadarEventRefSlotAssign.cpp,matched,slot assign via inc 0x005D1A79 release 0x002D335B callers 0x0004E66D 0x0004EFC2
+?rva0004E4C9@Rva0004E4C9@@QAEAAV1@PAX@Z,,0x0004E4C9,24,Code/GameEngine/Source/Common/System/Rva0004E4C9Assign.cpp,matched,rowed inc 0x002D76B7 caller 0x0004F84E neighbours O1
