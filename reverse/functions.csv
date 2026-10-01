@@ -45877,3 +45877,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?evaluateBridgeBroken@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3D95,49,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateBridge.cpp,matched,ZH donor; dispatcher case 55 BRIDGE_BROKEN
 ?evaluateBridgeRepaired@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3DC6,49,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateBridge.cpp,matched,ZH donor; dispatcher case 54 BRIDGE_REPAIRED
 ?createGroup@AI@@QAEPAVAIGroup@@XZ,,0x002FEC4B,76,Code/GameEngine/Source/GameLogic/AI/AI_createGroup.cpp,matched,
+?getTeamAsAIGroup@Team@@QAEXPAVAIGroup@@@Z,,0x003A0F62,112,Code/GameEngine/Source/Common/RTS/TeamGetTeamAsAIGroup.cpp,matched,

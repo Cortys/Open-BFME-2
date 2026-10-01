@@ -13,16 +13,22 @@ typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef bool Bool;
 
+class AsciiString;
+
 template <typename T>
 class StringBase
 {
+    friend class AsciiString;
+
 public:
     StringBase(void) : m_data(0) {}
-    StringBase(const StringBase &other);
     T *getBufferForRead(Int len);
 
 protected:
     void *m_data;
+
+private:
+    StringBase(const StringBase &other);
 };
 
 class AsciiString : public StringBase<char>

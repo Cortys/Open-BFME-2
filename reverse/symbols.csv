@@ -2814,6 +2814,7 @@ name,address,notes
 ?lookup56@Rva00DFF024Registry@@QAEPAXHH@Z,0x002D2371,46B thiscall wrapper over lookup 0x2D225F; index minus-1 tries slot 5 then slot 6 else direct; sole caller is the winclass verb 0x31639C
 ?lookup@Rva007FA2C0@@QAEPAURva007F96C0Rec@@PAX@Z,0x00665AD0
 ?lookup@Rva00DFF024Registry@@QAEPAXHH@Z,0x002D225F,75B thiscall keyed slot lookup over 12 slots at manager plus 0x0C; null key returns null; index minus-1 scans all slots via helper 0x2D2235; else slots[index]; sole callees are the five callback verbs plus wrappers 0x2D2341 0x2D2371
+?rva002D2235@Rva00DFF024Registry@@QAEPAXHPAX@Z,0x002D2235,opaque 42B thiscall helper called by registry lookup at 0x2D225F with ECX=this and args (key, slot); address from direct-call displacement; behavior not independently recovered
 ?lookupVersionValue@VersionBlockParser@@QAEPBDPBD0@Z,0x00427EDA,Version-block key lookup returning char* or default; called 7x in 0x23870E for ID USER MACHINE GUID TIME DATE CONFIG and 1x in 0x238646
 ?m@Gen_007e86c0@@QAEXXZ,0x00655780
 ?m@Gen_007e88b0@@QAEHXZ,0x0066DD00
@@ -5892,6 +5893,7 @@ _ConvertBoolTrees,0x001BBD60
 ?createGroup@AI@@QAEPAVAIGroup@@XZ,0x002FEC4B,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E loads TheAI then calls this; BFME1 updateTeamSetAttitude donor identifies AI::createGroup
 ??0AIGroup@@QAE@XZ,0x0036E4C7,BFME2 AI::createGroup at 0x002FEC4B allocates 0x3C and calls this at 0x002FEC6F; BFME1 AIGroupConstructor identifies the constructor; target Ghidra boundary 151B
 ?getTeamAsAIGroup@Team@@QAEXPAVAIGroup@@@Z,0x003A0F62,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E passes its team as this and new AIGroup as argument; BFME1 updateTeamSetAttitude donor identifies Team::getTeamAsAIGroup
+?add@AIGroup@@QAEXPAVObject@@@Z,0x0036E5F1,REL32 from target Team::getTeamAsAIGroup at 0x003A0FB9 with AIGroup as this and Object* as argument; BFME1 AIGroup::add donor confirms the method identity; target Ghidra boundary 103B
 ?setAttitude@AIGroup@@QAEXW4AttitudeType@@@Z,0x0036DD16,BFME2 TEAM_SET_ATTITUDE body at 0x3BEE5E passes AIGroup as this and action attitude as argument; BFME1 updateTeamSetAttitude donor identifies AIGroup::setAttitude
 ?getQualifiedTriggerAreaByName@ScriptEngine@@QAEPAVPolygonTrigger@@VAsciiString@@@Z,0x0035768D,BFME2 NAMED_ATTACK_AREA body calls this with ScriptEngine* and copied area name; BFME1 donor identifies qualified trigger lookup
 ?leaveGroup@Object@@QAEXXZ,0x0028C01F,BFME2 NAMED_ATTACK_AREA body calls this with resolved Object*; BFME1 donor identifies Object::leaveGroup
