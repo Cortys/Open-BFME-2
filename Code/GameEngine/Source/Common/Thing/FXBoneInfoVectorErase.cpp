@@ -88,7 +88,7 @@ OutputIter __copy_ptrs(InputIter first, InputIter last, OutputIter result,
 
 }
 
-_STL::vector<FXBoneInfo, _STL::allocator<FXBoneInfo> >::iterator
+inline _STL::vector<FXBoneInfo, _STL::allocator<FXBoneInfo> >::iterator
 _STL::vector<FXBoneInfo, _STL::allocator<FXBoneInfo> >::erase(
 	iterator first, iterator last){
 	iterator result = _STL::__copy_ptrs(last, m_finish, first, _STL::__false_type());
@@ -96,3 +96,16 @@ _STL::vector<FXBoneInfo, _STL::allocator<FXBoneInfo> >::erase(
 	m_finish = result;
 	return first;
 }
+
+// vector<FXBoneInfo>::erase is a header inline in retail: other units emit
+// select-any copies of it, so a strong definition here was a duplicate symbol
+// in the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitFXBoneInfoVectorErase@@YAXPAV?$vector@UFXBoneInfo@@V?$allocator@UFXBoneInfo@@@_STL@@@_STL@@@Z present-unmatched
+void bfmeEmitFXBoneInfoVectorErase(
+	_STL::vector<FXBoneInfo, _STL::allocator<FXBoneInfo> > *p)
+{
+	p->erase(0, 0);
+}
+#pragma inline_depth()
