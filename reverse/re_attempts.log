@@ -5169,3 +5169,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva0060186FCopy@@YAPAVCoord3D@@PBV1@0PAV1@@Z	0x0060186F	29	blocked	passes 5 args to 3-arg rowed 0x00601797 and takes 4 from caller 0x0060194C so arity needs fix t=10 model=muse-18
 ??0Rva001DA19E@@QAE@XZ	0x001DA19E	311	blocked	unknown 0xC4 base with vtable 0x7DA270 plus 5 E16 vectors plus floats kF7C; no donor or vtable identity; needs INI table t=12 model=muse-17
 ??1Rva005AFE3F@@UAE@XZ	0x005AFE3F	71	blocked	EH dtor with vtable 0xC728B8 plus Get plus manager; EmptyBase gives +4 shift plus base call vs retail no base; needs no-shift unwindable recipe t=15 model=muse-17
+?rva001520B4@Rva001520B4@@QAEHPADH@Z	0x001520B4	100	blocked	three pushes into 1-arg getBufferForRead 0x36640 arity mismatch needs ICF twin verification t=8 model=muse-17
