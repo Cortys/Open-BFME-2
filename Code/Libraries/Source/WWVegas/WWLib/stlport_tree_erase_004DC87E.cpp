@@ -10,3 +10,4 @@
 typedef _STL::_Rb_tree<unsigned short, _STL::pair<const unsigned short, int>, _STL::_Select1st<_STL::pair<const unsigned short, int> >, _STL::less<unsigned short>, _STL::allocator<_STL::pair<const unsigned short, int> > > GHMapTree004DC87E;
 
 template void GHMapTree004DC87E::_M_erase(GHMapTree004DC87E::_Link_type);
+template void GHMapTree004DC87E::clear();
