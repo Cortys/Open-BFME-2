@@ -45358,3 +45358,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00298893@BfmeSubBGB@@QAE_NXZ,,0x00298893,174,Code/GameEngine/Source/Common/Rva00298893.cpp,matched,BfmeSubBGB loop via slots plus TheGameLogic findObjectByID and report
 ?rva00298E6A@Rva00298E6A@@QAEXXZ,,0x00298E6A,63,Code/GameEngine/Source/Common/Rva00298E6A.cpp,matched,unlock slot31 plus tail slot480 via Object pool EraseRange clear
 ?rva00475EA2@Rva00475EA2@@QAEXXZ,,0x00475EA2,136,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00475EA2.cpp,matched,chain list plus RB map via TheGameLogic plus pool clear
+?rva0039834C@Rva0039834C@@QAEXAAPAURvaNode0039834C@@PAU2@1PBURva0039627D@@1@Z,,0x0039834C,136,Code/GameEngine/Source/Common/System/Rva0039834CInsert.cpp,matched,chain lane calls twin alloc 0x00397CC9 plus Rebalance plus signed key
