@@ -85,7 +85,7 @@ AptValueNameEntry::AptValueNameEntry(const EAStringC &name, int value) :
 // the caller; array construction drives this body per element through
 // the 0x00629512 helper, which is why it also serves as the element
 // initializer callback.
-AptValueNameEntry::AptValueNameEntry()
+inline AptValueNameEntry::AptValueNameEntry()
 {
 	m_name.clear();
 	m_value = 0;
@@ -125,3 +125,15 @@ void AptValueVector::rva006CC0A0(int iPos)
 	}
 	m_data[mCurrentNum] = 0;
 }
+
+// ??0AptValueNameEntry@@QAE@XZ is a header inline in retail: other units emit
+// select-any copies of it, so a strong definition here was a duplicate symbol
+// in the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitAptValueVector@@YAXPAVAptValueNameEntry@@@Z present-unmatched
+void bfmeEmitAptValueVector(AptValueNameEntry *p)
+{
+	p->AptValueNameEntry::AptValueNameEntry();
+}
+#pragma inline_depth()
