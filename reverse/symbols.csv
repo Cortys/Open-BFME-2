@@ -6695,3 +6695,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?rva005CB260@Rva005CB260@@QAEXXZ,0x005CB260,method twin of free pin via ecx-this call sites 0x005FFB32
 ?rva00397CC9@Rva0039834C@@QAEPAXABURva0039627D@@@Z,0x00397CC9,twin member for tree insert mov ecx edi ICF with free row
 ?Rva00395D45CopyAux@@YAPAVRva0039597C@@PAV1@00PADH@Z,0x00395D45,twin 5-arg decl of rowed Copy 0x00395D45 for wrapper 0x00396260 passing local byte plus 0
+??$_Destroy@PAURvaPair0039973B@@@_STL@@YAXPAURvaPair0039973B@@0@Z,0x0032C0CA,TU _Destroy resolves the vector-dtor call at 0x39973B; retail 25B 8-byte-pair loop via key dtor 0x48BA39 (rowed Rva0032C0CADestroyPairs stride-identical fold)

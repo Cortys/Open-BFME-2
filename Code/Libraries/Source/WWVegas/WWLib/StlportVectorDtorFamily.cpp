@@ -106,3 +106,12 @@ template _STL::vector<Rva001ED0DE>::~vector();
 struct Rva00414BDBElement { public: ~Rva00414BDBElement(); };
 template _STL::vector<Rva00414BDBElement>::~vector();
 
+// ??1?$vector@URvaPair0039973B@@V?$allocator@URvaPair0039973B@@@_STL@@@_STL@@QAE@XZ @0x0039973B 63B.
+// Same 63B Destroy-plus-free shape under /O1 /GX (EH states 0/-1): destroys the range
+// through the rowed 8-byte AsciiString-keyed DestroyPairs at 0x32C0CA then frees
+// via 0x30830; caller at 0x0039A1FD plus Unwind funclets at 0xB81119/0xB81178.
+// Sits just before CastleBehavior range vector 0x0039977A; 8-byte stride plus key
+// dtor are all this body observes so the honest RvaPair address name stands in.
+struct RvaPair0039973B { AsciiString m_key; int m_value; public: ~RvaPair0039973B(); };
+template _STL::vector<RvaPair0039973B>::~vector();
+
