@@ -10,6 +10,10 @@ public:
 	static unsigned int Get_Sync_Time() { return SyncTime; }
 };
 
+// Matched DIR32 sites place public WW3D::SyncTime at VA 0x00DEC3CC.
+// The slot is in the PE .data zero-fill tail, so retail starts it at zero.
+unsigned int WW3D::SyncTime = 0;
+
 class RefCountClass
 {
 public:

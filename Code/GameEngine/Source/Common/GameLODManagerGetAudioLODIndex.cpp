@@ -15,9 +15,8 @@
 // - The reporting tail logs through Debug virtuals plus the matched
 //   Debug/StringBase operator<< at 0x000028E8: slot60(), 3-arg slot6C,
 //   slot38 Invalid-name literal (whose return feeds operator<< with the name),
-//   slot38 "'", slot4C(2). The enabled check resolves via the new
-//   _bfme_debugReportingEnabled alias pin at 0x000387C0 (BFME1-attested name
-//   for the matched placeholder row); the record call reuses the established
+//   slot38 "'", slot4C(2). The enabled check reads the Debug singleton flag
+//   through the matched row at 0x000387C0; the record call reuses the established
 //   Debug::SkipNext pin at 0x00038790.
 // - TheBfmeAwakenDebug is TU-local DEFINED (COMMON merges; its DIR32 patches
 //   from retail like theDebug) and bfmeTabEYC is TU-local DEFINED (its base
