@@ -6853,3 +6853,9 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?rva0035033F@AIStateMachine@@QAEXXZ,0x0035033F,AIStateMachine temporary-state exit called with the machine as this from slots 5/6 of the AIStateMachine vtable 0x00C14CD0 (clear 0x00352B41 and resetToDefaultState 0x00350392) when +0x50 is set; name by address
 ?rva0028BC4D@Object@@QAEXXZ,0x0028BC4D,Object method forwarding to its +0x330 WeaponSet (add ecx 0x330 then jmp 0x002C7474) with no argument; called on the machine owner by AIAttackState::onExit 0x0034B889 where Zero Hour releases the temporary weapon lock; name by address
 ?addRadar@Player@@QAEX_N@Z,0x002AA91F,Zero Hour Player::addRadar body: rowed hasRadar 0x002AA08E before and after incrementing the radar count +0xA0 and (disableProof) +0xA4; called by RadarUpgrade::upgradeImplementation 0x004B488F with the module data bool
+?resolveName@Rva002046C0Owner@@QAE?AVAsciiString@@ABV2@@Z,0x002046C0,address read from the retail REL32 at 0x00358537 in getTeamNamed 0x003584E9
+?find@Rva0032C07COwner@@QAEPAUTeamMapNode@@AAURva0002C4FD@@@Z,0x0032C07C,address read from the retail REL32 at 0x003585FF in getTeamNamed 0x003584E9
+?findInstance@Rva0039F761Owner@@QAEPAVTeam@@PAX@Z,0x0039F761,address read from the retail REL32 at 0x00358611 in getTeamNamed 0x003584E9
+?findPrototype@Rva0039FE6COwner@@QAEPAVTeamPrototype@@ABVAsciiString@@0@Z,0x0039FE6C,address read from the retail REL32 at 0x00358643 in getTeamNamed 0x003584E9
+?countTeamInstances@TeamPrototype@@QAEHXZ,0x0039D954,address read from the retail REL32 at 0x00358691 in getTeamNamed 0x003584E9; ECX is TeamPrototype
+?createInstance@Rva003A3CBBOwner@@QAEPAVTeam@@ABVAsciiString@@0@Z,0x003A3CBB,address read from the retail REL32 at 0x0035871D in getTeamNamed 0x003584E9; ECX is TeamFactory

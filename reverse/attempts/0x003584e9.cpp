@@ -1,5 +1,5 @@
 // ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
-// partial score=0.4 date=2026-10-01
+// partial score=0.55 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
@@ -88,9 +88,13 @@ public:
     AsciiString alternateName; // +0x14 (target)
 };
 
-class Team
+class TeamState
 {
 public:
+    Bool active;
+    Bool created;
+
+    Bool isActive() { return active; }
     void setActive()
     {
         if (!active) {
@@ -98,12 +102,16 @@ public:
             active = 1;
         }
     }
+};
+
+class Team
+{
+public:
 
     unsigned char pad_0000[0x30];
     TeamPrototypeNames *prototype; // +0x30 (target)
     unsigned char pad_0034[0x5D - 0x34];
-    unsigned char active; // +0x5D (target)
-    unsigned char created; // +0x5E (target)
+    TeamState status; // +0x5D (target)
 };
 
 class ScriptEngine
@@ -166,7 +174,6 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
         }
     }
 
-    Team *team;
     {
         Rva0002C4FD key(*(const StringBase<char> *)&normalized,
                         *(const StringBase<char> *)&name);
@@ -179,16 +186,17 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
     Rva0039FE6COwner *factory = (Rva0039FE6COwner *)TheTeamFactory;
     TeamPrototype *teamPrototype = factory->findPrototype(normalized, name);
     if (!teamPrototype)
-        return 0;
+        goto nullTeam;
 
     if (teamPrototype->flags & 1) {
-        team = teamPrototype->firstInstance;
+        Team *team = teamPrototype->firstInstance;
         if (!team)
-            return 0;
-        if (!team->active) {
+            goto nullTeam;
+        TeamState *status = &team->status;
+        if (!status->isActive()) {
             if (!createIfMissing)
-                return 0;
-            team->setActive();
+                goto nullTeam;
+            status->setActive();
         }
         return team;
     }
@@ -203,10 +211,13 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
         }
     }
 
-    team = teamPrototype->firstInstance;
+    Team *team = teamPrototype->firstInstance;
     if (team)
         return team;
     if (!createIfMissing)
-        return 0;
+        goto nullTeam;
     return ((Rva003A3CBBOwner *)TheTeamFactory)->createInstance(normalized, name);
+
+nullTeam:
+    return 0;
 }
