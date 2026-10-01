@@ -77,7 +77,10 @@ class LinearOffsetTextureMapperClass : public ScaleTextureMapperClass {};
 class ScreenMapperClass : public LinearOffsetTextureMapperClass {
 public: virtual void Apply(int uv_array_index);
 };
-extern Matrix4x4 g_mapperProjectionUpload_009EDBF0;
+// Matched Apply DIR32 slots place this 64-byte zero-fill matrix at VA
+// 0x00DEDBF0 (tools/find_dir32.py); it is the unnamed upload copy adjacent to
+// DX8Wrapper::ProjectionMatrix at 0x00DEDC30.
+Matrix4x4 g_mapperProjectionUpload_009EDBF0;
 // Access shim only: no runtime instances or claim of a retail derived class.
 struct MapperTransformAccess : DX8Wrapper {
     enum { WORLD_CHANGED=1, VIEW_CHANGED=2, WORLD_IDENTITY=1<<18, VIEW_IDENTITY=1<<19 };
