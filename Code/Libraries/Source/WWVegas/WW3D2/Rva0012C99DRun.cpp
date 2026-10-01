@@ -36,8 +36,6 @@ extern "C" __declspec(dllimport) unsigned long __stdcall WaitForSingleObject(voi
 extern "C" __declspec(dllimport) int __stdcall GetExitCodeProcess(void *process, DWORD *exitCode);
 extern "C" __declspec(dllimport) int __stdcall CloseHandle(void *handle);
 
-extern const unsigned short g_00BD2354[];
-extern const unsigned short g_00BD2324[];
 
 bool __cdecl Rva0012C99DRun()
 {
@@ -49,7 +47,7 @@ bool __cdecl Rva0012C99DRun()
 
 	ji_006291ae(&startup, 0, sizeof(startup));
 	startup.cb = sizeof(startup);
-	wcscpy(command, g_00BD2354);
+	wcscpy(command, L"ShaderAssetBuilder.exe");
 	if (CreateProcessW(0, command, 0, 0, 0, 0x8000000, 0, 0, &startup, &info)) {
 		WaitForSingleObject(info.hProcess, 0xFFFFFFFF);
 		if (!GetExitCodeProcess(info.hProcess, &exitCode) || exitCode == 0)
@@ -71,7 +69,7 @@ bool __cdecl Rva0012C907Run(const unsigned short *currentDirectory)
 
 	ji_006291ae(&startup, 0, sizeof(startup));
 	startup.cb = sizeof(startup);
-	wcscpy(command, g_00BD2324);
+	wcscpy(command, L"TextureAssetBuilder.exe");
 	if (CreateProcessW(0, command, 0, 0, 0, 0x8000000, 0, currentDirectory, &startup, &info)) {
 		WaitForSingleObject(info.hProcess, 0xFFFFFFFF);
 		if (!GetExitCodeProcess(info.hProcess, &exitCode) || exitCode == 0)

@@ -80,8 +80,6 @@ class Rva00222A8BTarget
 {
 };
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern unsigned short const g_00C6670C[];
-extern unsigned short const g_00C66700[];
 extern const char *g_00DB95F4[];
 class Rva005189CF
 {
@@ -98,9 +96,9 @@ void Rva005189CF::rva005189CF()
 	UnicodeString u;
 	if (((StringBase<char> &)key).m_data != 0 && ((StringBase<char> &)key).m_data->length != 0)
 	{
-		((StringBase<unsigned short> &)u).set(g_00C6670C);
+		((StringBase<unsigned short> &)u).set(L"(");
 		((StringBase<unsigned short> &)u).concat(TheGameText->fetch(key, 0));
-		((StringBase<unsigned short> &)u).concat(g_00C66700);
+		((StringBase<unsigned short> &)u).concat(L") - ");
 	}
 	((StringBase<unsigned short> &)u).concat(TheGameText->fetch("APT:CannotChangeGraphics", 0));
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(AsciiString("APT:CannotChangeGraphics"), u, false);

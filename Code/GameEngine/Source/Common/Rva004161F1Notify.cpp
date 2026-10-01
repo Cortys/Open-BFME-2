@@ -238,7 +238,6 @@ GameInfo * TheGameInfo;
 extern NameKeyGenerator *TheNameKeyGenerator;
 extern PlayerList *ThePlayerList;
 extern InGameUI *TheInGameUI;
-extern const wchar_t g_00C3A458[];
 
 void __cdecl Rva004162B7Notify(AsciiString a, UnicodeString u)
 {
@@ -249,7 +248,7 @@ void __cdecl Rva004162B7Notify(AsciiString a, UnicodeString u)
 	Player *player = ThePlayerList->findPlayerWithNameKey(key);
 	if (player == 0)
 	{
-		TheInGameUI->slot4c(UnicodeString(g_00C3A458), u.str());
+		TheInGameUI->slot4c(UnicodeString(L"%s"), u.str());
 	}
 	else
 	{
@@ -261,7 +260,7 @@ void __cdecl Rva004162B7Notify(AsciiString a, UnicodeString u)
 			goto done;
 		RGBColor color;
 		color.setFromInt(player->m_color280);
-		TheInGameUI->slot44(&color, UnicodeString(g_00C3A458), u.str());
+		TheInGameUI->slot44(&color, UnicodeString(L"%s"), u.str());
 	done:;
 	}
 }
