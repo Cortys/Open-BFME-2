@@ -46082,3 +46082,5 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?winGetPrev@GameWindow@@QAEPAV1@XZ,,0x00314105,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winNextTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winPrevTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?seekoff@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@JHH@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+?seekpos@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@V32@H@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,

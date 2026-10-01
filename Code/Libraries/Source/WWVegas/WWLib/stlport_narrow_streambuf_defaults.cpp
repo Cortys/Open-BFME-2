@@ -27,6 +27,19 @@ public:
 
 class locale;
 
+// STLport 4.5.3 fpos<mbstate_t>: an offset and a conversion state. Its
+// constructor makes it non-POD, so it comes back through a hidden pointer.
+template <class StateT>
+class fpos
+{
+public:
+	fpos(long pos) : _M_pos(pos), _M_st(StateT()) {}
+
+private:
+	long _M_pos;
+	StateT _M_st;
+};
+
 template <class CharT, class Traits>
 class basic_streambuf
 {
@@ -48,6 +61,12 @@ protected:
 	virtual int sync() { return 0; }
 	virtual basic_streambuf *setbuf(CharT *, int) { return this; }
 	virtual int_type overflow(int_type c) { return Traits::eof(); }
+
+	// seekoff and seekpos: both return pos_type(-1), an fpos written through
+	// the hidden return pointer with four argument words to pop either way,
+	// so retail folded both onto the wide seekoff body at 0x0001C970.
+	virtual fpos<int> seekoff(long, int, int) { return fpos<int>(-1); }
+	virtual fpos<int> seekpos(fpos<int>, int) { return fpos<int>(-1); }
 };
 
 template class basic_streambuf<char, char_traits<char> >;
