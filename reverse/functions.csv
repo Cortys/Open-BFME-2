@@ -46285,3 +46285,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?parseBannerCarrierPosition@@YAXPAVINI@@PAX1PBX@Z,,0x0046F179,270,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainParseBannerCarrierPosition.cpp,matched,INI BannerCarrierPosition field parser (PC table 0x00C45530); the HordeBannerSlot value is declared in a block opened after the new so it reuses the new temporary frame slot
 ?rva0038028B@Rva00380200@@QAEXXZ,,0x0038028B,84,Code/GameEngine/Source/Common/Rva0038028BMethod.cpp,matched,Unlock init plus rank bonus plus tail to rva0038020D
 ?Rva003955AFCall@@YGXHHMHH@Z,,0x003955AF,43,Code/GameEngine/Source/Common/Rva003955AF.cpp,matched,unlock via global g_00A027B8 slot16 with float plus or-0x100 plus trailing 0
+?rva00395CEB@Rva00395CEB@@QAEXPAX@Z,,0x00395CEB,45,Code/GameEngine/Source/Common/Rva00395CEB.cpp,matched,unlock recursive free via child plus iterate via next
