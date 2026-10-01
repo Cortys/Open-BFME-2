@@ -46447,3 +46447,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00293955@Object@@QAEXW4ModelConditionFlagType@@@Z,,0x00293955,176,Code/GameEngine/Source/GameLogic/Object/ObjectConditionAndPassengerWeaponSet.cpp,matched,clears a model condition on every passenger listed by the container interface slot 66 and on the container
 ?rva00293A05@Object@@QAEXW4ModelConditionFlagType@@@Z,,0x00293A05,166,Code/GameEngine/Source/GameLogic/Object/ObjectConditionAndPassengerWeaponSet.cpp,matched,sets a model condition on every passenger listed by the container interface slot 66 and on the container
 ??0Rva005753D1@@QAE@XZ,,0x005753D1,12,Code/GameEngine/Source/Common/Rva005753D1Ctor.cpp,matched,ctor delegating to rowed base 0x005CC61E
+??_GRva0056B218@@UAEPAXI@Z,,0x0056B47C,28,Code/GameEngine/Source/Common/Rva0056B218Dtor.cpp,matched,deleting dtor from own dtor unit
