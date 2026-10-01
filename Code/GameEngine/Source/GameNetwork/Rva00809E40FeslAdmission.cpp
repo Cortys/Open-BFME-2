@@ -167,7 +167,6 @@ struct Rva007EB810Diag
 
 Rva007EB810Diag *Rva007EB810Get();
 void *Rva007F93E0( void *message, void *route, void *owner );
-extern int g_bfmeKeyVHE;
 
 class Gen007F0130
 {
@@ -181,9 +180,9 @@ void Rva00809E40Owner::rva00809E40( Rva007E8810Message *input )
 	BfmeC994 message( buffer, 0x40 );
 	message.m_category = input->m_category;
 	void *value = (void *)( long )input->getInt(
-		(const char *)&g_bfmeKeyVHE, -1 );
+		"TID", -1 );
 	if( value != (void *)-1 )
-		message.addInt( (const char *)&g_bfmeKeyVHE, (int)( long )value );
+		message.addInt( "TID", (int)( long )value );
 
 	message.m_field04 = input->m_field04;
 	message.m_field08 = input->m_field08;

@@ -63,7 +63,6 @@ public:
 };
 
 void sendFeslMessage( void *message, const char *route, void *owner );
-extern int g_bfmeKeyVHE;
 
 struct Rva0080A110Message
 {
@@ -105,11 +104,11 @@ void Rva0080A110Owner::route( Rva0080A110Message *input )
 
 	message.m_category = input->m_field1c;
 	void *value = reinterpret_cast< BfmeThingRF * >( input )->bfmeGoRF(
-		&g_bfmeKeyVHE, (void *)-1 );
+		(int *)"TID", (void *)-1 );
 	if( value != (void *)-1 )
 	{
 		reinterpret_cast< BfmeThingCIB * >( &message )->bfmeGoCIB(
-			&g_bfmeKeyVHE, value );
+			(int *)"TID", value );
 	}
 
 	message.m_field04 = input->m_field04;
@@ -161,9 +160,9 @@ void Rva0080A110Owner::route( Rva0080A110Message *input )
 void __cdecl Rva008035F0Go( void *first, void *second )
 {
 	void *value = ( (BfmeThingRF *)second )->bfmeGoRF(
-		&g_bfmeKeyVHE, (void *)-1 );
+		(int *)"TID", (void *)-1 );
 	if( value != (void *)-1 )
-		( (BfmeThingCIB *)first )->bfmeGoCIB( &g_bfmeKeyVHE, value );
+		( (BfmeThingCIB *)first )->bfmeGoCIB( (int *)"TID", value );
 }
 
 // @?Rva008035F0Go@@YAXPAX0@Z 0x008035F0

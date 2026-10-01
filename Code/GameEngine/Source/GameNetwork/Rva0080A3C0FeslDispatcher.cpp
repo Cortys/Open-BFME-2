@@ -116,7 +116,6 @@ public:
 };
 
 void *Rva007F93E0( void *message, void *route, void *owner );
-extern int g_bfmeKeyVHE;
 
 void BfmeThingUNC::rva0080A3C0( Rva0080A3C0Input *input )
 {
@@ -126,9 +125,9 @@ void BfmeThingUNC::rva0080A3C0( Rva0080A3C0Input *input )
 	BfmeThingCIB *messageCIB = reinterpret_cast< BfmeThingCIB * >( &message );
 
 	message.m_category = input->m_field1c;
-	void *value = sourceRF->bfmeGoRF( &g_bfmeKeyVHE, (void *)-1 );
+	void *value = sourceRF->bfmeGoRF( (int *)"TID", (void *)-1 );
 	if( value != (void *)-1 )
-		messageCIB->bfmeGoCIB( &g_bfmeKeyVHE, value );
+		messageCIB->bfmeGoCIB( (int *)"TID", value );
 	message.m_field04 = input->m_field04;
 	message.m_field08 = input->m_field08;
 	message.m_field0c = input->m_field0c;
@@ -151,9 +150,9 @@ void BfmeThingUNC::rva0080A3C0( Rva0080A3C0Input *input )
 	BfmeC994 second( buffer, sizeof( buffer ) );
 	BfmeThingCIB *secondCIB = reinterpret_cast< BfmeThingCIB * >( &second );
 	second.m_category = input->m_field1c;
-	value = sourceRF->bfmeGoRF( &g_bfmeKeyVHE, (void *)-1 );
+	value = sourceRF->bfmeGoRF( (int *)"TID", (void *)-1 );
 	if( value != (void *)-1 )
-		secondCIB->bfmeGoCIB( &g_bfmeKeyVHE, value );
+		secondCIB->bfmeGoCIB( (int *)"TID", value );
 	second.m_field04 = input->m_field04;
 	second.m_field08 = input->m_field08;
 	second.m_field0c = input->m_field0c;
@@ -173,9 +172,9 @@ void BfmeThingUNC::rva0080A3C0( Rva0080A3C0Input *input )
 			BfmeThingCIB *playerCIB =
 				reinterpret_cast< BfmeThingCIB * >( &playerMessage );
 			playerMessage.m_category = input->m_field1c;
-			value = sourceRF->bfmeGoRF( &g_bfmeKeyVHE, (void *)-1 );
+			value = sourceRF->bfmeGoRF( (int *)"TID", (void *)-1 );
 			if( value != (void *)-1 )
-				playerCIB->bfmeGoCIB( &g_bfmeKeyVHE, value );
+				playerCIB->bfmeGoCIB( (int *)"TID", value );
 			playerMessage.m_field04 = input->m_field04;
 			playerMessage.m_field08 = input->m_field08;
 			playerMessage.m_field0c = input->m_field0c;

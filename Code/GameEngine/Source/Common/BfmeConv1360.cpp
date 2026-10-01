@@ -11,8 +11,6 @@ int g_bfmeKeyAVHC = 1397706833;
 extern int g_bfmeKeyBVHC;
 // g_bfmeKeyBVHC: matched references place it at VA 0xce2d94 (retail .rdata value 1313164369).
 int g_bfmeKeyBVHC = 1313164369;
-extern int g_bfmeKeyCVHD;
-extern int g_bfmeKeyDVHD;
 
 class BfmeThingVHC
 {
@@ -49,7 +47,7 @@ public:
 BfmeThingVHD *BfmeThingVHD::bfmeInitVHD(BfmeMsgVHC *msg)
 {
 	bfmeBaseVHD(msg);
-	m_bfme08 = msg->bfmeGetVHC(&g_bfmeKeyCVHD, 0);
-	msg->bfmeGetStrVHC(&g_bfmeKeyDVHD, m_bfme0c, 0x100);
+	m_bfme08 = msg->bfmeGetVHC((int *)"TYPE", 0);
+	msg->bfmeGetStrVHC((int *)"REASON", m_bfme0c, 0x100);
 	return this;
 }
