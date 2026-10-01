@@ -24,15 +24,19 @@ public:
 	static void Rva003396D3_ParseKillerScience(INI *ini, void *instance, void *store, const void *userData);
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
+// Zero Hour's Common/Errors.h; retail's ErrorCode throw info is at 0x00CFEEE4.
+enum ErrorCode
+{
+	ERROR_BASE = 0xdead0001,
+	ERROR_BUG = (ERROR_BASE + 0x0000)
+};
 
 // ?Rva003396D3_ParseKillerScience@INI@@SAXPAV1@PAX1PBX@Z
 void INI::Rva003396D3_ParseKillerScience(INI *ini, void *instance, void *store, const void *userData)
 {
 	const char *token = ini->getNextToken(0);
 	if (g_scienceStoreLoaded == 0) {
-		int marker = 0xDEAD0001;
-		_CxxThrowException(&marker, (const _s__ThrowInfo *)0xCFEEE4); __assume(0);
+		throw ERROR_BUG;
 	}
 	*(int *)store = INI::scanScience(token);
 }

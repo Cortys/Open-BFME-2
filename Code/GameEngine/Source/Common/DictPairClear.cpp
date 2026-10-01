@@ -40,7 +40,6 @@ extern "C" void *memset(void *dst, int value, unsigned int size);
 
 namespace _STL { template <class _Tp> class allocator; template <> class allocator<char> { public: static char *allocate(unsigned int bytes, const void *hint); }; }
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
 enum NameKeyType
 {
@@ -199,9 +198,16 @@ void Dict::DictPair::copyFrom(DictPair *that)
 	}
 }
 
+// Zero Hour's Common/Errors.h.
+enum ErrorCode
+{
+	ERROR_BASE = 0xdead0001,
+	ERROR_OUT_OF_MEMORY = (ERROR_BASE + 0x0001)
+};
+
 // ?ensureUnique@Dict@@AAEPAUDictPair@1@H_NPAU21@@Z @0x0031346B 265B
 // Dict::ensureUnique from ZH Dict.cpp donor (BFME1 0x000683D0). Early-out when
-// unique with enough slots, throws 0xDEAD0002 via 0xCFEEE4 info when over
+// unique with enough slots, throws ERROR_OUT_OF_MEMORY (0xDEAD0002; retail's ErrorCode throw info is at 0x00CFEEE4) when over
 // MAX_LEN, else rounds to 4 via allocate plus memset and copies via copyFrom.
 // Callers at 0x00313594 0x003136C3 0x003137C4, layout from DictPairData header.
 Dict::DictPair *Dict::ensureUnique(int numPairsNeeded, bool preserveData, DictPair *pairToTranslate)
@@ -210,8 +216,7 @@ Dict::DictPair *Dict::ensureUnique(int numPairsNeeded, bool preserveData, DictPa
 		return pairToTranslate;
 	if (numPairsNeeded > 32767)
 	{
-		int marker = 0xdead0002;
-		_CxxThrowException(&marker, (const _s__ThrowInfo *)0xCFEEE4); __assume(0);
+		throw ERROR_OUT_OF_MEMORY;
 	}
 	DictPairData *newData = 0;
 	if (numPairsNeeded > 0)
