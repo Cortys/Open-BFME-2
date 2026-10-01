@@ -1,13 +1,14 @@
-// ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z
-// partial score=0.93 date=2026-10-01
-// ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z
-// partial score=0.93 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHs /MD
-// ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z, retail 0x0032884A (159B).
+// Rva0032884ASet, retail 0x0032884A (159B).
 // Gadget sound helper: stores resolved audio ref into user data +0x1c.
 // Evidence: rowed winGetUserData 0x005C4ACD, TheAudio 0x00DFE6E8 virtual
 // slot 0x12c, StringBase compare 0x000069B1 with "NoSound" literal,
 // OpaqueRef assign 0x00239099 and Release_Ref 0x00050ED3, EH_prolog frame.
+// Retail's unwind map destroys the by-value sound name (state 0) and the
+// ref handle that the audio slot returns by value into the window
+// parameter's slot (state 1, dtor 0x0010F149); the handle's inline
+// destructor releases it after the store. The banked attempt passed an out
+// pointer and released by hand.
 
 #include "ascii_string.h"
 
@@ -27,6 +28,7 @@ struct OpaqueRefElement4
 {
 	OpaqueRefCounted *m_ptr;
 	OpaqueRefElement4 &operator=(const OpaqueRefElement4 &other);
+	~OpaqueRefElement4() { if (m_ptr) m_ptr->Release_Ref(); }
 };
 
 class AudioManager
@@ -51,24 +53,25 @@ public:
 	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
 	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
 	virtual void v72(); virtual void v73(); virtual void v74();
-	virtual void Unknown75(OpaqueRefCounted **out, AsciiString *sound);
+	virtual OpaqueRefElement4 Unknown75(AsciiString *sound);
 };
 
 extern AudioManager *TheAudio;
+struct Rva0032884AUserData
+{
+	unsigned char m_pad00[0x1c];
+	OpaqueRefElement4 m_sound;
+};
 
-// ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z present-unmatched
 void Rva0032884ASet(GameWindow *window, AsciiString sound)
 {
 	if (window == 0)
 		return;
-	void *userData = window->winGetUserData();
+	Rva0032884AUserData *userData = (Rva0032884AUserData *)window->winGetUserData();
 	if (userData == 0)
 		return;
-	OpaqueRefCounted *tmp;
-	TheAudio->Unknown75(&tmp, &sound);
-	if (tmp == 0 && !sound.isEmpty())
+	OpaqueRefElement4 tmp = TheAudio->Unknown75(&sound);
+	if (tmp.m_ptr == 0 && !sound.isEmpty())
 		sound.compare("NoSound");
-	*(OpaqueRefElement4 *)((char *)userData + 0x1c) = *(OpaqueRefElement4 *)&tmp;
-	if (tmp != 0)
-		tmp->Release_Ref();
+	userData->m_sound = tmp;
 }
