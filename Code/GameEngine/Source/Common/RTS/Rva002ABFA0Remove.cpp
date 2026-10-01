@@ -1,0 +1,27 @@
+// cl: /Ireference/shims/bfmelist /O1 /G7 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?rva002ABFA0@Rva002ABFA0@@QAEXPAX@Z, RVA 0x002ABFA0, size 35.
+// Evidence: caller 0x003BD062 passes Player as this and void* from Rva002D06CAGet;
+// this+0x700 is _STL::list<short> and arg+0x5d8 is short; calls rowed list<short>::remove.
+#include <list>
+
+struct Rva002ABFA0Arg
+{
+	char m_pad[0x5d8];
+	unsigned short m_val;
+};
+
+class Rva002ABFA0
+{
+public:
+	void rva002ABFA0(void *p);
+private:
+	char m_pad[0x700];
+	_STL::list<short, _STL::allocator<short> > m_list;
+};
+
+void Rva002ABFA0::rva002ABFA0(void *p)
+{
+	unsigned short key = *(unsigned short *)((char *)p + 0x5d8);
+	m_list.remove((short)key);
+}

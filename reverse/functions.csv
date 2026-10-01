@@ -46025,3 +46025,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva004319D4Get@@YAHXZ,,0x004319D4,30,Code/GameEngine/Source/Common/Rva004319D4.cpp,matched,unlock unblocks 0x00431E5A extern TheMouse caller tests al
 ?Rva0055E891WriteVelocityHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055E891,216,Code/GameEngine/Source/GameClient/System/FXParticleSystem/VelocityModuleHeaderWrite.cpp,matched,BFME1 donor Rva005F8FC0WriteVelocityHeader category 4 velocity header via Pad and Write
 ??0Rva00541913@@QAE@ABV0@@Z,,0x00541913,66,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00541913CopyCtor.cpp,matched,copy ctor member vector dword via rowed Member and vector copy
+?rva002ABFA0@Rva002ABFA0@@QAEXPAX@Z,,0x002ABFA0,35,Code/GameEngine/Source/Common/RTS/Rva002ABFA0Remove.cpp,matched,unlock caller 0x003BD062 list-short-remove this+0x700 arg+0x5d8
