@@ -1,4 +1,4 @@
-// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??0Rva001FDB55@@QAE@XZ @0x001FDB55 76B.
 // Default ctor: base BFME2NativeNetwork via its inline ctor (which calls the
@@ -14,9 +14,10 @@
 #include <vector>
 #include <set>
 
+#include "ascii_string.h"
+
 struct BfmeE16 { float x, y, z, w; };
 
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
 bool operator<(const AsciiString &, const AsciiString &);
 
 extern "C" void _ReadWriteBarrier(void);
