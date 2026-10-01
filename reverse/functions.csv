@@ -45143,3 +45143,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva006ED2A0@@UAEPAXI@Z,,0x006EFB90,35,Code/GameEngine/Source/Common/Rva006ED2A0Dtor.cpp,matched,vtable slot1 0x008ECB9C plus rowed base 0x006ED2A0 plus pool free 0x78
 ??0Rva0039627D@@QAE@PAPAXABUBfmeStringRecord004071F7@@@Z,,0x0039627D,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039627DCtor.cpp,matched,unlock lane two-arg ctor via rowed copy 0x004071F7 caller 0x00396943
 ??1Rva0020453CHolderBase@@QAE@XZ,,0x00204C16,11,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva0020453CHolderBaseDtor.cpp,matched,holder base dtor stores BE39F4 then release pin plus deleting-dtor caller
+?Rva003A5D1CPut@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@ABM@Z,,0x003A5D1C,24,Code/GameEngine/Source/Common/Rva003A5D1CPut.cpp,matched,ostream float put via rowed 0x001F8152
