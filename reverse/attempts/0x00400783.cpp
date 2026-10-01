@@ -1,5 +1,5 @@
 // ?Rva00400783Get@@YA?AVAsciiString@@ABV1@_N@Z
-// partial score=0.94 date=2026-10-01
+// partial score=0.98 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?Rva00400783Get@@YA?AVAsciiString@@ABV1@_N@Z, retail 0x00400783, 277 bytes.
 // Portable map-path builder: realMapPathToPortableMapPath from TheGameState
@@ -23,21 +23,21 @@ AsciiString __cdecl Rva00400783Get(const AsciiString &mapPath, bool flag)
 {
 	AsciiString portable = TheGameState->realMapPathToPortableMapPath(mapPath);
 	if (flag != false) {
-		portable.set(Rva002DCB9C(portable));
+		((StringBase<char> *)&portable)->set(*(const StringBase<char> *)&Rva002DCB9C(portable));
 	}
 	AsciiString accum;
-	if (portable.getLength() > 0) {
+	if (((const StringBase<char> *)&portable)->getLength() > 0) {
 		const char *slash = "/";
 		AsciiString token;
 		while (true) {
-			portable.nextToken(&token, slash);
-			if (portable.find('\\') == NULL)
+			((StringBase<char> *)&portable)->nextToken((StringBase<char> *)&token, slash);
+			if (((const StringBase<char> *)&portable)->find('\\') == NULL)
 				break;
-			if (accum.getLength() > 0) {
+			if (((const StringBase<char> *)&accum)->getLength() > 0) {
 				char sep = '/';
 				((StringBase<char> *)&accum)->concat(&sep, 1);
 			}
-			accum.concat(token);
+			((StringBase<char> *)&accum)->concat(*(const StringBase<char> *)&token);
 		}
 	}
 	return accum;
