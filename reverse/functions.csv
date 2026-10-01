@@ -45438,3 +45438,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva002E0E9DAdjustHeap@@YAXPAPAXHHPAX1@Z,,0x002E0E9D,90,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,heap adjust min key plus12 via rowed sift-up
 ?Rva002E0D02Get@@YAHPAURva002E0D02Arg@@@Z,,0x002E0D02,100,Code/GameEngine/Source/Common/Rva002E0D02Get.cpp,matched,neighbours share O1 rowed get at 0x0040CB2C sum via indexed get
 ??0Rva002E0EF7@@QAE@XZ,,0x002E0EF7,39,Code/GameEngine/Source/Common/Rva002E0EF7Ctor.cpp,matched,vtable store plus or-minus1 late via barrier callers 0x002E1D22
+?rva002E0687@Rva002E0687@@QBE_NXZ,,0x002E0687,18,Code/GameEngine/Source/Common/Rva002E0687Method.cpp,matched,global g_009FEF10 holder plus98 equals this 7 callers
