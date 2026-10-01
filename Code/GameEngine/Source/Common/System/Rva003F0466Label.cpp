@@ -55,7 +55,23 @@ private:
 	AsciiString m_label;
 };
 
+// 0x003F04E0 is the same getter via the AsciiString at +0x128 (caller 0x005E2644).
+
 UnicodeString Rva003F0466::rva003F0466()
+{
+	return !((const StringBase<char> *)&m_label)->isEmpty() ? TheGameText->fetchLabel(m_label) : UnicodeString::TheEmptyString;
+}
+
+class Rva003F04E0
+{
+public:
+	UnicodeString rva003F04E0();
+private:
+	char m_pad[0x128];
+	AsciiString m_label;
+};
+
+UnicodeString Rva003F04E0::rva003F04E0()
 {
 	return !((const StringBase<char> *)&m_label)->isEmpty() ? TheGameText->fetchLabel(m_label) : UnicodeString::TheEmptyString;
 }

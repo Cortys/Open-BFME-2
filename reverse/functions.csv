@@ -45036,3 +45036,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva005365D1@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005365D1,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,ResourcesGatheredRTS slot 0x2C v11 same TU
 ?rva00536662@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536662,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,ResourcesSpentRTS slot 0x2C v11 same TU
 ?rva003F0466@Rva003F0466@@QAE?AVUnicodeString@@XZ,,0x003F0466,122,Code/GameEngine/Source/Common/System/Rva003F0466Label.cpp,matched,AsciiString at +0x124 via rowed StringBase isEmpty else TheGameText slot 0x38 fetch else TheEmptyString
+?rva003F04E0@Rva003F04E0@@QAE?AVUnicodeString@@XZ,,0x003F04E0,122,Code/GameEngine/Source/Common/System/Rva003F0466Label.cpp,matched,sibling of 0x003F0466 via AsciiString at +0x128 same slot 0x38 fetch
