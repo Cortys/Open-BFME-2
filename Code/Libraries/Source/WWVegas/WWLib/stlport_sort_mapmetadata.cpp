@@ -18,7 +18,32 @@
 // instantiations below.
 #include <algorithm>
 
-class MapMetaData;
+template <class T>
+class StringBase
+{
+public:
+	~StringBase() { releaseBuffer(); }
+	int compareNoCase(const StringBase &that) const throw();
+
+private:
+	void releaseBuffer();
+
+	void *m_data;
+};
+
+class UnicodeString : public StringBase<unsigned short>
+{
+};
+
+class MapMetaData
+{
+public:
+	UnicodeString bfme_getDisplayName(bool withPlayerCount);
+	UnicodeString rva00300D0E();
+
+	unsigned char m_pad00[0x20];
+	int m_numPlayers;	// +0x20
+};
 
 struct Rva0030145CCmp
 {
@@ -35,3 +60,19 @@ template void _STL::sort<MapMetaData **, Rva0030145CCmp>(MapMetaData **, MapMeta
 
 // ??$sort@PAPAVMapMetaData@@URva003014D6Cmp@@@_STL@@YAXPAPAVMapMetaData@@0URva003014D6Cmp@@@Z @0x003044ED and its callees
 template void _STL::sort<MapMetaData **, Rva003014D6Cmp>(MapMetaData **, MapMetaData **, Rva003014D6Cmp);
+
+// ??RRva0030145CCmp@@QBE_NPAVMapMetaData@@0@Z @0x0030145C 122B: by the dword
+// at +0x20, ties broken by the no-case display names (player-count suffix on).
+bool Rva0030145CCmp::operator()(MapMetaData *a, MapMetaData *b) const
+{
+	if (a->m_numPlayers == b->m_numPlayers)
+		return a->bfme_getDisplayName(true).compareNoCase(b->bfme_getDisplayName(true)) < 0;
+	return a->m_numPlayers < b->m_numPlayers;
+}
+
+// ??RRva003014D6Cmp@@QBE_NPAVMapMetaData@@0@Z @0x003014D6 94B: no-case order of
+// the rva00300D0E names.
+bool Rva003014D6Cmp::operator()(MapMetaData *a, MapMetaData *b) const
+{
+	return a->rva00300D0E().compareNoCase(b->rva00300D0E()) < 0;
+}
