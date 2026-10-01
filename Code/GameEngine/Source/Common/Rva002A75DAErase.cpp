@@ -28,6 +28,8 @@
 // registers), static_cast rather than explicit template arguments for the
 // const-first-arg deduction.
 
+#pragma comment(linker, "/alternatename:??$__copy_ptrs@PBUBfmeE12@@PAU1@@_STL@@YAPAUBfmeE12@@PBU1@0PAU1@ABU__false_type@0@@Z=??$__copy_ptrs@PBUBfmeE12@@PAU1@@_STL@@YAPAUBfmeE12@@PBU1@0PAU1@U__false_type@0@@Z")
+
 struct BfmeE12
 {
 	float x, y, z;
