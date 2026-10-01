@@ -1,11 +1,9 @@
-// ?rva0053F915@Rva0053FB33@@UAE_NPAVDataChunkInput@@PAX@Z
-// partial score=0.96 date=2026-09-30
-// ?rva0053F915@Rva0053FB33@@UAE_NPAVDataChunkInput@@PAX@Z
-// partial score=0.96 date=2026-09-30
 // cl: /O1 /EHs /MD
-// ?rva0053F915@Rva0053FB33@@UAE_NPAVDataChunkInput@@PAX@Z, retail 0x0053F915, 106 bytes.
+// Rva0053FB33::rva0053F915, retail 0x0053F915, 106 bytes.
 // Vslot 4 of 0x008694DC (Rva0053FB33): reads AsciiString via rowed
-// DataChunkInput::rva0030750A into +0x18 via pinned AsciiString::op=, reads
+// DataChunkInput::rva0030750A into +0x18 via an inline AsciiString::op=
+// forwarding to the rowed StringBase<char>::set 0x000366F0 (member address
+// formed before the push, as retail does), reads
 // int to +0x1C via rowed readInt, reads +0x20 if version word at second arg
 // +8 >= 3 else zeroes. Returns true. Evidence: vslot, donor dtor layout,
 // callers 0x00540BEF 0x005423C8.
@@ -21,6 +19,7 @@ template <typename T> class StringBase
 {
 public:
 	~StringBase() { releaseBuffer(); }
+	void set(const StringBase<T> &other);
 private:
 	void releaseBuffer();
 	StringInlineData<T> *m_data;
@@ -29,7 +28,7 @@ private:
 class AsciiString : public StringBase<char>
 {
 public:
-	AsciiString &operator=(const AsciiString &other);
+	__forceinline AsciiString &operator=(const AsciiString &other) { set(other); return *this; }
 };
 
 class DataChunkInput
@@ -57,7 +56,6 @@ private:
 	int m_20;
 };
 
-// ?rva0053F915@Rva0053FB33@@UAE_NPAVDataChunkInput@@PAX@Z present-unmatched
 bool Rva0053FB33::rva0053F915(DataChunkInput *input, void *ver)
 {
 	m_str18 = input->rva0030750A();
