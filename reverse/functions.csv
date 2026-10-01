@@ -45742,3 +45742,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00051CBA@Rva00051CBA@@QAEHABV1@@Z,,0x00051CBA,38,Code/GameEngine/Source/Common/Rva00051CBAEquals.cpp,matched,Coord3D equals then byte at 0xC via nested ifs unblocks 0x51CF1
 ?rva00051CF1@Rva00051CF1@@QAE_NAAV1@@Z,,0x00051CF1,49,Code/GameEngine/Source/Common/Rva00051CF1Equals.cpp,matched,chain via rowed 0x00051CBA 5x0x10 loop caller 0x00052B53
 ?Rva000515E4Less@@YA_NPBURva000515E4Key@@0@Z,,0x000515E4,43,Code/GameEngine/Source/Common/Rva000515E4Less.cpp,matched,free less int-float via 0x0005BD30 caller unblocks 0x0005BD30 0x0005BDD2
+??0Rva00051C6C@@QAE@ABV0@@Z,,0x00051C6C,29,Code/GameEngine/Source/Common/Rva00051C6CCopyCtor.cpp,matched,copy ctor int plus PoolRef10 via rowed 0x51950 caller 0x53FB0
