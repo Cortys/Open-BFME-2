@@ -45207,3 +45207,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005B045D@Rva005B045D@@QAEPAXXZ,,0x005B045D,22,Code/GameEngine/Source/Common/Rva005B045D.cpp,matched,caller 0x005B54A7 flag plus0x14c ptr plus0x144 else this
 ?rva005B04B6@Rva005B045D@@QAEXXZ,,0x005B04B6,29,Code/GameEngine/Source/Common/Rva005B045D.cpp,matched,caller 0x005B1730 guard plus0x158 plus global g_00E06450 init 0x14
 ??1Rva00414B40@@UAE@XZ,,0x00414B40,73,Code/GameEngine/Source/GameLogic/Object/Rva00414B40Dtor.cpp,matched,chain dtor vector 0x414721 Snapshot BBB554 base 0x1B4E74
+??_GRva00414B40@@UAEPAXI@Z,,0x00414B24,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00414B40.cpp,matched,chain deleting dtor calls 0x414B40
