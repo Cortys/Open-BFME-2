@@ -45019,3 +45019,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??0Rva0035CC36@@QAE@XZ,,0x0035CC36,148,Code/GameEngine/Source/Common/Rva0035CC36Ctor.cpp,matched,vtable 0x00C16394 dtor 0x0035CCCA base Rva001E3624 member Rva0024C7B3 list BfmePod8 clear AsciiString
 ?Rva0039BA85FillN@@YAXPAVRva0039B893@@IABV1@@Z,,0x0039BA85,27,Code/GameEngine/Source/Common/Rva0039BA85FillN.cpp,matched,fill_n wrapper over rowed 0x0039B8D8 with false_type tag
 ?getFullUnicodeVersion@Version@@QAE?AVUnicodeString@@XZ,,0x0023809E,253,Code/GameEngine/Source/Common/VersionUnicode.cpp,matched,BFME1 version.cpp Format3 Format4 with getCharAt
+?rva00237E28@Rva00237E28@@QAEXPAV1@@Z,,0x00237E28,29,Code/GameEngine/Source/Main/Rva00237E28.cpp,matched,unlock 16B this-to-dest copy ret 4 fieldwise
