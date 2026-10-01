@@ -46731,3 +46731,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004ECECD@Rva004ECECD@@QAEPAVTeam@@H@Z,,0x004ECECD,56,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ECECD.cpp,matched,unlock lane ModelNode stride 0x14 TheTeamFactory plus findInstance 13 callers
 ?Rva003BBC61Set@@YGX_N@Z,,0x003BBC61,32,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBC61.cpp,matched,leaf caller 0x003CBF60 TheAudio slots 0x40 0x44
 ?rva003626EA@Rva003626CE@@QAEXABUBlock3@@@Z,,0x003626EA,24,Code/GameEngine/Source/Common/Bfme/Rva00409930SlotArray.cpp,matched,chain 9-slot setPositions via rowed callee
+?rva004ECF05@Rva004ECECD@@QAEPAURva004ECECDNode@@H@Z,,0x004ECF05,60,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ECECD.cpp,matched,chain via 0x004ECECD same TU flags pins returns node
