@@ -45646,3 +45646,8 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?do_pos_format@?$moneypunct@G$0A@@_STL@@MBE?AUpattern@money_base@2@XZ,,0x0066D820,12,Code/Libraries/Source/WWVegas/WWLib/stlport_moneypunct_virtuals.cpp,matched,
 ?do_thousands_sep@?$moneypunct@D$0A@@_STL@@MBEDXZ,,0x00019730,3,Code/Libraries/Source/WWVegas/WWLib/stlport_moneypunct_virtuals.cpp,matched,
 ?do_thousands_sep@?$moneypunct@G$0A@@_STL@@MBEGXZ,,0x000197F0,5,Code/Libraries/Source/WWVegas/WWLib/stlport_moneypunct_virtuals.cpp,matched,
+?do_always_noconv@?$codecvt@GDH@_STL@@MBE_NXZ,,0x001826C0,3,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
+?do_encoding@?$codecvt@GDH@_STL@@MBEHXZ,,0x00756B00,6,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
+?do_length@?$codecvt@GDH@_STL@@MBEHABHPBD1I@Z,,0x00017460,33,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
+?do_max_length@?$codecvt@GDH@_STL@@MBEHXZ,,0x00756B00,6,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
+?do_unshift@?$codecvt@GDH@_STL@@MBE?AW4result@codecvt_base@2@AAHPAD1AAPAD@Z,,0x00017370,18,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
