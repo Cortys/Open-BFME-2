@@ -87,15 +87,15 @@ public:
     locale::facet **_M_facets;
     unsigned int _M_count;
 };
-locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
+inline locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
 
-}
+} // _Locale_impl only; ~locale owned by stlport_locale.cpp, inline copy here
 
 // Keep the two-argument range helper visible for call-side analysis without
 // inlining it into the constructor. Both pointer instantiations have been
 // independently reproduced at 0x8D00 with their complete 84-byte bodies.
 namespace _STL {
-template <> template <> __declspec(noinline) void
+template <> template <> inline __declspec(noinline) void
 basic_string<char>::_M_range_initialize(char* first, char* last) {
   _M_range_initialize(first, last, forward_iterator_tag());
 }
@@ -130,7 +130,7 @@ template <> __forceinline _MoneyOut& _MoneyOut::operator=(char c) {
       _M_buf->sputc(c), traits_type::eof());
   return *this;
 }
-template <> __declspec(noinline) _MoneyOut __copy(
+template <> inline _MoneyOut __copy(
     const char* first, const char* last, _MoneyOut result,
     const random_access_iterator_tag&, int*) {
   for (int n = last - first; n > 0; --n) {
