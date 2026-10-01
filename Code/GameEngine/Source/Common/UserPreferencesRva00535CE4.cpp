@@ -213,6 +213,7 @@ public:
 	void rva00535E50(AsciiString arg, int x);
 	void rva00535EE1(AsciiString arg, int x);
 	void rva00535F72(int x);
+	void rva00536003(int x);
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
@@ -319,6 +320,12 @@ void UserPreferences::rva00535EE1(AsciiString arg, int x)
 void UserPreferences::rva00535F72(int x)
 {
 	AsciiString tmp("OverallWinStreak");
+	v11(tmp, x);
+}
+
+void UserPreferences::rva00536003(int x)
+{
+	AsciiString tmp("OverallBestWinStreak");
 	v11(tmp, x);
 }
 

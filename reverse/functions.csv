@@ -45075,3 +45075,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005368F0@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005368F0,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,ShortestGameTurns setter slot 0x2C same TU
 ?rva00536A1D@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536A1D,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresLostNonRTS setter slot 0x2C same TU
 ?rva00536AAE@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536AAE,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresKilledNonRTS setter slot 0x2C same TU
+?rva00536003@UserPreferences@@QAEXH@Z,,0x00536003,72,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallBestWinStreak setter slot 0x2C same TU
