@@ -17,11 +17,6 @@ class VertexMaterialClass { public: __declspec(noinline) virtual ~VertexMaterial
 VertexMaterialClass::~VertexMaterialClass() { m_famgen = 0; }
 void famgenDelete(VertexMaterialClass *p) { delete p; }
 
-// ??_GMaterialInfoClass@@UAEPAXI@Z @0x170960
-class MaterialInfoClass { public: __declspec(noinline) virtual ~MaterialInfoClass(); private: int m_famgen; };
-MaterialInfoClass::~MaterialInfoClass() { m_famgen = 0; }
-void famgenDelete(MaterialInfoClass *p) { delete p; }
-
 // ??_GBfmeDirtyBase@@UAEPAXI@Z @0x6560c0
 class BfmeDirtyBase { public: __declspec(noinline) virtual ~BfmeDirtyBase(); private: int m_famgen; };
 BfmeDirtyBase::~BfmeDirtyBase() { m_famgen = 0; }

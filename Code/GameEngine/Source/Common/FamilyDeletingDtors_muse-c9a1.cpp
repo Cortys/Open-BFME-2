@@ -17,21 +17,3 @@ class BuffNuggetFXNugget { public: __declspec(noinline) virtual ~BuffNuggetFXNug
 BuffNuggetFXNugget::~BuffNuggetFXNugget() { m_famgen = 0; }
 void famgenDelete(BuffNuggetFXNugget *p) { delete p; }
 
-// ??_GW3DLaserDrawModuleData@@UAEPAXI@Z @0x000C9CC9 28B
-// Deleting dtor slot 0 of vtable 0x007CB960; calls rowed ??1 at 0x000C9AE7 then rowed operator delete at 0x0002FD60.
-class W3DLaserDrawModuleData { public: __declspec(noinline) virtual ~W3DLaserDrawModuleData(); private: int m_famgen; };
-W3DLaserDrawModuleData::~W3DLaserDrawModuleData() { m_famgen = 0; }
-void famgenDelete(W3DLaserDrawModuleData *p) { delete p; }
-
-// ??_GCaveContain@@MAEPAXI@Z @0x004666AD 28B
-// Deleting dtor slot 0 of vtable 0x00843CB8; calls rowed ??1 at 0x004663B2 then rowed operator delete at 0x0002FD60.
-class CaveContain { protected: __declspec(noinline) virtual ~CaveContain(); private: int m_famgen;
-  friend void famgenDelete(CaveContain *p); };
-CaveContain::~CaveContain() { m_famgen = 0; }
-void famgenDelete(CaveContain *p) { delete p; }
-
-// ??_GWallHubBehaviorModuleData@@UAEPAXI@Z @0x004530B4 28B
-// Deleting dtor slot 0 of vtable 0x0083FF98; calls rowed ??1 at 0x00452F9F then rowed operator delete at 0x0002FD60.
-class WallHubBehaviorModuleData { public: __declspec(noinline) virtual ~WallHubBehaviorModuleData(); private: int m_famgen; };
-WallHubBehaviorModuleData::~WallHubBehaviorModuleData() { m_famgen = 0; }
-void famgenDelete(WallHubBehaviorModuleData *p) { delete p; }

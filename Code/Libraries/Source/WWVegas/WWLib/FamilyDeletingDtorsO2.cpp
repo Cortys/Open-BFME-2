@@ -31,11 +31,6 @@ class Rva0015D0E0 { public: __declspec(noinline) virtual ~Rva0015D0E0(); private
 Rva0015D0E0::~Rva0015D0E0() { m_famgen = 0; }
 void famgenDelete(Rva0015D0E0 *p) { delete p; }
 
-// ??_GMeshGeometryClass@@UAEPAXI@Z @0x16d790
-class MeshGeometryClass { public: __declspec(noinline) virtual ~MeshGeometryClass(); private: int m_famgen; };
-MeshGeometryClass::~MeshGeometryClass() { m_famgen = 0; }
-void famgenDelete(MeshGeometryClass *p) { delete p; }
-
 // ??_GRva00180EA0@@UAEPAXI@Z @0x180e80
 class Rva00180EA0 { public: __declspec(noinline) virtual ~Rva00180EA0(); private: int m_famgen; };
 Rva00180EA0::~Rva00180EA0() { m_famgen = 0; }

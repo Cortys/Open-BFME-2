@@ -9,14 +9,3 @@ class PassiveAreaEffectBehaviorModuleData { public: __declspec(noinline) virtual
 PassiveAreaEffectBehaviorModuleData::~PassiveAreaEffectBehaviorModuleData() { m_famgen = 0; }
 void famgenDelete(PassiveAreaEffectBehaviorModuleData *p) { delete p; }
 
-// ??_GPassiveAreaEffectBehavior@@UAEPAXI@Z @0x484c3c
-class PassiveAreaEffectBehavior { public: __declspec(noinline) virtual ~PassiveAreaEffectBehavior(); private: int m_famgen;
-  friend void famgenDelete(PassiveAreaEffectBehavior *p); };
-PassiveAreaEffectBehavior::~PassiveAreaEffectBehavior() { m_famgen = 0; }
-void famgenDelete(PassiveAreaEffectBehavior *p) { delete p; }
-
-// ??_GSlaveWatcherBehavior@@UAEPAXI@Z @0x4848ca
-class SlaveWatcherBehavior { public: __declspec(noinline) virtual ~SlaveWatcherBehavior(); private: int m_famgen;
-  friend void famgenDelete(SlaveWatcherBehavior *p); };
-SlaveWatcherBehavior::~SlaveWatcherBehavior() { m_famgen = 0; }
-void famgenDelete(SlaveWatcherBehavior *p) { delete p; }
