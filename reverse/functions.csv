@@ -45175,3 +45175,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00536587@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536587,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat UnitsKilledRTS 0x00868F8C slot 0x18 releaseBuffer gap same TU unlock
 ?rva00536618@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536618,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat ResourcesGatheredRTS 0x00868F9C slot 0x18 releaseBuffer gap same TU unlock
 ?rva005366A9@UserPreferences@@QAEHVAsciiString@@@Z,,0x005366A9,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat ResourcesSpentRTS 0x00868FB4 slot 0x18 releaseBuffer gap same TU unlock
+?rva0053673A@UserPreferences@@QAEHVAsciiString@@@Z,,0x0053673A,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat HeroesBuiltRTS 0x00868FC8 slot 0x18 releaseBuffer gap same TU unlock

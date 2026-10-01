@@ -272,6 +272,7 @@ public:
 	void rva00536662(AsciiString arg, int x);
 	int rva005366A9(AsciiString arg);
 	void rva005366F3(AsciiString arg, int x);
+	int rva0053673A(AsciiString arg);
 	void rva00536784(AsciiString arg, int x);
 	void rva0053685F(AsciiString arg, int x);
 	void rva005368F0(AsciiString arg, int x);
@@ -782,6 +783,16 @@ void UserPreferences::rva005366F3(AsciiString arg, int x)
 {
 	arg.concat("HeroesBuiltRTS");
 	v11(arg, x);
+}
+
+// ?rva0053673A@UserPreferences@@QAEHVAsciiString@@@Z @0x0053673A 74B
+// UserPreferences HeroesBuiltRTS-getter path: append HeroesBuiltRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat HeroesBuiltRTS 0x00868FC8 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva0053673A(AsciiString arg)
+{
+	arg.concat("HeroesBuiltRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva00536784@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536784 71B
