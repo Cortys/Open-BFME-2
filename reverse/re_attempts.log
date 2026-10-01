@@ -4952,3 +4952,4 @@ _peerAuthenticateCDKey	0x00699BB0	146	converted	Whole-file donor compilation pla
 ??_GRva001F45C3@@UAEPAXI@Z	0x001F45C3	28	blocked	deleting-dtor shape but first call rowed as setter apply 0xE14BD needs ICF twin pin plus 1-of-3 class choice t=12 model=muse-16
 ?rva001F4E2D@Rva001F4E2D@@QAE_NXZ	0x001F4E2D	85	blocked	use94-vs-true tail order plus extra jmp; flat le-chain adds jg polarity t=18 model=muse-16 (stash 0.93 kept)
 ?cleanup@Gen_dtor_009f2600@@QAEXXZ	0x00627600	163	blocked	ours 145B vs retail 163B 13 structural regions register-memory wall size delta -18 t=5 model=muse-16
+?Rva0049A6DCGet@@YG_NPAX@Z	0x0049A6DC	44	blocked	switch byte-table mapping unrecoverable from packet t=18 model=muse-02
