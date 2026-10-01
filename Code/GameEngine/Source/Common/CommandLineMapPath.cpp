@@ -5,12 +5,16 @@
 // the existing audited pin; the label object uses AsciiString's format member.
 // cl: /O1 /DNDEBUG /MD /EHs
 #include <time.h>
+template<class T> class StringBase;
+void ConvertShortMapPathToLongMapPath(StringBase<char>& mapName,StringBase<char>& fileLabel);
 template<class T> class StringBase {
     struct Header { int refs; unsigned short length,capacity; T data[1]; };
     Header *data;
+private:
+    StringBase(const StringBase&);
+    friend void ConvertShortMapPathToLongMapPath(StringBase<char>& mapName,StringBase<char>& fileLabel);
 public:
     StringBase():data(0){}
-    StringBase(const StringBase&);
     ~StringBase();
     bool endsWithNoCase(const T*) const;
     const T* find(T) const;
