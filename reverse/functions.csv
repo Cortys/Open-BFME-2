@@ -46110,3 +46110,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva0018C54E@@QAE@XZ,,0x0018C54E,46,Code/Libraries/Source/WWVegas/WWLib/Rva0018C54ECtor.cpp,matched,ctor vector BfmeE16 at 0x14 caller new 0x28
 ?rva00599534@Rva00599534@@QAEXH@Z,,0x00599534,48,Code/Libraries/Source/WWVegas/WWLib/Rva00599534EraseFirst.cpp,matched,list at +4 erase first match via rowed erase 0x00438539 callers 0x004EC911
 ??1Rva004E61C8@@UAE@XZ,,0x004E61C8,105,Code/GameEngine/Source/Common/Bfme/Rva004E61C8Dtor.cpp,matched,dtor vtable 0x008623CC calls 0x4E5D6E deletes +0xc virtual vector +0x10 base
+??_GRva004E61C8@@UAEPAXI@Z,,0x004E6231,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004E61C8.cpp,matched,deleting dtor slot 0 vtable 0x008623CC calls 0x004E61C8
