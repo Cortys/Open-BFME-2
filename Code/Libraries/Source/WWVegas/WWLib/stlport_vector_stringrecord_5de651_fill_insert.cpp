@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /EHsc
 // stlport
 //
 // ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z
@@ -14,25 +14,8 @@
 // The byte-true call site is 0x005DE728 (`lea ecx,[ebp-0x14]` / `call 0x36E70`),
 // which is why the record destructor's pin now names 0x36E70 instead of the
 // UnicodeString thunk at 0x5B804E.
-class UnicodeString;
+#include "unicode_string.h"
 typedef unsigned short wchar_t;
-template <typename T>
-class StringBase
-{
-public:
-	__forceinline ~StringBase() { releaseBuffer(); }
-protected:
-	void releaseBuffer();
-private:
-	StringBase(const StringBase &);
-	void *m_data;
-};
-class UnicodeString : public StringBase<wchar_t>
-{
-public:
-	UnicodeString(const UnicodeString &);
-	__forceinline ~UnicodeString() { releaseBuffer(); }
-};
 #include <vector>
 struct BfmeStringRecord005DDD40 {
     UnicodeString text;
