@@ -72,6 +72,14 @@ extern "C" unsigned int strlen( const char *text );
 extern char g_Rva0130ACE0Empty[];
 unsigned int Rva007FEA00Tick( void );                       // 0x007FEA00
 
+// Retail bytes at 0x00E0A710 consumed by Rva0080B1B0's null-name fallback:
+// the loop reaches the colon at +9 and atoi reads the non-digit at +10. The
+// surrounding data block has no proven extent or type in this TU, so keep only
+// this exact, bounded access window instead of claiming the whole block.
+char g_Rva00E0A710Prefix[ 11 ] = {
+	0x69, 0x36, 0x77, 0x36, 0x1a, 0x37, 0x22, 0x37, 0x85, 0x3a, 0xab
+};
+
 // The tick this module first ran at, filled in once and never again.
 extern unsigned int g_Rva0130ACDCEpoch;
 // g_Rva0130ACDCEpoch: matched references place it at VA 0xe0a6f4 (zero-filled .bss).
@@ -527,7 +535,7 @@ extern "C" int Rva0080B1B0( Rva0080B1B0Comm *comm, int secu, char *name,
 	comm->m_field114 = 0;
 
 	if( name == 0 )
-		name = (char *)0x00E0A710;	/* this-image default-name block; BFME1 carries 0x0130ACF8 here */
+		name = g_Rva00E0A710Prefix;	/* BFME1 carries 0x0130ACF8 here */
 
 	if( port <= 0 )
 		port = comm->m_backend != 0 ? 0x1BB : 0x50;
