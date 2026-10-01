@@ -100,3 +100,9 @@ template _STL::vector<Rva001EC349>::~vector();
 class Rva001ED0DE { public: ~Rva001ED0DE(); };
 template _STL::vector<Rva001ED0DE>::~vector();
 
+// ??1?$vector@URva00414BDBElement@@V?$allocator@URva00414BDBElement@@@_STL@@@_STL@@QAE@XZ @0x00414721 63B.
+// Same 63B Destroy-plus-free shape: destroys the range through pinned
+// _Destroy at 0x00414508 then frees via 0x30830; caller at 0x00414B5B in 0x00414B40; unblocks 0x00414B40.
+struct Rva00414BDBElement { public: ~Rva00414BDBElement(); };
+template _STL::vector<Rva00414BDBElement>::~vector();
+
