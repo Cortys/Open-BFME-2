@@ -45887,3 +45887,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?getPlayerFromMask@PlayerList@@QAEPAVPlayer@@H@Z,,0x002A7B91,56,Code/GameEngine/Source/Common/RTS/PlayerList_getNthPlayer.cpp,matched,BFME1 reference loop over getNthPlayer compiled in the same TU (edx index kept across the call)
 ?didEnter@Object@@QAE_NPAVPolygonTrigger@@@Z,,0x0028D718,63,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,BFME1 donor; same TU as didEnterOrExit so this stays in edx across the call
 ?didExit@Object@@QAE_NPAVPolygonTrigger@@@Z,,0x0028D757,63,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,BFME1 donor twin of didEnter; same TU as didEnterOrExit
+?rva00271008@Rva00270FEE@@QAEMXZ,,0x00271008,55,Code/GameEngine/Source/Common/Rva00270FEE.cpp,matched,float helper compiled after its same-class callee rva00270FEE so this stays in ecx
