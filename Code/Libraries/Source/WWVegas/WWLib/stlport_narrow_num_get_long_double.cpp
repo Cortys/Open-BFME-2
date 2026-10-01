@@ -95,7 +95,7 @@ protected:
 };
 
 template <>
-narrow_iterator num_get<char, narrow_iterator>::do_get(
+inline narrow_iterator num_get<char, narrow_iterator>::do_get(
 		narrow_iterator in, narrow_iterator end, ios_base &stream,
 		ios_base::iostate &error, long double &value) const
 {
@@ -108,5 +108,22 @@ narrow_iterator num_get<char, narrow_iterator>::do_get(
 		error |= ios_base::eofbit;
 	return in;
 }
+
+// num_get<char>::do_get(long double) is a template member other units instantiate as
+// a select-any copy; the strong specialization here made it a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is not retail code.
+struct bfmeNumGetEmitter : num_get<char, narrow_iterator>
+{
+	static void emit(const bfmeNumGetEmitter *p, narrow_iterator a, narrow_iterator b, ios_base &s,
+		ios_base::iostate &e, long double &v);
+};
+#pragma inline_depth(0)
+// ?emit@bfmeNumGetEmitter@_STL@@SAXPBU12@V?$istreambuf_iterator@DV?$char_traits@D@_STL@@@2@1AAVios_base@2@AAHAAO@Z present-unmatched
+void bfmeNumGetEmitter::emit(const bfmeNumGetEmitter *p, narrow_iterator a, narrow_iterator b, ios_base &s,
+	ios_base::iostate &e, long double &v)
+{
+	p->num_get<char, narrow_iterator>::do_get(a, b, s, e, v);
+}
+#pragma inline_depth()
 
 }
