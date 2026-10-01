@@ -45215,3 +45215,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Intersect@RenderObjClass@@UAE_NPAVIntersectionClass@@PAVIntersectionResultClass@@@Z,,0x0013C3B0,519,Code/Libraries/Source/WWVegas/WW3D2/RenderObjIntersect.cpp,matched,BFME1 WW3D2 rendobj.cpp semantics; BFME2 RenderObjClass vftable 0x00BD2F68 slot62; target quick-test slot +0x100 and Cast_Ray slot +0xF0; exact donor-semantic port byte verified
 ??_ERva0035A18D@@QAEPAXI@Z,,0x0035A18D,75,Code/GameEngine/Source/Common/Rva0035A18DVectorDeletingDtor.cpp,matched,vector deleting dtor via delete anchor element 0x10 pinned scalar dtor
 ?rva0035AFE4@Rva0035AFE4@@QAE_NH@Z,,0x0035AFE4,44,Code/GameEngine/Source/Common/Rva0035AFE4Pred.cpp,matched,bool pred on mask m_1c via sibling pattern
+?rva0035ABC0@Rva0035ABC0@@QAEXI@Z,,0x0035ABC0,32,Code/GameEngine/Source/Common/Rva0035ABC0Resize.cpp,matched,pod8 resize wrapper with zeroed fill via intrinsic memset
