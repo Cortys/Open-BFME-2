@@ -1,18 +1,14 @@
-// ?rva00214D59@Rva00214D59@@QAEHXZ
-// partial score=0.98 date=2026-10-01
-// ?rva00214D59@Rva00214D59@@QAEHXZ
-// partial score=0.98 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /arch:SSE
 // ?rva00214D59@Rva00214D59@@QAEHXZ retail 0x00214D59 169B
 // Packed 0xFFRRGGBB from +0x64/+0x68/+0x6c scaled by +0x70 plus double-based
 // base; upper clamp via cmov and lower via branch; final add/shl pack.
 // Evidence: same +0x64 +0x68 +0x6c +0x70 layout in all four lanes; double
-// helpers g_00BBCC70 g_00BBB8E8 via x87 ftol row 0x00629228; float scale
-// g_00BC2900; caller at 0x0009569A.
-// ?rva00214D59@Rva00214D59@@QAEHXZ present-unmatched
-extern const double g_00BBCC70;
-extern const double g_00BBB8E8;
-extern float g_00BC2900;
+// helpers 1.0 255.0 via x87 ftol row 0x00629228; float scale
+// 255.0f; caller at 0x0009569A.
+// The 1.0/255.0 doubles and the 255.0f scale are literals (the banked
+// attempt read them through globals), and the pack is written as shifted
+// sums with the 0xFF000000 alpha last, which the compiler folds into the
+// add 0xFF00 / shl 8 chain retail has.
 class Rva00214D59
 {
 public:
@@ -26,34 +22,29 @@ private:
 };
 int Rva00214D59::rva00214D59()
 {
-	int base = (int)((g_00BBCC70 - m_70) * g_00BBB8E8);
+	int base = (int)((1.0 - m_70) * 255.0);
 	if (base > 255)
 		base = 255;
 	if (base < 0)
 		base = 0;
 	float fbase = (float)base;
 	float tr = m_64 * m_70;
-	int r = (int)(tr * g_00BC2900 + fbase);
+	int r = (int)(tr * 255.0f + fbase);
 	if (r > 255)
 		r = 255;
 	if (r < 0)
 		r = 0;
 	float tg = m_68 * m_70;
-	int g = (int)(tg * g_00BC2900 + fbase);
+	int g = (int)(tg * 255.0f + fbase);
 	if (g > 255)
 		g = 255;
 	if (g < 0)
 		g = 0;
 	float tb = m_6C * m_70;
-	int b = (int)(tb * g_00BC2900 + fbase);
+	int b = (int)(tb * 255.0f + fbase);
 	if (b > 255)
 		b = 255;
 	if (b < 0)
 		b = 0;
-	int packed = 0xFF00 + r;
-	packed <<= 8;
-	packed += g;
-	packed <<= 8;
-	packed += b;
-	return packed;
+	return (r << 16) + (g << 8) + b + 0xFF000000;
 }
