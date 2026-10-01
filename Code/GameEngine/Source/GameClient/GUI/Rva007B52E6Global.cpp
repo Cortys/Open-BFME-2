@@ -77,3 +77,13 @@ void rva007B998D()
 {
     g_rva00E0675C.~Rva005E16DA();
 }
+
+// Ghidra77B startup7B5134..7B5180.
+void rva007B5134()
+{
+    {
+        AsciiString label("CancelArmyMoveButton");
+        g_rva00E0675C.Rva005E16DA::Rva005E16DA(reinterpret_cast<int>(&label));
+    }
+    atexit(rva007B998D);
+}
