@@ -45345,3 +45345,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva005FFB89@@QAE@XZ,,0x005FFB89,61,Code/GameEngine/Source/Common/Rva005FFB89Release.cpp,matched,Dtor of two hint-ref holders via forceinline Release
 ?rva006003AD@Rva006003FC@@QAEXXZ,,0x006003AD,8,Code/GameEngine/Source/Common/Rva006003AD.cpp,matched,vslot tail-forward via member at +8 to rowed callee
 ?rva0049D526@Rva0049D526@@QAEXPAX@Z,,0x0049D526,89,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D526.cpp,matched,copy ctor row 0x00045455 list link plus flag bits
+?rva0049D67F@Rva0049D67F@@QAE_NPBDPA_N1@Z,,0x0049D67F,308,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D67F.cpp,matched,Disability bitstring worker via Veterancy sibling transfer
