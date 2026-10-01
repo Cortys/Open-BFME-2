@@ -4872,3 +4872,7 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?Rva004F6590Insert@@YAXPAUTreeHintRef00217D4C@@U1@@Z	0x004F6590	152	blocked	138B vs 152B -14 delta 8 structural regions missing push-edi plus temp-copy layout plus register allocation wall t=8 model=muse-20
 ?Rva004F6CDDFill@@YAXPAUTreeHintRef00217D4C@@HPBU1@@Z	0x004F6CDD	27	blocked	wrapper bytes exact but callee 0x004F651D row missing false_type tag needs STL retype like 0x004F6B44 t=12 model=muse-20
 ?rva0039ECD9@Rva0039ECD9@@QAEHXZ	0x0039ECD9	56	blocked	compile fails C4234 thiscall cast from member pointer t=5 model=muse-03
+?rva0040DB0E@Rva0040DB0E@@QAEHABV?$StringBase@D@@@Z	0x0040DB0E	68	blocked	bound extra mov sub-reg vs sub-mem loop-body exact t=20 model=muse-09
+?rva0040DAA0@Rva0040DAA0@@QBEPAXABV?$StringBase@D@@PAH@Z	0x0040DAA0	80	partial	count in ecx not eax and top reuses begin instead of reload 81vs80 t=18 model=muse-09 score=0.93 stash=reverse/attempts/0x0040daa0.cpp
+??$__unguarded_linear_insert@PAVRva0040CB11Entry@@V1@URva0040F454Cmp@@@_STL@@YAXPAVRva0040CB11Entry@@V1@URva0040F454Cmp@@@Z	0x0040D170	94	blocked	stlport linear-insert register wall noted in stlport_sort TU plus EH prolog t=5 model=muse-09
+?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z	0x004E0BDC	109	partial	EH new frame extra push and branch order 112vs109 t=15 model=muse-09 score=0.91 stash=reverse/attempts/0x004e0bdc.cpp
