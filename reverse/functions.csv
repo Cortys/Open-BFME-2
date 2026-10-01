@@ -46635,3 +46635,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005CB260@Rva005CB260@@QAEXXZ,,0x005CB260,5,Code/GameEngine/Source/Common/Rva005CB260Forwarder.cpp,matched,slot1 forwarder LINK BONUS QAEXXZ via inner C8 this
 ?Rva003BBFFBSet@@YGXHM@Z,,0x003BBFFB,77,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBFFB.cpp,matched,leaf caller 0x003CC50F clamp scaled float to TheAudio slot 0xEC
 ?rva00267E46@Rva00267E46@@QAEXXZ,,0x00267E46,72,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva00267E46.cpp,matched,chain via 0x001E42F2 null check plus 9-arg tmp
+?Rva0041B8D2Check@@YGEPAVRva0041B8D2Obj@@0H@Z,,0x0041B8D2,70,Code/GameEngine/Source/Common/Rva0041B8D2.cpp,matched,caller 0x0029C8B9 in 0x0029C823 unblocks 0x0029C823 offsets +4 +0x5ec +0x258 slots +0x178 +0x18
