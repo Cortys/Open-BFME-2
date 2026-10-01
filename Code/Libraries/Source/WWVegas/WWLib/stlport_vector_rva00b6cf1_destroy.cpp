@@ -11,6 +11,7 @@
 // _Destroy instantiation over an opaque 8-byte view declaring the twin
 // dtor; callers at 0xC03F2/0xC05D6/0xC0647/0xC0804/0xC0986 unblock C03D8.
 #include <vector>
+#include <algorithm>
 
 #include "ascii_string.h"
 
@@ -48,3 +49,7 @@ Rva00B6CF1 &Rva00B6CF1::operator=(const Rva00B6CF1 &o)
 	m_s1 = o.m_s1;
 	return *this;
 }
+
+// ??$__copy@PAURva00B6CF1@@PAU1@H@_STL@@YAPAURva00B6CF1@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z @0x000B6894 47B
+// Forward __copy stride 8 via rowed ??4Rva00B6CF1 at 0xB433E; wrapper at 0xB67BC pushes tag plus distance.
+template Rva00B6CF1 *_STL::__copy<Rva00B6CF1 *, Rva00B6CF1 *, int>(Rva00B6CF1 *, Rva00B6CF1 *, Rva00B6CF1 *, const _STL::random_access_iterator_tag &, int *);
