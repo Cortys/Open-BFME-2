@@ -50,3 +50,19 @@ void Rva00421BF7::rva00421EEA()
 	m_header->m_linkC = m_header;
 	m_count = 0;
 }
+class Rva00421C24
+{
+public:
+	void rva00421C24(void *n);
+};
+void Rva00421C24::rva00421C24(void *n)
+{
+	Rva00421BF7Node *p = (Rva00421BF7Node *)n;
+	while (p != 0)
+	{
+		rva00421C24(p->m_child);
+		Rva00421BF7Node *next = p->m_next;
+		free(p);
+		p = next;
+	}
+}
