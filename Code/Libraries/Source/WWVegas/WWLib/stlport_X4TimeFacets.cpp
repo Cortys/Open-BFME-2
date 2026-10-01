@@ -83,7 +83,7 @@ namespace _STL {
 typedef back_insert_iterator<string> _TimeOut;
 typedef char _TimeInfoStorage[(sizeof(_Time_Info) == 540) ? 1 : -1];
 
-template<> __declspec(noinline) _TimeOut
+template<> inline __declspec(noinline) _TimeOut
 __copy<const char*, _TimeOut, int>(const char* first, const char* last,
                                  _TimeOut result,
                                  const random_access_iterator_tag&, int*) {
