@@ -8,6 +8,7 @@ template <typename T> class StringBase;
 class UnicodeString;
 UnicodeString Rva00579900Get(int a);
 UnicodeString Rva00579868Get(int a, int b);
+UnicodeString Rva00579995Get(float v);
 
 template <typename T>
 class StringBase
@@ -16,6 +17,7 @@ class StringBase
 	friend class UnicodeString;
 	friend UnicodeString Rva00579900Get(int);
 	friend UnicodeString Rva00579868Get(int, int);
+	friend UnicodeString Rva00579995Get(float);
 
 	StringBase(const StringBase<T> &that);
 	void releaseBuffer();
@@ -39,6 +41,7 @@ class UnicodeString
 {
 	friend UnicodeString Rva00579900Get(int);
 	friend UnicodeString Rva00579868Get(int, int);
+	friend UnicodeString Rva00579995Get(float);
 public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
@@ -92,6 +95,18 @@ UnicodeString Rva00579868Get(int a, int b)
 	if (exists) {
 		const wchar_t *fmt = fetched.m_data.m_data ? fetched.m_data.m_data->data : (const wchar_t *)&g_Va007BB5C4;
 		tmp.format(fmt, a, b);
+	}
+	return tmp;
+}
+
+UnicodeString Rva00579995Get(float v)
+{
+	UnicodeString tmp;
+	Bool exists;
+	UnicodeString fetched = TheGameText->fetch("STRATEGICHUD:StatsResourceMultiplier", &exists);
+	if (exists) {
+		const wchar_t *fmt = fetched.m_data.m_data ? fetched.m_data.m_data->data : (const wchar_t *)&g_Va007BB5C4;
+		tmp.format(fmt, v);
 	}
 	return tmp;
 }
