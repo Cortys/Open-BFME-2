@@ -46286,3 +46286,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0038028B@Rva00380200@@QAEXXZ,,0x0038028B,84,Code/GameEngine/Source/Common/Rva0038028BMethod.cpp,matched,Unlock init plus rank bonus plus tail to rva0038020D
 ?Rva003955AFCall@@YGXHHMHH@Z,,0x003955AF,43,Code/GameEngine/Source/Common/Rva003955AF.cpp,matched,unlock via global g_00A027B8 slot16 with float plus or-0x100 plus trailing 0
 ?rva00395CEB@Rva00395CEB@@QAEXPAX@Z,,0x00395CEB,45,Code/GameEngine/Source/Common/Rva00395CEB.cpp,matched,unlock recursive free via child plus iterate via next
+?rva00395D18@Rva00395D18@@QAEXPAX@Z,,0x00395D18,45,Code/GameEngine/Source/Common/Rva00395D18.cpp,matched,unlock recursive free via child plus iterate via next
