@@ -14,6 +14,15 @@
 // and the setWakeFrame tail (protected IAEX Object-uint spelling resolves
 // via the existing pin at 0x44DF71). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C1A690[];  // ??_7Rva00455050@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C1A690=??_7Rva00455050@@6B@")
+extern "C" const void *const vtbl_00C40538[];  // ??_7Rva00455050@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40538=??_7Rva00455050@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C40548[];  // ??_7Rva00455050@@6BRva0024A797_Mid@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40548=??_7Rva00455050@@6BRva0024A797_Mid@@@")
+extern "C" const void *const vtbl_00C40608[];  // ??_7Rva00455050@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40608=??_7Rva00455050@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -63,10 +72,10 @@ FoundationAIUpdate::FoundationAIUpdate(Thing *thing, const ModuleData *moduleDat
 	*slot20 = (int)0x00BFBC9C;
 	m_28 &= 0;
 	int one = 1;
-	m_vtable = (const void *)0x00C40608;
-	m_secondary0C = (const void *)0x00C40548;
-	m_secondary10 = (const void *)0x00C40538;
-	m_20 = (const void *)0x00C1A690;
+	m_vtable = (const void *)((unsigned int)vtbl_00C40608);
+	m_secondary0C = (const void *)((unsigned int)vtbl_00C40548);
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C40538);
+	m_20 = (const void *)((unsigned int)vtbl_00C1A690);
 	m_24 = one;
 	m_2C = (unsigned char)one;
 	setWakeFrame(m_object, (UpdateSleepTime)one);

@@ -14,6 +14,19 @@
 // literal) is the sole raw caller; poolkey rowed at 0x4AB897. Row supersedes
 // the ctor pin. Zero new pins (base plus both callees already rowed/pinned).
 
+extern "C" const void *const vtbl_00BFB698[];  // ??_7LargeGroupAudioUpdate_B24@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BFB698=??_7LargeGroupAudioUpdate_B24@@6B@")
+extern "C" const void *const vtbl_00C548B8[];  // ??_7LargeGroupAudioUpdate@@6BLargeGroupAudioUpdate_B24@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C548B8=??_7LargeGroupAudioUpdate@@6BLargeGroupAudioUpdate_B24@@@")
+extern "C" const void *const vtbl_00C548E8[];  // ??_7LargeGroupAudioUpdate@@6BLargeGroupAudioUpdate_B20@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C548E8=??_7LargeGroupAudioUpdate@@6BLargeGroupAudioUpdate_B20@@@")
+extern "C" const void *const vtbl_00C548F0[];  // ??_7LargeGroupAudioUpdate@@6BRva0024A797@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C548F0=??_7LargeGroupAudioUpdate@@6BRva0024A797@@@")
+extern "C" const void *const vtbl_00C54900[];  // ??_7LargeGroupAudioUpdate@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54900=??_7LargeGroupAudioUpdate@@6BMiBase1@@@")
+extern "C" const void *const vtbl_00C549BC[];  // ??_7LargeGroupAudioUpdate@@6BRva0049B47C@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C549BC=??_7LargeGroupAudioUpdate@@6BRva0049B47C@@@")
+
 #include <bitset>
 
 namespace _STL {
@@ -71,17 +84,17 @@ LargeGroupAudioUpdate::LargeGroupAudioUpdate(Thing *thing, const ModuleData *mod
 	int *slotInit20 = (int *)&m_secondary20;
 	*slotInit20 = (int)0x00C6FFFC;
 	int *slotInit24 = (int *)&m_secondary24;
-	*slotInit24 = (int)0x00BFB698;
+	*slotInit24 = (int)((unsigned int)vtbl_00BFB698);
 	int *vtab = (int *)&m_vtable;
-	*vtab = (int)0x00C549BC;
+	*vtab = (int)((unsigned int)vtbl_00C549BC);
 	int *sec0C = (int *)&m_secondary0C;
-	*sec0C = (int)0x00C54900;
+	*sec0C = (int)((unsigned int)vtbl_00C54900);
 	int *sec10 = (int *)&m_secondary10;
-	*sec10 = (int)0x00C548F0;
+	*sec10 = (int)((unsigned int)vtbl_00C548F0);
 	int *slot20 = (int *)&m_secondary20;
-	*slot20 = (int)0x00C548E8;
+	*slot20 = (int)((unsigned int)vtbl_00C548E8);
 	int *slot24 = (int *)&m_secondary24;
-	*slot24 = (int)0x00C548B8;
+	*slot24 = (int)((unsigned int)vtbl_00C548B8);
 	m_state28 = fzero;
 	m_state2C = fzero;
 	CondStore *cond30 = &m_condition30;

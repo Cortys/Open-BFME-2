@@ -13,6 +13,9 @@
 // precedent). Recipe: ReflectDamageModuleDataCtor (flat TU-local class,
 // explicit vtable slot, no virtuals emitted).
 
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 class OpenContainModuleData
 {
 public:
@@ -37,7 +40,7 @@ private:
 // ??0RadarUpgradeModuleData@@QAE@XZ @0x2546D2
 inline RadarUpgradeModuleData::RadarUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF2558);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF2558));
 	m_disableProof = false;
 }
 

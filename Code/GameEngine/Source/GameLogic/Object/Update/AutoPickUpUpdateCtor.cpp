@@ -14,6 +14,15 @@
 // 0x233FF4 over lo/hi/file/line with the TU __FILE__ literal and line
 // 0x83). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C4EF90[];  // ??_7AutoPickUpUpdate@@6BAutoPickUpUpdateInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EF90=??_7AutoPickUpUpdate@@6BAutoPickUpUpdateInterface@@@")
+extern "C" const void *const vtbl_00C4EFA0[];  // ??_7AutoPickUpUpdate@@6BUpdateModule@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EFA0=??_7AutoPickUpUpdate@@6BUpdateModule@@@")
+extern "C" const void *const vtbl_00C4EFB0[];  // ??_7AutoPickUpUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EFB0=??_7AutoPickUpUpdate@@6BBehaviorModuleOther@@@")
+extern "C" const void *const vtbl_00C4F06C[];  // ??_7AutoPickUpUpdate@@6BBehaviorModuleBase@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4F06C=??_7AutoPickUpUpdate@@6BBehaviorModuleBase@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -66,10 +75,10 @@ AutoPickUpUpdate::AutoPickUpUpdate(Thing *thing, const ModuleData *moduleData)
 	*slot20 = (int)0x00C4EF80;
 	const AutoPickUpUpdateModuleData *data = (const AutoPickUpUpdateModuleData *)m_moduleData;
 	int zero = 0;
-	m_vtable = (const void *)0x00C4F06C;
-	m_secondary0C = (const void *)0x00C4EFB0;
-	m_secondary10 = (const void *)0x00C4EFA0;
-	m_20 = (const void *)0x00C4EF90;
+	m_vtable = (const void *)((unsigned int)vtbl_00C4F06C);
+	m_secondary0C = (const void *)((unsigned int)vtbl_00C4EFB0);
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C4EFA0);
+	m_20 = (const void *)((unsigned int)vtbl_00C4EF90);
 	m_24 = zero;
 	m_28 = zero;
 	m_29 = zero;

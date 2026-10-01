@@ -15,6 +15,13 @@
 // Object-uint spelling resolves via the existing pin at 0x44DF71). Row
 // supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C50250[];  // ??_7Rva00499934@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C50250=??_7Rva00499934@@6B@")
+extern "C" const void *const vtbl_00C50254[];  // ??_7Rva00499934@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50254=??_7Rva00499934@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C50260[];  // ??_7Rva00499934@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50260=??_7Rva00499934@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -65,10 +72,10 @@ OneRingPenaltyUpdate::OneRingPenaltyUpdate(Thing *thing, const ModuleData *modul
 	int *slot20 = (int *)&m_20;
 	*slot20 = (int)0x00C1C780;
 	int zero = 0;
-	m_vtable = (const void *)0x00C50260;
+	m_vtable = (const void *)((unsigned int)vtbl_00C50260);
 	m_secondary0C = (const void *)0x00C49188;
-	m_secondary10 = (const void *)0x00C50254;
-	m_20 = (const void *)0x00C50250;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C50254);
+	m_20 = (const void *)((unsigned int)vtbl_00C50250);
 	m_24 = zero;
 	m_28 = zero;
 	m_2C = fzero;

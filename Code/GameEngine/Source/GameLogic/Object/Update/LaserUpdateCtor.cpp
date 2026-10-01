@@ -13,6 +13,9 @@
 // float local so retail's load lands between the float and int store groups.
 // Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C170E0[];  // ??_7LaserUpdate@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C170E0=??_7LaserUpdate@@6B@")
+
 class Thing;
 class ModuleData;
 
@@ -65,7 +68,7 @@ LaserUpdate::LaserUpdate(Thing *thing, const ModuleData *moduleData)
 	float fzero = 0.0f;
 	int zero = 0;
 	m_24 = zero;
-	m_vtable = (const void *)0x00C170E0;
+	m_vtable = (const void *)((unsigned int)vtbl_00C170E0);
 	m_18 = fzero;
 	m_1C = fzero;
 	m_20 = fzero;

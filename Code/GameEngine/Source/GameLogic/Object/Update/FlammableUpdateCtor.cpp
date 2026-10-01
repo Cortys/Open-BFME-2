@@ -13,6 +13,13 @@
 // spelling resolves via the existing pin at 0x44DF71). Row supersedes the
 // ctor pin.
 
+extern "C" const void *const vtbl_00C4C3BC[];  // ??_7FlammableUpdate@@6BDamageModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4C3BC=??_7FlammableUpdate@@6BDamageModuleInterface@@@")
+extern "C" const void *const vtbl_00C4C3C8[];  // ??_7FlammableUpdate@@6BUpdateModule@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4C3C8=??_7FlammableUpdate@@6BUpdateModule@@@")
+extern "C" const void *const vtbl_00C4C3D4[];  // ??_7FlammableUpdate@@6BBehaviorModuleBase@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4C3D4=??_7FlammableUpdate@@6BBehaviorModuleBase@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -86,10 +93,10 @@ FlammableUpdate::FlammableUpdate(Thing *thing, const ModuleData *moduleData)
 	m_48 = zero;
 	m_4C = zero;
 	const FlammableUpdateModuleData *data = (const FlammableUpdateModuleData *)m_moduleData;
-	m_vtable = (const void *)0x00C4C3D4;
+	m_vtable = (const void *)((unsigned int)vtbl_00C4C3D4);
 	m_secondary0C = (const void *)0x00C49800;
-	m_secondary10 = (const void *)0x00C4C3C8;
-	m_20 = (const void *)0x00C4C3BC;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C4C3C8);
+	m_20 = (const void *)((unsigned int)vtbl_00C4C3BC);
 	m_38 = data->m_1C;
 	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }

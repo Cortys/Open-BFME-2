@@ -10,6 +10,9 @@
 // (DestroyEnvironment precedent, so no vtable is emitted); the and-zero
 // floats above the vtable on its own (GiveOrRestore inverse: no barrier).
 
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 class OpenContainModuleData
 {
 public:
@@ -36,7 +39,7 @@ private:
 // ??0UnpauseSpecialPowerUpgradeModuleData@@QAE@XZ @0x4B544A
 UnpauseSpecialPowerUpgradeModuleData::UnpauseSpecialPowerUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF2558);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF2558));
 	m_specialPowerTemplate = 0;
 	m_obeyRechargeOnTrigger = false;
 }

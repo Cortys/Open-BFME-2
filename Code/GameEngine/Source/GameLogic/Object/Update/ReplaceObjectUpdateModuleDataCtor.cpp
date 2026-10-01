@@ -9,6 +9,9 @@
 // which V1 proved wrong), 0.0f at +0xD4, 0 at +0xD8, 0 at +0xDC. Factory
 // 0x24FCEA news 0xE0. Element type is a TU-local stand-in (fold-identical).
 
+extern "C" const void *const vtbl_00C56C78[];  // ??_7ReplaceObjectUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C56C78=??_7ReplaceObjectUpdateModuleData@@6B@")
+
 #include <vector>
 
 typedef int Int;
@@ -35,7 +38,7 @@ private:
 
 // ??0ReplaceObjectUpdateModuleData@@QAE@XZ
 ReplaceObjectUpdateModuleData::ReplaceObjectUpdateModuleData()
-	: m_vtable(reinterpret_cast<void *>(0x00C56C78))
+	: m_vtable(reinterpret_cast<void *>(((unsigned int)vtbl_00C56C78)))
 {
 	m_radius = 0.0f;
 	m_count = 0;

@@ -7,6 +7,9 @@
 // above the plain mov). Class size 0x10 proven by the rowed W3DBuffDraw data
 // factory 0x64C94 (news 0x10, sole caller). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00BCD270[];  // ??_7W3DBuffDrawModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BCD270=??_7W3DBuffDrawModuleData@@6B@")
+
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
@@ -40,7 +43,7 @@ private:
 // ??0W3DBuffDrawModuleData@@QAE@XZ @0x000CEE4C
 W3DBuffDrawModuleData::W3DBuffDrawModuleData()
 {
-	*(unsigned int *)this = 0x00BCD270;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BCD270);
 	_ReadWriteBarrier();
 	m_08 &= 0;
 	m_0C = false;

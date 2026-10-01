@@ -17,6 +17,15 @@
 // IAEX Object-uint spelling resolves via the existing pin at 0x44DF71).
 // Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C3FC78[];  // ??_7Rva0045232D@@6BRva0045232D_E2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C3FC78=??_7Rva0045232D@@6BRva0045232D_E2@@@")
+extern "C" const void *const vtbl_00C3FC88[];  // ??_7Rva0045232D@@6BRva0045232D_E1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C3FC88=??_7Rva0045232D@@6BRva0045232D_E1@@@")
+extern "C" const void *const vtbl_00C3FCD0[];  // ??_7Rva0045232D@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C3FCD0=??_7Rva0045232D@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C3FCDC[];  // ??_7Rva0045232D@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C3FCDC=??_7Rva0045232D@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -90,11 +99,11 @@ AutoHealBehavior::AutoHealBehavior(Thing *thing, const ModuleData *moduleData)
 	*slot28 = (int)0x00BE2B78;
 	const AutoHealBehaviorModuleData *data = (const AutoHealBehaviorModuleData *)m_moduleData;
 	m_2C &= 0;
-	m_vtable = (const void *)0x00C3FCDC;
+	m_vtable = (const void *)((unsigned int)vtbl_00C3FCDC);
 	m_secondary0C = (const void *)0x00C495A0;
-	m_secondary10 = (const void *)0x00C3FCD0;
-	*(void **)&m_20 = (void *)0x00C3FC88;
-	m_28 = (unsigned int)0x00C3FC78;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C3FCD0);
+	*(void **)&m_20 = (void *)((unsigned int)vtbl_00C3FC88);
+	m_28 = (unsigned int)((unsigned int)vtbl_00C3FC78);
 	m_30 = data->m_119;
 	m_34 &= 0;
 	if (data->m_118)

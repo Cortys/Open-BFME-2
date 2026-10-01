@@ -14,6 +14,11 @@
 // (base resolves via the existing W3DScriptedModelDraw pin). Row supersedes
 // the ctor pin.
 
+extern "C" const void *const vtbl_00BCBEF8[];  // ??_7Rva000CAEC6@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCBEF8=??_7Rva000CAEC6@@6BMiBase1@@@")
+extern "C" const void *const vtbl_00BCBFC0[];  // ??_7Rva000CAEC6@@6BRva000C79C9@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCBFC0=??_7Rva000CAEC6@@6BRva000C79C9@@@")
+
 class Thing;
 class ModuleData;
 
@@ -42,7 +47,7 @@ W3DSupplyDraw::W3DSupplyDraw(Thing *thing, const ModuleData *moduleData) :
 {
 	m_flags2E8 |= -1;
 	m_2EC = 0;
-	*(unsigned int *)this = 0x00BCBFC0;
-	*(unsigned int *)((char *)this + 0x0C) = 0x00BCBEF8;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BCBFC0);
+	*(unsigned int *)((char *)this + 0x0C) = ((unsigned int)vtbl_00BCBEF8);
 	*(unsigned int *)((char *)this + 0x10) = 0x00BCA08C;
 }

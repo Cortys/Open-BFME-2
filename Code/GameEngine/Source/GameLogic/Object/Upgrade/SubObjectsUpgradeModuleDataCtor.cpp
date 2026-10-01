@@ -22,6 +22,9 @@
 // source orders emit the call first under /O1); the store bytes are the
 // plain mov. Row supersedes the pinned ctor.
 
+extern "C" const void *const vtbl_00BF41A8[];  // ??_7SubObjectsUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF41A8=??_7SubObjectsUpgradeModuleData@@6B@")
+
 #include <vector>
 
 #include "ascii_string.h"
@@ -55,7 +58,7 @@ private:
 
 // ??0SubObjectsUpgradeModuleData@@QAE@XZ @0x257768
 inline SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData()
-	: m_vtable(reinterpret_cast<volatile const void *>(0x00BF41A8))
+	: m_vtable(reinterpret_cast<volatile const void *>(((unsigned int)vtbl_00BF41A8)))
 {
 	m_148 = 0.5f;
 	m_f150 = 0;

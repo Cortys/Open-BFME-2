@@ -10,6 +10,13 @@
 // (PartTheHeavens precedent). The rowed instance factory 0x24E969
 // (news 0x44) is the sole caller. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C5198C[];  // ??_7QueueProductionExitUpdate@@6BExitInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5198C=??_7QueueProductionExitUpdate@@6BExitInterface@@@")
+extern "C" const void *const vtbl_00C519BC[];  // ??_7QueueProductionExitUpdate@@6BUpdateModule@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C519BC=??_7QueueProductionExitUpdate@@6BUpdateModule@@@")
+extern "C" const void *const vtbl_00C519C8[];  // ??_7QueueProductionExitUpdate@@6BBehaviorModuleBase@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C519C8=??_7QueueProductionExitUpdate@@6BBehaviorModuleBase@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -63,10 +70,10 @@ QueueProductionExitUpdate::QueueProductionExitUpdate(Thing *thing, const ModuleD
 	int *slot20 = (int *)&m_secondary20;
 	*slot20 = (int)0x00C430B4;
 	int zero = 0;
-	m_vtable = (const void *)0x00C519C8;
+	m_vtable = (const void *)((unsigned int)vtbl_00C519C8);
 	m_p0C = (const void *)0x00C4B1F0;
-	m_p10 = (const void *)0x00C519BC;
-	m_secondary20 = (const void *)0x00C5198C;
+	m_p10 = (const void *)((unsigned int)vtbl_00C519BC);
+	m_secondary20 = (const void *)((unsigned int)vtbl_00C5198C);
 	m_24 = zero;
 	m_38 = fzero;
 	m_28 = fzero;

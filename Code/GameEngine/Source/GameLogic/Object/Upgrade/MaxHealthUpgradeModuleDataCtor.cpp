@@ -11,6 +11,9 @@
 // RadarUpgradeModuleDataCtor (flat TU-local class with explicit vtable
 // slot); /arch:SSE for the float-zero store (DemoTrap precedent).
 
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 class OpenContainModuleData
 {
 public:
@@ -36,7 +39,7 @@ private:
 // ??0MaxHealthUpgradeModuleData@@QAE@XZ @0x4B62C4
 MaxHealthUpgradeModuleData::MaxHealthUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF2558);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF2558));
 	m_changeType = 0;
 	m_addMaxHealth = 0.0f;
 }

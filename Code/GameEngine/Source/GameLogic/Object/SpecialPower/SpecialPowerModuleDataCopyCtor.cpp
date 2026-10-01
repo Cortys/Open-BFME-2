@@ -14,6 +14,9 @@
 // an empty base with declared-only dtor (Topple pattern, zero emitted
 // code); without it this toolchain stays frameless. Split TU because the
 // default-ctor shard must keep its EH-off flags (makeDirty law).
+extern "C" const void *const vtbl_00C6A520[];  // ??_7SpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6A520=??_7SpecialPowerModuleData@@6B@")
+
 #include <vector>
 
 enum ScienceType
@@ -48,7 +51,7 @@ private:
 
 // ??0SpecialPowerModuleData@@QAE@ABV0@@Z @0x5488E9
 SpecialPowerModuleData::SpecialPowerModuleData(const SpecialPowerModuleData &other)
-	: m_vtable(reinterpret_cast<void *>(0x00C6A520))
+	: m_vtable(reinterpret_cast<void *>(((unsigned int)vtbl_00C6A520)))
 	, m_sciences(other.m_sciences)
 {
 	m_unused10 = reinterpret_cast<void *>(++g_Va00E05F74);

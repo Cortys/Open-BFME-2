@@ -11,6 +11,9 @@
 // Donor: BFME1 SpecialPower files (BFME2 appends its own int/float tail past
 // the 0x18 base).
 
+extern "C" const void *const vtbl_00C5DAB0[];  // ??_7DeflectSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5DAB0=??_7DeflectSpecialPowerModuleData@@6B@")
+
 class __declspec(novtable) AIUpdateModuleData
 {
 public:
@@ -39,7 +42,7 @@ private:
 
 SiegeDeploySpecialPowerModuleData::SiegeDeploySpecialPowerModuleData()
 {
-	*(unsigned int *)this = 0x00C5DAB0;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5DAB0);
 	m_int18 = 0;
 	m_int1C = 0;
 	m_byte21 = false;

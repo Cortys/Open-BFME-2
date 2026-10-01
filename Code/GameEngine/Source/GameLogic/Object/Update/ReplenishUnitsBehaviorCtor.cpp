@@ -17,6 +17,11 @@
 // tail (protected IAEX Object-uint spelling resolves via the existing pin
 // at 0x44DF71). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C49F68[];  // ??_7ReplenishUnitsBehavior@@6BUpdateModule@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C49F68=??_7ReplenishUnitsBehavior@@6BUpdateModule@@@")
+extern "C" const void *const vtbl_00C4A034[];  // ??_7ReplenishUnitsBehavior@@6BBehaviorModuleBase@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4A034=??_7ReplenishUnitsBehavior@@6BBehaviorModuleBase@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -81,9 +86,9 @@ ReplenishUnitsBehavior::ReplenishUnitsBehavior(Thing *thing, const ModuleData *m
 	: UpdateModule(thing, moduleData), m_20()
 {
 	Object *obj = m_object;
-	m_vtable = (const void *)0x00C4A034;
+	m_vtable = (const void *)((unsigned int)vtbl_00C4A034);
 	m_secondary0C = (const void *)0x00C49F78;
-	m_secondary10 = (const void *)0x00C49F68;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C49F68);
 	*(void **)&m_20 = (void *)0x00C49F20;
 	if (((const ReplenishUnitsModuleData *)m_moduleData)->m_138)
 	{

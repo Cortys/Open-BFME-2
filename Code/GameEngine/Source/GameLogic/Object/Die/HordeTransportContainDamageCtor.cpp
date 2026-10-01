@@ -14,6 +14,11 @@
 // existing DamageModule pin; rowing the base is parked on a same-value
 // scheduling wall, stash 0x004B9704).
 
+extern "C" const void *const vtbl_00C59E64[];  // ??_7Rva004BB0CC@@6BRva004BB0CC_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C59E64=??_7Rva004BB0CC@@6BRva004BB0CC_B2@@@")
+extern "C" const void *const vtbl_00C59E70[];  // ??_7Rva004BB0CC@@6BRva004B96CC@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C59E70=??_7Rva004BB0CC@@6BRva004B96CC@@@")
+
 class Thing;
 class ModuleData;
 
@@ -33,7 +38,7 @@ public:
 HordeTransportContainDamage::HordeTransportContainDamage(Thing *thing, const ModuleData *moduleData) :
 	DamageModule(thing, moduleData)
 {
-	*(unsigned int *)this = 0x00C59E70;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C59E70);
 	*(unsigned int *)((char *)this + 0xC) = 0x00C597F8;
-	*(unsigned int *)((char *)this + 0x10) = 0x00C59E64;
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00C59E64);
 }

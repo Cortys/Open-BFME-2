@@ -1,6 +1,9 @@
 // cl: /DNDEBUG /MD /EHsc
 // Clean C++ reconstruction of MaterialInfoClass::MaterialInfoClass().
 
+extern "C" const void *const vtbl_00BD4658[];  // ??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD4658=??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@")
+
 class TextureClass
 {
 public:
@@ -51,7 +54,7 @@ public:
 		*(unsigned int *)(self + 8) = 0;
 		*(unsigned char *)(self + 0x0c) = 1;
 		*(unsigned char *)(self + 0x0d) = 0;
-		*(unsigned int *)self = 0x00BD4658;
+		*(unsigned int *)self = ((unsigned int)vtbl_00BD4658);
 		*(unsigned int *)(self + 0x14) = 10;
 		*(unsigned int *)(self + 0x10) = 0;
 	}

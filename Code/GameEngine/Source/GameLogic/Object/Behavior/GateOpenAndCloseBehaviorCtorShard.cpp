@@ -25,6 +25,9 @@
 // /O1 default emits an integer mov); the appendOnce home TU keeps its own
 // flags in a separate shard (same-class-in-2-TUs precedent).
 
+extern "C" const void *const vtbl_00BEF248[];  // ??_7GateProxyBehavior@@6BProxyBaseC@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEF248=??_7GateProxyBehavior@@6BProxyBaseC@@@")
+
 class Thing;
 class ModuleData;
 
@@ -130,7 +133,7 @@ GateOpenAndCloseBehavior::GateOpenAndCloseBehavior(Thing *thing, const ModuleDat
 	const GateOpenAndCloseModuleData *data = *(const GateOpenAndCloseModuleData **)((char *)this + 8);
 	*(unsigned int *)this = 0x00C50178;
 	*(unsigned int *)((char *)this + 4) = 0x00C50144;
-	*(unsigned int *)((char *)this + 0x10) = 0x00BEF248;
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00BEF248);
 	*(unsigned int *)((char *)this + 0x14) = 0x00C50138;
 	m_44 = 1;
 	m_48 = false;

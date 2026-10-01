@@ -10,6 +10,9 @@
 // Evidence: same vtable-ID-vector layout as copy ctor 0x005488E9;
 // five derived ModuleData ctors (0x00546AD0 0x00546C26 0x00546ECE
 // 0x00547963 0x00547F88) call this base then overwrite the vtable.
+extern "C" const void *const vtbl_00C6A520[];  // ??_7SpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6A520=??_7SpecialPowerModuleData@@6B@")
+
 #include <vector>
 
 enum ScienceType
@@ -68,7 +71,7 @@ private:
 };
 
 SpecialPowerModuleData::SpecialPowerModuleData(Rva0036E346 *holder)
-	: m_vtable(reinterpret_cast<void *>(0x00C6A520))
+	: m_vtable(reinterpret_cast<void *>(((unsigned int)vtbl_00C6A520)))
 	, m_sciences()
 {
 	m_id10 = reinterpret_cast<void *>(++g_Va00E05F74);

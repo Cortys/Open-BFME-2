@@ -15,6 +15,9 @@
 // is load-bearing for the EH state machine (SpawnUnit precedent). /arch:SSE
 // for movss float stores; /EHsc for the __EH_prolog frame.
 
+extern "C" const void *const vtbl_00C40A10[];  // ??_7BridgeBehaviorModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C40A10=??_7BridgeBehaviorModuleData@@6B@")
+
 #include <list>
 
 struct Coord3D
@@ -49,7 +52,7 @@ private:
 
 // ??0BridgeBehaviorModuleData@@QAE@XZ @0x457FF1
 BridgeBehaviorModuleData::BridgeBehaviorModuleData()
-	: m_vtable(reinterpret_cast<const void *>(0x00C40A10))
+	: m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C40A10)))
 {
 	m_lateralScaffoldSpeed = 1.0f;
 	m_verticalScaffoldSpeed = 1.0f;

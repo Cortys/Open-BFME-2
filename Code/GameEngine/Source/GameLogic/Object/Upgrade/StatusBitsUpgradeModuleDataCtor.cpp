@@ -12,6 +12,9 @@
 // vtable. Recipe: GiveOrRestoreUpgradeSpecialPowerModuleDataCtor (explicit
 // vtable slot, cast-to-bitset reset calls in body order).
 
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 #include <bitset>
 
 namespace _STL {
@@ -43,7 +46,7 @@ private:
 // ??0StatusBitsUpgradeModuleData@@QAE@XZ @0x254775
 inline StatusBitsUpgradeModuleData::StatusBitsUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF2558);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF2558));
 	((_STL::bitset<128> *)m_statusToSet)->reset();
 	((_STL::bitset<128> *)m_statusToClear)->reset();
 }

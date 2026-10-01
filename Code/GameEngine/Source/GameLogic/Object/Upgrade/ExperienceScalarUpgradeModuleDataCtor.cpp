@@ -10,6 +10,9 @@
 // MaxHealthUpgradeModuleDataCtor (explicit vtable slot in body order);
 // /arch:SSE for the float-zero store.
 
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 class OpenContainModuleData
 {
 public:
@@ -34,6 +37,6 @@ private:
 // ??0ExperienceScalarUpgradeModuleData@@QAE@XZ @0x4B6187
 ExperienceScalarUpgradeModuleData::ExperienceScalarUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF2558);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF2558));
 	m_addXPScalar = 0.0f;
 }

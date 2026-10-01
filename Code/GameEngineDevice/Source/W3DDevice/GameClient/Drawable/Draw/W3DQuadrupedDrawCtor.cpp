@@ -13,6 +13,11 @@
 // DIR32-masked in comparison). Zero new pins (base resolves via the existing
 // W3DScriptedModelDraw pin). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00BCBB78[];  // ??_7Rva000CA119@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCBB78=??_7Rva000CA119@@6BMiBase1@@@")
+extern "C" const void *const vtbl_00BCBC40[];  // ??_7Rva000CA119@@6BRva000C79C9@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCBC40=??_7Rva000CA119@@6BRva000C79C9@@@")
+
 class Thing;
 class ModuleData;
 
@@ -32,7 +37,7 @@ public:
 W3DQuadrupedDraw::W3DQuadrupedDraw(Thing *thing, const ModuleData *moduleData) :
 	W3DScriptedModelDraw(thing, moduleData)
 {
-	*(unsigned int *)this = 0x00BCBC40;
-	*(unsigned int *)((char *)this + 0x0C) = 0x00BCBB78;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BCBC40);
+	*(unsigned int *)((char *)this + 0x0C) = ((unsigned int)vtbl_00BCBB78);
 	*(unsigned int *)((char *)this + 0x10) = 0x00BCA08C;
 }

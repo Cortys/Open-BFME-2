@@ -15,6 +15,11 @@
 // retail is followed. Callers proving class: friend_new 0x24B264 plus Ship
 // 0x45E9AA plus GiantBird 0x461E58 plus ClearanceTesting 0x483D39.
 
+extern "C" const void *const vtbl_00C42020[];  // ??_7Rva0045D39E@@6BRva0045D39E_E2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C42020=??_7Rva0045D39E@@6BRva0045D39E_E2@@@")
+extern "C" const void *const vtbl_00C42040[];  // ??_7Rva0045D39E@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C42040=??_7Rva0045D39E@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -110,11 +115,11 @@ SlowDeathBehavior::SlowDeathBehavior(Thing *thing, const ModuleData *moduleData)
 	m_34 = 0;
 	m_40 = false;
 	m_48 = false;
-	m_vtable = (const void *)0x00C42040;
+	m_vtable = (const void *)((unsigned int)vtbl_00C42040);
 	m_p0C = (const void *)0x00C42DA8;
 	m_p10 = (const void *)0x00C42034;
 	m_secondary20 = (const void *)0x00C42030;
-	m_secondary24 = (const void *)0x00C42020;
+	m_secondary24 = (const void *)((unsigned int)vtbl_00C42020);
 	m_38 = 1.0f;
 	m_44 = 99999;
 

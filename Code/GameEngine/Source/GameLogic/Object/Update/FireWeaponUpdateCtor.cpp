@@ -24,6 +24,9 @@
 // delete, same commit); the single-caller 0x48BDF8 helper rides as an
 // opaque Rva pin (do-not-name note).
 
+extern "C" const void *const vtbl_00C4C198[];  // ??_7FireWeaponUpdate@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4C198=??_7FireWeaponUpdate@@6B@")
+
 #include <list>
 
 class Thing;
@@ -69,7 +72,7 @@ private:
 // ??0FireWeaponUpdate@@QAE@PAVThing@@PBVModuleData@@@Z @0x0048C0C5
 FireWeaponUpdate::FireWeaponUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData)
-	, m_vtable(reinterpret_cast<const void *>(0x00C4C198))
+	, m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4C198)))
 	, m_secondary0C(reinterpret_cast<const void *>(0x00BEFF90))
 	, m_secondary10(reinterpret_cast<const void *>(0x00C4C18C))
 	, m_weaponState(0)

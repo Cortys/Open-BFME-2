@@ -15,6 +15,13 @@
 // data flag at +0x08 (rowed giveSelfUpgrade 0x45230C). Row supersedes the
 // ctor pin.
 
+extern "C" const void *const vtbl_00C50F68[];  // ??_7Rva0049BFB7@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C50F68=??_7Rva0049BFB7@@6B@")
+extern "C" const void *const vtbl_00C50FB0[];  // ??_7Rva0049BFB7@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50FB0=??_7Rva0049BFB7@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C50FBC[];  // ??_7Rva0049BFB7@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50FBC=??_7Rva0049BFB7@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -74,10 +81,10 @@ private:
 RadiateFearUpdate::RadiateFearUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData), m_20()
 {
-	m_vtable = (const void *)0x00C50FBC;
+	m_vtable = (const void *)((unsigned int)vtbl_00C50FBC);
 	m_secondary0C = (const void *)0x00C49F78;
-	m_secondary10 = (const void *)0x00C50FB0;
-	*(void **)&m_20 = (void *)0x00C50F68;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C50FB0);
+	*(void **)&m_20 = (void *)((unsigned int)vtbl_00C50F68);
 	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
 	const RadiateFearUpdateModuleData *data = (const RadiateFearUpdateModuleData *)m_moduleData;
 	if (data->m_08)

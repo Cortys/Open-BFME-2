@@ -10,6 +10,9 @@
 // sole caller of this ctor. Same opaque-base + explicit-vtable recipe as
 // the landed W3DTruckDrawModuleData ctor.
 
+extern "C" const void *const vtbl_00BCC0D0[];  // ??_7W3DSupplyDrawModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BCC0D0=??_7W3DSupplyDrawModuleData@@6B@")
+
 #include "ascii_string.h"
 
 class W3DModelDrawModuleData
@@ -32,6 +35,6 @@ private:
 
 // ??0W3DSupplyDrawModuleData@@QAE@XZ @0xCAF17
 W3DSupplyDrawModuleData::W3DSupplyDrawModuleData()
-	: m_vtable(reinterpret_cast<const void *>(0x00BCC0D0))
+	: m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00BCC0D0)))
 {
 }

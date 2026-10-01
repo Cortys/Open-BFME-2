@@ -11,6 +11,9 @@
 // ??0DieMuxData@@ present-unmatched marker for the concept, but the body at
 // 0x0025342C has no independent identity yet, so the callee keeps an
 // address-derived name here (pinned) instead of a guessed class name.
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 class Rva001EAE6FHelper
 {
 public:
@@ -78,6 +81,6 @@ Rva0025342CMember *Rva0025342CMember::construct()
 // ??0OpenContainModuleData@@QAE@XZ
 OpenContainModuleData::OpenContainModuleData()
 {
-	*(unsigned int *)this = 0x00BF2558;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BF2558);
 	m_member08.construct();
 }

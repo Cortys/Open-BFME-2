@@ -24,6 +24,15 @@
 // (base resolves via the existing BezierProjectileBehavior pin;
 // TheGameLogic is an absolute global).
 
+extern "C" const void *const vtbl_00C53530[];  // ??_7MissileUpdate@@6BRva004A76DEBase4@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C53530=??_7MissileUpdate@@6BRva004A76DEBase4@@@")
+extern "C" const void *const vtbl_00C53548[];  // ??_7MissileUpdate@@6BRva004A76DEBase3@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C53548=??_7MissileUpdate@@6BRva004A76DEBase3@@@")
+extern "C" const void *const vtbl_00C53560[];  // ??_7MissileUpdate@@6BRva004A76DEBase2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C53560=??_7MissileUpdate@@6BRva004A76DEBase2@@@")
+extern "C" const void *const vtbl_00C5362C[];  // ??_7MissileUpdate@@6BRva004A76DEBase0@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5362C=??_7MissileUpdate@@6BRva004A76DEBase0@@@")
+
 class Thing;
 class ModuleData;
 
@@ -127,11 +136,11 @@ private:
 MissileUpdate::MissileUpdate(Thing *thing, const ModuleData *moduleData) :
 	BezierProjectileBehavior(thing, moduleData)
 {
-	m_vtable0 = reinterpret_cast<const void *>(0x00C5362C);
+	m_vtable0 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C5362C));
 	m_vtableC = reinterpret_cast<const void *>(0x00C53570);
-	m_vtable10 = reinterpret_cast<const void *>(0x00C53560);
-	m_vtable20 = reinterpret_cast<const void *>(0x00C53548);
-	m_vtable24 = reinterpret_cast<const void *>(0x00C53530);
+	m_vtable10 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53560));
+	m_vtable20 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53548));
+	m_vtable24 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53530));
 	m_88 = 0;
 	m_frame = TheGameLogic->getFrame();
 	Thing *storedThing = m_thing;

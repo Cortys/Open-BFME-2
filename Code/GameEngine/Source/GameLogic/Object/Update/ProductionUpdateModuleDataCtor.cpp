@@ -26,6 +26,9 @@
 // 0xBBAC1C). The class keeps an explicit vtable slot with no virtuals so
 // nothing is emitted, and the +4 word is untouched padding.
 
+extern "C" const void *const vtbl_00C515F0[];  // ??_7ProductionUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C515F0=??_7ProductionUpdateModuleData@@6B@")
+
 #include <list>
 #include <vector>
 
@@ -125,7 +128,7 @@ private:
 // ??0ProductionUpdateModuleData@@QAE@XZ @0x49F7DB
 ProductionUpdateModuleData::ProductionUpdateModuleData()
 	: UpdateModuleData()
-	, m_vtable(reinterpret_cast<const void *>(0x00C515F0))
+	, m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C515F0)))
 	, m_bonusForType(0)
 	, m_speedBonusAudioLoop(0)
 {

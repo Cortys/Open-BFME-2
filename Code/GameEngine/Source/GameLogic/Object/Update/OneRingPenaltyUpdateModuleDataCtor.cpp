@@ -12,6 +12,9 @@
 // Retail's own INI table at 0x00C503B0 (landed buildFieldParse row) proves the
 // names and offsets; the BFME1 donor proves the store order. Sole caller is
 // the rowed 0x24E42C factory which news 0x24 and pushes the rowed proc.
+extern "C" const void *const vtbl_00C50298[];  // ??_7OneRingPenaltyUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C50298=??_7OneRingPenaltyUpdateModuleData@@6B@")
+
 class OneRingPenaltyUpdateModuleData
 {
 public:
@@ -31,7 +34,7 @@ private:
 
 // ??0OneRingPenaltyUpdateModuleData@@QAE@XZ
 OneRingPenaltyUpdateModuleData::OneRingPenaltyUpdateModuleData()
-	: m_vtable( reinterpret_cast<const void *>(0x00C50298) )
+	: m_vtable( reinterpret_cast<const void *>(((unsigned int)vtbl_00C50298)) )
 {
 	m_specialObjectName = 0;
 	m_discoveredSound = 0;

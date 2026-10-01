@@ -11,6 +11,9 @@
 // class with explicit vtable slot plus _ReadWriteBarrier pinning the
 // and-stores below the vtable store).
 
+extern "C" const void *const vtbl_00BF3840[];  // ??_7TooltipUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF3840=??_7TooltipUpgradeModuleData@@6B@")
+
 class OpenContainModuleData
 {
 public:
@@ -39,7 +42,7 @@ extern "C" void _ReadWriteBarrier(void);
 // ??0DoCommandUpgradeModuleData@@QAE@XZ @0x255795
 inline DoCommandUpgradeModuleData::DoCommandUpgradeModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00BF3840);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00BF3840));
 	_ReadWriteBarrier();
 	m_getUpgradeCommandButtonName = 0;
 	m_removeUpgradeCommandButtonName = 0;

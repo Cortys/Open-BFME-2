@@ -14,6 +14,11 @@
 // DIR32-masked in comparison). Zero new pins (base resolves via the
 // rowed UpdateModule spelling).
 
+extern "C" const void *const vtbl_00BF17EC[];  // ??_7Rva00253E19@@6BRva00253E19_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BF17EC=??_7Rva00253E19@@6BRva00253E19_B2@@@")
+extern "C" const void *const vtbl_00BF17F8[];  // ??_7Rva00253E19@@6BRva0024A797@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BF17F8=??_7Rva00253E19@@6BRva0024A797@@@")
+
 class Thing;
 class ModuleData;
 
@@ -33,7 +38,7 @@ public:
 HordeNotifyTargetsOfImminentProbableCrushingUpdate::HordeNotifyTargetsOfImminentProbableCrushingUpdate(Thing *thing, const ModuleData *moduleData) :
 	UpdateModule(thing, moduleData)
 {
-	*(unsigned int *)this = 0x00BF17F8;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BF17F8);
 	*(unsigned int *)((char *)this + 0xC) = 0x00BEFF90;
-	*(unsigned int *)((char *)this + 0x10) = 0x00BF17EC;
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00BF17EC);
 }

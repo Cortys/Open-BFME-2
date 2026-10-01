@@ -36,6 +36,9 @@
 // init would instead call the 18B vector-alloc thunk). Body order otherwise
 // follows retail.
 
+extern "C" const void *const vtbl_00C4F870[];  // ??_7BannerCarrierUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4F870=??_7BannerCarrierUpdateModuleData@@6B@")
+
 extern int g_Va00DBA4E4;
 
 #include <vector>
@@ -79,7 +82,7 @@ private:
 
 // ??0BannerCarrierUpdateModuleData@@QAE@XZ @0x496FA5
 BannerCarrierUpdateModuleData::BannerCarrierUpdateModuleData()
-	: m_vtable(reinterpret_cast<const void *>(0x00C4F870))
+	: m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4F870)))
 	, m_upgradeRequired(0)
 {
 	m_idleSpawnRate = LogicFramesPerSecond * 15;

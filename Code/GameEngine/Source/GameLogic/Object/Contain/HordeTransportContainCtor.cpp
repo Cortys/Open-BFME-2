@@ -14,6 +14,11 @@
 // eight bytes so both overlap it), and no setWakeFrame tail. The base
 // runs to +0x11D. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C45D2C[];  // ??_7HordeSiegeEngineContain@@6BIface28@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C45D2C=??_7HordeSiegeEngineContain@@6BIface28@@@")
+extern "C" const void *const vtbl_00C45EA8[];  // ??_7HordeSiegeEngineContain@@6BIface10@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C45EA8=??_7HordeSiegeEngineContain@@6BIface10@@@")
+
 class Thing;
 class ModuleData;
 
@@ -66,10 +71,10 @@ HordeTransportContain::HordeTransportContain(Thing *thing, const ModuleData *mod
 {
 	m_vtable = (const void *)0x00C45EB8;
 	m_secondary0C = (const void *)0x00C441B8;
-	m_secondary10 = (const void *)0x00C45EA8;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C45EA8);
 	m_20 = (const void *)0x00C45D30;
 	m_24 = (const void *)0x00C46064;
-	m_28 = (const void *)0x00C45D2C;
+	m_28 = (const void *)((unsigned int)vtbl_00C45D2C);
 	m_2C = (const void *)0x00C58790;
 	m_30 = (const void *)0x00C45CFC;
 	m_34 = (const void *)0x00C45CEC;

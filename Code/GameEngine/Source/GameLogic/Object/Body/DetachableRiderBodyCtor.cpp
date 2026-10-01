@@ -14,6 +14,15 @@
 // +0x100 with the module data pointer at +0x04 (FreeLifeBody precedent).
 // Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C5BF00[];  // ??_7Rva004C1BAB@@6BRva004C1BAB_B3@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5BF00=??_7Rva004C1BAB@@6BRva004C1BAB_B3@@@")
+extern "C" const void *const vtbl_00C5BF48[];  // ??_7Rva004C1BAB@@6BRva004C1BAB_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5BF48=??_7Rva004C1BAB@@6BRva004C1BAB_B2@@@")
+extern "C" const void *const vtbl_00C5BFF8[];  // ??_7Rva004C1BAB@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5BFF8=??_7Rva004C1BAB@@6BMiBase1@@@")
+extern "C" const void *const vtbl_00C5C0B8[];  // ??_7Rva004C1BAB@@6BRva004BF951@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5C0B8=??_7Rva004C1BAB@@6BRva004BF951@@@")
+
 class Thing;
 class ModuleData;
 
@@ -63,10 +72,10 @@ DetachableRiderBody::DetachableRiderBody(Thing *thing, const ModuleData *moduleD
 	: ActiveBody(thing, moduleData), m_100()
 {
 	const DetachableRiderBodyModuleData *data = (const DetachableRiderBodyModuleData *)m_moduleData;
-	m_vtable = (const void *)0x00C5C0B8;
-	m_secondary0C = (const void *)0x00C5BFF8;
-	m_secondary10 = (const void *)0x00C5BF48;
-	*(void **)&m_100 = (void *)0x00C5BF00;
+	m_vtable = (const void *)((unsigned int)vtbl_00C5C0B8);
+	m_secondary0C = (const void *)((unsigned int)vtbl_00C5BFF8);
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C5BF48);
+	*(void **)&m_100 = (void *)((unsigned int)vtbl_00C5BF00);
 	if (data->m_178)
 		m_100.giveSelfUpgrade();
 }

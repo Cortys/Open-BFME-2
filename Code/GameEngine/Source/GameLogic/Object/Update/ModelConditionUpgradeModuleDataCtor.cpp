@@ -8,6 +8,9 @@
 // vtable store, so auto-init is impossible), 0x4C memsets, or-ff at +0x1B0,
 // float zero at +0x1B4. The owning factory at 0x00250546 (news 0x1B8) is
 // the sole caller. Row supersedes the ctor pin.
+extern "C" const void *const vtbl_00BF2558[];  // ??_7WeaponSetUpgradeModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF2558=??_7WeaponSetUpgradeModuleData@@6B@")
+
 #include <cstring>
 
 class OpenContainModuleData
@@ -41,7 +44,7 @@ ModelConditionUpgradeModuleData::ModelConditionUpgradeModuleData()
 	: OpenContainModuleData()
 {
 	CondStore *stor118 = &m_118;
-	*(unsigned int *)this = 0x00BF2558;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BF2558);
 	stor118->init();
 	CondStore *stor164 = &m_164;
 	stor164->init();

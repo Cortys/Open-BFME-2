@@ -11,6 +11,9 @@
 // spelling); it is modeled as AsciiString after the SpawnBehavior
 // precedent, which resolves with zero new pins. Six derived ModuleData
 // ctors call this base (see FireWeaponPower.cpp). Row supersedes the pin.
+extern "C" const void *const vtbl_00C6A520[];  // ??_7SpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6A520=??_7SpecialPowerModuleData@@6B@")
+
 #include <vector>
 
 #include "ascii_string.h"
@@ -29,7 +32,7 @@ private:
 
 // ??0SpecialPowerModuleData@@QAE@XZ @0x5488C5
 SpecialPowerModuleData::SpecialPowerModuleData()
-	: m_vtable(reinterpret_cast<void *>(0x00C6A520))
+	: m_vtable(reinterpret_cast<void *>(((unsigned int)vtbl_00C6A520)))
 {
 	m_unused10 = NULL;
 	m_unused14 = NULL;

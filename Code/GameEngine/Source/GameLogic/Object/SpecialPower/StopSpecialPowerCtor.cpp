@@ -15,6 +15,11 @@
 // frameless. Factory news 0x38 fits the +0x34 tail. Zero new pins (base
 // resolves via the existing SpecialPowerModule pin).
 
+extern "C" const void *const vtbl_00C5DE08[];  // ??_7Rva004C67A0@@6BRva004C67A0_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5DE08=??_7Rva004C67A0@@6BRva004C67A0_B2@@@")
+extern "C" const void *const vtbl_00C5DE6C[];  // ??_7Rva004C67A0@@6BRva00493DEF@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C5DE6C=??_7Rva004C67A0@@6BRva00493DEF@@@")
+
 class Thing;
 class ModuleData;
 
@@ -39,7 +44,7 @@ StopSpecialPower::StopSpecialPower(Thing *thing, const ModuleData *moduleData) :
 	SpecialPowerModule(thing, moduleData),
 	m_34(0)
 {
-	*(unsigned int *)this = 0x00C5DE6C;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5DE6C);
 	*(unsigned int *)((char *)this + 0xC) = 0x00BEFCF8;
-	*(unsigned int *)((char *)this + 0x10) = 0x00C5DE08;
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00C5DE08);
 }

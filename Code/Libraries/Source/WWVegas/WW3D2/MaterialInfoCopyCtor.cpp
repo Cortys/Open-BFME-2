@@ -7,6 +7,9 @@
 // MaterialVector::Add follows WWLib/vector.h: increment the count before the
 // element store, preserving the distinct old and new indices.
 
+extern "C" const void *const vtbl_00BD4658[];  // ??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD4658=??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@")
+
 class VertexMaterialClass {
 public:
  VertexMaterialClass();
@@ -73,7 +76,7 @@ public:
   VectorMax = 0;
   IsValid = true;
   IsAllocated = false;
-  Vtable = 0x00BD4658;
+  Vtable = ((unsigned int)vtbl_00BD4658);
   GrowthStep = 10;
   ActiveCount = 0;
  }

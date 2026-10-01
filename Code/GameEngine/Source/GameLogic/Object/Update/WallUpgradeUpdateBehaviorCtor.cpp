@@ -23,6 +23,15 @@
 // /GX for the EH prologue plus the single mid-body state store; the
 // declared-only base dtor arms it with no emitted code.
 
+extern "C" const void *const vtbl_00C54764[];  // ??_7Rva004AB246@@6BRva004AB246_E2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54764=??_7Rva004AB246@@6BRva004AB246_E2@@@")
+extern "C" const void *const vtbl_00C54768[];  // ??_7Rva004AB246@@6BRva004AB246_E1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54768=??_7Rva004AB246@@6BRva004AB246_E1@@@")
+extern "C" const void *const vtbl_00C54774[];  // ??_7Rva004AB246@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54774=??_7Rva004AB246@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C54780[];  // ??_7Rva004AB246@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54780=??_7Rva004AB246@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -74,11 +83,11 @@ WallUpgradeUpdate::WallUpgradeUpdate(Thing *thing, const ModuleData *moduleData)
 	*wakeSlot20 = (int)0x00BE2B78;
 	int *wakeSlot24 = (int *)&m_secondary24;
 	*wakeSlot24 = (int)0x00C1C780;
-	m_vtable = (const void *)0x00C54780;
+	m_vtable = (const void *)((unsigned int)vtbl_00C54780);
 	m_secondary0C = (const void *)0x00C49800;
-	m_secondary10 = (const void *)0x00C54774;
-	m_secondary20 = (const void *)0x00C54768;
-	m_secondary24 = (const void *)0x00C54764;
+	m_secondary10 = (const void *)((unsigned int)vtbl_00C54774);
+	m_secondary20 = (const void *)((unsigned int)vtbl_00C54768);
+	m_secondary24 = (const void *)((unsigned int)vtbl_00C54764);
 	m_28 = 0;
 	m_2C = 0;
 	m_30 = 1;

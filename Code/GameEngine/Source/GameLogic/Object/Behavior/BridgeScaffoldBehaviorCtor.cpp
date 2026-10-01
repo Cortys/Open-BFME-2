@@ -21,6 +21,15 @@
 // zeros; frameless so no /GX. Zero new pins (base resolves via its row;
 // interface so small it inlines).
 
+extern "C" const void *const vtbl_00C40B70[];  // ??_7Rva00458402@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C40B70=??_7Rva00458402@@6B@")
+extern "C" const void *const vtbl_00C40B88[];  // ??_7Rva00458402@@6BRva0024A797_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40B88=??_7Rva00458402@@6BRva0024A797_B2@@@")
+extern "C" const void *const vtbl_00C40B98[];  // ??_7Rva00458402@@6BRva0024A797_Mid@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40B98=??_7Rva00458402@@6BRva0024A797_Mid@@@")
+extern "C" const void *const vtbl_00C40C54[];  // ??_7Rva00458402@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40C54=??_7Rva00458402@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -120,10 +129,10 @@ BridgeScaffoldBehavior::BridgeScaffoldBehavior(Thing *thing, const ModuleData *m
 	UpdateModule(thing, moduleData)
 {
 	m_targetMotion = STM_STILL;
-	*(unsigned int *)this = 0x00C40C54;
-	*(unsigned int *)((char *)this + 0x0C) = 0x00C40B98;
-	*(unsigned int *)((char *)this + 0x10) = 0x00C40B88;
-	*(unsigned int *)((char *)this + 0x20) = 0x00C40B70;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C40C54);
+	*(unsigned int *)((char *)this + 0x0C) = ((unsigned int)vtbl_00C40B98);
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00C40B88);
+	*(unsigned int *)((char *)this + 0x20) = ((unsigned int)vtbl_00C40B70);
 	m_createPos.zero();
 	m_riseToPos.zero();
 	m_buildPos.zero();

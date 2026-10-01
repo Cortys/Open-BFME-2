@@ -21,6 +21,11 @@
 // resolves via the existing IAEX Object-uint pin at 0x44DF71). Row
 // supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C52D00[];  // ??_7Rva004A653D@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C52D00=??_7Rva004A653D@@6B@")
+extern "C" const void *const vtbl_00C52D30[];  // ??_7Rva004A653D@@6BRva0024A797_Root@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C52D30=??_7Rva004A653D@@6BRva0024A797_Root@@@")
+
 class Thing;
 class ModuleData;
 class Object;
@@ -72,10 +77,10 @@ SupplyCenterProductionExitUpdate::SupplyCenterProductionExitUpdate(Thing *thing,
 	*slot20 = (int)0x00C430B4;
 	unsigned char *readySlot = &m_exitReady30;
 	Object **objSlot = &m_object;
-	m_vtable = (const void *)0x00C52D30;
+	m_vtable = (const void *)((unsigned int)vtbl_00C52D30);
 	m_secondary0C = (const void *)0x00C4B1F0;
 	m_secondary10 = (const void *)0x00C4B1E0;
-	m_secondary20 = (const void *)0x00C52D00;
+	m_secondary20 = (const void *)((unsigned int)vtbl_00C52D00);
 	*readySlot = 0;
 	m_doorDelay24 = fzero;
 	m_queueDelay28 = fzero;

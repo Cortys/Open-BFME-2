@@ -19,6 +19,11 @@
 // The RadiusDecal element ctor/dtor ride the rowed/pinned 0x330DA4/0x330DD6
 // pair through the ehvec helper; clear resolves via its row.
 
+extern "C" const void *const vtbl_00C4BEB0[];  // ??_7DynamicShroudClearingRangeUpdate@@6BModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4BEB0=??_7DynamicShroudClearingRangeUpdate@@6BModuleInterface@@@")
+extern "C" const void *const vtbl_00C4BEBC[];  // ??_7DynamicShroudClearingRangeUpdate@@6BObjectModule@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4BEBC=??_7DynamicShroudClearingRangeUpdate@@6BObjectModule@@@")
+
 class Thing;
 class ModuleData;
 class Player;
@@ -112,9 +117,9 @@ static const T &bfmeMax(const T &left, const T &right)
 DynamicShroudClearingRangeUpdate::DynamicShroudClearingRangeUpdate(
 	Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData)
-	, m_vtable(reinterpret_cast<const void *>(0x00C4BEBC))
+	, m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4BEBC)))
 	, m_secondary0C(reinterpret_cast<const void *>(0x00BEFF90))
-	, m_secondary10(reinterpret_cast<const void *>(0x00C4BEB0))
+	, m_secondary10(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4BEB0)))
 {
 	const DynamicShroudClearingRangeUpdateModuleData *md =
 		(const DynamicShroudClearingRangeUpdateModuleData *)moduleData;

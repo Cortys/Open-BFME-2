@@ -20,6 +20,15 @@
 // groups in program order where plain assignments get clustered. Row
 // supersedes the ctor pin and the banked 0.9 partial.
 
+extern "C" const void *const vtbl_00C54BA0[];  // ??_7RainOfFireUpdate@@6BSecondary20@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54BA0=??_7RainOfFireUpdate@@6BSecondary20@@@")
+extern "C" const void *const vtbl_00C54BA8[];  // ??_7RainOfFireUpdate@@6BRva0024A797@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54BA8=??_7RainOfFireUpdate@@6BRva0024A797@@@")
+extern "C" const void *const vtbl_00C54BB8[];  // ??_7RainOfFireUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54BB8=??_7RainOfFireUpdate@@6BBehaviorModuleOther@@@")
+extern "C" const void *const vtbl_00C54C74[];  // ??_7RainOfFireUpdate@@6BBehaviorModuleBase@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C54C74=??_7RainOfFireUpdate@@6BBehaviorModuleBase@@@")
+
 class Thing;
 class ModuleData;
 
@@ -81,13 +90,13 @@ RainOfFireUpdate::RainOfFireUpdate(Thing *thing, const ModuleData *moduleData)
 	const RainOfFireUpdateModuleData *mod =
 		reinterpret_cast<const RainOfFireUpdateModuleData *>(m_moduleData);
 	int *vtab = (int *)&m_vtable;
-	*vtab = (int)0x00C54C74;
+	*vtab = (int)((unsigned int)vtbl_00C54C74);
 	int *sec0C = (int *)&m_secondary0C;
-	*sec0C = (int)0x00C54BB8;
+	*sec0C = (int)((unsigned int)vtbl_00C54BB8);
 	int *sec10 = (int *)&m_secondary10;
-	*sec10 = (int)0x00C54BA8;
+	*sec10 = (int)((unsigned int)vtbl_00C54BA8);
 	int *slot = (int *)&m_slot;
-	*slot = (int)0x00C54BA0;
+	*slot = (int)((unsigned int)vtbl_00C54BA0);
 	m_frame = 0x3FFFFFFF;
 	float *cell28 = &m_state28;
 	*cell28 = 0.0f;
