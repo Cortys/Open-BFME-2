@@ -5,6 +5,9 @@
 // body the sweep places. The donor declares bfmeWait1037 but retail reaches
 // WaitForSingleObject, so the declaration is renamed to the real import.
 
+// Matched connection-log bodies use the same getter for their second vtable slot.
+#pragma comment(linker, "/alternatename:?bfmeGetLog1037@@YAPAVBfmeLog1037@@XZ=?Rva007EB810Get@@YAPAURva007EB810Diag@@XZ")
+
 class BfmeLog1037
 {
 public:
