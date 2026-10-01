@@ -636,3 +636,17 @@ WinMainTitlePair::operator AsciiString()
 	write(tmp.getBufferForRead(length()));
 	return tmp;
 }
+
+// ?write@Rva00238C34@@QAEHPAD@Z @0x00238C34 37B narrow concat node: base Rva0020F58E write 0x0020F58E then Rva pair write 0x000B44F0 at +0x10; caller materializer 0x00238C59.
+struct Rva00238C34 : Rva0020F58E
+{
+	int write(char *dst);
+
+	Rva000B3F84Pair m_text2;
+};
+
+int Rva00238C34::write(char *dst)
+{
+	int n = Rva0020F58E::write(dst);
+	return n + m_text2.write(dst + n);
+}
