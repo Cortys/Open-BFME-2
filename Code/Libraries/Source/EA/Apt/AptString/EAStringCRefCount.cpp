@@ -38,8 +38,9 @@ public:
 };
 
 // Same pool instance, allocation side (companion pin to the freeBlock
-// pin above; per-TU extern names each patch from retail independently).
-extern Rva006DB160 *g_aptPoolAllocator; // 0x00E176E8
+// pin above). Matched DIR32 sites place this pointer at VA 0x00E176E8; its
+// four retail bytes are zero, so it starts null.
+Rva006DB160 *g_aptPoolAllocator = 0;
 
 class EAStringC
 {
