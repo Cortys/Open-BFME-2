@@ -46415,3 +46415,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva00524B7A@@QAE@XZ,,0x00524B7A,58,Code/GameEngine/Source/Common/Rva00524B7ACtor.cpp,matched,ctor via rowed baseConstruct vtable middle barrier caller 0x005C9716
 ??1Rva00575E4E@@UAE@XZ,,0x00575E4E,78,Code/GameEngine/Source/Common/Rva00575E4EDtor.cpp,matched,dtor via deleting-dtor caller at 0x00576041 and rowed erase 0x002B7250
 ??1Rva00575EEA@@UAE@XZ,,0x00575EEA,78,Code/GameEngine/Source/Common/Rva00575EEADtor.cpp,matched,dtor via deleting-dtor caller at 0x005760D0 and rowed erase 0x002B7250
+??1Rva0056B0BF@@UAE@XZ,,0x0056B0BF,90,Code/GameEngine/Source/Common/Rva0056B0BFDtor.cpp,matched,dtor via deleting-dtor caller at 0x0056B359 and rowed erase 0x002B7250
