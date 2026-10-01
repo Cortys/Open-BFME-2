@@ -31,7 +31,8 @@ them into the classes the integration work has to clear:
 reverse/link_status.csv: one row per C/C++
 source, `linked=yes` when, in the plain link (no alias scaffold), its object
 has no unresolved reference beyond imports and msvcrt.lib, no duplicate, and
-no COMDAT copy discarded for a different body, and the file holds no
+no COMDAT copy that differs from the majority copy (STLport templates and
+the compiler's array helpers excepted: see comdat_losers), and the file holds no
 hard-coded image address. LINKED is progress.py's DECOMPILED restricted to
 those sources; progress.py and the README print the last census's figure.
 
@@ -402,11 +403,29 @@ def comdat_conflicts(objs):
             for name, found in copies.items() if len(found) > 1}
 
 
+# Copies the loser count does not hold against an object. Two kinds of
+# COMDAT come from one token-identical definition however many units compile
+# them, so differing copies are optimisation-level variants, not one-definition
+# violations: STLport 4.5.3's templates (the vendored headers) and the
+# compiler's class-agnostic array helpers (vector constructor/destructor
+# iterators, ??_H ??_I ??_L ??_M). Class-specific compiler output (??_G, ??_E,
+# vftables) still counts: it depends on each unit's own class declaration.
+COMDAT_EXEMPT_PREFIXES = ("??_H@", "??_I@", "??_L@", "??_M@")
+
+
+def comdat_exempt(name):
+    return "_STL@@" in name or name.startswith(COMDAT_EXEMPT_PREFIXES)
+
+
 def comdat_losers(objs):
-    """{object name: {symbol}} for COMDAT copies the link discards for a
-    different body: link.exe keeps the first copy in link order, so an object
-    whose copy differs from that one runs someone else's code. Objects are
-    read in parallel (BUILD_POOL processes); the fold stays in link order."""
+    """{object name: {symbol}} for COMDAT copies whose body differs from the
+    copy the census keeps: the copy most objects compiled (ties go to the
+    earliest in link order), so one odd object linked first, such as
+    matrix3d.obj's Vector3 inlines, cannot make a hundred others lose.
+    comdat_exempt() names are never held against an object. link.exe itself
+    keeps the first copy in link order, but that order is an artifact of the
+    census, not of the game's build. Objects are read in parallel
+    (BUILD_POOL processes)."""
     workers = build._pool_size()
     if workers > 1:
         import concurrent.futures
@@ -414,10 +433,16 @@ def comdat_losers(objs):
             bodies = list(pool.map(comdat_bodies, objs, chunksize=64))
     else:
         bodies = [comdat_bodies(obj) for obj in objs]
-    kept, losers = {}, collections.defaultdict(set)
+    counts, first = collections.defaultdict(collections.Counter), {}
+    for order, found in enumerate(bodies):
+        for name, digest, _ in found:
+            counts[name][digest] += 1
+            first.setdefault((name, digest), order)
+    kept = {name: min(c, key=lambda d: (-c[d], first[(name, d)])) for name, c in counts.items()}
+    losers = collections.defaultdict(set)
     for obj, found in zip(objs, bodies):
         for name, digest, _ in found:
-            if kept.setdefault(name, digest) != digest:
+            if kept[name] != digest and not comdat_exempt(name):
                 losers[obj.name].add(name)
     return losers
 
@@ -628,8 +653,8 @@ def write_status(log, rows, present=None):
     MSVCR71.dll, and the ledger's CRT rows are msvcrt.lib members), which the
     real link searches by default -- __except_list alone is referenced by 3,088
     objects. See excused() for exactly which names. A duplicate counts against both definers, since the log cannot say
-    which copy is wrong. A COMDAT copy the linker discards for a different body
-    counts against its object. Any hard-coded image address counts too
+    which copy is wrong. A COMDAT copy that differs from the majority copy
+    counts against its object (comdat_losers). Any hard-coded image address counts too
     (link_debt.addresses): it links, but only while nothing moves.
     """
     import link_debt
