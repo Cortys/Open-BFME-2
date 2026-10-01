@@ -45330,3 +45330,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00405684@Rva00404D70@@QAEPAUBfmeStringRecord00404BF3@@ABVAsciiString@@@Z,,0x00405684,105,Code/GameEngine/Source/Common/Rva00404D70FindOrCreate.cpp,matched,find-or-create via rowed find ctor push_back releaseBuffer returns last
 ?rva004055F2@Rva00404D70@@QAEXXZ,,0x004055F2,146,Code/GameEngine/Source/Common/Rva00404D70Init.cpp,matched,chain calls 0x00404BC5 ctor Default push_back floats via globals vector at +0x120
 ?Rva00405B8DTest@@YG_NPAVObject@@PAUUpgradeRange@@_N@Z,,0x00405B8D,119,Code/GameEngine/Source/Common/Rva00405B8DTest.cpp,matched,leaf stdcall upgrade any-all via Object Player rows range begin-end
+??0Rva004EB583@@QAE@H@Z,,0x004EB583,102,Code/Libraries/Source/WWVegas/WWLib/Rva004EB583Ctor.cpp,matched,unlock ctor vtable 3x BfmeE16 vectors id from counter
