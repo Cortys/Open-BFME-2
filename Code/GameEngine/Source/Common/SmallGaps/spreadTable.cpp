@@ -1,6 +1,9 @@
 // ?spreadTable@@YAXXZ
 extern unsigned short* Rva009C0D10Src;
-extern unsigned short Rva009C0D10Table[0x100];
+// The 0x100-entry coefficient table this routine fills, .bss VA 0x00E229E0;
+// the next referenced datum starts 0x200 bytes later. The MMX row filters
+// read it four entries per index.
+unsigned short Rva009C0D10Table[0x100];
 void spreadTable()
 {
 	unsigned short* src = Rva009C0D10Src;

@@ -23,7 +23,7 @@ extern const void *g_rva01356A88;
 // g_rva01356A88: matched references place it at VA 0xe22ce4 (zero-filled .bss).
 const void * g_rva01356A88;
 extern int g_rva01356940[64];
-extern unsigned short *Rva009C0D10Src;			// retail 0x01356A7C
+unsigned short *Rva009C0D10Src;			// .bss VA 0x00E22CE0 (BFME1 0x01356A7C); set here
 extern int *g_rva01356A9C;
 
 extern unsigned short g_rva012D7C58[128];
