@@ -5,6 +5,9 @@
 //
 // ?rva004ECF05@Rva004ECECD@@QAEPAURva004ECECDNode@@H@Z retail 0x004ECF05 60B
 // Evidence: chain via 0x004ECECD same TU flags and pins; same ModelNode loop but returns the node on id match; callers 0x004ED138 0x004ED1A6 0x004ED202 0x004ED27F 0x004ED2F2.
+//
+// ?rva004ECF41@Rva004ECECD@@QAE_NXZ retail 0x004ECF41 91B
+// Evidence: same Rva004ECECD class m_begin 0x14 m_end 0x18 stride 0x14 as siblings; callees rowed iterate_TeamMemberList 0x00263864 plus pin DLINK advance 0x00263526 plus rowed getCurrentVictim 0x00268D71 plus pinned findInstance 0x0039F761 via TheTeamFactory 0x00A028BC; caller 0x004EDDAD.
 class Team;
 class TeamFactory;
 extern TeamFactory *TheTeamFactory;
@@ -26,11 +29,46 @@ class Rva004ECECD
 public:
     Team *rva004ECECD(int id);
     Rva004ECECDNode *rva004ECF05(int id);
+    bool rva004ECF41();
 
 private:
     char m_pad00[0x14];
     Rva004ECECDNode *m_begin;
     Rva004ECECDNode *m_end;
+};
+
+class AIUpdateInterface;
+
+class Object
+{
+public:
+    unsigned char m_pad0[0x258];
+    AIUpdateInterface *m_ai;
+};
+
+template<class OBJCLASS>
+class DLINK_ITERATOR
+{
+private:
+    OBJCLASS *m_cur;
+    unsigned char m_targetAbiState[20];
+
+public:
+    void advance();
+    bool done() const { return m_cur == 0; }
+    OBJCLASS *cur() const { return m_cur; }
+};
+
+class Team
+{
+public:
+    DLINK_ITERATOR<Object> iterate_TeamMemberList() const;
+};
+
+class AIUpdateInterface
+{
+public:
+    Object *getCurrentVictim() const;
 };
 
 Team *Rva004ECECD::rva004ECECD(int id)
@@ -65,4 +103,20 @@ Rva004ECECDNode *Rva004ECECD::rva004ECF05(int id)
         }
     }
     return 0;
+}
+
+bool Rva004ECECD::rva004ECF41()
+{
+    Rva004ECECDNode *begin = m_begin;
+    Rva004ECECDNode *end = m_end;
+    for (Rva004ECECDNode *it = begin; it != end; ++it)
+    {
+        Team *team = ((Rva0039F761Owner *)TheTeamFactory)->findInstance(it->m_model);
+        for (DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList(); !iter.done(); iter.advance())
+        {
+            if (iter.cur()->m_ai->getCurrentVictim() != 0)
+                return true;
+        }
+    }
+    return false;
 }
