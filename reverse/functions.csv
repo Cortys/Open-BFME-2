@@ -45908,3 +45908,12 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva003A5D34Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABM@Z,,0x003A5D34,66,Code/GameEngine/Source/Common/Rva003A5D34Write.cpp,matched,free ostream INI key float line with pad via rowed Pad Put pattern from Rva001F89E2Write
 ??1Rva000588DA@@QAE@XZ,,0x000588DA,57,Code/GameEngine/Source/GameClient/Rva000588DADtor.cpp,matched,hash scalar dtor clears then frees bucket array
 ?getRelationship@Team@@QBE?AW4Relationship@@PBV1@@Z,,0x003A0FD2,137,Code/GameEngine/Source/Common/RTS/TeamGetControllingPlayer.cpp,matched,BFME1 donor override maps then controlling player; same TU as getControllingPlayer so edx survives the call
+??0NetGameCommandMsg@@QAE@XZ,,0x004D55D6,38,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the GAMECOMMAND stamp 4 and own vtable; base ctor compiled earlier in the TU
+??0NetAckBothCommandMsg@@QAE@PAVNetCommandMsg@@@Z,,0x004D565D,50,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKBOTH stamp 0; copies id/player/timestamp/frame
+??0NetAckBothCommandMsg@@QAE@XZ,,0x004D568F,34,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKBOTH stamp 0
+??0NetAckStage1CommandMsg@@QAE@PAVNetCommandMsg@@@Z,,0x004D56B1,53,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKSTAGE1 stamp 1
+??0NetAckStage1CommandMsg@@QAE@XZ,,0x004D56E6,38,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKSTAGE1 stamp 1
+??0NetAckStage2CommandMsg@@QAE@PAVNetCommandMsg@@@Z,,0x004D570C,53,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKSTAGE2 stamp 2
+??0NetAckStage2CommandMsg@@QAE@XZ,,0x004D5741,38,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,BFME1 donor name from the ACKSTAGE2 stamp 2
+??0Rva004D58DE@@QAE@XZ,,0x004D58DE,36,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,honest-address ctor type 0x14 vtable 0x860264
+??0Rva004D598E@@QAE@XZ,,0x004D598E,30,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,honest-address ctor type 0x16 on the ICF-shared KeepAlive vtable

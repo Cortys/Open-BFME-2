@@ -30,6 +30,10 @@ class NetCommandMsg
 {
 public:
 	NetCommandMsg();
+	UnsignedInt getTimestamp() { return m_timestamp; }
+	UnsignedInt getExecutionFrame() { return m_executionFrame; }
+	UnsignedInt getPlayerID() { return m_playerID; }
+	UnsignedShort getID() { return m_id; }
 protected:
 	virtual ~NetCommandMsg() {}
 protected:
@@ -351,4 +355,179 @@ Rva004D65DC::Rva004D65DC() : NetCommandMsg()
 	m_1c = 0;
 	m_20 = 0;
 	m_commandType = (NetCommandType)6;
+}
+
+// Nine more derived ctors, each stamping its NetCommandType (+0x14) and
+// vtable after the base call; retail keeps this in ecx across the base ctor
+// call, which cl only does because the base is compiled earlier in this TU.
+// Types 0, 1, 2 and 4 name the classes as in the BFME1 donor
+// game/GameEngine/Source/GameNetwork/NetCommandMsg_ctors.cpp (ACKBOTH,
+// ACKSTAGE1, ACKSTAGE2, GAMECOMMAND), each on its own vtable. BFME2 adds a
+// dword to the ack messages: +0x20 is copied from the source message's
+// m_timestamp (+0x04) and +0x24 from its m_executionFrame (+0x08); the field
+// names are inferred from those sources. The NetGameCommandMsg fields follow
+// the ZH layout the rowed addArgument 0x004D5A7A reads (+0x28/+0x2C).
+typedef unsigned char UnsignedByte;
+
+// ??0NetGameCommandMsg@@QAE@XZ @0x004D55D6 38B: five zeroed dwords +0x1C..+0x2C,
+// vtable 0x8601E4, type 4 (GAMECOMMAND).
+class NetGameCommandMsg : public NetCommandMsg
+{
+public:
+	NetGameCommandMsg();
+private:
+	Int m_numArgs; // +0x1C
+	Int m_argSize; // +0x20
+	Int m_type; // +0x24
+	void *m_argList; // +0x28
+	void *m_argTail; // +0x2C
+};
+
+NetGameCommandMsg::NetGameCommandMsg() : NetCommandMsg()
+{
+	m_argSize = 0;
+	m_numArgs = 0;
+	m_type = 0;
+	m_argList = 0;
+	m_argTail = 0;
+	m_commandType = (NetCommandType)4;
+}
+
+// ??0NetAckBothCommandMsg@@QAE@PAVNetCommandMsg@@@Z @0x004D565D 50B and
+// ??0NetAckBothCommandMsg@@QAE@XZ @0x004D568F 34B: vtable 0x8601F4, type 0.
+class NetAckBothCommandMsg : public NetCommandMsg
+{
+public:
+	NetAckBothCommandMsg(NetCommandMsg *msg);
+	NetAckBothCommandMsg();
+private:
+	UnsignedShort m_commandID; // +0x1C
+	UnsignedByte m_originalPlayerID; // +0x1E
+	UnsignedInt m_originalTimestamp; // +0x20
+	UnsignedInt m_originalExecutionFrame; // +0x24
+};
+
+NetAckBothCommandMsg::NetAckBothCommandMsg(NetCommandMsg *msg) : NetCommandMsg()
+{
+	m_commandID = msg->getID();
+	m_commandType = (NetCommandType)0;
+	m_originalPlayerID = msg->getPlayerID();
+	m_originalExecutionFrame = msg->getExecutionFrame();
+	m_originalTimestamp = msg->getTimestamp();
+}
+
+NetAckBothCommandMsg::NetAckBothCommandMsg() : NetCommandMsg()
+{
+	m_commandID = 0;
+	m_originalPlayerID = 0;
+	m_originalTimestamp = (UnsignedInt)-1;
+	m_originalExecutionFrame = (UnsignedInt)-1;
+	m_commandType = (NetCommandType)0;
+}
+
+// ??0NetAckStage1CommandMsg@@QAE@PAVNetCommandMsg@@@Z @0x004D56B1 53B and
+// ??0NetAckStage1CommandMsg@@QAE@XZ @0x004D56E6 38B: vtable 0x860204, type 1.
+class NetAckStage1CommandMsg : public NetCommandMsg
+{
+public:
+	NetAckStage1CommandMsg(NetCommandMsg *msg);
+	NetAckStage1CommandMsg();
+private:
+	UnsignedShort m_commandID; // +0x1C
+	UnsignedByte m_originalPlayerID; // +0x1E
+	UnsignedInt m_originalTimestamp; // +0x20
+	UnsignedInt m_originalExecutionFrame; // +0x24
+};
+
+NetAckStage1CommandMsg::NetAckStage1CommandMsg(NetCommandMsg *msg) : NetCommandMsg()
+{
+	m_commandID = msg->getID();
+	m_commandType = (NetCommandType)1;
+	m_originalPlayerID = msg->getPlayerID();
+	m_originalExecutionFrame = msg->getExecutionFrame();
+	m_originalTimestamp = msg->getTimestamp();
+}
+
+NetAckStage1CommandMsg::NetAckStage1CommandMsg() : NetCommandMsg()
+{
+	m_commandID = 0;
+	m_originalPlayerID = 0;
+	m_originalTimestamp = (UnsignedInt)-1;
+	m_originalExecutionFrame = (UnsignedInt)-1;
+	m_commandType = (NetCommandType)1;
+}
+
+// ??0NetAckStage2CommandMsg@@QAE@PAVNetCommandMsg@@@Z @0x004D570C 53B and
+// ??0NetAckStage2CommandMsg@@QAE@XZ @0x004D5741 38B: vtable 0x860214, type 2;
+// the copying ctor stores timestamp before execution frame and the type last.
+class NetAckStage2CommandMsg : public NetCommandMsg
+{
+public:
+	NetAckStage2CommandMsg(NetCommandMsg *msg);
+	NetAckStage2CommandMsg();
+private:
+	UnsignedShort m_commandID; // +0x1C
+	UnsignedByte m_originalPlayerID; // +0x1E
+	UnsignedInt m_originalTimestamp; // +0x20
+	UnsignedInt m_originalExecutionFrame; // +0x24
+};
+
+NetAckStage2CommandMsg::NetAckStage2CommandMsg(NetCommandMsg *msg) : NetCommandMsg()
+{
+	m_commandID = msg->getID();
+	m_originalPlayerID = msg->getPlayerID();
+	m_originalTimestamp = msg->getTimestamp();
+	m_originalExecutionFrame = msg->getExecutionFrame();
+	m_commandType = (NetCommandType)2;
+}
+
+NetAckStage2CommandMsg::NetAckStage2CommandMsg() : NetCommandMsg()
+{
+	m_commandID = 0;
+	m_originalPlayerID = 0;
+	m_originalTimestamp = (UnsignedInt)-1;
+	m_originalExecutionFrame = (UnsignedInt)-1;
+	m_commandType = (NetCommandType)2;
+}
+
+// ??0Rva004D58DE@@QAE@XZ @0x004D58DE 36B: dword +0x1C, word +0x20, dwords
+// +0x24/+0x28 zeroed, vtable 0x860264, type 0x14. Honest-address name: the
+// BFME1 donor enum has no entry for 0x14.
+class Rva004D58DE : public NetCommandMsg
+{
+public:
+	Rva004D58DE();
+private:
+	unsigned int m_1c;
+	unsigned short m_20;
+	unsigned int m_24;
+	unsigned int m_28;
+};
+
+Rva004D58DE::Rva004D58DE() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_20 = 0;
+	m_24 = 0;
+	m_28 = 0;
+	m_commandType = (NetCommandType)0x14;
+}
+
+// ??0Rva004D598E@@QAE@XZ @0x004D598E 30B: word +0x1C and dword +0x20 zeroed,
+// the vtable 0x860244 shared with KeepAlive via ICF, type 0x16. Honest-address
+// name as for the other ICF-shared vtable ctors above.
+class Rva004D598E : public NetCommandMsg
+{
+public:
+	Rva004D598E();
+private:
+	unsigned short m_1c;
+	unsigned int m_20;
+};
+
+Rva004D598E::Rva004D598E() : NetCommandMsg()
+{
+	m_1c = 0;
+	m_20 = 0;
+	m_commandType = (NetCommandType)0x16;
 }
