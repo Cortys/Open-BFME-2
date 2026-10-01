@@ -45761,3 +45761,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F6A30@Rva005F6A30@@QAEXXZ,,0x005F6A30,20,Code/GameEngine/Source/Common/Rva005F6A30Method.cpp,matched,leaf conditional virtual slot 0x08 on member +4 with outer this plus caller 0x005F6A90
 ?onEnter@Rva0033FE65@@UAE?AW4StateReturnType@@XZ,,0x00346FD0,170,Code/GameEngine/Source/Common/Rva0033FE65OnEnter.cpp,matched,vtable slot 4 of 0x00811E08 AIIdleState onEnter via Rva0033FE65Ctor
 ?rva00346FA5@Rva00346FA5@@QBEPAXH@Z,,0x00346FA5,43,Code/GameEngine/Source/Common/Rva00346FA5Accessor.cpp,matched,thiscall ret-4 12-byte accessor barrier stops CSE 26 callers
+?rva00599FAA@Rva00599FAA@@QAEXPAUNode00599FAA@@@Z,,0x00599FAA,45,Code/GameEngine/Source/Common/Rva00599FAAClear.cpp,matched,thiscall ret-4 recursive child plus free list clear 2 callers
