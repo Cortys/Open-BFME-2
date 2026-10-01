@@ -46320,3 +46320,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004ECDC8@Rva004ECDC8@@QAEXPAVXfer@@@Z,,0x004ECDC8,66,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECDC8Xfer.cpp,matched,Xfer Version 1 1 via slot 0x28 uint Coord int via 0x78 0x60 0x7C callers 0x004EDB95 0x004EDBC7
 ?rva00395A19@Rva00395A19@@QAEPAXI@Z,,0x00395A19,28,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395A19.cpp,matched,vtable slot 0 calls rowed apply and delete
 ?rva00395A82@Rva00395A82@@QAEMXZ,,0x00395A82,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395A82.cpp,matched,float 1-minus-divide else zero vtable
+?rva00363DF9@Path@@QAEPAUCoord3D@@PAU2@@Z,,0x00363DF9,199,Code/GameEngine/Source/GameLogic/AI/PathRva00363DF9.cpp,matched,Path layout via neighbours EAX holds out so returns pointer single-exit tmp form
