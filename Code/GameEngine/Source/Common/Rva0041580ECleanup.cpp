@@ -21,11 +21,25 @@ struct Rva0041580ENode
 	Rva0041579E m_item10;
 };
 
-struct Rva0041580E
+struct Rva0041580EHead
 {
-	void rva0041580E(Rva0041580ENode *node);
+	int _00;
+	Rva0041580ENode *m_first04;
+	Rva0041580EHead *m_next08;
+	Rva0041580EHead *m_child0C;
 };
 
+struct Rva0041580E
+{
+	Rva0041580EHead *m_head00;
+	int m_flag04;
+	void rva0041580E(Rva0041580ENode *node);
+	void rva00415886();
+};
+
+// ?rva00415886@Rva0041580E@@QAEXXZ @0x00415886 41B chain via rowed 0x0041580E.
+// Resets list head to empty after cleanup. Evidence: ECX passthrough to rowed
+// 0x0041580E at 0x00415894, callers at 0x004159BF 0x004159EE.
 void Rva0041580E::rva0041580E(Rva0041580ENode *node)
 {
 	Rva0041580ENode *cur = node;
@@ -36,5 +50,17 @@ void Rva0041580E::rva0041580E(Rva0041580ENode *node)
 		cur->m_item10.~Rva0041579E();
 		free(cur);
 		cur = next;
+	}
+}
+
+void Rva0041580E::rva00415886()
+{
+	if (m_flag04 != 0)
+	{
+		rva0041580E(m_head00->m_first04);
+		m_head00->m_next08 = m_head00;
+		m_head00->m_first04 = 0;
+		m_head00->m_child0C = m_head00;
+		m_flag04 = 0;
 	}
 }

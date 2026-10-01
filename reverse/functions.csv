@@ -46540,3 +46540,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva006016AC@Coord3D@@QAEAAV1@ABV1@@Z,,0x006016AC,29,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,self-checked Coord3D copy with caller 0x00601797 looping 0x0C stride
 ?Rva00601797Copy@@YAPAVCoord3D@@PBV1@0PAV1@@Z,,0x00601797,50,Code/GameEngine/Source/Common/Coord3DCopy.cpp,matched,counted Coord3D range copy via rowed 0x006016AC with caller 0x0060186F
 ?rva0041580E@Rva0041580E@@QAEXPAURva0041580ENode@@@Z,,0x0041580E,53,Code/GameEngine/Source/Common/Rva0041580ECleanup.cpp,matched,chain list cleanup via rowed Rva0041579E dtor and free
+?rva00415886@Rva0041580E@@QAEXXZ,,0x00415886,41,Code/GameEngine/Source/Common/Rva0041580ECleanup.cpp,matched,chain via rowed 0x0041580E ECX passthrough callers 0x004159BF 0x004159EE
