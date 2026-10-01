@@ -27,7 +27,7 @@ private:
 
 MeshGeometryClass::GetShadeIndicesFn kGetShadeIndices = MeshGeometryClass::emit_get_shade_indices();
 
-uint32 *MeshGeometryClass::get_shade_indices(bool create)
+inline uint32 *MeshGeometryClass::get_shade_indices(bool create)
 {
 	if (create && !VertexShadeIdx) {
 		VertexShadeIdx = NEW_REF(ShareBufferClass<uint32>,(VertexCount, "MeshGeometryClass::VertexShadeIdx"));
@@ -37,3 +37,19 @@ uint32 *MeshGeometryClass::get_shade_indices(bool create)
 	}
 	return NULL;
 }
+
+// get_shade_indices is a header inline elsewhere: another unit emits a
+// select-any copy, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+struct BfmeMeshShadeIndicesEmitter : MeshGeometryClass
+{
+	static void emit(BfmeMeshShadeIndicesEmitter *p);
+};
+#pragma inline_depth(0)
+// ?emit@BfmeMeshShadeIndicesEmitter@@SAXPAU1@@Z present-unmatched
+void BfmeMeshShadeIndicesEmitter::emit(BfmeMeshShadeIndicesEmitter *p)
+{
+	p->MeshGeometryClass::get_shade_indices(false);
+}
+#pragma inline_depth()
