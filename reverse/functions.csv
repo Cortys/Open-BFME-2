@@ -45038,3 +45038,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva003F0466@Rva003F0466@@QAE?AVUnicodeString@@XZ,,0x003F0466,122,Code/GameEngine/Source/Common/System/Rva003F0466Label.cpp,matched,AsciiString at +0x124 via rowed StringBase isEmpty else TheGameText slot 0x38 fetch else TheEmptyString
 ?rva003F04E0@Rva003F04E0@@QAE?AVUnicodeString@@XZ,,0x003F04E0,122,Code/GameEngine/Source/Common/System/Rva003F0466Label.cpp,matched,sibling of 0x003F0466 via AsciiString at +0x128 same slot 0x38 fetch
 ?Rva0035CEA6Create@@YGPAVRva0035CC36@@PAVRva0035CE52@@@Z,,0x0035CEA6,106,Code/GameEngine/Source/Common/Rva0035CEA6Factory.cpp,matched,factory for Rva0035CC36 via new ctor assign guard g_00E01EA8
+??0Rva002DFA7A@@QAE@HABVAsciiString@@@Z,,0x002DFA7A,87,Code/GameEngine/Source/Common/Rva002DFA7ACtor.cpp,matched,unlock lane caller 0x002E048C LivingWorldBuilding parse precedent Rva001ED0A9Ctor
