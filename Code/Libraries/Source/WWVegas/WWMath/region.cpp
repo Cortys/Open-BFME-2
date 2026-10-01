@@ -97,7 +97,7 @@ public:
     float z;
 };
 
-void Coord3D::scale(float scale)
+inline void Coord3D::scale(float scale)
 {
     x *= scale;
     y *= scale;
@@ -305,7 +305,7 @@ int IRegion3D::depth() const
 }
 
 // Six field copies through the integer registers, in slot order.
-Region3D::Region3D(const Region3D &that)
+inline Region3D::Region3D(const Region3D &that)
 {
     x_min = that.x_min;
     y_min = that.y_min;
@@ -315,12 +315,12 @@ Region3D::Region3D(const Region3D &that)
     z_max = that.z_max;
 }
 
-float Region3D::width() const
+inline float Region3D::width() const
 {
     return x_max - x_min;
 }
 
-float Region3D::height() const
+inline float Region3D::height() const
 {
     return y_max - y_min;
 }
@@ -426,7 +426,7 @@ Region2D::Region2D()
 {
 }
 
-Region3D::Region3D()
+inline Region3D::Region3D()
 {
 }
 
@@ -434,11 +434,11 @@ IRegion3D::IRegion3D()
 {
 }
 
-Region2D::~Region2D()
+inline Region2D::~Region2D()
 {
 }
 
-Region3D::~Region3D()
+inline Region3D::~Region3D()
 {
 }
 
@@ -477,3 +477,18 @@ Region2DAssign g_region2dAssign = &Region2D::operator=;
 Region3DAssign g_region3dAssign = &Region3D::operator=;
 IRegion2DAssign g_iregion2dAssign = &IRegion2D::operator=;
 IRegion3DAssign g_iregion3dAssign = &IRegion3D::operator=;
+
+// These are header inlines that the units including the header emit as
+// select-any copies, which plain definitions here collided with. The anchor
+// keeps this unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRegion3DInlineAnchor absent-from-retail
+void _bfmeRegion3DInlineAnchor(Region3D *r, Region2D *q, Coord3D *c)
+{
+    r->Region3D::Region3D();
+    r->Region3D::Region3D(*r);
+    c->scale(r->width() + r->height());
+    r->Region3D::~Region3D();
+    q->Region2D::~Region2D();
+}
+#pragma inline_depth()

@@ -274,12 +274,12 @@ bool Coord2D::IsExactlyEqualTo(const Coord2D &that) const
     return x == that.x && y == that.y;
 }
 
-float Coord2D::length() const
+inline float Coord2D::length() const
 {
     return (float)sqrt(x * x + y * y);
 }
 
-void Coord2D::normalize()
+inline void Coord2D::normalize()
 {
     float len = length();
     if (len != 0.0f) {
@@ -415,7 +415,7 @@ float ACos(float value);
 // out of range. The sign of y picks the half-turn; MSVC stores the 1.0f
 // speculatively before the upper comparison, which is what the pair of
 // movss-to-[ebp-4] around the ja is.
-float Coord2D::toAngle() const
+inline float Coord2D::toAngle() const
 {
     float len = length();
 
@@ -440,3 +440,16 @@ float Coord2D::toAngle() const
 
     return ACos(cosine);
 }
+
+// These are header inlines that the units including the header emit as
+// select-any copies, which plain definitions here collided with. The anchor
+// keeps this unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCoord2DInlineAnchor absent-from-retail
+void _bfmeCoord2DInlineAnchor(Coord2D *c)
+{
+    c->normalize();
+    c->length();
+    c->toAngle();
+}
+#pragma inline_depth()
