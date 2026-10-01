@@ -45489,3 +45489,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva006CD6F0Get@@YAXPAPAX0@Z,,0x006CD6F0,171,Code/Libraries/Source/Apt/AptValue/Rva006CD6F0.cpp,matched,Apt bInitialized Apt.cpp type 0x12 animation-inst outs
 ?rva000B3814@Rva000B3814@@QAEXPAVRva000B3814Arg@@M@Z,,0x000B3814,113,Code/GameEngine/Source/Common/Rva000B3814.cpp,matched,unlock lane v23-v101 slots 1.0f clamp via g_Va00BBB8D8
 ?reset@Win32Mouse@@UAEXXZ,,0x000419F5,17,Code/GameEngineDevice/Source/Win32Device/GameClient/Win32Mouse_reset.cpp,matched,ZH reset: Mouse::reset (pin 0x001EE4DC) then byte +0x4F9C = 1
+??0Shell@@QAE@XZ,,0x0035BFBC,203,Code/GameEngine/Source/GameClient/GUI/Shell/ShellCtor.cpp,matched,Shell ctor: base 0x001B4E63 then screen stack clear then +0x58 string (unwind state 1) and two guarded news

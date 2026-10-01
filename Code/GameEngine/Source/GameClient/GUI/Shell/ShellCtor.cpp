@@ -1,9 +1,9 @@
-// ??0Shell@@QAE@XZ
-// partial score=0.93 date=2026-09-29
-// ??0Shell@@QAE@XZ
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHs
 // ??0Shell@@QAE@XZ @0x0035BFBC (203B): chain ctor calls baseConstruct 0x001B4E63 then sets vtable 0x00816208; clears stack +0xC-0x4B; String set at +0x58 with empty string; NEW AnimateWindowManager 0x38 at +0x60 via 0x0053B550; NEW Rva002007D5 8 at +0x64 via 0x00200774.
+// Retail's unwind map destroys the SubsystemInterface-style base (0x001B4E74)
+// in state 0 and the narrow string at +0x58 in state 1, then guards both
+// allocations (states 2 and 3). The string therefore has a destructor; the
+// banked 0.93 attempt gave it none and lost state 1.
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
@@ -45,6 +45,7 @@ class StringBase
 {
 public:
 	StringBase() : m_data(0) {}
+	~StringBase();
 	void set(const T *str);
 private:
 	T *m_data;
@@ -80,7 +81,6 @@ private:
 	int m_74;
 };
 
-// ??0Shell@@QAE@XZ present-unmatched
 Shell::Shell()
 {
 	int i;
