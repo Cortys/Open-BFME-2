@@ -333,3 +333,18 @@ Rva003AF47D::Rva003AF47D(const Rva003AF47D &other)
 	: Rva003AF4AA(other)
 {
 }
+
+// ??0Rva003AE465@@QAE@ABV0@@Z @0x003AE465 45B: ParticleTerrainCollisionModuleInfo copy ctor calling rowed base 0x003AF50D then own 3 vptrs.
+// Evidence: calls 0x003AF50D then stores at +0x18/+0/+0x14/+0x18 DIR32; primary 0x00C1D3F4 second 0x00C1C780 third 0x00C1BAC0 overwritten by 0x00C1D3E4; name getter 0x003AE336 returns ParticleTerrainCollisionModuleInfo; unlocks 0x003AE43F.
+// ??0Rva003AE465@@QAE@ABV0@@Z @0x003AE465 present-unmatched
+class Rva003AE465 : public Rva003AF50D, public ModuleInfoThirdBAC0
+{
+public:
+	Rva003AE465(const Rva003AE465 &other);
+	virtual ~Rva003AE465();
+};
+
+Rva003AE465::Rva003AE465(const Rva003AE465 &other)
+	: Rva003AF50D(other)
+{
+}

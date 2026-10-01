@@ -46370,3 +46370,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva006E4D50@Rva006E3230@@QAEXPAVAptValue@@@Z,,0x006E4D50,441,Code/Libraries/Source/Apt/Rva006E4D50.cpp,matched,unlock lane caller 0x006E2B40 same pool as Rva006E3230Validate stride 24
 ??_GRva003AE358@@UAEPAXI@Z,,0x003AE33C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva003AE358.cpp,matched,scalar deleting dtor calls rowed 0x003AE358 plus rowed delete 0x0002FD60
 ?rva005533BC@Rva005533BC@@QAEPAXPBX@Z,,0x005533BC,37,Code/Libraries/Source/WWVegas/WWLib/Rva005533BC.cpp,matched,unlock tree lower_bound byte key via holder root
+??0Rva003AE465@@QAE@ABV0@@Z,,0x003AE465,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,ParticleTerrainCollisionModuleInfo copy calls rowed base 0x003AF50D plus own vptrs
