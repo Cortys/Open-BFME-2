@@ -45716,3 +45716,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001FA7F8@Rva001FA7F8@@QAEXXZ,,0x001FA7F8,23,Code/GameEngine/Source/Common/Thing/Rva001FA7F8.cpp,matched,chain via rowed 0x001FA4F0 null-checked slot4 plus tail-jmp
 ?rva001F64E9@Rva001F64E9@@QAEXH@Z,,0x001F64E9,34,Code/GameEngine/Source/Common/Rva001F64E9.cpp,matched,leaf via rowed 0x001F5D4F null-checked slot3 plus forward
 ?rva001F8254@Rva001F8254@@QAEXH@Z,,0x001F8254,34,Code/GameEngine/Source/Common/Rva001F8254.cpp,matched,chain via rowed 0x001F64E9 null-checked slot3 plus forward
+?rva001F89A1@Rva001F89A1@@QAEXH@Z,,0x001F89A1,34,Code/GameEngine/Source/Common/Rva001F89A1.cpp,matched,chain via rowed 0x001F8254 null-checked slot3 plus forward
