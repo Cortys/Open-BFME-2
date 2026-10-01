@@ -2,6 +2,10 @@
 
 // Open-BFME5: SList<TagBlockIndex>::Remove_All retail bucket cleanup.
 
+// Retail's Node dtor adjusts to this StringBase<char> at +8 then tail-calls
+// the rowed releaseBuffer entry at 0x00036410.
+#pragma comment(linker, "/alternatename:??1StringBase@@QAE@XZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
+
 class TagBlockIndex;
 
 class StringBase
