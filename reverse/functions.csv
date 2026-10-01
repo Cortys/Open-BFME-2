@@ -45522,3 +45522,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva004DC920@@QAE@XZ,,0x004DC920,205,Code/GameEngine/Source/Common/Rva004DC920Ctor.cpp,matched,large record ctor three AsciiStrings vectors Rva0042526Member sibling dtor
 ?rva004DC788@Rva004DC920@@QAEXABV1@@Z,,0x004DC788,246,Code/GameEngine/Source/Common/Rva004DC920Ctor.cpp,matched,Rva004DC920 copy skips ID and tail sibling ctor layout
 ?rva004DCC62@Rva004DCC62@@QAEPAXPBX@Z,,0x004DCC62,34,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_create_node_004DCC62.cpp,matched,RB node create 0x18 pair ushort int via allocate Construct callers
+?_M_erase@?$_Rb_tree@GU?$pair@$$CBGH@_STL@@U?$_Select1st@U?$pair@$$CBGH@_STL@@@2@U?$less@G@2@V?$allocator@U?$pair@$$CBGH@_STL@@@2@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@$$CBGH@_STL@@@2@@Z,,0x004DC87E,45,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_erase_004DC87E.cpp,matched,GH map trivial erase recurse right walk left free unblocks clear
