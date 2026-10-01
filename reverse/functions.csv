@@ -45378,3 +45378,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002E06B8@Rva002E06B8@@QAEPAVGameSlot@@XZ,,0x002E06B8,55,Code/GameEngine/Source/Common/Rva002E06B8Method.cpp,matched,slot search via TheGameInfo getSlot rowed
 ?rva002E06EF@Rva002E06B8@@QAEPAXXZ,,0x002E06EF,23,Code/GameEngine/Source/Common/Rva002E06B8Method.cpp,matched,chain of 0x002E06B8 slot search via TheGameInfo getSlot rowed
 ?rva002E0C2B@Rva002E0C2B@@QAEHXZ,,0x002E0C2B,61,Code/GameEngine/Source/Common/Rva002E0C2BMethod.cpp,matched,caller Player plus TheWritableGlobalData scaled min idiom
+?rva0058E481@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E481,144,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E481.cpp,matched,neighbours 0x0058E367 0x0058E511 same factory shape plus ctor and setters
