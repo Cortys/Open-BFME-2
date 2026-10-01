@@ -45805,3 +45805,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?erase@?$vector@UBfmeAssignRecord172@@V?$allocator@UBfmeAssignRecord172@@@_STL@@@_STL@@QAEPAUBfmeAssignRecord172@@PAU3@0@Z,,0x001EBDFA,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bfmeassignrecord172_erase.cpp,matched,range erase via rowed copy_ptrs and Destroy
 ??0Rva0037DF2C@@QAE@ABV0@@Z,,0x001EB79E,119,Code/GameEngine/Source/Common/Rva0037DF2CCopy.cpp,matched,copy ctor vtable 00BDF158 plus AsciiString plus 128B plus tail via 3 rowed calls
 ??$_Construct@UBfmePod172@@U1@@_STL@@YAXPAUBfmePod172@@ABU1@@Z,,0x001EB9E6,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod172.cpp,matched,placement copy via rowed Rva0037DF2C copy ctor callers uninitcopy filln pushback
+?rva001EB298@Rva001EB298@@QAEXVAsciiString@@@Z,,0x001EB298,52,Code/GameEngine/Source/Common/Rva001EB298Setter.cpp,matched,ecx+0x2C AsciiString set plus param release callers 0x001EB42E and 0x002412CC
