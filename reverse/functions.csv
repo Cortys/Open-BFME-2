@@ -46751,3 +46751,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00473125@HordeContain@@QAEXPAVObject@@PAHH@Z,,0x00473125,114,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainRva00473125.cpp,matched,HordeContain method via callers 0x473197 0x473212 and rva0046A893
 ?rva00051ADA@Rva00051ADA@@QAEAAV1@ABV1@H@Z,,0x00051ADA,31,Code/Libraries/Source/WWVegas/WWLib/Rva00051ADARef.cpp,matched,WWLib OpaqueRef-style AddRef via InterlockedIncrement ret8 two-arg honest name
 ?rva00463A81@Rva00463A81@@QAEXXZ,,0x00463A81,82,Code/Libraries/Source/WWVegas/WWLib/Rva00463A81Prune.cpp,matched,leaf prune map at +0x5C via findObjectByID and Rb increment erase
+?rva002707FA@Rva002707FA@@QAEXE@Z,,0x002707FA,29,Code/GameEngine/Source/Common/Rva002707FASet.cpp,matched,chain lane sets byte 0x441 forwards to rowed 0x003626CE

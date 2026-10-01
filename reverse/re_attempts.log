@@ -5230,3 +5230,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00156390@Rva00156390@@QAE_NXZ	0x00156390	249	blocked	needs EH handler 0x766F48 unclaimed funclet owned by gen_uw never hand-write t=5 model=muse-16
 ?rva00158990@Render2DSentenceClass@@QAEXPAVFontCharsClass@@PBG1_N@Z	0x00158990	515	blocked	frame 0x24 vs 0x20 this spilled to stack vs ebx second-half add_ref-delete shape differs 61B short 3 variants t=20 model=muse-15
 ?rva00158C60@Render2DSentenceClass@@QAEXPBG_N@Z	0x00158C60	551	blocked	same surface-Add-delete wall as 0x158990 Thai loadCharacterData early reg wall 57B short 2 variants t=18 model=muse-15
+?method@Rva00409850SubObject@@QAEXE@Z	0x00362609	62	blocked	ebx zero reuse retail push-xor-bl-ebx vs immediates-test-and t=10 model=muse-08 (stash 0.92 kept)
