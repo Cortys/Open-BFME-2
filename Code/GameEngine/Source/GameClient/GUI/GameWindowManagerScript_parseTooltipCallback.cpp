@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?parseTooltipCallback@@YA_NPADPAVWinInstanceData@@0PAX@Z,
 // retail 0x00316480, 76 bytes. Dedicated TU.
@@ -20,31 +20,8 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-template <typename T>
-class StringBase
-{
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
+#include "ascii_string.h"
 
-	Header *m_data;
-
-public:
-	void set(const char *s);
-};
-
-class AsciiString
-{
-public:
-	void set(const char *s) { m_data.set(s); }
-
-private:
-	StringBase<char> m_data;
-};
 
 class NameKeyGenerator
 {

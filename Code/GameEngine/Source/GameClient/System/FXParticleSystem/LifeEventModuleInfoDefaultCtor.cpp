@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
 
 // LifeEventModuleInfo default constructor @0x564001 (91B). Retail: own
 // vtable, an AsciiString at +4 (its inline ctor stores the null buffer and
@@ -6,15 +6,7 @@
 // this+4), a GameClientRandomVariable at +8 zeroed inline then ranged (0, 0)
 // through the rowed setRange 0x002341E7, and a zeroed int at +0x14.
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class GameClientRandomVariable
 {

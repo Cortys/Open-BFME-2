@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
 
 // TerrainCollisionModuleInfo default constructor @0x56459E (96B). Retail: own
 // vtable, an AsciiString at +4 (its inline ctor stores the null buffer and
@@ -7,15 +7,7 @@
 // through the rowed setRange 0x002341E7, a zeroed int at +0x18, and the flag
 // at +0x14 cleared after the call (retail keeps the zero in ebx across it).
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 class GameClientRandomVariable
 {

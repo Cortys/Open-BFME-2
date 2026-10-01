@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?parseLayoutBlock@@YA_NPAVFile@@PADIPAVWindowLayoutInfo@@@Z, retail
 // 0x0031732D, 255 bytes. Dedicated TU.
@@ -80,50 +80,8 @@ public:
 	virtual void unlock(void);					// slot 16
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	int compare(const T *str) const;
-
-	const T *str() const
-	{
-		return m_data ? m_data->data : "";
-	}
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	~AsciiString() { releaseBuffer(); }
-
-	const char *str() const
-	{
-		return StringBase<char>::str();
-	}
-
-	int compare(const char *s) const
-	{
-		return StringBase<char>::compare(s);
-	}
-};
 
 extern "C" __declspec(dllimport) int __cdecl isspace(int c);
 extern "C" char *__cdecl _mbscpy(char *dst, const char *src);

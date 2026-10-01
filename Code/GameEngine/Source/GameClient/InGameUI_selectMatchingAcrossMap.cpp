@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // stlport
 //
 // ?selectMatchingAcrossMap@InGameUI@@UAEHXZ, retail 0x0029CFC8, 285 bytes.
@@ -28,53 +28,10 @@ typedef unsigned short wchar_t;
 class UnicodeString;
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
+#include "unicode_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
 
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	Header *m_data;
-
-public:
-	const T *str() const
-	{
-		static const T TheNullChr = 0;
-		return m_data ? &m_data->data[0] : &TheNullChr;
-	}
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-private:
-	StringBase<char> m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameTextInterface
 {

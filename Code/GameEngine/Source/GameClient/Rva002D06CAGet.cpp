@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva002D06CA@Rva002D06CA@@QAEPAXPBVAsciiString@@@Z, retail 0x002D06CA (38B).
 // Lookup in the embedded Rva00056F61 bucket table at +0x14 via rowed
 // iterator find 0x0041534B. Returns payload at node+8 or null. Sibling of
@@ -6,10 +6,7 @@
 // recipe with 3-byte add encoding explaining 38B vs 41B. Callers at 0x001E0243
 // and 0x001E052A via global 0x00DFF000 plus INI parse 0x0033947E and 209-function
 // unlock fanout. Owner unproven so honest-address class Rva002D06CA.
-class AsciiString
-{
-	char *m_text;
-};
+#include "ascii_string.h"
 class Rva00056F61;
 struct Rva0041534BIter
 {

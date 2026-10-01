@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 
 namespace FXParticleSystem
 {
@@ -11,57 +11,13 @@ class AsciiString;
 // object is not available as a usable public header.  The member widths and
 // offsets follow the BFME2 copy body and the corresponding GeneralsMD
 // ParticleSys.h layout.
-template <typename T>
-class StringBase
-{
-    friend class FXParticleSystem::ParticleSystemInfo;
-    friend class AsciiString;
-
-private:
-    StringBase(const StringBase<T> &that);
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    void releaseBuffer();
-    Header *m_data;
-
-public:
-    void set(const StringBase<T> &that);
-};
+#include "ascii_string.h"
 
 inline void *operator new(unsigned int, void *storage)
 {
     return storage;
 }
 
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that)
-        : m_data(that.m_data)
-    {
-    }
-
-    AsciiString &operator=(const AsciiString &that)
-    {
-        m_data.set(that.m_data);
-        return *this;
-    }
-
-    ~AsciiString()
-    {
-        m_data.releaseBuffer();
-    }
-
-private:
-    StringBase<char> m_data;
-};
 
 struct ThreeDwords
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // ?init@MainMenuSmallScaleDownTransition@@UAEXPAVGameWindow@@@Z
 // retail 0x0035DBF3, 262 bytes. Dedicated TU.
 //
@@ -55,35 +55,8 @@ public:
 	void *get() const;
 };
 
-template <typename T>
-class StringBase
-{
-public:
-	StringBase() { m_data = 0; }
-	void concat(const T *text);
-	~StringBase();
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	AsciiString &operator=(const AsciiString &that);
-
-private:
-	StringBase<char> m_data;
-};
 
 struct SmallScaleDownInstanceData
 {

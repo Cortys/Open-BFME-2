@@ -1,36 +1,9 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // Open-BFME5: FXParticleSystem::ParticleSystemInfo destructor.  The three
 // StringBase<char> members are at +0x10, +0x68, and +0x78 in BFME2.
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	~AsciiString()
-	{
-		m_data.releaseBuffer();
-	}
-
-private:
-	StringBase<char> m_data;
-};
 
 class Xfer;
 

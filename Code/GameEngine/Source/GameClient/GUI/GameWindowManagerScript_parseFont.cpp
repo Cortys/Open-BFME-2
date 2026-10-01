@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /EHsc /Oi- /arch:SSE2
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /EHsc /Oi- /arch:SSE2
 //
 // ?parseFont@@YA_NPADPAVWinInstanceData@@0PAX@Z, retail 0x00315BF5, 218 bytes.
 // Dedicated TU.
@@ -37,37 +37,8 @@ typedef bool Bool;
 class AsciiString;
 class GameFont;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-	StringBase(const T *text);
-	void releaseBuffer();
-
-public:
-	~StringBase() { releaseBuffer(); }
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const char *text) : m_data(text) {}
-
-private:
-	StringBase<char> m_data;
-};
 
 class FontLibrary
 {

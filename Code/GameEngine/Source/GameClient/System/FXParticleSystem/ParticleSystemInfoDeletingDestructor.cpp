@@ -1,37 +1,10 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // The retail vtable's scalar deleting destructor is emitted from a separate
 // translation unit.  Keep the complete destructor's novtable model in the
 // sibling source; this TU gives MSVC the vftable use that emits ??_G.
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	~AsciiString()
-	{
-		m_data.releaseBuffer();
-	}
-
-private:
-	StringBase<char> m_data;
-};
 
 class Xfer;
 
