@@ -59,11 +59,6 @@ protected:
 	unsigned char m_pad[0x7C - 4];
 };
 
-// ??1Rva004930A0@@UAE@XZ present-unmatched
-Rva004930A0::~Rva004930A0()
-{
-}
-
 class InvisibilitySpecialPowerModuleData : public Rva004930A0
 {
 public:
@@ -77,11 +72,6 @@ private:
 	Rva003623E5Member m_objectFilter; // +0x138
 	int m_duration; // +0x13C
 };
-
-// ??1InvisibilitySpecialPowerModuleData@@UAE@XZ present-unmatched
-InvisibilitySpecialPowerModuleData::~InvisibilitySpecialPowerModuleData()
-{
-}
 
 // ??0InvisibilitySpecialPowerModuleData@@QAE@XZ @0x4C244D
 InvisibilitySpecialPowerModuleData::InvisibilitySpecialPowerModuleData()
