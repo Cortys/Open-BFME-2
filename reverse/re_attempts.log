@@ -4548,3 +4548,6 @@ FUN_00773871	0x00373871	133	blocked	map int-int plus new Rva0037307F plus Scienc
 ?rva006DAEB0@Rva006DAEB0@@QAEPAV1@IHHIEEEEE@Z	0x006DAEB0	226	partial	size-exact 226B 82insns; xor edi vs eax for zero stores plus shr cl-dl order swapped for +0x11-+0x12 plus add ebp position; only register-scheduling left t=28 model=muse-04 score=0.95 stash=reverse/attempts/0x006daeb0.cpp
 ?rva00591DAB@NetPacket@@QAEEPAVNetCommandRef@@@Z	0x00591DAB	251	blocked	251B EH two-string room check volatile gives 248B 82vs83insns len spill plus push2 edx plus AsciiString frame mismatch needs donor t=30 model=muse-04
 ?rva00537261@UserPreferences@@QAEHH@Z	0x00537261	92	blocked	extra frame dword 0-to-1 with esi-1 and edi-this vs esi-this best 80B 28ins vs 92B t=12 model=muse-10
+?rva000B4BED@Rva000B4BED@@QAEPAUEntry000B4BED@@ABVWeaponTemplateSetHead@@@Z	0x000B4BED	176	partial	esi-edi mirror only size-exact 176 structural-0 t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x000b4bed.cpp
+??0Rva0035CC36@@QAE@XZ	0x0035CC36	148	blocked	EH ModuleData ctor layout-wall list-Ascii-vs-BfmePod8 plus40-overlap init-order t=20 model=muse-11
+?rva0005442A@Rva0005442A@@QAEPAXPAUOut0005442A@@HHH@Z	0x0005442A	161	blocked	EH prolog without dtor-calls list-0xA48 cmove t=18 model=muse-11

@@ -473,6 +473,50 @@ static void Apply_Render_State(RenderStateStruct& render_state)
 }
 
 // ----------------------------------------------------------------------------
+// ?Rva0012D4D0Apply@@YAXAAURenderStateStruct@@@Z @0x0012D4D0 387B. BFME2
+// owning-handle apply: Set_Shader, manual material REF_PTR_SET with
+// TheBoxTextureDirtyMask, BFME2Set_Texture loop over BfmeCurrentCaps+0x2b0,
+// looped Set_DX8_Light with break, direct world/view SetTransform.
+// Evidence: rowed Set_Shader 0x000662E5, rowed BFME2Set_Texture 0x0011F4B0,
+// BFME1 donor sortingrenderer.cpp Rva009391B0::apply loop+break shape.
+struct BFME2TextureRef { void *Ptr; };
+void BFME2Set_Texture(unsigned stage, const struct BFME2TextureRef &texture);
+extern unsigned TheBoxTextureDirtyMask;
+extern VertexMaterialClass *g_00DEE5DC;
+extern struct IDirect3DDevice8 *g_00DEDA34;
+extern unsigned g_00DEDA4C;
+extern unsigned g_00DEDA98;
+
+void Rva0012D4D0Apply(RenderStateStruct &render_state)
+{
+	DX8Wrapper::Set_Shader(render_state.shader);
+	VertexMaterialClass *mat = render_state.material;
+	if (mat)
+		mat->Add_Ref();
+	if (g_00DEE5DC)
+		g_00DEE5DC->Release_Ref();
+	*(unsigned char *)&TheBoxTextureDirtyMask |= 0x40;
+	g_00DEE5DC = mat;
+	for (int i = 0; i < *(const int *)((const unsigned char *)DX8Wrapper::Get_Current_Caps() + 0x2b0); ++i)
+		BFME2Set_Texture(i, reinterpret_cast<const struct BFME2TextureRef &>(render_state.Textures[i]));
+	if (render_state.material->Get_Lighting()) {
+		for (int i = 0; i < 4; ++i) {
+			if (!render_state.LightEnable[i]) {
+				DX8Wrapper::Set_DX8_Light(i, NULL);
+				break;
+			}
+			DX8Wrapper::Set_DX8_Light(i, &render_state.Lights[i]);
+		}
+	}
+	++g_00DEDA4C;
+	g_00DEDA34->SetTransform(D3DTS_WORLD, reinterpret_cast<const D3DMATRIX *>(&render_state.world));
+	++g_00DEDA98;
+	++g_00DEDA4C;
+	g_00DEDA34->SetTransform(D3DTS_VIEW, reinterpret_cast<const D3DMATRIX *>(&render_state.view));
+	++g_00DEDA98;
+}
+
+// ----------------------------------------------------------------------------
 
 // BFME-only, no Zero Hour twin.  Flush_Sorting_Pool (0x00939FC0) inlines this
 // test before each Apply_Render_State, and retail also keeps out-of-line copies
