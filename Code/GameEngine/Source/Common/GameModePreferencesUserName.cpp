@@ -1,5 +1,3 @@
-// ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ
-// partial score=0.93 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
@@ -358,13 +356,11 @@ private:
 	SkirmishFindNode *m_end;
 	unsigned char m_unreconstructed[8];
 };
-// ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ present-unmatched
 UnicodeString GameModePreferences::rva0044D330(void)
 {
 	UnicodeString ret;
-	const SkirmishFindMap *map = (const SkirmishFindMap *)(const PreferenceMap *)this;
-	SkirmishFindNode *it = map->find("UserName");
-	if (it == map->end())
+	SkirmishFindNode *it = ((const SkirmishFindMap *)((const char *)this + 4))->find("UserName");
+	if (it == ((const SkirmishFindMap *)((const char *)this + 4))->end())
 	{
 		IPEnumeration ips;
 		ret.translate(ips.getMachineName());
@@ -372,7 +368,7 @@ UnicodeString GameModePreferences::rva0044D330(void)
 	}
 	ret = QuotedPrintableToUnicodeString(it->m_value);
 	ret.trim();
-	if (ret.isEmpty())
+	if (((const AsciiString *)(const void *)&ret)->isEmpty())
 	{
 		IPEnumeration ips;
 		ret.translate(ips.getMachineName());
