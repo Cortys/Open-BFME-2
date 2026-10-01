@@ -23,7 +23,7 @@ void __cdecl operator delete(void *block)
 		__gameMemFreePtr(block, 1);
 }
 
-void __cdecl operator delete[](void *block)
+inline void __cdecl operator delete[](void *block)
 {
 	if (block)
 		__gameMemFreePtr(block, 2);
@@ -34,7 +34,16 @@ void *__cdecl operator new(unsigned int size)
 	return __gameMemAllocatePtr(size, 1, 0);
 }
 
-void *__cdecl operator new[](unsigned int size)
+inline void *__cdecl operator new[](unsigned int size)
 {
 	return __gameMemAllocatePtr(size, 2, 0);
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitMemOps@@YAXPAXI@Z present-unmatched
+void bfmeEmitMemOps(void *p, unsigned int s)
+{
+	operator delete[](p);
+	operator new[](s);
+}
+#pragma inline_depth()
