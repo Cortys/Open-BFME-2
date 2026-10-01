@@ -45859,3 +45859,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002BFDAE@Rva002BFDAE@@QAEPAXPAX@Z,,0x002BFDAE,56,Code/GameEngine/Source/GameClient/GUI/Rva002BFDAEFind.cpp,matched,manual WindowVideoMap walk at plus0xac via hashtable begin and Rva next
 ??0Rva002BF807@@QAE@XZ,,0x002BF807,58,Code/GameEngine/Source/GameLogic/Object/Update/Rva002BF807Ctor.cpp,matched,44B PartTheHeavens member ctor vector plus end cache plus floats
 ?rva002BF6B7@Rva002BF6B7@@QAEXPAX@Z,,0x002BF6B7,31,Code/GameEngine/Source/GameClient/Rva002BF6B7Erase.cpp,matched,erase forwarding via pinned eraseSlot key at plus0x24 set at plus0x98
+?rva004DC082@Rva004DC082@@QAEXXZ,,0x004DC082,20,Code/GameEngine/Source/Common/Rva004DC082.cpp,matched,unlock copy 0x6c to 0xac and 0x70-1 to 0xb0
