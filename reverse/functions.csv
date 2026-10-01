@@ -46296,3 +46296,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00291298@Object@@QAEXVAsciiString@@H@Z,,0x00291298,68,Code/GameEngine/Source/GameLogic/Object/ObjectRva00291298.cpp,matched,Object AsciiString plus int setter via rowed set
 ?rva0029161A@Rva0029161A@@QAEXPAVRva0029161AArg@@@Z,,0x0029161A,95,Code/GameEngine/Source/Common/System/Rva0029161ABits.cpp,matched,memset rowed loop 11 virt 0x24 caller 0x00292449
 ?rva00363D20@Rva00363D20@@QAENXZ,,0x00363D20,84,Code/GameEngine/Source/GameLogic/AI/PathRva00363D20.cpp,matched,unlock path-length sum via rowed Approx plus BfmeZeroRange
+?rva00395E19@Rva00395E19@@QAEXPAVAsciiString@@H@Z,,0x00395E19,58,Code/GameEngine/Source/Common/Rva00395E19.cpp,matched,Dynamic format via +8 +74 +4 +64 unlock
