@@ -69,7 +69,7 @@ public:
 	virtual void v28() = 0;
 	virtual void v2c() = 0;
 	virtual void v30();
-	virtual void v34();
+	virtual bool v34();
 	virtual void v38();
 	virtual void v3c();
 };
@@ -82,6 +82,7 @@ public:
 	void rva002CA970(int a1, int a2, const void *a3, int a4);
 	void rva002CAA9D(int a1, const void *a2, const void *a3, int a4);
 	float rva002CACD7(const void *arg);
+	bool rva002CAD8B();
 private:
 	char m_pad00[0x58];
 	int m_58;
@@ -224,4 +225,17 @@ float Rva002CA9CA::rva002CACD7(const void *arg)
 		cur = cur->m_next;
 	}
 	return BfmeZeroRange;
+}
+
+bool Rva002CA9CA::rva002CAD8B()
+{
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode2 *obj = (VirtNode2 *)cur->m_data;
+		if (obj != 0 && obj->v34())
+			return true;
+		cur = cur->m_next;
+	}
+	return false;
 }

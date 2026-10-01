@@ -45089,3 +45089,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004031DD@Rva004031DD@@QAEEH@Z,,0x004031DD,22,Code/GameEngine/Source/Common/Rva004031DD.cpp,matched,unsigned frame check via TheGameLogic setb ret4
 ?findSideInfo@SidesList@@QAEPAVSidesInfo@@VAsciiString@@PAH@Z,,0x0032B0A9,150,Code/GameEngine/Source/GameLogic/Map/SidesList_findSideInfo.cpp,matched,donor BFME1 SidesList findSideInfo via ZH identical key cache 0xDBDE24
 ?Rva0055CCEFIsZero@@YAHABURGBColor@@@Z,,0x0055CCEF,55,Code/Libraries/Source/WWVegas/WWMath/Rva0055CCEF.cpp,matched,unlock lane RGBColor all-zero check via float AND
+?rva002CAD8B@Rva002CA9CA@@QAE_NXZ,,0x002CAD8B,51,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane sibling bool slot34 any
