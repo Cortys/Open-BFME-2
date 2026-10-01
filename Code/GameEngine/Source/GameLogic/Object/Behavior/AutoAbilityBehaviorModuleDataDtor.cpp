@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 //
 // ??1AutoAbilityBehaviorModuleData@@UAE@XZ, retail 0x0045A517, 73 bytes.
 // Destroys the query array at +0x2C (6 entries via ehvec ??_M with the pinned
@@ -6,28 +6,14 @@
 // 0x00036410, then restores the Snapshot base vtable 0x00BBB554. Member order
 // (string plus array) drives states 0 plus 1 so teardown reads 1 plus 0
 // exactly as retail. Shape follows LargeGroupBonusUpdateModuleDataDtor
-// (TU-local Snapshot with inline dtor doing the BBB554 restore; novtable
+// (shared Snapshot base dtor; novtable
 // suppresses the entry derived-vtable store retail lacks). Layout follows the
 // pinned ctor at 0x0045A2E7 (floats at +8/+0xC/+0x10/+0x14, zero at +0x18,
 // bitset reset at +0x1C via rowed 0x0024CA24, array at +0x2C via ehvec ??_L
 // with init 0x0045A1D9, bytes at 0x5C-0x5F) and the factory at 0x0024AFE5
 // which news 0x60. Called by the ??_G at 0x0045A4FB.
 
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 template <typename T>
 class StringBase

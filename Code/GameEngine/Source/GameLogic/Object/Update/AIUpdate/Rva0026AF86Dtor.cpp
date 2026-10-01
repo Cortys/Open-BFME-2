@@ -1,21 +1,8 @@
-// cl: /O1 /EHs /DNDEBUG /MD
+// cl: /O1 /EHs /DNDEBUG /MD /Ireference/shims/moduledata
 // ??1Rva0026AF86@@UAE@XZ retail 0x0026AF86 75B: dtor freeing +0x10 then +4 via rowed free then restoring Snapshot vtable BBB554.
 // Evidence: EH_prolog scopetable plus push ecx push esi mov esi ecx with state 1 free +0x10 then state 0 free +4 then mov [esi] g_00BBB554; caller 0x0026AF6A deleting dtor with operator delete.
+#include "Common/Snapshot.h"
 extern "C" void __cdecl free(void *block);
-extern const void *const g_00BBB554[];
-class Xfer;
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
 class AsciiString
 {
 public:

@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 // ??1Rva00414932@@UAE@XZ @ 0x00414932 75B: novtable dtor restoring Snapshot vtable 0x007BB554,
 // calls vector<BfmeAssignRecord44> dtor at +0x1C, Rva00360D26Member dtor at +0x14,
@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 struct BfmeAssignRecord44 { AsciiString s; int a[10]; };
 
@@ -17,21 +18,6 @@ public:
 private:
     unsigned m_unknown;
 };
-
-class Xfer;
-class Snapshot
-{
-public:
-    virtual ~Snapshot();
-    virtual void crc(Xfer *xfer);
-    virtual void loadPostProcess();
-    virtual void xfer(Xfer *xfer);
-};
-extern const void *const g_00BBB554[];
-inline Snapshot::~Snapshot()
-{
-    *(const void **)this = g_00BBB554;
-}
 
 class __declspec(novtable) Rva00414932 : public Snapshot
 {

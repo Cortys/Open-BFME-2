@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 // ??1Rva00414B40@@UAE@XZ, retail 0x00414B40, 73 bytes.
 // ModuleData-style dtor: vector<Rva00414BDBElement> at +0x10 via rowed 0x00414721,
@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 struct Rva00414BDBElement { ~Rva00414BDBElement(); };
 
@@ -24,21 +25,6 @@ private:
 	char m_pad04[4];
 	AsciiStringMember m_member08;
 };
-
-class Xfer;
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-extern const void *const g_00BBB554[];
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = g_00BBB554;
-}
 
 class __declspec(novtable) Rva00414B40 : public GameEngineDeletingBase, public Snapshot
 {
