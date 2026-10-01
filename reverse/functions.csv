@@ -46117,3 +46117,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva0002CB98@Rva0002CB98@@QBE_NABV?$BitFlags@$0L@@@@Z,,0x0002CB98,28,Code/Libraries/Source/WWVegas/WWLib/Rva0002CB98ArmorFind.cpp,matched,honest-address plus14 map find via rowed M_find 0x0002C751 sibling 0x0002CBB4 recipe
 ?rva000CE147@W3DTankDraw@@UAEX_N@Z,,0x000CE147,35,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000CE147.cpp,matched,W3DTankDraw slot35 guards 0x49 calls 0xCE0EA then base setFullyObscuredByShroud 0xB6FFE
 ?rva000CE09E@W3DTankDraw@@QAEXXZ,,0x000CE09E,76,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000CE09E.cpp,matched,W3DTankDraw layout from sibling Rva000CE0EA and ctor 0xCEA6C volatile Make chase with guard rva00270260
+?Rva0018C0E7Set@@YAXPAX@Z,,0x0018C0E7,10,Code/GameEngine/Source/Common/Rva0018C0E7Set.cpp,matched,store arg to g_00DFCEBC caller 0x0041FD27 passes edi
