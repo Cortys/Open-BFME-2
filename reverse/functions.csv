@@ -45925,3 +45925,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0029B4C4@Rva0029B4C4@@QAEXXZ,,0x0029B4C4,53,Code/GameEngine/Source/GameClient/Rva0029B4C4.cpp,matched,leaf called from 0x002A5BE9 AsciiString at +0x1c ptr at +0x5c4 slot 0x1c
 ?rva00483133@Rva00482E96@@QAE?AW4UpdateSleepTime@@XZ,,0x00483133,152,Code/GameEngine/Source/Common/Rva00483133.cpp,matched,slot16 vtable 0x008497B4 chain after 0x00483083
 ?rva00232F0C@Rva00232F0C@@QAEXXZ,,0x00232F0C,67,Code/GameEngine/Source/Common/Rva00232F0CImm.cpp,matched,thunk 0x0065561C ImmGetCompositionStringW GCS_RESULTSTR caller 0x00233C97
+?rva002326AE@AIPlayer@@QAEGEH@Z,,0x002326AE,77,Code/GameEngine/Source/GameLogic/AI/AIPlayerRva002326AE.cpp,matched,same TU as AIPlayer ctor table 0x81C 256 entries callers 0x00325AC6 0x0035962B
