@@ -9,7 +9,6 @@
 // literals link; invoke declared to the landed UiCallbackFirers shape.
 extern "C" __declspec(dllimport) int __cdecl _snprintf(char *buffer, unsigned int count, const char *fmt, ...);
 
-extern const char g_Rva0107301CEmptyString[];
 
 class Rva00222A8BTarget
 {
@@ -33,6 +32,6 @@ void __cdecl Rva003FED66MoveButtonFlash(void **pp, float f1, float f2)
 	if (p)
 		s = (const char *)p + 8;
 	else
-		s = g_Rva0107301CEmptyString;
+		s = "";
 	TheRva00222A8BTarget->invoke(TheRva009C1A0COwner, "MoveButtonFlash", 3, s, buf1, buf2, 0, 0);
 }

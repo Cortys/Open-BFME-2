@@ -3,7 +3,7 @@
 // (53B): StringBase<char> compareNoCase wrapper extracting data/len with
 // empty fallback then tail-calling rowed compareRangeNoCase; unblocks 41B.
 // Identity via compareRangeNoCase 0x00005841 plus empty string
-// g_Rva0107301CEmptyString plus caller 0x0050F210; /O1 frameless.
+// the empty-string literal plus caller 0x0050F210; /O1 frameless.
 
 struct CharCompare
 {
@@ -12,7 +12,6 @@ struct CharCompare
 
 int __cdecl compareRangeNoCase(const char *a, int alen, const char *b, int blen, CharCompare tag);
 
-extern const char g_Rva0107301CEmptyString;
 
 class Rva0050EE23
 {
@@ -40,6 +39,6 @@ int Rva0050EE23::rva0050EE23(const char *b, int blen, CharCompare tag)
 	if (m_data)
 		a = (const char *)&m_data->data[0];
 	else
-		a = &g_Rva0107301CEmptyString;
+		a = "";
 	return compareRangeNoCase(a, alen, b, blen, tag);
 }

@@ -159,7 +159,6 @@ private:
 	StringBase<char> m_data;
 };
 
-extern const char g_Rva0107301CEmptyString[];
 
 typedef unsigned short WideChar;
 
@@ -546,7 +545,7 @@ int UserPreferences::rva00537190(AsciiString arg, int x)
 {
 	AsciiString tmp;
 	const char *base = *(const char **)&arg;
-	const char *s = base ? base + 8 : g_Rva0107301CEmptyString;
+	const char *s = base ? base + 8 : "";
 	tmp.format("%s_%d", s, x);
 	int ret = v6(tmp, 0);
 	return ret;

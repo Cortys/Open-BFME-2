@@ -16,7 +16,6 @@
 #pragma function(memset)
 
 extern "C" void *memset(void *dst, int value, unsigned int size);
-extern const char g_Rva0107301CEmptyString[];
 
 class Rva0024C7B3Member
 {
@@ -51,7 +50,7 @@ public:
 
 Rva0035CC36::Rva0035CC36()
 {
-	m_str10.set(g_Rva0107301CEmptyString);
+	m_str10.set("");
 	m_flt14 = 0.0f;
 	memset(&m_mem1C, 0, 0x1C);
 	m_neg38 = -1;

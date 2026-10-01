@@ -65,7 +65,6 @@ extern "C" __declspec(dllimport) int __cdecl strncmp(const char *, const char *,
 #include "nbench1.h"
 #include "wordcat.h"
 
-extern const char g_Rva0107301CEmptyString[];
 
 extern void ji_008793a0();
 extern void ji_00879190();
@@ -117,7 +116,7 @@ numsortstruct=&global_numsortstruct;
 /*
 ** Set the error context string.
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 /*
 ** See if we need to do self adjustment code.
@@ -395,7 +394,7 @@ strsortstruct=&global_strsortstruct;
 /*
 ** Set the error context
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 /*
 ** See if we have to perform self-adjustment code
@@ -961,7 +960,7 @@ locbitopstruct=&global_bitopstruct;
 /*
 ** Set the error context.
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 /*
 ** See if we need to run adjustment code.
@@ -1276,7 +1275,7 @@ locemfloatstruct=&global_emfloatstruct;
 /*
 ** Set the error context
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 
 /*
@@ -1413,7 +1412,7 @@ locfourierstruct=&global_fourierstruct;
 /*
 ** Set error context string
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 /*
 ** See if we need to do self-adjustment code.
@@ -2260,7 +2259,7 @@ locideastruct=&global_ideastruct;
 /*
 ** Set error context
 */
-errorcontext=(char *)g_Rva0107301CEmptyString;
+errorcontext=(char *)"";
 
 /*
 ** Re-init random-number generator.

@@ -2,7 +2,7 @@
 // ?Rva0050EE72Set@@YAXHABVAsciiString@@HABVUnicodeString@@@Z @0x0050EE72 106B
 // APT field setter: key.format APT:_level%u.%s_field%d via rowed 0x00038150
 // plus pinned bfmeSetText 0x00225301 plus releaseBuffer 0x00036410;
-// team AsciiString empty via g_Rva0107301CEmptyString; manager 0x009FE4CC.
+// team AsciiString empty via ""; manager 0x009FE4CC.
 template <typename T> struct BfmeStringData
 {
 	int refCount;
@@ -27,7 +27,6 @@ class Rva00222A8BTarget
 {
 };
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern const char g_Rva0107301CEmptyString[];
 
 struct TeamNameRef
 {
@@ -42,7 +41,7 @@ void __cdecl Rva0050EE72Set(int level, const AsciiString &team, int field, const
 	if (h)
 		teamName = (const char *)&h->text[0];
 	else
-		teamName = g_Rva0107301CEmptyString;
+		teamName = "";
 	key.format("APT:_level%u.%s_field%d", level, teamName, field);
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, value, false);
 }

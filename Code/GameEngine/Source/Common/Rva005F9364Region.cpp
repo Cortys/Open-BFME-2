@@ -50,7 +50,6 @@ public:
 };
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern const char g_Rva0107301CEmptyString[];
 struct TeamNameHolder
 {
     char m_pad[8];
@@ -75,7 +74,7 @@ void Rva005F9364::rva005F9364(const UnicodeString &regionName)
     if (m_team)
         teamName = (const char *)((char *)m_team + 8);
     else
-        teamName = g_Rva0107301CEmptyString;
+        teamName = "";
     key.format("APT:_level%u.%s_RegionName", m_level, teamName);
     ((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, regionName, true);
 }

@@ -1,7 +1,6 @@
 // cl: /MD /D_STLP_USE_STATIC_LIB
 // stlport
 
-extern const char g_Rva0107301CEmptyString[];
 
 struct Rva0084DBText
 {
@@ -12,13 +11,13 @@ struct Rva0084DBText
 const char *Rva0084DBC0GetText(const Rva0084DBText *owner)
 {
     const char *text = owner->text;
-    return text ? text : g_Rva0107301CEmptyString;
+    return text ? text : "";
 }
 
 const char *Rva0084DC40GetText(const Rva0084DBText *owner)
 {
     const char *text = owner->text;
-    return text ? text : g_Rva0107301CEmptyString;
+    return text ? text : "";
 }
 
 struct Rva0084D860CodePage

@@ -21,7 +21,6 @@
 // which retail does not; as members with their own inline constructors the
 // schedule is retail's.
 
-extern const char g_Rva0107301CEmptyString[];
 
 class Gen_00800280
 {
@@ -126,7 +125,7 @@ Rva007F6D60Child::Rva007F6D60Child()
 	m_10 = 0;
 	m_14 = 0;
 	m_18.m_value = 0;
-	m_buffer1C.append( g_Rva0107301CEmptyString );
+	m_buffer1C.append( "" );
 	m_24.m_value = 0;
 	m_28 = 0;
 	m_6c = 0;

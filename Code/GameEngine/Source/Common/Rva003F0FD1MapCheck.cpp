@@ -4,7 +4,7 @@
 // __thiscall void check over AsciiString at +0x18; formats
 // "maps\%s\%s.map" with the name twice via rowed AsciiString::format
 // 0x00038150 then stores TheFileSystem->doesFileExist 0x00600D7D into
-// bool at +0x1A4. Empty-string fallback is g_Rva0107301CEmptyString.
+// bool at +0x1A4. Empty-string fallback is the "" literal.
 // Evidence: unlock lane; caller 0x003EEDD6 passes element as this;
 // format string at 0x007DF034 and FileSystem row are annotated.
 class AsciiString;
@@ -27,7 +27,6 @@ private:
     };
     Header *m_data;
 };
-extern const char g_Rva0107301CEmptyString[];
 class AsciiString : private StringBase<char>
 {
 public:
@@ -35,7 +34,7 @@ public:
     AsciiString(const AsciiString &other) : StringBase<char>(other) {}
     ~AsciiString() {}
     void __cdecl format(const char *fmt, ...);
-    const char *str() const { return m_data ? m_data->text : g_Rva0107301CEmptyString; }
+    const char *str() const { return m_data ? m_data->text : ""; }
 };
 class FileSystem
 {

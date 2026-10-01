@@ -12,7 +12,6 @@
 // 0x0036235C push one filter pointer cdecl. All callees rowed or pinned.
 #include <vector>
 
-extern const char g_Rva0107301CEmptyString[];
 
 template <typename T>
 struct StringData
@@ -37,7 +36,7 @@ public:
 	}
 	const T *str() const
 	{
-		return m_data ? &m_data->text[0] : (const T *)g_Rva0107301CEmptyString;
+		return m_data ? &m_data->text[0] : (const T *)"";
 	}
 	bool startsWith(const T *s) const;
 

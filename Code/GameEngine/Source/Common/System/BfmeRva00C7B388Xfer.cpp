@@ -626,7 +626,6 @@ BfmeRva00C7B388::~BfmeRva00C7B388()
 // print the label format with the name (empty string when null), then push a
 // copy of the name onto the narrow-string vector at +0x0C. Returns 0.
 extern const char g_00C7B424[];
-extern const char g_Rva0107301CEmptyString[];
 int BfmeRva00C7B388::rva0060DF27(const char *s)
 {
 	if (m_bfme04) {
@@ -634,7 +633,7 @@ int BfmeRva00C7B388::rva0060DF27(const char *s)
 		m_bfme04 = false;
 	}
 	Print(this, (const char *)0);
-	const char *t = s != 0 ? s : g_Rva0107301CEmptyString;
+	const char *t = s != 0 ? s : "";
 	Print(this, g_00C7B424, t);
 	typedef _STL::basic_string<char, _STL::char_traits<char>, _STL::allocator<char> > NarrowString;
 	typedef _STL::vector<NarrowString, _STL::allocator<NarrowString> > NarrowStringVec;

@@ -394,7 +394,6 @@ public:
 
 extern ThingFactory *TheThingFactory;
 extern float g_bfmeOffsetDF;
-extern const char g_Rva0107301CEmptyString[];
 extern void j_0000b848();
 extern void j_0001214d();
 extern void j_00026c4c();
@@ -513,7 +512,7 @@ Object *CreateCrateDie::createCrate( CrateTemplate const *currentCrateData )
 		(char *)"F:\\bfme\\Code\\gameengine\\Source\\GameLogic\\Object\\Die\\CreateCrateDie.cpp",
 		167 );
 	float multipleCrateRunningTotal = 0.0f;
-	AsciiString crateName( g_Rva0107301CEmptyString );
+	AsciiString crateName( "" );
 
 	CrateCreationNode *sentinel =
 		(CrateCreationNode *)currentCrateData->m_possibleCrates.m_node;

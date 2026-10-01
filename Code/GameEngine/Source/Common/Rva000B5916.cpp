@@ -1,7 +1,6 @@
 // cl: /O1 /MD /Ireference/shims/bfme2_ascii
 // ?rva000B5916@Rva000B5916@@QAEXM@Z 0x000B5916 73B evidence: chain via 0x000B2FBB rowed; edi from +0x44 slot0x50 then Rva at this-0xc float Matrix3D+0x18; +0x98 zero +0xa8 StringBase set EmptyString +0x94 1; neighbours 0x000B4E23/0x000B6253
 #include "ascii_string.h"
-extern const char g_Rva0107301CEmptyString[];
 
 class Matrix3D;
 class Rva000B2FBB
@@ -46,5 +45,5 @@ void Rva000B5916::rva000B5916(float f)
 	}
 	m_98 = 0;
 	m_94 = 1;
-	m_str.set(g_Rva0107301CEmptyString);
+	m_str.set("");
 }

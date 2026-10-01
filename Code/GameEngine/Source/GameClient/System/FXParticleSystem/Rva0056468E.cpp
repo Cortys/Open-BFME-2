@@ -25,7 +25,6 @@ public:
 };
 
 extern FXListStore *TheFXListStore;
-extern const char g_Rva0107301CEmptyString[];
 
 class Rva0056468E
 {
@@ -42,7 +41,7 @@ const FXList *Rva0056468E::rva0056468E()
 {
 	if (m_cached == 0)
 	{
-		const char *name = m_eventName.m_data != 0 ? (const char *)m_eventName.m_data + 8 : g_Rva0107301CEmptyString;
+		const char *name = m_eventName.m_data != 0 ? (const char *)m_eventName.m_data + 8 : "";
 		m_cached = TheFXListStore->findFXList(name);
 	}
 	return m_cached;
