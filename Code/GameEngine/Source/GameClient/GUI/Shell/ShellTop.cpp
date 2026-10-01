@@ -42,6 +42,11 @@ public:
 
 extern IMEManager *TheIMEManager;
 
+class GameSpyInfoInterface;
+extern GameSpyInfoInterface *TheGameSpyInfo;
+
+void Rva00548C1ACleanup();
+
 typedef bool Bool;
 
 class GameWindow;
@@ -116,6 +121,46 @@ public:
 	~AsciiString() {}
 };
 
+class GameWindowManager
+{
+public:
+	virtual void d00() = 0;
+	virtual void d01() = 0;
+	virtual void d02() = 0;
+	virtual void d03() = 0;
+	virtual void d04() = 0;
+	virtual void d05() = 0;
+	virtual void d06() = 0;
+	virtual void d07() = 0;
+	virtual void d08() = 0;
+	virtual void d09() = 0;
+	virtual void d10() = 0;
+	virtual void d11() = 0;
+	virtual void d12() = 0;
+	virtual void d13() = 0;
+	virtual void d14() = 0;
+	virtual void d15() = 0;
+	virtual void d16() = 0;
+	virtual void d17() = 0;
+	virtual void d18() = 0;
+	virtual void d19() = 0;
+	virtual void d20() = 0;
+	virtual void d21() = 0;
+	virtual void d22() = 0;
+	virtual void d23() = 0;
+	virtual void d24() = 0;
+	virtual void d25() = 0;
+	virtual void d26() = 0;
+	virtual void d27() = 0;
+	virtual void d28() = 0;
+	virtual void d29() = 0;
+	virtual void d30() = 0;
+	virtual void d31() = 0;
+	virtual WindowLayout *winCreateLayout(AsciiString filename) = 0;
+};
+
+extern GameWindowManager *TheWindowManager;
+
 class Shell : public GameEngineDeletingBase
 {
 private:
@@ -140,6 +185,7 @@ protected:
 	void linkScreen(WindowLayout *screen);
 	void unlinkScreen(WindowLayout *screen);
 	void doPop(Bool impendingPush);
+	void doPush(AsciiString layoutFile);
 public:
 	virtual ~Shell();
 	WindowLayout *top();
@@ -194,6 +240,19 @@ void Shell::doPop(Bool impendingPush)
 		m_clearBackground = false;
 	if (TheIMEManager)
 		TheIMEManager->m3C();
+}
+
+// ?doPush@Shell@@IAEXVAsciiString@@@Z @ 0x0035C3C3 (130B). Donor BFME1 Shell.cpp doPush: GameSpy check then winCreateLayout slot 0x80 then linkScreen then IMEManager detatch slot 0x3C then runInit slot0 then bringForward slot 0x14; caller 0x0035C445 passes pendingPushName; callees linkScreen rowed Rva00548C1ACleanup rowed StringBase copy and releaseBuffer rowed.
+void Shell::doPush(AsciiString layoutFile)
+{
+	if (TheGameSpyInfo)
+		Rva00548C1ACleanup();
+	WindowLayout *newScreen = TheWindowManager->winCreateLayout(layoutFile);
+	linkScreen(newScreen);
+	if (TheIMEManager)
+		TheIMEManager->m3C();
+	newScreen->runInit(0);
+	newScreen->s05();
 }
 
 // ?registerWithAnimateManager@Shell@@QAEXPAVGameWindow@@W4AnimTypes@@_NI@Z @ 0x0035BE23 (50B). Donor BFME1 Shell.cpp registerWithAnimateManager plus ZH Shell.h public; GlobalData animateWindows at +0xB00 and animateManager at +0x60; callee AnimateWindowManager registerGameWindow.
