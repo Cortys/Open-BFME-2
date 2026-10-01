@@ -46542,3 +46542,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0041580E@Rva0041580E@@QAEXPAURva0041580ENode@@@Z,,0x0041580E,53,Code/GameEngine/Source/Common/Rva0041580ECleanup.cpp,matched,chain list cleanup via rowed Rva0041579E dtor and free
 ?rva00415886@Rva0041580E@@QAEXXZ,,0x00415886,41,Code/GameEngine/Source/Common/Rva0041580ECleanup.cpp,matched,chain via rowed 0x0041580E ECX passthrough callers 0x004159BF 0x004159EE
 ??1Rva0041580E@@QAE@XZ,,0x004159AA,56,Code/GameEngine/Source/Common/Rva0041580EDtor.cpp,matched,chain via rowed 0x00415886 member at plus8 callers 0x00415AF8 0x00415ADB
+??_GRva0041579E@@QAEPAXI@Z,,0x00415782,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0041579E.cpp,matched,chain deleting dtor via rowed dtor 0x004156FC and delete 0x0002FD60
