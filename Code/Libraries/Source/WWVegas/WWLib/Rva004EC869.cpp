@@ -20,6 +20,12 @@ public:
 	void rva005996FF(Rva005996FFArg *arg, bool flag);
 };
 
+class Rva00599825
+{
+public:
+	void rva00599825(int id);
+};
+
 class Rva004E9378
 {
 	char m_pad[0x10];
@@ -52,6 +58,7 @@ class Rva004EC869
 {
 public:
 	void rva004EC869(Rva005996FFArg *arg);
+	void rva004EC2D4(int value);
 private:
 	char m_pad00[0x130];
 	_STL::vector<const ModuleData *> m_vec;
@@ -86,5 +93,26 @@ found:
 		} else {
 			cur->virt(3);
 		}
+	}
+}
+
+void Rva004EC869::rva004EC2D4(int value)
+{
+	((Rva00599825 *)((char *)this + 0x140))->rva00599825(value);
+	_STL::list<int>::iterator it = m_list.begin();
+	if (it == m_list.end())
+		return;
+	{
+		ModuleData *cur;
+		while (it != m_list.end()) {
+			cur = (ModuleData *)(*it);
+			if (cur->m_08 == value)
+				goto found;
+			++it;
+		}
+		return;
+found:
+		;
+		cur->virt(2);
 	}
 }
