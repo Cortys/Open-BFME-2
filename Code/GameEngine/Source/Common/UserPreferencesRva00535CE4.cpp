@@ -264,6 +264,7 @@ public:
 	void rva0053641E(AsciiString arg, int x);
 	int rva00536465(AsciiString arg);
 	void rva005364AF(AsciiString arg, int x);
+	int rva005364F6(AsciiString arg);
 	void rva00536540(AsciiString arg, int x);
 	void rva005365D1(AsciiString arg, int x);
 	void rva00536662(AsciiString arg, int x);
@@ -702,6 +703,16 @@ void UserPreferences::rva005364AF(AsciiString arg, int x)
 {
 	arg.concat("UnitsLostRTS");
 	v11(arg, x);
+}
+
+// ?rva005364F6@UserPreferences@@QAEHVAsciiString@@@Z @0x005364F6 74B
+// UserPreferences UnitsLostRTS-getter path: append UnitsLostRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat UnitsLostRTS 0x00868F7C slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva005364F6(AsciiString arg)
+{
+	arg.concat("UnitsLostRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva00536540@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536540 71B
