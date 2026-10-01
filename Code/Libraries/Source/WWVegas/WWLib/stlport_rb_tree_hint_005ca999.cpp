@@ -8,14 +8,13 @@
 // Comparison reaches the established AsciiString operator< at 0x5598C.
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
 #include <map>
+#include <list>
 class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
 bool operator<(const AsciiString &, const AsciiString &);
-// Distinct four-byte mapped object. The original application type is unknown.
-// Pair copying passes destination+4 and source+4 to its copy constructor.
-// Preserve its out-of-line copy and destruction; do not assume trivial ownership.
-struct TreeHintOpaque005CA7ED {
-    void *m_body;
-    TreeHintOpaque005CA7ED(const TreeHintOpaque005CA7ED &);
+// The 4-byte mapped field's copy at 0x54D800 is the matched STLport
+// list<AsciiString> copy constructor. Keep the address-derived tree type
+// spelling, but let its implicit copy delegate to that verified list operation.
+struct TreeHintOpaque005CA7ED : _STL::list<AsciiString> {
     ~TreeHintOpaque005CA7ED();
 };
 
