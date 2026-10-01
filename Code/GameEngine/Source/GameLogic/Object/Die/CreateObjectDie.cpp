@@ -86,7 +86,6 @@ CreateObjectDieModuleData::CreateObjectDieModuleData()
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Die/CreateObjectDieConstructor.cpp
-// ??0CreateObjectDie@@ present-unmatched
 CreateObjectDie::CreateObjectDie( Thing *thing, const ModuleData* moduleData ) : DieModule( thing, moduleData )
 {
 }

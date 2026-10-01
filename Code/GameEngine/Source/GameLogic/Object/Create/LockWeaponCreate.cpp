@@ -4,7 +4,6 @@
 
 #include "GameLogic/Module/LockWeaponCreate.h"
 
-// ??0LockWeaponCreateModuleData@@QAE@XZ present-unmatched
 LockWeaponCreateModuleData::LockWeaponCreateModuleData()
 {
 	m_slotToLock = PRIMARY_WEAPON;
