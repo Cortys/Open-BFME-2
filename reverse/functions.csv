@@ -45813,3 +45813,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z,,0x001EBCD8,62,Code/Libraries/Source/WWVegas/WWLib/Rva001EBCD8Erase.cpp,matched,erase-like 172B records via rowed __copy_ptrs callers 0x001EC63D 0x001EC859 0x001EC8C0
 ??0Rva0040C351@@QAE@ABV0@@Z,,0x0040D688,121,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,copy ctor of Rva0040C351 via base copy plus member dual-vtable callers unclaimed
 ?evaluateMusicHasCompleted@ScriptConditions@@IAE_NPAVParameter@@0@Z,,0x003E7AFC,90,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateMusicHasCompleted.cpp,matched,ZH donor track-name copy then TheAudio vslot 0x80 with BFME2 extra args 0 and 1
+?evaluateTeamStateIs@ScriptConditions@@IAE_NPAVParameter@@0@Z,,0x003E859E,66,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateTeamStateIs.cpp,matched,ZH donor team state test via pinned Team lookup 0x003A3717
