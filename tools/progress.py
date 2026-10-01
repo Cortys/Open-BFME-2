@@ -566,16 +566,86 @@ def decompiled(split):
     return sum(split[lane] for lane in DECOMPILED_LANES)
 
 
+def census_rows_at(ref):
+    """Every census row that measured LINKED, in physical (append) order."""
+    history = _text_at(ref, LINK_HISTORY)
+    return [row for row in csv.DictReader(history.splitlines()) if row.get("linked_bytes")] if history else []
+
+
 def census_at(ref):
     """The last link census that measured LINKED, as of one state, or None.
 
     LINKED is measured by tools/link_census.py on the tree it linked and stored
     in the history row (linked_bytes); it is not recomputed here, so it holds
-    still between censuses instead of dropping with every edit since.
+    still between censuses instead of dropping with every edit since. The
+    last physical row is the current one: rows are appended in order.
     """
-    history = _text_at(ref, LINK_HISTORY)
-    rows = [row for row in csv.DictReader(history.splitlines()) if row.get("linked_bytes")] if history else []
+    rows = census_rows_at(ref)
     return rows[-1] if rows else None
+
+
+# The rules a census row was measured under (link_census.py's `rules`
+# column). Rows from before the column are link_census.LEGACY_RULES.
+LEGACY_CENSUS_RULES = "majority-0"
+
+
+def census_rules(row):
+    return ((row or {}).get("rules") or "").strip() or LEGACY_CENSUS_RULES
+
+
+def census_prev_figure(row, field):
+    """The row's *_prev_rule figure for `field` and the rules it was measured
+    under, or (None, None)."""
+    value = (row or {}).get(f"{field}_prev_rule")
+    if not value:
+        return None, None
+    return int(value), ((row.get("prev_rules") or "").strip() or LEGACY_CENSUS_RULES)
+
+
+def census_change(old, new, field, over_field, rows, denominator=None):
+    """The change in one census figure from `old` to `new` (history rows),
+    compared like for like when the census rules changed in between.
+
+    Returns {"bytes", "pp"} for a same-rules change, plus "rule_changes" (a
+    list of (row, before_rules, after_rules, before_pp, after_pp)) when one or
+    more re-baseline rows lie in between: the change is then the sum of the
+    changes within each rule, the re-baseline's prev_rule figure being the
+    old rules' measurement of the same objects. None when no like-for-like
+    comparison exists (a rule change without the previous rules' figures)."""
+    def pair(row, value=None):
+        over = int(row[over_field]) if over_field else denominator
+        return (int(row[field]) if value is None else value), over
+    if census_rules(old) == census_rules(new) and not _transitions(old, new, rows):
+        (a, x), (b, y) = pair(old), pair(new)
+        return {"bytes": b - a, "pp": percent(b, y) - percent(a, x), "rule_changes": []}
+    changes = _transitions(old, new, rows)
+    if not changes:
+        return None
+    total_bytes, total_pp, current, notes = 0, 0.0, old, []
+    for row in changes:
+        prev, prev_rules = census_prev_figure(row, field)
+        if prev is None or prev_rules != census_rules(current):
+            return None
+        (a, x), (b, y) = pair(current), pair(row, prev)
+        total_bytes += b - a
+        total_pp += percent(b, y) - percent(a, x)
+        (c, z) = pair(row)
+        notes.append((row, prev_rules, census_rules(row), percent(b, y), percent(c, z)))
+        current = row
+    (a, x), (b, y) = pair(current), pair(new)
+    return {"bytes": total_bytes + b - a, "pp": total_pp + percent(b, y) - percent(a, x), "rule_changes": notes}
+
+
+def _transitions(old, new, rows):
+    """The rows after `old`, up to and including `new`, whose rules differ
+    from the row before them (re-baselines), in order."""
+    keys = [(r.get("date"), r.get("commit")) for r in rows]
+    try:
+        start = keys.index((old.get("date"), old.get("commit")))
+        end = keys.index((new.get("date"), new.get("commit")))
+    except ValueError:
+        return []
+    return [rows[i] for i in range(start + 1, end + 1) if census_rules(rows[i]) != census_rules(rows[i - 1])]
 
 
 def data_denominator():
@@ -593,7 +663,7 @@ def _line(label, value, denominator, delta, note):
     return (f"{label:<14} {value:>12,.0f} bytes ({percent(value, denominator):6.2f}%)  {delta}  <- {note}")
 
 
-def print_headline(padding, denominator, old_split, new_split, old_census, new_census):
+def print_headline(padding, denominator, old_split, new_split, old_census, new_census, census_rows=()):
     """The README card's and the daily Discord post's three numbers, computed
     the same way, then what they are made of. Every figure counts 0xCC out,
     so the lines below add up to the lines above."""
@@ -620,9 +690,22 @@ def print_headline(padding, denominator, old_split, new_split, old_census, new_c
         # A range that starts before any census has nothing to compare with;
         # showing the whole figure as a gain would credit it to that range.
         was = figure(old_census)
-        delta = (f"delta {now[0] - was[0]:+,} bytes, {percent(*now) - percent(*was):+.2f} pp" if was
-                 else f"delta n/a (no {label} figure stored at the start of the range)")
-        print(_line(label, now[0], now[1], delta, f"{note}, census {new_census['date']} at {new_census['commit']}"))
+        if not was:
+            delta = f"delta n/a (no {label} figure stored at the start of the range)"
+        else:
+            # A change of census rules is not progress: compare within rules.
+            change = census_change(old_census, new_census, field, over_field, list(census_rows) or
+                                   [old_census, new_census], denominator)
+            if change is None:
+                delta = (f"delta n/a (census rules changed: {census_rules(old_census)} -> "
+                         f"{census_rules(new_census)}, no like-for-like figure)")
+            else:
+                delta = f"delta {change['bytes']:+,} bytes, {change['pp']:+.2f} pp"
+                for row, before, after, at_before, at_after in change["rule_changes"]:
+                    delta += (f" within rules; RULES CHANGED {row['date'][:10]} ({before} -> {after}: "
+                              f"{at_before:.2f}% -> {at_after:.2f}% on the same objects, not progress)")
+        print(_line(label, now[0], now[1], delta, f"{note}, census {new_census['date']} at {new_census['commit']}"
+                    f" ({census_rules(new_census)})"))
     census_line("LINKING", "linked_authored", "game_code",
                 "that C++ in files that link cleanly, over the census tree's game code")
     print("               (the three figures on the README card and in the daily Discord post)")
@@ -743,7 +826,8 @@ def main():
     padding, denominator = real_code_denominator(text_start, text_size)
     old_notes, new_notes = notes_at(ref1), notes_at(ref2)
     print_headline(padding, denominator, real_split(old, old_notes, text_start, text_size, old_naked),
-                   real_split(new, new_notes, text_start, text_size, new_naked), census_at(ref1), census_at(ref2))
+                   real_split(new, new_notes, text_start, text_size, new_naked), census_at(ref1), census_at(ref2),
+                   census_rows_at(ref2))
     print_scorecard(ref1, label2, old_stats, new_stats)
     if args.details:
         print_details(ref1, ref2, old, new, old_naked, new_naked)

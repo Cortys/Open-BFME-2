@@ -301,7 +301,8 @@ def render(out, svg_dir=None):
     data = json.dumps({t["key"]: t for t in tabs})
     tab_buttons = "".join(f'<button data-key="{t["key"]}"{" class=on" if t["key"] == "all" else ""}>'
                           f'{html.escape(t["label"])}</button>' for t in tabs)
-    census_note = f"link census {census['date'][:10]} at {census['commit']}" if census else "no link census yet"
+    census_note = (f"link census {census['date'][:10]} at {census['commit']} ({progress.census_rules(census)} rules)"
+                   if census else "no link census yet")
     data_total = progress.data_denominator()
     page = PAGE.format(
         matched_pct=f"{_pct(byte_matched, total):.2f}", linked_pct=f"{_pct(linked, total):.2f}",
@@ -435,11 +436,44 @@ def _chart(history, census_rows):
     def linking(r):
         return 100 * int(r["linked_authored"]) / int(r["game_code"])
     points = [(px(date.fromisoformat(r["date"][:10]), linking(r)), r) for r in census_rows]
-    linked_line = " ".join(f"{x:.1f},{y:.1f}" for (x, y), _ in points)
-    dots = (f'<polyline points="{linked_line}" fill="none" stroke="{LINKED}" stroke-width="2.5" '
-            f'stroke-dasharray="0.1 6" stroke-linecap="round"/>' if len(points) > 1 else "") + "".join(
+    # A census under other rules measures something else: the line breaks at
+    # each rule change (a re-baseline row), which is marked, and joins the old
+    # rules' figure for the same objects (its *_prev_rule) to the old line.
+    segments = []
+    for index, ((x, y), r) in enumerate(points):
+        rules = progress.census_rules(r)
+        if not segments or progress.census_rules(census_rows[index - 1]) != rules:
+            prev, prev_rules = progress.census_prev_figure(r, "linked_authored")
+            tail = (x, T + (H - T - B) * (1 - 100 * prev / int(r["game_code"]) / 100)) if (
+                segments and prev is not None and prev_rules == progress.census_rules(census_rows[index - 1])) else None
+            if tail:
+                segments[-1][1].append(tail)
+            segments.append((rules, [(x, y)], r, tail))
+        else:
+            segments[-1][1].append((x, y))
+
+    def polyline(coords):
+        line = " ".join(f"{x:.1f},{y:.1f}" for x, y in coords)
+        return (f'<polyline points="{line}" fill="none" stroke="{LINKED}" stroke-width="2.5" '
+                f'stroke-dasharray="0.1 6" stroke-linecap="round"/>') if len(coords) > 1 else ""
+    marks = ""
+    for index, (rules, coords, opener, tail) in enumerate(segments):
+        if index:
+            x = coords[0][0]
+            before = segments[index - 1][0]
+            was = f", {100 * int(opener['linked_authored_prev_rule']) / int(opener['game_code']):.2f}% under {before}" \
+                if tail else ""
+            marks += (f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{T}" y2="{H - B}" class="grid" stroke-dasharray="4 4">'
+                      f'<title>{opener["date"][:10]}: census rules changed {before} -> {rules} '
+                      f'({linking(opener):.2f}% under {rules}{was}, same objects): not progress</title></line>'
+                      f'<text x="{x + 4:.1f}" y="{T + 12}" class="axis">rules changed</text>')
+            if tail:
+                marks += (f'<circle cx="{tail[0]:.1f}" cy="{tail[1]:.1f}" r="4" fill="none" stroke="{LINKED}">'
+                          f'<title>{opener["date"][:10]}: linking under {before}{was}</title></circle>')
+    dots = "".join(polyline(coords) for _, coords, _, _ in segments) + marks + "".join(
         f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{LINKED}">'
-        f'<title>{r["date"][:10]}: linking {linking(r):.2f}%</title></circle>' for (x, y), r in points)
+        f'<title>{r["date"][:10]}: linking {linking(r):.2f}% ({progress.census_rules(r)})</title></circle>'
+        for (x, y), r in points)
     tips = "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="7" class="hit"><title>{d}: byte-matched '
                    f'{100 * int(r["byte_matched"]) / int(r["total"]):.2f}%</title></circle>'
                    for d, r, (x, y) in ((d, r, px(d, 100 * int(r["byte_matched"]) / int(r["total"])))

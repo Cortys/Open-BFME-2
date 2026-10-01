@@ -21,6 +21,11 @@ is the change in that bar's percentage since the last post, measured from the
 figures the post saved (docs/discord-progress.json), so output depends
 only on the repository: no clock enters the card. progress.py prints the full
 breakdown.
+
+When the census measuring Linking changed its rules since the last post (the
+history row's `rules`), the two percentages measure different things: the
+Linking bar then shows "rules changed" and the previous figure with its rules,
+never an arrow.
 """
 import argparse
 import json
@@ -70,7 +75,8 @@ def measures(current):
 
 def measured(current):
     census = current.get("census")
-    return f"measured {census['date'][:10]}" if census else "not measured yet"
+    return (f"measured {census['date'][:10]}, {progress.census_rules(census)} rules" if census
+            else "not measured yet")
 
 
 def detail(current, key, value, denominator, what):
@@ -78,10 +84,22 @@ def detail(current, key, value, denominator, what):
     return f"{text} ({measured(current)})" if key == "linked" else text
 
 
-def delta_since(previous, key, value, denominator):
+def rules_changed(previous, current):
+    """(previous rules, current rules) when the census behind the Linking bar
+    was measured under other rules at the last post, else None."""
+    if not previous or not previous.get("census") or not current.get("census"):
+        return None
+    before, after = progress.census_rules(previous["census"]), progress.census_rules(current["census"])
+    return (before, after) if before != after else None
+
+
+def delta_since(previous, key, value, denominator, current=None):
     """The change in the bar's percentage since the last post, in points,
     measured from the figures that post saved; None when that post has no
-    such figure or the change rounds to 0.00."""
+    such figure, the change rounds to 0.00, or (Linking) the census rules
+    changed in between, which is not progress."""
+    if key == "linked" and current is not None and rules_changed(previous, current):
+        return None
     try:
         was, was_over = measures(previous)[key] if previous else (None, None)
     except KeyError:
@@ -110,8 +128,12 @@ def render(current, previous=None):
         else:
             percent = progress.percent(value, denominator)
             number, width, text = f"{percent:.2f}%", 824 * percent / 100, detail(current, key, value, denominator, what)
-            delta = delta_since(previous, key, value, denominator)
-            if delta is not None:
+            delta = delta_since(previous, key, value, denominator, current)
+            changed = rules_changed(previous, current) if key == "linked" else None
+            if changed:
+                moved = '<tspan class="muted" dx="10" font-size="13" font-weight="600">rules changed</tspan>'
+                text += rule_note(previous, changed)
+            elif delta is not None:
                 moved = (f'<tspan class="{"up" if delta > 0 else "down"}" dx="10" font-size="13" '
                          f'font-weight="600">{arrow(delta)}</tspan>')
         body.append(f'''    <text x="28" y="{y}" class="strong" font-size="15" font-weight="600">{label}{moved}</text>
@@ -141,6 +163,17 @@ def render(current, previous=None):
 '''
 
 
+def rule_note(previous, changed):
+    """`; census rules changed: 16.10% under majority-0` (the last post's figure)."""
+    before, after = changed
+    try:
+        was, was_over = measures(previous)["linked"]
+    except (KeyError, ValueError):
+        was = None
+    shown = f"{progress.percent(was, was_over):.2f}% under {before}" if was is not None else f"was {before}"
+    return f"; census rules changed to {after} ({shown}), not a change in progress"
+
+
 def blocks(value, total, block, width=WIDTH):
     """`width` square emoji: the value's share in `block`, the rest dark."""
     count = round(width * value / total)
@@ -158,11 +191,12 @@ def announcement(current, previous):
         if value is None:
             lines += [f"**{label}:** not measured yet", REST_BLOCK * WIDTH]
             continue
-        delta = delta_since(previous, key, value, denominator)
+        delta = delta_since(previous, key, value, denominator, current)
+        changed = rules_changed(previous, current) if key == "linked" else None
         lines += [f"**{label}: {progress.percent(value, denominator):.2f}%**"
-                  + (f"  {arrow(delta)}" if delta is not None else ""),
+                  + ("  (rules changed)" if changed else f"  {arrow(delta)}" if delta is not None else ""),
                   blocks(value, denominator, BLOCK[key]),
-                  detail(current, key, value, denominator, what)]
+                  detail(current, key, value, denominator, what) + (rule_note(previous, changed) if changed else "")]
     lines += ["", f"[What each bar measures, with charts: README]({README})"]
     return {"allowed_mentions": {"parse": []},
             "embeds": [{"title": f"{TITLE} {DOT} Rebuild progress", "color": 0x2EA043,
