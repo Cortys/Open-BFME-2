@@ -45025,3 +45025,5 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??1Rva0037B5DF@@QAE@XZ,,0x0037B5DF,105,Code/GameEngine/Source/Common/System/Rva0037B5DFDtor.cpp,matched,nonvirtual dtor five wide plus one narrow via releaseBuffer rows
 ?rva0037B146@Rva0037B146@@QAEXXZ,,0x0037B146,70,Code/GameEngine/Source/Common/System/Rva0037B146Cleanup.cpp,matched,commandlist range delete via global delete
 ?rva00566D7B@Rva00566D7B@@QAEXABVRva004E32F2@@@Z,,0x00566D7B,8,Code/GameEngine/Source/Common/Rva00566D7B.cpp,matched,chain lane callee push_back 0x00566BB4 add ecx 0x60 plus jmp tail same shape as rowed 0x00566AB7
+?get@Rva006DBB40ShrAndField@@QBE_NXZ,,0x006DBB40,9,Code/Libraries/Source/Apt/AptShrAndFieldBoolGetters.cpp,matched,bool flag getter; ICF alias of the rowed int getter
+?get@Rva006DBB60ShrNAndField@@QBE_NXZ,,0x006DBB60,10,Code/Libraries/Source/Apt/AptShrAndFieldBoolGetters.cpp,matched,bool flag getter; ICF alias of the rowed int getter
