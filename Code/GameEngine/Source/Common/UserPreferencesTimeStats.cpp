@@ -1,12 +1,11 @@
-// ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z
-// partial score=0.94 date=2026-09-29
-// ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z
-// partial score=0.94 date=2026-09-29
 // cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // ?rva00537A9B@UserPreferences@@QAEXVAsciiString@@M@Z @0x00537A9B 397B
 // UserPreferences record-game-time path: TimePlayed add, Longest max, Shortest min-nonzero, Average recompute via total-games.
 // Evidence: TimePlayed 0x00868E2C slot 0x28, Longest 0x00868E38 getter setter, Shortest 0x00868E48 getter setter,
 // total-games 0x0053734E Average 0x00868E5C getter setter, TheGame float 1.0 0x007BB8D8, chain same class.
+// Call sites 0x005BFA94 and 0x005BFE18. Structural inference: the average is
+// recomputed in place in the getter's result (one float slot reused for the
+// argument), as the turn-count sibling 0x005378E9 does with its own locals.
 template <typename T>
 class StringBase
 {
@@ -81,8 +80,6 @@ void UserPreferences::rva00537A9B(AsciiString arg, float gameTime)
 	int games = rva0053734E(arg);
 	float fGames = (float)(games - 1);
 	float avg = rva00535AE1(arg);
-	float num = avg * fGames + gameTime;
-	float den = fGames + 1.0f;
-	float newAvg = num / den;
-	rva00535A96(arg, newAvg);
+	avg = (fGames * avg + gameTime) / (fGames + 1.0f);
+	rva00535A96(arg, avg);
 }
