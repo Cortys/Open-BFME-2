@@ -24,18 +24,7 @@ public:
 	~AsciiString();
 	AsciiString &operator=(const AsciiString &that);
 
-	Int compare(const AsciiString &that) const
-	{
-		const Int thatLength = that.m_data ? that.m_data->length : 0;
-		const char *thatText = that.m_data ? that.m_data->text : "";
-		const Int thisLength = m_data ? m_data->length : 0;
-		const char *thisText = m_data ? m_data->text : "";
-		Int result = memcmp(thisText, thatText,
-			thisLength < thatLength ? thisLength : thatLength);
-		if (result != 0)
-			return result;
-		return thisLength - thatLength;
-	}
+	Int compare(const AsciiString &that) const;
 
 private:
 	struct Data
@@ -49,10 +38,7 @@ private:
 	Data *m_data;
 };
 
-inline bool operator==(const AsciiString &left, const AsciiString &right)
-{
-	return left.compare(right) == 0;
-}
+bool operator==(const AsciiString &left, const AsciiString &right);
 
 struct CameraMarker
 {
@@ -110,7 +96,7 @@ CameraMarker *CameraMarkerList::find(
 	CameraMarker *marker = m_markers;
 	while (marker)
 	{
-		if (marker->m_name == name)
+		if (marker->m_name.compare(name) == 0)
 			return marker;
 		marker = marker->m_next;
 	}
