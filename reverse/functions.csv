@@ -45216,3 +45216,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_ERva0035A18D@@QAEPAXI@Z,,0x0035A18D,75,Code/GameEngine/Source/Common/Rva0035A18DVectorDeletingDtor.cpp,matched,vector deleting dtor via delete anchor element 0x10 pinned scalar dtor
 ?rva0035AFE4@Rva0035AFE4@@QAE_NH@Z,,0x0035AFE4,44,Code/GameEngine/Source/Common/Rva0035AFE4Pred.cpp,matched,bool pred on mask m_1c via sibling pattern
 ?rva0035ABC0@Rva0035ABC0@@QAEXI@Z,,0x0035ABC0,32,Code/GameEngine/Source/Common/Rva0035ABC0Resize.cpp,matched,pod8 resize wrapper with zeroed fill via intrinsic memset
+?rva0031475A@GameWindow@@QAEHXZ,,0x0031475A,128,Code/GameEngine/Source/GameClient/GUI/GameWindowRva0031475A.cpp,matched,GameWindow parent 0x200 next 0x1F8 gadget 0x210 via rowed B92 A89 Remove and manager slots
