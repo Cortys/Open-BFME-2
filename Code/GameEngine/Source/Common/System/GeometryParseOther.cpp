@@ -35,11 +35,14 @@ public:
     GeometryInfo(GeometryType, bool, float, float, float);
     GeometryInfo(const GeometryInfo &);
     virtual ~GeometryInfo();
-    void calcBoundingStuff();
     static void parseGeometryOther(INI *, void *, void *, const void *);
     bool isSmall; char padding[3]; char head[0x24];
     GeometryShape *begin, *end, *capacity;
     char tail[0x24];
+private:
+	void calcBoundingStuff();
+	friend class GeometryShape;
+	friend class INI;
 };
 void GeometryInfo::parseGeometryOther(INI *ini, void *, void *store, const void *) {
     GeometryInfo geometry(GEOMETRY_SPHERE, false, 10.0f, 10.0f, 10.0f);

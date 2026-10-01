@@ -92,7 +92,13 @@ private:
 	BfmeVec60 m_shapes;
 
 public:
+private:
 	void calcBoundingStuff() throw();
+	friend class BfmeAsciiString;
+	friend class BfmeCoord3D;
+	friend class BfmeElem60;
+	friend class BfmeVec60;
+	friend class INI;
 };
 
 void GeometryInfo::parseGeometryType(INI *ini, void *, void *store, const void *)
