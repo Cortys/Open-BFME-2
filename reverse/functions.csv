@@ -46259,3 +46259,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00381D02@Rva00381D02@@QAEXPAX@Z,,0x00381D02,24,Code/GameEngine/Source/Common/Rva00381D02Memcpy.cpp,matched,unlock lane memcpy this+0xCC src 0x10 via _memcpy pin sibling 0x381CED
 ??0Rva003818F4@@QAE@XZ,,0x003818F4,12,Code/GameEngine/Source/Common/Rva003818F4Ctor.cpp,matched,leaf lane ctor forwards to Rva00330757Member at +0
 ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAFPAXH@Z,,0x0018C2E7,39,Code/Libraries/Source/WWVegas/WWLib/Rva0018C2E7Copy.cpp,matched,finish tree to short copy via increment caller 0x0018C3C9
+?Rva0018C3C9Copy@@YAPAFPAURva0018C2E7Node@@0PAF@Z,,0x0018C3C9,29,Code/Libraries/Source/WWVegas/WWLib/Rva0018C3C9Copy.cpp,matched,chain wrapper for Rva0018C2E7Copy with local tag
