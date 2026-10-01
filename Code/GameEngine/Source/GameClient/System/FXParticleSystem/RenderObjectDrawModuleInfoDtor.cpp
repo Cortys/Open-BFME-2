@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/shims/moduledata
 // ??1RenderObjectDrawModuleInfo@FXParticleSystem@@UAE@XZ @0x003A9A8B 75B
 // Dtor releasing StringBase<char> at +0x10 +0x20 +0x30 via rowed releaseBuffer
 // 0x00036410 plus Snapshot base BBB554. Evidence: EH_prolog with 2/1/0 states
@@ -8,14 +8,7 @@ template <typename T> class StringBase {
 public: ~StringBase() { releaseBuffer(); }
 private: void releaseBuffer(); void *m_data; };
 
-class Snapshot {
-public: virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = (const void *)0x00BBB554;
-}
+#include "Common/Snapshot.h"
 
 namespace FXParticleSystem
 {

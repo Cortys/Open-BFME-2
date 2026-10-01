@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /O1 /MD /Ireference/shims/moduledata
 //
 // ?xfer@Rva0036783F@@MAEXPAVXfer@@@Z, retail 0x0036788E, 72 bytes.
 //
@@ -87,11 +87,7 @@ protected:
 	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
 };
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
+#include "Common/Snapshot.h"
 
 class StateMachine;
 

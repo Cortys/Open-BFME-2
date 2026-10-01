@@ -1,16 +1,7 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /Ireference/shims/moduledata
 // ??1SlavedUpdateModuleData@@UAE@XZ @0x00255FC1, 63B.
 // Virtual dtor slot evidence: ??_G at 0x00255FA5 (rowed, slot 0 of vtable 0x00BF34C0) calls here. Destroys AsciiStrings at +0x50 then +0x4C via pinned 0x00036410 then restores base vtable 0x00BBB554 with trivial base inlined (no base call). Layout from rowed ctor 0x002552D7 (WeldingSys +0x4C WeldingFXBone +0x50 inline-ctor AsciiStrings, factory news 0x70 at 0x00255340). Donor BFME1 SlavedUpdateModuleDataDestructorThunk.
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 
