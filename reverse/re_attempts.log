@@ -4857,3 +4857,4 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva001F6201@Rva001F6201@@QAEXXZ	0x001F6201	142	blocked	auto-dtor or-state vs retail cmp-je null-check before handle dtor at end t=12 model=muse-spark (stash 0.95 kept)
 ?rva005FEE09@Rva005FEE09@@QAEHXZ	0x005FEE09	131	partial	extra push-edi mov-edi-ecx pop-edi as this arrives in edi not ecx t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x005fee09.cpp
 ?rva004E6328@Rva004E6328@@QAEXPAUICoord2D@@@Z	0x004E6328	179	partial	stack-slot rotation h-t1-zero only t=35 model=muse-10 score=0.93 stash=reverse/attempts/0x004e6328.cpp
+?rva00599870@Rva005997CD@@QAE?AW4ObjectID@@PBUVec2@@_N@Z	0x00599870	186	partial	xmm swap missing 2 movaps accumulator xmm1 not xmm0 bestDist load hoisted early t=20 model=muse-10 score=0.94 stash=reverse/attempts/0x00599870.cpp

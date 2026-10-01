@@ -45918,3 +45918,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva004D58DE@@QAE@XZ,,0x004D58DE,36,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,honest-address ctor type 0x14 vtable 0x860264
 ??0Rva004D598E@@QAE@XZ,,0x004D598E,30,Code/GameEngine/Source/GameNetwork/NetCommandMsgCtor.cpp,matched,honest-address ctor type 0x16 on the ICF-shared KeepAlive vtable
 ?_M_insert_overflow@?$vector@UBfmeContainerRecord005FDEC7@@V?$allocator@UBfmeContainerRecord005FDEC7@@@_STL@@@_STL@@IAEXPAUBfmeContainerRecord005FDEC7@@ABU3@ABU__false_type@2@I_N@Z,,0x005FE589,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_wide_record_5fdec7_insert_overflow.cpp,matched,STLport G7 overflow via rowed clear and dup copy helpers
+?rva004E624D@Rva004E624D@@QAEXXZ,,0x004E624D,38,Code/GameEngine/Source/Common/Bfme/Rva004E624DMethod.cpp,matched,guarded virtual calls via TheDisplayStringManager
