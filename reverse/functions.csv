@@ -45079,3 +45079,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002C027B@Rva002C027B@@QAEPAXXZ,,0x002C027B,23,Code/GameEngine/Source/Common/Rva002C027BVirt.cpp,matched,gap 002BFBF0-002C0292 callers 002C235A 002C248E 003149C2 slot3 fwd no callees
 ?rva002C08EF@Rva002C08EF@@QAEXXZ,,0x002C08EF,137,Code/GameEngine/Source/GameClient/GUI/Rva002C08EF.cpp,matched,neighbours 002C0505 002C0A89 callers 002C0A74 002C1271 slots 49 58 62 65 delete rowed
 ?Rva002C055FSet@@YAXPAVRva003140C8DwordField@@PBVImage@@@Z,,0x002C055F,26,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva002C055F.cpp,matched,neighbours 002C0505 002C08EF callers 002C3C79 002C3F63 callees rowed get 003140C8 setenabled 002C0433
+?Rva002C05AFSet@@YAXPAVRva003140C8DwordField@@PBVImage@@@Z,,0x002C05AF,26,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva002C05AF.cpp,matched,sibling 002C055F same shape callers 002C3CA0 002C3F8A callees rowed get 003140C8 setenabled123 002C045D
