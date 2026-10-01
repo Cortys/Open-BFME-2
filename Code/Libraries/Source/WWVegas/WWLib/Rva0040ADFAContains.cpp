@@ -40,3 +40,23 @@ bool Rva0040ADFA::rva0040ADFA(const void *arg) const
     NameKeyType key = TheNameKeyGenerator->nameToKey(*(const AsciiString *)((const char *)arg + 0x64));
     return _STL::binary_search(m_first, m_last, (int)key);
 }
+
+// ?rva0040AE2C@Rva0040AE2C@@QBE_NPBX@Z @0x0040AE2C 50B
+// Evidence: unlock lane; same shape as rva0040ADFA above in this TU but
+// +0x10/+0x14 int sorted array; same rowed nameToKey 0x9FA65 and binary_search
+// 0x40AD75 on AsciiString at arg+0x64; caller 0x40B113; LINK BONUS none.
+class Rva0040AE2C
+{
+public:
+    bool rva0040AE2C(const void *arg) const;
+private:
+    char m_pad[0x10];
+    int *m_first;
+    int *m_last;
+};
+
+bool Rva0040AE2C::rva0040AE2C(const void *arg) const
+{
+    NameKeyType key = TheNameKeyGenerator->nameToKey(*(const AsciiString *)((const char *)arg + 0x64));
+    return _STL::binary_search(m_first, m_last, (int)key);
+}
