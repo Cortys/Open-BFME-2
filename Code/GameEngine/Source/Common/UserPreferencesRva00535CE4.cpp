@@ -262,6 +262,7 @@ public:
 	void rva0053685F(AsciiString arg, int x);
 	void rva005368F0(AsciiString arg, int x);
 	void rva00536A1D(AsciiString arg, int x);
+	void rva00536AAE(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -683,5 +684,11 @@ void UserPreferences::rva005368F0(AsciiString arg, int x)
 void UserPreferences::rva00536A1D(AsciiString arg, int x)
 {
 	arg.concat("StructuresLostNonRTS");
+	v11(arg, x);
+}
+
+void UserPreferences::rva00536AAE(AsciiString arg, int x)
+{
+	arg.concat("StructuresKilledNonRTS");
 	v11(arg, x);
 }
