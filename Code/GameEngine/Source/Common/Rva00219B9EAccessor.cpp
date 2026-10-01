@@ -12,7 +12,7 @@
 // at 0x009FE344. Landing unblocks 24 functions (14 fully ready). No donor;
 // recipe follows ObjectFilter signed-idiv precedent with /O1 keeping idiv.
 // Honest-address name: owner unknown so Rva00219B9E class, void* return.
-class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static AsciiString TheEmptyString; };
+class AsciiString { public: AsciiString(const AsciiString &); AsciiString &operator=(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; public: static const AsciiString TheEmptyString; };
 template <typename T> class StringBase {
 public: StringBase(const char *s); __forceinline ~StringBase() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
 struct IntVec { int *m_start; int *m_finish; int *m_end; };
@@ -145,7 +145,7 @@ void *Rva00219B9E::rva00219CAB(unsigned int index)
     void *p = rva00219B9E(index);
     if (p)
         return &((Elem216 *)p)->m_0C;
-    return &AsciiString::TheEmptyString;
+    return (void *)&AsciiString::TheEmptyString;
 }
 // ?rva00219CC5@Rva00219B9E@@QAEPAXI@Z @0x00219CC5 26B: returns element+0x20 or empty.
 // Chain of 0x00219B9E; caller 0x0021A15D needs it. Fallback is TheEmptyString.
@@ -154,7 +154,7 @@ void *Rva00219B9E::rva00219CC5(unsigned int index)
     void *p = rva00219B9E(index);
     if (p)
         return &((Elem216 *)p)->m_20;
-    return &AsciiString::TheEmptyString;
+    return (void *)&AsciiString::TheEmptyString;
 }
 // ?rva00219BE1@Rva00219B9E@@QAEHI@Z @0x00219BE1 31B: inner int-vector count at +0x3C.
 // Chain of 0x00219B9E; caller 0x00219E74 needs it. Pointer diff gives sar 2.
@@ -264,7 +264,7 @@ void *Rva00219B9E::rva0021B22E(unsigned int o, unsigned int i)
 void *Rva00219B9E::rva0021B670(const IdxPair *p)
 {
     if (!p)
-        return &AsciiString::TheEmptyString;
+        return (void *)&AsciiString::TheEmptyString;
     return rva0021B22E(p->m_o, p->m_i);
 }
 // ?rva0021B1B4@Rva00219B9E@@QAEPAXII@Z @0x0021B1B4 122B
@@ -304,7 +304,7 @@ void *Rva00219B9E::rva0021A134(unsigned int index)
     unsigned int count = Vec32Size(&m_outer);
     if (index < count)
         return (char *)&Vec32At(&m_outer, index) + 0x10;
-    return &AsciiString::TheEmptyString;
+    return (void *)&AsciiString::TheEmptyString;
 }
 // ?rva0021A016@Rva00219B9E@@QAEHII@Z @0x0021A016 43B
 // Two-level int lookup: outer 32B vector at +0x14C selects the element, then the
@@ -377,5 +377,5 @@ void *Rva00219B9E::rva0021A15D(unsigned int o, unsigned int i)
         OuterElem32 *base = m_outer.m_start;
         return ((Rva00219B9E *)&base[o])->rva00219CC5(i);
     }
-    return &AsciiString::TheEmptyString;
+    return (void *)&AsciiString::TheEmptyString;
 }

@@ -37,7 +37,7 @@ private:
 	BfmeAsciiStringData *m_data;
 };
 
-const AsciiString AsciiString::TheEmptyString;
+// AsciiString::TheEmptyString: defined in Common/Rva00380200Getter.cpp.
 
 struct Coord3D
 {

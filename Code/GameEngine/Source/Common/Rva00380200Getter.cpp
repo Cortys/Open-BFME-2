@@ -3,7 +3,7 @@
 class AsciiString
 {
 public:
-	static AsciiString TheEmptyString;
+	static const AsciiString TheEmptyString;
 
 private:
 	void *m_data;
@@ -11,7 +11,7 @@ private:
 
 // Matched DIR32 references place this static object at VA 0x00DE0878. Its
 // four retail bytes are zero, the null StringBase buffer of an empty string.
-AsciiString AsciiString::TheEmptyString;
+const AsciiString AsciiString::TheEmptyString;
 
 class Rva00380200
 {
@@ -25,5 +25,5 @@ AsciiString *Rva00380200::rva00380200()
 {
 	if (m_ptr)
 		return m_ptr;
-	return &AsciiString::TheEmptyString;
+	return const_cast<AsciiString *>(&AsciiString::TheEmptyString);
 }

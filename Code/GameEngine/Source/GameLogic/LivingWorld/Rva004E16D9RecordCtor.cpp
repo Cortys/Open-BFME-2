@@ -25,7 +25,7 @@ public:
 	~AsciiString();
 	AsciiString &operator=(const AsciiString &other);
 	void clear() { releaseBuffer(); }
-	static AsciiString TheEmptyString;
+	static const AsciiString TheEmptyString;
 };
 struct Rva004E16D9Pair {
 	float x;

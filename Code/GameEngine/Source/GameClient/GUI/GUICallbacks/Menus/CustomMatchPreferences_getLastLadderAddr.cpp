@@ -34,7 +34,7 @@ template <typename T> struct BfmeStringData
 #include "ascii_string.h"
 
 
-const AsciiString AsciiString::TheEmptyString;
+// AsciiString::TheEmptyString: defined in Common/Rva00380200Getter.cpp.
 
 struct CustomAsciiStringShim
 {

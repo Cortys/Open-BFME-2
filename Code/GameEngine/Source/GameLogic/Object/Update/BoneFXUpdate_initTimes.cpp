@@ -28,7 +28,7 @@ private:
 	struct AsciiStringHeader *m_data;
 };
 
-const AsciiString AsciiString::TheEmptyString;
+// AsciiString::TheEmptyString: defined in Common/Rva00380200Getter.cpp.
 
 class GameClientRandomVariable
 {
