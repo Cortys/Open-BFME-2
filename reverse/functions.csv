@@ -45396,3 +45396,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva003649B1@Path@@QAEXPBVPathNode@@@Z,,0x003649B1,134,Code/GameEngine/Source/GameLogic/AI/PathRva003649B1.cpp,matched,Path append from node donor
 ??0Rva00263895Member@@QAE@XZ,,0x00263895,45,Code/GameEngine/Source/Common/RTS/Rva00263895Init.cpp,matched,member ctor vtable plus Rva00263653 at plus4 plus float zeros
 ?rva001F5D0E@Rva001F5D0E@@QAEXHH@Z,,0x001F5D0E,42,Code/GameEngine/Source/Common/Rva001F5D0E.cpp,matched,null-checked slot3 with two ints plus rowed call
+?rva001F53F0@Rva001F53F0@@QAEHXZ,,0x001F53F0,14,Code/GameEngine/Source/Common/Rva001F53F0.cpp,matched,null-checked ptr plus20 else zero je shape
