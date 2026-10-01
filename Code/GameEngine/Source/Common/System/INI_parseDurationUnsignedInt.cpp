@@ -22,9 +22,9 @@ public:
 	static void parseDurationUnsignedInt(INI *ini, void *instance, void *store, const void *userData);
 };
 
-// Retail value at 0x00DBA4EC; read by address (DIR32) like the landed
-// parseDurationReal TU's scale global.
-float g_parseDurationMsecScale = 0.005f;
+// Retail value at 0x00DBA4EC owned by INI_parseDurationUnsignedShort.cpp;
+// declared here so uses keep the same name without a second definition.
+extern float g_parseDurationMsecScale;
 
 extern "C" __declspec(dllimport) double __cdecl ceil(double value);
 
