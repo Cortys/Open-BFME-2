@@ -1,6 +1,4 @@
 // ?Rva0046EFDBXfer@@YAPAVXfer@@PAV1@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z
-// partial score=0.9 date=2026-09-30
-// ?Rva0046EFDBXfer@@YAPAVXfer@@PAV1@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z
 // partial score=0.90 date=2026-09-30
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
@@ -74,7 +72,6 @@ extern void __declspec(noreturn) __stdcall _CxxThrowException(void *object, void
 
 typedef _STL::vector<const ModuleData *> ModuleDataVector;
 
-// ?Rva0046EFDBXfer@@YAPAVXfer@@PAV1@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z present-unmatched
 Xfer *Rva0046EFDBXfer(Xfer *xfer, ModuleDataVector *vec)
 {
 	XferVersion version;
@@ -99,9 +96,9 @@ Xfer *Rva0046EFDBXfer(Xfer *xfer, ModuleDataVector *vec)
 		vec->reserve(count);
 		while (count != 0) {
 			--count;
-			const ModuleData *value = 0;
-			xfer->xferModuleData(value);
-			vec->push_back(value);
+			const ModuleData *tmp;
+			vec->push_back(tmp);
+			xfer->xferModuleData(vec->back());
 		}
 	}
 	return xfer;

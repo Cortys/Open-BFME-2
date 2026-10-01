@@ -46057,3 +46057,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva00434CF4@@QAE@PAI0@Z,,0x00434CF4,134,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434CF4.cpp,matched,ctor calls rowed 0x00434995 sibling of 0x00434C67
 ?Rva004349EFGet@@YAXPAI0@Z,,0x004349EF,46,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_004349EF.cpp,matched,rdtsc-seeded two-out table fetch sibling of 0x00434995
 ??0Rva00434E07@@QAE@PAI0@Z,,0x00434E07,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434E07.cpp,matched,stack-object ctor calls rowed 0x004349EF sibling of 0x00434D7A
+?Rva0046EFDBXfer@@YAPAVXfer@@PAV1@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x0046EFDB,202,Code/GameEngine/Source/Common/Rva0046EFDBXfer.cpp,matched,Xfer helper vector ModuleData via slots 0x28 0x2C 0x78 0x08 0x70 caller 0x00475632
