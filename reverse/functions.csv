@@ -45348,3 +45348,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0049D67F@Rva0049D67F@@QAE_NPBDPA_N1@Z,,0x0049D67F,308,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D67F.cpp,matched,Disability bitstring worker via Veterancy sibling transfer
 ?rva0049D3BC@Rva0049D3BC@@QAEXXZ,,0x0049D3BC,362,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D3BC.cpp,matched,TheGameLogic frame plus entry timeouts and bit tables
 ?rva0029F8B8@Rva0029F8B8@@QAE?AVRva0043FC20@@XZ,,0x0029F8B8,130,Code/GameEngine/Source/Common/Rva0029F8B8.cpp,matched,GlobalLanguage override plus copy ctor pair
+?rva0029FCB4@Rva0029FCB4@@QAE?AV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@XZ,,0x0029FCB4,32,Code/Libraries/Source/WWVegas/WWLib/Rva0029FCB4.cpp,matched,final override plus Science vector copy
