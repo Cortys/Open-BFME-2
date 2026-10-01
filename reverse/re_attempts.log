@@ -4711,3 +4711,5 @@ FUN_006b4410	0x002B4410	29	blocked	5-push wrapper calls 3-arg rowed 0x002B442D n
 ?Rva0004DE72Blend@@YAXPAHHE@Z	0x0004DE72	253	blocked	alpha-composite free func: 6 variants best 246B vs 253B; out ptr cached vs reload; divisor edi vs esi; stack layout differs despite decl reorder; t=25 model=muse-05
 ?rva006E44F0@Rva006E44F0@@QAEHXZ	0x006E44F0	276	blocked	chain AptIntervalTimer array 0x20 stride cleanParams virtual needs layout t=10 model=muse-16
 ?rva00240167@Rva00240167@@QAEPAXVAsciiString@@@Z	0x00240167	89	partial	extra EH and plus lea scheduling t=20 model=muse-16 score=0.9 stash=reverse/attempts/0x00240167.cpp
+?Rva0010720ESet@@YGXH@Z	0x0010720E	187	partial	esi-vs-ebx register wall plus caps byte test bl-vs-imm plus end cleanup add20-pops-vs-add28 t=20 model=muse-02 score=0.92 stash=reverse/attempts/0x0010720e.cpp
+?rva00220B04@Rva00220B04@@QAEHH@Z	0x00220B04	124	blocked	124B dual-vptr plus dual-E16-vector plus Drawable resize plus div needs MI layout and ICF base t=10 model=muse-02
