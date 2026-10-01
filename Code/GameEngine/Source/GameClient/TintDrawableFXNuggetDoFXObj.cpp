@@ -4,14 +4,22 @@
 // Evidence: chain lane; calls 0x00271779 which this session landed; vtable slot 2 of 0x007DD8E0 TintDrawableFXNugget; BFME1 donor TintDrawableFXNugget_doFXObj_Thunk.cpp doFXObj with getDrawable plus status 0x20 plus applyTint RGB times freq amp; retail status at +0x118; caller none.
 typedef float Real;
 typedef unsigned int UnsignedInt;
-struct RGBColor {
+struct RGBColor00271779 {
 	Real red;
 	Real green;
 	Real blue;
 };
+typedef RGBColor00271779 RGBColor;
+
+class Rva00271779
+{
+public:
+	void rva00271779(RGBColor00271779 color, int preColorTime,
+		int postColorTime, int sustainedColorTime, Real frequency, Real amplitude);
+};
+
 class Drawable {
 public:
-	void applyTint(RGBColor color, UnsignedInt preColorTime, UnsignedInt postColorTime, UnsignedInt sustainedColorTime, Real frequency, Real amplitude);
 	unsigned char m_pad[0x118];
 	UnsignedInt m_status;
 };
@@ -38,6 +46,8 @@ void TintDrawableFXNugget::doFXObj(const Object *primary, const Object *) const
 	if (primary && primary->getDrawable()) {
 		Drawable *tintDrawable = primary->getDrawable();
 		tintDrawable->m_status |= 0x20;
-		primary->getDrawable()->applyTint(m_color, m_preColorTime, m_postColorTime, m_sustainedColorTime, m_frequency, m_amplitude);
+		((Rva00271779 *)primary->getDrawable())->rva00271779(m_color,
+			(int)m_preColorTime, (int)m_postColorTime,
+			(int)m_sustainedColorTime, m_frequency, m_amplitude);
 	}
 }
