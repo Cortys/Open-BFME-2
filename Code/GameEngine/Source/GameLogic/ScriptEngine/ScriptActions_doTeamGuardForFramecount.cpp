@@ -5,6 +5,8 @@
 // Evidence: rowed iterate 0x00263864, rowed advance 0x00263526, rowed guard
 // 0x0036F46A, rowed setSequentialTimer Team overload 0x00204002, pin getTeamNamed
 // 0x003584E9, factor 0x00DBA4E4, TheScriptEngine 0x00DFE16C; unblocks none.
+extern int g_Va00DBA4E4;
+
 #include "ascii_string.h"
 typedef bool Bool;
 struct Coord3D { float x, y, z; };
@@ -89,7 +91,7 @@ void ScriptActions::doTeamGuardForFramecount(const AsciiString &teamName, int fr
 		iter.advance();
 	}
 	if (seconds)
-		TheScriptEngine->setSequentialTimer(team, framecount * *(int *)0x00DBA4E4);
+		TheScriptEngine->setSequentialTimer(team, framecount * g_Va00DBA4E4);
 	else
 		TheScriptEngine->setSequentialTimer(team, framecount);
 }

@@ -4,6 +4,8 @@
 // The fields below are deliberately laid out from the constructor and the
 // retail body; no network policy is changed by exposing this query.
 
+extern int g_Va00DBA4E4;
+
 extern "C" __declspec(dllimport) int __stdcall QueryPerformanceCounter(__int64 *counter);
 
 struct GameLogicFrame
@@ -80,7 +82,7 @@ private:
 };
 
 #define TheGameLogic (*(volatile GameLogicFrame **)0x00DFE78C)
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 #define OneAndHalf (*(const float *)0x00BC8980)
 
 int NetworkInterface::getFramePacingStatus(void)

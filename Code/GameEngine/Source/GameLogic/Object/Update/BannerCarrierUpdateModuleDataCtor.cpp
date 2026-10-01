@@ -36,6 +36,8 @@
 // init would instead call the 18B vector-alloc thunk). Body order otherwise
 // follows retail.
 
+extern int g_Va00DBA4E4;
+
 #include <vector>
 
 struct BfmeMorphCondition;
@@ -51,7 +53,7 @@ template<> _Vector_base<BfmeMorphCondition *, allocator<BfmeMorphCondition *> >:
 template<> _Vector_base<BfmeExpLevelDraw *, allocator<BfmeExpLevelDraw *> >::_Vector_base(const allocator<BfmeExpLevelDraw *> &);
 }
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class BannerCarrierUpdateModuleData
 {

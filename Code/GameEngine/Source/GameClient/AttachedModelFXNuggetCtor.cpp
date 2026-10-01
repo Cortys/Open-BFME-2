@@ -8,7 +8,9 @@
 // Base 0x001DFEAA is a shared FXNugget-family base ctor (16 ctor-start
 // callers with this undisplaced); pinned opaquely, do not name.
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+extern int g_Va00DBA4E4;
+
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class Rva001DFEAABase
 {

@@ -4,6 +4,8 @@
 // 0x00DBD0F0 to 1. Head in ECX cleared via AND plus virtual slot-0 call
 // with 0 then operator delete; null head deletes null. Callers 0x00283589
 // 0x002E3E13 0x00328DCE. Owning class unproven so honest Rva names.
+extern int g_Va00DBD0F0;
+
 struct Rva002E373CNode
 {
 	virtual void *func(int x);
@@ -15,7 +17,7 @@ struct Rva002E373CHolder
 	Rva002E373CNode *m_head;
 };
 #define Rva00DBD0F4Holder373C (*(Rva002E373CHolder **)0x00DBD0F4)
-#define Rva00DBD0F0Counter (*(int *)0x00DBD0F0)
+#define Rva00DBD0F0Counter g_Va00DBD0F0
 
 void Rva002E373CClear(void)
 {

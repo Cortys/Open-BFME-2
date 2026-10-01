@@ -8,7 +8,9 @@
 // FramesPerSecond at 0x00DBA4E8 (same as GameEngineFrameTiming) and keeps the
 // maximum via pointer-select ternary. Owner unproven so honest-address class
 // Rva002D352C. Flags /O1 /Oy- keep the ebp frame; /O1 alone goes frameless.
-#define FramesPerSecond (*(const int *)0x00DBA4E8)
+extern int g_009BA4E8;
+
+#define FramesPerSecond g_009BA4E8
 class Rva002D352C
 {
 public:

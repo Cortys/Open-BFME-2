@@ -19,6 +19,8 @@
 // (fold-equivalent and byte-correct, BattlePlanUpdate precedent) and the
 // row carries the identity.
 
+extern int g_Va00DBA4E4;
+
 #include <vector>
 
 struct BfmeE16 { float x, y, z, w; };
@@ -43,7 +45,7 @@ private:
 	int m_x;
 };
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class UpdateModuleData
 {

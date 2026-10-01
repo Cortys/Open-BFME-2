@@ -14,6 +14,8 @@
 // retail VA 0x00812248 is GameLogic\AI\AIStates.cpp (proved by the sibling
 // landing's string-ref gate).
 
+extern int g_Va00DBA4E4;
+
 int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 
 class GameLogic
@@ -24,7 +26,7 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define Int00DBA4E4 (*(int *)0x00DBA4E4)
+#define Int00DBA4E4 g_Va00DBA4E4
 
 class Rva00342228Member;
 

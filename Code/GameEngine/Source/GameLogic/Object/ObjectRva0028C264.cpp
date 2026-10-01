@@ -9,6 +9,8 @@
 // ObjectRva0028B85B; ret 8 bool via al; name stays address-derived (Object
 // owner proven by callers and offsets, identity unproven).
 
+extern int g_Va00DBA4E4;
+
 class Rva0028C264Inner
 {
 public:
@@ -73,7 +75,7 @@ struct GameLogic
 };
 
 #define TheGameLogic (*(GameLogic **)0x00DFE78C)
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 bool Object::rva0028C264(int *out, int n)
 {

@@ -15,6 +15,8 @@
 // failed verification); the class is therefore AI-state shaped but keeps its
 // honest Rva00342157 name since identity rests on vtable 0x008118B0 only.
 
+extern int g_Va00DBA4E4;
+
 int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 
 class GameLogic
@@ -25,7 +27,7 @@ public:
 };
 extern GameLogic *TheGameLogic;
 
-#define Int00DBA4E4 (*(int *)0x00DBA4E4)
+#define Int00DBA4E4 g_Va00DBA4E4
 
 class Rva00342157Member;
 

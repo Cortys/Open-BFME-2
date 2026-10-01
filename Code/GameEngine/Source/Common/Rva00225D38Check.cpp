@@ -4,8 +4,11 @@
 // member m_clientFramePeriod at +0x34. Evidence: same +0x34 and globals as
 // GameEngineFrameTiming rows; ten callers use result as condition.
 
-#define FramesPerSecond (*(const int *)0x00DBA4E8)
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+extern int g_009BA4E8;
+extern int g_Va00DBA4E4;
+
+#define FramesPerSecond g_009BA4E8
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class GameEngine
 {

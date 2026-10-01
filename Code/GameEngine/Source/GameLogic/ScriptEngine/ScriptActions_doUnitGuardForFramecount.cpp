@@ -6,6 +6,8 @@
 // BFME2 deltas: float Coord3D with SSE movss order x y z (no barrier) plus the 0xC0 block via opaque 0x351BD0 ctor.
 // Factor at 0x00DBA4E4 is 5 from the data image; TheScriptEngine at 0x00DFE16C.
 // Callers at 0x003CE24E. Prev doNamedFollowWaypointsExact / next doNamedFaceNamed. Honest GuardMode Int layout.
+extern int g_Va00DBA4E4;
+
 #include "ascii_string.h"
 
 struct Coord3D { float x, y, z; };
@@ -113,7 +115,7 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 	position.z = object->m_position.z;
 	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
 	if (seconds)
-		TheScriptEngine->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
+		TheScriptEngine->setSequentialTimer(object, framecount * g_Va00DBA4E4);
 	else
 		TheScriptEngine->setSequentialTimer(object, framecount);
 }

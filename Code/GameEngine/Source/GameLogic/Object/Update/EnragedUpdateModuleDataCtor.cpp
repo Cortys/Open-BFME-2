@@ -22,6 +22,8 @@
 // first (kept together so the scheduler uses one zeroed register), then
 // the delay 5, then the 300.0f scan distance.
 
+extern int g_Va00DBA4E4;
+
 class Rva003623E5Member
 {
 public:
@@ -31,7 +33,7 @@ public:
 	unsigned char m_data[4];
 };
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class UpdateModuleData
 {

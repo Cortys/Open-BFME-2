@@ -16,6 +16,8 @@
 // first, so only the vtable is init-listed; the scan stores live in the
 // body with their loads hoisted above the temp setup.
 
+extern int g_Va00DBA4E4;
+
 class BfmeFixedStorage0004543D
 {
 public:
@@ -36,7 +38,7 @@ private:
 	int m_x;
 };
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 class UpdateModuleData
 {

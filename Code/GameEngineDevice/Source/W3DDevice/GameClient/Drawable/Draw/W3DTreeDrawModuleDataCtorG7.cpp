@@ -10,7 +10,9 @@
 // +2C/+30/+34/+38 before the +3C/+3D bools and the FPS*10 pair). Factory
 // 0x64C0B news 0x64 with this ctor as sole caller. Donor: BFME1 W3DTreeDraw.
 
-#define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
+extern int g_Va00DBA4E4;
+
+#define LogicFramesPerSecond g_Va00DBA4E4
 
 #include "ascii_string.h"
 
