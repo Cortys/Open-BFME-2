@@ -99,7 +99,7 @@ Debug *TheBfmeAwakenDebug;
 
 const char *bfmeTabEYC[2] = { "Low", "High" };
 
-Bool _bfme_debugReportingEnabled(void);
+Bool bfmeRva000387C0(void);
 
 // ?getAudioLODIndex@GameLODManager@@QAEHABVAsciiString@@@Z
 Int GameLODManager::getAudioLODIndex(const AsciiString &name)
@@ -110,7 +110,7 @@ Int GameLODManager::getAudioLODIndex(const AsciiString &name)
 			return i;
 	}
 
-	if (_bfme_debugReportingEnabled())
+	if (bfmeRva000387C0())
 	{
 		Debug::SkipNext(true);
 		TheBfmeAwakenDebug->slot60();
