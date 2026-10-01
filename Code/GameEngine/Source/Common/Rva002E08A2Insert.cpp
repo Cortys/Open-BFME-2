@@ -99,3 +99,13 @@ void Rva002E0E9DAdjustHeap(void **base, int hole, int len, void *value, void *ex
 	}
 	((Rva002E08C7SiftUp5)Rva002E08C7SiftUp)(base, hole, top, value, extra);
 }
+
+// ?Rva002E1824Reinsert@@YAXPAPAX00PAX1@Z @0x002E1824 41B.
+// Pop-front plus adjust: *out = *base, then AdjustHeap(base, 0, end-base,
+// value, extra). Evidence: 5-push cdecl call to rowed 0x002E0E9D with hole 0;
+// callers 0x002E1889 0x002E232F; prev shares /O1.
+void Rva002E1824Reinsert(void **base, void **end, void **out, void *value, void *extra)
+{
+	*out = *base;
+	Rva002E0E9DAdjustHeap(base, 0, (int)(end - base), value, extra);
+}
