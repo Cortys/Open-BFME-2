@@ -237,6 +237,12 @@ AsciiStringCharPlusText::operator AsciiString()
 	return tmp;
 }
 
+// ?length@AsciiStringPlusString@@QBEHXZ @0x2198C8 36B: both header lengths summed.
+int AsciiStringPlusString::length() const
+{
+	return m_string->getLength() + m_second.m_string->getLength();
+}
+
 // ?write@AsciiStringPlusString@@QAEHPAD@Z @0xBBD1C
 int AsciiStringPlusString::write(char *dst)
 {

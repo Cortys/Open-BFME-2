@@ -45,6 +45,7 @@ public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &src) : StringBase<unsigned short>(src) {}
 	const unsigned short *str() const { return m_data != 0 ? m_data->data : L""; }
+	int getLength() const { return m_data ? m_data->length : 0; }
 };
 
 extern "C" void *memcpy(void *dst, const void *src, unsigned int n);
@@ -95,20 +96,9 @@ private:
 };
 
 // @0x002198C8 (36B): pair length sum
-// ?totalLength@BFME2WideConcatPair@@ present-unmatched
 int BFME2WideConcatPair::totalLength() const
 {
-	int first;
-	{
-		StringBase<unsigned short>::Header *data = m_first.m_ptr->m_data;
-		first = data != 0 ? data->length : 0;
-	}
-	int second;
-	{
-		StringBase<unsigned short>::Header *data = m_second.m_ptr->m_data;
-		second = data != 0 ? data->length : 0;
-	}
-	return first + second;
+	return m_first.m_ptr->getLength() + m_second.m_ptr->getLength();
 }
 
 // @0x0021B8A0 (37B): pair payload copy
