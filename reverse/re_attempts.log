@@ -4720,3 +4720,12 @@ FUN_00339184	0x00339184	176	blocked	INI sound parser with NoSound plus Invalid S
 ?destroyParticleSystemByID@ParticleSystemManager@@QAEXW4ParticleSystemID@@@Z	0x001F5B79	69	blocked	second null check guards only explicit dtor; explicit plus implicit gives 77B not 69B so implicit must be suppressed t=15 model=muse-06
 ?rva001F9363@Rva001F9363@@QAE_HX	0x001F9363	64	blocked	STL hashtable-shape 64B calling vector-uint plus rowed Armor buckets 0x148DDF; sole @5-buckets hashtable ctor already rowed at 0x2896AA and dup names forbidden so likely hash_map 4-arg ctor with inlined hashtable body but spelling unproven t=20 model=muse-06
 ?rva00600959@Rva006007A5@@QAEXXZ	0x00600959	56	blocked	EH_prolog needs this-save without trailing dtor; try1 no EH 23B vs 56B; try2 local guard gives EH but extra dtor 61B vs 56B 0mem 0reg t=15 model=muse-13
+FUN_0068f982	0x0028F982	335	blocked	335B EH AsciiString format needs Object-Player layouts t=10 model=muse-08
+?rva002943B2@Object@@QAE_NPBVPlayer@@@Z	0x002943B2	191	partial	190vs191B 0 reg 2 structural setne-vs-branch plus true-block placement t=15 model=muse-08 score=0.96 stash=reverse/attempts/0x002943b2.cpp
+?rva004BE056@@YA_NPAVObject@@@Z	0x004BE056	113	blocked	104vs113B 5 reg 7 structural redundant-null plus shr-vs-testah plus sbb-al-vs-eax t=20 model=muse-08
+FUN_0076fc23	0x0036FC23	321	blocked	321B AIGroup loop with 10 callees needs AIUpdate-Spawn layouts t=5 model=muse-08
+?rva002907A1@Object@@QAE_NXZ	0x002907A1	107	partial	105vs107B 1 reg 3 mem 7 structural ebx-vs-eax plus shr-vs-byte-test t=20 model=muse-08 score=0.9 stash=reverse/attempts/0x002907a1.cpp
+?rva004B4DBF@Rva004B4DBF@@QAEXPAM0@Z	0x004B4DBF	151	partial	151vs151B 39vs39 insns const-load before lea-vs-after-ucomiss plus xmm2-vs-xmm1 t=20 model=muse-08 score=0.95 stash=reverse/attempts/0x004b4dbf.cpp
+FUN_0047a41e	0x0007A41E	122	blocked	STL map-vector-sort with LocomotorSet erase needs Rb-tree plus vector plus sort layouts t=10 model=muse-08
+FUN_00739184	0x00339184	176	blocked	INI sound-ref EH with TheAudio slot75 plus OpaqueRef temp Release plus AsciiString frame needs layouts t=15 model=muse-08
+FUN_00942459	0x00542459	107	blocked	dead strncpy into stack temp plus dead stack-arg load plus this-clear needs layout t=10 model=muse-08
