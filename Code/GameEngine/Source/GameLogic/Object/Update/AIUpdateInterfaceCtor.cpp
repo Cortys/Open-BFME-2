@@ -15,11 +15,6 @@ protected:
 	float m_f7C;
 };
 
-// ??1Rva004930A0@@ present-unmatched
-Rva004930A0::~Rva004930A0()
-{
-}
-
 class CombineHordeSpecialPowerModuleData : public Rva004930A0
 {
 public:
