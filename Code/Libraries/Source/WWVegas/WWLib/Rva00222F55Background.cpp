@@ -7,6 +7,7 @@ class Rva00222A8BTarget
 public:
     void invoke(void *owner, const char *name, int flag, const char *value, void *a4, void *a5, void *a6, void *a7);
     void rva00222F55(bool flag);
+    void rva002233A6(int mode);
 private:
     char m_pad00[0x31C];
     int m_31C;
@@ -49,4 +50,26 @@ void Rva00222A8BTarget::rva00222F55(bool flag)
         break;
     }
     m_31C = 0;
+}
+// ?rva002233A6@Rva00222A8BTarget@@QAEXH@Z @0x002233A6 74B
+// Show background dispatcher: switch on mode with same +0x31C/+0x320/+0x324 layout as Hide 0x00222F55; case 2 ShowInGameBackground case 1 ShowFrontEndBackground via 0x00222A8B pin case 0 deferred via rva00222F55(false).
+// Evidence: strings ShowInGameBackground 0x007E6DBC ShowFrontEndBackground 0x007E6DA4; callees row 0x00222F55 plus pin 0x00222A8B; offsets 0x31C/0x320/0x324 match Rva00222A8BTarget; caller 0x002233E8 path plus 16 callers.
+void Rva00222A8BTarget::rva002233A6(int mode)
+{
+    m_31C = mode;
+    switch (mode) {
+    case 1:
+        m_320 = 0;
+        invoke(m_324, "ShowFrontEndBackground", 0, 0, 0, 0, 0, 0);
+        break;
+    case 2:
+        m_320 = 0;
+        invoke(m_324, "ShowInGameBackground", 0, 0, 0, 0, 0, 0);
+        break;
+    case 0:
+        rva00222F55(false);
+        break;
+    default:
+        break;
+    }
 }
