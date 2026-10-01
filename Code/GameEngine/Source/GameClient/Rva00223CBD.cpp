@@ -1,0 +1,24 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
+// stlport
+// ?rva00223CBD@Rva00223CBD@@QAEXPBVModuleData@@@Z @0x00223CBD 30B
+// Vector push_back at +0x2FC via rowed 0x004DFCB0 then flag at +0x308 set to 1.
+// Evidence: lea eax esp+8 plus lea ecx esi+0x2FC matches const-ref push_back; ret 4 one pointer arg; neighbours share /O1 /MD; unblocks 0x0040FB9C 0x002B5195 0x00224296 0x005157EE.
+#include <vector>
+
+class ModuleData;
+
+class Rva00223CBD
+{
+public:
+	void rva00223CBD(const ModuleData *p);
+private:
+	char m_pad[0x2FC];
+	_STL::vector<const ModuleData *> m_vec;
+	bool m_flag;
+};
+
+void Rva00223CBD::rva00223CBD(const ModuleData *p)
+{
+	m_vec.push_back(p);
+	m_flag = true;
+}
