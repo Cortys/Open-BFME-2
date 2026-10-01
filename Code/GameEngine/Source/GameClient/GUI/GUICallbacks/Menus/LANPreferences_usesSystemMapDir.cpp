@@ -54,13 +54,19 @@ class LANPreferences : public AsciiPreferenceMap
 {
 public:
 	virtual ~LANPreferences();
-	AsciiString Rva0043BB6ABuildKey(const char *src);
 	Bool usesSystemMapDir();
+};
+
+class SkirmishPreferences
+{
+public:
+	AsciiString buildProfileKey(const char *src);
 };
 
 Bool LANPreferences::usesSystemMapDir(void)
 {
-	LANPreferences::const_iterator it = find(Rva0043BB6ABuildKey("UseSystemMapDir"));
+	LANPreferences::const_iterator it = find(
+		((SkirmishPreferences *)this)->buildProfileKey("UseSystemMapDir"));
 	if (it == end())
 		return true;
 
