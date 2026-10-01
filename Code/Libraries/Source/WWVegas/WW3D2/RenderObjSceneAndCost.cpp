@@ -89,7 +89,7 @@ int RenderObjClass::Calculate_Cost_Value_Arrays(float screen_area, float *values
 // BFME's Set_Visible at 0x0013B710 (vtable +0x18C) keeps only its second
 // argument, the scene token at +0x88 that Is_Visible (+0x188, 0x0013B6D0)
 // compares against the scene's; the on/off argument is ignored.
-void RenderObjClass::Set_Visible(int onoff, int unk)
+inline void RenderObjClass::Set_Visible(int onoff, int unk)
 {
 	_bfme_unk_88 = unk;
 }
@@ -131,3 +131,11 @@ float RenderObjClass::_bfme_get_factor_product(void) const
 		pop ecx
 	}
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitRenderObjSceneAndCost@@YAXPAVRenderObjClass@@@Z present-unmatched
+void bfmeEmitRenderObjSceneAndCost(RenderObjClass *p)
+{
+	p->RenderObjClass::Set_Visible(0, 0);
+}
+#pragma inline_depth()
