@@ -17,7 +17,7 @@ public:
 	virtual ~Vector3Randomizer();
 };
 
-__declspec(noinline) Vector3Randomizer::~Vector3Randomizer() {}
+inline __declspec(noinline) Vector3Randomizer::~Vector3Randomizer() {}
 
 Vector3Randomizer *g_randomizerAnchor;
 
@@ -26,3 +26,15 @@ void deleteVector3Randomizer(Vector3Randomizer *p)
 {
 	delete p;
 }
+
+// ??1Vector3Randomizer is a header inline elsewhere: another unit emits a
+// select-any copy of it, so a strong definition here was a duplicate symbol
+// in the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitVector3RandomizerDeletingDestructors@@YAXPAVVector3Randomizer@@@Z present-unmatched
+void bfmeEmitVector3RandomizerDeletingDestructors(Vector3Randomizer *p)
+{
+	p->Vector3Randomizer::~Vector3Randomizer();
+}
+#pragma inline_depth()
