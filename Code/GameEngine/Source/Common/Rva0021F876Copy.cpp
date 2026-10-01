@@ -11,13 +11,16 @@
 
 #include <vector>
 
+class AsciiString;
+
 template <typename T> class StringBase
 {
 public:
-	StringBase(const StringBase &other);
 	~StringBase();
 private:
+	StringBase(const StringBase &other);
 	T *m_data;
+	friend class AsciiString;
 };
 class AsciiString
 {
