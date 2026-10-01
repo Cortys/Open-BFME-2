@@ -12,8 +12,9 @@
 // raw node pointers let it fold the two tests.
 // Retail 0x004AD710 (166 bytes): update(), slot 0 of the vtable 0x00C55108 the
 // matched GloriousChargeUpdate dtor installs at +0x10 (UpdateModuleInterface),
-// compiled with that subobject this. Starts the charge when the object is of
-// KindOf 0xD6 (virtual slot 15 of the primary vtable, the matched override
+// compiled with that subobject this. Starts the charge when bit 0xD6 of the
+// Object +0x10C word array is set (matched 0x0006F039, ledgered as
+// Object::isKindOf; called on the Object) (virtual slot 15 of the primary vtable, the matched override
 // 0x004AD554, sets condition bit 6*32+15), keeps it running until the frame at
 // +0x8C (virtual slot 17 each frame) and then clears the bit and Drawable bit
 // 0x10. Returns the module data +0xD0 value while running, else

@@ -7,9 +7,12 @@
 // target 0x00589F09 is slot 0 of the same interface in the docks that do not
 // override update (RepairDockUpdate 0x00C51D68, MonsterDockUpdate), pinned
 // as DockUpdate::update (?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ).
-// BFME2 extension after the base call: unless the Object is of KindOf 0x14C,
-// when its controlling player has the science at module data +0x14, set
-// condition bit 10*32+12.
+// BFME2 extension after the base call: unless bit 0x14C (= 10*32+12) is
+// already set, when the controlling player has the science at module data
+// +0x14, set condition bit 10*32+12. The test is the matched 0x0006F039, which
+// the ledger names Object::isKindOf; called on the Object it tests the same
+// +0x10C word array (the name is presumably an ICF fold with a template
+// kind-of test, whose mask also sits at +0x10C).
 //
 // Model-condition bits: the word array of the Object starts at +0x10C (the
 // variable-index set/test in 0x00293A05 addresses [obj + word*4 + 0x10C]); a
