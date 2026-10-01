@@ -46600,3 +46600,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000F0972@Rva000F0912@@QAEXXZ,,0x000F0972,111,Code/GameEngine/Source/Common/Rva000F0972Release.cpp,matched,DX8 lock release two globals plus manager then clear list
 ?ReAcquireResources@W3DVolumetricShadowManager@@QAE_NXZ,,0x000F09E1,148,Code/GameEngine/Source/Common/W3DVolumetricShadowManagerReAcquire.cpp,matched,ZH ReAcquireResources IB VB manager under DX8 lock
 ?rva002EE9B7@Rva002EE9B7@@QAEXXZ,,0x002EE9B7,41,Code/Libraries/Source/WWVegas/WWLib/Rva002EE9B7Reset.cpp,matched,pool reset via 0x002EADB4 self-links shape as Rva002EB416
+?rva00405AA7@Rva00405AA7@@QAEXXZ,,0x00405AA7,34,Code/GameEngine/Source/Common/Rva00405AA7Method.cpp,matched,caller 0x003BBB26 passes g_bfmeWorldRV plus 0x2A4 match
