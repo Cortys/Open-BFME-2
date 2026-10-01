@@ -34,7 +34,7 @@ struct Rva00B6CF1
 namespace _STL
 {
 template <>
-void _Destroy<Rva00B6CF1 *>(Rva00B6CF1 *first, Rva00B6CF1 *last)
+inline void _Destroy<Rva00B6CF1 *>(Rva00B6CF1 *first, Rva00B6CF1 *last)
 {
 	for (; first != last; ++first)
 		reinterpret_cast<BfmeStringRecord000B94D2 *>(first)->~BfmeStringRecord000B94D2();
@@ -43,7 +43,7 @@ void _Destroy<Rva00B6CF1 *>(Rva00B6CF1 *first, Rva00B6CF1 *last)
 
 template _STL::vector<Rva00B6CF1>::~vector();
 
-Rva00B6CF1 &Rva00B6CF1::operator=(const Rva00B6CF1 &o)
+inline Rva00B6CF1 &Rva00B6CF1::operator=(const Rva00B6CF1 &o)
 {
 	m_s0 = o.m_s0;
 	m_s1 = o.m_s1;
@@ -53,3 +53,16 @@ Rva00B6CF1 &Rva00B6CF1::operator=(const Rva00B6CF1 &o)
 // ??$__copy@PAURva00B6CF1@@PAU1@H@_STL@@YAPAURva00B6CF1@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z @0x000B6894 47B
 // Forward __copy stride 8 via rowed ??4Rva00B6CF1 at 0xB433E; wrapper at 0xB67BC pushes tag plus distance.
 template Rva00B6CF1 *_STL::__copy<Rva00B6CF1 *, Rva00B6CF1 *, int>(Rva00B6CF1 *, Rva00B6CF1 *, Rva00B6CF1 *, const _STL::random_access_iterator_tag &, int *);
+
+// _Destroy and Rva00B6CF1::operator= are header inlines: other units emit
+// select-any copies of them, so strong definitions here were duplicates in the
+// linked build. This anchor only makes this unit emit its copies for the ledger
+// rows; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitVectorRva00B6CF1Destroy@@YAXPAURva00B6CF1@@ABU1@@Z present-unmatched
+void bfmeEmitVectorRva00B6CF1Destroy(Rva00B6CF1 *p, const Rva00B6CF1 &o)
+{
+	_STL::_Destroy(p, p + 1);
+	*p = o;
+}
+#pragma inline_depth()
