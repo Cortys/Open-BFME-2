@@ -19,6 +19,15 @@
 // string_base.h beside this file is Open-BFME-1's WWLib string_base.h as of
 // 77db49c3d, frozen here: the submodule copy keeps changing (aa3e918c4 moved
 // five members inline on 2026-09-30) and would change BFME2 codegen with it.
+//
+// game.dat holds no call to the out-of-line copies of the (char), (text, len),
+// (text, start, len) and (AsciiString, start, len) constructors or of
+// operator+=(AsciiString / text) (0x00006572, 0x0000655C, 0x0000659E,
+// 0x00006584, 0x00006D12, 0x000065E8): retail expands them in place, so they
+// are __forceinline here. operator=(char) (1 call) and operator+=(char) (11
+// calls) are plain inlines MSVC sometimes kept out of line. ascii_string.cpp
+// emits one select-any copy of each for the ledger rows.
+
 #include <string.h>
 #include "string_base.h"
 
@@ -29,7 +38,7 @@ class AsciiString
 {
 public:
 	AsciiString() : m_text(0) {}
-	AsciiString(char c);
+	__forceinline AsciiString(char c) { ((StringBase<char> *)this)->StringBase<char>::StringBase(c); }
 	AsciiString(const AsciiString &that)
 	{
 		((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that);
@@ -38,9 +47,18 @@ public:
 	{
 		((StringBase<char> *)this)->StringBase<char>::StringBase(s);
 	}
-	AsciiString(const char *s, int len);
-	AsciiString(const char *s, int start, int len);
-	AsciiString(const AsciiString &that, int start, int len);
+	__forceinline AsciiString(const char *s, int len)
+	{
+		((StringBase<char> *)this)->StringBase<char>::StringBase(s, len);
+	}
+	__forceinline AsciiString(const char *s, int start, int len)
+	{
+		((StringBase<char> *)this)->StringBase<char>::StringBase(s, start, len);
+	}
+	__forceinline AsciiString(const AsciiString &that, int start, int len)
+	{
+		((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that, start, len);
+	}
 	AsciiString(const UnicodeString &that);
 	~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
 
@@ -49,7 +67,12 @@ public:
 		((StringBase<char> *)this)->set(*(const StringBase<char> *)&that);
 		return *this;
 	}
-	AsciiString &operator=(char c);
+	AsciiString &operator=(char c)
+	{
+		char text = c;
+		((StringBase<char> *)this)->set(&text, 1);
+		return *this;
+	}
 	// Retail's out-of-line copy (0x000065B8) calls StringBase<char>::set(const char *)
 	// (0x000055F5), which does the strlen.
 	AsciiString &operator=(const char *s)
@@ -58,9 +81,22 @@ public:
 		return *this;
 	}
 	AsciiString &operator=(const UnicodeString &that);
-	AsciiString &operator+=(const AsciiString &that);
-	AsciiString &operator+=(char c);
-	AsciiString &operator+=(const char *s);
+	__forceinline AsciiString &operator+=(const AsciiString &that)
+	{
+		((StringBase<char> *)this)->concat(*(const StringBase<char> *)&that);
+		return *this;
+	}
+	AsciiString &operator+=(char c)
+	{
+		char text = c;
+		((StringBase<char> *)this)->concat(&text, 1);
+		return *this;
+	}
+	__forceinline AsciiString &operator+=(const char *s)
+	{
+		((StringBase<char> *)this)->concat(s);
+		return *this;
+	}
 	AsciiString &operator+=(const UnicodeString &that);
 	AsciiString &operator+=(const PooledString &that);
 

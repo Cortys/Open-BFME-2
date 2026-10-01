@@ -21,57 +21,11 @@ AsciiString &AsciiString::operator+=(const PooledString &that)
     return *this;
 }
 
-AsciiString::AsciiString(char character)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(character);
-}
-
-AsciiString::AsciiString(const char *text, int length)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(text, length);
-}
-
-AsciiString::AsciiString(const char *text, int start, int length)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(text, start, length);
-}
-
-AsciiString::AsciiString(const AsciiString &that, int start, int length)
-{
-    ((StringBase<char> *)this)->StringBase<char>::StringBase(
-        *(const StringBase<char> *)&that, start, length);
-}
-
-AsciiString &AsciiString::operator=(char character)
-{
-    char text = character;
-    ((StringBase<char> *)this)->set(&text, 1);
-    return *this;
-}
-
-AsciiString &AsciiString::operator+=(const AsciiString &that)
-{
-    ((StringBase<char> *)this)->concat(*(const StringBase<char> *)&that);
-    return *this;
-}
-
-AsciiString &AsciiString::operator+=(char character)
-{
-    char text = character;
-    ((StringBase<char> *)this)->concat(&text, 1);
-    return *this;
-}
-
-AsciiString &AsciiString::operator+=(const char *text)
-{
-    ((StringBase<char> *)this)->concat(text);
-    return *this;
-}
-
-// The default, copy and C-string constructors, the destructor and both
-// assignments are inline in ascii_string.h, and retail still keeps an
-// out-of-line copy of each (0x00326BE6, 0x001D8F56, 0x0000654A, 0x0048BA39,
-// 0x00001733, 0x000065B8): the COMDATs of calls MSVC did not inline. With
+// Every member ascii_string.h defines in its class is a header inline in
+// retail, which keeps one out-of-line copy of each (0x00326BE6, 0x001D8F56,
+// 0x0000654A, 0x0048BA39, 0x00001733, 0x000065B8, 0x00006572, 0x0000655C,
+// 0x0000659E, 0x00006584, 0x000065CA, 0x00006D12, 0x000065FA, 0x000065E8):
+// the COMDATs of calls MSVC did not inline, kept alive by the exports. With
 // inlining off, these calls emit the same COMDATs here, where their rows live,
 // as selectany copies rather than strong definitions that collide with every
 // other TU's inline copy in the linked build.
@@ -82,7 +36,15 @@ void bfmeEmitAsciiStringInlines(AsciiString *out, const AsciiString &that, const
     AsciiString empty;
     AsciiString copy(that);
     AsciiString fromText(text);
+    AsciiString fromChar(*text);
+    AsciiString prefix(text, 1);
+    AsciiString middle(text, 0, 1);
+    AsciiString part(that, 0, 1);
     *out = that;
     *out = text;
+    *out = *text;
+    *out += that;
+    *out += *text;
+    *out += text;
 }
 #pragma inline_depth()
