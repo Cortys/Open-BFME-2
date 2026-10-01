@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ?rva0050BFFD@Rva0050BFFD@@QAEXVAsciiString@@@Z @0x0050BFFD (49B).
 // AsciiString by-value setter with EH (leaf lane, called by the unclaimed
@@ -13,33 +13,8 @@
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	void releaseBuffer();
-	struct Header
-	{
-		int m_ref;
-		unsigned short m_len;
-		unsigned short m_cap;
-		T m_data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &that);
-	~AsciiString() { m_data.releaseBuffer(); }
-	AsciiString &operator=(const AsciiString &that);
-
-private:
-	StringBase<char> m_data;
-};
 
 class Rva0050BFFD
 {

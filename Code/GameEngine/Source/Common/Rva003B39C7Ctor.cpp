@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD
 // ??0Rva003B39C7@@QAE@XZ @0x003B39C7 113B. Default ctor: int 1 at +0x00,
 // AsciiString from "UNUSED/(placeholder)/placeholder" at +0x04, null
 // AsciiStrings at +0x08/+0x0C (retail's unwind map destroys narrow strings
@@ -7,24 +7,7 @@
 // 0x00326BE6 and dtor 0x0048BA39 (count 12, size 4), then zeros at +0x48,
 // +0x7C and twelve dwords at +0x4C. The banked 0.90 attempt read the ??_L
 // arguments as four 12-byte elements. Callers include 0x00204615.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const T *text);
-	~StringBase();
-	T *m_data;
-};
-class AsciiString
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *text) : m_data(text) {}
-	~AsciiString();
-private:
-	StringBase<char> m_data;
-};
+#include "ascii_string.h"
 class Rva003B39C7
 {
 public:

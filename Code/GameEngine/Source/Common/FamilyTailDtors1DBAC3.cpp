@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // Twelve derived destructors sharing one shape: clear the field at +0xC,
 // restore the class vtable, and tail-call the base destructor at 0x1DBAC3.
 // Owners are unidentified, so each keeps an address name; the base is
@@ -190,44 +190,8 @@ struct ICoord2D
 	int y;
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-private:
-	StringBase(const T *s);
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-
-public:
-	void set(const T *s);
-	void set(const StringBase<T> &that);
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString();
-	AsciiString &operator=(const char *s)
-	{
-		m_data.set(s);
-		return *this;
-	}
-
-private:
-	StringBase<char> m_data;
-};
 
 class Image;
 

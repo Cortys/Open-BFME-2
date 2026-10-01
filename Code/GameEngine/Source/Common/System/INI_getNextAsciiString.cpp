@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /GX /Oi-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /GX /Oi-
 //
 // ?getNextAsciiString@INI@@QAE?AVAsciiString@@XZ,
 // retail 0x0002EA4F, 232 bytes. Dedicated TU.
@@ -22,29 +22,8 @@ extern "C" unsigned int strlen(const char *s);
 extern "C" char *_mbscpy(char *dst, const char *src);
 extern "C" char *strcat(char *dst, const char *src);
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class INI;
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	void set(const T *text);
-
-private:
-	StringBase(const StringBase<T> &that);
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	__forceinline ~AsciiString() { releaseBuffer(); }
-
-protected:
-	void releaseBuffer();
-};
 
 class INI
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // Fix over the banked 0.95 attempt, from the retail unwind map: state 2
 // destroys the member at +0x14 through the rowed pool-aware member dtor
@@ -10,29 +10,7 @@
 // Prev/next STLport; caller 0x00414A92 in 0x00414A76.
 #include <vector>
 
-template<class T> class StringBase {
-    void *m_data;
-    void releaseBuffer();
-public:
-    StringBase();
-    StringBase &operator=(const StringBase &);
-protected:
-    __forceinline ~StringBase() { releaseBuffer(); }
-private:
-	StringBase(const StringBase &);
-	friend class AsciiString;
-	friend class BfmePod44;
-	friend class EmptyBase;
-	friend class Rva00360D26Member;
-	friend class Rva004147CF;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString() {}
-    __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &);
-};
+#include "ascii_string.h"
 
 struct BfmePod44 { int a[11]; };
 

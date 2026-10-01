@@ -1,14 +1,10 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva001FD404@Rva001FD404@@QAEPAU1@ABU1@@Z @0x001FD404 39B
 // 0x10-byte assign helper: AsciiString at +0x00 via rowed operator= at 0x000366F0
 // plus three dwords at +0x04/+0x08/+0x0C, returns this. Called from the big
 // FX copy at 0x001FE924 for the subobject at +0x154 (neighbours there use plain
 // AsciiString assign, this slot needs the extra words).
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &that);
-};
+#include "ascii_string.h"
 
 struct Rva001FD404
 {

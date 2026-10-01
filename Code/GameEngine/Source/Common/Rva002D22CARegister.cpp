@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 //
 // ?rva002D23ED@Rva002D22CA@@QAEXPAXH@Z
 // RVA 0x002D23ED size 106. Table-register helper of Rva002D22CA: converts each
@@ -14,34 +14,8 @@ enum NameKeyType
 	NAMEKEY_INVALID = 0
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-	StringBase(const T *str);
-	void releaseBuffer();
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const char *str) : m_data(str) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-
-private:
-	StringBase<char> m_data;
-};
 
 class NameKeyGenerator
 {

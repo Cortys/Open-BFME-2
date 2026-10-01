@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva005D3B9A@Rva005D3B9A@@QAEXXZ @0x005D3B9A 109B
 // Evidence: chain from rowed erase thunk 0x00223A94; AsciiString::format row 0x00038150;
 // releaseBuffer row 0x00036410; default string VA 0x007BAC1C; table owner VA 0x009FE4CC;
@@ -7,38 +7,8 @@ template <typename T> class StringBase;
 
 class AsciiString;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-public:
-	StringBase() { m_data = 0; }
-	~StringBase() { releaseBuffer(); }
-
-private:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *format, ...);
-private:
-	StringBase<char> m_data;
-};
 
 struct Rva005D2FD0Inner
 {

@@ -1,51 +1,10 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // Version lifetime recovered from BFME2 retail and Open-BFME-1 version.cpp.
 // WinMain deletes TheVersion (VA 0xDFE770) through this destructor.
 // Constructor 0x238852 initializes seven strings; initializer 0x23870E
 // identifies their fields by ID, MACHINE, USER, GUID, TIME, DATE and CONFIG.
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
+#include "ascii_string.h"
 
-public:
-	void set(const char *text);
-
-private:
-    StringBase() : m_data(0) {}
-    StringBase(const StringBase<T> &other);
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : m_data(other.m_data) {}
-    void __cdecl format(const char *fmt, ...);
-    const char *str() const { return m_data.m_data ? m_data.m_data->data : ""; }
-	~AsciiString()
-	{
-		m_data.releaseBuffer();
-	}
-	AsciiString &operator=(const char *text)
-	{
-		m_data.set(text);
-		return *this;
-	}
-
-private:
-	StringBase<char> m_data;
-};
 
 // Opaque version-block parser behind initializeBuildMetadata. Retail
 // constructs one from the 512-byte block at 0xA25000, reads the seven

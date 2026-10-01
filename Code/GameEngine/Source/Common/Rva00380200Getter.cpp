@@ -1,13 +1,6 @@
-// cl: /GX-
+// cl: /Ireference/shims/bfme2_ascii /GX-
 // ?rva00380200@Rva00380200@@QAEPAVAsciiString@@XZ @ 0x00380200 (13B): getter returning +4 or AsciiString::TheEmptyString. Callers 0x00380230 0x00380265 push result. Twin of EmptyString fallback pattern.
-class AsciiString
-{
-public:
-	static const AsciiString TheEmptyString;
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 // Matched DIR32 references place this static object at VA 0x00DE0878. Its
 // four retail bytes are zero, the null StringBase buffer of an empty string.

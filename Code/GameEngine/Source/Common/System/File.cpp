@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /arch:SSE /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /arch:SSE /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // Trimmed from Open-BFME-1
 // (Code/GameEngine/Source/Common/System/File.cpp): only the placed
 // ?lock@File, ?close@File, ?open@File, ??1File, ?size@File, ?position@File,
@@ -34,24 +34,8 @@ void *operator new[](unsigned int bytes);
 
 static const unsigned long FILE_INFINITE = 0xFFFFFFFF;
 
-template <typename T>
-class StringBase
-{
-public:
-	void set(const T *str);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	void set(const char *str) { m_base.set(str); }
-	void clear();
-	__forceinline ~AsciiString() { clear(); }
-private:
-	StringBase<char> m_base;
-};
 
 class File
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD
 // ?parseCrateCreationEntry@CrateTemplate@@SAXPAVINI@@PAX1PBX@Z, retail
 // 0x0035CD23, 188 bytes. Serves the CrateObject entry of the table at
 // 0x8162A0. Zero Hour CrateSystem.cpp proves the name and shape: read two
@@ -12,31 +12,8 @@
 // the entry name slot, inline PBD delegates to the rowed StringBase
 // ctor at 0x0037BA0, teardown/assign ride the pinned 0x36410/0x366F0).
 
-template <typename T> class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
+#include "ascii_string.h"
 
-private:
-	void *m_data;
-private:
-	StringBase(const T *str);
-	friend class AsciiString;
-	friend class CrateTemplate;
-	friend class INI;
-	friend class INIException;
-	friend class ParseCrateThrowInfoAnchor;
-	friend class crateCreationEntry;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	AsciiString(const char *str) : StringBase<char>(str) {}
-	AsciiString &operator=(const AsciiString &other);
-};
 
 struct crateCreationEntry
 {

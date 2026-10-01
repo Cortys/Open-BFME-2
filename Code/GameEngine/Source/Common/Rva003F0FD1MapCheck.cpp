@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 //
 // ?rva003F0FD1@Rva003F0FD1@@QAEXXZ @0x003F0FD1 (115B):
 // __thiscall void check over AsciiString at +0x18; formats
@@ -8,34 +8,7 @@
 // Evidence: unlock lane; caller 0x003EEDD6 passes element as this;
 // format string at 0x007DF034 and FileSystem row are annotated.
 class AsciiString;
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-public:
-    StringBase() : m_data(0) {}
-    void removeLastChar();
-private:
-    StringBase(const StringBase<T> &other);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    struct Header
-    {
-        int refCount;
-        unsigned short length;
-        unsigned short capacity;
-        T text[1];
-    };
-    Header *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-    void __cdecl format(const char *fmt, ...);
-    const char *str() const { return m_data ? m_data->text : ""; }
-};
+#include "ascii_string.h"
 class FileSystem
 {
 public:

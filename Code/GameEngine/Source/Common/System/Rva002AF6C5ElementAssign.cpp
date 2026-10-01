@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??4Rva002AF6C5Element@@QAEAAU0@ABU0@@Z, retail 0x002AF505, 57 bytes.
@@ -9,11 +9,7 @@
 // (Rva002AF6C5CopyLoop.cpp) names this pin; neighbours FamilyDeletingDtors.
 #include <vector>
 
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 
 struct Rva002AF6C5Element
 {

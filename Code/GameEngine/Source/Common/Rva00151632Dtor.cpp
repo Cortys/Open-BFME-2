@@ -1,4 +1,4 @@
-// cl: /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??1Rva00151632@@UAE@XZ, retail 0x00151632, 90 bytes. Virtual dtor twin of
 // Rva0017FB94 (89B) and Rva0014CD63 (82B): stores vtable 0x007D3A6C, deletes
@@ -14,11 +14,7 @@ public:
 	virtual void *get(int x);
 };
 
-class AsciiString
-{
-public:
-	~AsciiString();
-};
+#include "ascii_string.h"
 
 class Rva0061ED80
 {

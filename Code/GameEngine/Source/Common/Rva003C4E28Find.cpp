@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /GX /arch:SSE
 // Built from the banked attempt reverse/attempts/0x003c4e28.cpp; fix: the
 // 1000.0f scale is a compiler literal (retail constant at RVA 0x007BE358), not
 // an extern global, which is what keeps retail's operand order.
@@ -7,16 +7,7 @@
 // ret 0x10 four args, StringBase<char>::compare row 0x69D6, virtual head at
 // +0x84 from dword 0x009FEC50, virtual place at +0xC8 on 0x009FEA3C with
 // float scale at 0x007BE358. Layout honest-address only.
-template <typename T> class StringBase
-{
-public:
-	int compare(const StringBase &other) const;
-private:
-	char *m_data;
-};
-class AsciiString : public StringBase<char>
-{
-};
+#include "ascii_string.h"
 struct Rva003C4E28Entry
 {
 	char m_pad00[8];

@@ -1,17 +1,11 @@
-// cl: /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /D_STLP_NO_EXCEPTIONS /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ??4Rva0031804D@@QAEAAV0@ABV0@@Z @0x0031804D (81B): copy-assign copying
 // AsciiStrings at +0x4/+0x8 via pinned 0x000366F0, byte +0xC, 4B-POD vector
 // at +0x10 via int pin at 0x0021C21B, byte +0x1C, int +0x20, NoCase pair
 // vector at +0x24 via rowed 0x00317EBB. Same offsets as Rva00317F6F ctor
 // 0x00317F6F; caller at 0x003181C1 unblocks 0x0031816C.
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 struct NoCaseTreeValue4
 {
 	char m_body[4];

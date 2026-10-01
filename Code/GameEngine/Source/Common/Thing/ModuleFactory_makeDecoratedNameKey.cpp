@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // ModuleFactory::makeDecoratedNameKey, retail 0x00255C5E, 74 bytes.
 // Dedicated TU. Prefixes the AsciiString text with '0'+type then nameToKey.
@@ -16,20 +16,7 @@ enum ModuleType
 	MODULETYPE_FIRST = 0
 };
 
-class AsciiString
-{
-	struct Header
-	{
-		int refCount;
-		unsigned short length;
-		unsigned short capacity;
-		char text[1];
-	};
-	Header *m_data;
-
-public:
-	const char *str() const { return m_data ? m_data->text : ""; }
-};
+#include "ascii_string.h"
 
 class NameKeyGenerator
 {

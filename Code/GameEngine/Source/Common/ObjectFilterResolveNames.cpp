@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva003611EFResolveNames@ObjectFilter@@SAXPAV1@@Z retail 0x003611EF 585 bytes.
@@ -22,35 +22,8 @@ struct StringData
 	T text[1];
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	StringBase(const T *s);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	int getLength() const
-	{
-		return m_data ? m_data->length : 0;
-	}
-	const T *str() const
-	{
-		return m_data ? &m_data->text[0] : (const T *)"";
-	}
-	bool startsWith(const T *s) const;
-
-protected:
-	StringData<T> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString(const char *s) : StringBase<char>(s) {}
-	AsciiString(const AsciiString &other);
-	~AsciiString() { releaseBuffer(); }
-};
 
 class ModuleData
 {

@@ -1,25 +1,10 @@
-// cl: /G7 /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /G7 /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ?rva0021EA74@Rva0021EA74@@QAEHABUBfmeStringRecord00219A68@@@Z @0x0021EA74 95B: find-or-add returning index for BfmeStringRecord00219A68 vector at +0x168; find compares first dword only via rowed BfmePod20 find 0x2198AD; push_back via rowed 0x21E6D3; caller parseCreateAHeroBling 0x21ED9C passes global 0xDFE344 plus stack record.
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
 #include <algorithm>
-template <typename T> class StringBase {
-    friend class AsciiString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-public:
-    void set(const StringBase &);
-private:
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 struct BfmeStringRecord00219A68 {
     unsigned int word0; AsciiString text0, text1; unsigned int word1, word2;
     BfmeStringRecord00219A68(const BfmeStringRecord00219A68 &o);

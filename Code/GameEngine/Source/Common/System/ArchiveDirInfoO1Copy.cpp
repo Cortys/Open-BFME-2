@@ -1,30 +1,12 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??0Rva00382574@@QAE@ABV0@@Z, retail 0x00382574, 175 bytes.
 // Copy ctor copying four dwords at +0..+0x0c, seven narrow strings at
 // +0x10/+0x14/+0x18/+0x1c/+0x20/+0x24/+0x28 via the pinned StringBase copy,
 // then the byte at +0x2c. Identity from caller 0x00383082 and the seven
 // 0x365F0 calls plus ret 4 single arg.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-
-	int *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 struct Rva00382574
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /GX /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // LivingWorldRegionConnection destructor + deleting dtor.
@@ -31,14 +31,7 @@ inline Snapshot::~Snapshot()
 	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
-class AsciiString
-{
-public:
-	~AsciiString();
-
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 extern "C" void free(void *block);
 

@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /DWIN32 /D_WINDOWS /MD /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS
 // stlport
 //
 // ?rva0033B9D1@Rva0033B9D1@@QAEXXZ @ 0x0033B9D1 117B.
@@ -7,11 +7,7 @@
 // cond >= 1 at +0xc resolve name at +0x10 through TheLocomotorStore
 // (TheLocomotorStore); missing templates erase the slot. Unlocks 0x002CF1C9.
 // Evidence: callees 0x001E7010 0x00024250 0x001FF51F rows caller 0x002CF1D1 prev/next flags.
-class AsciiString
-{
-public:
-    void *m_data;
-};
+#include "ascii_string.h"
 
 class LocomotorTemplate;
 

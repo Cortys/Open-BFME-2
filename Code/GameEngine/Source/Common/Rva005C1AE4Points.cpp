@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHs
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHs
 // ?rva005C1AE4@Rva005C1A36@@QAEHH@Z @0x005C1AE4 73B
 // Slot 2 of Rva005C1A36's vtable 0x008743DC: the Points value for a faction
 // index. Builds a by-value AsciiString from the faction table 0x009BE9B0,
@@ -10,38 +10,8 @@
 // accessor gives retail's order. Retail also keeps that accessor out of line
 // at 0x005C1A85 (8B, `mov ecx,[ecx+0x2c]; mov eax,[ecx]; jmp [eax+8]`, no
 // references).
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-public:
-	void concat(const char *s);
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	StringBase(const char *s);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned len;
-		unsigned cap;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	AsciiString() {}
-	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString() { m_data.releaseBuffer(); }
-	void concat(const char *s) { m_data.concat(s); }
-private:
-	StringBase<char> m_data;
-};
 
 class UserPreferences
 {

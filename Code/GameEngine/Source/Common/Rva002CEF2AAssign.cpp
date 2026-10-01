@@ -1,15 +1,11 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ??4Rva002CEF2A@@QAEAAU0@ABU0@@Z, RVA 0x002CEF2A, 33B.
 // Copy-assignment copying an AsciiString member at +0 via pinned
 // ??4AsciiString@@QAEAAV0@ABV0@@Z then dwords at +4 and +8, returning this
 // with ret 4. Callers at 0x002D1121 and 0x002D112D inside 0x002D1101 prove
 // the thiscall shape; owning class is otherwise unproven, so the honest
 // address name stands.
-class AsciiString
-{
-public:
-	AsciiString &operator=(const AsciiString &other);
-};
+#include "ascii_string.h"
 
 struct Rva002CEF2A
 {

@@ -1,29 +1,11 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??0Rva00382BF0@@QAE@ABU0@@Z, retail 0x00382BF0, 61 bytes.
 // Copy ctor with AsciiString at +0 via pinned StringBase<D> copy then
 // Open2Rec4F1120 at +4 via its rowed copy. Identity from unlock (makes
 // 0x0038353A ready) and caller 0x00383556.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-
-	int *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
 
 class Open2Rec4F1120
 {
