@@ -1,8 +1,4 @@
-// ?rva0041A9E8@Rva0041A9E8@@QAEXABUBfmeNarrowRecord0041A617@@@Z
-// partial score=0.92 date=2026-09-29
-// ?rva0041A9E8@Rva0041A9E8@@QAEXABUBfmeNarrowRecord0041A617@@@Z
-// partial score=0.92 date=2026-09-29
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva0041A9E8@Rva0041A9E8@@QAEXABUBfmeNarrowRecord0041A617@@@Z @0x0041A9E8,
@@ -12,6 +8,11 @@
 // (node+1 first last cur with +8) and frees temp buffer via rowed _free
 // 0x00030830. Evidence: pin deque Pod16 aux, caller push_back 0x0041ABB9,
 // same shape as rowed 28B wrapper 0x0041A96D with 0x70/+4.
+// Retail's unwind map destroys the temporary copy (state 0) and disarms it
+// right after the construct; the temporary's own string teardown frees the
+// buffer. The disarm store survives only under /EHs (the extern "C" free is
+// otherwise treated as non-throwing); the banked attempt also freed the
+// buffer a second time by hand.
 #include <memory>
 #include <string>
 
@@ -39,7 +40,6 @@ struct Rva0041A9E8 : _STL::deque<void *, _STL::allocator<void *> > {
     void rva0041A9E8(const BfmeNarrowRecord0041A617 &x);
 };
 
-// ?rva0041A9E8@Rva0041A9E8@@QAEXABUBfmeNarrowRecord0041A617@@@Z present-unmatched
 void Rva0041A9E8::rva0041A9E8(const BfmeNarrowRecord0041A617 &x)
 {
 	BfmeNarrowRecord0041A617 tmp(x);
@@ -51,6 +51,4 @@ void Rva0041A9E8::rva0041A9E8(const BfmeNarrowRecord0041A617 &x)
 	_M_first14 = *node;
 	_M_last18 = _M_first14 + 8;
 	_M_cur10 = _M_first14;
-	if (*(char * *)&tmp)
-		free(*(char * *)&tmp);
 }
