@@ -46597,3 +46597,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva00180023@@QAE@ABVHierarchyPrototypeRef@@@Z,,0x00180023,49,Code/Libraries/Source/WWVegas/WW3D2/Rva00180023Ctor.cpp,matched,HLod owner copy ctor via rowed assign 0x0017FF45 twin of HTree ctor
 ?rva0028E5CA@Object@@QAEXPAVAIGroup@@@Z,,0x0028E5CA,22,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028E5CA.cpp,matched,Object group setter via leaveGroup plus store at plus0x1A8 caller AIGroup add
 ??4?$vector@URva0007BB16Record@@V?$allocator@URva0007BB16Record@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x001522CF,206,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva0007bb16_assign.cpp,matched,vector assign via rowed helpers same shape as B950F assign
+?rva000F0972@Rva000F0912@@QAEXXZ,,0x000F0972,111,Code/GameEngine/Source/Common/Rva000F0972Release.cpp,matched,DX8 lock release two globals plus manager then clear list
