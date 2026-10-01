@@ -19,6 +19,7 @@ class LadderPref
 public:
     LadderPref();
     __declspec(noinline) LadderPref(const LadderPref &source);
+    ~LadderPref();
 
     UnicodeString name;
     AsciiString address;
