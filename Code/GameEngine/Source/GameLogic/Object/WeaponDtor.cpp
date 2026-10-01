@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /Ireference/shims/bfmealloc
+// cl: /O1 /DNDEBUG /MD /GX /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /D_STLP_USE_MALLOC /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 // ??1Weapon@@MAE@XZ @0x002CC39E 97B
 // Donor: reference/open-bfme-1/Code/GameEngine/Source/GameLogic/Object/WeaponDestructorThunk.cpp
@@ -8,6 +8,7 @@
 //   TheGameLogic findObjectByID/destroyObject on +0x5C; vector free at +0x40;
 //   deleting dtor 0x002CCE37 slot 0 calls this body.
 #include <vector>
+#include "Common/Snapshot.h"
 
 struct BfmeE16 { float x, y, z, w; };
 
@@ -30,22 +31,6 @@ public:
 };
 
 extern GameLogic *TheGameLogic;
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
 
 class Weapon : public Snapshot
 {

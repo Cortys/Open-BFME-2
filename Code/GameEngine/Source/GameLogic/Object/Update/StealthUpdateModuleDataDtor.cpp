@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /Oy- /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/moduledata /O1 /arch:SSE /GX /Oy- /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // ??1StealthUpdateModuleData@@UAE@XZ, retail 0x003759F5, 119 bytes.
@@ -11,22 +11,7 @@
 // 0x004CEE6E sets -1 plus 0). No entry vtable store, so novtable.
 // CivilianSpawn/LargeGroupBonus precedent.
 #include <vector>
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 

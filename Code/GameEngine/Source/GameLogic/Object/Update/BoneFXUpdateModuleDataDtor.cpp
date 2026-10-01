@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/moduledata /O1 /GX /DNDEBUG /MD
 //
 // ??1BoneFXUpdateModuleData@@UAE@XZ, retail 0x00487877, 111 bytes.
 //
@@ -14,6 +14,7 @@
 // EH prologue with states 2/1/0 exactly as retail.
 
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 class GameClientRandomVariable
 {
@@ -70,22 +71,6 @@ struct BoneParticleSystemInfo
 	unsigned char m_pad[3];
 	const ParticleSystemTemplate *particleSysTemplate;
 };
-
-class Xfer;
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
 
 enum { BONE_FX_MAX_BONES = 8 };
 enum { BODYDAMAGETYPE_COUNT = 4 };
