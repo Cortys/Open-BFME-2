@@ -232,3 +232,16 @@ void Rva00072FE6::rva00072F7C(Rva00072F7CNode *node)
         node = left;
     } while (node);
 }
+
+// Complete 41B boundary at 0x00072FE6. Removes the root at header+4,
+// restores left/right links to the sentinel, and clears root and count.
+void Rva00072FE6::rva00072FE6()
+{
+    if (count04) {
+        rva00072F7C(header00->parent04);
+        header00->left08 = header00;
+        header00->parent04 = 0;
+        header00->right0C = header00;
+        count04 = 0;
+    }
+}
