@@ -6839,3 +6839,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?rva001E42F2@Object@@QAEXPBH@Z,0x001E42F2,pinned for ObjectConditionAndPassengerWeaponSet
 ?rva001E431E@Object@@QAEXPBH@Z,0x001E431E,pinned for ObjectConditionAndPassengerWeaponSet
 ?rva0028CFF5@Object@@QAEXPBH_N@Z,0x0028CFF5,pinned for ObjectConditionAndPassengerWeaponSet
+??_7Rva00200D38@@6B@,0x00BE2B78,"row ??0Rva00200D38 at 0x00200D38 stores this vftable at [this]; retail slots 0-2 are __purecall at VA 0x0043B810 (matched RVA 0x0003B810)"

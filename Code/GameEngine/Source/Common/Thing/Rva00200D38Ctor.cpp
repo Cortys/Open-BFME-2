@@ -2,11 +2,11 @@
 // stlport
 //
 // ??0Rva00200D38@@QAE@ABVAsciiString@@@Z, retail 0x00200D38, 72 bytes.
-// Ctor storing vtable 0x00BE2B78 at [this], copy-constructing AsciiString
+// The row stores a three-slot pure interface table at [this], then copy-constructs AsciiString
 // member at +4 via pinned StringBase copy 0x000365F0, then pushing this onto
 // the global vector<const ModuleData*> at 0x00DDF580 via rowed push_back
 // 0x004DFCB0. Callers 0x00200D80 and 0x00201618 become ready. Opaque
-// address-derived owner; vtable stored explicitly so the TU needs no virtuals.
+// address-derived owner; the three pure slots give the compiler the real table.
 
 #include "ascii_string.h"
 
@@ -29,14 +29,17 @@ extern _STL::vector<const ModuleData *> g_vec00200D38;
 class Rva00200D38
 {
 public:
+	virtual void slot0() = 0;
+	virtual void slot1() = 0;
+	virtual void slot2() = 0;
+
 	Rva00200D38(const AsciiString &name);
 private:
-	const void *m_vtable;
 	AsciiString m_name;
 };
 
 Rva00200D38::Rva00200D38(const AsciiString &name)
-	: m_vtable(reinterpret_cast<const void *>(0x00BE2B78)), m_name(name)
+	: m_name(name)
 {
 	g_vec00200D38.push_back(reinterpret_cast<const ModuleData *>(this));
 }
