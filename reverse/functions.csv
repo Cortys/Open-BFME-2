@@ -46255,3 +46255,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00523F57@Rva00524021@@QAEXXZ,,0x00523F57,53,Code/GameEngine/Source/GameClient/Rva00523F8CClear.cpp,matched,Single-vector clear via 0x2244CA plus clear
 ?rva00523F22@Rva00524021@@QAEXXZ,,0x00523F22,53,Code/GameEngine/Source/GameClient/Rva00523F8CClear.cpp,matched,Single-vector clear via 0x224455 plus clear
 ?rva00381CED@Rva00381CED@@QAEXPAX@Z,,0x00381CED,21,Code/GameEngine/Source/Common/Rva00381CEDMemcpy.cpp,matched,unlock lane memcpy this+0x60 src 0x28 via _memcpy pin callers 0x383997
+??1Rva005241B0@@QAE@XZ,,0x005241B0,47,Code/Libraries/Source/WWVegas/WWLib/Rva005241B0Dtor.cpp,matched,Dtor via 0x523F57 plus vector AsciiString dtor
