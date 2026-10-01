@@ -49,7 +49,7 @@ typedef istreambuf_iterator<char,char_traits<char> > _TimeIn;
 typedef time_get<char,_TimeIn> _TimeFacet;
 typedef char _TimeInfoSize[(sizeof(_Time_Info)==540)?1:-1];
 typedef char _TimeFacetSize[(sizeof(_TimeFacet)==552)?1:-1];
-template <>
+template <> inline
 _TimeIn
 time_get<char, _TimeIn>::do_get_date(_TimeIn __s, _TimeIn __end,
 				  ios_base& /* __str */, ios_base::iostate&  __err,
@@ -75,7 +75,7 @@ time_get<char, _TimeIn>::do_get_date(_TimeIn __s, _TimeIn __end,
   return __s;
 }
 
-template <>
+template <> inline
 _TimeIn
 time_get<char, _TimeIn>::do_get_time(_TimeIn __s, _TimeIn __end,
 				  ios_base& /* __str */, ios_base::iostate&  __err,
@@ -96,5 +96,18 @@ time_get<char, _TimeIn>::do_get_time(_TimeIn __s, _TimeIn __end,
     __err |= ios_base::eofbit;
   return __s;
 }
+
+struct bfmeTimeGetEmitter : time_get<char, _TimeIn>
+{
+	static void emit(const bfmeTimeGetEmitter *p, _TimeIn a, _TimeIn b, ios_base &s, ios_base::iostate &e, tm *t);
+};
+#pragma inline_depth(0)
+// ?emit@bfmeTimeGetEmitter@_STL@@SAXPBU12@V?$istreambuf_iterator@DV?$char_traits@D@_STL@@@2@1AAVios_base@2@AAHPAUtm@@@Z present-unmatched
+void bfmeTimeGetEmitter::emit(const bfmeTimeGetEmitter *p, _TimeIn a, _TimeIn b, ios_base &s, ios_base::iostate &e, tm *t)
+{
+	p->time_get<char, _TimeIn>::do_get_date(a, b, s, e, t);
+	p->time_get<char, _TimeIn>::do_get_time(a, b, s, e, t);
+}
+#pragma inline_depth()
 
 }
