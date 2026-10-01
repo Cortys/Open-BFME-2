@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/moduledata
 // stlport
 // ?DoXfer@Rva004E3184@@UAEXAAVXfer@@@Z @0x004E3991 221B
 // Slot 3 of vtable 0x00861F28 (Rva004E3184 ModuleData). Layout from
@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 
 class UnicodeString;
@@ -92,16 +93,6 @@ public:
 	unsigned char m_current;
 	unsigned char m_minimum;
 };
-
-class Snapshot {
-public:
-    virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-    *(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
 
 class Coord2D
 {

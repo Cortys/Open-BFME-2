@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 //
 // ??1WallHubBehaviorModuleData@@UAE@XZ, retail 0x00452F9F, 129 bytes.
@@ -6,8 +6,8 @@
 // template-name strings at +0x28/+0x24/+0x20/+0x1C/+0x18/+0x14 through the
 // folded AsciiString dtor at 0x36410, tears down the segment template name
 // vector at +0x08 through the rowed vector<AsciiString> dtor at 0x0002CC70,
-// then restores the Snapshot base vtable 0x00BBB554 through the TU-local
-// inline base dtor. Seven EH states for the seven members; frameless
+// then restores the Snapshot base vtable 0x00BBB554 through the base dtor.
+// Seven EH states for the seven members; frameless
 // companion ctor at 0x453020 proves the layout (vptr +0, vector +0x08,
 // strings +0x14..+0x28, size 0x3C per the factory at 0x24A94C). Table
 // 0x00C3FED8 names the members; the ??_G caller at 0x4530B4 is the slot-0
@@ -16,17 +16,7 @@
 // at 0x00C3FF98.
 
 #include <vector>
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 

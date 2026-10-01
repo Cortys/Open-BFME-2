@@ -1,9 +1,9 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /DNDEBUG /Ireference/shims/moduledata
 // stlport
 //
 // Opaque virtual destructors reached from scalar deleting dtors (pins at
 // 0x000AB09C, 0x000AB141, 0x000B9866). Each tears down one member, then the
-// inlined trivial base stores its vtable. No derived vptr store (novtable).
+// base dtor stores its vtable. No derived vptr store (novtable).
 // Names are the existing address-derived pins; owner types unrecovered.
 //
 // ??1Rva00AAD26@@UAE@XZ @0x000AAD26 54B: POD vector buffer at +0x08 freed
@@ -12,6 +12,7 @@
 // ??1Rva00B6971@@UAE@XZ @0x000B6971 48B: string at +0x10 (0x00036410);
 //   base is Snapshot (0x00BBB554).
 #include <vector>
+#include "Common/Snapshot.h"
 
 class Rva000BC93DCBase
 {
@@ -23,17 +24,6 @@ public:
 inline Rva000BC93DCBase::~Rva000BC93DCBase()
 {
 	*(const void **)this = reinterpret_cast<const void *>(0x00BC93DC);
-}
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
 }
 
 #include "ascii_string.h"

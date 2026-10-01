@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ??1GateOpenAndCloseBehaviorModuleData@@UAE@XZ, retail 0x00498D46, 145 bytes.
 // Target evidence: the pinned ctor 0x00498E2E installs vtable 0x00C501B0,
@@ -7,19 +7,10 @@
 // Layout from the ctor's zeroing and member ctors: AsciiString at +0x14,
 // four ref-counted pointers +0x1C..+0x28 (inline null-checked Release_Ref
 // 0x00050ED3 here), AsciiString vectors at +0x2C and +0x38 (0x0002CC70).
-// Teardown ends with the Snapshot vtable 0x00BBB554 store (trivial base
-// inlined). Member types beyond the pinned callees are unrecovered.
+// Teardown ends with the Snapshot vtable 0x00BBB554 store. Member types beyond
+// the pinned callees are unrecovered.
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 
