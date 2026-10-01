@@ -22,14 +22,23 @@ public:
 	virtual void slotEC(void* arg);
 };
 
+class Rva00270025
+{
+public:
+	void rva0027006C(int v);
+};
+
 class Drawable
 {
 public:
 	void rva00273648(void* arg);
 	void rva00273686(void* arg);
+	void rva002736A8();
 private:
 	unsigned char m_pad[0x14c];
 	DrawModule00273648** m_mods;
+	unsigned char m_pad2[0x354 - 0x150];
+	Rva00270025* m_354;
 };
 
 void Drawable::rva00273648(void* arg)
@@ -48,4 +57,10 @@ void Drawable::rva00273686(void* arg)
 		(*mods)->slotE8(arg);
 		++mods;
 	}
+}
+
+void Drawable::rva002736A8()
+{
+	if (m_354 != 0)
+		m_354->rva0027006C(10);
 }

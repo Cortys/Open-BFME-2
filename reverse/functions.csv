@@ -46768,3 +46768,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ??1Rva0029D3B0@@UAE@XZ,,0x0029D3B0,75,Code/GameEngine/Source/GameClient/Rva0029D3B0Dtor.cpp,matched,dtor via vtable 0x7FD1C0 DisplayStringManager and wide release
 ?rva005C962C@Rva005C962C@@QAEAAU1@ABU1@@Z,,0x005C962C,45,Code/Libraries/Source/WWVegas/WWLib/Rva005C962CAssign.cpp,matched,copy assign via StringBase set and TreeHintRef op caller 0x005C97EF
 ?rva0044F72E@SpecialAbilityUpdate@@QAEXXZ,,0x0044F72E,118,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,list destroy clear override 0x15 weapon lock via m64 m68
+?rva002736A8@Drawable@@QAEXXZ,,0x002736A8,18,Code/GameEngine/Source/GameClient/Drawable_rva00273648.cpp,matched,Drawable 0x354 rva00270025 call 10 sibling walks
