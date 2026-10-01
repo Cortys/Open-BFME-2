@@ -132,3 +132,23 @@ void Rva003A547E::rva003A547E(Xfer *xfer)
 	*xfer == m_40;
 	*xfer == m_44;
 }
+
+// ?rva003A5757@Rva003A5757@@QAEXPAVXfer@@@Z, retail 0x003A5757, 28 bytes.
+// Slot 3 (offset 0x0C) of vtable 0x0081C60C (class of ??0Rva003AED3E@@QAE@ABV0@@Z
+// in ConcreteModuleTemplateCopyCtors.cpp). Chain from 0x003A547E: Version1 via
+// rowed 0x000053EE, then inner wind-motion block at +0x1C via rowed 0x003A547E.
+
+class Rva003A5757
+{
+public:
+	virtual void anchor();
+	void rva003A5757(Xfer *xfer);
+	char _pad04[0x18];
+	Rva003A547E m_1c;
+};
+
+void Rva003A5757::rva003A5757(Xfer *xfer)
+{
+	xfer->Version1();
+	m_1c.rva003A547E(xfer);
+}
