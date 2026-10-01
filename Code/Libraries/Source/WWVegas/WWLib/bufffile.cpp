@@ -47,14 +47,7 @@ int		BufferedFileClass::_DesiredBufferSize	=	1024*16;
 /***********************************************************************************************
  * BufferedFileClass::BufferedFileClass -- Default constructor for a file object.              *
  *=============================================================================================*/
-BufferedFileClass::BufferedFileClass(void) :
-	RawFileClass(),
-	Buffer( NULL ),
-	BufferSize( 0 ),
-	BufferAvailable( 0 ),
-	BufferOffset( 0 )
-{
-}
+// BufferedFileClass::BufferedFileClass(void) is recovered in BufferedFileClassConstructor.cpp.
 
 /***********************************************************************************************
  * BufferedFileClass::BufferedFileClass -- Simple constructor for a file object.                         *
