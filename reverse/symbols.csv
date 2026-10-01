@@ -6763,3 +6763,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?attemptDamage@Object@@QAEXPAVDamageInfo@@@Z,0x0029848E,address read from the REL32 at 0x0029850D in Object::kill at 0x002984D4; BFME1 Object::kill calls attemptDamage with its DamageInfo local; target boundary at 0x0029848E consumes its pointer
 ?rva001FF3A9@Rva001FF3A9@@QAEXABUTreeHintRef00217D4C@@@Z,0x001FF3A9,forwarder 1-arg TreeHintRef const ref callsite 0x0057479F push edi plus sibling 0x005749B7 push esi same 4B jmp preserves stack target pops
 ?rva00285B66@@YA_NPBX0@Z,0x00285B66,address read from the REL32 at 0x002E3A2E; the caller passes two pointers and cleans 8 stack bytes; address-derived name and opaque pointee semantics
+??$__copy@PAUBfmeStringRecord000B9534@@PAU1@H@_STL@@YAPAUBfmeStringRecord000B9534@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x000B448F,call displacement at byte-matched wrapper 0x000B6782 object-symbol of rowed dup at same address

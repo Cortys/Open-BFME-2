@@ -45785,3 +45785,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva004F6E47Copy@@YAPAUTreeHintRef00217D4C@@PAU1@00@Z,,0x004F6E47,27,Code/GameEngine/Source/Common/Rva004F6A35CopyPtrs.cpp,matched,chain dispatcher via rowed 4-arg copy_ptrs
 ?rva005F69B2@Rva005F69B2@@QAEXXZ,,0x005F69B2,18,Code/GameEngine/Source/Common/Rva005F69B2Method.cpp,matched,leaf conditional virtual slot 0x14 on member +4 with outer this plus caller 0x005F6AA8
 ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z,,0x0044DD83,120,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Map setter via QuotedPrintable then makeKey Map slot assign callers 0x0050CFE6 0x0059F9C2
+??$copy@PAUBfmeStringRecord000B9534@@PAU1@@_STL@@YAPAUBfmeStringRecord000B9534@@PAU1@00@Z,,0x000B6782,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_stringrecord_b9534.cpp,matched,29B 5-push copy wrapper calls rowed __copy 0x000B448F same as 0x0032A40E
