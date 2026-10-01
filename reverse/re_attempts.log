@@ -4585,3 +4585,6 @@ FUN_0072bd25	0x0032BD25	63	blocked	map<int-int> _M_find node+0x14/0x18 used as 0
 ?rva0046AF85@HorseHordeContain@@QAEXXZ	0x0046AF85	89	blocked	needs HordeContain base-view layout only; deferring for small landing to flush riders t=4 model=muse-13
 ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z	0x001E468F	82	partial	0 reg diffs; early true-false tails inline mov-jmp vs shared jne-je to end plus final setne vs branchy mov-xor t=30 model=muse-14 score=0.93 stash=reverse/attempts/0x001e468f.cpp
 ?rva006D15B0@Rva006D15B0@@QAEXPAPAH@Z	0x006D15B0	65	blocked	fail tail xor-reg-indirect vs absolute-imm success exact under O2 6 variants t=20 model=muse-20
+?rva00101A20@Rva00101A20@@QAEXXZ	0x00101A20	68	blocked	O1-SSE tmp gives 3 mem diffs xorps late and early t=20 model=muse-spark
+?rva0045527A@Rva0045527A@@QAEHJ@Z	0x0045527A	250	blocked	250B multi-virtual Object Drawable MessageStream need donor t=12 model=muse-spark
+?rva00333E5B@Rva00333E5B@@QAEHPAUH@@@Z	0x00333E5B	220	blocked	Lua AsciiString EH multi-call needs donor t=15 model=muse-spark
