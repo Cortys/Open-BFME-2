@@ -46337,3 +46337,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003E537DCheck@@YG_NPAVParameter@@@Z,,0x003E537D,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E537D.cpp,matched,leaf stdcall bool via rowed getUnitNamed plus Object 0x250 vslot69 jbe
 ?rva004EC83F@Rva004EC276@@QAEXPAX@Z,,0x004EC83F,42,Code/GameEngine/Source/Common/Rva004EC276Remove.cpp,matched,rowed vector push 0x004DFCB0 and rowed list push 0x0005548F shared lea-push same Rva004EC276 class
 ?rva003C062D@ScriptActions@@IAEXABVAsciiString@@M@Z,,0x003C062D,110,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003C062D.cpp,matched,ScriptActions team float method via getTeamNamed pin and iterate rows
+?Rva004ECE14Clear@@YAXXZ,,0x004ECE14,8,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECE14.cpp,matched,single and mem 0 free function caller 0x002A9647
