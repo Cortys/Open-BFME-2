@@ -45590,3 +45590,5 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4Rva00403055@@QAEAAV0@ABV0@@Z,,0x004030B6,57,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,operator= : self check then string set plus two handle assigns via 0x00239099 then copyItems
 ?Rva004D6B6E@@YAMM@Z,,0x004D6B6E,47,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,half-angle from atan(12 / value) doubled; a + a form fixes the banked partial; callers 0x0025EDCB 0x004D6BC0
 ?Rva004D6BB8@@YAMM@Z,,0x004D6BB8,21,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,degrees wrapper over rowed 0x004D6B6E times 180.0f / PI; caller 0x0025EDBA
+?Rva004D6B3A@@YAMM@Z,,0x004D6B3A,52,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,12 / tan(value / 2) with 1e10 zero fallback via _tan thunk; half-angle local fixes the fld order; callers 0x0025EDA9 0x004D6BB1
+?Rva004D6B9D@@YAMM@Z,,0x004D6B9D,27,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,degrees wrapper over 0x004D6B3A times PI / 180.0f; caller 0x0025ED98

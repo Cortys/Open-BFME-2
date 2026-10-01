@@ -10,6 +10,23 @@
 // pops one argument dword before the fadd as retail does.
 
 extern "C" double __cdecl atan(double value);
+extern "C" double __cdecl tan(double value);
+
+// ?Rva004D6B3A@@YAMM@Z @0x004D6B3A 52B, callers 0x0025EDA9 and 0x004D6BB1:
+// the inverse of 0x004D6B6E, 12 / tan(value / 2), or the pooled 1e10 at
+// 0x00BE118C when the tangent is zero. Target evidence: x87 multiply by the
+// pooled 0.5 at 0x00BC26F0, double tan via the msvcr71 thunk 0x0062993A,
+// fldz/fucomip zero test, fdivr of the pooled 12.0.
+// Structural inference: the halved angle is its own float local, which
+// keeps fld st(1) ahead of both argument pops as retail.
+float __cdecl Rva004D6B3A(float value)
+{
+	float half = value * 0.5f;
+	float t = (float)tan(half);
+	if (t != 0.0f)
+		return 12.0f / t;
+	return 1.0e10f;
+}
 
 float __cdecl Rva004D6B6E(float value)
 {
@@ -19,6 +36,14 @@ float __cdecl Rva004D6B6E(float value)
 		return a + a;
 	}
 	return 1.5707964f;
+}
+
+// ?Rva004D6B9D@@YAMM@Z @0x004D6B9D 27B, caller 0x0025ED98: 0x004D6B3A taking
+// degrees. Target evidence: SSE multiply by the pooled 0.017453292 at
+// 0x00BBB8D0 (PI / 180.0f with the float PI) before the call.
+float __cdecl Rva004D6B9D(float value)
+{
+	return Rva004D6B3A(value * (3.14159265359f / 180.0f));
 }
 
 // ?Rva004D6BB8@@YAMM@Z @0x004D6BB8 21B, caller 0x0025EDBA: the same angle in
