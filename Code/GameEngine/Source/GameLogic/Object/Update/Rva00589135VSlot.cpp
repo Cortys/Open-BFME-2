@@ -17,6 +17,7 @@ class WeaponModeSpecialPowerUpdateBase
 public:
 	void rva00589135(int arg);
 	void rva0058916B(int arg1, int arg2);
+	void rva005891A3(int arg1, int arg2);
 private:
 	unsigned char m_pad00[8];
 	int m_08;
@@ -47,4 +48,18 @@ void WeaponModeSpecialPowerUpdateBase::rva0058916B(int arg1, int arg2)
 	void *p2 = *(void *const *)((const char *)this - 0x20);
 	VirtBase *vb = (VirtBase *)((char *)this - 4);
 	vb->vf(*(void **)((char *)p2 + 8), arg1, 0, arg2, 0);
+}
+
+// ?rva005891A3@WeaponModeSpecialPowerUpdateBase@@QAEXHH@Z, retail 0x005891A3 56B. Vslot 12 of 0x00870108 via rowed BitFlags 0x0023C58B any plus slot0 virtual on this-4 with 5 args. Same pattern as vslots 10-11 with middle args shifted.
+void WeaponModeSpecialPowerUpdateBase::rva005891A3(int arg1, int arg2)
+{
+	if (m_08 > 0)
+		return;
+	void *p1 = *(void *const *)((const char *)this - 0x1c);
+	BitFlags<11> *flags = (BitFlags<11> *)((char *)p1 + 0x1c8);
+	if (flags->any())
+		return;
+	void *p2 = *(void *const *)((const char *)this - 0x20);
+	VirtBase *vb = (VirtBase *)((char *)this - 4);
+	vb->vf(*(void **)((char *)p2 + 8), 0, arg1, arg2, 0);
 }
