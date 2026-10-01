@@ -12,6 +12,10 @@
 // worker pinned at 0x6BE2E0 under this TU's spelling.
 #include <vector>
 
+// BfmeTail60 stores the same single data pointer as StringBase<char>; retail
+// folds this zero-argument thiscall teardown to the matched releaseBuffer.
+#pragma comment(linker, "/alternatename:?release@BfmeTail60@@QAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
+
 struct BfmeTail60
 {
 	char *m_data;
