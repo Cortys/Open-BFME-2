@@ -26,7 +26,8 @@
 #include "widestring.h"
 
 // Local donor definition needed for the compiler's same-TU inlining shape.
-int INIClass::Get_String(char const * section, char const * entry, char const * defvalue, char * buffer, int size) const
+// inline makes this copy select-any so the owner ini.cpp copy links.
+inline int INIClass::Get_String(char const * section, char const * entry, char const * defvalue, char * buffer, int size) const
 {
 	if (buffer == NULL || size < 2 || section == NULL || entry == NULL) return(0);
 	INIEntry * entryptr = Find_Entry(section, entry);
