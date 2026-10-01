@@ -50,6 +50,10 @@ class Rva006ED2A0 : public Rva006ED2A0Base
 {
 public:
     virtual ~Rva006ED2A0();
+    static void operator delete(void *p, unsigned int size)
+    {
+        g_pChainBlockAllocator->freeBlock(p, size);
+    }
 private:
     char _pad14[4];
     EAStringC m_18;
@@ -86,3 +90,5 @@ Rva006ED2A0::~Rva006ED2A0()
             g_pChainBlockAllocator->freeBlock(p0c, 0x40);
     }
 }
+// ?deleteRva006ED2A0@@YAXPAVRva006ED2A0@@@Z present-unmatched
+void deleteRva006ED2A0(Rva006ED2A0 *p) { delete p; }

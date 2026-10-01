@@ -45140,3 +45140,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1NetCommandRef@@QAE@XZ,,0x0058B8AE,12,Code/GameEngine/Source/GameNetwork/NetCommandRefDtor.cpp,matched,ICF alias of NetCommandNode detach; both guard m_msg at +0 and call NetCommandMsg detach
 ?dup_002d2580@@YAXXZ,,0x002D2580,44,Code/Libraries/Source/WWVegas/WW3D2/sortingrenderer.cpp,matched,address-derived identity retained;object-symbol=?Insert_Before@?$DLNodeClass@VSortingNodeStruct@@@@QAEXPAV1@@Z;gen-alias byte fallback retained
 ?dup_00318b09@@YAXXZ,,0x00318B09,10,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,address-derived identity retained;object-symbol=?Set_Y_Translation@Matrix3D@@QAEXM@Z;gen-alias byte fallback retained
+??_GRva006ED2A0@@UAEPAXI@Z,,0x006EFB90,35,Code/GameEngine/Source/Common/Rva006ED2A0Dtor.cpp,matched,vtable slot1 0x008ECB9C plus rowed base 0x006ED2A0 plus pool free 0x78
