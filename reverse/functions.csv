@@ -46049,3 +46049,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva0046EEB5@Rva0046E455@@QAE?AURva0046E455Iter@@U2@ABVRva00469BEA@@@Z,,0x0046EEB5,294,Code/GameEngine/Source/Common/Rva0046E455.cpp,matched,chain insert hint with rowed increment decrement
 ?rva0046E31F@Rva004D1C81@@QAE?AURva004D1C81Iter@@U2@ABURva004D1C81Key@@@Z,,0x0046E31F,310,Code/Libraries/Source/WWVegas/WWLib/Rva004D1C81.cpp,matched,chain hint ushort map via rowed insert unique
 ??1WaypointMap@@QAE@XZ,,0x0022D9EE,5,Code/GameEngine/Source/GameClient/MapUtil.cpp,matched,
+?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z,,0x005DE651,260,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de651_fill_insert.cpp,matched,

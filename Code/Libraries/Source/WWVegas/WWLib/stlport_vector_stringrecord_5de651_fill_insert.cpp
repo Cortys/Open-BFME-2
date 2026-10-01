@@ -1,23 +1,19 @@
-// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z
-// partial score=0.95 date=2026-09-29
-// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z
-// partial score=0.95 date=2026-09-28
-// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z
-// partial score=0.95 date=2026-09-28
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc /EHsc
 // stlport
-
-// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z, RVA 0x005DE651, 260B.
-// Chain lane: vector<BfmeStringRecord005DDD40> fill insert; callees all rowed
-// (copy ctor 0x005DDD40, uninit copy 0x005DDDCA, copy_backward 0x005DDD5B,
-// fill 0x005DD6F7, uninit_fill_n 0x005DE088, releaseBuffer 0x00036E70,
-// overflow twin 0x005DE4BA of rowed 0x00381B7B). Callers at 0x005DE812/0x005DE79E.
-// Ret 0x0C with pos/count/value args. Explicit instantiation inlines the two
-// tiny dispatch wrappers (extra push 0 / extra lea-push); /Ob0 keeps them out
-// of line but stops the __x_copy dtor folding to releaseBuffer. So follow the
-// AsciiStringVectorAssign precedent: hand-written spec following <_vector.c>
-// line for line, with noinline forwarders for the two wrappers. Models verbatim
-// from neighbour TU stlport_vector_stringrecord_5de5b5_dtor.cpp.
+//
+// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z
+// retail 0x005DE651 (260 bytes).
+//
+// Landed from the 0.95 banked stash. align_diff had the body at 260B/98
+// instructions with exactly one differing byte -- the call at +0xD7. Retail's
+// displacement reaches 0x00036E70, the body the export table names
+// ?releaseBuffer@?$StringBase@G@@AAEXXZ; ours reached the record destructor's
+// pin 0x005B804E, which is a 5-byte `jmp 0x36E70` thunk. Both spellings are the
+// same two-instruction tail (`lea ecx,[ebp-0x14]` then a thiscall on the
+// temporary), so retail INLINED that destructor and called the folded body.
+// The byte-true call site is 0x005DE728 (`lea ecx,[ebp-0x14]` / `call 0x36E70`),
+// which is why the record destructor's pin now names 0x36E70 instead of the
+// UnicodeString thunk at 0x5B804E.
 class UnicodeString;
 typedef unsigned short wchar_t;
 template <typename T>
@@ -62,7 +58,6 @@ __declspec(noinline) BfmeStringRecord005DDD40 *uninitialized_fill_n<BfmeStringRe
 	return __uninitialized_fill_n(__first, __n, __x, __false_type());
 }
 
-// ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z present-unmatched
 template <>
 void vector<BfmeStringRecord005DDD40, allocator<BfmeStringRecord005DDD40> >::_M_fill_insert(
 	BfmeStringRecord005DDD40 *__position, size_type __n, const BfmeStringRecord005DDD40 &__x)
