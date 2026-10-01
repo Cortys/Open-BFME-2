@@ -45839,3 +45839,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00433481@Rva00433481@@QAEXM@Z,,0x00433481,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433481Float.cpp,matched,or dword ecx+C4 0x20 then call rowed FloatField set caller 0x00433A13
 ?rva00433498@Rva00433498@@QAEXM@Z,,0x00433498,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433498Float.cpp,matched,or dword ecx+C4 0x40 then call dup 0x00210C91 true RenderObjClass set98 caller 0x00433A3D
 ??1Rva0043283C@@QAE@XZ,,0x0043283C,28,Code/GameEngine/Source/Common/Rva0043283CDtor.cpp,matched,dtor singleton clear via g_Va00E032C8 base vtable 0x00BDBA74 caller 0x00432A1F
+??_GRva0043283C@@QAEPAXI@Z,,0x00432A1F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0043283C.cpp,matched,chain deleting dtor calls rowed 0x0043283C plus delete 0x0002FD60 slot1 0x0083CA28
