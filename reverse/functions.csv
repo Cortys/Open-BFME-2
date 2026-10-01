@@ -45053,3 +45053,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?push_back@?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@QAEXABVCameraMarker@@@Z,,0x000D068F,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_cameramarker_insert_overflow.cpp,matched,vector CameraMarker push_back fast Construct plus overflow 0xD05C1
 ??0Rva00560135@@QAE@XZ,,0x00560135,74,Code/GameEngine/Source/GameClient/Rva00560135Ctor.cpp,matched,guarded init caller 0x003A8354 plus S4 publisher pattern
 ??0Rva0055C8BC@@QAE@XZ,,0x0055C8BC,71,Code/GameEngine/Source/GameClient/Rva0055C8BCCtor.cpp,matched,guarded init caller 0x003A8314 plus S4 publisher pattern
+?rva0044E7A8@Rva0044E7A8@@QAE_NH@Z,,0x0044E7A8,182,Code/GameEngine/Source/Common/Rva0044E7A8Check.cpp,matched,kind validator via isKindOf plus rowed 0x28F4BC plus31
