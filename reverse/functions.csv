@@ -45463,3 +45463,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva002E1F0AReinsert@@YAXPAPAX0PAX@Z,,0x002E1F0A,23,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,passthrough adapter via 0x002E1889 caller 0x002E219A
 ?Rva002E217BSort@@YAXPAPAX0PAX@Z,,0x002E217B,58,Code/GameEngine/Source/Common/Rva002E217BSort.cpp,matched,heap pop-sort via 0x002E1F0A caller 0x002E2379
 ?Rva002E232FSort@@YAXPAPAX00PAX1@Z,,0x002E232F,87,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,partial heap sort via MakeHeap Reinsert Sort caller 0x002E2771
+?Rva002E275FSort@@YAXPAPAX00PAX@Z,,0x002E275F,27,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,adapter via 0x002E232F caller 0x002E2CE7

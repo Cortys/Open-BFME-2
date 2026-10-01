@@ -70,3 +70,12 @@ void Rva002E232FSort(void **base, void **mid, void **end, void *unused, void *ex
 	}
 	Rva002E217BSort(base, mid, extra);
 }
+
+// ?Rva002E275FSort@@YAXPAPAX00PAX@Z @0x002E275F 27B.
+// Adapter to rowed 0x002E232F as (base mid end 0 extra).
+// Evidence: frameless 5-push with 0 fourth like 0x002E1F0A precedent;
+// caller 0x002E2CE7; shares /O1.
+void Rva002E275FSort(void **base, void **mid, void **end, void *extra)
+{
+	Rva002E232FSort(base, mid, end, 0, extra);
+}
