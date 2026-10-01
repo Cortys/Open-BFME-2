@@ -133,9 +133,14 @@ public:
 	void removeLastChar() { ((StringBase<char> *)this)->removeLastChar(); }
 	const char *find(char c) const { return ((const StringBase<char> *)this)->find(c); }
 	bool startsWith(const char *p) const { return ((const StringBase<char> *)this)->startsWith(p); }
+	// Zero Hour's overloads (Common/AsciiString.h): its ports call them with an AsciiString.
+	bool startsWith(const AsciiString &s) const { return startsWith(s.str()); }
 	bool startsWithNoCase(const char *p) const { return ((const StringBase<char> *)this)->startsWithNoCase(p); }
+	bool startsWithNoCase(const AsciiString &s) const { return startsWithNoCase(s.str()); }
 	bool endsWith(const char *p) const { return ((const StringBase<char> *)this)->endsWith(p); }
+	bool endsWith(const AsciiString &s) const { return endsWith(s.str()); }
 	bool endsWithNoCase(const char *p) const { return ((const StringBase<char> *)this)->endsWithNoCase(p); }
+	bool endsWithNoCase(const AsciiString &s) const { return endsWithNoCase(s.str()); }
 	int compare(const char *p) const { return ((const StringBase<char> *)this)->compare(p); }
 	int compareNoCase(const char *p) const { return ((const StringBase<char> *)this)->compareNoCase(p); }
 	int compare(const AsciiString &s) const { return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&s); }
