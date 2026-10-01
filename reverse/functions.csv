@@ -45517,3 +45517,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0GarrisonContainModuleData@@QAE@XZ,,0x0047978F,143,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainModuleDataCtor.cpp,matched,ZH Garrison data defaults over base 0x00465124 plus +0x40 filter reset via 0x00362192 (pin)
 ??0TunnelContainModuleData@@QAE@XZ,,0x0025797E,107,Code/GameEngine/Source/GameLogic/Object/Contain/TunnelContainModuleDataCtor.cpp,matched,over HordeGarrison data ctor: +0xD4 = 1.0 then +0x40 filter reset via 0x00362192 (pin)
 ?rva002233A6@Rva00222A8BTarget@@QAEXH@Z,,0x002233A6,74,Code/Libraries/Source/WWVegas/WWLib/Rva00222F55Background.cpp,matched,Show dispatcher via 0x00222A8B pin and row 0x00222F55
+?rva00223D8D@Rva00223D8D@@QAEXPBDHHHH@Z,,0x00223D8D,74,Code/GameEngine/Source/GameClient/Rva00223D8D.cpp,matched,chain via 0x0022297B find 0x00056F61 at +0x34 invoke via node+8 ret 0x14
