@@ -41,7 +41,6 @@ public:
 private:
 	static const char BfmeEmptyString[];
 };
-const char AsciiString::BfmeEmptyString[] = "";
 
 struct UpgradeMaskType
 {
