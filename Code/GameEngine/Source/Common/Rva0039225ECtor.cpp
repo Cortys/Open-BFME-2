@@ -52,6 +52,7 @@ class Rva0039225E : public BFME2NativeNetwork
 {
 public:
 	Rva0039225E();
+	virtual ~Rva0039225E();
 private:
 	_STL::list<int, _STL::allocator<int> > m_list0C;
 	Rva0039205C m_obj10;
