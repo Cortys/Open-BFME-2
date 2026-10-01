@@ -46529,3 +46529,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00115DA7@Rva00115DA7@@QAEXHHHHH@Z,,0x00115DA7,43,Code/GameEngine/Source/Common/Rva00115DA7.cpp,matched,unlock setter via caller 0xE424C stores 4 ints at A8 B0 B8 C0
 ?rva0036DBBA@AIGroup@@QAEXHHI@Z,,0x0036DBBA,99,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,member walk mapping a type code to a timed special model condition (0x72 or 0xB8..0xBB) through Object::setSpecialModelConditionState
 ?rva0036DC1D@AIGroup@@QAEXW4ModelConditionFlagType@@I@Z,,0x0036DC1D,41,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,member walk timing the given special model condition on every member
+?rva0044EE80@SpecialAbilityUpdate@@QAEXXZ,,0x0044EE80,74,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateRva0044EE80.cpp,matched,SpecialAbilityUpdate helper: set or time the module data +0x18 model condition on the Object (frames at +0x1C)
