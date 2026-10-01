@@ -46524,3 +46524,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??$__copy_ptrs@PBUBfmeAsciiScalarValue8@@PAU1@@_STL@@YAPAUBfmeAsciiScalarValue8@@PBU1@0PAU1@ABU__false_type@0@@Z,,0x0031BDA4,29,Code/Libraries/Source/WWVegas/WWLib/stlport_copy_ptrs_scalar8.cpp,matched,chain __copy_ptrs scalar8 via rowed 0x31BA18
 ?rva0030A8EE@Rva0030A8EE@@QAEXPAVCoord3D@@@Z,,0x0030A8EE,62,Code/GameEngine/Source/Common/Thing/Rva0030A8EECopy.cpp,matched,unlock Coord3D build from this plus Normalize via 0x5A70
 ?Rva003BB556Set@@YGXABVAsciiString@@H@Z,,0x003BB556,64,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB556.cpp,matched,chain via 0x0031BE3C caller 0x003CBAEC globals 0xE01CFC 0xDBA4E8
+??4Rva003B32E5@@QAEAAV0@ABV0@@Z,,0x003B32E5,57,Code/GameEngine/Source/Common/Rva003B32E5Assign.cpp,matched,copy-assign two ints AsciiString set plus tail bytes callers 0x3B7FE0 0x3B825F linkbody
