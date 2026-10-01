@@ -45972,3 +45972,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva004F691E@@QAE@HHABUTreeHintRef00217D4C@@@Z,,0x004F68FC,34,Code/GameEngine/Source/Common/Rva004F68FCCtor.cpp,matched,ctor holder plus8 AddRef via dtor Destroy stride12
 ??0Rva004F6943@@QAE@ABUTreeHintRef00217D4C@@ABUInts004F6943@@@Z,,0x004F6943,35,Code/GameEngine/Source/Common/Rva004F6943Ctor.cpp,matched,ctor holder ptr plus0 AddRef via pair ints plus4 plus8 callers 0x004F97E6 0x004F9943
 ?Rva004F651DFill@@YAPAUTreeHintRef00217D4C@@PAU1@HPBU1@@Z,,0x004F651D,37,Code/GameEngine/Source/Common/Rva004F651DFill.cpp,matched,uninitialized fill via rowed copy returning end pointer
+??4Rva004F6057@@QAEAAU0@ABU0@@Z,,0x004F6057,39,Code/GameEngine/Source/Common/Rva004F6057Assign.cpp,matched,ref-holder assign via rowed ReleaseTreeHintRef caller 0x004F99CC
