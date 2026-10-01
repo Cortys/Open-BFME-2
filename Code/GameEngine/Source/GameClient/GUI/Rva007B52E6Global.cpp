@@ -35,3 +35,11 @@ void rva007B52E6()
     }
     atexit(rva007B9A05);
 }
+
+extern Rva005E16DA g_rva00E068EC;
+// Exact callback address registered by startup7B5299; mov-this/tail-jump
+// spans7B99FB..7B9A04 and reaches the same rowed destructor5E16FD.
+void rva007B99FB()
+{
+    g_rva00E068EC.~Rva005E16DA();
+}
