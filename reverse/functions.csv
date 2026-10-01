@@ -46102,3 +46102,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva0055CD70@Rva0055CD70@@QAEXMMM@Z,,0x0055CD70,124,Code/GameEngine/Source/GameClient/FXParticleSystemLineDraw.cpp,matched,vslot slot4 Line info two points plus xyz to TacticalView slot11
 ?rva000CE0EA@W3DTankDraw@@QAEXXZ,,0x000CE0EA,63,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000CE0EA.cpp,matched,W3DTankDraw handles 0x2E8 0x2F4 volatile Make chase rowed enable 0x1F3852 unblocks 0xCE147
 ??0Rva004DD7C4@@QAE@XZ,,0x004DD7C4,31,Code/Libraries/Source/WWVegas/WWLib/Rva004DD7C4Init.cpp,matched,ctor init magic -666666 via caller 0x004DD7E3 triple member
+??0Rva004DD7E3@@QAE@H@Z,,0x004DD7E3,39,Code/Libraries/Source/WWVegas/WWLib/Rva004DD7E3Ctor.cpp,matched,ctor stores arg plus three Rva004DD7C4 members via rowed ctor
