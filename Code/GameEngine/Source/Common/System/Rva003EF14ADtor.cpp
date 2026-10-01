@@ -108,11 +108,20 @@ public:
     }
 };
 
+struct Rva00072F7CNode {
+    unsigned unknown00;
+    Rva00072F7CNode *parent04;
+    Rva00072F7CNode *left08;
+    Rva00072F7CNode *right0C;
+};
 struct Rva00072FE6 {
     // Only the receiver at record+8 is known; the remaining record bytes
     // are opaque. This span preserves the independently measured 0x20 stride.
-    char unknown[0x18];
+    Rva00072F7CNode *header00;
+    unsigned count04;
+    char unknown08[0x10];
     void rva00072FE6();
+    void rva00072F7C(Rva00072F7CNode *);
 };
 struct Rva004E2199Record {
     unsigned unknown00;
@@ -207,4 +216,19 @@ Rva004E2E58::~Rva004E2E58()
         ::delete node->value14;
     }
     ((Rva004E21FE *)this)->rva004E21FE();
+}
+
+// Independent 45B boundary at 0x00072F7C, ending in ret4 at 72FA6..A8.
+// Recurses into right links, preserves each left link, and frees the node.
+// No element destructor is called; the node payload identity is unknown.
+void Rva00072FE6::rva00072F7C(Rva00072F7CNode *node)
+{
+    if (!node)
+        return;
+    do {
+        rva00072F7C(node->right0C);
+        Rva00072F7CNode *left = node->left08;
+        _STL::free(node);
+        node = left;
+    } while (node);
 }
