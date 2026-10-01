@@ -46641,3 +46641,9 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva0020D98D@@QAE@ABV0@@Z,,0x0020D98D,67,Code/GameEngine/Source/Common/Rva0020D98D.cpp,matched,copy ctor via base Rva001E3624 and member Rva003ED658
 ?upgradeImplementation@ArmorUpgrade@@MAEXXZ,,0x004B34B5,192,Code/GameEngine/Source/GameLogic/Object/Upgrade/ArmorUpgradeUpgradeImplementation.cpp,matched,slot 10 of the +0x10 vtable 0xC57058 installed by matched ArmorUpgrade dtor; BFME1 donor ArmorUpgradeUpgradeImplementation.cpp with BFME2 layout
 ?rva004B3575@ArmorUpgrade@@MAEXXZ,,0x004B3575,184,Code/GameEngine/Source/GameLogic/Object/Upgrade/ArmorUpgradeUpgradeImplementation.cpp,matched,slot 8 of the +0x10 vtable 0xC57058 (ArmorUpgrade); reversal of upgradeImplementation 0x4B34B5 then UpgradeModule 0x4CE4A8
+?rva00262D7B@AIUpdateInterface@@UBE_NXZ,,0x00262D7B,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot116 state pred13 or true
+?rva00262D8F@AIUpdateInterface@@UBE_NXZ,,0x00262D8F,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot111 state pred9 or true
+?rva00262DA3@AIUpdateInterface@@UBE_NXZ,,0x00262DA3,8,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot113 machine pred12
+?rva00262DAB@AIUpdateInterface@@UBE_NXZ,,0x00262DAB,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot114 state pred11 or true
+?rva00262DBF@AIUpdateInterface@@UBE_NXZ,,0x00262DBF,20,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,vslot115 state pred12 or true
+?rva00262D40@AIUpdateInterface@@QAEXH@Z,,0x00262D40,59,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,sets guard mode pos angle and enters AI_GUARD
