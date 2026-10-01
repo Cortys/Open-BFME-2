@@ -6715,3 +6715,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__copy_ptrs@PBUBfmeRecord0040B61A@@PAU1@@_STL@@YAPAUBfmeRecord0040B61A@@PBU1@0PAU1@ABU__false_type@0@@Z,0x0040B350,address read from the REL32 displacement at byte-matched body 0x0040B61A
 ??$_Destroy@PAUBfmeRecord0040B61A@@@_STL@@YAXPAUBfmeRecord0040B61A@@0@Z,0x0040B52E,address read from the REL32 displacement at byte-matched body 0x0040B61A
 ??$__uninitialized_copy@PBUBfmeRecord0040B61A@@PAU1@@_STL@@YAPAUBfmeRecord0040B61A@@PBU1@0PAU1@ABU__false_type@0@@Z,0x0040B2FD,address read from the REL32 displacement at byte-matched body 0x0040B61A
+??0?$_STLP_alloc_proxy@PAUBfmePod40@@U1@V?$allocator@UBfmePod40@@@_STL@@@_STL@@QAE@ABV?$allocator@UBfmePod40@@@1@PAUBfmePod40@@@Z,0x0014F3C4,address read from the REL32 at the _Vector_base<BfmePod40>(n) call site 0x0053FFA8; the generic alloc-proxy ctor body folded there (AllocProxyIntCtor_dupB row)
