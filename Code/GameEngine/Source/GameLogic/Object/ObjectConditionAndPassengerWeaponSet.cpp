@@ -115,6 +115,8 @@ public:
 	void rva00293A05(ModelConditionFlagType mc);
 	void rva001E42F2(const int *x);
 	void rva00293BBF(const int *x);
+	void rva001E431E(const int *x);
+	void rva00293C1B(const int *x);
 	__forceinline void setConditionIndex(ModelConditionFlagType mc)
 	{
 		if (m_conditionBits.testIndex(mc) == 0)
@@ -254,6 +256,22 @@ void Object::rva00293BBF(const int *x)
 			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
 				node->m_object->rva001E42F2(x);
 			top->rva001E42F2(x);
+		}
+	}
+}
+void Object::rva00293C1B(const int *x)
+{
+	Object *top = rva002931F5(false);
+	if (top)
+	{
+		Rva00293DACIface *iface = (Rva00293DACIface *)top->rva0028C197();
+		if (iface)
+		{
+			Rva00293DACRange range;
+			iface->rva00293DACSlot66(&range);
+			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
+				node->m_object->rva001E431E(x);
+			top->rva001E431E(x);
 		}
 	}
 }

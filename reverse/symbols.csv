@@ -6837,3 +6837,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?bfmeAccept@BfmeSinkC@@QAEXPAVBfmeFlagTarget@@@Z,0x006C0F50
 ?rva004ACF1D@RousingSpeechUpdate@@QAEXXZ,0x004ACF1D,non-virtual RousingSpeechUpdate list helper (twin of the matched GloriousChargeUpdate 0x004AD613) called on the full object by the matched RousingSpeechUpdate::update 0x004AD019; address from that REL32
 ?rva001E42F2@Object@@QAEXPBH@Z,0x001E42F2,pinned for ObjectConditionAndPassengerWeaponSet
+?rva001E431E@Object@@QAEXPBH@Z,0x001E431E,pinned for ObjectConditionAndPassengerWeaponSet
