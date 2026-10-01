@@ -46024,3 +46024,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00431F0C@Rva00431F0C@@QAEHPAVGameMessage@@@Z,,0x00431F0C,85,Code/GameEngine/Source/Common/Rva00431F0C.cpp,matched,chain lane calls just-landed 0x00431A4D rowed new rva00575674 vtable g_00C3C97C
 ?Rva004319D4Get@@YAHXZ,,0x004319D4,30,Code/GameEngine/Source/Common/Rva004319D4.cpp,matched,unlock unblocks 0x00431E5A extern TheMouse caller tests al
 ?Rva0055E891WriteVelocityHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055E891,216,Code/GameEngine/Source/GameClient/System/FXParticleSystem/VelocityModuleHeaderWrite.cpp,matched,BFME1 donor Rva005F8FC0WriteVelocityHeader category 4 velocity header via Pad and Write
+??0Rva00541913@@QAE@ABV0@@Z,,0x00541913,66,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00541913CopyCtor.cpp,matched,copy ctor member vector dword via rowed Member and vector copy
