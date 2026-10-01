@@ -46260,3 +46260,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003818F4@@QAE@XZ,,0x003818F4,12,Code/GameEngine/Source/Common/Rva003818F4Ctor.cpp,matched,leaf lane ctor forwards to Rva00330757Member at +0
 ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAFPAXH@Z,,0x0018C2E7,39,Code/Libraries/Source/WWVegas/WWLib/Rva0018C2E7Copy.cpp,matched,finish tree to short copy via increment caller 0x0018C3C9
 ?Rva0018C3C9Copy@@YAPAFPAURva0018C2E7Node@@0PAF@Z,,0x0018C3C9,29,Code/Libraries/Source/WWVegas/WWLib/Rva0018C3C9Copy.cpp,matched,chain wrapper for Rva0018C2E7Copy with local tag
+?rva003956C3@Rva003956C3@@QAEPAXXZ,,0x003956C3,37,Code/GameEngine/Source/Common/Rva003956C3.cpp,matched,chain via rowed callees pos obj+0x38 field best+0x45c
