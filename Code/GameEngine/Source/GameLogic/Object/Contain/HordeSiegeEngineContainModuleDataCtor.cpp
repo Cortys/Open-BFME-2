@@ -45,6 +45,7 @@ class HordeSiegeEngineContainModuleData : public HordeTransportContainModuleData
 {
 public:
 	HordeSiegeEngineContainModuleData();
+	virtual ~HordeSiegeEngineContainModuleData();
 
 private:
 	Rva003623E5Member m_member18C;	// +0x18C
