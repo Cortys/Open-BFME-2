@@ -23,7 +23,7 @@ class ObjectCreationList
 class ObjectCreationListStore
 {
 public:
-	const ObjectCreationList *findObjectCreationList(const char *name);
+	const ObjectCreationList *findObjectCreationList(const char *name) const;
 };
 
 namespace _STL
