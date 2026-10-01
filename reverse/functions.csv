@@ -45799,3 +45799,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?evaluateSkirmishCommandButtonIsReady@ScriptConditions@@MAE_NPAVParameter@@00_N@Z,,0x003E73E7,183,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateSkirmishCommandButtonIsReady.cpp,matched,BFME1 donor member walk over the found command button readiness with special power or command type 0x17 gate; callees pinned from this call site
 ??0Rva005D8883@@QAE@XZ,,0x005D8871,18,Code/GameEngine/Source/Common/Rva005D8964Derived.cpp,matched,ctor stores vtable 0x00876190 after base ctor 0x005D8952
 ??0Rva005D8BD5@@QAE@XZ,,0x005D8BC3,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,ctor stores vtable 0x0087620C after base ctor 0x005EE28C
+?Rva002DCB9C@@YG?AVAsciiString@@ABV1@@Z,,0x002DCB9C,351,Code/GameEngine/Source/Common/System/SaveGame/Rva002DCB9CPath.cpp,matched,AsciiString path remap via startsWithNoCase plus suffix concat and toLower
