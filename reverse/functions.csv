@@ -46003,3 +46003,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0002CA72@Rva0002CA72@@QAEPAUOut0002CA72@@PAU2@PBUPair0002CA72@@@Z,,0x0002CA72,124,Code/GameEngine/Source/GameLogic/System/GameLogicBuildableMapInsert.cpp,matched,hashtable insert_unique_noresize via rowed bktnum compareNoCase newnode
 ?Mid@EAStringC@@QBE?AV1@H@Z,,0x006D5770,217,Code/Libraries/Source/EA/Apt/AptString/EAStringCMid.cpp,matched,BFME1 EAStringCMid donor Mid start callers 0x6D5A81 0x6D5D46
 ?Mid@EAStringC@@QBE?AV1@HH@Z,,0x006D5850,239,Code/Libraries/Source/EA/Apt/AptString/EAStringCMid.cpp,matched,BFME1 EAStringCMid donor Mid start count retail shape and rows
+?rva006D54B0@EAStringC@@QAEHHH@Z,,0x006D54B0,200,Code/Libraries/Source/EA/Apt/AptString/EAStringCRemoveRange.cpp,matched,BFME1 RemoveRange donor retail shape and rows
