@@ -3,6 +3,10 @@
 // Retail caller546F9A passes stage and owning reference; stage pointers at DEE5E0.
 // 16 slots agree with the already recovered BFME2 Apply_Render_State layout.
 // WORD refcounts at resource+4; cached release reaches A1ED10.
+// The screen-filter, Line3D and BfmeConv1137 callers spell this body as the
+// BFME 1 donor's BoxSetTexture(unsigned, TextureBaseClass *&), pinned to this
+// address: same cdecl stage plus by-reference handle. Bind that spelling here.
+#pragma comment(linker, "/alternatename:?BoxSetTexture@@YAXIAAPAVTextureBaseClass@@@Z=?BFME2Set_Texture@@YAXIABUBFME2TextureRef@@@Z")
 struct BFME2TextureResource { unsigned Vtable; unsigned short Refs; void Release_Ref(); };
 struct BFME2TextureRef {
  BFME2TextureResource* Ptr;

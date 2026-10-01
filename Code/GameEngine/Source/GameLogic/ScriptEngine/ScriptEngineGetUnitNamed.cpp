@@ -10,6 +10,14 @@
 // 0x49DC5 then string at +0x10 for isEmpty and by-value lookupUnitByValue
 // at 0x358752. 40+ script callers pass Parameter* through this slot.
 //
+
+// The ScriptActions doNamed* views call this through a BFME 1-style
+// getUnitNamed(const AsciiString &) spelling pinned to this address. Their
+// dispatcher (e.g. 0x003CBD8C) passes the Parameter* from getParameter
+// straight through, so the pointer they forward is this function's Parameter*
+// and the two spellings share one ABI. Bind theirs here until those views are
+// retyped.
+#pragma comment(linker, "/alternatename:?getUnitNamed@ScriptEngine@@QAEPAVObject@@ABVAsciiString@@@Z=?getUnitNamed@ScriptEngine@@QAEPAVObject@@PAVParameter@@@Z")
 #include "ascii_string.h"
 
 
