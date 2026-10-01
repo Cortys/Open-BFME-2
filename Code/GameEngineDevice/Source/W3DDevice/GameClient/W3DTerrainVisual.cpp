@@ -803,32 +803,8 @@ void W3DTerrainVisual::getTerrainColorAt( Real x, Real y, RGBColor *pColor )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ?W3DTerrainVisual::getTerrainTile present-unmatched
-TerrainType *W3DTerrainVisual::getTerrainTile( Real x, Real y )
-{
-	TerrainType *tile = NULL;
-
-
-#ifdef DO_SEISMIC_SIMULATIONS
-	if( m_clientHeightMap )
-	{
-		AsciiString tileName = m_clientHeightMap->getTerrainNameAt( x, y );
-		tile = TheTerrainTypes->findTerrain( tileName );
-	}  // end if
-#else
-  if( m_logicHeightMap )
-	{
-		AsciiString tileName = m_logicHeightMap->getTerrainNameAt( x, y );
-		tile = TheTerrainTypes->findTerrain( tileName );
-	}  // end if
-#endif
-
-
-
-
-	return tile;
-
-}  // end getTerrainTile
+// W3DTerrainVisual::getTerrainTile: defined in W3DTerrainVisualGetTerrainTile.cpp (its row's unit).
+  // end getTerrainTile
 
 // ------------------------------------------------------------------------------------------------
 /** set min/max height values allowed in water grid pointed to by waterTable */

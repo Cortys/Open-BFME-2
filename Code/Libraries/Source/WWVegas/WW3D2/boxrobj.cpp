@@ -310,12 +310,7 @@ const char * BoxRenderObjClass::Get_Name(void) const
  * HISTORY:                                                                                    *
  *   1/19/00    gth : Created.                                                                 *
  *=============================================================================================*/
-void BoxRenderObjClass::Set_Name(const char * name)
-{
-	WWASSERT(name != NULL);
-	WWASSERT(strlen(name) < 2*W3D_NAME_LEN);
-	strcpy(Name,name);
-}
+// BoxRenderObjClass::Set_Name: defined in BoxRenderObjClassCtor.cpp (its row's unit).
 
 
 /***********************************************************************************************

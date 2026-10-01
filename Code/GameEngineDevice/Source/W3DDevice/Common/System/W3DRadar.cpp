@@ -767,73 +767,8 @@ void W3DRadar::renderObjectList( const RadarObject *listHead, TextureClass *text
 	* midZ is the "middle" point, height values above it will be lightened, while 
 	* lower ones are darkened. */
 //-------------------------------------------------------------------------------------------------	
-// ?interpolateColorForHeight@W3DRadar@@IAEXPAURGBColor@@MMMM@Z present-unmatched
-void W3DRadar::interpolateColorForHeight( RGBColor *color,	
-																					Real height, 
-																					Real hiZ,
-																					Real midZ,
-																					Real loZ )
-{
-	const Real howBright = 0.95f;  // bigger is brighter (0.0 to 1.0)
-	const Real howDark   = 0.60f;  // bigger is darker (0.0 to 1.0)
-	
-	// sanity on map height (flat maps bomb)
-	if (hiZ == midZ)
-		hiZ = midZ+0.1f;
-	if (midZ == loZ)
-		loZ = midZ-0.1f;
-	if (hiZ == loZ)
-		hiZ = loZ+0.2f;
-
-	Real t;
-	RGBColor colorTarget;
-
-	// if "over" the middle height, interpolate lighter
-	if( height >= midZ )
-	{
-
-		// how far are we from the middleZ towards the hi Z
-		t = (height - midZ) / (hiZ - midZ);
-
-		// compute what our "lightest" color possible we want to use is
-		colorTarget.red = color->red + (1.0f - color->red) * howBright;
-		colorTarget.green = color->green + (1.0f - color->green) * howBright;
-		colorTarget.blue = color->blue + (1.0f - color->blue) * howBright;
-
-	}  // end if
-	else  // interpolate darker
-	{
-
-		// how far are we from the middleZ towards the low Z
-		t = (midZ - height) / (midZ - loZ);
-
-		// compute what the "darkest" color possible we want to use is
-		colorTarget.red = color->red + (0.0f - color->red) * howDark;
-		colorTarget.green = color->green + (0.0f - color->green) * howDark;
-		colorTarget.blue = color->blue + (0.0f - color->blue) * howDark;
-
-	}  // end else
-
-	// interpolate toward the target color
-	color->red = color->red + (colorTarget.red - color->red) * t;
-	color->green = color->green + (colorTarget.green - color->green) * t;
-	color->blue = color->blue + (colorTarget.blue - color->blue) * t;
-
-	// keep the color real
-	if( color->red < 0.0f )
-		color->red = 0.0f;
-	if( color->red > 1.0f )
-		color->red = 1.0f;
-	if( color->green < 0.0f )
-		color->green = 0.0f;
-	if( color->green > 1.0f )
-		color->green = 1.0f;
-	if( color->blue < 0.0f )
-		color->blue = 0.0f;
-	if( color->blue > 1.0f )
-		color->blue = 1.0f;
-
-}  // end interpolateColorForHeight
+// W3DRadar::interpolateColorForHeight: defined in W3DRadarInterpolateColor.cpp (its row's unit).
+  // end interpolateColorForHeight
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // PUBLIC METHODS /////////////////////////////////////////////////////////////////////////////////

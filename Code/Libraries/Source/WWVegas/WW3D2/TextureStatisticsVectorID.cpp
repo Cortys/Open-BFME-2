@@ -23,10 +23,7 @@ class TextureClass : public TextureBaseClass
 {
 };
 
-void TextureBaseClass::Add_Ref()
-{
-	++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
-}
+// TextureBaseClass::Add_Ref: defined in ringobj.cpp (its row's unit).
 
 template<class T>
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/ref_ptr.h

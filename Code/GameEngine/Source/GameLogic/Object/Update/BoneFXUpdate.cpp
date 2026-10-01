@@ -95,11 +95,7 @@ void BoneFXUpdate::onObjectCreated()
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// ??1BoneFXUpdate@@MAE@XZ present-unmatched
-BoneFXUpdate::~BoneFXUpdate( void )
-{
-	killRunningParticleSystems();
-}
+// BoneFXUpdate::~BoneFXUpdate: defined in BoneFXUpdateDtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /** Parse fx location info ... that is a named bone */
@@ -151,132 +147,24 @@ static void parseGameLogicRandomDelay( INI *ini, void *instance, GameLogicRandom
 	* <BodyDamageState>FXList<index> = Bone:<BoneName> OnlyOnce:<Yes|No> <Min delay> <Max delay> FXList:<FXListName> */
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/BoneFXUpdateModuleDataParseFXListThunk.cpp
-// ?parseFXList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
-void BoneFXUpdateModuleData::parseFXList( INI *ini, void *instance, 
-																								void *store, const void *userData )
-{
-	const char *token;
-	BoneFXListInfo *info = (BoneFXListInfo *)store;
-
-	// parse the location bone or location
-	parseFXLocInfo( ini, instance, &info->locInfo );
-
-	// make sure we have an "OnlyOnce:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if (stricmp( token, "onlyonce" ) != 0)
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	} // end if
-
-	ini->parseBool( ini, instance, &info->onlyOnce, NULL);
-
-	parseGameLogicRandomDelay( ini, instance, &info->gameLogicDelay);
-
-	// make sure we have an "FXList:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if( stricmp( token, "fxlist" ) != 0 )
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	}  // end if
-
-	// parse the fx list name
-	ini->parseFXList( ini, instance, &info->fx, NULL );
-
-}  // end parseFXList
+// BoneFXUpdateModuleData::parseFXList: defined in BoneFXUpdateParse.cpp (its row's unit).
+  // end parseFXList
 
 //-------------------------------------------------------------------------------------------------
 /** In the form of:
 	* <BodyDamageState>OCL<index> = Bone:<BoneName> OnlyOnce:<Yes|No> <Min delay> <Max delay> OCL:<OCLName> */
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/BoneFXUpdateModuleDataParseObjectCreationListThunk.cpp
-// ?parseObjectCreationList@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
-void BoneFXUpdateModuleData::parseObjectCreationList( INI *ini, void *instance, 
-																														void *store, const void *userData )
-{
-	const char *token;
-	BoneOCLInfo *info = (BoneOCLInfo *)store;
-
-	// parse the location bone or location
-	parseFXLocInfo( ini, instance, &info->locInfo );
-
-	// make sure we have an "OnlyOnce:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if (stricmp( token, "onlyonce" ) != 0)
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	} // end if
-
-	ini->parseBool( ini, instance, &info->onlyOnce, NULL );
-
-	parseGameLogicRandomDelay(ini, instance, &info->gameLogicDelay);
-
-	// make sure we have an "OCL:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if( stricmp( token, "ocl" ) != 0 )
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	}  // end if
-
-	// parse the ocl name
-	ini->parseObjectCreationList( ini, instance, &info->ocl, NULL );
-
-}  // end parseObjectCreationList
+// BoneFXUpdateModuleData::parseObjectCreationList: defined in BoneFXUpdateParse.cpp (its row's unit).
+  // end parseObjectCreationList
 
 //-------------------------------------------------------------------------------------------------
 /** In the form of:
 	* <BodyDamageState>ParticleSystem<index> = <Bone:BoneName> OnlyOnce:<Yes|No> <Min delay> <Max delay> PSys:<PSysName> */
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/FXModuleDataParseParticleSystemThunks.cpp
-// ?parseParticleSystem@BoneFXUpdateModuleData@@SAXPAVINI@@PAX1PBX@Z present-unmatched
-void BoneFXUpdateModuleData::parseParticleSystem( INI *ini, void *instance, 
-																												void *store, const void *userData )
-{
-	const char *token;
-	BoneParticleSystemInfo *info = (BoneParticleSystemInfo *)store;
-
-	// parse the location bone or location
-	parseFXLocInfo( ini, instance, &info->locInfo );
-
-	// make sure we have an "OnlyOnce:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if (stricmp( token, "onlyonce" ) != 0)
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	} // end if
-
-	ini->parseBool( ini, instance, &info->onlyOnce, NULL );
-
-	parseGameClientRandomDelay(ini, instance, &info->gameClientDelay);
-
-	// make sure we have an "PSys:" token
-	token = ini->getNextToken( ini->getSepsColon() );
-	if( stricmp( token, "psys" ) != 0 )
-	{
-
-		// error
-		throw INI_INVALID_DATA;
-
-	}  // end if
-
-	// parse the particle system name
-	ini->parseParticleSystemTemplate( ini, instance, &info->particleSysTemplate, NULL );
-
-}  // end parseParticleSystem
+// BoneFXUpdateModuleData::parseParticleSystem: defined in BoneFXUpdateParse.cpp (its row's unit).
+  // end parseParticleSystem
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -314,30 +202,7 @@ UpdateSleepTime BoneFXUpdate::update( void )
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/Libraries/Source/WWVegas/WWLib/UpdateInitializationThunks.cpp
-// ?initTimes@BoneFXUpdate@@IAEXXZ present-unmatched
-void BoneFXUpdate::initTimes() {
-	Int i;
-	const BoneFXUpdateModuleData *d = getBoneFXUpdateModuleData();
-	Int now = TheGameLogic->getFrame();
-
-	for (i = 0; i < BONE_FX_MAX_BONES; ++i) {
-		if (d->m_fxList[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) {
-			m_nextFXFrame[m_curBodyState][i] = now + REAL_TO_INT(d->m_fxList[m_curBodyState][i].gameLogicDelay.getValue());
-		} else {
-			m_nextFXFrame[m_curBodyState][i] = -1;
-		}
-		if (d->m_OCL[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) {
-			m_nextOCLFrame[m_curBodyState][i] = now + REAL_TO_INT(d->m_OCL[m_curBodyState][i].gameLogicDelay.getValue());
-		} else {
-			m_nextOCLFrame[m_curBodyState][i] = -1;
-		}
-		if (d->m_particleSystem[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) {
-			m_nextParticleSystemFrame[m_curBodyState][i] = now + REAL_TO_INT(d->m_particleSystem[m_curBodyState][i].gameClientDelay.getValue());
-		} else {
-			m_nextParticleSystemFrame[m_curBodyState][i] = -1;
-		}
-	}
-}
+// BoneFXUpdate::initTimes: defined in BoneFXUpdate_initTimes.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -515,46 +380,7 @@ void BoneFXUpdate::killRunningParticleSystems() {
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 // This function is going to suck lots of time, should only be called once.
-// ?resolveBoneLocations@BoneFXUpdate@@MAEXXZ present-unmatched
-void BoneFXUpdate::resolveBoneLocations() {
-	Int i;
-	const BoneFXUpdateModuleData *d = getBoneFXUpdateModuleData();
-	Object *building = getObject();
-	if (building == NULL) {
-		DEBUG_ASSERTCRASH(building != NULL, ("There is no object?"));
-		return;
-	}
-
-	Drawable *drawable = building->getDrawable();
-	if (drawable == NULL) {
-		DEBUG_ASSERTCRASH(drawable != NULL, ("There is no drawable?"));
-	}
-
-	if (d == NULL) {
-		return;
-	}
-
-	for (i = 0; i < BONE_FX_MAX_BONES; ++i) {
-		if (d->m_fxList[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) 
-		{
-			const BoneFXListInfo *info = &(d->m_fxList[m_curBodyState][i]);
-			drawable->getPristineBonePositions(info->locInfo.boneName.str(), 0, &m_FXBonePositions[m_curBodyState][i], NULL, 1);
-		}
-
-		if (d->m_OCL[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) 
-		{
-			const BoneOCLInfo *info = &(d->m_OCL[m_curBodyState][i]);
-			drawable->getPristineBonePositions(info->locInfo.boneName.str(), 0, &m_OCLBonePositions[m_curBodyState][i], NULL, 1);
-		}
-
-		if (d->m_particleSystem[m_curBodyState][i].locInfo.boneName.compare(AsciiString::TheEmptyString) != 0) 
-		{
-			const BoneParticleSystemInfo *info = &(d->m_particleSystem[m_curBodyState][i]);
-			drawable->getPristineBonePositions(info->locInfo.boneName.str(), 0, &m_PSBonePositions[m_curBodyState][i], NULL, 1);
-		}
-	}
-	m_bonesResolved[m_curBodyState] = TRUE;
-}
+// BoneFXUpdate::resolveBoneLocations: defined in BoneFXUpdate_resolveBoneLocations.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------

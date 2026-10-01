@@ -80,41 +80,13 @@ StreakRendererClass::StreakRendererClass() :
 {
 }
 
-void StreakRendererClass::Set_Merge_Intersections(int onoff)
-{
-	if (onoff) {
-		Bits |= 0x00000001;
-	} else {
-		Bits &= ~0x00000001;
-	}
-}
+// StreakRendererClass::Set_Merge_Intersections: defined in streakRender.cpp (its row's unit).
 
-void StreakRendererClass::Set_Freeze_Random(int onoff)
-{
-	if (onoff) {
-		Bits |= 0x00000002;
-	} else {
-		Bits &= ~0x00000002;
-	}
-}
+// StreakRendererClass::Set_Freeze_Random: defined in streakRender.cpp (its row's unit).
 
-void StreakRendererClass::Set_Disable_Sorting(int onoff)
-{
-	if (onoff) {
-		Bits |= 0x00000004;
-	} else {
-		Bits &= ~0x00000004;
-	}
-}
+// StreakRendererClass::Set_Disable_Sorting: defined in streakRender.cpp (its row's unit).
 
-void StreakRendererClass::Set_End_Caps(int onoff)
-{
-	if (onoff) {
-		Bits |= 0x00000008;
-	} else {
-		Bits &= ~0x00000008;
-	}
-}
+// StreakRendererClass::Set_End_Caps: defined in streakRender.cpp (its row's unit).
 
 void StreakRendererClass::Set_UV_Offset_Rate(const Vector2 &rate)
 {
