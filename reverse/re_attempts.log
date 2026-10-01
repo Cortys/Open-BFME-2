@@ -4729,3 +4729,4 @@ FUN_0076fc23	0x0036FC23	321	blocked	321B AIGroup loop with 10 callees needs AIUp
 FUN_0047a41e	0x0007A41E	122	blocked	STL map-vector-sort with LocomotorSet erase needs Rb-tree plus vector plus sort layouts t=10 model=muse-08
 FUN_00739184	0x00339184	176	blocked	INI sound-ref EH with TheAudio slot75 plus OpaqueRef temp Release plus AsciiString frame needs layouts t=15 model=muse-08
 FUN_00942459	0x00542459	107	blocked	dead strncpy into stack temp plus dead stack-arg load plus this-clear needs layout t=10 model=muse-08
+?rva005AD9E6@Rva005AD9E6@@QAEHXZ	0x005AD9E6	25	partial	reg alloc head-edx-vs-ecx cur-ecx-vs-eax count-eax-vs-edx plus je-lea vs ret-xor-jmp-mov t=25 model=muse-spark score=0.91 stash=reverse/attempts/0x005ad9e6.cpp

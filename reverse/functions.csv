@@ -45415,3 +45415,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva005F6A58@@UAEPAXI@Z,,0x005F6B3C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005F6A58.cpp,matched,deleting dtor via rowed dtor 0x005F6A58 plus delete
 ?rva00483111@Rva00482E96@@QAEXH@Z,,0x00483111,34,Code/GameEngine/Source/Common/Rva00483111.cpp,matched,Slot 14 chain via PoisonedBehavior reset and setWakeFrame
 ?xfer@RebuildHoleBehavior@@MAEXPAVXfer@@@Z,,0x004833EC,338,Code/GameEngine/Source/GameLogic/Object/Behavior/RebuildHoleBehaviorXfer.cpp,matched,slot3 vtable 0x00849A74 via UpdateModule base and Spawn shape
+?rva00506A52@Rva00506A52@@QAEXXZ,,0x00506A52,168,Code/GameEngine/Source/Common/Rva00506A52.cpp,matched,chain from 0x005AD6C3 via rowed bucket_count getter check new push_back
