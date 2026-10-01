@@ -3575,6 +3575,17 @@ struct BFME_ParticleBuffer_TextureFields
 	BFMELineGroupTexture *lineGroup;			// 0x20c
 };
 
+// These four local getter facades intentionally retain distinct owner and
+// return-type spellings so the matched call sites keep the retail shape. Their
+// ABI is the rowed const-thiscall getter's hidden sret of a one-pointer,
+// non-POD owning holder; the holder's first word and Release_Ref cleanup are
+// independently verified at 0x001790E0. Bind only these facade references to
+// that existing row rather than emitting substitute bodies.
+#pragma comment(linker, "/alternatename:?Get_Texture@BFMELineGroupTexture@@QBE?AVTextureHandleClass@ParticleBufferClass@@XZ=?Get_Texture@BFME2ParticleTextureAccessor@@QBE?AUBFME2TextureRef@@XZ")
+#pragma comment(linker, "/alternatename:?Get_Texture@BFMEPointGroupTexture@@QBE?AVTextureHandleClass@ParticleBufferClass@@XZ=?Get_Texture@BFME2ParticleTextureAccessor@@QBE?AUBFME2TextureRef@@XZ")
+#pragma comment(linker, "/alternatename:?Get_Texture@BFMELineGroupViewHonestCopy@@QBE?AVBFMETextureHandleHonestCopy@@XZ=?Get_Texture@BFME2ParticleTextureAccessor@@QBE?AUBFME2TextureRef@@XZ")
+#pragma comment(linker, "/alternatename:?Get_Texture@BFMEPointGroupViewHonestCopy@@QBE?AVBFMETextureHandleHonestCopy@@XZ=?Get_Texture@BFME2ParticleTextureAccessor@@QBE?AUBFME2TextureRef@@XZ")
+
 ParticleBufferClass::TextureHandleClass ParticleBufferClass::Get_Texture (void) const
 {
 	const BFME_ParticleBuffer_TextureFields *retail = (const BFME_ParticleBuffer_TextureFields *)this;
