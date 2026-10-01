@@ -6704,3 +6704,6 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??$__uninitialized_copy@PBVBfmeStringTailRecord156@@PAV1@@_STL@@YAPAVBfmeStringTailRecord156@@PBV1@0PAV1@ABU__false_type@0@@Z,0x001D9A61,38B const-source twin of rowed PAV copy read from our TU emission for 0x0043351B
 ?reset@Mouse@@UAEXXZ,0x001EE4DC,sole caller is Win32Mouse::reset 0x000419F5 whose Zero Hour body begins with Mouse::reset()
 ??$__copy_ptrs@PAUBfmePod52@@PAU1@@_STL@@YAPAUBfmePod52@@PAU1@00ABU__false_type@0@@Z,0x001DD339,const-ref tag spelling of the rowed by-value __copy_ptrs<BfmePod52>; erase 0x001DDC2C pushes the empty tag's address; body byte-identical
+??$_M_allocate_and_copy@PAUBfmeVectorRecord00319C84@@@?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@IAEPAUBfmeVectorRecord00319C84@@IPAU2@0@Z,0x00319304,address read from the REL32 displacement at byte-matched body 0x00319C84
+?_M_clear@?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@IAEXXZ,0x00565A60,address read from the REL32 displacement at byte-matched body 0x00319C84
+?allocate@?$allocator@UBfmeVectorRecord00319C84@@@_STL@@QBEPAUBfmeVectorRecord00319C84@@IPBX@Z,0x002226BE,address read from the REL32 displacement at byte-matched body 0x00319C84
