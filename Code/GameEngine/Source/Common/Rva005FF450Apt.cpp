@@ -33,6 +33,7 @@ class Rva005FF450
 {
 public:
 	void rva005FF450(int count, const char *kind, const UnicodeString &text);
+	void rva005FF3E9(const UnicodeString &text);
 private:
 	char m_pad[4];
 	unsigned int m_level;
@@ -44,5 +45,18 @@ void Rva005FF450::rva005FF450(int count, const char *kind, const UnicodeString &
 	AsciiString key;
 	const char *team = m_team ? m_team->m_name : g_Rva0107301CEmptyString;
 	key.format("APT:_level%u.%s_Unit%s%d", m_level, team, kind, count);
+	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, text, true);
+}
+
+// ?rva005FF3E9@Rva005FF450@@QAEXABVUnicodeString@@@Z @ 0x005FF3E9 (103B).
+// Apt Army name setter; formats APT:_level%u.%s_ArmyName from m_level at +4 and team name at +8.
+// Same layout and globals as rva005FF450 above; team null uses empty string.
+// Evidence: format row 0x00038150; bfmeSetText pin 0x00225301; releaseBuffer 0x00036410;
+// globals 0x009FE4CC 0x007BAC1C; callers 0x005FF5DB 0x005FF8D4.
+void Rva005FF450::rva005FF3E9(const UnicodeString &text)
+{
+	AsciiString key;
+	const char *team = m_team ? m_team->m_name : g_Rva0107301CEmptyString;
+	key.format("APT:_level%u.%s_ArmyName", m_level, team);
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, text, true);
 }
