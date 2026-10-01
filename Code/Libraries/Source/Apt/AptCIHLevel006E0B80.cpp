@@ -25,6 +25,7 @@ public:
     void *rva006E1020() const;
     void *rva006E1100() const;
     void *rva006E1170() const;
+    void *rva006E1090() const;
     const AptCIH *rva006E0CB0() const;
     bool rva006E0C50(const AptCIH *other) const;
     bool rva006E0BF0() const;
@@ -228,6 +229,28 @@ void *AptCIH::rva006E1170() const
 {
     if ((unsigned char)((const BfmeAptValue006DCD20 *)this)->isCharacterInst() == 0) {
         g_bfmeAptAssertAtE17734("isCharacterInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xA5);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    _ReadWriteBarrier();
+    return m_4C;
+}
+
+// ?rva006E1090@AptCIH@@QBEPAXXZ, retail 0x006E1090, 103 bytes.
+// Button-inst field accessor at +0x4C guarded by type 0x0E and defined checks,
+// "this" assert at line 0xB5 and "isButtonInst()" at 0x92 via AptCIH.h.
+// Evidence: finish lane from banked 0x93 stash reverse/attempts/0x006e1090.cpp;
+// rowed getters 0x6DBB30 and 0x6DC010; same /O2 AptCIH layout as neighbours.
+// Barrier keeps the +0x4C load late (retail test-je-int3-mov, no hoist).
+void *AptCIH::rva006E1090() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xB5);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() != 0x0E || ((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
+        g_bfmeAptAssertAtE17734("isButtonInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x92);
         if (g_bfmeAptBreakOnAssertAtDDC01C)
             __debugbreak();
     }
