@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?rva002DC267@Rva002DC267@@QBE?AVUnicodeString@@XZ @0x002DC267 (118B):
 // Unicode save-directory builder. Ascii user-data path from GlobalData
 // rva002360DE at 0x002360DE widens through UnicodeString ctor at 0x006CB6D0
@@ -16,50 +16,10 @@ typedef unsigned short WideChar;
 
 #define NULL 0
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	void concat(const T *text);
-	void concat(const StringBase<T> &other);
-	bool startsWithNoCase(const StringBase<T> &other) const;
-	const T *find(T c) const;
-	const T *reverseFind(T c) const;
-protected:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	__forceinline AsciiString(const char *text) : StringBase<char>(text) {}
-	__forceinline ~AsciiString() { releaseBuffer(); }
-};
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	UnicodeString() {}
-	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
-	UnicodeString(const AsciiString &src);
-	__forceinline ~UnicodeString() { releaseBuffer(); }
-	const WideChar *str() const { return m_data ? &m_data->data[0] : L""; }
-};
+#include "unicode_string.h"
 
 class GlobalData
 {

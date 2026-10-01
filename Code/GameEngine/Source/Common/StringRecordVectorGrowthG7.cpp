@@ -1,4 +1,4 @@
-// cl: /G7 /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /G7 /O1 /Ob2 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // STLport 4.5.3 vector<T>::_M_insert_overflow growth paths for BFME2 string
@@ -18,29 +18,8 @@
 #define _STLP_NO_EXCEPTIONS 1
 #include <vector>
 
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-public:
-    void set(const StringBase &);
-private:
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-    AsciiString &operator=(const AsciiString &other);
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-    __forceinline void assign(const UnicodeString &o) { StringBase<unsigned short>::set(o); }
-};
+#include "ascii_string.h"
+#include "unicode_string.h"
 
 struct BfmeStringRecord002199C8 {
     AsciiString text0, text1, text2; unsigned int word;

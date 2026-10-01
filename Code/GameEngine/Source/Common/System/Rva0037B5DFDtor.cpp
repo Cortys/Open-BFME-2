@@ -7,13 +7,7 @@
 // neighbours RecorderIsMultiplayer 0x0037B18C and GetLastReplayDisplayName 0x0037BA62 same flags.
 #include "ascii_string.h"
 
-class UnicodeString
-{
-public:
-	~UnicodeString() { ((StringBase<unsigned short> *)this)->releaseBuffer(); }
-private:
-	unsigned short *m_data;
-};
+#include "unicode_string.h"
 
 class Rva0037B5DF
 {

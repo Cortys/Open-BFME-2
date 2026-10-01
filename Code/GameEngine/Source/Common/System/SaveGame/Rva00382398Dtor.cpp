@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 //
 // ??1Rva00382398@@UAE@XZ, retail 0x00382398, 119 bytes.
 // Virtual dtor (novtable suppresses its own vptr store) over
@@ -7,24 +7,8 @@
 // reverse with EH states 4..0 then the rowed base dtor. Identity from caller
 // 0x003831EB (28B deleting dtor calling it then operator delete) and the
 // five releaseBuffer calls plus base dtor row.
-template <typename T> class StringBase {
-    friend class AsciiString;
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    void *m_data;
-};
-class AsciiString : private StringBase<char> {
-public:
-    __forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    __forceinline ~AsciiString() {}
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "ascii_string.h"
+#include "unicode_string.h"
 class Xfer;
 class Snapshot {
 public:

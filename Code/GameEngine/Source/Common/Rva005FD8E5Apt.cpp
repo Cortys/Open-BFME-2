@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /G7
 // ?rva005FD8E5@Rva005FD788@@QAEXHHH@Z retail 0x005FD8E5 113B
 // Evidence: chain from 0x005FD53E you landed; calls Get 0x005FD53E and rva005FD788 0x005FD788 and releaseBuffer 0x00036E70; entry stride 0x18 base 0x1C offsets 0x10 0x14; string CP literal; /G7 for retail imul 0x18; caller 0x005FD959 jmp
 template <typename T> struct BfmeStringData
@@ -8,31 +8,8 @@ template <typename T> struct BfmeStringData
 	unsigned short capacity;
 	T text[1];
 };
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-	void format_va(const T *format, char *args);
-private:
-	~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() {}
-	~AsciiString() {}
-	void __cdecl format(const char *format, ...);
-};
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-};
+#include "ascii_string.h"
+#include "unicode_string.h"
 struct Rva005FD788Inner
 {
 	char m_pad8[8];

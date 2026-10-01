@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?Rva002DBFAD@@YA?AVUnicodeString@@PBX@Z @0x002DBFAD 212B evidence: GetVersionExA GetDateFormatA-W IAT; UnicodeString translate 0x006CB5F0; StringBase wide copy 0x00037050 set 0x0000565D release 0x00036E70 rowed; callers 5
 
 typedef int Int;
@@ -37,44 +37,10 @@ extern "C" __declspec(dllimport) Int __stdcall GetDateFormatW(
 	DWORD Locale, DWORD dwFlags, const SYSTEMTIME *lpDate,
 	const WideChar *lpFormat, WideChar *lpDateStr, Int cchDate);
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	void set(const T *text);
-protected:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	__forceinline ~AsciiString() { releaseBuffer(); }
-};
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	UnicodeString() {}
-	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
-	UnicodeString(const AsciiString &src);
-	void translate(const char *text);
-	__forceinline ~UnicodeString() { releaseBuffer(); }
-};
+#include "unicode_string.h"
 
 UnicodeString Rva002DBFAD(SYSTEMTIME date)
 {

@@ -109,16 +109,7 @@ struct XferUnknown11;
 #include "ascii_string.h"
 
 
-class UnicodeString
-{
-public:
-    int getLength() const { return ((const StringBase<unsigned short> *)this)->getLength(); }
-    const unsigned short *str() const { return ((const StringBase<unsigned short> *)this)->str(); }
-    void clear() { ((StringBase<unsigned short> *)this)->clear(); }
-
-private:
-    unsigned short *m_text;
-};
+#include "unicode_string.h"
 
 struct PooledStringEntry
 {

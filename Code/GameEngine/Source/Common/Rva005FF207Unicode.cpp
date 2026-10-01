@@ -8,15 +8,7 @@
 // return to 0x005FF450.
 #include "ascii_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &o)
-		: StringBase<unsigned short>((const StringBase<unsigned short> &)o) {}
-	~UnicodeString() {}
-	void __cdecl format(const unsigned short *format, ...);
-};
+#include "unicode_string.h"
 
 extern const unsigned short g_Va007C9260[];
 

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??0Rva00382FA7@@QAE@ABU0@@Z, retail 0x00382FA7, 295 bytes.
 // Copy ctor with vptr, UnicodeString at +0x04, ints/bytes, two rep-movsd
@@ -6,34 +6,10 @@
 // nested Rva00382574 at +0x90 via its rowed copy, tail ints and 4-dword block
 // at +0xcc. Identity from chain (calls 0x00382574 just landed) and caller
 // 0x0038360A plus vtable 0xC193C8.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
 
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &other);
-	~StringBase();
 
-	int *m_data;
-};
-
-class AsciiString : private StringBase<char>
-{
-public:
-	AsciiString() : StringBase<char>() {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	~AsciiString() {}
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() : StringBase<unsigned short>() {}
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 struct Rva00382574
 {

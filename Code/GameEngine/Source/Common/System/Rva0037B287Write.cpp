@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva0037B287@Rva0037B287@@QAEXVUnicodeString@@H@Z retail 0x0037B287 159B.
 // File-flag helper: if FILE at +0x10 is null release by-value wide arg and return;
 // else if int arg in [0,8) ftell then fseek to arg+29 SEEK_SET then fwrite one 0x01 byte
@@ -7,37 +7,8 @@
 // neighbours RecorderIsMultiplayer 0x0037B18C and Rva0037B5DF dtor 0x0037B5DF same flags.
 typedef unsigned short WideChar;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	StringBase(const T *that);
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	void releaseBuffer();
-	Header *m_data;
-public:
-	const T *str() const;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-private:
-	StringBase<WideChar> m_data;
-};
 
 struct FILE;
 extern "C" __declspec(dllimport) long __cdecl ftell(FILE *stream);

@@ -10,11 +10,7 @@
 #include <map>
 
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 class Xfer;
 class Snapshot {
 public:

@@ -9,23 +9,7 @@
 // src, neighbours 0x002207C4/0x0022088B.
 #include "ascii_string.h"
 
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-	UnicodeString() : m_text(0) {}
-	UnicodeString(const UnicodeString &that)
-	{
-		((StringBase<unsigned short> *)this)->StringBase<unsigned short>::StringBase(*(const StringBase<unsigned short> *)&that);
-	}
-	~UnicodeString() { ((StringBase<unsigned short> *)this)->releaseBuffer(); }
-	void set(const UnicodeString &other)
-	{
-		((StringBase<unsigned short> *)this)->set(*(const StringBase<unsigned short> *)&other);
-	}
-private:
-	unsigned short *m_text;
-};
+#include "unicode_string.h"
 
 class GameTextInterface
 {

@@ -7,11 +7,7 @@
 // copies call StringBase<char>0x365F0 or StringBase<unsigned short>0x37050.
 #include <memory>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 // SaveGameInfo's name getter at 0x22CEF1 identifies this class. Its destructor
 // at 0x2DD1E9 restores Snapshot's established vtable (VA 0xBBB554), proving

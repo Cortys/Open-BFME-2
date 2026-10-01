@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 
 // The composite transfer operators need real layouts: each one announces a
 // four-character tag with a zero-length transfer and then moves the payload as
@@ -107,64 +107,15 @@ struct XferUnknown11;
 // WORD +4, capacity WORD +6, data +8. getLength/str/clear inline here so the
 // AsciiString transfer below emits the witnessed movzx/getBufferForRead/clear
 // sequence; getBufferForRead and releaseBuffer resolve via pins 0x36640/0x36410.
-template <typename T>
-class StringBase
-{
-public:
-    int getLength() const
-    {
-        return m_data ? m_data->length : 0;
-    }
-    const T *str() const
-    {
-        return m_data ? m_data->data : (const T *)"";
-    }
-    void clear()
-    {
-        releaseBuffer();
-    }
-    T *getBufferForRead(int len);
-
-private:
-    void releaseBuffer();
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-};
+#include "ascii_string.h"
 
 // AsciiString is one pointer (StringBase<char> layover): delegate so the
 // transfer below inlines call-free getLength/str and direct getBufferForRead
 // (0x36640) and clear/releaseBuffer (0x36410) calls.
-class AsciiString
-{
-public:
-    int getLength() const { return ((const StringBase<char> *)this)->getLength(); }
-    const char *str() const { return ((const StringBase<char> *)this)->str(); }
-    void clear() { ((StringBase<char> *)this)->clear(); }
-
-private:
-    char *m_text;
-};
 
 // UnicodeString is one pointer (StringBase<unsigned short> layover): same
 // pattern with wide getBufferForRead (0x370A0) and clear (0x36E70).
-class UnicodeString
-{
-public:
-    int getLength() const { return ((const StringBase<unsigned short> *)this)->getLength(); }
-    const unsigned short *str() const { return ((const StringBase<unsigned short> *)this)->str(); }
-    void clear() { ((StringBase<unsigned short> *)this)->clear(); }
-
-private:
-    unsigned short *m_text;
-};
+#include "unicode_string.h"
 
 class XferException
 {

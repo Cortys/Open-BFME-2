@@ -21,12 +21,7 @@ struct Rva005F6220Team
 	char m_name[1];
 };
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 UnicodeString __cdecl Rva005F632AFormat(int rank);
 

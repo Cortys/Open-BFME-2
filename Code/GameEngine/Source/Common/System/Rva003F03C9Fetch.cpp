@@ -11,17 +11,7 @@ typedef bool Bool;
 #include "ascii_string.h"
 
 
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() {}
-
-private:
-	StringBase<wchar_t> m_data;
-};
+#include "unicode_string.h"
 
 class Rva0020EDD5
 {

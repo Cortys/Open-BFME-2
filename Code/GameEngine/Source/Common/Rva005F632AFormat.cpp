@@ -3,18 +3,7 @@
 // Evidence: static APT:RankLabel via rowed StringBase ctor 0x37BA0 and atexit; TheGameText slot 0x38 fetch; Unicode format 0x6CB5D0; releaseBuffers 0x36E70; caller 0x005F6407; precedent Rva0052906BUpdate
 #include "ascii_string.h"
 
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-	void format(const unsigned short *fmt, ...);
-	const unsigned short *str() const
-	{
-		void *d = *(void *const *)this;
-		return d ? (const unsigned short *)((const char *)d + 8) : (const unsigned short *)L"";
-	}
-};
+#include "unicode_string.h"
 
 class GameTextInterface
 {

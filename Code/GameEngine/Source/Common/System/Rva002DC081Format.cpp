@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?Rva002DC081@@YA?AVUnicodeString@@USYSTEMTIME@@H@Z @0x002DC081 233B evidence: GetVersionExA GetTimeFormatA-W IAT; UnicodeString translate 0x006CB5F0; StringBase wide copy 0x00037050 set 0x0000565D release 0x00036E70 rowed; callers 4 one 183B shows SYSTEMTIME by value plus int flag; neighbours Rva002DBFADFormat and Rva002DC267Get same flags
 // Private StringBase copy like neighbour Rva002DBFADFormat.cpp which byte-matches the same call sequence; shared ascii header holds no UnicodeString translate with these row names so private copy is kept for gate parity.
 
@@ -38,44 +38,10 @@ extern "C" __declspec(dllimport) Int __stdcall GetTimeFormatW(
 	DWORD Locale, DWORD dwFlags, const SYSTEMTIME *lpDate,
 	const WideChar *lpFormat, WideChar *lpDateStr, Int cchDate);
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	void set(const T *text);
-protected:
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() {}
-	__forceinline ~AsciiString() { releaseBuffer(); }
-};
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	UnicodeString() {}
-	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
-	UnicodeString(const AsciiString &src);
-	void translate(const char *text);
-	__forceinline ~UnicodeString() { releaseBuffer(); }
-};
+#include "unicode_string.h"
 
 UnicodeString Rva002DC081(SYSTEMTIME date, int flag)
 {

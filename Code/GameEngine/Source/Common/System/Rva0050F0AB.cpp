@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // ?rva0050F0AB@Rva0050F0AB@@QAEXXZ, retail 0x0050F0AB, 96 bytes.
 // If m_7c null return; else format m_6c via UnicodeString::format L"%d" into
 // local buf and GadgetTextEntrySetText(m_7c buf by value). Evidence: EH prolog
@@ -7,40 +7,8 @@
 // 0x0050F416 0x0050F446 0x0050F4A0; neighbours RegistryAsciiPath /O1 /EHsc.
 typedef unsigned short wchar_t;
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-	void __cdecl format(const wchar_t *format, ...);
-	const wchar_t *str() const
-	{
-		static const wchar_t TheNullChr = 0;
-		return m_data.m_data ? &m_data.m_data->data[0] : &TheNullChr;
-	}
-private:
-	StringBase<wchar_t> m_data;
-};
 
 class GameWindow;
 

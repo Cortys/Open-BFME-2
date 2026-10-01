@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?readDict@DataChunkInput@@QAE?AVDict@@XZ @0x00307833 397B
 // DataChunkInput readDict: reads u16 len, Dict d(len), loops reading keyAndType
 // via readInt, getName via m_contents, nameToKey via generator, switches on
@@ -19,40 +19,10 @@ enum ErrorCode
 	ERROR_CORRUPT_FILE_FORMAT = 0xDEAD0005
 };
 
-template <typename T>
-class StringBase
-{
-public:
-    T *getBufferForRead(Int len);
+#include "ascii_string.h"
 
-private:
-    void releaseBuffer();
-    friend class AsciiString;
-    friend class UnicodeString;
 
-protected:
-    void *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-    AsciiString(const AsciiString &other);
-    ~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); }
-
-private:
-    // 4-byte layout via base only
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString(const UnicodeString &other);
-    ~UnicodeString() { ((StringBase<unsigned short> *)this)->releaseBuffer(); }
-
-private:
-    // 4-byte layout via base only
-};
+#include "unicode_string.h"
 
 enum NameKeyType
 {

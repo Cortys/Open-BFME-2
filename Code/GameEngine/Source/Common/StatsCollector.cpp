@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 
 // ??0StatsCollector@@QAE@XZ, retail 0x004376FA (91 bytes).
 // BFME1 StatsCollector.cpp donor, trimmed to the constructor; the remaining
@@ -16,20 +16,8 @@ typedef int Bool;
 #define FALSE 0
 #define TRUE 1
 
-template <typename T> class StringBase
-{
-public:
-	int compare(const char *other) const;
+#include "ascii_string.h"
 
-protected:
-	char *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	AsciiString() { m_data = 0; }
-};
 
 struct _iobuf;
 typedef struct _iobuf FILE;
@@ -50,25 +38,8 @@ struct UnicodeStringData
 	unsigned short text[1];
 };
 
-template <> class StringBase<unsigned short>
-{
-	friend class UnicodeString;
-	void releaseBuffer();
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-
-protected:
-	UnicodeStringData *m_data;
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString(const AsciiString &text);
-	const unsigned short *str() const { return m_data ? &m_data->text[0] : L""; }
-};
+#include "unicode_string.h"
 
 // BFME2 reads the logic rate from a global (retail 0x00DBA4E4) where Zero
 // Hour and BFME1 use the LOGICFRAMES_PER_SECOND constant 5; baked like

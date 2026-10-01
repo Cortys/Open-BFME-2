@@ -7,11 +7,7 @@
 // copies call StringBase<char>0x365F0 or StringBase<unsigned short>0x37050.
 #include <memory>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 // Retail466EA7 copies an AsciiString and one raw dword. Its bytes are already
 // held under the tree-pair identity; use an independently verified alias.

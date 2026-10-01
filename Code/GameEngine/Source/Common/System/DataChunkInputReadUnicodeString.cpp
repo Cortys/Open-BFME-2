@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /G7
 // ?rva003075A3@DataChunkInput@@QAE?AVUnicodeString@@XZ @0x003075A3 158B
 // DataChunkInput counted-string reader (readUnicodeString shape): reads u16
 // len via virtual read, decrements, getBufferForRead, reads len*2 bytes, null
@@ -12,32 +12,8 @@ typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef bool Bool;
 
-template <typename T>
-class StringBase
-{
-public:
-    StringBase(void) : m_data(0) {}
-    T *getBufferForRead(Int len);
+#include "unicode_string.h"
 
-private:
-    StringBase(const StringBase &other);
-    void releaseBuffer();
-    friend class UnicodeString;
-
-protected:
-    void *m_data;
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString(void) : StringBase<unsigned short>() {}
-    UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    ~UnicodeString() { ((StringBase<unsigned short> *)this)->releaseBuffer(); }
-
-private:
-    // keep 4-byte layout via base only
-};
 
 class ChunkInputStream
 {

@@ -7,11 +7,7 @@
 // copies call StringBase<char>0x365F0 or StringBase<unsigned short>0x37050.
 #include <memory>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 // Existing WeaponTemplateSetHeadCopyCtor.cpp proves a nonthrowing 0x4C-byte
 // memcpy constructor at 0x45455. Preserve the out-of-line helper call.

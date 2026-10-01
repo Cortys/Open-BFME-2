@@ -595,9 +595,7 @@ typedef bool Bool;
 #include "ascii_string.h"
 
 
-class UnicodeString : private StringBase<unsigned short>
-{
-};
+#include "unicode_string.h"
 
 // The +0x64 member's own type is unidentified: its default constructor
 // (retail 0x00229557) calls BFME2NativeNetwork::baseConstruct, its vtable

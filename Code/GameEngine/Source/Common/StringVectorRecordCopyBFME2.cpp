@@ -9,11 +9,7 @@
 #include <memory>
 #include <vector>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 // Complete retail record copy at 0x000BDF17.
 struct BfmeVectorRecord000BDF17 {

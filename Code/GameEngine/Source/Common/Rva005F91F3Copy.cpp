@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /Ireference/shims/bfme2_ascii /O1
 // ??0Rva005F91F3@@QAE@ABURva005F91F3Src@@@Z, RVA 0x005F91F3, 36 bytes.
 // Converting copy: dest {word0 +0, word1 +4, UnicodeString +8} from src
 // {header +0, word0 +4, word1 +8, UnicodeString +0xC}. Retail copies
@@ -8,21 +8,7 @@
 // stride 12) with source displaced by one leading dword; callers 0x005FA205
 // and 0x005FA2CC build a 12-byte temp at ebp-0x24 and destroy its string
 // at ebp-0x1C via releaseBuffer 0x36E70.
-template <typename T> class StringBase {
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-public:
-    void set(const StringBase &);
-private:
-    void *m_data;
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 struct Rva005F91F3Src {
     unsigned int header;
     unsigned int word0;

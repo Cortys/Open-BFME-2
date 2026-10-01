@@ -120,15 +120,7 @@ public:
 #include "ascii_string.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/UnicodeString.h
-class UnicodeString
-{
-    struct Data { int unexamined0; int unexamined4; };
-    Data *m_data;
-
-public:
-    // 16-bit characters: wchar_t is not a built-in type under this unit's flags.
-    const unsigned short *str() const { return m_data ? reinterpret_cast<const unsigned short *>(m_data + 1) : reinterpret_cast<const unsigned short *>(L""); }
-};
+#include "unicode_string.h"
 
 class PooledString
 {

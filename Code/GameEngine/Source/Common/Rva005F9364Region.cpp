@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?rva005F9364@Rva005F9364@@QAEXABVUnicodeString@@@Z @ 0x005F9364 103B
 // Honest address name: __thiscall Apt RegionName key setter, twin of 0x005FB770 PlayerName.
 // Target evidence: 103B retail, EH_prolog, format string
@@ -12,37 +12,8 @@ template <typename T> struct BfmeStringData
     unsigned short capacity;
     T text[1];
 };
-template <typename T> class StringBase
-{
-    friend class AsciiString;
-    friend class UnicodeString;
-public:
-    StringBase() : m_data(0) {}
-    int compare(const StringBase<T> &other) const;
-    void set(const StringBase<T> &other);
-private:
-    StringBase(const T *text);
-    StringBase(const StringBase<T> &other);
-    ~StringBase() { releaseBuffer(); }
-    void releaseBuffer();
-    BfmeStringData<T> *m_data;
-};
-class AsciiString : private StringBase<char>
-{
-public:
-    AsciiString() {}
-    AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-    ~AsciiString() {}
-    void format(const char *fmt, ...);
-};
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString() {}
-    UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    ~UnicodeString() {}
-    void format(const unsigned short *fmt, ...);
-};
+#include "ascii_string.h"
+#include "unicode_string.h"
 class BfmeAptWindowManager
 {
 public:
