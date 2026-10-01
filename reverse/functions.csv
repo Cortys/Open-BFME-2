@@ -45594,3 +45594,7 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva004D6B9D@@YAMM@Z,,0x004D6B9D,27,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,degrees wrapper over 0x004D6B3A times PI / 180.0f; caller 0x0025ED98
 ?rva002DA153@Rva002DA153@@QAEMXZ,,0x002DA153,121,Code/GameEngine/Source/Common/Rva002DA153Scale.cpp,matched,mode-gated float scale; -1 test written as equality per ucomiss jp branch fixes the banked partial; call sites 0x00059B4C 0x0005C974
 ?rva005DB928@Elem005DB98E@@QAEMXZ,,0x005DB928,51,Code/GameEngine/Source/Common/Elem005DB98EFalloff.cpp,matched,falloff max(m_08 - m_0C - 1 0) / m_08; float-converted quotient keeps fdiv mem form and fixes the banked partial; caller 0x005DB96B
+??1Rva00402D7E@@QAE@XZ,,0x00402C8A,119,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,dtor: clearItems then three inline handle releases via 0x50ED3 and vector free
+?copyItems@Rva00402D7E@@QAEXABV1@@Z,,0x00402D01,125,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,deep copy of 0x64-byte items through rowed Rva00402C0F copy ctor; end hoisted
+??0Rva00402D7E@@QAE@ABV0@@Z,,0x00402D7E,109,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,copy ctor: string plus empty vector plus three nothrow handles then copyItems
+??4Rva00402D7E@@QAEAAV0@ABV0@@Z,,0x00402DEB,69,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,operator= : self check then string set plus three handle assigns then copyItems
