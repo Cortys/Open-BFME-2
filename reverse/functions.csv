@@ -46719,3 +46719,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004590E6@Rva004590C5@@QAEXXZ,,0x004590E6,35,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004590C5.cpp,matched,chain via 0x0045906E zero plus setWakeFrame forever
 ?Rva002AA32FEqual@@YA_NPBM00@Z,,0x002AA32F,45,Code/GameEngine/Source/Common/Rva002AA32FEqual.cpp,matched,float range equal via ucomiss caller 0x002AAC9E unblocks 0x002AAC9E
 ?rva003626CE@Rva003626CE@@QAEXE@Z,,0x003626CE,28,Code/GameEngine/Source/Common/Bfme/Rva00409930SlotArray.cpp,matched,9-slot loop via rowed rva_004097F0 same TU visibility
+?update@AIDockState@@UAE?AW4StateReturnType@@XZ,,0x00341770,38,Code/GameEngine/Source/GameLogic/AI/AIDockStateOnExit.cpp,matched,slot 6 of vtable 0xC11368 whose name slot returns AIDockState; ZH update (can-path-through-units then dock machine update with sleep converted)

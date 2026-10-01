@@ -11,6 +11,9 @@
 // The deletion is a global-scope delete: retail calls vslot 0 with flag 0
 // (destroy only) and then ::operator delete on its result, passing NULL when
 // the pointer is NULL, which ::delete on a virtual-destructor class emits.
+// AIDockState::update, retail 0x00341770 (38 bytes), slot 6: the Zero Hour body
+// (setCanPathThroughUnits(true) on the AI, then the dock machine's
+// updateStateMachine, vslot 4, with sleeps converted to continue).
 enum StateReturnType
 {
 	STATE_CONTINUE = 0,
@@ -21,6 +24,11 @@ enum StateExitType
 {
 	EXIT_NORMAL = 0
 };
+#define IS_STATE_SLEEP(ret) ((int)(ret) > 0)
+inline StateReturnType CONVERT_SLEEP_TO_CONTINUE(StateReturnType s)
+{
+	return IS_STATE_SLEEP(s) ? STATE_CONTINUE : s;
+}
 class Object;
 class AIUpdateInterface
 {
@@ -51,7 +59,7 @@ public:
 	virtual void slot04();
 	virtual void slot08();
 	virtual void slot0c();
-	virtual void slot10();
+	virtual StateReturnType updateStateMachine();
 	virtual void slot14();
 	virtual void slot18();
 	virtual StateReturnType initDefaultState();
@@ -77,6 +85,8 @@ class AIDockState : public State
 {
 public:
 	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
+	Object *getMachineOwner() { return m_machine->getOwner(); }
 private:
 	AIDockMachine *m_dockMachine; // +0x20
 };
@@ -94,4 +104,13 @@ void AIDockState::onExit(StateExitType status)
 		ai->m_canPathThroughUnits = 0;
 		ai->ignoreObstacle(0);
 	}
+}
+StateReturnType AIDockState::update()
+{
+	AIUpdateInterface *ai = getMachineOwner()->getAI();
+	if (ai)
+	{
+		ai->m_canPathThroughUnits = 1;
+	}
+	return CONVERT_SLEEP_TO_CONTINUE(m_dockMachine->updateStateMachine());
 }
