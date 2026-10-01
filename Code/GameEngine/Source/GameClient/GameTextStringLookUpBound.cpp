@@ -2,6 +2,11 @@
 // ?Rva002E5C15LowerBound@@YAPAUStringLookUp@@PAU1@0ABQBDURva002E5C15Comp@@H@Z 0x002E5C15 76B
 // Evidence: chain from 0x002E56B3 Less; binary lower_bound over 8B StringLookUp array; callers 0x002E609E.
 
+// The stdcall helpers take the same two stack arguments and ignore ECX; use
+// alternates so the thiscall functor call sites retain retail's ECX setup.
+#pragma comment(linker, "/alternatename:??RRva002E5C15Comp@@QBE_NPBUStringLookUp@@PBD@Z=?Rva002E56B3Less@@YG_NPBUStringLookUp@@PBD@Z")
+#pragma comment(linker, "/alternatename:??RRva002E5C61Comp@@QBE_NPBDPBUStringLookUp@@@Z=?Rva002E56E2Greater@@YG_NPBDPBUStringLookUp@@@Z")
+
 struct AsciiString
 {
 	void *m_data;
