@@ -45986,3 +45986,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F6A44@Rva005F6A44@@QAEXXZ,,0x005F6A44,20,Code/GameEngine/Source/Common/Rva005F6A44Method.cpp,matched,leaf conditional virtual slot 0x0C on member +4 with outer this plus byte set plus caller 0x005F6A98 twin of rowed 0x005F6A30
 ??_GRva00420E67@@UAEPAXI@Z,,0x00421084,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-09-421084.cpp,matched,slot 0 vtable 0083BDC4 rowed ??1Rva00420E67
 ?rva004E0513@Rva004E0513@@QAEXPAVXfer@@@Z,,0x004E0513,204,Code/GameEngine/Source/Common/Rva004E0513Xfer.cpp,matched,unlock lane versioned Xfer 1-5 with Ascii upgrade
+?rva004213DB@Rva004210B0@@QAEXPBVModuleData@@@Z,,0x004213DB,33,Code/GameEngine/Source/Common/Rva004213DBAdd.cpp,matched,unlock lane add-if-absent via contains and push_back
