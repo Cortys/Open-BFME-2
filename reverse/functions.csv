@@ -45663,3 +45663,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??$__uninitialized_copy@PBVAssetReference@@PAV1@@_STL@@YAPAVAssetReference@@PBV1@0PAV1@ABU__false_type@0@@Z,,0x000C9308,38,Code/Libraries/Source/WWVegas/WWLib/Rva00051AF9FillN.cpp,matched,uninitialized copy loop through rowed _Construct<AssetReference> 0x000C92F6
 ??$__uninitialized_copy@PBVRva004BA1D0@@PAV1@@_STL@@YAPAVRva004BA1D0@@PBV1@0PAV1@ABU__false_type@0@@Z,,0x004BA246,38,Code/Libraries/Source/WWVegas/WWLib/Rva00051AF9FillN.cpp,matched,uninitialized copy loop over 0x2C-byte elements through rowed _Construct 0x004BA219
 ?rva004DF231@Rva004DF231@@QAEXPAX@Z,,0x004DF231,42,Code/GameEngine/Source/Common/Rva004DF231Power.cpp,matched,caller 0x0028D99A callee rows 0x004DF1AF 0x004DF18D
+?rva004DF9E4@Rva004DF9E4@@QAEXPAXH@Z,,0x004DF9E4,42,Code/GameEngine/Source/Common/Rva004DF9E4Loop.cpp,matched,callers 0x004E0449 0x004E0466 0x004E049B pass ptr mask
