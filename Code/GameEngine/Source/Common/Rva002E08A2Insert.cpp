@@ -74,3 +74,28 @@ void Rva002E08C7SiftUp(void **base, int idx, int top, void *pivot)
 	}
 	base[idx] = pivot;
 }
+
+// ?Rva002E0E9DAdjustHeap@@YAXPAPAXHHPAX1@Z @0x002E0E9D 90B.
+// Heap adjust over void* elements keyed at +0xC (min-heap): sifts the hole
+// down picking the smaller child, drops the last slot in when the child runs
+// even with len, then tail-calls the 5-push sift-up at 0x002E08C7. Chain lane
+// on 0x002E08C7; callers 0x002E1824/0x002E184D; cdecl with caller cleanup like
+// the 0x003BE553 precedent (same 90B size, opposite min-heap direction).
+typedef void (__cdecl *Rva002E08C7SiftUp5)(void **, int, int, void *, void *);
+void Rva002E0E9DAdjustHeap(void **base, int hole, int len, void *value, void *extra)
+{
+	int top = hole;
+	int child = hole * 2 + 2;
+	while (child < len) {
+		if (((int *)base[child])[3] > ((int *)base[child - 1])[3])
+			--child;
+		base[hole] = base[child];
+		hole = child;
+		child = child * 2 + 2;
+	}
+	if (child == len) {
+		base[hole] = base[child - 1];
+		hole = child - 1;
+	}
+	((Rva002E08C7SiftUp5)Rva002E08C7SiftUp)(base, hole, top, value, extra);
+}
