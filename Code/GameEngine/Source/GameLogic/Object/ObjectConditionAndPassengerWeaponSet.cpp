@@ -119,6 +119,8 @@ public:
 	void rva00293C1B(const int *x);
 	void rva0028CFB2(const int *a, const int *b);
 	void rva00293C77(const int *a, const int *b);
+	void rva0028CFF5(const int *a, bool b);
+	void rva00293CD9(const int *a, bool b);
 	__forceinline void setConditionIndex(ModelConditionFlagType mc)
 	{
 		if (m_conditionBits.testIndex(mc) == 0)
@@ -293,4 +295,21 @@ void Object::rva00293C77(const int *a, const int *b)
 		}
 	}
 }
+void Object::rva00293CD9(const int *a, bool b)
+{
+	Object *top = rva002931F5(false);
+	if (top)
+	{
+		Rva00293DACIface *iface = (Rva00293DACIface *)top->rva0028C197();
+		if (iface)
+		{
+			Rva00293DACRange range;
+			iface->rva00293DACSlot66(&range);
+			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
+				node->m_object->rva0028CFF5(a, b);
+			top->rva0028CFF5(a, b);
+		}
+	}
+}
+
 
