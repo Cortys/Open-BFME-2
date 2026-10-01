@@ -46071,3 +46071,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?Rva0055C9A0WriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055C9A0,216,Code/GameEngine/Source/GameClient/Rva0055C9A0Write.cpp,matched,module header File INI line via oss Pad str Write cat6
 ?Rva0055C18BWriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055C18B,216,Code/GameEngine/Source/GameClient/Rva0055C18BWrite.cpp,matched,module header File INI line via oss Pad str Write cat0
 ?Rva0055CB5DWriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055CB5D,216,Code/GameEngine/Source/GameClient/Rva0055CB5DWrite.cpp,matched,module header File INI line via oss Pad str Write cat5
+??0Rva004E5A24@@QAE@XZ,,0x004E5A24,84,Code/GameEngine/Source/Common/Bfme/Rva004E5A24Ctor.cpp,matched,ctor via baseConstruct and vector base with vtable and floats per retail and caller
