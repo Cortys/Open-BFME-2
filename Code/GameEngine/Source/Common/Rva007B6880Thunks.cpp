@@ -134,8 +134,11 @@ extern unsigned g_Va009F6F30;
 unsigned int g_Va009F6F30;
 
 // ?rva007B71C0@@YAXXZ @ 0x007B71C0 (10B). Global SegLineRenderer dtor thunk: ecx=&g_Va009F6F30 then tail-jmp to rowed ??1SegLineRendererClass@@QAE@XZ (0x001911C0). No callers. Prev is our 0x007B6FD0 row in this TU (same page). Honest address name.
+// The deleting-dtor COMDAT copy this TU emits must match part_buf.cpp's /O2-style (add esp,4) copy, while the file stays /O1 for the other thunks: pragma on the caller controls the compiler-generated ??_G.
+#pragma optimize("t", on)
 void __cdecl rva007B71C0()
 {
 	SegLineRendererClass *p = (SegLineRendererClass *)&g_Va009F6F30;
 	return p->~SegLineRendererClass();
 }
+#pragma optimize("", on)
