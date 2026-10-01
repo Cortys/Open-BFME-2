@@ -45993,3 +45993,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00421BF7@Rva00421BF7@@QAEXPAX@Z,,0x00421BF7,45,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,unlock lane self-call free 0x30830 caller 0x00421EF8
 ?rva00421EEA@Rva00421BF7@@QAEXXZ,,0x00421EEA,41,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,chain lane caller at 0x00422652
 ?rva00421C24@Rva00421C24@@QAEXPAX@Z,,0x00421C24,45,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,unlock lane self-call free 0x30830
+?rva00421F13@Rva00421C24@@QAEXXZ,,0x00421F13,41,Code/Libraries/Source/WWVegas/WWLib/Rva00421BF7Free.cpp,matched,chain lane calls 0x00421C24

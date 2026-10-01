@@ -54,6 +54,9 @@ class Rva00421C24
 {
 public:
 	void rva00421C24(void *n);
+	void rva00421F13();
+	Rva00421BF7Header *m_header;
+	int m_count;
 };
 void Rva00421C24::rva00421C24(void *n)
 {
@@ -65,4 +68,14 @@ void Rva00421C24::rva00421C24(void *n)
 		free(p);
 		p = next;
 	}
+}
+void Rva00421C24::rva00421F13()
+{
+	if (m_count == 0)
+		return;
+	rva00421C24(m_header->m_first);
+	m_header->m_link8 = m_header;
+	m_header->m_first = 0;
+	m_header->m_linkC = m_header;
+	m_count = 0;
 }
