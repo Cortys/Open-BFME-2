@@ -29,3 +29,6 @@ void Rva002A9F17::rva002A9F17(const StringBase<char> *name)
 	if (p)
 		p->rva00421520(&m_318, name);
 }
+
+// g_00E03158: matched references place it at VA 0xe03158 (retail value 0).
+class Rva00421520 *g_00E03158 = 0;

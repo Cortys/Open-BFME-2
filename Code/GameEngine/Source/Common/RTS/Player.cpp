@@ -4840,3 +4840,6 @@ void Player::loadPostProcess( void )
 {
 
 }  // end loadPostProcess
+
+// TheTeamFactory: matched references place it at VA 0xe028bc (retail value 0).
+class TeamFactory *TheTeamFactory = 0;
