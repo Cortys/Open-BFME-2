@@ -9,6 +9,10 @@
 // of vtable 0x00C12A08 (name getter AIFollowWaypointPathExactState), the Zero
 // Hour body: setCanPathThroughUnits(true) on the AI (byte +0x3BA), then the
 // pinned base AIInternalMoveToState::update 0x00347460 (tail jump).
+// AIFollowWaypointPathExactState::onExit, retail 0x0034A121 (70 bytes): slot 5
+// of vtable 0x00C12A08 (name getter AIFollowWaypointPathExactState), the Zero
+// Hour body: base onExit, then if AI and current locomotor, setCompletedWaypoint,
+// clear canPathThroughUnits and allowInvalidPosition.
 typedef bool Bool;
 enum StateExitType
 {
@@ -26,14 +30,38 @@ public:
 template <> class AIDeadStateAISlots<0>
 {
 };
+class Locomotor
+{
+public:
+	enum LocoFlag
+	{
+		IS_BRAKING = 0,
+		ALLOW_INVALID_POSITION,
+	};
+	void setAllowInvalidPosition(Bool b)
+	{
+		if (b)
+			m_flags |= (1 << ALLOW_INVALID_POSITION);
+		else
+			m_flags &= ~(1 << ALLOW_INVALID_POSITION);
+	}
+private:
+	unsigned char m_pad00[0x44];
+	unsigned int m_flags; // +0x44
+};
+class Waypoint;
 // AIUpdateInterface: vslot 136 (+0x220) is called on a dead owner's AI.
 class AIUpdateInterface : public AIDeadStateAISlots<136>
 {
 public:
 	virtual void rva0033FF05Slot136() = 0;
+	void setCompletedWaypoint(const Waypoint *wp);
+	Locomotor *getCurLocomotor() { return m_curLocomotor; }
 	void setCanPathThroughUnits(Bool b) { m_canPathThroughUnits = b; }
 private:
-	unsigned char m_pad004[0x3BA - 0x04];
+	unsigned char m_pad004[0x1F0 - 0x04];
+	Locomotor *m_curLocomotor; // +0x1F0
+	unsigned char m_pad1F4[0x3BA - 0x1F4];
 	Bool m_canPathThroughUnits; // +0x3BA
 };
 class Object
@@ -85,13 +113,30 @@ StateReturnType AIDeadState::update()
 class AIInternalMoveToState : public State
 {
 public:
+	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 };
 class AIFollowWaypointPathExactState : public AIInternalMoveToState
 {
 public:
+	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
+private:
+	unsigned char m_padExact[0x4C - sizeof(AIInternalMoveToState)];
+	const Waypoint *m_lastWaypoint; // +0x4C
 };
+void AIFollowWaypointPathExactState::onExit(StateExitType status)
+{
+	AIInternalMoveToState::onExit(status);
+
+	AIUpdateInterface *ai = getMachineOwner()->getAI();
+	if (ai && ai->getCurLocomotor())
+	{
+		ai->setCompletedWaypoint(m_lastWaypoint);
+		ai->setCanPathThroughUnits(false);
+		ai->getCurLocomotor()->setAllowInvalidPosition(false);
+	}
+}
 StateReturnType AIFollowWaypointPathExactState::update()
 {
 	AIUpdateInterface *ai = getMachineOwner()->getAI();
