@@ -13,8 +13,17 @@ public:
 };
 
 extern EAStringC g_eaStringAtE177D4;
+extern EAStringC g_eaStringAtE18060;
 
 void rva007B9C30()
 {
     g_eaStringAtE177D4.~EAStringC();
+}
+
+// Complete 10B Ghidra boundary; independently registered at 0x007B678A.
+// The adjacent initializer calls EAStringC's default ctor on VA E18060,
+// then registers this same object's destructor callback.
+void rva007B9C40()
+{
+    g_eaStringAtE18060.~EAStringC();
 }
