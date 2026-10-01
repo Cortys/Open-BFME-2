@@ -45465,3 +45465,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva002E232FSort@@YAXPAPAX00PAX1@Z,,0x002E232F,87,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,partial heap sort via MakeHeap Reinsert Sort caller 0x002E2771
 ?Rva002E275FSort@@YAXPAPAX00PAX@Z,,0x002E275F,27,Code/GameEngine/Source/Common/Rva002E1EB7Insert.cpp,matched,adapter via 0x002E232F caller 0x002E2CE7
 ?Rva001EB2CCGetMapPath@@YA?AVAsciiString@@PBD@Z,,0x001EB2CC,93,Code/GameEngine/Source/Common/Rva001EB2CCMapPath.cpp,matched,maps path format via AsciiString header caller 0x1EB4E3
+??0Rva00346BC0@@QAE@IIIII@Z,,0x00346BC0,109,Code/GameEngine/Source/Common/Rva00346BC0Ctor.cpp,matched,memset 0x10 plus four bit sets first arg ignored like Rva00265254
