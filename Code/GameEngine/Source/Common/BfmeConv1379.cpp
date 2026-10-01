@@ -7,10 +7,7 @@
 //
 // WHAT THE BODY IS. A stdcall Fesl transaction-message filler: it snapshots
 // the per-kind global, stamps the message kind dword, then adds its string
-// fields through the shared BfmeMsgVIW setters. Retail calls bfmeRunVIW at
-// 0x00655B50, bfmeSetVIW at 0x00655AA0 and bfmeSet2VIW at 0x00655F00 (all
-// pre-pinned); the string pushes and the global load are DIR32 slots the
-// patcher fills, so the donor compiles unchanged.
+// fields through the matched Rva007E8810Message methods.
 
 class BfmeMsgVIW
 {
@@ -22,6 +19,16 @@ public:
 	void bfmeSet4VIW(const char *k, void *v);
 	char m_bfmePad[0x1c];
 	int m_bfme1c;
+};
+
+class Rva007E8810Message
+{
+public:
+	void reset();
+	void addString(const char *key, const char *value);
+	void addInt64(const char *key, __int64 value);
+	void addInt(const char *key, int value);
+	void addBool(const char *key, bool value);
 };
 
 extern void *g_bfmeAVIW;
@@ -43,10 +50,10 @@ void * g_bfmeEVIW;
 void __stdcall bfmeGoAVIW(BfmeMsgVIW *m, void *a, void *b)
 {
 	void *g = g_bfmeAVIW;
-	m->bfmeRunVIW();
+	((Rva007E8810Message *)m)->reset();
 	m->m_bfme1c = 0x626c6f62;
-	m->bfmeSetVIW("TXN", g);
-	m->bfmeSet2VIW("blobId", a, b);
+	((Rva007E8810Message *)m)->addString("TXN", (const char *)g);
+	((Rva007E8810Message *)m)->addInt64("blobId", *(__int64 *)&a);
 }
 
 // bfmeGoDVIW is the donor's D sibling: same blob category as AVIW plus a
@@ -58,11 +65,11 @@ void __stdcall bfmeGoAVIW(BfmeMsgVIW *m, void *a, void *b)
 void __stdcall bfmeGoDVIW(BfmeMsgVIW *m, void *a, void *b, int rating)
 {
 	void *g = g_bfmeDVIW;
-	m->bfmeRunVIW();
+	((Rva007E8810Message *)m)->reset();
 	m->m_bfme1c = 0x626c6f62;
-	m->bfmeSetVIW("TXN", g);
-	m->bfmeSet2VIW("blobId", a, b);
-	m->bfmeSet3VIW("rating", rating);
+	((Rva007E8810Message *)m)->addString("TXN", (const char *)g);
+	((Rva007E8810Message *)m)->addInt64("blobId", *(__int64 *)&a);
+	((Rva007E8810Message *)m)->addInt("rating", rating);
 }
 
 // Retail 0x6569E0 stamps 0x61636374 and calls Run/Set/Set4/Set4 at
@@ -74,27 +81,27 @@ void __stdcall bfmeGoDVIW(BfmeMsgVIW *m, void *a, void *b, int rating)
 void __stdcall bfmeGoEVIW(BfmeMsgVIW *m, void *a, void *b)
 {
 	void *g = g_bfmeEVIW;
-	m->bfmeRunVIW();
+	((Rva007E8810Message *)m)->reset();
 	m->m_bfme1c = 0x61636374;
-	m->bfmeSetVIW("TXN", g);
-	m->bfmeSet4VIW("eaMailFlag", a);
-	m->bfmeSet4VIW("thirdPartyMailFlag", b);
+	((Rva007E8810Message *)m)->addString("TXN", (const char *)g);
+	((Rva007E8810Message *)m)->addBool("eaMailFlag", *(bool *)&a);
+	((Rva007E8810Message *)m)->addBool("thirdPartyMailFlag", *(bool *)&b);
 }
 
 void __stdcall bfmeGoBVIW(BfmeMsgVIW *m, void *a, void *b)
 {
 	void *g = g_bfmeBVIW;
-	m->bfmeRunVIW();
+	((Rva007E8810Message *)m)->reset();
 	m->m_bfme1c = 0x626c6f62;
-	m->bfmeSetVIW("TXN", g);
-	m->bfmeSet2VIW("blobId", a, b);
+	((Rva007E8810Message *)m)->addString("TXN", (const char *)g);
+	((Rva007E8810Message *)m)->addInt64("blobId", *(__int64 *)&a);
 }
 
 void __stdcall bfmeGoCVIW(BfmeMsgVIW *m, void *a, void *b)
 {
 	void *g = g_bfmeCVIW;
-	m->bfmeRunVIW();
+	((Rva007E8810Message *)m)->reset();
 	m->m_bfme1c = 0x626c6f62;
-	m->bfmeSetVIW("TXN", g);
-	m->bfmeSet2VIW("blobId", a, b);
+	((Rva007E8810Message *)m)->addString("TXN", (const char *)g);
+	((Rva007E8810Message *)m)->addInt64("blobId", *(__int64 *)&a);
 }
