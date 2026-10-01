@@ -45246,3 +45246,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva002B2275Get@@YAHPAURva002B2275Obj@@PAX@Z,,0x002B2275,24,Code/GameEngine/Source/Common/Rva002B2275Get.cpp,matched,slot 0x94 forward DelayedEventType callers 0x002BB4EF 0x002BB5B4
 ?Rva002B2435Get@@YAHPAURva002B2435Obj@@PAX@Z,,0x002B2435,24,Code/GameEngine/Source/Common/Rva002B2435Get.cpp,matched,slot 0x94 forward LivingWorldTurnPhase callers 0x002BB444 0x002BB451
 ?Rva002B24F0Get@@YAHPAURva002B24F0Obj@@PAX@Z,,0x002B24F0,24,Code/GameEngine/Source/Common/Rva002B24F0Get.cpp,matched,slot 0x94 forward LivingWorldRegionVictoryFlags callers 0x002B9C35 0x002B9CDF
+?Rva002B29BDFire@@YAXXZ,,0x002B29BD,27,Code/GameEngine/Source/Common/Rva002B29BDFire.cpp,matched,HideEndGame UI firer via 0x00222A8B callers 0x002B8922 0x002B99F3
