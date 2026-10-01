@@ -281,6 +281,7 @@ public:
 	void rva005368F0(AsciiString arg, int x);
 	int rva00536937(AsciiString arg);
 	void rva00536A1D(AsciiString arg, int x);
+	int rva00536A64(AsciiString arg);
 	void rva00536AAE(AsciiString arg, int x);
 };
 
@@ -870,6 +871,16 @@ void UserPreferences::rva00536A1D(AsciiString arg, int x)
 {
 	arg.concat("StructuresLostNonRTS");
 	v11(arg, x);
+}
+
+// ?rva00536A64@UserPreferences@@QAEHVAsciiString@@@Z @0x00536A64 74B
+// UserPreferences StructuresLostNonRTS-getter path: append StructuresLostNonRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat StructuresLostNonRTS 0x00869030 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536A64(AsciiString arg)
+{
+	arg.concat("StructuresLostNonRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 void UserPreferences::rva00536AAE(AsciiString arg, int x)
