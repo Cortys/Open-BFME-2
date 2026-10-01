@@ -45235,3 +45235,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00414476Destroy@@YAXPAURva00414476Element@@0H@Z,,0x00414476,26,Code/Libraries/Source/WWVegas/WWLib/StlportDestroyRva00414476.cpp,matched,range destroy stride 0x30 via virtual dtor sibling 0x0041445C caller 0x00414508
 ??$_Destroy@PAURva00414BDBElement@@@_STL@@YAXPAURva00414BDBElement@@0@Z,,0x00414508,24,Code/Libraries/Source/WWVegas/WWLib/StlportDestroyRva00414508.cpp,matched,chain from 0x00414476 callers 0x0041473B 0x004147B9
 ?rva001F8E0C@Rva001F8E0C@@QAEXXZ,,0x001F8E0C,23,Code/GameEngine/Source/Common/Thing/Rva001F8E0C.cpp,matched,chain from rowed 0x001F898A null-checked tick tail-jmp
+?Rva001F87D5Put@@YAAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@AAV12@ABUS001F87D5@@@Z,,0x001F87D5,59,Code/Libraries/Source/WWVegas/WWLib/Rva001F87D5Put.cpp,matched,ostream float-pair put via rowed float op and put_char
