@@ -1,7 +1,5 @@
 // cl: /O1 /MD /arch:SSE
-// ?rva000B7074@Rva000B7074@@QAEXXZ 0x000B7074 153B evidence: chain via 0x000B4E23 rowed; +0x9c init via g_Va00BBB8D8 then f1 gt0 then f2 eq0 via 0x0028AC7D and 0x002931F5 false then comiss g_Va00BCF628 div mul g_00DBA4F0 via 0x000B2F38; neighbours 0x000B7029/0x000B7539
-extern float g_Va00BBB8D8;
-extern float g_Va00BCF628;
+// ?rva000B7074@Rva000B7074@@QAEXXZ 0x000B7074 153B evidence: chain via 0x000B4E23 rowed; +0x9c init via 1.0f then f1 gt0 then f2 eq0 via 0x0028AC7D and 0x002931F5 false then comiss 0.01f div mul g_00DBA4F0 via 0x000B2F38; neighbours 0x000B7029/0x000B7539
 extern float g_00DBA4F0;
 
 class Rva000B4E23
@@ -37,7 +35,7 @@ public:
 
 void Rva000B7074::rva000B7074()
 {
-	m_9c = g_Va00BBB8D8;
+	m_9c = 1.0f;
 	float f1 = ((Rva000B4E23 *)this)->rva000B4E23();
 	if (f1 > 0.0f)
 	{
@@ -52,7 +50,7 @@ void Rva000B7074::rva000B7074()
 				if (p != 0)
 					f2 = p->rva0028AC7D();
 			}
-			if (f2 > g_Va00BCF628)
+			if (f2 > 0.01f)
 			{
 				float t = f1 / f2;
 				t *= g_00DBA4F0;
