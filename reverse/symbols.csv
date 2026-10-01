@@ -6793,3 +6793,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??4?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,0x004BF4CE,BFME2 ActiveBody ctor 0x004BF6A1 copies the +0x58 BfmeE16 vector to this+0xE0; typed target call and 209B Ghidra boundary
 ?validateArmorAndDamageFX@ActiveBody@@QBEXXZ,0x004BE1AE,BFME2 ActiveBody ctor call after armor flags and name initialization; Zero Hour ActiveBody.cpp identifies the validation call; 156B Ghidra boundary
 ?setCorrectDamageState@ActiveBody@@QAEX_N@Z,0x004BE8BD,BFME2 ActiveBody ctor passes false; BFME1 constructor donor ends with setCorrectDamageState(false); target body calls damage-state calc 0x004BDA29; 1189B Ghidra boundary
+?ji_00655622@@YGKPAXK@Z,0x00655622,twin of rowed YAXXZ same 6B jmp thunk call site 0x00232F4F ImmGetProperty
