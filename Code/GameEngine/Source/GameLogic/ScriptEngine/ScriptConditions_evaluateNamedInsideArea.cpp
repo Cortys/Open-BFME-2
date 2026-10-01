@@ -47,6 +47,7 @@ public:
     Object *getUnitNamed(Parameter *parameter);
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString name);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptConditions
 {
@@ -54,7 +55,6 @@ protected:
     Bool evaluateNamedInsideArea(Parameter *, Parameter *);
 };
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 Bool ScriptConditions::evaluateNamedInsideArea(
     Parameter *unitParm, Parameter *triggerParm)

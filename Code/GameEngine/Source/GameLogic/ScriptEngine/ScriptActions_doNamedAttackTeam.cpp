@@ -39,6 +39,7 @@ public:
     Object *getUnitNamed(const AsciiString &);
     Team *getTeamNamed(AsciiString, bool = false);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class Object
 {
@@ -58,11 +59,11 @@ protected:
 
 void ScriptActions::doNamedAttackTeam(const AsciiString &unitName, const AsciiString &teamName)
 {
-    Object *theSrcUnit = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+    Object *theSrcUnit = TheScriptEngine->getUnitNamed(unitName);
     if (!theSrcUnit) {
         return;
     }
-    const Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName);
+    const Team *theTeam = TheScriptEngine->getTeamNamed(teamName);
     if (!theTeam) {
         return;
     }

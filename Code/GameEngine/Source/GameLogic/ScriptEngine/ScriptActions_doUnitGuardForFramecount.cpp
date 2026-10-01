@@ -73,6 +73,7 @@ public:
 	Team *getTeamNamed(AsciiString name, bool exact);
 	void setSequentialTimer(Object *obj, int frames);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class TerrainLogicByValue
 {
@@ -100,7 +101,7 @@ protected:
 
 void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int framecount, bool seconds)
 {
-	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
 	AIUpdateInterface *ai = object->getAIUpdateInterface();
@@ -112,9 +113,9 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 	position.z = object->m_position.z;
 	ai->m_command.aiGuardPosition(&position, GUARDMODE_NORMAL, CMD_FROM_SCRIPT);
 	if (seconds)
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
+		TheScriptEngine->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
 	else
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount);
+		TheScriptEngine->setSequentialTimer(object, framecount);
 }
 
 // ?doUnitGuardPosition@ScriptActions@@IAEXABVAsciiString@@0@Z, retail 0x003C8964, 109 bytes.
@@ -125,7 +126,7 @@ void ScriptActions::doUnitGuardForFramecount(const AsciiString &unitName, int fr
 void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const AsciiString &waypointName)
 {
 	Waypoint *way = (*(TerrainLogicByValue **)0x00DFEC50)->getWaypointByName(waypointName);
-	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
 	AIUpdateInterface *ai = object->getAIUpdateInterface();
@@ -147,7 +148,7 @@ void ScriptActions::doUnitGuardPosition(const AsciiString &unitName, const Ascii
 // Caller at 0x003CB585. Prev doNamedFollowWaypointsExact / next doUnitGuardPosition.
 void ScriptActions::doNamedGuard(const AsciiString &unitName)
 {
-	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
 	AIUpdateInterface *ai = object->getAIUpdateInterface();
@@ -163,7 +164,7 @@ void ScriptActions::doNamedGuard(const AsciiString &unitName)
 
 void ScriptActions::doTeamGuard(const AsciiString &teamName)
 {
-	Team *team = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+	Team *team = TheScriptEngine->getTeamNamed(teamName, false);
 	if (!team)
 		return;
 	for (DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList(); !iter.done(); iter.advance()) {

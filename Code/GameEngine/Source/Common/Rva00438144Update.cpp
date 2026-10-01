@@ -50,6 +50,7 @@ private:
 public:
 	int m_count14;
 };
+extern PlayerList *ThePlayerList;
 class Player
 {
 public:
@@ -62,7 +63,7 @@ class Team
 public:
 	char m_pad[0x2EC];
 };
-#define ThePlayerList004381C4 (*(PlayerList **)0x00DFEEE8)
+#define ThePlayerList004381C4 ThePlayerList
 void Rva00373DBEIterateCallback(Object *obj, void *userData);
 void __stdcall Rva004381C4Iterate(const Object *obj);
 

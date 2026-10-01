@@ -38,6 +38,7 @@ public:
     Team *getTeamNamed(AsciiString, bool);
     Object *getUnitNamed(const AsciiString &);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AIGroup
 {
@@ -56,6 +57,7 @@ class AI
 public:
     AIGroup *createGroup();
 };
+extern AI *TheAI;
 
 class Team
 {
@@ -72,15 +74,15 @@ protected:
 void ScriptActions::doTeamAttackNamed(const AsciiString &teamName,
                                       const AsciiString &unitName)
 {
-    Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+    Team *theTeam = TheScriptEngine->getTeamNamed(teamName, false);
     if (!theTeam) {
         return;
     }
-    Object *theVictim = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+    Object *theVictim = TheScriptEngine->getUnitNamed(unitName);
     if (!theVictim) {
         return;
     }
-    AIGroup *theGroup = (*(AI **)0x00DFF0F8)->createGroup();
+    AIGroup *theGroup = TheAI->createGroup();
     if (!theGroup) {
         return;
     }

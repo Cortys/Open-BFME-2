@@ -17,8 +17,8 @@ class GameLogic
 public:
 	unsigned char isGamePaused();
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define TheGlobalData (*(unsigned char **)0x00DFE758)
 #define TheAppModule (*(HMODULE *)0x00DFE158)
 #define AppFastLatch (*(unsigned char *)0x00DFE168)

@@ -18,6 +18,7 @@ class ScriptEngine
 public:
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString name);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class BfmeAudio
 {
@@ -59,7 +60,7 @@ void ScriptActions::rva003C004D(const AsciiString &areaName, float value)
 {
     if (*(BfmeAudio **)0x00DFE6E8 == 0)
         return;
-    PolygonTrigger *trig = (*(ScriptEngine **)0x00DFE16C)->getQualifiedTriggerAreaByName((AsciiString &)areaName);
+    PolygonTrigger *trig = TheScriptEngine->getQualifiedTriggerAreaByName((AsciiString &)areaName);
     if (!trig)
         return;
     (*(BfmeAudio **)0x00DFE6E8)->audioSlot174(trig, value);

@@ -39,8 +39,8 @@ public:
 	char m_pad00[0x40];
 	unsigned int m_frame; // +0x40
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class Weapon
 {

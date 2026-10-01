@@ -7,7 +7,7 @@ public:
 	char m_pad[0x40];
 	int m_frame;
 };
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+extern GameLogic *TheGameLogic;
 
 class Rva001E415F
 {

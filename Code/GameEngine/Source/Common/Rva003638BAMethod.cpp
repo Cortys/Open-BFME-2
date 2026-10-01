@@ -52,8 +52,8 @@ public:
 	virtual void slot34();
 	virtual Rva002E6ECA *slot35(int val);
 };
+extern TerrainLogic *TheTerrainLogic;
 
-#define TheTerrainLogic (*(TerrainLogic **)0x00DFEC50)
 
 class Rva003638BANode
 {

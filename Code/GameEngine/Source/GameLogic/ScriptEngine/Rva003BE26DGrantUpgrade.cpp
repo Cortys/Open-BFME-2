@@ -32,16 +32,16 @@ class ScriptEngine
 public:
 	Object *getUnitNamed(Parameter *param);
 };
+extern ScriptEngine *TheScriptEngine;
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 class UpgradeCenter
 {
 public:
 	const UpgradeTemplate *findUpgrade(const AsciiString &name) const;
 };
+extern UpgradeCenter *TheUpgradeCenter;
 
-#define TheUpgradeCenter (*(UpgradeCenter **)0x00DFEB60)
 
 class Rva0028C197Target
 {

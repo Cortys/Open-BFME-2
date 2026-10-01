@@ -19,6 +19,7 @@ public:
     Team *getTeamNamed(AsciiString, Bool);
     void setSequentialTimer(Team *team, int frames);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -28,8 +29,8 @@ protected:
 
 void ScriptActions::doTeamSpinForFramecount(const AsciiString &teamName, int waitForFrames)
 {
-    Team *team = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed((AsciiString &)teamName, false);
+    Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
     if (!team)
         return;
-    (*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(team, waitForFrames);
+    TheScriptEngine->setSequentialTimer(team, waitForFrames);
 }

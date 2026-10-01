@@ -38,8 +38,8 @@ private:
 public:
 	Int m_frame; // +0x40
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define TheRva00DFEF10 (*(void **)0x00DFEF10)
 #define TheScriptDebugWindowDLL (*(HMODULE *)0x00DFE158)
 #define ScriptDebugMessagesDisabled (*(Bool *)0x00E02D78)

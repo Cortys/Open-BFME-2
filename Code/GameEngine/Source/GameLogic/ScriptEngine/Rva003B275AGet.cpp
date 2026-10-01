@@ -14,6 +14,7 @@ class ScriptEngine
 public:
 	const ConditionTemplate *getConditionTemplate(int id);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class Rva003B275A
 {
@@ -26,5 +27,5 @@ public:
 
 int Rva003B275A::rva003B275A()
 {
-	return *(const int *)(*(ScriptEngine **)0x00DFE16C)->getConditionTemplate(m_id)->bytes;
+	return *(const int *)TheScriptEngine->getConditionTemplate(m_id)->bytes;
 }

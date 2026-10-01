@@ -37,8 +37,8 @@ public:
 	virtual void dummy64();
 	virtual void slot65(GameWindow *w);
 };
+extern GameWindowManager *TheWindowManager;
 
-#define TheWindowManager (*(GameWindowManager **)0x00DFEF1C)
 
 template <typename T>
 class StringBase

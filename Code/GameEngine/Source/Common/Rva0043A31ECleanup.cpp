@@ -53,8 +53,8 @@ public:
 	virtual void _pad34();
 	virtual void audioSlot8c(int a, int b, int c);
 };
+extern AudioManager *TheAudio;
 
-#define TheAudio (*(AudioManager **)0x00DFE6E8)
 
 void __cdecl Rva0043A31ECleanup(void)
 {

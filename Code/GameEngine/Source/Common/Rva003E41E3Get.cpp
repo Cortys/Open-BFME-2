@@ -7,7 +7,7 @@ class ScriptEngine
 public:
 	bool rva00357A36(const AsciiString &s, bool remove);
 };
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
+extern ScriptEngine *TheScriptEngine;
 
 struct Rva003E41E3Base
 {

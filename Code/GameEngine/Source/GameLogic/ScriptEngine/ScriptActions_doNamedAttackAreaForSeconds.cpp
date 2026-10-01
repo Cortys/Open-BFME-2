@@ -26,6 +26,7 @@ public:
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString);
     void setSequentialTimer(Object *, int);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AICommandInterface
 {
@@ -60,11 +61,11 @@ void ScriptActions::doNamedAttackAreaForSeconds(const AsciiString &unitName,
                                                  const AsciiString &areaName,
                                                  int seconds)
 {
-    Object *theSrcUnit = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+    Object *theSrcUnit = TheScriptEngine->getUnitNamed(unitName);
     if (!theSrcUnit) {
         return;
     }
-    PolygonTrigger *trigger = (*(ScriptEngine **)0x00DFE16C)->getQualifiedTriggerAreaByName(areaName);
+    PolygonTrigger *trigger = TheScriptEngine->getQualifiedTriggerAreaByName(areaName);
     if (!trigger) {
         return;
     }
@@ -75,5 +76,5 @@ void ScriptActions::doNamedAttackAreaForSeconds(const AsciiString &unitName,
     theSrcUnit->leaveGroup();
     aiUpdate->m_commandInterface.aiAttackArea(trigger, CMD_FROM_SCRIPT);
     int framesPerSecond = *(int *)0x00DBA4E4;
-    (*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(theSrcUnit, seconds * framesPerSecond);
+    TheScriptEngine->setSequentialTimer(theSrcUnit, seconds * framesPerSecond);
 }

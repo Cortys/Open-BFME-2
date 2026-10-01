@@ -26,8 +26,10 @@ private:
 	char m_pad130[0x150 - 0x130]; // +0x130 timeouts
 	bool m_150; // +0x150
 };
+extern GameLogic *TheGameLogic;
 
 class NetworkInterface;
+extern NetworkInterface *TheNetwork;
 
 class Rva00210C66CmpBoolField
 {
@@ -44,6 +46,7 @@ public:
 	bool m_inputEnabled; // +0x15
 	bool m_inputAllowed; // +0x16
 };
+extern InGameUI *TheInGameUI;
 
 class Mouse
 {
@@ -71,6 +74,7 @@ public:
 	bool rva001EDE26() const;
 	void _bfme_setEngineVisibility(bool visible);
 };
+extern Mouse *TheMouse;
 
 class BfmeAudio
 {
@@ -95,11 +99,7 @@ public:
 	virtual void resumeAudio(unsigned int which, int a, int b);
 };
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
-#define TheInGameUI (*(InGameUI **)0x00DFEDF0)
-#define TheMouse (*(Mouse **)0x00DFDCA0)
 #define TheAudio (*(BfmeAudio **)0x00DFE6E8)
-#define TheNetwork (*(NetworkInterface **)0x00DFEA28)
 
 void GameLogic::rva0023CD9E(bool paused, int pauseMode, bool affectMouse)
 {

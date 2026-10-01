@@ -12,8 +12,8 @@ public:
 	char m_pad[0x40]; // +0x00..0x40
 	int m_frame; // +0x40
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class Rva002039C5Host
 {

@@ -35,6 +35,7 @@ public:
 	char *m_begin;
 	char *m_end;
 };
+extern Rva002BA8F1Logic *g_009FEF10;
 
 int Rva002E1001::rva002E1001()
 {
@@ -83,7 +84,7 @@ bool Rva002E1001::rva004FC970(int id)
 	int n = (*(int *)(pp + 4) - *(int *)pp) >> 2;
 	int sum = 0;
 	for (int i = 0; i < n; ++i) {
-		Rva002E2903Player *p = (*(Rva002BA8F1Logic **)0x00DFEF10)->rva002B52A8(i);
+		Rva002E2903Player *p = g_009FEF10->rva002B52A8(i);
 		if (p->m_34 != id)
 			continue;
 		sum += ((Rva002E1001 *)p)->rva002E1001();

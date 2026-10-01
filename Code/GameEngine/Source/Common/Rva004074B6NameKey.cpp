@@ -12,7 +12,7 @@ class NameKeyGenerator
 public:
 	NameKeyType nameToKey(const AsciiString &name);
 };
-#define TheNameKeyGenerator (*(NameKeyGenerator **)0x00DF36A4)
+extern NameKeyGenerator *TheNameKeyGenerator;
 
 class Rva004074B6
 {

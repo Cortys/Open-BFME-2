@@ -28,6 +28,7 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString team, Bool exact);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -37,7 +38,7 @@ protected:
 
 void ScriptActions::doSetTeamState(const AsciiString &team, const AsciiString &state)
 {
-    Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(team, false);
+    Team *theTeam = TheScriptEngine->getTeamNamed(team, false);
     if (theTeam != 0) {
         theTeam->m_state = state;
     }

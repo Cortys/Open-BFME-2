@@ -21,6 +21,7 @@ class NameKeyGenerator
 public:
 	NameKeyType nameToKey(const AsciiString &s);
 };
+extern NameKeyGenerator *TheNameKeyGenerator;
 
 class GameSlot
 {
@@ -34,6 +35,7 @@ class GameInfo
 public:
 	GameSlot *getSlot(int idx);
 };
+extern GameInfo *TheGameInfo;
 
 class Player
 {
@@ -47,10 +49,8 @@ class PlayerList
 public:
 	Player *findPlayerWithNameKey(NameKeyType key);
 };
+extern PlayerList *ThePlayerList;
 
-#define TheGameInfo (*(GameInfo **)0x00E02EEC)
-#define TheNameKeyGenerator (*(NameKeyGenerator **)0x00DF36A4)
-#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
 
 enum ObjectID
 {

@@ -11,7 +11,7 @@ class Rva002D06CA
 public:
 	void *rva002D06CA(const AsciiString *key);
 };
-#define TheThingFactory (*(Rva002D06CA **)0x00DFF000)
+extern Rva002D06CA *TheThingFactory;
 struct Rva0037DCA5Template
 {
 	char m_pad[0x618];

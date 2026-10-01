@@ -32,12 +32,14 @@ public:
     Team *getTeamNamed(AsciiString, bool = false);
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AI
 {
 public:
     AIGroup *createGroup();
 };
+extern AI *TheAI;
 
 class Team
 {
@@ -53,16 +55,16 @@ protected:
 
 void ScriptActions::doTeamAttackArea(const AsciiString &teamName, const AsciiString &areaName)
 {
-    Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName);
+    Team *theTeam = TheScriptEngine->getTeamNamed(teamName);
     if (!theTeam) {
         return;
     }
-    AIGroup *theGroup = (*(AI **)0x00DFF0F8)->createGroup();
+    AIGroup *theGroup = TheAI->createGroup();
     if (!theGroup) {
         return;
     }
     theTeam->getTeamAsAIGroup(theGroup);
-    PolygonTrigger *trigger = (*(ScriptEngine **)0x00DFE16C)->getQualifiedTriggerAreaByName(areaName);
+    PolygonTrigger *trigger = TheScriptEngine->getQualifiedTriggerAreaByName(areaName);
     if (!trigger) {
         return;
     }

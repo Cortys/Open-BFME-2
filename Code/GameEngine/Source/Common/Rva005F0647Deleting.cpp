@@ -32,6 +32,7 @@ class Mouse
 public:
 	void rva001EEA6D(UnicodeString tooltip, int delay, const RGBColor *color, float width) throw();
 };
+extern Mouse *TheMouse;
 
 class GameTextInterface
 {
@@ -42,9 +43,8 @@ public:
 	virtual void v30(); virtual void v34(); virtual void v38();
 	virtual UnicodeString fetch(const char *label, bool *exists = 0) throw();
 };
+extern GameTextInterface *TheGameText;
 
-#define TheGameText (*(GameTextInterface **)0x00DFF0BC)
-#define TheMouse (*(Mouse **)0x00DFDCA0)
 
 struct Rva005F06EF
 {

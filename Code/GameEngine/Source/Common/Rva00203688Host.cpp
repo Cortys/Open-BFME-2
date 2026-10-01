@@ -12,8 +12,8 @@ class GameLogic
 public:
 	bool rva001DCD1C();
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class Rva00203688Host
 {

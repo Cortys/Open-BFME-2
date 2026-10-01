@@ -18,8 +18,8 @@ class ImageCollection
 public:
 	const Image *findImageByName(const AsciiString &name);
 };
+extern ImageCollection *TheMappedImageCollection;
 
-#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
 
 int Rva0033A3F4Lookup(const AsciiString &name);
 

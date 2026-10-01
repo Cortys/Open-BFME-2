@@ -15,8 +15,8 @@ public:
 #undef V
 	virtual void setMouseLimits();
 };
+extern Mouse *TheMouse;
 
-#define TheMouse (*(Mouse **)0x00DFDCA0)
 
 class Display
 {

@@ -18,8 +18,8 @@ class PlayerList
 public:
 	Player *getNthPlayer(int i);
 };
+extern PlayerList *ThePlayerList;
 
-#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
 
 class BfmeMemberRV
 {

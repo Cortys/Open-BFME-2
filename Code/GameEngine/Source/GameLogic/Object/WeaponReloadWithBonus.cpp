@@ -69,7 +69,7 @@ private:
 	char m_pad00[0x40];
 	UnsignedInt m_frame;
 };
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+extern GameLogic *TheGameLogic;
 
 class Weapon
 {

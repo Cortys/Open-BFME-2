@@ -63,8 +63,8 @@ class ScriptEngine
 public:
 	void notifyOfAcquiredScience(int playerIndex, ScienceType science);
 };
+extern ScriptEngine *TheScriptEngine;
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 class Player
 {

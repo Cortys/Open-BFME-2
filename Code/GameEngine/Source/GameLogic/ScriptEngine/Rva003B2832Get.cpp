@@ -17,6 +17,7 @@ class ScriptEngine
 public:
 	const ActionTemplate *getActionTemplate(Int actionType);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class Rva003B2832
 {
@@ -29,5 +30,5 @@ public:
 
 int Rva003B2832::rva003B2832()
 {
-	return *(const int *)(*(ScriptEngine **)0x00DFE16C)->getActionTemplate(m_id)->m_pad;
+	return *(const int *)TheScriptEngine->getActionTemplate(m_id)->m_pad;
 }

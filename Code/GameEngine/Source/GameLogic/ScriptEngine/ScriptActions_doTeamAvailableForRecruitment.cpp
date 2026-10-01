@@ -35,6 +35,7 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString team, Bool exact);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -44,7 +45,7 @@ protected:
 
 void ScriptActions::doTeamAvailableForRecruitment(const AsciiString &teamName, Bool availability)
 {
-    Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+    Team *theTeam = TheScriptEngine->getTeamNamed(teamName, false);
     if (!theTeam) {
         return;
     }

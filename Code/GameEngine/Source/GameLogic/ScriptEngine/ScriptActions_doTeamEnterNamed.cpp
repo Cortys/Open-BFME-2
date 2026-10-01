@@ -24,6 +24,7 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString, bool);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class Rva00358752Opaque
 {
@@ -42,6 +43,7 @@ class AI
 public:
     AIGroup *createGroup();
 };
+extern AI *TheAI;
 
 class Team
 {
@@ -58,7 +60,7 @@ protected:
 void ScriptActions::doTeamEnterNamed(const AsciiString &teamName,
                                      const AsciiString &unitDestName)
 {
-    Team *theSrcTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+    Team *theSrcTeam = TheScriptEngine->getTeamNamed(teamName, false);
     if (!theSrcTeam) {
         return;
     }
@@ -67,7 +69,7 @@ void ScriptActions::doTeamEnterNamed(const AsciiString &teamName,
     if (!theTransport) {
         return;
     }
-    AIGroup *theGroup = (*(AI **)0x00DFF0F8)->createGroup();
+    AIGroup *theGroup = TheAI->createGroup();
     theSrcTeam->getTeamAsAIGroup(theGroup);
     theGroup->groupEnter(theTransport, CMD_FROM_SCRIPT);
 }

@@ -23,6 +23,7 @@ class ScriptEngine
 public:
     Object *getUnitNamed(const AsciiString &);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class Rva00358752Opaque
 {
@@ -62,7 +63,7 @@ protected:
 void ScriptActions::doNamedEnterNamed(const AsciiString &unitSrcName,
                                       const AsciiString &unitDestName)
 {
-    Object *theSrcUnit = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitSrcName);
+    Object *theSrcUnit = TheScriptEngine->getUnitNamed(unitSrcName);
     if (!theSrcUnit) {
         return;
     }

@@ -136,7 +136,6 @@ public:
 
 void _bfme_debugRecordCallsite(int);
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define TheBfmeAwakenDebug (*(BfmeAwakenDebug **)0x00DE0880)
 
 class GameLogic
@@ -154,6 +153,7 @@ private:
 	_STL::vector<UpdateModule *> sleeping; // +0xF8
 	UpdateModule *current; // +0x104
 };
+extern GameLogic *TheGameLogic;
 
 void GameLogic::friend_awakenUpdateModule(Object *obj, UpdateModule *u, UnsignedInt when)
 {

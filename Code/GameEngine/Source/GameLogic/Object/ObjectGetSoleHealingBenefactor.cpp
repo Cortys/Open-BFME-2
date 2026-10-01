@@ -21,8 +21,8 @@ public:
 	char m_pad[0x40];
 	UnsignedInt m_frame;
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class Object
 {

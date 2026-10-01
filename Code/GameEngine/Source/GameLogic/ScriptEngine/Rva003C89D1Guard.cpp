@@ -29,8 +29,8 @@ class ScriptEngine
 public:
 	Object *getUnitNamed(Parameter *param);
 };
+extern ScriptEngine *TheScriptEngine;
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 void __stdcall Rva003C89D1Guard(Parameter *p1, Parameter *p2)
 {

@@ -37,7 +37,7 @@ public:
 	virtual void p76();
 	virtual AudioBounds *slot134();
 };
-#define TheAudio (*(AudioManager **)0x00DFE6E8)
+extern AudioManager *TheAudio;
 class Rva00739830
 {
 public:

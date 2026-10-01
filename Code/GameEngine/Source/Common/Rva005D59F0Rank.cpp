@@ -30,8 +30,8 @@ public:
 	virtual void slot34() = 0;
 	virtual UnicodeString fetch(const char *label, bool *exists = 0) = 0;
 };
+extern GameTextInterface *TheGameText;
 
-#define TheGameText (*(GameTextInterface **)0x00DFF0BC)
 #define RankFmt ((const WideChar *)0x00BC9260)
 
 UnicodeString __cdecl Rva005D59F0Get(int rank)

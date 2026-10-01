@@ -20,6 +20,7 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString, bool);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AIGroup
 {
@@ -32,6 +33,7 @@ class AI
 public:
     AIGroup *createGroup();
 };
+extern AI *TheAI;
 
 class Team
 {
@@ -47,11 +49,11 @@ protected:
 
 void ScriptActions::doTeamExitAll(const AsciiString &teamName)
 {
-    Team *theTeamOfTransports = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName, false);
+    Team *theTeamOfTransports = TheScriptEngine->getTeamNamed(teamName, false);
     if (!theTeamOfTransports) {
         return;
     }
-    AIGroup *theGroup = (*(AI **)0x00DFF0F8)->createGroup();
+    AIGroup *theGroup = TheAI->createGroup();
     theTeamOfTransports->getTeamAsAIGroup(theGroup);
     theGroup->groupEvacuate(CMD_FROM_SCRIPT);
 }

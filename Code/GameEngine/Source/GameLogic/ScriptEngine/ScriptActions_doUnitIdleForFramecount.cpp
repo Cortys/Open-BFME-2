@@ -37,6 +37,7 @@ public:
 	Object *getUnitNamed(const AsciiString &name);
 	void setSequentialTimer(Object *obj, int frames);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -46,7 +47,7 @@ protected:
 
 void ScriptActions::doUnitIdleForFramecount(const AsciiString &unitName, int framecount, bool seconds)
 {
-	Object *object = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+	Object *object = TheScriptEngine->getUnitNamed(unitName);
 	if (!object)
 		return;
 	AIUpdateInterface *ai = object->getAIUpdateInterface();
@@ -54,7 +55,7 @@ void ScriptActions::doUnitIdleForFramecount(const AsciiString &unitName, int fra
 		return;
 	ai->m_command.aiIdle(CMD_FROM_SCRIPT);
 	if (seconds)
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
+		TheScriptEngine->setSequentialTimer(object, framecount * *(int *)0x00DBA4E4);
 	else
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(object, framecount);
+		TheScriptEngine->setSequentialTimer(object, framecount);
 }

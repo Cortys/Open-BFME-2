@@ -17,7 +17,7 @@ class GameLogic
 public:
 	Object *findObjectByID(ObjectID id);
 };
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+extern GameLogic *TheGameLogic;
 class BuildListInfo
 {
 public:

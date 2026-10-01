@@ -28,6 +28,7 @@ public:
     Object *getUnitNamed(const AsciiString &);
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AICommandInterface
 {
@@ -60,11 +61,11 @@ protected:
 
 void ScriptActions::doNamedAttackArea(const AsciiString &unitName, const AsciiString &areaName)
 {
-    Object *theSrcUnit = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+    Object *theSrcUnit = TheScriptEngine->getUnitNamed(unitName);
     if (!theSrcUnit) {
         return;
     }
-    PolygonTrigger *trigger = (*(ScriptEngine **)0x00DFE16C)->getQualifiedTriggerAreaByName(areaName);
+    PolygonTrigger *trigger = TheScriptEngine->getQualifiedTriggerAreaByName(areaName);
     if (!trigger) {
         return;
     }

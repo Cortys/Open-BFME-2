@@ -20,6 +20,7 @@ class ScriptEngine
 public:
 	Team *getTeamNamed(AsciiString, bool);
 };
+extern ScriptEngine *TheScriptEngine;
 
 enum NameKeyType
 {
@@ -32,6 +33,7 @@ class NameKeyGenerator
 public:
 	NameKeyType nameToKey(const AsciiString &s);
 };
+extern NameKeyGenerator *TheNameKeyGenerator;
 
 class Overridable
 {
@@ -64,8 +66,7 @@ static int __cdecl CbB(Object *, void *)
 	return 1;
 }
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
-#define TheNameKeyGen (*(NameKeyGenerator **)0x00DF36A4)
+#define TheNameKeyGen TheNameKeyGenerator
 #define TheLevelSys (*(Rva0028951F **)0x00DFECC4)
 
 void __stdcall Rva003C4570Do(const AsciiString &teamName, const AsciiString &levelName)

@@ -28,12 +28,14 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString, bool = false);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AI
 {
 public:
     AIGroup *createGroup();
 };
+extern AI *TheAI;
 
 class Team
 {
@@ -49,15 +51,15 @@ protected:
 
 void ScriptActions::doTeamAttackTeam(const AsciiString &teamName, const AsciiString &victimTeamName)
 {
-    Team *theTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(teamName);
-    Team *victimTeam = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed(victimTeamName);
+    Team *theTeam = TheScriptEngine->getTeamNamed(teamName);
+    Team *victimTeam = TheScriptEngine->getTeamNamed(victimTeamName);
     if (!theTeam) {
         return;
     }
     if (!victimTeam) {
         return;
     }
-    AIGroup *theGroup = (*(AI **)0x00DFF0F8)->createGroup();
+    AIGroup *theGroup = TheAI->createGroup();
     if (!theGroup) {
         return;
     }

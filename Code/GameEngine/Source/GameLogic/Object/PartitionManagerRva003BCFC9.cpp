@@ -10,8 +10,8 @@ class PartitionManager
 public:
 	void rva007397A0(bool value);
 };
+extern PartitionManager *TheShroudManager;
 
-#define TheShroudManager (*(PartitionManager **)0x00DFE74C)
 
 void __stdcall Rva003BCFC9Set(bool value)
 {

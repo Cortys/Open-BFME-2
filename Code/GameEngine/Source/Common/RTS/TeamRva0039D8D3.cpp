@@ -10,8 +10,8 @@ public:
 	unsigned char m_pad[0x40];
 	int m_frame;
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define LogicFramesPerSecond (*(const int *)0x00DBA4E4)
 
 class Team

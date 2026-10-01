@@ -23,6 +23,7 @@ class ScriptEngine
 public:
     Team *getTeamNamed(AsciiString, Bool);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -32,7 +33,7 @@ protected:
 
 void ScriptActions::rva003C0F09(const AsciiString &teamName, int value)
 {
-    Team *team = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed((AsciiString &)teamName, false);
+    Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
     if (!team)
         return;
     team->m_unk110 = true;

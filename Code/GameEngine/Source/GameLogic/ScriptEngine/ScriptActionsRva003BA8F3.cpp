@@ -25,10 +25,10 @@ public:
 	char m_pad[0x2A4];
 	int m_2A4;
 };
+extern GameLogic *TheGameLogic;
 
 #define Rva00DFEEE8 (*(Rva002A7DD0 **)0x00DFEEE8)
 #define Rva00DFE16C (*(Rva00203BDAByteField **)0x00DFE16C)
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 unsigned char Rva003BA8F3Get()
 {

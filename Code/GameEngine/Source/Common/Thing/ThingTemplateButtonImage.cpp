@@ -21,8 +21,8 @@ class ImageCollection
 public:
     const Image *findImageByName(const AsciiString &name);
 };
+extern ImageCollection *TheMappedImageCollection;
 
-#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
 
 class ThingTemplate
 {

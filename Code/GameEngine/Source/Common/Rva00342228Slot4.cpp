@@ -22,8 +22,8 @@ public:
 	unsigned char m_pad00[0x40];
 	unsigned int m_40;
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define Int00DBA4E4 (*(int *)0x00DBA4E4)
 
 class Rva00342228Member;

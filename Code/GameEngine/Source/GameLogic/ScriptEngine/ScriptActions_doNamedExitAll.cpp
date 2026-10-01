@@ -19,6 +19,7 @@ class ScriptEngine
 public:
     Object *getUnitNamed(const AsciiString &);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class AICommandInterface
 {
@@ -51,7 +52,7 @@ protected:
 
 void ScriptActions::doNamedExitAll(const AsciiString &unitName)
 {
-    Object *theTransport = (*(ScriptEngine **)0x00DFE16C)->getUnitNamed(unitName);
+    Object *theTransport = TheScriptEngine->getUnitNamed(unitName);
     if (!theTransport) {
         return;
     }

@@ -17,8 +17,8 @@ class GameLogic
 public:
 	bool rva001DCD1C();
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define TheAppModule (*(HMODULE *)0x00DFE158)
 
 void rva00203C21();

@@ -47,8 +47,8 @@ public:
 	char m_pad00[0x40]; // +0x00..0x40
 	unsigned int m_frame; // +0x40
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class WeaponStore
 {
@@ -58,8 +58,8 @@ public:
 	void rva002CE8AA(const WeaponTemplate *wt, const Coord3D *pos1, const Object *source, const Coord3D *pos2, int x);
 	void rva002CE964(const WeaponTemplate *wt, const Object *source, const Object *victim);
 };
+extern WeaponStore *TheWeaponStore;
 
-#define TheWeaponStore (*(WeaponStore **)0x00DFEFDC)
 
 void WeaponStore::createAndFireTempWeapon(const WeaponTemplate *wt, const Object *source, const Coord3D *pos)
 {

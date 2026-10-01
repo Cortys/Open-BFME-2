@@ -7,11 +7,12 @@
 class AsciiString { void *m_data; };
 class Image;
 class ImageCollection { public: const Image *findImageByName(const AsciiString &n); };
-#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
+extern ImageCollection *TheMappedImageCollection;
 class Rva002E2903Player { public: char pad[0x40]; void *p40; };
 struct Rva005F002CHolder { char pad[0x20]; AsciiString str; };
 class Rva002BA8F1Logic { public: Rva002E2903Player *find(int, unsigned int *); };
-#define TheRva00DFEF10 (*(Rva002BA8F1Logic **)0x00DFEF10)
+extern Rva002BA8F1Logic *g_009FEF10;
+#define TheRva00DFEF10 g_009FEF10
 struct Rva005F002CIn { char pad[0x54]; int id; };
 const Image *Rva005F002CGet(Rva005F002CIn *in);
 const Image *Rva005F002CGet(Rva005F002CIn *in)

@@ -101,6 +101,7 @@ class AI
 public:
 	void rva002FE712(AIGroup *group);
 };
+extern AI *TheAI;
 
 class Rva0036D7A6Receiver
 {
@@ -184,7 +185,7 @@ bool AIGroup::remove(Object *member)
 	member->leaveGroup();
 	m_dirty = true;
 	if (isEmpty()) {
-		(*(AI **)0x00DFF0F8)->rva002FE712(this);
+		TheAI->rva002FE712(this);
 		return true;
 	}
 	return false;

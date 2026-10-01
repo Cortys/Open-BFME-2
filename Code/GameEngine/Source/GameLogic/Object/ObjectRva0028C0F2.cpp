@@ -9,8 +9,8 @@ public:
 	char m_pad[0x40];
 	unsigned int m_frame; // +0x40
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 #define BfmeLogicRate (*(unsigned int *)0x00DBA4E4)
 
 class Object

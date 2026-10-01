@@ -7,6 +7,7 @@ class Rva002BA8F1Logic
 public:
 	Rva002E2903Player *find(int v, unsigned int *p);
 };
+extern Rva002BA8F1Logic *g_009FEF10;
 
 class Rva002E07B9
 {
@@ -68,7 +69,7 @@ private:
 void Rva005C436E::rva005C436E(int v)
 {
 	int idx = m_04->m_ptr->m_val;
-	Rva002E2903Player *p = (*(Rva002BA8F1Logic **)0x00DFEF10)->find(idx, 0);
+	Rva002E2903Player *p = g_009FEF10->find(idx, 0);
 	if (!p)
 		return;
 	switch (m_08->m_val) {

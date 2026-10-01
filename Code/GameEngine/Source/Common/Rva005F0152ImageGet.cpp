@@ -13,8 +13,8 @@ class ImageCollection
 public:
 	const Image *findImageByName(const AsciiString &n);
 };
+extern ImageCollection *TheMappedImageCollection;
 
-#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
 
 class Rva005F0152
 {
@@ -110,6 +110,7 @@ class Rva002D06CA
 public:
 	void *rva002D06CA(const AsciiString *key);
 };
+extern Rva002D06CA *TheThingFactory;
 
 struct Rva005F01D6Payload
 {
@@ -123,7 +124,7 @@ struct Rva005F01D6In
 	AsciiString m_name;
 };
 
-#define Rva00DFF000 (*(Rva002D06CA **)0x00DFF000)
+#define Rva00DFF000 TheThingFactory
 
 const Image *Rva005F01D6Get(Rva005F01D6In *in)
 {

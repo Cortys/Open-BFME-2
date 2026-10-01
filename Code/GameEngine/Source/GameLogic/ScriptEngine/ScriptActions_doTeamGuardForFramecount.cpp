@@ -62,6 +62,7 @@ public:
 	Team *getTeamNamed(AsciiString name, Bool b);
 	void setSequentialTimer(Team *team, int frames);
 };
+extern ScriptEngine *TheScriptEngine;
 
 class ScriptActions
 {
@@ -71,7 +72,7 @@ protected:
 
 void ScriptActions::doTeamGuardForFramecount(const AsciiString &teamName, int framecount, bool seconds)
 {
-	Team *team = (*(ScriptEngine **)0x00DFE16C)->getTeamNamed((AsciiString &)teamName, false);
+	Team *team = TheScriptEngine->getTeamNamed((AsciiString &)teamName, false);
 	if (!team)
 		return;
 	DLINK_ITERATOR<Object> iter = team->iterate_TeamMemberList();
@@ -88,7 +89,7 @@ void ScriptActions::doTeamGuardForFramecount(const AsciiString &teamName, int fr
 		iter.advance();
 	}
 	if (seconds)
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(team, framecount * *(int *)0x00DBA4E4);
+		TheScriptEngine->setSequentialTimer(team, framecount * *(int *)0x00DBA4E4);
 	else
-		(*(ScriptEngine **)0x00DFE16C)->setSequentialTimer(team, framecount);
+		TheScriptEngine->setSequentialTimer(team, framecount);
 }

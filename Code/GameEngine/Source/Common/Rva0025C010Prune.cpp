@@ -18,8 +18,8 @@ class GameLogic
 public:
 	Object *findObjectByID(ObjectID id);
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 namespace _STL
 {

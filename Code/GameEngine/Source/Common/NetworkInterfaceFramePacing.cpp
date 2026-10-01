@@ -125,6 +125,7 @@ class NameKeyGenerator
 public:
 	NameKeyType nameToKey(const AsciiString &s);
 };
+extern NameKeyGenerator *TheNameKeyGenerator;
 
 class GameSlot
 {
@@ -138,6 +139,7 @@ class GameInfo
 public:
 	GameSlot *getSlot(int n);
 };
+extern GameInfo *TheGameInfo;
 
 class Player
 {
@@ -151,6 +153,7 @@ class PlayerList
 public:
 	Player *findPlayerWithNameKey(NameKeyType key);
 };
+extern PlayerList *ThePlayerList;
 
 class NetWrapperCommandMsg
 {
@@ -199,9 +202,6 @@ public:
 	virtual void s14(Rva0030F47A *m);
 };
 
-#define TheGameInfo (*(GameInfo **)0x00E02EEC)
-#define TheNameKeyGenerator (*(NameKeyGenerator **)0x00DF36A4)
-#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
 #define TheMessageTarget (*(MessageTarget **)0x00E00954)
 
 void NetworkInterface::rva0025E539(NetWrapperCommandMsg *msg)

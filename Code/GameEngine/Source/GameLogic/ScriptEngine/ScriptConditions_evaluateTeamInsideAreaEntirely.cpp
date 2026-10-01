@@ -16,9 +16,9 @@ public:
     Team *getTeamNamed(AsciiString, bool);
     PolygonTrigger *getQualifiedTriggerAreaByName(AsciiString);
 };
+extern ScriptEngine *TheScriptEngine;
 class ScriptConditions
 { protected: bool evaluateTeamInsideAreaEntirely(Parameter *, Parameter *, Parameter *); };
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 bool ScriptConditions::evaluateTeamInsideAreaEntirely(Parameter *teamParm, Parameter *triggerParm, Parameter *typeParm)
 {
     Team *team = TheScriptEngine->getTeamNamed(teamParm->getString(), false);

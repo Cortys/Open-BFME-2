@@ -54,8 +54,8 @@ private:
 	int m_playerCount; // +0x14
 	Player *m_players[20]; // +0x18
 };
+extern PlayerList *ThePlayerList;
 
-#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
 
 PlayerList::~PlayerList()
 {

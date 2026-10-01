@@ -32,8 +32,8 @@ class ScriptEngine
 public:
 	void rva00357A03(int playerIndex, ScienceType science);
 };
+extern ScriptEngine *TheScriptEngine;
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 class Player
 {

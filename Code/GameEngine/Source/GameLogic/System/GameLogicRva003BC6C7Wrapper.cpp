@@ -9,8 +9,8 @@ class GameLogic
 public:
 	void rva003BA5DD(int value);
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 void __stdcall Rva003BC6C7Set(int value)
 {

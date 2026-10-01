@@ -4,7 +4,8 @@
 // Callers in 0x004FA83E and 0x004FA9B1 families. TU-local honest-address views.
 class Rva002E2903Player;
 class Rva002BA8F1Logic { public: Rva002E2903Player *find(int, unsigned int *); };
-#define TheRva00DFEF10 (*(Rva002BA8F1Logic **)0x00DFEF10)
+extern Rva002BA8F1Logic *g_009FEF10;
+#define TheRva00DFEF10 g_009FEF10
 struct Rva004FA5F8B { char pad[0x13C]; int id; };
 struct Rva004FA5F8A { char pad[0x24]; Rva004FA5F8B *b; };
 struct Rva004FA5F8 { char pad0[4]; Rva004FA5F8A *a; Rva002E2903Player *rva004FA5F8(); };

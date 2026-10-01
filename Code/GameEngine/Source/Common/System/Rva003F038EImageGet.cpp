@@ -13,8 +13,8 @@ class ImageCollection
 public:
 	const Image *findImageByName(const AsciiString &n);
 };
+extern ImageCollection *TheMappedImageCollection;
 
-#define TheMappedImageCollection (*(ImageCollection **)0x00DFF078)
 
 class Rva003F038E
 {

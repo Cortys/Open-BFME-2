@@ -28,8 +28,8 @@ public:
 	char m_pad[0x40];
 	int m_frame; // +0x40, proven by Rva002039B6Host
 };
+extern GameLogic *TheGameLogic;
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
 
 class WeaponSet
 {

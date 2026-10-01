@@ -32,8 +32,8 @@ class ScriptEngine
 public:
 	Object *getUnitNamed(Parameter *param);
 };
+extern ScriptEngine *TheScriptEngine;
 
-#define TheScriptEngine (*(ScriptEngine **)0x00DFE16C)
 
 void __stdcall Rva003C90B1Exit(Parameter *param)
 {

@@ -24,8 +24,8 @@ class PartitionManager
 public:
 	CellShroudStatus getShroudStatusForPlayer(int playerIndex, const Coord3D *pos) const;
 };
+extern PartitionManager *TheShroudManager;
 
-#define TheShroudManager (*(PartitionManager **)0x00DFE74C)
 
 class Rva000D1BEA
 {
