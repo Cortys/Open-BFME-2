@@ -1,10 +1,10 @@
-// ?rva0029E159@Rva0029E159@@QAEPAU1@ABUSource0029E159@@@Z
-// partial score=0.96 date=2026-09-28
 // cl: /O1 /Og /arch:SSE /MD /EHsc /DNDEBUG
-// ?rva0029E159@Rva0029E159@@QAEXABUSource0029E159@@@Z @0x0029E159 150B
+// Rva0029E159::rva0029E159 @0x0029E159 150B
 // Audio handle from source string plus two floats: empty check via 0x1E2F;
 // AudioEventRTS temp via ctor 0x79514 plus AsciiString assign 0x366F0 plus
 // floats and consts; manager at 0x009EC2D4 slot 8; dtor 0x793FA; caller 0x2A3ED8.
+// The manager is a real extern global (the banked attempt read it through a
+// literal-address macro, which moved its load).
 typedef int Int;
 
 template <typename T> struct BfmeStringData
@@ -71,24 +71,22 @@ public:
 	virtual int play(AudioEventRTS *ev) = 0;
 };
 
-#define TheAudio0029E159 (*(AudioManager0029E159 **)0x00DEC2D4)
-
+extern AudioManager0029E159 *g_00DEC2D4;
 struct Rva0029E159
 {
 	int m_handle;
 	Rva0029E159 *rva0029E159(const Source0029E159 &src);
 };
 
-// ?rva0029E159@Rva0029E159@@QAEPAU1@ABUSource0029E159@@@Z present-unmatched
 Rva0029E159 *Rva0029E159::rva0029E159(const Source0029E159 &src)
 {
 	m_handle = 0;
 	if (src.m_name.isEmpty())
 		return this;
 	AudioEventRTS ev;
-	*(AsciiString *)&ev = src.m_name;
+	ev.m_first = src.m_name;
 	ev.m_floatC = src.m_x;
-	AudioManager0029E159 *mgr = TheAudio0029E159;
+	AudioManager0029E159 *mgr = g_00DEC2D4;
 	ev.m_float10 = src.m_y;
 	ev.m_byte25 = 0;
 	ev.m_byte26 = 1;
