@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 /*
 **	Command & Conquer Generals Zero Hour(tm)
@@ -56,82 +56,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	Int compare(const char *other) const;
-	Int compareNoCase(const char *other) const;
-	Bool startsWith(const char *prefix) const;
-	void set(const T *text);
-	void trim(void);
-	Bool nextToken(StringBase *token, const char *seps);
-	void concat(const char *text, Int len);
-	void concat(const StringBase &other);
-	void concat(char c) { concat(&c, 1); }
-
-protected:
-	BfmeStringData<T> *m_data;
-};
-
-template <> class StringBase<unsigned short>
-{
-	friend class UnicodeString;
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	bool isEmpty() const;
-	void set(const StringBase &other);
-	void concat(const StringBase &other);
-
-protected:
-	BfmeStringData<unsigned short> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	AsciiString &operator=(const char *text) { set(text); return *this; }
-
-	const char *str() const { return m_data ? &m_data->text[0] : ""; }
-	Bool isEmpty() const { return m_data == 0 || m_data->length == 0; }
-	void format(const char *fmt, ...);
-	void toLower();
-	Bool operator==(const char *other) const { return compare(other) == 0; }
-	int getLength() const { return m_data ? m_data->length : 0; }
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	UnicodeString &operator=(const UnicodeString &other) { set(other); return *this; }
-	void translate(const char *text);
-	const unsigned short *str() const { return m_data ? &m_data->text[0] : L""; }
-};
-
-bool operator<(const AsciiString &left, const AsciiString &right);
-
-// Local list-remove support only: satisfies list<AsciiString>::remove's
-// operator== requirement in this TU. The claimed remove body lives in
-// stlport_list_asciistring_remove.cpp (inlined StringBase compare); this
-// TU only emits the call to it.
-inline bool operator==(const AsciiString &a, const AsciiString &b) { return strcmp(a.str(), b.str()) == 0; }
+#include "ascii_string.h"
+#include "unicode_string.h"
 
 namespace _STL
 {
@@ -239,7 +165,8 @@ void GameSpyLoginPreferences::Write_Rva005C9DA8(NickMap &emails, const char *pre
 		while (listIt != it->second.end())
 		{
 			nicks.concat(*listIt);
-			nicks.concat(',');
+			char comma = ',';	// operator+=(char), expanded in place as retail does
+			((StringBase<char> *)&nicks)->concat(&comma, 1);
 			++listIt;
 		}
 		fprintf(fp, "%s%s = %s\n", prefix, it->first.str(), nicks.str());
