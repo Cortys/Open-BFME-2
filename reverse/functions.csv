@@ -46629,3 +46629,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00042036@Rva00042036@@QAEPAVRva000647B5@@XZ,,0x00042036,50,Code/GameEngine/Source/Common/Rva00042036Factory.cpp,matched,factory news 16B Rva via rowed new then rowed ctor chain from 0x000647B5
 ?rva00507991@Made002CC5E1@@UAEXPAX0@Z,,0x00507991,94,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,vtable slot 5 of 0x00864048 plus 0x00864C38 plus BfmeZeroRange float checks
 ?doPush@Shell@@IAEXVAsciiString@@@Z,,0x0035C3C3,130,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,BFME1 Shell.cpp doPush donor caller 0x0035C445 slots 0x80 0x3C 0x0 0x14
+?shutdownComplete@Shell@@QAEXPAVWindowLayout@@_N@Z,,0x0035C445,87,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,BFME1 Shell.cpp shutdownComplete donor callers 0x0035C7AE 0x0040FD13

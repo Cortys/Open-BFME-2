@@ -60,6 +60,15 @@ class AnimateWindowManager
 {
 public:
 	virtual void *deleteInstance(int flags) = 0;
+	virtual void a01() = 0;
+	virtual void a02() = 0;
+	virtual void a03() = 0;
+	virtual void a04() = 0;
+	virtual void a05() = 0;
+	virtual void a06() = 0;
+	virtual void a07() = 0;
+	virtual void a08() = 0;
+	virtual void reset() = 0;
 	void registerGameWindow(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int ms, unsigned int delayMs);
 };
 
@@ -111,6 +120,7 @@ template <typename T> class StringBase
 public:
 	StringBase() : m_data(0) {}
 	~StringBase() { releaseBuffer(); }
+	void set(const T *text);
 };
 
 class AsciiString : public StringBase<char>
@@ -192,6 +202,7 @@ public:
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
 	void loadScheme(AsciiString name);
 	void rva0035BF0E();
+	void shutdownComplete(WindowLayout *screen, Bool impendingPush);
 };
 
 class ShellMenuSchemeManager
@@ -253,6 +264,20 @@ void Shell::doPush(AsciiString layoutFile)
 		TheIMEManager->m3C();
 	newScreen->runInit(0);
 	newScreen->s05();
+}
+
+// ?shutdownComplete@Shell@@QAEXPAVWindowLayout@@_N@Z @ 0x0035C445 (87B). Donor BFME1 Shell.cpp shutdownComplete: animate reset slot 0x24 then pendingPush via doPush then clear and set empty then pendingPop via doPop; callers 0x0035C7AE 0x0040FD13 0x0050CEA5; callees doPush doPop rowed StringBase copy and set rowed.
+void Shell::shutdownComplete(WindowLayout *screen, Bool impendingPush)
+{
+	m_animateWindowManager->reset();
+	if (m_pendingPush) {
+		doPush(m_pendingPushName);
+		m_pendingPush = false;
+		m_pendingPushName.set("");
+	} else if (m_pendingPop) {
+		doPop(impendingPush);
+		m_pendingPop = false;
+	}
 }
 
 // ?registerWithAnimateManager@Shell@@QAEXPAVGameWindow@@W4AnimTypes@@_NI@Z @ 0x0035BE23 (50B). Donor BFME1 Shell.cpp registerWithAnimateManager plus ZH Shell.h public; GlobalData animateWindows at +0xB00 and animateManager at +0x60; callee AnimateWindowManager registerGameWindow.
