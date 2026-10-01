@@ -46407,3 +46407,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?clearWeaponSetFlag@Object@@QAEXW4WeaponSetType@@@Z,,0x00290A10,177,Code/GameEngine/Source/GameLogic/Object/ObjectWeaponSetFlags.cpp,matched,ZH and BFME1 Object::clearWeaponSetFlag: clears the +0x370 flag then updateWeaponSet then the mapped model condition bit plus the BFME2 timed conditions
 ?rva000731AE@Rva000731AE@@QAEXXZ,,0x000731AE,70,Code/Libraries/Source/WWVegas/WWLib/Rva000731AEClear.cpp,matched,tail clear plus three array deletes via rowed delete plus clear
 ?rva00073C7A@Rva00073C7A@@QAEXXZ,,0x00073C7A,70,Code/Libraries/Source/WWVegas/WWLib/Rva00073C7AClear.cpp,matched,tail clear plus three array deletes via rowed delete plus clear
+?rva00073950@Rva00073950@@QAEXIPAX@Z,,0x00073950,110,Code/Libraries/Source/WWVegas/WW3D2/Rva00073950Fill.cpp,matched,surface fill via rowed lock plus clear with GlobalData
