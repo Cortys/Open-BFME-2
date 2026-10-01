@@ -45210,3 +45210,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva00414B40@@UAEPAXI@Z,,0x00414B24,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00414B40.cpp,matched,chain deleting dtor calls 0x414B40
 ?rva00414081@Rva00414081@@QAEXPAVINI@@@Z,,0x00414081,18,Code/GameEngine/Source/Common/Rva00414081Parse.cpp,matched,unlock INI parse wrapper table 0xC39EB8 caller 0x4142D7
 ?Rva0041445CDestroy@@YAXPAURva0041445CElement@@0H@Z,,0x0041445C,26,Code/Libraries/Source/WWVegas/WWLib/StlportDestroyRva0041445C.cpp,matched,unlock range destroy stride 0x2C virtual callers 0x4144F0
+??$_Destroy@PAUBfmeAssignRecord44@@@_STL@@YAXPAUBfmeAssignRecord44@@0@Z,,0x004144F0,24,Code/Libraries/Source/WWVegas/WWLib/StlportDestroyRva004144F0.cpp,matched,chain Destroy wrapper calls rowed 0x41445C callers vector
