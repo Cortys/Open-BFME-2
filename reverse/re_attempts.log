@@ -4890,3 +4890,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ??0Rva001F4B63@@QAE@ABVRvaSmartPtr12@@ABVRva001F376E@@@Z	0x001F4B63	260	partial	xorps-push hoisted above smart init; m78 float movss vs int mov via eax; missing EH state 2; helper uses eax-edx vs ecx-eax +extra mov ecx,eax t=28 model=muse-16 score=0.91 stash=reverse/attempts/0x001f4b63.cpp
 ?rva001F4696@ParticleSystem@@QAEXPAX0_N0@Z	0x001F4696	354	partial	slave lea cmp and Make call missing t=22 model=muse-16 score=0.95 stash=reverse/attempts/0x001f4696.cpp
 ?rva001F4D4F@Rva001F4D4F@@QAEMXZ	0x001F4D4F	39	partial	1.0f load hoisted above null test; retail keeps load late in else after call+ret t=20 model=muse-16 score=0.93 stash=reverse/attempts/0x001f4d4f.cpp
+?rva00433F7F@Rva00433F7F@@QAEXXZ	0x00433F7F	94	blocked	second block ecx-eax swap persists across temp G7 and-or early-return t=12 model=muse-08 (stash 0.93 kept)
+?rva00434337@Rva00434337@@QAEXH@Z	0x00434337	251	partial	push-ebx-vs-push-1 mov-mem-ebx-vs-1 missing-2x-mov-ecx-TheGameState-TheGameLogic entry-mov-eax-dec-vs-push-xor-inc-cmp t=30 model=muse-08 score=0.93 stash=reverse/attempts/0x00434337.cpp
