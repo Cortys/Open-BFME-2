@@ -16,6 +16,11 @@ struct Rva00418BFBNode {
 struct Rva00418BFBComp {
 	bool operator()(const void *a, const void *b) const;
 };
+
+// The empty comparator forwards the same two key pointers to the rowed
+// signed-pair less function at 0x00418BB7; its this pointer is unused.
+#pragma comment(linker, "/alternatename:??RRva00418BFBComp@@QBE_NPBX0@Z=?Rva00418BB7Less@@YG_NPBX0@Z")
+
 struct Rva00418BFB {
 	Rva00418BFBNode *_head;
 	int _size;
