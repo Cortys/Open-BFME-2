@@ -26,6 +26,10 @@ extern "C" __declspec(dllimport) void *__stdcall TlsGetValue(unsigned long index
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(void *section);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(void *section);
 
+class MemoryPoolFactory;
+// placement unverified: no rowed DIR32 site yet; ZH initial value is null.
+MemoryPoolFactory *TheMemoryPoolFactory = 0;
+
 namespace EA
 {
 namespace Allocator

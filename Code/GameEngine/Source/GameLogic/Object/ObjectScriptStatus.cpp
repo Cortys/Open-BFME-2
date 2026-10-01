@@ -193,3 +193,13 @@ void Object::rva00292EB3( DisabledType type )
 		setDisabled( type );
 	++m_unk1F8[ type ];
 }
+
+template <int N>
+class BitFlags
+{
+public:
+	unsigned int m_bits[(N + 31) / 32];
+};
+
+// placement unverified: no rowed DIR32 site yet; ZH ObjectStatusMaskType starts clear.
+BitFlags<45> OBJECT_STATUS_MASK_NONE = { { 0, 0 } };

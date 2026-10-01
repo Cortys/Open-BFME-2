@@ -8,7 +8,11 @@ class BitFlags
 public:
 	bool test(const void *kindOf) const;
 	bool testSetAndClear(const BitFlags &mustBeSet, const BitFlags &mustBeClear) const;
+	unsigned int m_bits[(N + 31) / 32];
 };
+
+// placement unverified: no rowed DIR32 site yet; ZH KINDOFMASK_NONE starts clear.
+BitFlags<116> KINDOFMASK_NONE = { { 0, 0, 0, 0 } };
 
 struct ThingTemplate
 {

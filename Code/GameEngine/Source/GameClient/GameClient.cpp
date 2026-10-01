@@ -106,6 +106,11 @@ template <> AsciiString *vector<AsciiString, allocator<AsciiString> >::erase(Asc
 /// The GameClient singleton instance
 GameClient *TheGameClient = NULL;
 
+// placement unverified: no rowed DIR32 site yet; ZH ActionManager singleton starts null.
+ActionManager *TheActionManager = 0;
+// placement unverified: no rowed DIR32 site yet; ZH TerrainVisual singleton starts null.
+TerrainVisual *TheTerrainVisual = 0;
+
 // Matched DIR32 sites establish TheWritableGlobalData at VA 0x00DFE758.
 // That address is in the PE .data zero-fill tail, so retail starts it null.
 GlobalData *TheWritableGlobalData = NULL;

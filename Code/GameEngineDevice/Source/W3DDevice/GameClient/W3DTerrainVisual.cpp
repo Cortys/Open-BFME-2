@@ -71,6 +71,10 @@
 #include "WW3D2/ColTest.h"
 #include "WW3D2/assetmgr.h"
 
+// placement unverified: no rowed DIR32 site yet; ZH asset-manager singleton starts null.
+WW3DAssetManager *WW3DAssetManager::TheInstance = 0;
+// placement unverified: no rowed DIR32 site yet; ZH W3D shadow singleton starts null.
+W3DShadowManager *TheW3DShadowManager = 0;
 
 
 class TestSeismicFilter : public SeismicSimulationFilterBase
@@ -1347,4 +1351,3 @@ void W3DTerrainVisual::loadPostProcess( void )
 	TerrainVisual::loadPostProcess();
 
 }  // end loadPostProcess
-

@@ -14,10 +14,13 @@ class BitFlags
 {
 public:
 	bool any() const;
-
-private:
-	unsigned m_words[1];
+	unsigned int m_words[(N + 31) / 32];
 };
+
+// placement unverified: no rowed DIR32 site yet; ZH DISABLEDMASK_NONE starts clear.
+BitFlags<13> DISABLEDMASK_NONE = { { 0 } };
+// placement unverified: no rowed DIR32 site yet; ZH initDisabledMasks sets all 13 bits.
+BitFlags<13> DISABLEDMASK_ALL = { { 0x1FFF } };
 
 template <>
 bool BitFlags<11>::any() const
@@ -28,4 +31,36 @@ bool BitFlags<11>::any() const
 			return true;
 	}
 	return false;
+}
+
+namespace _STL
+{
+template<class _Dummy>
+class _Bs_G
+{
+public:
+	static unsigned char _S_bit_count[256];
+	static unsigned char _S_first_one[256];
+};
+
+// placement unverified: no rowed DIR32 site yet; values copied from vendored STLport _bitset.c.
+template<>
+unsigned char _Bs_G<bool>::_S_bit_count[256] = {
+	0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4,
+	1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+	1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+	1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+	2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
+	3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+	3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7,
+	4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
+};
 }
