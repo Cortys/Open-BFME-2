@@ -45405,3 +45405,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001F944E@Rva001F944E@@QAEXXZ,,0x001F944E,23,Code/GameEngine/Source/Common/Thing/Rva001F944E.cpp,matched,chain via rowed 0x001F8E0C null-checked slot 4 plus tail-jmp
 ?rva001FA4F0@Rva001FA4F0@@QAEXXZ,,0x001FA4F0,23,Code/GameEngine/Source/Common/Thing/Rva001FA4F0.cpp,matched,chain via rowed 0x001F944E null-checked virtual slot plus4 then tail-jmp
 ?rva001D990C@Rva001D990C@@QAE_NH@Z,,0x001D990C,105,Code/GameEngine/Source/Common/Thing/Rva001D990C.cpp,matched,recursive predicate with 4C flag via caller 0x0005A9F8 and self-call
+??$_M_allocate_and_copy@PAVBfmeStringTailRecord156@@@?$vector@VBfmeStringTailRecord156@@V?$allocator@VBfmeStringTailRecord156@@@_STL@@@_STL@@IAEPAVBfmeStringTailRecord156@@IPAV2@0@Z,,0x001D9AAC,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_tailrecord156_allocate_copy.cpp,matched,TailRecord allocate-copy via rowed copy 0x001D9A61 and allocate
