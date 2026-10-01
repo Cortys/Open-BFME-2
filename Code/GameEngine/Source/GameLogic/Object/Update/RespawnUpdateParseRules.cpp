@@ -32,10 +32,27 @@ struct RespawnRule {
     unsigned level, cost; int time; float health; bool autoSpawn;
     RespawnRule(unsigned ruleLevel=1):level(ruleLevel),cost(0),time(0),health(1.0f),autoSpawn(false) {}
 };
+class RespawnUpdate;
+namespace _STL {
+template <class _Key, class _Mapped> struct pair;
+template <class _Pair> struct _Select1st;
+template <class _Key> struct less;
+template <class _Value> class allocator;
+template <class _Value> struct _Rb_tree_node;
+template <class _Key, class _Value, class _KeyOfValue, class _Compare, class _Alloc>
+class _Rb_tree {
+    template <class _Key_arg>
+    _Rb_tree_node<_Value> *_M_find(const _Key_arg &) const;
+    friend class ::RespawnUpdate;
+};
+}
+typedef _STL::pair<const unsigned int, void *> RespawnRuleValue;
+typedef _STL::_Rb_tree<unsigned int, RespawnRuleValue,
+    _STL::_Select1st<RespawnRuleValue>, _STL::less<unsigned int>,
+    _STL::allocator<RespawnRuleValue> > RespawnRuleTree;
 struct RespawnInsertResult { void *node; bool inserted; };
 struct BFME2RespawnRuleTree {
     void *sentinel;
-    void *find(const unsigned &) const;
     RespawnInsertResult insert(const RespawnRule &);
 };
 class RespawnUpdate {
@@ -55,7 +72,7 @@ public:
 void RespawnUpdate::iniParseDefaultRule(INI *ini, void *instance, void *store, const void *) {
     RespawnRule rule;
     BFME2RespawnRuleTree *rules=(BFME2RespawnRuleTree *)store;
-    if(rules->find(rule.level)!=rules->sentinel)
+    if(((RespawnRuleTree *)rules)->_M_find<unsigned int>(rule.level) != rules->sentinel)
         THROW0("RespawnUpdate::iniParseDefaultRule -- Duplicate RespawnRules entry.")
     const char *token;
     FIELD("AutoSpawn","AutoSpawn:Yes' or 'AutoSpawn:No",parseBool,autoSpawn)
@@ -73,7 +90,7 @@ void RespawnUpdate::iniParseDefaultRule(INI *ini, void *instance, void *store, c
 void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *store, const void *) {
     RespawnRule defaultRule;
     BFME2RespawnRuleTree *rules=(BFME2RespawnRuleTree *)store;
-    void *node=rules->find(defaultRule.level);
+    void *node=(void *)((RespawnRuleTree *)rules)->_M_find<unsigned int>(defaultRule.level);
     if(node==rules->sentinel) THROW0("RespawnUpdate::iniParseNewRuleForLevel -- You cannot parse a 'RespawnEntry' before 'RespawnRules'. Please add a 'RespawnRules' -- which represents level 1.")
     defaultRule=*(const RespawnRule *)((const char *)node+0x10);
     RespawnRule rule(0);
@@ -81,7 +98,7 @@ void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *stor
     if(!token || _strcmpi(token,"Level")!=0) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- RespawnEntry expecting 'Level' entry. You specified %s.",token)
     if(strcmp(token,"Level")!=0) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- RespawnEntry for 'Level' is case sensitive. You specified %s.",token)
     INI::dup_002EF72(ini,instance,&rule.level,0);
-    if(rules->find(rule.level)!=rules->sentinel) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- Multiple 'RespawnEntry' with the same level of %d. You may only have one!",rule.level)
+    if(((RespawnRuleTree *)rules)->_M_find<unsigned int>(rule.level) != rules->sentinel) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- Multiple 'RespawnEntry' with the same level of %d. You may only have one!",rule.level)
     rule.autoSpawn=defaultRule.autoSpawn;
     rule.cost=defaultRule.cost;
     rule.time=defaultRule.time;
