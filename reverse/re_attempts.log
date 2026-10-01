@@ -5066,3 +5066,4 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva002A76A0@Rva002A7677@@QAEXHHHH_N@Z	0x002A76A0	193	blocked	needs STL reallocation with 5 args and EBP frame ours 8B vs 193B t=8 model=muse-03
 ?getPlayersWithRelationship@PlayerList@@QAEIHI_N@Z	0x002A7C70	192	blocked	O1 190B vs 192B minus2; this-in-esi-vs-edx plus zero-in-edi-vs-esi plus test-vs-cmp for src-null plus and-vs-mov for i-zero; nonvolatile-zero-coalesced plus retVal-after-first-if tried t=15 model=muse-03 (stash 0.93 kept)
 ?rva0029137E@Object@@QAE_NAAVAsciiString@@@Z	0x0029137E	109	partial	tmpl in edi vs retail eax mov-test-add-push t=18 model=muse-02 score=0.93 stash=reverse/attempts/0x0029137e.cpp
+?rva003802DF@Rva00380200@@QAEHXZ	0x003802DF	157	partial	shared min tail placed middle not early; 9 branch offsets differ; size and insns exact 157B 49/49 t=20 model=muse-12 score=0.92 stash=reverse/attempts/0x003802df.cpp

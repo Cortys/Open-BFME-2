@@ -20,6 +20,7 @@ class Rva00380200
 public:
     void rva0038028B();
     void rva0038020D();
+    void rva0038027B(int v);
 private:
     int m_00;
     void *m_04;
@@ -32,6 +33,12 @@ private:
     unsigned char m_pad20[0x28 - 0x20];
     int m_28;
 };
+void Rva00380200::rva0038027B(int v)
+{
+    m_1C += v;
+    if (m_1C < 0)
+        m_1C = 0;
+}
 void Rva00380200::rva0038028B()
 {
     m_28 = 0;
