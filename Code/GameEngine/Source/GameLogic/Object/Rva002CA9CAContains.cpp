@@ -22,7 +22,7 @@ class VirtNode
 {
 public:
 	virtual void v00();
-	virtual void v04();
+	virtual bool v04(const void *a, int b);
 	virtual void v08();
 	virtual void v0c();
 	virtual void v10();
@@ -45,6 +45,7 @@ class Rva002CA9CA
 {
 public:
 	bool rva002CA9CA(int id, const void *arg);
+	bool rva002CAA59(int a1, const void *a2);
 private:
 	char m_pad00[0x58];
 	int m_58;
@@ -80,6 +81,21 @@ bool Rva002CA9CA::rva002CA9CA(int id, const void *arg)
 					return true;
 			}
 		}
+		cur = cur->m_next;
+	}
+	return false;
+}
+
+bool Rva002CA9CA::rva002CAA59(int a1, const void *a2)
+{
+	if (a1 == 0)
+		return false;
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode *obj = (VirtNode *)cur->m_data;
+		if (obj->v04(a2, a1))
+			return true;
 		cur = cur->m_next;
 	}
 	return false;
