@@ -68,6 +68,29 @@ public:
     }
 };
 
+struct Rva00072FE6 {
+    // Only the receiver at record+8 is known; the remaining record bytes
+    // are opaque. This span preserves the independently measured 0x20 stride.
+    char unknown[0x18];
+    void rva00072FE6();
+};
+struct Rva004E2199Record {
+    unsigned unknown00;
+    Rva003EE9F1Ref *ref04;
+    Rva00072FE6 container08;
+};
+class Rva004E2E58Value {
+public:
+    virtual ~Rva004E2E58Value();
+    void rva004E2199();
+private:
+    char unknown04[0x10];
+    Rva004E2199Record *begin14;
+    Rva004E2199Record *end18;
+    unsigned unknown1C;
+    bool flag20;
+};
+
 class Rva003EF14A : public Rva003EF14ABase {
     Rva003EE9F1Ref *ref04;
     Rva004E2E58 container08;
@@ -97,4 +120,19 @@ void Rva003EF14A::rva003EE9F1()
         ref04->dropReference();
         ref04 = 0;
     }
+}
+
+// Complete 60B boundary at 0x004E2199. Caller 4E21E9 supplies the node's
+// payload at +14; every record stride and called virtual slot is retail-read.
+void Rva004E2E58Value::rva004E2199()
+{
+    for (Rva004E2199Record *record = begin14; record != end18; ++record) {
+        if (record->ref04) {
+            record->ref04->slot40();
+            record->ref04->dropReference();
+            record->ref04 = 0;
+        }
+        record->container08.rva00072FE6();
+    }
+    flag20 = false;
 }
