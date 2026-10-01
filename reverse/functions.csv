@@ -46203,3 +46203,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva001E468F@Rva001E468F@@QAE_NPAVObject@@@Z,,0x001E468F,82,Code/GameEngine/Source/Common/Rva001E468FCheck.cpp,matched,Object status kind predicate via rowed testStatus and rva00293926 caller 0x001E4742
 ?rva005613F9@Rva005613F9@@QAEXPAVFile@@I@Z,,0x005613F9,35,Code/GameEngine/Source/GameClient/Rva005613F9Write.cpp,matched,chain via 0x0055C9A0 and 0x003AFC6B vslot3 header footer only
 ?rva0055D2E8@BoxEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0055D2E8,223,Code/GameEngine/Source/GameClient/Rva0055D2E8Write.cpp,matched,chain via 0x003AFC6B vslot3 WriteHeader IsHollow HalfSize vtable-DIR32
+?rva002B7250@Rva002B7250@@QAEXPAVCreateAHeroData@@@Z,,0x002B7250,121,Code/GameEngine/Source/Common/Rva002B7250Erase.cpp,matched,find-erase with key copy for redundant prologue via Rva0025BF8C pattern
