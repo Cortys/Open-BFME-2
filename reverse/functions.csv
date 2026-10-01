@@ -45387,3 +45387,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0057E9ED@Rva0057E97A@@QAEXIH@Z,,0x0057E9ED,34,Code/GameEngine/Source/Common/Rva0057E9ED.cpp,matched,bounded vector store via barrier reload
 ?rva0057E59B@Rva0057E97A@@QAEXH_N@Z,,0x0057E59B,26,Code/GameEngine/Source/Common/Rva0057E59B.cpp,matched,window enable via rowed winEnable
 ?rva0043DBE0@Rva0043DBE0@@QAEXXZ,,0x0043DBE0,39,Code/GameEngine/Source/Common/Rva0043DBE0.cpp,matched,chain via TheGameInfo and rowed 0x57E59B
+??0Rva0043D16F@@QAE@XZ,,0x0043D16F,36,Code/GameEngine/Source/Common/Rva0043D16FCtor.cpp,matched,ctor with BfmeE16 vector via Vector_base
