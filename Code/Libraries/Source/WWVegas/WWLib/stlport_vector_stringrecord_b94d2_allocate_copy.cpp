@@ -1,7 +1,7 @@
 // cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // BFME2's 8-byte BfmeStringRecord000B94D2 vector allocation/copy helper at RVA 0xBC72B.
-class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 struct BfmeStringRecord000B94D2 {
     AsciiString text0, text1;
     BfmeStringRecord000B94D2();

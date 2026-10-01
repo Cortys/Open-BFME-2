@@ -15,7 +15,7 @@ public:
 class AsciiString : private StringBase<char>
 {
 public:
-	~AsciiString() {}
+	~AsciiString();
 };
 
 class AsciiStringMember

@@ -4,7 +4,7 @@
 // /G7 emits the retail register allocation and imul; explicit member (not whole-class)
 // instantiation keeps the other members owned by the /O1 sibling TU. _Construct is
 // declared only so the copies call the rowed body at 0x00568F92.
-class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 struct BfmeStringRecord00568CE0 {
     AsciiString text0, text1;
     unsigned int word0, word1;

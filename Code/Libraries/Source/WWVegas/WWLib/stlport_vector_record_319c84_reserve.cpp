@@ -7,7 +7,7 @@
 // also apart from that vector's other bodies near 0x002155xx. So this is a second
 // instantiation over an element type with the same 16-byte layout; the type name
 // is generated and the layout is copied from BfmeVectorRecord0002154F3.
-class AsciiString { public: AsciiString(); AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(); AsciiString(const AsciiString &); __forceinline ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 #include <vector>
 struct BfmeVectorRecord00319C84 {
     AsciiString text;

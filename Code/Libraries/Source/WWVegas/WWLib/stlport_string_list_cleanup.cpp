@@ -9,7 +9,7 @@
 #include <map>
 #include <list>
 template<class T> class StringBase { void *m_data; void releaseBuffer(); public: ~StringBase(); };
-class AsciiString : private StringBase<char> { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() {} };
+class AsciiString : private StringBase<char> { public: AsciiString(const AsciiString &); __forceinline ~AsciiString(); };
 bool operator<(const AsciiString &, const AsciiString &);
 typedef _STL::pair<const AsciiString,_STL::list<AsciiString> > StringListPair;
 typedef _STL::_Rb_tree<AsciiString,StringListPair,_STL::_Select1st<StringListPair>,_STL::less<AsciiString>,_STL::allocator<StringListPair> > StringListTree;

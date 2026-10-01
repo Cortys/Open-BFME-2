@@ -3,7 +3,7 @@
 // ?_M_insert_overflow@?$vector@UBfmeStringRecord000331962@@V?$allocator@UBfmeStringRecord000331962@@@_STL@@@_STL@@IAEXPAUBfmeStringRecord000331962@@ABU3@ABU__false_type@2@I_N@Z, retail 0x003323F1, 183 bytes.
 // Vector overflow via rowed allocate pin 0x395928 plus workers 0x331BAC 0x331B6A plus Construct pin 0x331B3D plus Clear pin 0xC05EC.
 // Evidence: caller push_back at 0x332568; same 183B shape as siblings; /G7 for retail imul.
-class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString() { releaseBuffer(); } protected: void releaseBuffer(); private: void *m_data; };
+class AsciiString { public: AsciiString(const AsciiString &); __forceinline ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
 struct BfmeStringRecord000331962 {
     unsigned int word;
     AsciiString text;

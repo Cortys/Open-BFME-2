@@ -16,7 +16,7 @@
 #include <set>
 template<class T> class StringBase { void *m_data; void releaseBuffer(); public: StringBase(const StringBase &); void set(const StringBase &); protected: __forceinline ~StringBase() { releaseBuffer(); } };
 class UnicodeString : private StringBase<unsigned short> { public: __forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {} void set(const UnicodeString &o) { StringBase<unsigned short>::set(o); } __forceinline ~UnicodeString() {} };
-class AsciiString : private StringBase<char> { public: __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {} void set(const AsciiString &o) { StringBase<char>::set(o); } __forceinline ~AsciiString() {} };
+class AsciiString : private StringBase<char> { public: __forceinline AsciiString(const AsciiString &o) : StringBase<char>(o) {} void set(const AsciiString &o) { StringBase<char>::set(o); } __forceinline ~AsciiString(); };
 struct Coord3D { float x,y,z; };
 struct Region3D { Coord3D lo,hi; Region3D(const Region3D &); };
 typedef _STL::list<Coord3D> Coord3DList;
