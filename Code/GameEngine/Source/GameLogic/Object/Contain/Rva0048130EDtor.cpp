@@ -14,15 +14,18 @@
 // plus the 8-byte stride (sar 3) in 0x0048160B and the INI parse temp at
 // 0x004816F4 constructing filter via 0x003623E5 and string via 0x00055F5.
 
+class Rva0048130E;
+
 template <typename T>
 class StringBase
 {
 public:
 	~StringBase();
-	StringBase(const StringBase &src);
 
 private:
+	StringBase(const StringBase &src);
 	void *m_data;
+	friend class Rva0048130E;
 };
 
 class Rva00360D26Member
