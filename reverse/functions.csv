@@ -45975,3 +45975,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4Rva004F6057@@QAEAAU0@ABU0@@Z,,0x004F6057,39,Code/GameEngine/Source/Common/Rva004F6057Assign.cpp,matched,ref-holder assign via rowed ReleaseTreeHintRef caller 0x004F99CC
 ??$__copy_backward@PAURva004F6352@@PAU1@H@_STL@@YAPAURva004F6352@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x004F6876,50,Code/GameEngine/Source/Common/Rva004F6352CopyBackward.cpp,matched,copy_backward stride 0xC via rowed assign 0x004F6352 caller 0x004F70A5
 ??$__copy@PAURva004F6352@@PAU1@H@_STL@@YAPAURva004F6352@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x004F6C32,50,Code/GameEngine/Source/Common/Rva004F6352Copy.cpp,matched,copy stride 0xC via rowed assign 0x004F6352 caller 0x004F7151
+?rva004F6234@Rva004F6234@@QAEXHPAUPred004F6234@@@Z,,0x004F6234,52,Code/GameEngine/Source/Common/Rva004F6234Check.cpp,matched,predicate loop stride 0xC via virtual Check caller 0x005EAA9C
