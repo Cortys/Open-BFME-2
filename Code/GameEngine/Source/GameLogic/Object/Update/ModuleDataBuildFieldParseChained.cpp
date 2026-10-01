@@ -55,6 +55,7 @@ struct FieldParse
 class INI
 {
 public:
+	static void parseAsciiString(INI *, void *, void *, const void *);
 	static void parseBool(INI *, void *, void *, const void *);
 	static void parseReal(INI *, void *, void *, const void *);
 	static void parseDurationUnsignedInt(INI *, void *, void *, const void *);
@@ -93,6 +94,16 @@ extern const FieldParse g_00BF0508FireWeaponWhenDeadBehaviorFieldParse[] = {
 	{ "DelayTime", &INI::parseDurationUnsignedInt, 0, 0x11C },
 	{ "DeathWeapon", &INI::parseWeaponTemplate, 0, 0x15C },
 	{ "WeaponOffset", &INI::parseCoord3D, 0, 0x120 },
+	{ 0, 0, 0, 0 }
+};
+
+// Retail VA 0x00C58C38 is the TooltipUpgradeModuleData FieldParse table:
+// DisplayName and Description use parseAsciiString at +0x118/+0x11C, then
+// the table's zero sentinel. The matched buildFieldParse caller supports the
+// class identity.
+extern const FieldParse g_00C58C38TooltipUpgradeFieldParse[] = {
+	{ "DisplayName", &INI::parseAsciiString, 0, 0x118 },
+	{ "Description", &INI::parseAsciiString, 0, 0x11C },
 	{ 0, 0, 0, 0 }
 };
 
@@ -322,7 +333,7 @@ public:
 void TooltipUpgradeModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C58C38), 0);
+	parse.add(g_00C58C38TooltipUpgradeFieldParse, 0);
 }
 
 class ExperienceScalarUpgradeModuleData
