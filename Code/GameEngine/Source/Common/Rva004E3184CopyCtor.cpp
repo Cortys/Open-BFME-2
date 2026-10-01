@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/moduledata
 // stlport
 //
 // ??0Rva004E3184@@QAE@ABV0@@Z @ 0x004E2F9F (295B).
@@ -7,23 +7,13 @@
 // in caller 0x004FB924. _Construct wrapper at 0x004E3706 treats it as
 // 88-byte BfmePod88. Members call StringBase<char> copy at 0x000365F0 and
 // vector<AsciiString> copy at 0x000BC07E. Layout from the dtor TU plus
-// retail offsets. Snapshot base with inline BBB554 dtor arms EH state 0
-// before the first member like retail.
+// retail offsets. Snapshot base dtor arms EH state 0 before the first member
+// like retail.
 #include <memory>
 #include <vector>
 
 #include "ascii_string.h"
-
-
-class Snapshot {
-public:
-    virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-    *(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class Rva004E3184 : public Snapshot {
 public:

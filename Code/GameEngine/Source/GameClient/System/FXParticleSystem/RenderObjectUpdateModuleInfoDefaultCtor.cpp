@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
+// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE /Ireference/shims/moduledata
 
 // ??0RenderObjectUpdateModuleInfo@FXParticleSystem@@QAE@XZ @0x00561F99 489B
 // BFME1 donor: reference/open-bfme-1/Code/GameEngine/Source/GameClient/System/FXParticleSystem/FXParticleSystem_RenderObjectUpdateModuleInfo_ctor_Thunk.cpp
@@ -6,6 +6,8 @@
 // BFME2 retail same order and offsets (+4..+0x88 step 0xC, mode at +0x94=1).
 // Callers: RenderObjectUpdateModuleTemplate ctor at 0x003A80D7, FUN_009624de at 0x00562506.
 // Callee: GameClientRandomVariable::setRange at rowed 0x002341E7.
+
+#include "Common/Snapshot.h"
 
 class GameClientRandomVariable
 {
@@ -26,12 +28,6 @@ private:
 
 namespace FXParticleSystem
 {
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
 
 class RenderObjectUpdateModuleInfo : public Snapshot
 {

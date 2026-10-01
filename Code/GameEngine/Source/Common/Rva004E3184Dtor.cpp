@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ??1Rva004E3184@@UAE@XZ @ 0x004E3184 (201B).
 // ModuleData-style dtor: stores vtable 0x00861F28 at +0 then tears down
@@ -6,21 +6,11 @@
 // +0x0C +0x08 +0x04 via pinned 0x00036410 and the vector at +0x38 via
 // pinned 0x0002CC70 then restores Snapshot base vtable 0x00BBB554.
 // Layout from the teardown EH states 0xC-0. Shape follows
-// GateOpenAndCloseBehaviorModuleDataDtor (TU-local Snapshot with inline
-// BBB554-restoring dtor plus opaque vector plus string members).
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+// GateOpenAndCloseBehaviorModuleDataDtor (Snapshot base plus opaque vector
+// and string members).
 
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 class RvaVecAscii
 {

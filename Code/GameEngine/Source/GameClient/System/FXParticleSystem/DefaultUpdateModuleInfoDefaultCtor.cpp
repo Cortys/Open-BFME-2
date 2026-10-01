@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE
+// cl: /DNDEBUG /MD /EHsc /O1 /Ob2 /arch:SSE /Ireference/shims/moduledata
 
 // ??0DefaultUpdateModuleInfo@FXParticleSystem@@QAE@XZ @0x0055F529 339B
 // BFME1 donor: reference/open-bfme-1/Code/GameEngine/Source/GameClient/System/FXParticleSystem/DefaultUpdateModuleInfoCtorThunk.cpp
@@ -6,6 +6,8 @@
 // + int extra at +0x40: pattern 0,1,0,0,1,0,0,1 from disasm, extra=1.
 // Callers: DefaultModuleTemplate<$01> ctor at 0x003A98D8, FUN_0095f9b4 at 0x0055F9DC.
 // Callee: GameClientRandomVariable::setRange at rowed 0x002341E7.
+
+#include "Common/Snapshot.h"
 
 class GameClientRandomVariable
 {
@@ -26,12 +28,6 @@ private:
 
 namespace FXParticleSystem
 {
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
 
 class DefaultUpdateModuleInfo : public Snapshot
 {

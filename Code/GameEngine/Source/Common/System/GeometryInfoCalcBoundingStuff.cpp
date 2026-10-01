@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /O2 /Ob2 /G6 /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /DNDEBUG /MD /EHsc /O2 /Ob2 /G6 /Ireference/open-bfme-1/Code/GameEngine/Include/Precompiled /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/shims/moduledata
 // stlport
 // Open-BFME: GeometryInfo::calcBoundingStuff, retail 0x0087EE60, 301 bytes.
 //
@@ -18,6 +18,7 @@
 #include <vector>
 #include "coord.h"
 #include "ascii_string.h"
+#include "Common/Snapshot.h"
 
 enum GeometryType
 {
@@ -65,12 +66,6 @@ struct Rva0087E650Bounds
 	Real m_maxZ;
 };
 
-
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-};
 
 class GeometryInfo : public Snapshot
 {
