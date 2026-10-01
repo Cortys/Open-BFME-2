@@ -49,6 +49,7 @@ class Rva0039C1C3
 {
 public:
 	void rva0039C1C3(Rva0039B893 *pos, const Rva0039B893 &x, const _STL::__false_type &, unsigned int n, bool at_end);
+	void rva0039C27D(Rva0039B893 *x);
 private:
 	Rva0039B893 *m_start;
 	Rva0039B893 *m_finish;
@@ -85,4 +86,24 @@ void Rva0039C1C3::rva0039C1C3(Rva0039B893 *pos, const Rva0039B893 &x, const _STL
 	m_start = new_start;
 	m_finish = new_finish;
 	m_end = new_end;
+}
+
+// ?rva0039C27D@Rva0039C1C3@@QAEXPAVRva0039B893@@@Z @0x0039C27D 56B
+// Vector push-back single element: if room copy-construct in place and grow finish,
+// else overflow via 0x0039C1C3 with n=1 at_end=1. Evidence: chain lane (calls 0x0039C1C3
+// just landed), caller 0x0039C5B8, callees rowed copy-ctor 0x0039B893 overflow 0x0039C1C3,
+// stride 0x14, ret 4, null-guarded copy-ctor.
+
+void Rva0039C1C3::rva0039C27D(Rva0039B893 *x)
+{
+	if (m_finish != m_end)
+	{
+		if (m_finish != 0)
+			new (m_finish) Rva0039B893(*x);
+		m_finish++;
+	}
+	else
+	{
+		rva0039C1C3(m_finish, *x, *(const _STL::__false_type *)((char *)&x + 3), 1, true);
+	}
 }
