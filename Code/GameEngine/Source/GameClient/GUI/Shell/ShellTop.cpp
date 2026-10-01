@@ -6,7 +6,7 @@ public:
 	virtual void runInit(void *userData) = 0;
 	virtual void *deleteInstance(int flags) = 0;
 	virtual void s02() = 0;
-	virtual void s03() = 0;
+	virtual void s03(bool *flag) = 0;
 	virtual void s04() = 0;
 	virtual void s05() = 0;
 	virtual void s06() = 0;
@@ -120,6 +120,7 @@ public:
 	WindowLayout *top();
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
 	void loadScheme(AsciiString name);
+	void rva0035BF0E();
 };
 
 class ShellMenuSchemeManager
@@ -186,4 +187,20 @@ void Shell::loadScheme(AsciiString name)
 	if (!m_schemeManager)
 		return;
 	m_schemeManager->setShellMenuScheme(name);
+}
+
+// ?rva0035BF0E@Shell@@QAEXXZ retail 0x0035BF0E 62B
+// Unlock: top then WindowLayout slot 0xC with bool flag then m_pendingPop=0 then doPop(false) then TheIMEManager m3C.
+// Evidence: callees top 0x0035BD7E doPop 0x0035BDC2 rowed, TheIMEManager extern in use, member +0x51 pendingPop, callers 0x0035C087 0x005A20A7.
+void Shell::rva0035BF0E()
+{
+	WindowLayout *layout = top();
+	if (!layout)
+		return;
+	m_pendingPop = false;
+	bool flag = true;
+	layout->s03(&flag);
+	doPop(false);
+	if (TheIMEManager)
+		TheIMEManager->m3C();
 }
