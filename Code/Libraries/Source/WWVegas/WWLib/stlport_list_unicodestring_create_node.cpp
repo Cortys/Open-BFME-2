@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 //
 // No-TRY twin of stlport_list_unicodestring_insert.cpp. Retail's
@@ -18,28 +18,8 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
-private:
-	StringBase() {}
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-	BfmeStringData<T> *m_data;
+#include "unicode_string.h"
 
-public:
-	const T *str() const { return m_data ? &m_data->text[0] : (const T *)L""; }
-};
-
-class UnicodeString : private StringBase<wchar_t>
-{
-public:
-	UnicodeString() { m_data = 0; }
-	UnicodeString(const wchar_t *text);
-	UnicodeString(const UnicodeString &other);
-	~UnicodeString() { releaseBuffer(); }
-};
 
 bool operator==(const UnicodeString &a, const UnicodeString &b);
 bool operator<(const UnicodeString &a, const UnicodeString &b);

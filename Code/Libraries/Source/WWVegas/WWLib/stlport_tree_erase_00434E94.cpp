@@ -3,11 +3,7 @@
 // ?_M_erase@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@@3@@_STL@@AAEXPAU?$_Rb_tree_node@U?$pair@$$CBVAsciiString@@UTreeHintOpaque0043671B@@@_STL@@@2@@Z @0x00434E94 53B: recurse-right via [esi+0x0C], walk-left via [esi+0x08], pair dtor 0x00434513 at node+16, free 0x00030830, ret 4; same shape as WaypointTreeCleanup 0x0022CFB1.
 #include <map>
 #include "ascii_string.h"
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
 struct BfmeSubobject0022CE19 {
     virtual ~BfmeSubobject0022CE19();

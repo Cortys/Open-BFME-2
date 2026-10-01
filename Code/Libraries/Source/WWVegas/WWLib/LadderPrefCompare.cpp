@@ -4,12 +4,7 @@
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-    UnicodeString(const UnicodeString &source);
-    ~UnicodeString();
-};
+#include "unicode_string.h"
 
 class LadderPref
 {

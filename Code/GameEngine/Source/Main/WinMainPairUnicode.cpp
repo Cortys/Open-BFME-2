@@ -15,7 +15,7 @@
 **	You should have received a copy of the GNU General Public License
 **	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 //
 // Narrow-pair to wide-string helpers for the WinMain title builders,
 // retail 0x0023428D (26 bytes), 0x0023436C (60 bytes) and 0x00234788
@@ -28,41 +28,8 @@
 
 class UnicodeString;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	StringBase(const T *text);
+#include "unicode_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	StringBase(const StringBase &src);
-	~StringBase() { releaseBuffer(); }
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	T *getBufferForRead(int len);
-	void set(const StringBase &src);
-
-protected:
-	Header *m_data;
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const unsigned short *text) : StringBase<unsigned short>(text) {}
-	UnicodeString &operator=(const UnicodeString &src) { set(src); return *this; }
-	const unsigned short *str() const { return m_data ? m_data->data : L""; }
-};
 
 // A (pointer, length) string reference. The same shape holds narrow text
 // (init) and wide text (initWide); the empty constructor keeps it non-POD,

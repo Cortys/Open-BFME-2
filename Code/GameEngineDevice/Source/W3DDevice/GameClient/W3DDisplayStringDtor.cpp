@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // ??1W3DDisplayString@@UAE@XZ, retail 0x00106162, 92 bytes (pinned; rowed
 // deleting wrapper 0x0010625B). The Zero Hour destructor is empty; what
@@ -12,20 +12,8 @@
 // it is that class's non-virtual destructor, pinned from these calls.
 // Supersedes the blocked BFME1 transfer, which had those members at
 // +0xE0/+0x1B0.
-template <typename T> class StringBase
-{
-public:
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	T *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString
-{
-private:
-	StringBase<unsigned short> m_data;
-};
 
 class DisplayString
 {

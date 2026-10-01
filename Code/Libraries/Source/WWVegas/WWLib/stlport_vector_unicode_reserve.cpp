@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // Real STLport4.5.3 vector<UnicodeString> reserve family. Semantic donor:
 // BFME1 Code/GameEngine/Source/Common/System/XferUnicodeStringVector.cpp.
@@ -11,16 +11,7 @@
 // keeps its genuine EH frame. Do not globally disable the helper's exceptions.
 #include <vector>
 
-class UnicodeString
-{
-public:
-    UnicodeString();
-    UnicodeString(const UnicodeString &);
-    ~UnicodeString();
-    UnicodeString &operator=(const UnicodeString &);
-private:
-    void *m_data;
-};
+#include "unicode_string.h"
 
 // Already recovered from the true wide-string constructor chain in
 // stlport_construct_unicode_string.cpp; declaration prevents a different

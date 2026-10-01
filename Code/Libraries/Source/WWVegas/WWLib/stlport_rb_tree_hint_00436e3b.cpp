@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_STLP_USE_STATIC_LIB /D_STLP_USE_MALLOC /D_CRTIMP= /D_BFME_RETAIL_TREE_INSERT_LAYOUT
 // stlport
 // BFME2 STLport tree: AsciiString key and opaque 0xDF4-byte mapped object.
 // ??1TreeHintOpaque0043671B@@QAE@XZ @0x00229840 53B destroys UnicodeString +0 and 0xDE8 subobject +4; deleting dtor 0x002DDE27 and list clear 0x00434EC9 prove identity; layout from copy 0x0022D106.
@@ -9,22 +9,11 @@
 // Comparison reaches the established AsciiString operator< at 0x5598C.
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
 #include <map>
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
+#include "ascii_string.h"
 bool operator<(const AsciiString &, const AsciiString &);
 // The mapped copy at 0x22D106 proves a UnicodeString, a 0xDE8-byte
 // subobject, and two final words. Its original application type is unknown.
-template <typename T> class StringBase {
-    friend class UnicodeString;
-    StringBase(const StringBase &);
-    void releaseBuffer();
-    __forceinline ~StringBase() { releaseBuffer(); }
-    void *m_data;
-};
-class UnicodeString : private StringBase<unsigned short> {
-public:
-    __forceinline UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-    __forceinline ~UnicodeString() {}
-};
+#include "unicode_string.h"
 // Full 216-byte retail constructor 0x22CE19 installs vptr 0xBE7560,
 // copies string/scalar members and nested subobjects. Keep its ownership
 // operations out of line; its application class and virtual slots are unknown.

@@ -38,17 +38,7 @@ struct WideStringHeader
 };
 
 
-class UnicodeString
-{
-public:
-    void __cdecl format(const wchar_t *format, ...);
-    void __cdecl format(const UnicodeString *format, ...);
-    void translate(const char *text);
-    void translate(const AsciiString &that);
-
-private:
-    WideStringHeader *m_data;
-};
+#include "unicode_string.h"
 
 void __cdecl AsciiString::format(const char *format, ...)
 {
