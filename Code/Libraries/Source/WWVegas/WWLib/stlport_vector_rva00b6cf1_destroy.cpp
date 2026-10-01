@@ -14,6 +14,13 @@
 
 #include "ascii_string.h"
 
+struct BfmeStringRecord000B94D2
+{
+	~BfmeStringRecord000B94D2();
+	AsciiString m_s0;
+	AsciiString m_s1;
+};
+
 struct Rva00B6CF1
 {
 	~Rva00B6CF1();
@@ -23,7 +30,15 @@ struct Rva00B6CF1
 	AsciiString m_s1;
 };
 
-template void _STL::_Destroy<Rva00B6CF1 *>(Rva00B6CF1 *, Rva00B6CF1 *);
+namespace _STL
+{
+template <>
+void _Destroy<Rva00B6CF1 *>(Rva00B6CF1 *first, Rva00B6CF1 *last)
+{
+	for (; first != last; ++first)
+		reinterpret_cast<BfmeStringRecord000B94D2 *>(first)->~BfmeStringRecord000B94D2();
+}
+}
 
 template _STL::vector<Rva00B6CF1>::~vector();
 
