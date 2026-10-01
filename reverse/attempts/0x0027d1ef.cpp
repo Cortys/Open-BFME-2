@@ -1,7 +1,5 @@
 // ?rva0027D1EF@Rva0027D244@@QAEXPAV1@0@Z
-// partial score=0.95 date=2026-09-30
-// ?rva0027D1EF@Rva0027D244@@QAEXPAV1@0@Z
-// partial score=0.95 date=2026-09-30
+// partial score=0.97 date=2026-10-01
 // cl: /O1 /arch:SSE /MD
 // ?rva0027D244@Rva0027D244@@QAEPAV1@H@Z, retail 0x0027D244, 50 bytes.
 // Thiscall init of a 0x1C-byte struct: zeroes floats at +0/+4/+8, zeroes
@@ -45,11 +43,8 @@ void Rva0027D244::rva0027D1EF(Rva0027D244 *a, Rva0027D244 *b)
 	float dx = bx - a->m_pos00.x;
 	float dy = by - a->m_pos00.y;
 	float d2 = dx * dx + dy * dy;
-	if (m_0C == 0)
-		goto update;
-	if (m_10 <= d2)
+	if (m_0C != 0 && !(m_10 > d2))
 		return;
-update:
 	m_0C = a->m_0C;
 	m_pos00 = a->m_pos00;
 	m_10 = d2;
