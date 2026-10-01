@@ -83,6 +83,9 @@ class Rva00421CE9
 {
 public:
 	void rva00421CE9(void *n);
+	void rva00421FDE();
+	Rva00421BF7Header *m_header;
+	int m_count;
 };
 void Rva00421CE9::rva00421CE9(void *n)
 {
@@ -94,4 +97,14 @@ void Rva00421CE9::rva00421CE9(void *n)
 		free(p);
 		p = next;
 	}
+}
+void Rva00421CE9::rva00421FDE()
+{
+	if (m_count == 0)
+		return;
+	rva00421CE9(m_header->m_first);
+	m_header->m_link8 = m_header;
+	m_header->m_first = 0;
+	m_header->m_linkC = m_header;
+	m_count = 0;
 }
