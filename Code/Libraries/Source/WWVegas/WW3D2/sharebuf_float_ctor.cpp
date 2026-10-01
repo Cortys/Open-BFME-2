@@ -29,12 +29,10 @@ extern void __cdecl operator delete[](void *) throw();
 // ShareBufferClass<float> owns a raw float array (the FX draw-category
 // particle sizes); the destructor frees it. The 0x1A7B80 constructor
 // installs vtable 0xBD71C0, whose deleting destructor at 0x1A7F70 calls
-// this body at 0x1A7F90.
+// the owner body at 0x1A7F90 (WWLib/sharebuf_float_dtor.cpp): declared
+// here so calls keep the same name without a second definition.
 template <>
-ShareBufferClass<float>::~ShareBufferClass()
-{
-	::operator delete[](RawBuffer);
-}
+ShareBufferClass<float>::~ShareBufferClass();
 
 // Force-emit helper: instantiates the float constructor (and through the
 // vtable the deleting destructor) with the retail buffer name. Sell nothing
