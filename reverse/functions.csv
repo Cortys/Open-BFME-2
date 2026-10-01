@@ -46292,3 +46292,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002A7D30@PlayerList@@QAEHXZ,,0x002A7D30,51,Code/GameEngine/Source/Common/RTS/PlayerList_getNthPlayer.cpp,matched,PlayerList mask via getNthPlayer and getPlayerMask
 ??0Rva0073EE21@@QAE@XZ,,0x0073EE21,44,Code/GameEngine/Source/Common/RTS/Rva0073EE21Ctor.cpp,matched,Ctor base Rva0040F9D plus member twin of FXList pattern
 ??$__copy@PAVUnicodeString@@PAV1@H@_STL@@YAPAVUnicodeString@@PAV1@00ABUrandom_access_iterator_tag@0@PAH@Z,,0x00051BE1,47,Code/Libraries/Source/WWVegas/WWLib/Rva00051C10Copy.cpp,matched,random-access copy loop assigning UnicodeString through rowed UnicodeString::set 0x00037150
+?rva0052493F@Rva0052493F@@QAEXXZ,,0x0052493F,52,Code/Libraries/Source/WWVegas/WWLib/Rva0052493FClear.cpp,matched,chain via six Rva00524021 clears with tail jmp
