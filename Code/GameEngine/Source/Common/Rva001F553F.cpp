@@ -51,6 +51,8 @@ struct Holder001F5401
 {
 	char m_pad[0x24];
 	float m_value;
+	char m_pad28[4];
+	float m_value2;
 };
 
 class Rva001F553F
@@ -58,6 +60,7 @@ class Rva001F553F
 public:
 	float rva001F534C();
 	float rva001F5401();
+	float rva001F5423();
 	float rva001F5445();
 	Coord3D *rva001F553F(Coord3D *out, unsigned int a, unsigned int b);
 
@@ -85,6 +88,17 @@ float Rva001F553F::rva001F5401()
 	float v;
 	if (p != 0)
 		v = p->m_value;
+	else
+		v = 0.0f;
+	return v;
+}
+
+float Rva001F553F::rva001F5423()
+{
+	Holder001F5401 *p = m_1C8;
+	float v;
+	if (p != 0)
+		v = p->m_value2;
 	else
 		v = 0.0f;
 	return v;
