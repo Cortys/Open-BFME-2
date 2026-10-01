@@ -32,6 +32,7 @@ class MonsterDockUpdateModuleData : public DockUpdateModuleData
 {
 public:
 	MonsterDockUpdateModuleData();
+	virtual ~MonsterDockUpdateModuleData();
 
 	Rva003623E5Member m_filter;
 	int m_dockedAnimationTime;
