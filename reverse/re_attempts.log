@@ -4569,3 +4569,5 @@ FUN_006df8cf	0x002DF8CF	110	blocked	complex push_back loop with 3-arg method plu
 FUN_00441589	0x00041589	322	blocked	needs UNCLAIMED pushed ctor 0x0004149D for 3x0x48 vector at plus0x12c plus EH scopetable float globals vtable 0x007C2420 t=10 model=muse-14
 ?rva006E9A40@Rva006E0DE0@@QAEXPAVAptValue@@@Z	0x006E9A40	163	partial	first half exact; tail missing mov esi-ecx duplication plus arr-max-e register rotation edx-esi-ecx vs ecx-edx-edi t=30 model=muse-14 score=0.94 stash=reverse/attempts/0x006e9a40.cpp
 FUN_0097d922	0x0057D922	255	blocked	complex EH AsciiString MapCache strrchr Unicode translate needs strong-model donor timebox t=10 model=muse-14
+?rva0044EDA6@Rva0044EDA6@@QAE_NH@Z	0x0044EDA6	97	partial	100B vs 97B 0 reg-mem tail setb-jmp vs jb shared-true t=25 model=muse-09 score=0.93 stash=reverse/attempts/0x0044eda6.cpp
+?Rva00373D28Get@@YGPAVRva00373EC6@@PAVObject@@@Z	0x00373D28	29	partial	28B vs 29B 0 reg-mem missing redundant jmp-xor null path t=15 model=muse-09 score=0.93 stash=reverse/attempts/0x00373d28.cpp
