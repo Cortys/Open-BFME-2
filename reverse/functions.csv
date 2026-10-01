@@ -45154,3 +45154,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002B2EC7@Rva002B2EC7@@QAEXPAUItem002B2EC7@@@Z,,0x002B2EC7,57,Code/GameEngine/Source/Common/Rva002B2EC7Set.cpp,matched,setter same release as 0x002B2EA0 then store new ret4
 ?push_back@?$vector@URva00414BDBElement@@V?$allocator@URva00414BDBElement@@@_STL@@@_STL@@QAEXABURva00414BDBElement@@@Z,,0x00414F27,55,Code/Libraries/Source/WWVegas/WWLib/StlportVectorPushbackRva00414BDB.cpp,matched,chain push_back via rowed Construct overflow
 ??1?$vector@URva00414BDBElement@@V?$allocator@URva00414BDBElement@@@_STL@@@_STL@@QAE@XZ,,0x00414721,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,unlock vector dtor via Destroy 0x414508 free
+??0Rva005635CD@@QAE@XZ,,0x005635CD,17,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva005635CDCtor.cpp,matched,chain publisher ctor getInstance 0x003AA57C plus Init 0x005C7889 via static-init caller 0x003A8454
