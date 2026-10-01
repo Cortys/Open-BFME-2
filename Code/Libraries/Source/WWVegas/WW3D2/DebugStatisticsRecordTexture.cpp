@@ -58,12 +58,14 @@ public:
 			other.Referent->Add_Ref();
 		Referent = other.Referent;
 	}
+	// Retail's latest_texture shutdown thunk (0x007B7040) calls the rowed
+	// RefCountPtr<TextureClass> destructor at 0x0017098D, which releases the
+	// referent without clearing it. TextureStatisticsVector.cpp agrees.
 	~RefCountPtr()
 	{
 		if (Referent != 0)
 		{
 			Referent->Release_Ref();
-			Referent = 0;
 		}
 	}
 	RefCountPtr const &operator=(RefCountPtr const &other)
