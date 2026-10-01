@@ -4601,3 +4601,4 @@ FUN_001B2210	0x001B2210	250	blocked	stream motion nibble-decode plus SSE interp 
 ?rva0039C415@Rva0039C1C3@@QAEXPAVRva0039B893@@IABV2@@Z	0x0039C415	226	blocked	226B fill-insert main path copybackward 4-push vs 3-arg wrapper plus saved_finish slot picks n not x t=25 model=muse-16
 ?rva002CAAFA@Rva002CAAFA@@QAE_NPAVObject@@PAUCoord3D@@@Z	0x002CAAFA	64	blocked	setne vs mov-al-1 xor shared-false tried polarity-invert plus bool-local still 63v64 t=8 model=muse-spark
 ?rva00293408@Object@@QAE_NXZ	0x00293408	89	partial	89v89 exact size only xor edi placement early vs late plus TheGameLogic reloc t=25 model=muse-spark score=0.95 stash=reverse/attempts/0x00293408.cpp
+?Rva0070DBB0Intern@@YAPAUStringNode0070DBB0@@PBD@Z	0x0070DBB0	527	blocked	first shape 539B vs 527B but align reads 933B incl next func; EH tail layout with found-path after ret needs donor; bucket short cast fix pending t=12 model=muse-20
