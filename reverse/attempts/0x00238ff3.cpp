@@ -1,23 +1,10 @@
 // ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z
-// partial score=0.96 date=2026-09-29
+// partial score=0.97 date=2026-10-01
 // ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z
-// partial score=0.96 date=2026-09-29
-// cl: /O1 /MD
-// ?rva00238E1B@Rva00238E1B@@QAEHXZ @0x00238E1B 10B post-inc counter at +0x2C returns old value.
-// Evidence: unlock lane leaf increment; callers 0x00280176 0x00283642; lea shape not inc.
-// ?rva00238E25@Rva00238E1B@@QAEX PAV Rva002714E6 chain: inc +0x2C then registry via 0x00271058 then list push via 0x002714E6.
-
-class Rva00271058
-{
-public:
-	void rva00271058(void *p);
-};
-
-class Rva002714E6
-{
-public:
-	void rva002714E6(Rva002714E6 **head);
-};
+// partial score=0.97 date=2026-10-01
+// cl: /O1 /MD /Oy-
+// ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z @0x00238FF3 72B finish lane banked 0.96 frameless vs ebp plus edi esi swap.
+// Evidence: leaf loop over m_head+0x14 calling w14 then v31 v06; caller 0x00245E59; string "drawables" at 0x007ED678.
 
 class Rva00238FF3Arg
 {
@@ -83,36 +70,18 @@ public:
 class Rva00238E1B
 {
 public:
-	int rva00238E1B();
-	void rva00238E25(Rva002714E6 *node);
 	void rva00238FF3(Rva00238FF3Arg *arg);
 private:
-	int m_pad[5];
-	Rva002714E6 *m_head;
-	int m_pad2[5];
-	int m_counter;
+	char m_pad0[0x14];
+	Rva00238FF3Node *m_head;
 };
-int Rva00238E1B::rva00238E1B()
-{
-	int t = m_counter;
-	m_counter = t + 1;
-	return t;
-}
-
-void Rva00238E1B::rva00238E25(Rva002714E6 *node)
-{
-	int old = m_counter;
-	m_counter = old + 1;
-	((Rva00271058 *)node)->rva00271058((void *)old);
-	node->rva002714E6(&m_head);
-}
 
 // ?rva00238FF3@Rva00238E1B@@QAEXPAVRva00238FF3Arg@@@Z present-unmatched
 void Rva00238E1B::rva00238FF3(Rva00238FF3Arg *arg)
 {
-	arg->v05("drawables");
 	Rva00238FF3Arg *host = arg;
-	Rva00238FF3Node *p = (Rva00238FF3Node *)m_head;
+	host->v05("drawables");
+	Rva00238FF3Node *p = m_head;
 	for (; p != 0; p = p->m_next)
 		p->w14(host);
 	arg = 0;
