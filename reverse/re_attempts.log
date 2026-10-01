@@ -5271,3 +5271,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva000FE065@Rva000FE065@@QAEXXZ	0x000FE065	291	blocked	O1-G7-EHsc probe gives 238B vs 291B missing EH-prolog scopetable and exact word loop and VB args t=12 model=muse-04
 ??0Rva005CB35A@@QAE@XZ	0x005CB35A	100	partial	exact 100B-34insns vptr-last-vs-first plus frame-save plus EH-state plus placement-nullcheck t=18 model=muse-04 score=0.9 stash=reverse/attempts/0x005cb35a.cpp
 ?bfmeFwdSWA@BfmeThingSWA@@QAEXH@Z	0x0002A930	58	partial	exact 58B-23insns-0regions frame-end-4B plus bool-tag-68B layout only t=16 model=muse-04 score=0.93 stash=reverse/attempts/0x0002a930.cpp
+?rva0045992F@SiegeDockingBehavior@@QAEXPAUDockPos@1@H@Z	0x0045992F	61	blocked	src-ecx-vs-eax single scratch-reg choice only all 22 insns same tried local starts and hidden-pointer return 65B t=15 model=muse-11 (stash 0.95 kept)
+?rva00587912@Rva00587912@@QAEXH@Z	0x00587912	182	blocked	virtual list plus map plus idiv count keeps start in edx not mem and e in eax not ecx tried frame int typed volatile t=25 model=muse-11

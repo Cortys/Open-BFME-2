@@ -46792,3 +46792,4 @@ _Rva00819920,,0x00685820,1536,Code/Libraries/Source/DirtySock/Rva00819920Comm.cp
 ?Rva00564D99Copy@@YAPAVRva003AD070@@PAV1@00@Z,,0x00564D99,50,Code/GameEngine/Source/Common/Bfme/Rva00564D99Copy.cpp,matched,uninit copy 0xC via rowed copy ctor unblocks 00565795
 ??_GRva00409FFA@@UAEPAXI@Z,,0x0040A13F,28,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FCC.cpp,matched,chain lane deleting dtor from own dtor unit vtable slot0
 ?rva0035149F@Rva0035149F@@QAEAAV1@ABV1@@Z,,0x0035149F,209,Code/GameEngine/Source/GameLogic/AI/Rva0035149F.cpp,matched,vector assign of 12B PODs via rowed alloc-copy free copy-ptrs uninit-copy
+??1Rva00587F69@@UAE@XZ,,0x00587F69,59,Code/Libraries/Source/WWVegas/WWLib/Rva00587F69Dtor.cpp,matched,derived Rva005D6FCC base at +0 vtbl 00C75C38 freed +8 via _free caller 00587F4D
