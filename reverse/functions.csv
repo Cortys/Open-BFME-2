@@ -46561,3 +46561,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?_M_insert_overflow@?$vector@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@IAEXPAUCoord3D@@ABU3@ABU__false_type@2@I_N@Z,,0x002CDF8A,189,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_coord3d_insert_overflow.cpp,matched,Vector Coord3D fill overflow via rowed allocate plus workers
 ?rva002D394B@Rva002D394B@@QAEXPAX@Z,,0x002D394B,45,Code/GameEngine/Source/Common/System/Rva002D394BMethod.cpp,matched,recursive child at C next at 8 via rowed free
 ?rva00405A50@Rva00405A50@@QAEXXZ,,0x00405A50,87,Code/GameEngine/Source/Common/Rva00405A50Method.cpp,matched,chain lane virtual slot 0xC TreeHintRef to theRadarWindowOverrideSource
+?rva005D0507@Rva005D0507@@QAEHXZ,,0x005D0507,38,Code/GameEngine/Source/Common/System/Rva005D0507.cpp,matched,dual AsciiString getLength plus one via lea caller 0x0002CB02 LINK 3 files
