@@ -31,3 +31,13 @@ void Rva005CCCD0::rva005CCCD0(Visitor005CCCD0 *v)
         cur = nxt;
     } while (cur != sentinel);
 }
+class Rva005CCD36 {
+public:
+    int m_00;
+    Rva005CCCD0 *m_04;
+    void rva005CCD36(Visitor005CCCD0 *v);
+};
+void Rva005CCD36::rva005CCD36(Visitor005CCCD0 *v)
+{
+    m_04->rva005CCCD0(v);
+}
