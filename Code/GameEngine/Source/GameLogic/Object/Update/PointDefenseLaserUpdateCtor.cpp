@@ -32,11 +32,6 @@ protected:
 	unsigned char m_pad1[0x20 - 0x14];
 };
 
-// ??1Rva00362EC7@@ present-unmatched
-Rva00362EC7::~Rva00362EC7()
-{
-}
-
 class __declspec(novtable) BeaconClientUpdate : public Rva00362EC7
 {
 public:
