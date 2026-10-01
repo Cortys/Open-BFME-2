@@ -31,6 +31,12 @@
 #include <string.h>
 #include "string_base.h"
 
+// The members below are compiled favouring size with frame-pointer omission (as /O1) in
+// every unit. Retail's out-of-line copies are the /O1 form (ascii_string.cpp's rows); a
+// unit built /O2 or /Oy- otherwise emits its own select-any copy of each inline member
+// that differs from them (2026-10-01 census: 82 units lost such copies). Code a member
+// inlines into a caller still follows the caller's flags.
+#pragma optimize("sy", on)
 class UnicodeString;
 class PooledString;
 
@@ -155,3 +161,4 @@ private:
 inline bool operator==(const AsciiString &a, const AsciiString &b) { return a.compare(b) == 0; }
 inline bool operator!=(const AsciiString &a, const AsciiString &b) { return a.compare(b) != 0; }
 inline bool operator<(const AsciiString &a, const AsciiString &b) { return a.compare(b) < 0; }
+#pragma optimize("", on)
