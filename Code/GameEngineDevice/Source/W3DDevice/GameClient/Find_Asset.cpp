@@ -82,15 +82,7 @@ public:
 			++*(unsigned short *)((char *)m_object + 4);
 		}
 	}
-	~AssetReference()
-	{
-		if ( m_object )
-		{
-			// CountedAsset's +4 word count is measured above; this is the
-			// matched 36-byte refcount/virtual-disposal body at 0x0061ED10.
-			((TextureBaseClass *)m_object)->Release_Ref();
-		}
-	}
+	~AssetReference();
 
 private:
 	CountedAsset *m_object;
