@@ -46505,3 +46505,6 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000EFDBB@Rva000EFDBB@@QAEXHGG@Z,,0x000EFDBB,59,Code/GameEngine/Source/Common/Rva000EFDBB.cpp,matched,unlock sibling Rva000F26DCAlloc plus4180 plus4400 2 callers append pair
 ??1Rva0041579E@@QAE@XZ,,0x004156FC,8,Code/GameEngine/Source/Common/Rva0041573FCopy.cpp,matched,tail jmp to rowed Rva0041573F dtor
 ?rva004C861E@SplitHordeSpecialPower@@UAEXI@Z,,0x004C861E,123,Code/GameEngine/Source/GameLogic/Object/SpecialPower/SplitHordeSpecialPowerRva004C861E.cpp,matched,slot 10 of the matched ctor vtable 0x00C5E598 at +0x10: disabled check then contain slots 125/126 into a local vector<BfmeE16>
+?rva0028C037@Object@@UAE?AUCoord3D@@XZ,,0x0028C037,86,Code/GameEngine/Source/GameLogic/Object/ObjectInterfaceSlots.cpp,matched,Object +0x70 interface slot 0: bounding box min corner from the position and the GeometryInfo radius and height below
+?rva0028C08D@Object@@UAE?AUCoord3D@@XZ,,0x0028C08D,86,Code/GameEngine/Source/GameLogic/Object/ObjectInterfaceSlots.cpp,matched,Object +0x70 interface slot 1: bounding box max corner from the position and the GeometryInfo radius and height above
+?rva00290EE0@Object@@UAE?AVAsciiString@@XZ,,0x00290EE0,30,Code/GameEngine/Source/GameLogic/Object/ObjectInterfaceSlots.cpp,matched,Object +0x64 interface slot 0: the template AsciiString at +0x64 by value
