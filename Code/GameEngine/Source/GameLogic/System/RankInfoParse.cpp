@@ -88,14 +88,9 @@ struct INIException
 	char *mFailureMessage;
 	int mErrorCode;
 	INIException(int argCount, const char *format, ...);
+	INIException(const INIException &that);
+	~INIException();
 };
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-
-// Address anchor only: each throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Its content
-// is never compared; the real chain lives in the retail image.
-struct RankInfoThrowInfoAnchor { int a; int b; int c; int d; };
-static const RankInfoThrowInfoAnchor rankInfoThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?friend_parseRankDefinition@RankInfoStore@@SAXPAVINI@@@Z
 void RankInfoStore::friend_parseRankDefinition(INI *ini)
@@ -110,15 +105,13 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 			// NOTE: unsigned comparison against size() (retail ja, not jg).
 			if (rank < 1 || (unsigned int)rank > TheRankInfoStore->m_rankInfos.size())
 			{
-				INIException exc(3, "Rank not found in map.ini");
-				_CxxThrowException(&exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
+				throw INIException(3, "Rank not found in map.ini");
 			}
 
 			RankInfo *info = TheRankInfoStore->m_rankInfos[rank - 1];
 			if (!info)
 			{
-				INIException exc(3, "Rank not found in map.ini");
-				_CxxThrowException(&exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
+				throw INIException(3, "Rank not found in map.ini");
 			}
 
 			RankInfo *newInfo = new RankInfo;
@@ -139,8 +132,7 @@ void RankInfoStore::friend_parseRankDefinition(INI *ini)
 		{
 			if (rank != (Int)TheRankInfoStore->m_rankInfos.size() + 1)
 			{
-				INIException exc(3, "Ranks must increase monotonically");
-				_CxxThrowException(&exc, (const _s__ThrowInfo *)&rankInfoThrowInfoAnchor); __assume(0);
+				throw INIException(3, "Ranks must increase monotonically");
 			}
 			// NOTE: the push_back argument rides a copy, not `info` itself.
 			// `info` stays register-held (push eax, xor-eax null path) while

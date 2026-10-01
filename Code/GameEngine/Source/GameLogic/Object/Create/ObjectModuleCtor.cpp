@@ -62,22 +62,17 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail); content never compared.
-struct ObjectModuleThrowInfoAnchor { int a; int b; int c; int d; };
-static const ObjectModuleThrowInfoAnchor gThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ??0ObjectModule@@QAE@PAVThing@@PBVModuleData@@@Z
 ObjectModule::ObjectModule(Thing *thing, const ModuleData *moduleData)
 	: Module(moduleData)
 {
 	if (!moduleData) {
-		INIException e(3, "module data may not be null\n");
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&gThrowInfoAnchor); __assume(0);
+		throw INIException(3, "module data may not be null\n");
 	}
 	m_object = AsObject(thing);
 }

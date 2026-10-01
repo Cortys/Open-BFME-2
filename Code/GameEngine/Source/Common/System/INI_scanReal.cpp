@@ -25,17 +25,11 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's INIException throwinfo at
-// 0x8FE2FC -- the same chain the getNextToken helper throws through). Its
-// content is never compared; the real chain lives in the retail image.
-struct ScanRealThrowInfoAnchor { int a; int b; int c; int d; };
-static const ScanRealThrowInfoAnchor scanRealThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?scanReal@INI@@QAEMPBD@Z
 float INI::scanReal(const char *token)
@@ -45,8 +39,7 @@ float INI::scanReal(const char *token)
 		return parseMathExpression(text, &INI::scanReal);
 	float value;
 	if (sscanf(text, "%f", &value) != 1) {
-		INIException e(3, "Expected floating point value, math op, or predefined macro, but found '%s'", text);
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanRealThrowInfoAnchor); __assume(0);
+		throw INIException(3, "Expected floating point value, math op, or predefined macro, but found '%s'", text);
 	}
 	return value;
 }

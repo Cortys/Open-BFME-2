@@ -24,23 +24,17 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
-// never compared; the real chain lives in the retail image.
-struct ParseByteThrowInfoAnchor { int a; int b; int c; int d; };
-static const ParseByteThrowInfoAnchor parseByteThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?parseByte@INI@@SAXPAV1@PAX1PBX@Z
 void INI::parseByte(INI *ini, void *instance, void *store, const void *userData)
 {
 	int value = ini->scanInt(ini->getNextToken(0));
 	if (value < -128 || value > 127) {
-		INIException e(3, "value out of range, expected -128..127");
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseByteThrowInfoAnchor); __assume(0);
+		throw INIException(3, "value out of range, expected -128..127");
 	}
 	*(unsigned char *)store = (unsigned char)value;
 }

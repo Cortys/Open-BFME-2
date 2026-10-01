@@ -22,17 +22,11 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's INIException throwinfo at
-// 0x8FE2FC -- the same chain the scanInt helper throws through). Its
-// content is never compared; the real chain lives in the retail image.
-struct ScanUnsignedIntThrowInfoAnchor { int a; int b; int c; int d; };
-static const ScanUnsignedIntThrowInfoAnchor scanUnsignedIntThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?scanUnsignedInt@INI@@QAEIPBD@Z
 unsigned INI::scanUnsignedInt(const char *token)
@@ -42,8 +36,7 @@ unsigned INI::scanUnsignedInt(const char *token)
 		return parseUnsignedIntMathExpression(text, &INI::scanUnsignedInt);
 	unsigned value;
 	if (sscanf(text, "%u", &value) != 1) {
-		INIException e(3, "Expected unsigned integer value, math op, or predefined macro, but found '%s'", text);
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&scanUnsignedIntThrowInfoAnchor); __assume(0);
+		throw INIException(3, "Expected unsigned integer value, math op, or predefined macro, but found '%s'", text);
 	}
 	return value;
 }

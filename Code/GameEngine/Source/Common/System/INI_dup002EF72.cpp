@@ -23,23 +23,17 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
-// never compared; the real chain lives in the retail image.
-struct Dup002EF72ThrowInfoAnchor { int a; int b; int c; int d; };
-static const Dup002EF72ThrowInfoAnchor dup002EF72ThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?dup_002EF72@INI@@SAXPAV1@PAX1PBX@Z
 void INI::dup_002EF72(INI *ini, void *instance, void *store, const void *userData)
 {
 	unsigned value = ini->scanUnsignedInt(ini->getNextToken(0));
 	if ((unsigned)userData != 0 && value > (unsigned)userData) {
-		INIException e(3, "value out of range, expected 0..%d", (int)userData);
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&dup002EF72ThrowInfoAnchor); __assume(0);
+		throw INIException(3, "value out of range, expected 0..%d", (int)userData);
 	}
 	*(unsigned *)store = value;
 }

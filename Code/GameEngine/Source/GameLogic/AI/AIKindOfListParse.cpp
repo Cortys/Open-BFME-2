@@ -34,15 +34,10 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0x8FE2FC). Its content
-// is never compared; the real chain lives in the retail image.
-struct AIKindOfThrowInfoAnchor { int a; int b; int c; int d; };
-static const AIKindOfThrowInfoAnchor aikindThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?parseAIKindOfList@@YAXPAVINI@@PBDPAH@Z
 void parseAIKindOfList(INI *ini, const char * /*seps*/, int *out)
@@ -59,7 +54,6 @@ void parseAIKindOfList(INI *ini, const char * /*seps*/, int *out)
 	return;
 fail:
 	{
-		INIException e(2, "In an AIKINDOF list, each type may only appear once\n");
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&aikindThrowInfoAnchor); __assume(0);
+		throw INIException(2, "In an AIKINDOF list, each type may only appear once\n");
 	}
 }

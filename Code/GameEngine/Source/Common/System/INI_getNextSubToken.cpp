@@ -27,24 +27,18 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
-// never compared; the real chain lives in the retail image.
-struct GetNextSubTokenThrowInfoAnchor { int a; int b; int c; int d; };
-static const GetNextSubTokenThrowInfoAnchor getNextSubTokenThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?getNextSubToken@INI@@QAEPBDPBD@Z
 const char *INI::getNextSubToken(const char *expected)
 {
 	const char *token = getNextToken(m_sepsColon);
 	if (_strcmpi(token, expected) != 0) {
-		INIException e(3, "Expected '%s' but found '%s'", expected, token);
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&getNextSubTokenThrowInfoAnchor); __assume(0);
+		throw INIException(3, "Expected '%s' but found '%s'", expected, token);
 	}
 	return getNextToken(m_sepsColon);
 }

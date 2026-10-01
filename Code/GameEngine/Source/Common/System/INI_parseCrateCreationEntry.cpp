@@ -76,16 +76,11 @@ public:
 
 	char *mFailureMessage;
 	int m_argumentCount;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl sscanf(const char *buf, const char *fmt, ...);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, filled from retail by the gate -- scanReal precedent).
-// Its content is never compared; the real chain lives in the retail image.
-struct ParseCrateThrowInfoAnchor { int a; int b; int c; int d; };
-static const ParseCrateThrowInfoAnchor parseCrateThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?parseCrateCreationEntry@CrateTemplate@@SAXPAVINI@@PAX1PBX@Z
 void CrateTemplate::parseCrateCreationEntry(INI *ini, void *instance, void *, const void *)
@@ -98,8 +93,7 @@ void CrateTemplate::parseCrateCreationEntry(INI *ini, void *instance, void *, co
 	token = ini->getNextToken(0);
 	float crateValue;
 	if (sscanf(token, "%f", &crateValue) != 1) {
-		INIException e(3, "Floating point value expected instead of '%s'", token);
-		_CxxThrowException(&e, (const _s__ThrowInfo *)&parseCrateThrowInfoAnchor); __assume(0);
+		throw INIException(3, "Floating point value expected instead of '%s'", token);
 	}
 
 	crateCreationEntry newEntry;

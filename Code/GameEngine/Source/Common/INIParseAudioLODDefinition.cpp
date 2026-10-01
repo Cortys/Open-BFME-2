@@ -73,12 +73,11 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
-struct AudioLODThrowInfoAnchor { int a; int b; int c; int d; };
-static const AudioLODThrowInfoAnchor audioLODThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?parseAudioLODDefinition@INI@@SAXPAV1@@Z
 void INI::parseAudioLODDefinition(INI *ini)
@@ -92,8 +91,7 @@ void INI::parseAudioLODDefinition(INI *ini)
 		Int index = TheGameLODManager->getAudioLODIndex(name);
 		if (index == -1)
 		{
-			INIException e(8, "Unknown Audio LOD level '%s'", token);
-			_CxxThrowException(&e, (const _s__ThrowInfo *)&audioLODThrowInfoAnchor); __assume(0);
+			throw INIException(8, "Unknown Audio LOD level '%s'", token);
 		}
 		void *lodInfo = (char *)TheGameLODManager + index * 8 + 0x218;
 		ini->initFromINI(lodInfo, audioLODFieldParseTable);

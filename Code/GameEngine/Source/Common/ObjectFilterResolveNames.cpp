@@ -62,6 +62,8 @@ public:
 	char *mFailureMessage;
 	int m_argCount;
 	INIException(int argCount, const char *format, ...);
+	INIException(const INIException &that);
+	~INIException();
 };
 
 class Rva002D06CA
@@ -74,10 +76,7 @@ extern Rva002D06CA *TheThingFactory;
 // TheThingFactory: matched references place it at VA 0xdff000 (zero-filled .bss).
 Rva002D06CA * TheThingFactory;
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
-struct ObjectFilterThrowInfoAnchor { int a; int b; int c; int d; };
-static const ObjectFilterThrowInfoAnchor objectFilterThrowInfoAnchor = { 0, 0, 0, 0 };
 
 class ObjectFilter
 {
@@ -111,8 +110,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			}
 			if (!tmpl)
 			{
-				INIException e(3, "ObjectFilter::resolveNames() specified +S:%s but template %s doesn't exist! Typo?", templateName, templateName);
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&objectFilterThrowInfoAnchor); __assume(0);
+				throw INIException(3, "ObjectFilter::resolveNames() specified +S:%s but template %s doesn't exist! Typo?", templateName, templateName);
 			}
 			filter->m_inclusionSTemplates.push_back(tmpl);
 		}
@@ -121,8 +119,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			const ModuleData *tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&name);
 			if (!tmpl)
 			{
-				INIException e(3, "ObjectFilter::resolveNames() specified +%s but this template doesn't exist! Typo?", name.str());
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&objectFilterThrowInfoAnchor); __assume(0);
+				throw INIException(3, "ObjectFilter::resolveNames() specified +%s but this template doesn't exist! Typo?", name.str());
 			}
 			filter->m_inclusionTemplates.push_back(tmpl);
 		}
@@ -144,8 +141,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			}
 			if (!tmpl)
 			{
-				INIException e(3, "ObjectFilter::resolveNames() specified -S:%s but template %s doesn't exist! Typo?", templateName, templateName);
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&objectFilterThrowInfoAnchor); __assume(0);
+				throw INIException(3, "ObjectFilter::resolveNames() specified -S:%s but template %s doesn't exist! Typo?", templateName, templateName);
 			}
 			filter->m_exclusionSTemplates.push_back(tmpl);
 		}
@@ -154,8 +150,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			const ModuleData *tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&name);
 			if (!tmpl)
 			{
-				INIException e(3, "ObjectFilter::resolveNames() specified -%s but this template doesn't exist! Typo?", name.str());
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&objectFilterThrowInfoAnchor); __assume(0);
+				throw INIException(3, "ObjectFilter::resolveNames() specified -%s but this template doesn't exist! Typo?", name.str());
 			}
 			filter->m_exclusionTemplates.push_back(tmpl);
 		}

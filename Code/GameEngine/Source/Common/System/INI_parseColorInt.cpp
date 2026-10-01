@@ -39,16 +39,11 @@ struct INIException
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
-extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
-
-// Address anchor only: the throw site pushes this object's address as an
-// immediate (DIR32, copied from retail's throwinfo at 0xCFE2FC). Content is
-// never compared; the real chain lives in the retail image.
-struct ParseColorIntThrowInfoAnchor { int a; int b; int c; int d; };
-static const ParseColorIntThrowInfoAnchor parseColorIntThrowInfoAnchor = { 0, 0, 0, 0 };
 
 // ?parseColorInt@INI@@SAXPAV1@PAX1PBX@Z
 void INI::parseColorInt(INI *ini, void * /*instance*/, void *store, const void * /*userData*/)
@@ -59,8 +54,7 @@ void INI::parseColorInt(INI *ini, void * /*instance*/, void *store, const void *
 		const char *token = ini->getNextTokenOrNull(ini->getSepsColon());
 		if (token == NULL) {
 			if (i < 3) {
-				INIException e(3, "can't omit value for color %s", names[i]);
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
+				throw INIException(3, "can't omit value for color %s", names[i]);
 			} else {
 				// it's ok for A to be omitted.
 				colors[i] = 255;
@@ -68,14 +62,12 @@ void INI::parseColorInt(INI *ini, void * /*instance*/, void *store, const void *
 		} else {
 			// if present, the token must match.
 			if (_strcmpi(token, names[i]) != 0) {
-				INIException e(3, "expected '%s'", names[i]);
-				_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
+				throw INIException(3, "expected '%s'", names[i]);
 			}
 			colors[i] = ini->scanInt(ini->getNextToken(ini->getSepsColon()));
 		}
 		if (colors[i] < 0 || colors[i] > 255) {
-			INIException e(3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
-			_CxxThrowException(&e, (const _s__ThrowInfo *)&parseColorIntThrowInfoAnchor); __assume(0);
+			throw INIException(3, "color value %s=%i out of range (0..255)", names[i], colors[i]);
 		}
 	}
 
