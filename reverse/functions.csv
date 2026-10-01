@@ -46711,3 +46711,6 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?update@AIDeadState@@UAE?AW4StateReturnType@@XZ,,0x0033FF05,38,Code/GameEngine/Source/GameLogic/AI/AIStatesSmallUpdates.cpp,matched,slot 6 of vtable 0xC11318 whose name slot returns AIDeadState; AI vslot 136 then pinned setEffectivelyDead(true)
 ?update@AIFollowWaypointPathExactState@@UAE?AW4StateReturnType@@XZ,,0x0034A167,28,Code/GameEngine/Source/GameLogic/AI/AIStatesSmallUpdates.cpp,matched,slot 6 of vtable 0xC12A08 whose name slot returns AIFollowWaypointPathExactState; ZH update over pinned base update
 ?onExit@AIWanderState@@UAEXW4StateExitType@@@Z,,0x0034A323,65,Code/GameEngine/Source/GameLogic/AI/AIWanderStateOnExit.cpp,matched,slot 5 of vtable 0xC12A70 whose name slot returns AIWanderState; ZH chain to AIFollowWaypointPathState::onExit plus condition 4*32+2 clear
+?rva00364A37@Rva00364A37@@QAEXXZ,,0x00364A37,41,Code/GameEngine/Source/GameLogic/AI/PathRva00364A37.cpp,matched,clearer via rowed free helper with sentinel reinit
+?rva0036429B@Rva0036429B@@QAEXPAUFreeNode@@@Z,,0x0036429B,45,Code/GameEngine/Source/GameLogic/AI/PathRva0036429B.cpp,matched,twin free-list via plus8 plus12 with rowed free
+?rva00364A60@Rva00364A60@@QAEXXZ,,0x00364A60,41,Code/GameEngine/Source/GameLogic/AI/PathRva00364A60.cpp,matched,twin clearer via rowed free helper
