@@ -14,13 +14,17 @@ struct BfmePod52 {
     BfmePod52(const BfmePod52 &that);
 };
 
+struct Rva001DD0A0 {
+    Rva001DD0A0(const Rva001DD0A0 &that);
+};
+
 namespace _STL {
 
 template <class T1, class T2>
 void _Construct(T1 *p, const T2 &value)
 {
     if (p)
-        new (p) T1(value);
+        new (p) Rva001DD0A0(*(const Rva001DD0A0 *)&value);
 }
 
 }
