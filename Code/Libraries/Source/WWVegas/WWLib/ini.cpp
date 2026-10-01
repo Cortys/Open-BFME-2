@@ -199,8 +199,9 @@ void INIClass::Initialize(void)
 }
 
 // ?Shutdown@INIClass@@ present-unmatched
-// Never inlined: retail's destructor inlines Clear() and then tail-jumps here.
-__declspec(noinline) void INIClass::Shutdown(void)
+// LINK-DUP: inline copy (owner INIClassShutdown.cpp holds the row); noinline
+// preserves the tail-jump in ??1INIClass, inline makes this copy select-any.
+inline __declspec(noinline) void INIClass::Shutdown(void)
 {
 	delete SectionList;
 	delete SectionIndex;
@@ -2252,21 +2253,6 @@ int INIClass::CRC(const char *string)
  *   12/9/97    EHC : Created.                                                                 *
  *   8/27/2001  AJA : In Release mode under Windows, a message box will be displayed.          *
  *=============================================================================================*/
-void INIClass::DuplicateCRCError(const char *message, const char *section, const char *entry)
-{
-	char buffer[512];
-	_snprintf(buffer, sizeof(buffer), "%s - Duplicate Entry \"%s\" in section \"%s\" (%s)\n", message,
-		entry, section, Filename);
-
-	OutputDebugString(buffer);
-	assert(0);
-
-#ifdef NDEBUG
-#ifdef _WINDOWS
-	MessageBox(0, buffer, "Duplicate CRC in INI file.", MB_ICONSTOP | MB_OK);
-#endif
-#endif
-}
 
 
 void	INIClass::Keep_Blank_Entries (bool keep_blanks)
