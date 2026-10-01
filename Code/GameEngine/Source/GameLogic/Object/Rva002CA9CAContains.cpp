@@ -41,11 +41,45 @@ struct ChildId
 	int m_id;
 };
 
+struct FilterInner
+{
+	char m_pad[0x116];
+	unsigned char m_flag;
+};
+
+struct Filter
+{
+	char m_pad[4];
+	FilterInner *m_04;
+};
+
+class VirtNode2
+{
+public:
+	virtual void v00();
+	virtual bool v04(int a, const void *b);
+	virtual void v08();
+	virtual void v0c(int a, const void *b);
+	virtual void v10();
+	virtual void v14() = 0;
+	virtual void v18() = 0;
+	virtual void v1c() = 0;
+	virtual void v20() = 0;
+	virtual void v24() = 0;
+	virtual void v28() = 0;
+	virtual void v2c() = 0;
+	virtual void v30();
+	virtual void v34();
+	virtual void v38();
+	virtual void v3c();
+};
+
 class Rva002CA9CA
 {
 public:
 	bool rva002CA9CA(int id, const void *arg);
 	bool rva002CAA59(int a1, const void *a2);
+	void rva002CA970(int a1, int a2, const void *a3, int a4);
 private:
 	char m_pad00[0x58];
 	int m_58;
@@ -99,4 +133,24 @@ bool Rva002CA9CA::rva002CAA59(int a1, const void *a2)
 		cur = cur->m_next;
 	}
 	return false;
+}
+
+void Rva002CA9CA::rva002CA970(int a1, int a2, const void *a3, int a4)
+{
+	(void)a2;
+	(void)a4;
+	const Filter *flt = (const Filter *)a3;
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode2 *obj = (VirtNode2 *)cur->m_data;
+		if (flt != 0 && (flt->m_04->m_flag & 0x20) != 0)
+		{
+			if (obj->v04(a1, a3))
+			{
+				obj->v0c(a1, a3);
+			}
+		}
+		cur = cur->m_next;
+	}
 }
