@@ -45880,3 +45880,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?getTeamAsAIGroup@Team@@QAEXPAVAIGroup@@@Z,,0x003A0F62,112,Code/GameEngine/Source/Common/RTS/TeamGetTeamAsAIGroup.cpp,matched,
 ?applyFilter@Rva003623E5Filter@@QAEXVBfmeFixedStorage0004543D@@@Z,,0x00362120,114,Code/GameEngine/Source/GameLogic/Object/Rva003623E5ApplyFilter.cpp,matched,
 ??1Rva00520211Element@@QAE@XZ,,0x0051FB52,135,Code/Libraries/Source/WWVegas/WWLib/Rva00520211ElementDtor.cpp,matched,
+?getEachPlayerFromMask@PlayerList@@QAEPAVPlayer@@AAH@Z,,0x002A7BC9,66,Code/GameEngine/Source/Common/RTS/PlayerList_getNthPlayer.cpp,matched,ZH donor; mask walk over getNthPlayer compiled in the same TU (edx kept live across the call); 124 callers

@@ -1,7 +1,9 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?getNthPlayer@PlayerList@@QAEPAVPlayer@@H@Z,
-// retail 0x002A7A29, 22 bytes. Dedicated TU.
+// retail 0x002A7A29, 22 bytes, and
+// ?getEachPlayerFromMask@PlayerList@@QAEPAVPlayer@@AAH@Z,
+// retail 0x002A7BC9, 66 bytes.
 //
 // Battle for Middle-earth reference
 // (reference/open-bfme-1/Code/GameEngine/Source/Common/RTS/PlayerList.cpp,
@@ -11,19 +13,38 @@
 // the same 0x14 count, and the count lives at +0x14 over the inline player
 // pointer array at +0x18 per the landed findPlayerWithNameKey row), where the
 // reference uses 32. Leaf, no pins.
+//
+// getEachPlayerFromMask: ZH donor GeneralsMD PlayerList.cpp. Target evidence:
+// thiscall ret 4 taking the mask by reference; walks getNthPlayer over the 20
+// slots, tests 1 << Player +0x54 (getPlayerMask) against the mask, clears
+// that bit and returns the player, else zeroes the mask and returns null.
+// Retail keeps the mask pointer in edx across the getNthPlayer call, which
+// cl only does when the callee was compiled earlier in the same TU, so both
+// bodies share this file as they shared retail's PlayerList.cpp.
 
 typedef int Int;
 
+typedef int PlayerMaskType;
+
 #define NULL 0
+#define MAX_PLAYER_COUNT 20
+#define BitTest(x, i) (((x) & (i)) != 0)
 
 class Player
 {
+public:
+	PlayerMaskType getPlayerMask() const { return 1 << m_playerIndex; }
+
+private:
+	unsigned char m_pad[0x54];
+	Int m_playerIndex; // +0x54
 };
 
 class PlayerList
 {
 public:
 	Player *getNthPlayer(Int i);
+	Player *getEachPlayerFromMask(PlayerMaskType &maskToAdjust);
 
 private:
 	unsigned char m_pad[0x14];
@@ -39,4 +60,24 @@ Player *PlayerList::getNthPlayer(Int i)
 		return NULL;
 	}
 	return m_players[i];
+}
+
+// ?getEachPlayerFromMask@PlayerList@@QAEPAVPlayer@@AAH@Z
+Player *PlayerList::getEachPlayerFromMask(PlayerMaskType &maskToAdjust)
+{
+	Player *player = NULL;
+	Int i;
+
+	for (i = 0; i < MAX_PLAYER_COUNT; i++)
+	{
+		player = getNthPlayer(i);
+		if (player && BitTest(player->getPlayerMask(), maskToAdjust))
+		{
+			maskToAdjust &= (~player->getPlayerMask());
+			return player;
+		}
+	}
+
+	maskToAdjust = 0;
+	return NULL;
 }
