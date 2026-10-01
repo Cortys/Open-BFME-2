@@ -46490,3 +46490,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002D3389@Rva002D3389@@QAEXPAX@Z,,0x002D3389,22,Code/GameEngine/Source/Common/System/Rva002D3389Method.cpp,matched,callers 0x002D37AA and 0x002D49DD pass new result and same O1 as neighbours
 ?rva002D3772@RadarWindowOverrideSource@@QAEXHM@Z,,0x002D3772,65,Code/GameEngine/Source/Common/System/RadarWindowOverrideRva002D3772.cpp,matched,chain caller 0x002B361B plus rowed callees
 ?rva004EC16E@Rva004EC16E@@QAEPAXM@Z,,0x004EC16E,96,Code/GameEngine/Source/Common/Rva004EC16E.cpp,matched,best below float via fcomi callers 0x004EC700
+??0Rva004ECDC8@@QAE@I@Z,,0x004ECDA7,33,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECDC8Ctor.cpp,matched,ctor same class as Xfer 0x004ECDC8 callers 0x004ED6F0 0x004EDBBE Coord3DBase 12B
