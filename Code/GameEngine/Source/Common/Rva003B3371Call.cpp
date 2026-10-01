@@ -20,13 +20,13 @@ class ScriptEngine
 public:
 	void rva00357DD2(const AsciiString &s);
 };
-extern ScriptEngine *G009FE16C;
+extern ScriptEngine *TheScriptEngine;
 extern const char *G009C1050[];
 
 void __cdecl Rva003B3371Call(int index)
 {
-	if (G009FE16C == 0)
+	if (TheScriptEngine == 0)
 		return;
 	AsciiString tmp(G009C1050[index]);
-	G009FE16C->rva00357DD2(tmp);
+	TheScriptEngine->rva00357DD2(tmp);
 }

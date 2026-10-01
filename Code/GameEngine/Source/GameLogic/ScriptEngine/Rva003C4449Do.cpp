@@ -40,12 +40,12 @@ class Rva003A28ED
 public:
 	bool rva003A28ED(NameKeyType key);
 };
-extern ScriptEngine *g_009FE16C;
+extern ScriptEngine *TheScriptEngine;
 extern NameKeyGenerator *g_009F36A4;
 extern PlayerList *g_009FEEE8;
 void __stdcall Rva003C4449Do(const AsciiString &teamName, const AsciiString &playerName)
 {
-	Team *team = g_009FE16C->getTeamNamed(teamName, false);
+	Team *team = TheScriptEngine->getTeamNamed(teamName, false);
 	NameKeyType key = g_009F36A4->nameToKey(playerName);
 	Player *player = g_009FEEE8->findPlayerWithNameKey(key);
 	if (team == 0)

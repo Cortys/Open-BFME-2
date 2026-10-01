@@ -1,6 +1,6 @@
 // cl: /O1
 // ?Rva003BC421Do@@YGXPAVParameter@@H@Z @0x003BC421 69B: script action on a named unit's +0x250 interface.
-// Evidence: rowed getUnitNamed 0x003588E7 then +0x250 null check then slot 0x114 gate with 0 then slot 0x110 with bfmeGoBGB 0x003BC40D plus 0 and 3; same g_Va009FE16C and stdcall shape as Rva003BC259Remove; caller 0x003CD0EC in dispatch; second arg unused per retail.
+// Evidence: rowed getUnitNamed 0x003588E7 then +0x250 null check then slot 0x114 gate with 0 then slot 0x110 with bfmeGoBGB 0x003BC40D plus 0 and 3; same TheScriptEngine and stdcall shape as Rva003BC259Remove; caller 0x003CD0EC in dispatch; second arg unused per retail.
 class Parameter;
 class Object;
 class BfmeSubBGB;
@@ -41,12 +41,12 @@ public:
 	Object *getUnitNamed(Parameter *param);
 };
 
-extern ScriptEngine *g_Va009FE16C;
+extern ScriptEngine *TheScriptEngine;
 
 void __stdcall Rva003BC421Do(Parameter *param, int unused)
 {
 	(void)unused;
-	Object *obj = g_Va009FE16C->getUnitNamed(param);
+	Object *obj = TheScriptEngine->getUnitNamed(param);
 	if (obj == 0)
 		return;
 	Iface00250 *iface = obj->m_250;

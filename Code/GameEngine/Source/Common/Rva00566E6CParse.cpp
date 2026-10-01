@@ -25,7 +25,7 @@ class ScriptEngine {
 public:
 	ObjectTypes *getObjectTypes(const AsciiString &objectTypeList);
 };
-extern ScriptEngine *g_00DFE16C;
+extern ScriptEngine *TheScriptEngine;
 
 class ObjectTypes {
 public:
@@ -52,7 +52,7 @@ void Rva00566E6CParse(struct Arg00566E6C *src, class ObjectTypes *dst)
 	void *p = tmp.data();
 	if (!p || *(unsigned short *)((char *)p + 4) == 0)
 		return;
-	ObjectTypes *found = g_00DFE16C->getObjectTypes(tmp);
+	ObjectTypes *found = TheScriptEngine->getObjectTypes(tmp);
 	if (!found)
 		((Rva00376A62 *)dst)->rva00376B50(tmp);
 	else
