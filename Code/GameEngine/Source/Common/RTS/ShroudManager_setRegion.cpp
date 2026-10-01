@@ -48,12 +48,17 @@ class ShroudManager
 {
 public:
 	void setRegion(const Region3D *newRegion, Real cellSize);
-	void configure(Region3D newRegion, Real cellSize);
 
 private:
 	int m_mode; // +0x00
 	Region3D m_region; // +0x04
 	Real m_defaultCellSize; // +0x1C
+};
+
+class ShroudManagerImpl008FBA40
+{
+public:
+	void configure(Region3D newRegion, Real cellSize);
 };
 
 // ?setRegion@ShroudManager@@QAEXPBURegion3D@@M@Z
@@ -65,6 +70,6 @@ void ShroudManager::setRegion(const Region3D *newRegion, Real cellSize)
 	if (!(newRegion->width() < 0.0f)
 		&& !(newRegion->height() < 0.0f))
 	{
-		configure(*newRegion, cellSize);
+		((ShroudManagerImpl008FBA40 *)this)->configure(*newRegion, cellSize);
 	}
 }
