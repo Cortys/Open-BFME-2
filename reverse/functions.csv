@@ -46206,3 +46206,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002B7250@Rva002B7250@@QAEXPAVCreateAHeroData@@@Z,,0x002B7250,121,Code/GameEngine/Source/Common/Rva002B7250Erase.cpp,matched,find-erase with key copy for redundant prologue via Rva0025BF8C pattern
 ?rva005CC2C5@Rva005CC2C5@@QAEXH@Z,,0x005CC2C5,23,Code/GameEngine/Source/Common/Rva005CC2C5.cpp,matched,rowed callee 0x002B7250 holder plus8 list plus4 ret4
 ?rva002AF614@Player@@QAEXPAX@Z,,0x002AF614,17,Code/GameEngine/Source/Common/RTS/PlayerRva002AF614.cpp,matched,Player wrapper via pinned iterateObjects sibling 002AE475
+??0Rva002AF55A@@QAE@XZ,,0x002AF55A,39,Code/GameEngine/Source/Common/RTS/Rva002AF55ACtor.cpp,matched,argless ctor via rowed Vector_base BfmeE16 sibling 0x00211E58
