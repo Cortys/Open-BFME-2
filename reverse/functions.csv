@@ -45936,3 +45936,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005DB95B@Elem005DB98E@@QAEMXZ,,0x005DB95B,51,Code/GameEngine/Source/Common/Elem005DB98EFalloff.cpp,matched,quadratic over rva005DB928 compiled after it in the same TU so this stays in ecx
 ?rva000FE188@Rva000FE001@@QAEXXZ,,0x000FE188,36,Code/GameEngine/Source/Common/Rva000FE001Move.cpp,matched,list drain compiled after its callee rva000FE001 so this stays in ecx
 ?rva003FF496@GameInfo@@QBE_NG@Z,,0x003FF496,62,Code/GameEngine/Source/GameNetwork/GameInfoPlayerCounts.cpp,matched,slot predicate compiled after GameSlot::isOccupied in the same TU so the slot stays in ecx
+?rva001DBDA4@Rva001DBDA4@@QBEHXZ,,0x001DBDA4,34,Code/GameEngine/Source/Common/Bfme/Rva00489360GuardedAdd.cpp,matched,list max of get() compiled after get in the same TU so the node stays in edx
