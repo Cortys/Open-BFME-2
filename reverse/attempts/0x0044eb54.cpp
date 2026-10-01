@@ -1,13 +1,9 @@
 // ??0Rva0044EB54@@QAE@XZ
-// partial score=0.93 date=2026-09-30
-// ??0Rva0044EB54@@QAE@XZ
-// partial score=0.93 date=2026-09-30
+// partial score=0.97 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 // ??0Rva0044EB54@@QAE@XZ @0x0044EB54 378B: SpecialAbility base ctor over 0xC8 layout; callers 25 ModuleData ctors e.g. ArrowStorm 0x00490639; vtable 0x0083F2A8; dtor Rva0044ECCE proves layout.
 #include <stddef.h>
 
-extern "C" float kF7C;
-extern const float g_00BC876C;
 extern const char g_Rva0107301CEmptyString[];
 
 template <typename T> class StringBase
@@ -145,15 +141,15 @@ Rva0044EB54::Rva0044EB54()
 	, m_24(-1)
 	, m_28(0)
 	, m_2C(0)
-	, m_30(kF7C)
+	, m_30(100.0f)
 	, m_34()
 	, m_38(0)
 	, m_3C(0)
 	, m_40()
 	, m_44()
 	, m_48()
-	, m_4C(g_00BC876C)
-	, m_50(g_00BC876C)
+	, m_4C(10000000.0f)
+	, m_50(10000000.0f)
 	, m_54(0.0f)
 	, m_58(0.0f)
 	, m_5C(1)

@@ -45677,3 +45677,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005E16B9@Rva005E16B9@@QAEPBVImage@@XZ,,0x005E16B9,33,Code/GameEngine/Source/Common/Rva005E16B9.cpp,matched,leaf image lookup via member AsciiString at +8 rowed callees
 ?rva005E187A@Rva005E187A@@QAEX_N@Z,,0x005E187A,33,Code/GameEngine/Source/Common/Rva005E187A.cpp,matched,unlock bool setter byte at +0x20 iface at +0x18 slot3 callers push 0 and 1
 ?Rva005E1A87Copy@@YAPAUTreeHintRef00217D4C@@PBU1@0PAU1@@Z,,0x005E1A87,47,Code/GameEngine/Source/Common/Rva005E1A87Copy.cpp,matched,unlock TreeHintRef copy via rowed operatorassign sar2 loop caller 0x004F6A35
+?rva002864E6@Rva00285DC5@@QAEXPAMMHHHH_N@Z,,0x002864E6,310,Code/GameEngine/Source/Common/Rva00285DC5Disc.cpp,matched,midpoint disc paint over rowed row-range paint 0x00285DC5; 0.1f and 0.5 literals fix the banked partial; callers 0x00395DEC 0x0050BE94
