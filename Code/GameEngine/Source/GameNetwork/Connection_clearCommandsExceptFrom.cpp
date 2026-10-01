@@ -9,12 +9,18 @@ public:
 	Int m_playerID;
 };
 
+class NetCommandNode
+{
+public:
+	void detach();
+};
+
 class NetCommandRef
 {
 public:
 	NetCommandMsg *getCommand() { return m_msg; }
 	NetCommandRef *getNext() { return m_next; }
-	~NetCommandRef();
+	~NetCommandRef() { ((NetCommandNode *)this)->detach(); }
 
 	NetCommandMsg *m_msg;
 	NetCommandRef *m_next;
