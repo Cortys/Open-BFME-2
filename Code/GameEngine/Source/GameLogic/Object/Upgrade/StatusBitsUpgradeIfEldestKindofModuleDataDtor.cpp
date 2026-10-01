@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /GX
+// cl: /O1 /DNDEBUG /MD /GX /Ireference/shims/moduledata
 //
 // ??1StatusBitsUpgradeIfEldestKindofModuleData@@UAE@XZ, retail 0x0025575C,
 // 57 bytes. EldestKindof dtor over the rowed StatusBitsUpgradeModuleData
@@ -15,19 +15,7 @@
 
 class Xfer;
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class StatusBitsUpgradeModuleData : public Snapshot
 {

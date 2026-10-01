@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD /Ireference/shims/moduledata
 //
 // ??1BuildingBehaviorModuleData@@UAE@XZ, retail 0x004564E6, 58 bytes.
 // ModuleData dtor: four-element window-name array at +0x08 torn down via
@@ -24,19 +24,7 @@ private:
 
 class Xfer;
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 class __declspec(novtable) BuildingBehaviorModuleData : public Snapshot
 {

@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /DNDEBUG /MD /Ireference/shims/moduledata
 //
 // ??1MonitorConditionUpdateModuleData@@UAE@XZ retail 0x00491711 63B.
 // Dtor lane: ctor rowed at 0x004915FD in ModelConditionSpecialAbilityUpdateModuleDataCtor.cpp
@@ -13,19 +13,7 @@
 
 class Xfer;
 
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 
 #include "ascii_string.h"
 
