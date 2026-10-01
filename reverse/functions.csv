@@ -4183,7 +4183,6 @@ _PreAuthenticatePlayerPM,,0x00608D50,158,Code/GameEngine/Source/GameNetwork/Game
 ??0Matrix3@@QAE@ABVMatrix3D@@@Z,,0x00716890,85,Code/Libraries/Source/WWVegas/WWMath/matrix3.cpp,matched,gen-alias;object-symbol=??0Matrix3@@QAE@ABVMatrix3D@@@Z;C++ alias
 ?Set@Matrix3@@QAEXABVMatrix3D@@@Z,,0x007168F0,83,Code/Libraries/Source/WWVegas/WWMath/matrix3.cpp,matched,gen-alias;object-symbol=?Set@Matrix3@@QAEXABVMatrix3D@@@Z;C++ alias
 ?dup_0012d720@@YAXXZ,,0x0012D720,44,Code/Libraries/Source/WWVegas/WW3D2/sortingrenderer.cpp,matched,gen-alias;object-symbol=?Insert_Before@?$DLNodeClass@VSortingNodeStruct@@@@QAEXPAV1@@Z;C++ alias
-?dup_002d2580@@YAXXZ,,0x002D2580,44,Code/Libraries/Source/WWVegas/WW3D2/sortingrenderer.cpp,matched,gen-alias;object-symbol=?Insert_Before@?$DLNodeClass@VSortingNodeStruct@@@@QAEXPAV1@@Z;C++ alias
 ?setAngle@View@@UAEXM@Z,,0x0025EAFB,14,Code/GameEngine/Source/GameClient/View.cpp,matched,gen-alias;object-symbol=?setAngle@View@@UAEXM@Z;C++ alias
 ?setHeightAboveGround@View@@UAEXM@Z,,0x002628F9,14,Code/GameEngine/Source/GameClient/View.cpp,matched,gen-alias;object-symbol=?setHeightAboveGround@View@@UAEXM@Z;C++ alias
 ?Set_Burst_Size@ParticleEmitterDefClass@@UAEXI@Z,,0x00262FEB,13,Code/Libraries/Source/WWVegas/WW3D2/part_ldr.cpp,matched,gen-alias;object-symbol=?Set_Burst_Size@ParticleEmitterDefClass@@UAEXI@Z;C++ alias
@@ -17599,7 +17598,6 @@ _getluaproto,,0x0074CBA0,27,Code/Libraries/Source/Lua/ldebug.c,matched,placed by
 ?dup_00063333@@YAXXZ,,0x00063333,16,Code/GameEngine/Source/Common/RTS/ShroudManagerImpl008FBA40CtorDrain.cpp,matched,gen-alias;object-symbol=??0?$_Deque_iterator@UGen_t_008fb350_p12pod@@U?$_Nonconst_traits@UGen_t_008fb350_p12pod@@@_STL@@@_STL@@QAE@XZ;C++ alias
 ?dup_003ef5da@@YAXXZ,,0x003EF5DA,14,Code/Libraries/Source/WWVegas/WW3D2/segline.cpp,matched,gen-alias;object-symbol=?Set_Noise_Amplitude@SegLineRendererClass@@QAEXM@Z;C++ alias
 ?dup_0007e81f@@YAXXZ,,0x0007E81F,10,Code/GameEngine/Source/Common/System/DataChunkInput.cpp,matched,gen-alias;object-symbol=??0DataChunkInfo@@QAE@XZ;C++ alias
-?dup_00318b09@@YAXXZ,,0x00318B09,10,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,gen-alias;object-symbol=?Set_Y_Translation@Matrix3D@@QAEXM@Z;C++ alias
 ?dup_0033f8ca@@YAXXZ,,0x0033F8CA,10,Code/GameEngine/Source/GameClient/GUI/AnimateWindowManager.cpp,matched,gen-alias;object-symbol=?setGameWindow@AnimateWindow@@QAEXPAVGameWindow@@@Z;C++ alias
 ?allocDrawableID@GameClient@@IAE?AW4DrawableID@@XZ,,0x002FDB5D,10,Code/GameEngine/Source/GameClient/GameClient.cpp,matched,gen-alias;object-symbol=?allocDrawableID@GameClient@@IAE?AW4DrawableID@@XZ;C++ alias
 ?dup_00317b9b@@YAXXZ,,0x00317B9B,10,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/DozerAIUpdate.cpp,matched,gen-alias;object-symbol=?setCurrentTask@DozerAIUpdate@@UAEXW4DozerTask@@@Z;C++ alias
@@ -45135,3 +45133,10 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0040E02B@Rva0040E02B@@QAEXXZ,,0x0040E02B,14,Code/GameEngine/Source/Common/Rva0040E02BClear.cpp,matched,ScienceType vector clear at plus0x4C via rowed erase
 ?rva003A547E@Rva003A547E@@QAEXPAVXfer@@@Z,,0x003A547E,226,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003A547EXfer.cpp,matched,slot 7 of 0x0081BF84 wind-motion float block via PoisonedBehaviorXfer recipe
 ?rva003A5757@Rva003A5757@@QAEXPAVXfer@@@Z,,0x003A5757,28,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003A547EXfer.cpp,matched,slot 3 of 0x0081C60C chain from 0x003A547E
+?Insert_After@?$DLNodeClass@USmudgeSet@@@@QAEXPAV1@@Z,,0x002D2556,42,Code/GameEngine/Source/GameClient/System/SmudgeListAddHead.cpp,matched,ICF alias of SortingNodeStruct Insert_After; SmudgeSet node base uses succ pred list at offsets 0 4 8
+?Insert_Before@?$DLNodeClass@USmudge@@@@QAEXPAV1@@Z,,0x002D2580,44,Code/GameEngine/Source/GameClient/System/SmudgeListAddHead.cpp,matched,ICF alias of SortingNodeStruct Insert_Before; Smudge node has same three-pointer base layout
+?setPlayerIndex@Rva004D57AE@@QAEXI@Z,,0x00318B09,10,Code/GameEngine/Source/GameNetwork/NetPacket_setPlayerIndex.cpp,matched,ICF alias of Matrix3D Set_Y_Translation; command caller at 0x0058DE5B and +0x1C player-index member store
+??1BfmeMsgVJH@@UAE@XZ,,0x00655780,7,Code/GameEngine/Source/GameNetwork/BfmeMsgCtor.cpp,matched,ICF alias of virtual BfmeMsg base destructor; BfmeMsgVJH derived dtor restores the same base vptr
+??1NetCommandRef@@QAE@XZ,,0x0058B8AE,12,Code/GameEngine/Source/GameNetwork/NetCommandRefDtor.cpp,matched,ICF alias of NetCommandNode detach; both guard m_msg at +0 and call NetCommandMsg detach
+?dup_002d2580@@YAXXZ,,0x002D2580,44,Code/Libraries/Source/WWVegas/WW3D2/sortingrenderer.cpp,matched,address-derived identity retained;object-symbol=?Insert_Before@?$DLNodeClass@VSortingNodeStruct@@@@QAEXPAV1@@Z;gen-alias byte fallback retained
+?dup_00318b09@@YAXXZ,,0x00318B09,10,Code/GameEngine/Source/Common/Thing/Thing.cpp,matched,address-derived identity retained;object-symbol=?Set_Y_Translation@Matrix3D@@QAEXM@Z;gen-alias byte fallback retained

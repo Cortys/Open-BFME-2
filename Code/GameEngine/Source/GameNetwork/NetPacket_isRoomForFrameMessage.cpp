@@ -135,7 +135,7 @@ public:
 	Rva004D57AE();
 	void setPlayerIndex(UnsignedInt v);
 private:
-	UnsignedInt m_playerIndex;
+	UnsignedInt m_playerIndex; // +0x1C: NetCommandMsg is 0x1C bytes
 };
 
 NetCommandMsg *NetPacket::rva0058DE5B(UnsignedByte *data, Int &readOffset)

@@ -22,6 +22,19 @@ BfmeMsg::~BfmeMsg()
 {
 }
 
+// BfmeMsgVJH is the derived message type constructed at 0x00655900. Its
+// virtual dtor restores the same BfmeMsg base vptr as this base dtor, so its
+// retail body at 0x00655780 is an ICF alias of the row above.
+class BfmeMsgVJH : public BfmeMsg
+{
+public:
+	virtual ~BfmeMsgVJH();
+};
+
+BfmeMsgVJH::~BfmeMsgVJH()
+{
+}
+
 // ??_GBfmeMsg@@UAEPAXI@Z, retail 0x00655880 (29B), is emitted by the
 // delete below. The trivial dtor inlines to nothing, leaving the vptr
 // reinstall plus conditional operator delete (no dtor call, like retail).
