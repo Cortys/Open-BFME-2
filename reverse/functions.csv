@@ -45830,3 +45830,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0039E0D0@Team@@QAE_NXZ,,0x0039E0D0,141,Code/GameEngine/Source/Common/RTS/TeamRva0039E0D0.cpp,matched,Team gate 0x112 iterate 0x263864 advance 0x263526 testStatus 0x4E536 template 0x115 AI 0x250 virtuals 0x7c 0x180 0xA4 0x9C
 ??1Rva0039EA9C@@QAE@XZ,,0x0039EAB7,54,Code/GameEngine/Source/Common/Rva0039EAB7Dtor.cpp,matched,dtor with two AsciiStrings via releaseBuffer
 ?Rva0043289DClassify@@YAHH@Z,,0x0043289D,59,Code/GameEngine/Source/Common/Rva0043289DClassify.cpp,matched,retail dispatch classify 4-18 map evidence from callers
+?rva004334AF@Rva004334AF@@QAEXM@Z,,0x004334AF,12,Code/Libraries/Source/WWVegas/WW3D2/LineGroupClassRva004334AF.cpp,matched,or byte ECX+C4 0x80 then tail-jmp rowed Set_Line_UCoord
