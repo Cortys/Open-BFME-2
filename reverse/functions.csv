@@ -45365,7 +45365,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002ABBBE@Rva002ABBBE@@QAEXPAX@Z,,0x002ABBBE,100,Code/Libraries/Source/WWVegas/WWLib/Rva002ABBBEBitCopy.cpp,matched,dword to byte bitset 218 via ji memset row; virtual call 0x24
 ?Rva0029FB80Store@@YGPAXPAPAX@Z,,0x0029FB80,28,Code/GameEngine/Source/Common/Rva0029FB80.cpp,matched,freelist pop plus arg store returning node
 ?Rva002A1316Store@@YGPAXPAPAXPAX0@Z,,0x002A1316,37,Code/GameEngine/Source/Common/Rva002A1316.cpp,matched,freelist node doubly linked insert
-?rva005F6F0C@Rva005F6F0C@@QAEXXZ,,0x005F6F0C,57,Code/GameEngine/Source/Common/Rva005F6F0CTooltip.cpp,matched,ConstructionTurns tooltip via GameText slot 0x3c plus Mouse with 1.0f flag plus 0x28 precedent Rva005F06EF
 ??1Rva005F6941@@UAE@XZ,,0x005F6941,59,Code/GameEngine/Source/Common/Rva005F6941Dtor.cpp,matched,virtual dtor with conditional slot 0x18 call plus EH via caller 0x005F6A58
 ??1Rva005F69F5@@UAE@XZ,,0x005F69F5,59,Code/GameEngine/Source/Common/Rva005F69F5Dtor.cpp,matched,virtual dtor with conditional slot 0x18 call plus EH sibling of 0x005F6941
 ?rva005F697C@Rva005F697C@@QAEXXZ,,0x005F697C,18,Code/GameEngine/Source/Common/Rva005F697CMethod.cpp,matched,conditional slot 0x18 helper via callers 0x005F6A58 0x005F6AB0
@@ -45410,3 +45409,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0028F528@Rva0028F528@@QAEHXZ,,0x0028F528,52,Code/GameEngine/Source/Common/System/Rva0028F528Popcount.cpp,matched,SWAR popcount same fold as BitFlags countIntersection unblocks 4 callers
 ??1Rva00432FA7@@UAE@XZ,,0x00432FEF,54,Code/GameEngine/Source/Common/Rva00432FA7Dtor.cpp,matched,dtor two-list cleanup via base tail-jmp
 ??_GRva00432FA7@@UAEPAXI@Z,,0x0043312E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00432FA7.cpp,matched,chain deleting dtor calls rowed 0x00432FEF
+?Rva005F632AFormat@@YA?AVUnicodeString@@H@Z,,0x005F632A,194,Code/GameEngine/Source/Common/Rva005F632AFormat.cpp,matched,RankLabel static via rowed ctor plus GameText slot 0x38 fetch and Unicode format caller 0x005F6407 precedent HeroRank
+?rva005F63EC@Rva005F6220@@QAEXH@Z,,0x005F63EC,77,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Rank setter with cache check via Format helper and LeaderRank call updates 0x2c
+?rva005F64C0@Rva005F64C0@@QAEXH@Z,,0x005F64C0,8,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Tail forward to member rva005F63EC via plus 8 chain from 0x005F63EC
