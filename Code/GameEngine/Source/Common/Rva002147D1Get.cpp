@@ -12,6 +12,8 @@ public:
 };
 extern "C" void _ReadWriteBarrier();
 #pragma intrinsic(_ReadWriteBarrier)
+#pragma function(memset)
+extern "C" void *memset(void *dst, int value, unsigned int size);
 class Rva002147D1
 {
 public:
@@ -20,6 +22,7 @@ public:
 	void *rva00214983(int index);
 	int rva00214713(int key);
 	void *rva00214738(int index);
+	void *rva002148C3(int index);
 private:
 	char _pad[0x0C];
 	int m_begin;
@@ -95,5 +98,21 @@ void *Rva002147D1::rva00214738(int index)
 	Rva00214738Slot *slot = *(Rva00214738Slot **)(m_begin + index * 4);
 	if (slot != 0)
 		return slot->m_18;
+	return 0;
+}
+struct Rva002148C3Slot { char _pad[0xCC]; void *m_cc; };
+void *Rva002147D1::rva002148C3(int index)
+{
+	char buf[0x4C];
+	memset(buf, 0, 0x4C);
+	memset(buf, 0, 0x4C);
+	if (index < 0)
+		return 0;
+	if ((unsigned)index > (unsigned)((m_end - m_begin >> 2) - 1))
+		return 0;
+	_ReadWriteBarrier();
+	Rva002148C3Slot *slot = *(Rva002148C3Slot **)(m_begin + index * 4);
+	if (slot != 0)
+		return slot->m_cc;
 	return 0;
 }
