@@ -25,7 +25,7 @@ private:
 
 extern const BfmeFixedStorage0004543D g_defaultStorage009FEFA4;
 
-class Rva00362192Filter
+class Rva003623E5Member
 {
 public:
 	void rva00362192(Rva00045411BitSet bits, BfmeFixedStorage0004543D storage);
@@ -49,7 +49,7 @@ public:
 	virtual ~Rva00465124Base();
 protected:
 	unsigned char m_pad04[0x3C];
-	Rva00362192Filter m_filter40;
+	Rva003623E5Member m_filter40;
 };
 
 class HordeGarrisonContainModuleData : public Rva00465124Base

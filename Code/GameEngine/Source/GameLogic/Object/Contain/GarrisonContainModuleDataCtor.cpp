@@ -8,9 +8,9 @@
 // built in place in the argument slots), then the Zero Hour defaults:
 // mobile garrison, heal objects, frames for full heal (1.0 here),
 // clear-building immunity and roster count. Field names follow ZH
-// GarrisonContainModuleData; the +0x40 member's type is unproven (0x58
-// bytes, an address-named stand-in), and 0x00362192 is pinned under an
-// address name from this call and its three siblings (TunnelContain
+// GarrisonContainModuleData; the +0x40 member is the Rva003623E5Member
+// filter record (its rowed initFromStorages 0x00362087 is a sibling method),
+// and 0x00362192 is pinned under an address name from this call and its three siblings (TunnelContain
 // 0x002579D5, 0x0039A14A, 0x004A045E).
 class BfmeFixedStorage0004543D
 {
@@ -31,7 +31,7 @@ private:
 
 extern const BfmeFixedStorage0004543D g_defaultStorage009FEFA4;
 
-class Rva00362192Filter
+class Rva003623E5Member
 {
 public:
 	void rva00362192(Rva00045411BitSet bits, BfmeFixedStorage0004543D storage);
@@ -55,7 +55,7 @@ public:
 	virtual ~Rva00465124Base();
 protected:
 	unsigned char m_pad04[0x3C];
-	Rva00362192Filter m_filter40;
+	Rva003623E5Member m_filter40;
 };
 
 class GarrisonContainModuleData : public Rva00465124Base
