@@ -340,7 +340,7 @@ def _coff_symbols(data):
     return out
 
 
-def comdat_bodies(obj):
+def comdat_bodies(obj, retail=None):
     """[(name, digest, size)] for each external COMDAT symbol an object defines.
 
     The digest covers the section's bytes AND its relocations (offset, type,
@@ -348,7 +348,10 @@ def comdat_bodies(obj):
     slots point at different functions are different copies. A TU-local target (a string literal, a
     static) is named per TU, so it counts only as "local"; an anonymous
     namespace's per-TU hash is normalised. An uninitialized section has no
-    bytes to hash, only a size.
+    bytes to hash, only a size. With `retail` ({name: retail RVA}), a target
+    the ledger or a pin places is labelled by that address instead of its
+    name, so two spellings of one retail function (AsciiString::set and
+    StringBase<char>::set, both 0x55F5) do not make two copies differ.
     """
     import hashlib
     import struct
@@ -379,8 +382,12 @@ def comdat_bodies(obj):
         for at in range(relocs, relocs + 10 * nrelocs, 10):
             where, target, kind = struct.unpack_from("<IIH", data, at)
             referent = by_index.get(target, {"name": "?", "storage": 0})
-            label = (re.sub(r"\?A0x[0-9A-Fa-f]{8}", "?A0xHASH", referent["name"])
-                     if referent["storage"] in (EXTERNAL, WEAK_EXTERNAL) else "local")
+            if referent["storage"] not in (EXTERNAL, WEAK_EXTERNAL):
+                label = "local"
+            elif retail and referent["name"] in retail:
+                label = "@0x%X" % retail[referent["name"]]
+            else:
+                label = re.sub(r"\?A0x[0-9A-Fa-f]{8}", "?A0xHASH", referent["name"])
             digest.update(b"%d:%d:" % (where, kind) + label.encode("latin-1") + b";")
         found.append((symbol["name"], digest.hexdigest()[:12], size))
     return found
@@ -417,22 +424,48 @@ def comdat_exempt(name):
     return "_STL@@" in name or name.startswith(COMDAT_EXEMPT_PREFIXES)
 
 
+_RETAIL = None
+
+
+def retail_addresses():
+    """{name: retail RVA}: matched ledger rows first, then symbols.csv pins."""
+    global _RETAIL
+    if _RETAIL is None:
+        found = {}
+        for row in ledger():
+            found.setdefault(row["name"], int(row["target_rva"], 16))
+        for name, address in pins().items():
+            found.setdefault(name, address)
+        _RETAIL = found
+    return _RETAIL
+
+
+def _retail_bodies(obj):
+    return comdat_bodies(obj, retail_addresses())
+
+
 def comdat_losers(objs):
     """{object name: {symbol}} for COMDAT copies whose body differs from the
     copy the census keeps: the copy most objects compiled (ties go to the
     earliest in link order), so one odd object linked first, such as
     matrix3d.obj's Vector3 inlines, cannot make a hundred others lose.
-    comdat_exempt() names are never held against an object. link.exe itself
-    keeps the first copy in link order, but that order is an artifact of the
-    census, not of the game's build. Objects are read in parallel
-    (BUILD_POOL processes)."""
+    Copies are compared with relocation targets resolved to retail
+    addresses (comdat_bodies `retail`), so calling one retail function by
+    two spellings is not a difference. Preferring the copy from the name's
+    ledger-row object was measured and rejected: a helper rowed from a
+    split unit built with other flags then counts against every unit that
+    inlined it the usual way. comdat_exempt() names are
+    never held against an object. link.exe itself keeps the first copy in
+    link order, but that order is an artifact of the census, not of the
+    game's build. Objects are read in parallel (BUILD_POOL processes)."""
+    retail_addresses()  # load once, before the pool forks
     workers = build._pool_size()
     if workers > 1:
         import concurrent.futures
         with concurrent.futures.ProcessPoolExecutor(workers) as pool:
-            bodies = list(pool.map(comdat_bodies, objs, chunksize=64))
+            bodies = list(pool.map(_retail_bodies, objs, chunksize=64))
     else:
-        bodies = [comdat_bodies(obj) for obj in objs]
+        bodies = [_retail_bodies(obj) for obj in objs]
     counts, first = collections.defaultdict(collections.Counter), {}
     for order, found in enumerate(bodies):
         for name, digest, _ in found:
