@@ -4637,3 +4637,5 @@ FUN_000A273F	0x000A273F	254	blocked	GUI draw helper with idiv cmov WindowManager
 FUN_000B36CE	0x000B36CE	111	blocked	custom static 5-param EAX-count ECX-ushorts EDX-table EDI-target plus stack-target; bare ret with stack arg; needs donor plus caller decode; test-eax-first like 0x002D9686 t=5 model=muse-03
 ?Rva006D04D0Copy@@YAPAPAXPAPAXHH0HH0@Z	0x006D04D0	103	blocked	refcounted ptr-array copy teardown-freeBlock-addref 7arg mapping unclear best 99vs103B frame plus src-dst reg swap t=20 model=muse-20
 ?Rva002B25EFScan@@YGXPAXHH@Z	0x002B25EF	62	blocked	EH_prolog late-and single rowed rva003F498A call plus vtable 0x007FDFEC visitor; try-catch gives pushes plus esp-save 77B; empty-base ctor saves this plus early-and 68B; Guard-late gives trailing dtor 77B; non-EH 41B; no unwind-only free shape found t=25 model=muse-09
+FUN_005E5DF5	0x005E5DF5	133	blocked	eax-param ABI unclear plus dual Rb_tree loops t=12 model=muse-14
+FUN_000B3C61	0x000B3C61	110	blocked	imul-1C Release plus SSE clears need layout work t=15 model=muse-14
