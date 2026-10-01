@@ -45008,3 +45008,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00373EEC@Rva00373EEC@@QAEXI@Z,,0x00373EEC,48,Code/GameEngine/Source/Common/Rva00373EECFrame.cpp,matched,frame-horizon max store via TheGameLogic plus40 callers 2
 ??0Rva00238B90@@QAE@XZ,,0x00238AC7,201,Code/GameEngine/Source/GameClient/GUI/Shell/Rva00238B90Ctor.cpp,matched,ctor via dtor layout literals and g_Va globals with G7 for imul
 ?erase@?$vector@URva000B435F@@V?$allocator@URva000B435F@@@_STL@@@_STL@@QAEPAURva000B435F@@PAU3@0@Z,,0x000C059B,51,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva000b435f_erase.cpp,matched,vector Rva000B435F range erase via pinned copy_ptrs plus rowed destroy same shape as FXBoneInfo 207F0D
+??0Rva0040394A@@QAE@XZ,,0x0040394A,22,Code/Libraries/Source/WWVegas/WWLib/Rva0040394ADefaultCtor.cpp,matched,default ctor vector at plus8 via rowed base 0x00211E58 caller 0x004045B4
