@@ -45276,3 +45276,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva00395A35@@QAE@ABVBfmeFixedStorage0004543D@@0@Z,,0x00395A35,43,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00395A35Ctor.cpp,matched,vtable g_00C1A268 int at +4 cleared two FixedStorage copies
 ?rva005DC8A2@Rva005DC8A2@@QAE_NXZ,,0x005DC8A2,97,Code/GameEngine/Source/Common/Rva005DC8A2.cpp,matched,holder via g_00DFEEF8 map lookup index loop
 ?rva005DCC60@Rva005DCC60@@QAEXXZ,,0x005DCC60,38,Code/GameEngine/Source/Common/Rva005DCC60.cpp,matched,range loop virtual slot 0x18 with this+0x14
+??0Rva005DCDD9@@QAE@HH@Z,,0x005DCDD9,47,Code/GameEngine/Source/Common/Rva005DCDD9.cpp,matched,three bools vector BfmeE16 two ints
