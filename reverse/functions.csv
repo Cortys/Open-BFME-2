@@ -46055,3 +46055,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva00434D7A@@QAE@PAI0@Z,,0x00434D7A,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434D7A.cpp,matched,ctor calls rowed 0x004349C3 sibling of 0x00434C67
 ?Rva00434995Get@@YAXPAI0@Z,,0x00434995,46,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_00434995.cpp,matched,rdtsc-seeded two-out table fetch sibling of 0x00434969
 ??0Rva00434CF4@@QAE@PAI0@Z,,0x00434CF4,134,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434CF4.cpp,matched,ctor calls rowed 0x00434995 sibling of 0x00434C67
+?Rva004349EFGet@@YAXPAI0@Z,,0x004349EF,46,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_004349EF.cpp,matched,rdtsc-seeded two-out table fetch sibling of 0x00434995
