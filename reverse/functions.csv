@@ -45906,3 +45906,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva001F8330Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABVAsciiString@@@Z,,0x001F8330,23,Code/Libraries/Source/WWVegas/WWLib/Rva001F8330Write.cpp,matched,free ostream INI key value line skipping empty via rowed isEmpty and Write
 ?Rva001F89C3Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDPB_N@Z,,0x001F89C3,31,Code/Libraries/Source/WWVegas/WWLib/Rva001F89C3Write.cpp,matched,free ostream INI key bool line skipping false via rowed Write
 ?Rva003A5D34Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABM@Z,,0x003A5D34,66,Code/GameEngine/Source/Common/Rva003A5D34Write.cpp,matched,free ostream INI key float line with pad via rowed Pad Put pattern from Rva001F89E2Write
+??1Rva000588DA@@QAE@XZ,,0x000588DA,57,Code/GameEngine/Source/GameClient/Rva000588DADtor.cpp,matched,hash scalar dtor clears then frees bucket array
