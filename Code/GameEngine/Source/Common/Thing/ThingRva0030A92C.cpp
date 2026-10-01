@@ -77,7 +77,9 @@ void Rva0030A92C::rva0030A92C(Real z)
 		oldPos.x = cachedPos.x;
 		oldPos.y = cachedPos.y;
 		oldPos.z = cachedPos.z;
-		Matrix3D oldMtx = m_transform;
+		unsigned char oldMtx_buf[sizeof(Matrix3D)];
+		Matrix3D &oldMtx = reinterpret_cast<Matrix3D &>(oldMtx_buf);
+		oldMtx = m_transform;
 
 		m_transform.Set_Z_Translation(z);
 		m_cachedPos.z = z;
@@ -91,7 +93,8 @@ void Rva0030A92C::rva0030A92C(Real z)
 	}
 	else
 	{
-		Matrix3D mtx;
+		unsigned char mtx_buf[sizeof(Matrix3D)];
+		Matrix3D &mtx = reinterpret_cast<Matrix3D &>(mtx_buf);
 		Coord3D pos;
 		pos.x = m_cachedPos.x;
 		pos.y = m_cachedPos.y;
