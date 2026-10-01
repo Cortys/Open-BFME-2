@@ -73,7 +73,7 @@ OutputIter __uninitialized_copy(InputIter first, InputIter last, OutputIter resu
 template <class ForwardIter>
 void _Destroy(ForwardIter first, ForwardIter last);
 }
-_STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> > &_STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> >::operator=(const vector &x)
+inline _STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> > &_STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> >::operator=(const vector &x)
 {
 	if (&x != this)
 	{
@@ -99,3 +99,15 @@ _STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F>
 	}
 	return *this;
 }
+
+// operator= is a header inline: another unit emits a select-any copy of it,
+// so a strong definition here was a duplicate symbol in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitVectorB950FAssign@@YAXPAV?$vector@UBfmeStringRecord000B950F@@V?$allocator@UBfmeStringRecord000B950F@@@_STL@@@_STL@@ABV12@@Z present-unmatched
+void bfmeEmitVectorB950FAssign(_STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> > *p, const _STL::vector<BfmeStringRecord000B950F, _STL::allocator<BfmeStringRecord000B950F> > &that)
+{
+	*p = that;
+}
+#pragma inline_depth()
