@@ -38,6 +38,7 @@ public:
 	WWINLINE const float &operator[](int i) const { return (&X)[i]; }
 };
 
+#pragma optimize("ty", on)
 class Matrix3D
 {
 public:
@@ -59,6 +60,7 @@ public:
 		out->Z = (A[2][0] * v->X + A[2][1] * v->Y + A[2][2] * v->Z + A[2][3]);
 	}
 };
+#pragma optimize("", on)
 
 class Drawable
 {
