@@ -53,8 +53,22 @@ public:
 	string _M_long_date_time_format;
 };
 
-_Time_Info::_Time_Info()
+inline _Time_Info::_Time_Info()
 {
 }
 
 }
+
+// _Time_Info::_Time_Info is a header inline in STLport: one other unit emits
+// a select-any copy of it, so a strong definition here was a duplicate symbol
+// in the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+namespace _STL {
+// ?bfmeEmitstlport_time_info_ctor@_STL@@YAXPAV_Time_Info@1@@Z present-unmatched
+void bfmeEmitstlport_time_info_ctor(_Time_Info *p)
+{
+  p->_Time_Info::_Time_Info();
+}
+}
+#pragma inline_depth()
