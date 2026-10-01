@@ -46479,3 +46479,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?stopProneEffects@ProneUpdate@@IAEXXZ,,0x0049FF78,40,Code/GameEngine/Source/GameLogic/Object/Update/ProneUpdate.cpp,matched,ZH ProneUpdate::stopProneEffects: clear the prone model condition and the no-attack status
 ?update@ProneUpdate@@UAE?AW4UpdateSleepTime@@XZ,,0x0049FFA0,25,Code/GameEngine/Source/GameLogic/Object/Update/ProneUpdate.cpp,matched,ZH ProneUpdate::update: count the prone frames down and stop the effects at zero
 ?goProne@ProneUpdate@@QAEXPBVDamageInfo@@@Z,,0x0049FFB9,62,Code/GameEngine/Source/GameLogic/Object/Update/ProneUpdate.cpp,matched,ZH ProneUpdate::goProne: add damage times the frames ratio and start the effects when newly prone
+?_bfme_get_factor_product@RenderObjClass@@UBEMXZ,,0x0013BC60,31,Code/Libraries/Source/WWVegas/WW3D2/RenderObjSceneAndCost.cpp,matched,

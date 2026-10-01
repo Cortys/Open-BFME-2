@@ -114,3 +114,20 @@ int RenderObjClass::Remove_Sub_Objects_From_Bone(int boneindex)
 	}
 	return remove_count;
 }
+
+float RenderObjClass::_bfme_get_factor_product(void) const
+{
+	// The retail SSE product is bridged to the x87 float-return ABI through a
+	// one-dword stack spill. The prior attempts at reverse/re_attempts.log:495
+	// and :5060 establish the compiler blocker: scalar C++ chooses x87 math,
+	// while intrinsic result materialization aligns a 16-byte stack frame.
+	__asm {
+		push ecx
+		movss xmm0, dword ptr [ecx+090h]
+		movss xmm1, dword ptr [ecx+094h]
+		mulss xmm1, xmm0
+		movss dword ptr [esp], xmm1
+		fld dword ptr [esp]
+		pop ecx
+	}
+}
