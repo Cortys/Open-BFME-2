@@ -55,10 +55,22 @@ struct Rva004D1C81Iter {
 };
 // ??0Rva004D1C81Iter@@QAE@PAURva004D1C81Node@@@Z present-unmatched
 inline Rva004D1C81Iter::Rva004D1C81Iter(Rva004D1C81Node *n) : node(n) {}
+struct Rva004D1C81Pair {
+	Rva004D1C81Node *first;
+	bool second;
+	char _pad[3];
+	Rva004D1C81Pair(Rva004D1C81Node *f, bool s);
+	Rva004D1C81Pair(Rva004D1C81Iter it, bool s);
+};
+// ??0Rva004D1C81Pair@@QAE@PAURva004D1C81Node@@_N@Z present-unmatched
+inline Rva004D1C81Pair::Rva004D1C81Pair(Rva004D1C81Node *f, bool s) : first(f), second(s) {}
+// ??0Rva004D1C81Pair@@QAE@URva004D1C81Iter@@_N@Z present-unmatched
+inline Rva004D1C81Pair::Rva004D1C81Pair(Rva004D1C81Iter it, bool s) : first(it.node), second(s) {}
 struct Rva004D1C81 {
 	Rva004D1C81Node *_head;
 	unsigned int _size;
 	Rva004D1C81Iter rva004D1C81(Rva004D1C81Node *x, Rva004D1C81Node *y, const Rva004D1C81Key &v, Rva004D1C81Node *w);
+	Rva004D1C81Pair rva0046ABA6(const Rva004D1C81Key &v);
 };
 Rva004D1C81Iter Rva004D1C81::rva004D1C81(Rva004D1C81Node *x, Rva004D1C81Node *y, const Rva004D1C81Key &v, Rva004D1C81Node *w)
 {
@@ -85,4 +97,29 @@ Rva004D1C81Iter Rva004D1C81::rva004D1C81(Rva004D1C81Node *x, Rva004D1C81Node *y,
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)_head->_parent);
 	++_size;
 	return Rva004D1C81Iter(z);
+}
+// ?rva0046ABA6@Rva004D1C81@@QAE?AURva004D1C81Pair@@ABURva004D1C81Key@@@Z retail 0x0046ABA6 138B
+// insert_unique for map<unsigned short,int>: WORD-key loop via mov cx cmp jb setb, rowed _M_decrement
+// 0x000242C0 plus just-landed honest _M_insert 0x004D1C81. Same class/tree as rva004D1C81; chain from it.
+// Caller 0x0046E442 in hint 0x0046E31F. Precedent Rva0046AC52::rva002D563D.
+Rva004D1C81Pair Rva004D1C81::rva0046ABA6(const Rva004D1C81Key &v)
+{
+	Rva004D1C81Node *header = _head;
+	Rva004D1C81Node *x = header->_parent;
+	Rva004D1C81Node *y = header;
+	bool comp = true;
+	while (x != 0) {
+		y = x;
+		comp = v.key < x->_key10;
+		x = comp ? x->_left : x->_right;
+	}
+	Rva004D1C81Node *j = y;
+	if (comp) {
+		if (j == header->_left)
+			return Rva004D1C81Pair(rva004D1C81(y, y, v, 0), true);
+		j = (Rva004D1C81Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)y);
+	}
+	if (j->_key10 < v.key)
+		return Rva004D1C81Pair(rva004D1C81(x, y, v, 0), true);
+	return Rva004D1C81Pair(j, false);
 }
