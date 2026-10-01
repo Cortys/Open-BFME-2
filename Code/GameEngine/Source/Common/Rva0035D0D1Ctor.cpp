@@ -28,6 +28,12 @@ class Rva0035D0D1 : public Rva001DBAA4
 public:
     Rva0035D0D1();
     virtual ~Rva0035D0D1();
+    virtual void slot1(int);
+    virtual void slot2(int);
+    virtual void slot3();
+    virtual void slot4();
+    virtual void Rva0035D1C6();
+    virtual void slot6();
     int m_10;
     int m_14;
     int m_18;
