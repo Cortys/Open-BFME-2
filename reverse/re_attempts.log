@@ -5181,3 +5181,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva002AA41A@@YAHPAVObject@@PAX@Z	0x002AA41A	64	partial	fstp plus extra fld vs retail fst single fld and jae vs jbe t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x002aa41a.cpp
 ?rva00051107@Rva00051107@@QAEPAV increasingly complex placeholder	0x00051107	50	blocked	EH prolog handler 0x0075E020 unclaimed so mov eax imm cannot byte match plus operator new plus ctor needs handler row t=5 model=muse-04
 ??0Rva005C1980@@QAE@XZ	0x005C1926	62	blocked	EH prolog handler 0x007A04D4 unclaimed so mov eax imm cannot match plus vtable plus empty string plus ctor t=5 model=muse-04
+?rva0026717B@Rva0026717B@@QAEXXZ	0x0026717B	235	blocked	static dir atexit plus SSE dot regalloc plus frameless wall t=18 agent=muse-11
