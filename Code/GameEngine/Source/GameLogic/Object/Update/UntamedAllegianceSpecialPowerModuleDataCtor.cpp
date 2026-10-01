@@ -16,11 +16,6 @@ protected:
 	unsigned char m_pad[0x7C - 4];
 };
 
-// ??1Rva004930A0@@UAE@XZ present-unmatched
-Rva004930A0::~Rva004930A0()
-{
-}
-
 class UntamedAllegianceSpecialPowerModuleData : public Rva004930A0
 {
 public:
