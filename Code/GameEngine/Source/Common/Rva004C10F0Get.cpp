@@ -1,8 +1,9 @@
-// ?rva004C10F0@Rva004C10F0@@QAEMXZ
-// partial score=0.93 date=2026-09-29
-// ?rva004C10F0@Rva004C10F0@@QAEMXZ
-// partial score=0.93 date=2026-09-29
 // cl: /O1 /MD /arch:SSE2
+// Interface slot at 0x0085B738 in the 0x0085B6xx module vtable (no direct callers;
+// this is the +0x10 interface subobject, so the primary part sits at
+// this-0x10 as in the matched BfmeConv698.cpp slots). The zero result is
+// the false arm of a conditional expression, which retail materialises
+// with xorps and a stack round-trip; the banked attempt used a volatile.
 // ?rva004C10F0@Rva004C10F0@@QAEMXZ 0x004C10F0 49B: Ask-gated float via slot 0x78.
 // Evidence: chain from 0x004C0D4F row; prev BfmeConv700; same shape as 0x004C0DF3.
 class Rva004C0D4F
@@ -61,11 +62,7 @@ public:
 	RvaSub004C10F0 *m_sub;
 };
 
-// ?rva004C10F0@Rva004C10F0@@QAEMXZ present-unmatched
 float Rva004C10F0::rva004C10F0()
 {
-	if (((Rva004C0D4F *)((char *)this - 0x10))->rva004C0D4F())
-		return m_sub->m_inner.GetFloat();
-	volatile float zero = 0.0f;
-	return zero;
+	return ((Rva004C0D4F *)((char *)this - 0x10))->rva004C0D4F() ? m_sub->m_inner.GetFloat() : 0.0f;
 }

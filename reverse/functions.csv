@@ -45710,3 +45710,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?reset@Anim2D@@QAEXXZ,,0x002D6B93,41,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,ZH Anim2D::reset; TU now built with /G7 (all existing rows still match) which fixes the banked partial
 ?rva002D370A@RadarWindowOverrideSource@@QAEXXZ,,0x002D370A,19,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,tail-calls pinned Rva005CB260 method on inner +0xC8 when set; method call with p as this fixes the banked partial
 ?rva006FBC10@Rva006FBC90Owner@@UAEXXZ,,0x006FBC10,25,Code/GameEngine/Source/Common/Rva006FBC10Slot11.cpp,matched,vslot 11 release +0x1C then tail to rowed base method 0x006DE150; /O2 and base modelling fix the banked partial
+?rva004C1028@Rva004C1028@@QAEMH@Z,,0x004C1028,50,Code/GameEngine/Source/Common/Rva004C1028Get.cpp,matched,interface slot gated float forward with int arg; conditional-expression zero fixes the banked partial
+?rva004C10BC@Rva004C10BC@@QAEMXZ,,0x004C10BC,52,Code/GameEngine/Source/Common/Rva004C10BCGet.cpp,matched,interface slot gated float getter; conditional-expression zero fixes the banked partial
+?rva004C10F0@Rva004C10F0@@QAEMXZ,,0x004C10F0,49,Code/GameEngine/Source/Common/Rva004C10F0Get.cpp,matched,interface slot gated float getter; conditional-expression zero fixes the banked partial
