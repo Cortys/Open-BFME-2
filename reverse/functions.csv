@@ -45150,3 +45150,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??$_Construct@URva00414BDBElement@@U1@@_STL@@YAXPAURva00414BDBElement@@ABU1@@Z,,0x00414A76,45,Code/Libraries/Source/WWVegas/WWLib/StlportVectorConstructRva00414BDB.cpp,matched,true Construct via rowed copy ctor callers vector
 ?Rva002043F5Get@@YGPAVParticleSystemTemplate@@PBD@Z,,0x002043F5,72,Code/GameEngine/Source/GameClient/System/Rva002043F5Find.cpp,matched,wrapper AsciiString then ParticleSystemManager findTemplate via global
 ?rva002B2EA0@Rva002B2EA0@@QAEXXZ,,0x002B2EA0,39,Code/GameEngine/Source/Common/Rva002B2EA0Release.cpp,matched,caller 0x002B7529 lea ecx plus 8 thiscall virtual slot0 with 2 prefix delete
+?rva002B2F49@Rva002B2F49@@QAEPAXI@Z,,0x002B2F49,40,Code/GameEngine/Source/Common/Rva002B2F49Release.cpp,matched,caller flag ret4 thiscall embedded TargetRef plus0xAC via 0x7DEEF
