@@ -1761,3 +1761,79 @@ void Rva008571E0RegisterNick(PEER peer, int sessionKey, const char *nick,
 	if (connection->connecting)
 		Rva00860380(connection->chat, sessionKey, nick, secondNick);
 }
+
+// Reference: Open-BFME-1 071013b3c6f1228dfda315732197bed0fd191209,
+// peerMainBlockingOperations.c, Rva00858960Join and its two wrappers.
+// Names below retain target addresses because the reference byte queue's
+// folded wrapper names do not establish the original BFME2 API names.
+unsigned SBServerGetPublicInetAddress(void *);
+unsigned SBServerGetPrivateInetAddress(void *);
+int SBServerHasPrivateAddress(void *);
+unsigned short SBServerGetPrivateQueryPort(void *);
+unsigned short SBServerGetPublicQueryPort(void *);
+void piMangleStagingRoom(char *, const char *, unsigned, unsigned, unsigned short);
+void *piSBCloneServer(void *);
+
+static __declspec(noinline) void Rva00699F20Join(PEER peer, void *server,
+    const char *channel, const char *password, void *callback, void *param,
+    int blocking)
+{
+    piConnection *connection = (piConnection *)peer;
+    int success = 1;
+    int result = 10;
+    char room[257];
+    unsigned publicIP, privateIP;
+    unsigned short port;
+    int opID = piGetNextID(peer);
+    if (!password) password = "";
+    if (!connection->title[0]) { success = 0; result = 6; }
+    if (success && !connection->connected) { success = 0; result = 7; }
+    if (success && (connection->enteringRoom[2] || connection->inRoom[2])) {
+        success = 0; result = 5;
+    }
+    if (success && connection->autoMatchStatus && connection->autoMatchStatus != 5) {
+        success = 0; result = 8;
+    }
+    if (success) {
+        if (server) {
+            publicIP = SBServerGetPublicInetAddress(server);
+            privateIP = SBServerGetPrivateInetAddress(server);
+            port = SBServerHasPrivateAddress(server) ?
+                SBServerGetPrivateQueryPort(server) : SBServerGetPublicQueryPort(server);
+            if (!publicIP) goto failed;
+        } else if (!channel || !channel[0]) success = 0;
+    }
+    if (success) {
+        piStopHosting(peer, 1);
+        if (server) {
+            piMangleStagingRoom(room, connection->title, publicIP, privateIP, port);
+            channel = room;
+        }
+        if (!piNewJoinRoomOperation(peer, 2, channel, password, callback, param, opID))
+            success = 0;
+        if (success && server) connection->hostServer = piSBCloneServer(server);
+    }
+    if (!success) {
+failed:
+        piAddJoinRoomCallback(peer, 0, result, 2, callback, param, opID);
+    }
+    if (blocking) {
+        do { msleep(1); piThink(peer, opID); }
+        while (!PeerOperationsComplete(peer, opID) || !piIsCallbackFinished(peer, opID));
+        if (connection->shutdown && connection->callbackDepth == 0) peerShutdown(peer);
+    }
+}
+
+// _Rva0069A130JoinServer present-unmatched
+void Rva0069A130JoinServer(PEER peer, void *server, const char *password,
+    void *callback, void *param, int blocking)
+{
+    Rva00699F20Join(peer, server, 0, password, callback, param, blocking);
+}
+
+// _Rva0069A160JoinChannel present-unmatched
+void Rva0069A160JoinChannel(PEER peer, const char *channel, const char *password,
+    void *callback, void *param, int blocking)
+{
+    Rva00699F20Join(peer, 0, channel, password, callback, param, blocking);
+}
