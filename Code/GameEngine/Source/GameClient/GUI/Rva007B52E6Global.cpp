@@ -43,3 +43,13 @@ void rva007B99FB()
 {
     g_rva00E068EC.~Rva005E16DA();
 }
+
+// Complete startup body7B5299..7B52E5, followed by initializer7B52E6.
+void rva007B5299()
+{
+    {
+        AsciiString label("CancelArmyMemberMoveButton");
+        g_rva00E068EC.Rva005E16DA::Rva005E16DA(reinterpret_cast<int>(&label));
+    }
+    atexit(rva007B99FB);
+}
