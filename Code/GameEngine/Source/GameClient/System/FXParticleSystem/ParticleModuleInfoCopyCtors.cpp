@@ -363,3 +363,18 @@ Rva003AE43F::Rva003AE43F(const Rva003AE43F &other)
 	: Rva003AE465(other)
 {
 }
+
+// ??0Rva003AE50B@@QAE@ABV0@@Z @0x003AE50B 45B: copy ctor calling rowed base 0x003AF50D then own 3 vptrs.
+// Evidence: calls 0x003AF50D then stores at +0x18/+0/+0x14/+0x18 DIR32; primary 0x00C1D440 second 0x00C1C780 third 0x00C1BD10 overwritten by 0x00C1D430; unlocks 0x003AE4E5.
+// ??0Rva003AE50B@@QAE@ABV0@@Z @0x003AE50B present-unmatched
+class Rva003AE50B : public Rva003AF50D, public ModuleInfoThirdBD10
+{
+public:
+	Rva003AE50B(const Rva003AE50B &other);
+	virtual ~Rva003AE50B();
+};
+
+Rva003AE50B::Rva003AE50B(const Rva003AE50B &other)
+	: Rva003AF50D(other)
+{
+}
