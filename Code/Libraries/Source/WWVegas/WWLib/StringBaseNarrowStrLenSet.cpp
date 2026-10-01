@@ -79,7 +79,7 @@ void StringBase<char>::set(const char *str, int len)
         if (bytes > 0x7fff)
             throw 1;
         bytes = ((bytes + 3) / 4) * 4;
-        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)0x737472);
+        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)'str');
         fresh->ref_count = 1;
         fresh->capacity = (unsigned short)(bytes - 8);
         fresh->length = 0;
@@ -122,7 +122,7 @@ void StringBase<char>::set(const CharSource<char> &source)
         if (bytes > 0x7fff)
             throw 1;
         bytes = ((bytes + 3) / 4) * 4;
-        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)0x737472);
+        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)'str');
         fresh->ref_count = 1;
         fresh->capacity = (unsigned short)(bytes - 8);
         fresh->length = 0;

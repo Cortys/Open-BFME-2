@@ -44,7 +44,7 @@ struct BfmeResetTextureRef
 
 BfmeResetTextureRef &BfmeResetTextureRef::operator=(const BfmeResetAnyRef &rhs)
 {
-	if (rhs.pointer && rhs.pointer->GetClassId() != 0x544558)
+	if (rhs.pointer && rhs.pointer->GetClassId() != 'TEX')
 		clear();
 	else
 		*(BfmeMapPictureTexture *)this = *(const BfmeMapPictureTexture *)&rhs;

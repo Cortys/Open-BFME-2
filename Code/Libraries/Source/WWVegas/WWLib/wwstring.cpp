@@ -46,7 +46,7 @@
 #include "always.h"
 #undef W3DNEWARRAY
 void * __cdecl operator new[](unsigned int size, unsigned int tag);
-#define W3DNEWARRAY new(0x737472u)
+#define W3DNEWARRAY new('str')
 
 #include "wwstring.h"
 #include "win.h"

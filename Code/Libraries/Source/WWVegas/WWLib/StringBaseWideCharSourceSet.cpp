@@ -54,7 +54,7 @@ void StringBase<wchar_t>::set(const CharSource<wchar_t> &source)
         if (bytes > 0x7fff)
             throw 1;
         bytes = ((bytes + 3) / 4) * 4;
-        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)0x737472);
+        Header *fresh = (Header *)_STL::allocator<char>::allocate(bytes, (const void *)'str');
         fresh->ref_count = 1;
         fresh->capacity = (unsigned short)((unsigned int)(bytes - 8) / 2u);
         fresh->length = 0;

@@ -938,7 +938,7 @@ bool DX8Wrapper::Reset_Device(bool reload_assets)
 		if (m_pCleanupHook) m_pCleanupHook->ReleaseResources();
 		DynamicVBAccessClass::_Deinit();
 		DynamicIBAccessClass::_Deinit();
-		bfmeBeginResourceEnumeration(0x544558);
+		bfmeBeginResourceEnumeration('TEX');
 		BfmeResetTextureRef texture;
 		while (texture=bfmeNextResource()) texture.Release_Device_Resources();
 		bfmeBeginResourceEnumeration(0x46585348);
@@ -970,7 +970,7 @@ bool DX8Wrapper::Reset_Device(bool reload_assets)
 		} else return false;
 		bfmeResetAttempts=0;
 		if (reload_assets) {
-			bfmeBeginResourceEnumeration(0x544558);
+			bfmeBeginResourceEnumeration('TEX');
 			BfmeResetTextureRef texture;
 			while (texture=bfmeNextResource()) texture.Recreate_Device_Resources();
 			bfmeBeginResourceEnumeration(0x46585348);

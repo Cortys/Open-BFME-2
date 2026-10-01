@@ -10,7 +10,7 @@ char *nstrdup(const char *str)
 {
 	if (!str)
 		return 0;
-	char *copy = new (0x737472u) char[strlen(str) + 1];
+	char *copy = new ('str') char[strlen(str) + 1];
 	strcpy(copy, str);
 	return copy;
 }

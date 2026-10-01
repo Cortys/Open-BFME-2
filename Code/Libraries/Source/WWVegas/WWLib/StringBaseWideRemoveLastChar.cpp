@@ -51,7 +51,7 @@ void StringBase<wchar_t>::removeLastChar()
             throw 1;
         }
         int aligned = (total + 3) / 4 * 4;
-        Header *fresh = (Header *)_STL::allocator<char>::allocate(aligned, (const void *)0x737472);
+        Header *fresh = (Header *)_STL::allocator<char>::allocate(aligned, (const void *)'str');
         fresh->ref_count = 1;
         fresh->capacity = (unsigned short)((unsigned)(aligned - 8) / 2u);
         if (m_data) {
