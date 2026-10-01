@@ -46573,3 +46573,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0058916B@WeaponModeSpecialPowerUpdateBase@@QAEXHH@Z,,0x0058916B,56,Code/GameEngine/Source/GameLogic/Object/Update/Rva00589135VSlot.cpp,matched,vslot 11 of 0x00870108 same pattern as vslot 10
 ?rva005891A3@WeaponModeSpecialPowerUpdateBase@@QAEXHH@Z,,0x005891A3,56,Code/GameEngine/Source/GameLogic/Object/Update/Rva00589135VSlot.cpp,matched,vslot 12 of 0x00870108 same pattern as vslots 10-11
 ?rva005891DB@WeaponModeSpecialPowerUpdateBase@@QAEXHHH@Z,,0x005891DB,58,Code/GameEngine/Source/GameLogic/Object/Update/Rva00589135VSlot.cpp,matched,vslot 13 of 0x00870108 via BitFlags any and slot0 virtual
+?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ,,0x00589F09,258,Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdateUpdate.cpp,matched,DockUpdate update via vector bool and findObjectByID

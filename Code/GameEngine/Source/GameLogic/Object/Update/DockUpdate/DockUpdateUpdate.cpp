@@ -1,5 +1,3 @@
-// ?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ
-// partial score=0.97 date=2026-10-01
 // cl: /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /DBFME_MODULE_NO_MPO /arch:SSE /Ireference/shims/sweep
 // stlport
 // ?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ, retail 0x00589F09 258B. DockUpdate::update via rowed vector bool operator[] 0x0006BE1F plus findObjectByID 0x00049DC5 plus overlap 0x00263546 plus bitset 0x0028F59A plus clear 0x001E42F2. Donor open-bfme-1 DockUpdateUpdateBfme.cpp plus ZH DockUpdate.cpp. Caller 0x004A111E.
@@ -165,7 +163,6 @@ public:
 	}
 };
 
-// ?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ present-unmatched
 UpdateSleepTime DockUpdate::update()
 {
 	ObjectID positionIndex = m_activeDocker;
@@ -193,8 +190,7 @@ UpdateSleepTime DockUpdate::update()
 				((unsigned char *)&test)[10] |= 4;
 				if (test.rva00263546(&docker->m_flags))
 				{
-					Rva0028F59A clear(0, 0x3d);
-					((Rva001E42F2 *)docker)->rva001E42F2((const int *)&clear);
+					((Rva001E42F2 *)docker)->rva001E42F2((const int *)&Rva0028F59A(0, 0x3d));
 				}
 			}
 		}
