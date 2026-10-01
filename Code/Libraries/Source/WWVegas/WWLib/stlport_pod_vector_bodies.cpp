@@ -78,6 +78,9 @@ inline bool operator<(const BfmePod160 &x, const BfmePod160 &y) { return x.a[0] 
 struct BfmePod172 { int a[43]; };
 inline bool operator==(const BfmePod172 &x, const BfmePod172 &y) { return x.a[0] == y.a[0]; }
 inline bool operator<(const BfmePod172 &x, const BfmePod172 &y) { return x.a[0] < y.a[0]; }
+// _Construct<BfmePod172> has its own row (stlport_construct_pod172.cpp, 0x001EB9E6): declare that
+// specialization so this unit calls it rather than emitting a second, duplicate copy.
+namespace _STL { template <> __declspec(nothrow) void _Construct<BfmePod172, BfmePod172>(BfmePod172 *__p, const BfmePod172 &__val); }
 struct BfmePod180 { int a[45]; };
 inline bool operator==(const BfmePod180 &x, const BfmePod180 &y) { return x.a[0] == y.a[0]; }
 inline bool operator<(const BfmePod180 &x, const BfmePod180 &y) { return x.a[0] < y.a[0]; }
