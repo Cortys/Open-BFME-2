@@ -45061,3 +45061,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002CAA59@Rva002CA9CA@@QAE_NHPBX@Z,,0x002CAA59,68,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane sibling list 0x17C single virtual slot4
 ?rva002CA970@Rva002CA9CA@@QAEXHHPBXH@Z,,0x002CA970,90,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane sibling void list dual virtual filter 0x20
 ?rva002CAA9D@Rva002CA9CA@@QAEXHPBX0H@Z,,0x002CAA9D,93,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane sibling void triple virtual guard
+?rva002CACD7@Rva002CA9CA@@QAEMPBX@Z,,0x002CACD7,180,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane float range nested list zero default

@@ -81,11 +81,24 @@ public:
 	bool rva002CAA59(int a1, const void *a2);
 	void rva002CA970(int a1, int a2, const void *a3, int a4);
 	void rva002CAA9D(int a1, const void *a2, const void *a3, int a4);
+	float rva002CACD7(const void *arg);
 private:
 	char m_pad00[0x58];
 	int m_58;
-	char m_pad5c[0x17c - 0x5c];
+	char m_pad5c[0x110 - 0x5c];
+	unsigned char m_110;
+	char m_pad111[0x130 - 0x111];
+	float m_130;
+	char m_pad134[0x17c - 0x134];
 	ListNode *m_17c;
+};
+
+extern const float BfmeZeroRange;
+
+struct FloatHolder
+{
+	char m_pad[0x130];
+	float m_130;
 };
 
 bool Rva002CA9CA::rva002CA9CA(int id, const void *arg)
@@ -176,4 +189,39 @@ void Rva002CA9CA::rva002CAA9D(int a1, const void *a2, const void *a3, int a4)
 		}
 		cur = cur->m_next;
 	}
+}
+
+float Rva002CA9CA::rva002CACD7(const void *arg)
+{
+	if (arg == 0)
+		return BfmeZeroRange;
+	ListNode *cur = m_17c->m_next;
+	while (cur != m_17c)
+	{
+		VirtNode *obj = (VirtNode *)cur->m_data;
+		if (((Rva00507823 *)obj)->rva00507558(arg))
+		{
+			Rva002CA9CA *child = (Rva002CA9CA *)obj->v2c();
+			if (child != 0 && (child->m_110 & 2) != 0)
+			{
+				ListNode *inner = child->m_17c->m_next;
+				while (inner != child->m_17c)
+				{
+					VirtNode *iobj = (VirtNode *)inner->m_data;
+					if (((Rva00507823 *)iobj)->rva00507558(arg))
+					{
+						if (iobj->v1c())
+						{
+							void *p = iobj->v28();
+							if (p != 0)
+								return ((FloatHolder *)p)->m_130;
+						}
+					}
+					inner = inner->m_next;
+				}
+			}
+		}
+		cur = cur->m_next;
+	}
+	return BfmeZeroRange;
 }
