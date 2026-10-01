@@ -49,25 +49,25 @@ private:
 };
 
 // ?getBehaviorModules@Object@@QBEPAPAVBehaviorModule@@XZ
-BehaviorModule **Object::getBehaviorModules() const
+inline BehaviorModule **Object::getBehaviorModules() const
 {
 	return m_behaviors;
 }
 
 // ?getBodyModule@Object@@QBEPAVBodyModuleInterface@@XZ
-BodyModuleInterface *Object::getBodyModule() const
+inline BodyModuleInterface *Object::getBodyModule() const
 {
 	return m_body;
 }
 
 // ?getStealth@Object@@QBEPAVStealthUpdate@@XZ
-StealthUpdate *Object::getStealth() const
+inline StealthUpdate *Object::getStealth() const
 {
 	return m_stealth;
 }
 
 // ?getAI@Object@@QAEPAVAIUpdateInterface@@XZ
-AIUpdateInterface *Object::getAI()
+inline AIUpdateInterface *Object::getAI()
 {
 	return m_ai;
 }
@@ -95,7 +95,7 @@ void *Object::rva00313EA8() const
 // Retail 0x0004E536. Plain bit test over the status words at +0x94; the bit
 // indices callers pass run past 70, so this is the ObjectStatus mask, and the
 // same shape with the KindOf mask below is isKindOf.
-Bool Object::testStatus( ObjectStatusTypes bit ) const
+inline Bool Object::testStatus( ObjectStatusTypes bit ) const
 {
 	return ( m_statusBits[(UnsignedInt)bit >> 5] & ( 1 << ( bit & 31 ) ) ) != 0;
 }
@@ -107,3 +107,18 @@ Bool Object::isKindOf( KindOfType kind ) const
 {
 	return ( m_kindOfBits[(UnsignedInt)kind >> 5] & ( 1 << ( kind & 31 ) ) ) != 0;
 }
+
+// These are header inlines that the units including the header emit as
+// select-any copies, which plain definitions here collided with. The anchor
+// keeps this unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeObjectAccessorInlineAnchor absent-from-retail
+void _bfmeObjectAccessorInlineAnchor(Object *o)
+{
+    o->getBehaviorModules();
+    o->getBodyModule();
+    o->getStealth();
+    o->getAI();
+    o->testStatus((ObjectStatusTypes)0);
+}
+#pragma inline_depth()
