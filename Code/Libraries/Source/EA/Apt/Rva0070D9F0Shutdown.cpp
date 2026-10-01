@@ -60,8 +60,12 @@ struct StringNode0070D9F0
 	StringNode0070D9F0 *m_next;
 };
 extern int g_00E1836C;
+// g_00E1836C: matched references place it at VA 0xe1836c (zero-filled .bss).
+int g_00E1836C;
 extern StringNode0070D9F0 **g_00E18368;
 extern int g_00E18374;
+// g_00E18374: matched references place it at VA 0xe18374 (zero-filled .bss).
+int g_00E18374;
 extern EAStringC saConstantAtE18388[];
 extern EAStringC g_00E18650;
 

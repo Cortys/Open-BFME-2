@@ -12,6 +12,8 @@
 // recovered, so the body keeps its Rva name.
 // cl: /O1
 extern unsigned int g_Va00DEC3DC;
+// g_Va00DEC3DC: matched references place it at VA 0xdec3dc (zero-filled .bss).
+unsigned int g_Va00DEC3DC;
 
 bool Rva00117AC0HasFlag(void)
 {

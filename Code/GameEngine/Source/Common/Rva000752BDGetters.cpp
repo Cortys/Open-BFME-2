@@ -6,6 +6,8 @@
 // caller inlines the load (Rva007EB810Get precedent).
 
 extern int g_Va00E08D30;
+// g_Va00E08D30: matched references place it at VA 0xe08d30 (zero-filled .bss).
+int g_Va00E08D30;
 
 int Rva000752BDGet(void)
 {
@@ -15,6 +17,8 @@ int Rva000752BDGet(void)
 // ?Rva000752C3Get@@YAHXZ @ 0x000752C3 (6B): same shape over 0x00E08CA8.
 
 extern int g_Va00E08CA8;
+// g_Va00E08CA8: matched references place it at VA 0xe08ca8 (zero-filled .bss).
+int g_Va00E08CA8;
 
 int Rva000752C3Get(void)
 {
@@ -24,6 +28,8 @@ int Rva000752C3Get(void)
 // ?Rva000752C9Get@@YAHXZ @ 0x000752C9 (6B): same shape over 0x00E08CF4.
 
 extern int g_Va00E08CF4;
+// g_Va00E08CF4: matched references place it at VA 0xe08cf4 (zero-filled .bss).
+int g_Va00E08CF4;
 
 int Rva000752C9Get(void)
 {
@@ -33,6 +39,8 @@ int Rva000752C9Get(void)
 // ?Rva000752CFGet@@YAHXZ @ 0x000752CF (6B): same shape over 0x00E08D20.
 
 extern int g_Va00E08D20;
+// g_Va00E08D20: matched references place it at VA 0xe08d20 (zero-filled .bss).
+int g_Va00E08D20;
 
 int Rva000752CFGet(void)
 {

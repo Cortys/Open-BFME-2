@@ -64,5 +64,8 @@ int Rva007D85C0::set(FilterModes mode) {
  return true;
 }
 
+// ScreenOpaqueShader: matched references place it at VA 0xdb6228 (retail .data initial value 0x11581bu).
+unsigned int ScreenOpaqueShader = 0x11581bu;
 
-
+// ScreenStateChanges: matched references place it at VA 0xdeda64 (zero-filled .bss).
+unsigned int ScreenStateChanges;

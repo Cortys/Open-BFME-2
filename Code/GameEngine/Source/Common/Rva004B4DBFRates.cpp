@@ -15,6 +15,8 @@ public:
 
 extern GameLogic *TheGameLogic;
 extern int g_00DBA4E8;
+// g_00DBA4E8: matched references place it at VA 0xdba4e8 (retail .data initial value 30).
+int g_00DBA4E8 = 30;
 
 struct SubA004B4DBF
 {

@@ -8,6 +8,8 @@
 // ?Rva0001D1C0Get@@YAHXZ @ 0x0001D1C0 (6B) over 0x00DA6CC8.
 
 extern int g_Va00DA6CC8;
+// g_Va00DA6CC8: matched references place it at VA 0xda6cc8 (retail .data initial value 4096).
+int g_Va00DA6CC8 = 4096;
 
 int Rva0001D1C0Get(void)
 {
@@ -39,6 +41,8 @@ int Rva00020E90Get(void)
 // ?Rva0003C0F0Get@@YAHXZ @ 0x0003C0F0 (6B) over 0x00DE08AC.
 
 extern int g_Va00DE08AC;
+// g_Va00DE08AC: matched references place it at VA 0xde08ac (zero-filled .bss).
+int g_Va00DE08AC;
 
 int Rva0003C0F0Get(void)
 {
@@ -81,6 +85,8 @@ int Rva000A8F36Get(void)
 // ?Rva000EDF40Get@@YAHXZ @ 0x000EDF40 (6B) over 0x00DEDA24.
 
 extern int g_Va00DEDA24;
+// g_Va00DEDA24: matched references place it at VA 0xdeda24 (zero-filled .bss).
+int g_Va00DEDA24;
 
 int Rva000EDF40Get(void)
 {
@@ -134,6 +140,8 @@ int Rva006CD220Get(void)
 // ?Rva006C53B0Get@@YAHXZ @ 0x006C53B0 (6B) over 0x00E0C1F4.
 
 extern int g_Va00E0C1F4;
+// g_Va00E0C1F4: matched references place it at VA 0xe0c1f4 (zero-filled .bss).
+int g_Va00E0C1F4;
 
 int Rva006C53B0Get(void)
 {

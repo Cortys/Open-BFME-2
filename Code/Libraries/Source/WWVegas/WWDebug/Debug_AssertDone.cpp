@@ -50,6 +50,8 @@ extern DebugCriticalSection g_bfmeCsDWC;
 // Raised whenever the assert dialog was answered with anything but
 // retry/yes; its reader is not recovered.
 extern bool g_debugAssertDialogAnswered;
+// g_debugAssertDialogAnswered: matched references place it at VA 0xde089d (zero-filled .bss).
+bool g_debugAssertDialogAnswered;
 
 void *DebugAllocMemory(unsigned int numBytes);
 int __stdcall EnumThreadWndProc(void *window, long param);

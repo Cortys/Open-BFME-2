@@ -17,7 +17,11 @@ public:
 extern GameLogic *TheGameLogic;
 extern _STL::vector<BfmeE8> g_00E06654;
 extern int g_00E06650;
+// g_00E06650: matched references place it at VA 0xe06650 (zero-filled .bss).
+int g_00E06650;
 extern int g_00E06660;
+// g_00E06660: matched references place it at VA 0xe06660 (zero-filled .bss).
+int g_00E06660;
 
 int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 

@@ -59,6 +59,8 @@ int Rva0011C450Get(void)
 // Follows int3 (prev CC), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
 extern int G009EDA9C;
+// G009EDA9C: matched references place it at VA 0xdeda9c (zero-filled .bss).
+int G009EDA9C;
 int Rva0011D200Get(void)
 {
 	return G009EDA9C;
@@ -68,6 +70,8 @@ int Rva0011D200Get(void)
 // Follows int3 (prev CC), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
 extern int G009EDAA0;
+// G009EDAA0: matched references place it at VA 0xdedaa0 (zero-filled .bss).
+int G009EDAA0;
 int Rva0011D210Get(void)
 {
 	return G009EDAA0;
@@ -75,6 +79,8 @@ int Rva0011D210Get(void)
 
 // ?Rva0011D220Get@@YAHXZ @ 0x0011D220 (6B): returns global at 0x9EDAA4.
 extern int G009EDAA4;
+// G009EDAA4: matched references place it at VA 0xdedaa4 (zero-filled .bss).
+int G009EDAA4;
 int Rva0011D220Get(void)
 {
 	return G009EDAA4;
@@ -82,6 +88,8 @@ int Rva0011D220Get(void)
 
 // ?Rva0011D230Get@@YAHXZ @ 0x0011D230 (6B): returns global at 0x9EDAA8.
 extern int G009EDAA8;
+// G009EDAA8: matched references place it at VA 0xdedaa8 (zero-filled .bss).
+int G009EDAA8;
 int Rva0011D230Get(void)
 {
 	return G009EDAA8;
@@ -89,6 +97,8 @@ int Rva0011D230Get(void)
 
 // ?Rva0011D240Get@@YAHXZ @ 0x0011D240 (6B): returns global at 0x9EDAAC.
 extern int G009EDAAC;
+// G009EDAAC: matched references place it at VA 0xdedaac (zero-filled .bss).
+int G009EDAAC;
 int Rva0011D240Get(void)
 {
 	return G009EDAAC;

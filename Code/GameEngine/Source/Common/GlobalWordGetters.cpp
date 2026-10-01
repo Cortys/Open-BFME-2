@@ -11,6 +11,8 @@
 // Opaque names witness only the address and the global.
 
 extern unsigned short g_Va00DB62D4;
+// g_Va00DB62D4: matched references place it at VA 0xdb62d4 (retail .data initial value 5000).
+unsigned short g_Va00DB62D4 = 5000;
 
 // ?Rva00139090Get@@YAGXZ @ 0x00139090 (7B) over 0x00DB62D4.
 // CC-island (8xCC before and after), Ghidra-7, direct E8 caller at

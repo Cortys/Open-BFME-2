@@ -69,6 +69,8 @@ extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 extern const char g_Rva0107301CEmptyString[];
 extern int g_00E01E04;
+// g_00E01E04: matched references place it at VA 0xe01e04 (zero-filled .bss).
+int g_00E01E04;
 extern "C" int __cdecl fprintf(void *stream, const char *format, ...);
 int __cdecl GetGameLogicRandomValue(int a, int b, char *c, int d);
 class __declspec(novtable) Rva0033FE65 : public State

@@ -60,6 +60,8 @@ extern "C" char Rva003AE2CF_v0;
 extern "C" char s_slot3E4first;
 extern "C" char Rva003AE2CF_v10;
 extern char g_00C1D3B0;
+// g_00C1D3B0: matched references place it at VA 0xc1d3b0 (retail .rdata value -3).
+char g_00C1D3B0 = -3;
 
 struct Rva005646BCSub
 {

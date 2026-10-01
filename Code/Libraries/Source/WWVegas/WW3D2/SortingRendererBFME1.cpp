@@ -485,6 +485,8 @@ extern unsigned TheBoxTextureDirtyMask;
 extern VertexMaterialClass *g_00DEE5DC;
 extern struct IDirect3DDevice8 *g_d3dDevice;
 extern unsigned g_00DEDA4C;
+// g_00DEDA4C: matched references place it at VA 0xdeda4c (zero-filled .bss).
+unsigned int g_00DEDA4C;
 extern unsigned g_00DEDA98;
 
 void Rva0012D4D0Apply(RenderStateStruct &render_state)

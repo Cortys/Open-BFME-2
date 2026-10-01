@@ -57,6 +57,8 @@ extern BfmeRenderDevice *TheBfmeRenderDevice; // 0x00DEDA38
 extern Int BfmeRenderWidth; // 0x00DB5FD4
 extern Int BfmeRenderHeight; // 0x00DB5FD8
 extern Int BfmeRenderBitDepth; // 0x00DB5FDC
+// BfmeRenderBitDepth: matched references place it at VA 0xdb5fdc (retail .data initial value 32).
+int BfmeRenderBitDepth = 32;
 extern Bool BfmeRenderWindowed; // 0x00DEDA06
 
 // the WW3D forwarder lives at 0x00116FF0 (5B thunk, already claimed);

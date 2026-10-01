@@ -5,6 +5,8 @@
 extern "C" __declspec(dllimport) int __stdcall GetLocaleInfoW(unsigned long, unsigned long, unsigned short *, int);
 extern unsigned short g_00E06354[5];
 extern unsigned char g_00E0635E;
+// g_00E0635E: matched references place it at VA 0xe0635e (zero-filled .bss).
+unsigned char g_00E0635E;
 unsigned short *Rva0057A272Get(void)
 {
 	unsigned short *p = g_00E06354;

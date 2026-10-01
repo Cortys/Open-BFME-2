@@ -68,8 +68,12 @@ struct Device
 extern Device *ScreenDevice;
 extern unsigned ScreenTextureStageStates[8][32];
 extern bool ScreenSnapshot;
+// ScreenSnapshot: matched references place it at VA 0xdec3fd (zero-filled .bss).
+bool ScreenSnapshot;
 extern unsigned number_of_DX8_calls;
 extern unsigned ScreenTextureStageStateChanges;
+// ScreenTextureStageStateChanges: matched references place it at VA 0xdeda68 (zero-filled .bss).
+unsigned int ScreenTextureStageStateChanges;
 
 class DX8Wrapper
 {

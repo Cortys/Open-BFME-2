@@ -19,6 +19,8 @@ extern T_007ea120 *g_Va0130A588;
 extern unsigned char g_Va0130A58D;
 extern unsigned char g_Va0130A58C;
 extern int vftable_01129CB4;
+// vftable_01129CB4: matched references place it at VA 0xce1514 (retail .rdata value 10846896).
+int vftable_01129CB4 = 10846896;
 
 void Rva007EB830Release(void);
 void Rva007F0060();

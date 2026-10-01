@@ -6,8 +6,12 @@
 extern class Rva0025CEEFHost *g_009FE720;
 extern "C" float INV;
 extern float g_00BC7838;
+// g_00BC7838: matched references place it at VA 0xbc7838 (retail .rdata value 0.05f).
+float g_00BC7838 = 0.05f;
 extern float g_Va00BBB8D8;
 extern float g_00BC4DD8;
+// g_00BC4DD8: matched references place it at VA 0xbc4dd8 (retail .rdata value 0.2f).
+float g_00BC4DD8 = 0.2f;
 
 class AIPlayer
 {

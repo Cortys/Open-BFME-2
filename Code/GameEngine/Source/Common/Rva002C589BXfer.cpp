@@ -113,6 +113,8 @@ public:
 };
 
 extern unsigned int g_00DFEFC0;
+// g_00DFEFC0: matched references place it at VA 0xdfefc0 (zero-filled .bss).
+unsigned int g_00DFEFC0;
 
 class Rva002C589B
 {

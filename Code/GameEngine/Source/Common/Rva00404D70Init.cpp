@@ -8,6 +8,8 @@
 extern float g_Va00BBB8D8;
 extern float g_Va00BC2428;
 extern float g_00BC7A54;
+// g_00BC7A54: matched references place it at VA 0xbc7a54 (retail .rdata value 5e+02f).
+float g_00BC7A54 = 5e+02f;
 
 struct BfmeStringRecord00404BF3
 {

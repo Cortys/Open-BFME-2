@@ -9,6 +9,8 @@
 // BFME2 address build.py fills in from retail.
 
 extern int Gen00BE4324;
+// Gen00BE4324: matched references place it at VA 0xbe4324 (retail .rdata value 9048317).
+int Gen00BE4324 = 9048317;
 
 class Rva000D1930
 {

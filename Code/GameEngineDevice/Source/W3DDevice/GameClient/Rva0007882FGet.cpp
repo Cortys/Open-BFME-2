@@ -17,6 +17,8 @@ public:
 };
 
 extern int g_009E1FAC;
+// g_009E1FAC: matched references place it at VA 0xde1fac (zero-filled .bss).
+int g_009E1FAC;
 extern FileSystem *TheFileSystem;
 
 class GameFileClass

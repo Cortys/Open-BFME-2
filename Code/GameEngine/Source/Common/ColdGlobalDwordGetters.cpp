@@ -8,6 +8,8 @@
 // address and the global. The /GX- line matches the sibling TUs (verified
 // frameless six-byte shape).
 extern int g_Va00DEC3CC;
+// g_Va00DEC3CC: matched references place it at VA 0xdec3cc (zero-filled .bss).
+int g_Va00DEC3CC;
 
 // ?Rva00083B7BGet@@YAHXZ @ 0x00083b7b (6B) over 0x00DEC3CC.
 // Follows a ret-with-pop (prev C2), no .rdata vtable slot, no direct callers,

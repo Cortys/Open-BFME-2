@@ -10,6 +10,8 @@ public:
 
 extern GlobalData *TheWritableGlobalData;
 extern float g_00BCF9B0;
+// g_00BCF9B0: matched references place it at VA 0xbcf9b0 (retail .rdata value -1e+02f).
+float g_00BCF9B0 = -1e+02f;
 
 class Rva002E0C2B
 {

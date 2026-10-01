@@ -22,6 +22,8 @@ float Rva004647D1Get(void)
 }
 
 extern float g_Va00BD2F58;
+// g_Va00BD2F58: matched references place it at VA 0xbd2f58 (retail .rdata value 3.4028235e+38f).
+float g_Va00BD2F58 = 3.4028235e+38f;
 
 // ?Rva00167F59Get@@YAMXZ @ 0x00167f59 (7B) over 0x00BD2F58 (FLT_MAX).
 // Follows a ret (prev C3); carried by 19 .rdata vtable slots, adjacent to
@@ -32,6 +34,8 @@ float Rva00167F59Get(void)
 }
 
 extern float g_Va00BD2F5C;
+// g_Va00BD2F5C: matched references place it at VA 0xbd2f5c (retail .rdata value -1.0f).
+float g_Va00BD2F5C = -1.0f;
 
 // ?Rva00167F60Get@@YAMXZ @ 0x00167f60 (7B) over 0x00BD2F5C (-1.0f).
 // Adjacent after Rva00167F59Get (pair proves both boundaries); carried by

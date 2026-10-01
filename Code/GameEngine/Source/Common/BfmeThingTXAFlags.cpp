@@ -11,7 +11,11 @@
 // (GlobalFlagClearers precedent); the slot test uses its proven meaning.
 // No // cl: line (defaults first; split on mismatch).
 extern unsigned char g_Va00DEC3C8;
+// g_Va00DEC3C8: matched references place it at VA 0xdec3c8 (zero-filled .bss).
+unsigned char g_Va00DEC3C8;
 extern unsigned char g_Va00DEC3C9;
+// g_Va00DEC3C9: matched references place it at VA 0xdec3c9 (zero-filled .bss).
+unsigned char g_Va00DEC3C9;
 
 void Rva00117A60SetFlag(void)
 {

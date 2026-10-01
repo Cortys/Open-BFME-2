@@ -7,6 +7,8 @@ public:
 };
 
 extern unsigned g_Va00DDEB24;
+// g_Va00DDEB24: matched references place it at VA 0xddeb24 (zero-filled .bss).
+unsigned int g_Va00DDEB24;
 
 void __cdecl rva007B6880()
 {
@@ -42,7 +44,11 @@ private:
 };
 
 extern unsigned g_Va009EE91C;
+// g_Va009EE91C: matched references place it at VA 0xdee91c (zero-filled .bss).
+unsigned int g_Va009EE91C;
 extern unsigned g_Va009EE938;
+// g_Va009EE938: matched references place it at VA 0xdee938 (zero-filled .bss).
+unsigned int g_Va009EE938;
 
 // ?rva007B7050@@YAXXZ @ 0x007B7050 (10B). Global Free_String thunk: ecx=&g_Va009EE91C then tail-jmp to rowed ?Free_String@StringClass@@AAEXXZ (0x00610A40). No callers. Prev is our 0x007B6C9B row in this TU. Honest address name.
 void __cdecl rva007B7050()
@@ -68,6 +74,8 @@ public:
 };
 
 extern unsigned g_Va009EE920;
+// g_Va009EE920: matched references place it at VA 0xdee920 (zero-filled .bss).
+unsigned int g_Va009EE920;
 
 // ?rva007B7060@@YAXXZ @ 0x007B7060 (10B). Global VectorClass dtor thunk: ecx=&g_Va009EE920 then tail-jmp to rowed ??1?$VectorClass@UTextureStatisticsStruct@@@@UAE@XZ (0x0012A4D0). No callers. Prev 0x007B7050 next 0x007B7070 in this TU. Honest address name.
 void __cdecl rva007B7060()

@@ -23,6 +23,8 @@ extern unsigned int g_Va00DE1F14;
 // g_Va00DE1F14: matched references place it at VA 0xde1f14 (zero-filled .bss).
 unsigned int g_Va00DE1F14;
 extern unsigned int g_Va00DE1FC4;
+// g_Va00DE1FC4: matched references place it at VA 0xde1fc4 (zero-filled .bss).
+unsigned int g_Va00DE1FC4;
 extern unsigned int g_Va00DE1FF0;
 // g_Va00DE1FF0: matched references place it at VA 0xde1ff0 (zero-filled .bss).
 unsigned int g_Va00DE1FF0;

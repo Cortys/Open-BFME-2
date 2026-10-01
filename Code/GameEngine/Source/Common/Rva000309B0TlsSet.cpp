@@ -6,6 +6,8 @@
 // thread's heap id, callers at 0x0062265B 0x0062214F load ecx then call.
 // Honest address-derived name: owner unproven. No STL.
 extern unsigned long g_Va00DB35A4;
+// g_Va00DB35A4: matched references place it at VA 0xdb35a4 (retail .data initial value 0xffffffffu).
+unsigned long g_Va00DB35A4 = 0xffffffffu;
 extern "C" __declspec(dllimport) int __stdcall TlsSetValue(unsigned long index, void *value);
 extern "C" __declspec(dllimport) void *__stdcall TlsGetValue(unsigned long index);
 

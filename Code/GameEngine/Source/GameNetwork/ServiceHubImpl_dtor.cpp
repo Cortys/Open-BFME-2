@@ -19,6 +19,8 @@ struct Gen_007e86c0
 };
 
 extern int vftable_01129CB0;
+// vftable_01129CB0: matched references place it at VA 0xce1510 (retail .rdata value 10846432).
+int vftable_01129CB0 = 10846432;
 extern int vftable_01129AF4;
 // vftable_01129AF4: matched references place it at VA 0xce1354 (retail .rdata value 10843760).
 int vftable_01129AF4 = 10843760;

@@ -14,6 +14,8 @@ struct RGBColor
 };
 
 extern float g_00BC2900;
+// g_00BC2900: matched references place it at VA 0xbc2900 (retail .rdata value 255.0f).
+float g_00BC2900 = 255.0f;
 extern float g_Va007C26F0;
 
 _STL::basic_ostream<char, _STL::char_traits<char> > &Rva0055C0E1Write(

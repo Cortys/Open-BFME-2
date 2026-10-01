@@ -7,8 +7,14 @@
 // je IAT timeGetTime mov [0xDE6180] eax ret call sub add; caller 0x00062A2D.
 extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
 extern unsigned char g_00DB4CE0;
+// g_00DB4CE0: matched references place it at VA 0xdb4ce0 (retail .data initial value 1).
+unsigned char g_00DB4CE0 = 1;
 extern unsigned long g_00DE6180;
+// g_00DE6180: matched references place it at VA 0xde6180 (zero-filled .bss).
+unsigned long g_00DE6180;
 extern unsigned long g_00DE617C;
+// g_00DE617C: matched references place it at VA 0xde617c (zero-filled .bss).
+unsigned long g_00DE617C;
 
 void __cdecl Rva000A8F64Set(bool enabled)
 {

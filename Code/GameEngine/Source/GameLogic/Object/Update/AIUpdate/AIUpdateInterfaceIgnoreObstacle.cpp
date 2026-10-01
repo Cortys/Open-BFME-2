@@ -11,6 +11,8 @@
 // macros, which reordered the loads. Callers 0x00269CEA 0x0026A2DE 0x0026BB26.
 
 extern unsigned char g_00E03745;
+// g_00E03745: matched references place it at VA 0xe03745 (zero-filled .bss).
+unsigned char g_00E03745;
 extern void *g_00DFEFF0;
 extern "C" void __cdecl fprintf(void *sink, const char *format, ...);
 

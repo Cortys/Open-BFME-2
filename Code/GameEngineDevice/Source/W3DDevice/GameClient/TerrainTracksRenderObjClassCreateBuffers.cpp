@@ -69,6 +69,8 @@ public:
 	static VertexMaterialClass *Get_Preset(PresetType t);
 };
 extern Bool g_trackDirty;
+// g_trackDirty: matched references place it at VA 0xde207c (zero-filled .bss).
+unsigned char g_trackDirty;
 class TerrainTracksRenderObjClass
 {
 public:

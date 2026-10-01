@@ -32,6 +32,8 @@ extern BfmeFVFDescriptor bfmeDynamicFVFDescs[15];
 extern bool BfmeDynamicSortingVertexArrayInUse;
 extern BfmeDynamicVB *bfmeSortingVB;
 extern unsigned short bfmeSortingVBSize;
+// bfmeSortingVBSize: matched references place it at VA 0xdf2a90 (zero-filled .bss).
+unsigned short bfmeSortingVBSize;
 extern unsigned short BfmeDynamicSortingVertexArrayOffset;
 
 void DynamicVBAccessClass::_Deinit()

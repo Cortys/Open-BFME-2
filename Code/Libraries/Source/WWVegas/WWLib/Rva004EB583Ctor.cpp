@@ -5,6 +5,8 @@
 #include <vector>
 struct BfmeE16 { float x, y, z, w; };
 extern int g_00E044A0;
+// g_00E044A0: matched references place it at VA 0xe044a0 (zero-filled .bss).
+int g_00E044A0;
 class Rva004EB583
 {
 public:
