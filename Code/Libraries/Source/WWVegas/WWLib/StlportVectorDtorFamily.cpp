@@ -115,3 +115,12 @@ template _STL::vector<Rva00414BDBElement>::~vector();
 struct RvaPair0039973B { AsciiString m_key; int m_value; public: ~RvaPair0039973B(); };
 template _STL::vector<RvaPair0039973B>::~vector();
 
+// ??1?$vector@URvaPair001D9F62@@V?$allocator@URvaPair001D9F62@@@_STL@@@_STL@@QAE@XZ @0x001D9F62 63B.
+// Same 63B Destroy-plus-free shape under /O1 /GX (EH states 0/-1): destroys the range
+// through the rowed 8-byte AsciiString-keyed DestroyPairs at 0x32C0CA then frees
+// via 0x30830; landing unblocks 0x001DA2D5 and 0x001DAD68. Sits between TailRecord
+// reserve 0x001D9E29 and overflow 0x001D9FAC; 8-byte stride plus key dtor are all
+// this body observes so the honest RvaPair address name stands in.
+struct RvaPair001D9F62 { AsciiString m_key; int m_value; public: ~RvaPair001D9F62(); };
+template _STL::vector<RvaPair001D9F62>::~vector();
+
