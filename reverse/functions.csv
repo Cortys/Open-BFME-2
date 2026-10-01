@@ -45955,3 +45955,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva000A8F64Set@@YAX_N@Z,,0x000A8F64,52,Code/GameEngine/Source/Common/Rva000A8F64Set.cpp,matched,timer flag with timeGetTime record and accumulate
 ??0Rva000A8684@@QAE@XZ,,0x000A8684,74,Code/GameEngine/Source/Common/Rva000A8684Ctor.cpp,matched,honest ctor AsciiString int UnicodeString five bytes via EH
 ?Rva001D9BA4Copy@@YAPAVRva000A8CAE@@PAV1@00@Z,,0x001D9BA4,47,Code/GameEngine/Source/Common/Rva000A8CAEAssign.cpp,matched,copy loop for Rva000A8CAE via rowed operator
+??1Rva002BF6D6@@QAE@XZ,,0x002BF6D6,57,Code/Libraries/Source/WWVegas/WWLib/Rva002BF6D6Dtor.cpp,matched,leaf dtor hashtable clear plus bucket free EHs layout
