@@ -45982,3 +45982,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva003A5D76Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABM2@Z,,0x003A5D76,42,Code/GameEngine/Source/Common/Rva003A5D76Write.cpp,matched,guarded float write via rowed Rva003A5D34Write
 ??1Rva0022366C@@QAE@XZ,,0x0022366C,57,Code/GameEngine/Source/GameClient/Rva0022366CDtor.cpp,matched,Hash-table dtor via rowed clear 0x003A2A41 and free at +4
 ??0Rva0022300F@@QAE@ABV0@@Z,,0x00223226,61,Code/GameEngine/Source/GameClient/Rva0022300FCopy.cpp,matched,copy over vector at +0 and wide at +0xC via rowed vector and StringBase
+??0Rva00431920@@QAE@PAXHPAUICoord2D@@HH@Z,,0x00431920,53,Code/GameEngine/Source/Common/Rva00431920.cpp,matched,unlock ctor vtable g_00C3C994 unblocks 0x00431AEC
