@@ -7,6 +7,8 @@
 // 0x000365F0, EH 1), then tail floats at +0x20/+0x24/+0x28 and words at
 // +0x04/+0x08 zeroed. Same ModuleData EH recipe as ProductionUpdateModuleDataCtor.
 // Unblocks 0x0021294A and 0x0021219E.
+extern "C" const void *const vtbl_00837D78[];  // ??_7Rva003FD789@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00837D78=??_7Rva003FD789@@6B@")
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 template <typename T> class StringBase
@@ -30,9 +32,9 @@ public:
 class Rva003FD789 : public EmptyBase
 {
 public:
-	virtual ~Rva003FD789();
 	Rva003FD789(const StringBase<char> &src);
 private:
+	const void *m_vtable; // +0, retail 0x00837D78 (explicit so no vtable emitted)
 	int volatile m_04;
 	float volatile m_08;
 	StringBase<char> m_0c;
@@ -47,7 +49,8 @@ private:
 };
 
 Rva003FD789::Rva003FD789(const StringBase<char> &src)
-	: m_10(false)
+	: m_vtable(vtbl_00837D78)
+	, m_10(false)
 	, m_11(false)
 	, m_14(0.0f)
 	, m_18(0)
