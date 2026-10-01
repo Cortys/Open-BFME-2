@@ -45592,3 +45592,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva004D6BB8@@YAMM@Z,,0x004D6BB8,21,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,degrees wrapper over rowed 0x004D6B6E times 180.0f / PI; caller 0x0025EDBA
 ?Rva004D6B3A@@YAMM@Z,,0x004D6B3A,52,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,12 / tan(value / 2) with 1e10 zero fallback via _tan thunk; half-angle local fixes the fld order; callers 0x0025EDA9 0x004D6BB1
 ?Rva004D6B9D@@YAMM@Z,,0x004D6B9D,27,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,degrees wrapper over 0x004D6B3A times PI / 180.0f; caller 0x0025ED98
+?rva002DA153@Rva002DA153@@QAEMXZ,,0x002DA153,121,Code/GameEngine/Source/Common/Rva002DA153Scale.cpp,matched,mode-gated float scale; -1 test written as equality per ucomiss jp branch fixes the banked partial; call sites 0x00059B4C 0x0005C974

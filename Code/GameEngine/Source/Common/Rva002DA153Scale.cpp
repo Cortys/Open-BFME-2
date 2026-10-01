@@ -1,12 +1,19 @@
-// ?rva002DA153@Rva002DA153@@QAEMXZ
-// partial score=0.95 date=2026-09-30
-// ?rva002DA153@Rva002DA153@@QAEMXZ
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /MD /arch:SSE
 // ?rva002DA153@Rva002DA153@@QAEMXZ @0x002DA153 121B: float getter with mode branches.
-// Evidence: TheGameLogic findObjectByID row 0x49DC5, TheGameClient virtual 0x40, BfmeZeroRange, g_00BBB9AC -1.0f, callers 0x59AD0 0x5C931, neighbour stlport_stringtailrecord144 /O1.
+// Evidence: TheGameLogic findObjectByID row 0x49DC5, TheGameClient virtual 0x40,
+// BfmeZeroRange, g_00BBB9AC -1.0f, call sites 0x00059B4C and 0x0005C974,
+// neighbour stlport_stringtailrecord144 /O1.
+// Mode 1 asks the client slot 0x40 for the id at +0x34 and yields 0 when its
+// byte +0x44A is clear; mode 2 yields 0 when the logic object's bit 20 at
+// +0x98 is set. Otherwise a -1 scale at +0x28 inherits the +0x08 owner's
+// +0x1C value times +0x2C, else +0x2C times +0x28.
+// Target evidence: ucomiss/lahf/test ah,44h/jp sends the not-equal case to
+// the +0x2C * +0x28 tail, so the -1 test is written as equality.
 
-typedef int ObjectID;
+enum ObjectID
+{
+	INVALID_ID = 0
+};
 
 class Object
 {
@@ -70,7 +77,6 @@ private:
 	int m_38;
 };
 
-// ?rva002DA153@Rva002DA153@@QAEMXZ present-unmatched
 float Rva002DA153::rva002DA153()
 {
 	int t = m_38 - 1;
@@ -100,8 +106,7 @@ float Rva002DA153::rva002DA153()
 				return BfmeZeroRange;
 		}
 	}
-	float a = m_28;
-	if (a != g_00BBB9AC)
+	if (m_28 == g_00BBB9AC)
 	{
 		if (m_08 != 0)
 			return m_08->m_1C * m_2C;
