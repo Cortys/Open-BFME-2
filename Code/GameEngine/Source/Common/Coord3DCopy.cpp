@@ -11,6 +11,7 @@ class Coord3D : public Coord3DBase
 {
 public:
     Coord3D &operator=(const Coord3DBase &that);
+    Coord3D &rva006016AC(const Coord3D &that);
 };
 void __cdecl Rva0060173ACopy(Coord3D *dst, const Coord3DBase &src)
 {
@@ -32,4 +33,15 @@ Coord3D *__cdecl Rva0060174CCopy(const Coord3D *first, const Coord3D *last, Coor
     for (; src != last; ++src, ++dst)
         Rva0060173ACopy(dst, *(const Coord3DBase *)src);
     return dst;
+}
+// ?rva006016AC@Coord3D@@QAEAAV1@ABV1@@Z @0x006016AC 29B: 12B self-checked copy, caller 0x00601797 loops 0x0C stride.
+Coord3D &Coord3D::rva006016AC(const Coord3D &that)
+{
+    if (&that != this)
+    {
+        x = that.x;
+        y = that.y;
+        z = that.z;
+    }
+    return *this;
 }
