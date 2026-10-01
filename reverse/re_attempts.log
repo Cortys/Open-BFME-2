@@ -4576,3 +4576,4 @@ FUN_0097d922	0x0057D922	255	blocked	complex EH AsciiString MapCache strrchr Unic
 ?addPropType@W3DPropBuffer@@QAEHABVAsciiString@@_N@Z	0x000EE822	223	partial	imul-vs-lea for *24 plus mov-vs-movss sphere copy plus ebx-vs-edi arg reg t=30 model=muse-18 score=0.91 stash=reverse/attempts/0x000ee822.cpp
 ?rva005917DB@NetPacket@@QAEEPAVNetCommandRef@@@Z	0x005917DB	177	partial	single SIB byte lea eax,[ebx+eax+5] vs [eax+ebx+5] (8D440305 vs 8D441805) after 6 variants t=15 model=muse-18 score=0.99 stash=reverse/attempts/0x005917db.cpp
 FUN_0072bd25	0x0032BD25	63	blocked	map<int-int> _M_find node+0x14/0x18 used as 0x80 array bounds; value-type mismatch needs ICF or larger struct; no donor t=25 model=muse-spark
+?rva0039BCF8@Rva0039BCF8@@QAEPAPAXPAX@Z	0x0039BCF8	48	partial	pure ecx-edx-eax round-robin mirror same 48B 18 insns 6 variants O1 O2 void-vs-iterator v-vs-direct t=28 model=muse-16 score=0.92 stash=reverse/attempts/0x0039bcf8.cpp
