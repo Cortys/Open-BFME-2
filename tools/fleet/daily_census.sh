@@ -11,6 +11,13 @@
 #   bash tools/fleet/daily_census.sh             # from any checkout of the repo
 #   bash tools/fleet/daily_census.sh --no-push   # record in build/wt_link only (testing)
 #
+# The census tools come from origin/master (the checkout below), so a runner
+# never records with a stale copy. Every row names its rules
+# (link_census.RULES); until the history holds the re-baseline row of the
+# current rules (tools/census_rebaseline.py, run once by the owner with every
+# publisher paused), link_census.py refuses to record and this script exits 1
+# without committing.
+#
 # The full build's gate may be red for reasons unrelated to linking (a baseline
 # that improved and was not lowered yet); the census only needs the objects, so
 # it continues whenever every object exists and compiled, and stops if any is

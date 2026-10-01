@@ -183,8 +183,13 @@ and `tools/link_census.py` are the measure, under Open-BFME-1's rules: a
 COMDAT copy loses when retail's own bytes prove it wrong (else when it differs
 from the first copy in link order; never by majority, STLport included), and a
 file fails when a name it touches resolves to a kept definition proven not
-retail's (`wrong_selected`). These tools steer the work, reading the census's
-index (`build/link_census/link_index.pkl`; copy the daily census's from
+retail's (`wrong_selected`). It counts only objects proven current by
+Open-BFME-1's census receipts (include search inventory or a witnessed
+compile) and records nothing if objects, inputs or tools move during the run.
+Each `link_census_history.csv` row names its `rules`; a rule change is
+recorded once, by `tools/census_rebaseline.py`, never by hand. These tools
+steer the work, reading the census's index
+(`build/link_census/link_index.pkl`; copy the daily census's from
 `build/wt_link/`):
 
 - `python3 tools/link_rank.py` ranks blockers by the matched bytes they hold
