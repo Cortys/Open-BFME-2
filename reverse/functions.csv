@@ -45228,3 +45228,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000B3C61@Rva000B3C61@@QAEXH@Z,,0x000B3C61,110,Code/GameEngine/Source/Common/Rva000B3C61.cpp,matched,neighbours 0x000B3A68 array at 0x110 stride 28 release plus float zero fold
 ?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536AF5,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock
 ?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00536981,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock
+?Update_Sub_Object_Transforms@RenderObjClass@@UAEXXZ,,0x000B3FD0,1,Code/Libraries/Source/WWVegas/WW3D2/RenderObjUpdateSubObjectTransforms.cpp,matched,Target vftable 0x00BD2F68 slot 41; one-byte RET folds with StringBase validate; BFME1 default is empty
