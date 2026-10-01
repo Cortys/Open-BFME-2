@@ -33,6 +33,7 @@ struct Rva00072FE6 {
     return it;
   }
   void rva0007300F(iterator first, iterator last);
+  unsigned int rva000733D8(const int &key);
 };
 void Rva00072FE6::rva0007300F(iterator first, iterator last) {
   typedef V VV;
@@ -42,4 +43,13 @@ void Rva00072FE6::rva0007300F(iterator first, iterator last) {
   else
     while (first != last)
       ((Tree*)this)->erase(first++);
+}
+unsigned int Rva00072FE6::rva000733D8(const int &key) {
+  typedef _STL::pair<const int, int> V2;
+  typedef _STL::_Rb_tree<int, V2, _STL::_Select1st<V2>, _STL::less<int>, _STL::allocator<V2> > TreeIntInt;
+  typedef _STL::_Rb_tree_iterator<V2, _STL::_Nonconst_traits<V2> > IterIntInt;
+  _STL::pair<IterIntInt, IterIntInt> p = ((TreeIntInt*)this)->equal_range(key);
+  unsigned int n = _STL::distance(*(iterator*)&p.first, *(iterator*)&p.second);
+  rva0007300F(*(iterator*)&p.first, *(iterator*)&p.second);
+  return n;
 }

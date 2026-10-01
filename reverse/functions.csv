@@ -46395,3 +46395,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva0051ED0A@@QAE@ABV0@@Z,,0x0051ED0A,71,Code/GameEngine/Source/Common/Rva0051ED0ACopy.cpp,matched,caller 0x0051F87B member copy via PrereqUnitRec base AsciiString alloc nested uninit
 ?rva0031BE58@Rva0031BE07@@QAEXPBVModuleData@@@Z,,0x0031BE58,153,Code/Libraries/Source/WWVegas/WWLib/Rva0031BE07Find.cpp,matched,chain from 0x0031BE07 two AsciiString temps Command_StructureExit TransportExit via 0x0035B750
 ??0Rva00553395@@QAE@I@Z,,0x00553395,39,Code/Libraries/Source/WWVegas/WWLib/Rva00553395.cpp,matched,unlock single-proxy ctor via proxy plus byte allocator
+?rva000733D8@Rva00072FE6@@QAEIABH@Z,,0x000733D8,73,Code/Libraries/Source/WWVegas/WWLib/Rva0007300FErase.cpp,matched,STLPort erase key via rowed range erase 0x0007300F plus equal_range
