@@ -45012,3 +45012,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00537208@UserPreferences@@QAEXVAsciiString@@@Z,,0x00537208,89,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,gap UserPreferences LastHouse v12 pair
 ??0Rva0037307F@@QAE@XZ,,0x0037307F,23,Code/Libraries/Source/WWVegas/WWLib/Rva0037307FCtor.cpp,matched,default ctor vector BfmeE16 plus bool clear via rowed base
 ?rva002DF9E9@Rva002DF9E9@@QAE?AVUnicodeString@@XZ,,0x002DF9E9,90,Code/GameEngine/Source/Common/Rva002DF9E9.cpp,matched,unlock lane TheGameText fetch slot 0x38 precedent Rva005D38C8Fetch
+?Rva0039B8D8FillN@@YAPAVRva0039B893@@PAV1@IABV1@ABU__false_type@_STL@@@Z,,0x0039B8D8,40,Code/GameEngine/Source/Common/Rva0039B8D8FillN.cpp,matched,fill_n via rowed copy ctor 0x0039B893 with false_type tag
