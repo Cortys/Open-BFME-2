@@ -4813,3 +4813,4 @@ FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 read
 ?rva002E5EA5@Rva002E5EA5@@QAE_NPBD@Z	0x002E5EA5	487	blocked	stub only 48B vs 487B missing CSF header LBL STR loops and large stack buffers t=15 model=muse-07
 ??0Rva0044EB54@@QAE@XZ	0x0044EB54	378	void	prior partial attempts point to reverse/attempts/0x0044eb54.cpp, which add_match.py removed after exact landing; retract both stale verdicts
 ?attemptDamage@Object@@QAEXPAVDamageInfo@@@Z	0x0029848E	70	blocked	candidate donor dispatch compiles to 17B; target is 70B and tests status 0x48, edits DamageInfo+0x28, branches through list push_back/0x2975AC. Same name already matched at 0x001D0490; add_match rejects duplicate names, so do not displace existing claim without identity review. t=23m model=gpt-6-luna
+?rva003469F5@Rva003469F5@@QAEXPAUCoord3D@@@Z	0x003469F5	376	blocked	SSE circle vs x87 plus ebx extent and 0x18 locals mismatch t=20 model=muse-10

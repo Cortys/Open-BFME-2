@@ -1,7 +1,5 @@
 // ?onEnter@Rva0033FE65@@UAE?AW4StateReturnType@@XZ
 // partial score=0.95 date=2026-09-30
-// ?onEnter@Rva0033FE65@@UAE?AW4StateReturnType@@XZ
-// partial score=0.95 date=2026-09-30
 // cl: /O1 /MD
 //
 // ?onEnter@Rva0033FE65@@UAE?AW4StateReturnType@@XZ retail 0x00346FD0 170 bytes.
@@ -67,6 +65,8 @@ public:
 };
 extern "C" struct FILE_dummy00346FD0;
 extern "C" void *theLogicRandomLogFile;
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 extern const char g_Rva0107301CEmptyString[];
 extern int g_00E01E04;
 extern "C" int __cdecl fprintf(void *stream, const char *format, ...);
@@ -81,7 +81,6 @@ private:
 	bool m_24;
 	bool m_25;
 };
-// ?onEnter@Rva0033FE65@@UAE?AW4StateReturnType@@XZ present-unmatched
 StateReturnType Rva0033FE65::onEnter()
 {
 	Owner00346FD0 *obj = m_machine->m_owner14;
@@ -96,16 +95,18 @@ StateReturnType Rva0033FE65::onEnter()
 		if (q)
 			q->m_bits20 &= 0;
 	}
-	if (theLogicRandomLogFile) {
+	void *logFile = theLogicRandomLogFile;
+	if (logFile) {
 		unsigned int u = (unsigned int)obj->m_p04;
 		int id = obj->m_id74;
 		u += 0x64;
+		_ReadWriteBarrier();
 		const char *name = *(const char **)u;
 		if (name)
 			name = name + 8;
 		else
 			name = g_Rva0107301CEmptyString;
-		fprintf(theLogicRandomLogFile, "AIIdleState::onEnter() called for object %s(%d) at location %g %g %g", name, id, obj->m_x38, obj->m_y3c, obj->m_z40);
+		fprintf(logFile, "AIIdleState::onEnter() called for object %s(%d) at location %g,%g,%g", name, id, obj->m_x38, obj->m_y3c, obj->m_z40);
 	}
 	m_20 = (unsigned short)GetGameLogicRandomValue(0, g_00E01E04, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\AI\\AIStates.cpp", 0x94A);
 	return STATE_CONTINUE;
