@@ -45399,3 +45399,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva001F53F0@Rva001F53F0@@QAEHXZ,,0x001F53F0,14,Code/GameEngine/Source/Common/Rva001F53F0.cpp,matched,null-checked ptr plus20 else zero je shape
 ?get@Rva001F5DE8Slot@@QAEPAXPAX@Z,,0x001F5DE8,20,Code/GameEngine/Source/Common/Rva001F5DE8Get.cpp,matched,null-checked holder B4 via slot 8 tail jmp
 ?get@Rva001F5DFCSlot@@QAEPAXPAX@Z,,0x001F5DFC,20,Code/GameEngine/Source/Common/Rva001F5DFCGet.cpp,matched,sibling pattern at 0xB8 null-checked holder slot 8
+?get@Rva001F5E10Slot@@QAEPAXPAX@Z,,0x001F5E10,20,Code/GameEngine/Source/Common/Rva001F5E10Get.cpp,matched,sibling pattern at 0xBC null-checked holder slot 8
