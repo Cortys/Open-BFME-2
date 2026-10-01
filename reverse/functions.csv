@@ -46589,3 +46589,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?onEnter@AIAttackFollowWaypointPathState@@UAE?AW4StateReturnType@@XZ,,0x0034F1C4,29,Code/GameEngine/Source/GameLogic/AI/AIStatesDerivedOnExit.cpp,matched,slot 4 of vtable 0xC13638; attack-follow machine clear plus AI_IDLE then tail jump to pinned base onEnter 0x34ED7B
 ?rva00366B30@Rva00366B30@@QAE_NPBUCoord3D@@@Z,,0x00366B30,71,Code/GameEngine/Source/Common/Rva00366B30Trigger.cpp,matched,walk PolygonTrigger list at +0x38 via pointInTrigger callers in 0x00366B77
 ?rva0036658B@Rva0036658B@@QAE_NPAX0@Z,,0x0036658B,48,Code/GameEngine/Source/Common/Rva0036658B.cpp,matched,two-dword empty check plus init via Rva0036666B sibling
+?rva003665BB@Rva003665BB@@QAEXPAX@Z,,0x003665BB,16,Code/GameEngine/Source/Common/Rva003665BB.cpp,matched,link old head at +0x38 into arg +0x3c via sibling layout
