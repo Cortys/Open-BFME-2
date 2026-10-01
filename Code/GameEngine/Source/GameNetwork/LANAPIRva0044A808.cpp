@@ -1,13 +1,14 @@
-// ?rva0044A808@LANAPI@@QAEXVAsciiString@@HI@Z
-// partial score=0.92 date=2026-09-29
-// ?rva0044A808@LANAPI@@QAEXVAsciiString@@HI@Z
-// partial score=0.92 date=2026-09-29
 // cl: /O1 /G7 /DNDEBUG /MD /EHsc
 //
-// ?rva0044A808@LANAPI@@QAEXVAsciiString@@HI@Z, retail 0x0044A808, 249 bytes.
+// LANAPI::rva0044A808, retail 0x0044A808, 249 bytes.
 // LANAPI vtable slot 25. Chain via BfmeNetAddress compare 0x00248CBF plus
 // slot 57 message fill plus strncpy name plus pinned helper 0x004495A2 plus
 // 8 slots stride 0x1D0 plus slot 64 address plus slot 45 notify.
+// Retail's unwind map destroys the by-value name (state 0) and the
+// AsciiString argument built for slot 45 (state 1, address kept at
+// ebp-0x10), so that argument is a destructible AsciiString; the empty-name
+// fallback is str()'s "" literal; the slot address is taken before the
+// compare's argument is evaluated.
 
 typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
@@ -67,7 +68,9 @@ struct LANMessage
 class AsciiString : private StringBase<char>
 {
 public:
+	AsciiString(const char *s) : StringBase<char>(s) {}
 	~AsciiString() { releaseBuffer(); }
+	const char *str() const { return m_data != 0 ? m_data->m_text : ""; }
 };
 
 class LANAPI
@@ -118,7 +121,7 @@ public:
 	virtual void slot42() = 0;
 	virtual void slot43() = 0;
 	virtual void slot44() = 0;
-	virtual void slot45(BfmeNetAddress *addr, int index, StringBase<char> str) = 0;
+	virtual void slot45(BfmeNetAddress *addr, int index, AsciiString str) = 0;
 	virtual void slot46() = 0;
 	virtual void slot47() = 0;
 	virtual void slot48() = 0;
@@ -148,28 +151,23 @@ private:
 	LANGame *m_currentGame;
 };
 
-#define DefaultEmptyStr ((const char *)0x007BAC1C)
 
-// ?rva0044A808@LANAPI@@QAEXVAsciiString@@HI@Z present-unmatched
 void LANAPI::rva0044A808(AsciiString str, int, UnsignedInt val)
 {
-	int off = 0;
-	int i;
 	if (m_currentGame == 0)
 		return;
 	LANMessage msg;
 	slot57(&msg);
 	msg.m_type = 0x10;
-	strncpy(msg.m_name, str.m_data != 0 ? str.m_data->m_text : DefaultEmptyStr, 0x186);
+	strncpy(msg.m_name, str.str(), 0x186);
 	msg.m_zero1A4 = 0;
 	Rva004495A2(&msg, val);
-	i = 0;
-	for (; off < 0xE80; ++i, off += 0x1D0)
+	for (int i = 0; i < 8; ++i)
 	{
-		BfmeNetAddress *slotAddr = (BfmeNetAddress *)((char *)m_currentGame + 0x114 + off);
-		if (slotAddr->Rva00248CBF(slot64()))
+		BfmeNetAddress *addr = &m_currentGame->m_slots[i].m_address;
+		if (addr->Rva00248CBF(slot64()))
 		{
-			slot45(slot64(), i, StringBase<char>(msg.m_name));
+			slot45(slot64(), i, AsciiString(msg.m_name));
 			break;
 		}
 	}
