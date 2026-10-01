@@ -4683,3 +4683,4 @@ FUN_005f705a	0x001F705A	228	blocked	chain ParticleSystemManager plus SmartField 
 ?rva004047E3@Rva00404781@@QAEXMM@Z	0x004047E3	286	blocked	push-early-vs-late plus mov-test-vs-xor-cmp plus comiss-jb-vs-ja plus k-first-vs-m-first t=14 model=muse-16: ours 277B 84insns vs retail 286B 88insns 0reloc 12mem 2reg 12regions
 ?Rva00215D0BTest@@YAXXZ	0x00215D0B	278	blocked	chain INI FactionVictory Debug CrashBegin Format virtual chain needs Debug vtable layout t=10 model=muse-16
 ?Rva00579A2FGet@@YAPAVUnicodeString@@PAV1@H@Z	0x00579A2F	136	blocked	GameText fetch slot3C plus UnicodeString format needs VersionUnicode pattern t=15 model=muse-16
+FUN_006b8dfc	0x002B8DFC	214	blocked	LivingWorld helper mixes voidptr erase with ModuleData reserve on same vector plus Xfer slots 0x28/0x4/0x7c ambiguous and Rva002B644A vec8 BfmeE16 vs ptr stride conflict t=18 model=muse-13

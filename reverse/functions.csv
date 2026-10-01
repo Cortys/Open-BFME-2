@@ -45337,3 +45337,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva006E1170@AptCIH@@QBEPAXXZ,,0x006E1170,51,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,unlock char-inst accessor via rowed isCharacterInst
 ?rva006E1090@AptCIH@@QBEPAXXZ,,0x006E1090,103,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,finish button-inst accessor type 0x0E via rowed getters
 ??0?$list@UBfmeStringRecord002B4DC1@@V?$allocator@UBfmeStringRecord002B4DC1@@@_STL@@@_STL@@QAE@I@Z,,0x002B8FF3,106,Code/Libraries/Source/WWVegas/WWLib/stlport_list_002b8ff3_fill.cpp,matched,list fill ctor via Coord3D base row and rowed insert and wide releaseBuffer
+?rva005FF450@Rva005FF450@@QAEXHPBDABVUnicodeString@@@Z,,0x005FF450,109,Code/GameEngine/Source/Common/Rva005FF450Apt.cpp,matched,Apt Unit text via format and bfmeSetText with empty-string and manager globals
