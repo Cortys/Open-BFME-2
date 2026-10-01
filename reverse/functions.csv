@@ -45698,3 +45698,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva0057A5A8Set@@YAXHPAPAURva0057A5A8Team@@H@Z,,0x0057A5A8,221,Code/GameEngine/Source/Common/Rva0057A5A8Apt.cpp,matched,chain lane caller 0x0057A861 precedents Rva0057A51CApt Rva0057A685Apt globals TheGameText TheRva00222A8BTarget
 ?rva0057A3F4@Rva0057A3F4@@QAEPAV1@PAVRva005D1A79DwordCounter@@@Z,,0x0057A3F4,24,Code/GameEngine/Source/Common/Rva0057A3F4Store.cpp,matched,unlock lane caller 0x0057B0F7 callee inc 0x005D1A79
 ?rva0057A418@Rva0057A418@@QAEXXZ,,0x0057A418,27,Code/GameEngine/Source/Common/Rva0057A418Store.cpp,matched,unlock lane plus callers 0x0057B485 plus callee delete 0x0002FD60 plus prev 0x0057A3F4
+??1Rva0057A4E7@@QAE@XZ,,0x0057A4E7,53,Code/GameEngine/Source/Common/Rva0057A4E7Dtor.cpp,matched,unlock lane caller 0x0057AAD5 releaseBuffer plus pin Rva0022167C
