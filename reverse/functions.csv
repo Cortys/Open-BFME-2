@@ -46454,3 +46454,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003AE5F9@@QAE@ABV0@@Z,,0x003AE5F9,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calling rowed 0x003AE61F then own 3 vptrs
 ?clone@Rva003AE5F9@@QBEPAV1@XZ,,0x003AE5C2,55,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AE5F9Clone.cpp,matched,vslot 2 clone calling rowed copy 0x003AE5F9
 ??0Rva003AEE16@@QAE@ABV0@@Z,,0x003AEE16,149,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AEE16CopyCtor.cpp,matched,copy with LifeEvent base at 0x20 plus word 0x1c
+??0Rva003AEDE9@@QAE@ABV0@@Z,,0x003AEDE9,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AEDE9CopyCtor.cpp,matched,derived copy calling rowed 0x003AEE16 then own 4 vptrs
