@@ -45189,3 +45189,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0057D10F@AptMapPreview@@QAEXPAVMapMetaData@@@Z,,0x0057D10F,139,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewPicture.cpp,matched,caller 0x0057E058 MapMetaData+0x50 via bfmeCreateMapPictureImage MissingMap fallback
 ?rva005367CB@UserPreferences@@QAEHVAsciiString@@@Z,,0x005367CB,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat HeroesLostRTS 0x00868FD8 slot 0x18 releaseBuffer gap same TU unlock
 ?rva00536815@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536815,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat TurnsPlayedRTS 0x00868FE8 slot 0x18 releaseBuffer gap same TU unlock
+?rva005368A6@UserPreferences@@QAEHVAsciiString@@@Z,,0x005368A6,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat LongestGameTurns 0x00868FF4 slot 0x18 releaseBuffer gap same TU unlock

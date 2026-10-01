@@ -277,6 +277,7 @@ public:
 	int rva005367CB(AsciiString arg);
 	int rva00536815(AsciiString arg);
 	void rva0053685F(AsciiString arg, int x);
+	int rva005368A6(AsciiString arg);
 	void rva005368F0(AsciiString arg, int x);
 	void rva00536A1D(AsciiString arg, int x);
 	void rva00536AAE(AsciiString arg, int x);
@@ -833,6 +834,16 @@ void UserPreferences::rva0053685F(AsciiString arg, int x)
 {
 	arg.concat("LongestGameTurns");
 	v11(arg, x);
+}
+
+// ?rva005368A6@UserPreferences@@QAEHVAsciiString@@@Z @0x005368A6 74B
+// UserPreferences LongestGameTurns-getter path: append LongestGameTurns to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat LongestGameTurns 0x00868FF4 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva005368A6(AsciiString arg)
+{
+	arg.concat("LongestGameTurns");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva005368F0@UserPreferences@@QAEXVAsciiString@@H@Z @0x005368F0 71B
