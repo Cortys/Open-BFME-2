@@ -45328,3 +45328,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva005EF096Set@@YAXHPAURva005EF096Outer@@HH@Z,,0x005EF096,207,Code/GameEngine/Source/Common/Rva005EF096Apt.cpp,matched,fetch StatsCommandPoints plus Army CommandPoints text
 ?rva001F5423@Rva001F553F@@QAEMXZ,,0x001F5423,34,Code/GameEngine/Source/Common/Rva001F553F.cpp,matched,twin of 0x001F5401 float at plus2C or zero
 ?rva00405684@Rva00404D70@@QAEPAUBfmeStringRecord00404BF3@@ABVAsciiString@@@Z,,0x00405684,105,Code/GameEngine/Source/Common/Rva00404D70FindOrCreate.cpp,matched,find-or-create via rowed find ctor push_back releaseBuffer returns last
+?rva004055F2@Rva00404D70@@QAEXXZ,,0x004055F2,146,Code/GameEngine/Source/Common/Rva00404D70Init.cpp,matched,chain calls 0x00404BC5 ctor Default push_back floats via globals vector at +0x120
