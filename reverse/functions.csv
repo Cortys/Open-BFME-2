@@ -45532,3 +45532,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002C585A@Rva002C585A@@QAEXH@Z,,0x002C585A,45,Code/GameEngine/Source/Common/Rva002C585AAdjust.cpp,matched,rescale +0x20 by +0x30 unless +0x04 is 2
 ??4Rva00051C3F@@QAEAAV0@ABV0@@Z,,0x00051C3F,45,Code/GameEngine/Source/Common/Rva002D9893Copy.cpp,matched,chain derived operator equals base plus tail 0x88 0x8C
 ??0InactiveBody@@QAE@PAVThing@@PBVModuleData@@@Z,,0x004BD8BD,83,Code/GameEngine/Source/GameLogic/Object/Body/InactiveBodyCtor.cpp,matched,ZH InactiveBody ctor: BodyModule base then m_dieCalled false then setEffectivelyDead(true) (pin 0x0028D2FB)
+??0TransportContain@@QAE@PAVThing@@PBVModuleData@@@Z,,0x00468559,254,Code/GameEngine/Source/GameLogic/Object/Contain/TransportContainCtor.cpp,matched,over OpenContain ctor: interface then ten vtables; clear +0x100..+0x10C; copy module-data payload names into the +0x110 AsciiString vector
