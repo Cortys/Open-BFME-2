@@ -54,7 +54,28 @@ enum AnimTypes
 class AnimateWindowManager
 {
 public:
+	virtual void *deleteInstance(int flags) = 0;
 	void registerGameWindow(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int ms, unsigned int delayMs);
+};
+
+class GameEngineDeletingBase
+{
+public:
+	virtual ~GameEngineDeletingBase();
+private:
+	char m_pad04[8];
+};
+
+class Rva0035BD3F
+{
+public:
+	void rva0035BD3F();
+};
+
+class Rva002007D5
+{
+public:
+	~Rva002007D5();
 };
 
 struct GlobalData
@@ -95,28 +116,32 @@ public:
 	~AsciiString() {}
 };
 
-class Shell
+class Shell : public GameEngineDeletingBase
 {
 private:
-	unsigned char _pad[12];
-	WindowLayout *m_screenStack[16];
-	int m_screenCount;
-	Bool m_pendingPush;
-	Bool m_pendingPop;
+	WindowLayout *m_screenStack[16]; // +0x0C
+	int m_screenCount; // +0x4C
+	Bool m_pendingPush; // +0x50
+	Bool m_pendingPop; // +0x51
 	unsigned char _pad5253[2];
-	Bool m_clearBackground;
+	Bool m_clearBackground; // +0x54
 	unsigned char _pad5557[3];
-	AsciiString m_pendingPushName;
-	Bool m_isShellActive;
-	Bool m_shellMapOn;
+	AsciiString m_pendingPushName; // +0x58
+	Bool m_isShellActive; // +0x5C
+	Bool m_shellMapOn; // +0x5D
 	unsigned char _pad5E5F[2];
-	AnimateWindowManager *m_animateWindowManager;
+	AnimateWindowManager *m_animateWindowManager; // +0x60
 	ShellMenuSchemeManager *m_schemeManager; // +0x64
+	unsigned int m_musicHandle; // +0x68
+	unsigned int _pad6C; // +0x6C
+	WindowLayout *m_saveLoadMenuLayout; // +0x70
+	WindowLayout *m_popupReplayLayout; // +0x74
 protected:
 	void linkScreen(WindowLayout *screen);
 	void unlinkScreen(WindowLayout *screen);
 	void doPop(Bool impendingPush);
 public:
+	virtual ~Shell();
 	WindowLayout *top();
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
 	void loadScheme(AsciiString name);
@@ -203,4 +228,31 @@ void Shell::rva0035BF0E()
 	doPop(false);
 	if (TheIMEManager)
 		TheIMEManager->m3C();
+}
+
+// ??1Shell@@UAE@XZ @ 0x0035C087 (227B). Shell dtor: pops screens via top/rva0035BF0E loop then animate deleteInstance+delete scheme delete layouts destroy+deleteInstance+delete audio string base. Evidence: vtable 0x00816208 callers 0x0035C54A deleting dtor callees top rva0035BF0E scheme 0x002007D5 releaseBuffer 0x00036410 base 0x001B4E74 audio 0x0035BD3F BFME1 ShellDestructor donor.
+Shell::~Shell()
+{
+	WindowLayout *cur = top();
+	while (cur != 0) {
+		rva0035BF0E();
+		cur = top();
+	}
+	if (m_animateWindowManager)
+		::operator delete(m_animateWindowManager->deleteInstance(0));
+	m_animateWindowManager = 0;
+	if (m_schemeManager)
+		delete (Rva002007D5 *)m_schemeManager;
+	m_schemeManager = 0;
+	if (m_saveLoadMenuLayout) {
+		m_saveLoadMenuLayout->destroyWindows();
+		::operator delete(m_saveLoadMenuLayout ? m_saveLoadMenuLayout->deleteInstance(0) : 0);
+		m_saveLoadMenuLayout = 0;
+	}
+	if (m_popupReplayLayout) {
+		m_popupReplayLayout->destroyWindows();
+		::operator delete(m_popupReplayLayout ? m_popupReplayLayout->deleteInstance(0) : 0);
+		m_popupReplayLayout = 0;
+	}
+	((Rva0035BD3F *)this)->rva0035BD3F();
 }

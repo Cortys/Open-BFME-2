@@ -45457,3 +45457,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0040C430@Rva0040C351@@QAEXPBVRva004E0632@@@Z,,0x0040C430,44,Code/GameEngine/Source/Common/Rva0040C351Ctor.cpp,matched,unlock Rva0040C351 bc cache plus 18 plus virtual slotC
 ?xfer@Rva0040DB52@@MAEXPAVXfer@@@Z,,0x0040E6F6,132,Code/GameEngine/Source/Common/Rva0040DB52Xfer.cpp,matched,slot 3 xfer via clear and vector helpers chain 0x0040E269
 ?rva0035BF0E@Shell@@QAEXXZ,,0x0035BF0E,62,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell top WindowLayout slot0xC pendingPop doPop TheIMEManager
+??1Shell@@UAE@XZ,,0x0035C087,227,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell dtor via BFME1 donor top loop layouts audio string base
