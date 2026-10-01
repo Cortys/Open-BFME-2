@@ -5126,3 +5126,5 @@ FUN_0091ec31	0x0051EC31	29	blocked	wrapper pushes 5 args to 3-arg row plus lea e
 ?rva00511087@Rva00511087@@QAEHABVAsciiString@@@Z	0x00511087	129	blocked	unlock STL bridge calls 00217D4C lower_bound plus pair but 0051030C insert plus pair t=8 model=muse-07
 ?rva00106FB6@Rva00106FB6@@QAE_NPAURect00106FB6@@@Z	0x00106FB6	144	blocked	SSE sphere-vs-rect with Get_Position and 4 comiss needs donor for arg layout plus float shape t=10 model=muse-07
 ??0Rva003AE7B8@@QAE@ABV0@@Z	0x003AE7B8	285	blocked	large Lightning copy with 2x90 loops gives rep-movsd not fld t=18 model=muse-06
+?rva00390CCA@PhysicsBehavior@@QAEX_N@Z	0x00390CCA	134	partial	flag 0x4000000 via lea eax edi+0x118 and test-or via eax-ecx vs retail mov eax imm and test-or via edi+0x118-eax t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x00390cca.cpp
+?rva00390533@Rva00390533@@QAE_NXZ	0x00390533	36	blocked	dword shr plus jne-true vs byte test plus and-return t=15 model=muse-05
