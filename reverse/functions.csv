@@ -45366,3 +45366,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva003A1C3A@Team@@QAEX_N@Z,,0x003A1C3A,224,Code/GameEngine/Source/Common/RTS/TeamRva003A1C3A.cpp,matched,Team method via rowed iterate 0x263864 and rowed list insert
 ?rva0044F633@Rva0044F633@@QAEPAXXZ,,0x0044F633,70,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateRva0044F633.cpp,matched,leaf via TheGameLogic findObjectByID and finalOverride kind check
 ?rva002ABBBE@Rva002ABBBE@@QAEXPAX@Z,,0x002ABBBE,100,Code/Libraries/Source/WWVegas/WWLib/Rva002ABBBEBitCopy.cpp,matched,dword to byte bitset 218 via ji memset row; virtual call 0x24
+?Rva0029FB80Store@@YGPAXPAPAX@Z,,0x0029FB80,28,Code/GameEngine/Source/Common/Rva0029FB80.cpp,matched,freelist pop plus arg store returning node
