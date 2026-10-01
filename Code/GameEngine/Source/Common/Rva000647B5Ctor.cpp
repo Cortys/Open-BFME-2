@@ -29,6 +29,8 @@ class Rva000647B5 : public GODupBase
 public:
 	Rva000647B5();
 	~Rva000647B5();
+private:
+	char m_pad[4];
 };
 
 Rva000647B5::Rva000647B5()
