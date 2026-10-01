@@ -1,0 +1,30 @@
+// ?_M_insert_overflow@?$vector@VRva004BA1D0@@V?$allocator@VRva004BA1D0@@@_STL@@@_STL@@IAEXPAVRva004BA1D0@@ABV3@ABU__false_type@2@I_N@Z
+// partial score=0.95 date=2026-10-01
+// cl: /Ireference/shims/bfme2_ascii /G7 /arch:SSE /MD /O1 /GX /DNDEBUG /DWIN32 /D_WINDOWS /D_STLP_USE_STATIC_LIB /D_CRTIMP= /D_STLP_USE_MALLOC /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// stlport
+//
+// ?_M_insert_overflow@?$vector@VRva004BA1D0@@V?$allocator@VRva004BA1D0@@@_STL@@@_STL@@IAEXPAVRva004BA1D0@@ABV3@ABU__false_type@3@I_N@Z,
+// retail 0x004BA4D3, 183 bytes. Dedicated TU.
+//
+// STLport 4.5.3 vector<Rva004BA1D0>::_M_insert_overflow, the growth path of
+// the push_back at 0x004BA7E0 (55B, fast Construct plus this slow path).
+// Sits between TransitionDamageFX dtor 0x004BA47C and ModuleData ctor.
+// Byte-identical shape to the PrereqUnitRec overflow at 0x004F5165 (183B,
+// same /G7 /arch:SSE + bfmealloc recipe) and the string-record overflows.
+// Retail calls allocate 0x0007E364, copy 0x004BA246, _Construct 0x004BA219,
+// fill_n 0x004BA26C and clear 0x004BA3CC, all rowed. Explicit member (not
+// whole-class) instantiation keeps push_back owned by its own TU.
+#define _STLP_NO_EXCEPTIONS 1
+#include <vector>
+class Rva004BA1D0
+{
+public:
+    Rva004BA1D0(const Rva004BA1D0 &other);
+    char m_bytes[0x2C];
+};
+namespace _STL
+{
+template <> void _Construct<Rva004BA1D0, Rva004BA1D0>(Rva004BA1D0 *, const Rva004BA1D0 &);
+}
+template void _STL::vector<Rva004BA1D0>::_M_insert_overflow(
+    Rva004BA1D0 *, const Rva004BA1D0 &, const _STL::__false_type &, unsigned int, bool);
