@@ -29,16 +29,36 @@ public:
 	void bfmeForward(void *a0);
 };
 
+class WeaponTemplateSetHead
+{
+public:
+	WeaponTemplateSetHead(const WeaponTemplateSetHead &that);
+
+	char m_data[0x4C];
+};
+
+class Rva00271C8A
+{
+public:
+	void rva00271C8A(const int *a, const int *b);
+};
+
+bool __cdecl Rva00045473Equal(const void *a, const void *b);
+
 class Object
 {
 public:
 	int rva0028D481() const;
 	void rva0028D282(void *a0);
+	void rva0028AE6D();
+	void rva0028CFB2(const int *a, const int *b);
 
 private:
 	char m_pad00[4];
 	Rva0028D481Template *m_template;
-	char m_pad08[0x4C4 - 8];
+	char m_pad08[0x10C - 8];
+	char m_10C[0x4C];
+	char m_pad158[0x4C4 - 0x10C - 0x4C];
 	Gen_008F7B50 *m_helper;
 };
 
@@ -52,4 +72,18 @@ void Object::rva0028D282(void *a0)
 	Gen_008F7B50 *helper = m_helper;
 	if (helper != 0 && ((m_template->m_byte10E & 0x20) == 0))
 		helper->bfmeForward(a0);
+}
+
+// ?rva0028CFB2@Object@@QAEXPBH0@Z @0x0028CFB2 (67B).
+// Unlock callee for 25 free functions (6 ready). Evidence: rowed
+// WeaponTemplateSetHead copy 0x00045455 plus rowed Rva00271C8A 0x00271C8A
+// over this+0x10c plus rowed Equal 0x00045473 plus pinned Object
+// notifier 0x0028AE6D with this; neighbours share /O1 /MD.
+
+void Object::rva0028CFB2(const int *a, const int *b)
+{
+	WeaponTemplateSetHead tmp(*(const WeaponTemplateSetHead *)m_10C);
+	((Rva00271C8A *)m_10C)->rva00271C8A(a, b);
+	if (!Rva00045473Equal(&tmp, m_10C))
+		rva0028AE6D();
 }

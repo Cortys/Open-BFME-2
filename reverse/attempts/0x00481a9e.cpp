@@ -1,6 +1,6 @@
 // ?rva00481A9E@Rva0048180C@@QAEXPAVObject@@_NPAURva00481A9EInfo@@@Z
-// partial score=0.94 date=2026-10-01
-// cl: /O1 /DNDEBUG /MD /arch:SSE
+// partial score=0.97 date=2026-10-01
+// cl: /O1 /G7 /DNDEBUG /MD /arch:SSE
 //
 // ?rva00481A9E@Rva0048180C@@QAEXPAVObject@@_NPAURva00481A9EInfo@@@Z @0x00481A9E (225B).
 // Chain from 0x0028FEA7 you landed: healing-benefactor forward plus body
@@ -122,7 +122,7 @@ void Rva0048180C::rva00481A9E(Object *tgt, bool flag, Rva00481A9EInfo *info)
 		else
 			fsel = info->m_f10;
 		float mult = body->f6();
-		tgt->rva0028FEA7(mult * (fsel / (float)g_Va00DBA4E4), m_owner, info->m_extra);
+		tgt->rva0028FEA7((fsel / (float)g_Va00DBA4E4) * mult, m_owner, info->m_extra);
 	} else {
 		((unsigned char *)&tgt->m_flags380)[1] &= 0x7e;
 	}

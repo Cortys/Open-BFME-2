@@ -5097,3 +5097,6 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva003AFA0B@Rva003AFA0B@@QAEXPAVCoord3D@@PAX0M1@Z	0x003AFA0B	89	blocked	xmm rotation yzx vs xyz 9 mem operands size-exact 25ins t=3 model=muse-06 (stash 0.9 kept)
 ?Rva003E5587Check@@YG_NPAVParameter@@PAUCondA003E5587@@PAUCondB003E5587@@@Z	0x003E5587	318	blocked	complex float virtual body with 19 regions t=20 model=muse-03
 ?Rva003E5C04Check@@YG_NPAVParameter@@PAUCondA003E5C04@@PAUCondB003E5C04@@@Z	0x003E5C04	173	blocked	r-in-edi-vs-esi plus local-xor-jmp-vs-shared-je t=15 model=muse-03 (stash 0.97 kept)
+?rva00363BC7@Rva00363BC7@@QAEPAXPAUCoord2D@@PAM@Z	0x00363BC7	170	partial	fld-st0 second copy plus xmm load order fixed externs len-local t=12 model=muse-04 score=0.97 stash=reverse/attempts/0x00363bc7.cpp
+?rva00481A9E@Rva0048180C@@QAEXPAVObject@@_NPAURva00481A9EInfo@@@Z	0x00481A9E	225	partial	fmulp-vs-fmul-1-site-or-ah-fixed-via-G7 t=25 model=muse-04 score=0.97 stash=reverse/attempts/0x00481a9e.cpp
+?rva00363EC0@Path@@QAEMPAUCoord3D@@0@Z	0x00363EC0	228	blocked	mov-ecx-p-load-one-slot-late-after-node-x-vs-retail-p-first-px-npx-barrier-G7-tried t=20 model=muse-04 (stash 0.99 kept)
