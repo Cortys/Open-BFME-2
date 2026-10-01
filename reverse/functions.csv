@@ -46684,3 +46684,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?upgradeRemovalImplementation@UnpauseSpecialPowerUpgrade@@MAEXXZ,,0x004B5574,84,Code/GameEngine/Source/GameLogic/Object/Upgrade/UnpauseSpecialPowerUpgradeUpgradeImplementation.cpp,matched,slot 8 of the +0x10 vtable 0xC57E60 (UnpauseSpecialPowerUpgrade); pauses the matching modules again
 ?rva0026336D@AIUpdateInterface@@QAEXXZ,,0x0026336D,73,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_predicates.cpp,matched,swaps state machine to tertiary slot and makes new state machine
 
+?getMapLeafAndDirName@@YA?AVAsciiString@@ABV1@@Z,,0x002DC2DD,99,Code/GameEngine/Source/Common/System/SaveGame/GameState.cpp,matched,exact-ambiguous copy; assignment proven by verify_string_refs
