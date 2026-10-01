@@ -1,7 +1,5 @@
 // ?rva002C986B@Object@@QBEXPAUCoord3D@@PBU2@@Z
-// partial score=0.93 date=2026-09-30
-// ?rva002C986B@Object@@QBEXPAUCoord3D@@PBU2@@Z
-// partial score=0.93 date=2026-09-30
+// partial score=0.9 date=2026-10-01
 // cl: /O1 /arch:SSE /DNDEBUG /MD /EHs-c-
 // ?rva002C986B@Object@@QBEXPAUCoord3D@@PBU2@@Z @0x002C986B 119B
 // Object planar scaled-repulsion: delta via rowed 0x0026382B, len via rowed Coord3D::length,
