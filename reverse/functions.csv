@@ -45064,3 +45064,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002CACD7@Rva002CA9CA@@QAEMPBX@Z,,0x002CACD7,180,Code/GameEngine/Source/GameLogic/Object/Rva002CA9CAContains.cpp,matched,unlock lane float range nested list zero default
 ?rva00536784@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536784,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,HeroesLostRTS setter slot 0x2C same TU
 ?rva0053685F@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053685F,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,LongestGameTurns setter slot 0x2C same TU
+?rva000A4826@Rva000A4826@@QAEXMMMMMH@Z,,0x000A4826,79,Code/GameEngine/Source/GameLogic/Object/Rva000A4826Call.cpp,matched,virtual forward slots 53 59 64 with floats
