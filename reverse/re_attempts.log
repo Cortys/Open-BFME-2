@@ -4881,3 +4881,6 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ??0Rva004211CA@@QAE@XZ	0x004212E4	46	blocked	frame plus stosb plus late vtable t=12 model=muse-09
 ?Rva003B9D78Parse@@YAXHHQAPAD@Z	0x003B9D78	151	blocked	custom ebx table param with no load or preserve in callee and caller mov ebx table t=12 model=muse-05
 ??0Rva003B90DB@@QAE@XZ	0x003B90DB	73	partial	BBB554 store hoisted after lea ebp-1 not before and esi+10; derived vtable relocs gate-filled t=12 model=muse-05 score=0.95 stash=reverse/attempts/0x003b90db.cpp
+??0Rva003B90DB@@QAE@XZ	0x003B90DB	73	blocked	BBB554 mov-and order remains and-mov though barrier pins lea after both t=18 model=muse-05 (stash 0.95 kept)
+?rva0029C34F@Rva0029C34F@@QAEHXZ	0x0029C34F	181	blocked	EH Unicode InGameUI virtual-heavy helper with 3 vcalls plus substring needs ZH donor t=8 model=muse-05
+?rva0029C163@Rva0029C163@@QAE_NABUICoord2D@@@Z	0x0029C163	219	blocked	point-in-poly SSE list needs layout donor plus float-order work t=22 model=muse-05
