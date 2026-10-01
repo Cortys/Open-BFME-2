@@ -4730,3 +4730,8 @@ FUN_0047a41e	0x0007A41E	122	blocked	STL map-vector-sort with LocomotorSet erase 
 FUN_00739184	0x00339184	176	blocked	INI sound-ref EH with TheAudio slot75 plus OpaqueRef temp Release plus AsciiString frame needs layouts t=15 model=muse-08
 FUN_00942459	0x00542459	107	blocked	dead strncpy into stack temp plus dead stack-arg load plus this-clear needs layout t=10 model=muse-08
 ?rva005AD9E6@Rva005AD9E6@@QAEHXZ	0x005AD9E6	25	partial	reg alloc head-edx-vs-ecx cur-ecx-vs-eax count-eax-vs-edx plus je-lea vs ret-xor-jmp-mov t=25 model=muse-spark score=0.91 stash=reverse/attempts/0x005ad9e6.cpp
+FUN_009e017a	0x005E017A	135	blocked	multi-map lower_bound plus insert same-this LadderPref BuddyInfo layout t=12 model=muse-spark
+?rva00240167@Rva00240167@@QAEPAVAsciiString@@V2@@Z	0x00240167	89	partial	lea ecx scheduling retail lea-lea-push ours lea-push-lea t=30 model=muse-spark score=0.96 stash=reverse/attempts/0x00240167.cpp
+FUN_00979900	0x00579900	149	blocked	UnicodeString format varargs GameText slot15 narrow_string wall t=8 model=muse-spark
+FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont edi-esi incoming t=8 model=muse-spark
+?rva0020F685@Rva0020F685@@QAEXXZ	0x0020F685	141	partial	ebx-edi swap for this-index plus null jmp-xor vs xor t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x0020f685.cpp
