@@ -45333,3 +45333,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva004EB583@@QAE@H@Z,,0x004EB583,102,Code/Libraries/Source/WWVegas/WWLib/Rva004EB583Ctor.cpp,matched,unlock ctor vtable 3x BfmeE16 vectors id from counter
 ?rva004EB794@Rva004EB794@@QAE_NPBVModuleData@@@Z,,0x004EB794,56,Code/Libraries/Source/WWVegas/WWLib/Rva004EB794Method.cpp,matched,unlock dedup by +0x50 key push_back when new
 ?rva006E1020@AptCIH@@QBEPAXXZ,,0x006E1020,103,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,unlock morph-inst accessor type 0x11 via rowed getters
+?rva006E1100@AptCIH@@QBEPAXXZ,,0x006E1100,103,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,unlock shape-inst accessor type 0x0C via rowed getters
