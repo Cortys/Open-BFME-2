@@ -45844,3 +45844,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0043287E@Rva0043287E@@QAEHXZ,,0x0043287E,31,Code/GameEngine/Source/Common/Rva0043287ECheck.cpp,matched,unlock OR-shape callers 0x00432AFB et al row 0x00222A53
 ?rva00432AEB@Rva00432AEB@@QAEHH@Z,,0x00432AEB,45,Code/GameEngine/Source/Common/Rva00432AEBSet.cpp,matched,setter +0x1F0 old-return Mouse slot 0x4C via row 0x0043287E
 ?rva00432E5D@Rva00432F23@@QAEXPAVRva00432F23Node@@@Z,,0x00432E5D,99,Code/GameEngine/Source/Common/Rva00432F23Remove.cpp,matched,move list2 to head list1 mirror of 0x00432EC0
+?Rva00433D3CClear@@YAXXZ,,0x00433D3C,17,Code/GameEngine/Source/Common/Rva00433D3CClear.cpp,matched,clear byte 0x29D via g_Va00E032E0 shared with 0x00433D27
