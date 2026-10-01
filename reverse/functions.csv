@@ -46020,3 +46020,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004E5D6E@Rva004E5D6E@@QAEXXZ,,0x004E5D6E,68,Code/GameEngine/Source/Common/Bfme/Rva004E5D6EMethod.cpp,matched,STL clear via rowed for_each 0x004E5D4D and erase 0x0031BD55 caller dtor 0x004E61C8
 ?Rva004E59AEFunc@@YAXPAP8Rva004E59AE@@AEXXZPAPAU1@1P81@AEXXZ@Z,,0x004E59AE,34,Code/GameEngine/Source/Common/Bfme/Rva004E59AEFunc.cpp,matched,free loop calling member method then storing func per retail disassembly
 ?rva00431978@Rva00431978@@QAEHPAUICoord2D@@@Z,,0x00431978,55,Code/GameEngine/Source/Common/Rva00431978.cpp,matched,proximity check abs dx dy lt 5 via abs thunk
+?rva00431A4D@Rva00431A4D@@QAEXPAVGameMessage@@@Z,,0x00431A4D,23,Code/GameEngine/Source/Common/Rva00431A4D.cpp,matched,unlock lane flag setter GameMessage+0x10 equals 6 neighbours Rva00431AEC
