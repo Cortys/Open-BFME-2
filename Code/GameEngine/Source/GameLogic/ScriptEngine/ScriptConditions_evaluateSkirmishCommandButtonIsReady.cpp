@@ -48,9 +48,7 @@ class ControlBar
 public:
     const CommandButton *findCommandButton(const AsciiString &name);
 };
-// ?TheControlBar@@3PAVControlBar@@A: the global at this VA is ?g_bfmeWorldRV@@3PAUBfmeWorldRV@@A; this name is an alias for it.
-extern ControlBar * TheControlBar;
-#pragma comment(linker, "/alternatename:?TheControlBar@@3PAVControlBar@@A=?g_bfmeWorldRV@@3PAUBfmeWorldRV@@A")
+extern ControlBar *TheControlBar;
 class Object
 {
 public:

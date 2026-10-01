@@ -94,7 +94,10 @@ public:
 	Int getAudioLODIndex(const AsciiString &name);
 };
 
-Debug *TheBfmeAwakenDebug;
+// The global at this VA is theDebug; this name aliases it rather than
+// defining a second variable the rest of the game never sees.
+extern Debug *TheBfmeAwakenDebug;
+#pragma comment(linker, "/alternatename:?TheBfmeAwakenDebug@@3PAVDebug@@A=?theDebug@@3PAVDebug@@A")
 
 const char *bfmeTabEYC[2] = { "Low", "High" };
 

@@ -37,7 +37,11 @@ public:
 };
 // Matched DIR32 sites for TheGlobalData resolve to VA 0x00DFE758, whose retail
 // zero-filled slot starts null.
-GlobalData *TheGlobalData = 0;
+// The global at that VA is GameClient.cpp's TheWritableGlobalData (Zero
+// Hour spells TheGlobalData as a macro over it); this name aliases it
+// rather than defining a second pointer the game never writes.
+extern GlobalData *TheGlobalData;
+#pragma comment(linker, "/alternatename:?TheGlobalData@@3PAVGlobalData@@A=?TheWritableGlobalData@@3PAVGlobalData@@A")
 extern bool BFME2UseDebugWindowLite;
 
 class SubsystemInterface

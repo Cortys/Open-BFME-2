@@ -12,7 +12,10 @@ struct BfmeWorldRV
 
 extern BfmeWorldRV *g_bfmeWorldRV;
 // g_bfmeWorldRV: matched references place it at VA 0xe01cfc (zero-filled .bss).
-BfmeWorldRV * g_bfmeWorldRV;
+// The global at this VA is TheControlBar; this name aliases it rather than
+// defining a second variable the rest of the game never sees.
+extern BfmeWorldRV * g_bfmeWorldRV;
+#pragma comment(linker, "/alternatename:?g_bfmeWorldRV@@3PAUBfmeWorldRV@@A=?TheControlBar@@3PAVControlBar@@A")
 
 class BfmeThingRV
 {

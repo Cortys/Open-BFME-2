@@ -437,7 +437,10 @@ public:
 	virtual void _M_slot_4c();
 };
 
-BfmeDfe6e8 *theBfmeDfe6e8;
+// The global at this VA is TheAudio; this name aliases it rather than
+// defining a second variable the rest of the game never sees.
+extern BfmeDfe6e8 *theBfmeDfe6e8;
+#pragma comment(linker, "/alternatename:?theBfmeDfe6e8@@3PAVBfmeDfe6e8@@A=?TheAudio@@3PAVAudioManager@@A")
 
 class BfmeDfe6e4
 {

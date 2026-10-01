@@ -59,7 +59,10 @@ struct Rva00DFE144Globals
 };
 
 // COMMON merges across TUs; the address patches from retail.
-Rva00DFE144Globals *TheRva00DFE144;
+// The global at this VA is TheGameLODManager; this name aliases it rather than
+// defining a second variable the rest of the game never sees.
+extern Rva00DFE144Globals *TheRva00DFE144;
+#pragma comment(linker, "/alternatename:?TheRva00DFE144@@3PAURva00DFE144Globals@@A=?TheGameLODManager@@3PAVGameLODManager@@A")
 
 class OptionPreferences : public AsciiPreferenceMap
 {
