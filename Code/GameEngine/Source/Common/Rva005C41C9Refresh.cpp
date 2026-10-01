@@ -1,10 +1,9 @@
-// ?rva005C41C9@Rva005C41C9@@QAEXE@Z
-// partial score=0.97 date=2026-09-29
-// ?rva005C41C9@Rva005C41C9@@QAEXE@Z
-// partial score=0.97 date=2026-09-29
 // cl: /O1 /MD /EHsc
 // ?rva005C41C9@Rva005C41C9@@QAEXE@Z retail 0x005C41C9 73B
 // Evidence: caller 0x0052B024 forwards one stack arg over vector [ecx+0x2c,0x30); slots 0x44 twice then 0x48; members +0xC5 byte plus +0xAC chase +0x58/+0x5C; neighbours 0x005C4139 0x005C436E
+// Structural inference: the second slot-0x44 result reuses the parameter's
+// stack slot (retail stores it to [ebp+8] and compares from memory), and the
+// +0xAC pointer is loaded into a local before the select, as retail.
 struct Inner005C41C9
 {
 	char m_pad[0x58];
@@ -46,7 +45,8 @@ void Rva005C41C9::rva005C41C9(unsigned char v)
 {
 	unsigned char a = v17();
 	m_c5 = v;
-	unsigned char b = v17();
-	int c = b ? m_ac->m_58 : m_ac->m_5C;
-	v18(a, b, c);
+	v = v17();
+	Inner005C41C9 *inner = m_ac;
+	int c = v ? inner->m_58 : inner->m_5C;
+	v18(a, v, c);
 }
