@@ -4863,3 +4863,4 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva00483011@PoisonedBehavior@@QAEXPAVDamageInfo@@@Z	0x00483011	114	partial	eax-ecx swap in select plus early arg in edx not edi frame in ecx not edx push-edi late t=22 model=muse-spark score=0.93 stash=reverse/attempts/0x00483011.cpp
 ?rva0056AB35@Rva0056ACC5@@QAEXH@Z	0x0056AB35	83	partial	mov byte store early and receiver load before fstp not after t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x0056ab35.cpp
 ?Rva00232E3DGet@@YGHHI@Z	0x00232E3D	82	blocked	else-branch drops mov ebp+8 al as redundant plus MBWC push1 lea-ebp-4 hoisted before strlen vs after plus lea ecx-vs-eax t=10 model=muse-07
+?Rva0058D041Write@@YAXPAEPAVNetCommandRef@@@Z	0x0058D041	161	partial	extra xor eax eax at +0x5f before word id load 163B vs 161B 64 vs 63 insns t=10 model=muse-18 score=0.97 stash=reverse/attempts/0x0058d041.cpp

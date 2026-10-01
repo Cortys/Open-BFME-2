@@ -45930,3 +45930,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00232E9A@Rva00232E9A@@QAEXXZ,,0x00232E9A,114,Code/GameEngine/Source/Common/Rva00232E9AImm.cpp,matched,next Rva00232F0C same thunk GCS_COMPSTR 8 plus CURSORPOS 0x80
 ?rva0058D70B@NetPacket@@IAEEPAVNetCommandRef@@@Z,,0x0058D70B,60,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058D70B.cpp,matched,unlock NetPacket sibling isRoomForFrameMessage via same layout and flags
 ?rva0058D826@NetPacket@@IAEXHHHHH@Z,,0x0058D826,265,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058D826.cpp,matched,unlock NetPacket append via memcpy and packetLen
+?rva00589AFF@DockUpdate@@QAEXH@Z,,0x00589AFF,126,Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdateRemove.cpp,matched,DockUpdate remove shifting owners and reached bits
