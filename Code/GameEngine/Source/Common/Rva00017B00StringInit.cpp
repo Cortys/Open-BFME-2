@@ -37,7 +37,9 @@ typedef basic_string<BfmeWChar, char_traits<BfmeWChar>, allocator<BfmeWChar> > B
 
 #include <new>
 
-extern unsigned char g_009DEEF0Static[];
+// g_009DEEF0Static: matched references place it at VA 0xddeef0; zero-filled at retail, sized to the
+// 0xc-byte gap before the next known global there.
+unsigned char g_009DEEF0Static[12];
 
 class Rva00017B00StringInit
 {

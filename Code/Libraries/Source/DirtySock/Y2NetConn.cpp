@@ -60,7 +60,9 @@ char g_Rva0130A840Text[0x10] = { 0 };
 extern const char g_Rva0112B918HexDigits[];
 
 // The default parameter string 0x007EB380 substitutes for a null one.
-extern char g_Rva0130A59CDefault[];
+// g_Rva0130A59CDefault: matched references place it at VA 0xe09fb8; zero-filled at retail, sized to the
+// 0x4-byte gap before the next known global there.
+char g_Rva0130A59CDefault[4];
 extern "C" void *memcpy( void *dest, const void *src, unsigned int count );
 
 // FIVE SELECTORS, and the first one is answered BEFORE the initialisation

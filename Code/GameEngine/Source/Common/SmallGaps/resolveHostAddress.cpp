@@ -6,7 +6,9 @@ extern "C" Rva00885430Hostent* __stdcall gethostbyname(const char* name);
 extern int Rva00885430Resolved;
 // Rva00885430Resolved: matched references place it at VA 0xe0c78c (zero-filled .bss).
 int Rva00885430Resolved;
-extern char Rva00885430Address[];
+// Rva00885430Address: matched references place it at VA 0xe0c780; zero-filled at retail, sized to the
+// 0xc-byte gap before the next known global there.
+char Rva00885430Address[12];
 int __stdcall resolveHostAddress(const char* name)
 {
 	Rva00885430Hostent* host = gethostbyname(name);

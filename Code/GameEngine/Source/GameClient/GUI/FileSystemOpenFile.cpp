@@ -61,7 +61,9 @@ public:
 extern FilePathGate *TheFilePathGate;
 extern LocalFileSystem *TheLocalFileSystem;
 extern ArchiveFileSystem *TheArchiveFileSystem;
-extern char TheLangDir[];
+// TheLangDir: matched references place it at VA 0xe06948; zero-filled at retail, sized to the
+// 0x100-byte gap before the next known global there.
+char TheLangDir[256];
 extern bool BFME2PreferLocalFiles;
 
 class FileSystem

@@ -1461,7 +1461,9 @@ int Rva007ED470( char *record, int size, const char *name,
 // a DIR32 whose operand comes from retail, so the bytes match regardless of
 // what this symbol is called or what it eventually holds; the offsets below
 // are the only thing that is real.
-extern char g_Rva0130A5A4Names[];
+// g_Rva0130A5A4Names: matched references place it at VA 0xe09fc0; zero-filled at retail, sized to the
+// 0x8-byte gap before the next known global there.
+char g_Rva0130A5A4Names[8];
 
 // The configurable separator, also used by the record engine in Y4TextToValue.c
 // -- one byte of writable data shared across the seam between the two halves of

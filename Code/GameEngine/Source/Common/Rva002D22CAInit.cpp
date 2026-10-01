@@ -10,12 +10,16 @@
 extern char g_009BC998[];
 extern char g_009BC9C0[];
 extern char g_009BCAC8[];
-extern char g_009FF018[];
+// g_009FF018: matched references place it at VA 0xdff018; zero-filled at retail, sized to the
+// 0xc-byte gap before the next known global there.
+char g_009FF018[12];
 extern char g_009BC890[];
 extern char g_009BCBAC[];
 extern char g_009BCBC4[];
 extern char g_009BCBDC[];
-extern char g_009FF00C[];
+// g_009FF00C: matched references place it at VA 0xdff00c; zero-filled at retail, sized to the
+// 0xc-byte gap before the next known global there.
+char g_009FF00C[12];
 
 class AsciiStringMember
 {

@@ -69,7 +69,9 @@ extern "C" void  Rva0080E410( void *crypto, char *packet, int length );  // 0x00
 extern "C" unsigned int strlen( const char *text );
 
 // The empty string this module hands back for a block with no payload.
-extern char g_Rva0130ACE0Empty[];
+// g_Rva0130ACE0Empty: matched references place it at VA 0xe0a6f8; zero-filled at retail, sized to the
+// 0x19-byte gap before the next known global there.
+char g_Rva0130ACE0Empty[25];
 unsigned int Rva007FEA00Tick( void );                       // 0x007FEA00
 
 // Retail bytes at 0x00E0A710 consumed by Rva0080B1B0's null-name fallback:

@@ -18,7 +18,9 @@ public:
 	virtual void v8();
 };
 
-extern Rva00548B97Helper *G00A05F88[];
+// G00A05F88: matched references place it at VA 0xe05f88; zero-filled at retail, sized to the
+// 0x20-byte gap before the next known global there.
+Rva00548B97Helper *G00A05F88[8];
 extern int G00A05FA8;
 // G00A05FA8: matched references place it at VA 0xe05fa8 (zero-filled .bss).
 int G00A05FA8;

@@ -34,8 +34,12 @@ Rva0004CA4C::Rva0004CA4C()
 }
 
 extern char g_00DB3D18[];
-extern char g_00DE1CD8[];
-extern char g_00DE1CE4[];
+// g_00DE1CD8: matched references place it at VA 0xde1cd8; zero-filled at retail, sized to the
+// 0xc-byte gap before the next known global there.
+char g_00DE1CD8[12];
+// g_00DE1CE4: matched references place it at VA 0xde1ce4; zero-filled at retail, sized to the
+// 0x164-byte gap before the next known global there.
+char g_00DE1CE4[356];
 
 void Rva0004CA4C::rva0004CA57()
 {
