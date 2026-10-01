@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 //
 // W3DPropDrawModuleData file-unit: parse proc and constructor.
 //
@@ -23,14 +23,7 @@ public:
 	void add(const FieldParse *parseTable, unsigned int extraOffset);
 };
 
-class AsciiString
-{
-public:
-	AsciiString() : m_data(0) {}
-	~AsciiString();
-private:
-	void *m_data;
-};
+#include "ascii_string.h"
 
 class Snapshot
 {

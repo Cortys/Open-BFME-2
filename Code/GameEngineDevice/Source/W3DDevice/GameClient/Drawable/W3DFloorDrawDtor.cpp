@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ??1W3DFloorDraw@@UAE@XZ @0x000CF1A6 102B
 // Dtor over W3DFloorDraw: restores both vptrs (+0 via Rva000CEB6F line and
 // +0x10 second base) then if moduleData (+4) and drawable (+8) are non-null
@@ -11,21 +11,8 @@
 // Shape lever: AsciiString with inline forwarding copy/dtor to the base so
 // the by-value copy keeps retail mov ebp-0x14 esp then mov ecx esp order.
 // Callers: 0x000CF495 deleting dtor. Vtables patched as DIR32 by the gate.
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	StringBase(const StringBase &other);
-	__forceinline ~StringBase() { releaseBuffer(); }
-	void releaseBuffer();
-	T *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : private StringBase<char>
-{
-public:
-	__forceinline AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	__forceinline ~AsciiString() {}
-};
 
 struct FloorDrawModuleData
 {
