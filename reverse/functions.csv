@@ -46298,3 +46298,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00363D20@Rva00363D20@@QAENXZ,,0x00363D20,84,Code/GameEngine/Source/GameLogic/AI/PathRva00363D20.cpp,matched,unlock path-length sum via rowed Approx plus BfmeZeroRange
 ?rva00395E19@Rva00395E19@@QAEXPAVAsciiString@@H@Z,,0x00395E19,58,Code/GameEngine/Source/Common/Rva00395E19.cpp,matched,Dynamic format via +8 +74 +4 +64 unlock
 ?insert@?$list@FV?$allocator@F@_STL@@@_STL@@QAE?AU?$_List_iterator@FU?$_Nonconst_traits@F@_STL@@@2@U32@ABF@Z,,0x002ABB61,37,Code/Libraries/Source/WWVegas/WWLib/stlport_list_s_insert.cpp,matched,stlport-4.5.3 list short insert calls create_node
+?rva002A7677@Rva002A7677@@QAEXXZ,,0x002A7677,30,Code/GameEngine/Source/GameLogic/Object/Rva002A73B8Dtor.cpp,matched,Vector clear via Destroy and free

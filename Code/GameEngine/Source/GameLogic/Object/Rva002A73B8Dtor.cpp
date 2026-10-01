@@ -50,3 +50,23 @@ void Rva002A752FDestroy(Rva002A73B8 *first, Rva002A73B8 *last)
 	for (; first != last; ++first)
 		first->~Rva002A73B8();
 }
+
+extern "C" void __cdecl free(void *);
+
+class Rva002A7677
+{
+public:
+	void rva002A7677();
+
+private:
+	Rva002A73B8 *m_start; // +0x00
+	Rva002A73B8 *m_finish; // +0x04
+};
+
+void Rva002A7677::rva002A7677()
+{
+	Rva002A752FDestroy(m_start, m_finish);
+	Rva002A73B8 *start = m_start;
+	if (start)
+		free(start);
+}
