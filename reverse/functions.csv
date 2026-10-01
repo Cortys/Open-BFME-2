@@ -46314,3 +46314,5 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003E53C8Check@@YG_NPAUCondA003E53C8@@PAUCondB003E53C8@@@Z,,0x003E53C8,114,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E53C8.cpp,matched,chain via rowed rva002A7C0B plus ThePlayerList plus op switch 0-5
 ?Rva003E54B4Check@@YG_NPAVParameter@@@Z,,0x003E54B4,67,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E54B4.cpp,matched,leaf via pin rva00357B82 plus rowed getEachPlayerFromMask plus globals
 ?rva002ABAA6@Player@@QAEXXZ,,0x002ABAA6,13,Code/GameEngine/Source/Common/RTS/PlayerRva002ABAA6.cpp,matched,Player ecx pass-through to iterateObjects
+??$_Construct@VRva0021F876@@V1@@_STL@@YAXPAVRva0021F876@@ABV1@@Z,,0x0021FA1A,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructEhSiblings.cpp,matched,EH-framed placement copy calling the defined Rva0021F876 copy ctor
+??$_Construct@URva002B72C9@@U1@@_STL@@YAXPAURva002B72C9@@ABU1@@Z,,0x002B8226,45,Code/Libraries/Source/WWVegas/WWLib/StlportConstructEhSiblings.cpp,matched,EH-framed placement copy calling the defined Rva002B72C9 copy ctor
