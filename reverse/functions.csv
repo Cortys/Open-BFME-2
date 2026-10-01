@@ -46411,3 +46411,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0051E437@Rva0051E437@@QAEAAV1@ABV1@@Z,,0x0051E437,33,Code/GameEngine/Source/Common/Rva0051E437Copy.cpp,matched,copy three words caller 0x0051E939 stride 0xC
 ?Rva0051E939Copy@@YAPAVRva0051E437@@PAV1@00@Z,,0x0051E939,50,Code/GameEngine/Source/Common/Rva0051E939Copy.cpp,matched,counted array copy via rowed rva0051E437
 ?Rva0051E3F8Pow@@YAHHH@Z,,0x0051E3F8,51,Code/GameEngine/Source/Common/Rva0051E3F8Pow.cpp,matched,int pow by squaring caller 0x0051E458
+?Rva0051E458PowFloat@@YAMHH@Z,,0x0051E458,25,Code/GameEngine/Source/Common/Rva0051E458PowFloat.cpp,matched,float wrapper over rowed int pow
