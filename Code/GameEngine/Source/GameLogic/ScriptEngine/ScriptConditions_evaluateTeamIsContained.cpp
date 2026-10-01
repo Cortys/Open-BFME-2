@@ -1,6 +1,9 @@
 // cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /arch:SSE2 /O1
-// ?evaluateTeamIsContained@ScriptConditions@@IAE_NPAVParameter@@_N@Z
-// @0x003E70AC 126B. BFME1 donor ScriptConditionsTeamMembers.cpp
+// ?evaluateTeamIsContained@ScriptConditions@@MAE_NPAVParameter@@_N@Z
+// @0x003E70AC 126B. Virtual: the ScriptConditions vtable (0x00835B38) holds
+// it in slot 16 next to evaluateSkirmishCommandButtonIsReady, the ZH
+// ScriptConditionsInterface pure virtual it overrides; nothing calls it
+// directly. BFME1 donor ScriptConditionsTeamMembers.cpp
 // evaluateTeamIsContained: member walk through the pinned
 // iterate_TeamMemberList 0x00263864 and DLINK advance 0x00263526, contained =
 // Object +0x274 non-null. The donor's AI-exit refinement is kept: it only runs
@@ -58,7 +61,7 @@ extern ScriptEngine *TheScriptEngine;
 class ScriptConditions
 {
 protected:
-    bool evaluateTeamIsContained(Parameter *, bool);
+    virtual bool evaluateTeamIsContained(Parameter *, bool);
 };
 bool ScriptConditions::evaluateTeamIsContained(Parameter *teamParm, bool allContained)
 {
