@@ -5,9 +5,13 @@
 // StringBase copy 0x000365F0 zeroes four floats at +0x554/+0x558/+0x55C/
 // +0x560 zeroes +0x564 via AND-imm and stores the flag byte at +0x568.
 // Called from Xfer 0x003ECED5 plus two 0x002C5xxx sites. No donor name.
+class Rva003ECD60Object;
+
 template <class T> class StringBase
 {
-public:
+	friend class Rva003ECD60Object;
+
+private:
 	StringBase(const StringBase &other);
 };
 
