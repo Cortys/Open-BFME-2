@@ -6,8 +6,6 @@
 // the rowed range _Destroy, store the new finish and return first. /Oy-
 // keeps the ebp frame retail uses to address its params; the copy-range
 // dummy arrives as pop-slot address [ebp+0xb].
-#include <algorithm>
-
 #include "ascii_string.h"
 
 class Rva00297360Element {
@@ -20,6 +18,10 @@ private:
   int m_08;
   int m_0C;
 };
+
+namespace _STL {
+template <class ForwardIter> void _Destroy(ForwardIter first, ForwardIter last);
+}
 
 Rva00297360Element *Rva002915EBCopyRange(Rva00297360Element *first, Rva00297360Element *last, Rva00297360Element *result, int dummy);
 
