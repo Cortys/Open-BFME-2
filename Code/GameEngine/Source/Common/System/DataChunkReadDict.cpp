@@ -12,6 +12,13 @@ typedef unsigned int UnsignedInt;
 typedef unsigned short UnsignedShort;
 typedef bool Bool;
 
+// Zero Hour's Common/Errors.h (ERROR_BASE 0xDEAD0001 + 4). Retail throws the enum:
+// its ThrowInfo is __TI1?AW4ErrorCode@@ (0x00CFEEE4), not int's __TI1H (0x00CFE2C8).
+enum ErrorCode
+{
+	ERROR_CORRUPT_FILE_FORMAT = 0xDEAD0005
+};
+
 template <typename T>
 class StringBase
 {
@@ -176,7 +183,7 @@ Dict DataChunkInput::readDict(void)
                 break;
             default:
             {
-                throw (int)0xdead0005;
+                throw ERROR_CORRUPT_FILE_FORMAT;
                 break;
             }
         }

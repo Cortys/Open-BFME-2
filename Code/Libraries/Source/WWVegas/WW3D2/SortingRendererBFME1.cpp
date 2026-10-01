@@ -495,7 +495,7 @@ void Rva0012D4D0Apply(RenderStateStruct &render_state)
 		mat->Add_Ref();
 	if (g_00DEE5DC)
 		g_00DEE5DC->Release_Ref();
-	*(unsigned char *)&TheBoxTextureDirtyMask |= 0x40;
+	TheBoxTextureDirtyMask |= 0x4000;
 	g_00DEE5DC = mat;
 	for (int i = 0; i < *(const int *)((const unsigned char *)DX8Wrapper::Get_Current_Caps() + 0x2b0); ++i)
 		BFME2Set_Texture(i, reinterpret_cast<const struct BFME2TextureRef &>(render_state.Textures[i]));
