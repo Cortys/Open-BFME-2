@@ -6728,3 +6728,6 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??1Rva0023DAA5List@@QAE@XZ,0x004EC395,address read from the REL32 displacement at byte-matched body 0x005997CD; folded _List_base dtor
 ??0Rva005C6D4D@@QAE@XZ,0x005C6D4D,address read from the REL32 displacement at byte-matched body 0x0053ED1A
 ??0Rva002E3D7BBase@@QAE@PAPAURva002E36D5Node@@HH@Z,0x002E3D7B,address read from the REL32 displacement at byte-matched body 0x002E3DE3
+??RRva0033C646Less@@QBE_NABURva0033C646Key@@0@Z,0x0033AD5C,address read from the REL32 displacement at byte-matched body 0x0033C646
+?_M_insert@?$_Rb_tree@URva0033C646Key@@U1@U?$_Identity@URva0033C646Key@@@_STL@@URva0033C646Less@@V?$allocator@URva0033C646Key@@@3@@_STL@@AAE?AU?$_Rb_tree_iterator@URva0033C646Key@@U?$_Nonconst_traits@URva0033C646Key@@@_STL@@@2@PAU_Rb_tree_node_base@2@0ABURva0033C646Key@@0@Z,0x0033C0E1,address read from the REL32 displacement at byte-matched body 0x0033C646
+?insert_unique@?$_Rb_tree@URva0033C646Key@@U1@U?$_Identity@URva0033C646Key@@@_STL@@URva0033C646Less@@V?$allocator@URva0033C646Key@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@URva0033C646Key@@U?$_Nonconst_traits@URva0033C646Key@@@_STL@@@_STL@@_N@2@ABURva0033C646Key@@@Z,0x0033C176,address read from the REL32 displacement at byte-matched body 0x0033C646
