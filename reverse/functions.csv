@@ -46500,3 +46500,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0021887C@Rva0021887C@@QAEXXZ,,0x0021887C,30,Code/GameEngine/Source/Common/System/Rva0021887CDestroyFree.cpp,matched,destroy GeometryRecord range then free via rowed callees
 ??0Rva00558D56@@QAE@XZ,,0x00558D56,21,Code/Libraries/Source/WWVegas/WWLib/Rva00558D56.cpp,matched,unlock lane wraps rowed DequeBase 0x0055334A caller 0x00558F07
 ?rva000EFB68@Rva000EFB68@@QAEXHHPAX@Z,,0x000EFB68,49,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva000EFB68.cpp,matched,linkbody abuts prev 0x000EFB5A caller 0x000F093D imul-lea-imul-add slot copy
+?rva000EFD77@Rva000EFD77@@QAE_NH@Z,,0x000EFD77,41,Code/GameEngine/Source/Common/Rva000EFD77Alloc.cpp,matched,unlock sibling Rva000EFDA0Free plus24 plus28 caller 0x000F299D new bool alloc
