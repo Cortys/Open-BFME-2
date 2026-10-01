@@ -1,7 +1,5 @@
 // ??0Rva000A8684@@QAE@XZ
 // partial score=0.92 date=2026-09-29
-// ??0Rva000A8684@@QAE@XZ
-// partial score=0.92 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ??0Rva000A8684@@QAE@XZ, retail 0x000A8684, 74 bytes.
@@ -16,7 +14,7 @@ public:
 	AsciiString() { m_data = 0; }
 	~AsciiString();
 private:
-	char *m_data;
+	char * volatile m_data;
 };
 class UnicodeString
 {
@@ -33,7 +31,7 @@ public:
 private:
 	AsciiString m_0;
 	volatile int m_4;
-	volatile int m_8;
+	int m_8;
 	UnicodeString m_str;
 	volatile unsigned char m_10;
 	volatile unsigned char m_11;
