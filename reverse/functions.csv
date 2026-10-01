@@ -46408,3 +46408,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000731AE@Rva000731AE@@QAEXXZ,,0x000731AE,70,Code/Libraries/Source/WWVegas/WWLib/Rva000731AEClear.cpp,matched,tail clear plus three array deletes via rowed delete plus clear
 ?rva00073C7A@Rva00073C7A@@QAEXXZ,,0x00073C7A,70,Code/Libraries/Source/WWVegas/WWLib/Rva00073C7AClear.cpp,matched,tail clear plus three array deletes via rowed delete plus clear
 ?rva00073950@Rva00073950@@QAEXIPAX@Z,,0x00073950,110,Code/Libraries/Source/WWVegas/WW3D2/Rva00073950Fill.cpp,matched,surface fill via rowed lock plus clear with GlobalData
+?rva0051E437@Rva0051E437@@QAEAAV1@ABV1@@Z,,0x0051E437,33,Code/GameEngine/Source/Common/Rva0051E437Copy.cpp,matched,copy three words caller 0x0051E939 stride 0xC
