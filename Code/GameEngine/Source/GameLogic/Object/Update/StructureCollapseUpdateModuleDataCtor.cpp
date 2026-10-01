@@ -83,7 +83,7 @@ private:
 };
 
 // ??0StructureCollapseUpdateModuleData@@QAE@XZ @0x256ACC
-StructureCollapseUpdateModuleData::StructureCollapseUpdateModuleData()
+inline StructureCollapseUpdateModuleData::StructureCollapseUpdateModuleData()
 {
 	m_minCollapseDelay = 0;
 	m_maxCollapseDelay = 0;
@@ -99,3 +99,14 @@ StructureCollapseUpdateModuleData::StructureCollapseUpdateModuleData()
 		m_fxCount[i] = 1;
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStructureCollapseUpdateModuleDataInlineAnchorStructureCollapseUpdateModuleDataCtor@@YAXPAVStructureCollapseUpdateModuleData@@@Z absent-from-retail
+void _bfmeStructureCollapseUpdateModuleDataInlineAnchorStructureCollapseUpdateModuleDataCtor(StructureCollapseUpdateModuleData *p)
+{
+    p->StructureCollapseUpdateModuleData::StructureCollapseUpdateModuleData();
+}
+#pragma inline_depth()

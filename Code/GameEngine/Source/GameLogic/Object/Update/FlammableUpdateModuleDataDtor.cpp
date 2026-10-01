@@ -93,6 +93,17 @@ private:
 };
 
 // ??1FlammableUpdateModuleData@@UAE@XZ @0x0048D075
-FlammableUpdateModuleData::~FlammableUpdateModuleData()
+inline FlammableUpdateModuleData::~FlammableUpdateModuleData()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFlammableUpdateModuleDataInlineAnchor@@YAXPAVFlammableUpdateModuleData@@@Z absent-from-retail
+void _bfmeFlammableUpdateModuleDataInlineAnchor(FlammableUpdateModuleData *p)
+{
+    p->FlammableUpdateModuleData::~FlammableUpdateModuleData();
+}
+#pragma inline_depth()

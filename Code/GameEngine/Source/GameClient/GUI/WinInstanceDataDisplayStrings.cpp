@@ -133,9 +133,20 @@ void WinInstanceData::setText(UnicodeString text)
 	m_text->setText(text);
 }
 
-UnicodeString WinInstanceData::getTooltipText()
+inline UnicodeString WinInstanceData::getTooltipText()
 {
 	if (m_tooltip)
 		return m_tooltip->getText();
 	return UnicodeString::TheEmptyString;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeWinInstanceDataInlineAnchorWinInstanceDataDisplayStrings@@YAXPAVWinInstanceData@@@Z absent-from-retail
+void _bfmeWinInstanceDataInlineAnchorWinInstanceDataDisplayStrings(WinInstanceData *p)
+{
+    p->getTooltipText();
+}
+#pragma inline_depth()

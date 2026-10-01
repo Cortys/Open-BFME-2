@@ -39,7 +39,7 @@ private:
 };
 
 // ??0LightPulseFXNugget@@QAE@XZ
-LightPulseFXNugget::LightPulseFXNugget()
+inline LightPulseFXNugget::LightPulseFXNugget()
 {
 	*(unsigned int *)this = 0x00BDD790;
 	m_increaseFrames = 0;
@@ -51,3 +51,14 @@ LightPulseFXNugget::LightPulseFXNugget()
 	m_color.red = 0.0f;
 	m_field04 = 4;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeLightPulseFXNuggetInlineAnchor@@YAXPAVLightPulseFXNugget@@@Z absent-from-retail
+void _bfmeLightPulseFXNuggetInlineAnchor(LightPulseFXNugget *p)
+{
+    p->LightPulseFXNugget::LightPulseFXNugget();
+}
+#pragma inline_depth()

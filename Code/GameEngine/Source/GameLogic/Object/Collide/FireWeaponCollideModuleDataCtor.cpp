@@ -53,7 +53,7 @@ private:
 	bool m_fireOnce;	// +0x2C
 };
 
-FireWeaponCollideModuleData::FireWeaponCollideModuleData()
+inline FireWeaponCollideModuleData::FireWeaponCollideModuleData()
 {
 	*(unsigned int *)this = 0x00C4ED70;
 	m_requiredStatus.reset();
@@ -63,3 +63,14 @@ FireWeaponCollideModuleData::FireWeaponCollideModuleData()
 	memset(&m_forbiddenStatus, 0, sizeof(m_forbiddenStatus));
 	m_fireOnce = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFireWeaponCollideModuleDataInlineAnchor@@YAXPAVFireWeaponCollideModuleData@@@Z absent-from-retail
+void _bfmeFireWeaponCollideModuleDataInlineAnchor(FireWeaponCollideModuleData *p)
+{
+    p->FireWeaponCollideModuleData::FireWeaponCollideModuleData();
+}
+#pragma inline_depth()

@@ -49,9 +49,20 @@ private:
 	AsciiString m_unitType;			// +0x60
 };
 
-UnitCrateCollideModuleData::UnitCrateCollideModuleData()
+inline UnitCrateCollideModuleData::UnitCrateCollideModuleData()
 	: m_unitType()
 {
 	m_unitCount = 0;
 	m_unitType.set("");
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeUnitCrateCollideModuleDataInlineAnchor@@YAXPAVUnitCrateCollideModuleData@@@Z absent-from-retail
+void _bfmeUnitCrateCollideModuleDataInlineAnchor(UnitCrateCollideModuleData *p)
+{
+    p->UnitCrateCollideModuleData::UnitCrateCollideModuleData();
+}
+#pragma inline_depth()

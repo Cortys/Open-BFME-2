@@ -19,7 +19,7 @@ public:
 };
 
 // ?Normalize@Vector2@@QAEXXZ
-void Vector2::Normalize()
+inline void Vector2::Normalize()
 {
 	float len2 = Length2();
 	if (len2 != 0.0f) {
@@ -28,3 +28,14 @@ void Vector2::Normalize()
 		Y *= oolen;
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeVector2InlineAnchor@@YAXPAVVector2@@@Z absent-from-retail
+void _bfmeVector2InlineAnchor(Vector2 *p)
+{
+    p->Normalize();
+}
+#pragma inline_depth()

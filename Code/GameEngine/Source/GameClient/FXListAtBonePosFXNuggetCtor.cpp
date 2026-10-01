@@ -30,9 +30,20 @@ private:
 };
 
 // ??0FXListAtBonePosFXNugget@@QAE@XZ
-FXListAtBonePosFXNugget::FXListAtBonePosFXNugget()
+inline FXListAtBonePosFXNugget::FXListAtBonePosFXNugget()
 {
 	m_fxName = 0;
 	m_boneName.clear();
 	m_nuggetType = 10;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFXListAtBonePosFXNuggetInlineAnchor@@YAXPAVFXListAtBonePosFXNugget@@@Z absent-from-retail
+void _bfmeFXListAtBonePosFXNuggetInlineAnchor(FXListAtBonePosFXNugget *p)
+{
+    p->FXListAtBonePosFXNugget::FXListAtBonePosFXNugget();
+}
+#pragma inline_depth()

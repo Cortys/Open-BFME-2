@@ -39,9 +39,20 @@ private:
 	int m_int40;	// +0x40
 };
 
-AttackNugget::AttackNugget()
+inline AttackNugget::AttackNugget()
 {
 	m_float38 = 0.0f;
 	m_int3C = 1;
 	m_int40 = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAttackNuggetInlineAnchor@@YAXPAVAttackNugget@@@Z absent-from-retail
+void _bfmeAttackNuggetInlineAnchor(AttackNugget *p)
+{
+    p->AttackNugget::AttackNugget();
+}
+#pragma inline_depth()

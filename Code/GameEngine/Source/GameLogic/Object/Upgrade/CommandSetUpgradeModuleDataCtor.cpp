@@ -39,7 +39,18 @@ private:
 };
 
 // ??0CommandSetUpgradeModuleData@@QAE@XZ @0x255652
-CommandSetUpgradeModuleData::CommandSetUpgradeModuleData()
+inline CommandSetUpgradeModuleData::CommandSetUpgradeModuleData()
 {
 	m_commandSet = g_emptyAsciiString;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCommandSetUpgradeModuleDataInlineAnchor@@YAXPAVCommandSetUpgradeModuleData@@@Z absent-from-retail
+void _bfmeCommandSetUpgradeModuleDataInlineAnchor(CommandSetUpgradeModuleData *p)
+{
+    p->CommandSetUpgradeModuleData::CommandSetUpgradeModuleData();
+}
+#pragma inline_depth()

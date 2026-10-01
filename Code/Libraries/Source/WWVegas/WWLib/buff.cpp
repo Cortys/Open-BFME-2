@@ -209,7 +209,7 @@ Buffer & Buffer::operator = (Buffer const & buffer)
  * HISTORY:                                                                                    *
  *   07/29/1996 JLB : Created.                                                                 *
  *=============================================================================================*/
-Buffer::~Buffer(void)
+inline Buffer::~Buffer(void)
 {
 	Reset();
 }
@@ -241,3 +241,14 @@ void Buffer::Reset(void)
 	Size = 0;
 	IsAllocated = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBufferInlineAnchor@@YAXPAVBuffer@@@Z absent-from-retail
+void _bfmeBufferInlineAnchor(Buffer *p)
+{
+    p->Buffer::~Buffer();
+}
+#pragma inline_depth()

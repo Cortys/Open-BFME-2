@@ -20,7 +20,18 @@ public:
 };
 
 // ?getMap@GameInfo@@QBE?AVAsciiString@@XZ
-AsciiString GameInfo::getMap() const
+inline AsciiString GameInfo::getMap() const
 {
 	return m_map;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeGameInfoInlineAnchor@@YAXPAVGameInfo@@@Z absent-from-retail
+void _bfmeGameInfoInlineAnchor(GameInfo *p)
+{
+    p->getMap();
+}
+#pragma inline_depth()

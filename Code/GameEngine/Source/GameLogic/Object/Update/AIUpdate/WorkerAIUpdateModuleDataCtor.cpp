@@ -42,7 +42,7 @@ private:
 	int m_harvestActionTime;	// +0x80
 };
 
-SupplyTruckAIUpdateModuleData::SupplyTruckAIUpdateModuleData()
+inline SupplyTruckAIUpdateModuleData::SupplyTruckAIUpdateModuleData()
 {
 	m_maxBoxesData = 0;
 	m_centerDelay = 0;
@@ -53,3 +53,14 @@ SupplyTruckAIUpdateModuleData::SupplyTruckAIUpdateModuleData()
 	m_harvestActionTime = 1;
 	m_harvestActivationRange = 50.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSupplyTruckAIUpdateModuleDataInlineAnchor@@YAXPAVSupplyTruckAIUpdateModuleData@@@Z absent-from-retail
+void _bfmeSupplyTruckAIUpdateModuleDataInlineAnchor(SupplyTruckAIUpdateModuleData *p)
+{
+    p->SupplyTruckAIUpdateModuleData::SupplyTruckAIUpdateModuleData();
+}
+#pragma inline_depth()

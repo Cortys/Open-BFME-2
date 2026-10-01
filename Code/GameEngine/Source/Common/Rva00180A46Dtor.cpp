@@ -33,8 +33,19 @@ private:
 	StringClass m_name;
 };
 
-Rva00180B94_Prototype::~Rva00180B94_Prototype()
+inline Rva00180B94_Prototype::~Rva00180B94_Prototype()
 {
 	void *tmp = m_link ? m_link->get(0) : 0;
 	delete tmp;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva00180B94_PrototypeInlineAnchor@@YAXPAVRva00180B94_Prototype@@@Z absent-from-retail
+void _bfmeRva00180B94_PrototypeInlineAnchor(Rva00180B94_Prototype *p)
+{
+    p->Rva00180B94_Prototype::~Rva00180B94_Prototype();
+}
+#pragma inline_depth()

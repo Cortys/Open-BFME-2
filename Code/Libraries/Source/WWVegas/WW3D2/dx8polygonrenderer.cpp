@@ -85,7 +85,7 @@ DX8PolygonRendererClass::DX8PolygonRendererClass(const DX8PolygonRendererClass& 
 	mmc->PolygonRendererList.Add_Tail(this);
 }
 
-DX8PolygonRendererClass::~DX8PolygonRendererClass()
+inline DX8PolygonRendererClass::~DX8PolygonRendererClass()
 {
 	if (texture_category) texture_category->Remove_Polygon_Renderer(this);
 }
@@ -116,3 +116,13 @@ void DX8PolygonRendererClass::Log()
 */	WWDEBUG_SAY((work));
 }
 
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDX8PolygonRendererClassInlineAnchor@@YAXPAVDX8PolygonRendererClass@@@Z absent-from-retail
+void _bfmeDX8PolygonRendererClassInlineAnchor(DX8PolygonRendererClass *p)
+{
+    p->DX8PolygonRendererClass::~DX8PolygonRendererClass();
+}
+#pragma inline_depth()

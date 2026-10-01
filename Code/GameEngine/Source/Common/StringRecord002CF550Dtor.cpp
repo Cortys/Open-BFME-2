@@ -10,6 +10,17 @@ public:
     ~Rva002390CB() { if (m_owner) m_owner->Release_Ref(); }
 };
 struct BfmeStringRecord002CF550 { AsciiString text; Rva002390CB ref; ~BfmeStringRecord002CF550(); };
-BfmeStringRecord002CF550::~BfmeStringRecord002CF550() {}
+inline BfmeStringRecord002CF550::~BfmeStringRecord002CF550() {}
 
 typedef char RecordExtent[sizeof(BfmeStringRecord002CF550) == 12 ? 1 : -1];
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeStringRecord002CF550InlineAnchor@@YAXPAVBfmeStringRecord002CF550@@@Z absent-from-retail
+void _bfmeBfmeStringRecord002CF550InlineAnchor(BfmeStringRecord002CF550 *p)
+{
+    p->BfmeStringRecord002CF550::~BfmeStringRecord002CF550();
+}
+#pragma inline_depth()

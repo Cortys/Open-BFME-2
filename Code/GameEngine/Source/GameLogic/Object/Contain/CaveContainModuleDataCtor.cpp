@@ -29,8 +29,19 @@ private:
 	int m_caveIndexData;		// +0x98
 };
 
-CaveContainModuleData::CaveContainModuleData()
+inline CaveContainModuleData::CaveContainModuleData()
 {
 	m_caveIndexData = 0;
 	m_vtable = reinterpret_cast<void *>(0x00C43F40);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCaveContainModuleDataInlineAnchor@@YAXPAVCaveContainModuleData@@@Z absent-from-retail
+void _bfmeCaveContainModuleDataInlineAnchor(CaveContainModuleData *p)
+{
+    p->CaveContainModuleData::CaveContainModuleData();
+}
+#pragma inline_depth()

@@ -53,7 +53,7 @@ private:
 };
 
 // ??0FireWeaponWhenDeadBehaviorModuleData@@QAE@XZ @0x00253737
-FireWeaponWhenDeadBehaviorModuleData::FireWeaponWhenDeadBehaviorModuleData()
+inline FireWeaponWhenDeadBehaviorModuleData::FireWeaponWhenDeadBehaviorModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00C4ED70))
 {
 	m_muxData.construct();
@@ -67,3 +67,14 @@ FireWeaponWhenDeadBehaviorModuleData::FireWeaponWhenDeadBehaviorModuleData()
 	weaponOffset[1] = 0.0f;
 	weaponOffset[2] = 0.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFireWeaponWhenDeadBehaviorModuleDataInlineAnchor@@YAXPAVFireWeaponWhenDeadBehaviorModuleData@@@Z absent-from-retail
+void _bfmeFireWeaponWhenDeadBehaviorModuleDataInlineAnchor(FireWeaponWhenDeadBehaviorModuleData *p)
+{
+    p->FireWeaponWhenDeadBehaviorModuleData::FireWeaponWhenDeadBehaviorModuleData();
+}
+#pragma inline_depth()

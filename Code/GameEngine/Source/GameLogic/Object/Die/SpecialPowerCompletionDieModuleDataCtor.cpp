@@ -31,8 +31,19 @@ private:
 };
 
 // ??0SpecialPowerCompletionDieModuleData@@QAE@XZ @0x4C230E
-SpecialPowerCompletionDieModuleData::SpecialPowerCompletionDieModuleData()
+inline SpecialPowerCompletionDieModuleData::SpecialPowerCompletionDieModuleData()
 {
 	m_specialPowerTemplate = 0;
 	m_vtable = reinterpret_cast<void *>(0x00C4ED70);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSpecialPowerCompletionDieModuleDataInlineAnchor@@YAXPAVSpecialPowerCompletionDieModuleData@@@Z absent-from-retail
+void _bfmeSpecialPowerCompletionDieModuleDataInlineAnchor(SpecialPowerCompletionDieModuleData *p)
+{
+    p->SpecialPowerCompletionDieModuleData::SpecialPowerCompletionDieModuleData();
+}
+#pragma inline_depth()

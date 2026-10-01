@@ -41,9 +41,20 @@ private:
 };
 
 // ??0StatusBitsUpgradeModuleData@@QAE@XZ @0x254775
-StatusBitsUpgradeModuleData::StatusBitsUpgradeModuleData()
+inline StatusBitsUpgradeModuleData::StatusBitsUpgradeModuleData()
 {
 	m_vtable = reinterpret_cast<void *>(0x00BF2558);
 	((_STL::bitset<128> *)m_statusToSet)->reset();
 	((_STL::bitset<128> *)m_statusToClear)->reset();
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStatusBitsUpgradeModuleDataInlineAnchor@@YAXPAVStatusBitsUpgradeModuleData@@@Z absent-from-retail
+void _bfmeStatusBitsUpgradeModuleDataInlineAnchor(StatusBitsUpgradeModuleData *p)
+{
+    p->StatusBitsUpgradeModuleData::StatusBitsUpgradeModuleData();
+}
+#pragma inline_depth()

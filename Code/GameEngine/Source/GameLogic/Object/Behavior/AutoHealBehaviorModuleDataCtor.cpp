@@ -72,7 +72,7 @@ private:
 };
 
 // ??0AutoHealBehaviorModuleData@@QAE@XZ @0x254DE7
-AutoHealBehaviorModuleData::AutoHealBehaviorModuleData()
+inline AutoHealBehaviorModuleData::AutoHealBehaviorModuleData()
 	: m_vtable(0x00C4ED70), m_08(), m_kindOf()
 {
 	m_healingDelay |= -1;
@@ -94,3 +94,14 @@ AutoHealBehaviorModuleData::AutoHealBehaviorModuleData()
 	m_respawnFXList = 0;
 	m_respawnMinimumDelay = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAutoHealBehaviorModuleDataInlineAnchor@@YAXPAVAutoHealBehaviorModuleData@@@Z absent-from-retail
+void _bfmeAutoHealBehaviorModuleDataInlineAnchor(AutoHealBehaviorModuleData *p)
+{
+    p->AutoHealBehaviorModuleData::AutoHealBehaviorModuleData();
+}
+#pragma inline_depth()

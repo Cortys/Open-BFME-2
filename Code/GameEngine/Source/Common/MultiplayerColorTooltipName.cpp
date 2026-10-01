@@ -15,7 +15,18 @@ private:
 };
 
 // ?getTooltipName@MultiplayerColorDefinition@@QBE?AVAsciiString@@XZ
-AsciiString MultiplayerColorDefinition::getTooltipName() const
+inline AsciiString MultiplayerColorDefinition::getTooltipName() const
 {
 	return m_tooltipName;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeMultiplayerColorDefinitionInlineAnchor@@YAXPAVMultiplayerColorDefinition@@@Z absent-from-retail
+void _bfmeMultiplayerColorDefinitionInlineAnchor(MultiplayerColorDefinition *p)
+{
+    p->getTooltipName();
+}
+#pragma inline_depth()

@@ -57,7 +57,7 @@ private:
 };
 
 // ??0SpawnUnitBehaviorModuleData@@QAE@XZ @0x25598C
-SpawnUnitBehaviorModuleData::SpawnUnitBehaviorModuleData()
+inline SpawnUnitBehaviorModuleData::SpawnUnitBehaviorModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00BF36C0))
 {
 	m_unitName.set("");
@@ -67,3 +67,14 @@ SpawnUnitBehaviorModuleData::SpawnUnitBehaviorModuleData()
 	m_unused18 = 0.0f;
 	m_spawnOnce = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSpawnUnitBehaviorModuleDataInlineAnchor@@YAXPAVSpawnUnitBehaviorModuleData@@@Z absent-from-retail
+void _bfmeSpawnUnitBehaviorModuleDataInlineAnchor(SpawnUnitBehaviorModuleData *p)
+{
+    p->SpawnUnitBehaviorModuleData::SpawnUnitBehaviorModuleData();
+}
+#pragma inline_depth()

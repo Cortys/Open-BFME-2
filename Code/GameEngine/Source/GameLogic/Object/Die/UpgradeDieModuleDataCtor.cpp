@@ -36,9 +36,20 @@ private:
 };
 
 // ??0UpgradeDieModuleData@@QAE@XZ @0x2550ED
-UpgradeDieModuleData::UpgradeDieModuleData()
+inline UpgradeDieModuleData::UpgradeDieModuleData()
 {
 	m_vtable = reinterpret_cast<void *>(0x00BF33C0);
 	_ReadWriteBarrier();
 	m_upgradeName = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeUpgradeDieModuleDataInlineAnchor@@YAXPAVUpgradeDieModuleData@@@Z absent-from-retail
+void _bfmeUpgradeDieModuleDataInlineAnchor(UpgradeDieModuleData *p)
+{
+    p->UpgradeDieModuleData::UpgradeDieModuleData();
+}
+#pragma inline_depth()

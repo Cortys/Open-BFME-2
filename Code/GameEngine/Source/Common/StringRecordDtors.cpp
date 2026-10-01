@@ -65,7 +65,7 @@ struct BfmeStringRecord000B94D2
 	AsciiString m_00;
 	AsciiString m_04;
 };
-BfmeStringRecord000B94D2::~BfmeStringRecord000B94D2() {}
+inline BfmeStringRecord000B94D2::~BfmeStringRecord000B94D2() {}
 
 struct Rva000543F5Record
 {
@@ -90,3 +90,14 @@ struct Rva0033B352Record
 	BfmeWideString000543F5 m_04;
 };
 Rva0033B352Record::~Rva0033B352Record() {}
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeStringRecord000B94D2InlineAnchor@@YAXPAVBfmeStringRecord000B94D2@@@Z absent-from-retail
+void _bfmeBfmeStringRecord000B94D2InlineAnchor(BfmeStringRecord000B94D2 *p)
+{
+    p->BfmeStringRecord000B94D2::~BfmeStringRecord000B94D2();
+}
+#pragma inline_depth()

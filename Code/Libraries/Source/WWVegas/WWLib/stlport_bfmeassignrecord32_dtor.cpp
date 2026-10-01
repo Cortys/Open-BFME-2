@@ -32,6 +32,17 @@ struct BfmeAssignRecord32 {
 	~BfmeAssignRecord32();
 };
 
-BfmeAssignRecord32::~BfmeAssignRecord32()
+inline BfmeAssignRecord32::~BfmeAssignRecord32()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeAssignRecord32InlineAnchor@@YAXPAVBfmeAssignRecord32@@@Z absent-from-retail
+void _bfmeBfmeAssignRecord32InlineAnchor(BfmeAssignRecord32 *p)
+{
+    p->BfmeAssignRecord32::~BfmeAssignRecord32();
+}
+#pragma inline_depth()

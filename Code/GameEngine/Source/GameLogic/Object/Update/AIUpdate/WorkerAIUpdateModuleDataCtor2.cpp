@@ -44,7 +44,7 @@ private:
 };
 
 // ??0WorkerAIUpdateModuleData@@QAE@XZ @0x00254434
-WorkerAIUpdateModuleData::WorkerAIUpdateModuleData()
+inline WorkerAIUpdateModuleData::WorkerAIUpdateModuleData()
 {
 	int *voice = &m_suppliesDepletedVoice;
 	int *maxBoxes = &m_maxBoxes;
@@ -62,3 +62,14 @@ WorkerAIUpdateModuleData::WorkerAIUpdateModuleData()
 	m_harvestActionTime = 1;
 	m_harvestActivationRange = 50.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeWorkerAIUpdateModuleDataInlineAnchor@@YAXPAVWorkerAIUpdateModuleData@@@Z absent-from-retail
+void _bfmeWorkerAIUpdateModuleDataInlineAnchor(WorkerAIUpdateModuleData *p)
+{
+    p->WorkerAIUpdateModuleData::WorkerAIUpdateModuleData();
+}
+#pragma inline_depth()

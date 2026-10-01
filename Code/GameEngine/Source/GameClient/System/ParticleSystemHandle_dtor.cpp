@@ -25,7 +25,7 @@ public:
 	BfmeParticleSystemHandle *m_lastHandle;		// +0xA0
 };
 
-BfmeParticleSystemHandle::~BfmeParticleSystemHandle()
+inline BfmeParticleSystemHandle::~BfmeParticleSystemHandle()
 {
 	if (m_previous)
 		m_previous->m_next = m_next;
@@ -55,3 +55,14 @@ void Rva002115C5::rva002115C5()
 	if (m_handle.m_system)
 		m_handle.~BfmeParticleSystemHandle();
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeParticleSystemHandleInlineAnchor@@YAXPAVBfmeParticleSystemHandle@@@Z absent-from-retail
+void _bfmeBfmeParticleSystemHandleInlineAnchor(BfmeParticleSystemHandle *p)
+{
+    p->BfmeParticleSystemHandle::~BfmeParticleSystemHandle();
+}
+#pragma inline_depth()

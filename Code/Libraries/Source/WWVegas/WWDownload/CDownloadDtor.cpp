@@ -44,7 +44,18 @@ private:
 	Cftp *m_Ftp;
 };
 
-CDownload::~CDownload()
+inline CDownload::~CDownload()
 {
 	::operator delete(m_Ftp != 0 ? m_Ftp->scalarDeletingDestructor(0) : 0);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCDownloadInlineAnchor@@YAXPAVCDownload@@@Z absent-from-retail
+void _bfmeCDownloadInlineAnchor(CDownload *p)
+{
+    p->CDownload::~CDownload();
+}
+#pragma inline_depth()

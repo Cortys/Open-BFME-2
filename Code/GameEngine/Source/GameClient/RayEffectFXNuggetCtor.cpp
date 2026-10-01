@@ -39,10 +39,21 @@ private:
 };
 
 // ??0RayEffectFXNugget@@QAE@XZ
-RayEffectFXNugget::RayEffectFXNugget()
+inline RayEffectFXNugget::RayEffectFXNugget()
 {
 	m_templateName.clear();
 	m_primaryOffset.x = m_primaryOffset.y = m_primaryOffset.z = 0.0f;
 	m_secondaryOffset.x = m_secondaryOffset.y = m_secondaryOffset.z = 0.0f;
 	m_nuggetType = 2;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRayEffectFXNuggetInlineAnchor@@YAXPAVRayEffectFXNugget@@@Z absent-from-retail
+void _bfmeRayEffectFXNuggetInlineAnchor(RayEffectFXNugget *p)
+{
+    p->RayEffectFXNugget::RayEffectFXNugget();
+}
+#pragma inline_depth()

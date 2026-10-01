@@ -35,10 +35,21 @@ private:
 	unsigned int m_affectsUpToLevel;	// +0x64
 };
 
-VeterancyCrateCollideModuleData::VeterancyCrateCollideModuleData()
+inline VeterancyCrateCollideModuleData::VeterancyCrateCollideModuleData()
 {
 	m_rangeOfEffect = 0;
 	m_addsOwnerVeterancy = false;
 	m_isPilot = false;
 	m_affectsUpToLevel = 10;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeVeterancyCrateCollideModuleDataInlineAnchor@@YAXPAVVeterancyCrateCollideModuleData@@@Z absent-from-retail
+void _bfmeVeterancyCrateCollideModuleDataInlineAnchor(VeterancyCrateCollideModuleData *p)
+{
+    p->VeterancyCrateCollideModuleData::VeterancyCrateCollideModuleData();
+}
+#pragma inline_depth()

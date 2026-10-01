@@ -78,7 +78,7 @@ CameraMarker &CameraMarker::operator=(const CameraMarker &src)
 
 // ??1CameraMarker@@QAE@XZ, retail 0x0029D7C2; clear() is its only caller.
 // Removing the definition also changes clear()'s inlining.
-CameraMarker::~CameraMarker()
+inline CameraMarker::~CameraMarker()
 {
 }
 
@@ -133,3 +133,14 @@ void CameraMarkerList::remove(CameraMarker *marker)
 		link = &(*link)->m_next;
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCameraMarkerInlineAnchor@@YAXPAVCameraMarker@@@Z absent-from-retail
+void _bfmeCameraMarkerInlineAnchor(CameraMarker *p)
+{
+    p->CameraMarker::~CameraMarker();
+}
+#pragma inline_depth()

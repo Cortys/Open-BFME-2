@@ -34,8 +34,19 @@ private:
 	float m_clearRangeRequiredToContinueAttackMove;	// +0x68
 };
 
-AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData()
+inline AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData()
 {
 	m_membersGetHealedAtLifeRatio = 0.0f;
 	m_clearRangeRequiredToContinueAttackMove = 50.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAssaultTransportAIUpdateModuleDataInlineAnchor@@YAXPAVAssaultTransportAIUpdateModuleData@@@Z absent-from-retail
+void _bfmeAssaultTransportAIUpdateModuleDataInlineAnchor(AssaultTransportAIUpdateModuleData *p)
+{
+    p->AssaultTransportAIUpdateModuleData::AssaultTransportAIUpdateModuleData();
+}
+#pragma inline_depth()

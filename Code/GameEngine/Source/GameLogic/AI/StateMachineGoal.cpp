@@ -409,7 +409,7 @@ StateReturnType StateMachine::updateStateMachine()
 // Retail gap between clear 0x004D72C5 and update 0x004D7321 in same TU; donor
 // StateMachine.h isInBusyState verbatim (current null false else isBusy slot 0x28).
 // No direct callees; indirect isBusy slot10.
-Bool StateMachine::isInBusyState() const
+inline Bool StateMachine::isInBusyState() const
 {
 	if (m_currentState != NULL)
 	{
@@ -418,3 +418,14 @@ Bool StateMachine::isInBusyState() const
 	}
 	return false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStateMachineInlineAnchor@@YAXPAVStateMachine@@@Z absent-from-retail
+void _bfmeStateMachineInlineAnchor(StateMachine *p)
+{
+    p->isInBusyState();
+}
+#pragma inline_depth()

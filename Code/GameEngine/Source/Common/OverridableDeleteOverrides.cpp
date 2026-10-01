@@ -12,7 +12,7 @@ public:
     bool m_isOverride;
     Overridable *deleteOverrides();
 };
-Overridable *Overridable::deleteOverrides() {
+inline Overridable *Overridable::deleteOverrides() {
     if (m_isOverride) {
         ::delete this;
         return 0;
@@ -21,3 +21,14 @@ Overridable *Overridable::deleteOverrides() {
         m_nextOverride = m_nextOverride->deleteOverrides();
     return this;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeOverridableInlineAnchor@@YAXPAVOverridable@@@Z absent-from-retail
+void _bfmeOverridableInlineAnchor(Overridable *p)
+{
+    p->deleteOverrides();
+}
+#pragma inline_depth()

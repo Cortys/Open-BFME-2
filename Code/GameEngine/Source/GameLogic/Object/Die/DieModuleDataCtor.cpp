@@ -25,7 +25,18 @@ private:
 	void *_c;
 };
 
-DieModuleData::DieModuleData()
+inline DieModuleData::DieModuleData()
 	: _a(0), _b(0), _c(0)
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDieModuleDataInlineAnchor@@YAXPAVDieModuleData@@@Z absent-from-retail
+void _bfmeDieModuleDataInlineAnchor(DieModuleData *p)
+{
+    p->DieModuleData::DieModuleData();
+}
+#pragma inline_depth()

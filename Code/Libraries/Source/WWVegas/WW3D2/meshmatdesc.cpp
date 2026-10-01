@@ -196,7 +196,7 @@ bool UVBufferClass::Is_Equal_To(const UVBufferClass & that)
 }
 
 
-void UVBufferClass::Update_CRC(void)
+inline void UVBufferClass::Update_CRC(void)
 {
 	CRC = CRC_Memory((unsigned char *)Get_Array(),Get_Count() * sizeof(Vector2));
 }
@@ -903,3 +903,14 @@ bool MeshMatDescClass::Do_Mappers_Need_Normals(void)
 
 	return false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeUVBufferClassInlineAnchor@@YAXPAVUVBufferClass@@@Z absent-from-retail
+void _bfmeUVBufferClassInlineAnchor(UVBufferClass *p)
+{
+    p->Update_CRC();
+}
+#pragma inline_depth()

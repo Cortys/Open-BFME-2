@@ -37,10 +37,21 @@ extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
 // ??0DoCommandUpgradeModuleData@@QAE@XZ @0x255795
-DoCommandUpgradeModuleData::DoCommandUpgradeModuleData()
+inline DoCommandUpgradeModuleData::DoCommandUpgradeModuleData()
 {
 	m_vtable = reinterpret_cast<void *>(0x00BF3840);
 	_ReadWriteBarrier();
 	m_getUpgradeCommandButtonName = 0;
 	m_removeUpgradeCommandButtonName = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDoCommandUpgradeModuleDataInlineAnchor@@YAXPAVDoCommandUpgradeModuleData@@@Z absent-from-retail
+void _bfmeDoCommandUpgradeModuleDataInlineAnchor(DoCommandUpgradeModuleData *p)
+{
+    p->DoCommandUpgradeModuleData::DoCommandUpgradeModuleData();
+}
+#pragma inline_depth()

@@ -78,7 +78,7 @@ void FadeAndDieOrnamentUpdateModuleData::buildFieldParse(MultiIniFieldParse &par
 }
 
 // ??0FadeAndDieOrnamentUpdateModuleData@@QAE@XZ @0x002555AC
-FadeAndDieOrnamentUpdateModuleData::FadeAndDieOrnamentUpdateModuleData()
+inline FadeAndDieOrnamentUpdateModuleData::FadeAndDieOrnamentUpdateModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00BF3740))
 	, m_attachToTargetBone()
 {
@@ -89,3 +89,14 @@ FadeAndDieOrnamentUpdateModuleData::FadeAndDieOrnamentUpdateModuleData()
 	m_attachToTargetBone.clear();
 	m_followTarget = true;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFadeAndDieOrnamentUpdateModuleDataInlineAnchor@@YAXPAVFadeAndDieOrnamentUpdateModuleData@@@Z absent-from-retail
+void _bfmeFadeAndDieOrnamentUpdateModuleDataInlineAnchor(FadeAndDieOrnamentUpdateModuleData *p)
+{
+    p->FadeAndDieOrnamentUpdateModuleData::FadeAndDieOrnamentUpdateModuleData();
+}
+#pragma inline_depth()

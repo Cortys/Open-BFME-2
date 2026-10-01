@@ -26,9 +26,20 @@ private:
 };
 
 // ??0ViewShakeFXNugget@@QAE@XZ
-ViewShakeFXNugget::ViewShakeFXNugget()
+inline ViewShakeFXNugget::ViewShakeFXNugget()
 {
 	*(unsigned int *)this = 0x00BDD7E0;
 	m_shake = 1;
 	m_field04 = 6;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeViewShakeFXNuggetInlineAnchor@@YAXPAVViewShakeFXNugget@@@Z absent-from-retail
+void _bfmeViewShakeFXNuggetInlineAnchor(ViewShakeFXNugget *p)
+{
+    p->ViewShakeFXNugget::ViewShakeFXNugget();
+}
+#pragma inline_depth()

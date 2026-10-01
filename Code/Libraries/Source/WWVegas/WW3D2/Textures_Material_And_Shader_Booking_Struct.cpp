@@ -88,7 +88,7 @@ private:
 	unsigned added_type_count;
 };
 
-Textures_Material_And_Shader_Booking_Struct::Textures_Material_And_Shader_Booking_Struct()
+inline Textures_Material_And_Shader_Booking_Struct::Textures_Material_And_Shader_Booking_Struct()
 {
 	rva00906340VecCtor(
 		this,
@@ -105,3 +105,14 @@ Textures_Material_And_Shader_Booking_Struct::Textures_Material_And_Shader_Bookin
     for (int index = 0; index < 0x40; ++index)
         added_materials[index] = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeTextures_Material_And_Shader_Booking_StructInlineAnchor@@YAXPAVTextures_Material_And_Shader_Booking_Struct@@@Z absent-from-retail
+void _bfmeTextures_Material_And_Shader_Booking_StructInlineAnchor(Textures_Material_And_Shader_Booking_Struct *p)
+{
+    p->Textures_Material_And_Shader_Booking_Struct::Textures_Material_And_Shader_Booking_Struct();
+}
+#pragma inline_depth()

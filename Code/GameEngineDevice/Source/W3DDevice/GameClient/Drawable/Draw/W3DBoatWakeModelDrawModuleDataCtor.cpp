@@ -43,7 +43,7 @@ private:
 };
 
 // ??0W3DBoatWakeModelDrawModuleData@@QAE@XZ @0x000D0CD8
-W3DBoatWakeModelDrawModuleData::W3DBoatWakeModelDrawModuleData()
+inline W3DBoatWakeModelDrawModuleData::W3DBoatWakeModelDrawModuleData()
 {
 	unsigned int *modelName = &m_modelName;
 	*(unsigned int *)this = 0x00BCDE68;
@@ -58,3 +58,14 @@ void W3DBoatWakeModelDrawModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BCDEE4), 0);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeW3DBoatWakeModelDrawModuleDataInlineAnchor@@YAXPAVW3DBoatWakeModelDrawModuleData@@@Z absent-from-retail
+void _bfmeW3DBoatWakeModelDrawModuleDataInlineAnchor(W3DBoatWakeModelDrawModuleData *p)
+{
+    p->W3DBoatWakeModelDrawModuleData::W3DBoatWakeModelDrawModuleData();
+}
+#pragma inline_depth()

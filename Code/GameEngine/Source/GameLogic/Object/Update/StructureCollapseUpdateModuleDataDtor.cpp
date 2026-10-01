@@ -81,6 +81,17 @@ private:
 	float m_collapseHeight; // +0xF8
 };
 
-StructureCollapseUpdateModuleData::~StructureCollapseUpdateModuleData()
+inline StructureCollapseUpdateModuleData::~StructureCollapseUpdateModuleData()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStructureCollapseUpdateModuleDataInlineAnchorStructureCollapseUpdateModuleDataDtor@@YAXPAVStructureCollapseUpdateModuleData@@@Z absent-from-retail
+void _bfmeStructureCollapseUpdateModuleDataInlineAnchorStructureCollapseUpdateModuleDataDtor(StructureCollapseUpdateModuleData *p)
+{
+    p->StructureCollapseUpdateModuleData::~StructureCollapseUpdateModuleData();
+}
+#pragma inline_depth()

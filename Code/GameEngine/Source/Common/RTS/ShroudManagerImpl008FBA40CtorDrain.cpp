@@ -126,7 +126,7 @@ ShroudManagerImpl008FBA40::ShroudManagerImpl008FBA40()
 	configure(region, 1.0f);
 }
 
-void ShroudManagerImpl008FBA40::drainPending()
+inline void ShroudManagerImpl008FBA40::drainPending()
 {
 	++unknown38;
 	while (pendingPartitionData)
@@ -138,3 +138,14 @@ void ShroudManagerImpl008FBA40::drainPending()
 
 	processPending(true);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeShroudManagerImpl008FBA40InlineAnchor@@YAXPAVShroudManagerImpl008FBA40@@@Z absent-from-retail
+void _bfmeShroudManagerImpl008FBA40InlineAnchor(ShroudManagerImpl008FBA40 *p)
+{
+    p->drainPending();
+}
+#pragma inline_depth()

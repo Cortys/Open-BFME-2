@@ -58,7 +58,7 @@ private:
 };
 
 // ??0CrushDieModuleData@@QAE@XZ @0x2539B3
-CrushDieModuleData::CrushDieModuleData()
+inline CrushDieModuleData::CrushDieModuleData()
 {
 	for (int i = 0; i < CRUSH_COUNT; ++i)
 		m_crushSoundPercent[i] = 100;
@@ -68,3 +68,14 @@ CrushDieModuleData::CrushDieModuleData()
 Rva00253510::~Rva00253510()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCrushDieModuleDataInlineAnchor@@YAXPAVCrushDieModuleData@@@Z absent-from-retail
+void _bfmeCrushDieModuleDataInlineAnchor(CrushDieModuleData *p)
+{
+    p->CrushDieModuleData::CrushDieModuleData();
+}
+#pragma inline_depth()

@@ -434,7 +434,7 @@ MaterialInfoClass * MeshClass::Get_Material_Info(void)
  *   2/4/99     GTH : Created.                                                                 *
  *=============================================================================================*/
 // ?MeshClass::Get_Model present-unmatched
-MeshModelClass * MeshClass::Get_Model(void)
+inline MeshModelClass * MeshClass::Get_Model(void)
 {
 	if (Model != NULL) {
 		Model->Add_Ref();
@@ -1244,3 +1244,13 @@ int MeshClass::Get_Draw_Call_Count(void) const
 	}
 }
 
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeMeshClassInlineAnchor@@YAXPAVMeshClass@@@Z absent-from-retail
+void _bfmeMeshClassInlineAnchor(MeshClass *p)
+{
+    p->Get_Model();
+}
+#pragma inline_depth()

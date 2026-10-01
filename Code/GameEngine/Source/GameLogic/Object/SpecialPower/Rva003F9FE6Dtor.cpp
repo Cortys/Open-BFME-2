@@ -60,6 +60,17 @@ private:
 	unsigned char m_56;
 };
 
-Rva003F9FE6::~Rva003F9FE6()
+inline Rva003F9FE6::~Rva003F9FE6()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva003F9FE6InlineAnchor@@YAXPAVRva003F9FE6@@@Z absent-from-retail
+void _bfmeRva003F9FE6InlineAnchor(Rva003F9FE6 *p)
+{
+    p->Rva003F9FE6::~Rva003F9FE6();
+}
+#pragma inline_depth()

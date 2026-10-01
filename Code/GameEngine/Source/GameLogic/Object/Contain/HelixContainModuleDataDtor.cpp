@@ -43,4 +43,15 @@ private:
 typedef char BaseExtent[sizeof(Rva001DFA48Owner) == 0x148 ? 1 : -1];
 typedef char OwnedFieldExtent[sizeof(BfmeOwnedString4) == 4 ? 1 : -1];
 
-HelixContainModuleData::~HelixContainModuleData() {}
+inline HelixContainModuleData::~HelixContainModuleData() {}
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeHelixContainModuleDataInlineAnchor@@YAXPAVHelixContainModuleData@@@Z absent-from-retail
+void _bfmeHelixContainModuleDataInlineAnchor(HelixContainModuleData *p)
+{
+    p->HelixContainModuleData::~HelixContainModuleData();
+}
+#pragma inline_depth()

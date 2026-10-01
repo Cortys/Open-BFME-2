@@ -23,8 +23,19 @@ private:
 };
 
 // ??0UpgradeMux@@QAE@XZ @0x4CE2A3
-UpgradeMux::UpgradeMux()
+inline UpgradeMux::UpgradeMux()
 	: m_vtable(reinterpret_cast<void *>(0x00C5FF10)),
 	  m_executed(false)
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeUpgradeMuxInlineAnchor@@YAXPAVUpgradeMux@@@Z absent-from-retail
+void _bfmeUpgradeMuxInlineAnchor(UpgradeMux *p)
+{
+    p->UpgradeMux::UpgradeMux();
+}
+#pragma inline_depth()

@@ -29,10 +29,21 @@ private:
 };
 
 // ??0SoundFXNugget@@QAE@XZ
-SoundFXNugget::SoundFXNugget()
+inline SoundFXNugget::SoundFXNugget()
 {
 	*(unsigned int *)this = 0x00BDD768;
 	_ReadWriteBarrier();
 	m_soundName = 0;
 	m_field04 = 1;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSoundFXNuggetInlineAnchor@@YAXPAVSoundFXNugget@@@Z absent-from-retail
+void _bfmeSoundFXNuggetInlineAnchor(SoundFXNugget *p)
+{
+    p->SoundFXNugget::SoundFXNugget();
+}
+#pragma inline_depth()

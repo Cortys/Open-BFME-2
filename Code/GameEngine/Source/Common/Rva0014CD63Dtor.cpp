@@ -39,7 +39,7 @@ public:
 };
 
 // ??1Rva0014CD63@@UAE@XZ
-Rva0014CD63::~Rva0014CD63()
+inline Rva0014CD63::~Rva0014CD63()
 {
 	PrototypeTreeRef *tree = m_tree;
 	if (tree != 0)
@@ -48,3 +48,14 @@ Rva0014CD63::~Rva0014CD63()
 			tree->DeleteThis();
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva0014CD63InlineAnchor@@YAXPAVRva0014CD63@@@Z absent-from-retail
+void _bfmeRva0014CD63InlineAnchor(Rva0014CD63 *p)
+{
+    p->Rva0014CD63::~Rva0014CD63();
+}
+#pragma inline_depth()

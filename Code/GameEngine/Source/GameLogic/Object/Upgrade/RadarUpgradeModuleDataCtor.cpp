@@ -35,8 +35,19 @@ private:
 };
 
 // ??0RadarUpgradeModuleData@@QAE@XZ @0x2546D2
-RadarUpgradeModuleData::RadarUpgradeModuleData()
+inline RadarUpgradeModuleData::RadarUpgradeModuleData()
 {
 	m_vtable = reinterpret_cast<void *>(0x00BF2558);
 	m_disableProof = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRadarUpgradeModuleDataInlineAnchor@@YAXPAVRadarUpgradeModuleData@@@Z absent-from-retail
+void _bfmeRadarUpgradeModuleDataInlineAnchor(RadarUpgradeModuleData *p)
+{
+    p->RadarUpgradeModuleData::RadarUpgradeModuleData();
+}
+#pragma inline_depth()

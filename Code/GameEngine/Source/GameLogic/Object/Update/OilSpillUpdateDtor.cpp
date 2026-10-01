@@ -50,8 +50,19 @@ private:
 	unsigned char m_pad30[0x38 - 0x30];
 };
 
-OilSpillUpdate::~OilSpillUpdate()
+inline OilSpillUpdate::~OilSpillUpdate()
 {
 	if (m_buf2C)
 		free(m_buf2C);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeOilSpillUpdateInlineAnchor@@YAXPAVOilSpillUpdate@@@Z absent-from-retail
+void _bfmeOilSpillUpdateInlineAnchor(OilSpillUpdate *p)
+{
+    p->OilSpillUpdate::~OilSpillUpdate();
+}
+#pragma inline_depth()

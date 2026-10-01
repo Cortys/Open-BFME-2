@@ -67,10 +67,21 @@ private:
 };
 
 // ??0StructureBodyModuleData@@QAE@XZ @0x257006
-StructureBodyModuleData::StructureBodyModuleData()
+inline StructureBodyModuleData::StructureBodyModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00BF4028))
 {
 	AsciiString &healingDefault = TheGlobalData->m_healingBuff;
 	if (!healingDefault.isEmpty())
 		m_healingBuffFx = TheFXListStore->findFXList(healingDefault.c_str());
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStructureBodyModuleDataInlineAnchor@@YAXPAVStructureBodyModuleData@@@Z absent-from-retail
+void _bfmeStructureBodyModuleDataInlineAnchor(StructureBodyModuleData *p)
+{
+    p->StructureBodyModuleData::StructureBodyModuleData();
+}
+#pragma inline_depth()

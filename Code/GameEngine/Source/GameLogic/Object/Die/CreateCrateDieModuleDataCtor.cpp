@@ -47,7 +47,7 @@ private:
 };
 
 // ??0CreateCrateDieModuleData@@QAE@XZ @0x2572EE
-CreateCrateDieModuleData::CreateCrateDieModuleData()
+inline CreateCrateDieModuleData::CreateCrateDieModuleData()
 {
 	m_crateNameList.clear();
 }
@@ -58,3 +58,14 @@ CreateCrateDieModuleData::CreateCrateDieModuleData()
 Rva00253510::~Rva00253510()
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeCreateCrateDieModuleDataInlineAnchor@@YAXPAVCreateCrateDieModuleData@@@Z absent-from-retail
+void _bfmeCreateCrateDieModuleDataInlineAnchor(CreateCrateDieModuleData *p)
+{
+    p->CreateCrateDieModuleData::CreateCrateDieModuleData();
+}
+#pragma inline_depth()

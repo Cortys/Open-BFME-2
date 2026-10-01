@@ -48,7 +48,7 @@ public:
 	bool m_bfme6D;
 };
 
-SlavedUpdateModuleData::SlavedUpdateModuleData()
+inline SlavedUpdateModuleData::SlavedUpdateModuleData()
 	: m_leashRange(0)
 	, m_guardMaxRange(0)
 	, m_attackRange(0)
@@ -75,3 +75,14 @@ SlavedUpdateModuleData::SlavedUpdateModuleData()
 	, m_bfme6D(false)
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSlavedUpdateModuleDataInlineAnchor@@YAXPAVSlavedUpdateModuleData@@@Z absent-from-retail
+void _bfmeSlavedUpdateModuleDataInlineAnchor(SlavedUpdateModuleData *p)
+{
+    p->SlavedUpdateModuleData::SlavedUpdateModuleData();
+}
+#pragma inline_depth()

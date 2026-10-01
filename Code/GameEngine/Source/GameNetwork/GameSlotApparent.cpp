@@ -346,7 +346,7 @@ UnicodeString GameSlot::getApparentPlayerTemplateDisplayName() const
 }
 
 // ?unAccept@GameSlot@@QAEXXZ
-void GameSlot::unAccept()
+inline void GameSlot::unAccept()
 {
     if (isHuman())
     {
@@ -441,3 +441,13 @@ Int GameInfo::getLocalSlotNum() const
     return -1;
 }
 
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeGameSlotInlineAnchorGameSlotApparent@@YAXPAVGameSlot@@@Z absent-from-retail
+void _bfmeGameSlotInlineAnchorGameSlotApparent(GameSlot *p)
+{
+    p->unAccept();
+}
+#pragma inline_depth()

@@ -20,8 +20,19 @@ private:
 
 extern const void *const g_00BE39F4[];
 
-Rva0020453CHolderBase::~Rva0020453CHolderBase()
+inline Rva0020453CHolderBase::~Rva0020453CHolderBase()
 {
     *(const void **)this = g_00BE39F4;
     release();
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva0020453CHolderBaseInlineAnchor@@YAXPAVRva0020453CHolderBase@@@Z absent-from-retail
+void _bfmeRva0020453CHolderBaseInlineAnchor(Rva0020453CHolderBase *p)
+{
+    p->Rva0020453CHolderBase::~Rva0020453CHolderBase();
+}
+#pragma inline_depth()

@@ -54,7 +54,7 @@ private:
 };
 
 // ??0SubObjectsUpgradeModuleData@@QAE@XZ @0x257768
-SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData()
+inline SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData()
 	: m_vtable(reinterpret_cast<volatile const void *>(0x00BF41A8))
 {
 	m_148 = 0.5f;
@@ -64,3 +64,14 @@ SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData()
 	m_f153 = 0;
 	m_14C = 0.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSubObjectsUpgradeModuleDataInlineAnchor@@YAXPAVSubObjectsUpgradeModuleData@@@Z absent-from-retail
+void _bfmeSubObjectsUpgradeModuleDataInlineAnchor(SubObjectsUpgradeModuleData *p)
+{
+    p->SubObjectsUpgradeModuleData::SubObjectsUpgradeModuleData();
+}
+#pragma inline_depth()

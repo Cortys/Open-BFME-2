@@ -13,8 +13,19 @@ public:
 private:
 	OpaqueRefCounted *m_ptr;
 };
-BfmeStringTailRecord156::~BfmeStringTailRecord156()
+inline BfmeStringTailRecord156::~BfmeStringTailRecord156()
 {
 	if (m_ptr)
 		m_ptr->Release_Ref();
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeStringTailRecord156InlineAnchor@@YAXPAVBfmeStringTailRecord156@@@Z absent-from-retail
+void _bfmeBfmeStringTailRecord156InlineAnchor(BfmeStringTailRecord156 *p)
+{
+    p->BfmeStringTailRecord156::~BfmeStringTailRecord156();
+}
+#pragma inline_depth()

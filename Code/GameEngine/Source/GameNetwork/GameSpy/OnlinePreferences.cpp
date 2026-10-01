@@ -315,7 +315,7 @@ LadderPreferences::~LadderPreferences()
 }
 
 // ??1LadderPref@@QAE@XZ @0x5BA3C0
-LadderPref::~LadderPref()
+inline LadderPref::~LadderPref()
 {
 }
 
@@ -356,3 +356,14 @@ void __cdecl Rva0055A087Format(int *vals, AsciiString *out)
 		out->concat(tmp);
 	}
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeLadderPrefInlineAnchor@@YAXPAVLadderPref@@@Z absent-from-retail
+void _bfmeLadderPrefInlineAnchor(LadderPref *p)
+{
+    p->LadderPref::~LadderPref();
+}
+#pragma inline_depth()

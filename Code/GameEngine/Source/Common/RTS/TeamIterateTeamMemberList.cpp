@@ -73,7 +73,18 @@ private:
 	Object *m_head;
 };
 
-DLINK_ITERATOR<Object> Team::iterate_TeamMemberList() const
+inline DLINK_ITERATOR<Object> Team::iterate_TeamMemberList() const
 {
 	return DLINK_ITERATOR<Object>(m_head, &Object::dlink_next_TeamMemberList);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeTeamInlineAnchor@@YAXPAVTeam@@@Z absent-from-retail
+void _bfmeTeamInlineAnchor(Team *p)
+{
+    p->iterate_TeamMemberList();
+}
+#pragma inline_depth()

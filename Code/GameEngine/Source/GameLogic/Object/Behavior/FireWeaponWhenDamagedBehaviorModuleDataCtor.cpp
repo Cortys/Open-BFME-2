@@ -43,7 +43,7 @@ private:
 };
 
 // ??0FireWeaponWhenDamagedBehaviorModuleData@@QAE@XZ @0x00253682
-FireWeaponWhenDamagedBehaviorModuleData::FireWeaponWhenDamagedBehaviorModuleData()
+inline FireWeaponWhenDamagedBehaviorModuleData::FireWeaponWhenDamagedBehaviorModuleData()
 {
 	*(const void **)this = reinterpret_cast<const void *>(0x00C4ED70);
 	m_sharedConstruct.construct();
@@ -59,3 +59,14 @@ FireWeaponWhenDamagedBehaviorModuleData::FireWeaponWhenDamagedBehaviorModuleData
 	m_continuousWeaponRubble = 0;
 	m_damageAmount = 0.0f;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFireWeaponWhenDamagedBehaviorModuleDataInlineAnchor@@YAXPAVFireWeaponWhenDamagedBehaviorModuleData@@@Z absent-from-retail
+void _bfmeFireWeaponWhenDamagedBehaviorModuleDataInlineAnchor(FireWeaponWhenDamagedBehaviorModuleData *p)
+{
+    p->FireWeaponWhenDamagedBehaviorModuleData::FireWeaponWhenDamagedBehaviorModuleData();
+}
+#pragma inline_depth()

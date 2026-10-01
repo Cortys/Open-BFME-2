@@ -141,7 +141,7 @@ private:
 };
 
 // ??0StructureToppleUpdateModuleData@@QAE@XZ @0x00257A5E
-StructureToppleUpdateModuleData::StructureToppleUpdateModuleData()
+inline StructureToppleUpdateModuleData::StructureToppleUpdateModuleData()
 	: UpdateModuleData()
 	, m_vtable(reinterpret_cast<const void *>(0x00BF43A8))
 	, m_crushingWeaponName(0)
@@ -168,3 +168,14 @@ StructureToppleUpdateModuleData::StructureToppleUpdateModuleData()
 	_STL::vector<AngleFXInfo, _STL::allocator<AngleFXInfo> > &angleBones = m_angleFX;
 	angleBones.erase(angleBones.begin(), angleBones.end());
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStructureToppleUpdateModuleDataInlineAnchor@@YAXPAVStructureToppleUpdateModuleData@@@Z absent-from-retail
+void _bfmeStructureToppleUpdateModuleDataInlineAnchor(StructureToppleUpdateModuleData *p)
+{
+    p->StructureToppleUpdateModuleData::StructureToppleUpdateModuleData();
+}
+#pragma inline_depth()

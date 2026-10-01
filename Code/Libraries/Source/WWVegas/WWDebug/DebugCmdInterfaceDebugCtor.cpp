@@ -26,7 +26,7 @@ public:
 };
 
 // ??0DebugCmdInterfaceDebug@@QAE@XZ
-DebugCmdInterfaceDebug::DebugCmdInterfaceDebug(void)
+inline DebugCmdInterfaceDebug::DebugCmdInterfaceDebug(void)
 {
 }
 
@@ -39,3 +39,14 @@ void deleteCmdInterfaceDebug(DebugCmdInterfaceDebug *p)
 {
 	delete p;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDebugCmdInterfaceDebugInlineAnchor@@YAXPAVDebugCmdInterfaceDebug@@@Z absent-from-retail
+void _bfmeDebugCmdInterfaceDebugInlineAnchor(DebugCmdInterfaceDebug *p)
+{
+    p->DebugCmdInterfaceDebug::DebugCmdInterfaceDebug();
+}
+#pragma inline_depth()

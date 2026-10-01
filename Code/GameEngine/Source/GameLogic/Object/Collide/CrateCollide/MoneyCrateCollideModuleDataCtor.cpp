@@ -31,7 +31,18 @@ private:
 	unsigned int m_moneyProvided;	// +0x5C
 };
 
-MoneyCrateCollideModuleData::MoneyCrateCollideModuleData()
+inline MoneyCrateCollideModuleData::MoneyCrateCollideModuleData()
 {
 	m_moneyProvided = 0;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeMoneyCrateCollideModuleDataInlineAnchor@@YAXPAVMoneyCrateCollideModuleData@@@Z absent-from-retail
+void _bfmeMoneyCrateCollideModuleDataInlineAnchor(MoneyCrateCollideModuleData *p)
+{
+    p->MoneyCrateCollideModuleData::MoneyCrateCollideModuleData();
+}
+#pragma inline_depth()

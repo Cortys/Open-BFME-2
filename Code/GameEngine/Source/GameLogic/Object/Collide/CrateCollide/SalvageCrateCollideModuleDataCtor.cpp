@@ -43,7 +43,7 @@ private:
 extern "C" void _ReadWriteBarrier();
 #pragma intrinsic(_ReadWriteBarrier)
 
-SalvageCrateCollideModuleData::SalvageCrateCollideModuleData()
+inline SalvageCrateCollideModuleData::SalvageCrateCollideModuleData()
 {
 	*(unsigned int *)this = 0x00BF3A40;
 	m_float5C = 0.0f;
@@ -57,3 +57,14 @@ SalvageCrateCollideModuleData::SalvageCrateCollideModuleData()
 	m_int78 = 0;
 	m_flag7C = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeSalvageCrateCollideModuleDataInlineAnchor@@YAXPAVSalvageCrateCollideModuleData@@@Z absent-from-retail
+void _bfmeSalvageCrateCollideModuleDataInlineAnchor(SalvageCrateCollideModuleData *p)
+{
+    p->SalvageCrateCollideModuleData::SalvageCrateCollideModuleData();
+}
+#pragma inline_depth()

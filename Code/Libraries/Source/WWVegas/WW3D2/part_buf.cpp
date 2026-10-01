@@ -3414,7 +3414,7 @@ int ParticleBufferClass::Is_Merge_Intersections(void) const
 }
 
 // ?ParticleBufferClass::Is_Freeze_Random present-unmatched
-int ParticleBufferClass::Is_Freeze_Random(void) const
+inline int ParticleBufferClass::Is_Freeze_Random(void) const
 {
 	if (LineRenderer != NULL) {
 		return LineRenderer->Is_Freeze_Random();
@@ -3593,3 +3593,14 @@ ShaderClass ParticleBufferClass::Get_Shader (void) const
 	WWASSERT(0);
 	return ShaderClass::_PresetOpaqueShader;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeParticleBufferClassInlineAnchor@@YAXPAVParticleBufferClass@@@Z absent-from-retail
+void _bfmeParticleBufferClassInlineAnchor(ParticleBufferClass *p)
+{
+    p->Is_Freeze_Random();
+}
+#pragma inline_depth()

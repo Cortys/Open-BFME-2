@@ -24,10 +24,21 @@
 // BFME2 offset explicitly rather than moving the shim. The +0x3c inner
 // offset is unchanged, so DrawableLocoInfo's own layout carried over.
 // ?getWheelInfo@Drawable@@QBEPBUTWheelInfo@@XZ
-const TWheelInfo *Drawable::getWheelInfo( void ) const
+inline const TWheelInfo *Drawable::getWheelInfo( void ) const
 {
 	const void *locoInfo = *reinterpret_cast<const void * const *>(
 		reinterpret_cast<const unsigned char *>(this) + 0x88);
 	return locoInfo ? reinterpret_cast<const TWheelInfo *>(
 		reinterpret_cast<const unsigned char *>(locoInfo) + 0x3c) : NULL;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDrawableInlineAnchor@@YAXPAVDrawable@@@Z absent-from-retail
+void _bfmeDrawableInlineAnchor(Drawable *p)
+{
+    p->getWheelInfo();
+}
+#pragma inline_depth()

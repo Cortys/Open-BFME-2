@@ -36,8 +36,19 @@ private:
 };
 
 // ??0ModuleData@@QAE@XZ
-ModuleData::ModuleData()
+inline ModuleData::ModuleData()
 	: m_sourceFile(), m_sourceLine(0), m_sourceFlags0(0), m_sourceFlags1(0), m_moduleTagNameKey(0)
 {
 	m_sourceFile.set("<no file>");
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeModuleDataInlineAnchor@@YAXPAVModuleData@@@Z absent-from-retail
+void _bfmeModuleDataInlineAnchor(ModuleData *p)
+{
+    p->ModuleData::ModuleData();
+}
+#pragma inline_depth()

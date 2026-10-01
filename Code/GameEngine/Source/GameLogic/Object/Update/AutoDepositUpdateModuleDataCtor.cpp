@@ -55,7 +55,7 @@ private:
 	bool m_onlyWhenGarrisoned;			// +0x21
 };
 
-AutoDepositUpdateModuleData::AutoDepositUpdateModuleData()
+inline AutoDepositUpdateModuleData::AutoDepositUpdateModuleData()
 	: m_vtable(reinterpret_cast<const void *>(0x00BF1BC8))
 	, m_depositTiming(0)
 	, m_depositAmount(0)
@@ -67,3 +67,14 @@ AutoDepositUpdateModuleData::AutoDepositUpdateModuleData()
 	m_giveNoXP = false;
 	m_onlyWhenGarrisoned = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAutoDepositUpdateModuleDataInlineAnchor@@YAXPAVAutoDepositUpdateModuleData@@@Z absent-from-retail
+void _bfmeAutoDepositUpdateModuleDataInlineAnchor(AutoDepositUpdateModuleData *p)
+{
+    p->AutoDepositUpdateModuleData::AutoDepositUpdateModuleData();
+}
+#pragma inline_depth()

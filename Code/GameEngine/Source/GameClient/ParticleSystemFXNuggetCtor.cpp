@@ -95,7 +95,7 @@ private:
 	Coord3D m_targetOffset; // +0x1B0
 };
 
-ParticleSystemFXNugget::ParticleSystemFXNugget()
+inline ParticleSystemFXNugget::ParticleSystemFXNugget()
 {
 	m_name.clear();
 	m_count = 1;
@@ -118,3 +118,14 @@ ParticleSystemFXNugget::ParticleSystemFXNugget()
 	m_onlyIfOnWater = false;
 	m_ricochet = false;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeParticleSystemFXNuggetInlineAnchor@@YAXPAVParticleSystemFXNugget@@@Z absent-from-retail
+void _bfmeParticleSystemFXNuggetInlineAnchor(ParticleSystemFXNugget *p)
+{
+    p->ParticleSystemFXNugget::ParticleSystemFXNugget();
+}
+#pragma inline_depth()

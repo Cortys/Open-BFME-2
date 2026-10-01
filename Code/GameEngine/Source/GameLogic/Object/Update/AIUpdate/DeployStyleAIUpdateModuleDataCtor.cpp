@@ -50,7 +50,7 @@ private:
 };
 
 // ??0DeployStyleAIUpdateModuleData@@QAE@XZ @0x255154
-DeployStyleAIUpdateModuleData::DeployStyleAIUpdateModuleData()
+inline DeployStyleAIUpdateModuleData::DeployStyleAIUpdateModuleData()
 	: TransportAIUpdateModuleData()
 {
 	int *unpackTime = &m_unpackTime;
@@ -64,3 +64,14 @@ DeployStyleAIUpdateModuleData::DeployStyleAIUpdateModuleData()
 	m_turretsMustCenterBeforePacking = false;
 	m_mustDeployToAttack = true;
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDeployStyleAIUpdateModuleDataInlineAnchor@@YAXPAVDeployStyleAIUpdateModuleData@@@Z absent-from-retail
+void _bfmeDeployStyleAIUpdateModuleDataInlineAnchor(DeployStyleAIUpdateModuleData *p)
+{
+    p->DeployStyleAIUpdateModuleData::DeployStyleAIUpdateModuleData();
+}
+#pragma inline_depth()

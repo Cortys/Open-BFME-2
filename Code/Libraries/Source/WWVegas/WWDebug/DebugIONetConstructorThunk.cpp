@@ -22,6 +22,17 @@ public:
 };
 
 // ??0DebugIONet@@QAE@XZ
-DebugIONet::DebugIONet(void)
+inline DebugIONet::DebugIONet(void)
 {
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeDebugIONetInlineAnchor@@YAXPAVDebugIONet@@@Z absent-from-retail
+void _bfmeDebugIONetInlineAnchor(DebugIONet *p)
+{
+    p->DebugIONet::DebugIONet();
+}
+#pragma inline_depth()

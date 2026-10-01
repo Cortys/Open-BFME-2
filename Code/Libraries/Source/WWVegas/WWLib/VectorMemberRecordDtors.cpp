@@ -62,7 +62,7 @@ struct BfmeStringRecord00111ACF
 	_STL::vector<Rva003F610FElement> m_04;
 	_STL::vector<int> m_10;
 };
-BfmeStringRecord00111ACF::~BfmeStringRecord00111ACF() {}
+inline BfmeStringRecord00111ACF::~BfmeStringRecord00111ACF() {}
 
 struct Rva003F610FElement
 {
@@ -121,3 +121,14 @@ TensileFormationUpdateMember::~TensileFormationUpdateMember()
 {
 	Rva004BA341DestroyRange(m_begin, m_finish);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. The anchor keeps this
+// unit's copies for the rows; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeBfmeStringRecord00111ACFInlineAnchor@@YAXPAVBfmeStringRecord00111ACF@@@Z absent-from-retail
+void _bfmeBfmeStringRecord00111ACFInlineAnchor(BfmeStringRecord00111ACF *p)
+{
+    p->BfmeStringRecord00111ACF::~BfmeStringRecord00111ACF();
+}
+#pragma inline_depth()
