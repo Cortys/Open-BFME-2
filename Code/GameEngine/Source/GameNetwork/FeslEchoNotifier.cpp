@@ -2,6 +2,14 @@
 
 void sendFeslMessage( void *message, const char *route, void *connection ) throw();
 
+// The pinned buffer/capacity ctor and +0x10/+0x14 buffer fields identify the
+// message layout; key/value types select the matched record add accessors.
+// Its derived destructor is chosen over the folded BfmeMsg base destructor.
+#pragma comment(linker, "/alternatename:??0FeslEchoMessage@@QAE@PADH@Z=??0BfmeMsgVJH@@QAE@PADH@Z")
+#pragma comment(linker, "/alternatename:??1FeslEchoMessage@@QAE@XZ=??1BfmeMsgVJH@@UAE@XZ")
+#pragma comment(linker, "/alternatename:?addInt@FeslEchoMessage@@QAEXPBDH@Z=?addInt@Rva007E8810Message@@QAEXPBDH@Z")
+#pragma comment(linker, "/alternatename:?addString@FeslEchoMessage@@QAEXPBD0@Z=?addString@Rva007E8810Message@@QAEXPBD0@Z")
+
 class FeslEchoMessage
 {
 public:
