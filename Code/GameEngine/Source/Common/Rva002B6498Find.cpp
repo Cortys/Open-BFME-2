@@ -2,7 +2,7 @@
 //
 // ?rva002B6498@Rva002B6498@@QAEPAVArmorTemplate@@W4NameKeyType@@@Z @0x002B6498 32B
 // Hashtable find over the +0x10 ArmorTemplate table via rowed _M_find
-// 0x002888D4 (rts::hash plus _STL::equal_to) with node+8 value return.
+// 0x002888D4 (rts::hash plus rts::equal_to) with node+8 value return.
 // Evidence: calls 0x002888D4; callers 0x002B6F42 0x002B933F 0x002BDD49
 // 0x002E3570 0x003F1BE2 0x003F2287 0x004FBA17 0x0050306A; same map as
 // Rva003ED2A3ManagerRemove.cpp; minimal _STL forward declares (no <hash_map>
@@ -31,6 +31,9 @@ template <> struct hash<NameKeyType>
 {
 	unsigned int operator()(const NameKeyType &key) const;
 };
+template <class T> struct equal_to
+{
+};
 }
 
 namespace _STL
@@ -41,9 +44,6 @@ template <class T1, class T2> struct pair
 	T2 second;
 };
 template <class P> struct _Select1st
-{
-};
-template <class T> struct equal_to
 {
 };
 template <class T> struct less
@@ -62,12 +62,12 @@ template <class Val, class Key, class HF, class ExK, class EqK, class All> class
 	friend class ::Rva002B6498;
 	typedef _Hashtable_node<Val> _Node;
 private:
-	_Node *_M_find(const Key &) const;
+	template <class KT> _Node *_M_find(const KT &) const;
 };
 }
 
 class Rva002B6498;
-typedef _STL::hashtable<_STL::pair<const NameKeyType, ArmorTemplate>, NameKeyType, rts::hash<NameKeyType>, _STL::_Select1st<_STL::pair<const NameKeyType, ArmorTemplate> >, _STL::equal_to<NameKeyType>, _STL::allocator<_STL::pair<const NameKeyType, ArmorTemplate> > > ArmorHashtable;
+typedef _STL::hashtable<_STL::pair<const NameKeyType, ArmorTemplate>, NameKeyType, rts::hash<NameKeyType>, _STL::_Select1st<_STL::pair<const NameKeyType, ArmorTemplate> >, rts::equal_to<NameKeyType>, _STL::allocator<_STL::pair<const NameKeyType, ArmorTemplate> > > ArmorHashtable;
 
 class Rva002B6498
 {
