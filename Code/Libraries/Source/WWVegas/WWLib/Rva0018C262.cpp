@@ -14,13 +14,22 @@ struct Rva0018C262Head {
 	Rva0018C262Head *m_08;
 	Rva0018C262Head *m_0C;
 };
-class Rva0018C262 {
+namespace _STL { void __cdecl free(void *block); }
+// ?Rva0018C262HeaderOwner::~Rva0018C262HeaderOwner present-unmatched
+struct Rva0018C262HeaderOwner {
+	Rva0018C262Head *m_head;
+	inline ~Rva0018C262HeaderOwner() {
+		if (m_head)
+			_STL::free(m_head);
+	}
+};
+class Rva0018C262 : public Rva0018C262HeaderOwner {
 public:
+	~Rva0018C262();
 	void rva0018C262(Rva0018C262Node *p);
 	void rva0018C316();
 	Rva0018C262Node *rva0018C28F(const unsigned short *key);
 	void rva0018C33F(Rva0018C262Node *&out, Rva0018C262Node *a, Rva0018C262Node *b, const unsigned short *v, Rva0018C262Node *c);
-	Rva0018C262Head *m_head;
 	int m_size;
 };
 namespace _STL {
@@ -89,4 +98,13 @@ void Rva0018C262::rva0018C33F(Rva0018C262Node *&out, Rva0018C262Node *a, Rva0018
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)node, (_STL::_Rb_tree_node_base *&)m_head->m_04);
 	++m_size;
 	out = node;
+}
+// Target 0x0018C3E6..0x0018C41D: clear the same tree, then release its
+// base-owned header through 0x00030830. The C++ allocator declaration preserves
+// the target unwind transition; node erasure above retains its C declaration.
+// Header ownership follows STLport _Rb_tree_base; target application name is
+// still unknown. No change to the established header/count offsets 0/4.
+Rva0018C262::~Rva0018C262()
+{
+	rva0018C316();
 }
