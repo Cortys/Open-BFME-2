@@ -4831,3 +4831,4 @@ FUN_006dc4b8	0x002DC4B8	115	blocked	same 0xE0C 0xE10 overlapping List_base pair 
 ?rva000311E0@GeneralAllocator@Allocator@EA@@QAEIPBXIPADPAGI@Z	0x000311E0	497	partial	push ebx-ebp late vs early plus hex esp offsets plus xor-mov vs movzx plus tail ebx-vs-ecx t=20 model=muse-16 score=0.93 stash=reverse/attempts/0x000311e0.cpp
 ?rva001F3B1C@Rva001F3B1C@@QAEXM@Z	0x001F3B1C	247	partial	SSE scheduling wall interleaved pairs sin fstp early vs late after y-c t=25 model=muse-16 score=0.9 stash=reverse/attempts/0x001f3b1c.cpp
 ?rva001F3A25@Rva001F3A25@@QAEXM@Z	0x001F3A25	247	partial	SSE scheduling wall same family as 0x001F3B1C interleaved pairs t=15 model=muse-16 score=0.9 stash=reverse/attempts/0x001f3a25.cpp
+FUN_0080CAD3	0x0040CAD3	45	blocked	vector allocate-and-copy 45B same as Rva0051ED51 but copy Rva003F74CFCopy is 3-arg vs 4 pushes incl false_type at ebp+b t=12 model=muse-03
