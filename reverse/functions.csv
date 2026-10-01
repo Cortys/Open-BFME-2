@@ -44997,3 +44997,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva000B7074@Rva000B7074@@QAEXXZ,,0x000B7074,153,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000B7074.cpp,matched,chain via 0x000B4E23 rowed f1-gt0 f2-eq0 comiss-threshold div-mul
 ?getUnicodeVersion@Version@@QAE?AVUnicodeString@@XZ,,0x0023800A,148,Code/GameEngine/Source/Common/VersionUnicode.cpp,matched,BFME1 version.cpp Format2 with m_major m_minor via fetch slot 0x3C
 ?rva0037379B@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z,,0x0037379B,101,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,same 101B object shape as siblings AICMD 0x3E m_obj slot-0
+?Rva0039B95FCount@@YGHPAH@Z,,0x0039B95F,114,Code/GameEngine/Source/Common/Rva0039B95FCount.cpp,matched,triple flag filter over vector via rowed getters
