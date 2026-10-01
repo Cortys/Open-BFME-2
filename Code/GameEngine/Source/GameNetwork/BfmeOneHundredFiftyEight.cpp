@@ -74,7 +74,7 @@ void bfmeFillZJ(BfmeGridZJ *grid)
 
 class Rva007E8810Message;
 
-void Rva007E8640Copy( char *destination, unsigned size, const char *source );
+void Rva00655700( char *destination, unsigned size, const char *source );
 
 class Rva007FC020Ticket
 {
@@ -121,10 +121,10 @@ public:
 	int m_extra;
 };
 
-class BfmeE1029
+class Rva006557F0Holder
 {
 public:
-	void bfmeGo1029E( char *text, int value );
+	void set( const char *text, int value );
 
 	char m_pad[ 8 ];
 	char m_text[ 0x1c ];
@@ -215,11 +215,11 @@ void BfmeThingZI::rva007F7DA0( Rva007E8810Message *msg )
 			entry->m_bfmeUsed = 4;
 			*(int *)((char *)entry + 0x18) = ticket.m_pid;
 			((Rva00800290Buffer *)((char *)entry + 0x1c))->append( ticket.m_ticket );
-			Rva007E8640Copy( (char *)entry + 0x6c, 0x25, ticket.m_ugid );
+			Rva00655700( (char *)entry + 0x6c, 0x25, ticket.m_ugid );
 
 			if( ticket.m_host[ 0 ] != 0 )
 			{
-				((BfmeE1029 *)( (char *)entry + 0x3c ))->bfmeGo1029E(
+				((Rva006557F0Holder *)( (char *)entry + 0x3c ))->set(
 					ticket.m_host, ticket.m_p );
 				*(void **)((char *)entry + 0x64) = (void *)((char *)entry + 0x3c);
 			}
