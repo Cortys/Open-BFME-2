@@ -46184,3 +46184,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005C7636@Rva005C76C0@@QAEXXZ,,0x005C7636,138,Code/GameEngine/Source/Common/Rva005C7636.cpp,matched,accumulator m_38 plus inc from ctor layout and caller 0x0055A853
 ?Rva003AFC6BWrite@@YAXPAVFile@@PAI@Z,,0x003AFC6B,159,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva003AFBC1Write.cpp,matched,chain via rowed Pad oss str Write flags-minus-2 g_00C1D838 vtable-DIR32
 ?rva0055CC35@PointEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0055CC35,186,Code/GameEngine/Source/GameClient/Rva0055CC35Write.cpp,matched,chain via 0x003AFC6B vslot3 WriteHeader bool IsHollow str Write vtable-DIR32
+?rva0055CEAA@LineEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0055CEAA,263,Code/GameEngine/Source/GameClient/Rva0055CEAAWrite.cpp,matched,chain via 0x003AFC6B vslot3 WriteHeader IsHollow StartPoint EndPoint vtable-DIR32
