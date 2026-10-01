@@ -4954,3 +4954,4 @@ _peerAuthenticateCDKey	0x00699BB0	146	converted	Whole-file donor compilation pla
 ?cleanup@Gen_dtor_009f2600@@QAEXXZ	0x00627600	163	blocked	ours 145B vs retail 163B 13 structural regions register-memory wall size delta -18 t=5 model=muse-16
 ?Rva0049A6DCGet@@YG_NPAX@Z	0x0049A6DC	44	blocked	switch byte-table mapping unrecoverable from packet t=18 model=muse-02
 ?rva000A9851@Rva000A9851@@QAEXPAX@Z	0x000A9851	44	blocked	pointer loop emits mov not fld for float while indexed emits fld with scaled addressing plus reg wall and push order t=25 model=muse-04
+?rva00223DD7@Rva00223DD7@@QAEXPBDH@Z	0x00223DD7	116	blocked	esi edi swapped plus dead frame slot and dead table store t=20 model=muse-01
