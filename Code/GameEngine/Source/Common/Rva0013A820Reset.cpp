@@ -1,5 +1,9 @@
 // cl: /O2 /Ob0
 
+// Rva0036CA00Str is one data pointer, matching StringBase<char>'s receiver;
+// retail pins its zero-argument clear() to releaseBuffer at 0x00036410.
+#pragma comment(linker, "/alternatename:?clear@Rva0036CA00Str@@QAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
+
 class Rva0036CA00Str
 {
 public:
