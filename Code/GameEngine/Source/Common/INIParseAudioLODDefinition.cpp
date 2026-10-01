@@ -64,7 +64,7 @@ public:
 	Int getAudioLODIndex(const AsciiString &name);
 };
 
-GameLODManager *TheGameLODManager;
+extern GameLODManager *TheGameLODManager;  // defined in GameLOD.cpp
 
 static const FieldParse audioLODFieldParseTable[4] = { { 0 }, { 0 }, { 0 }, { 0 } };
 

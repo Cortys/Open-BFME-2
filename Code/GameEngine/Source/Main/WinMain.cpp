@@ -248,7 +248,7 @@ public:
 		const char *buildDate);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 class IMEManager
 {
@@ -362,7 +362,7 @@ public:
 	virtual void setMouseLimits();
 };
 
-Mouse *TheMouse;
+extern Mouse *TheMouse;  // defined in Mouse.cpp
 
 class AudioManager
 {

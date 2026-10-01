@@ -139,7 +139,7 @@ private:
 	virtual void StartOutput(const char *fmt, unsigned count);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 // ?CheckBegin@Debug@@QAEAAV1@PBDHH0@Z
 Debug &Debug::CheckBegin(const char *file, int line, int reserved, const char *expr)

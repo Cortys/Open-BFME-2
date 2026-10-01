@@ -50,7 +50,7 @@ typedef _STL::map<AsciiString, AsciiString> AsciiPreferenceMap;
 // Retail LOD level-name table (VeryLow, Low, Medium, High, UltraHigh,
 // Custom) at 0xDB95F4. COMMON merges across TUs; the address patches
 // from retail.
-const char *BfmeLODLevelNames[7];
+extern const char *BfmeLODLevelNames[7];  // defined in OptionPreferences_setStaticGameLOD.cpp
 
 struct Rva00DFE144Globals
 {

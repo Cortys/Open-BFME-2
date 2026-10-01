@@ -56,7 +56,7 @@ public:
 	virtual void _M_slot_b0(unsigned arg);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 void bfmeNotifyDebugWindowed(unsigned runWindowed)
 {

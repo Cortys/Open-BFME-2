@@ -76,7 +76,7 @@ public:
 	static bool SkipNext(bool set);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 void Log_DX8_ErrorCode(unsigned res)
 {

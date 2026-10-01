@@ -70,7 +70,7 @@ public:
 	virtual void Command(const char *cmd);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 class ProfileCmdInterface
 {

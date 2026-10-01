@@ -88,7 +88,7 @@ private:
 };
 
 // StringClass::m_EmptyString: defined in wwstring.cpp (= &m_NullChar).
-char StringClass::m_NullChar;
+// StringClass::m_NullChar: defined in wwstring.cpp.
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/texture.h
 // Add_Ref is inline so the TU emits no standalone copy: the ledger holds no

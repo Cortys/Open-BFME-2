@@ -73,7 +73,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 //
 //
-ParticleEmitterLoaderClass	_ParticleEmitterLoader;
+// _ParticleEmitterLoader: defined in particle_emitter_read_props.cpp.
 
 const char *EMITTER_TYPE_NAMES[EMITTER_TYPEID_COUNT] = 
 {

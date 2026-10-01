@@ -58,7 +58,7 @@ public:
 	virtual void Rva00225A0C(int value);
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 __declspec(noinline) void Rva00225A0C(int value)
 {

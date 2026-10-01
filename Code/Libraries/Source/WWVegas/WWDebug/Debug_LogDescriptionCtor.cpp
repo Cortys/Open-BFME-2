@@ -67,7 +67,7 @@ public:
 	};
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 #pragma optimize("y", off)
 

@@ -192,7 +192,7 @@ private:
 	bool m_inAssertDialog;               // +0x9F64
 };
 
-Debug *theDebug;
+extern Debug *theDebug;  // defined in DebugPreStaticInit.cpp
 
 Debug &operator<<(Debug &debug, const DebugStackwalk::Signature &sig);
 

@@ -37,7 +37,7 @@ public:
 	virtual int winSendSystemMsg(GameWindow *window, unsigned msg, int mData1, int mData2) = 0;
 };
 
-GameWindowManager *TheWindowManager;
+extern GameWindowManager *TheWindowManager;  // defined in GameWindowManager.cpp
 
 void GadgetListBoxReset(GameWindow *listbox)
 {

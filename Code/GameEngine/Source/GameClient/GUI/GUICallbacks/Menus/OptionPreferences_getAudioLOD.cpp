@@ -53,7 +53,7 @@ public:
 	Int getAudioLODIndex(const AsciiString &name);
 };
 
-GameLODManager *TheGameLODManager;
+extern GameLODManager *TheGameLODManager;  // defined in GameLOD.cpp
 
 class OptionPreferences : public AsciiPreferenceMap
 {

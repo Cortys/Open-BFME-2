@@ -137,7 +137,7 @@ private:
 };
 
 // Head of the global MeshModelClass instance list (retail .data head).
-MeshModelClass *MeshModelListHead;
+extern MeshModelClass *MeshModelListHead;  // defined in MeshModelClassDefaultCtor.cpp
 
 // ??0MeshModelClass@@QAE@ABV0@@Z
 MeshModelClass::MeshModelClass(const MeshModelClass &that) :

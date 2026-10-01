@@ -29,6 +29,7 @@ private:
 	unsigned char m_pad9C80[0x9F68 - 0x9C80];
 };
 
+// theDebug: retail .bss 0x00DE0880, the one definition (the other units declare it extern).
 Debug *theDebug;
 
 // ?PreStaticInit@Debug@@CAPAV1@XZ
