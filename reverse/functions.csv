@@ -46787,3 +46787,4 @@ _Rva00819920,,0x00685820,1536,Code/Libraries/Source/DirtySock/Rva00819920Comm.cp
 ?Rva005210ECEnable@@YAX_N@Z,,0x005210EC,37,Code/GameEngine/Source/Common/Rva005210ECEnable.cpp,matched,unlock tail-jmp to rowed enable via extern globals
 ?rva0056499B@TerrainCollisionModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0056499B,285,Code/GameEngine/Source/GameClient/System/FXParticleSystem/TerrainCollisionModuleTemplateWrite.cpp,matched,vslot3 TerrainCollision header plus 5 field writes plus footer
 ?Rva00564D06Copy@@YAPAVRva003B3080@@PAV1@00@Z,,0x00564D06,50,Code/GameEngine/Source/Common/Bfme/Rva00564D06Copy.cpp,matched,range copy 0x14 via rowed assign unblocks 005656AA
+??1Rva00409FFA@@UAE@XZ,,0x0040A057,59,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FCC.cpp,matched,unlock lane dtor vptr plus str10 plus base Rva001E3624

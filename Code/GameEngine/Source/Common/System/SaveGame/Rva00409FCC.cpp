@@ -15,8 +15,15 @@ public:
     virtual const char *typeName() const;
     virtual void xfer(Xfer *);
 };
-class Rva00409FFA {
-    unsigned int word04;
+class Rva001E3624
+{
+public:
+    virtual ~Rva001E3624();
+private:
+    Rva001E3624 *m_next;
+};
+
+class Rva00409FFA : public Rva001E3624 {
     unsigned char flag08;
     unsigned int word0C;
     AsciiString str10;
@@ -41,4 +48,12 @@ void Rva00409FFA::rva00409FCC()
         if (entry != 0 && *(int *)(entry + 0xC) >= 1)
             arr14[i] = (unsigned int)((ControlBar *)(void *)g_bfmeWorldRV)->findCommandButton(*(const AsciiString *)(entry + 0x10));
     }
+}
+
+// ??1Rva00409FFA@@UAE@XZ @0x0040A057 59B
+// Evidence: unlock lane dtor; vptr store then AsciiString str10 at +0x10 via
+// shared header (releaseBuffer) then rowed base ??1Rva001E3624@@UAE@XZ; caller
+// 0x40A142 unclaimed; LINK BONUS none.
+Rva00409FFA::~Rva00409FFA()
+{
 }
