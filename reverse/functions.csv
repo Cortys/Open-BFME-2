@@ -45837,3 +45837,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00433453@Rva00433453@@QAEXM@Z,,0x00433453,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433453Rope.cpp,matched,or dword ECX+C4 8 then direct call rowed setRopeCurLen via qualified virtual
 ?rva0043346A@Rva0043346A@@QAEXM@Z,,0x0043346A,23,Code/Libraries/Source/WWVegas/WW3D2/Rva0043346AAnim.cpp,matched,or dword ecx+C4 0x10 then call rowed Anim2D setAlpha caller 0x004339BF
 ?rva00433481@Rva00433481@@QAEXM@Z,,0x00433481,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433481Float.cpp,matched,or dword ecx+C4 0x20 then call rowed FloatField set caller 0x00433A13
+?rva00433498@Rva00433498@@QAEXM@Z,,0x00433498,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433498Float.cpp,matched,or dword ecx+C4 0x40 then call dup 0x00210C91 true RenderObjClass set98 caller 0x00433A3D

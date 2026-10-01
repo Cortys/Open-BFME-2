@@ -6772,3 +6772,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?rva003A3717@Team@@QAE_NABVAsciiString@@@Z,0x003A3717,"call-site agreement: sole caller, the matched evaluateTeamStateIs 0x003E859E, calls it on the named Team with the state Parameter string; body looks the name up in the +0x48 container via the rowed 0x0041534B"
 ?evaluateSkirmishPlayerHasUnitsInArea@ScriptConditions@@IAE_NPAVCondition@@PAVParameter@@1@Z,0x003E782D,"call-site agreement: matched evaluateSkirmishPlayerIsOutsideArea 0x003E79AF returns its negation with the same three arguments, as the BFME1 donor does"
 ?reserve@?$vector@JV?$allocator@J@_STL@@@_STL@@QAEXI@Z,0x002B712E,ICF twin of rowed ModuleData reserve at same address; 4-byte long folds to identical 110B reserve; Rva003B930D filter calls it
+?_bfme_ro_set_98@RenderObjClass@@UAEXM@Z,0x00210C91,twin of dup row ICF true thiscall float setter used by 0x00433498
