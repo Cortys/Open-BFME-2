@@ -10,6 +10,13 @@
 // compare+setl); the pair-lexicographic helper at 0x206BCF is a different
 // function (it calls operator< thrice) and is pinned under its own name.
 
+// The preference TUs (SkirmishPreferences.cpp, GameSpyLoginPreferences.cpp,
+// OnlineMiscPref*.cpp, GameModePreferencesUserName.cpp) reach this worker
+// through a private throw() view, SkirmishFindMap::find, whose symbols.csv pin
+// is this same address (0x1F8437). Bind that spelling to the definition here
+// rather than emit a second body for one retail function.
+#pragma comment(linker, "/alternatename:?find@SkirmishFindMap@@QBEPAUSkirmishFindNode@@ABVAsciiString@@@Z=??$_M_find@VAsciiString@@@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@V1@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBVAsciiString@@V1@@_STL@@@1@ABVAsciiString@@@Z")
+
 #include <map>
 #include <stdlib.h>
 
