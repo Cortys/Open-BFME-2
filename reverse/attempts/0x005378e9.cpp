@@ -1,0 +1,96 @@
+// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z
+// partial score=0.96 date=2026-10-01
+// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z
+// partial score=0.96 date=2026-10-01
+// cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
+// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z @0x005378E9 355B
+// UserPreferences turn-stats path: append TurnsPlayed to faction copy, bump it,
+// track Longest/ShortestGameTurns, recompute AverageGameTurns.
+// Evidence: concat TurnsPlayed 0x00868FE8 slot 0x2C calls 0x00536815 0x005368A6
+// 0x0053685F 0x00536937 0x005368F0 0x0053734E 0x005369CC 0x00536981 float
+// g_Va00BBB8D8 0x007BB8D8 ret 8 chain same TU unlock.
+template <typename T>
+class StringBase
+{
+	friend class AsciiString;
+	friend class UnicodeString;
+public:
+	void concat(const char *s);
+private:
+	StringBase() : m_data(0) {}
+	StringBase(const StringBase<T> &that);
+	StringBase(const char *s);
+	void releaseBuffer();
+	struct Header
+	{
+		int ref_count;
+		unsigned len;
+		unsigned cap;
+		T data[1];
+	};
+	Header *m_data;
+};
+
+class AsciiString
+{
+public:
+	static const AsciiString TheEmptyString;
+	AsciiString() {}
+	AsciiString(const AsciiString &that) : m_data(that.m_data) {}
+	AsciiString(const char *s) : m_data(s) {}
+	~AsciiString() { m_data.releaseBuffer(); }
+	void concat(const char *s) { m_data.concat(s); }
+private:
+	StringBase<char> m_data;
+};
+
+extern float g_Va00BBB8D8;
+
+class UserPreferences
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual float v5(const AsciiString &s, float x);
+	virtual int v6(const AsciiString &s, int x);
+	virtual void v7();
+	virtual AsciiString v8(const AsciiString &key, const AsciiString &def);
+	virtual void v9();
+	virtual void v10(const AsciiString &s, float x);
+	virtual void v11(const AsciiString &s, int x);
+	virtual void v12(const AsciiString &a, const AsciiString &b);
+	int rva00536815(AsciiString arg);
+	int rva005368A6(AsciiString arg);
+	void rva0053685F(AsciiString arg, int x);
+	int rva00536937(AsciiString arg);
+	void rva005368F0(AsciiString arg, int x);
+	int rva0053734E(AsciiString arg);
+	float rva005369CC(AsciiString arg);
+	void rva00536981(AsciiString arg, float x);
+	void rva005378E9(AsciiString faction, int turns);
+};
+
+// ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z present-unmatched
+void UserPreferences::rva005378E9(AsciiString faction, int turns)
+{
+	AsciiString key(faction);
+	key.concat("TurnsPlayed");
+	int oldTurns = rva00536815(key);
+	v11(key, oldTurns + turns);
+	int longest = rva005368A6(faction);
+	if (turns > longest)
+		rva0053685F(faction, turns);
+	int shortest = rva00536937(faction);
+	if (shortest == 0 || turns < shortest)
+		rva005368F0(faction, turns);
+	float avg;
+	int total = rva0053734E(faction);
+	float totalF;
+	totalF = (float)total;
+	avg = rva005369CC(faction);
+	float newAvg = (totalF * avg + (float)turns) / (totalF + g_Va00BBB8D8);
+	rva00536981(faction, newAvg);
+}

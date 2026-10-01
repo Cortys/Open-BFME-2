@@ -45278,3 +45278,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005DCC60@Rva005DCC60@@QAEXXZ,,0x005DCC60,38,Code/GameEngine/Source/Common/Rva005DCC60.cpp,matched,range loop virtual slot 0x18 with this+0x14
 ??0Rva005DCDD9@@QAE@HH@Z,,0x005DCDD9,47,Code/GameEngine/Source/Common/Rva005DCDD9.cpp,matched,three bools vector BfmeE16 two ints
 ?rva005DCE72@Rva005DCE72@@QAEXABVAsciiString@@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x005DCE72,59,Code/GameEngine/Source/Common/Rva005DCE72.cpp,matched,loop ModuleData compare pushback caller 0x005AD99C
+??0Rva00222343@@QAE@XZ,,0x00222343,89,Code/Libraries/Source/WWVegas/WWMath/Rva00222343Ctor.cpp,matched,WWMath param block 14 ints 2 zero bytes gap unlock callers 0x00224296 0x006CF230
