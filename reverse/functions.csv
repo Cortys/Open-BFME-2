@@ -45841,3 +45841,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva0043283C@@QAE@XZ,,0x0043283C,28,Code/GameEngine/Source/Common/Rva0043283CDtor.cpp,matched,dtor singleton clear via g_Va00E032C8 base vtable 0x00BDBA74 caller 0x00432A1F
 ??_GRva0043283C@@QAEPAXI@Z,,0x00432A1F,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0043283C.cpp,matched,chain deleting dtor calls rowed 0x0043283C plus delete 0x0002FD60 slot1 0x0083CA28
 ??0Rva0043216D@@QAE@XZ,,0x0043216D,29,Code/GameEngine/Source/Common/Rva0043216DCtor.cpp,matched,ctor vtable 0x00C3C9C0 zeroes 0x04-0x15 caller 0x0023A502
+?rva0043287E@Rva0043287E@@QAEHXZ,,0x0043287E,31,Code/GameEngine/Source/Common/Rva0043287ECheck.cpp,matched,unlock OR-shape callers 0x00432AFB et al row 0x00222A53
