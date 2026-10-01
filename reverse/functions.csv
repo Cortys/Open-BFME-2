@@ -45473,3 +45473,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?write@Rva0020F58E@@QAEHPAD@Z,,0x0020F58E,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref concat write via rowed writes
 ?length@Rva0020F58E@@QBEHXZ,,0x0020F0D3,27,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref length via rowed length
 ??BRva0020F58E@@QAE?AVAsciiString@@XZ,,0x0020F712,98,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref materializer via length write
+?Rva0057A685Set@@YAXHPAPAURva0057A685Team@@H@Z,,0x0057A685,195,Code/GameEngine/Source/Common/Rva0057A685Apt.cpp,matched,unlock caller 0x0057ABBD precedent Rva005F6220Apt GameSlotSetState fetch slot 0x3C
