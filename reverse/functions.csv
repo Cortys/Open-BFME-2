@@ -45126,3 +45126,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00407020@Rva00407020@@QAE_NXZ,,0x00407020,94,Code/GameEngine/Source/Common/Rva00407020.cpp,matched,chain via 0x406F12 now ready callees rowed callers 0x5B48BC 0x5B4CFB 0x5B56DC
 ?Rva0040707EUpdate@@YAXPAX00PAVRva00406FBF@@@Z,,0x0040707E,27,Code/GameEngine/Source/Common/Rva0040707E.cpp,matched,chain via 0x00406FBF caller 0x00407279 4-arg cdecl virtual slot 0x78
 ?Rva00407099Update@@YAXPAVXfer@@PAW4ObjectID@@PAXPAVRva00406FBF@@@Z,,0x00407099,29,Code/GameEngine/Source/Common/Rva00407099.cpp,matched,chain via 0x00406FBF caller 0x00408C72 4-arg cdecl XferObjectID plus CRC
+?Rva004070B6Update@@YAXPAX00PAVRva00406FBF@@@Z,,0x004070B6,30,Code/GameEngine/Source/Common/Rva004070B6.cpp,matched,chain via 0x00406FDC same family as 0x0040707E virtual slot 0x90
