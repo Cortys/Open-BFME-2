@@ -46162,3 +46162,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z,,0x00421520,82,Code/GameEngine/Source/Common/Rva00421520Find.cpp,matched,search vec at +c by name at +0x10 via rowed compare and dup guard then add via rowed 0x4213DB
 ?rva004E0BDC@Rva004E0BDC@@QAEXABURva004E0790Inner@@@Z,,0x004E0BDC,109,Code/GameEngine/Source/Common/Rva004E0BDCEnsure.cpp,matched,ensure Inner at +0x3c via new plus copy ctor 0x0040D688 or assign 0x004E09FB then store +0x18 to +0xB4
 ?rva002A9F17@Rva002A9F17@@QAEXPBV?$StringBase@D@@@Z,,0x002A9F17,30,Code/GameEngine/Source/Common/Rva002A9F17Fwd.cpp,matched,forward via holder +0x318 when global present caller 0x003BC86E
+?rva002A9ACC@Rva002A9ACC@@QAEXPBVDict@@@Z,,0x002A9ACC,105,Code/GameEngine/Source/Common/Rva002A9ACCDict.cpp,matched,rowed cache get and Dict getInt via g_00DBDE64 g_00DBDE6C caller 0x002AFCDF
