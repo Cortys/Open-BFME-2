@@ -1,12 +1,11 @@
-// ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z
-// partial score=0.96 date=2026-09-30
-// ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z
-// partial score=0.96 date=2026-09-30
 // cl: /O1 /Oy- /DNDEBUG /MD /GX /arch:SSE
-// ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z @ 0x0056C7F1 170B: thiscall with 3 stack args
-// (ret 0xC) computing two scaled pairs then componentwise max into out. Uses global
-// TheRva00222A8BTarget virtual at +0x3C returning float pair, plus this+0x30/+0x34
-// int pairs at +0x24/+0x28 scaled by it. Callers at 0x0056CAAF/0x0056CD00 prove shape.
+// ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z @0x0056C7F1 170B: thiscall
+// with 3 stack args (ret 0xC). Scales this+0x30/+0x34 int pairs (+0x24/+0x28)
+// by the float pair from the TheRva00222A8BTarget virtual at +0x3C into a and
+// b (zero when the source is null), then stores the componentwise max into
+// out. Callers at 0x0056CAAF/0x0056CD00 pass three stack FloatPairs.
+// Structural inference: the max is written b > a ? b : a, which keeps b's
+// operand first in comiss and selects with cmovbe as retail does.
 struct FloatPair
 {
 	float x;
@@ -52,12 +51,9 @@ public:
 	IntPair *m_30;
 	IntPair *m_34;
 };
-// ?rva0056C7F1@Rva0056C7F1@@QAEXPAUFloatPair@@00@Z present-unmatched
 void Rva0056C7F1::rva0056C7F1(FloatPair *a, FloatPair *b, FloatPair *out)
 {
 	ScalePair *scale = TheRva00222A8BTarget->v15();
-	FloatPair *pa = a;
-	float *paY = &a->y;
 	if (m_30 != 0) {
 		a->x = (float)m_30->v24 * scale->x;
 		a->y = (float)m_30->v28 * scale->y;
@@ -73,15 +69,15 @@ void Rva0056C7F1::rva0056C7F1(FloatPair *a, FloatPair *b, FloatPair *out)
 		b->y = 0.0f;
 	}
 	float *px;
-	if (b->x <= a->x)
-		px = &a->x;
-	else
+	if (b->x > a->x)
 		px = &b->x;
+	else
+		px = &a->x;
 	out->x = *px;
 	float *py;
-	if (b->y <= a->y)
-		py = &a->y;
-	else
+	if (b->y > a->y)
 		py = &b->y;
-	*(int*)&out->y = *(int*)py;
+	else
+		py = &a->y;
+	out->y = *py;
 }
