@@ -85,9 +85,10 @@ static __forceinline int pushresult (lua_State *L, int i) {
   }
   else {
     lua_pushnil(L);
-    lua_pushstring(L, strerror(errno));
-    lua_pushnumber(L, errno);
-    return 3;;
+    /* retail fakes strerror/errno as OLD_ANSI does (see pushresult_close at 0x0074A0D0) */
+    lua_pushstring(L, "generic I/O error");
+    lua_pushnumber(L, -1.0);
+    return 3;
   }
 }
 
