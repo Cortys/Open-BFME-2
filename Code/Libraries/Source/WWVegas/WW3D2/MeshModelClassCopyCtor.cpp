@@ -84,11 +84,13 @@ public:
 	MultiListNodeClass Head;
 };
 
-class DX8PolygonRendererList : public GenericMultiListClass
+class Rva00144690 : public GenericMultiListClass
 {
 public:
-	virtual ~DX8PolygonRendererList();
+	virtual ~Rva00144690();
 };
+// The proven DX8PolygonRendererList vtable slot 0 is rowed at 0x00144690.
+typedef Rva00144690 DX8PolygonRendererList;
 
 class MeshMatDescClass
 {
