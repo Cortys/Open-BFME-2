@@ -1,4 +1,4 @@
-// cl: /O1 /MD
+// cl: /O1 /MD /EHsc /D_CRTIMP=
 //
 // ?rva005562DD@Rva005562DD@@QAEXXZ @0x005562DD 41B
 // Chain lane: clears the container by tearing down the node list at
@@ -23,13 +23,24 @@ struct Rva005562DDHead
 	Rva005562DDHead *m_prev; // +0xc
 };
 
-class Rva005562DD : private Rva00556050
+namespace _STL { void __cdecl free(void *block); }
+// ?Rva005562DDHeaderOwner::~Rva005562DDHeaderOwner present-unmatched
+struct Rva005562DDHeaderOwner : public Rva00556050
+{
+	Rva005562DDHead *m_head;
+	inline ~Rva005562DDHeaderOwner() {
+		if (m_head)
+			_STL::free(m_head);
+	}
+};
+
+class Rva005562DD : private Rva005562DDHeaderOwner
 {
 public:
+	~Rva005562DD();
 	void rva005562DD();
 
 private:
-	Rva005562DDHead *m_head; // +0
 	int m_count; // +4
 };
 
@@ -42,4 +53,13 @@ void Rva005562DD::rva005562DD()
 	m_head->m_list = 0;
 	m_head->m_prev = m_head;
 	m_count = 0;
+}
+
+// Ghidra 0x00557BFE..0x00557C35, 56 bytes. Clear the same tree then release
+// its header. Target unwind state changes before the null-guarded free30830;
+// the inline header-owner base and C++ allocator declaration reproduce that
+// lifetime. Original container name remains unknown, as for the clear body.
+Rva005562DD::~Rva005562DD()
+{
+	rva005562DD();
 }
