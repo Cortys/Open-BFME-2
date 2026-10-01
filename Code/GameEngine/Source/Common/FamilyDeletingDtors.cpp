@@ -8,59 +8,9 @@ class GenericMultiListClass { public: __declspec(noinline) virtual ~GenericMulti
 GenericMultiListClass::~GenericMultiListClass() { m_famgen = 0; }
 void famgenDelete(GenericMultiListClass *p) { delete p; }
 
-// ??_GRva0006EE6F@@UAEPAXI@Z @0x6f266
-class Rva0006EE6F { public: __declspec(noinline) virtual ~Rva0006EE6F(); private: int m_famgen; };
-Rva0006EE6F::~Rva0006EE6F() { m_famgen = 0; }
-void famgenDelete(Rva0006EE6F *p) { delete p; }
-
-// ??_GRva00785140Handle@@UAEPAXI@Z @0xa9ecd
-class Rva00785140Handle { public: __declspec(noinline) virtual ~Rva00785140Handle(); private: int m_famgen; };
-Rva00785140Handle::~Rva00785140Handle() { m_famgen = 0; }
-void famgenDelete(Rva00785140Handle *p) { delete p; }
-
 // ??_GAudioEventRTS@@QAEPAXI@Z @0xb99f2
 class AudioEventRTS { public: ~AudioEventRTS(); };
 void famgenDelete(AudioEventRTS *p) { delete p; }
-
-// ??_GW3DTruckDrawModuleData@@UAEPAXI@Z @0xcde57
-class W3DTruckDrawModuleData { public: __declspec(noinline) virtual ~W3DTruckDrawModuleData(); private: int m_famgen; };
-W3DTruckDrawModuleData::~W3DTruckDrawModuleData() { m_famgen = 0; }
-void famgenDelete(W3DTruckDrawModuleData *p) { delete p; }
-
-// ??_GW3DTankDrawModuleData@@UAEPAXI@Z @0xcea50
-class W3DTankDrawModuleData { public: __declspec(noinline) virtual ~W3DTankDrawModuleData(); private: int m_famgen; };
-W3DTankDrawModuleData::~W3DTankDrawModuleData() { m_famgen = 0; }
-void famgenDelete(W3DTankDrawModuleData *p) { delete p; }
-
-// ??_GW3DTreeDrawModuleData@@UAEPAXI@Z @0xced2f
-class W3DTreeDrawModuleData { public: __declspec(noinline) virtual ~W3DTreeDrawModuleData(); private: int m_famgen; };
-W3DTreeDrawModuleData::~W3DTreeDrawModuleData() { m_famgen = 0; }
-void famgenDelete(W3DTreeDrawModuleData *p) { delete p; }
-
-// ??_GW3DStreakDraw@@UAEPAXI@Z @0xd043d
-class W3DStreakDraw { public: __declspec(noinline) virtual ~W3DStreakDraw(); private: int m_famgen; };
-W3DStreakDraw::~W3DStreakDraw() { m_famgen = 0; }
-void famgenDelete(W3DStreakDraw *p) { delete p; }
-
-// ??_GW3DShadowGeometry@@UAEPAXI@Z @0xf1ee4
-class W3DShadowGeometry { public: __declspec(noinline) virtual ~W3DShadowGeometry(); private: int m_famgen; };
-W3DShadowGeometry::~W3DShadowGeometry() { m_famgen = 0; }
-void famgenDelete(W3DShadowGeometry *p) { delete p; }
-
-// ??_GBfmeVolumetricShadowBufferOwner@@UAEPAXI@Z @0x107d6e
-class BfmeVolumetricShadowBufferOwner { public: __declspec(noinline) virtual ~BfmeVolumetricShadowBufferOwner(); private: int m_famgen; };
-BfmeVolumetricShadowBufferOwner::~BfmeVolumetricShadowBufferOwner() { m_famgen = 0; }
-void famgenDelete(BfmeVolumetricShadowBufferOwner *p) { delete p; }
-
-// ??_GW3DShadowTexture@@UAEPAXI@Z @0x108ca8
-class W3DShadowTexture { public: __declspec(noinline) virtual ~W3DShadowTexture(); private: int m_famgen; };
-W3DShadowTexture::~W3DShadowTexture() { m_famgen = 0; }
-void famgenDelete(W3DShadowTexture *p) { delete p; }
-
-// ??_GRva007AFF00Owner@@UAEPAXI@Z @0x10ba45
-class Rva007AFF00Owner { public: __declspec(noinline) virtual ~Rva007AFF00Owner(); private: int m_famgen; };
-Rva007AFF00Owner::~Rva007AFF00Owner() { m_famgen = 0; }
-void famgenDelete(Rva007AFF00Owner *p) { delete p; }
 
 // ??_GHTreeClass@@QAEPAXI@Z @0x17fadf
 class HTreeClass { public: ~HTreeClass(); };
@@ -70,38 +20,13 @@ void famgenDelete(HTreeClass *p) { delete p; }
 class HLodDefClass { public: ~HLodDefClass(); };
 void famgenDelete(HLodDefClass *p) { delete p; }
 
-// ??_GGen_dtor_00970f60@@UAEPAXI@Z @0x180420
-class Gen_dtor_00970f60 { public: __declspec(noinline) virtual ~Gen_dtor_00970f60(); private: int m_famgen; };
-Gen_dtor_00970f60::~Gen_dtor_00970f60() { m_famgen = 0; }
-void famgenDelete(Gen_dtor_00970f60 *p) { delete p; }
-
-// ??_GGen_dtor_00972460@@UAEPAXI@Z @0x180894
-class Gen_dtor_00972460 { public: __declspec(noinline) virtual ~Gen_dtor_00972460(); private: int m_famgen; };
-Gen_dtor_00972460::~Gen_dtor_00972460() { m_famgen = 0; }
-void famgenDelete(Gen_dtor_00972460 *p) { delete p; }
-
 // ??_GArmorTemplate@@QAEPAXI@Z @0x1d8fe5
 class ArmorTemplate { public: ~ArmorTemplate(); };
 void famgenDelete(ArmorTemplate *p) { delete p; }
 
-// ??_GRva00217537@@UAEPAXI@Z @0x217545
-class Rva00217537 { public: __declspec(noinline) virtual ~Rva00217537(); private: int m_famgen; };
-Rva00217537::~Rva00217537() { m_famgen = 0; }
-void famgenDelete(Rva00217537 *p) { delete p; }
-
-// ??_GBfmeSaveElement002295D7@@UAEPAXI@Z @0x2296ec
-class BfmeSaveElement002295D7 { public: __declspec(noinline) virtual ~BfmeSaveElement002295D7(); private: int m_famgen; };
-BfmeSaveElement002295D7::~BfmeSaveElement002295D7() { m_famgen = 0; }
-void famgenDelete(BfmeSaveElement002295D7 *p) { delete p; }
-
 // ??_GVersionBlockEntry@@QAEPAXI@Z @0x2385c1
 class VersionBlockEntry { public: ~VersionBlockEntry(); };
 void famgenDelete(VersionBlockEntry *p) { delete p; }
-
-// ??_GRva000D3FA0Map@@UAEPAXI@Z @0x2431af
-class Rva000D3FA0Map { public: __declspec(noinline) virtual ~Rva000D3FA0Map(); private: int m_famgen; };
-Rva000D3FA0Map::~Rva000D3FA0Map() { m_famgen = 0; }
-void famgenDelete(Rva000D3FA0Map *p) { delete p; }
 
 // ??_GCrushDieModuleData@@UAEPAXI@Z @0x255097
 class CrushDieModuleData { public: __declspec(noinline) virtual ~CrushDieModuleData(); private: int m_famgen; };
@@ -128,16 +53,6 @@ void famgenDelete(Rva001DB3E0List *p) { delete p; }
 class ProductionPrerequisite { public: ~ProductionPrerequisite(); };
 void famgenDelete(ProductionPrerequisite *p) { delete p; }
 
-// ??_GAnim2DTemplate@@UAEPAXI@Z @0x2d72d5
-class Anim2DTemplate { public: __declspec(noinline) virtual ~Anim2DTemplate(); private: int m_famgen; };
-Anim2DTemplate::~Anim2DTemplate() { m_famgen = 0; }
-void famgenDelete(Anim2DTemplate *p) { delete p; }
-
-// ??_GGhostObject@@UAEPAXI@Z @0x305bb6
-class GhostObject { public: __declspec(noinline) virtual ~GhostObject(); private: int m_famgen; };
-GhostObject::~GhostObject() { m_famgen = 0; }
-void famgenDelete(GhostObject *p) { delete p; }
-
 // ??_GRva002390CB@@QAEPAXI@Z @0x31b4ba
 class Rva002390CB { public: ~Rva002390CB(); };
 void famgenDelete(Rva002390CB *p) { delete p; }
@@ -146,16 +61,6 @@ void famgenDelete(Rva002390CB *p) { delete p; }
 class Gen_004902A0 { public: __declspec(noinline) virtual ~Gen_004902A0(); private: int m_famgen; };
 Gen_004902A0::~Gen_004902A0() { m_famgen = 0; }
 void famgenDelete(Gen_004902A0 *p) { delete p; }
-
-// ??_GCountUpTransition@@UAEPAXI@Z @0x35f9e7
-class CountUpTransition { public: __declspec(noinline) virtual ~CountUpTransition(); private: int m_famgen; };
-CountUpTransition::~CountUpTransition() { m_famgen = 0; }
-void famgenDelete(CountUpTransition *p) { delete p; }
-
-// ??_GArmorStore@@UAEPAXI@Z @0x360af3
-class ArmorStore { public: __declspec(noinline) virtual ~ArmorStore(); private: int m_famgen; };
-ArmorStore::~ArmorStore() { m_famgen = 0; }
-void famgenDelete(ArmorStore *p) { delete p; }
 
 // ??_GBfmeNodeValueEBD@@QAEPAXI@Z @0x382b47
 class BfmeNodeValueEBD { public: ~BfmeNodeValueEBD(); };
@@ -169,29 +74,14 @@ void famgenDelete(BfmeOpaqueOwnedRecord492 *p) { delete p; }
 class BfmeOpaqueOwnedRecord840 { public: ~BfmeOpaqueOwnedRecord840(); };
 void famgenDelete(BfmeOpaqueOwnedRecord840 *p) { delete p; }
 
-// ??_GCDManager@@UAEPAXI@Z @0x3e5dcd
-class CDManager { public: __declspec(noinline) virtual ~CDManager(); private: int m_famgen; };
-CDManager::~CDManager() { m_famgen = 0; }
-void famgenDelete(CDManager *p) { delete p; }
-
 // ??_GRva00220240FlatDtor@@UAEPAXI@Z @0x466bcd
 class Rva00220240FlatDtor { public: __declspec(noinline) virtual ~Rva00220240FlatDtor(); private: int m_famgen; };
 Rva00220240FlatDtor::~Rva00220240FlatDtor() { m_famgen = 0; }
 void famgenDelete(Rva00220240FlatDtor *p) { delete p; }
 
-// ??_GRva00488338@@UAEPAXI@Z @0x488434
-class Rva00488338 { public: __declspec(noinline) virtual ~Rva00488338(); private: int m_famgen; };
-Rva00488338::~Rva00488338() { m_famgen = 0; }
-void famgenDelete(Rva00488338 *p) { delete p; }
-
 // ??_GRva0048B95F@@QAEPAXI@Z @0x48b9b4
 class Rva0048B95F { public: ~Rva0048B95F(); };
 void famgenDelete(Rva0048B95F *p) { delete p; }
-
-// ??_GFireWeaponUpdate@@UAEPAXI@Z @0x48c135
-class FireWeaponUpdate { public: __declspec(noinline) virtual ~FireWeaponUpdate(); private: int m_famgen; };
-FireWeaponUpdate::~FireWeaponUpdate() { m_famgen = 0; }
-void famgenDelete(FireWeaponUpdate *p) { delete p; }
 
 // ??_GLargeGroupBonusUpdateModuleData@@UAEPAXI@Z @0x490472
 class LargeGroupBonusUpdateModuleData { public: __declspec(noinline) virtual ~LargeGroupBonusUpdateModuleData(); private: int m_famgen; };
@@ -226,16 +116,6 @@ void famgenDelete(Rva0025A390FlatDtor *p) { delete p; }
 // ??_GUDPDrain@@QAEPAXI@Z @0x4d4b8b
 class UDPDrain { public: ~UDPDrain(); };
 void famgenDelete(UDPDrain *p) { delete p; }
-
-// ??_GRva004E156B@@UAEPAXI@Z @0x4e1bc4
-class Rva004E156B { public: __declspec(noinline) virtual ~Rva004E156B(); private: int m_famgen; };
-Rva004E156B::~Rva004E156B() { m_famgen = 0; }
-void famgenDelete(Rva004E156B *p) { delete p; }
-
-// ??_GAnimateWindow@@UAEPAXI@Z @0x53b36b
-class AnimateWindow { public: __declspec(noinline) virtual ~AnimateWindow(); private: int m_famgen; };
-AnimateWindow::~AnimateWindow() { m_famgen = 0; }
-void famgenDelete(AnimateWindow *p) { delete p; }
 
 // ??_GBfmePoolRef10@@QAEPAXI@Z @0x568e33
 class BfmePoolRef10 { public: ~BfmePoolRef10(); };

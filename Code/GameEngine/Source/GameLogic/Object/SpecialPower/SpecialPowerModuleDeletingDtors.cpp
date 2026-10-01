@@ -12,26 +12,12 @@
 // The noinline empty destructor is an unmatched compilation scaffold; the
 // verified wrapper call resolves to the retail destructor through its pin.
 
-// ??_GActivateModuleSpecialPowerModuleData@@UAEPAXI@Z @0x0025712E 28B: slot 0 of vtable 0x00BF3F60; calls ??1 at 0x0025714A.
-// Owner evidence (audited 2026-09-26): retail registration ActivateModuleSpecialPower -> data factory RVA 0x00256DC5 -> ctor RVA 0x00256DA1; primary vptr store RVA 0x00256DB5.
-class ActivateModuleSpecialPowerModuleData { public: __declspec(noinline) virtual ~ActivateModuleSpecialPowerModuleData(); };
-// ??1ActivateModuleSpecialPowerModuleData@@UAE@XZ present-unmatched
-ActivateModuleSpecialPowerModuleData::~ActivateModuleSpecialPowerModuleData() {}
-void ActivateModuleSpecialPowerModuleData_Delete(ActivateModuleSpecialPowerModuleData *p) { delete p; }
-
 // ??_GWeaponFireSpecialAbilityUpdateModuleData@@UAEPAXI@Z @0x004927EA 28B: slot 0 of vtable 0x00C4E108; calls ??1 at 0x00492806.
 // Owner evidence (audited 2026-09-26): retail registration WeaponFireSpecialAbilityUpdate -> data factory RVA 0x0024DB56 -> ctor RVA 0x004926CA; primary vptr store RVA 0x004926D4.
 class WeaponFireSpecialAbilityUpdateModuleData { public: __declspec(noinline) virtual ~WeaponFireSpecialAbilityUpdateModuleData(); };
 // ??1WeaponFireSpecialAbilityUpdateModuleData@@UAE@XZ present-unmatched
 WeaponFireSpecialAbilityUpdateModuleData::~WeaponFireSpecialAbilityUpdateModuleData() {}
 void WeaponFireSpecialAbilityUpdateModuleData_Delete(WeaponFireSpecialAbilityUpdateModuleData *p) { delete p; }
-
-// ??_GSpecialPowerModule@@UAEPAXI@Z @0x004941D7 28B: slot 0 of vtable 0x00C4E868; calls ??1 at 0x00493DEF.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x00493DAA uses class-name string "SpecialPowerModule".
-class SpecialPowerModule { public: __declspec(noinline) virtual ~SpecialPowerModule(); };
-// ??1SpecialPowerModule@@UAE@XZ present-unmatched
-SpecialPowerModule::~SpecialPowerModule() {}
-void SpecialPowerModule_Delete(SpecialPowerModule *p) { delete p; }
 
 // ??_GAISpecialPowerUpdateModuleData@@UAEPAXI@Z @0x004B2FF3 28B: slot 0 of vtable 0x00C56F48; calls ??1 at 0x004B300F.
 // Owner evidence (audited 2026-09-26): retail registration AISpecialPowerUpdate -> data factory RVA 0x0024FD76 -> ctor RVA 0x004B2FCD; primary vptr store RVA 0x004B2FD9.
@@ -102,13 +88,6 @@ class TaintSpecialPowerModuleData { public: __declspec(noinline) virtual ~TaintS
 // ??1TaintSpecialPowerModuleData@@UAE@XZ present-unmatched
 TaintSpecialPowerModuleData::~TaintSpecialPowerModuleData() {}
 void TaintSpecialPowerModuleData_Delete(TaintSpecialPowerModuleData *p) { delete p; }
-
-// ??_GSiegeDeploySpecialPower@@UAEPAXI@Z @0x004C585B 28B: slot 0 of vtable 0x00C5DCFC; calls ??1 at 0x004C57C1.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x004C577C uses class-name string "SiegeDeploySpecialPower".
-class SiegeDeploySpecialPower { public: __declspec(noinline) virtual ~SiegeDeploySpecialPower(); };
-// ??1SiegeDeploySpecialPower@@UAE@XZ present-unmatched
-SiegeDeploySpecialPower::~SiegeDeploySpecialPower() {}
-void SiegeDeploySpecialPower_Delete(SiegeDeploySpecialPower *p) { delete p; }
 
 // ??_GPlayerUpgradeSpecialPowerModuleData@@UAEPAXI@Z @0x004C7DB8 28B: slot 0 of vtable 0x00C5E1C0; calls ??1 at 0x004C7DD4.
 // Owner evidence (audited 2026-09-26): retail registration PlayerUpgradeSpecialPower -> data factory RVA 0x0025253B -> ctor RVA 0x004C7D68; primary vptr store RVA 0x004C7D8D.
