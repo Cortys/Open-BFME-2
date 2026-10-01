@@ -46746,3 +46746,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva0036247C@@QAE@XZ,,0x0036247C,23,Code/GameEngine/Source/GameLogic/Object/Rva0036247CCtor.cpp,matched,leaf ctor with s.v name
 ??1Rva005CD651@@UAE@XZ,,0x005CD6A9,67,Code/GameEngine/Source/Common/Rva005CD651Dtor.cpp,matched,vtable 0x00874FF4 same as ctor calls Enable 0x0052340D conditional erase 0x002B7250 base 0x0086E330
 ?Rva005CD877Visit@@YAXPAX@Z,,0x005CD877,46,Code/GameEngine/Source/Common/Rva005CD877Visit.cpp,matched,callee 0x005CCD36 rowed visit sibling 0x005CD813 same shape vtable 0x00875010
+?Rva005CD841Find@@YA_NPAX@Z,,0x005CD841,54,Code/GameEngine/Source/Common/Rva005CD841Visit.cpp,matched,callee 0x005CCD36 rowed visit caller tests al sibling 0x005CD813 vtable 0x0087500C bool result
