@@ -46416,3 +46416,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??1Rva00575E4E@@UAE@XZ,,0x00575E4E,78,Code/GameEngine/Source/Common/Rva00575E4EDtor.cpp,matched,dtor via deleting-dtor caller at 0x00576041 and rowed erase 0x002B7250
 ??1Rva00575EEA@@UAE@XZ,,0x00575EEA,78,Code/GameEngine/Source/Common/Rva00575EEADtor.cpp,matched,dtor via deleting-dtor caller at 0x005760D0 and rowed erase 0x002B7250
 ??1Rva0056B0BF@@UAE@XZ,,0x0056B0BF,90,Code/GameEngine/Source/Common/Rva0056B0BFDtor.cpp,matched,dtor via deleting-dtor caller at 0x0056B359 and rowed erase 0x002B7250
+??1Rva0056B2DD@@UAE@XZ,,0x0056B2DD,113,Code/GameEngine/Source/Common/Rva0056B2DDDtor.cpp,matched,dtor via deleting-dtor caller at 0x0056B49B and erase plus g_009FE1C8 guard
