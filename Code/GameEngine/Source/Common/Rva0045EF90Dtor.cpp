@@ -96,3 +96,5 @@ Rva0045EF90Object::~Rva0045EF90Object()
 #pragma comment(linker, "/alternatename:?g_Va009FEF1C@@3PAVDummy24@@A=?TheWindowManager@@3PAVGameWindowManager@@A")
 #pragma comment(linker, "/alternatename:?g_bfmeWindowManagerAR@@3PAVBfmeWindowManagerAR@@A=?TheWindowManager@@3PAVGameWindowManager@@A")
 #pragma comment(linker, "/alternatename:?g_bfmeN1020@@3PAVBfmeN1020@@A=?TheWindowManager@@3PAVGameWindowManager@@A")
+// ?g_rva00410421Manager@@3PAVRva00410421Manager@@A: the global at VA 0xdfef1c is ?TheWindowManager@@3PAVGameWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_rva00410421Manager@@3PAVRva00410421Manager@@A=?TheWindowManager@@3PAVGameWindowManager@@A")

@@ -61,3 +61,5 @@ CloudBreakSpecialPowerModuleData::CloudBreakSpecialPowerModuleData()
 // ?g_objectSpacingDefault@@3MA: matched references place it at VA 0xbc292c; also referenced as _kF7C.
 float g_objectSpacingDefault = 1e+02f;
 #pragma comment(linker, "/alternatename:_kF7C=?g_objectSpacingDefault@@3MA")
+// ?g_cloudBreakRadiusDefault@@3MA: the global at VA 0xbc2428 is ?g_Va00BC2428@@3MA.
+#pragma comment(linker, "/alternatename:?g_cloudBreakRadiusDefault@@3MA=?g_Va00BC2428@@3MA")

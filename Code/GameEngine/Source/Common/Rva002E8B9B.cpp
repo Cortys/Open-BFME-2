@@ -39,3 +39,5 @@ MixFileInfoBuffer *Rva002E8B9B::rva002E8B9B(In002E6BA1 *in)
 	*(int *)((char *)node + 0x0C) &= 0;
 	return node;
 }
+// ?g_00A049D0@@3PAVMixFileInfoBuffer@@A: the global at VA 0xe049d0 is ?TheMixFileInfoPool@@3HA.
+#pragma comment(linker, "/alternatename:?g_00A049D0@@3PAVMixFileInfoBuffer@@A=?TheMixFileInfoPool@@3HA")

@@ -99,3 +99,5 @@ bool bfmeGoECI(void)
 BfmeObjECF * g_bfmeObjECF = 0;
 #pragma comment(linker, "/alternatename:?Rva00959410Dispatch@@3URva00959410Ptr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")
 #pragma comment(linker, "/alternatename:?g_bfmeObjECF@@3VBfmeObjECFPtr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")
+// ?g_bfmeObjECI@@3PAVBfmeObjECI@@A: the global at VA 0xdfe958 is ?g_Va009FE958@@3PAUGlobal009FE958@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeObjECI@@3PAVBfmeObjECI@@A=?g_Va009FE958@@3PAUGlobal009FE958@@A")

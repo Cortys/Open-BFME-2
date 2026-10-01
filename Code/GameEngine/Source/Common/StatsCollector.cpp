@@ -506,3 +506,5 @@ void StatsCollector::writeStatInfo()
 #pragma comment(linker, "/alternatename:?g_Rva0023D229Global@@3PAURva0023D229Global@@A=?TheGameLogic@@3PAVGameLogic@@A")
 #pragma comment(linker, "/alternatename:?g_Rva0023D339B@@3PAURva0023D339B@@A=?TheGameLogic@@3PAVGameLogic@@A")
 #pragma comment(linker, "/alternatename:?g_bfme939GlobD@@3PAVBfmeGlob939D@@A=?TheGameLogic@@3PAVGameLogic@@A")
+// ?TheGameLogic@@3PAXA: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?TheGameLogic@@3PAXA=?TheGameLogic@@3PAVGameLogic@@A")

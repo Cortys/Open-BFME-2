@@ -134,3 +134,5 @@ unsigned char Rva00171670GetByte(void)
 {
 	return g_Va00DEC3DA;
 }
+// ?g_Va00DEDA06@@3EA: the global at VA 0xdeda06 is ?IsWindowed@DX8Wrapper@@1_NA.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA06@@3EA=?IsWindowed@DX8Wrapper@@1_NA")

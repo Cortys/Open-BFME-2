@@ -134,3 +134,7 @@ unsigned char BfmeOwnVVD::Rva0042E8C1()
 // ?g_bfmeRva42E8C1Add@@3IA: the global at this VA is ?g_Va00DBA4E4@@3HA; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?g_bfmeRva42E8C1Add@@3IA=?g_Va00DBA4E4@@3HA")
 #pragma comment(linker, "/alternatename:?g_009BA4E4@@3HB=?g_Va00DBA4E4@@3HA")
+// ?g_bfmeRva42E8C1Holder@@3PAUBfmeRva42E8C1Limit@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeRva42E8C1Holder@@3PAUBfmeRva42E8C1Limit@@A=?TheGameLogic@@3PAVGameLogic@@A")
+// ?g_bfmeRva42E8C1Add@@3IA: the global at VA 0xdba4e4 is ?g_Va00DBA4E4@@3HA.
+#pragma comment(linker, "/alternatename:?g_bfmeRva42E8C1Add@@3IA=?g_Va00DBA4E4@@3HA")

@@ -75,3 +75,5 @@ float Rva003FE13E::rva003FE13E()
 	}
 	return Rva003FE13EMin(dist, cap);
 }
+// ?TheWritableGlobalData@@3PAUGlobalData@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?TheWritableGlobalData@@3PAUGlobalData@@A=?TheGlobalData@@3PAVGlobalData@@A")

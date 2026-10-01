@@ -185,3 +185,5 @@ void LANAPI::reset(void)
 #pragma comment(linker, "/alternatename:?g_Rva00E02EEC@@3PAVLANGameInfo@@A=?TheGameInfo@@3PAVGameInfo@@A")
 #pragma comment(linker, "/alternatename:?g_00E02EEC@@3PAVRva00E02EECObj@@A=?TheGameInfo@@3PAVGameInfo@@A")
 #pragma comment(linker, "/alternatename:?g_Rva0023D30FFlag@@3HA=?TheGameInfo@@3PAVGameInfo@@A")
+// ?g_Rva00E02EEC@@3PAVLANGameInfo@@A: the global at VA 0xe02eec is ?TheGameInfo@@3PAVGameInfo@@A.
+#pragma comment(linker, "/alternatename:?g_Rva00E02EEC@@3PAVLANGameInfo@@A=?TheGameInfo@@3PAVGameInfo@@A")

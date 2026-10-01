@@ -662,3 +662,5 @@ int IndexBufferExceptionFunc(void)
 	b += _IndexBufferTotalIndices;
 	return b;
 }
+// ?g_BFMEIndexBufferDebug@@3PAVBFMEIndexBufferDebugClass@@A: the global at VA 0xde0880 is ?theDebug@@3PAVDebug@@A.
+#pragma comment(linker, "/alternatename:?g_BFMEIndexBufferDebug@@3PAVBFMEIndexBufferDebugClass@@A=?theDebug@@3PAVDebug@@A")

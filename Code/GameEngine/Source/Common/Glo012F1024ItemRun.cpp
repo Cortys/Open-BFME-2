@@ -26,3 +26,5 @@ void Glo012F1024Item::run(void)
 	j_00021f26();
 	j_0002eeec();
 }
+// ?Glo012F1028@@3PAVGlo012F1028Type@@A: the global at VA 0xdfef10 is ?g_009FEF10@@3PAVRva002BA8F1Logic@@A.
+#pragma comment(linker, "/alternatename:?Glo012F1028@@3PAVGlo012F1028Type@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")

@@ -136,3 +136,5 @@ void FXList::doFXPos(const Coord3D *pos, const Matrix3D *mtx, float speed, const
 		}
 	}
 }
+// ?TheShroudKeyBase@@3PAUShroudKeyBase@@A: the global at VA 0xdfeee8 is ?ThePlayerList@@3PAVPlayerList@@A.
+#pragma comment(linker, "/alternatename:?TheShroudKeyBase@@3PAUShroudKeyBase@@A=?ThePlayerList@@3PAVPlayerList@@A")

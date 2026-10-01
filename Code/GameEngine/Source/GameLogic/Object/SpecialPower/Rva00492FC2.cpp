@@ -49,3 +49,5 @@ void Rva00492FC2::rva00492FC2(bool flag)
 		}
 	}
 }
+// ?g_009FE78C@@3PAUGameLogic@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_009FE78C@@3PAUGameLogic@@A=?TheGameLogic@@3PAVGameLogic@@A")

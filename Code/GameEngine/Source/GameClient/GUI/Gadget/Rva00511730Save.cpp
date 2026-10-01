@@ -57,3 +57,5 @@ void __cdecl Rva00511730(int unused)
 		g_Va00E048C0.set(UnicodeString::TheEmptyString);
 	}
 }
+// ?g_Va00E046B8@@3PAURva00511730State@@A: the global at VA 0xe046b8 is ?g_Va00E046B8@@3HA.
+#pragma comment(linker, "/alternatename:?g_Va00E046B8@@3PAURva00511730State@@A=?g_Va00E046B8@@3HA")

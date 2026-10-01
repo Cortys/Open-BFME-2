@@ -116,3 +116,5 @@ void Object::friend_notifyOfNewMapBoundary()
 	else
 		m_privateStatus |= OFF_MAP;
 }
+// ?TheRadar@@3PAVPartitionManager@@A: the global at VA 0xdff070 is ?TheRadar@@3PAVRadar@@A.
+#pragma comment(linker, "/alternatename:?TheRadar@@3PAVPartitionManager@@A=?TheRadar@@3PAVRadar@@A")

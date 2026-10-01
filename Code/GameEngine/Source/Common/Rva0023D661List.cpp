@@ -59,3 +59,5 @@ void Rva0023D661::rva0023D661(int val)
 	}
 	return g_009FE6E8->audioSlot180(val);
 }
+// ?g_009FE6E8@@3PAVBfmeAudio@@A: the global at VA 0xdfe6e8 is ?TheAudio@@3PAVAudioManager@@A.
+#pragma comment(linker, "/alternatename:?g_009FE6E8@@3PAVBfmeAudio@@A=?TheAudio@@3PAVAudioManager@@A")

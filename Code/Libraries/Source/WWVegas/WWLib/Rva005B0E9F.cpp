@@ -11,7 +11,8 @@
 
 struct BfmePod8 { int a; float b; };
 
-extern BfmePod8 g_00E06460;
+// g_00E06460: matched references place it at VA 0xe06460 (zero-filled; a plain-data view).
+BfmePod8 g_00E06460;
 extern int g_00E06468;
 // g_00E06468: matched references place it at VA 0xe06468 (zero-filled .bss).
 int g_00E06468;

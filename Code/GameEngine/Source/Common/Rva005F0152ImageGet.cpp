@@ -39,7 +39,8 @@ const Image *Rva005F0152::rva005F0152(int index)
 	return *slot;
 }
 
-extern Rva005F0152 Rva00A06858;
+// Rva00A06858: matched references place it at VA 0xe06858 (zero-filled; a plain-data view).
+Rva005F0152 Rva00A06858;
 
 const Image *Rva005F01B8Get(int index)
 {

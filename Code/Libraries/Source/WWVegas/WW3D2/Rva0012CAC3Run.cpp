@@ -51,7 +51,8 @@ public:
 	}
 };
 
-extern AsciiString g_00DEE93C;
+// g_00DEE93C: matched references place it at VA 0xdee93c (zero-filled; a plain-data view).
+AsciiString g_00DEE93C;
 bool __cdecl Rva0012C907Run(const unsigned short *currentDirectory);
 
 bool __cdecl Rva0012CAC3Run()

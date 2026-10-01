@@ -35,3 +35,5 @@ char bfmeGo1025F(BfmeR1025 *p)
 
 	return 0;
 }
+// ?g_bfmeP1025@@3PAVBfmeP1025@@A: the global at VA 0xe09c0c is ?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeP1025@@3PAVBfmeP1025@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")

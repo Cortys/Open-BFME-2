@@ -50,3 +50,5 @@ RunOffMapBehaviorModuleData::RunOffMapBehaviorModuleData()
 	m_requiresSpecificTrigger = false;
 	m_runOffMapWaypointName = emptyRunOffMapWaypointName;
 }
+// ?emptyRunOffMapWaypointName@@3VAsciiString@@B: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?emptyRunOffMapWaypointName@@3VAsciiString@@B=?TheEmptyString@AsciiString@@2V1@B")

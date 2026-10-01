@@ -12,7 +12,8 @@ struct Rva00065964ObjectPool
 	void FreeObject(void *obj);
 };
 
-extern Rva00065964ObjectPool g_pathNodePool;
+// g_pathNodePool: matched references place it at VA 0xe01e94 (zero-filled; a plain-data view).
+Rva00065964ObjectPool g_pathNodePool;
 
 struct PathNode
 {

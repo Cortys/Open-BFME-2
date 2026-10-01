@@ -51,3 +51,5 @@ CylinderEmissionVolumeModuleTemplate::CylinderEmissionVolumeModuleTemplate(
 	m_v4 = &CylinderEmissionVolumeModuleTemplate_cvtbl4;
 }
 }
+// _CylinderEmissionVolumeModuleTemplate_cvtbl4: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_CylinderEmissionVolumeModuleTemplate_cvtbl4=?vftable_0112B89C@@3HA")

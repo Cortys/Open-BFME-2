@@ -38,3 +38,5 @@ void Rva00220DCDInit()
 		g_00DFE490.m_ptr->v02();
 	}
 }
+// ?g_00DFE490@@3VRva00575674@@A: the global at VA 0xdfe490 is ?g_00DFE490@@3PAXA.
+#pragma comment(linker, "/alternatename:?g_00DFE490@@3VRva00575674@@A=?g_00DFE490@@3PAXA")

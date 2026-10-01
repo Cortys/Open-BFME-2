@@ -53,7 +53,8 @@ struct DebugCriticalSection
 
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(DebugCriticalSection *lock);
 
-extern DebugCriticalSection g_bfmeCsDWC;
+// g_bfmeCsDWC: matched references place it at VA 0xde0884 (zero-filled; a plain-data view).
+DebugCriticalSection g_bfmeCsDWC;
 // Raised whenever the assert/crash dialog was answered with anything but
 // retry/yes; its reader is not recovered. File-static as in retail's
 // debug_debug.cpp: only then may MSVC sink the store past the wsprintfA

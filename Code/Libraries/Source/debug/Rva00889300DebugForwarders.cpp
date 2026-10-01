@@ -66,3 +66,5 @@ void Rva00889320DebugForward2(int first, int second)
 {
 	TheBfmeAwakenDebug->slot84(first, second);
 }
+// ?TheBfmeAwakenDebug@@3PAVBfmeAwakenDebug@@A: the global at VA 0xde0880 is ?theDebug@@3PAVDebug@@A.
+#pragma comment(linker, "/alternatename:?TheBfmeAwakenDebug@@3PAVBfmeAwakenDebug@@A=?theDebug@@3PAVDebug@@A")

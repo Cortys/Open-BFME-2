@@ -73,3 +73,5 @@ void Rva00512CCDShutdown()
 	if (g_Va00A048CC != 0)
 		g_Va00A048CC->v2(0);
 }
+// ?g_Va009FEDF0@@3PAVRva00512C88ObjB@@A: the global at VA 0xdfedf0 is ?TheInGameUI@@3PAVInGameUI@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3PAVRva00512C88ObjB@@A=?TheInGameUI@@3PAVInGameUI@@A")

@@ -94,3 +94,5 @@ bool W3DFontLibrary::loadFontData(GameFont *font)
 // ?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A: the global at this VA is ?TheGlobalLanguageData@@3PAVGlobalLanguage@@A; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A=?TheGlobalLanguageData@@3PAVGlobalLanguage@@A")
 #pragma comment(linker, "/alternatename:?TheGlobalLanguageData@@3PAUGlobalLanguage@@A=?TheGlobalLanguageData@@3PAVGlobalLanguage@@A")
+// ?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A: the global at VA 0xdfdc84 is ?TheGlobalLanguageData@@3PAVGlobalLanguage@@A.
+#pragma comment(linker, "/alternatename:?TheGlobalLanguageData@@3PAUGlobalLanguageData@@A=?TheGlobalLanguageData@@3PAVGlobalLanguage@@A")

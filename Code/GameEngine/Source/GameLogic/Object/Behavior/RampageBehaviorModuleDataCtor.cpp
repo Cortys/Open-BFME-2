@@ -64,3 +64,5 @@ RampageBehaviorModuleData::RampageBehaviorModuleData()
 {
 	m_requiredUpgrade.clear();
 }
+// ?g_rampageGlobal@@3PAUGlobalWithB8@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_rampageGlobal@@3PAUGlobalWithB8@@A=?TheGlobalData@@3PAVGlobalData@@A")

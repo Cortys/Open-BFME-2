@@ -5388,3 +5388,19 @@ bool bfmeSkipFixedFunctionState;
 // ?bfmeProjectionBias@@3MA: matched references place it at VA 0xdeda74; also referenced as ?g_Va00DEDA74@@3MA.
 float bfmeProjectionBias;
 #pragma comment(linker, "/alternatename:?g_Va00DEDA74@@3MA=?bfmeProjectionBias@@3MA")
+// ?bfmeProjectionSource@@3VMatrix4@@A: the global at VA 0xdedc30 is ?ProjectionMatrix@DX8Wrapper@@1VMatrix4@@A.
+#pragma comment(linker, "/alternatename:?bfmeProjectionSource@@3VMatrix4@@A=?ProjectionMatrix@DX8Wrapper@@1VMatrix4@@A")
+// ?bfmeProjectionNear@@3MA: the global at VA 0xdec4f0 is ?ZNear@DX8Wrapper@@1MA.
+#pragma comment(linker, "/alternatename:?bfmeProjectionNear@@3MA=?ZNear@DX8Wrapper@@1MA")
+// ?g_Va00DEDA14@@3HA: the global at VA 0xdeda14 is ?Light_Environment@DX8Wrapper@@1PAVLightEnvironmentClass@@A.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA14@@3HA=?Light_Environment@DX8Wrapper@@1PAVLightEnvironmentClass@@A")
+// ?g_Va00DEDA20@@3EA: the global at VA 0xdeda20 is ?bfmeSkipFixedFunctionState@@3_NA.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA20@@3EA=?bfmeSkipFixedFunctionState@@3_NA")
+// ?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A: the global at VA 0xdf363c is ?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A.
+#pragma comment(linker, "/alternatename:?BfmeResetMeshRendererInstance@@3PAUBfmeResetMeshRenderer@@A=?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A")
+// ?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A: the global at VA 0xde0880 is ?theDebug@@3PAVDebug@@A.
+#pragma comment(linker, "/alternatename:?BfmeResetDebugInstance@@3PAVBfmeResetDebug@@A=?theDebug@@3PAVDebug@@A")
+// ?bfmeProjectionFar@@3MA: the global at VA 0xded9f8 is ?ZFar@DX8Wrapper@@1MA.
+#pragma comment(linker, "/alternatename:?bfmeProjectionFar@@3MA=?ZFar@DX8Wrapper@@1MA")
+// ?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A: the global at VA 0xdee5d8 is ?render_state@DX8Wrapper@@1URenderStateStruct@@A.
+#pragma comment(linker, "/alternatename:?bfmeApplyRenderState@@3UBfmeApplyRenderState@@A=?render_state@DX8Wrapper@@1URenderStateStruct@@A")

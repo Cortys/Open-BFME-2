@@ -68,3 +68,5 @@ void Rva005B02B5::rva005B027F()
 	float *p = &m_val168;
 	*p += dec;
 }
+// ?g_009FE720@@3PAVRva0025CEEFHost@@A: the global at VA 0xdfe720 is ?TheKeyboard@@3PAVKeyboard@@A.
+#pragma comment(linker, "/alternatename:?g_009FE720@@3PAVRva0025CEEFHost@@A=?TheKeyboard@@3PAVKeyboard@@A")

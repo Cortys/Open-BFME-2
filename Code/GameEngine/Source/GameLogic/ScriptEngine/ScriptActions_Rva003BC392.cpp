@@ -27,3 +27,5 @@ void Rva003BC392Holder::set(bool enabled)
 		return;
 	TheTerrainLogic->flag1914 = enabled;
 }
+// ?TheTerrainLogic@@3PAUTerrainLogicMirror@@A: the global at VA 0xdfec50 is ?TheTerrainLogic@@3PAVTerrainLogic@@A.
+#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAUTerrainLogicMirror@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")

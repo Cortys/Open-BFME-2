@@ -79,3 +79,5 @@ void DX8RigidFVFCategoryContainer::Add_Delayed_Visible_Material_Pass(MaterialPas
     }
     AnyDelayedPassesToRender = true;
 }
+// ?MatPassTaskPool@@3VMatPassTaskPoolClass@@A: the global at VA 0xdf3690 is ?Allocator@?$AutoPoolClass@VMatPassTaskClass@@$0BAA@@@0V?$ObjectPoolClass@VMatPassTaskClass@@$0BAA@@@A.
+#pragma comment(linker, "/alternatename:?MatPassTaskPool@@3VMatPassTaskPoolClass@@A=?Allocator@?$AutoPoolClass@VMatPassTaskClass@@$0BAA@@@0V?$ObjectPoolClass@VMatPassTaskClass@@$0BAA@@@A")

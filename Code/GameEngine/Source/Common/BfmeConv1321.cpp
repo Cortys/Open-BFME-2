@@ -51,3 +51,5 @@ void *BfmeThingTQD::bfmeDelTQD(unsigned char flags)
 		bfmeFreeTQD(this, 0x14);
 	return this;
 }
+// ?g_bfmeVftTQD@@3PAPAXA: the global at VA 0xce157c is ?vftable_01129D30@@3HA.
+#pragma comment(linker, "/alternatename:?g_bfmeVftTQD@@3PAPAXA=?vftable_01129D30@@3HA")

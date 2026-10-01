@@ -11,3 +11,5 @@ int Rva00042F67Get(void)
 {
 	return g_Va00DEDA34;
 }
+// ?g_Va00DEDA34@@3HA: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA34@@3HA=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")

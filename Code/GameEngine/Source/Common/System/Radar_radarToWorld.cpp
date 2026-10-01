@@ -99,3 +99,5 @@ bool Radar::worldToRadar(const Coord3D *world, ICoord2D *radar)
 
 	return true;
 }
+// ?TheTerrainLogic@@3PAVBfmeTerrainHeightView@@A: the global at VA 0xdfec50 is ?TheTerrainLogic@@3PAVTerrainLogic@@A.
+#pragma comment(linker, "/alternatename:?TheTerrainLogic@@3PAVBfmeTerrainHeightView@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")

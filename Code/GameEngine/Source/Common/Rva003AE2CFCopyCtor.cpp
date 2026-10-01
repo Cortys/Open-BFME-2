@@ -37,3 +37,5 @@ Rva003AE2CF::Rva003AE2CF(const Rva003AE2CF &that)
 	*(void **)sub = &Rva003AE2CF_v10;
 	*(unsigned char *)((char *)this + 0x20) = *(const unsigned char *)((const char *)src + 0x20);
 }
+// _Rva003AE2CF_v8: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AE2CF_v8=?vftable_0112B89C@@3HA")

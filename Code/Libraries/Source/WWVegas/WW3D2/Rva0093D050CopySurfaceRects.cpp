@@ -73,3 +73,5 @@ extern "C" void __cdecl rva0093D050(
 		g_w3dMouseD3DDevice, source_surface, 0, destination_surface, 0);
 	++number_of_DX8_calls;
 }
+// ?g_w3dMouseD3DDevice@@3PAVD3DDeviceInterface@@A: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?g_w3dMouseD3DDevice@@3PAVD3DDeviceInterface@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")

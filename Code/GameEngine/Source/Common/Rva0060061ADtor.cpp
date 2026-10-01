@@ -32,3 +32,7 @@ Rva0060061A::~Rva0060061A()
 	::operator delete(q2);
 	G00A06E54 = 0;
 }
+// ?G00A06E5C@@3PAVRva0060061AHelper@@A: the global at VA 0xe06e5c is ?TheArchiveFileSystem@@3PAVArchiveFileSystem@@A.
+#pragma comment(linker, "/alternatename:?G00A06E5C@@3PAVRva0060061AHelper@@A=?TheArchiveFileSystem@@3PAVArchiveFileSystem@@A")
+// ?G00A06E54@@3PAVRva0060061AHelper@@A: the global at VA 0xe06e54 is ?TheLocalFileSystem@@3PAVLocalFileSystem@@A.
+#pragma comment(linker, "/alternatename:?G00A06E54@@3PAVRva0060061AHelper@@A=?TheLocalFileSystem@@3PAVLocalFileSystem@@A")

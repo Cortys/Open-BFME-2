@@ -40,3 +40,5 @@ void *Rva00120720CreateTexture(
 		Log_DX8_ErrorCode(result);
 	return texture;
 }
+// ?g_bfmeD3DDevice8@@3PAXA: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeD3DDevice8@@3PAXA=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")

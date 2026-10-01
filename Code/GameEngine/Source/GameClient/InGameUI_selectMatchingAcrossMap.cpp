@@ -238,3 +238,5 @@ int InGameUI::selectMatchingAcrossMap()
 #pragma comment(linker, "/alternatename:?Rva00DFEF10@@3PAXA=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
 #pragma comment(linker, "/alternatename:?g_00DFEF10@@3PAURvaLogicHolder@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
 #pragma comment(linker, "/alternatename:?Glo012F1028@@3PAVGlo012F1028Type@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")
+// ?g_bfmeStateDO@@3PAVBfmeSelectionState@@A: the global at VA 0xdfef10 is ?g_009FEF10@@3PAVRva002BA8F1Logic@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeStateDO@@3PAVBfmeSelectionState@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")

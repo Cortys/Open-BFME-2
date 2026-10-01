@@ -19,3 +19,7 @@ BfmeRecJD * __stdcall bfmeSlotAt(int index)
 		return g_bfmeBeginJD + index;
 	return 0;
 }
+// ?g_bfmeEndJD@@3PAVBfmeRecJD@@A: the global at VA 0xe0abb8 is ?g_bfmeVideoTableEnd@@3PAUVideo@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeEndJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")
+// ?g_bfmeBeginJD@@3PAVBfmeRecJD@@A: the global at VA 0xe0abb4 is ?g_bfmeVideoTableBegin@@3PAUVideo@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeBeginJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")

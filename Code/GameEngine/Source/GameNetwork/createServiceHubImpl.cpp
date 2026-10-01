@@ -59,3 +59,5 @@ ServiceHubImpl *createServiceHubImpl(void *a, void *b, void *c, void *d, void *e
 	}
 	g_Va0130A588 = 0;
 }
+// ?g_Va0130A588@@3PAVServiceHubImpl@@A: the global at VA 0xe09fa4 is ?g_Va0130A588@@3PAVT_007ea120@@A.
+#pragma comment(linker, "/alternatename:?g_Va0130A588@@3PAVServiceHubImpl@@A=?g_Va0130A588@@3PAVT_007ea120@@A")

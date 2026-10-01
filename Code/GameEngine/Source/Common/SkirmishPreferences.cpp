@@ -424,3 +424,5 @@ void SkirmishPreferences::rva0043C612(const UnicodeString &user)
 	strategic.rva00535781();
 	strategic.write();
 }
+// ?g_emptyProfilePath@@3VUnicodeString@@A: the global at VA 0xe0c898 is ?TheEmptyString@UnicodeString@@2V1@A.
+#pragma comment(linker, "/alternatename:?g_emptyProfilePath@@3VUnicodeString@@A=?TheEmptyString@UnicodeString@@2V1@A")

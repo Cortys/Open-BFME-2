@@ -25,3 +25,5 @@ void Rva003BC37CHolder::set(float value)
 {
 	TheGameLogic->float0D40 = value;
 }
+// ?TheGameLogic@@3PAUGameLogicMirror@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?TheGameLogic@@3PAUGameLogicMirror@@A=?TheGlobalData@@3PAVGlobalData@@A")

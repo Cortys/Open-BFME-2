@@ -430,3 +430,11 @@ int g_Va00E046B8;
 // ?g_Va00E06398@@3HA: matched references place it at VA 0xe06398; also referenced as ?g_Va00A06398@@3PAVRva00583015Obj@@A.
 int g_Va00E06398;
 #pragma comment(linker, "/alternatename:?g_Va00A06398@@3PAVRva00583015Obj@@A=?g_Va00E06398@@3HA")
+// ?g_Va00E04450@@3HA: the global at VA 0xe04450 is ?g_Va00A04450@@3PAUGlobalA04450@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E04450@@3HA=?g_Va00A04450@@3PAUGlobalA04450@@A")
+// ?g_Va00E04904@@3HA: the global at VA 0xe04904 is ?g_Va00A04904@@3PAURva00517048@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E04904@@3HA=?g_Va00A04904@@3PAURva00517048@@A")
+// ?g_Va00E046B4@@3HA: the global at VA 0xe046b4 is ?g_Va00A046B4@@3PAUGlobalA046B4@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E046B4@@3HA=?g_Va00A046B4@@3PAUGlobalA046B4@@A")
+// ?g_Va00E18078@@3HA: the global at VA 0xe18078 is ?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E18078@@3HA=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")

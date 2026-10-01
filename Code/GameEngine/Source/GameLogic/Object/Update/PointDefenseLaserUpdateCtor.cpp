@@ -57,3 +57,5 @@ BeaconClientUpdate::BeaconClientUpdate(Thing *thing, const ModuleData *moduleDat
 BeaconClientUpdate::~BeaconClientUpdate()
 {
 }
+// ?g_updateGlobal@@3PAUOpaqueGlobal@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_updateGlobal@@3PAUOpaqueGlobal@@A=?TheGameLogic@@3PAVGameLogic@@A")

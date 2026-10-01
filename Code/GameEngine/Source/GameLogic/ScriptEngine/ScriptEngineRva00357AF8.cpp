@@ -74,3 +74,5 @@ bool ScriptEngine::rva00357AF8(void *p)
 	}
 	return false;
 }
+// ?g_str009E0878@@3V?$StringBase@D@@A: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?g_str009E0878@@3V?$StringBase@D@@A=?TheEmptyString@AsciiString@@2V1@B")

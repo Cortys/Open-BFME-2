@@ -138,3 +138,7 @@ void W3DGameClientShadowShim::setTimeOfDay(TimeOfDay tod)
 	lightRay *= SHADOW_SUN_DISTANCE_FROM_GROUND;
 	setLightPosition(0, lightRay.X, lightRay.Y, lightRay.Z);
 }
+// ?W3DGCData00DFE758@@3PAXA: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?W3DGCData00DFE758@@3PAXA=?TheGlobalData@@3PAVGlobalData@@A")
+// ?W3DGCData00DFE9D8@@3PAXA: the global at VA 0xdfe9d8 is ?TheDisplay@@3PAVDisplay@@A.
+#pragma comment(linker, "/alternatename:?W3DGCData00DFE9D8@@3PAXA=?TheDisplay@@3PAVDisplay@@A")

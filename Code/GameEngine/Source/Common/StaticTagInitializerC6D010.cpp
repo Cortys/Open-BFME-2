@@ -18,7 +18,8 @@ public:
 extern int bfmeRva012C3B38TagValue;
 // bfmeRva012C3B38TagValue: matched references place it at VA 0xdd8290 (retail .data initial value 13513928).
 int bfmeRva012C3B38TagValue = 13513928;
-extern Rva007F0210 bfmeRva0130A98CTagSlot;
+// bfmeRva0130A98CTagSlot: matched references place it at VA 0xe0a3a4 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A98CTagSlot;
 
 void bfmeRva00C6D010InitializeTag()
 {

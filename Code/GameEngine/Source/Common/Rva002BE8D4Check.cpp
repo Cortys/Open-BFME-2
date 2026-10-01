@@ -23,3 +23,5 @@ bool Rva002BE8D4::rva002BE8D4()
 {
     return m_78 != 0 || *(unsigned char *)((char *)Rva00DFE1C8 + 0x2C0) != 0;
 }
+// ?Rva00DFE1C8@@3PAXA: the global at VA 0xdfe1c8 is ?g_009FE1C8@@3PAVRva0021294A@@A.
+#pragma comment(linker, "/alternatename:?Rva00DFE1C8@@3PAXA=?g_009FE1C8@@3PAVRva0021294A@@A")

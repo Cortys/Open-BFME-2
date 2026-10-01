@@ -57,3 +57,5 @@ public:
 	void bfmeGoEMHa(void);
 	void bfmeGoEMHb(void);
 };
+// ?g_bfmeObjEME@@3PAVBfmeObjEME@@A: the global at VA 0xe09c0c is ?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeObjEME@@3PAVBfmeObjEME@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")

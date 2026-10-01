@@ -107,3 +107,5 @@ void Rva0023E7D9::rva0023F88C(int dummy)
 		return;
 	g_Rva009FE758->m_c18 = 5;
 }
+// ?g_Rva009FE758@@3PAURva009FE758Obj@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_Rva009FE758@@3PAURva009FE758Obj@@A=?TheGlobalData@@3PAVGlobalData@@A")

@@ -129,3 +129,5 @@ void __cdecl Rva0051B09BEnable(void)
 	msg2->appendBooleanArgument(false);
 	TheInGameUI->m_flag = 1;
 }
+// ?g_Va00A04910@@3PAUGlobalA04910@@A: the global at VA 0xe04910 is ?g_Va00E04910@@3HA.
+#pragma comment(linker, "/alternatename:?g_Va00A04910@@3PAUGlobalA04910@@A=?g_Va00E04910@@3HA")

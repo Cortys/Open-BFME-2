@@ -87,3 +87,5 @@ void __cdecl Rva009A5800Forward(int s, int data, int size)
 #undef U
 #undef B
 #undef P
+// ?g_bfmeToneReady@@3P6AXXZA: the global at VA 0xe22d10 is ?g_bfmeSlotB48@@3PAXA.
+#pragma comment(linker, "/alternatename:?g_bfmeToneReady@@3P6AXXZA=?g_bfmeSlotB48@@3PAXA")

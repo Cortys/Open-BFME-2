@@ -52,3 +52,5 @@ void Render2DClass::Convert_Vert(Vector3 &vert_out, float x_in, float y_in)
 	vert_out.Y = y_in * CoordinateScale.Y + CoordinateOffset.Y;
 	vert_out.Z = g_BfmeRender2DZ;
 }
+// _g_BfmeRender2DZ: the global at VA 0xdec49c is ?g_Va00DEC49C@@3MA.
+#pragma comment(linker, "/alternatename:_g_BfmeRender2DZ=?g_Va00DEC49C@@3MA")

@@ -230,3 +230,11 @@ void GameEngine::_bfme_updateClientSubsystems(void)
 // ?Radar@@3PAVRadarSubsystem@@A: the global at this VA is ?TheRadar@@3PAVRadar@@A; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?Radar@@3PAVRadarSubsystem@@A=?TheRadar@@3PAVRadar@@A")
 #pragma comment(linker, "/alternatename:?TheRadar@@3PAVPartitionManager@@A=?TheRadar@@3PAVRadar@@A")
+// ?WindowManagerSubsystem@@3PAVClientSubsystem@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?WindowManagerSubsystem@@3PAVClientSubsystem@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")
+// ?AudioSubsystem@@3PAVClientSubsystem@@A: the global at VA 0xdfe6e8 is ?TheAudio@@3PAVAudioManager@@A.
+#pragma comment(linker, "/alternatename:?AudioSubsystem@@3PAVClientSubsystem@@A=?TheAudio@@3PAVAudioManager@@A")
+// ?Radar@@3PAVRadarSubsystem@@A: the global at VA 0xdff070 is ?TheRadar@@3PAVRadar@@A.
+#pragma comment(linker, "/alternatename:?Radar@@3PAVRadarSubsystem@@A=?TheRadar@@3PAVRadar@@A")
+// ?InputLockSubsystem@@3PAVClientSubsystem@@A: the global at VA 0xdfe720 is ?TheKeyboard@@3PAVKeyboard@@A.
+#pragma comment(linker, "/alternatename:?InputLockSubsystem@@3PAVClientSubsystem@@A=?TheKeyboard@@3PAVKeyboard@@A")

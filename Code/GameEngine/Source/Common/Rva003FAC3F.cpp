@@ -47,3 +47,5 @@ void Rva003FAC3F::rva003FAC3F()
     }
     m_2c = 1;
 }
+// ?g_00DFE6E8@@3PAVGlobalSlotTarget@@A: the global at VA 0xdfe6e8 is ?TheAudio@@3PAVAudioManager@@A.
+#pragma comment(linker, "/alternatename:?g_00DFE6E8@@3PAVGlobalSlotTarget@@A=?TheAudio@@3PAVAudioManager@@A")

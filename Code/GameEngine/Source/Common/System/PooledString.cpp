@@ -45,7 +45,8 @@ struct PooledStringEntry
 
 // The entry every default-constructed PooledString points at. isEmpty is a
 // pointer comparison against it rather than a length test.
-extern PooledStringEntry ThePooledStringEmptyEntry;
+// ThePooledStringEmptyEntry: matched references place it at VA 0xe1768c (zero-filled; a plain-data view).
+PooledStringEntry ThePooledStringEmptyEntry;
 
 class AsciiString;
 

@@ -16,10 +16,14 @@ struct S12
 	int c;
 };
 
-extern S12 g_00DFF500;
-extern S12 g_00DFF50C;
-extern S12 g_00DFF51C;
-extern S12 g_00DFF528;
+// g_00DFF500: matched references place it at VA 0xdff500 (zero-filled; a plain-data view).
+S12 g_00DFF500;
+// g_00DFF50C: matched references place it at VA 0xdff50c (zero-filled; a plain-data view).
+S12 g_00DFF50C;
+// g_00DFF51C: matched references place it at VA 0xdff51c (zero-filled; a plain-data view).
+S12 g_00DFF51C;
+// g_00DFF528: matched references place it at VA 0xdff528 (zero-filled; a plain-data view).
+S12 g_00DFF528;
 extern unsigned char g_00DFF518;
 // g_00DFF518: matched references place it at VA 0xdff518 (zero-filled .bss).
 unsigned char g_00DFF518;

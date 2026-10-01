@@ -52,3 +52,5 @@ int Rva0052DC3F::rva0052DC3F(const Rva0052DC3FArg *a)
 	double f = floor(sqrt((double)d2) * g_Va00BC2428 + g_Va00BC26F0);
 	return fast_round((Real)f);
 }
+// ?g_Va00BC26F0@@3MA: the global at VA 0xbc26f0 is ?g_Va007C26F0@@3MA.
+#pragma comment(linker, "/alternatename:?g_Va00BC26F0@@3MA=?g_Va007C26F0@@3MA")

@@ -53,3 +53,5 @@ int __cdecl Rva008791B0Add(void *a, void *b)
 	Rva008791E0Handles.m_count = i + 1;
 	return 0;
 }
+// ?Rva008791E0Handles@@3URva008791E0Table@@A: the global at VA 0xe226e0 is ?mem_array@@3PAY0BE@KA.
+#pragma comment(linker, "/alternatename:?Rva008791E0Handles@@3URva008791E0Table@@A=?mem_array@@3PAY0BE@KA")

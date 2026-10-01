@@ -22,3 +22,5 @@ void __stdcall Rva002ABB20Free(void** out, PoolNode002ABB20* n)
 	g_pool009A60F0 = n;
 	*out = prev;
 }
+// ?g_pool009A60F0@@3PAUPoolNode002ABB20@@A: the global at VA 0xda60f0 is ?g_freeList@@3PAXA.
+#pragma comment(linker, "/alternatename:?g_pool009A60F0@@3PAUPoolNode002ABB20@@A=?g_freeList@@3PAXA")

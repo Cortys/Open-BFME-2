@@ -42,3 +42,5 @@ void Rva003ECDB7Object::registerName()
 	if (m_name.compare(g_emptyName) != 0)
 		g_manager->add(m_name, this);
 }
+// ?g_emptyName@@3VAsciiString@@B: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?g_emptyName@@3VAsciiString@@B=?TheEmptyString@AsciiString@@2V1@B")

@@ -24,3 +24,7 @@ void Rva00826840Owner::resetTables()
 	memcpy(&m_small, &Rva00826740SmallInit, sizeof(Rva00826740Small));
 	memset(m_zeroed, 0, sizeof(Rva00826740Big));
 }
+// ?Rva00826740SmallInit@@3URva00826740Small@@B: the global at VA 0xdd9d80 is ?groupTable0@LZHLDecoderStat@@2PAUGroup@1@A.
+#pragma comment(linker, "/alternatename:?Rva00826740SmallInit@@3URva00826740Small@@B=?groupTable0@LZHLDecoderStat@@2PAUGroup@1@A")
+// ?Rva00826740BigInit@@3URva00826740Big@@B: the global at VA 0xdd9e00 is ?symbolTable0@LZHLDecoderStat@@2PAFA.
+#pragma comment(linker, "/alternatename:?Rva00826740BigInit@@3URva00826740Big@@B=?symbolTable0@LZHLDecoderStat@@2PAFA")

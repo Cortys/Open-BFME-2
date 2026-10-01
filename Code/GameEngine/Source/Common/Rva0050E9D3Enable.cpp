@@ -294,3 +294,11 @@ GlobalA046B4 * g_Va00A046B4 = 0;
 #pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A=?TheInGameUI@@3PAVInGameUI@@A")
 #pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3PAVRva00512C88ObjB@@A=?TheInGameUI@@3PAVInGameUI@@A")
 #pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3HA=?TheInGameUI@@3PAVInGameUI@@A")
+// ?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVRva00222479ByteOneSetter@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")
+// ?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A: the global at VA 0xdfedf0 is ?TheInGameUI@@3PAVInGameUI@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3PAUGlobal9FEDF0@@A=?TheInGameUI@@3PAVInGameUI@@A")
+// ?g_Va009FEEE8@@3PAURva0043C933Outer@@A: the global at VA 0xdfeee8 is ?ThePlayerList@@3PAVPlayerList@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEEE8@@3PAURva0043C933Outer@@A=?ThePlayerList@@3PAVPlayerList@@A")
+// ?g_Va009FE78C@@3PAUGlobal9FE78C@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE78C@@3PAUGlobal9FE78C@@A=?TheGameLogic@@3PAVGameLogic@@A")

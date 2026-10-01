@@ -124,3 +124,5 @@ void *BfmeThingTVC::bfmeDelTVC(unsigned char flags)
 		bfmeFreeTVC(this, 0xc);
 	return this;
 }
+// ?g_bfmeVftTUA@@3PAPAXA: the global at VA 0xce0f20 is ?vftable_011296B0@@3HA.
+#pragma comment(linker, "/alternatename:?g_bfmeVftTUA@@3PAPAXA=?vftable_011296B0@@3HA")

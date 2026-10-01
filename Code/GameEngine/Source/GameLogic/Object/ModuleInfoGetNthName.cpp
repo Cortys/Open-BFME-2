@@ -53,3 +53,5 @@ BFMERetailAsciiString ModuleInfo::getNthName(int index) const
 		return g_emptyModuleName;
 	return *(const BFMERetailAsciiString *)(m_begin + index);
 }
+// ?g_emptyModuleName@@3VBFMERetailAsciiString@@A: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?g_emptyModuleName@@3VBFMERetailAsciiString@@A=?TheEmptyString@AsciiString@@2V1@B")

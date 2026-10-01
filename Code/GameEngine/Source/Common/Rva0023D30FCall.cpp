@@ -84,3 +84,7 @@ void __stdcall Rva0023D30FCall(int a1, int a2, int a3)
 		return;
 	t->slot108(a1, a2, a3);
 }
+// ?g_Rva0023D30FFlag@@3HA: the global at VA 0xe02eec is ?TheGameInfo@@3PAVGameInfo@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023D30FFlag@@3HA=?TheGameInfo@@3PAVGameInfo@@A")
+// ?g_Rva0023D30FTarget@@3PAVRva0023D30FTarget@@A: the global at VA 0xdfea28 is ?TheNetwork@@3PAVNetworkInterface@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023D30FTarget@@3PAVRva0023D30FTarget@@A=?TheNetwork@@3PAVNetworkInterface@@A")

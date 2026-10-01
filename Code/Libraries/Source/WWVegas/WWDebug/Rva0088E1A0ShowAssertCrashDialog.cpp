@@ -33,7 +33,8 @@ struct BfmeCsDWA
 	unsigned char m_bfmeHead[0x18];
 };
 
-extern BfmeCsDWA g_bfmeCsDWC;
+// g_bfmeCsDWC: matched references place it at VA 0xde0884 (zero-filled; a plain-data view).
+BfmeCsDWA g_bfmeCsDWC;
 
 // The dialog procedure (retail 0x0003D6A0), matched in AssertCrashDialogProc.cpp.
 int __stdcall AssertCrashDialogProc(void *hWnd, unsigned int uMsg, unsigned int wParam, long lParam);

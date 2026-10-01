@@ -25,3 +25,5 @@ void __cdecl Rva00583015Destroy(void)
 		g_Va00A06398 = 0;
 	}
 }
+// ?g_Va00A06398@@3PAVRva00583015Obj@@A: the global at VA 0xe06398 is ?g_Va00E06398@@3HA.
+#pragma comment(linker, "/alternatename:?g_Va00A06398@@3PAVRva00583015Obj@@A=?g_Va00E06398@@3HA")

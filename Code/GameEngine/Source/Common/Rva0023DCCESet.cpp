@@ -70,3 +70,5 @@ void Rva0023DCCE::rva0023DCCE(const AsciiString &a, const OpaqueRefElement4 &b, 
 		m_b = c;
 	}
 }
+// ?g_Rva0023DCCEGlobal@@3PAURva0023DCCEGlobal@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023DCCEGlobal@@3PAURva0023DCCEGlobal@@A=?TheGlobalData@@3PAVGlobalData@@A")

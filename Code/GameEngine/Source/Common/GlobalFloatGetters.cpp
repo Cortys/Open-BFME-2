@@ -147,3 +147,5 @@ float Rva006CBC10Get(void)
 {
 	return 2.0f;
 }
+// ?g_Va00DEDA74@@3MA: the global at VA 0xdeda74 is ?bfmeProjectionBias@@3MA.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA74@@3MA=?bfmeProjectionBias@@3MA")

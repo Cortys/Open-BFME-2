@@ -47,3 +47,5 @@ Rva0043FC20 Rva0029F8B8::rva0029F8B8()
 	}
 	return tmp;
 }
+// ?TheGlobalLanguageData@@3PAUGlobalLanguage@@A: the global at VA 0xdfdc84 is ?TheGlobalLanguageData@@3PAVGlobalLanguage@@A.
+#pragma comment(linker, "/alternatename:?TheGlobalLanguageData@@3PAUGlobalLanguage@@A=?TheGlobalLanguageData@@3PAVGlobalLanguage@@A")

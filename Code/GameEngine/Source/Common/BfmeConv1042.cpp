@@ -35,3 +35,5 @@ void BfmeC1042::bfmeGo1042E(BfmeR1042 *rec)
 	m_bfmeSub.bfmeSet1042(text, 0, 0);
 	m_bfmeFlag = 1;
 }
+// ?g_bfmeLit1042@@3PADA: the global at VA 0xbbb5c4 is ?g_Va007BB5C4@@3GA.
+#pragma comment(linker, "/alternatename:?g_bfmeLit1042@@3PADA=?g_Va007BB5C4@@3GA")

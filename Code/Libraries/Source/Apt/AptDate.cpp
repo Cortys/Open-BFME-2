@@ -47,7 +47,8 @@ struct AptDateNativeCache {
     AptValue *toString;
     AptValue *UTC;
 };
-extern AptDateNativeCache g_aptDateNativeCache;
+// g_aptDateNativeCache: matched references place it at VA 0xe18248 (zero-filled; a plain-data view).
+AptDateNativeCache g_aptDateNativeCache;
 class AptDate { public: static void CleanNativeFunctions(); };
 void AptDate::CleanNativeFunctions()
 {

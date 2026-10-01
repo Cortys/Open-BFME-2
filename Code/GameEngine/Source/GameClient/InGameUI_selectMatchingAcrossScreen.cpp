@@ -256,3 +256,5 @@ int InGameUI::selectMatchingAcrossScreen()
 #pragma comment(linker, "/alternatename:?TheTacticalView@@3PAVTacticalView@@A=?TheTacticalView@@3PAVView@@A")
 #pragma comment(linker, "/alternatename:?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A=?TheTacticalView@@3PAVView@@A")
 #pragma comment(linker, "/alternatename:?g_Va009FEA3C@@3PAVRva003C4DC2Holder@@A=?TheTacticalView@@3PAVView@@A")
+// ?TheTacticalView@@3PAVTacticalView@@A: the global at VA 0xdfea3c is ?TheTacticalView@@3PAVView@@A.
+#pragma comment(linker, "/alternatename:?TheTacticalView@@3PAVTacticalView@@A=?TheTacticalView@@3PAVView@@A")

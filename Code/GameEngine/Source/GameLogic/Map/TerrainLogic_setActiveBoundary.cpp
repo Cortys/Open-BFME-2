@@ -207,3 +207,5 @@ void TerrainLogic::setActiveBoundary(Int newActiveBoundary)
 
 	TheTacticalView->forceCameraConstraintRecalc();
 }
+// ?TheRva00DFE758@@3PAVRva00DFE758Holder@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?TheRva00DFE758@@3PAVRva00DFE758Holder@@A=?TheGlobalData@@3PAVGlobalData@@A")

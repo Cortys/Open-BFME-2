@@ -179,3 +179,5 @@ Rva004930A0::Rva004930A0()
 		BfmeFixedStorage0004543D(g_009FEFA4),
 		BfmeFixedStorage0004543D(g_009FEFA4));
 }
+// ?g_bfmeEmptyF9@@3QBDB: the global at VA 0xbbac1c is ?BfmeEmptyString@AsciiString@@0QBDB.
+#pragma comment(linker, "/alternatename:?g_bfmeEmptyF9@@3QBDB=?BfmeEmptyString@AsciiString@@0QBDB")

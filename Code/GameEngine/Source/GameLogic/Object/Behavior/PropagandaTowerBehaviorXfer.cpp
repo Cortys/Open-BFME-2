@@ -216,3 +216,5 @@ void PropagandaTowerBehavior::xfer(Xfer *xfer)
 		}
 	}
 }
+// ?g_rva005c5100ThrowInfo@@3HA: the global at VA 0xcffd18 is ?g_guardTargetTypeThrowInfo@@3HA.
+#pragma comment(linker, "/alternatename:?g_rva005c5100ThrowInfo@@3HA=?g_guardTargetTypeThrowInfo@@3HA")

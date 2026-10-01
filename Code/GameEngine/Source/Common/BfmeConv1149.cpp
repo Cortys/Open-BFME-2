@@ -67,3 +67,5 @@ char *bfmeChunk1149(unsigned int size, int *nobjs)
 		return bfmeChunk1149(size, nobjs);
 	}
 }
+// _g_bfmeFreeList1149: the global at VA 0xddf530 is ?_S_free_list@?$__node_alloc@$0A@$0A@@_STL@@2RCRAV_Node_alloc_obj@2@C.
+#pragma comment(linker, "/alternatename:_g_bfmeFreeList1149=?_S_free_list@?$__node_alloc@$0A@$0A@@_STL@@2RCRAV_Node_alloc_obj@2@C")

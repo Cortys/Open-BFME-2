@@ -83,3 +83,5 @@ void BfmeM1020::bfmeGo1020M(int unused)
 	g_bfmeN1020->bfmeReg1020(this);
 	m_bfmeState = 1;
 }
+// ?g_bfmeN1020@@3PAVBfmeN1020@@A: the global at VA 0xdfef1c is ?TheWindowManager@@3PAVGameWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeN1020@@3PAVBfmeN1020@@A=?TheWindowManager@@3PAVGameWindowManager@@A")

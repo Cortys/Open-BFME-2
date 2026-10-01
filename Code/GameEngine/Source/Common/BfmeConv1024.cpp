@@ -34,3 +34,5 @@ void BfmeE1024::bfmeGo1024E(void)
 
 	g_bfmeP1024->bfmeReg1024(this);
 }
+// ?g_bfmeP1024@@3PAVBfmeP1024@@A: the global at VA 0xe09c0c is ?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeP1024@@3PAVBfmeP1024@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")

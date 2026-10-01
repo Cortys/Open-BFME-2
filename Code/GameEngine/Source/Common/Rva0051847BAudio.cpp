@@ -109,3 +109,5 @@ void Rva0051847B::rva0051847B(int unused)
 	TheAudio->slot184(prefs.getUseEAX3());
 	Rva00518262Enable();
 }
+// ?g_Va009FE758@@3PAVGlobal9FE758@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE758@@3PAVGlobal9FE758@@A=?TheGlobalData@@3PAVGlobalData@@A")

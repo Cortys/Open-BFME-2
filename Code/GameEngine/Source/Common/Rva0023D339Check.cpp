@@ -23,3 +23,7 @@ bool Rva0023D339Get()
 	tmp *= 60;
 	return b->m_40 >= tmp;
 }
+// ?g_Rva0023D339A@@3PAURva0023D339A@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023D339A@@3PAURva0023D339A@@A=?TheGlobalData@@3PAVGlobalData@@A")
+// ?g_Rva0023D339B@@3PAURva0023D339B@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023D339B@@3PAURva0023D339B@@A=?TheGameLogic@@3PAVGameLogic@@A")

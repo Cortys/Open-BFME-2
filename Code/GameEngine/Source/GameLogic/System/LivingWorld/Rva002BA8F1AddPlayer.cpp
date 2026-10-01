@@ -79,3 +79,7 @@ void Rva002BA8F1Logic::addPlayer(Rva002BA8F1Input *input, bool local, int kind, 
 
 // Va00E03140Lookup: matched references place it at VA 0xe03140 (zero-filled .bss).
 Rva002E18C3Lookup *Va00DFF0B0Lookup, * Va00E03140Lookup;
+// ?Va00DFE0ECStore@@3PAVRva002000D7Store@@A: the global at VA 0xdfe0ec is ?TheRankInfoStore@@3PAVRankInfoStore@@A.
+#pragma comment(linker, "/alternatename:?Va00DFE0ECStore@@3PAVRva002000D7Store@@A=?TheRankInfoStore@@3PAVRankInfoStore@@A")
+// ?Va00DFE78CStatePointer@@3PAUVa00DFE78CState@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?Va00DFE78CStatePointer@@3PAUVa00DFE78CState@@A=?TheGameLogic@@3PAVGameLogic@@A")

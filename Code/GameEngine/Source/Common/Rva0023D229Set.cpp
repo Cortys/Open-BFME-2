@@ -26,3 +26,5 @@ void Rva0023D229::Set(int index)
 	void *p = g->m_40;
 	*(void **)((char *)this + 460 + off) = p;
 }
+// ?g_Rva0023D229Global@@3PAURva0023D229Global@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0023D229Global@@3PAURva0023D229Global@@A=?TheGameLogic@@3PAVGameLogic@@A")

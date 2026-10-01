@@ -138,3 +138,7 @@ found:
 	g_009FEA3C->Place(pos, ix, fy, fz);
 end:;
 }
+// ?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A: the global at VA 0xdfea3c is ?TheTacticalView@@3PAVView@@A.
+#pragma comment(linker, "/alternatename:?g_009FEA3C@@3PAVRva003C4E28PlaceMgr@@A=?TheTacticalView@@3PAVView@@A")
+// ?g_009FEC50@@3PAVRva003C4E28ListMgr@@A: the global at VA 0xdfec50 is ?TheTerrainLogic@@3PAVTerrainLogic@@A.
+#pragma comment(linker, "/alternatename:?g_009FEC50@@3PAVRva003C4E28ListMgr@@A=?TheTerrainLogic@@3PAVTerrainLogic@@A")

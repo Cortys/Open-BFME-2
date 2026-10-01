@@ -101,3 +101,5 @@ void DX8Wrapper::Get_Render_Target_Resolution(Int &width, Int &height, Int &bitD
 extern bool BfmeRenderWindowed;
 #pragma comment(linker, "/alternatename:?BfmeRenderWindowed@@3_NA=?IsWindowed@DX8Wrapper@@1_NA")
 #pragma comment(linker, "/alternatename:?g_Va00DEDA06@@3EA=?IsWindowed@DX8Wrapper@@1_NA")
+// ?BfmeRenderWindowed@@3_NA: the global at VA 0xdeda06 is ?IsWindowed@DX8Wrapper@@1_NA.
+#pragma comment(linker, "/alternatename:?BfmeRenderWindowed@@3_NA=?IsWindowed@DX8Wrapper@@1_NA")

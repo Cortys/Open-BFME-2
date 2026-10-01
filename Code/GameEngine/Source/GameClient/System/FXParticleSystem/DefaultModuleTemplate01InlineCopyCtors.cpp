@@ -97,3 +97,11 @@ Rva003AEA42::Rva003AEA42(const Rva003AEA42 &that)
 
 // Inner 0x003AEA42 only; outer 0x003AEA15 raced (sibling Rva003AEA15CopyCtor.cpp
 // won 8c789e53b with the same Rva owner for the middle). Dropped our outer dup.
+// _Rva003AEA42_v18b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AEA42_v18b=?vftable_0112B89C@@3HA")
+// _Rva003AEA42_v14a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AEA42_v14a=?vftable_0112B89C@@3HA")
+// _Rva003AEA42_v18a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AEA42_v18a=?vftable_0112B89C@@3HA")
+// _Rva003AEA42_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AEA42_v14b=?vftable_0112B89C@@3HA")

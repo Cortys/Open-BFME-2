@@ -92,3 +92,5 @@ void Rva00248E98Enable(void)
 Global009FE958 * g_Va009FE958 = 0;
 #pragma comment(linker, "/alternatename:?g_00DFE958@@3PAVLANAPI@@A=?g_Va009FE958@@3PAUGlobal009FE958@@A")
 #pragma comment(linker, "/alternatename:?g_bfmeObjECI@@3PAVBfmeObjECI@@A=?g_Va009FE958@@3PAUGlobal009FE958@@A")
+// ?g_Va00A03354@@3PAUOuter00446A77@@A: the global at VA 0xe03354 is ?g_Va00A03354@@3HA.
+#pragma comment(linker, "/alternatename:?g_Va00A03354@@3PAUOuter00446A77@@A=?g_Va00A03354@@3HA")

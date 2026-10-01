@@ -11,69 +11,128 @@ public:
 };
 
 extern int bfmeRva012C3B38TagValue;
-extern Rva007F0210 bfmeRva0130A938TagSlot;
+// bfmeRva0130A938TagSlot: matched references place it at VA 0xe0a350 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A938TagSlot;
 extern int bfmeRva012C3BC0TagValue;
 // bfmeRva012C3BC0TagValue: matched references place it at VA 0xdd8318 (retail .data initial value 13514444).
 int bfmeRva012C3BC0TagValue = 13514444;
-extern Rva007F0210 bfmeRva0130A908TagSlot;
-extern Rva007F0210 bfmeRva0130A9A4TagSlot;
-extern Rva007F0210 bfmeRva0130A920TagSlot;
-extern Rva007F0210 bfmeRva0130A8CCTagSlot;
-extern Rva007F0210 bfmeRva0130A878TagSlot;
-extern Rva007F0210 bfmeRva0130A854TagSlot;
-extern Rva007F0210 bfmeRva0130A914TagSlot;
-extern Rva007F0210 bfmeRva0130A95CTagSlot;
-extern Rva007F0210 bfmeRva0130A92CTagSlot;
-extern Rva007F0210 bfmeRva0130A884TagSlot;
-extern Rva007F0210 bfmeRva0130A950TagSlot;
-extern Rva007F0210 bfmeRva0130A980TagSlot;
-extern Rva007F0210 bfmeRva0130A8D8TagSlot;
-extern Rva007F0210 bfmeRva0130A944TagSlot;
-extern Rva007F0210 bfmeRva0130A890TagSlot;
-extern Rva007F0210 bfmeRva0130A8B4TagSlot;
-extern Rva007F0210 bfmeRva0130A8C0TagSlot;
-extern Rva007F0210 bfmeRva0130A998TagSlot;
-extern Rva007F0210 bfmeRva0130A974TagSlot;
-extern Rva007F0210 bfmeRva0130A860TagSlot;
-extern Rva007F0210 bfmeRva0130A8F0TagSlot;
-extern Rva007F0210 bfmeRva0130A86CTagSlot;
-extern Rva007F0210 bfmeRva0130A8FCTagSlot;
-extern Rva007F0210 bfmeRva0130A8A8TagSlot;
-extern Rva007F0210 bfmeRva0130A9C8TagSlot;
-extern Rva007F0210 bfmeRva0130AA1CTagSlot;
-extern Rva007F0210 bfmeRva0130AAF4TagSlot;
-extern Rva007F0210 bfmeRva0130A9D4TagSlot;
-extern Rva007F0210 bfmeRva0130A9BCTagSlot;
-extern Rva007F0210 bfmeRva0130A9F8TagSlot;
-extern Rva007F0210 bfmeRva0130AB48TagSlot;
-extern Rva007F0210 bfmeRva0130AAACTagSlot;
-extern Rva007F0210 bfmeRva0130AAA0TagSlot;
-extern Rva007F0210 bfmeRva0130AA58TagSlot;
-extern Rva007F0210 bfmeRva0130AADCTagSlot;
-extern Rva007F0210 bfmeRva0130AA28TagSlot;
-extern Rva007F0210 bfmeRva0130AAB8TagSlot;
-extern Rva007F0210 bfmeRva0130AA10TagSlot;
-extern Rva007F0210 bfmeRva0130AB3CTagSlot;
-extern Rva007F0210 bfmeRva0130AA4CTagSlot;
-extern Rva007F0210 bfmeRva0130AB30TagSlot;
-extern Rva007F0210 bfmeRva0130AA34TagSlot;
-extern Rva007F0210 bfmeRva0130AB18TagSlot;
-extern Rva007F0210 bfmeRva0130AA64TagSlot;
+// bfmeRva0130A908TagSlot: matched references place it at VA 0xe0a320 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A908TagSlot;
+// bfmeRva0130A9A4TagSlot: matched references place it at VA 0xe0a3bc (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9A4TagSlot;
+// bfmeRva0130A920TagSlot: matched references place it at VA 0xe0a338 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A920TagSlot;
+// bfmeRva0130A8CCTagSlot: matched references place it at VA 0xe0a2e4 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8CCTagSlot;
+// bfmeRva0130A878TagSlot: matched references place it at VA 0xe0a290 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A878TagSlot;
+// bfmeRva0130A854TagSlot: matched references place it at VA 0xe0a26c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A854TagSlot;
+// bfmeRva0130A914TagSlot: matched references place it at VA 0xe0a32c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A914TagSlot;
+// bfmeRva0130A95CTagSlot: matched references place it at VA 0xe0a374 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A95CTagSlot;
+// bfmeRva0130A92CTagSlot: matched references place it at VA 0xe0a344 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A92CTagSlot;
+// bfmeRva0130A884TagSlot: matched references place it at VA 0xe0a29c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A884TagSlot;
+// bfmeRva0130A950TagSlot: matched references place it at VA 0xe0a368 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A950TagSlot;
+// bfmeRva0130A980TagSlot: matched references place it at VA 0xe0a398 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A980TagSlot;
+// bfmeRva0130A8D8TagSlot: matched references place it at VA 0xe0a2f0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8D8TagSlot;
+// bfmeRva0130A944TagSlot: matched references place it at VA 0xe0a35c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A944TagSlot;
+// bfmeRva0130A890TagSlot: matched references place it at VA 0xe0a2a8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A890TagSlot;
+// bfmeRva0130A8B4TagSlot: matched references place it at VA 0xe0a2cc (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8B4TagSlot;
+// bfmeRva0130A8C0TagSlot: matched references place it at VA 0xe0a2d8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8C0TagSlot;
+// bfmeRva0130A998TagSlot: matched references place it at VA 0xe0a3b0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A998TagSlot;
+// bfmeRva0130A974TagSlot: matched references place it at VA 0xe0a38c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A974TagSlot;
+// bfmeRva0130A860TagSlot: matched references place it at VA 0xe0a278 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A860TagSlot;
+// bfmeRva0130A8F0TagSlot: matched references place it at VA 0xe0a308 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8F0TagSlot;
+// bfmeRva0130A86CTagSlot: matched references place it at VA 0xe0a284 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A86CTagSlot;
+// bfmeRva0130A8FCTagSlot: matched references place it at VA 0xe0a314 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8FCTagSlot;
+// bfmeRva0130A8A8TagSlot: matched references place it at VA 0xe0a2c0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A8A8TagSlot;
+// bfmeRva0130A9C8TagSlot: matched references place it at VA 0xe0a3e0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9C8TagSlot;
+// bfmeRva0130AA1CTagSlot: matched references place it at VA 0xe0a434 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA1CTagSlot;
+// bfmeRva0130AAF4TagSlot: matched references place it at VA 0xe0a50c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAF4TagSlot;
+// bfmeRva0130A9D4TagSlot: matched references place it at VA 0xe0a3ec (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9D4TagSlot;
+// bfmeRva0130A9BCTagSlot: matched references place it at VA 0xe0a3d4 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9BCTagSlot;
+// bfmeRva0130A9F8TagSlot: matched references place it at VA 0xe0a410 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9F8TagSlot;
+// bfmeRva0130AB48TagSlot: matched references place it at VA 0xe0a560 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB48TagSlot;
+// bfmeRva0130AAACTagSlot: matched references place it at VA 0xe0a4c4 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAACTagSlot;
+// bfmeRva0130AAA0TagSlot: matched references place it at VA 0xe0a4b8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAA0TagSlot;
+// bfmeRva0130AA58TagSlot: matched references place it at VA 0xe0a470 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA58TagSlot;
+// bfmeRva0130AADCTagSlot: matched references place it at VA 0xe0a4f4 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AADCTagSlot;
+// bfmeRva0130AA28TagSlot: matched references place it at VA 0xe0a440 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA28TagSlot;
+// bfmeRva0130AAB8TagSlot: matched references place it at VA 0xe0a4d0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAB8TagSlot;
+// bfmeRva0130AA10TagSlot: matched references place it at VA 0xe0a428 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA10TagSlot;
+// bfmeRva0130AB3CTagSlot: matched references place it at VA 0xe0a554 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB3CTagSlot;
+// bfmeRva0130AA4CTagSlot: matched references place it at VA 0xe0a464 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA4CTagSlot;
+// bfmeRva0130AB30TagSlot: matched references place it at VA 0xe0a548 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB30TagSlot;
+// bfmeRva0130AA34TagSlot: matched references place it at VA 0xe0a44c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA34TagSlot;
+// bfmeRva0130AB18TagSlot: matched references place it at VA 0xe0a530 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB18TagSlot;
+// bfmeRva0130AA64TagSlot: matched references place it at VA 0xe0a47c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA64TagSlot;
 extern Rva007F0210 bfmeRva0130AB00TagSlot;
-extern Rva007F0210 bfmeRva0130AAC4TagSlot;
-extern Rva007F0210 bfmeRva0130AA94TagSlot;
-extern Rva007F0210 bfmeRva0130AA04TagSlot;
-extern Rva007F0210 bfmeRva0130AA88TagSlot;
-extern Rva007F0210 bfmeRva0130AB0CTagSlot;
-extern Rva007F0210 bfmeRva0130AAE8TagSlot;
-extern Rva007F0210 bfmeRva0130AB24TagSlot;
-extern Rva007F0210 bfmeRva0130AA7CTagSlot;
-extern Rva007F0210 bfmeRva0130A9ECTagSlot;
-extern Rva007F0210 bfmeRva0130AA40TagSlot;
-extern Rva007F0210 bfmeRva0130AA70TagSlot;
-extern Rva007F0210 bfmeRva0130AAD0TagSlot;
-extern Rva007F0210 bfmeRva0130A9B0TagSlot;
-extern Rva007F0210 bfmeRva0130A9E0TagSlot;
+// bfmeRva0130AAC4TagSlot: matched references place it at VA 0xe0a4dc (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAC4TagSlot;
+// bfmeRva0130AA94TagSlot: matched references place it at VA 0xe0a4ac (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA94TagSlot;
+// bfmeRva0130AA04TagSlot: matched references place it at VA 0xe0a41c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA04TagSlot;
+// bfmeRva0130AA88TagSlot: matched references place it at VA 0xe0a4a0 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA88TagSlot;
+// bfmeRva0130AB0CTagSlot: matched references place it at VA 0xe0a524 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB0CTagSlot;
+// bfmeRva0130AAE8TagSlot: matched references place it at VA 0xe0a500 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAE8TagSlot;
+// bfmeRva0130AB24TagSlot: matched references place it at VA 0xe0a53c (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AB24TagSlot;
+// bfmeRva0130AA7CTagSlot: matched references place it at VA 0xe0a494 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA7CTagSlot;
+// bfmeRva0130A9ECTagSlot: matched references place it at VA 0xe0a404 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9ECTagSlot;
+// bfmeRva0130AA40TagSlot: matched references place it at VA 0xe0a458 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA40TagSlot;
+// bfmeRva0130AA70TagSlot: matched references place it at VA 0xe0a488 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AA70TagSlot;
+// bfmeRva0130AAD0TagSlot: matched references place it at VA 0xe0a4e8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130AAD0TagSlot;
+// bfmeRva0130A9B0TagSlot: matched references place it at VA 0xe0a3c8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9B0TagSlot;
+// bfmeRva0130A9E0TagSlot: matched references place it at VA 0xe0a3f8 (zero-filled; a plain-data view).
+Rva007F0210 bfmeRva0130A9E0TagSlot;
 
 void bfmeRva00C6D090InitializeTag()
 {

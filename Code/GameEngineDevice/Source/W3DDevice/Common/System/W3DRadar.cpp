@@ -1610,3 +1610,5 @@ void W3DRadar::refreshTerrain( TerrainLogic *terrain )
 
  *
  */
+// ?TheW3DRadarFormatCaps@@3PAVW3DRadarFormatCaps@@A: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
+#pragma comment(linker, "/alternatename:?TheW3DRadarFormatCaps@@3PAVW3DRadarFormatCaps@@A=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")

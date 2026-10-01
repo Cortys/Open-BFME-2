@@ -73,3 +73,5 @@ bool Rva005843DA::rva00583C4E(int i)
 		return m_vec[i].m_14 > g_00DFE78C->m_40;
 	return false;
 }
+// ?g_00DFE78C@@3PAUSingletonDFE78C@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAUSingletonDFE78C@@A=?TheGameLogic@@3PAVGameLogic@@A")

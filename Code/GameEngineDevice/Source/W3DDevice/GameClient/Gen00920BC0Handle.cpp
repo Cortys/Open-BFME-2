@@ -104,3 +104,5 @@ void Gen00920BC0::handle(int index)
 		break;
 	}
 }
+// ?Rva01340534Device@@3PAUGen00920BC0Device@@A: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?Rva01340534Device@@3PAUGen00920BC0Device@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")

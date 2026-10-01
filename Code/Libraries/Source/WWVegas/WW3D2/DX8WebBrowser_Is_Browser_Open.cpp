@@ -69,3 +69,5 @@ __declspec(noinline) bool forceIsBrowserOpen(const char *browsername)
 {
 	return DX8WebBrowser::Is_Browser_Open(browsername);
 }
+// ?g_bfmeObjECF@@3VBfmeObjECFPtr@@A: the global at VA 0xdf7040 is ?g_bfmeObjECF@@3PAUBfmeObjECF@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeObjECF@@3VBfmeObjECFPtr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")

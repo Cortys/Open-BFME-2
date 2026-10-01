@@ -41,3 +41,5 @@ bool Rva00586D8E::Rva00584F6B(int idx)
 	HeldBlock* h = (HeldBlock*)m_held;
 	return m_vec[idx].m_20 > g_00DFE78C->m_frame || h->m_entries[idx].m_18 >= 0;
 }
+// ?g_00DFE78C@@3PAUGameLogicFrame@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAUGameLogicFrame@@A=?TheGameLogic@@3PAVGameLogic@@A")

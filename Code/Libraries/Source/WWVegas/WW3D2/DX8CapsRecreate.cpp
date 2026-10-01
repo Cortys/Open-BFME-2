@@ -59,3 +59,9 @@ void __cdecl Rva001207B0Init(void *device)
 // ?g_d3dInterface@@3PAUIDirect3D8@@A: the global at this VA is ?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?g_d3dInterface@@3PAUIDirect3D8@@A=?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A")
 #pragma comment(linker, "/alternatename:?G009EDA30@@3HA=?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A")
+// ?g_adapterIdentifier@@3U_D3DADAPTER_IDENTIFIER8@@A: the global at VA 0xdec5e8 is ?CurrentAdapterIdentifier@DX8Wrapper@@1U_D3DADAPTER_IDENTIFIER8@@A.
+#pragma comment(linker, "/alternatename:?g_adapterIdentifier@@3U_D3DADAPTER_IDENTIFIER8@@A=?CurrentAdapterIdentifier@DX8Wrapper@@1U_D3DADAPTER_IDENTIFIER8@@A")
+// ?g_d3dInterface@@3PAUIDirect3D8@@A: the global at VA 0xdeda30 is ?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A.
+#pragma comment(linker, "/alternatename:?g_d3dInterface@@3PAUIDirect3D8@@A=?D3DInterface@DX8Wrapper@@1PAUIDirect3D8@@A")
+// ?g_currentCaps@@3PAVBfmeEnumerationCaps@@A: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
+#pragma comment(linker, "/alternatename:?g_currentCaps@@3PAVBfmeEnumerationCaps@@A=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")

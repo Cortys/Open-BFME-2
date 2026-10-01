@@ -77,3 +77,5 @@ void BfmeSubUC::bfmeDropUC(BfmeThingUC *who)
 		at = at->bfmeNextUC();
 	}
 }
+// ?g_bfmeThingUCHead@@3PAVBfmeNodeUC@@A: the global at VA 0xe0abb0 is ?g_Va00E0ABB0@@3HA.
+#pragma comment(linker, "/alternatename:?g_bfmeThingUCHead@@3PAVBfmeNodeUC@@A=?g_Va00E0ABB0@@3HA")

@@ -47,3 +47,5 @@ void Rva005D3B9A::rva005D3B9A()
 	tmp.format("_level%u.%s_Portrait", m_level, name);
 	g_Va009FE4CC->rva00223A94(&tmp);
 }
+// ?g_Va009FE4CC@@3PAVRva00223A94@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVRva00223A94@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")

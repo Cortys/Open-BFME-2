@@ -43,3 +43,5 @@ UnicodeString Rva003F03C9::rva003F03C9()
 		return holder->rva0020EDD5(m_index);
 	return UnicodeString::TheEmptyString;
 }
+// ?g_00DFEF10@@3PAURvaLogicHolder@@A: the global at VA 0xdfef10 is ?g_009FEF10@@3PAVRva002BA8F1Logic@@A.
+#pragma comment(linker, "/alternatename:?g_00DFEF10@@3PAURvaLogicHolder@@A=?g_009FEF10@@3PAVRva002BA8F1Logic@@A")

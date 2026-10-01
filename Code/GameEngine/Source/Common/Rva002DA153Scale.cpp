@@ -114,3 +114,5 @@ float Rva002DA153::rva002DA153()
 	}
 	return m_2C * m_28;
 }
+// ?g_00BBB9AC@@3MB: the global at VA 0xbbb9ac is ?g_00BBB9AC@@3MA.
+#pragma comment(linker, "/alternatename:?g_00BBB9AC@@3MB=?g_00BBB9AC@@3MA")

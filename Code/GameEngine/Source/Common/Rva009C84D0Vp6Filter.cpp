@@ -66,3 +66,5 @@ void __cdecl Rva009C84D0Vp6Filter(
 		g_rva01356E98(row, scaledY, 0x10);
 	}
 }
+// ?g_rva01356B40@@3P6AXPAX0HH@ZA: the global at VA 0xe22d08 is ?g_bfmeSlotB40@@3PAXA.
+#pragma comment(linker, "/alternatename:?g_rva01356B40@@3P6AXPAX0HH@ZA=?g_bfmeSlotB40@@3PAXA")

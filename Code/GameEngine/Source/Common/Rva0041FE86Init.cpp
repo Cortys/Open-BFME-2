@@ -82,3 +82,5 @@ void Rva0041FE86::rva0041FE86()
 	m_0C = (g_00DFE78C->m_114 == 3 ? 3 : 2);
 	virt24();
 }
+// ?g_00DFE78C@@3PAURva00DFE78CHolder@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_00DFE78C@@3PAURva00DFE78CHolder@@A=?TheGameLogic@@3PAVGameLogic@@A")

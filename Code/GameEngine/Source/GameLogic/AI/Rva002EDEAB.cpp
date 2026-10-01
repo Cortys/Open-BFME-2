@@ -121,3 +121,7 @@ void Rva002EDEAB::rva002EDEAB(Rva002EDEABArg *arg)
 	for (Rva002EDEABSrcNode *node = arg->m_head; node != 0; node = node->m_next)
 		m_path->rva002655E3(&node->m_pos, node->m_layer, 0x7FFFFFFF);
 }
+// ?g_00E02EEC@@3PAVRva00E02EECObj@@A: the global at VA 0xe02eec is ?TheGameInfo@@3PAVGameInfo@@A.
+#pragma comment(linker, "/alternatename:?g_00E02EEC@@3PAVRva00E02EECObj@@A=?TheGameInfo@@3PAVGameInfo@@A")
+// ?g_00DFE758@@3PAURva00DFE758Holder@@A: the global at VA 0xdfe758 is ?TheGlobalData@@3PAVGlobalData@@A.
+#pragma comment(linker, "/alternatename:?g_00DFE758@@3PAURva00DFE758Holder@@A=?TheGlobalData@@3PAVGlobalData@@A")

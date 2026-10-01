@@ -849,3 +849,11 @@ extern unsigned int TheBoxTextureDirtyMask;
 extern unsigned int g_00DEDA98;
 #pragma comment(linker, "/alternatename:?g_00DEDA98@@3IA=?number_of_DX8_calls@@3IA")
 #pragma comment(linker, "/alternatename:?g_bfmeCountTDB@@3HA=?number_of_DX8_calls@@3IA")
+// ?g_d3dDevice@@3PAUIDirect3DDevice8@@A: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?g_d3dDevice@@3PAUIDirect3DDevice8@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
+// ?TheBoxTextureDirtyMask@@3IA: the global at VA 0xdec4f4 is ?render_state_changed@DX8Wrapper@@1IA.
+#pragma comment(linker, "/alternatename:?TheBoxTextureDirtyMask@@3IA=?render_state_changed@DX8Wrapper@@1IA")
+// ?BfmeCurrentCaps@@3PAEA: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
+#pragma comment(linker, "/alternatename:?BfmeCurrentCaps@@3PAEA=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")
+// ?g_00DEDA98@@3IA: the global at VA 0xdeda98 is ?number_of_DX8_calls@@3IA.
+#pragma comment(linker, "/alternatename:?g_00DEDA98@@3IA=?number_of_DX8_calls@@3IA")

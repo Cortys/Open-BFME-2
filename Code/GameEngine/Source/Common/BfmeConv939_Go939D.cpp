@@ -18,3 +18,5 @@ int __stdcall bfmeGo939D(char v)
 	char r = g_bfme939GlobD->bfmeCall939D();
 	return (char)(r - v) == 0;
 }
+// ?g_bfme939GlobD@@3PAVBfmeGlob939D@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_bfme939GlobD@@3PAVBfmeGlob939D@@A=?TheGameLogic@@3PAVGameLogic@@A")

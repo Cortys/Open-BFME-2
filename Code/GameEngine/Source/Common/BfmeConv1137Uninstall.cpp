@@ -140,3 +140,7 @@ void BfmeB1137::UnInstall_Materials(void) const
 	DX8Wrapper::Set_DX8_Texture_Stage_State(1, 0x0b, 0);
 	DX8Wrapper::Set_DX8_Texture_Stage_State(1, 0x18, 0);
 }
+// ?ScreenDevice@@3PAUDevice@@A: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?ScreenDevice@@3PAUDevice@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
+// ?ScreenTextureStageStates@@3PAY0CA@IA: the global at VA 0xdeca38 is ?TextureStageStates@DX8Wrapper@@1PAY0CA@IA.
+#pragma comment(linker, "/alternatename:?ScreenTextureStageStates@@3PAY0CA@IA=?TextureStageStates@DX8Wrapper@@1PAY0CA@IA")

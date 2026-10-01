@@ -283,3 +283,21 @@ Rva003AF3D3::Rva003AF3D3(const Rva003AF3D3 &that)
 	*(void **)((char *)this + 0x14) = &g_00C1C078;
 	*(void **)((char *)this + 0x18) = &g_00C1CFE8;
 }
+// _Rva003AF34F_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF34F_v14b=?vftable_0112B89C@@3HA")
+// _Rva003AF2CC_v14: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF2CC_v14=?vftable_0112B89C@@3HA")
+// _Rva003AF34F_v14a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF34F_v14a=?vftable_0112B89C@@3HA")
+// _Rva003AF22E_v14a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF22E_v14a=?vftable_0112B89C@@3HA")
+// _Rva003AF184_v14a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF184_v14a=?vftable_0112B89C@@3HA")
+// _Rva003AF184_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF184_v14b=?vftable_0112B89C@@3HA")
+// _Rva003AF3F9_v14a: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF3F9_v14a=?vftable_0112B89C@@3HA")
+// _Rva003AF22E_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF22E_v14b=?vftable_0112B89C@@3HA")
+// _Rva003AF3F9_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003AF3F9_v14b=?vftable_0112B89C@@3HA")

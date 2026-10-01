@@ -93,3 +93,5 @@ FontCharsClassCharDataStruct const *FontCharsClass::loadCharacterData(unsigned s
 		return alt->loadCharacterData(character);
 	return 0;
 }
+// ?FontScreenDCGlobalsPtr@@3PAUFontScreenDCGlobals@@A: the global at VA 0xdf6f24 is ?g_fontCharsGdiState@@3PAVFontCharsClassGdiState@@A.
+#pragma comment(linker, "/alternatename:?FontScreenDCGlobalsPtr@@3PAUFontScreenDCGlobals@@A=?g_fontCharsGdiState@@3PAVFontCharsClassGdiState@@A")

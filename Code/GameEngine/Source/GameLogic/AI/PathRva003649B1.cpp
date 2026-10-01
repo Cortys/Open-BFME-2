@@ -40,7 +40,8 @@ public:
 	void *rva002635C2() throw();
 };
 
-extern Rva00065964ObjectPool g_pathNodePool;
+// g_pathNodePool: matched references place it at VA 0xe01e94 (zero-filled; a plain-data view).
+Rva00065964ObjectPool g_pathNodePool;
 
 class Path
 {

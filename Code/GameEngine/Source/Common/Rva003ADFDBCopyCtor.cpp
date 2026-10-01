@@ -57,3 +57,7 @@ Rva003ADEBF::Rva003ADEBF(const Rva003ADEBF &that)
 	*(void **)this = &Rva003ADEBF_v0;
 	*(void **)((char *)this + 8) = &Rva003ADEBF_v8;
 }
+// _Rva003ADFDB_v8: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003ADFDB_v8=?vftable_0112B89C@@3HA")
+// _Rva003ADEBF_v8: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_Rva003ADEBF_v8=?vftable_0112B89C@@3HA")

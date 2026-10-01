@@ -100,3 +100,5 @@ __declspec(noinline) void force_vertex_split_table_constructor(MeshModelClass *m
 {
     Vertex_Split_Table table(mmc);
 }
+// ?BfmeCurrentCaps@@3PAVBfmeCaps@@A: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
+#pragma comment(linker, "/alternatename:?BfmeCurrentCaps@@3PAVBfmeCaps@@A=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")

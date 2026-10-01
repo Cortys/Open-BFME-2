@@ -16,3 +16,5 @@ Rva007EB810Diag *Rva007EB810Get(void)
 {
 	return (Rva007EB810Diag *)g_FeslDiagReporter;
 }
+// ?g_FeslDiagReporter@@3HA: the global at VA 0xe09fbc is ?g_Va0130A5A0@@3PAURva007EB810Diag@@A.
+#pragma comment(linker, "/alternatename:?g_FeslDiagReporter@@3HA=?g_Va0130A5A0@@3PAURva007EB810Diag@@A")

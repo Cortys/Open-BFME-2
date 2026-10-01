@@ -258,3 +258,7 @@ int Rva00129680Get(void)
 {
 	return g_last9;
 }
+// ?g_Va00E03314@@3HA: the global at VA 0xe03314 is ?g_Va00A03314@@3PAUGlobalA03314@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E03314@@3HA=?g_Va00A03314@@3PAUGlobalA03314@@A")
+// ?g_Va00E09FA4@@3HA: the global at VA 0xe09fa4 is ?g_Va0130A588@@3PAVT_007ea120@@A.
+#pragma comment(linker, "/alternatename:?g_Va00E09FA4@@3HA=?g_Va0130A588@@3PAVT_007ea120@@A")

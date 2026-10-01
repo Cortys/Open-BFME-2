@@ -52,3 +52,5 @@ Rva009EBCE0AssetReference Rva009EBCE0_GetPrototype( const char *name )
 		? Rva00F4FAACRegistry->Rva009EEC60_FindAsset( name )
 		: Rva009EBCE0AssetReference();
 }
+// ?Rva00F4FAACRegistry@@3PAVRva009EEC60Registry@@A: the global at VA 0xe09c0c is ?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A.
+#pragma comment(linker, "/alternatename:?Rva00F4FAACRegistry@@3PAVRva009EEC60Registry@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")

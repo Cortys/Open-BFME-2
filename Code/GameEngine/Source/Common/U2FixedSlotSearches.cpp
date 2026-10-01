@@ -145,3 +145,7 @@ Rva00808C80Item *Rva00808E60Owner::find(int id)
 	}
 	return 0;
 }
+// ?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A: the global at VA 0xe0abb4 is ?g_bfmeVideoTableBegin@@3PAUVideo@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
+// ?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A: the global at VA 0xe0abb8 is ?g_bfmeVideoTableEnd@@3PAUVideo@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")

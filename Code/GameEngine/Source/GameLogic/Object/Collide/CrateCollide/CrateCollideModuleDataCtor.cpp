@@ -78,3 +78,5 @@ CrateCollideModuleData::CrateCollideModuleData()
 	, m_executeAnimationFades(true)
 {
 }
+// ?g_emptyAsciiString@@3VAsciiString@@A: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?g_emptyAsciiString@@3VAsciiString@@A=?TheEmptyString@AsciiString@@2V1@B")

@@ -52,3 +52,7 @@ void Rva0043D3DA::rva0043D3DA(int unused)
 	_STL::vector<void *> &slot = m_ptrs;
 	slot.erase(slot.begin(), slot.end());
 }
+// ?g_Va009FEDF0@@3HA: the global at VA 0xdfedf0 is ?TheInGameUI@@3PAVInGameUI@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEDF0@@3HA=?TheInGameUI@@3PAVInGameUI@@A")
+// ?g_Va009FE78C@@3HA: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE78C@@3HA=?TheGameLogic@@3PAVGameLogic@@A")

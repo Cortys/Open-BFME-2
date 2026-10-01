@@ -92,3 +92,5 @@ bool Rva00395F57::canUnpack(bool checkTimer)
 returnState:
 	return stateReady;
 }
+// _theLogicRandomLogFile: the global at VA 0xdfeff0 is ?g_00DFEFF0@@3PAXA.
+#pragma comment(linker, "/alternatename:_theLogicRandomLogFile=?g_00DFEFF0@@3PAXA")

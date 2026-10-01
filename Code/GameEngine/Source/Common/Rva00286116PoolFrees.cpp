@@ -13,8 +13,10 @@ struct Rva00065964ObjectPool
 	void FreeObject(void *obj);
 };
 
-extern Rva00065964ObjectPool g_pool00286116;
-extern Rva00065964ObjectPool g_pool00286136;
+// g_pool00286116: matched references place it at VA 0xdfec94 (zero-filled; a plain-data view).
+Rva00065964ObjectPool g_pool00286116;
+// g_pool00286136: matched references place it at VA 0xdfeca8 (zero-filled; a plain-data view).
+Rva00065964ObjectPool g_pool00286136;
 
 void __cdecl Rva00286116Free(void *p)
 {

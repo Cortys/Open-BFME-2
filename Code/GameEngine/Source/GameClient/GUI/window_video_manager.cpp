@@ -436,3 +436,5 @@ Int WindowVideoManager::getWinState( GameWindow *win )
 //-----------------------------------------------------------------------------
 // PRIVATE FUNCTIONS //////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
+// ?TheDisplay@@3PAVDisplayInterface@@A: the global at VA 0xdfe9d8 is ?TheDisplay@@3PAVDisplay@@A.
+#pragma comment(linker, "/alternatename:?TheDisplay@@3PAVDisplayInterface@@A=?TheDisplay@@3PAVDisplay@@A")

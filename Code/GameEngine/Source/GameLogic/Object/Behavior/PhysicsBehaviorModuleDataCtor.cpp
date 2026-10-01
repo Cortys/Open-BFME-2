@@ -86,3 +86,5 @@ PhysicsBehaviorModuleData::PhysicsBehaviorModuleData() :
 	m_shockStunnedTimeHigh = 2 * g_009BA4E4;
 	m_shockStandingTime = g_009BA4E4;
 }
+// ?g_009BA4E4@@3HB: the global at VA 0xdba4e4 is ?g_Va00DBA4E4@@3HA.
+#pragma comment(linker, "/alternatename:?g_009BA4E4@@3HB=?g_Va00DBA4E4@@3HA")

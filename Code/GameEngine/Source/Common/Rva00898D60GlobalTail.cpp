@@ -18,3 +18,5 @@ void Rva00898D60Invoke(void)
     g_Rva013379BC->invoke();
     g_Rva01337A20->invoke();
 }
+// ?g_Rva013379BC@@3PAVRva00898D60Target@@A: the global at VA 0xe18078 is ?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A.
+#pragma comment(linker, "/alternatename:?g_Rva013379BC@@3PAVRva00898D60Target@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")

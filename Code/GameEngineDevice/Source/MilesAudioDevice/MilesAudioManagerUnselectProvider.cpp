@@ -82,3 +82,5 @@ void MilesAudioManager::unselectProvider(void)
 	AIL_close_3D_provider(m_provider3D[m_selectedProvider].id);
 	m_selectedProvider = 0xffffffff;
 }
+// ?TheVideoPlayer@@3PAVVideoPlayer@@A: the global at VA 0xe0aba8 is ?TheVideoPlayer@@3PAVVideoPlayerInterface@@A.
+#pragma comment(linker, "/alternatename:?TheVideoPlayer@@3PAVVideoPlayer@@A=?TheVideoPlayer@@3PAVVideoPlayerInterface@@A")

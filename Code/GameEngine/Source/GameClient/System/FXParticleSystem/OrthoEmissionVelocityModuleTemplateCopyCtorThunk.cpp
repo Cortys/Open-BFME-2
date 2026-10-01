@@ -52,3 +52,5 @@ OrthoEmissionVelocityModuleTemplate::OrthoEmissionVelocityModuleTemplate(
 	m_v4 = &OrthoEmissionVelocityModuleTemplate_cvtbl4;
 }
 }
+// _OrthoEmissionVelocityModuleTemplate_cvtbl4: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_OrthoEmissionVelocityModuleTemplate_cvtbl4=?vftable_0112B89C@@3HA")

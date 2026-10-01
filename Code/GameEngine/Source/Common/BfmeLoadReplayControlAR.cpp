@@ -80,3 +80,5 @@ void bfmeLoadReplayControlAR(void)
 	g_bfmeReplayControlAR = g_bfmeWindowManagerAR->bfmeCreateAR(
 			AsciiStringAR("ReplayControl.wnd"), 0, 0);
 }
+// ?g_bfmeWindowManagerAR@@3PAVBfmeWindowManagerAR@@A: the global at VA 0xdfef1c is ?TheWindowManager@@3PAVGameWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeWindowManagerAR@@3PAVBfmeWindowManagerAR@@A=?TheWindowManager@@3PAVGameWindowManager@@A")

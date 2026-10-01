@@ -48,3 +48,5 @@ void Rva003807F3Move(float x, float y)
 	_snprintf(bufY, 16, "%g", y * scale[1]);
 	TheRva00222A8BTarget->invoke(TheRva00222A8BOwner, "MoveToolTip", 2, bufX, bufY, 0, 0, 0);
 }
+// ?TheGuiScale@@3PAVGuiScale@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?TheGuiScale@@3PAVGuiScale@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")

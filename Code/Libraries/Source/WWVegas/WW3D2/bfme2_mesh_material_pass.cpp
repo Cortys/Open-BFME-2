@@ -85,3 +85,5 @@ void MeshClass::Render_Material_Pass(MaterialPassClass*pass,IndexBufferClass*ib)
  if(oldEmissive.X>=0) pass->Material->Set_Emissive(oldEmissive);
  pass->UnInstall_Materials();
 }
+// ?BFME2RenderStateChanged@@3IA: the global at VA 0xdec4f4 is ?render_state_changed@DX8Wrapper@@1IA.
+#pragma comment(linker, "/alternatename:?BFME2RenderStateChanged@@3IA=?render_state_changed@DX8Wrapper@@1IA")

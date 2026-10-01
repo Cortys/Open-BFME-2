@@ -137,3 +137,5 @@ void	HAnimComboClass::Reset( void )
 	}
 	HAnimComboData.Reset_Active();
 }
+// ?TheHAnimComboDataPool@@3V?$ObjectPoolClass@VHAnimComboDataClass@@$0BAA@@@A: the global at VA 0xdfcec4 is ?Allocator@?$AutoPoolClass@VHAnimComboDataClass@@$0BAA@@@0V?$ObjectPoolClass@VHAnimComboDataClass@@$0BAA@@@A.
+#pragma comment(linker, "/alternatename:?TheHAnimComboDataPool@@3V?$ObjectPoolClass@VHAnimComboDataClass@@$0BAA@@@A=?Allocator@?$AutoPoolClass@VHAnimComboDataClass@@$0BAA@@@0V?$ObjectPoolClass@VHAnimComboDataClass@@$0BAA@@@A")

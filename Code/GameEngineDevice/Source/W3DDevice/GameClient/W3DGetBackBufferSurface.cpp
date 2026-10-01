@@ -105,3 +105,5 @@ void copySurfaceRects006e(W3DRadarResetSurface source, const BfmeRect *sourceRec
 		source.getSurface(), sourceRect, destination.getSurface(), destinationRect, mode);
 	++number_of_DX8_calls;
 }
+// ?g_bfmeD3DDevice@@3PAVBfmeD3DDevice@@A: the global at VA 0xdeda34 is ?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A.
+#pragma comment(linker, "/alternatename:?g_bfmeD3DDevice@@3PAVBfmeD3DDevice@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")

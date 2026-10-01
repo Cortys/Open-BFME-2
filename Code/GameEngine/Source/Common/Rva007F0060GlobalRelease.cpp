@@ -22,3 +22,5 @@ void Rva007F0060()
 		g_Rva0130A5B0 = 0;
 	}
 }
+// ?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A: the global at VA 0xe09fcc is ?g_genAlloc@@3PAVGenAlloc@@A.
+#pragma comment(linker, "/alternatename:?g_Rva0130A5B0@@3PAURva007F0060Allocator@@A=?g_genAlloc@@3PAVGenAlloc@@A")

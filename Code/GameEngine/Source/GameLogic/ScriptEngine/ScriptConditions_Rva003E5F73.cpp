@@ -103,3 +103,5 @@ bool __stdcall Rva003E5F73Check(Parameter *param, CondA003E5F73 *a, CondB003E5F7
 // ?g_Va009FE16C@@3PAVScriptEngine@@A: the global at this VA is ?TheScriptEngine@@3PAVScriptEngine@@A; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?g_Va009FE16C@@3PAVScriptEngine@@A=?TheScriptEngine@@3PAVScriptEngine@@A")
 #pragma comment(linker, "/alternatename:?TheDebugWindowInterface@@3PAXA=?TheScriptEngine@@3PAVScriptEngine@@A")
+// ?g_Va009FE16C@@3PAVScriptEngine@@A: the global at VA 0xdfe16c is ?TheScriptEngine@@3PAVScriptEngine@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE16C@@3PAVScriptEngine@@A=?TheScriptEngine@@3PAVScriptEngine@@A")

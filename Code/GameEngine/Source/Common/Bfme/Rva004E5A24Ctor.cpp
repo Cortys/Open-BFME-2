@@ -50,3 +50,7 @@ Rva004E5A24::Rva004E5A24()
 	  m_30(g_00C623C8)
 {
 }
+// ?g_00DD00AC@@3MA: the global at VA 0xdd00ac is ?g_00DD00AC@@3HA.
+#pragma comment(linker, "/alternatename:?g_00DD00AC@@3MA=?g_00DD00AC@@3HA")
+// ?g_00DD00A8@@3MA: the global at VA 0xdd00a8 is ?g_00DD00A8@@3HA.
+#pragma comment(linker, "/alternatename:?g_00DD00A8@@3MA=?g_00DD00A8@@3HA")

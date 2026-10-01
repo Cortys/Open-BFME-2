@@ -55,3 +55,5 @@ DefaultModuleTemplate<N>::DefaultModuleTemplate(const DefaultModuleTemplate &tha
 
 template DefaultModuleTemplate<1>::DefaultModuleTemplate(const DefaultModuleTemplate &);
 }
+// _DefaultModuleTemplate00_vtbl4: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_DefaultModuleTemplate00_vtbl4=?vftable_0112B89C@@3HA")

@@ -12,7 +12,8 @@ class BfmeAptValue006DCD20 { public: BfmeAptValue006DCD20 *rva006DD160(); int to
 class AptInteger { public: static AptValue *Create(int); };
 class AptBasePtrStack { public: BfmeAptValue006DCD20 *At(int); int count,capacity; BfmeAptValue006DCD20 **elements; };
 struct AptActionInterpreter { AptBasePtrStack stack; };
-extern AptActionInterpreter g_aptDateInterpreter;
+// g_aptDateInterpreter: matched references place it at VA 0xe182e0 (zero-filled; a plain-data view).
+AptActionInterpreter g_aptDateInterpreter;
 extern AptValue *gpUndefinedValue;
 struct AptSysClock { int Second,Minute,Hour,Day,Date,Month,Year,Hundredths; };
 class AptDate {
@@ -200,3 +201,5 @@ AptValue *AptDate::sMethod_setYear(AptValue *value,int argc)
 #pragma comment(linker, "/alternatename:?gpUndefinedValue@@3PAVAptValue@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")
 #pragma comment(linker, "/alternatename:?g_Va00E18078@@3HA=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")
 #pragma comment(linker, "/alternatename:?g_Rva013379BC@@3PAVRva00898D60Target@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")
+// ?gpUndefinedValue@@3PAVAptValue@@A: the global at VA 0xe18078 is ?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A.
+#pragma comment(linker, "/alternatename:?gpUndefinedValue@@3PAVAptValue@@A=?g_aptUndefinedAtE18078@@3PAVBfmeAptValue006DCD20@@A")

@@ -11,3 +11,5 @@ int Rva00042F6DGet(void)
 {
 	return g_Va00DEDA7C;
 }
+// ?g_Va00DEDA7C@@3HA: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
+#pragma comment(linker, "/alternatename:?g_Va00DEDA7C@@3HA=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")

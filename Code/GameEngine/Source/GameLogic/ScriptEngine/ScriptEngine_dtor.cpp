@@ -346,3 +346,5 @@ ScriptEngine::~ScriptEngine()
 
 	reset();
 }
+// ?TheDebugWindowInterface@@3PAXA: the global at VA 0xdfe16c is ?TheScriptEngine@@3PAVScriptEngine@@A.
+#pragma comment(linker, "/alternatename:?TheDebugWindowInterface@@3PAXA=?TheScriptEngine@@3PAVScriptEngine@@A")

@@ -30,3 +30,5 @@ void Rva00524021::rva00524056()
 		m_end->clear();
 	}
 }
+// ?g_Va009FE4CC@@3PAVRva00224705@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVRva00224705@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")

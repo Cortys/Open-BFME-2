@@ -103,3 +103,5 @@ void Rva005189CF::rva005189CF()
 	((StringBase<unsigned short> &)u).concat(TheGameText->fetch("APT:CannotChangeGraphics", 0));
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(AsciiString("APT:CannotChangeGraphics"), u, false);
 }
+// ?g_00DB95F4@@3PAPBDA: the global at VA 0xdb95f4 is ?rva00202B6CNames@@3PAPBDA.
+#pragma comment(linker, "/alternatename:?g_00DB95F4@@3PAPBDA=?rva00202B6CNames@@3PAPBDA")

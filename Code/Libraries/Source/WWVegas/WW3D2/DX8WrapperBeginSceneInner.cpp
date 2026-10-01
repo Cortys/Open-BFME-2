@@ -110,3 +110,5 @@ void DX8Wrapper::Begin_Scene_Inner(void)
 	++D3DCallCount;
 	bfmeDebugTouch009588e0();
 }
+// ?Rva00959410Dispatch@@3URva00959410Ptr@@A: the global at VA 0xdf7040 is ?g_bfmeObjECF@@3PAUBfmeObjECF@@A.
+#pragma comment(linker, "/alternatename:?Rva00959410Dispatch@@3URva00959410Ptr@@A=?g_bfmeObjECF@@3PAUBfmeObjECF@@A")

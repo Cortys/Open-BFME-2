@@ -70,3 +70,13 @@ void Rva005830AE::rva005830AE(int x)
 // ?g_Va009FEA28@@3PAVDummy24@@A: the global at this VA is ?TheNetwork@@3PAVNetworkInterface@@A; this name is an alias for it.
 #pragma comment(linker, "/alternatename:?g_Va009FEA28@@3PAVDummy24@@A=?TheNetwork@@3PAVNetworkInterface@@A")
 #pragma comment(linker, "/alternatename:?g_Rva0023D30FTarget@@3PAVRva0023D30FTarget@@A=?TheNetwork@@3PAVNetworkInterface@@A")
+// ?g_Va009FE4CC@@3PAVDummy24@@A: the global at VA 0xdfe4cc is ?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE4CC@@3PAVDummy24@@A=?g_bfmeAptWindowManager@@3PAVBfmeAptWindowManager@@A")
+// ?g_Va009FE9D8@@3PAVDummy24@@A: the global at VA 0xdfe9d8 is ?TheDisplay@@3PAVDisplay@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE9D8@@3PAVDummy24@@A=?TheDisplay@@3PAVDisplay@@A")
+// ?g_Va009FEF1C@@3PAVDummy24@@A: the global at VA 0xdfef1c is ?TheWindowManager@@3PAVGameWindowManager@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEF1C@@3PAVDummy24@@A=?TheWindowManager@@3PAVGameWindowManager@@A")
+// ?g_Va009FEA28@@3PAVDummy24@@A: the global at VA 0xdfea28 is ?TheNetwork@@3PAVNetworkInterface@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FEA28@@3PAVDummy24@@A=?TheNetwork@@3PAVNetworkInterface@@A")
+// ?g_Va009FE710@@3PAVDummy24@@A: the global at VA 0xdfe710 is ?TheGameEngine@@3PAVGameEngine@@A.
+#pragma comment(linker, "/alternatename:?g_Va009FE710@@3PAVDummy24@@A=?TheGameEngine@@3PAVGameEngine@@A")

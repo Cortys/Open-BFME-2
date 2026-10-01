@@ -68,7 +68,8 @@ extern int g_00E18374;
 // g_00E18374: matched references place it at VA 0xe18374 (zero-filled .bss).
 int g_00E18374;
 extern EAStringC saConstantAtE18388[];
-extern EAStringC g_00E18650;
+// g_00E18650: matched references place it at VA 0xe18650 (zero-filled; a plain-data view).
+EAStringC g_00E18650;
 
 void Rva0070D9F0Shutdown()
 {

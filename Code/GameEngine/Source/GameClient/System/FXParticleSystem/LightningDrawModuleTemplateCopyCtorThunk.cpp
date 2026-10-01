@@ -52,3 +52,5 @@ LightningDrawModuleTemplate::LightningDrawModuleTemplate(
 	m_v4 = &LightningDrawModuleTemplate_cvtbl4;
 }
 }
+// _LightningDrawModuleTemplate_cvtbl4: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
+#pragma comment(linker, "/alternatename:_LightningDrawModuleTemplate_cvtbl4=?vftable_0112B89C@@3HA")

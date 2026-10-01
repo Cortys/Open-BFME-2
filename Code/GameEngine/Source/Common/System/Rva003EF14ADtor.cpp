@@ -13,7 +13,8 @@ class Rva002B7250 {
 public:
     void rva002B7250(CreateAHeroData *);
 };
-extern Rva002B7250 g_registryAtE02E88;
+// g_registryAtE02E88: matched references place it at VA 0xe02e88 (zero-filled; a plain-data view).
+Rva002B7250 g_registryAtE02E88;
 extern const void *const g_vtableAtBFDF68[];
 
 class Rva003EF14ABase {

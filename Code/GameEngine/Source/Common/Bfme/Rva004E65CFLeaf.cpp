@@ -128,3 +128,5 @@ void Rva004E65CF::rva004E65CF()
 		((Shadow *)m_1C)->setOpacity(0x80);
 	}
 }
+// ?g_00DEC2D4@@3PAVRva004E65CFMgr@@A: the global at VA 0xdec2d4 is ?g_00DEC2D4@@3PAVAudioManager0029E159@@A.
+#pragma comment(linker, "/alternatename:?g_00DEC2D4@@3PAVRva004E65CFMgr@@A=?g_00DEC2D4@@3PAVAudioManager0029E159@@A")

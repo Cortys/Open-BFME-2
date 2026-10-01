@@ -46,3 +46,5 @@ Rva007EB2C0Object::~Rva007EB2C0Object()
 	if (g_Va0130A588.m_flagC)
 		Rva007F0060();
 }
+// ?g_Va0130A588@@3URva0130A588State@@A: the global at VA 0xe09fa4 is ?g_Va0130A588@@3PAVT_007ea120@@A.
+#pragma comment(linker, "/alternatename:?g_Va0130A588@@3URva0130A588State@@A=?g_Va0130A588@@3PAVT_007ea120@@A")

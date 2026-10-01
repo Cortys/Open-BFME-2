@@ -45,3 +45,5 @@ void Rva007B7600()
 	if (R2Ptr01306DF0)
 		R2Ptr01306DF0->slot004();
 }
+// ?R2Ptr01306DF0@@3PAVR2GlobalReceiver@@A: the global at VA 0xdec2d8 is ?Rva00DEC2D8Manager@@3PAVRva00108660ResourceManager@@A.
+#pragma comment(linker, "/alternatename:?R2Ptr01306DF0@@3PAVR2GlobalReceiver@@A=?Rva00DEC2D8Manager@@3PAVRva00108660ResourceManager@@A")

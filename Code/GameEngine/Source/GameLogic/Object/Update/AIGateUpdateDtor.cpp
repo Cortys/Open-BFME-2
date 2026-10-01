@@ -69,3 +69,5 @@ AIGateUpdate::~AIGateUpdate()
 		::delete node;
 	}
 }
+// ?g_009FE78C@@3PAVRva0023D661@@A: the global at VA 0xdfe78c is ?TheGameLogic@@3PAVGameLogic@@A.
+#pragma comment(linker, "/alternatename:?g_009FE78C@@3PAVRva0023D661@@A=?TheGameLogic@@3PAVGameLogic@@A")

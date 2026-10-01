@@ -267,3 +267,7 @@ void SpawnBehavior::xfer(Xfer *xfer)
 	xfer->xferInt(m_spawnCount);
 	xfer->xferUnsignedInt(m_selfTaskingSpawnCount);
 }
+// ?g_009E0878@@3VAsciiString@@A: the global at VA 0xde0878 is ?TheEmptyString@AsciiString@@2V1@B.
+#pragma comment(linker, "/alternatename:?g_009E0878@@3VAsciiString@@A=?TheEmptyString@AsciiString@@2V1@B")
+// ?g_rva008ffd18ThrowInfo@@3HA: the global at VA 0xcffd18 is ?g_guardTargetTypeThrowInfo@@3HA.
+#pragma comment(linker, "/alternatename:?g_rva008ffd18ThrowInfo@@3HA=?g_guardTargetTypeThrowInfo@@3HA")

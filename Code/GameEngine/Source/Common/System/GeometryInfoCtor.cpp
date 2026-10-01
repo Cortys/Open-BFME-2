@@ -117,3 +117,5 @@ GeometryInfo::GeometryInfo()
 	m_scalar0c = 0;
 	set(GEOMETRY_SPHERE, true, dim, dim, dim);
 }
+// _INV: the global at VA 0xbc2424 is ?g_Va00BC2424@@3MA.
+#pragma comment(linker, "/alternatename:_INV=?g_Va00BC2424@@3MA")
