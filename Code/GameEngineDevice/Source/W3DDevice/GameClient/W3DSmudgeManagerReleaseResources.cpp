@@ -13,13 +13,13 @@
 typedef int Int;
 
 void BFME_DX8_Thread_Lock(void);					// retail 0x00903090
-void W3DRadarResetUnlock(void);					// retail 0x00905B10
+bool BFME_DX8_Thread_Assert(void);					// matched release half at 0x00120F50
 
 class BfmeRadarResetLock
 {
 public:
 	BfmeRadarResetLock() { BFME_DX8_Thread_Lock(); }
-	~BfmeRadarResetLock() { W3DRadarResetUnlock(); }
+	~BfmeRadarResetLock() { BFME_DX8_Thread_Assert(); }
 };
 
 class IndexBufferRef
