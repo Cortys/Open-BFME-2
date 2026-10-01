@@ -6723,3 +6723,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??1Rva0022167C@@QAE@XZ,0x0022167C,address read from the REL32 displacement at byte-matched body 0x005CB3BE; 14B dtor storing vtable 0x00BE6BA8 then tail-jumping to 0x0022161B
 ??1Rva005B804B@@QAE@XZ,0x005B804B,address read from the unwind funclet of byte-matched body 0x00229811
 ??0BfmeSubobject0022CE19@@QAE@XZ,0x002DD173,address read from the REL32 displacement at byte-matched body 0x00229811
+??1Rva004EC395Member@@QAE@XZ,0x004EC395,address read from the REL32 displacement at byte-matched body 0x00420E67; folded _List_base dtor
