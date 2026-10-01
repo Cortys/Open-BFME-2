@@ -6703,3 +6703,4 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ??0?$_Vector_base@VBfmeStringTailRecord156@@V?$allocator@VBfmeStringTailRecord156@@@_STL@@@_STL@@QAE@IABV?$allocator@VBfmeStringTailRecord156@@@1@@Z,0x000B6378,58B ICF twin of rowed E8 base read from retail call at 0x0043351B
 ??$__uninitialized_copy@PBVBfmeStringTailRecord156@@PAV1@@_STL@@YAPAVBfmeStringTailRecord156@@PBV1@0PAV1@ABU__false_type@0@@Z,0x001D9A61,38B const-source twin of rowed PAV copy read from our TU emission for 0x0043351B
 ?reset@Mouse@@UAEXXZ,0x001EE4DC,sole caller is Win32Mouse::reset 0x000419F5 whose Zero Hour body begins with Mouse::reset()
+??$__copy_ptrs@PAUBfmePod52@@PAU1@@_STL@@YAPAUBfmePod52@@PAU1@00ABU__false_type@0@@Z,0x001DD339,const-ref tag spelling of the rowed by-value __copy_ptrs<BfmePod52>; erase 0x001DDC2C pushes the empty tag's address; body byte-identical
