@@ -19,13 +19,6 @@ class CreateCrateDieModuleData { public: __declspec(noinline) virtual ~CreateCra
 CreateCrateDieModuleData::~CreateCrateDieModuleData() {}
 void CreateCrateDieModuleData_Delete(CreateCrateDieModuleData *p) { delete p; }
 
-// ??_GDamageFilteredCreateObjectDie@@UAEPAXI@Z @0x00485FC7 28B: slot 0 of vtable 0x00C4AB54; calls ??1 at 0x00485EC3.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x00485EFD uses class-name string "DamageFilteredCreateObjectDie".
-class DamageFilteredCreateObjectDie { public: __declspec(noinline) virtual ~DamageFilteredCreateObjectDie(); };
-// ??1DamageFilteredCreateObjectDie@@UAE@XZ present-unmatched
-DamageFilteredCreateObjectDie::~DamageFilteredCreateObjectDie() {}
-void DamageFilteredCreateObjectDie_Delete(DamageFilteredCreateObjectDie *p) { delete p; }
-
 // ??_GRebuildHoleExposeDie@@UAEPAXI@Z @0x004867DD 28B: slot 0 of vtable 0x00C4AE54; calls ??1 at 0x004867F9.
 // Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x00486792 uses class-name string "RebuildHoleExposeDie".
 class RebuildHoleExposeDie { public: __declspec(noinline) virtual ~RebuildHoleExposeDie(); };

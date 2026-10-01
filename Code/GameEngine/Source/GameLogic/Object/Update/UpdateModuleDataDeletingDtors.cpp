@@ -54,27 +54,6 @@ class AutoPickUpUpdateModuleData { public: __declspec(noinline) virtual ~AutoPic
 AutoPickUpUpdateModuleData::~AutoPickUpUpdateModuleData() {}
 void AutoPickUpUpdateModuleData_Delete(AutoPickUpUpdateModuleData *p) { delete p; }
 
-// ??_GBannerCarrierUpdateModuleData@@UAEPAXI@Z @0x004976AE 28B: slot 0 of vtable 0x00C4F870; calls ??1 at 0x00497056.
-// Owner evidence (audited 2026-09-26): retail registration BannerCarrierUpdate -> data factory RVA 0x0024E1AB -> ctor RVA 0x00496FA5; primary vptr store RVA 0x00496FB7.
-class BannerCarrierUpdateModuleData { public: __declspec(noinline) virtual ~BannerCarrierUpdateModuleData(); };
-// ??1BannerCarrierUpdateModuleData@@UAE@XZ present-unmatched
-BannerCarrierUpdateModuleData::~BannerCarrierUpdateModuleData() {}
-void BannerCarrierUpdateModuleData_Delete(BannerCarrierUpdateModuleData *p) { delete p; }
-
-// ??_GOneRingPenaltyUpdateModuleData@@UAEPAXI@Z @0x00499C19 28B: slot 0 of vtable 0x00C50298; calls ??1 at 0x00499A16.
-// Owner evidence (audited 2026-09-26): retail registration OneRingPenaltyUpdate -> data factory RVA 0x0024E42C -> ctor RVA 0x004999F1; primary vptr store RVA 0x004999F8.
-class OneRingPenaltyUpdateModuleData { public: __declspec(noinline) virtual ~OneRingPenaltyUpdateModuleData(); };
-// ??1OneRingPenaltyUpdateModuleData@@UAE@XZ present-unmatched
-OneRingPenaltyUpdateModuleData::~OneRingPenaltyUpdateModuleData() {}
-void OneRingPenaltyUpdateModuleData_Delete(OneRingPenaltyUpdateModuleData *p) { delete p; }
-
-// ??_GReplaceObjectUpdateModuleData@@UAEPAXI@Z @0x004B2E5D 28B: slot 0 of vtable 0x00C56C78; calls ??1 at 0x004B2C9A.
-// Owner evidence (audited 2026-09-26): retail registration ReplaceObjectUpdate -> data factory RVA 0x0024FCEA -> ctor RVA 0x004B2AC4; primary vptr store RVA 0x004B2AD8.
-class ReplaceObjectUpdateModuleData { public: __declspec(noinline) virtual ~ReplaceObjectUpdateModuleData(); };
-// ??1ReplaceObjectUpdateModuleData@@UAE@XZ present-unmatched
-ReplaceObjectUpdateModuleData::~ReplaceObjectUpdateModuleData() {}
-void ReplaceObjectUpdateModuleData_Delete(ReplaceObjectUpdateModuleData *p) { delete p; }
-
 // ??_GCritterEmitterUpdateModuleData@@UAEPAXI@Z @0x004C8F2D 28B: slot 0 of vtable 0x00C5E988; calls ??1 at 0x004C8F49.
 // Owner evidence (audited 2026-09-26): retail registration CritterEmitterUpdate -> data factory RVA 0x00252906 -> ctor RVA 0x004C8EFF; primary vptr store RVA 0x004C8F0D.
 class CritterEmitterUpdateModuleData { public: __declspec(noinline) virtual ~CritterEmitterUpdateModuleData(); };

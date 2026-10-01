@@ -44,12 +44,6 @@ class Rva00142FE0 { public: __declspec(noinline) virtual ~Rva00142FE0(); };
 Rva00142FE0::~Rva00142FE0() {}
 void Rva00142FE0_Delete(Rva00142FE0 *p) { delete p; }
 
-// ??_GRva000E19A3@@UAEPAXI@Z @0x000E1A1D 28B; calls pinned ??1 at 0x000E19A3
-class Rva000E19A3 { public: __declspec(noinline) virtual ~Rva000E19A3(); };
-// ??1Rva000E19A3@@UAE@XZ present-unmatched
-Rva000E19A3::~Rva000E19A3() {}
-void Rva000E19A3_Delete(Rva000E19A3 *p) { delete p; }
-
 // ??_GRva000E3B41@@UAEPAXI@Z @0x000E3CC5 28B; calls pinned ??1 at 0x000E3B41
 class Rva000E3B41 { public: __declspec(noinline) virtual ~Rva000E3B41(); };
 // ??1Rva000E3B41@@UAE@XZ present-unmatched
@@ -110,12 +104,6 @@ class Rva000EFC45 { public: __declspec(noinline) virtual ~Rva000EFC45(); };
 Rva000EFC45::~Rva000EFC45() {}
 void Rva000EFC45_Delete(Rva000EFC45 *p) { delete p; }
 
-// ??_GRva000F1B8F@@UAEPAXI@Z @0x000F1B73 28B; calls pinned ??1 at 0x000F1B8F
-class Rva000F1B8F { public: __declspec(noinline) virtual ~Rva000F1B8F(); };
-// ??1Rva000F1B8F@@UAE@XZ present-unmatched
-Rva000F1B8F::~Rva000F1B8F() {}
-void Rva000F1B8F_Delete(Rva000F1B8F *p) { delete p; }
-
 // ??_GRva000F26DC@@UAEPAXI@Z @0x000F2B81 28B; calls pinned ??1 at 0x000F26DC
 class Rva000F26DC { public: __declspec(noinline) virtual ~Rva000F26DC(); };
 // ??1Rva000F26DC@@UAE@XZ present-unmatched
@@ -146,18 +134,6 @@ class Rva00104DB0 { public: __declspec(noinline) virtual ~Rva00104DB0(); };
 Rva00104DB0::~Rva00104DB0() {}
 void Rva00104DB0_Delete(Rva00104DB0 *p) { delete p; }
 
-// ??_GRva00104E03@@UAEPAXI@Z @0x00104F73 28B; calls pinned ??1 at 0x00104E03
-class Rva00104E03 { public: __declspec(noinline) virtual ~Rva00104E03(); };
-// ??1Rva00104E03@@UAE@XZ present-unmatched
-Rva00104E03::~Rva00104E03() {}
-void Rva00104E03_Delete(Rva00104E03 *p) { delete p; }
-
-// ??_GRva00109C7F@@UAEPAXI@Z @0x00109C63 28B; calls pinned ??1 at 0x00109C7F
-class Rva00109C7F { public: __declspec(noinline) virtual ~Rva00109C7F(); };
-// ??1Rva00109C7F@@UAE@XZ present-unmatched
-Rva00109C7F::~Rva00109C7F() {}
-void Rva00109C7F_Delete(Rva00109C7F *p) { delete p; }
-
 // ??_GRva00109BEB@@UAEPAXI@Z @0x00109DB3 28B; calls pinned ??1 at 0x00109BEB
 class Rva00109BEB { public: __declspec(noinline) virtual ~Rva00109BEB(); };
 // ??1Rva00109BEB@@UAE@XZ present-unmatched
@@ -170,23 +146,11 @@ class Rva001095B2 { public: __declspec(noinline) virtual ~Rva001095B2(); };
 Rva001095B2::~Rva001095B2() {}
 void Rva001095B2_Delete(Rva001095B2 *p) { delete p; }
 
-// ??_GRva00109610@@UAEPAXI@Z @0x0010BA83 28B; calls pinned ??1 at 0x00109610
-class Rva00109610 { public: __declspec(noinline) virtual ~Rva00109610(); };
-// ??1Rva00109610@@UAE@XZ present-unmatched
-Rva00109610::~Rva00109610() {}
-void Rva00109610_Delete(Rva00109610 *p) { delete p; }
-
 // ??_GRva0010C785@@UAEPAXI@Z @0x0010C825 28B; calls pinned ??1 at 0x0010C785
 class Rva0010C785 { public: __declspec(noinline) virtual ~Rva0010C785(); };
 // ??1Rva0010C785@@UAE@XZ present-unmatched
 Rva0010C785::~Rva0010C785() {}
 void Rva0010C785_Delete(Rva0010C785 *p) { delete p; }
-
-// ??_GRva0010F0C4@@UAEPAXI@Z @0x0010F6EE 28B; calls pinned ??1 at 0x0010F0C4
-class Rva0010F0C4 { public: __declspec(noinline) virtual ~Rva0010F0C4(); };
-// ??1Rva0010F0C4@@UAE@XZ present-unmatched
-Rva0010F0C4::~Rva0010F0C4() {}
-void Rva0010F0C4_Delete(Rva0010F0C4 *p) { delete p; }
 
 // ??_GRva0010F7EE@@UAEPAXI@Z @0x0010F7D2 28B; calls pinned ??1 at 0x0010F7EE
 class Rva0010F7EE { public: __declspec(noinline) virtual ~Rva0010F7EE(); };

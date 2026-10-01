@@ -26,41 +26,6 @@ class W3DModelDrawModuleData { public: __declspec(noinline) virtual ~W3DModelDra
 W3DModelDrawModuleData::~W3DModelDrawModuleData() {}
 void W3DModelDrawModuleData_Delete(W3DModelDrawModuleData *p) { delete p; }
 
-// ??_GW3DRopeDraw@@UAEPAXI@Z @0x000CA9D5 28B: slot 0 of vtable 0x00BCBD60; calls ??1 at 0x000CA8BC.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000CA7F6 uses class-name string "W3DRopeDraw".
-class W3DRopeDraw { public: __declspec(noinline) virtual ~W3DRopeDraw(); };
-// ??1W3DRopeDraw@@UAE@XZ present-unmatched
-W3DRopeDraw::~W3DRopeDraw() {}
-void W3DRopeDraw_Delete(W3DRopeDraw *p) { delete p; }
-
-// ??_GW3DTruckDraw@@UAEPAXI@Z @0x000CDF34 28B: slot 0 of vtable 0x00BCC650; calls ??1 at 0x000CDE73.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000CB578 uses class-name string "W3DTruckDraw".
-class W3DTruckDraw { public: __declspec(noinline) virtual ~W3DTruckDraw(); };
-// ??1W3DTruckDraw@@UAE@XZ present-unmatched
-W3DTruckDraw::~W3DTruckDraw() {}
-void W3DTruckDraw_Delete(W3DTruckDraw *p) { delete p; }
-
-// ??_GW3DTankDraw@@UAEPAXI@Z @0x000CEB2C 28B: slot 0 of vtable 0x00BCCBE8; calls ??1 at 0x000CE960.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000CE9EE uses class-name string "W3DTankDraw".
-class W3DTankDraw { public: __declspec(noinline) virtual ~W3DTankDraw(); };
-// ??1W3DTankDraw@@UAE@XZ present-unmatched
-W3DTankDraw::~W3DTankDraw() {}
-void W3DTankDraw_Delete(W3DTankDraw *p) { delete p; }
-
-// ??_GW3DFloorDraw@@UAEPAXI@Z @0x000CF492 28B: slot 0 of vtable 0x00BCD4E0; calls ??1 at 0x000CF1A6.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000CF161 uses class-name string "W3DFloorDraw".
-class W3DFloorDraw { public: __declspec(noinline) virtual ~W3DFloorDraw(); };
-// ??1W3DFloorDraw@@UAE@XZ present-unmatched
-W3DFloorDraw::~W3DFloorDraw() {}
-void W3DFloorDraw_Delete(W3DFloorDraw *p) { delete p; }
-
-// ??_GW3DLightDraw@@UAEPAXI@Z @0x000CFBF0 28B: slot 0 of vtable 0x00BCD728; calls ??1 at 0x000CFA42.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000CFAF9 uses class-name string "W3DLightDraw".
-class W3DLightDraw { public: __declspec(noinline) virtual ~W3DLightDraw(); };
-// ??1W3DLightDraw@@UAE@XZ present-unmatched
-W3DLightDraw::~W3DLightDraw() {}
-void W3DLightDraw_Delete(W3DLightDraw *p) { delete p; }
-
 // ??_GW3DSailModelDraw@@UAEPAXI@Z @0x000D08A2 28B: slot 0 of vtable 0x00BCDC60; calls ??1 at 0x000D08BE.
 // Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000D07CB uses class-name string "W3DSailModelDraw".
 class W3DSailModelDraw { public: __declspec(noinline) virtual ~W3DSailModelDraw(); };
@@ -89,9 +54,3 @@ class W3DTornadoDrawModuleData { public: __declspec(noinline) virtual ~W3DTornad
 W3DTornadoDrawModuleData::~W3DTornadoDrawModuleData() {}
 void W3DTornadoDrawModuleData_Delete(W3DTornadoDrawModuleData *p) { delete p; }
 
-// ??_GW3DTornadoDraw@@UAEPAXI@Z @0x000D19DD 28B: slot 0 of vtable 0x00BCE218; calls ??1 at 0x000D18AB.
-// Owner evidence (audited 2026-09-26): retail slot 4 -> RVA 0x000D1866 uses class-name string "W3DTornadoDraw".
-class W3DTornadoDraw { public: __declspec(noinline) virtual ~W3DTornadoDraw(); };
-// ??1W3DTornadoDraw@@UAE@XZ present-unmatched
-W3DTornadoDraw::~W3DTornadoDraw() {}
-void W3DTornadoDraw_Delete(W3DTornadoDraw *p) { delete p; }
