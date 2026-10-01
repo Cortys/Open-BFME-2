@@ -17,7 +17,8 @@ public:
 	virtual void dB0(); virtual void dB4(); virtual void dB8(); virtual void dBC();
 	virtual void dC0(); virtual void dC4(); virtual void dC8(); virtual void dCC();
 	virtual void dD0(); virtual void dD4(); virtual void dD8(); virtual void dDC();
-	virtual void dE0(); virtual void dE4(); virtual void dE8();
+	virtual void dE0(); virtual void dE4();
+	virtual void slotE8(void* arg);
 	virtual void slotEC(void* arg);
 };
 
@@ -25,6 +26,7 @@ class Drawable
 {
 public:
 	void rva00273648(void* arg);
+	void rva00273686(void* arg);
 private:
 	unsigned char m_pad[0x14c];
 	DrawModule00273648** m_mods;
@@ -35,6 +37,15 @@ void Drawable::rva00273648(void* arg)
 	DrawModule00273648** mods = m_mods;
 	while (*mods != 0) {
 		(*mods)->slotEC(arg);
+		++mods;
+	}
+}
+
+void Drawable::rva00273686(void* arg)
+{
+	DrawModule00273648** mods = m_mods;
+	while (*mods != 0) {
+		(*mods)->slotE8(arg);
 		++mods;
 	}
 }
