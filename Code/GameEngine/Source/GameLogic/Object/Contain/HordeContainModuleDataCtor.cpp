@@ -1,8 +1,4 @@
-// ??0HordeContainModuleData@@QAE@XZ
-// partial score=0.96 date=2026-09-26
-// ??0HordeContainModuleData@@QAE@XZ
-// partial score=0.96 date=2026-09-26
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB /G7
 // stlport
 //
 // ??0HordeContainModuleData@@QAE@XZ @0x00475C9A 492B.
@@ -18,6 +14,10 @@
 #include <list>
 #include <set>
 
+#include "ascii_string.h"
+
+extern int g_Va00DBA4E4;
+
 struct BfmeE16
 {
 	float x;
@@ -25,18 +25,6 @@ struct BfmeE16
 	float z;
 	float w;
 };
-
-class AsciiString
-{
-public:
-	AsciiString(int zero) : m_data(reinterpret_cast<void *>(zero)) {}
-	~AsciiString();
-
-private:
-	void *m_data;
-};
-
-bool operator<(const AsciiString &a, const AsciiString &b);
 
 struct Vec2
 {
@@ -120,10 +108,9 @@ private:
 
 HordeContainModuleData::HordeContainModuleData()
 	: TransportContainModuleData()
-	, m_s1B0(0)
 	, m_b1D8(true)
-	, m_i1DC(*reinterpret_cast<const int *>(0x00DBA4E4) / 2)
-	, m_i1E0(*reinterpret_cast<const int *>(0x00DBA4E4) * 3)
+	, m_i1DC(g_Va00DBA4E4 / 2)
+	, m_i1E0(g_Va00DBA4E4 * 3)
 	, m_f1E4(3.0f)
 	, m_f1E8(5.0f)
 	, m_f1EC(0.5f)
@@ -132,7 +119,6 @@ HordeContainModuleData::HordeContainModuleData()
 	, m_b230(false)
 	, m_i234(-1)
 	, m_b238(false)
-	, m_s23C(0)
 	, m_f244(60.0f)
 	, m_i248(-1)
 	, m_b24C(false)
@@ -142,10 +128,10 @@ HordeContainModuleData::HordeContainModuleData()
 	, m_i258(0)
 	, m_f25C(360.0f)
 	, m_i260(0)
-	, m_i264(*reinterpret_cast<const int *>(0x00DBA4E4) * 5)
-	, m_i268(0)
-	, m_f26C(0.0f)
-	, m_f270(0.0f)
 {
 	m_b240 = true;
+	m_i264 = g_Va00DBA4E4 * 5;
+	m_i268 = 0;
+	m_f26C = 0.0f;
+	m_f270 = 0.0f;
 }
