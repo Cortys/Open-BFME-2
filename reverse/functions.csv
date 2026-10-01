@@ -2251,7 +2251,6 @@ _XMP_Is_Prime,,0x0061DA50,75,Code/Libraries/Source/WWVegas/WWLib/mpmath.cpp,matc
 ?_AtlGetThreadACPThunk@ATL@@YGIXZ,,0x000010CF,80,Code/Libraries/Source/ATL/atlconv.cpp,matched,vendored=atl-7.1
 ?_AtlGetThreadACPFake@ATL@@YGIXZ,,0x0000107F,80,Code/Libraries/Source/ATL/atlconv.cpp,matched,vendored=atl-7.1
 ?get_allocator@?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@QBE?AV?$allocator@G@2@XZ,,0x001627F0,7,Code/Libraries/Source/WWVegas/WWLib/stlport_wide_string_default_ctor.cpp,matched,empty allocator returned by value; the body is the hidden return pointer
-?CPUID@CPUDetectClass@@SA_NAAI000I@Z,,0x006118C0,103,Code/Libraries/Source/WWVegas/WWLib/cpudetect_cpuid.cpp,matched,stlport-4.5.3
 ??$__lower_bound@PBIIU?$less@I@_STL@@H@_STL@@YAPBIPBI0ABIU?$less@I@0@PAH@Z,,0x00568D2F,57,Code/Libraries/Source/WWVegas/WWLib/stlport_lower_bound_uint.cpp,matched,stlport-4.5.3
 ?_M_clear@?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@IAEXXZ,,0x00027480,78,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_voidptr_alloc.cpp,matched,stlport-4.5.3
 ?reserve@?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@QAEXI@Z,,0x00029BE0,180,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_voidptr_alloc.cpp,matched,stlport-4.5.3
@@ -46013,3 +46012,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva00434C3D@@QAE@II@Z,,0x00434C3D,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_00434C3D.cpp,matched,chain empty Rb-tree ctor via rowed 0x00434942 zeroes count inits header red self-links
 ?Rva00434969Get@@YAXPAI0@Z,,0x00434969,44,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_00434969.cpp,matched,stack-seeded two-out table fetch unblocks 0x00434C67
 ??0Rva00434C67@@QAE@PAI0@Z,,0x00434C67,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434C67.cpp,matched,chain from 0x00434969 ctor obfuscates 8 dwords via imul-xor
+?CPUID@CPUDetectClass@@SA_NAAI000I@Z,,0x006118C0,103,Code/Libraries/Source/WWVegas/WWLib/cpudetect.cpp,matched,Westwood/ZH cpudetect.cpp CPUID in its own TU; the callers Init_Processor_String/Features and Process_Extended_Cache_Info only match with this definition visible
