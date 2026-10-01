@@ -46017,7 +46017,6 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva000A9551@@QAE@XZ,,0x000A9551,22,Code/GameEngine/Source/Common/Rva000A953BCtor.cpp,matched,2x8 Coord2D array via vector iterator sibling
 ?winGetPrev@GameWindow@@QAEPAV1@XZ,,0x00314105,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winNextTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
-?winPrevTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?seekoff@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@JHH@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
 ?seekpos@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@V32@H@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
 ??0Rva004D7491@@QAE@PAVStateMachine@@@Z,,0x004D7491,27,Code/GameEngine/Source/Common/StateCtor.cpp,matched,State-derived ctor beside the base body so this stays in edx across the base call; hash 0xC17A0A70 vtable 0x00860668
@@ -46268,3 +46267,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005F11D0@Rva005F11D0@@QAEXXZ,,0x005F11D0,63,Code/GameEngine/Source/Common/Rva005F11D0.cpp,matched,Address-named63B range teardown; Ghidra boundary calls rowed range destroyer5EF5EF then allocator30830. Own first/end fields0/4; banked scoped guard and C++ free linkage restore unwind transition. Element/application type unknown.
 ??1Rva005562DD@@QAE@XZ,,0x00557BFE,56,Code/GameEngine/Source/Common/Rva005562DDClear.cpp,matched,Ghidra56B tree teardown; calls rowed clear5562DD then allocator30830. Sentinel/count offsets0/4 established by clear and node erase556050. Base-owned header plus C++ free linkage preserves target unwind state. Original container name unknown.
 ?get@Bfme939Helper@@QBEHXZ,,0x0030F2C7,4,Code/GameEngine/Source/Common/Bfme939HelperGet.cpp,matched,matched helper callers read dword this+0x1C as integer and as pointer sentinel; identical 4B target getter
+?winPrevTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,ZH GameWindow methods return WIN_ERR_OK; GadgetStaticTextInput calls both at this shared retail return-0 body
