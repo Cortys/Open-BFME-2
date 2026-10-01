@@ -45678,3 +45678,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005E187A@Rva005E187A@@QAEX_N@Z,,0x005E187A,33,Code/GameEngine/Source/Common/Rva005E187A.cpp,matched,unlock bool setter byte at +0x20 iface at +0x18 slot3 callers push 0 and 1
 ?Rva005E1A87Copy@@YAPAUTreeHintRef00217D4C@@PBU1@0PAU1@@Z,,0x005E1A87,47,Code/GameEngine/Source/Common/Rva005E1A87Copy.cpp,matched,unlock TreeHintRef copy via rowed operatorassign sar2 loop caller 0x004F6A35
 ?rva002864E6@Rva00285DC5@@QAEXPAMMHHHH_N@Z,,0x002864E6,310,Code/GameEngine/Source/Common/Rva00285DC5Disc.cpp,matched,midpoint disc paint over rowed row-range paint 0x00285DC5; 0.1f and 0.5 literals fix the banked partial; callers 0x00395DEC 0x0050BE94
+??4TreeHintOpaque0043671B@@QAEAAU0@ABU0@@Z,,0x00401F76,57,Code/Libraries/Source/WWVegas/WWLib/stlport_list_treehintopaque_00436e3b.cpp,matched,placed by masked whole-.text search of the compiled body - single hit
