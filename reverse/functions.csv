@@ -45834,3 +45834,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004182D3@Rva004182F8@@QAEPAXPBVRva004181F5@@@Z,,0x004182D3,37,Code/GameEngine/Source/GameClient/Rva004182D3Alloc.cpp,matched,thiscall node alloc retyped from stdcall: sole caller 0x004182F8 passes this in ecx
 ?rva004182F8@Rva004182F8@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z,,0x004182F8,124,Code/GameEngine/Source/GameClient/Rva004182F8Insert.cpp,matched,hashed unique insert via rowed bucketIndex and thiscall allocator 0x004182D3
 ?Rva00433D27Enable@@YAXXZ,,0x00433D27,21,Code/GameEngine/Source/Common/Rva00433D27Enable.cpp,matched,guarded tail-jmp to rowed enable via globals
+?rva00433453@Rva00433453@@QAEXM@Z,,0x00433453,23,Code/Libraries/Source/WWVegas/WW3D2/Rva00433453Rope.cpp,matched,or dword ECX+C4 8 then direct call rowed setRopeCurLen via qualified virtual
