@@ -1,4 +1,7 @@
-// ?bfmeRandomPositive@@YAHH@Z
+// ?abs_randwc@@YAKK@Z
+//
+// nbench misc.c abs_randwc(u32 num): |randwc(num)| with randwc and randnum(0)
+// inlined - a signed modulo of the next generator value, then its magnitude.
 //
 // BFME1 byte-identical donor (reference/open-bfme-1
 // Code/GameEngine/Source/Common/Bfme5NinetyTwo.cpp); trimmed to the single T3
@@ -7,7 +10,7 @@
 extern int g_bfmeSeedJC;
 extern int g_bfmeCarryJC;
 
-int bfmeRandomPositive(int range)
+unsigned long abs_randwc(unsigned long num)
 {
 	int seed = g_bfmeSeedJC;
 	int carry = g_bfmeCarryJC;
@@ -18,7 +21,7 @@ int bfmeRandomPositive(int range)
 	g_bfmeCarryJC = seed;
 	g_bfmeSeedJC = next;
 
-	int value = next % range;
+	int value = next % (long)num;
 	if (value < 0)
 		value = -value;
 	return value;

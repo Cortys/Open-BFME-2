@@ -9693,7 +9693,7 @@ _Rva009BD470Vp6FilterSse,,0x001CDD70,253,Code/GameEngine/Source/Common/BfmeConv9
 ?allocate@Rva007F7810Block@@QAEXH@Z,,0x00663F00,75,Code/GameEngine/Source/GameNetwork/V2FeslArrayBlocks.cpp,matched,BFME1 byte-identical donor; b1 0x007F7810
 ?clear@Rva007F6CF0Block@@QAEXXZ,,0x006633E0,40,Code/GameEngine/Source/GameNetwork/V2FeslArrayBlocks.cpp,matched,BFME1 byte-identical donor; b1 0x007F6CF0
 ?getUpgradeActivationMasks@UpgradeMuxData@@QBEXAAUUpgradeMaskType@@0@Z,,0x004CB189,369,Code/GameEngine/Source/Common/Thing/UpgradeMuxData_getUpgradeActivationMasks.cpp,matched,
-?d_008790b0@@YAHH@Z,,0x006B8950,72,Code/GameEngine/Source/Common/D008790B0RandomSeed.cpp,matched,BFME1 byte-identical donor; b1 0x008790B0
+?randnum@@YAJJ@Z,,0x006B8950,72,Code/GameEngine/Source/Common/D008790B0RandomSeed.cpp,matched,BFME1 byte-identical donor; b1 0x008790B0
 ?Rva009AA970DumpRaw@@YAXPAURva009AA970Info@@PAXH@Z,,0x001BB3B0,104,Code/GameEngine/Source/Common/Rva009AA970DumpRaw.cpp,matched,BFME1 byte-identical donor; b1 0x009AA970; fopen/fclose C-linkage per retail IAT
 ?bfmeMask@@YAHPAVBfmeThingBW@@@Z,,0x006A45B0,25,Code/GameEngine/Source/Common/Bfme5TinyThree.cpp,matched,BFME1 byte-identical donor; b1 0x008636E0
 ?bfmeScale@@YANI@Z,,0x006B8C60,25,Code/GameEngine/Source/Common/Bfme5TinyThree.cpp,matched,BFME1 byte-identical donor; b1 0x008793D0
@@ -10130,7 +10130,7 @@ _f_luaopen,,0x0074DEF0,110,Code/Libraries/Source/Lua/lstate.c,matched,BFME1 byte
 ??0Rva00800920Owner@@QAE@PAURva00800920Host@@@Z,,0x0066CD00,210,Code/GameEngine/Source/GameNetwork/Rva00800920FeslCtor.cpp,matched,BFME1 byte-identical donor; b1 0x00800920
 ?bfmeGoVJM@BfmeThingVJM@@QAEXHH@Z,,0x00663140,92,Code/GameEngine/Source/Common/BfmeConv1390.cpp,matched,BFME1 byte-identical donor; b1 0x007F69B0
 ?bfmeGo@Rva00800B70Owner@@QAEPAXE@Z,,0x0066CF50,90,Code/GameEngine/Source/GameNetwork/Rva00800B70FeslDtor.cpp,matched,BFME1 byte-identical donor; b1 0x00800B70
-?d_008794c0@@YAXHPAH@Z,,0x006B8D50,58,Code/GameEngine/Source/Common/D008794C0RegistryStatus.cpp,matched,BFME1 byte-identical donor; b1 0x008794C0
+?FreeMemory@@YAXPAXPAH@Z,,0x006B8D50,58,Code/GameEngine/Source/Common/D008794C0RegistryStatus.cpp,matched,BFME1 byte-identical donor; b1 0x008794C0
 ?d_008859d0@Rva008859D0Class@@QAEXPBDPAD@Z,,0x006CA4E0,93,Code/GameEngine/Source/Common/Bfme/Rva008859D0.cpp,matched,BFME1 donor with format-literal repair; b1 0x008859D0; plus0x34 layout proves class
 _luaO_equalObj,,0x0074E0C0,92,Code/Libraries/Source/Lua/lobject.c,matched,BFME1 byte-identical donor; b1 0x00996F60
 ?Rva009AF320CopyPlanes@@YAXPAURva009AF320Context@@HH@Z,,0x001BFD10,368,Code/GameEngine/Source/Common/Rva009AF320CopyPlanes.cpp,matched,BFME1 byte-identical donor; b1 0x009AF320
@@ -10610,7 +10610,7 @@ _luaK_jump,,0x00752690,166,Code/Libraries/Source/Lua/lcode.c,matched,BFME1 byte-
 ?bfmeExtend@Gen_00470870@@QAEXHHHH@Z,,0x0059668D,51,Code/GameEngine/Source/Common/Bfme5SeventyOne.cpp,matched,BFME1 byte-identical donor; b1 0x00470870
 ?bfmeCtorEOE@BfmeThingEOE@@QAEPAU1@XZ,,0x00302C81,27,Code/GameEngine/Source/Common/BfmeConv881.cpp,matched,BFME1 byte-identical donor; b1 0x000C0B60
 ?bfmeGoEOF@BfmeThingEOF@@QAEPAXXZ,,0x00045623,25,Code/GameEngine/Source/Common/BfmeConv881.cpp,matched,BFME1 byte-identical donor; b1 0x000C44D0
-?bfmeRandomPositive@@YAHH@Z,,0x006B89E0,65,Code/GameEngine/Source/Common/Bfme5NinetyTwoRandom.cpp,matched,BFME1 byte-identical donor; b1 0x00879140; caller-proven by fillRandom008747F0 (Rva008747F0RandomFill.cpp)
+?abs_randwc@@YAKK@Z,,0x006B89E0,65,Code/GameEngine/Source/Common/Bfme5NinetyTwoRandom.cpp,matched,BFME1 byte-identical donor; b1 0x00879140; caller-proven by fillRandom008747F0 (Rva008747F0RandomFill.cpp)
 ?squash@Rva0084E030Buffer@@QAEXXZ,,0x00021290,52,Code/GameEngine/Source/Common/U2CStringScans.cpp,matched,BFME1 byte-identical donor; b1 0x0084E030
 ?bfmeGo925D@BfmeThing925D@@QAEXPAX@Z,,0x00323657,29,Code/GameEngine/Source/Common/BfmeConv925.cpp,matched,BFME1 byte-identical donor; b1 0x004B5B90
 ?bfmeMake@Gen_00161290@@QAE?AUBfmeIterator@@XZ,,0x004EF622,19,Code/GameEngine/Source/Common/S3IteratorMakers.cpp,matched,BFME1 byte-identical donor; b1 0x00161290
@@ -46089,3 +46089,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva00562366@@QAE@IAAUSrc00562366@@@Z,,0x00562366,376,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva0056224FCtor.cpp,matched,three-base emitter ctor beside its BoxEmissionVolumeInfo base ctor (unwind map names the base); nothrow getter and handle dtor drop the dead EH state stores
 ??0WeaponModeSpecialPowerUpdateBase@@QAE@PAVThing@@PBVModuleData@@@Z,,0x0058959A,181,Code/GameEngine/Source/GameLogic/Object/Update/WeaponModeSpecialPowerUpdateBaseCtor.cpp,matched,Ghidra FUN_0098959a 181B; direct ctor caller 0x00494B38 and derived SiegeDeploy/Deflect callers support identity. Calls matched UpdateModule 0x253390 getFinalOverride 0x288609 pause helper 0x5890A6 and setWakeFrame 0x44DF71. +0x24 countdown subobject layout supported by caller 0x589628; opaque float-1 helper pinned at 0x58943A.
 ?toInteger@BfmeAptValue006DCD20@@QBEHXZ,,0x006DD360,186,Code/Libraries/Source/Apt/AptValue/AptValueToIntegerBFME2.cpp,matched,BFME1 AptValue::toInteger donor port at reference/open-bfme-1/game/Libraries/Source/EA/Apt/AptValueToInteger.cpp; target 186B Ghidra boundary and exact bytes. BFME2 flags use type bits 25-31 and defined bit 4; target calls rowed isUndefined plus EAStringC and byte/float accessors. Type-1 string uses target opaque resolver 0x006DCE50 and +8 EAStringC. Target default compares singleton at 0x00E18078. Target identity follows Apt bitwise-handler callers; donor flag and payload layout are not assumed.
+?ReportError@@YAXPADH@Z,,0x0069E440,1,Code/Libraries/Source/Benchmark/AllocateMemory.cpp,matched,
