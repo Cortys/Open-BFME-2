@@ -46498,3 +46498,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000E01A3@Rva000E01A3@@QAE_NXZ,,0x000E01A3,13,Code/GameEngine/Source/Common/Rva000E01A3Check.cpp,matched,leaf thiscall self-pointer check via caller 0x3776CC
 ?rva0035118A@Rva0035118A@@QAEXH@Z,,0x0035118A,63,Code/GameEngine/Source/GameLogic/AI/Rva0035118A.cpp,matched,leaf via TheGameLogic findObjectByID rowed
 ?rva0021887C@Rva0021887C@@QAEXXZ,,0x0021887C,30,Code/GameEngine/Source/Common/System/Rva0021887CDestroyFree.cpp,matched,destroy GeometryRecord range then free via rowed callees
+??0Rva00558D56@@QAE@XZ,,0x00558D56,21,Code/Libraries/Source/WWVegas/WWLib/Rva00558D56.cpp,matched,unlock lane wraps rowed DequeBase 0x0055334A caller 0x00558F07
