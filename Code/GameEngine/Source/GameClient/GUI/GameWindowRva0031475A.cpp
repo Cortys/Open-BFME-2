@@ -55,8 +55,12 @@ class GameWindow
 {
 public:
 	int rva0031475A();
+	int rva003147DA();
+	int winHide(bool hide);
 private:
-	char m_pad1F8[0x1F8];
+	char m_pad00[0x08];
+	int m_status;
+	char m_pad0C[0x1F8 - 0x0C];
 	GameWindow *m_next;
 	GameWindow *m_prev;
 	GameWindow *m_parent;
@@ -87,5 +91,20 @@ int GameWindow::rva0031475A()
 		g->Virtual1C(this);
 		g->Virtual18(this);
 	}
+	return 0;
+}
+
+// ?rva003147DA@GameWindow@@QAEHXZ, retail 0x003147DA, 28 bytes.
+// Calls rva0031475A then winHide(false) on success; sets status bit0.
+// Evidence: chain caller of 0x0031475A; or [esi+8],1 matches m_status;
+// rowed ?winHide@GameWindow@@QAEH_N@Z.
+
+int GameWindow::rva003147DA()
+{
+	int r = rva0031475A();
+	if (r != 0)
+		return r;
+	m_status |= 1;
+	winHide(false);
 	return 0;
 }
