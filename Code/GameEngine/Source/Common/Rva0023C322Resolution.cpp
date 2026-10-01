@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva0023C322@Rva0023C322@@QAEXXZ @0x0023C322 164B: clear flag at +0xCA then
 // store current resolution as "%d %d" into OptionPreferences map slot
@@ -9,50 +9,21 @@
 // TheWritableGlobalData 0x009FE758 with xRes +0x30 yRes +0x34; strings
 // "%d %d" 0x007E3878 and "Resolution" 0x007E386C; caller 0x00514DDA passes
 // TheGameClient as this.
+#include "unicode_string.h"
 #include <map>
 
 typedef bool Bool;
 typedef int Int;
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class Rva0023C322;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-protected:
-	void *m_data;
-};
-
 class AsciiString : public StringBase<char>
 {
 public:
 	AsciiString() {}
+	AsciiString(const char *text) : StringBase<char>(text) {}
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
 	~AsciiString() {}
 	AsciiString &operator=(const AsciiString &other);
 	void format(const char *fmt, ...);
-};
-
-template <> class StringBase<unsigned short>
-{
-	friend class UnicodeString;
-	void releaseBuffer();
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-protected:
-	void *m_data;
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
 };
 
 bool operator<(const AsciiString &left, const AsciiString &right);
@@ -122,8 +93,8 @@ void Rva0023C322::rva0023C322()
 	AsciiString tmp;
 	tmp.format("%d %d", TheWritableGlobalData->m_xResolution, TheWritableGlobalData->m_yResolution);
 	{
-		StringBase<char> key("Resolution");
-		AsciiString &slot = prefs[(const AsciiString &)key];
+		AsciiString key("Resolution");
+		AsciiString &slot = prefs[key];
 		slot = tmp;
 	}
 	prefs.write();

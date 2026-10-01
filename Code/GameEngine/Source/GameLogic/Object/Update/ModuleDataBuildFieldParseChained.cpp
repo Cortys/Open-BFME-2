@@ -71,6 +71,14 @@ extern const FieldParse g_00C550C8GloriousChargeFieldParse[] = {
 	{ 0, 0, 0, 0 }
 };
 
+// Retail VA 0x00C5FB9C is the StoreObjectsSpecialPowerModuleData FieldParse
+// table: .rdata holds Radius/parseReal at +0xC8, followed by a zero sentinel.
+// The matched buildFieldParse caller supplies the independent class identity.
+extern const FieldParse g_00C5FB9CStoreObjectsFieldParse[] = {
+	{ "Radius", &INI::parseReal, 0, 0xC8 },
+	{ 0, 0, 0, 0 }
+};
+
 class MultiIniFieldParse
 {
 public:
@@ -151,7 +159,7 @@ void TeleportToCasterSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse 
 void StoreObjectsSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	Rva0044EB54::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C5FB9C), 0);
+	parse.add(g_00C5FB9CStoreObjectsFieldParse, 0);
 }
 
 void CurseSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &parse)

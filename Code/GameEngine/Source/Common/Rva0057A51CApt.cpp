@@ -3,6 +3,7 @@
 // Free Apt TurnNumber setter: team name lookup then format APT:_level%u.%s_TurnNumber plus Unicode int format then bfmeSetText false.
 // Evidence: unlock lane plus callers 0x0057A851 0x0057B90B plus precedent Rva0057A685Apt plus globals TheRva00222A8BTarget g_Rva0107301CEmptyString g_Va007C9260 plus string APT:_level%u.%s_TurnNumber.
 #include "ascii_string.h"
+#include "unicode_string.h"
 
 class BfmeAptWindowManager
 {
@@ -17,14 +18,6 @@ class Rva00222A8BTarget
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
 extern const char g_Rva0107301CEmptyString[];
 extern const unsigned short g_Va007C9260[];
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() {}
-	void __cdecl format(const unsigned short *fmt, ...);
-};
 
 struct Rva0057A51CTeam
 {
