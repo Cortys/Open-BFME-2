@@ -45203,3 +45203,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005B02FD@Rva005B02B5@@QAEXXZ,,0x005B02FD,77,Code/GameEngine/Source/Common/Rva005B02B5.cpp,matched,sibling of 0x005B02B5 same callers increment plus max-cap g_Va00BBB8D8
 ?rva005B0249@Rva005B02B5@@QAEXXZ,,0x005B0249,54,Code/GameEngine/Source/Common/Rva005B02B5.cpp,matched,sibling same callers decrement at plus0x168 via pointer lea no clamp
 ?rva005B027F@Rva005B02B5@@QAEXXZ,,0x005B027F,54,Code/GameEngine/Source/Common/Rva005B02B5.cpp,matched,sibling increment at plus0x168 via pointer lea same callers
+?Rva005B0E60Get@@YGHPAX@Z,,0x005B0E60,63,Code/Libraries/Source/WWVegas/WWLib/Rva005B0E60.cpp,matched,caller 0x005B1ACB AsciiString plus0x88 strstr needle plus atoi plus1
