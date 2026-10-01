@@ -46491,3 +46491,5 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002D3772@RadarWindowOverrideSource@@QAEXHM@Z,,0x002D3772,65,Code/GameEngine/Source/Common/System/RadarWindowOverrideRva002D3772.cpp,matched,chain caller 0x002B361B plus rowed callees
 ?rva004EC16E@Rva004EC16E@@QAEPAXM@Z,,0x004EC16E,96,Code/GameEngine/Source/Common/Rva004EC16E.cpp,matched,best below float via fcomi callers 0x004EC700
 ??0Rva004ECDC8@@QAE@I@Z,,0x004ECDA7,33,Code/Libraries/Source/WWVegas/WW3D2/Rva004ECDC8Ctor.cpp,matched,ctor same class as Xfer 0x004ECDC8 callers 0x004ED6F0 0x004EDBBE Coord3DBase 12B
+?rva0046BB38@HordeContain@@UAE_NPAVObject@@@Z,,0x0046BB38,55,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainIface11CSlots.cpp,matched,slot 6 of the HordeContain +0x11C interface: owner pointer test then a map<int int> lookup of the other object ID
+?rva0046D1AC@HordeContain@@UAE?AVAsciiString@@XZ,,0x0046D1AC,75,Code/GameEngine/Source/GameLogic/Object/Contain/HordeContainIface11CSlots.cpp,matched,slot 9 of the HordeContain +0x11C interface: the single name of the module data AsciiString list or the empty string
