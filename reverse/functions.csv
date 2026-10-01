@@ -46012,3 +46012,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva00434942@@QAE@I@Z,,0x00434942,39,Code/Libraries/Source/WWVegas/WWLib/stlport_proxy_00434942.cpp,matched,unlock single-proxy ctor via rowed 0x0014F3C4 and 0x000307F0 unblocks 0x00434C3D
 ??0Rva00434C3D@@QAE@II@Z,,0x00434C3D,42,Code/Libraries/Source/WWVegas/WWLib/stlport_tree_00434C3D.cpp,matched,chain empty Rb-tree ctor via rowed 0x00434942 zeroes count inits header red self-links
 ?Rva00434969Get@@YAXPAI0@Z,,0x00434969,44,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_00434969.cpp,matched,stack-seeded two-out table fetch unblocks 0x00434C67
+??0Rva00434C67@@QAE@PAI0@Z,,0x00434C67,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434C67.cpp,matched,chain from 0x00434969 ctor obfuscates 8 dwords via imul-xor
