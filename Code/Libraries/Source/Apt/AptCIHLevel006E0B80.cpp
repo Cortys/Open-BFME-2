@@ -22,6 +22,7 @@ public:
     int rva006E0B80(int nLvl) const;
     bool rva006E2460(const AptCIH *other) const;
     void *rva006E0FB0() const;
+    void *rva006E1020() const;
     const AptCIH *rva006E0CB0() const;
     bool rva006E0C50(const AptCIH *other) const;
     bool rva006E0BF0() const;
@@ -170,4 +171,26 @@ bool AptCIH::rva006E0BF0() const
             return false;
     }
     return true;
+}
+
+// ?rva006E1020@AptCIH@@QBEPAXXZ, retail 0x006E1020, 103 bytes.
+// Morph-inst field accessor at +0x4C guarded by type 0x11 and defined checks,
+// "this" assert at line 0xCE and "isMorphInst()" at 0x8C via AptCIH.h.
+// Evidence: rowed getters 0x6DBB30 and 0x6DC010; unlock lane unblocking 2
+// callers; same /O2 AptCIH layout as neighbours. Barrier keeps the +0x4C
+// load late (retail test-je-int3-mov, no hoist); emits no bytes.
+void *AptCIH::rva006E1020() const
+{
+    if (!this) {
+        g_bfmeAptAssertAtE17734("this", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0xCE);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    if (((const Rva006DBB30SarDwordField *)this)->get() != 0x11 || ((const BfmeAptValue006DCD20 *)this)->isUndefined()) {
+        g_bfmeAptAssertAtE17734("isMorphInst()", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\AptCIH.h", 0x8C);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __debugbreak();
+    }
+    _ReadWriteBarrier();
+    return m_4C;
 }

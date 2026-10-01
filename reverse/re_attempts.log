@@ -4681,3 +4681,5 @@ FUN_005f705a	0x001F705A	228	blocked	chain ParticleSystemManager plus SmartField 
 ?framesUntilNext@ObjectSMCHelper@@AAEHXZ	0x004DE700	77	partial	cmovb-vs-jae-plus-mov plus head-in-edx-vs-eax plus best-in-ecx-vs-edx plus missing-reload-and-second-je 72v77 t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x004de700.cpp
 ?rva003971BF@Rva003971BF@@QAE_NPAUArg3971BF@@@Z	0x003971BF	121	partial	test-vs-sar-plus-mov-base-124v121-fixes-Object-plus4-and-W4-enum-t=30-model=muse-12 score=0.98 stash=reverse/attempts/0x003971bf.cpp
 ?rva004047E3@Rva00404781@@QAEXMM@Z	0x004047E3	286	blocked	push-early-vs-late plus mov-test-vs-xor-cmp plus comiss-jb-vs-ja plus k-first-vs-m-first t=14 model=muse-16: ours 277B 84insns vs retail 286B 88insns 0reloc 12mem 2reg 12regions
+?Rva00215D0BTest@@YAXXZ	0x00215D0B	278	blocked	chain INI FactionVictory Debug CrashBegin Format virtual chain needs Debug vtable layout t=10 model=muse-16
+?Rva00579A2FGet@@YAPAVUnicodeString@@PAV1@H@Z	0x00579A2F	136	blocked	GameText fetch slot3C plus UnicodeString format needs VersionUnicode pattern t=15 model=muse-16

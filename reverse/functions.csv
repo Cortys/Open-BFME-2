@@ -45332,3 +45332,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00405B8DTest@@YG_NPAVObject@@PAUUpgradeRange@@_N@Z,,0x00405B8D,119,Code/GameEngine/Source/Common/Rva00405B8DTest.cpp,matched,leaf stdcall upgrade any-all via Object Player rows range begin-end
 ??0Rva004EB583@@QAE@H@Z,,0x004EB583,102,Code/Libraries/Source/WWVegas/WWLib/Rva004EB583Ctor.cpp,matched,unlock ctor vtable 3x BfmeE16 vectors id from counter
 ?rva004EB794@Rva004EB794@@QAE_NPBVModuleData@@@Z,,0x004EB794,56,Code/Libraries/Source/WWVegas/WWLib/Rva004EB794Method.cpp,matched,unlock dedup by +0x50 key push_back when new
+?rva006E1020@AptCIH@@QBEPAXXZ,,0x006E1020,103,Code/Libraries/Source/Apt/AptCIHLevel006E0B80.cpp,matched,unlock morph-inst accessor type 0x11 via rowed getters
