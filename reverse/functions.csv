@@ -44987,3 +44987,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva00264E93@Rva00264E93@@QAEPAXXZ,,0x00264E93,35,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva002645FF.cpp,matched,same TU status 0x16 gate ptr30 plus 0x24
 ?rva0039BF67@Rva0039BF67@@QAEHV?$BitFlags@$0HE@@@0@Z,,0x0039BF67,94,Code/GameEngine/Source/Common/Rva0039BF67Sum.cpp,matched,20-map sum at +0x1FC via rowed testSetAndClear and increment
 ?rva0060DF27@BfmeRva00C7B388@@QAEHPBD@Z,,0x0060DF27,142,Code/GameEngine/Source/Common/System/BfmeRva00C7B388Xfer.cpp,matched,vslot 5 of 0x00C7B388 text-dump open-block with label vector push
+??4?$vector@UBfmeStringRecord000B950F@@V?$allocator@UBfmeStringRecord000B950F@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x000C084D,206,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_b950f_assign.cpp,matched,vector B950F assign via rowed allocate clear copy destroy uninitialized same shape as 2D0726 2D0927 caller C6C54
