@@ -45024,3 +45024,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0028F4BC@Object@@QAEPAVRva00373EC6@@XZ,,0x0028F4BC,51,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028F4BC.cpp,matched,list search via rowed 0x373EC6 same-this Object caller
 ??1Rva0037B5DF@@QAE@XZ,,0x0037B5DF,105,Code/GameEngine/Source/Common/System/Rva0037B5DFDtor.cpp,matched,nonvirtual dtor five wide plus one narrow via releaseBuffer rows
 ?rva0037B146@Rva0037B146@@QAEXXZ,,0x0037B146,70,Code/GameEngine/Source/Common/System/Rva0037B146Cleanup.cpp,matched,commandlist range delete via global delete
+?rva00566D7B@Rva00566D7B@@QAEXABVRva004E32F2@@@Z,,0x00566D7B,8,Code/GameEngine/Source/Common/Rva00566D7B.cpp,matched,chain lane callee push_back 0x00566BB4 add ecx 0x60 plus jmp tail same shape as rowed 0x00566AB7
