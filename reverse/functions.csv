@@ -45978,3 +45978,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004F6234@Rva004F6234@@QAEXHPAUPred004F6234@@@Z,,0x004F6234,52,Code/GameEngine/Source/Common/Rva004F6234Check.cpp,matched,predicate loop stride 0xC via virtual Check caller 0x005EAA9C
 ?Rva004F60ECMedian@@YAPAURva004F6352@@PAU1@00@Z,,0x004F60EC,62,Code/GameEngine/Source/Common/Rva004F60ECMedian.cpp,matched,median of three via key plus8 caller 0x004F95A8 quicksort
 ?rva0039E815@Team@@QAE_NXZ,,0x0039E815,54,Code/GameEngine/Source/Common/RTS/TeamRva0039E815.cpp,matched,Team member template byte 0x5e6 check via rowed iterate and advance
+?Rva003A5DA0WriteWindHeader@@YAXPBXPAVFile@@PAI@Z,,0x003A5DA0,216,Code/GameEngine/Source/Common/Rva003A5DA0Write.cpp,matched,wind header cat7 via donor BFME1 Rva005FF160 and rowed Pad str Write
