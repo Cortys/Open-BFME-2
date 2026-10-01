@@ -33,7 +33,8 @@ public:
 };
 
 extern NameKeyGenerator *TheNameKeyGenerator;
-extern void *Rva00DFDC14Object;
+// Rva00DFDC14Object: matched references place it at VA 0xdfdc14 (retail .data initial value 0).
+void * Rva00DFDC14Object = 0;
 
 class INI
 {

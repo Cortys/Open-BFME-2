@@ -1014,7 +1014,8 @@ struct Rva0130AB60Map
 	unsigned int m_replace; /* +0x08, zero terminates */
 };
 
-extern void *g_Rva0130AB60;
+// g_Rva0130AB60: matched references place it at VA 0xe0a578 (retail .data initial value 0).
+void * g_Rva0130AB60 = 0;
 extern char g_Rva012C3C60Message[];
 extern char g_Rva012C3C7CMessage[];
 

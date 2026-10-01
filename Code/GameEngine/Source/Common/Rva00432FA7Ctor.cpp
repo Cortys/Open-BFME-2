@@ -16,7 +16,8 @@ public:
 
 extern const void *const g_00C3CA30[];
 class Rva00432FA7;
-extern Rva00432FA7 *g_00E032D0;
+// g_00E032D0: matched references place it at VA 0xe032d0 (retail .data initial value 0).
+Rva00432FA7 * g_00E032D0 = 0;
 
 class Rva00432FA7
 {

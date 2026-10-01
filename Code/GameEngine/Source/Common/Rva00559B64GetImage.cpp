@@ -14,7 +14,8 @@ public:
 	const Image *findImageByName(const AsciiString &name);
 };
 
-extern ImageCollection *g_00DFF078;
+// g_00DFF078: matched references place it at VA 0xdff078 (retail .data initial value 0).
+ImageCollection * g_00DFF078 = 0;
 extern const char *g_00DBE9B0[];
 
 const Image *__cdecl Rva00559B64GetImage(int side, int rank)

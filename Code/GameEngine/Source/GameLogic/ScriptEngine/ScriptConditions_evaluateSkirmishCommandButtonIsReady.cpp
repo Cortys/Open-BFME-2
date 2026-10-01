@@ -48,7 +48,8 @@ class ControlBar
 public:
     const CommandButton *findCommandButton(const AsciiString &name);
 };
-extern ControlBar *TheControlBar;
+// TheControlBar: matched references place it at VA 0xe01cfc (retail .data initial value 0).
+ControlBar * TheControlBar = 0;
 class Object
 {
 public:

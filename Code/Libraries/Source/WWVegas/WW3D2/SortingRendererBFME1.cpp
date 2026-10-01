@@ -482,7 +482,8 @@ static void Apply_Render_State(RenderStateStruct& render_state)
 struct BFME2TextureRef { void *Ptr; };
 void BFME2Set_Texture(unsigned stage, const struct BFME2TextureRef &texture);
 extern unsigned TheBoxTextureDirtyMask;
-extern VertexMaterialClass *g_00DEE5DC;
+// g_00DEE5DC: matched references place it at VA 0xdee5dc (retail .data initial value 0).
+VertexMaterialClass * g_00DEE5DC = 0;
 extern struct IDirect3DDevice8 *g_d3dDevice;
 extern unsigned g_00DEDA4C;
 // g_00DEDA4C: matched references place it at VA 0xdeda4c (zero-filled .bss).

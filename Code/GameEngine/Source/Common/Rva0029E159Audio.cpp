@@ -71,7 +71,8 @@ public:
 	virtual int play(AudioEventRTS *ev) = 0;
 };
 
-extern AudioManager0029E159 *g_00DEC2D4;
+// g_00DEC2D4: matched references place it at VA 0xdec2d4 (retail .data initial value 0).
+AudioManager0029E159 * g_00DEC2D4 = 0;
 struct Rva0029E159
 {
 	int m_handle;

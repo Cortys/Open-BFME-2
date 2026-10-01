@@ -26,7 +26,8 @@ public:
 	virtual void rva0004CB5FSlot44(int arg) = 0;
 };
 
-extern ParticleSystemManager002B *TheParticleSystemManager;
+// TheParticleSystemManager: matched references place it at VA 0xdfdd04 (retail .data initial value 0).
+ParticleSystemManager002B * TheParticleSystemManager = 0;
 
 void __cdecl Rva0004CB5FSet(int arg)
 {

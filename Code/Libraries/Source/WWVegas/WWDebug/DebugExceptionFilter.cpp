@@ -294,7 +294,8 @@ static const char *g_exceptionReportText;                 // 0x00DE0DF4
 static char g_exceptionRegisterInfo[1024];                // 0x00DE09E8
 static char g_exceptionVersionInfo[256];                  // 0x00DE08E8
 static DebugStackwalk::Signature g_exceptionStackSignature; // 0x00DE0E08
-extern CrashAttachment *g_crashAttachments;              // 0x00DE0DEC
+// g_crashAttachments: matched references place it at VA 0xde0dec (retail .data initial value 0).
+CrashAttachment * g_crashAttachments = 0;
 extern unsigned g_debugTypedLogCount;                   // 0x00DE0DF0
 extern char g_crashMailerCommand[512];                   // 0x00DE1210
 extern unsigned char g_exceptionDialogTemplate[];        // 0x00DB35D0

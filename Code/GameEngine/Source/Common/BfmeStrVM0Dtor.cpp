@@ -216,7 +216,8 @@ struct GlobalA01E48
 	char pad[0x5d];
 	unsigned char flag;
 };
-extern GlobalA01E48 *g_Va00A01E48;
+// g_Va00A01E48: matched references place it at VA 0xe01e48 (retail .data initial value 0).
+GlobalA01E48 * g_Va00A01E48 = 0;
 
 struct Rva0025C18BCoord
 {

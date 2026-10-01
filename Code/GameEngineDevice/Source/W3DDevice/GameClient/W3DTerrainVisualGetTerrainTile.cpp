@@ -26,7 +26,8 @@ public:
 	TerrainType *findTerrain(AsciiString name);
 };
 
-extern TerrainTypeCollection *TheTerrainTypes;
+// TheTerrainTypes: matched references place it at VA 0xe01cdc (retail .data initial value 0).
+TerrainTypeCollection * TheTerrainTypes = 0;
 
 class WorldHeightMap
 {

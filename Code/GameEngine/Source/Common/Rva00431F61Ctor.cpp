@@ -29,7 +29,8 @@ public:
 };
 
 class Rva00431F61;
-extern Rva00431F61 *g_00E0322C;
+// g_00E0322C: matched references place it at VA 0xe0322c (retail .data initial value 0).
+Rva00431F61 * g_00E0322C = 0;
 
 void *__cdecl operator new(unsigned int size);
 

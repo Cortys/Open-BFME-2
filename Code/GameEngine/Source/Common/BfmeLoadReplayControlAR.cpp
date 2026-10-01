@@ -70,7 +70,8 @@ public:
 };
 
 extern BfmeWindowManagerAR *g_bfmeWindowManagerAR;	// retail 0x012F1B40
-extern void *g_bfmeReplayControlAR;			// retail 0x012F1490
+// g_bfmeReplayControlAR: matched references place it at VA 0xdfedf4 (retail .data initial value 0).
+void * g_bfmeReplayControlAR = 0;
 
 // ?bfmeLoadReplayControlAR@@YAXXZ
 void bfmeLoadReplayControlAR(void)

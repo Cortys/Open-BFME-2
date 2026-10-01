@@ -56,7 +56,8 @@ public:
 	void handle(void *object);
 };
 
-extern SceneClass *g_scene;
+// g_scene: matched references place it at VA 0xde1b34 (retail .data initial value 0).
+SceneClass * g_scene = 0;
 extern Gen0003AC38 *g_shadowManager;
 // g_shadowManager: VA 0xde5dfc (zero-filled .bss).
 Gen0003AC38 * g_shadowManager;

@@ -58,7 +58,8 @@ public:
 };
 class BFME2FileSystemFacade { public: bool doesWideFileExist(const Wide*); };
 extern GlobalData *TheWritableGlobalData;
-extern BFME2FileSystemFacade *BFME2FileFacade;
+// BFME2FileFacade: matched references place it at VA 0xe06a48 (retail .data initial value 0).
+BFME2FileSystemFacade * BFME2FileFacade = 0;
 extern bool BFME2PreferLocalFiles;
 int parseMod(char *args[],int num) {
     BFME2PreferLocalFiles=true;

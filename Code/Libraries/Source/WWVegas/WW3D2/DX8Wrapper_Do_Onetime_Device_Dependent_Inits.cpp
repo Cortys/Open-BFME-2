@@ -116,7 +116,8 @@ struct DX8CapsSnapshot
 	unsigned Field5;
 };
 
-extern void *g_dx8Device;
+// g_dx8Device: matched references place it at VA 0xdeda08 (retail .data initial value 0).
+void * g_dx8Device = 0;
 extern DX8CapsSnapshot g_dx8CapsSnapshot;
 extern TextureFilterClass::TextureFilterMode g_dx8FilterMode;
 extern DX8MeshRendererClass *TheDX8MeshRenderer;

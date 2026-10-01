@@ -33,7 +33,8 @@ struct AIMid
 	char m_pad[0x18];
 	AIInner *m_ptr;
 };
-extern AIMid *TheAI;
+// TheAI: matched references place it at VA 0xdff0f8 (retail .data initial value 0).
+AIMid * TheAI = 0;
 
 float __cdecl Rva00545239Get(void *objPtr)
 {

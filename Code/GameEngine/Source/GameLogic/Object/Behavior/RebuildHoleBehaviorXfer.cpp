@@ -114,7 +114,8 @@ public:
 	void *rva002D06CA(const AsciiString *key);
 };
 
-extern Rva002D06CA *g_009FF000;
+// g_009FF000: matched references place it at VA 0xdff000 (retail .data initial value 0).
+Rva002D06CA * g_009FF000 = 0;
 
 enum ObjectID
 {

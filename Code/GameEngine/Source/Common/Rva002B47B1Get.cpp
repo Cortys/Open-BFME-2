@@ -15,7 +15,8 @@ public:
 	int m_index10;
 	Rva002B47B1Elem **m_array14;
 };
-extern Rva003B8BAA *g_00E02D6C;
+// g_00E02D6C: matched references place it at VA 0xe02d6c (retail .data initial value 0).
+Rva003B8BAA * g_00E02D6C = 0;
 void *Rva002B47B1Get(void)
 {
 	Rva003B8BAA *g = g_00E02D6C;

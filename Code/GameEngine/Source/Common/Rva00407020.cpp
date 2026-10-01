@@ -22,7 +22,8 @@ class Rva00406F3C
 public:
 	bool rva00406F3C(int v);
 };
-extern Rva00219B9E *g_00DFE344;
+// g_00DFE344: matched references place it at VA 0xdfe344 (retail .data initial value 0).
+Rva00219B9E * g_00DFE344 = 0;
 class Rva00407020
 {
 	int m_00[3];

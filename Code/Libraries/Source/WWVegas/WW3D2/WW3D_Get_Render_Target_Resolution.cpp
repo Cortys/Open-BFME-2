@@ -52,7 +52,8 @@ public:
 	virtual long __stdcall bfmeGetModeInfo(BfmeDisplayModeInfo *info) = 0; // +0x30
 };
 
-extern BfmeRenderDevice *TheBfmeRenderDevice; // 0x00DEDA38
+// TheBfmeRenderDevice: matched references place it at VA 0xdeda38 (retail .data initial value 0).
+BfmeRenderDevice * TheBfmeRenderDevice = 0;
 
 extern Int BfmeRenderWidth; // 0x00DB5FD4
 extern Int BfmeRenderHeight; // 0x00DB5FD8

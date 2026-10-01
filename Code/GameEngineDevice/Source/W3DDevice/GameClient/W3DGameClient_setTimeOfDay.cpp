@@ -18,7 +18,8 @@ enum TimeOfDay
 extern void *W3DGCData00DE2000;
 // W3DGCData00DE2000: matched references place it at VA 0xde2000 (zero-filled .bss).
 void * W3DGCData00DE2000;
-extern void *W3DGCData00DE5DFC;
+// W3DGCData00DE5DFC: matched references place it at VA 0xde5dfc (retail .data initial value 0).
+void * W3DGCData00DE5DFC = 0;
 extern void *W3DGCData00DFE9D8;
 
 #include "vector3.h"

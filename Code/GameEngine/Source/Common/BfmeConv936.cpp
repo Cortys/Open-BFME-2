@@ -31,7 +31,8 @@ public:
 	void bfmeInit936G(void);
 };
 
-extern void *g_bfme936GlobG;
+// g_bfme936GlobG: matched references place it at VA 0xddeba0 (retail .data initial value 0).
+void * g_bfme936GlobG = 0;
 
 // ?bfmeGo936G@BfmeThing936G@@QAEPAV1@XZ, retail 0x00016AA0 (21B).
 BfmeThing936G *BfmeThing936G::bfmeGo936G(void)

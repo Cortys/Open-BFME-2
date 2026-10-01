@@ -138,7 +138,8 @@ public:
 	virtual MapHolder *getMap();
 };
 
-extern MapProvider *g_00A02320;
+// g_00A02320: matched references place it at VA 0xe02320 (retail .data initial value 0).
+MapProvider * g_00A02320 = 0;
 
 struct Outer58
 {

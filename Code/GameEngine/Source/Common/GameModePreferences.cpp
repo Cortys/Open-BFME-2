@@ -213,7 +213,8 @@ struct Rva00A022F4
 	int m_40;
 };
 
-extern Rva00A022F4 *g_00A022F4;
+// g_00A022F4: matched references place it at VA 0xe022f4 (retail .data initial value 0).
+Rva00A022F4 * g_00A022F4 = 0;
 
 // ?rva0044D836@GameModePreferences@@QAEHXZ @0x0044D836 (86B): Color getter
 // over the mode-keyed map with -1 for missing or out of range plus lazy

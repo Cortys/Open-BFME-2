@@ -103,7 +103,8 @@ struct UnknownE03138
 	virtual void u17();
 	virtual bool u18();
 };
-extern UnknownE03138 *g_00E03138;
+// g_00E03138: matched references place it at VA 0xe03138 (retail .data initial value 0).
+UnknownE03138 * g_00E03138 = 0;
 class InGameUI
 {
 public:

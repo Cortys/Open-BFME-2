@@ -14,7 +14,8 @@ public:
 	virtual void *allocate(unsigned int bytes, void *metadata);
 };
 
-extern BfmeAllocGlobal *g_bfmeAllocGlobal;
+// g_bfmeAllocGlobal: matched references place it at VA 0xdfda54 (retail .data initial value 0).
+BfmeAllocGlobal * g_bfmeAllocGlobal = 0;
 
 namespace _STL
 {

@@ -26,7 +26,8 @@ public:
 	virtual void FreeEntry(void *p);
 };
 
-extern DisplayManager *g_009FEAD8;
+// g_009FEAD8: matched references place it at VA 0xdfead8 (retail .data initial value 0).
+DisplayManager * g_009FEAD8 = 0;
 
 template <typename T> class StringBase
 {
