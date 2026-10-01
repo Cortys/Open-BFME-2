@@ -45290,3 +45290,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0028F4EF@Object@@QAEHXZ,,0x0028F4EF,41,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028F4EF.cpp,matched,Object KindOf 0x222 then 0x223 tri-state via rowed isKindOf
 ?rva001F416C@Rva001F416C@@QAEXPAUNode001F416C@@H@Z,,0x001F416C,67,Code/GameEngine/Source/Common/Rva001F416CInsert.cpp,matched,unlock lane mirrors unlink 0x001F4882 offsets plus ret8 shape
 ?rva0058E511@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E511,106,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E511.cpp,matched,unlock lane NetPacket static factory via new-memcpy-setter
+?rva0035B29E@Rva0035B29E@@QAEPBVAsciiString@@H@Z,,0x0035B29E,37,Code/GameEngine/Source/Common/Rva0035B29EGetter.cpp,matched,unlock lane sar-2 AsciiString list getter
