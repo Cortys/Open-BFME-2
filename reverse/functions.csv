@@ -45287,3 +45287,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva005F066CSet@@YAXHPAURva005F066COuter@@ABVUnicodeString@@@Z,,0x005F066C,103,Code/GameEngine/Source/Common/Rva005F066CBuildingName.cpp,matched,APT BuildingName via 0x00038150 caller 0x005F0C54 precedent Rva005FDF1C
 ??0Rva0028F5C6@@QAE@HHHHH@Z,,0x0028F5C6,109,Code/GameEngine/Source/Common/System/Rva0028F5C6BitSet.cpp,matched,twin of Rva0028F59A one-bit ctor with four bits via memset thunk
 ?rva0028F808@Rva0028F808@@QAEXPAUIface0028F808@@@Z,,0x0028F808,97,Code/GameEngine/Source/Common/System/Rva0028F808BitSet.cpp,matched,104-bit bitset to 13-byte array via memset then slot 0x24
+?rva0028F4EF@Object@@QAEHXZ,,0x0028F4EF,41,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028F4EF.cpp,matched,Object KindOf 0x222 then 0x223 tri-state via rowed isKindOf
