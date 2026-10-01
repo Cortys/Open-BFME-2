@@ -22,9 +22,9 @@ struct Buf0C
 	void *m_ptr;
 };
 
-struct RefHolder
+struct Rva57E3DBRefHolder
 {
-	~RefHolder() { if (m_ptr) ReleaseTreeHintRef00217D4C(m_ptr); }
+	~Rva57E3DBRefHolder() { if (m_ptr) ReleaseTreeHintRef00217D4C(m_ptr); }
 	struct TargetRef00217D4C *m_ptr;
 };
 
@@ -50,11 +50,11 @@ private:
 	int m_08; // +0x08
 	struct Buf0C m_0C; // +0x0C, dtor frees via free
 	char m_pad10[8]; // +0x10..+0x17
-	struct RefHolder m_18; // +0x18, dtor releases
+	struct Rva57E3DBRefHolder m_18; // +0x18, dtor releases
 	char m_pad1C[72]; // +0x1C..+0x63
 	class MapMetaData *m_64; // +0x64, body deletes
 	char m_pad68[4]; // +0x68..+0x6B
-	struct RefHolder m_6C; // +0x6C, dtor releases
+	struct Rva57E3DBRefHolder m_6C; // +0x6C, dtor releases
 };
 
 Rva0057E3DB::~Rva0057E3DB()
