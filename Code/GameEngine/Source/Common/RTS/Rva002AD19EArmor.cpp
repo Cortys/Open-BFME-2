@@ -18,7 +18,7 @@ namespace rts
 {
 	template<class T> struct hash
 	{
-		unsigned int operator()(const T &x) const { return (unsigned int)x; }
+		unsigned int operator()(const T &x) const;
 	};
 }
 typedef std::hash_map<NameKeyType, ArmorTemplate, rts::hash<NameKeyType>, std::equal_to<NameKeyType> > ArmorTemplateMap;
