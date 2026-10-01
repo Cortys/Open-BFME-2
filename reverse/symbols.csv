@@ -6721,3 +6721,5 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?rva00362192@Rva003623E5Member@@QAEXVRva00045411BitSet@@VBfmeFixedStorage0004543D@@@Z,0x00362192,method of the Rva003623E5Member filter record (sibling of the pinned initFromStorages 0x00362087): called on that member by the GarrisonContain 0x0047978F TunnelContain 0x0025797E and Castle 0x0039A14A data ctors with two flag sets by value
 ?setEffectivelyDead@Object@@QAEX_N@Z,0x0028D2FB,called on getObject() with true by the InactiveBody ctor 0x004BD8BD as in the ZH InactiveBody.cpp body; tests and sets the private-status bit at Object+0x438 by its Bool argument; 13 callers
 ??1Rva0022167C@@QAE@XZ,0x0022167C,address read from the REL32 displacement at byte-matched body 0x005CB3BE; 14B dtor storing vtable 0x00BE6BA8 then tail-jumping to 0x0022161B
+??1Rva005B804B@@QAE@XZ,0x005B804B,address read from the unwind funclet of byte-matched body 0x00229811
+??0BfmeSubobject0022CE19@@QAE@XZ,0x002DD173,address read from the REL32 displacement at byte-matched body 0x00229811
