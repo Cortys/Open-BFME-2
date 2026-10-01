@@ -11,6 +11,7 @@ struct RvaCleanupNode
     RvaCleanupNode *next;
 };
 extern RvaCleanupNode *g_chainHeadAtE07C08;
+extern RvaCleanupNode *g_chainHeadAtE1D060;
 
 void rva007B9A50()
 {
@@ -18,5 +19,16 @@ void rva007B9A50()
         RvaCleanupNode *next = g_chainHeadAtE07C08->next;
         free(g_chainHeadAtE07C08);
         g_chainHeadAtE07C08 = next;
+    }
+}
+
+// Independently proven 40B boundary at 0x007B9C80 and atexit registration
+// at 0x007B67F0. This is a second list, with its own global at VA E1D060.
+void rva007B9C80()
+{
+    while (g_chainHeadAtE1D060) {
+        RvaCleanupNode *next = g_chainHeadAtE1D060->next;
+        free(g_chainHeadAtE1D060);
+        g_chainHeadAtE1D060 = next;
     }
 }
