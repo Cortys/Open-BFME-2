@@ -53,3 +53,10 @@ void rva007B5299()
     }
     atexit(rva007B99FB);
 }
+
+extern Rva005E16DA g_rva00E06918;
+// Callback7B9A0F..7B9A18 registered by startup7B5343.
+void rva007B9A0F()
+{
+    g_rva00E06918.~Rva005E16DA();
+}
