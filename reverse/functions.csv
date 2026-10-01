@@ -46373,3 +46373,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva003AE465@@QAE@ABV0@@Z,,0x003AE465,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,ParticleTerrainCollisionModuleInfo copy calls rowed base 0x003AF50D plus own vptrs
 ??0Rva003AE43F@@QAE@ABV0@@Z,,0x003AE43F,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE465 plus own 3 vptrs
 ??0Rva003AE50B@@QAE@ABV0@@Z,,0x003AE50B,45,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,copy calls rowed base 0x003AF50D plus own 3 vptrs
+??0Rva003AE4E5@@QAE@ABV0@@Z,,0x003AE4E5,38,Code/GameEngine/Source/GameClient/System/FXParticleSystem/ParticleModuleInfoCopyCtors.cpp,matched,derived copy calls rowed 0x003AE50B plus own 3 vptrs

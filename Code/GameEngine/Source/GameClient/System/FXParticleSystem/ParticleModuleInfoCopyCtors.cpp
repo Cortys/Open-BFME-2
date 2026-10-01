@@ -378,3 +378,18 @@ Rva003AE50B::Rva003AE50B(const Rva003AE50B &other)
 	: Rva003AF50D(other)
 {
 }
+
+// ??0Rva003AE4E5@@QAE@ABV0@@Z @0x003AE4E5 38B: derived copy calling rowed 0x003AE50B then own 3 vptrs.
+// Evidence: calls 0x003AE50B then stores at +0/+0x14/+0x18 DIR32; primary 0x00C1CC58 second 0x00C1CC54 third 0x00C1C378; unlocks 0x003AE4AE.
+// ??0Rva003AE4E5@@QAE@ABV0@@Z @0x003AE4E5 present-unmatched
+class Rva003AE4E5 : public Rva003AE50B
+{
+public:
+	Rva003AE4E5(const Rva003AE4E5 &other);
+	virtual ~Rva003AE4E5();
+};
+
+Rva003AE4E5::Rva003AE4E5(const Rva003AE4E5 &other)
+	: Rva003AE50B(other)
+{
+}
