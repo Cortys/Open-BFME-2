@@ -46591,3 +46591,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0036658B@Rva0036658B@@QAE_NPAX0@Z,,0x0036658B,48,Code/GameEngine/Source/Common/Rva0036658B.cpp,matched,two-dword empty check plus init via Rva0036666B sibling
 ?rva003665BB@Rva003665BB@@QAEXPAX@Z,,0x003665BB,16,Code/GameEngine/Source/Common/Rva003665BB.cpp,matched,link old head at +0x38 into arg +0x3c via sibling layout
 ?rva0036617B@Rva0036617B@@QAEXW4ScienceType@@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x0036617B,129,Code/GameEngine/Source/GameLogic/AI/Rva0036617B.cpp,matched,search list via +8 for +0x20==st then push range filtering 0x7fffffff slot reuse st as push temp float at +0x14 via movss caller 0x1E7542
+?Rva002D76C6Remove@@YG_NPAURva002D76C6Owner@@PAPAURva002D76C6Node@@@Z,,0x002D76C6,78,Code/GameEngine/Source/Common/Rva002D76C6Remove.cpp,matched,unlink owner node then virtual delete with caller 0x002D7714 lists

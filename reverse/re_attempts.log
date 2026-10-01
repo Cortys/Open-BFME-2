@@ -5166,3 +5166,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0036667B@Rva0036667B@@QAEXH@Z	0x0036667B	75	partial	value in eax not esi offset in edx not eax pushes late 76 vs 75B t=15 model=muse-03 score=0.93 stash=reverse/attempts/0x0036667b.cpp
 ?rva00366561@Rva00366561@@QAE_NHH@Z	0x00366561	42	partial	store order [34] before [30] and edx reuse for second arg vs eax with [34] last t=20 model=muse-03 score=0.92 stash=reverse/attempts/0x00366561.cpp
 ?rva00366B77@Rva00366B30@@QAEXXZ	0x00366B77	371	blocked	complex float quad with 4 trigger walks frame 0x4c vs 0x38 extra struct copy and xmm live range t=15 model=muse-03
+?Rva0060186FCopy@@YAPAVCoord3D@@PBV1@0PAV1@@Z	0x0060186F	29	blocked	passes 5 args to 3-arg rowed 0x00601797 and takes 4 from caller 0x0060194C so arity needs fix t=10 model=muse-18
