@@ -99,10 +99,10 @@ public:
 	bool rva006D36F0(const EAStringC *other) const;
 };
 
-// Retail empty singleton at 0x00DDC020. The linker never sees this TU's
-// reloc target; DIR32 sites auto-patch from retail at verify time, the
-// same idiom as g_pChainBlockAllocator above.
-extern EAStringC::StringDataC g_eaEmptyStringData; // 0x00DDC020
+// Retail empty singleton at VA 0x00DDC020: the eight-byte StringDataC header
+// is { refCount=0x0101, size=0, maxSize=0, hash=0 } in game.dat. Callers use
+// this object as the immortal empty-string sentinel.
+EAStringC::StringDataC g_eaEmptyStringData = { 0x0101, 0, 0, 0 };
 
 // ?FreeData@EAStringC@@SAXPAVStringDataC@1@@Z
 void EAStringC::FreeData(StringDataC *data)
