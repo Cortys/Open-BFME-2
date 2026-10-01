@@ -259,11 +259,7 @@ MeshGeometryClass::MeshGeometryClass(void) :
  * HISTORY:                                                                                    *
  *   11/9/2000  gth : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshGeometryClass::~MeshGeometryClass present-unmatched
-MeshGeometryClass::~MeshGeometryClass(void)
-{
-	Reset_Geometry(0,0);
-}
+// ~MeshGeometryClass is owned by MeshGeometryClassBaseDestructor.cpp; declared in meshgeometry.h.
 
 
 /***********************************************************************************************
@@ -1034,39 +1030,7 @@ bool MeshGeometryClass::cast_aabox_z270(AABoxCollisionTestClass & boxtest, const
  * HISTORY:                                                                                    *
  *   3/1/2001  NH : Created.                                                                   *
  *=============================================================================================*/
-// ?MeshGeometryClass::intersect_obbox_brute_force present-unmatched
-bool MeshGeometryClass::intersect_obbox_brute_force(OBBoxIntersectionTestClass & localtest)
-{
-	TriClass tri;
-	const Vector3 * loc = Get_Vertex_Array();
-	const TriIndex * polyverts = Get_Polygon_Array();
-#ifndef COMPUTE_NORMALS
-	const Vector4 * norms = Get_Plane_Array();
-#endif
-
-	/*
-	** Loop over each polygon
-	*/
-	for (int srtri=0; srtri < Get_Polygon_Count(); srtri++) {
-	
-		tri.V[0] = &(loc[ polyverts[srtri][0] ]);
-		tri.V[1] = &(loc[ polyverts[srtri][1] ]);
-		tri.V[2] = &(loc[ polyverts[srtri][2] ]);
-
-#ifdef COMPUTE_NORMALS					
-		static Vector3 _normal;
-		tri.N = &_normal;
-		tri.Compute_Normal();
-#else
-		tri.N = (Vector3 *)&(norms[srtri]);
-#endif
-		
-		if (CollisionMath::Intersection_Test(localtest.Box, tri)) {
-			return true;
-		}
-	}
-	return false;
-}
+// intersect_obbox_brute_force is owned by MeshGeometryClass_Intersect_OBBox_BruteForce.cpp; declared in meshgeometry.h.
 
 
 /***********************************************************************************************
@@ -1486,22 +1450,7 @@ const Vector3 * MeshGeometryClass::Get_Vertex_Normal_Array(void)
  * HISTORY:                                                                                    *
  *   6/14/2001  gth : Created.                                                                 *
  *=============================================================================================*/
-// ?MeshGeometryClass::get_planes present-unmatched
-Vector4 * MeshGeometryClass::get_planes(bool create)
-{
-#if (OPTIMIZE_PLANEEQ_RAM)
-	_PlaneEQArray.Uninitialised_Grow(PolyCount);
-	return &(_PlaneEQArray[0]);
-#else
-	if (create && !PlaneEq) {
-		PlaneEq = NEW_REF(ShareBufferClass<Vector4>,(PolyCount, "MeshGeometryClass::PlaneEq"));
-	}
-	if (PlaneEq) {
-		return PlaneEq->Get_Array();
-	}
-	return NULL;
-#endif
-}
+// get_planes is owned by MeshGeometryClassGetPlanes.cpp; declared in meshgeometry.h.
 
 
 /***********************************************************************************************
