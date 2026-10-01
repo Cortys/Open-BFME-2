@@ -46006,3 +46006,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva006D54B0@EAStringC@@QAEHHH@Z,,0x006D54B0,200,Code/Libraries/Source/EA/Apt/AptString/EAStringCRemoveRange.cpp,matched,BFME1 RemoveRange donor retail shape and rows
 ?rva001F4D76@Rva001F4D76@@QAEMXZ,,0x001F4D76,39,Code/GameEngine/Source/Common/Rva001F4D76.cpp,matched,leaf float getter holder+9c slot6 default 1.0f
 ?rva001F4D9D@Rva001F4D9D@@QAEMXZ,,0x001F4D9D,39,Code/GameEngine/Source/Common/Rva001F4D9D.cpp,matched,leaf float getter holder+9c slot7 default 1.0f
+?rva001F4DE6@Rva001F4DE6@@QAEHXZ,,0x001F4DE6,19,Code/GameEngine/Source/Common/Rva001F4DE6.cpp,matched,leaf int getter holder+9c slot10 default 1
