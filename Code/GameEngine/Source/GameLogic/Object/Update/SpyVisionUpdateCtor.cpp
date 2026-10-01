@@ -14,11 +14,6 @@ protected:
 	unsigned char m_pad[0xC8 - 4];
 };
 
-// ??1Rva0044EB54@@ present-unmatched
-Rva0044EB54::~Rva0044EB54()
-{
-}
-
 // SpyVisionUpdate_vftable: matched references place it at VA 0xc5f778 (retail .rdata value 56).
 extern "C" char SpyVisionUpdate_vftable = 56;
 
