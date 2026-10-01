@@ -5182,3 +5182,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00051107@Rva00051107@@QAEPAV increasingly complex placeholder	0x00051107	50	blocked	EH prolog handler 0x0075E020 unclaimed so mov eax imm cannot byte match plus operator new plus ctor needs handler row t=5 model=muse-04
 ??0Rva005C1980@@QAE@XZ	0x005C1926	62	blocked	EH prolog handler 0x007A04D4 unclaimed so mov eax imm cannot match plus vtable plus empty string plus ctor t=5 model=muse-04
 ?rva0026717B@Rva0026717B@@QAEXXZ	0x0026717B	235	blocked	static dir atexit plus SSE dot regalloc plus frameless wall t=18 agent=muse-11
+?Rva003BB05FSet@@YGXHMMMH@Z	0x003BB05F	104	partial	xmm allocation scale in xmm3 vs xmm0 and products in xmm0 xmm1 xmm2 vs reuse xmm1 t=25 model=muse-09 score=0.93 stash=reverse/attempts/0x003bb05f.cpp
+?Rva003BB0C7Set@@YGXHMHMMMH@Z	0x003BB0C7	122	partial	xmm allocation scale in xmm4 vs xmm0 and sequential reuse vs early loads t=20 model=muse-09 score=0.94 stash=reverse/attempts/0x003bb0c7.cpp
+?Rva003BB7FESet@@YGXH_N@Z	0x003BB7FE	154	partial	call sharing push7 jumps to shared s45 call and jne vs je polarity for s46 t=30 model=muse-09 score=0.95 stash=reverse/attempts/0x003bb7fe.cpp
