@@ -151,6 +151,13 @@ QuickMatchPreferences::QuickMatchPreferences()
 	load(userPrefFilename);
 }
 
+// ??1QuickMatchPreferences@@UAE@XZ @0x5DF17C
+// Vtable 0xC776DC slot 0 is the deleting dtor 0x5DF187, which calls this:
+// store the vtable and tail-call ~UserPreferences.
+QuickMatchPreferences::~QuickMatchPreferences()
+{
+}
+
 void QuickMatchPreferences::setColor(Int val)
 {
 	setInt("Color", val);
@@ -177,6 +184,12 @@ GameSpyMiscPreferences::GameSpyMiscPreferences()
 	AsciiString userPrefFilename;
 	userPrefFilename.format("%s\\GSMiscPref%d.ini", "Online Files", TheGameSpyInfo->getLocalProfileID());
 	load(userPrefFilename);
+}
+
+// ??1GameSpyMiscPreferences@@UAE@XZ @0x5596EA
+// Vtable 0xC6B3AC slot 0 is the deleting dtor 0x5596F5, which calls this.
+GameSpyMiscPreferences::~GameSpyMiscPreferences()
+{
 }
 
 int GameSpyMiscPreferences::rva00559782()

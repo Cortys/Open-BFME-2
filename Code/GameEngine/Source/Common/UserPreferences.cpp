@@ -421,6 +421,14 @@ IgnorePreferences::IgnorePreferences()
 	load(userPrefFilename);
 }
 
+// ??1IgnorePreferences@@UAE@XZ @0x3B1FD4
+// Vtable 0xC1EF40 (stored by the constructor above) slot 0 is the deleting
+// dtor 0x3B2231, which calls this: store the vtable, tail-call
+// ~UserPreferences.
+IgnorePreferences::~IgnorePreferences()
+{
+}
+
 // ?deleteFileInGlobalDataDir@@YA_NABVUnicodeString@@@Z @0x3B1C89
 // Removes a file from the user-data directory: the leaf is appended to
 // the GlobalData directory and unlinked. True when _wunlink succeeds.
