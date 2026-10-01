@@ -31,12 +31,6 @@
 
 typedef unsigned int uint32;
 
-class BFMEPoolCriticalSection
-{
-public:
-	void Lock();
-};
-
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/dx8renderer.h
 class MatPassTaskClass
 {
@@ -66,10 +60,11 @@ public:
 	class LockClass
 	{
 		FastCriticalSectionClass& cs;
+		static void __fastcall spin(unsigned *flag);
 	public:
-		LockClass(FastCriticalSectionClass& critical_section) : cs(critical_section)
+		__forceinline LockClass(FastCriticalSectionClass& critical_section) : cs(critical_section)
 		{
-			((BFMEPoolCriticalSection *)&cs.Flag)->Lock();
+			spin(&cs.Flag);
 		}
 
 		~LockClass()
