@@ -42,4 +42,10 @@ void *__cdecl __malloc_alloc<Instance>::_S_oom_malloc(unsigned int bytes)
 }
 
 template void *__malloc_alloc<0>::_S_oom_malloc(unsigned int);
+
+// The handler slot: _S_oom_malloc's matched DIR32 read at +0x7 resolves to VA
+// 0x00DDF4CC in the .data zero-fill tail, so retail starts it null.
+template <int Instance>
+__oom_handler_type __malloc_alloc<Instance>::__oom_handler = 0;
+template __oom_handler_type __malloc_alloc<0>::__oom_handler;
 }
