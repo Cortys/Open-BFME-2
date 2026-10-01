@@ -586,6 +586,21 @@ int Rva0002C9C2::write(char *dst)
 	return n + m_second.write(dst + n);
 }
 
+// ?write@Rva0020F58E@@QAEHPAD@Z @0x0020F58E 37B narrow concat node PlusText plus Ref via rowed writes 0xBBD41 plus 0x2C5B1.
+// Evidence: unlock lane every callee rowed; callers 0x0020F741 0x00238C3E; same 37B shape as Rva0002C9C2.
+struct Rva0020F58E
+{
+	AsciiStringPlusText m_first;
+	AsciiStringRef m_second;
+	int write(char *dst);
+};
+
+int Rva0020F58E::write(char *dst)
+{
+	int n = m_first.write(dst);
+	return n + m_second.write(dst + n);
+}
+
 // ??BWinMainTitlePair@@QAE?AVAsciiString@@XZ @0x0010BA9F 101B
 // Narrow materializer for the double-pair title segment rowed at 0x00109D3A:
 // sizes via both pair lengths then fills through that write; callers at

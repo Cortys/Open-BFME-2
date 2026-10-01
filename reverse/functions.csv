@@ -45470,3 +45470,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005F6941@@QAE@XZ,,0x005F6924,29,Code/GameEngine/Source/Common/Rva005F6941Ctor.cpp,matched,ctor stores vtable plus zeroes to plus 0x18 via init list next dtor 0x005F6941
 ?rva0020FD7F@Rva0020FD7F@@QAEXPAURva0020FD7FFilter@@PAV?$vector@PBVModuleData@@V?$allocator@PBVModuleData@@@_STL@@@_STL@@@Z,,0x0020FD7F,96,Code/GameEngine/Source/Common/RTS/Rva0020FD7FFilter.cpp,matched,voidptr erase plus ModuleData filter via holder vector
 ?Rva0020F569Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0020F569,37,Code/GameEngine/Source/Common/RTS/Rva0020F569Alloc.cpp,matched,hashtable node alloc via rowed allocate plus Construct
+?write@Rva0020F58E@@QAEHPAD@Z,,0x0020F58E,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref concat write via rowed writes
