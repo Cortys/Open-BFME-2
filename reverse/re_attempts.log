@@ -5094,3 +5094,4 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva00290357@Object@@QAEXXZ	0x00290357	108	blocked	lea-eax-for-14e-vs-direct-mem-only-diff-tried-no-barrier-volatile-O2-pointer-alias t=15 model=muse-11 (stash 0.93 kept)
 ?rva0029041B@Object@@QAEXPAVPlayer@@@Z	0x0029041B	123	blocked	mov-shr-test-al-1-vs-test-byte-mem-for-186-301-tried-test-locals-volatile-O2 t=18 model=muse-11 (stash 0.93 kept)
 ?Rva001C5D20Find@@YAXPAURva001C5D20Ctx@@HHEPAH@Z	0x001C5D20	265	blocked	complex-codec-265B-prologue-register-wall-no-progress t=12 model=muse-11
+?rva003AFA0B@Rva003AFA0B@@QAEXPAVCoord3D@@PAX0M1@Z	0x003AFA0B	89	blocked	xmm rotation yzx vs xyz 9 mem operands size-exact 25ins t=3 model=muse-06 (stash 0.9 kept)
