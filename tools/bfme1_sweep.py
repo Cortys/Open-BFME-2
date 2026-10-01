@@ -986,6 +986,12 @@ def load_matches():
     return json.loads(MATCH_JSON.read_text(encoding="utf-8"))
 
 
+def position_independent(record, call):
+    """True when a decoded rel32 reaches the same offset from the body in both images."""
+    return (call["bfme1_target"] - record["bfme1_rva"]
+            == call["bfme2_target"] - record["bfme2_rva"])
+
+
 def body_tier(record, claims, pins):
     """T1 drop-in, T2 needs pins, T3 the name is an ICF guess, T4 do not serve.
 
@@ -1008,7 +1014,15 @@ def body_tier(record, claims, pins):
     # Resolution is re-decided here rather than trusted from the scan: pins and
     # rows land continuously, and a four-minute scan would otherwise keep
     # serving a body as "needs a pin" that somebody already pinned.
-    unnamed = [call for call in record["calls"] if not call["bfme1_names"]]
+    # An unnamed site is evidence against the placement only when its target
+    # moved relative to the body. Open-BFME-1's build makes every real REL32 in
+    # a matched body resolve to a row or pin, so an unnamed one was never a
+    # relocation there: it is an internal `jmp rel32` or an E8/E9 byte inside
+    # another instruction. Its displacement is then identical in both images,
+    # which puts the target at the same offset from the body in each.
+    # _CommUdpProcess (0x00683A30, 2207B) was held here on 28 such jumps.
+    unnamed = [call for call in record["calls"]
+               if not call["bfme1_names"] and not position_independent(record, call)]
     if unnamed:
         reasons.append(f"{len(unnamed)} call site(s) with no name on the BFME1 side")
         return "T4", reasons, []
