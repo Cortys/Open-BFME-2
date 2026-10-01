@@ -45920,3 +45920,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?_M_insert_overflow@?$vector@UBfmeContainerRecord005FDEC7@@V?$allocator@UBfmeContainerRecord005FDEC7@@@_STL@@@_STL@@IAEXPAUBfmeContainerRecord005FDEC7@@ABU3@ABU__false_type@2@I_N@Z,,0x005FE589,183,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_wide_record_5fdec7_insert_overflow.cpp,matched,STLport G7 overflow via rowed clear and dup copy helpers
 ?rva004E624D@Rva004E624D@@QAEXXZ,,0x004E624D,38,Code/GameEngine/Source/Common/Bfme/Rva004E624DMethod.cpp,matched,guarded virtual calls via TheDisplayStringManager
 ?rva004E63E2@Rva004E63E2@@QAEXXZ,,0x004E63E2,26,Code/GameEngine/Source/Common/Bfme/Rva004E63E2Method.cpp,matched,chain clears holder at +0 then guarded cleanup via rowed callees
+?rva004E630C@Rva004E630C@@QAEPAXI@Z,,0x004E630C,28,Code/GameEngine/Source/Common/Bfme/Rva004E630CMethod.cpp,matched,chain calls rowed 0x004E624D then flag-guarded delete returns this
