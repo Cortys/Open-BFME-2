@@ -4817,3 +4817,4 @@ FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 read
 ?onEnter@Rva00342FCD@@UAE?AW4StateReturnType@@XZ	0x0034BCBD	94	partial	fld mem vs fldz plus fucompp fnstsw vs fucompi fstp lahf plus mov al vs xor inc t=25 model=muse-10 score=0.9 stash=reverse/attempts/0x0034bcbd.cpp
 ?rva00288B89@Rva00288B89@@QAEXXZ	0x00288B89	8	blocked	STL List_base pin-only needs donor t=5 model=muse-10
 ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ	0x0044D330	335	partial	map init null-check neg-sbb-and plus early add vs retail add esi 4 late; isEmpty out-of-line call vs retail inline mov-test-cmp-word; test al vs test eax t=25 model=muse-05 score=0.93 stash=reverse/attempts/0x0044d330.cpp
+?rva0029B9E5@ThingTemplate@@QAEHXZ	0x0029B9E5	67	blocked	this-in-eax custom ABI honest thiscall gives lea-ecx not mov-esi-eax plus single-call slot60 vs rowed triple-call t=12 model=muse-07

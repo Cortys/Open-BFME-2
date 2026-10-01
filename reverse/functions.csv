@@ -45793,3 +45793,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva0029B816@@QAE@HH_N00ABVAsciiString@@H0HH@Z,,0x0029B74A,204,Code/GameEngine/Source/GameClient/Rva0029B816Ctor.cpp,matched,ctor vtable 0x7FD028 two newDisplayStrings via 0xDFEAD8 slot 0x38 then setFont
 ?rva0029B1A1@Rva0029B1A1@@QAEXXZ,,0x0029B1A1,11,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder via TheInGameUI to rowed rva004E5803 same shape as 0x0029B17C
 ?rva0029B187@Rva0029B187@@QAEXPAURva004E57E6Pair@@M@Z,,0x0029B187,26,Code/GameEngine/Source/GameClient/Rva0029B17CFwd.cpp,matched,forwarder pair float to rowed rva004E57E6 same 0x7F4 subsystem
+?rva0029BA28@Rva0029BA28@@QAEXH@Z,,0x0029BA28,48,Code/GameEngine/Source/GameClient/Rva0029BA28.cpp,matched,leaf called from 0x0029FEA5 list<int> at +0x18 erase first match
