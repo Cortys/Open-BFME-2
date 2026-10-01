@@ -14,10 +14,13 @@
 // upgrade clears the flag and its condition, otherwise both are set); the
 // condition table is the int array at VA 0x00DCC7C8 indexed by the armor set
 // flag; the condition words start at Object+0x10C with notifier 0x0028AE6D.
-// ArmorUpgrade::rva004B3575, retail 0x004B3575 (184 bytes), slot 8 of the same
-// vtable: the reversal with the same checks (no body module still reaches the
-// end), the flag and condition operations swapped, then the UpgradeModule
-// condition removal 0x004CE4A8 (tail jump). Name by address.
+// ArmorUpgrade::upgradeRemovalImplementation, retail 0x004B3575 (184 bytes),
+// slot 8 of the same vtable: the reversal with the same checks (no body module
+// still reaches the end), the flag and condition operations swapped, then the
+// UpgradeModule condition removal 0x004CE4A8 (tail jump). The slot name is the
+// BFME1 one (GarrisonUpgradeRemovalImplementation.cpp: upgradeRemovalImplementation
+// directly before setUpgradeExecuted, which is BFME2 slot 9, the rowed bool
+// setter UpgradeMux::rva00452354).
 enum ArmorSetType
 {
 	ARMORSET_NONE = 0
@@ -115,12 +118,12 @@ public:
 template <> class ArmorUpgradeMuxSlots<0>
 {
 };
-// UpgradeMux interface at +0x10: slots 0..7 placeholders, slot 8 is the
-// upgrade reversal, slot 10 is upgradeImplementation.
+// UpgradeMux interface at +0x10: slots 0..7 placeholders, slot 8 is
+// upgradeRemovalImplementation, slot 10 is upgradeImplementation.
 class UpgradeMuxIface : public ArmorUpgradeMuxSlots<8>
 {
 protected:
-	virtual void rva004B3575() = 0;
+	virtual void upgradeRemovalImplementation() = 0;
 	virtual void slot09() = 0;
 	virtual void upgradeImplementation() = 0;
 };
@@ -133,7 +136,7 @@ public:
 class ArmorUpgrade : public UpgradeModule
 {
 protected:
-	virtual void rva004B3575();
+	virtual void upgradeRemovalImplementation();
 	virtual void upgradeImplementation();
 };
 void ArmorUpgrade::upgradeImplementation()
@@ -159,7 +162,7 @@ void ArmorUpgrade::upgradeImplementation()
 		object->setModelConditionState(g_Va00DCC7C8[data->m_armorSetFlag]);
 	}
 }
-void ArmorUpgrade::rva004B3575()
+void ArmorUpgrade::upgradeRemovalImplementation()
 {
 	Object *object = m_object;
 	if (!object)
