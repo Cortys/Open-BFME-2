@@ -46355,3 +46355,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003E3F59Check@@YG_NPAVParameter@@00@Z,,0x003E3F59,165,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E3F59.cpp,matched,leaf free ret12 3 Parameter player sum plus op switch
 ?rva00516F63@Rva00516F3F@@QAEPAU1@ABU1@@Z,,0x00516F63,61,Code/GameEngine/Source/Common/Rva00516F3FClear.cpp,matched,copy via clear sibling layout and StringBase set row 0x000366F0
 ?rva001FA80F@Rva001FA80F@@QAEXH@Z,,0x001FA80F,34,Code/GameEngine/Source/Common/Thing/Rva001FA80F.cpp,matched,chain via rowed 0x001FA507 null-checked slot3 plus rowed call
+??0Rva005CC254@@QAE@PAX@Z,,0x005CC254,26,Code/GameEngine/Source/Common/Rva005CC254Ctor.cpp,matched,stores g_00C74E04 at +0 arg at +4 clears +8 sets +0xC
