@@ -77,10 +77,7 @@
 ParticleEmitterLoaderClass	_ParticleEmitterLoader;
 
 //	This array is declared in "W3D_File.H"
-const char *EMITTER_TYPE_NAMES[EMITTER_TYPEID_COUNT] = 
-{
-	"Default"
-};
+extern const char *EMITTER_TYPE_NAMES[EMITTER_TYPEID_COUNT];
 
 
 bool
