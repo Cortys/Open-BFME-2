@@ -12,7 +12,7 @@
 void __cdecl destroyVersionRecords(void *first, void *last);
 namespace _STL
 {
-void __cdecl free(void *memory);
+extern "C" void __cdecl free(void *memory) throw(...);
 }
 // Start of the 0x18-byte record list; the inline destructor frees the
 // buffer, which is why retail carries one unwind state across the

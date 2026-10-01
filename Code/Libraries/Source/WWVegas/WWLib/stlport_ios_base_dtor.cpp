@@ -21,7 +21,7 @@ extern "C" __declspec(dllimport) void __cdecl free(void *block);
 namespace _STL
 {
 
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 
 
 template <class T>

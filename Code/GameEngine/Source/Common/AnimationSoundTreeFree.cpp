@@ -20,7 +20,7 @@ extern "C" void free(void *);
 
 namespace _STL
 {
-void __cdecl free(void *block);
+extern "C" void __cdecl free(void *block) throw(...);
 template <class _Tp> class allocator
 {
 public:
