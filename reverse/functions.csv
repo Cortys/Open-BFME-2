@@ -46627,3 +46627,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??4?$vector@UFileInfoStruct@MixFileCreator@@V?$allocator@UFileInfoStruct@MixFileCreator@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x0006454B,186,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_fileinfo_assign.cpp,matched,vector FileInfoStruct assign via rowed allocate copy destroy and chain callee 0x0021887C
 ??0Rva000647B5@@QAE@XZ,,0x000647B5,25,Code/GameEngine/Source/Common/Rva000647B5Ctor.cpp,matched,empty derived ctor over rowed GODupBase with two vtable stores caller 0x00042036
 ?rva00042036@Rva00042036@@QAEPAVRva000647B5@@XZ,,0x00042036,50,Code/GameEngine/Source/Common/Rva00042036Factory.cpp,matched,factory news 16B Rva via rowed new then rowed ctor chain from 0x000647B5
+?rva00507991@Made002CC5E1@@UAEXPAX0@Z,,0x00507991,94,Code/GameEngine/Source/GameLogic/Object/Made002CC5E1Rva00507991.cpp,matched,vtable slot 5 of 0x00864048 plus 0x00864C38 plus BfmeZeroRange float checks
