@@ -75,7 +75,13 @@ public:
 
 extern GameWindowManager *TheWindowManager;
 
-void GadgetTextEntrySetText(GameWindow *g, UnicodeString text)
+inline void GadgetTextEntrySetText(GameWindow *g, UnicodeString text)
 {
 	TheWindowManager->winSendSystemMsg(g, 0x4030, (WindowMsgData)&text, 0);
 }
+
+// Header inlines that the units including the header emit as select-any
+// copies, which plain definitions here collided with. Taking each one's
+// address keeps this unit's copy for its row; these pointers are not retail
+// data.
+void (*_bfmeInlineAnchor_GadgetTextEntrySetText_0)(GameWindow *g, UnicodeString text) = &GadgetTextEntrySetText;
