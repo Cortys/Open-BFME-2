@@ -3,8 +3,8 @@
 // ?xfer@CrateCollide@@MAEXPAVXfer@@@Z, retail 0x004BC617 64B: slot 3 (offset 0x0C)
 // of vtable 0x0085A618 (class of rowed dtor ??1Rva004BC4FC@@UAE@XZ, the opaque
 // CrateCollide dtor immediately before rowed ctor ??0CrateCollide at 0x004BC523).
-// Version(1,2) via Xfer slot 0x28 then base CollideModule xfer via folded
-// 0x004CE56D then bool at +0x14 via Xfer slot 0x90 gated on version>=2.
+// Version(1,2) via Xfer slot 0x28 then the rowed Rva004CE56D::xfer at
+// 0x004CE56D, then bool at +0x14 via Xfer slot 0x90 gated on version>=2.
 // Layout is the rowed 0x14-byte CollideModule base from CrateCollideConstructor
 // plus bool m_everExecuted at +0x14. Donor is ZH CrateCollide::xfer (Version 1
 // plus CollideModule base); BFME2 adds the bool and bumps to (1,2).
@@ -126,6 +126,12 @@ public:
 	void xfer(Xfer *xfer);
 };
 
+class Rva004CE56D
+{
+public:
+	void xfer(Xfer *xfer);
+};
+
 class CrateCollide : public CollideModule
 {
 public:
@@ -142,7 +148,7 @@ void CrateCollide::xfer(Xfer *xfer)
 {
 	Xfer::Version version(1, 2);
 	*xfer == version;
-	CollideModule::xfer(xfer);
+	((Rva004CE56D *)this)->xfer(xfer);
 	if (version.m_minimum >= 2) {
 		*xfer == m_everExecuted;
 	}
