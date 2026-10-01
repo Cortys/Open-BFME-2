@@ -16,11 +16,6 @@ protected:
 	unsigned char m_pad[0xC8 - 4];
 };
 
-// ??1Rva0044EB54@@ present-unmatched
-Rva0044EB54::~Rva0044EB54()
-{
-}
-
 class StoreObjectsSpecialPowerModuleData : public Rva0044EB54
 {
 public:
