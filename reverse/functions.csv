@@ -45354,3 +45354,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0057E97A@Rva0057E97A@@QAEXXZ,,0x0057E97A,115,Code/GameEngine/Source/Common/Rva0057E97AEnable.cpp,matched,window list toggle via rowed getter and winEnable
 ?getRebuildHoleBehaviorInterfaceFromObject@RebuildHoleBehavior@@SAPAVRebuildHoleBehaviorInterface@@PAVObject@@@Z,,0x004831CB,115,Code/GameEngine/Source/GameLogic/Object/Behavior/RebuildHoleBehaviorGetInterface.cpp,matched,ZH donor plus NameKey tag scan at plus244
 ?rva00483083@PoisonedBehavior@@QAEXXZ,,0x00483083,38,Code/GameEngine/Source/GameLogic/Object/Behavior/PoisonedBehaviorRva00483083.cpp,matched,PoisonedBehavior poison reset via BuildListInfo and Rva00270619Clear
+?Rva00600777Set@@YAXPAD@Z,,0x00600777,46,Code/GameEngine/Source/Common/Rva00600777.cpp,matched,free cdecl copy to TheLangDir plus v8 call
