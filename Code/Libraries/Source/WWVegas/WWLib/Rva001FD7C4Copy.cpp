@@ -16,22 +16,44 @@ struct Rva001FD7C4Node
 	unsigned char m_value[8];
 };
 
-struct Rva001FD7C4
+namespace _STL
 {
-	Rva001FD7C4Node *rva0053444F(Rva001FD7C4Node *x);
+	template <class T1, class T2> struct pair;
+	template <class T> struct _Select1st;
+	template <class T> struct less;
+	template <class T> class allocator;
+	template <class T> struct _Rb_tree_node;
+	template <class Key, class Value, class KeyOfValue, class Compare, class Alloc>
+	class _Rb_tree
+	{
+	protected:
+		typedef _Rb_tree_node<Value> *_Link_type;
+		_Link_type _M_clone_node(_Link_type x);
+	};
+}
+
+typedef _STL::pair<const int, int> Rva001FD7C4Value;
+typedef _STL::_Rb_tree<int, Rva001FD7C4Value,
+	_STL::_Select1st<Rva001FD7C4Value>, _STL::less<int>,
+	_STL::allocator<Rva001FD7C4Value> > Rva001FD7C4Tree;
+
+struct Rva001FD7C4 : Rva001FD7C4Tree
+{
 	Rva001FD7C4Node *rva001FD7C4(Rva001FD7C4Node *x, Rva001FD7C4Node *p);
 };
 
 Rva001FD7C4Node *Rva001FD7C4::rva001FD7C4(Rva001FD7C4Node *x, Rva001FD7C4Node *p)
 {
-	Rva001FD7C4Node *top = rva0053444F(x);
+	Rva001FD7C4Node *top = (Rva001FD7C4Node *)_M_clone_node(
+		(_STL::_Rb_tree_node<Rva001FD7C4Value> *)x);
 	top->m_parent = p;
 	if (x->m_right != 0)
 		top->m_right = rva001FD7C4(x->m_right, top);
 	p = top;
 	x = x->m_left;
 	while (x != 0) {
-		Rva001FD7C4Node *y = rva0053444F(x);
+		Rva001FD7C4Node *y = (Rva001FD7C4Node *)_M_clone_node(
+			(_STL::_Rb_tree_node<Rva001FD7C4Value> *)x);
 		p->m_left = y;
 		y->m_parent = p;
 		if (x->m_right != 0)
