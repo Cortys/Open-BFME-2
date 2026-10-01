@@ -7,6 +7,8 @@ public:
 	unsigned char m_pad[0x1F8];
 	GameWindow *m_next;
 	GameWindow *m_prev;
+	GameWindow *m_parent;
+	GameWindow *m_child;
 };
 struct List24Node
 {
@@ -68,4 +70,21 @@ void Rva002C0A89::rva002C0B92(GameWindow *win)
 		win->m_prev->m_next = win->m_next;
 	else
 		m_head = win->m_next;
+}
+void __stdcall Rva002C0BD7Remove(GameWindow *win)
+{
+	if (win->m_prev) {
+		win->m_prev->m_next = win->m_next;
+		if (win->m_next)
+			win->m_next->m_prev = win->m_prev;
+	} else {
+		if (win->m_next) {
+			win->m_parent->m_child = win->m_next;
+			win->m_next->m_prev = win->m_prev;
+			win->m_next = 0;
+		} else {
+			win->m_parent->m_child = 0;
+		}
+	}
+	win->m_parent = 0;
 }
