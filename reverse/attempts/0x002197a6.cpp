@@ -1,8 +1,17 @@
 // ?rva002197A6@Rva002197A6@@QAEPAVRva002197A6Entry@@H@Z
-// partial score=0.95 date=2026-09-28
+// partial score=0.96 date=2026-10-01
+// ?rva002197A6@Rva002197A6@@QAEPAVRva002197A6Entry@@H@Z retail 0x002197A6 116B:
+// find an entry by id in the 8 GameInfo slots when the game info exists, else
+// in the global vector [0x009FE358,0x009FE35C). Levers measured 2026-10-01:
+// /arch:SSE gives the retail cmove in the vector loop; declaring result before
+// i makes xor esi,esi (i) precede xor edi,edi (result) and reuse esi as the
+// zero for the null test. Left (40 B of diffs, same length): the vector loop
+// registers rotate: retail end->ecx begin->eax element->edx, cl here
+// end->edx begin->ecx element->eax, unchanged by temp-only bodies, pointer
+// locals, count-less compare, branch order or a single return.
 // ?rva002197A6@Rva002197A6@@QAEPAVRva002197A6Entry@@H@Z
 // partial score=0.95 date=2026-09-28
-// cl: /O1 /MD
+// cl: /O1 /MD /arch:SSE
 class Rva002197A6Entry
 {
 public:
@@ -33,8 +42,8 @@ public:
 // ?rva002197A6@Rva002197A6@@QAEPAVRva002197A6Entry@@H@Z present-unmatched
 Rva002197A6Entry *Rva002197A6::rva002197A6(int id)
 {
-    unsigned int i = 0;
     Rva002197A6Entry *result = 0;
+    unsigned int i = 0;
     if (g_Rva00E02EEC != 0) {
         for (; result == 0 && i < 8; ++i) {
             GameSlot *slot = g_Rva00E02EEC->getSlot(i);
@@ -48,10 +57,11 @@ Rva002197A6Entry *Rva002197A6::rva002197A6(int id)
         }
         return result;
     } else {
-        int count = (int)g_Rva009FE35C - (int)g_Rva009FE358;
-        count >>= 2;
-        for (; result == 0 && i < (unsigned int)count; ++i) {
-            Rva002197A6Entry *obj = g_Rva009FE358[i];
+        Rva002197A6Entry **begin = g_Rva009FE358;
+        Rva002197A6Entry **end = g_Rva009FE35C;
+        unsigned int count = (unsigned int)(end - begin);
+        for (; result == 0 && i < count; ++i) {
+            Rva002197A6Entry *obj = begin[i];
             result = (id == obj->m_id) ? obj : result;
         }
         return result;
