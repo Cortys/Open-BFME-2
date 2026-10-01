@@ -45032,3 +45032,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva0053638D@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053638D,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,StructuresKilledRTS slot 0x2C v11 same TU
 ?rva0053641E@UserPreferences@@QAEXVAsciiString@@H@Z,,0x0053641E,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UnitsCreatedRTS slot 0x2C v11 same TU
 ?rva005364AF@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005364AF,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UnitsLostRTS slot 0x2C v11 same TU
+?rva00536540@UserPreferences@@QAEXVAsciiString@@H@Z,,0x00536540,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,UnitsKilledRTS slot 0x2C v11 same TU
