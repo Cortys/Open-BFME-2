@@ -61,7 +61,7 @@ private:
 		int result = send(m_iCommandSocket, command, size, 0);
 		if (result > 0)
 		{
-			OutputDebugStringA((const char *)0x00CE89FC);
+			OutputDebugStringA("-->");
 			OutputDebugStringA(command);
 			return FTP_SUCCEEDED;
 		}
@@ -73,7 +73,7 @@ private:
 		int result = send(m_iCommandSocket, command, size, 0);
 		if (result > 0)
 		{
-			OutputDebugStringA((const char *)0x00CE89FC);
+			OutputDebugStringA("-->");
 			OutputDebugStringA(command);
 			return FTP_SUCCEEDED;
 		}
