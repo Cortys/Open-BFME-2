@@ -7,6 +7,9 @@
 // The constructor's existing int declaration is a one-word ABI view. Retail
 // passes the ADDRESS of an AsciiString temporary, not an integer identifier.
 
+#include "ascii_string.h"
+extern "C" int __cdecl atexit(void (__cdecl *callback)());
+
 class Rva005E16DA {
 public:
     Rva005E16DA(int argumentWord);
@@ -20,4 +23,15 @@ extern Rva005E16DA g_rva00E06900;
 void rva007B9A05()
 {
     g_rva00E06900.~Rva005E16DA();
+}
+
+void rva007B52E6()
+{
+    {
+        AsciiString label("UpgradeUnitButton");
+        // MSVC's explicit constructor invocation also backs the shared
+        // AsciiString adapter. This is static storage, with no allocation.
+        g_rva00E06900.Rva005E16DA::Rva005E16DA(reinterpret_cast<int>(&label));
+    }
+    atexit(rva007B9A05);
 }
