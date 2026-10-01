@@ -16,3 +16,6 @@ namespace _STL {
 template <> void _Construct<class CameraMarker, class CameraMarker>(class CameraMarker *, const class CameraMarker &);
 }
 template void _STL::vector<class CameraMarker>::_M_insert_overflow(class CameraMarker *, const class CameraMarker &, const _STL::__false_type &, unsigned int, bool);
+// ?push_back@?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@QAEXABVCameraMarker@@@Z @0x000D068F 55B
+// Evidence: vector<CameraMarker> push_back fast Construct plus overflow 0xD05C1 slow path; caller 0xD06C6 unblocks 0xD06C6.
+template void _STL::vector<class CameraMarker>::push_back(const class CameraMarker &);
