@@ -104,15 +104,4 @@ MaxHealthUpgrade::MaxHealthUpgrade(
 {
 }
 
-// ??0MaxHealthUpgradeModuleData@@QAE@XZ
-MaxHealthUpgradeModuleData::MaxHealthUpgradeModuleData()
-{
-	UpgradeModuleDataSub *sub =
-		(UpgradeModuleDataSub *)((char *)this + 8);
-	sub->UpgradeModuleDataSub::UpgradeModuleDataSub();
-	m_70 = 0;
-	m_74 = 0;
-	MaxHealthUpgradeModuleDataVtbl *v =
-		(MaxHealthUpgradeModuleDataVtbl *)this;
-	v->MaxHealthUpgradeModuleDataVtbl::MaxHealthUpgradeModuleDataVtbl();
-}
+// ??0MaxHealthUpgradeModuleData@@QAE@XZ owned by MaxHealthUpgradeModuleDataCtor.cpp; declared in-class above.
