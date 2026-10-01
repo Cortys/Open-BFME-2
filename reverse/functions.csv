@@ -45733,3 +45733,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva0020479E@@QAE@XZ,,0x0020479E,43,Code/GameEngine/Source/Common/Rva0020479ECtor.cpp,matched,vtable ctor with zeroed fields and a 0/-1/0/-1 sub-object block; member sub-object ctor gives the retail store order and fixes the banked partial
 ??1Rva00574499@@QAE@XZ,,0x00574499,68,Code/GameEngine/Source/Common/Rva00574499Dtor.cpp,matched,dtor two strings via release plus base via pin caller deleting dtor sibling precedent
 ??_GRva00574499@@QAEPAXI@Z,,0x00574B4C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00574499.cpp,matched,chain deleting dtor via rowed dtor plus delete sibling precedent
+??0Rva005746AF@@QAE@H@Z,,0x005746AF,35,Code/GameEngine/Source/Common/Rva005746AFCtor.cpp,matched,ctor vtable plus arg plus timeGetTime plus zero via barrier
