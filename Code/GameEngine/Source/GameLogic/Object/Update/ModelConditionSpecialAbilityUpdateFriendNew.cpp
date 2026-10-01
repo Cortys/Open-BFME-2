@@ -6,6 +6,10 @@
 // "ModelConditionSpecialAbilityUpdate" literal ModuleFactory registers alongside this stub.
 // Recipe: RainOfFireUpdateFriendNew.cpp.
 
+// The matched ctor at 0x490D3F calls the SpecialAbilityUpdate base at 0x44EF5E;
+// the adjacent pool-key body at 0x490D96 independently names this module.
+#pragma comment(linker, "/alternatename:??0ModelConditionSpecialAbilityUpdate@@QAE@PAVThing@@PBVModuleData@@@Z=??0Rva00490D3F@@QAE@PAVThing@@PBVModuleData@@@Z")
+
 class Thing;
 class ModuleData;
 class Module;
