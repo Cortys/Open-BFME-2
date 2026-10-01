@@ -4663,3 +4663,6 @@ FUN_004a273f	0x000A273F	254	blocked	drawHiliteBar guess exact size 254B but prol
 ?rva004DE700@ObjectSMCHelper@@QAEHXZ	0x004DE700	77	partial	76B exact count 0 reg only missing push-pop plus cmovb-vs-branch t=30 model=muse-19 score=0.95 stash=reverse/attempts/0x004de700.cpp
 ??0Rva001525FB@@QAE@XZ	0x001525FB	66	partial	66v66 20v20 exact size and count 0mem 0reg only vptr store late by 2 insns retail at plus0xb before and-8 ours at plus0x12 after lea tried G7 O1 G6 Os plus 2-int base plus explicit base t=25 model=muse-19 score=0.95 stash=reverse/attempts/0x001525fb.cpp
 FUN_006cced3	0x002CCED3	244	blocked	244B EH Weapon-vs-Texture ownership conflict caller 0x41BAD2 passes Texture this but body calls Weapon computeStatus plus unclaimed scopetable 0x777042 plus 10 callees floats bitset fixedstorage needs donor t=15 model=muse-19
+?Rva0004DE72Blend@@YAXPAHHE@Z	0x0004DE72	253	partial	dst cached in esi vs reload plus reg cascade and stack layout t=25 model=muse-19 score=0.9 stash=reverse/attempts/0x0004de72.cpp
+?rva0042CC1B@Rva0042CC1B@@QAEXXZ	0x0042CC1B	96	blocked	variable memset 4B at 0x3a needs donor t=15 model=muse-19 constant memset folds to single stosd
+?rva00329EE9@Rva00329EE9@@QAE_NXZ	0x00329EE9	86	partial	77v86 same insn count 0mem 5reg missing EH flag stores t=25 model=muse-19 score=0.9 stash=reverse/attempts/0x00329ee9.cpp
