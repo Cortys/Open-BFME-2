@@ -26,8 +26,9 @@ struct RGBColor
 	float blue;
 };
 
-struct INIException
+class INIException
 {
+public:
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;

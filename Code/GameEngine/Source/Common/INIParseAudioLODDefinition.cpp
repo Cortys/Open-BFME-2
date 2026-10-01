@@ -68,8 +68,9 @@ extern GameLODManager *TheGameLODManager;  // defined in GameLOD.cpp
 
 static const FieldParse audioLODFieldParseTable[4] = { { 0 }, { 0 }, { 0 }, { 0 } };
 
-struct INIException
+class INIException
 {
+public:
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;

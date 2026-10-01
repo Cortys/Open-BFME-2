@@ -83,8 +83,9 @@ private:
 
 extern RankInfoStore *TheRankInfoStore;
 
-struct INIException
+class INIException
 {
+public:
 	char *mFailureMessage;
 	int mErrorCode;
 	INIException(int argCount, const char *format, ...);

@@ -21,8 +21,9 @@ private:
 	const char *m_seps;
 };
 
-struct INIException
+class INIException
 {
+public:
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;

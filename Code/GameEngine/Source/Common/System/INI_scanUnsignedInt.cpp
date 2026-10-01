@@ -17,8 +17,9 @@ public:
 	unsigned scanUnsignedInt(const char *token);
 };
 
-struct INIException
+class INIException
 {
+public:
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;

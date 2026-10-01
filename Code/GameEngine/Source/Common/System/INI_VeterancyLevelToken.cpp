@@ -17,8 +17,9 @@ typedef const ConstCharPtr *ConstCharPtrArray;
 
 extern const char *VeterancyLevelNames[21]; ///< retail [0x00DBAA40]
 
-struct INIException
+class INIException
 {
+public:
 	INIException(int argCount, const char *format, ...);
 	char *mFailureMessage;
 	int mErrorCode;
