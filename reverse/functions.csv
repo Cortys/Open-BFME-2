@@ -45931,3 +45931,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0058D70B@NetPacket@@IAEEPAVNetCommandRef@@@Z,,0x0058D70B,60,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058D70B.cpp,matched,unlock NetPacket sibling isRoomForFrameMessage via same layout and flags
 ?rva0058D826@NetPacket@@IAEXHHHHH@Z,,0x0058D826,265,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058D826.cpp,matched,unlock NetPacket append via memcpy and packetLen
 ?rva00589AFF@DockUpdate@@QAEXH@Z,,0x00589AFF,126,Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdateRemove.cpp,matched,DockUpdate remove shifting owners and reached bits
+?rva00589AB1@Rva00589AB1@@QAEXPAX@Z,,0x00589AB1,78,Code/GameEngine/Source/GameLogic/Object/Update/DockUpdate/DockUpdateRva00589AB1.cpp,matched,mark reached bit for arg+0x74 id via rowed bool-vector op
