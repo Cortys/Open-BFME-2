@@ -46460,3 +46460,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00115FF1@W3DBufferManager@@QAEXXZ,,0x00115FF1,92,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DBufferManagerRva00115FF1.cpp,matched,W3DBufferManager DX8 VB IB Release via Slots layout callers 0xF09BF
 ??0Rva00553890@@QAE@II@Z,,0x00553890,42,Code/Libraries/Source/WWVegas/WWLib/Rva00553890.cpp,matched,chain lane base 0x00553395 rowed caller 0x00558D7A unblocks 0x00558D6B
 ?rva005531DD@Rva005531DD@@QAEXPAX@Z,,0x005531DD,45,Code/Libraries/Source/WWVegas/WWLib/Rva005531DD.cpp,matched,unlock lane callee of 0x005532D6 self recursion via free 0x00030830 rowed
+?rva005532D6@Rva005532D6@@QAEXXZ,,0x005532D6,41,Code/Libraries/Source/WWVegas/WWLib/Rva005532D6.cpp,matched,chain lane calls 0x005531DD rowed header self links plus count zero
