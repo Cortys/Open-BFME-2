@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc /Ireference/shims/moduledata
 // stlport
 //
 // ??1CreateObjectDieModuleData@@UAE@XZ, retail 0x00485DDA, 63 bytes.
@@ -13,23 +13,11 @@
 // 0x00C4A988 installed by the ctor. Callers are the slot-0 ??_G at
 // 0x00485E50 and 0x00485EB1 plus the Unwind funclet at 0x0078C022. Donor is
 // BFME1 CreateObjectDieModuleDataCtorThunk.cpp:79 plus CreateObjectDie.cpp:57.
-// Shape follows CivilianSpawnUpdateModuleDataDtor (TU-local Snapshot with
-// inline BBB554-restoring dtor plus novtable derived suppressing the entry
+// Shape follows CivilianSpawnUpdateModuleDataDtor (shared Snapshot base dtor
+// plus novtable derived suppressing the entry
 // store retail lacks plus vector plus string members).
 #include <vector>
-class Xfer;
-class Snapshot
-{
-public:
-	virtual ~Snapshot();
-	virtual void crc(Xfer *xfer);
-	virtual void loadPostProcess();
-	virtual void xfer(Xfer *xfer);
-};
-inline Snapshot::~Snapshot()
-{
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
-}
+#include "Common/Snapshot.h"
 #include "ascii_string.h"
 class __declspec(novtable) CreateObjectDieModuleData : public Snapshot
 {
