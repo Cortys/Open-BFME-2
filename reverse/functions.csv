@@ -46210,3 +46210,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva00090360@@QAE@XZ,,0x00090360,33,Code/GameEngine/Source/Common/Rva00090360Ctor.cpp,matched,ctor calling rowed base plus vtable plus caller
 ?rva002246B1@Rva002246B1@@QAEHPBVAsciiString@@@Z,,0x002246B1,8,Code/GameEngine/Source/GameClient/Rva002246B1.cpp,matched,chain tail-jmp via rowed 0x00223736 table at plus 0x34
 ?rva00224705@Rva00224705@@QAEHPBVAsciiString@@@Z,,0x00224705,11,Code/GameEngine/Source/GameClient/Rva00224705.cpp,matched,chain tail-jmp via rowed 0x00223736 table at plus 0xb8
+?rva007B9C30@@YAXXZ,,0x007B9C30,10,Code/Libraries/Source/EA/Apt/AptString/EAStringCGlobalCleanup.cpp,matched,Ghidra10B boundary and atexit registration at7B676A; EAStringC static object VA E177D4 calls independently matched destructor6D3010; original global name unknown; clean C++ direct destruction
