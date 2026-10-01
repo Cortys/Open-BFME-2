@@ -46639,3 +46639,5 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003BBAD3Set@@YAXXZ,,0x003BBAD3,99,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBAD3.cpp,matched,unlock disables UI mouse posts 0x3EC clears 0x8B0 tail clearFlags
 ?Rva003BB4F7Kill@@YGXPAVParameter@@@Z,,0x003BB4F7,33,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB4F7.cpp,matched,leaf getUnitNamed then kill 8 0
 ??0Rva0020D98D@@QAE@ABV0@@Z,,0x0020D98D,67,Code/GameEngine/Source/Common/Rva0020D98D.cpp,matched,copy ctor via base Rva001E3624 and member Rva003ED658
+?upgradeImplementation@ArmorUpgrade@@MAEXXZ,,0x004B34B5,192,Code/GameEngine/Source/GameLogic/Object/Upgrade/ArmorUpgradeUpgradeImplementation.cpp,matched,slot 10 of the +0x10 vtable 0xC57058 installed by matched ArmorUpgrade dtor; BFME1 donor ArmorUpgradeUpgradeImplementation.cpp with BFME2 layout
+?rva004B3575@ArmorUpgrade@@MAEXXZ,,0x004B3575,184,Code/GameEngine/Source/GameLogic/Object/Upgrade/ArmorUpgradeUpgradeImplementation.cpp,matched,slot 8 of the +0x10 vtable 0xC57058 (ArmorUpgrade); reversal of upgradeImplementation 0x4B34B5 then UpgradeModule 0x4CE4A8
