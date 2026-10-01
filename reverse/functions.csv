@@ -45863,3 +45863,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?get@Rva004DC8E7AsciiField@@QBE?AVAsciiString@@XZ,,0x004DC8E7,27,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,RVO AsciiString getter member +0x3c via StringBase copy 0x365F0 27B twin of 0x002D9BC1
 ?rva004D1C81@Rva004D1C81@@QAE?AURva004D1C81Iter@@PAURva004D1C81Node@@0ABURva004D1C81Key@@0@Z,,0x004D1C81,138,Code/Libraries/Source/WWVegas/WWLib/Rva004D1C81.cpp,matched,honest M_insert ushort-int via 004DCC62 and Rebalance callers 0046AC0C 0046E38E
 ?rva0046ABA6@Rva004D1C81@@QAE?AURva004D1C81Pair@@ABURva004D1C81Key@@@Z,,0x0046ABA6,138,Code/Libraries/Source/WWVegas/WWLib/Rva004D1C81.cpp,matched,honest insert_unique ushort-int via M_insert 004D1C81 and Decrement caller 0046E442
+?rva0046A024@Rva0046A024@@QAEXXZ,,0x0046A024,142,Code/GameEngine/Source/Common/Rva0046A024.cpp,matched,isKindOf triple 0x1BB 0x67 0x69 via subobject at 0x11C counter at 0x2F4
