@@ -219,6 +219,7 @@ public:
 	int rva0053604B();
 	int rva005360DC();
 	int rva0053616D();
+	void rva005361B6(AsciiString arg);
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
@@ -381,6 +382,15 @@ int UserPreferences::rva0053616D()
 	AsciiString tmp("OverallWorstLossStreak");
 	int ret = v6(tmp, 0);
 	return ret;
+}
+
+// ?rva005361B6@UserPreferences@@QAEXVAsciiString@@@Z @0x005361B6 89B
+// UserPreferences FavoriteSide path: local AsciiString FavoriteSide with (tmp, arg) v12 void ret 4.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x30 releaseBuffer gap same TU unlock.
+void UserPreferences::rva005361B6(AsciiString arg)
+{
+	AsciiString tmp("FavoriteSide");
+	v12(tmp, arg);
 }
 
 int UserPreferences::rva00535FBA()
