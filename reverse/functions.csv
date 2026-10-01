@@ -46043,3 +46043,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva0043C754@Rva0043D16F@@QAEXPAVCreateAHeroData@@PA_N@Z,,0x0043C754,30,Code/GameEngine/Source/Common/Rva0043C754Check.cpp,matched,vtable slot2 Rva0043D16F via Player at plus4 and rowed rva002AB855
 ?rva0043C7C9@Rva0043D3DA@@QAEXH@Z,,0x0043C7C9,105,Code/GameEngine/Source/Common/Rva0043C7C9Close.cpp,matched,same gating and flag as sibling 0x0043D3DA via invoke Close
 ??$__copy_ptrs@PAUOpaqueRefElement4@@PAU1@@_STL@@YAPAUOpaqueRefElement4@@PAU1@00ABU__false_type@0@@Z,,0x00239B29,29,Code/Libraries/Source/WWVegas/WWLib/Rva00239B29CopyWrapper.cpp,matched,chain via rowed __copy 0x00051C10 tag plus NULL
+?rva0046A915@Rva0046A915@@QAEXXZ,,0x0046A915,41,Code/GameEngine/Source/Common/Rva0046A915Clear.cpp,matched,ready leaf same shape as rowed clears 0x46A93E 0x46AB7D via rowed free 0x469C07
