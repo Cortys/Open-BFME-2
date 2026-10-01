@@ -6,6 +6,10 @@
 // "WeaponSetSpecialAbilityUpdate" literal ModuleFactory registers alongside this stub.
 // Recipe: RainOfFireUpdateFriendNew.cpp.
 
+// The matched ctor at 0x492402 calls the SpecialAbilityUpdate base at 0x44EF5E;
+// the adjacent pool-key body at 0x492459 independently names this module.
+#pragma comment(linker, "/alternatename:??0WeaponSetSpecialAbilityUpdate@@QAE@PAVThing@@PBVModuleData@@@Z=??0Rva00492402@@QAE@PAVThing@@PBVModuleData@@@Z")
+
 class Thing;
 class ModuleData;
 class Module;
