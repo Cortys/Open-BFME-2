@@ -10,8 +10,16 @@ public:
 	Rva0037DF2C(const Rva0037DF2C &o);
 };
 namespace _STL {
-template <> void _Construct<BfmePod172, BfmePod172>(BfmePod172 *__p, const BfmePod172 &__val)
+template <> inline void _Construct<BfmePod172, BfmePod172>(BfmePod172 *__p, const BfmePod172 &__val)
 {
 	new ((void *)__p) Rva0037DF2C((const Rva0037DF2C &)__val);
 }
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitPod172Construct@@YAXPAUBfmePod172@@ABU1@@Z present-unmatched
+void bfmeEmitPod172Construct(BfmePod172 *p, const BfmePod172 &q)
+{
+	_STL::_Construct<BfmePod172, BfmePod172>(p, q);
+}
+#pragma inline_depth()
