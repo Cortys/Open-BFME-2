@@ -32,3 +32,99 @@ void __cdecl Rva0051B11CEnable(void)
 {
 	Rva0051AF0BEnable(0);
 }
+
+// ?Rva0051B09BEnable@@YAXXZ retail 0x0051B09B 129 bytes.
+// Chain via rowed 0x002B2B66. Selection-locked GameMessage path plus fallback.
+// Calls rowed isSelectionLocked plus rowed Enable above plus rowed rva002B2B66
+// plus rowed appendIntegerArgument plus rowed appendBooleanArgument.
+// Globals g_009FEF10 MessageStreamSubsystem g_00E03138 TheInGameUI per packet.
+// Caller at 0x0051BF1C.
+class BfmeSelectionState
+{
+public:
+	bool isSelectionLocked() const;
+};
+class Rva002BA8F1Logic;
+extern Rva002BA8F1Logic *g_009FEF10;
+class Rva002B2B66
+{
+public:
+	int rva002B2B66();
+};
+class GameMessage
+{
+public:
+	void appendIntegerArgument(int arg);
+	void appendBooleanArgument(bool arg);
+};
+class MessageStream
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual GameMessage *v18(int type);
+};
+extern MessageStream *MessageStreamSubsystem;
+struct UnknownE03138
+{
+	virtual void u0();
+	virtual void u1();
+	virtual void u2();
+	virtual void u3();
+	virtual void u4();
+	virtual void u5();
+	virtual void u6();
+	virtual void u7();
+	virtual void u8();
+	virtual void u9();
+	virtual void u10();
+	virtual void u11();
+	virtual void u12();
+	virtual void u13();
+	virtual void u14();
+	virtual void u15();
+	virtual void u16();
+	virtual void u17();
+	virtual bool u18();
+};
+extern UnknownE03138 *g_00E03138;
+class InGameUI
+{
+public:
+	char m_pad[0x8c5];
+	unsigned char m_flag;
+};
+extern InGameUI *TheInGameUI;
+
+void __cdecl Rva0051B09BEnable(void)
+{
+	if (g_009FEF10 != 0 && ((BfmeSelectionState *)g_009FEF10)->isSelectionLocked()) {
+		Rva0051AF0BEnable(0);
+		GameMessage *msg = MessageStreamSubsystem->v18(0x6b8);
+		int v = ((Rva002B2B66 *)g_009FEF10)->rva002B2B66();
+		msg->appendIntegerArgument(v);
+		return;
+	}
+	Rva0051AF0BEnable(0);
+	if (g_00E03138->u18())
+		return;
+	GameMessage *msg2 = MessageStreamSubsystem->v18(0x448);
+	msg2->appendBooleanArgument(false);
+	TheInGameUI->m_flag = 1;
+}
