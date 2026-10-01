@@ -34,6 +34,7 @@ public:
 	void rva00273648(void* arg);
 	void rva00273686(void* arg);
 	void rva002736A8();
+	void rva0027366A();
 private:
 	unsigned char m_pad[0x14c];
 	DrawModule00273648** m_mods;
@@ -63,4 +64,13 @@ void Drawable::rva002736A8()
 {
 	if (m_354 != 0)
 		m_354->rva0027006C(10);
+}
+
+void Drawable::rva0027366A()
+{
+	DrawModule00273648** mods = m_mods;
+	while (*mods != 0) {
+		(*mods)->dE4();
+		++mods;
+	}
 }
