@@ -4639,3 +4639,6 @@ FUN_000B36CE	0x000B36CE	111	blocked	custom static 5-param EAX-count ECX-ushorts 
 ?Rva002B25EFScan@@YGXPAXHH@Z	0x002B25EF	62	blocked	EH_prolog late-and single rowed rva003F498A call plus vtable 0x007FDFEC visitor; try-catch gives pushes plus esp-save 77B; empty-base ctor saves this plus early-and 68B; Guard-late gives trailing dtor 77B; non-EH 41B; no unwind-only free shape found t=25 model=muse-09
 FUN_005E5DF5	0x005E5DF5	133	blocked	eax-param ABI unclear plus dual Rb_tree loops t=12 model=muse-14
 FUN_000B3C61	0x000B3C61	110	blocked	imul-1C Release plus SSE clears need layout work t=15 model=muse-14
+?rva00432987@Rva00432987@@QAE@XZ	0x00432987	152	blocked	needs element ctor 0x432976 and EH handler 0x787AC3 t=5 model=muse-02 vector iterator plus memset imports
+?rva00498980@GateOpenAndCloseBehavior@@QAE_NXZ	0x00498980	87	partial	size exact 87B fxch correct but first path jae vs jb second jbe vs ja true-false swap t=22 model=muse-02 score=0.93 stash=reverse/attempts/0x00498980.cpp
+?Rva003A8314Init@@YAXXZ	0x003A8314	64	blocked	guarded local-static EH init for Rva0055C8BC global E0290C guard E02910 needs EH prolog plus handler 781C6F plus atexit 7B7ECB t=12 model=muse-02 file-global probe gives unguarded _E1 22B without EH
