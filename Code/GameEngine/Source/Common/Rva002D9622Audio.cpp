@@ -1,13 +1,17 @@
-// ?Rva002D9622Get@@YAPAVAsciiString@@H@Z
-// partial score=0.95 date=2026-10-01
-// ?Rva002D9622Get@@YAPAVAsciiString@@H@Z
-// partial score=0.95 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD
+// ?Rva002D9622Get@@YAPBVAsciiString@@H@Z @ 0x002D9622 100B
+// Evidence: honest free-function name; switch on int arg cases 0..4 plus default empty; TheAudio at 0x009FE6E8 slot 0x134 plus byte adds 4/8/12/16; default AsciiString::TheEmptyString; callers at 0x002DA723 0x002DA99F 0x002DAA63; neighbours Rva002D9608AudioCheck and stringtailrecord144 dtor.
 #include "ascii_string.h"
-// ?rva002D9608@Rva002D9608@@QAE_NXZ @ 0x002D9608 26B
-// Audio gate: if TheAudio is null return false else return TheAudio slot 0xd0 with m_0C.
-// Evidence: honest address name; __thiscall bool via test jne xor al and virtual call [edx+0xd0]; TheAudio data 0x009FE6E8; caller in FUN_006d9fd9; neighbours Weapon.cpp and BfmeStringTailRecord144 dtor.
-typedef unsigned int AudioHandle;
+
+struct AudioData
+{
+	char m_pad[4];
+	AsciiString m_4;
+	AsciiString m_8;
+	AsciiString m_C;
+	AsciiString m_10;
+};
+
 class AudioManager
 {
 public:
@@ -63,7 +67,7 @@ public:
 	virtual void _pad49() = 0;
 	virtual void _pad50() = 0;
 	virtual void _pad51() = 0;
-	virtual bool slotD0(int v) = 0;
+	virtual void _pad52() = 0;
 	virtual void _pad53() = 0;
 	virtual void _pad54() = 0;
 	virtual void _pad55() = 0;
@@ -88,41 +92,26 @@ public:
 	virtual void _pad74() = 0;
 	virtual void _pad75() = 0;
 	virtual void _pad76() = 0;
-	virtual void *slot134() = 0;
+	virtual AudioData *slot134() = 0;
 };
+
 extern AudioManager *TheAudio;
-class Rva002D9608
-{
-public:
-	bool rva002D9608();
-	char m_pad[0xC];
-	int m_0C;
-};
-bool Rva002D9608::rva002D9608()
-{
-	if (TheAudio == 0)
-		return false;
-	return TheAudio->slotD0(m_0C);
-}
 
-// ?Rva002D9622Get@@YAPAVAsciiString@@H@Z, RVA 0x002D9622, size 100: audio string selector by index.
-// Evidence: contiguous after 0x002D9608 in same TU; TheAudio slot 0x134 + offsets 4/8/12/16; default TheEmptyString; callers 0x002DA723 0x002DA99F.
-
-// ?Rva002D9622Get@@YAPAVAsciiString@@H@Z present-unmatched
-AsciiString *Rva002D9622Get(int v)
+const AsciiString *Rva002D9622Get(int v)
 {
 	switch (v) {
 	case 0:
-		return (AsciiString *)((char *)TheAudio->slot134() + 8);
+		return &TheAudio->slot134()->m_8;
 	case 1:
-		return (AsciiString *)((char *)TheAudio->slot134() + 12);
+		return &TheAudio->slot134()->m_C;
 	case 2:
 	case 4:
-		return (AsciiString *)((char *)TheAudio->slot134() + 4);
+		return &TheAudio->slot134()->m_4;
 	case 3:
-		return (AsciiString *)((char *)TheAudio->slot134() + 16);
+		return &TheAudio->slot134()->m_10;
 	case 5:
+		return &AsciiString::TheEmptyString;
 	default:
-		return (AsciiString *)&AsciiString::TheEmptyString;
+		return &AsciiString::TheEmptyString;
 	}
 }
