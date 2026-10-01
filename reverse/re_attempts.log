@@ -4649,3 +4649,4 @@ FUN_000B3C61	0x000B3C61	110	blocked	imul-1C Release plus SSE clears need layout 
 ?rva00395534@Rva00395534@@QAEXXZ	0x00395534	45	blocked	xor-plus-mov zero reuse vs retail and plus lea-edx wall t=18 model=muse-14
 ?rva005378E9@UserPreferences@@QAEXVAsciiString@@H@Z	0x005378E9	355	partial	float temp slots swapped: retail totalF at [ebp-0x14] avg at [ebp+0xC] with reg-reg mulss xmm1 xmm0; ours reversed with mem-fold mulss; 356 vs 355B 5 aligns t=25 model=muse-01 score=0.96 stash=reverse/attempts/0x005378e9.cpp
 FUN_007f2f24	0x003F2F24	230	blocked	SSE 2x5 vector BfmeE8 expansion with divmod switch needs donor t=12 model=muse-04
+FUN_00959c3d	0x00559C3D	168	blocked	UnicodeString by-value return with TheGameText fetch and side tables needs shared-class modeling t=15 model=muse-04

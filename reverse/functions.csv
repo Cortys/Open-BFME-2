@@ -45283,3 +45283,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva003147DA@GameWindow@@QAEHXZ,,0x003147DA,28,Code/GameEngine/Source/GameClient/GUI/GameWindowRva0031475A.cpp,matched,chain of 0x0031475A via winHide status bit0
 ?Rva003F2394Xfer@@YAPAVXfer@@PAV1@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z,,0x003F2394,204,Code/GameEngine/Source/Common/System/Rva003F2394Xfer.cpp,matched,donor XferScienceTypeVector same 204B shape via rowed LivingWorldArmyID
 ?Rva00559B64GetImage@@YAPBVImage@@HH@Z,,0x00559B64,193,Code/GameEngine/Source/Common/Rva00559B64GetImage.cpp,matched,BFME1 donor RankDisplay same sprintf fallback via rowed findImage
+??1Out@@QAE@XZ,,0x00329182,97,Code/GameEngine/Source/Common/Rva00329182Dtor.cpp,matched,Out dtor frees 0x48 via free destroys 6 array and strings
