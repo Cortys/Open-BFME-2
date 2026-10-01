@@ -46717,3 +46717,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005C9FC4@GameSpyLoginPreferences@@QAE?AVAsciiString@@XZ,,0x005C9FC4,185,Code/GameEngine/Source/Common/GameSpyLoginPreferences.cpp,matched,caller 0x0057F486 plus donor BfmeAptScreenOnlineLoginRefreshState plus throw shim pinned to 0x001F8437
 ?apply@Rva006DBDB0DwordOrSetter@@QAEXXZ,,0x006DBDB0,5,Code/GameEngine/Source/Common/Disp8DwordOrSetters.cpp,matched,disp8 OR setter LINK unblocks 6 callers AptValue bitfield cluster
 ?rva004590E6@Rva004590C5@@QAEXXZ,,0x004590E6,35,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004590C5.cpp,matched,chain via 0x0045906E zero plus setWakeFrame forever
+?Rva002AA32FEqual@@YA_NPBM00@Z,,0x002AA32F,45,Code/GameEngine/Source/Common/Rva002AA32FEqual.cpp,matched,float range equal via ucomiss caller 0x002AAC9E unblocks 0x002AAC9E
