@@ -46612,3 +46612,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??_GRva00402F28Item@@QAEPAXI@Z,,0x00402F55,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00402F28Item.cpp,matched,gap deleting dtor calls rowed Item dtor plus rowed delete via PushButtonData precedent
 ?bfmeTailBFG@BfmeThingBFG@@QAEXXZ,,0x0025EF23,206,Code/GameEngine/Source/Common/BfmeThingBFGTail.cpp,matched,gap Link Bonus tail init with exact SSE stores via sibling asm precedent
 ??_GRva005CB3BE@@QAEPAXI@Z,,0x005CB876,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005CB3BE.cpp,matched,gap deleting dtor calls rowed Rva005CB3BE dtor plus rowed delete via family precedent
+?rva0058E2D7@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E2D7,144,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E2D7.cpp,matched,Static NetPacket factory word plus dword via Rva004D598E ctor plus WordSlot plus LeavingPlayerID
