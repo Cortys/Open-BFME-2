@@ -641,6 +641,7 @@ WinMainTitlePair::operator AsciiString()
 struct Rva00238C34 : Rva0020F58E
 {
 	int write(char *dst);
+	operator AsciiString();
 
 	Rva000B3F84Pair m_text2;
 };
@@ -649,4 +650,13 @@ int Rva00238C34::write(char *dst)
 {
 	int n = Rva0020F58E::write(dst);
 	return n + m_text2.write(dst + n);
+}
+
+// ??BRva00238C34@@QAE?AVAsciiString@@XZ @0x00238C59 105B narrow materializer: sized getBufferForRead via base length 0x0020F0D3 plus trailing text len then write 0x00238C34; caller 0x00238CC2.
+Rva00238C34::operator AsciiString()
+{
+	AsciiString tmp;
+	int extra = m_text2.m_len;
+	write(tmp.getBufferForRead(extra + Rva0020F58E::length()));
+	return tmp;
 }
