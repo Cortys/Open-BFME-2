@@ -45801,3 +45801,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005D8BD5@@QAE@XZ,,0x005D8BC3,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,ctor stores vtable 0x0087620C after base ctor 0x005EE28C
 ?Rva002DCB9C@@YG?AVAsciiString@@ABV1@@Z,,0x002DCB9C,351,Code/GameEngine/Source/Common/System/SaveGame/Rva002DCB9CPath.cpp,matched,AsciiString path remap via startsWithNoCase plus suffix concat and toLower
 ?rva00530FC5@Rva00530FC5@@QAEXXZ,,0x00530FC5,67,Code/GameEngine/Source/Common/Rva00530FC5Clear.cpp,matched,bitmask guarded 128B clear via memset callers in 0x00533BEC neighbours Disp getters
+??0Rva001EBAEA@@QAE@HH@Z,,0x001EBAEA,137,Code/Libraries/Source/WWVegas/WWLib/Rva001EBAEACtor.cpp,matched,honest ctor base ints triple E16 vectors clear80 vtable BDF168
