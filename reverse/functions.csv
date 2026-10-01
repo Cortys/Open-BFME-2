@@ -46092,3 +46092,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?ReportError@@YAXPADH@Z,,0x0069E440,1,Code/Libraries/Source/Benchmark/AllocateMemory.cpp,matched,
 ?rva00238CC2@Rva00238CC2@@QAEXPAVAsciiString@@@Z,,0x00238CC2,118,Code/GameEngine/Source/Common/System/RegistryRva00238CC2.cpp,matched,unlock lane base plus literal builds materializer set callers 0x238D3F
 ?rva00238D38@Rva00238CC2@@QAEXXZ,,0x00238D38,47,Code/GameEngine/Source/Common/System/RegistryRva00238CC2.cpp,matched,chain from 0x00238CC2 inits four strings via rva00238CC2 caller 0x4182F
+?Rva005635F4Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABURva005635DEPayload@@@Z,,0x005635F4,66,Code/Libraries/Source/WWVegas/WWLib/Rva005635F4Write.cpp,matched,free ostream INI key-long line via Pad Put pattern Rva001F8BA1Write caller 0x56364C
