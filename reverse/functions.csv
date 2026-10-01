@@ -46559,3 +46559,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003BBE91Set@@YGX_NH@Z,,0x003BBE91,66,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBE91.cpp,matched,TheTacticalView triple virtual call slots B4 BC C0 with 1 6 and v plus flag-selected 1 or -1
 ?Rva003BBE44Set@@YGX_NH@Z,,0x003BBE44,77,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBE44.cpp,matched,TheTacticalView virtual calls slots B4 BC B0 C0 with 1 1 and v plus 1 or -1
 ?_M_insert_overflow@?$vector@UCoord3D@@V?$allocator@UCoord3D@@@_STL@@@_STL@@IAEXPAUCoord3D@@ABU3@ABU__false_type@2@I_N@Z,,0x002CDF8A,189,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_coord3d_insert_overflow.cpp,matched,Vector Coord3D fill overflow via rowed allocate plus workers
+?rva002D394B@Rva002D394B@@QAEXPAX@Z,,0x002D394B,45,Code/GameEngine/Source/Common/System/Rva002D394BMethod.cpp,matched,recursive child at C next at 8 via rowed free
