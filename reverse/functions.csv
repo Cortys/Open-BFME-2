@@ -45430,3 +45430,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0035325A@Rva00352F9D@@QAEXPBXW4CommandSourceType@@@Z,,0x0035325A,101,Code/GameEngine/Source/Common/Rva00352F9DAICommand.cpp,matched,AICommand 0x3C obj via slot0 free
 ?rva005F6F0C@Rva005F6F0C@@QAEXXZ,,0x005F6F0C,57,Code/GameEngine/Source/Common/Rva005F6F0CTooltip.cpp,matched,ConstructionTurns tooltip via GameText slot 0x3c plus Mouse with 1.0f flag plus 0x28 precedent Rva005F06EF
 ?rva0020F442@Rva0020F442@@QAEPAVAsciiString@@ABV2@@Z,,0x0020F442,65,Code/GameEngine/Source/Common/RTS/Rva0020F442Find.cpp,matched,vector find via rowed StringBase compare callers 0x004FD8B8
+??0Rva00220B04@@QAE@H@Z,,0x00220B04,124,Code/GameEngine/Source/GameLogic/Object/Rva00220B04Ctor.cpp,matched,vtable pair plus dual E16 vectors via rowed base and Drawable resize

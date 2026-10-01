@@ -4738,3 +4738,6 @@ FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont 
 ?addScience@Player@@AAE_NW4ScienceType@@@Z	0x002AD661	392	blocked	retail vector-find plus float ReadyFrame plus extra globals diverges from BFME1 and ZH donors t=10 model=muse-17
 ?rva005E017A@Rva005E017A@@QAEHXZ	0x005E017A	135	blocked	STL map operator-subscript with mixed rows int-int lowerbound plus long-LadderPref pair plus int-BuddyInfo insert needs exact instantiation t=12 model=muse-17
 ?rva0047727E@Rva0047727E@@QAEXPAVThing@@@Z	0x0047727E	58	blocked	scheduling loads-stores plus dead add eax-8 needs lever t=10 model=muse-17
+?rva002AB5C7@Rva002AB5C7@@QAEXXZ	0x002AB5C7	118	blocked	Team-scan chain with disp8 getter via stack indirect plus 0x68 virtual on g_00A027B8 needs donor pattern; t=12 model=muse-05
+?Rva002D9622Get@@YAPAVAsciiString@@H@Z	0x002D9622	100	partial	1 missing dec before empty; TheAudio addrs gate-filled; 99B vs 100B t=18 model=muse-05 score=0.95 stash=reverse/attempts/0x002d9622.cpp
+?rva0020F685@Rva0020F685@@QAEXXZ	0x0020F685	141	blocked	two vector<void*> clears with push0 virtual plus separate delete needs donor for element dtor; t=10 model=muse-05
