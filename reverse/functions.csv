@@ -46096,3 +46096,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?Rva00563636Write@@YAXAAV?$basic_ostream@DV?$char_traits@D@_STL@@@_STL@@IPBDABURva005635DEPayload@@@Z,,0x00563636,31,Code/Libraries/Source/WWVegas/WWLib/Rva005635F4Write.cpp,matched,chain from 0x005635F4 skips zero value else forwards to Write callers writeINI
 ?rva001E43CF@Rva001E43CF@@QAEXPAX@Z,,0x001E43CF,87,Code/GameEngine/Source/Common/Rva001E43CFCopy.cpp,matched,12-dword matrix copy via chunked pointers same offsets 0x68 caller 0x1E5BA6
 ?rva004214C3@Rva004214C3@@QAEXPBVModuleData@@@Z,,0x004214C3,93,Code/GameEngine/Source/Common/Rva004214C3Add.cpp,matched,chain lane Find rowed throw idiom push_back rowed caller 0x0042167C
+??0Rva00421764@@QAE@PBXH0@Z,,0x00421764,49,Code/GameEngine/Source/Common/Rva00421764Init.cpp,matched,ctor init list floats-first unlock caller 0x0042513A
