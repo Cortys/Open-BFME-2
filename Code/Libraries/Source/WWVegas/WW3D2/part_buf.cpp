@@ -370,13 +370,11 @@ class BFMEPointGroupViewHonestCopy
 {
 public:
     BFMETextureHandleHonestCopy Get_Texture() const;
-    void Set_Texture(const BFMETextureHandleHonestCopy &texture);
 };
 class BFMELineGroupViewHonestCopy
 {
 public:
     BFMETextureHandleHonestCopy Get_Texture() const;
-    void Set_Texture(const BFMETextureHandleHonestCopy &texture);
 };
 
 // BFME copy-constructor body: RVA 0x001AD1B0, 4768 bytes through the ret at
@@ -679,8 +677,9 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 			PointGroup = W3DNEW PointGroupClass();
 			PointGroup->Set_Flag(PointGroupClass::TRANSFORM, true);
 			PointGroup->Set_Flag(PointGroupClass::BILLBOARD, true);
-			((BFMEPointGroupViewHonestCopy *)PointGroup)->Set_Texture(
-				((const BFMEPointGroupViewHonestCopy *)src.PointGroup)->Get_Texture());
+			PointGroup->Set_Texture(reinterpret_cast<TextureClass *>(const_cast<BFMETextureHandleHonestCopy *>(
+				&static_cast<const BFMETextureHandleHonestCopy &>(
+					((const BFMEPointGroupViewHonestCopy *)src.PointGroup)->Get_Texture()))));
 			PointGroup->Set_Shader(src.PointGroup->Get_Shader());
 			PointGroup->Set_Point_Mode(PointGroupClass::TRIS);
 			PointGroup->Set_Frame_Row_Column_Count_Log2(src.PointGroup->Get_Frame_Row_Column_Count_Log2());
@@ -693,8 +692,9 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 			PointGroup = W3DNEW PointGroupClass();
 			PointGroup->Set_Flag(PointGroupClass::TRANSFORM, true);
 			PointGroup->Set_Flag(PointGroupClass::BILLBOARD, true);
-			((BFMEPointGroupViewHonestCopy *)PointGroup)->Set_Texture(
-				((const BFMEPointGroupViewHonestCopy *)src.PointGroup)->Get_Texture());
+			PointGroup->Set_Texture(reinterpret_cast<TextureClass *>(const_cast<BFMETextureHandleHonestCopy *>(
+				&static_cast<const BFMETextureHandleHonestCopy &>(
+					((const BFMEPointGroupViewHonestCopy *)src.PointGroup)->Get_Texture()))));
 			PointGroup->Set_Shader(src.PointGroup->Get_Shader());
 			PointGroup->Set_Point_Mode(PointGroupClass::QUADS);
 			PointGroup->Set_Frame_Row_Column_Count_Log2(src.PointGroup->Get_Frame_Row_Column_Count_Log2());
@@ -711,8 +711,9 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 			WWASSERT(src.LineGroup);
 			LineGroup = W3DNEW LineGroupClass();
 			LineGroup->Set_Flag(LineGroupClass::TRANSFORM, true);
-			((BFMELineGroupViewHonestCopy *)LineGroup)->Set_Texture(
-				((const BFMELineGroupViewHonestCopy *)src.LineGroup)->Get_Texture());
+			((PointGroupClass *)LineGroup)->Set_Texture(reinterpret_cast<TextureClass *>(const_cast<BFMETextureHandleHonestCopy *>(
+				&static_cast<const BFMETextureHandleHonestCopy &>(
+					((const BFMELineGroupViewHonestCopy *)src.LineGroup)->Get_Texture()))));
 			LineGroup->Set_Shader(src.LineGroup->Get_Shader());
 			LineGroup->Set_Line_Mode(LineGroupClass::TETRAHEDRON);
 			TailPosition = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::TailPosition") );
@@ -726,8 +727,9 @@ ParticleBufferClass::ParticleBufferClass(const ParticleBufferClass & src) :
 			WWASSERT(src.LineGroup);
 			LineGroup = W3DNEW LineGroupClass();
 			LineGroup->Set_Flag(LineGroupClass::TRANSFORM, true);
-			((BFMELineGroupViewHonestCopy *)LineGroup)->Set_Texture(
-				((const BFMELineGroupViewHonestCopy *)src.LineGroup)->Get_Texture());
+			((PointGroupClass *)LineGroup)->Set_Texture(reinterpret_cast<TextureClass *>(const_cast<BFMETextureHandleHonestCopy *>(
+				&static_cast<const BFMETextureHandleHonestCopy &>(
+					((const BFMELineGroupViewHonestCopy *)src.LineGroup)->Get_Texture()))));
 			LineGroup->Set_Shader(src.LineGroup->Get_Shader());
 			LineGroup->Set_Line_Mode(LineGroupClass::PRISM);
 			TailPosition = NEW_REF( ShareBufferClass<Vector3> , (MaxNum, "ParticleBufferClass::TailPosition") );
