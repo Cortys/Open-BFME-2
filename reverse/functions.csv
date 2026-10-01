@@ -45105,3 +45105,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?totalLength@BFME2WideConcatPair@@QBEHXZ,,0x002198C8,36,Code/GameEngine/Source/Common/System/WideConcatPair.cpp,matched,
 ??RRva0030145CCmp@@QBE_NPAVMapMetaData@@0@Z,,0x0030145C,122,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_mapmetadata.cpp,matched,
 ??RRva003014D6Cmp@@QBE_NPAVMapMetaData@@0@Z,,0x003014D6,94,Code/Libraries/Source/WWVegas/WWLib/stlport_sort_mapmetadata.cpp,matched,
+?rva0053604B@UserPreferences@@QAEHXZ,,0x0053604B,73,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,OverallBestWinStreak getter slot 0x18 same TU

@@ -216,6 +216,7 @@ public:
 	void rva00536003(int x);
 	void rva00536094(int x);
 	void rva00536125(int x);
+	int rva0053604B();
 	int rva00535FBA();
 	int rva005358C3(AsciiString arg);
 	int rva00535BF6(AsciiString arg);
@@ -341,6 +342,13 @@ void UserPreferences::rva00536125(int x)
 {
 	AsciiString tmp("OverallWorstLossStreak");
 	v11(tmp, x);
+}
+
+int UserPreferences::rva0053604B()
+{
+	AsciiString tmp("OverallBestWinStreak");
+	int ret = v6(tmp, 0);
+	return ret;
 }
 
 int UserPreferences::rva00535FBA()
