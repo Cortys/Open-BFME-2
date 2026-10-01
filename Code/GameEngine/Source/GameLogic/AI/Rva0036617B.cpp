@@ -1,7 +1,5 @@
 // ?rva0036617B@Rva0036617B@@QAEXW4ScienceType@@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z
 // partial score=0.93 date=2026-10-01
-// ?rva0036617B@Rva0036617B@@QAEXW4ScienceType@@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z
-// partial score=0.93 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /arch:SSE /Oy-
 // ?rva0036617B@Rva0036617B@@QAEXW4ScienceType@@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z retail 0x0036617B 129B
 // Unlock over rowed vector<ScienceType>::push_back 0x002E01C6. Evidence: search
@@ -42,10 +40,10 @@ public:
 	void rva0036617B(ScienceType st, _STL::vector<ScienceType, _STL::allocator<ScienceType> > *vec);
 };
 
-// ?rva0036617B@Rva0036617B@@QAEXW4ScienceType@@PAV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@@Z present-unmatched
 void Rva0036617B::rva0036617B(ScienceType st, _STL::vector<ScienceType, _STL::allocator<ScienceType> > *vec)
 {
-	if (m_head04 == 0 || m_cur10 == 0)
+	Rva0036617BNode *nil = 0;
+	if ((Rva0036617BNode *)m_head04 == nil || m_cur10 == nil)
 		return;
 	if (st == SCIENCE_INVALID)
 		return;
@@ -55,32 +53,26 @@ search:
 	{
 		Rva0036617BNode *next = m_cur10->m_next08;
 		m_cur10 = next;
-		if (next != 0)
+		if (next != nil)
 			goto search;
 	}
 push_phase:
-	if (m_cur10 == 0)
-		goto reset;
-push_loop:
-	{
+	while (m_cur10 != nil) {
 		Rva0036617BNode *node = m_cur10;
 		ScienceType v = node->m_value20;
 		if (v == SCIENCE_INVALID)
-			goto reset;
+			break;
 		Rva0036617BNode *next = node->m_next08;
-		if (next == 0)
+		if (next == nil)
 			goto push;
 		if (next->m_value20 == SCIENCE_INVALID)
-			goto reset;
+			break;
 push:
 		st = v;
 		vec->push_back(st);
 		m_cur10 = m_cur10->m_next08;
-		if (m_cur10 != 0)
-			goto push_loop;
 	}
-reset:
-	if (m_cur10 != 0)
+	if (m_cur10 != nil)
 		goto done;
 	m_cur10 = (Rva0036617BNode *)m_08;
 done:
