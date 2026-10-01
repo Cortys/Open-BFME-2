@@ -274,7 +274,7 @@ void BitChannelClass::Free(void)
  *   1/21/98    GTH : Created.                                                                 *
  *=============================================================================================*/
 // ?BitChannelClass::Load_W3D present-unmatched
-bool BitChannelClass::Load_W3D(ChunkLoadClass & cload)
+inline bool BitChannelClass::Load_W3D(ChunkLoadClass & cload)
 {
 	Free();
 	
