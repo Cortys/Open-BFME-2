@@ -1,7 +1,5 @@
 // ?rva00469012@Rva00469012@@QAE_NPAVObject@@PBUCoord3D@@@Z
-// partial score=0.92 date=2026-10-01
-// ?rva00469012@Rva00469012@@QAE_NPAVObject@@PBUCoord3D@@@Z
-// partial score=0.92 date=2026-10-01
+// partial score=0.98 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?Rva00468F0FInRange@@YG_NPAVObject@@0@Z, retail 0x00468F0F 89B.
@@ -73,17 +71,16 @@ public:
 
 bool Rva00469012::rva00469012(Object *a, Coord3D const *b)
 {
-	float bx = b->x;
-	float by = b->y;
-	float dx = bx - a->m_38;
-	float dy = by - a->m_3C;
-	Thing *t = m_thing;
-	if (t == 0)
+	Coord3D delta;
+	delta.x = b->x;
+	delta.y = b->y;
+	delta.x -= a->m_38;
+	delta.y -= a->m_3C;
+	if (m_thing == 0)
 		return false;
 	Coord3D dir;
-	t->getUnitDirectionVector2D(dir);
-	float dot = dx * dir.x + dy * dir.y;
-	if (dot < 0.0f)
+	m_thing->getUnitDirectionVector2D(dir);
+	if (delta.x * dir.x + delta.y * dir.y < 0.0f)
 		return true;
 	return false;
 }

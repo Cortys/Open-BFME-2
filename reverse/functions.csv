@@ -45651,3 +45651,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?do_length@?$codecvt@GDH@_STL@@MBEHABHPBD1I@Z,,0x00017460,33,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
 ?do_max_length@?$codecvt@GDH@_STL@@MBEHXZ,,0x00756B00,6,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
 ?do_unshift@?$codecvt@GDH@_STL@@MBE?AW4result@codecvt_base@2@AAHPAD1AAPAD@Z,,0x00017370,18,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_codecvt_virtuals.cpp,matched,
+?rva003FE13E@Rva003FE13E@@QAEMXZ,,0x003FE13E,129,Code/GameEngine/Source/Common/Rva003FE13ECap.cpp,matched,capped 2D distance with AIPlayer-gated 10x cap; b-first fill plus literal and scoped temp fix the banked partial; caller 0x003FE2CF

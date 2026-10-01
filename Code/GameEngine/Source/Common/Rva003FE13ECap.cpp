@@ -1,7 +1,3 @@
-// ?rva003FE13E@Rva003FE13E@@QAEMXZ
-// partial score=0.93 date=2026-09-30
-// ?rva003FE13E@Rva003FE13E@@QAEMXZ
-// partial score=0.93 date=2026-09-30
 // cl: /O1 /arch:SSE2 /MD
 //
 // ?rva003FE13E@Rva003FE13E@@QAEMXZ @0x003FE13E 129B. __thiscall float method:
@@ -10,6 +6,10 @@
 // check on g_009FE720 plus GlobalData +0x88, and returns min(dist, cap).
 // Evidence: rowed length and AIPlayer callees; extern names from the packet;
 // SSE shape needs arch:SSE2; caller 0x003FE2CF.
+// Structural inference: the difference is filled from +0x50/+0x54 before the
+// subtractions, the cap scale is the 10.0f literal at 0x00BC2428 applied as
+// cap *= 10.0f, and the result is an STL-style min returning the selected
+// operand by reference; d lives in its own block so dist reuses its slot.
 class Coord2D
 {
 public:
@@ -37,7 +37,6 @@ struct GlobalData
 };
 
 extern GlobalData *TheWritableGlobalData;
-extern float g_Va00BC2428;
 
 class Rva003FE13E
 {
@@ -53,15 +52,26 @@ public:
 	float rva003FE13E();
 };
 
-// ?rva003FE13E@Rva003FE13E@@QAEMXZ present-unmatched
+template <class T> inline const T &Rva003FE13EMin(const T &a, const T &b)
+{
+	return b < a ? b : a;
+}
+
 float Rva003FE13E::rva003FE13E()
 {
-	Coord2D d = { m_50 - m_18, m_54 - m_1C };
-	d.m_y = d.length();
+	float dist;
+	{
+		Coord2D d;
+		d.m_x = m_50;
+		d.m_y = m_54;
+		d.m_x -= m_18;
+		d.m_y -= m_1C;
+		dist = d.length();
+	}
 	float cap = m_58;
 	if (g_009FE720->rva00232683()) {
 		if (TheWritableGlobalData->m_88 != 0)
-			cap *= g_Va00BC2428;
+			cap *= 10.0f;
 	}
-	return *((d.m_y > cap) ? &cap : &d.m_y);
+	return Rva003FE13EMin(dist, cap);
 }
