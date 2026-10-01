@@ -1,10 +1,22 @@
-// ?rva000AE84A@Rva000AE84A@@QAEXHHPAEH@Z
-// partial score=0.98 date=2026-10-01
 // cl: /O1
-// ?rva000AE84A@Rva000AE84A@@QAEXHHPAEH@Z @0x000AE84A 319B
-// Evidence: thiscall ret10 4 args (x y out unused); callers 0x00115322;
-// offsets +8 +0x20 +0x98 +0x9C +0x80B0 +0x120E0 +0x120E4; entry 16B shl4;
-// out[4] zero then 0xFF patterns; BfmeGrokGrid neighbours /O1.
+//
+// ?rva000AE84A@Rva000AE84A@@QAEXHHPAEH@Z, retail 0x000AE84A (319 bytes).
+// Thiscall, ret 0x10, four args (x, y, out, unused); caller 0x00115322.
+// Grid cell colour query on an unnamed grid object: the cell index is
+// (m_120E4 + y) * m_w + m_120E0 + x, bounds-checked against m_20; the slot
+// number comes from the int array at +0x9C (guarded by +0x98), slot 0 clears
+// the four output bytes; otherwise the 16-byte entry table at +0x80B0 decides
+// the 0xFF pattern from its bytes +4..+7, the flag bit at +8 and the byte at
+// +9, and a negative int at +0xC clears the bytes again. Honest address names:
+// the class, members and entry fields are placeholders (no donor).
+//
+// Byte lever (2026-10-01): every entry access is written as m_80B0[slot].field.
+// The table pointer is reloaded before each access because the stores through
+// out (unsigned char *) may alias it; single-use fields then fold into one SIB
+// where real array indexing makes the scaled index the base (retail
+// [edx+esi+9]), while a precomputed byte offset added to the pointer makes the
+// pointer the base ([esi+edx+9], the 5-byte near miss in reverse/re_attempts.log).
+
 struct Entry16
 {
     int f0;
@@ -39,7 +51,6 @@ private:
     int m_120E4;
 };
 
-// ?rva000AE84A@Rva000AE84A@@QAEXHHPAEH@Z present-unmatched
 void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
 {
     (void)unused;
@@ -55,10 +66,9 @@ void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
     out[3] = 0;
     if (slot == 0)
         return;
-    int off = slot * 16;
-    if (((Entry16 *)((char *)m_80B0 + off))->c4 != 0)
+    if (m_80B0[slot].c4 != 0)
     {
-        if ((((Entry16 *)((char *)m_80B0 + off))->flags & 1) != 0)
+        if ((m_80B0[slot].flags & 1) != 0)
         {
             out[3] = 0xFF;
             out[0] = 0xFF;
@@ -69,9 +79,9 @@ void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
             out[1] = 0xFF;
         }
     }
-    if (((Entry16 *)((char *)m_80B0 + off))->c5 != 0)
+    if (m_80B0[slot].c5 != 0)
     {
-        if ((((Entry16 *)((char *)m_80B0 + off))->flags & 1) != 0)
+        if ((m_80B0[slot].flags & 1) != 0)
         {
             out[1] = 0xFF;
             out[0] = 0xFF;
@@ -82,12 +92,12 @@ void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
             out[2] = 0xFF;
         }
     }
-    if (((Entry16 *)((char *)m_80B0 + off))->c6 != 0)
+    if (m_80B0[slot].c6 != 0)
     {
-        if ((((Entry16 *)((char *)m_80B0 + off))->flags & 1) != 0)
+        if ((m_80B0[slot].flags & 1) != 0)
         {
             out[1] = 0xFF;
-            if (*(const char *)((const char *)off + (unsigned int)m_80B0 + 9) != 0)
+            if (m_80B0[slot].c9 != 0)
             {
                 out[0] = 0xFF;
                 out[2] = 0xFF;
@@ -96,19 +106,19 @@ void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
         else
         {
             out[2] = 0xFF;
-            if (*(const char *)((const char *)off + (unsigned int)m_80B0 + 9) != 0)
+            if (m_80B0[slot].c9 != 0)
             {
                 out[1] = 0xFF;
                 out[3] = 0xFF;
             }
         }
     }
-    if (((Entry16 *)((char *)m_80B0 + off))->c7 != 0)
+    if (m_80B0[slot].c7 != 0)
     {
-        if ((((Entry16 *)((char *)m_80B0 + off))->flags & 1) != 0)
+        if ((m_80B0[slot].flags & 1) != 0)
         {
             out[0] = 0xFF;
-            if (*(const char *)((const char *)off + (unsigned int)m_80B0 + 9) != 0)
+            if (m_80B0[slot].c9 != 0)
             {
                 out[1] = 0xFF;
                 out[3] = 0xFF;
@@ -117,14 +127,14 @@ void Rva000AE84A::rva000AE84A(int x, int y, unsigned char *out, int unused)
         else
         {
             out[3] = 0xFF;
-            if (*(const char *)((const char *)off + (unsigned int)m_80B0 + 9) != 0)
+            if (m_80B0[slot].c9 != 0)
             {
                 out[0] = 0xFF;
                 out[2] = 0xFF;
             }
         }
     }
-    if (*(const int *)((const char *)off + (unsigned int)m_80B0 + 0xC) >= 0)
+    if (m_80B0[slot].fC >= 0)
     {
         out[3] = 0;
         out[2] = 0;
