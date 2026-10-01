@@ -27,3 +27,24 @@ void Rva0029B17C::rva0029B17C()
 {
 	m_7F4->slot9();
 }
+// ?rva0029B1A1@Rva0029B1A1@@QAEXXZ @0x0029B1A1 11B.
+// Forwarder: loads member at +0x7F4 then tail-jumps to
+// ?rva004E5803@Rva004E57E6@@QAEXXZ. Evidence: caller 0x0056ABB3 passes
+// TheInGameUI in ecx with no stack args and ignores return; callee rowed in
+// Code/GameEngine/Source/Common/Bfme/Rva004E57E6Method.cpp; same 11B disp32
+// forward shape as 0x0029B17C.
+class Rva004E57E6 {
+public:
+	void rva004E5803();
+};
+class Rva0029B1A1 {
+public:
+	void rva0029B1A1();
+private:
+	char m_pad[0x7F4];
+	Rva004E57E6 *m_7F4;
+};
+void Rva0029B1A1::rva0029B1A1()
+{
+	m_7F4->rva004E5803();
+}
