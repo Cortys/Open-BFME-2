@@ -46335,3 +46335,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0029173E@Rva0029173EAsciiField@@QAEXVAsciiString@@@Z,,0x0029173E,55,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,AsciiString by-value setter at +0x308 via rowed set and releaseBuffer
 ?rva003E3EC3@ScriptConditions@@IAE_NPAVParameter@@@Z,,0x003E3EC3,126,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedUnit.cpp,matched,gap GateOpenAndCloseBehavior stateIsOne via static key and findModule
 ?Rva003E537DCheck@@YG_NPAVParameter@@@Z,,0x003E537D,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E537D.cpp,matched,leaf stdcall bool via rowed getUnitNamed plus Object 0x250 vslot69 jbe
+?rva004EC83F@Rva004EC276@@QAEXPAX@Z,,0x004EC83F,42,Code/GameEngine/Source/Common/Rva004EC276Remove.cpp,matched,rowed vector push 0x004DFCB0 and rowed list push 0x0005548F shared lea-push same Rva004EC276 class

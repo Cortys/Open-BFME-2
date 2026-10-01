@@ -5076,3 +5076,5 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva00363AA8@Path@@QAEHXZ	0x00363AA8	47	partial	node-in-ecx vs retail eax max-in-eax vs ecx t=12 model=muse-04 score=0.89 stash=reverse/attempts/0x00363aa8.cpp
 ?rva00363930@Path@@QAE_NPAUCoord3D@@_N@Z	0x00363930	328	blocked	complex closest-point early-exit flag traversal t=10 model=muse-04
 ?rva003E5563@Rva003E5563@@QAEXXZ	0x003E5563	36	partial	O1 34B vs 36B minus2; missing mov-eax-ecx plus this-in-ecx-vs-eax; self-copy plus store-reorder tried t=10 model=muse-03 score=0.94 stash=reverse/attempts/0x003e5563.cpp
+?rva004EC66A@Rva004EC276@@QAEXXZ	0x004EC66A	150	blocked	EH x87 filter needs ICF triple-type local BfmeE16-base ModuleData-pushback uint-copy plus scope-table 0x00792880 t=10 model=muse-10
+??0Rva004ECDC8@@QAE@I@Z	0x004ECDA7	33	partial	and-0 early at 0x9 vs retail late at 0x1A only scheduling left t=20 model=muse-10 score=0.93 stash=reverse/attempts/0x004ecda7.cpp
