@@ -46602,3 +46602,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002EE9B7@Rva002EE9B7@@QAEXXZ,,0x002EE9B7,41,Code/Libraries/Source/WWVegas/WWLib/Rva002EE9B7Reset.cpp,matched,pool reset via 0x002EADB4 self-links shape as Rva002EB416
 ?rva00405AA7@Rva00405AA7@@QAEXXZ,,0x00405AA7,34,Code/GameEngine/Source/Common/Rva00405AA7Method.cpp,matched,caller 0x003BBB26 passes g_bfmeWorldRV plus 0x2A4 match
 ?rva00262BEC@AIUpdateInterface@@QAE_NXZ,,0x00262BEC,39,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262BEC.cpp,matched,checks if m_locomotorGoalType is 1 or 4 and m_path has rva003638BA
+?rva00262BA9@AIUpdateInterface@@QAE_NXZ,,0x00262BA9,67,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva00262BEC.cpp,matched,checks m_field1F0 and locomotorGoalType 1 or 4 and path rva001E3591 or rva00262176

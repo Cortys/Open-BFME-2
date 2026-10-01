@@ -6849,3 +6849,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?onEnter@AIFollowWaypointPathState@@UAE?AW4StateReturnType@@XZ,0x0034ED7B,slot 4 of vtable 0x00C12930 whose slot-2 name getter 0x00342BF6 returns AIFollowWaypointPathState (slot 5 is the rowed onExit 0x0034A0D7); AIAttackFollowWaypointPathState::onEnter 0x0034F1C4 tail-jumps here as the base onEnter
 ??$__copy_ptrs@PAUBfmeStringRecord005DDD40@@PAU1@@_STL@@YAPAUBfmeStringRecord005DDD40@@PAU1@00ABU__false_type@0@@Z,0x0038151E,by-ref spelling of rowed by-value wrapper at same address ICF identical 29B via copy 0x005DD714 called by erase 0x00381B1F
 ?clear@Rva00180023@@QAEXXZ,0x0004D75B,fold twin of BfmeResetTextureRef clear; generic 4B holder Release via 0x61ED10 then zero; called by Rva00180023 assign 0x0017FF45 on type mismatch
+?rva00262176@Rva003638BA@@QAE_NXZ,0x00262176,pinned for AIUpdateInterface
