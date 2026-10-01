@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD
 // _STL::__copy random-access loops over three 4-byte handle types, retail
 // 0x00051BE1 47B, 0x00051C10 47B and 0x005E1A87 47B, plus the matching
 // __copy_backward 0x004F6628 47B and fill 0x005EF488 29B.
@@ -10,18 +10,7 @@
 // the rowed Rva005EEFD2 operator= 0x005EEFD2. Same recipe as the
 // 0x004039E0 sibling in Rva00403927Copy.cpp; dedicated TU so the operator=
 // calls stay external.
-class UnicodeString
-{
-	void *m_data;
-
-public:
-	void set(const UnicodeString &that);
-	UnicodeString &operator=(const UnicodeString &that)
-	{
-		set(that);
-		return *this;
-	}
-};
+#include "unicode_string.h"
 
 struct OpaqueRefElement4
 {
