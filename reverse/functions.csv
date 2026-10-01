@@ -45285,3 +45285,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00559B64GetImage@@YAPBVImage@@HH@Z,,0x00559B64,193,Code/GameEngine/Source/Common/Rva00559B64GetImage.cpp,matched,BFME1 donor RankDisplay same sprintf fallback via rowed findImage
 ??1Out@@QAE@XZ,,0x00329182,97,Code/GameEngine/Source/Common/Rva00329182Dtor.cpp,matched,Out dtor frees 0x48 via free destroys 6 array and strings
 ?Rva005F066CSet@@YAXHPAURva005F066COuter@@ABVUnicodeString@@@Z,,0x005F066C,103,Code/GameEngine/Source/Common/Rva005F066CBuildingName.cpp,matched,APT BuildingName via 0x00038150 caller 0x005F0C54 precedent Rva005FDF1C
+??0Rva0028F5C6@@QAE@HHHHH@Z,,0x0028F5C6,109,Code/GameEngine/Source/Common/System/Rva0028F5C6BitSet.cpp,matched,twin of Rva0028F59A one-bit ctor with four bits via memset thunk

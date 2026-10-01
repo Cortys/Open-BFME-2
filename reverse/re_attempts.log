@@ -4651,3 +4651,4 @@ FUN_000B3C61	0x000B3C61	110	blocked	imul-1C Release plus SSE clears need layout 
 FUN_007f2f24	0x003F2F24	230	blocked	SSE 2x5 vector BfmeE8 expansion with divmod switch needs donor t=12 model=muse-04
 FUN_00959c3d	0x00559C3D	168	blocked	UnicodeString by-value return with TheGameText fetch and side tables needs shared-class modeling t=15 model=muse-04
 ?rva00086A94@Rva000869CF@@QAEXHHM@Z	0x00086A94	152	partial	152B exact size only first two loads swapped eax-vs-edx t=25 model=muse-03 score=0.95 stash=reverse/attempts/0x00086a94.cpp
+?rva0041458A@Rva004147CF@@QAEXXZ	0x0041458A	344	blocked	vslot7 of Rva004147CF conflicts copy-ctor layout: retail uses [this+4]/[this+8] as 0x30-stride array with AsciiString at elem+4 but copyctor has StringBase at +4 and ints at +8; 8 virtuals on arg plus ScoredKillEvaAnnouncer string; no donor t=12 model=muse-08
