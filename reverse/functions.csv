@@ -46536,3 +46536,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002D36D8@Rva002D36D8@@QAEHXZ,,0x002D36D8,29,Code/GameEngine/Source/Common/System/Rva002D36D8Check.cpp,matched,unlock callers 0x0031E35D 0x00405CC3 same O1 as neighbours
 ?rva002173E3@Rva002173E3@@QAEXPAURva002173E3Node@@@Z,,0x002173E3,23,Code/Libraries/Source/WWVegas/WWLib/Rva002173E3Add.cpp,matched,intrusive list prepend head at +0xC count at +0x10 caller 0x00218682
 ?rva000F0912@Rva000F0912@@QAEXXZ,,0x000F0912,68,Code/GameEngine/Source/Common/Rva000F0912Clear.cpp,matched,clear 160 slots per node over +0x68 list callee 0x000EFB68
+?rva002EADB4@Rva002EADB4@@QAEXPAU_Rva002EADB4Node@@@Z,,0x002EADB4,45,Code/Libraries/Source/WWVegas/WWLib/Rva002EADB4Release.cpp,matched,recursive release via child next free self-call
