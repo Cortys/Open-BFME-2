@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc
 // stlport
 //
 // Retail 0x005E06E5 (312B): DownloadManager::OnStatusUpdate.
@@ -27,62 +27,10 @@ typedef unsigned short wchar_t;
 typedef long HRESULT;
 #define S_OK 0
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
+#include "ascii_string.h"
+#include "unicode_string.h"
 
-private:
-	StringBase(const T *s);
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
 
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-	Header *m_data;
-
-public:
-	void set(const T *s);
-	void set(const StringBase<T> &that);
-};
-
-class AsciiString
-{
-public:
-	AsciiString(const char *s) : m_data(s) {}
-	~AsciiString();
-	AsciiString &operator=(const char *s)
-	{
-		m_data.set(s);
-		return *this;
-	}
-
-private:
-	StringBase<char> m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString &operator=(const UnicodeString &that)
-	{
-		m_data.set(that.m_data);
-		return *this;
-	}
-	~UnicodeString()
-	{
-		m_data.releaseBuffer();
-	}
-
-private:
-	StringBase<wchar_t> m_data;
-};
 
 // Retail fetch calls through vtable slot 0x38. The thirteen preceding
 // non-destructor methods have not been reconstructed in this TU; the

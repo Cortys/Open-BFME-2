@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // ?Rva00592496Read@@YAPAVRva004D64F5@@HPAI@Z @0x00592496 (138B):
 // NetCommandMsg Rva004D64F5 deserializer: new plus null-terminated string
 // via byte loop plus AsciiString temp. Evidence: new 0x20 plus ctor 0x4D64F5,
@@ -6,25 +6,8 @@
 // callers 0x5928EB 0x5941AC; chain from 0x004D64F5.
 void *__cdecl operator new(unsigned int size);
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-private:
-	StringBase(const T *s);
-	StringBase(const StringBase &other);
-	void releaseBuffer();
-	T *m_data;
-public:
-	~StringBase() { releaseBuffer(); }
-};
+#include "ascii_string.h"
 
-class AsciiString
-{
-public:
-	AsciiString(const char *s) : m_data(s) {}
-private:
-	StringBase<char> m_data;
-};
 
 class Rva004D64F5
 {

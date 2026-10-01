@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?isPlayer@GameSlot@@QBE_NVAsciiString@@@Z @0x003FFEF5 (109B):
 // GameSlot::isPlayer, AsciiString by-value overload. BFME1
 // GameSlotIsPlayerAsciiThunk.cpp donor
@@ -26,55 +26,10 @@ enum
 	SLOT_PLAYER
 };
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	friend class AsciiString;
+#include "ascii_string.h"
+#include "unicode_string.h"
 
-public:
-	int compareNoCase(const StringBase<T> &that) const;
 
-private:
-	StringBase() : m_data(0) {}
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class AsciiString
-{
-public:
-	~AsciiString() { m_data.releaseBuffer(); }
-
-private:
-	StringBase<char> m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-	void translate(const AsciiString &source);
-
-	int compareNoCase(const UnicodeString &that) const
-	{
-		return ((const StringBase<unsigned short> *)this)->compareNoCase(
-			*(const StringBase<unsigned short> *)&that);
-	}
-
-private:
-	StringBase<unsigned short> m_data;
-};
 
 class GameSlot
 {

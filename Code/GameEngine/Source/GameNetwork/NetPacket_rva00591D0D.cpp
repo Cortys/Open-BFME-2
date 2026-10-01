@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc
 // ?rva00591D0D@NetPacket@@QAEEPAVNetCommandRef@@@Z @0x00591D0D (158B).
 // NetPacket room check with string-length term: charges type 2 relay 2
 // timestamp 5 player 2 ID 3 plus fixed 1, adds AsciiString length from the
@@ -13,34 +13,8 @@ typedef unsigned char UnsignedByte;
 typedef bool Bool;
 enum { MAX_PACKET_SIZE = 0x1DC };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-public:
-	int getLength() const
-	{
-		return m_data ? m_data->length : 0;
-	}
-private:
-	~StringBase()
-	{
-		releaseBuffer();
-	}
-	void releaseBuffer();
-	struct Header {
-		Int ref_count;
-		UnsignedShort length;
-		UnsignedShort capacity;
-		T data[1];
-	};
-	Header *m_data;
-};
+#include "ascii_string.h"
 
-class AsciiString : public StringBase<char>
-{
-public:
-	~AsciiString() {}
-};
 
 class CDDrive
 {

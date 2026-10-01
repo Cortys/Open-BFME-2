@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 
 // GameSlot apparent-* family plus the two slot predicates it shares a page
 // with. BFME1 GameInfo.cpp donor (reference/open-bfme-1/.../GameNetwork/
@@ -30,57 +30,10 @@ typedef unsigned short WideChar;
 class AsciiString;
 class UnicodeString;
 
-template <typename T>
-class StringBase
-{
-    friend class AsciiString;
-    friend class UnicodeString;
+#include "ascii_string.h"
+#include "unicode_string.h"
 
-private:
-    StringBase() : m_data(0) {}
-    StringBase(const StringBase<T> &that);
 
-    void releaseBuffer();
-
-    struct Header
-    {
-        int ref_count;
-        unsigned short length;
-        unsigned short capacity;
-        T data[1];
-    };
-
-    Header *m_data;
-
-public:
-    const T *str() const
-    {
-        static const T TheNullChr = 0;
-        return m_data ? &m_data->data[0] : &TheNullChr;
-    }
-};
-
-class AsciiString
-{
-public:
-    AsciiString(const AsciiString &that) : m_data(that.m_data) {}
-    ~AsciiString() { m_data.releaseBuffer(); }
-
-private:
-    StringBase<char> m_data;
-};
-
-class UnicodeString
-{
-public:
-    UnicodeString() {}
-    UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-    ~UnicodeString() { m_data.releaseBuffer(); }
-    const WideChar *str() const { return m_data.str(); }
-
-private:
-    StringBase<WideChar> m_data;
-};
 
 // Retail fetch calls use vtable offset 0x3c. The fourteen preceding
 // non-destructor methods have not yet been reconstructed in this TU.
