@@ -4,10 +4,15 @@
 // then slot 0x100; x87 fld/fstp spills with EBP frame and ret 0x18.
 // Evidence: callees are vtable slots 53/59/64; callers 0x000A4F58 0x000A5617 0x000A5C37;
 // neighbour Rva000A4999Get 0x000A4999 same flags.
+// ?rva000A47DE@Rva000A4826@@QAEXMMMMH@Z retail 0x000A47DE 72B.
+// Sibling forwarder in same class: slot 0xD4 then slot 0xE8 with four floats plus int
+// then slot 0x100; same x87 shape with ret 0x14.
+// Evidence: caller 0x000A5A99; prev byte getter 0x000A47A7 same neighbourhood.
 class Rva000A4826
 {
 public:
 	void rva000A4826(float a, float b, float c, float d, float e, int f);
+	void rva000A47DE(float a, float b, float c, float d, int e);
 private:
 	virtual void v000(); virtual void v001(); virtual void v002(); virtual void v003();
 	virtual void v004(); virtual void v005(); virtual void v006(); virtual void v007();
@@ -25,7 +30,7 @@ private:
 	virtual void v052();
 	virtual void v053();
 	virtual void v054(); virtual void v055(); virtual void v056(); virtual void v057();
-	virtual void v058();
+	virtual void v058(float a, float b, float c, float d, int e);
 	virtual void v059(float a, float b, float c, float d, float e, int f);
 	virtual void v060(); virtual void v061(); virtual void v062(); virtual void v063();
 	virtual void v064();
@@ -35,5 +40,12 @@ void Rva000A4826::rva000A4826(float a, float b, float c, float d, float e, int f
 {
 	v053();
 	v059(a, b, c, d, e, f);
+	v064();
+}
+
+void Rva000A4826::rva000A47DE(float a, float b, float c, float d, int e)
+{
+	v053();
+	v058(a, b, c, d, e);
 	v064();
 }
