@@ -4879,3 +4879,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z	0x00421520	82	partial	count in ecx plus extra mov vs retail eax mem-sub t=25 model=muse-09 score=0.93 stash=reverse/attempts/0x00421520.cpp
 ?rva00421A16@Rva00421A16@@QAE_NPBM0@Z	0x00421A16	53	blocked	fcomp-fnstsw vs fld-fxch-fcompi wall under O1-G7 and O2-G7 plus d2gt-d1 same t=12 model=muse-09
 ??0Rva004211CA@@QAE@XZ	0x004212E4	46	blocked	frame plus stosb plus late vtable t=12 model=muse-09
+?Rva003B9D78Parse@@YAXHHQAPAD@Z	0x003B9D78	151	blocked	custom ebx table param with no load or preserve in callee and caller mov ebx table t=12 model=muse-05
+??0Rva003B90DB@@QAE@XZ	0x003B90DB	73	partial	BBB554 store hoisted after lea ebp-1 not before and esi+10; derived vtable relocs gate-filled t=12 model=muse-05 score=0.95 stash=reverse/attempts/0x003b90db.cpp
