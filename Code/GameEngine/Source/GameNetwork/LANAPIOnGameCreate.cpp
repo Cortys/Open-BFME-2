@@ -22,13 +22,7 @@ typedef bool Bool;
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/AsciiString.h
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/UnicodeString.h
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString( const unsigned short *text ) : StringBase<unsigned short>( text ) {}
-	UnicodeString( const UnicodeString &other ) : StringBase<unsigned short>( other ) {}
-	~UnicodeString() {}
-};
+#include "unicode_string.h"
 
 class Shell
 {

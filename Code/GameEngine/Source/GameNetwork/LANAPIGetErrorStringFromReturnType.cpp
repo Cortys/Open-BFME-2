@@ -1,5 +1,5 @@
 // ?getErrorStringFromReturnType@LANAPIInterface@@QAE?AVUnicodeString@@W4ReturnType@1@@Z
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // Target evidence: Ghidra bounds a 131-byte function at 0x00248EC3. Its retail
 // jump table at 0x00248F46 maps values 0..9 to LAN:OK, ErrorTimeout,
 // ErrorGameFull, ErrorDuplicateName, ErrorCRCMismatch, WOL:ChatErrorSerialDup,
@@ -12,25 +12,8 @@
 // is established by the jump table and retail string references.
 typedef bool Bool;
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
+#include "unicode_string.h"
 
-private:
-	StringBase( const T *text );
-	StringBase( const StringBase<T> &other );
-	~StringBase();
-	void releaseBuffer();
-	void *m_data;
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString( const UnicodeString &other )
-		: StringBase<unsigned short>( other ) {}
-	~UnicodeString();
-};
 
 class GameTextInterface
 {

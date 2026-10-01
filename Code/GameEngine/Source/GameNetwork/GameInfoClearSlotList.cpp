@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?clearSlotList@GameInfo@@QAEXXZ @0x003FFDB7 (67B):
 // GameInfo::clearSlotList. BFME1 GameInfo.cpp donor verbatim shape: loop 8 slots
 // via +0x18 array, null check, zeroed GameSlotConnectInfo (nat 0 port 0 via
@@ -23,40 +23,8 @@ enum SlotState
 
 enum { MAX_SLOTS = 8 };
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-	friend class GameInfo;
+#include "unicode_string.h"
 
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
-
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
-	~UnicodeString() { m_data.releaseBuffer(); }
-
-	static UnicodeString TheEmptyString;
-
-private:
-	StringBase<WideChar> m_data;
-};
 
 struct GameSlotConnectInfo
 {

@@ -15,9 +15,7 @@ typedef bool Bool;
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<WideChar>
-{
-};
+#include "unicode_string.h"
 
 class SubsystemInterface
 {

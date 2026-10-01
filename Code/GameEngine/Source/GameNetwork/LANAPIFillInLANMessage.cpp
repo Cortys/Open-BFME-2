@@ -31,15 +31,7 @@ public:
 
 #include "ascii_string.h"
 
-class UnicodeString
-{
-public:
-	UnicodeStringData *m_data;
-	const WideChar *str(void) const
-	{
-		return m_data ? m_data->m_data : L"";
-	}
-};
+#include "unicode_string.h"
 
 class SubsystemInterface
 {

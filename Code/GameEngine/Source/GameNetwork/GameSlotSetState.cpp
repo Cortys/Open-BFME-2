@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // ?setState@GameSlot@@QAEXW4SlotState@@VUnicodeString@@PBUGameSlotConnectInfo@@@Z @0x003FFC28 (399B):
 // GameSlot::setState. BFME1 GameInfo.cpp donor (GameSlot::setState) with BFME2
 // deltas proven by retail: SLOT_PLAYER 6 with new AI state 5, clear of six ints
@@ -22,55 +22,10 @@ enum SlotState
 	SLOT_PLAYER = 6
 };
 
-template <typename T>
-class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	friend class GameSlot;
+#include "ascii_string.h"
 
-private:
-	StringBase();
-	StringBase(const StringBase<T> &that);
-	void releaseBuffer();
 
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	Header *m_data;
-
-public:
-	void set(const StringBase<T> &other);
-};
-
-class AsciiString
-{
-private:
-	void *m_data;
-};
-
-class UnicodeString
-{
-	friend class GameSlot;
-
-public:
-	UnicodeString() {}
-	UnicodeString(const UnicodeString &that);
-	~UnicodeString() { m_data.releaseBuffer(); }
-	UnicodeString &operator=(const UnicodeString &other)
-	{
-		m_data.set(other.m_data);
-		return *this;
-	}
-
-private:
-	StringBase<WideChar> m_data;
-};
+#include "unicode_string.h"
 
 class GameTextInterface
 {

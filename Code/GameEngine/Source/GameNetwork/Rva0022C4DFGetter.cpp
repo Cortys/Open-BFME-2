@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc
 // ?rva0022C4DF@Rva0022C4DF@@QBE?AVUnicodeString@@XZ @0x0022C4DF (27B):
 // RVO UnicodeString getter copying the member at +0x04 through the rowed
 // wide StringBase copy ctor at 0x37050 into the hidden return pointer.
@@ -10,23 +10,8 @@
 // Owner unproven so honest-address class Rva0022C4DF. No new pins.
 typedef unsigned short WideChar;
 
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
-public:
-	StringBase() : m_data(0) {}
-private:
-	StringBase(const StringBase<T> &that);
-	void *m_data;
-};
+#include "unicode_string.h"
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	__forceinline UnicodeString(const UnicodeString &other) : StringBase<WideChar>(other) {}
-	~UnicodeString();
-};
 
 class Rva0022C4DF
 {

@@ -9,20 +9,7 @@
 #include "ascii_string.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/UnicodeString.h
-class UnicodeString
-{
-public:
-	static UnicodeString TheEmptyString;
-	UnicodeString() { m_data = 0; }
-	~UnicodeString();
-	UnicodeString &operator=(const UnicodeString &that)
-	{
-		((StringBase<unsigned short> *)this)->set(*(const StringBase<unsigned short> *)&that);
-		return *this;
-	}
-private:
-	unsigned short *m_data;
-};
+#include "unicode_string.h"
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/GameNetwork/GameSpy/PeerDefs.h
 class GameSpyGroupRoom

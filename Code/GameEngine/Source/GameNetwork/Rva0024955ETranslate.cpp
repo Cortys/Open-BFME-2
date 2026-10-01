@@ -14,11 +14,7 @@ typedef bool Bool;
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	void translate(const AsciiString &other);
-};
+#include "unicode_string.h"
 
 class Rva0024955E
 {

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHs-c-
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHs-c-
 //
 // Retail 0x0044A32F, 144 bytes. The target body is the BFME1 LANAPI
 // RequestAccept operation with a target Bool parameter: it exits when in the
@@ -22,17 +22,7 @@ public:
 	WideChar m_data[1];
 };
 
-class UnicodeString
-{
-public:
-	UnicodeStringData *m_data;
-	const WideChar *str( void ) const
-	{
-		return m_data ? m_data->m_data : L"";
-	}
-	~UnicodeString() { releaseBuffer(); }
-	void releaseBuffer( void );
-};
+#include "unicode_string.h"
 
 class LANGameInfo
 {

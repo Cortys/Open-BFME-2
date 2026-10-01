@@ -17,11 +17,7 @@ extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
 #include "ascii_string.h"
 
 
-class UnicodeString : public StringBase<WideChar>
-{
-public:
-	void translate(const AsciiString &other);
-};
+#include "unicode_string.h"
 
 struct BfmeNetAddress
 {

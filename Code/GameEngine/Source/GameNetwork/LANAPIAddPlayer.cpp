@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 //
 // Retail 0x0044B40C, 143 bytes. RequestSetName at 0x44B8D9 calls this helper
 // with the newly updated LANPlayer. Its body inserts into LANAPI +0x0C using
@@ -10,18 +10,8 @@ typedef unsigned short UnsignedShort;
 typedef unsigned int UnsignedInt;
 typedef unsigned char UnsignedByte;
 
-template <typename T> class StringBase
-{
-public:
-	int compareNoCase(const StringBase<T> &other) const throw();
+#include "unicode_string.h"
 
-private:
-	void *m_data;
-};
-
-class UnicodeString : public StringBase<WideChar>
-{
-};
 
 class LANPlayer
 {

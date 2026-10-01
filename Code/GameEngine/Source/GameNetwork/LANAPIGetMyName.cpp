@@ -1,27 +1,12 @@
-// cl: /O1 /Oy- /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /MD /EHsc
 //
 // Retail 0x00449B8F, 27 bytes. The target LANAPI pointer table at 0x83E680
 // places this getter at slot 55; BFME1 identifies the corresponding slot 47
 // as GetMyName. Retail copies the UnicodeString at LANAPI +0x14 through the
 // pinned StringBase<wchar_t> copy constructor at 0x37050.
 
-template <typename T> class StringBase
-{
-	friend class UnicodeString;
+#include "unicode_string.h"
 
-private:
-	StringBase( const StringBase<T> &other );
-	~StringBase();
-	void *m_data;
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	__forceinline UnicodeString( const UnicodeString &other )
-		: StringBase<unsigned short>( other ) {}
-	~UnicodeString();
-};
 
 class LANAPI
 {
