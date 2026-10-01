@@ -29,7 +29,7 @@ public:
 class DataChunkOutput
 {
 public:
-	void openDataChunk( char *name, unsigned int ver );
+	void openDataChunk( char *name, unsigned short ver );
 	void closeDataChunk( void );
 };
 
