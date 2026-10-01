@@ -46113,3 +46113,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??_GRva004E61C8@@UAEPAXI@Z,,0x004E6231,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004E61C8.cpp,matched,deleting dtor slot 0 vtable 0x008623CC calls 0x004E61C8
 ?rva005C70DB@Rva005C70DB@@QAEMMPAMH0H0H0H@Z,,0x005C70DB,210,Code/GameEngine/Source/Common/Rva005C70DB.cpp,matched,scalar interp switch via Evaluate row
 ??0Rva00785140Handle@@QAE@ABVAssetReference@@@Z,,0x000A9EB2,27,Code/GameEngine/Source/Common/Rva00785140HandleCtor.cpp,matched,vtable 0x00BC940C plus AssetReference copy via rowed callee
+?rva000A97A9@Rva000A97A9@@QAEXPAX@Z,,0x000A97A9,32,Code/GameEngine/Source/Common/Rva000A97A9Func.cpp,matched,honest thiscall ecx source plus dst writes evidence callers 0xAAC7B 0xAAD9D
