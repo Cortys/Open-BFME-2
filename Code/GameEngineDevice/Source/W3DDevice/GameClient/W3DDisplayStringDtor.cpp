@@ -19,6 +19,11 @@ class DisplayString
 {
 public:
 	virtual ~DisplayString();
+	virtual void setText(UnicodeString text);
+	virtual void pad02();
+	virtual void pad03();
+	virtual void notifyTextChanged();
+	virtual void reset();
 private:
 	char m_pad04[0x10];
 };
@@ -36,12 +41,62 @@ class W3DDisplayString : public DisplayString
 {
 public:
 	virtual ~W3DDisplayString();
+	virtual void reset();
 private:
 	Render2DSentenceClass m_textRenderer;
 	Render2DSentenceClass m_textRendererHotKey;
 	UnicodeString m_hotkey;
+	bool m_textChanged;
+	bool m_fontChanged;
+	bool m_bfmeFlag1EC;
+	bool m_bfmeFlag20C;
+	int m_hotKeyPosX;
+	int m_hotKeyPosY;
+	int m_textPosX;
+	int m_textPosY;
+	int m_hotKeyColor;
+	int m_currTextColor;
+	int m_currDropColor;
+	int m_bfmeResetFields[6];
+	bool m_useHotKey;
+	char m_pad1D9[3];
+	int m_sizeX;
+	int m_sizeY;
+	int m_clipLoX;
+	int m_clipLoY;
+	int m_clipHiX;
+	int m_clipHiY;
+	int m_lastResourceFrame;
 };
 
 W3DDisplayString::~W3DDisplayString()
 {
+}
+
+void W3DDisplayString::reset()
+{
+	DisplayString::reset();
+	(&m_textRenderer)->Reset();
+	(&m_textRendererHotKey)->Reset();
+	m_textChanged = false;
+	m_textPosX = 0;
+	m_textPosY = 0;
+	for (int i = 0; i < 4; ++i) {
+		(&m_currTextColor)[i] = 0;
+		(&m_currTextColor)[i + 4] = 0;
+	}
+	m_hotKeyColor = -1;
+	m_sizeX = 0;
+	m_sizeY = 0;
+	m_fontChanged = false;
+	m_clipLoX = 0;
+	m_clipLoY = 0;
+	m_clipHiX = 0;
+	m_clipHiY = 0;
+	m_lastResourceFrame = 0;
+	m_bfmeFlag20C = false;
+	m_hotKeyPosX = 0;
+	m_hotKeyPosY = 0;
+	m_bfmeFlag1EC = true;
+	m_hotkey.clear();
 }
