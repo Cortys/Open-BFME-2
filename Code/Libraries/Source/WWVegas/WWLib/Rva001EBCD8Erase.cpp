@@ -1,7 +1,5 @@
 // ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z
 // partial score=0.92 date=2026-09-29
-// ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z
-// partial score=0.92 date=2026-09-29
 // cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/inputs/vendor/stlport
 // stlport
 //
@@ -43,12 +41,12 @@ private:
 // through rowed __copy_ptrs 0x001EBA13 (prvalue tag gives the EBP frame),
 // backs m_ptr off by one record, fires virtual slot 0 with 0 and returns a1.
 // Callers in unclaimed 0x001EC63D/0x001EC859/0x001EC8C0.
-// ?rva001EBCD8@Rva001EBCD8@@QAEPAXPAX@Z present-unmatched
 void *Rva001EBCD8::rva001EBCD8(void *a1)
 {
 	_STL::__false_type tag;
-	if ((BfmeAssignRecord172 *)((char *)a1 + 0xAC) != (BfmeAssignRecord172 *)m_ptr)
-		_STL::__copy_ptrs((BfmeAssignRecord172 *)((char *)a1 + 0xAC), (BfmeAssignRecord172 *)m_ptr, (BfmeAssignRecord172 *)a1, tag);
+	Slot0Receiver *limit = m_ptr;
+	if ((BfmeAssignRecord172 *)((char *)a1 + 0xAC) != (BfmeAssignRecord172 *)limit)
+		_STL::__copy_ptrs((BfmeAssignRecord172 *)((char *)a1 + 0xAC), (BfmeAssignRecord172 *)limit, (BfmeAssignRecord172 *)a1, tag);
 	m_ptr = (Slot0Receiver *)((char *)m_ptr - 172);
 	m_ptr->v0(0);
 	return a1;
