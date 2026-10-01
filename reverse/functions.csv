@@ -46704,3 +46704,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?computeExtents@W3DDisplayString@@IAEXXZ,,0x001065D9,138,Code/GameEngineDevice/Source/W3DDevice/GameClient/W3DDisplayStringComputeExtents.cpp,matched,leaf W3DDisplayString computeExtents via Dtor layout plus archSSE
 ?rva0036426E@Rva0036426E@@QAEXPAUFreeNode@@@Z,,0x0036426E,45,Code/GameEngine/Source/GameLogic/AI/PathRva0036426E.cpp,matched,recursive free via plus8 plus12 with rowed free
 ?Rva003BBF23Disable@@YGXPAVParameter@@_N@Z,,0x003BBF23,46,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,leaf caller 0x003CC4CC ScriptEngine getUnitNamed Object setDisabledUntil
+?Rva003BBF51Set@@YGXPAVParameter@@M@Z,,0x003BBF51,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBF51.cpp,matched,gap caller 0x003CC4A7 ScriptEngine getUnitNamed float store
