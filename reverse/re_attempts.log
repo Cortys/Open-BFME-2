@@ -4893,3 +4893,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva00433F7F@Rva00433F7F@@QAEXXZ	0x00433F7F	94	blocked	second block ecx-eax swap persists across temp G7 and-or early-return t=12 model=muse-08 (stash 0.93 kept)
 ?rva00434337@Rva00434337@@QAEXH@Z	0x00434337	251	partial	push-ebx-vs-push-1 mov-mem-ebx-vs-1 missing-2x-mov-ecx-TheGameState-TheGameLogic entry-mov-eax-dec-vs-push-xor-inc-cmp t=30 model=muse-08 score=0.93 stash=reverse/attempts/0x00434337.cpp
 ?rva00232696@AIPlayer@@QAE_NXZ	0x00232696	12	blocked	single-bit 0xC test folds to setne 8B not retail jne-xor-mov 12B; tried bool and uchar with O1 O2 G5 G7 and both polarities t=12 model=muse-07
+?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z	0x0039EA4E	78	partial	top test+je vs jmp only remains tail OR merged for/goto keep top test t=12 model=muse-03 score=0.96 stash=reverse/attempts/0x0039ea4e.cpp
+?rva0039E5B9@Team@@QAEXPAUCoord3D@@@Z	0x0039E5B9	167	blocked	push-edi saved early plus mov-edi hoisted above divss vs retail late push after divss; tried G7 Os O2 barrier dst t=20 model=muse-03 (stash 0.97 kept)

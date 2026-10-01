@@ -46017,3 +46017,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00232F4F@Rva00232F4F@@QAEXXZ,,0x00232F4F,46,Code/GameEngine/Source/Common/Rva00232F4FImm.cpp,matched,IME property gate beside Rva00232F0C; GetKeyboardLayout plus ImmGetProperty index 4; bits 18 and 19 to 3030 and 3048
 ?rva00232643@AIPlayer@@QAE_NE@Z,,0x00232643,17,Code/GameEngine/Source/GameLogic/AI/AIPlayerRva00232643.cpp,matched,AIEntry flag bit1 via AIPlayerRva002329D3 layout with G7 mov-al shape
 ??$__copy_backward_ptrs@PAUTreeHintRef00217D4C@@PAU1@@_STL@@YAPAUTreeHintRef00217D4C@@PAU1@00ABU__false_type@0@@Z,,0x004F6D2E,29,Code/GameEngine/Source/Common/Rva004F6D2ECopyBackward.cpp,matched,STL ptrs wrapper via rowed worker 0x004F6628 called by 0x004F6FE1
+?rva004E5D6E@Rva004E5D6E@@QAEXXZ,,0x004E5D6E,68,Code/GameEngine/Source/Common/Bfme/Rva004E5D6EMethod.cpp,matched,STL clear via rowed for_each 0x004E5D4D and erase 0x0031BD55 caller dtor 0x004E61C8

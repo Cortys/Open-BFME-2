@@ -1,5 +1,5 @@
 // ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z
-// partial score=0.95 date=2026-09-29
+// partial score=0.96 date=2026-10-01
 // ?rva0039EA4E@Rva0039EA4E@@QAEPAURva0039EA4ENode@@ABURva0039D8FBKey@@@Z
 // partial score=0.95 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD
@@ -47,9 +47,7 @@ Rva0039EA4ENode *Rva0039EA4E::rva0039EA4E(const Rva0039D8FBKey &key)
         else
             x = x->m_right0C;
     }
-    if (y == header)
-        return y;
-    if ((unsigned char)Rva0039D8FBLess(key, y->m_key10))
+    if (y == header || (unsigned char)Rva0039D8FBLess(key, y->m_key10))
         y = header;
     return y;
 }
