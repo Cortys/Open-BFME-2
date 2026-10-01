@@ -45046,3 +45046,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ?rva002C0B92@Rva002C0A89@@QAEXPAVGameWindow@@@Z,,0x002C0B92,69,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_rva002C0A89.cpp,matched,sibling 0x002C0A89 same TU flags plus GameWindow unlink shape
 ?Rva002C0BD7Remove@@YGXPAVGameWindow@@@Z,,0x002C0BD7,110,Code/GameEngine/Source/GameClient/GUI/GameWindowManager_rva002C0A89.cpp,matched,sibling unlink plus parent child shape same TU
 ?rva005366F3@UserPreferences@@QAEXVAsciiString@@H@Z,,0x005366F3,71,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,HeroesBuiltRTS setter slot 0x2C same TU
+?rva006D8AD0@BfmeAptValue006DCD20@@QAEXHPAV1@@Z,,0x006D8AD0,140,Code/Libraries/Source/Apt/AptValue/AptValueArrayAt.cpp,matched,array set AddRef Release via slots 0 and 4 callers 0x006D9625 0x006D9C2A

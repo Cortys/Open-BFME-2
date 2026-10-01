@@ -14,6 +14,7 @@ extern int g_bfmeAptBreakOnAssertAtDDC01C;
 class BfmeAptValue006DCD20
 {
     virtual void slot0();
+    virtual void slot1();
 public:
     unsigned int m_flags;
     char m_pad[0x18];
@@ -24,6 +25,7 @@ public:
     int isArray() const;
     BfmeAptValue006DCD20 *rva006DCFA0();
     BfmeAptValue006DCD20 *rva006D8A50(int nIndex);
+    void rva006D8AD0(int nIndex, BfmeAptValue006DCD20 *pNewValue);
 };
 extern BfmeAptValue006DCD20 *g_aptUndefinedAtE18078; // 0x00A18078
 BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006D8A50(int nIndex)
@@ -72,4 +74,30 @@ BfmeAptValue006DCD20 *__cdecl Rva006D9B50Pop(BfmeAptValue006DCD20 *pValue)
         }
     }
     return undefined;
+}
+// ?rva006D8AD0@BfmeAptValue006DCD20@@QAEXHPAV1@@Z @0x006D8AD0 (140 bytes).
+// Array set: asserts pNewValue != NULL at _Apt.h:0x117 then nIndex <
+// mnCapacity at _Apt.h:0x118 via the shared Apt assert pointer at
+// 0x00A17734 and break flag at 0x009DC01C, AddRefs the new value through
+// vtable slot0, Releases the old element through slot+4, then stores.
+// Layout (m_data at +0x20, mnCapacity at +0x24) matches 0x006D8A50 in this
+// TU; callers 0x006D9625 0x006D98E7 0x006D9C2A 0x006DA347 0x006DA537 pass
+// (index, value) with ecx=this.
+void BfmeAptValue006DCD20::rva006D8AD0(int nIndex, BfmeAptValue006DCD20 *pNewValue)
+{
+    if (!pNewValue) {
+        g_bfmeAptAssertAtE17734("pNewValue != NULL", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_Apt.h", 0x117);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    if (!(nIndex < mnCapacity)) {
+        g_bfmeAptAssertAtE17734("nIndex < mnCapacity", "c:\\projects\\bfme2patch103\\bfme2\\code\\libraries\\source\\apt\\_Apt.h", 0x118);
+        if (g_bfmeAptBreakOnAssertAtDDC01C)
+            __asm int 3
+    }
+    BfmeAptValue006DCD20 *old = m_data[nIndex];
+    pNewValue->slot0();
+    if (old)
+        old->slot1();
+    m_data[nIndex] = pNewValue;
 }
