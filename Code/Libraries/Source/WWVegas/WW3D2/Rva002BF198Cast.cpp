@@ -5,6 +5,22 @@
 // ContactPoint into out via Set or zeroes it. ComputeContactPoint is true.
 // Evidence: callees rowed LineSeg 0x000927F9 and RayCollision 0x0006F1A6;
 // callers at 0x0020E354 0x002BF2B7 0x002BF4F3 0x002BF841 pass COLL_TYPE_ALL 1.
+// LINK-COMDAT: hide the header-inline LineSeg bodies so calls reach the kept
+// copies (scene.cpp/matrix3.cpp/vp.cpp). Same 52B layout (4xVector3+float),
+// ctor declaration-only.
+#define LINESEG_H
+class Vector3;
+class Matrix3D;
+class LineSegClass
+{
+public:
+	LineSegClass(const Vector3 &p0, const Vector3 &p1);
+	LineSegClass(const LineSegClass &that, const Matrix3D &tm);
+	const Vector3 &Get_P0() const;
+	const Vector3 &Get_P1() const;
+private:
+	float m_pad[13];
+};
 #include "rendobj.h"
 #include "coltest.h"
 #include "lineseg.h"
