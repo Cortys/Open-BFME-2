@@ -4,7 +4,7 @@
 // SpawnBehavior helper returning Object*: iterates the ModuleData
 // vector<AsciiString> at +0x20/+0x24, skipping duplicate names via a local
 // AsciiString seeded from the empty string, resolving each distinct name
-// through g_009FF000 and scanning the controlling Player via iterateObjects
+// through TheThingFactory and scanning the controlling Player via iterateObjects
 // with a helper holding template/requester/result/best-float. Identity from
 // caller 0x0045F9D8 (SpawnBehavior, uses return for setProducer) and the
 // SpawnBehaviorCtor layout (this+4 ModuleData, this+8 Object).
@@ -59,7 +59,7 @@ public:
 	void *rva002D06CA(const AsciiString *key);
 };
 
-extern Rva002D06CA *g_009FF000;
+extern Rva002D06CA *TheThingFactory;
 extern float g_00C4254C;
 // g_00C4254C: matched references place it at VA 0xc4254c (retail .rdata value 1e+08f).
 float g_00C4254C = 1e+08f;
@@ -111,7 +111,7 @@ Object *SpawnBehavior::rva0045F4D7()
 	{
 		if (last.compare(*it) == 0)
 			continue;
-		helper.m_template = g_009FF000->rva002D06CA(it);
+		helper.m_template = TheThingFactory->rva002D06CA(it);
 		player->iterateObjects(callback0045F4D7, &helper);
 		last = *it;
 	}

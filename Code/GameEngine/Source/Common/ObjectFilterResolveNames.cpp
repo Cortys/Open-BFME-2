@@ -4,7 +4,7 @@
 // ?rva003611EFResolveNames@ObjectFilter@@SAXPAV1@@Z retail 0x003611EF 585 bytes.
 // ObjectFilter name resolution: every inclusion name (+0x00) starting with S:
 // with length >= 3 (rest names a template kept in its own list at +0x18) or
-// naming a template (+0x30) must resolve through g_009FF000 rva002D06CA else
+// naming a template (+0x30) must resolve through TheThingFactory rva002D06CA else
 // INIException ObjectFilter resolveNames specified. Name list cleared after.
 // Same pass over exclusion names (+0x0C) into +0x24 and +0x3C. Evidence: four
 // message literals name it. BFME1 donor ObjectFilterResolveNames.cpp retail
@@ -70,7 +70,9 @@ public:
 	void *rva002D06CA(const AsciiString *key);
 };
 
-extern Rva002D06CA *g_009FF000;
+extern Rva002D06CA *TheThingFactory;
+// TheThingFactory: matched references place it at VA 0xdff000 (zero-filled .bss).
+Rva002D06CA * TheThingFactory;
 
 extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__ThrowInfo *pThrowInfo);
 
@@ -105,7 +107,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			const ModuleData *tmpl;
 			{
 				AsciiString tmp(templateName);
-				tmpl = (const ModuleData *)g_009FF000->rva002D06CA(&tmp);
+				tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&tmp);
 			}
 			if (!tmpl)
 			{
@@ -116,7 +118,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 		}
 		else
 		{
-			const ModuleData *tmpl = (const ModuleData *)g_009FF000->rva002D06CA(&name);
+			const ModuleData *tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&name);
 			if (!tmpl)
 			{
 				INIException e(3, "ObjectFilter::resolveNames() specified +%s but this template doesn't exist! Typo?", name.str());
@@ -138,7 +140,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 			const ModuleData *tmpl;
 			{
 				AsciiString tmp(templateName);
-				tmpl = (const ModuleData *)g_009FF000->rva002D06CA(&tmp);
+				tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&tmp);
 			}
 			if (!tmpl)
 			{
@@ -149,7 +151,7 @@ void ObjectFilter::rva003611EFResolveNames(ObjectFilter *filter)
 		}
 		else
 		{
-			const ModuleData *tmpl = (const ModuleData *)g_009FF000->rva002D06CA(&name);
+			const ModuleData *tmpl = (const ModuleData *)TheThingFactory->rva002D06CA(&name);
 			if (!tmpl)
 			{
 				INIException e(3, "ObjectFilter::resolveNames() specified -%s but this template doesn't exist! Typo?", name.str());

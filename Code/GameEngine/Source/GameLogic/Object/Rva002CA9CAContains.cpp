@@ -103,7 +103,7 @@ public:
 	void *rva002D06CA(const void *key);
 };
 
-extern Rva002D06CA *g_009FF000;
+extern Rva002D06CA *TheThingFactory;
 
 struct FloatHolder
 {
@@ -251,7 +251,7 @@ bool Rva002CA9CA::rva002CAD8B()
 
 void Rva002CA9CA::rva002CA942()
 {
-	if (g_009FF000 == 0)
+	if (TheThingFactory == 0)
 		return;
 	ListNode *cur = m_17c->m_next;
 	while (cur != m_17c)

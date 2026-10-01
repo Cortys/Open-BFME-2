@@ -23,6 +23,8 @@ struct Rva0039B95FHolder
 };
 
 extern Rva0039B95FHolder *g_00E031E8;
+// g_00E031E8: matched references place it at VA 0xe031e8 (zero-filled .bss).
+Rva0039B95FHolder * g_00E031E8;
 
 int __stdcall Rva0039B95FCount(int *outFirst)
 {

@@ -24,7 +24,7 @@ public:
 	void *rva002D06CA(const AsciiString *key);
 };
 
-extern Rva002D06CA *g_009FF000;
+extern Rva002D06CA *TheThingFactory;
 
 class Rva00507823
 {
@@ -54,5 +54,5 @@ void Rva005097CD::rva005097CD()
 	Rva00507823::rva00507877();
 	m_128 = TheWeaponStore->findWeaponTemplate(m_130);
 	if (!m_134.isEmpty())
-		m_12C = g_009FF000->rva002D06CA(&m_134);
+		m_12C = TheThingFactory->rva002D06CA(&m_134);
 }

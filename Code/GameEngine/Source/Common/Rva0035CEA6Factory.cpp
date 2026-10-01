@@ -22,6 +22,8 @@ public:
 
 extern void *__cdecl operator new(unsigned int size);
 extern unsigned char g_00E01EA8;
+// g_00E01EA8: matched references place it at VA 0xe01ea8 (zero-filled .bss).
+unsigned char g_00E01EA8;
 
 Rva0035CC36 *__stdcall Rva0035CEA6Create(Rva0035CE52 *templ)
 {

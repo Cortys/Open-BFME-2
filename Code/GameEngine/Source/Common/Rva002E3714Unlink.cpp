@@ -13,6 +13,8 @@ struct Rva002E36D5Node
 };
 
 extern Rva002E36D5Node *g_00DFF0B8;
+// g_00DFF0B8: matched references place it at VA 0xdff0b8 (zero-filled .bss).
+Rva002E36D5Node * g_00DFF0B8;
 
 void Rva002E3714Unlink(Rva002E36D5Node *node)
 {

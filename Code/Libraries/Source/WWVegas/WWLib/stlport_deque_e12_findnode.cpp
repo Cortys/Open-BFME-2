@@ -15,6 +15,8 @@ struct BfmeE12 { float x, y, z; };
 struct Rva00422544Elem { Rva00422544Elem *m_next; int m_unk04; int m_key; };
 struct Rva00422544List { Rva00422544Elem *m_head; };
 extern unsigned char g_00DC84F5;
+// g_00DC84F5: matched references place it at VA 0xdc84f5 (retail .data initial value 1).
+unsigned char g_00DC84F5 = 1;
 extern _STL::deque<BfmeE12>::iterator g_00E031A8;
 extern _STL::deque<BfmeE12>::iterator g_00E031B8;
 

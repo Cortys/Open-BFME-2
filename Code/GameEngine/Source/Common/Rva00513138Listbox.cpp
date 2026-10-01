@@ -23,6 +23,8 @@ public:
 
 class GameWindow;
 extern int g_00DD1488;
+// g_00DD1488: matched references place it at VA 0xdd1488 (retail .data initial value -65536).
+int g_00DD1488 = -65536;
 int GadgetListBoxAddEntryText(class GameWindow *listbox, class UnicodeString text, int color, int row, int column, bool overwrite);
 
 class Rva00513138

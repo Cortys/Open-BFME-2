@@ -31,6 +31,8 @@ private:
 };
 typedef char CheckPointGroupSize[(sizeof(PointGroupClass) == 0x5c) ? 1 : -1];
 extern PointGroupClass *g_00E06098;
+// g_00E06098: matched references place it at VA 0xe06098 (zero-filled .bss).
+PointGroupClass * g_00E06098;
 struct Rva0055C8BC
 {
     Rva0055C8BC();

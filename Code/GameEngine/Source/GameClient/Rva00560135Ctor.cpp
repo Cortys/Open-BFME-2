@@ -55,6 +55,8 @@ private:
 };
 typedef char CheckStreakSize[(sizeof(StreakLineClass) == 0x19c) ? 1 : -1];
 extern StreakLineClass *g_00E06224;
+// g_00E06224: matched references place it at VA 0xe06224 (zero-filled .bss).
+StreakLineClass * g_00E06224;
 struct Rva00560135
 {
     Rva00560135();

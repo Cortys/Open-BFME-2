@@ -27,9 +27,17 @@ public:
 
 extern GlobalData *TheWritableGlobalData;
 extern ShareBufferClass<Vector3> *g_00E065C8;
+// g_00E065C8: matched references place it at VA 0xe065c8 (zero-filled .bss).
+ShareBufferClass<Vector3> * g_00E065C8;
 extern ShareBufferClass<Vector4> *g_00E065CC;
+// g_00E065CC: matched references place it at VA 0xe065cc (zero-filled .bss).
+ShareBufferClass<Vector4> * g_00E065CC;
 extern ShareBufferClass<float> *g_00E065D0;
+// g_00E065D0: matched references place it at VA 0xe065d0 (zero-filled .bss).
+ShareBufferClass<float> * g_00E065D0;
 extern ShareBufferClass<unsigned char> *g_00E065D4;
+// g_00E065D4: matched references place it at VA 0xe065d4 (zero-filled .bss).
+ShareBufferClass<unsigned char> * g_00E065D4;
 
 class Rva005C7792
 {
