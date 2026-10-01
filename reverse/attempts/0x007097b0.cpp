@@ -1,7 +1,7 @@
 // ?rva007097B0@AptScriptFunctionBase@@SAHPAX@Z
-// partial score=0.93 date=2026-10-01
+// partial score=0.97 date=2026-10-01
 // ?rva007097B0@AptScriptFunctionBase@@SAHPAX@Z
-// partial score=0.93 date=2026-10-01
+// partial score=0.97 date=2026-10-01
 // cl: /O2 /MD
 // APT0.19.03 May2006 Xbox release donor supplies class and method spellings.
 // Target assertions name AptObject/AptScriptFunction.cpp and independently name
@@ -17,10 +17,11 @@ extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *,const char *,int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
-class AptValue {
+class AptValue
+{
 public:
-    virtual void AddRef();
-    virtual void Release();
+	virtual void AddRef();
+	virtual void Release();
 };
 struct AptInitParmsT { unsigned char unaccessed[48]; int iRegArraySize; };
 void *__cdecl operator new(unsigned int);
@@ -65,27 +66,20 @@ void AptScriptFunctionBase::InitializeStaticData(const AptInitParmsT &parms)
     for(int i=0;i<snRegisterBlockSize;++i) spRegBlockBase[i]=gpUndefinedValue;
     snRegBlockCurrentFrameCount=0;
 }
-// ?rva007097B0@AptScriptFunctionBase@@SAHPAX@Z @0x007097B0 171B: PopStaticData
-// counterpart of PushStaticData. Evidence: same 4 class statics and assert file
-// AptObject/AptScriptFunction.cpp as siblings; string_xrefs pins both literals
-// ("spRegBlockBase" line 195, "pSaveBase >= spRegBlockBase &&
-// pSaveBase <= spRegBlockCurrentFrameBase" line 199); virtual slot-1 Release on
-// each cleared register matches BfmeAptValue006DCD20::Release; cdecl 1-arg
-// signature from caller 0x006FD340 (push eax + call + add esp,4); return is a
-// signed pointer difference (sub + sar 2). Honest address name: real name unproven.
+
 // ?rva007097B0@AptScriptFunctionBase@@SAHPAX@Z present-unmatched
 int AptScriptFunctionBase::rva007097B0(void *pSaveBase)
 {
     CHECK_AT(spRegBlockBase,"spRegBlockBase",195);
-    AptValue **save=(AptValue **)pSaveBase;
-    CHECK_AT(save >= spRegBlockBase && save <= spRegBlockCurrentFrameBase,"pSaveBase >= spRegBlockBase && pSaveBase <= spRegBlockCurrentFrameBase",199);
+    CHECK_AT(pSaveBase>=spRegBlockBase && pSaveBase<=spRegBlockCurrentFrameBase,"pSaveBase >= spRegBlockBase && pSaveBase <= spRegBlockCurrentFrameBase",199);
     for(int i=0;i<snRegBlockCurrentFrameCount;++i) {
-        AptValue *reg=spRegBlockCurrentFrameBase[i];
+        AptValue *tmp=spRegBlockCurrentFrameBase[i];
         spRegBlockCurrentFrameBase[i]=gpUndefinedValue;
-        reg->Release();
+        tmp->Release();
     }
-    AptValue **oldBase=spRegBlockCurrentFrameBase;
-    spRegBlockCurrentFrameBase=save;
-    snRegBlockCurrentFrameCount=oldBase-save;
-    return snRegBlockCurrentFrameCount;
+    int n=(char *)spRegBlockCurrentFrameBase-(char *)pSaveBase;
+    spRegBlockCurrentFrameBase=(AptValue **)pSaveBase;
+    n>>=2;
+    snRegBlockCurrentFrameCount=n;
+    return n;
 }

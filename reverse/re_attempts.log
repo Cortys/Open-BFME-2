@@ -4701,3 +4701,11 @@ FUN_006b4410	0x002B4410	29	blocked	5-push wrapper calls 3-arg rowed 0x002B442D n
 ?rva002B9BB7@Rva002BA8F1Logic@@QAEXPAVXfer@@@Z	0x002B9BB7	325	blocked	chain xfer 315vs325 esi-edi swap plus local layout 12 structural needs register lever t=18 model=muse-09
 ?rva002B56CF@Rva002B56CF@@QAEXPAVRva002B2FCB@@@Z	0x002B56CF	106	blocked	EH prolog with unclaimed funclet 0x0077611D plus g_00BFB1CC needs unwind object t=10 model=muse-09
 ?Rva002B61C5Destroy@@YAXPAVRva002B2F49@@0@Z	0x002B61C5	24	blocked	callee row 0x002B44C1 is 2-arg but retail passes first last plus tag int so true is 3-arg both compile same 27B wrapper exact 24B gate unresolved needs central retype t=15 model=muse-09
+?rva006C1920@Rva006C1850@@QAE_NI@Z	0x006C1920	204	partial	loop index edi vs ebx inner temps differ store scheduling t=24 model=muse-05 score=0.93 stash=reverse/attempts/0x006c1920.cpp
+?drawHiliteBar@@YAXPBVImage@@00HHHH@Z	0x000A273F	254	partial	cmovl vs jge-mov for min clamp plus sub scheduling plus lea operand order plus 1B size delta 255 vs 254 t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x000a273f.cpp
+??0Rva001525FB@@QAE@XZ	0x001525FB	66	partial	vptr 6B late after and-lea t=25 model=muse-05 score=0.91 stash=reverse/attempts/0x001525fb.cpp
+?rva007097B0@AptScriptFunctionBase@@SAHPAX@Z	0x007097B0	171	partial	single load hoisted above je t=30 model=muse-05 score=0.97 stash=reverse/attempts/0x007097b0.cpp
+?rva00298893@Rva00298893@@QAE_NXZ	0x00298893	174	blocked	174B thiscall with 5 virtual slots plus findObjectByID plus report plus bfmeDoBGB; owner unknown no vtable string donor; loop add-jne ambiguous; t=12 model=muse-05
+?Rva006C8980Set@@YA_NPAXV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@1I@Z	0x006C8980	178	blocked	STL DWORD setter HKEY+2 strings+uint 32B caller-cleanup matches but ESP SEH prologue vs EBP call prologue t=25 model=muse-spark
+?rva004A438B@Rva004A438B@@QBEMXZ	0x004A438B	94	partial	frameless vs EBP frame 3B plus edi-vs-esi regs and lea-vs-stack-temp and movss-vs-int t=30 model=muse-spark score=0.93 stash=reverse/attempts/0x004a438b.cpp
+?Rva0004DE72Blend@@YAXPAHHE@Z	0x0004DE72	253	blocked	alpha-composite free func: 6 variants best 246B vs 253B; out ptr cached vs reload; divisor edi vs esi; stack layout differs despite decl reorder; t=25 model=muse-05
