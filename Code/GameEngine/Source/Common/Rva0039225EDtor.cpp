@@ -37,7 +37,18 @@ private:
 	Rva0039205C m_obj10;
 };
 
-Rva0039225E::~Rva0039225E()
+inline Rva0039225E::~Rva0039225E()
 {
 	m_obj10.~Rva0039205C();
 }
+
+// Header inline that other units including the header emit as select-any
+// copies, which the plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRva0039225EDtor@@YAXPAVRva0039225E@@@Z present-unmatched
+void bfmeEmitRva0039225EDtor(Rva0039225E *p)
+{
+	p->Rva0039225E::~Rva0039225E();
+}
+#pragma inline_depth()
