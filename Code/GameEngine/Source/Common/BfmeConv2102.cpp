@@ -1,6 +1,11 @@
 struct Gen009F5040Node
 {
-	void bfmeUnhookYQ();
+};
+
+class BfmeThingZU
+{
+public:
+	void bfmeUnhookZU();
 };
 
 class BfmeThingYQ
@@ -34,7 +39,7 @@ void Gen009F5040::bfmeDropYQ(BfmeThingYQ *t)
 
 	remove(n);
 	t->bfmeClearYQ(0);
-	n->bfmeUnhookYQ();
+	((BfmeThingZU *)n)->bfmeUnhookZU();
 
 	::operator delete(n);
 }
