@@ -39,9 +39,4 @@ void BfmeWordVec::resize(unsigned n, unsigned short x)
 	else
 		_M_fill_insert(end(), n - size(), x);
 }
-// ?resize@BfmeWordVec@@QAEXI@Z present-unmatched
-void BfmeWordVec::resize(unsigned n)
-{
-	resize(n, null_fill());
-}
 template class _STL::vector<unsigned short, _STL::allocator<unsigned short> >;
