@@ -1,0 +1,17 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ??$_Construct@UBfmePod80@@U1@@_STL@@YAXPAUBfmePod80@@ABU1@@Z @0x0051F920 45B: placement copy of 80B element via rowed Rva0051F87B copy ctor 0x0051F87B. Callers in stlport_pod_vector_bodies.cpp (__uninitialized_copy/fill_n) plus StlportVectorOverflowRva00520211.cpp (twin-pinned as Rva00520211Element). Precedent stlport_construct_pod172.cpp.
+#include <new>
+#include <vector>
+struct BfmePod80 { int a[20]; };
+class Rva0051F87B
+{
+public:
+	Rva0051F87B(const Rva0051F87B &o);
+};
+namespace _STL {
+template <> void _Construct<BfmePod80, BfmePod80>(BfmePod80 *__p, const BfmePod80 &__val)
+{
+	new ((void *)__p) Rva0051F87B((const Rva0051F87B &)__val);
+}
+}

@@ -46514,3 +46514,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004CE4A8@UpgradeModule@@QAEXXZ,,0x004CE4A8,8,Code/GameEngine/Source/GameLogic/Object/Upgrade/UpgradeModuleConditionState.cpp,matched,remove wrapper of 0x004CE41E
 ?rva004CE4B0@UpgradeModule@@UAE_NPAVRva00406F9C@@@Z,,0x004CE4B0,36,Code/GameEngine/Source/GameLogic/Object/Upgrade/UpgradeModuleConditionState.cpp,matched,UpgradeMux slot 3 at +0x10: placeholder base test 0x004CE342 then remove the condition
 ??0Rva0051F87B@@QAE@ABV0@@Z,,0x0051F87B,165,Code/GameEngine/Source/Common/Rva0051F87BCopy.cpp,matched,copy ctor vtable 0x0086745C callers 0x0051F920 0x005205DA chain from 0x0051ED0A
+??$_Construct@UBfmePod80@@U1@@_STL@@YAXPAUBfmePod80@@ABU1@@Z,,0x0051F920,45,Code/Libraries/Source/WWVegas/WWLib/stlport_construct_pod80_rva.cpp,matched,placement copy via rowed Rva0051F87B copy callers filln uninitcopy overflow
