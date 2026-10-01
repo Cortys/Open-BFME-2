@@ -23,11 +23,6 @@ protected:
 	unsigned char m_pad1[0x20 - 0x10];
 };
 
-// ??1Rva00362EC7@@ present-unmatched
-Rva00362EC7::~Rva00362EC7()
-{
-}
-
 class __declspec(novtable) AnimatedParticleSysBoneClientUpdate : public Rva00362EC7
 {
 public:
