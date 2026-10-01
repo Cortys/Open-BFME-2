@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc
 // stlport
 //
 // Rva0021F876 copy ctor, retail 0x0021F876 125 bytes. Copy ctor
@@ -9,26 +9,8 @@
 // each member address before pushing the source (the banked attempt called
 // StringBase's copy ctor directly and pushed first).
 
+#include "ascii_string.h"
 #include <vector>
-
-class AsciiString;
-
-template <typename T> class StringBase
-{
-public:
-	~StringBase();
-private:
-	StringBase(const StringBase &other);
-	T *m_data;
-	friend class AsciiString;
-};
-class AsciiString
-{
-public:
-	AsciiString(const AsciiString &o) : m_data(o.m_data) {}
-private:
-	StringBase<char> m_data;
-};
 
 struct BfmePod216 { int a[54]; };
 
