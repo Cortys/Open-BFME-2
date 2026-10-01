@@ -49,6 +49,8 @@ private:
 class AsciiString : private StringBase<char>
 {
 	friend class GameLODManager;
+public:
+	~AsciiString();
 };
 
 class GameLODManager
