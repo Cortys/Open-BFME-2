@@ -45713,3 +45713,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva004C1028@Rva004C1028@@QAEMH@Z,,0x004C1028,50,Code/GameEngine/Source/Common/Rva004C1028Get.cpp,matched,interface slot gated float forward with int arg; conditional-expression zero fixes the banked partial
 ?rva004C10BC@Rva004C10BC@@QAEMXZ,,0x004C10BC,52,Code/GameEngine/Source/Common/Rva004C10BCGet.cpp,matched,interface slot gated float getter; conditional-expression zero fixes the banked partial
 ?rva004C10F0@Rva004C10F0@@QAEMXZ,,0x004C10F0,49,Code/GameEngine/Source/Common/Rva004C10F0Get.cpp,matched,interface slot gated float getter; conditional-expression zero fixes the banked partial
+?rva001FA7F8@Rva001FA7F8@@QAEXXZ,,0x001FA7F8,23,Code/GameEngine/Source/Common/Thing/Rva001FA7F8.cpp,matched,chain via rowed 0x001FA4F0 null-checked slot4 plus tail-jmp
