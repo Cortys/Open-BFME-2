@@ -22,6 +22,12 @@
 // ret 16; its receiver points to MeshModelClass at +0, and target MeshModelClass
 // stores CurMatDesc at +0x94. It forwards an owning RefCountPtr result to the
 // matched MeshModelClass texture getters at 0x143560 / 0x0D206A.
+// The matched Rva006FD440::bfmeGet row and the MeshModelClass::Peek_Texture
+// pin both name 0x00143560. The matched row's source documents the same const
+// three-index hidden-return texture forwarder through receiver+0x94; both
+// source types return one-pointer owning texture handles. Bind the spellings at
+// link time to preserve this already-verified call sequence.
+#pragma comment(linker, "/alternatename:?Peek_Texture@MeshModelClass@@QBE?AV?$RefCountPtr@VTextureClass@@@@HHH@Z=?bfmeGet@Rva006FD440@@QBE?AVBfmeHandleCX@@HHH@Z")
 class TextureClass {
 public:
 	void Add_Ref() { ++RefCount; }
