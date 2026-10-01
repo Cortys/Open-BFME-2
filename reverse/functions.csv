@@ -45571,3 +45571,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva00403055@@QAE@XZ,,0x00402F71,103,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,dtor: clearItems then inline null-checked member releases via 0x50ED3; /EHs keeps the unwind state around the vector free
 ?clearItems@Rva00403055@@QAEXXZ,,0x00402C4E,60,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,deletes each owned item then erases the range; end hoisted before the loop
 ??0Rva00402F28Item@@QAE@ABV0@@Z,,0x00402F28,45,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,chain base Rva003F9FE6 copy then vtable 0xC37898 and three byte extras
+?rva002230FF@Rva002230FF@@QAEPAXPBX@Z,,0x002230FF,37,Code/GameEngine/Source/GameClient/Rva002230FFNewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and 0x00222DBF twin of 0x000A7849
