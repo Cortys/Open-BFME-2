@@ -1,19 +1,17 @@
-// ?ignoreObstacle@AIUpdateInterface@@QAEXPBVObject@@@Z
-// partial score=0.93 date=2026-09-27
-// ?ignoreObstacle@AIUpdateInterface@@QAEXPBVObject@@@Z
-// partial score=0.93 date=2026-09-27
 // cl: /O1 /DNDEBUG /MD
 //
-// ?ignoreObstacle@AIUpdateInterface@@QAEXPBVObject@@@Z,
+// AIUpdateInterface::ignoreObstacle (BFME2 build)
 // retail 0x00268D88, 304 bytes. BFME2 AIUpdateInterface::ignoreObstacle with
 // CritterDesync fprintf logging (game _fprintf at 0x2CEC42, flag byte
 // VA 0x00E03745, sink VA 0x00DFEFF0, TheGameLogic 0x009FE78C). Donor is BFME1
 // AIUpdateInterfaceIgnoreObstacle (name at ThingTemplate+0x64, id at
 // Object+0x74, m_object at +8, m_ignoreObstacleID at +0x164).
+// The desync flag byte and the log sink are real extern globals here; the
+// banked attempt read TheGameLogic and the flag through literal-address
+// macros, which reordered the loads. Callers 0x00269CEA 0x0026A2DE 0x0026BB26.
 
-#define CritterDesyncFlag (*(unsigned char *)0x00E03745)
-#define CritterDesyncSink (*(void **)0x00DFEFF0)
-
+extern unsigned char g_00E03745;
+extern void *g_00DFEFF0;
 extern "C" void __cdecl fprintf(void *sink, const char *format, ...);
 
 template <typename T> struct BfmeStringData
@@ -89,15 +87,14 @@ private:
 	ObjectID m_ignoreObstacleID;
 };
 
-// ?ignoreObstacle@AIUpdateInterface@@QAEXPBVObject@@@Z present-unmatched
 void AIUpdateInterface::ignoreObstacle(const Object *obj)
 {
-	if (CritterDesyncFlag)
+	if (g_00E03745)
 	{
 		if (obj)
 		{
-			if (CritterDesyncSink)
-				fprintf(CritterDesyncSink,
+			if (g_00DFEFF0)
+				fprintf(g_00DFEFF0,
 					"  CritterDesync - Critter %s(%d) set to ignore %s(%d)",
 					m_object->getTemplate()->getName().str(), m_object->getID(),
 					obj->getTemplate()->getName().str(), obj->getID());
@@ -107,16 +104,16 @@ void AIUpdateInterface::ignoreObstacle(const Object *obj)
 			Object *old = TheGameLogic->findObjectByID(m_ignoreObstacleID);
 			if (old)
 			{
-				if (CritterDesyncSink)
-					fprintf(CritterDesyncSink,
+				if (g_00DFEFF0)
+					fprintf(g_00DFEFF0,
 						"  CritterDesync - Critter %s(%d) set to ignore NOTHING. Was previously ignoring %s(%d)",
 						m_object->getTemplate()->getName().str(), m_object->getID(),
 						old->getTemplate()->getName().str(), old->getID());
 			}
 			else
 			{
-				if (CritterDesyncSink)
-					fprintf(CritterDesyncSink,
+				if (g_00DFEFF0)
+					fprintf(g_00DFEFF0,
 						"  CritterDesync - Critter %s(%d) set to ignore NOTHING. Was previously ignoring NOTHING",
 						m_object->getTemplate()->getName().str(), m_object->getID());
 			}
