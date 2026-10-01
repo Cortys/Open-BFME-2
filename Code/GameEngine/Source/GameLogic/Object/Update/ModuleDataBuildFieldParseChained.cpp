@@ -58,6 +58,7 @@ public:
 	static void parseAsciiString(INI *, void *, void *, const void *);
 	static void parseBool(INI *, void *, void *, const void *);
 	static void parseFXList(INI *, void *, void *, const void *);
+	static void parseInt(INI *, void *, void *, const void *);
 	static void parseReal(INI *, void *, void *, const void *);
 	static void parsePercentToReal(INI *, void *, void *, const void *);
 	static void parseDurationUnsignedInt(INI *, void *, void *, const void *);
@@ -117,6 +118,23 @@ extern const FieldParse g_00C5F810CurseSpecialPowerFieldParse[] = {
 	{ "TriggerFX", &INI::parseFXList, 0, 0xC8 },
 	{ "CursedFX", &INI::parseFXList, 0, 0xCC },
 	{ "CursePercentage", &INI::parsePercentToReal, 0, 0xD0 },
+	{ 0, 0, 0, 0 }
+};
+
+// Retail VA 0x00BEF0A8 is the WeaponFireSpecialAbilityUpdateModuleData
+// FieldParse table: SpecialWeapon/parseAsciiString at +0xC8,
+// WhichSpecialWeapon/parseInt at +0xCC, SkipContinue/parseBool at +0xD0,
+// BusyForDuration/parseDurationUnsignedInt at +0xD4, NeedLivingTargets and
+// PlayWeaponPreFireFX/parseBool at +0xD8/+0xD9, then a zero sentinel. The
+// matched caller is corroborated by target pool key 0x00492685 and factory
+// 0x0024DB56.
+extern const FieldParse g_00BEF0A8WeaponFireSpecialAbilityFieldParse[] = {
+	{ "SpecialWeapon", &INI::parseAsciiString, 0, 0xC8 },
+	{ "WhichSpecialWeapon", &INI::parseInt, 0, 0xCC },
+	{ "SkipContinue", &INI::parseBool, 0, 0xD0 },
+	{ "BusyForDuration", &INI::parseDurationUnsignedInt, 0, 0xD4 },
+	{ "NeedLivingTargets", &INI::parseBool, 0, 0xD8 },
+	{ "PlayWeaponPreFireFX", &INI::parseBool, 0, 0xD9 },
 	{ 0, 0, 0, 0 }
 };
 
@@ -556,7 +574,7 @@ public:
 void WeaponFireSpecialAbilityUpdateModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	Rva0044EB54::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00BEF0A8), 0);
+	parse.add(g_00BEF0A8WeaponFireSpecialAbilityFieldParse, 0);
 }
 
 class ReplenishUnitsBehaviorModuleData
