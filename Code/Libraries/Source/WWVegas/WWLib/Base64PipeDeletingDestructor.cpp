@@ -17,6 +17,7 @@
 class Pipe
 {
 public:
+	Pipe();
 	virtual ~Pipe(void);
 	virtual int Flush(void);
 	virtual int End(void);
