@@ -5157,3 +5157,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??0Rva002D3CA5@@QAE@PAURva002D3CA5First@@PAURva002D3CA5Second@@ABVAsciiString@@@Z	0x002D3CA5	133	partial	xor-early plus vtable-m08 before lea-EH order t=25 model=muse-01 score=0.95 stash=reverse/attempts/0x002d3ca5.cpp
 ?rva0027449C@Rva0027449C@@QAEPAXH@Z	0x0027449C	43	blocked	frame wall ours push ebp mov ebp esp plus cmp ebp+8 vs retail frameless cmp esp+8 plus pop ebp vs pop esi t=3 model=muse-20
 ?Rva0032A9D3Split@@YA?AVAsciiString@@PAV1@ABV1@@Z	0x0032A9D3	141	blocked	temp wall head at ebp-0x10 vs retail ebp+0xc reuse plus EH and-or vs mov plus extra cmp-jl t=20 model=muse-20
+?update@DockUpdate@@UAE?AW4UpdateSleepTime@@XZ	0x00589F09	258	partial	extra lea eax ebp-0xa4 before push for clear 0x0028F59A ctor return reuse t=25 model=muse-11 score=0.97 stash=reverse/attempts/0x00589f09.cpp
+?rva00589E77@Rva00589E77@@QAEXPBVObject@@@Z	0x00589E77	146	blocked	pointer loop hoists size recompute plus ecxedx mirror needs new idea t=20 model=muse-11
+?rva00589DDD@Rva00589DDD@@QAEXPBVObject@@@Z	0x00589DDD	154	blocked	grant needs reuse plus push eax plus no ptr locals t=15 model=muse-11
