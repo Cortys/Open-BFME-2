@@ -40,7 +40,7 @@ MixFileCreator::FileInfoStruct::FileInfoStruct(const FileInfoStruct &src) :
 }
 
 // ??4FileInfoStruct@MixFileCreator@@QAEAAU01@ABU01@@Z
-MixFileCreator::FileInfoStruct &MixFileCreator::FileInfoStruct::operator=(const FileInfoStruct &src)
+inline MixFileCreator::FileInfoStruct &MixFileCreator::FileInfoStruct::operator=(const FileInfoStruct &src)
 {
 	CRC = src.CRC;
 	Offset = src.Offset;
@@ -87,3 +87,11 @@ void __cdecl Rva002176F1Insert(MixFileCreator::FileInfoStruct *last, MixFileCrea
 	}
 	*last = value;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitMixFileCreatorFileInfoStructAssign@@YAXPAUFileInfoStruct@MixFileCreator@@ABU12@@Z present-unmatched
+void __cdecl bfmeEmitMixFileCreatorFileInfoStructAssign(MixFileCreator::FileInfoStruct *p, const MixFileCreator::FileInfoStruct &src)
+{
+	*p = src;
+}
+#pragma inline_depth()

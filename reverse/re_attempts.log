@@ -5227,3 +5227,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva000FE9E3@Rva000FE9E3@@QAEXPBURva000FE9E3Pt@@H@Z	0x000FE9E3	248	blocked	O1-G7-SSE-Oy- indexed loop gives 214B vs 248B missing sub-esp spill and esi and stack saves for minX-minY t=18 model=muse-04
 ?rva0002AD50@BfmeStrV55@@QAE?AV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@II@Z	0x0002AD50	251	blocked	Od-EHsc return-by-value BfmeStrV55-substr gives 140B vs 251B missing EH prolog and inline range-init dispatch t=22 model=muse-04
 ?rva000FE90D@Rva000FE001@@QAEPAV1@XZ	0x000FE90D	46	partial	xor-push-pop hoisted before imm store vs retail imm-xor-28-push-pop exact 46B-16insns t=20 model=muse-04 score=0.95 stash=reverse/attempts/0x000fe90d.cpp
+?rva00156390@Rva00156390@@QAE_NXZ	0x00156390	249	blocked	needs EH handler 0x766F48 unclaimed funclet owned by gen_uw never hand-write t=5 model=muse-16
