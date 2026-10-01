@@ -7,6 +7,7 @@ typedef bool Bool;
 template <typename T> class StringBase;
 class UnicodeString;
 UnicodeString Rva00579900Get(int a);
+UnicodeString Rva00579868Get(int a, int b);
 
 template <typename T>
 class StringBase
@@ -14,6 +15,7 @@ class StringBase
 	friend class AsciiString;
 	friend class UnicodeString;
 	friend UnicodeString Rva00579900Get(int);
+	friend UnicodeString Rva00579868Get(int, int);
 
 	StringBase(const StringBase<T> &that);
 	void releaseBuffer();
@@ -36,6 +38,7 @@ private:
 class UnicodeString
 {
 	friend UnicodeString Rva00579900Get(int);
+	friend UnicodeString Rva00579868Get(int, int);
 public:
 	UnicodeString() {}
 	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
@@ -77,6 +80,18 @@ UnicodeString Rva00579900Get(int a)
 	if (exists) {
 		const wchar_t *fmt = fetched.m_data.m_data ? fetched.m_data.m_data->data : (const wchar_t *)&g_Va007BB5C4;
 		tmp.format(fmt, a);
+	}
+	return tmp;
+}
+
+UnicodeString Rva00579868Get(int a, int b)
+{
+	UnicodeString tmp;
+	Bool exists;
+	UnicodeString fetched = TheGameText->fetch("STRATEGICHUD:StatsCommandPoints", &exists);
+	if (exists) {
+		const wchar_t *fmt = fetched.m_data.m_data ? fetched.m_data.m_data->data : (const wchar_t *)&g_Va007BB5C4;
+		tmp.format(fmt, a, b);
 	}
 	return tmp;
 }
