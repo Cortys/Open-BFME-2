@@ -45381,3 +45381,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0058E481@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E481,144,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E481.cpp,matched,neighbours 0x0058E367 0x0058E511 same factory shape plus ctor and setters
 ?rva0058E0B0@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E0B0,50,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E0B0.cpp,matched,neighbours 0x0058E047 0x0058E367 same factory plus base ctor
 ?rva0058E57B@NetPacket@@QAEHXZ,,0x0058E57B,57,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E57B.cpp,matched,NetPacket len ceil-div-8 plus nested loops via init layout
+?putObjectAtGarrisonPoint@GarrisonContain@@IAEXPAVObject@@HHH@Z,,0x00477DA1,175,Code/GameEngine/Source/GameLogic/Object/Contain/GarrisonContainPutObjectAtGarrisonPoint.cpp,matched,donor GarrisonContain plus remove layout plus TheGameLogic frame
