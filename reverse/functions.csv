@@ -46174,3 +46174,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000CED14@W3DTreeDrawModuleData@@QAE?AVAsciiString@@H@Z,,0x000CED14,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/Draw/Rva000CED14.cpp,matched,vslot 14 returns m_modelName at plus08 by value via hidden plus int dummy
 ?rva00409FA0@Rva00409FFA@@QAEXHH@Z,,0x00409FA0,44,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FA0.cpp,matched,unlock 0x9C array guard plus count update no commas
 ?rva00409FCC@Rva00409FFA@@QAEXXZ,,0x00409FCC,46,Code/GameEngine/Source/Common/System/SaveGame/Rva00409FCC.cpp,matched,unlock sibling array resolve via ControlBar no commas
+?rva000A9DC4@Rva000A9DC4@@QAE?AVAssetReference@@XZ,,0x000A9DC4,47,Code/GameEngine/Source/Common/Rva000A9DC4Get.cpp,matched,by-value getter via iface slot4 sibling pattern copy rowed 0x424BB caller 0xA9F23
