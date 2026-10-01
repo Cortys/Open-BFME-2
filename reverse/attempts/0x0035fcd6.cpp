@@ -1,5 +1,7 @@
 // ??0Rva0035FCD6@@QAE@XZ
 // partial score=0.95 date=2026-10-01
+// ??0Rva0035FCD6@@QAE@XZ
+// partial score=0.95 date=2026-10-01
 // cl: /O1 /MD
 // ??0Rva0035FCD6@@QAE@XZ @0x0035FCD6 (52B): ctor storing vtable 0x008166BC,
 // same vtable as dtor ??1Rva0035FD0A at 0x0035FD0A. Calls base ??0Rva001DBAA4
