@@ -45264,3 +45264,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00214862@Rva002147D1@@QAEPAXPAXH@Z,,0x00214862,97,Code/GameEngine/Source/Common/Rva002147D1Get.cpp,matched,same container as sibling 0x00214801 via copy ctor row 0x00045455 caller at 0x00403FE3
 ?canUnpack@Rva00395F57@@QAE_N_N@Z,,0x00395F57,176,Code/GameEngine/Source/Common/Rva00395F57CanUnpack.cpp,matched,Castle canUnpack via BFME1 donor adapted to retail offsets
 ?xfer@Rva0036783F@@MAEXPAVXfer@@@Z,,0x0036788E,72,Code/GameEngine/Source/Common/Rva0036783FXfer.cpp,matched,slot 3 xfer via base Version1 IsLightCRC int Snapshot helper
+?rva00404AB1@Rva00404AB1@@QAEXPAVXfer@@@Z,,0x00404AB1,82,Code/GameEngine/Source/Common/Rva00404AB1Method.cpp,matched,xfer-pattern Version1 plus 20 float pairs plus 2 uints mirrors Rva00404781 layout
