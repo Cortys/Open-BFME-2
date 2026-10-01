@@ -45258,3 +45258,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva00397CC9Alloc@@YGPAXABURva0039627D@@@Z,,0x00397CC9,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00397CC9Alloc.cpp,matched,alloc 0x20 node via rowed allocate plus rowed Construct at plus10
 ?rva002B2B78@Rva002B2B78@@QAEHPAV1@@Z,,0x002B2B78,28,Code/GameEngine/Source/Common/Rva002B2B78Compare.cpp,matched,cross-compare two dwords caller 0x002BCFEE
 ?rva002B2AFD@Rva002B2AFD@@QAEHXZ,,0x002B2AFD,48,Code/GameEngine/Source/Common/Rva002B2AFDSelect.cpp,matched,selector via isSelectionLocked and 0x002034E9 caller 0x0038030D
+?Rva002B44C1Destroy@@YAXPAVRva002B2F49@@0@Z,,0x002B44C1,27,Code/GameEngine/Source/Common/Rva002B44C1Destroy.cpp,matched,chain via rowed 0x002B2F49 same flags as neighbours unblocks 0x002B61C5
