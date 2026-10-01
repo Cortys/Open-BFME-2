@@ -45347,3 +45347,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0049D526@Rva0049D526@@QAEXPAX@Z,,0x0049D526,89,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D526.cpp,matched,copy ctor row 0x00045455 list link plus flag bits
 ?rva0049D67F@Rva0049D67F@@QAE_NPBDPA_N1@Z,,0x0049D67F,308,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D67F.cpp,matched,Disability bitstring worker via Veterancy sibling transfer
 ?rva0049D3BC@Rva0049D3BC@@QAEXXZ,,0x0049D3BC,362,Code/GameEngine/Source/GameLogic/Object/Update/Rva0049D3BC.cpp,matched,TheGameLogic frame plus entry timeouts and bit tables
+?rva0029F8B8@Rva0029F8B8@@QAE?AVRva0043FC20@@XZ,,0x0029F8B8,130,Code/GameEngine/Source/Common/Rva0029F8B8.cpp,matched,GlobalLanguage override plus copy ctor pair
