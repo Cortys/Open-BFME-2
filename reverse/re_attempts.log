@@ -4746,3 +4746,6 @@ FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont 
 ?rva004A12B6@Rva004A12B6@@QAE_NPAVObject@@0@Z	0x004A12B6	201	blocked	MI negative this-0x1C-0x18 plus body edi vs eax and 33B over after 3 variants t=15 model=muse-02
 ?rva001D9C9F@Rva001D9C9F@@QAE_NH@Z	0x001D9C9F	45	blocked	twin of rowed NoCase allocate-copy 0x00317D5C same 45B ebp-tag shape via allocate 0x00523D6C plus NoCase copy dupe 0x001D9B3C needs duplicate-name policy t=12 model=muse-13
 FUN_00979C52	0x00579C52	102	blocked	ctor with AsciiString StatsDisplay plus Rva00221635 int-pin mismatch plus array new 8x6 plus vtable g_00C6ED9C t=10 model=muse-03
+FUN_006e1ca7	0x002E1CA7	123	blocked	complex vector AsciiString TheGameLogic needs header migration 0 ready t=15 model=muse-11
+FUN_009235d5	0x005235D5	357	blocked	large EH Apt Unicode 7 strings 0 ready needs strong model t=10 model=muse-11
+FUN_006a9e36	0x002A9E36	118	blocked	x87 fimul vs fild-fmul shape plus branch inversion 0 ready t=8 model=muse-11
