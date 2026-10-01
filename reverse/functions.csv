@@ -46728,3 +46728,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002AA191@Rva002AA191@@QAEHPBVObject@@@Z,,0x002AA191,46,Code/GameEngine/Source/Common/Rva002AA191Find.cpp,matched,10-slot find via Rva004D6BCD caller 0x00273C6C unblocks 0x00273C47
 ?rva0056B76D@Rva0056B76D@@QAE_NE@Z,,0x0056B76D,51,Code/GameEngine/Source/Common/Rva0056B76D.cpp,matched,leaf predicate over 0x50-0x53 with flags byte
 ?rva002AAD23@Rva002AAD23@@QAE_NPBD@Z,,0x002AAD23,47,Code/GameEngine/Source/Common/Rva002AAD23Set.cpp,matched,BitFlags-style set via getSingleBitFromName caller 0x002AC15B unblocks 0x002AC06A
+?rva004ECECD@Rva004ECECD@@QAEPAVTeam@@H@Z,,0x004ECECD,56,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ECECD.cpp,matched,unlock lane ModelNode stride 0x14 TheTeamFactory plus findInstance 13 callers
