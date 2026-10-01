@@ -8,7 +8,9 @@
 // plus inline setVel setCurPos like the update side.
 #include "PreRTS.h"
 #include "GameClient/ProcessAnimateWindow.h"
+#pragma optimize("sy", on)
 #include "GameClient/AnimateWindowManager.h"
+#pragma optimize("", on)
 #include "GameClient/GameWindow.h"
 #include "GameClient/Display.h"
 
