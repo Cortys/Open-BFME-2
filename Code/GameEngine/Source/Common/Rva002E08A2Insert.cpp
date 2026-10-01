@@ -53,3 +53,24 @@ void **Rva002E0864Median(void **a, void **b, void **c)
 		return b;
 	}
 }
+
+// ?Rva002E08C7SiftUp@@YAXPAPAXHHPAX@Z @0x002E08C7 63B.
+// Heap sift-up over void* elements keyed at +0xC (min-heap): bubbles pivot
+// up from idx while the parent key exceeds it, stopping at top or a parent
+// key at or below it. Sibling of the median/insert family above (same +0xC
+// key, same /O1); caller at 0x002E0E9D is the adjust-heap that tail-calls
+// this with 5 pushes like the 0x003BD4E8 precedent. Unlock lane, unblocks
+// 0x002E0E9D.
+void Rva002E08C7SiftUp(void **base, int idx, int top, void *pivot)
+{
+	int parent = (idx - 1) / 2;
+	while (idx > top) {
+		void *p = base[parent];
+		if (((int *)p)[3] <= ((int *)pivot)[3])
+			break;
+		base[idx] = p;
+		idx = parent;
+		parent = (parent - 1) / 2;
+	}
+	base[idx] = pivot;
+}

@@ -45434,3 +45434,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00466C04@Rva00466C04@@QAE_NPAVObject@@I@Z,,0x00466C04,144,Code/GameEngine/Source/GameLogic/Object/Contain/Rva00466C04Heal.cpp,matched,healing frame check via TheGameLogic plus body slots
 ?Rva002C76B2Build@@YAPAVWeaponTemplateSetHead@@PAV1@HH@Z,,0x002C76B2,204,Code/GameEngine/Source/GameLogic/Object/Rva002C76B2Build.cpp,matched,bitset via 4 tables plus copyctor and EAX-out return
 ?Rva002E0864Median@@YAPAPAXPAPAX00@Z,,0x002E0864,62,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,median of three keyed at plus 0xC via quicksort caller
+?Rva002E08C7SiftUp@@YAXPAPAXHHPAX@Z,,0x002E08C7,63,Code/GameEngine/Source/Common/Rva002E08A2Insert.cpp,matched,heap sift-up min key plus12 caller 0x002E0E9D
