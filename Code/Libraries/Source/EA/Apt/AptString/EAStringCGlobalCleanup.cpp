@@ -38,3 +38,11 @@ void rva007B6760()
     g_eaStringAtE177D4.clear();
     atexit(rva007B9C30);
 }
+
+// Independent 22B boundary at 0x007B6780; same initialization sequence,
+// independently checked global VA E18060 and callback RVA 007B9C40.
+void rva007B6780()
+{
+    g_eaStringAtE18060.clear();
+    atexit(rva007B9C40);
+}
