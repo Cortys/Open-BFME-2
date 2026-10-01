@@ -4864,3 +4864,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva0056AB35@Rva0056ACC5@@QAEXH@Z	0x0056AB35	83	partial	mov byte store early and receiver load before fstp not after t=25 model=muse-07 score=0.93 stash=reverse/attempts/0x0056ab35.cpp
 ?Rva00232E3DGet@@YGHHI@Z	0x00232E3D	82	blocked	else-branch drops mov ebp+8 al as redundant plus MBWC push1 lea-ebp-4 hoisted before strlen vs after plus lea ecx-vs-eax t=10 model=muse-07
 ?Rva0058D041Write@@YAXPAEPAVNetCommandRef@@@Z	0x0058D041	161	partial	extra xor eax eax at +0x5f before word id load 163B vs 161B 64 vs 63 insns t=10 model=muse-18 score=0.97 stash=reverse/attempts/0x0058d041.cpp
+?rva005747B2@Rva00575125@@UAEPAXPAX@Z	0x005747B2	26	partial	mov [ebp-4]0 vs and [ebp-4]0 volatile keeps frame but emits mov 7B not and 4B nonvolatile dead deleted EHTrap gives full SEH 43B t=18 model=muse-13 score=0.9 stash=reverse/attempts/0x005747b2.cpp
+?rva005747B2@Rva00575125@@UAEPAXPAX@Z	0x005747B2	26	blocked	mov [ebp-4]0 vs and [ebp-4]0 volatile keeps frame but emits mov 7B not and 4B nonvolatile-barrier-addr dead deleted Holder-EH and-or-SEH-dtor 59B t=24 model=muse-13 (stash 0.9 kept)
