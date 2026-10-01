@@ -5082,3 +5082,15 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva00395E53@Rva00395E53@@QAEPAXI@Z	0x00395E53	34	blocked	finish wall register-CSE no NEW idea t=15 model=muse-09
 ?Rva003C0CEESet@@YIXHPAVObject@@_N@Z	0x003C0CEE	124	blocked	custom eax-edx-stack convention needs same-TU statics t=12 model=muse-09
 ?rva003C0E32@ScriptActions@@IAEXABVAsciiString@@H@Z	0x003C0E32	85	partial	xor-test-je vs jmp plus vtable temp eax vs edx and mov ecx-eax split t=14 model=muse-09 score=0.93 stash=reverse/attempts/0x003c0e32.cpp
+?rva001E675A@Rva001E675A@@QAEXU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@0@Z	0x001E675A	68	blocked	erase-range this-in-ebx-vs-stack tried explicit-increment end-local tmp-outside t=25 model=muse-11
+?rva001E6532@Rva001E6532@@QAEMPAVObject@@PAUCoord3D@@M@Z	0x001E6532	511	blocked	esi-edi swap plus ebx-vs-ecx zero plus xmm2-vs-xmm0 plus frame 0x1c-vs-0x10 tried O1 O2 reload-range direct-tmp t=15 model=muse-11
+?Rva001E6516Clear@@YGXPAVObject@@@Z	0x001E6516	28	blocked	lea-edx-plus-al-vs-direct-mem-test-and tried O1 O2 Os G7 bitfield inline-accessor-helper t=12 model=muse-11
+?rva00290357@Object@@QAEXXZ	0x00290357	108	partial	lea-eax-for-14e-vs-direct-mem-only-diff-plus-test-al-and-shr-fixed-via-byte-cast-and-unsigned-shift t=20 model=muse-11 score=0.93 stash=reverse/attempts/0x00290357.cpp
+?rva00290496@Object@@QAEXPAVPlayer@@@Z	0x00290496	70	partial	lea ecx plus mov al vs test byte and al plus mov vs and byte t=20 model=muse-11 score=0.91 stash=reverse/attempts/0x00290496.cpp
+?rva00290758@Object@@QAEXHH@Z	0x00290758	73	blocked	dword test plus or caches value via lea plus load t=25 model=muse-11
+?rva0029041B@Object@@QAEXPAVPlayer@@@Z	0x0029041B	123	partial	mov+shr+test al,1 vs test byte mem for cond bits 186 and 301; mask 138 exact via cond test-set helper t=22 model=muse-11 score=0.93 stash=reverse/attempts/0x0029041b.cpp
+?rva00290496@Object@@QAEXPAVPlayer@@@Z	0x00290496	70	blocked	lea ecx plus mov al vs test byte and al plus mov vs and byte for flag 0x121 bit2; bitfield direct also leas t=18 model=muse-11 (stash 0.91 kept)
+?rva002907A1@Object@@QAE_NXZ	0x002907A1	107	partial	ebx fixed via live template local; remaining shr-vs-byte-test for bit8 plus branch sharing t=18 model=muse-11 score=0.92 stash=reverse/attempts/0x002907a1.cpp
+?rva00290357@Object@@QAEXXZ	0x00290357	108	blocked	lea-eax-for-14e-vs-direct-mem-only-diff-tried-no-barrier-volatile-O2-pointer-alias t=15 model=muse-11 (stash 0.93 kept)
+?rva0029041B@Object@@QAEXPAVPlayer@@@Z	0x0029041B	123	blocked	mov-shr-test-al-1-vs-test-byte-mem-for-186-301-tried-test-locals-volatile-O2 t=18 model=muse-11 (stash 0.93 kept)
+?Rva001C5D20Find@@YAXPAURva001C5D20Ctx@@HHEPAH@Z	0x001C5D20	265	blocked	complex-codec-265B-prologue-register-wall-no-progress t=12 model=muse-11
