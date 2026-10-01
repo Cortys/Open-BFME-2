@@ -27,6 +27,24 @@ public:
 	int rva0037DCA5();
 	void *rva0037DC52();
 	void *rva0040C64A();
+	void *rva0040C65D(int v);
+};
+class UnicodeString
+{
+public:
+	static UnicodeString TheEmptyString;
+};
+class Rva002E2903Player;
+class Rva002BA8F1Logic
+{
+public:
+	Rva002E2903Player *find(int v, unsigned int *x);
+};
+extern Rva002BA8F1Logic *g_009FEF10;
+class Rva002E06B8
+{
+public:
+	void *rva002E06EF();
 };
 int Rva0037DCA5::rva0037DCA5()
 {
@@ -49,4 +67,20 @@ void *Rva0037DCA5::rva0040C64A()
 	if (found == 0)
 		return (void *)0x00E0C898;
 	return (char *)found + 0x58;
+}
+
+void *Rva0037DCA5::rva0040C65D(int v)
+{
+	void *found = rva0037DC52();
+	if (found == 0)
+		return (void *)&UnicodeString::TheEmptyString;
+	if ((((unsigned char *)found)[0x11F] & 0x40) == 0)
+		return (char *)found + 0x58;
+	Rva002E2903Player *player = g_009FEF10->find(v, 0);
+	if (player == 0)
+		return (char *)found + 0x58;
+	void *inner = ((Rva002E06B8 *)player)->rva002E06EF();
+	if (inner == 0)
+		return (char *)found + 0x58;
+	return (char *)inner + 8;
 }

@@ -4745,3 +4745,4 @@ FUN_0096c790	0x0056C790	97	blocked	SSE min-mul plus 3 virtuals pin-only getFont 
 ?Rva004F53C3Cb@@YAXPAX0@Z	0x004F53C3	115	partial	mov ecx-esi 2B scheduling only fcomi-fstp-jb ok t=30 model=muse-02 score=0.97 stash=reverse/attempts/0x004f53c3.cpp
 ?rva004A12B6@Rva004A12B6@@QAE_NPAVObject@@0@Z	0x004A12B6	201	blocked	MI negative this-0x1C-0x18 plus body edi vs eax and 33B over after 3 variants t=15 model=muse-02
 ?rva001D9C9F@Rva001D9C9F@@QAE_NH@Z	0x001D9C9F	45	blocked	twin of rowed NoCase allocate-copy 0x00317D5C same 45B ebp-tag shape via allocate 0x00523D6C plus NoCase copy dupe 0x001D9B3C needs duplicate-name policy t=12 model=muse-13
+FUN_00979C52	0x00579C52	102	blocked	ctor with AsciiString StatsDisplay plus Rva00221635 int-pin mismatch plus array new 8x6 plus vtable g_00C6ED9C t=10 model=muse-03
