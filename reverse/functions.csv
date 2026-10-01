@@ -46503,3 +46503,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva000EFD77@Rva000EFD77@@QAE_NH@Z,,0x000EFD77,41,Code/GameEngine/Source/Common/Rva000EFD77Alloc.cpp,matched,unlock sibling Rva000EFDA0Free plus24 plus28 caller 0x000F299D new bool alloc
 ?rva000EFCB7@Rva000EFCB7@@QAEHHPAG@Z,,0x000EFCB7,55,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva000EFCB7.cpp,matched,unlock prev 0x000EFB68 same flags 6 callers 0x000EFDF6 imul6 word triple return3
 ?rva000EFDBB@Rva000EFDBB@@QAEXHGG@Z,,0x000EFDBB,59,Code/GameEngine/Source/Common/Rva000EFDBB.cpp,matched,unlock sibling Rva000F26DCAlloc plus4180 plus4400 2 callers append pair
+??1Rva0041579E@@QAE@XZ,,0x004156FC,8,Code/GameEngine/Source/Common/Rva0041573FCopy.cpp,matched,tail jmp to rowed Rva0041573F dtor

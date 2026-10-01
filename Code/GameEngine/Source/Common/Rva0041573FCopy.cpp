@@ -24,6 +24,7 @@ public:
 class Rva0041573F {
 public:
 	Rva0041573F(const Rva0041573F &src);
+	~Rva0041573F();
 private:
 	BfmeOwnedRecordArray56 m_arr;
 	Tree900 m_tree;
@@ -37,6 +38,7 @@ Rva0041573F::Rva0041573F(const Rva0041573F &src)
 class Rva0041579E {
 public:
 	Rva0041579E(const Rva0041579E &src);
+	~Rva0041579E();
 private:
 	int m_00;
 	Rva0041573F m_04;
@@ -44,5 +46,9 @@ private:
 Rva0041579E::Rva0041579E(const Rva0041579E &src)
 	: m_00(src.m_00)
 	, m_04(src.m_04)
+{
+}
+
+Rva0041579E::~Rva0041579E()
 {
 }
