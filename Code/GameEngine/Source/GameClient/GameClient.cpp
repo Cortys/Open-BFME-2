@@ -87,6 +87,14 @@
 #include "GameLogic/GhostObject.h"
 #include "GameLogic/Object.h"
 #include "GameLogic/ScriptEngine.h"		// For TheScriptEngine - jkmcd
+
+// ?erase@?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEPAVAsciiString@@PAV3@0@Z
+// is owned by VectorAsciiStringErase.cpp (row at 0x0002CCFC): declare the
+// explicit specialization so this TU calls it without emitting a second definition.
+namespace _STL
+{
+template <> AsciiString *vector<AsciiString, allocator<AsciiString> >::erase(AsciiString *, AsciiString *);
+}
 #ifdef _INTERNAL
 // for occasional debugging...
 //#pragma optimize("", off)
