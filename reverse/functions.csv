@@ -45767,7 +45767,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva004E63FC@@QAE@XZ,,0x004E63FC,89,Code/GameEngine/Source/Common/Bfme/Rva004E63FCInit.cpp,matched,unlock lane rowed StringBase ctor FontDesc ctor set string literals ret this
 ?rva00223A9F@Rva00223A9F@@QAEPAXPBVAsciiString@@@Z,,0x00223A9F,37,Code/GameEngine/Source/GameClient/Rva00223A9F.cpp,matched,Find-payload via 0x0041534B at +0x90 null-checked node+8 unlocks 0x005B2295
 ?rva00223CDB@Rva00223CDB@@QAEHPBVAsciiString@@@Z,,0x00223CDB,39,Code/GameEngine/Source/GameClient/Rva00223CDB.cpp,matched,Find-int over table at +0x5c via rowed Iter find 0x0041534B
-??1Rva0022366C@@QAE@XZ,,0x0022366C,57,Code/GameEngine/Source/GameClient/Rva0022366CDtor.cpp,matched,Hash-table dtor via rowed clear 0x003A2A41 and free at +4
 ?evaluateTeamInsideAreaPartially@ScriptConditions@@IAE_NPAVParameter@@00@Z,,0x003E5E7D,130,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateTeamInsideAreaPartially.cpp,matched,ZH donor someInsideSomeOutside or allInside; sibling style of the matched InsideAreaEntirely fixes the banked partial
 ?evaluateNamedEnteredArea@ScriptConditions@@IAE_NPAVParameter@@0@Z,,0x003E6D0A,86,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedEnteredArea.cpp,matched,ZH donor unit then inert test then trigger then didEnter; replaces the banked partial
 ?evaluateNamedExitedArea@ScriptConditions@@IAE_NPAVParameter@@0@Z,,0x003E6D60,74,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_evaluateNamedExitedArea.cpp,matched,ZH donor unit then trigger then didExit; replaces the banked partial
@@ -45847,3 +45846,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00433FDD@Rva00433FDD@@QAEXXZ,,0x00433FDD,22,Code/GameEngine/Source/Common/Rva00433FDDSet.cpp,matched,set 0x27C to 3 or 1 from 0x280 callers share layout
 ?rva00536AF5@UserPreferences@@QAEHVAsciiString@@@Z,,0x00536AF5,74,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat StructuresKilledNonRTS 0x00869048 slot 0x18 releaseBuffer gap same TU unlock
 ?rva00536981@UserPreferences@@QAEXVAsciiString@@M@Z,,0x00536981,75,Code/GameEngine/Source/Common/UserPreferencesRva00535CE4.cpp,matched,concat AverageGameTurns 0x0086901C slot 0x28 releaseBuffer gap same TU unlock
+??1Rva0022300F@@QAE@XZ,,0x0022300F,59,Code/GameEngine/Source/GameClient/Rva0022300FDtor.cpp,matched,Dtor releases wide string at +0xC then frees ptr at +0
