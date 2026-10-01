@@ -45132,3 +45132,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4?$vector@UBfmeContainerRecord002CF46E@@V?$allocator@UBfmeContainerRecord002CF46E@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x002D0C90,206,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_container_record_2cf46e_assign.cpp,matched,206B 3-path vector assign via allocate 0x2CFBF4 clear 0xC05EC copy 0x2CF830 caller 0x2D1371
 ?rva00396722@Rva00396722@@QAE_NPAX@Z,,0x00396722,131,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00396722Contains.cpp,matched,unlock lane caller 0x002CCF9D via findModule RB-tree plus two STL vectors
 ??1Rva003B39C7@@QAE@XZ,,0x002045AB,103,Code/GameEngine/Source/Common/Rva003B39C7Dtor.cpp,matched,dtor of Rva003B39C7 via caller 0x00206DFF ctor-layout plus AsciiString array
+?rva0040E02B@Rva0040E02B@@QAEXXZ,,0x0040E02B,14,Code/GameEngine/Source/Common/Rva0040E02BClear.cpp,matched,ScienceType vector clear at plus0x4C via rowed erase
