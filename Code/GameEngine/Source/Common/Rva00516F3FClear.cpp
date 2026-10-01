@@ -14,6 +14,7 @@ struct Rva00516F3F
 	AsciiString m_10;
 	int m_14;
 	void rva00516F3F();
+	Rva00516F3F *rva00516F63(const Rva00516F3F &other);
 };
 
 void Rva00516F3F::rva00516F3F()
@@ -24,4 +25,15 @@ void Rva00516F3F::rva00516F3F()
 	m_10.clear();
 	m_C.clear();
 	m_14 = -1;
+}
+
+Rva00516F3F *Rva00516F3F::rva00516F63(const Rva00516F3F &other)
+{
+	m_0 = other.m_0;
+	m_8 = other.m_8;
+	m_4 = other.m_4;
+	m_10.set(other.m_10);
+	m_C.set(other.m_C);
+	m_14 = other.m_14;
+	return this;
 }

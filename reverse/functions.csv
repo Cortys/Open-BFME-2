@@ -46353,3 +46353,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004EC166@Rva004EC166@@QAEXABVAsciiString@@@Z,,0x004EC166,8,Code/GameEngine/Source/Common/Rva004EC166.cpp,matched,tail jmp set same family as Rva004EC1CE caller 0x0043342A
 ?rva0028CFB2@Object@@QAEXPBH0@Z,,0x0028CFB2,67,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,rowed copy 0x45455 plus rowed loop 0x271C8A plus rowed equal 0x45473 plus pinned notifier 0x28AE6D
 ?Rva003E3F59Check@@YG_NPAVParameter@@00@Z,,0x003E3F59,165,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E3F59.cpp,matched,leaf free ret12 3 Parameter player sum plus op switch
+?rva00516F63@Rva00516F3F@@QAEPAU1@ABU1@@Z,,0x00516F63,61,Code/GameEngine/Source/Common/Rva00516F3FClear.cpp,matched,copy via clear sibling layout and StringBase set row 0x000366F0
