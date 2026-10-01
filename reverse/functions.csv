@@ -46144,3 +46144,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?bfmeThrowV54@BfmeStrV54@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1498.cpp,matched,
 ?bfmeThrowV55@BfmeStrV55@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1499.cpp,matched,
 ?bfmeThrowV37@BfmeStrV37@@QAEXXZ,,0x00023A40,11,Code/GameEngine/Source/Common/BfmeConv1478.cpp,matched,
+?BFME2LoadParticleTexture@@YA?AVBFME2ParticleTextureHandle@@PBDHH@Z,,0x00132D89,237,Code/GameEngineDevice/Source/W3DDevice/GameClient/BFME2LoadParticleTexture.cpp,matched,
