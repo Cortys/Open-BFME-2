@@ -45609,3 +45609,7 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?winGetHiliteTextColor@GameWindow@@QAEHXZ,,0x00313EB6,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winGetHiliteTextBorderColor@GameWindow@@QAEHXZ,,0x00313840,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winGetFont@GameWindow@@QAEPAVGameFont@@XZ,,0x00313D6C,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+??1Rva003FA26F@@QAE@XZ,,0x003FA14B,167,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,dtor: clearItems then six inline handle releases via 0x50ED3 and vector free
+?copyItems@Rva003FA26F@@QAEXABV1@@Z,,0x003FA1F2,125,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,deep copy of 0x60-byte items through rowed Rva003FA118 copy ctor; end hoisted
+??0Rva003FA26F@@QAE@ABV0@@Z,,0x003FA26F,157,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,copy ctor: string plus empty vector plus six nothrow handles plus two ints then copyItems
+??4Rva003FA26F@@QAEAAV0@ABV0@@Z,,0x003FA30C,117,Code/GameEngine/Source/Common/Rva003FA26FCopyCtor.cpp,matched,operator= : self check then string set plus six handle assigns plus two ints then copyItems
