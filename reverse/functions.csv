@@ -45490,3 +45490,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva000B3814@Rva000B3814@@QAEXPAVRva000B3814Arg@@M@Z,,0x000B3814,113,Code/GameEngine/Source/Common/Rva000B3814.cpp,matched,unlock lane v23-v101 slots 1.0f clamp via g_Va00BBB8D8
 ?reset@Win32Mouse@@UAEXXZ,,0x000419F5,17,Code/GameEngineDevice/Source/Win32Device/GameClient/Win32Mouse_reset.cpp,matched,ZH reset: Mouse::reset (pin 0x001EE4DC) then byte +0x4F9C = 1
 ??0Shell@@QAE@XZ,,0x0035BFBC,203,Code/GameEngine/Source/GameClient/GUI/Shell/ShellCtor.cpp,matched,Shell ctor: base 0x001B4E63 then screen stack clear then +0x58 string (unwind state 1) and two guarded news
+?Rva0037B9D4Get@@YA?AVUnicodeString@@XZ,,0x0037B9D4,116,Code/GameEngine/Source/Common/Rva0037B9D4Get.cpp,matched,UnicodeString from the GlobalData narrow string temporary plus wide suffix; unwind map states match
