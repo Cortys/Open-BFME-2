@@ -46132,3 +46132,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00223CBD@Rva00223CBD@@QAEXPBVModuleData@@@Z,,0x00223CBD,30,Code/GameEngine/Source/GameClient/Rva00223CBD.cpp,matched,vector push_back at +0x2FC via rowed 0x004DFCB0 then flag at +0x308
 ?rva00223D4C@Rva00223D4C@@QAEXPBDH@Z,,0x00223D4C,65,Code/GameEngine/Source/GameClient/Rva00223D4C.cpp,matched,null-guard temp find at +0xC via rowed 0x00056F61 then invoke via node+8
 ?rva00223D02@Rva00223D02@@QAEXPBVAsciiString@@PAVCreateAHeroData@@@Z,,0x00223D02,74,Code/GameEngine/Source/GameClient/Rva00223D02.cpp,matched,table +0x48 via rowed Iter 0x0041534B then vector find 0x0020E873 and voidptr erase 0x001FF51F like Rva004DFB55
+??0Rva002B749C@@QAE@XZ,,0x002B749C,66,Code/GameEngine/Source/Common/Rva002B749CCtor.cpp,matched,ctor map plus vector-base with float global and int inits via caller
