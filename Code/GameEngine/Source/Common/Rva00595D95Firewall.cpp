@@ -35,6 +35,7 @@ public:
 	AsciiString() {}
 	AsciiString(const char *text) : StringBase<char>(text) {}
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	~AsciiString();
 };
 
 class UnicodeString : public StringBase<unsigned short>
