@@ -37,9 +37,17 @@ private:
 
 typedef char ProductionPrerequisiteCopySizeCheck[sizeof(ProductionPrerequisite) == 0x24 ? 1 : -1];
 
-ProductionPrerequisite::ProductionPrerequisite(const ProductionPrerequisite &other)
+inline ProductionPrerequisite::ProductionPrerequisite(const ProductionPrerequisite &other)
 	: m_prereqUnits(other.m_prereqUnits)
 	, m_prereqSciences(other.m_prereqSciences)
 	, m_unused(other.m_unused)
 {
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitProductionPrerequisiteCopyCtor@@YAXPAVProductionPrerequisite@@ABV1@@Z present-unmatched
+void bfmeEmitProductionPrerequisiteCopyCtor(ProductionPrerequisite *p, const ProductionPrerequisite &other)
+{
+	p->ProductionPrerequisite::ProductionPrerequisite(other);
+}
+#pragma inline_depth()
