@@ -57,7 +57,9 @@ class INI
 public:
 	static void parseAsciiString(INI *, void *, void *, const void *);
 	static void parseBool(INI *, void *, void *, const void *);
+	static void parseFXList(INI *, void *, void *, const void *);
 	static void parseReal(INI *, void *, void *, const void *);
+	static void parsePercentToReal(INI *, void *, void *, const void *);
 	static void parseDurationUnsignedInt(INI *, void *, void *, const void *);
 	static void parseWeaponTemplate(INI *, void *, void *, const void *);
 	static void parseCoord3D(INI *, void *, void *, const void *);
@@ -104,6 +106,17 @@ extern const FieldParse g_00BF0508FireWeaponWhenDeadBehaviorFieldParse[] = {
 extern const FieldParse g_00C58C38TooltipUpgradeFieldParse[] = {
 	{ "DisplayName", &INI::parseAsciiString, 0, 0x118 },
 	{ "Description", &INI::parseAsciiString, 0, 0x11C },
+	{ 0, 0, 0, 0 }
+};
+
+// Retail VA 0x00C5F810 is the CurseSpecialPowerModuleData FieldParse table:
+// TriggerFX and CursedFX use parseFXList at +0xC8/+0xCC, CursePercentage uses
+// parsePercentToReal at +0xD0, then a zero sentinel. The matched caller
+// supports the table's class identity.
+extern const FieldParse g_00C5F810CurseSpecialPowerFieldParse[] = {
+	{ "TriggerFX", &INI::parseFXList, 0, 0xC8 },
+	{ "CursedFX", &INI::parseFXList, 0, 0xCC },
+	{ "CursePercentage", &INI::parsePercentToReal, 0, 0xD0 },
 	{ 0, 0, 0, 0 }
 };
 
@@ -193,7 +206,7 @@ void StoreObjectsSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &par
 void CurseSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	Rva0044EB54::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C5F810), 0);
+	parse.add(g_00C5F810CurseSpecialPowerFieldParse, 0);
 }
 
 void SupplyWarehouseDockUpdateModuleData::buildFieldParse(MultiIniFieldParse &parse)
