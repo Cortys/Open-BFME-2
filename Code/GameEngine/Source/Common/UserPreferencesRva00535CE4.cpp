@@ -260,6 +260,7 @@ public:
 	void rva005362FC(AsciiString arg, int x);
 	int rva00536343(AsciiString arg);
 	void rva0053638D(AsciiString arg, int x);
+	int rva005363D4(AsciiString arg);
 	void rva0053641E(AsciiString arg, int x);
 	void rva005364AF(AsciiString arg, int x);
 	void rva00536540(AsciiString arg, int x);
@@ -662,6 +663,16 @@ void UserPreferences::rva0053638D(AsciiString arg, int x)
 {
 	arg.concat("StructuresKilledRTS");
 	v11(arg, x);
+}
+
+// ?rva005363D4@UserPreferences@@QAEHVAsciiString@@@Z @0x005363D4 74B
+// UserPreferences StructuresKilledRTS-getter path: append StructuresKilledRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat StructuresKilledRTS 0x00868F58 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva005363D4(AsciiString arg)
+{
+	arg.concat("StructuresKilledRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva0053641E@UserPreferences@@QAEXVAsciiString@@H@Z @0x0053641E 71B
