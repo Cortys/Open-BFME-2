@@ -5186,3 +5186,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva003BB0C7Set@@YGXHMHMMMH@Z	0x003BB0C7	122	partial	xmm allocation scale in xmm4 vs xmm0 and sequential reuse vs early loads t=20 model=muse-09 score=0.94 stash=reverse/attempts/0x003bb0c7.cpp
 ?Rva003BB7FESet@@YGXH_N@Z	0x003BB7FE	154	partial	call sharing push7 jumps to shared s45 call and jne vs je polarity for s46 t=30 model=muse-09 score=0.95 stash=reverse/attempts/0x003bb7fe.cpp
 ?rva00366561@Rva00366561@@QAE_NHH@Z	0x00366561	42	partial	load b into eax after store30 vs edx before store30 with [34] fixed via WriteBarrier t=15 model=muse-03 score=0.93 stash=reverse/attempts/0x00366561.cpp
+?rva000FE1AC@Rva000FE001@@QAEXXZ	0x000FE1AC	91	partial	extra mov ecx for volatile time base sub mem vs reg t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x000fe1ac.cpp
