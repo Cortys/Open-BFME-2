@@ -46068,3 +46068,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?rva001F9465@Rva001F9465@@QAEXH@Z,,0x001F9465,34,Code/GameEngine/Source/Common/Thing/Rva001F9465.cpp,matched,null-checked slot3 plus rowed Rva001F8E23 on this plus 4
 ??0Rva001F9060@@QAE@XZ,,0x001F9060,22,Code/Libraries/Source/WWVegas/WWLib/Rva001F9060Ctor.cpp,matched,default ctor zeroing plus rowed ObjectCreationList at plus 8
 ??0Rva001F9CB8@@QAE@XZ,,0x001F9CB8,18,Code/Libraries/Source/WWVegas/WWLib/Rva001F9CB8Ctor.cpp,matched,default ctor zeroing plus rowed Rva001F9060 at plus 4
+?Rva0055C9A0WriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055C9A0,216,Code/GameEngine/Source/GameClient/Rva0055C9A0Write.cpp,matched,module header File INI line via oss Pad str Write cat6
