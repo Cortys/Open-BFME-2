@@ -261,6 +261,7 @@ public:
 	void rva00536784(AsciiString arg, int x);
 	void rva0053685F(AsciiString arg, int x);
 	void rva005368F0(AsciiString arg, int x);
+	void rva00536A1D(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -676,5 +677,11 @@ void UserPreferences::rva0053685F(AsciiString arg, int x)
 void UserPreferences::rva005368F0(AsciiString arg, int x)
 {
 	arg.concat("ShortestGameTurns");
+	v11(arg, x);
+}
+
+void UserPreferences::rva00536A1D(AsciiString arg, int x)
+{
+	arg.concat("StructuresLostNonRTS");
 	v11(arg, x);
 }
