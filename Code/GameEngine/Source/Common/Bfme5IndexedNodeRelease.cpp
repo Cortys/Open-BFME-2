@@ -31,6 +31,10 @@ private:
 	int m_state;
 };
 
+// Retail pins this zero-argument thiscall reset to Dict::clear at 0x00313574;
+// bind the alias without changing either call site's ECX or stack bytes.
+#pragma comment(linker, "/alternatename:?bfmeReset@BfmeMapObjectExtra@@QAEXXZ=?clear@Dict@@QAEXXZ")
+
 struct BfmeIndexedNodeFM
 {
 	short m_previous;
