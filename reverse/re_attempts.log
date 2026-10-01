@@ -4534,3 +4534,4 @@ FUN_002098A0	0x002098A0	178	blocked	vector pair overflow needs dup-alias cast tr
 ?rva001F4E2D@Rva001F4E2D@@QAE_NXZ	0x001F4E2D	85	partial	size-exact 85 vs 85 zero mem-reg only use94-vs-true tail order plus extra jmp t=30 model=muse-17 score=0.93 stash=reverse/attempts/0x001f4e2d.cpp
 FUN_005b2599	0x001B2599	226	blocked	SSE-x87 5-arg 226B stream motion decode needs float table g_00DB6C28 plus double g_00BD7640 and EBP frameExceeded quick budget t=5 model=muse-17
 ?Rva0032884ASet@@YAXPAVGameWindow@@VAsciiString@@@Z	0x0032884A	159	partial	missing 2 EH states mov-byte-1 at +0x49 and mov-byte-0 at +0x7b for second lifetime at ebp+8; 0 reg diffs; tried EHs and holder/trick levers t=25 model=muse-13 score=0.93 stash=reverse/attempts/0x0032884a.cpp
+FUN_00773871	0x00373871	133	blocked	map int-int plus new Rva0037307F plus ScienceType push_back type duality at plus14 needs donor t=12 model=muse-09
