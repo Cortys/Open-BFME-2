@@ -4981,3 +4981,4 @@ FUN_008e007a	0x004E007A	64	blocked	STL EH ctor vector-uint at +4 plus hashtable 
 ?rva001E438B@Rva001E438B@@QAEXPAMPBM@Z	0x001E438B	54	partial	xmm rotation y->xmm0 z->xmm1 x->xmm2 vs retail x->xmm0 y->xmm1 z->xmm2 size-exact 54B 12insns 0struct t=15 model=muse-11 score=0.93 stash=reverse/attempts/0x001e438b.cpp
 ??0Rva001E3E43@@QAE@PAUCtorArg@@H@Z	0x001E449A	395	blocked	vector array member-init splits pushes with state 1 vs retail middle single call plus register swap and and-vs-mov tail t=20 model=muse-11
 ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z	0x0048F64E	66	partial	fcompi fld fstp jbe mov-al-1 vs fcomp fnstsw test-jp only float compare left t=12 model=muse-11 score=0.95 stash=reverse/attempts/0x0048f64e.cpp
+?rva0055C263@Rva0055C263@@QAEXPAVFile@@I@Z	0x0055C263	433	blocked	loop SSE register wall 2 variants SSE2 fixed floats but ptr-plus12 and stack-index remain t=15 model=muse-06
