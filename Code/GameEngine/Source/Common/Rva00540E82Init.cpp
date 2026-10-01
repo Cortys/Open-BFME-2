@@ -115,3 +115,24 @@ public:
 Rva00540FCB::Rva00540FCB() : m_00(0)
 {
 }
+
+// ??0Rva00541006@@QAE@HABURegion2D@@@Z @0x00541006 27B: ctor with int at +0
+// and Region2D at +4 via rowed copy ctor 0x0004254E. Evidence: same shape
+// as sibling ??0Rva00540FDB@@QAE@HABURegion3D@@@Z 27B in this TU; caller at
+// 0x0054211B passes (int, Region2D) and stores result stride 0x14.
+struct Region2D
+{
+	Region2D(const Region2D &that);
+};
+
+class Rva00541006
+{
+public:
+	Rva00541006(int v, const Region2D &r);
+	int m_00;
+	Region2D m_04;
+};
+
+Rva00541006::Rva00541006(int v, const Region2D &r) : m_00(v), m_04(r)
+{
+}
