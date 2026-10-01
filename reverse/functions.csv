@@ -46104,3 +46104,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ??0Rva004DD7C4@@QAE@XZ,,0x004DD7C4,31,Code/Libraries/Source/WWVegas/WWLib/Rva004DD7C4Init.cpp,matched,ctor init magic -666666 via caller 0x004DD7E3 triple member
 ??0Rva004DD7E3@@QAE@H@Z,,0x004DD7E3,39,Code/Libraries/Source/WWVegas/WWLib/Rva004DD7E3Ctor.cpp,matched,ctor stores arg plus three Rva004DD7C4 members via rowed ctor
 ?rva0049AE5E@Rva0049AE5E@@QAEXXZ,,0x0049AE5E,70,Code/GameEngine/Source/Common/Rva0049AE5ECheck.cpp,matched,triple findObjectByID clears flag via TheGameLogic
+?rva001D982B@Rva001D982B@@QAE_NXZ,,0x001D982B,60,Code/GameEngine/Source/Common/Thing/Rva001D982B.cpp,matched,unlock predicate m_B0 type plus m_34 zero plus flag plus 3 pairs callers 0x6204A
