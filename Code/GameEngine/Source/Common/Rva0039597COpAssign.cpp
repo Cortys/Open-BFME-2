@@ -25,3 +25,21 @@ Rva0039597C &Rva0039597C::rva0039597C(const Rva0039597C &other)
 	m_08 = other.m_08;
 	return *this;
 }
+
+// ?Rva00395D45Copy@@YAPAVRva0039597C@@PAV1@00@Z, retail 0x00395D45, 50 bytes.
+// Chain from 0x0039597C: array copy of 0x0C-sized Rva0039597C via rowed
+// copy-assign. Count from pointer difference (sub+cdq+idiv 12), EBP frame,
+// dec/jne loop advancing both ends by 0x0C, returns advanced dest.
+Rva0039597C *Rva00395D45Copy(Rva0039597C *first, Rva0039597C *last, Rva0039597C *dest)
+{
+	int n = last - first;
+	if (n <= 0)
+		return dest;
+	for (; n > 0; --n)
+	{
+		dest->rva0039597C(*first);
+		++first;
+		++dest;
+	}
+	return dest;
+}
