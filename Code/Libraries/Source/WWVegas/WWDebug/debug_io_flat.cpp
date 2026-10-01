@@ -31,7 +31,9 @@
 //////////////////////////////////////////////////////////////////////////////
 #include "_pch.h"
 #include <stdlib.h>
+#pragma optimize("y",on)
 #include <new>      // needed for placement new prototype
+#pragma optimize("y",off)
 
 class DebugIOFlatDebugShim
 {
