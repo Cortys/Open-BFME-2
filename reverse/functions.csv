@@ -45320,9 +45320,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00397E50@Rva00397E50@@QAEXXZ,,0x00397E50,92,Code/GameEngine/Source/Common/Rva00397E50Clear.cpp,matched,vector clear via Unlink GameLogic virtual erase callers 0x3983D4 0x39857D
 ?rva005F6220@Rva005F6220@@QAEXABVUnicodeString@@@Z,,0x005F6220,103,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,APT LeaderQuantity via rowed format and pinned bfmeSetText plus rowed releaseBuffer globals 0x009FE4CC 0x007BAC1C caller 0x005F67CA precedent Rva005FB770
 ?rva005F6287@Rva005F6220@@QAEXABVUnicodeString@@@Z,,0x005F6287,103,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,APT LeaderRank via rowed format and pinned bfmeSetText plus rowed releaseBuffer sibling of 0x005F6220 same class
-?Rva005F632AFormat@@YA?AVUnicodeString@@H@Z,,0x005F632A,194,Code/GameEngine/Source/Common/Rva005F632AFormat.cpp,matched,RankLabel static via rowed ctor plus GameText slot 0x38 fetch and Unicode format caller 0x005F6407 precedent HeroRank
-?rva005F63EC@Rva005F6220@@QAEXH@Z,,0x005F63EC,77,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Rank setter with cache check via Format helper and LeaderRank call updates 0x2c
-?rva005F64C0@Rva005F64C0@@QAEXH@Z,,0x005F64C0,8,Code/GameEngine/Source/Common/Rva005F6220Apt.cpp,matched,Tail forward to member rva005F63EC via plus 8 chain from 0x005F63EC
 ?rva0058E047@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E047,105,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E047.cpp,matched,unlock lane NetPacket 1-byte factory via new-memcpy-setActive
 ?rva0058E367@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058E367,141,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E367.cpp,matched,static new-memcpy factory via donor readInformPlayerLeaveFrameMessage
 ?Rva005EF096Set@@YAXHPAURva005EF096Outer@@HH@Z,,0x005EF096,207,Code/GameEngine/Source/Common/Rva005EF096Apt.cpp,matched,fetch StatsCommandPoints plus Army CommandPoints text
@@ -45368,3 +45365,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva002ABBBE@Rva002ABBBE@@QAEXPAX@Z,,0x002ABBBE,100,Code/Libraries/Source/WWVegas/WWLib/Rva002ABBBEBitCopy.cpp,matched,dword to byte bitset 218 via ji memset row; virtual call 0x24
 ?Rva0029FB80Store@@YGPAXPAPAX@Z,,0x0029FB80,28,Code/GameEngine/Source/Common/Rva0029FB80.cpp,matched,freelist pop plus arg store returning node
 ?Rva002A1316Store@@YGPAXPAPAXPAX0@Z,,0x002A1316,37,Code/GameEngine/Source/Common/Rva002A1316.cpp,matched,freelist node doubly linked insert
+?rva005F6F0C@Rva005F6F0C@@QAEXXZ,,0x005F6F0C,57,Code/GameEngine/Source/Common/Rva005F6F0CTooltip.cpp,matched,ConstructionTurns tooltip via GameText slot 0x3c plus Mouse with 1.0f flag plus 0x28 precedent Rva005F06EF
