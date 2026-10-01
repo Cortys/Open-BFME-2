@@ -120,7 +120,7 @@ public:
 	virtual ~Rva005D8317();
 };
 
-Rva005D8317::~Rva005D8317()
+inline Rva005D8317::~Rva005D8317()
 {
 }
 
@@ -233,3 +233,11 @@ public:
 Rva005D9CD5::~Rva005D9CD5()
 {
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitRva005EE30CDerived@@YAXPAVRva005D8317@@@Z present-unmatched
+void bfmeEmitRva005EE30CDerived(Rva005D8317 *p)
+{
+	p->Rva005D8317::~Rva005D8317();
+}
+#pragma inline_depth()

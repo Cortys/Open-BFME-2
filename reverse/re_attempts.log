@@ -4921,3 +4921,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?rva006D53F0@EAStringC@@QAEXPBDPAD@Z	0x006D53F0	188	blocked	strlen scan in esi not eax base in eax not edx reserve shl not lea vsnprintf args in edx not ecx t=25 model=muse-11 (stash 0.91 kept)
 ?rva0048F64E@AssaultTransportAIUpdate@@QAE_NPAX@Z	0x0048F64E	66	partial	je-shared-false vs jne-plus-xor-jmp null-check split fcompi-fld-fstp-jbe-mov-al-1 vs fcomp-fnstsw-test-jp-xor-inc xor-al vs xor-eax t=25 model=muse-11 score=0.9 stash=reverse/attempts/0x0048f64e.cpp
 ?rva001E41FA@Rva001E41FA@@QAEXM@Z	0x001E41FA	241	blocked	sse yaw matrix first attempt 184-vs-241 minus57 12-mem-deltas zero-mul scheduling wall t=12 model=muse-11
+?rva0028D156@Object@@QAEHPBV1@@Z	0x0028D156	253	partial	retail mov edx esi130 plus shr edx 0xd plus test dl 1 vs test byte ptr esi131 0x20 t=15 model=muse-17 score=0.95 stash=reverse/attempts/0x0028d156.cpp
+?rva0028D900@Object@@QAE_NPAM0@Z	0x0028D900	154	partial	xmm1-xmm2 swap and missing movaps copy and extra multiplier movss and ja-vs-jb plus 1B t=22 model=muse-spark score=0.95 stash=reverse/attempts/0x0028d900.cpp
