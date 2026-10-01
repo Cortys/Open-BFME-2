@@ -113,6 +113,7 @@ public:
 	void rva0029130C(int mode);
 	void rva00293955(ModelConditionFlagType mc);
 	void rva00293A05(ModelConditionFlagType mc);
+	void rva00293AAB(ModelConditionFlagType a, ModelConditionFlagType b);
 	void rva001E42F2(const int *x);
 	void rva00293BBF(const int *x);
 	void rva001E431E(const int *x);
@@ -244,6 +245,35 @@ void Object::rva00293A05(ModelConditionFlagType mc)
 			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
 				node->m_object->setConditionIndex(mc);
 			top->setConditionIndex(mc);
+		}
+	}
+}
+void Object::rva00293AAB(ModelConditionFlagType a, ModelConditionFlagType b)
+{
+	Object *top = rva002931F5(false);
+	if (top)
+	{
+		Rva00293DACIface *iface = (Rva00293DACIface *)top->rva0028C197();
+		if (iface)
+		{
+			Rva00293DACRange range;
+			iface->rva00293DACSlot66(&range);
+			for (Rva00293DACNode *node = range.m_list->m_head->m_next; node != range.m_list->m_head; node = node->m_next)
+			{
+				Object *obj = node->m_object;
+				if (obj->m_conditionBits.testIndex(a) != 0 || obj->m_conditionBits.testIndex(b) == 0)
+				{
+					obj->m_conditionBits.clearIndex(a);
+					obj->m_conditionBits.setIndex(b);
+					obj->rva0028AE6D();
+				}
+			}
+			if (top->m_conditionBits.testIndex(a) != 0 || top->m_conditionBits.testIndex(b) == 0)
+			{
+				top->m_conditionBits.clearIndex(a);
+				top->m_conditionBits.setIndex(b);
+				top->rva0028AE6D();
+			}
 		}
 	}
 }
