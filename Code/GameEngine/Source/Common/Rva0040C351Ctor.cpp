@@ -24,6 +24,7 @@ class Rva0040C351 : public Rva0037DF2C
 {
 public:
 	Rva0040C351();
+	void rva0040C5FA(class INI *ini);
 private:
 	MemberAC m_ac;
 	int m_b4;
@@ -32,6 +33,22 @@ private:
 	int m_c0;
 	unsigned char m_c4;
 	unsigned char m_c5;
+};
+struct FieldParse;
+extern const FieldParse g_00C39474;
+extern const FieldParse g_00C18D18;
+class MultiIniFieldParse
+{
+public:
+	MultiIniFieldParse();
+	void add(const FieldParse *table, unsigned int x);
+private:
+	char m_pad[0x84];
+};
+class INI
+{
+public:
+	void initFromINIMulti(void *what, const MultiIniFieldParse &parse);
 };
 Rva0040C351::Rva0040C351() : Rva0037DF2C()
 {
@@ -44,4 +61,12 @@ Rva0040C351::Rva0040C351() : Rva0037DF2C()
 	m_c0 = 0;
 	m_c4 = 0;
 	m_c5 = 0;
+}
+
+void Rva0040C351::rva0040C5FA(INI *ini)
+{
+	MultiIniFieldParse parse;
+	parse.add(&g_00C39474, 0);
+	parse.add(&g_00C18D18, 0);
+	ini->initFromINIMulti(this, parse);
 }
