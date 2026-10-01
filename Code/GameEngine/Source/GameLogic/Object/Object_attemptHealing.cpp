@@ -19,12 +19,11 @@ typedef int ObjectID;
 enum { INVALID_ID = 0 };
 
 // 0x7C DamageInfo: source at +0x08, damage at +0x10, death at +0x1C,
-// amount at +0x20. No user ctor so the local emits no code; init() is the
-// pinned 0x263895 body resolving through reverse/symbols.csv.
+// amount at +0x20. Its declared constructor is the pinned 0x263895 body.
 class Rva00263895Member
 {
 public:
-	void init();
+	Rva00263895Member();
 
 	char m_pad00[0x08];
 	ObjectID m_sourceID; // +0x08
@@ -61,7 +60,6 @@ void Object::attemptHealing(float amount, const Object *source)
 	BodyModuleInterface *body = m_body;
 	if (body) {
 		Rva00263895Member damageInfo;
-		damageInfo.init();
 		damageInfo.m_damageType = 7;
 		damageInfo.m_deathType = 1;
 		damageInfo.m_sourceID = source ? source->getID() : INVALID_ID;
