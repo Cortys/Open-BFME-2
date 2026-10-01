@@ -152,3 +152,21 @@ void Rva003A5757::rva003A5757(Xfer *xfer)
 	xfer->Version1();
 	m_1c.rva003A547E(xfer);
 }
+
+struct FieldParse;
+class INI
+{
+public:
+	void initFromINI(void *what, const struct FieldParse *table);
+};
+extern const struct FieldParse g_00C1B420[];
+class Rva003A5560
+{
+public:
+	void rva003A5560(INI *ini);
+};
+
+void Rva003A5560::rva003A5560(INI *ini)
+{
+	ini->initFromINI(this, g_00C1B420);
+}
