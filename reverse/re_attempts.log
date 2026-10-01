@@ -4825,3 +4825,7 @@ FUN_006dc4b8	0x002DC4B8	115	blocked	same 0xE0C 0xE10 overlapping List_base pair 
 ?rva002DC681@Rva002DC267@@QBE_NXZ	0x002DC681	201	partial	missing jb for unsigned high vs 0 t=25 model=muse-11 score=0.99 stash=reverse/attempts/0x002dc681.cpp
 ?Rva00400783Get@@YA?AVAsciiString@@ABV1@_N@Z	0x00400783	277	partial	1-in-esi-vs-edi plus missing dead mov ecx TheGameState plus slash immediate vs esi-hoisted push plus loop entry layout t=18 model=muse-11 score=0.94 stash=reverse/attempts/0x00400783.cpp
 ?Rva006CD070Atof@@YANPBD@Z	0x006CD070	14	blocked	atof wrapper tail wall 5B jmp frameless under O1 O2 Os Ot Oy GX- EHs-c- plus 17B frame-plus-call under Od Og- Oy need 14B frameless mov-push-call-add-ret t=18 model=muse-16
+?rva006D01D0@Rva006D01D0@@QAEXPAX@Z	0x006D01D0	100	blocked	loop tail mov-test order t=25 model=muse-16 (stash 0.98 kept)
+?rva00031010@Rva00031010@@QAEXPAURva00031010Node@@_N@Z	0x00031010	66	partial	pop esi early plus flag esp+8 vs late plus esp+c t=20 model=muse-16 score=0.95 stash=reverse/attempts/0x00031010.cpp
+?rva000316B0@Rva000316B0@@QAE_NPAX_N@Z	0x000316B0	81	blocked	reg wall block edx vs eax plus flags bl vs dl plus early xor-push t=12 model=muse-16
+?rva000311E0@GeneralAllocator@Allocator@EA@@QAEIPBXIPADPAGI@Z	0x000311E0	497	partial	push ebx-ebp late vs early plus hex esp offsets plus xor-mov vs movzx plus tail ebx-vs-ecx t=20 model=muse-16 score=0.93 stash=reverse/attempts/0x000311e0.cpp

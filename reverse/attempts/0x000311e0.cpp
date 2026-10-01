@@ -1,3 +1,5 @@
+// ?rva000311E0@GeneralAllocator@Allocator@EA@@QAEIPBXIPADPAGI@Z
+// partial score=0.93 date=2026-10-01
 // BFME 2's memory-pool entry points. `namespace MemoryPool` is retail's own
 // name: every `_`-prefixed function here is exported under it
 // (reverse/exports.csv), and 0x00030730 resolves each export back out of the
@@ -82,6 +84,7 @@ public:
 	void *rva000353B0(void *context, int blockTypes, bool copy, void *storage, unsigned int storageSize);	// ReportBegin-like
 	const BlockInfo *rva00032F60(void *context, int blockTypes);	// ReportNext-like
 	void rva00033E90(void *context);			// ReportEnd-like
+	unsigned int rva000311E0(const void *src, unsigned int count, char *ascii, unsigned short *wide, unsigned int cap);
 
 private:
 	// Intrusive list node proven by 0x00031680 (size at +4 next at +0x18)
@@ -285,6 +288,79 @@ unsigned int GeneralAllocator::rva006C1D10(const void *block)
 	return rva00032A20(block);
 }
 
+// ?rva000311E0@GeneralAllocator@Allocator@EA@@QAEIPBXIPADPAGI@Z @ 0x000311E0 (497B):
+// hex-dump formatter proven by caller 0x00031430 passing block+8 size 0x100-byte buffer null-wide 0x100;
+// fills ascii and wide with spaces then hex pairs plus printable-or-dot with tab separator.
+// ?rva000311E0@GeneralAllocator@Allocator@EA@@QAEIPBXIPADPAGI@Z present-unmatched
+unsigned int GeneralAllocator::rva000311E0(const void *src_, unsigned int count, char *ascii, unsigned short *wide, unsigned int cap)
+{
+	const unsigned char *src = (const unsigned char *)src_;
+	if (cap < 5)
+	{
+		if (cap == 0)
+			return 0;
+		if (ascii != 0)
+			*ascii = 0;
+		if (wide == 0)
+			return 0;
+		*wide = 0;
+		return 0;
+	}
+	char *a_hold = ascii;
+	unsigned short *w_hold = wide;
+	char hex[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+	unsigned int limit = (cap - 2) >> 2;
+	if (limit > count)
+		limit = count;
+	if (a_hold != 0)
+	{
+		memset(a_hold, ' ', cap);
+		a_hold[cap - 1] = 0;
+	}
+	if (w_hold != 0)
+	{
+		memset(w_hold, ' ', cap * 2);
+		w_hold[cap - 1] = 0;
+	}
+	if (a_hold != 0)
+		a_hold[limit * 3 - 1] = '\t';
+	if (w_hold != 0)
+		w_hold[limit * 3 - 1] = '\t';
+	if (limit == 0)
+		return 0;
+	char *ap = a_hold;
+	unsigned short *wp = w_hold;
+	for (unsigned int i = 0; i < limit; ++i)
+	{
+		unsigned char c = src[i];
+		char hi = hex[c >> 4];
+		char lo = hex[c & 0xF];
+		if (a_hold != 0)
+		{
+			ap[0] = hi;
+			ap[1] = lo;
+			char d = (char)src[i];
+			if (d < 0x20 || d >= 0x7F || d == '"' || d == '\'')
+				a_hold[limit * 3 + i] = '.';
+			else
+				a_hold[limit * 3 + i] = d;
+		}
+		if (w_hold != 0)
+		{
+			wp[0] = (unsigned short)hi;
+			wp[1] = (unsigned short)lo;
+			char d = (char)src[i];
+			if (d < 0x20 || d == '"' || d == '\'')
+				w_hold[limit * 3 + i] = '.';
+			else
+				w_hold[limit * 3 + i] = d;
+		}
+		ap += 3;
+		wp += 3;
+	}
+	return 0;
+}
+
 }
 }
 
@@ -459,28 +535,4 @@ void _Exit()
 	}
 }
 
-}
-
-// ?rva00031790@Rva00031790@@QAEPAXPAX@Z @ 0x00031790 (35B):
-// lock-holder setter: stores param at +0 then when non-null enters it as a
-// critical section and bumps the use count at +0x18 returning this.
-// Class unproven by callers (both call sites unclaimed) so honest
-// address-derived owner; EnterCriticalSection via dllimport like neighbours.
-class Rva00031790
-{
-public:
-	void *m_0000;
-	void *rva00031790(void *param);
-};
-
-void *Rva00031790::rva00031790(void *param)
-{
-	m_0000 = param;
-	if (param != 0)
-	{
-		EnterCriticalSection(param);
-		int count = *(volatile int *)((char *)param + 0x18);
-		*(volatile int *)((char *)param + 0x18) = count + 1;
-	}
-	return this;
 }
