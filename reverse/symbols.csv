@@ -929,6 +929,7 @@ name,address,notes
 ??M@YA_NABVAsciiString@@0@Z,0x0005598C,free AsciiString::operator< (23B compare+setl via thiscall compare pin 1569 at 0x69D6); called directly x2 by map _M_find at 0x1F8437 (less inlined); resolves the _M_find landing TU
 ??RBfmeRangeUpdaterFC@@QAEXHHH@Z,0x006C0EE0
 ??_7AODCrushCollideModuleData@@6B@,0x00C5A350,AODCrushCollideModuleData vtable installed by ctor 0x4BBF89 (mov [esi] imm at 0x4BBFAA); slot0 is scalar-deleting dtor 0x8BC06C; slot1 is shared ret stub 0x4B3FD0
+??_7?$DynamicVectorClass@VBfmeHandleCX@@@@6B@,0x00BD4688,DynamicVectorClass<BfmeHandleCX> vtable: matched ctor at 0x0016FE00 installs 0x00BD4688; slot 2 at 0x00BD4690 points to matched Resize at 0x0016FE30
 ??_7DevastateSpecialPowerModuleData@@6B@,0x0085E518,DevastateSpecialPowerModuleData vtable installed by ctor 0x4C84BD; slot0 is scalar-deleting dtor 0x4C851B sitting right after the ctor; slot1 is shared ret stub 0xB3FD0
 ??_7FreeLifeBodyModuleData@@6B@,0x00C5BC48,FreeLifeBodyModuleData vtable installed by ctor 0x4C1B3B; slot0 is scalar-deleting dtor 0x4C182F calling dtor-thunk 0x4C1B7B
 ??_7GateProxyBehavior@@6BProxyBaseA@@@,0x00BEF338

@@ -10,6 +10,9 @@
 //
 // The base is declared only; its symbol is pinned in reverse/symbols.csv.
 
+extern "C" const void *const vtbl_00BD4688[];  // ??_7?$DynamicVectorClass@VBfmeHandleCX@@@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD4688=??_7?$DynamicVectorClass@VBfmeHandleCX@@@@6B@")
+
 class BfmeHandleCX;
 class TextureClass;
 
@@ -47,7 +50,7 @@ template <class T>
 DynamicVectorClass<T>::DynamicVectorClass(unsigned int size, T const *array)
 	: TextureVectorBaseCtorShim(size, (TextureVectorCell const *)array)
 {
-	*(unsigned int *)this = 0x00BD4688;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BD4688);
 	GrowthStep = 10;
 	ActiveCount = 0;
 }

@@ -3,6 +3,8 @@
 
 extern "C" const void *const vtbl_00BD4658[];  // ??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00BD4658=??_7?$DynamicVectorClass@PAVVertexMaterialClass@@@@6B@")
+extern "C" const void *const vtbl_00BD4688[];  // ??_7?$DynamicVectorClass@VBfmeHandleCX@@@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD4688=??_7?$DynamicVectorClass@VBfmeHandleCX@@@@6B@")
 
 class TextureClass
 {
@@ -71,7 +73,7 @@ public:
 		: TextureVectorBaseCtorShim(0, 0)
 	{
 		*(unsigned int *)((unsigned char *)this + 0x10) = 0;
-		*(unsigned int *)this = 0x00BD4688;
+		*(unsigned int *)this = ((unsigned int)vtbl_00BD4688);
 		*(unsigned int *)((unsigned char *)this + 0x14) = 10;
 	}
 	~TextureVector();
