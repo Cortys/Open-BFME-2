@@ -45251,3 +45251,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva006CFFE0@Rva008951B0Owner@@QAEXABVRva008951B0Handle@@@Z,,0x006CFFE0,92,Code/GameEngine/Source/Common/Rva006CFFE0Remove.cpp,matched,chain remove via rowed freeBlock and pool
 ?Rva006D8680Free@@YAXPAXH@Z,,0x006D8680,22,Code/GameEngine/Source/Common/Rva006D8680Free.cpp,matched,chain pool free forwarder via g_pChainBlockAllocator
 ?Rva00396943Construct@@YA?AURva0039627D@@PAPAXABUBfmeStringRecord004071F7@@@Z,,0x00396943,27,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00396943Construct.cpp,matched,chain from 0x0039627D hidden dst plus by-value return
+??0Rva0039627D@@QAE@ABU0@@Z,,0x003962AE,29,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039627DCtor.cpp,matched,copy ctor via init list sibling of 0x0039627D

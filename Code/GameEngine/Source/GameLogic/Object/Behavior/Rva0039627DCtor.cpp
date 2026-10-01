@@ -12,8 +12,13 @@ struct Rva0039627D {
 	void *m_00;
 	BfmeStringRecord004071F7 m_04;
 	Rva0039627D(void **p, const BfmeStringRecord004071F7 &rec);
+	Rva0039627D(const Rva0039627D &other);
 };
 
 Rva0039627D::Rva0039627D(void **p, const BfmeStringRecord004071F7 &rec) : m_00(*p), m_04(rec)
+{
+}
+
+Rva0039627D::Rva0039627D(const Rva0039627D &other) : m_00(other.m_00), m_04(other.m_04)
 {
 }
