@@ -154,9 +154,12 @@ public:
 	~AsciiString() { m_data.releaseBuffer(); }
 	void concat(const char *s) { m_data.concat(s); }
 	void translate(const class UnicodeString &src);
+	void __cdecl format(const char *fmt, ...);
 private:
 	StringBase<char> m_data;
 };
+
+extern const char g_Rva0107301CEmptyString[];
 
 typedef unsigned short WideChar;
 
@@ -243,6 +246,7 @@ public:
 	void rva005359FA(AsciiString arg, float x);
 	void rva00535A96(AsciiString arg, float x);
 	void rva00535781();
+	int rva00537190(AsciiString arg, int x);
 };
 
 static const char *kFactions[] = { "Men", "Elves", "Dwarves", "Isengard", "Mordor", "Wild" };
@@ -522,4 +526,14 @@ void UserPreferences::rva00535781()
 	val.translate(tmp);
 	AsciiString key("ProfileCreatedDate");
 	v12(key, val);
+}
+
+int UserPreferences::rva00537190(AsciiString arg, int x)
+{
+	AsciiString tmp;
+	const char *base = *(const char **)&arg;
+	const char *s = base ? base + 8 : g_Rva0107301CEmptyString;
+	tmp.format("%s_%d", s, x);
+	int ret = v6(tmp, 0);
+	return ret;
 }
