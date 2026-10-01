@@ -45598,3 +45598,6 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?copyItems@Rva00402D7E@@QAEXABV1@@Z,,0x00402D01,125,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,deep copy of 0x64-byte items through rowed Rva00402C0F copy ctor; end hoisted
 ??0Rva00402D7E@@QAE@ABV0@@Z,,0x00402D7E,109,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,copy ctor: string plus empty vector plus three nothrow handles then copyItems
 ??4Rva00402D7E@@QAEAAV0@ABV0@@Z,,0x00402DEB,69,Code/GameEngine/Source/Common/Rva00402D7ECopyCtor.cpp,matched,operator= : self check then string set plus three handle assigns then copyItems
+?winGetStyle@GameWindow@@QAEIXZ,,0x005C4AF1,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?winGetParent@GameWindow@@QAEPAV1@XZ,,0x003140A4,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?winGetChild@GameWindow@@QAEPAV1@XZ,,0x003140C8,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
