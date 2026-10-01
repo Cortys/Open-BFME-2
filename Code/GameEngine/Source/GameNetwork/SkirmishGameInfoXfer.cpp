@@ -8,6 +8,10 @@
 // at +0x88). The layout widens BFME1's SkirmishGameInfo past the slots:
 // the string members are gone, replaced by the +0x40..0x88 int/uint runs.
 
+// The shared headers declare these members with the access/virtual spelling
+// retail's vftables reference; the ledger row keeps the spelling this TU
+// compiled to. Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?xfer@SkirmishGameInfo@@MAEXPAVXfer@@@Z=?xfer@SkirmishGameInfo@@UAEXPAVXfer@@@Z")
 typedef int Int;
 typedef unsigned int UnsignedInt;
 typedef unsigned char UnsignedByte;

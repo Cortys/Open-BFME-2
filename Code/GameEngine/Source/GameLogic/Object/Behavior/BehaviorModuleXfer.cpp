@@ -11,6 +11,10 @@
 // Version1 on the stream, then the ObjectModule base xfer (pinned).
 // Version1 resolves via its row.
 
+// The shared headers declare these members with the access/virtual spelling
+// retail's vftables reference; the ledger row keeps the spelling this TU
+// compiled to. Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?xfer@BehaviorModule@@MAEXPAVXfer@@@Z=?xfer@BehaviorModule@@QAEXPAVXfer@@@Z")
 class Xfer
 {
 public:

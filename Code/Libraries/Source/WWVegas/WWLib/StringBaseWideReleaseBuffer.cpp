@@ -15,6 +15,10 @@
 // throw() on the dllimport Enter/Leave keeps their states out, leaving the single free state).
 // Guard is 8B (ptr + state byte, sub esp,8 + mov byte [esp+0x0C],1 after acquire, evidenced by frame
 // and by rowed guard dtor 0x000358B0 in StringBaseLockGuardDtor.cpp with m_lock +0 and bool m_locked +4).
+// The shared headers declare these members with the access/virtual spelling
+// retail's vftables reference; the ledger row keeps the spelling this TU
+// compiled to. Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?releaseBuffer@?$StringBase@D@@IAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
 typedef unsigned short wchar_t;
 
 struct CRITICAL_SECTION

@@ -15,6 +15,10 @@
 // SkirmishGameInfoXfer proven spelling (IsLoading slot 1, IsLightCRC
 // slot 4, Version1 direct row, == uint at 0x78).
 
+// The shared headers declare these members with the access/virtual spelling
+// retail's vftables reference; the ledger row keeps the spelling this TU
+// compiled to. Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?xfer@UpdateModule@@MAEXPAVXfer@@@Z=?xfer@UpdateModule@@QAEXPAVXfer@@@Z")
 class AsciiString;
 class UnicodeString;
 class PooledString;

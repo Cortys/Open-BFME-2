@@ -37,6 +37,14 @@
 // reads are direct (m_id at +0x74, m_position at +0x38) instead of virtual,
 // and the lookup returns null on a miss instead of recovering.
 
+// The shared headers declare these members with the access/virtual spelling
+// retail's vftables reference; the ledger row keeps the spelling this TU
+// compiled to. Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?initDefaultState@StateMachine@@UAE?AW4StateReturnType@@XZ=?initDefaultState@StateMachine@@QAE?AW4StateReturnType@@XZ")
+#pragma comment(linker, "/alternatename:?halt@StateMachine@@UAEXXZ=?halt@StateMachine@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?updateStateMachine@StateMachine@@UAE?AW4StateReturnType@@XZ=?updateStateMachine@StateMachine@@QAE?AW4StateReturnType@@XZ")
+#pragma comment(linker, "/alternatename:?resetToDefaultState@StateMachine@@UAE?AW4StateReturnType@@XZ=?resetToDefaultState@StateMachine@@QAE?AW4StateReturnType@@XZ")
+#pragma comment(linker, "/alternatename:?clear@StateMachine@@UAEXXZ=?clear@StateMachine@@QAEXXZ")
 #include <cfloat>
 #include <map>
 
