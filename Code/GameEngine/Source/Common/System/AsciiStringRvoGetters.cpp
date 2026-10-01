@@ -319,3 +319,26 @@ AsciiString Rva004DC8E7AsciiField::get() const
 {
 	return m_value;
 }
+
+class Rva0029173EAsciiField
+{
+public:
+	void rva0029173E(AsciiString value);
+
+private:
+	char m_pad[0x308];
+	AsciiString m_value; // +0x308
+};
+
+// ?rva0029173E@Rva0029173EAsciiField@@QAEXVAsciiString@@@Z, retail 0x0029173E, 55 bytes.
+// Setter for +0x308 member: abuts prev 0x002916DA+100 and next getter
+// 0x00291775 (0x29173E+55=0x291775). Same 55B shape as rva004FDCFF with
+// member at +0x308 (lea eax,[ebp+8]; add ecx,0x308; push eax) via rowed
+// operator= then rowed releaseBuffer with EH unwind. New address-derived
+// class since no same-file getter shares +0x308 (Rva0046AA11 shares the
+// offset in another region).
+void Rva0029173EAsciiField::rva0029173E(AsciiString value)
+{
+	AsciiString &slot = m_value;
+	slot = value;
+}

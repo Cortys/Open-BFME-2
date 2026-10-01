@@ -46332,3 +46332,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva005CC9F8@Rva005CC9F8@@QAEXXZ,,0x005CC9F8,19,Code/GameEngine/Source/Common/Rva005CC9F8Clear.cpp,matched,calls rowed Release_Ref tail-jmp target of 0x005CCA57
 ?rva00363B24@Path@@QAEXH@Z,,0x00363B24,17,Code/GameEngine/Source/GameLogic/AI/PathRva00363B24.cpp,matched,Path tail waypoint setter via tail plus 8 waypoint plus 20
 ?rva002913EB@Rva002913EB@@QAEXXZ,,0x002913EB,41,Code/GameEngine/Source/Common/System/Rva002913EBClear.cpp,matched,tree clear via rowed Rva0028F662 free with header reset
+?rva0029173E@Rva0029173EAsciiField@@QAEXVAsciiString@@@Z,,0x0029173E,55,Code/GameEngine/Source/Common/System/AsciiStringRvoGetters.cpp,matched,AsciiString by-value setter at +0x308 via rowed set and releaseBuffer
