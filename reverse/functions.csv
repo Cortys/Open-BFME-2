@@ -45402,3 +45402,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?get@Rva001F5E10Slot@@QAEPAXPAX@Z,,0x001F5E10,20,Code/GameEngine/Source/Common/Rva001F5E10Get.cpp,matched,sibling pattern at 0xBC null-checked holder slot 8
 ?rva001F93EB@Rva001F93EB@@QAEXXZ,,0x001F93EB,23,Code/GameEngine/Source/Common/Thing/Rva001F93EB.cpp,matched,chain via rowed 0x001F8DA9 null-checked slot 4 plus tail-jmp
 ?rva001F9402@Rva001F9402@@QAEXH@Z,,0x001F9402,34,Code/GameEngine/Source/Common/Thing/Rva001F9402.cpp,matched,chain via rowed 0x001F8DC0 null-checked slot 3 plus forward
+?rva001F944E@Rva001F944E@@QAEXXZ,,0x001F944E,23,Code/GameEngine/Source/Common/Thing/Rva001F944E.cpp,matched,chain via rowed 0x001F8E0C null-checked slot 4 plus tail-jmp
