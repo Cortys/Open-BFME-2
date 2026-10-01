@@ -7,21 +7,23 @@
 //
 // Dedicated TU (callee-visibility: defining it in the init TU would inline it
 // into the matched FrameData::init; defining it in the Deleter TU would see
-// the defined dtor there instead of the row). The virtual dtor is declared
-// only; the vtable resolves across TUs via the Deleter TU's emission.
+// the defined dtor there instead of the row). Explicit vtable so this TU
+// emits no vtable/??_G copy; the Deleter TU owns those.
+extern "C" const void *const vtbl_00C70A08[];  // ??_7NetCommandList@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C70A08=??_7NetCommandList@@6B@")
 class NetCommandList
 {
 public:
 	NetCommandList();
-protected:
-	virtual ~NetCommandList();
 private:
+	const void *m_vtable; // +0, retail 0x00C70A08 (explicit so no vtable emitted)
 	void *m_first;
 	void *m_last;
 	void *m_lastMessageInserted;
 };
 // ??0NetCommandList@@QAE@XZ
 NetCommandList::NetCommandList()
+	: m_vtable(vtbl_00C70A08)
 {
 	m_first = 0;
 	m_last = 0;
