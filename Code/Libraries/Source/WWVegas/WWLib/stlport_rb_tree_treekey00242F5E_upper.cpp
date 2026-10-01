@@ -5,6 +5,8 @@
 // at +4) via member comparator Rva000A7AA7Less pinned at 0x000A78A3. Sibling
 // of 0x000A78D1 lower_bound in the same TU family. Evidence: callers
 // 0x000A7A53 and 0x000A7C2E; neighbours 0x000A78D1 and 0x000A7941.
+// The empty member comparator and rowed stdcall provider use the same key pair.
+#pragma comment(linker, "/alternatename:??RRva000A7AA7Less@@QBE_NABUTreeKey00242F5E@@0@Z=?Rva000A78A3Less@@YG_NABUTreeKey00242F5E@@0@Z")
 #include <set>
 class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
 struct TreeKey00242F5E { unsigned int m_id; AsciiString m_name; };
