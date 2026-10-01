@@ -37,7 +37,7 @@ private:
 
 template BfmeContainerRecord005FDEC7 *_STL::__copy<BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *>(BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *, BfmeContainerRecord005FDEC7 *, const _STL::random_access_iterator_tag &);
 
-_STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> >::iterator
+inline _STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> >::iterator
 _STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> >::erase(iterator first, iterator last)
 {
     iterator new_finish = _STL::__copy(last, m_finish, first, _STL::random_access_iterator_tag());
@@ -45,3 +45,11 @@ _STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005
     m_finish = new_finish;
     return first;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitRva005FE209Copy@@YAXPAV?$vector@UBfmeContainerRecord005FDEC7@@V?$allocator@UBfmeContainerRecord005FDEC7@@@_STL@@@_STL@@PAUBfmeContainerRecord005FDEC7@@1@Z present-unmatched
+void bfmeEmitRva005FE209Copy(_STL::vector<BfmeContainerRecord005FDEC7, _STL::allocator<BfmeContainerRecord005FDEC7> > *vec, BfmeContainerRecord005FDEC7 *first, BfmeContainerRecord005FDEC7 *last)
+{
+	vec->erase(first, last);
+}
+#pragma inline_depth()
