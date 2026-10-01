@@ -157,6 +157,8 @@ int Rva00187F30Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G00DFDA54;
+// G00DFDA54: VA 0xdfda54 (zero-filled .bss).
+int G00DFDA54;
 int Rva001B6390Get(void)
 {
 	return G00DFDA54;
@@ -283,6 +285,8 @@ int Rva00611020Get(void)
 // Follows int3 (prev CC), followed by CC padding, no .rdata vtable slot,
 // no direct callers, no branch sources. Opaque address-derived name.
 extern int G00E0BE00;
+// G00E0BE00: VA 0xe0be00 (zero-filled .bss).
+int G00E0BE00;
 int Rva0069BD50Get(void)
 {
 	return G00E0BE00;

@@ -5,11 +5,11 @@
 // First of an adjacent pair (0x78BEE/F4); dedicated TU so no caller
 // inlines the load (Rva007EB810Get precedent).
 
-extern int g_Va001FDEB4;
+extern int TheW3DHordeModelDrawCount;
 
 int Rva00078BEEGet(void)
 {
-	return g_Va001FDEB4;
+	return TheW3DHordeModelDrawCount;
 }
 
 // ?Rva00078BF4Get@@YAHXZ @ 0x00078BF4 (6B): same shape over 0x001FDEB0.

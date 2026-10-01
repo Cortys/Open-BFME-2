@@ -16,6 +16,8 @@ public:
 };
 extern GlobalData *TheWritableGlobalData;
 extern bool BFME2UseDebugWindowLite;   // VA E02D7A: selects the Lite DLL.
+// BFME2UseDebugWindowLite: VA 0xe02d7a (zero-filled .bss).
+bool BFME2UseDebugWindowLite;
 extern bool BFME2ScriptDebugLiteMode; // VA E02D78: additional Lite-mode flag.
 // BFME2ScriptDebugLiteMode: matched references place it at VA 0xe02d78 (zero-filled .bss).
 bool BFME2ScriptDebugLiteMode;

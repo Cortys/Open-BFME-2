@@ -29,10 +29,10 @@ extern unsigned short bfmeDynamicVBSizes[15];
 extern unsigned short bfmeDynamicVBOffsets[15];
 extern unsigned bfmeDynamicFVFs[15];
 extern BfmeFVFDescriptor bfmeDynamicFVFDescs[15];
-extern bool bfmeSortingVBInUse;
+extern bool BfmeDynamicSortingVertexArrayInUse;
 extern BfmeDynamicVB *bfmeSortingVB;
 extern unsigned short bfmeSortingVBSize;
-extern unsigned short bfmeSortingVBOffset;
+extern unsigned short BfmeDynamicSortingVertexArrayOffset;
 
 void DynamicVBAccessClass::_Deinit()
 {
@@ -57,9 +57,9 @@ void DynamicVBAccessClass::_Deinit()
 			p->Destroy();
 		bfmeSortingVB = (BfmeDynamicVB *)n;
 	}
-	bfmeSortingVBInUse = (char)n;
+	BfmeDynamicSortingVertexArrayInUse = (char)n;
 	bfmeSortingVBSize = (unsigned short)n;
-	bfmeSortingVBOffset = (unsigned short)n;
+	BfmeDynamicSortingVertexArrayOffset = (unsigned short)n;
 }
 
 // 0x0013A7D0, 104 bytes, immediately before _Deinit: the same per-format loop

@@ -36,7 +36,7 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 class Rva0050F041
 {
@@ -53,5 +53,5 @@ void Rva0050F041::rva0050F041(int field, const UnicodeString &text)
 	AsciiString key;
 	const char *mid = m_60 ? m_60->m_name : "";
 	key.format("APT:_level%u.%s_field%d", m_5c, mid, field);
-	g_Va009FE4CC->bfmeSetText(key, text, false);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, false);
 }

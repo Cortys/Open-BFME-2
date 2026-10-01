@@ -30,7 +30,7 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 extern const unsigned short g_Va007C9260[];
 
 void __cdecl Rva003FF02EPowerCap(int cap)
@@ -38,5 +38,5 @@ void __cdecl Rva003FF02EPowerCap(int cap)
 	static AsciiString s_key("APT:PlayerPowerCap");
 	UnicodeString value;
 	value.format(g_Va007C9260, cap);
-	g_Va009FE4CC->bfmeSetText(s_key, value, false);
+	g_bfmeAptWindowManager->bfmeSetText(s_key, value, false);
 }

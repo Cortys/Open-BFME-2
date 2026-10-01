@@ -15,7 +15,7 @@ struct ListNode
 	void *m_next;
 };
 
-extern void *g_freeList0029DFC5;
+extern void *g_freeList001EB130;
 
 // ?removeRecycleRva0029DFC5@@YGXPAX0@Z
 void __stdcall removeRecycleRva0029DFC5(void *outParam, void *nodeParam)
@@ -25,7 +25,7 @@ void __stdcall removeRecycleRva0029DFC5(void *outParam, void *nodeParam)
 	ListNode *prev = (ListNode *)node->m_prev;
 	next->m_prev = prev;
 	prev->m_next = next;
-	node->m_prev = g_freeList0029DFC5;
-	g_freeList0029DFC5 = node;
+	node->m_prev = g_freeList001EB130;
+	g_freeList001EB130 = node;
 	*(void **)outParam = prev;
 }

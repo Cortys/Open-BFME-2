@@ -14,7 +14,7 @@ public:
 	Rva002E1948Entry *rva002B48E1(const AsciiString &name);
 };
 
-extern Rva002B48E1 *g_Va009FEF10;
+extern Rva002B48E1 *Rva00DFEF10;
 
 class Rva003F8443
 {
@@ -27,5 +27,5 @@ private:
 
 Rva002E1948Entry *Rva003F8443::rva003F8443(int i)
 {
-	return g_Va009FEF10->rva002B48E1(m_arr0C[i]);
+	return Rva00DFEF10->rva002B48E1(m_arr0C[i]);
 }

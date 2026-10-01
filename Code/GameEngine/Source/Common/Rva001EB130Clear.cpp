@@ -12,6 +12,8 @@ public:
 	void rva001EB130();
 };
 extern void *g_freeList001EB130;
+// g_freeList001EB130: VA 0xdb8ff4 (retail .data initial value 0).
+void * g_freeList001EB130;
 // ?rva001EB769@Rva001EB769@@QAEXXZ @0x001EB769 29B: dispose of the same
 // circular-list holder cleared by 0x001EB130 above (calls it on ecx, then
 // pushes the head node at this+0 onto freelist 0x009B8FF4 when non-null).

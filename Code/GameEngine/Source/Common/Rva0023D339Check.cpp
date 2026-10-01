@@ -13,12 +13,12 @@ struct Rva0023D339B
 	unsigned int m_40;
 };
 extern Rva0023D339A *g_Rva0023D339A;
-extern unsigned int g_Rva0023D339Mul;
+extern unsigned int g_bfmeRva42E8C1Add;
 extern Rva0023D339B *g_Rva0023D339B;
 bool Rva0023D339Get()
 {
 	unsigned int tmp = g_Rva0023D339A->m_122C;
-	tmp *= g_Rva0023D339Mul;
+	tmp *= g_bfmeRva42E8C1Add;
 	Rva0023D339B *b = g_Rva0023D339B;
 	tmp *= 60;
 	return b->m_40 >= tmp;

@@ -30,6 +30,8 @@ private:
 };
 
 extern int TheMixFileInfoCount;
+// TheMixFileInfoCount: VA 0xe049d4 (zero-filled .bss).
+int TheMixFileInfoCount;
 extern int TheMixFileInfoPool; // 0x00A049D0
 
 void *__cdecl operator new[](unsigned int size);

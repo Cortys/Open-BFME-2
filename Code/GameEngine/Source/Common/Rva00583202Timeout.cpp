@@ -53,7 +53,7 @@ public:
 };
 
 extern GameTextInterface *TheGameText;
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 extern "C" __declspec(dllimport) int __cdecl swprintf(wchar_t *buffer, const wchar_t *format, ...);
 
@@ -67,5 +67,5 @@ void __stdcall Rva00583202Set(int totalSeconds)
 	swprintf(buf, TheGameText->fetch("MapTransfer:Timeout", 0).str(), minutes, seconds);
 	UnicodeString value(buf);
 	AsciiString key("APT:FileTransferLoadingTime");
-	g_Va009FE4CC->bfmeSetText(key, value, false);
+	g_bfmeAptWindowManager->bfmeSetText(key, value, false);
 }

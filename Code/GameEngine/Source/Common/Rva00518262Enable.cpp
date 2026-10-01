@@ -9,6 +9,8 @@ public:
 	void enable();
 };
 extern int g_Va00A04908;
+// g_Va00A04908: VA 0xe04908 (zero-filled .bss).
+int g_Va00A04908;
 extern Rva00222479ByteOneSetter *g_Va009FE4CC;
 void Rva00518262Enable(void)
 {

@@ -46,6 +46,8 @@ private:
 // The counter the constructor bumps. Nothing in the image names it; it is
 // reached by what this body does to it.
 extern int TheW3DHordeModelDrawCount;	// 0x00DE1FB4
+// TheW3DHordeModelDrawCount: VA 0xde1fb4 (zero-filled .bss).
+int TheW3DHordeModelDrawCount;
 
 // ??0W3DHordeModelDraw@@QAE@PAVThing@@PBVModuleData@@@Z @0x00078A82
 W3DHordeModelDraw::W3DHordeModelDraw(Thing *thing, const ModuleData *moduleData) :

@@ -22,19 +22,19 @@ int Rva000752F2Get(void)
 // ?Rva00116E20Get@@YAHXZ @ 0x00116E20 (6B): returns global at 0x9B5FD4.
 // Follows int3 (prev CC), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
-extern int G009B5FD4;
+extern int BfmeRenderWidth;
 int Rva00116E20Get(void)
 {
-	return G009B5FD4;
+	return BfmeRenderWidth;
 }
 
 // ?Rva00116E30Get@@YAHXZ @ 0x00116E30 (6B): returns global at 0x9B5FD8.
 // Follows int3 (prev CC), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
-extern int G009B5FD8;
+extern int BfmeRenderHeight;
 int Rva00116E30Get(void)
 {
-	return G009B5FD8;
+	return BfmeRenderHeight;
 }
 
 // ?Rva00117C30Get@@YAHXZ @ 0x00117C30 (6B): returns global at 0x9B5FE0.

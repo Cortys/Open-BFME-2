@@ -205,8 +205,8 @@ void Render2DClass::Enable_Texturing(bool b)
 // bound by the matched getter rows over them (GlobalByteGetters.cpp and
 // Rva0011009AGetters.cpp), so these reuse the established spellings.
 extern unsigned char g_Va00DEC3D7;
-extern int g_Va00DB5FD4;
-extern int g_Va00DB5FD8;
+extern int BfmeRenderWidth;
+extern int BfmeRenderHeight;
 
 void	Render2DClass::Set_Coordinate_Range( const RectClass & range )
 {
@@ -223,8 +223,8 @@ void	Render2DClass::Set_Coordinate_Range( const RectClass & range )
 		Vector2 bais_add( -0.5f ,-0.5f );	// offset by -0.5,-0.5 in pixels
 
 		// Convert from pixels to (-1,1)-(1,-1) units
-		bais_add.X = bais_add.X / ( (unsigned)g_Va00DB5FD4 * 0.5f );
-		bais_add.Y = bais_add.Y / ( (unsigned)g_Va00DB5FD8 * -0.5f );
+		bais_add.X = bais_add.X / ( (unsigned)BfmeRenderWidth * 0.5f );
+		bais_add.Y = bais_add.Y / ( (unsigned)BfmeRenderHeight * -0.5f );
 
 		CoordinateOffset.X = CoordinateOffset.X + bais_add.X;
 		CoordinateOffset.Y = CoordinateOffset.Y + bais_add.Y;

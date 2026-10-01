@@ -40,7 +40,11 @@ public:
 extern bool BfmeDynamicDX8VertexBufferInUse[BFME_MAX_DYNAMIC_BUFFERS];		// 0x01346740
 extern UnsignedShort BfmeDynamicDX8VertexBufferOffset[BFME_MAX_DYNAMIC_BUFFERS];	// 0x01346794
 extern UnsignedShort BfmeDynamicSortingVertexArrayOffset;			// 0x013467E4
+// BfmeDynamicSortingVertexArrayOffset: VA 0xdf2a94 (zero-filled .bss).
+UnsignedShort BfmeDynamicSortingVertexArrayOffset;
 extern bool BfmeDynamicSortingVertexArrayInUse;					// 0x013467D8
+// BfmeDynamicSortingVertexArrayInUse: VA 0xdf2a88 (zero-filled .bss).
+bool BfmeDynamicSortingVertexArrayInUse;
 
 enum { BFME_BUFFER_TYPE_DYNAMIC_DX8 = 2 };
 

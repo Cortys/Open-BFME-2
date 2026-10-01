@@ -1,6 +1,6 @@
 // Open-BFME5 conversions.
 
-extern int g_bfmeLeft1221;
+extern int g_bfmeIndexFA;
 extern unsigned int *g_bfmeNext1221;
 // g_bfmeNext1221: matched references place it at VA 0xe1901c (zero-filled .bss).
 unsigned int * g_bfmeNext1221;
@@ -11,7 +11,7 @@ unsigned int bfmeNext1221(void)
 {
 	unsigned int y;
 
-	if (--g_bfmeLeft1221 < 0)
+	if (--g_bfmeIndexFA < 0)
 		return bfmeReload1221();
 
 	y = *g_bfmeNext1221++;

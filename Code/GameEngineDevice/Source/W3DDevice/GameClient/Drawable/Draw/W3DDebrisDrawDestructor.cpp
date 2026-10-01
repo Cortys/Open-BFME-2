@@ -58,6 +58,8 @@ public:
 
 extern SceneClass *g_scene;
 extern Gen0003AC38 *g_shadowManager;
+// g_shadowManager: VA 0xde5dfc (zero-filled .bss).
+Gen0003AC38 * g_shadowManager;
 
 class W3DDebrisDraw : public DrawableModuleLayoutBase,
 	public DebrisDrawInterface

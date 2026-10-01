@@ -62,7 +62,7 @@ extern FilePathGate *TheFilePathGate;
 extern LocalFileSystem *TheLocalFileSystem;
 extern ArchiveFileSystem *TheArchiveFileSystem;
 extern char TheLangDir[];
-extern bool ArchiveOrderFlag;
+extern bool BFME2PreferLocalFiles;
 
 class FileSystem
 {
@@ -83,7 +83,7 @@ File *FileSystem::openFile(const char *filename, int access, int unk)
 
 	File *file = 0;
 
-	if (!ArchiveOrderFlag)
+	if (!BFME2PreferLocalFiles)
 		goto try_local;
 	if (!TheArchiveFileSystem)
 		goto try_local;
@@ -119,7 +119,7 @@ try_local:
 				goto done;
 		}
 	}
-	if (ArchiveOrderFlag)
+	if (BFME2PreferLocalFiles)
 		goto done;
 	file = TheArchiveFileSystem->openFile(filename, access, unk);
 done:

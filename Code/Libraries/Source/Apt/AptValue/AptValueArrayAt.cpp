@@ -28,6 +28,8 @@ public:
     void rva006D8AD0(int nIndex, BfmeAptValue006DCD20 *pNewValue);
 };
 extern BfmeAptValue006DCD20 *g_aptUndefinedAtE18078; // 0x00A18078
+// g_aptUndefinedAtE18078: VA 0xe18078 (zero-filled .bss).
+BfmeAptValue006DCD20 * g_aptUndefinedAtE18078;
 BfmeAptValue006DCD20 *BfmeAptValue006DCD20::rva006D8A50(int nIndex)
 {
     if (!(nIndex < mnLength)) {

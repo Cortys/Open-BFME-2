@@ -38,7 +38,7 @@ public:
 // Matched DIR32 sites for TheGlobalData resolve to VA 0x00DFE758, whose retail
 // zero-filled slot starts null.
 GlobalData *TheGlobalData = 0;
-extern bool TheDebugWindowLite;
+extern bool BFME2UseDebugWindowLite;
 
 class SubsystemInterface
 {
@@ -145,7 +145,7 @@ void ScriptEngine::init()
 
 	if (TheGlobalData->m_windowed) {
 		if (TheGlobalData->m_scriptDebug) {
-			if (TheDebugWindowLite)
+			if (BFME2UseDebugWindowLite)
 				st_DebugDLL = LoadLibraryA("DebugWindowLite.dll");
 			else
 				st_DebugDLL = LoadLibraryA("DebugWindow.dll");

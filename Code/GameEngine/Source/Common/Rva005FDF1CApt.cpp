@@ -36,14 +36,14 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 void __cdecl Rva005FDF1CSet(int level, Rva005FDF1COuter *outer, const UnicodeString &text)
 {
 	AsciiString key;
 	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_PlayerName", level, mid);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }
 
 // ?Rva005FDF83Set@@YAXHPAURva005FDF1COuter@@ABVUnicodeString@@@Z retail 0x005FDF83 103B
@@ -53,5 +53,5 @@ void __cdecl Rva005FDF83Set(int level, Rva005FDF1COuter *outer, const UnicodeStr
 	AsciiString key;
 	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_LocalPlayerName", level, mid);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }

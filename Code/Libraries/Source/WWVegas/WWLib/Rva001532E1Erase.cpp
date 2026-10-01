@@ -17,7 +17,7 @@ struct BfmePod68
 	char m_name[0x44];
 };
 
-extern _STL::vector<BfmePod68> *g_Va00DF6F20;
+extern _STL::vector<BfmePod68> *g_Rva00153565Vec;
 
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *left, const char *right);
 
@@ -25,11 +25,11 @@ void __cdecl Rva001532E1Erase(const char *name)
 {
 	if (name == 0)
 		return;
-	for (_STL::vector<BfmePod68>::iterator it = g_Va00DF6F20->begin(); it != g_Va00DF6F20->end(); ++it)
+	for (_STL::vector<BfmePod68>::iterator it = g_Rva00153565Vec->begin(); it != g_Rva00153565Vec->end(); ++it)
 	{
 		if (_strcmpi((const char *)&*it, name) == 0)
 		{
-			g_Va00DF6F20->erase(it);
+			g_Rva00153565Vec->erase(it);
 			return;
 		}
 	}

@@ -102,7 +102,7 @@ public:
 extern unsigned g_Va00DEDC80;
 // g_Va00DEDC80: matched references place it at VA 0xdedc80 (zero-filled .bss).
 unsigned int g_Va00DEDC80;
-extern unsigned g_Va00DEE5D8;
+extern unsigned ScreenCurrentShader;
 
 // ?rva007B6FC0@@YAXXZ @ 0x007B6FC0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&g_Va00DEDC80 then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same page. Honest address name.
 void __cdecl rva007B6FC0()
@@ -111,10 +111,10 @@ void __cdecl rva007B6FC0()
 	return p->~SortingRenderStateStruct();
 }
 
-// ?rva007B6FD0@@YAXXZ @ 0x007B6FD0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&g_Va00DEE5D8 then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same target as 0x007B6FC0, different global. Honest address name.
+// ?rva007B6FD0@@YAXXZ @ 0x007B6FD0 (10B). Global SortingRenderStateStruct dtor thunk: ecx=&ScreenCurrentShader then tail-jmp to rowed ??1SortingRenderStateStruct@@QAE@XZ (0x0011C5C0). No callers. Same target as 0x007B6FC0, different global. Honest address name.
 void __cdecl rva007B6FD0()
 {
-	SortingRenderStateStruct *p = (SortingRenderStateStruct *)&g_Va00DEE5D8;
+	SortingRenderStateStruct *p = (SortingRenderStateStruct *)&ScreenCurrentShader;
 	return p->~SortingRenderStateStruct();
 }
 

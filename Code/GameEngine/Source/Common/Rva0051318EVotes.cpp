@@ -18,7 +18,7 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 extern const unsigned short g_Va007C9260[];
 
 void __stdcall Rva0051318ESet(int slot, int votes)
@@ -28,5 +28,5 @@ void __stdcall Rva0051318ESet(int slot, int votes)
 	UnicodeString value(L" ");
 	if (votes)
 		value.format(g_Va007C9260, votes);
-	g_Va009FE4CC->bfmeSetText(key, value, false);
+	g_bfmeAptWindowManager->bfmeSetText(key, value, false);
 }

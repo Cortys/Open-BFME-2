@@ -26,6 +26,8 @@ public:
 };
 
 extern Rva00432F23 *g_004C9DC9Container;
+// g_004C9DC9Container: VA 0xe032d0 (zero-filled .bss).
+Rva00432F23 * g_004C9DC9Container;
 
 class Rva0049B47C
 {

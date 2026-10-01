@@ -37,7 +37,7 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 class Rva005ED445
 {
@@ -61,7 +61,7 @@ void Rva005ED445::rva005ED445(const UnicodeString &text)
 	AsciiString key;
 	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_RegionName", m_level, mid);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }
 
 void Rva005ED445::rva005ED4AC(int bonusIndex, const UnicodeString &text)
@@ -69,7 +69,7 @@ void Rva005ED445::rva005ED4AC(int bonusIndex, const UnicodeString &text)
 	AsciiString key;
 	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_RegionBonus%d", m_level, mid, bonusIndex);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }
 
 void Rva005ED445::rva005ED516(int suffixIndex, const char *suffix, const UnicodeString &text)
@@ -77,7 +77,7 @@ void Rva005ED445::rva005ED516(int suffixIndex, const char *suffix, const Unicode
 	AsciiString key;
 	const char *mid = m_outer.m_ptr ? m_outer.m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_%s%d", m_level, mid, suffix, suffixIndex);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }
 
 void Rva005ED445::rva005ED8FF(int bonusIndex, const UnicodeString &text)

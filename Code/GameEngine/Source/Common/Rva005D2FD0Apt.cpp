@@ -36,14 +36,14 @@ public:
 	void bfmeSetText(const AsciiString &, const UnicodeString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 void __cdecl Rva005D2FD0Set(int level, Rva005D2FD0Outer *outer, const char *suffix, const UnicodeString &text)
 {
 	AsciiString key;
 	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_%s", level, mid, suffix);
-	g_Va009FE4CC->bfmeSetText(key, text, true);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, true);
 }
 
 void __cdecl Rva005D366ASet(int level, Rva005D2FD0Outer *outer, const UnicodeString &text)
@@ -51,7 +51,7 @@ void __cdecl Rva005D366ASet(int level, Rva005D2FD0Outer *outer, const UnicodeStr
 	AsciiString key;
 	const char *mid = outer->m_ptr ? outer->m_ptr->m_name : "";
 	key.format("APT:_level%u.%s_RegionName", level, mid);
-	g_Va009FE4CC->bfmeSetText(key, text, false);
+	g_bfmeAptWindowManager->bfmeSetText(key, text, false);
 }
 
 // ?rva005D3846@Rva005D3846@@QAEXABVUnicodeString@@@Z retail 0x005D3846 53B

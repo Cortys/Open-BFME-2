@@ -75,14 +75,14 @@ int Rva00248D60Get(void)
 	return g_Va00E0333C;
 }
 
-extern int g_Va00E03354;
+extern int g_Va00A03354;
 
 // ?Rva00248D66Get@@YAHXZ @ 0x00248d66 (6B) over 0x00E03354.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
 int Rva00248D66Get(void)
 {
-	return g_Va00E03354;
+	return g_Va00A03354;
 }
 
 extern int g_Va00DBB708;
@@ -153,14 +153,14 @@ int Rva00376D17Get(void)
 	return g_Va00E04910;
 }
 
-extern int g_Va00E04908;
+extern int g_Va00A04908;
 
 // ?Rva00376D1DGet@@YAHXZ @ 0x00376d1d (6B) over 0x00E04908.
 // Follows a ret (prev C3), no .rdata vtable slot, no direct callers,
 // no branch sources. Opaque address-derived name.
 int Rva00376D1DGet(void)
 {
-	return g_Va00E04908;
+	return g_Va00A04908;
 }
 
 extern int g_Va00E05FAC;

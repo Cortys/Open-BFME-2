@@ -10,7 +10,9 @@
 // restore it, which is what makes this a scoped override rather than a setter.
 // The old value goes through a one-byte local rather than staying in a register,
 // which is why the frame exists at all.
-extern char g_Rva012C391CFlag;
+extern char g_Rva012C391CSeparator;
+// g_Rva012C391CSeparator: VA 0xdd8074 (retail .data initial value 10).
+char g_Rva012C391CSeparator = 10;
 
 // 0x007EBCA0, the tag lookup both bodies at the end of this file feed; pinned
 // by address and still a dump.
@@ -30,8 +32,8 @@ char Rva007EBAE0( char value )
 {
 	char old;
 
-	old = g_Rva012C391CFlag;
-	g_Rva012C391CFlag = value;
+	old = g_Rva012C391CSeparator;
+	g_Rva012C391CSeparator = value;
 	return old;
 }
 

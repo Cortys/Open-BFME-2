@@ -61,7 +61,7 @@ public:
 	void handle(void *object);
 };
 
-extern Gen0003AC38 *g_Rva003FB640Mgr;
+extern Gen0003AC38 *g_shadowManager;
 
 class Rva003FB640
 {
@@ -77,7 +77,7 @@ void Rva003FB640::rva003FB640()
 	void *p = m_ptr0C;
 	if (p)
 	{
-		g_Rva003FB640Mgr->handle(p);
+		g_shadowManager->handle(p);
 		m_ptr0C = 0;
 	}
 }

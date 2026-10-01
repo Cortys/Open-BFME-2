@@ -483,7 +483,7 @@ struct BFME2TextureRef { void *Ptr; };
 void BFME2Set_Texture(unsigned stage, const struct BFME2TextureRef &texture);
 extern unsigned TheBoxTextureDirtyMask;
 extern VertexMaterialClass *g_00DEE5DC;
-extern struct IDirect3DDevice8 *g_00DEDA34;
+extern struct IDirect3DDevice8 *g_d3dDevice;
 extern unsigned g_00DEDA4C;
 extern unsigned g_00DEDA98;
 
@@ -509,10 +509,10 @@ void Rva0012D4D0Apply(RenderStateStruct &render_state)
 		}
 	}
 	++g_00DEDA4C;
-	g_00DEDA34->SetTransform(D3DTS_WORLD, reinterpret_cast<const D3DMATRIX *>(&render_state.world));
+	g_d3dDevice->SetTransform(D3DTS_WORLD, reinterpret_cast<const D3DMATRIX *>(&render_state.world));
 	++g_00DEDA98;
 	++g_00DEDA4C;
-	g_00DEDA34->SetTransform(D3DTS_VIEW, reinterpret_cast<const D3DMATRIX *>(&render_state.view));
+	g_d3dDevice->SetTransform(D3DTS_VIEW, reinterpret_cast<const D3DMATRIX *>(&render_state.view));
 	++g_00DEDA98;
 }
 

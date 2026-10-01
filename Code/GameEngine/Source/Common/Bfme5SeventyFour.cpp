@@ -5,6 +5,8 @@
 // T1 body the sweep places.
 
 extern int g_bfmeIndexFA;					// retail 0x012D5DC8
+// g_bfmeIndexFA: VA 0xddcf50 (retail .data initial value -1).
+int g_bfmeIndexFA = -1;
 extern int g_bfmeStateFA[];					// retail 0x013387E0
 
 // ?bfmeSeed@@YAXH@Z

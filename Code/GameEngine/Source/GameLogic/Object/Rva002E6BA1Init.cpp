@@ -10,7 +10,7 @@ struct In002E6BA1
 	int m_04;
 };
 
-extern int g_00E049D4;
+extern int TheMixFileInfoCount;
 
 class Rva002E6BA1
 {
@@ -42,5 +42,5 @@ void Rva002E6BA1::rva002E6BA1(int a, In002E6BA1 *b)
 	memset(m_14, 0, 20);
 	m_2C &= 0xffffffe0;
 	m_28 = 0;
-	++g_00E049D4;
+	++TheMixFileInfoCount;
 }

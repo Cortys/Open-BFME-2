@@ -42,7 +42,7 @@ struct Rva00920AE0Slot
 
 extern Gen00920BC0Device *Rva01340534Device;
 extern unsigned int number_of_DX8_calls;
-extern unsigned int Rva01340568StageChanges;
+extern unsigned int ScreenTextureStageStateChanges;
 extern Rva00920AE0Slot g_bfmeOptionSlots0[8];
 extern Rva00920AE0Slot g_bfmeOptionSlotsA[8];
 extern Rva00920AE0Slot g_bfmeOptionSlotsB[8];
@@ -64,26 +64,26 @@ void Gen00920BC0::handle(int index)
 	Rva01340534Device->SetTextureStageState(index, 6,
 		((int *)g_bfmeOptionSlots0)[m_stateA + scaled]);
 	number_of_DX8_calls++;
-	Rva01340568StageChanges++;
+	ScreenTextureStageStateChanges++;
 	Rva01340534Device->SetTextureStageState(index, 5,
 		((int *)g_bfmeOptionSlotsA)[m_stateB + scaled]);
 	number_of_DX8_calls++;
-	Rva01340568StageChanges++;
+	ScreenTextureStageStateChanges++;
 	Rva01340534Device->SetTextureStageState(index, 7,
 		((int *)g_bfmeOptionSlotsB)[m_stateC + scaled]);
 	number_of_DX8_calls++;
-	Rva01340568StageChanges++;
+	ScreenTextureStageStateChanges++;
 	switch (m_modeA)
 	{
 	case 0:
 		Rva01340534Device->SetTextureStageState(index, 1, 1);
 		number_of_DX8_calls++;
-		Rva01340568StageChanges++;
+		ScreenTextureStageStateChanges++;
 		break;
 	case 1:
 		Rva01340534Device->SetTextureStageState(index, 1, 3);
 		number_of_DX8_calls++;
-		Rva01340568StageChanges++;
+		ScreenTextureStageStateChanges++;
 		break;
 	default:
 		break;
@@ -93,12 +93,12 @@ void Gen00920BC0::handle(int index)
 	case 0:
 		Rva01340534Device->SetTextureStageState(index, 2, 1);
 		number_of_DX8_calls++;
-		Rva01340568StageChanges++;
+		ScreenTextureStageStateChanges++;
 		break;
 	case 1:
 		Rva01340534Device->SetTextureStageState(index, 2, 3);
 		number_of_DX8_calls++;
-		Rva01340568StageChanges++;
+		ScreenTextureStageStateChanges++;
 		break;
 	default:
 		break;

@@ -16,6 +16,8 @@
 #undef _strcmpi
 struct BfmePod68 { int a[17]; };
 extern _STL::vector<BfmePod68> *g_Rva00153565Vec;
+// g_Rva00153565Vec: VA 0xdf6f20 (zero-filled .bss).
+_STL::vector<BfmePod68> * g_Rva00153565Vec;
 extern "C" {
 unsigned __cdecl strlen(const char *s);
 extern "C" char *__cdecl _mbscpy(char *d, const char *s);

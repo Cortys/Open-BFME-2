@@ -22,7 +22,7 @@ public:
 	void rva00225375(const AsciiString &, const AsciiString &, bool);
 };
 
-extern BfmeAptWindowManager *g_Va009FE4CC;
+extern BfmeAptWindowManager *g_bfmeAptWindowManager;
 
 void __stdcall Rva005832D0Set(const AsciiString &path)
 {
@@ -34,5 +34,5 @@ void __stdcall Rva005832D0Set(const AsciiString &path)
 		fname = path.str();
 	AsciiString value(fname);
 	AsciiString key("APT:FileTransferLoadingMapName");
-	g_Va009FE4CC->rva00225375(key, value, false);
+	g_bfmeAptWindowManager->rva00225375(key, value, false);
 }

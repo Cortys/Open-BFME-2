@@ -72,7 +72,7 @@ public:
 	void rva00432F7D(Rva00432F23Node *node);
 };
 
-extern Rva00432F23 *g_004CA05AContainer;
+extern Rva00432F23 *g_004C9DC9Container;
 
 class AudioManager;
 extern AudioManager *TheAudio;
@@ -127,7 +127,7 @@ AnimationSoundClientBehavior::AnimationSoundClientBehavior(Thing *thing, const M
 		if (maxVal > mod->m_max14)
 			maxVal = mod->m_max14;
 		m_float10 = maxVal * maxVal;
-		if (g_004CA05AContainer)
-			g_004CA05AContainer->rva00432F7D((Rva00432F23Node *)this);
+		if (g_004C9DC9Container)
+			g_004C9DC9Container->rva00432F7D((Rva00432F23Node *)this);
 	}
 }
