@@ -45888,3 +45888,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?didEnter@Object@@QAE_NPAVPolygonTrigger@@@Z,,0x0028D718,63,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,BFME1 donor; same TU as didEnterOrExit so this stays in edx across the call
 ?didExit@Object@@QAE_NPAVPolygonTrigger@@@Z,,0x0028D757,63,Code/GameEngine/Source/GameLogic/Object/ObjectDidEnterOrExit.cpp,matched,BFME1 donor twin of didEnter; same TU as didEnterOrExit
 ?rva00271008@Rva00270FEE@@QAEMXZ,,0x00271008,55,Code/GameEngine/Source/Common/Rva00270FEE.cpp,matched,float helper compiled after its same-class callee rva00270FEE so this stays in ecx
+?rva0028BFF9@Object@@QAEXI@Z,,0x0028BFF9,38,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028AC34Setter.cpp,matched,status bit plus defection helper forward compiled after its callee rva0028AC34 so this stays in ecx
