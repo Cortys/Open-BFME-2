@@ -77,3 +77,29 @@ void Rva0031BE07::rva0031BE58(const ModuleData *data)
     if (found != 0)
         ((Rva0035B750 *)found)->rva0035B750(data);
 }
+
+// ?findCommandButton@ControlBar@@QAEPBVCommandButton@@ABVAsciiString@@@Z @0x0031BE3C 28B
+// LINK BONUS: 1 matched file waits for this name. Donor BFME1 ControlBar.cpp
+// findCommandButton calls findNonConst (here 0x0031BE07) then final-override
+// hop via pinned 0x001E35DF (?getFinalOverride@Overridable@@QBEPBV1@XZ).
+// Evidence: 40+ callers; retail forwards ecx to 0x0031BE07 and hops via +4.
+class CommandButton
+{
+};
+
+class ControlBar
+{
+public:
+    const CommandButton *findCommandButton(const AsciiString &name);
+};
+
+const CommandButton *ControlBar::findCommandButton(const AsciiString &name)
+{
+    void *btn = ((Rva0031BE07 *)this)->rva0031BE07(*(const StringBase<char> *)&name);
+    if (btn == 0)
+        return 0;
+    const Overridable *over = *(const Overridable *const *)((const char *)btn + 4);
+    if (over == 0)
+        return (const CommandButton *)btn;
+    return (const CommandButton *)over->getFinalOverride();
+}
