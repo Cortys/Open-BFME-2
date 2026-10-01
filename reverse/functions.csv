@@ -46496,3 +46496,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0FiringTracker@@QAE@PAVThing@@PBVModuleData@@@Z,,0x004DEB10,149,Code/GameEngine/Source/GameLogic/Object/FiringTrackerCtor.cpp,matched,FiringTracker ctor via UpdateModule base plus FOREVER donor BFME1 xfer layout
 ?rva00293E64@Object@@QAEXPAVDict@@@Z,,0x00293E64,155,Code/GameEngine/Source/GameLogic/Object/ObjectRva00293E64.cpp,matched,Object +0x244 array virtual 0xB4 and Dict NameKey to AsciiString via rowed 0x00293275
 ?rva000E01A3@Rva000E01A3@@QAE_NXZ,,0x000E01A3,13,Code/GameEngine/Source/Common/Rva000E01A3Check.cpp,matched,leaf thiscall self-pointer check via caller 0x3776CC
+?rva0035118A@Rva0035118A@@QAEXH@Z,,0x0035118A,63,Code/GameEngine/Source/GameLogic/AI/Rva0035118A.cpp,matched,leaf via TheGameLogic findObjectByID rowed
