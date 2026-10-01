@@ -1,29 +1,13 @@
 // ?rva00293E64@Object@@QAEXPAVDict@@@Z
 // partial score=0.99 date=2026-09-30
-// ?rva00293E64@Object@@QAEXPAVDict@@@Z
-// partial score=0.99 date=2026-09-30
-// cl: /O1 /G7
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7
 // ?rva00293E64@Object@@QAEXPAVDict@@@Z @0x00293E64 155B
 // Honest Object method iterating +0x244 array calling virtual 0xB4, then
 // optional +0x84 loop, then Dict/NameKey to AsciiString forwarding to rowed
 // 0x00293275. Evidence: chain calls rowed 0x00293275, +0x244 null-term array,
 // +0x84 Rva00271AEA rowed, Dict getAsciiString rowed, flags /O1 /G7 like sibling.
+#include "ascii_string.h"
 typedef bool Bool;
-
-template <typename T>
-class StringBase
-{
-public:
-	StringBase(const StringBase<T> &that);
-	~StringBase() { releaseBuffer(); }
-private:
-	void releaseBuffer();
-	T *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-};
 
 enum NameKeyType
 {
@@ -36,15 +20,13 @@ public:
 	NameKeyType get();
 };
 
-extern Rva00148F5ECache g_009BDE14;
+extern Rva00148F5ECache g_00DBDE14;
 
 class Dict
 {
 public:
 	AsciiString getAsciiString(int index, Bool *exists) const;
 };
-
-extern Dict *g_Dict;
 
 class Rva00271AEA
 {
@@ -90,7 +72,6 @@ private:
 	Elem244 **m_244;
 };
 
-// ?rva00293E64@Object@@QAEXPAVDict@@@Z present-unmatched
 void Object::rva00293E64(Dict *d)
 {
 	for (Elem244 **p = m_244; *p != 0; p++) {
@@ -101,9 +82,7 @@ void Object::rva00293E64(Dict *d)
 	if (d == 0)
 		return;
 	Bool exists;
-	Bool *pExists = &exists;
-	NameKeyType key = g_009BDE14.get();
-	AsciiString s = d->getAsciiString((int)key, pExists);
+	AsciiString s = d->getAsciiString((int)g_00DBDE14.get(), &exists);
 	if (!exists)
 		return;
 	rva00293275(s);
