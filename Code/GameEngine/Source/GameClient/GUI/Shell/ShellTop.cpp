@@ -12,6 +12,10 @@ public:
 	virtual void s06() = 0;
 	virtual void s07() = 0;
 	virtual void destroyWindows() = 0;
+	bool isHidden() { return m_hidden; }
+private:
+	char _pad14[0x10];
+	bool m_hidden;
 };
 
 class IMEManager
@@ -121,6 +125,7 @@ public:
 	StringBase() : m_data(0) {}
 	~StringBase() { releaseBuffer(); }
 	void set(const T *text);
+	void set(const StringBase<T> &other);
 };
 
 class AsciiString : public StringBase<char>
@@ -129,6 +134,8 @@ public:
 	AsciiString() {}
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
 	~AsciiString() {}
+	bool isEmpty() const { return m_data == 0 || m_data->length == 0; }
+	AsciiString &operator=(const AsciiString &other) { set(other); return *this; }
 };
 
 class GameWindowManager
@@ -203,6 +210,7 @@ public:
 	void loadScheme(AsciiString name);
 	void rva0035BF0E();
 	void shutdownComplete(WindowLayout *screen, Bool impendingPush);
+	void push(AsciiString filename, bool shutdownImmediate);
 };
 
 class ShellMenuSchemeManager
@@ -278,6 +286,24 @@ void Shell::shutdownComplete(WindowLayout *screen, Bool impendingPush)
 		doPop(impendingPush);
 		m_pendingPop = false;
 	}
+}
+
+// ?push@Shell@@QAEXVAsciiString@@_N@Z @ 0x0035C74A (133B). Donor BFME1 Shell.cpp push and ZH Shell.cpp push: isEmpty then GameSpy cleanup then count check then pendingPush plus pendingPushName set then top plus hidden check then runShutdown slot3 else shutdownComplete.
+void Shell::push(AsciiString filename, bool shutdownImmediate)
+{
+	if (filename.isEmpty())
+		return;
+	if (TheGameSpyInfo)
+		Rva00548C1ACleanup();
+	if (m_screenCount >= 16)
+		return;
+	m_pendingPush = true;
+	m_pendingPushName = filename;
+	WindowLayout *currentTop = top();
+	if (currentTop && !currentTop->isHidden())
+		currentTop->s03(&shutdownImmediate);
+	else
+		shutdownComplete(0, false);
 }
 
 // ?registerWithAnimateManager@Shell@@QAEXPAVGameWindow@@W4AnimTypes@@_NI@Z @ 0x0035BE23 (50B). Donor BFME1 Shell.cpp registerWithAnimateManager plus ZH Shell.h public; GlobalData animateWindows at +0xB00 and animateManager at +0x60; callee AnimateWindowManager registerGameWindow.

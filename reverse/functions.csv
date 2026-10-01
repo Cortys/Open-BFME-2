@@ -46653,3 +46653,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva004AE988@Rva004AE988@@QAEXXZ,,0x004AE988,114,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004AE988.cpp,matched,chain via 0x001E431E random pick plus wake
 ?Rva003BB49BDestroy@@YGXPAVParameter@@@Z,,0x003BB49B,34,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB49B.cpp,matched,leaf getUnitNamed then destroyObject
 ?rva0020DB91@Rva0020DB91@@QAEPAXABVAsciiString@@@Z,,0x0020DB91,46,Code/GameEngine/Source/Common/Rva0020DB91.cpp,matched,scan ptr array with StringBase compareNoCase
+?push@Shell@@QAEXVAsciiString@@_N@Z,,0x0035C74A,133,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,BFME1 Shell.cpp push top hidden runShutdown slot3 LINKED
