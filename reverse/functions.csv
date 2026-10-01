@@ -45935,3 +45935,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva00407004@Rva00406EFD@@QAE_NH@Z,,0x00407004,28,Code/GameEngine/Source/Common/Rva00406EFDSetter.cpp,matched,setter compiled after its same-class callee rva00406EFD so this stays in ecx
 ?rva005DB95B@Elem005DB98E@@QAEMXZ,,0x005DB95B,51,Code/GameEngine/Source/Common/Elem005DB98EFalloff.cpp,matched,quadratic over rva005DB928 compiled after it in the same TU so this stays in ecx
 ?rva000FE188@Rva000FE001@@QAEXXZ,,0x000FE188,36,Code/GameEngine/Source/Common/Rva000FE001Move.cpp,matched,list drain compiled after its callee rva000FE001 so this stays in ecx
+?rva003FF496@GameInfo@@QBE_NG@Z,,0x003FF496,62,Code/GameEngine/Source/GameNetwork/GameInfoPlayerCounts.cpp,matched,slot predicate compiled after GameSlot::isOccupied in the same TU so the slot stays in ecx

@@ -9,6 +9,13 @@
 // lets the counters keep the slot pointer in EDX across the call with the
 // count/limit in EDI/ESI (calling the pin as an opaque extern instead spills
 // the pointer to ESI and the count to EBX).
+//
+// ?rva003FF496@GameInfo@@QBE_NG@Z @0x003FF496 62B: false only when the slot
+// at the given index is occupied, its +0x50 dword is set and the +0x64 block
+// it guards with the +0x60 byte is absent; true otherwise (including an
+// out-of-range index). The same same-TU visibility of isOccupied keeps the
+// slot pointer in ECX across that call. The +0x50/+0x60/+0x64 fields are
+// unidentified, hence the address name.
 
 typedef int Int;
 
@@ -58,7 +65,18 @@ private:
 	Int m_playerTemplate;           // +0x18
 	char m_pad1C[0x1C];             // +0x1C..+0x37
 	BfmeNetAddress m_addr38;        // +0x38
-	char m_pad40[0x164];            // +0x40..+0x1A3
+	char m_pad40[0x10];             // +0x40
+public:
+	Int m_50;                       // +0x50
+private:
+	char m_pad54[0x0C];             // +0x54
+public:
+	unsigned char m_60;             // +0x60
+	char m_pad61[3];
+	Int m_64;                       // +0x64
+	const Int *rva64() const { return m_60 ? &m_64 : 0; }
+private:
+	char m_pad68[0x1A4 - 0x68];     // +0x68..+0x1A3
 	unsigned char m_occupancy;      // +0x1A4
 };
 
@@ -69,6 +87,7 @@ public:
 	Int getNumNonObserverPlayers() const;
 	Int getNumOpenOrOccupiedSlots() const;
 	const GameSlot *getConstSlot(Int slotNum) const;
+	bool rva003FF496(unsigned short slotNum) const;
 private:
 	char m_pad[0x18];
 	GameSlot *m_slot[MAX_SLOTS];
@@ -154,4 +173,14 @@ Int GameInfo::getNumOpenOrOccupiedSlots() const
 			numSlots++;
 	}
 	return numSlots;
+}
+
+bool GameInfo::rva003FF496(unsigned short slotNum) const
+{
+	if (m_slot && slotNum < MAX_SLOTS) {
+		const GameSlot *slot = m_slot[slotNum];
+		if (slot->isOccupied() && slot->m_50 != 0 && !slot->rva64())
+			return false;
+	}
+	return true;
 }
