@@ -64,7 +64,7 @@ public:
     locale::facet **_M_facets;
     unsigned int _M_count;
 };
-locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
+inline locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
 
 // Both return-value temporaries call the 63-byte ICF-folded destructor.
 template <> _String_base<unsigned short, allocator<unsigned short> >::~_String_base();
