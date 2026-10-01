@@ -9,6 +9,7 @@ typedef void *HANDLE;
 extern "C" __declspec(dllimport) int __stdcall CloseHandle(HANDLE handle);
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug/debug_io.h
+class Debug;
 class DebugIOInterface
 {
 protected:
@@ -16,6 +17,12 @@ protected:
 
 public:
 	DebugIOInterface() {}
+	enum StringType { Assert = 0, Check, Log, Crash, Exception, CmdReply, StructuredCmdReply, Other, MAX };
+	virtual int Read(char *buf, int maxchar) = 0;
+	virtual void Write(StringType type, const char *src, const char *str) = 0;
+	virtual void EmergencyFlush(void) = 0;
+	virtual void Execute(class Debug &dbg, const char *cmd, bool structuredCmd, unsigned argn, const char *const *argv) = 0;
+	virtual void Delete(void) = 0;
 };
 
 class Rva0088FB30NetIO : public DebugIOInterface
