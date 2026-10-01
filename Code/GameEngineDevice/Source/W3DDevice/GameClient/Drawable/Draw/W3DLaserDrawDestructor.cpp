@@ -64,6 +64,10 @@ public:
 	static RTS3DScene *m_3DScene;
 };
 
+// Matched DIR32 references place W3DDisplay::m_3DScene at VA 0x00DE1B34;
+// the four retail bytes are zero, so the scene pointer starts null.
+RTS3DScene *W3DDisplay::m_3DScene = 0;
+
 class W3DLaserDraw : public DrawModule, public LaserDrawInterface
 {
 public:
