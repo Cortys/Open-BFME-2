@@ -46778,3 +46778,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ?rva0040A441@Rva0040A3F9@@QAE_NPAVCreateAHeroData@@@Z,,0x0040A441,46,Code/Libraries/Source/WWVegas/WWLib/Rva0040A3F9Find.cpp,matched,unlock lane same vector erase via rowed find and voidptr erase
 ?rva005F2792@Rva005F2792@@QAEXXZ,,0x005F2792,102,Code/GameEngine/Source/Common/Rva005F2792.cpp,matched,chain via 0x00224455 callers 0x005F27F8 0x005F2B22 format row 0x00038150
 ?Rva00564284WriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x00564284,216,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00564284WriteHeader.cpp,matched,same 216B shape as velocity header push 8 GetKey Pad Put Write
+?Rva009B2A50@@YAXPAURva009A6130Context@@PAE1@Z,,0x001C3440,1835,Code/GameEngine/Source/Common/Rva009B2A50DeringFrame.cpp,matched,BFME1 byte-identical donor; b1 0x009B2A50
