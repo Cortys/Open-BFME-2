@@ -25,12 +25,19 @@ public:
 	~Rva0036CA00Str();
 };
 
-class Rva00402F28Item;
+class Rva00402F28Item
+{
+public:
+	Rva00402F28Item(const Rva00402F28Item &other);
+private:
+	char m_bytes[0x5C];
+};
 
 class Rva00403055
 {
 public:
 	Rva00403055(const Rva00403055 &other);
+	void clearItems();
 	void copyItems(const Rva00403055 &other);
 
 private:
@@ -44,4 +51,14 @@ Rva00403055::Rva00403055(const Rva00403055 &other)
 	: m_name(other.m_name), m_items(), m_at10(other.m_at10), m_at14(other.m_at14)
 {
 	copyItems(other);
+}
+
+void Rva00403055::copyItems(const Rva00403055 &other)
+{
+	clearItems();
+	m_items.reserve(other.m_items.size());
+	_STL::vector<Rva00402F28Item *>::const_iterator it = other.m_items.begin();
+	_STL::vector<Rva00402F28Item *>::const_iterator end = other.m_items.end();
+	for (; it != end; ++it)
+		m_items.push_back(new Rva00402F28Item(**it));
 }

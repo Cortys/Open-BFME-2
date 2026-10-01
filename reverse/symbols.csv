@@ -6740,3 +6740,7 @@ _tan,0x0062993A,CRT import thunk; retail target of the tan call in Rva005046B0Sc
 ?getTerrainNameAt@WorldHeightMap@@QAE?AVAsciiString@@MM@Z,0x000AEC4E,address read from the REL32 displacement at byte-matched body 0x00092512 (W3DTerrainVisual::getTerrainTile)
 ??0?$_Vector_base@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAE@ABV?$allocator@PAVRva00402F28Item@@@1@@Z,0x00211E58,address read from the REL32 displacement at byte-matched body 0x00403055
 ?copyItems@Rva00403055@@QAEXABV1@@Z,0x00402FD8,address read from the REL32 displacement at byte-matched body 0x00403055
+?clearItems@Rva00403055@@QAEXXZ,0x00402C4E,address read from the REL32 displacement at byte-matched body 0x00402FD8
+?reserve@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEXI@Z,0x002B712E,address read from the REL32 displacement at byte-matched body 0x00402FD8
+??0Rva00402F28Item@@QAE@ABV0@@Z,0x00402F28,address read from the REL32 displacement at byte-matched body 0x00402FD8
+?push_back@?$vector@PAVRva00402F28Item@@V?$allocator@PAVRva00402F28Item@@@_STL@@@_STL@@QAEXABQAVRva00402F28Item@@@Z,0x004DFCB0,address read from the REL32 displacement at byte-matched body 0x00402FD8
