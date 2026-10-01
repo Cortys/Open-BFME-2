@@ -46527,3 +46527,5 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??4Rva003B32E5@@QAEAAV0@ABV0@@Z,,0x003B32E5,57,Code/GameEngine/Source/Common/Rva003B32E5Assign.cpp,matched,copy-assign two ints AsciiString set plus tail bytes callers 0x3B7FE0 0x3B825F linkbody
 ?rva0011604D@W3DBufferManager@@QAE_NXZ,,0x0011604D,198,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DBufferManagerRva0011604D.cpp,matched,W3DBufferManager create VB plus IB lists table 0xDB5F30 callers 0xF0A50 linkbody
 ?rva00115DA7@Rva00115DA7@@QAEXHHHHH@Z,,0x00115DA7,43,Code/GameEngine/Source/Common/Rva00115DA7.cpp,matched,unlock setter via caller 0xE424C stores 4 ints at A8 B0 B8 C0
+?rva0036DBBA@AIGroup@@QAEXHHI@Z,,0x0036DBBA,99,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,member walk mapping a type code to a timed special model condition (0x72 or 0xB8..0xBB) through Object::setSpecialModelConditionState
+?rva0036DC1D@AIGroup@@QAEXW4ModelConditionFlagType@@I@Z,,0x0036DC1D,41,Code/GameEngine/Source/GameLogic/AI/AIGroupAttackTeam.cpp,matched,member walk timing the given special model condition on every member

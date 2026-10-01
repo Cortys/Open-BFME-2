@@ -26,6 +26,14 @@
 // and its status computes non-zero). BFME2 deltas: the template flag sits at
 // +0x16A and the refresh goes through the matched Weapon::computeStatus /
 // cacheStatus; callers 0x00377EC3..0x00379094.
+//
+// AIGroup::rva0036DBBA (99 bytes) and AIGroup::rva0036DC1D (41 bytes), retail
+// 0x0036DBBA / 0x0036DC1D in the same AIGroup block (member-list walks like the
+// rows above; names by address). The first maps a type code (0x438, 0x44C..0x44F)
+// to the model condition 0x72 / 0xB8..0xBB and times it on every member through
+// the matched Object::setSpecialModelConditionState 0x0028AEB2 (its first
+// argument is unused; single caller 0x003799FF); the second times the given
+// condition on every member.
 
 #include <list>
 
@@ -73,6 +81,11 @@ enum WeaponStatus
 	READY_TO_FIRE = 0
 };
 
+enum ModelConditionFlagType
+{
+	MODELCONDITION_INVALID = -1
+};
+
 class WeaponTemplate
 {
 public:
@@ -97,6 +110,7 @@ public:
 	void rva0028C20F(int x);
 	const Weapon *getCurrentWeapon(WeaponSlotType *slot) const;
 	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
+	void setSpecialModelConditionState(ModelConditionFlagType mc, unsigned int frames);
 	char m_pad[0x258];
 	AIUpdateInterface *m_ai;
 };
@@ -106,6 +120,8 @@ class AIGroup
 public:
 	void groupAttackTeam(const Team *team, Int maxShotsToFire, CommandSourceType cmdSource);
 	void groupHunt(CommandSourceType cmdSource);
+	void rva0036DBBA(int unused, int type, unsigned int frames);
+	void rva0036DC1D(ModelConditionFlagType mc, unsigned int frames);
 	void setAttitude(AttitudeType tude);
 	bool setWeaponLockForGroup(WeaponSlotType weaponSlot, WeaponLockType lockType);
 	void rva0036DDCD(int x);
@@ -135,6 +151,37 @@ void AIGroup::groupHunt(CommandSourceType cmdSource)
 		if (ai) {
 			ai->m_commands.aiHunt(cmdSource);
 		}
+	}
+}
+
+void AIGroup::rva0036DBBA(int, int type, unsigned int frames)
+{
+	for (std::list<Object *>::iterator i = m_memberList.begin(); i != m_memberList.end(); ++i) {
+		Object *obj = *i;
+		switch (type) {
+		case 0x438:
+			obj->setSpecialModelConditionState((ModelConditionFlagType)0x72, frames);
+			break;
+		case 0x44C:
+			obj->setSpecialModelConditionState((ModelConditionFlagType)0xB8, frames);
+			break;
+		case 0x44D:
+			obj->setSpecialModelConditionState((ModelConditionFlagType)0xB9, frames);
+			break;
+		case 0x44E:
+			obj->setSpecialModelConditionState((ModelConditionFlagType)0xBA, frames);
+			break;
+		case 0x44F:
+			obj->setSpecialModelConditionState((ModelConditionFlagType)0xBB, frames);
+			break;
+		}
+	}
+}
+
+void AIGroup::rva0036DC1D(ModelConditionFlagType mc, unsigned int frames)
+{
+	for (std::list<Object *>::iterator i = m_memberList.begin(); i != m_memberList.end(); ++i) {
+		(*i)->setSpecialModelConditionState(mc, frames);
 	}
 }
 
