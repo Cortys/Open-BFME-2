@@ -43,6 +43,7 @@ class ShareBufferClass : public RefCountClass
 {
 public:
 	ShareBufferClass(const ShareBufferClass &);
+	virtual ~ShareBufferClass();
 
 protected:
 	Type *RawBuffer;
