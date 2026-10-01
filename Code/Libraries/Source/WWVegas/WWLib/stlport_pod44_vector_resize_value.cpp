@@ -13,6 +13,7 @@ public:
     iterator erase(iterator first, iterator last);
     void _M_fill_insert(iterator position, size_type count, const T &value);
     void resize(size_type newSize, T value);
+    void resize(size_type newSize);
 private:
     iterator begin() { return m_start; }
     iterator end() { return m_finish; }
@@ -28,5 +29,10 @@ void vector<T,A>::resize(size_type newSize, T value) {
     else
         _M_fill_insert(end(), newSize - size(), value);
 }
+template <class T, class A>
+void vector<T,A>::resize(size_type newSize) {
+    resize(newSize, T());
+}
 template void vector<BfmePod44,allocator<BfmePod44> >::resize(unsigned int,BfmePod44);
+template void vector<BfmePod44,allocator<BfmePod44> >::resize(unsigned int);
 }
