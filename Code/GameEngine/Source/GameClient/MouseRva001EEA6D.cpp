@@ -1,4 +1,4 @@
-// cl: /O1 /MD /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 // ?rva001EEA6D@Mouse@@QAEXVUnicodeString@@HPBURGBColor@@M@Z @0x001EEA6D 360B
 // Mouse tooltip setter with house-color adjust. Same color math as ZH/BFME1
 // Mouse::setCursorTooltip over m_tooltipColorText at +0x128C and
@@ -7,8 +7,7 @@
 // Flags at +0x12E0/+0x12E1/+0x12E2 are useText/useBack/adjust. BFME2 drops
 // the Display width and isEmpty logic so width is unused. Callers at
 // 0x1EB5FC 0x2125C5 0x2227C0 and 8 newly ready bodies.
-template<class T> class StringBase { void *m_data; void releaseBuffer(); public: StringBase(const StringBase &); void set(const StringBase &); protected: __forceinline ~StringBase() { releaseBuffer(); } };
-class UnicodeString : private StringBase<unsigned short> { public: __forceinline UnicodeString(const UnicodeString &o) : StringBase<unsigned short>(o) {} void set(const UnicodeString &o) { StringBase<unsigned short>::set(o); } __forceinline ~UnicodeString() {} };
+#include "unicode_string.h"
 struct RGBColor { float red, green, blue; };
 struct RGBAColorInt { int red, green, blue, alpha; };
 class Mouse {

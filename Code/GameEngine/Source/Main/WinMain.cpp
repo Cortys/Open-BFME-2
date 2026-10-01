@@ -16,7 +16,7 @@
 **	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // Modified for BFME2: local CRT declaration and original-binary compiler flags.
-// cl: /O1 /arch:SSE2 /EHsc
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE2 /EHsc
 //
 // /EHsc (VC's /GX) lets the extern "C" Win32 imports count as non-throwing.
 // Retail initializeAppWindows keeps its title UnicodeString temporary alive
@@ -831,40 +831,8 @@ void bfmeNotifyDebugWindowed(unsigned runWindowed);
 // Only what this body reaches of the engine's reference-counted string:
 // str() with its shared empty buffer, and the out-of-line releaseBuffer the
 // destructor forwards to.
-template <typename T>
-class StringBase
-{
-	friend class UnicodeString;
+#include "unicode_string.h"
 
-	struct Header
-	{
-		int ref_count;
-		unsigned short length;
-		unsigned short capacity;
-		T data[1];
-	};
-
-	void releaseBuffer();
-	Header *m_data;
-};
-
-class UnicodeString
-{
-public:
-	const unsigned short *str() const
-	{
-		static const unsigned short empty[1] = {0};
-		return m_data.m_data ? m_data.m_data->data : empty;
-	}
-
-	~UnicodeString()
-	{
-		m_data.releaseBuffer();
-	}
-
-private:
-	StringBase<unsigned short> m_data;
-};
 
 UnicodeString bfmeGetMainWindowTitle();
 
