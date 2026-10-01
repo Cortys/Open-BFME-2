@@ -45351,3 +45351,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0029FCB4@Rva0029FCB4@@QAE?AV?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@XZ,,0x0029FCB4,32,Code/Libraries/Source/WWVegas/WWLib/Rva0029FCB4.cpp,matched,final override plus Science vector copy
 ?rva0029F4AB@Rva0029F4AB@@QAEXXZ,,0x0029F4AB,133,Code/GameEngine/Source/Common/Rva0029F4AB.cpp,matched,window lookup plus partition clear and peer release
 ??0Rva002E0A0A@@QAE@ABV0@@Z,,0x002E0A0A,149,Code/GameEngine/Source/Common/Rva002E0A0ACopyCtor.cpp,matched,copy ctor vptr plus wide and 4 narrow StringBase via wrappers
+?rva0057E97A@Rva0057E97A@@QAEXXZ,,0x0057E97A,115,Code/GameEngine/Source/Common/Rva0057E97AEnable.cpp,matched,window list toggle via rowed getter and winEnable
