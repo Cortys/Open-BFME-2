@@ -45584,3 +45584,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??BRva00238C34@@QAE?AVAsciiString@@XZ,,0x00238C59,105,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,narrow materializer base length plus trailing text caller 0x00238CC2
 ??0Rva005F69F5@@QAE@XZ,,0x005F69D8,29,Code/GameEngine/Source/Common/Rva005F69F5Ctor.cpp,matched,ctor stores vtable plus zeroes sibling of 0x005F6924
 ?rva005F698E@Rva005F698E@@QAEXXZ,,0x005F698E,18,Code/GameEngine/Source/Common/Rva005F698EMethod.cpp,matched,conditional slot 0x04 helper sibling of 0x005F697C
+?rva005F69A0@Rva005F69A0@@QAEXXZ,,0x005F69A0,18,Code/GameEngine/Source/Common/Rva005F69A0Method.cpp,matched,leaf conditional virtual slot 0x10 on member +4 with outer this plus caller 0x005F6AA0
