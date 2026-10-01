@@ -5021,3 +5021,4 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva0055D6D7@Rva0055D6D7@@QAEXXZ	0x0055D6D7	106	blocked	same wall as 0x0055D422 TacticalView slot12 SSE x87 no donor t=2 model=muse-06
 ?rva0055D48C@Rva0055D48C@@QAEXXZ	0x0055D48C	129	blocked	slot7 random FillUnitVector SSE ret14 no donor t=8 model=muse-06
 ?rva0055D741@Rva0055D741@@QAEXXZ	0x0055D741	212	blocked	same slot7 random sincos family no donor t=3 model=muse-06
+??1?$hashtable@U?$pair@QBVGameWindow@@PAVWindowVideo@@@_STL@@PBVGameWindow@@UhashConstGameWindowPtr@WindowVideoManager@@U?$_Select1st@U?$pair@QBVGameWindow@@PAVWindowVideo@@@_STL@@@2@U?$equal_to@PBVGameWindow@@@2@V?$allocator@U?$pair@QBVGameWindow@@PAVWindowVideo@@@_STL@@@2@@_STL@@QAE@XZ	0x000AACAB	57	blocked	identical 57B to rowed WindowVideo hashtable dtor 0x0053F378 same source exact but one-name-one-address forbids second row t=15 model=muse-04
