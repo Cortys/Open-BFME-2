@@ -26,6 +26,7 @@ class RenderObjClass : public RefCountClass, public MultiListObjectClass {
     unsigned char opaque_target_base_state[0xB4];
 public:
     RenderObjClass(const RenderObjClass &);
+    virtual ~RenderObjClass();
 };
 class Line3DClass : public W3DMPO, public RenderObjClass {
 public:
