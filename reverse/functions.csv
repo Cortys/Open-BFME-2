@@ -46192,3 +46192,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002244CA@Rva002244CA@@QAEHPBVAsciiString@@@Z,,0x002244CA,8,Code/GameEngine/Source/GameClient/Rva002244CA.cpp,matched,chain lane add ecx 0x20 jmp to rowed erase
 ?rva002A9DFE@Rva002A9DFE@@QAEXPAXM0@Z,,0x002A9DFE,39,Code/GameEngine/Source/Common/Rva002A9DFEForward.cpp,matched,caller 0x003BF9FA slot 0x28 holder 0x2DC
 ?rva002A99D2@Rva002A99D2@@QAEXPAX@Z,,0x002A99D2,40,Code/GameEngine/Source/Common/Rva002A99D2Set.cpp,matched,caller 0x002A8104 slot 0 frees via delete
+?rva002A9DCF@Rva002A9DCF@@QAEXPAX@Z,,0x002A9DCF,29,Code/GameEngine/Source/Common/Rva002A9DCFForward.cpp,matched,slot 9 forwarding like sibling Rva002A9DB8 holder 0x2DC caller 0x003BF9C8
