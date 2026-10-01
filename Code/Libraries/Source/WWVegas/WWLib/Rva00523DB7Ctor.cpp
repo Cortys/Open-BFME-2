@@ -6,8 +6,9 @@
 template <typename T>
 class StringBase
 {
-public:
+private:
 	StringBase(const StringBase &other);
+	friend class Rva00523DB7;
 private:
 	void *m_data;
 };
