@@ -1,5 +1,3 @@
-// ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z
-// partial score=0.93 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z @0x00421520 82B
 // Chain from 0x004213DB: search vector<ModuleData*> at +0x0C by name at +0x10
@@ -10,6 +8,9 @@
 
 class ModuleData;
 class Rva004210B0;
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 void __cdecl dup_001e35df();
 
@@ -56,10 +57,10 @@ private:
 	const ModuleData **m_begin;
 	const ModuleData **m_end;
 };
-// ?rva00421520@Rva00421520@@QAEXPAVRva004210B0@@PBV?$StringBase@D@@@Z present-unmatched
 void Rva00421520::rva00421520(Rva004210B0 *holder, const StringBase<char> *name)
 {
 	for (unsigned i = 0; i < (m_end - m_begin); ++i) {
+		_ReadWriteBarrier();
 		const ModuleData *md = m_begin[i];
 		const Overridable *target = md;
 		if (md->m_nextOverride) {
