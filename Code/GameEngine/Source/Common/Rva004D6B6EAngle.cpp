@@ -20,3 +20,12 @@ float __cdecl Rva004D6B6E(float value)
 	}
 	return 1.5707964f;
 }
+
+// ?Rva004D6BB8@@YAMM@Z @0x004D6BB8 21B, caller 0x0025EDBA: the same angle in
+// degrees. Target evidence: forwards its float to 0x004D6B6E and multiplies
+// by the pooled 57.2957763671875 at 0x00BBB8CC, which is 180.0f / PI with
+// the float PI rounded once (not the nearest float to 180/pi).
+float __cdecl Rva004D6BB8(float value)
+{
+	return Rva004D6B6E(value) * (180.0f / 3.14159265359f);
+}
