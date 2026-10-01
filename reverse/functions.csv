@@ -45821,3 +45821,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva006CD440Alloc@@YAPAXH@Z,,0x006CD440,27,Code/GameEngine/Source/Common/Rva006CD440Alloc.cpp,matched,chain pool alloc size+4 header via allocBlock pin plus Free sibling
 ?Rva00895050@Gen_uw_00893e70@@QAEXPAV1@@Z,,0x006D0040,301,Code/GameEngine/Source/Common/Rva00895050InlineContainerSwap.cpp,matched,donor swap plus AptValueNameEntry inline ctor plus Rva006CD5A0Copy row
 ?rva00031790@Rva00031790@@QAEPAXPAX@Z,,0x00031790,35,Code/GameEngine/Source/Common/System/memory_pool.cpp,matched,lock holder setter via EnterCriticalSection plus count at 0x18 returning this
+?rva00031010@Rva00031010@@QAEXPAURva00031010Node@@_N@Z,,0x00031010,66,Code/GameEngine/Source/Common/System/Rva00031010Insert.cpp,matched,EA GeneralAllocator large-bin insert beside GetLargeBinIndex plus caller 0x000333ED plus head at plus0x440 plus bin at plus0x30

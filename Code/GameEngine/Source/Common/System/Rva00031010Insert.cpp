@@ -1,5 +1,3 @@
-// ?rva00031010@Rva00031010@@QAEXPAURva00031010Node@@_N@Z
-// partial score=0.95 date=2026-10-01
 // ?rva00031010@Rva00031010@@QAEXPAURva00031010Node@@_N@Z @0x00031010 66B evidence EA GeneralAllocator large-bin insert beside GetLargeBinIndex plus caller 0x000333ED plus head at +0x440 plus bin at +0x30
 struct Rva00031010Node
 {
@@ -17,7 +15,6 @@ private:
     unsigned char m_pad1[0x440 - 0x30 - sizeof(Rva00031010Node)];
     Rva00031010Node *m_head;
 };
-// ?rva00031010@Rva00031010@@QAEXPAURva00031010Node@@_N@Z present-unmatched
 void Rva00031010::rva00031010(Rva00031010Node *node, bool flag)
 {
     Rva00031010Node *old = m_head;
@@ -28,12 +25,9 @@ void Rva00031010::rva00031010(Rva00031010Node *node, bool flag)
     {
         Rva00031010Node *next = *(Rva00031010Node * volatile *)&node->m_linkC;
         bin = (Rva00031010Node *)((char *)this + 0x30);
-        if (old == bin)
-        {
-            node->m_link8 = next;
-            return;
-        }
         node->m_link8 = next;
+        if (old == bin)
+            return;
     }
     if (!flag)
         return;
