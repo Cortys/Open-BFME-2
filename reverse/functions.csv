@@ -45672,3 +45672,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??4RadarEventRefSlot@@QAEAAV0@ABV0@@Z,,0x0004E490,45,Code/GameEngine/Source/Common/System/RadarEventRefSlotAssign.cpp,matched,slot assign via inc 0x005D1A79 release 0x002D335B callers 0x0004E66D 0x0004EFC2
 ?rva0004E4C9@Rva0004E4C9@@QAEAAV1@PAX@Z,,0x0004E4C9,24,Code/GameEngine/Source/Common/System/Rva0004E4C9Assign.cpp,matched,rowed inc 0x002D76B7 caller 0x0004F84E neighbours O1
 ?interpolateColorForHeight@W3DRadar@@IAEXPAURGBColor@@MMMM@Z,,0x0004E1A8,338,Code/GameEngineDevice/Source/W3DDevice/Common/System/W3DRadarInterpolateColor.cpp,matched,ZH donor W3DRadar interpolateColorForHeight callers at 0x0004FAFF
+??1Rva005E16DA@@UAE@XZ,,0x005E16FD,86,Code/GameEngine/Source/Common/Rva005E16DADtor.cpp,matched,dtor three AsciiStrings base pin 0x0022167C vtable 0x00877A30
