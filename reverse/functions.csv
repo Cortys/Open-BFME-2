@@ -45768,3 +45768,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva0018C09B@Rva0018C09B@@QAEXG@Z,,0x0018C09B,76,Code/GameEngine/Source/Common/Rva0018C09BRender.cpp,matched,unlock lane rowed Set_Vertex Set_Index extern D3DDevice number_of_DX8_calls ret-4 WORD arg
 ??0Rva004E63FC@@QAE@XZ,,0x004E63FC,89,Code/GameEngine/Source/Common/Bfme/Rva004E63FCInit.cpp,matched,unlock lane rowed StringBase ctor FontDesc ctor set string literals ret this
 ?rva0022356C@Rva0022356C@@QAEPAXPBX@Z,,0x0022356C,37,Code/GameEngine/Source/GameClient/Rva0022356CNewNode.cpp,matched,Eva hashtable new-node via 0x000307F0 and true 0x00223195 unlocks 0x002237C7
+?rva00223A9F@Rva00223A9F@@QAEPAXPBVAsciiString@@@Z,,0x00223A9F,37,Code/GameEngine/Source/GameClient/Rva00223A9F.cpp,matched,Find-payload via 0x0041534B at +0x90 null-checked node+8 unlocks 0x005B2295
