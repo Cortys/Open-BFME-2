@@ -176,6 +176,34 @@ the fetch per transfer. If an update is blocked, retain the last verified build
 inputs and report the exact blocker and attempted repair; do not mark the update
 successful or suspend future freshness checks indefinitely.
 
+## Make matched code link
+
+A matched row whose unit cannot link is half done. `reverse/link_status.csv`
+and `tools/link_census.py` are the measure; these tools steer the work:
+
+- `python3 tools/link_rank.py` ranks blockers by the matched bytes they hold
+  out (sole blockers, blocking names, units within `--near` of linking);
+  `--file SOURCE` lists one unit's. Prefer work that unblocks the most bytes.
+- `python3 tools/link_check.py SOURCE...` (or `--staged`) predicts, in
+  seconds and without link.exe, whether units link after your change.
+  `--refresh` first recompiles objects other commits made stale.
+- `python3 tools/name_globals.py` replaces hard-coded global addresses (the
+  largest blocker class) with the globals the ledger defines there, keeping
+  only rewrites that still byte-match.
+- `python3 tools/rehome_rows.py [--apply]` moves rows from split-out units
+  back to the home unit that already compiles an exact copy, removing the
+  duplicate definition that stops both from linking.
+
+**Reconcile classes, not just bodies.** Private per-unit views of one class
+are the root cause of most COMDAT and unresolved blockers.
+`python3 tools/class_views.py` ranks classes by private views or, with
+`--blockers`, by what the census holds against them; `--class X` and
+`--shims X` list the views and competing shim headers to merge. A class
+with a shared header is registered in `reverse/canonical_classes.csv`;
+`tools/class_gate.py` (pre-commit) refuses new private copies of it.
+Claim scope-wide work so two seats do not collide:
+`python3 tools/claims.py claim class:NAME` or `file:PATH`.
+
 ## Work the file, not the row
 
 `next_work.py` lists every other queued candidate in the same source file.
