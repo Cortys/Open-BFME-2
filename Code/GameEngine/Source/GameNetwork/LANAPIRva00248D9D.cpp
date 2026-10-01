@@ -1,11 +1,9 @@
-// ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z
-// partial score=0.99 date=2026-09-29
-// ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z
-// partial score=0.99 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD /EHsc
 // Retail 0x00248D9D, 146 bytes. LANAPI vtable slot 38 (vtable 0x0083E680,
 // class of ??1LANAPI@@UAE@XZ).
-// ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z
+// The slots are walked by index and addressed as m_holder->m_slots[i]: the
+// banked 0.99 attempt computed holder + offset + 0x114 by hand, which swaps
+// the lea operands of retail's strength-reduced address.
 // Honest address name: __thiscall (ret 8: address plus flag byte). Guards on
 // virtual slot54, scans 8 net slots at holder+0x114 stride 0x1D0 comparing
 // each BfmeNetAddress with pin-only Rva00248CBF, validates the global wide
@@ -134,24 +132,20 @@ protected:
 	Rva00447773 *m_holder;
 };
 
-// ?rva00248D9D@LANAPI@@UAEXPBUBfmeNetAddress@@_N@Z present-unmatched
 void LANAPI::rva00248D9D(const BfmeNetAddress *address, Bool flag)
 {
 	if (!slot54())
 		return;
-	int index = 0;
-	int offset = 0;
-	do
+	int index;
+	for (index = 0; index < 8; ++index)
 	{
-		SlotEntry *slot = (SlotEntry *)((char *)m_holder + (offset + 0x114));
-		if (slot->m_address.Rva00248CBF(address))
+		BfmeNetAddress *slotAddr = &m_holder->m_slots[index].m_address;
+		if (slotAddr->Rva00248CBF(address))
 			goto found;
 		GlobalA03354 *g = g_Va00A03354;
 		if (g != 0)
 			g->m_name.validate();
-		offset += 0x1D0;
-		index++;
-	} while (offset < 0xE80);
+	}
 	goto done;
 found:
 	{
