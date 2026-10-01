@@ -21,15 +21,27 @@ struct Rva005F6220Team
 	char m_name[1];
 };
 
+class UnicodeString : private StringBase<unsigned short>
+{
+public:
+	UnicodeString() {}
+	~UnicodeString() {}
+};
+
+UnicodeString __cdecl Rva005F632AFormat(int rank);
+
 class Rva005F6220
 {
 public:
 	void rva005F6220(const UnicodeString &text);
 	void rva005F6287(const UnicodeString &text);
+	void rva005F63EC(int rank);
 private:
 	char m_pad00[4];
 	unsigned int m_level04;
 	Rva005F6220Team *m_team08;
+	char m_pad0C[0x2C - 0x0C];
+	int m_rank2C;
 };
 
 void Rva005F6220::rva005F6220(const UnicodeString &text)
@@ -46,4 +58,12 @@ void Rva005F6220::rva005F6287(const UnicodeString &text)
 	const char *mid = m_team08 ? (const char *)((char *)m_team08 + 8) : "";
 	key.format("APT:_level%u.%s_LeaderRank", m_level04, mid);
 	((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, text, true);
+}
+
+void Rva005F6220::rva005F63EC(int rank)
+{
+	if (rank != m_rank2C) {
+		rva005F6287(Rva005F632AFormat(rank));
+		m_rank2C = rank;
+	}
 }
