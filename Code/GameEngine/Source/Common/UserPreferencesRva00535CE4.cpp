@@ -279,6 +279,7 @@ public:
 	void rva0053685F(AsciiString arg, int x);
 	int rva005368A6(AsciiString arg);
 	void rva005368F0(AsciiString arg, int x);
+	int rva00536937(AsciiString arg);
 	void rva00536A1D(AsciiString arg, int x);
 	void rva00536AAE(AsciiString arg, int x);
 };
@@ -853,6 +854,16 @@ void UserPreferences::rva005368F0(AsciiString arg, int x)
 {
 	arg.concat("ShortestGameTurns");
 	v11(arg, x);
+}
+
+// ?rva00536937@UserPreferences@@QAEHVAsciiString@@@Z @0x00536937 74B
+// UserPreferences ShortestGameTurns-getter path: append ShortestGameTurns to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat ShortestGameTurns 0x00869008 slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536937(AsciiString arg)
+{
+	arg.concat("ShortestGameTurns");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 void UserPreferences::rva00536A1D(AsciiString arg, int x)
