@@ -32,6 +32,7 @@ struct BfmeStringRecord00219A68 {
 struct BfmeStringRecord0022074B {
     AsciiString text0, text1; unsigned int word;
     BfmeStringRecord0022074B(const BfmeStringRecord0022074B &o);
+    ~BfmeStringRecord0022074B();
 };
 struct BfmeStringRecord005D511F {
     UnicodeString text0; unsigned int word0, word1; UnicodeString text1; unsigned int word2;
