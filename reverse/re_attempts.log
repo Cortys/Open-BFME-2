@@ -4684,3 +4684,5 @@ FUN_005f705a	0x001F705A	228	blocked	chain ParticleSystemManager plus SmartField 
 ?Rva00215D0BTest@@YAXXZ	0x00215D0B	278	blocked	chain INI FactionVictory Debug CrashBegin Format virtual chain needs Debug vtable layout t=10 model=muse-16
 ?Rva00579A2FGet@@YAPAVUnicodeString@@PAV1@H@Z	0x00579A2F	136	blocked	GameText fetch slot3C plus UnicodeString format needs VersionUnicode pattern t=15 model=muse-16
 FUN_006b8dfc	0x002B8DFC	214	blocked	LivingWorld helper mixes voidptr erase with ModuleData reserve on same vector plus Xfer slots 0x28/0x4/0x7c ambiguous and Rva002B644A vec8 BfmeE16 vs ptr stride conflict t=18 model=muse-13
+?rva00214D59@Rva00214D59@@QAEHXZ	0x00214D59	169	partial	add eax 0xFF00 vs 0xFFFFFF00 only diff 52/53 insns same size t=30 model=muse-10 score=0.98 stash=reverse/attempts/0x00214d59.cpp
+?Rva000897C8Get@@YAPAXPAPAXPAX@Z	0x000897C8	90	blocked	EH tmp layout unclear: retail tmp at -0x10 size 4 vs ComboData 20B; two ands plus flag mov; t=15 model=muse-10
