@@ -45784,3 +45784,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??$__copy_ptrs@PAUTreeHintRef00217D4C@@PAU1@@_STL@@YAPAUTreeHintRef00217D4C@@PAU1@00ABU__false_type@0@@Z,,0x004F6A35,29,Code/GameEngine/Source/Common/Rva004F6A35CopyPtrs.cpp,matched,chain dispatcher via rowed 5-arg copy callers 0x004F6E47 0x004F70D1 0x000819EC
 ?Rva004F6E47Copy@@YAPAUTreeHintRef00217D4C@@PAU1@00@Z,,0x004F6E47,27,Code/GameEngine/Source/Common/Rva004F6A35CopyPtrs.cpp,matched,chain dispatcher via rowed 4-arg copy_ptrs
 ?rva005F69B2@Rva005F69B2@@QAEXXZ,,0x005F69B2,18,Code/GameEngine/Source/Common/Rva005F69B2Method.cpp,matched,leaf conditional virtual slot 0x14 on member +4 with outer this plus caller 0x005F6AA8
+?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z,,0x0044DD83,120,Code/GameEngine/Source/Common/GameModePreferences.cpp,matched,Map setter via QuotedPrintable then makeKey Map slot assign callers 0x0050CFE6 0x0059F9C2

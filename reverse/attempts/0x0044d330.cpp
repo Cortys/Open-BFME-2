@@ -1,8 +1,6 @@
-// ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z
-// partial score=0.97 date=2026-09-29
-// ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z
-// partial score=0.97 date=2026-09-29
-// cl: /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
+// ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ
+// partial score=0.93 date=2026-10-01
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /arch:SSE /DNDEBUG /MD /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // Game-mode-keyed preferences (vtable 0x00C3EF60, retail 0x0044D50D-
@@ -36,69 +34,11 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	void releaseBuffer();
+#include "ascii_string.h"
 
-public:
-	StringBase() : m_data(0) {}
-	~StringBase();
-	Int compare(const char *other) const;
-	Int compareNoCase(const char *other) const;
-	void set(const T *text);
-	void trim(void);
-	Bool nextToken(StringBase *token, const char *seps);
 
-protected:
-	BfmeStringData<T> *m_data;
-};
 
-template <> class StringBase<unsigned short>
-{
-	friend class UnicodeString;
-	void releaseBuffer();
-
-public:
-	StringBase() : m_data(0) {}
-	~StringBase() { releaseBuffer(); }
-	bool isEmpty() const;
-	void set(const StringBase &other);
-	void concat(const StringBase &other);
-
-protected:
-	BfmeStringData<unsigned short> *m_data;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	static const AsciiString TheEmptyString;
-
-	AsciiString() {}
-	AsciiString(const char *text) : StringBase<char>(text) {}
-	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
-	AsciiString &operator=(const AsciiString &other);
-	AsciiString &operator=(const char *text) { set(text); return *this; }
-
-	const char *str() const { return m_data ? &m_data->text[0] : ""; }
-	Bool isEmpty() const { return m_data == 0 || m_data->length == 0; }
-	void format(const char *fmt, ...);
-	void toLower();
-	Bool operator==(const char *other) const { return compare(other) == 0; }
-};
-
-class UnicodeString : public StringBase<unsigned short>
-{
-public:
-	UnicodeString() {}
-	UnicodeString &operator=(const UnicodeString &other) { set(other); return *this; }
-	void translate(const char *text);
-	const unsigned short *str() const { return m_data ? &m_data->text[0] : L""; }
-};
+#include "unicode_string.h"
 
 bool operator<(const AsciiString &left, const AsciiString &right);
 
@@ -162,10 +102,12 @@ public:
 	void rva0054F7C0(Int val);
 	void rva0044DDFB(int *vals);
 	Int rva0044D836(void);
+	Int rva0044D88C(void);
+	AsciiString rva0044DBA5(void);
+	UnicodeString rva0044D330(void);
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
 	void rva0044DD1E(Int val);
-	void rva0044DD83(AsciiString val);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -296,6 +238,149 @@ Int GameModePreferences::rva0044D836(void)
 	return -1;
 }
 
+// ?rva0044D88C@GameModePreferences@@QAEHXZ @0x0044D88C 180B:
+// PlayerTemplate getter over the mode-keyed map: find makeKey(
+// "PlayerTemplate"), -1 when missing unless the writable-global faction
+// flag remaps to the store default, else atoi with -2/over-range plus
+// empty-faction rejection, and -1 remapped through the same flag.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; atoi IAT;
+// getNth 0x001FD3C6; TheWritableGlobalData 0x009FE758 plus 0x9D4 bits 3;
+// ThePlayerTemplateStore 0x009FE0D0 plus count 0x0C/0x10 over 0x1DC plus
+// default map at 0x18 begin-first; PlayerTemplate byte 0x151;
+// callers 0x00249DE4 0x00446861 0x005A22AC 0x005A24F9;
+// prev 0x0044D836 next 0x0044DBA5.
+class PlayerTemplate
+{
+public:
+	char m_pad151[0x151];
+	unsigned char m_151;
+	char m_rest[0x1DC - 0x152];
+};
+
+class PlayerTemplateStore
+{
+public:
+	const PlayerTemplate *getNthPlayerTemplate(int index) const;
+	char m_pad[0x0C];
+	PlayerTemplate *m_first;
+	PlayerTemplate *m_last;
+	PlayerTemplate *m_end;
+	_STL::map<int, int> m_map;
+};
+
+extern PlayerTemplateStore *ThePlayerTemplateStore;
+
+class GlobalData
+{
+public:
+	char m_pad[0x9D4];
+	unsigned char m_flag9D4;
+};
+
+extern GlobalData *TheWritableGlobalData;
+
+Int GameModePreferences::rva0044D88C(void)
+{
+	PreferenceMap::const_iterator it = find(makeKey("PlayerTemplate"));
+	if (it == end()) {
+		if ((TheWritableGlobalData->m_flag9D4 & 3) == 0)
+			return -1;
+		return ThePlayerTemplateStore->m_map.begin()->first;
+	}
+	int v = atoi(it->second.str());
+	if (v == -2 || v < -2 || v >= (ThePlayerTemplateStore->m_last - ThePlayerTemplateStore->m_first))
+		v = -1;
+	if (v >= 0) {
+		const PlayerTemplate *pt = ThePlayerTemplateStore->getNthPlayerTemplate(v);
+		if (!pt)
+			v = -1;
+		else if (pt->m_151 == 0)
+			v = -1;
+	}
+	if (v == -1 && (TheWritableGlobalData->m_flag9D4 & 3) != 0)
+		return ThePlayerTemplateStore->m_map.begin()->first;
+	return v;
+}
+
+// ?rva0044DBA5@GameModePreferences@@QAE?AVAsciiString@@XZ @0x0044DBA5 175B:
+// Password getter over the mode-keyed map: find makeKey("Password"), empty
+// when missing, else QuotedPrintable decode plus trim.
+// Evidence: makeKey 0x0044D512; map find 0x001F8437; quoted 0x005356BF;
+// set 0x000366F0; trim 0x00037CF0; TheEmptyString 0x009E0878; callers
+// 0x005A0E44 0x005A2961; prev 0x0044D836 next 0x0044DC54.
+AsciiString QuotedPrintableToAsciiString(AsciiString original);
+AsciiString GameModePreferences::rva0044DBA5(void)
+{
+	AsciiString ret;
+	PreferenceMap::const_iterator it = find(makeKey("Password"));
+	if (it == end())
+		return AsciiString::TheEmptyString;
+	ret.set(QuotedPrintableToAsciiString(it->second));
+	ret.trim();
+	return ret;
+}
+
+// ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ @0x0044D330 335B:
+// UserName getter over the map: find "UserName", machine-name fallback when
+// missing or QP-decoded empty, else QP-decode plus trim.
+// Evidence: "UserName" 0x0083EF48; map find 0x001F8437; quoted 0x005355F2;
+// translate 0x006CB6A0; trim 0x00037F70; IPEnumeration 0x00318329 plus
+// getMachineName 0x0050C1FD; callers 0x003817EE 0x004453A2 0x0050CFFA;
+// prev 0x0044D2F5 next 0x0044D50D.
+class EnumeratedIP;
+class IPEnumeration
+{
+public:
+	IPEnumeration();
+	~IPEnumeration();
+	AsciiString getMachineName(void);
+private:
+	EnumeratedIP *m_IPlist;
+	bool m_isWinsockInitialized;
+};
+UnicodeString QuotedPrintableToUnicodeString(AsciiString original);
+// Retail's map lookup is throw(): the key temporary carries EH state for its
+// own construction but no extra state across the find call itself.
+// _STL::map::find is not throw(), so the lookup goes through the
+// layout-compatible SkirmishFindMap shim whose find is declared throw().
+// Its call is already pinned to the shared _M_find worker at 0x001F8437.
+struct SkirmishFindNode
+{
+	unsigned char m_pad[0x14];
+	AsciiString m_value;
+};
+class SkirmishFindMap
+{
+public:
+	SkirmishFindNode *find(const AsciiString &key) const throw();
+	SkirmishFindNode *end() const { return m_end; }
+private:
+	SkirmishFindNode *m_end;
+	unsigned char m_unreconstructed[8];
+};
+// ?rva0044D330@GameModePreferences@@QAE?AVUnicodeString@@XZ present-unmatched
+UnicodeString GameModePreferences::rva0044D330(void)
+{
+	UnicodeString ret;
+	const SkirmishFindMap *map = (const SkirmishFindMap *)(const PreferenceMap *)this;
+	SkirmishFindNode *it = map->find("UserName");
+	if (it == map->end())
+	{
+		IPEnumeration ips;
+		ret.translate(ips.getMachineName());
+		return ret;
+	}
+	ret = QuotedPrintableToUnicodeString(it->m_value);
+	ret.trim();
+	if (ret.isEmpty())
+	{
+		IPEnumeration ips;
+		ret.translate(ips.getMachineName());
+		return ret;
+	}
+	return ret;
+}
+
 // ?rva0054F7C0@GameModePreferences@@QAEXH@Z retail 0x0054F7C0 101B.
 // LobbyRoomID setter: format "%d" then map makeKey("LobbyRoomID") slot assign.
 // Evidence: format 0x00038150; makeKey 0x0044D512; map subscript 0x002031FB;
@@ -344,16 +429,6 @@ void GameModePreferences::rva0044DD1E(Int val)
 	AsciiString tmp;
 	tmp.format("%d", val);
 	AsciiString &slot = (*this)[makeKey("PlayerTemplate")];
-	slot = tmp;
-}
-
-// ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z 0x0044DD83 120B evidence: Map setter via QuotedPrintable then makeKey Map slot assign; callers 0x0050CFE6 0x0059F9C2; between rva0044DD1E and rva0044DDFB
-AsciiString AsciiStringToQuotedPrintable(AsciiString original);
-// ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z present-unmatched
-void GameModePreferences::rva0044DD83(AsciiString val)
-{
-	AsciiString tmp(AsciiStringToQuotedPrintable(val));
-	AsciiString &slot = (*this)[makeKey("Map")];
 	slot = tmp;
 }
 

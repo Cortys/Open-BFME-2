@@ -105,6 +105,7 @@ public:
 	void rva0044DC54(Int val);
 	void rva0044DCB9(Int val);
 	void rva0044DD1E(Int val);
+	void rva0044DD83(AsciiString val);
 
 private:
 	const AsciiString &makeKey(const char *key) const;
@@ -366,6 +367,18 @@ void GameModePreferences::rva0044DD1E(Int val)
 	tmp.format("%d", val);
 	AsciiString &slot = (*this)[makeKey("PlayerTemplate")];
 	slot = tmp;
+}
+
+// ?rva0044DD83@GameModePreferences@@QAEXVAsciiString@@@Z @0x0044DD83 120B:
+// Map setter via QuotedPrintable then makeKey Map slot assign.
+// Evidence: AsciiStringToQuotedPrintable 0x00535546; makeKey 0x0044D512;
+// map subscript 0x002031FB; AsciiString assign pin 0x000366F0;
+// releaseBuffer 0x00036410; callers 0x0050CFE6 0x0059F9C2;
+// prev 0x0044DD1E next 0x0044DDFB.
+AsciiString AsciiStringToQuotedPrintable(AsciiString original);
+void GameModePreferences::rva0044DD83(AsciiString val)
+{
+	(*this)[makeKey("Map")].set(AsciiStringToQuotedPrintable(val));
 }
 
 // ?rva0044DDFB@GameModePreferences@@QAEXPAH@Z @0x0044DDFB (95B): Rules setter
