@@ -19,10 +19,22 @@ namespace _STL
 {
 
 template <>
-__declspec(noinline) void _Destroy<Rva004F69C3 *>(Rva004F69C3 *__first, Rva004F69C3 *__last)
+inline void _Destroy<Rva004F69C3 *>(Rva004F69C3 *__first, Rva004F69C3 *__last)
 {
 	for (; __first != __last; ++__first)
 		_Destroy(&*__first);
 }
 
 }
+
+// _Destroy<Rva004F69C3*> is a header inline elsewhere: other units emit
+// select-any copies, so a strong definition here was a duplicate in the linked
+// build. This anchor only makes this unit emit its copy for the ledger row; it
+// is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRva004F69C3Destroy@@YAXPAURva004F69C3@@0@Z present-unmatched
+void bfmeEmitRva004F69C3Destroy(Rva004F69C3 *__first, Rva004F69C3 *__last)
+{
+	_STL::_Destroy(__first, __last);
+}
+#pragma inline_depth()
