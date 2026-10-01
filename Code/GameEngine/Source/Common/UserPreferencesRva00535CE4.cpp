@@ -268,6 +268,7 @@ public:
 	void rva00536540(AsciiString arg, int x);
 	int rva00536587(AsciiString arg);
 	void rva005365D1(AsciiString arg, int x);
+	int rva00536618(AsciiString arg);
 	void rva00536662(AsciiString arg, int x);
 	void rva005366F3(AsciiString arg, int x);
 	void rva00536784(AsciiString arg, int x);
@@ -742,6 +743,16 @@ void UserPreferences::rva005365D1(AsciiString arg, int x)
 {
 	arg.concat("ResourcesGatheredRTS");
 	v11(arg, x);
+}
+
+// ?rva00536618@UserPreferences@@QAEHVAsciiString@@@Z @0x00536618 74B
+// UserPreferences ResourcesGatheredRTS-getter path: append ResourcesGatheredRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat ResourcesGatheredRTS 0x00868F9C slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536618(AsciiString arg)
+{
+	arg.concat("ResourcesGatheredRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva00536662@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536662 71B
