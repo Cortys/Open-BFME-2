@@ -4930,3 +4930,4 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ??1Rva004703E0@@QAE@XZ	0x004703E0	78	partial	EH state and 0 early vs mov 1 late t=15 model=muse-02 score=0.95 stash=reverse/attempts/0x004703e0.cpp
 ?rva004DD25A@Rva004D1C81@@QAE?AURva004D1C81Iter@@PAURva004D1C81Node@@ABURva004D1C81Key@@@Z	0x004DD25A	29	blocked	thin Iter forwarder ours 24B vs retail 29B retail temp-copy push ecx mov eax esp mov [eax] edx not reproduced by temp named-local two-step same wall as 0x00470205 t=15 model=muse-02
 ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAFPAXH@Z	0x0018C2E7	39	partial	register allocation ecx/dx vs edx/cx, order and size exact t=12 model=muse-10 score=0.95 stash=reverse/attempts/0x0018c2e7.cpp
+??1Rva0018C262@@QAE@XZ	0x0018C3E6	56	partial	missing or ebp-4 -1 before free EH barrier base gives 52B t=14 model=muse-10 score=0.93 stash=reverse/attempts/0x0018c3e6.cpp
