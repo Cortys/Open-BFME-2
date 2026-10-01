@@ -5152,3 +5152,5 @@ FUN_0091e471	0x0051E471	63	blocked	EH dtor-like with StringBase array no donor c
 ?rva000EF154@Rva000EF154@@QAEXHHM@Z	0x000EF154	278	blocked	EH SSE GeometryInfo loop with unknown owner layout and 3 float globals t=12 model=muse-08
 ?rva000EF63F@Rva000EF63F@@QAEHHHHHH@Z	0x000EF63F	354	blocked	D3D COM texture lock copy with 5 vtable calls and unknown owner layout t=8 model=muse-08
 _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in ebx not edx; final newstate0 in eax plus esi not edx plus esi with store delayed into temper; 279B vs 281B first loop exact t=18 model=muse-19 score=0.9 stash=reverse/attempts/0x0070f710.cpp
+?rva000738C4@Rva000738C4@@QAEXI@Z	0x000738C4	140	blocked	frameless esp loops vs EBP plus register wall 3 variants t=15 model=muse-12
+??0Rva00073320@@QAE@XZ	0x00073320	184	blocked	EH ctor with STL set plus SSE plus new vtable wall 2 variants t=12 model=muse-12
