@@ -263,7 +263,7 @@ enum NameKeyType { NAMEKEY_INVALID = 0, FORCE_NAMEKEYTYPE_LONG = 0x7fffffff };
 class NameKeyGenerator { public: NameKeyType nameToKey(const char *name); };
 extern NameKeyGenerator *TheNameKeyGenerator;
 
-void HRawAnimClass::Free(void)
+inline void HRawAnimClass::Free(void)
 {
 	if (NodeMotion != NULL) {
 		delete[] NodeMotion;
@@ -370,7 +370,7 @@ Error:
 
 }
 
-bool HRawAnimClass::read_channel(ChunkLoadClass & cload,MotionChannelClass * * newchan,bool pre30)
+inline bool HRawAnimClass::read_channel(ChunkLoadClass & cload,MotionChannelClass * * newchan,bool pre30)
 {
 	*newchan = W3DNEW MotionChannelClass;
 	bool result = (*newchan)->Load_W3D(cload);
@@ -382,7 +382,7 @@ bool HRawAnimClass::read_channel(ChunkLoadClass & cload,MotionChannelClass * * n
 	return result;
 }
 
-void HRawAnimClass::add_channel(MotionChannelClass * newchan)
+inline void HRawAnimClass::add_channel(MotionChannelClass * newchan)
 {
 	int idx = newchan->Get_Pivot();
 
@@ -435,7 +435,7 @@ bool HRawAnimClass::read_bit_channel(ChunkLoadClass & cload,BitChannelClass * * 
 	return result;
 }
 
-void HRawAnimClass::add_bit_channel(BitChannelClass * newchan)
+inline void HRawAnimClass::add_bit_channel(BitChannelClass * newchan)
 {
 	int idx = newchan->Get_Pivot();
 
