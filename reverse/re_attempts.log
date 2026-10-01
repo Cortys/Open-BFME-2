@@ -4666,3 +4666,4 @@ FUN_006cced3	0x002CCED3	244	blocked	244B EH Weapon-vs-Texture ownership conflict
 ?Rva0004DE72Blend@@YAXPAHHE@Z	0x0004DE72	253	partial	dst cached in esi vs reload plus reg cascade and stack layout t=25 model=muse-19 score=0.9 stash=reverse/attempts/0x0004de72.cpp
 ?rva0042CC1B@Rva0042CC1B@@QAEXXZ	0x0042CC1B	96	blocked	variable memset 4B at 0x3a needs donor t=15 model=muse-19 constant memset folds to single stosd
 ?rva00329EE9@Rva00329EE9@@QAE_NXZ	0x00329EE9	86	partial	77v86 same insn count 0mem 5reg missing EH flag stores t=25 model=muse-19 score=0.9 stash=reverse/attempts/0x00329ee9.cpp
+?Rva006D89E0Pop@@YAXXZ	0x006D89E0	55	partial	store uses esi not ecx: ours 89 35 mov [g],esi vs retail 89 0D mov [g],ecx; else exact 55B/21ins t=25 model=muse-20 score=0.98 stash=reverse/attempts/0x006d89e0.cpp
