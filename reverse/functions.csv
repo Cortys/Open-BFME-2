@@ -46128,3 +46128,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00223591@Rva00223591@@QAEXPAX@Z,,0x00223591,28,Code/GameEngine/Source/GameClient/Rva00223591Free.cpp,matched,free-node pair at +4 via rowed 0x00222C5A then free 0x00030830 caller 0x0022380B
 ?rva0022380B@Rva00223591@@QAEXXZ,,0x0022380B,73,Code/GameEngine/Source/GameClient/Rva00223591Free.cpp,matched,hash-bucket clear via just-landed free-node 0x00223591 count at +0x10
 ?rva00223736@Rva00223591@@QAEHPBVAsciiString@@@Z,,0x00223736,145,Code/GameEngine/Source/GameClient/Rva00223736Erase.cpp,matched,erase-all by key via rowed bucketIndex 0x00223149 compare 0x000069D6 free-node 0x00223591
+??0Rva0022307F@@QAE@ABVAsciiString@@ABVRva00468520@@@Z,,0x0022307F,30,Code/GameEngine/Source/GameClient/Rva0022307FCtor.cpp,matched,ctor via rowed StringBase copy 0x000365F0 plus rowed set 0x004F62FE throw
