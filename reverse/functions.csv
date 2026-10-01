@@ -46489,3 +46489,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva002D36F5@RadarWindowOverrideSource@@QAEXABUTreeHintRef00217D4C@@@Z,,0x002D36F5,21,Code/GameEngine/Source/Common/System/RadarWindowOverride.cpp,matched,caller 0x00405A86 with this theRadarWindowOverrideSource and sibling rva002D370A shape and pin TreeHintRef at 0x001FF3A9
 ?rva002D3389@Rva002D3389@@QAEXPAX@Z,,0x002D3389,22,Code/GameEngine/Source/Common/System/Rva002D3389Method.cpp,matched,callers 0x002D37AA and 0x002D49DD pass new result and same O1 as neighbours
 ?rva002D3772@RadarWindowOverrideSource@@QAEXHM@Z,,0x002D3772,65,Code/GameEngine/Source/Common/System/RadarWindowOverrideRva002D3772.cpp,matched,chain caller 0x002B361B plus rowed callees
+?rva004EC16E@Rva004EC16E@@QAEPAXM@Z,,0x004EC16E,96,Code/GameEngine/Source/Common/Rva004EC16E.cpp,matched,best below float via fcomi callers 0x004EC700

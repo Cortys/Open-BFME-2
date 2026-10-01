@@ -1,6 +1,4 @@
-// ?rva004EC16E@Rva004EC16E@@QAEPAXM@Z
-// partial score=0.93 date=2026-10-01
-// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD
+// cl: /Ireference/shims/bfme2_ascii /O1 /G6 /arch:SSE /MD
 // ?rva004EC16E@Rva004EC16E@@QAEPAXM@Z @ 0x004EC16E, 96 bytes.
 // Vector at +0x130/+0x134 of item pointers; each item has float virtual at
 // slot 2 ([eax+8]). Returns best item whose value is below input float.
@@ -24,7 +22,6 @@ private:
 	Item **m_end;
 };
 
-// ?rva004EC16E@Rva004EC16E@@QAEPAXM@Z present-unmatched
 void *Rva004EC16E::rva004EC16E(float x)
 {
 	Item *best = 0;
@@ -33,7 +30,7 @@ void *Rva004EC16E::rva004EC16E(float x)
 	while (it != end) {
 		Item *cur = *it;
 		float v = cur->getValue();
-		if (x <= v)
+		if (!(x > v))
 			goto next;
 		if (best == 0) {
 			best = cur;
@@ -42,7 +39,7 @@ void *Rva004EC16E::rva004EC16E(float x)
 		{
 			float curV = cur->getValue();
 			float bestV = best->getValue();
-			if (curV <= bestV)
+			if (!(curV > bestV))
 				goto next;
 			best = cur;
 		}

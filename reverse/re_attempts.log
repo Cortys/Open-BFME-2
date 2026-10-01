@@ -5132,3 +5132,5 @@ FUN_0091ec31	0x0051EC31	29	blocked	wrapper pushes 5 args to 3-arg row plus lea e
 ?rva004ACF1D@RousingSpeechUpdate@@QAEXXZ	0x004ACF1D	89	partial	twin of the matched GloriousChargeUpdate list helper 0x004AD613 without the drawable part: exact except ebx/edi swapped between the list address and the object (15 bytes); reference/pointer list locals, continue form, while loop, function-scope declarations and a forceinline Object member all keep the swap t=8 model=claude-opus-5-5 score=0.83 stash=reverse/attempts/0x004acf1d.cpp
 FUN_0081553a	0x0041553A	64	blocked	stl hashtable 64B fourth copy vector plus Armor 0x148DDF three twins already key-value unprovable needs outer t=15 model=muse-11
 ?rva002D3B30@Rva002D3B30@@QAEXXZ	0x002D3B30	303	blocked	EH byte-states vs dword and frame esi-spill t=22 model=muse-01
+FUN_0091e31a	0x0051E31A	58	blocked	struct float copies via int mov vs retail movss t=12 model=muse-10
+FUN_0091e471	0x0051E471	63	blocked	EH dtor-like with StringBase array no donor class t=5 model=muse-10
