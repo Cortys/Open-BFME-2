@@ -5178,3 +5178,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00106D56@Rva00106D56@@QAEHIIII@Z	0x00106D56	539	blocked	539B SSE multi-loop no donor exceeds single-session box t=5 model=muse-07
 ?rva002949AE@Object@@QAEXHHM@Z	0x002949AE	303	blocked	297B vs 303B 17 structural regions missing clamp block and lea-call scheduling plus esi-edi ebx-eax allocation wall t=5 model=muse-02
 ?rva0041BFA2@Rva0041BFA2@@QAEHPAVObject@@HHH@Z	0x0041BFA2	95	partial	mov m_self store after push cb vs retail before push t=20 model=muse-02 score=0.96 stash=reverse/attempts/0x0041bfa2.cpp
+?Rva002AA41A@@YAHPAVObject@@PAX@Z	0x002AA41A	64	partial	fstp plus extra fld vs retail fst single fld and jae vs jbe t=12 model=muse-06 score=0.93 stash=reverse/attempts/0x002aa41a.cpp
