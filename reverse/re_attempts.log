@@ -4810,3 +4810,4 @@ FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 read
 ?rva00051525@Rva00051525@@QAE_NXZ	0x00051525	57	partial	60B vs 57B v-range plus idx checks exact; left null-check je-to-end vs jne-to-continue with inline mov-al-1 plus flag tail cmp-dl plus setne-dl-mov vs cmp-0 plus setne-al; tried split-guards plus bool-flag plus O2 plus double-bang t=25 model=muse-15 score=0.93 stash=reverse/attempts/0x00051525.cpp
 ?rva0005117B@Rva0005117B@@QAEMM@Z	0x0005117B	72	blocked	xmm1 xmm2 swapped throughout second comiss order fixed but allocation swapped t=12 model=muse-15 (stash 0.96 kept)
 ?rva00051525@Rva00051525@@QAE_NXZ	0x00051525	57	partial	57B exact size flag tail fixed via implicit return left null je vs jne t=15 model=muse-15 score=0.95 stash=reverse/attempts/0x00051525.cpp
+?rva002E5EA5@Rva002E5EA5@@QAE_NPBD@Z	0x002E5EA5	487	blocked	stub only 48B vs 487B missing CSF header LBL STR loops and large stack buffers t=15 model=muse-07
