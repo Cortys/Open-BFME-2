@@ -1,15 +1,22 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /arch:SSE
 //
-// ?setLocomotorGoalPositionExplicit@AIUpdateInterface@@UAEXABUCoord3D@@@Z, retail 0x00262C35, 30 bytes. ZH donor AIUpdate.cpp verbatim: m_type at
-// +0x1FC becomes POSITION_EXPLICIT (2) then the Coord3D arg copies to +0x200.
-// Offsets shift the ZH +0x1D8/+0x1DC pair by +0x24 with the BFME2 tail that
-// the landed wakeUpNow (+0x3C2) and 0x3B6-cluster siblings bound. Leaf.
+// ?setLocomotorGoalPositionOnPath@AIUpdateInterface@@UAEXXZ, retail 0x00262C13, 34 bytes.
+// ?setLocomotorGoalPositionExplicit@AIUpdateInterface@@UAEXABUCoord3D@@@Z, retail 0x00262C35, 30 bytes.
+// ?setLocomotorGoalOrientation@AIUpdateInterface@@UAEXM@Z, retail 0x00262C9B, 27 bytes.
+// ZH donor AIUpdate.cpp verbatim locomotor goal setters for m_locomotorGoalType at +0x1FC
+// and m_locomotorGoalData at +0x200.
 
 struct Coord3D
 {
 	float x;
 	float y;
 	float z;
+	void zero()
+	{
+		x = 0.0f;
+		y = 0.0f;
+		z = 0.0f;
+	}
 };
 
 class AIUpdateInterface
@@ -18,11 +25,26 @@ class AIUpdateInterface
 	int m_locomotorGoalType;
 	Coord3D m_locomotorGoalData;
 public:
+	virtual void setLocomotorGoalPositionOnPath();
 	virtual void setLocomotorGoalPositionExplicit(const Coord3D &newPos);
+	virtual void setLocomotorGoalOrientation(float angle);
 };
+
+void AIUpdateInterface::setLocomotorGoalPositionOnPath()
+{
+	m_locomotorGoalType = 1;
+	m_locomotorGoalData.zero();
+}
 
 void AIUpdateInterface::setLocomotorGoalPositionExplicit(const Coord3D &newPos)
 {
 	m_locomotorGoalType = 2;
 	m_locomotorGoalData = newPos;
 }
+
+void AIUpdateInterface::setLocomotorGoalOrientation(float angle)
+{
+	m_locomotorGoalType = 3;
+	m_locomotorGoalData.x = angle;
+}
+
