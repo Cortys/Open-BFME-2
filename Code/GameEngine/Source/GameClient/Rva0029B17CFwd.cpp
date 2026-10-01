@@ -33,9 +33,14 @@ void Rva0029B17C::rva0029B17C()
 // TheInGameUI in ecx with no stack args and ignores return; callee rowed in
 // Code/GameEngine/Source/Common/Bfme/Rva004E57E6Method.cpp; same 11B disp32
 // forward shape as 0x0029B17C.
+struct Rva004E57E6Pair {
+	int m_0;
+	int m_4;
+};
 class Rva004E57E6 {
 public:
 	void rva004E5803();
+	void rva004E57E6(Rva004E57E6Pair *p, float f);
 };
 class Rva0029B1A1 {
 public:
@@ -47,4 +52,20 @@ private:
 void Rva0029B1A1::rva0029B1A1()
 {
 	m_7F4->rva004E5803();
+}
+// ?rva0029B187@Rva0029B187@@QAEXPAURva004E57E6Pair@@M@Z @0x0029B187 26B.
+// Forwarder with float+pair args: loads member at +0x7F4 then calls
+// ?rva004E57E6@Rva004E57E6@@QAEXPAURva004E57E6Pair@@M@Z. Evidence: caller
+// 0x0056AB7A passes pair and float; callee rowed in Rva004E57E6Method.cpp;
+// same +0x7F4 subsystem as 0x0029B17C/0x0029B1A1; ret 8 matches 8B args.
+class Rva0029B187 {
+public:
+	void rva0029B187(Rva004E57E6Pair *p, float f);
+private:
+	char m_pad[0x7F4];
+	Rva004E57E6 *m_7F4;
+};
+void Rva0029B187::rva0029B187(Rva004E57E6Pair *p, float f)
+{
+	m_7F4->rva004E57E6(p, f);
 }
