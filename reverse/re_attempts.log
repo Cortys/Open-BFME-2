@@ -4797,3 +4797,7 @@ FUN_0044E55B	0x0004E55B	71	blocked	custom reg convention: y arrives in ESI with 
 ?rva004BE3EF@Rva004BE3EF@@QAEXXZ	0x004BE3EF	142	partial	extra implicit handle dtor plus or-state before vs after t=40 model=muse-06 score=0.94 stash=reverse/attempts/0x004be3ef.cpp
 ?Rva001F7558Get@@YAXPAX0@Z	0x001F7558	243	blocked	free function no callers plus smartptr handle slot reuse plus slot88 sig unclear t=20 model=muse-06
 FUN_00ae4a90	0x006E4A90	239	blocked	Apt virtuals asserts need BFME1 donor 0 ready t=5 model=muse-11
+?rva005AE5EE@Rva005AE5EE@@QAEXPBUFloat4@@@Z	0x005AE5EE	29	blocked	33B vs 29B mov-edx-push vs push-mem plus late add-ecx-0x90 vs early; tried defaults O1 O2 Os G7 6 variants; needs donor layout for Vector4 Set call t=12 model=muse-11
+?rva000AE37E@BfmeGridWM@@QAEEHH@Z	0x000AE37E	205	blocked	205B grid test with 0x120e0 0x120e4 0x80bc 0x80c8 intervals plus 36B rep-movsd; BfmeGrokGrid TU only models small members; needs donor for large layout t=8 model=muse-11
+?rva0030822F@Rva0030822F@@QAEXPAUInterpElem@@M@Z	0x0030822F	246	partial	238B vs 246B missing sub-esp-0x10 ja-vs-jbe tail yzwx order t=20 model=muse-11 score=0.92 stash=reverse/attempts/0x0030822f.cpp
+?Rva000A90B0Get@@YAHH@Z	0x000A90B0	226	blocked	226B RGBA per-channel x87 with 10 unknown table floats 0xDE6198-AC plus scale static; needs donor for tables and R-A-G-B order t=6 model=muse-11
