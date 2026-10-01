@@ -5072,3 +5072,6 @@ FUN_0071ed2c	0x0031ED2C	2583	blocked	Name recovery is not supported by the ancho
 ?rva00524A84@Rva00524A4C@@QAEMXZ	0x00524A84	94	partial	this in edi not esi and iface in esi not edi with load after push not before t=25 model=muse-01 score=0.93 stash=reverse/attempts/0x00524a84.cpp
 ??0Rva005CCC07@@QAE@XZ	0x005CCBD0	55	partial	or at 0x10 hoisted before vtable vs retail after +8 t=15 model=muse-07 score=0.95 stash=reverse/attempts/0x005ccbd0.cpp
 ?rva005CC5E5@Rva005CC5E5@@QAEXH@Z	0x005CC5E5	57	blocked	virtual-base ctor with vbtable plus hidden forVB needs donor t=12 model=muse-07
+?rva00363EC0@Path@@QAEMPAUCoord3D@@0@Z	0x00363EC0	228	partial	mov ecx p-load one slot late after node-x vs retail p-first t=15 model=muse-04 score=0.99 stash=reverse/attempts/0x00363ec0.cpp
+?rva00363AA8@Path@@QAEHXZ	0x00363AA8	47	partial	node-in-ecx vs retail eax max-in-eax vs ecx t=12 model=muse-04 score=0.89 stash=reverse/attempts/0x00363aa8.cpp
+?rva00363930@Path@@QAE_NPAUCoord3D@@_N@Z	0x00363930	328	blocked	complex closest-point early-exit flag traversal t=10 model=muse-04

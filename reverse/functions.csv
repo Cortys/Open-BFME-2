@@ -46330,3 +46330,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00524A2D@Rva00524A2D@@QAEXHHHH@Z,,0x00524A2D,31,Code/GameEngine/Source/Common/Rva00524A2D.cpp,matched,leaf four-dword setter at 0x10 ret 0x10 two callers
 ?Rva00380705Free@@YAXXZ,,0x00380705,25,Code/GameEngine/Source/Common/Rva00380705Free.cpp,matched,Free virtual result via global g_Va00E032FC plus rowed delete
 ?rva005CC9F8@Rva005CC9F8@@QAEXXZ,,0x005CC9F8,19,Code/GameEngine/Source/Common/Rva005CC9F8Clear.cpp,matched,calls rowed Release_Ref tail-jmp target of 0x005CCA57
+?rva00363B24@Path@@QAEXH@Z,,0x00363B24,17,Code/GameEngine/Source/GameLogic/AI/PathRva00363B24.cpp,matched,Path tail waypoint setter via tail plus 8 waypoint plus 20
