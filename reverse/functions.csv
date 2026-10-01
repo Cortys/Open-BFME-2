@@ -46312,3 +46312,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva00291679@Rva00291679@@QAEXPAVRva00291679Arg@@@Z,,0x00291679,97,Code/GameEngine/Source/Common/System/Rva00291679Bits.cpp,matched,memset rowed loop 101 virt 0x24 caller 0x00292585
 ?rva002916DA@Rva002916DA@@QAEXPAVRva002916DAArg@@@Z,,0x002916DA,100,Code/GameEngine/Source/Common/System/Rva002916DABits.cpp,matched,memset rowed loop 154 virt 0x24 caller 0x002926C1
 ?Rva003E53C8Check@@YG_NPAUCondA003E53C8@@PAUCondB003E53C8@@@Z,,0x003E53C8,114,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E53C8.cpp,matched,chain via rowed rva002A7C0B plus ThePlayerList plus op switch 0-5
+?Rva003E54B4Check@@YG_NPAVParameter@@@Z,,0x003E54B4,67,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptConditions_Rva003E54B4.cpp,matched,leaf via pin rva00357B82 plus rowed getEachPlayerFromMask plus globals
