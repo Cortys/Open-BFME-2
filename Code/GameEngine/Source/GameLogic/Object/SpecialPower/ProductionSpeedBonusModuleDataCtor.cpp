@@ -30,9 +30,8 @@ protected:
 	unsigned char m_pad[0x7C - 4];
 };
 
-Rva004930A0::~Rva004930A0()
-{
-}
+// ??1Rva004930A0 owned by Rva004930A0Dtor.cpp (row at 0x0049334F):
+// declared above so calls keep the same name without a second definition.
 
 class ProductionSpeedBonusModuleData : public Rva004930A0
 {
