@@ -6835,3 +6835,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??1?$_Rb_tree@W4NameKeyType@@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held8F75D0@@@_STL@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held8F75D0@@@_STL@@@3@U?$less@W4NameKeyType@@@3@V?$allocator@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held8F75D0@@@_STL@@@3@@_STL@@QAE@XZ,0x0073E3F0
 ??1?$_Rb_tree@W4NameKeyType@@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held9A2680@@@_STL@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held9A2680@@@_STL@@@3@U?$less@W4NameKeyType@@@3@V?$allocator@U?$pair@$$CBW4NameKeyType@@PAVOpen2Held9A2680@@@_STL@@@3@@_STL@@QAE@XZ,0x0075A080
 ?bfmeAccept@BfmeSinkC@@QAEXPAVBfmeFlagTarget@@@Z,0x006C0F50
+?rva004ACF1D@RousingSpeechUpdate@@QAEXXZ,0x004ACF1D,non-virtual RousingSpeechUpdate list helper (twin of the matched GloriousChargeUpdate 0x004AD613) called on the full object by the matched RousingSpeechUpdate::update 0x004AD019; address from that REL32
