@@ -5123,3 +5123,5 @@ FUN_0091ec31	0x0051EC31	29	blocked	wrapper pushes 5 args to 3-arg row plus lea e
 ?rva00524A84@Rva00524A4C@@QAEMXZ	0x00524A84	94	blocked	this in edi not esi and iface in esi not edi with load after push not before t=12 model=muse-01 (stash 0.93 kept)
 ?rva00524F35@Rva00524F35@@QAEXH@Z	0x00524F35	37	blocked	missing mov eax ecx this in eax vs ecx alias-order-flags tried t=18 model=muse-01 (stash 0.95 kept)
 ??1Rva00575E9C@@UAE@XZ	0x00575E9C	78	blocked	two-base dtor with EH plus 4 vtables plus erase tried real bases got extra base calls t=10 model=muse-07
+?rva00511087@Rva00511087@@QAEHABVAsciiString@@@Z	0x00511087	129	blocked	unlock STL bridge calls 00217D4C lower_bound plus pair but 0051030C insert plus pair t=8 model=muse-07
+?rva00106FB6@Rva00106FB6@@QAE_NPAURect00106FB6@@@Z	0x00106FB6	144	blocked	SSE sphere-vs-rect with Get_Position and 4 comiss needs donor for arg layout plus float shape t=10 model=muse-07
