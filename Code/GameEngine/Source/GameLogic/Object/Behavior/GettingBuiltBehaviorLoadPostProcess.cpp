@@ -7,8 +7,8 @@
 // for pathfind re-add via rowed 0x002E718A with TheGameLogic findObjectByID row
 // 0x00049DC5 and TheAI pathfinder at +0x10; Object status bit at +0x438.
 // ?rva0045427E@GettingBuiltBehavior@@QAEXXZ @0x0045427E 47B: dtor helper using
-// m_object +0x7c ID via findObjectByID row plus m_b3C gate plus bfmeDoBGB pin
-// 0x002984D4 with 8 0x16; sole caller is dtor 0x0045448F.
+// m_object +0x7c ID via findObjectByID row plus m_b3C gate plus Object::kill
+// row 0x002984D4 with DamageType 8 and DeathType 0x16; sole caller is dtor 0x0045448F.
 
 #include <list>
 
@@ -17,6 +17,8 @@ struct BfmePod20 { int a[5]; };
 class Thing;
 class ModuleData;
 class Object;
+enum DamageType { DamageType_Unknown = 0 };
+enum DeathType { DeathType_Unknown = 0 };
 
 class BehaviorModuleBase
 {
@@ -83,16 +85,11 @@ extern GameLogic *TheGameLogic;
 class Object
 {
 public:
+	void kill(DamageType damageType, DeathType deathType);
 	char m_pad00[0x7c];
 	int m_7c;
 	char m_pad80[0x438 - 0x80];
 	unsigned char m_438;
-};
-
-class BfmeSubBGB
-{
-public:
-	void bfmeDoBGB(int one, int two);
 };
 
 class Pathfinder
@@ -169,5 +166,5 @@ void GettingBuiltBehavior::rva0045427E()
 		return;
 	if (!m_b3C)
 		return;
-	reinterpret_cast<BfmeSubBGB*>(found)->bfmeDoBGB(8, 0x16);
+	found->kill((DamageType)8, (DeathType)0x16);
 }
