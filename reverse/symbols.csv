@@ -6861,3 +6861,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?createInstance@Rva003A3CBBOwner@@QAEPAVTeam@@ABVAsciiString@@0@Z,0x003A3CBB,address read from the retail REL32 at 0x0035871D in getTeamNamed 0x003584E9; ECX is TeamFactory
 ?Rva0002FFC0Alloc@@YAPAXHH@Z,0x0002FFC0,EA-allocator-wrap-alloc-takes-size-and-ignored-arg-pushes-zero-calls-0x35080-default-for-FreelistPool-m_alloc-at-0x001EB1CB
 ?Rva0002FFE0Free@@YAXPAXH@Z,0x0002FFE0,EA-allocator-wrap-free-takes-ptr-and-ignored-arg-calls-0x338F0-default-for-FreelistPool-m_free-at-0x001EB1CB
+?rva002D76C6@Rva002D7714@@QAE_NPAURva002D76C6Owner@@PAPAURva002D76C6Node@@@Z,0x002D76C6,ICF twin of rowed free Remove via thiscall call site 0x002D7714 exact

@@ -46770,3 +46770,4 @@ _REF_encode@16,,0x0068B050,108,Code/Libraries/Source/Compression/EAC/refencode.c
 ?rva0044F72E@SpecialAbilityUpdate@@QAEXXZ,,0x0044F72E,118,Code/GameEngine/Source/GameLogic/Object/Update/SpecialAbilityUpdateXfer.cpp,matched,list destroy clear override 0x15 weapon lock via m64 m68
 ?rva002736A8@Drawable@@QAEXXZ,,0x002736A8,18,Code/GameEngine/Source/GameClient/Drawable_rva00273648.cpp,matched,Drawable 0x354 rva00270025 call 10 sibling walks
 ?rva0027366A@Drawable@@QAEXXZ,,0x0027366A,28,Code/GameEngine/Source/GameClient/Drawable_rva00273648.cpp,matched,Drawable module walk slot 0xE4 gap sibling
+?rva002D7714@Rva002D7714@@QAEXPAURva002D76C6Owner@@@Z,,0x002D7714,48,Code/GameEngine/Source/Common/Rva002D7714Remove.cpp,matched,dual list remove via ICF twin 0x002D76C6 caller 0x002D772A 0x002D773A
