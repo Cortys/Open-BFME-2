@@ -29,7 +29,7 @@ private:
 	void *m_current;
 };
 
-__declspec(noinline) SimpleSceneIterator::SimpleSceneIterator(
+inline __declspec(noinline) SimpleSceneIterator::SimpleSceneIterator(
 	RefMultiListClass<RenderObjClass> *render_list) :
 	m_render_list(render_list),
 	m_current(render_list->m_first)
@@ -42,3 +42,19 @@ void Force_SimpleSceneIterator_Deleting_Destructor(SimpleSceneIterator *iterator
 {
 	delete iterator;
 }
+
+// SimpleSceneIterator ctor is a header inline elsewhere: another unit emits a
+// select-any copy, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+struct BfmeSimpleSceneIteratorEmitter : SimpleSceneIterator
+{
+	static void emit(BfmeSimpleSceneIteratorEmitter *p, RefMultiListClass<RenderObjClass> *list);
+};
+#pragma inline_depth(0)
+// ?emit@BfmeSimpleSceneIteratorEmitter@@SAXPAU1@PAV?$RefMultiListClass@VRenderObjClass@@@@@Z present-unmatched
+void BfmeSimpleSceneIteratorEmitter::emit(BfmeSimpleSceneIteratorEmitter *p, RefMultiListClass<RenderObjClass> *list)
+{
+	p->SimpleSceneIterator::SimpleSceneIterator(list);
+}
+#pragma inline_depth()
