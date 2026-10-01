@@ -105,7 +105,7 @@ Debug &Debug::LogBegin(const char *fileOrGroup)
             Debug::FlushOutput(true);
 
         if (curType!=1)
-            Debug::StartOutput((DebugIOInterface::StringType)1,(const char *)0x00BBE494,
+            Debug::StartOutput((DebugIOInterface::StringType)1,"%s",
                       curFrameEntry->fileOrGroup);
     }
     else if (curType!=7)

@@ -61,7 +61,7 @@ int Rva00340C5F::rva00340C5F()
 	{
 		FprintfTarget *log = *(FprintfTarget **)0x00DFEFF0;
 		if (log != 0)
-			fprintf(log, (const char *)0x00C121B4);
+			fprintf(log, "CritterDesync: setAdjustDestination(TRUE) 38");
 	}
 	Coord3D *src = (Coord3D *)((char *)obj + 0x38);
 	m_48 = true;

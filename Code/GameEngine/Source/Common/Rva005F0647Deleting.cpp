@@ -62,7 +62,7 @@ struct Rva005F06EF
 void Rva005F06EF::rva005F06EF()
 {
 	if (m_flag)
-		TheMouse->rva001EEA6D(TheGameText->fetch((const char *)0x00C78CB8), -1, 0, 1.0f);
+		TheMouse->rva001EEA6D(TheGameText->fetch("STRATEGICHUD:ConstructionTurnsRemainingTooltip"), -1, 0, 1.0f);
 }
 
 struct Rva005F09BC

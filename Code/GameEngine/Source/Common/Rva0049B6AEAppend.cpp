@@ -17,6 +17,6 @@ void __stdcall Rva0049B6AEAppend(const char *a, StringBase<char> *b)
 	if (b == 0)
 		return;
 	if (!b->isEmpty())
-		b->concat((const char *)0x00BBD40C);
+		b->concat(" ");
 	b->concat(a);
 }
