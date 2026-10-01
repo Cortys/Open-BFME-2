@@ -1,5 +1,12 @@
 // Open-BFME5 conversions.
 
+// These call sites use rowed FESL buffer and allocator operations.
+#pragma comment(linker, "/alternatename:?bfmeAppendVCB@BfmeBufVCB@@QAEXPBD@Z=?append@Rva00800290Buffer@@QAEXPBD@Z")
+// The VCC receiver's slot-3 (block, flags) call matches GenAlloc::release.
+#pragma comment(linker, "/alternatename:?bfmeGetVCC@@YAPAVBfmeSinkVCC@@XZ=?Gen007EFFC0@@YAPAVGenAlloc@@XZ")
+// The size word is ignored by the rowed cdecl class delete; caller cleans both.
+#pragma comment(linker, "/alternatename:?bfmeFreeVCC@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+
 struct BfmeSrcVCB
 {
 	int m_bfme00;
