@@ -4955,3 +4955,7 @@ _peerAuthenticateCDKey	0x00699BB0	146	converted	Whole-file donor compilation pla
 ?Rva0049A6DCGet@@YG_NPAX@Z	0x0049A6DC	44	blocked	switch byte-table mapping unrecoverable from packet t=18 model=muse-02
 ?rva000A9851@Rva000A9851@@QAEXPAX@Z	0x000A9851	44	blocked	pointer loop emits mov not fld for float while indexed emits fld with scaled addressing plus reg wall and push order t=25 model=muse-04
 ?rva00223DD7@Rva00223DD7@@QAEXPBDH@Z	0x00223DD7	116	blocked	esi edi swapped plus dead frame slot and dead table store t=20 model=muse-01
+?Rva001E40D9Get@@YGMMM@Z	0x001E40D9	89	partial	movss-at-0x32-vs-0x2f-plus-fld-out-vs-fld-y-plus-global-reloc t=20 model=muse-11 score=0.9 stash=reverse/attempts/0x001e40d9.cpp
+?rva001E4015@Rva001E4015@@QAE_NPAVThing@@PAURva001E4015Vec2@@@Z	0x001E4015	94	partial	xmm0-xmm1 swapped dy-first vs dx-first size-exact struct-0 t=12 model=muse-11 score=0.93 stash=reverse/attempts/0x001e4015.cpp
+?rva001E4073@Rva001E4073@@QAEMPAVObject@@PAM@Z	0x001E4073	102	partial	this-save in esi with push-esi-pop-esi vs retail edx size 104 vs 102 O1-SSE tried self-locals t=12 model=muse-11 score=0.96 stash=reverse/attempts/0x001e4073.cpp
+?rva001E41D3@Rva001E41D3@@QAEXPAM@Z	0x001E41D3	39	partial	first float via fld-fstp not movss and missing lea eax ecx+0x68 (disp32 vs lea+disp8); 38 vs 39B; O1-G7-SSE with float temps gives 2of3 movss; next try explicit inner pointer for lea plus force SSE on first load t=15 model=muse-11 score=0.9 stash=reverse/attempts/0x001e41d3.cpp

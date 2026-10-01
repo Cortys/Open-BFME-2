@@ -46151,3 +46151,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0049ADB7@Rva0049AE5E@@QAEXXZ,,0x0049ADB7,80,Code/GameEngine/Source/Common/Rva0049AE5ECheck.cpp,matched,same-class sibling of rva0049AE5E via rowed callee 0x0028C197
 ?Rva000A98BACleanup@@YAXXZ,,0x000A98BA,34,Code/GameEngine/Source/Common/Rva000A98BACleanup.cpp,matched,frameless singleton cleanup mov ecx test je lazy esi save direct dtor delete and clear
 ?rva0022453E@Rva0022453E@@QAEXABVAsciiString@@@Z,,0x0022453E,70,Code/GameEngine/Source/GameClient/Rva0022453EErase.cpp,matched,chain lane local AsciiString copy over rowed table at plus 0xa4 via rowed erase
+?rva001E48E8@Rva001E48E8@@QAEPAXI@Z,,0x001E48E8,42,Code/GameEngine/Source/Common/Rva001E48E8Find.cpp,matched,unlock scan range this+4 to this+8 bit test at +0x14 via +4
