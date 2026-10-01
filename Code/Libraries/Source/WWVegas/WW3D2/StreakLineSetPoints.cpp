@@ -13,6 +13,7 @@
 
 class Vector3 { public: float X, Y, Z; };
 class Vector4 { public: float X, Y, Z, W; };
+template<> bool SimpleDynVecClass<Vector3>::Add(Vector3 const &object, int new_size_hint);
 
 class StreakLineClass {
 private:
