@@ -1,5 +1,7 @@
 // ?rva00469012@Rva00469012@@QAE_NPAVObject@@PBUCoord3D@@@Z
 // partial score=0.98 date=2026-10-01
+// ?rva00469012@Rva00469012@@QAE_NPAVObject@@PBUCoord3D@@@Z
+// partial score=0.98 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?Rva00468F0FInRange@@YG_NPAVObject@@0@Z, retail 0x00468F0F 89B.
