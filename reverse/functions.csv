@@ -46449,3 +46449,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva005753D1@@QAE@XZ,,0x005753D1,12,Code/GameEngine/Source/Common/Rva005753D1Ctor.cpp,matched,ctor delegating to rowed base 0x005CC61E
 ??_GRva0056B218@@UAEPAXI@Z,,0x0056B47C,28,Code/GameEngine/Source/Common/Rva0056B218Dtor.cpp,matched,deleting dtor from own dtor unit
 ??_GRva0056B2DD@@UAEPAXI@Z,,0x0056B498,28,Code/GameEngine/Source/Common/Rva0056B2DDDtor.cpp,matched,deleting dtor from own dtor unit
+?rva00574E0E@Rva00574E0E@@QAEXH@Z,,0x00574E0E,32,Code/GameEngine/Source/Common/Rva00574E0E.cpp,matched,holder erase sibling of 0x00574E2E with guard
