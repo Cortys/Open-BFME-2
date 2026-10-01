@@ -1,7 +1,5 @@
 // ?rva005996FF@Rva005996FF@@QAEXPAURva005996FFArg@@_N@Z
 // partial score=0.94 date=2026-09-29
-// ?rva005996FF@Rva005996FF@@QAEXPAURva005996FFArg@@_N@Z
-// partial score=0.94 date=2026-09-29
 // cl: /Ireference/shims/bfmelist /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva005996FF@Rva005996FF@@QAEXPAUArg@@_N@Z @ 0x005996FF 85B list erase plus string flag.
@@ -38,14 +36,23 @@ private:
 	char m_pad0C[0x10 - 0x0C];
 	unsigned char m_10;
 };
-// ?rva005996FF@Rva005996FF@@QAEXPAURva005996FFArg@@_N@Z present-unmatched
 void Rva005996FF::rva005996FF(Rva005996FFArg *arg, bool flag)
 {
 	_STL::list<int, _STL::allocator<int> >::iterator it = m_list.begin();
-	unsigned int value = (unsigned int)arg->m_74;
-	while (it != m_list.end() && *it != (int)value)
-		++it;
-	m_list.erase(it);
+	if (it == m_list.end())
+		goto skip_erase;
+	{
+		int value = arg->m_74;
+		while (it != m_list.end()) {
+			if (*it == value)
+				goto do_erase;
+			++it;
+		}
+		goto skip_erase;
+do_erase:
+		m_list.erase(it);
+	}
+skip_erase:
 	if (!flag)
 		return;
 	Inner64 *inner = arg->m_04;
