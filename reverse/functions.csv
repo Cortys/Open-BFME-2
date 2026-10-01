@@ -45588,3 +45588,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?rva005F69B2@Rva005F69B2@@QAEXXZ,,0x005F69B2,18,Code/GameEngine/Source/Common/Rva005F69B2Method.cpp,matched,leaf conditional virtual slot 0x14 on member +4 with outer this plus caller 0x005F6AA8
 ??1Rva00402F28Item@@QAE@XZ,,0x00402F23,5,Code/GameEngine/Source/Common/Rva00402F28ItemDtor.cpp,matched,tail jump to rowed base dtor 0x003FA0C7; novtable spelling suppresses the vptr store
 ??4Rva00403055@@QAEAAV0@ABV0@@Z,,0x004030B6,57,Code/GameEngine/Source/Common/Rva00403055CopyCtor.cpp,matched,operator= : self check then string set plus two handle assigns via 0x00239099 then copyItems
+?Rva004D6B6E@@YAMM@Z,,0x004D6B6E,47,Code/GameEngine/Source/Common/Rva004D6B6EAngle.cpp,matched,half-angle from atan(12 / value) doubled; a + a form fixes the banked partial; callers 0x0025EDCB 0x004D6BC0
