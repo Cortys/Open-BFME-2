@@ -20,6 +20,20 @@
 // condition and records its expiry frame; pinned by address, class unknown).
 // Bit indexes are unsigned (shr) as in a bitset; the masked-word test makes cl
 // keep the mask in a register and test/or the word in memory.
+//
+// Object::rva00290AC1, retail 0x00290AC1 (99 bytes), the next method: removes a
+// whole WeaponSetFlags mask through the matched 4-word op 0x0028C570 (the flags
+// class keeps that row's placeholder name Rva0028C570), updates the weapon set,
+// then clears every Object model-condition bit 0..0x67 whose index is set in
+// the mask (same index, no map; signed loop counter, unsigned bit accessors).
+// Object::setWeaponLock, retail 0x00290B24 (79 bytes): Zero Hour has it inline
+// as return m_weaponSet.setWeaponLock(weaponSlot, lockType); BFME2 makes it out
+// of line, first notifying slot 90 of the +0x250 interface with both args and
+// setting object status 0x51 when a non-primary slot is locked permanently
+// (written as two setStatus calls that cl merges, as retail pushes 1 or 0 per
+// branch). The callee 0x002C8AAE is WeaponSet::setWeaponLock (ZH body: early
+// out on NOT_LOCKED, m_weapons[slot] at +8, lock status +0x24 and current
+// weapon +0x20; pinned here).
 
 enum WeaponSetType
 {
@@ -30,14 +44,29 @@ enum ModelConditionFlagType
 	MODELCONDITION_INVALID = -1
 };
 class Object;
+enum WeaponSlotType
+{
+	PRIMARY_WEAPON = 0
+};
+enum WeaponLockType
+{
+	NOT_LOCKED = 0,
+	LOCKED_TEMPORARILY = 1,
+	LOCKED_PERMANENTLY = 2
+};
+enum ObjectStatusTypes
+{
+	OBJECT_STATUS_NONE = 0
+};
 class WeaponSet
 {
 public:
 	void updateWeaponSet(const Object *obj);
+	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
 private:
 	unsigned char m_data[0x40];
 };
-class WeaponSetFlags
+class Rva0028C570
 {
 public:
 	void set(unsigned int i)
@@ -48,9 +77,15 @@ public:
 	{
 		m_words[i >> 5] &= ~(1U << (i & 0x1f));
 	}
+	unsigned int test(unsigned int i) const
+	{
+		return m_words[i >> 5] & (1U << (i & 0x1f));
+	}
+	void rva0028C570(const Rva0028C570 &other);
 private:
-	unsigned int m_words[2];
+	unsigned int m_words[4];
 };
+typedef Rva0028C570 WeaponSetFlags;
 class Rva0010CConditionBits
 {
 public:
@@ -74,6 +109,20 @@ class Rva004DE85FModule
 public:
 	void rva004DE85F(int condition, int frames);
 };
+template <int N> class Rva00290B24Slots : public Rva00290B24Slots<N - 1>
+{
+public:
+	virtual void gap(char (*)[N]) = 0;
+};
+template <> class Rva00290B24Slots<0>
+{
+};
+// The Object +0x250 interface: slots 0..89 placeholders, slot 90 below.
+class Rva00290B24Iface : public Rva00290B24Slots<90>
+{
+public:
+	virtual void rva00290B24Slot90(WeaponSlotType weaponSlot, WeaponLockType lockType) = 0;
+};
 extern const ModelConditionFlagType TheWeaponSetTypeToModelConditionTypeMap[];
 extern int g_Va00DBA4E4;
 class Object
@@ -82,12 +131,17 @@ public:
 	void rva0028AE6D();
 	void setWeaponSetFlag(WeaponSetType wst);
 	void clearWeaponSetFlag(WeaponSetType wst);
+	void rva00290AC1(const WeaponSetFlags &flags);
+	bool setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType);
+	void setStatus(ObjectStatusTypes status, bool set);
 private:
 	unsigned char m_pad000[0x10C];
 	Rva0010CConditionBits m_conditionBits; // +0x10C
 	unsigned char m_pad15C[0x230 - 0x15C];
 	Rva004DE85FModule *m_230; // +0x230
-	unsigned char m_pad234[0x330 - 0x234];
+	unsigned char m_pad234[0x250 - 0x234];
+	Rva00290B24Iface *m_250; // +0x250
+	unsigned char m_pad254[0x330 - 0x254];
 	WeaponSet m_weaponSet; // +0x330
 	WeaponSetFlags m_curWeaponSetFlags; // +0x370
 };
@@ -130,4 +184,28 @@ void Object::clearWeaponSetFlag(WeaponSetType wst)
 		m_230->rva004DE85F(0x1BE, g_Va00DBA4E4);
 	else if (mc == 0x12F)
 		m_230->rva004DE85F(0x1BF, g_Va00DBA4E4);
+}
+void Object::rva00290AC1(const WeaponSetFlags &flags)
+{
+	m_curWeaponSetFlags.rva0028C570(flags);
+	m_weaponSet.updateWeaponSet(this);
+	for (int i = 0; i < 0x68; ++i)
+	{
+		if (flags.test(i) && m_conditionBits.test(i))
+		{
+			m_conditionBits.clear(i);
+			rva0028AE6D();
+		}
+	}
+}
+bool Object::setWeaponLock(WeaponSlotType weaponSlot, WeaponLockType lockType)
+{
+	Rva00290B24Iface *iface = m_250;
+	if (iface)
+		iface->rva00290B24Slot90(weaponSlot, lockType);
+	if (lockType == LOCKED_PERMANENTLY && weaponSlot != PRIMARY_WEAPON)
+		setStatus((ObjectStatusTypes)0x51, true);
+	else
+		setStatus((ObjectStatusTypes)0x51, false);
+	return m_weaponSet.setWeaponLock(weaponSlot, lockType);
 }
