@@ -195,3 +195,16 @@ Rva004E2990::~Rva004E2990()
 {
     ((Rva004E21FE *)this)->rva004E21FE();
 }
+
+// Complete 100B owned-value destructor at 0x004E2E58. Global delete is
+// deliberate: retail invokes payload vslot0 with flags0 and then scalar
+// operator delete at 2FD60. Nodes are cleared before header ownership ends.
+Rva004E2E58::~Rva004E2E58()
+{
+    for (Rva004E2E58Node *node = owner.header00->left08; node != owner.header00;
+         node = (Rva004E2E58Node *)_STL::_Rb_global<bool>::_M_increment(
+             (_STL::_Rb_tree_node_base *)node)) {
+        ::delete node->value14;
+    }
+    ((Rva004E21FE *)this)->rva004E21FE();
+}
