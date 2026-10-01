@@ -30,7 +30,7 @@ class ReplaceSelfUpgradeModuleData : public OpenContainModuleData
 {
 public:
 	ReplaceSelfUpgradeModuleData();
-	virtual ~ReplaceSelfUpgradeModuleData() {}
+	virtual ~ReplaceSelfUpgradeModuleData();
 
 	_STL::vector<AsciiString> m_replaceWith; // +0x118
 };
