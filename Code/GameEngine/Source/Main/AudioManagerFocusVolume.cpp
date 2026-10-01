@@ -12,7 +12,9 @@
 
 class AudioManager;
 extern AudioManager *theBfmeDfdc14;
-extern float g_Va00BBB8D8;
+// Matched DIR32 sites place this shared default at VA 0x00BBB8D8; retail
+// stores 00 00 80 3F (1.0f) there.
+float g_Va00BBB8D8 = 1.0f;
 
 class Rva001DC57C
 {
