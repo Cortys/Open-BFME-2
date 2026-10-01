@@ -1,15 +1,24 @@
 class BfmeThingDGD
 {
 public:
-	BfmeThingDGD *bfmeInitDGD(void *a);
+	BfmeThingDGD(void *a);
 };
 
-void *__cdecl bfmeAllocDGD(unsigned int size);
+class Gen007F0130
+{
+public:
+	static void *operator new(unsigned int size);
+};
+
+inline void *operator new(unsigned int, void *p)
+{
+	return p;
+}
 
 BfmeThingDGD *bfmeGoDGD(void *a)
 {
-	void *p = bfmeAllocDGD(0x6e0);
+	void *p = Gen007F0130::operator new(0x6e0);
 	if (p != 0)
-		return ((BfmeThingDGD *)p)->bfmeInitDGD(a);
+		return new (p) BfmeThingDGD(a);
 	return 0;
 }
