@@ -46187,3 +46187,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0055CEAA@LineEmissionVolumeModuleTemplate@FXParticleSystem@@QAEXPAVFile@@I@Z,,0x0055CEAA,263,Code/GameEngine/Source/GameClient/Rva0055CEAAWrite.cpp,matched,chain via 0x003AFC6B vslot3 WriteHeader IsHollow StartPoint EndPoint vtable-DIR32
 ?rva002245FF@Rva002245FF@@QAEXHABVAsciiString@@@Z,,0x002245FF,77,Code/GameEngine/Source/GameClient/Rva002245FF.cpp,matched,chain lane indexed erase via rowed 0x00223736 plus G7 imul
 ?rva0022494F@Rva0022494F@@QAEXXZ,,0x0022494F,37,Code/GameEngine/Source/GameClient/Rva0022494F.cpp,matched,chain lane reset via clear plus rowed 0x0022380B
+??1Rva00224163@@QAE@XZ,,0x00224974,57,Code/GameEngine/Source/GameClient/Rva00224974.cpp,matched,hash dtor via rowed clear 0x00224163 plus free 0x00030830 same shape as 0x0022366C
