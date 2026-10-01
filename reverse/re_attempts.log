@@ -4962,3 +4962,4 @@ _peerAuthenticateCDKey	0x00699BB0	146	converted	Whole-file donor compilation pla
 FUN_008e007a	0x004E007A	64	blocked	STL EH ctor vector-uint at +4 plus hashtable init with 4 args needs donor shape t=12 model=muse-09
 ??$__uninitialized_fill_n@PAUBfmeStringRecord005F93E3@@IU1@@_STL@@YAPAUBfmeStringRecord005F93E3@@PAU1@IABU1@@Z	0x005FE3C1	27	blocked	shape-exact 27B dispatch to dup 0x005FE24C but true 4-arg resolves to 0x005F949D via row dup rowed YAXXZ with ContainerRecord pin needs ContainerRecord rename or twin pin t=10 model=muse-10
 ?evaluateSkirmishPlayerHasUnitsInArea@ScriptConditions@@IAE_NPAVCondition@@PAVParameter@@1@Z	0x003E782D	386	blocked	386B needs Team Object layouts and 6 bit checks t=20 model=muse-12
+?rva002B7B71@Rva002B7B71@@QAEXXZ	0x002B7B71	74	partial	size-in-ecx-not-eax element-in-eax-not-ecx vtable-in-edx-not-eax extra-mov-ecx-eax plus pop-before-reload t=22 model=muse-07 score=0.9 stash=reverse/attempts/0x002b7b71.cpp
