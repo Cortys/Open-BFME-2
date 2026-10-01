@@ -46707,3 +46707,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?Rva003BBF51Set@@YGXPAVParameter@@M@Z,,0x003BBF51,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBF51.cpp,matched,gap caller 0x003CC4A7 ScriptEngine getUnitNamed float store
 ?rva004590C5@Rva004590C5@@QAEXXZ,,0x004590C5,33,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004590C5.cpp,matched,chain via 0x0045906E same this plus setWakeFrame
 ?Rva0041BB26Check@@YGEPAVRva0041BB26Obj@@HH@Z,,0x0041BB26,35,Code/GameEngine/Source/Common/Rva0041BB26.cpp,matched,null-check then Peek_Texture like neighbours Rva0041B8D2 and Rva0041BB87
+?Rva0041BB49Check@@YG_NPAVObject@@PBUCoord3D@@HH@Z,,0x0041BB49,62,Code/GameEngine/Source/Common/Rva0041BB49.cpp,matched,Object guard then shroud status not SHROUDED via TheShroudManager like neighbours
