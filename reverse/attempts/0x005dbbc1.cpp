@@ -1,5 +1,7 @@
 // ?rva005DBBC1@Rva005DBBC1@@QAE_NGG@Z
 // partial score=0.95 date=2026-10-01
+// ?rva005DBBC1@Rva005DBBC1@@QAE_NGG@Z
+// partial score=0.95 date=2026-10-01
 // cl: /O1 /G7 /DNDEBUG /MD
 // ?rva005DBBC1@Rva005DBBC1@@QAE_NGG@Z 0x005DBBC1 109B
 // Bounds-checked ally/human check: slots at +0x8b8 via GameSlot::isHuman, 8x8 rel at +0x18 == 3.
