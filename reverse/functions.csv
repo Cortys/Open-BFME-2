@@ -45255,3 +45255,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??$_Construct@URva0039627D@@U1@@_STL@@YAXPAURva0039627D@@ABU1@@Z,,0x0039695E,45,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039627DConstruct.cpp,matched,chain from 0x003962AE caller 0x00397CC9 allocates 0x20 constructs at plus 0x10
 ?rva00396E4A@Rva00396E4A@@QAEXPAVObject@@@Z,,0x00396E4A,72,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00396E4ARemove.cpp,matched,ret 4 thiscall null check key at 0x74 map at 0x8c via rowed find and erase status 0x55
 ?rva003962E7@Rva003962E7@@QAE_NHH@Z,,0x003962E7,42,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva003962E7Check.cpp,matched,ret8 thiscall tree walk header-a0 left-chain value-plus10 vs key via rowed increment
+?Rva00397CC9Alloc@@YGPAXABURva0039627D@@@Z,,0x00397CC9,34,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00397CC9Alloc.cpp,matched,alloc 0x20 node via rowed allocate plus rowed Construct at plus10
