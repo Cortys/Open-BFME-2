@@ -46740,3 +46740,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?add@AIGroup@@QAEXPAVObject@@@Z,,0x0036E5F1,103,Code/GameEngine/Source/GameLogic/AI/AIGroupAdd.cpp,matched,LINK BONUS Team::getTeamAsAIGroup caller plus BFME1 add donor plus rowed callees
 ?rva0006F219@Rva0006F219@@QAE_NPAVRenderObjClass@@@Z,,0x0006F219,38,Code/GameEngine/Source/Common/Rva0006F219Add.cpp,matched,LINK BONUS via 0x0006F94A plus rowed Add twice plus lists plus0x74 plus0x114
 ?rva004ECF41@Rva004ECECD@@QAE_NXZ,,0x004ECF41,91,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ECECD.cpp,matched,same Rva004ECECD class stride 0x14 via siblings rowed iterate plus pin advance plus rowed getCurrentVictim plus pinned findInstance
+?Rva004F72EDDestroy@@YAXPAX0@Z,,0x004F72ED,27,Code/GameEngine/Source/Common/Rva004F72EDDestroy.cpp,matched,LINK BONUS via 0x005F97BC plus rowed rva005F8FCC plus range step 4
