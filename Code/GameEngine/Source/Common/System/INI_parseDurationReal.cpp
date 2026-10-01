@@ -16,7 +16,7 @@ public:
 };
 
 // Retail value at 0x00DBA4EC; read by address (DIR32) like other globals.
-float g_parseDurationMsecScale = 0.005f;
+extern float g_parseDurationMsecScale;
 
 void INI::parseDurationReal(INI *ini, void *instance, void *store, const void *userData)
 {
