@@ -42,7 +42,34 @@
 
 class MultiIniFieldParse;
 
-struct FieldParse;
+class INI;
+typedef void (*INIFieldParseProc)(INI *, void *, void *, const void *);
+struct FieldParse
+{
+	const char *token;
+	INIFieldParseProc parse;
+	const void *userData;
+	int offset;
+};
+
+class INI
+{
+public:
+	static void parseReal(INI *, void *, void *, const void *);
+	static void parseDurationUnsignedInt(INI *, void *, void *, const void *);
+};
+
+// Retail VA 0x00C550C8 is the GloriousChargeUpdateModuleData FieldParse
+// table: .rdata holds BonusRadius/parseReal at +0xC8, SpeechDuration and
+// UpdateInterval/parseDurationUnsignedInt at +0xCC/+0xD0, then a zero
+// sentinel. The matched buildFieldParse caller supplies the independent class
+// identity and the relocation pins this named definition to the table address.
+extern const FieldParse g_00C550C8GloriousChargeFieldParse[] = {
+	{ "BonusRadius", &INI::parseReal, 0, 0xC8 },
+	{ "SpeechDuration", &INI::parseDurationUnsignedInt, 0, 0xCC },
+	{ "UpdateInterval", &INI::parseDurationUnsignedInt, 0, 0xD0 },
+	{ 0, 0, 0, 0 }
+};
 
 class MultiIniFieldParse
 {
@@ -160,7 +187,7 @@ public:
 void GloriousChargeUpdateModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	Rva0044EB54::buildFieldParse(parse);
-	parse.add(reinterpret_cast<const FieldParse *>(0x00C550C8), 0);
+	parse.add(g_00C550C8GloriousChargeFieldParse, 0);
 }
 
 class GiveOrRestoreUpgradeSpecialPowerModuleData
