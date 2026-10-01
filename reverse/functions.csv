@@ -45676,3 +45676,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??_GRva005E16DA@@UAEPAXI@Z,,0x005E184E,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-20-005E184E.cpp,matched,chain from 0x005E16FD rowed dtor plus delete vtable 0x00877A30
 ?rva005E16B9@Rva005E16B9@@QAEPBVImage@@XZ,,0x005E16B9,33,Code/GameEngine/Source/Common/Rva005E16B9.cpp,matched,leaf image lookup via member AsciiString at +8 rowed callees
 ?rva005E187A@Rva005E187A@@QAEX_N@Z,,0x005E187A,33,Code/GameEngine/Source/Common/Rva005E187A.cpp,matched,unlock bool setter byte at +0x20 iface at +0x18 slot3 callers push 0 and 1
+?Rva005E1A87Copy@@YAPAUTreeHintRef00217D4C@@PBU1@0PAU1@@Z,,0x005E1A87,47,Code/GameEngine/Source/Common/Rva005E1A87Copy.cpp,matched,unlock TreeHintRef copy via rowed operatorassign sar2 loop caller 0x004F6A35
