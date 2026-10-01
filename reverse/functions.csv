@@ -45372,3 +45372,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??1Rva005F6A58@@UAE@XZ,,0x005F6A58,56,Code/GameEngine/Source/Common/Rva005F6A58Dtor.cpp,matched,chain dtor via helper 0x005F697C plus base 0x005F6941
 ??1Rva005F6AB0@@UAE@XZ,,0x005F6AB0,56,Code/GameEngine/Source/Common/Rva005F6AB0Dtor.cpp,matched,chain dtor via helper 0x005F697C plus base 0x005F69F5
 ??4Rva002E077F@@QAEAAV0@ABV0@@Z,,0x002E077F,45,Code/GameEngine/Source/Common/Rva002E077FAssign.cpp,matched,operator= copying 6 dwords plus return this
+?rva002E0BEB@Rva002E0BEB@@QAEXPAX@Z,,0x002E0BEB,64,Code/GameEngine/Source/Common/Rva002E0BEBMethod.cpp,matched,copy two-wide then conditional add callees rowed
