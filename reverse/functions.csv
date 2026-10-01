@@ -46705,3 +46705,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva0036426E@Rva0036426E@@QAEXPAUFreeNode@@@Z,,0x0036426E,45,Code/GameEngine/Source/GameLogic/AI/PathRva0036426E.cpp,matched,recursive free via plus8 plus12 with rowed free
 ?Rva003BBF23Disable@@YGXPAVParameter@@_N@Z,,0x003BBF23,46,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BAAD6.cpp,matched,leaf caller 0x003CC4CC ScriptEngine getUnitNamed Object setDisabledUntil
 ?Rva003BBF51Set@@YGXPAVParameter@@M@Z,,0x003BBF51,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBF51.cpp,matched,gap caller 0x003CC4A7 ScriptEngine getUnitNamed float store
+?rva004590C5@Rva004590C5@@QAEXXZ,,0x004590C5,33,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdate/Rva004590C5.cpp,matched,chain via 0x0045906E same this plus setWakeFrame
