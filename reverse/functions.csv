@@ -46052,3 +46052,4 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?_M_fill_insert@?$vector@UBfmeStringRecord005DDD40@@V?$allocator@UBfmeStringRecord005DDD40@@@_STL@@@_STL@@QAEXPAUBfmeStringRecord005DDD40@@IABU3@@Z,,0x005DE651,260,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5de651_fill_insert.cpp,matched,
 ?rva001D901B@Rva001D901B@@QBEPBVArmorTemplate@@ABVAsciiString@@@Z,,0x001D901B,47,Code/GameEngine/Source/GameLogic/Object/ArmorStoreFind.cpp,matched,NameKey plus Armor pointer map find via rowed nameToKey and pinned M_find
 ?Rva004349C3Get@@YAXPAI0@Z,,0x004349C3,44,Code/Libraries/Source/WWVegas/WWLib/stlport_stackrand_004349C3.cpp,matched,stack-seeded two-out table fetch sibling of 0x00434969
+??0Rva00434D7A@@QAE@PAI0@Z,,0x00434D7A,141,Code/Libraries/Source/WWVegas/WWLib/stlport_ctor_00434D7A.cpp,matched,ctor calls rowed 0x004349C3 sibling of 0x00434C67
