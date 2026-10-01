@@ -46724,3 +46724,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ??0Rva00463736@@QAE@ABEI@Z,,0x00463736,42,Code/GameEngine/Source/Common/Rva00463736Ctor.cpp,matched,chain derived of 0x00463469 plus head init unblocks 0x00463D59
 ?Rva003BBB36Enable@@YAXXZ,,0x003BBB36,27,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBAD3.cpp,matched,leaf caller 0x003CBF3E InGameUI Mouse enable
 ?rva_00409810@Rva00409850SubObject@@QAEXABUBlock3@@@Z,,0x00362675,30,Code/GameEngine/Source/Common/Bfme/Rva00409930SlotArray.cpp,matched,inlined Block3 copy via rowed setPos same TU
+?Rva002AAC9EEqual@@YAHPBURva002AAC9ERange@@0@Z,,0x002AAC9E,61,Code/Libraries/Source/WWVegas/WWLib/Rva002AAC9EEqual.cpp,matched,float-range equal via size xor plus Rva002AA32FEqual caller 0x002ADC03
