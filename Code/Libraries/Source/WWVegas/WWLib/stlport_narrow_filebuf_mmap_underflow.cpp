@@ -124,7 +124,8 @@ private:
 	unsigned char m_regular_file;
 	unsigned char m_pad;
 
-	static unsigned int _M_page_size;
+protected:
+	static unsigned int _M_page_size;	// protected in STLport's _fstream.h
 };
 
 template <class CharT, class Traits>
