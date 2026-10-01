@@ -45628,3 +45628,8 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?winGetInstanceData@GameWindow@@QAEPAVWinInstanceData@@XZ,,0x00314046,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winGetNext@GameWindow@@QAEPAV1@XZ,,0x003140F1,7,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?winGetOwner@GameWindow@@QAEPAV1@XZ,,0x005C4AF9,4,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
+?imbue@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAEXABVlocale@2@@Z,,0x00180FD0,3,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+?showmanyc@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAEHXZ,,0x0065CE90,3,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+?sync@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAEHXZ,,0x0065CE90,3,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+?setbuf@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAEPAV12@PADH@Z,,0x00013570,5,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+?overflow@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAEHH@Z,,0x0001CA70,6,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,

@@ -11,7 +11,7 @@
 // underflow and pbackfail each return eof, which for char_traits<char> is the
 // int -1, so each is an or eax, -1 and a return. The narrow streambuf vtable
 // holds 0x0001CA70 in both slot 9 and slot 12, so overflow folded onto
-// pbackfail; that alias is pinned rather than given a row of its own.
+// pbackfail; it is rowed below as that body's ICF twin.
 
 namespace _STL
 {
@@ -25,6 +25,8 @@ public:
 	static int_type eof() { return -1; }
 };
 
+class locale;
+
 template <class CharT, class Traits>
 class basic_streambuf
 {
@@ -36,6 +38,16 @@ public:
 protected:
 	virtual int_type underflow() { return Traits::eof(); }
 	virtual int_type pbackfail(int_type c) { return Traits::eof(); }
+
+	// The other trivial upstream defaults, each folded in retail with the
+	// wide instantiation's identical body: imbue (0x00180FD0, ret 4),
+	// showmanyc and sync (0x0065CE90, return 0), setbuf (0x00013570, return
+	// this) and overflow (0x0001CA70, return eof, with pbackfail).
+	virtual void imbue(const locale &) {}
+	virtual int showmanyc() { return 0; }
+	virtual int sync() { return 0; }
+	virtual basic_streambuf *setbuf(CharT *, int) { return this; }
+	virtual int_type overflow(int_type c) { return Traits::eof(); }
 };
 
 template class basic_streambuf<char, char_traits<char> >;
