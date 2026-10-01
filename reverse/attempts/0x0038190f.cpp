@@ -1,8 +1,8 @@
 // ?Rva0038190FSendChat@@YA_NABVUnicodeString@@ABV?$vector@IV?$allocator@I@_STL@@@_STL@@@Z
-// partial score=0.9 date=2026-09-30
+// partial score=0.91 date=2026-10-01
 // ?Rva0038190FSendChat@@YA_NABVUnicodeString@@ABV?$vector@IV?$allocator@I@_STL@@@_STL@@@Z
 // partial score=0.90 date=2026-09-30
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?Rva0038190FSendChat@@YA_NABVUnicodeString@@ABV?$vector@IV?$allocator@I@_STL@@@_STL@@@Z @0x0038190F (440B)
 // Chat send via TheNetwork: builds recipient mask from slot list, formats via TheGameText fetch.

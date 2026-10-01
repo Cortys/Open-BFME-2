@@ -36,14 +36,41 @@ typedef int PlayerMaskType;
 #define MAX_PLAYER_COUNT 20
 #define BitTest(x, i) (((x) & (i)) != 0)
 
+class PlayerSub60
+{
+public:
+	Int m_pad18[6]; // 0x18 bytes
+	Int m_18; // +0x18 (Player+0x78)
+	Int m_1C; // +0x1C (Player+0x7C)
+};
+
 class Player
 {
 public:
 	PlayerMaskType getPlayerMask() const { return 1 << m_playerIndex; }
 
-private:
 	unsigned char m_pad[0x54];
 	Int m_playerIndex; // +0x54
+	unsigned char m_pad58[0x60 - 0x58];
+	PlayerSub60 m_60; // +0x60
+};
+
+class Rva002AA245MovzxByteChaseField
+{
+public:
+	unsigned int get() const;
+};
+
+class Rva002AA22AByteField
+{
+public:
+	unsigned char get() const;
+};
+
+class ParticleSystem
+{
+public:
+	bool isSaveable() const;
 };
 
 class PlayerList
@@ -52,6 +79,7 @@ public:
 	Player *getNthPlayer(Int i);
 	Player *getPlayerFromMask(PlayerMaskType mask);
 	Player *getEachPlayerFromMask(PlayerMaskType &maskToAdjust);
+	int rva002A7C0B(bool flag);
 
 private:
 	unsigned char m_pad[0x14];
@@ -105,4 +133,29 @@ Player *PlayerList::getEachPlayerFromMask(PlayerMaskType &maskToAdjust)
 
 	maskToAdjust = 0;
 	return NULL;
+}
+
+int PlayerList::rva002A7C0B(bool flag)
+{
+	int count = 0;
+	for (int i = 0; i < MAX_PLAYER_COUNT; i++)
+	{
+		Player *player = getNthPlayer(i);
+		if (!player)
+			continue;
+		if (!(unsigned char)((Rva002AA245MovzxByteChaseField *)player)->get())
+			continue;
+		if (((Rva002AA22AByteField *)player)->get())
+			continue;
+		if (((ParticleSystem *)player)->isSaveable())
+			continue;
+		if (flag)
+		{
+			PlayerSub60 *s = &player->m_60;
+			if (s)
+				count += s->m_18 + s->m_1C;
+		}
+		count++;
+	}
+	return count;
 }
