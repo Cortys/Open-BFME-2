@@ -45023,3 +45023,4 @@ _FreeGame,,0x00606EE0,101,Code/GameEngine/Source/GameNetwork/GameSpy/gstats/gsta
 ??1Rva00001E13@@QAE@XZ,,0x00001E13,8,Code/Libraries/Source/ATL/Rva00001E13Dtor.cpp,matched,leaf wrapper dtor add ecx 4 jmp rowed W3DRadarResetSurface dtor
 ?rva0028F4BC@Object@@QAEPAVRva00373EC6@@XZ,,0x0028F4BC,51,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028F4BC.cpp,matched,list search via rowed 0x373EC6 same-this Object caller
 ??1Rva0037B5DF@@QAE@XZ,,0x0037B5DF,105,Code/GameEngine/Source/Common/System/Rva0037B5DFDtor.cpp,matched,nonvirtual dtor five wide plus one narrow via releaseBuffer rows
+?rva0037B146@Rva0037B146@@QAEXXZ,,0x0037B146,70,Code/GameEngine/Source/Common/System/Rva0037B146Cleanup.cpp,matched,commandlist range delete via global delete
