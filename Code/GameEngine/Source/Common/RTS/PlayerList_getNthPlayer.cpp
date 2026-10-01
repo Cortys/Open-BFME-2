@@ -1,7 +1,9 @@
 // cl: /O1 /DNDEBUG /MD /EHsc
 //
 // ?getNthPlayer@PlayerList@@QAEPAVPlayer@@H@Z,
-// retail 0x002A7A29, 22 bytes, and
+// retail 0x002A7A29, 22 bytes,
+// ?getPlayerFromMask@PlayerList@@QAEPAVPlayer@@H@Z,
+// retail 0x002A7B91, 56 bytes, and
 // ?getEachPlayerFromMask@PlayerList@@QAEPAVPlayer@@AAH@Z,
 // retail 0x002A7BC9, 66 bytes.
 //
@@ -14,13 +16,17 @@
 // pointer array at +0x18 per the landed findPlayerWithNameKey row), where the
 // reference uses 32. Leaf, no pins.
 //
+// getPlayerFromMask: BFME1 reference PlayerList::getPlayerFromMask, zero
+// guard plus getNthPlayer loop over 20 slots comparing getPlayerMask.
+//
 // getEachPlayerFromMask: ZH donor GeneralsMD PlayerList.cpp. Target evidence:
 // thiscall ret 4 taking the mask by reference; walks getNthPlayer over the 20
 // slots, tests 1 << Player +0x54 (getPlayerMask) against the mask, clears
 // that bit and returns the player, else zeroes the mask and returns null.
-// Retail keeps the mask pointer in edx across the getNthPlayer call, which
-// cl only does when the callee was compiled earlier in the same TU, so both
-// bodies share this file as they shared retail's PlayerList.cpp.
+// Both loops keep a value in edx across the getNthPlayer call (the loop index
+// in getPlayerFromMask, the mask pointer here), which cl only does when the
+// callee was compiled earlier in the same TU, so the three bodies share this
+// file as they shared retail's PlayerList.cpp.
 
 typedef int Int;
 
@@ -44,6 +50,7 @@ class PlayerList
 {
 public:
 	Player *getNthPlayer(Int i);
+	Player *getPlayerFromMask(PlayerMaskType mask);
 	Player *getEachPlayerFromMask(PlayerMaskType &maskToAdjust);
 
 private:
@@ -60,6 +67,24 @@ Player *PlayerList::getNthPlayer(Int i)
 		return NULL;
 	}
 	return m_players[i];
+}
+
+// ?getPlayerFromMask@PlayerList@@QAEPAVPlayer@@H@Z
+Player *PlayerList::getPlayerFromMask(PlayerMaskType mask)
+{
+	if (mask == 0)
+		return NULL;
+
+	Player *player = NULL;
+	Int i;
+
+	for (i = 0; i < MAX_PLAYER_COUNT; i++)
+	{
+		player = getNthPlayer(i);
+		if (player && player->getPlayerMask() == mask)
+			return player;
+	}
+	return NULL;
 }
 
 // ?getEachPlayerFromMask@PlayerList@@QAEPAVPlayer@@AAH@Z
