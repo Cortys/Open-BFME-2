@@ -46084,3 +46084,5 @@ _$E1,,0x007ACCCA,12,Code/Libraries/Source/WWVegas/WW3D2/DebugStatisticsRecordTex
 ?winPrevTab@GameWindow@@QAEHXZ,,0x000D43D0,3,Code/GameEngine/Source/GameClient/GUI/GameWindowStatusUserData.cpp,matched,
 ?seekoff@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@JHH@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
 ?seekpos@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@MAE?AV?$fpos@H@2@V32@H@Z,,0x0001C970,20,Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_streambuf_defaults.cpp,matched,
+??0Rva004D7491@@QAE@PAVStateMachine@@@Z,,0x004D7491,27,Code/GameEngine/Source/Common/StateCtor.cpp,matched,State-derived ctor beside the base body so this stays in edx across the base call; hash 0xC17A0A70 vtable 0x00860668
+??0Rva004D74AC@@QAE@PAVStateMachine@@@Z,,0x004D74AC,27,Code/GameEngine/Source/Common/StateCtor.cpp,matched,State-derived ctor beside the base body so this stays in edx across the base call; hash 0xDF4D3EB3 vtable 0x008606B0
