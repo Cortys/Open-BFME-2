@@ -34,7 +34,7 @@ public:
 class BfmeStringTailRecord156
 {
 public:
-	BfmeStringTailRecord156() : m_ptr(0) {}
+  BfmeStringTailRecord156();
 	~BfmeStringTailRecord156();
 private:
 	OpaqueRefCounted *m_ptr;
