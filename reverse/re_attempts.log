@@ -4932,3 +4932,5 @@ FUN_006bfd13	0x002BFD13	64	blocked	unfolded twin of rowed 0x002896AA same 64B fr
 ?Rva0018C2E7Copy@@YAPAFPAURva0018C2E7Node@@0PAFPAXH@Z	0x0018C2E7	39	partial	register allocation ecx/dx vs edx/cx, order and size exact t=12 model=muse-10 score=0.95 stash=reverse/attempts/0x0018c2e7.cpp
 ??1Rva0018C262@@QAE@XZ	0x0018C3E6	56	partial	missing or ebp-4 -1 before free EH barrier base gives 52B t=14 model=muse-10 score=0.93 stash=reverse/attempts/0x0018c3e6.cpp
 ?rva0043CCFC@Rva0043D16F@@QAE_NPAVCreateAHeroData@@@Z	0x0043CCFC	64	blocked	bool early-return polarity inverted plus retail xor-inc tail vs ours mov-setne t=6 model=muse-18
+?rva004E5724@Rva004E5A24@@QAEXXZ	0x004E5724	194	blocked	vslot slot10 needs 110-virtual InGameUI plus 32-virtual Client plus own tail slot9; __thiscall typedef illegal in 7.1 t=12 model=muse-03
+?rva004E594E@Rva004E594E@@QAEPAV1@ABV?$StringBase@G@@PBURva004E594ESource@@H@Z	0x004E594E	96	blocked	vtable preload edi vs reload plus dead mov ebp+c esp; /Os same t=12 model=muse-03 (stash 0.93 kept)
