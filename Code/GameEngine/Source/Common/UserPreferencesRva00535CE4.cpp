@@ -262,6 +262,7 @@ public:
 	void rva0053638D(AsciiString arg, int x);
 	int rva005363D4(AsciiString arg);
 	void rva0053641E(AsciiString arg, int x);
+	int rva00536465(AsciiString arg);
 	void rva005364AF(AsciiString arg, int x);
 	void rva00536540(AsciiString arg, int x);
 	void rva005365D1(AsciiString arg, int x);
@@ -682,6 +683,16 @@ void UserPreferences::rva0053641E(AsciiString arg, int x)
 {
 	arg.concat("UnitsCreatedRTS");
 	v11(arg, x);
+}
+
+// ?rva00536465@UserPreferences@@QAEHVAsciiString@@@Z @0x00536465 74B
+// UserPreferences UnitsCreatedRTS-getter path: append UnitsCreatedRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat UnitsCreatedRTS 0x00868F6C slot 0x18 releaseBuffer gap same TU unlock.
+int UserPreferences::rva00536465(AsciiString arg)
+{
+	arg.concat("UnitsCreatedRTS");
+	int ret = v6(arg, 0);
+	return ret;
 }
 
 // ?rva005364AF@UserPreferences@@QAEXVAsciiString@@H@Z @0x005364AF 71B
