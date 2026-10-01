@@ -18,10 +18,8 @@
 class TextureBaseClass
 {
 public:
-	void Add_Ref() { m_refCount += 1; }
 	void Release_Ref();
 
-private:
 	unsigned char m_pad[4];
 	unsigned short m_refCount;
 };
@@ -88,7 +86,7 @@ ShareBufferClass<T>::ShareBufferClass(const ShareBufferClass<T> &that) :
 		TextureClass **srcSlot = &that.m_array[index];
 		TextureClass **dstSlot = &m_array[index];
 		if (*srcSlot != 0)
-			(*srcSlot)->Add_Ref();
+			(*srcSlot)->m_refCount += 1;
 		if (*dstSlot != 0)
 			(*dstSlot)->Release_Ref();
 		*dstSlot = *srcSlot;

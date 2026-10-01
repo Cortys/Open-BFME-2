@@ -58,29 +58,6 @@
  *   07/24/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
 // ?PivotClass::PivotClass present-unmatched
-PivotClass::PivotClass(void) :
-	Parent(NULL),
-	BaseTransform(1),
-	Transform(1),
-#ifdef LAZY_CAP_MTX_ALLOC
-	CapTransformPtr(NULL),
-	Index(0),
-	IsVisible(true),
-	WorldSpaceTranslation(false)
-#else
-	CapTransform(1),
-	Index(0),
-	IsVisible(true),
-	PivotFade(1.0f),
-	WorldSpaceTranslation(false),
-	IsCaptured(false),
-	Unused(false)
-#endif
-{
-	Name[0] = 0;
-}
-
-// ?PivotClass::PivotClass present-unmatched
 PivotClass::PivotClass(const PivotClass& that) :
 	Parent(that.Parent),
 	BaseTransform(that.BaseTransform),
@@ -108,38 +85,6 @@ PivotClass::PivotClass(const PivotClass& that) :
 		CapTransformPtr->Mat = that.CapTransformPtr->Mat;
 	}
 #endif
-}
-
-// ?PivotClass::operator= present-unmatched
-PivotClass& PivotClass::operator=(const PivotClass& that)
-{
-	if (this != &that)
-	{
-		memcpy(Name, that.Name, sizeof(Name));
-		Parent = that.Parent;
-		BaseTransform = that.BaseTransform;
-		Transform = that.Transform;
-	#ifdef LAZY_CAP_MTX_ALLOC
-		CapTransformPtr = NULL;
-		Index = that.Index;
-		IsVisible = that.IsVisible;
-		WorldSpaceTranslation = that.WorldSpaceTranslation;
-		if (that.CapTransformPtr != NULL)
-		{
-			CapTransformPtr = MSGW3DNEW("PivotClassCaptureBoneMtx") DynamicMatrix3D;
-			CapTransformPtr->Mat = that.CapTransformPtr->Mat;
-		}
-	#else
-		CapTransform = that.CapTransform;
-		Index = that.Index;
-		IsVisible = that.IsVisible;
-		PivotFade = that.PivotFade;
-		WorldSpaceTranslation = that.WorldSpaceTranslation;
-		IsCaptured = that.IsCaptured;
-		Unused = that.Unused;
-	#endif
-		}
-	return *this;
 }
 
 // ?PivotClass::Capture_Update present-unmatched
@@ -177,4 +122,3 @@ void PivotClass::Capture_Update(void)
 #endif
 	}
 }
-

@@ -65,6 +65,8 @@
 #include "dx8caps.h"
 #include "meshmdl.h"
 
+// The BFME2 ShaderClass specialization is defined in sharebuf_shader_copy_ctor.cpp.
+template<> ShareBufferClass<ShaderClass>::~ShareBufferClass(void);
 
 /**************************************************************************************************
 **

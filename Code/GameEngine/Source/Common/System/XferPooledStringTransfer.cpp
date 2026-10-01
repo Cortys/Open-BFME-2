@@ -131,7 +131,6 @@ class PooledString
 {
 public:
     PooledString &operator=(const AsciiString &that);
-    int getLength() const { return (int)strlen(m_entry->m_text); }
     const char *str() const { return m_entry->m_text; }
 
     PooledStringEntry *m_entry;
@@ -196,7 +195,7 @@ Xfer &Xfer::operator==(PooledString &ps)
 {
     if (IsStoring())
     {
-        int length = ps.getLength();
+        int length = (int)strlen(ps.m_entry->m_text);
         if (length >= 255)
         {
             unsigned char marker = 255;

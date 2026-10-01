@@ -94,6 +94,7 @@
 // only (same technique as BFME1's meshmatdesc.cpp; layout-safe, the macro
 // adds no data members or vtable slots).
 #include "always.h"
+#include "../../../../../reference/shims/bfmefrustum/plane.h"
 #pragma push_macro("W3DMPO_GLUE")
 #undef W3DMPO_GLUE
 #define W3DMPO_GLUE(ARGCLASS)
