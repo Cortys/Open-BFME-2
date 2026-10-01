@@ -1,16 +1,18 @@
-// ??0Rva00524B7A@@QAE@XZ
-// partial score=0.93 date=2026-09-27
-// ??0Rva00524B7A@@QAE@XZ
-// partial score=0.93 date=2026-09-27
 // cl: /O1 /MD
-// ??0Rva00524B7A@@QAE@XZ @0x00524B7A (58B): ctor with explicit vtable in the
-// middle via single-class model plus baseConstruct through a cast. Calls
-// pinned base 0x001B4E63; sole caller Locomotor 0x005C9716 at +0x218.
-// Single-class keeps source order per Rva005A7A90Ctor precedent. Honest owner.
+// ??0Rva00524B7A@@QAE@XZ @0x00524B7A 58B
+// Ctor with explicit vtable in the middle via single-class model plus
+// baseConstruct through a cast. Calls rowed base 0x001B4E63; sole caller
+// Locomotor 0x005C9716 at +0x218. Single-class keeps source order per
+// Rva005A7A90Ctor precedent. Honest owner.
+extern const void *const g_00C67DFC[];
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
+
 class BFME2NativeNetwork
 {
 public:
-	void baseConstruct();
+	BFME2NativeNetwork *baseConstruct();
 };
 
 class Rva00524B7A
@@ -35,7 +37,6 @@ private:
 	int m_34;
 	int m_38;
 };
-
 Rva00524B7A::Rva00524B7A()
 {
 	((BFME2NativeNetwork *)this)->baseConstruct();
@@ -45,7 +46,8 @@ Rva00524B7A::Rva00524B7A()
 	m_20 = 0;
 	m_2C = 0;
 	m_30 = 0;
-	m_vtable = (void *)0x00C67DFC;
+	m_vtable = (void *)g_00C67DFC;
+	_ReadWriteBarrier();
 	m_34 = 0;
 	m_38 = 0;
 	m_10 = 0;
