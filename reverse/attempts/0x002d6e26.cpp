@@ -1,8 +1,6 @@
 // ?tryNextFrame@Anim2D@@IAEXXZ
-// partial score=0.93 date=2026-09-28
-// ?tryNextFrame@Anim2D@@IAEXXZ
-// partial score=0.93 date=2026-09-28
-// cl: /O1 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad
+// partial score=0.99 date=2026-10-01
+// cl: /O1 /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad
 // stlport
 #define Matrix4x4 Matrix4  // BFME renamed it
 /*
@@ -281,8 +279,7 @@ void Anim2D::setCurrentFrame( UnsignedShort frame )
 // ------------------------------------------------------------------------------------------------
 /** Randomize the current frame */
 // ------------------------------------------------------------------------------------------------
-#line 424 "F:\\\\bfme\\\\Code\\\\gameengine\\\\Source\\\\GameClient\\\\System\\\\Anim2D.cpp"
-// ?randomizeCurrentFrame@Anim2D@@QAEXXZ present-unmatched
+#line 424 "C:\\\\projects\\\\bfme2patch103\\\\bfme2\\\\Code\\\\GameEngine\\\\Source\\\\GameClient\\\\System\\\\Anim2D.cpp"
 void Anim2D::randomizeCurrentFrame( void )
 {
 
@@ -298,7 +295,6 @@ void Anim2D::randomizeCurrentFrame( void )
 // ------------------------------------------------------------------------------------------------
 /** Reset this animation instance to the "start" of the animation */
 // ------------------------------------------------------------------------------------------------
-// ?reset@Anim2D@@QAEXXZ present-unmatched
 void Anim2D::reset( void )
 {
 
@@ -346,7 +342,7 @@ void Anim2D::tryNextFrame( void )
 										  m_template->getName().str()) );
 
 	// how many frames have passed since our last update
-	if( TheRva00DFE77C->slot1F() - m_lastUpdateFrame >= m_framesBetweenUpdates )
+	if( TheGameClient->getFrame() - m_lastUpdateFrame >= m_framesBetweenUpdates )
 	{
 
 		switch( m_template->getAnimMode() )
@@ -484,7 +480,6 @@ void Anim2D::setStatus( UnsignedByte statusBits )
 // ------------------------------------------------------------------------------------------------
 /** Clear status bit */
 // ------------------------------------------------------------------------------------------------
-// ?clearStatus@Anim2D@@QAEXE@Z present-unmatched
 void Anim2D::clearStatus( UnsignedByte statusBits )
 {
 
@@ -496,32 +491,14 @@ void Anim2D::clearStatus( UnsignedByte statusBits )
 // ------------------------------------------------------------------------------------------------
 /** Return the "natural" width of the image for our current frame */
 // ------------------------------------------------------------------------------------------------
-// ?getCurrentFrameWidth@Anim2D@@QBEIXZ present-unmatched
-UnsignedInt Anim2D::getCurrentFrameWidth( void ) const
-{
-	const Image *currentFrameImage = m_template->getFrame( m_currentFrame );
-
-	if( currentFrameImage )
-		return currentFrameImage->getImageWidth();
-	
-	return 0;
-
-}  // end getCurrentFrameWidth
+// Anim2D::getCurrentFrameWidth: defined in Anim2DCurrentFrameWidth.cpp (its row's unit).
+  // end getCurrentFrameWidth
 
 // ------------------------------------------------------------------------------------------------
 /** Return the "natural" height of the image for our current frame */
 // ------------------------------------------------------------------------------------------------
-// ?getCurrentFrameHeight@Anim2D@@QBEIXZ present-unmatched
-UnsignedInt Anim2D::getCurrentFrameHeight( void ) const
-{
-	const Image *currentFrameImage = m_template->getFrame( m_currentFrame );
-
-	if( currentFrameImage )
-		return currentFrameImage->getImageHeight();
-	
-	return 0;
-
-}  // end getCurrentFrameHeight
+// ?getCurrentFrameHeight@Anim2D@@QBEIXZ
+// Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCurrentFrameHeight.cpp.
 
 // ------------------------------------------------------------------------------------------------
 /** Drawing an Anim2D using a forced width and height */
@@ -671,7 +648,7 @@ void Anim2DCollection::update( void )
 // Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCollectionTemplates.cpp.
 
 //-------------------------------------------------------------------------------------------------
-// ?getNextTemplate@Anim2DCollection@@QBEPAVAnim2DTemplate@@PAV2@@Z present-unmatched
+// ?getNextTemplate@Anim2DCollection@@QBEPAVAnim2DTemplate@@PAV2@@Z
 Anim2DTemplate* Anim2DCollection::getNextTemplate( Anim2DTemplate *animTemplate ) const
 {
 	if( animTemplate )

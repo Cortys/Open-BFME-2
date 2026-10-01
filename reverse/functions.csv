@@ -45707,3 +45707,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?init@SmudgeManager@@UAEXXZ,,0x000B3FD0,1,Code/GameEngine/Source/GameClient/SmudgeManagerInit.cpp,matched,
 ?rva0040314A@Rva0040314A@@QAEIXZ,,0x0040314A,20,Code/GameEngine/Source/Common/Rva0040314AMin.cpp,matched,guarded unsigned min; /arch:SSE gives the retail cmovb and fixes the banked partial; call sites 0x00403DAC 0x00403DB9 0x004040C7
 ?rva0039B683@Rva0039B683@@QAEXM@Z,,0x0039B683,37,Code/GameEngine/Source/Common/Rva0039B683Add.cpp,matched,gated float accumulate at +0xF8 on TheGameLogic +0x98; delta-first add and real global fix the banked partial; call sites 0x002AA6BD 0x002AA736
+?reset@Anim2D@@QAEXXZ,,0x002D6B93,41,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,ZH Anim2D::reset; TU now built with /G7 (all existing rows still match) which fixes the banked partial
