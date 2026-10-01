@@ -27,11 +27,22 @@ class Rva0046AC30
 public:
 	void *rva0046AC30(const Rva00469BEA &v);
 };
+struct Rva0046E455Pair {
+	Rva0046E455Node *first;
+	bool second;
+	Rva0046E455Pair(Rva0046E455Node *f, bool s);
+	Rva0046E455Pair(Rva0046E455Iter it, bool s);
+};
+// ??0Rva0046E455Pair@@QAE@PAURva0046E455Node@@_N@Z present-unmatched
+inline Rva0046E455Pair::Rva0046E455Pair(Rva0046E455Node *f, bool s) : first(f), second(s) {}
+// ??0Rva0046E455Pair@@QAE@URva0046E455Iter@@_N@Z present-unmatched
+inline Rva0046E455Pair::Rva0046E455Pair(Rva0046E455Iter it, bool s) : first(it.node), second(s) {}
 namespace _STL {
 struct _Rb_tree_node_base {};
 	template <typename D> class _Rb_global {
 	public:
 		static void _Rebalance(_Rb_tree_node_base *x, _Rb_tree_node_base *&root);
+		static _Rb_tree_node_base *_M_decrement(_Rb_tree_node_base *x);
 	};
 }
 struct Rva0046E455
@@ -39,6 +50,7 @@ struct Rva0046E455
 	Rva0046E455Node *_head;
 	unsigned int _size;
 	Rva0046E455Iter rva0046E455(Rva0046E455Node *x, Rva0046E455Node *y, const Rva00469BEA &v, Rva0046E455Node *w);
+	Rva0046E455Pair rva0046E4DD(const Rva00469BEA &v);
 };
 Rva0046E455Iter Rva0046E455::rva0046E455(Rva0046E455Node *x, Rva0046E455Node *y, const Rva00469BEA &v, Rva0046E455Node *w)
 {
@@ -65,4 +77,25 @@ Rva0046E455Iter Rva0046E455::rva0046E455(Rva0046E455Node *x, Rva0046E455Node *y,
 	_STL::_Rb_global<bool>::_Rebalance((_STL::_Rb_tree_node_base *)z, (_STL::_Rb_tree_node_base *&)_head->_parent);
 	++_size;
 	return Rva0046E455Iter(z);
+}
+Rva0046E455Pair Rva0046E455::rva0046E4DD(const Rva00469BEA &v)
+{
+	Rva0046E455Node *header = _head;
+	Rva0046E455Node *x = header->_parent;
+	Rva0046E455Node *y = header;
+	bool comp = true;
+	while (x != 0) {
+		y = x;
+		comp = v.m_key00 < x->_key10;
+		x = comp ? x->_left : x->_right;
+	}
+	Rva0046E455Node *j = y;
+	if (comp) {
+		if (j == header->_left)
+			return Rva0046E455Pair(rva0046E455(y, y, v, 0), true);
+		j = (Rva0046E455Node *)_STL::_Rb_global<bool>::_M_decrement((_STL::_Rb_tree_node_base *)y);
+	}
+	if (j->_key10 < v.m_key00)
+		return Rva0046E455Pair(rva0046E455(x, y, v, 0), true);
+	return Rva0046E455Pair(j, false);
 }
