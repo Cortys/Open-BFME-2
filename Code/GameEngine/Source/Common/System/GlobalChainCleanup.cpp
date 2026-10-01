@@ -5,6 +5,7 @@
 // saves each first-word next pointer, frees the node through the matched
 // game allocator _free (0x00030830), then updates the global at VA E07C08.
 extern "C" void __cdecl free(void *);
+extern "C" int __cdecl atexit(void (__cdecl *callback)());
 
 struct RvaCleanupNode
 {
@@ -31,4 +32,10 @@ void rva007B9C80()
         free(g_chainHeadAtE1D060);
         g_chainHeadAtE1D060 = next;
     }
+}
+
+// 12B registration body, bounded by int3 at 7B540F and after ret7B541B.
+void rva007B5410()
+{
+    atexit(rva007B9A50);
 }
