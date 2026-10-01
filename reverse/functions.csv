@@ -45472,3 +45472,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ?Rva0020F569Alloc@@YGPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0020F569,37,Code/GameEngine/Source/Common/RTS/Rva0020F569Alloc.cpp,matched,hashtable node alloc via rowed allocate plus Construct
 ?write@Rva0020F58E@@QAEHPAD@Z,,0x0020F58E,37,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref concat write via rowed writes
 ?length@Rva0020F58E@@QBEHXZ,,0x0020F0D3,27,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref length via rowed length
+??BRva0020F58E@@QAE?AVAsciiString@@XZ,,0x0020F712,98,Code/GameEngine/Source/Common/System/RegistryAsciiPath.cpp,matched,PlusText plus Ref materializer via length write

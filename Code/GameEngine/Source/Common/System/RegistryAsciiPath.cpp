@@ -594,8 +594,11 @@ struct Rva0020F58E
 	AsciiStringRef m_second;
 	int length() const;
 	int write(char *dst);
+	operator AsciiString();
 };
 
+// ??BRva0020F58E@@QAE?AVAsciiString@@XZ @0x0020F712 98B narrow materializer via length plus write plus getBufferForRead.
+// Evidence: chain lane calls just-landed length 0x0020F0D3 plus write 0x0020F58E; same 98B shape as Rva002226E5TextPlusString materializer.
 int Rva0020F58E::length() const
 {
 	return m_first.length() + m_second.m_string->getLength();
@@ -605,6 +608,13 @@ int Rva0020F58E::write(char *dst)
 {
 	int n = m_first.write(dst);
 	return n + m_second.write(dst + n);
+}
+
+Rva0020F58E::operator AsciiString()
+{
+	AsciiString tmp;
+	write(tmp.getBufferForRead(length()));
+	return tmp;
 }
 
 // ??BWinMainTitlePair@@QAE?AVAsciiString@@XZ @0x0010BA9F 101B
