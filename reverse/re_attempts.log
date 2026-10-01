@@ -5151,3 +5151,4 @@ FUN_0091e471	0x0051E471	63	blocked	EH dtor-like with StringBase array no donor c
 ?rva003B372D@Rva003B372D@@QAEXPAVDataChunkOutput@@@Z	0x003B372D	155	blocked	structural wall ours 172 vs retail 155 (+17) with 10 regions; early-return concat loop vs retail pop-ecx plus push-esi xor-esi prologue and shr not sar plus bl-flag shape; register and stack-slot allocation differs throughout t=5 model=muse-spark
 ?rva000EF154@Rva000EF154@@QAEXHHM@Z	0x000EF154	278	blocked	EH SSE GeometryInfo loop with unknown owner layout and 3 float globals t=12 model=muse-08
 ?rva000EF63F@Rva000EF63F@@QAEHHHHHH@Z	0x000EF63F	354	blocked	D3D COM texture lock copy with 5 vtable calls and unknown owner layout t=8 model=muse-08
+_bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in ebx not edx; final newstate0 in eax plus esi not edx plus esi with store delayed into temper; 279B vs 281B first loop exact t=18 model=muse-19 score=0.9 stash=reverse/attempts/0x0070f710.cpp
