@@ -45727,3 +45727,4 @@ __purecall,,0x0003B810,62,Code/Libraries/Source/debug/debug_purecall.cpp,matched
 ??0Rva005D8317@@QAE@H@Z,,0x005D835A,65,Code/GameEngine/Source/Common/Rva005D8317Ctor.cpp,matched,vtable 0x00875FEC base 0x005EE2E6 TheGameLogic vector erase
 ??0Rva005D84F6@@QAE@XZ,,0x005D8539,56,Code/GameEngine/Source/Common/Rva005D84F6Ctor.cpp,matched,vtable 0x008760A4 base ctor 0x005EE2E6 TheGameLogic+0x40 erase vector at 0x00E06670
 ??0Rva005D8723@@QAE@XZ,,0x005D8711,18,Code/GameEngine/Source/Common/Rva005EEDAADerived.cpp,matched,ctor stores vtable 0x00876168 after base ctor 0x005EED92
+??0Rva005D8964@@QAE@XZ,,0x005D8952,18,Code/GameEngine/Source/Common/Rva005EE2A0Derived.cpp,matched,ctor stores vtable 0x008761C4 after base ctor 0x005EE28C
