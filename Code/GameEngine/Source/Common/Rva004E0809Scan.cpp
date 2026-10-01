@@ -25,6 +25,7 @@ class Rva004E0809
 {
 public:
 	void rva004E0809();
+	void rva004E0845();
 	char m_pad[0x30];
 	Rva004E0809Elem **m_begin;
 	Rva004E0809Elem **m_end;
@@ -45,4 +46,11 @@ void Rva004E0809::rva004E0809()
 		if (b)
 			m_44 = b;
 	}
+}
+void Rva004E0809::rva004E0845()
+{
+	Rva004E0809Elem **p = m_begin;
+	Rva004E0809Elem **end = m_end;
+	for (; p != end; ++p)
+		(*p)->vf4();
 }

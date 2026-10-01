@@ -46155,3 +46155,4 @@ _peerAuthenticateCDKey,,0x00699BB0,146,Code/GameEngine/Source/GameNetwork/GameSp
 ?rva001E4954@Rva001E4954@@QAEXPAURva001E4954Node@@@Z,,0x001E4954,45,Code/GameEngine/Source/Common/Rva001E4954Destroy.cpp,matched,unlock sibling tree destroy recurse +0xc free nodes via +8
 ??4Rva004213A2@@QAEAAV0@ABV0@@Z,,0x004213A2,57,Code/GameEngine/Source/Common/Rva004213A2Assign.cpp,matched,unlock lane empty base plus strings plus vector uint
 ?rva004E0809@Rva004E0809@@QAEXXZ,,0x004E0809,60,Code/GameEngine/Source/Common/Rva004E0809Scan.cpp,matched,unlock lane virtual scan slots 0x20 0x28 to +0x40 +0x44
+?rva004E0845@Rva004E0809@@QAEXXZ,,0x004E0845,27,Code/GameEngine/Source/Common/Rva004E0809Scan.cpp,matched,unlock lane sibling scan calls slot 0x10 over same range
