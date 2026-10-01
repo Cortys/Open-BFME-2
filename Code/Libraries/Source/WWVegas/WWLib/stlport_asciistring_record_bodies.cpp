@@ -26,16 +26,16 @@ struct BfmeAssignRecord24 { AsciiString s; int a[5]; };
 inline bool operator==(const BfmeAssignRecord24 &x, const BfmeAssignRecord24 &y) { return x.s == y.s; }
 struct BfmeAssignRecord28 { AsciiString s; int a[6]; };
 inline bool operator==(const BfmeAssignRecord28 &x, const BfmeAssignRecord28 &y) { return x.s == y.s; }
-struct BfmeAssignRecord32 { AsciiString s; int a[7]; };
+struct BfmeAssignRecord32 { AsciiString s; int a[7]; BfmeAssignRecord32 &operator=(const BfmeAssignRecord32 &); };
 inline bool operator==(const BfmeAssignRecord32 &x, const BfmeAssignRecord32 &y) { return x.s == y.s; }
-struct BfmeAssignRecord36 { AsciiString s; int a[8]; };
+struct BfmeAssignRecord36 { AsciiString s; int a[8]; BfmeAssignRecord36 &operator=(const BfmeAssignRecord36 &); };
 inline bool operator==(const BfmeAssignRecord36 &x, const BfmeAssignRecord36 &y) { return x.s == y.s; }
 struct BfmeAssignRecord44 { AsciiString s; int a[10]; };
 inline bool operator==(const BfmeAssignRecord44 &x, const BfmeAssignRecord44 &y) { return x.s == y.s; }
 struct BfmeAssignRecord52 { AsciiString s; int a[12]; };
 inline bool operator==(const BfmeAssignRecord52 &x, const BfmeAssignRecord52 &y) { return x.s == y.s; }
 struct BfmePod8 { int a[2]; };
-struct BfmeAssignRecord84 { AsciiString s; int a[20]; };
+struct BfmeAssignRecord84 { AsciiString s; int a[20]; BfmeAssignRecord84 &operator=(const BfmeAssignRecord84 &); };
 inline bool operator==(const BfmeAssignRecord84 &x, const BfmeAssignRecord84 &y) { return x.s == y.s; }
 struct BfmeStringHeadRecord148 { AsciiString s; int a[36]; };
 inline bool operator==(const BfmeStringHeadRecord148 &x, const BfmeStringHeadRecord148 &y) { return x.s == y.s; }
@@ -49,7 +49,7 @@ struct BfmeAssignRecord80 { int a[19]; AsciiString s; };
 inline bool operator==(const BfmeAssignRecord80 &x, const BfmeAssignRecord80 &y) { return x.s == y.s; }
 struct BfmeAssignRecord104 { int a[25]; AsciiString s; };
 inline bool operator==(const BfmeAssignRecord104 &x, const BfmeAssignRecord104 &y) { return x.s == y.s; }
-struct BfmeAssignRecord172 { int a[42]; AsciiString s; };
+struct BfmeAssignRecord172 { int a[42]; AsciiString s; BfmeAssignRecord172 &operator=(const BfmeAssignRecord172 &); };
 inline bool operator==(const BfmeAssignRecord172 &x, const BfmeAssignRecord172 &y) { return x.s == y.s; }
 struct BfmeStringTailRecord144 { int a[35]; AsciiString s; };
 inline bool operator==(const BfmeStringTailRecord144 &x, const BfmeStringTailRecord144 &y) { return x.s == y.s; }
@@ -57,6 +57,14 @@ struct BfmeStringTailRecord156 { int a[38]; AsciiString s; };
 inline bool operator==(const BfmeStringTailRecord156 &x, const BfmeStringTailRecord156 &y) { return x.s == y.s; }
 struct BfmeStringTailRecord180 { int a[44]; AsciiString s; };
 inline bool operator==(const BfmeStringTailRecord180 &x, const BfmeStringTailRecord180 &y) { return x.s == y.s; }
+namespace _STL {
+// Declared only: defined by their owning TUs. Declaring these explicit
+// specializations before the whole-class instantiations below suppresses
+// emission here; this file's bodies keep calling them by the same names.
+template <> void _Destroy<BfmeAssignRecord32 *>(BfmeAssignRecord32 *, BfmeAssignRecord32 *);
+template <> BfmeAssignRecord32 *vector<BfmeAssignRecord32, allocator<BfmeAssignRecord32> >::erase(BfmeAssignRecord32 *, BfmeAssignRecord32 *);
+template <> BfmeAssignRecord172 *vector<BfmeAssignRecord172, allocator<BfmeAssignRecord172> >::erase(BfmeAssignRecord172 *, BfmeAssignRecord172 *);
+}
 template class _STL::vector<BfmeAssignRecord24, _STL::allocator<BfmeAssignRecord24> >;
 template class _STL::vector<BfmeAssignRecord28, _STL::allocator<BfmeAssignRecord28> >;
 template class _STL::vector<BfmeAssignRecord32, _STL::allocator<BfmeAssignRecord32> >;
