@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib
+// cl: /Ireference/shims/bfme2_ascii /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/game/Libraries/Source/WWVegas/WWLib
 //
 // Twelve record copy bodies over one shape: a struct whose members include an
 // AsciiString, copied either by its own copy constructor (__thiscall, `ret 4`,
