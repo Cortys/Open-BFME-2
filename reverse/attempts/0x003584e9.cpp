@@ -1,5 +1,5 @@
 // ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
-// partial score=0.55 date=2026-10-01
+// partial score=0.95 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
 // stlport
 // ?getTeamNamed@ScriptEngine@@QAEPAVTeam@@VAsciiString@@_N@Z
@@ -185,39 +185,36 @@ Team *ScriptEngine::getTeamNamed(AsciiString name, Bool createIfMissing)
 
     Rva0039FE6COwner *factory = (Rva0039FE6COwner *)TheTeamFactory;
     TeamPrototype *teamPrototype = factory->findPrototype(normalized, name);
-    if (!teamPrototype)
-        goto nullTeam;
+    Team *team;
+    if (teamPrototype) {
+        if (teamPrototype->flags & 1) {
+            team = teamPrototype->firstInstance;
+            if (team) {
+                TeamState *status = &team->status;
+                if (!status->isActive()) {
+                    if (!createIfMissing)
+                        team = 0;
+                    else
+                        status->setActive();
+                }
+            }
+        } else {
+            if (teamPrototype->countTeamInstances() > 1) {
+                static int warnCount;
+                if (warnCount < 10) {
+                    ++warnCount;
+                    AppendDebugMessage(
+                        AsciiString("***Referencing multiple team by unspecific instance:***"), false);
+                    AppendDebugMessage(Rva0032B389Join(normalized, name), false);
+                }
+            }
 
-    if (teamPrototype->flags & 1) {
-        Team *team = teamPrototype->firstInstance;
-        if (!team)
-            goto nullTeam;
-        TeamState *status = &team->status;
-        if (!status->isActive()) {
-            if (!createIfMissing)
-                goto nullTeam;
-            status->setActive();
+            team = teamPrototype->firstInstance;
+            if (!team && createIfMissing)
+                team = ((Rva003A3CBBOwner *)TheTeamFactory)->createInstance(normalized, name);
         }
-        return team;
+    } else {
+        team = 0;
     }
-
-    if (teamPrototype->countTeamInstances() > 1) {
-        static int warnCount;
-        if (warnCount < 10) {
-            ++warnCount;
-            AppendDebugMessage(
-                AsciiString("***Referencing multiple team by unspecific instance:***"), false);
-            AppendDebugMessage(Rva0032B389Join(normalized, name), false);
-        }
-    }
-
-    Team *team = teamPrototype->firstInstance;
-    if (team)
-        return team;
-    if (!createIfMissing)
-        goto nullTeam;
-    return ((Rva003A3CBBOwner *)TheTeamFactory)->createInstance(normalized, name);
-
-nullTeam:
-    return 0;
+    return team;
 }
