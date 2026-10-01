@@ -1,12 +1,13 @@
-// ?Rva003A5572@Rva003AED3E@@UAEXXZ
-// partial score=0.97 date=2026-09-27
-// ?Rva003A5572@Rva003AED3E@@UAEXXZ
-// partial score=0.97 date=2026-09-27
 // cl: /DNDEBUG /MD /GX- /O1 /Ob2 /arch:SSE
 // ?Rva003A5572@Rva003AED3E@@UAEXXZ @0x003A5572 485B vslot1 of 0x0081C60C (Rva003AED3E) via BFME1 fxpswindmodule.cpp donor
 #include <math.h>
 
 extern float GetGameClientRandomValueReal(float lo, float hi, char *file, int line);
+extern const float BfmeZeroRange;
+extern float g_Va007C26F0;
+extern float g_Va00BBB8D8;
+extern float g_00C1B310;
+extern float g_00C1B4F0;
 
 class Rva003AED3E
 {
@@ -32,30 +33,29 @@ private:
 	bool m_at58;
 };
 
-// ?Rva003A5572@Rva003AED3E@@UAEXXZ present-unmatched
 void Rva003AED3E::Rva003A5572()
 {
 	const char *file = "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameClient\\System\\FXParticleSystem\\fxpswindmodule.cpp";
 	switch (m_at20) {
 	case 3:
-		if (m_at34 == 0.0f)
+		if (m_at34 == BfmeZeroRange)
 			m_at34 = GetGameClientRandomValueReal(m_at38, m_at3C, (char *)file, 0x154);
 		m_at30 += m_at34;
-		if (m_at30 > 6.2831855f)
-			m_at30 -= 6.2831855f;
+		if (m_at30 > g_00C1B310)
+			m_at30 -= g_00C1B310;
 		else if (m_at30 < 0.0f)
-			m_at30 += 6.2831855f;
+			m_at30 += g_00C1B310;
 		break;
 	case 2:
 		{
 			float lower = m_at40;
 			float upper = m_at4C;
-			float halfRange = (upper - lower) * 0.5f;
+			float halfRange = (upper - lower) * g_Va007C26F0;
 			float fabsInput = halfRange - m_at30 + lower;
 			float fabsResult = (float)fabs(fabsInput);
-			float speed = (1.0f - fabsResult / halfRange) * m_at34;
-			if (speed < 0.005f)
-				speed = 0.005f;
+			float speed = (g_Va00BBB8D8 - fabsResult / halfRange) * m_at34;
+			if (speed < g_00C1B4F0)
+				speed = g_00C1B4F0;
 			if (m_at58) {
 				m_at30 += speed;
 				if (m_at30 >= upper) {
