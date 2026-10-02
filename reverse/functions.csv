@@ -47604,3 +47604,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00512D47@Rva00512CE9@@QAE_NH@Z,,0x00512D47,14,Code/GameEngine/Source/Common/Rva00512CE9Kick.cpp,matched,getter m_286 array same offset as setter
 ?registerAnimation@Anim2DCollection@@QAEXPAVAnim2D@@@Z,,0x002D6C8B,34,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,Zero Hour donor registerAnimation retail head plus0x10
 ?newTemplate@Anim2DCollection@@QAEPAVAnim2DTemplate@@ABVAsciiString@@@Z,,0x002D7283,82,Code/GameEngine/Source/GameClient/System/Anim2DCollectionTemplates.cpp,matched,newTemplate via BFME1 donor and Anim2D head offsets
+?onDie@BridgeTowerBehavior@@UAEXPBVDamageInfo@@@Z,,0x00458A88,38,Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeTowerBehavior.cpp,matched,Zero Hour body; slot of the DieModuleInterface vftable BridgeTowerBehavior installs (this-adjust -4); kill() takes BFME 2's DAMAGE_UNRESISTABLE (8) where Zero Hour's default is 11

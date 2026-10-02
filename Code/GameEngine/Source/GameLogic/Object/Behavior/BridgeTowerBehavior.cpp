@@ -257,14 +257,16 @@ void BridgeTowerBehavior::onBodyDamageStateChange( const DamageInfo* damageInfo,
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?onDie@BridgeTowerBehavior@@ present-unmatched
 void BridgeTowerBehavior::onDie( const DamageInfo *damageInfo )
 {
 
-	// kill the bridge object, this will kill all the towers
+	// kill the bridge object, this will kill all the towers.  BFME 2 numbers
+	// DamageType differently from the Zero Hour Damage.h this unit includes:
+	// retail passes 8, BFME 2's DAMAGE_UNRESISTABLE (as SpawnBehavior_onSpawnDeath.cpp
+	// declares it), where Zero Hour's default argument would push 11.
 	Object *bridge = TheGameLogic->findObjectByID( getBridgeID() );
 	if( bridge )
-		bridge->kill();
+		bridge->kill( (DamageType)8 /* DAMAGE_UNRESISTABLE */ );
 
 }  // end onDie
 
