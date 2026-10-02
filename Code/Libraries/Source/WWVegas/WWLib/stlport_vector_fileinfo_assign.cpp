@@ -76,7 +76,7 @@ template <class ForwardIter>
 void _Destroy(ForwardIter first, ForwardIter last);
 }
 
-_STL::vector<MixFileCreator::FileInfoStruct, _STL::allocator<MixFileCreator::FileInfoStruct> > &_STL::vector<MixFileCreator::FileInfoStruct, _STL::allocator<MixFileCreator::FileInfoStruct> >::operator=(const vector &x)
+inline _STL::vector<MixFileCreator::FileInfoStruct, _STL::allocator<MixFileCreator::FileInfoStruct> > &_STL::vector<MixFileCreator::FileInfoStruct, _STL::allocator<MixFileCreator::FileInfoStruct> >::operator=(const vector &x)
 {
 	if (&x != this)
 	{
@@ -102,3 +102,15 @@ _STL::vector<MixFileCreator::FileInfoStruct, _STL::allocator<MixFileCreator::Fil
 	}
 	return *this;
 }
+
+// This vector assignment is a header inline in the copier unit; the anchor is not retail code.
+typedef _STL::vector<MixFileCreator::FileInfoStruct,
+		_STL::allocator<MixFileCreator::FileInfoStruct> > FileInfoVector;
+#pragma inline_depth(0)
+// ?_bfmeFileInfoVectorAssignInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFileInfoVectorAssignInlineAnchor()
+{
+	FileInfoVector *vector = static_cast<FileInfoVector *>(0);
+	*vector = *vector;
+}
+#pragma inline_depth()
