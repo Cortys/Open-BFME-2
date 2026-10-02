@@ -48457,3 +48457,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005255E2@Rva0052557E@@QAEXPBVAsciiString@@@Z,,0x005255E2,47,Code/GameEngine/Source/Common/Rva005255E2SetFaction.cpp,matched,chain via rowed 0x00525203 SetFaction caller 0x00527650
 ??0Rva00561D3D@@QAE@XZ,,0x00561D3D,87,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00561D3D.cpp,matched,honest ctor via rowed getInstance Init new StreakLine 0x19c and SetMode 2 with global
 ?xfer@StructureBody@@MAEXPAVXfer@@@Z,,0x004C0A16,54,Code/GameEngine/Source/Common/Rva004BF951Derived.cpp,matched,slot3 xfer via Version1 base IsLightCRC ObjectID at 0x100
+?rva005F61E4@Rva005F61E4@@QAEXXZ,,0x005F61E4,60,Code/GameEngine/Source/Common/Rva005F61E4.cpp,matched,flag clearer via rowed AptCall with _hide and team level
