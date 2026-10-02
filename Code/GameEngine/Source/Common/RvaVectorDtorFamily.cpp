@@ -343,3 +343,312 @@ Rva0040B560::~Rva0040B560()
 {
 	Rva0040B52EDestroy(m_start, m_finish);
 }
+
+struct Rva004F69C3;
+
+// ??1Rva0040E0EB@@QAE@XZ @0x0040E0EB 63B -> ??$_Destroy@PAURva004F69C3@@@_STL@@YAXPAURva004F69C3@@0@Z
+struct Rva0040E0EB : RvaVectorFamilyBase<Rva004F69C3>
+{
+	~Rva0040E0EB();
+};
+
+Rva0040E0EB::~Rva0040E0EB()
+{
+	_STL::_Destroy(m_start, m_finish);
+}
+
+struct DynamicPortalLink;
+
+// ??1Rva0042464E@@QAE@XZ @0x0042464E 63B -> ??$_Destroy@PAUDynamicPortalLink@@@_STL@@YAXPAUDynamicPortalLink@@0@Z
+struct Rva0042464E : RvaVectorFamilyBase<DynamicPortalLink>
+{
+	~Rva0042464E();
+};
+
+Rva0042464E::~Rva0042464E()
+{
+	_STL::_Destroy(m_start, m_finish);
+}
+
+// ??1Rva00426B73@@QAE@XZ @0x00426B73 63B -> ?Rva0032C0CADestroyPairs@@YAXPAURvaPair0032C0CA@@0@Z
+struct Rva00426B73 : RvaVectorFamilyBase<RvaPair0032C0CA>
+{
+	~Rva00426B73();
+};
+
+Rva00426B73::~Rva00426B73()
+{
+	Rva0032C0CADestroyPairs(m_start, m_finish);
+}
+
+// ??1Rva0045D137@@QAE@XZ @0x0045D137 63B -> ??$_Destroy@PAUOpaqueRefElement4@@@_STL@@YAXPAUOpaqueRefElement4@@0@Z
+struct Rva0045D137 : RvaVectorFamilyBase<OpaqueRefElement4>
+{
+	~Rva0045D137();
+};
+
+Rva0045D137::~Rva0045D137()
+{
+	_STL::_Destroy(m_start, m_finish);
+}
+
+struct Elem00467DCD;
+
+void __cdecl Rva00467DCDDestroy(Elem00467DCD *, Elem00467DCD *);
+
+// ??1Rva00467FCC@@QAE@XZ @0x00467FCC 63B -> ?Rva00467DCDDestroy@@YAXPAUElem00467DCD@@0@Z
+struct Rva00467FCC : RvaVectorFamilyBase<Elem00467DCD>
+{
+	~Rva00467FCC();
+};
+
+Rva00467FCC::~Rva00467FCC()
+{
+	Rva00467DCDDestroy(m_start, m_finish);
+}
+
+struct Rva0052BFB5Elem;
+
+void __cdecl Rva0052C37ADestroyRange(Rva0052BFB5Elem *, Rva0052BFB5Elem *);
+
+// ??1Rva004EE501@@QAE@XZ @0x004EE501 63B -> ?Rva0052C37ADestroyRange@@YAXPAURva0052BFB5Elem@@0@Z
+struct Rva004EE501 : RvaVectorFamilyBase<Rva0052BFB5Elem>
+{
+	~Rva004EE501();
+};
+
+Rva004EE501::~Rva004EE501()
+{
+	Rva0052C37ADestroyRange(m_start, m_finish);
+}
+
+struct Rva004F6986;
+
+void __cdecl Rva004F8373Destroy(Rva004F6986 *, Rva004F6986 *);
+
+// ??1Rva004F87F3@@QAE@XZ @0x004F87F3 63B -> ?Rva004F8373Destroy@@YAXPAURva004F6986@@0@Z
+struct Rva004F87F3 : RvaVectorFamilyBase<Rva004F6986>
+{
+	~Rva004F87F3();
+};
+
+Rva004F87F3::~Rva004F87F3()
+{
+	Rva004F8373Destroy(m_start, m_finish);
+}
+
+struct Rva004F691E;
+
+void __cdecl Rva004F838CDestroy(Rva004F691E *, Rva004F691E *);
+
+// ??1Rva004F887C@@QAE@XZ @0x004F887C 63B -> ?Rva004F838CDestroy@@YAXPAURva004F691E@@0@Z
+struct Rva004F887C : RvaVectorFamilyBase<Rva004F691E>
+{
+	~Rva004F887C();
+};
+
+Rva004F887C::~Rva004F887C()
+{
+	Rva004F838CDestroy(m_start, m_finish);
+}
+
+struct Rva004E1AD5Item;
+
+void __cdecl Rva004E1FCCGet(Rva004E1AD5Item *, Rva004E1AD5Item *);
+
+// ??1Rva004FABE2@@QAE@XZ @0x004FABE2 63B -> ?Rva004E1FCCGet@@YAXPAURva004E1AD5Item@@0@Z
+struct Rva004FABE2 : RvaVectorFamilyBase<Rva004E1AD5Item>
+{
+	~Rva004FABE2();
+};
+
+Rva004FABE2::~Rva004FABE2()
+{
+	Rva004E1FCCGet(m_start, m_finish);
+}
+
+// ??1Rva0051211C@@QAE@XZ @0x0051211C 63B -> ?Rva0032C0CADestroyPairs@@YAXPAURvaPair0032C0CA@@0@Z
+struct Rva0051211C : RvaVectorFamilyBase<RvaPair0032C0CA>
+{
+	~Rva0051211C();
+};
+
+Rva0051211C::~Rva0051211C()
+{
+	Rva0032C0CADestroyPairs(m_start, m_finish);
+}
+
+struct Rva0052BCE7Elem;
+
+void __cdecl Rva0052C24EDestroyRange(Rva0052BCE7Elem *, Rva0052BCE7Elem *);
+
+// ??1Rva0052CA2D@@QAE@XZ @0x0052CA2D 63B -> ?Rva0052C24EDestroyRange@@YAXPAURva0052BCE7Elem@@0@Z
+struct Rva0052CA2D : RvaVectorFamilyBase<Rva0052BCE7Elem>
+{
+	~Rva0052CA2D();
+};
+
+Rva0052CA2D::~Rva0052CA2D()
+{
+	Rva0052C24EDestroyRange(m_start, m_finish);
+}
+
+struct Rva0052BF4DElem;
+
+void __cdecl Rva0052C266DestroyRange(Rva0052BF4DElem *, Rva0052BF4DElem *);
+
+// ??1Rva0052CA6C@@QAE@XZ @0x0052CA6C 63B -> ?Rva0052C266DestroyRange@@YAXPAURva0052BF4DElem@@0@Z
+struct Rva0052CA6C : RvaVectorFamilyBase<Rva0052BF4DElem>
+{
+	~Rva0052CA6C();
+};
+
+Rva0052CA6C::~Rva0052CA6C()
+{
+	Rva0052C266DestroyRange(m_start, m_finish);
+}
+
+// ??1Rva0052CB26@@QAE@XZ @0x0052CB26 63B -> ?Rva005A6EDADestroyRange@@YAXPAURva0052BF33Elem@@0@Z
+struct Rva0052CB26 : RvaVectorFamilyBase<Rva0052BF33Elem>
+{
+	~Rva0052CB26();
+};
+
+Rva0052CB26::~Rva0052CB26()
+{
+	Rva005A6EDADestroyRange(m_start, m_finish);
+}
+
+// ??1Rva0052CC25@@QAE@XZ @0x0052CC25 63B -> ?Rva0052C37ADestroyRange@@YAXPAURva0052BFB5Elem@@0@Z
+struct Rva0052CC25 : RvaVectorFamilyBase<Rva0052BFB5Elem>
+{
+	~Rva0052CC25();
+};
+
+Rva0052CC25::~Rva0052CC25()
+{
+	Rva0052C37ADestroyRange(m_start, m_finish);
+}
+
+// ??1Rva0052CCC4@@QAE@XZ @0x0052CCC4 63B -> ?Rva0022C8E3DestroyRange@@YAXPAURva0052BF9BElem@@0@Z
+struct Rva0052CCC4 : RvaVectorFamilyBase<Rva0052BF9BElem>
+{
+	~Rva0052CCC4();
+};
+
+Rva0052CCC4::~Rva0052CCC4()
+{
+	Rva0022C8E3DestroyRange(m_start, m_finish);
+}
+
+struct Rva0052BF67Elem;
+
+void __cdecl Rva0052C3BFDestroyRange(Rva0052BF67Elem *, Rva0052BF67Elem *);
+
+// ??1Rva0052CD03@@QAE@XZ @0x0052CD03 63B -> ?Rva0052C3BFDestroyRange@@YAXPAURva0052BF67Elem@@0@Z
+struct Rva0052CD03 : RvaVectorFamilyBase<Rva0052BF67Elem>
+{
+	~Rva0052CD03();
+};
+
+Rva0052CD03::~Rva0052CD03()
+{
+	Rva0052C3BFDestroyRange(m_start, m_finish);
+}
+
+// ??1Rva0052CD42@@QAE@XZ @0x0052CD42 63B -> ?Rva003F0CA1_DestroyRange@@YAXPAVLivingWorldRegionConnection@@0@Z
+struct Rva0052CD42 : RvaVectorFamilyBase<LivingWorldRegionConnection>
+{
+	~Rva0052CD42();
+};
+
+Rva0052CD42::~Rva0052CD42()
+{
+	Rva003F0CA1_DestroyRange(m_start, m_finish);
+}
+
+class Rva004E1A04;
+
+void __cdecl Rva0052CEDDClear(Rva004E1A04 *, Rva004E1A04 *);
+
+// ??1Rva0052D1CD@@QAE@XZ @0x0052D1CD 63B -> ?Rva0052CEDDClear@@YAXPAVRva004E1A04@@0@Z
+struct Rva0052D1CD : RvaVectorFamilyBase<Rva004E1A04>
+{
+	~Rva0052D1CD();
+};
+
+Rva0052D1CD::~Rva0052D1CD()
+{
+	Rva0052CEDDClear(m_start, m_finish);
+}
+
+class Rva004E366E;
+
+void __cdecl Rva0052CEF6Clear(Rva004E366E *, Rva004E366E *);
+
+// ??1Rva0052D20C@@QAE@XZ @0x0052D20C 63B -> ?Rva0052CEF6Clear@@YAXPAVRva004E366E@@0@Z
+struct Rva0052D20C : RvaVectorFamilyBase<Rva004E366E>
+{
+	~Rva0052D20C();
+};
+
+Rva0052D20C::~Rva0052D20C()
+{
+	Rva0052CEF6Clear(m_start, m_finish);
+}
+
+class Rva00585B16;
+
+void __cdecl Rva00586B92Destroy(Rva00585B16 *, Rva00585B16 *);
+
+// ??1Rva00586C17@@QAE@XZ @0x00586C17 63B -> ?Rva00586B92Destroy@@YAXPAVRva00585B16@@0@Z
+struct Rva00586C17 : RvaVectorFamilyBase<Rva00585B16>
+{
+	~Rva00586C17();
+};
+
+Rva00586C17::~Rva00586C17()
+{
+	Rva00586B92Destroy(m_start, m_finish);
+}
+
+// ??1Rva005A7172@@QAE@XZ @0x005A7172 63B -> ?Rva005A6EDADestroyRange@@YAXPAURva0052BF33Elem@@0@Z
+struct Rva005A7172 : RvaVectorFamilyBase<Rva0052BF33Elem>
+{
+	~Rva005A7172();
+};
+
+Rva005A7172::~Rva005A7172()
+{
+	Rva005A6EDADestroyRange(m_start, m_finish);
+}
+
+struct Rva005E74AA;
+
+void __cdecl Rva005E7FB0Forward(Rva005E74AA *, Rva005E74AA *);
+
+// ??1Rva005E8005@@QAE@XZ @0x005E8005 63B -> ?Rva005E7FB0Forward@@YAXPAURva005E74AA@@0@Z
+struct Rva005E8005 : RvaVectorFamilyBase<Rva005E74AA>
+{
+	~Rva005E8005();
+};
+
+Rva005E8005::~Rva005E8005()
+{
+	Rva005E7FB0Forward(m_start, m_finish);
+}
+
+struct Rva005EC594;
+
+void __cdecl Rva005EC594Clear(Rva005EC594 *, Rva005EC594 *);
+
+// ??1Rva005EC9BA@@QAE@XZ @0x005EC9BA 63B -> ?Rva005EC594Clear@@YAXPAURva005EC594@@0@Z
+struct Rva005EC9BA : RvaVectorFamilyBase<Rva005EC594>
+{
+	~Rva005EC9BA();
+};
+
+Rva005EC9BA::~Rva005EC9BA()
+{
+	Rva005EC594Clear(m_start, m_finish);
+}
