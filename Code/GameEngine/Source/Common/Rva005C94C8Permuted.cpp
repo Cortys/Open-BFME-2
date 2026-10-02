@@ -1,7 +1,7 @@
-// ?Rva005C94C8Get@@YA?AVUnicodeString@@PAX@Z
-// partial score=0.96 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /Ob1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Oy-
-// ?Rva005C94C8Get@@YA?AVUnicodeString@@PAX@Z, retail 0x005C94C8 (258B).
+//
+// ?Rva005C94C8Get@@YA?AVUnicodeString@@PAX@Z, retail 0x005c94c8, 258 bytes. Banked partial (score 0.96) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Hero army display name: empty key or missing payload falls back to the
 // parent label at +0x78/+0x64 via TheGameText Ascii slot 0x38, else formats
 // STRATEGICHUD:HeroArmyName with the payload UnicodeString at +0x58.

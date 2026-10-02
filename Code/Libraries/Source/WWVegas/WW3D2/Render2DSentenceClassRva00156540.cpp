@@ -1,9 +1,7 @@
-// ?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z
-// partial score=0.96 date=2026-09-30
-// ?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z
-// partial score=0.96 date=2026-09-30
 // cl: /G7 /arch:SSE /Ireference/shims/bfmecamera /DNDEBUG /MD /EHsc /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2
-// ?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z at 0x00156540 256B: sentence chunk record via SentenceData Add.
+//
+// ?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z, retail 0x00156540, 256 bytes. Banked partial (score 0.96) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // Evidence: offsets 0x60 cursor 0x68 texoffset 0x70 startx 0x7c cursurface match Reset 0x00155A20 donor render2dsentence.h; callees Add 0x00155630 and dtor 0x00176CB0 rowed; callers 0x00158E90.
 
 class SurfaceClass;
@@ -106,11 +104,10 @@ private:
 	SurfaceClass *m_curSurface; // +7C
 };
 
-// ?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z present-unmatched
 void Render2DSentenceClass::rva00156540(Rva00156540Param const *param)
 {
 	int width = m_textureOffset.X - m_textureStartX;
-	if (width <= 0)
+	if (0 >= width)
 		return;
 	float charHeight = (float)param->field2c;
 	TextureStatisticsStructWide chunk;
@@ -120,11 +117,11 @@ void Render2DSentenceClass::rva00156540(Rva00156540Param const *param)
 	if (chunk.tex.m_surface != 0)
 		((SurfaceClass *)chunk.tex.m_surface)->ops->release_ref((SurfaceClass *)chunk.tex.m_surface);
 	chunk.f04 = m_cursor.X;
+	chunk.f0c = (float)m_cursor.X + width;
 	chunk.f08 = m_cursor.Y;
-	chunk.f0c = (float)width + m_cursor.X;
 	chunk.f10 = charHeight + m_cursor.Y;
-	chunk.tex.m_surface = m_curSurface;
 	chunk.f14 = (float)m_textureStartX;
+	chunk.tex.m_surface = m_curSurface;
 	chunk.f18 = (float)m_textureOffset.Y;
 	chunk.f1c = (float)m_textureOffset.X;
 	chunk.f20 = (float)m_textureOffset.Y + charHeight;

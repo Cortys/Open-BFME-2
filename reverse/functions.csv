@@ -48842,3 +48842,5 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0037441E@Rva0037441E@@QAEXXZ,,0x0037441E,80,Code/GameEngine/Source/GameLogic/Object/Update/Rva0037441ELeaf.cpp,matched,BehaviorModule layout plus rowed test getControllingPlayer getDrawable via ThePlayerList float global
 ?rva0030B119@Rva0030B0E3@@QAEPAXI@Z,,0x0030B119,28,Code/GameEngine/Source/Common/System/Rva0030B0E3DeletingDtor.cpp,matched,deleting shape slot 0 vtable 0x00808830 via apply plus delete
 ?rva005D321D@Rva005D321D@@QAEX_N@Z,,0x005D321D,85,Code/GameEngine/Source/Common/Rva005D321DShow.cpp,matched,guard bool at +0x68 show hide via arg slot prefix from +4 level at +0 SetState via rowed 0x0050E9FE
+?rva00156540@Render2DSentenceClass@@QAEXPBURva00156540Param@@@Z,,0x00156540,256,Code/Libraries/Source/WWVegas/WW3D2/Render2DSentenceClassRva00156540.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
+?Rva005C94C8Get@@YA?AVUnicodeString@@PAX@Z,,0x005C94C8,258,Code/GameEngine/Source/Common/Rva005C94C8Permuted.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
