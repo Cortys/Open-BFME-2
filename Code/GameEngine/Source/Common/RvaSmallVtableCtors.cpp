@@ -552,14 +552,22 @@ Rva004E1780::Rva004E1780()
 {
 }
 
-// ??0Rva0054D54A@@QAE@XZ @0x0054D54A 20B, vtable VA 0xc6a774
+// ??0Rva0054D54A@@QAE@XZ @0x0054D54A 20B, vtable VA 0xc6a774. Its destructor is
+// rowed too (0x0054D55E, below): it frees the node list at +4 exactly as
+// ~NetCommandWrapperList does, storing this class's vtable on entry.
+struct Rva0054D54ANode
+{
+	virtual void *destroy(unsigned int flags);
+	Rva0054D54ANode *m_next;
+};
+
 class Rva0054D54A
 {
 public:
 	Rva0054D54A();
-	virtual ~Rva0054D54A() {}
+	virtual ~Rva0054D54A();
 private:
-	void *m_04;
+	Rva0054D54ANode *m_04;
 	void *m_08;
 	void *m_0C;
 };
@@ -567,6 +575,18 @@ private:
 Rva0054D54A::Rva0054D54A()
 	: m_04(0), m_08(0), m_0C(0)
 {
+}
+
+// ??1Rva0054D54A@@UAE@XZ @0x0054D55E 53B: the bytes of ~NetCommandWrapperList
+// except the vtable stored on entry.
+Rva0054D54A::~Rva0054D54A()
+{
+	while (m_04 != 0) {
+		Rva0054D54ANode *next = m_04->m_next;
+		void *p = m_04 ? m_04->destroy(0) : 0;
+		::operator delete(p);
+		m_04 = next;
+	}
 }
 
 // ??0Rva001FD2B4@@QAE@XZ @0x001FD2B4 17B, vtable VA 0xbe1aa0

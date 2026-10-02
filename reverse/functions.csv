@@ -47562,3 +47562,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005D96FA@@QAE@XZ,,0x005D96E8,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D96FA
 ??0Rva005D99BD@@QAE@XZ,,0x005D99AB,18,Code/GameEngine/Source/Common/Rva005D9DC1Ctor.cpp,matched,ctor calls base 005D9DCC precedes dtor 005D99BD
 ??0Rva005D9A1E@@QAE@XZ,,0x005D9A0C,18,Code/GameEngine/Source/Common/Rva005EEE33Ctor.cpp,matched,ctor calls base 005EEE1F precedes dtor 005D9A1E
+??1Rva0054D54A@@UAE@XZ,,0x0054D55E,53,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,node-list dtor: bytes equal ~NetCommandWrapperList except the vtable VA 0xc6a774 stored on entry (the vtable the rowed ctor 0x0054D54A installs)
