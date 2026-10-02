@@ -122,19 +122,7 @@ void Module::loadPostProcess( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-ObjectModule::ObjectModule( Thing *thing, const ModuleData* moduleData ) : Module(moduleData)
-{ 
-	if (!moduleData)
-	{
-		DEBUG_CRASH(("module data may not be null\n"));
-		throw INI_INVALID_DATA;
-	}
-
-	DEBUG_ASSERTCRASH( thing, ("Thing passed to ObjectModule is NULL!\n") );
-	m_object = AsObject(thing);
-	DEBUG_ASSERTCRASH( m_object, ("Thing passed to ObjectModule is not an Object!\n") );
-
-}  // end ObjectModule
+// ObjectModule::ObjectModule: defined in ObjectModuleCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -188,19 +176,7 @@ void ObjectModule::loadPostProcess( void )
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-DrawableModule::DrawableModule( Thing *thing, const ModuleData* moduleData ) : Module(moduleData)
-{ 
-	if (!moduleData)
-	{
-		DEBUG_CRASH(("module data may not be null\n"));
-		throw INI_INVALID_DATA;
-	}
-
-	DEBUG_ASSERTCRASH( thing, ("Thing passed to DrawableModule is NULL!\n") );
-	m_drawable = AsDrawable(thing);
-	DEBUG_ASSERTCRASH( m_drawable, ("Thing passed to DrawableModule is not a Drawable!\n") );
-
-}  // end ~DrawableModule
+// DrawableModule::DrawableModule: defined in DrawableModuleCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
