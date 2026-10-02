@@ -4,8 +4,54 @@
 // Size-optimised (/O1) emission of DetailedArchivedDirectoryInfo teardown and its map base.
 //
 #include "PreRTS.h"
+// LINK-COMDAT: block ZH ArchiveFileSystem.h so this TU's ArchivedFileInfo
+// emits the kept (/O2 frameless) copy via pragma ty, while Detailed stays
+// /O1 for its rows. Layout mirrors the ZH header verbatim.
+#define __ARCHIVEFILESYSTEM_H_
+#include <map>
+#include "Lib/BaseType.h"
+#include "Common/SubsystemInterface.h"
+#include "Common/FileSystem.h"
+#include "Common/STLTypedefs.h"
+class ArchivedDirectoryInfo;
+class DetailedArchivedDirectoryInfo;
+class ArchivedFileInfo;
+class ArchiveFile;
+typedef std::map<AsciiString, DetailedArchivedDirectoryInfo> DetailedArchivedDirectoryInfoMap;
+typedef std::map<AsciiString, ArchivedDirectoryInfo> ArchivedDirectoryInfoMap;
+typedef std::map<AsciiString, ArchivedFileInfo> ArchivedFileInfoMap;
+typedef std::map<AsciiString, ArchiveFile *> ArchiveFileMap;
+typedef std::map<AsciiString, AsciiString> ArchivedFileLocationMap;
+class ArchivedDirectoryInfo
+{
+public:
+	AsciiString m_directoryName;
+	ArchivedDirectoryInfoMap m_directories;
+	ArchivedFileLocationMap m_files;
+	void clear();
+};
+class DetailedArchivedDirectoryInfo
+{
+public:
+	AsciiString m_directoryName;
+	DetailedArchivedDirectoryInfoMap m_directories;
+	ArchivedFileInfoMap m_files;
+	void clear();
+};
+#pragma optimize("ty", on)
+class ArchivedFileInfo
+{
+public:
+	AsciiString m_filename;
+	AsciiString m_archiveFilename;
+	UnsignedInt m_offset;
+	UnsignedInt m_size;
+	ArchivedFileInfo();
+	~ArchivedFileInfo() {}
+	void clear();
+};
+#pragma optimize("", on)
 #include "Common/ArchiveFile.h"
-#include "Common/ArchiveFileSystem.h"
 #include "Common/File.h"
 #include "Common/PerfTimer.h"
 
