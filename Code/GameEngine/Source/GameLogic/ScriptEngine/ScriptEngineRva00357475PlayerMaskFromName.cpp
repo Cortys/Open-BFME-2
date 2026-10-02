@@ -6,7 +6,7 @@
 // grown into BFME's mask selectors: "<This Player's Enemies/Allies...>" and
 // "<Local Player's ...>" ask the player list for every player in a
 // relationship (getPlayersWithRelationship, 0x002A7C70; 4 enemies, 3 allies incl self, 2 allies),
-// "<This Player>", "<This Player's Enemy>" (0x00356F6E, ZH
+// "<This Player>", "<This Player's Enemy>" (getSkirmishEnemyPlayer, 0x00356F6E, ZH
 // getSkirmishEnemyPlayer's slot) and "<Local Player>" give one bit,
 // "<All Players>" every bit (rowed 0x002A7D30); anything else is looked up by
 // name key and reported when unknown. *matchedSpecialName is cleared only on
@@ -55,7 +55,7 @@ class ScriptEngine
 {
 public:
 	Player *getCurrentPlayer();
-	Player *rva00356F6E();
+	Player *getSkirmishEnemyPlayer();
 	void AppendDebugMessage(const AsciiString &strToAdd, Bool forcePause);
 	int rva00357475(const AsciiString &name, Bool *matchedSpecialName);
 };
@@ -80,7 +80,7 @@ int ScriptEngine::rva00357475(const AsciiString &name, Bool *matchedSpecialName)
 	else if (name.compare("<This Player>") == 0)
 		mask = getCurrentPlayer()->getPlayerMask();
 	else if (name.compare("<This Player's Enemy>") == 0)
-		mask = rva00356F6E()->getPlayerMask();
+		mask = getSkirmishEnemyPlayer()->getPlayerMask();
 	else if (name.compare("<Local Player>") == 0)
 		mask = ThePlayerList->getLocalPlayer()->getPlayerMask();
 	else if (name.compare("<Local Player's Enemies>") == 0)

@@ -6871,4 +6871,3 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?d_009b5420@@YAXXZ,0x001C5D20
 ?rva006DAFE0@Rva006DB160@@QAEPAXI@Z,0x006DAFE0,"address read from the retail REL32 at 0x006DB1AF in DOGMA allocBlock 0x006DB160; free-list allocate for a size whose list head is non-null; thiscall (rounded size), ret 4"
 ?rva00357475@ScriptEngine@@QAEHABVAsciiString@@PA_N@Z,0x00357475,"address read from the retail REL32 at 0x00357BE0 in player-mask resolver 0x00357B82; ECX is TheScriptEngine, args (player name, Bool* matched-special-name out), returns mask; BFME 1 donor names it getPlayerMaskFromAsciiString"
-?rva00356F6E@ScriptEngine@@QAEPAVPlayer@@XZ,0x00356F6E,"address read from the retail REL32 at 0x0035754D in player-mask-from-name 0x00357475 on the <This Player's Enemy> path; thiscall ScriptEngine, returns Player*; Zero Hour's getSkirmishEnemyPlayer slot"
