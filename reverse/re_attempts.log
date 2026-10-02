@@ -5312,3 +5312,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00090FE0@Rva00090FE0@@QAEHH@Z	0x00090FE0	224	blocked	64-bit timeGetTime plus alldiv allmul scaling with global flag and m_40 m_44 m_48 m_50 no donor t=8 model=muse-03
 ??1Rva005F2B22@@UAE@XZ	0x005F2B22	84	partial	extra push ecx and mov ecx edi after state not before t=28 model=muse-01 score=0.95 stash=reverse/attempts/0x005f2b22.cpp
 ?rva005F27F8@Rva005F27F8@@QAEXPBD@Z	0x005F27F8	159	blocked	flag dword at ebp-10 plus EH states 1-2 plus tmp push order before GetLevel unreproduced t=25 model=muse-spark
+?Rva0040A1D7Find@@YAPAPAXPAPAX0VRva0040A16E@@@Z	0x0040A1D7	172	blocked	simple loop 35B-42B vs 172B unrolled 4x with 7 calls; O1 keeps calls no unroll O2 inlines pred; likely STL find_if source plus 4-arg caller mismatch t=15 model=muse-09
