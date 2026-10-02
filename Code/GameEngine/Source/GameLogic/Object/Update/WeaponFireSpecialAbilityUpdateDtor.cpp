@@ -79,3 +79,8 @@ WeaponFireSpecialAbilityUpdate::~WeaponFireSpecialAbilityUpdate()
 	::operator delete(toDelete);
 	m_weapon = 0;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot@WFS_Iface1@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")

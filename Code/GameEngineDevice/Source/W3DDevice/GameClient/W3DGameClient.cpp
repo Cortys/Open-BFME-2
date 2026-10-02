@@ -472,3 +472,9 @@ void W3DGameClient::notifyTerrainObjectMoved(Object *obj)
 // Retail's data references in this unit's matched rows land on globals defined
 // under other spellings at the same addresses (addend-corrected DIR32). Bind them.
 #pragma comment(linker, "/alternatename:?m_needUpdate@W3DStatusCircle@@1_NA=?g_trackDirty@@3EA")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?reset@FontLibrary@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?anchor@BFMERetailFontLibrary@@UAEXXZ=??1Coord2D@@QAE@XZ")
