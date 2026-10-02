@@ -1,24 +1,12 @@
-// ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-29
-?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z
-// partial score=0.95 date=2026-09-29
-// cl: /O1 /DNDEBUG /MD
-//
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /DNDEBUG /MD
+#include "ascii_string.h"
+
 // ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z @0x003B573E (80B).
 // Sorted record table lower_bound: count from +0/+4 words, binary search
 // over 0x14-stride records at +0xC comparing name at +8 via rowed
 // StringBase<char>::compare 0x000069D6. Returns match mid or low.
 // Unblocks 0x003B66D8 and 0x003B6633. Same compare idiom as the WWLib
 // string-table precedent.
-template <typename T>
-class StringBase
-{
-public:
-	int compare(const StringBase &other) const;
-private:
-	void *m_data;
-};
-
 struct Rva003B573ERecord
 {
 	char m_pad[8];
@@ -37,7 +25,6 @@ private:
 	Rva003B573ERecord *m_records;
 };
 
-// ?rva003B573E@Rva003B573E@@QAEHABV?$StringBase@D@@@Z present-unmatched
 int Rva003B573E::rva003B573E(const StringBase<char> &key)
 {
 	int count = ((char *)m_end - (char *)m_begin) >> 2;
