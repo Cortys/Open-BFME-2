@@ -30,3 +30,14 @@ Rva0043B23E::Rva0043B23E(const Rva0043B23E &src)
 	, m_second(src.m_second)
 {
 }
+
+inline void *operator new(unsigned int, Rva0043B23E *p)
+{
+	return p;
+}
+
+void __cdecl Rva0043B2D0Construct(Rva0043B23E *dst, const Rva0043B23E &src)
+{
+	if (dst != 0)
+		new (dst) Rva0043B23E(src);
+}
