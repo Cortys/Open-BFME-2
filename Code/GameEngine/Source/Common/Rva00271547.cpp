@@ -28,13 +28,14 @@ public:
 	void appendObjectIDArgument(ObjectID id);
 };
 
-struct PlayerList
+class PlayerList;
+extern PlayerList *ThePlayerList;
+
+struct PlayerListView
 {
 	unsigned char m_pad[0x10];
 	Player *m_local10;
 };
-
-#define ThePlayerList (*(PlayerList **)0x00DFEEE8)
 
 struct MsgFactory
 {
@@ -71,7 +72,7 @@ struct Rva00271547Entry
 
 class Rva002716Holder;
 
-struct InGameUI
+struct InGameUIView
 {
 	virtual void s00(); virtual void s01(); virtual void s02(); virtual void s03();
 	virtual void s04(); virtual void s05(); virtual void s06(); virtual void s07();
@@ -93,7 +94,8 @@ struct InGameUI
 	virtual void dispatch(Rva002716Holder *holder);
 };
 
-#define TheInGameUI (*(InGameUI **)0x00DFEDF0)
+class InGameUI;
+extern InGameUI *TheInGameUI;
 
 class Rva002716Holder
 {
@@ -124,13 +126,12 @@ void Rva002716Holder::rva00271547()
 		flag = 1;
 		if (m_43C != 0) {
 			if (m_objFC != 0) {
-				Player *local = ThePlayerList->m_local10;
+				Player *local = ((PlayerListView *)ThePlayerList)->m_local10;
 				if (m_objFC->getControllingPlayer() == local) {
 					MsgFactory *factory = TheMsgFactory;
 					GameMessage *msg = factory->create(0x3ED);
 					msg->appendObjectIDArgument((ObjectID)m_objFC->m_objectID74);
-					InGameUI *ui = TheInGameUI;
-					ui->dispatch(this);
+				((InGameUIView *)TheInGameUI)->dispatch(this);
 				}
 			}
 		}
