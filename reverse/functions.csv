@@ -48117,3 +48117,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva0049B3F3@Rva0049B2A2@@QAEXXZ,,0x0049B3F3,46,Code/GameEngine/Source/Common/Rva0049B2A2Xfer.cpp,matched,Rva0049B2A2 random delay via ModuleData plus current frame
 ?rva00214D4A@Rva00214D4A@@QAEMXZ,,0x00214D4A,15,Code/GameEngine/Source/Common/Rva00214D4AGet.cpp,matched,leaf float factor via writable global and member 18 caller 96B4C
 ??1Rva000A7BB5@@QAE@XZ,,0x000A7BB5,57,Code/GameEngine/Source/GameClient/Rva000A7BB5Dtor.cpp,matched,hash dtor via rowed clear 0x003A2A41 plus bucket free
+??0Rva00222061@@QAE@XZ,,0x00222061,95,Code/GameEngine/Source/Common/Rva00222061Ctor.cpp,matched,EH baseConstruct Shell pattern auto vptr Rva0022181D 0x1C map setName InGameNotificationBox
