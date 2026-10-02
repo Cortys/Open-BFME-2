@@ -55,6 +55,7 @@ class OutwardEmissionVelocityModuleTemplate : public CategoryModuleTemplate<4>,
 {
 public:
     OutwardEmissionVelocityModuleTemplate();
+    virtual ~OutwardEmissionVelocityModuleTemplate();
 };
 
 // ??0OutwardEmissionVelocityModuleTemplate@FXParticleSystem@@QAE@XZ
