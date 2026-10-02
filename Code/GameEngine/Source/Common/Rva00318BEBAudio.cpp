@@ -43,7 +43,7 @@ public:
 	virtual void removeAudioEvent(AudioHandle handle) = 0;
 };
 
-#define TheAudio (*(AudioManager *const *)0x00DFE6E8)
+extern class AudioManager *TheAudio;
 
 class Rva00318BEB
 {
