@@ -47375,3 +47375,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva004E2382@@QAEPAXI@Z,,0x004E2CB9,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004E2382.cpp,matched,deleting dtor calls dtor 0x004E2941 then delete 0x0002FD60
 ?rva0005452B@MilesAudioManager@@QAEXXZ,,0x0005452B,64,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva0005452B.cpp,matched,release-all-3D-samples via list erase like 2D 0x544EB
 ?Rva003BBD02Do@@YGXPAVParameter@@PAX@Z,,0x003BBD02,55,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBD02.cpp,matched,named-unit drawable walk via getUnitNamed getDrawable rva00273686
+?Rva003BB233Set@@YGXABVAsciiString@@H@Z,,0x003BB233,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB233.cpp,matched,mask loop via ScriptEngine rva00357475 PlayerList getEachPlayerFromMask Rva002A9BF2 rva002A9CCA globals 0xDFE16C 0xDFEEE8 caller 0x003CB355
