@@ -13,6 +13,7 @@ class Rva005FB6E2
 {
 public:
     void rva005FB6E2();
+    void rva005FB729();
 private:
     char m_pad0[4];
     void *m_level;
@@ -36,4 +37,18 @@ void Rva005FB6E2::rva005FB6E2()
     m_b4C = false;
     m_b4D = false;
     m_done = 1;
+}
+void Rva005FB6E2::rva005FB729()
+{
+    if (m_done != 0)
+        return;
+    const char *teamName;
+    if (m_team)
+        teamName = m_team->m_name;
+    else
+        teamName = g_Rva0107301CEmptyString;
+    Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level, teamName, "SetState", "_survived");
+    m_b4C = false;
+    m_b4D = false;
+    m_done = 2;
 }
