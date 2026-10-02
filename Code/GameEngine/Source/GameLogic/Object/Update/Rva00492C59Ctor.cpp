@@ -32,11 +32,6 @@ protected:
 	unsigned char m_pad2[0x88 - 0x24];
 };
 
-// ?Rva0044EF5E::~Rva0044EF5E present-unmatched
-Rva0044EF5E::~Rva0044EF5E()
-{
-}
-
 class Rva00492C59 : public Rva0044EF5E
 {
 public:
