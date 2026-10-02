@@ -54,11 +54,6 @@ inline CreateCrateDieModuleData::CreateCrateDieModuleData()
 
 // CreateCrateDieModuleData::~CreateCrateDieModuleData: defined in CreateCrateDieModuleDataDtor.cpp (its row's unit).
 
-// ??1Rva00253510@@UAE@XZ present-unmatched
-Rva00253510::~Rva00253510()
-{
-}
-
 // Header inlines that the units including the header emit as select-any
 // copies, which plain definitions here collided with. The anchor keeps this
 // unit's copies for the rows; it is not retail code.
