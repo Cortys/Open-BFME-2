@@ -47405,3 +47405,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva004E98B4Get@@YGMH@Z,,0x004E98B4,42,Code/GameEngine/Source/Common/Rva004E98B4Get.cpp,matched,wraps rowed GetGameLogicRandomValueReal 0x00234092 with globals file-line 180 caller 0x004E9DA8
 ??0Rva004E9B46@@QAE@H@Z,,0x004E9B46,42,Code/GameEngine/Source/Common/Rva004E9B46Ctor.cpp,matched,ctor base Rva00506B1B int at +8 vector at +0xc vtable 0x00862874
 ??0Rva004E962A@@QAE@XZ,,0x004E962A,45,Code/GameEngine/Source/Common/Rva004E962ACtor.cpp,matched,ctor map at +0 2x vector at +0xc +0x18 bool true at +0x24
+?rva004E93E8@Rva004E93E8@@QAEPAXXZ,,0x004E93E8,49,Code/GameEngine/Source/Common/Rva004E93E8Find.cpp,matched,search array +0xc +0x10 for elem+0x5c==1 or global flag
