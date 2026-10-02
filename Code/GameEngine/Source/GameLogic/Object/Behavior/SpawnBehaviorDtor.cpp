@@ -118,7 +118,7 @@ private:
 	unsigned char m_pad50[0x14]; // +0x50..+0x63 trivial tail to news 0x64
 };
 
-SpawnBehavior::~SpawnBehavior()
+inline SpawnBehavior::~SpawnBehavior()
 {
 	m_replacementTimes.clear();
 }
@@ -127,3 +127,15 @@ SpawnBehavior::~SpawnBehavior()
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?unused@BehaviorModuleOther@@EAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+
+// ??1SpawnBehavior@@UAE@XZ is a header inline elsewhere: another unit emits a
+// select-any copy, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitSpawnBehaviorDtor@@YAXPAVSpawnBehavior@@@Z present-unmatched
+void bfmeEmitSpawnBehaviorDtor(SpawnBehavior *p)
+{
+	p->SpawnBehavior::~SpawnBehavior();
+}
+#pragma inline_depth()
