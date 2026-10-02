@@ -119,3 +119,7 @@ ServiceHubImpl::~ServiceHubImpl()
 	m_258.m();
 	*(int *)this = (int)&vftable_01129AF4;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Gen007EB140@@UAE@XZ=??1ServiceHubImpl@@QAE@XZ")

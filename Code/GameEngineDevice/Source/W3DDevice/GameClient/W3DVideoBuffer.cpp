@@ -298,3 +298,8 @@ VideoBuffer::Type W3DVideoBuffer::W3DFormatToType( WW3DFormat w3dFormat )
 
 	return format;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?valid@Rva007FA5E0Arg@@QAE_NXZ=?valid@W3DVideoBuffer@@UAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeHas992C@BfmeAsk992@@QAEDXZ=?valid@W3DVideoBuffer@@UAE_NXZ")

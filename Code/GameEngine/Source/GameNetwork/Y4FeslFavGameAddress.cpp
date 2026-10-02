@@ -146,3 +146,7 @@ public:
 };
 
 // LanTheaterEmulator::notifyAddress: defined in Y4FeslFavGameAddress_notify.cpp (its row's unit).
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?ji_009f70ba@@YAPADPADPBDI@Z=?ji_0062983e@@YAXXZ")

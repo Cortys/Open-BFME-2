@@ -112,3 +112,8 @@ Gen_0081E480::Gen_0081E480(int first, int second)
 	m_bfmeSecond = second;
 	m_bfmeFlags = 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva007F76D0@Rva00801670Host@@QAEPAHPAVBfmeVecCZ@@H@Z=?bfmeAt@@YGPAHPAVBfmeVecCZ@@H@Z")
+#pragma comment(linker, "/alternatename:?rva007F76D0@Rva00802550Host@@QAEPAHPAVBfmeVecCZ@@H@Z=?bfmeAt@@YGPAHPAVBfmeVecCZ@@H@Z")

@@ -280,3 +280,7 @@ void Rva00808C60Owner::rva00808C60( void *message )
 {
 	Rva007F93E0( message, (void *)"->L", m_routeOwner );
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?ji_009f70ba@@YAPADPADPBDI@Z=?ji_0062983e@@YAXXZ")

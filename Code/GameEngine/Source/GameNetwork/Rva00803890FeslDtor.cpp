@@ -69,3 +69,7 @@ Rva00803890Owner::~Rva00803890Owner()
 	m_10 = 0;
 	m_14 = 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Gen00803D10@@UAE@XZ=??1Rva00803890Owner@@UAE@XZ")

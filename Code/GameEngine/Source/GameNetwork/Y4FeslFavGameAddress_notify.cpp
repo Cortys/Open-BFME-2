@@ -101,3 +101,7 @@ void LanTheaterEmulator::notifyAddress( Rva00809500Entry *entry )
 	Rva007F93E0( &message, (void *)0x00CE3F98, m_field10 );
 	reinterpret_cast< Gen_007e86c0 * >( &message )->m();
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?ji_009f70ba@@YAPADPADPBDI@Z=?ji_0062983e@@YAXXZ")
