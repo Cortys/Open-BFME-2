@@ -299,7 +299,6 @@ IndexBufferClass::WriteLockClass::WriteLockClass(IndexBufferClass* index_buffer_
 //
 // ----------------------------------------------------------------------------
 
-// ??1WriteLockClass@@ present-unmatched
 IndexBufferClass::WriteLockClass::~WriteLockClass()
 {
 	switch (index_buffer->Type()) {
@@ -537,24 +536,7 @@ DynamicIBAccessClass::WriteLockClass::WriteLockClass(DynamicIBAccessClass* ib_ac
 	}
 }
 
-// ??1WriteLockClass@@ present-unmatched
-DynamicIBAccessClass::WriteLockClass::~WriteLockClass()
-{
-	DX8_THREAD_ASSERT();
-	switch (DynamicIBAccess->Get_Type()) {
-	case BUFFER_TYPE_DYNAMIC_DX8:
-		DX8_Assert();
-		BFME_DX8_ErrorCode(static_cast<DX8IndexBufferClass*>(DynamicIBAccess->IndexBuffer)->Get_DX8_Index_Buffer()->Unlock());
-		break;
-	case BUFFER_TYPE_DYNAMIC_SORTING:
-		break;
-	default:
-		WWASSERT(0);
-		break;
-	}
-	DynamicIBAccess->IndexBuffer->Release_Ref();
-	BFME_DX8_Thread_Assert();
-}
+// DynamicIBAccessClass::WriteLockClass::~WriteLockClass: defined in DynamicIBAccessWriteLock.cpp (its row's unit).
 
 // ----------------------------------------------------------------------------
 //
