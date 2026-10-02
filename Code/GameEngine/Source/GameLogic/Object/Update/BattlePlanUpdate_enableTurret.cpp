@@ -26,11 +26,8 @@ public:
 class Object
 {
 public:
-	AIUpdateInterface *getAI() { return m_ai; }
-
-private:
 	unsigned char m_pad[0x258];	// vtable + members ahead of m_ai
-	AIUpdateInterface *m_ai;	// +0x258
+	AIUpdateInterface *m_aiDirect;	// +0x258 (retail-measured direct AI slot, not the +0x19C getAI member)
 };
 
 class BattlePlanUpdate
@@ -49,7 +46,7 @@ private:
 // ?enableTurret@BattlePlanUpdate@@IAEX_N@Z
 void BattlePlanUpdate::enableTurret(bool enable)
 {
-	AIUpdateInterface *ai = getObject()->getAI();
+	AIUpdateInterface *ai = getObject()->m_aiDirect;
 	if (ai)
 	{
 		WhichTurretType tur = ai->getWhichTurretForCurWeapon();
