@@ -5553,3 +5553,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva002B693F@Rva002B693F@@QAEXPAX@Z	0x002B693F	103	blocked	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; do-while and ptr-model tried t=12 model=muse-03 (stash 0.92 kept)
 ?rva004BE3EF@Rva004BE3EF@@QAEXXZ	0x004BE3EF	142	blocked	extra implicit handle dtor plus or-state before vs after; donor ActiveBody_deleteAllParticleSystems shows implicit-only but retail needs explicit-only t=10 model=muse-03 (stash 0.94 kept)
 ?rva003B56DC@Rva003B56DC@@QAEXXZ	0x003B56DC	98	blocked	holder-vs-direct link unclear plus EBP frame and imul-vs-lea walls t=20 model=muse-03
+?rva004D51ED@Transport@@QAEXGPAX@Z	0x004D51ED	44	partial	eax-edx swap plus add-combined vs SIB indexed t=15 model=muse-06 score=0.93 stash=reverse/attempts/0x004d51ed.cpp
