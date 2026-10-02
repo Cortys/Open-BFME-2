@@ -18,6 +18,7 @@ class Rva005FE047
 {
 public:
 	void rva005FE047();
+	void rva005FE00C();
 private:
 	char m_pad00[4];
 	void *m_level04;
@@ -31,6 +32,15 @@ void Rva005FE047::rva005FE047()
 	if (m_count34++ != 0)
 		return;
 	bool flag = false;
+	const char *name = m_holder08 ? (const char *)m_holder08 + 8 : g_Rva0107301CEmptyString;
+	Rva005277D9Fire(TheRva00222A8BTarget, m_level04, name, "SetPlayerNameVisibility", &flag);
+}
+
+void Rva005FE047::rva005FE00C()
+{
+	if (--m_count34 != 0)
+		return;
+	bool flag = true;
 	const char *name = m_holder08 ? (const char *)m_holder08 + 8 : g_Rva0107301CEmptyString;
 	Rva005277D9Fire(TheRva00222A8BTarget, m_level04, name, "SetPlayerNameVisibility", &flag);
 }
