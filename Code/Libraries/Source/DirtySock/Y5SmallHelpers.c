@@ -833,6 +833,54 @@ void Rva008118C0(void *table)
 	(void)table;
 }
 
+/*
+ * These unresolved data references are witnessed by DIR32 relocations in
+ * Y5SmallHelpers' matched bytes.  Initializers are the retail .data bytes;
+ * array extents stop at the next witnessed/identified address noted below.
+ */
+// VA 0x00DD8FE8 (.data), DIR32 witness; 0x24 bytes to Rva012C48B4.
+char Rva012C4890[0x24] = "NetGameUtil: invalid conn param\n";
+// VA 0x00DD900C (.data), DIR32 witness; 0x1C bytes to Rva012C48D0.
+char Rva012C48B4[0x1C] = "NetGameUtil: connect %d %s\n";
+// VA 0x00DD9028 (.data), DIR32 witness; 0x18 bytes to Rva012C48E8.
+char Rva012C48D0[0x18] = "TCP:~1:1024\tUDP:~1:1024";
+// VA 0x00DD9040 (.data), DIR32 witness; 8 bytes to Rva012C48F0.
+char Rva012C48E8[8] = "GmUtil";
+// VA 0x00DD9048 (.data), DIR32 witness; 8 bytes to Rva012C48F8.
+char Rva012C48F0[8] = "GmUtil";
+// VA 0x00DD9050 (.data), DIR32 witness; 0x2C bytes to Rva012C4924.
+char Rva012C48F8[0x2C] = "NetGameUtil: located peer=%08x, host=%08x\n";
+// VA 0x00DD907C (.data), DIR32 witness; 0x10 bytes to Rva012C4934.
+char Rva012C4924[0x10] = "%d.%d.%d.%d%s";
+// VA 0x00DD908C (.data), DIR32 witness; 4 bytes to Rva012C4938.
+char Rva012C4934[4] = "%s";
+// VA 0x00DD9090 (.data), DIR32 witness; 0x24 bytes through its padding,
+// ending before the next identified literal, "Default Name", at 0x00DD90B4.
+char Rva012C4938[0x24] = "NetGameUtil: connection complete\n";
+// VA 0x00DD910C (.data), DIR32 witness; 0x20 bytes to Rva012C49D4.
+char Rva012C49B4[0x20] = "protoadvt: error, invalid kind\n";
+// VA 0x00DD912C (.data), DIR32 witness; 0x20 bytes to Rva012C49F4.
+char Rva012C49D4[0x20] = "protoadvt: error, invalid name\n";
+// VA 0x00DD914C (.data), DIR32 witness; 0x20 bytes to Rva012C4A14.
+char Rva012C49F4[0x20] = "protoadvt: error, invalid note\n";
+// VA 0x00DD916C (.data), DIR32 witness; 0x20 bytes to Rva012C4A34.
+char Rva012C4A14[0x20] = "protoadvt: error, invalid addr\n";
+// VA 0x00DD918C (.data), DIR32 witness; 5 bytes to Rva012C4A39.
+unsigned char Rva012C4A34[5] = { 'g', 'E', 'A', 0, 'g' };
+// VA 0x00DD9191 (.data), DIR32 witness; 5 bytes to Rva012C4A3E.
+unsigned char Rva012C4A39[5] = { 'E', 'A', 0, 'g', 'E' };
+// VA 0x00DD9196 (.data), DIR32 witness; the identified one-character string
+// ends at its NUL before the adjacent "comm/datamodem" literal at 0x00DD9198.
+unsigned char Rva012C4A3E[2] = { 'A', 0 };
+// VA 0x00E0A711 (.data zero-fill); one byte before the next data symbol.
+char Rva0130ACF9[1];
+// VA 0x00DD8EFC (.data), DIR32 witness; retail points to VA 0x00DD8EC0.
+// No source object exists for that target, so reproduce its pointed-to text
+// locally; the original pointer identity is not asserted.
+static char g_Rva012C47A4Text[] =
+	"00-e0-98-8f-f8-e4:Greg's PC\n00-e0-98-84-ce-cc:PS2 Dev Box\n";
+char *g_Rva012C47A4 = g_Rva012C47A4Text;
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?bfmeNextIdUNC@@YAHXZ=_Rva0080E440")
