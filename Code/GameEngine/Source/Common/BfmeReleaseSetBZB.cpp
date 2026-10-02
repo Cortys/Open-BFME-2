@@ -3,7 +3,7 @@
 // landed: six owned pointers are released through bfmeTwoBZB and each is
 // cleared together with its paired field.
 
-void bfmeTwoBZB(void *what);
+void bfmeFreeOneJT(void *what);
 
 struct BfmeHolderBZB6
 {
@@ -31,32 +31,32 @@ void bfmeOneBZB(void *what)
 	BfmeHolderBZB6 *self = (BfmeHolderBZB6 *)what;
 
 	if (self->m_atB8)
-		bfmeTwoBZB(self->m_atB8);
+		bfmeFreeOneJT(self->m_atB8);
 	self->m_atB8 = 0;
 	self->m_atBC = 0;
 
 	if (self->m_atA0)
-		bfmeTwoBZB(self->m_atA0);
+		bfmeFreeOneJT(self->m_atA0);
 	self->m_atA0 = 0;
 	self->m_at34 = 0;
 
 	if (self->m_atA4)
-		bfmeTwoBZB(self->m_atA4);
+		bfmeFreeOneJT(self->m_atA4);
 	self->m_atA4 = 0;
 	self->m_at3C = 0;
 
 	if (self->m_atA8)
-		bfmeTwoBZB(self->m_atA8);
+		bfmeFreeOneJT(self->m_atA8);
 	self->m_atA8 = 0;
 	self->m_at24 = 0;
 
 	if (self->m_atAC)
-		bfmeTwoBZB(self->m_atAC);
+		bfmeFreeOneJT(self->m_atAC);
 	self->m_atAC = 0;
 	self->m_at28 = 0;
 
 	if (self->m_atB0)
-		bfmeTwoBZB(self->m_atB0);
+		bfmeFreeOneJT(self->m_atB0);
 	self->m_atB0 = 0;
 	self->m_at2C = 0;
 }
