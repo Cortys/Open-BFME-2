@@ -2,6 +2,10 @@
 // stlport
 // Ported verbatim from the Generals Zero Hour reference
 // (GameEngine/Source/GameLogic/Object/Update/ProjectileStreamUpdate.cpp); this unit had no counterpart under Code/.
+
+// GameLogic.h (sweep shim): this unit's cullFrontOfList allocates registers
+// around the visible inline findObjectByID body, so keep it.
+#define BFME_ZH_INLINE_FINDOBJECTBYID
 /*
 **	Command & Conquer Generals Zero Hour(tm)
 **	Copyright 2025 Electronic Arts Inc.
