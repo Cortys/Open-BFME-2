@@ -9,7 +9,10 @@ struct Global98Flag
 	unsigned char m_flag98;
 };
 
-#define Global98Ptr (*(Global98Flag *const *)0x00DFE78C)
+class GameLogic;
+extern class GameLogic *TheGameLogic;
+
+#define Global98Ptr (*(Global98Flag *const *)&TheGameLogic)
 
 class Rva0039B795
 {
