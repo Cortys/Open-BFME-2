@@ -6,7 +6,18 @@
 // AsciiString dtor at 0x0048BA39, free via rowed _free, loop left+0x08.
 // Caller at 0x00057B82 clears the same way; owner unproven.
 
-#include "ascii_string.h"
+// Retail calls the rowed AsciiString dtor at 0x0048BA39 from this erase
+// body. Keep its one-pointer layout but leave the dtor out of line here so
+// this TU binds to that row instead of emitting the header's inline copy.
+// class-gate: allow AsciiString TU-local 4-byte view binds the proven rowed destructor at 0x0048BA39.
+class AsciiString
+{
+public:
+	~AsciiString();
+
+private:
+	char *m_text;
+};
 
 extern "C" void __cdecl free(void *block);
 
