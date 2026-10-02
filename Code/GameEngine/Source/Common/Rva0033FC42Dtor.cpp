@@ -82,3 +82,27 @@ int Rva0033FC42::rva0033FC9D()
 	m_ptr18->m_38 = false;
 	return ret;
 }
+
+// ??1Rva00341D26@@UAE@XZ, retail 0x00341D26, 91 bytes: the same destructor for a
+// sibling class over the same base and members, differing from ~Rva0033FC42's
+// bytes only in the vftable it stores on entry (VA 0xc11740). Identity is not
+// recovered.
+class Rva00341D26 : public Rva0049B47C
+{
+public:
+	virtual ~Rva00341D26();
+private:
+	char m_pad0C[0x18 - 0x0C];
+	Holder0033FC9D *m_ptr18;
+	char m_pad1C[0x20 - 0x1C];
+	Rva0033FC42Member *m_ptr20;
+};
+
+Rva00341D26::~Rva00341D26()
+{
+	if (m_ptr20 != 0) {
+		m_ptr20->method3C();
+		::operator delete(m_ptr20 != 0 ? m_ptr20->scalarDeletingDestructor(0) : 0);
+		m_ptr20 = 0;
+	}
+}
