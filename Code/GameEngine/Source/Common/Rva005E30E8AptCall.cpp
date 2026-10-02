@@ -1,5 +1,3 @@
-// ?Rva005E30E8AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAVRva005E2D74@@@Z
-// partial score=0.97 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc
 //
 // ?Rva005E30E8AptCall@@YAHPAV1PAXPBD1PAVRva005E2D74@@@Z, retail 0x005E30E8 99B free cdecl.
@@ -10,19 +8,20 @@
 //
 #include "ascii_string.h"
 
-class Rva00222A8BTarget;
+class Rva00222A8BTarget
+{
+public:
+	int rva00222B19(void *level, const char *prefix, const char *function, int argc, const char *a0, void *a1, void *a2, void *a3, void *a4);
+};
 class Rva005E2D74
 {
 public:
 	AsciiString rva005E306D();
 };
 
-int __stdcall Rva00222B19AptCall(void *level, const char *prefix, const char *function, int argc, const char *a0, void *a1, void *a2, void *a3, void *a4);
-
-// ?Rva005E30E8AptCall present-unmatched
 int __cdecl Rva005E30E8AptCall(Rva00222A8BTarget *target, void *level, const char *mid, const char *function, Rva005E2D74 *obj)
 {
 	AsciiString tmp = obj->rva005E306D();
 	const char *s = tmp.str();
-	return Rva00222B19AptCall(level, mid, function, 1, s, 0, 0, 0, 0);
+	return target->rva00222B19(level, mid, function, 1, s, 0, 0, 0, 0);
 }
