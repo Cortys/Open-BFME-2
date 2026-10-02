@@ -38,7 +38,7 @@ public:
 		APT_BASE_PTR_STACK_ASSERT(m_nElements - nPos > 0);
 		return m_aElements[m_nElements - nPos - 1];
 	}
-	void PopAndPush(int nItems, BfmeAptValue006DCD20 *element);
+	void rva006FE880(int nItems, BfmeAptValue006DCD20 *element);
 
 	int m_nElements;
 	int m_nCapacity;
@@ -68,7 +68,7 @@ void AptActionInterpreter::_FunctionAptActionBitAnd(AptActionInterpreter *const 
 		int nB = pB->toInteger();
 		pResult = AptInteger::Create(nB & nA);
 	}
-	pInterpreter->stack.PopAndPush(2, pResult);
+	pInterpreter->stack.rva006FE880(2, pResult);
 }
 
 void AptActionInterpreter::_FunctionAptActionBitOr(AptActionInterpreter *const pInterpreter)
@@ -83,7 +83,7 @@ void AptActionInterpreter::_FunctionAptActionBitOr(AptActionInterpreter *const p
 		int nB = pB->toInteger();
 		pResult = AptInteger::Create(nB | nA);
 	}
-	pInterpreter->stack.PopAndPush(2, pResult);
+	pInterpreter->stack.rva006FE880(2, pResult);
 }
 
 void AptActionInterpreter::_FunctionAptActionBitXor(AptActionInterpreter *const pInterpreter)
@@ -98,7 +98,7 @@ void AptActionInterpreter::_FunctionAptActionBitXor(AptActionInterpreter *const 
 		int nB = pB->toInteger();
 		pResult = AptInteger::Create(nB ^ nA);
 	}
-	pInterpreter->stack.PopAndPush(2, pResult);
+	pInterpreter->stack.rva006FE880(2, pResult);
 }
 
 void AptActionInterpreter::_FunctionAptActionBitLShift(AptActionInterpreter *const pInterpreter)
@@ -113,7 +113,7 @@ void AptActionInterpreter::_FunctionAptActionBitLShift(AptActionInterpreter *con
 		int nB = pB->toInteger();
 		pResult = AptInteger::Create(nB << nA);
 	}
-	pInterpreter->stack.PopAndPush(2, pResult);
+	pInterpreter->stack.rva006FE880(2, pResult);
 }
 
 void AptActionInterpreter::_FunctionAptActionBitRShift(AptActionInterpreter *const pInterpreter)
@@ -128,5 +128,5 @@ void AptActionInterpreter::_FunctionAptActionBitRShift(AptActionInterpreter *con
 		int nB = pB->toInteger();
 		pResult = AptInteger::Create(nB >> nA);
 	}
-	pInterpreter->stack.PopAndPush(2, pResult);
+	pInterpreter->stack.rva006FE880(2, pResult);
 }
