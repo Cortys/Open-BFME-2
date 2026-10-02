@@ -27,11 +27,25 @@ template <class T1, class T2> struct pair
 };
 }
 
+class Rva000427195
+{
+public:
+	void rva00212858(unsigned int n);
+	int bucketIndex(const AsciiString *key);
+};
+
+class Rva00223124
+{
+public:
+	void *rva00223124(const void *obj);
+};
+
 class Rva00223591
 {
 public:
 	void rva00223591(void *p);
 	void rva0022380B();
+	_STL::pair<const AsciiString, TreeHintRef00222C5A> *rva00223854(const _STL::pair<const AsciiString, TreeHintRef00222C5A> *arg);
 private:
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -61,4 +75,16 @@ void Rva00223591::rva0022380B()
 		m_beginBuckets[i] = 0;
 	}
 	m_numElements = 0;
+}
+
+_STL::pair<const AsciiString, TreeHintRef00222C5A> *Rva00223591::rva00223854(const _STL::pair<const AsciiString, TreeHintRef00222C5A> *arg)
+{
+	((Rva000427195 *)this)->rva00212858(m_numElements + 1);
+	int b = ((Rva000427195 *)this)->bucketIndex(&arg->first);
+	void *old = m_beginBuckets[b];
+	void *n = ((Rva00223124 *)this)->rva00223124(arg);
+	*(void **)n = old;
+	m_beginBuckets[b] = n;
+	++m_numElements;
+	return (_STL::pair<const AsciiString, TreeHintRef00222C5A> *)((char *)n + 4);
 }
