@@ -7,7 +7,9 @@
 // and setVel/setCurPos inline to stores.
 #include "PreRTS.h"
 #include "GameClient/ProcessAnimateWindow.h"
+#pragma optimize("y", off)
 #include "GameClient/AnimateWindowManager.h"
+#pragma optimize("", on)
 #include "GameClient/GameWindow.h"
 #include "GameClient/Display.h"
 
