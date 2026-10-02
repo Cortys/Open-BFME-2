@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /EHsc /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /G7 /EHsc /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // STLport's two-argument sort over a pointer range of 8-byte elements: sort
@@ -16,7 +16,10 @@
 // more. BfmeE8 has the layout the deque<BfmeE8> heap helpers
 // (Rva0054A5EEPushHeap.cpp) give it. Three bodies retail folded with other
 // instantiations are pinned there, not rowed: the median, swap and
-// copy_backward.
+// copy_backward. The build uses the stock STLport headers, as
+// stlport_copy_backward_e12.cpp does: the bfmealloc shim force-inlines the
+// copy_backward helpers into a 29-byte copy_backward, and retail's (0x004C72FE)
+// is the 27-byte one that calls __copy_backward_ptrs.
 
 #include <algorithm>
 
