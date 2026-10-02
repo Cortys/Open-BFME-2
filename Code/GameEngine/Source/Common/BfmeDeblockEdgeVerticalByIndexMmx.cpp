@@ -16,11 +16,25 @@ struct Rva009C2170Ctx
 
 extern int *g_rva01356A9C;
 
-extern const unsigned char Rva01143860Mask[8];		// retail 0x01143860 ({0xFF} x8)
-extern const unsigned short Rva01143870Round[4];	// retail 0x01143870 ({4} x4)
-extern const unsigned short Rva01143880Half[4];	// retail 0x01143880 ({1} x4)
-extern const unsigned char Rva011438A0Limit[8];	// retail 0x011438A0 ({1} x8)
-extern const unsigned char Rva011438B0Bias[8];		// retail 0x011438B0 ({0x80} x8)
+// Retail .rdata vectors; typed values come from the image bytes. Each extent
+// is bounded by the next witnessed vector's address where one follows.
+// VA 0x00BD99C0, eight bytes, ending before Round at VA 0x00BD99D0.
+extern const unsigned char Rva01143860Mask[8] = {
+	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+};
+// VA 0x00BD99D0, four words/eight bytes, ending before Half at VA 0x00BD99E0.
+extern const unsigned short Rva01143870Round[4] = { 4, 4, 4, 4 };
+// VA 0x00BD99E0, four words/eight bytes, ending before Limit at VA 0x00BD9A00.
+extern const unsigned short Rva01143880Half[4] = { 1, 1, 1, 1 };
+// VA 0x00BD9A00, eight bytes, ending before Bias at VA 0x00BD9A10.
+extern const unsigned char Rva011438A0Limit[8] = {
+	1, 1, 1, 1, 1, 1, 1, 1,
+};
+// VA 0x00BD9A10, eight-byte vector through RVA 0x007D9A18; no closer known
+// data symbol is recorded in reverse/symbols.csv.
+extern const unsigned char Rva011438B0Bias[8] = {
+	0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80,
+};
 
 void __cdecl bfmeDeblockEdgeVerticalByIndexMmx(Rva009C2170Ctx *ctx, void *row, int stride)
 {

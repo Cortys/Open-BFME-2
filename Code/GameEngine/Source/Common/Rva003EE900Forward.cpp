@@ -58,12 +58,21 @@ private:
 	_STL::map<AsciiString, AsciiString> m_map;
 };
 
-extern AsciiString g_Rva00E02E7C;
-extern AsciiString g_Rva00E02E78;
-extern AsciiString g_Rva00E02E80;
-extern AsciiString g_Rva00E02E68;
-extern AsciiString g_Rva00E02E6C;
-extern AsciiString g_Rva00E02E64;
+// These six target objects occupy the zero-filled .data tail. Their matched
+// DIR32 references establish each VA; no explicit initializer preserves the
+// retail zero-initialized storage before normal AsciiString initialization.
+// VA 0x00E02E7C (.data, zero-filled tail).
+AsciiString g_Rva00E02E7C;
+// VA 0x00E02E78 (.data, zero-filled tail).
+AsciiString g_Rva00E02E78;
+// VA 0x00E02E80 (.data, zero-filled tail).
+AsciiString g_Rva00E02E80;
+// VA 0x00E02E68 (.data, zero-filled tail).
+AsciiString g_Rva00E02E68;
+// VA 0x00E02E6C (.data, zero-filled tail).
+AsciiString g_Rva00E02E6C;
+// VA 0x00E02E64 (.data, zero-filled tail).
+AsciiString g_Rva00E02E64;
 
 class Rva003EE900
 {

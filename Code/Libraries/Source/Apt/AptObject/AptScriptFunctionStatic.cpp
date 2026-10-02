@@ -26,6 +26,15 @@ public:
     static void ShutdownStaticData();
     static void *PushStaticData();
 };
+// These four class statics occupy consecutive zero-filled .data slots.
+// VA 0x00E1834C (.data, zero-filled tail).
+AptValue **AptScriptFunctionBase::spRegBlockBase;
+// VA 0x00E18350 (.data, zero-filled tail).
+AptValue **AptScriptFunctionBase::spRegBlockCurrentFrameBase;
+// VA 0x00E18354 (.data, zero-filled tail).
+int AptScriptFunctionBase::snRegBlockCurrentFrameCount;
+// VA 0x00E18358 (.data, zero-filled tail).
+int AptScriptFunctionBase::snRegisterBlockSize;
 #define CHECK_AT(cond,text,line) if (!(cond)) { g_bfmeAptAssertAtE17734(text,"C:\\projects\\bfme2patch103\\bfme2\\Code\\Libraries\\Source\\Apt\\AptObject\\AptScriptFunction.cpp",line); if (g_bfmeAptBreakOnAssertAtDDC01C) __debugbreak(); }
 void AptScriptFunctionBase::ShutdownStaticData()
 {

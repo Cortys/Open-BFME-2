@@ -52,6 +52,15 @@ private:
 	static FrameName *m_frameNames;
 };
 
+// Zero-initialized .data statics; m_rec at VA 0x00E0C1F4 remains provided by
+// the existing alternate-name bind below.
+// VA 0x00E0C1E8 (.data, zero-filled tail), before m_names at 0x00E0C1EC.
+Profile::FrameName *Profile::m_frameNames;
+// VA 0x00E0C1EC (.data, zero-filled tail), before m_recNames at 0x00E0C1F0.
+unsigned Profile::m_names;
+// VA 0x00E0C1F0 (.data, zero-filled tail), before m_rec at 0x00E0C1F4.
+char **Profile::m_recNames;
+
 // ?StopRange@Profile@@SAXPBD@Z
 void Profile::StopRange(const char *range)
 {
