@@ -16,10 +16,7 @@
 namespace _STL
 {
 
-// ?__Named_exception::~__Named_exception present-unmatched
-__Named_exception::~__Named_exception() _STLP_NOTHROW_INHERENTLY
-{
-}
+// __Named_exception::~__Named_exception: defined in stlport_stdexcept_dtors.cpp (its row's unit).
 
 const char *__Named_exception::what() const _STLP_NOTHROW_INHERENTLY
 {
