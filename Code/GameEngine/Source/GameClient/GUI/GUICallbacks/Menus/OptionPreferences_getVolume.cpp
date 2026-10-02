@@ -27,7 +27,13 @@ extern "C" __declspec(dllimport) double __cdecl atof(const char *str);
 
 // 20-byte volume preference keys at retail 0x00DBD190 (SFX/Voice/Music/
 // Ambient/MovieVolume in index order).
-extern const char g_volumePreferenceKeys[5][20];
+// Matched DIR32 witness (w=1) places this 5-by-20-byte table in .data; the
+// index guard below bounds it to five keys, ending at VA 0x00DBD1F4.
+#pragma const_seg(".data")
+extern const char g_volumePreferenceKeys[5][20] = {
+	"SFXVolume", "VoiceVolume", "MusicVolume", "AmbientVolume", "MovieVolume",
+};
+#pragma const_seg()
 
 // Custom string/map shims, verbatim from reference/open-bfme-1's
 // OptionsMenu.cpp: explicit init/destroy instead of a destructor so no
