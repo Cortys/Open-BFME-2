@@ -48983,3 +48983,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005335D3@Rva005312BE@@QAEXXZ,,0x005335D3,145,Code/GameEngine/Source/Common/Rva005335D3Reset.cpp,matched,reset grid frees arrays via 0x00532F9F callers 0x002F46ED 0x00533B8C
 ??1Rva00212ED3@@QAE@XZ,,0x00212ED3,503,Code/GameEngine/Source/GameClient/Rva00212ED3Dtor.cpp,matched,Non-virtual dtor via rowed callees and caller 0x0021468B
 ?rva001FE70F@Rva001FE70F@@QAEXPAVINI@@@Z,,0x001FE70F,99,Code/GameEngine/Source/GameLogic/Object/Rva001FE70FInit.cpp,matched,unlock via rowed ctor add plus Get plus pin init plus StringBase set caller 0x001FEFEC
+?rva005FE047@Rva005FE047@@QAEXXZ,,0x005FE047,66,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,first-fire guard plus Apt Fire SetPlayerNameVisibility via rowed Fire
