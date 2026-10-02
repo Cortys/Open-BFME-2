@@ -202,7 +202,8 @@ public:
 	virtual void xferAudioHandle(Xfer *xfer, AudioHandle *handle) = 0;
 };
 
-#define TheAudio (*(AudioManager *const *)0x00DFE6E8)
+// The existing link definition is the AudioManager singleton at this VA.
+extern AudioManager *TheAudio;
 
 enum ObjectID
 {
