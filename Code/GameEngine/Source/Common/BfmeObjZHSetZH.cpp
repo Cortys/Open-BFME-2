@@ -38,6 +38,14 @@ private:
 	friend class BfmeVecZH;
 };
 
+// LINK-COMDAT: StringBase<char> default ctor kept as /O1 (and [eax],0) from
+// ModuleDataCtor.cpp; this TU needs default flags for its bfmeSetZH row, which
+// inlines the ctor as mov. Specialize only the member under "s" so our emitted
+// copy matches the kept one while inlined uses keep default flags.
+#pragma optimize("s", on)
+template<> StringBase<char>::StringBase() : m_data(0) {}
+#pragma optimize("", on)
+
 #pragma comment(linker, "/alternatename:??0AsciiString@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
 #pragma comment(linker, "/alternatename:?set@AsciiString@@QAEXABV1@@Z=?set@?$StringBase@D@@QAEXABV1@@Z")
 #pragma comment(linker, "/alternatename:?releaseBuffer@AsciiString@@AAEXXZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
