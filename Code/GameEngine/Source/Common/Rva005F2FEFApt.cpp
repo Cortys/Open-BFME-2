@@ -97,6 +97,7 @@ class Rva005F2A32
 public:
 	void rva005F2A32();
 	void rva005F2A3A();
+	void rva005F2A42();
 private:
 	char m_pad00[4];
 	Rva005F2FEF *m_member04;
@@ -110,4 +111,9 @@ void Rva005F2A32::rva005F2A32()
 void Rva005F2A32::rva005F2A3A()
 {
 	m_member04->rva005F2953();
+}
+
+void Rva005F2A32::rva005F2A42()
+{
+	m_member04->rva005F298F();
 }

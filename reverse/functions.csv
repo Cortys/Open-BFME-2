@@ -48502,3 +48502,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0030BBC8@Rva0030BBC8@@QAEXM@Z,,0x0030BBC8,29,Code/GameEngine/Source/Common/Rva0030BBC8Set.cpp,matched,guarded float setter at 0x5C slot9 callers 0x0030C794 0x003293B6
 ?rva005F2A3A@Rva005F2A32@@QAEXXZ,,0x005F2A3A,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder to Rank hide via plus4 same caller
 ?rva005F298F@Rva005F2FEF@@QAEXXZ,,0x005F298F,60,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,hide MemberRankProgressBarState via AptCall plus clear flag bit2
+?rva005F2A42@Rva005F2A32@@QAEXXZ,,0x005F2A42,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder to RankProgressBar hide via plus4 same caller
