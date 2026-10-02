@@ -171,3 +171,7 @@ void SnowManager::reset()
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?targetSlot7@SnowManager@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
 #pragma comment(linker, "/alternatename:?targetSlot13@SnowManager@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?TheWeatherSetting@@3V?$OVERRIDE@VWeatherSetting@@@@A=?g_Va00DFE118@@3PAVWeatherSetting@@A")
