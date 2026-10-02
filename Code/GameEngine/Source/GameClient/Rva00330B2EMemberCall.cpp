@@ -112,7 +112,8 @@ unsigned char Rva003081FB::rva003081FB()
 
 //
 // ?rva003081DF@Rva003081DF@@QAEXXZ retail 0x003081DF 28 bytes.
-// StringBase at +0x80 set from 0x00BBAC1C via rowed set 0x000055F5
+// StringBase at +0x80 set from the empty-string literal at 0x00BBAC1C via
+// rowed set 0x000055F5.
 // then byte at +0x88 set to 1. Same page/flags as siblings.
 template <typename T>
 class StringBase
@@ -136,6 +137,6 @@ private:
 
 void Rva003081DF::rva003081DF()
 {
-	m_str80.set(reinterpret_cast<const char *>(0x00BBAC1C));
+	m_str80.set("");
 	m_flag88 = 1;
 }
