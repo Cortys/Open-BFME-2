@@ -48849,3 +48849,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva003EF1B8@Rva003EF14A@@QAEXXZ,,0x003EF1B8,33,Code/GameEngine/Source/Common/System/Rva003EF14ADtor.cpp,matched,unregister via 2B7250 then link48 to secondary then 3EE9F1 then clear 0x14
 ?Rva003EF648Index@@YGHPAURva003EF648Span@@H@Z,,0x003EF648,46,Code/GameEngine/Source/Common/Rva003EF648Index.cpp,matched,index lookup over record-pointer span returns index or -1
 ?rva003EF7DF@Rva003EF7DF@@QAEXPAURva003EF7DFDest@@H@Z,,0x003EF7DF,48,Code/GameEngine/Source/Common/Rva003EF7DFPush.cpp,matched,lookup via 003EF648 then push_back hit into dest vector
+?clear@?$_List_base@UcrateCreationEntry@@V?$allocator@UcrateCreationEntry@@@_STL@@@_STL@@QAEXXZ,,0x002887EA,50,Code/GameEngine/Source/Common/System/CrateCreationEntryListClear.cpp,matched,virtual dtor clear callee of List_base dtor 0x002889A4 via REL32

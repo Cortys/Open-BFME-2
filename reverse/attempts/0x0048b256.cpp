@@ -1,16 +1,17 @@
 // ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ
-// partial score=0.95 date=2026-09-30
-// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ
-// partial score=0.95 date=2026-09-30
+// partial score=0.99 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
-// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ @0x0048B256 233B: grid-decal ring update.
-// Same class/flags as neighbours CreateGridDecals and Xfer. Reads m_totalFrames 0x28
-// m_stateCountDown 0x24 m_currentClearingRange 0x4C m_nativeClearingRange 0x48,
-// object pos +0x38, writes m_gridDecal[30] at +0x50 via setPosition 0x00330DFD
-// setOpacity 0x00330DDB rowed, ji sin-cos 0x629216 0x62920A rowed, ftol2 rowed,
-// g_Va00BBB8D8 rowed, step 0.20943951f (2*PI/30 bytes PwV> Float-ref).
-// Callers 0x0048B458 0x0048B4B3 in 0x0048B33F unclaimed.
-#include <math.h>
+// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ @0x0048B256 233B: animateGridDecals.
+// Donor Generals/Code/.../DynamicShroudClearingRangeUpdate.cpp animateGridDecals:
+//  radius = m_current + ((total-countdown)*2), angle 0, opacity = 1-fade,
+//  pos.x = ctr->x + sin(angle)*radius, pos.y = ctr->y + cos(angle)*radius,
+//  pos.x -= (Int)pos.x%23, pos.y -= (Int)pos.y%23, setPosition/setOpacity,
+//  angle += 2PI/30, do-while pointer loop like CreateGridDecals neighbour.
+// Retail uses sin first (x) cos second (y), double sin/cos via ji 0x629216/0x62920A,
+// ftol2, g_Va00BBB8D8 for 1.0f, step 0.20943951f Float-ref. Direct m_object+0x38,
+// no getPosition call. Same class/flags as neighbours.
+extern "C" double __cdecl sin(double);
+extern "C" double __cdecl cos(double);
 
 typedef int Int;
 struct Coord3D { float x; float y; float z; };
@@ -61,29 +62,24 @@ private:
 	float m_currentClearingRange;
 	RadiusDecal m_gridDecal[30];
 };
+// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ present-unmatched
 void DynamicShroudClearingRangeUpdate::rva0048B256()
 {
-	int span = m_totalFrames - m_stateCountDown;
-	float *objPos = (float *)((char *)m_object + 0x38);
-	float radius = (float)(span + span) + m_currentClearingRange;
-	float ratio = m_currentClearingRange / m_nativeClearingRange;
-	float fade = g_Va00BBB8D8 - ratio;
-	float angle = 0.0f;
-	RadiusDecal *decal = m_gridDecal;
-	int left = 30;
+	const Coord3D *ctr = (const Coord3D *)((char *)m_object + 0x38);
 	Coord3D pos;
 	pos.z = 0.0f;
+	float radius = m_currentClearingRange + ((m_totalFrames - m_stateCountDown) * 2);
+	float angle = 0.0f;
+	float opacity = g_Va00BBB8D8 - (m_currentClearingRange / m_nativeClearingRange);
+	RadiusDecal *decal = m_gridDecal;
+	int left = 30;
 	do {
-		double c = cos(angle);
-		double s = sin(angle);
-		double fx = c * (double)radius + (double)objPos[0];
-		double fy = s * (double)radius + (double)objPos[1];
-		double dx = fx - (double)((int)fx % 23);
-		double dy = dx - (double)((int)dx % 23);
-		pos.x = (float)dx;
-		pos.y = (float)dy;
+		pos.x = ctr->x + sin(angle) * radius;
+		pos.y = ctr->y + cos(angle) * radius;
+		pos.x -= ((Int)pos.x) % 23;
+		pos.y -= ((Int)pos.y) % 23;
 		decal->setPosition(pos);
-		decal->setOpacity(fade);
+		decal->setOpacity(opacity);
 		angle += 0.20943951f;
 		++decal;
 	} while (--left != 0);
