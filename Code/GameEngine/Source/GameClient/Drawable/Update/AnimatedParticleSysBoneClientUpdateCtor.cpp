@@ -40,11 +40,6 @@ protected:
 	BFMERopeDrawable *m_ropeDrawable;
 };
 
-// ??1Rva000B19A1@@ present-unmatched
-Rva000B19A1::~Rva000B19A1()
-{
-}
-
 class RadiusDecal
 {
 public:
