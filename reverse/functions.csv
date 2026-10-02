@@ -48132,3 +48132,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?Rva004634BACreate@@YGPAURva004634BANode@@ABVRva0046267A@@@Z,,0x004634BA,34,Code/Libraries/Source/WWVegas/WWLib/Rva004634BACreateNode.cpp,matched,RB create_node alloc 0x60 via 0x307F0 plus Construct 0x462D83 at plus 0x10
 ?rva005AFD2E@Rva005AFC92@@QAE_NXZ,,0x005AFD2E,21,Code/GameEngine/Source/Common/Rva005AFC92Reset.cpp,matched,not winIsHidden via rowed 0x00313CD9 caller 0x0057FDAB neighbour Rva005AFCFF
 ?rva005AFD89@Rva005AFE86@@UAEXHPBURva005AFD89Param@@@Z,,0x005AFD89,60,Code/GameEngine/Source/Common/Rva005AFD89Slot0.cpp,matched,vslot0 of 0x008728B8 via rowed 0x00326BEC and 0x00037050 caller none
+?xfer@Rva002E0A0A@@MAEXPAVXfer@@@Z,,0x0052BA0A,161,Code/GameEngine/Source/Common/Rva002E0A0AXfer.cpp,matched,Slot 3 xfer via Version plus IsCRC plus strings plus version gated int
