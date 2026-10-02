@@ -39,6 +39,11 @@ public:
 extern "C" void *memcpy(void *dst, const void *src, unsigned int n);
 extern "C" void *memset(void *dst, int v, unsigned int n);
 
+// g_00DB3F64: VA 0x00DB3F64 (.data); retail bytes are six float 1.0 values.
+float g_00DB3F64[6] = { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
+// g_00DB3F7C: VA 0x00DB3F7C (.data); retail initial byte is 0x01.
+unsigned char g_00DB3F7C = 1;
+
 #pragma optimize("y", off)
 // ?refreshPair@Rva00699180Owner@@QAEXHH@Z
 void Rva00699180Owner::refreshPair(int a, int b)
@@ -55,9 +60,9 @@ void Rva00699180Owner::refreshPair(int a, int b)
 		slot[2] = 1.0f;
 		slot[3] = 1.0f;
 	}
-	else if (*(unsigned char *)0x00DB3F7C)
+	else if (g_00DB3F7C)
 	{
-		slot[0] = *((float *)((char *)this + 4 + idx * 4)) * ((float *)0x00DB3F64)[a] * m_vol;
+		slot[0] = *((float *)((char *)this + 4 + idx * 4)) * g_00DB3F64[a] * m_vol;
 		if (b == 1)
 			slot[0] = slot[0] * m_atten;
 		float &scale = m_scale;
