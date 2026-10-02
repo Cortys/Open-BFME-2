@@ -41,3 +41,179 @@ Rva00080221::Rva00080221(const int *arg)
 		++p->m_refcount;
 	}
 }
+
+// Seven more constructors of this 53-byte shape, each installing its own impl
+// vtable (the only differing operand; no other unit references these vtables):
+// 0x00211E75 (VA 0xbe5128), 0x002D4594 (VA 0xc02aec), 0x002D45C9 (VA 0xc02af4),
+// 0x002D45FE (VA 0xc02afc), 0x004106FA (VA 0xc39634), 0x0044BC76 (VA 0xc3ed7c), 0x005773DB (VA 0xc6e970).
+// Each impl is a class over a shared ref-counted base whose destructor is
+// inline and empty, so the vtable it stores is emitted and resolved in this
+// unit rather than written as an address. Owners keep their addresses.
+
+struct Rva00080221RefImpl
+{
+	virtual ~Rva00080221RefImpl() {}
+	int m_ref;
+	Rva00080221RefImpl() : m_ref(0) {}
+};
+
+// ??0Rva00211E75@@QAE@PBH@Z @0x00211E75 53B, impl vtable VA 0xbe5128
+struct Impl00211E75 : Rva00080221RefImpl
+{
+	int m_value;
+	Impl00211E75(const int &value) : m_value(value) {}
+};
+
+class Rva00211E75
+{
+public:
+	Rva00211E75(const int *arg);
+private:
+	Impl00211E75 *m_impl;
+};
+
+Rva00211E75::Rva00211E75(const int *arg)
+{
+	Impl00211E75 *p = new Impl00211E75(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva002D4594@@QAE@PBH@Z @0x002D4594 53B, impl vtable VA 0xc02aec
+struct Impl002D4594 : Rva00080221RefImpl
+{
+	int m_value;
+	Impl002D4594(const int &value) : m_value(value) {}
+};
+
+class Rva002D4594
+{
+public:
+	Rva002D4594(const int *arg);
+private:
+	Impl002D4594 *m_impl;
+};
+
+Rva002D4594::Rva002D4594(const int *arg)
+{
+	Impl002D4594 *p = new Impl002D4594(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva002D45C9@@QAE@PBH@Z @0x002D45C9 53B, impl vtable VA 0xc02af4
+struct Impl002D45C9 : Rva00080221RefImpl
+{
+	int m_value;
+	Impl002D45C9(const int &value) : m_value(value) {}
+};
+
+class Rva002D45C9
+{
+public:
+	Rva002D45C9(const int *arg);
+private:
+	Impl002D45C9 *m_impl;
+};
+
+Rva002D45C9::Rva002D45C9(const int *arg)
+{
+	Impl002D45C9 *p = new Impl002D45C9(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva002D45FE@@QAE@PBH@Z @0x002D45FE 53B, impl vtable VA 0xc02afc
+struct Impl002D45FE : Rva00080221RefImpl
+{
+	int m_value;
+	Impl002D45FE(const int &value) : m_value(value) {}
+};
+
+class Rva002D45FE
+{
+public:
+	Rva002D45FE(const int *arg);
+private:
+	Impl002D45FE *m_impl;
+};
+
+Rva002D45FE::Rva002D45FE(const int *arg)
+{
+	Impl002D45FE *p = new Impl002D45FE(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva004106FA@@QAE@PBH@Z @0x004106FA 53B, impl vtable VA 0xc39634
+struct Impl004106FA : Rva00080221RefImpl
+{
+	int m_value;
+	Impl004106FA(const int &value) : m_value(value) {}
+};
+
+class Rva004106FA
+{
+public:
+	Rva004106FA(const int *arg);
+private:
+	Impl004106FA *m_impl;
+};
+
+Rva004106FA::Rva004106FA(const int *arg)
+{
+	Impl004106FA *p = new Impl004106FA(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva0044BC76@@QAE@PBH@Z @0x0044BC76 53B, impl vtable VA 0xc3ed7c
+struct Impl0044BC76 : Rva00080221RefImpl
+{
+	int m_value;
+	Impl0044BC76(const int &value) : m_value(value) {}
+};
+
+class Rva0044BC76
+{
+public:
+	Rva0044BC76(const int *arg);
+private:
+	Impl0044BC76 *m_impl;
+};
+
+Rva0044BC76::Rva0044BC76(const int *arg)
+{
+	Impl0044BC76 *p = new Impl0044BC76(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
+
+// ??0Rva005773DB@@QAE@PBH@Z @0x005773DB 53B, impl vtable VA 0xc6e970
+struct Impl005773DB : Rva00080221RefImpl
+{
+	int m_value;
+	Impl005773DB(const int &value) : m_value(value) {}
+};
+
+class Rva005773DB
+{
+public:
+	Rva005773DB(const int *arg);
+private:
+	Impl005773DB *m_impl;
+};
+
+Rva005773DB::Rva005773DB(const int *arg)
+{
+	Impl005773DB *p = new Impl005773DB(*arg);
+	m_impl = p;
+	if (p != 0)
+		++p->m_ref;
+}
