@@ -48933,3 +48933,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??_GRva005E7529@@QAEPAXI@Z,,0x005E7BFD,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_muse-08-5E7BFD.cpp,matched,deleting dtor via own ??1 plus operator delete
 ?rva005E73B2@Rva005E73B2@@QAEXXZ,,0x005E73B2,42,Code/GameEngine/Source/Common/Bfme/Rva005E73B2Check.cpp,matched,unlock check via pinned noarg getter and forwarder tail
 ?rva005E7855@Rva005E7855@@QAEXXZ,,0x005E7855,69,Code/GameEngine/Source/Common/Bfme/Rva005E7855Init.cpp,matched,chain five virtuals then check then clear via just-landed
+?rva0021291F@Rva0021291F@@QAEXPBX@Z,,0x0021291F,43,Code/Libraries/Source/WWVegas/WWLib/Rva0021291FCreate.cpp,matched,Audio ModuleData pushback via TheAudio slot then rowed pushback
