@@ -15,6 +15,10 @@ struct IterBase {
  const HashTableClass *m_table;
  IterBase(HashTableClass *t) : m_table(t) {}
 };
+// Kept Is_Done uses mov+test (non-/O1) vs this TU's /O1 xor-first cmp,
+// and kept deleting dtor uses add esp,4 vs pop ecx. Emit matching copies
+// while the loop's inlined test keeps the caller's /O1 shape.
+#pragma optimize("s", off)
 class HashTableIteratorClass : public IterBase {
  int m_index;
  HashableClass *m_cur;
@@ -27,6 +31,7 @@ public:
  bool Is_Done() { return m_cur == 0; }
  HashableClass *Get_Current() { return m_cur; }
 };
+#pragma optimize("", on)
 struct Rva000F1AD8 {
  HashTableClass *m_00;
  void rva000F1AD8();
