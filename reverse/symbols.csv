@@ -7050,3 +7050,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ??$__uninitialized_fill_n@PAVRva0040AF66@@IV1@@_STL@@YAPAVRva0040AF66@@PAV1@IABV1@ABU__false_type@0@@Z,0x0040B1F3,fill_n stride 0x68 via Construct 0x0040B17B; retail REL32 target of placed overflow 0x0040B8E8
 ?_M_clear@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@IAEXXZ,0x0040B5FC,destroy plus free 0x68 stride; retail REL32 target of placed overflow 0x0040B8E8
 ?rva0043B30F@Rva0043B2E2@@QAEPAXPBX@Z,0x0043B30F,ICF twin of free NewNode for tree insert call with this same 0x9C node and pair copy
+??$__copy@PAUVideo@@PAU1@H@_STL@@YAPAUVideo@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x00689450,native removeVideo call at 0x00689D80; typed 28B Video vector copy reproduces full 125B held bfmeCopyVIA body and its three string assignment calls
