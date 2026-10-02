@@ -678,11 +678,12 @@ Rva003E3C22::Rva003E3C22()
 // calls in 0x0054D5D3 pass the outer args through after a 0x10 operator new.
 class Rva0054D593
 {
+	friend class Rva0054D5D3;
 public:
 	Rva0054D593(void *a, void *b);
 	virtual ~Rva0054D593() {}
 private:
-	void *m_04;
+	Rva0054D593 *m_04;
 	void *m_08;
 	void *m_0C;
 };
@@ -690,4 +691,34 @@ private:
 Rva0054D593::Rva0054D593(void *a, void *b)
 	: m_04(0), m_08(a), m_0C(b)
 {
+}
+
+// ?rva0054D5D3@Rva0054D5D3@@QAEX PAX0@Z @0x0054D5D3 93B: list append with
+// 0x10 operator new of Rva0054D593. Empty list sets head and tail to the new
+// node; otherwise tails next is set and tail advances via a reload. Callers
+// at 0x0054D699 0x0054D6B7 0x0037B908 0x00591FA8 pass the two data args.
+class Rva0054D5D3
+{
+public:
+	virtual ~Rva0054D5D3();
+	void rva0054D5D3(void *a, void *b);
+private:
+	Rva0054D593 *m_04;
+	Rva0054D593 *m_08;
+};
+
+void Rva0054D5D3::rva0054D5D3(void *a, void *b)
+{
+	if (m_04 == 0)
+	{
+		Rva0054D593 *p = new Rva0054D593(a, b);
+		m_04 = p;
+		m_08 = p;
+	}
+	else
+	{
+		Rva0054D593 *p = new Rva0054D593(a, b);
+		m_08->m_04 = p;
+		m_08 = m_08->m_04;
+	}
 }
