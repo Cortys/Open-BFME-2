@@ -10346,7 +10346,6 @@ __Locale_compose_name,,0x00020680,983,Code/Libraries/Source/WWVegas/WWLib/Locale
 ___ConvertName,,0x000212D0,78,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleFacets.cpp,matched,file-static binary-search helper; undecorated lstrcmpi import repair for IAT 0xBBA150 per EnumLocalesProcA precedent
 ___GetLCIDFromName,,0x000221B0,362,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleFacets.cpp,matched,unclaimed_scan exact of TU-emitted body; ConvertName row unblocks its 3 static calls
 ?bfmeGoDTK@BfmeThingDTK@@QAEXXZ,,0x004EF4A1,22,Code/GameEngine/Source/Common/BfmeConv780.cpp,matched,BFME1 byte-identical donor trimmed to DTK; b1 0x00168610; DTL twin shares the game.dat body (one claim per address)
-?bfmeProbeSse2@@YAHXZ,,0x001D5540,78,Code/GameEngine/Source/Common/BfmeImageFilter.cpp,matched,BFME1 near-miss donor; b1 0x009C4C40; immediate-only drift
 _luaB_print,,0x0074B700,155,Code/Libraries/Source/Lua/luaB_print.cpp,matched,BFME1 donor verbatim; b1 0x009945A0; 6 callee pins same batch (5 lua API + bfmeLogMsg574)
 ??_GRva006CD6C0SizedDeleting@@UAEPAXI@Z,,0x006CD6C0,33,Code/GameEngine/Source/Common/SizedDeleteDestructors.cpp,matched,BFME1 near-miss donor; b1 0x00891D40; immediate-only drift (push 0x1C for class size 28); dtor pin 0x006CC4C0 same batch
 ?bfmeGo912C@BfmeThing912C@@QAEXXZ,,0x006276B0,34,Code/GameEngine/Source/Common/BfmeConv912.cpp,matched,BFME1 near-miss donor; b1 0x009F4F80; immediate-only drift
@@ -47982,3 +47981,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?read_material_pass@MeshModelClass@@IAE_NAAVChunkLoadClass@@PAVMeshLoadContextClass@@@Z,,0x0018B400,230,Code/Libraries/Source/WWVegas/WW3D2/MeshModelReadMaterialPass.cpp,matched,
 ?Get_Bits_Per_Pixel@@YIIW4WW3DFormat@@@Z,,0x00131A9D,130,Code/Libraries/Source/WWVegas/WW3D2/ww3dformat_bits.cpp,matched,
 ?rva002249ED@Rva00056F61@@QAEAAVRva0022304A@@ABV2@@Z,,0x002249ED,68,Code/GameEngine/Source/GameClient/Rva002249EDHashInsert.cpp,matched,STLport hash insert after caller 0x00224BDB find miss; Ghidra 68B boundary; target calls resize 0x00212858 plus rowed bucketIndex 0x00223149 and node allocator 0x002241AC; pair is AsciiString plus 16-byte binding from ctor 0x002233F0; table offsets +4 buckets and +0x10 count
+?bfmeProbeSse2@@YAHXZ,,0x001D5540,126,Code/GameEngine/Source/Common/BfmeImageFilter.cpp,matched,
