@@ -48383,3 +48383,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??$_M_allocate_and_copy@PBVRva00568A20@@@?$vector@VRva00568A20@@V?$allocator@VRva00568A20@@@_STL@@@_STL@@IAEPAVRva00568A20@@IPBV2@0@Z,,0x00568D68,45,Code/GameEngine/Source/Common/Rva00568D68AllocateCopy.cpp,matched,vector _M_allocate_and_copy via rowed allocate 0x00395928 and uninit_copy 0x00568C95 caller 0x00569E57
 ?rva005F0832@Rva005F0832@@QAEXXZ,,0x005F0832,60,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,Apt hide via rowed AptCall plus holder-plus8 or empty plus TheTarget plus SetBuildingNameState
 ?rva005F09D7@Rva005F09D7@@QAEXXZ,,0x005F09D7,8,Code/GameEngine/Source/Common/Rva005F0647Deleting.cpp,matched,forwarder via plus4 to rowed rva005F0832 plus caller same-this
+?rva004193AD@Rva000427195@@QAE?AUInsertRet00419331@@PBX@Z,,0x004193AD,36,Code/GameEngine/Source/GameClient/Rva00419331Insert.cpp,matched,resizing insert via resize pin and rowed noresize insert

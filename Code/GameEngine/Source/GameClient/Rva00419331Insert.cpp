@@ -79,7 +79,9 @@ class Rva000427195
 {
 public:
 	int bucketIndex(const AsciiString *name);
+	void rva00212858(unsigned int newSize);
 	InsertRet00419331 rva00419331(const void *key);
+	InsertRet00419331 rva004193AD(const void *key);
 
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -87,9 +89,6 @@ public:
 	void **m_storageEnd;
 	unsigned int m_numElements;
 };
-
-typedef _STL::pair<const int, BfmePod20> Pod20Pair;
-typedef _STL::hashtable<Pod20Pair, int, _STL::hash<int>, _STL::_Select1st<Pod20Pair>, _STL::equal_to<int>, _STL::allocator<Pod20Pair> > Pod20Table;
 
 InsertRet00419331 Rva000427195::rva00419331(const void *key)
 {
@@ -110,4 +109,10 @@ InsertRet00419331 Rva000427195::rva00419331(const void *key)
 	m_beginBuckets[bucket] = node;
 	++m_numElements;
 	return InsertRet00419331(node, this, 1);
+}
+
+InsertRet00419331 Rva000427195::rva004193AD(const void *key)
+{
+	rva00212858(m_numElements + 1);
+	return rva00419331(key);
 }
