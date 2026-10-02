@@ -48935,3 +48935,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005E7855@Rva005E7855@@QAEXXZ,,0x005E7855,69,Code/GameEngine/Source/Common/Bfme/Rva005E7855Init.cpp,matched,chain five virtuals then check then clear via just-landed
 ?rva0021291F@Rva0021291F@@QAEXPBX@Z,,0x0021291F,43,Code/Libraries/Source/WWVegas/WWLib/Rva0021291FCreate.cpp,matched,Audio ModuleData pushback via TheAudio slot then rowed pushback
 ?rva00212728@Rva00212728@@QAEPAXPAX@Z,,0x00212728,57,Code/GameEngine/Source/GameClient/GUI/Rva00212728Find.cpp,matched,WindowVideoMap reverse lookup second match return first else minus1
+??4?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x00319BCA,186,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_record_319bca_assign.cpp,matched,vector record assign via STLport operator equal shape with rowed Rva copy helpers
