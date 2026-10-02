@@ -19,6 +19,7 @@ class DebugIONet : public DebugIOInterface
 {
 public:
 	explicit DebugIONet(void);
+	virtual ~DebugIONet();
 };
 
 // ??0DebugIONet@@QAE@XZ
