@@ -26,6 +26,7 @@ private:
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib/refcount.h
+#pragma optimize("t", on)
 class RefCountClass
 {
 public:
@@ -39,6 +40,7 @@ protected:
 private:
 	int NumRefs;
 };
+#pragma optimize("", on)
 
 // upstream layout: reference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib/sharebuf.h,
 // with BFME's RawBuffer/Alignment pair around Zero Hour's Array and Count.
