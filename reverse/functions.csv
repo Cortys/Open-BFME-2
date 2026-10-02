@@ -47999,3 +47999,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00418374@Rva00418374@@QAEPAUOutIter004182F8@@PAU2@PBVRva004181F5@@@Z,,0x00418374,36,Code/GameEngine/Source/GameClient/Rva00418374.cpp,matched,bump count then insert returning it callers 0x004183A0 0x0041840F
 ??0Rva002217EA@@QAE@ABV0@@Z,,0x002217EA,51,Code/GameEngine/Source/Common/Rva002217EACopy.cpp,matched,retail bytes caller 0x00221A34 unicode plus str copy
 ?rva004F54BF@Rva004F54BF@@QAEXW4ObjectID@@H@Z,,0x004F54BF,75,Code/GameEngine/Source/Common/Thing/Rva004F54BFRemove.cpp,matched,leaf find plus erase list at 0x10 dec count at 0x18 via rowed find and pinned erase
+??0ScriptAction@@QAE@W4ScriptActionType@0@@Z,,0x003B5413,54,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionCtor.cpp,matched,ScriptAction typed ctor via setActionType rowed 0x003B4343 vtable 0x0081F3FC

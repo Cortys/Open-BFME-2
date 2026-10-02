@@ -17,9 +17,11 @@ class Parameter
 class ScriptAction
 {
 public:
-	enum { NO_OP = 5 };
+	enum ScriptActionType { NO_OP = 5 };
 	virtual ~ScriptAction();
 	ScriptAction();
+	ScriptAction(ScriptActionType type);
+	void setActionType(ScriptActionType type);
 
 private:
 	Int m_actionType;
@@ -41,4 +43,16 @@ ScriptAction::ScriptAction() :
 	m_bfmeTail(0)
 {
 	memset(m_parms, 0, sizeof(m_parms));
+}
+
+// ??0ScriptAction@@QAE@W4ScriptActionType@1@@Z present-unmatched
+ScriptAction::ScriptAction(ScriptActionType type) :
+	m_numParms(0),
+	m_nextAction(0),
+	m_hasWarnings(false),
+	m_tail(1),
+	m_bfmeTail(0)
+{
+	memset(m_parms, 0, sizeof(m_parms));
+	setActionType(type);
 }
