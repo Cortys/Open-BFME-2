@@ -4,6 +4,9 @@
 // BFME2 strncmp import at 0x0062995E. The descriptive donor name remains
 // provisional because the target has no named direct callers.
 extern const char *rva012D5A08Prefix;
+// The retail cell at VA 0x00DDC920 points to "FSCommand:" in .rdata.
+// Reproduce the string content locally without asserting its literal address.
+const char *rva012D5A08Prefix = "FSCommand:";
 extern "C" unsigned __cdecl strlen(const char *);
 extern "C" int __cdecl strncmp(const char *, const char *, unsigned);
 
