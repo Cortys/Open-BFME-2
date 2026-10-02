@@ -61,3 +61,8 @@ Rva0073F708::Rva0073F708(void *a1, int priority)
 {
 	m_thread.get()->rva0073F778(Rva0073F6FCCb, this, 1, 0, priority, 0);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v1@Rva0073F778@@UAE_NXZ=?rva0050B5C6@Rva0050B5C6@@QAE_NXZ")
