@@ -23,12 +23,22 @@ struct Rva003B675BRecord
 	void *m_nodes; // +0x10
 };
 
+void __cdecl operator delete(void *block);
+
+class BfmeNodeZ
+{
+public:
+	~BfmeNodeZ();
+	BfmeNodeZ *m_next;
+};
+
 class Rva003B573E
 {
 public:
 	int rva003B573E(const StringBase<char> &key);
 	int rva003B6633(const StringBase<char> &key);
 	void rva003B66D8(int index);
+	void rva003B71B4(int index);
 private:
 	_STL::vector<void *> m_sorted; // +0x00
 	_STL::vector<Rva003B675BRecord> m_records; // +0x0C
@@ -65,4 +75,13 @@ int Rva003B573E::rva003B6633(const StringBase<char> &key)
 			return idx;
 	}
 	return -1;
+}
+
+void Rva003B573E::rva003B71B4(int index)
+{
+	Rva003B675BRecord *rec = &m_records[index];
+	BfmeNodeZ *nd = (BfmeNodeZ *)rec->m_nodes;
+	rec->m_nodes = nd->m_next;
+	delete nd;
+	rva003B66D8(index);
 }
