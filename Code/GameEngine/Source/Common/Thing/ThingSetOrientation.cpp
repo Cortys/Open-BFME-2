@@ -68,14 +68,19 @@ void Thing::setOrientation( Real angle )
 	oldPos.x = cachedPos.x;
 	oldPos.y = cachedPos.y;
 	oldPos.z = cachedPos.z;
-	Matrix3D oldMtx = m_transform;
+	float oldMtx[12];
+	{
+		const float *srcMtx = (const float *)&m_transform;
+		oldMtx[0] = srcMtx[0]; oldMtx[1] = srcMtx[1]; oldMtx[2] = srcMtx[2]; oldMtx[3] = srcMtx[3];
+		oldMtx[4] = srcMtx[4]; oldMtx[5] = srcMtx[5]; oldMtx[6] = srcMtx[6]; oldMtx[7] = srcMtx[7];
+		oldMtx[8] = srcMtx[8]; oldMtx[9] = srcMtx[9]; oldMtx[10] = srcMtx[10]; oldMtx[11] = srcMtx[11];
+	}
 
 	pos.x = m_transform.Get_X_Translation();
 	pos.y = m_transform.Get_Y_Translation();
 	pos.z = m_transform.Get_Z_Translation();
 	if( reinterpret_cast<const unsigned char *>(m_template.getNonOverloadedPointer())[0x108] & 0x10 )
 	{
-		Matrix3D mtx;
 		const Bool stickToGround = true;	// yes, set the "z" pos
 		reinterpret_cast<BFMERetailTerrainLogicVTable *>(TheTerrainLogic)->alignOnTerrain(angle, pos, stickToGround, m_transform );
 	}
@@ -102,6 +107,6 @@ void Thing::setOrientation( Real angle )
 	m_cachedPos = pos;
 	m_cacheFlags &= ~VALID_DIRVECTOR;	// but don't clear the altitude flags.
 
-	reinterpret_cast<BFMERetailThingVTable *>(this)->reactToTransformChange(&oldMtx, &oldPos, oldAngle);
+	reinterpret_cast<BFMERetailThingVTable *>(this)->reactToTransformChange((const Matrix3D *)oldMtx, &oldPos, oldAngle);
 	DEBUG_ASSERTCRASH(!(_isnan(getPosition()->x) || _isnan(getPosition()->y) || _isnan(getPosition()->z)), ("Drawable/Object position NAN! '%s'\n", m_template->getName().str() ));
 }
