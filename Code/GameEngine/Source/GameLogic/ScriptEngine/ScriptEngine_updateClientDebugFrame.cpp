@@ -13,13 +13,17 @@
 // Human-readable names; TU-local ScriptEngine view (flag offset only).
 
 typedef int HMODULE;
+extern HMODULE g_00DFE158;
+
+// g_00DFE15C: VA 0x00dfe15c (.data); retail initial bytes 00 00 00 00.
+unsigned char g_00DFE15C;
 
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
 
 void rva00204094();
 
-#define TheScriptDebugWindowDLL (*(HMODULE *)0x00DFE158)
-#define ClientCanAppContinue (*(unsigned char *)0x00DFE15C)
+#define TheScriptDebugWindowDLL g_00DFE158
+#define ClientCanAppContinue g_00DFE15C
 
 class ScriptEngine
 {
