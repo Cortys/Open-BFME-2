@@ -5486,3 +5486,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??0Rva002A8D49@@QAE@XZ	0x002A8D49	283	blocked	stash 0.97 no longer reproduces after 0x002A8823 row EH prolog plus vector inline drift needs re-derive t=10 model=muse-spark
 ?rva002D7E68@Radar@@QAEXPAX@Z	0x002D7E68	326	blocked	329B inner in memory not edi plus xor edi not eax for counts t=12 model=muse-01 (stash 0.96 kept)
 ?rva00596908@Rva0059675A@@QAEXPAUView@@PAUPt@@H@Z	0x00596908	481	blocked	structural mismatch 26 regions size-delta -78 float-vs-int-div layout wrong t=8 model=muse-01
+?rva004D51ED@Transport@@QAEXGPAX@Z	0x004D51ED	44	partial	register-indexed vs add-combined plus push-esi scheduling t=14 model=muse-06 score=0.91 stash=reverse/attempts/0x004d51ed.cpp

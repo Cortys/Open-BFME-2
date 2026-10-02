@@ -47656,3 +47656,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0043B72D@Rva0043B725@@QAEIH@Z,,0x0043B72D,16,Code/GameEngine/Source/Common/Rva0043B725Clear.cpp,matched,forwards this+4 and arg to Rva0043B2E2 lookup
 ?Rva0040B14EConstruct@@YAXPAVRva0040AEE3@@ABV1@@Z,,0x0040B14E,45,Code/GameEngine/Source/Common/Thing/Rva0040AEE3Construct.cpp,matched,chain via rowed copy ctor 0x0040AEE3 placement new
 ?rva00596FF5@Rva00596F18@@QAEXE@Z,,0x00596FF5,28,Code/GameEngine/Source/Common/Rva00596FF5.cpp,matched,setter byte 0x64 clears 0x24 0x68 calls slot7 neighbours prove class
+??1Rva005D791C@@UAE@XZ,,0x005D78E1,59,Code/GameEngine/Source/Common/Rva005D791CDtor.cpp,matched,vtable 0x00875DFC plus member 0x002F0B52 at +0x28 plus base 0x005EE30C
