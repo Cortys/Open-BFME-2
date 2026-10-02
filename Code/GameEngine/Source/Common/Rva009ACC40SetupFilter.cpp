@@ -11,7 +11,8 @@ struct Rva009ACC40State
 
 extern int *g_rva01356A9C;
 extern int *Rva009ACBA0SetupBounding(Rva009ACC40State *, int);
-extern int (__cdecl *g_rva01356E64)(Rva009ACC40State *, int);
+// g_rva01356E64: VA 0x00E22F80 (.data BSS), a zero-initialized callback slot.
+int (__cdecl *g_rva01356E64)(Rva009ACC40State *, int) = 0;
 
 void Rva009ACC40SetupFilter(Rva009ACC40State *state)
 {
