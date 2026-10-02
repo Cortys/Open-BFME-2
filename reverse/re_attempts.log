@@ -5310,3 +5310,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002ADCE1@Rva000427195@@QAEXPAPAX@Z	0x002ADCE1	80	blocked	80B 0 structural eax-ecx swap 6 variants already by muse-03 with lever 25 key-local no NEW idea skip per dead-ends t=2 model=muse-06
 ?rva000B49F9@Rva000B49F9@@QAEEXZ	0x000B49F9	35	partial	and eax vs and al plus je vs jne else exact 36B t=18 model=muse-14 score=0.96 stash=reverse/attempts/0x000b49f9.cpp
 ?rva00090FE0@Rva00090FE0@@QAEHH@Z	0x00090FE0	224	blocked	64-bit timeGetTime plus alldiv allmul scaling with global flag and m_40 m_44 m_48 m_50 no donor t=8 model=muse-03
+??1Rva005F2B22@@UAE@XZ	0x005F2B22	84	partial	extra push ecx and mov ecx edi after state not before t=28 model=muse-01 score=0.95 stash=reverse/attempts/0x005f2b22.cpp
+?rva005F27F8@Rva005F27F8@@QAEXPBD@Z	0x005F27F8	159	blocked	flag dword at ebp-10 plus EH states 1-2 plus tmp push order before GetLevel unreproduced t=25 model=muse-spark
