@@ -22,13 +22,18 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "rendobj.h"
 #include "boxrobj.h"
 
-void AABoxRenderObjClass::Set_Position(const Vector3 & v)
+// ?Set_Position@AABoxRenderObjClass@@UAEXABVVector3@@@Z is rowed in boxrobj.cpp
+// (0x00175780) and ?update_cached_box@AABoxRenderObjClass@@MAEXXZ in
+// AABoxUpdateCachedBox.cpp (0x001757A0), but this TU's ctor row inlines their
+// bodies, so they stay defined here as inline (select-any) copies instead of
+// strong duplicates; the owners get LINK-OWNER items at the next census.
+inline void AABoxRenderObjClass::Set_Position(const Vector3 & v)
 {
 	RenderObjClass::Set_Position(v);
 	update_cached_box();
 }
 
-void AABoxRenderObjClass::update_cached_box(void)
+inline void AABoxRenderObjClass::update_cached_box(void)
 {
 	CachedBox.Center = Transform.Get_Translation() + ObjSpaceCenter;
 	CachedBox.Extent = ObjSpaceExtent;
