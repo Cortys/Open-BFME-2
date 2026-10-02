@@ -134,6 +134,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 class MeshLoadContextClass : public W3DMPO
 {
 	W3DMPO_GLUE(MeshLoadContextClass)
+	friend void _bfmeMeshLoadContextInlineAnchor(MeshLoadContextClass *, ShaderClass, VertexMaterialClass *, int);
 private:
 	MeshLoadContextClass(void);
 	~MeshLoadContextClass(void);
@@ -2032,7 +2033,7 @@ W3dTexCoordStruct * MeshLoadContextClass::Get_Texcoord_Array(void)
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-int MeshLoadContextClass::Add_Shader(ShaderClass shader)								
+inline int MeshLoadContextClass::Add_Shader(ShaderClass shader)
 { 
 	int index = Shaders.Count();
 	Shaders.Add(shader); 
@@ -2052,7 +2053,7 @@ int MeshLoadContextClass::Add_Shader(ShaderClass shader)
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-int MeshLoadContextClass::Add_Vertex_Material(VertexMaterialClass * vmat)			
+inline int MeshLoadContextClass::Add_Vertex_Material(VertexMaterialClass * vmat)
 { 
 	WWASSERT(vmat != NULL);
 	vmat->Add_Ref();
@@ -2165,7 +2166,7 @@ void MeshLoadContextClass::Add_Legacy_Material(ShaderClass shader,VertexMaterial
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-ShaderClass MeshLoadContextClass::Peek_Legacy_Shader(int legacy_material_index)
+inline ShaderClass MeshLoadContextClass::Peek_Legacy_Shader(int legacy_material_index)
 {
 	WWASSERT(legacy_material_index >= 0);
 	WWASSERT(legacy_material_index < LegacyMaterials.Count());
@@ -2186,7 +2187,7 @@ ShaderClass MeshLoadContextClass::Peek_Legacy_Shader(int legacy_material_index)
  * HISTORY:                                                                                    *
  *   12/10/98   GTH : Created.                                                                 *
  *=============================================================================================*/
-VertexMaterialClass * MeshLoadContextClass::Peek_Legacy_Vertex_Material(int legacy_material_index)
+inline VertexMaterialClass * MeshLoadContextClass::Peek_Legacy_Vertex_Material(int legacy_material_index)
 {
 	WWASSERT(legacy_material_index >= 0);
 	WWASSERT(legacy_material_index < LegacyMaterials.Count());
@@ -2822,3 +2823,16 @@ WW3DErrorType MeshModelClass::write_stage_texcoords(ChunkSaveClass & csave,MeshS
 }
 
 #endif // 0 (disabled mesh saving code)
+
+// These four methods are header inlines in copier units. This anchor retains
+// their matched row bodies in this unit, but the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeMeshLoadContextInlineAnchor@@YAXPAVMeshLoadContextClass@@VShaderClass@@PAVVertexMaterialClass@@H@Z absent-from-retail
+void _bfmeMeshLoadContextInlineAnchor(MeshLoadContextClass *context, ShaderClass shader, VertexMaterialClass *material, int index)
+{
+	context->Add_Shader(shader);
+	context->Add_Vertex_Material(material);
+	context->Peek_Legacy_Shader(index);
+	context->Peek_Legacy_Vertex_Material(index);
+}
+#pragma inline_depth()
