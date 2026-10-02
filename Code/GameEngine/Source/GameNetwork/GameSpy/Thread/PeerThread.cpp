@@ -756,7 +756,7 @@ static void playerChangedNickCallback(PEER peer, RoomType roomType, const char *
 static void playerInfoCallback(PEER peer, RoomType roomType, const char * nick, unsigned int IP, int profileID, void * param);
 static void playerFlagsChangedCallback(PEER peer, RoomType roomType, const char * nick, int oldFlags, int newFlags, void * param);
 static void listingGamesCallback(PEER peer, PEERBool success, const char * name, SBServer server, PEERBool staging, int msg, Int percentListed, void * param);
-static void roomUTMCallback(PEER peer, RoomType roomType, const char * nick, const char * command, const char * parameters, PEERBool authenticated, void * param);
+void roomUTMCallback(PEER peer, RoomType roomType, const char * nick, const char * command, const char * parameters, PEERBool authenticated, void * param);
 void playerUTMCallback(PEER peer, const char * nick, const char * command, const char * parameters, PEERBool authenticated, void * param);
 static void gameStartedCallback(PEER peer, UnsignedInt IP, const char *message, void *param);
 static void globalKeyChangedCallback(PEER peer, const char *nick, const char *key, const char *val, void *param);
@@ -2620,18 +2620,7 @@ void playerMessageCallback(PEER peer, const char * nick, const char * message, M
 	}
 }
 
-void roomUTMCallback(PEER peer, RoomType roomType, const char * nick, const char * command, const char * parameters, PEERBool authenticated, void * param)
-{
-	DEBUG_LOG(("roomUTMCallback: %s says %s = [%s]\n", nick, command, parameters));
-	if (roomType != StagingRoom)
-		return;
-	PeerResponse resp;
-	resp.peerResponseType = PeerResponse::PEERRESPONSE_ROOMUTM;
-	resp.nick = nick;
-	resp.command = command;
-	resp.commandOptions = parameters;
-	TheGameSpyPeerMessageQueue->addResponse(resp);
-}
+
 
 
 

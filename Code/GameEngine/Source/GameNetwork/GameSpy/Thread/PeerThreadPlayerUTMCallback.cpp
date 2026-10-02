@@ -76,3 +76,24 @@ void playerUTMCallback(void *peer, const char *nick, const char *command,
         ((UTMResponseQueueView *)g_00A02340)->addResponse(resp);
     }
 }
+
+enum RoomType { TitleRoom, GroupRoom, StagingRoom };
+
+// Retail callback registration at 0x0038EED5 selects SDK slot 2 (roomUTM).
+// Ghidra 0x0038C379/140; same proven record lifetime and string offsets.
+// Retail checks StagingRoom before constructing the record and checks nick
+// before assigning strings and dispatching; it always destroys the record.
+void roomUTMCallback(void *peer, RoomType roomType, const char *nick,
+    const char *command, const char *parameters, int authenticated, void *param)
+{
+    if (roomType != StagingRoom)
+        return;
+    BfmeOpaqueOwnedRecord840 resp;
+    *(int *)resp.bytes = 15;
+    if (nick) {
+        *(_STL::string *)(resp.bytes + 0x10) = nick;
+        *(_STL::string *)(resp.bytes + 0xe8) = command;
+        *(_STL::string *)(resp.bytes + 0xf4) = parameters;
+        ((UTMResponseQueueView *)g_00A02340)->addResponse(resp);
+    }
+}
