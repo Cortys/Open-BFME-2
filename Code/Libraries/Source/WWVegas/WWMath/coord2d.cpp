@@ -103,13 +103,13 @@ class Coord2D : public Coord2DBase
     float GetLengthEstimate() const;
 };
 
-// Out of line, because an in-class body is implicitly inline and MSVC folds it
-// into its callers instead of emitting the COMDAT.
-Coord2D::Coord2D()
+// These header bodies must be select-any copies, like their inlined callers.
+// The anchor below retains their exact three-byte and one-byte ledger bodies.
+inline Coord2D::Coord2D()
 {
 }
 
-Coord2D::~Coord2D()
+inline Coord2D::~Coord2D()
 {
 }
 
@@ -448,6 +448,7 @@ inline float Coord2D::toAngle() const
 // ?_bfmeCoord2DInlineAnchor absent-from-retail
 void _bfmeCoord2DInlineAnchor(Coord2D *c)
 {
+    Coord2D local;
     c->normalize();
     c->length();
     c->toAngle();
