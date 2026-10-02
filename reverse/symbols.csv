@@ -7169,4 +7169,3 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?bfmeDoPF@Rva0002ACF0Thing@@QAEXPADPAXH@Z,0x0002A420,"thiscall callee of Rva0002ACF0Thing::bfmeGoPF at 0x0002ACF0; retail REL32 at +0x20; Ghidra size 254"
 ??1Rva004E364F@@QAE@XZ,0x004E366E,"record clear destructor spelling for Rva004E364F used by ParseEyeTowerPointData 0x004E383D; same body as rowed ?rva004E366E@Rva004E366E@@QAEXXZ"
 ?append@Rva005669B7Owner@@QAEXPAVRva004E364F@@@Z,0x005669B7,"append thunk reached by ParseEyeTowerPointData 0x004E383D; retail thiscall ecx=owner arg=record; sibling of pinned 0x0056652F"
-?freeBlock@Rva006D2A60@@QAEXPAXH@Z,0x006D2A60,"freeBlock callee of Rva006F12F0Free at 0x006F12F0; retail REL32 at +0x10; sibling of rowed ?freeBlock@Rva006DB270@@QAEXPAXH@Z 0x006DB270"
