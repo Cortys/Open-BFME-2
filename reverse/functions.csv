@@ -48728,3 +48728,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?alloc@Rva006026E0@@QAEPAXI@Z,,0x006026E0,36,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived allocator shim with cdecl override callback
 ?free@Rva006026E0@@QAEXPAX@Z,,0x00602710,33,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived free shim with cdecl override callback
 ?get@Rva006026E0@@QAEHXZ,,0x006027F0,26,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived flagged pointer-field getter
+?rva0061FFD0@Rva0061FFD0@@QAEXXZ,,0x0061FFD0,66,Code/Libraries/Source/assetmanager/Rva0061FFD0Cluster.cpp,matched,address-derived try-lock backoff helper
