@@ -36,6 +36,31 @@ typedef __int64 FeslInt64;
 // pointer at VA 0x00E0A124, in .data's zero-filled tail; retail starts null.
 extern const char * const g_Rva0130A708 = 0;
 
+// FESL request-string slots: matched DIR32 references establish these target
+// VAs; each is a null 32-bit pointer in .data's zero-filled tail.
+// g_Rva0130A678: VA 0x00E0A094.
+extern const char * const g_Rva0130A678 = 0;
+// g_Rva0130A684: VA 0x00E0A0A0.
+extern const char * const g_Rva0130A684 = 0;
+// g_Rva0130A6D8: VA 0x00E0A0F4.
+extern const char * const g_Rva0130A6D8 = 0;
+// g_Rva0130A720: VA 0x00E0A13C.
+extern const char * const g_Rva0130A720 = 0;
+// g_Rva0130A72C: VA 0x00E0A148.
+extern const char * const g_Rva0130A72C = 0;
+// g_Rva0130A738: VA 0x00E0A154.
+extern const char * const g_Rva0130A738 = 0;
+// g_Rva0130A744: VA 0x00E0A160.
+extern const char * const g_Rva0130A744 = 0;
+// g_Rva0130A750: VA 0x00E0A16C.
+extern const char * const g_Rva0130A750 = 0;
+// g_Rva0130A75C: VA 0x00E0A178.
+extern const char * const g_Rva0130A75C = 0;
+// g_Rva0130A774: VA 0x00E0A190.
+extern const char * const g_Rva0130A774 = 0;
+// g_Rva0130A78C: VA 0x00E0A1A8.
+extern const char * const g_Rva0130A78C = 0;
+
 class Rva007E8810Message
 {
 public:
