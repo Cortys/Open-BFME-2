@@ -129,7 +129,7 @@ GridTextureMapperClass::GridTextureMapperClass(const INIClass &ini, const char *
 	initialize(fps, gridwidth_log2);
 }
 
-GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass & src) :
+inline GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass & src) :
 	TextureMapperClass(src),	
 	Sign(src.Sign),
 	MSPerFrame(src.MSPerFrame),
@@ -141,7 +141,7 @@ GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass & sr
 	Reset();
 }
 
-void GridTextureMapperClass::Reset(void)
+inline void GridTextureMapperClass::Reset(void)
 {
 	Remainder = 0;
 	if (Sign >= 0) {
@@ -157,7 +157,7 @@ void GridTextureMapperClass::Set_Frame_Per_Second(float fps)
 	initialize(fps, GridWidthLog2);
 }
 
-void GridTextureMapperClass::initialize(float fps, unsigned int gridwidth_log2)
+inline void GridTextureMapperClass::initialize(float fps, unsigned int gridwidth_log2)
 {
 	unsigned int grid_width = (1 << gridwidth_log2);
 
@@ -184,7 +184,7 @@ void GridTextureMapperClass::initialize(float fps, unsigned int gridwidth_log2)
 	Remainder = 0;
 }
 
-void GridTextureMapperClass::update_temporal_state(void)
+inline void GridTextureMapperClass::update_temporal_state(void)
 {
 	unsigned int now = WW3D::Get_Sync_Time();
 	unsigned int delta = now - LastUsedSyncTime;
