@@ -5879,3 +5879,4 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ??1Rva005746AF@@UAE@XZ	0x005746D2	104	blocked	104B dtor missing EH prolog/states/epilogue despite /EHs (needs empty-base or /EHa trick unknown) plus callee reverseAnimateWindow row takes AnimateWindow* but retail call site pushes none (0-arg call needed, row retype or ICF owner required) t=15 model=muse-15
 ??0Rva00111AA7@@QAE@PBDH@Z	0x00111AA7	40	partial	store order swapped: retail mov [esi+4],eax then and [esi+0x18],0; ours and-then-mov; init-list and /Os both keep ours order t=20 model=muse-15 score=0.95 stash=reverse/attempts/0x00111aa7.cpp
 ?rva0031DB83@Rva0031DB83@@QAEPAXPBVAsciiString@@@Z	0x0031DB83	121	blocked	honest PairTmp find-or-insert gives 102B vs 121B missing guard and reuse t=25 model=muse-16
+??0Rva00542E13@@QAE@PAVStateMachine@@@Z	0x00542E13	73	blocked	xor eax-eax hoisted before first vptr store retail keeps it after t=15 model=muse-08 (stash 0.94 kept)
