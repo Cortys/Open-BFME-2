@@ -35,9 +35,7 @@ public:
     {
     }
 
-    ~AsciiString(void)
-    {
-    }
+    ~AsciiString(void);
 };
 
 namespace FXParticleSystem
