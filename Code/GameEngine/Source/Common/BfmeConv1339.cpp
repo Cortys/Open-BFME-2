@@ -29,3 +29,7 @@ void bfmeGoUPC(BfmeStateUPC *L, int n)
 		luaD_checkstack(L, 1);
 	L->m_bfmeTop = (BfmeValueUPC *)((char *)L->m_bfmeTop + 0x10);
 }
+
+// Callers elsewhere reach this body through a spelling pinned to the same retail
+// address with the same calling convention; bind it here.
+#pragma comment(linker, "/alternatename:_bfmeGoUPC=?bfmeGoUPC@@YAXPAUBfmeStateUPC@@H@Z")

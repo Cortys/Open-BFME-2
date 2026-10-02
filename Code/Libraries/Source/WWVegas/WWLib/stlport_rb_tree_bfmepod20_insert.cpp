@@ -25,3 +25,7 @@ template _STL::pair<UBfmePod20SetTree::iterator, bool> UBfmePod20SetTree::insert
 template void UBfmePod20SetTree::_M_erase(UBfmePod20SetTree::_Link_type);
 template void UBfmePod20SetTree::clear();
 template UBfmePod20SetTree::~_Rb_tree();
+
+// Callers elsewhere reach this body through a spelling pinned to the same retail
+// address with the same calling convention; bind it here.
+#pragma comment(linker, "/alternatename:?insertUnique@BFME2RespawnRuleTree@@QAEPAURespawnInsertResult@@PAU2@ABURespawnRule@@@Z=?insert_unique@?$_Rb_tree@UBfmePod20@@U1@U?$_Identity@UBfmePod20@@@_STL@@U?$less@UBfmePod20@@@3@V?$allocator@UBfmePod20@@@3@@_STL@@QAE?AU?$pair@U?$_Rb_tree_iterator@UBfmePod20@@U?$_Nonconst_traits@UBfmePod20@@@_STL@@@_STL@@_N@2@ABUBfmePod20@@@Z")
