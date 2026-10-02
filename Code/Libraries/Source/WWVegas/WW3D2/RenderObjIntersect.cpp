@@ -7,6 +7,14 @@
 // +0xF0 then stores the result through offsets 0x44..0x64. The code ends at
 // RET 8 at 0x0013C5B6 before the next Ghidra boundary 0x0013C5C0. Target
 // boundary and virtual-slot facts are separate from donor semantics.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 #include "rendobj.h"
 #include "colmath.h"

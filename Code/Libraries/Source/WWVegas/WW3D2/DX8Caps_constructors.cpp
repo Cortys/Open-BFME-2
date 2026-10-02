@@ -7,6 +7,14 @@
 // A D3DCAPS8 member followed by loose tail padding cannot reproduce that copy.
 // The shared EH handler, FuncInfo, three-entry unwind map and all three member
 // cleanup funclets were independently verified, including the actual CRT import.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 // stlport
 #define Matrix4x4 Matrix4
