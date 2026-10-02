@@ -1,26 +1,17 @@
 // ??0Rva0008A234@@QAE@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z
-// partial score=0.9 date=2026-09-29
-// ??0Rva0008A234@@QAE@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z
-// partial score=0.9 date=2026-09-29
-// cl: /O1 /MD /arch:SSE
-//
-// ?rva0008A234@Rva0008A234@@QAEAAV1@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z @0x0008A234 111B
-// Init returning *this: zeroes +0, copy-constructs AsciiString at +4 via
-// pinned public StringBase copy-ctor 0x000365F0, copies three ints from info
-// to +8/+C/+10, six floats in retail order to +14/+18/+1C/+20/+24/+28,
-// zeroes byte +2C. Evidence: unlock lane, callers at
-// 0x0008A5FA/0x000AFD23/0x005B11C2. Owning class unproven.
+// partial score=0.95 date=2026-10-02
+// cl: /Ireference/shims/bfme2_ascii /O1 /G7 /MD /arch:SSE
+// ??0Rva0008A234@@QAE@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z @0x0008A234 111B
+// Init zeroes +0, copy-constructs StringBase at +4 via pinned public
+// StringBase copy-ctor 0x000365F0, copies three ints from info to +8/+C/+10,
+// six floats in retail order to +14/+18/+1C/+20/+24/+28, zeroes byte +2C.
+// Evidence: unlock lane, callers at 0x0008A5FA/0x000AFD23/0x005B11C2.
+// Owning class unproven. Started from reverse/attempts/0x0008a234.cpp
+// (score 0.9, float load-store phase shift plus t2-store position).
+#include "ascii_string.h"
 
-#include <new>
-
-template <typename T>
-class StringBase
-{
-public:
-	StringBase(const StringBase &other) throw();
-private:
-	T *m_data;
-};
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 struct ThreeInts
 {
@@ -37,7 +28,7 @@ public:
 
 private:
 	int m_00;
-	StringBase<char> m_04;
+	AsciiString m_04;
 	int m_08;
 	int m_0C;
 	int m_10;
@@ -53,12 +44,14 @@ private:
 // ??0Rva0008A234@@QAE@ABV?$StringBase@D@@PBUThreeInts@@MMMMMM@Z present-unmatched
 Rva0008A234::Rva0008A234(const StringBase<char> &str, const ThreeInts *info,
 	float f10, float f14, float f18, float f1c, float f20, float f24)
-	: m_00(0), m_04(str)
+	: m_00(0), m_04(*(const AsciiString *)&str)
 {
+	float t10 = f10;
 	m_08 = info->v00;
 	m_0C = info->v04;
 	m_10 = info->v08;
-	m_14 = f10;
+	_ReadWriteBarrier();
+	m_14 = t10;
 	m_18 = f14;
 	m_1C = f18;
 	m_20 = f24;
