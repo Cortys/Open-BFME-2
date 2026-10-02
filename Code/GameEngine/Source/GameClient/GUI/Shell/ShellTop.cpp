@@ -212,6 +212,7 @@ public:
 	void loadScheme(AsciiString name);
 	void rva0035BEC7();
 	void rva0035BF0E();
+	void rva0035C16A();
 	void shutdownComplete(WindowLayout *screen, Bool impendingPush);
 	void push(AsciiString filename, bool shutdownImmediate);
 };
@@ -371,6 +372,17 @@ void Shell::rva0035BF0E()
 	doPop(false);
 	if (TheIMEManager)
 		TheIMEManager->m3C();
+}
+
+// ?rva0035C16A@Shell@@QAEXXZ @ 0x0035C16A (42B). Vtable slot 9 of 0x00816208; IMEManager m3C then while m_screenCount rva0035BEC7 then tail reset slot 0x24.
+// Evidence: callees TheIMEManager m3C rva0035BEC7 rowed and animate reset slot 9; members +0x4C +0x60; chain via 0x0035BEC7.
+void Shell::rva0035C16A()
+{
+	if (TheIMEManager)
+		TheIMEManager->m3C();
+	while (m_screenCount != 0)
+		rva0035BEC7();
+	return m_animateWindowManager->reset();
 }
 
 // ??1Shell@@UAE@XZ @ 0x0035C087 (227B). Shell dtor: pops screens via top/rva0035BF0E loop then animate deleteInstance+delete scheme delete layouts destroy+deleteInstance+delete audio string base. Evidence: vtable 0x00816208 callers 0x0035C54A deleting dtor callees top rva0035BF0E scheme 0x002007D5 releaseBuffer 0x00036410 base 0x001B4E74 audio 0x0035BD3F BFME1 ShellDestructor donor.

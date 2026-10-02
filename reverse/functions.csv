@@ -47581,3 +47581,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1?$vector@VRva004E2382@@V?$allocator@VRva004E2382@@@_STL@@@_STL@@QAE@XZ,,0x004E3C32,63,Code/GameEngine/Source/Common/Rva004E3C32Dtor.cpp,matched,Vector Rva004E2382 dtor via Destroy 0x004E377E and free 0x00030830 plus caller 0x004E3CD0 plus twin 0x004C7767
 ??1Rva004E3CD0@@UAE@XZ,,0x004E3CD0,72,Code/GameEngine/Source/Common/Rva004E3CD0Dtor.cpp,matched,vtable 0x00862054 callers 0x004E3E09 0x004E3D30 0x004E3D47
 ?rva003A2539@Rva003A2539@@QAEPAURva003A2539Node@@ABU?$pair@$$CBVAsciiString@@UTreeHintPayload00207343@@@_STL@@@Z,,0x003A2539,37,Code/Libraries/Source/WWVegas/WWLib/stlport_hashtable_003A2539.cpp,matched,hashtable node next plus pair via rowed allocate and Construct caller 0x3A2F33
+?rva0035C16A@Shell@@QAEXXZ,,0x0035C16A,42,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,vtable slot9 IMEManager then loop rva0035BEC7 then tail reset
