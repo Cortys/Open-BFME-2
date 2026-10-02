@@ -398,23 +398,7 @@ int  GameFileClass::Open(char const *filename, int rights)
 //-------------------------------------------------------------------------------------------------
 /** Open the file using the current file name. */
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngineDevice/Source/W3DDevice/GameClient/GameFileClassOpen.cpp
-// (retail calls BFME 2's three-argument FileSystem::openFile, which the
-// vendored header in this unit cannot declare)
-// ?Open@GameFileClass@@UAEHH@Z present-unmatched
-int  GameFileClass::Open(int rights) 
-{
-	if( rights != READ ) 
-	{
-		return(false);
-	}
-
-	// just open up the file in m_filePath
-	m_theFile = TheFileSystem->openFile( m_filePath, File::READ | File::BINARY );
-
-	return (m_theFile != NULL);
-
-}
+// GameFileClass::Open: defined in GameFileClassOpen.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 /** Read. */
