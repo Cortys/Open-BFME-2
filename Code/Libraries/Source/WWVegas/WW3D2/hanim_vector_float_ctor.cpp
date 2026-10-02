@@ -6,28 +6,54 @@
 // rest of hanim.cpp only matches without that flag. Same pattern as
 // hanim_weight_vector_add.cpp. Explicit instantiation keeps the TU to one
 // line of real code; headers copied from hanim.cpp.
-// The compiler-generated vector constructor iterator (??_H) takes the
-// optimization state of the first function that needs it. Retail links one
-// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
-// copy that same body, so it no longer loses to retail's at link time.
-// It can also change how later array constructions here compile; checked to
-// change nothing else in this unit, but if a function added later that builds
-// an array will not match, try it without this block.
-struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
-#pragma optimize("gsy", on)
-static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
-#pragma optimize("", on)
-#define Matrix4x4 Matrix4
-#include "rendobj.h"	// the bfmerendobj shim has to win the include guard
-#include "winbase_shim.h"
-#include "hanim.h"
-#include "assetmgr.h"
-#include "htree.h"
-#include "motchan.h"
-#include "chunkio.h"
-#include "w3d_file.h"
-#include "wwdebug.h"
-#include <string.h>
-#include "nstrdup.h"
+// LINK-COMDAT 2026-10-02: this TU owns only the (int, const T *) ctor row.
+// Including hanim.h pulled in vector.h's full template bodies, so this unit
+// emitted its own differing copies of the virtuals (operator==, Resize,
+// Clear, both IDs, deleting dtor) that the census keeps from pointgr.cpp /
+// ode.cpp. Declare the rest instead of defining it, so calls reach the kept
+// copies. The dtor is really virtual (UAE, rowed from pointgr); it is
+// declared non-virtual here only to suppress our own ??_G, which would
+// otherwise differ the way the inlined Clear version does (71B kept with
+// inlined Clear vs 34B calling Clear). No vtable is emitted here; the ctor's
+// vptr store resolves to the kept table at link. Precedent:
+// vector_class_vector3_ctor.cpp (dd808c3101).
+#include "always.h"
+#include <new.h>
+
+template<class T>
+class VectorClass
+{
+public:
+	VectorClass(int size = 0, T const *array = 0);
+	~VectorClass();
+	virtual bool operator==(const VectorClass<T> &that) const;
+	virtual bool Resize(int newsize, T const *array = 0);
+	virtual void Clear();
+	virtual int ID(T const *ptr);
+	virtual int ID(T const &ptr);
+protected:
+	T *Vector;
+	int VectorMax;
+	bool IsValid;
+	bool IsAllocated;
+	bool VectorClassPad[2];
+};
+
+template<class T>
+VectorClass<T>::VectorClass(int size, T const *array) :
+	Vector(0),
+	VectorMax(size),
+	IsValid(true),
+	IsAllocated(false)
+{
+	if (size) {
+		if (array) {
+			Vector = new((void *)array) T[size];
+		} else {
+			Vector = new T[size];
+			IsAllocated = true;
+		}
+	}
+}
 
 template VectorClass<float>::VectorClass(int, float const *);
