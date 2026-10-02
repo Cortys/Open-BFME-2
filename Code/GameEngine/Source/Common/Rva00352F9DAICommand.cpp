@@ -59,6 +59,12 @@ struct AICommandParms
 	char m_rest[0xC0 - 0x38];
 };
 
+class Rva0035149F
+{
+public:
+	Rva0035149F &rva0035149F(const Rva0035149F &other);
+};
+
 class Rva00352F9D
 {
 public:
@@ -66,6 +72,7 @@ public:
 	void rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src);
 	void rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src);
 	void rva003530F3(const void *obj, const Coord3D &pos, CommandSourceType src);
+	void rva00353168(const void *obj, const class Rva0035149F &coords, CommandSourceType src);
 	void rva003531DB(const void *obj, const Coord3D &pos, CommandSourceType src);
 	void rva0035325A(const void *obj, CommandSourceType src);
 };
@@ -104,6 +111,16 @@ void Rva00352F9D::rva003531DB(const void *obj, const Coord3D &pos, CommandSource
 	parms.m_pos = pos;
 	parms.m_obj = (void *)obj;
 	parms.m_intValue = 0x7fffffff;
+	rvaVirtual(&parms);
+}
+
+// ?rva00353168@Rva00352F9D@@QAEXPBXABVRva0035149F@@W4CommandSourceType@@@Z @0x00353168 115B
+// Evidence: gap same TU/class as 0x003530F3/0x003531DB with same // cl: /O1 /EHs /MD; AICommandParms 0xC0 via rowed ctor 0x00351BD0 with 0x4C and src; m_coords via rowed rva0035149F 0x0035149F then m_obj from obj; virtual slot 0 then free via rowed free 0x00030830; caller 0x00354C09 pushes obj coords src.
+void Rva00352F9D::rva00353168(const void *obj, const class Rva0035149F &coords, CommandSourceType src)
+{
+	AICommandParms parms((AICommandType)0x4C, src);
+	((class Rva0035149F &)parms.m_coords).rva0035149F(coords);
+	parms.m_obj = (void *)obj;
 	rvaVirtual(&parms);
 }
 

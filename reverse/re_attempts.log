@@ -5378,3 +5378,16 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0025F3F3@Rva0025F3F3@@QAEXXZ	0x0025F3F3	19	partial	extra mov ecx esi between tail and clear calls ecx reload t=10 model=muse-04 score=0.9 stash=reverse/attempts/0x0025f3f3.cpp
 ?rva0058977F@Rva0058977F@@QAEXXZ	0x0058977F	124	blocked	virtual slot 0x38 plus this-0x18 base plus 5 calls frame 0x98 needs vtable and outer layout t=10 model=muse-04
 ?rva0025FF8F@Rva0025FF8F@@QAEXXZ	0x0025FF8F	175	blocked	fabs import void vs double plus Debug slots 0x60 0x6c beyond known 0x5C plus 3 rets switch plus this-0x18 t=15 model=muse-04
+?Create@AptInteger@@SAPAVAptValue@@H@Z	0x006D8520	263	partial	plus6B extra mov esp8 before ctor and sub esp8 vs push ecx plus EH prolog order t=30 model=muse-05 score=0.95 stash=reverse/attempts/0x006d8520.cpp
+?Rva008A4EA0MakeFloat@@YAPAVAptValue@@M@Z	0x006D8700	263	partial	plus6B extra mov esp8 before ctor and sub esp8 vs push ecx plus EH prolog order t=20 model=muse-05 score=0.95 stash=reverse/attempts/0x006d8700.cpp
+?Rva006D88C0MakeBool@@YAPAVAptValue@@_N@Z	0x006D88C0	263	partial	plus6B extra mov esp8 before ctor and sub esp8 vs push ecx plus EH prolog order t=10 model=muse-05 score=0.95 stash=reverse/attempts/0x006d88c0.cpp
+??0CastleBehavior@@QAE@PAVThing@@PBVModuleData@@@Z	0x003983D4	329	partial	trivial stores after vectors not before t=45 model=muse-05 score=0.88 stash=reverse/attempts/0x003983d4.cpp
+?Rva006D8820Cleanup@@YAXXZ	0x006D8820	52	blocked	store global via esi not ecx single mem operand diff t=12 model=muse-05 (stash 0.98 kept)
+?Rva006D89E0Pop@@YAXXZ	0x006D89E0	52	blocked	twin of 0x006D8820 same esi-vs-ecx store wall just probed 6 variants barrier volatile O1 inner-scope no new idea t=2 model=muse-05
+?Create@AptInteger@@SAPAVAptValue@@H@Z	0x006D8520	263	blocked	plus6B extra mov esp8 before ctor and sub esp8 vs push ecx plus EH prolog order $T618 placement temp keeps second slot t=25 model=muse-05 (stash 0.95 kept)
+?Rva008A4EA0MakeFloat@@YAPAVAptValue@@M@Z	0x006D8700	263	blocked	same $T618 placement-new temp wall as 0x006D8520 Integer just tried 6 variants all plus6B sub-esp8-vs-push-ecx and EH prolog order no new lever t=5 model=muse-05
+?Rva006D88C0MakeBool@@YAPAVAptValue@@_N@Z	0x006D88C0	263	blocked	same $T618 placement-new temp wall as 0x006D8520 Integer 6 variants all plus6B sub-esp8-vs-push-ecx and EH prolog order bool twin no new lever t=5 model=muse-05
+?Rva00324AE5Update@@YAXPAVGameWindow@@H_N@Z	0x00324AE5	84	partial	minus2B single register choice add eax mem vs mov ecx plus add eax ecx t=20 model=muse-05 score=0.97 stash=reverse/attempts/0x00324ae5.cpp
+?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z	0x00324B39	86	partial	plus2B single extra xor edx before word reload vs plain mov dx t=15 model=muse-05 score=0.97 stash=reverse/attempts/0x00324b39.cpp
+??0Rva0022958D@@QAE@XZ	0x00229557	26	blocked	ctor emits base ctor call plus EH EBP frame plus mov not and for AsciiString inits vs retail single baseConstruct plus vtable plus ands t=10 model=muse-05
+?Rva00381C2DClear@@YAXI@Z	0x00381C2D	30	partial	size exact plus0 lea lea vs imul add plus mov ecx eax and push base ecx vs eax t=15 model=muse-05 score=0.9 stash=reverse/attempts/0x00381c2d.cpp
