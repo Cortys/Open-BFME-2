@@ -1,8 +1,6 @@
 // ?rva004D50CE@Rva004D50CE@@QAEMXZ
 // partial score=0.96 date=2026-09-30
-// ?rva004D50CE@Rva004D50CE@@QAEMXZ
-// partial score=0.96 date=2026-09-30
-// cl: /O1 /DNDEBUG /MD /arch:SSE
+// cl: /O1 /G7 /DNDEBUG /MD /EHsc /arch:SSE
 // ?rva004D50CE@Rva004D50CE@@QAEMXZ @0x004D50CE 68B: averages up to 30
 // unsigned ints at +0x41054 (count at +0x40E6C) via x87 fild with 2^32
 // fixup plus final scale via globals 0x7C26EC/0x8601E0. Called once from
@@ -22,14 +20,13 @@ private:
 	unsigned int m_array[30];
 };
 
-// ?rva004D50CE@Rva004D50CE@@QAEMXZ present-unmatched
 float Rva004D50CE::rva004D50CE()
 {
 	float sum = 0.0f;
 	for (int i = 0; i < 30; ++i)
 	{
 		if (i == m_count)
-			break;
+			continue;
 		sum += (float)m_array[i];
 	}
 	return sum * g_008601E0;
