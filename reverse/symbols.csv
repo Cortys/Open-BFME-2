@@ -7212,3 +7212,5 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?rva006DCB20@Rva006E05B0@@QAEXXZ,0x006DCB20,address-derived member tail target reached from 0x006E05B0
 ?rva00078c0@Rva00029F80@@AAEXPBD0PAX@Z,0x000078C0,"TU-local private-member spelling of the rowed 0x000078C0 _M_range_initialize; called by Rva00029F80::rva00029f80 at 0x00029F98"
 ?updateSegLighting@RoadSegment@@QAEXXZ,0x000D4613,"call address decoded from the REL32 at 0x000D4A63 inside the rowed W3DRoadBuffer::updateLighting body (0x000D4A4B/49B): e8 ab fb ff ff -> 0x000D4613. The 187B body at 0x000D4613 is NOT rowed and the ZH-derived reconstruction in W3DRoadBuffer.cpp does not reproduce it, so this pin resolves the call site only; the address stays unrowed."
+?allocate@?$allocator@VRva004E18A2@@@_STL@@QBEPAVRva004E18A2@@IPBX@Z,0x002226BE,ICF 16-byte allocator fold identical 28B shl-4 call site 0x00565F39 via rowed BfmeE16
+?_M_clear@?$vector@VRva004E18A2@@V?$allocator@VRva004E18A2@@@_STL@@@_STL@@IAEXXZ,0x00565A60,vector Rva004E18A2 clear is rowed tidy call site 0x00565FA3 identical 30B shape
