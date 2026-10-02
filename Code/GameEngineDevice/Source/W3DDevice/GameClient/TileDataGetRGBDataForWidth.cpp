@@ -17,8 +17,9 @@ class RefCountClass
 {
 public:
 	RefCountClass() : m_refs(1) {}
-	virtual ~RefCountClass();
-	virtual void Delete_This();
+	virtual void Delete_This() { delete this; }
+protected:
+	virtual ~RefCountClass() {}
 private:
 	int m_refs;
 };
