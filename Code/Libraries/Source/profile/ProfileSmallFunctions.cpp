@@ -40,6 +40,9 @@ private:
 	static __int64 m_clockCycles;
 };
 
+// Profile::m_clockCycles: VA 0x00E0C200 (.data BSS), zero-filled in retail.
+__int64 Profile::m_clockCycles;
+
 // ?GetFrameName@Profile@@SAPBDI@Z
 const char *Profile::GetFrameName(unsigned frame)
 {
