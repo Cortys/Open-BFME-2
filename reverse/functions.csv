@@ -47371,3 +47371,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0029AEF9Check@@YG_NPAURva0029AEF9Item@@HHHHH@Z,,0x0029AEF9,35,Code/GameEngine/Source/GameClient/InGameUIRva0029AEF9.cpp,matched,InGameUI adjacent leaf flags at 1C bit 0x20 then low 3 bits then second arg nonzero
 ?Rva005F85C8Destroy@@YAXPAURva005F8447@@0@Z,,0x005F85C8,25,Code/GameEngine/Source/Common/Rva005F85C8Destroy.cpp,matched,stride-8 destroy loop via rowed dtor 0x005F8447
 ?rva000544EB@MilesAudioManager@@QAEXXZ,,0x000544EB,64,Code/GameEngineDevice/Source/MilesAudioDevice/MilesAudioManagerRva000544EB.cpp,matched,release-all-2D-samples list erase pattern
+??1Rva004E2382@@QAE@XZ,,0x004E2941,74,Code/GameEngine/Source/Common/Rva004E2941Dtor.cpp,matched,dtor frees vector buffer at 0x14 via free then tree 0x730DE at 0x08 then AsciiString release
