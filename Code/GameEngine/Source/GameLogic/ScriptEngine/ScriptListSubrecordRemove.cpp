@@ -27,6 +27,7 @@ class Rva003B573E
 {
 public:
 	int rva003B573E(const StringBase<char> &key);
+	int rva003B6633(const StringBase<char> &key);
 	void rva003B66D8(int index);
 private:
 	_STL::vector<void *> m_sorted; // +0x00
@@ -53,4 +54,15 @@ void Rva003B573E::rva003B66D8(int index)
 	m_freeHead = index;
 	rec->m_name.~AsciiString();
 	m_sorted.erase(m_sorted.begin() + pos);
+}
+
+int Rva003B573E::rva003B6633(const StringBase<char> &key)
+{
+	int pos = rva003B573E(key);
+	if ((unsigned int)pos < m_sorted.size()) {
+		int idx = (int)m_sorted[pos];
+		if ((*(const StringBase<char> *)&m_records[idx].m_name).compare(key) == 0)
+			return idx;
+	}
+	return -1;
 }
