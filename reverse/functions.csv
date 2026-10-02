@@ -48031,3 +48031,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BF045Do@@YGXABVAsciiString@@0_N@Z,,0x003BF045,442,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF045.cpp,matched,team centroid formatted waypoint via enemy index terrain slot 0x90
 ??1Rva0032D279@@QAE@XZ,,0x0032D279,84,Code/GameEngine/Source/Common/Rva0032D279Dtor.cpp,matched,loop with ternary delete via virtual plus base vector dtor
 ?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z,,0x003BF5FE,288,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF5FE.cpp,matched,team centroid waypoint via terrain slot 0x90 volatile order
+?rva005A91BE@Rva005A91BE@@QAEXPAVXfer@@@Z,,0x005A91BE,87,Code/Libraries/Source/WWVegas/WWLib/Rva005A91BEXfer.cpp,matched,Xfer Version12 count uint via slots 0x28 0x78 0x7c
