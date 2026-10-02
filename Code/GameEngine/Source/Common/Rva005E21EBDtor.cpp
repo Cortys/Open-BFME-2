@@ -10,6 +10,18 @@
 // same class already pinned as Rva00539926Base at 0x004E84A4, identified by
 // that vtable. Member modeling follows Rva002D3573Dtor.
 
+class Overridable
+{
+public:
+	void markAsOverride();
+};
+
+class Rva005E2439
+{
+public:
+	void rva005E2540();
+};
+
 class Rva000AD6F4
 {
 public:
@@ -28,6 +40,7 @@ class Rva005E21EB : public Rva00539926Base
 {
 public:
 	virtual ~Rva005E21EB();
+	virtual void rva005E25CD();
 private:
 	int m_04;
 	int m_08;
@@ -37,4 +50,9 @@ private:
 Rva005E21EB::~Rva005E21EB()
 {
 	m_0C.clear();
+}
+void Rva005E21EB::rva005E25CD()
+{
+	((Overridable *)this)->markAsOverride();
+	((Rva005E2439 *&)m_0C)->rva005E2540();
 }
