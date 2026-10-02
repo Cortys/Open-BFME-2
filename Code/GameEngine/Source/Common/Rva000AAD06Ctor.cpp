@@ -19,3 +19,8 @@ Rva000AAD06::Rva000AAD06()
 	: m_04(0), m_vec08(_STL::allocator<BfmeE16>())
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?_0@Rva000AAD06@@MAEXXZ=??_GRva00AAD26@@UAEPAXI@Z")

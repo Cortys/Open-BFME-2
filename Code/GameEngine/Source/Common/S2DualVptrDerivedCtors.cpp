@@ -52,3 +52,8 @@ public:
 BFME_DUAL_VPTR_CTOR( Rva001129B0 )
 // @??0Rva00694E00@@QAE@XZ 0x00694E00
 BFME_DUAL_VPTR_CTOR( Rva00694E00 )
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?keepOwn@Rva001129B0@@UAEXXZ=__purecall")

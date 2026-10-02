@@ -96,3 +96,8 @@ V3_INLINE_COPY_CTOR( Rva005EA9B0, V3Vt0110F9E4 )
 V3_INLINE_COPY_CTOR( Rva005EABB0, V3Vt0110F9E8 )
 V3_INLINE_COPY_CTOR( Rva005EAE70, V3Vt0110FA14 )
 V3_INLINE_COPY_CTOR( Rva005EB090, V3Vt0107375C )
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?s0@V3Vt0110F978@@UAEXXZ=__purecall")
