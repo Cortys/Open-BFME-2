@@ -5708,3 +5708,4 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva00208DB8@ScriptEngine@@QAEPAXVAsciiString@@@Z	0x00208DB8	225	blocked	extra lea eax ebp-0x3c plus eax-load vs stack-reload for return persists after named-return and direct-TheEmptyString tries t=12 model=muse-03 (stash 0.98 kept)
 ?getObjectGarrisonPointIndex@GarrisonContain@@UAEHW4ObjectID@@@Z	0x00479292	170	blocked	inner loop it in ecx vs edx cid in edx vs ecx t=15 model=muse-06 (stash 0.91 kept)
 ??1Rva0041F94A@@UAE@XZ	0x0041F94A	136	blocked	mixed hashtable callees WindowVideo begin plus Armor clear need twin-type work t=10 model=muse-06
+?xfer@Rva003A3959@@MAEXPAVXfer@@@Z	0x003A2AA6	210	partial	cnt temp at ebp+8 vs ebp-8 frame 0x14 vs 0x18 extra xor eax before mov ax key uint slot ok begin QBV ok t=28 model=muse-09 score=0.93 stash=reverse/attempts/0x003a2aa6.cpp
