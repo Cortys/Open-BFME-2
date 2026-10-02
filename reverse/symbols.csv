@@ -6879,3 +6879,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??1?$DynamicVectorClass@PAULegacyMaterialClass@MeshLoadContextClass@@@@UAE@XZ,0x0018A1A0,twin of dup row object-symbol proves real name for ??_G call
 ??1?$DynamicVectorClass@K@@UAE@XZ,0x0018A1D0,twin of dup row object-symbol proves real name for ??_G call
 ??$_Destroy@PAUBfmeStringHeadRecord184@@@_STL@@YAXPAUBfmeStringHeadRecord184@@0@Z,0x0008B632,rowed dup 0x8B632 is this Destroy via object-symbol plus caller 0x8B64A
+??1?$DynamicVectorClassWide@UTextureStatisticsStructWide@@@@UAE@XZ,0x001569C0,ICF with ~VectorClassWide<TextureStatisticsStructWide> rowed here: the implicit derived destructor compiles to the same 67 bytes and relocations; the deleting destructor 0x001570F0 (slot 0 of vftable 0xbd3c18 installed by the rowed ctor 0x001566B0) calls it

@@ -118,7 +118,6 @@ class DynamicVectorClassWide : public VectorClassWide<T>
 {
 public:
 	DynamicVectorClassWide(unsigned size = 0, T const *array = 0);
-	virtual ~DynamicVectorClassWide();
 	virtual bool Resize(int size, T const *array = 0);
 	virtual void Clear();
 	virtual int ID(T const *ptr);
