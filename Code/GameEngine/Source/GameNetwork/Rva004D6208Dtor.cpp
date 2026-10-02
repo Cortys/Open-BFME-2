@@ -16,7 +16,7 @@ class NetCommandMsg
 public:
 	NetCommandMsg();
 protected:
-	virtual ~NetCommandMsg() {}
+	virtual inline ~NetCommandMsg() {}
 private:
 	char m_pad04[0x1c - 0x04];
 };
