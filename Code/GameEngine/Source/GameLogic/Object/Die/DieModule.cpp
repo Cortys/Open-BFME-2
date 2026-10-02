@@ -53,14 +53,6 @@
 
 
 //-------------------------------------------------------------------------------------------------
-// ??0DieMuxData@@ present-unmatched
-DieMuxData::DieMuxData() :
-	m_deathTypes(DEATH_TYPE_FLAGS_ALL),
-	m_veterancyLevels(VETERANCY_LEVEL_FLAGS_ALL)
-{
-}
-
-//-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Module/DieMuxDataGetFieldParseThunk.cpp
 // ?getFieldParse@DieMuxData@@ present-unmatched
 const FieldParse* DieMuxData::getFieldParse() 
