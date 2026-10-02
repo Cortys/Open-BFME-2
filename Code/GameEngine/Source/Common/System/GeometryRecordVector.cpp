@@ -14,6 +14,7 @@
 
 struct GeometryRecord
 {
+	~GeometryRecord();
 	int m_first;
 	int m_second;
 	int m_third;
