@@ -47272,3 +47272,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva00498B8BGet@@YAEPAVObject@@@Z,,0x00498B8B,36,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498B8BCheck.cpp,matched,unlock free predicate flag 0x108 bit2 plus rowed call 0x0028B511
 ?rva00498DF3@Rva00498DF3@@QAEXPAURva00498DF3Arg@@M@Z,,0x00498DF3,59,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498DF3Cmd.cpp,matched,unlock method plus rowed calls 0x00262DD3 0x0026C411
 ?rva004989DF@Rva004989D7@@QBE?AW4Relationship@@PBVPlayer@@@Z,,0x004989DF,15,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004989D7Get.cpp,matched,unlock forwards plus0C to rowed Player getRelationship
+?rva00498831@GateOpenAndCloseBehavior@@QAEXH@Z,,0x00498831,30,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenAndCloseBehaviorRva00498831.cpp,matched,gap lane GateOpenAndCloseBehavior m_40 offset from ctor shard
