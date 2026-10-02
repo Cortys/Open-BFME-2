@@ -128,6 +128,10 @@ public:
 	Int getColor(void);
 	void setSide(Int val);
 	Int getSide(void);
+	void rva005DF336(Int val);
+	Int rva005DF37E(void);
+	void rva005DF3C7(Int val);
+	Int rva005DF40F(void);
 };
 
 class GameSpyMiscPreferences : public UserPreferences
@@ -141,6 +145,8 @@ public:
 	void rva00559924(AsciiString val);
 	AsciiString rva00559813();
 	AsciiString rva005598C8();
+	Bool rva0055997D();
+	int rva005599C8();
 };
 
 // ??0QuickMatchPreferences@@QAE@XZ @0x5DF1A3
@@ -176,6 +182,27 @@ void QuickMatchPreferences::setSide(Int val)
 Int QuickMatchPreferences::getSide(void)
 {
 	return getInt("Side", 0);
+}
+
+// BFME 2's two ladder-rank keys, after setSide/getSide in the same order.
+void QuickMatchPreferences::rva005DF336(Int val)
+{
+	setInt("Highest1vs1Rank", val);
+}
+
+Int QuickMatchPreferences::rva005DF37E(void)
+{
+	return getInt("Highest1vs1Rank", 0);
+}
+
+void QuickMatchPreferences::rva005DF3C7(Int val)
+{
+	setInt("Highest2vs2Rank", val);
+}
+
+Int QuickMatchPreferences::rva005DF40F(void)
+{
+	return getInt("Highest2vs2Rank", 0);
 }
 
 // ??0GameSpyMiscPreferences@@QAE@XZ @0x559711
@@ -220,6 +247,19 @@ AsciiString GameSpyMiscPreferences::rva00559813()
 AsciiString GameSpyMiscPreferences::rva005598C8()
 {
 	return getAsciiString("AllOtherCachedStats", AsciiString::TheEmptyString);
+}
+
+// Zero Hour's GameSpyMiscPreferences reads the same two keys with the same
+// defaults (QMResLock false, MaxMessagesPerUpdate 100); the names stay
+// address-derived like the class's other accessors.
+Bool GameSpyMiscPreferences::rva0055997D()
+{
+	return getBool("QMResLock", false);
+}
+
+int GameSpyMiscPreferences::rva005599C8()
+{
+	return getInt("MaxMessagesPerUpdate", 100);
 }
 
 typedef long time_t;
