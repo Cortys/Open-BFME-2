@@ -1,0 +1,25 @@
+// cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
+// ?rva00319159@Rva00319159@@QAEPAXXZ @0x00319159 33B via AsciiString empty check plus global lookup
+// Evidence: unlock lane callers 0x002B3A71 0x00319666; rowed isEmpty StringBase and rowed rva002D06CA via g_009FF000; AsciiString at +0x18
+#include "ascii_string.h"
+class Rva002D06CA
+{
+public:
+	void *rva002D06CA(const AsciiString *key);
+};
+extern Rva002D06CA *g_009FF000;
+class Rva00319159
+{
+public:
+	void *rva00319159();
+private:
+	char m_pad[24];
+	AsciiString m_str;
+};
+
+void *Rva00319159::rva00319159()
+{
+	if (m_str.isEmpty())
+		return 0;
+	return g_009FF000->rva002D06CA(&m_str);
+}
