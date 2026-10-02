@@ -48818,3 +48818,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva004FA659@Rva004FA659@@QAEXXZ,,0x004FA659,19,Code/GameEngine/Source/Common/Rva004FA659Method.cpp,matched,chain method compares m20 m24 forwards bool to rowed Rva004E060C
 ?rva0030B055@Rva0030B055@@QAEXXZ,,0x0030B055,37,Code/GameEngine/Source/Common/System/Rva0030B055.cpp,matched,four virtual calls slots 3 8 6 9 via nested v9(v6) caller 0x0030B0E3 unblocks 0x0030B0E3
 ?rva005F086E@Rva005F086E@@QAEX_N@Z,,0x005F086E,86,Code/GameEngine/Source/Common/Rva005F086EShow.cpp,matched,guarded SetRegionFortressIconState fire via rowed AptCall empty fallback
+?rva005F7412@Rva005F7670@@QAEXXZ,,0x005F7412,60,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,same hide shape as rva005F7161 with SetCommandPointsState flag 0x66
