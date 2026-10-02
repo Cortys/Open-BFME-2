@@ -48577,3 +48577,24 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??_GRva0073E3F0Dtor@@UAEPAXI@Z,,0x007396E0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0073E3F0
 ??_GRva0073A900Dtor@@UAEPAXI@Z,,0x0073AAC0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0073A900
 ??_GRva0075A080Dtor@@UAEPAXI@Z,,0x007581C0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0075A080
+?Rva003F9258Parse@@YAXPAVINI@@PAVRva003F7BE9@@@Z,,0x003F9258,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,Tutorial ParseINI 0x24 record from Rva004FD77CParse recipe
+?Rva004FD719Parse@@YAXPAVINI@@PAVRva004FD37F@@@Z,,0x004FD719,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,PlayerDefeatCondition ParseINI 0x18 record from Rva004FD77CParse recipe
+?Rva004FD7FBParse@@YAXPAVINI@@PAVRva004FD448@@@Z,,0x004FD7FB,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,TeamDefeatCondition ParseINI 0x24 record from Rva004FD77CParse recipe
+?Rva0059E436Parse@@YAXPAVINI@@PAVRva0059E390@@@Z,,0x0059E436,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,SpawnGenericBuilding ParseINI 0x14 record from Rva004FD77CParse recipe
+?Rva0059E511Parse@@YAXPAVINI@@PAVRva0059E3A7@@@Z,,0x0059E511,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,SpawnGenericArmy ParseINI 0x14 record from Rva004FD77CParse recipe
+?Rva0059E6D3Parse@@YAXPAVINI@@PAVRva004FD4AE@@@Z,,0x0059E6D3,98,Code/GameEngine/Source/Common/Rva003F9258Siblings.cpp,matched,OwnershipSet ParseINI 0x2c record from Rva004FD77CParse recipe
+??0?$ShareBufferClass@URva0015AC00Elem@@@@QAE@HPBDH@Z,,0x0015AC00,141,Code/Libraries/Source/WWVegas/WW3D2/Rva0015AC00Siblings.cpp,matched,4-byte ShareBufferClass 3-arg ctor from 0x169950 recipe
+??0?$ShareBufferClass@URva0015AD60Elem@@@@QAE@HPBDH@Z,,0x0015AD60,141,Code/Libraries/Source/WWVegas/WW3D2/Rva0015AC00Siblings.cpp,matched,4-byte ShareBufferClass 3-arg ctor from 0x169950 recipe
+?bfmeGoPF@Rva00028B90Thing@@QAEXPBUBfmeRangePF@@PAX@Z,,0x00028B90,43,Code/GameEngine/Source/Common/Rva00028B90Siblings.cpp,matched,range start+length wrapper from bfmeGoPF 0x28C10 recipe
+?bfmeGoPF@Rva0002A270Thing@@QAEXPBUBfmeRangePF@@PAX@Z,,0x0002A270,43,Code/GameEngine/Source/Common/Rva00028B90Siblings.cpp,matched,range start+length wrapper from bfmeGoPF 0x28C10 recipe
+?bfmeGoPF@Rva0002ACF0Thing@@QAEXPBUBfmeRangePF@@PAX@Z,,0x0002ACF0,43,Code/GameEngine/Source/Common/Rva00028B90Siblings.cpp,matched,range start+length wrapper from bfmeGoPF 0x28C10 recipe
+?ParseEyeTowerPointData@@YAXPAVINI@@PAX1PBX@Z,,0x004E383D,123,Code/GameEngine/Source/GameLogic/LivingWorld/Rva004E383DSiblings.cpp,matched,EyeTower record ParseINI from ParseForceBattle 0x4E16D9 recipe
+??1Rva006ECFC0Owner@@UAE@XZ,,0x006ECFC0,82,Code/GameEngine/Source/Common/Rva006ECFC0Siblings.cpp,matched,derived dtor base Rva006D6470Owner member EAStringC +0x20 from 0x6D6470 recipe
+?rva007062F0@AptBasePtrStack@@QAEPAVBfmeAptValue006DCD20@@XZ,,0x007062F0,53,Code/Libraries/Source/Apt/Rva007062F0Siblings.cpp,matched,AptBasePtrStack top getter line 0x10A from rva006DE160 0x6DE160 recipe
+?rva006F2C20@Rva006F2C20@@UAEXXZ,,0x006F2C20,45,Code/GameEngine/Source/Common/Rva006F2C20Siblings.cpp,matched,slot13 mark tail-jmp member +0x20 from rva0070DF80 0x70DF80 recipe
+?rva007419D0@Rva007419D0Streak@@QAEXM@Z,,0x007419D0,37,Code/Libraries/Source/WWVegas/WW3D2/Rva007419D0Siblings.cpp,matched,tile-factor two-subobject setter from Set_Texture 0x741880 recipe
+?Get_Texture@Rva0013EF40Category@@QAE?AUBFME2TextureRef@@H@Z,,0x0013EF40,35,Code/Libraries/Source/WWVegas/WW3D2/Rva0013EF40Siblings.cpp,matched,texture array +8 smart-ref getter from BFME2TextureCategory 0x143400 recipe
+?rva00149280@Rva00149280Class@@QBEXAAVVector3@@@Z,,0x00149280,33,Code/Libraries/Source/WWVegas/WW3D2/Rva00149280Siblings.cpp,matched,spot-direction vector getter member +0x314 from Get_Spot_Direction 0x11C730 recipe
+?rva006F2C50@Rva006F2C50@@UAEXXZ,,0x006F2C50,30,Code/GameEngine/Source/Common/Rva006F2C50Siblings.cpp,matched,slot11 release clear member +0x20 from Rva0070DF60 0x70DF60 recipe
+?Reset_Line@Rva00743060Class@@QAEXXZ,,0x00743060,22,Code/Libraries/Source/WWVegas/WW3D2/Rva00743060Siblings.cpp,matched,sync-time plus UV reset offsets +0x2C from Reset_Line 0x191260 recipe
+?Rva006F12F0Free@@YAXPAXH@Z,,0x006F12F0,22,Code/GameEngine/Source/Common/Rva006F12F0Siblings.cpp,matched,chain pool free forwarder from Rva006D8680Free 0x6D8680 recipe

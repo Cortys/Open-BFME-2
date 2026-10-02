@@ -7154,3 +7154,19 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ??1Rva0073E3F0Dtor@@UAE@XZ,0x0073E3F0,address-derived class dtor called by the 30B scalar deleting destructor at 0x007396E0; address read from that body REL32; class identity unproven so the model is named for the call target
 ??1Rva0073A900Dtor@@UAE@XZ,0x0073A900,address-derived class dtor called by the 30B scalar deleting destructor at 0x0073AAC0; address read from that body REL32; class identity unproven so the model is named for the call target
 ??1Rva0075A080Dtor@@UAE@XZ,0x0075A080,address-derived class dtor called by the 30B scalar deleting destructor at 0x007581C0; address read from that body REL32; class identity unproven so the model is named for the call target
+??0Rva003F9258Data@@QAE@XZ,0x003F8DF8,"record ctor called by Rva003F9258Parse (Tutorial ParseINI) at 0x003F9258; retail new 0x24 then thiscall and store to local"
+??0Rva004FD719Data@@QAE@XZ,0x004FCCF0,"record ctor called by Rva004FD719Parse (PlayerDefeatCondition ParseINI) at 0x004FD719; retail new 0x18 then thiscall"
+??0Rva004FD7FBData@@QAE@XZ,0x004FCE41,"record ctor called by Rva004FD7FBParse (TeamDefeatCondition ParseINI) at 0x004FD7FB; retail new 0x24 then thiscall"
+??0Rva0059E436Data@@QAE@XZ,0x0059E3BE,"record ctor called by Rva0059E436Parse (SpawnGenericBuilding ParseINI) at 0x0059E436; retail new 0x14 then thiscall"
+??0Rva0059E511Data@@QAE@XZ,0x0059E499,"record ctor called by Rva0059E511Parse (SpawnGenericArmy ParseINI) at 0x0059E511; retail new 0x14 then thiscall"
+??0Rva0059E6D3Data@@QAE@XZ,0x0059E574,"record ctor called by Rva0059E6D3Parse (OwnershipSet ParseINI) at 0x0059E6D3; retail new 0x2c then thiscall"
+?rva003F7BE9@Rva003F7BE9@@QAEXPBVModuleData@@@Z,0x003F7BE9,"holder append reached by Rva003F9258Parse at 0x003F9258; retail thiscall ecx=holder arg=record"
+?rva004FD37F@Rva004FD37F@@QAEXPBVModuleData@@@Z,0x004FD37F,"holder append reached by Rva004FD719Parse at 0x004FD719; abuts rowed Rva004FD448 0x004FD448"
+?rva0059E390@Rva0059E390@@QAEXPBVModuleData@@@Z,0x0059E390,"holder append reached by Rva0059E436Parse at 0x0059E436; abuts 0x0059E3A7"
+?rva0059E3A7@Rva0059E3A7@@QAEXPBVModuleData@@@Z,0x0059E3A7,"holder append reached by Rva0059E511Parse at 0x0059E511; abuts 0x0059E390"
+?bfmeDoPF@Rva00028B90Thing@@QAEXPADPAXH@Z,0x00027540,"thiscall callee of Rva00028B90Thing::bfmeGoPF at 0x00028B90; retail REL32 at +0x20; same body as rowed ?bfmeFindV20@@YGHPBDII@Z pin at 0x276B0"
+?bfmeDoPF@Rva0002A270Thing@@QAEXPADPAXH@Z,0x00029850,"thiscall callee of Rva0002A270Thing::bfmeGoPF at 0x0002A270; retail REL32 at +0x20; body already rowed as ?bfmeFindV39@@YGHPADII@Z"
+?bfmeDoPF@Rva0002ACF0Thing@@QAEXPADPAXH@Z,0x0002A420,"thiscall callee of Rva0002ACF0Thing::bfmeGoPF at 0x0002ACF0; retail REL32 at +0x20; Ghidra size 254"
+??1Rva004E364F@@QAE@XZ,0x004E366E,"record clear destructor spelling for Rva004E364F used by ParseEyeTowerPointData 0x004E383D; same body as rowed ?rva004E366E@Rva004E366E@@QAEXXZ"
+?append@Rva005669B7Owner@@QAEXPAVRva004E364F@@@Z,0x005669B7,"append thunk reached by ParseEyeTowerPointData 0x004E383D; retail thiscall ecx=owner arg=record; sibling of pinned 0x0056652F"
+?freeBlock@Rva006D2A60@@QAEXPAXH@Z,0x006D2A60,"freeBlock callee of Rva006F12F0Free at 0x006F12F0; retail REL32 at +0x10; sibling of rowed ?freeBlock@Rva006DB270@@QAEXPAXH@Z 0x006DB270"
