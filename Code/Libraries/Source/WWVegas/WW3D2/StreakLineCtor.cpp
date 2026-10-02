@@ -116,7 +116,7 @@ private:
 };
 
 // ??0StreakLineClass@@QAE@XZ
-StreakLineClass::StreakLineClass(void) :
+inline StreakLineClass::StreakLineClass(void) :
 	MaxSubdivisionLevels(0),
 	NormalizedScreenArea(0.0f),
 	PointLocations(0),
@@ -129,7 +129,7 @@ StreakLineClass::StreakLineClass(void) :
 }
 
 // The retail copy constructor deliberately default-constructs RenderObjClass.
-StreakLineClass::StreakLineClass(const StreakLineClass &src) :
+inline StreakLineClass::StreakLineClass(const StreakLineClass &src) :
  MaxSubdivisionLevels(src.MaxSubdivisionLevels),
  Personalities(src.Personalities),
  NormalizedScreenArea(src.NormalizedScreenArea),
@@ -139,3 +139,14 @@ StreakLineClass::StreakLineClass(const StreakLineClass &src) :
  LineRenderer(src.LineRenderer),
  StreakRenderer(src.StreakRenderer)
 {}
+
+// Anchor keeps this unit's select-any ctor copies (and the vector bodies they
+// reference) emitted; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStreakLineCtorAnchor@@YAXXZ absent-from-retail
+void _bfmeStreakLineCtorAnchor()
+{
+	StreakLineClass a;
+	StreakLineClass b(a);
+}
+#pragma inline_depth()
