@@ -80,3 +80,7 @@ Rva00801FB0Elem::Rva00801FB0Elem()
 	m_78 = 0;
 	m_4C = -1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmeRva0066E270@@QAE@XZ=??0Rva00801FB0Elem@@QAE@XZ")

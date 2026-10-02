@@ -2535,3 +2535,7 @@ void ConnectionManager::requestFrameDataResend(Int playerID, UnsignedInt frame) 
 
 	msg->detach();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?find@FontCharMap@@QAEPAUFontCharNode@@ABG@Z=??$_M_find@G@?$_Rb_tree@GU?$pair@$$CBGVAsciiString@@@_STL@@U?$_Select1st@U?$pair@$$CBGVAsciiString@@@_STL@@@2@U?$less@G@2@V?$allocator@U?$pair@$$CBGVAsciiString@@@_STL@@@2@@_STL@@ABEPAU?$_Rb_tree_node@U?$pair@$$CBGVAsciiString@@@_STL@@@1@ABG@Z")

@@ -24,3 +24,7 @@ void *BfmeThingDMC::bfmeGoDMC(unsigned char flags)
 		bfmeFreeDMC(this);
 	return this;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeVecDtorDMC@@YGXPAXIHP6AX0@Z@Z=??_M@YGXPAXIHP6EX0@Z@Z")

@@ -128,3 +128,7 @@ bool Rva007E8F20Country::load(Rva007E8810Message *msg, int index)
 	m_parentalControlAgeLimit = (int)(long)((BfmeThingRF *)msg)->bfmeGoRF((void *)key, (void *)13);
 	return true;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeCmpRE@BfmeOtherRE@@QAEDHH@Z=?load@Rva007E8F20Country@@QAE_NPAVRva007E8810Message@@H@Z")

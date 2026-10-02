@@ -116,3 +116,7 @@ void _bfmeTextures_Material_And_Shader_Booking_StructInlineAnchor(Textures_Mater
     p->Textures_Material_And_Shader_Booking_Struct::Textures_Material_And_Shader_Booking_Struct();
 }
 #pragma inline_depth()
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?rva00906340VecCtor@@YGXPAXIHP6AX0@Z1@Z=??_L@YGXPAXIHP6EX0@Z1@Z")

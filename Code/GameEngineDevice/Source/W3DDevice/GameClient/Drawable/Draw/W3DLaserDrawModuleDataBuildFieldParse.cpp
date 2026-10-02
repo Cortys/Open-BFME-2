@@ -31,3 +31,7 @@ void W3DLaserDrawModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BCB840), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?W3DLaserDrawModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@W3DLaserDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z")

@@ -282,3 +282,9 @@ BFME_DISP_DWORD_GETTER(Rva0054902CDwordField, 0x568)
 BFME_DISP_DWORD_GETTER(Rva003BA5F2DwordField, 0x2A4)
 BFME_DISP_DWORD_GETTER(Rva00143590DwordField, 0xC8)
 BFME_DISP_DWORD_GETTER(Rva00108430DwordField, 0x170)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeFindDEB@BfmeThingDEB@@QAEPAUBfmeSubDEB@@XZ=?get@Rva003140C8DwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?bfmeFindDEC@BfmeThingDEC@@QAEPAUBfmeSubDEC@@XZ=?get@Rva003140C8DwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?bfmeFindDEA@BfmeThingDEA@@QAEPAUBfmeSubDEA@@XZ=?get@Rva003140C8DwordField@@QBEHXZ")

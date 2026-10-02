@@ -361,3 +361,7 @@ unsigned char BfmeThingXS::bfmeMarkXS(int which) const
 	}
 	return 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeAskEME@BfmeObjEME@@QAE_NPAX@Z=?bfmeMarkXS@BfmeThingXS@@QBEEH@Z")
