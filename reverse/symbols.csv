@@ -7032,3 +7032,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??1Rva00221A58@@QAE@XZ,0x002218D0,ICF twin of Open2Dtor4793C0 from Rva00221B42 dtor call site
 ?rva002747F9@Rva002747F9@@QAEXH@Z,0x002747F9,address-derived rebuild-helper call from BFMERopeDrawable::getPosition; target name unverified
 _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0062afc8
+?rva0020F569@Rva00210347@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x0020F569,thiscall twin of rowed stdcall alloc via call-site mov ecx esi at 0x00210347
