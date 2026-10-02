@@ -34,7 +34,7 @@ public:
 	virtual void *deleteInstance(int flags);
 
 	void *m_next; // +0x04
-	int m_pad08; // +0x08
+	void *m_prev; // +0x08
 	void *m_list; // +0x0C
 };
 
@@ -48,6 +48,7 @@ class GameMessageList : public SubsystemInterface
 public:
 	GameMessageList();
 	virtual ~GameMessageList();
+	virtual void rva0030F5D2(class GameMessage *msg);
 
 	GameMessage *m_firstMessage; // +0x0C
 	GameMessage *m_lastMessage; // +0x10
@@ -242,6 +243,29 @@ unsigned int MessageStream::rva0030F738(GameMessageTranslator *translator, unsig
 	}
 
 	return newSS->m_id;
+}
+
+// ?rva0030F5D2@GameMessageList@@UAEXPAVGameMessage@@@Z @0x0030F5D2 50B vslot 14
+// GameMessageList append to end from ZH donor appendMessage. Evidence: vtable slot 14 of
+// GameMessageList/MessageStream/CommandList plus prev/next in this TU plus first/last at +0x0C/+0x10.
+void GameMessageList::rva0030F5D2(GameMessage *msg)
+{
+	if (!msg)
+		return;
+	msg->m_next = 0;
+	if (m_lastMessage)
+	{
+		m_lastMessage->m_next = msg;
+		msg->m_prev = m_lastMessage;
+		m_lastMessage = msg;
+	}
+	else
+	{
+		m_firstMessage = msg;
+		m_lastMessage = msg;
+		msg->m_prev = 0;
+	}
+	msg->m_list = this;
 }
 
 // ??1TranslatorData is a header inline elsewhere: another unit emits a

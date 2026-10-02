@@ -48992,3 +48992,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva00337424Insert@@YAXPAVRva002E9E70@@VRva003371B1@@H@Z,,0x00337424,85,Code/GameEngine/Source/Common/Rva00337424Insert.cpp,matched,sorted insert via rowed copy 0x003372EC and StringBase compare with pin dtor 0x003372B7
 ?Rva0030F04AApply@@YAXHPAURva0030F04AOut@@@Z,,0x0030F04A,79,Code/GameEngine/Source/Common/Rva0030F04AApply.cpp,matched,flag-gated bit sets plus InGameUI slot48 plus caller 0x0030F0E2
 ?rva0030F738@MessageStream@@QAEIPAVGameMessageTranslator@@I@Z,,0x0030F738,159,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,attach sorted by priority via ZH donor plus caller 0x0023A1BB
+?rva0030F5D2@GameMessageList@@UAEXPAVGameMessage@@@Z,,0x0030F5D2,50,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,vslot14 append via ZH donor plus prev next in TU
