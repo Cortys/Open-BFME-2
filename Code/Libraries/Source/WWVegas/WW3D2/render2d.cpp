@@ -655,12 +655,6 @@ void	Render2DClass::Add_Rect( const RectClass & rect, float border_width, uint32
 }
 
 // ?Add_Outline@Render2DClass@@ present-unmatched
-void	Render2DClass::Add_Outline( const RectClass & rect, float width, unsigned long color )
-{
-	Add_Outline( rect, width, RectClass( 0,0,1,1 ), color );
-}
-
-// ?Add_Outline@Render2DClass@@ present-unmatched
 void	Render2DClass::Add_Outline( const RectClass & rect, float width, const RectClass & uv, unsigned long color )
 {
 	//
