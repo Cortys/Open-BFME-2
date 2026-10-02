@@ -44,7 +44,7 @@ inline BfmeStringRecord005DDD40 *uninitialized_fill_n<BfmeStringRecord005DDD40 *
 }
 
 template <>
-void vector<BfmeStringRecord005DDD40, allocator<BfmeStringRecord005DDD40> >::_M_fill_insert(
+inline void vector<BfmeStringRecord005DDD40, allocator<BfmeStringRecord005DDD40> >::_M_fill_insert(
 	BfmeStringRecord005DDD40 *__position, size_type __n, const BfmeStringRecord005DDD40 &__x)
 {
 	if (__n != 0) {
@@ -71,3 +71,16 @@ void vector<BfmeStringRecord005DDD40, allocator<BfmeStringRecord005DDD40> >::_M_
 	}
 }
 }
+
+// This method is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStlportVectorStringRecordFillInsertAnchor@@YAXXZ absent-from-retail
+void _bfmeStlportVectorStringRecordFillInsertAnchor()
+{
+    typedef _STL::vector<BfmeStringRecord005DDD40, _STL::allocator<BfmeStringRecord005DDD40> > StringRecordVector;
+    StringRecordVector *vector = 0;
+    BfmeStringRecord005DDD40 *position = 0;
+    const BfmeStringRecord005DDD40 *value = 0;
+    vector->_M_fill_insert(position, 0, *value);
+}
+#pragma inline_depth()
