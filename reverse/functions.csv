@@ -48928,3 +48928,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0051C17E@Rva0051C17E@@QAEXH@Z,,0x0051C17E,195,Code/Libraries/Source/WWVegas/WWLib/Rva0051C17EMethod.cpp,matched,thiscall update via GadgetTextEntryGetText plus wide set plus listbox add with winEnable guards caller 0x0051C4B8 global g_00DD16C4
 ?GetColor@SubTitleManager@@QAEIH@Z,,0x000469CB,92,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string GetColor plus caller 0x000480AB plus siblings
 ?rva005FF267@Rva005FF267@@QAEXH@Z,,0x005FF267,69,Code/GameEngine/Source/Common/Rva005FF267SetState.cpp,matched,chain via 0x0050E9FE AptCall SetState team prefix empty fallback state table
+?rva005FF38D@Rva005FF38D@@QAEX_N@Z,,0x005FF38D,92,Code/GameEngine/Source/Common/Rva005FF38DOverlay.cpp,matched,chain via 0x0050E9FE AptCall SetSelectionOverlayState guarded overlay
