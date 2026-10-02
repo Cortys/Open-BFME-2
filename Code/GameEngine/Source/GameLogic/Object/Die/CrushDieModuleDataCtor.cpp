@@ -1,4 +1,4 @@
-// cl: /O1 /MD /GX /DNDEBUG /Oy- /DWIN32 /D_WINDOWS
+// cl: /O1 /MD /GX /DNDEBUG /DWIN32 /D_WINDOWS
 //
 // ??0CrushDieModuleData@@QAE@XZ, retail 0x002539B3, 82 bytes.
 // CrushDie ModuleData default ctor over the pinned SEH intermediate base
