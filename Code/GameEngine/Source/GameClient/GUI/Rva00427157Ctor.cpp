@@ -6,6 +6,7 @@ class Rva00427157
 {
 public:
 	Rva00427157(const AsciiString &name, const Rva00427157 *src);
+	float rva004270FA(int index);
 private:
 	AsciiString m_name;
 	float m_vals[8];
@@ -20,4 +21,9 @@ Rva00427157::Rva00427157(const AsciiString &name, const Rva00427157 *src) : m_na
 		for (int i = 0; i < 8; ++i)
 			m_vals[i] = src->m_vals[i];
 	}
+}
+
+float Rva00427157::rva004270FA(int index)
+{
+	return m_vals[index];
 }
