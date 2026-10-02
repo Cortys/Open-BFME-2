@@ -48513,3 +48513,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005FD677@Rva005FD677@@QAEX_N@Z,,0x005FD677,91,Code/GameEngine/Source/Common/Rva005FD677Apt.cpp,matched,chain via AptCall 0x005F8EDA suffix up disabled inner plus8
 ?rva005FD6D2@Rva005FD6D2@@QAEX_N@Z,,0x005FD6D2,91,Code/GameEngine/Source/Common/Rva005FD6D2Apt.cpp,matched,chain via AptCall 0x005F8EDA suffix up disabled inner plus8
 ?rva005FD72D@Rva005FD72D@@QAEX_N@Z,,0x005FD72D,91,Code/GameEngine/Source/Common/Rva005FD72DApt.cpp,matched,chain via AptCall 0x005F8EDA suffix up disabled inner plus8
+?rva005FD8A9@Rva005FD8A9@@QAEX_N@Z,,0x005FD8A9,8,Code/GameEngine/Source/Common/Rva005FD8A9Fwd.cpp,matched,chain tail jmp to 0x005FD677 via plus4 ptr
