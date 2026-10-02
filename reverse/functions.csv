@@ -48024,3 +48024,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00486CF6@Rva00486B56@@QAEXPBVDamageInfo@@@Z,,0x00486CF6,125,Code/GameEngine/Source/GameLogic/Object/Die/Rva00486CF6OnDie.cpp,matched,die slot 12 via Object GameLogic Radar
 ??_GRva0040BFAA@@UAEPAXI@Z,,0x0040C0AB,28,Code/GameEngine/Source/Common/Rva0040BFAADtor.cpp,matched,deleting dtor via own unit
 ??_GRva004E3CD0@@UAEPAXI@Z,,0x004E3E06,28,Code/GameEngine/Source/Common/Rva004E3CD0Dtor.cpp,matched,deleting dtor via own unit
+?Rva0059AFC2Copy@@YAPAURva0059AFC2Out@@PAU1@PAURva0059AFC2In@@PBD@Z,,0x0059AFC2,57,Code/GameEngine/Source/Common/Rva0059AFC2Copy.cpp,matched,unlock 20B from 12B plus Pair init rowed 0x000B3F84 via callers

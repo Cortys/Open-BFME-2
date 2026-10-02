@@ -5567,3 +5567,5 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?_M_insert_overflow@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@IAEXPAVRva0040AF66@@ABV3@ABU__false_type@2@I_N@Z	0x0040B8E8	183	partial	M_insert_overflow exact bytes but calls generic templates not free helpers t=12 model=muse-spark score=0.95 stash=reverse/attempts/0x0040b8e8.cpp
 ??0AwardSystemManager@@QAE@XZ	0x0040BF17	147	blocked	ctor needs baseConstruct-as-base plus Debug vtable slots 60-6C plus g_ singletons t=10 model=muse-spark
 ?rva00490ECF@Rva00490D3F@@QAEXXZ	0x00490ECF	102	blocked	update slot22 needs dec-chain switch plus direct-mem flag ORs t=8 model=muse-spark
+??1Rva0059A85C@@UAE@XZ	0x0059A40D	98	partial	EH state 2 vs 1 before erase else identical 98B structural 0 t=20 model=muse-12 score=0.98 stash=reverse/attempts/0x0059a40d.cpp
+?rva0059ADD1@Rva0059ADD1@@QAE_NXZ	0x0059ADD1	35	blocked	xorps comiss mem jb vs movss comiss zero ja plus jne vs je plus 5B size t=20 model=muse-12
