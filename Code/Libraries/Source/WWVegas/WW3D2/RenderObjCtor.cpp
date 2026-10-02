@@ -9,6 +9,14 @@
 // Sharing one -1 in ecx (or ecx,-1 + reg stores) is 5 bytes short, and any
 // same-region spelling reproduces it; _bfme_float_84(0.0f) leads the pair
 // in member order so its movss precedes them.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"
 #include "aabox.h"
 
