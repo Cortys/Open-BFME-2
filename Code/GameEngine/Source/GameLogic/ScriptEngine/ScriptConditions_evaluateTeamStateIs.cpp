@@ -14,10 +14,10 @@ template <typename T> class StringBase
 	friend class AsciiString;
 
 public:
-	StringBase(const StringBase &s);
 	int compare(const StringBase &s) const throw();
 
 private:
+	StringBase(const StringBase &s);
 	void releaseBuffer();
 
 	void *m_data;
