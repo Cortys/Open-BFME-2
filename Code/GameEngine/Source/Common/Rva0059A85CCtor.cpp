@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc
 // Fix over the banked 0.97 attempt, from the retail unwind map: state 0
 // destroys the Rva00506B1B base through its 7-byte vptr setter 0x00506B28, so
 // the base declares a virtual destructor; that restores the missing state-0
@@ -22,8 +22,7 @@ public:
 	bool m_04;
 };
 struct BfmeE16 { float x, y, z, w; };
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
-bool operator<(const AsciiString &, const AsciiString &);
+#include "ascii_string.h"
 struct Arg;
 class Rva0059A71C
 {
