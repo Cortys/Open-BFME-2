@@ -29,9 +29,18 @@ private:
 	Rva00535776 m_08;
 };
 
-Rva005C18F0::~Rva005C18F0()
+inline Rva005C18F0::~Rva005C18F0()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva005C18F0DtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva005C18F0DtorInlineAnchor()
+{
+    static_cast<Rva005C18F0 *>(0)->Rva005C18F0::~Rva005C18F0();
+}
+#pragma inline_depth()
 
 // ??1Rva005C1980@@UAE@XZ, RVA 0x005C1980, 54B. Unlock lane: same shape as the
 // 0x005C18F0 dtor above (derived vtable 0x008743D0 here, same member at +8
