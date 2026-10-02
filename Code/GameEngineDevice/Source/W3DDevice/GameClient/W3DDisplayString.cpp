@@ -479,3 +479,8 @@ void W3DDisplayString::setWordWrapCentered( Bool isCentered )
 	 if( m_textRenderer.Set_Word_Wrap_Centered(isCentered) )
 		notifyTextChanged();
 }// void setWordWrap( Int wordWrap )
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?removeLastChar@DisplayString@@UAEXXZ=?getWidth@W3DDisplayString@@UAEHH@Z")

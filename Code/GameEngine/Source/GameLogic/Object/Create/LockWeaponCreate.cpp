@@ -27,3 +27,10 @@ LockWeaponCreate::LockWeaponCreate( Thing *thing, const ModuleData *moduleData )
 	: CreateModule( thing, moduleData )
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?onCreate@LockWeaponCreate@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?crc@LockWeaponCreate@@MAEXPAVXfer@@@Z=??_GRva004B8C3E@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?loadPostProcess@LockWeaponCreate@@MAEXXZ=?Rva004B8C38Get@@YAHXZ")

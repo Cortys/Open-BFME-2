@@ -81,3 +81,11 @@ void ImmortalBody::internalChangeHealth( Real delta, Bool something )
 	delta = max( delta, -getHealth() + 1.0f );
 	ActiveBody::internalChangeHealth( delta, something );
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot0@ActiveBody@@UAEXXZ=?Rva004C0898Get@@YAHXZ")
+#pragma comment(linker, "/alternatename:?getHealth@ActiveBody@@UBEMXZ=?rva004C08B7@ImmortalBody@@SA?AW4NameKeyType@@XZ")
+#pragma comment(linker, "/alternatename:?slot3@ActiveBody@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot4@ActiveBody@@UAEXXZ=??1Coord2D@@QAE@XZ")

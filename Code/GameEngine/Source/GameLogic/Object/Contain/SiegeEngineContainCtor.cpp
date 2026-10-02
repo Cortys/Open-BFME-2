@@ -88,3 +88,8 @@ SiegeEngineContain::SiegeEngineContain(Thing *thing, const ModuleData *moduleDat
 	m_120 = 0;
 	m_124 = false;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f0C@Iface0C@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
