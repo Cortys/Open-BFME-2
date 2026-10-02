@@ -105,19 +105,7 @@ AIUpdateModuleData::AIUpdateModuleData()
 }
 
 //-------------------------------------------------------------------------------------------------
-AIUpdateModuleData::~AIUpdateModuleData()
-{
-	for (int i = 0; i < MAX_TURRETS; i++)
-	{
-		if (m_turretData[i])
-		{
-			TurretAIData* td = const_cast<TurretAIData*>(m_turretData[i]);
-			if (td)
-				td->deleteInstance();
-		}
-	}
-}
-
+// AIUpdateModuleData::~AIUpdateModuleData: defined in AIUpdateModuleDataDtor.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?findLocomotorTemplateVector@AIUpdateModuleData@@ present-unmatched
 const LocomotorTemplateVector* AIUpdateModuleData::findLocomotorTemplateVector(LocomotorSetType t) const
@@ -683,14 +671,7 @@ AIUpdateInterface::~AIUpdateInterface( void )
 }
 
 //=============================================================================
-void AIUpdateInterface::setTurretTargetObject(WhichTurretType tur, Object* o, Bool forceAttacking)
-{
-	if (m_turretAI[tur])
-	{
-		m_turretAI[tur]->setTurretTargetObject(o, forceAttacking);
-	}
-}
-
+// AIUpdateInterface::setTurretTargetObject: defined in AIUpdateInterface_setTurretTargetObject.cpp (its row's unit).
 //=============================================================================
 Object* AIUpdateInterface::getTurretTargetObject( WhichTurretType tur, Bool clearDeadTargets )
 {
@@ -707,32 +688,11 @@ Object* AIUpdateInterface::getTurretTargetObject( WhichTurretType tur, Bool clea
 }
 
 //=============================================================================
-void AIUpdateInterface::setTurretTargetPosition(WhichTurretType tur, const Coord3D* pos)
-{
-	if (m_turretAI[tur])
-	{
-		m_turretAI[tur]->setTurretTargetPosition(pos);
-	}
-}
-
+// AIUpdateInterface::setTurretTargetPosition: defined in AIUpdateInterface_setTurretTargetPosition.cpp (its row's unit).
 //=============================================================================
-void AIUpdateInterface::setTurretEnabled(WhichTurretType tur, Bool enabled)
-{
-	if (m_turretAI[tur])
-	{
-		m_turretAI[tur]->setTurretEnabled( enabled );
-	}
-}
-
+// AIUpdateInterface::setTurretEnabled: defined in AIUpdateInterface_setTurretEnabled.cpp (its row's unit).
 //=============================================================================
-void AIUpdateInterface::recenterTurret(WhichTurretType tur)
-{
-	if (m_turretAI[tur])
-	{
-		m_turretAI[tur]->recenterTurret();
-	}
-}
-
+// AIUpdateInterface::recenterTurret: defined in AIUpdateInterface_recenterTurret.cpp (its row's unit).
 //=============================================================================
 Bool AIUpdateInterface::isTurretEnabled( WhichTurretType tur ) const
 {
@@ -744,42 +704,11 @@ Bool AIUpdateInterface::isTurretEnabled( WhichTurretType tur ) const
 }
 
 //=============================================================================
-Bool AIUpdateInterface::isTurretInNaturalPosition(WhichTurretType tur) const
-{
-	if (m_turretAI[tur])
-	{
-		return m_turretAI[tur]->isTurretInNaturalPosition();
-	}
-	return FALSE;
-}
-
+// AIUpdateInterface::isTurretInNaturalPosition: defined in AIUpdateInterface_isTurretInNaturalPosition.cpp (its row's unit).
 //=============================================================================
-Bool AIUpdateInterface::isWeaponSlotOnTurretAndAimingAtTarget(WeaponSlotType wslot, const Object* victim) const
-{
-	for (int i = 0; i < MAX_TURRETS; i++)
-	{
-		if (m_turretAI[i] && m_turretAI[i]->isWeaponSlotOnTurret(wslot))
-		{
-			return m_turretAI[i]->isTryingToAimAtTarget(victim);
-		}
-	}
-	return FALSE;
-}
-
+// AIUpdateInterface::isWeaponSlotOnTurretAndAimingAtTarget: defined in AIUpdateInterface_isWeaponSlotOnTurretAndAimingAtTarget.cpp (its row's unit).
 //=============================================================================
-Bool AIUpdateInterface::getTurretRotAndPitch(WhichTurretType tur, Real* turretAngle, Real* turretPitch) const
-{
-	if (m_turretAI[tur])
-	{
-		if (turretAngle)
-			*turretAngle = m_turretAI[tur]->getTurretAngle();
-		if (turretPitch)
-			*turretPitch = m_turretAI[tur]->getTurretPitch();
-		return TRUE;
-	}
-	return FALSE;
-}
-
+// AIUpdateInterface::getTurretRotAndPitch: defined in AIUpdateInterface_getTurretRotAndPitch.cpp (its row's unit).
 //=============================================================================
 Real AIUpdateInterface::getTurretTurnRate(WhichTurretType tur) const
 {
@@ -789,15 +718,7 @@ Real AIUpdateInterface::getTurretTurnRate(WhichTurretType tur) const
 }
 
 //=============================================================================
-WhichTurretType AIUpdateInterface::getWhichTurretForCurWeapon() const
-{
-	for (int i = 0; i < MAX_TURRETS; ++i)
-		if (m_turretAI[i] && m_turretAI[i]->isOwnersCurWeaponOnTurret())
-			return (WhichTurretType)i;
-
-	return TURRET_INVALID;
-}
-
+// AIUpdateInterface::getWhichTurretForCurWeapon: defined in AIUpdateInterface_getWhichTurretForCurWeapon.cpp (its row's unit).
 //=============================================================================
 WhichTurretType AIUpdateInterface::getWhichTurretForWeaponSlot(WeaponSlotType wslot, Real* turretAngle, Real* turretPitch) const
 {
@@ -1006,24 +927,7 @@ void AIUpdateInterface::setQueueForPathTime(Int frames)
 }
 
 //-------------------------------------------------------------------------------------------------
-void AIUpdateInterface::wakeUpNow()
-{
-#ifdef SLEEPY_AI
-	if (getWakeFrame() > UPDATE_SLEEP_NONE)
-	{
-		if (m_isInUpdate)
-		{
-			// we're changing this while in our own update (probably via a move state).
-			// just do nothing, since update will calculate the correct sleep behavior at the end.
-		}
-		else
-		{
-			setWakeFrame(getObject(), UPDATE_SLEEP_NONE);
-		}
-	}
-#endif
-}
-
+// AIUpdateInterface::wakeUpNow: defined in AIUpdateInterface_wakeUpNow.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?friend_notifyStateMachineChanged@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::friend_notifyStateMachineChanged()
@@ -2066,19 +1970,7 @@ Bool AIUpdateInterface::computeAttackPath( PathfindServicesInterface *pathServic
 /**
  * Destroy the current path, and set it to NULL
  */
-void AIUpdateInterface::destroyPath( void )
-{
-	// destroy previous path
-	if (m_path)
-		m_path->deleteInstance();
-
-	m_path = NULL;
-	m_waitingForPath = FALSE; // we no longer need it.
-	//CRCDEBUG_LOG(("AIUpdateInterface::destroyPath() - m_isAttackPath = FALSE for object %d\n", getObject()->getID()));
-	m_isAttackPath = FALSE;
-	setLocomotorGoalNone();
-}
-
+// AIUpdateInterface::destroyPath: defined in GameLogicDestroyObject.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 /**
  * This is used by the internal move to state to indicate that a move started.
@@ -2107,12 +1999,7 @@ void AIUpdateInterface::friend_endingMove()
 /**
  * This is used by the jetai to set a specific path.
  */
-void AIUpdateInterface::friend_setPath(Path *path)
-{
-	destroyPath();
-	m_path = path;
-}
-
+// AIUpdateInterface::friend_setPath: defined in AIUpdateInterface_friendSetPath.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 /**
  * This is used by the guard tunnel network state to set a target object.
@@ -2372,40 +2259,11 @@ UpdateSleepTime AIUpdateInterface::doLocomotor( void )
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?setLocomotorGoalPositionOnPath@AIUpdateInterface@@ present-unmatched
-void AIUpdateInterface::setLocomotorGoalPositionOnPath()
-{
-	m_locomotorGoalType = POSITION_ON_PATH;
-	m_locomotorGoalData.zero();
-}
-
+// AIUpdateInterface::setLocomotorGoalPositionOnPath: defined in AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
-void AIUpdateInterface::setLocomotorGoalPositionExplicit(const Coord3D& newPos)
-{
-	m_locomotorGoalType = POSITION_EXPLICIT;
-	m_locomotorGoalData = newPos;
-#ifdef _DEBUG
-if (_isnan(m_locomotorGoalData.x) || _isnan(m_locomotorGoalData.y) || _isnan(m_locomotorGoalData.z))
-{
-	DEBUG_CRASH(("NAN in setLocomotorGoalPositionExplicit"));
-}
-#endif
-}
-
+// AIUpdateInterface::setLocomotorGoalPositionExplicit: defined in AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
-// ?setLocomotorGoalOrientation@AIUpdateInterface@@ present-unmatched
-void AIUpdateInterface::setLocomotorGoalOrientation(Real angle)
-{
-	m_locomotorGoalType = ANGLE;
-	m_locomotorGoalData.x = angle;
-#ifdef _DEBUG
-if (_isnan(m_locomotorGoalData.x) || _isnan(m_locomotorGoalData.y) || _isnan(m_locomotorGoalData.z))
-{
-	DEBUG_CRASH(("NAN in setLocomotorGoalOrientation"));
-}
-#endif
-}
-
+// AIUpdateInterface::setLocomotorGoalOrientation: defined in AIUpdateInterface_setLocomotorGoalPositionExplicit.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?setLocomotorGoalNone@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::setLocomotorGoalNone()
@@ -2464,30 +2322,7 @@ Bool AIUpdateInterface::isDoingGroundMovement(void) const
 Others, like missles, should stack destinations.  AdjustDestination in pathfinder unstacks
 destinations, and this routine identifies non-ground units that should unstack. */
 
-// ?isAircraftThatAdjustsDestination@AIUpdateInterface@@ present-unmatched
-Bool AIUpdateInterface::isAircraftThatAdjustsDestination(void) const
-{
-	if (m_curLocomotor == NULL) 
-	{
-		return FALSE;	// No loco, so we aren't moving.
-	}
-
-	if (m_curLocomotor->getAppearance() == LOCO_HOVER) 
-	{
-		return TRUE;	// Hover adjusts.
-	}
-	if (m_curLocomotor->getAppearance() == LOCO_WINGS)
-	{
-		return TRUE; // wings adjusts.
-	}
-	if (m_curLocomotor->getAppearance() == LOCO_THRUST)
-	{
-		return FALSE; // thrust doesn't adjust.
-	}
-
-	return FALSE;
-}
-
+// AIUpdateInterface::isAircraftThatAdjustsDestination: defined in AIUpdateInterface_isAircraftThatAdjustsDestination.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?getTreatAsAircraftForLocoDistToGoal@AIUpdateInterface@@ present-unmatched
 Bool AIUpdateInterface::getTreatAsAircraftForLocoDistToGoal() const
@@ -4309,48 +4144,11 @@ void AIUpdateInterface::transferAttack(ObjectID fromID, ObjectID toID)
 /**
  * Indicate who we are attacking.
  */
-// ?setCurrentVictim@AIUpdateInterface@@ present-unmatched
-void AIUpdateInterface::setCurrentVictim( const Object *victim )
-{
-	if (victim == NULL)
-	{
-		// be paranoid, in case we are called from dtors, etc.
-		if (m_currentVictimID != INVALID_ID)
-		{
-			Object* self = getObject();
-			Object* target = TheGameLogic->findObjectByID(m_currentVictimID);
-			if (self != NULL && target != NULL)
-			{
-				AIUpdateInterface* targetAI = target->getAI();
-				if (targetAI)
-				{
-					targetAI->addTargeter(self->getID(), FALSE);
-				}
-			}
-		}
-
-		m_currentVictimID = INVALID_ID;
-	}
-	else
-	{
-		// we don't add a targeter here, since we usually want to defer
-		// that until we are actually aiming (as opposed to, say, approaching)
-		// the victim.
-		m_currentVictimID = victim->getID();
-	}
-}
-
+// AIUpdateInterface::setCurrentVictim: defined in AIUpdateInterface_setCurrentVictim.cpp (its row's unit).
 /**
  * Who is our current victim?
  */
-Object *AIUpdateInterface::getCurrentVictim( void ) const
-{
-	if (m_currentVictimID != INVALID_ID)
-		return TheGameLogic->findObjectByID( m_currentVictimID );
-
-	return NULL;
-}
-
+// AIUpdateInterface::getCurrentVictim: defined in AIUpdateInterface_getCurrentVictim.cpp (its row's unit).
 // if we are attacking a position (and NOT an object), return it. otherwise return null.
 // ?getCurrentVictimPos@AIUpdateInterface@@ present-unmatched
 const Coord3D *AIUpdateInterface::getCurrentVictimPos( void ) const
@@ -4395,12 +4193,7 @@ AIStateType AIUpdateInterface::getAIStateType() const
 }
 
 //-------------------------------------------------------------------------------------------------
-// ?ignoreObstacle@AIUpdateInterface@@ present-unmatched
-void AIUpdateInterface::ignoreObstacle( const Object *obj )
-{
-	m_ignoreObstacleID = obj ? obj->getID() : INVALID_ID;
-}
-
+// AIUpdateInterface::ignoreObstacle: defined in AIUpdateInterfaceIgnoreObstacle.cpp (its row's unit).
 //-------------------------------------------------------------------------------------------------
 // ?ignoreObstacleID@AIUpdateInterface@@ present-unmatched
 void AIUpdateInterface::ignoreObstacleID( ObjectID id )
