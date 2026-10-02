@@ -27,6 +27,8 @@
 extern "C" int sprintf( char *buffer, const char *format, ... );
 
 #include <string.h>
+// Retail calls MSVCR71 _mbscat here (thunk 0x0062988C), not strcat.
+extern "C" char *__cdecl _mbscat(char *dest, const char *source);
 extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
 extern "C" char *strstr( const char *text, const char *find );
 
@@ -1110,7 +1112,7 @@ int Rva008060B0( Rva00804150ProtoMangleRef *ref, int status, int latency )
 	if( latency >= 0 )
 	{
 		sprintf( strData2, "&latency=%d", latency );
-		strcat( strData, strData2 );
+		_mbscat( strData, strData2 );
 	}
 
 	Rva00806200HttpPost( &ref->m_http, ref->m_server, ref->m_port,

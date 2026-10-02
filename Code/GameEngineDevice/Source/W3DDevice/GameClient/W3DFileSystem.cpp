@@ -53,6 +53,8 @@
 // DEFINES ////////////////////////////////////////////////////////////////////////////////////////
 
 #include <io.h>
+// Retail calls MSVCR71 _mbscat here (thunk 0x0062988C), not strcat.
+extern "C" char *__cdecl _mbscat(char *dest, const char *source);
 
 // BFME's File vtable, which the vendored Zero Hour header does not describe:
 // BFME's File is not a MemoryPoolObject, so every slot sits one earlier than
@@ -219,7 +221,7 @@ char const * GameFileClass::Set_Name( char const *filename )
 	{
 		static const char *localizedPathFormat = "Data/%s/Art/W3D/";
 		sprintf(m_filePath,localizedPathFormat, GetRegistryLanguage().str());
-		strcat( m_filePath, filename );
+		_mbscat( m_filePath, filename );
 
 	}  // end if
 
@@ -228,7 +230,7 @@ char const * GameFileClass::Set_Name( char const *filename )
 	{
 		static const char *localizedPathFormat = "Data/%s/Art/Textures/";
 		sprintf(m_filePath,localizedPathFormat, GetRegistryLanguage().str());
-		strcat( m_filePath, filename );
+		_mbscat( m_filePath, filename );
 
 	}  // end else if
 
@@ -245,14 +247,14 @@ char const * GameFileClass::Set_Name( char const *filename )
 		{
 			
 			strcpy( m_filePath, W3D_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 			
 		}  // end if
 		else if( isImageFileType(fileType) )
 		{
 			
 			strcpy( m_filePath, TGA_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 			
 		}  // end else if
 		else
@@ -273,14 +275,14 @@ char const * GameFileClass::Set_Name( char const *filename )
 		{
 
 			strcpy( m_filePath, LEGACY_W3D_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end if
 		else if( isImageFileType(fileType) )
 		{
 
 			strcpy( m_filePath, LEGACY_TGA_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end else if
 
@@ -301,14 +303,14 @@ char const * GameFileClass::Set_Name( char const *filename )
 		{
 			
 			strcpy( m_filePath, TEST_W3D_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end if
 		else if( isImageFileType(fileType) )
 		{
 
 			strcpy( m_filePath, TEST_TGA_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end else if
 
@@ -325,14 +327,14 @@ char const * GameFileClass::Set_Name( char const *filename )
 		{
 			sprintf(m_filePath,USER_W3D_DIR_PATH, TheGlobalData->getPath_UserData().str());
 			//strcpy( m_filePath, USER_W3D_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end if
 		if( isImageFileType(fileType) )
 		{
 			sprintf(m_filePath,USER_TGA_DIR_PATH, TheGlobalData->getPath_UserData().str());
 			//strcpy( m_filePath, USER_TGA_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end else if
 
@@ -349,7 +351,7 @@ char const * GameFileClass::Set_Name( char const *filename )
 		{
 			sprintf(m_filePath,MAP_PREVIEW_DIR_PATH, TheGlobalData->getPath_UserData().str());
 			//strcpy( m_filePath, USER_TGA_DIR_PATH );
-			strcat( m_filePath, filename );
+			_mbscat( m_filePath, filename );
 
 		}  // end else if
 

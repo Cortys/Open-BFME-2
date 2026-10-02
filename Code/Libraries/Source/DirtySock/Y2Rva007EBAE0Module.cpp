@@ -26,7 +26,8 @@ char *Rva007EBCA0( const char *text, const char *tag );   // 0x007EBCA0
 // Reached by a direct rel32 to the import stub, so this TU never saw <stdio.h>.
 extern "C" int sprintf( char *buffer, const char *format, ... );
 extern "C" char *_mbscpy( char *dest, const char *src );
-extern "C" char *strcat( char *dest, const char *src );
+// Retail calls MSVCR71 _mbscat here (thunk 0x0062988C), not strcat.
+extern "C" char *__cdecl _mbscat(char *dest, const char *source);
 
 char Rva007EBAE0( char value )
 {
@@ -171,7 +172,7 @@ char *Rva007EBE20( const char *text, const char *prefix, const char *suffix )
 	else
 	{
 		_mbscpy( name, prefix );
-		strcat( name, suffix );
+		_mbscat( name, suffix );
 		result = Rva007EBCA0( text, name );
 	}
 

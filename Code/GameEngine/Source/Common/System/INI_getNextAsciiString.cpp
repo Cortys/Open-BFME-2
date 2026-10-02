@@ -20,7 +20,8 @@ typedef int Int;
 
 extern "C" unsigned int strlen(const char *s);
 extern "C" char *_mbscpy(char *dst, const char *src);
-extern "C" char *strcat(char *dst, const char *src);
+// Retail calls MSVCR71 _mbscat here (thunk 0x0062988C), not strcat.
+extern "C" char *__cdecl _mbscat(char *dest, const char *source);
 
 #include "ascii_string.h"
 
@@ -66,9 +67,9 @@ AsciiString INI::getNextAsciiString()
 			if (token) {
 				if (strlen(token) > 1 && token[1] != '\t')
 				{
-					strcat(buff, " ");
+					_mbscat(buff, " ");
 				}
-				strcat(buff, token);
+				_mbscat(buff, token);
 				result.set(buff);
 			} else {
 				Int len = strlen(buff);
