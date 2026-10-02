@@ -66,21 +66,6 @@ static const char *TheStructureCollapsePhaseNames[] =
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-StructureCollapseUpdate::StructureCollapseUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_collapseFrame = 0;
-	m_collapseState = COLLAPSESTATE_STANDING;
-	m_collapseVelocity = 0.0f;
-	//Added By Sadullah Nader
-	//Initialization(s) inserted
-	m_burstFrame = 0;
-	m_currentHeight = 0.0f;
-	//
-	setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-}
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
 // ?StructureCollapseUpdate::~StructureCollapseUpdate present-unmatched
 StructureCollapseUpdate::~StructureCollapseUpdate( void )
 {
