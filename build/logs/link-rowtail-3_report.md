@@ -70,3 +70,13 @@ reported all definitions matched; `class_gate.py` passed silently.
 - Validation: `./build.sh Code/Libraries/Source/ATL/atlbase.cpp` passed 9/9;
   `tools/check_csv.py` passed; `find_declared_unmatched.py --fail` reported
   all definitions matched; `class_gate.py` passed silently.
+
+## `Code/GameEngine/Source/GameClient/GUI/TextOnFrameTransitionInit.cpp`
+
+- `?init@TextOnFrameTransition@@UAEXPAVGameWindow@@@Z` at `0x0035FA90` —
+  **repaired**, 23B → 62B. Added the `+0x10` field passed by retail to the
+  virtual `update` call; the complete 62-byte body matches exactly.
+- Validation: `./build.sh
+  Code/GameEngine/Source/GameClient/GUI/TextOnFrameTransitionInit.cpp` passed
+  1/1; `tools/check_csv.py` passed; `find_declared_unmatched.py --fail` reported
+  all definitions matched; `class_gate.py` passed silently.
