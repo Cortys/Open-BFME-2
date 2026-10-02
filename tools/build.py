@@ -2360,15 +2360,39 @@ UNMATCHED_MARKER_RE = re.compile(
     r"^\s*//\s*(\S+)\s+(?:present-unmatched|absent-from-retail)\b", re.MULTILINE
 )
 
+UNCLAIMED_WHITELIST = ROOT / "reverse" / "unclaimed_sources_whitelist.txt"
+
+
+def load_unclaimed_sources():
+    """Repo-relative paths parked in reverse/unclaimed_sources_whitelist.txt.
+
+    One path per line; blank lines and `#` comments are ignored. Same format as
+    `tools/find_declared_unmatched.py` reads. A missing file yields the empty
+    set — nothing is exempt unless a human wrote the line.
+    """
+    if not UNCLAIMED_WHITELIST.exists():
+        return set()
+    return {
+        line.strip()
+        for line in UNCLAIMED_WHITELIST.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    }
 
 
 def verify_source_claims(only=None):
     """Progress is matched rows, nothing else: every .cpp under Code/ must own at
     least one byte-verified matched row, and no marker may contradict the ledger
     (a symbol both matched and marked unmatched is a stale annotation lying about
-    state). There is deliberately NO exception list: a source file nothing has
-    ever byte-verified is a reconstruction, not a port, and must not live here.
-    Removing that hatch is why game_engine_init.cpp and five others were deleted.
+    state).
+
+    The single exception is `reverse/unclaimed_sources_whitelist.txt`: a
+    versioned, reviewable register for a split-out body whose bytes master
+    already claims under its canonical TU (the duplicate ledger row was
+    retracted and the body file was deliberately left in place). It is not a
+    general hatch — the file carries a written reason per source, and a body
+    nothing has ever byte-verified belongs there only in that exact shape.
+    Removing the old blanket exemption is why game_engine_init.cpp and five
+    others were deleted.
 
     With `only`, checks just the sources those selectors name. The delta path runs
     it that way so a zero-row source or a stale marker fails for whoever adds it.
@@ -2380,6 +2404,7 @@ def verify_source_claims(only=None):
         matched_by_source[row["source"]] = matched_by_source.get(row["source"], 0) + 1
         matched_sources.setdefault(row["name"], set()).add(row["source"])
 
+    whitelisted = load_unclaimed_sources()
     problems = []
     sources = sorted((ROOT / "Code").rglob("*.cpp"))
     if only:
@@ -2397,10 +2422,12 @@ def verify_source_claims(only=None):
                     f"{rel}: {label} is byte-verified matched from this file but still "
                     f"carries an unmatched marker (stale annotation)"
                 )
-        if matched_by_source.get(rel, 0) == 0:
+        if matched_by_source.get(rel, 0) == 0 and rel not in whitelisted:
             problems.append(
-                f"{rel}: ZERO matched rows — source presence is not progress. There is "
-                f"no exception list; byte-match at least one function or delete the file."
+                f"{rel}: ZERO matched rows — source presence is not progress. "
+                f"Byte-match at least one function, delete the file, or park it in "
+                f"reverse/unclaimed_sources_whitelist.txt with a written reason "
+                f"(reserved for a split-out body master already owns under another TU)."
             )
 
     if problems:
