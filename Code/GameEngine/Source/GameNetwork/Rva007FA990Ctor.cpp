@@ -70,3 +70,9 @@ Rva007FA990::Rva007FA990(void *arg) throw()
 	m_D4 = 0;
 	m_D0 = 0;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v4@Rva007FA990@@UAEXXZ=?bfmeFlushVQB@BfmeHubVQB@@QAEXH@Z")
+#pragma comment(linker, "/alternatename:?v0@Rva007FA990@@UAEXXZ=?bfmeKillVF@BfmeThingVF@@QAEPAXH@Z")

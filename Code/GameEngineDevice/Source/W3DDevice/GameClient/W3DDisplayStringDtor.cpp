@@ -100,3 +100,8 @@ void W3DDisplayString::reset()
 	m_bfmeFlag1EC = true;
 	m_hotkey.clear();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?pad02@DisplayString@@UAEXXZ=?rva0022C4DF@Rva0022C4DF@@QBE?AVUnicodeString@@XZ")

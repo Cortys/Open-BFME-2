@@ -25,3 +25,8 @@ void _bfmeCDownloadCtorAnchor(CDownload *d, IDownload *listener)
 	d->CDownload::CDownload(listener);
 }
 #pragma inline_depth()
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Abort@CDownload@@UAEJXZ=?d_00884e50@Rva00884E50Class@@QAEHXZ")
