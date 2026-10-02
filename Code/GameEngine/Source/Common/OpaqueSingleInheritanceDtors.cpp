@@ -51,7 +51,7 @@ public:
 	virtual ~Rva00514E6B();
 };
 
-Rva00514E6B::~Rva00514E6B()
+inline Rva00514E6B::~Rva00514E6B()
 {
 }
 
@@ -67,7 +67,7 @@ public:
 	virtual ~Rva004CA13();
 };
 
-Rva004CA13::~Rva004CA13()
+inline Rva004CA13::~Rva004CA13()
 {
 }
 
@@ -83,7 +83,7 @@ public:
 	virtual ~Rva00628FD();
 };
 
-Rva00628FD::~Rva00628FD()
+inline Rva00628FD::~Rva00628FD()
 {
 }
 
@@ -99,7 +99,7 @@ public:
 	virtual ~Rva008FCA3();
 };
 
-Rva008FCA3::~Rva008FCA3()
+inline Rva008FCA3::~Rva008FCA3()
 {
 }
 
@@ -124,7 +124,7 @@ public:
 	virtual ~Rva004C743();
 };
 
-Rva004C743::~Rva004C743()
+inline Rva004C743::~Rva004C743()
 {
 }
 
@@ -161,7 +161,7 @@ public:
 	virtual ~Rva0062AF7();
 };
 
-Rva0062AF7::~Rva0062AF7()
+inline Rva0062AF7::~Rva0062AF7()
 {
 }
 
@@ -266,3 +266,24 @@ Rva00180EA0::~Rva00180EA0()
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?f3@MiBase3_62AF7@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
 #pragma comment(linker, "/alternatename:?f2@MiBase2_62AF7@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+
+// These six destructors are header inlines in copier units; the anchor retains
+// this unit's matched row bodies, but the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeOpaqueSingleInheritanceDtorInlineAnchor@@YAXPAX@Z absent-from-retail
+void _bfmeOpaqueSingleInheritanceDtorInlineAnchor(void *storage)
+{
+	Rva004C743 *rva004C743 = (Rva004C743 *)storage;
+	rva004C743->Rva004C743::~Rva004C743();
+	Rva004CA13 *rva004CA13 = (Rva004CA13 *)storage;
+	rva004CA13->Rva004CA13::~Rva004CA13();
+	Rva00514E6B *rva00514E6B = (Rva00514E6B *)storage;
+	rva00514E6B->Rva00514E6B::~Rva00514E6B();
+	Rva00628FD *rva00628FD = (Rva00628FD *)storage;
+	rva00628FD->Rva00628FD::~Rva00628FD();
+	Rva0062AF7 *rva0062AF7 = (Rva0062AF7 *)storage;
+	rva0062AF7->Rva0062AF7::~Rva0062AF7();
+	Rva008FCA3 *rva008FCA3 = (Rva008FCA3 *)storage;
+	rva008FCA3->Rva008FCA3::~Rva008FCA3();
+}
+#pragma inline_depth()
