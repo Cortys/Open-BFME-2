@@ -48545,3 +48545,35 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??_GRva0070A560@@UAEPAXI@Z,,0x0070A560,35,Code/GameEngine/Source/Common/Rva006CBF40Siblings.cpp,matched,scalar deleting dtor 35B shape of Rva006FB9B0; complete dtor call pin 0x00709B80; pool 0x00E176F4 via 0x006D2A60
 ??_GRva0070A590@@UAEPAXI@Z,,0x0070A590,35,Code/GameEngine/Source/Common/Rva006CBF40Siblings.cpp,matched,scalar deleting dtor 35B shape of Rva006FB9B0; complete dtor call pin 0x00709B80; pool 0x00E176F4 via 0x006D2A60
 ??_GRva00711350@@UAEPAXI@Z,,0x00711350,35,Code/GameEngine/Source/Common/Rva006CBF40Siblings.cpp,matched,scalar deleting dtor 35B shape of Rva006FB9B0; complete dtor call pin 0x00711330; pool 0x00E176F4 via 0x006D2A60
+??1istrstream@_STL@@UAE@XZ,,0x00602DF0,89,Code/Libraries/Source/WWVegas/WWLib/Rva00602DF0Siblings.cpp,matched,first of three consecutive derived strstream dtors in declaration order
+_Rva00673930,,0x00673930,17,Code/Libraries/Source/DirtySock/Rva00673930Siblings.cpp,matched,bare tick-read op-table stub of the 0x681790 shape
+_Rva006832A0,,0x006832A0,17,Code/Libraries/Source/DirtySock/Rva00673930Siblings.cpp,matched,bare tick-read op-table stub of the 0x681790 shape
+_Rva00687940,,0x00687940,17,Code/Libraries/Source/DirtySock/Rva00673930Siblings.cpp,matched,bare tick-read op-table stub of the 0x681790 shape
+_Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Siblings.cpp,matched,26B NULL-arg forwarder of the __unguarded_insertion_sort shape; calls the pinned body at 0x006FC670
+?push_back@?$vector@UNugget@ModuleInfo@@V?$allocator@UNugget@ModuleInfo@@@_STL@@@_STL@@QAEXABUNugget@ModuleInfo@@@Z,,0x00119EC0,55,Code/GameEngine/Source/Common/System/Rva00119EC0Siblings.cpp,matched,vector ModuleInfo Nugget push_back 0x74 element; rowed _Construct and pinned _M_insert_overflow
+??0Rva00180E40Derived@@QAE@XZ,,0x00180E40,18,Code/Libraries/Source/WWVegas/WWLib/Rva00180E40Siblings.cpp,matched,empty derived ctor calling the pinned base ctor 0x0061ED40
+??0Rva006892D0Derived@@QAE@XZ,,0x006892D0,18,Code/Libraries/Source/WWVegas/WWLib/Rva00180E40Siblings.cpp,matched,empty derived ctor calling the pinned SubsystemInterface ctor 0x001B4E63
+??0Rva006F7140Derived@@QAE@XZ,,0x006F7140,18,Code/Libraries/Source/WWVegas/WWLib/Rva00180E40Siblings.cpp,matched,empty derived ctor calling the pinned base ctor 0x006ED060
+??_GRva00016B60Dtor@@UAEPAXI@Z,,0x000170C0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00016B60
+??_GRva006C5930Dtor@@UAEPAXI@Z,,0x00118640,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x006C5930
+??_GRva00174753Dtor@@UAEPAXI@Z,,0x0011CC10,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00174753
+??_GRva00120FB0Dtor@@UAEPAXI@Z,,0x00122110,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00120FB0
+??_GRva0012A4D0Dtor@@UAEPAXI@Z,,0x0012A620,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0012A4D0
+??_GRva006154D0Dtor@@UAEPAXI@Z,,0x0013C860,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x006154D0
+??_GRva00141C30Dtor@@UAEPAXI@Z,,0x00141C10,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00141C30
+??_GRva0014A5B0Dtor@@UAEPAXI@Z,,0x0014BB70,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0014A5B0
+??_GRva00155330Dtor@@UAEPAXI@Z,,0x00156840,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00155330
+??_GRva00156750Dtor@@UAEPAXI@Z,,0x00157110,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00156750
+??_GRva00157390Dtor@@UAEPAXI@Z,,0x00157AB0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00157390
+??_GRva00157C20Dtor@@UAEPAXI@Z,,0x00157E60,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00157C20
+??_GRva001811D0Dtor@@UAEPAXI@Z,,0x001811B0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x001811D0
+??_GRva001880D0Dtor@@UAEPAXI@Z,,0x00188320,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x001880D0
+??_GRva001976F0Dtor@@UAEPAXI@Z,,0x001977B0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x001976F0
+??_GRva0019EF70Dtor@@UAEPAXI@Z,,0x0019F990,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0019EF70
+??_GRva006162B0Dtor@@UAEPAXI@Z,,0x00616490,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x006162B0
+??_GRva00625800Dtor@@UAEPAXI@Z,,0x00626D90,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x00625800
+??_GRva0066C730Dtor@@UAEPAXI@Z,,0x00663410,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0066C730
+??_GRva006C09A0Dtor@@UAEPAXI@Z,,0x006C0B60,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x006C09A0
+??_GRva0073E3F0Dtor@@UAEPAXI@Z,,0x007396E0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0073E3F0
+??_GRva0073A900Dtor@@UAEPAXI@Z,,0x0073AAC0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0073A900
+??_GRva0075A080Dtor@@UAEPAXI@Z,,0x007581C0,30,Code/Libraries/Source/WWVegas/WWLib/Rva00170C0Siblings.cpp,matched,scalar deleting destructor of the address-derived dtor model pinned to 0x0075A080
