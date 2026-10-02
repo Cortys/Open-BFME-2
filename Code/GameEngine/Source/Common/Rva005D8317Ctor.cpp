@@ -28,6 +28,7 @@ class Rva005D8317 : public Rva005EE30C
 {
 public:
 	Rva005D8317(int v);
+	virtual ~Rva005D8317();
 private:
 	int m_28;
 };
