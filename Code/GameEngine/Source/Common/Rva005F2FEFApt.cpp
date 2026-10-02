@@ -71,3 +71,17 @@ void Rva005F2FEF::rva005F2897()
 		m_cached48.set(UnicodeString::TheEmptyString);
 	}
 }
+
+class Rva005F2A32
+{
+public:
+	void rva005F2A32();
+private:
+	char m_pad00[4];
+	Rva005F2FEF *m_member04;
+};
+
+void Rva005F2A32::rva005F2A32()
+{
+	m_member04->rva005F2897();
+}
