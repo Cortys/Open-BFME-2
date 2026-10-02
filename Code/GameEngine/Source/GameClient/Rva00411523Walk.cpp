@@ -19,6 +19,17 @@ public:
 	void *first(Rva000411084 *iter);
 };
 
+struct Rva004114EFGlobalTable
+{
+	void *m_unused00;
+	void **m_beginBuckets;
+	void **m_endBuckets;
+	void **m_storageEnd;
+	unsigned int m_numElements;
+};
+
+extern Rva004114EFGlobalTable g_Va00E02FE4;
+
 struct Rva00411523Node
 {
 	char m_pad[0x2C];
@@ -34,7 +45,7 @@ public:
 void Rva00411523::rva00411523()
 {
 	Rva000411084 iter;
-	((Rva000427195 *)0x00E02FE4)->first(&iter);
+	reinterpret_cast<Rva000427195 *>(&g_Va00E02FE4)->first(&iter);
 	while (iter.m_current != 0) {
 		((Rva00411523Node *)iter.m_current)->m_flag2C = 0;
 		iter.next();
