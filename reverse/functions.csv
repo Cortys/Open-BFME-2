@@ -46834,3 +46834,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0036EF09@AICommandInterface@@QAEXPBVRva0035149F@@PAVObject@@MW4CommandSourceType@@@Z,,0x0036EF09,128,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap AICMD 0x25 vector copy plus m_obj plus m_pos.x slot0
 ?Rva0009072BAlloc@@YAPAXHH@Z,,0x0009072B,40,Code/GameEngine/Source/Common/Rva0009072BAlloc.cpp,matched,gap new array plus memset plus header plus size
 ?Rva00090714Free@@YAXPAPAX@Z,,0x00090714,23,Code/GameEngine/Source/Common/Rva0009072BAlloc.cpp,matched,gap delete array plus zero ptr
+?rva00587548@Rva00587D9C@@UAEXPAXH@Z,,0x00587548,52,Code/Libraries/Source/WWVegas/WWLib/Rva00587D9CVSlot12.cpp,matched,slot12 of vtable 0x0086FF38 via rowed ctor TU; bounds-checked vec60 store 1 and 0
