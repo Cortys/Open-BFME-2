@@ -46916,3 +46916,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0029D777@Rva0029D777@@QAEXXZ,,0x0029D777,75,Code/GameEngine/Source/GameClient/Rva0029D777Clear.cpp,matched,button empty via shared copy ctor plus 20 holders via rowed clear
 ??0Rva001F092A@@QAE@XZ,,0x001F092A,80,Code/GameEngine/Source/GameLogic/Object/Rva001F092ACtor.cpp,matched,ctor via baseConstruct map vector pattern from Rva001FDB55
 ??4Rva005F8536@@QAEAAU0@ABU0@@Z,,0x005F8536,33,Code/GameEngine/Source/Common/Rva005F8536Assign.cpp,matched,unlock two TreeHintRef copies via 0x002174A4 caller stride-8
+?Rva005F8573Copy@@YAPAURva005F8536@@PAU1@00@Z,,0x005F8573,47,Code/GameEngine/Source/Common/Rva005F8573Copy.cpp,matched,chain stride-8 copy via 0x005F8536 caller 0x005F85AB
