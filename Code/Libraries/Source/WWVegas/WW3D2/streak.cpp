@@ -373,10 +373,11 @@ void StreakLineClass::Set_Texture_Mapping_Mode(SegLineRendererClass::TextureMapM
 	StreakRenderer.Set_Texture_Mapping_Mode((StreakRendererClass::TextureMapMode)mode);
 }
 
-// ?Set_Texture_Tile_Factor@StreakLineClass@@ present-unmatched
+class SegLineTileFactorAltClass { public: void Set_Texture_Tile_Factor(float factor); };
 void StreakLineClass::Set_Texture_Tile_Factor(float factor)
 {
 	LineRenderer.Set_Texture_Tile_Factor(factor);
+	reinterpret_cast<SegLineTileFactorAltClass &>(StreakRenderer).Set_Texture_Tile_Factor(factor);
 }
 
 void StreakLineClass::Set_UV_Offset_Rate(const Vector2 &rate)
