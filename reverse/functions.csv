@@ -46833,3 +46833,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva00587D9C@@QAE@PAX0@Z,,0x00587D9C,49,Code/Libraries/Source/WWVegas/WWLib/Rva00587D9CCtor.cpp,matched,base Rva005D6FCC at +0 via rowed 0x005D6FCC and Vector_base BfmeE16 0x00211E58 and bool at +0x14 and ptr at +0x18; caller 0x00587F39; vtable 0x00C6FF38
 ?rva0036EF09@AICommandInterface@@QAEXPBVRva0035149F@@PAVObject@@MW4CommandSourceType@@@Z,,0x0036EF09,128,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap AICMD 0x25 vector copy plus m_obj plus m_pos.x slot0
 ?Rva0009072BAlloc@@YAPAXHH@Z,,0x0009072B,40,Code/GameEngine/Source/Common/Rva0009072BAlloc.cpp,matched,gap new array plus memset plus header plus size
+?Rva00090714Free@@YAXPAPAX@Z,,0x00090714,23,Code/GameEngine/Source/Common/Rva0009072BAlloc.cpp,matched,gap delete array plus zero ptr

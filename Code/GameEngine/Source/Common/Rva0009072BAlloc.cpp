@@ -8,6 +8,20 @@
 
 extern "C" void *memset(void *dst, int value, unsigned int size);
 void *__cdecl operator new[](unsigned int size);
+void __cdecl operator delete[](void *p);
+
+// ?Rva00090714Free@@YAXPAPAX@Z @0x00090714 23B
+// Gap between FrameDataManagerCounts 0x0009070B and Rva0009072BAlloc 0x0009072B.
+// Frees *p via rowed operator delete[] 0x0002FD80 and zeroes *p.
+// Callers at 0x000908A1 0x00091992 0x001067D8; landing unblocks 2.
+void Rva00090714Free(void **p)
+{
+	void *v = *p;
+	if (v != 0) {
+		operator delete[](v);
+		*p = 0;
+	}
+}
 
 void *Rva0009072BAlloc(int header, int size)
 {
