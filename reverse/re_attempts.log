@@ -5402,3 +5402,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002A3DD3@Rva002A3DD3@@QAEXXZ	0x002A3DD3	81	partial	esi edi swapped plus 80 vs 81B one byte short t=20 model=muse-08 score=0.95 stash=reverse/attempts/0x002a3dd3.cpp
 ?rva0058AE53@Rva0058AE53@@QAEXH@Z	0x0058AE53	99	blocked	vtable slot1 with 6 indirect virtuals and local byte gate needs donor class mapping t=12 model=muse-08
 ?rva0058ADD0@Rva0058ADD0@@QAEEXHH@Z	0x0058ADD0	78	blocked	truncated file literal plus x87 fcompi and vslot 0x18 need full string t=8 model=muse-08
+?Rva0058D041Write@@YAXPAEPAVNetCommandRef@@@Z	0x0058D041	161	blocked	extra xor eax eax at +0x5f before word id load 163B vs 161B tried sep-decl direct-mem int-tmp word-store signed-short t=15 model=muse-06 (stash 0.97 kept)
