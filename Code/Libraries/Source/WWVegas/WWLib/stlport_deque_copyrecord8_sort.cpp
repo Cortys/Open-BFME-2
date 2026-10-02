@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /EHsc /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// cl: /O1 /G7 /EHsc /arch:SSE /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB
 // stlport
 //
 // STLport's sort over a deque of 8-byte records ordered by the float at +4,
@@ -8,12 +8,11 @@
 // folded at 0x005A9215 (rowed in stlport_deque_e12_sort.cpp), and retail's
 // sort (0x0054C476) calls it and __final_insertion_sort (0x0054B87D).
 //
-// sort and its insertion-sort tail (__final_insertion_sort, __insertion_sort,
-// __linear_insert) compile byte-exact too, but are not instantiated here.
-// They reach copy_backward (0x0054A96C), and retail keeps
-// __copy_backward_aux out of line there, calling the copy rowed at 0x0054A5AD.
-// This compiler inlines it, so that body cannot match, and rowing its callers
-// would leave this unit a COMDAT retail disproves.
+// sort (0x0054C476) and its insertion-sort tail are instantiated too. Their
+// copy_backward (0x0054A96C) keeps __copy_backward_aux out of line, calling the
+// copy rowed at 0x0054A5AD, which only the stock STLport headers reproduce: the
+// bfmealloc shim force-inlines the helper. So this unit builds without that
+// shim, as stlport_copy_backward_e12.cpp does; nothing here allocates.
 //
 // The record is a STAND-IN, like BfmeE8 and BfmeE12: the image fixes its size
 // (the deque iterator arithmetic) and the float key at +4. It also fixes its
@@ -89,3 +88,6 @@ template CopyRecord8Iterator _STL::__unguarded_partition<CopyRecord8Iterator, Bf
 	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8, BfmeCopyRecord8CmpKey);
 template void _STL::__unguarded_insertion_sort<CopyRecord8Iterator, BfmeCopyRecord8CmpKey>(
 	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8CmpKey);
+
+template void _STL::sort<CopyRecord8Iterator, BfmeCopyRecord8Cmp>(CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8Cmp);
+template void _STL::sort<CopyRecord8Iterator, BfmeCopyRecord8CmpDescending>(CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8CmpDescending);
