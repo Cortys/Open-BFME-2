@@ -47725,3 +47725,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva005E54AE@@UAEPAXI@Z,,0x005E54B9,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,slot0 vtable 0x00877D10 over rowed ??1
 ??1Rva0039A1CA@@UAE@XZ,,0x0039A1CA,123,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039A1CADtor.cpp,matched,ModuleData dtor via Snapshot vtable plus rowed vectors filters strings
 ?rva0054F3FD@Rva0054F434@@UAE?AV?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@XZ,,0x0054F3FD,27,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Dtor.cpp,matched,vslot 6 returns list at +0x48 via rowed copy 0x0054D800
+?rva00508D7C@Made002CC6AE@@QAEXHPAVObject@@@Z,,0x00508D7C,149,Code/GameEngine/Source/GameLogic/Object/Made002CC6AECtor.cpp,matched,vtable slot 5 class Made002CC6AE vector 0128 via StringBase copy

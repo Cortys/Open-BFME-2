@@ -24,6 +24,7 @@ class Made002CC6AE : public Rva00507823
 {
 public:
 	Made002CC6AE();
+	void rva00508D7C(int a, class Object *obj);
 private:
 	_STL::vector<AsciiString> m_vec128;
 	int m_134;
@@ -33,4 +34,35 @@ Made002CC6AE::Made002CC6AE()
 {
 	m_vec128.clear();
 	m_134 = 0;
+}
+
+enum ModelConditionFlagType
+{
+	MODEL_CONDITION_DUMMY = 0
+};
+
+class Object
+{
+public:
+	void setSpecialModelConditionState(ModelConditionFlagType f, unsigned int u);
+};
+
+template<unsigned int N>
+class BitFlags
+{
+public:
+	static int getSingleBitFromName(const char *name);
+};
+
+void Made002CC6AE::rva00508D7C(int a, Object *obj)
+{
+	if (!obj)
+		return;
+	for (unsigned int i = 0; i < m_vec128.size(); ++i)
+	{
+		AsciiString tmp = m_vec128[i];
+		const char *name = tmp.str();
+		int bit = BitFlags<304>::getSingleBitFromName(name);
+		obj->setSpecialModelConditionState((ModelConditionFlagType)bit, (unsigned int)m_134);
+	}
 }
