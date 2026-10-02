@@ -117,7 +117,9 @@ Rva007F0210 bfmeRva0130AA34TagSlot;
 Rva007F0210 bfmeRva0130AB18TagSlot;
 // bfmeRva0130AA64TagSlot: matched references place it at VA 0xe0a47c (zero-filled; a plain-data view).
 Rva007F0210 bfmeRva0130AA64TagSlot;
-extern Rva007F0210 bfmeRva0130AB00TagSlot;
+// bfmeRva0130AB00TagSlot: the QLEN slot bfmeRva00C6D640InitializeTag fills, at
+// VA 0xe0a518 (zero-filled; a plain-data view; no other unit references it).
+Rva007F0210 bfmeRva0130AB00TagSlot;
 // bfmeRva0130AAC4TagSlot: matched references place it at VA 0xe0a4dc (zero-filled; a plain-data view).
 Rva007F0210 bfmeRva0130AAC4TagSlot;
 // bfmeRva0130AA94TagSlot: matched references place it at VA 0xe0a4ac (zero-filled; a plain-data view).
@@ -460,4 +462,12 @@ void bfmeRva00C6D030InitializeTag()
 void bfmeRva00C6D070InitializeTag()
 {
     bfmeRva0130A89CTagSlot.set(bfmeRva012C3B38TagValue, 0x55534552);
+}
+
+// BFME1 donor StaticTagInitializers.cpp (10af19f44a), b1 0x00C6D640: the one
+// donor initializer still unrowed, found by its 'QLEN' immediate (0x514C454E),
+// which appears in a tag-initializer body only at retail 0x007B6420.
+void bfmeRva00C6D640InitializeTag()
+{
+    bfmeRva0130AB00TagSlot.set(bfmeRva012C3BC0TagValue, 0x514C454E);
 }

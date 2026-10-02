@@ -46884,3 +46884,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0040A7D5@Rva0040A7D5@@QBEHH@Z,,0x0040A7D5,28,Code/GameEngine/Source/Common/Rva0040A7D5Get.cpp,matched,unlock lane begin-end count sar 2 unsigned bounds check callers 0x40A973 0x40A980
 ?bfmeRva00C6D030InitializeTag@@YAXXZ,,0x007B5E10,22,Code/GameEngine/Source/Common/StaticTagInitializers.cpp,matched,BFME1 donor StaticTagInitializers.cpp b1 0x00C6D030; ambiguous by masked bytes and resolved by its DISC immediate
 ?bfmeRva00C6D070InitializeTag@@YAXXZ,,0x007B5E50,22,Code/GameEngine/Source/Common/StaticTagInitializers.cpp,matched,BFME1 donor StaticTagInitializers.cpp b1 0x00C6D070; ambiguous by masked bytes and resolved by its USER immediate
+?bfmeRva00C6D640InitializeTag@@YAXXZ,,0x007B6420,22,Code/GameEngine/Source/Common/StaticTagInitializers.cpp,matched,BFME1 donor StaticTagInitializers.cpp b1 0x00C6D640; located by its unique QLEN immediate
