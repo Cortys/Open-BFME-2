@@ -74,12 +74,22 @@ public:
 private:
 	unsigned int m_words[19];
 };
+typedef bool Bool;
+struct Coord3D
+{
+	float x, y, z;
+};
 class AIUpdateInterface
 {
 public:
 	void rva00262AEA();
+	void requestPath(Coord3D *destination, Bool isGoalDestination);
+	void rva00262ACE();
+	bool isWaitingForPath() const { return m_waitingForPath; }
 	unsigned char m_pad000[0x1A0];
 	float m_1A0; // +0x1A0
+	unsigned char m_pad1A4[0x3B1 - (0x1A0 + sizeof(float))];
+	bool m_waitingForPath; // +0x3B1
 };
 class Object
 {
@@ -118,6 +128,13 @@ public:
 	virtual void slot03();
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+	virtual StateReturnType update();
+	virtual void slot07();
+	virtual Bool isIdle() const;
+	virtual void slot09(); virtual void slot10(); virtual void slot11();
+	virtual void slot12(); virtual void slot13(); virtual void slot14();
+	virtual void slot15(); virtual void slot16();
+	virtual Bool computePath();
 protected:
 	Object *getMachineOwner() const { return m_machine->getOwner(); }
 	unsigned char m_pad04[0x18 - 0x04];
@@ -128,12 +145,29 @@ class AIInternalMoveToState : public State
 public:
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
+protected:
+	Bool getAdjustsDestination() const;
+	virtual Bool computePath();
 private:
-	unsigned char m_pad1C[0x40 - 0x1C];
+	unsigned char m_pad1C[0x20 - 0x1C];
+	Coord3D m_goalPosition; // +0x20
+	unsigned char m_pad2C[0x40 - (0x20 + sizeof(Coord3D))];
 	AudioHandle m_ambientPlayingHandle; // +0x40
-	unsigned char m_pad44[0x4B - 0x44];
+	unsigned char m_pad44[0x49 - 0x44];
+	bool m_waitingForPath; // +0x49
+	unsigned char m_pad4A[0x4B - 0x4A];
 	bool m_4B; // +0x4B
 };
+Bool AIInternalMoveToState::computePath()
+{
+	Object *obj = getMachineOwner();
+	AIUpdateInterface *ai = obj->getAI();
+
+	ai->requestPath(&m_goalPosition, getAdjustsDestination());
+	m_waitingForPath = ai->isWaitingForPath();
+	ai->rva00262ACE();
+	return true;
+}
 void AIInternalMoveToState::onExit(StateExitType)
 {
 	Object *obj = getMachineOwner();
