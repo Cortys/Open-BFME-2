@@ -5302,3 +5302,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva004723F2@Rva004723F2@@QAE_NPAVObject@@ABVAsciiString@@@Z	0x004723F2	82	partial	push SIB base-index swapped t=20 model=muse-03 score=0.99 stash=reverse/attempts/0x004723f2.cpp
 ?rva00472CA9@HordeContain@@QAEXPAVObject@@@Z	0x00472CA9	154	partial	single SIB byte push [ecx+eax] vs [eax+ecx] t=18 model=muse-03 score=0.99 stash=reverse/attempts/0x00472ca9.cpp
 ?rva000903B0@Rva00090360@@QAEXXZ	0x000903B0	103	partial	branch vs cmov for m_10 select and dec-at-top vs dec-at-bottom loop t=20 model=muse-03 score=0.93 stash=reverse/attempts/0x000903b0.cpp
+??1Rva002CD4A6@@MAE@XZ	0x002CD4A6	314	partial	xor eax eax plus cmp vs test and push eax vs push 0 and edx vs eax vtable temp t=25 model=muse-12 score=0.99 stash=reverse/attempts/0x002cd4a6.cpp
+?xfer@Weapon@@UAEXPAVXfer@@@Z	0x002CDD47	579	partial	stack slots ebp-0x20 vs 0x1c plus ebp-plus-8 reuse for name-temp vs frame plus ebx-vs-edi vector base plus 6B extra moves for idx-tmp t=25 model=muse-12 score=0.93 stash=reverse/attempts/0x002cdd47.cpp
+?rva002086C5@ScriptEngine@@QAEPAXVAsciiString@@@Z	0x002086C5	134	partial	extra mov ebp-4 2 before find vs retail none plus arg-order plus const-pair fixed t=25 model=muse-12 score=0.97 stash=reverse/attempts/0x002086c5.cpp
