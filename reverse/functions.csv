@@ -47321,3 +47321,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0029B1AC@Rva0029B1C2@@QAEXXZ,,0x0029B1AC,22,Code/GameEngine/Source/GameClient/Rva0029B1C2.cpp,matched,chain sibling of B1C2 sets byte to 1
 ?rva0058ADA8@Rva0058ADA8@@QAEXH@Z,,0x0058ADA8,40,Code/GameEngine/Source/Common/Rva0058ADA8.cpp,matched,leaf via vslots 8 and 0x14 m0C m18
 ?rva0058AD94@Rva0058AD94@@QAEXH@Z,,0x0058AD94,11,Code/GameEngine/Source/Common/Rva0058AD94.cpp,matched,m0C at +0xC shared with neighbour v04 slot 0x10 ret4 int arg
+?Rva0058AE1EGet@@YGHPAX@Z,,0x0058AE1E,24,Code/GameEngine/Source/Common/Rva0058AE1E.cpp,matched,AIUpdateInterface at +0x258 victim nonzero via rowed getCurrentVictim
