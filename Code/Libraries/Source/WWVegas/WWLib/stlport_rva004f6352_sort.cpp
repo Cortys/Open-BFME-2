@@ -18,8 +18,15 @@
 // (0x004F6EB1) keeps the value's pointer in a register across the assignment
 // calls, which this compiler does not do for a parameter whose address is
 // taken.
+//
+// The records' copy_backward (0x004F76A1) and the vector's range erase
+// (0x004F89A8) are instantiated too: their helpers __copy_backward_ptrs
+// (0x004F70A5) and __copy_ptrs (0x004F713E) call the rowed __copy_backward and
+// __copy, and the erase destroys the tail through the _Destroy loop rowed by
+// hand at 0x004F838C.
 
 #include <algorithm>
+#include <vector>
 
 struct TargetRef00217D4C
 {
@@ -72,3 +79,8 @@ struct Rva004F6352Cmp
 
 template void _STL::__introsort_loop<Rva004F6352 *, Rva004F6352, int, Rva004F6352Cmp>(
 	Rva004F6352 *, Rva004F6352 *, Rva004F6352 *, int, Rva004F6352Cmp);
+
+template Rva004F6352 *_STL::copy_backward<Rva004F6352 *, Rva004F6352 *>(Rva004F6352 *, Rva004F6352 *, Rva004F6352 *);
+
+typedef _STL::vector<Rva004F6352> Rva004F6352Vector;
+template Rva004F6352Vector::iterator Rva004F6352Vector::erase(Rva004F6352Vector::iterator, Rva004F6352Vector::iterator);

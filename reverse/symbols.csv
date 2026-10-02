@@ -7064,3 +7064,5 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?rva00601A8D@Rva00601BBCHelper@@QAEXXZ,0x00601A8D,"address read from the retail REL32 at 0x00601C11 in the INI helper destructor 0x00601BF3; clears the member at +4 and deletes the pointers held in the +0x28 vector"
 ??1Rva00524415@@QAE@XZ,0x00601AE9,"address read from the retail REL32 at 0x00601C41 in the INI helper destructor 0x00601BF3; destroys the +4 member built by the rowed Rva00524415 constructor (vector storage plus vector<AsciiString> at +0xC)"
 ?rva0020D613@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x0020D613,thiscall twin of rowed stdcall alloc via call-site mov ecx esi at 0x0020D638
+??1Rva004F6352@@QAE@XZ,0x004F691E,same body as ??1Rva004F691E@@QAE@XZ rowed here: STLport's instantiation for Rva004F6352 records reproduces it and its callers call it
+??$_Destroy@PAURva004F6352@@@_STL@@YAXPAURva004F6352@@0@Z,0x004F838C,same body as Rva004F838CDestroy rowed here: STLport's instantiation for Rva004F6352 records reproduces it and its callers call it
