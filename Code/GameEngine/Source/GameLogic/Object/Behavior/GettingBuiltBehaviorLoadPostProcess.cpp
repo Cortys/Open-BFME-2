@@ -107,10 +107,9 @@ public:
 class AI
 {
 public:
-	Pathfinder *pathfinder() { return m_pathfinder; }
-private:
+	Pathfinder *pathfinder();
 	unsigned char m_pad[0x10];
-	Pathfinder *m_pathfinder;
+	Pathfinder *m_pathfinder; // +0x10: retail loadPostProcess loads [TheAI+0x10] directly
 };
 
 extern AI *TheAI;
@@ -150,7 +149,7 @@ void GettingBuiltBehavior::loadPostProcess()
 		Object *obj = TheGameLogic->findObjectByID((ObjectID)(*it).a[0]);
 		if (obj && (obj->m_438 & 1))
 		{
-			BFMEPathfinderMapShim *shim = reinterpret_cast<BFMEPathfinderMapShim*>(TheAI->pathfinder());
+			BFMEPathfinderMapShim *shim = reinterpret_cast<BFMEPathfinderMapShim*>(TheAI->m_pathfinder);
 			shim->rva002E718A(obj);
 		}
 	}
