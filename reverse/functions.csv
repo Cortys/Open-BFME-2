@@ -47408,3 +47408,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004E93E8@Rva004E93E8@@QAEPAXXZ,,0x004E93E8,49,Code/GameEngine/Source/Common/Rva004E93E8Find.cpp,matched,search array +0xc +0x10 for elem+0x5c==1 or global flag
 ?rva004E94CA@Rva004E94CA@@QAE_NPAVPlayer@@@Z,,0x004E94CA,49,Code/GameEngine/Source/Common/Rva004E94CAIsAlly.cpp,matched,if +4 then nth getRelationship == ALLIES via ThePlayerList
 ?rva004E93A8@Rva004E93A8@@QAEHXZ,,0x004E93A8,64,Code/GameEngine/Source/Common/Rva004E93A8Count.cpp,matched,count array +0xc +0x10 where get==0 and elem+0x5c==1 or global flag
+?rva004E9337@Rva004E9337@@QAEXXZ,,0x004E9337,28,Code/GameEngine/Source/Common/Rva004E9337Clear.cpp,matched,clear vector at +0 via erase then free buffer
