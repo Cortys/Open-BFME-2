@@ -124,7 +124,7 @@ void EAStringC::FreeData(StringDataC *data)
 // the shared data through FreeData. Retail is the bare 10-byte
 // load-push-call-cleanup shape with no vtable work (EAStringC is a
 // value class); the release call resolves via the FreeData row.
-EAStringC::~EAStringC()
+inline EAStringC::~EAStringC()
 {
 	FreeData(m_pData);
 }
@@ -585,3 +585,15 @@ bool EAStringC::rva006D36F0(const EAStringC *other) const
 		return false;
 	return _strcmpi((const char *)m_pData + 8, (const char *)other->m_pData + 8) == 0;
 }
+
+// ??1EAStringC@@QAE@XZ is a header inline elsewhere: another unit emits a
+// select-any copy of it, so a strong definition here was a duplicate symbol
+// in the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitEAStringCRefCount@@YAXPAVEAStringC@@@Z present-unmatched
+void bfmeEmitEAStringCRefCount(EAStringC *p)
+{
+	p->EAStringC::~EAStringC();
+}
+#pragma inline_depth()
