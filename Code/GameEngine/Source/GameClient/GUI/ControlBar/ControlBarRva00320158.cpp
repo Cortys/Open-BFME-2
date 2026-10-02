@@ -9,12 +9,23 @@
 // ControlBarList003200A2/ControlBarScheme share class and flags. Honest
 // free-function name (no proven class): Rva00320158 + Parse.
 
-struct FieldParse;
+class INI;
+typedef void (*INIFieldParseProc)(INI *, void *, void *, const void *);
+struct FieldParse
+{
+	const char *token;
+	INIFieldParseProc parse;
+	const void *userData;
+	int offset;
+};
 
 class INI
 {
 public:
 	void initFromINI(void *what, const FieldParse *parseTable);
+	static void parseICoord2D(INI *ini, void *instance, void *store, const void *userData);
+	static void parseMappedImage(INI *ini, void *instance, void *store, const void *userData);
+	static void parseInt(INI *ini, void *instance, void *store, const void *userData);
 };
 
 class Rva0031F7AB
@@ -31,7 +42,21 @@ public:
 	void rva003200BC(int value);
 };
 
-extern const FieldParse g_0080D720[];
+// Matched consumers place this table at VA 0x00C0D720 (.rdata). Retail has
+// four records and a zero sentinel; the next token, "FinalPos", begins at
+// VA 0x00C0D770. The callbacks are rowed INI parsers and the offsets fit the
+// 0x1C-byte Rva0031F7AB object.
+extern const FieldParse g_0080D720[] = {
+	{ "Position", &INI::parseICoord2D, 0, 0x04 },
+	{ "Size", &INI::parseICoord2D, 0, 0x0C },
+	{ "ImageName", &INI::parseMappedImage, 0, 0x14 },
+	{ "Layer", &INI::parseInt, 0, 0x18 },
+	{ 0, 0, 0, 0 }
+};
+
+// Rva0031FA40Create declared the same target as one FieldParse, producing a
+// different COFF decoration. Bind that spelling to the single array above.
+#pragma comment(linker, "/alternatename:?g_0080D720@@3UFieldParse@@B=?g_0080D720@@3QBUFieldParse@@B")
 
 void Rva00320158Parse(INI *ini, Rva003200BC *holder)
 {
