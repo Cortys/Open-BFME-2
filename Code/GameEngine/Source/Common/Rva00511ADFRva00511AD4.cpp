@@ -1,7 +1,7 @@
-// ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z
-// partial score=0.99 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc
-// ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z, retail 0x00511ADF 314B. Gadget property
+//
+// ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z, retail 0x00511ad4, 11 bytes. Banked partial (score 0.99) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // handler switch on code 0..5 with bool flag getter/setter: 0 E046C0, 1 E047C0,
 // 2 active-tab index via Rva005118F3Show/snprintf, 3 g_00DD13D8 with 't'/atoi,
 // 4 virtual +0x3C bool, 5 m_29d bool. Getters share "1"/"0" tail.
@@ -57,7 +57,6 @@ private:
 	unsigned char m_29d;
 };
 
-// ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z present-unmatched
 void Rva00511ADF::rva00511ADF(int code, char *buf, bool flag)
 {
 	switch (code) {

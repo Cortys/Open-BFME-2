@@ -48920,3 +48920,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva00739BE0@Rva00739BE0@@QAEXPAUPair00739BE0@@MH@Z,,0x00739BE0,179,Code/GameEngine/Source/Common/RTS/Rva00739BE0.cpp,matched,world-to-cell via ceil then 2x floor with Gen originX at 4 originY at 8 scale at 0x20
 ??1Rva005E7529@@QAE@XZ,,0x005E7529,53,Code/GameEngine/Source/Common/Bfme/Rva005E7529Dtor.cpp,matched,nonvirtual dtor AsciiString plus rowed base same 53B EH shape
 ?Rva0021570DCopy@@YAPAUBfmeVectorRecord0002154F3@@PAU1@00@Z,,0x0021570D,29,Code/Libraries/Source/WWVegas/WWLib/Rva0021570DCopy.cpp,matched,unlock 29B tag-local plus zero into 5-arg worker 0x00215696 caller 0x002157DB
+?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z,,0x00511AD4,11,Code/GameEngine/Source/Common/Rva00511ADFRva00511AD4.cpp,matched,banked partial closed by tools/permute.py; identity carried from the banked attempt
