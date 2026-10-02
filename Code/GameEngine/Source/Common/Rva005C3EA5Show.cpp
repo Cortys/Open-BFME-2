@@ -40,3 +40,19 @@ void Rva005C3EA5::rva005C3EA5()
     m_flag18 = 1;
     m_obj00->tail();
 }
+
+// ?rva005C3EE0@Rva005C3EE0@@QAEXXZ @ 0x005C3EE0 8B.
+// Forwarder via member at +4 tail-jmp to rowed 0x005C3EA5. Caller call at 0x005680C3.
+class Rva005C3EE0
+{
+public:
+    void rva005C3EE0();
+private:
+    char m_pad00[4];
+    Rva005C3EA5 *m_p04;
+};
+
+void Rva005C3EE0::rva005C3EE0()
+{
+    m_p04->rva005C3EA5();
+}

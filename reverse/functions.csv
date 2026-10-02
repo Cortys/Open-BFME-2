@@ -48896,3 +48896,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?doFxAtBones@FXListAtBonePosFXNugget@@IBEXPBVObject@@H@Z,,0x001E2DD6,283,Code/GameEngine/Source/GameClient/FXListAtBonePosFXNugget_doFxAtBones.cpp,matched,FXListAtBonePosFXNugget::doFxAtBones: bone effect applier iterating bone transforms
 ?rva005D4E63@Rva005D4E63@@QAEXXZ,,0x005D4E63,12,Code/GameEngine/Source/Common/Rva005D4E63Forward.cpp,matched,unlock null-guarded tail slot0 via plus0xC caller 0x005D4E86
 ?rva005C3EA5@Rva005C3EA5@@QAEXXZ,,0x005C3EA5,59,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,gap Show via rowed Fire plus empty fallback plus manager
+?rva005C3EE0@Rva005C3EE0@@QAEXXZ,,0x005C3EE0,8,Code/GameEngine/Source/Common/Rva005C3EA5Show.cpp,matched,forwarder via member +4 to rowed 0x005C3EA5 caller 0x005680C3
