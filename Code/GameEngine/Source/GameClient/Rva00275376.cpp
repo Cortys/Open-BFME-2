@@ -104,7 +104,7 @@ bool Rva00275376::rva00275376(int a0, int a1, int a2, int a3, int a4, int a5)
 
 void Rva00275376::rva002752F8()
 {
-    ((Rva00270644 *)this)->rva00270644(0.0f, *(const float *)0x00BC6598);
+    ((Rva00270644 *)this)->rva00270644(0.0f, -0.03f);
     ((Drawable *)this)->rva00272BE7();
     if (m_445) {
         m_445 = false;
