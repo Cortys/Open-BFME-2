@@ -1,4 +1,4 @@
-// cl: /O1 /G7 /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad
+// cl: /O1 /G7 /arch:SSE /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad
 // stlport
 #define Matrix4x4 Matrix4  // BFME renamed it
 /*
@@ -489,12 +489,19 @@ void Anim2D::clearStatus( UnsignedByte statusBits )
 // ?getCurrentFrameHeight@Anim2D@@QBEIXZ
 // Readable body in Code/GameEngine/Source/GameClient/System/Anim2DCurrentFrameHeight.cpp.
 
+class W3DDisplay
+{
+public:
+	void rva0004D6B3(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
+};
+
 // ------------------------------------------------------------------------------------------------
 /** Drawing an Anim2D using a forced width and height */
 // ------------------------------------------------------------------------------------------------
-// ?draw@Anim2D@@QAEXHHHH@Z
-// Readable BFME body in Code/GameEngine/Source/GameClient/System/Anim2DDrawing.cpp.
-// ?draw@Anim2D@@QAEXHHHH@Z present-unmatched
+// ?draw@Anim2D@@QAEXHHHH@Z, retail 0x002D709A, 141 bytes. Evidence: Anim2D offsets
+// (+4 frame +0xC template +0x10 status +0x1C alpha +0x20 collection), rowed
+// getFrame 0x002D6B2D, rowed W3DDisplay::rva0004D6B3 0x0004D6B3 via TheDisplay
+// 0x00DFE9D8, rowed tryNextFrame 0x002D6E26.
 void Anim2D::draw( Int x, Int y, Int width, Int height )
 {
 
@@ -508,7 +515,7 @@ void Anim2D::draw( Int x, Int y, Int width, Int height )
 
 	// draw image to the display
 	Color color = GameMakeColor( 255, 255, 255, 255 * m_alpha );
-	TheDisplay->drawImage( image, x, y, x + width, y + height, color );
+	((W3DDisplay *)TheDisplay)->rva0004D6B3( (Image *)image, (float)x, (float)y, (float)( x + width ), (float)( y + height ), color, 2 );
 
 	//
 	// see if it's time for us to go to the next frame in the sequence, we do not update

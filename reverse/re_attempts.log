@@ -5450,3 +5450,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0031917A@Rva0031917A@@QAEXXZ	0x0031917A	55	partial	extra mov ecx eax plus eax-ecx swap in prologue only t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x0031917a.cpp
 ?rva00319924@Rva00319924@@QAEHABVAsciiString@@@Z	0x00319924	73	blocked	extra reload of m_78 before first get plus eax-ecx swap for holder vs byte count t=10 model=muse-01 (stash 0.93 kept)
 ?rva0031917A@Rva0031917A@@QAEXXZ	0x0031917A	55	blocked	extra mov ecx eax plus eax-ecx swap in prologue only t=5 model=muse-01 (stash 0.93 kept)
+?Rva0031A160Load@@YAXXZ	0x0031A160	247	blocked	complex EH plus 5 virtuals plus float refs no donor t=5 model=muse-01
