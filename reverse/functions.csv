@@ -48911,3 +48911,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??_GRva00426EB0@@UAEPAXI@Z,,0x00426E94,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00426EB0.cpp,matched,deleting dtor for rowed 0x00426EB0 via family precedent chain
 ?Rva00542BA1Parse@@YAXPAVINI@@PAX11@Z,,0x00542BA1,61,Code/GameEngine/Source/Common/AutoResolveArmorParse.cpp,matched,append-then-parse via rowed callees twin shape
 ??_GRva00541EB8@@UAEPAXI@Z,,0x0054218E,28,Code/GameEngine/Source/Common/Rva00541EB8Dtor.cpp,matched,deleting dtor emitted by own dtor TU vslot 6
+?rva0054273B@Rva0054273B@@QAE_NXZ,,0x0054273B,86,Code/GameEngine/Source/Common/Rva0054273BComment.cpp,matched,XML comment-end skip to arrow neighbours same flags
