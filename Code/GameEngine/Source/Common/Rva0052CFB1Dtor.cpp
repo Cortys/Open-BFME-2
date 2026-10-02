@@ -32,3 +32,8 @@ Rva0052CFB1::~Rva0052CFB1()
 	delete (m_1c ? m_1c->get(0) : 0);
 	delete (m_20 ? m_20->get(0) : 0);
 }
+
+// Retail's matched DIR32 witness (w=1) places this base-vtable label at
+// VA 0x00BBB554 (.rdata). Target evidence identifies it as Snapshot's vtable;
+// bind to the canonical emitted table, whose four slots are dtor + __purecall.
+#pragma comment(linker, "/alternatename:?g_00BBB554@@3QBQBXB=??_7Snapshot@@6B@")
