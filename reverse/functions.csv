@@ -48377,3 +48377,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva00419331@Rva000427195@@QAE?AUInsertRet00419331@@PBX@Z,,0x00419331,124,Code/GameEngine/Source/GameClient/Rva00419331Insert.cpp,matched,hashtable insert same shape as rowed 124B siblings via bucketIndex compare new_node
 ?init@TextOnFrameTransition@@UAEXPAVGameWindow@@@Z,,0x0035FA90,62,Code/GameEngine/Source/GameClient/GUI/TextOnFrameTransitionInit.cpp,matched,
 ?Rva00410A86NewNode@@YGPAXPBX@Z,,0x00410A86,37,Code/GameEngine/Source/Common/Rva00410A86NewNode.cpp,matched,12B hashtable node via rowed allocator 0x307F0 and rowed Construct 0x4109BC caller 0x410E0A same shape as 0x410997
+?rva00410DDF@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload00410A86@@@_STL@@PBU23@@Z,,0x00410DDF,68,Code/GameEngine/Source/GameClient/Rva00410DDFInsert.cpp,matched,hashtable insert via pin 0x212858 rowed 0x223149 pinned twin 0x410A86 caller 0x41117B same shape as 0x410E67
