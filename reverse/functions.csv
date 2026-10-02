@@ -48887,3 +48887,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005D39EA@Rva005D39EA@@QAEXHH@Z,,0x005D39EA,107,Code/GameEngine/Source/Common/Rva005D39EACpState.cpp,matched,cached ints at +0x28 +0x2c via rowed 0x005D3966 shown-once at +0x31 via SetCPState rowed 0x005FB5E6
 ?rva005D3A55@Rva005D39EA@@QAEXXZ,,0x005D3A55,60,Code/GameEngine/Source/Common/Rva005D39EACpState.cpp,matched,hide-once bool at +0x31 via SetCPState _hide rowed 0x005FB5E6 same class as 0x005D39EA
 ?rva005D3AF2@Rva005D3AF2@@QAEXXZ,,0x005D3AF2,52,Code/GameEngine/Source/Common/Rva005D3AF2Method.cpp,matched,unlock shape via Rva005796B3Method plus Rva002BED91 clear tail
+?rva005D3D4B@Rva005D3D4B@@QAEXXZ,,0x005D3D4B,76,Code/GameEngine/Source/Common/Rva005D3D4BMethod.cpp,matched,chain via just-landed 0x005D3AF2 plus portrait plus AptCall
