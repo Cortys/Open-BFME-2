@@ -47276,3 +47276,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00498707@Rva00498707@@QAEHXZ,,0x00498707,15,Code/GameEngine/Source/Common/Rva00498707Get.cpp,matched,leaf getter global compare m_44 vs m_0C
 ?rva00498716@Rva00498716@@QAEHXZ,,0x00498716,15,Code/GameEngine/Source/Common/Rva00498716Get.cpp,matched,leaf getter global compare m_48 vs m_0C sibling of 0x00498707
 ?rva00498F46@Rva00498DF3@@QAEXPAURva00498DF3Arg@@HH@Z,,0x00498F46,100,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498F46Cmd.cpp,matched,calls rowed 0x498B8B 0x4D7726 0x268D71 0x498DF3 mid-null falls through to rva00498DF3
+??0GateOpenAndCloseBehaviorModuleData@@QAE@XZ,,0x00498E2E,280,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenAndCloseBehaviorModuleDataCtor.cpp,matched,Gate ModuleData ctor via Snapshot plus refholders plus AsciiString vectors
