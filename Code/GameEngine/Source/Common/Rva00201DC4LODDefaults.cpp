@@ -86,3 +86,20 @@ Rva00201D48LODPreset::Rva00201D48LODPreset()
 }
 
 typedef char Rva00201D48StrideCheck[sizeof(Rva00201D48LODPreset)==0x20 ? 1 : -1];
+
+// Native manager passes VA0x00601D79 for count0x10, stride0x14 at +0x1628.
+// Target [0x00201D79..0x00201D9D) independently sets the first two words
+// and three floats. Field roles below are donor benchmark-profile semantics.
+struct Rva00201D79BenchProfile
+{
+    Rva00201D79BenchProfile();
+    int cpuType, mhz;
+    float intBenchIndex, floatBenchIndex, memBenchIndex;
+};
+
+Rva00201D79BenchProfile::Rva00201D79BenchProfile()
+{
+    cpuType=0; mhz=1; intBenchIndex=1.0f; floatBenchIndex=1.0f; memBenchIndex=1.0f;
+}
+
+typedef char Rva00201D79StrideCheck[sizeof(Rva00201D79BenchProfile)==0x14 ? 1 : -1];
