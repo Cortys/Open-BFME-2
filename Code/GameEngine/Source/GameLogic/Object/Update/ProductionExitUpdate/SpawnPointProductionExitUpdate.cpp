@@ -71,20 +71,7 @@ public:
 };
 
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Update/ProductionExitUpdate/SpawnPointProductionExitUpdateCtorModuleFactoryBody.cpp
-// ??0SpawnPointProductionExitUpdate@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
-SpawnPointProductionExitUpdate::SpawnPointProductionExitUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_bonesInitialized = FALSE;
-	m_spawnPointCount = 0;
-	for( Int positionIndex = 0; positionIndex < MAX_SPAWN_POINTS; positionIndex++ )
-	{
-		m_worldCoordSpawnPoints[positionIndex].zero();
-		m_worldAngleSpawnPoints[positionIndex] = 0.0f;
-		m_spawnPointOccupier[positionIndex] = INVALID_ID;
-	}
-	setWakeFrame(getObject(), UPDATE_SLEEP_FOREVER);
-}
+// SpawnPointProductionExitUpdate::SpawnPointProductionExitUpdate: defined in SpawnPointProductionExitUpdateCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // SpawnPointProductionExitUpdate::~SpawnPointProductionExitUpdate: defined in SpawnPointProductionExitUpdateDtor.cpp (its row's unit).
