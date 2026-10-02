@@ -26,3 +26,7 @@ private:
 #include <algorithm>
 template Rva0040D0A4Entry* _STL::__copy<Rva0040D0A4Entry*, Rva0040D0A4Entry*, int>(Rva0040D0A4Entry*, Rva0040D0A4Entry*, Rva0040D0A4Entry*, const _STL::random_access_iterator_tag&, int*);
 template Rva0040D0A4Entry* _STL::__copy_ptrs<Rva0040D0A4Entry*, Rva0040D0A4Entry*>(Rva0040D0A4Entry*, Rva0040D0A4Entry*, Rva0040D0A4Entry*, _STL::__false_type);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??$__copy_ptrs@PAURva004F69C3@@PAU1@@_STL@@YAPAURva004F69C3@@PAU1@00ABU__false_type@0@@Z=??$__copy_ptrs@PAVRva0040D0A4Entry@@PAV1@@_STL@@YAPAVRva0040D0A4Entry@@PAV1@00U__false_type@0@@Z")

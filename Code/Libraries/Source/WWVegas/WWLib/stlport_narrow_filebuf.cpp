@@ -12,3 +12,7 @@ template class _STL::basic_filebuf<char, _STL::char_traits<char> >;
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?_M_release_lock@NodeAllocMutex@_STL@@QAEXXZ=?_M_initialize@_STLP_mutex_base@_STL@@QAEXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0Rva008947A0Elem@@QAE@XZ=?_M_initialize@_STLP_mutex_base@_STL@@QAEXXZ")

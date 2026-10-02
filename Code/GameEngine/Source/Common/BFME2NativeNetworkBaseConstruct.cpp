@@ -25,3 +25,8 @@ BFME2NativeNetwork *BFME2NativeNetwork::baseConstruct()
 	_flag = 0;
 	return this;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?baseConstruct@BFME2NativeNetwork@@QAEXXZ=?baseConstruct@BFME2NativeNetwork@@QAEPAV1@XZ")
+#pragma comment(linker, "/alternatename:??0GenBase009A1A30@@QAE@XZ=?baseConstruct@BFME2NativeNetwork@@QAEPAV1@XZ")

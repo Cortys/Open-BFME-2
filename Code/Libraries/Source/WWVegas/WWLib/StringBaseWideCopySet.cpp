@@ -85,3 +85,7 @@ void StringBase<wchar_t>::set(const StringBase<wchar_t> &that)
             ++m_data->ref_count;
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??4Rva00630D00UStr@@QAEAAV0@ABV0@@Z=?set@?$StringBase@G@@QAEXABV1@@Z")

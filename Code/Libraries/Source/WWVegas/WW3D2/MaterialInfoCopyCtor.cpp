@@ -161,3 +161,7 @@ MaterialInfoClass::MaterialInfoClass(const MaterialInfoClass &src)
  }
  Textures = src.Textures;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmeCreated_0035B680@@QAE@PAVGen_0035B680@@@Z=??0MaterialInfoClass@@QAE@ABV0@@Z")

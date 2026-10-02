@@ -25,3 +25,7 @@ void bfmeGo1019C(int a)
 // retail address (same cdecl/thiscall ABI); bind them here.
 #pragma comment(linker, "/alternatename:_Rva007F0030=?bfmeGo1019C@@YAXH@Z")
 #pragma comment(linker, "/alternatename:?Rva007F0030Free@@YAXPAX@Z=?bfmeGo1019C@@YAXH@Z")
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeInit1019@@YAXPAD@Z=?ji_00629b14@@YAXXZ")
