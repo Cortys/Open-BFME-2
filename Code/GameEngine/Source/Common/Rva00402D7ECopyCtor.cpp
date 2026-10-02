@@ -15,23 +15,15 @@
 
 #include "ascii_string.h"
 
-class PoolMember
-{
-public:
-	void Rva0050ED3();
-};
+class OpaqueRefCounted { public: void Release_Ref(); };
 
 class Rva0036CA00Str
 {
-	PoolMember *m_item;
+	void *m_item;
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
 	void assign(const Rva0036CA00Str &other);
-	~Rva0036CA00Str()
-	{
-		if (m_item)
-			m_item->Rva0050ED3();
-	}
+	~Rva0036CA00Str() { if (m_item) ((OpaqueRefCounted *)m_item)->Release_Ref(); }
 };
 
 class Rva00402C0F
