@@ -105,23 +105,6 @@ GameMessage::~GameMessage( )
 }
 
 /**
- * Return the given argument union.
- * @todo This should be a more list-like interface.  Very inefficient.
- */
-const GameMessageArgumentType *GameMessage::getArgument( Int argIndex ) const
-{
-	static const GameMessageArgumentType junk = { 0 };
-
-	int i=0;
-	for( GameMessageArgument *a = m_argList; a; a=a->m_next, i++ )
-		if (i == argIndex)
-			return &a->m_data;
-
-	DEBUG_CRASH(("argument not found"));
-	return &junk;
-}
-
-/**
  * Return the given argument data type
  */
 #pragma optimize("s", on)
@@ -142,40 +125,8 @@ GameMessageArgumentDataType GameMessage::getArgumentDataType( Int argIndex )
 #pragma optimize("", on)
 
 /**
- * Allocate a new argument, add it to the argument list, and increment the total arg count
- */
-GameMessageArgument *GameMessage::allocArg( void ) 
-{ 
-	// allocate a new argument
-	GameMessageArgument *arg = newInstance(GameMessageArgument); 
-
-	// add to end of argument list
-	if (m_argTail)
-		m_argTail->m_next = arg;
-	else
-	{
-		m_argList = arg;
-		m_argTail = arg;
-	}
-
-	arg->m_next = NULL;
-	m_argTail = arg;
-
-	m_argCount++;
-
-	return arg;
-}
-
-/**
  * Append an integer argument
  */
-void GameMessage::appendIntegerArgument( Int arg )
-{
-	GameMessageArgument *a = allocArg();
-	a->m_data.integer = arg;
-	a->m_type = ARGUMENTDATATYPE_INTEGER;
-}
-
 void GameMessage::appendRealArgument( Real arg )
 {
 	GameMessageArgument *a = allocArg();
@@ -211,13 +162,6 @@ void GameMessage::appendTeamIDArgument( UnsignedInt arg )
 	a->m_type = ARGUMENTDATATYPE_TEAMID;
 }
 
-void GameMessage::appendLocationArgument( const Coord3D& arg )
-{
-	GameMessageArgument *a = allocArg();
-	a->m_data.location = arg;
-	a->m_type = ARGUMENTDATATYPE_LOCATION;
-}
-
 void GameMessage::appendPixelArgument( const ICoord2D& arg )
 {
 	GameMessageArgument *a = allocArg();
@@ -225,25 +169,11 @@ void GameMessage::appendPixelArgument( const ICoord2D& arg )
 	a->m_type = ARGUMENTDATATYPE_PIXEL;
 }
 
-void GameMessage::appendPixelRegionArgument( const IRegion2D& arg )
-{
-	GameMessageArgument *a = allocArg();
-	a->m_data.pixelRegion = arg;
-	a->m_type = ARGUMENTDATATYPE_PIXELREGION;
-}
-
 void GameMessage::appendTimestampArgument( UnsignedInt arg )
 {
 	GameMessageArgument *a = allocArg();
 	a->m_data.timestamp = arg;
 	a->m_type = ARGUMENTDATATYPE_TIMESTAMP;
-}
-
-void GameMessage::appendWideCharArgument( const WideChar& arg )
-{
-	GameMessageArgument *a = allocArg();
-	a->m_data.wChar = arg;
-	a->m_type = ARGUMENTDATATYPE_WIDECHAR;
 }
 
 // ?getCommandAsAsciiString@GameMessage@@ present-unmatched
@@ -710,32 +640,6 @@ AsciiString GameMessage::getCommandTypeAsAsciiString(GameMessage::Type t)
 //
 
 /**
- * Constructor
- */
-GameMessageList::GameMessageList( void )
-{
-	m_firstMessage = 0;
-	m_lastMessage = 0;
-}
-
-/**
- * Destructor
- */
-GameMessageList::~GameMessageList()
-{
-	// destroy all messages currently on the list
-	GameMessage *msg, *nextMsg;
-	for( msg = m_firstMessage; msg; msg = nextMsg )
-	{
-		nextMsg = msg->next();
-		// set list ptr to null to avoid it trying to remove itself from the list
-		// that we are in the process of nuking...
-		msg->friend_setList(NULL);
-		msg->deleteInstance();
-	}
-}
-
-/**
  * Append message to end of message list
  */
 // ?appendMessage@GameMessageList@@ present-unmatched
@@ -825,29 +729,6 @@ Bool GameMessageList::containsMessageOfType( GameMessage::Type type )
 // MessageStream
 //
 
-
-/**
- * Constructor
- */
-MessageStream::MessageStream( void )
-{
-	m_firstTranslator = 0;
-	m_nextTranslatorID = 1;
-}
-
-/**
- * Destructor
- */
-MessageStream::~MessageStream()
-{
-	// destroy all translators
-	TranslatorData *trans, *nextTrans;
-	for( trans=m_firstTranslator; trans; trans=nextTrans )
-	{
-		nextTrans = trans->m_next;
-		delete trans;
-	}
-}
 
 /**
 	* Init
@@ -980,25 +861,6 @@ TranslatorID MessageStream::attachTranslator( GameMessageTranslator *translator,
 }
 
 /**
-	* Find a translator attached to this message stream given the ID 
-	*/
-GameMessageTranslator* MessageStream::findTranslator( TranslatorID id )
-{
-	MessageStream::TranslatorData *translatorData;
-
-	for( translatorData = m_firstTranslator; translatorData; translatorData = translatorData->m_next )
-	{
-
-		if( translatorData->m_id == id )
-			return translatorData->m_translator;
-
-	}
-
-	return NULL;
-
-}
-
-/**
  * Remove a previously attached translator.
  */
 // ?removeTranslator@MessageStream@@ present-unmatched
@@ -1101,71 +963,9 @@ Bool isInvalidDebugCommand( GameMessage::Type t )
 }
 #endif
 
-/**
- * Propagate messages thru attached Translators, invoking each Translator's
- * callback for each message in the stream.
- * Once all Translators have evaluated the message stream, all messages
- * in the stream are destroyed.
- */
-void MessageStream::propagateMessages( void )
-{
-	MessageStream::TranslatorData *ss;
-	GameMessage *msg, *next;
-
-	// process each Translator
-	for( ss=m_firstTranslator; ss; ss=ss->m_next )
-	{
-		for( msg=m_firstMessage; msg; msg=next )
-		{			
-			if (ss->m_translator 
-#if defined(_DEBUG) || defined(_INTERNAL)
-				&& !isInvalidDebugCommand(msg->getType())
-#endif
-				)
-			{
-				GameMessageDisposition disp = ss->m_translator->translateGameMessage(msg);
-				next = msg->next();
-				if (disp == DESTROY_MESSAGE)
-				{
-					msg->deleteInstance();
-				}
-			} 
-			else 
-			{
-				next = msg->next();
-			}
-		}
-	}
-
-
-	// transfer all messages that reached the end of the stream to TheCommandList
-	TheCommandList->appendMessageList( m_firstMessage );
-
-	// clear the stream
-	m_firstMessage = NULL;
-	m_lastMessage = NULL;
-
-}
-
-
 //------------------------------------------------------------------------------------------------
 // CommandList
 //
-
-/**
- * Constructor
- */
-CommandList::CommandList( void )
-{
-}
-
-/**
- * Destructor
- */
-CommandList::~CommandList()
-{
-	destroyAllMessages();
-}
 
 /**
 	* Init
@@ -1223,23 +1023,6 @@ void CommandList::destroyAllMessages( void )
 	m_firstMessage = NULL;
 	m_lastMessage = NULL;
 
-}
-
-/** 
- * Adds messages to the end of TheCommandList.
- * Primarily used by TheMessageStream to put the final messages that reach the end of the 
- * stream on TheCommandList. Since TheGameClient will update faster than TheNetwork 
- * and TheGameLogic, messages will accumulate on this list.
- */
-void CommandList::appendMessageList( GameMessage *list ) 
-{ 
-	GameMessage *msg, *next;
-
-	for( msg = list; msg; msg = next )
-	{
-		next = msg->next();
-		appendMessage( msg );
-	}
 }
 
 //-----------------------------------------------------------------------------
