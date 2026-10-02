@@ -13,10 +13,10 @@
 class WeaponSet
 {
 public:
-	virtual void anchor();
 	WeaponSet();
 
 private:
+	const void *m_vptr;
 	const void *m_templateSet;
 	void *m_weapons[6];
 	int m_20;
@@ -30,8 +30,11 @@ private:
 	int m_3C;
 };
 
+extern const void *const g_00C0089C[];
+
 WeaponSet::WeaponSet()
 {
+	m_vptr = g_00C0089C;
 	m_20 = 0;
 	m_24 = 0;
 	m_templateSet = 0;
