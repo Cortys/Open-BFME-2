@@ -14,6 +14,7 @@ struct Rva005CB22A
 struct Rva005734EB : Rva005CB22A
 {
 	Rva005734EB();
+	virtual ~Rva005734EB();
 };
 Rva005734EB::Rva005734EB() : Rva005CB22A(0)
 {
