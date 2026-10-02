@@ -48,13 +48,7 @@ public:
 	void *m_vptr;
 	ThingTemplate *m_template;
 
-	const ThingTemplate *getTemplate( void ) const
-	{
-		const Overridable *tmpl = (const Overridable *)m_template;
-		if( tmpl != 0 && tmpl->m_nextOverride != 0 )
-			tmpl = tmpl->m_nextOverride->getFinalOverride();
-		return (const ThingTemplate *)tmpl;
-	}
+	const ThingTemplate *getTemplate( void ) const;
 
 	void setOrientation( float angle );
 };
