@@ -36,7 +36,7 @@ static __forceinline int bfmeFastSlerpFloor (const float& f)
 #pragma optimize("", on)
 
 bool Rva00E1D058FastSlerpInline;
-extern "C" Quaternion * __stdcall D3DXQuaternionSlerp(Quaternion *, const Quaternion *, const Quaternion *, float);
+extern "C" Quaternion * __stdcall rva0075B4C6D3DXQuaternionSlerp(Quaternion *, const Quaternion *, const Quaternion *, float);
 extern "C" void _ReadWriteBarrier();
 #pragma intrinsic(_ReadWriteBarrier)
 // ?bfmeFastSlerpAcos absent-from-retail
@@ -44,7 +44,7 @@ static __forceinline float bfmeFastSlerpAcos(float val)
 {
 	// Near -1 and +1, the table becomes too inaccurate
 	if (WWMath::Fabs(val) > 0.975f) {
-		return WWMath::Acos(val);
+		return (float)::acos(val);
 	}
 
 	val*=float(ARC_TABLE_SIZE/2);
@@ -88,7 +88,7 @@ void __cdecl Fast_Slerp(Quaternion& res, const Quaternion & p,const Quaternion &
 	int qflip;			// use flip of q?
 
 	if (!Rva00E1D058FastSlerpInline) {
-		D3DXQuaternionSlerp(&res, &p, &q, alpha);
+		rva0075B4C6D3DXQuaternionSlerp(&res, &p, &q, alpha);
 		_ReadWriteBarrier();
 	} else {
 
