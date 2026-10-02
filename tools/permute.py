@@ -19,6 +19,7 @@ Usage:
   python3 tools/permute.py --list [--min-score 0.9]       the queue, best first
   python3 tools/permute.py RVA [RVA ...] [--minutes 10]   permute these attempts
   python3 tools/permute.py --top N [--min-score 0.9] [--minutes 10] [--jobs J]
+  python3 tools/permute.py --land        land every win via add_match, then commit
 """
 import argparse
 import concurrent.futures
@@ -240,6 +241,63 @@ def permute(rva, minutes=10.0, seed=None):
     return result
 
 
+def home_dir(symbol):
+    """Where a win's unit goes: the directory most of its class's ledger units
+    live in, else Code/GameEngine/Source/Common."""
+    import collections
+    import csv
+    found = re.match(r"\?[^@]+@([A-Za-z_]\w*)@@", symbol)
+    if found:
+        dirs = collections.Counter()
+        with (ROOT / "reverse" / "functions.csv").open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                if f"@{found.group(1)}@@" in row["name"] and not row["source"].startswith("Code/gen_"):
+                    dirs[str(Path(row["source"]).parent)] += 1
+        if dirs:
+            return dirs.most_common(1)[0][0], found.group(1)
+    return "Code/GameEngine/Source/Common", found.group(1) if found else ""
+
+
+def land(rva):
+    """Write build/permute/<rva>/win.cpp as a Code/ unit and land it with
+    tools/add_match.py (which verifies and clears the banked attempt).
+    Returns the source path, or None if it did not verify."""
+    import subprocess
+    rva = rva.lower()
+    win = OUT / rva / "win.cpp"
+    lines = win.read_text(encoding="latin-1").split("\n")
+    symbol = re.match(r"//\s*(\S+)", lines[0]).group(1)
+    size = attempt_sizes().get((symbol, rva))
+    score = re.search(r"score=([0-9.]+)", "\n".join(lines[:4]))
+    body = [l for l in lines if not (l.startswith(f"// {symbol}") or l.startswith("// partial score"))]
+    cl = next((l for l in body if l.startswith("// cl:")), None)
+    if cl:
+        body.remove(cl)
+    directory, cls = home_dir(symbol)
+    name = f"{cls}Rva{int(rva, 16):08X}.cpp" if cls else f"Rva{int(rva, 16):08X}Permuted.cpp"
+    source = Path(directory) / name
+    if (ROOT / source).exists():
+        return None
+    header = ([cl] if cl else []) + [
+        "//",
+        f"// {symbol}, retail {rva}, {size} bytes. Banked partial"
+        f"{f' (score {score.group(1)})' if score else ''} closed by tools/permute.py;",
+        "// the body is the banked one up to statement/operand order and local types.",
+    ]
+    (ROOT / source).write_text("\n".join(header + body), encoding="latin-1")
+    subprocess.run(["python3", "tools/claims.py", "claim", f"0x{int(rva, 16):08X}"],
+                   cwd=ROOT, capture_output=True, text=True)
+    result = subprocess.run(
+        ["python3", "tools/add_match.py", symbol, f"0x{int(rva, 16):08X}", str(size), source.as_posix(),
+         "--notes", "banked partial closed by tools/permute.py; identity carried from the banked attempt"],
+        cwd=ROOT, capture_output=True, text=True)
+    if "verified OK" not in result.stdout + result.stderr:
+        (ROOT / source).unlink(missing_ok=True)
+        return None
+    win.rename(win.with_suffix(".landed"))
+    return source.as_posix()
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("rvas", nargs="*")
@@ -248,7 +306,19 @@ def main(argv=None):
     parser.add_argument("--min-score", type=float, default=0.9)
     parser.add_argument("--minutes", type=float, default=10.0)
     parser.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "1") or 1))
+    parser.add_argument("--land", action="store_true",
+                        help="land every build/permute/<rva>/win.cpp via add_match (no commit)")
     args = parser.parse_args(argv)
+    if args.land:
+        landed = []
+        for win in sorted(OUT.glob("0x*/win.cpp")):
+            source = land(win.parent.name)
+            print(f"{'LANDED' if source else 'FAILED'} {win.parent.name} {source or ''}", flush=True)
+            if source:
+                landed.append(source)
+        print(f"permute: landed {len(landed)} win(s); stage {' '.join(landed) or '-'} "
+              "plus reverse/functions.csv and the cleared reverse/attempts files, then commit")
+        return 0
     items = queue(args.min_score)
     if args.list:
         for score, size, rva, symbol in items:
