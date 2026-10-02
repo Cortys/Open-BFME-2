@@ -191,6 +191,12 @@ void ghiLog(char * buffer, int len)
 }
 #endif
 
+// BFME2: absent from retail. Retail's ghttp callers call nonport.c's
+// GSISocketSelect at 0x0060A9F0 ("Formerly known as ghiSocketSelect"), and this
+// upstream body is not that body, so it stays here compiled out and the
+// ghiSocketSelect spelling is bound to GSISocketSelect below (PROVENANCE.txt,
+// "BFME2 ghttp socket select").
+#if 0
 // Does a select on a socket.
 // Returns False on error.
 /////////////////////////////
@@ -297,6 +303,8 @@ GHTTPBool ghiSocketSelect
     return GHTTPTrue;
 #endif
 }
+#endif
+#pragma comment(linker, "/alternatename:_ghiSocketSelect=_GSISocketSelect")
 
 // Receive some data.
 /////////////////////

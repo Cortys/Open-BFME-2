@@ -131,6 +131,8 @@ bisc67/Area51 at master on 2026-08-17:
     ghttp/ghttpCommon.c       +13 -12   GOAGetLastError -> WSAGetLastError;
                                         WSAETIMEDOUT added to the retry
                                         predicate; two #if 0 blocks flipped on
+                                        (later: ghiSocketSelect compiled out,
+                                        see "BFME2 ghttp socket select")
     ghttp/ghttpProcess.c       +9  -6   per-connection proxy override checked
                                         before the SDK's global ghiProxyAddress
     gp/gpiBuffer.c             +7  -4   WSAETIMEDOUT added to two retry
@@ -199,6 +201,17 @@ global and per-request setters. The helper/request-setter names are descriptive
 reconstruction names; their original names are absent from the stripped image.
 These are source reconciliations, not pristine upstream functions. Every ledger
 claim still requires its own complete byte match, literal check and callee proof.
+
+BFME2 ghttp socket select, 2026-10-02
+-------------------------------------
+Retail's ghttp callers (ghttpBuffer.c, ghttpProcess.c) reach 0x0060A9F0, the
+nonport.c GSISocketSelect body that the 2004 nonport.c itself marks "Formerly
+known as ghiSocketSelect"; their matched call sites verify against it. The
+carrier's ghttpCommon.c still defines the older ghiSocketSelect, whose body is
+not retail's (the link census proves the bytes differ), and being the only
+definition it was the copy every ghttp caller linked to. ghttpCommon.c keeps
+that upstream text under #if 0 and binds the ghiSocketSelect spelling to
+GSISocketSelect with an /alternatename, so the callers link to retail's body.
 
 BFME2 server-browsing reconciliation, 2026-09-07
 ------------------------------------------------
