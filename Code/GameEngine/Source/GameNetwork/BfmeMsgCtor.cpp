@@ -1,4 +1,8 @@
 // cl: /O2 /DNDEBUG /MD
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1BfmeMsgVJH@@QAE@XZ=??1BfmeMsgVJH@@UAE@XZ")
 
 // BfmeMsg::~BfmeMsg at 0x00655780 (7B). The FESL message base (vtable
 // 0xCE0BC4) proven by the landed BfmeMsgVJH ctor row. The 7B direct vptr

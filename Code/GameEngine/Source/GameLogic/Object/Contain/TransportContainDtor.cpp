@@ -1,4 +1,9 @@
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1TransportContain@@QAE@XZ=??1TransportContain@@UAE@XZ")
+
 // stlport
 //
 // ??1TransportContain@@UAE@XZ, retail 0x00467E61, 128 bytes.

@@ -1,4 +1,9 @@
 // cl: /Ireference/shims/bfme2_ascii /O1 /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1AudioEventRTS@@UAE@XZ=??1AudioEventRTS@@QAE@XZ")
+
 //
 // ??1AudioEventRTS@@QAE@XZ, retail 0x000793FA, 53 bytes. Dedicated TU.
 //

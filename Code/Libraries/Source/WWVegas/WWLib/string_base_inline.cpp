@@ -1,4 +1,8 @@
 // cl: /O2
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??0?$StringBase@D@@QAE@PBD@Z=??0?$StringBase@D@@AAE@PBD@Z")
 
 // The StringBase members that retail emits as COMDATs from a translation unit
 // built for speed rather than size. They sit together at 0x00035720, 0x00035740

@@ -1,4 +1,9 @@
 // cl: /O2 /EHs
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??0?$StringBase@D@@QAE@ABV0@@Z=??0?$StringBase@D@@AAE@ABV0@@Z")
+
 // ??0?$StringBase@D@@AAE@ABV0@@Z @0x000365F0 66B
 // ?set@?$StringBase@D@@QAEXABV1@@Z @0x000366F0 132B
 // Narrow StringBase copy constructor and copy set: share the source buffer by

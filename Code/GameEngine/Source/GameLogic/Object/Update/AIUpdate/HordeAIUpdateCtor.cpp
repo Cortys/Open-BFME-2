@@ -1,4 +1,9 @@
 // cl: /O1 /DNDEBUG /MD /GX
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1Rva0026E9BDBase@@UAE@XZ=??1Rva0026E9BDBase@@QAE@XZ")
+
 //
 // ??0HordeAIUpdate@@QAE@PAVThing@@PBVModuleData@@@Z, retail 0x0049A7F3,
 // 113 bytes. Behavior-side ctor completing the HordeAIUpdate file-unit

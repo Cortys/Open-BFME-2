@@ -1,4 +1,9 @@
 // cl: /O2
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??0?$StringBase@G@@QAE@ABV0@@Z=??0?$StringBase@G@@AAE@ABV0@@Z")
+
 //
 // ??0?$StringBase@G@@AAE@ABV0@@Z @0x00037050 66B.
 // Wide StringBase private copy ctor with thread-safe refcount.

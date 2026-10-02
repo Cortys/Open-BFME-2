@@ -1,4 +1,9 @@
 // Ported from BFME1; retain only after independent BFME2 placement.
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:?getCenterPosition@GeometryInfo@@QBEXABUCoord3D@@AAU2@@Z=?getCenterPosition@GeometryInfo@@ABEXABUCoord3D@@AAU2@@Z")
+
 #include <math.h>
 
 typedef float Real;

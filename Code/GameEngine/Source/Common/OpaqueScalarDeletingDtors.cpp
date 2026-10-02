@@ -1,4 +1,9 @@
 // cl: /O1 /MD
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1Rva00B6CF1@@QAE@XZ=??1Rva00B6CF1@@UAE@XZ")
+
 //
 // Emitted scalar deleting destructors (28B flag-test shape) for unclaimed
 // destructors found by sweeping the image for the

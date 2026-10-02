@@ -1,4 +1,9 @@
 // cl: /O1 /MD
+// The shared headers declare these members with the access/virtual spelling
+// the referring objects use; this TU emits the paired definition spelling.
+// Same function, same address: bind the header spelling here.
+#pragma comment(linker, "/alternatename:??1DockUpdate@@MAE@XZ=??1DockUpdate@@UAE@XZ")
+
 //
 // Scalar deleting-destructor wrappers with audited owner attributions.
 // Target facts: 28-byte flag-test wrappers, their call destinations, and the
