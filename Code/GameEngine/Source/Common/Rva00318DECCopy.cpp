@@ -1,5 +1,3 @@
-// ?Rva00318DECCopy@@YAPAVRva00318B5C@@PBV1@0PAV1@PAXH@Z
-// partial score=0.93 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD
 //
 // ?Rva00318DECCopy@@YAPAVRva00318B5C@@PBV1@0PAV1@PAXH@Z, retail 0x00318DEC, 60 bytes.
@@ -19,17 +17,17 @@ public:
 	int m_C;
 };
 
-// ?Rva00318DECCopy@@YAPAVRva00318B5C@@PBV1@0PAV1@PAXH@Z present-unmatched
 Rva00318B5C *Rva00318DECCopy(const Rva00318B5C *first, const Rva00318B5C *last, Rva00318B5C *result, void *unused, int unused2)
 {
 	int n = (int)(last - first);
 	if (n > 0)
 	{
-		for (; n > 0; --n, ++first, ++result)
+		const int *sp = (const int *)first + 3;
+		for (; n > 0; --n, sp += 4, ++result)
 		{
-			result->m_4 = first->m_4;
-			result->m_8 = first->m_8;
-			result->m_C = first->m_C;
+			result->m_4 = sp[-2];
+			result->m_8 = sp[-1];
+			result->m_C = sp[0];
 		}
 	}
 	return result;
