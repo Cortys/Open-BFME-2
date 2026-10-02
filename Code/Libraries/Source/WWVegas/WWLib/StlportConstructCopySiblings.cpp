@@ -66,7 +66,7 @@ public:
 };
 
 namespace _STL {
-template<> void _Construct<Rva00051C6C, Rva00051C6C>(Rva00051C6C *dest, const Rva00051C6C &source) throw() { new (dest) Rva00051C6C(source); }
+template<> inline void _Construct<Rva00051C6C, Rva00051C6C>(Rva00051C6C *dest, const Rva00051C6C &source) throw() { new (dest) Rva00051C6C(source); }
 template<> void _Construct<Rva0014F480, Rva0014F480>(Rva0014F480 *dest, const Rva0014F480 &source) throw() { new (dest) Rva0014F480(source); }
 template<> void _Construct<Rva0014F4A1, Rva0014F4A1>(Rva0014F4A1 *dest, const Rva0014F4A1 &source) throw() { new (dest) Rva0014F4A1(source); }
 template<> void _Construct<Rva0014F4C2, Rva0014F4C2>(Rva0014F4C2 *dest, const Rva0014F4C2 &source) throw() { new (dest) Rva0014F4C2(source); }
@@ -76,3 +76,13 @@ template<> void _Construct<Rva003A6360Record, Rva003A6360Record>(Rva003A6360Reco
 template<> void _Construct<Rva005DBCD1, Rva005DBCD1>(Rva005DBCD1 *dest, const Rva005DBCD1 &source) throw() { new (dest) Rva005DBCD1(source); }
 template<> void _Construct<Rva004E18A2, Rva004E18A2>(Rva004E18A2 *dest, const Rva004E18A2 &source) throw() { new (dest) Rva004E18A2(source); }
 }
+
+// This function is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeStlportConstructCopySiblingsAnchor@@YAXXZ absent-from-retail
+void _bfmeStlportConstructCopySiblingsAnchor()
+{
+    _STL::_Construct<Rva00051C6C, Rva00051C6C>(
+        static_cast<Rva00051C6C *>(0), *static_cast<const Rva00051C6C *>(0));
+}
+#pragma inline_depth()
