@@ -41,7 +41,7 @@ __declspec(noinline) AsciiString *__copy_ptrs<AsciiString *, AsciiString *>(Asci
 }
 
 template <>
-vector<AsciiString, allocator<AsciiString> > &vector<AsciiString, allocator<AsciiString> >::operator=(const vector<AsciiString, allocator<AsciiString> > &__x)
+inline vector<AsciiString, allocator<AsciiString> > &vector<AsciiString, allocator<AsciiString> >::operator=(const vector<AsciiString, allocator<AsciiString> > &__x)
 {
 	if (&__x != this) {
 		const size_type __xlen = __x.size();
@@ -65,3 +65,11 @@ vector<AsciiString, allocator<AsciiString> > &vector<AsciiString, allocator<Asci
 }
 
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitStlportAsciiStringVectorAssign@@YAXPAV?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@ABV12@@Z present-unmatched
+void bfmeEmitStlportAsciiStringVectorAssign(_STL::vector<AsciiString, _STL::allocator<AsciiString> > *p, const _STL::vector<AsciiString, _STL::allocator<AsciiString> > &src)
+{
+	*p = src;
+}
+#pragma inline_depth()
