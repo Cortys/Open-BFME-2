@@ -48,3 +48,7 @@ Gen_uw_00893e70::~Gen_uw_00893e70()
 	if (m_data != m_inline)
 		Rva00893B30ResizeItems(m_data, 0, 0);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva00892640Item@@QAE@XZ=??1AptValueNameEntry@@QAE@XZ")

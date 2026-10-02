@@ -39,3 +39,7 @@ Rva0052BE33::Rva0052BE33(const Rva0052BE33 &other)
 	, m_b10(other.m_b10)
 {
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C61B78@@3QBQBXB=??_7Rva004E179A@@6B@")

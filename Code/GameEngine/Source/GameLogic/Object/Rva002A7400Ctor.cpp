@@ -31,3 +31,7 @@ Rva002A7400::Rva002A7400() : m_pad0(0), m_pad4(0), m_member8()
 {
 	m_member8.initFromStorages(g_defaultStorage009FEFA4, g_defaultStorage009FEFA4);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_defaultStorage009FEFA4@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

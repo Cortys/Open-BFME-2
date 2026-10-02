@@ -38,3 +38,7 @@ void *BfmeThingTXA::bfmeDelTXA(unsigned char flags)
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
 #pragma comment(linker, "/alternatename:?bfmeReleaseATXA@@YGXPAX@Z=?ji_0065477e@@YAXXZ")
 #pragma comment(linker, "/alternatename:?bfmeReleaseBTXA@@YGXPAX@Z=?ji_0065478a@@YAXXZ")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftTXA@@3PAPAXA=??_7BfmeThingTXA@@6B@")

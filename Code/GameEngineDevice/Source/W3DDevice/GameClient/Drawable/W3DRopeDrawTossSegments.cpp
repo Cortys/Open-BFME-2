@@ -95,3 +95,7 @@ void W3DRopeDraw::tossSegments()
 	}
 	m_segments.clear();
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?m_3DScene@W3DDisplay@@2PAVBfmeScene@@A=?m_3DScene@W3DDisplay@@2PAVRTS3DScene@@A")

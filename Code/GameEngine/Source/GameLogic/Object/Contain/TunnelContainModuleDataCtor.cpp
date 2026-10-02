@@ -74,3 +74,7 @@ TunnelContainModuleData::TunnelContainModuleData()
 	m_D4 = 1.0f;
 	m_filter40.rva00362192(Rva00045411BitSet(0, 8), g_defaultStorage009FEFA4);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_defaultStorage009FEFA4@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

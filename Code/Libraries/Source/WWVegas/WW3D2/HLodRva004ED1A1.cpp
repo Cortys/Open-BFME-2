@@ -65,3 +65,7 @@ void Rva004ECECD::rva004ED1A1(int id, Object *victim)
 		node->m_10 = 0;
 	}
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_Va009FF0F8@@3PAVAI@@A=?TheAI@@3PAVAI@@A")

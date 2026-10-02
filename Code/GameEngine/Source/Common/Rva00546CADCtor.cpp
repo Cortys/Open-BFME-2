@@ -52,3 +52,7 @@ Rva00546CAD::Rva00546CAD(const Rva00546CAD &other)
 	m_1c[1] = 0.0f;
 	m_1c[2] = 0.0f;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_0086A3C4@@3QBQBXB=??_7Rva00546CAD@@6B@")

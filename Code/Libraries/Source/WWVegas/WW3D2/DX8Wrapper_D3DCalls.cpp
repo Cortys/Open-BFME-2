@@ -169,3 +169,7 @@ IDirect3DSurface9 *DX8Wrapper::_Get_DX8_Front_Buffer()
 // The adapter's mode list is walked twice: once to find the first mode of the
 // requested size and format, then on from there to find where that run ends.
 // Defined in dx8wrapper.cpp (its row's unit).
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?D3DCallCount@DX8Wrapper@@0IA=?number_of_DX8_calls@@3IA")
