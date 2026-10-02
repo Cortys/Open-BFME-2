@@ -4,6 +4,14 @@
 // FrustumClass::FrustumClass() (0x000F0F5B): retail holds one size-optimised (/O1) out-of-line copy of the header body.
 // The pointer constants or anchors below only make this TU emit the inline bodies out of line; they are not retail code or data.
 //
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #define Matrix3x3 Matrix3
 #define Matrix4x4 Matrix4  // BFME renamed it
 #pragma optimize("t", on)
