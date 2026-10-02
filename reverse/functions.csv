@@ -47583,3 +47583,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva003A2539@Rva003A2539@@QAEPAURva003A2539Node@@ABU?$pair@$$CBVAsciiString@@UTreeHintPayload00207343@@@_STL@@@Z,,0x003A2539,37,Code/Libraries/Source/WWVegas/WWLib/stlport_hashtable_003A2539.cpp,matched,hashtable node next plus pair via rowed allocate and Construct caller 0x3A2F33
 ?rva0035C16A@Shell@@QAEXXZ,,0x0035C16A,42,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,vtable slot9 IMEManager then loop rva0035BEC7 then tail reset
 ??0Rva002A8823Tuning@@QAE@XZ,,0x002A8823,34,Code/GameEngine/Source/Common/System/Rva002A8823Tuning.cpp,matched,sole caller ParseDifficultyTuning at 0x002A89DD via INI six probabilities plus max farms barriers pin order
+?rva0043B0EA@Rva0043B8C0@@QAE_NPAX0@Z,,0x0043B0EA,90,Code/GameEngine/Source/Common/Rva0043B0EACompare.cpp,matched,caller 0x0043B8C0 passes this plus 2 pushes ret8 TheGameLogic frame delta unsigned scaled compare
