@@ -71,14 +71,6 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 //-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/AI/AssaultTransportAIUpdateCtorThunk.cpp
-// ??0AssaultTransportAIUpdate@@ present-unmatched
-AssaultTransportAIUpdate::AssaultTransportAIUpdate( Thing *thing, const ModuleData* moduleData ) : AIUpdateInterface( thing, moduleData )
-{
-	m_currentMembers = MAX_TRANSPORT_SLOTS; //First time, max it out, to ensure clearing arrays in reset.
-	reset();
-} 
-
 //-------------------------------------------------------------------------------------------------
 // ?reset@AssaultTransportAIUpdate@@ present-unmatched
 void AssaultTransportAIUpdate::reset()
