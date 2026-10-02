@@ -9,7 +9,7 @@
 //   mov eax,ds:&g            ; vbtable pointer stored at the object
 //   mov ecx,[eax+4]          ; offset of the virtual base
 //   mov [ecx + &g], vftable  ; patch the virtual base's vftable
-//   mov ecx, &g + 4          ; the basic_ios subobject
+//   mov ecx, &g + 4          ; the basic_ios subobject (+8 at 0x7B6990)
 //   jmp basic_ios::~basic_ios
 //
 // The rowed template in the task list, _gpiRemoveProfile, shares only the
@@ -73,6 +73,10 @@ class Rva007B6990Obj : virtual public _STL::basic_ios<unsigned short, _STL::char
 {
 public:
 	~Rva007B6990Obj() {}
+private:
+	// Retail ctor 0x16620 clears +4 and constructs basic_ios at +8;
+	// teardown 0x7B6990 uses VA 0xDDEE18 + 8. Field purpose is unknown.
+	char m_unknown04[4];
 };
 class Rva007B69B0Obj : virtual public _STL::basic_ios<unsigned short, _STL::char_traits<unsigned short> >
 {
