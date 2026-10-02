@@ -47616,3 +47616,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00431E5A@Rva00431E5A@@QAEXXZ,,0x00431E5A,59,Code/GameEngine/Source/Common/Rva00431E5A.cpp,matched,chain via 0x004319F2 helper new 8B vtable g_00C3C97C
 ?rva00431BDD@Rva00431BDD@@QAE_NPAVGameMessage@@@Z,,0x00431BDD,88,Code/GameEngine/Source/Common/Rva00431BDD.cpp,matched,chain lane rowed 0x00431978 and 0x0030F4EA callers 0x00432068 neighbours Rva00431B76 Rva00431C35 bool callee row type H wrong
 ??1Rva00385333@@QAE@XZ,,0x00385333,62,Code/GameEngine/Source/Common/Rva00385333Dtor.cpp,matched,derived dtor frees 0x19c via rowed free then base 0x3844D7 LINK 0x385371
+??1Gen_uw_00385371@@QAE@XZ,,0x00385371,75,Code/GameEngine/Source/Common/Rva00385371Dtor.cpp,matched,composite dtor via rowed 0x38454E 0x3844D7 0x385333 LINK 8B waiter
