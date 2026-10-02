@@ -588,3 +588,60 @@ Bool ProcessAnimateWindowSlideFromBottom::reverseAnimateWindow( AnimateWindow *a
 	animWin->setVel(vel);
 	return FALSE;
 }
+
+// Bottom ctor 0x005C56B4 installs VA 0x00C7489C; slot 3 is 0x005C57C4 (228 bytes). Ratio-first multiplication and the observed clamp-home store preserve the retail schedule.
+Bool ProcessAnimateWindowSlideFromBottom::updateAnimateWindow( AnimateWindow *animWin )
+{
+
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into updateAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return TRUE;
+	}
+
+	// if the window has finished animating into position, return
+	if(animWin->isFinished())
+		return TRUE;
+
+	// if the window hasn't started animating...return that we're not finished
+	if(timeGetTime() < animWin->getStartTime())
+		return FALSE;
+
+	// it's set that the window is passed in as it's current position being it's rest position
+	// so save off the rest position
+	GameWindow *win = animWin->getGameWindow();
+	if(!win)
+	{
+		DEBUG_ASSERTCRASH( win, ("animWin contains a NULL Pointer for it's GameWindow... Whatup wit dat?"));
+		return TRUE;
+	}
+
+	ICoord2D curPos = animWin->getCurPos();
+	ICoord2D endPos = animWin->getEndPos();
+	Coord2D vel = animWin->getVel();
+	curPos.y += (Int)vel.y;
+
+	if(curPos.y < endPos.y)
+	{
+		curPos.y = endPos.y;
+		animWin->setFinished( TRUE );
+		win->winSetPosition(curPos.x, curPos.y);
+		return TRUE;
+	}
+	win->winSetPosition(curPos.x, curPos.y);
+	animWin->setCurPos(curPos);
+    Real slowedY;
+    if (curPos.y - endPos.y <= m_slowDownThreshold)
+        slowedY = m_slowDownRatio * vel.y;
+    else
+        slowedY = vel.y;
+    if (slowedY >= -1.0f) {
+        *(volatile Real *)&vel.y = -1.0f;
+        slowedY = -1.0f;
+    }
+    Coord2D slowedVel;
+    slowedVel.x = vel.x;
+    slowedVel.y = slowedY;
+    animWin->setVel(slowedVel);
+    return FALSE;
+}
