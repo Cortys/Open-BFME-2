@@ -19,6 +19,7 @@ class Rva005D39EA
 {
 public:
 	void rva005D39EA(int a, int b);
+	void rva005D3A55();
 private:
 	void *m_unused00;
 	int m_level04;
@@ -40,5 +41,15 @@ void Rva005D39EA::rva005D39EA(int a, int b)
 		const char *prefix = m_outer08.m_ptr ? m_outer08.m_ptr->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, (void *)m_level04, prefix, "SetCPState", "_show");
 		m_flag31 = true;
+	}
+}
+// ?rva005D3A55@Rva005D39EA@@QAEXXZ retail 0x005D3A55 60B
+// Evidence: hide-once bool at +0x31 via SetCPState _hide rowed 0x005FB5E6; same level +0x04 outer +0x08 as 0x005D39EA; global TheRva00222A8BTarget
+void Rva005D39EA::rva005D3A55()
+{
+	if (m_flag31) {
+		const char *prefix = m_outer08.m_ptr ? m_outer08.m_ptr->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, (void *)m_level04, prefix, "SetCPState", "_hide");
+		m_flag31 = false;
 	}
 }
