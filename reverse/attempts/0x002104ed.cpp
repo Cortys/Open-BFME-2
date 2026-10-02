@@ -1,16 +1,17 @@
 // ?rva002104ED@Rva002104ED@@QAEAAUNoCaseTreeValue4@@PBVAsciiString@@@Z
-// partial score=0.92 date=2026-10-02
+// partial score=0.97 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva002104ED@Rva002104ED@@QAEAAUNoCaseTreeValue4@@PBVAsciiString@@@Z @0x002104ED 121B find-or-insert returning mapped value
 // Evidence: calls rowed find 0x0041534B then on miss copy-constructs key plus zero value and calls just-landed insert 0x00210347 returning pair then +4; on hit returns node+8; caller 0x002106C0; buckets via Rva00056F61 and Rva00210347 views.
-#include "ascii_string.h"
-#include <map>
-
 struct NoCaseTreeValue4
 {
 	int m_value;
+	NoCaseTreeValue4() : m_value(0) {}
+	NoCaseTreeValue4(int v) : m_value(v) {}
 };
+#include "ascii_string.h"
+#include <map>
 
 typedef _STL::pair<const AsciiString, NoCaseTreeValue4> NocasePair;
 

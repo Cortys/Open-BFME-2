@@ -48138,3 +48138,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva003B6633@Rva003B573E@@QAEHABV?$StringBase@D@@@Z,,0x003B6633,67,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListSubrecordRemove.cpp,matched,chain from rowed search 0x003B573E via sorted vector and record name compare
 ?rva003B6911@ScriptList@@QAEPAXABV?$StringBase@D@@@Z,,0x003B6911,41,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListRva003B6911.cpp,matched,chain from 0x003B6633 via ScriptList second subrecord to nodes plus 4
 ??0Rva003B6831@@QAE@XZ,,0x003B6831,21,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_ctor_3b6831.cpp,matched,leaf default ctor via rowed Deque-base 0x00605464
+?rva00107152@Rva00107152@@QAEXXZ,,0x00107152,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DProjectedShadowRva00107152.cpp,matched,this+8 while loop virtual slot0 int0 return deleted via rowed delete
