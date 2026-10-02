@@ -48937,3 +48937,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva00212728@Rva00212728@@QAEPAXPAX@Z,,0x00212728,57,Code/GameEngine/Source/GameClient/GUI/Rva00212728Find.cpp,matched,WindowVideoMap reverse lookup second match return first else minus1
 ??4?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z,,0x00319BCA,186,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_record_319bca_assign.cpp,matched,vector record assign via STLport operator equal shape with rowed Rva copy helpers
 ?rva005E957C@Rva005E957C@@QAEPAV1@HHHHHH@Z,,0x005E957C,44,Code/GameEngine/Source/Common/Rva005E957CInit.cpp,matched,6-dword init via 2 callers no commas
+?rva00100354@?$SimpleDynVecClass@VVector3@@@@QAE_NABVVector3@@@Z,,0x00100354,14,Code/Libraries/Source/WWVegas/WWLib/simpledynvec_vector3_add_single.cpp,matched,forwards to rowed 2-arg Add with hint 0
