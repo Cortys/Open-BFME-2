@@ -66,3 +66,8 @@ private:
 Rva0058A0F4::~Rva0058A0F4()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f20@Rva0058A0F4_B20@@UAEXXZ=?isClearToApproach@DockUpdate@@UBE_NPBVObject@@@Z")

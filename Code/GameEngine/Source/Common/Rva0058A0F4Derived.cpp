@@ -84,3 +84,8 @@ Rva004A7D55::~Rva004A7D55()
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?f1@Rva0058A0F4_M1@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?fe@Rva0058A0F4_E1@@UAEXXZ=?isClearToApproach@DockUpdate@@UBE_NPBVObject@@@Z")
