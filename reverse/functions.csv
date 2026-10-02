@@ -48095,3 +48095,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva001D9709@Rva001D9709@@QAEXH@Z,,0x001D9709,12,Code/GameEngine/Source/Common/Disp8DwordMaskClearers.cpp,matched,leaf mask-clear via 2 unclaimed callers neighbours 1D96F8-1D972B
 ?rva001D96FF@Rva001D96FF@@QAEXH@Z,,0x001D96FF,10,Code/GameEngine/Source/Common/Disp8DwordMaskClearers.cpp,matched,leaf mask-set same word-callers as 1D9709
 ??_GRva00418298@@UAEPAXI@Z,,0x0022DFB0,28,Code/GameEngine/Source/GameClient/Rva00418298Dtor.cpp,matched,deleting dtor slot0 vtable 0x007E76D0 calls rowed 0x00418298
+?swap@Rva003B56A5@@QAEXPAV1@@Z,,0x003B56A5,55,Code/GameEngine/Source/Common/System/Rva003B56A5Swap.cpp,matched,Two-vector plus two-int swap via rowed vector swap and barrier-ordered tail
