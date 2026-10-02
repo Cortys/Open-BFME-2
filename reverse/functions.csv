@@ -46866,3 +46866,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005C18F0@@QAE@XZ,,0x005C1896,62,Code/GameEngine/Source/Common/Rva005C18F0Ctor.cpp,matched,base carries m_04 so store lands before EH state and vtable
 ?rva005F8F31@Rva005F8F31@@QAEXXZ,,0x005F8F31,13,Code/GameEngine/Source/Common/Rva005F8F31Forwarder.cpp,matched,chain callee 0x005CB260 rowed callers 0x005F96D4 loops
 ?Rva00335CAELowerBound@@YAPBURva00335CAERec@@PAU1@0ABVAsciiString@@@Z,,0x00335CAE,79,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00335CAELowerBound.cpp,matched,binary lower_bound 20B recs via StringBase compare 0x000069D6; callers 0x00336295 0x00337E6A
+?Rva00335CFMedian@@YAPBVAsciiString@@PBV1@00@Z,,0x00335CFD,94,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00335CFMedian.cpp,matched,median of three AsciiStrings via rowed StringBase compare 0x000069D6 caller 0x00337D5A
