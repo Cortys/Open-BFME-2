@@ -47670,3 +47670,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva003FDE71@Rva003FDE71@@QAEXXZ,,0x003FDE71,27,Code/GameEngine/Source/Common/Rva003FDE71.cpp,matched,chain lane pointer range loop via rowed Rva0056B95E
 ??1Rva0022CD2A@@QAE@XZ,,0x0022CD2A,59,Code/GameEngine/Source/Common/Rva0022CD2ADtor.cpp,matched,unlock packet calls rowed 0x0022C64A and rowed free 0x00030830
 ??1Rva0022CDDA@@UAE@XZ,,0x0022CDDA,63,Code/GameEngine/Source/Common/System/SaveGame/Rva0022CDDADtor.cpp,matched,unlock packet calls rowed base 0x001B4E74 and rowed vector dtor
+??_GRva005D791C@@UAEPAXI@Z,,0x005D7953,28,Code/GameEngine/Source/Common/Rva005D791CDtor.cpp,matched,deleting dtor via own dtor TU plus delete 0x0002FD60
