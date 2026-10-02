@@ -81,3 +81,7 @@ void copyPlane009AF0D0(
     Rva009ADAA0(
         context, source, destination, stride, width, index, table);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?copyPlane009AF0D0@@YAXPAURva009AF320Context@@IHIIPAE1PBI@Z=?copyPlane009AF0D0@@YAXPAURva009AF200Context@@IHIIPAE1PBI@Z")

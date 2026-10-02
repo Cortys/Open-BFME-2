@@ -230,3 +230,11 @@ void SymbioticStructuresBodyModuleData::buildFieldParse(MultiIniFieldParse &pars
 #pragma comment(linker, "/alternatename:?LockWeaponCreateModuleDataParse_24AF5C@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@SiegeDockingBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?ModelConditionSoundSelectorClientBehaviorParse_252C13@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ModelConditionSoundSelectorClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?RadarUpdateModuleDataParse_24FC08@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ThreatFinderUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?CleanupHazardUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@BeaconClientUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?PilotFindVehicleUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@EvaAnnounceClientCreateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?DynamicGeometryInfoUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@CritterEmitterUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?BattlePlanUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@UpgradeSoundSelectorClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?RepairDockUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ModelConditionAudioLoopClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")

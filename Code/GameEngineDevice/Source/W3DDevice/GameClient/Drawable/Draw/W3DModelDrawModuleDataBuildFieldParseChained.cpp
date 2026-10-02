@@ -78,3 +78,10 @@ void W3DQuadrupedDrawModuleData::buildFieldParse(MultiIniFieldParse &parse)
 	W3DModelDrawModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BCBB28), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?W3DSupplyDrawModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@W3DSupplyDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?W3DTruckDrawModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@W3DTruckDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?W3DTankDrawModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@W3DTankDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?W3DQuadrupedDrawModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@W3DQuadrupedDrawModuleData@@SAXAAVMultiIniFieldParse@@@Z")

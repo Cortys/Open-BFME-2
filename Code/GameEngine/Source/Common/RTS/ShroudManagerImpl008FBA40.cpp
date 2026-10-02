@@ -726,3 +726,8 @@ void ShroudManager::updatePlayerCells450_Rva0073D860(int playerIndex)
 		}
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?getShroudStatusForPlayer@ShroudManager@@QBE?AW4CellShroudStatus@@HPBUCoord3D@@@Z=?getShroudStatusForPlayerCoord_Rva0073B940@ShroudManagerImpl008FBA40@@QBE?AW4CellShroudStatus@@HPBUCoord3D@@@Z")
+#pragma comment(linker, "/alternatename:?revealMapForPlayerPermanently@ShroudManager@@QAEXH@Z=?updatePlayerCells300_Rva0073B410@ShroudManagerImpl008FBA40@@QAEXH@Z")
