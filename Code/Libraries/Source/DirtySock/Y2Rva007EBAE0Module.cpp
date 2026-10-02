@@ -1766,3 +1766,8 @@ int Rva007EE150( char *record, int size, const char *name, const char *source )
 // Retail's call sites in this unit's matched rows land on bodies rowed under
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
 #pragma comment(linker, "/alternatename:_strcat=?ji_0062988c@@YAXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeOneRF@@YAPAXPAX0@Z=?Rva007EBCA0@@YAPADPBD0@Z")
+#pragma comment(linker, "/alternatename:?bfmeFindUPB@@YAPAXPAX0@Z=?Rva007EBCA0@@YAPADPBD0@Z")

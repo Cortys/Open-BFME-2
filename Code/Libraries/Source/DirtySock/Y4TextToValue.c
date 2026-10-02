@@ -1597,3 +1597,8 @@ int Rva007EF190( const char *text, unsigned char *data, int length,
 
 	return pOut - data;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeTwoRF@@YAPAXPAX0@Z=_Rva007EE720")
+#pragma comment(linker, "/alternatename:?bfmeFormatUPB@@YAXPAXPAD0PBD@Z=_Rva007EEC30")
