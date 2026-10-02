@@ -47542,3 +47542,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva00282500@@UAEPAXI@Z,,0x00282B9F,28,Code/GameEngine/Source/GameClient/Rva00282500Dtor.cpp,matched,deleting dtor via own dtor unit plus rowed delete
 ??1Rva002A8BB9@@QAE@XZ,,0x002A8BB9,53,Code/GameEngine/Source/Common/Rva002A8BB9Dtor.cpp,matched,gap dtor two AsciiStrings via shared header
 ??1Rva002A8D49@@QAE@XZ,,0x002A8E64,18,Code/GameEngine/Source/Common/RTS/Rva002A8E64Dtor.cpp,matched,vector teardown at +0x854 via rowed _free callers at 0x002A92BE
+??$_M_allocate_and_copy@PAUBfmeVectorRecord00319C84@@@?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@IAEPAUBfmeVectorRecord00319C84@@IPAU2@0@Z,,0x00319304,45,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_record_319c84_allocate_copy.cpp,matched,caller reserve 0x00319C84 plus rowed allocate 0x002226BE via pin plus rowed copy 0x00318D75 same 45B shape as 0x001FFA2D
