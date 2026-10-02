@@ -23,3 +23,18 @@ public:
 Rva004FAC6B::Rva004FAC6B()
 {
 }
+
+// ??0Rva00578C2E@@QAE@XZ, retail 0x00578C2E, 21 bytes: the same constructor for a
+// sibling class over the same bases, differing from ??0Rva004FAC6B's bytes only
+// in the vftable it stores (VA 0xbe2b78). Its destructor is inline and empty so
+// the emitted vftable needs nothing new. Identity is not recovered.
+class Rva00578C2E : public Rva004FAC6BBase0, public Rva00330757Member
+{
+public:
+	Rva00578C2E();
+	virtual ~Rva00578C2E() {}
+};
+
+Rva00578C2E::Rva00578C2E()
+{
+}
