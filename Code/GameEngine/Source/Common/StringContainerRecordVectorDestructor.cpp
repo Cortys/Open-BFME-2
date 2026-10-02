@@ -21,6 +21,7 @@ struct BfmeContainerRecord00048139 {
 	unsigned char m_pad[0x5C - 8];
 	BfmeContainerRecord00048139();
 	BfmeContainerRecord00048139(const BfmeContainerRecord00048139 &other);
+	BfmeContainerRecord00048139 &operator=(const BfmeContainerRecord00048139 &other);
 	~BfmeContainerRecord00048139();
 };
 
