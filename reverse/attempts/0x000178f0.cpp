@@ -1,12 +1,26 @@
-// ?init@Rva000178F0StringInit@@QAE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@_STL@@PBG0@Z
-// partial score=0.98 date=2026-09-25
-// cl: /EHsc /MD /D_STLP_USE_STATIC_LIB
+// ?do_transform@?$collate@G@_STL@@MBE?AV?$basic_string@GV?$char_traits@G@_STL@@V?$allocator@G@2@@2@PBG0@Z
+// partial score=0.98 date=2026-10-02
+// cl: /O2 /EHsc /MD /D_STLP_USE_STATIC_LIB
 // stlport
+//
+// STLport 4.5.3 collate<wchar_t>::do_transform, identified by slot 2 of
+// ??_7?$collate@G@_STL@@6B@. Its _collate.h declaration places this virtual
+// between do_compare and do_hash. Retail initializes the returned basic_string
+// from the input range through the matched _M_range_initialize body at 0xBF90.
+
+typedef unsigned short wchar_t;
+
 namespace _STL
 {
+
 struct forward_iterator_tag {};
-template <class T> class char_traits {};
-template <class T> class allocator {};
+
+template <class T>
+class char_traits {};
+
+template <class T>
+class allocator {};
+
 template <class Pointer, class Value, class Alloc>
 class _STLP_alloc_proxy : public Alloc
 {
@@ -14,6 +28,7 @@ public:
 	_STLP_alloc_proxy(const Alloc &a, Pointer data) : Alloc(a), _M_data(data) {}
 	Pointer _M_data;
 };
+
 template <class CharT, class Alloc>
 class _String_base
 {
@@ -24,6 +39,7 @@ public:
 	CharT *_M_finish;
 	_STLP_alloc_proxy<CharT *, CharT, Alloc> _M_end_of_storage;
 };
+
 template <class CharT, class Traits, class Alloc>
 class basic_string : public _String_base<CharT, Alloc>
 {
@@ -38,15 +54,42 @@ public:
 	template <class InputIter>
 	void _M_range_initialize(InputIter f, InputIter l, const forward_iterator_tag &);
 };
-typedef basic_string<unsigned short, char_traits<unsigned short>, allocator<unsigned short> > WStr;
-}
-class Rva000178F0StringInit
+
+class locale
 {
 public:
-	_STL::WStr init(const unsigned short *a, const unsigned short *b);
+	class facet
+	{
+	protected:
+		virtual ~facet();
+	};
 };
-_STL::WStr Rva000178F0StringInit::init(const unsigned short *a, const unsigned short *b)
+
+template <class CharT>
+class collate : public locale::facet
 {
-	_STL::allocator<unsigned short> al;
-	return _STL::WStr(a, b, al);
+public:
+	typedef basic_string<CharT, char_traits<CharT>, allocator<CharT> > string_type;
+protected:
+	virtual ~collate();
+	virtual string_type do_transform(const CharT *low, const CharT *high) const;
+};
+
+template <>
+class collate<wchar_t> : public locale::facet
+{
+public:
+	typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> > string_type;
+protected:
+	virtual ~collate();
+	virtual string_type do_transform(const wchar_t *low, const wchar_t *high) const;
+};
+
+collate<wchar_t>::string_type collate<wchar_t>::do_transform(
+	const wchar_t *low, const wchar_t *high) const
+{
+	allocator<wchar_t> a;
+	return string_type(low, high, a);
+}
+
 }
