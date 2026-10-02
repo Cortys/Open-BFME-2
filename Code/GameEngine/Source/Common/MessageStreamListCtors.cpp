@@ -49,6 +49,7 @@ public:
 	GameMessageList();
 	virtual ~GameMessageList();
 	virtual void rva0030F5D2(class GameMessage *msg);
+	virtual void rva0030F604(class GameMessage *msg, class GameMessage *messageToInsertAfter);
 
 	GameMessage *m_firstMessage; // +0x0C
 	GameMessage *m_lastMessage; // +0x10
@@ -265,6 +266,30 @@ void GameMessageList::rva0030F5D2(GameMessage *msg)
 		m_lastMessage = msg;
 		msg->m_prev = 0;
 	}
+	msg->m_list = this;
+}
+
+// ?rva0030F604@GameMessageList@@UAEXPAVGameMessage@@0@Z @0x0030F604 62B vslot 15
+// GameMessageList insert after from ZH donor insertMessage plus null head insert.
+// Evidence: vtable slot 15 of GameMessageList/MessageStream/CommandList plus prev/next in this TU.
+void GameMessageList::rva0030F604(GameMessage *msg, GameMessage *messageToInsertAfter)
+{
+	if (messageToInsertAfter)
+	{
+		msg->m_next = messageToInsertAfter->m_next;
+		msg->m_prev = messageToInsertAfter;
+		messageToInsertAfter->m_next = msg;
+	}
+	else
+	{
+		msg->m_next = m_firstMessage;
+		msg->m_prev = 0;
+		m_firstMessage = msg;
+	}
+	if (msg->m_next)
+		((GameMessage *)msg->m_next)->m_prev = msg;
+	else
+		m_lastMessage = msg;
 	msg->m_list = this;
 }
 
