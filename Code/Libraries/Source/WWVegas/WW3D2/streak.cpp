@@ -294,7 +294,9 @@ int StreakLineClass::Are_End_Caps_Enabled(void)
 void StreakLineClass::Set_Texture(TextureClass *texture)
 {
 	LineRenderer.Set_Texture(texture);
-	StreakRenderer.Set_Texture(texture);
+	// Retail calls the shared SegLineRenderer implementation for both renderer
+	// layouts; keep the relocation on the rowed SegLineRenderer name.
+	reinterpret_cast<SegLineRendererClass &>(StreakRenderer).Set_Texture(texture);
 }
 
 void StreakLineClass::Set_Shader(ShaderClass shader)
