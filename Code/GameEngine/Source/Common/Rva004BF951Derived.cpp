@@ -172,3 +172,45 @@ Rva004C1BAB::~Rva004C1BAB()
 // each one has the same function in that slot (vftable addresses from matched vptr
 // stores). Bind them to the rows at those functions.
 #pragma comment(linker, "/alternatename:?f2@Rva004C0A4C_B2@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+// ?xfer@StructureBody@@MAEXPAVXfer@@@Z @ 0x004C0A16 54B gap via rowed Version1 base ActiveBody IsLightCRC XferObjectID.
+// Slot 3 xfer of StructureBody (vtable 0x0085B660); Version1 then base then conditional ObjectID at +0x100.
+// Evidence: Version1 0x000053EE, base ActiveBody pin 0x004BF1E8, IsLightCRC slot 0x10, XferObjectID 0x003060B2.
+class Xfer
+{
+public:
+    class Version;
+    Xfer();
+    virtual ~Xfer();
+    void Version1();
+    virtual bool IsLoading() const;
+    virtual bool IsStoring() const;
+    virtual bool IsCRC() const;
+    virtual bool IsLightCRC() const;
+};
+class ActiveBody
+{
+protected:
+    virtual void xfer(Xfer *xfer);
+};
+enum ObjectID
+{
+    OBJECTID_DUMMY = 0
+};
+void XferObjectID(Xfer *, ObjectID *);
+class StructureBody : public ActiveBody
+{
+protected:
+    virtual void xfer(Xfer *xfer);
+private:
+    char m_pad04[0x100 - 4];
+    ObjectID m_id;
+};
+void StructureBody::xfer(Xfer *xfer)
+{
+    xfer->Version1();
+    ActiveBody::xfer(xfer);
+    if (!xfer->IsLightCRC())
+    {
+        XferObjectID(xfer, &m_id);
+    }
+}
