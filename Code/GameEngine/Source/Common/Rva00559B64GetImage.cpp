@@ -36,3 +36,7 @@ const Image *__cdecl Rva00559B64GetImage(int side, int rank)
 	}
 	return image;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00DBE9B0@@3PAPBDA=?g_rva0033A3F4Table@@3PAPBDA")

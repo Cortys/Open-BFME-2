@@ -64,3 +64,7 @@ void Rva00238CC2::rva00238D38()
 	rva00238CC2(&m_0c);
 	rva00238CC2(&m_10);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00BBE09C@@3QBDB=??_C@_01KICIPPFI@?2?$AA@")

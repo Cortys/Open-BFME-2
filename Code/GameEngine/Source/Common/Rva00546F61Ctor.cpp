@@ -70,3 +70,7 @@ Rva00546F61::Rva00546F61(const Rva00546F61 &other)
 	m_20[1] = 0.0f;
 	m_20[2] = 0.0f;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_0086A420@@3QBQBXB=??_7Rva00546F61@@6B@")

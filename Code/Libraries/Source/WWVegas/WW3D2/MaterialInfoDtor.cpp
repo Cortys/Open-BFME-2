@@ -114,3 +114,7 @@ void Force_MaterialInfoClass_Deleting_Destructor(MaterialInfoClass *material_inf
 {
 	delete material_info;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_VectorClassVertexMaterialPtrVtable=??_7?$VectorClass@PAVVertexMaterialClass@@@@6B@")

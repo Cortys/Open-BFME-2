@@ -161,3 +161,7 @@ Rva003AED3E::Rva003AED3E(const Rva003AED3E &that)
 }
 // _Rva003AED3E_v18: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
 #pragma comment(linker, "/alternatename:_Rva003AED3E_v18=?vftable_0112B89C@@3HA")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_Rva003AEF6E_v18=??_7?$ConcreteModuleTemplate@V?$ModuleTag@$01$E?RENDEROBJECT_UPDATE_MODULE_KEY@FXParticleSystem@@3QBDB$E?RENDEROBJECT_UPDATE_MODULE_NAME@2@3QBDBVRenderObjectUpdateModule@2@VRenderObjectUpdateModuleTemplate@2@VRenderObjectParticleUpdateModule@2@@FXParticleSystem@@@FXParticleSystem@@6BSecondaryModuleBase@1@@")

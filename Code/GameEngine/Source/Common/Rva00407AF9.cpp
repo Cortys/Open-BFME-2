@@ -45,3 +45,7 @@ bool Rva00407AF9Run(const AsciiString &a, const AsciiString &b)
 	CloseHandle(pi.hThread);
 	return true;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00BBD40C@@3QBDB=??_C@_01CLKCMJKC@?5?$AA@")
