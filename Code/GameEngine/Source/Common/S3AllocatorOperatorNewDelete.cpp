@@ -61,3 +61,17 @@ void Gen007F0170::operator delete(void *block)
 #pragma comment(linker, "/alternatename:??3Gen00803D10@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
 #pragma comment(linker, "/alternatename:??3Gen00808FB0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
 #pragma comment(linker, "/alternatename:??3Gen0080ACD0@@SAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDeleteVMP@@YAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTVC@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeAllocUNB@@YAPAXI@Z=??2Gen007F0130@@SAPAXI@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeUNA@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTYA@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTWA@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeSizedVF@@YAXPAXI@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTQD@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeFreeTWC@@YAXPAXH@Z=??3Gen007F0170@@SAXPAX@Z")
+#pragma comment(linker, "/alternatename:??2Gen007F0150@@SAPAXI@Z=??2Gen007F0130@@SAPAXI@Z")
+#pragma comment(linker, "/alternatename:?bfmeAllocECMa@@YAPAXI@Z=??2Gen007F0130@@SAPAXI@Z")

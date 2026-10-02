@@ -124,3 +124,12 @@ void bfmeEmitProductionPrerequisiteInlines(ProductionPrerequisite::PrereqUnitRec
 	_STL::_Destroy(p, p);
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXRecordA@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXRecordB@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXRecordC@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXSlotA@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXSlotB@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1TransitionDamageFXSlotC@@QAE@XZ=??1PrereqUnitRec@ProductionPrerequisite@@QAE@XZ")

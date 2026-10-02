@@ -91,3 +91,12 @@ UpdateSleepTime UpdateModule::getWakeFrame() const
 	else
 		return UPDATE_SLEEP_NONE;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?setWakeFrame@UpdateModule@@QAEXPAVObject@@I@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")
+#pragma comment(linker, "/alternatename:?setWakeFrame@WeaponModeSpecialPowerUpdateBase@@IAEXPAVObject@@W4UpdateSleepTime@@@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")
+#pragma comment(linker, "/alternatename:?setWakeFrame@Rva0026E9BDBase@@IAEXPAVObject@@I@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")
+#pragma comment(linker, "/alternatename:?setWakeFrame@ALU_UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")
+#pragma comment(linker, "/alternatename:?setWakeFrame@FireWeaponUpdate@@IAEXPAVObject@@I@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")
+#pragma comment(linker, "/alternatename:?setWakeFrame@UpdateModule@@IAEXPAVObject@@I@Z=?setWakeFrame@UpdateModule@@IAEXPAVObject@@W4UpdateSleepTime@@@Z")

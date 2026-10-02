@@ -5419,3 +5419,22 @@ float bfmeProjectionBias;
 #pragma comment(linker, "/alternatename:??1BfmeCellFC@@QAE@XZ=?DX8_Assert@@YAXXZ")
 #pragma comment(linker, "/alternatename:?Rva009A7030@@YAXXZ=?DX8_Assert@@YAXXZ")
 #pragma comment(linker, "/alternatename:?bfmeReset@Gen_008812D0@@QAEXXZ=?DX8_Assert@@YAXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeThrow2V56@BfmeStrV56@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeThrow2V55@BfmeStrV55@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?Rva0069E440Empty@DX8MeshRendererClass@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeThrow2V54@BfmeStrV54@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLenErrV43@BfmeStrV43@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeThrow2V53@BfmeStrV53@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLenErrV23@BfmeStrV23@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLenErrV38@BfmeStrV38@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLenErrV22@BfmeStrV22@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLenErrV21@BfmeStrV21@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:??1CDEArraySlot@@QAE@XZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeLengthErrorQX@BfmeThingQX@@QAEXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:??1DebugMember@@QAE@XZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:_bfmeDtorCbDMC=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeFlushSXA@@YAXXZ=?DX8_Assert@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeFlushSTA@@YAXXZ=?DX8_Assert@@YAXXZ")

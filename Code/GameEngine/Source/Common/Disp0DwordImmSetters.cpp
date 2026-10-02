@@ -1762,3 +1762,13 @@ void Rva0057851BDwordImmSetter::apply()
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1Rva005D6FCC@@UAE@XZ=?apply@Rva0005D6FDEDwordImmSetter@@QAEXXZ")
 #pragma comment(linker, "/alternatename:??1Rva001DBAC3Base@@UAE@XZ=?apply@Rva001DBAC3DwordImmSetter@@QAEXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva00539926Base@@UAE@XZ=?apply@Rva0004E84A4DwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:??1Rva001DBAC3@@UAE@XZ=?apply@Rva001DBAC3DwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?bfmeDtorTVA@BfmeThingTVA@@QAEXXZ=?apply@Rva00065D180DwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:??1Rva00CE1E14Base@@UAE@XZ=?apply@Rva00065D180DwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:??1BfmeModuleDataSnapshotBase@@UAE@XZ=?apply@Rva0011647BDwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:??1CountUpTransitionBase@@UAE@XZ=?apply@Rva001DBAC3DwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?bfmeTailSF@BfmeThingSF@@QAEXXZ=?apply@Rva001DBAC3DwordImmSetter@@QAEXXZ")

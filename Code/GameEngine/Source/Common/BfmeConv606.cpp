@@ -20,3 +20,19 @@ void BfmeThingCIB::bfmeGoCIB(void *one, void *two)
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?bfmeWriteAlt@BfmeSetupRecord@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeSet3VJA@BfmeMsgVJA@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?addInt@BfmeMsg1052@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeSet3VJI@BfmeMsgVJI@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeSet3VJC@BfmeMsgVJC@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?addInt@BfmeMsg803BF0@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?addInt@BfmeMsg803A00@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeSet3VJF@BfmeMsgVJF@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeSet3VJH@BfmeMsgVJH@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?addInt@BfmeMsg803B60@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?addInt@BfmeMsg803C90@@QAEXPBDH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeTwoEBK@BfmeObjEBK@@QAEXPAX0@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeSetVHE@BfmeMsgVHE@@QAEXPAXH@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
+#pragma comment(linker, "/alternatename:?bfmeDoBKG@BfmeSubBKG@@QAEXPAX0@Z=?bfmeGoCIB@BfmeThingCIB@@QAEXPAX0@Z")
