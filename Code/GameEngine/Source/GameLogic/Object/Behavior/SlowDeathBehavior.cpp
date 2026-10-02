@@ -689,34 +689,7 @@ void SlowDeathBehavior::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?xfer@SlowDeathBehavior@@MAEXPAVXfer@@@Z present-unmatched
-void SlowDeathBehavior::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	UpdateModule::xfer( xfer );
-
-	// sink frame
-	xfer->xferUnsignedInt( &m_sinkFrame );
-
-	// midpoint frame
-	xfer->xferUnsignedInt( &m_midpointFrame );
-
-	// destruction frame
-	xfer->xferUnsignedInt( &m_destructionFrame );
-
-	// accelerated time scale
-	xfer->xferReal( &m_acceleratedTimeScale );
-
-	// flags
-	xfer->xferUnsignedInt( &m_flags );
-
-}  // end xfer
+// Owned by SlowDeathBehaviorXfer.cpp.
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
