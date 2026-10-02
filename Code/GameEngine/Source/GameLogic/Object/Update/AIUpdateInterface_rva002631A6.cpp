@@ -48,7 +48,7 @@ public:
 	virtual int setState(int id);
 };
 
-#define Gbl00BC6254 (*(const float *)0x00BC6254)
+#define Gbl00BC6254 360.0f
 #define Gbl00BBB8E0 g_Va00BBB8E0
 
 class AIUpdateInterface
