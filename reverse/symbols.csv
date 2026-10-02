@@ -7038,3 +7038,7 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ??0?$pair@$$CBVAsciiString@@UTreeHintPayload003012F0@@@_STL@@QAE@ABVAsciiString@@ABUTreeHintPayload003012F0@@@Z,0x003004E7,ICF twin of rowed Rva003004E7 39B AsciiString copy plus 12B payload for subscript 0x0030251A
 ?rva000A7976@Rva000427195@@QAEPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x000A7976,ICF twin of free Rva000A7976Create for table insert call with this at 0x000A7A63; same 12B node and pair copy
 ?rva00222B19@Rva00222A8BTarget@@QAEHPAXPBD1H10000@Z,0x00222B19,thiscall twin of rowed free AptCall same 9 stack args via call-site mov ecx at 0x005E30E8
+??$_Construct@UVideo@@U1@@_STL@@YAXPAUVideo@@ABU1@@Z,0x006896F0,native addVideo call 0x0068A060; full 66B wrapper shape and copyctor call 0x0068971E establish typed construction
+??0Video@@QAE@ABU0@@Z,0x00689650,native construction wrapper call 0x0068971E; canonical-string Video copy constructor reproduces all 122B; target fields 0/4/8/C/10/14/18
+??1Video@@QAE@XZ,0x00689500,native verified vector cleanup calls 0x00689F52; existing 119B element destructor owns +18 and releases strings +8/+4/+0; shared Video layout
+?_M_insert_overflow@?$vector@UVideo@@V?$allocator@UVideo@@@_STL@@@_STL@@IAEXPAUVideo@@ABU3@ABU__false_type@2@I_N@Z,0x00689E60,native addVideo call 0x0068A0D1; typed 28B Video vector overflow reproduces full 300B under verified sibling allocator flags

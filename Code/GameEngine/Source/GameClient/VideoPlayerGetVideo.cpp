@@ -9,18 +9,13 @@
 
 extern "C" __declspec(dllimport) int __cdecl _memicmp(const void *, const void *, unsigned int);
 
-#include "ascii_string.h"
+#include "../../Include/GameClient/BfmeVideoRecord.h"
+#include "../../Include/GameClient/BfmeVideoTable.h"
 
 
-struct Video
-{
-	char m_pad00[4];
-	AsciiString m_internalName;
-	char m_tail[0x1C - 8];
-};
 
-extern Video *g_bfmeVideoTableBegin;
-extern Video *g_bfmeVideoTableEnd;
+#define g_bfmeVideoTableBegin ((Video *)g_bfmeVideoTableStorage.begin)
+#define g_bfmeVideoTableEnd ((Video *)g_bfmeVideoTableStorage.end)
 
 // Read-only view of the canonical StringBase allocation header: refcount+0,
 // length+4, capacity+6, text+8. The Video name comparison inlines these reads.
@@ -76,11 +71,5 @@ const Video *VideoPlayer::getVideo(AsciiString movieTitle)
 	return 0;
 }
 
-// ?g_bfmeVideoTableBegin@@3PAUVideo@@A: matched references place it at VA 0xe0abb4; also referenced as ?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A, ?g_bfmeBeginJD@@3PAVBfmeRecJD@@A.
-Video * g_bfmeVideoTableBegin = 0;
-#pragma comment(linker, "/alternatename:?g_Rva0081C5C0Begin@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
-#pragma comment(linker, "/alternatename:?g_bfmeBeginJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
-// ?g_bfmeVideoTableEnd@@3PAUVideo@@A: matched references place it at VA 0xe0abb8; also referenced as ?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A, ?g_bfmeEndJD@@3PAVBfmeRecJD@@A.
-Video * g_bfmeVideoTableEnd = 0;
-#pragma comment(linker, "/alternatename:?g_Rva0081C5C0End@@3PAURva0081C5C0Element@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")
-#pragma comment(linker, "/alternatename:?g_bfmeEndJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")
+// One definition for all readers and the mutable native vector view.
+BfmeVideoTableStorage g_bfmeVideoTableStorage = { 0, 0, 0 };

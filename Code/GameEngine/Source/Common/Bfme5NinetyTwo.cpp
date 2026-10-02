@@ -4,14 +4,16 @@
 // Code/GameEngine/Source/Common/Bfme5NinetyTwo.cpp); trimmed to the single T1
 // body the sweep places.
 
+#include "../../Include/GameClient/BfmeVideoTable.h"
+
 class BfmeRecJD
 {
 public:
 	int m_bfmeWords[7];
 };
 
-extern BfmeRecJD *g_bfmeBeginJD;
-extern BfmeRecJD *g_bfmeEndJD;
+#define g_bfmeBeginJD ((BfmeRecJD *)g_bfmeVideoTableStorage.begin)
+#define g_bfmeEndJD ((BfmeRecJD *)g_bfmeVideoTableStorage.end)
 
 BfmeRecJD * __stdcall bfmeSlotAt(int index)
 {
@@ -19,7 +21,3 @@ BfmeRecJD * __stdcall bfmeSlotAt(int index)
 		return g_bfmeBeginJD + index;
 	return 0;
 }
-// ?g_bfmeEndJD@@3PAVBfmeRecJD@@A: the global at VA 0xe0abb8 is ?g_bfmeVideoTableEnd@@3PAUVideo@@A.
-#pragma comment(linker, "/alternatename:?g_bfmeEndJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableEnd@@3PAUVideo@@A")
-// ?g_bfmeBeginJD@@3PAVBfmeRecJD@@A: the global at VA 0xe0abb4 is ?g_bfmeVideoTableBegin@@3PAUVideo@@A.
-#pragma comment(linker, "/alternatename:?g_bfmeBeginJD@@3PAVBfmeRecJD@@A=?g_bfmeVideoTableBegin@@3PAUVideo@@A")
