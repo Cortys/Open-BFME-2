@@ -56,6 +56,7 @@ class DefaultModuleTemplate : public CategoryModuleTemplate<Category>,
 {
 public:
     DefaultModuleTemplate();
+    virtual ~DefaultModuleTemplate();
 };
 
 // MSVC mangles DefaultModuleTemplate<1> as @$00
