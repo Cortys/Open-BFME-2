@@ -29,10 +29,10 @@ struct Coord3D
 };
 class GeometryInfo
 {
+	friend class Object;
 public:
 	float getMaxHeightBelowPosition() const;
 	float getMaxHeightAbovePosition() const;
-	float getBoundingCircleRadius() const { return m_10; }
 private:
 	unsigned char m_pad00[0x10];
 	float m_10; // +0x10
@@ -87,8 +87,8 @@ Coord3D Object::rva0028C037()
 	const GeometryInfo *geom = &m_geometryInfo;
 	Coord3D pos = *getPosition();
 	Coord3D result(pos.x, pos.y, pos.z - geom->getMaxHeightBelowPosition());
-	result.x -= geom->getBoundingCircleRadius();
-	result.y -= geom->getBoundingCircleRadius();
+	result.x -= geom->m_10;
+	result.y -= geom->m_10;
 	return result;
 }
 Coord3D Object::rva0028C08D()
@@ -96,8 +96,8 @@ Coord3D Object::rva0028C08D()
 	const GeometryInfo *geom = &m_geometryInfo;
 	Coord3D pos = *getPosition();
 	Coord3D result(pos.x, pos.y, pos.z + geom->getMaxHeightAbovePosition());
-	result.x += geom->getBoundingCircleRadius();
-	result.y += geom->getBoundingCircleRadius();
+	result.x += geom->m_10;
+	result.y += geom->m_10;
 	return result;
 }
 AsciiString Object::rva00290EE0()
