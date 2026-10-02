@@ -19,3 +19,25 @@ Rva005CEB57::Rva005CEB57(const Payload *src)
 	, m_data(*src)
 {
 }
+
+// One more constructor of this shape, each installing its own vtable (the only
+// differing operand): 0x005E9742 (VA 0xc78038). The virtual is declared inline and
+// empty so the vtable the compiler emits resolves in this unit. Owners keep
+// their addresses.
+
+class Rva005E9742
+{
+public:
+	struct Payload { int v[6]; };
+	Rva005E9742(const Payload *src);
+	virtual ~Rva005E9742() {}
+private:
+	int m_ref; // +4
+	Payload m_data; // +8
+};
+
+Rva005E9742::Rva005E9742(const Payload *src)
+	: m_ref(0)
+	, m_data(*src)
+{
+}

@@ -37,3 +37,26 @@ Rva0004584D::Rva0004584D(const BfmeFixedStorage0004543D &a, const BfmeFixedStora
 	, m_24(b)
 {
 }
+
+// One more constructor of this shape, each installing its own vtable (the only
+// differing operand): 0x002FDF47 (VA 0xc071d8). The virtual is declared inline and
+// empty so the vtable the compiler emits resolves in this unit. Owners keep
+// their addresses.
+
+class Rva002FDF47
+{
+public:
+	Rva002FDF47(const BfmeFixedStorage0004543D &a, const BfmeFixedStorage0004543D &b);
+	virtual void dummy() {}
+private:
+	int m_04;
+	BfmeFixedStorage0004543D m_08;
+	BfmeFixedStorage0004543D m_24;
+};
+
+Rva002FDF47::Rva002FDF47(const BfmeFixedStorage0004543D &a, const BfmeFixedStorage0004543D &b)
+	: m_04(0)
+	, m_08(a)
+	, m_24(b)
+{
+}

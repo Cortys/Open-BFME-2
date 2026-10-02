@@ -47338,3 +47338,13 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva005F8447@@QAE@XZ,,0x005F8447,61,Code/GameEngine/Source/Common/Rva004F6986Dtor.cpp,matched,two-TargetRef holder dtor: bytes equal ??1Rva004F6986 except the EH handler record
 ??1Rva001EF50E@@QAE@XZ,,0x001EF50E,68,Code/GameEngine/Source/Common/RvaAsciiStringTripleDtors.cpp,matched,three-AsciiString record dtor: bytes equal ??1AnimSet@GenericObjectCreationNugget except the EH handler record
 ??1Rva005FEBC8@@QAE@XZ,,0x005FEBC8,68,Code/GameEngine/Source/Common/RvaAsciiStringTripleDtors.cpp,matched,three-AsciiString record dtor: bytes equal ??1AnimSet@GenericObjectCreationNugget except the EH handler record
+??0Rva005F4C52@@QAE@ABUPayload005FAB16@@@Z,,0x005F4C52,30,Code/GameEngine/Source/Common/Rva005FAB16Ctor.cpp,matched,payload ctor: bytes equal ??0Rva005FAB16 except the vtable VA 0xc794d4
+??0Rva005F4C70@@QAE@ABUPayload005FAB16@@@Z,,0x005F4C70,30,Code/GameEngine/Source/Common/Rva005FAB16Ctor.cpp,matched,payload ctor: bytes equal ??0Rva005FAB16 except the vtable VA 0xc794dc
+??0Rva002FDF47@@QAE@ABVBfmeFixedStorage0004543D@@0@Z,,0x002FDF47,43,Code/GameEngine/Source/Common/Rva0004584DCtor.cpp,matched,two-storage ctor: bytes equal ??0Rva0004584D except the vtable VA 0xc071d8
+??0Rva002FDF1C@@QAE@ABVBfmeObject872Header@@0@Z,,0x002FDF1C,43,Code/GameEngine/Source/Common/Rva003685CFCtor.cpp,matched,two-header ctor: bytes equal ??0Rva003685CF except the vtable VA 0xc071cc
+??0Rva0044BDA2@@QAE@ABURva0051732A@@@Z,,0x0044BDA2,31,Code/GameEngine/Source/Common/Rva00517345Ctor.cpp,matched,ref-holder ctor: bytes equal ??0Rva00517345 except the vtable VA 0xc3edf4
+??0Rva005E9742@@QAE@PBUPayload@0@@Z,,0x005E9742,31,Code/GameEngine/Source/Common/Rva005CEB57Ctor.cpp,matched,payload ctor: bytes equal ??0Rva005CEB57 except the vtable VA 0xc78038
+??0Rva00359853@@QAE@II@Z,,0x00359853,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,two-field ctor: bytes equal ??0Rva0059B7CB except the vtable VA 0xc153d4
+??0Rva00431A34@@QAE@II@Z,,0x00431A34,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,two-field ctor: bytes equal ??0Rva0059B7CB except the vtable VA 0xc3c9ac
+??0Rva004E9FFD@@QAE@II@Z,,0x004E9FFD,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,two-field ctor: bytes equal ??0Rva0059B7CB except the vtable VA 0xc62888
+??0Rva00567847@@QAE@II@Z,,0x00567847,25,Code/GameEngine/Source/Common/Rva0059B7CBCtor.cpp,matched,two-field ctor: bytes equal ??0Rva0059B7CB except the vtable VA 0xc6ced8

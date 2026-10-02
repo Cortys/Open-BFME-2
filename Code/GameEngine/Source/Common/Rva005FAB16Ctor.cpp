@@ -13,3 +13,24 @@ struct Rva005FAB16 {
     Rva005FAB16(const Payload005FAB16 &o);
 };
 Rva005FAB16::Rva005FAB16(const Payload005FAB16 &o) : m4(0), m8(o) {}
+
+// Two more constructors of this shape, each installing its own vtable (the only
+// differing operand): 0x005F4C52 (VA 0xc794d4), 0x005F4C70 (VA 0xc794dc). The virtual is declared inline and
+// empty so the vtable the compiler emits resolves in this unit. Owners keep
+// their addresses.
+
+struct Rva005F4C52 {
+    virtual void _vf() {}
+    int m4;
+    Payload005FAB16 m8;
+    Rva005F4C52(const Payload005FAB16 &o);
+};
+Rva005F4C52::Rva005F4C52(const Payload005FAB16 &o) : m4(0), m8(o) {}
+
+struct Rva005F4C70 {
+    virtual void _vf() {}
+    int m4;
+    Payload005FAB16 m8;
+    Rva005F4C70(const Payload005FAB16 &o);
+};
+Rva005F4C70::Rva005F4C70(const Payload005FAB16 &o) : m4(0), m8(o) {}
