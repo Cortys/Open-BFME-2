@@ -21,9 +21,19 @@ void _Destroy(_ForwardIterator __first, _ForwardIterator __last);
 // in stlport TU proves /O1 flags which this TU shares. Retail loops
 // destroy then add 0x20.
 template <>
-void _Destroy<Rva004E2382 *>(Rva004E2382 *__first, Rva004E2382 *__last)
+inline void _Destroy<Rva004E2382 *>(Rva004E2382 *__first, Rva004E2382 *__last)
 {
     for (; __first != __last; ++__first)
         __first->~Rva004E2382();
 }
 }
+
+// This _STL::_Destroy specialization is a header inline in copier units. The
+// anchor retains this unit's matched row body, but the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFamilyDeletingDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFamilyDeletingDtorInlineAnchor()
+{
+	_STL::_Destroy<Rva004E2382 *>(0, 0);
+}
+#pragma inline_depth()
