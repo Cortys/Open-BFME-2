@@ -44,15 +44,36 @@ public:
 	Int m_1C; // +0x1C (Player+0x7C)
 };
 
+class Team;
+
+enum Relationship
+{
+	ENEMIES = 0,
+	NEUTRAL,
+	ALLIES
+};
+
+enum
+{
+	ALLOW_SAME_PLAYER = 0x01,
+	ALLOW_ALLIES = 0x02,
+	ALLOW_ENEMIES = 0x04,
+	ALLOW_NEUTRAL = 0x08
+};
+
 class Player
 {
 public:
 	PlayerMaskType getPlayerMask() const { return 1 << m_playerIndex; }
+	Relationship getRelationship(const Team *that) const;
+	Team *getDefaultTeam() const { return m_defaultTeam; }
 
 	unsigned char m_pad[0x54];
 	Int m_playerIndex; // +0x54
 	unsigned char m_pad58[0x60 - 0x58];
 	PlayerSub60 m_60; // +0x60
+	unsigned char m_pad80[0x2EC - 0x80];
+	Team *m_defaultTeam; // +0x2EC
 };
 
 class Rva002AA245MovzxByteChaseField
@@ -81,6 +102,7 @@ public:
 	Player *getEachPlayerFromMask(PlayerMaskType &maskToAdjust);
 	int rva002A7C0B(bool flag);
 	int rva002A7D30();
+	PlayerMaskType getPlayersWithRelationship(Int srcPlayerIndex, unsigned int allowedRelationships, bool reverse);
 
 private:
 	unsigned char m_pad[0x14];
@@ -172,4 +194,59 @@ int PlayerList::rva002A7D30()
 		mask |= player->getPlayerMask();
 	}
 	return mask;
+}
+
+// ?getPlayersWithRelationship@PlayerList@@QAEHHI_N@Z, retail 0x002A7C70
+// (192B). Zero Hour's PlayerList::getPlayersWithRelationship with two BFME
+// additions read from the target: a flag that asks each other player's view
+// of the source instead of the source's view of them, and a relationship
+// outside the three (default case) that counts only when every ALLOW_ bit
+// (0xF) is requested.
+PlayerMaskType PlayerList::getPlayersWithRelationship(Int srcPlayerIndex, unsigned int allowedRelationships, bool reverse)
+{
+	PlayerMaskType retVal = 0;
+
+	if (allowedRelationships == 0)
+		return retVal;
+
+	Player *srcPlayer = getNthPlayer(srcPlayerIndex);
+	if (!srcPlayer)
+		return retVal;
+
+	if (BitTest(allowedRelationships, ALLOW_SAME_PLAYER))
+		retVal = srcPlayer->getPlayerMask();
+
+	for (Int i = 0; i < m_playerCount; ++i)
+	{
+		Player *player = getNthPlayer(i);
+		if (!player)
+			continue;
+
+		if (player == srcPlayer)
+			continue;
+
+		Relationship r = !reverse ? srcPlayer->getRelationship(player->getDefaultTeam())
+			: player->getRelationship(srcPlayer->getDefaultTeam());
+		switch (r)
+		{
+			case ENEMIES:
+				if (BitTest(allowedRelationships, ALLOW_ENEMIES))
+					retVal |= player->getPlayerMask();
+				break;
+			case NEUTRAL:
+				if (BitTest(allowedRelationships, ALLOW_NEUTRAL))
+					retVal |= player->getPlayerMask();
+				break;
+			case ALLIES:
+				if (BitTest(allowedRelationships, ALLOW_ALLIES))
+					retVal |= player->getPlayerMask();
+				break;
+			default:
+				if (allowedRelationships == 0xF)
+					retVal |= player->getPlayerMask();
+				break;
+		}
+	}
+
+	return retVal;
 }

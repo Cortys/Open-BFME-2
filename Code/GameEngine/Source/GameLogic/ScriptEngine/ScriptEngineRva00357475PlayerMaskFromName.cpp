@@ -5,7 +5,7 @@
 // resolver 0x00357B82. Zero Hour's ScriptEngine::getPlayerFromAsciiString
 // grown into BFME's mask selectors: "<This Player's Enemies/Allies...>" and
 // "<Local Player's ...>" ask the player list for every player in a
-// relationship (0x002A7C70, pinned; 4 enemies, 3 allies incl self, 2 allies),
+// relationship (getPlayersWithRelationship, 0x002A7C70; 4 enemies, 3 allies incl self, 2 allies),
 // "<This Player>", "<This Player's Enemy>" (0x00356F6E, ZH
 // getSkirmishEnemyPlayer's slot) and "<Local Player>" give one bit,
 // "<All Players>" every bit (rowed 0x002A7D30); anything else is looked up by
@@ -42,7 +42,7 @@ class PlayerList
 public:
 	Player *getLocalPlayer() { return m_local; }
 	Player *findPlayerWithNameKey(NameKeyType key);
-	int rva002A7C70(int playerIndex, int relationship, int flags);
+	int getPlayersWithRelationship(int srcPlayerIndex, unsigned int allowedRelationships, bool reverse);
 	int rva002A7D30();
 
 private:
@@ -72,11 +72,11 @@ int ScriptEngine::rva00357475(const AsciiString &name, Bool *matchedSpecialName)
 	int thisIndex = TheScriptEngine->getCurrentPlayer()->getPlayerIndex();
 	int localIndex = ThePlayerList->getLocalPlayer()->getPlayerIndex();
 	if (name.compare("<This Player's Enemies>") == 0)
-		mask = ThePlayerList->rva002A7C70(thisIndex, 4, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(thisIndex, 4, false);
 	else if (name.compare("<This Player's Allies incl Self>") == 0)
-		mask = ThePlayerList->rva002A7C70(thisIndex, 3, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(thisIndex, 3, false);
 	else if (name.compare("<This Player's Allies>") == 0)
-		mask = ThePlayerList->rva002A7C70(thisIndex, 2, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(thisIndex, 2, false);
 	else if (name.compare("<This Player>") == 0)
 		mask = getCurrentPlayer()->getPlayerMask();
 	else if (name.compare("<This Player's Enemy>") == 0)
@@ -84,11 +84,11 @@ int ScriptEngine::rva00357475(const AsciiString &name, Bool *matchedSpecialName)
 	else if (name.compare("<Local Player>") == 0)
 		mask = ThePlayerList->getLocalPlayer()->getPlayerMask();
 	else if (name.compare("<Local Player's Enemies>") == 0)
-		mask = ThePlayerList->rva002A7C70(localIndex, 4, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(localIndex, 4, false);
 	else if (name.compare("<Local Player's Allies incl Self>") == 0)
-		mask = ThePlayerList->rva002A7C70(localIndex, 3, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(localIndex, 3, false);
 	else if (name.compare("<Local Player's Allies>") == 0)
-		mask = ThePlayerList->rva002A7C70(localIndex, 2, 0);
+		mask = ThePlayerList->getPlayersWithRelationship(localIndex, 2, false);
 	else if (name.compare("<All Players>") == 0)
 		mask = ThePlayerList->rva002A7D30();
 	else {
