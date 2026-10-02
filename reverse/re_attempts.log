@@ -5706,3 +5706,5 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?Rva003E7CBAGet@@YG_NPAX@Z	0x003E7CBA	201	blocked	first ternary still hoists xor eax not edi and test not cmp and missing jmp-xor fallback after ternary direct Os int-compare tries t=22 model=muse-03 (stash 0.93 kept)
 ?rva0020874B@ScriptEngine@@QAEPAXVAsciiString@@@Z	0x0020874B	207	blocked	sub esp 0x3c vs 0x34 and push esi vs ebx-esi and and-zero vs xor-ebx-mov persist after named int64 t=10 model=muse-03 (stash 0.94 kept)
 ?rva00208DB8@ScriptEngine@@QAEPAXVAsciiString@@@Z	0x00208DB8	225	blocked	extra lea eax ebp-0x3c plus eax-load vs stack-reload for return persists after named-return and direct-TheEmptyString tries t=12 model=muse-03 (stash 0.98 kept)
+?getObjectGarrisonPointIndex@GarrisonContain@@UAEHW4ObjectID@@@Z	0x00479292	170	blocked	inner loop it in ecx vs edx cid in edx vs ecx t=15 model=muse-06 (stash 0.91 kept)
+??1Rva0041F94A@@UAE@XZ	0x0041F94A	136	blocked	mixed hashtable callees WindowVideo begin plus Armor clear need twin-type work t=10 model=muse-06

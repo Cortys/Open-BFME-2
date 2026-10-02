@@ -48414,3 +48414,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005258B2@Rva005258B2@@QAEXPAX@Z,,0x005258B2,7,Code/GameEngine/Source/Common/Rva005258B2Thunk.cpp,matched,chain forwarder via rowed 0x0052557E caller 0x002D3756
 ?rva003B71B4@Rva003B573E@@QAEXH@Z,,0x003B71B4,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListSubrecordRemove.cpp,matched,chain via rowed rva003B66D8 plus pinned BfmeNodeZ dtor plus delete
 ?Rva005118F3Show@@YAXH_N@Z,,0x005118F3,157,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva005118F3Show.cpp,matched,chain via SetText row globals ShowActiveTab EmptyString callers unblock 3
+?rva0041FA34@Rva0041FA34@@QAEPAXPBX@Z,,0x0041FA34,37,Code/GameEngine/Source/GameClient/Rva0041FA34NewNode.cpp,matched,allocate 0x307F0 12 plus dup 0x41FA07 plus copy 0x466EA7 unlocks 0x41FA92
