@@ -205,3 +205,8 @@ Rva00813100Done:
 	(void)unusedA;
 	(void)unusedB;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_Rva0081BDAE@4=?ji_00687cae@@YAXXZ")
+#pragma comment(linker, "/alternatename:?ji_0081bda8@@YAXXZ=?ji_00687ca8@@YAXXZ")

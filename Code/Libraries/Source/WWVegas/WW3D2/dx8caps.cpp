@@ -1440,3 +1440,7 @@ void DX8Caps::Vendor_Specific_Hacks(const D3DADAPTER_IDENTIFIER8& adapter_id)
 
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Is_Valid_Display_Format@BfmeEnumerationCaps@@QAE_NHHW4_D3DFORMAT@@@Z=?Is_Valid_Display_Format@DX8Caps@@QAE_NHHW4WW3DFormat@@@Z")

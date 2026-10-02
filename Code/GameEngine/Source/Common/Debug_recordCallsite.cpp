@@ -60,3 +60,7 @@ bool Debug::SkipNext(bool set)
 #pragma comment(linker, "/alternatename:?TheGen001336E5C@@3PAVGen001336E5C@@A=?theDebug@@3PAVDebug@@A")
 // ?theDebug@@3RAVDebug@@A: the global at VA 0xde0880 is ?theDebug@@3PAVDebug@@A.
 #pragma comment(linker, "/alternatename:?theDebug@@3RAVDebug@@A=?theDebug@@3PAVDebug@@A")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?SkipNext@BfmeResetDebug@@SA_N_N@Z=?_bfme_debugRecordCallsite@@YAXH@Z")

@@ -1762,3 +1762,7 @@ int Rva007EE150( char *record, int size, const char *name, const char *source )
 
 	return Rva007EC780( ( unsigned char * )record, size, ( const char * )p );
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_strcat=?ji_0062988c@@YAXXZ")

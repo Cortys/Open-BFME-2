@@ -53,3 +53,7 @@ AssetReference Rva009EBDC0()
 #pragma comment(linker, "/alternatename:?g_bfmeP1024@@3PAVBfmeP1024@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")
 // ?g_theAssetRegistry@@3PAVAssetRegistry@@A: the global at VA 0xe09c0c is ?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A.
 #pragma comment(linker, "/alternatename:?g_theAssetRegistry@@3PAVAssetRegistry@@A=?TheQ1Receiver@@3PAVQ1Receiver0134FAAC@@A")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeNextResource@@YA?AUBfmeResetAnyRef@@XZ=?Rva009EBDC0@@YA?AVAssetReference@@XZ")

@@ -1580,3 +1580,7 @@ extern "C" void Rva0080AD00( unsigned char *data, int length, void *state )
 		Rva0080F300( state, data, length );
 	}
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_Rva0081BDE4=?ji_006556ac@@YAXXZ")

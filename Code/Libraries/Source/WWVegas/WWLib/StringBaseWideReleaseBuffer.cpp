@@ -109,3 +109,10 @@ void StringBase<char>::releaseBuffer()
         m_data = 0;
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?releaseBuffer@UnicodeString@@IAEXXZ=?releaseBuffer@?$StringBase@G@@AAEXXZ")
+#pragma comment(linker, "/alternatename:??1AsciiStringMember@@QAE@XZ=?releaseBuffer@?$StringBase@D@@AAEXXZ")
+#pragma comment(linker, "/alternatename:??1BfmeWideString000543F5@@QAE@XZ=?releaseBuffer@?$StringBase@G@@AAEXXZ")
+#pragma comment(linker, "/alternatename:?releaseBuffer@?$StringBase@G@@QAEXXZ=?releaseBuffer@?$StringBase@G@@AAEXXZ")

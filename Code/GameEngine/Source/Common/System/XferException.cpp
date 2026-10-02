@@ -73,3 +73,7 @@ XferException &XferException::operator=(const XferException &that)
 	}
 	return *this;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:_strcpy=?ji_00629176@@YAXXZ")
