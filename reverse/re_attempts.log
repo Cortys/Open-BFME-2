@@ -5713,3 +5713,6 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva005E2460@Rva005E2460@@QAEXXZ	0x005E2460	120	partial	missing push ecx before else Get and second pop after t=14 model=muse-08 score=0.96 stash=reverse/attempts/0x005e2460.cpp
 ?Rva0041FD3DParse@@YAXPAVINI@@@Z	0x0041FD3D	161	blocked	INI plus pair plus insert needs global and field table modeling t=12 model=muse-06
 ?rva003B71E8@Rva003B573E@@QAEXXZ	0x003B71E8	116	blocked	ebx-edi swap for this-head-third plus lea-vs-add for rec plus cmp-vs-mov-test for head-next t=15 model=muse-03
+?rva00538DEA@Rva00538DEA@@QAEPAVRva00318B5C@@PAV2@@Z	0x00538DEA	56	blocked	eax ecx swap for m_4 vs arg+1; tried def-order cmp-order no-locals last-vs-m4 inline-argplus1 t=18 model=muse-04 (stash 0.96 kept)
+?rva002240CB@Rva002240CB@@QAEPAVAsciiString@@PBV2@@Z	0x002240CB	152	blocked	EH flag plus ebx plus conditional pair dtor plus stack reuse not reproduced with shared AsciiString header; tried named empty vs scoped temporary and /EHs; 122B vs 152B t=20 model=muse-04
+?rva0022402A@Rva0022402A@@QAEPAVRva00468520@@PBVAsciiString@@@Z	0x0022402A	161	blocked	hash-map find-or-insert model too small ours 130B vs retail 161B missing flag-bit path and EH stores t=5 model=muse-04
