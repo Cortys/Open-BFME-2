@@ -48147,3 +48147,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z,,0x005AFD43,70,Code/GameEngine/Source/Common/Rva005AFD43SetText.cpp,matched,finish stash 0.93 shared UnicodeString inline order TheWindowManager slot C4
 ?rva0057FD6E@Rva0057FD6E@@QAEXXZ,,0x0057FD6E,13,Code/GameEngine/Source/Common/Rva0057FD6EForward.cpp,matched,chain forwards to rowed 0x005AFC92 when plus64 nonnull
 ?rva0057FD94@Rva0057FD6E@@QAEXXZ,,0x0057FD94,13,Code/GameEngine/Source/Common/Rva0057FD6EForward.cpp,matched,chain forwards to rowed 0x005AFCFF same plus64
+?rva004638C5@Rva004638C5@@QAEPAURva004638C5Node@@ABUTreeKey00242F5E@@@Z,,0x004638C5,34,Code/Libraries/Source/WWVegas/WWLib/Rva004638C5CreateNode.cpp,matched,TreeKey create_node alloc 0x18 via 0x307F0 plus dup Construct 0x4634DC at plus 0x10
