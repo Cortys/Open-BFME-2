@@ -5861,3 +5861,5 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?rva0041F369@Rva0041F760@@QAEXXZ	0x0041F369	200	blocked	first-loop xmm allocation needs direct addss mem form vs movss temp plus 100f addr t=25 model=muse-spark (stash 0.93 kept)
 ??0Rva0041F8F4@@QAE@XZ	0x0041F8F4	31	blocked	align exact but gate calls far owner 0x00360B59 not dup 0x0041F720; second pin blocked by pin_consistency same as 0x0041FCB7 t=8 model=muse-spark (stash 0.96 kept)
 ??0Rva0042017F@@QAE@XZ	0x0042017F	79	blocked	base size +4 shift at m_10 m_14 m_8C m_90 m_91 plus vtable store zero vs retail 0xC3BA28 t=5 model=muse-06
+?rva00319B97@Rva00319B97@@QAEPAVRva00318B5C@@PAV2@PBV2@@Z	0x00319B97	51	partial	lea tag ebp+0xB vs ebp+0xF only plus same 51B 22insns plus Destroy order fixed t=20 model=muse-04 score=0.96 stash=reverse/attempts/0x00319b97.cpp
+??4?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z	0x00319BCA	186	partial	extra push 0 at 0x5B only plus add esp 0x1C vs 0x18 and 0x24 vs 0x20 plus stl45 vs stl46 version wall t=22 model=muse-04 score=0.98 stash=reverse/attempts/0x00319bca.cpp
