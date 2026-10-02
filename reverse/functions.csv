@@ -47269,3 +47269,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00525916@Rva00525916@@QAEAAV1@PBUDelegateDesc@@@Z,,0x00525916,59,Code/GameEngine/Source/Common/Rva00579E47Delegate.cpp,matched,delegate-wrapper ctor: bytes equal rva00579E47 except the impl vtable it installs
 ?rva0052A786@Rva0052A786@@QAEAAV1@PBUDelegateDesc@@@Z,,0x0052A786,59,Code/GameEngine/Source/Common/Rva00579E47Delegate.cpp,matched,delegate-wrapper ctor: bytes equal rva00579E47 except the impl vtable it installs
 ?rva0052A7C1@Rva0052A7C1@@QAEAAV1@PBUDelegateDesc@@@Z,,0x0052A7C1,59,Code/GameEngine/Source/Common/Rva00579E47Delegate.cpp,matched,delegate-wrapper ctor: bytes equal rva00579E47 except the impl vtable it installs
+?Rva00498B8BGet@@YAEPAVObject@@@Z,,0x00498B8B,36,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00498B8BCheck.cpp,matched,unlock free predicate flag 0x108 bit2 plus rowed call 0x0028B511
