@@ -37,7 +37,7 @@
  */
 #define _STLP_INTERNAL_TIME_FACETS_H
 #include <string>
-namespace _STL { template<> basic_string<char>::basic_string(const char*, const allocator<char>&); }
+namespace _STL { template<> basic_string<char>::basic_string(const char*, const allocator<char>&); template <> void _STLP_alloc_proxy<char*, char, allocator<char> >::deallocate(char*, size_t); }
 #include <locale>
 #include <ctime>
 namespace _STL {
