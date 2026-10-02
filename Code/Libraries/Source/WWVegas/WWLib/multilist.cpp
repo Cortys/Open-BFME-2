@@ -16,7 +16,7 @@
 DEFINE_AUTO_POOL(MultiListNodeClass, 256);
 
 
-MultiListObjectClass::~MultiListObjectClass(void)
+__declspec(noinline) MultiListObjectClass::~MultiListObjectClass(void)
 {
 	while (ListNode) {
 		ListNode->List->Internal_Remove(this);
@@ -24,7 +24,7 @@ MultiListObjectClass::~MultiListObjectClass(void)
 }
 
 
-GenericMultiListClass::~GenericMultiListClass(void)
+__declspec(noinline) GenericMultiListClass::~GenericMultiListClass(void)
 {
 	assert(Is_Empty());
 }
