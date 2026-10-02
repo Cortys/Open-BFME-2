@@ -12,9 +12,30 @@
 
 extern void *ApplicationHInstance;
 extern void *ApplicationHWnd;
-extern const unsigned char g_00CDF7E8[];
-extern const unsigned char g_00CDF678[];
-extern const unsigned char g_00C7C9A4[];
+// Matched DIR32 witness (w=1) in rva00098BD4 places this 16-byte GUID-sized
+// value at VA 0x00CDF7E8 (.rdata); extent ends before the adjacent value at
+// VA 0x00CDF7F8. Bytes are retail's initial value.
+extern const unsigned char g_00CDF7E8[16] = {
+	0x30, 0x80, 0x79, 0xBF, 0x3A, 0x48, 0xA2, 0x4D,
+	0xAA, 0x99, 0x5D, 0x64, 0xED, 0x36, 0x97, 0x00,
+};
+// Matched DIR32 witness (w=1) in rva00098BD4 places this 16-byte GUID-sized
+// value at VA 0x00CDF678 (.rdata); extent ends before the adjacent value at
+// VA 0x00CDF688. The call site passes it as CreateDevice's GUID argument.
+extern const unsigned char g_00CDF678[16] = {
+	0x61, 0x2B, 0x1D, 0x6F, 0xA0, 0xD5, 0xCF, 0x11,
+	0xBF, 0xC7, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00,
+};
+// Matched DIR32 witness (w=1) in rva00098BD4 places the 24-byte DIDATAFORMAT
+// value at VA 0x00C7C9A4 (.rdata), with dwSize=0x18 bounding the initializer.
+// Its pointer bytes retain retail VA 0x00A29F20 (.text); no corresponding
+// tracked C++ object exists here, so those bytes reproduce the target pointer,
+// not a source-level object identity. Retail text follows at VA 0x00C7C9BC.
+extern const unsigned char g_00C7C9A4[24] = {
+	0x18, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00,
+	0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00,
+	0x01, 0x00, 0x00, 0x00, 0x20, 0x9F, 0xA2, 0x00,
+};
 
 long __stdcall ji_0062af20(void *hinst, unsigned long ver, const void *riid, void **ppv, void *punk);
 #pragma comment(linker, "/alternatename:?ji_0062af20@@YGJPAXKPBXPAPAX0@Z=?ji_0062af20@@YAXXZ")
