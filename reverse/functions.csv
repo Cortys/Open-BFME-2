@@ -47914,3 +47914,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0040B17BConstruct@@YAXPAVRva0040AF66@@ABV1@@Z,,0x0040B17B,45,Code/GameEngine/Source/Common/Rva0040B17BConstruct.cpp,matched,unlock Construct via rowed copy ctor 0x0040AF66 same 45B as 0x0040B14E
 ?Rva0040B1F3Fill@@YAPAVRva0040AF66@@PAV1@IABV1@@Z,,0x0040B1F3,37,Code/GameEngine/Source/Common/Rva0040B1F3Fill.cpp,matched,chain Fill via rowed Construct 0x0040B17B stride 0x68
 ??0Rva0052C8AB@@QAE@ABV0@@Z,,0x0052C8AB,68,Code/Libraries/Source/WWVegas/WWLib/Rva0052C8ABCopy.cpp,matched,Vector_base E16 get_allocator AsciiString uninit-copy Rva003A6360Record sibling Rva005386F5Copy
+?rva00495A2B@Rva00495A2B@@QAEXXZ,,0x00495A2B,73,Code/GameEngine/Source/GameLogic/Object/Update/Rva00495A2B.cpp,matched,unlock predicate firing temp weapon then killing object via testStatus gates and rowed WeaponStore
