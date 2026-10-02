@@ -5581,3 +5581,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva0052DD75@Rva0052DD75@@QAEMMHM@Z	0x0052DD75	230	blocked	push-before-fmul vs after plus xmm2 acc vs mem plus dx-inv slot swap t=15 model=muse-04 (stash 0.93 kept)
 ?Check@Rva00261478@@QAEHPAVObject@@@Z	0x00261478	36	blocked	volatile literal gives mov-eax-top vs retail mov-ecx-between-pushes needs real g_00E030E8 use t=10 model=muse-04
 ?rva0021122A@Rva0021122A@@QAEPAVRvaSmartPtr12@@PAV2@@Z	0x0021122A	27	blocked	retail EBP frame plus dead push-and slot ours frameless Oy- still frameless t=12 model=muse-07 (stash 0.9 kept)
+?Rva0032E51BCopy@@YAPAVSidesInfo@@PAV1@00PAXH@Z	0x0032E51B	29	blocked	needs 5-arg ICF alias for 0x32DD81 copy vs rowed 3-arg t=10 model=muse-04
