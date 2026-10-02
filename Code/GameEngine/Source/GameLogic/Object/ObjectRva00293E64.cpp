@@ -18,9 +18,16 @@ class Rva00148F5ECache
 {
 public:
 	NameKeyType get();
+	NameKeyType m_key;
+	const char *m_name;
 };
 
-extern Rva00148F5ECache g_00DBDE14;
+// Matched DIR32 witness (w=1) places this 8-byte cache at VA 0x00DBDE14
+// (.data). Target get() reads m_key at +0 and m_name at +4; retail starts
+// with key 0 and a pointer to the text "objectUpgradesList" at VA 0x00C09528.
+// The local literal reproduces pointed-to text only; string-pointer identity
+// is not asserted. The next named cache global begins at VA 0x00DBDE24.
+extern Rva00148F5ECache g_00DBDE14 = { NAMEKEY_INVALID, "objectUpgradesList" };
 
 class Dict
 {
