@@ -47749,3 +47749,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva00524436@@QAE@XZ,,0x00524436,65,Code/Libraries/Source/WWVegas/WWLib/Rva00524436Dtor.cpp,matched,dtor via clear 0x00523F8C plus two vectors
 ??_GRva0054D54A@@UAEPAXI@Z,,0x0054D5B7,28,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,slot 0 vtable 0x0086A774 base dtor rowed
 ?rva0054F3C7@Rva0054F434@@UAE?AVAsciiString@@XZ,,0x0054F3C7,27,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Dtor.cpp,matched,vslot 12 returns AsciiString at +0x64 via rowed StringBase copy 0x000365F0
+?rva004D51A7@Transport@@QAEXPAXGPAH@Z,,0x004D51A7,70,Code/GameEngine/Source/GameNetwork/Rva004D51A7.cpp,matched,Transport slot setter at 0x40E0C via clearSlot and dual imul
