@@ -1,9 +1,8 @@
-// ?Rva00075A23Draw@@YAXHH@Z
-// partial score=0.97 date=2026-09-28
-// ?Rva00075A23Draw@@YAXHH@Z
-// partial score=0.97 date=2026-09-28
 // cl: /DNDEBUG /DWIN32 /D_WINDOWS /MD /GX- /O1 /arch:SSE /G7 /GS-
-// ?Rva00075A23Draw@@YAXHH@Z retail 0x00075A23 (437B).
+//
+// Rva00075A23Draw, retail 0x00075A23, 437 bytes. Banked partial (score 0.97,
+// instruction scheduling) closed by tools/permute.py: statement order, operand
+// order and one local's signedness; the body is otherwise the banked one.
 // Fullscreen quad via dynamic VB ring (50x4 verts): guards on VB null and
 // TheGlobalData+0xC60==-1, Set_Vertex_Buffer(NULL,0), AppendLock(VB,index*4,4,
 // DISCARD-if-index-0-else-NOOVERWRITE), NDC positions (-1/1,0,1) with
@@ -74,20 +73,19 @@ struct QuadVertex
 	float u, v;
 };
 
-// ?Rva00075A23Draw@@YAXHH@Z present-unmatched
 void Rva00075A23Draw(int width, int height)
 {
 	if (g_vb == 0)
 		return;
-	if (TheGlobalData->m_check != -1)
+	if (-1 != TheGlobalData->m_check)
 		return;
 	DX8Wrapper::Set_Vertex_Buffer(0, 0);
 	int index = g_quadIndex;
-	int flags = !index ? 0x2000 : 0x1000;
+	unsigned int flags = !index ? 0x2000 : 0x1000;
 	{
+		float invW = 1.0f / (float)width;
 		VertexBufferClass::AppendLockClass lock(g_vb, index * 4, 4, flags);
 		QuadVertex *v = (QuadVertex *)lock.Get_Vertex_Array();
-		float invW = 1.0f / (float)width;
 		invW *= 0.5f;
 		float invH = 1.0f / (float)height;
 		invH *= 0.5f;
@@ -101,18 +99,18 @@ void Rva00075A23Draw(int width, int height)
 		tmp.y = -1.0f;
 		tmp.z = 0.0f;
 		tmp.w = 1.0f;
-		v[1].pos = tmp;
 		v[0].diffuse |= -1;
+		v[1].pos = tmp;
 		v[1].diffuse |= -1;
 		v[2].diffuse |= -1;
 		tmp.x = -1.0f;
 		tmp.y = 1.0f;
 		tmp.z = 0.0f;
 		tmp.w = 1.0f;
-		v[2].pos = tmp;
 		v[0].u = 1.0f + invW;
-		v[1].u = 1.0f + invW;
+		v[2].pos = tmp;
 		v[0].v = invH;
+		v[1].u = 1.0f + invW;
 		v[1].v = 1.0f + invH;
 		v[2].u = invW;
 		v[2].v = invH;
