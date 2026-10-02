@@ -19,6 +19,15 @@ public:
 private:
 	Rva002EE9B7 m_tree28;
 };
-Rva005D791C::~Rva005D791C()
+inline Rva005D791C::~Rva005D791C()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva005D791CDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva005D791CDtorInlineAnchor()
+{
+    static_cast<Rva005D791C *>(0)->Rva005D791C::~Rva005D791C();
+}
+#pragma inline_depth()
