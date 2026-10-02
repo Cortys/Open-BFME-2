@@ -58,7 +58,7 @@ private:
 typedef void (__cdecl *PrereqDestroyFn)(ProductionPrerequisite *, ProductionPrerequisite *);
 typedef ProductionPrerequisite *(__cdecl *PrereqUninitFn)(ProductionPrerequisite *, ProductionPrerequisite *, ProductionPrerequisite *, const _STL::__false_type &);
 
-_STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> > &_STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> >::operator=(const vector &x)
+inline _STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> > &_STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> >::operator=(const vector &x)
 {
 	if (&x != this)
 	{
@@ -85,3 +85,15 @@ _STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> > &
 	}
 	return *this;
 }
+
+// operator= is a header inline in STLport (another unit emits a select-any
+// copy), so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is
+// not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitProductionPrerequisiteVectorAssign@@YAXPAV?$vector@VProductionPrerequisite@@V?$allocator@VProductionPrerequisite@@@_STL@@@_STL@@ABV12@@Z present-unmatched
+void bfmeEmitProductionPrerequisiteVectorAssign(_STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> > *p, const _STL::vector<ProductionPrerequisite, _STL::allocator<ProductionPrerequisite> > &x)
+{
+	*p = x;
+}
+#pragma inline_depth()
