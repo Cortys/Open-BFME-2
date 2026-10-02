@@ -47985,3 +47985,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva0022D1DF@@QAE@XZ,,0x0022D1DF,53,Code/GameEngine/Source/Common/Rva0022D1DFDtor.cpp,matched,chain dtor via rowed 0x0022D01B plus releaseBuffer same EH shape as 0x0022CFE6
 ?rva0005CE32@Rva0005CE32@@QAEXABVAsciiString@@@Z,,0x0005CE32,65,Code/GameEngine/Source/Common/System/Rva0005CE32Method.cpp,matched,erase via AsciiStringSet row float eq global fill 48B at 0x188
 ?Rva003BF9C8Do@@YGXABVAsciiString@@@Z,,0x003BF9C8,50,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF9C8.cpp,matched,chain via rva003570D1 handler forward caller 0x003CB896
+??$_Destroy@PAURva0040AFF3@@@_STL@@YAXPAURva0040AFF3@@0@Z,,0x0040B547,25,Code/Libraries/Source/WWVegas/WWLib/stlport_destroy_range_0040B547.cpp,matched,range destroy stride 0x68 via rowed Rva0040AFF3 dtor
