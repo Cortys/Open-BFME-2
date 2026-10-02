@@ -47684,3 +47684,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva005FB204@@UAEPAXI@Z,,0x005FB20F,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,own dtor TU emits exact deleting dtor
 ??_GRva005FB3D9@@UAEPAXI@Z,,0x005FB3E4,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,own dtor TU emits exact deleting dtor
 ?rva003FD6E0@Rva003FD6E0@@QAEXXZ,,0x003FD6E0,54,Code/GameEngine/Source/GameLogic/Object/Rva003FD6E0.cpp,matched,unlock lane cleanup via rowed operator delete
+?rva003FD1EB@Rva003FD1EB@@QAEIXZ,,0x003FD1EB,15,Code/GameEngine/Source/Common/Rva003FD1EB.cpp,matched,unlock lane unsigned refcount dec via JBE
