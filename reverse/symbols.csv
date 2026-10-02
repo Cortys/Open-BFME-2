@@ -7226,3 +7226,4 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ??0AIInternalMoveToState@@QAE@PAVStateMachine@@I@Z,0x0033F279,AIInternalMoveToState constructor called by AIFollowWaypointPathExactState constructor at 0x00342C75
 ?getShroudStatusForPlayer@Object@@QBE?AW4CellShroudStatus@@H@Z,0x0028D2A2,Object::getShroudStatusForPlayer called by FXList::doFXObj at 0x001E2A6E
 _D3DXQuaternionSlerp@16,0x0075B4C6,PE-named d3dx9_27.dll D3DXQuaternionSlerp stdcall16 import thunk; IAT VA0x00BBAA28
+??0?$list@HV?$allocator@H@_STL@@@_STL@@QAE@ABV01@@Z,0x00445E8B,ICF twin of 0x002A1383 called by 0x005A083C retail call site

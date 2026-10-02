@@ -48916,3 +48916,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva00410E23@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload00410E23@@@_STL@@PBU23@@Z,,0x00410E23,68,Code/GameEngine/Source/GameClient/Rva00410E23Insert.cpp,matched,same shape as 0x00410DDF 0x00410E67 via Pod44 new_node
 ?HasBeenDisplayed@SubTitleManager@@QAE_NH@Z,,0x000468AD,89,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string Index out of range plus caller 0x0004807C
 ?SetDisplayedStats@SubTitleManager@@QAEXH@Z,,0x00046973,88,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string SetDisplayedStats plus caller 0x000480D2 plus sibling
+?rva005A083C@Rva005A083C@@QAEXXZ,,0x005A083C,140,Code/GameEngine/Source/Common/Rva005A083CListNotify.cpp,matched,builds 2-int list from +0x498/+0x49C WindowManager slots B4 B0 caller 0x005A0D56
