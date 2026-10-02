@@ -73,17 +73,20 @@ private:
 	unsigned int m_words[1];
 };
 
-class Snapshot
+// Local base is NOT the canonical virtual Snapshot (reference/shims/moduledata):
+// retail stores only the derived vtable 0x00C4E318, with no base BBB554 store,
+// proving the base ctor emits no vptr init. Named Rva* to avoid the COMDAT clash.
+class Rva004930A0Base
 {
 public:
-	Snapshot() {}
-	~Snapshot()
+	Rva004930A0Base() {}
+	~Rva004930A0Base()
 	{
 		*(const void **)this = g_00BBB554;
 	}
 };
 
-class Rva004930A0 : public Snapshot
+class Rva004930A0 : public Rva004930A0Base
 {
 public:
 	Rva004930A0();
@@ -136,7 +139,7 @@ private:
 };
 
 Rva004930A0::Rva004930A0()
-	: Snapshot()
+	: Rva004930A0Base()
 	, m_vtable(const_cast<void *>(reinterpret_cast<const void *>(g_00C4E318)))
 	, m_value08(0)
 	, m_value0C(0)
