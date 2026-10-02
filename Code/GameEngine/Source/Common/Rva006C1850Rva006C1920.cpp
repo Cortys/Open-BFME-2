@@ -1,7 +1,6 @@
-// ?rva006C1920@Rva006C1850@@QAE_NI@Z
-// partial score=0.93 date=2026-10-01
-// ?rva006C1920@Rva006C1850@@QAE_NI@Z
-// partial score=0.93 date=2026-10-01
+//
+// ?rva006C1920@Rva006C1850@@QAE_NI@Z, retail 0x006c1920, 204 bytes. Banked partial (score 0.93) closed by tools/permute.py;
+// the body is the banked one up to statement/operand order and local types.
 // ?rva006C1850@Rva006C1850@@QAE_NIPAPAX@Z, retail 0x006C1850, 70 bytes.
 // Hash-chain find: bucket = (key>>3) % bucketCount, walk next at +8,
 // compare key at +0, on hit store node+4 to *out when out non-null.
@@ -36,7 +35,7 @@ bool Rva006C1850::rva006C1850(unsigned int key, void **out)
 	Rva006C1850Node **table = m_table;
 	Rva006C1850Node *node = 0;
 	if (table) {
-		unsigned int h = (key >> 3) % m_bucketCount;
+		int h = (key >> 3) % m_bucketCount;
 		node = table[h];
 		while (node && node->m_key != key)
 			node = node->m_next;
@@ -85,10 +84,8 @@ bool Rva006C1850::rva006C18A0(unsigned int key, bool freeValue)
 	return false;
 }
 
-// ?rva006C1920@Rva006C1850@@QAE_NI@Z @0x006C1920 201B: hash-table resize
 // rehash via +0x14 alloc +0x18 free. Evidence: flag at +4, alloc bytes
 // ebx*4, div shr 3, table edx*4 rehash, caller 0x006C21E3.
-// ?rva006C1920@Rva006C1850@@QAE_NI@Z present-unmatched
 bool Rva006C1850::rva006C1920(unsigned int newSize)
 {
 	bool ok = true;
@@ -100,13 +97,13 @@ bool Rva006C1850::rva006C1920(unsigned int newSize)
 		ok = newTable != 0;
 		if (newTable) {
 			memset(newTable, 0, newSize * 4);
-			m_table = newTable;
 			m_bucketCount = newSize;
-			for (unsigned int i = 0; i < oldCount; ++i) {
+			m_table = newTable;
+			for (unsigned int i = 0; oldCount > i; ++i) {
 				Rva006C1850Node *node = oldTable[i];
 				while (node) {
+					int h = (node->m_key >> 3) % m_bucketCount;
 					Rva006C1850Node *next = node->m_next;
-					unsigned int h = (node->m_key >> 3) % m_bucketCount;
 					node->m_next = newTable[h];
 					newTable[h] = node;
 					node = next;
