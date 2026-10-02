@@ -4,13 +4,33 @@
 // INI::initFromINI 0x0002DE78, copies m_endFrame to m_frameLength, stores via
 // holder+0x10 setter pinned at 0x005F69CE. Chain from 0x0036006F; same 87B shape
 // as 0x0035F6E2. Opaque address-derived names; layout from Rva0035FF76Ctor.cpp.
-struct FieldParse;
-extern const FieldParse g_00C16738[];
+class INI;
+typedef void (*INIFieldParseProc)(INI *, void *, void *, const void *);
+struct FieldParse
+{
+	const char *token;
+	INIFieldParseProc parse;
+	const void *userData;
+	int offset;
+};
 
 class INI
 {
 public:
 	void initFromINI(void *what, const FieldParse *table);
+	static void parseInt(INI *ini, void *instance, void *store, const void *userData);
+	static void parseRGBColor(INI *ini, void *instance, void *store, const void *userData);
+};
+
+// Retail VA 0x00C16738 (.rdata): three field records and a zero sentinel.
+// The sentinel ends at VA 0x00C16778, where the independently referenced
+// _bfmeVftSF table begins. Target entries use rowed INI parsers and the
+// Rva0035FF76 field offsets established by its constructor.
+extern const FieldParse g_00C16738[] = {
+	{ "StartFrame", &INI::parseInt, 0, 0x10 },
+	{ "EndFrame", &INI::parseInt, 0, 0x14 },
+	{ "FadeColor", &INI::parseRGBColor, 0, 0x30 },
+	{ 0, 0, 0, 0 }
 };
 
 class Rva001DBAA4
