@@ -87,3 +87,8 @@ void DynamicVBAccessClass::bfmeRva0013A7D0()
 		bfmeDynamicFVFDescs[i].Initialize(fvf, n, (bool)n, n);
 	}
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDynamicVBInUse@@3PA_NA=?BfmeDynamicDX8VertexBufferInUse@@3PA_NA")
+#pragma comment(linker, "/alternatename:?bfmeDynamicVBOffsets@@3PAGA=?BfmeDynamicDX8VertexBufferOffset@@3PAGA")

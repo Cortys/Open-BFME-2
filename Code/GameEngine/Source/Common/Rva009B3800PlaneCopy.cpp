@@ -164,3 +164,7 @@ void __cdecl Rva009B3800PlaneCopy(
 	}
 	while (plane < 3);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_rva01356E64@@3P6APAHPAURva009B3800Context@@H@ZA=?g_rva01356E64@@3P6AHPAURva009ACC40State@@H@ZA")
