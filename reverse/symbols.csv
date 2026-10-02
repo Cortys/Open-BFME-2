@@ -6890,3 +6890,6 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??$_Construct@VRva0040AEE3@@V1@@_STL@@YAXPAVRva0040AEE3@@ABV1@@Z,0x0040B14E,placement copy via rowed copy ctor 0x0040AEE3; retail REL32 target of placed overflow 0x0040B834 and copy 0x0040B2FD and fill 0x0040B1A8
 ??$__uninitialized_fill_n@PAVRva0040AEE3@@IV1@@_STL@@YAPAVRva0040AEE3@@PAV1@IABV1@ABU__false_type@0@@Z,0x0040B1A8,fill_n stride 0x10 via Construct 0x0040B14E; retail REL32 target of placed overflow 0x0040B834
 ?_M_clear@?$vector@VRva0040AEE3@@V?$allocator@VRva0040AEE3@@@_STL@@@_STL@@IAEXXZ,0x0040B5DE,destroy plus free via rowed range 0x0040B52E; retail REL32 target of placed overflow 0x0040B834
+??$swap@UBfmeE8@@@_STL@@YAXAAUBfmeE8@@0@Z,0x005A9125,ICF with the swap<_Bit_iter> rowed here (an 8-byte swap): the unguarded partition of the BfmeE8 pointer sort (0x005A943C) calls it
+??$__median@UBfmeE8@@U?$less@UBfmeE8@@@_STL@@@_STL@@YAABUBfmeE8@@ABU1@00U?$less@UBfmeE8@@@0@@Z,0x005A9215,ICF with the BfmeE12 median rowed here (folded medians of three sorts): the BfmeE8 pointer sort's introsort loop (0x005A975E) calls it
+??$copy_backward@PAUBfmeE8@@PAU1@@_STL@@YAPAUBfmeE8@@PAU1@00@Z,0x004C72FE,ICF with the copy_backward<pair<ObjectID unsigned>*> rowed here (8-byte element copy): the BfmeE8 pointer sort's linear insert (0x005A9588) calls it
