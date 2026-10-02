@@ -32,6 +32,16 @@
 
 #include "PreRTS.h"	// This must go first in EVERY cpp file int the GameEngine
 
+// CDownload's header-inline ctor/dtor (WWDownload/download.h) are emitted as
+// select-any copies in every TU that news a CDownload. The kept copy
+// (CDownloadCtorEmit.cpp) uses default speed flags, while this TU is /O1
+// (framed SEH plus rep-stos versus frameless plus discrete stores), so this
+// TU's copy differs. Pre-include the header under speed flags so the copy
+// matches the kept one; the guards make the later transitive include a no-op.
+#pragma optimize("ty", on)
+#include "WWDownload/download.h"
+#pragma optimize("", on)
+
 #include "GameClient/GameText.h"
 #include "GameNetwork/DownloadManager.h"
 
