@@ -13,15 +13,27 @@
 
 #include "ascii_string.h"
 
-class OpaqueRefCounted { public: void Release_Ref(); };
-
-class Rva0036CA00Str
+class OpaqueRefCounted
 {
-	void *m_item;
+public:
+	virtual ~OpaqueRefCounted();
+	void Release_Ref();
+private:
+	long refs;
+};
+
+struct OpaqueRefElement4
+{
+	OpaqueRefCounted *referent;
+	OpaqueRefElement4 &operator=(const OpaqueRefElement4 &other);
+	OpaqueRefElement4 &rva00239057(const OpaqueRefElement4 *other);
+};
+
+class Rva0036CA00Str : public OpaqueRefElement4
+{
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
-	void assign(const Rva0036CA00Str &other);
-	~Rva0036CA00Str() { if (m_item) ((OpaqueRefCounted *)m_item)->Release_Ref(); }
+	~Rva0036CA00Str() { if (referent) referent->Release_Ref(); }
 };
 
 class Rva003FA118
@@ -71,12 +83,12 @@ Rva003FA26F &Rva003FA26F::operator=(const Rva003FA26F &other)
 	if (this != &other)
 	{
 		m_name = other.m_name;
-		m_at10.assign(other.m_at10);
-		m_at14.assign(other.m_at14);
-		m_at18.assign(other.m_at18);
-		m_at1C.assign(other.m_at1C);
-		m_at20.assign(other.m_at20);
-		m_at24.assign(other.m_at24);
+		m_at10 = other.m_at10;
+		m_at14 = other.m_at14;
+		m_at18 = other.m_at18;
+		m_at1C = other.m_at1C;
+		m_at20 = other.m_at20;
+		m_at24 = other.m_at24;
 		m_28 = other.m_28;
 		m_2C = other.m_2C;
 		copyItems(other);
@@ -92,4 +104,14 @@ void Rva003FA26F::copyItems(const Rva003FA26F &other)
 	_STL::vector<Rva003FA118 *>::const_iterator end = other.m_items.end();
 	for (; it != end; ++it)
 		m_items.push_back(new Rva003FA118(**it));
+}
+
+// ?clearItems@Rva003FA26F@@QAEXXZ present-unmatched
+void Rva003FA26F::clearItems()
+{
+	_STL::vector<Rva003FA118 *>::iterator it = m_items.begin();
+	_STL::vector<Rva003FA118 *>::iterator end = m_items.end();
+	for (; it != end; ++it)
+		delete *it;
+	m_items.clear();
 }

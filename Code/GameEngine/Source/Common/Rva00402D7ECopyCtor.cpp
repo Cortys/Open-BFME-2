@@ -15,15 +15,27 @@
 
 #include "ascii_string.h"
 
-class OpaqueRefCounted { public: void Release_Ref(); };
-
-class Rva0036CA00Str
+class OpaqueRefCounted
 {
-	void *m_item;
+public:
+	virtual ~OpaqueRefCounted();
+	void Release_Ref();
+private:
+	long refs;
+};
+
+struct OpaqueRefElement4
+{
+	OpaqueRefCounted *referent;
+	OpaqueRefElement4 &operator=(const OpaqueRefElement4 &other);
+	OpaqueRefElement4 &rva00239057(const OpaqueRefElement4 *other);
+};
+
+class Rva0036CA00Str : public OpaqueRefElement4
+{
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
-	void assign(const Rva0036CA00Str &other);
-	~Rva0036CA00Str() { if (m_item) ((OpaqueRefCounted *)m_item)->Release_Ref(); }
+	~Rva0036CA00Str() { if (referent) referent->Release_Ref(); }
 };
 
 class Rva00402C0F
@@ -67,9 +79,9 @@ Rva00402D7E &Rva00402D7E::operator=(const Rva00402D7E &other)
 	if (this != &other)
 	{
 		m_name = other.m_name;
-		m_at10.assign(other.m_at10);
-		m_at14.assign(other.m_at14);
-		m_at18.assign(other.m_at18);
+		m_at10 = other.m_at10;
+		m_at14 = other.m_at14;
+		m_at18 = other.m_at18;
 		copyItems(other);
 	}
 	return *this;
@@ -83,4 +95,14 @@ void Rva00402D7E::copyItems(const Rva00402D7E &other)
 	_STL::vector<Rva00402C0F *>::const_iterator end = other.m_items.end();
 	for (; it != end; ++it)
 		m_items.push_back(new Rva00402C0F(**it));
+}
+
+// ?clearItems@Rva00402D7E@@QAEXXZ present-unmatched
+void Rva00402D7E::clearItems()
+{
+	_STL::vector<Rva00402C0F *>::iterator it = m_items.begin();
+	_STL::vector<Rva00402C0F *>::iterator end = m_items.end();
+	for (; it != end; ++it)
+		delete *it;
+	m_items.clear();
 }

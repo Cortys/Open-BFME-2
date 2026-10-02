@@ -17,23 +17,27 @@
 
 #include "ascii_string.h"
 
-class PoolMember
+class OpaqueRefCounted
 {
 public:
-	void Rva0050ED3();
+	virtual ~OpaqueRefCounted();
+	void Release_Ref();
+private:
+	long refs;
 };
 
-class Rva0036CA00Str
+struct OpaqueRefElement4
 {
-	PoolMember *m_item;
+	OpaqueRefCounted *referent;
+	OpaqueRefElement4 &operator=(const OpaqueRefElement4 &other);
+	OpaqueRefElement4 &rva00239057(const OpaqueRefElement4 *other);
+};
+
+class Rva0036CA00Str : public OpaqueRefElement4
+{
 public:
 	__declspec(nothrow) Rva0036CA00Str(const Rva0036CA00Str &other);
-	void assign(const Rva0036CA00Str &other);
-	~Rva0036CA00Str()
-	{
-		if (m_item)
-			m_item->Rva0050ED3();
-	}
+	~Rva0036CA00Str() { if (referent) referent->Release_Ref(); }
 };
 
 class Rva003F9FE6
@@ -139,8 +143,8 @@ Rva00403055 &Rva00403055::operator=(const Rva00403055 &other)
 	if (this != &other)
 	{
 		m_name = other.m_name;
-		m_at10.assign(other.m_at10);
-		m_at14.assign(other.m_at14);
+		m_at10 = other.m_at10;
+		m_at14 = other.m_at14;
 		copyItems(other);
 	}
 	return *this;
