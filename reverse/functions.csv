@@ -48902,3 +48902,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva0051C241Fill@@YAXPAURva0051C0E7@@@Z,,0x0051C241,161,Code/Libraries/Source/WWVegas/WWLib/Rva0051C0E7Ctor.cpp,matched,fill via ThePlayerList and g_00E031E8 vector size loop with rowed StringBase set and Rva004266A1 getters
 ?Rva003EF6D6Contains@@YG_NPAURva003EF6D6Span@@PAURva003EF6D6Entry@@@Z,,0x003EF6D6,45,Code/GameEngine/Source/Common/Rva003EF6D6Contains.cpp,matched,span contains pointer compare loop no callees callers 003EF955 003EF965
 ?Rva003EF703Remove@@YGXPAURva003C4CF0Span@@H@Z,,0x003EF703,37,Code/GameEngine/Source/Common/Rva003EF703Remove.cpp,matched,indexOf then vector erase via rowed callees
+?Rva00288940Find@@YGPBXPBX@Z,,0x00288940,56,Code/GameEngine/Source/Common/Rva00288940Find.cpp,matched,callers 0x00288D0F and 0x0028D7CF with TheLevelSys plus Rva002897A8Find walk

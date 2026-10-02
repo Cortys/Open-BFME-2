@@ -5873,3 +5873,5 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?rva0053222F@Rva0053222F@@QAEXGG@Z	0x0053222F	84	partial	extra push ebx plus mov bl vs cmp mem plus late pop edi t=20 model=muse-03 score=0.92 stash=reverse/attempts/0x0053222f.cpp
 ?rva005321D1@Rva005321D1@@QAEXGG@Z	0x005321D1	94	partial	late pops at end vs early pops before jne with reload already fixed t=22 model=muse-03 score=0.94 stash=reverse/attempts/0x005321d1.cpp
 ?rva00532165@Rva00532165@@QAEXGG@Z	0x00532165	108	partial	two pops esi ebx early before jne vs all late at end with reuse exact t=12 model=muse-03 score=0.96 stash=reverse/attempts/0x00532165.cpp
+?Rva00288621Check@@YG_NPBX@Z	0x00288621	46	blocked	Overridable member compare needs donor layout t=12 model=muse-10
+?rva00288ABC@Rva0028951F@@QAE?AUPair@@U2@@Z	0x00288ABC	54	blocked	Rva0028951F Pair filter via Rva0028891FCheck t=25 model=muse-spark
