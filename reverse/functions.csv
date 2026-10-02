@@ -47212,3 +47212,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0029D3FB@Rva0029D3FB@@QAEXXZ,,0x0029D3FB,83,Code/GameEngine/Source/GameClient/Rva0029D3FBClear.cpp,matched,list clearer via holder ptr pattern from Rva0029D30A
 ?rva0029D7CA@Rva0029D7CA@@QAEXXZ,,0x0029D7CA,83,Code/GameEngine/Source/GameClient/Rva0029D7CAClear.cpp,matched,list clearer sibling of 0x0029D3FB at 0x8D0
 ?Rva0009FE01Get@@YAHH@Z,,0x0009FE01,72,Code/GameEngine/Source/Common/System/color_ops.cpp,matched,invert RGB keep alpha via GameGetColorComponents caller 0x0009FE49
+??4Rva0040AEE3@@QAEAAV0@ABV0@@Z,,0x0040AEFE,31,Code/GameEngine/Source/Common/Thing/Rva0040AEE3CopyCtor.cpp,matched,operator assign of copy-ctor class with vector assign and int at 0xC
