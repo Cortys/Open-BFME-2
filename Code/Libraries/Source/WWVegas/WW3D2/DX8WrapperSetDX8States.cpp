@@ -47,7 +47,7 @@ typedef HRESULT (__stdcall *SetRenderStateFn)(void *device, unsigned long state,
 typedef HRESULT (__stdcall *SetTextureStageStateFn)(void *device, unsigned stage, unsigned long state, unsigned value);
 
 // ?Set_DX8_Render_State@DX8Wrapper@@SAXKI@Z
-void DX8Wrapper::Set_DX8_Render_State(unsigned long state, unsigned value)
+inline void DX8Wrapper::Set_DX8_Render_State(unsigned long state, unsigned value)
 {
 	if (RenderStates[state] == value)
 		return;
@@ -64,7 +64,7 @@ void DX8Wrapper::Set_DX8_Render_State(unsigned long state, unsigned value)
 }
 
 // ?Set_DX8_Texture_Stage_State@DX8Wrapper@@SAXIKI@Z
-void DX8Wrapper::Set_DX8_Texture_Stage_State(unsigned stage, unsigned long state, unsigned value)
+inline void DX8Wrapper::Set_DX8_Texture_Stage_State(unsigned stage, unsigned long state, unsigned value)
 {
 	if (stage >= 16) {
 		(*(SetTextureStageStateFn **)d3dDevice)[67](d3dDevice, stage, state, value);
@@ -85,3 +85,12 @@ void DX8Wrapper::Set_DX8_Texture_Stage_State(unsigned stage, unsigned long state
 	numberOfDX8Calls++;
 	textureStageStateChanges++;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitDX8WrapperSetDX8States@@YAXXZ present-unmatched
+void bfmeEmitDX8WrapperSetDX8States()
+{
+	DX8Wrapper::Set_DX8_Render_State(0, 0);
+	DX8Wrapper::Set_DX8_Texture_Stage_State(0, 0, 0);
+}
+#pragma inline_depth()
