@@ -8,6 +8,11 @@
 struct FieldParse;
 extern const struct FieldParse SlaveAttackFieldTable;
 
+// Retail 0x00C6BB18 (RVA 0x0086BB18) is the all-zero 16-byte empty
+// FieldParse entry already defined there as g_emptyFieldParseTable. Keep one
+// storage definition and resolve this consumer's distinct decoration to it.
+#pragma comment(linker, "/alternatename:?SlaveAttackFieldTable@@3UFieldParse@@B=?g_emptyFieldParseTable@@3QBHB")
+
 class INI
 {
 public:
