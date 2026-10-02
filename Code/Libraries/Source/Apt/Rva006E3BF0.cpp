@@ -8,13 +8,12 @@
 // AddRef/Release like AptCIH (Release at vtable slot 1).
 // Evidence: unlock lane; callers in 0x006E6430 plus EH-unwind callers (dtor
 // family); callee freeBlock resolved by pin; Apt /O2 /MD sibling TUs.
-#define G_AptAlloc (*(Rva006DB270 *const *)0x00E176E8)
-
 class Rva006DB270
 {
 public:
 	void freeBlock(void *p, int bytes);
 };
+extern Rva006DB270 *g_pChainBlockAllocator;
 
 class Rva006E3BF0Elem
 {
@@ -47,5 +46,5 @@ void Rva006E3BF0::rva006E3BF0()
 			++i;
 		} while (i < m_capacity);
 	}
-	G_AptAlloc->freeBlock(m_arr, m_capacity * 4);
+	g_pChainBlockAllocator->freeBlock(m_arr, m_capacity * 4);
 }
