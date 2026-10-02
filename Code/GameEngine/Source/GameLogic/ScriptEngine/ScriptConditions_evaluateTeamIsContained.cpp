@@ -9,8 +9,8 @@
 // Object +0x274 non-null. The donor's AI-exit refinement is kept: it only runs
 // when isContained is false, so `isContained && ...` folds away entirely (no
 // load survives in BFME2), but it is what makes MSVC materialise the bool
-// (setne/test) as retail does. The m_ai slot below is therefore never read
-// and its BFME2 offset is not asserted.
+// (setne/test) as retail does. The m_ai slot is +0x258, proven by the kept
+// ScriptActions_doTeamFaceWaypoint copy of getAIUpdateInterface.
 #include "ascii_string.h"
 class Parameter
 {
@@ -32,9 +32,10 @@ public:
     void *getContainedBy() const { return m_containedBy; }
     AIUpdateInterface *getAIUpdateInterface() const { return m_ai; }
 private:
-    unsigned char m_pad[0x274];
+    unsigned char m_pad[0x258];
+    AIUpdateInterface *m_ai; // +0x258 (retail-proven by the kept ScriptActions_doTeamFaceWaypoint row)
+    unsigned char m_pad25C[0x274 - 0x25C];
     void *m_containedBy; // +0x274
-    AIUpdateInterface *m_ai; // offset not asserted (never read, see above)
 };
 template<class OBJCLASS>
 class DLINK_ITERATOR
