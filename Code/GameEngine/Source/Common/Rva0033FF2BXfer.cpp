@@ -257,3 +257,7 @@ void Rva0033FF2B::xfer(Xfer *xfer)
 		*xfer == m_2C;
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?xfer@AIInternalMoveToState@@UAEXPAVXfer@@@Z=?xfer@Rva0033FF2B@@MAEXPAVXfer@@@Z")

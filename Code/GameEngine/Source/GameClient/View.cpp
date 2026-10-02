@@ -308,3 +308,7 @@ void View::xfer( Xfer *xfer )
 	lookAt( &viewPos );
 
 }  // end xfer
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?setDesiredSpeed@AIUpdateInterface@@QAEXM@Z=?setHeightAboveGround@View@@UAEXM@Z")
