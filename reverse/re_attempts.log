@@ -5522,3 +5522,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva002A3FAF@Rva002A3FAF@@QAEXPAX@Z	0x002A3FAF	158	blocked	hash-map insert plus dup YAXXZ callee needs donor layout t=10 model=muse-03
 ?rva0043B73D@Rva0043B725@@QAEXXZ	0x0043B73D	295	partial	ebx-edi swap node vs keyPtr plus this-curFrame slot swap and 2 missing mov ecx-this before Clear t=28 model=muse-08 score=0.9 stash=reverse/attempts/0x0043b73d.cpp
 ??0Rva0043B1C9Tree@@QAE@XZ	0x0043B69C	25	partial	second lea ebp-2 vs retail ebp-1; two dummies give two leas 25B but second offset off; single dummy CSEs to one lea 22B t=18 model=muse-08 score=0.96 stash=reverse/attempts/0x0043b69c.cpp
+?Rva00084B18Func@@YAXXZ	0x00084B18	237	blocked	register args in edi esi plus 4 stack pushes but only 2 read; virtual calls at 0xC8 and 0xCC plus SSE sqrt; no standard convention passes this in edi t=10 model=muse-08
