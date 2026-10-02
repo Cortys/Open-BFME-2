@@ -5806,3 +5806,4 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ??0Rva0052CD81@@QAE@ABV0@@Z	0x0052CD81	96	partial	extra push ecx and tag at ebp-0xd vs ebp+0xb reuse no zero via custom empty-ctor tag temp; 97 vs 96B 39 vs 38 insns t=25 model=muse-02 score=0.95 stash=reverse/attempts/0x0052cd81.cpp
 ?rva00496CA8@Rva00496CA8@@QAEXH@Z	0x00496CA8	155	partial	exact code with outer-ptr esi plus G7 unsigned-char second param but gate needs EHMM while row is HHMM at 0x002724FD needs central retype t=20 model=muse-05 score=0.99 stash=reverse/attempts/0x00496ca8.cpp
 ?rva00511ADF@Rva00511ADF@@QAEXHPAD_N@Z	0x00511AD4	11	blocked	ghidra split true 325B at AD4 test-eax vs cmp-ebx at 7d tried 4 phrasings no gain stash 0.99 best t=25 model=muse-05
+?rva00072988@Rva00072988@@QAEEHH@Z	0x00072988	68	partial	and al plus movzx vs and eax t=15 model=muse-07 score=0.96 stash=reverse/attempts/0x00072988.cpp
