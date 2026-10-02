@@ -101,6 +101,10 @@ private:
 	static FrameName *m_frameNames;
 };
 
+// Profile::firstPatternEntry: VA 0x00E0C1E4 (.data zero-fill); its 4-byte
+// pointer ends at the next known global, m_frameNames at 0x00E0C1E8.
+Profile::PatternListEntry *Profile::firstPatternEntry;
+
 // ?StartRange@Profile@@SAXPBD@Z
 void Profile::StartRange(const char *range)
 {
