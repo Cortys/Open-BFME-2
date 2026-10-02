@@ -40,3 +40,18 @@ void Rva005C7A29::rva005C7A29(bool show)
 	Rva0050E9FEAptCall(TheRva00222A8BTarget, m_08, prefix, "SetAutoAbilityOverlayState", &which);
 	m_54 = show;
 }
+
+class Rva005C7C5D
+{
+public:
+	void rva005C7C5D(bool show);
+
+private:
+	char _pad0[4];
+	Rva005C7A29 *m_04;
+};
+
+void Rva005C7C5D::rva005C7C5D(bool show)
+{
+	return m_04->rva005C7A29(show);
+}
