@@ -537,7 +537,7 @@ static Bool doSingleBoneName(RenderObjClass* robj, const AsciiString& boneName, 
 		BONEPOS_LOG(("Caching bone %s (index %d)\n", boneNameTmp.str(), info.boneIndex));
 		BONEPOS_DUMPMATRIX3D(&(info.mtx));
 
-		map[NAMEKEY(boneNameTmp)] = info;
+		map[NAMEKEY(boneNameTmp.str())] = info;
 		foundAsBone = true;
 	}
 
@@ -549,7 +549,7 @@ static Bool doSingleBoneName(RenderObjClass* robj, const AsciiString& boneName, 
 //DEBUG_LOG(("added bone %s\n",tmp.str()));
 			BONEPOS_LOG(("Caching bone %s (index %d)\n", tmp.str(), info.boneIndex));
 			BONEPOS_DUMPMATRIX3D(&(info.mtx));
-			map[NAMEKEY(tmp)] = info;
+			map[NAMEKEY(tmp.str())] = info;
 			foundAsBone = true;
 		}
 		else
@@ -565,7 +565,7 @@ static Bool doSingleBoneName(RenderObjClass* robj, const AsciiString& boneName, 
 //DEBUG_LOG(("added subobj %s\n",boneNameTmp.str()));
 			BONEPOS_LOG(("Caching bone from subobject %s (index %d)\n", boneNameTmp.str(), info.boneIndex));
 			BONEPOS_DUMPMATRIX3D(&(info.mtx));
-			map[NAMEKEY(boneNameTmp)] = info;
+			map[NAMEKEY(boneNameTmp.str())] = info;
 			foundAsSubObj = true;
 		}
 
@@ -577,7 +577,7 @@ static Bool doSingleBoneName(RenderObjClass* robj, const AsciiString& boneName, 
 //DEBUG_LOG(("added subobj %s\n",tmp.str()));
 				BONEPOS_LOG(("Caching bone from subobject %s (index %d)\n", tmp.str(), info.boneIndex));
 				BONEPOS_DUMPMATRIX3D(&(info.mtx));
-				map[NAMEKEY(tmp)] = info;
+				map[NAMEKEY(tmp.str())] = info;
 				foundAsSubObj = true;
 			}
 			else
@@ -841,24 +841,24 @@ void ModelConditionInfo::validateWeaponBarrelInfo() const
 				// try the unadorned names
 				WeaponBarrelInfo info;
 				if (!recoilBoneName.isEmpty())
-					findPristineBone(NAMEKEY(recoilBoneName), &info.m_recoilBone);
+					findPristineBone(NAMEKEY(recoilBoneName.str()), &info.m_recoilBone);
 
 				if (!mfName.isEmpty())
-					findPristineBone(NAMEKEY(mfName), &info.m_muzzleFlashBone);
+					findPristineBone(NAMEKEY(mfName.str()), &info.m_muzzleFlashBone);
 
 #if defined(_DEBUG) || defined(_INTERNAL)
 				if (info.m_muzzleFlashBone)
 					info.m_muzzleFlashBoneName = mfName;
 #endif
 
-				const Matrix3D* plbMtx = plbName.isEmpty() ? NULL : findPristineBone(NAMEKEY(plbName), NULL);
+				const Matrix3D* plbMtx = plbName.isEmpty() ? NULL : findPristineBone(NAMEKEY(plbName.str()), NULL);
 				if (plbMtx != NULL)
 					info.m_projectileOffsetMtx = *plbMtx;
 				else
 					info.m_projectileOffsetMtx.Make_Identity();
 
 				if (!fxBoneName.isEmpty())
-					findPristineBone(NAMEKEY(fxBoneName), &info.m_fxBone);
+					findPristineBone(NAMEKEY(fxBoneName.str()), &info.m_fxBone);
 				
 				if (info.m_fxBone != 0 || info.m_recoilBone != 0 || info.m_muzzleFlashBone != 0 || plbMtx != NULL)
 				{
@@ -1504,8 +1504,8 @@ void W3DModelDrawModuleData::parseConditionState(INI* ini, void *instance, void 
 		{
 		  AsciiString firstNm = ini->getNextToken(); firstNm.toLower();
 		  AsciiString secondNm = ini->getNextToken(); secondNm.toLower();
-			NameKeyType firstKey = NAMEKEY(firstNm);
-			NameKeyType secondKey = NAMEKEY(secondNm);
+			NameKeyType firstKey = NAMEKEY(firstNm.str());
+			NameKeyType secondKey = NAMEKEY(secondNm.str());
 
 			if (firstKey == secondKey)
 			{
@@ -4402,4 +4402,3 @@ void W3DModelDrawModuleData::xfer( Xfer *x )
 void W3DModelDrawModuleData::loadPostProcess( void )
 {
 }
-
