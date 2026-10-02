@@ -47935,3 +47935,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0022DB29@Rva0022DB29@@QAEXXZ,,0x0022DB29,73,Code/GameEngine/Source/Common/Rva0022D9B7Delete.cpp,matched,chain clear via bucket array plus callee delete evidence no comma variant
 ?rva00495DD4@AutoPickUpUpdate@@QAE_NXZ,,0x00495DD4,36,Code/GameEngine/Source/GameLogic/Object/Update/Rva00495DD4.cpp,matched,AutoPickUpUpdate scan predicate via RunFromButton plus ScanDelayTime and countdown
 ?Rva0040B1CDCopy@@YAPAVRva0040AF66@@PAV1@00@Z,,0x0040B1CD,38,Code/GameEngine/Source/Common/Rva0040B1CDCopy.cpp,matched,uninit copy via rowed Construct 0x0040B17B stride 0x68 callers 0x0040B929 0x0040B974 same 38B as 0x0040B2FD
+?rva004F597F@Rva004F599E@@QAEXXZ,,0x004F597F,31,Code/GameEngine/Source/Common/Rva004F599EClear.cpp,matched,zeroes two int21 blocks caller 0x004F599E
