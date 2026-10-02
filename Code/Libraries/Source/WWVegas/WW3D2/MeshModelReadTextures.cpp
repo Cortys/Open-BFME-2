@@ -26,19 +26,14 @@ public:
 	bool Open_Chunk(void);
 };
 
-class TextureBaseClass
-{
-public:
-	void Release_Ref(void);
-};
-
-class TextureClass : public TextureBaseClass
+class TextureClass
 {
 public:
 	void Add_Ref(void)
 	{
 		++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
 	}
+	void Release_Ref(void);
 };
 
 class BfmeHandleCX
