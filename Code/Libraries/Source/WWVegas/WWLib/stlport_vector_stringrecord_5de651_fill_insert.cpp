@@ -29,14 +29,16 @@ template <> void _Construct<BfmeStringRecord005DDD40, BfmeStringRecord005DDD40>(
 
 // Retail calls the dispatch layers out of line. noinline forwarders keep them
 // out of line as retail has them; bodies are verbatim generic.
+// LINK-DUP: inline makes these copies select-any so the owners' plain
+// definitions link (see packet).
 template <>
-__declspec(noinline) BfmeStringRecord005DDD40 *__copy_backward_ptrs<BfmeStringRecord005DDD40 *, BfmeStringRecord005DDD40 *>(BfmeStringRecord005DDD40 *__first, BfmeStringRecord005DDD40 *__last, BfmeStringRecord005DDD40 *__result, const __false_type &)
+inline BfmeStringRecord005DDD40 *__copy_backward_ptrs<BfmeStringRecord005DDD40 *, BfmeStringRecord005DDD40 *>(BfmeStringRecord005DDD40 *__first, BfmeStringRecord005DDD40 *__last, BfmeStringRecord005DDD40 *__result, const __false_type &)
 {
 	return __copy_backward(__first, __last, __result, random_access_iterator_tag(), (int *)0);
 }
 
 template <>
-__declspec(noinline) BfmeStringRecord005DDD40 *uninitialized_fill_n<BfmeStringRecord005DDD40 *, unsigned int, BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40 *__first, unsigned int __n, const BfmeStringRecord005DDD40 &__x)
+inline BfmeStringRecord005DDD40 *uninitialized_fill_n<BfmeStringRecord005DDD40 *, unsigned int, BfmeStringRecord005DDD40>(BfmeStringRecord005DDD40 *__first, unsigned int __n, const BfmeStringRecord005DDD40 &__x)
 {
 	return __uninitialized_fill_n(__first, __n, __x, __false_type());
 }
