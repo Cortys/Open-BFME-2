@@ -96,9 +96,13 @@ private:
 
 #define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
 #define LogicFramesPerSecond g_Va00DBA4E4
-#define StallStartTime (*(unsigned long *)0x00DFEA2C)
-#define LastAdvanceTime (*(unsigned long *)0x00DFEA30)
-#define LastStallFrame (*(unsigned int *)0x00DFEA38)
+
+// g_00DFEA2C: VA 0x00DFEA2C (.data(bss)); retail initial value is zero.
+unsigned long g_00DFEA2C = 0;
+// g_00DFEA30: VA 0x00DFEA30 (.data(bss)); retail initial value is zero.
+unsigned long g_00DFEA30 = 0;
+// g_00DFEA38: VA 0x00DFEA38 (.data(bss)); retail initial value is zero.
+unsigned int g_00DFEA38 = 0;
 
 // The compiler's external-data form is intentional: retail increments this
 // global with the one-byte `inc [absolute]` encoding.  The byte verifier binds
@@ -116,7 +120,7 @@ int NetworkInterface::getFrameAdvanceCount(void)
 	{
 		if (!m_stallTimerRunning)
 		{
-			StallStartTime = timeGetTime();
+			g_00DFEA2C = timeGetTime();
 			m_stallTimerRunning = true;
 		}
 
@@ -140,10 +144,10 @@ int NetworkInterface::getFrameAdvanceCount(void)
 
 			m_stallTimerRunning = false;
 		}
-		else if (currentFrame != LastStallFrame)
+		else if (currentFrame != g_00DFEA38)
 		{
 			++m_stallCount;
-			LastStallFrame = TheGameLogic->frame;
+			g_00DFEA38 = TheGameLogic->frame;
 		}
 		return allowance;
 	}
@@ -174,6 +178,6 @@ int NetworkInterface::getFrameAdvanceCount(void)
 		NetworkTimingOverruns = 0;
 	}
 
-	LastAdvanceTime = timeGetTime();
+	g_00DFEA30 = timeGetTime();
 	return 1;
 }
