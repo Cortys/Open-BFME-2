@@ -251,14 +251,8 @@ bool														WW3D::Lite = false;
 **
 ***********************************************************************************/
 
-// ?Set_NPatches_Gap_Filling_Mode@WW3D@@ present-unmatched
-void WW3D::Set_NPatches_Gap_Filling_Mode(NPatchesGapFillingModeEnum mode)
-{
-	if (NPatchesGapFillingMode!=mode) {
-		NPatchesGapFillingMode=mode;
-		TheDX8MeshRenderer.Invalidate();
-	}
-}
+// WW3D::Set_NPatches_Gap_Filling_Mode: defined in
+// WW3D_SetNPatchesGapFillingModeThunk.cpp (its row's unit).
 
 // WW3D::Set_NPatches_Level: defined in WW3D_SetNPatchesLevelThunk.cpp (its row's unit).
 

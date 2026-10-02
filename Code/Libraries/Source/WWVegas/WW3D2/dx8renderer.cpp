@@ -2304,27 +2304,9 @@ static void Invalidate_FVF_Category_Container_List(FVFCategoryList& list)
 	}
 }
 
-// ?Invalidate@DX8MeshRendererClass@@ present-unmatched
-void DX8MeshRendererClass::Invalidate( bool shutdown)
-{
-	WWMEMLOG(MEM_RENDERER);
-	_RegisteredMeshList.Reset_List();
-
-	for (int i=0;i<texture_category_container_lists_rigid.Count();++i) {
-		Invalidate_FVF_Category_Container_List(*texture_category_container_lists_rigid[i]);
-		delete texture_category_container_lists_rigid[i];
-	}
-	if (texture_category_container_list_skin) {
-		Invalidate_FVF_Category_Container_List(*texture_category_container_list_skin);
-		delete texture_category_container_list_skin;
-		texture_category_container_list_skin=NULL;
-	}
-
-	if (!shutdown)
-		texture_category_container_list_skin = W3DNEW FVFCategoryList;
-
-	texture_category_container_lists_rigid.Delete_All();
-}
+// DX8MeshRendererClass::Invalidate: the byte-exact BFME2 definition is in
+// DX8MeshRendererClass_Invalidate_Thunk.cpp. The ZH definition formerly here
+// reset RegisteredMeshList, which retail omits, and duplicated that provider.
 // ?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A: the global at VA 0xdf363c is ?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A.
 #pragma comment(linker, "/alternatename:?RendererPtr00DF363C@@3PAURendererFVFDeleteListView@@A=?TheDX8MeshRenderer@@3PAVDX8MeshRendererClass@@A")
 
