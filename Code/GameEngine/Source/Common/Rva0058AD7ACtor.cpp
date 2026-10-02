@@ -9,7 +9,7 @@ class Rva0058AD7A
 {
 public:
 	Rva0058AD7A(int x);
-	virtual ~Rva0058AD7A();
+	virtual ~Rva0058AD7A() {}
 
 private:
 	int m_04;
