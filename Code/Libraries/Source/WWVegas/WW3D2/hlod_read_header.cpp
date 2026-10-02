@@ -12,6 +12,18 @@
 #include "chunkio.h"
 #include <string.h>
 
+// Make our vector-deleting-dtor copy identical to hlod.cpp's kept copy: that
+// TU defines ~SubObjectArrayClass in-TU as { Reset(); }, so its ??_E inlines
+// the dtor to a direct Reset call, while this TU calling the out-of-line dtor
+// emits a differing ??_E. Defining the dtor inline here lets our ??_E inline
+// the same way; the inline ??1 is a COMDAT the link discards for hlod.cpp's
+// regular copy.
+// ??1SubObjectArrayClass@HLodDefClass@@QAE@XZ present-unmatched
+inline HLodDefClass::SubObjectArrayClass::~SubObjectArrayClass(void)
+{
+	Reset();
+}
+
 bool HLodDefClass::read_header(ChunkLoadClass & cload)
 {
 	/*
