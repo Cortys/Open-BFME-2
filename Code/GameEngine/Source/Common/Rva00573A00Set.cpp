@@ -11,8 +11,9 @@ struct Coord3D
 	float y;
 	float z;
 };
-struct TerrainLogic
+class TerrainLogic
 {
+	public:
 	virtual void _0();
 	virtual void _1();
 	virtual void _2();
@@ -21,7 +22,7 @@ struct TerrainLogic
 	virtual void _5();
 	virtual float getHeight(float x, float y, int z);
 };
-#define TheTerrainLogic (*(TerrainLogic **)0x00DFEC50)
+extern class TerrainLogic *TheTerrainLogic;
 struct Rva00573A00
 {
 	void rva00573A00(const Coord3D *p);
