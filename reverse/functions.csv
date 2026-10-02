@@ -48214,3 +48214,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva0020D638@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0020D638,68,Code/GameEngine/Source/Common/Rva0020D638Insert.cpp,matched,hashtable insert via resize plus bucketIndex plus thiscall twin alloc
 ?rva003A2F08@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UTreeHintPayload00207343@@@_STL@@@Z,,0x003A2F08,68,Code/Libraries/Source/WWVegas/WWLib/Rva003A2F08Insert.cpp,matched,hashtable insert via reserve bucketIndex new_node same table Rva000427195
 ??_GRva0022167C@@QAEPAXI@Z,,0x0022168A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022167C.cpp,matched,deleting dtor via rowed base dtor slot0 vtable 0x007E6BA8
+?rva005FB6E2@Rva005FB6E2@@QAEXXZ,,0x005FB6E2,71,Code/GameEngine/Source/Common/Rva005FB6E2.cpp,matched,Apt eliminated setter via rowed AptCall plus team-plus-8 or empty plus TheRva00222A8BTarget
