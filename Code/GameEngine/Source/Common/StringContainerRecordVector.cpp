@@ -49,3 +49,7 @@ BfmeRecordRange004B205::~BfmeRecordRange004B205()
 		free(m_begin);
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?_M_clear@?$vector@URva0004B22EElement@@V?$allocator@URva0004B22EElement@@@_STL@@@_STL@@IAEXXZ=??1BfmeRecordRange004B205@@QAE@XZ")

@@ -26,3 +26,7 @@ BfmeStrV14 *BfmeStrV14::bfmeAssignV14(char *first, char *last, unsigned n, char 
 	}
 	return this;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeFillInsV38@BfmeStrV38@@QAEPAV1@PAD0ID@Z=?bfmeAssignV14@BfmeStrV14@@QAEPAV1@PAD0ID@Z")

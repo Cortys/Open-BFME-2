@@ -568,3 +568,8 @@ GridWSEnvironmentMapperClass::GridWSEnvironmentMapperClass(const GridWSEnvMapper
 	GridWSEnvMapperClass(src)
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeBaseF1050@BfmeF1050@@QAEXHHH@Z=??0GridTextureMapperClass@@QAE@ABVINIClass@@PBDI@Z")
+#pragma comment(linker, "/alternatename:?bfmeInit1039@BfmeC1039@@QAEXPAVBfmeD1039@@@Z=??0GridWSEnvMapperClass@@QAE@ABV0@@Z")

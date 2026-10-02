@@ -65,3 +65,7 @@ void Shadow::rva00330995(Int color)
 // address keeps this unit's copy for its row; these pointers are not retail
 // data.
 void (Shadow::*_bfmeInlineAnchor_Shadow_setOpacity_0)(Int value) = &Shadow::setOpacity;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?SetTexture@Rva00330995@@QAEXPAX@Z=?rva00330995@Shadow@@QAEXH@Z")
