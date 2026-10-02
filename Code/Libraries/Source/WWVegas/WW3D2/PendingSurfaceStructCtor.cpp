@@ -83,6 +83,16 @@ public:
 	};
 };
 
-Render2DSentenceClass::PendingSurfaceStruct::PendingSurfaceStruct(void)
+inline Render2DSentenceClass::PendingSurfaceStruct::PendingSurfaceStruct(void)
 {
 }
+
+// LINK-OWNER anchor: this unit owns ??0PendingSurfaceStruct; other units emit
+// it inline, so the owner must also emit a select-any (inline) copy.
+#pragma inline_depth(0)
+// ?bfmeEmitPendingSurfaceStructCtor@@YAXPAUPendingSurfaceStruct@Render2DSentenceClass@@@Z present-unmatched
+void bfmeEmitPendingSurfaceStructCtor(Render2DSentenceClass::PendingSurfaceStruct *p)
+{
+	p->Render2DSentenceClass::PendingSurfaceStruct::PendingSurfaceStruct();
+}
+#pragma inline_depth()
