@@ -7051,3 +7051,11 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?_M_clear@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@IAEXXZ,0x0040B5FC,destroy plus free 0x68 stride; retail REL32 target of placed overflow 0x0040B8E8
 ?rva0043B30F@Rva0043B2E2@@QAEPAXPBX@Z,0x0043B30F,ICF twin of free NewNode for tree insert call with this same 0x9C node and pair copy
 ??$__copy@PAUVideo@@PAU1@H@_STL@@YAPAUVideo@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x00689450,native removeVideo call at 0x00689D80; typed 28B Video vector copy reproduces full 125B held bfmeCopyVIA body and its three string assignment calls
+?Enum@IdList@ProfileFuncLevel@@QBE_NIAAVId@2@PAI@Z,0x006C8770,CSV caller enumeration; boolean empty-data donor; target ret 12 and same held constant predicate ABI
+?GetFrameCount@Profile@@SAIXZ,0x006C53B0,CSV frame loops; independently held getter reads Profile frame count at VA 0xE0C1F4; donor semantic name
+?GetTime@Id@ProfileFuncLevel@@QBE_KI@Z,0x006C8780,CSV total-time calls; native 64-bit zero with ret 4; donor empty-data path folds with GetCalls
+?GetFunctionTime@Id@ProfileFuncLevel@@QBE_KI@Z,0x006C8780,CSV pure-time calls; native 64-bit zero with ret 4; donor empty-data path folds with GetCalls
+?GetFunction@Id@ProfileFuncLevel@@QBEPBDXZ,0x0065CE90,CSV name/address/source/line operand positions; donor empty-data getter folds with held 32-bit zero body; thiscall no stack args
+?GetSource@Id@ProfileFuncLevel@@QBEPBDXZ,0x0065CE90,CSV name/address/source/line operand positions; donor empty-data getter folds with held 32-bit zero body; thiscall no stack args
+?GetAddress@Id@ProfileFuncLevel@@QBEIXZ,0x0065CE90,CSV name/address/source/line operand positions; donor empty-data getter folds with held 32-bit zero body; thiscall no stack args
+?GetLine@Id@ProfileFuncLevel@@QBEIXZ,0x0065CE90,CSV name/address/source/line operand positions; donor empty-data getter folds with held 32-bit zero body; thiscall no stack args
