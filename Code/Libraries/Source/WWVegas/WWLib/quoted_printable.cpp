@@ -165,57 +165,7 @@ AsciiString AsciiStringToQuotedPrintable(AsciiString original)
 }
 
 // Convert ascii quoted-printable strings into unicode strings
-// ?QuotedPrintableToUnicodeString present-unmatched
-UnicodeString QuotedPrintableToUnicodeString(AsciiString original)
-{
-	static unsigned short dest[1024];
-	int i=0;
-
-	unsigned char *c = (unsigned char *)dest;
-	const unsigned char *src = (const unsigned char *)original.str();
-
-	while (*src && i<1023)
-	{
-		if (*src == MAGIC_CHAR)
-		{
-			if (src[1] == '\0')
-			{
-				// string ends with MAGIC_CHAR
-				break;
-			}
-			*c = hexDigitToInt(src[1]);
-			src++;
-			if (src[1] != '\0')
-			{
-				*c = *c<<4;
-				*c = *c | hexDigitToInt(src[1]);
-				src++;
-			}
-		}
-		else
-		{
-			*c = *src;
-		}
-		src++;
-		c++;
-	}
-
-	// Fixup odd-length strings
-	if ((c-(unsigned char *)dest)%2)
-	{
-		// OK
-	}
-	else
-	{
-		*c = '\0';
-		c++;
-	}
-
-	*c = 0;
-
-	UnicodeString out(dest);
-	return out;
-}
+// Owned by quoted_printable_unicode.cpp.
 
 // Convert ascii quoted-printable strings into ascii strings
 AsciiString QuotedPrintableToAsciiString(AsciiString original)
