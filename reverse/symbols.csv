@@ -2574,7 +2574,7 @@ name,address,notes
 ?getFont@FontLibrary@@QAEPAVGameFont@@PBVAsciiString@@M_N@Z,0x002189E1,FontLibrary getFont helper taking name pointer plus float size plus bool bold; parseFont REL32 plus dozens of other font fetch sites read the same address
 ?getFrameCommandCount@FrameData@@QAEIXZ,0x00421795,BFME2 frame-ring expected-command accessor used by readiness checks
 ?getFrameCommandCount@FrameDataManager@@QAEII@Z,0x0058B78F,BFME2 local frame-ring expected-command accessor for the requested logic frame
-?getGoalObject@StateMachine@@QAEPAVObject@@XZ,0x005E68C0,address read from the REL32 displacement at a placed body
+?getGoalObject@StateMachine@@QAEPAVObject@@XZ,0x004D7726,m_machine->getGoalObject called by AIDockState::onEnter at 0x003416A7
 ?getGoalObject@TurretStateMachine@@QAEPAVObject@@XZ,0x004D7726,TheGameLogic ID lookup at TurretAI plus-0x14 machine plus-0x20 called from friend_getTurretTarget retail REL32 at 0x004D821D
 ?getInstance@?$ConcreteModuleClass@UOrthoEmissionVelocityModuleTag@FXParticleSystem@@@FXParticleSystem@@SAABV12@XZ,0x003AB053,exported BFME2 helper called by ConcreteModuleTemplate<OrthoEmissionVelocityModuleTag>::getClass
 ?getInstance@?$ConcreteModuleClass@UPointEmissionVolumeModuleTag@FXParticleSystem@@@FXParticleSystem@@SAABV12@XZ,0x003AB3AA,exported BFME2 helper called by ConcreteModuleTemplate<PointEmissionVolumeModuleTag>::getClass
@@ -7215,3 +7215,5 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?allocate@?$allocator@VRva004E18A2@@@_STL@@QBEPAVRva004E18A2@@IPBX@Z,0x002226BE,ICF 16-byte allocator fold identical 28B shl-4 call site 0x00565F39 via rowed BfmeE16
 ?_M_clear@?$vector@VRva004E18A2@@V?$allocator@VRva004E18A2@@@_STL@@@_STL@@IAEXXZ,0x00565A60,vector Rva004E18A2 clear is rowed tidy call site 0x00565FA3 identical 30B shape
 ?setCompletedWaypoint@AIUpdateInterface@@QAEXPBVWaypoint@@@Z,0x00268AAA,ZH/BFME1 AIUpdateInterface::setCompletedWaypoint; called by AIFollowWaypointPathExactState::onExit at 0x0034A14F
+?getDockUpdateInterface@Object@@QAEPAVDockUpdateInterface@@XZ,0x0028BCB4,Object::getDockUpdateInterface called by AIDockState::onEnter at 0x003416B4
+??0AIDockMachine@@QAE@PAVObject@@@Z,0x005448A1,AIDockMachine constructor called by AIDockState::onEnter at 0x003416F5

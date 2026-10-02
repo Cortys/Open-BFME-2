@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /EHsc
 //
 // AIDockState::onExit, retail 0x00341723 (77 bytes): slot 5 of vtable
 // 0x00C11368, whose slot-2 name getter returns AIDockState.
@@ -33,6 +33,7 @@ inline StateReturnType CONVERT_SLEEP_TO_CONTINUE(StateReturnType s)
 {
 	return IS_STATE_SLEEP(s) ? STATE_CONTINUE : s;
 }
+class DockUpdateInterface;
 class Object;
 class AIUpdateInterface
 {
@@ -45,6 +46,7 @@ class Object
 {
 public:
 	AIUpdateInterface *getAI() { return m_ai; }
+	DockUpdateInterface *getDockUpdateInterface();
 	unsigned char m_objectFields00[0x258];
 	AIUpdateInterface *m_ai; // +0x258
 };
@@ -53,12 +55,14 @@ class StateMachine
 public:
 	virtual void slot00();
 	Object *getOwner() { return m_owner; }
+	Object *getGoalObject();
 	unsigned char m_machineFields04[0x10];
 	Object *m_owner; // +0x14
 };
 class AIDockMachine
 {
 public:
+	AIDockMachine(Object *owner);
 	virtual ~AIDockMachine();
 	virtual void slot04();
 	virtual void slot08();
@@ -75,6 +79,8 @@ public:
 	virtual void slot34();
 	virtual void setGoalObject(Object *goalObject);
 	virtual void halt();
+private:
+	unsigned char m_machinePad[0x40 - sizeof(void *)];
 };
 class State
 {
@@ -88,12 +94,29 @@ protected:
 class AIDockState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 	Object *getMachineOwner() { return m_machine->getOwner(); }
 private:
 	AIDockMachine *m_dockMachine; // +0x20
 };
+StateReturnType AIDockState::onEnter()
+{
+	Object *dockWithMe = m_machine->getGoalObject();
+	if (!dockWithMe)
+		return STATE_FAILURE;
+	if (!dockWithMe->getDockUpdateInterface())
+		return STATE_FAILURE;
+
+	AIUpdateInterface *ai = getMachineOwner()->getAI();
+	if (ai)
+		ai->ignoreObstacle(dockWithMe);
+
+	m_dockMachine = new AIDockMachine(getMachineOwner());
+	m_dockMachine->setGoalObject(dockWithMe);
+	return m_dockMachine->initDefaultState();
+}
 void AIDockState::onExit(StateExitType status)
 {
 	if (m_dockMachine)
