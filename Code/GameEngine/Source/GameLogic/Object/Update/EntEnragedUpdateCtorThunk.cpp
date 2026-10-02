@@ -38,6 +38,7 @@ public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData)
 		: PB_DeepBase(thing, moduleData), m_field14(0),
 		  m_field18(-1), m_field1C(-1) {}
+	virtual ~UpdateModule();
 
 private:
 	unsigned int m_field14;
