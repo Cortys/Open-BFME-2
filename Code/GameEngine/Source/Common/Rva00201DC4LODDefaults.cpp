@@ -103,3 +103,42 @@ Rva00201D79BenchProfile::Rva00201D79BenchProfile()
 }
 
 typedef char Rva00201D79StrideCheck[sizeof(Rva00201D79BenchProfile)==0x14 ? 1 : -1];
+
+// BFME 1's enclosing GameLODManager constructor guides the array composition
+// and default-initialization purpose. This address view uses the independently
+// decoded BFME 2 array counts/strides and every scalar store, not the donor's
+// overall layout. Target Ghidra boundary [0x00201EAC..0x0020200D) is 353B;
+// callbacks above and array iterator0x1423 are separately verified recoveries.
+struct Rva00201EACLODManager
+{
+    Rva00201EACLODManager();
+    Rva00201DC4LODInfo staticInfo[6];
+    Rva00201E2BLODInfo dynamicInfo[5];
+    Rva00201E45LODInfo audioInfo[2];
+    Rva00201D48LODPreset presets[5][32];
+    Rva00201D79BenchProfile benchmarks[16];
+    int word1768, word176C, word1770, word1774, word1778, word177C;
+    int word1780, word1784, word1788, word178C, word1790, word1794, word1798;
+    float word179C;
+    int word17A0, word17A4;
+    bool flag17A8, flag17A9, flag17AA;
+    int counts17AC[5];
+    int word17C0, word17C4, word17C8, word17CC, word17D0, word17D4, word17D8;
+    float word17DC, word17E0, word17E4, word17E8;
+    int word17EC, word17F0;
+};
+
+Rva00201EACLODManager::Rva00201EACLODManager()
+{
+    word1768=-1; word176C=3; word1770=-1; word1774=2;
+    word1778=3; word177C=3; word1780=2; word1784=2; word1788=3;
+    word178C=0; word1790=0; word1794=0; word1798=0; word179C=1.0f;
+    word17A0=0; word17A4=0; flag17A8=false; flag17A9=false; flag17AA=false;
+    word17C0=0; word17C4=-1; word17C8=0; word17CC=0;
+    word17D0=0; word17D4=0; word17D8=0;
+    word17DC=0.0f; word17E0=0.0f; word17E4=0.0f; word17E8=0.0f;
+    word17EC=400; word17F0=1500;
+    for (int i=0;i<5;++i) counts17AC[i]=0;
+}
+
+typedef char Rva00201EACSizeCheck[sizeof(Rva00201EACLODManager)==0x17F4 ? 1 : -1];
