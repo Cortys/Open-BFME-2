@@ -72,3 +72,7 @@ void BfmeH1052::forward00800C80(BfmeRecord00800C80 *record)
 {
 	bfmeDo1052(1, &record->m_item, record->m_value);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDo1052@Rva00800E50Owner@@QAEXHPAURva00800E50Stamp@@H@Z=?bfmeDo1052@BfmeH1052@@QAEXHPAVBfmeI1052@@H@Z")

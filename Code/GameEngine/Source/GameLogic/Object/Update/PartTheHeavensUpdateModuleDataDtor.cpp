@@ -46,3 +46,7 @@ private:
 PartTheHeavensUpdateModuleData::~PartTheHeavensUpdateModuleData()
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva002BB6BE20Rec@@QAE@XZ=??1Member44@@QAE@XZ")

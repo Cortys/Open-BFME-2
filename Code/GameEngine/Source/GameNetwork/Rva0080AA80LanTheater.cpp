@@ -114,3 +114,7 @@ void Rva00803620Sink::rva0080AA80( Rva00809500Entry *entry )
 		Rva007F93E0( &reply, "->L", m_field10 );
 	}
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeCopyBZD@@YAXPADPBDI@Z=?ji_0062983e@@YAXXZ")

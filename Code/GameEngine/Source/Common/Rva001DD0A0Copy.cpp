@@ -29,3 +29,7 @@ Rva001DD0A0::Rva001DD0A0(const Rva001DD0A0 &o)
       f24(o.f24), f28(o.f28), f2C(o.f2C), f30(o.f30)
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmePod52@@QAE@ABU0@@Z=??0Rva001DD0A0@@QAE@ABU0@@Z")

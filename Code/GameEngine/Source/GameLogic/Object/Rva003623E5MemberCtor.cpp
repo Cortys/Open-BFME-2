@@ -145,3 +145,7 @@ void Rva003623E5Member::rva00362192(Rva00045411BitSet first, BfmeFixedStorage000
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0Rva003623E5Filter@@QAE@XZ=??0Rva003623E5Member@@QAE@XZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?construct@Rva003623E5Member@@QAEXXZ=??0Rva003623E5Member@@QAE@XZ")
