@@ -35,6 +35,7 @@ class AnimationSoundClientBehaviorModuleData
 {
 public:
     AnimationSoundClientBehaviorModuleData();
+    virtual ~AnimationSoundClientBehaviorModuleData();
 
 private:
     AnimationSoundTree m_tree08;
