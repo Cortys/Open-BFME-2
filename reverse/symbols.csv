@@ -7232,3 +7232,6 @@ _D3DXQuaternionSlerp@16,0x0075B4C6,PE-named d3dx9_27.dll D3DXQuaternionSlerp std
 ??0?$hash_map@VAsciiString@@V1@U?$hash@VAsciiString@@@rts@@U?$equal_to@VAsciiString@@@_STL@@V?$allocator@U?$pair@$$CBVAsciiString@@V1@@_STL@@@5@@_STL@@QAE@XZ,0x0002DC1D,"STLport hash_map<AsciiString, AsciiString> default constructor called from INIMacroTable constructor 0x0002DC3C"
 ??0?$set@VAsciiString@@U?$less@VAsciiString@@@_STL@@V?$allocator@VAsciiString@@@3@@_STL@@QAE@XZ,0x000D3A71,"STLport set<AsciiString> default constructor called from INIMacroTable constructor 0x0002DC3C"
 ??1Rva002827F3@@QAE@XZ,0x0028279F,"destructor for Rva002827F3 called from Rva002833E7Holder dtor at 0x002833E7"
+??1LightPoint@@QAE@XZ,0x00425801,LightPoint destructor thunk called by Rva00425B75Delete at 0x00425B80
+??RRva00425B75Deleter@@QBEXPAVLightPoint@@@Z,0x00425B75,"thiscall functor spelling of Rva00425B75Delete called by for_each at 0x00425CBE"
+?_M_increment@?$_Deque_iterator_base@PAVLightPoint@@@_STL@@QAEXXZ,0x0042187F,"ICF twin of rowed _Deque_iterator_base<void*>::_M_increment at 0x0042187F called by for_each at 0x00425CD0"
