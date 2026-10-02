@@ -48494,3 +48494,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?erase@?$vector@UBfmeStringRecord00204A30@@V?$allocator@UBfmeStringRecord00204A30@@@_STL@@@_STL@@QAEPAUBfmeStringRecord00204A30@@PAU3@0@Z,,0x00207F40,51,Code/GameEngine/Source/Common/BfmeStringRecordErase00207F40.cpp,matched,range erase via rowed copy 0x00204A13 plus rowed Destroy 0x00206CBA shape as FXBoneInfo 0x00207F0D
 ?rva000E6FE3@Rva000E6FE3@@QAEX_N@Z,,0x000E6FE3,51,Code/GameEngine/Source/Common/Rva000E6FE3.cpp,matched,unlock lane byte loop stride 0xA0 count 0x4FB58 caller 0x000682D9
 ?rva005258B9@Rva005258B2@@QAEXPBVAsciiString@@@Z,,0x005258B9,7,Code/GameEngine/Source/Common/Rva005258B2Thunk.cpp,matched,chain forwarder via rowed 0x005255E2 caller 0x002D6A3D
+?rva0052518E@Rva0052518E@@QAEXPAX@Z,,0x0052518E,15,Code/GameEngine/Source/Common/Rva0052518E.cpp,matched,unlock two-level store via caller 0x002D36D0 unblocks 0x002D36C3
