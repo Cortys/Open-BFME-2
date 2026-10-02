@@ -5902,3 +5902,4 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?Rva002887B8Get@@YGHPBX0@Z	0x002887B8	25	blocked	ListNode m_val18 via m_next null check plus void dup call t=12 model=muse-spark
 ?Rva002887D1Get@@YGHPBX0@Z	0x002887D1	25	blocked	Twin of 0x002887B8 same void dup plus dead first arg plus preserved eax wall returns plus0x1C not plus0x18 t=3 model=muse-spark
 ?Rva0028879CGet@@YGHPBX0@Z	0x0028879C	28	blocked	Twin of 0x002887B8 same void dup plus dead first arg plus preserved eax wall returns plus0xFC t=3 model=muse-spark
+?rva005328E2@Rva005312BE@@QAEXPAURva005312BERect@@@Z	0x005328E2	230	partial	calls scalar new not array new for both allocations t=25 model=muse-03 score=0.99 stash=reverse/attempts/0x005328e2.cpp
