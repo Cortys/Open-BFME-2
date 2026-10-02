@@ -65,10 +65,11 @@ public:
 };
 
 class Rva004E2E58 : public Rva004E2990 {
+public:
     // Opaque span between the independently observed member at +8 and
     // string at +18. Its exact container extent is not yet established.
-    char unknown08[8];
-public:
+    // Second word is cleared by 0x003EF1B8 (and [esi+0x14],0 under /O1).
+    unsigned unknown08[2];
     ~Rva004E2E58();
     void rva004E21D5();
 };
@@ -146,12 +147,14 @@ class Rva003EF14A : public Rva003EF14ABase {
     Rva004E2E58 container08;
     AsciiString string18;
     AsciiString string1C;
-    char unknown20[0x2C];
+    char unknown20[0x28];
+    Rva003EF14ASecondary *link48;
     Rva003EF14ASecondary secondary4C;
 public:
     virtual void slot0();
     ~Rva003EF14A();
     void rva003EE9F1();
+    void rva003EF1B8();
 };
 
 Rva003EF14A::~Rva003EF14A()
@@ -170,6 +173,14 @@ void Rva003EF14A::rva003EE9F1()
         ref04->dropReference();
         ref04 = 0;
     }
+}
+
+void Rva003EF14A::rva003EF1B8()
+{
+    g_registryAtE02E88.rva002B7250((CreateAHeroData *)this);
+    link48 = &secondary4C;
+    rva003EE9F1();
+    container08.unknown08[1] = 0;
 }
 
 // Complete 60B boundary at 0x004E2199. Caller 4E21E9 supplies the node's
