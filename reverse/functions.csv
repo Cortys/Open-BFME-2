@@ -47293,3 +47293,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva00229A70Pick@@YAXPAH0@Z,,0x00229A70,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,ebp pair pick over its own int[4] tables VA 0xdba34c/0xdba33c; bytes equal the rowed ebp picker 0x003F10D0 except the two table operands
 ?Rva00229A9CPick@@YAXPAH0@Z,,0x00229A9C,44,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,esp pair pick over its own int[4] tables VA 0xdba36c/0xdba35c; bytes equal the rowed esp picker except the two table operands
 ??4Rva00564E0D@@QAEAAV0@AAV0@@Z,,0x000898B0,92,Code/GameEngine/Source/GameClient/System/FXParticleSystem/Rva00564E0DAssign.cpp,matched,copyassign via rowed getter set releaseBuffer movsd
+??0Rva00089822@@QAE@ABV0@@Z,,0x00089822,35,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00089822CopyCtor.cpp,matched,copyctor via rowed set mov head unblocks 0x0008A173
