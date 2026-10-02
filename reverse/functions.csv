@@ -46881,3 +46881,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004ED134@Rva004ECECD@@QAE_NH@Z,,0x004ED134,53,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED134.cpp,matched,chain via 0x004ECF05 float threshold g_Va00DBA4E4 g_00DFEEF8 SSE
 ?rva004ED1A1@Rva004ECECD@@QAEXHPAVObject@@@Z,,0x004ED1A1,92,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED1A1.cpp,matched,chain via 0x004ECF05 rowed createGroup getTeamAsAIGroup rva002FE712 pins findInstance groupAttack
 ?rva004ED169@Rva004ECECD@@QAEEXZ,,0x004ED169,56,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED169.cpp,matched,chain via 0x004ED134 unsigned count loop stride 0x14
+?rva0040A7D5@Rva0040A7D5@@QBEHH@Z,,0x0040A7D5,28,Code/GameEngine/Source/Common/Rva0040A7D5Get.cpp,matched,unlock lane begin-end count sar 2 unsigned bounds check callers 0x40A973 0x40A980
