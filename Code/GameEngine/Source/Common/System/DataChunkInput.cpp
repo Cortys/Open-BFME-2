@@ -131,18 +131,7 @@ public:
 	// parse()'s scope/label matches inline this compare (repe cmpsb) rather
 	// than calling out -- there is no separate call target for it in the
 	// retail body.
-	int compare(const AsciiString &that) const
-	{
-		int thatLen = that.m_data ? *reinterpret_cast<const UnsignedShort *>(static_cast<const char *>(that.m_data) + 4) : 0;
-		const char *thatData = that.m_data ? static_cast<const char *>(that.m_data) + 8 : "";
-		int thisLen = m_data ? *reinterpret_cast<const UnsignedShort *>(static_cast<const char *>(m_data) + 4) : 0;
-		const char *thisData = m_data ? static_cast<const char *>(m_data) + 8 : "";
-		int n = thisLen < thatLen ? thisLen : thatLen;
-		int c = memcmp(thisData, thatData, n);
-		if (c != 0)
-			return c;
-		return thisLen - thatLen;
-	}
+	int compare(const AsciiString &that) const;
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/NameKeyGenerator.h
