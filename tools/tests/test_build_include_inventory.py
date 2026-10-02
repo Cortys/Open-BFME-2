@@ -327,3 +327,78 @@ def test_missing_search_directory_is_watched_through_its_parent(tmp_path, monkey
     (build.ROOT / "inputs" / "lib" / "Common").mkdir(parents=True)
     (build.ROOT / "inputs" / "lib" / "Common" / "MessageStream.h").write_text("#define PACKET_RANGE 7\n")
     assert not build.compile_is_current(source, output, strict=True)
+
+
+def test_missing_search_directory_under_build_survives_parallel_compiles(tmp_path, monkeypatch):
+    # A nonexistent search directory whose deepest existing ancestor is
+    # build/, which every parallel compile writes: watching that ancestor's
+    # tree meant the inventory never held still across a compile. Only the
+    # first missing name (in any casing) is watched now.
+    source, output, early, original, command, env = _fixture(tmp_path, monkeypatch)
+    (build.ROOT / "build" / "match").mkdir(parents=True)
+    command.insert(1, "-I" + str(build.ROOT / "build" / "toolchains" / "dx81" / "include"))
+    before = build.search_inventory(source, command, env)
+    (build.ROOT / "build" / "match" / "another_tu.obj").write_bytes(b"written by a parallel compile")
+    build._write_deps_sidecar(source, output, "command", "Note: including file: " + str(original), True,
+                              command, env, before, [])
+    assert _census_grade(output)
+    (build.ROOT / "build" / "match" / "yet_another.obj").write_bytes(b"and another")
+    assert build.compile_is_current(source, output, strict=True)
+    (build.ROOT / "build" / "Toolchains").mkdir()  # Wine would now search build/Toolchains/dx81/include
+    assert not build.compile_is_current(source, output, strict=True)
+
+
+def test_header_free_tu_with_a_missing_build_search_dir_gets_a_census_receipt(tmp_path, monkeypatch):
+    # The same shape end to end through try_compile_source with a census
+    # receipt: no include, so no witnessed preprocess; the sidecar proves it.
+    import census_receipts
+    root = tmp_path / "repo"
+    (root / "Code").mkdir(parents=True)
+    (root / "build" / "match").mkdir(parents=True)
+    source = root / "Code" / "Body.cpp"
+    source.write_text("int body() { return 1; }\n")
+    output = root / "build" / "match" / "Body.obj"
+    command = ["cl", "-c", "-I" + str(root / "build" / "toolchains" / "dx81" / "include"), str(source)]
+    env = {"INCLUDE": ""}
+    monkeypatch.setattr(build, "ROOT", root)
+    monkeypatch.setattr(build, "compiler_command", lambda *_: (list(command), dict(env)))
+    monkeypatch.setattr(build, "_cmd_fingerprint", lambda *_: "command")
+
+    def compile_(cmd, **kwargs):
+        (root / "build" / "match" / "Sibling.obj").write_bytes(b"a parallel compile")
+        output.write_bytes(b"object")
+        return type("Done", (), {"returncode": 0, "stdout": ""})()
+    monkeypatch.setattr(build.subprocess, "run", compile_)
+    receipts = census_receipts.Receipts(tmp_path / "proof.json")
+    assert build.try_compile_source(source, output, input_proof=receipts)[0]
+    assert _census_grade(output) and build.compile_is_current(source, output, strict=True)
+
+
+def test_header_free_tu_needs_no_inventory_for_its_census_receipt(tmp_path, monkeypatch):
+    # Whatever stops the inventory (here: a search directory that changes
+    # during the compile), a TU with no preprocessor line searches nothing:
+    # its ordinary sidecar is what link_census's currency test accepts, so
+    # the receipt must accept it too instead of refusing the whole census.
+    import census_receipts
+    root = tmp_path / "repo"
+    (root / "Code").mkdir(parents=True)
+    source = root / "Code" / "Body.cpp"
+    source.write_text("int body() { return 1; }\n")
+    output = root / "Body.obj"
+    command, env = ["cl", "-c", str(source)], {"INCLUDE": ""}
+    monkeypatch.setattr(build, "ROOT", root)
+    monkeypatch.setattr(build, "compiler_command", lambda *_: (list(command), dict(env)))
+    monkeypatch.setattr(build, "_cmd_fingerprint", lambda *_: "command")
+
+    def compile_(cmd, **kwargs):
+        (root / "Code" / f"New{len(list((root / 'Code').iterdir()))}.h").write_text("// appears mid-compile\n")
+        output.write_bytes(b"object")
+        return type("Done", (), {"returncode": 0, "stdout": ""})()
+    monkeypatch.setattr(build.subprocess, "run", compile_)
+    receipts = census_receipts.Receipts(tmp_path / "proof.json", collect=True)
+    assert build.try_compile_source(source, output, input_proof=receipts)[0]
+    assert not _census_grade(output)  # the inventory moved during the compile
+    assert receipts.failures == []
+    assert build.compile_is_current(source, output, strict=True)
+    source.write_text('#include "New1.h"\nint body() { return 1; }\n')  # now it searches: no longer proven
+    assert not build.compile_is_current(source, output, strict=True)

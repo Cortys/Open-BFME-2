@@ -806,14 +806,10 @@ def _include_search_roots(source, command, env):
         if resolved_path is None and host is not None and os.name == "nt":
             resolved_path = host
         if resolved_path is None and host is not None:
-            # A search directory that does not exist yet: Wine would find it
-            # in any casing once created, so watch its deepest existing
-            # ancestor, whose walk sees that creation (Open-BFME-1 refuses
-            # such a TU outright on POSIX hosts).
-            ancestor = Path(host).parent
-            while _case_resolve(str(ancestor)) is None and ancestor != ancestor.parent:
-                ancestor = ancestor.parent
-            resolved_path = _case_resolve(str(ancestor))
+            # A search directory that does not exist (yet): it stays a root,
+            # and _directory_inventory watches for its creation in any casing
+            # (Open-BFME-1 refuses such a TU outright on POSIX hosts).
+            resolved_path = os.path.normpath(host)
         if resolved_path is None:
             return None
         roots.add(Path(resolved_path))
@@ -844,10 +840,11 @@ def _directory_inventory(root):
     directories = []
     root = Path(root)
     top = root.resolve() in _unwatched_tops()
-    if not os.path.lexists(root):
+    if not os.path.lexists(root) and _case_resolve(str(root)) is None:
         # The compiler finds nothing here, and a directory created here later
-        # changes this digest, so absence is a reusable inventory entry.
-        return "absent"
+        # (in any casing: Wine resolves case-insensitively) changes this
+        # digest, so absence is a reusable inventory entry.
+        return _absence(root)
     if not root.is_dir():
         return None
     try:
@@ -863,6 +860,28 @@ def _directory_inventory(root):
     except OSError:
         return None
     return hashlib.sha256(json.dumps(directories).encode()).hexdigest()
+
+
+def _absence(root):
+    """The inventory of a search directory that does not exist. It appears
+    exactly when a name equal, ignoring case, to its first missing component
+    appears in its deepest existing ancestor, so only that name is watched.
+    Walking the ancestor's whole tree instead (the previous rule) made the
+    receipt depend on every unrelated file in it: a missing
+    /ICode/Libraries/Source/WWVegas/Wwutil watched all of WWVegas, and a
+    missing directory under build/ would watch what every compile writes."""
+    current, missing = Path(os.path.abspath(root)), None
+    while _case_resolve(str(current)) is None:
+        if current == current.parent:
+            return None
+        missing, current = current.name, current.parent
+    if missing is None:
+        return None  # it exists after all; let the caller walk it
+    try:
+        names = sorted(name for name in os.listdir(_case_resolve(str(current))) if name.lower() == missing.lower())
+    except OSError:
+        return None
+    return "absent:" + json.dumps([_root_key(current), missing.lower(), names])
 
 
 def _inventory_for_roots(roots, cache=None):

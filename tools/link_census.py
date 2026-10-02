@@ -1443,10 +1443,13 @@ def main(argv=None):
         started = time.time()
         build.ensure_case_shims()
         import census_receipts
-        _INPUT_RECEIPTS = census_receipts.Receipts(OUT / "compile_inputs.json")
+        _INPUT_RECEIPTS = census_receipts.Receipts(OUT / "compile_inputs.json", collect=True)
         _INPUT_RECEIPTS.path.unlink(missing_ok=True)
         build.compile_rows(rows, compile_sources(rows), input_proof=_INPUT_RECEIPTS, strict=True)
         _INPUT_RECEIPTS.save()
+        if _INPUT_RECEIPTS.failures:
+            raise SystemExit(f"link_census: {len(_INPUT_RECEIPTS.failures):,} compiled objects have no census "
+                             "proof; nothing linked:\n  " + "\n  ".join(sorted(_INPUT_RECEIPTS.failures)))
         print(f"link_census: compile {time.time() - started:.0f}s", flush=True)
     present, missing = objects(rows)
     sources = _object_sources(rows)

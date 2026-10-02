@@ -170,10 +170,21 @@ def census_grade(output):
 
 
 class Receipts:
-    def __init__(self, path, *, run=None, entries=None):
+    def __init__(self, path, *, run=None, entries=None, collect=False):
         self.path = Path(path)
         self.run = run or uuid.uuid4().hex
         self.entries = entries or {}
+        # collect: record each TU that cannot be proven and go on compiling,
+        # so one census names them all (link_census refuses after the
+        # compile); otherwise the first one stops the build.
+        self.collect = collect
+        self.failures = []
+
+    def _refuse(self, message, error=None):
+        if self.collect:
+            self.failures.append(message)
+            return
+        raise SystemExit(message) from error
 
     @classmethod
     def load(cls, path, run):
@@ -208,9 +219,13 @@ class Receipts:
 
     def after(self, source, output, command, env, before, compiler_output):
         if before is None:
-            if census_grade(output):
-                return  # No fresh proof captured; use the normal cache gate.
-            raise SystemExit(f"census input proof unavailable: {source}")
+            # No fresh proof captured (a TU with no preprocessor line): the
+            # sidecar must prove it by the census's own currency test, which
+            # accepts a header-free TU's ordinary sidecar (no include, so no
+            # search order to watch) as well as a census-grade one.
+            if census_grade(output) or build.compile_is_current(source, output, strict=True):
+                return
+            return self._refuse(f"census input proof unavailable: {source}")
         try:
             after = snapshot(source, command, env)
             if before != after:
@@ -228,7 +243,7 @@ class Receipts:
             # The normal sidecar may describe the changed files after this
             # compile. Do not leave that receipt able to bless this object.
             build._deps_sidecar(output).unlink(missing_ok=True)
-            raise SystemExit(f"census input proof failed: {source}: {error}") from error
+            return self._refuse(f"census input proof failed: {source}: {error}", error)
         if census_grade(output):
             return  # Captured proof agreed; keep the normal cache semantics.
         self.entries[str(output.resolve())] = {"source": str(source.resolve()),

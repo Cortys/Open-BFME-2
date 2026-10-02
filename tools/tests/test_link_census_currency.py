@@ -322,3 +322,33 @@ def test_rebaseline_game_code_mismatch_publishes_nothing(tmp_path, monkeypatch):
     figure = census.record(linked(obj), [], rebaseline={**old, "game_code": 10})
     assert accepted == [True] and figure["prev_rules"] == census.LEGACY_RULES
     assert census.HISTORY.read_text().splitlines()[-1].endswith(f",{census.RULES},{census.LEGACY_RULES}")
+
+
+def test_census_build_names_every_unprovable_tu_then_refuses(tmp_path, monkeypatch):
+    # One re-baseline stopped at the first TU without proof; the census now
+    # compiles on, names every such TU, and still links nothing.
+    from test_census_receipts import fixture
+    import census_receipts
+    source, header, obj, _, _, run = fixture(tmp_path, monkeypatch)
+
+    def changed(cmd, **kwargs):
+        result = run(cmd, **kwargs)
+        if '-E' not in cmd:
+            header.write_text(header.read_text() + "// edited mid-compile\n")
+        return result
+    monkeypatch.setattr(census.build.subprocess, "run", changed)
+    receipts = census_receipts.Receipts(tmp_path / "proof.json", collect=True)
+    for _ in range(2):
+        assert census.build.try_compile_source(source, obj, input_proof=receipts)[0]
+    assert len(receipts.failures) == 2 and not receipts.entries
+    assert all("inputs changed during compile" in failure for failure in receipts.failures)
+
+    _main_harness(tmp_path, monkeypatch, obj, source)
+    monkeypatch.setattr(census.build, "ensure_case_shims", lambda: None)
+
+    def compile_rows(rows, sources, input_proof, strict):
+        input_proof.failures += ["census input proof unavailable: a.cpp", "census input proof unavailable: b.cpp"]
+    monkeypatch.setattr(census.build, "compile_rows", compile_rows)
+    monkeypatch.setattr(census, "link", lambda *a, **k: pytest.fail("linked without proof"))
+    with pytest.raises(SystemExit, match=r"2 compiled objects have no census proof[\s\S]*a\.cpp[\s\S]*b\.cpp"):
+        census.main(["--build"])
