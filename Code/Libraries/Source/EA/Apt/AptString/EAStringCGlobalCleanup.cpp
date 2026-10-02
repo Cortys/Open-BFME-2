@@ -16,6 +16,15 @@ public:
 extern EAStringC g_eaStringAtE177D4;
 extern EAStringC g_eaStringAtE18060;
 
+// g_eaStringAtE177D4: VA 0x00E177D4 (.data BSS), one zero-filled pointer.
+// The EAStringC layout is one pointer; keep raw storage so its matched
+// initializer's explicit atexit callback remains the sole cleanup registration.
+void *g_eaStringAtE177D4Storage;
+#pragma comment(linker, "/alternatename:?g_eaStringAtE177D4@@3VEAStringC@@A=?g_eaStringAtE177D4Storage@@3PAXA")
+// g_eaStringAtE18060: VA 0x00E18060 (.data BSS), one zero-filled pointer.
+void *g_eaStringAtE18060Storage;
+#pragma comment(linker, "/alternatename:?g_eaStringAtE18060@@3VEAStringC@@A=?g_eaStringAtE18060Storage@@3PAXA")
+
 void rva007B9C30()
 {
     g_eaStringAtE177D4.~EAStringC();
