@@ -12,7 +12,8 @@ struct Rva005055DESrc
 	_STL::vector<const ModuleData *> m_0C;
 };
 
-extern Rva005055DESrc *g_00E0311C;
+// g_00E0311C: matched references place it at VA 0xe0311c (retail .data initial value 0).
+Rva005055DESrc * g_00E0311C = 0;
 
 class Rva005055DE
 {

@@ -12,7 +12,9 @@
 
 extern const char g_Rva0107301CEmptyString[];
 extern const char g_00BBD3EC[];
-extern char g_00DFE5D8[];
+// g_00DFE5D8: matched references place it at VA 0xdfe5d8; zero-filled at retail, sized to the
+// 0x10c-byte gap before the next known global there.
+char g_00DFE5D8[268];
 
 int __cdecl Rva006CCB80AptCall(const char *function, char *result, const char *path,
 	int argc, const char *a0, void *a1, void *a2, void *a3, void *a4);

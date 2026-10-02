@@ -26,6 +26,8 @@ private:
 };
 
 extern int g_00E02F78;
+// g_00E02F78: matched references place it at VA 0xe02f78 (zero-filled .bss).
+int g_00E02F78;
 
 void __stdcall Rva0040AA73Load()
 {

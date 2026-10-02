@@ -68,6 +68,8 @@ int Rva0040C985::rva0040CA24()
 }
 
 extern float g_00DBA4F4;
+// g_00DBA4F4: matched references place it at VA 0xdba4f4 (retail .data initial value 5.0f).
+float g_00DBA4F4 = 5.0f;
 
 void Rva0040C985::rva0040CA3A(int x)
 {
