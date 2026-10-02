@@ -61,6 +61,7 @@ unsigned __fastcall Get_Bits_Per_Pixel( WW3DFormat format )
 			bits = 24;
 			break;
 
+		case WW3D_FORMAT_R5G6B5:
 		case WW3D_FORMAT_X1R5G5B5:
 		case WW3D_FORMAT_A1R5G5B5:
 		case WW3D_FORMAT_A4R4G4B4:

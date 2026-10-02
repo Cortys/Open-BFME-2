@@ -13656,7 +13656,6 @@ _luaB_tostring,,0x0074BFA0,284,Code/Libraries/Source/Lua/luaB_tostring.c,matched
 ?get@Rva001EADF0ByteField@@QBEEXZ,,0x001EADF0,7,Code/GameEngine/Source/Common/DispByteFieldGetters.cpp,matched,Disp32 byte getter
 ?get@Rva001EAE1AByteField@@QBEEXZ,,0x001EAE1A,7,Code/GameEngine/Source/Common/DispByteFieldGetters.cpp,matched,Disp32 byte getter
 ??1DX8MeshRendererClass@@QAE@XZ,,0x00147F60,172,Code/Libraries/Source/WWVegas/WW3D2/DX8MeshRendererClassDtor.cpp,matched,DX8MeshRenderer dtor 172B exact via dedicated member-layout TU; Invalidate plus Clear plus guarded skin ::delete plus list member dtors plus inlined SimpleDynVec teardown; nothrow deletes and 0x18 list size are the levers
-?Get_Bits_Per_Pixel@@YIIW4WW3DFormat@@@Z,,0x00131A9D,88,Code/Libraries/Source/WWVegas/WW3D2/ww3dformat_bits.cpp,matched,BFME1 ww3dformat_bits donor verbatim; fastcall enum D3DFORMAT numbering with DXT FOURCCs; /O1 builds retail switch tree
 __Locale_toupper,,0x000219E0,291,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleCtypeCase.c,matched,vendored=stlport-4.5.3;BFME1 byte-identical donor; b1 0x0084E850
 __Locale_tolower,,0x00021B10,291,Code/Libraries/Source/WWVegas/WWLib/stlport_LocaleCtypeCase.c,matched,vendored=stlport-4.5.3;BFME1 byte-identical donor; b1 0x0084E980
 ?_M_initialize@?$vector@_NV?$allocator@_N@_STL@@@_STL@@IAEXI@Z,,0x003890D5,66,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_bool_copy.cpp,matched,vendored=stlport-4.5.3;bit-vector init via 0x69F75 and 0x69F22; explicit-instantiation TU
@@ -47981,3 +47980,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva0022D01B@@QAE@XZ,,0x0022D01B,68,Code/GameEngine/Source/Common/Rva0022D01BDtor.cpp,matched,unlock dtor two trees plus ascii string evidence
 ?Rva003BF9FADo@@YGXABVAsciiString@@M0@Z,,0x003BF9FA,125,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF9FA.cpp,matched,chain via rva003570D1 with team centroid caller 0x003CA9CD
 ?read_material_pass@MeshModelClass@@IAE_NAAVChunkLoadClass@@PAVMeshLoadContextClass@@@Z,,0x0018B400,230,Code/Libraries/Source/WWVegas/WW3D2/MeshModelReadMaterialPass.cpp,matched,
+?Get_Bits_Per_Pixel@@YIIW4WW3DFormat@@@Z,,0x00131A9D,130,Code/Libraries/Source/WWVegas/WW3D2/ww3dformat_bits.cpp,matched,
