@@ -47,6 +47,7 @@ class RiderChangeContainModuleData : public SiegeEngineContainModuleData
 {
 public:
 	RiderChangeContainModuleData();
+	virtual ~RiderChangeContainModuleData();
 
 private:
 	RiderInfo m_riders[8]; // +0x1B8
@@ -62,9 +63,4 @@ RiderChangeContainModuleData::RiderChangeContainModuleData()
 	m_scuttleFrames = 0;
 	m_scuttleState = 0;
 	m_byte280 = 0;
-}
-
-// ??1SiegeEngineContainModuleData@@UAE@XZ present-unmatched
-SiegeEngineContainModuleData::~SiegeEngineContainModuleData()
-{
 }
