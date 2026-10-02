@@ -151,16 +151,57 @@ def statement(line):
 def mutate(text, rng):
     lines = text.split("\n")
     body = body_lines(lines)
-    kinds = ["swap", "cmp", "eq", "commute", "incr", "sign", "flag"]
+    kinds = ["swap", "swap", "cmp", "eq", "commute", "incr", "sign", "flag", "move", "ifelse"]
+    body_set = set(body)
+
+    def indent(line):
+        return len(line) - len(line.lstrip())
+
     for _ in range(12):
         kind = rng.choice(kinds)
         if kind == "swap" and len(body) > 1:
+            # swap two statements of one block up to 3 lines apart
             i = rng.choice(body[:-1])
-            j = i + 1
-            if j in body and statement(lines[i]) and statement(lines[j]) and \
-                    len(lines[i]) - len(lines[i].lstrip()) == len(lines[j]) - len(lines[j].lstrip()):
+            j = i + rng.choice((1, 1, 2, 3))
+            if j in body_set and statement(lines[i]) and statement(lines[j]) and \
+                    indent(lines[i]) == indent(lines[j]) and \
+                    all(k in body_set and indent(lines[k]) >= indent(lines[i]) and "{" not in lines[k]
+                        and "}" not in lines[k] for k in range(i, j + 1)):
                 lines[i], lines[j] = lines[j], lines[i]
                 return "\n".join(lines), kind
+        elif kind == "move" and len(body) > 1:
+            # move one statement (often a local declaration) up or down one line
+            i = rng.choice(body)
+            j = i + rng.choice((-1, 1))
+            if j in body_set and statement(lines[i]) and indent(lines[i]) == indent(lines[j]) and \
+                    "{" not in lines[j] and "}" not in lines[j]:
+                line = lines.pop(i)
+                lines.insert(j, line)
+                return "\n".join(lines), kind
+        elif kind == "ifelse" and body:
+            # if (c) { A } else { B }  ->  if (!(c)) { B } else { A }, braces on own lines
+            i = rng.choice(body)
+            found = re.match(r"^(\s*)if \((.*)\)\s*$", lines[i])
+            if found and i + 1 < len(lines) and lines[i + 1].strip() == "{":
+                pad = found.group(1)
+                depth, k = 0, i + 1
+                while k < len(lines):
+                    depth += lines[k].count("{") - lines[k].count("}")
+                    if depth == 0:
+                        break
+                    k += 1
+                if k + 2 < len(lines) and lines[k + 1].strip() == "else" and lines[k + 2].strip() == "{":
+                    depth, m = 0, k + 2
+                    while m < len(lines):
+                        depth += lines[m].count("{") - lines[m].count("}")
+                        if depth == 0:
+                            break
+                        m += 1
+                    if m < len(lines):
+                        then_block, else_block = lines[i + 1:k + 1], lines[k + 2:m + 1]
+                        lines[i:m + 1] = ([f"{pad}if (!({found.group(2)}))"] + else_block +
+                                          [f"{pad}else"] + then_block)
+                        return "\n".join(lines), kind
         elif kind in ("cmp", "eq", "commute", "incr", "sign") and body:
             i = rng.choice(body)
             line = lines[i]
