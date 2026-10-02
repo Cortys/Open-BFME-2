@@ -48081,3 +48081,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004E3C71@Rva004E3C71@@QAEXXZ,,0x004E3C71,30,Code/GameEngine/Source/Common/Rva004E3C71DestroyFree.cpp,matched,destroy Rva004E2382 range via 0x004E377E then free via 0x00030830 caller 0x004E3DE8
 ?rva0022DBAA@Rva0022DBAA@@QAEXPAX@Z,,0x0022DBAA,28,Code/GameEngine/Source/Common/Rva0022DBAAFree.cpp,matched,chain body calls just-landed 0x0022D249 and rowed _free 0x00030830
 ?rva0022DDAB@Rva0022DDAB@@QAEXXZ,,0x0022DDAB,73,Code/GameEngine/Source/Common/Rva0022DDABClear.cpp,matched,chain body calls just-landed 0x0022DBAA same shape as 0x0022DD62
+??1Rva0022DDAB@@QAE@XZ,,0x0022DF1A,57,Code/GameEngine/Source/GameClient/Rva0022DDABDtor.cpp,matched,chain dtor clears via just-landed 0x0022DDAB same shape as 0x0022DEE1
