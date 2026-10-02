@@ -26,8 +26,19 @@ public:
 };
 
 // ??1FileInfoStruct@MixFileCreator@@QAE@XZ
-MixFileCreator::FileInfoStruct::~FileInfoStruct()
+inline MixFileCreator::FileInfoStruct::~FileInfoStruct()
 {
 	if( m_buffer )
 		m_buffer->releaseInto( &TheMixFileInfoPool );
 }
+
+// The destructor is a header inline that other units emit as select-any
+// copies, which a plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitMixFileCreatorFileInfoStructDtor@@YAXPAUFileInfoStruct@MixFileCreator@@@Z present-unmatched
+void bfmeEmitMixFileCreatorFileInfoStructDtor(MixFileCreator::FileInfoStruct *p)
+{
+	p->MixFileCreator::FileInfoStruct::~FileInfoStruct();
+}
+#pragma inline_depth()
