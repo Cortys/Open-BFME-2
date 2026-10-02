@@ -20,9 +20,17 @@ struct GeometryRecord
 	GeometryRecord &operator=( const GeometryRecord &other );
 };
 
-GeometryRecord &GeometryRecord::operator=( const GeometryRecord &other )
+inline GeometryRecord &GeometryRecord::operator=( const GeometryRecord &other )
 {
 	memcpy( this, &other, sizeof( int ) * 3 );
 	m_name = other.m_name;
 	return *this;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitGeometryRecordAssign@@YAXPAUGeometryRecord@@ABU1@@Z present-unmatched
+void bfmeEmitGeometryRecordAssign(GeometryRecord *p, const GeometryRecord &other)
+{
+	*p = other;
+}
+#pragma inline_depth()
