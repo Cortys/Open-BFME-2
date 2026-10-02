@@ -52,6 +52,15 @@ private:
 	Rva00427611Buffer m10;
 };
 
-Rva00427611::~Rva00427611()
+inline Rva00427611::~Rva00427611()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva00427611DtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva00427611DtorInlineAnchor()
+{
+    static_cast<Rva00427611 *>(0)->Rva00427611::~Rva00427611();
+}
+#pragma inline_depth()
