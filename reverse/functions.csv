@@ -47577,3 +47577,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?xfer@Rva00546982@@UAEXPAVXfer@@@Z,,0x00546A34,68,Code/GameEngine/Source/Common/Rva00546982Xfer.cpp,matched,vslot slot 3 of 0x0086A314 base xfer version set bool
 ??1Rva00427311@@UAE@XZ,,0x00427311,129,Code/GameEngine/Source/GameClient/GUI/Rva00427311Dtor.cpp,matched,dtor stores vtable 0x0083C5DC frees WindowVideoMap via rowed begin and Rva004271D9 and base
 ??_GRva00427311@@UAEPAXI@Z,,0x004274AB,28,Code/GameEngine/Source/GameClient/GUI/Rva00427311Dtor.cpp,matched,deleting dtor calls rowed dtor 0x00427311 then delete
+??$_Destroy@PAVRva004E2382@@@_STL@@YAXPAVRva004E2382@@0@Z,,0x004E377E,25,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004E2382.cpp,matched,range destroy via rowed dtor 0x004E2941 caller 0x004E3C32
