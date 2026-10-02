@@ -147,15 +147,4 @@ void SuperweaponInfo::drawTime(Int x, Int y, Color color, Color dropColor)
 	m_timeDisplayString->drawAtOffsets(x - m_nameDisplayString->getWidth(-1), y, 1, 1);
 }
 
-// ??1SuperweaponInfo@@MAE@XZ
-// ??1SuperweaponInfo@@MAE@XZ present-unmatched
-SuperweaponInfo::~SuperweaponInfo()
-{
-	if (m_nameDisplayString)
-		TheDisplayStringManager->freeDisplayString(m_nameDisplayString);
-	m_nameDisplayString = 0;
-
-	if (m_timeDisplayString)
-		TheDisplayStringManager->freeDisplayString(m_timeDisplayString);
-	m_timeDisplayString = 0;
-}
+// SuperweaponInfo::~SuperweaponInfo: defined in InGameUI.cpp (its unit).
