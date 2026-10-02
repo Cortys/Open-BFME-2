@@ -3,4 +3,94 @@
 
 #include <hash_map>
 
+namespace _STL
+{
+template <>
+void swap<_STLP_alloc_proxy<void**, void*, allocator<void*> > >(
+        _STLP_alloc_proxy<void**, void*, allocator<void*> >& a,
+        _STLP_alloc_proxy<void**, void*, allocator<void*> >& b);
+
+template <>
+__declspec(dllimport) __forceinline
+vector<void*, allocator<void*> >::iterator
+vector<void*, allocator<void*> >::begin()
+{
+    return this->_M_start;
+}
+
+template <>
+__declspec(dllimport) __forceinline
+vector<void*, allocator<void*> >::iterator
+vector<void*, allocator<void*> >::end()
+{
+    return this->_M_finish;
+}
+
+template <>
+__declspec(dllimport) __forceinline
+vector<void*, allocator<void*> >::size_type
+vector<void*, allocator<void*> >::size() const
+{
+    return vector<void*, allocator<void*> >::size_type(
+            this->_M_finish - this->_M_start);
+}
+
+template <>
+__declspec(dllimport) __forceinline
+vector<void*, allocator<void*> >::reference
+vector<void*, allocator<void*> >::operator[](
+        vector<void*, allocator<void*> >::size_type n)
+{
+    return *(begin() + n);
+}
+
+template <>
+vector<void*, allocator<void*> >::allocator_type
+vector<void*, allocator<void*> >::get_allocator() const;
+
+template <>
+__declspec(dllimport) __forceinline
+vector<void*, allocator<void*> >::size_type
+vector<void*, allocator<void*> >::capacity() const
+{
+    return vector<void*, allocator<void*> >::size_type(
+            this->_M_end_of_storage._M_data - this->_M_start);
+}
+
+template <>
+__declspec(dllimport) __forceinline
+void vector<void*, allocator<void*> >::swap(
+        vector<void*, allocator<void*> >& x)
+{
+    _STLP_STD::swap(this->_M_start, x._M_start);
+    _STLP_STD::swap(this->_M_finish, x._M_finish);
+    _STLP_STD::swap(this->_M_end_of_storage, x._M_end_of_storage);
+}
+
+template <>
+__declspec(dllimport) __forceinline
+void vector<void*, allocator<void*> >::insert(
+        vector<void*, allocator<void*> >::iterator pos,
+        vector<void*, allocator<void*> >::size_type n,
+        const vector<void*, allocator<void*> >::value_type& x)
+{
+    _M_fill_insert(pos, n, x);
+}
+
+template <>
+void** fill_n<void**, unsigned int, void*>(
+        void** first, unsigned int n, void* const& value);
+
+template <>
+void _STLP_CALL advance<const unsigned int*, int>(
+        const unsigned int*& i, int n);
+
+template <>
+const unsigned int* __lower_bound<const unsigned int*, unsigned int,
+        less<unsigned int>, int>(const unsigned int* first,
+        const unsigned int* last, const unsigned int& value,
+        less<unsigned int> comp, int*);
+}
+
+template class _STL::less<unsigned int>;
 template class _STL::hash_map<int, int, _STL::hash<int>, _STL::equal_to<int>, _STL::allocator<_STL::pair<const int, int> > >;
