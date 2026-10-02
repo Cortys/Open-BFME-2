@@ -6,7 +6,10 @@
 // null/next diamond around pinned getFinalOverride 0x001E35DF.
 // Evidence: callers 0x0009355B 0x00093FFA; unblocks 0x00093507; Snow weather global VA 0x00DFE118.
 extern float g_Va00BBB8D8;
-#define TheWeather00DFE118 (*(class WeatherSetting **)0x00DFE118)
+class WeatherSetting;
+// g_Va00DFE118: VA 0x00dfe118 (.data/bss); retail zero-filled.
+WeatherSetting *g_Va00DFE118;
+#define TheWeather00DFE118 g_Va00DFE118
 class Overridable
 {
 public:
