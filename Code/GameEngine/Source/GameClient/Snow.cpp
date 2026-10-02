@@ -108,7 +108,9 @@ public:
     Overridable *deleteOverrides();
     const Overridable *getFinalOverride() const
     {
-        return m_nextOverride ? m_nextOverride->getFinalOverride() : this;
+        if (m_nextOverride)
+            return m_nextOverride->getFinalOverride();
+        return this;
     }
 };
 
