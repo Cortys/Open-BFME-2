@@ -55,12 +55,13 @@ int Rva006E0DE0::rva006E0DE0(AptValue *p)
 // Pool teardown clearing +0/+8/+0xC and freeing array via freeBlock.
 // Evidence: gap after 0x6E0DE0; pinned freeBlock 0x6DB270 via pool 0xE176E8;
 // same /O2 Apt layout as neighbours.
-#define G_AptAlloc (*(Rva006DB270 *const *)0x00E176E8)
 class Rva006DB270
 {
 public:
     void freeBlock(void *p, int bytes);
 };
+// Use the defined freeBlock allocator view, not the same-address allocBlock alias.
+extern Rva006DB270 *g_pChainBlockAllocator;
 void Rva006E0DE0::rva006E0E70()
 {
     AptValue **arr = m_ppElements;
@@ -71,7 +72,7 @@ void Rva006E0DE0::rva006E0E70()
         arr[0] = 0;
         arr[1] = 0;
         arr[2] = 0;
-        G_AptAlloc->freeBlock(arr, 0x1C);
+        g_pChainBlockAllocator->freeBlock(arr, 0x1C);
         m_ppElements = 0;
     }
 }
