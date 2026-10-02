@@ -23,7 +23,9 @@ extern void * W3DGCData00DE5DFC;
 #pragma comment(linker, "/alternatename:?W3DGCData00DE5DFC@@3PAXA=?g_shadowManager@@3PAVGen0003AC38@@A")
 extern void *W3DGCData00DFE9D8;
 
+#pragma optimize("ty", on)
 #include "vector3.h"
+#pragma optimize("", on)
 
 class W3DGameClientWaterShim
 {
