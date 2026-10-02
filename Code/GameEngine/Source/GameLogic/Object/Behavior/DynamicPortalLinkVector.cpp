@@ -51,3 +51,7 @@ void Rva0032E7E2::rva0032E7E2()
 	if (m_start != 0)
 		free(m_start);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1DynamicPortalLinkVec@@QAE@XZ=??1?$vector@UDynamicPortalLink@@V?$allocator@UDynamicPortalLink@@@_STL@@@_STL@@QAE@XZ")

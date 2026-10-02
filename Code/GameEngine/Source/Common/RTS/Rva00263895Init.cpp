@@ -33,3 +33,8 @@ Rva00263895Member::Rva00263895Member() throw()
 	  m_b78(0)
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0AICommandParmsTail@@QAE@XZ=??0Rva00263895Member@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?init@Rva00263895Member@@QAEXXZ=??0Rva00263895Member@@QAE@XZ")
