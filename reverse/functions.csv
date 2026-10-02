@@ -48996,3 +48996,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva0030F604@GameMessageList@@UAEXPAVGameMessage@@0@Z,,0x0030F604,62,Code/GameEngine/Source/Common/MessageStreamListCtors.cpp,matched,vslot15 insert via ZH donor plus null head
 ?rva005D48DB@Rva005D48DB@@QAEXPAX@Z,,0x005D48DB,21,Code/GameEngine/Source/Common/Rva005D48DBForward.cpp,matched,unlock forwarder via member fn ptr
 ?rva005D4E8B@Rva005D4E8B@@QAEXXZ,,0x005D4E8B,29,Code/GameEngine/Source/Common/Rva005D4E8BClear.cpp,matched,holder clear via rowed fastcall 0x0007DEEF caller 0x005D4F19
+?rva005FE122@Rva005FE047@@QAEXH@Z,,0x005FE122,181,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,tab switch with deselect select Fire plus Set via rowed Fire and Set
