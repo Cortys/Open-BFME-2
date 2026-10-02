@@ -48074,3 +48074,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva0022D249@@QAE@XZ,,0x0022D249,53,Code/GameEngine/Source/Common/Rva0022D249Dtor.cpp,matched,chain packet calls just-landed 0x0022D094 plus rowed releaseBuffer 0x00036410
 ??1Rva002217EA@@QAE@XZ,,0x002217B1,57,Code/GameEngine/Source/Common/Rva002217EADtor.cpp,matched,dtor releases ref at plus4 plus wide string at plus0
 ?Rva002056C1Make@@YA?AURva003004C1@@ABVAsciiString@@ABE@Z,,0x002056C1,27,Code/GameEngine/Source/GameLogic/ScriptEngine/Rva002056A6Make.cpp,matched,hidden dest forwarder over rowed Rva003004C1 ctor plus caller 0x00209811
+??_GRva0022D249@@QAEPAXI@Z,,0x0022D904,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022D249.cpp,matched,chain packet you-just-landed callee plus 28B push-esi call-test-je delete shape
