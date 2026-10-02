@@ -48125,3 +48125,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?push_back@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@QAEXABVRva0040AF66@@@Z,,0x0040BA6A,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva0040AF66_pushback.cpp,matched,chain calls just-landed 0x0040B8E8 via rowed Construct 0x0040B17B
 ?rva0043B3A1@Rva0043B2E2@@QAEXAAPAURva0043B2E2Node@@PAU2@1PBH1@Z,,0x0043B3A1,136,Code/Libraries/Source/WWVegas/WWLib/Rva0043B35DErase.cpp,matched,rb-tree insert via pinned twin factory 0x0043B30F plus Rebalance 0x00025490
 ?rva005AFCFF@Rva005AFC92@@QAEXXZ,,0x005AFCFF,47,Code/GameEngine/Source/Common/Rva005AFC92Reset.cpp,matched,three winEnable via rowed 0x00313BEC caller 0x0057FD9B
+?rva0050539C@Rva0050539C@@QAEPAVPlayer@@XZ,,0x0050539C,8,Code/GameEngine/Source/Common/Rva0050539CGet.cpp,matched,tail-jmp to rowed 0x005A910E caller 0x002C5FD9
