@@ -5491,3 +5491,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00032DF0@GeneralAllocator@Allocator@EA@@QAEPAXI@Z	0x00032DF0	194	blocked	esi-edi swap whole body plus push order plus extra add-mov vs mov-sub 197vs194 definition-order and flag and reorder tried t=18 model=muse-07 (stash 0.92 kept)
 ?rva00596269@Rva005961D6@@QAEXXZ	0x00596269	98	blocked	begin-end loads swapped ecx-vs-eax only residue t=12 model=muse-01 (stash 0.95 kept)
 ?rva0004DDBF@W3DRadar@@QAEXHHHHHH@Z	0x0004DDBF	179	blocked	float x87 sequence 17 regions imul-vs-lea fild-vs-fld min-clamp shape t=14 model=muse-01
+??0Rva00431FB5@@QAE@XZ	0x00431FB5	61	blocked	63B vs 61B 0 reg only scheduling first vptr vs EH-state order plus extra mov eax esi return-this t=15 model=muse-04 (stash 0.95 kept)
+?rva0029FD1B@Rva0029FD1B@@QAEHHHHE@Z	0x0029FD1B	387	blocked	InGameUI radius-decal 387B with Armor hashtable find plus 5 virtuals plus SSE x87 no BFME1 donor body t=20 model=muse-04
+?rva004320B1@Rva004320B1@@QAEHPAVGameMessage@@@Z	0x004320B1	160	partial	register allocation msg in esi not edx this in edi not esi extra push edi pop edi size 162 vs 160 switch layout exact t=25 model=muse-04 score=0.93 stash=reverse/attempts/0x004320b1.cpp
