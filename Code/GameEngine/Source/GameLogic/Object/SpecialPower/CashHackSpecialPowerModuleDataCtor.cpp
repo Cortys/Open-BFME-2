@@ -31,7 +31,7 @@ class CashHackSpecialPowerModuleData : public Rva004930A0
 {
 public:
 	CashHackSpecialPowerModuleData();
-	virtual ~CashHackSpecialPowerModuleData() {}
+	virtual ~CashHackSpecialPowerModuleData();
 
 private:
 	_STL::vector<CashHackUpgrades> m_upgrades; // +0x7C
