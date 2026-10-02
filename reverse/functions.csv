@@ -47600,3 +47600,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004D53B5@Transport@@QAE_NPAX@Z,,0x004D53B5,225,Code/GameEngine/Source/GameNetwork/TransportRva004D53B5.cpp,matched,winsock init plus buffer clear via Transport layout
 ??1Rva00383D71@@QAE@XZ,,0x00383D71,271,Code/GameEngine/Source/Common/Rva00383D71Dtor.cpp,matched,base dtor via rowed tree dtors and eh vector arrays callers 0x3844D7 0x38454E
 ??1Rva003844D7@@QAE@XZ,,0x003844D7,119,Code/GameEngine/Source/Common/Rva003844D7Dtor.cpp,matched,derived dtor via rowed member dtors and base 0x00383D71 callers 0x38535F 0x38539E
+??1Rva0038454E@@QAE@XZ,,0x0038454E,269,Code/GameEngine/Source/Common/Rva003844D7Dtor.cpp,matched,derived dtor 15 members via rowed 0x383276 0x38323E base 0x383D71 LINK 0x385371

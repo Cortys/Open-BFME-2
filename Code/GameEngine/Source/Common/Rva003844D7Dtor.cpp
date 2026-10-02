@@ -47,6 +47,32 @@ private:
 	Rva0038204A m_184;
 };
 
+class Rva0038454E : public Rva00383D71
+{
+public:
+	~Rva0038454E();
+private:
+	Rva0038204A m_154;
+	Rva0038204A m_160;
+	Rva0038204A m_16c;
+	Rva0038204A m_178;
+	Rva0038204A m_184;
+	Rva0038204A m_190;
+	Rva0038204A m_19c;
+	Rva0038204A m_1a8;
+	Rva0038201D m_1b4;
+	Rva0038201D m_1c0;
+	Rva0038204A m_1cc;
+	Rva0038204A m_1d8;
+	Rva0038204A m_1e4;
+	Rva0038204A m_1f0;
+	Rva0038204A m_1fc;
+};
+
 Rva003844D7::~Rva003844D7()
+{
+}
+
+Rva0038454E::~Rva0038454E()
 {
 }
