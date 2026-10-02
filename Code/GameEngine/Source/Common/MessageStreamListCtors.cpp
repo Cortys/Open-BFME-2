@@ -71,6 +71,7 @@ public:
 
 	struct TranslatorData
 	{
+		TranslatorData() : m_next(0), m_prev(0), m_id(0), m_translator(0), m_priority(0) {}
 		TranslatorData *m_next; // +0x00
 		TranslatorData *m_prev; // +0x04
 		unsigned int m_id; // +0x08
@@ -80,6 +81,7 @@ public:
 	};
 
 	class GameMessageTranslator *findTranslator(unsigned int id);
+	unsigned int rva0030F738(class GameMessageTranslator *translator, unsigned int priority);
 
 private:
 	void *m_firstTranslator; // +0x14
@@ -187,6 +189,59 @@ GameMessageTranslator *MessageStream::findTranslator(unsigned int id)
 	}
 
 	return 0;
+}
+
+// ?rva0030F738@MessageStream@@QAEIPAVGameMessageTranslator@@I@Z @0x0030F738 159B
+// MessageStream translator attach sorted by priority from ZH donor (MessageStream.cpp attachTranslator).
+// Evidence: packet disasm with rowed operator new 0x0002FDA0; prev/next in this TU; TranslatorData 0x14 plus first/last/nextID at +0x14/+0x18/+0x1C; 14 callers in 0x0023A1BB.
+unsigned int MessageStream::rva0030F738(GameMessageTranslator *translator, unsigned int priority)
+{
+	TranslatorData *newSS = new TranslatorData;
+	TranslatorData *ss;
+
+	newSS->m_translator = translator;
+	newSS->m_priority = priority;
+	newSS->m_id = m_nextTranslatorID++;
+
+	if (m_firstTranslator == 0)
+	{
+		newSS->m_prev = 0;
+		newSS->m_next = 0;
+		m_firstTranslator = newSS;
+		m_lastTranslator = newSS;
+		return newSS->m_id;
+	}
+
+	for (ss = (TranslatorData *)m_firstTranslator; ss; ss = ss->m_next)
+		if (ss->m_priority > newSS->m_priority)
+			break;
+
+	if (ss)
+	{
+		if (ss->m_prev)
+		{
+			ss->m_prev->m_next = newSS;
+			newSS->m_prev = ss->m_prev;
+			newSS->m_next = ss;
+			ss->m_prev = newSS;
+		}
+		else
+		{
+			newSS->m_prev = 0;
+			newSS->m_next = (TranslatorData *)m_firstTranslator;
+			((TranslatorData *)m_firstTranslator)->m_prev = newSS;
+			m_firstTranslator = newSS;
+		}
+	}
+	else
+	{
+		((TranslatorData *)m_lastTranslator)->m_next = newSS;
+		newSS->m_prev = (TranslatorData *)m_lastTranslator;
+		newSS->m_next = 0;
+		m_lastTranslator = newSS;
+	}
+
+	return newSS->m_id;
 }
 
 // ??1TranslatorData is a header inline elsewhere: another unit emits a
