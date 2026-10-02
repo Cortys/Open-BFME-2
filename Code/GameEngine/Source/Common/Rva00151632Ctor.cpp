@@ -23,6 +23,7 @@ class Rva00151632 : public GenBase009EB7D0
 {
 public:
 	Rva00151632(const char *name);
+	virtual ~Rva00151632();
 
 	char m_pad04[0x10]; // +0x04..+0x13, untouched by this body
 	void *m_link; // +0x14
