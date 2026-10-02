@@ -38,7 +38,7 @@ private:
 	_STL::vector<int> m_vector08;	// +0x08
 };
 
-Rva00AAD26::~Rva00AAD26()
+inline Rva00AAD26::~Rva00AAD26()
 {
 }
 
@@ -52,7 +52,7 @@ private:
 	_STL::vector<int> m_vector0C;	// +0x0C
 };
 
-Rva00AB15D::~Rva00AB15D()
+inline Rva00AB15D::~Rva00AB15D()
 {
 }
 
@@ -66,10 +66,20 @@ private:
 	AsciiString m_string10;	// +0x10
 };
 
-Rva00B6971::~Rva00B6971()
+inline Rva00B6971::~Rva00B6971()
 {
 }
 
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1BfmeDelayedLuaEvent@@QAE@XZ=??1Rva00B6971@@UAE@XZ")
+
+#pragma inline_depth(0)
+// ?bfmeEmitRva000AAD26FamilyDtors@@YAXPAVRva00AAD26@@PAVRva00AB15D@@PAVRva00B6971@@@Z present-unmatched
+void bfmeEmitRva000AAD26FamilyDtors(Rva00AAD26 *a, Rva00AB15D *b, Rva00B6971 *c)
+{
+	a->Rva00AAD26::~Rva00AAD26();
+	b->Rva00AB15D::~Rva00AB15D();
+	c->Rva00B6971::~Rva00B6971();
+}
+#pragma inline_depth()
