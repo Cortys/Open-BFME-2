@@ -32,8 +32,16 @@ public:
 };
 
 // ?buildFieldParse@TunnelContainModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x0024BCD2
-void TunnelContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void TunnelContainModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	HordeGarrisonContainModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEEAF8), 0);
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitTunnelContainModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z present-unmatched
+void bfmeEmitTunnelContainModuleDataParse(MultiIniFieldParse &parse)
+{
+	TunnelContainModuleData::buildFieldParse(parse);
+}
+#pragma inline_depth()
