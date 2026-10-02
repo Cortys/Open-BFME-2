@@ -47626,3 +47626,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0022C6B6@Rva0022C6B6@@QAEPAU1@PAX0@Z,,0x0022C6B6,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x00229A18 via Rva00229A18Pick same shape as 0x0022C7C9 caller 0x0022CB36 passes this plus two ptrs
 ?rva0022C856@Rva0022C856@@QAEPAU1@PAX0@Z,,0x0022C856,141,Code/GameEngine/Source/GameClient/GUI/Gadget/Rva0056EDBAPick.cpp,matched,chain from 0x00229A9C via Rva00229A9CPick same shape as 0x0022C6B6 caller 0x0022CC41 passes this plus two ptrs
 ?rva004185AA@Rva004185AA@@QAEMH@Z,,0x004185AA,58,Code/Libraries/Source/WWVegas/WWLib/Rva004185AALookup.cpp,matched,floor lookup map at plus12 via rowed lowerbound and decrement default BfmeZeroRange
+??0Rva00427157@@QAE@ABVAsciiString@@PBV0@@Z,,0x00427157,62,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,ctor AsciiString plus12 8 floats 1.0 default via rowed copy
