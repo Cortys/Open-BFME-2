@@ -29,6 +29,7 @@ public:
 	void rva005F7670(const UnicodeString &text);
 	void rva005F7161();
 	void rva005F7412();
+	void rva005F72C8();
 private:
 	char m_pad00[4];
 	void *m_level04;
@@ -37,7 +38,7 @@ private:
 	UnicodeString m_cached58;
 	char m_pad5C[0x64 - 0x5C];
 	bool m_shown64;
-	char m_pad65;
+	bool m_shown65;
 	bool m_shown66;
 };
 
@@ -93,5 +94,13 @@ void Rva005F7670::rva005F7412()
 		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetCommandPointsState", "_hide");
 		m_shown66 = false;
+	}
+}
+void Rva005F7670::rva005F72C8()
+{
+	if (m_shown65) {
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetBuildTimeState", "_hide");
+		m_shown65 = false;
 	}
 }
