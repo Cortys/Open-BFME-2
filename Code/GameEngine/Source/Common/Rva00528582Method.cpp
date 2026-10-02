@@ -1,5 +1,3 @@
-// ?rva00528582@Rva00528582@@QAEXH@Z
-// partial score=0.95 date=2026-10-02
 // cl: /O1 /G7 /MD
 // ?rva00528582@Rva00528582@@QAEXH@Z retail 0x00528582 101B
 // Evidence: loop dec count at +0xD8 elem stride 12 like sibling 0x00528309; Fire 0x00525338 via TheRva00222A8BTarget plus m_04 plus m_18 plus SetButtonState plus count plus _hide; clear +4 via 0x002BED91 plus or +8 -1; callers 0x005285EF 0x00528738
@@ -10,6 +8,9 @@ struct Rva002BED91
 };
 
 int __cdecl Rva00525338Fire(void *a1, void *a2, const char *a3, const char *a4, int *a5, void *a6);
+
+extern "C" void _ReadWriteBarrier(void);
+#pragma intrinsic(_ReadWriteBarrier)
 
 class Rva00222A8BTarget;
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
@@ -36,12 +37,12 @@ private:
 	int m_count;
 };
 
-// ?rva00528582@Rva00528582@@QAEXH@Z present-unmatched
 void Rva00528582::rva00528582(int v)
 {
 	while (m_count > v)
 	{
 		--m_count;
+		_ReadWriteBarrier();
 		const char *s;
 		if (m_18)
 			s = (const char *)m_18 + 8;
