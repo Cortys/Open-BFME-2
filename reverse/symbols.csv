@@ -7092,3 +7092,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?bfmeFillCD@@YAPAUBfmeElemCD@@PAU1@IABU1@ABUBfmeFalseCD@@@Z,0x006BEF10,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
 ?copyFrom@BfmeTailCD@@QAEXPBU1@@Z,0x000365F0,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
 ?releaseBuffer@BfmeTailCD@@QAEXXZ,0x00036410,retail 6BF6F0 verified call graph; alias to existing native copy/fill/string body; dispatch tag unused
+?rva00590F13@Rva004D62A9@@QAEXVAsciiString@@@Z,0x00590F13,AsciiString setter on Rva004D62A9 twin of 0x004D65F9 via caller 0x005923C5
