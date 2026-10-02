@@ -76,13 +76,13 @@ __declspec(dllimport) __forceinline _Locale_impl *_M_add_ref(_Locale_impl *impl)
     return impl;
 }
 
-locale::locale()
+inline locale::locale()
 {
     _M_impl = 0;
     _M_impl = _M_add_ref(_Stl_classic_locale_impl);
 }
 
-locale::locale(const locale &that)
+inline locale::locale(const locale &that)
 {
     _M_impl = 0;
 
@@ -137,9 +137,19 @@ const locale &locale::classic()
 }
 
 
-locale ios_base::getloc() const
+inline locale ios_base::getloc() const
 {
     return _M_locale;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitStlportLocale@_STL@@YAXPAVlocale@1@PBV21@PBVios_base@1@@Z present-unmatched
+void bfmeEmitStlportLocale(locale *p, const locale *q, const ios_base *b)
+{
+    p->locale::locale();
+    p->locale::locale(*q);
+    b->getloc();
+}
+#pragma inline_depth()
 
 }
