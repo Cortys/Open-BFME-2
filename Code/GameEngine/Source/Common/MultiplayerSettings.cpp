@@ -84,23 +84,8 @@ const FieldParse MultiplayerSettings::m_multiplayerSettingsFieldParseTable[] =
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-MultiplayerSettings::MultiplayerSettings()
-{
-	m_maxBeaconsPerPlayer = 3;
-	//
-
-	m_startCountdownTimerSeconds = 0;
-	m_numColors = 0;
-	m_isShroudInMultiplayer = TRUE;
-	m_showRandomPlayerTemplate = TRUE;
-	m_showRandomStartPos = TRUE;
-	m_showRandomColor = TRUE;
-	
-	m_observerColor;
-	m_randomColor;
-
-  m_gotDefaultStartingMoney = false;
-}  // end MultiplayerSettings
+// ??0MultiplayerSettings@@QAE@XZ lives in MultiplayerSettingsCtor.cpp
+// (dedicated TU: retail 0x003811D8); this TU must only declare it.
 
 // MultiplayerColorDefinition's default ctor lives in
 // MultiplayerColorDefinitionCtor.cpp (dedicated TU: retail 0x00380C4E needs
