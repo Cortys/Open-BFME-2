@@ -10,7 +10,11 @@
 extern "C" __declspec(dllimport) void __stdcall EnterCriticalSection(void *critsec);
 extern "C" __declspec(dllimport) void __stdcall LeaveCriticalSection(void *critsec);
 
-#pragma optimize("y", off)
+struct DebugCriticalSection;
+extern DebugCriticalSection g_bfmeCsDWC;
+
+// LookupFrame is frameless at retail RVA 0x00038330.
+#pragma optimize("y", on)
 
 class Debug
 {
@@ -50,34 +54,37 @@ public:
 	bool frameStatus(unsigned int addr, bool reset);
 };
 
+// The matched caller retains its frame pointer.
+#pragma optimize("y", off)
+
 // ?frameStatus@Debug@@QAE_NI_N@Z
 bool Debug::frameStatus(unsigned int addr, bool reset)
 {
 	if (m_fastPath != 0)
 		return true;
 
-	EnterCriticalSection((void *)0x00DE0884);
+	EnterCriticalSection((void *)&g_bfmeCsDWC);
 	m_prefix[5] = (int)addr;
 	FrameHashEntry *entry = LookupFrame(addr);
 	if (reset)
 	{
 		if (entry != 0)
 			entry->status = 0;
-		LeaveCriticalSection((void *)0x00DE0884);
+		LeaveCriticalSection((void *)&g_bfmeCsDWC);
 		return false;
 	}
 	if (entry == 0)
 	{
-		LeaveCriticalSection((void *)0x00DE0884);
+		LeaveCriticalSection((void *)&g_bfmeCsDWC);
 		return false;
 	}
 	if (entry->status == 2 || entry->status == 3)
 	{
-		LeaveCriticalSection((void *)0x00DE0884);
+		LeaveCriticalSection((void *)&g_bfmeCsDWC);
 		return false;
 	}
 	if (entry->status == 0)
 		UpdateFrameStatus(*entry);
-	LeaveCriticalSection((void *)0x00DE0884);
+	LeaveCriticalSection((void *)&g_bfmeCsDWC);
 	return entry->status == 1;
 }

@@ -35,7 +35,13 @@
 // declaration can name the same import (cf. StartOutput, which inlines the
 // only wvsprintf use in this TU; wsprintfA is unaffected).
 #define wvsprintfA wvsprintfA_cdecl_unused
+// Retail LookupFrame (0x00038330) indexes frameHash at +0x18. The donor
+// header places it at +0x14; frameStatus (0x0003A6A0) also writes +0x14
+// before the lookup. Preserve that otherwise unreconstructed word in this
+// TU's view. firstCmdGroup occurs only in its field declaration in the shim.
+#define firstCmdGroup firstCmdGroup; unsigned bfmeUnreconstructed014
 #include "_pch.h"
+#undef firstCmdGroup
 #undef wvsprintfA
 extern "C" __declspec(dllimport) int __stdcall wvsprintfA(char *out, const char *fmt, void *args);
 // (windows.h's `wvsprintf` macro was captured while the dummy name was

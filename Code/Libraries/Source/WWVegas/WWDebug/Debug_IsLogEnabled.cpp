@@ -9,7 +9,8 @@
 
 extern void *DebugAllocMemory(unsigned int size);
 
-#pragma optimize("y", off)
+// LookupFrame is frameless at retail RVA 0x00038330.
+#pragma optimize("y", on)
 
 // The used FrameHashEntry fields match the pinned provider's layout; both are
 // thiscall void updates with one reference argument at retail 0x00039A60.
@@ -52,6 +53,9 @@ private:
 public:
 	bool isLogEnabled(unsigned int addr);
 };
+
+// The matched caller retains its frame pointer.
+#pragma optimize("y", off)
 
 // ?isLogEnabled@Debug@@QAE_NI@Z
 bool Debug::isLogEnabled(unsigned int addr)
