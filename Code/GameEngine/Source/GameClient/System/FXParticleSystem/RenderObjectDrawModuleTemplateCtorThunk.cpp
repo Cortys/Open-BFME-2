@@ -55,6 +55,7 @@ class RenderObjectDrawModuleTemplate : public CategoryModuleTemplate<6>,
 {
 public:
     RenderObjectDrawModuleTemplate();
+    virtual ~RenderObjectDrawModuleTemplate();
 };
 
 // ??0RenderObjectDrawModuleTemplate@FXParticleSystem@@QAE@XZ
