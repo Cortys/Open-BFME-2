@@ -47773,3 +47773,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva0022CA95@@QAE@XZ,,0x0022CA95,47,Code/GameEngine/Source/Common/Rva0022CA95Ctor.cpp,matched,leaf ctor baseConstruct plus two BfmeE16 vectors vtable 0x00BE5348
 ?rva003FD0CC@Rva003FD0CC@@QAEXPADHH@Z,,0x003FD0CC,129,Code/GameEngine/Source/Common/Rva003FD0CCRead.cpp,matched,composite string plus extra slice copy via getLength empty fallback memcpy
 ?rva0039AF9B@Rva0039AF9B@@QAEMM@Z,,0x0039AF9B,45,Code/GameEngine/Source/Common/Rva0039AF9B.cpp,matched,Float scale via game state plus flag plus factor
+?rva0054F3E2@Rva0054F434@@UAE?AV?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@XZ,,0x0054F3E2,27,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Vslot1.cpp,matched,vslot 1 returns list at +0x04 via rowed copy 0x0054D800

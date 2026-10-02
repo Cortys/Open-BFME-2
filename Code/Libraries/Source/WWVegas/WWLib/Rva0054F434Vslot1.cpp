@@ -1,5 +1,3 @@
-// ?rva0054F3E2@Rva0054F434@@UAEPAXPAX@Z
-// partial score=0.91 date=2026-10-02
 // cl: /O1 /EHs /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfme2_ascii /Ireference/shims/bfmealloc
 // stlport
 //
@@ -48,7 +46,7 @@ class Rva0054F434 : public Rva0054F434Base
 {
 public:
 	virtual ~Rva0054F434();
-	virtual void *rva0054F3E2(void *out) throw();
+	virtual _STL::list<AsciiString, _STL::allocator<AsciiString> > rva0054F3E2();
 private:
 	_STL::_List_base<AsciiString, _STL::allocator<AsciiString> > m_list04;
 	char m_padA[0x30 - 0x04 - sizeof(_STL::_List_base<AsciiString, _STL::allocator<AsciiString> >)];
@@ -66,14 +64,9 @@ Rva0054F434::~Rva0054F434()
 {
 }
 
-// ?rva0054F3E2@Rva0054F434@@UAEPAXPAX@Z present-unmatched
 #pragma optimize("y", off)
-void *Rva0054F434::rva0054F3E2(void *out) throw()
+_STL::list<AsciiString, _STL::allocator<AsciiString> > Rva0054F434::rva0054F3E2()
 {
-	volatile int unused = 0;
-	__assume(out != 0);
-	new (out) _STL::list<AsciiString, _STL::allocator<AsciiString> >(
-		*(_STL::list<AsciiString, _STL::allocator<AsciiString> > *)&m_list04);
-	return out;
+	return *(_STL::list<AsciiString, _STL::allocator<AsciiString> > *)&m_list04;
 }
 #pragma optimize("", on)
