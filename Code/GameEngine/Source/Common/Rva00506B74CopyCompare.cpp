@@ -17,7 +17,9 @@ struct Coord3D : public Coord3DBase
 	bool equals(const Coord3DBase &that) const;
 };
 
-extern Coord3DBase Gen00DD0870;
+// Retail .data at VA 0x00DD0870 stores the three -1.0f components of the
+// 12-byte Coord3DBase value used by the matched comparison.
+Coord3DBase Gen00DD0870 = { -1.0f, -1.0f, -1.0f };
 
 class Rva00506B74
 {
