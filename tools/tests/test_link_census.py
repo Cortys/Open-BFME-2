@@ -615,3 +615,13 @@ def test_link_check_follows_alternatename_like_link_exe(monkeypatch):
     directives["other.obj"] = {}  # the other object drops its directive: the alias no longer resolves
     C.refresh(ix, [present[1]], None)
     assert C.check_object(present[2], ix, None)["unresolved"] == ["?a2@@YAXXZ", "?nowhere@@YAXXZ"]
+
+
+def test_c_import_slot_is_looked_up_undecorated_first():
+    # `__imp__exit` names MSVCR71's exit; `_exit` is a different import whose
+    # slot the bare spelling would otherwise find first.
+    t = truth(b"")
+    t.slots["exit"].add(0x7BA608)
+    t.slots["_exit"].add(0x7BA59C)
+    assert t.addresses("__imp__exit", L.RetailTruth.DIR32) == {0x7BA608}
+    assert t.addresses("__imp___exit", L.RetailTruth.DIR32) == {0x7BA59C}

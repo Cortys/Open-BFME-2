@@ -733,7 +733,10 @@ class RetailTruth:
             return self.pinned[key]
         if name.startswith("__imp_"):
             bare = name[len("__imp_"):]
-            found = self.slots.get(bare) or self.slots.get(_undecorate(bare))
+            # A C import's symbol carries its decoration underscore
+            # (`__imp__exit` is `exit`), so the undecorated name comes first:
+            # the bare spelling `_exit` is a different CRT import.
+            found = self.slots.get(_undecorate(bare)) or self.slots.get(bare)
             return found or None
         return None
 
