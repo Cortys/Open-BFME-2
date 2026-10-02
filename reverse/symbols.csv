@@ -7061,3 +7061,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?GetLine@Id@ProfileFuncLevel@@QBEIXZ,0x0065CE90,CSV name/address/source/line operand positions; donor empty-data getter folds with held 32-bit zero body; thiscall no stack args
 ?EnumThreads@ProfileFuncLevel@@SA_NIAAVThread@1@@Z,0x0073B660,CSV thread-selection and enumeration call sites; donor !HAS_PROFILE false behavior; held cdecl bool two-argument body
 ?GetTotalValue@Id@ProfileHighLevel@@QBEPBDXZ,0x006C64E0,CSV summary total-value operand at 0x006C7BC4; donor total-value purpose; held Id getter reads m_totalVal +0x20 and calls verified AsString
+??1Rva00598CFDBase@@UAE@XZ,0x00506B28,ICF twin of apply base vtable store for 0x00598CFD dtor
