@@ -61,7 +61,7 @@ void *Rva0037DCA5::rva0040C64A()
 {
 	void *found = rva0037DC52();
 	if (found == 0)
-		return (void *)0x00E0C898;
+		return (void *)&UnicodeString::TheEmptyString;
 	return (char *)found + 0x58;
 }
 
