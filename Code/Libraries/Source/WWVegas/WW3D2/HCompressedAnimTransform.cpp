@@ -6,6 +6,14 @@
 // Get_Orientation then Get_Transform then Get_Visibility. Retail delegates to
 // the two virtuals with identity-quaternion fallback loading 1.0f from
 // 0x007BB8D8 and translation at mtx+0x10.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "vector3.h"
 #include "quat.h"
 #include "matrix3d.h"
