@@ -48825,3 +48825,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F7412@Rva005F7670@@QAEXXZ,,0x005F7412,60,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,same hide shape as rva005F7161 with SetCommandPointsState flag 0x66
 ?rva005F72C8@Rva005F7670@@QAEXXZ,,0x005F72C8,60,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,chain hide BuildTimeState via rowed AptCall 0x005FB5E6
 ?onEnter@AIDockState@@UAE?AW4StateReturnType@@XZ,,0x00341695,142,Code/GameEngine/Source/GameLogic/AI/AIDockStateOnExit.cpp,matched,slot 4 of vtable 0xC11368 whose name slot returns AIDockState; BFME1 donor AIDockState.cpp onEnter with machine at +0x20
+?xfer@AIDockState@@MAEXPAVXfer@@@Z,,0x003415F5,160,Code/GameEngine/Source/GameLogic/AI/AIDockStateOnExit.cpp,matched,slot 3 of vtable 0xC11368 whose name slot returns AIDockState; BFME1 donor AIDockState_xfer.cpp xfer with machine at +0x20 and bool at +0x24

@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /DNDEBUG /MD /EHsc /Ireference/shims/moduledata
 //
 // AIDockState::onExit, retail 0x00341723 (77 bytes): slot 5 of vtable
 // 0x00C11368, whose slot-2 name getter returns AIDockState.
@@ -59,14 +59,88 @@ public:
 	unsigned char m_machineFields04[0x10];
 	Object *m_owner; // +0x14
 };
-class AIDockMachine
+class AsciiString;
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class Coord3DBase;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class Coord2D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+#include "Common/Snapshot.h"
+
+class Xfer
+{
+public:
+	class Version;
+
+	Xfer();
+	virtual ~Xfer();
+
+	void Version1();
+
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+
+class AIDockMachine : public Snapshot
 {
 public:
 	AIDockMachine(Object *owner);
 	virtual ~AIDockMachine();
-	virtual void slot04();
-	virtual void slot08();
-	virtual void slot0c();
+	virtual void crc(Xfer *xfer);
+	virtual void xfer(Xfer *xfer);
+	virtual void loadPostProcess();
 	virtual StateReturnType updateStateMachine();
 	virtual void slot14();
 	virtual void slot18();
@@ -80,13 +154,14 @@ public:
 	virtual void setGoalObject(Object *goalObject);
 	virtual void halt();
 private:
-	unsigned char m_machinePad[0x40 - sizeof(void *)];
+	unsigned char m_machinePad[0x40 - sizeof(Snapshot)];
 };
 class State
 {
 public:
 	virtual ~State();
 protected:
+	virtual void xfer(Xfer *xfer);
 	unsigned char m_stateFields04[0x14];
 	StateMachine *m_machine; // +0x18
 	unsigned char m_stateFields1C[4];
@@ -98,9 +173,30 @@ public:
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 	Object *getMachineOwner() { return m_machine->getOwner(); }
+protected:
+	virtual void xfer(Xfer *xfer);
 private:
 	AIDockMachine *m_dockMachine; // +0x20
+	bool m_afterDockMachine; // +0x24
 };
+void AIDockState::xfer(Xfer *xfer)
+{
+	if (xfer->IsLightCRC())
+		return;
+
+	xfer->Version1();
+
+	bool hasMachine = m_dockMachine != 0;
+	*xfer == hasMachine;
+
+	if (hasMachine && m_dockMachine == 0)
+		m_dockMachine = new AIDockMachine(getMachineOwner());
+
+	if (hasMachine)
+		*xfer == (Snapshot &)*m_dockMachine;
+
+	*xfer == m_afterDockMachine;
+}
 StateReturnType AIDockState::onEnter()
 {
 	Object *dockWithMe = m_machine->getGoalObject();
