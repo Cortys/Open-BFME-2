@@ -73,6 +73,8 @@ public:
     void *rva0021B2A2(unsigned int o, unsigned int i);
     void *rva0021A134(unsigned int index);
     int rva0021A016(unsigned int o, unsigned int i);
+    int rva00219E74(unsigned int o, unsigned int i);
+    int rva00219ED5(unsigned int o, unsigned int i);
     int rva0021A041(unsigned int o, unsigned int i);
     int rva0021A06C(unsigned int o, unsigned int i);
     int rva0021A097(unsigned int o, unsigned int i);
@@ -376,4 +378,29 @@ void *Rva00219B9E::rva0021A15D(unsigned int o, unsigned int i)
         return ((Rva00219B9E *)&base[o])->rva00219CC5(i);
     }
     return (void *)&AsciiString::TheEmptyString;
+}
+
+// Two more outer-index forwards of rva0021A016's shape, to the sibling inner
+// accessors rva00219BE1 and rva00219C1F; only the forwarded call differs.
+
+// ?rva00219E74@Rva00219B9E@@QAEHII@Z @0x00219E74 43B -> rva00219BE1
+int Rva00219B9E::rva00219E74(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219BE1(i);
+    }
+    return 0;
+}
+
+// ?rva00219ED5@Rva00219B9E@@QAEHII@Z @0x00219ED5 43B -> rva00219C1F
+int Rva00219B9E::rva00219ED5(unsigned int o, unsigned int i)
+{
+    unsigned int count = Vec32Size(&m_outer);
+    if (o < count) {
+        OuterElem32 *base = m_outer.m_start;
+        return ((Rva00219B9E *)&base[o])->rva00219C1F(i);
+    }
+    return 0;
 }

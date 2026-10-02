@@ -48,6 +48,7 @@ class W3DDisplay : public Display
 {
 public:
 	void rva000433AC(unsigned int width);
+	void rva00043340(unsigned int height);
 private:
 	char m_pad14[0x164];
 	Render2DClass *m_render2D;
@@ -56,6 +57,18 @@ private:
 void W3DDisplay::rva000433AC(unsigned int width)
 {
 	Display::setWidth(width);
+	float h = (float)getHeight();
+	float w = (float)getWidth();
+	RectClass rc(0.0f, 0.0f, w, h);
+	m_render2D->Set_Coordinate_Range(rc);
+}
+
+// ?rva00043340@W3DDisplay@@QAEXI@Z, retail 0x00043340, 108 bytes: the same body
+// over Display::setHeight, which is Zero Hour's W3DDisplay::setHeight beside its
+// setWidth. Only the extended Display call differs from rva000433AC.
+void W3DDisplay::rva00043340(unsigned int height)
+{
+	Display::setHeight(height);
 	float h = (float)getHeight();
 	float w = (float)getWidth();
 	RectClass rc(0.0f, 0.0f, w, h);
