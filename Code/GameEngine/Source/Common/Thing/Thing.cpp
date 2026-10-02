@@ -376,3 +376,9 @@ void carrierThingSetYTranslation()
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?setPeer@Rva007F9B80@@QAEXPAX@Z=?Set_Y_Translation@Matrix3D@@QAEXM@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?m@Gen_007f9590@@QAEXH@Z=?Set_Y_Translation@Matrix3D@@QAEXM@Z")
+#pragma comment(linker, "/alternatename:?bfmeSetGM@BfmeDerivedGM@@QAEXPAX@Z=?Set_Y_Translation@Matrix3D@@QAEXM@Z")
+#pragma comment(linker, "/alternatename:?bfmeAddAEB@BfmeOwnerAEB@@QAEXPAVBfmeThingAEB@@@Z=?Set_Y_Translation@Matrix3D@@QAEXM@Z")

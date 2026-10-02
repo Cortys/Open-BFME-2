@@ -116,3 +116,7 @@ AssetReference AssetRegistry::Find_Asset(const char *name)
 
 	return AssetReference((*it).second);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009EEC60_FindAsset@Rva009EEC60Registry@@QAE?AVRva009EBCE0AssetReference@@PBD@Z=?Find_Asset@AssetRegistry@@QAE?AVAssetReference@@PBD@Z")

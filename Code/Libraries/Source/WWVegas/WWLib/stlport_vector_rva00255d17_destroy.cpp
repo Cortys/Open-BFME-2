@@ -13,3 +13,7 @@ template void _STL::_Destroy<Rva00255D17 *>(Rva00255D17 *, Rva00255D17 *);
 // explicit member instantiations; both call the _Destroy above and _free.
 template _STL::vector<Rva00255D17>::~vector();
 template void _STL::vector<Rva00255D17>::_M_clear();
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1GeometryShapeVector@@QAE@XZ=??1?$vector@URva00255D17@@V?$allocator@URva00255D17@@@_STL@@@_STL@@QAE@XZ")

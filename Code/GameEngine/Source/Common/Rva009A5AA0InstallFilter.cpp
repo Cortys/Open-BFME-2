@@ -159,3 +159,7 @@ void __cdecl Rva009A5AA0InstallFilter(void *firstTable, void *secondTable, void 
 	}
 	((Rva009A5AA0TierInstaller)bfmeInstallCpuDispatchTable)(tier);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?d_009a5aa0@@YAXXZ=?Rva009A5AA0InstallFilter@@YAXPAX00H@Z")

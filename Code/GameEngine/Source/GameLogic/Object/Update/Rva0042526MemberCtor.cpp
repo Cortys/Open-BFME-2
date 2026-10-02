@@ -22,3 +22,7 @@ Rva0042526Member::Rva0042526Member()
 {
 	memset(this, 0, 0x4C);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?init@CondStore@@QAEXXZ=??0Rva0042526Member@@QAE@XZ")

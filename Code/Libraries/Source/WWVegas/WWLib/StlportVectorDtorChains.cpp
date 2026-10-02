@@ -40,3 +40,8 @@ template void _STL::vector<Rva00297360Element>::_M_clear();
 // Whole-class instantiation: its members that are rowed were placed at retail
 // by masked search of this TU's emitted bodies plus REL32 callee agreement.
 template class _STL::vector<Rva002390CB,_STL::allocator<Rva002390CB> >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1CameraMarkerVec@@QAE@XZ=??1?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1W3DStreakWeatherVec@@QAE@XZ=??1?$vector@VCameraMarker@@V?$allocator@VCameraMarker@@@_STL@@@_STL@@QAE@XZ")

@@ -15,3 +15,7 @@ template StringPairTree::~_Rb_tree();
 template void StringPairTree::erase(StringPairTree::iterator);
 template void StringPairTree::erase(StringPairTree::iterator, StringPairTree::iterator);
 template StringPairTree::size_type StringPairTree::erase(const AsciiString &);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?erase@?$_Rb_tree@HU?$pair@$$CBHUGen_t_00196d30_p8cd@@@_STL@@U?$_Select1st@U?$pair@$$CBHUGen_t_00196d30_p8cd@@@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHUGen_t_00196d30_p8cd@@@_STL@@@2@@_STL@@QAEXU?$_Rb_tree_iterator@U?$pair@$$CBHUGen_t_00196d30_p8cd@@@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHUGen_t_00196d30_p8cd@@@_STL@@@2@@2@@Z=?erase@?$_Rb_tree@VAsciiString@@U?$pair@$$CBVAsciiString@@V1@@_STL@@U?$_Select1st@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@U?$less@VAsciiString@@@3@V?$allocator@U?$pair@$$CBVAsciiString@@V1@@_STL@@@3@@_STL@@QAEXU?$_Rb_tree_iterator@U?$pair@$$CBVAsciiString@@V1@@_STL@@U?$_Nonconst_traits@U?$pair@$$CBVAsciiString@@V1@@_STL@@@2@@2@@Z")
