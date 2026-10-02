@@ -48464,3 +48464,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??$__uninitialized_copy@PAVRva002E0A0A@@PAV1@@_STL@@YAPAVRva002E0A0A@@PAV1@00ABU__false_type@0@@Z,,0x0052C203,38,Code/Libraries/Source/WWVegas/WWLib/Rva002E0A0AUninitCopy.cpp,matched,stride 28 via Construct 52C1D6 callers 52D157 52D1A2 sibling 003A6F70
 ?Rva0052C987Get@@YAPAXPAX00@Z,,0x0052C987,38,Code/GameEngine/Source/Common/Rva0052C987UninitCopy.cpp,matched,stride 14 via Construct 52C3D7 callers 52CDC4 565E97 565EE2
 ?rva0041F28C@Rva0041F28C@@QAEPAMH@Z,,0x0041F28C,28,Code/GameEngine/Source/Common/Rva0041F28CMethod.cpp,matched,index-selected float field via caller 0x005DA6CC neighbours ConstIntGetters5
+?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z,,0x006BD9C0,560,Code/GameEngine/Source/Common/System/GeometryInfoRva006BD9C0.cpp,matched,banked partial 0.95 closed by tools/permute.py (flag /Ox + statement/operand order); identity carried from the banked attempt

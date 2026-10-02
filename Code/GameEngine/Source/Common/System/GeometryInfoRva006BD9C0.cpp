@@ -1,10 +1,9 @@
-// ?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z
-// partial score=0.95 date=2026-09-28
-// ?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z
-// partial score=0.95 date=2026-09-28
-// cl: /DNDEBUG /MD /EHsc /O2 /Ob2 /G6
+// cl: /DNDEBUG /MD /EHsc /Ox /Ob2 /G6
+//
+// GeometryInfo::rva006BD9C0, retail 0x006BD9C0, 560 bytes. Banked partial
+// (score 0.95: tail fst/fstp and store order) closed by tools/permute.py:
+// /Ox instead of /O2, statement and operand order only; the body is the banked one.
 // stlport
-// ?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z retail 0x006BD9C0 560 bytes.
 // GeometryInfo multi-shape bounding shape: single shape copied out whole via the
 // rowed GeometryShape assign at 0x00063627, then 2D bounds over enabled BOX shapes
 // with tiny-shape (<1.0f) filtering, bailing to the cylinder answer (boundingCircle
@@ -95,22 +94,21 @@ private:
 	std::vector<GeometryShape> m_shapes;
 };
 
-// ?rva006BD9C0@GeometryInfo@@QBEXAAUGeometryShape@@@Z present-unmatched
 void GeometryInfo::rva006BD9C0(GeometryShape &out) const
 {
 	if (m_shapes.size() == 1)
 		out = m_shapes[0];
 
-	unsigned int numShapes = m_shapes.size();
 	Region2D bounds;
 	bounds.lo.x = bounds.lo.y = bounds.hi.x = bounds.hi.y = 0.0f;
 	Real maxZ = 0.0f;
+	unsigned int numShapes = m_shapes.size();
 
-	for (std::vector<GeometryShape>::const_iterator it = m_shapes.begin(); it != m_shapes.end(); ++it)
+	for (std::vector<GeometryShape>::const_iterator it = m_shapes.begin(); it != m_shapes.end(); it++)
 	{
 		if (!it->m_enabled)
 			continue;
-		if (numShapes != 1)
+		if (1 != numShapes)
 		{
 			if (!(it->m_majorRadius >= g_Va00BBB8D8))
 			{
@@ -126,19 +124,19 @@ void GeometryInfo::rva006BD9C0(GeometryShape &out) const
 
 		bounds.lo.x = bfmeMin(bounds.lo.x, it->m_offset.x - it->m_majorRadius);
 		bounds.lo.y = bfmeMin(bounds.lo.y, it->m_offset.y - it->m_minorRadius);
-		bounds.hi.x = bfmeMax(bounds.hi.x, it->m_offset.x + it->m_majorRadius);
+		bounds.hi.x = bfmeMax(bounds.hi.x, it->m_majorRadius + it->m_offset.x);
 		bounds.hi.y = bfmeMax(bounds.hi.y, it->m_offset.y + it->m_minorRadius);
 		maxZ = bfmeMax(maxZ, it->m_height);
 	}
 
 	Real major = (bounds.hi.x - bounds.lo.x) * g_Va00BC26F0;
-	Real minor = (bounds.hi.y - bounds.lo.y) * g_Va00BC26F0;
 	out.m_type = GEOMETRY_BOX;
 	out.m_majorRadius = major;
-	out.m_minorRadius = minor;
-	out.m_offset.x = bounds.lo.x + major;
-	out.m_offset.y = bounds.lo.y + minor;
 	out.m_offset.z = 0.0f;
+	Real minor = (bounds.hi.y - bounds.lo.y) * g_Va00BC26F0;
+	out.m_minorRadius = minor;
+	out.m_offset.x = major + bounds.lo.x;
+	out.m_offset.y = minor + bounds.lo.y;
 	return;
 
 cylinder:
@@ -148,7 +146,7 @@ cylinder:
 	out.m_height = getMaxHeightAbovePosition();
 	Coord3D zero;
 	zero.x = 0.0f;
-	zero.y = 0.0f;
 	zero.z = 0.0f;
+	zero.y = 0.0f;
 	out.m_offset = zero;
 }
