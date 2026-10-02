@@ -48733,3 +48733,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva00660E00@Rva00660DD0@@QAEXPAVRva007E8810Message@@@Z,,0x00660E00,44,Code/GameEngine/Source/GameNetwork/Rva00660DD0Cluster.cpp,matched,address-derived FESL fsys TXN builder variant 2
 ?rva0068A130@Rva0068A130@@QAEXXZ,,0x0068A130,35,Code/GameEngine/Source/Common/Rva0068A130Cluster.cpp,matched,address-derived vtable-slot0 deleting release helper
 ?rva006F1F50@@YAXPAVBfmeAptValue006DCD20@@@Z,,0x006F1F50,52,Code/GameEngine/Source/Common/Rva006F1F50Cluster.cpp,matched,address-derived AptValue isXml conversion helper
+?rva00741730@Rva00741730@@QAEXXZ,,0x00741730,26,Code/Libraries/Source/WWVegas/WW3D2/Rva00741730Cluster.cpp,matched,address-derived two-step Reset_Line helper
