@@ -45,8 +45,10 @@ public:
 	virtual void f1();
 	virtual void __stdcall f2();
 };
-extern Rva000F0972Releasable *g_00DEBCE0;
-extern Rva000F0972Releasable *g_00DEBCDC;
+// g_00DEBCE0: matched references place it at VA 0xdebce0 (retail .data initial value 0).
+Rva000F0972Releasable * g_00DEBCE0 = 0;
+// g_00DEBCDC: matched references place it at VA 0xdebcdc (retail .data initial value 0).
+Rva000F0972Releasable * g_00DEBCDC = 0;
 class W3DBufferManager
 {
 public:

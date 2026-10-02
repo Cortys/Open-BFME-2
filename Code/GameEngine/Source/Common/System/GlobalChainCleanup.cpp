@@ -11,8 +11,10 @@ struct RvaCleanupNode
 {
     RvaCleanupNode *next;
 };
-extern RvaCleanupNode *g_chainHeadAtE07C08;
-extern RvaCleanupNode *g_chainHeadAtE1D060;
+// g_chainHeadAtE07C08: matched references place it at VA 0xe07c08 (retail .data initial value 0).
+RvaCleanupNode * g_chainHeadAtE07C08 = 0;
+// g_chainHeadAtE1D060: matched references place it at VA 0xe1d060 (retail .data initial value 0).
+RvaCleanupNode * g_chainHeadAtE1D060 = 0;
 
 void rva007B9A50()
 {

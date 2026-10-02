@@ -32,7 +32,8 @@ public:
 	virtual void v12(); virtual void v13(void *p); virtual void v14();
 };
 
-extern G00DFF080Obj *g_00DFF080;
+// g_00DFF080: matched references place it at VA 0xdff080 (retail .data initial value 0).
+G00DFF080Obj * g_00DFF080 = 0;
 
 struct Rva0029A94FSlot
 {

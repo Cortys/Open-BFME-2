@@ -5,6 +5,8 @@
 // global 0x00BBB8E0 via rowed g_Va00BBB8E0. Caller 0x002AB22A unblocks it.
 // Evidence: retail xorps plus movss zeros plus and [eax+0xC] 0 plus movss load.
 extern float g_Va00BBB8E0;
+// g_Va00BBB8E0: matched references place it at VA 0xbbb8e0 (retail .rdata value 3.4028235e+38f).
+float g_Va00BBB8E0 = 3.4028235e+38f;
 
 class Rva002A996F
 {

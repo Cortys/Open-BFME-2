@@ -62,6 +62,8 @@ extern InGameUI *TheInGameUI;
 extern ClientFrameSubsystem *TheGameClient;
 extern float g_00BC26EC;
 extern float g_00DBA500;
+// g_00DBA500: matched references place it at VA 0xdba500 (retail .data initial value 0.03f).
+float g_00DBA500 = 0.03f;
 
 void Rva00524FA7::rva00524FA7()
 {

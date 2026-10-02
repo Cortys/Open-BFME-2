@@ -8,7 +8,8 @@ struct PoolNode002ABAC0
 	PoolNode002ABAC0* m_next;
 };
 
-extern PoolNode002ABAC0* g_00DBBD34;
+// g_00DBBD34: matched references place it at VA 0xdbbd34 (retail .data initial value 0).
+PoolNode002ABAC0* g_00DBBD34 = 0;
 
 void __stdcall Rva002ABAC0Free(void** out, PoolNode002ABAC0* n)
 {

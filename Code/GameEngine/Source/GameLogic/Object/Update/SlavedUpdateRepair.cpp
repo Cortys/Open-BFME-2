@@ -128,6 +128,8 @@ private:
 	Locomotor *m_curLocomotor; // +0x1F0
 };
 extern int g_Va00E03BBC; // SLAVED_UPDATE_RATE
+// g_Va00E03BBC: matched references place it at VA 0xe03bbc (zero-filled .bss).
+int g_Va00E03BBC;
 class SlavedUpdate : public BehaviorModule
 {
 public:

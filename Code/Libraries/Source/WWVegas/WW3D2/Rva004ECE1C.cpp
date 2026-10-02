@@ -12,6 +12,8 @@ public:
 };
 extern GameLogic *TheGameLogic; // ?TheGameLogic@@3PAVGameLogic@@A
 extern unsigned int g_00E044B0;
+// g_00E044B0: matched references place it at VA 0xe044b0 (zero-filled .bss).
+unsigned int g_00E044B0;
 
 class Rva004ECE1C
 {

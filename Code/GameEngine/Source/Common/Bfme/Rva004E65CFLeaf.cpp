@@ -88,6 +88,8 @@ public:
 
 extern Rva004E65CFMgr *g_00DEC2D4;
 extern float g_Va00BC28F4;
+// g_Va00BC28F4: matched references place it at VA 0xbc28f4 (retail .rdata value 2.0f).
+float g_Va00BC28F4 = 2.0f;
 
 class Rva004E65CF
 {

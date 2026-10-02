@@ -31,7 +31,11 @@ private:
 };
 
 extern unsigned int g_00DEC224;
+// g_00DEC224: matched references place it at VA 0xdec224 (zero-filled .bss).
+unsigned int g_00DEC224;
 extern unsigned long g_00DEC220;
+// g_00DEC220: matched references place it at VA 0xdec220 (zero-filled .bss).
+unsigned long g_00DEC220;
 extern "C" __declspec(dllimport) unsigned long __stdcall timeGetTime(void);
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)

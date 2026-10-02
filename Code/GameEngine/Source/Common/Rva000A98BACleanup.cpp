@@ -7,7 +7,8 @@ class Rva0011018B
 public:
 	virtual ~Rva0011018B();
 };
-extern Rva0011018B *g_00DE6170;
+// g_00DE6170: matched references place it at VA 0xde6170 (retail .data initial value 0).
+Rva0011018B * g_00DE6170 = 0;
 void __cdecl operator delete(void *p);
 
 void __cdecl Rva000A98BACleanup(void)

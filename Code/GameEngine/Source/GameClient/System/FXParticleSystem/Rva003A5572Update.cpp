@@ -7,7 +7,11 @@ extern const float BfmeZeroRange;
 extern float g_Va007C26F0;
 extern float g_Va00BBB8D8;
 extern float g_00C1B310;
+// g_00C1B310: matched references place it at VA 0xc1b310 (retail .rdata value 6.2831855f).
+float g_00C1B310 = 6.2831855f;
 extern float g_00C1B4F0;
+// g_00C1B4F0: matched references place it at VA 0xc1b4f0 (retail .rdata value 0.005f).
+float g_00C1B4F0 = 0.005f;
 
 class Rva003AED3E
 {

@@ -68,8 +68,10 @@ State::State(StateMachine *machine, unsigned int hash)
 	m_transitionsLast = 0;
 }
 
-extern "C" char Rva004D7491_vftable;
-extern "C" char Rva004D74AC_vftable;
+// Rva004D7491_vftable: matched references place it at VA 0xc60668 (retail .rdata value -3).
+extern "C" char Rva004D7491_vftable = -3;
+// Rva004D74AC_vftable: matched references place it at VA 0xc606b0 (retail .rdata value -3).
+extern "C" char Rva004D74AC_vftable = -3;
 
 class __declspec(novtable) Rva004D7491 : public State
 {

@@ -3,7 +3,11 @@
 // ?Rva0052192DInit@@YAXH@Z retail 0x0052192D 74B
 // Evidence: chain via Shell::push 0x0035C74A; callers 0x00515C64; strings Skirmish.apt; globals g_00E04930 g_00DD179C g_Va00A01E48 TheRva00222A8BTarget; callees StringBase 0x00037BA0 Shell::push 0x0035C74A rva002233A6 0x002233A6; precedent Rva00434160Init same Shell push pattern.
 extern int g_00E04930;
+// g_00E04930: matched references place it at VA 0xe04930 (zero-filled .bss).
+int g_00E04930;
 extern int g_00DD179C;
+// g_00DD179C: matched references place it at VA 0xdd179c (retail .data initial value -1).
+int g_00DD179C = -1;
 struct GlobalA01E48;
 extern struct GlobalA01E48 *g_Va00A01E48;
 class Shell {

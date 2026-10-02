@@ -8,7 +8,9 @@
 // under EH state 0. Base carries the scalar so its store lands before the
 // derived EH state and vtable. Caller at 0x005C19FD in 0x005C19B6. Flags
 // copy Rva005C18F0Dtor.cpp with the shared ascii shim first.
-extern char g_00E06034[];
+// g_00E06034: matched references place it at VA 0xe06034; zero-filled at retail, sized to the
+// 0x64-byte gap before the next known global there.
+char g_00E06034[100];
 
 class StrategicStatsPreferences
 {

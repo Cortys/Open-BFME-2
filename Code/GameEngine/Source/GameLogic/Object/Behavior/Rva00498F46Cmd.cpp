@@ -46,6 +46,8 @@ public:
 unsigned char __cdecl Rva00498B8BGet(Object *p);
 
 extern float g_00C50244;
+// g_00C50244: matched references place it at VA 0xc50244 (retail .rdata value 16.67f).
+float g_00C50244 = 16.67f;
 
 struct Rva00498F46Sub08
 {

@@ -16,8 +16,12 @@ private:
 };
 
 extern float g_bfmePropagandaRadius;	// 200.0 at retail 0xBCE190 (DIR32-masked)
+// g_bfmePropagandaRadius: matched references place it at VA 0xbce190 (retail .rdata value 2e+02f).
+float g_bfmePropagandaRadius = 2e+02f;
 extern float g_bfmePropagandaHeal;	// 0.01 at retail 0xBCF628 (DIR32-masked)
 extern float g_bfmePropagandaUpgradedHeal;	// 0.02 at retail 0xBC6380 (DIR32-masked)
+// g_bfmePropagandaUpgradedHeal: matched references place it at VA 0xbc6380 (retail .rdata value 0.02f).
+float g_bfmePropagandaUpgradedHeal = 0.02f;
 
 class FXList;
 class UpgradeTemplate;

@@ -26,7 +26,8 @@ public:
 	virtual Rva0027070CData *slot48(Rva0027070CData *out);
 };
 
-extern Rva0027070CGlobal *g_00DFE1E4;
+// g_00DFE1E4: matched references place it at VA 0xdfe1e4 (retail .data initial value 0).
+Rva0027070CGlobal * g_00DFE1E4 = 0;
 
 class Rva0027070C
 {

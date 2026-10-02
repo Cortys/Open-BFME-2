@@ -19,6 +19,8 @@
 
 extern const void *const g_00BBB554[];
 extern int g_00DCB4CC;
+// g_00DCB4CC: matched references place it at VA 0xdcb4cc (retail .data initial value -1).
+int g_00DCB4CC = -1;
 
 class OpaqueRefCounted
 {
