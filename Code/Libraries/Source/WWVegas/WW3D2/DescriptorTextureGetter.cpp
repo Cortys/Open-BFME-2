@@ -32,3 +32,7 @@ BfmeTextureHandleView DescriptorTextureView::Get_Handle(int pass, int stage) con
 {
     return BfmeTextureHandleView(Texture[pass][stage]);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeGetAUZA@BfmeSubAUZA@@QBE?AUBfmeHandleUZA@@HH@Z=?Get_Handle@DescriptorTextureView@@QBE?AUBfmeTextureHandleView@@HH@Z")

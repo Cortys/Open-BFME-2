@@ -59,3 +59,7 @@ Rva0048130E::Rva0048130E(const Rva0048130E &src)
 }
 
 void deleteRva0048130E(Rva0048130E *p) { delete p; }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0Rva0048130E@@QAE@ABU0@@Z=??0Rva0048130E@@QAE@ABV0@@Z")

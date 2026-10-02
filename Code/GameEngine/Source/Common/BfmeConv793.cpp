@@ -49,3 +49,7 @@ void bfmeGoDXE()
 	if (r < 0)
 		bfmeFailDXE(r);
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeFailDXE@@YGXH@Z=?_com_issue_error@@YGXJ@Z")

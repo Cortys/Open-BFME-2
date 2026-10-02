@@ -86,3 +86,7 @@ void CreateModule::loadPostProcess( void )
 }  // ene loadPostProcess
 
 
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0ExperienceLevelCreateBase@@QAE@PAVThing@@PBVModuleData@@@Z=??0CreateModule@@QAE@PAVThing@@PBVModuleData@@@Z")

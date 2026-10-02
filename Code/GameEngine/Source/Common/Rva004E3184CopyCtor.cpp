@@ -52,3 +52,7 @@ Rva004E3184::Rva004E3184(const Rva004E3184 &o)
       m_50(o.m_50), m_54(o.m_54), m_55(o.m_55)
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0BfmePod88@@QAE@ABU0@@Z=??0Rva004E3184@@QAE@ABV0@@Z")

@@ -29,3 +29,7 @@ unsigned int BfmeS1155::bfmeFind1155(const char *s, unsigned int pos, unsigned i
 	n1 = reinterpret_cast<BfmeSearch1155Fn>(&bfmeGoOV)(m_bfme00 + pos, m_bfme04, n2, n3);
 	return (n1 != m_bfme04) ? (unsigned int)(n1 - m_bfme00) : 0xffffffff;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDoPI@BfmeThingPI@@QAEXPADPAXH@Z=?bfmeFind1155@BfmeS1155@@QAEIPBDII@Z")

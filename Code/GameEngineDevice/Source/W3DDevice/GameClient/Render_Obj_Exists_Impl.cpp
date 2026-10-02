@@ -73,3 +73,7 @@ bool AssetRegistry::Render_Obj_Exists_Impl(const char *name)
 	AssetRegistryHash::iterator it = assets->find(key);
 	return it != assets->end();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeSay1025@BfmeP1025@@QAEDPAD@Z=?Render_Obj_Exists_Impl@AssetRegistry@@QAE_NPBD@Z")

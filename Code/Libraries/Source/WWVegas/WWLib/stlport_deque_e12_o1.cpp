@@ -11,3 +11,7 @@
 #include <deque>
 struct BfmeE12 { float x, y, z; };
 template class _STL::deque<BfmeE12, _STL::allocator<BfmeE12 > >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?allocate@?$allocator@W4ScienceType@@@_STL@@QAEPAW4ScienceType@@IPBX@Z=?allocate@?$allocator@PAUBfmeE12@@@_STL@@QBEPAPAUBfmeE12@@IPBX@Z")

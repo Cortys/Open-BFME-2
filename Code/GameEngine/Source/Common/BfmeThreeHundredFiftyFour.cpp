@@ -79,3 +79,7 @@ void BfmeSubUC::bfmeDropUC(BfmeThingUC *who)
 }
 // ?g_bfmeThingUCHead@@3PAVBfmeNodeUC@@A: the global at VA 0xe0abb0 is ?g_Va00E0ABB0@@3HA.
 #pragma comment(linker, "/alternatename:?g_bfmeThingUCHead@@3PAVBfmeNodeUC@@A=?g_Va00E0ABB0@@3HA")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDropVIH@BfmeSubVIH@@QAEXPAVBfmeThingVIH@@@Z=?bfmeDropUC@BfmeSubUC@@QAEXPAVBfmeThingUC@@@Z")
