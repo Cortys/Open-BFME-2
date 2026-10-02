@@ -6,10 +6,12 @@
 //
 #define Matrix3x3 Matrix3
 #define Matrix4x4 Matrix4  // BFME renamed it
+#pragma optimize("t", on)
 #include "camera.h"
 #include "ww3d.h"
 #include "matrix4.h"
 #include "dx8wrapper.h"
+#pragma optimize("", on)
 
 // ?_bfmeFrustumAnchor@@YAPAVFrustumClass@@XZ absent-from-retail
 FrustumClass *_bfmeFrustumAnchor(void)
