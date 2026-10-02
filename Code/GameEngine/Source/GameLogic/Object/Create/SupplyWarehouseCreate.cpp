@@ -60,14 +60,17 @@ SupplyWarehouseCreate::~SupplyWarehouseCreate( void )
 
 //-------------------------------------------------------------------------------------------------
 // ?onCreate@SupplyWarehouseCreate@@UAEXXZ
-// ?onCreate@SupplyWarehouseCreate@@UAEXXZ present-unmatched
 void SupplyWarehouseCreate::onCreate( void )
 {
 	// Warehouses are never Built.
 	if( ThePlayerList == NULL )
 		return;
 
-	for( Int playerIndex = ThePlayerList->getPlayerCount() - 1; playerIndex >= 0; playerIndex-- )
+	// BFME 2's PlayerList keeps its player count at +0x14, not where the vendored
+	// Zero Hour header's getPlayerCount() reads it (+0x10); retail onCreate
+	// (0x004B8F22) loads [ThePlayerList+0x14].
+	Int playerCount = *reinterpret_cast<const Int *>( reinterpret_cast<const char *>( ThePlayerList ) + 0x14 );
+	for( Int playerIndex = playerCount - 1; playerIndex >= 0; playerIndex-- )
 	{
 		Player *currentPlayer = ThePlayerList->getNthPlayer( playerIndex );
 		if( currentPlayer == NULL )
@@ -75,12 +78,13 @@ void SupplyWarehouseCreate::onCreate( void )
 		// BFME's Player layout inserts extra members ahead of
 		// m_resourceGatheringManager relative to the vendored ZH header (the
 		// dominant BFME/ZH layout-drift pattern -- see reference/shims/player).
-		// Retail onCreate@SupplyWarehouseCreate proves the field lives at
-		// Player+0x228, not the header's natural (or shim-patched) offset, so
+		// Retail onCreate@SupplyWarehouseCreate (0x004B8F22, the onCreate slot of
+		// the vftable its rowed constructor installs) reads the field at
+		// Player+0x2E4, not the header's natural (or shim-patched) offset, so
 		// read it directly rather than through getResourceGatheringManager().
 		ResourceGatheringManager *manager =
 			*reinterpret_cast<ResourceGatheringManager * const *>(
-				reinterpret_cast<const char *>( currentPlayer ) + 0x228 );
+				reinterpret_cast<const char *>( currentPlayer ) + 0x2E4 );
 		if( manager == NULL )
 			continue;
 		manager->addSupplyWarehouse( getObject() );
