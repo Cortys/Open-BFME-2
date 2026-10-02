@@ -7080,3 +7080,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?rva00590F13@Rva004D6208@@QAEXVAsciiString@@@Z,0x00590F13,AsciiString setter on Rva004D6208 twin of 0x004D65F9 via caller 0x005922FB
 ?createNode@Rva000427195@@QAEPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x002CF9DC,ICF twin of stdcall row 0x002CF9DC for table insert call with this; same 12B node and pair copy
 ??0BfmeTailBE@@QAE@ABU0@@Z,0x000365F0,retail construction workers 0x6BE840 and 0x6BE8C0 copy the one-pointer string field; alias to rowed StringBase narrow copy constructor
+?releaseBuffer@BfmeTailBE@@QAEXXZ,0x00036410,retail 0x6BF6B3 releases each record string at +0x1C; linker alias to byte-verified StringBase narrow releaseBuffer
