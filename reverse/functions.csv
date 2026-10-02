@@ -48752,3 +48752,5 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva006C1790@@YAIXZ,,0x006C1790,21,Code/GameEngine/Source/Common/Rva006C1790Cluster.cpp,matched,GetTickCount divided by 1000 via the 0x10624DD3 reciprocal; IAT pinned 0x00BBA294
 ?Rva006C1FE0@@YGIPADHPAPAD@Z,,0x006C1FE0,45,Code/GameEngine/Source/Common/Rva006C1790Cluster.cpp,matched,trailing 16-bit length reader returning body size plus two; optional body pointer out
 ??0Rva00689320@@QAE@HHH@Z,,0x00689320,41,Code/GameEngine/Source/Common/Rva00689320Cluster.cpp,matched,BFME2NativeNetwork-derived constructor with vptr store between member stores; address-derived
+??0Rva00711380@@QAE@HH@Z,,0x00711380,45,Code/GameEngine/Source/Common/Rva00711380Cluster.cpp,matched,Apt base-derived ctor with bits clear at +0x1C and arg at +0x20
+?Rva007113B0@@YG_NPAVBfmeAptValue006DCD20@@PBVEAStringC@@0@Z,,0x007113B0,91,Code/GameEngine/Source/Common/Rva00711380Cluster.cpp,matched,XML attributes writer via pinned Apt predicates and EAStringC accessors; always true
