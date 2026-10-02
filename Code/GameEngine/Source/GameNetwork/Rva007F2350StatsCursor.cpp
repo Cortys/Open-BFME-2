@@ -39,6 +39,7 @@ class Rva007F2350StatsCursor
 {
 public:
 	bool next( Rva007F2350StatsRecord *record );
+	bool rva007F2230( Rva007F2350StatsRecord *record );
 	bool rva007F24A0( Rva007F2350StatsRecord *record );
 
 	Rva007E8810Message *m_msg;
@@ -79,6 +80,37 @@ bool Rva007F2350StatsCursor::next( Rva007F2350StatsRecord *record )
 	++m_index;
 	m_state = 0;
 	return true;
+}
+
+// BFME2 0x0065ED20; body from Open-BFME-1 (submodule 10af19f44a, BFME1 0x007F2230),
+// byte-identical, written with this file's row-name calls. BFME 1 folded it
+// with next; here next is the separate 0x0065EE40 body, so the address-derived
+// name is the one this keeps. Retail 0x007F2230 (BFME 1): int3 at 0x007F222F,
+// ret 4 at 0x007F2348, then five int3 bytes. The stats.* strings prove this
+// shares the cursor and output record layout with next; its +0x30 output is
+// the key string.
+bool Rva007F2350StatsCursor::rva007F2230(Rva007F2350StatsRecord *record)
+{
+ char name[0x40];
+ char valueText[0x40];
+ union { float number; int bits; } value;
+ record->m_name[0] = 0;
+ record->m_30 = 0;
+ record->m_value = 0;
+ record->m_addStat[0] = 0;
+ record->m_rank = 0;
+ sprintf(name, "stats.%d.key", m_index);
+ if (!((BfmeThingUPB *)m_msg)->bfmeGoUPB((void *)name, &record->m_30, (void *)0x20)) return false;
+ sprintf(name, "stats.%d.value", m_index);
+ ((BfmeThingUPB *)m_msg)->bfmeGoUPB((void *)name, valueText, (void *)0x40);
+ sscanf(valueText, "%f", &value.number);
+ record->m_value = value.bits;
+ sprintf(name, "stats.%d.rank", m_index);
+ record->m_rank = (int)(long)((BfmeThingRF *)m_msg)->bfmeGoRF((void *)name, (void *)0);
+ sprintf(name, "stats.%d.text", m_index);
+ ((BfmeThingUPB *)m_msg)->bfmeGoUPB((void *)name, record->m_addStat, (void *)0xff);
+ ++m_index;
+ return true;
 }
 
 // BFME2 0x0065EF90; body from Open-BFME-1 5cae4bdff (BFME1 0x007F24A0), unchanged.
