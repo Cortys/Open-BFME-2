@@ -57,31 +57,7 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/AI/CreateObjectDieModuleDataCtorThunk.cpp
-// ??0CreateObjectDieModuleData@@ present-unmatched
-CreateObjectDieModuleData::CreateObjectDieModuleData()
-{
-
-	m_ocl = NULL;
-	m_transferPreviousHealth = FALSE;
-
-}
-
-// ------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------
-/*static*/ void CreateObjectDieModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-	DieModuleData::buildFieldParse(p);
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "CreationList",	INI::parseObjectCreationList,		NULL,											offsetof( CreateObjectDieModuleData, m_ocl ) },
-		{ "TransferPreviousHealth", INI::parseBool, NULL	,offsetof( CreateObjectDieModuleData, m_transferPreviousHealth ) },
-		{ 0, 0, 0, 0 }
-	};
-	p.add(dataFieldParse);
-
-}
+// (CreateObjectDieModuleData ctor/dtor/buildFieldParse live in their own units; this file must not redefine them.)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
