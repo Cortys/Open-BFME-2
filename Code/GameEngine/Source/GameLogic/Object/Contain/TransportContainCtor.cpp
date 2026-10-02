@@ -90,3 +90,11 @@ TransportContain::TransportContain(Thing *thing, const ModuleData *moduleData)
 	for (unsigned int i = 0; i < payload.size(); ++i)
 		m_names.push_back(payload[i].m_name);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?transportAnchor@TransportInterface@@UAEXXZ=__purecall")
+#pragma comment(linker, "/alternatename:?b34@TransportContain@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?b0C@TransportContain@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?b00@TransportContain@@UAEXXZ=??_GTransportContain@@UAEPAXI@Z")

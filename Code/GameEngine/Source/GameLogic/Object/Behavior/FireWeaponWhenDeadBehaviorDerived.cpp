@@ -310,3 +310,9 @@ int Rva004B554FHolder::rva004B554F() const
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1StatusBitsUpgrade@@UAE@XZ=??1Rva004B48D3@@UAE@XZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?fe@Rva004B5982_E@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?fe@Rva004B5D0B_E@@UAEXXZ=??1Coord2D@@QAE@XZ")

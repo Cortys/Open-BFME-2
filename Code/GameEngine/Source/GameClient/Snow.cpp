@@ -152,3 +152,14 @@ void SnowManager::reset()
     TheWeatherSetting = static_cast<WeatherSetting *>(setting->deleteOverrides());
     updateIniSettings();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?targetSlot3@SnowManager@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?targetSlot4@SnowManager@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?targetSlot5@SnowManager@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?targetSlot6@SnowManager@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?targetSlot8@SnowManager@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?targetSlot11@SnowManager@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?targetSlot12@SnowManager@@UAEXXZ=??1Coord2D@@QAE@XZ")

@@ -92,3 +92,18 @@ Rva007FBB20Object *Rva007FBB20( void *payload )
 #pragma comment(linker, "/alternatename:?Gen007F2E60@@YAPAURva007E9DF0Cached@@PAURva007E9DF0Owner@@@Z=?Rva007F2E60@@YAPAVRva007F2E60Object@@PAX@Z")
 #pragma comment(linker, "/alternatename:?Gen007F3410@@YAPAURva007E9E30Cached@@PAURva007E9E30Owner@@@Z=?Rva007F3410@@YAPAVRva007F3410Object@@PAX@Z")
 #pragma comment(linker, "/alternatename:?Gen007F40F0@@YAPAURva007E9E70Cached@@PAURva007E9E70Owner@@@Z=?Rva007F40F0@@YAPAVRva007F40F0Object@@PAX@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?secondary@Q3MakeBaseB@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F2E60Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F2E60Object@@UAEXXZ=??_GGen007F2E30@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F3410Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F3410Object@@UAEXXZ=??_GGen007F33E0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F40F0Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F40F0Object@@UAEXXZ=??_GGen007F40C0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007FBB20Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007FBB20Object@@UAEXXZ=??_GGen007FBAF0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007E9B40Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007E9B40Object@@UAEXXZ=??_GGen007E9B10@@UAEPAXI@Z")

@@ -33,3 +33,18 @@ BFME_DERIVED_CTOR(007F2680)
 BFME_DERIVED_CTOR(007F2F80)
 BFME_DERIVED_CTOR(007FAE20)
 BFME_DERIVED_CTOR(007FC150)
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?secondary@Rva007F1DE0BaseB@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F2680Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F2680Object@@UAEXXZ=??_GGen007F2E30@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F2F80Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F2F80Object@@UAEXXZ=??_GGen007F33E0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007FAE20Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007FAE20Object@@UAEXXZ=??_GGen007FBAF0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007FC150Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007FC150Object@@UAEXXZ=??_GGen007F1BF0@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007F1DE0Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007F1DE0Object@@UAEXXZ=??_GGen007F2120@@UAEPAXI@Z")
