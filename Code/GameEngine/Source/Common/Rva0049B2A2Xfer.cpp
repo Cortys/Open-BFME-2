@@ -126,12 +126,44 @@ class Rva0049B2A2 : public UpdateModule
 {
 protected:
 	virtual void xfer(Xfer *xfer);
+public:
+	unsigned char rva0049B3D2();
 
 private:
 	unsigned int m_20;
 	unsigned int m_24;
 	int m_28;
 };
+
+enum ObjectStatusTypes
+{
+	OBJECT_STATUS_0 = 0,
+	OBJECT_STATUS_1 = 1,
+	OBJECT_STATUS_2 = 2
+};
+
+class Object
+{
+public:
+	bool testStatus(ObjectStatusTypes s) const;
+};
+
+class GameLogic
+{
+public:
+	char m_pad[0x40];
+	unsigned m_40;
+};
+
+extern GameLogic *TheGameLogic;
+
+unsigned char Rva0049B2A2::rva0049B3D2()
+{
+	if (TheGameLogic->m_40 < m_20) {
+		return 0;
+	}
+	return (unsigned char)!m_object->testStatus(OBJECT_STATUS_2);
+}
 
 void Rva0049B2A2::xfer(Xfer *xfer)
 {
