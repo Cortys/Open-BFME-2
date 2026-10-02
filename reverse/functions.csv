@@ -48952,3 +48952,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005FF4BD@Rva005FF4BD@@QAEXH@Z,,0x005FF4BD,8,Code/GameEngine/Source/Common/Rva005FF4BDForward.cpp,matched,chain via 0x005FF267 AptCall SetState forwarder plus4
 ?rva005FF9D8@Rva005FF450@@QAEXH@Z,,0x005FF9D8,118,Code/GameEngine/Source/Common/Rva005FF450Apt.cpp,matched,unlock via 0x0052519D fire SetUnitIconCount resize plus Quantity
 ?rva005FFA4E@Rva005FFA4E@@QAEXH@Z,,0x005FFA4E,8,Code/GameEngine/Source/Common/Rva005FFA4EForward.cpp,matched,chain via 0x005FF9D8 icon count forwarder plus4
+?rva005FFED5@Rva005FFED5@@QAEXH@Z,,0x005FFED5,8,Code/GameEngine/Source/Common/Rva005FFED5Forward.cpp,matched,unlock via 0x005FFC26 SetState forwarder plus4
