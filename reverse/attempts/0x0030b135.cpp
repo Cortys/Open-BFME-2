@@ -1,6 +1,6 @@
 // ?rva0030B135@Rva0030B92C@@QAEXPBUBfmePod8@@@Z
-// partial score=0.93 date=2026-10-02
-// cl: /O2 /arch:SSE /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// partial score=0.94 date=2026-10-02
+// cl: /O1 /arch:SSE /EHsc /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
 // stlport
 // ?rva0030B135@Rva0030B92C@@QAEXPBUBfmePod8@@@Z @0x0030B135 114B
 // Vector-plus-mid float accumulate via rowed Pod8 vector then flag-gated mid.
