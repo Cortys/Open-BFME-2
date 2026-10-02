@@ -43,3 +43,12 @@ Gen_dtor_00972460::~Gen_dtor_00972460()
 	operator delete(m_ptr);
 	m_name.Free_String();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot00@Rva009EB810TailBase@@UAEXXZ=?get@Rva002A79A1DwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?slot04@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot0C@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot14@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?slot1C@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")

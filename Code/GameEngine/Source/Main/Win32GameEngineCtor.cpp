@@ -59,3 +59,22 @@ Win32GameEngine::Win32GameEngine()
 {
 	m_previousErrorMode = SetErrorMode(1);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?m_unknown01@GameEngine@@UAEXXZ=?loadPostProcess@UpdateModule@@MAEXXZ")
+#pragma comment(linker, "/alternatename:?m_unknown03@GameEngine@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?m_unknown04@GameEngine@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?m_unknown05@GameEngine@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?m_unknown06@GameEngine@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+#pragma comment(linker, "/alternatename:?m_unknown08@GameEngine@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?m_unknown11@GameEngine@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
+#pragma comment(linker, "/alternatename:?m_unknown12@GameEngine@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?m_unknown18@GameEngine@@UAEXXZ=?friend_setList@GameMessage@@QAEXPAVGameMessageList@@@Z")
+#pragma comment(linker, "/alternatename:?m_unknown19@GameEngine@@UAEXXZ=?getNext@?$CategoryModuleClass@$0A@@FXParticleSystem@@QBEPBV12@XZ")
+#pragma comment(linker, "/alternatename:?m_unknown20@GameEngine@@UAEXXZ=?setForceWantingState@SupplyTruckAIUpdate@@UAEX_N@Z")
+#pragma comment(linker, "/alternatename:?m_unknown21@GameEngine@@UAEXXZ=?get@Rva001DBA6DByteField@@QBEEXZ")
+#pragma comment(linker, "/alternatename:?m_unknown23@GameEngine@@UAEXXZ=?rva00042121@Win32GameEngine@@UAEXXZ")
+#pragma comment(linker, "/alternatename:?m_unknown24@GameEngine@@UAEXXZ=?get@Rva00041D5EByteField@@QBEEXZ")
+#pragma comment(linker, "/alternatename:?setIsActive@GameEngine@@UAEX_N@Z=?setForceBusyState@SupplyTruckAIUpdate@@UAEX_N@Z")

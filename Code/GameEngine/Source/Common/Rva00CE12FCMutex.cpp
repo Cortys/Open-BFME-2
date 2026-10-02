@@ -43,3 +43,10 @@ Rva00CE12FCMutex::~Rva00CE12FCMutex()
 // Retail global object VA E09F9C; its mutex handle occupies E09FA0.
 // The real C++ definition emits initializer49B and registered cleanup36B.
 Rva00CE12FCMutex g_rva00CE12FCMutex;
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?ticks@Rva00CE12FCMutex@@UAEKXZ=_current_time")
+#pragma comment(linker, "/alternatename:?wait@Rva00CE12FCMutex@@UAEXXZ=?bfmeGo1037H@BfmeH1037@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?release@Rva00CE12FCMutex@@UAEXXZ=?bfmeGo1038D@BfmeD1038@@QAEXXZ")

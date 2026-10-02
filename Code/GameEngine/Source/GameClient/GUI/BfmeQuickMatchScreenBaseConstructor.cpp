@@ -102,3 +102,10 @@ BfmeQuickMatchScreenBase::BfmeQuickMatchScreenBase(void *screen)
 
 	bfmeAttach(screen);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?bfmeSlot0@BfmeQuickMatchScreenBase@@UAEXXZ=?runInit@WindowLayout@@QAEXPAX@Z")
+#pragma comment(linker, "/alternatename:?bfmeSlot1@BfmeQuickMatchScreenBase@@UAEXXZ=??_GRva00538C5F@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?bfmeSlot4@BfmeQuickMatchScreenBase@@UAEXXZ=?rva00538AB0@BfmeQuickMatchScreenBase@@UAEX_N@Z")

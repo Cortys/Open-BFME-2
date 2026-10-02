@@ -55,3 +55,12 @@ Rva005DAC85::~Rva005DAC85()
 {
 	m_3C.releaseBuffer();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot0@Rva0055B0CC@@UAEXXZ=??_GRva005DAC85@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?slot4@Rva0055B0CC@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
+#pragma comment(linker, "/alternatename:?slot7@Rva0055B0CC@@UAEXXZ=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?slot11@Rva0055B0CC@@UAEXXZ=?rva0050B5C6@Rva0050B5C6@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?Rva0055AED6@Rva0055B0CC@@UAEXPAX0@Z=?Rva0055AED6@Rva0055B0CC@@UAEXPAVXfer@@PAX@Z")

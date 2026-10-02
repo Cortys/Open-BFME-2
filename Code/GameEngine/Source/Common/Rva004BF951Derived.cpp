@@ -162,3 +162,8 @@ public:
 Rva004C1BAB::~Rva004C1BAB()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f3@Rva004C1BAB_B3@@UAEXXZ=?Is_Valid@RegistryClass@@QAE_NXZ")

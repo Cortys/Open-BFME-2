@@ -44,3 +44,10 @@ Rva0031455E::~Rva0031455E()
 }
 
 void Rva0031455EDelete(Rva0031455E *p) { delete p; }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v0@Rva0031455E@@UAEXXZ=??_GRva0031455E@@QAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?v1@Rva0031455E@@UAEXXZ=?Rva0031455ELink@Rva0031455E@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?v2@Rva0031455E@@UAEXXZ=?Rva00314581Unlink@Rva0031455E@@QAEXXZ")
