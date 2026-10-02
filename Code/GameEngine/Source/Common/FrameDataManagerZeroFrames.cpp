@@ -24,7 +24,7 @@ private:
  NetCommandList *m_commandList;
  char storage[8];
 };
-#define FRAME_DATA_LENGTH (*(const int *)0x00DD2DB8)
+extern int FRAME_DATA_LENGTH;
 class FrameDataManager {
 public:
  void zeroFrames(unsigned int startingFrame, unsigned int numFrames);
