@@ -48655,3 +48655,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva003BD0C8Set@@YGXABVAsciiString@@E@Z,,0x003BD0C8,64,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BD0C8.cpp,matched,leaf via rowed 0x00357475 0x002A7BC9 sibling Rva003BB39E
 ?rva005F927A@Rva005F927A@@QAEX_N@Z,,0x005F927A,91,Code/GameEngine/Source/Common/Rva005F927AButton.cpp,matched,twin of 0x005F921F with RealTime and flag at +0x61 via rowed AptCall
 ?rva005F93D3@Rva005F93D3@@QAEX_N@Z,,0x005F93D3,8,Code/GameEngine/Source/Common/Rva005F93D3Forward.cpp,matched,jmp to rowed 0x005F927A callers 0x005E96B3 0x005E9E02 neighbour Rva005F93CBForward
+?rva005F92D5@Rva005F92D5@@QAEX_N@Z,,0x005F92D5,91,Code/GameEngine/Source/Common/Rva005F92D5Button.cpp,matched,twin of 0x005F927A Retreat vs RealTime flag +0x62 rowed AptCall 0x005F8EDA
