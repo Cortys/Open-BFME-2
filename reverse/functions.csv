@@ -47817,3 +47817,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0022D941Destroy@@YAXPAURva0022CD2A@@0@Z,,0x0022D941,25,Code/GameEngine/Source/Common/Rva0022D941Destroy.cpp,matched,chain range destroy over 0x18 via rowed dtor 0x0022CD2A
 ?push_back@?$vector@VRva0040AEE3@@V?$allocator@VRva0040AEE3@@@_STL@@@_STL@@QAEXABVRva0040AEE3@@@Z,,0x0040BA33,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva0040AEE3_pushback.cpp,matched,chain lane vector pushback via pinned Construct and rowed overflow
 ?Rva0055F290WriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055F290,216,Code/GameEngine/Source/Common/Rva0055F290Write.cpp,matched,same 216B shape as 0x0055E891 cat4 and 0x0055CB5D cat5 via GetKey cat3 Pad Write
+?rva002AE318@Rva002AE318@@QAEXXZ,,0x002AE318,17,Code/GameEngine/Source/Common/RTS/Rva002AE318.cpp,matched,calls Rva00380200 then tail Player on this-8
