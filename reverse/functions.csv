@@ -48664,3 +48664,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??_GRva0056AC26@@UAEPAXI@Z,,0x0056ADD5,28,Code/GameEngine/Source/Common/Rva0056AC26Dtor.cpp,matched,scalar deleting-dtor thunk emitted via TU vtable byte-exact
 ?rva005F2D41@Rva005F2FEF@@QAEXH@Z,,0x005F2D41,324,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,CommandPoints show via GameText label plus AptCall same precedent as rank
 ??0Rva000E6350@@QAE@XZ,,0x000E6350,55,Code/GameEngine/Source/Common/Rva000E6350Ctor.cpp,matched,ctor registers Vegetation via rowed Register with empty base
+?rva005F2F5C@Rva005F2A32@@QAEXH@Z,,0x005F2F5C,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder via plus4 to rowed rva005F2D41 same caller family
