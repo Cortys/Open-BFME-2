@@ -343,21 +343,7 @@ Render2DSentenceClass::Reset_Sentence_Data (void)
 //	Release_Pending_Surfaces
 //
 ////////////////////////////////////////////////////////////////////////////////////
-void
-// ?Release_Pending_Surfaces@Render2DSentenceClass@@AAEXXZ present-unmatched
-Render2DSentenceClass::Release_Pending_Surfaces (void)
-{
-	//
-	//	Release our hold on each pending surface
-	//
-	for (int index = 0; index < PendingSurfaces.Count (); index ++) {		
-		SurfaceClass *curr_surface = PendingSurfaces[index].Surface;
-		REF_PTR_RELEASE (curr_surface);
-	}
-
-	if (PendingSurfaces.Count()>0) PendingSurfaces.Delete_All ();
-	return; 
-}
+// Owned by Render2DSentenceClass_Release_Pending_Surfaces.cpp.
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1268,36 +1254,7 @@ FontCharsClass::~FontCharsClass (void)
 //	Get_Char_Data
 //
 ////////////////////////////////////////////////////////////////////////////////////
-const FontCharsClassCharDataStruct *
-// ?Get_Char_Data@FontCharsClass@@AAEPBVFontCharsClassCharDataStruct@@G@Z present-unmatched
-FontCharsClass::Get_Char_Data (WCHAR ch)
-{
-	const FontCharsClassCharDataStruct *retval = NULL;
-
-	if ( ch < 256 ) 
-	{
-		retval = ASCIICharArray[ch];
-	} 
- 	else if ( AlternateUnicodeFont && this != AlternateUnicodeFont )
-	{
-		return AlternateUnicodeFont->Get_Char_Data( ch );
-	}
-	else
-	{
-		Grow_Unicode_Array( ch );
-		retval = UnicodeCharArray[ch - FirstUnicodeChar];
-	}	
-
-	//
-	//	If the character wasn't found, then add it to our list
-	//
-	if ( retval == NULL ) {
-		retval = Store_GDI_Char( ch );
-	}
-
-	WWASSERT( retval->Value == ch );
-	return retval;
-}
+// Owned by FontCharsClassGetCharData.cpp.
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1342,38 +1299,7 @@ FontCharsClass::Get_Char_Width (WCHAR ch)
 //	Blit_Char
 //
 ////////////////////////////////////////////////////////////////////////////////////
-void
-// ?Blit_Char@FontCharsClass@@QAEXGPAGHHH@Z present-unmatched
-FontCharsClass::Blit_Char (WCHAR ch, uint16 *dest_ptr, int dest_stride, int x, int y)
-{
-	const FontCharsClassCharDataStruct	* data = Get_Char_Data( ch );
-	if ( data != NULL && data->Width != 0 ) {
-
-		//
-		//	Setup the src and destination pointers
-		//
-		int dest_inc		= (dest_stride >> 1);
-		uint16 *src_ptr	= data->Buffer;
-		dest_ptr				+= (dest_inc * y) + x;
-
-		//
-		//	Simply copy the data from the src buffer to the destination
-		//
-		for ( int row = 0; row < CharHeight; row ++ ) {
-			for ( int col = 0; col < data->Width; col ++ ) {
-				uint16 curData = *src_ptr;
-				if (col<PixelOverlap) {
-					curData |= dest_ptr[col];
-				} 
-				dest_ptr[col] = curData;
-				src_ptr++;
-			}
-			dest_ptr	+= dest_inc;
-		}		
-	}
-
-	return ;
-}
+// Owned by FontCharsClassBlitChar.cpp.
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1801,43 +1727,7 @@ FontCharsClass::Grow_Unicode_Array (WCHAR ch)
 //	Free_Character_Arrays
 //
 ////////////////////////////////////////////////////////////////////////////////////
-void
-// ?Free_Character_Arrays@FontCharsClass@@ present-unmatched
-FontCharsClass::Free_Character_Arrays (void)
-{
-	if ( UnicodeCharArray != NULL ) {
-
-		int count = (LastUnicodeChar - FirstUnicodeChar) + 1;
-		
-		//
-		//	Delete each member of the unicode array
-		//
-		for (int index = 0; index < count; index ++) {
-			if ( UnicodeCharArray[index] != NULL && UnicodeCharArray[index] != (FontCharsClassCharDataStruct *)-1 ) {
-				::operator delete( UnicodeCharArray[index] );
-				UnicodeCharArray[index] = NULL;
-			}
-		}
-
-		//
-		//	Delete the array itself
-		//
-		::operator delete[]( UnicodeCharArray );
-		UnicodeCharArray = NULL;
-	}
-
-	//
-	//	Delete each member of the ascii character array
-	//
-	for (int index = 0; index < 256; index ++) {		
-		if ( ASCIICharArray[index] != NULL && ASCIICharArray[index] != (FontCharsClassCharDataStruct *)-1 ) {
-			::operator delete( ASCIICharArray[index] );
-			ASCIICharArray[index] = NULL;
-		}
-	}
-	
-	return ;
-}
+// Owned by FontCharsClassFreeCharacterArrays.cpp.
 
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
