@@ -11,6 +11,7 @@ class GameWindow
 {
 public:
 	int winEnable(bool enable);
+	bool winIsHidden();
 };
 void __cdecl GadgetListBoxReset(GameWindow *win);
 
@@ -19,6 +20,7 @@ class Rva005AFC92
 public:
 	bool rva005AFC92();
 	void rva005AFCFF();
+	bool rva005AFD2E();
 private:
 	char m_pad00[4];
 	unsigned int m_val04;
@@ -52,4 +54,16 @@ void Rva005AFC92::rva005AFCFF()
 	if (win10 != 0) {
 		win10->winEnable(true);
 	}
+}
+
+// ?rva005AFD2E@Rva005AFC92@@QAE_NXZ, retail 0x005AFD2E, 21 bytes. Loads
+// +0xC window then returns !winIsHidden via rowed 0x00313CD9. Evidence:
+// unlock packet caller jmp 0x0057FDAB; neighbours share // cl: /O1 /MD.
+bool Rva005AFC92::rva005AFD2E()
+{
+	GameWindow *win = m_win0C;
+	if (win != 0) {
+		return !win->winIsHidden();
+	}
+	return false;
 }
