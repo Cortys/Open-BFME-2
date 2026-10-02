@@ -47,6 +47,7 @@ class Rva0054F434 : public Rva0054F434Base
 public:
 	virtual ~Rva0054F434();
 	virtual _STL::list<AsciiString, _STL::allocator<AsciiString> > rva0054F3FD();
+	virtual AsciiString rva0054F3C7();
 private:
 	_STL::_List_base<AsciiString, _STL::allocator<AsciiString> > m_list04;
 	char m_padA[0x30 - 0x04 - sizeof(_STL::_List_base<AsciiString, _STL::allocator<AsciiString> >)];
@@ -68,5 +69,12 @@ Rva0054F434::~Rva0054F434()
 _STL::list<AsciiString, _STL::allocator<AsciiString> > Rva0054F434::rva0054F3FD()
 {
 	return *(_STL::list<AsciiString, _STL::allocator<AsciiString> > *)&m_list48;
+}
+#pragma optimize("", on)
+
+#pragma optimize("y", off)
+AsciiString Rva0054F434::rva0054F3C7()
+{
+	return m_str64;
 }
 #pragma optimize("", on)
