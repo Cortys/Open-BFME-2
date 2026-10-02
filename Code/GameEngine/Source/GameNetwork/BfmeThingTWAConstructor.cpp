@@ -14,9 +14,8 @@ public:
 };
 class Rva00808CB0LanGameEntry : public Rva007E86B0Base {
 public:
- Rva00808CB0LanGameEntry() { field08=0; field0c=0; field04=0; }
- virtual ~Rva00808CB0LanGameEntry();
- int field08, field0c;
+  Rva00808CB0LanGameEntry() { field08=0; field0c=0; field04=0; }
+  int field08, field0c;
 };
 class Rva00803080 {
 public:
