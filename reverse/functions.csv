@@ -47592,3 +47592,6 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0043B2D0Construct@@YAXPAVRva0043B23E@@ABV1@@Z,,0x0043B2D0,18,Code/GameEngine/Source/Common/Rva0043B23EPairCtor.cpp,matched,cond copy via rowed Rva0043B23E copy
 ??0NetGameCommandMsg@@QAE@PAVGameMessage@@@Z,,0x004D5CBE,151,Code/GameEngine/Source/GameNetwork/NetGameCommandMsgFromGameMessage.cpp,matched,NetGameCommandMsg GameMessage copy via BFME1 donor vtable 0x008601E4 caller 0x004D0E06
 ??0Rva00578C2E@@QAE@XZ,,0x00578C2E,21,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva004FAC6BCtor.cpp,matched,sibling ctor: bytes equal ??0Rva004FAC6B except the vftable VA 0xbe2b78
+?Rva005B6270Median@@YAPAPAXPAPAX00VRva005B61B3@@@Z,,0x005B6270,107,Code/GameEngine/Source/GameClient/GUI/Rva00440AB0Median.cpp,matched,median of three: bytes equal Rva00440AB0Median except the calls to the rowed Rva005B61B3 comparator
+?Rva005B64E1Heap@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B64E1,64,Code/GameEngine/Source/GameClient/GUI/Rva00441DEBHeap.cpp,matched,make-heap loop: bytes equal Rva00441DEBHeap except the call to the rowed Rva005B6409Heap
+?Rva005B65C8Sort@@YAXPAPAX0VRva005B61B3@@@Z,,0x005B65C8,61,Code/GameEngine/Source/GameClient/GUI/Rva00442B8FSort.cpp,matched,sort-heap loop: bytes equal Rva00442B8FSort except the call to the rowed Rva005B65ADPop

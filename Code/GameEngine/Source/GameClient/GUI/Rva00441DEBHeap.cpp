@@ -27,3 +27,27 @@ void Rva00441DEBHeap(void **first, void **last, Rva0043FE9A comp)
 			break;
 	}
 }
+
+// ?Rva005B64E1Heap@@YAXPAPAX0VRva005B61B3@@@Z, retail 0x005B64E1, 64 bytes: the
+// same make-heap loop over the rowed Rva005B6409Heap adjust of the Rva005B61B3
+// family; only that call differs from Rva00441DEBHeap.
+class Rva005B61B3
+{
+public:
+	bool rva005B61B3(void *a, void *b);
+private:
+	int m_key0;
+	int m_key1;
+};
+void Rva005B6409Heap(void **first, int hole, int len, void *val, Rva005B61B3 comp);
+void Rva005B64E1Heap(void **first, void **last, Rva005B61B3 comp)
+{
+	int len = (int)(last - first);
+	if (len < 2)
+		return;
+	for (int hole = (len - 2) / 2; ; --hole) {
+		Rva005B6409Heap(first, hole, len, *(first + hole), comp);
+		if (hole == 0)
+			break;
+	}
+}
