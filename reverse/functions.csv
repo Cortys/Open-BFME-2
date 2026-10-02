@@ -48599,3 +48599,5 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Reset_Line@Rva00743060Class@@QAEXXZ,,0x00743060,22,Code/Libraries/Source/WWVegas/WW3D2/Rva00743060Siblings.cpp,matched,sync-time plus UV reset offsets +0x2C from Reset_Line 0x191260 recipe
 ?Rva006F12F0Free@@YAXPAXH@Z,,0x006F12F0,22,Code/GameEngine/Source/Common/Rva006F12F0Siblings.cpp,matched,chain pool free forwarder from Rva006D8680Free 0x6D8680 recipe
 ?rva00030810@@YAHPAXPBDH@Z,,0x00030810,27,Code/Libraries/Source/Compression/ZLib/Rva00030810Siblings.cpp,matched,sibling of rowed zlib _inflateInit_ 0x690860; 27B register-shuffle thunk into runtime-resolved pointer 0x00DE0400 with immediate 3
+?rva0038780@@YAXXZ,,0x00038780,13,Code/Libraries/Source/WWVegas/WWLib/Rva00038780Siblings.cpp,matched,mnemonic sibling of rowed _M_construct_null_aux 0x19950; 13B singleton byte-flag store at +0x9F58 via masked DIR32 global 0x00DE0880
+?rva001432E0@Rva001432E0@@QAE_NXZ,,0x001432E0,13,Code/Libraries/Source/WWVegas/WWDownload/Rva001432E0Siblings.cpp,matched,mnemonic sibling of rowed Cftp ctor 0x6CA5E0; 13B thiscall virtual slot 0x50 then bool at +0x74
