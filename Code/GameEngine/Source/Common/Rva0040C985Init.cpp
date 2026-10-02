@@ -8,14 +8,17 @@ public:
 	char m_pad[0x40];
 	int m_40;
 };
-#define TheGameLogic (*(Rva00DFE78C *const *)0x00DFE78C)
+class GameLogic;
+extern GameLogic *TheGameLogic;
+
 class Rva00DFE758
 {
 public:
 	char m_pad[0x134];
 	int m_134;
 };
-#define TheGlobalData (*(Rva00DFE758 *const *)0x00DFE758)
+class GlobalData;
+extern GlobalData *TheWritableGlobalData;
 class Rva0040C985
 {
 public:
@@ -45,7 +48,7 @@ void Rva0040C985::rva0040C985(int x)
 }
 int Rva0040C985::rva0040C9F4()
 {
-	int frame = TheGameLogic->m_40;
+	int frame = ((Rva00DFE78C *)TheGameLogic)->m_40;
 	int val = m_34;
 	if (frame < val)
 		return val - frame;
@@ -53,7 +56,7 @@ int Rva0040C985::rva0040C9F4()
 }
 void Rva0040C985::rva0040CA09()
 {
-	int frame = TheGameLogic->m_40;
+	int frame = ((Rva00DFE78C *)TheGameLogic)->m_40;
 	if ((unsigned)frame < (unsigned)m_34)
 		return;
 	if (m_2C != 2)
@@ -62,7 +65,7 @@ void Rva0040C985::rva0040CA09()
 }
 int Rva0040C985::rva0040CA24()
 {
-	if (TheGlobalData->m_134 == 4)
+	if (((Rva00DFE758 *)TheWritableGlobalData)->m_134 == 4)
 		return m_28;
 	return m_24;
 }
