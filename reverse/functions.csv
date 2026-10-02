@@ -48198,3 +48198,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??1Rva00601BBCHelper@@UAE@XZ,,0x00601BF3,96,Code/GameEngine/Source/Common/System/INIHelperRva00601BBC.cpp,matched,INI helper dtor: vtable re-store then pinned clear 0x601A8D then free both vector buffers then pinned member dtor 0x601AE9
 ??_GRva00601BBCHelper@@UAEPAXI@Z,,0x00602056,28,Code/GameEngine/Source/Common/System/INIHelperRva00601BBC.cpp,matched,INI helper scalar deleting dtor: vtable 0xC7A6B0 slot 0
 ?rva00207DF4@Rva00207DF4@@QAEXHABVAsciiString@@PAVImage@@@Z,,0x00207DF4,50,Code/Libraries/Source/WWVegas/WWLib/Rva00207DF4Method.cpp,matched,unlock lane CRC keyed Image store via rowed Get and subscript caller 0x003E9EB0
+?rva0022161B@Rva0022161B@@QAEXXZ,,0x0022161B,26,Code/GameEngine/Source/Common/Rva0022161BClear.cpp,matched,chain body rowed dtor plus caller jmp 0x00221685 plus vtable 0x00BE6BA8
