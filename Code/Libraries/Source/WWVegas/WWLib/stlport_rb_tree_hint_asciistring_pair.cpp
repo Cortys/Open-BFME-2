@@ -9,8 +9,8 @@
 #undef _STLP_DEFAULT_CONSTRUCTED
 #define _STLP_DEFAULT_CONSTRUCTED(T) T()
 #include <map>
-template<class T> class StringBase { void *m_data; void releaseBuffer(); protected: __forceinline StringBase() : m_data(0) {} __forceinline ~StringBase() { releaseBuffer(); } };
-class AsciiString : private StringBase<char> { public: __forceinline AsciiString() {} AsciiString(const AsciiString &); __forceinline ~AsciiString() {} };
+template<class T> class StringBase { void *m_data; void releaseBuffer(); StringBase(const StringBase<T> &); friend class AsciiString; protected: __forceinline StringBase() : m_data(0) {} __forceinline ~StringBase() { releaseBuffer(); } };
+class AsciiString : private StringBase<char> { public: __forceinline AsciiString() {} __forceinline AsciiString(const AsciiString &that) : StringBase<char>(*(const StringBase<char> *)&that) {} __forceinline ~AsciiString() {} };
 bool operator<(const AsciiString &, const AsciiString &);
 // Retail _M_create_node 0x00202B4A allocates 24 bytes: 16-byte links + two AsciiStrings.
 // _Construct 0x0002C71B invokes pair copy 0x0002C574, which calls the independently
