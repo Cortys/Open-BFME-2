@@ -19,6 +19,7 @@ Usage:
   python3 tools/permute.py --list [--min-score 0.9]       the queue, best first
   python3 tools/permute.py RVA [RVA ...] [--minutes 10]   permute these attempts
   python3 tools/permute.py --top N [--min-score 0.9] [--minutes 10] [--jobs J]
+  python3 tools/permute.py --recheck     compile every banked attempt once; exact ones become wins
   python3 tools/permute.py --land        land every win via add_match, then commit
 """
 import argparse
@@ -188,7 +189,7 @@ def mutate(text, rng):
                 lines[i] = new
                 return "\n".join(lines), kind
         elif kind == "flag":
-            for k, line in enumerate(lines[:5]):
+            for k, line in enumerate(lines[:12]):
                 if line.startswith("// cl:"):
                     words = line.split()
                     if rng.random() < 0.4:
@@ -248,6 +249,24 @@ def permute(rva, minutes=10.0, seed=None):
     with (OUT / "results.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(result) + "\n")
     return result
+
+
+def recheck(rva):
+    """Compile a banked attempt unchanged once: headers, pins and ledger fixes
+    landed since it was banked can make it exact with no search at all."""
+    rva = rva.lower()
+    text = (ATTEMPTS / f"{rva}.cpp").read_text(encoding="latin-1", errors="replace")
+    found = re.match(r"//\s*(\S+)", text)
+    symbol = found.group(1) if found else ""
+    size = attempt_sizes().get((symbol, rva))
+    if not size:
+        return {"rva": rva, "recheck": "no size"}
+    workdir = OUT / rva
+    workdir.mkdir(parents=True, exist_ok=True)
+    fitness, exact = Scorer(rva, symbol, size, workdir).score(text)
+    if exact:
+        (workdir / "win.cpp").write_text(text, encoding="latin-1", errors="replace")
+    return {"rva": rva, "symbol": symbol, "recheck": round(fitness, 4), "exact": exact}
 
 
 def home_dir(symbol):
@@ -317,7 +336,19 @@ def main(argv=None):
     parser.add_argument("--jobs", type=int, default=int(os.environ.get("BUILD_POOL", "1") or 1))
     parser.add_argument("--land", action="store_true",
                         help="land every build/permute/<rva>/win.cpp via add_match (no commit)")
+    parser.add_argument("--recheck", action="store_true",
+                        help="compile every banked attempt (any score) unchanged once; exact ones become wins")
     args = parser.parse_args(argv)
+    if args.recheck:
+        rvas = [rva for _, _, rva, _ in queue(0.0)]
+        hits = 0
+        with concurrent.futures.ProcessPoolExecutor(max(1, args.jobs)) as pool:
+            for result in pool.map(recheck, rvas, chunksize=4):
+                if result.get("exact"):
+                    hits += 1
+                    print(f"EXACT {result['rva']} {result['symbol']}", flush=True)
+        print(f"permute: recheck found {hits} banked attempt(s) already exact of {len(rvas)}")
+        return 0
     if args.land:
         landed = []
         for win in sorted(OUT.glob("0x*/win.cpp")):
