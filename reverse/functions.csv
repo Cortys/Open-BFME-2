@@ -47613,3 +47613,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva005F8FA2Copy@@YAPAURva005F8FA2Dst@@PAU1@PAURva005F8FA2Src@@H@Z,,0x005F8FA2,42,Code/GameEngine/Source/Common/Rva005F8FA2Copy.cpp,matched,finish lane 8-dword src plus dword tail via temp to 9-dword dest returns dest
 ?Rva004319F2Update@@YAXXZ,,0x004319F2,66,Code/GameEngine/Source/Common/Rva004319F2.cpp,matched,chain via 0x0029AA3F TheInGameUI slots 0xCC 0xD8 byte 0x9B4
 ?rva00431E95@Rva00431E95@@QAEHPAX@Z,,0x00431E95,65,Code/GameEngine/Source/Common/Rva00431E95.cpp,matched,chain via 0x004319F2 helper new 12B vtable g_00C3C9AC
+?rva00431E5A@Rva00431E5A@@QAEXXZ,,0x00431E5A,59,Code/GameEngine/Source/Common/Rva00431E5A.cpp,matched,chain via 0x004319F2 helper new 8B vtable g_00C3C97C
