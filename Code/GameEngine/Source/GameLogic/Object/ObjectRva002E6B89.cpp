@@ -19,10 +19,13 @@ public:
 	bool rva002E6B89();
 };
 
+// g_Va00DFECD0: VA 0x00DFECD0 (.data/bss); zero-filled retail dword counter.
+int g_Va00DFECD0;
+
 bool Object::rva002E6B89()
 {
 	int *p = &m_224;
-	int cur = *(int *)0x00DFECD0;
+	int cur = g_Va00DFECD0;
 	if (*p == cur)
 		return true;
 	*p = cur;
