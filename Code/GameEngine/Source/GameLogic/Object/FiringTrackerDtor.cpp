@@ -96,8 +96,17 @@ private:
 	AudioHandle m_audioHandle;
 };
 
-FiringTracker::~FiringTracker()
+inline FiringTracker::~FiringTracker()
 {
 	TheAudio->removeAudioEvent(m_audioHandle);
 	m_audioHandle = 1;
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFiringTrackerDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFiringTrackerDtorInlineAnchor()
+{
+    static_cast<FiringTracker *>(0)->FiringTracker::~FiringTracker();
+}
+#pragma inline_depth()
