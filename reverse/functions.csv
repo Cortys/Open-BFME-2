@@ -48725,3 +48725,6 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0024780Forward@@YAXPBX0PAX@Z,,0x00024780,28,Code/GameEngine/Source/Common/Rva00024610Cluster.cpp,matched,address-derived forward to rowed __copy_trivial_backward
 ?rva0025B00Fill@@YAPAHPAHIPBH@Z,,0x00025B00,68,Code/Libraries/Source/WWVegas/WWLib/Rva00025B00Cluster.cpp,matched,address-derived unsigned int fill loop with dead byte flag
 ?rva0025B50NotEqual@@YA_NPBH0@Z,,0x00025B50,45,Code/Libraries/Source/WWVegas/WWLib/Rva00025B00Cluster.cpp,matched,address-derived bool inequality on two dereferenced ints
+?alloc@Rva006026E0@@QAEPAXI@Z,,0x006026E0,36,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived allocator shim with cdecl override callback
+?free@Rva006026E0@@QAEXPAX@Z,,0x00602710,33,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived free shim with cdecl override callback
+?get@Rva006026E0@@QAEHXZ,,0x006027F0,26,Code/GameEngine/Source/Common/Rva006026E0Cluster.cpp,matched,address-derived flagged pointer-field getter
