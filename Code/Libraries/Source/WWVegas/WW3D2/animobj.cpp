@@ -478,7 +478,7 @@ void Animatable3DObjClass::Set_Animation(HAnimClass * motion, float frame, int m
 			ModeAnim.animDirection = 1.0f;	//assume playing forwards
 		else
 			ModeAnim.animDirection = -1.0f;	//reverse animation playback
- 
+
 		const char* sound_name = AnimatedSoundMgrClass::Get_Embedded_Sound_Name(motion);
 		if (sound_name) {
 			int bone_index = Get_Bone_Index(sound_name);
@@ -504,45 +504,7 @@ void Animatable3DObjClass::Set_Animation(HAnimClass * motion, float frame, int m
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-void Animatable3DObjClass::Set_Animation
-( 
-	HAnimClass * motion0,
-	float frame0,
-	HAnimClass * motion1,
-	float frame1,
-	float percentage
-)
-{
-	Release();
-
-	CurMotionMode = DOUBLE_ANIM;
-	ModeInterp.Motion0 = motion0;
-	ModeInterp.Motion1 = motion1;
-	ModeInterp.PrevFrame0 = ModeInterp.Frame0;
-	ModeInterp.PrevFrame1 = ModeInterp.Frame1;
-	ModeInterp.Frame0 = frame0;
-	ModeInterp.Frame1 = frame1;
-	ModeInterp.Percentage = percentage;
-	Set_Hierarchy_Valid(false);
-
-	if ( ModeInterp.Motion0 != NULL ) {
-		ModeInterp.Motion0->Add_Ref();
-		const char* sound_name = AnimatedSoundMgrClass::Get_Embedded_Sound_Name(motion0);
-		if (sound_name) {
-			int bone_index = Get_Bone_Index(sound_name);
-			motion0->Set_Embedded_Sound_Bone_Index(bone_index);
-		}
-	}
-
-	if ( ModeInterp.Motion1 != NULL ) {
-		ModeInterp.Motion1->Add_Ref();
-		const char* sound_name = AnimatedSoundMgrClass::Get_Embedded_Sound_Name(motion1);
-		if (sound_name) {
-			int bone_index = Get_Bone_Index(sound_name);
-			motion1->Set_Embedded_Sound_Bone_Index(bone_index);
-		}
-	}
-}
+// Animatable3DObjClass::Set_Animation(HAnimClass*, float, HAnimClass*, float, float): defined in Animatable3DObjSetAnimationBlend.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -557,30 +519,7 @@ void Animatable3DObjClass::Set_Animation
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-void Animatable3DObjClass::Set_Animation
-( 
-	HAnimComboClass * anim_combo
-)
-{
-	Release();
-
-	CurMotionMode = MULTIPLE_ANIM;
-	ModeCombo.AnimCombo = anim_combo;
-	Set_Hierarchy_Valid(false);
-
-	if (anim_combo) {
-		int count = anim_combo->Get_Num_Anims();
-		for (int index = 0; index < count; index ++) {				
-			HAnimClass *motion = anim_combo->Peek_Motion(index);
-
-			const char* sound_name = AnimatedSoundMgrClass::Get_Embedded_Sound_Name(motion);
-			if (sound_name) {
-				int bone_index = Get_Bone_Index(sound_name);
-				motion->Set_Embedded_Sound_Bone_Index(bone_index);
-			}
-		}
-	}
-}						 
+// Animatable3DObjClass::Set_Animation(HAnimComboClass*): defined in Animatable3DObjSetAnimationCombo.cpp (its row's unit).
 
 
 /***********************************************************************************************
