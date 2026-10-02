@@ -5814,3 +5814,6 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva0052D394@Rva0052D394@@QAEXABVRva002E0A0A@@@Z	0x0052D394	93	partial	pure edi-ebx mirror exact size 93-vs-93 compare direction fixed argStr-vs-elem still swapped t=20 model=muse-02 score=0.96 stash=reverse/attempts/0x0052d394.cpp
 ??1Rva004EED02@@UAE@XZ	0x004EED02	310	blocked	dtor with 9 vptr stores plus 4 maps plus 4 frees plus vector plus EH needs ctor layout t=15 model=muse-10
 ?rva001F8109@Rva001F8109@@QAEXABW4ObjectID@@@Z	0x001F8109	73	partial	call to 0x001F63C9 custom erase vs member erase via pin 0x00438539 only rel32 differs need same-shape custom call t=25 model=muse-11 score=0.95 stash=reverse/attempts/0x001f8109.cpp
+?rva005F6DB0@Rva005F6A58@@UAEXH@Z	0x005F6DB0	81	blocked	param in edi directly vs via eax plus extra mov plus push order t=15 model=muse-01 (stash 0.9 kept)
+?rva005F618E@Rva005F618E@@QAEXE@Z	0x005F618E	86	blocked	scheduler wall 0.9 byte-param bl vs al same as 0x005F6DB0 edi wall t=2 model=muse-01
+?Rva007410ECInvoke@@YAHPAVRva00222A8BTarget@@PAXPBD2PAI@Z	0x007410EC	102	blocked	eax-ecx swap on AsciiString data vs zero plus mov ecx target position t=20 model=muse-01 (stash 0.93 kept)
