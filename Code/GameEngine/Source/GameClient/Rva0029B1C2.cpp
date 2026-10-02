@@ -13,6 +13,7 @@ class Rva0029B1C2
 	unsigned char m08;
 public:
 	void rva0029B1C2();
+	void rva0029B1AC();
 };
 
 void Rva0029B1C2::rva0029B1C2()
@@ -20,4 +21,11 @@ void Rva0029B1C2::rva0029B1C2()
 	if (m00 != 0)
 		m00->rva002707FA(0);
 	m08 = 0;
+}
+
+void Rva0029B1C2::rva0029B1AC()
+{
+	if (m00 != 0)
+		m00->rva002707FA(1);
+	m08 = 1;
 }
