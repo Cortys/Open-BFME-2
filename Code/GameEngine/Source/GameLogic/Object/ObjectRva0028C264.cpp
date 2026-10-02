@@ -68,13 +68,15 @@ private:
 	Rva0028C264Body *m_body254; // +0x254
 };
 
-struct GameLogic
+class GameLogic
 {
+	public:
 	char m_pad[0x40];
 	unsigned m_frame; // +0x40
 };
 
-#define TheGameLogic (*(GameLogic **)0x00DFE78C)
+extern class GameLogic *TheGameLogic;
+
 #define LogicFramesPerSecond g_Va00DBA4E4
 
 bool Object::rva0028C264(int *out, int n)
