@@ -5528,3 +5528,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ??0Rva000840F1@@QAE@XZ	0x000840F1	277	blocked	EH vector ctors plus SSE zero loop plus vtable missing 103B; member arrays did not emit vector news; needs donor layout and flag sweep t=12 model=muse-08
 ??0Rva00221088@@QAE@XZ	0x00221088	71	partial	71B exact size 23 insns; EH state before baseConstruct vs retail after; vptr g_ reloc vs 0xbe6b5c t=20 model=muse-08 score=0.95 stash=reverse/attempts/0x00221088.cpp
 ??1Rva0022DCDA@@QAE@XZ	0x0022DCDA	63	blocked	explicit Destroy+free 30B core exact with /O1 pushes-pops but no EH prolog; nested empty 5B jmp /O1 and 35B hoisted /O2; forceinline 30B no EH; EHsc GX same; needs EH wrapper funclet 0x76F893 t=25 model=muse-05
+??0Rva0052CFB1@@QAE@ABVAsciiString@@@Z	0x0052CF0F	156	partial	trailing int float store order movss hoist t=16 model=muse-01 score=0.93 stash=reverse/attempts/0x0052cf0f.cpp

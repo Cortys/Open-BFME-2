@@ -47881,3 +47881,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004F56FC@Rva004F56FC@@QAEXPAVObject@@@Z,,0x004F56FC,31,Code/GameEngine/Source/Common/Rva004F56FCAdd.cpp,matched,list at 0x08 count at 0x1C via push_back callers prove thiscall
 ??0Rva0022185A@@QAE@ABV0@@Z,,0x0022185A,33,Code/GameEngine/Source/Common/Rva0022185ACopy.cpp,matched,copy ctor AsciiString at 0 plus int 4 byte 8 via StringBase copy
 ??_GRva0022CFE6@@QAEPAXI@Z,,0x0022D1C3,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022CFE6.cpp,matched,chain packet you-just-landed callee plus 28B push-esi call-test-je delete shape
+??$__uninitialized_copy@PAVRva003A6360Record@@PAV1@@_STL@@YAPAVRva003A6360Record@@PAV1@00ABU__false_type@0@@Z,,0x0052C2CA,41,Code/Libraries/Source/WWVegas/WWLib/Rva003A6360UninitCopy.cpp,matched,stride 0x10 via rowed copy ctor 0x0052BB9A sibling Rva003A6F70UninitCopy same template
