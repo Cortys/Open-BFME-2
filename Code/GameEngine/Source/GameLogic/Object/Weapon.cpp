@@ -1541,15 +1541,7 @@ void WeaponStore::handleProjectileDetonation(const WeaponTemplate* wt, const Obj
 }
 
 //-------------------------------------------------------------------------------------------------
-void WeaponStore::createAndFireTempWeapon(const WeaponTemplate* wt, const Object *source, const Coord3D* pos)
-{
-	if (wt == NULL)
-		return;
-	Weapon* w = TheWeaponStore->allocateNewWeapon(wt, PRIMARY_WEAPON);
-	w->loadAmmoNow(source);
-	w->fireWeapon(source, pos);
-	w->deleteInstance();
-}
+// Owned by WeaponStoreCreateAndFireTempWeapon.cpp.
 
 //-------------------------------------------------------------------------------------------------
 void WeaponStore::createAndFireTempWeapon(const WeaponTemplate* wt, const Object *source, Object *target)
@@ -2194,19 +2186,7 @@ Bool Weapon::isTooClose(const Object *source, const Object *target) const
 }
 
 //-------------------------------------------------------------------------------------------------
-Bool Weapon::isTooClose( const Object *source, const Coord3D *pos ) const
-{
-	Real minAttackRange = m_template->getMinimumAttackRange();
-	if (minAttackRange == 0.0f)
-		return false;
-
-	Real distSqr = ThePartitionManager->getDistanceSquared( source, pos, ATTACK_RANGE_CALC_TYPE );
-	if (distSqr < sqr(minAttackRange))
-	{
-		return true;
-	}
-	return false;	
-}
+// Owned by WeaponIsTooClose.cpp.
 
 //-------------------------------------------------------------------------------------------------
 // ?isGoalPosWithinAttackRange@Weapon@@ present-unmatched

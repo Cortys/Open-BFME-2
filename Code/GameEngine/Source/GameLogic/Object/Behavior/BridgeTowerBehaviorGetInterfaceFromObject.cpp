@@ -58,9 +58,11 @@ class Object
 public:
 	virtual void slot0();
 	bool isBridgeTower() const { return m_template->isBridgeTower(); }
-	BehaviorModule **getBehaviorModules() const { return m_modules244; }
+	BehaviorModule **getBehaviorModules() const;
 
-private:
+	// +0x244 behavior-module array read directly (not via getBehaviorModules:
+// retail's rowed getBehaviorModules reads +0x18C; this TU's +0x244 read is a
+// distinct member proven by this body's own bytes).
 	const ThingTemplate *m_template;
 	char m_pad[0x244 - 8];
 	BehaviorModule **m_modules244;
@@ -82,7 +84,7 @@ BridgeTowerBehaviorInterface *BridgeTowerBehavior::getBridgeTowerBehaviorInterfa
 	// get the bridge tower behavior module
 	BehaviorModule **bmi;
 	BridgeTowerBehaviorInterface *bbi;
-	for (bmi = obj->getBehaviorModules(); *bmi; ++bmi)
+	for (bmi = obj->m_modules244; *bmi; ++bmi)
 	{
 		bbi = (*bmi)->getBridgeTowerBehaviorInterface();
 		if (bbi)

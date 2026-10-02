@@ -1590,50 +1590,12 @@ m_nextAndCondition(NULL)
 	}
 }
 
-// ??0Condition@@QAE@W4ConditionType@0@@Z present-unmatched
-Condition::Condition(enum ConditionType type):
-m_conditionType(type),
-m_hasWarnings(false),
-m_customData(0),
-m_customFrame(0),
-m_numParms(0),
-m_nextAndCondition(NULL)
-{
-	Int i;
-	for (i=0; i<MAX_PARMS; i++) {
-		m_parms[i] = NULL;
-	}
-	setConditionType(type);
-}
+// Owned by ConditionCtor.cpp.
 
 // byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/Condition_setConditionType_Thunk.cpp
 // Condition::setConditionType: defined in TemplateGetParameterType.cpp (its row's unit).
 
-// byte-exact reconstruction: Code/GameEngine/Source/Common/RTS/ConditionDuplicateThunk.cpp
-// ?duplicate@Condition@@QBEPAV1@XZ present-unmatched
-// DECLINED under the anti-lift rule. The donor is a 5-byte ILT whose whole
-// content is a cast-and-call into an unnamed shim, and its jump lands at
-// 0x00357d30 -- still an unconverted dump (Code/gen_asm/d_003492a0.asm). This
-// body is the only readable statement of what the function does.
-Condition *Condition::duplicate(void) const 
-{
-	Condition *pNew = newInstance(Condition)(m_conditionType);	
-	Int i;
-	for (i=0; i<m_numParms && i<pNew->m_numParms; i++) {
-		*pNew->m_parms[i] = *m_parms[i];
-	}
-	Condition *pLink = m_nextAndCondition;
-	Condition *pCur = pNew;
-	while (pLink) {
-		pCur->m_nextAndCondition = newInstance(Condition)(pLink->getConditionType());
-		pCur = pCur->m_nextAndCondition;
-		for (i=0; i<pLink->m_numParms; i++) {
-			*pCur->m_parms[i] = *pLink->m_parms[i];
-		}
-		pLink = pLink->m_nextAndCondition;
-	}
-	return pNew;
-}
+// Owned by ConditionDuplicate.cpp.
 
 // ?duplicateAndQualify@Condition@@QBEPAV1@ABVAsciiString@@00@Z present-unmatched
 Condition *Condition::duplicateAndQualify(const AsciiString& qualifier, 
@@ -2139,45 +2101,11 @@ m_nextAction(NULL)
 {
 }
 
-// ??0ScriptAction@@ present-unmatched
-ScriptAction::ScriptAction(enum ScriptActionType type):
-m_actionType(type),
-m_numParms(0)
-{
-	Int i;
-	for (i=0; i<MAX_PARMS; i++) {
-		m_parms[i] = NULL;
-	}
-	setActionType(type);
-}
+// Owned by ScriptActionCtor.cpp.
 
 // ScriptAction::setActionType: defined in TemplateGetParameterType.cpp (its row's unit).
 
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptAction_duplicate_Thunk.cpp
-// ?duplicate@ScriptAction@@QBEPAV1@XZ present-unmatched
-ScriptAction *ScriptAction::duplicate(void) const 
-{
-	ScriptAction *pNew = newInstance(ScriptAction)(m_actionType);	
-	Int i;
-	for (i=0; i<m_numParms; i++) {
-		if (pNew->m_parms[i]) {
-			*pNew->m_parms[i] = *m_parms[i];
-		}
-	}
-	ScriptAction *pLink = m_nextAction;
-	ScriptAction *pCur = pNew;
-	while (pLink) {
-		pCur->m_nextAction = newInstance(ScriptAction)(pLink->m_actionType);
-		pCur = pCur->m_nextAction;
-		for (i=0; i<pLink->m_numParms; i++) {
-			if (pCur->m_parms[i] && pLink->m_parms[i]) {
-				*pCur->m_parms[i] = *pLink->m_parms[i];
-			}
-		}
-		pLink = pLink->m_nextAction;
-	}
-	return pNew;
-}
+// Owned by ScriptActionDuplicate.cpp.
 
 // ?duplicateAndQualify@ScriptAction@@QBEPAV1@ABVAsciiString@@00@Z present-unmatched
 ScriptAction *ScriptAction::duplicateAndQualify(const AsciiString& qualifier, 

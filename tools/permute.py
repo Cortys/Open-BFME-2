@@ -120,7 +120,10 @@ COMMUTE = re.compile(r"(\b[A-Za-z_][\w.\->\[\]]*)\s*([+*&|^])\s*([A-Za-z_][\w.\-
 MIRROR = {"<": ">", ">": "<", "<=": ">=", ">=": "<="}
 SIGNS = [("unsigned int ", "int "), ("unsigned char ", "char "), ("unsigned short ", "short "),
          ("unsigned long ", "long ")]
-FLAG_SWAPS = [("/O1", "/O2"), ("/O2", "/O1"), ("/O2", "/Ox")]
+FLAG_SWAPS = [("/O1", "/O2"), ("/O2", "/O1"), ("/O2", "/Ox"), ("/Ox", "/O2"), ("/Ob2", "/Ob1"),
+              ("/Ob1", "/Ob2"), ("/G6", "/G7"), ("/G7", "/G6")]
+# flags toggled on or off: x87 store/reload order (/Op), frame pointer (/Oy-)
+FLAG_TOGGLES = ["/Op", "/Oy-"]
 
 
 def body_lines(lines):
@@ -187,9 +190,15 @@ def mutate(text, rng):
         elif kind == "flag":
             for k, line in enumerate(lines[:5]):
                 if line.startswith("// cl:"):
+                    words = line.split()
+                    if rng.random() < 0.4:
+                        flag = rng.choice(FLAG_TOGGLES)
+                        words = [w for w in words if w != flag] if flag in words else words + [flag]
+                        lines[k] = " ".join(words)
+                        return "\n".join(lines), kind
                     a, b = rng.choice(FLAG_SWAPS)
-                    if a in line.split():
-                        lines[k] = " ".join(b if w == a else w for w in line.split())
+                    if a in words:
+                        lines[k] = " ".join(b if w == a else w for w in words)
                         return "\n".join(lines), kind
     return text, None
 

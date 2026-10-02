@@ -17,11 +17,9 @@ private:
     bool m_unk1;
 };
 
-EventModuleInfo::EventModuleInfo()
-{
-    m_unk0 = true;
-    m_unk1 = true;
-}
+// The constructor and ParticleSystemInfo::GetSnapshotName are rowed in
+// FXParticleSystemEarlyInlines.cpp (retail places them among the image's first
+// functions).
 
 EventModuleInfo::~EventModuleInfo()
 {
@@ -32,11 +30,6 @@ class ParticleSystemInfo
 public:
     virtual const char *GetSnapshotName();
 };
-
-const char *ParticleSystemInfo::GetSnapshotName()
-{
-    return "FXParticleSystemInfo";
-}
 
 // LineEmissionVolumeInfo copy ctor, retail 0x003A653B (63B). BFME1 donor
 // b1 0x005D5A90: base EmissionVolumeInfo copy (inlined: base vtable +

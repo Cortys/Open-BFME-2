@@ -11,14 +11,12 @@ class ModuleTemplate
 {
 public:
     virtual ~ModuleTemplate();
-    virtual void v1() = 0;
 };
 
 class SecondaryModuleBase
 {
 public:
     virtual ~SecondaryModuleBase();
-    virtual void v1() = 0;
 };
 
 class ModuleInfo
@@ -50,7 +48,6 @@ class TerrainCollisionModuleInfo
 public:
     TerrainCollisionModuleInfo();
     virtual ~TerrainCollisionModuleInfo();
-    virtual void v1() = 0;
 };
 
 class TerrainCollisionModuleTemplate : public CategoryModuleTemplate<8>,
@@ -58,6 +55,7 @@ class TerrainCollisionModuleTemplate : public CategoryModuleTemplate<8>,
 {
 public:
     TerrainCollisionModuleTemplate();
+    virtual ~TerrainCollisionModuleTemplate();
 };
 
 // ??0TerrainCollisionModuleTemplate@FXParticleSystem@@QAE@XZ @0x3AA078

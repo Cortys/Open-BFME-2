@@ -56,7 +56,8 @@ BfmeResetTextureRef &BfmeResetTextureRef::rva001805AE(const BfmeResetAnyRef &rhs
 
 BfmeResetTextureRef &BfmeResetTextureRef::rva00180815(const BfmeResetAnyRef &rhs)
 {
-	if (rhs.pointer && rhs.pointer->GetClassId() != 0x424F58)
+	// class ID 'BOX' (0x00424F58), spelled as characters
+	if (rhs.pointer && rhs.pointer->GetClassId() != (('B' << 16) | ('O' << 8) | 'X'))
 		clear();
 	else
 		*(RefCountPtr<TextureClass> *)this = *(const RefCountPtr<TextureClass> *)&rhs;

@@ -35,8 +35,8 @@ bool __stdcall Rva002E56E2Greater(const char *left, const StringLookUp *right)
 
 // TheGameText, VA 0x00DFF0BC (.data, zero-filled tail): the GameTextInterface
 // singleton, read by 35 matched units (52 DIR32 sites). Zero Hour defines it in
-// GameText.cpp, which has no matched row and so is not in the link; it is
-// defined here, in the GameTextManager's split-out unit, until it is. A future
-// GameText.cpp row must drop one of the two definitions.
+// GameText.cpp, which BFME2 has not recovered; it is defined here, in the
+// GameTextManager's split-out unit. A recovered GameText.cpp must not define it
+// a second time.
 class GameTextInterface;
 GameTextInterface *TheGameText = 0;

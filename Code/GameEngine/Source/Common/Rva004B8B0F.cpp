@@ -40,10 +40,7 @@ class Object
 public:
 	Bool testStatus(ObjectStatusTypes bit) const;
 	void setSelectable(Bool selectable);
-	AIUpdateInterface *getAIUpdateInterface()
-	{
-		return *(AIUpdateInterface **)((char *)this + 0x258);
-	}
+	AIUpdateInterface *getAIUpdateInterface();
 };
 
 class Rva004B8B0F
@@ -61,7 +58,7 @@ void Rva004B8B0F::rva004B8B0F()
 	Object *obj = m_object;
 	if (obj->testStatus(OBJECT_STATUS_FAERIE_FIRE))
 		return;
-	AIUpdateInterface *ai = obj->getAIUpdateInterface();
+	AIUpdateInterface *ai = *(AIUpdateInterface **)((char *)obj + 0x258);
 	if (!ai)
 		return;
 	ai->m_command.rva0045003E(0, CMD_FROM_AI);

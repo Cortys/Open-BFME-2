@@ -200,19 +200,7 @@ MaterialRemapperClass::MaterialRemapperClass(MaterialInfoClass * src,MaterialInf
 	}
 }
 
-// ??1MaterialRemapperClass@@QAE@XZ present-unmatched
-MaterialRemapperClass::~MaterialRemapperClass(void)
-{
-	SrcMatInfo->Release_Ref();
-	DestMatInfo->Release_Ref();
-
-	if (TextureRemaps) {
-		delete[] TextureRemaps;
-	}
-	if (VertexMaterialRemaps) {
-		delete[] VertexMaterialRemaps;
-	}
-}
+// Owned by MaterialRemapperClassDtor.cpp.
 
 // ?Remap_Texture@MaterialRemapperClass@@QAEPAVTextureClass@@PAV2@@Z present-unmatched
 TextureClass * MaterialRemapperClass::Remap_Texture(TextureClass * src)

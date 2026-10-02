@@ -16,6 +16,11 @@ class SubsystemInterface
 {
 public:
 	virtual ~SubsystemInterface();
+	virtual void init() = 0;
+	virtual bool loadIniFilesFromLegend();
+	virtual void reset() = 0;
+	virtual void update() = 0;
+	virtual void draw();
 	SubsystemInterface(const SubsystemInterface &that);
 	SubsystemInterface &operator=(const SubsystemInterface &that);
 private:

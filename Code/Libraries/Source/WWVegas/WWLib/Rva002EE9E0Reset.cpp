@@ -8,6 +8,8 @@ struct _Rva002EB416Node {
     _Rva002EB416Node *_m_next;
     _Rva002EB416Node *_m_child;
 };
+// g_Va00DBD4B8: VA 0x00dbd4b8 (.data); retail initial bytes 00 00 00 00.
+_Rva002EB416Node *g_Va00DBD4B8;
 struct Rva002EB416 {
     _Rva002EB416Node *m_head;
     int m_flag;
@@ -30,6 +32,6 @@ void Rva002EB416::rva002EEA09()
     _Rva002EB416Node *head = m_head;
     if (!head)
         return;
-    head->_m_link = *(void **)0x00DBD4B8;
-    *(_Rva002EB416Node **)0x00DBD4B8 = head;
+    head->_m_link = g_Va00DBD4B8;
+    g_Va00DBD4B8 = head;
 }

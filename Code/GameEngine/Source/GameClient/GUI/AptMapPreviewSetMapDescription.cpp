@@ -31,6 +31,7 @@ public:
     void rva0057C597(bool show);
     void rva0057CC43(struct Rva0057CC43Node *head);
     void *rva0057C649();
+    int rva0057C57B(int value);
 private:
     char m_unmodelled[0x2C];
     GameWindow *m_descriptionList;
@@ -82,6 +83,16 @@ void *AptMapPreview::rva0057C649()
         return (void *)-1;
     int index = Rva00322910(m_combo50);
     return GadgetComboBoxGetItemData(m_combo50, index);
+}
+
+int AptMapPreview::rva0057C57B(int value)
+{
+    for (int i = 0; i < 8; ++i)
+    {
+        if (value == (int)m_windows[i])
+            return i;
+    }
+    return -1;
 }
 
 class Rva0043DA65
