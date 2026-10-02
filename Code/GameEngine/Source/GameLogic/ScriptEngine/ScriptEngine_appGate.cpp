@@ -12,6 +12,11 @@ extern class GlobalData *TheWritableGlobalData;
 
 typedef int HMODULE;
 
+// g_00DFE158: VA 0x00dfe158 (.data/bss); retail zero-filled.
+HMODULE g_00DFE158;
+// g_00DFE168: VA 0x00dfe168 (.data/bss); retail zero-filled.
+unsigned char g_00DFE168;
+
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
 
 class GameLogic
@@ -22,8 +27,8 @@ public:
 extern GameLogic *TheGameLogic;
 
 #define TheGlobalData (*(unsigned char **)&TheWritableGlobalData)
-#define TheAppModule (*(HMODULE *)0x00DFE158)
-#define AppFastLatch (*(unsigned char *)0x00DFE168)
+#define TheAppModule g_00DFE158
+#define AppFastLatch g_00DFE168
 
 class Rva00203B47Host
 {
