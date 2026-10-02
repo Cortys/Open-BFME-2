@@ -1,4 +1,4 @@
-// cl: /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/open-bfme-1/reference/shims/stringinline
+// cl: /O1 /EHsc /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfme2_ascii
 // stlport
 // Open-BFME: vector<GeometryShape> copy constructor, retail 0x000FDE60.
 //
@@ -11,7 +11,7 @@
 // and 0x000FD230.
 
 #include <vector>
-#include "StringInline.h"
+#include "ascii_string.h"
 
 typedef bool Bool;
 
@@ -38,6 +38,7 @@ struct GeometryShape
 	char m_unmodelled21[0x03];
 
 	GeometryShape();
+	~GeometryShape();
 	GeometryShape(const GeometryShape &other)
 		: m_type(other.m_type),
 		  m_height(other.m_height),
