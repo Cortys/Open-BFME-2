@@ -35,6 +35,16 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #ifdef _INTERNAL
 #endif
 
+// LINK-COMDAT: rts::equal_to<NameKeyType> is kept as the /O1 copy from FXList.cpp;
+// this TU is default-flag (speed) for its _M_new_node row, so its own copy differs.
+// Specialize only the member under "s" so our emitted copy matches the kept /O1 body,
+// while inlined key compares and the _M_new_node row keep default flags.
+#pragma optimize("s", on)
+namespace rts {
+template<> Bool equal_to<NameKeyType>::operator()(const NameKeyType &a, const NameKeyType &b) const { return a == b; }
+}
+#pragma optimize("", on)
+
 typedef std::hash_map< NameKeyType, FXList, rts::hash<NameKeyType>, rts::equal_to<NameKeyType> > BfmeFXListMapEmit;
 extern FXList &(BfmeFXListMapEmit::*const g_bfmeFXListMapIndex)(const NameKeyType &);
 FXList &(BfmeFXListMapEmit::*const g_bfmeFXListMapIndex)(const NameKeyType &) = &BfmeFXListMapEmit::operator[];
