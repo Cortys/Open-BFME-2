@@ -7,7 +7,7 @@ typedef unsigned short WideChar;
 #include "unicode_string.h"
 
 
-#define RankFmt ((const WideChar *)0x00BC9260)
+#define RankFmt ((const WideChar *)L"%d")
 
 UnicodeString __cdecl Rva005ED310Get(int val)
 {
