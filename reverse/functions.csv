@@ -48331,3 +48331,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Rva00419CB2Init@@YAXPAX@Z,,0x00419CB2,22,Code/GameEngine/Source/Common/Rva00419CB2Init.cpp,matched,memset 4 then NOT sets dword to -1 via caller global
 ?Rva00419CC8Init@@YAXXZ,,0x00419CC8,12,Code/GameEngine/Source/Common/Rva00419CC8Init.cpp,matched,pushes global 0x00E030D0 and calls rowed 0x00419CB2 init via chain lane
 ?rva00462290@Rva00462290@@QAEXPBUCoord3D@@W4CommandSourceType@@@Z,,0x00462290,108,Code/GameEngine/Source/Common/Rva00462290.cpp,matched,AICommandParms stack via rowed ctor plus m_pos copy plus slot0 plus inlined free per Rva00462224 sibling precedent
+?rva005688D2@Rva005688D2@@QAEXPAMH@Z,,0x005688D2,78,Code/GameEngine/Source/Common/Rva005688D2Method.cpp,matched,same +0x2C/+0x3C layout as Rva00568920 callers 0x005689C3 0x00569B03 global g_00BC6C50

@@ -5667,3 +5667,4 @@ FUN_0088911a	0x0058911A	20	blocked	Boundary checkpoint 0x0058911A/20B; body comp
 ?Install_Materials@W3DShroudMaterialPassClass@@UBEXXZ	0x00072EEB	94	blocked	two clean C++ source-shape trials retain folded [eax+0x3878]/EAX test instead of retail add/mov-ECX sequence; 91B near-match remains 3B short; t=12min model=GPT-6 Luna
 ?UnInstall_Materials@W3DShroudMaterialPassClass@@UBEXXZ	0x000729EB	0	blocked	vtable pointer follows 0x00072EEB, but no Ghidra start/extent at 0x729EB (nearest known starts 0x729CC and 0x72A94); skipped before body reconstruction; t=2min model=GPT-6 Luna
 ?rva005381DC@Rva005381DC@@QAEXABURva005381DCPoint@@@Z	0x005381DC	63	blocked	custom ecx-eax convention has no standard spelling t=18 model=muse-04
+?rva002CFB4C@Rva002CFB4C@@QAEPAXPBX@Z	0x002CFB4C	68	partial	exact 68B via thiscall createNode at 0x002CF9DC needs ICF twin of stdcall row t=22 model=muse-10 score=0.97 stash=reverse/attempts/0x002cfb4c.cpp
