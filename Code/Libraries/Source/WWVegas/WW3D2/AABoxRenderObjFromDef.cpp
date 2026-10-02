@@ -24,7 +24,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 
 // Defined here (verbatim BFME1) so the ctor inlines it: retail's 143B body
 // carries the cached-box refresh as SSE loads/adds/stores, not a call.
-void AABoxRenderObjClass::update_cached_box(void)
+inline void AABoxRenderObjClass::update_cached_box(void)
 {
 	CachedBox.Center = Transform.Get_Translation() + ObjSpaceCenter;
 	CachedBox.Extent = ObjSpaceExtent;
