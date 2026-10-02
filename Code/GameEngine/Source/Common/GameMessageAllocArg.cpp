@@ -47,3 +47,7 @@ GameMessageArgument *GameMessage::allocArg(void)
 
 	return arg;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C09844@@3QBQBXB=??_7BfmeNetGameMessageArgument@@6B@")

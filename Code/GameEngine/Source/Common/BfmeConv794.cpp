@@ -62,3 +62,7 @@ void BfmeThingDXK::bfmeGoDXKa()
 	if (p)
 		::operator delete[](p);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeDropDXH@@3P6AXPAVBfmeSubDXH@@@ZA=?g_bfmeAptMatrixCallbackAtE177A0@@3P6AXPAUAptMatrix@@@ZA")
