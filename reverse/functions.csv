@@ -48067,3 +48067,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0040C5B1@Rva0040C598@@QAEXPBH@Z,,0x0040C5B1,27,Code/GameEngine/Source/Common/Rva0040C598BitAnd.cpp,matched,and-not twin of 0x0040C598 same 32-dword bits caller 0x0040C8D9
 ??_GRva00221C15@@QAEPAXI@Z,,0x00221C5C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00221C15.cpp,matched,deleting dtor calls rowed dtor plus operator delete
 ??1Rva0022DD62@@QAE@XZ,,0x0022DEE1,57,Code/GameEngine/Source/GameClient/Rva0022DD62Dtor.cpp,matched,chain packet calls rowed clear 0x0022DD62 with same this
+??_GRva004189B2@@UAEPAXI@Z,,0x0022E023,28,Code/GameEngine/Source/GameClient/Rva004189B2Dtor.cpp,matched,deleting dtor via own dtor unit plus vtable slot 0
