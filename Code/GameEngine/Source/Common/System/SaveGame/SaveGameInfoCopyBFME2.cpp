@@ -15,10 +15,14 @@
 // Retain the address-derived name already used by the enclosing map record.
 // BFME1 SaveGameInfo supplies the three-string/date prefix; BFME2 adds the
 // following fields. Unresolved application field names remain offset-based.
+// This base is NOT canonical Snapshot: retail holds crc/typeName/xfer here
+// while canonical Snapshot (Snapshot.cpp, shim) holds crc/xfer/loadPostProcess.
+// Same mangled name different virtuals cannot share COMDATs, so the base keeps
+// an honest Rva address name here (SaveMapPreviewCopy precedent).
 class Xfer;
-class Snapshot {
+class Rva0022CE19SnapshotBase {
 public:
-    __forceinline virtual ~Snapshot() {}
+    inline virtual ~Rva0022CE19SnapshotBase() {}
     virtual void crc(Xfer *);
     virtual const char *typeName() const;
     virtual void xfer(Xfer *);
@@ -41,13 +45,13 @@ struct BfmeVector0022C55B {
 // Complete339-byte copy and206-byte destructor confirm the Snapshot base,
 // owning members and0x140-byte extent. Preserve declarations while their
 // own field reconstruction remains separate from this element copy.
-class CreateAHeroData : public Snapshot {
+class CreateAHeroData : public Rva0022CE19SnapshotBase {
     unsigned char fields[0x13C];
 public:
     CreateAHeroData(const CreateAHeroData &);
     virtual ~CreateAHeroData();
 };
-struct BfmeSaveElement002295D7 : Snapshot {
+struct BfmeSaveElement002295D7 : Rva0022CE19SnapshotBase {
     BfmeSaveElement002295D7();
     unsigned int word04;
     unsigned char flag08, flag09, flag0A;
@@ -64,7 +68,7 @@ struct BfmeSaveElement002295D7 : Snapshot {
 };
 struct BfmeSaveBlock4 { unsigned int values[4]; };
 struct BfmeSaveBlock10 { unsigned int values[10]; };
-struct BfmeSubobject00229875 : Snapshot {
+struct BfmeSubobject00229875 : Rva0022CE19SnapshotBase {
     BfmeSubobject00229875();
     void rva002DBA6A();
     virtual ~BfmeSubobject00229875();
@@ -78,7 +82,7 @@ struct BfmeSubobject00229875 : Snapshot {
     unsigned int wordDA0;
 };
 typedef char BfmeSaveElementSizeCheck[sizeof(BfmeSaveElement002295D7)==0x1AC ? 1 : -1];
-struct BfmeSubobject0022CE19 : Snapshot {
+struct BfmeSubobject0022CE19 : Rva0022CE19SnapshotBase {
     virtual ~BfmeSubobject0022CE19();
     virtual void crc(Xfer *);
     virtual const char *typeName() const;
@@ -96,7 +100,7 @@ struct BfmeSubobject0022CE19 : Snapshot {
 typedef char BfmeSaveSizeCheck[sizeof(BfmeSubobject0022CE19)==0xDE8 ? 1 : -1];
 typedef char BfmeSaveOffsetsCheck[(offsetof(BfmeSubobject0022CE19,range38)==0x38 && offsetof(BfmeSubobject0022CE19,object44)==0x44) ? 1 : -1];
 BfmeSubobject0022CE19::BfmeSubobject0022CE19(const BfmeSubobject0022CE19 &o)
-    : Snapshot(o), text04(o.text04), text08(o.text08), text0C(o.text0C),
+    : Rva0022CE19SnapshotBase(o), text04(o.text04), text08(o.text08), text0C(o.text0C),
       date10(o.date10), text20(o.text20), word24(o.word24), word28(o.word28),
       text2C(o.text2C), text30(o.text30), text34(o.text34),
       range38(o.range38), object44(o.object44) {}
