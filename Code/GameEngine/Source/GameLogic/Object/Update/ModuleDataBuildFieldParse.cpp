@@ -24,6 +24,8 @@ public:
 	void add(const FieldParse *parse, unsigned int extraOffset);
 };
 
+int Rva004CE52EGet(void);
+
 #define FIELD_PROC(cls, addr, field) \
 class cls \
 { \
@@ -34,6 +36,19 @@ public: \
 void cls::buildFieldParse(MultiIniFieldParse &parse) \
 { \
 	parse.add(reinterpret_cast<const FieldParse *>(addr), 0); \
+}
+
+#define FIELD_PROC_WITH_DIE_BASE(cls, addr) \
+class cls \
+{ \
+public: \
+	static void buildFieldParse(MultiIniFieldParse &parse); \
+}; \
+\
+void cls::buildFieldParse(MultiIniFieldParse &parse) \
+{ \
+	parse.add(reinterpret_cast<const FieldParse *>(addr), 0); \
+	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE52EGet()), 8); \
 }
 
 FIELD_PROC(BeaconClientUpdateModuleData, 0x00C5EB94, RadarPulseFrequency)
@@ -56,7 +71,9 @@ FIELD_PROC(DefaultProductionExitUpdateModuleData, 0x00BF2398, DefaultExitTable)
 FIELD_PROC(StealthUpdateModuleData, 0x00C18210, StealthTable)
 FIELD_PROC(DemoTrapUpdateModuleData, 0x00C4EEC8, DetonationTable)
 FIELD_PROC(ToppleUpdateModuleData, 0x00C53980, ToppleTable)
-FIELD_PROC(StructureToppleUpdateModuleData, 0x00C52BD8, CollapseTable)
+// These retail bodies also append the shared DieMuxData table via
+// Rva004CE52EGet at extraOffset 8; both functions end after that second add.
+FIELD_PROC_WITH_DIE_BASE(StructureToppleUpdateModuleData, 0x00C52BD8)
 FIELD_PROC(SpawnPointProductionExitUpdateModuleData, 0x00BF22D4, SpawnPointBoneTable)
 FIELD_PROC(HijackerUpdateModuleData, 0x00BF2318, HijackerTable)
 FIELD_PROC(SlavedUpdateModuleData, 0x00BF2110, SlavedTable)
@@ -90,7 +107,7 @@ FIELD_PROC(TemporarilyDefectUpdateModuleData, 0x00C5F5E4, DefectDurationTable)
 FIELD_PROC(PoisonedBehaviorModuleData, 0x00C49918, PoisonTable)
 FIELD_PROC(SupplyWarehouseCripplingBehaviorModuleData, 0x00C49B40, SelfHealTable)
 FIELD_PROC(FireSpreadUpdateModuleData, 0x00C4C000, FireSpreadTable)
-FIELD_PROC(SlowDeathBehaviorModuleData, 0x00C42290, SinkTable)
+FIELD_PROC_WITH_DIE_BASE(SlowDeathBehaviorModuleData, 0x00C42290)
 FIELD_PROC(TerrainResourceBehaviorModuleData, 0x00C494F0, IncomeTable)
 FIELD_PROC(MonitorConditionUpdateModuleData, 0x00C4DA00, ModelConditionTable)
 FIELD_PROC(AttachUpdateModuleData, 0x00C4DC48, AttachTable)
