@@ -171,7 +171,7 @@ Coord3D &Coord3D::operator=(const Coord3DBase &that)
     return *this;
 }
 
-Coord3D::Coord3D(float x, float y, float z)
+inline Coord3D::Coord3D(float x, float y, float z)
 {
     this->x = x;
     this->y = y;
@@ -652,7 +652,7 @@ typedef Coord3D &(Coord3D::*Coord3DAssign)(const Coord3D &);
 
 Coord3DAssign g_coord3dAssign = &Coord3D::operator=;
 
-// These seven are header inlines: the units that include Coord3D's header
+// These eight are header inlines: the units that include Coord3D's header
 // emit them as select-any copies, which plain definitions here collided with.
 // The anchor keeps this unit's copies for the rows; it is not retail code.
 #pragma inline_depth(0)
@@ -660,6 +660,7 @@ Coord3DAssign g_coord3dAssign = &Coord3D::operator=;
 void _bfmeCoord3DInlineAnchor(Coord3D *c)
 {
     c->Coord3D::Coord3D();
+    c->Coord3D::Coord3D(0.0f, 0.0f, 0.0f);
     c->zero();
     c->set(c->length(), c->lengthSqr(), 0.0f);
     c->normalize();
