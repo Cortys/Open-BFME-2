@@ -5505,3 +5505,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002B69A6@Rva002B69A6@@QAEXPAX@Z	0x002B69A6	94	blocked	test-dry-run agent=muse-03
 ?rva002B69A6@Rva002B69A6@@QAEXPAX@Z	0x002B69A6	94	partial	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; shape-lever round-robin upstream not flipped t=20 model=muse-03 score=0.91 stash=reverse/attempts/0x002b69a6.cpp
 ?rva002B693F@Rva002B693F@@QAEXPAX@Z	0x002B693F	103	partial	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; round-robin toggle tried t=18 model=muse-03 score=0.92 stash=reverse/attempts/0x002b693f.cpp
+?reconstructViewBox@W3DRadar@@IAEXXZ	0x0004D9B6	381	blocked	ZH ICoord2D int x87 vs retail Coord2D float SSE EH vector-new Region3D ctor layout plus158 plus4 TacticalView slots 0x34 vs 0x2c need BFME2 Radar View layout t=14 model=muse-01
+?deleteResources@W3DRadar@@IAEXXZ	0x0004D8DD	217	blocked	uniform minus8 offsets clears vs releaseRef push0 virtual plus operator-delete vs push1 deleting-dtor need image delete shape t=18 model=muse-01

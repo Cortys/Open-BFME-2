@@ -47719,3 +47719,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??$__uninitialized_copy@PAVRva0040AEE3@@PAV1@@_STL@@YAPAVRva0040AEE3@@PAV1@00ABU__false_type@0@@Z,,0x0040B2FD,38,Code/Libraries/Source/WWVegas/WWLib/Rva0040B2FDUninitCopy.cpp,matched,copy stride 0x10 via pinned Construct callers overflow assign
 ?rva004BE722@Rva004BE722@@QAEXPAX@Z,,0x004BE722,95,Code/GameEngine/Source/GameLogic/Object/Body/Rva004BE722.cpp,matched,unlock bit-copy 21 bits from this dword via index shift5 and mask31 into memset 3-byte local via div8 mod8 then slot 0x24 on arg
 ?init@CountUpTransition@@UAEXPAVGameWindow@@@Z,,0x0035F739,349,Code/GameEngine/Source/GameClient/GUI/CountUpTransitionInit.cpp,matched,vslot slot1 donor BFME1 init with winHide GetText translate atoi
+?rva00273755@Drawable@@QAEXXZ,,0x00273755,179,Code/GameEngine/Source/GameClient/Drawable_rva00273755.cpp,matched,Drawable anim draw via getter Anim2D scale
