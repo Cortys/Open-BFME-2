@@ -318,3 +318,303 @@ Rva002913EB::~Rva002913EB()
 {
 	rva002913EB();
 }
+
+// ??1Rva0029B63A@@QAE@XZ @0x0029FAB7 56B -> Rva0029B63A::rva0029E015
+class Rva0029B63A
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0029E015();
+	~Rva0029B63A();
+};
+
+Rva0029B63A::~Rva0029B63A()
+{
+	rva0029E015();
+}
+
+// ??1Rva0029B667@@QAE@XZ @0x0029FB03 56B -> Rva0029B667::rva0029E03E
+class Rva0029B667
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0029E03E();
+	~Rva0029B667();
+};
+
+Rva0029B667::~Rva0029B667()
+{
+	rva0029E03E();
+}
+
+// ??1Rva002A8B8C@@QAE@XZ @0x002A8CD0 56B -> Rva002A8B8C::rva002A8BEE
+class Rva002A8B8C
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002A8BEE();
+	~Rva002A8B8C();
+};
+
+Rva002A8B8C::~Rva002A8B8C()
+{
+	rva002A8BEE();
+}
+
+// ??1Rva002D394B@@QAE@XZ @0x002D50AD 56B -> Rva002D394B::rva002D43C6
+class Rva002D394B
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002D43C6();
+	~Rva002D394B();
+};
+
+Rva002D394B::~Rva002D394B()
+{
+	rva002D43C6();
+}
+
+// ??1Rva002E15E6@@QAE@XZ @0x002E1E19 56B -> Rva002E15E6::rva002E15E6
+class Rva002E15E6
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002E15E6();
+	~Rva002E15E6();
+};
+
+Rva002E15E6::~Rva002E15E6()
+{
+	rva002E15E6();
+}
+
+// ??1Rva002EE9B7@@QAE@XZ @0x002F0B52 56B -> Rva002EE9B7::rva002EE9B7
+class Rva002EE9B7
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002EE9B7();
+	~Rva002EE9B7();
+};
+
+Rva002EE9B7::~Rva002EE9B7()
+{
+	rva002EE9B7();
+}
+
+// ??1Rva0032EAA1@@QAE@XZ @0x0032EC26 56B -> Rva0032EAA1::rva0032EB5E
+class Rva0032EAA1
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0032EB5E();
+	~Rva0032EAA1();
+};
+
+Rva0032EAA1::~Rva0032EAA1()
+{
+	rva0032EB5E();
+}
+
+// ??1Rva00372F00@@QAE@XZ @0x00372FBC 56B -> Rva00372F00::rva00372F56
+class Rva00372F00
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00372F56();
+	~Rva00372F00();
+};
+
+Rva00372F00::~Rva00372F00()
+{
+	rva00372F56();
+}
+
+// ??1Rva0038404A@@QAE@XZ @0x00385BE1 56B -> Rva0038404A::rva00384E8E
+class Rva0038404A
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00384E8E();
+	~Rva0038404A();
+};
+
+Rva0038404A::~Rva0038404A()
+{
+	rva00384E8E();
+}
+
+// ??1Rva00388EAE@@QAE@XZ @0x00389354 56B -> Rva00388EAE::rva00389129
+class Rva00388EAE
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00389129();
+	~Rva00388EAE();
+};
+
+Rva00388EAE::~Rva00388EAE()
+{
+	rva00389129();
+}
+
+// ??1Rva00395CEB@@QAE@XZ @0x003968D3 56B -> Rva00395CEB::rva0039611E
+class Rva00395CEB
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0039611E();
+	~Rva00395CEB();
+};
+
+Rva00395CEB::~Rva00395CEB()
+{
+	rva0039611E();
+}
+
+// ??1Rva00395D18@@QAE@XZ @0x0039690B 56B -> Rva00395D18::rva00396147
+class Rva00395D18
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00396147();
+	~Rva00395D18();
+};
+
+Rva00395D18::~Rva00395D18()
+{
+	rva00396147();
+}
+
+// ??1Rva00397C94@@QAE@XZ @0x00399278 56B -> Rva00397C94::rva00398257
+class Rva00397C94
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00398257();
+	~Rva00397C94();
+};
+
+Rva00397C94::~Rva00397C94()
+{
+	rva00398257();
+}
+
+// ??1Rva0039F56E@@QAE@XZ @0x0039FB11 56B -> Rva0039F56E::rva0039F56E
+class Rva0039F56E
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0039F56E();
+	~Rva0039F56E();
+};
+
+Rva0039F56E::~Rva0039F56E()
+{
+	rva0039F56E();
+}
+
+// ??1Rva004070D4@@QAE@XZ @0x004075A8 56B -> Rva004070D4::rva0040748D
+class Rva004070D4
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0040748D();
+	~Rva004070D4();
+};
+
+Rva004070D4::~Rva004070D4()
+{
+	rva0040748D();
+}
+
+// ??1Rva0041331E@@QAE@XZ @0x00413396 56B -> Rva0041331E::rva0041334B
+class Rva0041331E
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0041334B();
+	~Rva0041331E();
+};
+
+Rva0041331E::~Rva0041331E()
+{
+	rva0041334B();
+}
+
+// ??1Rva00421BF7@@QAE@XZ @0x0042263D 56B -> Rva00421BF7::rva00421EEA
+class Rva00421BF7
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00421EEA();
+	~Rva00421BF7();
+};
+
+Rva00421BF7::~Rva00421BF7()
+{
+	rva00421EEA();
+}
+
+// ??1Rva00421C24@@QAE@XZ @0x00422675 56B -> Rva00421C24::rva00421F13
+class Rva00421C24
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00421F13();
+	~Rva00421C24();
+};
+
+Rva00421C24::~Rva00421C24()
+{
+	rva00421F13();
+}
+
+// ??1Rva00421CE9@@QAE@XZ @0x00422717 56B -> Rva00421CE9::rva00421FDE
+class Rva00421CE9
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00421FDE();
+	~Rva00421CE9();
+};
+
+Rva00421CE9::~Rva00421CE9()
+{
+	rva00421FDE();
+}
+
+// ??1Rva0043EA9C@@QAE@XZ @0x0043FE62 56B -> Rva0043EA9C::rva0043F124
+class Rva0043EA9C
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0043F124();
+	~Rva0043EA9C();
+};
+
+Rva0043EA9C::~Rva0043EA9C()
+{
+	rva0043F124();
+}
