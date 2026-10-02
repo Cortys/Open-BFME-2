@@ -14,10 +14,15 @@ class Parameter
 {
 };
 
+class MemoryPool;
+
 class Condition
 {
-public:
+protected:
 	virtual ~Condition();
+private:
+	virtual MemoryPool *getObjectMemoryPool();
+public:
 	Condition();
 
 private:
