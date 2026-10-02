@@ -48441,3 +48441,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva004670D6@TransportContain@@QAEXXZ,,0x004670D6,214,Code/GameEngine/Source/GameLogic/Object/Contain/TransportContainRva004670D6.cpp,matched,slot28 TransportContain vtable0244278 Horde45EB8 contain-list via Rva002D06CA
 ?rva004E060C@Rva004E060C@@QAEXE@Z,,0x004E060C,25,Code/GameEngine/Source/Common/Rva004E060CMethod.cpp,matched,chain from 0052B024 via member 2C store byte 51 callers 4E1186 4FA666
 ??$__uninitialized_copy@PAVRva004E18A2@@PAV1@@_STL@@YAPAVRva004E18A2@@PAV1@00ABU__false_type@0@@Z,,0x0052C2A4,38,Code/Libraries/Source/WWVegas/WWLib/Rva004E18A2UninitCopy.cpp,matched,stride 10 via rowed Construct 52BD16 callers 52C898 565F4B 565F96
+??0Rva0052C867@@QAE@ABV0@@Z,,0x0052C867,68,Code/Libraries/Source/WWVegas/WWLib/Rva0052C867Copy.cpp,matched,Vector base E16 alloc AsciiString uninit-copy Rva004E18A2 caller 52D627
