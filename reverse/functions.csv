@@ -48497,3 +48497,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0052518E@Rva0052518E@@QAEXPAX@Z,,0x0052518E,15,Code/GameEngine/Source/Common/Rva0052518E.cpp,matched,unlock two-level store via caller 0x002D36D0 unblocks 0x002D36C3
 ?rva00525611@Rva00525611@@QAEXXZ,,0x00525611,34,Code/GameEngine/Source/Common/Rva00525611.cpp,matched,leaf list clear via callers 0x00526FEE 0x0052703A prev 0x005255E2
 ?Rva0030B6A6Equal@@YAHPBURva0030B6A6Range@@0@Z,,0x0030B6A6,61,Code/GameEngine/Source/Common/Rva0030B6A6Equal.cpp,matched,two range float pair equality via size xor
+?Rva0030B831Equal@@YAHPBURva0030B831Item@@0@Z,,0x0030B831,41,Code/GameEngine/Source/Common/Rva0030B831Equal.cpp,matched,calls rowed Rva0030B6A6Equal cmp field 0x28 xor-inc shape
