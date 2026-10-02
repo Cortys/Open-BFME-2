@@ -11,7 +11,35 @@
 // drops the ZH upgrade-boost list). Sole raw caller is the ModuleData
 // factory 0x256310 which news 0x60.
 
-class CrateCollideModuleData
+class Xfer;
+class W3DModelDrawModuleData;
+class W3DTreeDrawModuleData;
+enum StaticGameLODLevel { STATIC_GAME_LOD_LOW = 0 };
+typedef bool Bool;
+
+class Snapshot
+{
+protected:
+	virtual void crc(Xfer *xfer) = 0;
+	virtual void xfer(Xfer *xfer) = 0;
+	virtual void loadPostProcess(void) = 0;
+};
+
+class ModuleData : public Snapshot
+{
+public:
+	virtual ~ModuleData() {}
+	virtual Bool isAiModuleData(void) const { return false; }
+	virtual const W3DModelDrawModuleData *getAsW3DModelDrawModuleData(void) const { return 0; }
+	virtual const W3DTreeDrawModuleData *getAsW3DTreeDrawModuleData(void) const { return 0; }
+	virtual StaticGameLODLevel getMinimumRequiredGameLOD(void) const { return (StaticGameLODLevel)0; }
+public:
+	virtual void crc(Xfer *xfer) {}
+	virtual void xfer(Xfer *xfer) {}
+	virtual void loadPostProcess(void) {}
+};
+
+class CrateCollideModuleData : public ModuleData
 {
 public:
 	CrateCollideModuleData();
