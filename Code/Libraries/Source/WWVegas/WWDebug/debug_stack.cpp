@@ -33,6 +33,18 @@
 #include "_pch.h"
 #include "dbghelp.h"
 
+// From Open-BFME-1's copy, for the BFME StackWalk below.
+extern "C" __declspec(dllimport) BOOL WINAPI ReadProcessMemory(
+	HANDLE process, const void *address, void *buffer, DWORD size, DWORD *read);
+bool DebugIsDebuggerAttached();
+
+// Retail's STACKFRAME is 0xA4 bytes (a newer dbghelp.h KDHELP); the shim's is
+// three dwords shorter.
+struct BfmeStackFrame : public STACKFRAME
+{
+	DWORD retailTail[3];
+};
+
 // Definitions to allow run-time linking to the dbghelp.dll functions.
 
 #define DBGHELP(name,ret,par) typedef ret (WINAPI *name##Type) par;
@@ -346,8 +358,19 @@ bool DebugStackwalk::IsOldDbghelp(void)
   return g_oldDbghelp;
 }
 
-// ?StackWalk@DebugStackwalk@@SAHAAVSignature@1@PAU_CONTEXT@@@Z present-unmatched
-int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx)
+// ?StackWalk@DebugStackwalk@@SAHAAVSignature@1@PAU_CONTEXT@@_N@Z
+// BFME 2: Open-BFME-1's body (submodule 10af19f44a), byte-identical in game.dat
+// at 0x0003C110. It replaces Zero Hour's two-argument StackWalk, which game.dat
+// does not contain; the debugger test is the rowed DebugIsDebuggerAttached
+// (0x0003E3E0, BFME 1's Rva0088EAF0IsDebuggerPresent).
+// BFME builds this one function without optimization (retail keeps every local
+// in its frame slot, reloads each parameter and adds with `add r,1`), and adds a
+// raw stack scan for return addresses when dbghelp finds fewer than five frames.
+// Under /Od MSVC 7.1 orders frame slots by local NAME (a hash), not by
+// declaration; ctxCopy, curProcess and value are names that reproduce retail's
+// slots, the original names are unknown.
+#pragma optimize("", off)
+int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx, bool useFallback)
 {
   InitDbghelp();
 
@@ -358,25 +381,25 @@ int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx)
     return 0;
 
 	// Set up the stack frame structure for the start point of the stack walk (i.e. here).
-	STACKFRAME stackFrame;
+	BfmeStackFrame stackFrame;
 	memset(&stackFrame,0,sizeof(stackFrame));
 
 	stackFrame.AddrPC.Mode = AddrModeFlat;
-	stackFrame.AddrStack.Mode = AddrModeFlat;
 	stackFrame.AddrFrame.Mode = AddrModeFlat;
+	stackFrame.AddrStack.Mode = AddrModeFlat;
 
 	// Use the context struct if it was provided.
-	if (ctx) 
+	unsigned long reg_eip, reg_ebp, reg_esp;
+	if (ctx)
   {
 		stackFrame.AddrPC.Offset = ctx->Eip;
-		stackFrame.AddrStack.Offset = ctx->Esp;
 		stackFrame.AddrFrame.Offset = ctx->Ebp;
+		stackFrame.AddrStack.Offset = ctx->Esp;
 	}
   else
   {
     // walk stack back using current call chain
-	  unsigned long reg_eip, reg_ebp, reg_esp;
-	  __asm 
+	  __asm
     {
     here:
 		  lea	eax,here
@@ -385,15 +408,19 @@ int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx)
 		  mov	reg_esp,esp
 	  };
 	  stackFrame.AddrPC.Offset = reg_eip;
-	  stackFrame.AddrStack.Offset = reg_esp;
 	  stackFrame.AddrFrame.Offset = reg_ebp;
+	  stackFrame.AddrStack.Offset = reg_esp;
   }
+
+	CONTEXT ctxCopy;
+	if (ctx)
+		ctxCopy = *ctx;
 
 	// Walk the stack by the requested number of return address iterations.
   bool skipFirst=!ctx;
   while (sig.m_numAddr<Signature::MAX_ADDR&&
 		     gDbg._StackWalk(IMAGE_FILE_MACHINE_I386,GetCurrentProcess(),GetCurrentThread(),
-                         &stackFrame,NULL,NULL,gDbg._SymFunctionTableAccess,gDbg._SymGetModuleBase,NULL))
+                         &stackFrame,ctx ? &ctxCopy : NULL,NULL,gDbg._SymFunctionTableAccess,gDbg._SymGetModuleBase,NULL))
   {
     if (skipFirst)
       skipFirst=false;
@@ -401,5 +428,73 @@ int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx)
       sig.m_addr[sig.m_numAddr++]=stackFrame.AddrPC.Offset;
   }
 
+	if (sig.m_numAddr < 5 && useFallback && !DebugIsDebuggerAttached())
+	{
+		DWORD *stack = reinterpret_cast<DWORD *>(ctx ? ctx->Esp : reg_ebp);
+		HANDLE curProcess = GetCurrentProcess();
+		sig.m_numAddr = 1;
+		for (; sig.m_numAddr < Signature::MAX_ADDR; ++stack)
+		{
+			DWORD value;
+			if (!ReadProcessMemory(curProcess, stack, &value, sizeof(value), NULL))
+				break;
+			if (IsBadCodePtr(reinterpret_cast<FARPROC>(value)))
+				continue;
+
+			unsigned char code[12];
+			if (!ReadProcessMemory(curProcess, reinterpret_cast<void *>(value - 12),
+				code, sizeof(code), NULL))
+				continue;
+
+			bool call = false;
+			if (code[7] == 0xe8)
+			{
+				call = true;
+			}
+			else
+			{
+				for (int length = 7; length >= 2; --length)
+				{
+					if (code[12 - length] != 0xff)
+						continue;
+					switch (length)
+					{
+						case 7:
+							if (code[6] == 0x94)
+								call = true;
+							break;
+						case 6:
+							if (code[7] == 0x15)
+								call = true;
+							if ((code[7] & 0xf8) == 0x90)
+								call = true;
+							break;
+						case 4:
+							if ((code[9] & 0xbf) == 0x14)
+								call = true;
+							break;
+						case 3:
+							if (code[10] == 0x14)
+								call = true;
+							if ((code[10] & 0xf8) == 0x50)
+								call = true;
+							break;
+						case 2:
+							if ((code[11] & 0xf8) == 0x10)
+								call = true;
+							if ((code[11] & 0xd8) == 0xd0)
+								call = true;
+							break;
+					}
+					if (call)
+						break;
+				}
+			}
+			if (call && sig.m_numAddr < Signature::MAX_ADDR)
+				sig.m_addr[sig.m_numAddr++] = value;
+		}
+	}
+
 	return sig.m_numAddr;
 }
+#pragma optimize("", on)
