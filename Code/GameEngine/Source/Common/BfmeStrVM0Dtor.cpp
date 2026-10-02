@@ -466,3 +466,9 @@ void BfmeStrVM0::rva00049F94(AsciiString s)
 #pragma comment(linker, "/alternatename:?v35@BfmeStrVM0@@UAEXXZ=?rva0025C134@BfmeStrVM0@@UAEXPAV1@@Z")
 #pragma comment(linker, "/alternatename:?v36@BfmeStrVM0@@UAEXXZ=?getData@NetWrapperCommandMsg@@QAEPAEXZ")
 #pragma comment(linker, "/alternatename:?v68@BfmeStrVM0@@UAEXXZ=?rva0025D19E@BfmeStrVM0@@QAEXXZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v07@BfmeStrVM0@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+#pragma comment(linker, "/alternatename:?v13@BfmeStrVM0@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")

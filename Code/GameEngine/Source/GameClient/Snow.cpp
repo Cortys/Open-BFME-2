@@ -163,3 +163,9 @@ void SnowManager::reset()
 #pragma comment(linker, "/alternatename:?targetSlot8@SnowManager@@UAEXXZ=??1Coord2D@@QAE@XZ")
 #pragma comment(linker, "/alternatename:?targetSlot11@SnowManager@@UAEXXZ=?rva005CB9FF@Rva005CB9FF@@QAE_NH@Z")
 #pragma comment(linker, "/alternatename:?targetSlot12@SnowManager@@UAEXXZ=??1Coord2D@@QAE@XZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?targetSlot7@SnowManager@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+#pragma comment(linker, "/alternatename:?targetSlot13@SnowManager@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
