@@ -19,9 +19,20 @@
 #include "rendobj.h"
 #include "aabox.h"
 #include "coltest.h"
-RayCollisionTestClass::RayCollisionTestClass(const LineSegClass &ray, CastResultStruct *res, int collision_type, bool check_translucent, bool check_hidden) :
+inline RayCollisionTestClass::RayCollisionTestClass(const LineSegClass &ray, CastResultStruct *res, int collision_type, bool check_translucent, bool check_hidden) :
     CollisionTestClass(res, collision_type), Ray(ray),
     CheckTranslucent(check_translucent), CheckHidden(check_hidden), _bfme_flag42(false)
 {}
 
 typedef char RayCollisionTestSizeMatchesRetail[(sizeof(RayCollisionTestClass) == 0x44) ? 1 : -1];
+
+// Header inline that other units including the header emit as select-any
+// copies, which a plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRayCollisionConstructor@@YAXPAVRayCollisionTestClass@@ABVLineSegClass@@PAUCastResultStruct@@H_N3@Z present-unmatched
+void bfmeEmitRayCollisionConstructor(RayCollisionTestClass *p, const LineSegClass &ray, CastResultStruct *res, int collision_type, bool check_translucent, bool check_hidden)
+{
+    p->RayCollisionTestClass::RayCollisionTestClass(ray, res, collision_type, check_translucent, check_hidden);
+}
+#pragma inline_depth()
