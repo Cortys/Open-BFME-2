@@ -11,7 +11,15 @@ typedef int (__cdecl *_RTC_error_fn)(int, char const *, int, char const *, char 
 extern _RTC_error_fn g_Va00E1F55C;
 
 // ?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z @ 0x0075ACE1 (6B) over 0x00E1F55C.
-_RTC_error_fn __cdecl _RTC_GetErrorFunc(void const *)
+inline _RTC_error_fn __cdecl _RTC_GetErrorFunc(void const *)
 {
 	return g_Va00E1F55C;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitRtcGetErrorFunc@@YAXXZ present-unmatched
+void bfmeEmitRtcGetErrorFunc(void)
+{
+	_RTC_GetErrorFunc(0);
+}
+#pragma inline_depth()
