@@ -6,6 +6,7 @@ class Rva0040C598
 {
 public:
 	void rva0040C598(const int *src);
+	void rva0040C5B1(const int *src);
 
 private:
 	int m_bits[32];
@@ -15,4 +16,10 @@ void Rva0040C598::rva0040C598(const int *src)
 {
 	for (int i = 0; i < 32; ++i)
 		m_bits[i] &= src[i];
+}
+
+void Rva0040C598::rva0040C5B1(const int *src)
+{
+	for (int i = 0; i < 32; ++i)
+		m_bits[i] &= ~src[i];
 }
