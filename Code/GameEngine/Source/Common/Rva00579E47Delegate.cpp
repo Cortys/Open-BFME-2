@@ -47,3 +47,88 @@ Rva00579E47 &Rva00579E47::rva00579E47(const DelegateDesc *d)
         p->m_ref++;
     return *this;
 }
+
+// Four more delegate-wrapper constructors of this 59-byte shape, each installing
+// its own impl vtable (the only differing operand): VA 0xbe5898, 0xc67e80,
+// 0xc684ac and 0xc684b4. One impl class per copy names that vtable; owners
+// keep their addresses.
+
+struct Impl002165B0 : ImplBase {
+    void *m_object;
+    void *m_method;
+    Impl002165B0(const DelegateDesc &d) : m_object(d.m_object), m_method(d.m_method) {}
+};
+class Rva002165B0 {
+public:
+    Rva002165B0 &rva002165B0(const DelegateDesc *d);
+private:
+    Impl002165B0 *m_ptr;
+};
+Rva002165B0 &Rva002165B0::rva002165B0(const DelegateDesc *d)
+{
+    Impl002165B0 *p = new Impl002165B0(*d);
+    m_ptr = p;
+    if (p)
+        p->m_ref++;
+    return *this;
+}
+
+struct Impl00525916 : ImplBase {
+    void *m_object;
+    void *m_method;
+    Impl00525916(const DelegateDesc &d) : m_object(d.m_object), m_method(d.m_method) {}
+};
+class Rva00525916 {
+public:
+    Rva00525916 &rva00525916(const DelegateDesc *d);
+private:
+    Impl00525916 *m_ptr;
+};
+Rva00525916 &Rva00525916::rva00525916(const DelegateDesc *d)
+{
+    Impl00525916 *p = new Impl00525916(*d);
+    m_ptr = p;
+    if (p)
+        p->m_ref++;
+    return *this;
+}
+
+struct Impl0052A786 : ImplBase {
+    void *m_object;
+    void *m_method;
+    Impl0052A786(const DelegateDesc &d) : m_object(d.m_object), m_method(d.m_method) {}
+};
+class Rva0052A786 {
+public:
+    Rva0052A786 &rva0052A786(const DelegateDesc *d);
+private:
+    Impl0052A786 *m_ptr;
+};
+Rva0052A786 &Rva0052A786::rva0052A786(const DelegateDesc *d)
+{
+    Impl0052A786 *p = new Impl0052A786(*d);
+    m_ptr = p;
+    if (p)
+        p->m_ref++;
+    return *this;
+}
+
+struct Impl0052A7C1 : ImplBase {
+    void *m_object;
+    void *m_method;
+    Impl0052A7C1(const DelegateDesc &d) : m_object(d.m_object), m_method(d.m_method) {}
+};
+class Rva0052A7C1 {
+public:
+    Rva0052A7C1 &rva0052A7C1(const DelegateDesc *d);
+private:
+    Impl0052A7C1 *m_ptr;
+};
+Rva0052A7C1 &Rva0052A7C1::rva0052A7C1(const DelegateDesc *d)
+{
+    Impl0052A7C1 *p = new Impl0052A7C1(*d);
+    m_ptr = p;
+    if (p)
+        p->m_ref++;
+    return *this;
+}
