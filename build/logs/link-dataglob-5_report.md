@@ -2,8 +2,8 @@
 
 ## Linked
 
-- `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206E63Search.cpp` — commit SHA to record after commit; `LINKED 100` bytes. Defined `g_00BE3908` at VA `0x00BE3908` (.rdata) as four `FieldParse` entries plus the zero sentinel, bounded at VA `0x00BE3958` by the `HelpText` token. Matched DIR32 witnesses in both search rows establish the table address; the rowed `INI::parseAsciiString` target and the recovered `Rva003B39C7` offsets establish parser/layout use. Local literals reproduce token text; string-pointer identity is not asserted. Exact decorated global verified in the built object.
-- `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206DFFSearch.cpp` — same commit and table definition; `LINKED 100` bytes. Uses the shared `g_00BE3908` definition above.
+- `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206E63Search.cpp` — `f5bba1ba5d8af9cff2216661419682eacdfd54fc`; `LINKED 100` bytes. Defined `g_00BE3908` at VA `0x00BE3908` (.rdata) as four `FieldParse` entries plus the zero sentinel, bounded at VA `0x00BE3958` by the `HelpText` token. Matched DIR32 witnesses in both search rows establish the table address; the rowed `INI::parseAsciiString` target and the recovered `Rva003B39C7` offsets establish parser/layout use. Local literals reproduce token text; string-pointer identity is not asserted. Exact decorated global verified in the built object.
+- `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206DFFSearch.cpp` — shared definition from `f5bba1ba5d8af9cff2216661419682eacdfd54fc`; `LINKED 100` bytes. Uses the shared `g_00BE3908` definition above.
 
 Both units: `./build.sh` Functions OK 1/1; `check_csv.py`, frozen-file gate, and `class_gate.py` pass; `link_check.py` LINKS both units, 200 linked bytes total.
 
