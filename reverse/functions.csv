@@ -48370,3 +48370,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Rva00410997NewNode@@YGPAXPBX@Z,,0x00410997,37,Code/GameEngine/Source/Common/Rva00410997NewNode.cpp,matched,12B hashtable node via rowed 0x000307F0 and rowed Construct 0x00410765 caller 0x00410E92 same shape as 0x002ACFD6
 ?rva00410E67@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload00410B17@@@_STL@@PBU23@@Z,,0x00410E67,68,Code/GameEngine/Source/GameClient/Rva00410E67Insert.cpp,matched,hashtable insert via pin 0x00212858 rowed 0x00223149 pinned twin 0x00410997 same shape as 0x002234BA
 ??0Rva00538E22@@QAE@H@Z,,0x00538E22,28,Code/GameEngine/Source/Common/Rva00538E22Ctor.cpp,matched,vector base rowed call plus int at plus12 plus ret4
+?Rva0050E9FEAptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAPBD@Z,,0x0050E9FE,36,Code/GameEngine/Source/Common/Rva0050E9FE.cpp,matched,chain via rowed AptCall 0x00222B19 thiscall 9 pushes ECX target
