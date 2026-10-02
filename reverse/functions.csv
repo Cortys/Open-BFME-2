@@ -48411,3 +48411,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0047971C@AICommandInterface@@QAEXABVRva0035149F@@PAVObject@@W4CommandSourceType@@@Z,,0x0047971C,115,Code/GameEngine/Source/GameLogic/AI/AICommandRva0047971C.cpp,matched,cmd 0x0A via 0x351BD0 plus assign 0x35149F plus slot0 plus free 0x30830
 ??$_Construct@U?$pair@$$CBVAsciiString@@VRva0045EF90Object@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@VRva0045EF90Object@@@0@ABU10@@Z,,0x0041072F,45,Code/Libraries/Source/WWVegas/WWLib/stlport_pair_asciistring_twins.cpp,matched,stlport _Construct calls rowed pair copy 0x004105C4 via placement new
 ?rva0052557E@Rva0052557E@@QAEXPAX@Z,,0x0052557E,100,Code/GameEngine/Source/Common/Rva0052557EPlay.cpp,matched,chain via rowed 0x0052519D Fire plus AptCall plus empty fallback
+?rva005258B2@Rva005258B2@@QAEXPAX@Z,,0x005258B2,7,Code/GameEngine/Source/Common/Rva005258B2Thunk.cpp,matched,chain forwarder via rowed 0x0052557E caller 0x002D3756
