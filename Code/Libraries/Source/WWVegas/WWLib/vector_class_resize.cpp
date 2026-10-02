@@ -151,3 +151,7 @@ bool VectorClass<T>::operator==(VectorClass<T> const &that) const
 }
 
 template class VectorClass<int>;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDtorUD@BfmeThingUD@@QAEXXZ=?Clear@?$VectorClass@H@@UAEXXZ")

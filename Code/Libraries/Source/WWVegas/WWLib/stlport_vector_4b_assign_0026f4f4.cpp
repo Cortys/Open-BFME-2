@@ -8,3 +8,7 @@
 // instantiation emits the same bytes.
 #include <vector>
 template class _STL::vector<int, _STL::allocator<int > >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeCopyTwoCDF@BfmePartCDF@@QAEXPAU1@@Z=??4?$vector@HV?$allocator@H@_STL@@@_STL@@QAEAAV01@ABV01@@Z")

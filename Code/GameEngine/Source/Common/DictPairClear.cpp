@@ -551,3 +551,7 @@ void Dict::copyPairFrom(const Dict &that, int key)
 			remove(key);
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeInitUBB@BfmeSubUBB@@QAEXH@Z=??0Dict@@QAE@H@Z")

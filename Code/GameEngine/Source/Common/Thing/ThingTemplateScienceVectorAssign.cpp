@@ -103,3 +103,7 @@ _STL::vector<ScienceType, _STL::allocator<ScienceType> >::operator=(
 	}
 	return *this;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeCopyOneCDF@BfmePartCDF@@QAEXPAU1@@Z=??4?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z")

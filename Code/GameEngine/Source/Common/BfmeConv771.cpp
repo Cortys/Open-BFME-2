@@ -24,3 +24,7 @@ void BfmeThingDSF::bfmeGoDSF()
 {
 	bfmeVecDtorDSE((char *)this + 0x60, 0xc, 4, bfmeDtorCbDSE);
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeVecDtorDSE@@YGXPAXIHP6AX0@Z@Z=??_M@YGXPAXIHP6EX0@Z@Z")

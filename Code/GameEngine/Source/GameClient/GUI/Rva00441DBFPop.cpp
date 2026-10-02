@@ -23,3 +23,7 @@ void Rva00441DBFPop(void **first, void **last, void **result, void *val, Rva0043
 	int len = (int)(last - first);
 	Rva00441999Heap(first, 0, len, val, comp);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva00441DBFPop@@YAXPAPAX00PAXVRva0043FE9A@@H@Z=?Rva00441DBFPop@@YAXPAPAX00PAXVRva0043FE9A@@@Z")

@@ -42,3 +42,7 @@ BfmeThing936G *BfmeThing936G::bfmeGo936G(void)
 		bfmeInit936G();
 	return this;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeVecDtor936B@@YGXPAXIHP6GX0@Z@Z=??_M@YGXPAXIHP6EX0@Z@Z")
