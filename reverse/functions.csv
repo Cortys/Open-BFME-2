@@ -48426,3 +48426,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0041F449@Rva0041F449@@QAEPAV?$StringBase@D@@ABV2@@Z,,0x0041F449,43,Code/GameEngine/Source/Common/Rva0041F449Find.cpp,matched,linear search via compare 0x69D6 caller 0x5DA6BB
 ?rva003B7096@Rva003B573E@@QAEXH@Z,,0x003B7096,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListSubrecordRemove.cpp,matched,chain from 0x003B66D8 twin of rva003B71B4 with Rva003B448C dtor
 ?rva005F772E@Rva005F772E@@QAEXABVUnicodeString@@@Z,,0x005F772E,8,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,forwarder to inner UnitName via plus4
+?rva005F74D4@Rva005F74D4@@QAEXPAVRva005F6AB0@@@Z,,0x005F74D4,35,Code/GameEngine/Source/Common/Rva005F74D4Setter.cpp,matched,owning pointer setter with dtor plus delete
