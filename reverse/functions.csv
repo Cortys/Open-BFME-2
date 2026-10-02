@@ -47523,3 +47523,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva00427611@@UAEPAXI@Z,,0x00427663,28,Code/GameEngine/Source/Common/System/Rva00427611Dtor.cpp,matched,vtable 0x0083C644 slot0 with rowed ??1 at 0x00427611
 ?rva00418573@Rva00418573@@QAEMH@Z,,0x00418573,55,Code/Libraries/Source/WWVegas/WWLib/Rva00418573Lookup.cpp,matched,floor over map int float at plus0 via pinned lowerbound 0x00382A92 and decrement 0x000242C0 callers 0x004F99CC
 ??1Rva004271D9@@QAE@XZ,,0x004271D9,57,Code/GameEngine/Source/GameClient/GUI/Rva004271D9Dtor.cpp,matched,hashtable dtor via rowed clear 0x001DBCDC and free 0x00030830 caller 0x00427374
+??1Rva002A1B1D@@QAE@XZ,,0x002A4355,8,Code/Libraries/Source/WWVegas/WWLib/Rva002A1B1DDtor.cpp,matched,chain via 0x002A1BEB holder list at +0x30 layout from Rva002A1B1D
