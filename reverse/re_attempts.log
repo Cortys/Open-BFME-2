@@ -5573,3 +5573,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?Rva003BFDABDo@@YGXABVAsciiString@@PAXH@Z	0x003BFDAB	421	blocked	GameText label plus Display FontLibrary GlobalLanguage EH SSE string parse atoi Bold no donor no sibling sig unclear t=10 model=muse-10
 ?Rva00116990@W3DRadarResetSurface@@QAEXMMM@Z	0x00116990	656	blocked	DXT plus 32-bit tint fill no donor SSE mismatch x87 vs cvtsi2ss static PixelSize ecx-convention wall t=25 model=muse-19
 ?createGadget@@YAPAVGameWindow@@PADPAXPAVGadgetCreateView@@PAV1@@Z	0x00316518	1722	partial	frame 4B larger push esi vs push ebp+8 filename offset shift t=30 model=muse-19 score=0.93 stash=reverse/attempts/0x00316518.cpp
+?rva00300D7A@Rva00300D7A@@QAE?AVAsciiString@@XZ	0x00300D7A	200	partial	mov eax,[eax] vs [ebp-0x14] m_data reload plus1 t=30 model=muse-11 score=0.98 stash=reverse/attempts/0x00300d7a.cpp
