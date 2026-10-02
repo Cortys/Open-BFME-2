@@ -48,3 +48,22 @@ Rva00201E2BLODInfo::Rva00201E2BLODInfo()
 {
     minimumFPS=0; particleSkipMask=0; debrisSkipMask=0; slowDeathScale=1.0f;
 }
+
+// Native manager callback VA0x00601E45 constructs count2, stride8 at +0x218.
+// Independent [0x00201E45..0x00201E56) decoding proves one word and two flags;
+// the audio-related field names are carried from the clean BFME 1 donor.
+struct Rva00201E45LODInfo
+{
+    Rva00201E45LODInfo();
+    int maximumAmbientStreams;
+    bool allowDolby, allowReverb;
+};
+
+Rva00201E45LODInfo::Rva00201E45LODInfo()
+{
+    maximumAmbientStreams=2; allowDolby=true; allowReverb=true;
+}
+
+typedef char Rva00201DC4StrideCheck[sizeof(Rva00201DC4LODInfo)==0x4C ? 1 : -1];
+typedef char Rva00201E2BStrideCheck[sizeof(Rva00201E2BLODInfo)==0x10 ? 1 : -1];
+typedef char Rva00201E45StrideCheck[sizeof(Rva00201E45LODInfo)==8 ? 1 : -1];
