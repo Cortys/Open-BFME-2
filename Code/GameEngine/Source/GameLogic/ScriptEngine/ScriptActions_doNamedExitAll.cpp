@@ -37,10 +37,7 @@ public:
 class Object
 {
 public:
-    AIUpdateInterface *getAIUpdateInterface()
-    {
-        return *(AIUpdateInterface **)((char *)this + 0x258);
-    }
+    AIUpdateInterface *getAIUpdateInterface();
     void leaveGroup();
 };
 
@@ -56,7 +53,7 @@ void ScriptActions::doNamedExitAll(const AsciiString &unitName)
     if (!theTransport) {
         return;
     }
-    AIUpdateInterface *aiUpdate = theTransport->getAIUpdateInterface();
+    AIUpdateInterface *aiUpdate = *(AIUpdateInterface **)((char *)theTransport + 0x258);
     if (!aiUpdate) {
         return;
     }
