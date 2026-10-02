@@ -48040,3 +48040,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva003004E7@@QAE@ABVAsciiString@@ABURva003004E7Payload@@@Z,,0x003004E7,39,Code/GameEngine/Source/Common/Rva003004E7Pair.cpp,matched,Two-arg ctor via rowed copy and caller pair for insert
 ??0EnumeratedIP@@QAE@XZ,,0x0050BFC4,57,Code/GameEngine/Source/GameNetwork/EnumeratedIPCtor.cpp,matched,BFME1 EnumeratedIP default ctor adapted to BFME2 12-byte node; getAddresses allocates 12 bytes then calls 0x50BFC4; next Ghidra entry is setter at 0x50BFFD; exact 57-byte match
 ?getAddresses@IPEnumeration@@QAEPAVEnumeratedIP@@XZ,,0x0050C02E,463,Code/GameEngine/Source/GameNetwork/IPEnumerationGetAddresses.cpp,matched,
+?getPosition@BFMERopeDrawable@@QBEPBUCoord3D@@XZ,,0x002763E6,138,Code/GameEngineDevice/Source/W3DDevice/GameClient/Drawable/BFMERopeDrawableGetPosition.cpp,matched,

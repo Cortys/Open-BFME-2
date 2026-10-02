@@ -7030,3 +7030,5 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ?Rva009B2530@@YAXPAURva009A6130Context@@PAE1@Z,0x001C2F20,native dispatcher calls 0x001B6D13 and 0x001B7016; three cdecl arguments; helper plain ret 0x001C343C; donor 10af19f44a89 label 0x009B2530 is address-derived not original symbol
 ?rva007F97B0@Rva007FA2C0@@QAEXPAVRva007E8810Message@@PAURva007FA170Slot@@@Z,0x00665D20,native packet handler call 0x0066638C; ECX=this-4 plus message and slot; helper reads slot+18 and ret8 at 0x00665EBB; donor 10af19f44a89 address-derived label 0x007F97B0 not original symbol
 ??1Rva00221A58@@QAE@XZ,0x002218D0,ICF twin of Open2Dtor4793C0 from Rva00221B42 dtor call site
+?rva002747F9@Rva002747F9@@QAEXH@Z,0x002747F9,address-derived rebuild-helper call from BFMERopeDrawable::getPosition; target name unverified
+_D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0062afc8
