@@ -47541,3 +47541,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva00282500@@UAE@XZ,,0x00282500,174,Code/GameEngine/Source/GameClient/Rva00282500Dtor.cpp,matched,vptr store plus list unlink plus TerrainLogic clear plus 5 releaseBuffer
 ??_GRva00282500@@UAEPAXI@Z,,0x00282B9F,28,Code/GameEngine/Source/GameClient/Rva00282500Dtor.cpp,matched,deleting dtor via own dtor unit plus rowed delete
 ??1Rva002A8BB9@@QAE@XZ,,0x002A8BB9,53,Code/GameEngine/Source/Common/Rva002A8BB9Dtor.cpp,matched,gap dtor two AsciiStrings via shared header
+??1Rva002A8D49@@QAE@XZ,,0x002A8E64,18,Code/GameEngine/Source/Common/RTS/Rva002A8E64Dtor.cpp,matched,vector teardown at +0x854 via rowed _free callers at 0x002A92BE
