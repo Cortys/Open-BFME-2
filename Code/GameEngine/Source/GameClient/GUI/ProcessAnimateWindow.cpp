@@ -661,46 +661,9 @@ ProcessAnimateWindowSpiral::~ProcessAnimateWindowSpiral( void ) { }
 // transcription with AnimateWindow::getVel pin at 0x005C5046.
 
 //-----------------------------------------------------------------------------
-// ?initAnimateWindow@ProcessAnimateWindowSpiral@@ present-unmatched
-void ProcessAnimateWindowSpiral::initAnimateWindow( AnimateWindow *animWin )
-{
-	ICoord2D restPos = {0,0};
-	ICoord2D startPos = {0,0};
-	ICoord2D curPos = {0,0};
-	ICoord2D endPos = {0,0};
-	ICoord2D size = {0,0};
-	Coord2D	vel = {0.0f,0.0f};
-	
-	if(!animWin)
-	{
-		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
-		return;
-	}
-	
-	// it's set that the window is passed in as it's current position being it's rest position
-	// so save off the rest position
-	GameWindow *win = animWin->getGameWindow();
-	if(!win)
-	{
-		DEBUG_ASSERTCRASH( win, ("animWin contains a NULL Pointer for it's GameWindow... Whatup wit dat?"));
-		return;
-	}
-	win->winGetPosition(&restPos.x, &restPos.y);
-	win->winGetSize(&size.x,&size.y);
-	endPos.x = restPos.x;
-	endPos.y = restPos.y;
-	//set the initial positions for the window. In this case, off the Bottom of the screen
-	vel.x = 0;
-	vel.y = m_maxR;
-	startPos.x = curPos.x = (vel.y * cos(vel.x)) + endPos.x;
-	startPos.y = curPos.y = (vel.y * sin(vel.x)) + endPos.y;
+// ProcessAnimateWindowSpiral::initAnimateWindow is recovered in
+// ProcessAnimateWindowRightFastInitReverse.cpp.
 
-
-	//set the window's position to the new start positions.
-	win->winSetPosition(startPos.x, startPos.y);
-
-	animWin->setAnimData(startPos, endPos, curPos, restPos, vel, timeGetTime() + animWin->getDelay(), 0);
-}
 
 ////-----------------------------------------------------------------------------
 
