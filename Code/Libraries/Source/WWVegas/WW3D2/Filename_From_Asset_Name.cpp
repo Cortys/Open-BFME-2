@@ -1,4 +1,4 @@
-// cl: /DNDEBUG /MD /ICode/Libraries/Source/WWVegas/WWLib
+// cl: /G7 /DNDEBUG /MD /ICode/Libraries/Source/WWVegas/WWLib
 // Extracted from the BFME1 WW3D2 rendobj.cpp reference unit.  This keeps the
 // reference helper body isolated while the surrounding RenderObj implementation
 // remains queued behind its larger header dependency graph.
