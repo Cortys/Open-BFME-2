@@ -7074,3 +7074,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?rva004D4D08@Transport@@QAE_N_N@Z,0x004D4D08,"address read from the retail REL32 at 0x004D54CC in Transport::update 0x004D54C1; the receive half (Zero Hour doRecv), taking update's flag"
 ?rva004D4BA7@Transport@@QAE_NXZ,0x004D4BA7,"address read from the retail REL32 at 0x004D54FE in Transport::update 0x004D54C1; the send half (Zero Hour doSend)"
 ??1UDP@@QAE@XZ,0x00594918,"UDP socket destructor (rowed as ??1UDPDrain); address read from the retail REL32 at 0x004D5176 in Transport slot clear 0x004D5133, which deletes the slot socket"
+?rva003F88A7@Rva0056AC26Owner@@QAEXPAVRva0056AC26@@@Z,0x003F88A7,"address read from the retail REL32 at 0x0056AC4F in the Rva0056AC26 destructor; the owning registry at +0x10 forgets the entry (walks its +4 list with the callback 0x004D20D6)"
