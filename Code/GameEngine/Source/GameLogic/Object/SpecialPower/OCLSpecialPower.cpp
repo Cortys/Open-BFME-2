@@ -72,18 +72,6 @@ static const char* TheOCLCreateLocTypeNames[] =
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/AI/OCLSpecialPowerModuleDataCtorThunk.cpp
-// ??0OCLSpecialPowerModuleData@@QAE@XZ present-unmatched
-OCLSpecialPowerModuleData::OCLSpecialPowerModuleData( void )
-{
-	m_defaultOCL = NULL;
-	m_upgradeOCL.clear();
-	m_createLoc = CREATE_AT_EDGE_NEAR_SOURCE;
-	m_isOCLAdjustPositionToPassable = FALSE;
-}
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
 static void parseOCLUpgradePair( INI* ini, void * /*instance*/, void *store, const void* /*userData*/ )
 {
 	OCLSpecialPowerModuleData::Upgrades up;
@@ -93,25 +81,6 @@ static void parseOCLUpgradePair( INI* ini, void * /*instance*/, void *store, con
 
 	std::vector<OCLSpecialPowerModuleData::Upgrades>* s = (std::vector<OCLSpecialPowerModuleData::Upgrades>*)store;
 	s->push_back(up);
-} 
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-/* static */ void OCLSpecialPowerModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-	SpecialPowerModuleData::buildFieldParse( p );
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "UpgradeOCL", parseOCLUpgradePair, NULL, offsetof( OCLSpecialPowerModuleData, m_upgradeOCL ) },
-		{ "OCL", INI::parseObjectCreationList, NULL, offsetof( OCLSpecialPowerModuleData, m_defaultOCL ) },
-		{ "CreateLocation", INI::parseIndexList, TheOCLCreateLocTypeNames, offsetof( OCLSpecialPowerModuleData, m_createLoc ) },
-		{ "ReferenceObject", INI::parseAsciiString, NULL, offsetof( OCLSpecialPowerModuleData, m_referenceThingName ) },
-		{ "OCLAdjustPositionToPassable", INI::parseBool, NULL, offsetof( OCLSpecialPowerModuleData, m_isOCLAdjustPositionToPassable ) },
-		{ 0, 0, 0, 0 }
-	};
-	p.add(dataFieldParse);
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
