@@ -48078,3 +48078,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00205CE7@ScriptEngine@@QAE?AVAsciiString@@V2@@Z,,0x00205CE7,118,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva00205CE7.cpp,matched,ScriptEngine path join via pinned resolveName slash concat callers 0x003C03C6 0x003C04C8
 ?rva0040CA3A@Rva0040C985@@QAEXH@Z,,0x0040CA3A,28,Code/GameEngine/Source/Common/Rva0040C985Init.cpp,matched,and-zero 0x2C float-scale 0x30 via g_00DBA4F4 caller 0x002B7A8B
 ?rva002051B7@ScriptEngine@@QAEXPAVObject@@@Z,,0x002051B7,81,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptEngineRva0020517D.cpp,matched,ScriptEngine clear slots plus 0x1A110 0x1A118 via rowed cleanup callers 0x003A3583
+?rva004E3C71@Rva004E3C71@@QAEXXZ,,0x004E3C71,30,Code/GameEngine/Source/Common/Rva004E3C71DestroyFree.cpp,matched,destroy Rva004E2382 range via 0x004E377E then free via 0x00030830 caller 0x004E3DE8
