@@ -3,6 +3,14 @@
 //
 // Default-flag emission of the FXListStore hash_map node allocator (speed-optimised instantiation; FXList.cpp itself is size-optimised).
 //
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "PreRTS.h"	// This must go first in EVERY cpp file int the GameEngine
 #include "GameClient/FXList.h"
 #include "Common/DrawModule.h"
