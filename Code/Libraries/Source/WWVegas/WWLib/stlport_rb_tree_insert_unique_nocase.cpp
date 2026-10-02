@@ -20,36 +20,20 @@
 // which is why the mapped types are named for the _M_insert's address.
 
 #define _BFME_RETAIL_TREE_INSERT_LAYOUT
-#include "PreRTS.h"
+#pragma optimize("s", on)
 #include "Common/AsciiString.h"
+#pragma optimize("", on)
+#include "PreRTS.h"
 
 // The CRT import, not the static one: retail reaches _memicmp through the
 // import table, so the comparison ends in `call dword ptr [__imp__memicmp]`
 // rather than a direct call.
 extern "C" __declspec(dllimport) int __cdecl _memicmp( const void *buf1, const void *buf2, unsigned int count );
 
-// StringBase<char>::compareNoCase, spelled out where the sibling
-// reference/open-bfme-1's RvaTreeInsertUniquePlain.cpp lets the shim spell compare.  It has to be a
-// real function rather than a hand-inlined expression, because retail expands
-// it at one of the two comparison sites in each of these bodies and calls the
-// out-of-line copy at 0x00090570 at the other -- an inline budget spent inside
-// the loop and refused afterwards.  Written this way MSVC is given the same
-// choice and makes the same one.  The shape is compare's: the length as a
-// halfword at +4 of the header, a null pointer standing in for the empty
-// string, the length difference as the tiebreak.
+// compareNoCase is a header inline owned by string_base.cpp: this unit only
+// declares it so its calls reach the kept select-any copy.
 template <>
-inline int StringBase<char>::compareNoCase( const StringBase<char> &str ) const
-{
-	int thatLen = str.m_data ? str.m_data->length : 0;
-	const char *thatData = str.m_data ? &str.m_data->data[ 0 ] : (const char *)"";
-	int thisLen = m_data ? m_data->length : 0;
-	const char *thisData = m_data ? &m_data->data[ 0 ] : (const char *)"";
-	int n = thisLen < thatLen ? thisLen : thatLen;
-	int c = _memicmp( thisData, thatData, n );
-	if ( c != 0 )
-		return c;
-	return thisLen - thatLen;
-}
+int StringBase<char>::compareNoCase(const StringBase<char> &str) const;
 
 // The comparator has no name the bytes reach; it is spelled for the function it
 // calls, exactly as the _M_insert conversions in reference/open-bfme-1's 
