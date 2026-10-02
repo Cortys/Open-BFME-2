@@ -1,5 +1,9 @@
 // ?rva007F97B0@Rva007FA2C0@@QAEXPAVRva007E8810Message@@PAURva007FA170Slot@@@Z
-// partial score=0.72 date=2026-10-01
+// partial score=0.79 date=2026-10-02
+// ?rva007F97B0@Rva007FA2C0@@QAEXPAVRva007E8810Message@@PAURva007FA170Slot@@@Z
+// Banked continuation: 414 compiled bytes, matching the full native extent.
+// The native zero stores are preserved explicitly, but their scheduling and
+// the final derived-vtable store still differ; this is not verified recovery.
 // cl: /O2 /GX-
 // FESL transactor: multi-part reply reassembly, retail 0x00665D20 (414 bytes;
 // BFME 1 0x007F97B0, a dump there). The incoming-packet handler
@@ -20,6 +24,7 @@
 class Rva007E8810Message
 {
 public:
+	bool getString(const char *key, char *destination, int size);
 	void *m_vtable;
 	int m_04;
 	int m_08;
@@ -29,12 +34,6 @@ public:
 	unsigned m_18;
 	unsigned m_1C;
 	int m_20;
-};
-
-class BfmeThingUPB
-{
-public:
-	char bfmeGoUPB( void *key, char *dest, void *destSize );
 };
 
 class GenAlloc
@@ -93,9 +92,9 @@ class Rva00808CB0LanGameEntry : public Rva007E86B0Base
 public:
 	__forceinline Rva00808CB0LanGameEntry()
 	{
-		m_field08 = 0;
-		m_field0c = 0;
-		m_field04 = 0;
+		*(volatile int *)&m_field08 = 0;
+		*(volatile int *)&m_field0c = 0;
+		*(volatile int *)&m_field04 = 0;
 	}
 	virtual ~Rva00808CB0LanGameEntry();
 	int m_field08;
@@ -150,13 +149,14 @@ void Rva007FA2C0::rva007F97B0( Rva007E8810Message *message, Rva007FA170Slot *slo
 	}
 
 	char *text = (char *)Gen007EFFC0()->alloc( message->m_14, 0 );
-	((BfmeThingUPB *)message)->bfmeGoUPB( (void *)"data", text, (void *)message->m_14 );
+	unsigned textCapacity = message->m_14;
+	message->getString("data", text, (int)textCapacity);
 	unsigned length = strlen( text );
 	if( length & 3 )
 		Rva007EB810Get()->fail( "(len & 0x3) == 0",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\transactor.cpp", 0x13b );
 	unsigned decoded = length / 4 * 3;
-	if( !rva007FF250Decode( length, text, record->m_received + record->m_buffer ) )
+	if( !rva007FF250Decode( length, text, record->m_buffer + record->m_received ) )
 		Rva007EB810Get()->fail( "result",
 			"\\views\\feslbuild_main\\jabba\\fesl\\source\\transactor.cpp", 0x13e );
 	record->m_received += decoded;
