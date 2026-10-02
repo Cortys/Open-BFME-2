@@ -25,9 +25,10 @@ enum UpdateSleepTime
 class GameLogic
 {
 public:
-	UnsignedInt getFrame() { return m_frame; }
+	UnsignedInt getFrame();
 
-private:
+	// +0x40 frame member read directly (not via getFrame): retail's rowed
+	// getFrame reads a different offset; this body's own bytes prove +0x40.
 	unsigned char m_pad[0x40];
 	UnsignedInt m_frame; // +0x40 (Poisoned precedent)
 };
@@ -45,7 +46,7 @@ UpdateSleepTime UpdateModule::frameToSleepTime(UnsignedInt frame1, UnsignedInt f
 {
 	UnsignedInt firstFrame = frame1;
 	firstFrame = firstFrame > frame2 ? frame2 : firstFrame;
-	UnsignedInt nowFrame = TheGameLogic->getFrame();
+	UnsignedInt nowFrame = TheGameLogic->m_frame;
 	firstFrame = firstFrame > frame3 ? frame3 : firstFrame;
 	firstFrame = firstFrame > frame4 ? frame4 : firstFrame;
 	if (firstFrame > nowFrame)
