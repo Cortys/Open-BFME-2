@@ -55,6 +55,7 @@ class CylindricalEmissionVelocityModuleTemplate : public CategoryModuleTemplate<
 {
 public:
     CylindricalEmissionVelocityModuleTemplate();
+    virtual ~CylindricalEmissionVelocityModuleTemplate();
 };
 
 // ??0CylindricalEmissionVelocityModuleTemplate@FXParticleSystem@@QAE@XZ
