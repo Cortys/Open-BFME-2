@@ -9,6 +9,7 @@ public:
 	int m_items[12];
 };
 void *__cdecl operator new[](unsigned int size);
+void __cdecl operator delete[](void *p);
 extern "C" void __cdecl free(void *block);
 class Rva005312BEItem
 {
