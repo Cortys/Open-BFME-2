@@ -35,6 +35,14 @@ private:
 	};
 	Header *m_data;
 };
+// Kept COMDAT for ?getCharAt@?$StringBase@G@@QBEGH@Z lives in the /O2
+// string_base_inline unit (duplicated ret); this TU is /O1 (jmp to shared
+// ret). Emit our copy with speed favoured so it matches the kept bytes,
+// while the inlined copies in Rva00326CF0AddLines keep the caller's /O1 shape.
+#pragma optimize("s", off)
+#pragma optimize("t", on)
+template <> unsigned short StringBase<unsigned short>::getCharAt(int index) const { return m_data ? m_data->data[index] : 0; }
+#pragma optimize("", on)
 
 class UnicodeString : public StringBase<unsigned short>
 {
