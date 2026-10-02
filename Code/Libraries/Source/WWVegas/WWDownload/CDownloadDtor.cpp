@@ -35,8 +35,8 @@ class CDownload
 public:
 	virtual long PumpMessages();
 	virtual long Abort();
-	virtual long DownloadFile();
-	virtual long GetLastLocalFile();
+	virtual long DownloadFile(const char *server, const char *username, const char *password, const char *file, const char *localfile, const char *regkey, bool tryresume);
+	virtual long GetLastLocalFile(char *local_file, int maxlen);
 	~CDownload();
 
 private:
