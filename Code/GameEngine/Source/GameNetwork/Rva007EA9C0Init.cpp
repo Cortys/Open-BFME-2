@@ -82,3 +82,7 @@ void Rva007EA9C0Owner::init()
 		svc = 0;
 	((Rva007EAServiceList *)this)->add((Rva00803080 *)svc);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?init@ServiceHubImpl@@QAEXXZ=?init@Rva007EA9C0Owner@@QAEXXZ")

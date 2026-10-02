@@ -82,3 +82,7 @@ void bfmeEmitVectorAsciiStringErase(_STL::vector<AsciiString, _STL::allocator<As
 	p->erase(0, 0);
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?erase@SidesInfoStringVector@@QAEPAVAsciiString@@PAV2@0@Z=?erase@?$vector@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@QAEPAVAsciiString@@PAV3@0@Z")

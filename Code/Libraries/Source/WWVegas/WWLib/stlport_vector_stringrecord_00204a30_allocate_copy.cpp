@@ -18,3 +18,7 @@ namespace _STL {
 template <> void _Construct<BfmeStringRecord00204A30, BfmeStringRecord00204A30>(BfmeStringRecord00204A30 *, const BfmeStringRecord00204A30 &);
 }
 template class _STL::vector<BfmeStringRecord00204A30, _STL::allocator<BfmeStringRecord00204A30> >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva00207E65Vector@@QAE@XZ=??1?$vector@UBfmeStringRecord00204A30@@V?$allocator@UBfmeStringRecord00204A30@@@_STL@@@_STL@@QAE@XZ")

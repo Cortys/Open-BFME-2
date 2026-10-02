@@ -42,3 +42,7 @@ void Rva009A7300Subtract8x8(const unsigned char *src, unsigned short *dst, int s
   dst+=32;
  } while (--groups);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009A7300@@YAXXZ=?Rva009A7300Subtract8x8@@YAXPBEPAGH@Z")

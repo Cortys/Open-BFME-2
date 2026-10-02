@@ -10,3 +10,7 @@
 class AsciiString { public: ~AsciiString(); private: char *m_data; };
 struct RvaPair00207E26 { AsciiString m_key; int m_value; public: ~RvaPair00207E26(); };
 template _STL::vector<RvaPair00207E26>::~vector();
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva00207E26Vector@@QAE@XZ=??1?$vector@URvaPair00207E26@@V?$allocator@URvaPair00207E26@@@_STL@@@_STL@@QAE@XZ")

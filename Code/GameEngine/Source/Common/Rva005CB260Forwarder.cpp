@@ -17,3 +17,7 @@ void Rva005CB260::rva005CB260()
 {
 	rva005CB260_slot1();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva005CB260@@YAXXZ=?rva005CB260@Rva005CB260@@QAEXXZ")

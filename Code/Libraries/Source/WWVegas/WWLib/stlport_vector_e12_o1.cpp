@@ -11,3 +11,7 @@
 #include <vector>
 struct BfmeE12 { float x, y, z; };
 template class _STL::vector<BfmeE12, _STL::allocator<BfmeE12 > >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?swap@SidesInfoStringVector@@QAEXAAV1@@Z=?swap@?$vector@UBfmeE12@@V?$allocator@UBfmeE12@@@_STL@@@_STL@@QAEXAAV12@@Z")
