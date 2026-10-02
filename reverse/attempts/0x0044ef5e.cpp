@@ -1,7 +1,5 @@
 // ??0Rva0044EF5E@@QAE@PAVThing@@PBVModuleData@@@Z
-// partial score=0.9 date=2026-09-30
-// ??0Rva0044EF5E@@QAE@PAVThing@@PBVModuleData@@@Z
-// partial score=0.90 date=2026-09-30
+// partial score=0.97 date=2026-10-01
 // cl: /O1 /DNDEBUG /MD /EHsc /arch:SSE /D_STLP_USE_STATIC_LIB
 // stlport
 //
@@ -82,16 +80,11 @@ private:
 	unsigned int m_28;
 	unsigned int m_2C;
 	unsigned int m_30;
-	unsigned int m_34;
-	unsigned int m_38;
+	struct Pair34 { unsigned int a, b; Pair34() : a(1), b(1) {} } m_34;
 	unsigned int m_3C;
 	unsigned int m_40;
-	float m_44;
-	float m_48;
-	float m_4C;
-	float m_50;
-	float m_54;
-	float m_58;
+	struct V44 { float x,y,z; V44():x(0.0f),y(0.0f),z(0.0f){} } m_44;
+	struct V44 m_50;
 	int m_5C;
 	int m_60;
 	_STL::list<int> m_64;
@@ -111,23 +104,14 @@ private:
 	unsigned int m_84;
 };
 
-// ??0Rva0044EF5E@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
 Rva0044EF5E::Rva0044EF5E(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData)
 	, m_24(0)
 	, m_28(0)
 	, m_2C(0)
 	, m_30(0)
-	, m_34(1)
-	, m_38(1)
 	, m_3C(0)
 	, m_40(0)
-	, m_44(0.0f)
-	, m_48(0.0f)
-	, m_4C(0.0f)
-	, m_50(0.0f)
-	, m_54(0.0f)
-	, m_58(0.0f)
 	, m_5C(0)
 	, m_60(0)
 {
