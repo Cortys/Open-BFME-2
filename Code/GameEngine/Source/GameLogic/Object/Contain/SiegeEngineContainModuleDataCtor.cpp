@@ -62,6 +62,7 @@ class SiegeEngineContainModuleData : public TransportContainModuleData
 {
 public:
 	SiegeEngineContainModuleData();
+	virtual ~SiegeEngineContainModuleData();
 
 private:
 	Rva003623E5Member m_member18C;	// +0x18C
