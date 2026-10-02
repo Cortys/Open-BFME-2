@@ -16,5 +16,17 @@
 // Owner evidence (audited 2026-09-26): retail Attack OCL parse entry -> parser RVA 0x001F0D96 -> ctor RVA 0x001F05C1; primary vptr store RVA 0x001F05D9; AttackNugget spelling from donor.
 class AttackNugget { public: __declspec(noinline) virtual ~AttackNugget(); };
 // ??1AttackNugget@@UAE@XZ present-unmatched
-AttackNugget::~AttackNugget() {}
+inline AttackNugget::~AttackNugget() {}
 void AttackNugget_Delete(AttackNugget *p) { delete p; }
+
+// ??1AttackNugget@@UAE@XZ is owned by Code/GameEngine/Source/GameLogic/Object/AttackNuggetDtor.cpp (row at 0x001F0622):
+// a strong definition here was a duplicate in the linked build, so this copy
+// is select-any. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitObjectNuggetDeletingDtors@@YAXPAVAttackNugget@@@Z present-unmatched
+void bfmeEmitObjectNuggetDeletingDtors(AttackNugget *p)
+{
+	p->AttackNugget::~AttackNugget();
+}
+#pragma inline_depth()
