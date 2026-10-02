@@ -1,0 +1,46 @@
+// cl: /Ireference/shims/bfme2_ascii /Ireference/shims/bfmelist /O1 /G7 /EHsc /MD /D_STLP_USE_STATIC_LIB /Ireference/shims/bfmealloc
+// stlport
+// ?Rva0028900AParse@@YAHPAXABVAsciiString@@@Z retail 0x0028900A 199 bytes v6.
+// Parses upgrade list AsciiString via alloca+strtok, clears vector via rowed
+// void* erase, finds each token via TheUpgradeCenter, pushes hits via rowed
+// ModuleData push_back, returns count. Evidence: callers 0x0028A551 0x0028A5BC;
+// callees rowed erase 0x0031BD55 push_back 0x004DFCB0 findUpgrade 0x0026F26D;
+// neighbours CrateCreationEntryList.
+#include "ascii_string.h"
+#include <vector>
+#include <malloc.h>
+
+class ModuleData {};
+class UpgradeTemplate : public ModuleData {};
+class UpgradeCenter
+{
+public:
+	const UpgradeTemplate *findUpgrade(const AsciiString &name) const;
+};
+extern "C" UpgradeCenter *TheUpgradeCenter;
+extern const char g_Rva0107301CEmptyString[];
+extern const char g_00BBE7A4[];
+extern "C" char *__cdecl _mbscpy(char *dst, const char *src);
+extern "C" __declspec(dllimport) char *__cdecl strtok(char *str, const char *delim);
+
+int Rva0028900AParse(void *vecPtr, const AsciiString &list)
+{
+	typedef _STL::vector<void *, _STL::allocator<void *> > VoidVec;
+	typedef _STL::vector<const ModuleData *, _STL::allocator<const ModuleData *> > ModVec;
+	char *buf = (char *)alloca(list.getLength() + 1);
+	((VoidVec *)vecPtr)->erase(((VoidVec *)vecPtr)->begin(), ((VoidVec *)vecPtr)->end());
+	_mbscpy(buf, list.str());
+	char *tok = strtok(buf, g_00BBE7A4);
+	while (tok != 0)
+	{
+		const ModuleData *ut;
+		{
+			AsciiString tmp(tok);
+			ut = TheUpgradeCenter->findUpgrade(tmp);
+		}
+		if (ut != 0)
+			((ModVec *)vecPtr)->push_back(ut);
+		tok = strtok(0, g_00BBE7A4);
+	}
+	return (int)((ModVec *)vecPtr)->size();
+}
