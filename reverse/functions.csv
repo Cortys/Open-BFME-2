@@ -48643,3 +48643,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0030B85A@Rva0030B92C@@QAEXH@Z,,0x0030B85A,28,Code/GameEngine/Source/Common/Rva0030B85AErase.cpp,matched,erase vec index via rowed Pod8 erase flag 0x24 caller 0x00330B1E
 ?rva0007B6EC@Rva0007B6EC@@QAEEXZ,,0x0007B6EC,7,Code/GameEngine/Source/Common/Rva0007B6ECSet.cpp,matched,tiny byte setter at 0x28 return 1 caller 0x0009A2BE
 ?rva005F2F41@Rva005F2A32@@QAEXH@Z,,0x005F2F41,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder via plus4 to rowed rva005F2B76 same caller family
+?rva005C7A29@Rva005C7A29@@QAEX_N@Z,,0x005C7A29,92,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,overlay show hide via AptCall 0x0050E9FE caller 0x005C7C5D
