@@ -48,10 +48,20 @@ struct BfmeFontSizeTable
 	_STL::map<int, int> m_records;
 };
 
+class GameFont;
+
+struct BfmeFontRecord
+{
+	unsigned char m_pad[8];
+	bool m_flag08; // +0x08
+};
+
 class FontLibrary
 {
 public:
 	void *rva002186A6(const AsciiString *name, float size);
+	GameFont *getFont(const AsciiString *name, float size, bool bold);
+	GameFont *rva0021857E(const AsciiString *name, float size, bool bold, int style);
 private:
 	char m_pad[0x14];
 	_STL::map<AsciiString, AsciiString> m_tables;
@@ -68,4 +78,17 @@ void *FontLibrary::rva002186A6(const AsciiString *name, float size)
 	if (record == sizes->m_records.end())
 		return sizes->m_defaultRecord;
 	return (void *)record->second;
+}
+
+// ?getFont@FontLibrary@@QAEPAVGameFont@@PBVAsciiString@@M_N@Z, retail
+// 0x002189E1 (66B). BFME 2's getFont looks the name/size record up (above)
+// to choose a style, 4 when the record's +8 flag is set or no record exists,
+// else 1, and hands everything to the styled lookup 0x0021857E (pinned).
+GameFont *FontLibrary::getFont(const AsciiString *name, float size, bool bold)
+{
+	bool flag = true;
+	BfmeFontRecord *record = (BfmeFontRecord *)rva002186A6(name, size);
+	if (record)
+		flag = record->m_flag08;
+	return rva0021857E(name, size, bold, flag ? 4 : 1);
 }

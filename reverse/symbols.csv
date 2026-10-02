@@ -7066,3 +7066,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?rva0020D613@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x0020D613,thiscall twin of rowed stdcall alloc via call-site mov ecx esi at 0x0020D638
 ??1Rva004F6352@@QAE@XZ,0x004F691E,same body as ??1Rva004F691E@@QAE@XZ rowed here: STLport's instantiation for Rva004F6352 records reproduces it and its callers call it
 ??$_Destroy@PAURva004F6352@@@_STL@@YAXPAURva004F6352@@0@Z,0x004F838C,same body as Rva004F838CDestroy rowed here: STLport's instantiation for Rva004F6352 records reproduces it and its callers call it
+?rva0021857E@FontLibrary@@QAEPAVGameFont@@PBVAsciiString@@M_NH@Z,0x0021857E,"address read from the retail REL32 at 0x00218A18 in FontLibrary::getFont 0x002189E1; styled font lookup (name, size, bold, style 4 or 1)"
