@@ -2,6 +2,14 @@
 // 0x007FA990: thiscall constructor. A secondary-base vptr lands at +4,
 // then the most-derived vptrs at +0 and +4, then four 16-byte cells at +8
 // through a walking pointer, then the argument and trailing zeros.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 class Rva007FA990Base0
 {

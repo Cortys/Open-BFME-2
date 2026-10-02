@@ -3,6 +3,14 @@
 // Dedicated TU: boxrobj.cpp cannot take another row. BFME1 twin is 32B;
 // BFME2 retail (136B) inlines update_cached_box, so it is defined in-TU
 // (proven from-def/from-AABox pattern).
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 // BFME 2 has no W3D memory pools (see Code/Libraries/Source/WWVegas/WWLib/always.h).
 #include "always.h"
