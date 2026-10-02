@@ -48394,3 +48394,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??1Rva00579731@@QAE@XZ,,0x00579731,63,Code/GameEngine/Source/Common/Rva00579731Dtor.cpp,matched,chain body calls just-landed 0x0022167C plus element 0x005796FC
 ??_GRva00579731@@QAEPAXI@Z,,0x00579CB8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva00579731.cpp,matched,chain body calls just-landed 0x00579731 plus delete 0x0002FD60
 ?Rva00419A99Cleanup@@YAXXZ,,0x00419A99,31,Code/GameEngine/Source/GameClient/Rva00419A99Cleanup.cpp,matched,global cleanup via slot0 virtual and rowed operator delete
+?Set_Texture_Mapping_Mode@StreakLineClass@@QAEXW4TextureMapMode@SegLineRendererClass@@@Z,,0x007419A0,36,Code/Libraries/Source/WWVegas/WW3D2/streak.cpp,matched,dual renderer Bits via TEXTURE_MAP_MODE_OFFSET 24 caller 0x00561D3D

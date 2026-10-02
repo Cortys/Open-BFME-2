@@ -367,10 +367,10 @@ void StreakLineClass::Set_Subdivision_Levels(unsigned int levels)
 	Invalidate_Cached_Bounding_Volumes();
 }
 
-// ?Set_Texture_Mapping_Mode@StreakLineClass@@ present-unmatched
 void StreakLineClass::Set_Texture_Mapping_Mode(SegLineRendererClass::TextureMapMode mode)
 {
 	LineRenderer.Set_Texture_Mapping_Mode(mode);
+	StreakRenderer.Set_Texture_Mapping_Mode((StreakRendererClass::TextureMapMode)mode);
 }
 
 // ?Set_Texture_Tile_Factor@StreakLineClass@@ present-unmatched

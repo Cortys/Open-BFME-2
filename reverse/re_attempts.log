@@ -5683,3 +5683,4 @@ FUN_0088911a	0x0058911A	20	blocked	Boundary checkpoint 0x0058911A/20B; body comp
 ??1Rva005F00FB@@QAE@XZ	0x005F00FB	87	blocked	extra store mov [esi],0 vs retail mov [ebp-0x10],esi size +6B layout unproven t=5 model=muse-08
 ?Rva003E7CBAGet@@YG_NPAX@Z	0x003E7CBA	201	partial	first ternary hoists xor eax not edi and test not cmp and missing jmp-xor fallback t=18 model=muse-03 score=0.93 stash=reverse/attempts/0x003e7cba.cpp
 ?Rva003E7D83Get@@YG_NPAX@Z	0x003E7D83	209	partial	float order fixed via direct m_real but ceil plus int needs fast_float2long_round helper per shape lever 18 not ceil plus int t=22 model=muse-03 score=0.88 stash=reverse/attempts/0x003e7d83.cpp
+?Rva007410ECInvoke@@YAHPAVRva00222A8BTarget@@PAXPBD2PAI@Z	0x007410EC	102	partial	eax-ecx swap on AsciiString data vs zero plus mov ecx target position t=15 model=muse-spark score=0.93 stash=reverse/attempts/0x007410ec.cpp
