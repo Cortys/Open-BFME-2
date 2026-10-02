@@ -12,3 +12,7 @@ bool __stdcall Rva0002C63CAsciiNocaseLess(const AsciiString &left, const AsciiSt
 {
     return (left.compareNoCase(right) < 0) || false;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??RRecordNocaseLess@@QBE_NABUBfmeStringRecord004071F7@@0@Z=?Rva0002C63CAsciiNocaseLess@@YG_NABVAsciiString@@0@Z")

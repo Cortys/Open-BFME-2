@@ -105,3 +105,15 @@ bool Rva004C0D4F::rva004C0D4F()
 	r->m_val = m_p8->m_val;
 	return true;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeAskCFC@BfmeOuterCFC@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskCCD@BfmeOuterCCD@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskBVF@BfmeOuterBVF@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskBVG@BfmeOuterBVG@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskCAE@BfmeOuterCAE@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskBUE@BfmeOuterBUE@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskDHA@BfmeOuterDHA@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskDHB@BfmeOuterDHB@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")
+#pragma comment(linker, "/alternatename:?bfmeAskDHC@BfmeOuterDHC@@QAE_NXZ=?rva004C0D4F@Rva004C0D4F@@QAE_NXZ")

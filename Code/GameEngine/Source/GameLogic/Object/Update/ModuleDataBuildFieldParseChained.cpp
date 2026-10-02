@@ -1068,3 +1068,10 @@ void FellBeastSwoopPowerModuleData::buildFieldParse(MultiIniFieldParse &parse)
 	Rva0044EB54::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEFE14), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?SpyVisionUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@CurseSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?SpecialAbilityUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@TeleportToCasterSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?SupplyCenterProductionExitUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@StoreObjectsSpecialPowerModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?SupplyWarehouseDockUpdateModuleDataParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@SupplyWarehouseDockUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")

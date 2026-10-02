@@ -73,3 +73,8 @@ void T_009f4fb0::m(Rva009F5970StateInit *value)
 		node = node->m_next;
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva006276E0@ShroudManager@@QAEXPBURegion3D@@@Z=?m@T_009f4fb0@@QAEXPAURva009F5970StateInit@@@Z")
+#pragma comment(linker, "/alternatename:?m@T_009f4fb0@@QAEXXZ=?m@T_009f4fb0@@QAEXPAURva009F5970StateInit@@@Z")
