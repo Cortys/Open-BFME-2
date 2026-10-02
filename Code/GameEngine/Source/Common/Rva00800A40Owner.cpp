@@ -54,10 +54,11 @@ class Rva00800920Owner
 	int m_18;
 	char m_pad1c[0xb8];
 	Rva00800A40Slot m_slots[8];
-	int m_1f4;
+	int m_1f4;						// mNumProbes, per the 0x00800B30 assert
 
 public:
 	int rva00800a40(void *input, unsigned char flag, int value);
+	void rva00800b30(Rva00800A40Slot *slot);
 };
 
 int Rva00800920Owner::rva00800a40(
@@ -107,4 +108,24 @@ int Rva00800920Owner::rva00800a40(
 	slot->m_08 = flag;
 	++m_1f4;
 	return 0;
+}
+// BFME 2: the release side below is the same donor's second body, byte-identical
+// in game.dat at 0x0066CF10 (string literals verified at their BFME 2 addresses).
+// ?rva00800b30@Rva00800920Owner@@QAEXPAURva00800A40Slot@@@Z
+// 0x00800B30 (58 B), the release side of rva00800a40: it clears the fields
+// that body fills (id, +0x04, value, +0x20 and the flag byte) and drops the
+// probe count, asserting "mNumProbes >= 0" at gamebrowserdemangler.cpp:0x147.
+void Rva00800920Owner::rva00800b30(Rva00800A40Slot *slot)
+{
+	slot->m_00 = 0;
+	slot->m_04 = 0;
+	slot->m_0c = 0;
+	slot->m_20 = 0;
+	slot->m_08 = 0;
+	--m_1f4;
+	if (m_1f4 < 0)
+		reinterpret_cast<Rva00800A40Diag *>(Rva007EB810Get())->fail(
+			"mNumProbes >= 0",
+			"\\views\\feslbuild_main\\jabba\\fesl\\source\\gamebrowser\\gamebrowserdemangler.cpp",
+			0x147);
 }
