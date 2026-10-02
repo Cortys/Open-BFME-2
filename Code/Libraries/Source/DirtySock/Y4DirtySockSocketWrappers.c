@@ -109,7 +109,10 @@ struct Rva0130AB68List
 	char m_body[4]; /* +0x0C */
 };
 
-extern struct Rva0130AB68List g_Rva0130AB68Default;
+// g_Rva0130AB68Default: VA 0x00E0A580 (.data zero-fill); five matched DIR32
+// witnesses establish this address. Retail initializes the declared 0x10-byte
+// structure to zero.
+struct Rva0130AB68List g_Rva0130AB68Default = { 0 };
 
 void __declspec(dllimport) __stdcall LeaveCriticalSection(void *body);
 
@@ -964,7 +967,9 @@ char g_Rva012C3D0CFormat[8] = {
 char g_Rva012C3D14Format[8] = {
 	37, 115, 58, 32, 37, 115, 10, 0,
 };
-extern char g_Rva012C3D1CFormat[];
+// g_Rva012C3D1CFormat: VA 0x00DD8474 (.data), witnessed by a matched DIR32
+// relocation; the 8 retail bytes end at g_Rva012C3D24Offset at 0x00DD847C.
+char g_Rva012C3D1CFormat[8] = { 37, 115, 58, 32, 37, 115, 10, 0 };
 
 void Rva007FE880(int group, const unsigned char *buffer, int length)
 {
