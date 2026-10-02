@@ -58,7 +58,7 @@ inline TextureMapperClass::TextureMapperClass(const TextureMapperClass &src)
 	Stage = src.Stage;
 }
 
-void GridTextureMapperClass::Reset()
+inline void GridTextureMapperClass::Reset()
 {
 	Remainder = 0;
 	if (Sign >= 0)
@@ -68,7 +68,7 @@ void GridTextureMapperClass::Reset()
 	LastUsedSyncTime = WW3D::Get_Sync_Time();
 }
 
-GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass &src)
+inline GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass &src)
 	: TextureMapperClass(src)
 {
 	Unk = src.Unk;
@@ -80,3 +80,14 @@ GridTextureMapperClass::GridTextureMapperClass(const GridTextureMapperClass &src
 	Offset = src.Offset;
 	Reset();
 }
+
+// The copy constructor is a header inline in mapper.cpp. This anchor retains
+// its matched row body here, but the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeGridTextureMapperInlineAnchor@@YAXPAVGridTextureMapperClass@@@Z absent-from-retail
+void _bfmeGridTextureMapperInlineAnchor(GridTextureMapperClass *mapper)
+{
+	mapper->GridTextureMapperClass::GridTextureMapperClass(*mapper);
+	mapper->GridTextureMapperClass::Reset();
+}
+#pragma inline_depth()
