@@ -5502,3 +5502,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??0Rva0022E156@@QAE@XZ	0x0022E156	33	blocked	gap ctor vtable baseConstruct Vector_base tried inherit vector mem-init got 62B EH vs 33B no-EH needs no-EH flags and base without ctor t=10 model=muse-10
 ??0Rva0022CDDA@@QAE@XZ	0x0022CD78	70	blocked	ctor array EH wall plus mismatched element ctor-dtor identities t=15 model=muse-spark
 ??0Rva0022C9F6@@QAE@XZ	0x0022C987	75	partial	esi-edi swap only size exact 75B t=20 model=muse-spark score=0.93 stash=reverse/attempts/0x0022c987.cpp
+?rva002B69A6@Rva002B69A6@@QAEXPAX@Z	0x002B69A6	94	blocked	test-dry-run agent=muse-03
+?rva002B69A6@Rva002B69A6@@QAEXPAX@Z	0x002B69A6	94	partial	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; shape-lever round-robin upstream not flipped t=20 model=muse-03 score=0.91 stash=reverse/attempts/0x002b69a6.cpp
+?rva002B693F@Rva002B693F@@QAEXPAX@Z	0x002B693F	103	partial	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; round-robin toggle tried t=18 model=muse-03 score=0.92 stash=reverse/attempts/0x002b693f.cpp
