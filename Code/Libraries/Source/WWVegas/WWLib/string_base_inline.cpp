@@ -603,7 +603,6 @@ template bool StringBase<char>::startsWith(const StringBase<char> &str) const;
 template bool StringBase<char>::startsWith(const char *str, int len) const;
 template bool StringBase<char>::endsWith(const StringBase<char> &str) const;
 template bool StringBase<char>::endsWith(const char *str, int len) const;
-template const char *StringBase<char>::find(char c) const;
 template const char *StringBase<char>::reverseFind(char c) const;
 template char StringBase<char>::getCharAt(int index) const;
 template wchar_t StringBase<wchar_t>::getCharAt(int index) const;
