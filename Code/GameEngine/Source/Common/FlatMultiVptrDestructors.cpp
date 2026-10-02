@@ -342,3 +342,8 @@ Rva002C7580FlatDtor::~Rva002C7580FlatDtor()
 #pragma comment(linker, "/alternatename:?anchor@Rva00220240FlatDtorM6@@UAEXXZ=?IsCRC@Xfer@@UBE_NXZ")
 #pragma comment(linker, "/alternatename:?anchor@Rva00220240FlatDtorM0@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
 #pragma comment(linker, "/alternatename:?anchor@Rva0025A390FlatDtorM0@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?anchor@Rva00220240FlatDtorM5@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")

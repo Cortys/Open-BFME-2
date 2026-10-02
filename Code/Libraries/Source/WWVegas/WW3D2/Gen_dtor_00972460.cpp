@@ -52,3 +52,8 @@ Gen_dtor_00972460::~Gen_dtor_00972460()
 #pragma comment(linker, "/alternatename:?slot0C@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
 #pragma comment(linker, "/alternatename:?slot14@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
 #pragma comment(linker, "/alternatename:?slot1C@Rva009EB810TailBase@@UAEXXZ=??1Coord2D@@QAE@XZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot10@Rva009EB810TailBase@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")

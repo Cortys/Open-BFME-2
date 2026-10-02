@@ -78,3 +78,9 @@ Win32GameEngine::Win32GameEngine()
 #pragma comment(linker, "/alternatename:?m_unknown23@GameEngine@@UAEXXZ=?rva00042121@Win32GameEngine@@UAEXXZ")
 #pragma comment(linker, "/alternatename:?m_unknown24@GameEngine@@UAEXXZ=?get@Rva00041D5EByteField@@QBEEXZ")
 #pragma comment(linker, "/alternatename:?setIsActive@GameEngine@@UAEX_N@Z=?setForceBusyState@SupplyTruckAIUpdate@@UAEX_N@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?m_unknown07@GameEngine@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
+#pragma comment(linker, "/alternatename:?m_unknown13@GameEngine@@UAEXXZ=?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z")
