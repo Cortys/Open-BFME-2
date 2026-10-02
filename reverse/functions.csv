@@ -47635,3 +47635,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0040B0D0@Rva0040B0D0@@QAE_NPBX@Z,,0x0040B0D0,126,Code/Libraries/Source/WWVegas/WWLib/Rva0040B0D0Contains.cpp,matched,chain via rowed any test and 0x0040AE2C 0x0040ADFA
 ?rva0043B0B1@Rva0043B0B1@@QAEXPAVXfer@@@Z,,0x0043B0B1,57,Code/GameEngine/Source/Common/Rva0043B0B1Xfer.cpp,matched,xfer base slot0 plus 3 uints via slot 0x78
 ?Rva00427114Parse@@YAXPAVINI@@PAVRva00427157@@@Z,,0x00427114,67,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,INI parse two tokens dup float scan index store m_vals gap sibling
+??1Rva0022CCB0@@QAE@XZ,,0x0022CCB0,53,Code/GameEngine/Source/Common/Rva0022CCB0Dtor.cpp,matched,unlock packet rowed member plus releaseBuffer EH shape like 0x0022304A
