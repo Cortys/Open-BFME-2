@@ -38,22 +38,7 @@
 #include "GameLogic/Module/BridgeScaffoldBehavior.h"
 
 // ------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------
-// byte-exact reconstruction: Code/GameEngine/Source/GameLogic/Object/Behavior/BridgeScaffoldBehaviorCtorThunk.cpp
-// ??0BridgeScaffoldBehavior@@QAE@PAVThing@@PBVModuleData@@@Z present-unmatched
-BridgeScaffoldBehavior::BridgeScaffoldBehavior( Thing *thing, const ModuleData *moduleData )
-											: UpdateModule( thing, moduleData )
-{
-
-	m_targetMotion = STM_STILL;
-	m_createPos.zero();
-	m_riseToPos.zero();
-	m_buildPos.zero();
-	m_targetPos.zero();
-	m_lateralSpeed = 1.0f;
-	m_verticalSpeed = 1.0f;
-
-}  // end BridgeScaffoldBehavior
+// BridgeScaffoldBehavior ctor is defined in BridgeScaffoldBehaviorCtor.cpp (its row's unit).
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
