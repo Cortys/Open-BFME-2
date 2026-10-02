@@ -9,6 +9,8 @@
 // (no donor); its layout comes from retail 0x003A6E0E and the sibling model in
 // Code/GameEngine/Source/GameClient/FXParticleSystemModules.cpp.
 
+class Xfer;
+
 namespace FXParticleSystem
 {
 
@@ -24,7 +26,15 @@ class EmissionVelocityInfo
 public:
     EmissionVelocityInfo(const EmissionVelocityInfo &that);
     virtual ~EmissionVelocityInfo();
+    virtual void DoXfer(Xfer &xfer);
 };
+
+// BFME1 donor fx_particle_system.cpp:733 is an empty DoXfer override; target
+// exports identify EmissionVelocityInfo at 0x0047A69C.
+// ?DoXfer@EmissionVelocityInfo@FXParticleSystem@@UAEXAAVXfer@@@Z
+void EmissionVelocityInfo::DoXfer(Xfer &xfer)
+{
+}
 
 class CylindricalEmissionVelocityInfo : public EmissionVelocityInfo
 {
