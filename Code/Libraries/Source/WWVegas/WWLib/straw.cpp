@@ -18,7 +18,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include	<stddef.h>
 
 
-Straw::~Straw(void)
+__declspec(noinline) Straw::~Straw(void)
 {
 	if (ChainTo != NULL) {
 		ChainTo->ChainFrom = ChainFrom;
