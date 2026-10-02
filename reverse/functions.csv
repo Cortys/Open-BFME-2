@@ -47982,3 +47982,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Get_Bits_Per_Pixel@@YIIW4WW3DFormat@@@Z,,0x00131A9D,130,Code/Libraries/Source/WWVegas/WW3D2/ww3dformat_bits.cpp,matched,
 ?rva002249ED@Rva00056F61@@QAEAAVRva0022304A@@ABV2@@Z,,0x002249ED,68,Code/GameEngine/Source/GameClient/Rva002249EDHashInsert.cpp,matched,STLport hash insert after caller 0x00224BDB find miss; Ghidra 68B boundary; target calls resize 0x00212858 plus rowed bucketIndex 0x00223149 and node allocator 0x002241AC; pair is AsciiString plus 16-byte binding from ctor 0x002233F0; table offsets +4 buckets and +0x10 count
 ?bfmeProbeSse2@@YAHXZ,,0x001D5540,126,Code/GameEngine/Source/Common/BfmeImageFilter.cpp,matched,
+??1Rva0022D1DF@@QAE@XZ,,0x0022D1DF,53,Code/GameEngine/Source/Common/Rva0022D1DFDtor.cpp,matched,chain dtor via rowed 0x0022D01B plus releaseBuffer same EH shape as 0x0022CFE6
