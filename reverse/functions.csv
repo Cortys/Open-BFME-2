@@ -48667,3 +48667,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F2F5C@Rva005F2A32@@QAEXH@Z,,0x005F2F5C,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder via plus4 to rowed rva005F2D41 same caller family
 ?rva002E01F7@Rva000427195@@QAE?AUInsertRet002E01F7@@PBX@Z,,0x002E01F7,124,Code/GameEngine/Source/GameClient/Rva002E01F7Insert.cpp,matched,Eva insert_unique via rowed bucketIndex compare NewNode 12B nodes count at 0x10
 ?rva005FFC26@Rva005FFC26@@QAEXH@Z,,0x005FFC26,101,Code/GameEngine/Source/Common/Rva005FFC26SetState.cpp,matched,Apt SetState via rowed AptCall plus empty fallback plus TheRva00222A8BTarget
+?rva0057C66C@Rva0057C66C@@QAEPAXI@Z,,0x0057C66C,28,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewRva0057C66C.cpp,matched,gap body via rowed setter 0x0057C51E plus delete 0x2FD60
