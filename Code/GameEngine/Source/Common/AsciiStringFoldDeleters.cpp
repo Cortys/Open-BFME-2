@@ -78,9 +78,18 @@ private:
 	AsciiStringMember m_member04;
 };
 
-Rva004FA830::~Rva004FA830()
+inline Rva004FA830::~Rva004FA830()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva004FA830DtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva004FA830DtorInlineAnchor()
+{
+	static_cast<Rva004FA830 *>(0)->Rva004FA830::~Rva004FA830();
+}
+#pragma inline_depth()
 
 class Rva00538C5F
 {
