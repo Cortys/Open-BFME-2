@@ -5642,3 +5642,5 @@ FUN_0094aed7	0x0054AED7	141	blocked	hand-written __linear_insert with CopyRecord
 ?rva00223F4B@Rva00223F4B@@QAEAAUTreeHintRef00217D4C@@ABVAsciiString@@@Z	0x00223F4B	156	blocked	size delta -46 ours 110 vs retail 156 11 structural inserts missing branches t=5 model=muse-04
 ??1Rva00505AF1@@QAE@XZ	0x00505BBA	471	blocked	EH dtor 8 vectors loop order 04-1c-34-4c-10-28-40-58 plus game-free deallocate with EH states t=20 model=muse-09
 ?Rva0022157BGet@@YAXPAVINI@@@Z	0x0022157B	90	partial	esi-kept begin vs eax-reload test-esi vs cmp-mem t=18 model=muse-08 score=0.93 stash=reverse/attempts/0x0022157b.cpp
+?rva0049B0BF@Rva0049B0BF@@QAEXPAURva0049B0BFData@@H@Z	0x0049B0BF	268	partial	xmm scheduling only size-exact 268B 66insns retail groups 3 obj loads in xmm0-2 ours reuses xmm0 t=30 model=muse-11 score=0.93 stash=reverse/attempts/0x0049b0bf.cpp
+?Rva000F42FFGet@@YAHXZ	0x000F42FF	10	blocked	10B prolog-only no ret ghidra 10 vs 23 boundary wrong t=5 model=muse-11
