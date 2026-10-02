@@ -55,3 +55,43 @@ void *Rva00017B00StringInit::init(void *other)
 	slot->_STL::BfmeWideString::BfmeWideString(empty);
 	return other;
 }
+
+// Two more initializers with the same code as Rva00017B00StringInit::init,
+// each copying from its own static empty: 0x00017B30 reads VA 0xddef20 and
+// 0x00019D90 reads VA 0xddef2c. bfme1_sweep places the shared donor body at
+// all three addresses and the DIR32 operand separates them. Both statics are
+// zero-filled at retail and unreferenced elsewhere, and each is sized like
+// the first.
+unsigned char g_00DDEF20Static[12];	// VA 0x00ddef20
+
+class Rva00017B30StringInit
+{
+public:
+	void *init(void *other);
+};
+
+void *Rva00017B30StringInit::init(void *other)
+{
+	volatile int tmp = 0;
+	_STL::BfmeWideString *slot = static_cast<_STL::BfmeWideString *>(other);
+	const _STL::BfmeWideString &empty = *reinterpret_cast<const _STL::BfmeWideString *>(g_00DDEF20Static);
+	slot->_STL::BfmeWideString::BfmeWideString(empty);
+	return other;
+}
+
+unsigned char g_00DDEF2CStatic[12];	// VA 0x00ddef2c
+
+class Rva00019D90StringInit
+{
+public:
+	void *init(void *other);
+};
+
+void *Rva00019D90StringInit::init(void *other)
+{
+	volatile int tmp = 0;
+	_STL::BfmeWideString *slot = static_cast<_STL::BfmeWideString *>(other);
+	const _STL::BfmeWideString &empty = *reinterpret_cast<const _STL::BfmeWideString *>(g_00DDEF2CStatic);
+	slot->_STL::BfmeWideString::BfmeWideString(empty);
+	return other;
+}
