@@ -5729,3 +5729,5 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ??0Rva0052B81C@@QAE@XZ	0x0052B81C	31	partial	call disp to 0x0052B7B8 resolves to row 0x00360B59 without second pin; code identical except 4B reloc; second hashtable pin refused by pin_consistency EH byte differs same wall as 0x32ACFC t=15 model=muse-02 score=0.97 stash=reverse/attempts/0x0052b81c.cpp
 ??0Rva0052B81C@@QAE@XZ	0x0052B81C	31	blocked	call disp to dup 0052B7B8 resolves to row 00360B59 without second pin; pin refused EH bytes differ t=10 model=muse-02
 ??0Rva002A9706@@QAE@XZ	0x002A9706	31	blocked	call disp to dup 002A95B9 resolves to twin pin 000A7DF1; code identical except 4B reloc t=8 model=muse-02
+?rva004E013B@Rva004E013B@@QAEXXZ	0x004E013B	168	blocked	hashtable dtor at 14 calls dup 004DFC20 but resolves to row 003609BE without second pin; same Armor gen-alias wall as 0052B81C 002A9706 t=12 model=muse-02
+??0Rva004E02B8@@QAE@XZ	0x004E02B8	31	blocked	same Armor hashtable ctor dup wall as 0052B81C 002A9706; call to dup 004E007A resolves to row 00360B59; code identical except 4B reloc t=5 model=muse-02
