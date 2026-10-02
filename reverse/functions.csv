@@ -48640,3 +48640,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva003BD28DSet@@YGXH@Z,,0x003BD28D,25,Code/GameEngine/Source/GameLogic/Object/PartitionManagerRva003BD28D.cpp,matched,chain scaled forwarder via rowed 0x002D36C3 caller 0x003CED45
 ?rva005FD8B1@Rva005FD8B1@@QAEX_N@Z,,0x005FD8B1,8,Code/GameEngine/Source/Common/Rva005FD8B1Fwd.cpp,matched,chain tail-jmp via 0x005FD6D2 row caller 0x005F55A2
 ?rva005FD8B9@Rva005FD8B9@@QAEX_N@Z,,0x005FD8B9,8,Code/GameEngine/Source/Common/Rva005FD8B9Fwd.cpp,matched,chain tail-jmp via 0x005FD72D row caller 0x005F55C0
+?rva0030B85A@Rva0030B92C@@QAEXH@Z,,0x0030B85A,28,Code/GameEngine/Source/Common/Rva0030B85AErase.cpp,matched,erase vec index via rowed Pod8 erase flag 0x24 caller 0x00330B1E
