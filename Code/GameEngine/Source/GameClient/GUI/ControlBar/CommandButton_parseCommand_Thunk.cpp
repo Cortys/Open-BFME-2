@@ -24,12 +24,11 @@ extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char 
 class INIException
 {
 public:
-	INIException(Int code, const char *msg, ...);		///< direct call to 0x00850600
-	INIException(const INIException &other);
-
-private:
-	Int m_code;
-	const char *m_msg;
+	INIException(int argCount, const char *format, ...);
+	char *mFailureMessage;
+	int mErrorCode;
+	INIException(const INIException &that);
+	~INIException();
 };
 
 // upstream layout: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include/Common/INI.h
