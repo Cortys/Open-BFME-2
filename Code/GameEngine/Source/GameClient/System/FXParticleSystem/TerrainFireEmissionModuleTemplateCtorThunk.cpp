@@ -55,6 +55,7 @@ class TerrainFireEmissionModuleTemplate : public CategoryModuleTemplate<4>,
 {
 public:
     TerrainFireEmissionModuleTemplate();
+    virtual ~TerrainFireEmissionModuleTemplate();
 };
 
 // ??0TerrainFireEmissionModuleTemplate@FXParticleSystem@@QAE@XZ
