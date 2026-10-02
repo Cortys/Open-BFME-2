@@ -10,6 +10,7 @@
 #include "ascii_string.h"
 
 struct BfmePod20 { int a[5]; };
+struct BfmePod60 { int a[15]; };
 
 class Rva000427195;
 
@@ -63,6 +64,8 @@ private:
 
 typedef _STL::pair<const int, BfmePod20> Pod20Pair;
 typedef _STL::hashtable<Pod20Pair, int, _STL::hash<int>, _STL::_Select1st<Pod20Pair>, _STL::equal_to<int>, _STL::allocator<Pod20Pair> > Pod20Table;
+typedef _STL::pair<const int, BfmePod60> Pod60Pair;
+typedef _STL::hashtable<Pod60Pair, int, _STL::hash<int>, _STL::_Select1st<Pod60Pair>, _STL::equal_to<int>, _STL::allocator<Pod60Pair> > Pod60Table;
 
 #pragma pack(push, 1)
 struct InsertRet00419331
@@ -82,6 +85,7 @@ public:
 	void rva00212858(unsigned int newSize);
 	InsertRet00419331 rva00419331(const void *key);
 	InsertRet00419331 rva004193AD(const void *key);
+	InsertRet00419331 rva004198EB(const void *key);
 
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -115,4 +119,25 @@ InsertRet00419331 Rva000427195::rva004193AD(const void *key)
 {
 	rva00212858(m_numElements + 1);
 	return rva00419331(key);
+}
+
+InsertRet00419331 Rva000427195::rva004198EB(const void *key)
+{
+	int bucket = bucketIndex((const AsciiString *)key);
+	void *head = m_beginBuckets[bucket];
+	void *cur = head;
+	if (cur != 0)
+	{
+		do
+		{
+			if (((const StringBase<char> *)((const char *)cur + 4))->compare(*(const StringBase<char> *)key) == 0)
+				return InsertRet00419331(cur, this, 0);
+			cur = *(void **)cur;
+		} while (cur != 0);
+	}
+	void *node = (void *)((Pod60Table *)this)->_M_new_node(*(const Pod60Pair *)key);
+	*(void **)node = head;
+	m_beginBuckets[bucket] = node;
+	++m_numElements;
+	return InsertRet00419331(node, this, 1);
 }
