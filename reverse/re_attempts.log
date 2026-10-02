@@ -5316,3 +5316,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva005872CF@Rva0058729D@@QAEXABUICoord2DBase@@@Z	0x005872CF	54	partial	ecx-edx swap plus lea edi-esi order t=15 model=muse-11 score=0.93 stash=reverse/attempts/0x005872cf.cpp
 ?rva005F21F8@Rva005F20C5@@QAEXXZ	0x005F21F8	56	blocked	EH prolog plus states 0-minus1 unreproduced with O1 MD plus EHsc t=12 model=muse-spark
 ?Rva00521CBAAdvance@@YAXPAPAURva00521CBANode@@HPAX@Z	0x00521CBA	41	partial	O2 fixes eax-ecx swap but adds 4B lea-esp loop-align NOP before first loop t=25 model=muse-10 score=0.94 stash=reverse/attempts/0x00521cba.cpp
+?postProcessLoad@Rva00090360@@UAEXXZ	0x000904CA	266	blocked	vslot3 postProcessLoad donor W3DDisplayStringManager slot layout plus GameText fetch plus DisplayString slots need work t=15 model=muse-03
