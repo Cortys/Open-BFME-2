@@ -11,6 +11,8 @@ class Rva00239FA0
 public:
 	void rva00239FA0(const Rva0055A88BDwordField *arg);
 };
+class ClientFrameSubsystem;
+extern class ClientFrameSubsystem *TheGameClient;
 class Rva00271058
 {
 	char m_pad[0x100];
@@ -22,11 +24,11 @@ void Rva00271058::rva00271058(void *p)
 {
 	if (m_ptr != p) {
 		if (m_ptr) {
-			((Rva00239C38 *)*(void *const *)0x00DFE77C)->rva00239C38((const Rva0055A88BDwordField *)this);
+			reinterpret_cast<Rva00239C38 *>(TheGameClient)->rva00239C38((const Rva0055A88BDwordField *)this);
 		}
 		m_ptr = p;
 		if (p) {
-			((Rva00239FA0 *)*(void *const *)0x00DFE77C)->rva00239FA0((const Rva0055A88BDwordField *)this);
+			reinterpret_cast<Rva00239FA0 *>(TheGameClient)->rva00239FA0((const Rva0055A88BDwordField *)this);
 		}
 	}
 }
