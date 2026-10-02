@@ -262,88 +262,12 @@ AggregateDefClass::Create (void)
 //
 //	Find_Subobject
 //
-RenderObjClass *
-AggregateDefClass::Find_Subobject
-(
-	RenderObjClass &model,
-	const char mesh_path[MESH_PATH_ENTRIES][MESH_PATH_ENTRY_LEN],
-	const char bone_path[MESH_PATH_ENTRIES][MESH_PATH_ENTRY_LEN]
-)
-{
-	RenderObjClass *parent_model = &model;
-	parent_model->Add_Ref ();
-	
-	// Loop through all the models in our "path" until we've either failed
-	// or found the exact mesh we were looking for...
-	for (int index = 1;
-		  (mesh_path[index][0] != 0) && (parent_model != NULL);
-		  index ++) {
-
-		// Look one level deeper into the subobject chain...
-		RenderObjClass *sub_obj = NULL;
-		if (bone_path[index][0] == 0) {
-			sub_obj = parent_model->Get_Sub_Object_By_Name (mesh_path[index]);
-		} else {
-			
-			int bone_index = parent_model->Get_Bone_Index (bone_path[index]);
-			int subobj_count = parent_model->Get_Num_Sub_Objects_On_Bone (bone_index);
-			
-			// Loop through all the subobjects on this bone
-			for (int subobj_index = 0; (subobj_index < subobj_count) && (sub_obj == NULL); subobj_index ++) {				
-				
-				// Is this the subobject we were looking for?
-				RenderObjClass *ptemp_obj = parent_model->Get_Sub_Object_On_Bone (subobj_index, bone_index);
-				if (::lstrcmpi (ptemp_obj->Get_Name (), mesh_path[index]) == 0) {
-					sub_obj = ptemp_obj;
-				} else {
-					REF_PTR_RELEASE (ptemp_obj);
-				}
-			}
-		}
-
-		REF_PTR_RELEASE (parent_model);
-
-		// The parent for the next iteration is the subobject on this one.
-		parent_model = sub_obj;
-	}
-
-	// Return a pointer to the subobject
-	return parent_model;
-}
 
 
 ///////////////////////////////////////////////////////////////////////////////////
 //
 //	Attach_Subobjects
 //
-void
-// ?AggregateDefClass::Attach_Subobjects present-unmatched
-AggregateDefClass::Attach_Subobjects (RenderObjClass &base_model)
-{
-	// Now loop through all the subobjects and attach them to the appropriate bone
-	for (int index = 0; index < m_SubobjectList.Count (); index ++) {
-		W3dAggregateSubobjectStruct *psubobj_info = m_SubobjectList[index];
-		if (psubobj_info != NULL) {
-			
-			// Now create this subobject and attach it to its bone.
-			RenderObjClass *prender_obj = Create_Render_Object (psubobj_info->SubobjectName);
-			if (prender_obj != NULL) {
-
-				// Attach this object to the requested bone
-				if (base_model.Add_Sub_Object_To_Bone (prender_obj, psubobj_info->BoneName) == false) {
-					WWDEBUG_SAY (("Unable to attach %s to %s.\r\n", psubobj_info->SubobjectName, psubobj_info->BoneName));
-				}
-
-				// Release our hold on this pointer
-				prender_obj->Release_Ref ();
-			} else {
-				WWDEBUG_SAY (("Unable to load aggregate subobject %s.\r\n", psubobj_info->SubobjectName));
-			}
-		}
-	}
-	
-	return ;
-}
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -469,86 +393,6 @@ AggregateDefClass::Initialize (RenderObjClass &base_model)
 //
 //	Build_Subobject_List
 //
-void
-AggregateDefClass::Build_Subobject_List
-(
-	RenderObjClass &original_model,
-	RenderObjClass &model
-)
-{
-	int index;
-
-	// Loop through all the bones in this render obj
-	int bone_count = model.Get_Num_Bones ();
-	for (int bone_index = 0; bone_index < bone_count; bone_index ++) {			
-		const char *pbone_name = model.Get_Bone_Name (bone_index);
-		
-		// Build a list of nodes that are contained in the vanilla model
-		DynamicVectorClass <RenderObjClass *> orig_node_list;
-		for (index = 0;
-			  index < original_model.Get_Num_Sub_Objects_On_Bone (bone_index);
-			  index ++) {
-			RenderObjClass *psubobj = original_model.Get_Sub_Object_On_Bone (index, bone_index);
-			if (psubobj != NULL) {
-				orig_node_list.Add (psubobj);
-			}
-		}
-
-		// Build a list of nodes that are contained in this bone
-		DynamicVectorClass <RenderObjClass *> node_list;
-		for (index = 0;
-			  index < model.Get_Num_Sub_Objects_On_Bone (bone_index);
-			  index ++) {
-			RenderObjClass *psubobj = model.Get_Sub_Object_On_Bone (index, bone_index);
-			if (psubobj != NULL) {
-				node_list.Add (psubobj);
-			}
-		}
-
-		int node_count = node_list.Count ();
-		if (node_count > 0) {
-			
-			// Loop through the subobjects and add each one to our internal list
-			W3dAggregateSubobjectStruct subobj_info = { 0 };
-			for (int node_index = 0; node_index < node_count; node_index ++) {
-				RenderObjClass *psubobject = node_list[node_index];
-				WWASSERT (psubobject != NULL);
-				
-				// Is this subobject new?  (i.e. not in a 'vanilla' instance?)
-				const char *prototype_name = psubobject->Get_Name ();
-				if (psubobject != NULL &&
-					 (Is_Object_In_List (prototype_name, orig_node_list) == false)) {
-					
-					// Add this subobject to our list
-					::lstrcpy (subobj_info.SubobjectName, prototype_name);
-					::lstrcpy (subobj_info.BoneName, pbone_name);
-					Add_Subobject (subobj_info);
-					m_Info.SubobjectCount ++;
-
-					// Attach this render object to the 'original' model (this is done
-					// so we can do texture compares later)
-					RenderObjClass *prender_obj = WW3DAssetManager::Get_Instance ()->Create_Render_Obj (prototype_name);
-					((RenderObjClass &)original_model).Add_Sub_Object_To_Bone (prender_obj, pbone_name);
-					REF_PTR_RELEASE (prender_obj);
-				}
-			}
-		}
-
-		// Free our hold on the render objs in the original node list
-		for (index = 0; index < orig_node_list.Count (); index ++) {
-			REF_PTR_RELEASE (orig_node_list[index]);
-		}
-		orig_node_list.Delete_All ();
-
-		// Free our hold on the render objs in the node list
-		for (index = 0; index < node_list.Count (); index ++) {
-			REF_PTR_RELEASE (node_list[index]);
-		}
-		node_list.Delete_All ();
-	}
-
-	return ;
-}
 
 
 ///////////////////////////////////////////////////////////////////////////////////
