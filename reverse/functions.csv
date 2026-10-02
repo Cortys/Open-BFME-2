@@ -48193,3 +48193,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??1Rva00586D8E@@UAE@XZ,,0x00586E51,53,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EDtor.cpp,matched,dtor via novtable base twin precedent t=5 model=muse-16
 ?rva001FF5C3@Rva003B1546@@UAEXXZ,,0x001FF5C3,47,Code/GameEngine/Source/Common/Rva003B1546Rva001FF5C3.cpp,matched,vtable slot 9 of 0x0081ED1C via Overridable deleteOverrides and vector erase
 ?Rva002861EFFill@@YAPAXPAXIPBX@Z,,0x002861EF,37,Code/GameEngine/Source/Common/Rva002861EFFill.cpp,matched,array fill of 6-byte records via rowed copy caller 0x287BB8
+?rva00463A4D@HordeTransportContain@@QAEXV?$list@HV?$allocator@H@_STL@@@_STL@@H@Z,,0x00463A4D,52,Code/Libraries/Source/WWVegas/WWLib/HordeTransportContainRva00463A4D.cpp,matched,by-value list plus int via slot 0x68 with rowed List_base dtor and EH prolog
