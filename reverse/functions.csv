@@ -47516,3 +47516,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva004817F4@@QAE@XZ,,0x004817F4,17,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal BfmeThingTC::bfmeBaseTC except the vtable VA 0xc49174
 ??0Rva0035897D@@QAE@XZ,,0x0035897D,23,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva0036247C except the vtable VA 0xc15338
 ??0Rva003E3C22@@QAE@XZ,,0x003E3C22,23,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva0036247C except the vtable VA 0xc35b34
+??_GRva001FDB55@@UAEPAXI@Z,,0x001FDD61,28,Code/GameEngine/Source/Common/Rva001FDB55Dtor.cpp,matched,deleting dtor from dtor unit caller none vtable 0x007E1BB0
