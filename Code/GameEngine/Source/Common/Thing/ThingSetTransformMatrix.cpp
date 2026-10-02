@@ -35,8 +35,13 @@ void Thing::setTransformMatrix( const Matrix3D *mx )
 	oldPos.x = cachedPos.x;
 	oldPos.y = cachedPos.y;
 	oldPos.z = cachedPos.z;
-	Matrix3D oldMtx;
-	oldMtx = m_transform;
+	float oldMtx[12];
+	{
+		const float *srcMtx = (const float *)&m_transform;
+		oldMtx[0] = srcMtx[0]; oldMtx[1] = srcMtx[1]; oldMtx[2] = srcMtx[2]; oldMtx[3] = srcMtx[3];
+		oldMtx[4] = srcMtx[4]; oldMtx[5] = srcMtx[5]; oldMtx[6] = srcMtx[6]; oldMtx[7] = srcMtx[7];
+		oldMtx[8] = srcMtx[8]; oldMtx[9] = srcMtx[9]; oldMtx[10] = srcMtx[10]; oldMtx[11] = srcMtx[11];
+	}
 
 	m_transform = *mx;
 	m_cachedPos.x = m_transform.Get_X_Translation();
@@ -45,6 +50,6 @@ void Thing::setTransformMatrix( const Matrix3D *mx )
 	m_cachedAngle = m_transform.Get_Z_Rotation();
 	m_cacheFlags = 0;
 
-	reinterpret_cast<BFMERetailThingVTable *>(this)->reactToTransformChange(&oldMtx, &oldPos, oldAngle);
+	reinterpret_cast<BFMERetailThingVTable *>(this)->reactToTransformChange((const Matrix3D *)oldMtx, &oldPos, oldAngle);
 	DEBUG_ASSERTCRASH(!(_isnan(getPosition()->x) || _isnan(getPosition()->y) || _isnan(getPosition()->z)), ("Drawable/Object position NAN! '%s'\n", m_template->getName().str() ));
 }
