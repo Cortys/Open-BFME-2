@@ -47469,3 +47469,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?unRegisterAnimation@Anim2DCollection@@QAEXPAVAnim2D@@@Z,,0x002D6CAD,49,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,Zero Hour donor unlink instance list retail head plus0x10 caller 0x002D6E08
 ??1Anim2D@@MAE@XZ,,0x002D6E08,30,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,ZH donor dtor via unRegisterAnimation caller 0x002D73D0 Snapshot base
 ??0Rva002D6C02@@QAE@XZ,,0x002D6C02,26,Code/GameEngine/Source/GameClient/System/Rva002D6C02Ctor.cpp,matched,baseConstruct pattern from Rva0026201C caller 0x0023A30B neighbours Anim2D
+?rva00355DDD@Rva003560ED@@QAEXXZ,,0x00355DDD,23,Code/GameEngine/Source/Common/Rva00355DDDMethod.cpp,matched,vslot 3 of 0x00814EA4 via TheDisplay slot68 plus clear plus8
