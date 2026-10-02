@@ -4,6 +4,14 @@
 // the file classes (StringClass filename, Create/Delete/Get_Date_Time in the base).
 // always.h is omitted (nothing here needs it); win.h is a minimal stand-in declaring
 // the kernel32 imports (see src/w3d/win.h).
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include	"rawfile.h"
 #include	<direct.h>
