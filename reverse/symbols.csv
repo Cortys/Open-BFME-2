@@ -7217,3 +7217,7 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?setCompletedWaypoint@AIUpdateInterface@@QAEXPBVWaypoint@@@Z,0x00268AAA,ZH/BFME1 AIUpdateInterface::setCompletedWaypoint; called by AIFollowWaypointPathExactState::onExit at 0x0034A14F
 ?getDockUpdateInterface@Object@@QAEPAVDockUpdateInterface@@XZ,0x0028BCB4,Object::getDockUpdateInterface called by AIDockState::onEnter at 0x003416B4
 ??0AIDockMachine@@QAE@PAVObject@@@Z,0x005448A1,AIDockMachine constructor called by AIDockState::onEnter at 0x003416F5
+?getSpeed@AIGroup@@QAEMXZ,0x0036E333,AIGroup::getSpeed called by AIFollowWaypointPathExactState::onEnter at 0x0034F090
+?getCenter@AIGroup@@QAE_NPAUCoord3D@@@Z,0x0036D035,AIGroup::getCenter called by AIFollowWaypointPathExactState::onEnter at 0x0034F09F
+?setPathFromWaypoint@AIUpdateInterface@@QAEXPBVWaypoint@@PBUCoord2D@@@Z,0x0026569F,AIUpdateInterface::setPathFromWaypoint called by AIFollowWaypointPathExactState::onEnter at 0x0034F10B
+?setDesiredSpeed@AIUpdateInterface@@QAEXM@Z,0x002628F9,AIUpdateInterface::setDesiredSpeed called by AIFollowWaypointPathExactState::onEnter at 0x0034F146; folded with View::setHeightAboveGround

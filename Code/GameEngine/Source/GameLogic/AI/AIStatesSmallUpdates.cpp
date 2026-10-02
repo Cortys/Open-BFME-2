@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /DNDEBUG /MD /arch:SSE
 //
 // AIDeadState::update, retail 0x0033FF05 (38 bytes): slot 6 of vtable
 // 0x00C11318, whose slot-2 name getter returns AIDeadState (slot 5 is the
@@ -13,15 +13,69 @@
 // of vtable 0x00C12A08 (name getter AIFollowWaypointPathExactState), the Zero
 // Hour body: base onExit, then if AI and current locomotor, setCompletedWaypoint,
 // clear canPathThroughUnits and allowInvalidPosition.
+// AIFollowWaypointPathExactState::onEnter, retail 0x0034F01B (312 bytes): slot 4
+// of vtable 0x00C12A08 (name getter AIFollowWaypointPathExactState), the Zero
+// Hour body: goal waypoint check, setGoalPosition, group center/speed offset,
+// CritterDesync log, base onEnter, setPathFromWaypoint, update goal position from
+// path tail, locomotor allowInvalidPosition, and setDesiredSpeed.
 typedef bool Bool;
+typedef float Real;
 enum StateExitType
 {
 	EXIT_NORMAL = 0
 };
 enum StateReturnType
 {
-	STATE_CONTINUE = 0
+	STATE_CONTINUE = 0,
+	STATE_SUCCESS = -1,
+	STATE_FAILURE = -2
 };
+struct Coord3D
+{
+	Real x, y, z;
+};
+struct Coord2D
+{
+	Real x, y;
+};
+class PathNode
+{
+public:
+	const Coord3D *getPosition() const { return &m_pos; }
+private:
+	unsigned char m_pad00[0x0C];
+	Coord3D m_pos; // +0x0C
+};
+class Path
+{
+public:
+	PathNode *getLastNode() const { return m_lastNode; }
+private:
+	unsigned char m_pad00[0x08];
+	PathNode *m_lastNode; // +0x08
+};
+class Waypoint
+{
+public:
+	const Coord3D *getLocation() const { return &m_location; }
+private:
+	unsigned char m_pad00[0x0C];
+	Coord3D m_location; // +0x0C
+};
+class AIGroup
+{
+public:
+	Real getSpeed();
+	Bool getCenter(Coord3D *center);
+};
+class RadarObject;
+struct FprintfTarget
+{
+	char m_pad[4];
+};
+extern "C" void fprintf(FprintfTarget *target, const char *format, ...);
+extern unsigned char g_00E03745;
+extern void *g_00DFEFF0;
 template <int N> class AIDeadStateAISlots : public AIDeadStateAISlots<N - 1>
 {
 public:
@@ -49,7 +103,6 @@ private:
 	unsigned char m_pad00[0x44];
 	unsigned int m_flags; // +0x44
 };
-class Waypoint;
 // AIUpdateInterface: vslot 136 (+0x220) is called on a dead owner's AI.
 class AIUpdateInterface : public AIDeadStateAISlots<136>
 {
@@ -58,8 +111,14 @@ public:
 	void setCompletedWaypoint(const Waypoint *wp);
 	Locomotor *getCurLocomotor() { return m_curLocomotor; }
 	void setCanPathThroughUnits(Bool b) { m_canPathThroughUnits = b; }
+	RadarObject *rva002630F5();
+	void setPathFromWaypoint(const Waypoint *wp, const Coord2D *offset);
+	void setDesiredSpeed(Real speed);
+	Path *getPath() const { return m_path; }
 private:
-	unsigned char m_pad004[0x1F0 - 0x04];
+	unsigned char m_pad004[0x140 - 0x04];
+	Path *m_path; // +0x140
+	unsigned char m_pad144[0x1F0 - 0x144];
 	Locomotor *m_curLocomotor; // +0x1F0
 	unsigned char m_pad1F4[0x3BA - 0x1F4];
 	Bool m_canPathThroughUnits; // +0x3BA
@@ -67,19 +126,30 @@ private:
 class Object
 {
 public:
+	const Coord3D *getPosition() const { return &m_position; }
 	AIUpdateInterface *getAI() { return m_ai; }
 	void setEffectivelyDead(bool dead);
 private:
-	unsigned char m_pad000[0x258];
+	unsigned char m_pad00[0x38];
+	Coord3D m_position; // +0x38
+	unsigned char m_pad44[0x258 - (0x38 + sizeof(Coord3D))];
 	AIUpdateInterface *m_ai; // +0x258
 };
 class StateMachine
 {
 public:
 	Object *getOwner() const { return m_owner; }
+	const Waypoint *getGoalWaypoint() const { return m_goalWaypoint; }
 private:
 	unsigned char m_pad00[0x14];
 	Object *m_owner; // +0x14
+	unsigned char m_pad18[0x48 - (0x14 + sizeof(Object *))];
+	const Waypoint *m_goalWaypoint; // +0x48
+};
+class TurretStateMachine : public StateMachine
+{
+public:
+	void setGoalPosition(const Coord3D *pos);
 };
 class State
 {
@@ -113,18 +183,82 @@ StateReturnType AIDeadState::update()
 class AIInternalMoveToState : public State
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
+protected:
+	unsigned char m_pad1C[0x20 - 0x1C];
+	Coord3D m_goalPosition; // +0x20
+	unsigned char m_pad2C[0x48 - (0x20 + sizeof(Coord3D))];
+	Bool m_adjustsDestination; // +0x48
 };
 class AIFollowWaypointPathExactState : public AIInternalMoveToState
 {
 public:
+	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
 private:
-	unsigned char m_padExact[0x4C - sizeof(AIInternalMoveToState)];
 	const Waypoint *m_lastWaypoint; // +0x4C
+	Bool m_moveAsGroup; // +0x50
 };
+
+StateReturnType AIFollowWaypointPathExactState::onEnter()
+{
+	const Waypoint *currentWaypoint = m_machine->getGoalWaypoint();
+	AIUpdateInterface *ai = m_machine->getOwner()->getAI();
+	if (!currentWaypoint)
+		return STATE_FAILURE;
+	if (!ai->getCurLocomotor())
+		return STATE_FAILURE;
+
+	((TurretStateMachine *)m_machine)->setGoalPosition(currentWaypoint->getLocation());
+
+	Coord2D groupOffset;
+	groupOffset.x = groupOffset.y = 0.0f;
+
+	Object *obj = m_machine->getOwner();
+	Real speed = 999999.0f;
+	if (m_moveAsGroup)
+	{
+		AIGroup *group = (AIGroup *)ai->rva002630F5();
+		if (group)
+		{
+			speed = group->getSpeed();
+			Coord3D center;
+			group->getCenter(&center);
+			groupOffset.x = obj->getPosition()->x - center.x;
+			groupOffset.y = obj->getPosition()->y - center.y;
+		}
+	}
+
+	ai->setCanPathThroughUnits(true);
+
+	if (g_00E03745)
+	{
+		FprintfTarget *log = (FprintfTarget *)g_00DFEFF0;
+		if (log)
+			fprintf(log, "CritterDesync: setAdjustDestination(FALSE) 56");
+	}
+
+	m_adjustsDestination = false;
+	m_goalPosition = *currentWaypoint->getLocation();
+
+	StateReturnType ret = AIInternalMoveToState::onEnter();
+
+	ai->setPathFromWaypoint(currentWaypoint, &groupOffset);
+
+	if (ai->getPath() && ai->getPath()->getLastNode())
+	{
+		m_goalPosition = *ai->getPath()->getLastNode()->getPosition();
+	}
+
+	m_lastWaypoint = currentWaypoint;
+	ai->getCurLocomotor()->setAllowInvalidPosition(true);
+	ai->setDesiredSpeed(speed);
+
+	return ret;
+}
 void AIFollowWaypointPathExactState::onExit(StateExitType status)
 {
 	AIInternalMoveToState::onExit(status);
@@ -144,3 +278,4 @@ StateReturnType AIFollowWaypointPathExactState::update()
 		ai->setCanPathThroughUnits(true);
 	return AIInternalMoveToState::update();
 }
+
