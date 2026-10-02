@@ -474,3 +474,72 @@ Rva0056F3B1 *Rva0056F3B1::rva0056F3B1(void *a1, void *a2)
 	m_1c ^= e;
 	return this;
 }
+
+// Three more pickers of the two shapes above (the 44-byte esp-entropy form and
+// the 46-byte rdtsc form), each over its own pair of int[4] tables in retail
+// .data, which no other unit references. Only the table operands differ from
+// the rowed copies.
+
+// ?Rva0056ECAEPick@@YAXPAH0@Z @0x0056ECAE 44B esp pick
+// g_Va00DD299C: retail .data contents at VA 0xdd299c.
+int g_Va00DD299C[4] = {
+	-1154705398, 0xcadbeca, -349344374, 0x6b6044a
+};
+// g_Va00DD29AC: retail .data contents at VA 0xdd29ac.
+int g_Va00DD29AC[4] = {
+	-1291022325, 0x48deecb, -1482610805, 0x4e9a144b
+};
+void __cdecl Rva0056ECAEPick(int *out1, int *out2);
+void __cdecl Rva0056ECAEPick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, esp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DD29AC[i];
+	*out2 = g_Va00DD299C[i];
+}
+
+// ?Rva0056ED06Pick@@YAXPAH0@Z @0x0056ED06 46B rdtsc pick
+// g_Va00DD29DC: retail .data contents at VA 0xdd29dc.
+int g_Va00DD29DC[4] = {
+	-1562119857, -888972913, 0x69f619cf, 0x1f9d5c4f
+};
+// g_Va00DD29EC: retail .data contents at VA 0xdd29ec.
+int g_Va00DD29EC[4] = {
+	-1569742517, -1758525045, 0x61d649cb, 0x47b1144b
+};
+void __cdecl Rva0056ED06Pick(int *out1, int *out2);
+void __cdecl Rva0056ED06Pick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		rdtsc
+		mov t, eax
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DD29EC[i];
+	*out2 = g_Va00DD29DC[i];
+}
+
+// ?Rva00229A44Pick@@YAXPAH0@Z @0x00229A44 44B esp pick
+// g_Va00DBA31C: retail .data contents at VA 0xdba31c.
+int g_Va00DBA31C[4] = {
+	-639134262, 0x7ae8328a, -1994976438, 0x947890a
+};
+// g_Va00DBA32C: retail .data contents at VA 0xdba32c.
+int g_Va00DBA32C[4] = {
+	-917512821, 0x326072cb, -1992357109, 0x167914b
+};
+void __cdecl Rva00229A44Pick(int *out1, int *out2);
+void __cdecl Rva00229A44Pick(int *out1, int *out2)
+{
+	unsigned int t = 0;
+	__asm {
+		mov t, esp
+	}
+	unsigned int i = t & 3;
+	*out1 = g_Va00DBA32C[i];
+	*out2 = g_Va00DBA31C[i];
+}
