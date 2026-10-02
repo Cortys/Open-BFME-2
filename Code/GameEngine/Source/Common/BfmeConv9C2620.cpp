@@ -15,12 +15,41 @@
 
 extern "C" int Vp6FilterEdgeTagTable[];
 extern "C" unsigned char Vp6FilterConst8840[];
-extern "C" unsigned char Vp6FilterConst8850[];
-extern "C" unsigned char Vp6FilterConst8860[];
-extern "C" unsigned char Vp6FilterConst8870[];
-extern "C" unsigned char Vp6FilterConst8880[];
-extern "C" unsigned char Vp6FilterConst8890[];
-extern "C" unsigned char Vp6FilterConst88B0[];
+// Vp6FilterConst8850: matched references place it at VA 0xdb8120; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8850[16] = {
+	64, 0, 64, 0, 64, 0, 64, 0,
+	64, 0, 64, 0, 64, 0, 64, 0,
+};
+// Vp6FilterConst8860: matched references place it at VA 0xdb8130; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8860[16] = {
+	64, 64, 64, 64, 64, 64, 64, 64,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8870: matched references place it at VA 0xdb8140; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8870[16] = {
+	32, 32, 32, 32, 32, 32, 32, 32,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8880: matched references place it at VA 0xdb8150; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8880[16] = {
+	127, 127, 127, 127, 127, 127, 127, 127,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8890: matched references place it at VA 0xdb8160; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8890[16] = {
+	128, 128, 128, 128, 128, 128, 128, 128,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst88B0: matched references place it at VA 0xdb8180; retail contents, sized to the
+// 0x8-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst88B0[8] = {
+	231, 231, 231, 231, 231, 231, 231, 231,
+};
 
 extern "C" void __cdecl Rva009C2620Vp6FilterDiag4(
 	void *unused, void *sourceArgument, void *destinationArgument,

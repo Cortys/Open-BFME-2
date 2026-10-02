@@ -823,7 +823,16 @@ struct Rva00814D60Comm
 
 int Rva007FDB60( void *socket, int selector, void *address, int size );
 int Rva007FE780( const char *format, ... );
-extern char Rva012C4A80[];
+// Rva012C4A80: matched references place it at VA 0xdd91d8; retail contents, sized to the
+// 0x2c-byte gap before the next known global there.
+char Rva012C4A80[44] = {
+	99, 111, 109, 109, 116, 99, 112, 58,
+	32, 112, 101, 101, 114, 61, 48, 120,
+	37, 48, 56, 120, 58, 37, 100, 44,
+	32, 104, 111, 115, 116, 61, 48, 120,
+	37, 48, 56, 120, 58, 37, 100, 10,
+	0, 0, 0, 0,
+};
 
 void Rva00814D60( struct Rva00814D60Comm *comm )
 {
@@ -864,8 +873,24 @@ struct Rva00814540Comm
 	void *m_buffer;                  /* +0xC8 */
 };
 
-extern char Rva012C4AF0[];
-extern char Rva012C4B0C[];
+// Rva012C4AF0: matched references place it at VA 0xdd9248; retail contents, sized to the
+// 0x1c-byte gap before the next known global there.
+char Rva012C4AF0[28] = {
+	84, 67, 80, 58, 32, 111, 117, 116,
+	112, 117, 116, 32, 98, 117, 102, 102,
+	101, 114, 32, 102, 117, 108, 108, 10,
+	0, 0, 0, 0,
+};
+// Rva012C4B0C: matched references place it at VA 0xdd9264; retail contents, sized to the
+// 0x2c-byte gap before the next known global there.
+char Rva012C4B0C[44] = {
+	67, 111, 109, 109, 84, 67, 80, 58,
+	32, 79, 118, 101, 114, 115, 105, 122,
+	101, 100, 32, 112, 97, 99, 107, 101,
+	116, 32, 115, 101, 110, 100, 32, 40,
+	37, 100, 32, 98, 121, 116, 101, 115,
+	41, 10, 0, 0,
+};
 void *memcpy( void *dest, const void *source, unsigned int size );
 
 int Rva00814540( struct Rva00814540Comm *comm, const void *payload,
@@ -1005,7 +1030,20 @@ void Rva00815DA0( struct Rva00815DA0Comm *comm )
 	}
 }
 
-extern char Rva012C4BD8[];
+// Rva012C4BD8: matched references place it at VA 0xdd9330; retail contents, sized to the
+// 0x4c-byte gap before the next known global there.
+char Rva012C4BD8[76] = {
+	95, 67, 111, 109, 109, 83, 82, 80,
+	80, 114, 111, 99, 101, 115, 115, 68,
+	97, 116, 97, 58, 32, 82, 101, 108,
+	105, 97, 98, 108, 101, 32, 112, 97,
+	99, 107, 101, 116, 32, 100, 105, 115,
+	99, 97, 114, 100, 101, 100, 32, 100,
+	117, 101, 32, 116, 111, 32, 105, 110,
+	112, 117, 116, 32, 98, 117, 102, 102,
+	101, 114, 32, 111, 118, 101, 114, 114,
+	117, 110, 10, 0,
+};
 
 int Rva00816280( struct Rva00815DA0Comm *comm,
 	struct Rva00815DA0Record *record )
@@ -1263,7 +1301,18 @@ int Rva00813890( int line, int address, const char *destination,
 		countryCode, callParameters );
 }
 
-extern char Rva012C4A40[];
+// Rva012C4A40: matched references place it at VA 0xdd9198; retail contents, sized to the
+// 0x40-byte gap before the next known global there.
+char Rva012C4A40[64] = {
+	99, 111, 109, 109, 47, 100, 97, 116,
+	97, 109, 111, 100, 101, 109, 0, 0,
+	84, 65, 80, 73, 37, 100, 58, 0,
+	84, 65, 80, 73, 37, 100, 58, 0,
+	84, 65, 80, 73, 0, 0, 0, 0,
+	108, 111, 99, 97, 108, 104, 111, 115,
+	116, 0, 0, 0, 37, 100, 37, 99,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
 int __stdcall Rva0081BDC0( int line, int requestMode, int extension,
 	int versionCount, void *capabilities, void *apiVersion );
 

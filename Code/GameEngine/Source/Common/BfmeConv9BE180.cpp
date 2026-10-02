@@ -10,13 +10,57 @@
 // into the final pixels. Mechanically transcribed from the retail bytes;
 // see reverse/re_attempts.log for the derivation notes.
 
-extern "C" int Vp6FilterEdgeTagTable[];
+// Vp6FilterEdgeTagTable: matched references place it at VA 0xdb7a28; retail contents, sized to the
+// 0x200-byte gap before the next known global there.
+extern "C" int Vp6FilterEdgeTagTable[128] = {
+	-12, -11, -10, -10, -9, -9, -9, -9,
+	-6, -6, -6, -6, -6, -6, -6, -6,
+	-4, -4, -4, -4, -4, -4, -4, -4,
+	-2, -2, -2, -2, -2, -2, -2, -2,
+	-2, -2, -2, -2, -2, -2, -2, -2,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 1, 8, 16, 9, 2, 3, 10,
+	17, 24, 32, 25, 18, 11, 4, 5,
+	12, 19, 26, 33, 40, 48, 41, 34,
+	27, 20, 13, 6, 7, 14, 21, 28,
+	35, 42, 49, 56, 57, 50, 43, 36,
+	29, 22, 15, 23, 30, 37, 44, 51,
+	58, 59, 52, 45, 38, 31, 39, 46,
+	53, 60, 61, 54, 47, 55, 62, 63,
+};
 extern "C" unsigned char Vp6FilterConst8720[];
-extern "C" unsigned char Vp6FilterConst8730[];
-extern "C" unsigned char Vp6FilterConst8740[];
-extern "C" unsigned char Vp6FilterConst8750[];
-extern "C" unsigned char Vp6FilterConst8760[];
-extern "C" unsigned char Vp6FilterConst8770[];
+// Vp6FilterConst8730: matched references place it at VA 0xdb8000; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8730[16] = {
+	64, 0, 64, 0, 64, 0, 64, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8740: matched references place it at VA 0xdb8010; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8740[16] = {
+	64, 64, 64, 64, 64, 64, 64, 64,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8750: matched references place it at VA 0xdb8020; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8750[16] = {
+	32, 32, 32, 32, 32, 32, 32, 32,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8760: matched references place it at VA 0xdb8030; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8760[16] = {
+	127, 127, 127, 127, 127, 127, 127, 127,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
+// Vp6FilterConst8770: matched references place it at VA 0xdb8040; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8770[16] = {
+	128, 128, 128, 128, 128, 128, 128, 128,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
 extern "C" unsigned char Vp6FilterConst8790[];
 
 extern "C" void __cdecl Rva009BE180Vp6FilterWideV2(

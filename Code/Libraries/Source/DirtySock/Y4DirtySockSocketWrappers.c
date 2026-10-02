@@ -210,7 +210,21 @@ void Rva007FEE10(void)
 void *g_Rva0130AB58Head = 0;
 // g_Rva0130AB5CKillList: matched references place it at VA 0xe0a574 (retail .data initial value 0).
 struct Rva007FD4E0Socket *g_Rva0130AB5CKillList = 0;
-extern char g_Rva012C3C88Format[];
+// g_Rva012C3C88Format: matched references place it at VA 0xdd83e0; retail contents, sized to the
+// 0x58-byte gap before the next known global there.
+char g_Rva012C3C88Format[88] = {
+	100, 105, 114, 116, 121, 110, 101, 116,
+	119, 105, 110, 58, 32, 119, 97, 114,
+	110, 105, 110, 103, 44, 32, 116, 114,
+	121, 105, 110, 103, 32, 116, 111, 32,
+	99, 108, 111, 115, 101, 32, 115, 111,
+	99, 107, 101, 116, 32, 48, 120, 37,
+	48, 56, 120, 32, 116, 104, 97, 116,
+	32, 105, 115, 32, 110, 111, 116, 32,
+	105, 110, 32, 116, 104, 101, 32, 115,
+	111, 99, 107, 101, 116, 32, 108, 105,
+	115, 116, 10, 0, -1, -1, -1, -1,
+};
 int Rva007FE780(const char *format, ...);
 int __stdcall closesocket(unsigned int socket);
 
@@ -833,7 +847,15 @@ __declspec(dllimport) int __stdcall CreateThread(
 __declspec(dllimport) void __stdcall SetThreadPriority(int thread, int priority);
 __declspec(dllimport) int __stdcall CloseHandle(int object);
 
-extern char g_Rva012C3CE0Message[];
+// g_Rva012C3CE0Message: matched references place it at VA 0xdd8438; retail contents, sized to the
+// 0x24-byte gap before the next known global there.
+char g_Rva012C3CE0Message[36] = {
+	87, 97, 114, 110, 105, 110, 103, 58,
+	32, 78, 101, 116, 67, 114, 105, 116,
+	84, 32, 105, 115, 32, 116, 111, 111,
+	32, 115, 109, 97, 108, 108, 33, 10,
+	0, 0, 0, 0,
+};
 int Rva007FE780(const char *format, ...);
 
 void Rva007FE520(int priority)
@@ -927,9 +949,21 @@ int __cdecl Rva007FF080(const char *text)
 int __cdecl sprintf(char *buffer, const char *format, ...);
 // g_Rva0130ACBCGroupMask: matched references place it at VA 0xe0a6d4 (zero-filled .bss).
 int g_Rva0130ACBCGroupMask = 0;
-extern char g_Rva012C3D04Format[];
-extern char g_Rva012C3D0CFormat[];
-extern char g_Rva012C3D14Format[];
+// g_Rva012C3D04Format: matched references place it at VA 0xdd845c; retail contents, sized to the
+// 0x8-byte gap before the next known global there.
+char g_Rva012C3D04Format[8] = {
+	37, 48, 52, 120, 0, 0, 0, 0,
+};
+// g_Rva012C3D0CFormat: matched references place it at VA 0xdd8464; retail contents, sized to the
+// 0x8-byte gap before the next known global there.
+char g_Rva012C3D0CFormat[8] = {
+	37, 48, 50, 120, 0, 0, 0, 0,
+};
+// g_Rva012C3D14Format: matched references place it at VA 0xdd846c; retail contents, sized to the
+// 0x8-byte gap before the next known global there.
+char g_Rva012C3D14Format[8] = {
+	37, 115, 58, 32, 37, 115, 10, 0,
+};
 extern char g_Rva012C3D1CFormat[];
 
 void Rva007FE880(int group, const unsigned char *buffer, int length)

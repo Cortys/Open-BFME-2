@@ -17,7 +17,12 @@ extern "C" unsigned char Vp6FilterConst8740[];
 extern "C" unsigned char Vp6FilterConst8750[];
 extern "C" unsigned char Vp6FilterConst8760[];
 extern "C" unsigned char Vp6FilterConst8770[];
-extern "C" unsigned char Vp6FilterConst8780[];
+// Vp6FilterConst8780: matched references place it at VA 0xdb8050; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8780[16] = {
+	223, 223, 223, 223, 223, 223, 223, 223,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
 
 extern "C" void __cdecl Rva009BD750Vp6FilterWide(
 	void *unused, void *sourceArgument, void *destinationArgument,

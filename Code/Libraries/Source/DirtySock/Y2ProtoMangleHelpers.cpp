@@ -1279,8 +1279,20 @@ struct Rva0130AB60Map
 
 // g_Rva0130AB60: matched references place it at VA 0xe0a578 (retail .data initial value 0).
 void * g_Rva0130AB60 = 0;
-extern char g_Rva012C3C60Message[];
-extern char g_Rva012C3C7CMessage[];
+// g_Rva012C3C60Message: matched references place it at VA 0xdd83b8; retail contents, sized to the
+// 0x1c-byte gap before the next known global there.
+char g_Rva012C3C60Message[28] = {
+	100, 105, 114, 116, 121, 110, 101, 116,
+	119, 105, 110, 58, 32, 97, 100, 100,
+	114, 32, 114, 101, 109, 97, 112, 32,
+	37, 115, 0, 0,
+};
+// g_Rva012C3C7CMessage: matched references place it at VA 0xdd83d4; retail contents, sized to the
+// 0xc-byte gap before the next known global there.
+char g_Rva012C3C7CMessage[12] = {
+	32, 116, 111, 32, 37, 115, 10, 0,
+	0, 0, 0, 0,
+};
 
 extern "C" void *Rva007FD660( char *temp, void *address )
 {

@@ -9,8 +9,16 @@ inline void *operator new(size_t, void *place)
 }
 extern void *g_00DBC46C[];
 extern int g_00C00960[];
-extern int g_00C00948[];
-extern int g_00C00930[];
+// g_00C00948: matched references place it at VA 0xc00948; retail contents, sized to the
+// 0x18-byte gap before the next known global there.
+int g_00C00948[6] = {
+	42, 48, 54, 540, 541, -1,
+};
+// g_00C00930: matched references place it at VA 0xc00930; retail contents, sized to the
+// 0x18-byte gap before the next known global there.
+int g_00C00930[6] = {
+	43, 49, 55, 542, 543, -1,
+};
 class WeaponTemplateSetHead
 {
 public:

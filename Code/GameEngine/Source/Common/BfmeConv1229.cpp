@@ -10,7 +10,14 @@ struct BfmeW1229
 
 extern BfmeW1229 g_bfmeWords1229[];
 extern signed char g_bfmeLookup1229[];
-extern unsigned char g_bfmeLens1229[];
+// g_bfmeLens1229: matched references place it at VA 0xddc440; retail contents, sized to the
+// 0x1c-byte gap before the next known global there.
+unsigned char g_bfmeLens1229[28] = {
+	2, 3, 4, 5, 7, 8, 9, 5,
+	11, 7, 13, 14, 5, 18, 4, 7,
+	3, 4, 5, 6, 4, 6, 9, 9,
+	8, 4, 0, 0,
+};
 
 extern "C" int bfmeHash1229(const char *str, unsigned int len)
 {

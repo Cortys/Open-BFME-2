@@ -30,8 +30,16 @@ struct Rva0049D3BCEntry
 	char _pad[3];
 };
 
-extern unsigned int g_00C51304[];
-extern unsigned int g_00C51314[];
+// g_00C51304: matched references place it at VA 0xc51304; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+unsigned int g_00C51304[4] = {
+	21, 25, 29, 33,
+};
+// g_00C51314: matched references place it at VA 0xc51314; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+unsigned int g_00C51314[4] = {
+	22, 26, 30, 34,
+};
 extern unsigned int g_00C51324[];
 
 class Rva0049D3BC

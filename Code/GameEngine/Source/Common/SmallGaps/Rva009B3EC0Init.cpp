@@ -1,5 +1,7 @@
 // ?initBlocksRva009B3EC0@@YAXPAX@Z
-extern int g_Rva009B3E40Arr0[];
+// g_Rva009B3E40Arr0: matched references place it at VA 0xdb7c28; zero-filled at retail, sized to the
+// 0x4-byte gap before the next known global there.
+int g_Rva009B3E40Arr0[1];
 extern int g_Rva009B3E40Arr1[];
 extern int g_Rva009B3E40Arr2[];
 extern int g_Rva009B3E40Arr3[];

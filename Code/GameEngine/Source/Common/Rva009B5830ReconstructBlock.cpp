@@ -29,7 +29,18 @@ struct Rva009B5830State
 extern void *g_bfmeSlotD84;
 extern void *g_bfmeSlotD88;
 extern void *g_bfmeSlotD8C;
-extern int g_rva00ED7770Vp6ModeDispatch[];
+// g_rva00ED7770Vp6ModeDispatch: matched references place it at VA 0xdb7040; retail contents, sized to the
+// 0xe8-byte gap before the next known global there.
+int g_rva00ED7770Vp6ModeDispatch[58] = {
+	0, 0, 1, 1, 1, 0, 1, 1,
+	1, 1, 0, 128, 0, 0, -4, 118,
+	16, -2, -7, 106, 34, -5, -8, 90,
+	53, -7, -8, 72, 72, -8, -7, 53,
+	90, -8, -5, 34, 106, -7, -2, 16,
+	118, -4, 128, 0, 112, 16, 96, 32,
+	80, 48, 64, 64, 48, 80, 32, 96,
+	16, 112,
+};
 
 typedef void (__cdecl *Rva009B5830ReconD84)(
 	void *, unsigned char *, unsigned char *, int, int);
