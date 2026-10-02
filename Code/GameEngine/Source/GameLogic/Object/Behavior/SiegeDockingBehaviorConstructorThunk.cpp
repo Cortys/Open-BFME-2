@@ -59,8 +59,8 @@ public:
 		m_updateState(-1)
 	{
 	}
-	virtual ~UpdateModule() {}
-
+	virtual ~UpdateModule();
+ 
 	void setWakeFrame(Object *object, unsigned int frame);
 
 protected:
