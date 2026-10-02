@@ -31,3 +31,31 @@ struct Rva004F6986
 Rva004F6986::~Rva004F6986()
 {
 }
+
+// Two more 8-byte holders of two TargetRef handles whose destructors match
+// ??1Rva004F6986's bytes but for the EH handler record. Owners keep their
+// addresses.
+
+// ??1Rva0044BA4E@@QAE@XZ, retail 0x0044BA4E, 61 bytes.
+struct Rva0044BA4E
+{
+	~Rva0044BA4E();
+	Rva004F6986Member m_00;
+	Rva004F6986Member m_04;
+};
+
+Rva0044BA4E::~Rva0044BA4E()
+{
+}
+
+// ??1Rva005F8447@@QAE@XZ, retail 0x005F8447, 61 bytes.
+struct Rva005F8447
+{
+	~Rva005F8447();
+	Rva004F6986Member m_00;
+	Rva004F6986Member m_04;
+};
+
+Rva005F8447::~Rva005F8447()
+{
+}

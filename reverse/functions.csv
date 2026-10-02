@@ -47334,3 +47334,7 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva007ACE20@@YAXXZ,,0x007ACE20,12,Code/GameEngine/Source/Common/System/GlobalChainCleanup.cpp,matched,atexit registration of rva007B7160; bytes equal rva007B5410 except the pushed cleanup
 ?rva007B74C0@@YAXXZ,,0x007B74C0,40,Code/GameEngine/Source/Common/System/GlobalChainCleanup.cpp,matched,atexit list cleanup over the .bss head VA 0xdfcec8 (defined here; no other reference); bytes equal rva007B9A50 except the head operand
 ?rva007ACF90@@YAXXZ,,0x007ACF90,12,Code/GameEngine/Source/Common/System/GlobalChainCleanup.cpp,matched,atexit registration of rva007B74C0; bytes equal rva007B5410 except the pushed cleanup
+??1Rva0044BA4E@@QAE@XZ,,0x0044BA4E,61,Code/GameEngine/Source/Common/Rva004F6986Dtor.cpp,matched,two-TargetRef holder dtor: bytes equal ??1Rva004F6986 except the EH handler record
+??1Rva005F8447@@QAE@XZ,,0x005F8447,61,Code/GameEngine/Source/Common/Rva004F6986Dtor.cpp,matched,two-TargetRef holder dtor: bytes equal ??1Rva004F6986 except the EH handler record
+??1Rva001EF50E@@QAE@XZ,,0x001EF50E,68,Code/GameEngine/Source/Common/RvaAsciiStringTripleDtors.cpp,matched,three-AsciiString record dtor: bytes equal ??1AnimSet@GenericObjectCreationNugget except the EH handler record
+??1Rva005FEBC8@@QAE@XZ,,0x005FEBC8,68,Code/GameEngine/Source/Common/RvaAsciiStringTripleDtors.cpp,matched,three-AsciiString record dtor: bytes equal ??1AnimSet@GenericObjectCreationNugget except the EH handler record
