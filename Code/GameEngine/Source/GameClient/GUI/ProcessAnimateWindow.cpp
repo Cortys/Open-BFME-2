@@ -111,23 +111,7 @@ ProcessAnimateWindowSlideFromRight::ProcessAnimateWindowSlideFromRight( void )
 ProcessAnimateWindowSlideFromRight::~ProcessAnimateWindowSlideFromRight( void ) { }
 
 //-----------------------------------------------------------------------------
-// ?initReverseAnimateWindow@ProcessAnimateWindowSlideFromRight@@ present-unmatched
-void ProcessAnimateWindowSlideFromRight::initReverseAnimateWindow( AnimateWindow *animWin, UnsignedInt maxDelay )
-{
-	if(!animWin)
-	{
-		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
-		return;
-	}
-	if(animWin->getDelay() > 0)
-		animWin->setStartTime(timeGetTime() + (maxDelay - animWin->getDelay()));
-	Coord2D vel = animWin->getVel();
-	vel.x *= -1;
-	vel.y *= -1;
-	animWin->setVel( vel );	
-	animWin->setFinished( FALSE );
-
-}
+// Right reverse initialization is defined with RightFast in ProcessAnimateWindowRightFastInitReverse.cpp.
 
 //-----------------------------------------------------------------------------
 // ?initAnimateWindow@ProcessAnimateWindowSlideFromRight@@ present-unmatched

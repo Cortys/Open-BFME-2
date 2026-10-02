@@ -77,3 +77,22 @@ void ProcessAnimateWindowSlideFromRightFast::initReverseAnimateWindow( AnimateWi
 	tempPos.y = pos.y;
 	animWin->setStartPos(tempPos);
 }
+
+// Right ctor RVA 0x005C5069 installs VA 0x00C7484C, slot 2 at
+// RVA 0x005C50A8 (106 bytes). The same copy/lifetime delta applies.
+void ProcessAnimateWindowSlideFromRight::initReverseAnimateWindow( AnimateWindow *animWin, UnsignedInt maxDelay )
+{
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return;
+	}
+	if(animWin->getDelay() > 0)
+		animWin->setStartTime(timeGetTime() + (maxDelay - animWin->getDelay()));
+	Coord2D flipped;
+	{ const Coord2D& vel = animWin->getVel();
+	  flipped.x = vel.x * -1; flipped.y = vel.y * -1; }
+	animWin->setVel(flipped);	
+	animWin->setFinished( FALSE );
+
+}
