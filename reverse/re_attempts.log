@@ -5514,3 +5514,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0054F3E2@Rva0054F434@@UAEPAXPAX@Z	0x0054F3E2	27	partial	mov-vs-and zero local plus3B frame ok no EH no nullcheck t=18 model=muse-02 score=0.91 stash=reverse/attempts/0x0054f3e2.cpp
 FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string compare plus _M_new_node int-pair row type mismatch needs node layout and owner t=8 model=muse-10
 ?rva00273808@Drawable@@QAEXXZ	0x00273808	457	blocked	457B Drawable x87 SSE mixed 6 globals nested loops needs GlobalData InGameUI TacticalView Display layouts t=8 model=muse-01
+?rva004BE781@Rva004BE781@@QAEXPAX@Z	0x004BE781	315	blocked	eh-throw two-loop bitflags body needs full interface and string layout t=12 model=muse-03
