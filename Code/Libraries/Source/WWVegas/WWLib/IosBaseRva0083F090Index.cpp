@@ -11,7 +11,9 @@ template<int N> struct _STLP_mutex_spin
 };
 }
 
-extern volatile long indexLockRva0083F090;
+// Target lock word at VA 0x00DDEF48 in zero-filled .data, immediately after
+// the matched nextIndexRva0083F090 global at VA 0x00DDEF44.
+volatile long indexLockRva0083F090;
 extern int nextIndexRva0083F090;
 // nextIndexRva0083F090: matched references place it at VA 0xddef44 (zero-filled .bss).
 int nextIndexRva0083F090;
