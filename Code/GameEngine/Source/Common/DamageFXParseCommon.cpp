@@ -27,9 +27,48 @@ public:
 
 extern "C" __declspec(dllimport) int __cdecl _strcmpi(const char *a, const char *b);
 
-// Descriptive alias of the retail damage-name pointer array at VA 0xDBFFF0
-// (RVA 0x9BFFF0); the push is DIR32-masked so only the reference matters.
-extern const char * const DamageFXDamageTypeNames[];
+// Name order from the retail .data array at VA 0x00DBFFF0 (RVA 0x009BFFF0).
+static const char damageTypeName00[] = "SWORD_SLASH";
+static const char damageTypeName01[] = "WITCH_KING_MORGUL_BLADE";
+static const char damageTypeName02[] = "REFLECTED";
+static const char damageTypeName03[] = "GOOD_ARROW_PIERCE";
+static const char damageTypeName04[] = "EVIL_ARROW_PIERCE";
+static const char damageTypeName05[] = "SMALL_ROCK";
+static const char damageTypeName06[] = "BIG_ROCK";
+static const char damageTypeName07[] = "CLUBBING";
+static const char damageTypeName08[] = "FLAME";
+static const char damageTypeName09[] = "MAGIC";
+static const char damageTypeName10[] = "BALROG_SWORD";
+static const char damageTypeName11[] = "BALROG_WHIP";
+static const char damageTypeName12[] = "ELECTRIC";
+static const char damageTypeName13[] = "GIMLI_LEAP";
+static const char damageTypeName14[] = "STRUCTURAL";
+static const char damageTypeName15[] = "FLOOD_HORSE";
+static const char damageTypeName16[] = "BOLT";
+static const char damageTypeName17[] = "BOLT2";
+static const char damageTypeName18[] = "MAGIC2";
+static const char damageTypeName19[] = "MAGIC3";
+static const char damageTypeName20[] = "FIRE1";
+static const char damageTypeName21[] = "FIRE2";
+static const char damageTypeName22[] = "FIRE3";
+static const char damageTypeName23[] = "SPARKS1";
+static const char damageTypeName24[] = "SPARKS2";
+static const char damageTypeName25[] = "EARTH1";
+static const char damageTypeName26[] = "EARTH2";
+static const char damageTypeName27[] = "POISON";
+static const char damageTypeName28[] = "TORNADO";
+static const char damageTypeName29[] = "UNDEFINED";
+
+extern const char * const DamageFXDamageTypeNames[] = {
+	damageTypeName00, damageTypeName01, damageTypeName02, damageTypeName03,
+	damageTypeName04, damageTypeName05, damageTypeName06, damageTypeName07,
+	damageTypeName08, damageTypeName09, damageTypeName10, damageTypeName11,
+	damageTypeName12, damageTypeName13, damageTypeName14, damageTypeName15,
+	damageTypeName16, damageTypeName17, damageTypeName18, damageTypeName19,
+	damageTypeName20, damageTypeName21, damageTypeName22, damageTypeName23,
+	damageTypeName24, damageTypeName25, damageTypeName26, damageTypeName27,
+	damageTypeName28, damageTypeName29, 0
+};
 
 #define DAMAGE_NUM_TYPES 30
 #define LEVEL_FIRST 0
