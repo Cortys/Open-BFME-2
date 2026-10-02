@@ -43,7 +43,7 @@ public:
 	virtual void Delete_This();
 
 protected:
-	virtual ~RefCountClass() {}
+	virtual ~RefCountClass();
 
 private:
 	int NumRefs;
@@ -57,6 +57,7 @@ class ShareBufferClass : public RefCountClass
 {
 public:
 	ShareBufferClass(int count, const char *msg, int alignment = 0);
+	~ShareBufferClass();
 	Type *Get_Array(void) { return Array; }
 	int Get_Count(void) { return Count; }
 
@@ -72,10 +73,16 @@ private:
 };
 
 // upstream layout: reference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2/meshmatdesc.h
-class UVBufferClass : public ShareBufferClass<Vector2>
+extern const void *const g_007CE338[];
+class __declspec(novtable) UVBufferClass : public ShareBufferClass<Vector2>
 {
 public:
-	UVBufferClass(int count, const char *msg) : ShareBufferClass<Vector2>(count, msg), CRC(0xFFFFFFFF) {}
+	UVBufferClass(int count, const char *msg) : ShareBufferClass<Vector2>(count, msg)
+	{
+		*(const void **)this = g_007CE338;
+		CRC = 0xFFFFFFFF;
+	}
+	virtual ~UVBufferClass();
 	unsigned Get_CRC(void) { return CRC; }
 	void Update_CRC(void) { CRC = CRC_Memory((const unsigned char *)Get_Array(), Get_Count() * sizeof(Vector2), 0); }
 
