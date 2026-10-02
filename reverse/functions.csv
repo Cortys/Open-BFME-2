@@ -48448,3 +48448,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005F2FEF@Rva005F2FEF@@QAEXABVUnicodeString@@@Z,,0x005F2FEF,191,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,MemberName show plus cached setter via AptCall
 ?rva005F2897@Rva005F2FEF@@QAEXXZ,,0x005F2897,188,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,MemberName hide plus clear cached via empty
 ?Rva0041154FHide@@YAXXZ,,0x0041154F,90,Code/GameEngine/Source/GameClient/Rva0041154F.cpp,matched,first-next walk via 0x427195 0x411084 winHide winSetStatus
+?Rva00525235Fire@@YAHPAX0PBD1PAH2@Z,,0x00525235,152,Code/GameEngine/Source/Common/Rva00525235Fire.cpp,matched,unlock via double Get 0x00222834 plus AptCall 0x00222B19 argc 2
