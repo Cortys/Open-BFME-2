@@ -48167,3 +48167,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva002C5FD9@Rva002C5FD9@@QAEPAVPlayer@@XZ,,0x002C5FD9,15,Code/GameEngine/Source/Common/Rva002C5FD9Get.cpp,matched,null-checks +0xc then tail-jmps to rowed 0x0050539C
 ??0Rva004E18A2@@QAE@ABV0@@Z,,0x0052BB6D,45,Code/GameEngine/Source/Common/Rva004E18A2CopyCtor.cpp,matched,copy ctor vtable 0x00861C30 via rowed 0x000A8C7C caller 0x0052BD22
 ?rva00598B2A@Rva00598B2A@@QAEXXZ,,0x00598B2A,78,Code/GameEngine/Source/Common/Rva00598B2AClear.cpp,matched,thiscall tree list vector clear via rowed callees
+?rva00419154@Rva0041811D@@QAEPAXXZ,,0x00419154,46,Code/GameEngine/Source/GameClient/Rva0041811DGet.cpp,matched,default CombatChain getter same 46B shape as sibling 0x00418825

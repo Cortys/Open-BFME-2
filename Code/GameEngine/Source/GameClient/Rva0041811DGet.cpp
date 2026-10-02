@@ -57,6 +57,7 @@ class Rva0041811D
 public:
 	void *rva0041811D(const AsciiString *key);
 	void *rva00418825();
+	void *rva00419154();
 private:
 	char m_pad[0xC];
 	Rva00056F61 m_table;
@@ -71,6 +72,17 @@ void *Rva0041811D::rva0041811D(const AsciiString *key)
 void *Rva0041811D::rva00418825()
 {
 	AsciiString tmp("AutoResolve_DefaultBody");
+	void *res = rva0041811D(&tmp);
+	((StringBase<char> *)&tmp)->releaseBuffer();
+	return res;
+}
+// ?rva00419154@Rva0041811D@@QAEPAXXZ, retail 0x00419154, 46 bytes. Default
+// CombatChain getter via rowed 0x0041811D with DefaultCombatChain string.
+// Evidence: same 46B shape as sibling 0x00418825; callers 0x00419406
+// and jmp 0x0033A684; string literal AutoResolve_DefaultCombatChain.
+void *Rva0041811D::rva00419154()
+{
+	AsciiString tmp("AutoResolve_DefaultCombatChain");
 	void *res = rva0041811D(&tmp);
 	((StringBase<char> *)&tmp)->releaseBuffer();
 	return res;
