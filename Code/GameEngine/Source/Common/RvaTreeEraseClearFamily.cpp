@@ -531,6 +531,28 @@ void Rva0043B2E2::rva0043B334()
 	m_04Flag = 0;
 }
 
+// ?Rva0043B30FNewNode@@YGPAXPBX@Z @0x0043B30F 37B: tree node allocator for the
+// 0x9C-byte nodes of owner Rva0043B2E2 (value Rva0043B23E pair at +0x10).
+// Evidence: allocate 0x9C through rowed byte allocator 0x000307F0 then rowed
+// Construct 0x0043B2D0 at +0x10 from the arg; callers at 0x0043B3C9/0x0043B3E2
+// in 0x0043B3A1; ret 4 so __stdcall free function following Rva002ACFD6NewNode.
+namespace _STL {
+template <class _Tp> class allocator
+{
+public:
+	static _Tp *allocate(unsigned int, const void *);
+};
+}
+class Rva0043B23E;
+void __cdecl Rva0043B2D0Construct(class Rva0043B23E *, const class Rva0043B23E &);
+
+void *__stdcall Rva0043B30FNewNode(const void *src)
+{
+	char *node = _STL::allocator<char>::allocate(0x9C, 0);
+	Rva0043B2D0Construct((Rva0043B23E *)(node + 0x10), *(const Rva0043B23E *)src);
+	return node;
+}
+
 // owner Rva0043EA9C: erase 0x0043EA9C, clear 0x0043F124
 class Rva0043EA9C
 {
