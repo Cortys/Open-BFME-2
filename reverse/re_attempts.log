@@ -5395,3 +5395,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00324001@Rva00324001@@QAEHH@Z	0x00324001	165	blocked	uses incoming esi without setup shares caller esi at 0x0032550D single push no standard convention t=15 model=muse-05
 ?Rva003243F3Update@@YAXPAVGameWindow@@PAVGameFont@@@Z	0x003243F3	171	partial	two zero-inits mov ebp-8 and mov ebp-4 scheduled after jle not between cmp and jle t=25 model=muse-05 score=0.95 stash=reverse/attempts/0x003243f3.cpp
 ?Rva00324C61Layout@@YAXPAVGameWindow@@@Z	0x00324C61	291	partial	push order esi-edi vs ebx-esi and total zero in edi not ebx; innerCount via load not mem cmp; WM 0x120 block inline not cold outlined after ret; tail accum in eax not ecx t=22 model=muse-05 score=0.91 stash=reverse/attempts/0x00324c61.cpp
+?Rva00324AE5Update@@YAXPAVGameWindow@@H_N@Z	0x00324AE5	84	blocked	single register choice add eax mem vs mov ecx plus add eax ecx t=12 model=muse-05 (stash 0.97 kept)
+?Rva00324B39Add@@YAXPAVGameWindow@@F_N@Z	0x00324B39	86	blocked	plus2B single extra xor edx before word reload vs plain mov dx t=10 model=muse-05 (stash 0.97 kept)
