@@ -16,7 +16,7 @@ public:
 };
 
 // ?Clamp_Color@DX8Wrapper@@SAXAAVVector4@@@Z
-void DX8Wrapper::Clamp_Color(Vector4 &color)
+inline void DX8Wrapper::Clamp_Color(Vector4 &color)
 {
 	__asm
 	{
@@ -61,3 +61,15 @@ void DX8Wrapper::Clamp_Color(Vector4 &color)
 		mov dword ptr[esi+12],edi
 	}
 }
+
+// This file owns the row, but other files emit the same function as an inline
+// copy they cannot stop emitting, so a strong definition here was a duplicate
+// symbol in the linked build. The anchor below emits the select-any copy for
+// the ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitDX8WrapperClampColor@@YAXPAVDX8Wrapper@@AAVVector4@@@Z present-unmatched
+void bfmeEmitDX8WrapperClampColor(DX8Wrapper *p, Vector4 &color)
+{
+	p->Clamp_Color(color);
+}
+#pragma inline_depth()
