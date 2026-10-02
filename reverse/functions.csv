@@ -49046,3 +49046,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva00276223@Rva00276223@@QAEXVAsciiString@@HH@Z,,0x00276223,107,Code/GameEngine/Source/Common/Rva00276223Leaf.cpp,matched,leaf array at 0x14C via rowed StringBase copy and releaseBuffer caller 0x001E08C5
 ??0Rva00577936@@QAE@H@Z,,0x005782F4,71,Code/GameEngine/Source/Common/Rva00577936Ctor.cpp,matched,ctor stores vtable then new Rva00577F77 via rowed ctor
 ?rva002761F3@Drawable@@QAEXPBH0@Z,,0x002761F3,48,Code/GameEngine/Source/GameClient/DrawableRva002761F3.cpp,matched,Drawable pendingClear pendingSet via rowed 0x00274176 caller 0x000BFC16
+?rva002768AC@Rva002768AC@@QAEXXZ,,0x002768AC,166,Code/GameEngine/Source/GameClient/Rva002768AC.cpp,matched,Tornado bone via rowed bone positions and pinned transform caller 0x00276952

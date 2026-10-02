@@ -1,7 +1,5 @@
 // ?rva002768AC@Rva002768AC@@QAEXXZ
 // partial score=0.96 date=2026-09-29
-// ?rva002768AC@Rva002768AC@@QAEXXZ
-// partial score=0.96 date=2026-09-29
 // cl: /O1 /DNDEBUG /MD
 // ?rva002768AC@Rva002768AC@@QAEXXZ @0x002768AC 166B
 // Tornado-bone update: refresh Matrix3D at +0x10 from B_TORNADO bone or transform.
@@ -28,7 +26,7 @@ public:
 	const Matrix3D *getTransformMatrix() const;
 };
 
-class TimeGlobal
+class ClientFrameSubsystem
 {
 public:
 	virtual void f00();
@@ -65,7 +63,7 @@ public:
 	virtual unsigned int GetTime();
 };
 
-extern TimeGlobal *TheTimeGlobal;
+extern ClientFrameSubsystem *TheGameClient;
 
 class Rva002768AC
 {
@@ -79,33 +77,28 @@ private:
 	Matrix3D m_mat10;
 };
 
-// ?rva002768AC@Rva002768AC@@QAEXXZ present-unmatched
 void Rva002768AC::rva002768AC()
 {
 	if (m_drawC == 0)
 		return;
-	unsigned int t = TheTimeGlobal->GetTime();
-	if (m_time4 >= t)
+	if (m_time4 >= TheGameClient->GetTime())
 		return;
-	t = TheTimeGlobal->GetTime();
-	m_time4 = t;
-	int n = m_drawC->getCurrentClientBonePositions("B_TORNADO", 1, 0, &m_mat10, 0x10);
-	m_count8 = n;
-	if (n != 0)
+	m_time4 = TheGameClient->GetTime();
+	Matrix3D *mat = &m_mat10;
+	if ((m_count8 = m_drawC->getCurrentClientBonePositions("B_TORNADO", 1, 0, mat, 0x10)) != 0)
 		return;
 	const Matrix3D *tm = m_drawC->getTransformMatrix();
-	m_mat10.v[0] = tm->v[0];
-	m_mat10.v[1] = tm->v[1];
-	m_mat10.v[2] = tm->v[2];
-	m_mat10.v[3] = tm->v[3];
-	m_mat10.v[4] = tm->v[4];
-	m_mat10.v[5] = tm->v[5];
-	m_mat10.v[6] = tm->v[6];
-	m_mat10.v[7] = tm->v[7];
-	m_mat10.v[8] = tm->v[8];
-	m_mat10.v[9] = tm->v[9];
-	m_mat10.v[10] = tm->v[10];
-	m_mat10.v[11] = tm->v[11];
+	mat->v[0] = tm->v[0];
+	mat->v[1] = tm->v[1];
+	mat->v[2] = tm->v[2];
+	mat->v[3] = tm->v[3];
+	mat->v[4] = tm->v[4];
+	mat->v[5] = tm->v[5];
+	mat->v[6] = tm->v[6];
+	mat->v[7] = tm->v[7];
+	mat->v[8] = tm->v[8];
+	mat->v[9] = tm->v[9];
+	mat->v[10] = tm->v[10];
+	mat->v[11] = tm->v[11];
 	m_count8 = 1;
 }
-
