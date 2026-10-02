@@ -173,3 +173,7 @@ template <> __declspec(noinline) inline void vector<Rva0087FDC0Element>::_M_inse
 
 template void _STL::vector<Rva0087FDC0Element>::_M_fill_insert(
 	Rva0087FDC0Element *, unsigned, const Rva0087FDC0Element &);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?insert@BfmeVec60@@QAEXPAUBfmeElem60@@IABU2@@Z=?_M_fill_insert@?$vector@URva0087FDC0Element@@V?$allocator@URva0087FDC0Element@@@_STL@@@_STL@@QAEXPAURva0087FDC0Element@@IABU3@@Z")

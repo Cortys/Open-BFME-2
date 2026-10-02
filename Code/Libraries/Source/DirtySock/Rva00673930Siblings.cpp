@@ -25,3 +25,8 @@ void Rva00687940(void)
 }
 
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:_Rva008173A0Op=_Rva006832A0")
+#pragma comment(linker, "/alternatename:?Rva0081BA40@@YAXXZ=_Rva00687940")

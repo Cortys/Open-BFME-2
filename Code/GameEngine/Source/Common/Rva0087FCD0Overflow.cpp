@@ -110,3 +110,7 @@ void BfmeVecCD::overflow(BfmeElemCD *pos, const BfmeElemCD &value,
 	_M_finish = newFinish;
 	_M_end_of_storage = newStart + length;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?overflow@BfmeVec50@@QAEXPAUBfmeElem50@@ABU2@ABUBfmeFalse50@@I_N@Z=?overflow@BfmeVecCD@@QAEXPAUBfmeElemCD@@ABU2@ABUBfmeFalseCD@@I_N@Z")
