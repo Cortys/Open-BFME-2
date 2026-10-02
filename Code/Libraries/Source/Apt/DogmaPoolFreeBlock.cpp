@@ -3,7 +3,10 @@
 #include <string.h>
 extern void (__cdecl *g_bfmeAptAssertAtE17734)(const char *, const char *, int);
 extern int g_bfmeAptBreakOnAssertAtDDC01C;
-extern void (__cdecl *g_bfmeAptFreeSizeAtE17730)(void *, unsigned int);
+// g_bfmeAptAllocAtE17728: VA 0xe17728 (zero-filled .data tail).
+void *(__cdecl *g_bfmeAptAllocAtE17728)(unsigned int) = 0;
+// g_bfmeAptFreeSizeAtE17730: VA 0xe17730 (zero-filled .data tail).
+void (__cdecl *g_bfmeAptFreeSizeAtE17730)(void *, unsigned int) = 0;
 void __debugbreak();
 #pragma intrinsic(__debugbreak)
 struct _DOGMA_MemPool {

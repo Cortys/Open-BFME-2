@@ -17,6 +17,9 @@ struct BfmeGuidTSA
 };
 
 extern BfmeGuidTSA g_bfmeIidTSA;
+// This unit's byte view of the IID; the storage is the GUID that
+// WebBrowserComCreateInstance.cpp defines at VA 0xbd4e3c.
+#pragma comment(linker, "/alternatename:?g_bfmeIidTSA@@3UBfmeGuidTSA@@A=?g_bfmeIidTSA@@3U_GUID@@A")
 
 struct Rva00958910Object;
 

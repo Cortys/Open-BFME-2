@@ -18,7 +18,8 @@ extern Rva00222A8BTarget *TheRva00222A8BTarget;
 // their own comments record. The two are not the same object, so this one
 // carries its own address-derived name; sharing one name made
 // verify_dir32_consistency fail with bases ['0xdc06a0', '0xdc1a0c'].
-extern void *TheRva009C1A0COwner;
+// TheRva009C1A0COwner: VA 0xdc1a0c (.data); retail's initial value is -1.
+void *TheRva009C1A0COwner = (void *)-1;
 
 void setUiCallbackOwner(void *owner)
 {
