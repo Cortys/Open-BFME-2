@@ -33,14 +33,8 @@
 #include <new>      // needed for placement new prototype
 
 // DebugIONet::DebugIONet: defined in DebugIONetConstructorThunk.cpp (its row's unit).
-
-// byte-exact reconstruction: Code/GameEngine/Source/Common/DebugIONetDestructorThunk.cpp
-// ??1DebugIONet@@UAE@XZ present-unmatched
-DebugIONet::~DebugIONet()
-{
-  if (m_pipe!=INVALID_HANDLE_VALUE)
-    CloseHandle(m_pipe);
-}
+// DebugIONet::~DebugIONet: retail 0x0003F4F0 lives in DebugIONetPipeDestructorThunk.cpp
+// as ??1Rva0088FB30NetIO; this TU must not emit its own copy (LINK-COMDAT).
 
 int DebugIONet::Read(char *buf, int maxchar)
 {
