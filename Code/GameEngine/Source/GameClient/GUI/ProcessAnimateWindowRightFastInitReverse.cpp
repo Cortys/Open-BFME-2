@@ -34,6 +34,8 @@
 #undef Coord2D
 struct Coord2D {
     Coord2D() {}
+    // Matched empty destructor: coord2d.cpp, RVA 0x000B3FD0.
+    ~Coord2D() {}
     Coord2D(const Coord2D& other): x(other.x), y(other.y) {}
     float x,y;
 };
@@ -90,8 +92,11 @@ void ProcessAnimateWindowSlideFromRight::initReverseAnimateWindow( AnimateWindow
 	if(animWin->getDelay() > 0)
 		animWin->setStartTime(timeGetTime() + (maxDelay - animWin->getDelay()));
 	Coord2D flipped;
-	{ const Coord2D& vel = animWin->getVel();
-	  flipped.x = vel.x * -1; flipped.y = vel.y * -1; }
+	{
+		const Coord2D& vel = animWin->getVel();
+		flipped.x = vel.x * -1;
+		flipped.y = vel.y * -1;
+	}
 	animWin->setVel(flipped);
 	animWin->setFinished( FALSE );
 
@@ -117,4 +122,71 @@ void ProcessAnimateWindowSlideFromTopFast::initReverseAnimateWindow( AnimateWind
 	}
 	animWin->setVel(flipped);
 
+}
+
+// Same display view as the matched Spiral constructor: target slot 0x40.
+class BFMEDisplayWidthSlot
+{
+public:
+	virtual ~BFMEDisplayWidthSlot();
+	virtual void _slot001();
+	virtual void _slot002();
+	virtual void _slot003();
+	virtual void _slot004();
+	virtual void _slot005();
+	virtual void _slot006();
+	virtual void _slot007();
+	virtual void _slot008();
+	virtual void _slot009();
+	virtual void _slot010();
+	virtual void _slot011();
+	virtual void _slot012();
+	virtual void _slot013();
+	virtual void _slot014();
+	virtual void _slot015();
+	virtual unsigned getWidth();
+};
+
+// BottomTimed ctor 0x005C4FEF installs VA 0x00C7481C, slot 2 at
+// 0x005C59AC (140 bytes); restPos +0x20/+0x24 and window +0x28 agree.
+// The by-value velocity copy retains its argument home because Coord2D
+// has an explicit destructor, even though that destructor has no operations.
+void ProcessAnimateWindowSlideFromBottomTimed::initReverseAnimateWindow( AnimateWindow *animWin, UnsignedInt maxDelay )
+{
+	ICoord2D restPos = {0,0};
+	ICoord2D startPos = {0,0};
+	ICoord2D curPos = {0,0};
+	ICoord2D endPos = {0,0};
+	Coord2D vel; vel.x = 0.0f; vel.y = 0.0f;
+
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return;
+	}
+
+	// it's set that the window is passed in as it's current position being it's rest position
+	// so save off the rest position
+	GameWindow *win = animWin->getGameWindow();
+	if(!win)
+	{
+		DEBUG_ASSERTCRASH( win, ("animWin contains a NULL Pointer for it's GameWindow... Whatup wit dat?"));
+		return;
+	}
+	restPos = animWin->getRestPos();
+	startPos.x = restPos.x;
+	curPos.y = startPos.y = restPos.y;
+
+	//set the initial positions for the window. In this case, off the Bottom of the screen
+	Int travelDistance = reinterpret_cast<BFMEDisplayWidthSlot *>(TheDisplay)->getWidth();// / 4 * 3;
+	endPos.x = curPos.x = restPos.x;
+	endPos.y = restPos.y + travelDistance;
+
+	//set the window's position to the new start positions.
+	win->winSetPosition(startPos.x, startPos.y);
+
+	UnsignedInt now = timeGetTime();
+
+	DEBUG_LOG(("initReverseAnimateWindow at %d (%d->%d)\n", now, now, now + m_maxDuration));
+	animWin->setAnimData(startPos, endPos, curPos, restPos, vel, now, now + m_maxDuration);
 }
