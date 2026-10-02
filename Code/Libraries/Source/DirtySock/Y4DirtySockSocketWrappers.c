@@ -1049,3 +1049,14 @@ int Rva007FEF80(void)
 
 	return g_Rva012C3D24Offset;
 }
+
+/* Callers elsewhere reach bodies in this unit through spellings pinned to the same
+   retail address (same cdecl/thiscall ABI); bind them here. */
+#pragma comment(linker, "/alternatename:?Rva007FEA00Tick@@YAIXZ=_Rva007FEA00")
+#pragma comment(linker, "/alternatename:?Rva007FD3F0SocketClose@@YAXPAX@Z=_Rva007FD3F0")
+#pragma comment(linker, "/alternatename:?Rva007FD510Bind@@YAHPAXPBXH@Z=_Rva007FD510")
+#pragma comment(linker, "/alternatename:?Rva007FD920Send@@YAHPAXPBDHH1H@Z=_Rva007FD920")
+#pragma comment(linker, "/alternatename:?Rva007FD2D0SocketOpen@@YAPAXHHH@Z=_Rva007FD2D0")
+#pragma comment(linker, "/alternatename:?Rva007FD4E0SocketShutdown@@YAXPAXH@Z=_Rva007FD4E0")
+#pragma comment(linker, "/alternatename:?Rva007FDB60SocketInfo@@YAXPAXH0H@Z=_Rva007FDB60")
+#pragma comment(linker, "/alternatename:?Rva007FE310SocketHost@@YAXPAURva00804440SockAddr@@H0H@Z=_Rva007FE310")

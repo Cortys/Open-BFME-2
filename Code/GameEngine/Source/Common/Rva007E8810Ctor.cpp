@@ -47,3 +47,7 @@ Rva007E8810::Rva007E8810()
 	m_30 = 0;
 	m_2C = 4;
 }
+
+// Callers elsewhere reach bodies in this unit through spellings pinned to the same
+// retail address (same cdecl/thiscall ABI); bind them here.
+#pragma comment(linker, "/alternatename:??0Rva007E8810Message@@QAE@XZ=??0Rva007E8810@@QAE@XZ")

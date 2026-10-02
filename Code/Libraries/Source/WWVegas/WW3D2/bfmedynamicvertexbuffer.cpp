@@ -813,3 +813,7 @@ void WW3D::_Invalidate_Mesh_Cache()
 #pragma comment(linker, "/alternatename:?bfmeDynamicDevice@@3PAUBfmeDynamicDevice9@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
 // ?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A: the global at VA 0xdeda7c is ?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A.
 #pragma comment(linker, "/alternatename:?bfmeDynamicCaps@@3PAUBfmeDynamicCapsPrefix@@A=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")
+
+// Callers elsewhere reach bodies in this unit through spellings pinned to the same
+// retail address (same cdecl/thiscall ABI); bind them here.
+#pragma comment(linker, "/alternatename:??0DX8VertexBufferClass@@QAE@IGW4UsageType@0@I@Z=??0BfmeDynamicNativeVB@@QAE@IGII@Z")

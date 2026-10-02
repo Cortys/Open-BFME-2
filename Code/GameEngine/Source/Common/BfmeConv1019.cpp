@@ -20,3 +20,8 @@ void bfmeGo1019C(int a)
 }
 // ?g_bfmeS1019@@3PAVBfmeS1019@@A: the global at VA 0xe09fcc is ?g_genAlloc@@3PAVGenAlloc@@A.
 #pragma comment(linker, "/alternatename:?g_bfmeS1019@@3PAVBfmeS1019@@A=?g_genAlloc@@3PAVGenAlloc@@A")
+
+// Callers elsewhere reach bodies in this unit through spellings pinned to the same
+// retail address (same cdecl/thiscall ABI); bind them here.
+#pragma comment(linker, "/alternatename:_Rva007F0030=?bfmeGo1019C@@YAXH@Z")
+#pragma comment(linker, "/alternatename:?Rva007F0030Free@@YAXPAX@Z=?bfmeGo1019C@@YAXH@Z")

@@ -351,3 +351,8 @@ int Rva0080F180( struct Rva0080F100Object *object, const char *keyA,
 
 	return iResult;
 }
+
+/* Callers elsewhere reach bodies in this unit through spellings pinned to the same
+   retail address (same cdecl/thiscall ABI); bind them here. */
+#pragma comment(linker, "/alternatename:?Rva0080B070Destroy@@YAXPAX@Z=_Rva0080B070")
+#pragma comment(linker, "/alternatename:?Rva0080B000Create@@YAPAXXZ=_Rva0080B000")
