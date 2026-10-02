@@ -46879,3 +46879,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?dup_007b68a0@@YAXXZ,,0x007B68A0,27,Code/Libraries/Source/WWVegas/WWLib/stlport_loc_init.cpp,matched,dup-of=?_S_uninitialize@locale@_STL@@SAXXZ;object-symbol=?_S_uninitialize@locale@_STL@@SAXXZ;second retail copy of the body rowed at 0x00007670 (BFME1 donor bytes place at both; Ghidra start)
 ?Rva005185D8Init@@YAX_N000@Z,,0x005185D8,128,Code/GameEngine/Source/Common/Rva005185D8Init.cpp,matched,chain via 0x0035C74A callers add esp 0x10 Options.apt precedent Rva00434160Init
 ?rva004ED134@Rva004ECECD@@QAE_NH@Z,,0x004ED134,53,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED134.cpp,matched,chain via 0x004ECF05 float threshold g_Va00DBA4E4 g_00DFEEF8 SSE
+?rva004ED1A1@Rva004ECECD@@QAEXHPAVObject@@@Z,,0x004ED1A1,92,Code/Libraries/Source/WWVegas/WW3D2/HLodRva004ED1A1.cpp,matched,chain via 0x004ECF05 rowed createGroup getTeamAsAIGroup rva002FE712 pins findInstance groupAttack
