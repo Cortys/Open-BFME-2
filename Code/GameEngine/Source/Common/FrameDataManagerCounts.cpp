@@ -21,7 +21,10 @@ private:
  NetCommandList *m_commandList;
  char storage[8];
 };
-#define FRAME_DATA_LENGTH (*(const int *)0x00DD2DB8)
+// FRAME_DATA_LENGTH: VA 0x00DD2DB8 (.data); retail initial value is 258.
+// Target callers use it to size/index the frame-data ring; Open-BFME-1's
+// NetworkUtil.cpp defines the same runtime global at its BFME1 address.
+int FRAME_DATA_LENGTH = 258;
 
 void FrameData::zeroFrame() {
  m_commandCount &= 0;
