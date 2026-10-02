@@ -741,3 +741,113 @@ void Rva003062FEXfer(Xfer *xfer, float *vals)
 {
 	Rva00306151Xfer(Rva00306151Xfer(Rva00306151Xfer(xfer, vals), vals + 4), vals + 8);
 }
+
+// Fifteen more helpers of the XferSlotState shape: the same 24 bytes with their
+// own field-name label, read from retail. Each is named after its label, as
+// XferSlotState is; the enum each moves is not identified, so the value is
+// passed as void *.
+
+// ?XferAudioAffect@@YAXPAVXfer@@PAX@Z
+// Retail 0x00050E81 (24B): label "AudioAffect".
+void XferAudioAffect(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("AudioAffect", value, 4);
+}
+
+// ?XferTimeOfDay@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305C7A (24B): label "TimeOfDay".
+void XferTimeOfDay(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("TimeOfDay", value, 4);
+}
+
+// ?XferWeather@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305C92 (24B): label "Weather".
+void XferWeather(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("Weather", value, 4);
+}
+
+// ?XferFactionType@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305CAA (24B): label "FactionType".
+void XferFactionType(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("FactionType", value, 4);
+}
+
+// ?XferLivingWorldObjectType@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305CC2 (24B): label "LivingWorldObjectType".
+void XferLivingWorldObjectType(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("LivingWorldObjectType", value, 4);
+}
+
+// ?XferScorches@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305CDA (24B): label "Scorches".
+void XferScorches(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("Scorches", value, 4);
+}
+
+// ?XferAimWeaponBehaviorAimType@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305DE2 (24B): label "AimWeaponBehavior::AimType".
+void XferAimWeaponBehaviorAimType(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("AimWeaponBehavior::AimType", value, 4);
+}
+
+// ?XferFXAction@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305F32 (24B): label "FXAction".
+void XferFXAction(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("FXAction", value, 4);
+}
+
+// ?XferFX_Types@@YAXPAVXfer@@PAX@Z
+// Retail 0x00305F62 (24B): label "FX_Types".
+void XferFX_Types(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("FX_Types", value, 4);
+}
+
+// ?XferLivingWorldBattleResolutionType@@YAXPAVXfer@@PAX@Z
+// Retail 0x003F3FB6 (24B): label "LivingWorldBattle::ResolutionType".
+void XferLivingWorldBattleResolutionType(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("LivingWorldBattle::ResolutionType", value, 4);
+}
+
+// ?XferLivingWorldBattleID@@YAXPAVXfer@@PAX@Z
+// Retail 0x003F40BB (24B): label "LivingWorldBattleID".
+void XferLivingWorldBattleID(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("LivingWorldBattleID", value, 4);
+}
+
+// ?XferReinforcementState@@YAXPAVXfer@@PAX@Z
+// Retail 0x0040C96D (24B): label "ReinforcementState".
+void XferReinforcementState(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("ReinforcementState", value, 4);
+}
+
+// ?XferRegionAwardDisputeDisputeType@@YAXPAVXfer@@PAX@Z
+// Retail 0x004FBDDF (24B): label "RegionAwardDispute::DisputeType".
+void XferRegionAwardDisputeDisputeType(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("RegionAwardDispute::DisputeType", value, 4);
+}
+
+// ?XferLivingWorldBuildPlotID@@YAXPAVXfer@@PAX@Z
+// Retail 0x004FC14B (24B): label "LivingWorldBuildPlotID".
+void XferLivingWorldBuildPlotID(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("LivingWorldBuildPlotID", value, 4);
+}
+
+// ?XferArmySummaryEntryID@@YAXPAVXfer@@PAX@Z
+// Retail 0x0056D63B (24B): label "ArmySummaryEntryID".
+void XferArmySummaryEntryID(Xfer *xfer, void *value)
+{
+	xfer->XferEnum("ArmySummaryEntryID", value, 4);
+}
