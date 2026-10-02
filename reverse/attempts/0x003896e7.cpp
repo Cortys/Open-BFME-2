@@ -1,37 +1,85 @@
 // ?updateBuddyStatus@@YAXW4GameSpyBuddyStatus@@HV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@Z
-// partial score=0.95 date=2026-10-02
-// Banked near-exact body for
-// ?updateBuddyStatus@@YAXW4GameSpyBuddyStatus@@HV?$basic_string@DV?$char_traits@D@_STL@@V?$allocator@D@2@@_STL@@@Z
-// @ 0x003896E7, 347 bytes, in
-// Code/GameEngine/Source/GameNetwork/GameSpy/Thread/PeerThread.cpp
-//
-// State: compiled body is 341 bytes; the ONLY remaining difference is two
-// 3-byte unwind state stores, `or DWORD PTR [ebp-4],0xffffffff`, that retail
-// emits immediately before each inlined ~basic_string(gameName) cleanup (early
-// return at 0x389705 and the normal return at 0x389825). Every other byte of
-// the 341-byte body agrees with the target modulo the resulting 3-byte branch
-// displacement shift.
-//
-// Two file-level levers produced this body and are REQUIRED to reproduce it:
-//   1. `// cl: ... /Ireference/shims/bfmealloc ...` on PeerThread.cpp. The
-//      stock allocator's deallocate calls operator delete 0x0002FD60; retail
-//      calls the plain C free 0x00030830. The bfmealloc shim's allocator<char>
-//      deallocate calls ::free, which reproduces the direct free call. All 30
-//      already-matched rows in the TU still pass with this include (verified).
-//   2. The unwind state stores appear only when the free that STLport's
-//      allocator calls is declared with a non-nothrow exception specification
-//      (`extern "C" void __cdecl free(void *block) throw(...);`) BEFORE the STL
-//      headers are included. Declaring it before stdlib.h conflicts
-//      (error C2375, stdlib's free is _CRTIMP); the working route is
-//      `_INC_STDLIB` plus the full C-stdlib declaration set, as done in
-//      Code/Libraries/Source/WWVegas/WWLib/stlport_narrow_money_get_long_double.cpp.
-//      Applying `_INC_STDLIB` alone to this TU fails (cstdlib wants div_t etc.),
-//      so the next pass must supply that declaration set (or a forced-include
-//      header) and then this body becomes byte-exact.
-//
-// Everything below the file-level levers is the recovered body.
+// partial score=1.0 date=2026-10-02
+// cl: /O1 /Ireference/shims/bfmealloc /D_STLP_USE_STATIC_LIB /D_BFME_RETAIL_TREE_INSERT_LAYOUT /DNDEBUG /DWIN32 /D_WINDOWS /MD /EHsc /Ireference/open-bfme-1/reference/shims/nat /Ireference/open-bfme-1/reference/shims/sweep /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngine/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/Compression /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/debug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/GameEngineDevice/Include /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Main
+// stlport
+/*
+**	Command & Conquer Generals Zero Hour(tm)
+**	Copyright 2025 Electronic Arts Inc.
+**
+**	This program is free software: you can redistribute it and/or modify
+**	it under the terms of the GNU General Public License as published by
+**	the Free Software Foundation, either version 3 of the License, or
+**	(at your option) any later version.
+**
+**	This program is distributed in the hope that it will be useful,
+**	but WITHOUT ANY WARRANTY; without even the implied warranty of
+**	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**	GNU General Public License for more details.
+**
+**	You should have received a copy of the GNU General Public License
+**	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
-static void updateBuddyStatus( GameSpyBuddyStatus status, Int groupRoom = 0, std::string gameName = "" )
+#define _INC_STDLIB
+
+typedef unsigned int size_t;
+
+typedef struct { int quot; int rem; } div_t;
+typedef struct { long quot; long rem; } ldiv_t;
+
+extern "C" void __cdecl free(void *block) throw(...);
+
+extern "C" {
+void __cdecl abort(void);
+int __cdecl abs(int value);
+int __cdecl atexit(void (__cdecl *routine)(void));
+__declspec(dllimport) double __cdecl atof(const char *string);
+int __cdecl atoi(const char *string);
+long __cdecl atol(const char *string);
+void *__cdecl bsearch(const void *key, const void *base, size_t count,
+        size_t width, int (__cdecl *compare)(const void *, const void *));
+void *__cdecl calloc(size_t count, size_t size);
+div_t __cdecl div(int numerator, int denominator);
+void __cdecl exit(int status);
+char *__cdecl getenv(const char *name);
+long __cdecl labs(long value);
+ldiv_t __cdecl ldiv(long numerator, long denominator);
+void *__cdecl malloc(size_t size);
+int __cdecl mblen(const char *ch, size_t count);
+size_t __cdecl mbstowcs(unsigned short *dest, const char *source, size_t count);
+int __cdecl mbtowc(unsigned short *dest, const char *source, size_t count);
+void __cdecl qsort(void *base, size_t count, size_t width,
+        int (__cdecl *compare)(const void *, const void *));
+int __cdecl rand(void);
+void *__cdecl realloc(void *block, size_t size);
+void __cdecl srand(unsigned int seed);
+double __cdecl strtod(const char *string, char **end);
+long __cdecl strtol(const char *string, char **end, int radix);
+unsigned long __cdecl strtoul(const char *string, char **end, int radix);
+int __cdecl system(const char *command);
+size_t __cdecl wcstombs(char *dest, const unsigned short *source, size_t count);
+int __cdecl wctomb(char *dest, unsigned short ch);
+}
+
+
+#define Matrix4x4 Matrix4
+#include "Lib/BaseType.h"
+#include <string>
+#include <stdio.h>
+#include <string.h>
+#include "GameNetwork/GameSpy/BuddyThread.h"
+// Same seven donor enum values, without unrelated PeerDefs inline bodies.
+enum GameSpyBuddyStatus { BUDDY_OFFLINE, BUDDY_ONLINE, BUDDY_LOBBY,
+    BUDDY_STAGING, BUDDY_LOADING, BUDDY_PLAYING, BUDDY_MATCHING, BUDDY_MAX };
+#define DEBUG_LOG(m) ((void)0)
+
+// Ghidra extent and seven native status literals establish this identity.
+// Retail queue copies 0xAE dwords, establishing the 0x2B8 request extent.
+// Status writes independently establish these changed GP enum values.
+// The body is byte-exact but the emitted STL helpers conflict with the
+// current canonical string allocator/destructor copies at link time.
+enum { BFME_GP_STAGING = 3, BFME_GP_CHATTING = 4 };
+void updateBuddyStatus( GameSpyBuddyStatus status, Int groupRoom = 0, std::string gameName = "" )
 {
 	// BFME's BuddyRequest is 0x2B8 bytes, not the shared header's 0x208
 	// (GameSpyBuddyMessageQueue::getRequest copies 0xAE dwords vs our 0x82).
@@ -60,12 +108,12 @@ static void updateBuddyStatus( GameSpyBuddyStatus status, Int groupRoom = 0, std
 			strcpy(req.arg.status.locationString, "");
 			break;
 		case BUDDY_LOBBY:
-			req.arg.status.status = GP_CHATTING;
+			req.arg.status.status = BFME_GP_CHATTING;
 			strcpy(req.arg.status.statusString, "Chatting");
 			sprintf(req.arg.status.locationString, "%d", groupRoom);
 			break;
 		case BUDDY_STAGING:
-			req.arg.status.status = GP_STAGING;
+			req.arg.status.status = BFME_GP_STAGING;
 			strcpy(req.arg.status.statusString, "Staging");
 			sprintf(req.arg.status.locationString, "%s", gameName.c_str());
 			break;
