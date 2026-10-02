@@ -47280,3 +47280,12 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004E90B1@GateOpenBehaviorList@@QAEPAXPBUCoord3D@@PBVPlayer@@@Z,,0x004E90B1,200,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenBehaviorListRva004E90B1.cpp,matched,Gate list closest-allied scan via Relationship plus disp8 pos
 ?rva004E9179@GateOpenBehaviorList@@QAEPAXPBUCoord3D@@PBVPlayer@@@Z,,0x004E9179,197,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenBehaviorListRva004E9179.cpp,matched,chain via 0x004989D7 closest-owned scan same layout as 0x004E90B1
 ?rva004E908C@GateOpenBehaviorList@@QAEXPAX@Z,,0x004E908C,37,Code/GameEngine/Source/GameLogic/Object/Behavior/GateOpenBehaviorListRva004E908C.cpp,matched,unlock via rowed erase 0x001FF51F same layout as appendOnce
+??0Rva005677B9@@QAE@PBUPayload@0@@Z,,0x005677B9,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva00574ABB@@QAE@PBUPayload@0@@Z,,0x00574ABB,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva0057AA1F@@QAE@PBUPayload@0@@Z,,0x0057AA1F,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005FAAA1@@QAE@PBUPayload@0@@Z,,0x005FAAA1,30,Code/GameEngine/Source/Common/Rva005CE259Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005E59A5@@QAE@PBUPayload@0@@Z,,0x005E59A5,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005E59C2@@QAE@PBUPayload@0@@Z,,0x005E59C2,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005E59DF@@QAE@PBUPayload@0@@Z,,0x005E59DF,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005E97B8@@QAE@PBUPayload@0@@Z,,0x005E97B8,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs
+??0Rva005E982C@@QAE@PBUPayload@0@@Z,,0x005E982C,29,Code/GameEngine/Source/Common/Rva005CE327Ctor.cpp,matched,ref-counted payload ctor: bytes equal the rowed template except the vtable it installs

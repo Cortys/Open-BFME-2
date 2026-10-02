@@ -19,3 +19,76 @@ Rva005CE259::Rva005CE259(const Payload *src)
 	, m_data(*src)
 {
 }
+
+// 4 more constructors of this shape, each installing its own vtable
+// (the only differing operand). One class per copy names that vtable; its
+// destructor is declared inline and empty so the vtable the compiler emits
+// resolves in this unit. Owners keep their addresses.
+
+class Rva005677B9
+{
+public:
+	struct Payload { int v[2]; };
+	Rva005677B9(const Payload *src);
+	virtual ~Rva005677B9() {}
+private:
+	int m_ref; // +4
+	Payload m_data; // +8
+};
+
+Rva005677B9::Rva005677B9(const Payload *src)
+	: m_ref(0)
+	, m_data(*src)
+{
+}
+
+class Rva00574ABB
+{
+public:
+	struct Payload { int v[2]; };
+	Rva00574ABB(const Payload *src);
+	virtual ~Rva00574ABB() {}
+private:
+	int m_ref; // +4
+	Payload m_data; // +8
+};
+
+Rva00574ABB::Rva00574ABB(const Payload *src)
+	: m_ref(0)
+	, m_data(*src)
+{
+}
+
+class Rva0057AA1F
+{
+public:
+	struct Payload { int v[2]; };
+	Rva0057AA1F(const Payload *src);
+	virtual ~Rva0057AA1F() {}
+private:
+	int m_ref; // +4
+	Payload m_data; // +8
+};
+
+Rva0057AA1F::Rva0057AA1F(const Payload *src)
+	: m_ref(0)
+	, m_data(*src)
+{
+}
+
+class Rva005FAAA1
+{
+public:
+	struct Payload { int v[2]; };
+	Rva005FAAA1(const Payload *src);
+	virtual ~Rva005FAAA1() {}
+private:
+	int m_ref; // +4
+	Payload m_data; // +8
+};
+
+Rva005FAAA1::Rva005FAAA1(const Payload *src)
+	: m_ref(0)
+	, m_data(*src)
+{
+}
