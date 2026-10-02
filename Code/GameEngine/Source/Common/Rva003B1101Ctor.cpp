@@ -145,3 +145,7 @@ Rva003B1101::Rva003B1101()
 	vec24.erase(vec24.begin(), vec24.end());
 	m_78.initFromStorages(g_defaultStorage009FEFA4, g_defaultStorage009FEFA4);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_defaultStorage009FEFA4@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

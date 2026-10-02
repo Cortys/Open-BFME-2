@@ -84,3 +84,9 @@ void *BfmeThingTWB::bfmeDelTWB(unsigned char flags)
 		bfmeFreeTWB(this);
 	return this;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftATWB@@3PAPAXA=??_7Rva007F6D60Child@@6B@")
+#pragma comment(linker, "/alternatename:?g_bfmeVftATWA@@3PAPAXA=??_7BfmeThingTWA@@6BDemanglerPrimary@@@")
+#pragma comment(linker, "/alternatename:?g_bfmeVftBTWA@@3PAPAXA=??_7BfmeThingTWA@@6BRva00803080@@@")

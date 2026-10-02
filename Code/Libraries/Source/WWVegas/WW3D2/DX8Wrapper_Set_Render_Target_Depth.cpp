@@ -116,3 +116,7 @@ void DX8Wrapper::Set_Render_Target(IDirect3DSurface8 *renderTarget, IDirect3DSur
 
 	IsRenderToTexture = true;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?D3DCallCount@DX8Wrapper@@0IA=?number_of_DX8_calls@@3IA")

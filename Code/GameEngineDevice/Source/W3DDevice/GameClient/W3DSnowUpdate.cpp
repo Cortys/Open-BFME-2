@@ -71,3 +71,8 @@ void W3DSnowManager::update()
     target_00094652();
     target_0009322D();
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?SyncTime@WW3D@@2IA=?SyncTime@WW3D@@0IA")
+#pragma comment(linker, "/alternatename:?PreviousSyncTime@WW3D@@2IA=?PreviousSyncTime@WW3D@@0IA")

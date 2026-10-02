@@ -181,3 +181,7 @@ Rva004930A0::Rva004930A0()
 }
 // ?g_bfmeEmptyF9@@3QBDB: the global at VA 0xbbac1c is ?BfmeEmptyString@AsciiString@@0QBDB.
 #pragma comment(linker, "/alternatename:?g_bfmeEmptyF9@@3QBDB=?BfmeEmptyString@AsciiString@@0QBDB")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_009FEFA4@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

@@ -121,3 +121,7 @@ void Rva0070D9F0Shutdown()
 		++p;
 	} while ((int)p < (int)&g_00E18650);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?saConstantAtE18388@@3PAVEAStringC@@A=_bfmeObjDAE")

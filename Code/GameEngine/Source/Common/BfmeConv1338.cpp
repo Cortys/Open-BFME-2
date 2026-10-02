@@ -110,3 +110,8 @@ BfmeThingUNC::BfmeThingUNC(int a, BfmeOwnerUNC *o)
 	m_bfmeSink = o->m_bfmeMid->m_bfmeSink;
 	m_bfmeSink->bfmeRegisterUNC(this);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftBUNA@@3PAPAXA=??_7Rva00666BA0@@6B@")
+#pragma comment(linker, "/alternatename:?g_bfmeVftUNC@@3PAPAXA=??_7Gen0080ACD0@@6B@")

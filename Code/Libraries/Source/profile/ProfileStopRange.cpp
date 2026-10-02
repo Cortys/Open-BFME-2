@@ -92,3 +92,7 @@ void Profile::StopRange(const char *range)
 			ProfileFuncLevelTracer::FrameEnd(m_frameNames[k].funcIndex, atIndex);
 	}
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?m_rec@Profile@@0IA=?g_Va00E0C1F4@@3HA")

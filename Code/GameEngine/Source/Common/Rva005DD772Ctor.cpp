@@ -91,3 +91,7 @@ int Rva005DD88A::rva005DD88A(GameWindow *win, int a, int b, float f)
 	Rva0032434ASet(win, idx, b, 2);
 	return idx;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_007C9260@@3QBGB=??_C@_15KNBIKKIN@?$AA?$CF?$AAd?$AA?$AA@")

@@ -126,3 +126,7 @@ void *BfmeThingTVC::bfmeDelTVC(unsigned char flags)
 }
 // ?g_bfmeVftTUA@@3PAPAXA: the global at VA 0xce0f20 is ?vftable_011296B0@@3HA.
 #pragma comment(linker, "/alternatename:?g_bfmeVftTUA@@3PAPAXA=?vftable_011296B0@@3HA")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftTVA@@3PAPAXA=??_7Rva00CE12FCMutex@@6B@")
