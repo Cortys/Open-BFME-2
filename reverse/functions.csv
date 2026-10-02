@@ -48169,3 +48169,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva00598B2A@Rva00598B2A@@QAEXXZ,,0x00598B2A,78,Code/GameEngine/Source/Common/Rva00598B2AClear.cpp,matched,thiscall tree list vector clear via rowed callees
 ?rva00419154@Rva0041811D@@QAEPAXXZ,,0x00419154,46,Code/GameEngine/Source/GameClient/Rva0041811DGet.cpp,matched,default CombatChain getter same 46B shape as sibling 0x00418825
 ?rva004196F8@Rva0041811D@@QAEPAXXZ,,0x004196F8,46,Code/GameEngine/Source/GameClient/Rva0041811DGet.cpp,matched,default Weapon getter same 46B shape as siblings
+??1Rva002214A6@@UAE@XZ,,0x002214A6,31,Code/GameEngine/Source/Common/Rva002214A6Dtor.cpp,matched,base dtor erases iterator via rowed getter and erase plus derived tail-jmp
