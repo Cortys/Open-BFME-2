@@ -5456,3 +5456,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?Rva0008A1FDDestroy@@YAXPAVRva00087A93@@0@Z	0x0008A1FD	27	blocked	destroy loop needs push-0 deleting-dtor call recipe for 0x87A93 t=10 model=muse-02
 ?rva006DCAC0@Rva006DCAC0@@QAEXXZ	0x006DCAC0	81	blocked	apt refcount saturating inc with assert false line 0x12a needs full Apt filename plus donor for slot0 t=10 model=muse-02
 ?rva005D9BCC@Rva005D9BCC@@QAE_NPAVObject@@@Z	0x005D9BCC	142	blocked	vslot6 team iteration with KindOf 0xD6 needs donor for opaque Rva005D9BA5 layout t=10 model=muse-02
+?rva002829BD@Rva002829BD@@QAEXPBVModuleData@@PAX@Z	0x002829BD	361	blocked	361B sphere plus Coord3D length normalize plus pushback early ebx-vs-esi for this-vector plus sub esp 0x20 vs 0x1c plus SSE ordering in second half tried void-vs-ModuleData param plus reorder plus O2 t=20 model=muse-11
