@@ -12,6 +12,8 @@ public:
 
 class Rva00222A8BTarget
 {
+public:
+	int rva00222B19(void *level, const char *prefix, const char *function, int argc, const char *a0, void *a1, void *a2, void *a3, void *a4);
 };
 
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
@@ -132,4 +134,18 @@ void Rva005F2A32::rva005F2A42()
 void Rva005F2A32::rva005F2A4A()
 {
 	m_member04->rva005F29CB();
+}
+
+AsciiString Rva00222834Get(int val);
+AsciiString Rva002228E8Get(float val);
+
+__forceinline const char *GetStr005F2A52(const AsciiString &s)
+{
+	char *t = *(char **)(void *)&s;
+	return t ? t + 8 : g_Rva0107301CEmptyString;
+}
+
+int __cdecl Rva005F2A52AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, int *pInt, float *pF1, float *pF2)
+{
+	return target->rva00222B19(level, prefix, function, 3, GetStr005F2A52(Rva00222834Get(*pInt)), (void *)GetStr005F2A52(Rva002228E8Get(*pF1)), (void *)GetStr005F2A52(Rva002228E8Get(*pF2)), 0, 0);
 }
