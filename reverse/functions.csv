@@ -46919,3 +46919,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva005F8573Copy@@YAPAURva005F8536@@PAU1@00@Z,,0x005F8573,47,Code/GameEngine/Source/Common/Rva005F8573Copy.cpp,matched,chain stride-8 copy via 0x005F8536 caller 0x005F85AB
 ?rva005F83F4@Rva005F83F4@@QAEXABURva005F83F4Data@@@Z,,0x005F83F4,20,Code/GameEngine/Source/Common/Rva005F83F4Setter.cpp,matched,unlock 12B 3x movsd to inner+0x0C callers 0x005E8892 0x005E8EC5
 ??0Rva0034C0D0@@QAE@ABV0@@Z,,0x0034C0D0,71,Code/GameEngine/Source/Common/Rva0034C0D0Copy.cpp,matched,unlock vector copy via PrereqUnitRec base AsciiString alloc Coord3D copy
+?parseVeterancyLevelFlags@INI@@SAXPAV1@PAX1PBX@Z,,0x00338C0F,192,Code/GameEngine/Source/Common/System/INI_parseTypeFlags.cpp,matched,parseDamageTypeFlags' twin over TheVeterancyNames (VA 0xDBA4C0) directly before it - GeneralsMD INI.cpp order
