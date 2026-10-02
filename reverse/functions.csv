@@ -48192,3 +48192,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??_GRva00598B2A@@UAEPAXI@Z,,0x00598F08,28,Code/GameEngine/Source/Common/Rva00598CFDDtor.cpp,matched,deleting dtor via own unit vtable slot0
 ??1Rva00586D8E@@UAE@XZ,,0x00586E51,53,Code/Libraries/Source/WWVegas/WWLib/Rva00586D8EDtor.cpp,matched,dtor via novtable base twin precedent t=5 model=muse-16
 ?rva001FF5C3@Rva003B1546@@UAEXXZ,,0x001FF5C3,47,Code/GameEngine/Source/Common/Rva003B1546Rva001FF5C3.cpp,matched,vtable slot 9 of 0x0081ED1C via Overridable deleteOverrides and vector erase
+?Rva002861EFFill@@YAPAXPAXIPBX@Z,,0x002861EF,37,Code/GameEngine/Source/Common/Rva002861EFFill.cpp,matched,array fill of 6-byte records via rowed copy caller 0x287BB8

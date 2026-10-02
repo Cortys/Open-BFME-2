@@ -5648,3 +5648,4 @@ FUN_0094aed7	0x0054AED7	141	blocked	hand-written __linear_insert with CopyRecord
 ?rva0052B23D@Rva0052B23D@@QAEXXZ	0x0052B23D	59	blocked	vector clear loop register wall edi-esi swap t=12 model=muse-02
 ?Rva00577C23AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPA_N@Z	0x00577C23	125	partial	esi zero reuse gives push esi vs push 0 and cmp vs test and int text via stack not via esi and xor plus mov vs and t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x00577c23.cpp
 ?rva00577CC5@Rva00577CC5@@QAEXHHHH@Z	0x00577CC5	206	partial	movss ebp-8 early at 0x6f vs retail late at 0x79 between test and je t=20 model=muse-01 score=0.97 stash=reverse/attempts/0x00577cc5.cpp
+?Rva005E6CA1Get@@YAPAURva005E6CA1Out@@PAU1@PAURva005E6CA1Obj@@@Z	0x005E6CA1	108	partial	epilogue placement only size exact slots exact found inline vs retail jmp to shared epilogue t=25 model=muse-15 score=0.96 stash=reverse/attempts/0x005e6ca1.cpp
