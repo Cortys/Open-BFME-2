@@ -50,6 +50,7 @@ public:
 	unsigned int m_updateState;
 
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
+	virtual ~UpdateModule();
 };
 
 class SpecialPowerInterface
