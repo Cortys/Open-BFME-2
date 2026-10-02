@@ -3059,32 +3059,12 @@ void PartitionManager::revealMapForPlayer( Int playerIndex )
 /** 
 	Reveals the map for the given player, AND permanently disables all Shroud generation (Observer Mode).
 	*/
-void PartitionManager::revealMapForPlayerPermanently( Int playerIndex )
-{
-	// By skipping the removeLooker, I consider myself as actively looking at everything, 
-	// so Shroud generation will no longer function
-	// By adding a looker directly I don't hit the Ally logic of the normal look/doShroudReveal
-	for (int i = 0; i < m_totalCellCount; ++i) 
-	{
-		m_cells[i].addLooker( playerIndex );
-	}
-}
+// Owned by PartitionManagerShroudThunks.cpp.
 
 /** 
 		Adds a layer of permanent blindness.  Used solely to undo the permanent reveal for debugging
 	*/
-void PartitionManager::undoRevealMapForPlayerPermanently( Int playerIndex )
-{
-	//First make sure no lingering looks will leave holes when they aren't wanted.
-	processEntirePendingUndoShroudRevealQueue();
-
-	// This will have amusing consequences if done without a preceding revealMapForPlayerPermanently.
-	// Everything you own can become shrouded.
-	for (int i = 0; i < m_totalCellCount; ++i) 
-	{
-		m_cells[i].removeLooker( playerIndex );
-	}
-}
+// Owned by PartitionManagerShroudThunks.cpp.
 
 /** 
 	Resets the shroud for the given player with passive shroud (can re-explore).
@@ -3134,14 +3114,7 @@ CellShroudStatus PartitionManager::getShroudStatusForPlayer(Int playerIndex, Int
 }
 
 //-----------------------------------------------------------------------------
-CellShroudStatus PartitionManager::getShroudStatusForPlayer(Int playerIndex, const Coord3D *loc ) const
-{
-	Int x, y;
-
-	ThePartitionManager->worldToCell( loc->x, loc->y, &x, &y );
-
-	return getShroudStatusForPlayer( playerIndex, x, y );
-}
+// Owned by PartitionManagerShroudThunks.cpp.
 
 
 //-----------------------------------------------------------------------------
@@ -5654,10 +5627,7 @@ Bool PartitionFilterAcceptByKindOf::allow(Object *objOther)
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-Bool PartitionFilterRejectByKindOf::allow(Object *objOther)
-{
-	return !objOther->isKindOfMulti(m_mustBeSet, m_mustBeClear); 
-}
+// Owned by PartitionFilterRejectByKindOfAllow.cpp.
 
 
 //-----------------------------------------------------------------------------
