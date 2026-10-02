@@ -11,9 +11,11 @@ template <typename T> class StringBase
 {
 	friend class BFMERetailAsciiString;
 
+public:
+	StringBase(const StringBase &other);
+
 private:
 	StringBase(const T *text);
-	StringBase(const StringBase &other);
 	void releaseBuffer();
 	void *m_data;
 };
