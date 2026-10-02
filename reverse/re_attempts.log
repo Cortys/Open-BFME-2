@@ -5563,3 +5563,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva002D55EF@Rva002D55EF@@QAEXXZ	0x002D55EF	78	blocked	memset 20B unrolls to 5x stosd vs retail generic lea-lea-cmp-rep stosd-stosb; for-byte gives byte loop; O1 O2 Os fail t=22 model=muse-11
 ??0Rva0005CF5F@@QAE@XZ	0x0005CF5F	10	blocked	EH-prologue misbound true 1214B includes 0x0005CF69 with 5 unrowed callees and no standalone ret t=15 model=muse-01
 ??0Rva00318588@@QAE@XZ	0x00318588	133	blocked	layout off +8/+4 vtable stores missing call extra stores t=8 model=muse-04
+?rva004F5473@Rva004F54BF@@QAE_NPAVObject@@_N@Z	0x004F5473	76	partial	true tail middle vs end plus final count-limit load order and edx-vs-ecx allocation t=18 model=muse-02 score=0.93 stash=reverse/attempts/0x004f5473.cpp
