@@ -60,7 +60,7 @@ void ProcessAnimateWindowSlideFromRightFast::initReverseAnimateWindow( AnimateWi
 		flipped.x = vel.x * -1;
 		flipped.y = vel.y * -1;
 	}
-	animWin->setVel(flipped);	
+	animWin->setVel(flipped);
 	animWin->setFinished( FALSE );
 	GameWindow * win = animWin->getGameWindow();
 	ICoord2D pos, tempPos;
@@ -92,7 +92,29 @@ void ProcessAnimateWindowSlideFromRight::initReverseAnimateWindow( AnimateWindow
 	Coord2D flipped;
 	{ const Coord2D& vel = animWin->getVel();
 	  flipped.x = vel.x * -1; flipped.y = vel.y * -1; }
-	animWin->setVel(flipped);	
+	animWin->setVel(flipped);
 	animWin->setFinished( FALSE );
+
+}
+
+// TopFast ctor RVA 0x005C5F85 installs VA 0x00C748B4, slot 2 at
+// RVA 0x005C5FC4 (102 bytes). Left/Top/Bottom vtables share this body;
+// the ledger records one proven method at this address, without alias rows.
+void ProcessAnimateWindowSlideFromTopFast::initReverseAnimateWindow( AnimateWindow *animWin, UnsignedInt maxDelay )
+{
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return;
+	}
+	if(animWin->getDelay() > 0)
+		animWin->setStartTime(timeGetTime() + (maxDelay - animWin->getDelay()));
+	Coord2D flipped;
+	{
+		const Coord2D& vel = animWin->getVel();
+		flipped.x = vel.x * -1;
+		flipped.y = vel.y * -1;
+	}
+	animWin->setVel(flipped);
 
 }
