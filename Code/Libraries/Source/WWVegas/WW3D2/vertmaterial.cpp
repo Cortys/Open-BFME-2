@@ -290,7 +290,7 @@ void VertexMaterialClass::Set_Ambient(const Vector3 & color)
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void VertexMaterialClass::Set_Ambient(float r,float g,float b)
+inline void VertexMaterialClass::Set_Ambient(float r,float g,float b)
 {
 	CRCDirty=true;
 	Material->Ambient.r=r;
@@ -326,7 +326,7 @@ void VertexMaterialClass::Set_Diffuse(const Vector3 & color)
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void VertexMaterialClass::Set_Diffuse(float r,float g,float b)
+inline void VertexMaterialClass::Set_Diffuse(float r,float g,float b)
 {
 	CRCDirty=true;
 	Material->Diffuse.r=r;
@@ -353,7 +353,7 @@ void VertexMaterialClass::Set_Specular(const Vector3 & color)
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void VertexMaterialClass::Set_Specular(float r,float g,float b)
+inline void VertexMaterialClass::Set_Specular(float r,float g,float b)
 {
 	CRCDirty=true;
 	Material->Specular.r=r;
@@ -380,7 +380,7 @@ void VertexMaterialClass::Set_Emissive(const Vector3 & color)
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void VertexMaterialClass::Set_Emissive(float r,float g,float b)
+inline void VertexMaterialClass::Set_Emissive(float r,float g,float b)
 {
 	CRCDirty=true;
 	Material->Emissive.r=r;
@@ -395,7 +395,7 @@ float	VertexMaterialClass::Get_Shininess(void) const
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void	VertexMaterialClass::Set_Shininess(float shin)
+inline void	VertexMaterialClass::Set_Shininess(float shin)
 {
 	CRCDirty=true;
 	Material->Power=shin;
@@ -408,7 +408,7 @@ float	VertexMaterialClass::Get_Opacity(void) const
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void	VertexMaterialClass::Set_Opacity(float o)
+inline void	VertexMaterialClass::Set_Opacity(float o)
 {
 	CRCDirty=true;
 	Material->Diffuse.a=o;
@@ -439,7 +439,7 @@ void	VertexMaterialClass::Set_Emissive_Color_Source(ColorSourceType src)
 }
 
 // byte-exact reconstruction: reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/WWVegas/WW3D2/vertmaterial.cpp
-void	VertexMaterialClass::Set_Diffuse_Color_Source(ColorSourceType src)
+inline void	VertexMaterialClass::Set_Diffuse_Color_Source(ColorSourceType src)
 {
 	CRCDirty=true;
 	switch (src) 
@@ -1124,3 +1124,20 @@ VertexMaterialClass * VertexMaterialClass::Get_Preset(PresetType type)
 #pragma comment(linker, "/alternatename:?Apply@WSEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSEnvironmentMapperClass@@UAEXH@Z")
 #pragma comment(linker, "/alternatename:?Apply@GridEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSEnvironmentMapperClass@@UAEXH@Z")
 #pragma comment(linker, "/alternatename:?Apply@GridClassicEnvironmentMapperClass@@UAEXH@Z=?Apply@GridWSClassicEnvironmentMapperClass@@UAEXH@Z")
+
+// These seven setters are header inlines; ordinary definitions here collided
+// with select-any copies. The anchor keeps this unit's row copies; it is not
+// retail code.
+#pragma inline_depth(0)
+// ?_bfmeVertexMaterialSetterAnchor@@YAXPAVVertexMaterialClass@@@Z absent-from-retail
+void _bfmeVertexMaterialSetterAnchor(VertexMaterialClass *material)
+{
+	material->Set_Ambient(0.0f, 0.0f, 0.0f);
+	material->Set_Diffuse(0.0f, 0.0f, 0.0f);
+	material->Set_Diffuse_Color_Source(VertexMaterialClass::MATERIAL);
+	material->Set_Emissive(0.0f, 0.0f, 0.0f);
+	material->Set_Opacity(0.0f);
+	material->Set_Shininess(0.0f);
+	material->Set_Specular(0.0f, 0.0f, 0.0f);
+}
+#pragma inline_depth()
