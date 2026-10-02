@@ -48673,3 +48673,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva004EE5D2@Rva004EE5D2@@QAEXXZ,,0x004EE5D2,195,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,removes 8 embedded entries via rowed erase
 ?rva005C462B@Rva005C462B@@QAEPAVRva005C45B6@@I@Z,,0x005C462B,60,Code/GameEngine/Source/Common/Rva005C462BCreate.cpp,matched,chain new plus ctor with EH unwind
 ?rva005F3F14@Rva005F3F14@@QAEXXZ,,0x005F3F14,38,Code/GameEngine/Source/Common/Rva005F3F14Method.cpp,matched,unlock lane same shape as Rva005796B3Method with pinned no-arg int and rowed slot1 plus caller 0x005F3F6B
+?rva0007BDAD@Rva0007BDAD@@QAEXXZ,,0x0007BDAD,113,Code/GameEngine/Source/Common/Rva0007BDADDraw.cpp,matched,rowed BFME2Set_Texture 0x0011F4B0 and Texture getters and Draw 0x00075A23
