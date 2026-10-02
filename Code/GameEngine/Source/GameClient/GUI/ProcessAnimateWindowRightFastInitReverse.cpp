@@ -531,3 +531,60 @@ void ProcessAnimateWindowSpiral::initAnimateWindow( AnimateWindow *animWin )
 
 	animWin->setAnimData(startPos, endPos, curPos, restPos, vel, timeGetTime() + animWin->getDelay(), 0);
 }
+
+// Bottom ctor 0x005C56B4 installs VA 0x00C7489C; slot 4 is 0x005C58A8 (232 bytes). The donor acceleration/clamp flow matches with the proven Coord2D ABI.
+Bool ProcessAnimateWindowSlideFromBottom::reverseAnimateWindow( AnimateWindow *animWin )
+{
+
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into updateAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return TRUE;
+	}
+
+	// if the window has finished animating into position, return
+	if(animWin->isFinished())
+		return TRUE;
+
+	// if the window hasn't started animating...return that we're not finished
+	if(timeGetTime() < animWin->getStartTime())
+		return FALSE;
+
+	// it's set that the window is passed in as it's current position being it's rest position
+	// so save off the rest position
+	GameWindow *win = animWin->getGameWindow();
+	if(!win)
+	{
+		DEBUG_ASSERTCRASH( win, ("animWin contains a NULL Pointer for it's GameWindow... Whatup wit dat?"));
+		return TRUE;
+	}
+
+	ICoord2D curPos = animWin->getCurPos();
+	ICoord2D startPos = animWin->getStartPos();
+	Coord2D vel = animWin->getVel();
+	curPos.y += (Int)vel.y;
+
+	if(curPos.y > startPos.y)
+	{
+		curPos.y = startPos.y;
+		animWin->setFinished( TRUE );
+		win->winSetPosition(curPos.x, curPos.y);
+		return TRUE;
+	}
+	win->winSetPosition(curPos.x, curPos.y);
+	animWin->setCurPos(curPos);
+
+	ICoord2D endPos = animWin->getEndPos();
+	if( curPos.y - endPos.y <= m_slowDownThreshold )
+	{
+		vel.y *= m_speedUpRatio;
+	}
+	else
+	{
+		vel.y = -m_maxVel.y;
+	}
+	if( vel.y > -m_maxVel.y)
+		vel.y = -m_maxVel.y;
+	animWin->setVel(vel);
+	return FALSE;
+}
