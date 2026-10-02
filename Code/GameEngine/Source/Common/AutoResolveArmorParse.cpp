@@ -28,6 +28,29 @@ extern "C" void __stdcall _CxxThrowException(void *pExceptionObject, const _s__T
 struct Rva00542B61ThrowInfoAnchor { int a; int b; int c; int d; };
 static const Rva00542B61ThrowInfoAnchor rva00542B61ThrowInfoAnchor = { 0, 0, 0, 0 };
 
+class Rva005429D7
+{
+public:
+	Rva005429D7 *rva005429D7();
+private:
+	char m_pad[0x104];
+};
+
+struct BfmeFixedObject260
+{
+	char m_pad[0x104];
+};
+
+namespace _STL
+{
+template <typename T> class allocator;
+template <typename T, typename A> class vector
+{
+public:
+	void push_back(const T &x);
+};
+}
+
 void __cdecl Rva00542B61Parse(INI *ini, void *a2, void *instance, void *a4)
 {
 	INIException e;
@@ -37,4 +60,15 @@ void __cdecl Rva00542B61Parse(INI *ini, void *a2, void *instance, void *a4)
 		rva002f681_fill(&e, 8, "AutoResolveArmor entry in Object block: Armor name MUST be specified");
 		_CxxThrowException(&e, (const _s__ThrowInfo *)&rva00542B61ThrowInfoAnchor);
 	}
+}
+
+// Retail 0x00542BA1 61B. Append-then-parse: clear stack 0x104 record via rowed
+// 0x005429D7, push_back rowed 0x00542AEA into vector at a3, then parse the new
+// tail element (finish-0x104) via rowed 0x00542B61. Evidence: packet
+// disassembly, callees all rowed, twin 0x00542B24 same shape.
+void __cdecl Rva00542BA1Parse(INI *ini, void *a2, void *vecPtr, void *a4)
+{
+	Rva005429D7 tmp;
+	((_STL::vector<BfmeFixedObject260, _STL::allocator<BfmeFixedObject260> > *)vecPtr)->push_back(*(const BfmeFixedObject260 *)(const void *)tmp.rva005429D7());
+	Rva00542B61Parse(ini, a2, (char *)*(void **)((char *)vecPtr + 4) - 0x104, a4);
 }
