@@ -88,3 +88,8 @@ public:
 Rva004BD5ED::~Rva004BD5ED()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f2@Rva004BD5ED_B2@@UAEXXZ=?bfmeGo1026F@BfmeF1026@@QAEXHHH@Z")

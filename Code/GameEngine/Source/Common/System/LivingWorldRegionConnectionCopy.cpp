@@ -60,3 +60,9 @@ LivingWorldRegionConnection::LivingWorldRegionConnection(const LivingWorldRegion
 	: m_regionName(that.m_regionName), m_numberAllowed(that.m_numberAllowed), m_detourPoints(that.m_detourPoints)
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?LoadPostProcess@LivingWorldRegionConnection@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?GetSnapshotName@LivingWorldRegionConnection@@UAEPBDXZ=?Rva003F24D0Get@@YAHXZ")

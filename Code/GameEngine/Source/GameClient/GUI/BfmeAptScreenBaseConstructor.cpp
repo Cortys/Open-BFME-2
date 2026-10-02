@@ -98,3 +98,8 @@ BfmeAptScreenBase::BfmeAptScreenBase( void *context )
 	m_layout = 0;
 	m_editData = 0;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot0@BfmeAptScreenBase@@UAEXXZ=??_GGameWindow@@MAEPAXI@Z")

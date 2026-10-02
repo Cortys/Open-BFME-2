@@ -207,3 +207,8 @@ int vftable_0112B89C = 4438032;
 #pragma comment(linker, "/alternatename:_Rva003ADFDB_v8=?vftable_0112B89C@@3HA")
 #pragma comment(linker, "/alternatename:_Rva003AE13C_v8=?vftable_0112B89C@@3HA")
 #pragma comment(linker, "/alternatename:_HemisphericalEmissionVelocityModuleTemplate_cvtbl4=?vftable_0112B89C@@3HA")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v0@Rva00800920Sec@@UAEXXZ=?update@Rva00800F40PendingProbeUpdate@@QAEXI@Z")

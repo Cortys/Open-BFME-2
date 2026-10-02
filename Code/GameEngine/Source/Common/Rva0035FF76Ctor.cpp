@@ -59,3 +59,10 @@ Rva0035FF76::Rva0035FF76()
 	m_green = 0;
 	m_blue = 0;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?init@Rva0035FF76@@UAEXPAX@Z=?init@Rva0035FF76@@UAEXPAVGameWindow@@@Z")
+#pragma comment(linker, "/alternatename:?skip@Rva0035FF76@@UAEXXZ=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?getFrameLength@Rva0035FF76@@UAEHXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")

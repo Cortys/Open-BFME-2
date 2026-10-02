@@ -89,3 +89,8 @@ Rva00483C35::~Rva00483C35()
 {
 	m_extra0050 = ((unsigned int)vtbl_00C49D70);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?f1@Rva0045D39E_Mid@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
