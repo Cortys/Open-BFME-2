@@ -59,7 +59,23 @@ class W3DGameClient
 protected:
 	virtual FontLibrary *createFontLibrary();
 };
-FontLibrary *W3DGameClient::createFontLibrary()
+inline FontLibrary *W3DGameClient::createFontLibrary()
 {
 	return new W3DFontLibrary;
 }
+
+// createFontLibrary is a header inline in retail: other units emit select-any
+// copies of it, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+struct bfmeW3DGameClientEmitter : W3DGameClient
+{
+	static void emit(bfmeW3DGameClientEmitter *p);
+};
+#pragma inline_depth(0)
+// ?emit@bfmeW3DGameClientEmitter@@SAXPAU1@@Z present-unmatched
+void bfmeW3DGameClientEmitter::emit(bfmeW3DGameClientEmitter *p)
+{
+	(void)p->W3DGameClient::createFontLibrary();
+}
+#pragma inline_depth()
