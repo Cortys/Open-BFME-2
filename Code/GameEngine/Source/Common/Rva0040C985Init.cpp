@@ -1,4 +1,4 @@
-// cl: /O1
+// cl: /O1 /arch:SSE
 // ?rva0040C985@Rva0040C985@@QAEXH@Z, retail 0x0040C985, 31 bytes.
 // Target evidence: leaf with 3 callers at 0x002B7A97 0x0040D3AE 0x0040F860; no vtable slot;
 // touches +0x2C +0x30 +0x34 +0x38; prev ringobj.cpp next Disp8SubDwordFieldGetters.cpp.
@@ -23,6 +23,7 @@ public:
 	int rva0040C9F4();
 	void rva0040CA09();
 	int rva0040CA24();
+	void rva0040CA3A(int x);
 
 private:
 	char m_pad[0x24];
@@ -64,4 +65,12 @@ int Rva0040C985::rva0040CA24()
 	if (TheGlobalData->m_134 == 4)
 		return m_28;
 	return m_24;
+}
+
+extern float g_00DBA4F4;
+
+void Rva0040C985::rva0040CA3A(int x)
+{
+	m_2C &= 0;
+	m_30 = (int)((float)x * g_00DBA4F4);
 }
