@@ -65,8 +65,3 @@ TemporarilyDefectUpdate::TemporarilyDefectUpdate(Thing *thing, const ModuleData 
 TemporarilyDefectUpdate::~TemporarilyDefectUpdate()
 {
 }
-
-// ??1UpdateModule@@ present-unmatched
-UpdateModule::~UpdateModule()
-{
-}
