@@ -40,8 +40,10 @@ private:
 // This 300-byte named buffer covers retail's strncpy request and terminator;
 // its initial target span is zero, but the original allocation extent is unknown.
 char profile_csv_source[300];
-// ?csvName@@YAPBDPBD@Z absent-from-retail
-static __forceinline const char *csvName(const char *name)
+// The private helper also survives out of line at native 6C6E80, between
+// independent int3 runs. MSVC emits its private source-argument ABI in EAX.
+// Full byte verification checks that ABI; its original name is unknown.
+static __forceinline const char *rva006C6E80CsvName(const char *name)
 {
     strncpy(profile_csv_source, name, sizeof(profile_csv_source));
     profile_csv_source[sizeof(profile_csv_source)-1] = 0;
@@ -64,7 +66,7 @@ void ProfileResultFileCSV::WriteThread(ProfileFuncLevel::Thread &thread)
     ProfileFuncLevel::Id id;
     for (k=0;thread.EnumProfile(k,id);k++)
     {
-        const char *function = csvName(id.GetFunction());
+        const char *function = rva006C6E80CsvName(id.GetFunction());
         fprintf(f,"%s[%08x],%s#%i",function,id.GetAddress(),id.GetSource(),id.GetLine());
         for (unsigned i=ProfileFuncLevel::Id::Total;i!=Profile::GetFrameCount();i++)
         {
@@ -104,7 +106,7 @@ void ProfileResultFileCSV::WriteThread(ProfileFuncLevel::Thread &thread)
                 for (j=0;idlist.Enum(j,callid,&count);j++)
                     if (count > threshold)
                     {
-                        const char *function=csvName(callid.GetFunction());
+                        const char *function=rva006C6E80CsvName(callid.GetFunction());
                         fprintf(f," %s[%08x](%i)",function,callid.GetAddress(),count);
                     }
                     else misc+=count;
@@ -115,7 +117,7 @@ void ProfileResultFileCSV::WriteThread(ProfileFuncLevel::Thread &thread)
                 unsigned count;
                 for (j=0;idlist.Enum(j,callid,&count);j++)
                 {
-                    const char *function=csvName(callid.GetFunction());
+                    const char *function=rva006C6E80CsvName(callid.GetFunction());
                     fprintf(f," %s[%08x](%i)",function,callid.GetAddress(),count);
                 }
             }
