@@ -48757,3 +48757,18 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva0013EEB0@Rva0013EEB0PassClass@@QAEXPAURva0013EEB0Stage@@H@Z,,0x0013EEB0,61,Code/Libraries/Source/WWVegas/WW3D2/Rva0013EEB0Cluster.cpp,matched,texture stage setter with one-word owning wrappers at +8 and Release_Ref pin 0x0061ED10
 ?broadcast@Rva006883B0Owner@@QAEXH@Z,,0x006883B0,56,Code/GameEngine/Source/Common/Rva006883B0Cluster.cpp,matched,one-arg sibling of Rva0081D520Owner::broadcast over listener span at +0x14/+0x18 calling slot 2
 ?Rva00027080@Rva00027080Thing@@QAEHPBD@Z,,0x00027080,65,Code/GameEngine/Source/Common/Rva00027080Cluster.cpp,matched,/Od byte-search predicate over a begin/end char range calling bfmeFindByteInRange 0x00026C60
+?countNonPoint@Rva0013F6F0LightEnv@@QBEHXZ,,0x0013F6F0,33,Code/Libraries/Source/WWVegas/WW3D2/Rva0013F6F0Cluster.cpp,matched,LightEnvironmentClass InputLights m_point scan count non-point; address-named view
+?countPoint@Rva0013F6F0LightEnv@@QBEHXZ,,0x0013F750,33,Code/Libraries/Source/WWVegas/WW3D2/Rva0013F6F0Cluster.cpp,matched,LightEnvironmentClass InputLights m_point scan count point; address-named view
+?findNonPoint@Rva0013F6F0LightEnv@@QBEHH@Z,,0x0013F720,46,Code/Libraries/Source/WWVegas/WW3D2/Rva0013F6F0Cluster.cpp,matched,LightEnvironmentClass ipoint scan find n-th non-point or -1; address-named view
+?findPoint@Rva0013F6F0LightEnv@@QBEHH@Z,,0x0013F780,46,Code/Libraries/Source/WWVegas/WW3D2/Rva0013F6F0Cluster.cpp,matched,LightEnvironmentClass m_point scan find n-th point or -1; address-named view
+?read_vertex_shade_indices@MeshGeometryClass@@IAE_NAAVChunkLoadClass@@@Z,,0x0016B3C0,47,Code/Libraries/Source/WWVegas/WW3D2/Rva0016B3C0Cluster.cpp,matched,BFME2 bulk shade-index read via rowed get_shade_indices 16A010; caller 18B85A
+?freeAll@Rva00196370List@@QAEXXZ,,0x00196370,40,Code/Libraries/Source/WWVegas/WWMath/Rva00196370Cluster.cpp,matched,singly-linked list free via _free 30830; head at +4; no callers; address-named
+?rva007B7024@@YAXXZ,,0x007B7024,26,Code/GameEngine/Source/Common/Rva007B7024Cluster.cpp,matched,global refcount release at VA DEE86C; inlined Release memory RMW; address-named
+?rva007B71D0@@YAXXZ,,0x007B71D0,35,Code/GameEngine/Source/Common/Rva007B7024Cluster.cpp,matched,pair of guarded operator delete[] at VA DB6344 DB6348; address-named
+?rva007B7200@@YAXXZ,,0x007B7200,35,Code/GameEngine/Source/Common/Rva007B7024Cluster.cpp,matched,pair of guarded operator delete[] at VA DB6354 DB6358; address-named
+??0Rva006FB960@@QAE@H@Z,,0x006FB960,29,Code/GameEngine/Source/Common/Rva006FB960Cluster.cpp,matched,BfmeAptValue006DCD20 type 4 subclass ctor; member at +8; own vtable; base ctor 6DCCC0
+??0Rva006FB9C0@@QAE@H@Z,,0x006FB9C0,29,Code/GameEngine/Source/Common/Rva006FB960Cluster.cpp,matched,BfmeAptValue006DCD20 type 8 subclass ctor; member at +8; own vtable; base ctor 6DCCC0
+?find@Rva006FBBE0@@QAEPAVBfmeN1034@@H@Z,,0x006FBBE0,43,Code/GameEngine/Source/Common/Rva006FB960Cluster.cpp,matched,linked-list find over embedded BfmeTab1034 at +8 and next +1C via 70B380
+??0Rva006FC130@@QAE@XZ,,0x006FC130,95,Code/GameEngine/Source/Common/Rva006FB960Cluster.cpp,matched,Apt subclass ctor type 1E hash 8 bits +1C own vtable; EH frame from AptNativeHash member
+?releaseModel@Rva001498B0Holder@@QAEXXZ,,0x001498B0,35,Code/GameEngine/Source/Common/Rva001498B0Cluster.cpp,matched,release +0xC4 refcounted pointer: dec +4 call vtable0 then clear; /G7 add -1 shape
+?get@Rva00149F20Holder@@QBEHXZ,,0x00149F20,26,Code/GameEngine/Source/Common/Rva001498B0Cluster.cpp,matched,0x324 fixed RAM overhead plus MeshModelClass::Compute_Ram_Size 1880E0 when +0xC4 set
