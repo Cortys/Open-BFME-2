@@ -8,7 +8,7 @@
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "gridcull.h"
 
-GridCullSystemClass::~GridCullSystemClass(void)
+__declspec(noinline) GridCullSystemClass::~GridCullSystemClass(void)
 {
 	if (Cells != NULL) {
 		delete Cells;
