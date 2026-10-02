@@ -86,10 +86,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 //
 // _ParticleEmitterLoader: defined in particle_emitter_read_props.cpp.
 
-const char *EMITTER_TYPE_NAMES[EMITTER_TYPEID_COUNT] = 
-{
-	"Default"
-};
+extern const char *EMITTER_TYPE_NAMES[EMITTER_TYPEID_COUNT];
 
 
 #include "texture_handle.h"
