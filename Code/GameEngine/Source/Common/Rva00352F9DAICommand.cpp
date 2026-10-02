@@ -71,6 +71,7 @@ public:
 	virtual void rvaVirtual(AICommandParms *parms) = 0;
 	void rva00352F9D(const void *waypoint, Int intVal, CommandSourceType src);
 	void rva0035300B(const void *obj, const Coord3D &pos, CommandSourceType src);
+	void rva00353080(const void *obj, const class Rva0035149F &coords, CommandSourceType src);
 	void rva003530F3(const void *obj, const Coord3D &pos, CommandSourceType src);
 	void rva00353168(const void *obj, const class Rva0035149F &coords, CommandSourceType src);
 	void rva003531DB(const void *obj, const Coord3D &pos, CommandSourceType src);
@@ -91,6 +92,14 @@ void Rva00352F9D::rva0035300B(const void *obj, const Coord3D &pos, CommandSource
 {
 	AICommandParms parms((AICommandType)0x4B, src);
 	parms.m_pos = pos;
+	parms.m_obj = (void *)obj;
+	rvaVirtual(&parms);
+}
+
+void Rva00352F9D::rva00353080(const void *obj, const class Rva0035149F &coords, CommandSourceType src)
+{
+	AICommandParms parms((AICommandType)0x4D, src);
+	((class Rva0035149F &)parms.m_coords).rva0035149F(coords);
 	parms.m_obj = (void *)obj;
 	rvaVirtual(&parms);
 }
