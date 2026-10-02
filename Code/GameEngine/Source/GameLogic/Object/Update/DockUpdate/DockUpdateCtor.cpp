@@ -280,3 +280,7 @@ void bfmeEmitDockUpdateCtor(ObjectIDVector *v)
 	v->erase((ObjectID *)0, (ObjectID *)0);
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0SupplyCenterDockUpdateBase@@QAE@PAVThing@@PBVModuleData@@@Z=??0DockUpdate@@QAE@PAVThing@@PBVModuleData@@@Z")

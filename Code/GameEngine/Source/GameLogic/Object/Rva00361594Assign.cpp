@@ -27,3 +27,7 @@ void Rva00361594Assign(Rva0036105B *first, Rva0036105B *last, Rva0036105B *dest,
 	const _STL::random_access_iterator_tag tag;
 	Rva003614F4Copy(first, last, dest, tag, (int *)0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva00361594Assign@@YAPAVRva0036105B@@PAV1@00PAX@Z=?Rva00361594Assign@@YAXPAVRva0036105B@@00PAX@Z")

@@ -23,3 +23,7 @@ void BfmeStrVME::bfmeResizeVME(unsigned n, char c)
 	else
 		bfmeAppendVME(n - (unsigned)(m_bfme04 - m_bfme00), c);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeFwdTwoSVA@BfmeThingSVA@@QAEXHH@Z=?bfmeResizeVME@BfmeStrVME@@QAEXID@Z")

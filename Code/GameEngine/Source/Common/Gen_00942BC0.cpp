@@ -16,3 +16,7 @@ void Gen_00942BC0::process(void *first, void *second, void *third)
 	if (first != 0)
 		helper(local, first, second, third, 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeSet1042@BfmeSub1042@@QAEXPADHH@Z=?process@Gen_00942BC0@@QAEXPAX00@Z")

@@ -623,3 +623,7 @@ int BfmeRva00C7B388::rva0060DF27(const char *s)
 	((NarrowStringVec *)&m_bfme0C)->push_back(tmp);
 	return 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:_bfmeAppend=?Print@BfmeRva00C7B388@@SAXPAV1@PBDZZ")

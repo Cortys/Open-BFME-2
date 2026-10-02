@@ -57,3 +57,7 @@ RailedTransportDockUpdate::RailedTransportDockUpdate(Thing *thing, const ModuleD
 RailedTransportDockUpdate::~RailedTransportDockUpdate()
 {
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0DominateEnemySpecialPower@@QAE@PAVThing@@PBVModuleData@@@Z=??0RailedTransportDockUpdate@@QAE@PAVThing@@PBVModuleData@@@Z")

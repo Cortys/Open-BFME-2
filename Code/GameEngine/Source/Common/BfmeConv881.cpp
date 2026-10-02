@@ -43,3 +43,7 @@ void *BfmeThingEOF::bfmeGoEOF()
 	q->m_bfmeCur = cur + 2;
 	return v;
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeInitEOE@@YGXPAUBfmeThingEOE@@HHP6AXXZ1@Z=??_L@YGXPAXIHP6EX0@Z1@Z")
