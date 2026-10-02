@@ -47319,3 +47319,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva000B5179Apply@@YAXPAX00@Z,,0x000B5179,97,Code/GameEngine/Source/Common/Rva000B5179.cpp,matched,leaf via rowed B304B 6 buckets stride C end B0 flags F6 bit8 F4 inner stride 3C
 ?rva0029B1C2@Rva0029B1C2@@QAEXXZ,,0x0029B1C2,22,Code/GameEngine/Source/GameClient/Rva0029B1C2.cpp,matched,chain via rowed 002707FA clears byte at 8
 ?rva0029B1AC@Rva0029B1C2@@QAEXXZ,,0x0029B1AC,22,Code/GameEngine/Source/GameClient/Rva0029B1C2.cpp,matched,chain sibling of B1C2 sets byte to 1
+?rva0058ADA8@Rva0058ADA8@@QAEXH@Z,,0x0058ADA8,40,Code/GameEngine/Source/Common/Rva0058ADA8.cpp,matched,leaf via vslots 8 and 0x14 m0C m18
