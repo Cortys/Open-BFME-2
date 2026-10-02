@@ -86,7 +86,7 @@ private:
 
 #define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
 #define LogicFramesPerSecond g_Va00DBA4E4
-#define OneAndHalf (*(const float *)0x00BC8980)
+#define OneAndHalf 1.5f
 
 int NetworkInterface::getFramePacingStatus(void)
 {
