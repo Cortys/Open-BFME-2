@@ -42,10 +42,14 @@ private:
 // intermediate primary vptr (+0) itself before tail-calling the pinned fold
 // base, which is the single final store retail shows (cf.
 // CastleMemberBehaviorDtor PrimaryP, Rva0049B47CThreeVptrDerived).
-class PrimaryP : public Rva0049B47C
+// Named Rva004CC0FEPrimary (not PrimaryP): PrimaryP is an invented name that
+// Rva0049B47CThreeVptrDerived.cpp also uses for a different MI layout
+// (Rva0049B47C plus MiBase1); same mangled ??1PrimaryP would clash as a
+// differing COMDAT, so this single-base intermediate keeps its own name.
+class Rva004CC0FEPrimary : public Rva0049B47C
 {
 public:
-	~PrimaryP() {}
+	~Rva004CC0FEPrimary() {}
 };
 
 class Secondary0C
@@ -73,7 +77,7 @@ private:
 	OpaqueRefCounted *m_ptr;
 };
 
-class ModelConditionAudioLoopClientBehavior : public PrimaryP, public Secondary0C, public Secondary10
+class ModelConditionAudioLoopClientBehavior : public Rva004CC0FEPrimary, public Secondary0C, public Secondary10
 {
 public:
 	virtual ~ModelConditionAudioLoopClientBehavior();
