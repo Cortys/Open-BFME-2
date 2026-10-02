@@ -52,3 +52,17 @@ void Rva005EF557::rva005EF557(const UnicodeString &text)
 		m_shown3C = true;
 	}
 }
+
+class Rva005EF5C2
+{
+public:
+	void rva005EF5C2(const UnicodeString &text);
+private:
+	char m_pad00[4];
+	Rva005EF557 *m_inner04;
+};
+
+void Rva005EF5C2::rva005EF5C2(const UnicodeString &text)
+{
+	m_inner04->rva005EF557(text);
+}
