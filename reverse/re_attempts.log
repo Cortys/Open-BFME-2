@@ -5477,3 +5477,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva000556AB@Rva000556AB@@QAE?AUOut@2@ABVRva00051C6C@@@Z	0x000556AB	112	blocked	frameless esp retail vs ebp frame ours plus bucket divmod shape differs with 8 structural regions t=8 model=muse-06
 ?d_009acb60@@YAXXZ	0x001BD550	28	blocked	YAXXZ-pin-vs-YAHPAE-honest-wrapper ESI-ABI-matches-but-neg-sbb-vs-test-jne-plus-mov-eax-edi t=25 model=muse-13
 ??_GAnim2D@@MAEPAXI@Z	0x002D73D0	28	blocked	Anim2D pooled vs global delete wall t=15 model=muse-01
+?rva003A0E08@Rva003A0E08@@QAEXABVRva0039D769@@@Z	0x003A0E08	102	blocked	lea eax ebx+esi vs add ebx esi plus mov eax ebx t=20 model=muse-04 (stash 0.97 kept)
+?rva0025FBBC@Rva0025FBBC@@QAEXPAHHH@Z	0x0025FBBC	165	blocked	size-exact only push esi order and esi-vs-eax allocator mirror remains t=15 model=muse-04 (stash 0.92 kept)
