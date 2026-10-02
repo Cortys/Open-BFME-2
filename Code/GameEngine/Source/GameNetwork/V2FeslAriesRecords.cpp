@@ -32,6 +32,10 @@
 
 typedef __int64 FeslInt64;
 
+// g_Rva0130A708: the matched result-cursor references place this const
+// pointer at VA 0x00E0A124, in .data's zero-filled tail; retail starts null.
+extern const char * const g_Rva0130A708 = 0;
+
 class Rva007E8810Message
 {
 public:
