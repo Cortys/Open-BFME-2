@@ -1155,7 +1155,9 @@ private:
 }
 
 // The engine's reference-counted narrow string: str() over the shared empty
-// literal, and the out-of-line StringBase<char> destructor.
+// literal. The destructor is declaration-only so this TU does not emit its
+// own select-any copy: calls reach the kept copy in ascii_string.cpp
+// (jmp releaseBuffer), not this TU's old jmp to ~StringBase.
 template <>
 class StringBase<char>
 {
@@ -1179,6 +1181,7 @@ private:
 class AsciiString
 {
 public:
+	~AsciiString();
 	const char *str() const { return m_data.m_data ? m_data.m_data->data : ""; }
 
 private:
