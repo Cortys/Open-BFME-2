@@ -617,3 +617,8 @@ template StringBase<char>::StringBase(const CharSource<char> &source);
 template StringBase<wchar_t>::StringBase(wchar_t character);
 template StringBase<wchar_t>::StringBase(const wchar_t *str, int len);
 template StringBase<wchar_t>::StringBase(const CharSource<wchar_t> &source);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?init@CustomAsciiStringShim@@QAEXPBD@Z=??0?$StringBase@D@@AAE@PBD@Z")
+#pragma comment(linker, "/alternatename:??0StringBaseNarrowAR@@IAE@PBD@Z=??0?$StringBase@D@@AAE@PBD@Z")

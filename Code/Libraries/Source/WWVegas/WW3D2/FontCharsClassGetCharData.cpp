@@ -51,3 +51,7 @@ FontCharsClassCharDataStruct const *FontCharsClass::Get_Char_Data(unsigned short
 		cur = alt;
 	}
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Get_Char_Data@FontCharsClass@@AAEPBUFontCharsClassCharDataStruct@@G@Z=?Get_Char_Data@FontCharsClass@@AAEPBVFontCharsClassCharDataStruct@@G@Z")

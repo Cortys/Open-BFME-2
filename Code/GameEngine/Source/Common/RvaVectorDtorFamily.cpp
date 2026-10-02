@@ -670,3 +670,8 @@ Rva0040BEBA::~Rva0040BEBA()
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1BfmeVector0022C55B@@QAE@XZ=??1Rva0022CAC4@@QAE@XZ")
 #pragma comment(linker, "/alternatename:??1SlowDeathSoundVec@@QAE@XZ=??1Rva0045D137@@QAE@XZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva0039C151Subobject@@QAE@XZ=??1Rva0039C151@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1Rva004EE501Subobject@@QAE@XZ=??1Rva004EE501@@QAE@XZ")

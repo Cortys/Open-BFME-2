@@ -295,3 +295,8 @@ void Record_Texture_Begin()
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??4CursorTextureSlot@@QAEXABVBFME2ParticleTextureHandle@@@Z=??4?$RefCountPtr@VTextureClass@@@@QAEABV0@ABV0@@Z")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??4BfmeMapPictureTexture@@QAEAAV0@ABV0@@Z=??4?$RefCountPtr@VTextureClass@@@@QAEABV0@ABV0@@Z")
+#pragma comment(linker, "/alternatename:??4?$RefCountPtr@VHierarchyPrototype@@@@QAEABV0@ABV0@@Z=??4?$RefCountPtr@VTextureClass@@@@QAEABV0@ABV0@@Z")

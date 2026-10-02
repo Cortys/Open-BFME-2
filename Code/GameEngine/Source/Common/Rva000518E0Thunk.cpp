@@ -17,3 +17,7 @@ void __stdcall Rva000518E0Thunk(void *p)
 {
 	((Rva000518E0Base *)p)->slot2();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?handle@Gen0003AC38@@QAEXPAX@Z=?Rva000518E0Thunk@@YGXPAX@Z")

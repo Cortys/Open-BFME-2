@@ -64,3 +64,7 @@ template BitFlags<11>::BitFlags(BitFlags<11>::BogusInitType, Int, Int, Int, Int)
 
 // ??0?$BitFlags@$0L@@@QAE@XZ
 template BitFlags<11>::BitFlags();
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?construct@Rva003B31ADMember@@QAEPAV1@XZ=??0?$BitFlags@$0L@@@QAE@XZ")

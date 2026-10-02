@@ -61,3 +61,8 @@ void Rva007E8760Addr::parse(const char *addressText, int extra)
     m_addr = packedAddress;
     m_extra = extra;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?parse@Rva00800780Addr@@QAEXPBDH@Z=?parse@Rva007E8760Addr@@QAEXPBDH@Z")
+#pragma comment(linker, "/alternatename:?bfmeFmtVJJ@BfmeThingVJJ@@QAEXPADH@Z=?format@Rva007E8760Addr@@QAEXPADI@Z")
