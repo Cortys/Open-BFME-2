@@ -48089,3 +48089,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005A9562@@QAE@PAX@Z,,0x005A9562,38,Code/Libraries/Source/WWVegas/WWLib/Rva005A9562Ctor.cpp,matched,ctor via rowed Vector_base BfmeE16 0x00211E58 caller 0x0050547C
 ?processPending@ShroudManagerImpl008FBA40@@AAEX_N@Z,,0x0073D4F0,144,Code/GameEngine/Source/Common/RTS/ShroudManagerImpl008FBA40ProcessPending.cpp,matched,
 ?Rva005E30E8AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAVRva005E2D74@@@Z,,0x005E30E8,99,Code/GameEngine/Source/Common/Rva005E30E8AptCall.cpp,matched,finish lane exact via thiscall twin rva00222B19
+?rva005E3AE1@Rva005E3AE1@@QAEPAV1@H@Z,,0x005E3AE1,57,Code/GameEngine/Source/Common/Rva005E3AE1.cpp,matched,returns this EAX holds this caller ignores
