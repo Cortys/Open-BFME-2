@@ -1026,38 +1026,7 @@ UnsignedInt WeaponSet::getMostPercentReadyToFireAnyWeapon() const
 //-------------------------------------------------------------------------------------------------
 // A special type of command demands that you use this (normally unchooseable) weapon
 // until told otherwise.
-// ?WeaponSet::setWeaponLock present-unmatched
-Bool WeaponSet::setWeaponLock( WeaponSlotType weaponSlot, WeaponLockType lockType )
-{
-	if (lockType == NOT_LOCKED)
-	{
-		DEBUG_CRASH(("calling setWeaponLock with NOT_LOCKED, so I am doing nothing... did you mean to use releaseWeaponLock()?\n"));
-		return false;
-	}
-
-	// Verify the asked for weapon exists , choose it, and then lock it as choosen until unlocked
-	// the old code was just plain wrong. (look at it in perforce and you'll see...)
-	if (m_weapons[weaponSlot] != NULL)
-	{
-		if( lockType == LOCKED_PERMANENTLY )
-		{
-			m_curWeapon = weaponSlot;
-			m_curWeaponLockedStatus = lockType;
-			//DEBUG_LOG(("WeaponSet::setWeaponLock permanently -- changed curweapon to %s\n",getCurWeapon()->getName().str()));
-		}
-		else if( lockType == LOCKED_TEMPORARILY && m_curWeaponLockedStatus != LOCKED_PERMANENTLY )
-		{
-			m_curWeapon = weaponSlot;
-			m_curWeaponLockedStatus = lockType;
-			//DEBUG_LOG(("WeaponSet::setWeaponLock temporarily -- changed curweapon to %s\n",getCurWeapon()->getName().str()));
-		}
-
-		return true;
-	}
-
-	DEBUG_CRASH(("setWeaponLock: weapon %d not found (missing an upgrade?)\n", (Int)weaponSlot));
-	return false;
-}
+// WeaponSet::setWeaponLock: defined in WeaponSetSetWeaponLock.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // Either we have successfully fired a full clip of our special attack, or we have switched
