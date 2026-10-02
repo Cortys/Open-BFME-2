@@ -48662,3 +48662,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005426DB@Rva005426DB@@QAE_NPAE@Z,,0x005426DB,96,Code/GameEngine/Source/Common/Rva005426DBDecode.cpp,matched,XML entity decoder with 5-entry table strlen strncmp caller 0x005427A7
 ?rva005F93DB@Rva005F93DB@@QAEX_N@Z,,0x005F93DB,8,Code/GameEngine/Source/Common/Rva005F93DBForward.cpp,matched,jmp to rowed 0x005F92D5 callers 0x005E96C3 0x005E9E11 neighbour Rva005F93D3Forward
 ??_GRva0056AC26@@UAEPAXI@Z,,0x0056ADD5,28,Code/GameEngine/Source/Common/Rva0056AC26Dtor.cpp,matched,scalar deleting-dtor thunk emitted via TU vtable byte-exact
+?rva005F2D41@Rva005F2FEF@@QAEXH@Z,,0x005F2D41,324,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,CommandPoints show via GameText label plus AptCall same precedent as rank

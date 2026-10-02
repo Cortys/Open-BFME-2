@@ -34,6 +34,7 @@ public:
 	void rva005F298F();
 	void rva005F29CB();
 	void rva005F2B76(int rank);
+	void rva005F2D41(int val);
 private:
 	char m_pad00[8];
 	void *m_level08;
@@ -41,7 +42,8 @@ private:
 	char m_pad10[0x48 - 0x10];
 	UnicodeString m_cached48;
 	int m_rank4C;
-	char m_pad50[0x58 - 0x50];
+	char m_pad50[4];
+	int m_cmdPts54;
 	unsigned char m_flags58;
 };
 
@@ -199,5 +201,27 @@ void Rva005F2FEF::rva005F2B76(int rank)
 		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetMemberRankState", "_show");
 		m_flags58 |= 2;
+	}
+}
+
+void Rva005F2FEF::rva005F2D41(int val)
+{
+	if (val != m_cmdPts54) {
+		UnicodeString tmp;
+		if (val >= 0) {
+			static AsciiString s_label("STRATEGICHUD:CommandPointsLabel");
+			UnicodeString fetched = TheGameText->fetch(s_label, 0);
+			tmp.format(fetched.str(), val);
+		}
+		AsciiString key;
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		key.format("APT:_level%u.%s_CommandPoints", m_level08, team);
+		((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, tmp, false);
+		m_cmdPts54 = val;
+	}
+	if (!(m_flags58 & 8)) {
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetCommandPointsState", "_show");
+		m_flags58 |= 8;
 	}
 }
