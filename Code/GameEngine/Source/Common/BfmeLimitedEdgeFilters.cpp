@@ -15,6 +15,11 @@ extern const unsigned char g_bfmeClampTable[];		// retail 0x01356FE0 (zero point
 extern int * g_bfmeFilterLimit;
 #pragma comment(linker, "/alternatename:?g_bfmeFilterLimit@@3PAHA=?Rva009C0D10Src@@3PAGA")
 
+// g_bfmeClampTable: matched DIR32 references place this at VA 0x00E23100
+// (RVA 0x00A23100), in .data's zero-filled tail. This 0x200-byte storage
+// view ends at the next known global, g_bfmeSharedJX (VA 0x00E23300).
+const unsigned char g_bfmeClampTable[0x200] = { 0 };
+
 #define BFME_LIMIT_ADJUST(v, t)		\
 	{								\
 		int s1 = (v) >> 31;			\
