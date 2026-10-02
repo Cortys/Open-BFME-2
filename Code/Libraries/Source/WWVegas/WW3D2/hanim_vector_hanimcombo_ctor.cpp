@@ -8,6 +8,14 @@
 // claimed at 0x001A36D0 installs 0xBD6C0C and belongs to the AggregateDefClass
 // subobject list (VectorClass<W3dAggregateSubobjectStruct*>, agg_def.cpp).
 // Headers copied from hanim.cpp.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #define Matrix4x4 Matrix4
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "winbase_shim.h"

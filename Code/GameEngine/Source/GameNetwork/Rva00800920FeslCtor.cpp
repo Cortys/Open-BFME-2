@@ -1,5 +1,13 @@
 // cl: /GX- /GS
 // jabba gamebrowserdemangler.cpp constructor at 0x00800920 (210B).
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 extern int vftable_0112B89C;
 extern int vftable_011296B0;
