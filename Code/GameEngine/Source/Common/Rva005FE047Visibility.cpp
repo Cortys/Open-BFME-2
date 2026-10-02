@@ -30,6 +30,7 @@ public:
 	void rva005FE047();
 	void rva005FE00C();
 	void rva005FE122(int newTab);
+	void rva005FE1D7(int newTab);
 private:
 	char m_pad00[4];
 	void *m_level04;
@@ -79,4 +80,16 @@ void Rva005FE047::rva005FE122(int newTab)
 	if (old < 0)
 		rva005FE00C();
 	Rva005FDF1CSet((int)m_level04, (Rva005FDF1COuter *)&m_holder08, m_array28[m_tab24].m_text);
+}
+
+void Rva005FE047::rva005FE1D7(int newTab)
+{
+	if (newTab != m_tab24)
+	{
+		if (newTab == 0)
+			rva005FE047();
+		else if (m_tab24 == 0)
+			rva005FE00C();
+	}
+	rva005FE122(newTab);
 }

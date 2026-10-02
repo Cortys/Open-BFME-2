@@ -48997,3 +48997,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005D48DB@Rva005D48DB@@QAEXPAX@Z,,0x005D48DB,21,Code/GameEngine/Source/Common/Rva005D48DBForward.cpp,matched,unlock forwarder via member fn ptr
 ?rva005D4E8B@Rva005D4E8B@@QAEXXZ,,0x005D4E8B,29,Code/GameEngine/Source/Common/Rva005D4E8BClear.cpp,matched,holder clear via rowed fastcall 0x0007DEEF caller 0x005D4F19
 ?rva005FE122@Rva005FE047@@QAEXH@Z,,0x005FE122,181,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,tab switch with deselect select Fire plus Set via rowed Fire and Set
+?rva005FE1D7@Rva005FE047@@QAEXH@Z,,0x005FE1D7,50,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,tab preselect guard then switch via rowed switch
