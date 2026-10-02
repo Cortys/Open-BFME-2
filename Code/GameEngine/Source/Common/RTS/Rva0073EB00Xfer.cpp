@@ -70,3 +70,8 @@ Xfer *Rva0073EB00Xfer(Xfer *xfer, unsigned short *vals)
 	} while (--n != 0);
 	return xfer;
 }
+
+// The (void *, void *) declaration above is a C++ overload, so calls spell
+// ?_CxxThrowException@@YGXPAX0@Z; retail calls the MSVC 7.1 throw helper
+// __CxxThrowException@8 (its import thunk at 0x00629094). Same ABI: bind the spelling.
+#pragma comment(linker, "/alternatename:?_CxxThrowException@@YGXPAX0@Z=__CxxThrowException@8")

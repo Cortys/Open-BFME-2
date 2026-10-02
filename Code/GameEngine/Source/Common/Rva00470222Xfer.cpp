@@ -120,3 +120,8 @@ Xfer *Rva00470222Xfer(Xfer *xfer, IntIntMap *map)
 int g_guardTargetTypeThrowInfo = 0;
 #pragma comment(linker, "/alternatename:?g_rva008ffd18ThrowInfo@@3HA=?g_guardTargetTypeThrowInfo@@3HA")
 #pragma comment(linker, "/alternatename:?g_rva005c5100ThrowInfo@@3HA=?g_guardTargetTypeThrowInfo@@3HA")
+
+// The (void *, void *) declaration above is a C++ overload, so calls spell
+// ?_CxxThrowException@@YGXPAX0@Z; retail calls the MSVC 7.1 throw helper
+// __CxxThrowException@8 (its import thunk at 0x00629094). Same ABI: bind the spelling.
+#pragma comment(linker, "/alternatename:?_CxxThrowException@@YGXPAX0@Z=__CxxThrowException@8")
