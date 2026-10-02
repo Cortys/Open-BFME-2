@@ -102,3 +102,21 @@ void Rva007EAC30Owner::send(int arg)
 			&rva007EAC10BeginCallback, this);
 	}
 }
+
+// ?rva00657CA0@Rva00657CA0@@QAEXH@Z retail 0x00657CA0 8 bytes.
+// Forwarder to the rowed Rva007EAC30Owner::send through the pointer at +4:
+// same unclaimed 116B caller as the 0x006572A0/0x006575F0 siblings (call at
+// 0x005522B2).
+class Rva00657CA0
+{
+public:
+	void rva00657CA0(int arg);
+
+	char m_pad[4];
+	Rva007EAC30Owner *m_ptr04;
+};
+
+void Rva00657CA0::rva00657CA0(int arg)
+{
+	m_ptr04->send(arg);
+}
