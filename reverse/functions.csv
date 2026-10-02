@@ -48499,3 +48499,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Rva0030B6A6Equal@@YAHPBURva0030B6A6Range@@0@Z,,0x0030B6A6,61,Code/GameEngine/Source/Common/Rva0030B6A6Equal.cpp,matched,two range float pair equality via size xor
 ?Rva0030B831Equal@@YAHPBURva0030B831Item@@0@Z,,0x0030B831,41,Code/GameEngine/Source/Common/Rva0030B831Equal.cpp,matched,calls rowed Rva0030B6A6Equal cmp field 0x28 xor-inc shape
 ??4Rva0030B92C@@QAEAAU0@ABU0@@Z,,0x0030B92C,63,Code/GameEngine/Source/Common/Rva0030B92COpAssign.cpp,matched,calls rowed Pod8 vector op= cmp byte 0x24 caller 0x00330B59
+?rva0030BBC8@Rva0030BBC8@@QAEXM@Z,,0x0030BBC8,29,Code/GameEngine/Source/Common/Rva0030BBC8Set.cpp,matched,guarded float setter at 0x5C slot9 callers 0x0030C794 0x003293B6
