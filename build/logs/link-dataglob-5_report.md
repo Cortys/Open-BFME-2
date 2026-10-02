@@ -2,6 +2,7 @@
 
 ## Linked
 
+- `Code/GameEngine/Source/Common/Rva00891FA0Diagnostics.cpp` — commit SHA to record after commit; `LINKED 81` bytes. Defined `_Rva00891FA0SendRecord` at VA `0x00E17740` and `_Rva00891FA0SendText` at VA `0x00E17744`, both typed C callback cells in zero-filled `.data` and NULL in vanilla retail. Matched DIR32 witnesses and exact C symbols verified.
 - `Code/GameEngine/Source/Common/BfmeConv1209.cpp` — `e7a74c1436ad167b0f59941f6cd88a0ebc4c3221`; `LINKED 84` bytes. Defined C symbol `_bfmeNotify1209Callback` at VA `0x00E177A4` (.data BSS) as the declared `void (__cdecl *)(void *)` callback cell, zero-initialized as in retail and filled at runtime. Matched DIR32 witness and exact object symbol verified.
 - `Code/GameEngine/Source/Common/Rva003EE980Forward.cpp` — `5ff93f124bdcca46fa5fbfa0df13aab2d724e040`; `LINKED 87` bytes. Defined `g_Rva00E02E84` at VA `0x00E02E84` (.data BSS) as a zero-initialized one-pointer `AsciiString`. The shared BFME2 header establishes the 4-byte layout; the matched DIR32 witness establishes the address. Exact decorated global verified in the built object.
 - `Code/GameEngine/Source/Common/ParseAlphaNumericBitMask_Thunk.cpp` — `2bd0adb6b33a3557a51b28a1a1cf59e7db6b4b34`; `LINKED 88` bytes. Defined `GenCharToBit0012A430` at VA `0x00CE1C80` (.rdata) as the exact 256-byte signed lookup from retail; the declared extent ends at VA `0x00CE1D80`. Retail and object `.rdata` bytes compare exactly; the table maps `@`/backtick to 0, A-Z/a-z to 1-26, digits 0-3 to 27-30, and other values to -1. Exact decorated global verified.

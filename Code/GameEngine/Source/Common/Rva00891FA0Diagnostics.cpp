@@ -17,9 +17,11 @@ int g_rva00891FA0Value;
 // Retail slots 0x00E17740/44 are not PE imports (no import-table entry), so
 // these are .data function pointers, not dllimport functions. Both emit an
 // indirect call through the slot; only the symbol identity differs.
-extern "C" void (__cdecl *Rva00891FA0SendText)(const char *text);
+// Matched DIR32 witnesses place these runtime-filled callback cells in the
+// zero-filled .data tail; vanilla retail initializes both to NULL.
 extern "C" void (__cdecl *Rva00891FA0SendRecord)(
-    Rva00891FA0Record *record, int count);
+    Rva00891FA0Record *record, int count) = 0; // VA 0x00E17740
+extern "C" void (__cdecl *Rva00891FA0SendText)(const char *text) = 0; // VA 0x00E17744
 
 // ?d_00891fa0@@YAXXZ
 void d_00891fa0(void)
