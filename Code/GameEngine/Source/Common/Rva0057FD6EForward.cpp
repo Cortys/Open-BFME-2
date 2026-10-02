@@ -8,12 +8,14 @@ class Rva005AFC92
 {
 public:
 	bool rva005AFC92();
+	void rva005AFCFF();
 };
 
 class Rva0057FD6E
 {
 public:
 	void rva0057FD6E();
+	void rva0057FD94();
 private:
 	char m_pad[100];
 	Rva005AFC92 *m_64;
@@ -23,5 +25,15 @@ void Rva0057FD6E::rva0057FD6E()
 {
 	if (m_64 != 0) {
 		m_64->rva005AFC92();
+	}
+}
+
+// ?rva0057FD94@Rva0057FD6E@@QAEXXZ, retail 0x0057FD94, 13 bytes. Same
+// forward shape to rowed 0x005AFCFF. Evidence: chain packet; caller
+// 0x0043DCB2; same +0x64 class.
+void Rva0057FD6E::rva0057FD94()
+{
+	if (m_64 != 0) {
+		m_64->rva005AFCFF();
 	}
 }
