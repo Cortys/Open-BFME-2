@@ -29,6 +29,7 @@
 //
 // Debug I/O class flat (flat or split log file)
 //////////////////////////////////////////////////////////////////////////////
+#pragma optimize("y", off)
 #include "_pch.h"
 #include <stdlib.h>
 #pragma optimize("y",on)
