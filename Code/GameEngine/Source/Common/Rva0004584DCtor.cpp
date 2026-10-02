@@ -48,6 +48,7 @@ class Rva002FDF47
 public:
 	Rva002FDF47(const BfmeFixedStorage0004543D &a, const BfmeFixedStorage0004543D &b);
 	virtual void dummy() {}
+	bool rva00261102(class Object *obj);
 private:
 	int m_04;
 	BfmeFixedStorage0004543D m_08;
@@ -59,4 +60,36 @@ Rva002FDF47::Rva002FDF47(const BfmeFixedStorage0004543D &a, const BfmeFixedStora
 	, m_08(a)
 	, m_24(b)
 {
+}
+
+template<int N>
+class BitFlags
+{
+public:
+	unsigned int m_bits[(N + 31) / 32];
+};
+
+class Thing
+{
+public:
+	bool isAnyKindOf(const BitFlags<69> &mask) const;
+};
+
+class Object : public Thing
+{
+};
+
+// ?rva00261102@Rva002FDF47@@QAE_NPAVObject@@@Z @0x00261102 46B slot 1 of
+// vtable VA 0xc071d8. First mask at +0x24, second at +0x08 via FixedStorage
+// reinterpreted as BitFlags<69>. Callers none rowed. Donor is the same TU
+// shape with two 28B storages. Identity beyond the slot and masks is unproven
+// so the method name stays honest address-derived.
+
+bool Rva002FDF47::rva00261102(Object *obj)
+{
+	const BitFlags<69> &mask1 = *(const BitFlags<69> *)&m_24;
+	if (obj->isAnyKindOf(mask1))
+		return true;
+	const BitFlags<69> &mask2 = *(const BitFlags<69> *)&m_08;
+	return !obj->isAnyKindOf(mask2);
 }

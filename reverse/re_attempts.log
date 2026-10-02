@@ -5530,3 +5530,5 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ??1Rva0022DCDA@@QAE@XZ	0x0022DCDA	63	blocked	explicit Destroy+free 30B core exact with /O1 pushes-pops but no EH prolog; nested empty 5B jmp /O1 and 35B hoisted /O2; forceinline 30B no EH; EHsc GX same; needs EH wrapper funclet 0x76F893 t=25 model=muse-05
 ??0Rva0052CFB1@@QAE@ABVAsciiString@@@Z	0x0052CF0F	156	partial	trailing int float store order movss hoist t=16 model=muse-01 score=0.93 stash=reverse/attempts/0x0052cf0f.cpp
 ?Rva0039A7D6Get@@YAHXZ	0x0039A7D6	10	blocked	EH prolog fragment mov eax plus call with no ret not standalone t=3 model=muse-11
+??0Rva0054D54A@@QAE@PAVGameMessage@@@Z	0x0054D64D	123	blocked	register wall push order xor ecx vs edi extra branches t=25 model=muse-04
+?rva0032D103@SidesList@@QAEXH@Z	0x0032D103	288	blocked	EH STL map 18 structural 21 reg first compile 282B t=12 model=muse-04
