@@ -278,6 +278,16 @@ public:
 };
 template void _STL::_Construct<Rva000BB4AC, Rva000BB4AC>(Rva000BB4AC *, const Rva000BB4AC &);
 
+// Retail _Construct 0x00568C83 18B: placement copy of Rva00568A20 via the
+// rowed copy ctor at 0x00568A20; null-checked; callers at 0x00568CA3 0x00568CCE
+// 0x0056A23A 0x0056A33D; step 0xC matches 12-byte Rva00568A20.
+class Rva00568A20
+{
+public:
+	Rva00568A20(const Rva00568A20 &o) throw();
+};
+template void _STL::_Construct<Rva00568A20, Rva00568A20>(Rva00568A20 *, const Rva00568A20 &);
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??$_Construct@VRva00297360Element@@V1@@_STL@@YAXPAVRva00297360Element@@ABV1@@Z=??$_Construct@UBfmeStringRecord0040360E@@U1@@_STL@@YAXPAUBfmeStringRecord0040360E@@ABU1@@Z")
