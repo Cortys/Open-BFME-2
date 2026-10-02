@@ -5943,3 +5943,8 @@ FUN_00682021	0x00282021	127	converted	Ghidra127B boundary including28209C cold r
 ?rva0010082F@Rva0010082F@@QAEXXZ	0x0010082F	338	blocked	complex frame update: flag-before-delta vs retail delta-before-flag; fmul x87 vs retail mulss SSE; mov-edi vs mov-last swapped; tail upper-lower CSE differs; tried O1 pad tail-temps barrier swap-reorder t=30 model=muse-06
 ?rva00100568@?$SimpleDynVecClass@VVector3@@@@QAEXXZ	0x00100568	400	partial	exact size 400 117-vs-118 insns; frame 0x34-vs-0x38 shifts ebp slots; this in ecx-vs-ebx mask in edi-vs-esi; t=30 model=muse-06 score=0.93 stash=reverse/attempts/0x00100568.cpp
 ?rva00446386@Rva004442FD@@QAEX_N@Z	0x00446386	183	blocked	list List_base-insert-copy plus WindowManager by-value not reproduced t=18 model=muse-06
+??0Rva0030F42E@@QAE@H@Z	0x0030F404	42	blocked	vtable store scheduling wall no NEW idea stash 0.90 kept t=8 model=muse-09
+??0Rva005491E4@@QAE@XZ	0x005491E4	83	partial	push order for array args vs m04 store plus add-shl fixed via G7 t=20 model=muse-09 score=0.95 stash=reverse/attempts/0x005491e4.cpp
+?Rva00549F67Median@@YAABQAUFoo00549DCB@@ABQAU1@00URva00549DCB@@@Z	0x00549F67	101	blocked	median3 via free Cmp but lea ecx comp like thiscall prev needs convention check t=12 model=muse-09
+?rva00549033@Rva00549033@@QAEHXZ	0x00549033	123	blocked	SSE custom regs eax ecx esi no stack args cross plus normalize t=10 model=muse-09
+?rva005490F1@Rva005490F1@@QAEXPAMH@Z	0x005490F1	243	blocked	frame 0x14 vs 0x0c plus missing float spill plus double Mid Leaf reload plus late v store t=22 model=muse-09
