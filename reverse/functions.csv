@@ -48980,3 +48980,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005EF5C2@Rva005EF5C2@@QAEXABVUnicodeString@@@Z,,0x005EF5C2,8,Code/GameEngine/Source/Common/Rva005EF557ArmyName.cpp,matched,forwarder to 0x005EF557 via inner at plus4
 ?rva005321D1@Rva005321D1@@QAEXGG@Z,,0x005321D1,94,Code/GameEngine/Source/Common/Rva005321D1Union.cpp,matched,union order remap rank via caller 0x00532470
 ?rva00532165@Rva00532165@@QAEXGG@Z,,0x00532165,108,Code/GameEngine/Source/Common/Rva00532165Union.cpp,matched,union by rank via caller 0x0053244C
+?rva005335D3@Rva005312BE@@QAEXXZ,,0x005335D3,145,Code/GameEngine/Source/Common/Rva005335D3Reset.cpp,matched,reset grid frees arrays via 0x00532F9F callers 0x002F46ED 0x00533B8C
