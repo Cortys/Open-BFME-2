@@ -45,3 +45,59 @@ void rva007B67F0()
 {
     atexit(rva007B9C80);
 }
+
+// Three more lists of the same shape, each with its own 40-byte cleanup and
+// 12-byte atexit registration (byte-identical to the pairs above but for the
+// head and cleanup operands). Each head is zero-filled .bss that only its
+// cleanup references, so it is defined here.
+
+RvaCleanupNode *g_chainHeadAtDF3680;
+
+void rva007B7130()
+{
+    while (g_chainHeadAtDF3680) {
+        RvaCleanupNode *next = g_chainHeadAtDF3680->next;
+        free(g_chainHeadAtDF3680);
+        g_chainHeadAtDF3680 = next;
+    }
+}
+
+// 12B registration at 0x007ACE10, bounded by int3/ret on both sides.
+void rva007ACE10()
+{
+    atexit(rva007B7130);
+}
+
+RvaCleanupNode *g_chainHeadAtDF3694;
+
+void rva007B7160()
+{
+    while (g_chainHeadAtDF3694) {
+        RvaCleanupNode *next = g_chainHeadAtDF3694->next;
+        free(g_chainHeadAtDF3694);
+        g_chainHeadAtDF3694 = next;
+    }
+}
+
+// 12B registration at 0x007ACE20, bounded by int3/ret on both sides.
+void rva007ACE20()
+{
+    atexit(rva007B7160);
+}
+
+RvaCleanupNode *g_chainHeadAtDFCEC8;
+
+void rva007B74C0()
+{
+    while (g_chainHeadAtDFCEC8) {
+        RvaCleanupNode *next = g_chainHeadAtDFCEC8->next;
+        free(g_chainHeadAtDFCEC8);
+        g_chainHeadAtDFCEC8 = next;
+    }
+}
+
+// 12B registration at 0x007ACF90, bounded by int3/ret on both sides.
+void rva007ACF90()
+{
+    atexit(rva007B74C0);
+}
