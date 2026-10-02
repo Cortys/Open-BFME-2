@@ -12,6 +12,7 @@ class ObjectCreationListStore
 public:
 	const ObjectCreationList *findObjectCreationList(const char *name) const;
 };
+extern class ObjectCreationListStore *TheObjectCreationListStore;
 
 #include "ascii_string.h"
 
@@ -37,5 +38,5 @@ private:
 void Made002CC7DE::rva005095FB()
 {
 	Rva00507823::rva00507877();
-	m_128 = (*reinterpret_cast<ObjectCreationListStore *const *>(0x00DFDCCC))->findObjectCreationList(m_12C.str());
+	m_128 = TheObjectCreationListStore->findObjectCreationList(m_12C.str());
 }
