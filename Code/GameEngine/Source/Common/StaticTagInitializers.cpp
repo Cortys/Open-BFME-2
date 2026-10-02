@@ -146,6 +146,11 @@ Rva007F0210 bfmeRva0130AAD0TagSlot;
 Rva007F0210 bfmeRva0130A9B0TagSlot;
 // bfmeRva0130A9E0TagSlot: matched references place it at VA 0xe0a3f8 (zero-filled; a plain-data view).
 Rva007F0210 bfmeRva0130A9E0TagSlot;
+// bfmeRva0130A968TagSlot / bfmeRva0130A89CTagSlot: the DISC and USER slots the
+// two initializers below fill, at VA 0xe0a380 and 0xe0a2b4 (zero-filled; no
+// other unit references either address).
+Rva007F0210 bfmeRva0130A968TagSlot;
+Rva007F0210 bfmeRva0130A89CTagSlot;
 
 void bfmeRva00C6D090InitializeTag()
 {
@@ -440,4 +445,19 @@ void bfmeRva00C6D7E0InitializeTag()
 void bfmeRva00C6D800InitializeTag()
 {
     bfmeRva0130A9E0TagSlot.set(bfmeRva012C3BC0TagValue, 0x4847414D);
+}
+
+// BFME1 donor StaticTagInitializers.cpp (10af19f44a), b1 0x00C6D030 and 0x00C6D070.
+// bfme1_sweep serves both bodies as ambiguous: masked, they are the same bytes
+// as their already rowed siblings. The immediates settle it: retail 0x007B5E10
+// pushes 'DISC' (0x44495343) for the 0xe0a380 slot and 0x007B5E50 pushes 'USER'
+// (0x55534552) for the 0xe0a2b4 slot, as the two donors do.
+void bfmeRva00C6D030InitializeTag()
+{
+    bfmeRva0130A968TagSlot.set(bfmeRva012C3B38TagValue, 0x44495343);
+}
+
+void bfmeRva00C6D070InitializeTag()
+{
+    bfmeRva0130A89CTagSlot.set(bfmeRva012C3B38TagValue, 0x55534552);
 }
