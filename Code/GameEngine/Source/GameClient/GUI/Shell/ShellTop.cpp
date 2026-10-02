@@ -208,6 +208,7 @@ public:
 	WindowLayout *top();
 	void registerWithAnimateManager(GameWindow *win, AnimTypes animType, Bool needsToFinish, unsigned int delayMS);
 	void loadScheme(AsciiString name);
+	void rva0035BEC7();
 	void rva0035BF0E();
 	void shutdownComplete(WindowLayout *screen, Bool impendingPush);
 	void push(AsciiString filename, bool shutdownImmediate);
@@ -327,6 +328,22 @@ void Shell::loadScheme(AsciiString name)
 // ?rva0035BF0E@Shell@@QAEXXZ retail 0x0035BF0E 62B
 // Unlock: top then WindowLayout slot 0xC with bool flag then m_pendingPop=0 then doPop(false) then TheIMEManager m3C.
 // Evidence: callees top 0x0035BD7E doPop 0x0035BDC2 rowed, TheIMEManager extern in use, member +0x51 pendingPop, callers 0x0035C087 0x005A20A7.
+// ?rva0035BEC7@Shell@@QAEXXZ @0x0035BEC7 71B
+// Gap between registerWithAnimateManager and rva0035BF0E: top then GameSpy cleanup then pendingPop=1 then s03 slot 0xC with false flag then IMEManager m3C slot 0x3C.
+// Evidence: callees top 0x0035BD7E Rva00548C1ACleanup rowed, TheGameSpyInfo TheIMEManager externs in use, member +0x51, callers in packet.
+void Shell::rva0035BEC7()
+{
+	WindowLayout *layout = top();
+	if (TheGameSpyInfo)
+		Rva00548C1ACleanup();
+	if (!layout)
+		return;
+	m_pendingPop = true;
+	bool flag = false;
+	layout->s03(&flag);
+	if (TheIMEManager)
+		TheIMEManager->m3C();
+}
 void Shell::rva0035BF0E()
 {
 	WindowLayout *layout = top();

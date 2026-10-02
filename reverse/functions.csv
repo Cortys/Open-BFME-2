@@ -47214,3 +47214,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0009FE01Get@@YAHH@Z,,0x0009FE01,72,Code/GameEngine/Source/Common/System/color_ops.cpp,matched,invert RGB keep alpha via GameGetColorComponents caller 0x0009FE49
 ??4Rva0040AEE3@@QAEAAV0@ABV0@@Z,,0x0040AEFE,31,Code/GameEngine/Source/Common/Thing/Rva0040AEE3CopyCtor.cpp,matched,operator assign of copy-ctor class with vector assign and int at 0xC
 ?rva0040A187@Rva0040A187@@QBE_NPBX@Z,,0x0040A187,37,Code/GameEngine/Source/Common/Rva0040A187Equals.cpp,matched,null check then two-dword compare bool return
+?rva0035BEC7@Shell@@QAEXXZ,,0x0035BEC7,71,Code/GameEngine/Source/GameClient/GUI/Shell/ShellTop.cpp,matched,Shell gap top GameSpy cleanup pendingPop s03 IMEManager
