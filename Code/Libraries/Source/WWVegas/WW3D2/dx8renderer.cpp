@@ -349,21 +349,7 @@ void DX8FVFCategoryContainer::Render_Procedural_Material_Passes(void)
 	visible_matpass_tail = renderTasksRemaining ? last_mpr : NULL;
 }
 
-void DX8RigidFVFCategoryContainer::Add_Delayed_Visible_Material_Pass(MaterialPassClass * pass, MeshClass * mesh)
-{
-	MatPassTaskClass * new_mpr = new MatPassTaskClass(pass,mesh);
-
-	if (delayed_matpass_head == NULL) {
-		WWASSERT(delayed_matpass_tail == NULL);
-		delayed_matpass_head = new_mpr;
-	} else {
-		WWASSERT(delayed_matpass_tail != NULL);
-		delayed_matpass_tail->Set_Next_Visible(new_mpr);
-	}
-
-	delayed_matpass_tail = new_mpr;
-	AnyDelayedPassesToRender=true;
-}
+// Owned by DX8RigidDelayedMaterialPass.cpp.
 
 void DX8RigidFVFCategoryContainer::Render_Delayed_Procedural_Material_Passes(void)
 {
@@ -529,31 +515,7 @@ DX8TextureCategoryClass* DX8FVFCategoryContainer::Find_Matching_Texture_Category
 	return NULL;
 }
 
-// ?Find_Matching_Texture_Category@DX8FVFCategoryContainer@@ present-unmatched
-DX8TextureCategoryClass* DX8FVFCategoryContainer::Find_Matching_Texture_Category(
-		VertexMaterialClass* vmat,
-		unsigned pass,		
-		DX8TextureCategoryClass* ref_category)
-{
-	// Find texture category which matches ref_category's properties but has 'vmat' on given pass
-	DX8TextureCategoryClass* dest_tex_category=NULL;
-	TextureCategoryListIterator dest_it(&texture_category_list[pass]);
-	while (!dest_it.Is_Done()) {
-		if (Equal_Material(dest_it.Peek_Obj()->Peek_Material(),vmat)) {
-			// Compare all stage's textures
-			dest_tex_category=dest_it.Peek_Obj();
-			bool all_textures_same = true;
-			for (unsigned int s = 0; s < MeshMatDescClass::MAX_TEX_STAGES; s++)
-				all_textures_same = all_textures_same && (dest_tex_category->Peek_Texture(s) == ref_category->Peek_Texture(s));			
-			if (all_textures_same &&				
-				dest_tex_category->Get_Shader()==ref_category->Get_Shader()) {
-				return dest_tex_category;
-			}
-		}
-		dest_it.Next();
-	}
-	return NULL;
-}
+// Owned by DX8FVFCategoryFindMatchingMaterialBFME.cpp.
 
 // ?Change_Polygon_Renderer_Texture@DX8FVFCategoryContainer@@ present-unmatched
 void DX8FVFCategoryContainer::Change_Polygon_Renderer_Texture(
@@ -2075,15 +2037,7 @@ DX8MeshRendererClass::DX8MeshRendererClass()
 {
 }
 
-// ??1DX8MeshRendererClass@@ present-unmatched
-DX8MeshRendererClass::~DX8MeshRendererClass()
-{
-	Invalidate(true);
-	Clear_Pending_Delete_Lists();
-	if (texture_category_container_list_skin != NULL) {
-		delete texture_category_container_list_skin;
-	}
-}
+// Owned by DX8MeshRendererClassDtor.cpp.
 
 void DX8MeshRendererClass::Init(void)
 {
@@ -2092,27 +2046,11 @@ void DX8MeshRendererClass::Init(void)
 		texture_category_container_list_skin = W3DNEW FVFCategoryList;
 }
 
-// ?Shutdown@DX8MeshRendererClass@@ present-unmatched
-void DX8MeshRendererClass::Shutdown(void)
-{
-	Invalidate(true);
-	Clear_Pending_Delete_Lists();
-	_TempVertexBuffer.Clear();	//free memory
-	_TempNormalBuffer.Clear();
-}
+// Owned by DX8MeshRendererClearPendingDeleteLists.cpp.
 
 // ----------------------------------------------------------------------------
 
-// ?Clear_Pending_Delete_Lists@DX8MeshRendererClass@@ present-unmatched
-void DX8MeshRendererClass::Clear_Pending_Delete_Lists()
-{
-	while (DX8TextureCategoryClass* category=texture_category_delete_list.Remove_Head()) {
-		delete category;
-	}
-	while (DX8FVFCategoryContainer* container=fvf_category_container_delete_list.Remove_Head()) {
-		delete container;
-	}
-}
+// Owned by DX8MeshRendererClearPendingDeleteLists.cpp.
 
 // ----------------------------------------------------------------------------
 
