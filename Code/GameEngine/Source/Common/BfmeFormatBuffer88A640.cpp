@@ -15,3 +15,9 @@ void bfmeFormatToBuffer88A640(const char *format, ...)
 	_vsnprintf(buffer, sizeof(buffer) - 1, format, args);
 	va_end(args);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeWriteSWA@@YAXPAXHH0@Z=?bfmeFormatToBuffer88A640@@YAXPBDZZ")
+#pragma comment(linker, "/alternatename:?bfmeWriteSXA@@YAXPAXZZ=?bfmeFormatToBuffer88A640@@YAXPBDZZ")
+#pragma comment(linker, "/alternatename:?bfmeWriteSTA@@YAXPAXHHH@Z=?bfmeFormatToBuffer88A640@@YAXPBDZZ")

@@ -72,3 +72,7 @@ void Rva007F5920Owner::requestHostedGame(int first, int second)
     m_notifier->send(&message, Rva007F5A70Callback, this, m_transaction);
     ((Gen_007e86c0 *)&message)->m();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?BfmeGameBrowserVJPCallback@@YGXXZ=?Rva007F5A70Callback@@YAXPAVRva007E8810Message@@PAVRva007F5920Owner@@@Z")

@@ -797,3 +797,7 @@ void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_3)
 void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_4)(Object *objectToExit, CommandSourceType cmdSource) = &AICommandInterface::aiExit;
 void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_5)(bool exposeStealthUnits, CommandSourceType cmdSource) = &AICommandInterface::aiEvacuate;
 void (AICommandInterface::*_bfmeInlineAnchor_AICommandInterfaceAttackCommands_6)(const Coord3D *position, GuardMode guardMode, CommandSourceType cmdSource) = &AICommandInterface::aiGuardPosition;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?aiFaceObject@AICommandInterface@@QAEXPAVObject@@H@Z=?aiFaceObject@AICommandInterface@@QAEXPAVObject@@W4CommandSourceType@@@Z")

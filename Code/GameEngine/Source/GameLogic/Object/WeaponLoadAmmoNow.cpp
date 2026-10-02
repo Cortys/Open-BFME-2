@@ -26,3 +26,7 @@ void Weapon::loadAmmoNow(const Object *source)
     computeBonus(source, 0, bonus);
     reloadWithBonus(source, bonus, true);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva002CE1AC@Weapon@@QAEXPAVObject@@@Z=?loadAmmoNow@Weapon@@QAEXPBVObject@@@Z")

@@ -137,3 +137,7 @@ void bfmeEmitAptValueVector(AptValueNameEntry *p)
 	p->AptValueNameEntry::AptValueNameEntry();
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0Rva00892640Item@@QAE@XZ=??0AptValueNameEntry@@QAE@XZ")
