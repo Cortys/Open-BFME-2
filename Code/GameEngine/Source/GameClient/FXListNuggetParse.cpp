@@ -76,7 +76,7 @@ void SoundFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@SoundFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void SoundFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void SoundFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	SoundFXNugget *nugget = new SoundFXNugget;
 	MultiIniFieldParse p;
@@ -136,7 +136,7 @@ void RayEffectFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@RayEffectFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void RayEffectFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void RayEffectFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	RayEffectFXNugget *nugget = new RayEffectFXNugget;
 	MultiIniFieldParse p;
@@ -166,7 +166,7 @@ void LightPulseFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@LightPulseFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void LightPulseFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void LightPulseFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	LightPulseFXNugget *nugget = new LightPulseFXNugget;
 	MultiIniFieldParse p;
@@ -226,7 +226,7 @@ void ViewShakeFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@ViewShakeFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void ViewShakeFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void ViewShakeFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	ViewShakeFXNugget *nugget = new ViewShakeFXNugget;
 	MultiIniFieldParse p;
@@ -286,7 +286,7 @@ void TerrainScorchFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@TerrainScorchFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void TerrainScorchFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void TerrainScorchFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	TerrainScorchFXNugget *nugget = new TerrainScorchFXNugget;
 	MultiIniFieldParse p;
@@ -316,7 +316,7 @@ void ParticleSystemFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@ParticleSystemFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void ParticleSystemFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void ParticleSystemFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	ParticleSystemFXNugget *nugget = new ParticleSystemFXNugget;
 	MultiIniFieldParse p;
@@ -346,7 +346,7 @@ void FXListAtBonePosFXNugget::buildFieldParse(MultiIniFieldParse &p)
 }
 
 // ?parse@FXListAtBonePosFXNugget@@SAXPAVINI@@PAX1PBX@Z
-void FXListAtBonePosFXNugget::parse(INI *ini, void *instance, void *, const void *)
+inline void FXListAtBonePosFXNugget::parse(INI *ini, void *instance, void *, const void *)
 {
 	FXListAtBonePosFXNugget *nugget = new FXListAtBonePosFXNugget;
 	MultiIniFieldParse p;
@@ -504,3 +504,19 @@ void BuffNuggetFXNugget::parse(INI *ini, void *instance, void *, const void *)
 	ini->initFromINIMulti(nugget, p);
 	((FXList *)instance)->addFXNugget(nugget);
 }
+
+// These seven parse callbacks are header inlines in copier units. The anchor
+// retains this unit's row copies; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeFXListNuggetParseInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeFXListNuggetParseInlineAnchor()
+{
+	SoundFXNugget::parse(0, 0, 0, 0);
+	RayEffectFXNugget::parse(0, 0, 0, 0);
+	LightPulseFXNugget::parse(0, 0, 0, 0);
+	ViewShakeFXNugget::parse(0, 0, 0, 0);
+	TerrainScorchFXNugget::parse(0, 0, 0, 0);
+	ParticleSystemFXNugget::parse(0, 0, 0, 0);
+	FXListAtBonePosFXNugget::parse(0, 0, 0, 0);
+}
+#pragma inline_depth()
