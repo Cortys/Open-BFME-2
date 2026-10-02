@@ -1,5 +1,3 @@
-// ?rva002086C5@ScriptEngine@@QAEPAXVAsciiString@@@Z
-// partial score=0.97 date=2026-10-01
 // cl: /Ireference/shims/bfme2_ascii /O1 /EHs
 // stlport
 // ?rva002086C5@ScriptEngine@@QAEPAXVAsciiString@@@Z @0x002086C5 134B
@@ -32,7 +30,7 @@ struct TeamMapNode
 class Rva0032C07COwner
 {
 public:
-	TeamMapNode *find(Rva0002C4FD &key);
+	TeamMapNode *find(Rva0002C4FD &key) throw();
 };
 
 class ScriptEngine : public Rva002046C0Owner
@@ -44,17 +42,13 @@ private:
 	Rva0032C07COwner m_owner;
 };
 
-// ?rva002086C5@ScriptEngine@@QAEPAXVAsciiString@@@Z present-unmatched
 void *ScriptEngine::rva002086C5(AsciiString name)
 {
 	AsciiString resolved = resolveName(name);
 	Rva0002C4FD key(*(const StringBase<char> *)&resolved, *(const StringBase<char> *)&name);
 	Rva0032C07COwner *owner = (Rva0032C07COwner *)((char *)this + 0x190A0);
 	TeamMapNode *found = owner->find(key);
-	void *ret;
 	if (found != *(TeamMapNode **)owner)
-		ret = (void *)((char *)found + 0x18);
-	else
-		ret = 0;
-	return ret;
+		return (void *)((char *)found + 0x18);
+	return 0;
 }
