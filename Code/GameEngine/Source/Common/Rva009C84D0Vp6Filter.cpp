@@ -4,8 +4,15 @@ typedef void (__cdecl *Rva009C84D0FilterCopy)(void *, void *, int, int);
 typedef void (__cdecl *Rva009C84D0FilterRow)(void *, int, int);
 
 extern Rva009C84D0FilterCopy g_rva01356B40;
-extern Rva009C84D0FilterRow g_rva01356E8C;
-extern Rva009C84D0FilterRow g_rva01356E98;
+// Matched DIR32 witness (w=1) places this callback slot at VA 0x00E22FA8
+// in the zero-filled .data tail. Its extent is one four-byte filter-row
+// callback, as declared and invoked below; the next witnessed slot is at
+// VA 0x00E22FB4.
+Rva009C84D0FilterRow g_rva01356E8C;
+// Matched DIR32 witness (w=1) places this callback slot at VA 0x00E22FB4
+// in the zero-filled .data tail. Its extent is one four-byte filter-row
+// callback, as declared and invoked below.
+Rva009C84D0FilterRow g_rva01356E98;
 
 struct Rva009C84D0Vp6Context
 {
