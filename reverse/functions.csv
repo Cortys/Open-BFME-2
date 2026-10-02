@@ -48890,3 +48890,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005D3D4B@Rva005D3D4B@@QAEXXZ,,0x005D3D4B,76,Code/GameEngine/Source/Common/Rva005D3D4BMethod.cpp,matched,chain via just-landed 0x005D3AF2 plus portrait plus AptCall
 ?rva005E1008@Rva005E1008@@QAEXM@Z,,0x005E1008,86,Code/GameEngine/Source/Common/Rva005E1008Method.cpp,matched,chain via Fire ShowTimerOverlay plus float to 0x3C
 ?rva005E10A8@Rva005E10A8@@QAEXH@Z,,0x005E10A8,176,Code/GameEngine/Source/Common/Rva005E10A8Method.cpp,matched,chain triple Fire Enable ShowProductionCount ShowTimerOverlay
+?rva005E197E@Rva005E197E@@QAEXXZ,,0x005E197E,54,Code/GameEngine/Source/Common/Rva005E197EMethod.cpp,matched,unlock same as 0x005D3AF2 with double indirection plus always clear
