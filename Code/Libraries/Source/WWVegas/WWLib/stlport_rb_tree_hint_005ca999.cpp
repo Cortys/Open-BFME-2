@@ -9,8 +9,8 @@
 // Semantic donor: BFME1 RvaTreeInsertUniqueHint.cpp and STLport pair/tree.
 #include <map>
 #include <list>
-template <class T> class StringBase { void releaseBuffer(); friend class AsciiString; };
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); } private: char *m_text; };
+template <class T> class StringBase { StringBase(const StringBase<T> &); void releaseBuffer(); friend class AsciiString; };
+class AsciiString { public: AsciiString(const AsciiString &that) { ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that); } ~AsciiString() { ((StringBase<char> *)this)->releaseBuffer(); } private: char *m_text; };
 bool operator<(const AsciiString &, const AsciiString &);
 // The 4-byte mapped field's copy at 0x54D800 is the matched STLport
 // list<AsciiString> copy constructor. Keep the address-derived tree type
