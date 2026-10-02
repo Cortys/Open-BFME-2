@@ -48648,3 +48648,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005C7A85@Rva005C7A29@@QAEX_N@Z,,0x005C7A85,92,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,flash overlay via AptCall 0x0050E9FE sibling of 0x005C7A29
 ?rva005C7C65@Rva005C7C5D@@QAEX_N@Z,,0x005C7C65,8,Code/GameEngine/Source/Common/Rva005C7A29Overlay.cpp,matched,thunk to flash 0x005C7A85 sibling of 0x005C7C5D
 ?rva0057C649@AptMapPreview@@QAEPAXXZ,,0x0057C649,35,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapDescription.cpp,matched,AptMapPreview combo at +0x50 via rowed Rva00322910 and GetItemData callers 0x0057CD69 0x0057E0F1
+?rva0057C688@Rva0057C688@@QAEPAVGameSlot@@H@Z,,0x0057C688,63,Code/GameEngine/Source/GameClient/GUI/AptMapPreviewSetMapDescription.cpp,matched,slot by startPos via rowed 0x0043DA65 and getSlot caller 0x0057D8B7

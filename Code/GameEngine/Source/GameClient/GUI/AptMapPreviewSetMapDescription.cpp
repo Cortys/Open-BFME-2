@@ -83,3 +83,49 @@ void *AptMapPreview::rva0057C649()
     int index = Rva00322910(m_combo50);
     return GadgetComboBoxGetItemData(m_combo50, index);
 }
+
+class Rva0043DA65
+{
+public:
+	int rva0043DA65();
+};
+
+class GameSlot
+{
+public:
+	virtual void reset();
+	int m_state;
+	char m_pad08[8];
+	int m_startPos;
+};
+
+class GameInfo
+{
+public:
+	GameSlot *getSlot(int slotNum);
+};
+
+struct Rva0057C688
+{
+	char m_pad0[0x18];
+	Rva0043DA65 *m_ptr18;
+	GameSlot *rva0057C688(int value);
+};
+
+GameSlot *Rva0057C688::rva0057C688(int value)
+{
+	if (value == -1)
+		return 0;
+	GameInfo *info = (GameInfo *)m_ptr18->rva0043DA65();
+	if (!info)
+		return 0;
+	for (int i = 0; i < 8; ++i)
+	{
+		GameSlot *slot = info->getSlot(i);
+		if (!slot)
+			continue;
+		if (slot->m_startPos == value)
+			return slot;
+	}
+	return 0;
+}
