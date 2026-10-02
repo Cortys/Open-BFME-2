@@ -48016,3 +48016,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004F550A@Rva004F54BF@@QAE_NW4ObjectID@@@Z,,0x004F550A,53,Code/GameEngine/Source/Common/Thing/Rva004F54BFRemove.cpp,matched,leaf contains check list at 0x10 via rowed find
 ?rva004F5C44@ResourceGatheringManager@@QAEXPAVObject@@@Z,,0x004F5C44,32,Code/GameEngine/Source/Common/ResourceGatheringManagerAdd.cpp,matched,leaf supply center list at 0x08 via rowed pushback ObjectID at 0x74
 ?rva003A36D3@Rva003A36D3@@UAEMH@Z,,0x003A36D3,36,Code/GameEngine/Source/Common/Rva003A36D3Float.cpp,matched,leaf slot 8 float divide via neighbouring virtuals 0x24 and 0x28
+?duplicate@ScriptAction@@QBEPAV1@XZ,,0x003B5449,147,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionDuplicate.cpp,matched,ScriptAction duplicate via typed ctor plus Rva assign plus self recursion
