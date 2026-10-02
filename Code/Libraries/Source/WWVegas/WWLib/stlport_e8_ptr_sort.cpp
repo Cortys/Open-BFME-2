@@ -28,3 +28,13 @@ struct BfmeE8 { int a; float b; };
 inline bool operator<(const BfmeE8 &x, const BfmeE8 &y) { return x.b < y.b; }
 
 template void _STL::sort<BfmeE8 *>(BfmeE8 *, BfmeE8 *);
+
+// A second sort over 8-byte records, compared through a function pointer: sort
+// (0x004C75DE, 67B) and its family, 0x004C6F77 .. 0x004C755B. Its median, linear
+// inserts, __push_heap and __insertion_sort are rowed by hand
+// (Rva004C6F77Median.cpp: Rva004C6F77Median takes the pointer as
+// bool (*)(void *, void *)); this instantiation reproduces them and is pinned
+// there. Its swap and copy_backward are the folded ones above.
+typedef bool (*BfmeE8Less)(const BfmeE8 &, const BfmeE8 &);
+
+template void _STL::sort<BfmeE8 *, BfmeE8Less>(BfmeE8 *, BfmeE8 *, BfmeE8Less);
