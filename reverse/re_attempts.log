@@ -5420,3 +5420,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ??0?$vector@URva00511E48@@V?$allocator@URva00511E48@@@_STL@@@_STL@@QAE@I@Z	0x00512000	105	partial	calls inner false_type fill_n vs retail middle wrapper; extra mov eax,[esi]/lea ecx/push ecx +5B ecx-vs-eax temp t=28 model=muse-07 score=0.93 stash=reverse/attempts/0x00512000.cpp
 ?rva00032B00@GeneralAllocator@Allocator@EA@@QAEPAXI@Z	0x00032B00	343	blocked	PPMalloc large-chunk VirtualAlloc allocator needs donor t=18 model=muse-07
 ?rva004E9600@Rva004E9600@@QAE_NPAX@Z	0x004E9600	42	partial	xor ecx,ecx + setne cl + mov al,cl vs retail cmp+setne al; 46B vs 42B t=20 model=muse-03 score=0.9 stash=reverse/attempts/0x004e9600.cpp
+??1Rva005F85E1@@QAE@XZ	0x005F85E1	63	blocked	EH prolog wall custom destroy-plus-free needs scopetable t=18 model=muse-04

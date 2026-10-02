@@ -47412,3 +47412,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva002A8A15@Rva002A8A15@@QAEPAXH@Z,,0x002A8A15,28,Code/GameEngine/Source/Common/Rva002A8A15Delete.cpp,matched,clear via 0x004E9337 then cond delete return this
 ?Rva002A8D08Create@@YGPAXPAX@Z,,0x002A8D08,37,Code/GameEngine/Source/Common/Rva002A8D08Create.cpp,matched,alloc 12 zero +4 via dup return ptr
 ?rva002A8A81@Rva002A8A81@@QAEMPAX@Z,,0x002A8A81,48,Code/GameEngine/Source/Common/Rva002A8A81Lookup.cpp,matched,search int16 at +4 for key return float16 at +0x44 else ZeroRange
+?rva0029A64A@InGameUI@@QAEXXZ,,0x0029A64A,23,Code/GameEngine/Source/GameClient/InGameUI_handleRadiusCursor.cpp,matched,InGameUI clear RadiusDecal at 88C and zero 888

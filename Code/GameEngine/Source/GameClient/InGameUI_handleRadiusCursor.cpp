@@ -182,6 +182,7 @@ class RadiusDecal
 public:
 	void setPosition(const Coord3D &pos);
 	void update();
+	void clear();
 
 	void *m_unused0;
 	void *m_object;
@@ -193,8 +194,12 @@ class InGameUI
 protected:
 	void handleRadiusCursor();
 
+public:
+	void rva0029A64A();
+
 private:
-	unsigned char m_pad[0x88C];
+	unsigned char m_pad[0x888];
+	int m_888;
 	RadiusDecal m_curRadiusCursor; // +0x88C
 };
 
@@ -225,4 +230,10 @@ void InGameUI::handleRadiusCursor()
 
 	m_curRadiusCursor.setPosition(pos);
 	m_curRadiusCursor.update();
+}
+
+void InGameUI::rva0029A64A()
+{
+	m_curRadiusCursor.clear();
+	m_888 = 0;
 }
