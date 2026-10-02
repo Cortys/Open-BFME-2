@@ -48999,3 +48999,8 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005FE122@Rva005FE047@@QAEXH@Z,,0x005FE122,181,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,tab switch with deselect select Fire plus Set via rowed Fire and Set
 ?rva005FE1D7@Rva005FE047@@QAEXH@Z,,0x005FE1D7,50,Code/GameEngine/Source/Common/Rva005FE047Visibility.cpp,matched,tab preselect guard then switch via rowed switch
 ?computePath@AIInternalMoveToState@@MAE_NXZ,,0x003441F7,54,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,slot 17 of vtable 0xC10DE8 (AIInternalMoveToState); base path request via getAdjustsDestination and requestPath with friend_startingMove
+?clearModelConditionState@Object@@QAEXI@Z,,0x001E4981,51,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object clear model condition state and notify on change
+?clear@ModelConditionFlags@@QAEXI@Z,,0x0025330B,29,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,ModelConditionFlags clear bit
+?setModelConditionState@Object@@QAEXI@Z,,0x001E49B4,49,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object set model condition state and notify on change
+?clearAndSetModelConditionState@Object@@QAEXII@Z,,0x001E49E5,105,Code/GameEngine/Source/GameLogic/AI/AIInternalMoveToStateOnExit.cpp,matched,Object clear and set model condition state and notify on change
+

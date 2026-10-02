@@ -67,6 +67,10 @@ public:
 	{
 		return m_words[bit >> 5] & (1U << (bit & 0x1f));
 	}
+	void set(unsigned int bit)
+	{
+		m_words[bit >> 5] |= 1U << (bit & 0x1f);
+	}
 	void clear(unsigned int bit)
 	{
 		m_words[bit >> 5] &= ~(1U << (bit & 0x1f));
@@ -105,6 +109,8 @@ public:
 			rva0028AE6D();
 		}
 	}
+	void setModelConditionState(unsigned int mc);
+	void clearAndSetModelConditionState(unsigned int clr, unsigned int set);
 private:
 	unsigned char m_pad000[0x10C];
 	ModelConditionFlags m_modelConditionFlags; // +0x10C
@@ -186,4 +192,23 @@ void AIInternalMoveToState::onExit(StateExitType)
 			ai->m_1A0 = 3.4028234663852886e+38f;
 	}
 	m_4B = false;
+}
+
+void Object::setModelConditionState(unsigned int mc)
+{
+	if (m_modelConditionFlags.test(mc) == 0)
+	{
+		m_modelConditionFlags.set(mc);
+		rva0028AE6D();
+	}
+}
+
+void Object::clearAndSetModelConditionState(unsigned int clr, unsigned int set)
+{
+	if (m_modelConditionFlags.test(clr) != 0 || m_modelConditionFlags.test(set) == 0)
+	{
+		m_modelConditionFlags.clear(clr);
+		m_modelConditionFlags.set(set);
+		rva0028AE6D();
+	}
 }
