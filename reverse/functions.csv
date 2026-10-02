@@ -47316,3 +47316,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005773DB@@QAE@PBH@Z,,0x005773DB,53,Code/Libraries/Source/WWVegas/WWLib/Rva00080221Ctor.cpp,matched,ref-counted int wrapper ctor: bytes equal ??0Rva00080221 except the impl vtable VA 0xc6e970
 ?Rva0032431FSet@@YAXPAVGameWindow@@HE@Z,,0x0032431F,43,Code/GameEngine/Source/GameClient/GUI/Gadget/GadgetListBox.cpp,matched,rowed winGetUserData bound Short plus0x00 rows plus0x18 stride16
 ?Rva00381C2DClear@@YAXI@Z,,0x00381C2D,30,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_stringrecord_5ddd40_clear.cpp,matched,finish gap between rowed 0x00381B7B and 0x00381C4B via rowed erase G7 keeps imul
+?Rva000B5179Apply@@YAXPAX00@Z,,0x000B5179,97,Code/GameEngine/Source/Common/Rva000B5179.cpp,matched,leaf via rowed B304B 6 buckets stride C end B0 flags F6 bit8 F4 inner stride 3C
