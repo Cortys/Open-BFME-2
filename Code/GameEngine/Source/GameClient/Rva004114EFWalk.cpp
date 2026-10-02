@@ -19,6 +19,20 @@ public:
 	void *first(Rva000411084 *iter);
 };
 
+struct Rva004114EFGlobalTable
+{
+	void *m_unused00;
+	void **m_beginBuckets;
+	void **m_endBuckets;
+	void **m_storageEnd;
+	unsigned int m_numElements;
+};
+
+// g_Va00E02FE4: VA 0x00E02FE4 (.data/bss); the 0x14-byte hash-table header
+// is zero-filled. The rowed table destructor establishes three bucket pointers
+// at +4/+8/+0xC and the element count at +0x10.
+Rva004114EFGlobalTable g_Va00E02FE4;
+
 struct Rva004114EFObj
 {
 	virtual void v0();
@@ -44,7 +58,7 @@ public:
 void Rva004114EF::rva004114EF()
 {
 	Rva000411084 iter;
-	((Rva000427195 *)0x00E02FE4)->first(&iter);
+	reinterpret_cast<Rva000427195 *>(&g_Va00E02FE4)->first(&iter);
 	while (iter.m_current != 0) {
 		Rva004114EFObj *obj = ((Rva004114EFNode *)iter.m_current)->m_obj;
 		if (obj != 0)
