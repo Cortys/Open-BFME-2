@@ -44,6 +44,17 @@ public:
 };
 
 // ??1RunwayInfo@FlightDeckBehavior@@QAE@XZ
-FlightDeckBehavior::RunwayInfo::~RunwayInfo(void)
+inline FlightDeckBehavior::RunwayInfo::~RunwayInfo(void)
 {
 }
+
+// Header inline that other units including the header emit as select-any
+// copies, which a plain definition here collided with. The anchor keeps this
+// unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitFlightDeckBehaviorRunwayInfoDestructor@@YAXPAURunwayInfo@FlightDeckBehavior@@@Z present-unmatched
+void bfmeEmitFlightDeckBehaviorRunwayInfoDestructor(FlightDeckBehavior::RunwayInfo *p)
+{
+    p->FlightDeckBehavior::RunwayInfo::~RunwayInfo();
+}
+#pragma inline_depth()
