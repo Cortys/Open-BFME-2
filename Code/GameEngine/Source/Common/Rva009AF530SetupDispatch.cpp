@@ -14,7 +14,8 @@ struct Rva009AF530Context
 
 extern int *g_bfmeFilterLimit;
 typedef int *(__cdecl *Rva009AF530Builder)(Rva009AF530Context *, int);
-extern Rva009AF530Builder g_rva01356e68SetupBounding;
+// g_rva01356e68SetupBounding: VA 0x00E22F84 (.data BSS), zero-filled in retail.
+Rva009AF530Builder g_rva01356e68SetupBounding = 0;
 
 void __cdecl Rva009AF530Setup(Rva009AF530Context *context)
 {
