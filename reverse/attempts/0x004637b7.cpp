@@ -1,5 +1,5 @@
 // ?rva004637B7@Rva00463782@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBVRva0046267A@@H@Z
-// partial score=0.93 date=2026-10-02
+// partial score=0.94 date=2026-10-02
 // cl: /O1 /EHs /MD /D_STLP_USE_STATIC_LIB /D_CRTIMP=
 // stlport
 // ?rva004637B7@Rva00463782@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBVRva0046267A@@H@Z 0x004637B7 136B
@@ -14,13 +14,12 @@ class Rva0046267A;
 
 struct Rva004634BANode;
 
-struct Rva004634BANode *__stdcall Rva004634BACreate(const class Rva0046267A &x);
-
 class Rva00463782
 {
 	_STL::_Rb_tree_node_base *m_header;
 	unsigned int m_count;
 public:
+	struct Rva004634BANode *rva004634BA(const class Rva0046267A &x);
 	_STL::_Rb_tree_node_base **rva004637B7(_STL::_Rb_tree_node_base **out, _STL::_Rb_tree_node_base *x, _STL::_Rb_tree_node_base *pos, const class Rva0046267A *val, int flag);
 };
 
@@ -28,28 +27,34 @@ public:
 _STL::_Rb_tree_node_base **Rva00463782::rva004637B7(_STL::_Rb_tree_node_base **out, _STL::_Rb_tree_node_base *x, _STL::_Rb_tree_node_base *pos, const class Rva0046267A *val, int flag)
 {
 	_STL::_Rb_tree_node_base *node;
+	const class Rva0046267A *v = val;
 	if (pos == m_header)
 		goto left_insert;
 	if (flag != 0)
 		goto right_insert;
 	if (x != 0)
 		goto left_insert;
-	if (*(const unsigned *)val < *(const unsigned *)((const char *)pos + 0x10))
+	if (*(const unsigned *)v < *(const unsigned *)((const char *)pos + 0x10))
 		goto left_insert;
 right_insert:
-	node = (_STL::_Rb_tree_node_base *)Rva004634BACreate(*val);
+	node = (_STL::_Rb_tree_node_base *)rva004634BA(*v);
 	pos->_M_right = node;
-	if (pos == m_header->_M_right)
-		m_header->_M_right = node;
+	if (pos != m_header->_M_right)
+		goto link;
+set_rightmost:
+	m_header->_M_right = node;
 	goto link;
 left_insert:
-	node = (_STL::_Rb_tree_node_base *)Rva004634BACreate(*val);
+	node = (_STL::_Rb_tree_node_base *)rva004634BA(*v);
 	pos->_M_left = node;
-	if (pos == m_header) {
-		m_header->_M_parent = node;
-	} else if (pos == m_header->_M_left) {
-		m_header->_M_left = node;
-	}
+	if (pos != m_header)
+		goto check_leftmost;
+	m_header->_M_parent = node;
+	goto set_rightmost;
+check_leftmost:
+	if (pos != m_header->_M_left)
+		goto link;
+	m_header->_M_left = node;
 link:
 	node->_M_left = 0;
 	node->_M_right = 0;
