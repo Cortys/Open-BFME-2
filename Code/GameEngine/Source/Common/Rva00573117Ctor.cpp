@@ -16,6 +16,7 @@ struct Rva005CB22A
 struct Rva00573117 : Rva005CB22A
 {
 	Rva00573117();
+	virtual ~Rva00573117();
 	int m_field08;
 };
 Rva00573117::Rva00573117() : Rva005CB22A((void *)3), m_field08(0)
