@@ -1,5 +1,3 @@
-// ?rva00498F46@Rva00498DF3@@QAEXPAURva00498DF3Arg@@HH@Z
-// partial score=0.96 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD /EHsc /DNDEBUG /Ireference/shims/moduledata
 //
 // ?rva00498DF3@Rva00498DF3@@QAEXPAURva00498DF3Arg@@M@Z, retail 0x00498DF3, 59 bytes.
@@ -96,7 +94,6 @@ void Rva00498DF3::rva00498DF3(Rva00498DF3Arg *arg, float flt)
 	((AICommandInterface *)((char *)mid + 0x20))->rva0026C411(obj, &obj->m_pos38, CMD_FROM_AI);
 }
 
-// ?rva00498F46@Rva00498DF3@@QAEXPAURva00498DF3Arg@@HH@Z present-unmatched
 void Rva00498DF3::rva00498F46(Rva00498DF3Arg *arg, int u1, int u2)
 {
 	if (m_ptr08->m_flag18 == 0)
@@ -106,13 +103,14 @@ void Rva00498DF3::rva00498F46(Rva00498DF3Arg *arg, int u1, int u2)
 	if (!Rva00498B8BGet((Object *)arg))
 		return;
 	Rva00498DF3Mid *mid = arg->m_mid258;
-	if (!mid)
-		return;
-	Object *o1 = m_objC;
-	if (mid->m_turret30->getGoalObject() == o1)
-		return;
-	Object *o2 = m_objC;
-	if (((AIUpdateInterface *)mid)->getCurrentVictim() == o2)
-		return;
+	if (mid != 0)
+	{
+		Object *o1 = m_objC;
+		if (mid->m_turret30->getGoalObject() == o1)
+			return;
+		Object *o2 = m_objC;
+		if (((AIUpdateInterface *)mid)->getCurrentVictim() == o2)
+			return;
+	}
 	rva00498DF3(arg, g_00C50244);
 }
