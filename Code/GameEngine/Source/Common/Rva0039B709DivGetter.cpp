@@ -4,6 +4,7 @@
 // sole caller 0x005BEF34 moves edi to ecx with no stack args and pushes eax.
 
 extern int g_Va00DBA4E4;
+extern class GameLogic *TheGameLogic;
 
 #define LogicFramesPerSecond (*(const unsigned int *)&g_Va00DBA4E4)
 
@@ -32,7 +33,7 @@ struct Global40Holder
 	unsigned int m_val40;
 };
 
-#define Global40Ptr (*(Global40Holder *const *)0x00DFE78C)
+#define Global40Ptr ((Global40Holder *)TheGameLogic)
 
 // ?rva0039B718@Rva0039B709@@QAEIXZ @0x0039B718 19B fallback getter: member at
 // +0xF0 when nonzero else Global40Ptr->m_val40. Evidence: two callers
