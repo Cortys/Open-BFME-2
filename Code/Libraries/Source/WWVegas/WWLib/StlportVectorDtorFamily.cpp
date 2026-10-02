@@ -9,7 +9,21 @@
 #include <vector>
 
 // ??1?$vector@UOpaqueRefElement4@@V?$allocator@UOpaqueRefElement4@@@_STL@@@_STL@@QAE@XZ @0x57994 (_Destroy at 0x54f94)
-struct OpaqueRefElement4 { public: ~OpaqueRefElement4(); };
+// Element view matches StlportOwnedDeque.cpp (kept ??_G at 0x51B1E): 4-byte owning ref.
+extern "C" __declspec(dllimport) long __stdcall InterlockedIncrement(long volatile *);
+class OpaqueRefCounted {
+public:
+    virtual ~OpaqueRefCounted();
+    void Add_Ref() { InterlockedIncrement(&refs); }
+    void Release_Ref();
+private:
+    long refs;
+};
+struct OpaqueRefElement4 {
+    OpaqueRefCounted *referent;
+    ~OpaqueRefElement4() { if (referent) referent->Release_Ref(); }
+    OpaqueRefElement4 &operator=(const OpaqueRefElement4 &);
+};
 template _STL::vector<OpaqueRefElement4>::~vector();
 
 // ??1?$vector@UQuantityModifier@@V?$allocator@UQuantityModifier@@@_STL@@@_STL@@QAE@XZ @0x49e274
