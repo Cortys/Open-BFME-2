@@ -5507,3 +5507,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002B693F@Rva002B693F@@QAEXPAX@Z	0x002B693F	103	partial	count in ecx vs retail eax plus redundant begin reload; frame and calls exact; round-robin toggle tried t=18 model=muse-03 score=0.92 stash=reverse/attempts/0x002b693f.cpp
 ?reconstructViewBox@W3DRadar@@IAEXXZ	0x0004D9B6	381	blocked	ZH ICoord2D int x87 vs retail Coord2D float SSE EH vector-new Region3D ctor layout plus158 plus4 TacticalView slots 0x34 vs 0x2c need BFME2 Radar View layout t=14 model=muse-01
 ?deleteResources@W3DRadar@@IAEXXZ	0x0004D8DD	217	blocked	uniform minus8 offsets clears vs releaseRef push0 virtual plus operator-delete vs push1 deleting-dtor need image delete shape t=18 model=muse-01
+?rva00432AA2@Rva00432A3B@@QAEXXZ	0x00432AA2	35	blocked	second call needs thiscall member at 0x004328D8 but row is free stdcall Emit member version exact needs ICF-owner or retype t=12 model=muse-04
+?rva00432AC5@Rva00432A3B@@QAEXXZ	0x00432AC5	38	blocked	same wall as 0x00432AA2 second call needs thiscall member at 0x004328D8 but row is free stdcall Emit t=2 model=muse-04
+??1Rva0032D279@@QAE@XZ	0x0032D279	84	partial	xor-cmp-push-reg vs test-push-imm for null check and virtual arg plus edx vs eax for vtable t=20 model=muse-04 score=0.99 stash=reverse/attempts/0x0032d279.cpp

@@ -47720,3 +47720,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva004BE722@Rva004BE722@@QAEXPAX@Z,,0x004BE722,95,Code/GameEngine/Source/GameLogic/Object/Body/Rva004BE722.cpp,matched,unlock bit-copy 21 bits from this dword via index shift5 and mask31 into memset 3-byte local via div8 mod8 then slot 0x24 on arg
 ?init@CountUpTransition@@UAEXPAVGameWindow@@@Z,,0x0035F739,349,Code/GameEngine/Source/GameClient/GUI/CountUpTransitionInit.cpp,matched,vslot slot1 donor BFME1 init with winHide GetText translate atoi
 ?rva00273755@Drawable@@QAEXXZ,,0x00273755,179,Code/GameEngine/Source/GameClient/Drawable_rva00273755.cpp,matched,Drawable anim draw via getter Anim2D scale
+?Rva0032DD81Copy@@YAPAVSidesInfo@@PAV1@00@Z,,0x0032DD81,50,Code/GameEngine/Source/GameLogic/Map/SidesList_sidesInfo.cpp,matched,copies SidesInfo range via operator equals 0x60 stride

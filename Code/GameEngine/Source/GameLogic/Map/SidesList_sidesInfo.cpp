@@ -257,3 +257,16 @@ void SidesList::clear()
 	m_cleared = true;
 	m_notifier.post(Rva005CB26A, this);
 }
+
+SidesInfo *Rva0032DD81Copy(SidesInfo *first, SidesInfo *last, SidesInfo *result)
+{
+	int n = last - first;
+	if (n <= 0)
+		return result;
+	for (; n > 0; --n) {
+		*result = *first;
+		++first;
+		++result;
+	}
+	return result;
+}
