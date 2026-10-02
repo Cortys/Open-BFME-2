@@ -47820,3 +47820,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva002AE318@Rva002AE318@@QAEXXZ,,0x002AE318,17,Code/GameEngine/Source/Common/RTS/Rva002AE318.cpp,matched,calls Rva00380200 then tail Player on this-8
 ?rva00449A81@LANAPI@@QAEXVUnicodeString@@@Z,,0x00449A81,55,Code/GameEngine/Source/GameNetwork/LANAPIRva00449A81.cpp,matched,unlock LANAPI F64 UnicodeString set by-value param
 ?rva00084024@Rva00084024@@QAEXXZ,,0x00084024,49,Code/GameEngine/Source/Common/Rva00084024Clear.cpp,matched,list clear via 0x1320 chain zeroes 0x1310 0x130C 0x1308 0x30 0x34 sets 0x131D 1
+?Rva0055FA5FWriteHeader@@YAXPBXPAVFile@@PAI@Z,,0x0055FA5F,216,Code/GameEngine/Source/Common/Rva0055FA5FWrite.cpp,matched,same 216B shape as 0x0055E891 cat4 via GetKey cat2 Pad Write
