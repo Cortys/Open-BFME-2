@@ -91,8 +91,3 @@ Rva004D759C::Rva004D759C(Object *owner, AsciiString name, bool flag)
 	m_inited = false;
 	m_goalRange = FLT_MAX;
 }
-
-// ??1Rva004D759C@@UAE@XZ present-unmatched
-Rva004D759C::~Rva004D759C()
-{
-}
