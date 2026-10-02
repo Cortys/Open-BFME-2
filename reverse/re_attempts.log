@@ -5660,3 +5660,4 @@ FUN_0066df0d	0x0026DF0D	359	blocked	Ghidra boundary 0x0026DF0D/359B; DBaseM4 slo
 FUN_0088911a	0x0058911A	20	blocked	Boundary checkpoint 0x0058911A/20B; body compares Object* argument to module owner at this-0x20+8; slot contexts and donor interfaces do not establish a named method identity; t=8min model=gpt-6-luna
 ?rva00577CC5@Rva00577CC5@@QAEXHHHH@Z	0x00577CC5	206	blocked	movss ebp-8 early at 0x6f vs retail late at 0x79 between test and je t=15 model=muse-01 (stash 0.97 kept)
 ??1Rva004636FE@@QAE@XZ	0x004636FE	56	partial	extra member dtor call plus header in eax not esi and late EH state t=18 model=muse-spark score=0.9 stash=reverse/attempts/0x004636fe.cpp
+?rva0046760D@TransportContain@@UAEXXZ	0x0046760D	222	blocked	obj-spill-to-stack-not-ebx plus test-vs-shr plus push-order t=20 model=muse-02

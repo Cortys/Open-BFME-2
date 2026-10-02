@@ -7063,3 +7063,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?Rva006016C9Init@@YAXXZ,0x006016C9,"address read from the retail REL32 at 0x00601BE9 in the INI helper constructor 0x00601BBC; once-only ctype-style table init (guard byte 0x00E06E50), no arguments"
 ?rva00601A8D@Rva00601BBCHelper@@QAEXXZ,0x00601A8D,"address read from the retail REL32 at 0x00601C11 in the INI helper destructor 0x00601BF3; clears the member at +4 and deletes the pointers held in the +0x28 vector"
 ??1Rva00524415@@QAE@XZ,0x00601AE9,"address read from the retail REL32 at 0x00601C41 in the INI helper destructor 0x00601BF3; destroys the +4 member built by the rowed Rva00524415 constructor (vector storage plus vector<AsciiString> at +0xC)"
+?rva0020D613@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x0020D613,thiscall twin of rowed stdcall alloc via call-site mov ecx esi at 0x0020D638

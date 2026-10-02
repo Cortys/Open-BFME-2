@@ -1,5 +1,3 @@
-// ?rva0020D638@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z
-// partial score=0.96 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 // ?rva0020D638@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z @0x0020D638 68B hashtable insert via resize plus bucketIndex plus node alloc.
@@ -11,13 +9,13 @@ struct NoCaseTreeValue4
 	char m_body[4];
 };
 typedef _STL::pair<const AsciiString, NoCaseTreeValue4> NocasePair;
-void *__stdcall Rva0020D613Alloc(const NocasePair &src);
 class Rva000427195
 {
 public:
 	void *rva0020D638(const NocasePair &src);
 	void rva00212858(unsigned int n);
 	int bucketIndex(const AsciiString *name);
+	void *rva0020D613(const NocasePair &src);
 private:
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -25,13 +23,12 @@ private:
 	void *m_pad0C;
 	unsigned int m_count;
 };
-// ?rva0020D638@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z present-unmatched
 void *Rva000427195::rva0020D638(const NocasePair &src)
 {
 	rva00212858(m_count + 1);
 	int idx = bucketIndex((const AsciiString *)&src);
 	void *old = m_beginBuckets[idx];
-	void *nn = Rva0020D613Alloc(src);
+	void *nn = rva0020D613(src);
 	*(void **)nn = old;
 	m_beginBuckets[idx] = nn;
 	++m_count;
