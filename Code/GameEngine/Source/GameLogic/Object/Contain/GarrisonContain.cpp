@@ -240,47 +240,7 @@ TheInGameUI->message( msg );
 /** Given the current state of the structure, return the condition index we are to use
 	* from the garrison point position arrays */
 // ------------------------------------------------------------------------------------------------
-// ?GarrisonContain::findConditionIndex present-unmatched
-Int GarrisonContain::findConditionIndex( void )
-{
-	BodyModuleInterface *body = getObject()->getBodyModule();
-	BodyDamageType bodyDamage = body->getDamageState();
-	Int index = GARRISON_INDEX_INVALID;
-
-	switch( bodyDamage )
-	{
-
-		// --------------------------------------------------------------------------------------------
-		case BODY_PRISTINE:
-
-			index = GARRISON_POINT_PRISTINE; 
-			break;
-
-		// --------------------------------------------------------------------------------------------
-		case BODY_DAMAGED:
-
-			index = GARRISON_POINT_DAMAGED;
-			break;
-
-		// --------------------------------------------------------------------------------------------
-		case BODY_REALLYDAMAGED:
-		case BODY_RUBBLE:
-
-			index = GARRISON_POINT_REALLY_DAMAGED; 
-			break;
-
-		// --------------------------------------------------------------------------------------------
-		default:
-
-			DEBUG_CRASH(( "GarrisonContain::findConditionIndex - Unknown body damage type '%d'\n",
-										bodyDamage ));
-			break;
-
-	}  // end switch
-
-	return index;
-
-}  // end findConditionIndex
+// GarrisonContain::findConditionIndex: defined in GarrisonContainFindConditionIndex.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 //The weapon system would like to perform a range check assuming the object is placed in the
