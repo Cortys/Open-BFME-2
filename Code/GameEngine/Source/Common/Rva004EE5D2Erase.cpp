@@ -23,10 +23,19 @@ extern Rva002B7250 g_00E04424;
 extern Rva002B7250 g_00E02E88;
 extern Rva002B7250 g_00E044F0;
 
+class BfmeSelectionState
+{
+public:
+	bool isSelectionLocked() const;
+};
+
+extern "C" __declspec(dllimport) long __cdecl time(long *t);
+
 class Rva004EE5D2
 {
 public:
 	void rva004EE5D2();
+	void rva004EE695();
 private:
 	int m_0;
 	CreateAHeroData m_4;
@@ -38,6 +47,10 @@ private:
 	CreateAHeroData m_1c;
 	CreateAHeroData m_20;
 	Rva002B7250 *m_24;
+	char m_pad28[0x48];
+	int m_70;
+	char m_pad74[0x84];
+	unsigned char m_f8;
 };
 
 void Rva004EE5D2::rva004EE5D2()
@@ -50,4 +63,14 @@ void Rva004EE5D2::rva004EE5D2()
 	g_00E02E88.rva002B7250(this ? &m_14 : (CreateAHeroData *)0);
 	g_00E044F0.rva002B7250(this ? &m_20 : (CreateAHeroData *)0);
 	m_24->rva002B7250(this ? &m_18 : (CreateAHeroData *)0);
+}
+
+void Rva004EE5D2::rva004EE695()
+{
+	if (g_009FEF10 != 0 && ((BfmeSelectionState *)g_009FEF10)->isSelectionLocked() != 0)
+		m_70 = time(0);
+	else
+		m_70 = 0;
+	if (m_f8 != 0)
+		return rva004EE5D2();
 }

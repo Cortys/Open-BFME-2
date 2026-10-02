@@ -48675,3 +48675,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F3F14@Rva005F3F14@@QAEXXZ,,0x005F3F14,38,Code/GameEngine/Source/Common/Rva005F3F14Method.cpp,matched,unlock lane same shape as Rva005796B3Method with pinned no-arg int and rowed slot1 plus caller 0x005F3F6B
 ?rva0007BDAD@Rva0007BDAD@@QAEXXZ,,0x0007BDAD,113,Code/GameEngine/Source/Common/Rva0007BDADDraw.cpp,matched,rowed BFME2Set_Texture 0x0011F4B0 and Texture getters and Draw 0x00075A23
 ?rva00542806@Rva00542806@@QAEPAV1@PADHH@Z,,0x00542806,116,Code/GameEngine/Source/Common/Rva00542806Init.cpp,matched,retail bytes unlock lane strncmp IAT header 0x0086954C memset 0x6291AE
+?rva004EE695@Rva004EE5D2@@QAEXXZ,,0x004EE695,59,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,guarded time stamp then tail erase
