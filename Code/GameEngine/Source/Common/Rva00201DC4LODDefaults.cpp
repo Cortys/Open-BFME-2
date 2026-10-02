@@ -67,3 +67,22 @@ Rva00201E45LODInfo::Rva00201E45LODInfo()
 typedef char Rva00201DC4StrideCheck[sizeof(Rva00201DC4LODInfo)==0x4C ? 1 : -1];
 typedef char Rva00201E2BStrideCheck[sizeof(Rva00201E2BLODInfo)==0x10 ? 1 : -1];
 typedef char Rva00201E45StrideCheck[sizeof(Rva00201E45LODInfo)==8 ? 1 : -1];
+
+// Native manager passes VA0x00601D48 for count0xA0, stride0x20 at +0x228.
+// Target leaf [0x00201D48..0x00201D79) and each scalar position are independently
+// decoded; descriptive member names remain BFME 1 LOD-preset donor semantics.
+struct Rva00201D48LODPreset
+{
+    Rva00201D48LODPreset();
+    int cpuType, mhz;
+    float cpuPerfIndex;
+    int videoType, memory, word14, width, height;
+};
+
+Rva00201D48LODPreset::Rva00201D48LODPreset()
+{
+    cpuType=0; mhz=1; cpuPerfIndex=1.0f; videoType=0;
+    memory=1; word14=1; width=800; height=600;
+}
+
+typedef char Rva00201D48StrideCheck[sizeof(Rva00201D48LODPreset)==0x20 ? 1 : -1];
