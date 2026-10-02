@@ -123,30 +123,7 @@ HTreeClass::HTreeClass(void) :
  * HISTORY:                                                                                    *
  *   3/4/98     GTH : Created.                                                                 *
  *=============================================================================================*/
-HTreeClass::HTreeClass(const HTreeClass & src) :
-	NumPivots(0),
-	Pivot(NULL),
-	ScaleFactor(1.0f)
-{
-	memcpy(&Name,&src.Name,sizeof(Name));
-
-	NumPivots = src.NumPivots;
-	if (NumPivots > 0) {
-		Pivot = MSGW3DNEWARRAY("HTreeClass::Pivot") PivotClass[NumPivots];
-	}
-
-	for (int pi = 0; pi < NumPivots; pi++) {
-		Pivot[pi] = src.Pivot[pi];
-		
-		if (src.Pivot[pi].Parent != NULL) {
-			Pivot[pi].Parent = &(Pivot[src.Pivot[pi].Parent->Index]);
-		} else {
-			Pivot[pi].Parent = NULL;
-		}
-	}
-
-	ScaleFactor = src.ScaleFactor;
-}
+// HTreeClass::HTreeClass(const HTreeClass &): defined in HTreeClassCopyConstructor.cpp (its row's unit).
 
 /*********************************************************************************************** 
  * HTreeClass::Load -- loads a hierarchy tree from a file                                      * 
