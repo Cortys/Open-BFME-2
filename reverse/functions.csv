@@ -47978,3 +47978,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva003570D1@ScriptEngine@@QAEPAVTeamPrototype@@VAsciiString@@@Z,,0x003570D1,95,Code/GameEngine/Source/Common/Rva003570D1.cpp,matched,resolveName plus TeamFactory findPrototype caller 0x003BF9C8
 ?rva0025DE2E@Rva0025DDD2@@QBEMXZ,,0x0025DE2E,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,float wrapper null yields 0 via rowed 0x004D50CE
 ??0Rva004F599E@@QAE@XZ,,0x004F599E,14,Code/GameEngine/Source/Common/Rva004F599EClear.cpp,matched,chain lane vtable store plus helper call
+?rva0040B4F9@Rva0040B4F9@@QAEXXZ,,0x0040B4F9,53,Code/Libraries/Source/WWVegas/WWLib/Rva0040B4F9Sort.cpp,matched,sorts two int vectors via rowed sort 0x0040B4B6
