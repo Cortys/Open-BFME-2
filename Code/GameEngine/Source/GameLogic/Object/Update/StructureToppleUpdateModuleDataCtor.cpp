@@ -49,6 +49,7 @@ private:
 
 struct FXBoneInfo
 {
+	~FXBoneInfo();
 	AsciiString m_boneName;
 	const void *m_particleSystemTemplate;
 };
@@ -64,7 +65,7 @@ class ObjectCreationList;
 class DieMuxData
 {
 public:
-	DieMuxData() { init(); }
+	DieMuxData();
 	DieMuxData *init();
 
 private:
