@@ -48408,3 +48408,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??_GRva004192D1@@UAEPAXI@Z,,0x0022E076,28,Code/GameEngine/Source/GameClient/Rva004192D1Dtor.cpp,matched,vtable slot0 0x007E7740 via rowed dtor unit emits exact
 ?Set_Texture_Tile_Factor@StreakLineClass@@QAEXM@Z,,0x007419D0,37,Code/Libraries/Source/WWVegas/WW3D2/streak.cpp,matched,forwards to both renderers like Set_Texture at 0x741880
 ?Rva005923C5Read@@YAPAVRva004D62A9@@HPAI@Z,,0x005923C5,209,Code/GameEngine/Source/GameNetwork/Rva005923C5Read.cpp,matched,new 0x24 plus ctor 0x004D62A9 plus StringBase 0x37BA0 plus setters 0x590F13 0x4D5978 0x4D5984
+?rva0047971C@AICommandInterface@@QAEXABVRva0035149F@@PAVObject@@W4CommandSourceType@@@Z,,0x0047971C,115,Code/GameEngine/Source/GameLogic/AI/AICommandRva0047971C.cpp,matched,cmd 0x0A via 0x351BD0 plus assign 0x35149F plus slot0 plus free 0x30830
