@@ -47539,3 +47539,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00363D74@Rva00363D20@@QAENXZ,,0x00363D74,84,Code/GameEngine/Source/GameLogic/AI/PathRva00363D20.cpp,matched,path length: bytes equal rva00363D20 except the rowed Rva00363CF3Distance call; the earlier x87 wall is the template's matched shape
 ?rva0058DDF2@NetPacket@@SAPAVNetCommandMsg@@PAEAAH@Z,,0x0058DDF2,105,Code/GameEngine/Source/GameNetwork/NetPacket_Rva0058E047.cpp,matched,1-byte flag message reader: bytes equal rva0058E047 except the rowed Rva004D5795 constructor; same 0x20 allocation
 ??1Rva00282500@@UAE@XZ,,0x00282500,174,Code/GameEngine/Source/GameClient/Rva00282500Dtor.cpp,matched,vptr store plus list unlink plus TerrainLogic clear plus 5 releaseBuffer
+??_GRva00282500@@UAEPAXI@Z,,0x00282B9F,28,Code/GameEngine/Source/GameClient/Rva00282500Dtor.cpp,matched,deleting dtor via own dtor unit plus rowed delete
