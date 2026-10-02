@@ -16,7 +16,20 @@ typedef bool Bool;
 typedef const char *ConstCharPtr;
 typedef const ConstCharPtr *ConstCharPtrArray;
 
-extern const char *DisabilityTypeNames[11]; ///< retail [0x00DC828C]
+// DisabilityTypeNames: the retail string table at VA 0xdc828c.
+const char *DisabilityTypeNames[11] = {
+	"DEFAULT",
+	"DISABLED_USER_PARALYZED",
+	"DISABLED_EMP",
+	"DISABLED_HELD",
+	"DISABLED_PARALYZED",
+	"DISABLED_UNMANNED",
+	"DISABLED_UNDERPOWERED",
+	"DISABLED_FREEFALL",
+	"DISABLED_TEMPORARILY_BUSY",
+	"DISABLED_SCRIPT_DISABLED",
+	"DISABLED_SCRIPT_UNDERPOWERED",
+};
 
 class INIException
 {

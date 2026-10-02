@@ -48,7 +48,25 @@ template <typename T> struct BfmeStringData
 #include "ascii_string.h"
 
 
-extern const char *AIKindOfNames[16]; ///< retail table at 0x009D0288
+// AIKindOfNames: the retail string table at VA 0xdd0288.
+const char *AIKindOfNames[16] = {
+	"INFANTRY",
+	"ARCHER",
+	"PIKEMAN",
+	"CAVALRY",
+	"CREEP",
+	"CREEP_STRUCTURE",
+	"STRUCTURE",
+	"SIEGEWEAPON",
+	"EXPLORABLE_AREA",
+	"WALL",
+	"HERO",
+	"BATTLE_TOWER",
+	"SHIP_BATTLESHIP",
+	"SHIP_BOMBARD",
+	"SHIP_TRANSPORT",
+	"SHIP_SUICIDE",
+};
 
 struct INIException
 {

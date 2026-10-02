@@ -12,7 +12,24 @@
 typedef int Int;
 typedef bool Bool;
 
-extern const char *CommandSetNames[15]; ///< retail [0x00DBAA00]
+// CommandSetNames: the retail string table at VA 0xdbaa00.
+const char *CommandSetNames[15] = {
+	"NONE",
+	"LEADERSHIP",
+	"FORMATION",
+	"SPELL",
+	"WEAPON",
+	"STRUCTURE",
+	"LEVEL",
+	"BUFF",
+	"DEBUFF",
+	"STUN",
+	"INNATE_ARMOR",
+	"INNATE_DAMAGEMULT",
+	"INNATE_VISION",
+	"INNATE_AUTOHEAL",
+	"INNATE_HEALTH",
+};
 
 template <size_t NUMBITS>
 class BitFlags

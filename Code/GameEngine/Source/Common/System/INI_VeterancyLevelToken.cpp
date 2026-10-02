@@ -15,7 +15,30 @@ typedef bool Bool;
 typedef const char *ConstCharPtr;
 typedef const ConstCharPtr *ConstCharPtrArray;
 
-extern const char *VeterancyLevelNames[21]; ///< retail [0x00DBAA40]
+// VeterancyLevelNames: the retail string table at VA 0xdbaa40.
+const char *VeterancyLevelNames[21] = {
+	"VETERAN",
+	"ELITE",
+	"HERO",
+	"PLAYER_UPGRADE",
+	"WEAK_VERSUS_BASEDEFENSES",
+	"ALTERNATE_FORMATION",
+	"MOUNTED",
+	"PLAYER_UPGRADE_2",
+	"PLAYER_UPGRADE_3",
+	"UNBESIEGEABLE",
+	"AS_TOWER",
+	"CREATE_A_HERO_01",
+	"CREATE_A_HERO_02",
+	"CREATE_A_HERO_03",
+	"CREATE_A_HERO_04",
+	"CREATE_A_HERO_05",
+	"CREATE_A_HERO_06",
+	"CREATE_A_HERO_07",
+	"CREATE_A_HERO_08",
+	"CREATE_A_HERO_09",
+	"CREATE_A_HERO_10",
+};
 
 class INIException
 {

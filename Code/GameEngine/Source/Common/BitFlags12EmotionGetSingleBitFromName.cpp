@@ -12,7 +12,21 @@
 typedef int Int;
 typedef bool Bool;
 
-extern const char *EmotionNames[12]; ///< retail [0x00DBA9C8]
+// EmotionNames: the retail string table at VA 0xdba9c8.
+const char *EmotionNames[12] = {
+	"TAUNT",
+	"CHEER",
+	"HERO_CHEER",
+	"POINT",
+	"FEAR",
+	"UNCONTROLLABLE_FEAR",
+	"TERROR",
+	"DOOM",
+	"QUARRELSOME",
+	"ALERT",
+	"BRACE_FOR_BEING_CRUSHED",
+	"CHEER_FOR_ABOUT_TO_CRUSH",
+};
 
 template <size_t NUMBITS>
 class BitFlags

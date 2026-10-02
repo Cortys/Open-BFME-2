@@ -5,7 +5,16 @@
 #include "ascii_string.h"
 
 
-extern const char *g_rva0033A3F4Table[7]; // retail 0x00DBE9B0
+// g_rva0033A3F4Table: the retail string table at VA 0xdbe9b0.
+const char *g_rva0033A3F4Table[7] = {
+	"Men",
+	"Elves",
+	"Dwarves",
+	"Isengard",
+	"Mordor",
+	"Wild",
+	"Neutral",
+};
 
 int Rva0033A3F4Lookup(const AsciiString &name)
 {
