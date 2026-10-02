@@ -109,11 +109,15 @@ private:
 	bool m_upgradeExecuted;
 };
 
+class DamageInfo;
+enum BodyDamageType {};
+
 class DamageModuleInterface
 {
 public:
-	DamageModuleInterface() {}
-	virtual void onDamage(DamageInfo *damageInfo);
+	virtual void onDamage(DamageInfo *damageInfo) = 0;
+	virtual void onHealing(DamageInfo *damageInfo) = 0;
+	virtual void onBodyDamageStateChange(const DamageInfo *damageInfo, BodyDamageType oldState, BodyDamageType newState) = 0;
 };
 
 class FireWeaponWhenDamagedBehaviorModuleData
