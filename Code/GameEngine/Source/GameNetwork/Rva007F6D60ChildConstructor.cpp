@@ -81,7 +81,6 @@ public:
 		m_08 = 0;
 		m_24 = 0;
 	}
-	virtual void handle();
 
 	int m_04;
 	char m_08;
