@@ -287,3 +287,9 @@ Rva00802D00Element::Rva00802D00Element()
 	m_value38 = 0;
 	m_value3c = 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?set@Rva00802040Buf@@QAEXPAX@Z=?allocate@Rva007F78E0Block@@QAEXH@Z")
+#pragma comment(linker, "/alternatename:?bfmeDtorBTYA@BfmeSlotTYA@@QAEXXZ=?clear@Rva007F78E0Block@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?bfmeUse1251@BfmeSub2_1251@@QAEXPAX@Z=?allocate@Rva007F78E0Block@@QAEXH@Z")

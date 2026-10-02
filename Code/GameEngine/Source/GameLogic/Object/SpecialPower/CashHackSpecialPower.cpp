@@ -232,3 +232,9 @@ void CashHackSpecialPower::loadPostProcess( void )
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0Rva004CEE6EMember@@QAE@XZ=??0Upgrades@CashHackSpecialPowerModuleData@@QAE@XZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0Rva004CEE6EMemberTracked@@QAE@XZ=??0Upgrades@CashHackSpecialPowerModuleData@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??0InitiateVoiceEntry@@QAE@XZ=??0Upgrades@CashHackSpecialPowerModuleData@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??0VoiceSlot@@QAE@XZ=??0Upgrades@CashHackSpecialPowerModuleData@@QAE@XZ")

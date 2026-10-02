@@ -27,3 +27,11 @@ char BfmeThingUPB::bfmeGoUPB(void *a, char *out, void *c)
 	bfmeFormatUPB(r, out, c, (char *)"");
 	return 1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeGetStrVJI@BfmeMsgVJI@@QAEDPBDPADH@Z=?bfmeGoUPB@BfmeThingUPB@@QAEDPAXPAD0@Z")
+#pragma comment(linker, "/alternatename:?bfmeGetStrVHC@BfmeMsgVHC@@QAEDPAXPADH@Z=?bfmeGoUPB@BfmeThingUPB@@QAEDPAXPAD0@Z")
+#pragma comment(linker, "/alternatename:?bfmeCallEMC@BfmeObjEMC@@QAEXPAX00@Z=?bfmeGoUPB@BfmeThingUPB@@QAEDPAXPAD0@Z")
+#pragma comment(linker, "/alternatename:?bfmeFillURC@BfmeSrcURC@@QAEDPAXPAD0@Z=?bfmeGoUPB@BfmeThingUPB@@QAEDPAXPAD0@Z")
+#pragma comment(linker, "/alternatename:?bfmeGetStrVJT@BfmeMsgVJT@@QAEDPBDPADH@Z=?bfmeGoUPB@BfmeThingUPB@@QAEDPAXPAD0@Z")

@@ -83,3 +83,8 @@ BFME_DISP8_NEG_LEA_GETTER(Rva004FA5F4LeaField, 12)
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?get@Rva007EA650FieldAddress@@QAEPADXZ=?get@Rva0066D7D0LeaField@@QBEPAXXZ")
 #pragma comment(linker, "/alternatename:?get@Rva007EA6A0FieldAddress@@QAEPADXZ=?get@Rva00657640LeaField@@QBEPAXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?get@Rva007EA690FieldAddress@@QAEPADXZ=?get@Rva00657630LeaField@@QBEPAXXZ")
+#pragma comment(linker, "/alternatename:?a_007ea650@@YAXXZ=?get@Rva0066D7D0LeaField@@QBEPAXXZ")

@@ -168,3 +168,9 @@ void SimpleSceneClass::Unregister(RenderObjClass *obj, RegType reason)
     case BFME_FORCED_OBJECT: _bfme_forced_objects.Remove(obj); break;
     }
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?link@Gen_00943CF0@@AAEXPAXHHH@Z=?Insert@BFME2SceneSpatialIndex@@QAEXPAVRenderObjClass@@HHH@Z")
+#pragma comment(linker, "/alternatename:?second@Gen_00943CF0@@AAEXPAX000@Z=?Insert@BFME2SceneSpatialIndex@@QAEXPAVRenderObjClass@@HHH@Z")
+#pragma comment(linker, "/alternatename:?unlink@Gen_00943CF0@@AAEXPAX@Z=?Remove@BFME2SceneSpatialIndex@@QAEXPAVRenderObjClass@@@Z")

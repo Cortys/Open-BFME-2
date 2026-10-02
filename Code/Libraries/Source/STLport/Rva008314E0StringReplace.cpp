@@ -244,3 +244,9 @@ Rva008314E0String &Rva008314E0String::replaceRange(char *first, char *last,
 	else
 		return replaceBase(first, last, sourceFirst, sourceLast, BfmeRangeTag());
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeInsertV55@BfmeStrV55@@QAEXPAD0000@Z=?replaceRange@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z")
+#pragma comment(linker, "/alternatename:?bfmeInsertV51@BfmeStrV51@@QAEXPAD0000@Z=?replaceRange@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z")
+#pragma comment(linker, "/alternatename:?bfmeImplVML@BfmeStrVML@@QAEXHHHHPAD@Z=?replaceRange@Rva008314E0String@@QAEAAV1@PAD000ABUBfmeRangeTag@@@Z")

@@ -1899,3 +1899,8 @@ ParticleEmitterLoaderClass::Load_W3D (ChunkLoadClass &chunk_load)
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0Rva7F4CC0Child@@QAE@XZ=??0PrototypeClass@@QAE@XZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0SnapshotDupReplica@@QAE@XZ=??0PrototypeClass@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?bfmeInitTUA@BfmeSubTUA@@QAEXXZ=??0PrototypeClass@@QAE@XZ")

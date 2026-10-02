@@ -4843,3 +4843,12 @@ void Player::loadPostProcess( void )
 
 // TheTeamFactory: matched references place it at VA 0xe028bc (retail value 0).
 class TeamFactory *TheTeamFactory = 0;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?set@Rva003600D6Holder@@QAEXPAVRva0035FF76@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?set@Rva0035E327Holder@@QAEXPAVRva0035E2E6@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?set@Rva0035E650Holder@@QAEXPAVRva0035E60B@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?set@Rva0035F4E7Holder@@QAEXPAVRva0035F4A6@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?set@Rva0035EEA7Holder@@QAEXPAVRva0035EE66@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
+#pragma comment(linker, "/alternatename:?set@Rva0035D6F9Holder@@QAEXPAVRva0035D53C@@@Z=?friend_setNext@Upgrade@@QAEXPAV1@@Z")
