@@ -11,10 +11,16 @@
 // the abstract base carries Class_ID, Get_Vector, Get_Maximum_Extent,
 // Scale and Clone as pure virtuals behind a virtual destructor.
 
+class Vector3;
 class Vector3Randomizer
 {
 public:
 	virtual ~Vector3Randomizer();
+	virtual unsigned Class_ID(void) const = 0;
+	virtual void Get_Vector(Vector3 &vector) = 0;
+	virtual float Get_Maximum_Extent(void) = 0;
+	virtual void Scale(float scale) = 0;
+	virtual Vector3Randomizer *Clone(void) const = 0;
 };
 
 inline __declspec(noinline) Vector3Randomizer::~Vector3Randomizer() {}
