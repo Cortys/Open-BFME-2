@@ -48203,3 +48203,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva005388F7@Rva005388C2@@QAEAAV1@ABV1@@Z,,0x005388F7,53,Code/GameEngine/Source/Common/Rva005388C2Assign.cpp,matched,holder copy-assign via rowed vector Pod16 assign same layout as copy ctor
 ??1Rva00419C7F@@UAE@XZ,,0x00419C7F,48,Code/GameEngine/Source/Common/Rva00419C7FDtor.cpp,matched,vtable g_00BC0990 plus rowed releaseBuffer 0x00036410 caller 0x00419C63 novtable Pillage shape
 ?rva00598016@Rva00598016@@QAEPAXXZ,,0x00598016,15,Code/GameEngine/Source/Common/Rva00598016Get.cpp,matched,holder via g_00DFEEF8 lookup player at +0x30
+?rva00598F24@Rva00598F24@@QAEXXZ,,0x00598F24,27,Code/GameEngine/Source/Common/Rva00598F24.cpp,matched,holder via g_00DFEEF8 lookup player at +0x2C plus rowed add
