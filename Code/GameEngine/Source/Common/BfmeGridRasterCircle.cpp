@@ -111,6 +111,9 @@ public:
 	BfmeCellFC *bfmeCellAtWorld(Real worldX, Real worldY) const;
 	int rva006C0E40(const BfmePointFC *point, int *extra);
 	int rva006C0E70(int x, int y);
+	int rva006C0860(Real worldX) const;
+	int rva006C0890(Real worldY) const;
+	int rva006C08C0(Real distance) const;
 
 	friend class BfmeRangeUpdaterFC;
 
@@ -360,4 +363,29 @@ int Gen_008812D0::rva006C0E70(int x, int y)
 	if (cell == 0)
 		return 0x80;
 	return cell->m_bfmeKind;
+}
+
+// Three world-to-cell helpers from Open-BFME-1's taintmanager_impl.cpp
+// (submodule 10af19f44a: rva00880E70 / rva00880EA0 / rva00880ED0, BFME 1
+// 0x00880E70 / 0x00880EA0 / 0x00880ED0), byte-identical here at 0x006C0860,
+// 0x006C0890 and 0x006C08C0, in the same order and 0x30 apart. BFME 1 folds
+// each with other copies, so the names are this image's addresses.
+// ?rva006C0860@Gen_008812D0@@QBEHM@Z: world x to cell column (floor).
+int Gen_008812D0::rva006C0860(Real worldX) const
+{
+	return bfmeFloatToLongFC(bfmeFloatFloorFC(
+		(worldX - m_bfmeRegion.lo.x) * m_bfmeCellSizeInv));
+}
+
+// ?rva006C0890@Gen_008812D0@@QBEHM@Z: world y to cell row (floor).
+int Gen_008812D0::rva006C0890(Real worldY) const
+{
+	return bfmeFloatToLongFC(bfmeFloatFloorFC(
+		(worldY - m_bfmeRegion.lo.y) * m_bfmeCellSizeInv));
+}
+
+// ?rva006C08C0@Gen_008812D0@@QBEHM@Z: a distance in cells (ceiling).
+int Gen_008812D0::rva006C08C0(Real distance) const
+{
+	return bfmeFloatToLongFC(bfmeFloatCeilFC(distance * m_bfmeCellSizeInv));
 }
