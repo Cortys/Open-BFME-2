@@ -89,6 +89,8 @@ class SpawnPointProductionExitUpdate : public UpdateModule, public SpawnB4
 {
 public:
 	SpawnPointProductionExitUpdate(Thing *thing, const ModuleData *moduleData);
+
+protected:
 	virtual ~SpawnPointProductionExitUpdate();
 
 private:
@@ -101,10 +103,6 @@ private:
 };
 
 // ??0SpawnPointProductionExitUpdate@@QAE@PAVThing@@PBVModuleData@@@Z @0x4A3C1B
-SpawnPointProductionExitUpdate::~SpawnPointProductionExitUpdate()
-{
-}
-
 SpawnPointProductionExitUpdate::SpawnPointProductionExitUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData)
 	, m_exitDelay28(0)
