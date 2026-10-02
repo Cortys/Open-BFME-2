@@ -15,14 +15,40 @@ struct Rva0048B7D9Data
 	int m_max; // +0x10
 };
 
-class Rva0048B7D9
+class Object;
+enum ObjectStatusTypes
+{
+	OBJECT_STATUS_10 = 10
+};
+enum UpdateSleepTime
+{
+	UPDATE_SLEEP_NONE = 1
+};
+
+class Object
+{
+public:
+	bool testStatus(ObjectStatusTypes status) const;
+};
+
+class UpdateModule
+{
+public:
+	virtual void update() = 0;
+
+protected:
+	void setWakeFrame(Object *obj, UpdateSleepTime wakeDelay);
+};
+
+class Rva0048B7D9 : public UpdateModule
 {
 public:
 	unsigned int rva0048B7D9();
+	void rva0048B938();
 
 private:
-	char m_pad00[4]; // +0..+3
-	Rva0048B7D9Data *m_data; // +4
+	Rva0048B7D9Data *m_data; // +4 (base vptr at +0)
+	Object *m_owner; // +8
 };
 
 unsigned int Rva0048B7D9::rva0048B7D9()
@@ -31,4 +57,13 @@ unsigned int Rva0048B7D9::rva0048B7D9()
 	if (r < 1)
 		r = 1;
 	return r;
+}
+
+void Rva0048B7D9::rva0048B938()
+{
+	Object *owner = m_owner;
+	if (!owner->testStatus(OBJECT_STATUS_10))
+		return;
+	unsigned int delay = rva0048B7D9();
+	setWakeFrame(owner, (UpdateSleepTime)delay);
 }
