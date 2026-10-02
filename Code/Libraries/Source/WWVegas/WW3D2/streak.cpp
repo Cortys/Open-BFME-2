@@ -123,11 +123,12 @@ StreakLineClass & StreakLineClass::operator = (const StreakLineClass &that)
 
 
 
-// ?Reset_Line@StreakLineClass@@ present-unmatched
+// ?Reset_Line@StreakLineClass@@QAEXXZ @0x00741730 26B: LineRenderer at +0x100 is SegLineRendererClass, StreakRenderer at +0x150 calls rowed Rva00743060Class::Reset_Line.
+class Rva00743060Class { public: void Reset_Line(); };
 void StreakLineClass::Reset_Line(void)
 {
 	LineRenderer.Reset_Line();
-	StreakRenderer.Reset_Line();
+	reinterpret_cast<Rva00743060Class &>(StreakRenderer).Reset_Line();
 }
 
 
