@@ -47727,3 +47727,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0054F3FD@Rva0054F434@@UAE?AV?$list@VAsciiString@@V?$allocator@VAsciiString@@@_STL@@@_STL@@XZ,,0x0054F3FD,27,Code/Libraries/Source/WWVegas/WWLib/Rva0054F434Dtor.cpp,matched,vslot 6 returns list at +0x48 via rowed copy 0x0054D800
 ?rva00508D7C@Made002CC6AE@@QAEXHPAVObject@@@Z,,0x00508D7C,149,Code/GameEngine/Source/GameLogic/Object/Made002CC6AECtor.cpp,matched,vtable slot 5 class Made002CC6AE vector 0128 via StringBase copy
 ??0TextOnFrameTransition@@QAE@XZ,,0x0035FA03,39,Code/GameEngine/Source/GameClient/GUI/TextOnFrameTransitionCtor.cpp,matched,ctor via rowed base 0x001DBAA4 vtable 0x0081669C END 30
+??1Rva004FAC21@@UAE@XZ,,0x004FADB8,60,Code/GameEngine/Source/Common/Rva004FAC21Dtor.cpp,matched,derived dtor vector plus inlined base string vtable 0x008633A0
