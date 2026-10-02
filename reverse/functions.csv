@@ -48872,3 +48872,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??0Rva0048C8C6@@QAE@XZ,,0x0048C8C6,23,Code/GameEngine/Source/GameLogic/Object/Update/Rva0048C8C6Ctor.cpp,matched,leaf ctor int plus empty AsciiString via shared header
 ?rva005429D7@Rva005429D7@@QAEPAV1@XZ,,0x005429D7,29,Code/GameEngine/Source/Common/Rva005429D7Clear.cpp,matched,unlock lane clear two 0x80 helpers plus return this
 ?rva0057BAF8@Rva0057BAF8@@QAEX_N@Z,,0x0057BAF8,86,Code/GameEngine/Source/Common/Rva0057BAF8Toggle.cpp,matched,Apt toggle via rowed AptCall with enabled disabled SetToggleButtonState
+?rva00426612@Rva00426612@@QAEXPAVCreateAHeroData@@@Z,,0x00426612,76,Code/GameEngine/Source/Common/Rva00426612Hero.cpp,matched,hero registry move via rowed find erase pushback
