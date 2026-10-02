@@ -60,7 +60,7 @@ void Rva001FA8DDParse(INI *ini, void *instance)
 	Rva001FA8DDHolder *holder = static_cast<Rva001FA8DDHolder *>(instance);
 	const char *token = ini->getNextToken(0);
 	StringBase<char> tmp(token);
-	TableEntry *entry = *(TableEntry * volatile *)&FXParticleSystem::CategoryModuleClass<7>::s_head;
+	TableEntry *entry = *(TableEntry * volatile *)&FXParticleSystem::CategoryModuleClass<8>::s_head;
 	while (tmp.compare(entry->m_name) != 0)
 		entry = entry->m_next;
 	Rva002BA8F1Listener *listener = entry->create(ini);
