@@ -8,7 +8,8 @@
 // from [esp+0x100C]; init at 0x00ABA59 sets [0x00E1773C]=0x004B3FD0 (empty ret).
 
 extern "C" int __cdecl vsprintf(char *buf, const char *fmt, char *args);
-extern "C" void (__cdecl *g_bfmeAptLogAtE1773C)(const char *fmt, const char *text); // 0x00E1773C
+// _g_bfmeAptLogAtE1773C: VA 0x00E1773C (.data BSS), zero-filled before init.
+extern "C" void (__cdecl *g_bfmeAptLogAtE1773C)(const char *fmt, const char *text) = 0;
 
 void __cdecl Rva006CC110Log(int, const char *fmt, ...)
 {
