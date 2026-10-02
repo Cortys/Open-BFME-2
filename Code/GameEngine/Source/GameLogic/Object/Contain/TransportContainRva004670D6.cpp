@@ -1,20 +1,13 @@
-// ?rva004670D6@TransportContain@@QAEXXZ
-// partial score=0.97 date=2026-10-01
-// ?rva004670D6@TransportContain@@QAEXXZ
-// partial score=0.97 date=2026-10-01
-// cl: /O1 /MD
-//
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // ?rva004670D6@TransportContain@@QAEXXZ, retail 0x004670D6, 214 bytes.
 // Slot 28 (offset 0x70) of TransportContain vtable 0x00844278 and
 // HordeTransportContain vtable 0x00845EB8. Iterates the contain list at
 // [this+4]+0xA4 via rowed Rva002D06CA lookup through g_009FF000 and drives
 // the +0xFC secondary slot-0 with the Object at +8 and its +0x250 payload.
 // Donor pattern is TransportContainKillBlockedRiders / ZH TransportContain.
-class AsciiString
-{
-public:
-	char *m_text;
-};
+// FINISH from reverse/attempts/0x004670d6.cpp score 0.97: empty-string
+// je-vs-jne branch layout only; trying non-null-first ternary.
+#include "ascii_string.h"
 
 class Rva002D06CA
 {
@@ -23,7 +16,6 @@ public:
 };
 
 extern Rva002D06CA *g_009FF000;
-extern const char g_Rva0107301CEmptyString[];
 
 class PClass
 {
@@ -160,7 +152,6 @@ private:
 	Secondary m_fc;
 };
 
-// ?rva004670D6@TransportContain@@QAEXXZ present-unmatched
 void TransportContain::rva004670D6()
 {
 	PtrA *a = m_4;
@@ -171,38 +162,30 @@ void TransportContain::rva004670D6()
 	{
 		AsciiString *aname = &cur->m_name;
 		int count = *(int *)((char *)aname + 4);
-		if (count > 0)
+		if (count <= 0)
+			return;
+		void *res = g_009FF000->rva002D06CA(aname);
+		if (res == 0)
+			return;
+		Object *obj = m_8;
+		if (obj == 0)
+			return;
+		PClass *p = obj->m_250;
+		if (p != 0)
 		{
-			void *res = g_009FF000->rva002D06CA(aname);
-			if (res != 0)
+			p->slot14C(0);
+			if (*(volatile int *)&count > 0)
 			{
-				Object *obj = m_8;
-				if (obj != 0)
+				Secondary *sec = &m_fc;
+				int n = count;
+				do
 				{
-					PClass *p = obj->m_250;
-					if (p != 0)
-					{
-						p->slot14C(0);
-						if (*(volatile int *)&count > 0)
-						{
-							Secondary *sec = &m_fc;
-							int n = count;
-							do
-							{
-								const char *str;
-								char *buf = cur->m_name.m_text;
-								if (buf == 0)
-									str = g_Rva0107301CEmptyString;
-								else
-									str = (const char *)(buf + 8);
-								sec->slot0(res, p, obj, str, 1);
-								--n;
-							} while (n != 0);
-						}
-						p->slot14C(1);
-					}
-				}
+					const char *str = cur->m_name.str();
+					sec->slot0(res, p, obj, str, 1);
+					--n;
+				} while (n != 0);
 			}
+			p->slot14C(1);
 		}
 		cur = cur->m_next;
 	} while (cur != (RiderNode *)a->m_sentinel);
