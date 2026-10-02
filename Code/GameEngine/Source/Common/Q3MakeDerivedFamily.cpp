@@ -9,7 +9,10 @@ void *Gen007F0130( unsigned int size );
 class Q3MakeBaseA
 {
 public:
-	virtual void primary();
+	// Pure: every factory's object overrides it, and retail never stores this
+	// base's own vftable, so the only reference left is the base vftable the
+	// compiler emits, which now names _purecall instead of an undefined slot.
+	virtual void primary() = 0;
 	static void *operator new( unsigned int size ) { return Gen007F0130( size ); }
 };
 
