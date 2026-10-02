@@ -48636,3 +48636,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva005F2A52AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPAM4@Z,,0x005F2A52,208,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,level AptCall argc3 via int plus 2 float Gets same pattern
 ?rva005F2B76@Rva005F2FEF@@QAEXH@Z,,0x005F2B76,324,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,show MemberRank via GameText RankLabel plus AptCall same precedent
 ?rva002D36C3@Rva002D36C3@@QAEXPAX@Z,,0x002D36C3,21,Code/GameEngine/Source/Common/System/Rva002D36C3.cpp,matched,chain guarded forwarder via rowed 0x0052518E caller 0x003BD29E
+?rva002D3756@Rva002D3756@@QAEXPAX@Z,,0x002D3756,28,Code/GameEngine/Source/Common/System/Rva002D3756.cpp,matched,unlock double-guarded forwarder via rowed 0x005258B2 caller 0x0027B469
