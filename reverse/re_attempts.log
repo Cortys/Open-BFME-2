@@ -5417,3 +5417,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0044EE07@Rva0044EE07@@QAEXXZ	0x0044EE07	121	blocked	reload adds mov-edi but lea remains t=15 model=muse-10
 ?rva0044E689@Rva0044E689@@QAEHXZ	0x0044E689	30	blocked	je-vs-jne and xor-al vs xor-eax persist t=8 model=muse-10
 ?rva0025FE30@Rva0025FE30@@QAEXMMMMHH@Z	0x0025FE30	323	partial	dx in ebp+10 vs ebp-4 and alpha slot swapped and lea vs add edi and xmm1-xmm2 rotation t=25 model=muse-04 score=0.9 stash=reverse/attempts/0x0025fe30.cpp
+??0?$vector@URva00511E48@@V?$allocator@URva00511E48@@@_STL@@@_STL@@QAE@I@Z	0x00512000	105	partial	calls inner false_type fill_n vs retail middle wrapper; extra mov eax,[esi]/lea ecx/push ecx +5B ecx-vs-eax temp t=28 model=muse-07 score=0.93 stash=reverse/attempts/0x00512000.cpp
+?rva00032B00@GeneralAllocator@Allocator@EA@@QAEPAXI@Z	0x00032B00	343	blocked	PPMalloc large-chunk VirtualAlloc allocator needs donor t=18 model=muse-07

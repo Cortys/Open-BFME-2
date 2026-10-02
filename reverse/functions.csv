@@ -47381,3 +47381,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BBA59Reveal@@YGXABVAsciiString@@@Z,,0x003BBA59,122,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBA59.cpp,matched,sibling of 0x003BB94C via rva007397C0 getEachPlayerFromMask
 ?Rva003BB9C6Reveal@@YGX_NABVAsciiString@@@Z,,0x003BB9C6,147,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB9C6.cpp,matched,reveal undo mask via rva00357475 getNthPlayer getEachPlayer
 ?Rva003BB31DClear@@YGXABVAsciiString@@@Z,,0x003BB31D,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB31D.cpp,matched,clears Player 0x339 via rva00357475 getEachPlayerFromMask
+??1EmotionTrackerUpdate@@UAE@XZ,,0x004B1322,107,Code/GameEngine/Source/GameLogic/Object/Update/EmotionTrackerUpdateDtor.cpp,matched,pinned dtor ctor 0x004B21B9 layout BFME1 donor vtable slot
