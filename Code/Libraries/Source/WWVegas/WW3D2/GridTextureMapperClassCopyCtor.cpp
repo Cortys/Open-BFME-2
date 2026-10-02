@@ -12,9 +12,8 @@ public:
 	static unsigned int Get_Sync_Time() { return SyncTime; }
 };
 
-// Matched DIR32 sites place public WW3D::SyncTime at VA 0x00DEC3CC.
-// The slot is in the PE .data zero-fill tail, so retail starts it at zero.
-unsigned int WW3D::SyncTime = 0;
+// WW3D::SyncTime is owned by ww3d.cpp (private static ?SyncTime@WW3D@@0IA
+// at VA 0x00DEC3CC); this unit merely declares it via the class above.
 
 class RefCountClass
 {
@@ -50,7 +49,10 @@ public:
 	unsigned LastUsedSyncTime;
 };
 
-TextureMapperClass::TextureMapperClass(const TextureMapperClass &src)
+// ??0TextureMapperClass@@QAE@ABV0@@Z is owned by mapper.cpp; kept inline
+// here so Grid's copy ctor can inline it. Emitted as select-any; the owner
+// keeps the strong copy.
+inline TextureMapperClass::TextureMapperClass(const TextureMapperClass &src)
 {
 	NumRefs = 1;
 	Stage = src.Stage;
