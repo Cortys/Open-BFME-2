@@ -47378,3 +47378,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BB233Set@@YGXABVAsciiString@@H@Z,,0x003BB233,65,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB233.cpp,matched,mask loop via ScriptEngine rva00357475 PlayerList getEachPlayerFromMask Rva002A9BF2 rva002A9CCA globals 0xDFE16C 0xDFEEE8 caller 0x003CB355
 ?Rva003BB713Set@@YGXABVAsciiString@@PAVObject@@0@Z,,0x003BB713,91,Code/GameEngine/Source/Common/Rva003BB713.cpp,matched,calls rva00357475 getPlayerFromMask rva002ADF9C via ScriptEngine PlayerList
 ?Rva003BB94CReveal@@YGXABVAsciiString@@@Z,,0x003BB94C,122,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB94C.cpp,matched,calls rva00357475 getNthPlayer getEachPlayerFromMask rva00739780
+?Rva003BBA59Reveal@@YGXABVAsciiString@@@Z,,0x003BBA59,122,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BBA59.cpp,matched,sibling of 0x003BB94C via rva007397C0 getEachPlayerFromMask
