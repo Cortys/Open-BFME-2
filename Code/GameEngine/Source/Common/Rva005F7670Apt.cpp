@@ -30,17 +30,42 @@ public:
 	void rva005F7161();
 	void rva005F7412();
 	void rva005F72C8();
+	void rva005F7304(int val);
 private:
 	char m_pad00[4];
 	void *m_level04;
 	Rva005F7670Team *m_team08;
 	char m_pad0C[0x58 - 0x0C];
 	UnicodeString m_cached58;
-	char m_pad5C[0x64 - 0x5C];
+	char m_pad5C[0x60 - 0x5C];
+	int m_cmdPts60;
 	bool m_shown64;
 	bool m_shown65;
 	bool m_shown66;
 };
+
+class GameTextInterface
+{
+public:
+	virtual ~GameTextInterface() {}
+	virtual void slot00();
+	virtual void slot01();
+	virtual void slot02();
+	virtual void slot03();
+	virtual void slot04();
+	virtual void slot05();
+	virtual void slot06();
+	virtual void slot07();
+	virtual void slot08();
+	virtual void slot09();
+	virtual void slot10();
+	virtual void slot11();
+	virtual void slot12();
+	virtual void slot13();
+	virtual UnicodeString fetch(const char *label, int x);
+};
+
+extern GameTextInterface *TheGameText;
 
 int __cdecl Rva005FB5E6AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *function, const char *a0);
 
@@ -102,5 +127,27 @@ void Rva005F7670::rva005F72C8()
 		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetBuildTimeState", "_hide");
 		m_shown65 = false;
+	}
+}
+// ?rva005F7304@Rva005F7670@@QAEXH@Z retail 0x005F7304 270B
+// Evidence: cached int at +0x60 vs edi; TheGameText fetch slot 0x3C STRATEGICHUD:CommandPointsLabel with +8-or-NullChr via str(); Unicode format row 0x006CB5D0; Ascii format APT:_level%u.%s_CommandPoints row 0x00038150; bfmeSetText pin 0x00225301; AptCall row 0x005FB5E6 SetCommandPointsState _show; globals 0x009FE4CC 0x007BAC1C 0x007BB5C4; precedent Rva005F2FEF::rva005F2D41
+void Rva005F7670::rva005F7304(int val)
+{
+	if (val != m_cmdPts60) {
+		UnicodeString tmp;
+		if (val >= 0) {
+			UnicodeString fetched = TheGameText->fetch("STRATEGICHUD:CommandPointsLabel", 0);
+			tmp.format(fetched.str(), val);
+		}
+		AsciiString key;
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		key.format("APT:_level%u.%s_CommandPoints", m_level04, team);
+		((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, tmp, false);
+		m_cmdPts60 = val;
+	}
+	if (!m_shown66) {
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetCommandPointsState", "_show");
+		m_shown66 = true;
 	}
 }
