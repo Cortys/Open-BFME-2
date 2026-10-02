@@ -93,15 +93,23 @@ Rva0056224F::Rva0056224F()
 	m_34 = 1;
 }
 
+struct BfmeParticleSystemHandle
+{
+	~BfmeParticleSystemHandle() throw();
+	void *m_system;
+	void *m_prev;
+	void *m_next;
+};
+
 class RvaSmartPtr12
 {
 public:
 	~RvaSmartPtr12() throw()
 	{
-		if (m_ptr)
-			rva0004CBC0();
+		BfmeParticleSystemHandle *p = (BfmeParticleSystemHandle *)this;
+		if (p->m_system != 0)
+			p->~BfmeParticleSystemHandle();
 	}
-	void rva0004CBC0() throw();
 	ParticleSystem *m_ptr;
 	int m_04;
 	int m_08;
