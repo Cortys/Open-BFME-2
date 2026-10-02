@@ -1,4 +1,4 @@
-// cl: /O1 /Oy- /DNDEBUG /MD /GX- /Oi-
+// cl: /Ireference/shims/bfme2_ascii /O1 /Oy- /DNDEBUG /MD /GX- /Oi-
 // stlport
 //
 // ?getUpgradeActivationMasks@UpgradeMuxData@@QBEXAAUUpgradeMaskType@@0@Z,
@@ -29,41 +29,7 @@
 #include <bitset>
 #include <string.h>
 #include <vector>
-
-template <typename Char>
-class StringBase
-{
-protected:
-	struct Header
-	{
-		int references;
-		unsigned short length;
-		unsigned short capacity;
-		Char text[1];
-	};
-
-	Header *m_data;
-
-public:
-	bool isEmpty() const;
-	bool isNone() const;
-};
-
-class AsciiString : public StringBase<char>
-{
-public:
-	const char *str() const
-	{
-		const char *data = *reinterpret_cast<const char *const *>(this);
-		return data ? data + 8 : BfmeEmptyString;
-	}
-
-private:
-	static const char BfmeEmptyString[];
-};
-
-// TU-local sacrificial empty text: DIR32 sites patch to retail's address.
-const char AsciiString::BfmeEmptyString[] = "";
+#include "ascii_string.h"
 
 // TU-local 1024-bit mask view (size-measured: 0x80 memsets, 0x20 rep movsd).
 // Lowering mirrors ZH Common/BitFlags.h over std::bitset (clear via memset,
