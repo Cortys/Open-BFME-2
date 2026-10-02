@@ -93,7 +93,7 @@ private:
 	Real m_cached58;
 };
 
-GeometryInfo::GeometryInfo(GeometryType type, Bool isSmall, Real height,
+inline GeometryInfo::GeometryInfo(GeometryType type, Bool isSmall, Real height,
 	Real majorRadius, Real minorRadius)
 {
 	m_scalar08 = 0;
@@ -119,3 +119,13 @@ GeometryInfo::GeometryInfo()
 }
 // _INV: the global at VA 0xbc2424 is ?g_Va00BC2424@@3MA.
 #pragma comment(linker, "/alternatename:_INV=?g_Va00BC2424@@3MA")
+
+// LINK-OWNER anchor: this unit owns the 5-arg ctor row; other units emit it
+// inline, so the owner must also emit a select-any (inline) copy.
+#pragma inline_depth(0)
+// ?bfmeEmitGeometryInfoCtor@@YAXPAVGeometryInfo@@@Z present-unmatched
+void bfmeEmitGeometryInfoCtor(GeometryInfo *p)
+{
+	p->GeometryInfo::GeometryInfo(GEOMETRY_SPHERE, true, 0, 0, 0);
+}
+#pragma inline_depth()
