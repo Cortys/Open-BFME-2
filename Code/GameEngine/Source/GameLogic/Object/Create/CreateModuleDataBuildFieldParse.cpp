@@ -1,7 +1,8 @@
 // cl: /O1 /DNDEBUG /MD
 //
-// Single-table CreateModuleData::buildFieldParse procs (11 bytes each).
-// First entry:
+// CreateModuleData::buildFieldParse procs: GrantUpgrade is a single-table
+// leaf (11 bytes); ObjectCreationUpgrade registers its own table followed by
+// the shared Upgrade table from Rva004CE29DGet at extraOffset 0x10 (34 bytes).
 // ?buildFieldParse@GrantUpgradeCreateModuleData@@SAXAAVMultiIniFieldParse@@@Z,
 // retail 0x004B8FF0, registers the table at 0x00C594A0 (UpgradeToGrant plus
 // ExemptStatus plus GiveOnBuildComplete) with MultiIniFieldParse::add (rowed
@@ -14,12 +15,15 @@
 class MultiIniFieldParse;
 
 struct FieldParse;
+extern const FieldParse g_00C57708[];
 
 class MultiIniFieldParse
 {
 public:
 	void add(const FieldParse *parse, unsigned int extraOffset);
 };
+
+int Rva004CE29DGet(void);
 
 #define FIELD_PROC(cls, addr, field) \
 class cls \
@@ -34,4 +38,19 @@ void cls::buildFieldParse(MultiIniFieldParse &parse) \
 }
 
 FIELD_PROC(GrantUpgradeCreateModuleData, 0x00C594A0, GrantUpgradeTable)
-FIELD_PROC(ObjectCreationUpgradeModuleData, 0x00C57708, ObjectCreationTable)
+
+class ObjectCreationUpgradeModuleData
+{
+public:
+	static void buildFieldParse(MultiIniFieldParse &parse);
+};
+
+// ?buildFieldParse@ObjectCreationUpgradeModuleData@@SAXAAVMultiIniFieldParse@@@Z
+// Retail starts at 0x004B4084 and ends at its ret at 0x004B40A5, directly
+// before the rowed ObjectCreationUpgrade constructor at 0x004B40A6. Its
+// factory at 0x24FFAC pushes this proc VA.
+void ObjectCreationUpgradeModuleData::buildFieldParse(MultiIniFieldParse &parse)
+{
+	parse.add(g_00C57708, 0);
+	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 0x10);
+}
