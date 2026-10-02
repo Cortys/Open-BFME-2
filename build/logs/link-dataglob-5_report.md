@@ -2,6 +2,7 @@
 
 ## Linked
 
+- `Code/GameEngine/Source/Common/Rva0030AE42Slot.cpp` — commit SHA to record after commit; `LINKED 100` bytes. Defined `g_00DFF4F8` and `g_00DFF4FC` at VA `0x00DFF4F8` and `0x00DFF4FC` (.data BSS), each as a zero-initialized one-pointer `AsciiString`. The shared BFME2 header establishes the 4-byte layout; matched DIR32 witnesses establish both addresses, and adjacent globals bound each extent. Exact decorated definitions verified in the built object.
 - `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206E63Search.cpp` — `f5bba1ba5d8af9cff2216661419682eacdfd54fc`; `LINKED 100` bytes. Defined `g_00BE3908` at VA `0x00BE3908` (.rdata) as four `FieldParse` entries plus the zero sentinel, bounded at VA `0x00BE3958` by the `HelpText` token. Matched DIR32 witnesses in both search rows establish the table address; the rowed `INI::parseAsciiString` target and the recovered `Rva003B39C7` offsets establish parser/layout use. Local literals reproduce token text; string-pointer identity is not asserted. Exact decorated global verified in the built object.
 - `Code/GameEngine/Source/GameLogic/ScriptEngine/Rva00206DFFSearch.cpp` — shared definition from `f5bba1ba5d8af9cff2216661419682eacdfd54fc`; `LINKED 100` bytes. Uses the shared `g_00BE3908` definition above.
 

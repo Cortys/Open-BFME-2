@@ -6,8 +6,12 @@
 // AsciiString operator= pin-only, movsd string moves, movss needs SSE).
 #include "ascii_string.h"
 
-extern AsciiString g_00DFF4F8;
-extern AsciiString g_00DFF4FC;
+// Matched DIR32 witness places this one-pointer AsciiString at VA 0x00DFF4F8
+// in the zero-filled .data tail; the next known object starts at 0x00DFF4FC.
+AsciiString g_00DFF4F8;
+// Matched DIR32 witness places this one-pointer AsciiString at VA 0x00DFF4FC
+// in the zero-filled .data tail; g_00DFF500 begins immediately after it.
+AsciiString g_00DFF4FC;
 
 struct S12
 {
