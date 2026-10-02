@@ -67,12 +67,17 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 //-----------------------------------------------------------------------------
 // USER INCLUDES //////////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
+// Kept COMDATs for AnimateWindow inlines are frameless (/Oy); this TU is /Oy-.
+// Enable "y" while the headers define those inlines so our copies match the
+// kept ones; our own rows below still compile with the TU's /Oy-.
+#pragma optimize("y", on)
 #include "PreRTS.h"	// This must go first in EVERY cpp file int the GameEngine
 
 #include "GameClient/ProcessAnimateWindow.h"
 #include "GameClient/AnimateWindowManager.h"
 #include "GameClient/GameWindow.h"
 #include "GameClient/Display.h"
+#pragma optimize("", on)
 //-----------------------------------------------------------------------------
 // DEFINES ////////////////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
