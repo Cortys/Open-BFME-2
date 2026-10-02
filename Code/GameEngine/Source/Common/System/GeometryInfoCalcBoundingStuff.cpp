@@ -106,10 +106,14 @@ __declspec(noinline) Real GeometryShape::rva0087ED00() const
 	return result;
 }
 
-// ?rva0087ED70@GeometryShape@@QBEMXZ: a semantically faithful but not
-// byte-exact model of retail 0x0087ED70 (228 bytes; this compiles to 224),
-// kept visible only so calcBoundingStuff's register allocation matches.
-// The cylinder case adds the offset length, as retail does at +0x80..+0xB3.
+// ?rva0087ED70@GeometryShape@@QBEMXZ
+// Target 0x006BE610: Ghidra boundary 228 bytes; the matched caller at
+// 0x006BE74F passes an enabled 0x24-byte GeometryShape. Its sphere/cylinder/
+// box paths read the type and dimensions at +0/+4/+8/+0C and offset at +10.
+// BFME 1 GeometryShapeRva0087ED70.cpp at 10af19f44a89ab7ecc23195bb9a842ceafbc02c9
+// supplies the named extent locals and cylinder accumulation order. These
+// preserve the native x87 shape under the existing flags; full bytes match.
+// The original method name remains unproven; the donor address labels it.
 __declspec(noinline) Real GeometryShape::rva0087ED70() const
 {
 	Real result = 0.0f;
@@ -118,16 +122,26 @@ __declspec(noinline) Real GeometryShape::rva0087ED70() const
 		case GEOMETRY_SPHERE:
 			result = sqrt(sqr(m_offset.x) + sqr(m_offset.y) + sqr(m_offset.z)) + m_majorRadius;
 			break;
+
 		case GEOMETRY_CYLINDER:
-			result = sqrt(sqr(sqrt(sqr(m_offset.x) + sqr(m_offset.y)) + m_majorRadius) +
-				sqr(fabs(m_offset.z) + m_height * 0.5)) +
-				sqrt(sqr(m_offset.x) + sqr(m_offset.y) + sqr(m_offset.z));
+		{
+			Real planar = sqrt(sqr(m_offset.x) + sqr(m_offset.y)) + m_majorRadius;
+			Real vertical = fabs(m_offset.z) + m_height * 0.5;
+			Real offsetLength = sqrt(sqr(m_offset.x) + sqr(m_offset.y) + sqr(m_offset.z));
+			planar = sqr(planar);
+			planar += sqr(vertical);
+			result = sqrt(planar) + offsetLength;
 			break;
+		}
+
 		case GEOMETRY_BOX:
-			result = sqrt(sqr(fabs(m_offset.x) + m_majorRadius) +
-				sqr(fabs(m_offset.y) + m_minorRadius) +
-				sqr(fabs(m_offset.z) + m_height * 0.5));
+		{
+			Real x = fabs(m_offset.x) + m_majorRadius;
+			Real y = fabs(m_offset.y) + m_minorRadius;
+			Real z = fabs(m_offset.z) + m_height * 0.5;
+			result = sqrt((sqr(x) + sqr(y)) + sqr(z));
 			break;
+		}
 	}
 	return result;
 }
