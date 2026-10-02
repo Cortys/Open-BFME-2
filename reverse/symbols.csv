@@ -2907,6 +2907,7 @@ name,address,notes
 ?prepare@Rva007EADC0Owner@@QAEXXZ,0x00657AE0
 ?preprocessMacro@INI@@SAPBDPBD@Z,0x0002D0A9,INI static macro pre-expansion (digit fast path + shift/XOR hash over macro table); scanReal 0x2EDA5 first REL32 + 6 more INI-parse callers; BFME1 INIPreprocessMacro.cpp
 ?processPending@ShroudManagerImpl008FBA40@@AAEX_N@Z,0x0073D4F0
+?rva0073CCC0@ShroudManagerImpl008FBA40@@AAEXHHPAXHH@Z,0x0073CCC0,address-derived callee candidate: verified retail processPending at 0x0073D52D calls this entry; Ghidra boundary 0x0073CCC0/362 bytes; semantic identity unverified
 ?processProgress@GameLogic@@QAEXHH@Z,0x0023D740,address read from the REL32 displacement at a placed body
 ?propagateMessages@MessageStream@@QAEXXZ,0x00310FF5,GameEngine slot 39 call target; message-stream propagation immediately precedes timed-operation flag sampling
 ?pubimbue@?$basic_streambuf@DV?$char_traits@D@_STL@@@_STL@@QAE?AVlocale@2@ABV32@@Z,0x0001C760,STLport basic_streambuf<char>::pubimbue; read from the REL32 in the byte-true basic_ios<char>::imbue body at 0x00016110
