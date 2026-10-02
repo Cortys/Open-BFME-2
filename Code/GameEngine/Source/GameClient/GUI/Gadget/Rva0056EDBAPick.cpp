@@ -612,6 +612,8 @@ void __cdecl Rva00229A9CPick(int *out1, int *out2)
 	*out2 = g_Va00DBA35C[i];
 }
 
+// The obfuscation constants 0x008C0A84 and 0x008C0A80 below are written in
+// decimal (9177732, 9177728): they are seed and XOR values, not image addresses.
 // ?rva0022C743@Rva0022C743@@QAEPAU1@PAX0@Z @0x0022C743 134B
 // Chain from 0x00229A44 via Rva00229A44Pick sibling of 0x0056F2A5.
 // Evidence: same 8-int obfuscated init shape with two constants 0x008C0A84 0x008C0A80; caller 0x0022CB8F passes this plus two ptrs.
@@ -633,21 +635,21 @@ Rva0022C743 *Rva0022C743::rva0022C743(void *a1, void *a2)
 	int q;
 	Rva00229A44Pick(&p, &q);
 	m_00 = p;
-	m_04 = 0x008C0A84;
-	m_08 = 0x008C0A80;
-	m_0c = 0x008C0A84;
+	m_04 = 9177732;
+	m_08 = 9177728;
+	m_0c = 9177732;
 	m_10 = *(int *)a1;
 	m_14 = *(int *)a2;
 	int b = q;
 	int e = b;
 	e *= b;
-	e ^= 0x008C0A84;
+	e ^= 9177732;
 	m_04 = e;
 	e *= b;
-	e ^= 0x008C0A80;
+	e ^= 9177728;
 	m_08 = e;
 	e *= b;
-	e ^= 0x008C0A84;
+	e ^= 9177732;
 	m_0c = e;
 	e *= b;
 	m_10 ^= e;
@@ -683,18 +685,18 @@ Rva0022C7C9 *Rva0022C7C9::rva0022C7C9(void *a1, void *a2)
 	int q;
 	Rva00229A70Pick(&p, &q);
 	m_00 = p;
-	m_04 = 0x008C0A84;
-	m_08 = 0x008C0A80;
+	m_04 = 9177732;
+	m_08 = 9177728;
 	m_0c = 0x0C844203;
 	m_10 = *(int *)a1;
 	m_14 = *(int *)a2;
 	int b = q;
 	int e = b;
 	e *= b;
-	e ^= 0x008C0A84;
+	e ^= 9177732;
 	m_04 = e;
 	e *= b;
-	e ^= 0x008C0A80;
+	e ^= 9177728;
 	m_08 = e;
 	e *= b;
 	e ^= 0x0C844203;
@@ -733,18 +735,18 @@ Rva0022C6B6 *Rva0022C6B6::rva0022C6B6(void *a1, void *a2)
 	int q;
 	Rva00229A18Pick(&p, &q);
 	m_00 = p;
-	m_04 = 0x008C0A84;
-	m_08 = 0x008C0A80;
+	m_04 = 9177732;
+	m_08 = 9177728;
 	m_0c = 0x1C0C404F;
 	m_10 = *(int *)a1;
 	m_14 = *(int *)a2;
 	int b = q;
 	int e = b;
 	e *= b;
-	e ^= 0x008C0A84;
+	e ^= 9177732;
 	m_04 = e;
 	e *= b;
-	e ^= 0x008C0A80;
+	e ^= 9177728;
 	m_08 = e;
 	e *= b;
 	e ^= 0x1C0C404F;
@@ -783,18 +785,18 @@ Rva0022C856 *Rva0022C856::rva0022C856(void *a1, void *a2)
 	int q;
 	Rva00229A9CPick(&p, &q);
 	m_00 = p;
-	m_04 = 0x008C0A84;
-	m_08 = 0x008C0A80;
+	m_04 = 9177732;
+	m_08 = 9177728;
 	m_0c = 0x502808C8;
 	m_10 = *(int *)a1;
 	m_14 = *(int *)a2;
 	int b = q;
 	int e = b;
 	e *= b;
-	e ^= 0x008C0A84;
+	e ^= 9177732;
 	m_04 = e;
 	e *= b;
-	e ^= 0x008C0A80;
+	e ^= 9177728;
 	m_08 = e;
 	e *= b;
 	e ^= 0x502808C8;

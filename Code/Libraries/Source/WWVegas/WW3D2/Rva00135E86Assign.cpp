@@ -45,7 +45,8 @@ Rva00136001 &Rva00136001::rva00135E86(const HierarchyPrototype &proto)
 {
 	if (proto.m_obj == 0
 		|| proto.m_obj->GetClassID() == 0x50415254
-		|| proto.m_obj->GetClassID() == 0x424F58
+		// class ID 'BOX' (0x00424F58), spelled as characters
+		|| proto.m_obj->GetClassID() == (('B' << 16) | ('O' << 8) | 'X')
 		|| proto.m_obj->GetClassID() == 0x4D455348
 		|| proto.m_obj->GetClassID() == 0x41474752
 		|| proto.m_obj->GetClassID() == 0x484C4F44

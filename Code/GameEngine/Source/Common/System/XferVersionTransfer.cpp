@@ -75,7 +75,7 @@ Xfer &Xfer::operator==(Xfer::Version &v)
 {
 	if (isStoring())
 	{
-		transfer(reinterpret_cast<void *>(0x00766572), &v.data[1], 1);
+		transfer(reinterpret_cast<void *>(('v' << 16) | ('e' << 8) | 'r'), &v.data[1], 1);
 	}
 	else
 	{
@@ -84,7 +84,7 @@ Xfer &Xfer::operator==(Xfer::Version &v)
 		unsigned char earliestVersion;
 		{
 			previousVersion = v.data[1];
-			transfer(reinterpret_cast<void *>(0x00766572), &v.data[1], 1);
+			transfer(reinterpret_cast<void *>(('v' << 16) | ('e' << 8) | 'r'), &v.data[1], 1);
 			loadedVersion = v.data[1];
 			earliestVersion = v.data[0];
 		}
