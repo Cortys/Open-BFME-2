@@ -5447,3 +5447,6 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002A8FE0@Rva002A8FE0@@QAEXXZ	0x002A8FE0	73	partial	missing mov ecx esi plus jl vs jb plus redundant test jle plus pop order t=20 model=muse-spark score=0.9 stash=reverse/attempts/0x002a8fe0.cpp
 ?rva00319924@Rva00319924@@QAEHABVAsciiString@@@Z	0x00319924	73	partial	extra reload of m_78 before first get plus eax-ecx swap for holder vs byte count t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x00319924.cpp
 ?rva003196A7@Rva003196A7@@QAEXPAUCb003196A7@@@Z	0x003196A7	109	blocked	guard EH plus member-fn-pointer call reg alloc wall t=20 model=muse-01
+?rva0031917A@Rva0031917A@@QAEXXZ	0x0031917A	55	partial	extra mov ecx eax plus eax-ecx swap in prologue only t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x0031917a.cpp
+?rva00319924@Rva00319924@@QAEHABVAsciiString@@@Z	0x00319924	73	blocked	extra reload of m_78 before first get plus eax-ecx swap for holder vs byte count t=10 model=muse-01 (stash 0.93 kept)
+?rva0031917A@Rva0031917A@@QAEXXZ	0x0031917A	55	blocked	extra mov ecx eax plus eax-ecx swap in prologue only t=5 model=muse-01 (stash 0.93 kept)

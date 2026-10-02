@@ -41,6 +41,7 @@ class Rva00319F5A
 {
 public:
 	void rva00319F5A(Rva00318B5C *pos, const Rva00318B5C &x, int dummy, unsigned n, bool flag);
+	void rva0031A129(const Rva00318B5C &x);
 private:
 	Rva00318B5C *m_begin;
 	Rva00318B5C *m_end;
@@ -77,4 +78,15 @@ void Rva00319F5A::rva00319F5A(Rva00318B5C *pos, const Rva00318B5C &x, int dummy,
 	m_begin = (Rva00318B5C *)newBuf;
 	m_end = cur;
 	m_endStorage = (Rva00318B5C *)((char *)newBuf + (newCap << 4));
+}
+void Rva00319F5A::rva0031A129(const Rva00318B5C &x)
+{
+	if (m_end != m_endStorage) {
+		Rva00318D63Copy(m_end, x);
+		m_end = (Rva00318B5C *)((char *)m_end + 16);
+	}
+	else {
+		_STL::__false_type tag;
+		rva00319F5A(m_end, x, (int)&tag, 1, true);
+	}
 }
