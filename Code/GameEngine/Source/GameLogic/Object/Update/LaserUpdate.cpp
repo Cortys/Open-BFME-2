@@ -461,60 +461,7 @@ void LaserUpdate::crc( Xfer *xfer )
 	* Version Info:
 	* 1: Initial version */
 // ------------------------------------------------------------------------------------------------
-// ?LaserUpdate::xfer present-unmatched
-void LaserUpdate::xfer( Xfer *xfer )
-{
-
-	// version
-	XferVersion currentVersion = 1;
-	XferVersion version = currentVersion;
-	xfer->xferVersion( &version, currentVersion );
-
-	// extend base class
-	ClientUpdateModule::xfer( xfer );
-
-	// start pos
-	xfer->xferCoord3D( &m_startPos );
-
-	// end pos
-	xfer->xferCoord3D( &m_endPos );
-
-	// dirty
-	xfer->xferBool( &m_dirty );
-
-	// particle system ID
-	xfer->xferUser( &m_particleSystemID, sizeof( ParticleSystemID ) );
-
-	// target particle system id
-	xfer->xferUser( &m_targetParticleSystemID, sizeof( ParticleSystemID ) );
-
-	// widening
-	xfer->xferBool( &m_widening );
-
-	// decaying
-	xfer->xferBool( &m_decaying );
-
-	// widen start frame
-	xfer->xferUnsignedInt( &m_widenStartFrame );
-
-	// widen finish frame
-	xfer->xferUnsignedInt( &m_widenFinishFrame );
-
-	// current width scalar
-	xfer->xferReal( &m_currentWidthScalar );
-
-	// decay start frame
-	xfer->xferUnsignedInt( &m_decayStartFrame );
-
-	// decay finish frame
-	xfer->xferUnsignedInt( &m_decayFinishFrame );
-
-	xfer->xferDrawableID(&m_parentID);
-	xfer->xferDrawableID(&m_targetID);
-
-	xfer->xferAsciiString(&m_parentBoneName);
-
-}  // end xfer
+// Owned by LaserUpdateXfer.cpp.
 
 // ------------------------------------------------------------------------------------------------
 /** Load post process */
