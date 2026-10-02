@@ -1,10 +1,13 @@
 // cl: /O1 /EHsc
 // ?rva0020517D@ScriptEngine@@QAEXPAVObject@@@Z @0x0020517D 58B: remove sequential scripts for an object.
 // Evidence: caller 0x003BC259 passes getUnitNamed Object*; loops m_sequentialScripts +0x10..+0x14 calling rowed cleanupSequentialScript 0x00204733 with (it,1,1) when slot empty or +8 matches Object+0x74; same shape as siblings 0x00205140 and 0x002051B7.
+class Object;
+
 class SequentialScript
 {
 public:
-	char m_pad[8];
+	char m_pad00[4];
+	Object *m_04; // +0x04 match pointer
 	int m_8; // +0x08 match key
 	char m_padC[4]; // +0x0C..0x0F
 	bool m_10; // +0x10 gate
@@ -26,10 +29,15 @@ protected:
 public:
 	void rva0020517D(Object *obj);
 	void rva00205140(SequentialScript *arg);
+	void rva002051B7(Object *obj);
 private:
 	char m_pre[0x10];
 	SequentialScript **m_begin; // +0x10
 	SequentialScript **m_end; // +0x14
+	char m_mid[0x1A110 - 0x18];
+	Object *m_1A110; // +0x1A110
+	char m_pad114[4];
+	Object *m_1A118; // +0x1A118
 };
 
 void ScriptEngine::rva0020517D(Object *obj)
@@ -61,4 +69,24 @@ void ScriptEngine::rva00205140(SequentialScript *arg)
 		else
 			++it;
 	}
+}
+
+// ?rva002051B7@ScriptEngine@@QAEXPAVObject@@@Z @0x002051B7 81B
+// Clear sequential-script slots whose +4 matches obj via rowed
+// cleanupSequentialScript(it,1,0), then clear +0x1A110/+0x1A118 if obj.
+// Evidence: same +0x10..+0x14 loop as siblings above, callee row 0x00204733,
+// callers 0x003A3583 and thunk 0x002064CB.
+void ScriptEngine::rva002051B7(Object *obj)
+{
+	if (!obj)
+		return;
+	for (SequentialScript **it = m_begin; it != m_end; ++it) {
+		SequentialScript *s = *it;
+		if (!s || s->m_04 == obj)
+			cleanupSequentialScript(it, true, false);
+	}
+	if (m_1A110 == obj)
+		m_1A110 = 0;
+	if (m_1A118 == obj)
+		m_1A118 = 0;
 }
