@@ -41,7 +41,7 @@ public:
 	};
 };
 
-ModuleInfo::Nugget::Nugget(const Nugget &that)
+inline ModuleInfo::Nugget::Nugget(const Nugget &that)
 	: name(that.name),
 	  a(that.a),
 	  b(that.b),
@@ -49,3 +49,10 @@ ModuleInfo::Nugget::Nugget(const Nugget &that)
 	  d(that.d)
 {
 }
+#pragma inline_depth(0)
+// ?bfmeEmitModuleInfoNuggetCopyCtor@@YAXPAUNugget@ModuleInfo@@@Z present-unmatched
+void bfmeEmitModuleInfoNuggetCopyCtor(ModuleInfo::Nugget *p)
+{
+	p->ModuleInfo::Nugget::Nugget(*(ModuleInfo::Nugget *)0);
+}
+#pragma inline_depth()
