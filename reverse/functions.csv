@@ -47723,3 +47723,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0032DD81Copy@@YAPAVSidesInfo@@PAV1@00@Z,,0x0032DD81,50,Code/GameEngine/Source/GameLogic/Map/SidesList_sidesInfo.cpp,matched,copies SidesInfo range via operator equals 0x60 stride
 ??_GRva00341D26@@UAEPAXI@Z,,0x00342F25,28,Code/GameEngine/Source/Common/Rva0033FC42Dtor.cpp,matched,slot0 vtable 0x00811740 over rowed ??1
 ??_GRva005E54AE@@UAEPAXI@Z,,0x005E54B9,28,Code/GameEngine/Source/Common/RvaDerivedDtorTails.cpp,matched,slot0 vtable 0x00877D10 over rowed ??1
+??1Rva0039A1CA@@UAE@XZ,,0x0039A1CA,123,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva0039A1CADtor.cpp,matched,ModuleData dtor via Snapshot vtable plus rowed vectors filters strings

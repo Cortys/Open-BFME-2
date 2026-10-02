@@ -5510,3 +5510,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00432AA2@Rva00432A3B@@QAEXXZ	0x00432AA2	35	blocked	second call needs thiscall member at 0x004328D8 but row is free stdcall Emit member version exact needs ICF-owner or retype t=12 model=muse-04
 ?rva00432AC5@Rva00432A3B@@QAEXXZ	0x00432AC5	38	blocked	same wall as 0x00432AA2 second call needs thiscall member at 0x004328D8 but row is free stdcall Emit t=2 model=muse-04
 ??1Rva0032D279@@QAE@XZ	0x0032D279	84	partial	xor-cmp-push-reg vs test-push-imm for null check and virtual arg plus edx vs eax for vtable t=20 model=muse-04 score=0.99 stash=reverse/attempts/0x0032d279.cpp
+?rva002C8B9B@WeaponSet@@QAEXH@Z	0x002C8B9B	107	partial	xor ecx plus cmp vs test and vs mov push 0 vs push ecx push-then-mov vs mov-then-push t=18 model=muse-11 score=0.92 stash=reverse/attempts/0x002c8b9b.cpp
