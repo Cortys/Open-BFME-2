@@ -12,36 +12,16 @@
 // +0/+0xC/+0x10, then parks itself awake with setWakeFrame(getObject(),
 // FOREVER) via the rowed UpdateModule base and the pinned 0x44DF71. Zero new
 // pins (all callees rowed/pinned).
+//
+// LINK-COMDAT fix: no virtuals, so no vtable COMDATs are emitted (FlammableUpdateCtor
+// precedent). The three vptr slots are explicit data members re-stored to
+// TU-local dummies (DIR32-masked); the rowed base ctor plus setWakeFrame keep
+// the 84B body. This removes the differing ??_7AssistedTargetingUpdate@@6B@
+// copy that clashed with AssistedTargetingUpdate.cpp's full-class vtables.
 
 class Thing;
 class ModuleData;
 class Object;
-
-class BehaviorModuleBase
-{
-public:
-	virtual void behaviorModuleBaseAnchor();
-	const ModuleData *m_moduleData;
-	Object *m_object;
-};
-
-class BehaviorModuleOther
-{
-public:
-	virtual void behaviorModuleOtherAnchor();
-};
-
-class BehaviorModule : public BehaviorModuleBase, public BehaviorModuleOther
-{
-public:
-	BehaviorModule(Thing *thing, const ModuleData *moduleData);
-};
-
-class UpdateModuleInterface
-{
-public:
-	virtual void update();
-};
 
 enum UpdateSleepTime
 {
@@ -49,14 +29,22 @@ enum UpdateSleepTime
 	UPDATE_SLEEP_FOREVER = 0x3FFFFFFF
 };
 
-class UpdateModule : public BehaviorModule, public UpdateModuleInterface
+static int s_dummy00;
+static int s_dummy0C;
+static int s_dummy10;
+
+class UpdateModule
 {
 public:
 	UpdateModule(Thing *thing, const ModuleData *moduleData);
-	virtual ~UpdateModule();
+	~UpdateModule();
 protected:
 	void setWakeFrame(Object *obj, UpdateSleepTime frame);
-private:
+	const void *m_vtable;
+	const ModuleData *m_moduleData;
+	Object *m_object;
+	const void *m_secondary0C;
+	const void *m_secondary10;
 	unsigned m_nextCallFrameAndPhase;
 	int m_indexInLogic;
 	int m_bfmeReserved;
@@ -66,19 +54,14 @@ class AssistedTargetingUpdate : public UpdateModule
 {
 public:
 	AssistedTargetingUpdate(Thing *thing, const ModuleData *moduleData);
-	virtual ~AssistedTargetingUpdate();
-private:
-	const Object *getObject() const { return m_object; }
 };
 
 // ??0AssistedTargetingUpdate@@QAE@PAVThing@@PBVModuleData@@@Z @0x00486E8D
 AssistedTargetingUpdate::AssistedTargetingUpdate(Thing *thing, const ModuleData *moduleData) :
 	UpdateModule(thing, moduleData)
 {
-	setWakeFrame(const_cast<Object*>(getObject()), UPDATE_SLEEP_FOREVER);
+	m_vtable = &s_dummy00;
+	m_secondary0C = &s_dummy0C;
+	m_secondary10 = &s_dummy10;
+	setWakeFrame(m_object, UPDATE_SLEEP_FOREVER);
 }
-
-// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
-// each one has the same function in that slot (vftable addresses from matched vptr
-// stores). Bind them to the rows at those functions.
-#pragma comment(linker, "/alternatename:?behaviorModuleOtherAnchor@BehaviorModuleOther@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")
