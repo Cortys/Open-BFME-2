@@ -84,3 +84,8 @@ void ScriptActions::Rva003BA8AC()
 	}
 	m_suppressNewWindows = false;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?init@ScriptActions@@UAEXXZ=?rva000D20D6@Rva000D20D6@@UAEXXZ")
