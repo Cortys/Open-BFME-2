@@ -48399,3 +48399,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Rva0052519DFire@@YAHPAX0PBD1PAH@Z,,0x0052519D,102,Code/GameEngine/Source/Common/Rva0052519DFire.cpp,matched,free int via rowed Get plus AptCall plus empty fallback
 ??_GRva0041988B@@UAEPAXI@Z,,0x0022E0C9,28,Code/GameEngine/Source/GameClient/Rva0041988BDtor.cpp,matched,vtable slot0 0x007E7778 via rowed dtor unit emits exact
 ?rva002CFB4C@Rva002CFB4C@@QAEPAXPBX@Z,,0x002CFB4C,68,Code/GameEngine/Source/Common/Rva002CFB4CInsert.cpp,matched,hashtable insert via pin 0x00212858 plus rowed bucketIndex 0x00223149 and pinned twin 0x002CF9DC; caller 0x002CFEEC
+??1Rva0060D031Member@@QAE@XZ,,0x0060D031,57,Code/Libraries/Source/xfer/XferSaveMemberDestructor.cpp,matched,
