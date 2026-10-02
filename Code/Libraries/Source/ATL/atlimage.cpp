@@ -654,13 +654,13 @@ CImage::CImage() throw() :
     s_initGDIPlus.IncreaseCImageCount();
 }
 
-CImage::~CImage() throw()
+inline CImage::~CImage() throw()
 {
     Destroy();
     s_initGDIPlus.DecreaseCImageCount();
 }
 
-void CImage::Destroy() throw()
+inline void CImage::Destroy() throw()
 {
     if (m_hBitmap != 0)
     {
@@ -839,6 +839,19 @@ HRESULT CImage::CreateFromGdiplusBitmap(Gdiplus::Bitmap &bmSrc) throw()
 }
 
 }
+
+// ??1CImage@ATL@@UAE@XZ and ?Destroy@CImage@ATL@@QAEXXZ are header inlines
+// elsewhere: other units emit select-any copies of them, so strong definitions
+// here were duplicate symbols in the linked build. This anchor only makes this
+// unit emit its copies for the ledger rows; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitatlimage@@YAXPAVCImage@ATL@@@Z present-unmatched
+void bfmeEmitatlimage(ATL::CImage *p)
+{
+    p->ATL::CImage::~CImage();
+    p->ATL::CImage::Destroy();
+}
+#pragma inline_depth()
 
 // Retail's call sites in this unit's matched rows land on bodies rowed under
 // other spellings at the same addresses (same ABI). Bind the spellings used here.
