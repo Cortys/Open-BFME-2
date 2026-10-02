@@ -33,7 +33,9 @@ class Rva000427195
 {
 public:
 	int bucketIndex(const AsciiString *name);
+	void rva00212858(unsigned int newSize);
 	InsertRet002E01F7 rva002E01F7(const void *key);
+	InsertRet002E01F7 rva002E035B(const void *key);
 
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -61,4 +63,10 @@ InsertRet002E01F7 Rva000427195::rva002E01F7(const void *key)
 	m_beginBuckets[bucket] = node;
 	++m_numElements;
 	return InsertRet002E01F7(node, this, 1);
+}
+
+InsertRet002E01F7 Rva000427195::rva002E035B(const void *key)
+{
+	rva00212858(m_numElements + 1);
+	return rva002E01F7(key);
 }
