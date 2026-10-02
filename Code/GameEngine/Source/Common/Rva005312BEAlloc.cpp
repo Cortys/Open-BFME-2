@@ -9,6 +9,7 @@ public:
 	int m_items[12];
 };
 void *__cdecl operator new[](unsigned int size);
+extern "C" void __cdecl free(void *block);
 class Rva005312BEItem
 {
 public:
@@ -17,7 +18,9 @@ public:
 	Rva00531132 m_set;
 	unsigned char m_cleared;
 	unsigned char m_35;
-	char m_pad[0x44 - 0x34 - 2];
+	char m_pad36[2];
+	void *m_p38;
+	char m_pad3C[0x44 - 0x3C];
 };
 // ??0Rva005312BEItem@@QAE@XZ present-unmatched
 Rva005312BEItem::Rva005312BEItem()
@@ -26,10 +29,10 @@ Rva005312BEItem::Rva005312BEItem()
 	m_cleared = 0;
 	m_35 = 0;
 }
-// ??1Rva005312BEItem@@QAE@XZ present-unmatched
 Rva005312BEItem::~Rva005312BEItem()
 {
-	m_cleared = 0;
+	if (m_p38 != 0)
+		free(m_p38);
 }
 struct Rva005312BERect
 {

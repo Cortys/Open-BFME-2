@@ -48968,3 +48968,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005E712A@Rva005E7C19@@QAEXH@Z,,0x005E712A,53,Code/GameEngine/Source/Common/Bfme/Rva005E7C19Vslot1.cpp,matched,vslot1 of vtable 0x00877F14 via MessageStreamSubsystem 0x6AE plus two ints
 ?rva0027D30D@Rva0027D30D@@QAEXPAUCoord3D@@H@Z,,0x0027D30D,58,Code/GameEngine/Source/Common/Rva0027D30DTrigger.cpp,matched,rowed pointInTrigger caller 0x0027E4BD ret8 dummy
 ?rva0027D098@Rva0027D098@@QAEXXZ,,0x0027D098,62,Code/GameEngine/Source/Common/Rva0027D098Reset.cpp,matched,caller 0x0027D378 resets countdown via ecx equals esi
+??1Rva005312BEItem@@QAE@XZ,,0x005328D3,15,Code/GameEngine/Source/Common/Rva005312BEAlloc.cpp,matched,vector deleting dtor 0x00532F9F element size 0x44 matches Rva005312BEItem
