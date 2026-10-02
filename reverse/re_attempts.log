@@ -5513,3 +5513,4 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002C8B9B@WeaponSet@@QAEXH@Z	0x002C8B9B	107	partial	xor ecx plus cmp vs test and vs mov push 0 vs push ecx push-then-mov vs mov-then-push t=18 model=muse-11 score=0.92 stash=reverse/attempts/0x002c8b9b.cpp
 ?rva0054F3E2@Rva0054F434@@UAEPAXPAX@Z	0x0054F3E2	27	partial	mov-vs-and zero local plus3B frame ok no EH no nullcheck t=18 model=muse-02 score=0.91 stash=reverse/attempts/0x0054f3e2.cpp
 FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string compare plus _M_new_node int-pair row type mismatch needs node layout and owner t=8 model=muse-10
+?rva00273808@Drawable@@QAEXXZ	0x00273808	457	blocked	457B Drawable x87 SSE mixed 6 globals nested loops needs GlobalData InGameUI TacticalView Display layouts t=8 model=muse-01
