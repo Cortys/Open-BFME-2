@@ -5,18 +5,22 @@
 // STLport4.5.3 range copying uses the retail configuration without catch blocks.
 #include <vector>
 class Xfer;
-class Snapshot {
+// SaveMapPreview's base is NOT canonical Snapshot: retail vtable 0xBE7258 holds
+// crc/typeName/xfer while canonical Snapshot (Snapshot.cpp, shim) holds
+// crc/xfer/loadPostProcess. Same mangled name different virtuals cannot share
+// COMDATs, so the base keeps an honest Rva address name here.
+class Rva002262E7SnapshotBase {
 public:
-    __forceinline virtual ~Snapshot() {}
+    virtual ~Rva002262E7SnapshotBase();
     virtual void crc(Xfer *);
     virtual const char *typeName() const;
     virtual void xfer(Xfer *);
 };
-class SaveMapPreview : public Snapshot {
+class SaveMapPreview : public Rva002262E7SnapshotBase {
 public:
     unsigned int word04;
     struct Words { unsigned int a,b,c; } words08;
-    __declspec(nothrow) SaveMapPreview(const SaveMapPreview &o) : Snapshot(o), word04(o.word04), words08(o.words08) {}
+    __declspec(nothrow) SaveMapPreview(const SaveMapPreview &o) : Rva002262E7SnapshotBase(o), word04(o.word04), words08(o.words08) {}
     virtual ~SaveMapPreview();
     virtual void crc(Xfer *);
     virtual const char *typeName() const;
