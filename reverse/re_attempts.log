@@ -5854,3 +5854,4 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ	0x0048B256	233	partial	add eax eax vs shl eax 1 for span doubling only relocs else exact 233B 81insns t=18 model=muse-10 score=0.99 stash=reverse/attempts/0x0048b256.cpp
 ?rva00072988@Rva00072988@@QAEEHH@Z	0x00072988	68	blocked	and eax vs and al plus movzx t=15 model=muse-07 (stash 0.96 kept)
 ?Rva00072D5DColor@@YAHE@Z	0x00072D5D	179	blocked	stack slots ebp-4/ebp-8 swapped plus unresolved global load plus tail nibble-pack regalloc drift 178B vs 179B t=5 model=muse-07
+?rva0057AD26@Rva0057AD26@@QAEXXZ	0x0057AD26	72	blocked	65B vs 72B -7B 4 structural regions missing stack-temp arg setup mov eax esp plus second inner load plus virtual notify dispatch t=5 model=muse-05
