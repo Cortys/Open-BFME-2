@@ -47209,3 +47209,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva005EC9BA@@QAE@XZ,,0x005EC9BA,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector destructor: the 63-byte shape of 0x002D040C calling the rowed range destructor ?Rva005EC594Clear@@YAXPAURva005EC594@@0@Z
 ?rva00319CED@Rva00319CED@@QAE_NXZ,,0x00319CED,20,Code/Libraries/Source/WWVegas/WWLib/Rva00319CEDCheck.cpp,matched,honest Rva name push TheEmptyString plus rowed compare plus bool normalize
 ?Rva00319331Destroy@@YAXPAURva00319331Item@@0@Z,,0x00319331,26,Code/GameEngine/Source/Common/Rva00319331Destroy.cpp,matched,honest Rva range loop over 0x10 vtable items slot0 with 0
+?rva0029D3FB@Rva0029D3FB@@QAEXXZ,,0x0029D3FB,83,Code/GameEngine/Source/GameClient/Rva0029D3FBClear.cpp,matched,list clearer via holder ptr pattern from Rva0029D30A
