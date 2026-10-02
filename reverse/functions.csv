@@ -46823,3 +46823,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva005211D1@@QAE@XZ,,0x005211D1,53,Code/GameEngine/Source/Common/Rva005211D1Dtor.cpp,matched,unlock two AsciiString dtor via shared header caller 0x00521206
 ?rva0056445E@TerrainCollisionModuleInfo@FXParticleSystem@@QAEXPAVXfer@@@Z,,0x0056445E,57,Code/GameEngine/Source/GameClient/System/FXParticleSystem/TerrainCollisionModuleInfoXfer.cpp,matched,Snapshot slot 3 vtable 0081C218 DoXfer Version1 plus rowed xferRandomVariable plus slots 6C 90
 ?rva00587204@Rva00587204@@QAEAAURva0046247DPair@@AAU2@@Z,,0x00587204,19,Code/Libraries/Source/WWVegas/WWLib/Rva00587204Fwd.cpp,matched,forwarder via ptr at +4 to rowed 0046247D caller 00587AB8
+?rva0036EE16@AICommandInterface@@QAEXPBVRva0035149F@@PAVObject@@W4CommandSourceType@@@Z,,0x0036EE16,115,Code/GameEngine/Source/GameLogic/AI/AICommandInterfaceAttackCommands.cpp,matched,gap AICMD 0x09 vector copy plus m_obj plus slot0 aiDoCommand
