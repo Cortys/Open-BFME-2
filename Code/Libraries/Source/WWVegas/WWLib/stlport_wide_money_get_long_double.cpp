@@ -63,4 +63,11 @@ __declspec(noinline) void istreambuf_iterator<wchar_t, char_traits<wchar_t> >::_
     _M_have_c = true;
 }
 }
+
+namespace _STL
+{
+template <>
+wchar_t *allocator<wchar_t>::allocate(size_t, const void*) const;
+}
+
 template class _STL::money_get<wchar_t, _STL::istreambuf_iterator<wchar_t, _STL::char_traits<wchar_t> > >;
