@@ -48033,3 +48033,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z,,0x003BF5FE,288,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF5FE.cpp,matched,team centroid waypoint via terrain slot 0x90 volatile order
 ?rva005A91BE@Rva005A91BE@@QAEXPAVXfer@@@Z,,0x005A91BE,87,Code/Libraries/Source/WWVegas/WWLib/Rva005A91BEXfer.cpp,matched,Xfer Version12 count uint via slots 0x28 0x78 0x7c
 ??1TeamFactory@@UAE@XZ,,0x003A383A,95,Code/GameEngine/Source/Common/RTS/TeamFactoryDtor.cpp,matched,unlock dtor EH prolog singleton clear unblocks 0x003A398B
+??_GTeamFactory@@UAEPAXI@Z,,0x003A398B,28,Code/GameEngine/Source/Common/RTS/TeamFactoryDtor.cpp,matched,chain deleting dtor from ??1 unit vtable slot0
