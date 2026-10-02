@@ -471,13 +471,7 @@ void ProcessAnimateWindowSlideFromBottom::initReverseAnimateWindow( AnimateWindo
 // ProcessAnimateWindowSlideFromBottomTimed PUBLIC FUNCTIONS ////////////////////////
 //-----------------------------------------------------------------------------
 
-ProcessAnimateWindowSlideFromBottomTimed::ProcessAnimateWindowSlideFromBottomTimed( void )
-{
-	m_maxDuration = 1000;
-}
-
-// ??1ProcessAnimateWindowSlideFromBottomTimed@@ absent-from-retail
-ProcessAnimateWindowSlideFromBottomTimed::~ProcessAnimateWindowSlideFromBottomTimed( void ) { }
+// BottomTimed constructor and destructor live in ProcessAnimateWindowDestructors.cpp.
 
 // BottomTimed reverse initialization is defined with RightFast in ProcessAnimateWindowRightFastInitReverse.cpp.
 
