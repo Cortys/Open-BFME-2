@@ -5516,3 +5516,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva00273808@Drawable@@QAEXXZ	0x00273808	457	blocked	457B Drawable x87 SSE mixed 6 globals nested loops needs GlobalData InGameUI TacticalView Display layouts t=8 model=muse-01
 ?rva004BE781@Rva004BE781@@QAEXPAX@Z	0x004BE781	315	blocked	eh-throw two-loop bitflags body needs full interface and string layout t=12 model=muse-03
 ?rva0039AE04@Rva0039AE04@@QAE_NXZ	0x0039AE04	44	blocked	bool predicate register wall pointer in eax vs ecx setne vs xor-inc branches t=12 model=muse-11
+?rva0052C0C8@Rva0052C0C8@@QAEXXZ	0x0052C0C8	81	blocked	81B vector first-used idiv 0xB8 stride flag 0xB4 register wall ebx-vs-ebp push-cdq scheduling 3 variants t=10 model=muse-01
