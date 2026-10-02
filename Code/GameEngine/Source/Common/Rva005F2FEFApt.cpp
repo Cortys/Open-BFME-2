@@ -139,6 +139,7 @@ public:
 	void rva005F2A4A();
 	void rva005F2F41(int rank);
 	void rva005F2F5C(int val);
+	void rva005F3272(const UnicodeString &text);
 private:
 	char m_pad00[4];
 	Rva005F2FEF *m_member04;
@@ -172,6 +173,11 @@ void Rva005F2A32::rva005F2F41(int rank)
 void Rva005F2A32::rva005F2F5C(int val)
 {
 	m_member04->rva005F2D41(val);
+}
+
+void Rva005F2A32::rva005F3272(const UnicodeString &text)
+{
+	m_member04->rva005F2FEF(text);
 }
 
 AsciiString Rva00222834Get(int val);
