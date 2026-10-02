@@ -47145,3 +47145,18 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00463D72@Rva00463782@@QAEXXZ,,0x00463D72,41,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,tree clear: the 41-byte shape of Rva00226883::rva0022999F calling the Rva00463782 erase
 ?rva005B3751@Rva005B3751@@QAEXPAX@Z,,0x005B3751,53,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,value-destroying tree node erase: the 53-byte shape of BfmeSubEBD::bfmeEraseSubtree; value dtor ??1?$StringBase@D@@AAE@XZ
 ?rva005B3947@Rva005B3751@@QAEXXZ,,0x005B3947,41,Code/GameEngine/Source/Common/RvaTreeValueEraseFamily.cpp,matched,tree clear: the 41-byte shape of Rva00226883::rva0022999F calling the Rva005B3751 erase
+??1Rva00079A0C@@QAE@XZ,,0x00079E55,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00079A0C clear
+??1Rva001363CC@@QAE@XZ,,0x0013660A,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva001363CC clear
+??1Rva00170AE4@@QAE@XZ,,0x00170D47,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00170AE4 clear
+??1Rva00170B19@@QAE@XZ,,0x00170D7F,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00170B19 clear
+??1Rva002177CD@@QAE@XZ,,0x00217C2E,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva002177CD clear
+??1Rva00217A02@@QAE@XZ,,0x00217FB2,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00217A02 clear
+??1Rva00217A37@@QAE@XZ,,0x00217FEA,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00217A37 clear
+??1Rva0022115A@@QAE@XZ,,0x002212F1,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0022115A clear
+??1Rva0022E121@@QAE@XZ,,0x0022E1F1,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0022E121 clear
+??1Rva00240CAB@@QAE@XZ,,0x00242EAF,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00240CAB clear
+??1Rva002A4281@@QAE@XZ,,0x002A583E,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva002A4281 clear
+??1Rva003ED68D@@QAE@XZ,,0x003ED879,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva003ED68D clear
+??1Rva0041090E@@QAE@XZ,,0x00410CB9,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva0041090E clear
+??1Rva00463782@@QAE@XZ,,0x00464391,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva00463782 clear
+??1Rva005B3751@@QAE@XZ,,0x005B3C91,56,Code/GameEngine/Source/Common/RvaTreeDtorFamily.cpp,matched,tree destructor: the 56-byte shape of ??1Rva0046A93E calling the Rva005B3751 clear

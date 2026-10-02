@@ -903,3 +903,228 @@ Rva006007A5::~Rva006007A5()
 {
 	rva0060082B();
 }
+
+// ??1Rva00079A0C@@QAE@XZ @0x00079E55 56B -> Rva00079A0C::rva00079C8D
+class Rva00079A0C
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00079C8D();
+	~Rva00079A0C();
+};
+
+Rva00079A0C::~Rva00079A0C()
+{
+	rva00079C8D();
+}
+
+// ??1Rva001363CC@@QAE@XZ @0x0013660A 56B -> Rva001363CC::rva001364CE
+class Rva001363CC
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva001364CE();
+	~Rva001363CC();
+};
+
+Rva001363CC::~Rva001363CC()
+{
+	rva001364CE();
+}
+
+// ??1Rva00170AE4@@QAE@XZ @0x00170D47 56B -> Rva00170AE4::rva00170BAD
+class Rva00170AE4
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00170BAD();
+	~Rva00170AE4();
+};
+
+Rva00170AE4::~Rva00170AE4()
+{
+	rva00170BAD();
+}
+
+// ??1Rva00170B19@@QAE@XZ @0x00170D7F 56B -> Rva00170B19::rva00170BD6
+class Rva00170B19
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00170BD6();
+	~Rva00170B19();
+};
+
+Rva00170B19::~Rva00170B19()
+{
+	rva00170BD6();
+}
+
+// ??1Rva002177CD@@QAE@XZ @0x00217C2E 56B -> Rva002177CD::rva002179D9
+class Rva002177CD
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002179D9();
+	~Rva002177CD();
+};
+
+Rva002177CD::~Rva002177CD()
+{
+	rva002179D9();
+}
+
+// ??1Rva00217A02@@QAE@XZ @0x00217FB2 56B -> Rva00217A02::rva00217C66
+class Rva00217A02
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00217C66();
+	~Rva00217A02();
+};
+
+Rva00217A02::~Rva00217A02()
+{
+	rva00217C66();
+}
+
+// ??1Rva00217A37@@QAE@XZ @0x00217FEA 56B -> Rva00217A37::rva00217C8F
+class Rva00217A37
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00217C8F();
+	~Rva00217A37();
+};
+
+Rva00217A37::~Rva00217A37()
+{
+	rva00217C8F();
+}
+
+// ??1Rva0022115A@@QAE@XZ @0x002212F1 56B -> Rva0022115A::rva00221234
+class Rva0022115A
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00221234();
+	~Rva0022115A();
+};
+
+Rva0022115A::~Rva0022115A()
+{
+	rva00221234();
+}
+
+// ??1Rva0022E121@@QAE@XZ @0x0022E1F1 56B -> Rva0022E121::rva0022E177
+class Rva0022E121
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0022E177();
+	~Rva0022E121();
+};
+
+Rva0022E121::~Rva0022E121()
+{
+	rva0022E177();
+}
+
+// ??1Rva00240CAB@@QAE@XZ @0x00242EAF 56B -> Rva00240CAB::rva0024191A
+class Rva00240CAB
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva0024191A();
+	~Rva00240CAB();
+};
+
+Rva00240CAB::~Rva00240CAB()
+{
+	rva0024191A();
+}
+
+// ??1Rva002A4281@@QAE@XZ @0x002A583E 56B -> Rva002A4281::rva002A47E1
+class Rva002A4281
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva002A47E1();
+	~Rva002A4281();
+};
+
+Rva002A4281::~Rva002A4281()
+{
+	rva002A47E1();
+}
+
+// ??1Rva003ED68D@@QAE@XZ @0x003ED879 56B -> Rva003ED68D::rva003ED6E4
+class Rva003ED68D
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva003ED6E4();
+	~Rva003ED68D();
+};
+
+Rva003ED68D::~Rva003ED68D()
+{
+	rva003ED6E4();
+}
+
+// ??1Rva0041090E@@QAE@XZ @0x00410CB9 56B -> Rva0041090E::rva00410A14
+class Rva0041090E
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00410A14();
+	~Rva0041090E();
+};
+
+Rva0041090E::~Rva0041090E()
+{
+	rva00410A14();
+}
+
+// ??1Rva00463782@@QAE@XZ @0x00464391 56B -> Rva00463782::rva00463D72
+class Rva00463782
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva00463D72();
+	~Rva00463782();
+};
+
+Rva00463782::~Rva00463782()
+{
+	rva00463D72();
+}
+
+// ??1Rva005B3751@@QAE@XZ @0x005B3C91 56B -> Rva005B3751::rva005B3947
+class Rva005B3751
+{
+public:
+	RvaTreeFamilyHolder m_header;
+	int m_flag;
+	void rva005B3947();
+	~Rva005B3751();
+};
+
+Rva005B3751::~Rva005B3751()
+{
+	rva005B3947();
+}
