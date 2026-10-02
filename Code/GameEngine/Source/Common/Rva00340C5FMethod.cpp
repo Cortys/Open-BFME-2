@@ -36,6 +36,8 @@ struct FprintfTarget
 };
 
 extern "C" void fprintf(FprintfTarget *target, const char *format, ...);
+extern unsigned char g_00E03745;
+extern void *g_00DFEFF0;
 
 class Rva00340C5F
 {
@@ -57,9 +59,9 @@ int Rva00340C5F::rva00340C5F()
 	Object *obj = m_18->getGoalObject();
 	if (obj == 0)
 		return -2;
-	if (*(unsigned char *)0x00E03745)
+	if (g_00E03745)
 	{
-		FprintfTarget *log = *(FprintfTarget **)0x00DFEFF0;
+		FprintfTarget *log = (FprintfTarget *)g_00DFEFF0;
 		if (log != 0)
 			fprintf(log, "CritterDesync: setAdjustDestination(TRUE) 38");
 	}
