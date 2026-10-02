@@ -24,6 +24,7 @@ class ResourceGatheringManager
 {
 public:
 	void addSupplyWarehouse(Object *newWarehouse);
+	void rva004F5C44(Object *newCenter);
 private:
 	typedef _STL::list<ObjectID> objectIDList;
 	void *m_slice_vtbl;
@@ -36,4 +37,11 @@ void ResourceGatheringManager::addSupplyWarehouse(Object *newWarehouse)
 	if (newWarehouse == NULL)
 		return;
 	m_supplyWarehouses.push_back(newWarehouse->getID());
+}
+
+void ResourceGatheringManager::rva004F5C44(Object *newCenter)
+{
+	if (newCenter == NULL)
+		return;
+	m_supplyCenters.push_back(newCenter->getID());
 }
