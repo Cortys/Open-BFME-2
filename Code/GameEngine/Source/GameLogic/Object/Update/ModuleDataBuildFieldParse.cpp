@@ -38,6 +38,18 @@ void cls::buildFieldParse(MultiIniFieldParse &parse) \
 	parse.add(reinterpret_cast<const FieldParse *>(addr), 0); \
 }
 
+#define FIELD_PROC_INLINE(cls, addr, field) \
+class cls \
+{ \
+public: \
+	static void buildFieldParse(MultiIniFieldParse &parse); \
+}; \
+\
+inline void cls::buildFieldParse(MultiIniFieldParse &parse) \
+{ \
+	parse.add(reinterpret_cast<const FieldParse *>(addr), 0); \
+}
+
 #define FIELD_PROC_WITH_DIE_BASE(cls, addr) \
 class cls \
 { \
@@ -56,7 +68,7 @@ FIELD_PROC(EvaAnnounceClientCreateModuleData, 0x00C5ECB8, AnnouncementEventEnemy
 FIELD_PROC(CritterEmitterUpdateModuleData, 0x00C5EA10, FX)
 FIELD_PROC(UpgradeSoundSelectorClientBehaviorModuleData, 0x00C5F2DC, SoundUpgrade)
 FIELD_PROC(ModelConditionAudioLoopClientBehaviorModuleData, 0x00C5F574, ModelCondition)
-FIELD_PROC(LifetimeUpdateModuleData, 0x00C1B0F0, LifetimeUpdateTable)
+FIELD_PROC_INLINE(LifetimeUpdateModuleData, 0x00C1B0F0, LifetimeUpdateTable)
 FIELD_PROC(FlammableUpdateModuleData, 0x00C4C600, SalvageCrateTable)
 FIELD_PROC(DetachableRiderUpdateModuleData, 0x00C55638, PropagandaTowerTable)
 FIELD_PROC(CivilianSpawnCollideModuleData, 0x00C5AB48, SteeringTable)
@@ -64,19 +76,19 @@ FIELD_PROC(OCLUpdateModuleData, 0x00C50BA8, OCLTable)
 FIELD_PROC(AutoPickUpUpdateModuleData, 0x00C4F4B8, EatObjectTable)
 FIELD_PROC(ProductionUpdateModuleData, 0x00C517F0, DoorTable)
 FIELD_PROC(ProneUpdateModuleData, 0x00C51964, ProneTable)
-FIELD_PROC(BoneFXUpdateModuleData, 0x00BF1158, BoneFXTable)
-FIELD_PROC(DeletionUpdateModuleData, 0x00BF17BC, DeletionTable)
-FIELD_PROC(RadarUpdateModuleData, 0x00BF1EF8, RadarTable)
-FIELD_PROC(DefaultProductionExitUpdateModuleData, 0x00BF2398, DefaultExitTable)
+FIELD_PROC_INLINE(BoneFXUpdateModuleData, 0x00BF1158, BoneFXTable)
+FIELD_PROC_INLINE(DeletionUpdateModuleData, 0x00BF17BC, DeletionTable)
+FIELD_PROC_INLINE(RadarUpdateModuleData, 0x00BF1EF8, RadarTable)
+FIELD_PROC_INLINE(DefaultProductionExitUpdateModuleData, 0x00BF2398, DefaultExitTable)
 FIELD_PROC(StealthUpdateModuleData, 0x00C18210, StealthTable)
 FIELD_PROC(DemoTrapUpdateModuleData, 0x00C4EEC8, DetonationTable)
 FIELD_PROC(ToppleUpdateModuleData, 0x00C53980, ToppleTable)
 // These retail bodies also append the shared DieMuxData table via
 // Rva004CE52EGet at extraOffset 8; both functions end after that second add.
 FIELD_PROC_WITH_DIE_BASE(StructureToppleUpdateModuleData, 0x00C52BD8)
-FIELD_PROC(SpawnPointProductionExitUpdateModuleData, 0x00BF22D4, SpawnPointBoneTable)
-FIELD_PROC(HijackerUpdateModuleData, 0x00BF2318, HijackerTable)
-FIELD_PROC(SlavedUpdateModuleData, 0x00BF2110, SlavedTable)
+FIELD_PROC_INLINE(SpawnPointProductionExitUpdateModuleData, 0x00BF22D4, SpawnPointBoneTable)
+FIELD_PROC_INLINE(HijackerUpdateModuleData, 0x00BF2318, HijackerTable)
+FIELD_PROC_INLINE(SlavedUpdateModuleData, 0x00BF2110, SlavedTable)
 FIELD_PROC(BoredUpdateModuleData, 0x00C4F618, BoredFilterTable)
 FIELD_PROC(ModelConditionSoundSelectorClientBehaviorModuleData, 0x00C5F150, SoundStateTable)
 FIELD_PROC(BannerCarrierUpdateModuleData, 0x00C4F9E8, HordeTable)
@@ -97,7 +109,7 @@ FIELD_PROC(SpecialEnemySenseUpdateModuleData, 0x00BF1B88, SpecialEnemyFilter)
 FIELD_PROC(OneRingPenaltyUpdateModuleData, 0x00C503B0, RingTable)
 FIELD_PROC(ThreatFinderUpdateModuleData, 0x00C35FE0, DefaultRadius)
 FIELD_PROC(SiegeDockingBehaviorModuleData, 0x00C413E4, DUMMY)
-FIELD_PROC(AutoDepositUpdateModuleData, 0x00BF1CC8, DepositTable)
+FIELD_PROC_INLINE(AutoDepositUpdateModuleData, 0x00BF1CC8, DepositTable)
 FIELD_PROC(AssistedTargetingUpdateModuleData, 0x00C4AFE8, AssistedTargetingTable)
 FIELD_PROC(SpawnUnitBehaviorModuleData, 0x00C59238, SpawnUnitTable)
 FIELD_PROC(EmotionTrackerUpdateModuleData, 0x00C56858, TauntAndPointDistance)
@@ -201,7 +213,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void StructureBodyModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void StructureBodyModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	ActiveBodyModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(g_emptyFieldParseTable), 0);
@@ -238,3 +250,23 @@ void SymbioticStructuresBodyModuleData::buildFieldParse(MultiIniFieldParse &pars
 #pragma comment(linker, "/alternatename:?DynamicGeometryInfoUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@CritterEmitterUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?BattlePlanUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@UpgradeSoundSelectorClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
 #pragma comment(linker, "/alternatename:?RepairDockUpdateParse@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ModelConditionAudioLoopClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+
+// These functions are header inlines; their ordinary owner definitions
+// collided with select-any copies. The anchor keeps this unit's row copies;
+// it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeModuleDataBuildFieldParseInlineAnchor@@YAXPAVMultiIniFieldParse@@@Z absent-from-retail
+void _bfmeModuleDataBuildFieldParseInlineAnchor(MultiIniFieldParse *parse)
+{
+	AutoDepositUpdateModuleData::buildFieldParse(*parse);
+	BoneFXUpdateModuleData::buildFieldParse(*parse);
+	DefaultProductionExitUpdateModuleData::buildFieldParse(*parse);
+	DeletionUpdateModuleData::buildFieldParse(*parse);
+	HijackerUpdateModuleData::buildFieldParse(*parse);
+	LifetimeUpdateModuleData::buildFieldParse(*parse);
+	RadarUpdateModuleData::buildFieldParse(*parse);
+	SlavedUpdateModuleData::buildFieldParse(*parse);
+	SpawnPointProductionExitUpdateModuleData::buildFieldParse(*parse);
+	StructureBodyModuleData::buildFieldParse(*parse);
+}
+#pragma inline_depth()
