@@ -39,6 +39,13 @@ struct Rva002E6DC4_P2
 	char m_pad4[8];
 	unsigned int m_C;
 };
+// g_00DBD33C: VA 0x00DBD33C (.data); exact retail initial dwords below.
+unsigned int g_00DBD33C[16] = {
+	0x00000009, 0x0000000A, 0x0000000C, 0x00000018,
+	0x00000028, 0x00000048, 0x00000048, 0x00000088,
+	0x00000000, 0x3E490FDB, 0x41A00000, 0x41A00000,
+	0x00000000, 0x00000001, 0x00000000, 0xFFFFFFFF
+};
 bool Rva002E6DC4::rva002E6DC4(void *a_raw, void *b_raw)
 {
 	Rva002E6DC4_P1 *a = (Rva002E6DC4_P1 *)a_raw;
@@ -64,7 +71,7 @@ bool Rva002E6DC4::rva002E6DC4(void *a_raw, void *b_raw)
 	default:
 		break;
 	}
-	if ((a->m_0 & ((unsigned int *)0x00DBD33C)[low]) == 0)
+	if ((a->m_0 & g_00DBD33C[low]) == 0)
 		return false;
 	unsigned char b17 = (unsigned char)(flags >> 17);
 	if (a->m_4 != 0 && (b17 & 1) != 0)
