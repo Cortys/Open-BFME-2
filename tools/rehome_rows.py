@@ -12,8 +12,8 @@ row belongs there. This finds those cases and, with --apply, moves them:
 
   1. From the last link census log, every split unit Y all of whose rows
      are also defined by one other ledger unit X.
-  2. Each of Y's rows compared, at its own address and size, against X's
-     copy (tools/explain_mismatch.py --rva --source X): all must be exact.
+  2. X built once (./build.sh X), then each of Y's rows compared, at its own
+     address and size, against X's object in-process: all must be exact.
   3. --apply: each row repointed to X with tools/add_match.py
      --replace-existing (which verifies X and strips a marker that named
      the function present-unmatched), then Y removed with git rm.
@@ -73,11 +73,31 @@ def candidates():
     return sorted(out)
 
 
-def exact(row, home):
-    result = subprocess.run(["python3", "tools/explain_mismatch.py", row["name"], "--rva", row["target_rva"],
-                             "--size", row["target_size"], "--source", home],
-                            cwd=ROOT, capture_output=True, text=True)
-    return "OK: bytes match" in result.stdout
+_SYMBOLS = None
+
+
+def all_exact(rows, home):
+    """True when the home unit's own object holds every row's body exactly.
+
+    The home is built once through ./build.sh (which also proves its own rows
+    still match), then each split row is compared in-process against that
+    object at its own address and size, instead of one explain_mismatch
+    process, and one compile of the home, per row."""
+    global _SYMBOLS
+    built = subprocess.run(["./build.sh", home], cwd=ROOT, capture_output=True, text=True)
+    if built.returncode != 0 or "Functions: OK" not in built.stdout:
+        return False
+    if _SYMBOLS is None:
+        _SYMBOLS = build.load_symbol_map()
+    obj = build.obj_path(ROOT / home)
+    for row in rows:
+        try:
+            got = build.compile_function({**row, "source": home}, _SYMBOLS, obj)
+        except (SystemExit, Exception):
+            return False
+        if got["bytes"] != got["target"] or got["unresolved"]:
+            return False
+    return True
 
 
 def main(argv=None):
@@ -97,7 +117,7 @@ def main(argv=None):
         if claims.key_of(f"file:{split}") in held or claims.key_of(f"file:{home}") in held:
             print(f"CLAIMED {split} -> {home}", flush=True)
             continue
-        if not all(exact(row, home) for row in rows):
+        if not all_exact(rows, home):
             print(f"NO      {split} -> {home}", flush=True)
             continue
         if not args.apply:
