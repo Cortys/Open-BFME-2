@@ -6828,3 +6828,6 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??1BfmeStringRecord005ED5F3@@QAE@XZ,0x005B804E,element destructor called by _Destroy<BfmeStringRecord005ED5F3> at 0x005EDA14: retail REL32 at +0x09 targets this 5B tail-jump thunk; rowed address
 ??1Rva003371B1@@QAE@XZ,0x003372B7,element destructor called by _Destroy<Rva003371B1> at 0x003376D1: retail REL32 at +0x09 targets this address; ghidra 53B
 ??4BfmeAsciiScalarValue8@@QAEAAU0@ABU0@@Z,0x002C99FB,element assignment called by __copy<BfmeAsciiScalarValue8> at 0x0031BA18: retail REL32 at +0x19 targets this address; matched 29B row
+??1BfmePod216@@QAE@XZ,0x0021E50F,element destructor called by __destroy_aux<BfmePod216> at 0x0021F17F: retail REL32 at +0x09 targets this address; ghidra 164B
+??1BfmePod248@@QAE@XZ,0x000C6D44,element destructor called by __destroy_aux<BfmePod248> at 0x000C872C: retail REL32 at +0x09 targets this address; ghidra 214B
+??1BfmePod252@@QAE@XZ,0x000C2980,element destructor called by __destroy_aux<BfmePod252> at 0x000C4E07: retail REL32 at +0x09 targets this address; ghidra 292B
