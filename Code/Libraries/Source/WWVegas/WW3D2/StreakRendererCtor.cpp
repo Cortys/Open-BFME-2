@@ -61,24 +61,7 @@ private:
 	VertexFormatXYZUV1 *m_vertexBuffer;
 };
 
-StreakRendererClass::StreakRendererClass() :
-	Texture(0),
-	Shader(ShaderClass::_PresetAdditiveSpriteShader),
-	Width(0.0f),
-	Color(1.0f, 1.0f, 1.0f),
-	Opacity(1.0f),
-	SubdivisionLevel(0),
-	NoiseAmplitude(0.0f),
-	MergeAbortFactor(1.5f),
-	TextureTileFactor(1.0f),
-	LastUsedSyncTime(WW3D::Get_Sync_Time()),
-	CurrentUVOffset(0.0f, 0.0f),
-	UVOffsetDeltaPerMS(0.0f, 0.0f),
-	Bits(DEFAULT_BITS),
-	m_vertexBufferSize(0),
-	m_vertexBuffer(0)
-{
-}
+// StreakRendererClass::StreakRendererClass: defined in streakRender.cpp (its row's unit).
 
 // StreakRendererClass::Set_Merge_Intersections: defined in streakRender.cpp (its row's unit).
 
