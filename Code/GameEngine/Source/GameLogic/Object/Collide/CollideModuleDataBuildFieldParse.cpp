@@ -50,7 +50,7 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void MoneyCrateCollideModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void MoneyCrateCollideModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	CrateCollideModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEFABC), 0);
@@ -69,8 +69,17 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void VeterancyCrateCollideModuleData::buildFieldParse(MultiIniFieldParse &parse)
+inline void VeterancyCrateCollideModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	CrateCollideModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEFB60), 0);
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitCollideModuleDataBuildFieldParse@@YAXAAVMultiIniFieldParse@@@Z present-unmatched
+void bfmeEmitCollideModuleDataBuildFieldParse(MultiIniFieldParse &parse)
+{
+	MoneyCrateCollideModuleData::buildFieldParse(parse);
+	VeterancyCrateCollideModuleData::buildFieldParse(parse);
+}
+#pragma inline_depth()
