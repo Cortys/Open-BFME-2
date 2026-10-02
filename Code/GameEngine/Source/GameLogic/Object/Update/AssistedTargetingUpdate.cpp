@@ -71,11 +71,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-AssistedTargetingUpdate::AssistedTargetingUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	m_laserFromAssisted = NULL;
-	m_laserToTarget = NULL;
-}
+// ??0AssistedTargetingUpdate@@QAE@PAVThing@@PBVModuleData@@@Z owned by AssistedTargetingUpdateCtor.cpp: declared only here.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
