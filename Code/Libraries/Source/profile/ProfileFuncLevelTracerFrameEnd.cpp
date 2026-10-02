@@ -14,7 +14,10 @@ public:
 
 typedef void (__stdcall *ProfileFuncLevelHook)(int first, int second);
 
-#define TheFuncLevelHook (*(ProfileFuncLevelHook *)0x00E0C76C)
+// g_Va00E0C76C: VA 0x00E0C76C (.data/bss); zero-filled optional hook pointer.
+ProfileFuncLevelHook g_Va00E0C76C;
+
+#define TheFuncLevelHook g_Va00E0C76C
 
 // ?FrameEnd@ProfileFuncLevelTracer@@SAXHH@Z
 void ProfileFuncLevelTracer::FrameEnd(int /*which*/, int /*mixIndex*/)
