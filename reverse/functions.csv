@@ -48391,3 +48391,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??4Rva00568A05@@QAEAAV0@ABV0@@Z,,0x00568A05,27,Code/GameEngine/Source/Common/Rva00568A05Assign.cpp,matched,10-byte copy-assign 4+4+2 returns this caller 0x00569CA0
 ?rva0056887D@Rva0056887D@@QAEAAV1@ABV1@G@Z,,0x0056887D,28,Code/GameEngine/Source/Common/Rva0056887DMethod.cpp,matched,copy 4+4 from src plus word param at 8 returns this callers 0x0056984B 0x00569C58
 ?rva00419967@Rva000427195@@QAE?AUInsertRet00419331@@PBX@Z,,0x00419967,36,Code/GameEngine/Source/GameClient/Rva00419331Insert.cpp,matched,resizing insert via resize pin and rowed Pod60 insert sibling AD pattern
+??1Rva00579731@@QAE@XZ,,0x00579731,63,Code/GameEngine/Source/Common/Rva00579731Dtor.cpp,matched,chain body calls just-landed 0x0022167C plus element 0x005796FC
