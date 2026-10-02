@@ -86,6 +86,7 @@ public:
 	InsertRet00419331 rva00419331(const void *key);
 	InsertRet00419331 rva004193AD(const void *key);
 	InsertRet00419331 rva004198EB(const void *key);
+	InsertRet00419331 rva00419967(const void *key);
 
 	void *m_unused00;
 	void **m_beginBuckets;
@@ -140,4 +141,10 @@ InsertRet00419331 Rva000427195::rva004198EB(const void *key)
 	m_beginBuckets[bucket] = node;
 	++m_numElements;
 	return InsertRet00419331(node, this, 1);
+}
+
+InsertRet00419331 Rva000427195::rva00419967(const void *key)
+{
+	rva00212858(m_numElements + 1);
+	return rva004198EB(key);
 }
