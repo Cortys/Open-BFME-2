@@ -127,17 +127,7 @@ VertexMaterialClass * MatBufferClass::Get_Element(int index)
 **
 **
 **************************************************************************************************/
-// byte-exact reconstruction: Code/Libraries/Source/WWVegas/WW3D2/TexBufferClassCtorThunk.cpp
-TexBufferClass::TexBufferClass(const TexBufferClass & that) :
-	ShareBufferClass<TextureClass *>(that)
-{
-	// add a reference for each pointer that was copied...
-	for (int i=0; i<Count; i++) {
-		if (Array[i]) {
-			Array[i]->Add_Ref();
-		}
-	}
-}
+// TexBufferClass::TexBufferClass: defined in TexBufferClassCopyCtor.cpp (its row's unit).
 
 // ??1TexBufferClass@@UAE@XZ present-unmatched
 TexBufferClass::~TexBufferClass(void)
