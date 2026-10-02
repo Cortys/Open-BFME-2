@@ -13,7 +13,8 @@ public:
 };
 
 extern Rva00222A8BTarget *TheRva00222A8BTarget;
-extern void *TheRva00222A8BOwner;
+// TheRva00222A8BOwner: VA 0x00DC06A0 (.data), retail initial value -1.
+void *TheRva00222A8BOwner = (void *)-1;
 
 class DisplayString;
 
