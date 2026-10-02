@@ -124,3 +124,11 @@ template _STL::vector<RvaPair0039973B>::~vector();
 struct RvaPair001D9F62 { AsciiString m_key; int m_value; public: ~RvaPair001D9F62(); };
 template _STL::vector<RvaPair001D9F62>::~vector();
 
+// ??1?$vector@UBfmeStringHeadRecord184@@V?$allocator@UBfmeStringHeadRecord184@@@_STL@@@_STL@@QAE@XZ @0x0008B64A 63B.
+// Same 63B Destroy-plus-free shape under /O1 /GX (EH states 0/-1): destroys the range
+// through the rowed _Destroy at 0x0008B632 then frees storage via 0x00030830;
+// caller at 0x0008B79B in 0x0008B77D (+0x2C member). Element is the 184-byte
+// AsciiString-head view in stlport_asciistring_record_bodies.cpp.
+struct BfmeStringHeadRecord184 { public: ~BfmeStringHeadRecord184(); };
+template _STL::vector<BfmeStringHeadRecord184>::~vector();
+
