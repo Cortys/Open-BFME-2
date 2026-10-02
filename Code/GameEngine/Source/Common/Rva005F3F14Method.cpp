@@ -39,3 +39,17 @@ void Rva005F3F14::rva005F3F14()
 	}
 	m_15 = 0;
 }
+
+class Rva005F3F6B
+{
+public:
+	void rva005F3F6B();
+private:
+	char m_00[8];
+	Rva005F3F14 *m_08;
+};
+
+void Rva005F3F6B::rva005F3F6B()
+{
+	m_08->rva005F3F14();
+}
