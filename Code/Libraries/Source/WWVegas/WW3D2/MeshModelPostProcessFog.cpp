@@ -19,7 +19,8 @@
 // Semantic donor: Generals Zero Hour meshmdlio.cpp, retained in this repo.
 // The method name follows that donor; target shader tests and material accesses
 // establish the corresponding fog behavior and layout.
-class TextureClass { public: void Add_Ref(); void Release_Ref(); };
+class TextureBaseClass { public: void Add_Ref(); void Release_Ref(); };
+class TextureClass : public TextureBaseClass {};
 template<class T>
 class RefCountPtr {
 public:
