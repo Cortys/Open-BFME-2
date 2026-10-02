@@ -48374,3 +48374,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0050EFFC@Rva0050F041@@QAEXH@Z,,0x0050EFFC,69,Code/GameEngine/Source/Common/System/Rva0050EFFC.cpp,matched,chain via rowed AptCall sibling Rva0050F041 SetState
 ?rva005FBFE5@Rva005FBFE5@@QAEXH@Z,,0x005FBFE5,69,Code/GameEngine/Source/Common/Rva005FBFE5.cpp,matched,chain via rowed AptCall sibling SetResultState
 ?rva005F0C54@Rva005F0C54@@QAEXABVUnicodeString@@@Z,,0x005F0C54,109,Code/GameEngine/Source/Common/Rva005F0C54.cpp,matched,unlock via BuildingName Outer plus AptCall plus StringBase compare-set
+?rva005F0CC1@Rva005F0CC1@@QAEXABVUnicodeString@@@Z,,0x005F0CC1,8,Code/GameEngine/Source/Common/Rva005F0C54.cpp,matched,chain tail jmp to 0x005F0C54 via ptr at plus4

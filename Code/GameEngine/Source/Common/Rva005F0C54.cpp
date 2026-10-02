@@ -53,3 +53,17 @@ void Rva005F0C54::rva005F0C54(const UnicodeString &text)
 		m_shown = true;
 	}
 }
+
+class Rva005F0CC1
+{
+public:
+	void rva005F0CC1(const UnicodeString &text);
+private:
+	char m_pad0[4];
+	Rva005F0C54 *m_obj;
+};
+
+void Rva005F0CC1::rva005F0CC1(const UnicodeString &text)
+{
+	return m_obj->rva005F0C54(text);
+}
