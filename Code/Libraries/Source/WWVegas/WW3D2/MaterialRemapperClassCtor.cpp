@@ -18,6 +18,7 @@
 
 typedef unsigned int size_t;
 void *__cdecl operator new[](size_t bytes);
+void __cdecl operator delete[](void *ptr);
 
 #define NULL 0
 
