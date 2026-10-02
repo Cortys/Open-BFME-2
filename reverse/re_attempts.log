@@ -5812,3 +5812,4 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva005A083C@Rva005A083C@@QAEXXZ	0x005A083C	140	partial	align exact 140B EHs by-value list but gate calls real copy not dup alias 0x00445E8B needs alias resolve t=15 model=muse-05 score=0.99 stash=reverse/attempts/0x005a083c.cpp
 ??0Rva0007A498@@QAE@XZ	0x0007A498	78	blocked	EH ctor with map plus list plus 2 vectors unknown class no vtable no donor low unlock 0 ready t=5 model=muse-05
 ?rva0052D394@Rva0052D394@@QAEXABVRva002E0A0A@@@Z	0x0052D394	93	partial	pure edi-ebx mirror exact size 93-vs-93 compare direction fixed argStr-vs-elem still swapped t=20 model=muse-02 score=0.96 stash=reverse/attempts/0x0052d394.cpp
+??1Rva004EED02@@UAE@XZ	0x004EED02	310	blocked	dtor with 9 vptr stores plus 4 maps plus 4 frees plus vector plus EH needs ctor layout t=15 model=muse-10
