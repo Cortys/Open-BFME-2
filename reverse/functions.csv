@@ -47980,3 +47980,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva004F599E@@QAE@XZ,,0x004F599E,14,Code/GameEngine/Source/Common/Rva004F599EClear.cpp,matched,chain lane vtable store plus helper call
 ?rva0040B4F9@Rva0040B4F9@@QAEXXZ,,0x0040B4F9,53,Code/Libraries/Source/WWVegas/WWLib/Rva0040B4F9Sort.cpp,matched,sorts two int vectors via rowed sort 0x0040B4B6
 ??1Rva0022D01B@@QAE@XZ,,0x0022D01B,68,Code/GameEngine/Source/Common/Rva0022D01BDtor.cpp,matched,unlock dtor two trees plus ascii string evidence
+?Rva003BF9FADo@@YGXABVAsciiString@@M0@Z,,0x003BF9FA,125,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActions_rva003BF9FA.cpp,matched,chain via rva003570D1 with team centroid caller 0x003CA9CD
