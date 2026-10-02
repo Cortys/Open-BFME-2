@@ -625,3 +625,21 @@ def test_c_import_slot_is_looked_up_undecorated_first():
     t.slots["_exit"].add(0x7BA59C)
     assert t.addresses("__imp__exit", L.RetailTruth.DIR32) == {0x7BA608}
     assert t.addresses("__imp___exit", L.RetailTruth.DIR32) == {0x7BA59C}
+
+
+def test_call_through_any_proven_thunk_of_its_import_is_retail():
+    # Retail holds two `jmp [slot]` thunks for htonl; a call through the
+    # second is the import's call, though symbols.csv's first pin names the other.
+    image = bytearray(0x30)
+    image[0x00:0x06] = b"\xff\x25" + struct.pack("<I", L.BASE + 0x9000)  # htonl, slot 1
+    image[0x10:0x16] = b"\xff\x25" + struct.pack("<I", L.BASE + 0x9004)  # htonl, slot 2
+    image[0x20:0x26] = b"\xff\x25" + struct.pack("<I", L.BASE + 0x9008)  # htons
+    t = truth(image, pinned={"_htonl@4": {TEXT}})
+    t.slots.update({"htonl": {0x9000, 0x9004}, "htons": {0x9008}})
+    rows = [{"name": f"?ji_{a:08x}@@YAXXZ", "target_rva": hex(a), "notes": "gen-import;import=x"}
+            for a in (TEXT, TEXT + 0x10, TEXT + 0x20)]
+    t.import_thunks = t._import_thunks(rows)
+    assert t.addresses("_htonl@4", L.RetailTruth.REL32) == {TEXT, TEXT + 0x10}
+    assert t.addresses("_htons@4", L.RetailTruth.REL32) == {TEXT + 0x20}
+    # never a DIR32 target or a body home
+    assert t.addresses("_htonl@4", L.RetailTruth.DIR32) == {TEXT}

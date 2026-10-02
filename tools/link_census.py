@@ -721,14 +721,40 @@ class RetailTruth:
             self.slots[name].add(address)
         self.image, self.sections = build.exe_image()
         self._cache = {}
+        self.import_thunks = self._import_thunks(rows)
+
+    def _import_thunks(self, rows):
+        """{imported name: {thunk address}} for ledger gen-import rows whose
+        retail bytes are `jmp [slot]` (FF 25) through a slot the retail import
+        directory gives that name. Retail can hold several thunks for one
+        import (htonl and htons have two each); a call to the import through
+        any of them is the import's call. Proven from the image, not the
+        row's notes, and used for REL32 only, like import_routes."""
+        import struct
+        names = {}
+        for name, addresses in self.slots.items():
+            for address in addresses:
+                names.setdefault(address, set()).add(name)
+        found = collections.defaultdict(set)
+        for row in rows:
+            if "gen-import" not in (row.get("notes") or ""):
+                continue
+            address = int(row["target_rva"], 16)
+            stub = self._read(address, 6)
+            if stub is None or stub[:2] != b"\xff\x25":
+                continue
+            for imported in names.get(struct.unpack_from("<I", stub, 2)[0] - BASE, ()):
+                found[imported].add(address)
+        return found
 
     def addresses(self, name, kind=None):
         """Retail relocation targets, with proven import routes for REL32 only."""
         key = _normal(name)
         if key in self.ledger:
             return self.ledger[key]
-        if kind == self.REL32 and key in self.import_routes:
-            return set(self.pinned.get(key, ())) | self.import_routes[key]
+        thunks = getattr(self, "import_thunks", {}).get(_undecorate(name), set()) if kind == self.REL32 else set()
+        if kind == self.REL32 and (key in self.import_routes or thunks):
+            return set(self.pinned.get(key, ())) | self.import_routes.get(key, set()) | thunks
         if key in self.pinned:
             return self.pinned[key]
         if name.startswith("__imp_"):
