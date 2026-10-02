@@ -32,3 +32,16 @@ Rva00330757Member::Rva00330757Member()
 {
 	m_flags |= -1;
 }
+
+class Rva0033076E
+{
+public:
+	Rva0033076E();
+private:
+	Rva00330757Member m_00;
+	_STL::vector<BfmeE16> m_10;
+};
+
+Rva0033076E::Rva0033076E()
+{
+}
