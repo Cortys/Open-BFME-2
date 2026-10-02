@@ -48963,3 +48963,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?update@AIAttackFollowWaypointPathState@@UAE?AW4StateReturnType@@XZ,,0x0035426B,340,Code/GameEngine/Source/GameLogic/AI/AIStatesDerivedOnExit.cpp,matched,slot 6 of vtable 0xC13638 (AIAttackFollowWaypointPathState; BFME1 class); attack-follow machine update and targeting with CritterDesync repath
 ??0Rva0055B0CC@@QAE@XZ,,0x0055B048,113,Code/GameEngine/Source/Common/Rva0055B048Ctor.cpp,matched,ctor via dtor layout plus SSE floats plus direct lists
 ??1Rva005E7C19@@UAE@XZ,,0x005E7C19,61,Code/GameEngine/Source/Common/Bfme/Rva005E7C19Dtor.cpp,matched,chain via 0x005E7855 plus vtable 0x00877F14 plus EH shape as 0x005E7529
+??1Rva005E7ED7@@UAE@XZ,,0x005E7ED7,22,Code/GameEngine/Source/Common/Bfme/Rva005E7ED7Dtor.cpp,matched,chain via 0x005E7C19 plus secondary vtable plus MI novtable
