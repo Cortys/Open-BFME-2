@@ -1,4 +1,4 @@
-// cl: /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /D_CRTIMP= /D_STLP_USE_STATIC_LIB /D_STLP_NO_EXCEPTIONS /Ireference/shims/bfmealloc
 // stlport
 //
 // ?rva0033E06A@Rva0033E06A@@QAEXPAURva0033E06AArg@@@Z @0x0033E06A 22B push AsciiString into vector.
@@ -6,7 +6,7 @@
 // vector AsciiString push_back; caller 0x002D1DE6 in FUN_006D1C01;
 // prev Rva0033DCD1 and next vector ContainerRecord share STL flags.
 
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); private: void *m_data; };
+#include "ascii_string.h"
 #include <vector>
 
 struct Rva0033E06AArg
