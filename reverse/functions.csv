@@ -48038,3 +48038,5 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00222C12@Rva00222A8BTarget@@QAEHPAXPBD1H10000@Z,,0x00222C12,72,Code/Libraries/Source/WWVegas/WWLib/Rva00222BCDInvoke.cpp,matched,forwards 9 args to rowed AptCall then fires v10
 ?Rva0040CA61Get@@YGHPAU_Rva0040CA61Arg@@@Z,,0x0040CA61,55,Code/GameEngine/Source/Common/Rva0040CA61Get.cpp,matched,free stdcall sum via TheRankInfoStore pinned get 0x002000D7 callers 0x0040F19D 0x0040F87E
 ??0Rva003004E7@@QAE@ABVAsciiString@@ABURva003004E7Payload@@@Z,,0x003004E7,39,Code/GameEngine/Source/Common/Rva003004E7Pair.cpp,matched,Two-arg ctor via rowed copy and caller pair for insert
+??0EnumeratedIP@@QAE@XZ,,0x0050BFC4,57,Code/GameEngine/Source/GameNetwork/EnumeratedIPCtor.cpp,matched,BFME1 EnumeratedIP default ctor adapted to BFME2 12-byte node; getAddresses allocates 12 bytes then calls 0x50BFC4; next Ghidra entry is setter at 0x50BFFD; exact 57-byte match
+?getAddresses@IPEnumeration@@QAEPAVEnumeratedIP@@XZ,,0x0050C02E,463,Code/GameEngine/Source/GameNetwork/IPEnumerationGetAddresses.cpp,matched,
