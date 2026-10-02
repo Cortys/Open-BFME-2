@@ -32,3 +32,19 @@ Rva00201DC4LODInfo::Rva00201DC4LODInfo()
     word2C=0; flag30=true; word34=3; word38=0;
     flag3C=false; flag3D=false; word40=2; word44=1; word48=1;
 }
+
+// The same native manager passes VA0x00601E2B with count5, stride0x10,
+// and destination +0x1C8. Full [0x00201E2B..0x00201E45) decoding stores
+// three zero words and float1.0; /arch:SSE2 reproduces its MOVSS shape.
+// Member labels below are donor semantics, not recovered native names.
+struct Rva00201E2BLODInfo
+{
+    Rva00201E2BLODInfo();
+    int minimumFPS, particleSkipMask, debrisSkipMask;
+    float slowDeathScale;
+};
+
+Rva00201E2BLODInfo::Rva00201E2BLODInfo()
+{
+    minimumFPS=0; particleSkipMask=0; debrisSkipMask=0; slowDeathScale=1.0f;
+}
