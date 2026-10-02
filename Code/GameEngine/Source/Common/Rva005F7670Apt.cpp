@@ -23,6 +23,11 @@ struct Rva005F7670Team
 	char m_name[1];
 };
 
+struct Rva005F6F0C
+{
+	void rva005F6F0C();
+};
+
 class Rva005F7670
 {
 public:
@@ -32,11 +37,14 @@ public:
 	void rva005F72C8();
 	void rva005F7304(int val);
 	void rva005F719D(int val);
+	void rva005F744E();
 private:
 	char m_pad00[4];
 	void *m_level04;
 	Rva005F7670Team *m_team08;
-	char m_pad0C[0x58 - 0x0C];
+	char m_pad0C[0x38 - 0x0C];
+	Rva005F6F0C *m_tip38;
+	Rva005F6F0C *m_tips3C[7];
 	UnicodeString m_cached58;
 	int m_buildTime5C;
 	int m_cmdPts60;
@@ -177,4 +185,12 @@ void Rva005F7670::rva005F719D(int val)
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetBuildTimeState", "_show");
 		m_shown65 = true;
 	}
+}
+// ?rva005F744E@Rva005F7670@@QAEXXZ retail 0x005F744E 34B
+// Evidence: 1 plus 7 loop over Rva005F6F0C pointers at +0x38 and +0x3C via rowed 0x005F6F0C; caller forwarder 0x005F749B; gap between rva005F7412 and rva005F7470
+void Rva005F7670::rva005F744E()
+{
+	m_tip38->rva005F6F0C();
+	for (int i = 0; i < 7; i++)
+		m_tips3C[i]->rva005F6F0C();
 }

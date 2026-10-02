@@ -48836,3 +48836,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?push_back@?$vector@VRva004E18A2@@V?$allocator@VRva004E18A2@@@_STL@@@_STL@@QAEXABVRva004E18A2@@@Z,,0x005663A8,55,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_rva004e18a2_pushback.cpp,matched,STL pushback sibling of 0x00566371 calls rowed Construct and overflow
 ??1Rva0052CDE1@@QAE@XZ,,0x0052CDE1,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor family calls rowed Destroy then free
 ?rva005F719D@Rva005F7670@@QAEXH@Z,,0x005F719D,299,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,chain BuildTime singular plural via fetch slot 0x3C precedent rva005F7304
+?rva005F744E@Rva005F7670@@QAEXXZ,,0x005F744E,34,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,gap 1 plus 7 tooltip loop via rowed 0x005F6F0C
