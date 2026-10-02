@@ -11,6 +11,14 @@
 // loop. Same-TU inline of the name ctor (now inline + /Ob1) reproduces the
 // retail inlined RenderObj call; slot 0 returns the same "NULL" string
 // (0x00180E60) and slot 13 the 'NULL' tag (0x00180E70).
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 #include "rendobj.h"
 #include "nullrobj.h"

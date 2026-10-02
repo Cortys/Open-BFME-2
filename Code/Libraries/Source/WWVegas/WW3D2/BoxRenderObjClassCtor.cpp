@@ -5,6 +5,14 @@
 // Same headers and /arch:SSE2 (retail inlines the conversions as SSE math),
 // so layout and codegen match the home TU. The name copy goes through the
 // member Set_Name so the inlined strcpy keeps retail's coloring.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"
 #include "boxrobj.h"
 #include <string.h>
