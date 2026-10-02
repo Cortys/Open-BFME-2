@@ -48129,3 +48129,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?Rva00577AE9AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPAM444@Z,,0x00577AE9,314,Code/GameEngine/Source/Common/Rva00577AE9AptCall.cpp,matched,Apt forward 1 int 4 floats via rowed gets plus AptCall
 ?rva002236F2@Rva002236F2@@QAEAAURva002236F2Value@@ABU2@@Z,,0x002236F2,68,Code/GameEngine/Source/GameClient/Rva002236F2Insert.cpp,matched,same shape as rowed 0x002249ED via rowed bucketIndex new-node plus pin resize
 ?rva0031C7D6@Rva000427195@@QAEPAXABU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x0031C7D6,68,Code/Libraries/Source/WWVegas/WWLib/Rva0031C7D6Insert.cpp,matched,hashtable insert via reserve bucketIndex new_node link inc count
+?Rva004634BACreate@@YGPAURva004634BANode@@ABVRva0046267A@@@Z,,0x004634BA,34,Code/Libraries/Source/WWVegas/WWLib/Rva004634BACreateNode.cpp,matched,RB create_node alloc 0x60 via 0x307F0 plus Construct 0x462D83 at plus 0x10
