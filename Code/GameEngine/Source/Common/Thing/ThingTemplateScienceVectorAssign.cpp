@@ -73,7 +73,7 @@ OutputIter __uninitialized_copy(InputIter first, InputIter last,
 
 extern "C" void _free(void *);
 
-_STL::vector<ScienceType, _STL::allocator<ScienceType> > &
+inline _STL::vector<ScienceType, _STL::allocator<ScienceType> > &
 _STL::vector<ScienceType, _STL::allocator<ScienceType> >::operator=(
 	const vector &x)
 {
@@ -107,3 +107,12 @@ _STL::vector<ScienceType, _STL::allocator<ScienceType> >::operator=(
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?bfmeCopyOneCDF@BfmePartCDF@@QAEXPAU1@@Z=??4?$vector@W4ScienceType@@V?$allocator@W4ScienceType@@@_STL@@@_STL@@QAEAAV01@ABV01@@Z")
+
+#pragma inline_depth(0)
+// ?_bfmeThingTemplateScienceVectorAssignAnchor@@YAXXZ present-unmatched
+void _bfmeThingTemplateScienceVectorAssignAnchor()
+{
+	_STL::vector<ScienceType, _STL::allocator<ScienceType> > *p = 0;
+	p->operator=(*p);
+}
+#pragma inline_depth()
