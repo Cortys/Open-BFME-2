@@ -241,11 +241,6 @@ BfmeCellFC::BfmeCellFC()
 {
 }
 
-// ??1BfmeCellFC@@QAE@XZ present-unmatched
-BfmeCellFC::~BfmeCellFC()
-{
-}
-
 // Transferred from BFME 1's taintmanager_impl.cpp; only the cell size differs.
 // ?bfmeConfigure@Gen_008812D0@@QAEXURegion3D@@M@Z
 void Gen_008812D0::bfmeConfigure(Region3D region, Real cellSize)
