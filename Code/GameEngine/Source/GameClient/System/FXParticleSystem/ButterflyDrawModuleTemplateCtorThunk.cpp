@@ -55,6 +55,7 @@ class ButterflyDrawModuleTemplate : public CategoryModuleTemplate<6>,
 {
 public:
     ButterflyDrawModuleTemplate();
+    virtual ~ButterflyDrawModuleTemplate();
 };
 
 // ??0ButterflyDrawModuleTemplate@FXParticleSystem@@QAE@XZ
