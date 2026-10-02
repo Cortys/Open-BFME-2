@@ -47652,3 +47652,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0INI@@QAE@XZ,,0x0002CDB0,171,Code/GameEngine/Source/Common/System/INI_ctor.cpp,matched,BFME1/ZH INI ctor at BFME2 layout: member-init through end-of-file byte then helper +0x838 AsciiString +0x86C vector<AsciiString> +0x870
 ??1INI@@QAE@XZ,,0x0002CE5B,90,Code/GameEngine/Source/Common/System/INI_ctor.cpp,matched,INI dtor: vector<AsciiString> +0x870 then AsciiString +0x86C then helper +0x838 then filename
 ??1CastleBehavior@@UAE@XZ,,0x0039857D,225,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleBehaviorDtor.cpp,matched,pinned name vtable 0x00C1A780 donor CastleBehaviorDestructorThunk caller deleting dtor 0x00399357
+?rva0043B725@Rva0043B725@@QAEXXZ,,0x0043B725,8,Code/GameEngine/Source/Common/Rva0043B725Clear.cpp,matched,forwards this+4 to Rva0043B2E2 clear
