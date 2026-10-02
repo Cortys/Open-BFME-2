@@ -68,3 +68,7 @@ Rva0055F218::Rva0055F218(unsigned int a, struct Src0055F218 &src)
 	m_b14 = src.m_3C;
 	m_b15 = src.m_3D;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C1D1F4@@3QBQBXB=??_7Rva003ADE98@@6B@")

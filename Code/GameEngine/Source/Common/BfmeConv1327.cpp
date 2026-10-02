@@ -79,3 +79,7 @@ void BfmeThingTYA::rva008020D0()
 	m_bfmeC.bfmeDtorBTYA();
 	m_bfmeVft = g_bfmeVftBTYA;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftATYA@@3PAPAXA=??_7Rva00802040Owner@@6B@")

@@ -72,3 +72,7 @@ ModelConditionSpecialAbilityUpdateModuleData::ModelConditionSpecialAbilityUpdate
 	m_emotionPulseRadius = c_emotionPulseRadiusDefault;
 	m_objectFilter.applyFilter(g_modelConditionFilterDefaults);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_modelConditionFilterDefaults@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

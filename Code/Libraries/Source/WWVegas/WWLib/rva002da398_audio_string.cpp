@@ -112,3 +112,7 @@ AsciiString Rva002DA398Get(int n)
 	}
 	return tmp;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00BBD3EC@@3QBDB=??_C@_01LFCBOECM@?4?$AA@")

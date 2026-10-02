@@ -24,3 +24,7 @@ void __stdcall Rva0051318ESet(int slot, int votes)
 		value.format(g_Va007C9260, votes);
 	g_bfmeAptWindowManager->bfmeSetText(key, value, false);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_Va007C9260@@3QBGB=??_C@_15KNBIKKIN@?$AA?$CF?$AAd?$AA?$AA@")

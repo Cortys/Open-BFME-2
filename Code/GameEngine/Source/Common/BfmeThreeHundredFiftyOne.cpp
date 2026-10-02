@@ -77,3 +77,7 @@ BfmeThingTL *BfmeThingTL::bfmeInitTL(void *what)
 	m_bfmeVft = bfmeVftTL;
 	return this;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_bfmeVftTL=??_7stdio_streambuf_base@_SgI@@6B@")

@@ -106,3 +106,7 @@ BfmeF1050 *BfmeF1050::bfmeGo1050F(int a, int b, int c)
 	m_bfmeVfptr = bfmeVft1050F;
 	return this;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_bfmeVft1050F=??_7GridEnvironmentMapperClass@@6B@")

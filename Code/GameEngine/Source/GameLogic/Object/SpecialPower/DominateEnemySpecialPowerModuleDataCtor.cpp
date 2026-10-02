@@ -74,3 +74,7 @@ DominateEnemySpecialPowerModuleData::DominateEnemySpecialPowerModuleData()
 {
 	m_filter.applyFilter(g_dominateFilterDefaults);
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_dominateFilterDefaults@@3VBfmeFixedStorage0004543D@@B=?g_00DFEFA4StoragePrototype@@3PAEA")

@@ -90,3 +90,8 @@ void BfmeThing943G::bfmeGo943G()
 		m_bfmeQ = 0;
 	}
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfme943VftE1@@3PADA=??_7?$SimpleDynVecClass@E@@6B@")
+#pragma comment(linker, "/alternatename:?g_bfme943VftE2@@3PADA=??_7?$SimpleVecClass@E@@6B@")
