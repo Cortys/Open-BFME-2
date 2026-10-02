@@ -7081,3 +7081,10 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?createNode@Rva000427195@@QAEPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x002CF9DC,ICF twin of stdcall row 0x002CF9DC for table insert call with this; same 12B node and pair copy
 ??0BfmeTailBE@@QAE@ABU0@@Z,0x000365F0,retail construction workers 0x6BE840 and 0x6BE8C0 copy the one-pointer string field; alias to rowed StringBase narrow copy constructor
 ?releaseBuffer@BfmeTailBE@@QAEXXZ,0x00036410,retail 0x6BF6B3 releases each record string at +0x1C; linker alias to byte-verified StringBase narrow releaseBuffer
+??0Rva006BF800RecordView@@QAE@ABU0@@Z,0x00063BE4,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+??$__uninitialized_copy@PAURva0087FDC0Element@@PAU1@@_STL@@YAPAURva0087FDC0Element@@PAU1@00ABU__false_type@0@@Z,0x006BE840,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+??$__copy_backward@PAURva0087FDC0Element@@PAU1@H@_STL@@YAPAURva0087FDC0Element@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x006BE370,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+??$fill@PAURva0087FDC0Element@@U1@@_STL@@YAXPAURva0087FDC0Element@@0ABU1@@Z,0x006BE270,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+?releaseBuffer@BFMERetailAsciiString@@QAEXXZ,0x00036410,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+?_M_insert_overflow@?$vector@URva0087FDC0Element@@V?$allocator@URva0087FDC0Element@@@_STL@@@_STL@@IAEXPAURva0087FDC0Element@@ABU3@ABU__false_type@2@I_N@Z,0x006BF5E0,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
+??4BFMERetailAsciiString@@QAEAAV0@ABV0@@Z,0x000366F0,retail 6BF800 call graph; emitted worker independently matches existing body; application record identity unknown
