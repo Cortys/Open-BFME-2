@@ -18,8 +18,27 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "boxrobj.h"
 
 // ?update_cached_box@AABoxRenderObjClass@@MAEXXZ
-void AABoxRenderObjClass::update_cached_box(void)
+inline void AABoxRenderObjClass::update_cached_box(void)
 {
 	CachedBox.Center = Transform.Get_Translation() + ObjSpaceCenter;
 	CachedBox.Extent = ObjSpaceExtent;
 }
+
+namespace BfmeAABoxUpdateCachedBoxAnchor
+{
+class Access : public AABoxRenderObjClass
+{
+public:
+	static void _bfmeAABoxUpdateCachedBoxInlineAnchor(void *storage);
+};
+}
+
+// This virtual method is a header inline in copier units. This anchor retains
+// its matched row body here, but the anchor itself is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAABoxUpdateCachedBoxInlineAnchor@Access@BfmeAABoxUpdateCachedBoxAnchor@@SAXPAX@Z absent-from-retail
+void BfmeAABoxUpdateCachedBoxAnchor::Access::_bfmeAABoxUpdateCachedBoxInlineAnchor(void *storage)
+{
+	((BfmeAABoxUpdateCachedBoxAnchor::Access *)storage)->AABoxRenderObjClass::update_cached_box();
+}
+#pragma inline_depth()
