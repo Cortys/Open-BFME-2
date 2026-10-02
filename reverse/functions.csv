@@ -48115,3 +48115,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?sync_with_stdio@ios_base@_STL@@SA_N_N@Z,,0x000157C0,742,Code/Libraries/Source/WWVegas/WWLib/stlport_create_filebuf.cpp,matched,BFME1 10af19f44a X4Iostream donor; independent BFME2 Ghidra start 0x157C0 and complete 742B compiler byte match; target omits donor exception wrapper; stdio constructor RTTI and held body at 0x1CDB0 agree; donor STLport class layout
 ?rva0049B3D2@Rva0049B2A2@@QAEEXZ,,0x0049B3D2,33,Code/GameEngine/Source/Common/Rva0049B2A2Xfer.cpp,matched,Rva0049B2A2 ready check via TheGameLogic plus inverted testStatus
 ?rva0049B3F3@Rva0049B2A2@@QAEXXZ,,0x0049B3F3,46,Code/GameEngine/Source/Common/Rva0049B2A2Xfer.cpp,matched,Rva0049B2A2 random delay via ModuleData plus current frame
+?rva00214D4A@Rva00214D4A@@QAEMXZ,,0x00214D4A,15,Code/GameEngine/Source/Common/Rva00214D4AGet.cpp,matched,leaf float factor via writable global and member 18 caller 96B4C
