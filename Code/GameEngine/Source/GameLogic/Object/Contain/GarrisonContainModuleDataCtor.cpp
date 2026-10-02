@@ -62,6 +62,7 @@ class GarrisonContainModuleData : public Rva00465124Base
 {
 public:
 	GarrisonContainModuleData();
+	virtual ~GarrisonContainModuleData();
 private:
 	bool m_doIHealObjects;			// +0x98
 	float m_framesForFullHeal;		// +0x9C
