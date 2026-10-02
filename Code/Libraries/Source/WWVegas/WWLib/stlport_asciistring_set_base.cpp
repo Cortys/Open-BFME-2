@@ -22,6 +22,7 @@ class Rva00056CF8
 public:
 	void rva00057B74();
 	void rva00057DA0(AsciiStringSetTree::iterator first, AsciiStringSetTree::iterator last);
+	unsigned int rva0005B633(const AsciiString &x);
 };
 
 void Rva00056CF8::rva00057DA0(AsciiStringSetTree::iterator first, AsciiStringSetTree::iterator last)
@@ -32,4 +33,17 @@ void Rva00056CF8::rva00057DA0(AsciiStringSetTree::iterator first, AsciiStringSet
 	else
 		while (first != last)
 			tree->erase(first++);
+}
+
+// ?rva0005B633@Rva00056CF8@@QAEIABVAsciiString@@@Z @0x0005B633 73B.
+// Key erase for the AsciiString-set wrapper Rva00056CF8: equal_range via rowed
+// 0x005C9F41, distance via rowed 0x000D20DB, range erase via rva00057DA0.
+// Same 73B shape as RvaTreeEraseRangeFamily key erases. Evidence: callees
+// 0x005C9F41 0x000D20DB 0x00057DA0, callers 0x0005E377 0x0005CC23 0x0005CE79.
+unsigned int Rva00056CF8::rva0005B633(const AsciiString &x)
+{
+	_STL::pair<AsciiStringSetTree::iterator, AsciiStringSetTree::iterator> p = reinterpret_cast<AsciiStringSetTree *>(this)->equal_range(x);
+	unsigned int n = _STL::distance(p.first, p.second);
+	rva00057DA0(p.first, p.second);
+	return n;
 }

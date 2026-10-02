@@ -5740,3 +5740,4 @@ _Rva00812690	0x0067E590	1507	blocked	Ghidra FUN_00a7e590 boundary 1507B; matched
 ?rva005FB872@Rva005FB770@@QAEXH@Z	0x005FB872	66	partial	color in edi vs eax plus stack reload plus push edi missing plus lea offset plus store from reg t=15 model=muse-01 score=0.93 stash=reverse/attempts/0x005fb872.cpp
 ?rva005F6DB0@Rva005F6A58@@UAEXH@Z	0x005F6DB0	81	partial	param in edi directly vs via eax plus extra mov plus push order plus table base display t=12 model=muse-01 score=0.9 stash=reverse/attempts/0x005f6db0.cpp
 ?rva005F618E@Rva005F618E@@QAEXE@Z	0x005F618E	86	partial	byte param in bl directly vs via al plus extra mov plus push pop order t=10 model=muse-01 score=0.9 stash=reverse/attempts/0x005f618e.cpp
+?rva003B70CA@Rva003B573E@@QAEXXZ	0x003B70CA	116	partial	outer lea-vs-add plus missing mov ecx plus test ebp je plus pop order t=18 model=muse-03 score=0.91 stash=reverse/attempts/0x003b70ca.cpp
