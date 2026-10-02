@@ -60,6 +60,7 @@ public:
 	SmudgeSet(void);
 	virtual ~SmudgeSet();
 	void reset(void);
+	static DLListClass<Smudge> m_freeSmudgeList;
 
 private:
 	DLListClass<Smudge> m_usedSmudgeList;
@@ -68,7 +69,7 @@ private:
 
 // SmudgeSet::m_freeSmudgeList (donor static, defined by the engine binary at
 // retail 0x00DBCBF4): borrowed by address so this TU never defines it.
-#define SmudgeSetFreeSmudgeList (*(DLListClass<Smudge> *)0x00DBCBF4)
+#define SmudgeSetFreeSmudgeList SmudgeSet::m_freeSmudgeList
 
 // ?reset@SmudgeSet@@QAEXXZ
 void SmudgeSet::reset(void)
