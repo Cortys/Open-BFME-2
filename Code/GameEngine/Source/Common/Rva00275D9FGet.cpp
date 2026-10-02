@@ -15,9 +15,20 @@ public:
 	int m_mask[19];
 };
 
-#define GlobalMask ((Rva001E4912 *)0x00DFEBF0)
-#define GlobalMask2 ((const Rva00263546 *)0x00DFEBF0)
-#define InitFlag (*(int *)0x00DFEC3C)
+struct Rva00275D9FMaskStorage
+{
+	unsigned int m_bits[19];
+};
+
+// g_Va00DFEBF0: VA 0x00DFEBF0 (.data/bss); the shared 19-dword mask view is
+// 0x4C bytes and zero-filled in game.dat.
+Rva00275D9FMaskStorage g_Va00DFEBF0;
+// g_Va00DFEC3C: VA 0x00DFEC3C (.data/bss); the one-time-init flag is zero-filled.
+int g_Va00DFEC3C;
+
+#define GlobalMask (reinterpret_cast<Rva001E4912 *>(&g_Va00DFEBF0))
+#define GlobalMask2 (reinterpret_cast<const Rva00263546 *>(&g_Va00DFEBF0))
+#define InitFlag g_Va00DFEC3C
 
 bool __cdecl Rva00275D9FGet(const Rva00263546 *a)
 {
