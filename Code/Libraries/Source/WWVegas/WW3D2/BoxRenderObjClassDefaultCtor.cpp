@@ -1,63 +1,15 @@
-// cl: /O2 /arch:SSE2 /MD
-//
-// BoxRenderObjClass default ctor, retail 0x00174C80, 155 bytes.
+// cl: /arch:SSE2 /Ireference/shims/bfme2renderobj /DNDEBUG /MD /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/shims/sweep /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWLib /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2 /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWMath /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWSaveLoad /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/Wwutil /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDownload /Ireference/open-bfme-1/Code/Libraries/Source/WWVegas/WWDebug /Ireference/open-bfme-1/Code/Libraries/Source/Compression /Ireference/shims/sweep
+// ??0BoxRenderObjClass@@QAE@XZ @ 0x00174C80 (155B).
 // Dedicated TU so boxrobj.cpp keeps its existing matched bodies.
-// Two vptrs: RefCount at +0 and MultiListObject at +8; Name at +0xC4.
-
+// Same headers and /arch:SSE2 as BoxRenderObjClassCtor.cpp (retail uses SSE
+// math for the color/opacity/center/extent stores), so the class view and
+// its COMDAT copies match the kept copies from boxrobj.cpp/composite.cpp.
+#include "rendobj.h"
+#include "boxrobj.h"
 #include <string.h>
 
-class RefCountClass
-{
-public:
-	virtual ~RefCountClass();
-	int NumRefs;
-};
-
-class MultiListObjectClass
-{
-public:
-	virtual ~MultiListObjectClass();
-	void *ListNode;
-};
-
-class RenderObjClass : public RefCountClass, public MultiListObjectClass
-{
-public:
-	RenderObjClass();
-
-private:
-	unsigned char Pad[0xB4];
-};
-
-class Vector3
-{
-public:
-	void Set(float x, float y, float z)
-	{
-		X = x;
-		Y = y;
-		Z = z;
-	}
-
-	float X;
-	float Y;
-	float Z;
-};
-
-class BoxRenderObjClass : public RenderObjClass
-{
-public:
-	BoxRenderObjClass();
-
-private:
-	char Name[32];
-	Vector3 Color;
-	Vector3 ObjSpaceCenter;
-	Vector3 ObjSpaceExtent;
-	float Opacity;
-};
-
-BoxRenderObjClass::BoxRenderObjClass()
+// ??0BoxRenderObjClass@@QAE@XZ
+BoxRenderObjClass::BoxRenderObjClass(void)
 {
 	memset(Name, 0, sizeof(Name));
 	Color.Set(1, 1, 1);
