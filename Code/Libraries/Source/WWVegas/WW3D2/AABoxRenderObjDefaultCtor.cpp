@@ -22,7 +22,7 @@ static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
 #include "rendobj.h"
 #include "boxrobj.h"
 
-void AABoxRenderObjClass::update_cached_box(void)
+inline void AABoxRenderObjClass::update_cached_box(void)
 {
 	CachedBox.Center = Transform.Get_Translation() + ObjSpaceCenter;
 	CachedBox.Extent = ObjSpaceExtent;
