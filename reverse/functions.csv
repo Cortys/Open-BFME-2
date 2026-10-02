@@ -49019,3 +49019,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?Rva000756BFSelect@@YA_NHHH@Z,,0x000756BF,50,Code/GameEngine/Source/Common/Rva000756BFSelect.cpp,matched,indexed via g_00DE1F2C slot2 stores index to g_00DE1F5C
 ?rva00276B95@Drawable@@QAEXXZ,,0x00276B95,20,Code/GameEngine/Source/GameClient/DrawableRva00276B95.cpp,matched,unlock flag clear plus tail jmp via rowed 0x00275545 caller 0x0029F34F
 ?rva005D4E6F@Rva005D4E6F@@QAEHXZ,,0x005D4E6F,21,Code/GameEngine/Source/Common/Rva005D4E6FCheck.cpp,matched,leaf predicate over pointee plus0 true if dword at plus0xC or plus0x8 nonzero
+?Rva00337819Insert@@YAXPAVRva002E9E70@@0VRva003371B1@@H@Z,,0x00337819,118,Code/GameEngine/Source/Common/Rva00337819Insert.cpp,matched,sorted-range insert EH compare plus copy plus insert
