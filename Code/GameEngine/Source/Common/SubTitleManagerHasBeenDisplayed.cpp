@@ -50,7 +50,9 @@ public:
 
 struct SubTitleEntry
 {
-	char m_pad[0x20];
+	char m_pad0[8];
+	unsigned int m_color;
+	char m_pad1[0x20 - 0x0c];
 	bool m_displayed;
 };
 
@@ -59,6 +61,7 @@ class SubTitleManager
 public:
 	bool HasBeenDisplayed(int index);
 	void SetDisplayedStats(int index);
+	unsigned int GetColor(int index);
 private:
 	char m_pad[0x14];
 	_STL::vector<SubTitleEntry *> m_list;
@@ -93,4 +96,22 @@ void SubTitleManager::SetDisplayedStats(int index)
 	LogA *a = (LogA *)theDebug->f27(0, 0, 0);
 	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::SetDisplayedStats().");
 	b->h19(1);
+}
+
+// ?GetColor@SubTitleManager@@QAEIH@Z retail 0x000469CB 92B.
+// Bounds-checked read of the color at record+8 via the pointer vector at
+// +0x14: returns the color when index is in range, else records the callsite
+// and logs "Index out of range in SubTitleManager::GetColor()." through
+// theDebug virtuals and returns 0xffff00ff. Evidence: string literal plus
+// caller 0x000480AB plus siblings HasBeenDisplayed/SetDisplayedStats.
+unsigned int SubTitleManager::GetColor(int index)
+{
+	if (index < (int)m_list.size())
+		return m_list[index]->m_color;
+	_bfme_debugRecordCallsite(1);
+	theDebug->f24();
+	LogA *a = (LogA *)theDebug->f27(0, 0, 0);
+	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::GetColor().");
+	b->h19(1);
+	return 0xffff00ff;
 }
