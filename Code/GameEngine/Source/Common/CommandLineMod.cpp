@@ -26,7 +26,7 @@ public:
     const T* find(T) const;
     bool startsWith(const T*) const;
     bool endsWith(const T*) const;
-    const T* str() const { return data ? data->data : (const T*)L""; }
+    const T* str() const { static const T TheNullChr = 0; return data ? data->data : &TheNullChr; }
     void set(const StringBase&);
     void concat(const T*,int);
     void concat(T c) { concat(&c,1); }
