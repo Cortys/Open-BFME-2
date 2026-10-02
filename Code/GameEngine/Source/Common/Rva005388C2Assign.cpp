@@ -1,0 +1,48 @@
+// cl: /O1 /MD
+// ?rva005388F7@Rva005388C2@@QAEAAV1@ABV1@@Z @0x005388F7 53B
+// Holder copy-assign via rowed vector<BfmePod16> assign then flag and conditional region copy.
+// Evidence: callee 0x00538782 row vector<BfmePod16> assign; prev 0x005388C2 holder copy same layout region+flag; next 0x00538A0B holder load same layout.
+struct BfmePod16 { int a[4]; };
+struct Region2D
+{
+	float x_min;
+	float y_min;
+	float x_max;
+	float y_max;
+};
+namespace _STL {
+template <class T> class allocator
+{
+public:
+	allocator();
+};
+template <class T, class Alloc> class vector
+{
+public:
+	vector &operator=(const vector &other);
+private:
+	T *m_start;
+	T *m_finish;
+	T *m_end;
+};
+}
+class Rva005388C2
+{
+public:
+	Rva005388C2 &rva005388F7(const Rva005388C2 &other);
+private:
+	_STL::vector<BfmePod16, _STL::allocator<BfmePod16> > m_vec;
+	Region2D m_region;
+	float m_1c;
+	unsigned char m_20;
+};
+Rva005388C2 &Rva005388C2::rva005388F7(const Rva005388C2 &other)
+{
+	m_vec = other.m_vec;
+	m_20 = other.m_20;
+	if (other.m_20 != 0) {
+		m_region = other.m_region;
+		m_1c = other.m_1c;
+	}
+	return *this;
+}

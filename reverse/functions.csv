@@ -48200,3 +48200,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva00207DF4@Rva00207DF4@@QAEXHABVAsciiString@@PAVImage@@@Z,,0x00207DF4,50,Code/Libraries/Source/WWVegas/WWLib/Rva00207DF4Method.cpp,matched,unlock lane CRC keyed Image store via rowed Get and subscript caller 0x003E9EB0
 ?rva0022161B@Rva0022161B@@QAEXXZ,,0x0022161B,26,Code/GameEngine/Source/Common/Rva0022161BClear.cpp,matched,chain body rowed dtor plus caller jmp 0x00221685 plus vtable 0x00BE6BA8
 ?Rva002C5761Sort@@YGXPAX@Z,,0x002C5761,162,Code/Libraries/Source/WWVegas/WWLib/rva002C5761_sort.cpp,matched,collect sort relink via rowed pushback sort base free and comparator 0x002C0C45
+?rva005388F7@Rva005388C2@@QAEAAV1@ABV1@@Z,,0x005388F7,53,Code/GameEngine/Source/Common/Rva005388C2Assign.cpp,matched,holder copy-assign via rowed vector Pod16 assign same layout as copy ctor
