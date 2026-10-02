@@ -48372,3 +48372,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??0Rva00538E22@@QAE@H@Z,,0x00538E22,28,Code/GameEngine/Source/Common/Rva00538E22Ctor.cpp,matched,vector base rowed call plus int at plus12 plus ret4
 ?Rva0050E9FEAptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAPBD@Z,,0x0050E9FE,36,Code/GameEngine/Source/Common/Rva0050E9FE.cpp,matched,chain via rowed AptCall 0x00222B19 thiscall 9 pushes ECX target
 ?rva0050EFFC@Rva0050F041@@QAEXH@Z,,0x0050EFFC,69,Code/GameEngine/Source/Common/System/Rva0050EFFC.cpp,matched,chain via rowed AptCall sibling Rva0050F041 SetState
+?rva005FBFE5@Rva005FBFE5@@QAEXH@Z,,0x005FBFE5,69,Code/GameEngine/Source/Common/Rva005FBFE5.cpp,matched,chain via rowed AptCall sibling SetResultState
