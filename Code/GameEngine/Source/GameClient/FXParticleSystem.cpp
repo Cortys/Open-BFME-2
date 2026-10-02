@@ -52,15 +52,15 @@ public:
     virtual void v1() = 0;
 };
 
-ModuleTemplate::ModuleTemplate()
+inline ModuleTemplate::ModuleTemplate()
 {
 }
 
-ModuleTemplate::ModuleTemplate(const ModuleTemplate &that)
+inline ModuleTemplate::ModuleTemplate(const ModuleTemplate &that)
 {
 }
 
-ModuleTemplate::~ModuleTemplate()
+inline ModuleTemplate::~ModuleTemplate()
 {
 }
 
@@ -293,12 +293,12 @@ const char *EmissionVolumeInfo::GetSnapshotName()
 }
 
 
-EmissionVolumeInfo::EmissionVolumeInfo()
+inline EmissionVolumeInfo::EmissionVolumeInfo()
 {
     m_flag = false;
 }
 
-EmissionVolumeInfo::EmissionVolumeInfo(const EmissionVolumeInfo &that)
+inline EmissionVolumeInfo::EmissionVolumeInfo(const EmissionVolumeInfo &that)
 {
     m_flag = that.m_flag;
 }
@@ -448,7 +448,7 @@ const char *EmissionVelocityInfo::GetSnapshotName()
 }
 
 
-EmissionVelocityInfo::EmissionVelocityInfo()
+inline EmissionVelocityInfo::EmissionVelocityInfo()
 {
 }
 
@@ -456,11 +456,11 @@ EmissionVelocityInfo::EmissionVelocityInfo(const EmissionVelocityInfo &that)
 {
 }
 
-CylindricalEmissionVelocityInfo::~CylindricalEmissionVelocityInfo()
+inline CylindricalEmissionVelocityInfo::~CylindricalEmissionVelocityInfo()
 {
 }
 
-OutwardEmissionVelocityInfo::~OutwardEmissionVelocityInfo()
+inline OutwardEmissionVelocityInfo::~OutwardEmissionVelocityInfo()
 {
 }
 
@@ -678,6 +678,8 @@ template <>
 class CategoryModuleClass<8>
 {
 public:
+    friend void _bfmeFXParticleSystemHeaderInlineAnchor(void *);
+
     static CategoryModuleClass<8> *s_head;
 
     static const CategoryModuleClass<8> *getFirst();
@@ -689,7 +691,7 @@ public:
 protected:
     CategoryModuleClass(bool isDefault, const char *key, const char *name);
 
-    ~CategoryModuleClass();
+    ~CategoryModuleClass() {}
     virtual void v1() = 0;
 
     const char *m_key;
@@ -708,10 +710,6 @@ const CategoryModuleClass<8> *CategoryModuleClass<8>::getFirst()
 }
 
 CategoryModuleClass<8> *CategoryModuleClass<8>::s_head;
-
-CategoryModuleClass<8>::~CategoryModuleClass()
-{
-}
 
 // A full specialization emits only the members something names, and nothing in
 // this file calls the event category's accessors; these force all three out.
@@ -1884,11 +1882,11 @@ void fxDestroyInfoEmissionVolumeInfo(EmissionVolumeInfo *p) { p->~EmissionVolume
 
 LightningDrawModuleInfo::~LightningDrawModuleInfo() {}
 
-LightningEmissionInfo::~LightningEmissionInfo() {}
+inline LightningEmissionInfo::~LightningEmissionInfo() {}
 
 void fxDestroyInfoLineEmissionVolumeInfo(LineEmissionVolumeInfo *p) { p->~LineEmissionVolumeInfo(); }
 
-OrthoEmissionVelocityInfo::~OrthoEmissionVelocityInfo() {}
+inline OrthoEmissionVelocityInfo::~OrthoEmissionVelocityInfo() {}
 
 RenderObjectUpdateModuleInfo::~RenderObjectUpdateModuleInfo() {}
 
@@ -1896,7 +1894,7 @@ void fxDestroyInfoSphereEmissionVolumeInfo(SphereEmissionVolumeInfo *p) { p->~Sp
 
 void fxDestroyInfoSphericalEmissionVelocityInfo(SphericalEmissionVelocityInfo *p) { p->~SphericalEmissionVelocityInfo(); }
 
-TerrainFireEmissionInfo::~TerrainFireEmissionInfo() {}
+inline TerrainFireEmissionInfo::~TerrainFireEmissionInfo() {}
 
 void fxDestroyInfoWindModuleInfo(WindModuleInfo *p) { p->~WindModuleInfo(); }
 
@@ -2077,3 +2075,40 @@ void Rva001F42BA::call(int a)
 #pragma comment(linker, "/alternatename:?v1@LineEmissionVolumeModuleTemplate@FXParticleSystem@@UAEXXZ=__purecall")
 #pragma comment(linker, "/alternatename:?v1@CylinderEmissionVolumeModuleTemplate@FXParticleSystem@@UAEXXZ=__purecall")
 #pragma comment(linker, "/alternatename:?v1@SphericalEmissionVelocityModuleTemplate@FXParticleSystem@@UAEXXZ=__purecall")
+
+// These functions are header inlines; their ordinary owner definitions
+// collided with select-any copies. The anchor keeps this unit's row copies;
+// it is not retail code.
+namespace FXParticleSystem
+{
+#pragma inline_depth(0)
+// ?_bfmeFXParticleSystemHeaderInlineAnchor@FXParticleSystem@@YAXPAX@Z absent-from-retail
+void _bfmeFXParticleSystemHeaderInlineAnchor(void *storage)
+{
+    ModuleTemplate *module = static_cast<ModuleTemplate *>(storage);
+    EmissionVelocityInfo *velocity = static_cast<EmissionVelocityInfo *>(storage);
+    EmissionVolumeInfo *volume = static_cast<EmissionVolumeInfo *>(storage);
+    CategoryModuleClass<8> *eventCategory = static_cast<CategoryModuleClass<8> *>(storage);
+    CylindricalEmissionVelocityInfo *cylindrical =
+        static_cast<CylindricalEmissionVelocityInfo *>(storage);
+    OutwardEmissionVelocityInfo *outward =
+        static_cast<OutwardEmissionVelocityInfo *>(storage);
+    LightningEmissionInfo *lightning = static_cast<LightningEmissionInfo *>(storage);
+    OrthoEmissionVelocityInfo *ortho = static_cast<OrthoEmissionVelocityInfo *>(storage);
+    TerrainFireEmissionInfo *terrain = static_cast<TerrainFireEmissionInfo *>(storage);
+
+    module->ModuleTemplate::ModuleTemplate();
+    module->ModuleTemplate::ModuleTemplate(*module);
+    module->ModuleTemplate::~ModuleTemplate();
+    velocity->EmissionVelocityInfo::EmissionVelocityInfo();
+    volume->EmissionVolumeInfo::EmissionVolumeInfo();
+    volume->EmissionVolumeInfo::EmissionVolumeInfo(*volume);
+    eventCategory->CategoryModuleClass<8>::~CategoryModuleClass();
+    cylindrical->CylindricalEmissionVelocityInfo::~CylindricalEmissionVelocityInfo();
+    outward->OutwardEmissionVelocityInfo::~OutwardEmissionVelocityInfo();
+    lightning->LightningEmissionInfo::~LightningEmissionInfo();
+    ortho->OrthoEmissionVelocityInfo::~OrthoEmissionVelocityInfo();
+    terrain->TerrainFireEmissionInfo::~TerrainFireEmissionInfo();
+}
+#pragma inline_depth()
+}
