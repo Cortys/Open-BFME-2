@@ -38,6 +38,27 @@ extern Rva009AA260VerticalScale g_lastVerticalScale45Slot;
 extern Rva009AA260VerticalScale g_lastVerticalScale35Slot;
 extern Rva009AA260VerticalScale g_lastVerticalScale21Slot;
 
+// Matched DIR32 references place these mutable callback slots in .data's
+// zero-filled tail; preserve their null retail initial values.
+// g_horizontalScale45Slot: VA 0x00E22F78.
+Rva009AA260HorizontalScale g_horizontalScale45Slot;
+// g_verticalScale21Slot: VA 0x00E22F8C.
+Rva009AA260VerticalScale g_verticalScale21Slot;
+// g_lastVerticalScale45Slot: VA 0x00E22F94.
+Rva009AA260VerticalScale g_lastVerticalScale45Slot;
+// g_verticalScale45Slot: VA 0x00E22F98.
+Rva009AA260VerticalScale g_verticalScale45Slot;
+// g_horizontalScale21Slot: VA 0x00E22F9C.
+Rva009AA260HorizontalScale g_horizontalScale21Slot;
+// g_lastVerticalScale35Slot: VA 0x00E22FAC.
+Rva009AA260VerticalScale g_lastVerticalScale35Slot;
+// g_lastVerticalScale21Slot: VA 0x00E22FC0.
+Rva009AA260VerticalScale g_lastVerticalScale21Slot;
+// g_verticalScale35Slot: VA 0x00E22FC4.
+Rva009AA260VerticalScale g_verticalScale35Slot;
+// g_horizontalScale35Slot: VA 0x00E22FCC.
+Rva009AA260HorizontalScale g_horizontalScale35Slot;
+
 static void __cdecl Rva009A91C0NullScale(
 	unsigned char *, unsigned int, unsigned int)
 {
