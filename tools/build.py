@@ -888,11 +888,13 @@ def _inventory_for_roots(roots, cache=None):
     parts = []
     for root in roots:
         root = Path(root)
-        digest = cache.get(root) if cache is not None else None
+        # WindowsPath equality folds case, but directory inventories retain
+        # spelling. Reuse only the digest for this exact root spelling.
+        digest = cache.get(str(root)) if cache is not None else None
         if digest is None:
             digest = _directory_inventory(root)
             if cache is not None and digest is not None:
-                cache[root] = digest
+                cache[str(root)] = digest
         if digest is None:
             return None
         parts.append((_root_key(root), digest))
