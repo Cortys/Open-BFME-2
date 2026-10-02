@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD
+// cl: /O1 /G7 /DNDEBUG /MD
 //
 // ?Rva004D54C1@Transport@@QAE_N_N@Z, retail 0x004D54C1 (115B).
 // Zero Hour's Transport::update (Transport.cpp) for BFME 2's transport, which
@@ -14,14 +14,20 @@ class UDP
 {
 public:
 	enum SockStatus { ADDRNOTAVAIL = -7 };
+	~UDP();
 	int rva00594A06();
+};
+
+struct TransportAddr
+{
+	unsigned int m_ip;
+	unsigned short m_port;
 };
 
 struct TransportSocketSlot
 {
 	UDP *m_udpsock;
-	unsigned int m_ip;
-	unsigned int m_port;
+	TransportAddr m_addr;
 };
 
 class Transport
@@ -30,6 +36,7 @@ public:
 	Bool Rva004D54C1(Bool flag);
 	Bool rva004D4D08(Bool flag);
 	Bool rva004D4BA7();
+	void clearSlot_Rva004D5133(unsigned short slot);
 
 private:
 	char m_pad00000[0x40E0C];
@@ -62,4 +69,30 @@ Bool Transport::Rva004D54C1(Bool flag)
 		}
 	}
 	return retval;
+}
+
+// ?clearSlot_Rva004D5133@Transport@@QAEXG@Z, retail 0x004D5133 (116B).
+// Close one of the eight socket slots: the socket is deleted only when no
+// other slot shares it, then the slot is cleared.
+void Transport::clearSlot_Rva004D5133(unsigned short slot)
+{
+	if (slot < 8)
+	{
+		UDP *sock = m_sockets[slot].m_udpsock;
+		if (sock)
+		{
+			for (int i = 0; i < 8; ++i)
+			{
+				if (i != slot && sock == m_sockets[i].m_udpsock)
+					goto shared;
+			}
+			delete sock;
+shared:
+			m_sockets[slot].m_udpsock = 0;
+			TransportAddr none;
+			none.m_ip = 0;
+			none.m_port = 0;
+			m_sockets[slot].m_addr = none;
+		}
+	}
 }
