@@ -86,6 +86,34 @@ Rva007FBB20Object *Rva007FBB20( void *payload )
 	return new Rva007FBB20Object( payload );
 }
 
+// Two more family members (retail 0x0065EC70 and 0x0065E7A0, primary vftables
+// 0x00CE23AC / 0x00CE20E4), same shape as the five above.
+class Rva0065EC70Object : public Q3MakeBaseA, public Q3MakeBaseB
+{
+public:
+	Rva0065EC70Object( void *payload ) : Q3MakeBaseB( payload ) {}
+	virtual void primary();
+	virtual void secondary();
+};
+
+Rva0065EC70Object *Rva0065EC70( void *payload )
+{
+	return new Rva0065EC70Object( payload );
+}
+
+class Rva0065E7A0Object : public Q3MakeBaseA, public Q3MakeBaseB
+{
+public:
+	Rva0065E7A0Object( void *payload ) : Q3MakeBaseB( payload ) {}
+	virtual void primary();
+	virtual void secondary();
+};
+
+Rva0065E7A0Object *Rva0065E7A0( void *payload )
+{
+	return new Rva0065E7A0Object( payload );
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?Gen007E9B40@@YAPAURva007E9D70Cached@@PAURva007E9D70Owner@@@Z=?Rva007E9B40@@YAPAVRva007E9B40Object@@PAX@Z")
@@ -107,3 +135,9 @@ Rva007FBB20Object *Rva007FBB20( void *payload )
 #pragma comment(linker, "/alternatename:?primary@Rva007FBB20Object@@UAEXXZ=??_GGen007FBAF0@@UAEPAXI@Z")
 #pragma comment(linker, "/alternatename:?secondary@Rva007E9B40Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
 #pragma comment(linker, "/alternatename:?primary@Rva007E9B40Object@@UAEXXZ=??_GGen007E9B10@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?Gen007F2150@@YAPAURva007E9DB0Cached@@PAURva007E9DB0Owner@@@Z=?Rva0065EC70@@YAPAVRva0065EC70Object@@PAX@Z")
+#pragma comment(linker, "/alternatename:?Gen007F1C20@@YAPAURva007E9CE0Cached@@PAURva007E9CE0Owner@@@Z=?Rva0065E7A0@@YAPAVRva0065E7A0Object@@PAX@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva0065EC70Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva0065EC70Object@@UAEXXZ=??_GGen007F2120@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva0065E7A0Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva0065E7A0Object@@UAEXXZ=??_GGen007FCF50@@UAEPAXI@Z")
