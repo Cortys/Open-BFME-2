@@ -48901,3 +48901,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??0Rva0021572A@@QAE@PAVINI@@@Z,,0x0021572A,89,Code/Libraries/Source/WWVegas/WWLib/Rva0021572AMethod.cpp,matched,INI ctor with AsciiString at +0 and BfmeE16 vector at +4 via 0x00211E58 plus getNextToken and set and initFromINI with g_00BE574C
 ?Rva0051C241Fill@@YAXPAURva0051C0E7@@@Z,,0x0051C241,161,Code/Libraries/Source/WWVegas/WWLib/Rva0051C0E7Ctor.cpp,matched,fill via ThePlayerList and g_00E031E8 vector size loop with rowed StringBase set and Rva004266A1 getters
 ?Rva003EF6D6Contains@@YG_NPAURva003EF6D6Span@@PAURva003EF6D6Entry@@@Z,,0x003EF6D6,45,Code/GameEngine/Source/Common/Rva003EF6D6Contains.cpp,matched,span contains pointer compare loop no callees callers 003EF955 003EF965
+?Rva003EF703Remove@@YGXPAURva003C4CF0Span@@H@Z,,0x003EF703,37,Code/GameEngine/Source/Common/Rva003EF703Remove.cpp,matched,indexOf then vector erase via rowed callees
