@@ -324,3 +324,7 @@ void bfmeEmitstring_base(StringBase<char> *p, const StringBase<char> &that)
     p->compareNoCase(that);
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeTry1033@BfmeSub1033@@QAEHPAVBfmeF1033@@@Z=?compare@?$StringBase@D@@QBEHABV1@@Z")
