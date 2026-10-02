@@ -15,21 +15,28 @@ class Rva00148F5ECache
 {
 public:
 	NameKeyType get();
-
-private:
 	NameKeyType m_key;
 	const char *m_name;
 };
 
-#define TheRva00148F5ECache (*(Rva00148F5ECache *)0x00DBDF1C)
+// g_00DBDF1C: VA 0x00dbdf1c (.data); retail bytes 00 00 00 00 8c 97 c0 00,
+// with the name pointer resolving to "isLivingWorldScriptHolder".
+Rva00148F5ECache g_00DBDF1C = { NAMEKEY_INVALID, "isLivingWorldScriptHolder" };
+#define TheRva00148F5ECache g_00DBDF1C
 
 class Dict
 {
 public:
 	bool getBool(int key, bool *exists) const;
+
+private:
+	struct DictPairData;
+	DictPairData *m_data;
 };
 
-#define TheDict (*(Dict *)0x00E00944)
+// g_Va00E00944: VA 0x00e00944 (.data/bss); retail initial bytes 00 00 00 00.
+Dict g_Va00E00944;
+#define TheDict g_Va00E00944
 
 class Rva00203688Host
 {
