@@ -48478,3 +48478,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva0057C339@Rva0057C339@@QAEXABVAsciiString@@ABUTreeHintRef00217D4C@@@Z,,0x0057C339,91,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,gap loader via TreeHintRef copy AptCall LoadContent flag 0x18
 ?rva0057C394@Rva0057C394@@QAEXABVAsciiString@@ABUTreeHintRef00217D4C@@@Z,,0x0057C394,8,Code/GameEngine/Source/Common/OpaqueScalarDeletingDtors.cpp,matched,gap forwarder via member plus4 tail jmp to loader
 ?Rva005C3240AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2ABVAsciiString@@3@Z,,0x005C3240,63,Code/GameEngine/Source/Common/Rva005C3240AptCall.cpp,matched,Apt forward 2 strings via rowed 0x00222B19 plus empty 0x007BAC1C plus caller 0x005C3351
+?rva005F2953@Rva005F2FEF@@QAEXXZ,,0x005F2953,60,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,hide MemberRankState via AptCall plus clear flag bit1

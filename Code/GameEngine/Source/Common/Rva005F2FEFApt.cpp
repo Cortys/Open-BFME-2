@@ -28,6 +28,7 @@ class Rva005F2FEF
 public:
 	void rva005F2FEF(const UnicodeString &text);
 	void rva005F2897();
+	void rva005F2953();
 private:
 	char m_pad00[8];
 	void *m_level08;
@@ -69,6 +70,15 @@ void Rva005F2FEF::rva005F2897()
 		key.format("APT:_level%u.%s_MemberName", m_level08, team);
 		((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, UnicodeString::TheEmptyString, false);
 		m_cached48.set(UnicodeString::TheEmptyString);
+	}
+}
+
+void Rva005F2FEF::rva005F2953()
+{
+	if (m_flags58 & 2) {
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetMemberRankState", "_hide");
+		m_flags58 &= ~2;
 	}
 }
 
