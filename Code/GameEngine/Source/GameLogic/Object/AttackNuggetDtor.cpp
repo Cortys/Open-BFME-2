@@ -40,6 +40,15 @@ private:
 	BfmeStringRecord000B94D2 m_record;	// +0x04
 };
 
-AttackNugget::~AttackNugget()
+inline AttackNugget::~AttackNugget()
 {
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeAttackNuggetDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeAttackNuggetDtorInlineAnchor()
+{
+    static_cast<AttackNugget *>(0)->AttackNugget::~AttackNugget();
+}
+#pragma inline_depth()
