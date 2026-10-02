@@ -14,7 +14,12 @@
 // planes into the eight-row reconstruction and writes the output rows.
 
 extern "C" int Vp6FilterEdgeTagTable[];
-extern "C" unsigned char Vp6FilterConst8840[];
+// Vp6FilterConst8840: matched references place it at VA 0xdb8110; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8840[16] = {
+	128, 0, 128, 0, 128, 0, 128, 0,
+	128, 0, 128, 0, 128, 0, 128, 0,
+};
 extern "C" unsigned char Vp6FilterConst8850[];
 extern "C" unsigned char Vp6FilterConst8860[];
 extern "C" unsigned char Vp6FilterConst8870[];

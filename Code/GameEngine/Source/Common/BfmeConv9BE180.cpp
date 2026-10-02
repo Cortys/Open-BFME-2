@@ -30,7 +30,12 @@ extern "C" int Vp6FilterEdgeTagTable[128] = {
 	58, 59, 52, 45, 38, 31, 39, 46,
 	53, 60, 61, 54, 47, 55, 62, 63,
 };
-extern "C" unsigned char Vp6FilterConst8720[];
+// Vp6FilterConst8720: matched references place it at VA 0xdb7ff0; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8720[16] = {
+	128, 0, 128, 0, 128, 0, 128, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
 // Vp6FilterConst8730: matched references place it at VA 0xdb8000; retail contents, sized to the
 // 0x10-byte gap before the next known global there.
 extern "C" unsigned char Vp6FilterConst8730[16] = {
@@ -61,7 +66,12 @@ extern "C" unsigned char Vp6FilterConst8770[16] = {
 	128, 128, 128, 128, 128, 128, 128, 128,
 	0, 0, 0, 0, 0, 0, 0, 0,
 };
-extern "C" unsigned char Vp6FilterConst8790[];
+// Vp6FilterConst8790: matched references place it at VA 0xdb8060; retail contents, sized to the
+// 0x10-byte gap before the next known global there.
+extern "C" unsigned char Vp6FilterConst8790[16] = {
+	231, 231, 231, 231, 231, 231, 231, 231,
+	0, 0, 0, 0, 0, 0, 0, 0,
+};
 
 extern "C" void __cdecl Rva009BE180Vp6FilterWideV2(
 	void *unused, void *sourceArgument, void *destinationArgument,
