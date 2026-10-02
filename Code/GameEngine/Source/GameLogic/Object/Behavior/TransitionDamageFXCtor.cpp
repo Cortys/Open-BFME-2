@@ -56,6 +56,7 @@ class DamageModule : public DamageModuleBase,
 {
 public:
 	DamageModule(Thing *thing, const ModuleData *moduleData);
+	virtual ~DamageModule();
 };
 
 class TransitionDamageFX : public DamageModule
