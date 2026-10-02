@@ -48025,3 +48025,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??_GRva0040BFAA@@UAEPAXI@Z,,0x0040C0AB,28,Code/GameEngine/Source/Common/Rva0040BFAADtor.cpp,matched,deleting dtor via own unit
 ??_GRva004E3CD0@@UAEPAXI@Z,,0x004E3E06,28,Code/GameEngine/Source/Common/Rva004E3CD0Dtor.cpp,matched,deleting dtor via own unit
 ?Rva0059AFC2Copy@@YAPAURva0059AFC2Out@@PAU1@PAURva0059AFC2In@@PBD@Z,,0x0059AFC2,57,Code/GameEngine/Source/Common/Rva0059AFC2Copy.cpp,matched,unlock 20B from 12B plus Pair init rowed 0x000B3F84 via callers
+?Rva0059AFFBCopy@@YAPAURva0059AFFBOut@@PAU1@PAURva0059AFFBIn@@PBD@Z,,0x0059AFFB,59,Code/GameEngine/Source/Common/Rva0059AFFBCopy.cpp,matched,unlock 28B from 20B plus Pair init rowed 0x000B3F84 via caller
