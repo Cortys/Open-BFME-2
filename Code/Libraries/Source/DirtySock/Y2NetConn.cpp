@@ -36,7 +36,10 @@ struct IdleHandlerSlot
 	void *m_ref;        // +0x04
 };
 
-extern IdleHandlerSlot g_Rva0130A7B0Idle[ 16 ];
+// g_Rva0130A7B0Idle: target VA 0x00E0A1C8 (.data zero-fill), established by
+// 15 matched DIR32 witnesses. The 16 slots indexed here occupy 0x80 bytes and
+// end at the next known global, g_Rva0130A830Mac at VA 0x00E0A248.
+IdleHandlerSlot g_Rva0130A7B0Idle[ 16 ] = { 0 };
 
 // The tick the pump at 0x007F8C90 will next run at.
 extern unsigned int g_Rva0130A850Next;
@@ -54,10 +57,13 @@ unsigned char g_Rva0130A830Mac[0x10] = { 0 };
 // g_Rva0130A840Text: matched references place it at VA 0xe0a258 (zero-filled).
 char g_Rva0130A840Text[0x10] = { 0 };
 
-// "0123456789abcdef" at 0x0112B918, sixteen bytes with NO terminator -- the
-// next literal in .rdata starts immediately after it.  An extern is the only
-// honest spelling; a string literal here would be seventeen bytes.
-extern const char g_Rva0112B918HexDigits[];
+// g_Rva0112B918HexDigits: target VA 0x00CE312C (.rdata), established by 12
+// matched DIR32 witnesses. Retail has exactly these 16 bytes, no terminator;
+// the next literal starts at 0x00CE313C.
+extern const char g_Rva0112B918HexDigits[ 16 ] = {
+	'0', '1', '2', '3', '4', '5', '6', '7',
+	'8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+};
 
 // The default parameter string 0x007EB380 substitutes for a null one.
 // g_Rva0130A59CDefault: matched references place it at VA 0xe09fb8; zero-filled at retail, sized to the
