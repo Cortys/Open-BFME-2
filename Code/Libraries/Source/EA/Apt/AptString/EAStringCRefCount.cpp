@@ -172,7 +172,7 @@ EAStringC &EAStringC::operator=(const EAStringC &other)
 EAStringC &EAStringC::clear()
 {
 	EAStringC *self = this;
-	self->m_pData = (StringDataC *)0x00DDC020;
+	self->m_pData = &g_eaEmptyStringData;
 	g_eaEmptyStringData.m_uRefCount++;
 	return *self;
 }
