@@ -36,6 +36,7 @@ class Rva004EE5D2
 public:
 	void rva004EE5D2();
 	void rva004EE695();
+	void rva004EE78A();
 private:
 	int m_0;
 	CreateAHeroData m_4;
@@ -73,4 +74,12 @@ void Rva004EE5D2::rva004EE695()
 		m_70 = 0;
 	if (m_f8 != 0)
 		return rva004EE5D2();
+}
+
+void Rva004EE5D2::rva004EE78A()
+{
+	if (m_f8 != 0)
+		return;
+	m_f8 = 1;
+	return rva004EE5D2();
 }

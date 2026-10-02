@@ -48685,3 +48685,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva0007240CGet@@YAHH_N@Z,,0x0007240C,49,Code/GameEngine/Source/Common/Rva0007240C.cpp,matched,leaf free mapper 1-5 to 0x14-0x18 via switch with ret var
 ?rva005F3F6B@Rva005F3F6B@@QAEXXZ,,0x005F3F6B,8,Code/GameEngine/Source/Common/Rva005F3F14Method.cpp,matched,chain forwarder plus8 to rowed rva005F3F14 same TU
 ?rva005423F0@Rva005423F0@@QAEPADPAD@Z,,0x005423F0,53,Code/GameEngine/Source/Common/Rva005423F0Skip.cpp,matched,retail bytes unlock lane isspace IAT newline sibling Skip
+?rva004EE78A@Rva004EE5D2@@QAEXXZ,,0x004EE78A,20,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,same class Rva004EE5D2 offset 0xF8 guarded tail erase
