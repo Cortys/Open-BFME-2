@@ -30,12 +30,23 @@ class CategoryModuleInfo
 {
 public:
 	CategoryModuleInfo() {}
-	virtual ~CategoryModuleInfo() {}
+	virtual void unusedVirtual();
+
+protected:
+	~CategoryModuleInfo() {}
 };
 
 template <int Category>
-class CategoryModuleTemplate : public ModuleTemplate,
+class CategoryModuleTemplateBase : public ModuleTemplate,
 	public CategoryModuleInfo<Category>
+{
+public:
+	CategoryModuleTemplateBase() {}
+	virtual ~CategoryModuleTemplateBase() {}
+};
+
+template <int Category>
+class CategoryModuleTemplate : public CategoryModuleTemplateBase<Category>
 {
 public:
 	CategoryModuleTemplate(const CategoryModuleTemplate &that);
