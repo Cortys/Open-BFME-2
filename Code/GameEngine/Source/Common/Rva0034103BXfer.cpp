@@ -88,8 +88,9 @@ struct TerrainObj
 	int m_00;
 	int m_id;
 };
-struct TerrainLogic
+class TerrainLogic
 {
+	public:
 	virtual void _00(); virtual void _01(); virtual void _02(); virtual void _03();
 	virtual void _04(); virtual void _05(); virtual void _06(); virtual void _07();
 	virtual void _08(); virtual void _09(); virtual void _10(); virtual void _11();
@@ -101,7 +102,7 @@ struct TerrainLogic
 	virtual void _32(); virtual void _33(); virtual void _34();
 	virtual TerrainObj *findObj(unsigned int id);
 };
-#define TheTerrainLogic (*(TerrainLogic **)0x00DFEC50)
+extern TerrainLogic *TheTerrainLogic;
 class Rva0034103B : public Rva0033FF2B
 {
 protected:
