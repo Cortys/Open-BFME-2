@@ -19,6 +19,7 @@ struct Rva0043B2E2 {
   unsigned count04;
   char unknown08[16];
   void rva0043B334();
+  void clear();
   typedef _STL::pair<const int, void*> V;
   typedef _STL::_Rb_tree_iterator<V, _STL::_Nonconst_traits<V> > iterator;
   // ?begin@Rva0043B2E2@@QAE?AU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@XZ present-unmatched
@@ -37,6 +38,8 @@ struct Rva0043B2E2 {
   unsigned int rva0043B4EC(const int &key);
   void *rva0043B30F(const void *src);
   void rva0043B3A1(Rva0043B2E2Node *&out, Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c);
+  iterator rva0043B3A1Hidden(Rva0043B2E2Node *a, Rva0043B2E2Node *b, const int *v, Rva0043B2E2Node *c);
+  _STL::pair<iterator, bool> rva0043B429(const V &v);
 };
 void Rva0043B2E2::rva0043B35D(iterator first, iterator last) {
   typedef V VV;
@@ -94,6 +97,41 @@ void Rva0043B2E2::rva0043B3A1(Rva0043B2E2Node *&out, Rva0043B2E2Node *a, Rva0043
 	++count04;
 	out = node;
 }
+
+_STL::pair<Rva0043B2E2::iterator, bool> Rva0043B2E2::rva0043B429(const V &v)
+{
+	Rva0043B2E2Node *y = header00;
+	Rva0043B2E2Node *x = header00->parent04;
+	bool comp = true;
+	while (x != 0) {
+		y = x;
+		comp = _STL::less<int>()(v.first, x->m_key10);
+		x = comp ? x->left08 : x->right0C;
+	}
+	iterator j;
+	j._M_node = (::_STL::_Rb_tree_node_base *)y;
+	if (comp && y == header00->left08) {
+		return _STL::pair<iterator, bool>(rva0043B3A1Hidden(y, y, (const int *)&v, 0), true);
+	}
+	if (comp)
+		--j;
+	if (_STL::less<int>()(((Rva0043B2E2Node *)j._M_node)->m_key10, v.first)) {
+		return _STL::pair<iterator, bool>(rva0043B3A1Hidden(x, y, (const int *)&v, 0), true);
+	}
+	return _STL::pair<iterator, bool>(j, false);
+}
+
+void Rva0043B2E2::clear()
+{
+	rva0043B334();
+}
+
+
+
+
 // Bind the member-twin call above to the rowed free body: same 0x9C node,
 // free body ignores the dead this in ecx per Rva004152E6NewNode precedent.
 #pragma comment(linker, "/alternatename:?rva0043B30F@Rva0043B2E2@@QAEPAXPBX@Z=?Rva0043B30FNewNode@@YGPAXPBX@Z")
+#pragma comment(linker, "/alternatename:?rva0043B3A1Hidden@Rva0043B2E2@@QAE?AU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@PAURva0043B2E2Node@@0PBH0@Z=?rva0043B3A1@Rva0043B2E2@@QAEXAAPAURva0043B2E2Node@@PAU2@1PBH1@Z")
+
+

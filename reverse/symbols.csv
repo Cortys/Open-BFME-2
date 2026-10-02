@@ -7046,6 +7046,7 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ??$__uninitialized_fill_n@PAVRva0040AF66@@IV1@@_STL@@YAPAVRva0040AF66@@PAV1@IABV1@ABU__false_type@0@@Z,0x0040B1F3,fill_n stride 0x68 via Construct 0x0040B17B; retail REL32 target of placed overflow 0x0040B8E8
 ?_M_clear@?$vector@VRva0040AF66@@V?$allocator@VRva0040AF66@@@_STL@@@_STL@@IAEXXZ,0x0040B5FC,destroy plus free 0x68 stride; retail REL32 target of placed overflow 0x0040B8E8
 ?rva0043B30F@Rva0043B2E2@@QAEPAXPBX@Z,0x0043B30F,ICF twin of free NewNode for tree insert call with this same 0x9C node and pair copy
+?rva0043B3A1Hidden@Rva0043B2E2@@QAE?AU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@PAURva0043B2E2Node@@0PBH0@Z,0x0043B3A1,ICF twin of rowed insert worker returning iterator for hidden-ret callers
 ??$__copy@PAUVideo@@PAU1@H@_STL@@YAPAUVideo@@PAU1@00ABUrandom_access_iterator_tag@0@PAH@Z,0x00689450,native removeVideo call at 0x00689D80; typed 28B Video vector copy reproduces full 125B held bfmeCopyVIA body and its three string assignment calls
 ?Enum@IdList@ProfileFuncLevel@@QBE_NIAAVId@2@PAI@Z,0x006C8770,CSV caller enumeration; boolean empty-data donor; target ret 12 and same held constant predicate ABI
 ?GetFrameCount@Profile@@SAIXZ,0x006C53B0,CSV frame loops; independently held getter reads Profile frame count at VA 0xE0C1F4; donor semantic name
