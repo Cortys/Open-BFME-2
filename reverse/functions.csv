@@ -47587,3 +47587,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0043B2A4Clear@@YGXW4ObjectID@@H@Z,,0x0043B2A4,44,Code/GameEngine/Source/Common/Rva0043B2A4Clear.cpp,matched,calls rowed findObjectByID getDrawable rva00271C79 via TheGameLogic
 ??4Rva0043B163@@QAEAAV0@ABV0@@Z,,0x0043B163,51,Code/GameEngine/Source/Common/Rva0043B163Assign.cpp,matched,assign via rowed Rva003427DD plus 7c 80 84
 ??0Rva0043B196@@QAE@ABV0@@Z,,0x0043B196,51,Code/GameEngine/Source/Common/Rva0043B196CopyCtor.cpp,matched,copy ctor via rowed Rva0028F68F plus 7c 80 84
+??0Rva0043B23E@@QAE@ABHABVRva0043B196@@@Z,,0x0043B23E,29,Code/GameEngine/Source/Common/Rva0043B23EPairCtor.cpp,matched,pair ctor int plus rowed Rva0043B196
