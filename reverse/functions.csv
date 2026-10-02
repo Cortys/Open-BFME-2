@@ -47555,3 +47555,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0049797F@BattlePlanUpdate@@QAEXXZ,,0x0049797F,204,Code/GameEngine/Source/GameLogic/Object/Update/BattlePlanUpdateRva0049797F.cpp,matched,slot 5 vtable 0x0084FBAC plus rowed callees plus BattlePlanUpdate m_object at 8
 ??1Rva000899E5@@QAE@XZ,,0x000899E5,60,Code/GameEngine/Source/Common/Rva000899E5Clear.cpp,matched,nonvirtual dtor via EH prolog and two AsciiString releases
 ?Rva0008A173Copy@@YAXPAVRva00089822@@ABV1@@Z,,0x0008A173,18,Code/GameEngine/Source/Common/Rva0008A173Copy.cpp,matched,guarded placement copy via rowed copy ctor
+?Rva0008A1ABFill@@YAPAVRva00089822@@PAV1@IABV1@@Z,,0x0008A1AB,37,Code/GameEngine/Source/Common/Rva0008A1ABFill.cpp,matched,fill_n via guarded copy returning end
