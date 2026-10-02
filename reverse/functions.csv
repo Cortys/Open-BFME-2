@@ -48099,3 +48099,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva005F8EDAAptCall@@YAHPAVRva00222A8BTarget@@PAXPBD22PAPAX@Z,,0x005F8EDA,38,Code/GameEngine/Source/Common/Rva005F8EDAAptCall.cpp,matched,chain via twin pin deref local
 ?rva006572A0@Rva006572A0@@QAEXXZ,,0x006572A0,8,Code/GameEngine/Source/GameNetwork/Rva007EA120Teardown.cpp,matched,leaf forwarder to rowed m via ptr at 4 caller 5521F8
 ?rva006575F0@Rva006575F0@@QAEXXZ,,0x006575F0,8,Code/GameEngine/Source/GameNetwork/Rva007EA5E0Forwarder.cpp,matched,leaf forwarder to pinned m via ptr at 4 same caller
+?rva002234BA@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@PBU23@@Z,,0x002234BA,68,Code/GameEngine/Source/GameClient/Rva002234BAInsert.cpp,matched,hash insert via rowed bucketIndex 0x00223149 and new-node 0x002230FF plus pin resize
