@@ -3,6 +3,8 @@
 // Evidence: AsciiString at +0x88 str pattern plus empty global; strstr needle g_00BBD3F0 plus atoi; caller 0x005B1ACB; ret 4 stdcall.
 extern const char g_Rva0107301CEmptyString[];
 extern const char g_00BBD3F0[];
+// g_00BBD3F0: VA 0x00BBD3F0 (.rdata); retail bytes are the string "_".
+extern const char g_00BBD3F0[] = "_";
 extern "C" __declspec(dllimport) char *__cdecl strstr(const char *s, const char *sub);
 extern "C" __declspec(dllimport) int __cdecl atoi(const char *s);
 
