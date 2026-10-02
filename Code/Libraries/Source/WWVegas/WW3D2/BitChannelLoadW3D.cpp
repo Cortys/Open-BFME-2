@@ -33,7 +33,7 @@ private:
     int FirstFrame;
     int LastFrame;
     unsigned char *Bits;
-    void Free() { delete [] Bits; Bits = 0; }
+    inline void Free() { delete [] Bits; Bits = 0; }
 };
 bool BitChannelClass::Load_W3D(ChunkLoadClass & cload)
 {
