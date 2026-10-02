@@ -165,7 +165,8 @@ struct BfmeCodecDispatchTable
 	BfmeDispatchFn slot[26];
 };
 
-static BfmeCodecDispatchTable g_bfmeCodecDispatch;
+// Shared by the native post-filter dispatcher: table base VA 0x00E22F7C.
+BfmeCodecDispatchTable g_bfmeCodecDispatch;
 static BfmeDispatchFn g_bfmeCodecDispatchOutlier;
 
 void __cdecl bfmeInstallCpuDispatchTable(void)

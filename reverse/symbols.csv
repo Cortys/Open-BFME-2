@@ -7027,3 +7027,4 @@ _atan,0x00629AE4,"atan double import thunk (gen-import row ji_00629ae4: msvcr71 
 ??$__median@UBfmeAssignRecord32@@P6A_NABU1@0@Z@_STL@@YAABUBfmeAssignRecord32@@ABU1@00P6A_N00@Z@Z,0x004C6F77,same body as Rva004C6F77Median rowed here: STLport's sort<BfmeAssignRecord32* bool(*)(...)> (sort 0x00174870) reproduces it and its callers call it
 ?rva00212858@Rva000427195@@QAEXI@Z,0x00212858
 ?erase@?$_Rb_tree@VAsciiString@@V1@U?$_Identity@VAsciiString@@@_STL@@U?$less@VAsciiString@@@3@V?$allocator@VAsciiString@@@3@@_STL@@QAEIABVAsciiString@@@Z,0x0005B5EA,ICF twin of rowed set erase 0x5CA950 needed for rva0005CE32
+?Rva009B2530@@YAXPAURva009A6130Context@@PAE1@Z,0x001C2F20,native dispatcher calls 0x001B6D13 and 0x001B7016; three cdecl arguments; helper plain ret 0x001C343C; donor 10af19f44a89 label 0x009B2530 is address-derived not original symbol
