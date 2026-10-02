@@ -26,5 +26,7 @@ namespace _STL
 template <> void _Construct<BfmeContainerRecord005FDEC7, BfmeContainerRecord005FDEC7>(BfmeContainerRecord005FDEC7 *, const BfmeContainerRecord005FDEC7 &);
 }
 
+template void _STL::vector<BfmeContainerRecord005FDEC7>::reserve(unsigned int);
+
 template void _STL::vector<BfmeContainerRecord005FDEC7>::_M_insert_overflow(
     BfmeContainerRecord005FDEC7 *, const BfmeContainerRecord005FDEC7 &, const _STL::__false_type &, unsigned int, bool);
