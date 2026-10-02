@@ -132,3 +132,7 @@ BFME2ParticleTextureHandle __cdecl BFME2LoadParticleTexture(
 	}
 	return BFME2ParticleTextureHandle((TextureClass *)texture.pointer);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeDoBNH@@YAXPAVBfmeThingBNH@@PAXHH@Z=?BFME2LoadParticleTexture@@YA?AVBFME2ParticleTextureHandle@@PBDHH@Z")

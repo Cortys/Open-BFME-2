@@ -43,3 +43,7 @@ Rva0039597C *Rva00395D45Copy(Rva0039597C *first, Rva0039597C *last, Rva0039597C 
 	}
 	return dest;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva00395D45CopyAux@@YAPAVRva0039597C@@PAV1@00PADH@Z=?Rva00395D45Copy@@YAPAVRva0039597C@@PAV1@00@Z")

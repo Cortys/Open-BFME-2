@@ -60,3 +60,7 @@ Rva002E0D93 *Rva002E17A0Copy(Rva002E0D93 *src, Rva002E0D93 *srcEnd, Rva002E0D93 
 	} while (i != 0);
 	return dst;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva002E17A0Copy@@YAPAVRva002E0D93@@PAV1@00PADH@Z=?Rva002E17A0Copy@@YAPAVRva002E0D93@@PAV1@00@Z")

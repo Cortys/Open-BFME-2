@@ -58,3 +58,7 @@ Rva00072A94 *__cdecl Rva000E1860Copy(Rva00072A94 *first, Rva00072A94 *last, Rva0
 	}
 	return dest;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva000E1860Copy@@YAPAVRva00072A94@@PAV1@00PAXH@Z=?Rva000E1860Copy@@YAPAVRva00072A94@@PAV1@00@Z")

@@ -96,3 +96,7 @@ Rva0036105B *Rva003614F4Copy(Rva0036105B *first, Rva0036105B *last, Rva0036105B 
         *result = *first;
     return result;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva003614F4Copy@@YAPAVRva0036105B@@PAV1@00ABUrandom_access_iterator_tag@_STL@@PAH@Z=?Rva003614F4Copy@@YAPAVRva0036105B@@PAV1@00Urandom_access_iterator_tag@_STL@@PAH@Z")

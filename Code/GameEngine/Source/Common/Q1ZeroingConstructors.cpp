@@ -92,3 +92,7 @@ Q1_PLAIN_ZERO_CTOR( Rva005886B0, 0x2u )
 Q1_VFTABLE_ZERO_CTOR( Rva005FC5C0 )                     /* vftable 0x01112A4C */
 Q1_VFTABLE_ZERO_CTOR( Rva0012D750 )                     /* vftable 0x00BD23B4 */
 Q1_VFTABLE_ZERO_CTOR( Rva006C5430 )                     /* vftable 0x00CE7CB0 */
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeInit1029@BfmeSub1029@@QAEXXZ=??0Rva007F01B0@@QAE@XZ")
