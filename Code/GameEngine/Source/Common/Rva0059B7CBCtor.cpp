@@ -92,3 +92,8 @@ Rva00567847::Rva00567847(unsigned int field04, unsigned int field08)
 	m_field04 = field04;
 	m_field08 = field08;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot00@Rva0059B7CB@@UAEXXZ=??_GObjectModule@@UAEPAXI@Z")
