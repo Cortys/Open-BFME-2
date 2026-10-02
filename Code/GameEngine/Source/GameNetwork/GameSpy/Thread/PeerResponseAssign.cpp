@@ -82,7 +82,7 @@ public:
 	PeerResponse &operator=(const PeerResponse &that);
 };
 
-PeerResponse &PeerResponse::operator=(const PeerResponse &that)
+inline PeerResponse &PeerResponse::operator=(const PeerResponse &that)
 {
 	peerResponseType = that.peerResponseType;
 	groupRoomName.assign(that.groupRoomName);
@@ -113,3 +113,14 @@ PeerResponse &PeerResponse::operator=(const PeerResponse &that)
 	payload.words09 = that.payload.words09;
 	return *this;
 }
+
+// This operator is a header inline in the copier units; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmePeerResponseAssignInlineAnchor@@YAXXZ absent-from-retail
+void _bfmePeerResponseAssignInlineAnchor()
+{
+    PeerResponse *destination = 0;
+    const PeerResponse *source = 0;
+    *destination = *source;
+}
+#pragma inline_depth()
