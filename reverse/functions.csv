@@ -48446,3 +48446,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005F7161@Rva005F7670@@QAEXXZ,,0x005F7161,60,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,hide UnitNameState via AptCall plus clear flag
 ?rva005F7470@Rva005F772E@@QAEXXZ,,0x005F7470,8,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,forwarder to inner hide via plus4
 ?rva005F2FEF@Rva005F2FEF@@QAEXABVUnicodeString@@@Z,,0x005F2FEF,191,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,MemberName show plus cached setter via AptCall
+?rva005F2897@Rva005F2FEF@@QAEXXZ,,0x005F2897,188,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,MemberName hide plus clear cached via empty
