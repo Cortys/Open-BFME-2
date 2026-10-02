@@ -26,7 +26,17 @@ struct R4Word {
 };
 const R4Word *__cdecl Rva008D48F0(const char *str, unsigned int len);
 
-extern int aSpriteGperfToActionFlag[];
+// Matched DIR32 witness (w=1) places the retail flag table at VA 0x00CEEBA8
+// (.rdata). The checked index range below bounds it to 19 ints (0x4c bytes),
+// ending at VA 0x00CEEBF4 before a zero padding DWORD and path text at
+// VA 0x00CEEBF8. Values are the retail initial bytes.
+#pragma data_seg(".rdata")
+extern int aSpriteGperfToActionFlag[19] = {
+	0x00000100, 0x00010000, 0x00008000, 2, 0x40, 0x80, -1,
+	1, 0x10, 8, 0x20, 0x400, 0x800, 0x1000, 0x4000, 0x2000,
+	-1, 4, 0x00080000,
+};
+#pragma data_seg()
 
 class AptNativeHash {
     int mnTotalSize;
