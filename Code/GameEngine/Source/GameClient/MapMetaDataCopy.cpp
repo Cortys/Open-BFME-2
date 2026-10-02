@@ -36,7 +36,7 @@ class MapMetaData {
     UnicodeString cachedDisplayName,cachedDescription;
 public: MapMetaData(const MapMetaData &); ~MapMetaData(); MapMetaData &operator=(const MapMetaData &);
 };
-MapMetaData::MapMetaData(const MapMetaData &o)
+inline MapMetaData::MapMetaData(const MapMetaData &o)
     : displayName(o.displayName), description(o.description), extent(o.extent), numPlayers(o.numPlayers),
       isMultiplayer(o.isMultiplayer), isScenarioMP(o.isScenarioMP), isOfficial(o.isOfficial),
       filesize(o.filesize), crc(o.crc), timestampLo(o.timestampLo), timestampHi(o.timestampHi),
@@ -47,7 +47,7 @@ typedef char SizeCheck[sizeof(MapMetaData)==0x100?1:-1];
 
 // The tree at3025A5 is already byte-verified under its earlier opaque-payload
 // model; the metadata reference and its coordinate copy chain prove this alias.
-WaypointMap::WaypointMap(const WaypointMap &o)
+inline WaypointMap::WaypointMap(const WaypointMap &o)
     : _STL::map<AsciiString,Coord3D>(o), numStartSpots(o.numStartSpots) {}
 
 // Retail faction-tree destruction uses the BFME null-checked header free.
@@ -61,12 +61,12 @@ PlayerPosition::~PlayerPosition() {}
 
 // Reference member destruction; retail22DBC6 is the complete156B body.
 // POD coordinate-list cleanup is shared with the already-held integer list.
-MapMetaData::~MapMetaData() {}
+inline MapMetaData::~MapMetaData() {}
 
 // Reference assignment preserves the same256B member layout. Waypoint
 // assignment302C9C copies tree then count; player assignment302CB7 loops
 // eight20B records; list assignment301B54 copies three dwords per node.
-MapMetaData &MapMetaData::operator=(const MapMetaData &o)
+inline MapMetaData &MapMetaData::operator=(const MapMetaData &o)
 {
     displayName.set(o.displayName);
     description.set(o.description);
@@ -134,3 +134,18 @@ void Rva00534BDCParse(INI *ini, void *instance, void *, const void *)
 #pragma comment(linker, "/alternatename:_bfmeCbEOEa=??0PlayerPosition@@QAE@XZ")
 #pragma comment(linker, "/alternatename:_bfmeCbEOEb=??1PlayerPosition@@QAE@XZ")
 #pragma comment(linker, "/alternatename:??1Rva00078460Elem@@QAE@XZ=??1PlayerPosition@@QAE@XZ")
+
+// The four members above are header inlines elsewhere: other units emit
+// select-any copies, so strong definitions here were duplicates in the linked
+// build. This anchor only makes this unit emit its copies for the ledger
+// rows; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitMapMetaDataCopy@@YAXPAVMapMetaData@@ABV1@PAVWaypointMap@@ABV2@@Z present-unmatched
+void bfmeEmitMapMetaDataCopy(MapMetaData *p, const MapMetaData &that, WaypointMap *w, const WaypointMap &thatW)
+{
+	p->MapMetaData::MapMetaData(that);
+	p->MapMetaData::~MapMetaData();
+	*p = that;
+	w->WaypointMap::WaypointMap(thatW);
+}
+#pragma inline_depth()
