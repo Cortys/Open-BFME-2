@@ -5500,3 +5500,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva002AE9B8@Rva002AE9B8@@QAEX_NW4CommandSourceType@@@Z	0x002AE9B8	231	blocked	AI team iterate BitFlags leaveGroup aiHunt aiIdle complex 231B no vtable string donor class unknown needs layout t=8 model=muse-10
 ?rva0042767F@Rva00427611@@QAEXXZ	0x0042767F	55	blocked	vslot slot9 MI Rva00427611 vector at plus16 element virtual slot0 with 0 then delete plus erase needs MI slot map and element type t=6 model=muse-10
 ??0Rva0022E156@@QAE@XZ	0x0022E156	33	blocked	gap ctor vtable baseConstruct Vector_base tried inherit vector mem-init got 62B EH vs 33B no-EH needs no-EH flags and base without ctor t=10 model=muse-10
+??0Rva0022CDDA@@QAE@XZ	0x0022CD78	70	blocked	ctor array EH wall plus mismatched element ctor-dtor identities t=15 model=muse-spark
+??0Rva0022C9F6@@QAE@XZ	0x0022C987	75	partial	esi-edi swap only size exact 75B t=20 model=muse-spark score=0.93 stash=reverse/attempts/0x0022c987.cpp
