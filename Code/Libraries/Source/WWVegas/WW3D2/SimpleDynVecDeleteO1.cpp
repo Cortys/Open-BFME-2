@@ -18,5 +18,9 @@
 #include "vector3i.h"
 #include "sortingrenderer.h"
 
+// This TU is a client of the Vector3 Shrink specialization: the kept /O2 copy
+// lives in decalmsh.cpp, so do not emit the /O1 copy here.
+template <> bool SimpleDynVecClass<Vector3>::Shrink(void);
+
 extern bool (SimpleDynVecClass<Vector3>::*const g_bfmeDynVecV3DeleteAnchor)(int, bool);
 bool (SimpleDynVecClass<Vector3>::*const g_bfmeDynVecV3DeleteAnchor)(int, bool) = &SimpleDynVecClass<Vector3>::Delete;
