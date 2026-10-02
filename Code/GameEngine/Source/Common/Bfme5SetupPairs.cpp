@@ -44,3 +44,56 @@ void __stdcall bfmeSetupPair_007F26A0(BfmeSetupRecord *record, int second)
 	record->bfmeWrite("TXN", value);
 	record->bfmeWriteAlt("numberOfReporters", second);
 }
+
+// Three more 'acct' setup pairs, identical in code to bfmeSetupPair_007E9860
+// above but each reading its own TXN global. bfme1_sweep places that donor body
+// at all four addresses; the DIR32 operand separates them. The globals are
+// zero-filled .bss that no other unit references. Names are this image's
+// addresses.
+// TheBfmeSetupGlobal00656490: VA 0x00e09ef8 (zero-filled .bss).
+int TheBfmeSetupGlobal00656490;
+
+// ?bfmeSetupPair_00656490@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_00656490(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal00656490;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x61636374;					// 'acct'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("name", second);
+}
+
+// TheBfmeSetupGlobal006564D0: VA 0x00e09f34 (zero-filled .bss).
+int TheBfmeSetupGlobal006564D0;
+
+// ?bfmeSetupPair_006564D0@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_006564D0(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal006564D0;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x61636374;					// 'acct'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("name", second);
+}
+
+// TheBfmeSetupGlobal00656550: VA 0x00e09f1c (zero-filled .bss).
+int TheBfmeSetupGlobal00656550;
+
+// ?bfmeSetupPair_00656550@@YGXPAUBfmeSetupRecord@@H@Z
+void __stdcall bfmeSetupPair_00656550(BfmeSetupRecord *record, int second)
+{
+	int value = TheBfmeSetupGlobal00656550;
+
+	record->bfmeBegin();
+
+	record->m_bfmeTag = 0x61636374;					// 'acct'
+
+	record->bfmeWrite("TXN", value);
+	record->bfmeWrite("name", second);
+}
