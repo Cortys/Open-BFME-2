@@ -206,6 +206,14 @@ public:
 	virtual void v11(const AsciiString &s, int x);
 	virtual void v12(const AsciiString &a, const AsciiString &b);
 	int rva00535CE4(AsciiString arg);
+	AsciiString rva00535820();
+	void rva00536B3F(AsciiString arg, int x);
+	int rva00536B86(AsciiString arg);
+	void rva00536BD0(AsciiString arg, int x);
+	int rva00536C17(AsciiString arg);
+	int rva0053700F();
+	int rva005370D2();
+	AsciiString rva00537261();
 	void rva0053587C(AsciiString arg, int x);
 	void rva00535BAF(AsciiString arg, int x);
 	void rva00535C9D(AsciiString arg, int x);
@@ -941,4 +949,76 @@ int UserPreferences::rva00536AF5(AsciiString arg)
 	arg.concat("StructuresKilledNonRTS");
 	int ret = v6(arg, 0);
 	return ret;
+}
+
+// ?rva00535820@UserPreferences@@QAE?AVAsciiString@@XZ @0x00535820 92B
+// UserPreferences ProfileCreatedDate path: local AsciiString ProfileCreatedDate getAsciiString with (tmp, Empty) hidden-ptr ret 4.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x20 releaseBuffer, the FavoriteSide body's shape.
+AsciiString UserPreferences::rva00535820()
+{
+	AsciiString tmp("ProfileCreatedDate");
+	return v8(tmp, AsciiString::TheEmptyString);
+}
+
+// ?rva00536B3F@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536B3F 71B
+// UserPreferences UnitsLostNonRTS-void path: append UnitsLostNonRTS slot 0x2C with (arg, x) void ret 8.
+// Evidence: concat UnitsLostNonRTS 0x00869060 slot 0x2C releaseBuffer gap same TU.
+void UserPreferences::rva00536B3F(AsciiString arg, int x)
+{
+	arg.concat("UnitsLostNonRTS");
+	v11(arg, x);
+}
+
+// ?rva00536B86@UserPreferences@@QAEHVAsciiString@@@Z @0x00536B86 74B
+// UserPreferences UnitsLostNonRTS-getter path: append UnitsLostNonRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+// Evidence: concat UnitsLostNonRTS 0x00869060 slot 0x18 releaseBuffer gap same TU.
+int UserPreferences::rva00536B86(AsciiString arg)
+{
+	arg.concat("UnitsLostNonRTS");
+	int ret = v6(arg, 0);
+	return ret;
+}
+
+// ?rva00536BD0@UserPreferences@@QAEXVAsciiString@@H@Z @0x00536BD0 71B
+// UserPreferences UnitsKilledNonRTS-void path: append UnitsKilledNonRTS slot 0x2C with (arg, x) void ret 8.
+void UserPreferences::rva00536BD0(AsciiString arg, int x)
+{
+	arg.concat("UnitsKilledNonRTS");
+	v11(arg, x);
+}
+
+// ?rva00536C17@UserPreferences@@QAEHVAsciiString@@@Z @0x00536C17 74B
+// UserPreferences UnitsKilledNonRTS-getter path: append UnitsKilledNonRTS to by-value AsciiString slot 0x18 with (arg, 0) int ret 4.
+int UserPreferences::rva00536C17(AsciiString arg)
+{
+	arg.concat("UnitsKilledNonRTS");
+	int ret = v6(arg, 0);
+	return ret;
+}
+
+// ?rva0053700F@UserPreferences@@QAEHXZ @0x0053700F 73B
+// UserPreferences Challenge-getter path: local AsciiString Challenge slot 0x18 with (tmp, 0) int ret 0.
+// Evidence: StringBase PBD ctor 0x00037BA0 slot 0x18 releaseBuffer, the OverallWinStreak getter's shape.
+int UserPreferences::rva0053700F()
+{
+	AsciiString tmp("Challenge");
+	int ret = v6(tmp, 0);
+	return ret;
+}
+
+// ?rva005370D2@UserPreferences@@QAEHXZ @0x005370D2 73B
+// UserPreferences Honors-getter path: local AsciiString Honors slot 0x18 with (tmp, 0) int ret 0.
+int UserPreferences::rva005370D2()
+{
+	AsciiString tmp("Honors");
+	int ret = v6(tmp, 0);
+	return ret;
+}
+
+// ?rva00537261@UserPreferences@@QAE?AVAsciiString@@XZ @0x00537261 92B
+// UserPreferences LastHouse path: local AsciiString LastHouse getAsciiString with (tmp, Empty) hidden-ptr ret 4.
+AsciiString UserPreferences::rva00537261()
+{
+	AsciiString tmp("LastHouse");
+	return v8(tmp, AsciiString::TheEmptyString);
 }
