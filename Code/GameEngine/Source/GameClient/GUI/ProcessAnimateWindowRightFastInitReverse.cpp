@@ -233,3 +233,47 @@ void ProcessAnimateWindowSlideFromBottomTimed::initAnimateWindow( AnimateWindow 
 	DEBUG_LOG(("initAnimateWindow at %d (%d->%d)\n", now, now + delay, now + m_maxDuration + delay));
 	animWin->setAnimData(startPos, endPos, curPos, restPos, vel, now + delay, now + m_maxDuration + delay);
 }
+
+// Right ctor 0x005C5069 installs VA 0x00C7484C; slot 1 is 0x005C5112 (211 bytes).
+void ProcessAnimateWindowSlideFromRight::initAnimateWindow( AnimateWindow *animWin )
+{
+	ICoord2D restPos = {0,0};
+	ICoord2D startPos = {0,0};
+	ICoord2D curPos = {0,0};
+	ICoord2D endPos = {0,0};
+	Coord2D vel; vel.x = 0.0f; vel.y = 0.0f;
+
+	if(!animWin)
+	{
+		DEBUG_ASSERTCRASH( animWin, ("animWin was passed into initAnimateWindow as a NULL Pointer... bad bad bad!"));
+		return;
+	}
+	animWin->setFinished( FALSE );
+
+	// it's set that the window is passed in as it's current position being it's rest position
+	// so save off the rest position
+	GameWindow *win = animWin->getGameWindow();
+	if(!win)
+	{
+		DEBUG_ASSERTCRASH( win, ("animWin contains a NULL Pointer for it's GameWindow... Whatup wit dat?"));
+		return;
+	}
+	win->winGetPosition(&restPos.x, &restPos.y);
+	endPos.x = restPos.x;
+	endPos.y = restPos.y;
+
+	//set the initial positions for the window. In this case, off the Right of the screen
+	Int travelDistance = reinterpret_cast<BFMEDisplayWidthSlot *>(TheDisplay)->getWidth();// / 4 * 3;
+	startPos.x = curPos.x = restPos.x + travelDistance;
+	startPos.y = curPos.y = restPos.y;
+
+	//set the window's position to the new start positions.
+	win->winSetPosition(startPos.x, startPos.y);
+
+	//Now initialize the velocities
+	vel.x = m_maxVel.x;
+	vel.y = 0.0f;
+
+
+	animWin->setAnimData(startPos, endPos, curPos, restPos, vel, timeGetTime() + animWin->getDelay(), 0);
+}
