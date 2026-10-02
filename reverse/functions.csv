@@ -48882,3 +48882,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??1?$vector@UBfmeVectorRecord00319C84@@V?$allocator@UBfmeVectorRecord00319C84@@@_STL@@@_STL@@QAE@XZ,,0x00319B58,63,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_record_319b58_dtor.cpp,matched,vector dtor via Destroy plus free with EH prolog
 ??0Rva0051C0E7@@QAE@XZ,,0x0051C0E7,82,Code/Libraries/Source/WWVegas/WWLib/Rva0051C0E7Ctor.cpp,matched,ctor base int plus AsciiString8 via ehvec plus memset via thunk caller 0x005202C8
 ?rva0026DDED@AIUpdateInterface@@QAEXHW4CommandSourceType@@@Z,,0x0026DDED,78,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026DE3B.cpp,matched,slot60 via iface slot36 plus holder idle plus iface slot32
+?Rva002E1D22Parse@@YAXPAVINI@@PAX@Z,,0x002E1D22,241,Code/GameEngine/Source/GameLogic/LivingWorld/ParseLivingWorldPlayer.cpp,matched,ParseLivingWorldPlayer via getNextToken plus initFromINI plus lookups plus dedup
