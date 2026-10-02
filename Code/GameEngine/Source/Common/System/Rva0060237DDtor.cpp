@@ -67,3 +67,13 @@ Rva0060237D::~Rva0060237D()
 	delete[] m_14;
 	m_24.releaseBuffer();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot03@File@@UAEXXZ=?write@RAMFile@@UAEHPBXH@Z")
+#pragma comment(linker, "/alternatename:?slot05@File@@UAEXXZ=?seek@MemoryReadFile@@UAEHHW4seekMode@File@@@Z")
+#pragma comment(linker, "/alternatename:?slot10@File@@UAEXXZ=?print@File@@UAA_NPBDZZ")
+#pragma comment(linker, "/alternatename:?slot11@File@@UAEXXZ=?get@Rva002A79A1DwordField@@QBEHXZ")
+#pragma comment(linker, "/alternatename:?slot12@File@@UAEXXZ=?getData@NetWrapperCommandMsg@@QAEPAEXZ")
+#pragma comment(linker, "/alternatename:?slot13@File@@UAEXXZ=?ControlBarInput@@YA?AW4WindowMsgHandledType@@PAVGameWindow@@III@Z")

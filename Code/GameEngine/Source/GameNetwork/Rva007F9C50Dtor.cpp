@@ -104,3 +104,10 @@ Rva007F9C50::~Rva007F9C50() throw()
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1Gen007FA290@@UAE@XZ=??1Rva007F9C50@@QAE@XZ")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?v8@Rva007F9C50@@UAEXXZ=?process@Rva007FA340@@QAEXPAX@Z")
+#pragma comment(linker, "/alternatename:?v4@Rva007F9C50@@UAEXXZ=?onConnectionMade@FeslConnectionHandler@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?v0@Rva007F9C50@@UAEXXZ=??_GGen007FA290@@UAEPAXI@Z")

@@ -52,3 +52,12 @@ Rva000D3FA0Map::~Rva000D3FA0Map()
 {
 	m_map.clear();
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?crc@Rva000D3FA0PoolObject@@MAEXPAVXfer@@@Z=__purecall")
+#pragma comment(linker, "/alternatename:?xfer@Rva000D3FA0PoolObject@@MAEXPAVXfer@@@Z=__purecall")
+#pragma comment(linker, "/alternatename:?loadPostProcess@Rva000D3FA0PoolObject@@MAEXXZ=__purecall")
+#pragma comment(linker, "/alternatename:?crc@Rva000D3FA0Map@@MAEXPAVXfer@@@Z=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?xfer@Rva000D3FA0Map@@MAEXPAVXfer@@@Z=?name@Rva002431A9Named@@QBEPBDXZ")

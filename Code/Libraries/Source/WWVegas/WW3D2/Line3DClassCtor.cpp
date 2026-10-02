@@ -105,3 +105,8 @@ Line3DClass::Line3DClass(const Vector3& start, const Vector3& end,
     transform.Obj_Look_At(start, end, 0.0f);
     Set_Transform(transform);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Class_ID@Line3DClass@@UBEHXZ=?Rva00166C10Get@@YAHXZ")

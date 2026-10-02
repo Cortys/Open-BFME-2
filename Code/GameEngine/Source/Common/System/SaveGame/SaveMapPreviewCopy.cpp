@@ -29,3 +29,10 @@ template SaveMapPreview *_STL::vector<SaveMapPreview>::_M_allocate_and_copy<Save
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0BfmeVector0022C55B@@QAE@ABU0@@Z=??0?$vector@VSaveMapPreview@@V?$allocator@VSaveMapPreview@@@_STL@@@_STL@@QAE@ABV01@@Z")
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?crc@SaveMapPreview@@UAEXPAVXfer@@@Z=??1Coord2D@@QAE@XZ")
+#pragma comment(linker, "/alternatename:?typeName@SaveMapPreview@@UBEPBDXZ=?name@Rva00226309Named@@QBEPBDXZ")
+#pragma comment(linker, "/alternatename:?xfer@SaveMapPreview@@UAEXPAVXfer@@@Z=?rva002DBA3F@Rva002DBA3F@@QAEXPAVXfer@@@Z")
