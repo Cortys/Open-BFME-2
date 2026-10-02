@@ -7221,3 +7221,4 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?getCenter@AIGroup@@QAE_NPAUCoord3D@@@Z,0x0036D035,AIGroup::getCenter called by AIFollowWaypointPathExactState::onEnter at 0x0034F09F
 ?setPathFromWaypoint@AIUpdateInterface@@QAEXPBVWaypoint@@PBUCoord2D@@@Z,0x0026569F,AIUpdateInterface::setPathFromWaypoint called by AIFollowWaypointPathExactState::onEnter at 0x0034F10B
 ?setDesiredSpeed@AIUpdateInterface@@QAEXM@Z,0x002628F9,AIUpdateInterface::setDesiredSpeed called by AIFollowWaypointPathExactState::onEnter at 0x0034F146; folded with View::setHeightAboveGround
+?xfer@AIInternalMoveToState@@UAEXPAVXfer@@@Z,0x0033FF76,AIInternalMoveToState::xfer called by AIFollowWaypointPathExactState::xfer at 0x00341128

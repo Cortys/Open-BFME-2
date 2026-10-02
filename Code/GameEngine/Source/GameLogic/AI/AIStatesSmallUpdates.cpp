@@ -18,6 +18,10 @@
 // Hour body: goal waypoint check, setGoalPosition, group center/speed offset,
 // CritterDesync log, base onEnter, setPathFromWaypoint, update goal position from
 // path tail, locomotor allowInvalidPosition, and setDesiredSpeed.
+// AIFollowWaypointPathExactState::xfer, retail 0x00341114 (104 bytes): slot 3
+// of vtable 0x00C12A08 (name getter AIFollowWaypointPathExactState), the Zero
+// Hour body: Version1, base xfer, IsLightCRC check, lastWaypoint ID xfer,
+// and TheTerrainLogic waypoint ID lookup on load.
 typedef bool Bool;
 typedef float Real;
 enum StateExitType
@@ -57,11 +61,91 @@ private:
 class Waypoint
 {
 public:
-	const Coord3D *getLocation() const { return &m_location; }
-private:
-	unsigned char m_pad00[0x0C];
+	int m_pad00;
+	unsigned int m_id; // +4
+	unsigned char m_pad08[0x0C - 8];
 	Coord3D m_location; // +0x0C
+	const Coord3D *getLocation() const { return &m_location; }
 };
+class AsciiString;
+class UnicodeString;
+class PooledString;
+struct XferUnknown11;
+class Coord3DBase;
+class ICoord3D;
+class Region3D;
+class IRegion3D;
+class ICoord2D;
+class Region2D;
+class IRegion2D;
+class RealRange;
+class RGBColor;
+class RGBAColorReal;
+class RGBAColorInt;
+class Snapshot;
+class Xfer
+{
+public:
+	class Version;
+	Xfer();
+	virtual ~Xfer();
+	void Version1();
+	virtual bool IsLoading() const;
+	virtual bool IsStoring() const;
+	virtual bool IsCRC() const;
+	virtual bool IsLightCRC() const;
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+	virtual void SkipBadBlock(Snapshot &snapshot, unsigned int size);
+	virtual Xfer &XferRawBytes(void *data, unsigned int size);
+	virtual Xfer &operator==(bool &value);
+	virtual Xfer &operator==(char &value);
+	virtual Xfer &operator==(unsigned char &value);
+	virtual Xfer &operator==(short &value);
+	virtual Xfer &operator==(unsigned short &value);
+	virtual Xfer &operator==(int &value);
+	virtual Xfer &operator==(unsigned int &value);
+	virtual Xfer &operator==(__int64 &value);
+	virtual Xfer &operator==(float &value);
+	virtual Xfer &operator==(AsciiString &value);
+	virtual Xfer &operator==(UnicodeString &value);
+	virtual Xfer &operator==(PooledString &value);
+	virtual Xfer &operator==(Coord3DBase &value);
+	virtual Xfer &operator==(ICoord3D &value);
+	virtual Xfer &operator==(Region3D &value);
+	virtual Xfer &operator==(IRegion3D &value);
+	virtual Xfer &operator==(Coord2D &value);
+	virtual Xfer &operator==(ICoord2D &value);
+	virtual Xfer &operator==(Region2D &value);
+	virtual Xfer &operator==(IRegion2D &value);
+	virtual Xfer &operator==(RealRange &value);
+	virtual Xfer &operator==(RGBColor &value);
+	virtual Xfer &operator==(RGBAColorReal &value);
+	virtual Xfer &operator==(RGBAColorInt &value);
+	virtual Xfer &operator==(Snapshot &value);
+	virtual Xfer &operator==(XferUnknown11 &value) = 0;
+	virtual Xfer &operator==(Version &value);
+	virtual Xfer &XferEnum(const char *name, void *data, unsigned int size);
+protected:
+	virtual void XferData(unsigned int type, void *data, unsigned int size) = 0;
+};
+
+class TerrainLogic
+{
+public:
+	virtual void _00(); virtual void _01(); virtual void _02(); virtual void _03();
+	virtual void _04(); virtual void _05(); virtual void _06(); virtual void _07();
+	virtual void _08(); virtual void _09(); virtual void _10(); virtual void _11();
+	virtual void _12(); virtual void _13(); virtual void _14(); virtual void _15();
+	virtual void _16(); virtual void _17(); virtual void _18(); virtual void _19();
+	virtual void _20(); virtual void _21(); virtual void _22(); virtual void _23();
+	virtual void _24(); virtual void _25(); virtual void _26(); virtual void _27();
+	virtual void _28(); virtual void _29(); virtual void _30(); virtual void _31();
+	virtual void _32(); virtual void _33(); virtual void _34();
+	virtual const Waypoint *getWaypointByID(unsigned int id);
+};
+extern TerrainLogic *TheTerrainLogic;
 class AIGroup
 {
 public:
@@ -157,7 +241,7 @@ public:
 	virtual ~State();
 	virtual void slot01();
 	virtual void slot02();
-	virtual void slot03();
+	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
@@ -183,6 +267,7 @@ StateReturnType AIDeadState::update()
 class AIInternalMoveToState : public State
 {
 public:
+	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
@@ -195,6 +280,7 @@ protected:
 class AIFollowWaypointPathExactState : public AIInternalMoveToState
 {
 public:
+	virtual void xfer(Xfer *xfer);
 	virtual StateReturnType onEnter();
 	virtual void onExit(StateExitType status);
 	virtual StateReturnType update();
@@ -202,6 +288,7 @@ private:
 	const Waypoint *m_lastWaypoint; // +0x4C
 	Bool m_moveAsGroup; // +0x50
 };
+
 
 StateReturnType AIFollowWaypointPathExactState::onEnter()
 {
@@ -277,5 +364,19 @@ StateReturnType AIFollowWaypointPathExactState::update()
 	if (ai)
 		ai->setCanPathThroughUnits(true);
 	return AIInternalMoveToState::update();
+}
+
+void AIFollowWaypointPathExactState::xfer(Xfer *xfer)
+{
+	xfer->Version1();
+	AIInternalMoveToState::xfer(xfer);
+	if (xfer->IsLightCRC())
+		return;
+	unsigned int id = 0x7fffffff;
+	if (m_lastWaypoint)
+		id = m_lastWaypoint->m_id;
+	*xfer == id;
+	if (xfer->IsLoading())
+		m_lastWaypoint = TheTerrainLogic->getWaypointByID(id);
 }
 
