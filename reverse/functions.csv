@@ -48515,3 +48515,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005FD72D@Rva005FD72D@@QAEX_N@Z,,0x005FD72D,91,Code/GameEngine/Source/Common/Rva005FD72DApt.cpp,matched,chain via AptCall 0x005F8EDA suffix up disabled inner plus8
 ?rva005FD8A9@Rva005FD8A9@@QAEX_N@Z,,0x005FD8A9,8,Code/GameEngine/Source/Common/Rva005FD8A9Fwd.cpp,matched,chain tail jmp to 0x005FD677 via plus4 ptr
 ?rva0030B1A7@Rva0030B92C@@QAEXM@Z,,0x0030B1A7,139,Code/GameEngine/Source/Common/Rva0030B1A7Scale.cpp,matched,scale vector and 6 mids by float flag-gated caller 0x00330B93
+?rva005F2A4A@Rva005F2A32@@QAEXXZ,,0x005F2A4A,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder to CommandPoints hide via plus4 same caller
