@@ -47796,3 +47796,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?buildFieldParse@SlowDeathBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z,,0x0045E93F,34,Code/GameEngine/Source/GameLogic/Object/Update/ModuleDataBuildFieldParse.cpp,matched,
 ?buildFieldParse@StructureToppleUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z,,0x004A651B,34,Code/GameEngine/Source/GameLogic/Object/Update/ModuleDataBuildFieldParse.cpp,matched,
 ?buildFieldParse@ObjectCreationUpgradeModuleData@@SAXAAVMultiIniFieldParse@@@Z,,0x004B4084,34,Code/GameEngine/Source/GameLogic/Object/Create/CreateModuleDataBuildFieldParse.cpp,matched,
+??_GRva004FAC21@@UAEPAXI@Z,,0x004FAD9C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva004FAC21.cpp,matched,chain from rowed ??1 plus standard ??_G shape
