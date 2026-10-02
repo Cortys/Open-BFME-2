@@ -12,7 +12,10 @@ struct TreeKey00242F5E
 {
 	int m_id;
 	AsciiString m_name;
+	TreeKey00242F5E();
+	TreeKey00242F5E(const TreeKey00242F5E &);
 };
+inline TreeKey00242F5E::TreeKey00242F5E() {}
 
 bool operator==(const TreeKey00242F5E &a, const TreeKey00242F5E &b);
 bool operator<(const TreeKey00242F5E &a, const TreeKey00242F5E &b);
