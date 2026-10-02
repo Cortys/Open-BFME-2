@@ -117,6 +117,20 @@ Rva0065E7A0Object *Rva0065E7A0( void *payload )
 	return new Rva0065E7A0Object( payload );
 }
 
+// Retail 0x00669480 (primary vftable 0x00CE3788), the same shape again.
+class Rva007FCF80Object : public Q3MakeBaseA, public Q3MakeBaseB
+{
+public:
+	Rva007FCF80Object( void *payload ) : Q3MakeBaseB( payload ) {}
+	virtual void primary();
+	virtual void secondary();
+};
+
+Rva007FCF80Object *Rva007FCF80( void *payload )
+{
+	return new Rva007FCF80Object( payload );
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?Gen007E9B40@@YAPAURva007E9D70Cached@@PAURva007E9D70Owner@@@Z=?Rva007E9B40@@YAPAVRva007E9B40Object@@PAX@Z")
@@ -144,3 +158,5 @@ Rva0065E7A0Object *Rva0065E7A0( void *payload )
 #pragma comment(linker, "/alternatename:?primary@Rva0065EC70Object@@UAEXXZ=??_GGen007F2120@@UAEPAXI@Z")
 #pragma comment(linker, "/alternatename:?secondary@Rva0065E7A0Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
 #pragma comment(linker, "/alternatename:?primary@Rva0065E7A0Object@@UAEXXZ=??_GGen007FCF50@@UAEPAXI@Z")
+#pragma comment(linker, "/alternatename:?secondary@Rva007FCF80Object@@UAEXXZ=?Get_First_Collected_Object_Internal@CullSystemClass@@IAEPAVCullableClass@@XZ")
+#pragma comment(linker, "/alternatename:?primary@Rva007FCF80Object@@UAEXXZ=??_GGen007F1BF0@@UAEPAXI@Z")

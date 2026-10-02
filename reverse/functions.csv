@@ -48358,3 +48358,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??1GpuDrawModuleTemplate@FXParticleSystem@@UAE@XZ,0x003A9E80,0x003A9E80,71,Code/GameEngine/Source/GameClient/FXParticleSystemFactories.cpp,matched,
 ??1RenderObjectDrawModuleTemplate@FXParticleSystem@@UAE@XZ,0x003A9C39,0x003A9C39,71,Code/GameEngine/Source/GameClient/FXParticleSystemFactories.cpp,matched,
 ?_AtlRaiseException@ATL@@YAXKK@Z,,0x00003214,19,Code/Libraries/Source/ATL/atlbase.cpp,matched,
+?Rva007FCF80@@YAPAVRva007FCF80Object@@PAX@Z,,0x00669480,45,Code/GameEngine/Source/Common/Q3MakeDerivedFamily.cpp,matched,Q3 make-derived family member (primary vftable 0xCE3788); same shape as Rva007F40F0
