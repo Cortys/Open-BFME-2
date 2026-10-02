@@ -48083,3 +48083,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0022DDAB@Rva0022DDAB@@QAEXXZ,,0x0022DDAB,73,Code/GameEngine/Source/Common/Rva0022DDABClear.cpp,matched,chain body calls just-landed 0x0022DBAA same shape as 0x0022DD62
 ??1Rva0022DDAB@@QAE@XZ,,0x0022DF1A,57,Code/GameEngine/Source/GameClient/Rva0022DDABDtor.cpp,matched,chain dtor clears via just-landed 0x0022DDAB same shape as 0x0022DEE1
 ?rva000A7A63@Rva000427195@@QAEPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,,0x000A7A63,68,Code/Libraries/Source/WWVegas/WWLib/Rva000A7A63Insert.cpp,matched,hash-table insert via reserve bucketIndex Create link buckets count plus return pair
+??0Rva0022181D@@QAE@XZ,,0x0022181D,61,Code/GameEngine/Source/Common/Rva0022181DCtor.cpp,matched,retail bytes caller 0x00222061 rowed FontDesc ctor 0x00376900
