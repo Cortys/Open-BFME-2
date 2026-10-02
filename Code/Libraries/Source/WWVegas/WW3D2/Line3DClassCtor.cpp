@@ -46,8 +46,9 @@ typedef char Line3DSizeIsRetail[(sizeof(Line3DClass) == 0x144) ? 1 : -1];
 enum { SORT_LEVEL_NONE = 0 };
 
 // Donor: reference/open-bfme-1/Code/Libraries/Source/WWVegas/WW3D2/line3d.cpp.
-// Retail has this helper at 0x167370; ctor inlines the equivalent stores.
-void Line3DClass::Set_Opacity(float opacity)
+// Retail helper ?Set_Opacity@Line3DClass@@QAEXM@Z at 0x00167370 is owned by
+// Line3DClassRender.cpp; inline here so the ctor inlines it (select-any, linkcheck-clean).
+inline void Line3DClass::Set_Opacity(float opacity)
 {
     if (opacity < 1.0f) {
         Shader = ShaderClass::_PresetAlphaSolidShader;
