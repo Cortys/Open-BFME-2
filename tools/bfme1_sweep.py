@@ -1029,8 +1029,19 @@ def body_tier(record, claims, pins):
     # A callee this repo already places somewhere else is not a pin to paste
     # over: it says the two images disagree about what this call site calls,
     # which is evidence against the placement rather than work to do.
+    #
+    # The names on a BFME 1 call site are every name BFME 1 resolves at its
+    # target, so a callee BFME 1's linker folded (operator new with new[]) arrives
+    # as several aliases. When this repo already places one of them exactly at
+    # the BFME 2 target, the images agree about the call and the other aliases'
+    # BFME 2 addresses are not evidence against it. X4Iostream's
+    # ios_base::_S_initialize (0x000166C0) was held here on ??_U at 0x0002FDE0
+    # while its calls reach ??2 at 0x0002FDA0.
     needed = {}
     for call in record["calls"]:
+        if any(claims.addresses.get(name, pins.get(name)) == call["bfme2_target"]
+               for name in call["bfme1_names"]):
+            continue
         for name in call["bfme1_names"]:
             settled = claims.addresses.get(name, pins.get(name))
             if settled is None:
