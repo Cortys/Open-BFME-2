@@ -48678,3 +48678,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva004EE695@Rva004EE5D2@@QAEXXZ,,0x004EE695,59,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,guarded time stamp then tail erase
 ?rva0041F431@Rva0041F431@@QAEPAV1@XZ,,0x0041F431,24,Code/GameEngine/Source/Common/Rva0041F431Clear.cpp,matched,caller 0x001DDB66 builds 16B record returns this
 ?rva002E035B@Rva000427195@@QAE?AUInsertRet002E01F7@@PBX@Z,,0x002E035B,36,Code/GameEngine/Source/GameClient/Rva002E01F7Insert.cpp,matched,chain wrapper resize count+1 then insert_unique same shape as Rva0041FC77
+?Rva00542425Skip@@YAPADPAD@Z,,0x00542425,36,Code/GameEngine/Source/Common/Rva00542425Skip.cpp,matched,retail bytes unlock lane isalnum IAT underscore static EAX handoff
