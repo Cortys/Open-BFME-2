@@ -40,6 +40,8 @@ class TerrainCollisionModuleInfo : public TerrainCollisionModuleInfoBase
 public:
 	TerrainCollisionModuleInfo(const TerrainCollisionModuleInfo &);
 	virtual ~TerrainCollisionModuleInfo();
+	virtual void v1() = 0;
+	virtual const char *GetSnapshotName();
 
 private:
 	BFMERetailAsciiString m_eventName;
