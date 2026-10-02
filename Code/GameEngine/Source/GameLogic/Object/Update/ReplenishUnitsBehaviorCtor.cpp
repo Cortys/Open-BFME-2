@@ -17,6 +17,11 @@
 // tail (protected IAEX Object-uint spelling resolves via the existing pin
 // at 0x44DF71). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C49F20[];  // folded, 2 classes; via ??_7FireWeaponWhenDamagedBehavior@@6BUpgradeMux@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C49F20=??_7FireWeaponWhenDamagedBehavior@@6BUpgradeMux@@@")
+extern "C" const void *const vtbl_00C49F78[];  // folded, 3 classes; via ??_7BroadcastStealthUpdate@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C49F78=??_7BroadcastStealthUpdate@@6BMiBase1@@@")
+
 extern "C" const void *const vtbl_00C49F68[];  // ??_7ReplenishUnitsBehavior@@6BUpdateModule@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C49F68=??_7ReplenishUnitsBehavior@@6BUpdateModule@@@")
 extern "C" const void *const vtbl_00C4A034[];  // ??_7ReplenishUnitsBehavior@@6BBehaviorModuleBase@@@
@@ -87,9 +92,9 @@ ReplenishUnitsBehavior::ReplenishUnitsBehavior(Thing *thing, const ModuleData *m
 {
 	Object *obj = m_object;
 	m_vtable = (const void *)((unsigned int)vtbl_00C4A034);
-	m_secondary0C = (const void *)0x00C49F78;
+	m_secondary0C = (const void *)((unsigned int)vtbl_00C49F78);
 	m_secondary10 = (const void *)((unsigned int)vtbl_00C49F68);
-	*(void **)&m_20 = (void *)0x00C49F20;
+	*(void **)&m_20 = (void *)((unsigned int)vtbl_00C49F20);
 	if (((const ReplenishUnitsModuleData *)m_moduleData)->m_138)
 	{
 		m_20.giveSelfUpgrade();

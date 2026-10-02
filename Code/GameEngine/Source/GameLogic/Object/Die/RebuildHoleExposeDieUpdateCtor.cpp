@@ -18,6 +18,9 @@
 // ModuleData ctor plus factory plus pool key close the file-unit. True
 // size 42 corrects the 39B park note which cut the ret.
 
+extern "C" const void *const vtbl_00C4A650[];  // folded, 21 classes; via ??_7CreateCrateDie@@6BBehaviorModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4A650=??_7CreateCrateDie@@6BBehaviorModuleInterface@@@")
+
 class Thing;
 class ModuleData;
 
@@ -49,6 +52,6 @@ public:
 RebuildHoleExposeDie::RebuildHoleExposeDie(Thing *thing, const ModuleData *moduleData)
 	: Rva0045CEBDUpdate(thing, moduleData)
 {
-	m_secondary0C = reinterpret_cast<const void *>(0x00C4A650);
+	m_secondary0C = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4A650));
 	m_secondary10 = reinterpret_cast<const void *>(0x00C4AE50);
 }

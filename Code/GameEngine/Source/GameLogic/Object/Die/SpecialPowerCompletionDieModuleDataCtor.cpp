@@ -13,6 +13,9 @@
 // SpecialPowerTemplate field at +0x38 per the BFME1 donor) beside the
 // rowed SpecialPowerCompletionDie pool key and behavior rows.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class Rva00253510
 {
 public:
@@ -34,7 +37,7 @@ private:
 inline SpecialPowerCompletionDieModuleData::SpecialPowerCompletionDieModuleData()
 {
 	m_specialPowerTemplate = 0;
-	m_vtable = reinterpret_cast<void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C4ED70));
 }
 
 // Header inlines that the units including the header emit as select-any

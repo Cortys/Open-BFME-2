@@ -8,6 +8,9 @@
 // Address-derived name; the +0x00 link and +0x08 member meanings follow
 // the drain's 0x14 element layout.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 class Rva003B4071
 {
 public:
@@ -28,6 +31,6 @@ private:
 // ??1Rva003B448C@@QAE@XZ
 Rva003B448C::~Rva003B448C()
 {
-	m_vtable = (void *)0x00BBB554;
+	m_vtable = (void *)((unsigned int)vtbl_00BBB554);
 	m_mem.clear();
 }

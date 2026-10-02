@@ -2,6 +2,11 @@
 // The shared headers declare these members with the access/virtual spelling
 // the referring objects use; this TU emits the paired definition spelling.
 // Same function, same address: bind the header spelling here.
+extern "C" const void *const vtbl_00C50538[];  // folded, 2 classes; via ??_7HordeWorkerAIUpdate@@6BDBaseM1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50538=??_7HordeWorkerAIUpdate@@6BDBaseM1@@@")
+extern "C" const void *const vtbl_00C52F88[];  // folded, 12 classes; via ??_7DeployStyleAIUpdate@@6BDBaseM4@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C52F88=??_7DeployStyleAIUpdate@@6BDBaseM4@@@")
+
 #pragma comment(linker, "/alternatename:??1Rva0026E9BDBase@@UAE@XZ=??1Rva0026E9BDBase@@QAE@XZ")
 
 //
@@ -83,10 +88,10 @@ HordeAIUpdate::HordeAIUpdate(Thing *thing, const ModuleData *moduleData)
 	*(const void * volatile *)&m_p3E4 = (const void *)((unsigned int)vtbl_00C52EE8);
 	_ReadWriteBarrier();
 	m_vtable = (const void *)((unsigned int)vtbl_00C505F8);
-	m_p0C = (const void *)0x00C50538;
+	m_p0C = (const void *)((unsigned int)vtbl_00C50538);
 	m_p10 = (const void *)((unsigned int)vtbl_00C5052C);
 	m_p20 = (const void *)((unsigned int)vtbl_00C50528);
-	m_p24 = (const void *)0x00C52F88;
+	m_p24 = (const void *)((unsigned int)vtbl_00C52F88);
 	m_p3E4 = (const void *)0x00C50868;
 	setWakeFrame(m_object, UPDATE_SLEEP_NONE);
 }

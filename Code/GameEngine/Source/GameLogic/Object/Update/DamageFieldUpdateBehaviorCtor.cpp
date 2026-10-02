@@ -9,6 +9,9 @@
 // at +0x2C via pinned 0x29FB3B init with the shared ebp+0xF context idiom.
 // Zero new pins (all callees rowed/pinned).
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 class Thing;
 class ModuleData;
 
@@ -43,7 +46,7 @@ DamageFieldUpdate::DamageFieldUpdate(Thing *thing, const ModuleData *moduleData)
 	Rva0029FB3BMember *member = (Rva0029FB3BMember *)((char *)this + 0x2C);
 	void *context = (void *)((char *)&moduleData + 3);
 	*(const void **)this = (const void *)0x00C4D970;
-	*(const void **)((char *)this + 0x0C) = (const void *)0x00BEFF90;
+	*(const void **)((char *)this + 0x0C) = (const void *)((unsigned int)vtbl_00BEFF90);
 	*(const void **)((char *)this + 0x10) = (const void *)0x00C4D964;
 	member->init(context);
 }

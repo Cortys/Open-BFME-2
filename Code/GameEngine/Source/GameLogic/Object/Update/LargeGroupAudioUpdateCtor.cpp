@@ -14,6 +14,9 @@
 // literal) is the sole raw caller; poolkey rowed at 0x4AB897. Row supersedes
 // the ctor pin. Zero new pins (base plus both callees already rowed/pinned).
 
+extern "C" const void *const vtbl_00C6FFFC[];  // folded, 10 classes; via ??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6FFFC=??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@")
+
 extern "C" const void *const vtbl_00BFB698[];  // ??_7LargeGroupAudioUpdate_B24@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00BFB698=??_7LargeGroupAudioUpdate_B24@@6B@")
 extern "C" const void *const vtbl_00C548B8[];  // ??_7LargeGroupAudioUpdate@@6BLargeGroupAudioUpdate_B24@@@
@@ -82,7 +85,7 @@ LargeGroupAudioUpdate::LargeGroupAudioUpdate(Thing *thing, const ModuleData *mod
 {
 	float fzero = 0.0f;
 	int *slotInit20 = (int *)&m_secondary20;
-	*slotInit20 = (int)0x00C6FFFC;
+	*slotInit20 = (int)((unsigned int)vtbl_00C6FFFC);
 	int *slotInit24 = (int *)&m_secondary24;
 	*slotInit24 = (int)((unsigned int)vtbl_00BFB698);
 	int *vtab = (int *)&m_vtable;

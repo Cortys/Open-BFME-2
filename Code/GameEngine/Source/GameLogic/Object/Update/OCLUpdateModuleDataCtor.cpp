@@ -12,6 +12,9 @@
 // Amount. Body order is load-bearing: `m_amount |= -1` emits retail's
 // leading `or [eax+0x14],-1` (a plain `= -1` compiles to a trailing 7-byte
 // mov), and /O1 is what keeps the independent or above the xor.
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class OCLUpdateModuleData
 {
 public:
@@ -30,7 +33,7 @@ private:
 OCLUpdateModuleData::OCLUpdateModuleData()
 {
 	m_amount |= -1;
-	m_vtable = reinterpret_cast<const void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4ED70));
 	m_ocl = 0;
 	m_minDelay = 0;
 	m_maxDelay = 0;

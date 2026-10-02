@@ -24,6 +24,9 @@
 // (base resolves via the existing BezierProjectileBehavior pin;
 // TheGameLogic is an absolute global).
 
+extern "C" const void *const vtbl_00C53570[];  // folded, 2 classes; via ??_7BezierProjectileBehavior@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C53570=??_7BezierProjectileBehavior@@6BBehaviorModuleOther@@@")
+
 extern "C" const void *const vtbl_00C53530[];  // ??_7MissileUpdate@@6BRva004A76DEBase4@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C53530=??_7MissileUpdate@@6BRva004A76DEBase4@@@")
 extern "C" const void *const vtbl_00C53548[];  // ??_7MissileUpdate@@6BRva004A76DEBase3@@@
@@ -137,7 +140,7 @@ MissileUpdate::MissileUpdate(Thing *thing, const ModuleData *moduleData) :
 	BezierProjectileBehavior(thing, moduleData)
 {
 	m_vtable0 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C5362C));
-	m_vtableC = reinterpret_cast<const void *>(0x00C53570);
+	m_vtableC = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53570));
 	m_vtable10 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53560));
 	m_vtable20 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53548));
 	m_vtable24 = reinterpret_cast<const void *>(((unsigned int)vtbl_00C53530));

@@ -11,6 +11,9 @@
 // precedent) else zero. The rowed instance factory 0x252D2A (news 0x18)
 // is the sole raw caller. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00BE2B78[];  // folded, 9 classes; via ??_7ClearanceTestingSlowDeathBehaviorIface5@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BE2B78=??_7ClearanceTestingSlowDeathBehaviorIface5@@6B@")
+
 extern class ClientFrameSubsystem *TheGameClient;
 
 class Thing;
@@ -61,7 +64,7 @@ RandomSoundSelectorClientBehavior::RandomSoundSelectorClientBehavior(Thing *thin
 	: Rva00252B68(thing, moduleData)
 {
 	int *slot0C = (int *)&m_0C;
-	*slot0C = (int)0x00BE2B78;
+	*slot0C = (int)((unsigned int)vtbl_00BE2B78);
 	m_vtable = (const void *)0x00C5F378;
 	m_0C = (const void *)0x00C5F368;
 	m_10 = GetGameClientRandomValueReal(0.0f, 1.0f, "C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameClient\\Drawable\\Behavior\\RandomSoundSelectorClientBehavior.cpp", 0x62);

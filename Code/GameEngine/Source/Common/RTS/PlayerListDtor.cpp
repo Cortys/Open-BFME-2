@@ -15,6 +15,9 @@
 // plus loop delete). Shape follows FireWeaponCollideDtor (tracked-pointer
 // virtual release slot 0 with 0 return-fed to operator delete).
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 class GameEngineDeletingBase
 {
 public:
@@ -35,7 +38,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class Player

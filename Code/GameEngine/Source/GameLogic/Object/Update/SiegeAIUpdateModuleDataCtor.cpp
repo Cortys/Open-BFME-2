@@ -7,6 +7,9 @@
 // data factory (news 0x64, sole caller at 0x24D4EC). Row supersedes the
 // ctor pin.
 
+extern "C" const void *const vtbl_00C4B6C8[];  // folded, 3 classes; via ??_7AnimalAIUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4B6C8=??_7AnimalAIUpdateModuleData@@6B@")
+
 class MultiIniFieldParse;
 struct FieldParse;
 extern const int g_emptyFieldParseTable[4];
@@ -41,7 +44,7 @@ public:
 SiegeAIUpdateModuleData::SiegeAIUpdateModuleData()
 	: TransportAIUpdateModuleData()
 {
-	*(unsigned int *)this = 0x00C4B6C8;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C4B6C8);
 }
 
 // ?buildFieldParse@SiegeAIUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x004904EB

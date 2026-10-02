@@ -7,6 +7,9 @@
 // init versus body paths), ints 0 at +0xB4 +0xB8 +0xBC +0xC0 plus bytes 0 at
 // +0xC4 +0xC5. Chain of 0x0037DF2C which this session landed. Callers at
 // 0x003F22B6 0x0040EFBB 0x0040F09B 0x0040F149 0x0040F24D 0x0040F721.
+extern "C" const void *const vtbl_00BC6F20[];  // folded, 7 classes; via ??_7Rva0007DF07@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BC6F20=??_7Rva0007DF07@@6B@")
+
 class Rva0037DF2C
 {
 public:
@@ -17,7 +20,7 @@ private:
 };
 struct MemberAC
 {
-	MemberAC() : m_vtable((void *)0x00BC6F20), m_04(0) {}
+	MemberAC() : m_vtable((void *)((unsigned int)vtbl_00BC6F20)), m_04(0) {}
 	void *m_vtable;
 	int m_04;
 };

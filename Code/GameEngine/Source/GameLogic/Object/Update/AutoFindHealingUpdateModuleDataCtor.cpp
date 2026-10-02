@@ -13,6 +13,9 @@
 // Vtable 0x00C4ED70 is ICF-folded. Floats are clean literals pooled
 // by the compiler (float-ref verify matches values, not addresses).
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class AutoFindHealingUpdateModuleData
 {
 public:
@@ -33,6 +36,6 @@ AutoFindHealingUpdateModuleData::AutoFindHealingUpdateModuleData()
 	m_scanRate = 0;
 	m_scanRange = 0.0f;
 	m_neverHeal = 0.95f;
-	m_vtable = reinterpret_cast<const void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4ED70));
 	m_alwaysHeal = 0.25f;
 }

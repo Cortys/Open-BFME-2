@@ -2646,7 +2646,7 @@ void playerUTMCallback(PEER peer, const char * nick, const char * command, const
 
 static void getPlayerInfo(PeerThreadClass *t, PEER peer, const char *nick, Int& id, UnsignedInt& IP,
 													std::string& locale, Int& wins, Int& losses, Int& rankPoints, Int& side, Int& preorder,
-													RoomType roomType, Int& flags)
+													RoomType roomType, Int& flags, Int& rank1v1, Int& rank2v2, Int& bSide)
 {
 	if (!t || !nick)
 		return;
@@ -2663,6 +2663,11 @@ static void getPlayerInfo(PeerThreadClass *t, PEER peer, const char *nick, Int& 
 	rankPoints = t->lookupStatForPlayer(roomType, nick, "b_points");
 	side = t->lookupStatForPlayer(roomType, nick, "b_side");
 	preorder = t->lookupStatForPlayer(roomType, nick, "b_pre");
+	flags = 0;
+	rank1v1 = t->lookupStatForPlayer(roomType, nick, "b_rank1v1");
+	rank2v2 = t->lookupStatForPlayer(roomType, nick, "b_rank2v2");
+	bSide = t->lookupStatForPlayer(roomType, nick, "b_BSide");
+	peerGetPlayerFlags(peer, nick, roomType, &flags);
 #else // USE_BROADCAST_KEYS
 	const char *s;
 	s = peerGetGlobalWatchKey(peer, nick, "locale");
@@ -2677,11 +2682,19 @@ static void getPlayerInfo(PeerThreadClass *t, PEER peer, const char *nick, Int& 
 	side = atoi((s)?s:"");
 	s = peerGetGlobalWatchKey(peer, nick, "pre");
 	preorder = atoi((s)?s:"");
-#endif // USE_BROADCAST_KEYS
 	flags = 0;
 	peerGetPlayerFlags(peer, nick, roomType, &flags);
+#endif // USE_BROADCAST_KEYS
 	DEBUG_LOG(("getPlayerInfo(%d) - %s has locale %s, wins:%d, losses:%d, rankPoints:%d, side:%d, preorder:%d\n",
 		id, nick, locale.c_str(), wins, losses, rankPoints, side, preorder));
+}
+
+static __forceinline void getPlayerInfo(PeerThreadClass *t, PEER peer, const char *nick, Int& id, UnsignedInt& IP,
+													std::string& locale, Int& wins, Int& losses, Int& rankPoints, Int& side, Int& preorder,
+													RoomType roomType, Int& flags)
+{
+	Int rank1v1 = 0, rank2v2 = 0, bSide = 0;
+	getPlayerInfo(t, peer, nick, id, IP, locale, wins, losses, rankPoints, side, preorder, roomType, flags, rank1v1, rank2v2, bSide);
 }
 
 static void roomKeyChangedCallback(PEER peer, RoomType roomType, const char *nick, const char *key, const char *val, void *param)

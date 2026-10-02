@@ -13,6 +13,9 @@
 // Caller is the slot-0 ??_G at 0x004B6F65 (vtable 0x008589F0). Shape follows
 // RemoveUpgradeUpgradeModuleDataDtor (TU-local Snapshot with inline
 // BBB554-restoring dtor, novtable derived, empty body, vectors via 0x2CC70).
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 #include <vector>
 
 class Xfer;
@@ -31,7 +34,7 @@ private:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 #include "ascii_string.h"

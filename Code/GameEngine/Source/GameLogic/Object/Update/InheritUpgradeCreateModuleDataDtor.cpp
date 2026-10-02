@@ -13,6 +13,9 @@
 // size 0x90 via factory 0x250CC3, INI table 0x00C59728). Caller is the slot-0
 // ??_G at 0x4B954D (vtable 0xC59768).
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 class Snapshot
 {
 public:
@@ -24,7 +27,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class Rva003623E5Filter

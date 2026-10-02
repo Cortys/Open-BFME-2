@@ -14,6 +14,9 @@
 // 0x233FF4 over lo/hi/file/line with the TU __FILE__ literal and line
 // 0x83). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C4EF80[];  // folded, 7 classes; via ??_7ContainIface34@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EF80=??_7ContainIface34@@6B@")
+
 extern "C" const void *const vtbl_00C4EF90[];  // ??_7AutoPickUpUpdate@@6BAutoPickUpUpdateInterface@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C4EF90=??_7AutoPickUpUpdate@@6BAutoPickUpUpdateInterface@@@")
 extern "C" const void *const vtbl_00C4EFA0[];  // ??_7AutoPickUpUpdate@@6BUpdateModule@@@
@@ -72,7 +75,7 @@ AutoPickUpUpdate::AutoPickUpUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData)
 {
 	int *slot20 = (int *)&m_20;
-	*slot20 = (int)0x00C4EF80;
+	*slot20 = (int)((unsigned int)vtbl_00C4EF80);
 	const AutoPickUpUpdateModuleData *data = (const AutoPickUpUpdateModuleData *)m_moduleData;
 	int zero = 0;
 	m_vtable = (const void *)((unsigned int)vtbl_00C4F06C);

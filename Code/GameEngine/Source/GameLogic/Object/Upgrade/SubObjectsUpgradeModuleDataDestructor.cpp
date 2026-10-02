@@ -12,6 +12,9 @@
 // that BFME2 stores 8-byte replacement-model values in the final vector, so
 // this target-specific declaration uses values rather than donor pointers.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 #include <vector>
 
 
@@ -36,7 +39,7 @@ private:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class SubObjectsUpgradeModuleData : public Snapshot

@@ -15,6 +15,9 @@
 // bytes): compiler-emitted scalar deleting dtor wrapping the above plus
 // the rowed operator delete at 0x0002FD60.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 class Xfer;
 
 class Snapshot
@@ -28,7 +31,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 #include "ascii_string.h"

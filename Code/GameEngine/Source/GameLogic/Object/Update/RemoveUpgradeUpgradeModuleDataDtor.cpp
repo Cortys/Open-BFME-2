@@ -12,6 +12,9 @@
 // 0x118 via OpenContain 0x253487, vectors at +0x118/+0x124, bytes at
 // +0x130/+0x131, size 0x134 via factory 0x0025082A) and table 0xC58EA0.
 // Caller is the slot-0 ??_G at 0x004B8034 (vtable 0x58EF0).
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 #include <vector>
 
 class Xfer;
@@ -30,7 +33,7 @@ private:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 #include "ascii_string.h"

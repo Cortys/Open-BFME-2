@@ -14,6 +14,9 @@
 // LaserToTarget per ZH AssistedTargetingUpdate.h) beside the rowed
 // AssistedTargetingUpdate bodies (pool key plus name plus isFreeToAssist).
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class ModuleData;
 class INI;
 class MultiIniFieldParse;
@@ -29,7 +32,7 @@ class AssistedTargetingUpdateModuleData
 public:
 	AssistedTargetingUpdateModuleData()
 	{
-		m_vtable = reinterpret_cast<void *>(0x00C4ED70);
+		m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C4ED70));
 		m_assistingClipSize = 1;
 		m_assistingWeaponSlot = 0;
 		m_laserFromAssisted = 0;

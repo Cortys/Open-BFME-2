@@ -13,6 +13,9 @@
 // EH frame: the base is declared without virtuals or a dtor so the derived
 // ctor stays frameless. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C6F248[];  // folded, 4 classes; via ??_7Rva0057BCD7@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6F248=??_7Rva0057BCD7@@6B@")
+
 extern "C" const void *const vtbl_00C51E30[];  // ??_7Rva004A1855@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00C51E30=??_7Rva004A1855@@6B@")
 extern "C" const void *const vtbl_00C51E54[];  // ??_7Rva004A1855@@6BRva0024A797_B2@@@
@@ -70,7 +73,7 @@ SlavedUpdate::SlavedUpdate(Thing *thing, const ModuleData *moduleData)
 {
 	float fzero = 0.0f;
 	int *slot20 = (int *)&m_secondary20;
-	*slot20 = (int)0x00C6F248;
+	*slot20 = (int)((unsigned int)vtbl_00C6F248);
 	int zero = 0;
 	m_24 = zero;
 	m_vtable = (const void *)((unsigned int)vtbl_00C51F1C);

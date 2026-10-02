@@ -14,6 +14,9 @@
 // shared-fold precedent); this row proves the body. Row supersedes the
 // 0x4C2A6A ctor pin.
 
+extern "C" const void *const vtbl_00C5E7A8[];  // folded, 2 classes; via ??_7CombineHordeSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5E7A8=??_7CombineHordeSpecialPowerModuleData@@6B@")
+
 class Rva004930A0
 {
 public:
@@ -36,6 +39,6 @@ private:
 DefectorSpecialPowerModuleData::DefectorSpecialPowerModuleData()
 	: Rva004930A0()
 {
-	*(unsigned int *)this = 0x00C5E7A8;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5E7A8);
 	m_fatCursorRadius = 0.0f;
 }

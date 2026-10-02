@@ -15,6 +15,9 @@
 // and the rowed instance factory 0x24C3FB (sole caller, ModuleFactory
 // registration literal) prove the class. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C078DC[];  // folded, 4 classes; via ??_7BfmeCtor001B3A20@@6BBfmeCtorVirtualBase001B3A20@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C078DC=??_7BfmeCtor001B3A20@@6BBfmeCtorVirtualBase001B3A20@@@")
+
 class Thing;
 class ModuleData;
 
@@ -65,7 +68,7 @@ RebuildHoleBehavior::RebuildHoleBehavior(Thing *thing, const ModuleData *moduleD
 	int *slot20 = (int *)&m_secondary20;
 	*slot20 = (int)0x00C1C780;
 	int *slot24 = (int *)&m_secondary24;
-	*slot24 = (int)0x00C078DC;
+	*slot24 = (int)((unsigned int)vtbl_00C078DC);
 	m_28 = 0;
 	m_2C = 0;
 	m_30 = 0;

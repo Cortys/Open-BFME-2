@@ -6,6 +6,9 @@
 // Prev 0x005C4808 xfer and next 0x005C493A getter in same page. Class has no
 // virtuals so the compiler emits no implicit vptr store; the explicit
 // *(void **)this write gives retail call-then-store order (Rva0098477Ctor).
+extern "C" const void *const vtbl_00C40818[];  // folded, 7 classes; via ??_7BfmeCtor001B3A20@@6BBfmeCtorFirstBase001B3A20@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C40818=??_7BfmeCtor001B3A20@@6BBfmeCtorFirstBase001B3A20@@@")
+
 class Rva00330757Member
 {
 public:
@@ -23,5 +26,5 @@ private:
 
 Rva005C48D0::Rva005C48D0()
 {
-	*(void **)this = (void *)0x00C40818;
+	*(void **)this = (void *)((unsigned int)vtbl_00C40818);
 }

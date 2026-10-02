@@ -14,6 +14,11 @@
 // mid-body state store; the base dtor stays declared-only (no link clash
 // with the base TU). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C50538[];  // folded, 2 classes; via ??_7HordeWorkerAIUpdate@@6BDBaseM1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C50538=??_7HordeWorkerAIUpdate@@6BDBaseM1@@@")
+extern "C" const void *const vtbl_00C52F88[];  // folded, 12 classes; via ??_7DeployStyleAIUpdate@@6BDBaseM4@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C52F88=??_7DeployStyleAIUpdate@@6BDBaseM4@@@")
+
 extern "C" const void *const vtbl_00C508B8[];  // ??_7HordeWorkerAIUpdate@@6BDBaseM3@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C508B8=??_7HordeWorkerAIUpdate@@6BDBaseM3@@@")
 extern "C" const void *const vtbl_00C508BC[];  // ??_7HordeWorkerAIUpdate@@6BDBaseB2@@@
@@ -72,10 +77,10 @@ HordeWorkerAIUpdate::HordeWorkerAIUpdate(Thing *thing, const ModuleData *moduleD
 {
 	int zero = 0;
 	m_vtable = (const void *)((unsigned int)vtbl_00C508C8);
-	m_p0C = (const void *)0x00C50538;
+	m_p0C = (const void *)((unsigned int)vtbl_00C50538);
 	m_p10 = (const void *)((unsigned int)vtbl_00C508BC);
 	m_p20 = (const void *)((unsigned int)vtbl_00C508B8);
-	m_p24 = (const void *)0x00C52F88;
+	m_p24 = (const void *)((unsigned int)vtbl_00C52F88);
 	m_p3E4 = (const void *)0x00C50868;
 	m_3E8 = zero;
 	m_3EC = zero;

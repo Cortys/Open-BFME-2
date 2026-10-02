@@ -13,6 +13,9 @@
 // DIR32-masked in comparison). Zero new pins (base resolves via the
 // rowed CreateModule spelling).
 
+extern "C" const void *const vtbl_00BEF9C0[];  // folded, 15 classes; via ??_7CreateModule@@6BBehaviorModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEF9C0=??_7CreateModule@@6BBehaviorModuleInterface@@@")
+
 class Thing;
 class ModuleData;
 
@@ -33,6 +36,6 @@ SpawnedModelConditionCreate::SpawnedModelConditionCreate(Thing *thing, const Mod
 	CreateModule(thing, moduleData)
 {
 	*(unsigned int *)this = 0x00BEFA7C;
-	*(unsigned int *)((char *)this + 0xC) = 0x00BEF9C0;
+	*(unsigned int *)((char *)this + 0xC) = ((unsigned int)vtbl_00BEF9C0);
 	*(unsigned int *)((char *)this + 0x10) = 0x00BEF9B0;
 }

@@ -20,6 +20,9 @@
 // base dtor arms it with no emitted code. Recipe: PlayerHealSpecialPowerCtor
 // plus AIGateUpdateCtor over the same rowed base.
 
+extern "C" const void *const vtbl_00BFBCBC[];  // folded, 2 classes; via ??_7Rva005F6941Base@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BFBCBC=??_7Rva005F6941Base@@6B@")
+
 extern "C" const void *const vtbl_00C3EFC4[];  // ??_7BloodthirstyUpdate@@6BBloodthirstyUpdateIface@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C3EFC4=??_7BloodthirstyUpdate@@6BBloodthirstyUpdateIface@@@")
 extern "C" const void *const vtbl_00C3EFEC[];  // ??_7BloodthirstyUpdate@@6BUpdateModule@@@
@@ -74,7 +77,7 @@ BloodthirstyUpdate::BloodthirstyUpdate(Thing *thing, const ModuleData *moduleDat
 	: UpdateModule(thing, moduleData)
 {
 	int *wakeSlot = (int *)&m_secondary20;
-	*wakeSlot = (int)0x00BFBCBC;
+	*wakeSlot = (int)((unsigned int)vtbl_00BFBCBC);
 	m_vtable = (const void *)((unsigned int)vtbl_00C3F0B4);
 	m_secondary0C = (const void *)((unsigned int)vtbl_00C3EFF8);
 	m_secondary10 = (const void *)((unsigned int)vtbl_00C3EFEC);
