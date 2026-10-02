@@ -91,6 +91,9 @@ int __cdecl strncmp( const char *left, const char *right,
 	unsigned int count );
 }
 
+// g_00E0ABA4: VA 0x00E0ABA4 (.data(bss)); retail initial byte is zero.
+char g_00E0ABA4 = 0;
+
 struct Rva0081BD40Comm;
 extern "C" void __cdecl Rva0081B700( struct Rva0081BD40Comm *comm );
 
@@ -136,9 +139,9 @@ extern "C" int Rva0081B010( struct Rva0081B010Comm *comm, char *argument )
 		 * 0x0130B18C in this slot, BFME2 0x00E0ABA4. Both address their
 		 * own image's .data (here LUT-like binary bytes, not a config
 		 * string -- no textual default exists in this image), so the
-		 * no-colon path parses whatever the link placed there. Spelled
-		 * as retail wrote it to preserve the bytes. */
-		argument = (char *)0x00E0ABA4;
+		 * no-colon path parses whatever the link placed there. The BFME2
+		 * zero-filled byte is named so it follows the linked image. */
+		argument = &g_00E0ABA4;
 	}
 
 	if ( strncmp( temp, "TAPI", 4 ) == 0 )
