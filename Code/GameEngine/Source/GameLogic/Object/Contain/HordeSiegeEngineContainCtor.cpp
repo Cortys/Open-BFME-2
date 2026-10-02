@@ -93,6 +93,7 @@ class HordeTransportContain : public TransportContain
 {
 public:
 	HordeTransportContain(Thing *thing, const ModuleData *moduleData);
+	virtual ~HordeTransportContain();
 private:
 	unsigned char m_pad11C[0x128 - 0x11C];
 };
