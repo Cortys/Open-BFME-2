@@ -48735,3 +48735,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva006F1F50@@YAXPAVBfmeAptValue006DCD20@@@Z,,0x006F1F50,52,Code/GameEngine/Source/Common/Rva006F1F50Cluster.cpp,matched,address-derived AptValue isXml conversion helper
 ?rva00741730@Rva00741730@@QAEXXZ,,0x00741730,26,Code/Libraries/Source/WWVegas/WW3D2/Rva00741730Cluster.cpp,matched,address-derived two-step Reset_Line helper
 ?check@Rva00033E90@@QAEXPAX@Z,,0x00033E90,49,Code/GameEngine/Source/Common/System/Rva00033E90Cluster.cpp,matched,address-derived PANS block hook with member tail call
+?f@Rva001333C6@@QAEXXZ,,0x001333C6,27,Code/GameEngine/Source/Common/Rva001333C6Cluster.cpp,matched,address-derived guarded member tail call

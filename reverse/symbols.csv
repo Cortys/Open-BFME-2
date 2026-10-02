@@ -7184,3 +7184,4 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ?peerGetPlayerFlags@@YAHPAXPBDW4RoomType@@PAH@Z,0x006991B0,GameSpy peerGetPlayerFlags called by getPlayerInfo at 0x38C5A4
 ?lookupStatForPlayer@PeerThreadClass@@QAEHW4RoomType@@PBD1@Z,0x0038A63C,PeerThreadClass::lookupStatForPlayer called by getPlayerInfo at 0x38C4C5
 ?freeBlock@Rva00033E90@@QAEXPAX@Z,0x00033150,address-derived member tail target reached from 0x00033E90
+?rva0013331A@Rva0013331A@@QAEXXZ,0x0013331A,address-derived member tail target reached from 0x001333C6
