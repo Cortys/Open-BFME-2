@@ -40,9 +40,22 @@ struct BfmeCopyRecord8Cmp
 	__forceinline bool operator()(const BfmeCopyRecord8 &x, const BfmeCopyRecord8 &y) const { return x.b < y.b; }
 };
 
+// The same records sorted the other way (0x0054C134 and its family): the order
+// is written as y.b < x.b, the only spelling whose median matches retail's
+// 0x00549D30 (rowed by hand as Rva00549D30Median).
+struct BfmeCopyRecord8CmpDescending
+{
+	__forceinline bool operator()(const BfmeCopyRecord8 &x, const BfmeCopyRecord8 &y) const { return y.b < x.b; }
+};
+
 typedef _STL::_Deque_iterator<BfmeCopyRecord8, _STL::_Nonconst_traits<BfmeCopyRecord8> > CopyRecord8Iterator;
 
 template void _STL::__introsort_loop<CopyRecord8Iterator, BfmeCopyRecord8, int, BfmeCopyRecord8Cmp>(
 	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8 *, int, BfmeCopyRecord8Cmp);
 template void _STL::__unguarded_insertion_sort<CopyRecord8Iterator, BfmeCopyRecord8Cmp>(
 	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8Cmp);
+
+template void _STL::__introsort_loop<CopyRecord8Iterator, BfmeCopyRecord8, int, BfmeCopyRecord8CmpDescending>(
+	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8 *, int, BfmeCopyRecord8CmpDescending);
+template void _STL::__unguarded_insertion_sort<CopyRecord8Iterator, BfmeCopyRecord8CmpDescending>(
+	CopyRecord8Iterator, CopyRecord8Iterator, BfmeCopyRecord8CmpDescending);
