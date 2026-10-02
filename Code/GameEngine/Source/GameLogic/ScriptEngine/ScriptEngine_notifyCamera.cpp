@@ -11,7 +11,8 @@ typedef int HMODULE;
 
 extern "C" __declspec(dllimport) void *__stdcall GetProcAddress(HMODULE module, const char *name);
 
-#define TheAppModule (*(HMODULE *)0x00DFE158)
+extern HMODULE g_00DFE158;
+#define TheAppModule g_00DFE158
 
 class Rva00203B2BHost
 {
