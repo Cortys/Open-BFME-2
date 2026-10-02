@@ -1,4 +1,4 @@
-// cl: /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /arch:SSE /GX /MD /DNDEBUG /DWIN32 /D_WINDOWS
 // stlport
 //
 // ??0CostModifierUpgradeModuleData@@QAE@XZ, retail 0x004B5BAC, 184 bytes.
@@ -27,27 +27,7 @@
 // alias pin to 0x00211E58 (int/unsigned/AsciiString precedent).
 
 #include <vector>
-
-template <typename T>
-class StringBase
-{
-public:
-	StringBase() : m_data(0) {}
-	void set(const T *text);
-	~StringBase();
-
-	void *m_data;
-};
-
-class AsciiString
-{
-public:
-	AsciiString();
-	~AsciiString();
-
-private:
-	char *m_data;
-};
+#include "ascii_string.h"
 
 extern unsigned char g_00DFEFA4StoragePrototype[28];
 
@@ -95,7 +75,7 @@ private:
 	bool m_startsActive; // +0x129, StartsActive
 	bool m_slaughter; // +0x12A, Slaughter
 	unsigned char m_pad12B; // +0x12B
-	StringBase<char> m_labelForPalantirString; // +0x12C, LabelForPalantirString
+	AsciiString m_labelForPalantirString; // +0x12C, LabelForPalantirString
 	_STL::vector<AsciiString> m_applyToTheseUpgrades; // +0x130, ApplyToTheseUpgrades
 };
 

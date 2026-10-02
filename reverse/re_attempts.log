@@ -5875,3 +5875,6 @@ rva001a610	0x1a610	39	refuted	retail 0x1A610 is a 5-byte E9 tail jmp to the rowe
 ?rva00532165@Rva00532165@@QAEXGG@Z	0x00532165	108	partial	two pops esi ebx early before jne vs all late at end with reuse exact t=12 model=muse-03 score=0.96 stash=reverse/attempts/0x00532165.cpp
 ?Rva00288621Check@@YG_NPBX@Z	0x00288621	46	blocked	Overridable member compare needs donor layout t=12 model=muse-10
 ?rva00288ABC@Rva0028951F@@QAE?AUPair@@U2@@Z	0x00288ABC	54	blocked	Rva0028951F Pair filter via Rva0028891FCheck t=25 model=muse-spark
+?Rva00600FC9Get@@YGXXZ	0x00600FC9	676	blocked	676B EH stdcall free function with 4 StringBase temps and ArchiveFileSystem virtual slots 0x18/0x20/0x24 plus FilePathGate RB walk; no donor in packet; exceeds 6-variant box t=25 model=muse-15
+??1Rva005746AF@@UAE@XZ	0x005746D2	104	blocked	104B dtor missing EH prolog/states/epilogue despite /EHs (needs empty-base or /EHa trick unknown) plus callee reverseAnimateWindow row takes AnimateWindow* but retail call site pushes none (0-arg call needed, row retype or ICF owner required) t=15 model=muse-15
+??0Rva00111AA7@@QAE@PBDH@Z	0x00111AA7	40	partial	store order swapped: retail mov [esi+4],eax then and [esi+0x18],0; ours and-then-mov; init-list and /Os both keep ours order t=20 model=muse-15 score=0.95 stash=reverse/attempts/0x00111aa7.cpp
