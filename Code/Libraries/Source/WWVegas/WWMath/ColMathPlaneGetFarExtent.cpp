@@ -22,7 +22,7 @@ __forceinline bool Fast_Is_Float_Positive(const float &val)
 	return !((*reinterpret_cast<const int *>(&val) & 0x80000000) != 0);
 }
 
-void __cdecl get_far_extent(const Vector3 &normal, const Vector3 &extent, Vector3 *posfarpt)
+inline void __cdecl get_far_extent(const Vector3 &normal, const Vector3 &extent, Vector3 *posfarpt)
 {
 	if (Fast_Is_Float_Positive(normal.X))
 	{
@@ -42,3 +42,11 @@ void __cdecl get_far_extent(const Vector3 &normal, const Vector3 &extent, Vector
 	else
 		posfarpt->Z = -extent.Z;
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitColMathPlaneGetFarExtent@@YAXABVVector3@@0PAV1@@Z present-unmatched
+void bfmeEmitColMathPlaneGetFarExtent(const Vector3 &a, const Vector3 &b, Vector3 *c)
+{
+	get_far_extent(a, b, c);
+}
+#pragma inline_depth()
