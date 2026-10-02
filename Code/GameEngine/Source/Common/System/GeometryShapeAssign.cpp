@@ -30,7 +30,7 @@ struct GeometryShape
 	GeometryShape &operator=(const GeometryShape &other);
 };
 
-GeometryShape &GeometryShape::operator=(const GeometryShape &other)
+inline GeometryShape &GeometryShape::operator=(const GeometryShape &other)
 {
 	m_type = other.m_type;
 	m_height = other.m_height;
@@ -42,3 +42,14 @@ GeometryShape &GeometryShape::operator=(const GeometryShape &other)
 	m_byte21 = other.m_byte21;
 	return *this;
 }
+
+// This operator is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeGeometryShapeAssignInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeGeometryShapeAssignInlineAnchor()
+{
+    GeometryShape *destination = 0;
+    const GeometryShape *source = 0;
+    *destination = *source;
+}
+#pragma inline_depth()
