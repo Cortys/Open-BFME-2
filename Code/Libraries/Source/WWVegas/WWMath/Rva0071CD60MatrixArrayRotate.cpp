@@ -38,3 +38,30 @@ void Rva0071CD60MatrixArrayRotate::rotate_vectors(const Vector3 *in,
 		++out;
 	}
 }
+
+// BFME1 donor at the same revision: game/Libraries/Source/WWVegas/WWMath/
+// rotate_vec3_array_00B00260.cpp. Target 0x0071CEE0 (178B) is a complete
+// cdecl body after 15 int3 bytes, ending in ret before 14 int3 bytes.
+// It guards count <= 0 before the same inlined three-row loop.
+// Independent target loads establish four arguments and row/array strides;
+// the 121B BFME1 body guides semantics. Original target spelling is unproven.
+// Use the public base view instead of the donor downcast. This separate inline
+// context preserves the free body shape; sharing it with the method changes
+// the established 175B method. The static helper has no retail claim.
+// ?bfmeRotateArrayRows absent-from-retail
+static __forceinline void bfmeRotateArrayRows(const Matrix3D &matrix, const Vector3 *in, Vector3 *out, int count)
+{
+ while (count--)
+ {
+  out->X = (matrix[0].X * in->X + matrix[0].Y * in->Y + matrix[0].Z * in->Z);
+  out->Y = (matrix[1].X * in->X + matrix[1].Y * in->Y + matrix[1].Z * in->Z);
+  out->Z = (matrix[2].X * in->X + matrix[2].Y * in->Y + matrix[2].Z * in->Z);
+  ++in;
+  ++out;
+ }
+}
+void rva0071CEE0RotateVec3Array(Vector3 *out, const Vector3 *in, const Matrix3D &matrix, int count)
+{
+ if (count <= 0) return;
+ bfmeRotateArrayRows(matrix, in, out, count);
+}
