@@ -245,3 +245,8 @@ BfmeThingTXA::BfmeThingTXA(const char *filename, int width, int height, int bitc
 		OutputDebugStringA(error);
 	}
 }
+
+// Retail's call sites in this unit's matched rows land on bodies rowed under
+// other spellings at the same addresses (same ABI). Bind the spellings used here.
+#pragma comment(linker, "/alternatename:?bfmeReleaseATXA@@YGXPAX@Z=?ji_0065477e@@YAXXZ")
+#pragma comment(linker, "/alternatename:?bfmeReleaseBTXA@@YGXPAX@Z=?ji_0065478a@@YAXXZ")

@@ -652,3 +652,8 @@ Rva005EC9BA::~Rva005EC9BA()
 {
 	Rva005EC594Clear(m_start, m_finish);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1BfmeVector0022C55B@@QAE@XZ=??1Rva0022CAC4@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1SlowDeathSoundVec@@QAE@XZ=??1Rva0045D137@@QAE@XZ")

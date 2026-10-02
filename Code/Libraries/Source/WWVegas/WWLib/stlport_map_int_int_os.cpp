@@ -65,3 +65,7 @@ IntIntNode * __stdcall Rva003834EFClone(IntIntNode *src)
 // byte for byte; their calls read the tree's matched STL helpers.
 // It also reproduces insert_equal (retail 0x004FF77C), count (retail 0x004FFD7C).
 template class _STL::_Rb_tree<int,_STL::pair<int const ,int>,_STL::_Select1st<_STL::pair<int const ,int> >,_STL::less<int>,_STL::allocator<_STL::pair<int const ,int> > >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeStepBVA@BfmeThingBVA@@QAEXPAV1@@Z=??4?$_Rb_tree@HU?$pair@$$CBHH@_STL@@U?$_Select1st@U?$pair@$$CBHH@_STL@@@2@U?$less@H@2@V?$allocator@U?$pair@$$CBHH@_STL@@@2@@_STL@@QAEAAV01@ABV01@@Z")

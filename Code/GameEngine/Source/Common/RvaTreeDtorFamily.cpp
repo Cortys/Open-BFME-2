@@ -1158,3 +1158,8 @@ Rva0060126D::~Rva0060126D()
 {
 	rva006012C4();
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva002076E7Map@@QAE@XZ=??1Rva00206667@@QAE@XZ")
+#pragma comment(linker, "/alternatename:??1Rva0020779EMap@@QAE@XZ=??1Rva00206706@@QAE@XZ")

@@ -366,3 +366,7 @@ void Matrix3::Re_Orthogonalize(void)
 	Row[2][2] = z.Z;
 }
 
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??4Matrix3@@QAEAAV0@ABVMatrix3D@@@Z=??0Matrix3@@QAE@ABVMatrix3D@@@Z")

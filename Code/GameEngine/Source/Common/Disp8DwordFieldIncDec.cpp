@@ -55,3 +55,7 @@ BFME_DISP8_DWORD_INC(Rva005D1A79DwordCounter, 0x04)
 BFME_DISP8_DWORD_DEC(Rva00552C4EDwordCounter, 0x54)
 BFME_DISP8_DWORD_DEC(Rva004ECDA3DwordCounter, 0x1C)
 BFME_DISP8_DWORD_DEC(Rva00050D14DwordCounter, 0x14)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?attach@NetCommandMsg@@QAEXXZ=?inc@Rva004D55B8DwordCounter@@QAEXXZ")

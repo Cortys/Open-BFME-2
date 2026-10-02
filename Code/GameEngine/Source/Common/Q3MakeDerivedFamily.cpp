@@ -85,3 +85,10 @@ Rva007FBB20Object *Rva007FBB20( void *payload )
 {
 	return new Rva007FBB20Object( payload );
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Gen007E9B40@@YAPAURva007E9D70Cached@@PAURva007E9D70Owner@@@Z=?Rva007E9B40@@YAPAVRva007E9B40Object@@PAX@Z")
+#pragma comment(linker, "/alternatename:?Gen007F2E60@@YAPAURva007E9DF0Cached@@PAURva007E9DF0Owner@@@Z=?Rva007F2E60@@YAPAVRva007F2E60Object@@PAX@Z")
+#pragma comment(linker, "/alternatename:?Gen007F3410@@YAPAURva007E9E30Cached@@PAURva007E9E30Owner@@@Z=?Rva007F3410@@YAPAVRva007F3410Object@@PAX@Z")
+#pragma comment(linker, "/alternatename:?Gen007F40F0@@YAPAURva007E9E70Cached@@PAURva007E9E70Owner@@@Z=?Rva007F40F0@@YAPAVRva007F40F0Object@@PAX@Z")

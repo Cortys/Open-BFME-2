@@ -64,3 +64,7 @@ void ThreadClass::Execute()
     SetThreadPriority(m_handle, m_priority);
     ResumeThread(m_handle);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?stop@Rva006105F0@@QAEXXZ=?Stop@ThreadClass@@QAEXXZ")

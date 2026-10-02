@@ -24,3 +24,7 @@ extern "C" char *strdup(const char *s)
 	memcpy(d, s, n);
 	return d;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:__strdup=_strdup")

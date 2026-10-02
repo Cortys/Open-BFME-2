@@ -107,3 +107,7 @@ void locale::_S_uninitialize()
 }
 
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva00832100Release@_STL@@YAXXZ=??1_Loc_init@ios_base@_STL@@QAE@XZ")
