@@ -5637,3 +5637,5 @@ FUN_0094aed7	0x0054AED7	141	blocked	hand-written __linear_insert with CopyRecord
 ?Rva0010720ESet@@YGXH@Z	0x0010720E	187	blocked	esi-vs-ebx wall plus caps bl-vs-imm plus add20-pops-vs-add28 tried G7 O2 Os literals split t=18 model=muse-10 (stash 0.92 kept)
 ?rva005983EE@Rva005983EE@@QAEPAXPAX@Z	0x005983EE	67	blocked	KeyToBucketMap findSlot needs Slot plus 312 pin types and dup alias ICF wall t=12 model=muse-10
 ?rva004637B7@Rva00463782@@QAEPAPAU_Rb_tree_node_base@_STL@@PAPAU23@PAU23@1PBVRva0046267A@@H@Z	0x004637B7	136	partial	needs 0x4634BA repointed free-YG to thiscall member; retail mov ecx edi before both creates is 4B; unsigned key fixed; this must be edi plus early val preload t=30 model=muse-06 score=0.93 stash=reverse/attempts/0x004637b7.cpp
+?rva0059A01C@Rva0059A01C@@QAE_NPAXPAXPAX@Z	0x0059A01C	311	blocked	thiscall SSE x87 BitFlags distance needs donor push-ebx plus reg-subs plus x87 plus sbb t=35 model=muse-12
+?rva00207557@Rva00207557@@QAEXPBVRva00336C90@@@Z	0x00207557	151	blocked	edx-eax swap for cur-elem plus lea tail address tracking 155 vs 151B t=20 model=muse-12
