@@ -440,10 +440,19 @@ Bool DumbProjectileBehavior::calcFlightPath(Bool recalcNumSegments)
 	targetVector.Y = controlPoints[3].y - controlPoints[0].y;
 	targetVector.Z = controlPoints[3].z - controlPoints[0].z;
 
-	Real targetDistance = targetVector.Length();
+	Real targetDistance = WWMath::Sqrt(
+		targetVector.X * targetVector.X + targetVector.Y * targetVector.Y + targetVector.Z * targetVector.Z);
 	targetVector.Normalize();
-	Vector3 firstPointAlongLine = targetVector * (targetDistance * d->m_firstPercentIndent );
-	Vector3 secondPointAlongLine = targetVector * (targetDistance * d->m_secondPercentIndent );
+	Real firstIndent = targetDistance * d->m_firstPercentIndent;
+	Vector3 firstPointAlongLine;
+	firstPointAlongLine.X = targetVector.X * firstIndent;
+	firstPointAlongLine.Y = targetVector.Y * firstIndent;
+	firstPointAlongLine.Z = targetVector.Z * firstIndent;
+	Real secondIndent = targetDistance * d->m_secondPercentIndent;
+	Vector3 secondPointAlongLine;
+	secondPointAlongLine.X = targetVector.X * secondIndent;
+	secondPointAlongLine.Y = targetVector.Y * secondIndent;
+	secondPointAlongLine.Z = targetVector.Z * secondIndent;
 
 	controlPoints[1].x = firstPointAlongLine.X + controlPoints[0].x;// add world start to offset along the origin based vector
 	controlPoints[1].y = firstPointAlongLine.Y + controlPoints[0].y;
@@ -659,10 +668,17 @@ UpdateSleepTime DumbProjectileBehavior::update()
 
 		  Coord3D prevPos = m_flightPath[m_currentFlightPathStep - 1];
 
-		  Vector3 curDir(flightStep.x - prevPos.x, flightStep.y - prevPos.y, flightStep.z - prevPos.z);
+		  Vector3 curDir;
+		  curDir.X = flightStep.x - prevPos.x;
+		  curDir.Y = flightStep.y - prevPos.y;
+		  curDir.Z = flightStep.z - prevPos.z;
 		  curDir.Normalize();	// buildTransformMatrix wants it this way
       Matrix3D orientMtx;
-		  orientMtx.buildTransformMatrix(Vector3(flightStep.x, flightStep.y, flightStep.z), curDir);
+		  Vector3 flightPosition;
+		  flightPosition.X = flightStep.x;
+		  flightPosition.Y = flightStep.y;
+		  flightPosition.Z = flightStep.z;
+		  orientMtx.buildTransformMatrix(flightPosition, curDir);
 		  getObject()->setTransformMatrix(&orientMtx);
     }
     else // oops! how do we orient the projectile on the zeroeth frame? This didn't matter until we started using the
@@ -672,10 +688,17 @@ UpdateSleepTime DumbProjectileBehavior::update()
 		  Coord3D prevPos = m_flightPath[0];
 		  Coord3D curPos = m_flightPath[1];
 
-		  Vector3 curDir(curPos.x - prevPos.x, curPos.y - prevPos.y, curPos.z - prevPos.z);
+		  Vector3 curDir;
+		  curDir.X = curPos.x - prevPos.x;
+		  curDir.Y = curPos.y - prevPos.y;
+		  curDir.Z = curPos.z - prevPos.z;
 		  curDir.Normalize();	// buildTransformMatrix wants it this way
       Matrix3D orientMtx;
-		  orientMtx.buildTransformMatrix(Vector3(flightStep.x, flightStep.y, flightStep.z), curDir);
+		  Vector3 flightPosition;
+		  flightPosition.X = flightStep.x;
+		  flightPosition.Y = flightStep.y;
+		  flightPosition.Z = flightStep.z;
+		  orientMtx.buildTransformMatrix(flightPosition, curDir);
 		  getObject()->setTransformMatrix(&orientMtx);
     }
 
