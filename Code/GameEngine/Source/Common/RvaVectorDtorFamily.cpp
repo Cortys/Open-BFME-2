@@ -666,6 +666,19 @@ Rva0040BEBA::~Rva0040BEBA()
 	_STL::_Destroy(m_start, m_finish);
 }
 
+struct Rva0040AFF3;
+
+// ??1Rva0040B59F@@QAE@XZ @0x0040B59F 63B -> ??$_Destroy@PAURva0040AFF3@@@_STL@@YAXPAURva0040AFF3@@0@Z
+struct Rva0040B59F : RvaVectorFamilyBase<Rva0040AFF3>
+{
+	~Rva0040B59F();
+};
+
+Rva0040B59F::~Rva0040B59F()
+{
+	_STL::_Destroy(m_start, m_finish);
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??1BfmeVector0022C55B@@QAE@XZ=??1Rva0022CAC4@@QAE@XZ")

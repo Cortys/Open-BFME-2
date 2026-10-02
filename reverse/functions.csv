@@ -47991,3 +47991,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0022DB72@Rva0022DB72@@QAEXPAX@Z,,0x0022DB72,28,Code/GameEngine/Source/Common/Rva0022DB72Free.cpp,matched,chain node delete via rowed 0x0022D1DF plus free caller 0x0022DD3A
 ??1Rva00418298@@UAE@XZ,,0x00418298,59,Code/GameEngine/Source/GameClient/Rva00418298Dtor.cpp,matched,dtor with member 0x0022DC62 base 0x001B4E74 caller 0x0022DFB3
 ??0Rva00221C15@@QAE@ABVAsciiString@@ABVRva00221A58@@PAVINI@@@Z,,0x00221C15,71,Code/GameEngine/Source/Common/Rva00221C15Ctor.cpp,matched,retail bytes caller 0x002222C0 explicit vtable slot
+??1Rva0040B59F@@QAE@XZ,,0x0040B59F,63,Code/GameEngine/Source/Common/RvaVectorDtorFamily.cpp,matched,vector dtor via rowed Destroy Rva0040AFF3
