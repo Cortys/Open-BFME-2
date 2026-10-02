@@ -55,6 +55,7 @@ class OrthoEmissionVelocityModuleTemplate : public CategoryModuleTemplate<4>,
 {
 public:
     OrthoEmissionVelocityModuleTemplate();
+    virtual ~OrthoEmissionVelocityModuleTemplate();
 };
 
 // ??0OrthoEmissionVelocityModuleTemplate@FXParticleSystem@@QAE@XZ
