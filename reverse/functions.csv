@@ -48965,3 +48965,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1Rva005E7C19@@UAE@XZ,,0x005E7C19,61,Code/GameEngine/Source/Common/Bfme/Rva005E7C19Dtor.cpp,matched,chain via 0x005E7855 plus vtable 0x00877F14 plus EH shape as 0x005E7529
 ??1Rva005E7ED7@@UAE@XZ,,0x005E7ED7,22,Code/GameEngine/Source/Common/Bfme/Rva005E7ED7Dtor.cpp,matched,chain via 0x005E7C19 plus secondary vtable plus MI novtable
 ?rva005E7229@Rva005E7229@@QAEPAURva005E71C6Ref@@IPAU2@0@Z,,0x005E7229,45,Code/GameEngine/Source/Common/Bfme/Rva005E7229AllocCopy.cpp,matched,unlock via 0x005E71DE plus allocator plus caller 0x005E80C7
+?rva005E712A@Rva005E7C19@@QAEXH@Z,,0x005E712A,53,Code/GameEngine/Source/Common/Bfme/Rva005E7C19Vslot1.cpp,matched,vslot1 of vtable 0x00877F14 via MessageStreamSubsystem 0x6AE plus two ints
