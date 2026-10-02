@@ -5345,3 +5345,5 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva0029D9F9@Rva0029D9F9@@QAEXPAX@Z	0x0029D9F9	360	blocked	complex 360B SSE/x87/sqrt/virtual-list Rva no proven class offsets 0x98D/0x990-0x9AC need full InGameUI+Drawable+globals t=8 model=muse-02
 ?create@AttackNugget@@UBEPAVObject@@PBV2@PBUCoord3D@@1MI@Z	0x001F0AD4	262	partial	extra xor eax for final return 0 plus mov ebp+C scheduling by 3B; all else exact 264 vs 262 t=20 model=muse-02 score=0.99 stash=reverse/attempts/0x001f0ad4.cpp
 ?rva00564AB8@Rva00564AB8@@QAEXPAVCoord3D@@HH@Z	0x00564AB8	78	blocked	x87 fld-fmul-fstp vs retail SSE movss-mulss; O1 fixes frame but SSE and SSE2 both emit x87 with no shape lever t=12 model=muse-02
+?Rva005F8FA2Copy@@YAXPAURva005F8FA2Dst@@PAURva005F8FA2Src@@H@Z	0x005F8FA2	42	partial	mov edi,[ebp+8] vs mov eax,[ebp+8]+mov edi,eax t=18 model=muse-04 score=0.95 stash=reverse/attempts/0x005f8fa2.cpp
+?rva005F8408@Rva005F8408@@QAEHXZ	0x005F8408	15	blocked	add ecx,0x20 folds to [ecx+0x20] t=14 model=muse-04
