@@ -16,3 +16,12 @@ struct BfmePod128 { int a[32]; };
 typedef _STL::map<int, _STL::vector<BfmePod128> > IntPod128VectorMap;
 
 template class _STL::map<int, _STL::vector<BfmePod128> >;
+
+// Retail 0x0032C58A, 27 bytes: build the map's value pair by value through its
+// (const int &, const vector &) constructor (0x0032BFCB). Rva0033BEF5Make's
+// shape, over this pair; the name keeps the address.
+IntPod128VectorMap::value_type Rva0032C58AMake(const int &key, const _STL::vector<BfmePod128> &value);
+IntPod128VectorMap::value_type Rva0032C58AMake(const int &key, const _STL::vector<BfmePod128> &value)
+{
+	return IntPod128VectorMap::value_type(key, value);
+}

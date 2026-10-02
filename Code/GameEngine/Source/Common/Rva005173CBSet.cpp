@@ -38,3 +38,28 @@ Rva005173CB *Rva005173CB::rva005173CB(const Rva0051732A &arg)
 		++p->m_04;
 	return this;
 }
+
+// ?rva0044BEE6@Rva0044BEE6@@QAEPAU1@ABURva0051732A@@@Z, retail 0x0044BEE6, 45 bytes:
+// the same setter over the rowed Rva0044BDA2 holder constructor (a twin of
+// Rva00517345's that installs its own vtable), the only difference from
+// rva005173CB's bytes.
+struct Rva0044BDA2
+{
+	void *m_vtbl;
+	int m_04;
+	TargetRef00217D4C *m_08;
+	Rva0044BDA2(const Rva0051732A &other);
+};
+struct Rva0044BEE6
+{
+	Rva0044BDA2 *m_ptr;
+	Rva0044BEE6 *rva0044BEE6(const Rva0051732A &arg);
+};
+Rva0044BEE6 *Rva0044BEE6::rva0044BEE6(const Rva0051732A &arg)
+{
+	Rva0044BDA2 *p = new Rva0044BDA2(arg);
+	m_ptr = p;
+	if (p)
+		++p->m_04;
+	return this;
+}
