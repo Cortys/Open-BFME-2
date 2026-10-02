@@ -5524,3 +5524,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ??0Rva0043B1C9Tree@@QAE@XZ	0x0043B69C	25	partial	second lea ebp-2 vs retail ebp-1; two dummies give two leas 25B but second offset off; single dummy CSEs to one lea 22B t=18 model=muse-08 score=0.96 stash=reverse/attempts/0x0043b69c.cpp
 ?Rva00084B18Func@@YAXXZ	0x00084B18	237	blocked	register args in edi esi plus 4 stack pushes but only 2 read; virtual calls at 0xC8 and 0xCC plus SSE sqrt; no standard convention passes this in edi t=10 model=muse-08
 ?rva00508FA8@Rva00508FA8@@QAE_NXZ	0x00508FA8	558	blocked	complex 558B Paralyze SSE/x87 plus AI vtable iteration needs donor t=8 model=muse-15
+?Rva00318DECCopy@@YAPAVRva00318B5C@@PBV1@0PAV1@PAXH@Z	0x00318DEC	60	partial	src cursor base add ecx 8 vs retail 0xc three src displacements off by 4 t=15 model=muse-04 score=0.93 stash=reverse/attempts/0x00318dec.cpp

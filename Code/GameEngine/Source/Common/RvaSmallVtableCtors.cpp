@@ -672,3 +672,22 @@ Rva003E3C22::Rva003E3C22()
 	: m_04(0), m_08(0), m_0C(0), m_10(0)
 {
 }
+
+// ??0Rva0054D593@@QAE@PAX0@Z @0x0054D593 29B, vtable VA 0xc6a778: zero +4,
+// store first arg at +8, vtable, then second arg at +0xC. Two new-placement
+// calls in 0x0054D5D3 pass the outer args through after a 0x10 operator new.
+class Rva0054D593
+{
+public:
+	Rva0054D593(void *a, void *b);
+	virtual ~Rva0054D593() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+};
+
+Rva0054D593::Rva0054D593(void *a, void *b)
+	: m_04(0), m_08(a), m_0C(b)
+{
+}
