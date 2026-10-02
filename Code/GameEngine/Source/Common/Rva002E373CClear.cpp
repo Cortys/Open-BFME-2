@@ -16,13 +16,19 @@ struct Rva002E373CHolder
 {
 	Rva002E373CNode *m_head;
 };
-#define Rva00DBD0F4Holder373C (*(Rva002E373CHolder **)0x00DBD0F4)
+
+struct Rva002E36D5Node;
+extern Rva002E36D5Node *g_00DFF0B8;
+// g_Va00DBD0F4: VA 0x00DBD0F4 (.data); retail stores 0x00DFF0B8, the address
+// of the rowed zero-filled list head g_00DFF0B8.
+Rva002E373CHolder *g_Va00DBD0F4 = (Rva002E373CHolder *)&g_00DFF0B8;
+
 #define Rva00DBD0F0Counter g_Va00DBD0F0
 
 void Rva002E373CClear(void)
 {
-	Rva002E373CNode *head = Rva00DBD0F4Holder373C->m_head;
-	Rva00DBD0F4Holder373C->m_head = 0;
+	Rva002E373CNode *head = g_Va00DBD0F4->m_head;
+	g_Va00DBD0F4->m_head = 0;
 	Rva00DBD0F0Counter = 1;
 	void *toDelete;
 	if (head != 0)
