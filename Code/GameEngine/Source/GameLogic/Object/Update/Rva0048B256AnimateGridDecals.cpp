@@ -1,5 +1,3 @@
-// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ
-// partial score=0.99 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /GX /arch:SSE
 // ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ @0x0048B256 233B: animateGridDecals.
 // Donor Generals/Code/.../DynamicShroudClearingRangeUpdate.cpp animateGridDecals:
@@ -10,6 +8,10 @@
 // Retail uses sin first (x) cos second (y), double sin/cos via ji 0x629216/0x62920A,
 // ftol2, g_Va00BBB8D8 for 1.0f, step 0.20943951f Float-ref. Direct m_object+0x38,
 // no getPosition call. Same class/flags as neighbours.
+// The span doubling is retail `add eax,eax` (03 c0 after mov [ecx+0x28]/sub
+// [ecx+0x24]), not `shl eax,1`. Measured on this toolchain: every direct form
+// (`x*2`, `2*x`, `x+x`, `x<<1`, `x*=2`, unsigned, sizeof(short)) strength-reduces
+// to `d1 e0`; only a copy into a second local followed by `d += v` keeps `03 c0`.
 extern "C" double __cdecl sin(double);
 extern "C" double __cdecl cos(double);
 
@@ -62,13 +64,15 @@ private:
 	float m_currentClearingRange;
 	RadiusDecal m_gridDecal[30];
 };
-// ?rva0048B256@DynamicShroudClearingRangeUpdate@@QAEXXZ present-unmatched
 void DynamicShroudClearingRangeUpdate::rva0048B256()
 {
 	const Coord3D *ctr = (const Coord3D *)((char *)m_object + 0x38);
 	Coord3D pos;
 	pos.z = 0.0f;
-	float radius = m_currentClearingRange + ((m_totalFrames - m_stateCountDown) * 2);
+	int span = m_totalFrames - m_stateCountDown;
+	int doubled = span;
+	doubled += span;
+	float radius = m_currentClearingRange + doubled;
 	float angle = 0.0f;
 	float opacity = g_Va00BBB8D8 - (m_currentClearingRange / m_nativeClearingRange);
 	RadiusDecal *decal = m_gridDecal;
