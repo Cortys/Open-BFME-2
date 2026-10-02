@@ -48445,3 +48445,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ??$__uninitialized_fill_n@PAVRva002E0A0A@@IV1@@_STL@@YAPAVRva002E0A0A@@PAV1@IABV1@ABU__false_type@0@@Z,,0x0052C229,37,Code/Libraries/Source/WWVegas/WWLib/Rva002E0A0AFillN.cpp,matched,stride 28 via Construct 52C1D6 caller 52D184 sibling 564C58
 ?rva005F7161@Rva005F7670@@QAEXXZ,,0x005F7161,60,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,hide UnitNameState via AptCall plus clear flag
 ?rva005F7470@Rva005F772E@@QAEXXZ,,0x005F7470,8,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,forwarder to inner hide via plus4
+?rva005F2FEF@Rva005F2FEF@@QAEXABVUnicodeString@@@Z,,0x005F2FEF,191,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,MemberName show plus cached setter via AptCall
