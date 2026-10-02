@@ -47237,3 +47237,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva002A1111@Rva002A1111@@QAEXW4ObjectID@@@Z,,0x002A1111,71,Code/Libraries/Source/WWVegas/WWLib/Rva002A1111.cpp,matched,add-if-missing list at +0x9c4 via rowed find 0x0029B694 and rowed list push 0x0005548F caller 0x00489F7D
 ??1?$_List_base@UCameraMarker@@V?$allocator@UCameraMarker@@@_STL@@@_STL@@QAE@XZ,,0x002A1BEB,23,Code/Libraries/Source/WWVegas/WWLib/stlport_list_cameramarker_basedtor.cpp,matched,List_base CameraMarker dtor via rowed clear 0x002934A8 and free 0x00030830 same 23B as int 0x004EC395
 ??0Rva005CEA74@@QAE@PBUPayload@0@@Z,,0x005CEA74,30,Code/GameEngine/Source/Common/Rva005CEA74Ctor.cpp,matched,vtable 0x008751D0 at +0 with refcount 0 and 8B payload from caller 0x005CEC76
+??0Rva005CE912@@QAE@HHHHHH@Z,,0x005CE912,44,Code/GameEngine/Source/Common/Rva005CE912.cpp,matched,ctor init six dwords m00-a2 m04-a3 m08-a4 m0C-a5 m10-a6 m14-a1 from caller 0x005CF2FE
