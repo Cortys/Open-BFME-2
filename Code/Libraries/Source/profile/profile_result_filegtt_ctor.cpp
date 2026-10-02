@@ -5,7 +5,7 @@
 // "profile_gtt.dot") is BFME2-new: no Zero Hour donor has it. Its head is
 // the DOT constructor's shape - optional file name with a default, optional
 // frame name defaulting to NULL, integer fold threshold - extended with
-// three zeroed trailing members the GTT WriteResults never reads:
+// three zeroed trailing members:
 //
 //   m_reserved10 = m_reserved14 = m_reserved18 = 0;
 //   if (!fileName) fileName = "profile_gtt.dot";
@@ -19,7 +19,9 @@
 // like its DOT and CSV siblings. ProfileAllocMemory at 0x006C5460 by REL32.
 //
 // The GTT token itself comes from the retail strings and claims no donor
-// provenance; the reserved members' purpose is unknown.
+// provenance. The later-recovered graph walk at 6C7DD0 and visited-edge check
+// at 6C7440 establish an edge array at +10, count at +14 and capacity at +18.
+// This constructor retains its original word-sized initialization view.
 
 extern "C" unsigned int __cdecl strlen(const char *string);
 extern "C" char *__cdecl strcpy(char *destination, const char *source);
