@@ -48420,3 +48420,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005F7670@Rva005F7670@@QAEXABVUnicodeString@@@Z,,0x005F7670,190,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,cached UnitName via compare plus AptCall SetUnitNameState
 ?xfer@ImmortalBody@@MAEXPAVXfer@@@Z,,0x004C20BA,27,Code/GameEngine/Source/GameLogic/Object/Body/ImmortalBodyConstructor.cpp,matched,slot 3 of ImmortalBody BehaviorModule vftable; Zero Hour ImmortalBody.cpp:84-95; Version1 then ActiveBody base xfer
 ?rva005E2439@Rva005E2439@@QAEXXZ,,0x005E2439,39,Code/GameEngine/Source/Common/Rva005E2439.cpp,matched,unlock sibling of 0x005E2460 same table plus virtual slots
+?rva005E2540@Rva005E2439@@QAEXXZ,,0x005E2540,12,Code/GameEngine/Source/Common/Rva005E2439.cpp,matched,chain guard calling 0x005E2439 same class plus caller 0x005E25D9

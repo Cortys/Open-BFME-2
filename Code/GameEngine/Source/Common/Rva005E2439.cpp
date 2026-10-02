@@ -38,6 +38,7 @@ class Rva005E2439
 {
 public:
 	void rva005E2439();
+	void rva005E2540();
 private:
 	char _00[0x08];
 	Rva005E2439Obj *m_08;
@@ -57,4 +58,10 @@ void Rva005E2439::rva005E2439()
 		obj->s6(d);
 	else
 		obj->s5(entry);
+}
+void Rva005E2439::rva005E2540()
+{
+	if (m_20 < 0)
+		return;
+	rva005E2439();
 }
