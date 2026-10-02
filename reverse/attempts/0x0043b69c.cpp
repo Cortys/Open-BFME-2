@@ -1,13 +1,14 @@
 // ??0Rva0043B1C9Tree@@QAE@XZ
-// partial score=0.92 date=2026-09-28
-// ??0Rva0043B1C9Tree@@QAE@XZ
-// partial score=0.92 date=2026-09-28
+// partial score=0.96 date=2026-10-02
+// ??0Rva0043B1C9Tree@@QAE@XZ @0x0043B69C 25B
+// partial score=0.96 date=2026-10-02
 // cl: /O1 /DNDEBUG /MD /EHsc
-// Near-miss ctor for 0x9c-header tree (25B retail, 22B ours): EBP frame, calls
-// rowed rva0043B214 with stack dummy twice, returns this. Ours CSEs the two
-// lea eax,[ebp-1] into one lea+two pushes (22B); retail has lea+push+lea+push
-// (25B). No memory/register diffs. Trivial header handle (no dtor) keeps it
-// EH-free like retail. Same class as rowed 0x43B1C9/0x43B214 siblings.
+// Ctor for 0x9c-header tree (25B retail): EBP frame, calls rowed
+// rva0043B214 with two stack dummies, returns this. Two distinct dummies
+// give lea+push+lea+push 25B like retail but second lea is [ebp-2] vs
+// retail [ebp-1]; single dummy CSEs to one lea+two pushes 22B. Trivial
+// header handle (no dtor) keeps it EH-free like retail. Same class as
+// rowed 0x43B1C9/0x43B214 siblings. Caller 0x0043B6F5.
 namespace _STL
 {
 void __cdecl free(void *block);
@@ -51,6 +52,7 @@ private:
 
 Rva0043B1C9Tree::Rva0043B1C9Tree()
 {
-	char dummy;
-	rva0043B214(&dummy, &dummy);
+	char dummy1;
+	char dummy2;
+	rva0043B214(&dummy1, &dummy2);
 }
