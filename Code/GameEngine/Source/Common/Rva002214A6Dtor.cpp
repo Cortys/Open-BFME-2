@@ -16,8 +16,17 @@ public:
     _STL::set<AsciiString>::iterator m_it;
 };
 
+class Rva002215F4 : public Rva002214A6 {
+public:
+    virtual ~Rva002215F4();
+};
+
 Rva002214A6::~Rva002214A6()
 {
     _STL::map<int, void *, _STL::less<int>, _STL::allocator<_STL::pair<const int, void *> > > *p = Rva002213D9Get();
     ((_STL::set<AsciiString> *)p)->erase(m_it);
+}
+
+Rva002215F4::~Rva002215F4()
+{
 }
