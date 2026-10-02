@@ -7078,3 +7078,4 @@ _D3DXVec3CatmullRom@24,0x0062AFC8,D3DXVec3CatmullRom import thunk rowed as ?ji_0
 ?rva00410997@Rva000427195@@QAEPAXPBX@Z,0x00410997,ICF twin of free NewNode 0x00410997 for table insert call with this; same 12B node and pair copy
 ?rva00410A86@Rva000427195@@QAEPAXPBX@Z,0x00410A86,ICF twin of free NewNode 0x00410A86 for table insert call with this; same 12B node and pair copy
 ?rva00590F13@Rva004D6208@@QAEXVAsciiString@@@Z,0x00590F13,AsciiString setter on Rva004D6208 twin of 0x004D65F9 via caller 0x005922FB
+?createNode@Rva000427195@@QAEPAXPBU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@@Z,0x002CF9DC,ICF twin of stdcall row 0x002CF9DC for table insert call with this; same 12B node and pair copy

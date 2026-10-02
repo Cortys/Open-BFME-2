@@ -1,5 +1,3 @@
-// ?rva002CFB4C@Rva002CFB4C@@QAEPAXPBX@Z
-// partial score=0.97 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /MD
 // stlport
 // ?rva002CFB4C@Rva002CFB4C@@QAEPAXPBX@Z @0x002CFB4C 68B via bucket insert plus create
@@ -17,7 +15,6 @@ public:
 	int bucketIndex(const AsciiString *name);
 	void *createNode(const _STL::pair<const AsciiString, NoCaseTreeValue4> *src);
 };
-void *__stdcall Rva002CF9DCCreate(const _STL::pair<const AsciiString, NoCaseTreeValue4> *src);
 class Rva002CFB4C
 {
 public:
