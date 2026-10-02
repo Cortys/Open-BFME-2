@@ -32,7 +32,7 @@ template SimpleDynVecClass<Vector3>::~SimpleDynVecClass();
 // ?Resize@?$SimpleDynVecClass@VVector3@@@@UAE_NH@Z retail 0x0007E9BA 37B Dyn
 // clamp of ActiveCount to Length after Base Resize. Evidence: chain calls
 // 0x0007E1CF; vslot 1 of 0x007C6F50.
-bool SimpleDynVecClass<Vector3>::Resize(int newsize)
+bool inline SimpleDynVecClass<Vector3>::Resize(int newsize)
 {
 	if (SimpleVecClass<Vector3>::Resize(newsize))
 	{
@@ -46,8 +46,21 @@ bool SimpleDynVecClass<Vector3>::Resize(int newsize)
 // via Base ctor plus ActiveCount 0. Evidence: chain calls 0x0007E3D9;
 // callers at 0x0007EEB5 0x0007FBB0 0x0007FBF1 0x0010070F 0x0010071B
 // 0x0016847E.
-SimpleDynVecClass<Vector3>::SimpleDynVecClass(int size) :
+inline SimpleDynVecClass<Vector3>::SimpleDynVecClass(int size) :
 	SimpleVecClass<Vector3>(size),
 	ActiveCount(0)
 {
 }
+
+// LINK-OWNER anchor: this unit owns the SimpleDynVecClass<Vector3> ctor and
+// Resize rows; other units emit them inline, so the owner must also emit
+// select-any (inline) copies. Qualified calls force emission (Resize is
+// virtual, so a plain call would not emit the copy).
+#pragma inline_depth(0)
+// ?bfmeEmitsimplevec_vector3_dtor@@YAXPAV?$SimpleDynVecClass@VVector3@@@@@Z present-unmatched
+void bfmeEmitsimplevec_vector3_dtor(SimpleDynVecClass<Vector3> *p)
+{
+	p->SimpleDynVecClass<Vector3>::SimpleDynVecClass(0);
+	p->SimpleDynVecClass<Vector3>::Resize(0);
+}
+#pragma inline_depth()
