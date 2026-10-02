@@ -5366,3 +5366,9 @@ _bfmeReload1221	0x0070F710	275	partial	second-loop low in edx not ebx with y in 
 ?rva00498F46@Rva00498DF3@@QAEXPAURva00498DF3Arg@@HH@Z	0x00498F46	100	partial	push ebx early vs late plus pop order t=20 model=muse-03 score=0.96 stash=reverse/attempts/0x00498f46.cpp
 ?copyPlane009AEEE0@@YAXPAURva009AF200Context@@HHH@Z	0x001BF8D0	488	blocked	VP6 single-plane driver with no donor needs unclaimed helpers 0x001BE140 plus 0x001BD670 and dispatch slots plus table reconciliation first spelling 456B with 18 structural regions t=20 model=muse-20
 ?rva0047B628@Rva0047B628@@QAEXHPAX@Z	0x0047B628	76	partial	76B 22 insns exact size only ecx-eax swap plus push esi scheduling t=12 model=muse-20 score=0.93 stash=reverse/attempts/0x0047b628.cpp
+?updateFloatingText@InGameUI@@IAEXXZ	0x0029D0E5	283	blocked	push esi vs push eax for operator delete arg after flag-0 virtual dtor t=18 model=muse-02 (stash 0.99 kept)
+?rva00564743@Rva005646BC@@UAEXXZ	0x00564743	443	blocked	rotation fpu sse scheduling and fxch ja vs jb t=12 model=muse-02 (stash 0.93 kept)
+??0GenericObjectCreationNugget@@QAE@XZ	0x001F0E32	478	blocked	sole diff Rva lea ecx esi+0xB4 at +0x67 vs retail +0xBA t=10 model=muse-02 (stash 0.99 kept)
+?Rva005656AA@@YAXXZ	0x005656AA	29	blocked	caller pushes 5 args but rowed callee 0x00564D06 takes 3; 5-push site cannot bind 3-param row t=15 model=muse-02
+?Rva00565795@@YAXXZ	0x00565795	29	blocked	same 5-push vs 3-param Copy wall as 0x005656AA; cannot bind t=5 model=muse-02
+?Rva00565709@@YAXXZ	0x00565709	29	blocked	same 5-push vs 3-param Copy wall; cannot bind t=5 model=muse-02
