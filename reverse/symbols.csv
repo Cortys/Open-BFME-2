@@ -7172,3 +7172,5 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ??1Rva006E6430@@UAE@XZ,0x006E6430,address-derived complete SEH dtor for the 0xB4-byte class whose scalar deleting dtor is at 0x006CC320; identity unproven
 ?rva0073CC60@Gen_008F7CD0@@QAEXPAUFloatRect0073CE30@@HI@Z,0x0073CC60,address-derived Gen_008F7CD0 rect-updater entry called by the 229B sibling at 0x00739AF0; ghidra boundary 0x0073CC60/96 and a prior attempt measured a 458B true extent; identity unproven
 ?rva0073CE90@Gen_008F7CD0@@QAEXHHHH_NH@Z,0x0073CE90,address-derived Gen_008F7CD0 apply-circle entry called by the 171B sibling at 0x00739D90; immediate follower of the rowed 0x0073CE30 rect updater; identity unproven
+?allocate@?$allocator@VRva002E0A0A@@@_STL@@QBEPAVRva002E0A0A@@IPBX@Z,0x000B4039,Pod40 imul-0x28 same 40B size ICF twin call site 0x0052D145
+?_M_clear@?$vector@VRva002E0A0A@@V?$allocator@VRva002E0A0A@@@_STL@@@_STL@@IAEXXZ,0x005659E8,tidy same thiscall no-args destroy-plus-free call site 0x0052D1AD
