@@ -12,7 +12,7 @@
 // donor (BFME2 adds AffectsUpToLevel). Sole raw caller is the ModuleData
 // factory 0x255B2D which news 0x68.
 
-class CrateCollideModuleData
+class __declspec(novtable) CrateCollideModuleData
 {
 public:
 	CrateCollideModuleData();
@@ -22,11 +22,10 @@ private:
 	unsigned char m_pad[0x5C - 4];
 };
 
-class VeterancyCrateCollideModuleData : public CrateCollideModuleData
+class __declspec(novtable) VeterancyCrateCollideModuleData : public CrateCollideModuleData
 {
 public:
 	VeterancyCrateCollideModuleData();
-	virtual ~VeterancyCrateCollideModuleData();
 
 private:
 	unsigned int m_rangeOfEffect;		// +0x5C
@@ -37,6 +36,7 @@ private:
 
 inline VeterancyCrateCollideModuleData::VeterancyCrateCollideModuleData()
 {
+	*(unsigned int *)this = 0x00BF3AC0;
 	m_rangeOfEffect = 0;
 	m_addsOwnerVeterancy = false;
 	m_isPilot = false;
