@@ -16,5 +16,4 @@ struct BfmePod88
 
 typedef _STL::map<int, _STL::vector<_STL::vector<BfmePod88> > > IntPod88VectorVectorMap;
 
-template _STL::pair<IntPod88VectorVectorMap::iterator, bool> IntPod88VectorVectorMap::insert(const IntPod88VectorVectorMap::value_type &);
-template IntPod88VectorVectorMap::iterator IntPod88VectorVectorMap::insert(IntPod88VectorVectorMap::iterator, const IntPod88VectorVectorMap::value_type &);
+template class _STL::map<int, _STL::vector<_STL::vector<BfmePod88> > >;

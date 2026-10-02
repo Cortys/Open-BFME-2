@@ -15,5 +15,4 @@ struct BfmePod128 { int a[32]; };
 
 typedef _STL::map<int, _STL::vector<BfmePod128> > IntPod128VectorMap;
 
-template _STL::pair<IntPod128VectorMap::iterator, bool> IntPod128VectorMap::insert(const IntPod128VectorMap::value_type &);
-template IntPod128VectorMap::iterator IntPod128VectorMap::insert(IntPod128VectorMap::iterator, const IntPod128VectorMap::value_type &);
+template class _STL::map<int, _STL::vector<BfmePod128> >;
