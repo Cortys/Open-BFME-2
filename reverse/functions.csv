@@ -48870,3 +48870,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??0Rva004209CC@@QAE@XZ,,0x004209AB,33,Code/GameEngine/Source/Common/Rva004209CCCtor.cpp,matched,leaf ctor baseConstruct plus BfmeE16 vector vtable 0x00C3BD40
 ?rva0048C771@FlammableUpdate@@QAEXXZ,,0x0048C771,78,Code/GameEngine/Source/GameLogic/Object/Update/FlammableUpdateRva0048C771.cpp,matched,FlammableUpdate update method via retail evidence
 ??0Rva0048C8C6@@QAE@XZ,,0x0048C8C6,23,Code/GameEngine/Source/GameLogic/Object/Update/Rva0048C8C6Ctor.cpp,matched,leaf ctor int plus empty AsciiString via shared header
+?rva005429D7@Rva005429D7@@QAEPAV1@XZ,,0x005429D7,29,Code/GameEngine/Source/Common/Rva005429D7Clear.cpp,matched,unlock lane clear two 0x80 helpers plus return this
