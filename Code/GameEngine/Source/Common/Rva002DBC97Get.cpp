@@ -5,6 +5,12 @@ extern void *g_00DBD03C;
 extern void *g_00DBD040;
 extern void *g_00DBD044;
 extern void *g_00DBD048;
+// Retail's initialized pointer cells target these UTF-16 strings. Reproduce
+// their contents locally; the literal addresses are not asserted to be shared.
+void *g_00DBD03C = (void *)L".BfME2Campaign";
+void *g_00DBD040 = (void *)L".BfME2Skirmish";
+void *g_00DBD044 = (void *)L".BfME2WotR";
+void *g_00DBD048 = (void *)L".BfME2WotRMP";
 void *__stdcall Rva002DBC97Get(int id)
 {
 	void *r = g_00DBD03C;
