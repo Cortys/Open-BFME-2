@@ -59,26 +59,7 @@
 // and the LineUCoord determines the U coordinate of the texture to use
 // the V coordinate is always 0 at the flat end of the tetrahedron
 // and 1 at the apex
-LineGroupClass::LineGroupClass(void) :
-	StartLineLoc(NULL),
-	EndLineLoc(NULL),
-	LineDiffuse(NULL),
-	TailDiffuse(NULL),
-	ALT(NULL),
-	LineSize(NULL),
-	LineUCoord(NULL),
-	LineCount(0),
-	Texture(NULL),
-	Flags(0),
-	Shader(ShaderClass::_PresetAdditiveSpriteShader),
-	DefaultLineSize(0.0f),
-	DefaultLineColor(1.0f, 1.0f, 1.0f),
-	DefaultLineAlpha(1.0f),		
-	DefaultLineUCoord(0.0f),
-	DefaultTailDiffuse(0.0f, 0.0f, 0.0f, 0.0f),
-	LineMode(TETRAHEDRON)
-{
-}
+// LineGroupClass::LineGroupClass: defined in LineGroupClassDefaultCtor.cpp (its row's unit).
 
 // LineGroupClass::~LineGroupClass: defined in LineGroupClassDestructor.cpp (its row's unit).
 
@@ -143,13 +124,17 @@ int LineGroupClass::Get_Flag(FlagsType flag)
 // ?Set_Texture@LineGroupClass@@ present-unmatched
 void LineGroupClass::Set_Texture(TextureClass* texture)
 {
-	REF_PTR_SET(Texture,texture);
+	// TextureBaseClass::Add_Ref lives in ringobj.cpp (row at 0x000424B6);
+	// inline the WORD increment here so this TU calls but never emits it.
+	if (texture) ++*(unsigned short *)((char *)texture + 4);
+	if (Texture) Texture->Release_Ref();
+	Texture = texture;
 }
 
 // ?Get_Texture@LineGroupClass@@ present-unmatched
 TextureClass * LineGroupClass::Get_Texture(void)
 {
-	if (Texture) Texture->Add_Ref();
+	if (Texture) ++*(unsigned short *)((char *)Texture + 4);
 	return Texture;
 }
 
