@@ -5,6 +5,14 @@
 // upstream WWMath routine (their retail 0x008DA000, 237 bytes), which keeps
 // the helper TU-local exactly as below. BFME2's colmathaabox TU deliberately
 // omits this overload; it belongs here.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "colmath.h"
 #include "colmathinlines.h"

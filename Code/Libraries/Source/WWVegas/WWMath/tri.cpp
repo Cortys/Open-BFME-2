@@ -3,6 +3,14 @@
 // (Libraries/Source/WWVegas/WWMath/tri.cpp). The unused find_dominant_plane_fast
 // path and the #if 0 alternatives inside Contains_Point are omitted; the retained
 // source is reused from Open-BFME-1; ledger rows record BFME2 byte verification.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 #include "rendobj.h"	// the bfmerendobj shim has to win the include guard
 #include "tri.h"
 #include "vector2.h"
