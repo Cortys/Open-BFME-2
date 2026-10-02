@@ -48460,3 +48460,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005F61E4@Rva005F61E4@@QAEXXZ,,0x005F61E4,60,Code/GameEngine/Source/Common/Rva005F61E4.cpp,matched,flag clearer via rowed AptCall with _hide and team level
 ?rva0005B633@Rva00056CF8@@QAEIABVAsciiString@@@Z,,0x0005B633,73,Code/Libraries/Source/WWVegas/WWLib/stlport_asciistring_set_base.cpp,matched,key erase via rowed equal_range distance and rva00057DA0
 ?rva0030BDEE@Rva0030BDEE@@QAEXHHPAUBfmeE8@@@Z,,0x0030BDEE,83,Code/GameEngine/Source/Common/Rva0030BDEE.cpp,matched,chain setter float compare then virtual slot 0x28
+?rva0030BD84@Rva0030BDEE@@QAEXHPBUBfmeE16@@@Z,,0x0030BD84,106,Code/GameEngine/Source/Common/Rva0030BD84.cpp,matched,chain 16byte setter 4float compare then virtual slot 0x28
