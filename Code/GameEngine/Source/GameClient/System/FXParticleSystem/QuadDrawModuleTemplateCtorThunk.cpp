@@ -55,6 +55,7 @@ class QuadDrawModuleTemplate : public CategoryModuleTemplate<6>,
 {
 public:
     QuadDrawModuleTemplate();
+    virtual ~QuadDrawModuleTemplate();
 };
 
 // ??0QuadDrawModuleTemplate@FXParticleSystem@@QAE@XZ
