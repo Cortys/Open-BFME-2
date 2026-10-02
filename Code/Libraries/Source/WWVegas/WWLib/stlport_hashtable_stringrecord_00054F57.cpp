@@ -33,3 +33,7 @@ HashNode00056E8C *__stdcall Rva00056E8CNew(const BfmeStringRecord00054F57 &value
 	_STL::_Construct(&node->m_val, value);
 	return node;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva00056E8C@Rva00058D4A@@QAEPAUHashNode00056E8C@@ABUBfmeStringRecord00054F57@@@Z=?Rva00056E8CNew@@YGPAUHashNode00056E8C@@ABUBfmeStringRecord00054F57@@@Z")

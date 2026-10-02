@@ -43,3 +43,7 @@ void *__stdcall Rva002ACFD6NewNode(const void *src)
 	_STL::_Construct(&node->m_val, *(const NewNodePair *)src);
 	return node;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva002ACFD6@Rva000427195@@QAEPAXPBX@Z=?Rva002ACFD6NewNode@@YGPAXPBX@Z")

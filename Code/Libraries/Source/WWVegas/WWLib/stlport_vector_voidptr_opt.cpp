@@ -12,3 +12,8 @@
 #include <vector>
 
 template class _STL::vector<void *, _STL::allocator<void *> >;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?erase@Glo012F1028EntryList@@QAEPAPAVGlo012F1028Entry@@PAPAV2@0@Z=?erase@?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@QAEPAPAXPAPAX0@Z")
+#pragma comment(linker, "/alternatename:?erase@RvaVector@@QAEPAPAXPAPAX0@Z=?erase@?$vector@PAXV?$allocator@PAX@_STL@@@_STL@@QAEPAPAXPAPAX0@Z")

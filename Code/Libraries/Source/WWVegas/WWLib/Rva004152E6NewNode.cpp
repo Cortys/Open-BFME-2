@@ -44,3 +44,7 @@ void *__stdcall Rva004152E6NewNode(const void *src)
 	((NewNodeConstructFn)&dup_004151EB)(&node->m_val, *(const NewNodePair *)src);
 	return node;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?rva004152E6@Rva000427195@@QAEPAXPBX@Z=?Rva004152E6NewNode@@YGPAXPBX@Z")

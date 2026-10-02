@@ -45,3 +45,8 @@ void bfmeEmitMutexAcquireLock(_STL::_STLP_mutex_base *mutex)
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?_M_acquire_lock@NodeAllocMutex@_STL@@QAEXXZ=?_M_acquire_lock@_STLP_mutex_base@_STL@@QAEXXZ")
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeInitVLY@BfmeRegVLY@@QAEXXZ=?_M_acquire_lock@_STLP_mutex_base@_STL@@QAEXXZ")
+#pragma comment(linker, "/alternatename:?bfmeInitVLZ@BfmeRegVLZ@@QAEXXZ=?_M_acquire_lock@_STLP_mutex_base@_STL@@QAEXXZ")
