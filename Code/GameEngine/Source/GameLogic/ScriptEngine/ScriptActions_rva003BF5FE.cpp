@@ -1,5 +1,3 @@
-// ?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z
-// partial score=0.95 date=2026-10-02
 // cl: /Ireference/shims/bfme2_ascii /O1 /DNDEBUG /MD /EHsc /arch:SSE
 //
 // ?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z @0x003BF5FE 288B.
@@ -74,7 +72,6 @@ extern AI *g_Va009FF0F8;
 extern TerrainLogic *TheTerrainLogic;
 extern float g_Va00BBB8D8;
 
-// ?Rva003BF5FEDo@@YGXABVAsciiString@@H_N@Z present-unmatched
 void __stdcall Rva003BF5FEDo(const AsciiString &teamName, int way, bool which)
 {
 	Team *team = g_Va009FE16C->getTeamNamed((AsciiString &)teamName, false);
@@ -92,9 +89,9 @@ void __stdcall Rva003BF5FEDo(const AsciiString &teamName, int way, bool which)
 	DLINK_ITERATOR<Object> it = team->iterate_TeamMemberList();
 	while (!it.done()) {
 		Object *o = it.cur();
-		float x = o->m_position.x;
-		float y = o->m_position.y;
-		float z = o->m_position.z;
+		float x = *(const volatile float *)&o->m_position.x;
+		float y = *(const volatile float *)&o->m_position.y;
+		float z = *(const volatile float *)&o->m_position.z;
 		sum.x += x;
 		sum.y += y;
 		sum.z += z;
