@@ -31,13 +31,14 @@ public:
 	void rva005F7412();
 	void rva005F72C8();
 	void rva005F7304(int val);
+	void rva005F719D(int val);
 private:
 	char m_pad00[4];
 	void *m_level04;
 	Rva005F7670Team *m_team08;
 	char m_pad0C[0x58 - 0x0C];
 	UnicodeString m_cached58;
-	char m_pad5C[0x60 - 0x5C];
+	int m_buildTime5C;
 	int m_cmdPts60;
 	bool m_shown64;
 	bool m_shown65;
@@ -149,5 +150,31 @@ void Rva005F7670::rva005F7304(int val)
 		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetCommandPointsState", "_show");
 		m_shown66 = true;
+	}
+}
+// ?rva005F719D@Rva005F7670@@QAEXH@Z retail 0x005F719D 299B
+// Evidence: cached int at +0x5C; singular vs plural BuildTime labels via fetch slot 0x3C; set row 0x00037150 vs format row 0x006CB5D0 with +8-or-NullChr; Ascii APT:_level%u.%s_BuildTime row 0x00038150; bfmeSetText pin 0x00225301; AptCall 0x005FB5E6 SetBuildTimeState _show flag +0x65; precedent rva005F7304 CommandPoints
+void Rva005F7670::rva005F719D(int val)
+{
+	if (val != m_buildTime5C) {
+		UnicodeString tmp;
+		if (val >= 0) {
+			if (val == 1) {
+				tmp.set(TheGameText->fetch("STRATEGICHUD:BuildTimeSingularLabel", 0));
+			} else {
+				UnicodeString fetched = TheGameText->fetch("STRATEGICHUD:BuildTimePluralLabel", 0);
+				tmp.format(fetched.str(), val);
+			}
+		}
+		AsciiString key;
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		key.format("APT:_level%u.%s_BuildTime", m_level04, team);
+		((BfmeAptWindowManager *)TheRva00222A8BTarget)->bfmeSetText(key, tmp, false);
+		m_buildTime5C = val;
+	}
+	if (!m_shown65) {
+		const char *team = m_team08 ? m_team08->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level04, team, "SetBuildTimeState", "_show");
+		m_shown65 = true;
 	}
 }
