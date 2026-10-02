@@ -48884,3 +48884,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0026DDED@AIUpdateInterface@@QAEXHW4CommandSourceType@@@Z,,0x0026DDED,78,Code/GameEngine/Source/GameLogic/Object/Update/AIUpdateInterface_rva0026DE3B.cpp,matched,slot60 via iface slot36 plus holder idle plus iface slot32
 ?Rva002E1D22Parse@@YAXPAVINI@@PAX@Z,,0x002E1D22,241,Code/GameEngine/Source/GameLogic/LivingWorld/ParseLivingWorldPlayer.cpp,matched,ParseLivingWorldPlayer via getNextToken plus initFromINI plus lookups plus dedup
 ??0Rva002E1F42@@QAE@XZ,,0x002E1F21,33,Code/GameEngine/Source/Common/Rva002E1F21Ctor.cpp,matched,ctor via baseConstruct plus vtable plus vector base
+?rva005D39EA@Rva005D39EA@@QAEXHH@Z,,0x005D39EA,107,Code/GameEngine/Source/Common/Rva005D39EACpState.cpp,matched,cached ints at +0x28 +0x2c via rowed 0x005D3966 shown-once at +0x31 via SetCPState rowed 0x005FB5E6
