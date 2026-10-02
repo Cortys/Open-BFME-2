@@ -24,12 +24,12 @@ private:
 	int m_quitFrame;
 };
 
-#define FrameDataLength (*(const int *)0x00DD2DB8)
+extern int FRAME_DATA_LENGTH;
 
 void FrameDataManager::reset(void)
 {
 	int frame = 0;
-	if (FrameDataLength > 0)
+	if (FRAME_DATA_LENGTH > 0)
 	{
 		int offset = 0;
 		do
@@ -41,7 +41,7 @@ void FrameDataManager::reset(void)
 			++frame;
 			offset += 0x14;
 		}
-		while (frame < FrameDataLength);
+		while (frame < FRAME_DATA_LENGTH);
 	}
 	m_quitFrame = 0;
 	m_isQuitting = 0;
