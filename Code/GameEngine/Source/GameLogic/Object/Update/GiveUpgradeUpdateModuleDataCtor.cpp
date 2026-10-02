@@ -55,3 +55,8 @@ GiveUpgradeUpdateModuleData::GiveUpgradeUpdateModuleData()
 	m_intD8 = 0;
 	m_flagE0 = false;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Rva0044EB54_virt00@Rva0044EB54@@UAEXXZ=??_GGiveUpgradeUpdateModuleData@@UAEPAXI@Z")

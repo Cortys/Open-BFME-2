@@ -44,3 +44,8 @@ InstantDeathBehaviorModuleData::InstantDeathBehaviorModuleData()
 	: Rva00253510()
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?Rva00253510_virt00@Rva00253510@@UAEXXZ=??_GInstantDeathBehaviorModuleData@@UAEPAXI@Z")
