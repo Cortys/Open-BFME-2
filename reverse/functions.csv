@@ -48163,3 +48163,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva0057FDA1@Rva0057FD6E@@QAE_NXZ,,0x0057FDA1,15,Code/GameEngine/Source/Common/Rva0057FD6EForward.cpp,matched,chain forwards to rowed 0x005AFD2E false on null
 ??1Rva0041988B@@UAE@XZ,,0x0041988B,59,Code/GameEngine/Source/GameClient/Rva0041988BDtor.cpp,matched,dtor vtable 0x007E7778 member 0x0022DF1A base 0x001B4E74 same 59B shape
 ??1Rva004192D1@@UAE@XZ,,0x004192D1,59,Code/GameEngine/Source/GameClient/Rva004192D1Dtor.cpp,matched,dtor vtable 0x007E7740 member 0x0022DEE1 base 0x001B4E74 same 59B shape
+?rva002237C7@Rva00223591@@QAEPAXPBX@Z,,0x002237C7,68,Code/GameEngine/Source/GameClient/Rva002237C7.cpp,matched,same shape as rowed rva00223854 neighbours share layout unblocks 0x0022402A
