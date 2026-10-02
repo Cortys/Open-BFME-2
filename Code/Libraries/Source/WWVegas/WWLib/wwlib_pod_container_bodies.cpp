@@ -12,3 +12,7 @@ inline bool operator==(const BfmePod4 &x, const BfmePod4 &y) { return x.a[0] == 
 inline bool operator!=(const BfmePod4 &x, const BfmePod4 &y) { return x.a[0] != y.a[0]; }
 template class SimpleVecClass<BfmePod4>;
 template class SimpleDynVecClass<BfmePod4>;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Grow@?$SimpleDynVecClass@VVector3@@@@QAE_NH@Z=?Grow@?$SimpleDynVecClass@UBfmePod4@@@@IAE_NH@Z")

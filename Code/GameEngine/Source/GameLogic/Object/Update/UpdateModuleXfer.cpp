@@ -124,3 +124,7 @@ void UpdateModule::xfer(Xfer *xfer)
 	if (xfer->IsLoading())
 		m_indexInLogic |= -1;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?xfer@UpdateModule@@UAEXPAVXfer@@@Z=?xfer@UpdateModule@@QAEXPAVXfer@@@Z")

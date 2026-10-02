@@ -229,3 +229,7 @@ AptNativeHash::Entry *AptNativeHash::rva0070AAA0(Entry *pItem)
     }
     return 0;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?handle@Gen0089C880@@QAEXXZ=?DestroyGCPointers@AptNativeHash@@QAEXXZ")

@@ -1652,3 +1652,7 @@ ModuleData* ModuleInfo::friend_getNthData(Int i)
 	return NULL;
 }
 
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeCallJA@BfmeHookJA@@QAEPAUBfmeSlotJA@@XZ=?getFinalOverride@Overridable@@QBEPBV1@XZ")

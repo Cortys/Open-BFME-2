@@ -26,3 +26,7 @@ int *Rva009ACBA0SetupBounding(Rva009ACBA0Context *ctx, int flimit)
 
 	return bounding;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?Rva009ACBA0SetupBounding@@YAPAHPAURva009ACC40State@@H@Z=?Rva009ACBA0SetupBounding@@YAPAHPAURva009ACBA0Context@@H@Z")
