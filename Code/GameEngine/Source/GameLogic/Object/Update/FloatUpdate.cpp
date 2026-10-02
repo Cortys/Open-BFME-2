@@ -62,28 +62,9 @@
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-FloatUpdateModuleData::FloatUpdateModuleData( void )
-{
-
-	m_enabled = FALSE;
-
-}  // end FloatUpdateModuleData
-
-// ------------------------------------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------------
-/*static*/ void FloatUpdateModuleData::buildFieldParse(MultiIniFieldParse& p)
-{
-
-	UpdateModuleData::buildFieldParse( p );
-
-	static const FieldParse dataFieldParse[] = 
-	{
-		{ "Enabled",	INI::parseBool,	NULL, offsetof( FloatUpdateModuleData, m_enabled ) },
-		{ 0, 0, 0, 0 }
-	};
-	p.add(dataFieldParse);
-
-}  // end buildFieldParse
+// FloatUpdateModuleData ctor and buildFieldParse are owned by
+// FloatUpdateModuleDataCtor.cpp and ModuleDataBuildFieldParse.cpp;
+// declared in GameLogic/Module/FloatUpdate.h.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
