@@ -48947,3 +48947,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ??0Rva00289ABD@@QAE@XZ,,0x00289ABD,263,Code/GameEngine/Source/Common/Rva00289ABDCtor.cpp,matched,ctor via baseConstruct plus vector plus map plus NOTFOUND Rva plus float push plus two Armor maps
 ?rva005328E2@Rva005312BE@@QAEXPAURva005312BERect@@@Z,,0x005328E2,230,Code/GameEngine/Source/Common/Rva005312BEAlloc.cpp,matched,grid alloc rect via rowed siblings caller 0x002E8E8E
 ?rva00532330@Rva00532330@@QAE_NPAG0@Z,,0x00532330,49,Code/GameEngine/Source/Common/Rva00532330Pop.cpp,matched,pop two WORDs via barrier callers 0x00533000 0x00533049
+?rva002150CE@Rva002150CE@@QAEPAV1@XZ,,0x002150CE,51,Code/GameEngine/Source/Common/Rva002150CEClear.cpp,matched,leaf reset via return-this plus SSE zeros plus extern-free
