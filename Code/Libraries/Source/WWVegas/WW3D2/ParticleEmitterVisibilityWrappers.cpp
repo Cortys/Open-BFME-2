@@ -81,10 +81,22 @@ void ParticleEmitterClass::Set_Visible(int onoff, int sceneToken)
 	Update_On_Visibilty();
 }
 
-void ParticleEmitterClass::Set_Force_Visible(int onoff)
+inline void ParticleEmitterClass::Set_Force_Visible(int onoff)
 {
 	RenderObjClass::Set_Force_Visible(onoff);
 	Update_On_Visibilty();
 }
 
 #undef BFME_VIRTUAL_EIGHT
+
+// Set_Force_Visible is a header inline in retail: other units emit select-any
+// copies, so a strong definition here was a duplicate in the linked build.
+// This anchor only makes this unit emit its copy for the ledger row; it is not
+// retail code. Qualified call so the virtual dispatch does not hide the copy.
+#pragma inline_depth(0)
+// ?bfmeEmitParticleEmitterVisibilityWrappers@@YAXPAVParticleEmitterClass@@@Z present-unmatched
+void bfmeEmitParticleEmitterVisibilityWrappers(ParticleEmitterClass *p)
+{
+	p->ParticleEmitterClass::Set_Force_Visible(0);
+}
+#pragma inline_depth()
