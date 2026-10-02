@@ -1,4 +1,4 @@
-// cl: /O1 /DNDEBUG /MD /EHsc
+// cl: /O1 /arch:SSE /DNDEBUG /MD /EHsc
 // ?rva00535CE4@UserPreferences@@QAEHVAsciiString@@@Z @0x00535CE4 74B
 // UserPreferences Losses path: append Losses to by-value AsciiString, slot6 virtual
 // with (arg, 0), return its int, EH dtor via releaseBuffer.
@@ -167,8 +167,11 @@ class UnicodeString
 {
 public:
 	UnicodeString() {}
-	UnicodeString(const UnicodeString &that);
+	// Inline, as retail's by-value returns call the StringBase<WideChar> copy
+	// constructor (0x00037050) directly.
+	UnicodeString(const UnicodeString &that) : m_data(that.m_data) {}
 	__forceinline ~UnicodeString() { m_data.releaseBuffer(); }
+	void __cdecl format(const UnicodeString *fmt, ...);
 private:
 	StringBase<WideChar> m_data;
 };
@@ -188,6 +191,32 @@ struct SYSTEMTIME
 extern "C" __declspec(dllimport) void __stdcall GetLocalTime(SYSTEMTIME *st);
 
 UnicodeString Rva002DBFAD(SYSTEMTIME st);
+
+// TheGameText (VA 0xdff0bc). Slot 0x44 follows the by-value fetch overloads at
+// 0x3C/0x40 and returns the label's string by pointer; its name is not proven.
+class GameTextInterface
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual const UnicodeString *slot44(const char *label, bool *exists);
+};
+extern GameTextInterface *TheGameText;
 
 class UserPreferences
 {
@@ -214,6 +243,9 @@ public:
 	int rva0053700F();
 	int rva005370D2();
 	AsciiString rva00537261();
+	void rva00537058(int bits);
+	void rva0053711B(AsciiString arg, int x, int value);
+	UnicodeString rva00535B32(float seconds);
 	void rva0053587C(AsciiString arg, int x);
 	void rva00535BAF(AsciiString arg, int x);
 	void rva00535C9D(AsciiString arg, int x);
@@ -1021,4 +1053,43 @@ AsciiString UserPreferences::rva00537261()
 {
 	AsciiString tmp("LastHouse");
 	return v8(tmp, AsciiString::TheEmptyString);
+}
+
+// ?rva00537058@UserPreferences@@QAEXH@Z @0x00537058 122B
+// UserPreferences Honors-or path: read Honors (slot 0x18, default 0), OR the argument
+// in and write it back (slot 0x2C); both keys are the one pooled literal, held in ebx.
+void UserPreferences::rva00537058(int bits)
+{
+	int honors;
+	{
+		AsciiString tmp("Honors");
+		honors = v6(tmp, 0);
+	}
+	AsciiString tmp("Honors");
+	v11(tmp, honors | bits);
+}
+
+// ?rva0053711B@UserPreferences@@QAEXVAsciiString@@HH@Z @0x0053711B 117B
+// UserPreferences indexed setter: format "%s_%d" from the by-value key and index and
+// store the value (slot 0x2C); the setter twin of the getter at 0x00537190, ret 0xC.
+void UserPreferences::rva0053711B(AsciiString arg, int x, int value)
+{
+	AsciiString tmp;
+	const char *base = *(const char **)&arg;
+	const char *s = base ? base + 8 : "";
+	tmp.format("%s_%d", s, x);
+	v11(tmp, value);
+}
+
+// ?rva00535B32@UserPreferences@@QAE?AVUnicodeString@@M@Z @0x00535B32 125B
+// UserPreferences time-played text: whole hours of the float seconds, formatted as
+// days and hours through the "Apt:TimePlayed" string. Evidence: cvttss2si, idiv by
+// 60, 60 and 24, TheGameText slot 0x44, UnicodeString::format(const UnicodeString *)
+// 0x006CB660, wide copy 0x00037050 into the hidden return, ret 8. `this` is unused.
+UnicodeString UserPreferences::rva00535B32(float seconds)
+{
+	UnicodeString text;
+	int hours = (int)seconds / 60 / 60;
+	text.format(TheGameText->slot44("Apt:TimePlayed", 0), hours / 24, hours % 24);
+	return text;
 }
