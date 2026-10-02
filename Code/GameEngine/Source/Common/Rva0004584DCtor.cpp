@@ -93,3 +93,8 @@ bool Rva002FDF47::rva00261102(Object *obj)
 	const BitFlags<69> &mask2 = *(const BitFlags<69> *)&m_08;
 	return !obj->isAnyKindOf(mask2);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?dummy@Rva0004584D@@UAEXXZ=?rva00395A19@Rva00395A19@@QAEPAXI@Z")
