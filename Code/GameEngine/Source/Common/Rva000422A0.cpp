@@ -11,7 +11,7 @@ double __cdecl Rva000422A0Atan2(float y, float x)
 	return atan2(y, x);
 }
 
-extern "C" float __cdecl atan2f(float y, float x)
+extern "C" inline float __cdecl atan2f(float y, float x)
 {
 	return Rva000422A0Atan2(y, x);
 }
@@ -22,3 +22,13 @@ double __cdecl Rva000422BBCeil(float x)
 {
 	return ceil(x);
 }
+
+// LINK-OWNER anchor: this unit owns atan2f; other units emit it inline, so the
+// owner must also emit a select-any (inline) copy.
+#pragma inline_depth(0)
+// ?bfmeEmitRva000422A0@@YAXXZ present-unmatched
+void bfmeEmitRva000422A0()
+{
+	atan2f(0, 0);
+}
+#pragma inline_depth()
