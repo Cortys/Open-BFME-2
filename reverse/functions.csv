@@ -47470,3 +47470,20 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Anim2D@@MAE@XZ,,0x002D6E08,30,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,ZH donor dtor via unRegisterAnimation caller 0x002D73D0 Snapshot base
 ??0Rva002D6C02@@QAE@XZ,,0x002D6C02,26,Code/GameEngine/Source/GameClient/System/Rva002D6C02Ctor.cpp,matched,baseConstruct pattern from Rva0026201C caller 0x0023A30B neighbours Anim2D
 ?rva00355DDD@Rva003560ED@@QAEXXZ,,0x00355DDD,23,Code/GameEngine/Source/Common/Rva00355DDDMethod.cpp,matched,vslot 3 of 0x00814EA4 via TheDisplay slot68 plus clear plus8
+??0Rva000ABD56@@QAE@PAX@Z,,0x000ABD56,18,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva005CB22A except the vtable VA 0xbc957c
+??0Rva00222A19@@QAE@PAX@Z,,0x00222A19,18,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva005CB22A except the vtable VA 0xbe6d5c
+??0Rva00040ECE@@QAE@XZ,,0x00040ECE,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbc16b8
+??0Rva000421C8@@QAE@XZ,,0x000421C8,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbc26e0
+??0Rva000657D9@@QAE@XZ,,0x000657D9,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbc5c6c
+??0Rva0007DF07@@QAE@XZ,,0x0007DF07,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbc6f20
+??0Rva000A882D@@QAE@XZ,,0x000A882D,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbc93a0
+??0Rva000FBA4A@@QAE@XZ,,0x000FBA4A,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbcf364
+??0Rva00217497@@QAE@XZ,,0x00217497,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbe5aa8
+??0Rva002390F8@@QAE@XZ,,0x002390F8,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbed684
+??0Rva0026FFB1@@QAE@XZ,,0x0026FFB1,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xbfad1c
+??0Rva0030D346@@QAE@XZ,,0x0030D346,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc089ec
+??0Rva003E3C0C@@QAE@XZ,,0x003E3C0C,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc35b28
+??0Rva0048B664@@QAE@XZ,,0x0048B664,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc4bf78
+??0Rva004B236E@@QAE@XZ,,0x004B236E,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc56930
+??0Rva0051489D@@QAE@XZ,,0x0051489D,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc65ee0
+??0Rva0052510C@@QAE@XZ,,0x0052510C,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc67e50
