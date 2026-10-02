@@ -28,13 +28,11 @@ struct Rva0088E100Context
 	RvaHandle snapshot;
 };
 
-struct BfmeCsDWA
-{
-	unsigned char m_bfmeHead[0x18];
-};
-
-// g_bfmeCsDWC: matched references place it at VA 0xde0884 (zero-filled; a plain-data view).
-BfmeCsDWA g_bfmeCsDWC;
+// Both this body and Debug_CrashDone reference the native lock at VA
+// 0x00DE0884. Reuse that storage and its declared type; a second typed
+// definition would allocate a separate lock in the linked image.
+struct DebugCriticalSection;
+extern DebugCriticalSection g_bfmeCsDWC;
 
 // The dialog procedure (retail 0x0003D6A0), matched in AssertCrashDialogProc.cpp.
 int __stdcall AssertCrashDialogProc(void *hWnd, unsigned int uMsg, unsigned int wParam, long lParam);
@@ -47,8 +45,8 @@ extern "C"
 	__declspec(dllimport) RvaDword __stdcall GetCurrentThreadId(void);
 	__declspec(dllimport) RvaDword __stdcall SuspendThread(RvaHandle thread);
 	__declspec(dllimport) int __stdcall GetExitCodeThread(RvaHandle thread, RvaDword *exitCode);
-	__declspec(dllimport) void __stdcall EnterCriticalSection(BfmeCsDWA *lock);
-	__declspec(dllimport) void __stdcall LeaveCriticalSection(BfmeCsDWA *lock);
+	__declspec(dllimport) void __stdcall EnterCriticalSection(DebugCriticalSection *lock);
+	__declspec(dllimport) void __stdcall LeaveCriticalSection(DebugCriticalSection *lock);
 	__declspec(dllimport) RvaHandle __stdcall CreateThread(void *security, RvaDword stackSize,
 		RvaDword(__stdcall *start)(void *), void *parameter, RvaDword flags, RvaDword *threadId);
 	__declspec(dllimport) unsigned int __stdcall SetTimer(void *hWnd, unsigned int id,
