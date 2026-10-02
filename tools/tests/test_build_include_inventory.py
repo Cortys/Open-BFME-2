@@ -63,6 +63,42 @@ def test_split_include_flags_are_in_the_same_search_inventory(tmp_path, monkeypa
     assert build.search_inventory(source, split, env) == build.search_inventory(source, command, env)
 
 
+def test_parent_include_uses_wine_casing_and_keeps_shadow_invalidation(tmp_path, monkeypatch):
+    source, output, _, original, command, env = _fixture(tmp_path, monkeypatch)
+    # Like wwdebug.h's ../../../../gameengine/include/common/debug.h: the
+    # actual GameEngine/Include/Common directories have different casing.
+    source.write_text('#include "../inputs/reference/original/common/MessageStream.h"\n')
+    inventory = build.search_inventory(source, command, env)
+    build._write_deps_sidecar(source, output, "command",
+                              "Note: including file: " + str(original), True,
+                              command, env, inventory, [])
+    assert _census_grade(output)
+    assert build.compile_is_current(source, output, strict=True)
+
+    # A newly created exact-spelling directory can change Wine's choice even
+    # though the previously opened header's contents have not changed.
+    shadow = original.parent.parent / "common" / original.name
+    shadow.parent.mkdir()
+    shadow.write_text("#define PACKET_RANGE 7\n")
+    assert original.read_text() == "#define PACKET_RANGE 6\n"
+    assert not build.compile_is_current(source, output, strict=True)
+
+
+def test_case_insensitive_parent_include_outside_inventory_still_refuses(tmp_path, monkeypatch):
+    source, output, _, original, command, env = _fixture(tmp_path, monkeypatch)
+    outside = build.ROOT / "Outside" / "Header.h"
+    outside.parent.mkdir()
+    outside.write_text("#define OUTSIDE 1\n")
+    source.write_text('#include "../outside/Header.h"\n')
+    inventory = build.search_inventory(source, command, env)
+    build._write_deps_sidecar(source, output, "command",
+                              "Note: including file: " + str(original) + "\n"
+                              "Note: including file: " + str(outside), True,
+                              command, env, inventory, [])
+    assert not _census_grade(output)
+    assert not build.compile_is_current(source, output, strict=True)
+
+
 def test_source_adjacent_header_invalidates_old_object(tmp_path, monkeypatch):
     source, output, _, _, _, _ = _fixture(tmp_path, monkeypatch)
     assert build.compile_is_current(source, output, strict=True)

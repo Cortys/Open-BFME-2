@@ -997,7 +997,14 @@ def _include_escapes_search_roots(path, stlport, roots=None, anchored=None):
             found = False
             for candidate in candidates:
                 try:
-                    target = candidate.resolve(strict=True)
+                    # cl under Wine resolves every path component without
+                    # regard to case, including literal ../ includes. Keep
+                    # the existing coverage check after resolving its spelling:
+                    # an include outside the inventoried roots still refuses.
+                    spelling = _case_resolve(str(candidate))
+                    if spelling is None:
+                        continue
+                    target = Path(spelling).resolve(strict=True)
                 except (OSError, RuntimeError):
                     continue
                 if not target.is_file():
