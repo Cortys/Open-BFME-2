@@ -30,6 +30,7 @@ public:
 	void rva005F2897();
 	void rva005F2953();
 	void rva005F298F();
+	void rva005F29CB();
 private:
 	char m_pad00[8];
 	void *m_level08;
@@ -89,6 +90,15 @@ void Rva005F2FEF::rva005F298F()
 		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
 		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetMemberRankProgressBarState", "_hide");
 		m_flags58 &= ~4;
+	}
+}
+
+void Rva005F2FEF::rva005F29CB()
+{
+	if (m_flags58 & 8) {
+		const char *team = m_team0C ? m_team0C->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level08, team, "SetCommandPointsState", "_hide");
+		m_flags58 &= ~8;
 	}
 }
 

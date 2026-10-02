@@ -48503,3 +48503,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005F2A3A@Rva005F2A32@@QAEXXZ,,0x005F2A3A,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder to Rank hide via plus4 same caller
 ?rva005F298F@Rva005F2FEF@@QAEXXZ,,0x005F298F,60,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,hide MemberRankProgressBarState via AptCall plus clear flag bit2
 ?rva005F2A42@Rva005F2A32@@QAEXXZ,,0x005F2A42,8,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,forwarder to RankProgressBar hide via plus4 same caller
+?rva005F29CB@Rva005F2FEF@@QAEXXZ,,0x005F29CB,60,Code/GameEngine/Source/Common/Rva005F2FEFApt.cpp,matched,hide CommandPointsState via AptCall plus clear flag bit3
