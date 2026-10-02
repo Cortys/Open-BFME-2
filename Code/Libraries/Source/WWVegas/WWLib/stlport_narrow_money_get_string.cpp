@@ -98,7 +98,7 @@ public:
     locale::facet **_M_facets;
     unsigned int _M_count;
 };
-locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
+inline locale::~locale() _STLP_NOTHROW { _M_impl->_M_decr(); }
 
 }
 // Keep the vendor _M_getc body visible for MSVC's side-effect analysis while
@@ -137,7 +137,7 @@ template <> char* basic_string<char>::insert(char*, char);
 namespace _STL {
 typedef istreambuf_iterator<char, char_traits<char> > _MoneyIn;
 
-template <> __declspec(noinline) pair<_MoneyIn, bool> __get_string(_MoneyIn first, _MoneyIn last, const char* start, const char* end) {
+template <> inline __declspec(noinline) pair<_MoneyIn, bool> __get_string(_MoneyIn first, _MoneyIn last, const char* start, const char* end) {
   pair<_MoneyIn, const char*> result = mismatch(first, last, start);
   return make_pair(result.first, result.second == end);
 }
