@@ -4,6 +4,8 @@
 // Rva0027D88E (void*,float,float,float) as ints to avoid x87 shuffling
 // and keep the tail jmp. Same manager as Rva00306769Forward.
 // Caller 0x545140.
+extern class G00DFF080Obj *g_00DFF080;
+
 class Rva009FF080Manager0027D3CB
 {
 public:
@@ -42,7 +44,7 @@ public:
 	virtual void _slot32(void *water, int a, int b, int c);
 };
 
-#define TheRva009FF080Manager0027D3CB (*(Rva009FF080Manager0027D3CB **)0x00DFF080)
+#define TheRva009FF080Manager0027D3CB (*(Rva009FF080Manager0027D3CB **)&g_00DFF080)
 
 void __stdcall Rva0027D3CBForward(void *water, int a, int b, int c)
 {

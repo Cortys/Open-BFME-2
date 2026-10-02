@@ -6,7 +6,9 @@
 // slot 0x38. Outer ret 0x0C. Sibling of 0x0026228F (slot 0x34). Honest
 // address-derived owner and name; slot identity unproven. No named callees.
 
-#define Gbl00BBB8E0 (*(const float *)0x00BBB8E0)
+extern float g_Va00BBB8E0;
+
+#define Gbl00BBB8E0 g_Va00BBB8E0
 
 class Rva00262271
 {

@@ -7,6 +7,8 @@
 // setGoalPosition with FLT_MAX 0x00BBB8E0 then store int at +0x48
 // then setState 0x48 via slot 0x20. Callees rowed 0x004D745C.
 
+extern float g_Va00BBB8E0;
+
 struct Coord3D
 {
 	float x;
@@ -47,7 +49,7 @@ public:
 };
 
 #define Gbl00BC6254 (*(const float *)0x00BC6254)
-#define Gbl00BBB8E0 (*(const float *)0x00BBB8E0)
+#define Gbl00BBB8E0 g_Va00BBB8E0
 
 class AIUpdateInterface
 {

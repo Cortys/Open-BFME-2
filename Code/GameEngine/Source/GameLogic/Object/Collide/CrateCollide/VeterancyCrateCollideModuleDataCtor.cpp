@@ -12,6 +12,9 @@
 // donor (BFME2 adds AffectsUpToLevel). Sole raw caller is the ModuleData
 // factory 0x255B2D which news 0x68.
 
+extern "C" const void *const vtbl_00BF3AC0[];  // ??_7MoneyCrateCollideModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BF3AC0=??_7MoneyCrateCollideModuleData@@6B@")
+
 class __declspec(novtable) CrateCollideModuleData
 {
 public:
@@ -36,7 +39,7 @@ private:
 
 inline VeterancyCrateCollideModuleData::VeterancyCrateCollideModuleData()
 {
-	*(unsigned int *)this = 0x00BF3AC0;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BF3AC0);
 	m_rangeOfEffect = 0;
 	m_addsOwnerVeterancy = false;
 	m_isPilot = false;

@@ -3,6 +3,8 @@
 // Free __stdcall null-guarded forwarder via global 0x009FF080 to slot16 (0x40)
 // with (void*, float, int). Callers 0x4C3B6C/0x4C4A03. Same manager family as
 // Rva0027D3CBForward/Rva00306769Forward. No donor: honest address name.
+extern class G00DFF080Obj *g_00DFF080;
+
 class Rva009FF080Manager0027D1A4
 {
 public:
@@ -41,7 +43,7 @@ public:
 	virtual void _slot32();
 };
 
-#define TheRva009FF080Manager0027D1A4 (*(Rva009FF080Manager0027D1A4 **)0x00DFF080)
+#define TheRva009FF080Manager0027D1A4 (*(Rva009FF080Manager0027D1A4 **)&g_00DFF080)
 
 void __stdcall Rva0027D1A4Forward(void *a, float b, int c)
 {

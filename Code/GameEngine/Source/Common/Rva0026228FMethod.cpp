@@ -6,7 +6,9 @@
 // Outer ret 8. Honest address-derived owner and name; slot identity unproven.
 // No direct named callees.
 
-#define Gbl00BBB8E0 (*(const float *)0x00BBB8E0)
+extern float g_Va00BBB8E0;
+
+#define Gbl00BBB8E0 g_Va00BBB8E0
 
 class Rva0026228F
 {
