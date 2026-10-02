@@ -107,3 +107,7 @@ BFME_DISP8_DWORD_GETTER(Rva0040CA36DwordField, 0x24)
 BFME_DISP8_DWORD_GETTER(Rva004E062EDwordField, 0x40)
 BFME_DISP8_DWORD_GETTER(Rva004E063BDwordField, 0x44)
 BFME_DISP8_NEG_DWORD_GETTER(Rva00464825DwordField, -6)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeGet992C@BfmeAsk992@@QAEHXZ=?get@Rva0066DD00DwordField@@QBEHXZ")

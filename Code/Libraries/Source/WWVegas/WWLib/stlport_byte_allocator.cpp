@@ -14,3 +14,7 @@ char *_STL::allocator<char>::allocate(unsigned int n, const void *hint)
     const void *hintCopy = hint;
     return (char *)__gameMemAllocatePtr(bytes, 3, hintCopy);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?allocate@BucketAlloc@@SAPAXIPBX@Z=?allocate@?$allocator@D@_STL@@SAPADIPBX@Z")

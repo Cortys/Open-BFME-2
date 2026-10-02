@@ -21,3 +21,7 @@ int Rva0028D8EB::rva0028D8EB(int bit)
 {
 	return Rva001E4426Test(m_bits, bit);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?hasSpecialPower@Object@@QBE_NW4SpecialPowerType@@@Z=?rva0028D8EB@Rva0028D8EB@@QAEHH@Z")
