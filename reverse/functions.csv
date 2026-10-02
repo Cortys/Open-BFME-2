@@ -47694,3 +47694,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva0022E1BC@@QAE@XZ,,0x0022E1BC,53,Code/GameEngine/Source/Common/Rva0022E1BCDtor.cpp,matched,nonvirtual dtor vector at +0x0C plus base member via deleting-dtor caller 0x0022E1A0
 ??_GRva0022E1BC@@QAEPAXI@Z,,0x0022E1A0,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022E1BC.cpp,matched,chain via rowed dtor 0x0022E1BC plus rowed delete 0x0002FD60
 ?_M_insert_overflow@?$vector@VRva0040AEE3@@V?$allocator@VRva0040AEE3@@@_STL@@@_STL@@IAEXPAVRva0040AEE3@@ABV3@ABU__false_type@2@I_N@Z,,0x0040B834,180,Code/Libraries/Source/WWVegas/WWLib/stlport_vector_Rva0040AEE3_overflow.cpp,matched,calls rowed Construct Fill destroy allocate copy via caller pushback path
+?update@CountUpTransition@@UAEXH@Z,,0x0035F896,337,Code/GameEngine/Source/GameClient/GUI/CountUpTransitionUpdate.cpp,matched,vslot slot2 donor BFME1 update with winHide SetText format rows
