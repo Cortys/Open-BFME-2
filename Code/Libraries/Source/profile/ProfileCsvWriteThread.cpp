@@ -19,6 +19,7 @@
 // cl: /MD /Oi /Ireference/open-bfme-1/inputs/reference/CnC_Generals_Zero_Hour/GeneralsMD/Code/Libraries/Source/profile
 #include "profile.h"
 #include "profile_funclevel.h"
+#include "profile_highlevel.h"
 #include <stdio.h>
 #include <string.h>
 #include "profile_result.h"
@@ -126,3 +127,59 @@ void ProfileResultFileCSV::WriteThread(ProfileFuncLevel::Thread &thread)
     }
     fclose(f);
 }
+
+// CSV vtable 0x00CE85E4 slot 0 calls native 6C7A60. The body ends in a
+// return at 6C7C49 followed by padding. With an explicit filename, retail
+// chooses the thread with the most IDs and writes only that thread; otherwise
+// it writes every thread and the high-level summary, using comma separators.
+void ProfileResultFileCSV::WriteResults()
+{
+    if (m_fileName)
+    {
+        ProfileFuncLevel::Thread t;
+        unsigned best=0;
+        unsigned bestCount=0;
+        for (unsigned k=0;ProfileFuncLevel::EnumThreads(k,t);k++)
+        {
+            ProfileFuncLevel::Id id;
+            unsigned count=0;
+            while (t.EnumProfile(count,id)) count++;
+            if (count > bestCount)
+            {
+                bestCount=count;
+                best=k;
+            }
+        }
+        ProfileFuncLevel::EnumThreads(best,t);
+        WriteThread(t);
+        return;
+    }
+    ProfileFuncLevel::Thread t;
+    for (unsigned k=0;ProfileFuncLevel::EnumThreads(k,t);k++)
+        WriteThread(t);
+    FILE *f=fopen("profile-high.csv","wt");
+    if (!f) return;
+    fprintf(f,"Profile,Unit,total");
+    for (k=0;k<Profile::GetFrameCount();k++)
+        fprintf(f,",%s",Profile::GetFrameName(k));
+    fprintf(f,"\n");
+    {
+        ProfileHighLevel::Id id;
+        for (k=0;ProfileHighLevel::EnumProfile(k,id);k++)
+        {
+            fprintf(f,"%s,%s,%s",id.GetName(),id.GetUnit(),id.GetTotalValue());
+            for (unsigned i=0;i<Profile::GetFrameCount();i++)
+            {
+                const char *p=id.GetValue(i);
+                fprintf(f,",%s",p?p:"");
+            }
+            fprintf(f,"\n");
+        }
+    }
+    fclose(f);
+}
+
+// Native folded/still-address-named providers have the same return and cleanup
+// ABI as these donor spellings; bind the named calls to their kept definitions.
+#pragma comment(linker, "/alternatename:?EnumThreads@ProfileFuncLevel@@SA_NIAAVThread@1@@Z=?Rva0073B660False@@YA_NPAXH@Z")
+#pragma comment(linker, "/alternatename:?GetTotalValue@Id@ProfileHighLevel@@QBEPBDXZ=?Rva006C64E0Get@Id@ProfileHighLevel@@QBEPBDXZ")
