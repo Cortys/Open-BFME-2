@@ -48929,3 +48929,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?GetColor@SubTitleManager@@QAEIH@Z,,0x000469CB,92,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string GetColor plus caller 0x000480AB plus siblings
 ?rva005FF267@Rva005FF267@@QAEXH@Z,,0x005FF267,69,Code/GameEngine/Source/Common/Rva005FF267SetState.cpp,matched,chain via 0x0050E9FE AptCall SetState team prefix empty fallback state table
 ?rva005FF38D@Rva005FF38D@@QAEX_N@Z,,0x005FF38D,92,Code/GameEngine/Source/Common/Rva005FF38DOverlay.cpp,matched,chain via 0x0050E9FE AptCall SetSelectionOverlayState guarded overlay
+?rva005FF328@Rva005FF328@@QAEX_N@Z,,0x005FF328,101,Code/GameEngine/Source/Common/Rva005FF328Overlay.cpp,matched,chain via 0x0050E9FE AptCall SetSelectionOverlayState show over hide
