@@ -2,7 +2,10 @@
 // STLport 4.5.3 Win32 locale helper: rewrites a GetLocaleInfoA date picture (dd, MMM, yyyy) as
 // a strftime format in a static buffer. Called by _Locale_d_fmt and _Locale_long_d_fmt.
 
-extern char locale_buffer_0084DE40[];
+// Retail DIR32 operands place the separate output buffer at VA 0x00DDF0C8.
+// Its original declared capacity is unknown. Linked storage covers three
+// output characters per byte of the callers' 0x104-byte locale request.
+char locale_buffer_0084DE40[3 * 0x104 + 1];
 
 char *Rva0084DE40Tail(char *format)
 {
