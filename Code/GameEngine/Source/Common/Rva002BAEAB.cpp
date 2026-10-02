@@ -11,6 +11,7 @@ namespace FXParticleSystem {
 class WindModuleInfo
 {
 public:
+	WindModuleInfo();
 	virtual ~WindModuleInfo();
 private:
 	char m_pad08[8];
