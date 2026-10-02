@@ -9,15 +9,18 @@
 // through ecx) and 0x006E3580 plus 0x006CEC90 and 0x006E4390; neighbour
 // AptAnimationPoolDataBIL clearBIL/appendButtonToBIL; callback slots
 // 0x00A17740/44 are .data pointers per Rva00891FA0Diagnostics.
-#define G_Ready (*(int *const)0x00E17708)
-#define G_Value (*(int *const)0x00E176F0)
-#define G_Send (*(void (__cdecl **)(void *, int))0x00E17740)
-
-struct Rva006E34D0Record
+extern int g_rva00891FA0Ready;
+extern int g_rva00891FA0Value;
+struct Rva00891FA0Record
 {
-	int a;
-	int b;
+	int value;
+	int kind;
 };
+extern "C" void (__cdecl *Rva00891FA0SendRecord)(Rva00891FA0Record *, int);
+
+#define G_Ready g_rva00891FA0Ready
+#define G_Value g_rva00891FA0Value
+#define G_Send Rva00891FA0SendRecord
 
 class Rva006E34D0
 {
@@ -42,9 +45,9 @@ void Rva006E34D0::rva006E34D0(int v)
 	++m_count;
 	int ready = G_Ready;
 	if (ready) {
-		Rva006E34D0Record r;
-		r.a = G_Value;
-		r.b = v;
+		Rva00891FA0Record r;
+		r.value = G_Value;
+		r.kind = v;
 		(*G_Send)(&r, 8);
 	}
 }
