@@ -48892,3 +48892,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005E10A8@Rva005E10A8@@QAEXH@Z,,0x005E10A8,176,Code/GameEngine/Source/Common/Rva005E10A8Method.cpp,matched,chain triple Fire Enable ShowProductionCount ShowTimerOverlay
 ?rva005E197E@Rva005E197E@@QAEXXZ,,0x005E197E,54,Code/GameEngine/Source/Common/Rva005E197EMethod.cpp,matched,unlock same as 0x005D3AF2 with double indirection plus always clear
 ?rva005FC19E@Rva005FC19E@@QAEXH@Z,,0x005FC19E,8,Code/GameEngine/Source/Common/Rva005FC19EMethod.cpp,matched,chain tail to 0x005FBFE5 via plus 0x04
+?doFXObj@FXList@@QBEXPBVObject@@0@Z,,0x001E2A18,188,Code/GameEngine/Source/GameClient/FXListDoFXPos.cpp,matched,FXList::doFXObj walking nuggets with alias and shroud checking
