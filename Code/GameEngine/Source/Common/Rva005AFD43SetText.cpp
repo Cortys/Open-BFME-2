@@ -1,45 +1,15 @@
-// ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z
-// partial score=0.93 date=2026-09-29
-// ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z
-// partial score=0.93 date=2026-09-29
-// cl: /O1 /MD /Oy-
+// cl: /Ireference/shims/bfme2_ascii /O1 /MD /Oy-
+//
 // ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z, retail 0x005AFD43, 70 bytes.
 // Unlock method: stores GameWindow* at +8; if null return; else
 // TheWindowManager->winSetFocus(g) via slot 0xC4, bfmeGo924F as BfmeKeyLC
 // with 0x6e, then GadgetTextEntrySetText(g, s) via temp UnicodeString copy
 // (StringBase-G copy ctor). Evidence: global 0x009FEF1C, virtual 0xC4,
 // callees rowed, callers 0x0051195F 0x0051197A 0x00511A40 0x0057FE5D.
-
-typedef unsigned short wchar_t;
-
-template <typename T> struct StringInlineData
-{
-	int m_refCount;
-	int m_length;
-	T m_text[1];
-};
-
-template <typename T> class StringBase
-{
-	friend class AsciiString;
-	friend class UnicodeString;
-
-private:
-	StringBase() : m_data(0) {}
-	StringBase(const T *text);
-	StringBase(const StringBase<T> &other);
-	~StringBase();
-
-	StringInlineData<T> *m_data;
-};
-
-class UnicodeString : private StringBase<unsigned short>
-{
-public:
-	UnicodeString() : StringBase<unsigned short>() {}
-	UnicodeString(const UnicodeString &other) : StringBase<unsigned short>(other) {}
-	~UnicodeString() {}
-};
+// Finish from stash reverse/attempts/0x005afd43.cpp score 0.93; shared
+// UnicodeString header for inline copy-ctor order (shape lever mov ecx,esp
+// vs mov [esp+N],esp).
+#include "unicode_string.h"
 
 class GameWindow;
 
@@ -62,16 +32,12 @@ public:
 	virtual int winSendSystemMsg(GameWindow *window, unsigned int msg, unsigned int mData1, unsigned int mData2) = 0;
 };
 
-class BfmeKeyLC
-{
-public:
-	void *bfmeFindLC();
-};
+extern GameWindowManager *TheWindowManager;
 
+class BfmeKeyLC;
 void bfmeGo924F(BfmeKeyLC *k, unsigned short w);
 
 class GameWindow;
-
 void GadgetTextEntrySetText(GameWindow *g, UnicodeString text);
 
 class Rva005AFD43
@@ -83,13 +49,12 @@ private:
 	GameWindow *m_08;
 };
 
-// ?rva005AFD43@Rva005AFD43@@QAEXPAVGameWindow@@ABVUnicodeString@@@Z present-unmatched
 void Rva005AFD43::rva005AFD43(GameWindow *g, const UnicodeString &s)
 {
 	m_08 = g;
 	if (g == 0)
 		return;
-	(*(GameWindowManager **)0x00DFEF1C)->winSetFocus(m_08);
+	TheWindowManager->winSetFocus(m_08);
 	bfmeGo924F((BfmeKeyLC *)(void *)m_08, 0x6e);
 	GadgetTextEntrySetText(m_08, s);
 }
