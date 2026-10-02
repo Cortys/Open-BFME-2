@@ -8,6 +8,14 @@
 // independently named RenderObj destructor at 0x0013BE20. The body is a BFME2
 // expansion of the donor's helper call; field semantics are donor facts, while
 // the vtable slot, target offsets, and boundary are target evidence.
+// The compiler-generated vector constructor iterator (??_H) takes the
+// optimization state of the first function that needs it. Retail links one
+// copy, the /O1 body at 0x00001423; this unemitted anchor makes this unit's
+// copy that same body, so it no longer loses to retail's at link time.
+struct BfmeVciAnchorElem { BfmeVciAnchorElem(); };
+#pragma optimize("gsy", on)
+static void bfmeVciAnchor() { BfmeVciAnchorElem anchor[2]; (void)anchor; }
+#pragma optimize("", on)
 
 #include "rendobj.h"
 #include "intersec.h"
