@@ -98,7 +98,7 @@ class W3DMouse
 // ??4W3DRadarResetSurface@@QAEAAV0@ABV0@@Z, retail 0x00072381, 43 bytes.
 // COM ref-counted surface assignment: AddRef the incoming surface, release
 // the held one, then store.
-W3DRadarResetSurface &W3DRadarResetSurface::operator=(const W3DRadarResetSurface &rhs)
+inline W3DRadarResetSurface &W3DRadarResetSurface::operator=(const W3DRadarResetSurface &rhs)
 {
 	if (rhs.m_surface != NULL)
 		rhs.m_surface->AddRef();
@@ -107,6 +107,16 @@ W3DRadarResetSurface &W3DRadarResetSurface::operator=(const W3DRadarResetSurface
 	m_surface = rhs.m_surface;
 	return *this;
 }
+
+// This operator is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeW3DRadarResetSurfaceAssignInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeW3DRadarResetSurfaceAssignInlineAnchor()
+{
+	W3DRadarResetSurface *surface = static_cast<W3DRadarResetSurface *>(0);
+	*surface = *surface;
+}
+#pragma inline_depth()
 
 // ?rva000723AC@W3DRadarResetSurface@@QAEXXZ, RVA 0x000723AC, 20B. Release the
 // held COM surface if present and null it. Evidence: caller 0x724AE clears
