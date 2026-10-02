@@ -67,7 +67,7 @@ struct TargetDynamicVBView {
 };
 typedef char TargetDynamicVBViewMustBe24Bytes[sizeof(TargetDynamicVBView)==0x18?1:-1];
 
-void DX8Wrapper::Set_Vertex_Buffer(const VertexBufferClass* vb, unsigned stream)
+inline void DX8Wrapper::Set_Vertex_Buffer(const VertexBufferClass* vb, unsigned stream)
 {
 	render_state.vba_offset=0;
 	render_state.vba_count=0;
