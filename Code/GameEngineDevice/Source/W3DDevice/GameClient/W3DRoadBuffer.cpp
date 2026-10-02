@@ -3046,7 +3046,6 @@ void W3DRoadBuffer::loadRoads()
 //=============================================================================
 /** Draws the roads.  Uses terrain bounds to cull. */
 //=============================================================================
-// ?updateLighting@W3DRoadBuffer@@QAEXXZ present-unmatched
 void W3DRoadBuffer::updateLighting(void)
 {
 	/*
@@ -3072,7 +3071,7 @@ void W3DRoadBuffer::updateLighting(void)
 	Result: 
 	As soon as the fence is set up, the player who Alt-tab'd would get Zero Hour crashing to desktop with Serious Error occured.
 	*/
-	if( !m_roads )
+	if ( !m_initialized )
 	{
 		return;
 	}
@@ -3080,8 +3079,17 @@ void W3DRoadBuffer::updateLighting(void)
 	// Do road segments.
 	for (curRoad=0; curRoad<m_numRoads; curRoad++) {
 		m_roads[curRoad].updateSegLighting();
-	}	
-	m_updateBuffers = true;
+	}
+	// Retail closes with c6 46 4c 01 = mov byte [esi+0x4C],1: a ONE-byte store
+	// into the LOAD_TEST_ASSETS slot. The donor field is an Int, so
+	// `m_curOpenRoad = 1` emits a dword and misses by the store width; writing
+	// the byte at the member's own address is what the image does. The shim
+	// carries a byte member for this slot (union { Int m_curOpenRoad; unsigned
+	// char m_retailByte4C; }) once the tree's FULL gate is green -- that header
+	// edit is filed as its own card, because a shim edit forces the full gate
+	// and master's full gate is currently red for reasons outside this body
+	// (see reverse/attempts/0x000d4a4b.cpp and the follow-up card).
+	*(unsigned char *)&m_curOpenRoad = 1;
 }
 
 //=============================================================================
