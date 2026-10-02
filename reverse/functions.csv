@@ -48748,3 +48748,7 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?Rva00129690@@YAXXZ,,0x00129690,86,Code/Libraries/Source/WWVegas/WW3D2/Rva00129640Cluster.cpp,matched,cumulative push into the 0x00DEE8E8 three-entry buffer capped at 3; /G7 add idiom
 ?Rva0002ACC0@BfmeS1155@@QAEIPBDI@Z,,0x0002ACC0,42,Code/GameEngine/Source/Common/Rva0002ACC0Cluster.cpp,matched,length bridge over BfmeS1155::bfmeFind1155; method name is the image address
 ?Rva0002AD20@Rva0002ACF0Thing@@QAEXPADPAX@Z,,0x0002AD20,42,Code/GameEngine/Source/Common/Rva0002ACC0Cluster.cpp,matched,length bridge over Rva0002ACF0Thing::bfmeDoPF; method name is the image address
+?Rva006E97A0@@YAXXZ,,0x006E97A0,26,Code/GameEngine/Source/Common/Rva006E97A0Cluster.cpp,matched,singleton release with one slot-1 virtual call then pointer clear; identity unproven
+?Rva006C1790@@YAIXZ,,0x006C1790,21,Code/GameEngine/Source/Common/Rva006C1790Cluster.cpp,matched,GetTickCount divided by 1000 via the 0x10624DD3 reciprocal; IAT pinned 0x00BBA294
+?Rva006C1FE0@@YGIPADHPAPAD@Z,,0x006C1FE0,45,Code/GameEngine/Source/Common/Rva006C1790Cluster.cpp,matched,trailing 16-bit length reader returning body size plus two; optional body pointer out
+??0Rva00689320@@QAE@HHH@Z,,0x00689320,41,Code/GameEngine/Source/Common/Rva00689320Cluster.cpp,matched,BFME2NativeNetwork-derived constructor with vptr store between member stores; address-derived
