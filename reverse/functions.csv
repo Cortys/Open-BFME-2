@@ -48657,3 +48657,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F92D5@Rva005F92D5@@QAEX_N@Z,,0x005F92D5,91,Code/GameEngine/Source/Common/Rva005F92D5Button.cpp,matched,twin of 0x005F927A Retreat vs RealTime flag +0x62 rowed AptCall 0x005F8EDA
 ?deallocate@__new_alloc@_STL@@SAXPAXI@Z,,0x000237B0,12,Code/Libraries/Source/WWVegas/WWLib/stlport_new_alloc_deallocate.cpp,matched,STLport __new_alloc::deallocate; select-any body every container unit emits; rowed in its own unit so the owner of this early row is not first in link order for unrelated COMDATs
 ??_GRva005C4758@@UAEPAXI@Z,,0x005C473C,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva005C4758.cpp,matched,chain deleting dtor for Rva005C4758 via rowed dtor plus delete
+??0Rva005C45B6@@QAE@II@Z,,0x005C45B6,28,Code/GameEngine/Source/Common/Rva005C45B6Ctor.cpp,matched,ctor forwards two uints to rowed base then vtable store
