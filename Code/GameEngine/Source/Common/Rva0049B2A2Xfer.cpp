@@ -128,12 +128,23 @@ protected:
 	virtual void xfer(Xfer *xfer);
 public:
 	unsigned char rva0049B3D2();
+	void rva0049B3F3();
 
 private:
 	unsigned int m_20;
 	unsigned int m_24;
 	int m_28;
 };
+
+class ModuleData
+{
+public:
+	char m_pad[0x0C];
+	int m_0C;
+	int m_10;
+};
+
+int GetGameLogicRandomValue(int lo, int hi, char *file, int line);
 
 enum ObjectStatusTypes
 {
@@ -163,6 +174,14 @@ unsigned char Rva0049B2A2::rva0049B3D2()
 		return 0;
 	}
 	return (unsigned char)!m_object->testStatus(OBJECT_STATUS_2);
+}
+
+void Rva0049B2A2::rva0049B3F3()
+{
+	int r = GetGameLogicRandomValue(m_moduleData->m_0C, m_moduleData->m_10, (char *)"C:\\projects\\bfme2patch103\\bfme2\\Code\\GameEngine\\Source\\GameLogic\\Object\\Update\\OCLUpdate.cpp", 123);
+	unsigned cur = TheGameLogic->m_40;
+	m_24 = cur;
+	m_20 = cur + r;
 }
 
 void Rva0049B2A2::xfer(Xfer *xfer)
