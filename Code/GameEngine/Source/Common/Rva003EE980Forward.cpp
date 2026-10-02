@@ -57,7 +57,10 @@ private:
 	_STL::map<AsciiString, AsciiString> m_map;
 };
 
-extern AsciiString g_Rva00E02E84;
+// Matched DIR32 witness places this one-pointer AsciiString at VA 0x00E02E84
+// in the zero-filled .data tail; the shared BFME2 header establishes its
+// four-byte layout and the retail initial bytes are zero.
+AsciiString g_Rva00E02E84;
 
 class Rva003EE980
 {
