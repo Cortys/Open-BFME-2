@@ -159,13 +159,7 @@ m_uniqueID(-1)
 //=============================================================================
 /** Frees index & vertex data. */
 //=============================================================================
-// ??1RoadType@@QAE@XZ present-unmatched
-RoadType::~RoadType(void)
-{
-	REF_PTR_RELEASE(m_roadTexture);
-	REF_PTR_RELEASE(m_vertexRoad);
-	REF_PTR_RELEASE(m_indexRoad);
-}
+// RoadType::~RoadType: defined in RoadTypeDtor.cpp (its row's unit).
 
 //=============================================================================
 // RoadType applyTexture
