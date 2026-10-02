@@ -47672,3 +47672,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1Rva0022CDDA@@UAE@XZ,,0x0022CDDA,63,Code/GameEngine/Source/Common/System/SaveGame/Rva0022CDDADtor.cpp,matched,unlock packet calls rowed base 0x001B4E74 and rowed vector dtor
 ??_GRva005D791C@@UAEPAXI@Z,,0x005D7953,28,Code/GameEngine/Source/Common/Rva005D791CDtor.cpp,matched,deleting dtor via own dtor TU plus delete 0x0002FD60
 ??0Rva005766B3@@QAE@HHH@Z,,0x005766B3,32,Code/GameEngine/Source/Common/Rva005766B3Ctor.cpp,matched,ctor vtable 0x0086E7D0 plus 3 ints at +4 +8 +0xC
+?rva0004D729@Rva0004D729@@QAEPAV1@PAXPAPAXPAHHHHH@Z,,0x0004D729,43,Code/Libraries/Source/WWVegas/WW3D2/Rva0004D729.cpp,matched,lock-rect helper stores surf calls 0x1166E0 stores bits returns this
