@@ -47558,3 +47558,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva0008A1ABFill@@YAPAVRva00089822@@PAV1@IABV1@@Z,,0x0008A1AB,37,Code/GameEngine/Source/Common/Rva0008A1ABFill.cpp,matched,fill_n via guarded copy returning end
 ?Rva0008A185Copy@@YAPAVRva00089822@@PAV1@00@Z,,0x0008A185,38,Code/GameEngine/Source/Common/Rva0008A185Copy.cpp,matched,uninitialized_copy via guarded copy returning end
 ?rva006DCC10@AptValuePtrStack@@QAEPAVBfmeAptValue006DCD20@@H@Z,,0x006DCC10,66,Code/Libraries/Source/Apt/AptValuePtrStackTop.cpp,matched,stack Get via shared assert triple and layout
+??0Rva005D95A8@@QAE@XZ,,0x005D9596,18,Code/GameEngine/Source/Common/Rva005EE30CDerivedCtors_muse-1b6d.cpp,matched,ctor calls base 005EE2E6 precedes dtor 005D95A8
