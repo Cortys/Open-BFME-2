@@ -138,3 +138,7 @@ void _STLP_CALL ios_base::_S_uninitialize()
 }
 
 _STLP_END_NAMESPACE
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?_S_count@_Loc_init@ios_base@_STL@@0JA=?_S_count@_Loc_init@ios_base@_STL@@2JA")

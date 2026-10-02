@@ -334,3 +334,7 @@ bool ProfileHighLevel::FindProfile(const char *name, Id &id)
 	id.m_idPtr = 0;
 	return false;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?first@ProfileId@@0PAV1@A=?G00E0C620@@3HA")

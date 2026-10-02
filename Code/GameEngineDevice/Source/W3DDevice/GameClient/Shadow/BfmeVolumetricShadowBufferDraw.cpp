@@ -104,3 +104,8 @@ void BfmeVolumetricShadowBufferLocks::drawAndRelease(int frontFace)
 		(*(BfmeDrawIndexedPrimitive **)device)[82](device, 4, 0, 0, vertexCount, 0, polygonCount);
 	}
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?D3DDevice@DX8Wrapper@@2PAUIDirect3DDevice8@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
+#pragma comment(linker, "/alternatename:?CurrentCaps@DX8Wrapper@@2PAVDX8Caps@@A=?CurrentCaps@DX8Wrapper@@1PAVDX8Caps@@A")

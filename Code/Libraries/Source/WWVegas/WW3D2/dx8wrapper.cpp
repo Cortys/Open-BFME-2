@@ -5438,3 +5438,7 @@ float bfmeProjectionBias;
 #pragma comment(linker, "/alternatename:_bfmeDtorCbDMC=?DX8_Assert@@YAXXZ")
 #pragma comment(linker, "/alternatename:?bfmeFlushSXA@@YAXXZ=?DX8_Assert@@YAXXZ")
 #pragma comment(linker, "/alternatename:?bfmeFlushSTA@@YAXXZ=?DX8_Assert@@YAXXZ")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?bfmeProjectionApplied@@3VMatrix4@@A=?g_mapperProjectionUpload_009EDBF0@@3VMatrix4@@A")

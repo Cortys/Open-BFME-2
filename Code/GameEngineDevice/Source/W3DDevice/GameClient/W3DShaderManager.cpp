@@ -97,3 +97,9 @@ IDirect3DTexture8 *W3DShaderManager::endRenderToTexture()
 	m_renderingToTexture = false;
 	return m_renderTexture;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?D3DDevice@DX8Wrapper@@0PAUIDirect3DDevice8@@A=?D3DDevice@DX8Wrapper@@1PAUIDirect3DDevice8@@A")
+#pragma comment(linker, "/alternatename:?m_oldRenderSurface@W3DShaderManager@@2PAUIDirect3DSurface8@@A=?g_Va009E1F64@@3IA")
+#pragma comment(linker, "/alternatename:?m_renderTexture@W3DShaderManager@@2PAUIDirect3DTexture8@@A=?g_Va001FDE68@@3HA")

@@ -287,3 +287,10 @@ Rva003AED6B::Rva003AED6B(const Rva003AED6B &that)
 #pragma comment(linker, "/alternatename:_Rva003AEC8B_v14b=?vftable_0112B89C@@3HA")
 // _Rva003AEBC9_v14b: the global at VA 0xc1c780 is ?vftable_0112B89C@@3HA.
 #pragma comment(linker, "/alternatename:_Rva003AEBC9_v14b=?vftable_0112B89C@@3HA")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_Rva003AEB0A_v0a=??_7Rva0055BF21@@6BDefaultModuleHeadBase@@@")
+#pragma comment(linker, "/alternatename:_Rva003AEBC9_v0a=??_7Rva0055BF21@@6BDefaultModuleHeadBase@@@")
+#pragma comment(linker, "/alternatename:_Rva003AEC8B_v0a=??_7Rva0055F98A@@6BDefaultModuleHeadBase@@@")
+#pragma comment(linker, "/alternatename:_Rva003AEF9B_v0a=??_7Rva0055F98A@@6BDefaultModuleHeadBase@@@")

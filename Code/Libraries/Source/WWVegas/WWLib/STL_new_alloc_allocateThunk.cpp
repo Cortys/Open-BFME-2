@@ -110,3 +110,8 @@ void *__node_alloc<__threads, __inst>::_M_allocate(unsigned int n)
 template class __node_alloc<true, 0>;
 
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?_S_free_list@?$__node_alloc@$00$0A@@_STL@@0PAPAU_Obj@12@A=_g_bfmeFreeList1150")
+#pragma comment(linker, "/alternatename:?_S_free_list@__new_alloc@_STL@@0PAPAU_Obj@12@A=_g_bfmeFreeList1150")
