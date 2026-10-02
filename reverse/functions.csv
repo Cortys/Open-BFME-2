@@ -48914,3 +48914,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0054273B@Rva0054273B@@QAE_NXZ,,0x0054273B,86,Code/GameEngine/Source/Common/Rva0054273BComment.cpp,matched,XML comment-end skip to arrow neighbours same flags
 ?rva005D4E84@Rva005D4E84@@QAEXXZ,,0x005D4E84,7,Code/GameEngine/Source/Common/Rva005D4E84Forward.cpp,matched,chain forwarder via member at +0 into rowed 0x005D4E63
 ?rva00410E23@Rva000427195@@QAEPAU?$pair@$$CBVAsciiString@@UTreeHintPayload00410E23@@@_STL@@PBU23@@Z,,0x00410E23,68,Code/GameEngine/Source/GameClient/Rva00410E23Insert.cpp,matched,same shape as 0x00410DDF 0x00410E67 via Pod44 new_node
+?HasBeenDisplayed@SubTitleManager@@QAE_NH@Z,,0x000468AD,89,Code/GameEngine/Source/Common/SubTitleManagerHasBeenDisplayed.cpp,matched,string Index out of range plus caller 0x0004807C
