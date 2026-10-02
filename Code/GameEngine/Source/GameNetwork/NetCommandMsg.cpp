@@ -18,7 +18,7 @@ public:
 };
 
 // ??1NetCommandMsg@@MAE@XZ present-unmatched
-NetCommandMsg::~NetCommandMsg()
+inline NetCommandMsg::~NetCommandMsg()
 {
 }
 
