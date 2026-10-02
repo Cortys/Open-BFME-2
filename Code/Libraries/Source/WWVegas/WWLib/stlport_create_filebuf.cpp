@@ -17,10 +17,11 @@
  */
 // STLport 4.5.3: reference X4Iostream.cpp global streams and filebuf factories.
 // Modified for BFME2: factories omit exception wrappers as in the matched retail.
-// _S_initialize retains the BFME1 donor body at 10af19f44a. Its independent
-// BFME2 start (0x166C0) and complete 977 bytes agree. Its four stdio
-// constructors call the RTTI-identified base at
-// 0x1CDB0. The stream globals and class layouts remain the STLport donor's.
+// _S_initialize and sync_with_stdio retain the BFME1 donor bodies at
+// 10af19f44a. Their independent BFME2 starts (0x166C0 and 0x157C0) and
+// complete 977/742 bytes agree. Their stdio constructors call the
+// RTTI-identified base at 0x1CDB0. The stream globals and class layouts
+// remain the STLport donor's.
 // Original stream context also emits the complete920B wide seekoff at149F0.
 // cl: /MD /D_STLP_USE_STATIC_LIB /Ireference/open-bfme-1/vendor/stlport/src /Ireference/open-bfme-1/vendor/stlport /Ireference/open-bfme-1/vendor/stlport/stl /Ireference/open-bfme-1/vendor/stlport/using /Ireference/open-bfme-1/Code/stlport
 #include "stlport_prefix.h"
@@ -203,6 +204,83 @@ void  _STLP_CALL ios_base::_S_initialize()
   ptr_wcerr->setf(ios_base::unitbuf);
 
   --Init::_S_count;
+}
+
+// The retail body has constructor cleanup but no try/catch wrapper.
+// Keep the donor control flow with its exception-wrapper macros disabled.
+#undef _STLP_TRY
+#define _STLP_TRY
+#undef _STLP_CATCH_ALL
+#define _STLP_CATCH_ALL if (false)
+bool _STLP_CALL ios_base::sync_with_stdio(bool sync) {
+#if !defined(STLP_WINCE)
+# ifndef _STLP_HAS_NO_NAMESPACES
+  using _SgI::stdio_istreambuf;
+  using _SgI::stdio_ostreambuf;
+# endif
+
+  bool was_synced =  _S_was_synced;
+
+  // if by any chance we got there before std streams initialization,
+  // just set the sync flag and exit
+  if (Init::_S_count == 0) {
+    _S_was_synced = sync;
+    return was_synced;
+  }
+
+  istream* ptr_cin  = __REINTERPRET_CAST(istream*,&cin);
+  ostream* ptr_cout = __REINTERPRET_CAST(ostream*,&cout);
+  ostream* ptr_cerr = __REINTERPRET_CAST(ostream*,&cerr);
+  ostream* ptr_clog = __REINTERPRET_CAST(ostream*,&clog);
+
+  streambuf* old_cin  = ptr_cin->rdbuf();
+  streambuf* old_cout = ptr_cout->rdbuf();
+  streambuf* old_cerr = ptr_cerr->rdbuf();
+  streambuf* old_clog = ptr_clog->rdbuf();
+
+  streambuf* new_cin  = 0;
+  streambuf* new_cout = 0;
+  streambuf* new_cerr = 0;
+  streambuf* new_clog = 0;
+
+  _STLP_TRY {
+    if (sync && !was_synced) {
+      new_cin  = new stdio_istreambuf(stdin);
+      new_cout = new stdio_ostreambuf(stdout);
+      new_cerr = new stdio_ostreambuf(stderr);
+      new_clog = new stdio_ostreambuf(stderr);
+    }
+    else if (!sync && was_synced) {
+      new_cin  = _Stl_create_filebuf(stdin, ios_base::in);
+      new_cout = _Stl_create_filebuf(stdout, ios_base::out);
+      new_cerr = _Stl_create_filebuf(stderr, ios_base::out);
+      new_clog = _Stl_create_filebuf(stderr, ios_base::out);
+    }
+  }
+  _STLP_CATCH_ALL {}
+
+  if (new_cin && new_cout && new_cerr && new_clog) {
+    ptr_cin->rdbuf(new_cin);
+    ptr_cout->rdbuf(new_cout);
+    ptr_cerr->rdbuf(new_cerr);
+    ptr_clog->rdbuf(new_clog);
+
+    delete old_cin;
+    delete old_cout;
+    delete old_cerr;
+    delete old_clog;
+  }
+  else {
+    delete new_cin;
+    delete new_cout;
+    delete new_cerr;
+    delete new_clog;
+  }
+
+  return was_synced;
+#else
+  return false;
+#endif /* _STLP_WINCE */
 }
 
 _STLP_END_NAMESPACE
