@@ -63,21 +63,8 @@
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-ProjectileStreamUpdate::ProjectileStreamUpdate( Thing *thing, const ModuleData* moduleData ) : UpdateModule( thing, moduleData )
-{
-	ObjectID m_projectileIDs[MAX_PROJECTILE_STREAM];
-	for( Int index = 0; index < MAX_PROJECTILE_STREAM; index++ )
-	{
-		m_projectileIDs[index] = INVALID_ID;
-	}
-
-	m_owningObject = INVALID_ID;
-	m_nextFreeIndex = 0;
-	m_firstValidIndex = 0;
-
-	m_targetObject = INVALID_ID;
-	m_targetPosition.zero();
-}
+// ProjectileStreamUpdate ctor lives in ProjectileStreamUpdateCtor.cpp (its row's
+// unit); this file merely declares it via GameLogic/Module/ProjectileStreamUpdate.h.
 
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
