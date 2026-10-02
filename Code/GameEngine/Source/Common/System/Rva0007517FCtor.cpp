@@ -1,4 +1,4 @@
-// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS
+// cl: /Ireference/shims/bfme2_ascii /O1 /EHsc /MD /DNDEBUG /DWIN32 /D_WINDOWS /arch:SSE
 // ??0Rva0007517F@@QAE@XZ, retail 0x0007517F, 112 bytes.
 // Ctor calls rowed base 0x0030B0E3, installs its own vtable, inits +0x1C/+0x20/+0x24/+0x28,
 // builds 20x RubbleFXVec at +0x2C through ehvec iterator 0x00629512, registers
@@ -47,11 +47,22 @@ private:
 };
 
 extern void *g_00DE1ED0;
+extern float g_Va00BBB8D8;
 
 class Rva0007517F : public Rva0030B0E3, public EmptyBase
 {
 public:
 	Rva0007517F();
+	virtual void _D10();
+	virtual void _D11();
+	virtual void _D12();
+	virtual void _D13();
+	virtual void _D14();
+	virtual void _D15();
+	virtual void _D16();
+	virtual void _D17();
+	virtual void _S18(float const *m, float f, int a, int b, int c);
+	virtual void rva00075016(float const *p, float f, int a, int b, int c);
 
 private:
 	int m_14;
@@ -73,4 +84,22 @@ Rva0007517F::Rva0007517F()
 	g_00DE1ED0 = this;
 	for (int i = 0; i < 5; ++i)
 		m_tail[i] = 0;
+}
+
+void Rva0007517F::rva00075016(float const *p, float f, int a, int b, int c)
+{
+	float m[12];
+	m[0] = g_Va00BBB8D8;
+	m[1] = 0.0f;
+	m[2] = 0.0f;
+	m[3] = p[0];
+	m[4] = 0.0f;
+	m[5] = g_Va00BBB8D8;
+	m[6] = 0.0f;
+	m[7] = p[1];
+	m[8] = 0.0f;
+	m[9] = 0.0f;
+	m[10] = g_Va00BBB8D8;
+	m[11] = p[2];
+	_S18(m, f, a, b, c);
 }
