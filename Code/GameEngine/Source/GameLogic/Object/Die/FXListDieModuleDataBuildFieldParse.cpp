@@ -32,9 +32,18 @@ public:
 	static void buildFieldParse(MultiIniFieldParse &parse);
 };
 
-void FXListDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
+// ?buildFieldParse@FXListDieModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x0050B107
+inline void FXListDieModuleData::buildFieldParse(MultiIniFieldParse &parse)
 {
 	parse.add((const FieldParse *)Rva00507552::opaqueCall(), 0);
 	parse.add((const FieldParse *)Rva005088C8::opaqueCall(), 0);
 	parse.add(&s_extraFieldTable, 0);
 }
+
+#pragma inline_depth(0)
+// ?bfmeEmitFXListDieModuleDataBuildFieldParse@@YAXAAVMultiIniFieldParse@@@Z present-unmatched
+void bfmeEmitFXListDieModuleDataBuildFieldParse(MultiIniFieldParse &parse)
+{
+	FXListDieModuleData::buildFieldParse(parse);
+}
+#pragma inline_depth()
