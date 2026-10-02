@@ -47574,3 +47574,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva005D9F70@@QAE@XZ,,0x005D9F5E,18,Code/GameEngine/Source/Common/Rva005EEE33Ctor.cpp,matched,ctor calls base 005EEE1F precedes dtor 005D9F70
 ?rva006DC9E0@Rva006DC9E0@@QAEHXZ,,0x006DC9E0,123,Code/Libraries/Source/Apt/AptValue/Rva006DC9E0.cpp,matched,thiscall returns int via GetString 0x5E 0x64 and Find slot3 with sentinels
 ??1?$vector@UBfmeStringHeadRecord184@@V?$allocator@UBfmeStringHeadRecord184@@@_STL@@@_STL@@QAE@XZ,,0x0008B64A,63,Code/Libraries/Source/WWVegas/WWLib/StlportVectorDtorFamily.cpp,matched,Destroy range via rowed 0x0008B632 then free via 0x00030830 caller 0x0008B79B
+?xfer@Rva00546982@@UAEXPAVXfer@@@Z,,0x00546A34,68,Code/GameEngine/Source/Common/Rva00546982Xfer.cpp,matched,vslot slot 3 of 0x0086A314 base xfer version set bool
