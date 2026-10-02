@@ -40,3 +40,8 @@ StringBase<char> *__cdecl Rva0059B0DDConcat(StringBase<char> *dst, const char *s
 	dst->concat(tmp);
 	return dst;
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?getChars@NarrowStrSource0059B0DD@@UBEHPAD@Z=?rva0059B3C1@Rva0059B3C1@@QAEHPAD@Z")

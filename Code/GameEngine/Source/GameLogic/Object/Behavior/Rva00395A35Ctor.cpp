@@ -28,3 +28,8 @@ Rva00395A35::Rva00395A35(const BfmeFixedStorage0004543D &a, const BfmeFixedStora
 	, m_24(b)
 {
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?anchor@Rva00395A35@@UAEXXZ=?rva00395A19@Rva00395A19@@QAEPAXI@Z")

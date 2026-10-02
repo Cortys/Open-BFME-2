@@ -22,3 +22,8 @@ Rva007F0080Owner::Rva007F0080Owner(void *first, void *second)
     m_first = first ? first : reinterpret_cast<void *>(0x00A5CEC0);
     m_second = second ? second : reinterpret_cast<void *>(0x00A5CED0);
 }
+
+// Placeholder virtuals in this unit's vftables: in retail, every vftable that holds
+// each one has the same function in that slot (vftable addresses from matched vptr
+// stores). Bind them to the rows at those functions.
+#pragma comment(linker, "/alternatename:?slot@Rva007F0080Owner@@UAEXXZ=?state@?$fpos@H@_STL@@QAEXH@Z")
