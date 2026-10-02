@@ -75,6 +75,40 @@ void Rva005F09BC::rva005F09BC()
 		(*begin)->rva005F06EF();
 }
 
+// ?rva005F0832@Rva005F0832@@QAEXXZ @0x005F0832 60B.
+// Hides building-name Apt when flag set: prefix from holder+8 or empty fallback
+// g_Rva0107301CEmptyString, AptCall via rowed 0x005FB5E6 with "SetBuildingNameState"
+// "_hide" and TheRva00222A8BTarget, then clears flag. Evidence: retail ternary
+// plus pushes plus add esp 0x14, caller 0x005F09D7 mov ecx [ecx+4] jmp here.
+class Rva00222A8BTarget;
+extern Rva00222A8BTarget *TheRva00222A8BTarget;
+extern const char g_Rva0107301CEmptyString[];
+int __cdecl Rva005FB5E6AptCall(Rva00222A8BTarget *target, void *level, const char *prefix, const char *func, const char *a0);
+struct Rva005F0832NameHolder
+{
+	char m_pad[8];
+	char m_name[1];
+};
+struct Rva005F0832
+{
+	char m_pad0[4];
+	void *m_level;
+	Rva005F0832NameHolder *m_holder;
+	char m_pad1[0x4C - 0xC];
+	bool m_flag;
+	void rva005F0832();
+};
+
+void Rva005F0832::rva005F0832()
+{
+	if (m_flag)
+	{
+		const char *prefix = m_holder ? m_holder->m_name : g_Rva0107301CEmptyString;
+		Rva005FB5E6AptCall(TheRva00222A8BTarget, m_level, prefix, "SetBuildingNameState", "_hide");
+		m_flag = false;
+	}
+}
+
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:?Rva005F0C39Destroy@@YAXPAURva005F0647@@0PA_N@Z=?Rva005F0C39Destroy@@YAXPAURva005F0647@@0@Z")
