@@ -7225,3 +7225,4 @@ _BfmeAux006FC670,0x006FC670,"callee of the 26B NULL-arg forwarder at 0x006FD040 
 ??1AIFollowWaypointPathExactState@@UAE@XZ,0x00368793,AIFollowWaypointPathExactState destructor thunk called by scalar deleting destructor at 0x00346CFE
 ??0AIInternalMoveToState@@QAE@PAVStateMachine@@I@Z,0x0033F279,AIInternalMoveToState constructor called by AIFollowWaypointPathExactState constructor at 0x00342C75
 ?getShroudStatusForPlayer@Object@@QBE?AW4CellShroudStatus@@H@Z,0x0028D2A2,Object::getShroudStatusForPlayer called by FXList::doFXObj at 0x001E2A6E
+_D3DXQuaternionSlerp@16,0x0075B4C6,PE-named d3dx9_27.dll D3DXQuaternionSlerp stdcall16 import thunk; IAT VA0x00BBAA28
