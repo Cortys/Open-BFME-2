@@ -33,10 +33,17 @@ public:
         virtual ~facet();
     };
     locale(const locale &) throw();
-    ~locale() throw() { _M_impl->_M_decr(); }
+    ~locale() throw();
 private:
     _Locale_impl *_M_impl;
 };
+
+// ~locale owned by stlport_locale.cpp; inline copy here so do_put can inline
+// it (retail does). Emitted as select-any.
+inline locale::~locale() throw()
+{
+    _M_impl->_M_decr();
+}
 
 class ios_base
 {
