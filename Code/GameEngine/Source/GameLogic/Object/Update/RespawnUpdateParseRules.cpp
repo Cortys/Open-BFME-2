@@ -16,7 +16,6 @@ class INI {
 public:
     const char *getNextToken(const char *);
     const char *getNextTokenOrNull(const char *);
-    const char *getSepsColon() const { return colon; }
     static void parseBool(INI *, void *, void *, const void *);
     static void parseInt(INI *, void *, void *, const void *);
     static void dup_002EF72(INI *, void *, void *, const void *);
@@ -63,7 +62,7 @@ public:
 #define THROW0(message) { INIException e; e.INIException::INIException(3,message); _CxxThrowException(&e, (const _s__ThrowInfo *)&respawnThrowInfoAnchor); __assume(0); }
 #define THROW1(message,token) { INIException e; e.INIException::INIException(3,message,token); _CxxThrowException(&e, (const _s__ThrowInfo *)&respawnThrowInfoAnchor); __assume(0); }
 #define FIELD(key,diagnostic,parser,member) \
-    token=ini->getNextToken(ini->getSepsColon()); \
+    token=ini->getNextToken(ini->colon); \
     if(!token || _strcmpi(token,key)!=0) \
         THROW1("RespawnUpdate::iniParseDefaultRule -- RespawnRules entry expecting '" diagnostic "' entry. You specified %s.",token) \
     if(strcmp(token,key)!=0) \
@@ -94,7 +93,7 @@ void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *stor
     if(node==rules->sentinel) THROW0("RespawnUpdate::iniParseNewRuleForLevel -- You cannot parse a 'RespawnEntry' before 'RespawnRules'. Please add a 'RespawnRules' -- which represents level 1.")
     defaultRule=*(const RespawnRule *)((const char *)node+0x10);
     RespawnRule rule(0);
-    const char *token=ini->getNextToken(ini->getSepsColon());
+    const char *token=ini->getNextToken(ini->colon);
     if(!token || _strcmpi(token,"Level")!=0) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- RespawnEntry expecting 'Level' entry. You specified %s.",token)
     if(strcmp(token,"Level")!=0) THROW1("RespawnUpdate::iniParseNewRuleForLevel -- RespawnEntry for 'Level' is case sensitive. You specified %s.",token)
     INI::dup_002EF72(ini,instance,&rule.level,0);
@@ -103,7 +102,7 @@ void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *stor
     rule.cost=defaultRule.cost;
     rule.time=defaultRule.time;
     rule.health=defaultRule.health;
-    token=ini->getNextTokenOrNull(ini->getSepsColon());
+    token=ini->getNextTokenOrNull(ini->colon);
     bool gotAuto=false,gotCost=false,gotTime=false,gotHealth=false;
     while(token) {
         if(_strcmpi(token,"AutoSpawn")==0) {
@@ -127,7 +126,7 @@ void RespawnUpdate::iniParseNewRuleForLevel(INI *ini, void *instance, void *stor
             INI::parsePercentToReal(ini,instance,&rule.health,0);
             gotHealth=true;
         }
-        token=ini->getNextTokenOrNull(ini->getSepsColon());
+        token=ini->getNextTokenOrNull(ini->colon);
     }
     rules->insert(rule);
 }
