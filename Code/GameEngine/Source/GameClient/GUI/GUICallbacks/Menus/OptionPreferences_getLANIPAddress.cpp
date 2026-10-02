@@ -63,6 +63,7 @@ public:
 	AsciiString() {}
 	AsciiString(const char *text) : StringBase<char>(text) {}
 	AsciiString(const AsciiString &other) : StringBase<char>(other) {}
+	~AsciiString();
 	AsciiString &operator=(const AsciiString &other);
 
 	const char *str() const { return m_data ? &m_data->text[0] : ""; }
