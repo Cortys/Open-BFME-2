@@ -49061,3 +49061,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ?rva005E0FBE@Rva005E0FBE@@QAEXXZ,,0x005E0FBE,74,Code/GameEngine/Source/Common/Rva005E0FBEMethod.cpp,matched,chain via rowed Fire with level prefix and flags plus false temp
 ?rva005E0EE1@Rva005E0EE1@@QAEXH@Z,,0x005E0EE1,221,Code/GameEngine/Source/Common/Rva005E0EE1Method.cpp,matched,chain via rowed Fire and Apt ProductionCount update
 ?rva005E0CC7@Rva005E0CC7@@QAEXXZ,,0x005E0CC7,36,Code/GameEngine/Source/Common/Rva005E0CC7Method.cpp,matched,unlock via rowed get plus setter
+??0Rva003A393A@@QAE@XZ,,0x003A393A,31,Code/GameEngine/Source/Common/RTS/ArmorHashMapCtor003A393A.cpp,matched,Armor hash_map-shape ctor twin of 0x00360B99 same 31B pushes

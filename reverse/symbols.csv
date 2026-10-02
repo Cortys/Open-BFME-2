@@ -7246,3 +7246,4 @@ _rva0007E394CursorEqual,0x0007E394,Typed 8B cursor equality; full29B exact; byte
 ??0BfmeContainerRecord005FDEC7@@QAE@ABU0@@Z,0x005F93E3,ICF twin of rowed StringRecord copy at same address retail call at 0x005FE871
 ?regainFocus@@YAXXZ,0x0035D326,WinMain regainFocus helper
 ??1Rva005843DA@@UAE@XZ,0x00584502,twin of dup row for deleting dtor 0x005844E6 vtable 0x0086FC80 slot0
+??0?$hashtable@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@W4NameKeyType@@U?$hash@W4NameKeyType@@@rts@@U?$_Select1st@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@2@U?$equal_to@W4NameKeyType@@@2@V?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@2@@_STL@@QAE@IABU?$hash@W4NameKeyType@@@rts@@ABU?$equal_to@W4NameKeyType@@@1@ABV?$allocator@U?$pair@$$CBW4NameKeyType@@VArmorTemplate@@@_STL@@@1@@Z,0x003A37FA,twin of 0x00360B59 proven by caller 0x003A393A 31B identical pushes
