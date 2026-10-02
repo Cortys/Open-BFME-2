@@ -47415,3 +47415,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0029A64A@InGameUI@@QAEXXZ,,0x0029A64A,23,Code/GameEngine/Source/GameClient/InGameUI_handleRadiusCursor.cpp,matched,InGameUI clear RadiusDecal at 88C and zero 888
 ??0Rva0033076E@@QAE@XZ,,0x0033076E,27,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00330757Member.cpp,matched,ctor base member plus vector at 10 via rowed base
 ?Rva003BB39EClear@@YGXABVAsciiString@@@Z,,0x003BB39E,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB39E.cpp,matched,clears Player 0x338 via rva00357475 getEachPlayerFromMask
+?Rva003BB3DCSet@@YGXABVAsciiString@@@Z,,0x003BB3DC,62,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptActionsRva003BB3DC.cpp,matched,sets Player 0x339 via rva00357475 getEachPlayerFromMask
