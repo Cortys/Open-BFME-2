@@ -15,7 +15,25 @@
 #undef _STLP_DEFAULT_CONSTRUCTED
 #define _STLP_DEFAULT_CONSTRUCTED(_TTp) _TTp()
 #include <map>
-class AsciiString { public: AsciiString(const AsciiString &); ~AsciiString(); protected: void releaseBuffer(); private: void *m_data; };
+template <class T> class StringBase
+{
+    void *m_data;
+    StringBase(const StringBase<T> &);
+    friend class AsciiString;
+};
+class AsciiString
+{
+public:
+    __forceinline AsciiString(const AsciiString &that)
+    {
+        ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that);
+    }
+    ~AsciiString();
+protected:
+    void releaseBuffer();
+private:
+    void *m_data;
+};
 bool operator<(const AsciiString &, const AsciiString &);
 // Retail map temporary destruction0x2175CE releases its non-null mapped
 // pointer through0x7DEEF before destroying the AsciiString key. The pointee
