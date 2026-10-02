@@ -48894,3 +48894,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005FC19E@Rva005FC19E@@QAEXH@Z,,0x005FC19E,8,Code/GameEngine/Source/Common/Rva005FC19EMethod.cpp,matched,chain tail to 0x005FBFE5 via plus 0x04
 ?doFXObj@FXList@@QBEXPBVObject@@0@Z,,0x001E2A18,188,Code/GameEngine/Source/GameClient/FXListDoFXPos.cpp,matched,FXList::doFXObj walking nuggets with alias and shroud checking
 ?doFxAtBones@FXListAtBonePosFXNugget@@IBEXPBVObject@@H@Z,,0x001E2DD6,283,Code/GameEngine/Source/GameClient/FXListAtBonePosFXNugget_doFxAtBones.cpp,matched,FXListAtBonePosFXNugget::doFxAtBones: bone effect applier iterating bone transforms
+?rva005D4E63@Rva005D4E63@@QAEXXZ,,0x005D4E63,12,Code/GameEngine/Source/Common/Rva005D4E63Forward.cpp,matched,unlock null-guarded tail slot0 via plus0xC caller 0x005D4E86
