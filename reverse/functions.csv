@@ -47518,3 +47518,6 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva003E3C22@@QAE@XZ,,0x003E3C22,23,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva0036247C except the vtable VA 0xc35b34
 ??_GRva001FDB55@@UAEPAXI@Z,,0x001FDD61,28,Code/GameEngine/Source/Common/Rva001FDB55Dtor.cpp,matched,deleting dtor from dtor unit caller none vtable 0x007E1BB0
 ??_G?$DynamicVectorClass@PAVTextureClass@@@@UAEPAXI@Z,,0x0018A730,30,Code/Libraries/Source/WWVegas/WW3D2/MeshLoadContextCtor.cpp,matched,vtable 0x007D5B90 slot0 with rowed ??1 at 0x0018A200
+??_G?$DynamicVectorClass@PAULegacyMaterialClass@MeshLoadContextClass@@@@UAEPAXI@Z,,0x0018A6F0,30,Code/Libraries/Source/WWVegas/WW3D2/MeshLoadContextCtor.cpp,matched,vtable 0x007D5B60 slot0 with rowed ??1 at 0x0018A1A0
+??_G?$DynamicVectorClass@K@@UAEPAXI@Z,,0x0018A710,30,Code/Libraries/Source/WWVegas/WW3D2/MeshLoadContextCtor.cpp,matched,vtable 0x007D5B78 slot0 with rowed ??1 at 0x0018A1D0
+??_GRva00427611@@UAEPAXI@Z,,0x00427663,28,Code/GameEngine/Source/Common/System/Rva00427611Dtor.cpp,matched,vtable 0x0083C644 slot0 with rowed ??1 at 0x00427611
