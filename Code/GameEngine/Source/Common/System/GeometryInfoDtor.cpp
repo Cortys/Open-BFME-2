@@ -55,7 +55,7 @@ namespace _STL
 {
 
 template <>
-__declspec(noinline) void _Destroy<GeometryRecord *>(GeometryRecord *__first, GeometryRecord *__last)
+inline void _Destroy<GeometryRecord *>(GeometryRecord *__first, GeometryRecord *__last)
 {
 	for ( ; __first != __last; ++__first)
 		_Destroy(&*__first);
@@ -83,14 +83,28 @@ private:
 	std::vector<GeometryRecord> m_records;
 };
 // ??1GeometryInfo@@UAE@XZ @0x00050B2A
-GeometryInfo::~GeometryInfo()
+inline GeometryInfo::~GeometryInfo()
 {
 }
 
 // ??1GeometryRecord@@QAE@XZ @0x0004F82B
-GeometryRecord::~GeometryRecord()
+inline GeometryRecord::~GeometryRecord()
 {
 }
+
+// The three bodies above are header inlines elsewhere: other units emit
+// select-any copies, so strong definitions here were duplicates in the linked
+// build. This anchor only makes this unit emit its copies for the ledger rows;
+// it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitGeometryInfoDtor@@YAXPAVGeometryInfo@@PAUGeometryRecord@@11@Z present-unmatched
+void bfmeEmitGeometryInfoDtor(GeometryInfo *pi, GeometryRecord *pr, GeometryRecord *first, GeometryRecord *last)
+{
+	pi->GeometryInfo::~GeometryInfo();
+	pr->GeometryRecord::~GeometryRecord();
+	_STL::_Destroy(first, last);
+}
+#pragma inline_depth()
 
 // Callers elsewhere reach bodies in this unit through other spellings; retail's
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
