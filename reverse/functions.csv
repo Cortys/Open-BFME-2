@@ -47637,3 +47637,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?Rva00427114Parse@@YAXPAVINI@@PAVRva00427157@@@Z,,0x00427114,67,Code/GameEngine/Source/GameClient/GUI/Rva00427157Ctor.cpp,matched,INI parse two tokens dup float scan index store m_vals gap sibling
 ??1Rva0022CCB0@@QAE@XZ,,0x0022CCB0,53,Code/GameEngine/Source/Common/Rva0022CCB0Dtor.cpp,matched,unlock packet rowed member plus releaseBuffer EH shape like 0x0022304A
 ??1Rva0022CFE6@@QAE@XZ,,0x0022CFE6,53,Code/GameEngine/Source/Common/Rva0022CFE6Dtor.cpp,matched,chain from 0x0022CCB0 rowed member plus releaseBuffer EH shape like 0x0022304A
+?rva0028CFF5@Object@@QAEXPBH_N@Z,,0x0028CFF5,92,Code/GameEngine/Source/GameLogic/Object/ObjectRva0028D481.cpp,matched,ZH Object::replaceModelConditionFlags: snapshot copy then replace 19 words then Drawable 0x2791E7 on change or force

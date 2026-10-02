@@ -23,3 +23,6 @@ void Rva001E431E::rva001E431E(const int *x)
 	ji_006291ae(buf, 0, 0x4C);
 	((Object *)this)->rva0028CFB2(buf, x);
 }
+
+// Object callers (ObjectConditionAndPassengerWeaponSet.cpp) spell this body as Object::rva001E431E, pinned to the same address (thiscall, one mask pointer); bind that spelling here.
+#pragma comment(linker, "/alternatename:?rva001E431E@Object@@QAEXPBH@Z=?rva001E431E@Rva001E431E@@QAEXPBH@Z")

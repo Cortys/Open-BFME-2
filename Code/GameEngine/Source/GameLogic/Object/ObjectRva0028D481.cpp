@@ -45,6 +45,17 @@ public:
 
 bool __cdecl Rva00045473Equal(const void *a, const void *b);
 
+class ModelConditionFlags
+{
+	int m_words[19];
+};
+
+class Drawable
+{
+public:
+	void rva002791E7(const ModelConditionFlags &flags, unsigned int forceReplace, unsigned int b);
+};
+
 class Object
 {
 public:
@@ -52,11 +63,14 @@ public:
 	void rva0028D282(void *a0);
 	void rva0028AE6D();
 	void rva0028CFB2(const int *a, const int *b);
+	void rva0028CFF5(const int *flags, bool forceReplace);
 
 private:
 	char m_pad00[4];
 	Rva0028D481Template *m_template;
-	char m_pad08[0x10C - 8];
+	char m_pad08[0x84 - 8];
+	Drawable *m_drawable; // +0x84
+	char m_pad88[0x10C - 0x88];
 	char m_10C[0x4C];
 	char m_pad158[0x4C4 - 0x10C - 0x4C];
 	Gen_008F7B50 *m_helper;
@@ -86,4 +100,19 @@ void Object::rva0028CFB2(const int *a, const int *b)
 	((Rva00271C8A *)m_10C)->rva00271C8A(a, b);
 	if (!Rva00045473Equal(&tmp, m_10C))
 		rva0028AE6D();
+}
+
+// ?rva0028CFF5@Object@@QAEXPBH_N@Z @0x0028CFF5 (92B).
+// Zero Hour's Object::replaceModelConditionFlags: snapshot the 19-word mask,
+// replace it, and hand it to the Drawable (rowed 0x002791E7) when it changed
+// or the caller forces a refresh.
+void Object::rva0028CFF5(const int *flags, bool forceReplace)
+{
+	WeaponTemplateSetHead old(*(const WeaponTemplateSetHead *)m_10C);
+	*(ModelConditionFlags *)m_10C = *(const ModelConditionFlags *)flags;
+	if (!Rva00045473Equal(&old, m_10C) || forceReplace)
+	{
+		if (m_drawable)
+			m_drawable->rva002791E7(*(const ModelConditionFlags *)m_10C, *(const unsigned int *)&forceReplace, 0);
+	}
 }
