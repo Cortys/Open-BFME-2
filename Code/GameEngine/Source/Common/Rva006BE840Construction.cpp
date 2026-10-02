@@ -60,7 +60,9 @@ struct BfmeElemBE
 	BfmeGroup10BE m_10;
 };
 
-__declspec(noinline) BfmeElemBE *bfmeFillBE(BfmeElemBE *first, unsigned count,
+// Export forces this inline worker to emit a foldable COMDAT. The insertion
+// unit emits the same verified worker; an exclusive definition conflicts.
+__declspec(noinline) __declspec(dllexport) inline BfmeElemBE *bfmeFillBE(BfmeElemBE *first, unsigned count,
 	const BfmeElemBE &value, const BfmeFalseBE &)
 {
 	BfmeElemBE *cur = first;
