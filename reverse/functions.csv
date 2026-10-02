@@ -46794,7 +46794,9 @@ _Rva00819920,,0x00685820,1536,Code/Libraries/Source/DirtySock/Rva00819920Comm.cp
 ?rva0035149F@Rva0035149F@@QAEAAV1@ABV1@@Z,,0x0035149F,209,Code/GameEngine/Source/GameLogic/AI/Rva0035149F.cpp,matched,vector assign of 12B PODs via rowed alloc-copy free copy-ptrs uninit-copy
 ??1Rva00587F69@@UAE@XZ,,0x00587F69,59,Code/Libraries/Source/WWVegas/WWLib/Rva00587F69Dtor.cpp,matched,derived Rva005D6FCC base at +0 vtbl 00C75C38 freed +8 via _free caller 00587F4D
 ?Rva009AC660ReadHeader@@YAHPAE@Z,,0x001BD050,1279,Code/GameEngine/Source/Common/Rva009AC660ReadHeader.cpp,matched,BFME1 byte-identical donor; b1 0x009AC660
+?dispatch@Rva00803890Owner@@UAEHPAURva00809500Entry@@@Z,,0x0066FD70,734,Code/GameEngine/Source/GameNetwork/Rva00803890OwnerDispatch.cpp,matched,BFME1 byte-identical donor; b1 0x00803D30; 1 DIR32 string literal(s) agree
 ?Rva009C5080@@YAXPAFPAEPBE2PBFH@Z,,0x001D5980,733,Code/GameEngine/Source/Common/Rva009C5080.cpp,matched,BFME1 byte-identical donor; b1 0x009C5080
 _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A5000Vp6ThresholdSelect.cpp,matched,BFME1 byte-identical donor; b1 0x009A5000
 ?Rva009A4E50Configure@@YAXPAXIH@Z,,0x001B5910,389,Code/GameEngine/Source/Common/Rva009A4E50Configure.cpp,matched,BFME1 byte-identical donor; b1 0x009A4E50
+?rva007f63f0@Rva007F7980Browser@@QAEXPAX@Z,,0x00662B80,289,Code/GameEngine/Source/GameNetwork/Rva007F7980BrowserRva007F63F0.cpp,matched,BFME1 byte-identical donor; b1 0x007F63F0; 2 DIR32 string literal(s) agree
 ?Rva009AAD20@@YAXPAURva009AAD20State@@H@Z,,0x001BB760,208,Code/GameEngine/Source/Common/Rva009AAD20.cpp,matched,BFME1 byte-identical donor; b1 0x009AAD20
