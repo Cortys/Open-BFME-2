@@ -41,6 +41,17 @@ private:
 	unsigned char m_targetAbiState[20];
 };
 
+// The rowed 32-byte body at 0x263526 consumes the 20-byte virtual-member
+// state above; generic DLINK_ITERATOR::advance at 0x203C93 is a distinct
+// 21-byte direct-next body. Use the address-derived row name only as a
+// TU-local call-site ABI view; the target's class identity remains uncertain.
+template<class OBJCLASS>
+class Rva001705A0DlinkIterator
+{
+public:
+	void advance();
+};
+
 class GameLogic
 {
 public:
@@ -85,7 +96,8 @@ void Team::getTeamAsAIGroup(AIGroup *pAIGroup)
 	if (pAIGroup == 0)
 		return;
 
-	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done(); iter.advance())
+	for (DLINK_ITERATOR<Object> iter = iterate_TeamMemberList(); !iter.done();
+		reinterpret_cast<Rva001705A0DlinkIterator<Object> *>(&iter)->advance())
 	{
 		Object *member = iter.cur();
 		if (member->rva002931BA())
