@@ -47632,3 +47632,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0030AD8B@Thing@@QBE_NM@Z,,0x0030AD8B,60,Code/GameEngine/Source/Common/Thing/ThingIsSignificantlyAboveTerrain.cpp,matched,ZH isSignificantlyAboveTerrain worker with height offset; template byte 0x11F kind-of mask 0x81 refuses
 ?isSignificantlyAboveTerrain@Object@@QBE_NXZ,,0x0030ADDC,12,Code/GameEngine/Source/Common/Thing/ThingIsSignificantlyAboveTerrain.cpp,matched,ZH isSignificantlyAboveTerrain as BFME2 wrapper passing 0.0f to the height-offset worker 0x30AD8B
 ?Rva0040B218Copy@@YAPAVRva0040AEE3@@PAV1@00@Z,,0x0040B218,47,Code/GameEngine/Source/Common/Thing/Rva0040AEE3Copy.cpp,matched,chain via 0x0040AEFE rowed operator assign stride 0x10
+?rva0040B0D0@Rva0040B0D0@@QAE_NPBX@Z,,0x0040B0D0,126,Code/Libraries/Source/WWVegas/WWLib/Rva0040B0D0Contains.cpp,matched,chain via rowed any test and 0x0040AE2C 0x0040ADFA
