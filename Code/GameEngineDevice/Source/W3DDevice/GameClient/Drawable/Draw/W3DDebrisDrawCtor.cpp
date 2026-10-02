@@ -20,6 +20,9 @@
 // classes throughout keep the body frameless. Factory news 0x48 fits the
 // +0x44 tail. Zero new pins (base resolves via the existing DrawModule pin).
 
+extern "C" const void *const vtbl_00C6FFFC[];  // folded, 10 classes; via ??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C6FFFC=??_7?$CategoryModuleClass@$00@FXParticleSystem@@6B@")
+
 extern "C" const void *const vtbl_00BC97A0[];  // ??_7W3DDebrisDraw@@6BDebrisDrawInterface@@@
 #pragma comment(linker, "/alternatename:_vtbl_00BC97A0=??_7W3DDebrisDraw@@6BDebrisDrawInterface@@@")
 extern "C" const void *const vtbl_00BC97A8[];  // ??_7W3DDebrisDraw@@6BDrawableModuleLayoutBase@@@
@@ -56,7 +59,7 @@ private:
 W3DDebrisDraw::W3DDebrisDraw(Thing *thing, const ModuleData *moduleData) :
 	DrawModule(thing, moduleData)
 {
-	*(volatile unsigned int *)((char *)this + 0xC) = 0x00C6FFFC;
+	*(volatile unsigned int *)((char *)this + 0xC) = ((unsigned int)vtbl_00C6FFFC);
 	_ReadWriteBarrier();
 	*(unsigned int *)this = ((unsigned int)vtbl_00BC97A8);
 	*(unsigned int *)((char *)this + 0xC) = ((unsigned int)vtbl_00BC97A0);

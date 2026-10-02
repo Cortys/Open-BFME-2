@@ -10,6 +10,9 @@
 // (news 0x10, sole caller at 0x24DFA8). Row supersedes the ctor pin.
 
 // Global word copied into +8 (absolute VA 0x00DBA4E4, DIR32-masked).
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 extern int g_Va00DBA4E4;
 
 class MultiIniFieldParse;
@@ -42,7 +45,7 @@ private:
 CommandButtonHuntUpdateModuleData::CommandButtonHuntUpdateModuleData()
 {
 	float cap = 9999.0f;
-	*(unsigned int *)this = 0x00C4ED70;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C4ED70);
 	m_08 = g_Va00DBA4E4;
 	m_cap = cap;
 }

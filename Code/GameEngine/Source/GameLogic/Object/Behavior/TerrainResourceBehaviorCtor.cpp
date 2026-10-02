@@ -15,6 +15,11 @@
 // tail (protected IAEX Object-uint spelling resolves via the existing pin
 // at 0x44DF71). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C42B60[];  // folded, 3 classes; via ??_7FakePathfindPortalBehaviour@@6BMiBase1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C42B60=??_7FakePathfindPortalBehaviour@@6BMiBase1@@@")
+extern "C" const void *const vtbl_00C4EF80[];  // folded, 7 classes; via ??_7ContainIface34@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EF80=??_7ContainIface34@@6B@")
+
 extern "C" const void *const vtbl_00C493E8[];  // ??_7Rva00481F82@@6BRva00481F82_S4@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C493E8=??_7Rva00481F82@@6BRva00481F82_S4@@@")
 extern "C" const void *const vtbl_00C493F8[];  // ??_7Rva00481F82@@6BRva00481F82_S3@@@
@@ -74,9 +79,9 @@ TerrainResourceBehavior::TerrainResourceBehavior(Thing *thing, const ModuleData 
 	int *slot20 = (int *)&m_20;
 	int *slot24 = (int *)&m_24;
 	*slot20 = (int)0x00C1C780;
-	*slot24 = (int)0x00C4EF80;
+	*slot24 = (int)((unsigned int)vtbl_00C4EF80);
 	m_vtable = (const void *)((unsigned int)vtbl_00C49408);
-	m_secondary0C = (const void *)0x00C42B60;
+	m_secondary0C = (const void *)((unsigned int)vtbl_00C42B60);
 	m_secondary10 = (const void *)((unsigned int)vtbl_00C493FC);
 	m_20 = (const void *)((unsigned int)vtbl_00C493F8);
 	m_24 = (const void *)((unsigned int)vtbl_00C493E8);

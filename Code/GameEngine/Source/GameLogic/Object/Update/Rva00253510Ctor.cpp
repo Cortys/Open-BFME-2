@@ -10,6 +10,9 @@
 // installed by DeletionUpdate/SlotToLock/ReflectDamage), so the install
 // proves linkage, not class. Pin-to-row upgrade; identity still unproven.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class DieMuxData
 {
 public:
@@ -34,6 +37,6 @@ private:
 // ??0Rva00253510@@QAE@XZ @0x253510
 Rva00253510::Rva00253510()
 {
-	*(unsigned int *)this = 0x00C4ED70;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C4ED70);
 	m_dieMux.init();
 }

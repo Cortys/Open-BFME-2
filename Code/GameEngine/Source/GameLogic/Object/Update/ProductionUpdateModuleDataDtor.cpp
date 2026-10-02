@@ -30,6 +30,9 @@
 // precedent). Members are declared in offset order so reverse destruction
 // yields states 3/2/1/0.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 #include <list>
 #include <vector>
 
@@ -111,7 +114,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class ProductionUpdateModuleData : public Snapshot

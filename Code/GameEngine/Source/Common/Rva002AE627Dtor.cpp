@@ -9,6 +9,9 @@
 // PillageModuleDataDtor (TU-local Snapshot with inline BBB554-restoring dtor,
 // novtable derived, empty body). Called at 0x002AF541 and 0x002B13D1 plus
 // Unwind funclets. Owner identity unproven, honest Rva name.
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 #include <vector>
 
 class Xfer;
@@ -24,7 +27,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class Rva002A73B8

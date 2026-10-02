@@ -13,6 +13,9 @@
 // (CreationList at +0x38 plus damage-trigger fields) pushed as the
 // factory immediate.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class Rva00253510
 {
 public:
@@ -40,5 +43,5 @@ DamageFilteredCreateObjectDieModuleData::DamageFilteredCreateObjectDieModuleData
 	m_postFilterTriggeredDuration = 0;
 	m_damageTypeTriggersInstantly = 3;
 	m_damageTypeTriggersForDuration = 3;
-	m_vtable = reinterpret_cast<void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C4ED70));
 }

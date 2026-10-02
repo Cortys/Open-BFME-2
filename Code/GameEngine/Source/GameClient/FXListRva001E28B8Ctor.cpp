@@ -6,6 +6,9 @@
 // mov [0x28] 0xBC6F20 then vtable 0xBDD978 at +0 then mov [0x28] 0xBDD974.
 // Caller at 0x001E2C0F plus base vtable 0x7DD970 prove AsciiString passthrough.
 
+extern "C" const void *const vtbl_00BC6F20[];  // folded, 7 classes; via ??_7Rva0007DF07@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BC6F20=??_7Rva0007DF07@@6B@")
+
 #include <list>
 
 #include "ascii_string.h"
@@ -21,7 +24,7 @@ private:
 
 struct Member28
 {
-	Member28() : m_vtable((void *)0x00BC6F20), m_04(0) {}
+	Member28() : m_vtable((void *)((unsigned int)vtbl_00BC6F20)), m_04(0) {}
 	void *m_vtable;
 	int m_04;
 };

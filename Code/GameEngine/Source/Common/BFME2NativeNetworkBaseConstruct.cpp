@@ -3,6 +3,9 @@
 // BFME2NativeNetwork::baseConstruct, retail 0x001B4E63, 17 bytes.
 // Dedicated TU so NetworkInterfaceConstructor.cpp stays untouched.
 
+extern "C" const void *const vtbl_00BD77A0[];  // folded, 2 classes; via ??_7GameEngineDeletingBase@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD77A0=??_7GameEngineDeletingBase@@6B@")
+
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)
 
@@ -19,7 +22,7 @@ private:
 
 BFME2NativeNetwork *BFME2NativeNetwork::baseConstruct()
 {
-	*(void **)this = (void *)0x00BD77A0;
+	*(void **)this = (void *)((unsigned int)vtbl_00BD77A0);
 	_ReadWriteBarrier();
 	_value = 0;
 	_flag = 0;

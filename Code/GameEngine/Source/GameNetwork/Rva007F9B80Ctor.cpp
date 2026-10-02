@@ -1,6 +1,9 @@
 // cl: /O2 /GX-
 // Rva007F9B80's constructor at 0x007F9B80.
 
+extern "C" const void *const vtbl_00C4EF80[];  // folded, 7 classes; via ??_7ContainIface34@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4EF80=??_7ContainIface34@@6B@")
+
 extern "C" const void *const vtbl_00CE32D0[];  // ??_7Rva007F9C50@@6BRva007F9C50Base8@@@
 #pragma comment(linker, "/alternatename:_vtbl_00CE32D0=??_7Rva007F9C50@@6BRva007F9C50Base8@@@")
 extern "C" const void *const vtbl_00CE32D4[];  // ??_7Rva007F9C50@@6BRva007F9C50Base4@@@
@@ -35,7 +38,7 @@ private:
 Rva007F9B80::Rva007F9B80(void *owner) throw()
 {
 	volatile unsigned int *base = (volatile unsigned int *)this;
-	base[1] = 0x00C4EF80;
+	base[1] = ((unsigned int)vtbl_00C4EF80);
 	base[2] = 0x00C1C780;
 	base[0] = ((unsigned int)vtbl_00CE32E4);
 	base[1] = ((unsigned int)vtbl_00CE32D4);

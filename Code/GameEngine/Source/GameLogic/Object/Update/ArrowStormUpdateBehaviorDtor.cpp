@@ -24,6 +24,11 @@
 // implicit one). (3) /GX- (retail dtor is frameless with no EH prologue;
 // /GX adds cookie+frame+states).
 
+extern "C" const void *const vtbl_00C4D640[];  // folded, 11 classes; via ??_7LevelGrantSpecialPower@@6BSpecialPowerModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4D640=??_7LevelGrantSpecialPower@@6BSpecialPowerModuleInterface@@@")
+extern "C" const void *const vtbl_00C4DEE8[];  // folded, 4 classes; via ??_7GiveOrRestoreUpgradeSpecialPower@@6BRva0044EF5E@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4DEE8=??_7GiveOrRestoreUpgradeSpecialPower@@6BRva0044EF5E@@@")
+
 class Thing;
 class ModuleData;
 
@@ -72,8 +77,8 @@ ArrowStormUpdate::~ArrowStormUpdate()
 {
 	Rva0029FB3BMember *member = (Rva0029FB3BMember *)((char *)this + 0x88);
 	*(const void **)this = (const void *)0x00C4D700;
-	*(const void **)((char *)this + 0x0C) = (const void *)0x00C4D640;
-	*(const void **)((char *)this + 0x10) = (const void *)0x00C4DEE8;
+	*(const void **)((char *)this + 0x0C) = (const void *)((unsigned int)vtbl_00C4D640);
+	*(const void **)((char *)this + 0x10) = (const void *)((unsigned int)vtbl_00C4DEE8);
 	*(const void **)((char *)this + 0x20) = (const void *)0x00C4D61C;
 	((PoolMember *)member)->Rva00268902();
 }

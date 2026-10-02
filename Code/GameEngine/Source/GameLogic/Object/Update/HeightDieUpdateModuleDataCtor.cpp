@@ -15,6 +15,9 @@
 // share); the -1.0f pool literal reproduces the DestroyAttachedParticles
 // default.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class HeightDieUpdateModuleData
 {
 public:
@@ -35,7 +38,7 @@ private:
 HeightDieUpdateModuleData::HeightDieUpdateModuleData()
 {
 	m_targetHeight = 0.0f;
-	m_vtable = reinterpret_cast<const void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4ED70));
 	m_targetHeightIncludesStructures = false;
 	m_onlyWhenMovingDown = false;
 	m_destroyAttachedParticlesAtHeight = -1.0f;

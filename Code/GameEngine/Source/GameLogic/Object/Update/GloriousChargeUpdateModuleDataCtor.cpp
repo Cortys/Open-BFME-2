@@ -14,6 +14,9 @@
 // factory at 0x24F61B (news 0xD4) is the only raw caller. Supersedes the
 // 0x4AD4F2 ctor pin (row proves the body).
 
+extern "C" const void *const vtbl_00C5F778[];  // folded, 3 classes; via ??_7EvacuateGarrisonSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5F778=??_7EvacuateGarrisonSpecialPowerModuleData@@6B@")
+
 class Rva0044EB54
 {
 public:
@@ -38,7 +41,7 @@ private:
 GloriousChargeUpdateModuleData::GloriousChargeUpdateModuleData()
 	: Rva0044EB54()
 {
-	*(unsigned int *)this = 0x00C5F778;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5F778);
 	m_bonusRadius = 0.0f;
 	m_speechDuration = 0;
 	m_updateInterval = 0;

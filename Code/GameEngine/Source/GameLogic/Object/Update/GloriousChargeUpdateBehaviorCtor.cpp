@@ -11,6 +11,11 @@
 // via 0x26549E alias pin. Tail is direct and-imm plus mov-byte (no zero
 // register). Zero new pins (all callees rowed/pinned).
 
+extern "C" const void *const vtbl_00C4D640[];  // folded, 11 classes; via ??_7LevelGrantSpecialPower@@6BSpecialPowerModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4D640=??_7LevelGrantSpecialPower@@6BSpecialPowerModuleInterface@@@")
+extern "C" const void *const vtbl_00C552A4[];  // folded, 6 classes; via ??_7GiveOrRestoreUpgradeSpecialPower@@6BDamageModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C552A4=??_7GiveOrRestoreUpgradeSpecialPower@@6BDamageModuleInterface@@@")
+
 class Thing;
 class ModuleData;
 
@@ -47,9 +52,9 @@ GloriousChargeUpdate::GloriousChargeUpdate(Thing *thing, const ModuleData *modul
 	Rva0029FB3BMember *member = (Rva0029FB3BMember *)((char *)this + 0x88);
 	void *context = (void *)((char *)&moduleData + 3);
 	*(const void **)this = (const void *)0x00C55118;
-	*(const void **)((char *)this + 0x0C) = (const void *)0x00C4D640;
+	*(const void **)((char *)this + 0x0C) = (const void *)((unsigned int)vtbl_00C4D640);
 	*(const void **)((char *)this + 0x10) = (const void *)0x00C55108;
-	*(const void **)((char *)this + 0x20) = (const void *)0x00C552A4;
+	*(const void **)((char *)this + 0x20) = (const void *)((unsigned int)vtbl_00C552A4);
 	member->init(context);
 	m_8C &= 0;
 	m_90 = 0;

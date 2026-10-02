@@ -13,6 +13,9 @@
 // 0x4C6805 sits in the same cluster (ElvenWood precedent). The owning
 // factory at 0x002522B5 pushes this ctor's address (sole raw caller).
 
+extern "C" const void *const vtbl_00C5E7A8[];  // folded, 2 classes; via ??_7CombineHordeSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5E7A8=??_7CombineHordeSpecialPowerModuleData@@6B@")
+
 class Rva004930A0
 {
 public:
@@ -36,5 +39,5 @@ StopSpecialPowerModuleData::StopSpecialPowerModuleData()
 	: Rva004930A0()
 {
 	m_stopPowerTemplate = 0;
-	*(unsigned int *)this = 0x00C5E7A8;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5E7A8);
 }

@@ -13,6 +13,9 @@
 // rowed ctor TU (opaque 0x0C base plus derived IDs at +0x28/+0x2C); the
 // C170A4 restore is hand-placed so the 95B shape matches with EH states.
 
+extern "C" const void *const vtbl_00C170A4[];  // folded, 2 classes; via ??_7Rva00362EC7@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C170A4=??_7Rva00362EC7@@6B@")
+
 enum ParticleSystemID
 {
 	INVALID_PARTICLE_SYSTEM_ID = 0
@@ -53,5 +56,5 @@ LaserUpdate::~LaserUpdate()
 		TheParticleSystemManager->destroyParticleSystemByID(m_particleSystemID);
 	if (m_targetParticleSystemID != INVALID_PARTICLE_SYSTEM_ID)
 		TheParticleSystemManager->destroyParticleSystemByID(m_targetParticleSystemID);
-	*(void **)this = (void *)0x00C170A4;
+	*(void **)this = (void *)((unsigned int)vtbl_00C170A4);
 }

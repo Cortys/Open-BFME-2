@@ -15,6 +15,9 @@
 // so no vtable is emitted here; the vtable stores go through sourced-before
 // address-take pointers. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C58790[];  // folded, 55 classes; via ??_7AODHordeContain@@6BIface2C@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C58790=??_7AODHordeContain@@6BIface2C@@@")
+
 class Thing;
 class ModuleData;
 
@@ -62,5 +65,5 @@ StatusBitsUpgradeIfEldestKindof::StatusBitsUpgradeIfEldestKindof(Thing *thing, c
 	int *sec10 = (int *)&m_secondary10;
 	*sec10 = (int)0x00C579D8;
 	int *slot18 = (int *)&m_slot18;
-	*slot18 = (int)0x00C58790;
+	*slot18 = (int)((unsigned int)vtbl_00C58790);
 }

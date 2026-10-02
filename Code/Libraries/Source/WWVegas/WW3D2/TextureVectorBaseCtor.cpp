@@ -4,6 +4,9 @@
 // Code/Libraries/Source/WWVegas/WW3D2/MaterialCollectorClass_ctor_Thunk.cpp
 // (?construct@TextureVectorBaseCtorShim@@QAEXHH@Z at 0x92FBA0, 191B).
 // Exception strings and both internal calls are identical in both games.
+extern "C" const void *const vtbl_00BD4640[];  // folded, 2 classes; via ??_7?$VectorClass@VBfmeHandleCX@@@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BD4640=??_7?$VectorClass@VBfmeHandleCX@@@@6B@")
+
 #include <new.h>
 
 void *__cdecl operator new[](unsigned int size);
@@ -49,7 +52,7 @@ private:
 // BFME2 retail vtable 0x00BD4640 (BFME1 carries 0x0113C5FC).
 TextureVectorBaseCtorShim::TextureVectorBaseCtorShim(int size, TextureVectorCell const *array)
 {
-	*(unsigned int *)this = 0x00BD4640;
+	*(unsigned int *)this = ((unsigned int)vtbl_00BD4640);
 	Vector = 0;
 	VectorMax = size;
 	IsValid = true;

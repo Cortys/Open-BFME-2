@@ -7,6 +7,9 @@
 //  the deleting dtor 0x0039AF5A plus derived dtors 0x0039ADF3 and 0x005DB100.
 // Shape follows PlayerList dtor (ternary deleteInstance plus null plus EH).
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 void __cdecl operator delete(void *p);
 
 class Snapshot
@@ -20,7 +23,7 @@ public:
 
 inline Snapshot::~Snapshot()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 }
 
 class AsciiStringMember

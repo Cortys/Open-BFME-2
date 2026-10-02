@@ -17,6 +17,9 @@
 // indirection pins each group in program order. The immediates are the retail
 // vtable slots. Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C4E998[];  // folded, 6 classes; via ??_7Rva00494A97@@6BRva00494A97_S1@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C4E998=??_7Rva00494A97@@6BRva00494A97_S1@@@")
+
 extern "C" const void *const vtbl_00C5DC68[];  // ??_7SiegeDeploySpecialPower@@6BSiegeDeploySpecialPower_S4@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C5DC68=??_7SiegeDeploySpecialPower@@6BSiegeDeploySpecialPower_S4@@@")
 extern "C" const void *const vtbl_00C5DCCC[];  // ??_7SiegeDeploySpecialPower@@6BSiegeDeploySpecialPower_S3@@@
@@ -77,7 +80,7 @@ SiegeDeploySpecialPower::SiegeDeploySpecialPower(Thing *thing, const ModuleData 
 	int *slot00 = (int *)&m_vtable;
 	*slot00 = (int)((unsigned int)vtbl_00C5DCFC);
 	int *slot0C = (int *)&m_secondary0C;
-	*slot0C = (int)0x00C4E998;
+	*slot0C = (int)((unsigned int)vtbl_00C4E998);
 	int *slot10 = (int *)&m_secondary10;
 	*slot10 = (int)((unsigned int)vtbl_00C5DCF0);
 	int *slot20 = (int *)&m_slot20;

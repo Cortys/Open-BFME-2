@@ -13,6 +13,9 @@
 // +0x20, and the setWakeFrame tail (protected IAEX Object-uint spelling
 // resolves via the existing pin at 0x44DF71). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 extern "C" const void *const vtbl_00C4A258[];  // ??_7SlaveWatcherBehavior@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00C4A258=??_7SlaveWatcherBehavior@@6B@")
 extern "C" const void *const vtbl_00C4A264[];  // ??_7SlaveWatcherBehavior@@6BBehaviorModuleBase@@@
@@ -71,7 +74,7 @@ SlaveWatcherBehavior::SlaveWatcherBehavior(Thing *thing, const ModuleData *modul
 	: UpdateModule(thing, moduleData)
 {
 	m_vtable = (const void *)((unsigned int)vtbl_00C4A264);
-	m_secondary0C = (const void *)0x00BEFF90;
+	m_secondary0C = (const void *)((unsigned int)vtbl_00BEFF90);
 	m_secondary10 = (const void *)((unsigned int)vtbl_00C4A258);
 	m_24.clear80();
 	m_20 &= 0;

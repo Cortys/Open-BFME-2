@@ -11,6 +11,9 @@
 // bytes (next explicit store is +0x30); its 23B body (Vector_base 0x211E58 +
 // or -1 at +0x0C) fits a vector plus flag word.
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 class Thing;
 class ModuleData;
 
@@ -49,6 +52,6 @@ StancesBehavior::StancesBehavior(Thing *thing, const ModuleData *moduleData)
 {
 	m_30 = 0;
 	m_vtable = reinterpret_cast<const void *>(0xC424DC);
-	m_p0C = reinterpret_cast<const void *>(0xBEFF90);
+	m_p0C = reinterpret_cast<const void *>(((unsigned int)vtbl_00BEFF90));
 	m_p10 = reinterpret_cast<const void *>(0xC424D0);
 }

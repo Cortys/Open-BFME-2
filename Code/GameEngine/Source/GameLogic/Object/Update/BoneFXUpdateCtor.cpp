@@ -19,6 +19,9 @@
 // and-zero, push-8/pop-edi and EBP frame; /GX for the EH prologue and
 // states 0-3; /arch:SSE for xorps/movss zeros.
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 extern "C" const void *const vtbl_00C4B164[];  // ??_7BoneFXUpdate@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00C4B164=??_7BoneFXUpdate@@6B@")
 extern "C" const void *const vtbl_00C4B170[];  // ??_7BoneFXUpdate@@6BBehaviorModuleBase@@@
@@ -102,7 +105,7 @@ private:
 BoneFXUpdate::BoneFXUpdate(Thing *thing, const ModuleData *moduleData)
 	: UpdateModule(thing, moduleData),
 	m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4B170))),
-	m_secondary0C(reinterpret_cast<const void *>(0x00BEFF90)),
+	m_secondary0C(reinterpret_cast<const void *>(((unsigned int)vtbl_00BEFF90))),
 	m_secondary10(reinterpret_cast<const void *>(((unsigned int)vtbl_00C4B164)))
 {
 	int i, j;

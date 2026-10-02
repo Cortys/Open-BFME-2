@@ -12,6 +12,9 @@
 // 0x00BF17BC (MinLifetime plus MaxLifetime per ZH DeletionUpdate.h) beside
 // the rowed DeletionUpdate bodies (update plus ctor plus pool key).
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class ModuleData;
 class INI;
 class MultiIniFieldParse;
@@ -29,7 +32,7 @@ public:
 	{
 		m_minFrames = 0;
 		m_maxFrames = 0;
-		m_vtable = reinterpret_cast<void *>(0x00C4ED70);
+		m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C4ED70));
 	}
 	static void buildFieldParse(MultiIniFieldParse &parse);
 	static ModuleData *friend_newModuleData(INI *ini);

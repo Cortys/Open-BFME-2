@@ -10,6 +10,9 @@
 // Class size 0xD8 proven by the FlingPassengerSpecialAbilityUpdate data
 // factory (news 0xD8, sole caller at 0x24DE96). Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C5F778[];  // folded, 3 classes; via ??_7EvacuateGarrisonSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5F778=??_7EvacuateGarrisonSpecialPowerModuleData@@6B@")
+
 class MultiIniFieldParse;
 struct FieldParse;
 
@@ -51,7 +54,7 @@ FlingPassengerSpecialAbilityUpdateModuleData::FlingPassengerSpecialAbilityUpdate
 {
 	float fzero = 0.0f;
 	float *floats = m_floatC8;
-	*(unsigned int *)this = 0x00C5F778;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5F778);
 	floats[0] = fzero;
 	floats[1] = fzero;
 	floats[2] = fzero;

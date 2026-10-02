@@ -17,6 +17,11 @@
 // body statements, matching retail order. The global counter bump closes the
 // body. Zero new pins (base resolves via the existing pin).
 
+extern "C" const void *const vtbl_00BCA08C[];  // folded, 5 classes; via ??_7Rva000CA119@@6BRva000CA119_B2@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCA08C=??_7Rva000CA119@@6BRva000CA119_B2@@@")
+extern "C" const void *const vtbl_00BCC588[];  // folded, 3 classes; via ??_7W3DTankDraw@@6BDrawInterfaceA@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BCC588=??_7W3DTankDraw@@6BDrawInterfaceA@@@")
+
 class Thing;
 class ModuleData;
 
@@ -55,7 +60,7 @@ W3DHordeModelDraw::W3DHordeModelDraw(Thing *thing, const ModuleData *moduleData)
 	m_unmodelled2E8(0), m_unmodelled2EC(0), m_unmodelled2F0(0)
 {
 	*(unsigned int *)this = 0x00BC68F0;
-	*(unsigned int *)((char *)this + 0x0C) = 0x00BCC588;
-	*(unsigned int *)((char *)this + 0x10) = 0x00BCA08C;
+	*(unsigned int *)((char *)this + 0x0C) = ((unsigned int)vtbl_00BCC588);
+	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00BCA08C);
 	++TheW3DHordeModelDrawCount;
 }

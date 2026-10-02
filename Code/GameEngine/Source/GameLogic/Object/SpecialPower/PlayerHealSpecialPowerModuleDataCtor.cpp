@@ -32,6 +32,9 @@
 // the store waits at the later assignment below the byte store and the
 // memset push pair hoists above the byte store as stack ops. 91 of 91.
 
+extern "C" const void *const vtbl_00C5E7A8[];  // folded, 2 classes; via ??_7CombineHordeSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5E7A8=??_7CombineHordeSpecialPowerModuleData@@6B@")
+
 #include <string.h>
 
 
@@ -69,7 +72,7 @@ private:
 // ??0PlayerHealSpecialPowerModuleData@@QAE@XZ @0x4C803A
 PlayerHealSpecialPowerModuleData::PlayerHealSpecialPowerModuleData()
 	: Rva004930A0()
-	, m_vtable(reinterpret_cast<const void *>(0x00C5E7A8))
+	, m_vtable(reinterpret_cast<const void *>(((unsigned int)vtbl_00C5E7A8)))
 	, m_filter()
 {
 	m_healAmount = 0.0f;

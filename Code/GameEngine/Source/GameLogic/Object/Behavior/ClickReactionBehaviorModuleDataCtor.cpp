@@ -14,6 +14,9 @@
 // rep prefix); the timer and vtable stay body assignments in retail order.
 // Row supersedes the sole-caller pin.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 #include <cstring>
 
 class ClickReactionBehaviorModuleData
@@ -35,7 +38,7 @@ private:
 // ??0ClickReactionBehaviorModuleData@@QAE@XZ @0x4595F0
 ClickReactionBehaviorModuleData::ClickReactionBehaviorModuleData()
 {
-	m_vtable = reinterpret_cast<const void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4ED70));
 	m_clickReactionTimer = 0x258;
 	memset(&m_reactionFrames1, 0, sizeof(int) * 5);
 }

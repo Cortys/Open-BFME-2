@@ -13,6 +13,9 @@
 // hoisted xorps (probe-proven). Class identity is pool-key adjacency: the
 // rowed AIGateUpdate pool key (0x4B087C, 69B) ends where this ctor begins.
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class AIGateUpdateModuleData
 {
 public:
@@ -28,7 +31,7 @@ private:
 // ??0AIGateUpdateModuleData@@QAE@XZ @0x4B08C1
 AIGateUpdateModuleData::AIGateUpdateModuleData()
 {
-	m_vtable = reinterpret_cast<void *>(0x00C4ED70);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C4ED70));
 	m_triggerWidthX = 0.0f;
 	m_triggerWidthY = 0.0f;
 }

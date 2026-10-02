@@ -13,6 +13,9 @@
 // is emitted here; all three immediates are DIR32-masked in comparison).
 // Zero new pins (base resolves via the existing DamageModule pin).
 
+extern "C" const void *const vtbl_00C597F8[];  // folded, 6 classes; via ??_7BoneFXDamage@@6BBehaviorModuleInterface@@@
+#pragma comment(linker, "/alternatename:_vtbl_00C597F8=??_7BoneFXDamage@@6BBehaviorModuleInterface@@@")
+
 class Thing;
 class ModuleData;
 
@@ -34,6 +37,6 @@ CallHelpOnDamage::CallHelpOnDamage(Thing *thing, const ModuleData *moduleData) :
 {
 	*(int *)((char *)this + 0x14) = 0;
 	*(unsigned int *)this = 0x00C59FDC;
-	*(unsigned int *)((char *)this + 0xC) = 0x00C597F8;
+	*(unsigned int *)((char *)this + 0xC) = ((unsigned int)vtbl_00C597F8);
 	*(unsigned int *)((char *)this + 0x10) = 0x00C59FD0;
 }

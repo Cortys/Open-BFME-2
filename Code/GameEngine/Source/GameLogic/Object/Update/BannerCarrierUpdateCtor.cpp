@@ -12,6 +12,9 @@
 // DIR32-masked in comparison). Zero new pins (base resolves via the
 // rowed UpdateModule spelling).
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 extern "C" const void *const vtbl_00C4F82C[];  // ??_7Rva004969FF@@6BRva004969FF_B2@@@
 #pragma comment(linker, "/alternatename:_vtbl_00C4F82C=??_7Rva004969FF@@6BRva004969FF_B2@@@")
 extern "C" const void *const vtbl_00C4F838[];  // ??_7Rva004969FF@@6BRva0024A797@@@
@@ -37,6 +40,6 @@ BannerCarrierUpdate::BannerCarrierUpdate(Thing *thing, const ModuleData *moduleD
 	UpdateModule(thing, moduleData)
 {
 	*(unsigned int *)this = ((unsigned int)vtbl_00C4F838);
-	*(unsigned int *)((char *)this + 0xC) = 0x00BEFF90;
+	*(unsigned int *)((char *)this + 0xC) = ((unsigned int)vtbl_00BEFF90);
 	*(unsigned int *)((char *)this + 0x10) = ((unsigned int)vtbl_00C4F82C);
 }

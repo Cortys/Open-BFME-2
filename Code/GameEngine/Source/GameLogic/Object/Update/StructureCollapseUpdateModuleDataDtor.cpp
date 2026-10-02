@@ -12,6 +12,9 @@
 // base restore are compiler-generated. No base call in retail (inline).
 // Size 0xFC matches the rowed factory 0x00256BEA.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 class DieMuxData
 {
 public:
@@ -46,7 +49,7 @@ class StructureCollapseBase
 public:
 	virtual ~StructureCollapseBase()
 	{
-		*(const void **)this = reinterpret_cast<const void *>(0x00BBB554);
+		*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00BBB554));
 	}
 
 private:

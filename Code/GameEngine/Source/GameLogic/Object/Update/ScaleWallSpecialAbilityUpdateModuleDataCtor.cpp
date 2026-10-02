@@ -8,6 +8,9 @@
 // caller at 0x24DDEC); base size 0xC8 inferred from the +0xC8 position. Row
 // supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C5F778[];  // folded, 3 classes; via ??_7EvacuateGarrisonSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5F778=??_7EvacuateGarrisonSpecialPowerModuleData@@6B@")
+
 class MultiIniFieldParse;
 struct FieldParse;
 
@@ -46,7 +49,7 @@ ScaleWallSpecialAbilityUpdateModuleData::ScaleWallSpecialAbilityUpdateModuleData
 	: Rva0044EB54()
 {
 	m_wordC8 &= 0;
-	*(unsigned int *)this = 0x00C5F778;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C5F778);
 }
 
 // ?buildFieldParse@ScaleWallSpecialAbilityUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z @0x0024DD72

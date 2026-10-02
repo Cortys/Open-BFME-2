@@ -6,6 +6,9 @@
 // module-template destructor onto. Named templates whose destructors share
 // the fold ride in the same TU under the same standalone shape.
 
+extern "C" const void *const vtbl_00BBB554[];  // folded, 23 classes; via ??_7BfmeBaseVUQ@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00BBB554=??_7BfmeBaseVUQ@@6B@")
+
 extern "C" const void *const vtbl_00BBB52C[];  // ??_7ModuleTemplate@FXParticleSystem@@6B@
 #pragma comment(linker, "/alternatename:_vtbl_00BBB52C=??_7ModuleTemplate@FXParticleSystem@@6B@")
 
@@ -27,7 +30,7 @@ public:
 DefaultModuleTemplate<1>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -44,7 +47,7 @@ public:
 DefaultModuleTemplate<2>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -61,7 +64,7 @@ public:
 DefaultModuleTemplate<3>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -78,7 +81,7 @@ public:
 DefaultModuleTemplate<0>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -95,7 +98,7 @@ public:
 DefaultModuleTemplate<6>::~DefaultModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -144,7 +147,7 @@ public:
 CylindricalEmissionVelocityModuleTemplate::~CylindricalEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -160,7 +163,7 @@ public:
 OrthoEmissionVelocityModuleTemplate::~OrthoEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -176,7 +179,7 @@ public:
 LightningDrawModuleTemplate::~LightningDrawModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -192,7 +195,7 @@ public:
 LightningEmissionModuleTemplate::~LightningEmissionModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -208,7 +211,7 @@ public:
 RenderObjectUpdateModuleTemplate::~RenderObjectUpdateModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -224,7 +227,7 @@ public:
 TerrainFireEmissionModuleTemplate::~TerrainFireEmissionModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;
@@ -240,7 +243,7 @@ public:
 OutwardEmissionVelocityModuleTemplate::~OutwardEmissionVelocityModuleTemplate()
 {
     unsigned char *info = this ? (unsigned char *)this + 8 : 0;
-    *(volatile unsigned int *)info = 0x00BBB554;
+    *(volatile unsigned int *)info = ((unsigned int)vtbl_00BBB554);
 
     unsigned char *base = this ? (unsigned char *)this + 4 : 0;
     *(volatile unsigned int *)base = 0x00C1C780;

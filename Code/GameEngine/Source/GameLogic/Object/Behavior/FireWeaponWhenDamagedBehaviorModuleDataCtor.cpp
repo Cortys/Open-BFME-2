@@ -10,6 +10,9 @@
 // these offsets; factory 0x253703 news 0x144 with this ctor as sole caller
 // and pushes the rowed proc. Shape follows ReflectDamage trivial-ctor
 // (flat explicit vtable, body in retail order, /O1 /arch:SSE).
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class Rva0025342CMember
 {
 public:
@@ -45,7 +48,7 @@ private:
 // ??0FireWeaponWhenDamagedBehaviorModuleData@@QAE@XZ @0x00253682
 inline FireWeaponWhenDamagedBehaviorModuleData::FireWeaponWhenDamagedBehaviorModuleData()
 {
-	*(const void **)this = reinterpret_cast<const void *>(0x00C4ED70);
+	*(const void **)this = reinterpret_cast<const void *>(((unsigned int)vtbl_00C4ED70));
 	m_sharedConstruct.construct();
 	m_damageTypes |= -1;
 	m_startsActive = false;

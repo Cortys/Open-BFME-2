@@ -10,6 +10,9 @@
 // the ModuleFactory registration under "RepairDockUpdate" (sole-caller data
 // factory per the superseded ctor pin).
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class DockUpdateModuleData
 {
 public:
@@ -33,6 +36,6 @@ private:
 RepairDockUpdateModuleData::RepairDockUpdateModuleData()
 	: DockUpdateModuleData()
 {
-	*(unsigned int *)this = 0x00C4ED70;
+	*(unsigned int *)this = ((unsigned int)vtbl_00C4ED70);
 	m_float10 = 1.0f;
 }

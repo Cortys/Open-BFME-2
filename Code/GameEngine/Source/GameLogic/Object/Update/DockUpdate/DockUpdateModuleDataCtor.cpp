@@ -7,6 +7,9 @@
 // byte 1 at +0xC. Non-virtual with an explicit leading vtable member so no
 // vtable is emitted; source order matches retail (and first, no barrier).
 
+extern "C" const void *const vtbl_00C4ED70[];  // folded, 9 classes; via ??_7BeaconClientUpdateModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C4ED70=??_7BeaconClientUpdateModuleData@@6B@")
+
 class DockUpdateModuleData
 {
 public:
@@ -23,6 +26,6 @@ private:
 DockUpdateModuleData::DockUpdateModuleData()
 {
 	m_08 = 0;
-	m_vtable = (void *)0xC4ED70;
+	m_vtable = (void *)((unsigned int)vtbl_00C4ED70);
 	m_0C = 1;
 }

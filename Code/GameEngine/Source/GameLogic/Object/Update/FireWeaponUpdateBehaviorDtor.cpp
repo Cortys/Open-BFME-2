@@ -11,6 +11,9 @@
 // return-fed operator delete) plus implicit list-base-dtor and base-dtor
 // calls. The release helper rides as an Rva pin (value-this, do-not-name).
 
+extern "C" const void *const vtbl_00BEFF90[];  // folded, 80 classes; via ??_7AIGateUpdate@@6BBehaviorModuleOther@@@
+#pragma comment(linker, "/alternatename:_vtbl_00BEFF90=??_7AIGateUpdate@@6BBehaviorModuleOther@@@")
+
 #include <list>
 
 extern "C" void _ReadWriteBarrier(void);
@@ -56,7 +59,7 @@ private:
 // ??1FireWeaponUpdate@@UAE@XZ @0x0048BD11
 FireWeaponUpdate::~FireWeaponUpdate()
 {
-	*(const void **)((char *)this + 0x0C) = (const void *)0x00BEFF90;
+	*(const void **)((char *)this + 0x0C) = (const void *)((unsigned int)vtbl_00BEFF90);
 	*(const void **)((char *)this + 0x10) = (const void *)0x00C4C18C;
 	_STL::list<int> *trackedIds = &m_trackedIds;
 	_STL::list<int>::iterator it = trackedIds->begin();

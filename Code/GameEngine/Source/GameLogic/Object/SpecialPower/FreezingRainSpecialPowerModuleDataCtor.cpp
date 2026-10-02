@@ -13,6 +13,9 @@
 // (Darkness precedent). Size 0x88 matches the rowed 0x251F70 factory news.
 // Row supersedes the ctor pin.
 
+extern "C" const void *const vtbl_00C5E7A8[];  // folded, 2 classes; via ??_7CombineHordeSpecialPowerModuleData@@6B@
+#pragma comment(linker, "/alternatename:_vtbl_00C5E7A8=??_7CombineHordeSpecialPowerModuleData@@6B@")
+
 class Rva004930A0
 {
 public:
@@ -41,6 +44,6 @@ FreezingRainSpecialPowerModuleData::FreezingRainSpecialPowerModuleData()
 	float radius = 10.0f;
 	m_freezingRainFX = 0;
 	m_burnRateModifier = 0;
-	m_vtable = reinterpret_cast<void *>(0x00C5E7A8);
+	m_vtable = reinterpret_cast<void *>(((unsigned int)vtbl_00C5E7A8));
 	m_freezingRainRadius = radius;
 }
