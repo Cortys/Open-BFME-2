@@ -47654,3 +47654,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??1CastleBehavior@@UAE@XZ,,0x0039857D,225,Code/GameEngine/Source/GameLogic/Object/Behavior/CastleBehaviorDtor.cpp,matched,pinned name vtable 0x00C1A780 donor CastleBehaviorDestructorThunk caller deleting dtor 0x00399357
 ?rva0043B725@Rva0043B725@@QAEXXZ,,0x0043B725,8,Code/GameEngine/Source/Common/Rva0043B725Clear.cpp,matched,forwards this+4 to Rva0043B2E2 clear
 ?rva0043B72D@Rva0043B725@@QAEIH@Z,,0x0043B72D,16,Code/GameEngine/Source/Common/Rva0043B725Clear.cpp,matched,forwards this+4 and arg to Rva0043B2E2 lookup
+?Rva0040B14EConstruct@@YAXPAVRva0040AEE3@@ABV1@@Z,,0x0040B14E,45,Code/GameEngine/Source/Common/Thing/Rva0040AEE3Construct.cpp,matched,chain via rowed copy ctor 0x0040AEE3 placement new
