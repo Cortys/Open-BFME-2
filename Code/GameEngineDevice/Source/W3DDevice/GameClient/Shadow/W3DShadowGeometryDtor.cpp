@@ -55,6 +55,18 @@ private:
 	Int m_numTotalsVerts;
 };
 
-W3DShadowGeometry::~W3DShadowGeometry(void)
+inline W3DShadowGeometry::~W3DShadowGeometry(void)
 {
 }
+
+// ??1W3DShadowGeometry is a header inline elsewhere: another unit emits a
+// select-any copy, so a strong definition here was a duplicate symbol in
+// the linked build. This anchor only makes this unit emit its copy for the
+// ledger row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitW3DShadowGeometryDtor@@YAXPAVW3DShadowGeometry@@@Z present-unmatched
+void bfmeEmitW3DShadowGeometryDtor(W3DShadowGeometry *p)
+{
+	p->W3DShadowGeometry::~W3DShadowGeometry();
+}
+#pragma inline_depth()
