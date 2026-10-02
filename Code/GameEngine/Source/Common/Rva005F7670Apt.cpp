@@ -54,3 +54,17 @@ void Rva005F7670::rva005F7670(const UnicodeString &text)
 		m_shown64 = true;
 	}
 }
+
+class Rva005F772E
+{
+public:
+	void rva005F772E(const UnicodeString &text);
+private:
+	char m_pad00[4];
+	Rva005F7670 *m_member04;
+};
+
+void Rva005F772E::rva005F772E(const UnicodeString &text)
+{
+	m_member04->rva005F7670(text);
+}

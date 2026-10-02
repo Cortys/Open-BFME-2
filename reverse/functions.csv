@@ -48425,3 +48425,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?Rva005E2CFAGet@@YAPAXPBD@Z,,0x005E2CFA,44,Code/GameEngine/Source/Common/Rva005E2CFA.cpp,matched,unlock 3-entry strcmp table at 0x00C77B40 plus callers
 ?rva0041F449@Rva0041F449@@QAEPAV?$StringBase@D@@ABV2@@Z,,0x0041F449,43,Code/GameEngine/Source/Common/Rva0041F449Find.cpp,matched,linear search via compare 0x69D6 caller 0x5DA6BB
 ?rva003B7096@Rva003B573E@@QAEXH@Z,,0x003B7096,52,Code/GameEngine/Source/GameLogic/ScriptEngine/ScriptListSubrecordRemove.cpp,matched,chain from 0x003B66D8 twin of rva003B71B4 with Rva003B448C dtor
+?rva005F772E@Rva005F772E@@QAEXABVUnicodeString@@@Z,,0x005F772E,8,Code/GameEngine/Source/Common/Rva005F7670Apt.cpp,matched,forwarder to inner UnitName via plus4
