@@ -48054,3 +48054,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva002B34E5@Rva002B34E5@@QAEX_N@Z,,0x002B34E5,184,Code/GameEngine/Source/Common/Rva002B34E5.cpp,matched,flag 0x10B outer array 0x8C-0x90 ref 0x98 via rowed Compare and Rva003FDE71
 ??1Rva0022D214@@QAE@XZ,,0x0022D214,53,Code/GameEngine/Source/Common/Rva0022D214Dtor.cpp,matched,chain packet calls just-landed 0x0022D05F plus rowed releaseBuffer 0x00036410
 ?Rva0031968ACopy@@YAPAVRva00318B5C@@PBV1@0PAV1@@Z,,0x0031968A,29,Code/GameEngine/Source/Common/Rva0031968ACopy.cpp,matched,three-arg copy wrapper over rowed five-arg copy
+??_GRva0022D214@@QAEPAXI@Z,,0x0022D8E8,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022D214.cpp,matched,chain packet you-just-landed callee plus 28B push-esi call-test-je delete shape
