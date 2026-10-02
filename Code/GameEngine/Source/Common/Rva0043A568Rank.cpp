@@ -32,7 +32,7 @@ public:
 };
 extern GameTextInterface *TheGameText;
 
-#define RankFmt ((const WideChar *)0x00BC9260)
+#define RankFmt ((const WideChar *)L"%d")
 
 UnicodeString __cdecl Rva0043A568Get(int rank)
 {
