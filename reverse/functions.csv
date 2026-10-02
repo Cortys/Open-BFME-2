@@ -47466,3 +47466,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva0029B313@Rva0029B313@@QAEXH@Z,,0x0029B313,26,Code/GameEngine/Source/GameClient/Rva0029B313.cpp,matched,tail-jmp to rowed Rva0029A5D6 after two flag bytes
 ?rva0043B35D@Rva0043B2E2@@QAEXU?$_Rb_tree_iterator@U?$pair@$$CBHPAX@_STL@@U?$_Nonconst_traits@U?$pair@$$CBHPAX@_STL@@@2@@_STL@@0@Z,,0x0043B35D,68,Code/Libraries/Source/WWVegas/WWLib/Rva0043B35DErase.cpp,matched,STLPort range erase via clear 0x0043B334 increment plus single erase
 ?rva0043B4EC@Rva0043B2E2@@QAEIABH@Z,,0x0043B4EC,73,Code/Libraries/Source/WWVegas/WWLib/Rva0043B35DErase.cpp,matched,STLPort erase key via rowed range erase 0x0043B35D plus equal_range 0x002F1C89 and distance 0x000D20DB
+?unRegisterAnimation@Anim2DCollection@@QAEXPAVAnim2D@@@Z,,0x002D6CAD,49,Code/GameEngine/Source/GameClient/System/Anim2D.cpp,matched,Zero Hour donor unlink instance list retail head plus0x10 caller 0x002D6E08

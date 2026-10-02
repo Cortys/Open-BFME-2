@@ -693,7 +693,6 @@ void Anim2DCollection::registerAnimation( Anim2D *anim )
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
-// ?unRegisterAnimation@Anim2DCollection@@QAEXPAVAnim2D@@@Z present-unmatched
 void Anim2DCollection::unRegisterAnimation( Anim2D *anim )
 {
 
@@ -711,6 +710,6 @@ void Anim2DCollection::unRegisterAnimation( Anim2D *anim )
 	if( anim->m_collectionSystemPrev )
 		anim->m_collectionSystemPrev->m_collectionSystemNext = anim->m_collectionSystemNext;
 	else
-		m_instanceList = anim->m_collectionSystemNext;
+		*(Anim2D **)((unsigned char *)this + 0x10) = anim->m_collectionSystemNext;
 
 }  // end unRegisterAnimation
