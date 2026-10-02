@@ -48216,3 +48216,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??_GRva0022167C@@QAEPAXI@Z,,0x0022168A,28,Code/GameEngine/Source/Common/FamilyDeletingDtors_Rva0022167C.cpp,matched,deleting dtor via rowed base dtor slot0 vtable 0x007E6BA8
 ?rva005FB6E2@Rva005FB6E2@@QAEXXZ,,0x005FB6E2,71,Code/GameEngine/Source/Common/Rva005FB6E2.cpp,matched,Apt eliminated setter via rowed AptCall plus team-plus-8 or empty plus TheRva00222A8BTarget
 ?rva005FB729@Rva005FB6E2@@QAEXXZ,,0x005FB729,71,Code/GameEngine/Source/Common/Rva005FB6E2.cpp,matched,Apt survived setter via rowed AptCall plus team-plus-8 or empty plus TheRva00222A8BTarget
+?Rva002861C9Copy@@YAPAXPBX0PAX@Z,,0x002861C9,38,Code/GameEngine/Source/Common/Rva002861C9Copy.cpp,matched,array copy via rowed copy neighbours share O1
