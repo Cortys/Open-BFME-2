@@ -48127,3 +48127,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ?rva005AFCFF@Rva005AFC92@@QAEXXZ,,0x005AFCFF,47,Code/GameEngine/Source/Common/Rva005AFC92Reset.cpp,matched,three winEnable via rowed 0x00313BEC caller 0x0057FD9B
 ?rva0050539C@Rva0050539C@@QAEPAVPlayer@@XZ,,0x0050539C,8,Code/GameEngine/Source/Common/Rva0050539CGet.cpp,matched,tail-jmp to rowed 0x005A910E caller 0x002C5FD9
 ?Rva00577AE9AptCall@@YAHPAVRva00222A8BTarget@@PAXPBD2PAHPAM444@Z,,0x00577AE9,314,Code/GameEngine/Source/Common/Rva00577AE9AptCall.cpp,matched,Apt forward 1 int 4 floats via rowed gets plus AptCall
+?rva002236F2@Rva002236F2@@QAEAAURva002236F2Value@@ABU2@@Z,,0x002236F2,68,Code/GameEngine/Source/GameClient/Rva002236F2Insert.cpp,matched,same shape as rowed 0x002249ED via rowed bucketIndex new-node plus pin resize
