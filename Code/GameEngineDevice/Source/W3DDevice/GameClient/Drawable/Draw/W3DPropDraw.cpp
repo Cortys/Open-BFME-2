@@ -58,12 +58,7 @@
 #endif
 
 //-------------------------------------------------------------------------------------------------
-// Retail W3DPropDrawModuleData ctor is 0x000CEF2B (pinned; ModuleFactory
-// registration); this donor spelling does not reproduce it.
-// ??0W3DPropDrawModuleData@@QAE@XZ present-unmatched
-W3DPropDrawModuleData::W3DPropDrawModuleData() 
-{
-}
+// W3DPropDrawModuleData ctor is defined in W3DPropDrawModuleDataCtor.cpp (its row's unit).
 
 //-------------------------------------------------------------------------------------------------
 // byte-exact reconstruction: Code/GameEngine/Source/Common/W3DPropDrawModuleDataDestructorThunk.cpp
