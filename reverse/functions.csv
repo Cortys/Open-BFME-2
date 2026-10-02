@@ -47296,3 +47296,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva00089822@@QAE@ABV0@@Z,,0x00089822,35,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva00089822CopyCtor.cpp,matched,copyctor via rowed set mov head unblocks 0x0008A173
 ?rva00330995@Shadow@@QAEXH@Z,,0x00330995,162,Code/GameEngine/Source/GameClient/Shadow_setOpacity.cpp,matched,Shadow color setter sibling of setOpacity same TU offsets Float-ref
 ?rva0029A41A@Rva0029A41A@@QAEXPAVRGBColor@@@Z,,0x0029A41A,28,Code/GameEngine/Source/GameClient/Rva0029A407Clear.cpp,matched,chain lane caller 0x002A4774 rowed callees getAsInt Shadow
+?rva0029A94F@Rva0029A94F@@QAEXXZ,,0x0029A94F,101,Code/GameEngine/Source/Common/Rva0029A94FClear.cpp,matched,loop over GlobalData count clearing slots via g_00DFF080 and TheGameClient then tail
