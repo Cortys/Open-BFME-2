@@ -48688,3 +48688,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva004EE78A@Rva004EE5D2@@QAEXXZ,,0x004EE78A,20,Code/GameEngine/Source/Common/Rva004EE5D2Erase.cpp,matched,same class Rva004EE5D2 offset 0xF8 guarded tail erase
 ??0Rva005C436E@@QAE@II@Z,,0x005C4403,32,Code/GameEngine/Source/Common/Rva005C4403Ctor.cpp,matched,chain ctor via rowed base plus vtable 0x008745A8 plus byte plus0xC
 ?rva000729CC@Rva000729CC@@QAEX_N@Z,,0x000729CC,14,Code/GameEngine/Source/Common/Rva000729CCSet.cpp,matched,adjacent to 0x000729DA honest address setter for bytes at +0x35 +0x36
+?rva000724C7@Rva000724AE@@QAEHXZ,,0x000724C7,16,Code/GameEngine/Source/Common/Rva000724C7Check.cpp,matched,between 0x000724AE and 0x000724D7 same class non-null check +0x08 +0x0c
