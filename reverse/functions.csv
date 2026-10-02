@@ -48052,3 +48052,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva001FFA5A@Rva001FFA5A@@QAEXPAVCreateAHeroData@@@Z,,0x001FFA5A,71,Code/GameEngine/Source/GameLogic/Object/Behavior/Rva001FFA5A.cpp,matched,push_back ModuleData then flag then find plus erase rowed callees
 ?Rva00318DECCopy@@YAPAVRva00318B5C@@PBV1@0PAV1@PAXH@Z,,0x00318DEC,60,Code/GameEngine/Source/Common/Rva00318DECCopy.cpp,matched,copy three trailing dwords via src cursor plus 0xc
 ?rva002B34E5@Rva002B34E5@@QAEX_N@Z,,0x002B34E5,184,Code/GameEngine/Source/Common/Rva002B34E5.cpp,matched,flag 0x10B outer array 0x8C-0x90 ref 0x98 via rowed Compare and Rva003FDE71
+??1Rva0022D214@@QAE@XZ,,0x0022D214,53,Code/GameEngine/Source/Common/Rva0022D214Dtor.cpp,matched,chain packet calls just-landed 0x0022D05F plus rowed releaseBuffer 0x00036410
