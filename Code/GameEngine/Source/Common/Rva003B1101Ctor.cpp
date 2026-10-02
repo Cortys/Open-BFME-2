@@ -91,6 +91,7 @@ class Rva003B1101 : public Rva001E3624
 {
 public:
 	Rva003B1101();
+	virtual ~Rva003B1101();
 private:
 	AsciiString m_10; // +0x10
 	Int m_14; // +0x14
