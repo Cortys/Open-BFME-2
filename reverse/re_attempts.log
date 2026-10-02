@@ -5614,3 +5614,4 @@ FUN_00818a12	0x00418A12	124	blocked	leaf Eva-like insert bucketIndex plus string
 ?rva000B9CE8@Rva000B9CE8@@QAEXH@Z	0x000B9CE8	241	blocked	zero reuse wall ebx holds zero not arg test vs cmp and vs mov t=15 model=muse-11
 FUN_009e6817	0x005E6817	7	blocked	MI vtable slot 7 of Rva00575125 needs slot-to-method mapping and virtual member at +4 t=5 model=muse-spark
 FUN_007b793a	0x003B793A	10	blocked	EH_prolog caller with ghidra size 10 vs 23 extent mismatch needs boundary and funclet work t=3 model=muse-spark
+?rva000A7B3C@Rva000427195@@QAEPAXPBVAsciiString@@@Z	0x000A7B3C	121	blocked	EH pair tmp flag state plus releaseBuffer shape no progress over 3 variants 112B 98B 97B vs 121B t=15 model=muse-02
