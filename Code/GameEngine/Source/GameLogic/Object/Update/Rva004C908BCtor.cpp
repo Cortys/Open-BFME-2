@@ -65,3 +65,7 @@ Rva004C908B::Rva004C908B(Thing *thing, const ModuleData *moduleData)
 	m_f24 = 0.0f;
 	m_f28 = 0.0f;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0SwayClientUpdate@@QAE@PAVThing@@PBVModuleData@@@Z=??0Rva004C908B@@QAE@PAVThing@@PBVModuleData@@@Z")

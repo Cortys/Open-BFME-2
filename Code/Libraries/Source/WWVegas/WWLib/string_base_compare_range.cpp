@@ -95,3 +95,8 @@ int compareRangeNoCase(const wchar_t *a, int alen, const wchar_t *b, int blen, W
         return result;
     return alen - blen;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?compareRange@@YAHPBGH0HUCharCompare@@@Z=?compareRange@@YAHPBGH0HUWideCharCompare@@@Z")
+#pragma comment(linker, "/alternatename:?compareRangeNoCase@@YAHPBGH0HUCharCompare@@@Z=?compareRangeNoCase@@YAHPBGH0HUWideCharCompare@@@Z")

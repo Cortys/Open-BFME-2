@@ -136,3 +136,7 @@ bool BFME_DX8_Thread_Assert(void)
 	ReleaseMutex(bfmeDX8DeviceMutex);
 	return lastUnlock;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?BFME_DX8_Thread_Assert@@YAXXZ=?BFME_DX8_Thread_Assert@@YA_NXZ")

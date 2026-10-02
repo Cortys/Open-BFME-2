@@ -41,3 +41,7 @@ WeaponSetSpecialAbilityUpdateModuleData::WeaponSetSpecialAbilityUpdateModuleData
 	m_whichWeaponSet = 0;
 	*(unsigned int *)this = 0x00C5F778;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0FellBeastSwoopPowerModuleData@@QAE@XZ=??0WeaponSetSpecialAbilityUpdateModuleData@@QAE@XZ")

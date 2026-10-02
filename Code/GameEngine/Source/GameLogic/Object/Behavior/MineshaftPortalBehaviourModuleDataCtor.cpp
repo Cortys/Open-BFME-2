@@ -67,3 +67,7 @@ void MineshaftPortalBehaviourModuleData::buildFieldParse(MultiIniFieldParse &par
 	parse.add(reinterpret_cast<const FieldParse *>(Rva004CE29DGet()), 8);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00C42B10), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??0FakePathfindPortalBehaviourModuleData@@QAE@XZ=??0MineshaftPortalBehaviourModuleData@@QAE@XZ")

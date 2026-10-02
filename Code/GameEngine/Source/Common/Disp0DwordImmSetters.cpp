@@ -1757,3 +1757,8 @@ void Rva0057851BDwordImmSetter::apply()
 {
 	m_value = 0x00C79760;
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:??1Rva005D6FCC@@UAE@XZ=?apply@Rva0005D6FDEDwordImmSetter@@QAEXXZ")
+#pragma comment(linker, "/alternatename:??1Rva001DBAC3Base@@UAE@XZ=?apply@Rva001DBAC3DwordImmSetter@@QAEXXZ")

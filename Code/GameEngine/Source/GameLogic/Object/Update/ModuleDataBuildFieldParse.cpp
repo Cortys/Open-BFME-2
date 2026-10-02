@@ -223,3 +223,10 @@ void SymbioticStructuresBodyModuleData::buildFieldParse(MultiIniFieldParse &pars
 	ActiveBodyModuleData::buildFieldParse(parse);
 	parse.add(reinterpret_cast<const FieldParse *>(0x00BEFCD4), 0);
 }
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?FireWeaponUpdateParse_24CF56@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@FireWeaponUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?LockWeaponCreateModuleDataParse_24AF5C@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@SiegeDockingBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?ModelConditionSoundSelectorClientBehaviorParse_252C13@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ModelConditionSoundSelectorClientBehaviorModuleData@@SAXAAVMultiIniFieldParse@@@Z")
+#pragma comment(linker, "/alternatename:?RadarUpdateModuleDataParse_24FC08@@YAXAAVMultiIniFieldParse@@@Z=?buildFieldParse@ThreatFinderUpdateModuleData@@SAXAAVMultiIniFieldParse@@@Z")

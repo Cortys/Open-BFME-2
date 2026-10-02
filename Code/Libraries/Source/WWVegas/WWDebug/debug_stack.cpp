@@ -515,3 +515,7 @@ int DebugStackwalk::StackWalk(Signature &sig, struct _CONTEXT *ctx, bool useFall
 	return sig.m_numAddr;
 }
 #pragma optimize("", on)
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?StackWalk@DebugStackwalk@@SAHAAUSignature@1@PAU_CONTEXT@@_N@Z=?StackWalk@DebugStackwalk@@SAHAAVSignature@1@PAU_CONTEXT@@_N@Z")
