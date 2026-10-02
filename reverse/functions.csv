@@ -48140,3 +48140,4 @@ _Rva0084ED20Tail,,0x00021EB0,420,Code/Libraries/Source/WWVegas/WWLib/stlport_Loc
 ??0Rva003B6831@@QAE@XZ,,0x003B6831,21,Code/Libraries/Source/WWVegas/WWLib/stlport_deque_ctor_3b6831.cpp,matched,leaf default ctor via rowed Deque-base 0x00605464
 ?rva00107152@Rva00107152@@QAEXXZ,,0x00107152,27,Code/GameEngineDevice/Source/W3DDevice/GameClient/Shadow/W3DProjectedShadowRva00107152.cpp,matched,this+8 while loop virtual slot0 int0 return deleted via rowed delete
 ?Rva002214C5Get@@YAXPAV?$vector@UBfmeE16@@V?$allocator@UBfmeE16@@@_STL@@@_STL@@@Z,,0x002214C5,182,Code/GameEngine/Source/Common/Rva002214C5Vec.cpp,matched,builds FieldParse table from static AsciiString map via getter plus reserve pushback swap
+?rva0054A82C@Rva0054A82C@@QAEHPAH@Z,,0x0054A82C,75,Code/Libraries/Source/WWVegas/WWLib/Rva0054A67BSiftUp.cpp,matched,deque iterator compare plus increment and float zero via rowed _M_increment 0x00549E19
