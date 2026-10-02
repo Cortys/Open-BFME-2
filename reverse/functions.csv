@@ -48971,3 +48971,4 @@ _rva0075B4C6D3DXQuaternionSlerp@16,,0x0075B4C6,6,Code/Libraries/Source/WWVegas/W
 ??1Rva005312BEItem@@QAE@XZ,,0x005328D3,15,Code/GameEngine/Source/Common/Rva005312BEAlloc.cpp,matched,vector deleting dtor 0x00532F9F element size 0x44 matches Rva005312BEItem
 ??_ERva005312BEItem@@QAEPAXI@Z,,0x00532F9F,75,Code/GameEngine/Source/Common/Rva005312BEAlloc.cpp,matched,vector deleting dtor for Rva005312BEItem calls landed dtor 0x005328D3
 ??0Rva005E74CF@@QAE@XZ,,0x005E74CF,90,Code/GameEngine/Source/Common/Bfme/Rva005E74CF.cpp,matched,ctor via temp BuildQueueDetailsPanel to base 0x221635 plus vtable 0x877EF4
+??0Rva005E9FC1@@QAE@PAX@Z,,0x005E9FC1,58,Code/GameEngine/Source/Common/Rva005E9FC1Ctor.cpp,matched,ctor base stores arg at +4 vtable 0x878114 at +0 member 0x57416B at +8 caller 0x5EA15B
