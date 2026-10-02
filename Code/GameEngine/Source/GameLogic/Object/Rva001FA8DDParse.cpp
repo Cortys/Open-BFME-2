@@ -34,6 +34,15 @@ struct Rva002BA8F1Listener
 {
 };
 
+namespace FXParticleSystem
+{
+template <int CATEGORY> class CategoryModuleClass
+{
+public:
+	static CategoryModuleClass<CATEGORY> *s_head;
+};
+}
+
 class Rva005A0B4CList
 {
 public:
@@ -51,7 +60,7 @@ void Rva001FA8DDParse(INI *ini, void *instance)
 	Rva001FA8DDHolder *holder = static_cast<Rva001FA8DDHolder *>(instance);
 	const char *token = ini->getNextToken(0);
 	StringBase<char> tmp(token);
-	TableEntry *entry = *(TableEntry * volatile *)0xDFDD5C;
+	TableEntry *entry = *(TableEntry * volatile *)&FXParticleSystem::CategoryModuleClass<7>::s_head;
 	while (tmp.compare(entry->m_name) != 0)
 		entry = entry->m_next;
 	Rva002BA8F1Listener *listener = entry->create(ini);
