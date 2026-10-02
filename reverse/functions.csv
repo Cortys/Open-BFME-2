@@ -48387,3 +48387,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva004198EB@Rva000427195@@QAE?AUInsertRet00419331@@PBX@Z,,0x004198EB,124,Code/GameEngine/Source/GameClient/Rva00419331Insert.cpp,matched,hashtable Pod60 insert via bucketIndex compare new_node
 ?rva00568F04@Rva00568F04@@QAEXPAX@Z,,0x00568F04,42,Code/GameEngine/Source/Common/Rva00568F04Remove.cpp,matched,linear find-erase over vector at 0x58 via rowed erase 0x001FF51F callers 0x0056A096 0x0056916B
 ??4Rva00568B4E@@QAEAAV0@ABV0@@Z,,0x00568B4E,51,Code/GameEngine/Source/Common/Rva00568B4EAssign.cpp,matched,copy-assign two AsciiStrings via rowed set 0x000366F0 ints at 8 and C byte at 10 caller 0x00568ED0
+?Rva00568EB4Copy@@YAPAVRva00568B4E@@PAV1@00@Z,,0x00568EB4,50,Code/GameEngine/Source/Common/Rva00568EB4Copy.cpp,matched,range-copy 0x14 stride via rowed assign 0x00568B4E caller 0x0056911C
