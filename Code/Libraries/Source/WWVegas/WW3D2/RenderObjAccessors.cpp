@@ -26,7 +26,7 @@ const float	RenderObjClass::AT_MAX_LOD = -1.0f;
 
 // The primary RenderObj vtable and hierarchy aggregation establish the
 // BFME2 additive flag as 0x00400000. Retail compiles this with a shared return.
-void RenderObjClass::Set_Additive(int onoff)
+inline void RenderObjClass::Set_Additive(int onoff)
 {
     if (onoff) {
         Bits |= IS_ADDITIVE;
@@ -34,3 +34,15 @@ void RenderObjClass::Set_Additive(int onoff)
         Bits &= ~IS_ADDITIVE;
     }
 }
+
+// Set_Additive is a header inline in retail: other units emit select-any
+// copies of it, so a strong definition here was a duplicate symbol in the
+// linked build. This anchor only makes this unit emit its copy for the ledger
+// row; it is not retail code.
+#pragma inline_depth(0)
+// ?bfmeEmitRenderObjAccessors@@YAXPAVRenderObjClass@@@Z present-unmatched
+void bfmeEmitRenderObjAccessors(RenderObjClass *p)
+{
+    p->RenderObjClass::Set_Additive(0);
+}
+#pragma inline_depth()
