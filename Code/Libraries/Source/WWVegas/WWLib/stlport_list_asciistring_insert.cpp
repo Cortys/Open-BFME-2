@@ -18,10 +18,43 @@ template <typename T> struct BfmeStringData
 	T text[1];
 };
 
-#include "ascii_string.h"
+#pragma optimize("sy", on)
+template <class T> class StringBase
+{
+    void *m_data;
+    StringBase(const StringBase<T> &);
+public:
+    int compare(const StringBase<T> &) const;
+    void set(const StringBase<T> &);
+    friend class AsciiString;
+};
 
+// class-gate: allow AsciiString Retail list erase at 0x000BC67A calls the dtor thunk at 0x0048BA39.
+class AsciiString
+{
+public:
+    AsciiString() : m_text(0) {}
+    AsciiString(const AsciiString &that)
+    {
+        ((StringBase<char> *)this)->StringBase<char>::StringBase(*(const StringBase<char> *)&that);
+    }
+    AsciiString &operator=(const AsciiString &that)
+    {
+        ((StringBase<char> *)this)->set(*(const StringBase<char> *)&that);
+        return *this;
+    }
+    ~AsciiString();
+    int compare(const AsciiString &that) const
+    {
+        return ((const StringBase<char> *)this)->compare(*(const StringBase<char> *)&that);
+    }
+private:
+    char *m_text;
+};
 
-bool operator==(const AsciiString &a, const AsciiString &b);
-bool operator<(const AsciiString &a, const AsciiString &b);
+inline bool operator==(const AsciiString &a, const AsciiString &b) { return a.compare(b) == 0; }
+inline bool operator!=(const AsciiString &a, const AsciiString &b) { return a.compare(b) != 0; }
+inline bool operator<(const AsciiString &a, const AsciiString &b) { return a.compare(b) < 0; }
+#pragma optimize("", on)
 
 template class _STL::list<AsciiString, _STL::allocator<AsciiString> >;
