@@ -13,18 +13,16 @@ namespace FXParticleSystem
 class EventModuleInfo
 {
 public:
-    EventModuleInfo();
+    EventModuleInfo()
+    {
+        m_unk0 = true;
+        m_unk1 = true;
+    }
 
 private:
     bool m_unk0;
     bool m_unk1;
 };
-
-EventModuleInfo::EventModuleInfo()
-{
-    m_unk0 = true;
-    m_unk1 = true;
-}
 
 class ParticleSystemInfo
 {
@@ -37,3 +35,14 @@ const char *ParticleSystemInfo::GetSnapshotName()
     return "FXParticleSystemInfo";
 }
 }
+
+// The constructor is a header inline: FXParticleSystem.cpp's view emits it as a
+// select-any copy, which an ordinary definition here would duplicate. The anchor
+// keeps this unit's copy for the row; it is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeEventModuleInfoAnchor@@YAXPAVEventModuleInfo@FXParticleSystem@@@Z absent-from-retail
+void _bfmeEventModuleInfoAnchor(FXParticleSystem::EventModuleInfo *info)
+{
+    info->FXParticleSystem::EventModuleInfo::EventModuleInfo();
+}
+#pragma inline_depth()
