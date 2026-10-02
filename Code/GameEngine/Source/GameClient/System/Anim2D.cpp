@@ -709,3 +709,107 @@ void Anim2DCollection::unRegisterAnimation( Anim2D *anim )
 		*(Anim2D **)((unsigned char *)this + 0x10) = anim->m_collectionSystemNext;
 
 }  // end unRegisterAnimation
+
+class DisplayVirt002D7127
+{
+public:
+	virtual void unused00();
+	virtual void unused01();
+	virtual void unused02();
+	virtual void unused03();
+	virtual void unused04();
+	virtual void unused05();
+	virtual void unused06();
+	virtual void unused07();
+	virtual void unused08();
+	virtual void unused09();
+	virtual void unused10();
+	virtual void unused11();
+	virtual void unused12();
+	virtual void unused13();
+	virtual void unused14();
+	virtual void unused15();
+	virtual void unused16();
+	virtual void unused17();
+	virtual void unused18();
+	virtual void unused19();
+	virtual void unused20();
+	virtual void unused21();
+	virtual void unused22();
+	virtual void unused23();
+	virtual void unused24();
+	virtual void unused25();
+	virtual void unused26();
+	virtual void unused27();
+	virtual void unused28();
+	virtual void unused29();
+	virtual void unused30();
+	virtual void unused31();
+	virtual void unused32();
+	virtual void unused33();
+	virtual void unused34();
+	virtual void unused35();
+	virtual void unused36();
+	virtual void unused37();
+	virtual void unused38();
+	virtual void unused39();
+	virtual void unused40();
+	virtual void unused41();
+	virtual void unused42();
+	virtual void unused43();
+	virtual void unused44();
+	virtual void unused45();
+	virtual void unused46();
+	virtual void unused47();
+	virtual void unused48();
+	virtual void unused49();
+	virtual void unused50();
+	virtual void unused51();
+	virtual void unused52();
+	virtual void beginImageDraw();
+	virtual void slotD8(float x0, float y0, float x1, float y1, float w, int color0, int color1);
+	virtual void slotDC(float x0, float y0, float x1, float y1, float w, int color);
+	virtual void slotE0(float x0, float y0, float x1, float y1, float w, int color);
+	virtual void unused57();
+	virtual void unused58();
+	virtual void unused59();
+	virtual void unused60();
+	virtual void unused61();
+	virtual void drawImageCore(Image *image, float x0, float y0, float x1, float y1, int color, int mode);
+	virtual void unused63();
+	virtual void endImageDraw();
+};
+
+// ------------------------------------------------------------------------------------------------
+/** Drawing an Anim2D using a forced width and height, additive blend (mode 3) via virtual core */
+// ------------------------------------------------------------------------------------------------
+// ?rva002D7127@Rva002D7127@@QAEXHHHH@Z @0x002D7127 150B via BFME1 Anim2DDrawing donor plus virtual Display 0xF8 core with mode 3. Evidence: Anim2D offsets +4 frame +0xC template +0x10 status +0x1C alpha +0x20 collection same as rowed draw 0x002D709A, rowed getFrame 0x002D6B2D, TheDisplay 0x00DFE9D8 slot 0xF8 drawImageCore, rowed tryNextFrame 0x002D6E26.
+class Rva002D7127 : public Anim2D
+{
+public:
+	void rva002D7127(Int x, Int y, Int width, Int height);
+};
+
+void Rva002D7127::rva002D7127(Int x, Int y, Int width, Int height)
+{
+
+	// get the current image
+	const Image *image = m_template->getFrame(m_currentFrame);
+
+	// sanity
+	DEBUG_ASSERTCRASH(image != NULL, ("Anim2D::draw - Image not found for frame '%d' on animation '%s'\n",
+		m_currentFrame, m_template->getName().str()));
+
+	// draw image to the display
+	Color color = GameMakeColor(255, 255, 255, 255 * m_alpha);
+	((DisplayVirt002D7127 *)TheDisplay)->drawImageCore((Image *)image, (float)x, (float)y, (float)(x + width), (float)(y + height), color, 3);
+
+	//
+	// see if it's time for us to go to the next frame in the sequence, we do not update
+	// frame numbers for animation instances that are registered with a system as the
+	// system will update them during its update phase
+	//
+	if (m_collectionSystem == NULL && BitTest(m_status, ANIM_2D_STATUS_FROZEN) == FALSE)
+		tryNextFrame();
+
+}  // end rva002D7127
