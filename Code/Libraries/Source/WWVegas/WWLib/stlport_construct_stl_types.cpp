@@ -52,3 +52,17 @@ template void _STL::_Construct<ConstructProbePairIV, ConstructProbePairIV>(Const
 template void _STL::_Construct<ConstructProbeSciVec, ConstructProbeSciVec>(ConstructProbeSciVec *, const ConstructProbeSciVec &);
 template void _STL::_Construct<ConstructProbeCoordList, ConstructProbeCoordList>(ConstructProbeCoordList *, const ConstructProbeCoordList &);
 template void _STL::_Construct<ConstructProbePairC, ConstructProbePairC>(ConstructProbePairC *, const ConstructProbePairC &);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?dup_0022112D@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_002CF954@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_0020596A@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_00511CB9@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@D@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@D@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_003F1A5F@@YAXXZ=??$_Construct@V?$vector@IV?$allocator@I@_STL@@@_STL@@V12@@_STL@@YAXPAV?$vector@IV?$allocator@I@_STL@@@0@ABV10@@Z")
+#pragma comment(linker, "/alternatename:?dup_00211F6D@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_004151EB@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_0020D5E6@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_0020F321@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_00222DBF@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")
+#pragma comment(linker, "/alternatename:?dup_0031BDC1@@YAXXZ=??$_Construct@U?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@_STL@@U12@@_STL@@YAXPAU?$pair@$$CBVAsciiString@@UNoCaseTreeValue4@@@0@ABU10@@Z")

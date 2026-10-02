@@ -91,3 +91,10 @@ template void _STL::_Construct<Rva0052BD59, Rva0052BD59>(Rva0052BD59 *, const Rv
 template void _STL::_Construct<Rva0052BE33, Rva0052BE33>(Rva0052BE33 *, const Rva0052BE33 &);
 template void _STL::_Construct<Rva0052BDE6, Rva0052BDE6>(Rva0052BDE6 *, const Rva0052BDE6 &);
 template void _STL::_Construct<Rva00204B12, Rva00204B12>(Rva00204B12 *, const Rva00204B12 &);
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?dup_00382BC3@@YAXXZ=??$_Construct@UTreeKey00242F5E@@U1@@_STL@@YAXPAUTreeKey00242F5E@@ABU1@@Z")
+#pragma comment(linker, "/alternatename:?dup_0056EE16@@YAXXZ=??$_Construct@UBfmeStringRecord005DDD40@@U1@@_STL@@YAXPAUBfmeStringRecord005DDD40@@ABU1@@Z")
+#pragma comment(linker, "/alternatename:?dup_00523DD4@@YAXXZ=??$_Construct@UTreeKey00242F5E@@U1@@_STL@@YAXPAUTreeKey00242F5E@@ABU1@@Z")
+#pragma comment(linker, "/alternatename:?dup_0013623C@@YAXXZ=??$_Construct@UTreeKey00242F5E@@U1@@_STL@@YAXPAUTreeKey00242F5E@@ABU1@@Z")

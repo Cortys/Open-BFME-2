@@ -114,3 +114,7 @@ void bfmeEmitModuleInfoNuggetErase(_STL::vector<ModuleInfo::Nugget, _STL::alloca
 	p->erase(0);
 }
 #pragma inline_depth()
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?dup_002d028f@@YAXXZ=?destroyNuggetRange@@YAXPAUNugget@ModuleInfo@@0@Z")

@@ -28,3 +28,8 @@ private:
 typedef char ProductionPrerequisiteSizeCheck[sizeof(ProductionPrerequisite) == 0x24 ? 1 : -1];
 
 template class _STL::vector<ProductionPrerequisite>;
+
+// Callers elsewhere reach bodies in this unit through other spellings; retail's
+// call sites in their matched rows land on these addresses (same ABI). Bind them.
+#pragma comment(linker, "/alternatename:?dup_002cfbae@@YAXXZ=??$_Destroy@PAVProductionPrerequisite@@@_STL@@YAXPAVProductionPrerequisite@@0@Z")
+#pragma comment(linker, "/alternatename:?dup_0033e0b7@@YAXXZ=??$__uninitialized_copy@PAVProductionPrerequisite@@PAV1@@_STL@@YAPAVProductionPrerequisite@@PAV1@00ABU__false_type@0@@Z")
