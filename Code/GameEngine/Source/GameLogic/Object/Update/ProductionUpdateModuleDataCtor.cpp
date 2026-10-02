@@ -50,6 +50,7 @@ struct QuantityModifier
 {
 	AsciiString m_templateName;
 	Int m_quantity;
+	~QuantityModifier();
 };
 
 template <int NUM_BITS>
