@@ -42,7 +42,7 @@ public:
 	static IDirect3DDevice8 *_Get_D3D_Device8() { return D3DDevice; }
 	static void Set_Render_Target(IDirect3DSurface8 *target, bool useDefaultDepth);
 
-private:
+protected:
 	static IDirect3DDevice8 *D3DDevice;
 };
 
