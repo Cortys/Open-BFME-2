@@ -48422,3 +48422,4 @@ _piConnectFillInUserCallbackA,,0x006A01B0,55,Code/GameEngine/Source/GameNetwork/
 ?rva005E2439@Rva005E2439@@QAEXXZ,,0x005E2439,39,Code/GameEngine/Source/Common/Rva005E2439.cpp,matched,unlock sibling of 0x005E2460 same table plus virtual slots
 ?rva005E2540@Rva005E2439@@QAEXXZ,,0x005E2540,12,Code/GameEngine/Source/Common/Rva005E2439.cpp,matched,chain guard calling 0x005E2439 same class plus caller 0x005E25D9
 ?rva005E25CD@Rva005E21EB@@UAEXXZ,,0x005E25CD,17,Code/GameEngine/Source/Common/Rva005E21EBDtor.cpp,matched,chain slot1 of Rva005E21EB calls markAsOverride plus 0x005E2540
+?Rva005E2CFAGet@@YAPAXPBD@Z,,0x005E2CFA,44,Code/GameEngine/Source/Common/Rva005E2CFA.cpp,matched,unlock 3-entry strcmp table at 0x00C77B40 plus callers
