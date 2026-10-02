@@ -31,7 +31,7 @@ private:
 	char *m_24; // +0x24 array pointer
 	unsigned int m_28; // +0x28
 };
-Rva004D58DE::~Rva004D58DE()
+inline Rva004D58DE::~Rva004D58DE()
 {
 	if (m_24)
 	{
@@ -39,3 +39,12 @@ Rva004D58DE::~Rva004D58DE()
 		m_24 = 0;
 	}
 }
+
+// This destructor is a header inline in the copier unit; the anchor is not retail code.
+#pragma inline_depth(0)
+// ?_bfmeRva004D58DEDtorInlineAnchor@@YAXXZ absent-from-retail
+void _bfmeRva004D58DEDtorInlineAnchor()
+{
+    static_cast<Rva004D58DE *>(0)->Rva004D58DE::~Rva004D58DE();
+}
+#pragma inline_depth()
