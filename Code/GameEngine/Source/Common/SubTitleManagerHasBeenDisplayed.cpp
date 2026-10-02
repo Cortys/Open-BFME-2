@@ -58,6 +58,7 @@ class SubTitleManager
 {
 public:
 	bool HasBeenDisplayed(int index);
+	void SetDisplayedStats(int index);
 private:
 	char m_pad[0x14];
 	_STL::vector<SubTitleEntry *> m_list;
@@ -73,4 +74,23 @@ bool SubTitleManager::HasBeenDisplayed(int index)
 	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::HasBeenDisplayed.");
 	b->h19(1);
 	return false;
+}
+
+// ?SetDisplayedStats@SubTitleManager@@QAEXH@Z retail 0x00046973 88B.
+// Bounds-checked set of the displayed flag at record+0x20 via the pointer
+// vector at +0x14: sets the flag when index is in range, else records the
+// callsite and logs "Index out of range in
+// SubTitleManager::SetDisplayedStats()." through theDebug virtuals.
+// Evidence: string literal plus caller 0x000480D2 plus sibling HasBeenDisplayed.
+void SubTitleManager::SetDisplayedStats(int index)
+{
+	if (index < (int)m_list.size()) {
+		m_list[index]->m_displayed = true;
+		return;
+	}
+	_bfme_debugRecordCallsite(1);
+	theDebug->f24();
+	LogA *a = (LogA *)theDebug->f27(0, 0, 0);
+	LogB *b = (LogB *)a->g14("Index out of range in SubTitleManager::SetDisplayedStats().");
+	b->h19(1);
 }
