@@ -32,6 +32,7 @@ class PlayerUpgradeSpecialPowerModuleData : public Rva004930A0
 {
 public:
 	PlayerUpgradeSpecialPowerModuleData();
+	virtual ~PlayerUpgradeSpecialPowerModuleData();
 
 private:
 	_STL::vector<AsciiString> m_upgradeNames;	// +0x7C UpgradeName
