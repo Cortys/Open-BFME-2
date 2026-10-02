@@ -48731,3 +48731,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva0061FFD0@Rva0061FFD0@@QAEXXZ,,0x0061FFD0,66,Code/Libraries/Source/assetmanager/Rva0061FFD0Cluster.cpp,matched,address-derived try-lock backoff helper
 ?rva00660DD0@Rva00660DD0@@QAEXPAVRva007E8810Message@@@Z,,0x00660DD0,44,Code/GameEngine/Source/GameNetwork/Rva00660DD0Cluster.cpp,matched,address-derived FESL fsys TXN builder variant 1
 ?rva00660E00@Rva00660DD0@@QAEXPAVRva007E8810Message@@@Z,,0x00660E00,44,Code/GameEngine/Source/GameNetwork/Rva00660DD0Cluster.cpp,matched,address-derived FESL fsys TXN builder variant 2
+?rva0068A130@Rva0068A130@@QAEXXZ,,0x0068A130,35,Code/GameEngine/Source/Common/Rva0068A130Cluster.cpp,matched,address-derived vtable-slot0 deleting release helper
