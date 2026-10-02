@@ -9,9 +9,8 @@ struct CodecState
 void releaseCodecMembers( CodecState *state );
 void releaseCodecBuffer( void **buffer );
 void releaseCodecCallback( void **callback );
-// BFME2 names the free helper bfmeTwoBZB (pinned at 0x1B6410 via Rva009A6EC0Release);
-// the BFME1 donor's local extern freeCodecMemory resolves to the same body.
-void bfmeTwoBZB( void *what );
+// The BFME1 donor's local extern freeCodecMemory resolves to the rowed helper.
+void bfmeFreeOneJT( void *what );
 
 // ?releaseCodecState@@YAXPAPAUCodecState@@@Z
 void releaseCodecState( CodecState **state )
@@ -22,6 +21,6 @@ void releaseCodecState( CodecState **state )
 		releaseCodecBuffer( &(*state)->m_buffer );
 		releaseCodecCallback( &(*state)->m_callback );
 	}
-	bfmeTwoBZB( *state );
+	bfmeFreeOneJT( *state );
 	*state = 0;
 }

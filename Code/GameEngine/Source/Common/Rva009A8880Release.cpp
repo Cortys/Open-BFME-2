@@ -1,6 +1,6 @@
 // Open-BFME5 conversion of the codec image-buffer release helper.
 
-void bfmeTwoBZB(void *what);
+void bfmeFreeOneJT(void *what);
 
 struct Rva009A8880Buffer
 {
@@ -20,13 +20,13 @@ void Rva009A8880Release(void *what)
 	Rva009A8880Buffer *self = (Rva009A8880Buffer *)what;
 
 	if (self->m_at248 != 0)
-		bfmeTwoBZB(self->m_at248);
+		bfmeFreeOneJT(self->m_at248);
 	if (self->m_at250 != 0)
-		bfmeTwoBZB(self->m_at250);
+		bfmeFreeOneJT(self->m_at250);
 	if (self->m_at258 != 0)
-		bfmeTwoBZB(self->m_at258);
+		bfmeFreeOneJT(self->m_at258);
 	if (self->m_at260 != 0)
-		bfmeTwoBZB(self->m_at260);
+		bfmeFreeOneJT(self->m_at260);
 
 	self->m_at248 = 0;
 	self->m_at250 = 0;
