@@ -21,7 +21,7 @@ public:
 class Rva000B19A1 : public Rva0049B47C
 {
 public:
-	virtual ~Rva000B19A1() {}
+	inline virtual ~Rva000B19A1() {}
 
 private:
 	unsigned char m_pad04[8];
