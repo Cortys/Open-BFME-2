@@ -886,11 +886,7 @@ Bool ProcessAnimateWindowSlideFromBottomTimed::updateAnimateWindow( AnimateWindo
 	return FALSE;
 }
 
-// ?reverseAnimateWindow@ProcessAnimateWindowSlideFromBottomTimed@@ present-unmatched
-Bool ProcessAnimateWindowSlideFromBottomTimed::reverseAnimateWindow( AnimateWindow *animWin )
-{
-	return updateAnimateWindow(animWin);
-}
+// BottomTimed reverse dispatch is defined in ProcessAnimateWindowBottomTimedReverse.cpp.
 
 
 //-----------------------------------------------------------------------------
