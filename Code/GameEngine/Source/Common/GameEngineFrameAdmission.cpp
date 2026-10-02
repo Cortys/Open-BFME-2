@@ -8,10 +8,13 @@
 
 extern float g_Va00BBB8D8;
 
+// g_Va00DBA2F8: VA 0x00dba2f8 (.data); retail initial bytes 00 00 80 3f (1.0f).
+float g_Va00DBA2F8 = 1.0f;
+
 extern class NetworkInterface *TheNetwork;
 
 #define TheNetwork (*(class NetworkInterface **)&TheNetwork)
-#define LogicTimeScale (*(const float *)0x00DBA2F8)
+#define LogicTimeScale g_Va00DBA2F8
 #define One g_Va00BBB8D8
 
 class NetworkInterface
