@@ -47977,3 +47977,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?rva00211541@Rva00211541@@QAEXPAVCreateAHeroData@@@Z,,0x00211541,47,Code/GameEngine/Source/GameClient/System/Rva00211541Erase.cpp,matched,find 0x0020E873 then voidptr erase 0x001FF51F like Rva00223D02
 ?rva003570D1@ScriptEngine@@QAEPAVTeamPrototype@@VAsciiString@@@Z,,0x003570D1,95,Code/GameEngine/Source/Common/Rva003570D1.cpp,matched,resolveName plus TeamFactory findPrototype caller 0x003BF9C8
 ?rva0025DE2E@Rva0025DDD2@@QBEMXZ,,0x0025DE2E,46,Code/GameEngine/Source/Common/Rva0025DDD2Float.cpp,matched,float wrapper null yields 0 via rowed 0x004D50CE
+??0Rva004F599E@@QAE@XZ,,0x004F599E,14,Code/GameEngine/Source/Common/Rva004F599EClear.cpp,matched,chain lane vtable store plus helper call
