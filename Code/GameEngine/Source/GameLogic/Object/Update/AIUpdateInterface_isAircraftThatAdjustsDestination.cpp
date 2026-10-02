@@ -10,8 +10,9 @@ struct LocomotorTemplate
 	int m_appearance; // +0x74
 };
 
-struct Locomotor
+class Locomotor
 {
+public:
 	char m_pad00[4];
 	LocomotorTemplate *m_template; // +0x04
 };
@@ -51,21 +52,26 @@ class AIUpdateInterface : public AIUpdateInterfaceBase
 	char m_pad04[0x168 - 4];
 	float m_pathExtraDistance; // +0x168
 	char m_pad16C[0x1F0 - 0x16C];
-	Locomotor *m_curLocomotor; // +0x1F0
+	Locomotor *m_curLocomotor; // +0x1F0; target bodies below (donor: +0x1CC)
 public:
 	bool isAircraftThatAdjustsDestination() const;
 	virtual bool getTreatAsAircraftForLocoDistToGoal() const;
+	Locomotor *getCurLocomotor()
+	{
+		return m_curLocomotor;
+	}
 };
 
 bool AIUpdateInterface::isAircraftThatAdjustsDestination() const
 {
 	if (vslot90())
 		return true;
-	if (!m_curLocomotor)
+	Locomotor *curLocomotor = const_cast<AIUpdateInterface *>(this)->getCurLocomotor();
+	if (!curLocomotor)
 		return false;
-	if (m_curLocomotor->m_template->m_appearance == 2)
+	if (curLocomotor->m_template->m_appearance == 2)
 		return true;
-	if (m_curLocomotor->m_template->m_appearance == 3)
+	if (curLocomotor->m_template->m_appearance == 3)
 		return true;
 	return false;
 }
