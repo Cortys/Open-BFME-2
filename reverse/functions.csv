@@ -47507,3 +47507,12 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ??0Rva004B236E@@QAE@XZ,,0x004B236E,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc56930
 ??0Rva0051489D@@QAE@XZ,,0x0051489D,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc65ee0
 ??0Rva0052510C@@QAE@XZ,,0x0052510C,13,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandWrapperList except the vtable VA 0xc67e50
+??0Rva00148AB0@@QAE@XZ,,0x00148AB0,20,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandList except the vtable VA 0xbd3564
+??0Rva004E1780@@QAE@XZ,,0x004E1780,20,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandList except the vtable VA 0xc61b78
+??0Rva0054D54A@@QAE@XZ,,0x0054D54A,20,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0NetCommandList except the vtable VA 0xc6a774
+??0Rva001FD2B4@@QAE@XZ,,0x001FD2B4,17,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal BfmeThingTC::bfmeBaseTC except the vtable VA 0xbe1aa0
+??0Rva002D24F6@@QAE@XZ,,0x002D24F6,17,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal BfmeThingTC::bfmeBaseTC except the vtable VA 0xc02a5c
+??0Rva0043A340@@QAE@XZ,,0x0043A340,17,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal BfmeThingTC::bfmeBaseTC except the vtable VA 0xc3d490
+??0Rva004817F4@@QAE@XZ,,0x004817F4,17,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal BfmeThingTC::bfmeBaseTC except the vtable VA 0xc49174
+??0Rva0035897D@@QAE@XZ,,0x0035897D,23,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva0036247C except the vtable VA 0xc15338
+??0Rva003E3C22@@QAE@XZ,,0x003E3C22,23,Code/GameEngine/Source/Common/RvaSmallVtableCtors.cpp,matched,vtable-installing ctor: bytes equal ??0Rva0036247C except the vtable VA 0xc35b34

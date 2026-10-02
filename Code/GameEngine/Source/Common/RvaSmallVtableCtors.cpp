@@ -504,3 +504,151 @@ public:
 Rva0052510C::Rva0052510C()
 {
 }
+
+// Three more shapes, also differing from their rowed template only in the vtable:
+//   20 bytes as ??0NetCommandList: store the vtable, then zero +4, +8 and +0xC;
+//   17 bytes as BfmeThingTC::bfmeBaseTC: zero +4 and +8, then store the vtable;
+//   23 bytes as ??0Rva0036247C: store the vtable, then zero +4 .. +0x10.
+
+struct RvaSmallVtableZeroBase2
+{
+	virtual ~RvaSmallVtableZeroBase2() {}
+	void *m_04;
+	void *m_08;
+	RvaSmallVtableZeroBase2() : m_04(0), m_08(0) {}
+};
+
+// ??0Rva00148AB0@@QAE@XZ @0x00148AB0 20B, vtable VA 0xbd3564
+class Rva00148AB0
+{
+public:
+	Rva00148AB0();
+	virtual ~Rva00148AB0() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+};
+
+Rva00148AB0::Rva00148AB0()
+	: m_04(0), m_08(0), m_0C(0)
+{
+}
+
+// ??0Rva004E1780@@QAE@XZ @0x004E1780 20B, vtable VA 0xc61b78
+class Rva004E1780
+{
+public:
+	Rva004E1780();
+	virtual ~Rva004E1780() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+};
+
+Rva004E1780::Rva004E1780()
+	: m_04(0), m_08(0), m_0C(0)
+{
+}
+
+// ??0Rva0054D54A@@QAE@XZ @0x0054D54A 20B, vtable VA 0xc6a774
+class Rva0054D54A
+{
+public:
+	Rva0054D54A();
+	virtual ~Rva0054D54A() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+};
+
+Rva0054D54A::Rva0054D54A()
+	: m_04(0), m_08(0), m_0C(0)
+{
+}
+
+// ??0Rva001FD2B4@@QAE@XZ @0x001FD2B4 17B, vtable VA 0xbe1aa0
+class Rva001FD2B4 : public RvaSmallVtableZeroBase2
+{
+public:
+	Rva001FD2B4();
+	virtual ~Rva001FD2B4() {}
+};
+
+Rva001FD2B4::Rva001FD2B4()
+{
+}
+
+// ??0Rva002D24F6@@QAE@XZ @0x002D24F6 17B, vtable VA 0xc02a5c
+class Rva002D24F6 : public RvaSmallVtableZeroBase2
+{
+public:
+	Rva002D24F6();
+	virtual ~Rva002D24F6() {}
+};
+
+Rva002D24F6::Rva002D24F6()
+{
+}
+
+// ??0Rva0043A340@@QAE@XZ @0x0043A340 17B, vtable VA 0xc3d490
+class Rva0043A340 : public RvaSmallVtableZeroBase2
+{
+public:
+	Rva0043A340();
+	virtual ~Rva0043A340() {}
+};
+
+Rva0043A340::Rva0043A340()
+{
+}
+
+// ??0Rva004817F4@@QAE@XZ @0x004817F4 17B, vtable VA 0xc49174
+class Rva004817F4 : public RvaSmallVtableZeroBase2
+{
+public:
+	Rva004817F4();
+	virtual ~Rva004817F4() {}
+};
+
+Rva004817F4::Rva004817F4()
+{
+}
+
+// ??0Rva0035897D@@QAE@XZ @0x0035897D 23B, vtable VA 0xc15338
+class Rva0035897D
+{
+public:
+	Rva0035897D();
+	virtual ~Rva0035897D() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+	void *m_10;
+};
+
+Rva0035897D::Rva0035897D()
+	: m_04(0), m_08(0), m_0C(0), m_10(0)
+{
+}
+
+// ??0Rva003E3C22@@QAE@XZ @0x003E3C22 23B, vtable VA 0xc35b34
+class Rva003E3C22
+{
+public:
+	Rva003E3C22();
+	virtual ~Rva003E3C22() {}
+private:
+	void *m_04;
+	void *m_08;
+	void *m_0C;
+	void *m_10;
+};
+
+Rva003E3C22::Rva003E3C22()
+	: m_04(0), m_08(0), m_0C(0), m_10(0)
+{
+}
