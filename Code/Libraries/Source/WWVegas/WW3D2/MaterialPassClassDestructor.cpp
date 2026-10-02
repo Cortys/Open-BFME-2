@@ -15,7 +15,7 @@ public:
 			Delete_This();
 	}
 
-	virtual void Delete_This() = 0;
+	virtual void Delete_This();
 
 protected:
 	virtual ~RefCountClass() {}
