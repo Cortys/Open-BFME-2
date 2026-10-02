@@ -10,18 +10,6 @@
 #define _CRTIMP
 #include "rendobj.h"	// the scoped BFME2 RenderObj layout and slots must win the include guard
 #include "winbase_shim.h"
-#include <htree.h>
-#include "hlod.h"
-#include "assetmgr.h"
-#include "hmdldef.h"
-#include "w3derr.h"
-#include "chunkio.h"
-#include "predlod.h"
-#include "rinfo.h"
-#include <string.h>
-#include "winbase_shim.h"
-#include "sphere.h"
-#include "boxrobj.h"
 #undef strdup
 
 extern void (RenderObjClass::*const g_bfmeSetSubObjDirtyAnchor)(bool);
