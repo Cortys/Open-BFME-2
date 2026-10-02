@@ -7,18 +7,24 @@
 // shape as siblings.
 void __cdecl Rva00381C2DClear(unsigned int value);
 
-class GameWindow;
+class GameWindow
+{
+public:
+	int winEnable(bool enable);
+};
 void __cdecl GadgetListBoxReset(GameWindow *win);
 
 class Rva005AFC92
 {
 public:
 	bool rva005AFC92();
+	void rva005AFCFF();
 private:
 	char m_pad00[4];
 	unsigned int m_val04;
-	char m_pad08[4];
+	GameWindow *m_win08;
 	GameWindow *m_win0C;
+	GameWindow *m_win10;
 };
 
 bool Rva005AFC92::rva005AFC92()
@@ -30,4 +36,20 @@ bool Rva005AFC92::rva005AFC92()
 		return true;
 	}
 	return false;
+}
+
+void Rva005AFC92::rva005AFCFF()
+{
+	GameWindow *win08 = m_win08;
+	if (win08 != 0) {
+		win08->winEnable(true);
+	}
+	GameWindow *win0C = m_win0C;
+	if (win0C != 0) {
+		win0C->winEnable(true);
+	}
+	GameWindow *win10 = m_win10;
+	if (win10 != 0) {
+		win10->winEnable(true);
+	}
 }
