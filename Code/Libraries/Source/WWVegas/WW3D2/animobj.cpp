@@ -460,40 +460,7 @@ void Animatable3DObjClass::Set_Animation(void)
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
  *=============================================================================================*/
-void Animatable3DObjClass::Set_Animation(HAnimClass * motion, float frame, int mode)
-{
-
-	if ( motion ) {
-		// Add_Ref before we remove, in case it is the same one.
-		motion->Add_Ref();
-		Release();
-		CurMotionMode = SINGLE_ANIM;
-		ModeAnim.Motion = motion;
-		ModeAnim.PrevFrame = ModeAnim.Frame;
-		ModeAnim.Frame = frame;		
-		ModeAnim.LastSyncTime = WW3D::Get_Sync_Time();
-		ModeAnim.frameRateMultiplier=1.0;	// 020607 srj -- added
-		ModeAnim.animDirection=1.0;	// 020607 srj -- added
-
-		ModeAnim.AnimMode = mode;
-
-		if (mode < ANIM_MODE_LOOP_BACKWARDS)
-			ModeAnim.animDirection = 1.0f;	//assume playing forwards
-		else
-			ModeAnim.animDirection = -1.0f;	//reverse animation playback
-
-		const char* sound_name = AnimatedSoundMgrClass::Get_Embedded_Sound_Name(motion);
-		if (sound_name) {
-			int bone_index = Get_Bone_Index(sound_name);
-			motion->Set_Embedded_Sound_Bone_Index(bone_index);
-		}
-	} else {
-		CurMotionMode = BASE_POSE;
-		Release();
-	}
-
-	Set_Hierarchy_Valid(false);
-}	
+// Animatable3DObjClass::Set_Animation(HAnimClass*, float, int): defined in Animatable3DObjSetAnimationMH.cpp (its row's unit).	
 
 /***********************************************************************************************
  * Animatable3DObjClass::Set_Animation -- set the animation state to a blend of two anims      *
