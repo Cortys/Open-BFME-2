@@ -83,7 +83,7 @@ private:
 	unsigned int m_decreaseFrames; // +0x160
 };
 
-void LightPulseFXNugget::doFXObj(const Object *primary, const Object *) const
+inline void LightPulseFXNugget::doFXObj(const Object *primary, const Object *) const
 {
 	if (primary)
 	{
@@ -96,3 +96,10 @@ void LightPulseFXNugget::doFXObj(const Object *primary, const Object *) const
 		TheDisplay->createLightPulse(primary->getPosition(), &m_color, 1.0f, radius, m_increaseFrames, m_decreaseFrames);
 	}
 }
+#pragma inline_depth(0)
+// ?bfmeEmitLightPulseFXNuggetEffects@@YAXPAVLightPulseFXNugget@@@Z present-unmatched
+void bfmeEmitLightPulseFXNuggetEffects(LightPulseFXNugget *p)
+{
+	p->LightPulseFXNugget::doFXObj(0, 0);
+}
+#pragma inline_depth()
