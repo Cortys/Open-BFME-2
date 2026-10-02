@@ -47989,3 +47989,4 @@ _bfmeVp6ThresholdSelect,,0x001B5AC0,404,Code/GameEngine/Source/Common/Rva009A500
 ?xfer@Rva004F599E@@MAEXPAVXfer@@@Z,,0x004F59B2,91,Code/GameEngine/Source/Common/Rva004F599EXfer.cpp,matched,vslot lane slot 3 vtable 0x00863254 Version1 plus int21 arrays via Xfer slot 0x7C
 ?rva00211589@Rva00211589@@QAEXXZ,,0x00211589,60,Code/GameEngine/Source/GameClient/System/Rva00211589Loop.cpp,matched,single vector loop via barrier like 0x00206100
 ?rva0022DB72@Rva0022DB72@@QAEXPAX@Z,,0x0022DB72,28,Code/GameEngine/Source/Common/Rva0022DB72Free.cpp,matched,chain node delete via rowed 0x0022D1DF plus free caller 0x0022DD3A
+??1Rva00418298@@UAE@XZ,,0x00418298,59,Code/GameEngine/Source/GameClient/Rva00418298Dtor.cpp,matched,dtor with member 0x0022DC62 base 0x001B4E74 caller 0x0022DFB3
