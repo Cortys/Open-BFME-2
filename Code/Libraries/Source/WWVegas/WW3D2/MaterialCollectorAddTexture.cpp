@@ -27,12 +27,15 @@ public:
 private:
     unsigned int m_refs;
 };
-class TextureClass {
+class TextureBaseClass {
 public:
     void Add_Ref() {
         ++*reinterpret_cast<unsigned short *>(reinterpret_cast<char *>(this) + 4);
     }
     void Release_Ref();
+};
+
+class TextureClass : public TextureBaseClass {
 };
 
 class BfmeHandleCX {
