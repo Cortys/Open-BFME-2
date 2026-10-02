@@ -710,32 +710,7 @@ WW3DErrorType HLodDefClass::Load_W3D(ChunkLoadClass & cload)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodDefClass::read_header present-unmatched
-bool HLodDefClass::read_header(ChunkLoadClass & cload)
-{
-	/*
-	**	Open the first chunk, it should be the LOD header
-	*/
-	if (!cload.Open_Chunk()) return false;
-
-	if (cload.Cur_Chunk_ID() != W3D_CHUNK_HLOD_HEADER) {
-		// ERROR: Expected HLOD Header!
-		return false;
-	}
-
-	W3dHLodHeaderStruct header;
-	if (cload.Read(&header,sizeof(header)) != sizeof(header)) {
-		return false;
-	}
-	cload.Close_Chunk();
-
-	// Copy the name into our internal variable
-	Name = ::_strdup(header.Name);
-	HierarchyTreeName = ::strdup(header.HierarchyName);
-	LodCount = header.LodCount;
-	Lod = W3DNEWARRAY SubObjectArrayClass[LodCount];
-	return true;
-}
+// HLodDefClass::read_header: defined in hlod_read_header.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -2832,28 +2807,7 @@ void HLodClass::Set_Animation(HAnimComboClass * anim_combo)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Cast_Ray present-unmatched
-bool HLodClass::Cast_Ray(RayCollisionTestClass & raytest)
-{
-	if (Are_Sub_Object_Transforms_Dirty ()) {
-		Update_Sub_Object_Transforms ();
-	}
-
-	bool res = false;
-	int i;
-
-	// collide against the top LOD
-	int top = LodCount-1;
-	for (i = 0; i < Lod[top].Count(); i++) {
-		res |= Lod[top][i].Model->Cast_Ray(raytest);
-	}
-
-	for (i = 0; i < AdditionalModels.Count(); i++) {
-		res |= AdditionalModels[i].Model->Cast_Ray(raytest);
-	}
-
-	return res;
-}
+// HLodClass::Cast_Ray: defined in HLodCastRay.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -3716,44 +3670,7 @@ void HLodClass::Get_Snap_Point(int index,Vector3 * set)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Update_Sub_Object_Transforms present-unmatched
-void HLodClass::Update_Sub_Object_Transforms(void)
-{
-	/*
-	** Update the animation transforms, recurse up to the
-	** top of the tree...
-	*/
-	Animatable3DObjClass::Update_Sub_Object_Transforms();
-
-	/*
-	** Put the computed transforms into our sub objects.
-	*/
-	int lod,model;
-	
-	for (lod = 0; lod < LodCount; lod++) {
-		for (model = 0; model < Lod[lod].Count(); model++) {
-
-			RenderObjClass * robj = Lod[lod][model].Model;
-			int bone = Lod[lod][model].BoneIndex;
-
-			robj->Set_Transform(HTree->Get_Transform(bone)); 
-			robj->Set_Animation_Hidden(!HTree->Get_Visibility(bone));
-			robj->Update_Sub_Object_Transforms();
-		}
-	}
-
-	for (model = 0; model < AdditionalModels.Count(); model++) {
-
-		RenderObjClass * robj = AdditionalModels[model].Model;
-		int bone = AdditionalModels[model].BoneIndex;
-
-		robj->Set_Transform(HTree->Get_Transform(bone)); 
-		robj->Set_Animation_Hidden(!HTree->Get_Visibility(bone));
-		robj->Update_Sub_Object_Transforms();
-	}
-
-	Set_Sub_Object_Transforms_Dirty(false);
-}
+// HLodClass::Update_Sub_Object_Transforms: defined in HLodUpdateSubObjectTransforms.cpp (its row's unit).
 
 
 /***********************************************************************************************
@@ -3886,31 +3803,7 @@ void HLodClass::Update_Obj_Space_Bounding_Volumes(void)
  * HISTORY:                                                                                    *
  *   1/26/00    gth : Created.                                                                 *
  *=============================================================================================*/
-// ?HLodClass::Add_Lod_Model present-unmatched
-void HLodClass::Add_Lod_Model(int lod, RenderObjClass * robj, int boneindex)
-{		
-	WWASSERT(robj != NULL);
-
-	// (gth) survive the case where the skeleton for this object no longer has
-	// the bone that we're trying to use.  This happens when a skeleton is re-exported
-	// but the models that depend on it aren't re-exported...
-	if (boneindex >= HTree->Num_Pivots()) {
-		WWDEBUG_SAY(("ERROR: Model %s tried to use bone %d in skeleton %s.  Please re-export!\n",Get_Name(),boneindex,HTree->Get_Name()));
-		boneindex = 0;
-	}
-	
-	ModelNodeClass newnode;
-	newnode.Model = robj;
-	newnode.Model->Add_Ref();
-	newnode.BoneIndex = boneindex;
-	newnode.Model->Set_Container(this);
-	newnode.Model->Set_Transform(HTree->Get_Transform(boneindex));
-
-	if (Is_In_Scene() && lod == CurLod) {
-		newnode.Model->Notify_Added(Scene);
-	}
-	Lod[lod].Add(newnode);
-}
+// HLodClass::Add_Lod_Model: defined in HLodAddLodModel.cpp (its row's unit).
 
 
 /***********************************************************************************************
