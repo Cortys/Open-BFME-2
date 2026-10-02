@@ -10323,7 +10323,6 @@ __Locale_compose_name,,0x00020680,983,Code/Libraries/Source/WWVegas/WWLib/Locale
 ?getHandicap@Handicap@@QBEMW4HandicapType@1@PBVThingTemplate@@@Z,,0x003B0EA2,27,Code/GameEngine/Source/Common/RTS/Handicap.cpp,matched,BFME1 near-miss donor; b1 0x000C8410; immediate-only drift: building flag +0x108 vs +0xC8
 ?Rva009A6DA0ReleaseBuffers@@YAXPAURva009A6DA0Buffer@@@Z,,0x001B7810,67,Code/GameEngine/Source/Common/Rva009A6DA0ReleaseBuffers.cpp,matched,unclaimed_scan exact of TU-emitted body
 ?Add@?$CSimpleArray@PAXV?$CSimpleArrayEqualHelper@PAX@ATL@@@ATL@@QAEHABQAX@Z,,0x00628DDD,75,Code/GameEngine/Source/Common/AtlSimpleArrayHInstanceAdd.cpp,matched,unclaimed_scan exact; realloc via C++-linkage import-thunk pin at 0x6297EA per retail E8
-?deallocate@__new_alloc@_STL@@SAXPAXI@Z,,0x000237B0,12,Code/Libraries/Source/WWVegas/WWLib/stlport_rb_tree_insert_unique_nocase.cpp,matched,unclaimed_scan exact of TU-emitted body; ICF-shared span (also emitted by map_asciistring_index TU)
 ?dup_0016f580@@YAXXZ,,0x0016F580,45,Code/Libraries/Source/WWVegas/WW3D2/MaterialCollectorDestructor.cpp,matched,gen-alias;object-symbol=??1?$DynamicVectorClass@PAVVertexMaterialClass@@@@UAE@XZ;C++ alias
 ?Clear@?$VectorClass@VBfmeHandleCX@@@@UAEXXZ,,0x0016F8B0,61,Code/Libraries/Source/WWVegas/WW3D2/MaterialCollectorDestructor.cpp,matched,gen-alias;object-symbol=?Clear@?$VectorClass@VBfmeHandleCX@@@@UAEXXZ;C++ alias
 ?dup_0016fdb0@@YAXXZ,,0x0016FDB0,67,Code/Libraries/Source/WWVegas/WW3D2/MaterialCollectorDestructor.cpp,matched,gen-alias;object-symbol=??1?$DynamicVectorClass@VBfmeHandleCX@@@@UAE@XZ;C++ alias
@@ -48656,3 +48655,4 @@ _Rva006FD040,,0x006FD040,26,Code/Libraries/Source/WWVegas/WWLib/Rva006FD040Sibli
 ?rva005F927A@Rva005F927A@@QAEX_N@Z,,0x005F927A,91,Code/GameEngine/Source/Common/Rva005F927AButton.cpp,matched,twin of 0x005F921F with RealTime and flag at +0x61 via rowed AptCall
 ?rva005F93D3@Rva005F93D3@@QAEX_N@Z,,0x005F93D3,8,Code/GameEngine/Source/Common/Rva005F93D3Forward.cpp,matched,jmp to rowed 0x005F927A callers 0x005E96B3 0x005E9E02 neighbour Rva005F93CBForward
 ?rva005F92D5@Rva005F92D5@@QAEX_N@Z,,0x005F92D5,91,Code/GameEngine/Source/Common/Rva005F92D5Button.cpp,matched,twin of 0x005F927A Retreat vs RealTime flag +0x62 rowed AptCall 0x005F8EDA
+?deallocate@__new_alloc@_STL@@SAXPAXI@Z,,0x000237B0,12,Code/Libraries/Source/WWVegas/WWLib/stlport_new_alloc_deallocate.cpp,matched,STLport __new_alloc::deallocate; select-any body every container unit emits; rowed in its own unit so the owner of this early row is not first in link order for unrelated COMDATs
