@@ -5,7 +5,7 @@
 extern class GlobalData *TheWritableGlobalData;
 
 #define TheGlobalData758 (*(void **)&TheWritableGlobalData)
-#define TheConst7F8FFC (*(float *)0x00BF8FFC)
+#define TheConst7F8FFC 0.70710677f
 class Arg00261790
 {
 public:
