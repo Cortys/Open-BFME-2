@@ -39,3 +39,7 @@ Rva00546C26::Rva00546C26(Rva0036E346 *holder, int val)
 	m_1c[1] = 0.0f;
 	m_1c[2] = 0.0f;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C6A3C4@@3QBQBXB=??_7Rva00546CAD@@6B@")

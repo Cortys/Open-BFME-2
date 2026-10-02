@@ -34,3 +34,7 @@ Rva003ADEBF::Rva003ADEBF(unsigned int a)
 	m_v0 = &Rva003ADEBF_v0;
 	m_v8 = &Rva003ADEBF_v8;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_Rva003ADEBF_v0=??_7Rva005EA430@@6BV3Vt01111D90@@@")

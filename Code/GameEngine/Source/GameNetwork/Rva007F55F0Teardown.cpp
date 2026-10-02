@@ -42,3 +42,7 @@ void Rva007F55F0Host::teardown()
 	m_list.bfmeDropTWB();
 	m_vft = g_bfmeVftBTWB;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftATWB@@3PAPAXA=??_7Rva007F6D60Child@@6B@")

@@ -36,3 +36,7 @@ void _bfmeRva0020453CHolderBaseInlineAnchor(Rva0020453CHolderBase *p)
     p->Rva0020453CHolderBase::~Rva0020453CHolderBase();
 }
 #pragma inline_depth()
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00BE39F4@@3QBQBXB=??_7Rva0020453CHolderBase@@6B@")

@@ -38,3 +38,7 @@ Rva00263895Member::Rva00263895Member() throw()
 // call sites in their matched rows land on these addresses (same ABI). Bind them.
 #pragma comment(linker, "/alternatename:??0AICommandParmsTail@@QAE@XZ=??0Rva00263895Member@@QAE@XZ")
 #pragma comment(linker, "/alternatename:?init@Rva00263895Member@@QAEXXZ=??0Rva00263895Member@@QAE@XZ")
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00BF91AC@@3QBQBXB=??_7Rva0028C6D6@@6B@")

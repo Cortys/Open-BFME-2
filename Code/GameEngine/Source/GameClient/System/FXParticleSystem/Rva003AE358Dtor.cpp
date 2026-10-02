@@ -23,3 +23,7 @@ Rva003AE358::~Rva003AE358()
     *(volatile unsigned int *)b08 = (unsigned int)&s_slot3E4first;
     *(volatile unsigned int *)this = (unsigned int)g_00C1B320;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_00C1B320@@3QBQBXB=??_7V3Vt01111D90@@6B@")

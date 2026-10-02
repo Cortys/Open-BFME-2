@@ -30,3 +30,7 @@ void BfmeThingTA::bfmeGoTA()
 		bfmeFreeTA(m_bfmeP);
 	((Gen_00832090 *)this)->m();
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:?g_bfmeVftTA@@3PADA=??_7?$ctype@D@_STL@@6B@")

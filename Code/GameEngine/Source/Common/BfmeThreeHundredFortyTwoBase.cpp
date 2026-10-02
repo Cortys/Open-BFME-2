@@ -20,3 +20,7 @@ BfmeThingTC *BfmeThingTC::bfmeBaseTC()
 	m_bfmeVft = bfmeVftTCBase;
 	return this;
 }
+
+// Retail's data references in this unit's matched rows land on globals defined
+// under other spellings at the same addresses (addend-corrected DIR32). Bind them.
+#pragma comment(linker, "/alternatename:_bfmeVftTCBase=??_7Rva0031455E@@6B@")
