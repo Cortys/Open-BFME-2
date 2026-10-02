@@ -18,15 +18,17 @@ struct GameLogicFrame
 	unsigned int frame;
 };
 
-struct GlobalData
+class GlobalData
 {
+public:
 	char unknown[0xC18];
 	unsigned int networkRunAheadSlack;
 };
 
 #define TheGameLogic (*(volatile GameLogicFrame **)&TheGameLogic)
-#define TheGlobalData (*(volatile GlobalData **)0x00DFE758)
-#define LastPacketRouterStallFrame (*(volatile unsigned int *)0x00E043F4)
+extern GlobalData *TheWritableGlobalData;
+// g_00E043F4: VA 0x00E043F4 (.data(bss)); retail initial value is zero.
+unsigned int g_00E043F4 = 0;
 
 class BFMEConnectionManager
 {
@@ -76,7 +78,7 @@ bool BFMEConnectionManager::hasPacketRouterFrameStall(void)
 		return false;
 
 	unsigned int frame = TheGameLogic->frame;
-	unsigned int slack = frame > 5 ? TheGlobalData->networkRunAheadSlack : 3;
+	unsigned int slack = frame > 5 ? TheWritableGlobalData->networkRunAheadSlack : 3;
 	int slot = 0;
 	Connection **connectionSlot = m_connections;
 	for (; slot < 8; ++slot, ++connectionSlot) {
@@ -85,8 +87,8 @@ bool BFMEConnectionManager::hasPacketRouterFrameStall(void)
 			(unsigned char)isPlayerSlotActive(slot) == 0 &&
 			*(unsigned int *)((char *)connectionSlot + 0x1205C) + slack <= frame) {
 			unsigned int stalledFrame = *(unsigned int *)((char *)this + slot * 4 + 0x12060);
-			if (stalledFrame != LastPacketRouterStallFrame)
-				LastPacketRouterStallFrame = stalledFrame;
+			if (stalledFrame != g_00E043F4)
+				g_00E043F4 = stalledFrame;
 			return true;
 		}
 	}
